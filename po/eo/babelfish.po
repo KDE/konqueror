@@ -1,15 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Translation of babelfish.pot into esperanto.
+# Copyright (C) 2009 Free Software Foundation, Inc.
+# This file is distributed under the same license as the konqueror package.
+# Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: babelfish\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-07 00:44+0000\n"
-"PO-Revision-Date: 2009-11-18 10:27+0100\n"
-"Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
-"Language-Team: Esperanto <eo@li.org>\n"
+"PO-Revision-Date: 2023-06-09 20:56+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,12 +23,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Axel Rousseau"
+msgstr "Axel Rousseau,Oliver Kellogg"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "axel@esperanto-jeunes.org"
+msgstr "axel@esperanto-jeunes.org,okellogg@users.sourceforge.net"
 
 #. i18n: ectx: Menu (tools)
 #: babelfishplugin.rc:4
@@ -53,17 +55,17 @@ msgstr "Traduki TTT-&paĝon"
 #: plugin_babelfish.cpp:81
 #, kde-format
 msgid "&English To"
-msgstr "El angla"
+msgstr "&El angla"
 
 #: plugin_babelfish.cpp:84
 #, kde-format
 msgid "&French To"
-msgstr "El franca"
+msgstr "El &franca"
 
 #: plugin_babelfish.cpp:87
 #, kde-format
 msgid "&German To"
-msgstr "El germana"
+msgstr "El &germana"
 
 #: plugin_babelfish.cpp:90
 #, kde-format
@@ -78,7 +80,7 @@ msgstr "El hi&spana"
 #: plugin_babelfish.cpp:96
 #, kde-format
 msgid "&Portuguese To"
-msgstr "El portugala"
+msgstr "El &portugala"
 
 #: plugin_babelfish.cpp:99
 #, kde-format
@@ -97,7 +99,7 @@ msgstr "El &Rusa"
 
 #: plugin_babelfish.cpp:124
 msgid "&Chinese (Simplified)"
-msgstr "Ĉina"
+msgstr "&Ĉina"
 
 #: plugin_babelfish.cpp:125
 msgid "Chinese (&Traditional)"
@@ -119,7 +121,7 @@ msgstr "&Germana"
 
 #: plugin_babelfish.cpp:129 plugin_babelfish.cpp:142
 msgid "&Greek"
-msgstr ""
+msgstr "&Greka"
 
 #: plugin_babelfish.cpp:130 plugin_babelfish.cpp:143
 msgid "&Italian"
@@ -139,7 +141,7 @@ msgstr "&Norvega"
 
 #: plugin_babelfish.cpp:134 plugin_babelfish.cpp:144
 msgid "&Portuguese"
-msgstr "Portugala"
+msgstr "&Portugala"
 
 #: plugin_babelfish.cpp:135 plugin_babelfish.cpp:146
 msgid "&Russian"
@@ -151,22 +153,22 @@ msgstr "Hi&spana"
 
 #: plugin_babelfish.cpp:137
 msgid "T&hai"
-msgstr "Taja"
+msgstr "Ta&ja"
 
 #: plugin_babelfish.cpp:138
 msgid "&Arabic"
-msgstr ""
+msgstr "&Araba"
 
 #: plugin_babelfish.cpp:140 plugin_babelfish.cpp:147 plugin_babelfish.cpp:149
 #: plugin_babelfish.cpp:151 plugin_babelfish.cpp:153 plugin_babelfish.cpp:155
 #: plugin_babelfish.cpp:157 plugin_babelfish.cpp:159
 msgid "&English"
-msgstr "Angla"
+msgstr "Angl&e"
 
 #: plugin_babelfish.cpp:181
 #, kde-format
 msgid "&Chinese (Simplified) to English"
-msgstr "El ĉina (simpligita) al angla"
+msgstr "El &china (simpligita) al angla"
 
 #: plugin_babelfish.cpp:182
 #, kde-format
@@ -187,7 +189,7 @@ msgstr "El &korea al angla"
 #, kde-format
 msgctxt "@title:window"
 msgid "Malformed URL"
-msgstr "Misformita URL   "
+msgstr "Misformita URL"
 
 #: plugin_babelfish.cpp:261
 #, kde-format
@@ -202,24 +204,12 @@ msgid ""
 "page will sent to the online translation service,<nl/>which may fetch the "
 "insecure version of the page."
 msgstr ""
+"Vi rigardas ĉi tiun paĝon per sekura konekto.<nl/><nl/>La URL de la paĝo "
+"estos sendita al la reta tradukservo,<nl/>kiu povas ricevi la nesekuran "
+"version de la paĝo."
 
 #: plugin_babelfish.cpp:275
 #, kde-format
 msgctxt "@title:window"
 msgid "Security Warning"
-msgstr ""
-
-#~ msgid "&Russian to English"
-#~ msgstr "El rusa al angla"
-
-#~ msgid "Cannot Translate Source"
-#~ msgstr "Ne ebla traduki la fonton"
-
-#~ msgid "Only web pages can be translated using this plugin."
-#~ msgstr "Nur eblas traduki ttt-paĝojn per tiu ĉi kromaĵo."
-
-#~ msgid "Only full webpages can be translated for this language pair."
-#~ msgstr "Nur eblas traduki ttt-paĝojn por tiuj lingvoj."
-
-#~ msgid "Translation Error"
-#~ msgstr "Eraro de Traduko"
+msgstr "Sekureca Averto"

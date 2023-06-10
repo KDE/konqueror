@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 00:46+0000\n"
+"POT-Creation-Date: 2023-06-10 00:48+0000\n"
 "PO-Revision-Date: 2023-03-25 09:50+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -530,20 +530,26 @@ msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>Typ mime</td><td>Opis</td><td>Przyrostki</td><td>Wtyczka</td>"
 
 #: src/choosepagesaveformatdlg.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The page is saved as a single HTML page. Only the text of the page will "
+#| "be saved. External resources such as images won't be saved"
 msgid ""
-"The page is saved as a single HTML page. Only the text of the page will be "
-"saved. External resources such as images won't be saved"
+"The page will be saved as a single HTML file. Only the text of the page will "
+"be saved. External resources such as images won't be saved"
 msgstr ""
 "Strona zostanie zapisana jako pojedyncza HTML. Tylko tekst na stronie "
 "zostanie zapisany. Zasoby zewnętrzne takie jak obrazy nie zostaną zapisane"
 
 #: src/choosepagesaveformatdlg.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The complete contents of the page will be saved. The page and any "
+#| "external resources it requires, such as images, will be saved inside a "
+#| "single directory"
 msgid ""
-"The complete contents of the page will be saved. The page and any external "
-"resources it requires, such as images, will be saved inside a single "
-"directory"
+"The page will be saved as an HTML file. Any external resources the page "
+"requires, such as images, will be saved inside an apposite directory"
 msgstr ""
 "Zostanie zapisana cała treść strony. Strona i zasoby zewnętrzne, których "
 "potrzebuje, takie jak obrazy, zostaną zapisane wewnątrz pojedynczego katalogu"
@@ -551,13 +557,11 @@ msgstr ""
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
 msgid ""
-"The complete contents of the page will be saved. Both the page and any "
-"external resources it requires, such as images, will be saved in a single "
-"MHTML file"
+"The page will be saved as a MTHML file which contains both the text of the "
+"page an any external resources it requires, such as images. "
+"<br><strong>Note</strong>: not all browsers are able to display this kind of "
+"files"
 msgstr ""
-"Zostanie zapisana cała treść strony. Zarówno strona i zasoby zewnętrzne, "
-"których potrzebuje, takie jak obrazy, zostaną zapisane w pojedynczym pliku "
-"MHTML"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
@@ -574,24 +578,26 @@ msgstr "Jak zapisać stronę?"
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
-msgid "As a &Single HTML page"
-msgstr "Jako pojedyncza &strona HTML"
+msgid "As an HTML file &without external resources"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
-#, kde-format
-msgid "As &directory"
-msgstr "W &katalogu"
+#, fuzzy, kde-format
+#| msgid "As a &Single HTML page"
+msgid "As a &complete HTML page"
+msgstr "Jako pojedyncza &strona HTML"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
-#, kde-format
-msgid "As single MHTML file"
+#, fuzzy, kde-format
+#| msgid "As single MHTML file"
+msgid "As a &MHTML file"
 msgstr "Jako pojedynczy plik MHTML"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: src/choosepagesaveformatdlg.ui:51 src/webenginepartcertificateerrordlg.ui:23
+#: src/choosepagesaveformatdlg.ui:57 src/webenginepartcertificateerrordlg.ui:23
 #, kde-format
 msgid "TextLabel"
 msgstr "Etykieta tekstowa"
@@ -1309,30 +1315,30 @@ msgstr "&Przedmiot"
 msgid "&Issuer"
 msgstr "&Wydawca"
 
-#: src/webenginepartdownloadmanager.cpp:304
+#: src/webenginepartdownloadmanager.cpp:295
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Przy zapisywaniu pliku wystąpił błąd: %1"
 
-#: src/webenginepartdownloadmanager.cpp:312
+#: src/webenginepartdownloadmanager.cpp:303
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Pobieranie"
 
-#: src/webenginepartdownloadmanager.cpp:313
+#: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Źródło"
 
-#: src/webenginepartdownloadmanager.cpp:314
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Cel"
 
-#: src/webenginepartdownloadmanager.cpp:327
+#: src/webenginepartdownloadmanager.cpp:318
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
@@ -1640,6 +1646,18 @@ msgstr ""
 "li><li><b>ID pola: </b>%3</li><li><b>Pole jest tylko do odczytu: </b>%4</"
 "li><li><b>Pole jest włączone: </b>%5</li><li><b>Uzupełnianie jest włączone: "
 "</b>%6</li></ul>"
+
+#~ msgid ""
+#~ "The complete contents of the page will be saved. Both the page and any "
+#~ "external resources it requires, such as images, will be saved in a single "
+#~ "MHTML file"
+#~ msgstr ""
+#~ "Zostanie zapisana cała treść strony. Zarówno strona i zasoby zewnętrzne, "
+#~ "których potrzebuje, takie jak obrazy, zostaną zapisane w pojedynczym "
+#~ "pliku MHTML"
+
+#~ msgid "As &directory"
+#~ msgstr "W &katalogu"
 
 #~ msgid "Save &Frame As..."
 #~ msgstr "Zapisz &ramkę jako..."

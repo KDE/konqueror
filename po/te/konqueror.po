@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 00:46+0000\n"
+"POT-Creation-Date: 2023-06-10 00:48+0000\n"
 "PO-Revision-Date: 2009-01-16 22:16+0530\n"
 "Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
 "Language-Team: Telugu <en@li.org>\n"
@@ -456,15 +456,15 @@ msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
 msgstr ""
 
-#: src/konqapplication.cpp:409
+#: src/konqapplication.cpp:420
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4886
-#: src/konqmainwindow.cpp:4932
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4901
+#: src/konqmainwindow.cpp:4947
 #, kde-format
 msgid "no name"
 msgstr ""
@@ -553,7 +553,7 @@ msgstr ""
 msgid "Miscellaneous"
 msgstr "ఇతరత్రా"
 
-#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4417
+#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4432
 #, kde-format
 msgid "Open in New &Window"
 msgstr ""
@@ -647,7 +647,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1583 src/konqmainwindow.cpp:2281
 #: src/konqmainwindow.cpp:2374 src/konqmainwindow.cpp:2406
 #: src/konqmainwindow.cpp:2449 src/konqmainwindow.cpp:2471
-#: src/konqmainwindow.cpp:4854
+#: src/konqmainwindow.cpp:4869
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -656,7 +656,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1583 src/konqmainwindow.cpp:2281
 #: src/konqmainwindow.cpp:2374 src/konqmainwindow.cpp:2406
 #: src/konqmainwindow.cpp:2449 src/konqmainwindow.cpp:2472
-#: src/konqmainwindow.cpp:4854
+#: src/konqmainwindow.cpp:4869
 #, kde-format
 msgid "&Discard Changes"
 msgstr ""
@@ -666,7 +666,7 @@ msgstr ""
 msgid "Home Folder"
 msgstr "ఇంటి ఫొల్డర్"
 
-#: src/konqmainwindow.cpp:1952 src/konqmainwindow.cpp:3425
+#: src/konqmainwindow.cpp:1952 src/konqmainwindow.cpp:3440
 #, kde-format
 msgid "Home"
 msgstr ""
@@ -726,7 +726,7 @@ msgstr ""
 msgid "Do you really want to close all other tabs?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:2432 src/konqmainwindow.cpp:3506 src/konqtabs.cpp:335
+#: src/konqmainwindow.cpp:2432 src/konqmainwindow.cpp:3521 src/konqtabs.cpp:335
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr ""
@@ -751,273 +751,273 @@ msgid ""
 "Reloading all tabs will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2512
+#: src/konqmainwindow.cpp:2527
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Target"
 msgstr ""
 
-#: src/konqmainwindow.cpp:2519
+#: src/konqmainwindow.cpp:2534
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:2529
+#: src/konqmainwindow.cpp:2544
 #, kde-format
 msgid "Copy selected files from %1 to:"
 msgstr ""
 
-#: src/konqmainwindow.cpp:2542
+#: src/konqmainwindow.cpp:2557
 #, kde-format
 msgid "Move selected files from %1 to:"
 msgstr ""
 
-#: src/konqmainwindow.cpp:2716
+#: src/konqmainwindow.cpp:2731
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
 msgstr ""
 
-#: src/konqmainwindow.cpp:2739
+#: src/konqmainwindow.cpp:2754
 #, kde-format
 msgid "Save As..."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2741
+#: src/konqmainwindow.cpp:2756
 #, kde-format
 msgid "Manage..."
 msgstr ""
 
-#: src/konqmainwindow.cpp:3334
+#: src/konqmainwindow.cpp:3349
 #, kde-format
 msgid "New &Window"
 msgstr "(&W) కొత్త విండొ"
 
-#: src/konqmainwindow.cpp:3339
+#: src/konqmainwindow.cpp:3354
 #, kde-format
 msgid "&Duplicate Window"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3344
+#: src/konqmainwindow.cpp:3359
 #, kde-format
 msgid "Send &Link Address..."
 msgstr ""
 
-#: src/konqmainwindow.cpp:3348
+#: src/konqmainwindow.cpp:3363
 #, kde-format
 msgid "S&end File..."
 msgstr ""
 
-#: src/konqmainwindow.cpp:3352
+#: src/konqmainwindow.cpp:3367
 #, kde-format
 msgid "&Open Location"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3358
+#: src/konqmainwindow.cpp:3373
 #, kde-format
 msgid "&Open File..."
 msgstr ""
 
-#: src/konqmainwindow.cpp:3363
+#: src/konqmainwindow.cpp:3378
 #, kde-format
 msgid "&Find File..."
 msgstr ""
 
-#: src/konqmainwindow.cpp:3372
+#: src/konqmainwindow.cpp:3387
 #, kde-format
 msgid "Lock to Current Location"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3375
+#: src/konqmainwindow.cpp:3390
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3380
+#: src/konqmainwindow.cpp:3395
 #, kde-format
 msgid "&Up"
 msgstr "(&U) పైకి"
 
-#: src/konqmainwindow.cpp:3390
+#: src/konqmainwindow.cpp:3405
 #, kde-format
 msgid "Closed Items"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3403
+#: src/konqmainwindow.cpp:3418
 #, kde-format
 msgid "Sessions"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3430
+#: src/konqmainwindow.cpp:3445
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3434
+#: src/konqmainwindow.cpp:3449
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3443
+#: src/konqmainwindow.cpp:3458
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3456
+#: src/konqmainwindow.cpp:3471
 #, kde-format
 msgid "Configure Extensions..."
 msgstr ""
 
-#: src/konqmainwindow.cpp:3460
+#: src/konqmainwindow.cpp:3475
 #, kde-format
 msgid "Configure Spell Checking..."
 msgstr ""
 
-#: src/konqmainwindow.cpp:3466
+#: src/konqmainwindow.cpp:3481
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3471
+#: src/konqmainwindow.cpp:3486
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3476 src/konqtabs.cpp:456
+#: src/konqmainwindow.cpp:3491 src/konqtabs.cpp:456
 #, kde-format
 msgid "&New Tab"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3485
+#: src/konqmainwindow.cpp:3500
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3490
+#: src/konqmainwindow.cpp:3505
 #, kde-format
 msgid "Detach Current Tab"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3495
+#: src/konqmainwindow.cpp:3510
 #, kde-format
 msgid "&Close Active View"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3500
+#: src/konqmainwindow.cpp:3515
 #, kde-format
 msgid "Close Current Tab"
 msgstr "ప్రస్తుత టాబ్ మూసివేయి"
 
-#: src/konqmainwindow.cpp:3510
+#: src/konqmainwindow.cpp:3525
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "తరువాతి టాబ్‌ను క్రియాశీలంచేయుము"
 
-#: src/konqmainwindow.cpp:3514
+#: src/konqmainwindow.cpp:3529
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "గత టాబ్‌ను క్రియాశీలంచేయుము"
 
-#: src/konqmainwindow.cpp:3521
+#: src/konqmainwindow.cpp:3536
 #, kde-format
 msgid "Activate Tab %1"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3526
+#: src/konqmainwindow.cpp:3541
 #, kde-format
 msgid "Move Tab Left"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3531
+#: src/konqmainwindow.cpp:3546
 #, kde-format
 msgid "Move Tab Right"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3539
+#: src/konqmainwindow.cpp:3554
 #, kde-format
 msgid "Dump Debug Info"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3557
+#: src/konqmainwindow.cpp:3572
 #, kde-format
 msgid "&Reload"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3562 src/konqtabs.cpp:313
+#: src/konqmainwindow.cpp:3577 src/konqtabs.cpp:313
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3570
+#: src/konqmainwindow.cpp:3585
 #, kde-format
 msgid "&Force Reload"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3596
+#: src/konqmainwindow.cpp:3611
 #, kde-format
 msgid "&Stop"
 msgstr "(&S) ఆపు"
 
-#: src/konqmainwindow.cpp:3605
+#: src/konqmainwindow.cpp:3620
 #, kde-format
 msgid "Throbber"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3609 src/konqmainwindow.cpp:3612
+#: src/konqmainwindow.cpp:3624 src/konqmainwindow.cpp:3627
 #, kde-format
 msgid "L&ocation: "
 msgstr ""
 
-#: src/konqmainwindow.cpp:3619
+#: src/konqmainwindow.cpp:3634
 #, kde-format
 msgid "Location Bar"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3625
+#: src/konqmainwindow.cpp:3640
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3629
+#: src/konqmainwindow.cpp:3644
 #, kde-format
 msgid "Clear Location Bar"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3633
+#: src/konqmainwindow.cpp:3648
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
 "</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3638
+#: src/konqmainwindow.cpp:3653
 #, kde-format
 msgid "&Bookmarks"
 msgstr "(&B) పేజీ గుర్తులు"
 
-#: src/konqmainwindow.cpp:3666
+#: src/konqmainwindow.cpp:3681
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3671
+#: src/konqmainwindow.cpp:3686
 #, kde-format
 msgid "Go"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3673
+#: src/konqmainwindow.cpp:3688
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
 "bar.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3681
+#: src/konqmainwindow.cpp:3696
 #, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
@@ -1025,27 +1025,27 @@ msgid ""
 "html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3684
+#: src/konqmainwindow.cpp:3699
 #, kde-format
 msgid "Enter the parent folder"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3686 src/konqmainwindow.cpp:3687
+#: src/konqmainwindow.cpp:3701 src/konqmainwindow.cpp:3702
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3689 src/konqmainwindow.cpp:3690
+#: src/konqmainwindow.cpp:3704 src/konqmainwindow.cpp:3705
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3692 src/konqmainwindow.cpp:3693
+#: src/konqmainwindow.cpp:3707 src/konqmainwindow.cpp:3708
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3695
+#: src/konqmainwindow.cpp:3710
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1053,12 +1053,12 @@ msgid ""
 "were loaded, in order to make the changes visible.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3698
+#: src/konqmainwindow.cpp:3713
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3700
+#: src/konqmainwindow.cpp:3715
 #, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1066,12 +1066,12 @@ msgid ""
 "they were loaded, in order to make the changes visible.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3703
+#: src/konqmainwindow.cpp:3718
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3705
+#: src/konqmainwindow.cpp:3720
 #, kde-format
 msgid ""
 "<html>Stop loading the document<br /><br />All network transfers will be "
@@ -1079,7 +1079,7 @@ msgid ""
 "</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3709
+#: src/konqmainwindow.cpp:3724
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1088,18 +1088,18 @@ msgid ""
 "are downloaded again, even if cached copies exist.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3713
+#: src/konqmainwindow.cpp:3728
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3715
+#: src/konqmainwindow.cpp:3730
 #, kde-format
 msgid "Stop loading the document"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3717
+#: src/konqmainwindow.cpp:3732
 #, kde-format
 msgid ""
 "<html>Cut the currently selected text or item(s) and move it to the system "
@@ -1107,12 +1107,12 @@ msgid ""
 "Konqueror and other KDE applications.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3721
+#: src/konqmainwindow.cpp:3736
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3723
+#: src/konqmainwindow.cpp:3738
 #, kde-format
 msgid ""
 "<html>Copy the currently selected text or item(s) to the system "
@@ -1120,24 +1120,24 @@ msgid ""
 "Konqueror and other KDE applications.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3727
+#: src/konqmainwindow.cpp:3742
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3729
+#: src/konqmainwindow.cpp:3744
 #, kde-format
 msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
 "also works for text copied or cut from other KDE applications.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3732
+#: src/konqmainwindow.cpp:3747
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3734
+#: src/konqmainwindow.cpp:3749
 #, kde-format
 msgid ""
 "<html>Print the currently displayed document<br /><br />You will be "
@@ -1147,181 +1147,181 @@ msgid ""
 "file from the current document.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3740
+#: src/konqmainwindow.cpp:3755
 #, kde-format
 msgid "Print the current document"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3742
+#: src/konqmainwindow.cpp:3757
 #, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
 "explore many files from one folder"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3743
+#: src/konqmainwindow.cpp:3758
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
 "other linked views."
 msgstr ""
 
-#: src/konqmainwindow.cpp:3747
+#: src/konqmainwindow.cpp:3762
 #, fuzzy, kde-format
 #| msgid "Close Current Tab"
 msgid "&Inspect Current Page"
 msgstr "ప్రస్తుత టాబ్ మూసివేయి"
 
-#: src/konqmainwindow.cpp:3748
+#: src/konqmainwindow.cpp:3763
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3749
+#: src/konqmainwindow.cpp:3764
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3915
+#: src/konqmainwindow.cpp:3930
 #, kde-format
 msgid "Copy &Files..."
 msgstr ""
 
-#: src/konqmainwindow.cpp:3919
+#: src/konqmainwindow.cpp:3934
 #, kde-format
 msgid "M&ove Files..."
 msgstr ""
 
-#: src/konqmainwindow.cpp:4248
+#: src/konqmainwindow.cpp:4263
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
 "while. Continue?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4250
+#: src/konqmainwindow.cpp:4265
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4251
+#: src/konqmainwindow.cpp:4266
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4410
+#: src/konqmainwindow.cpp:4425
 #, kde-format
 msgid "Open in T&his Window"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4411
+#: src/konqmainwindow.cpp:4426
 #, kde-format
 msgid "Open the document in current window"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4418
+#: src/konqmainwindow.cpp:4433
 #, kde-format
 msgid "Open the document in a new window"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4424
+#: src/konqmainwindow.cpp:4439
 #, kde-format
 msgid "Open in &New Tab"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4426
+#: src/konqmainwindow.cpp:4441
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4642
+#: src/konqmainwindow.cpp:4657
 #, kde-format
 msgid "&Open With"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4655
+#: src/konqmainwindow.cpp:4670
 #, kde-format
 msgid "Open with %1"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4703
+#: src/konqmainwindow.cpp:4718
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4820
+#: src/konqmainwindow.cpp:4835
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4822
+#: src/konqmainwindow.cpp:4837
 #, fuzzy, kde-format
 #| msgid "Confirmation"
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "నిర్ధారణ"
 
-#: src/konqmainwindow.cpp:4824
+#: src/konqmainwindow.cpp:4839
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4850
+#: src/konqmainwindow.cpp:4865
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:4851
+#: src/konqmainwindow.cpp:4866
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5023
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr ""
 
-#: src/konqmainwindow.cpp:5008 src/konqmainwindow.cpp:5015
+#: src/konqmainwindow.cpp:5023 src/konqmainwindow.cpp:5030
 #, fuzzy, kde-format
 #| msgid "&Close Tab"
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "(&C) టాబ్ ను మూసివెయి"
 
-#: src/konqmainwindow.cpp:5013
+#: src/konqmainwindow.cpp:5028
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5015
+#: src/konqmainwindow.cpp:5030
 #, kde-format
 msgid "Add"
 msgstr "జతచేయి"
 
-#: src/konqmainwindow.cpp:5015
+#: src/konqmainwindow.cpp:5030
 #, kde-format
 msgid "Do Not Add"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5363
+#: src/konqmainwindow.cpp:5378
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
 "with %1, but it cannot handle this file type."
 msgstr ""
 
-#: src/konqmainwindow.cpp:5444
+#: src/konqmainwindow.cpp:5459
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1334,22 +1334,22 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5449
+#: src/konqmainwindow.cpp:5464
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5449
+#: src/konqmainwindow.cpp:5464
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5450 src/konqmainwindow.cpp:5468
+#: src/konqmainwindow.cpp:5465 src/konqmainwindow.cpp:5483
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5464
+#: src/konqmainwindow.cpp:5479
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1358,22 +1358,22 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5467
+#: src/konqmainwindow.cpp:5482
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5468
+#: src/konqmainwindow.cpp:5483
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5468
+#: src/konqmainwindow.cpp:5483
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5545
+#: src/konqmainwindow.cpp:5560
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "

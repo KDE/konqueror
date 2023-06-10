@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 00:46+0000\n"
+"POT-Creation-Date: 2023-06-10 00:48+0000\n"
 "PO-Revision-Date: 2023-04-22 00:37+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -513,20 +513,26 @@ msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>MIME 형식</td><td>설명</td><td>접미사</td><td>플러그인</td>"
 
 #: src/choosepagesaveformatdlg.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The page is saved as a single HTML page. Only the text of the page will "
+#| "be saved. External resources such as images won't be saved"
 msgid ""
-"The page is saved as a single HTML page. Only the text of the page will be "
-"saved. External resources such as images won't be saved"
+"The page will be saved as a single HTML file. Only the text of the page will "
+"be saved. External resources such as images won't be saved"
 msgstr ""
 "단일 HTML 페이지로 저장합니다. 페이지 텍스트만 저장하며 그림과 같은 외부 자원"
 "은 저장하지 않습니다"
 
 #: src/choosepagesaveformatdlg.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The complete contents of the page will be saved. The page and any "
+#| "external resources it requires, such as images, will be saved inside a "
+#| "single directory"
 msgid ""
-"The complete contents of the page will be saved. The page and any external "
-"resources it requires, such as images, will be saved inside a single "
-"directory"
+"The page will be saved as an HTML file. Any external resources the page "
+"requires, such as images, will be saved inside an apposite directory"
 msgstr ""
 "페이지 전체 내용을 저장합니다. 페이지와 그림 등 외부 참조를 단일 디렉터리에 "
 "저장합니다"
@@ -534,12 +540,11 @@ msgstr ""
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
 msgid ""
-"The complete contents of the page will be saved. Both the page and any "
-"external resources it requires, such as images, will be saved in a single "
-"MHTML file"
+"The page will be saved as a MTHML file which contains both the text of the "
+"page an any external resources it requires, such as images. "
+"<br><strong>Note</strong>: not all browsers are able to display this kind of "
+"files"
 msgstr ""
-"페이지 전체 내용을 저장합니다. 페이지와 그림 등 외부 참조를 단일 MHTML 파일"
-"로 저장합니다"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
@@ -556,24 +561,26 @@ msgstr "페이지를 어떻게 저장하시겠습니까?"
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
-msgid "As a &Single HTML page"
-msgstr "단일 HTML 페이지로(&S)"
+msgid "As an HTML file &without external resources"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
-#, kde-format
-msgid "As &directory"
-msgstr "디렉터리로(&D)"
+#, fuzzy, kde-format
+#| msgid "As a &Single HTML page"
+msgid "As a &complete HTML page"
+msgstr "단일 HTML 페이지로(&S)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
-#, kde-format
-msgid "As single MHTML file"
+#, fuzzy, kde-format
+#| msgid "As single MHTML file"
+msgid "As a &MHTML file"
 msgstr "단일 MHTML 파일로"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: src/choosepagesaveformatdlg.ui:51 src/webenginepartcertificateerrordlg.ui:23
+#: src/choosepagesaveformatdlg.ui:57 src/webenginepartcertificateerrordlg.ui:23
 #, kde-format
 msgid "TextLabel"
 msgstr "텍스트 레이블"
@@ -1280,30 +1287,30 @@ msgstr "주체(&S)"
 msgid "&Issuer"
 msgstr "발급자(&I):"
 
-#: src/webenginepartdownloadmanager.cpp:304
+#: src/webenginepartdownloadmanager.cpp:295
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "파일을 저장하는 중 오류 발생: %1"
 
-#: src/webenginepartdownloadmanager.cpp:312
+#: src/webenginepartdownloadmanager.cpp:303
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "다운로드"
 
-#: src/webenginepartdownloadmanager.cpp:313
+#: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "원본"
 
-#: src/webenginepartdownloadmanager.cpp:314
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "대상"
 
-#: src/webenginepartdownloadmanager.cpp:327
+#: src/webenginepartdownloadmanager.cpp:318
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
@@ -1610,6 +1617,17 @@ msgstr ""
 "<ul><li><b>필드 내부 이름: </b>%1</li><li><b>필드 종류: </b>%2</li><li><b>필"
 "드 ID: </b>%3</li><li><b>필드 읽기 전용 여부: </b>%4</li><li><b>필드 활성화 "
 "여부: </b>%5</li><li><b>자동 완성 활성화 여부: </b>%6</li></ul>"
+
+#~ msgid ""
+#~ "The complete contents of the page will be saved. Both the page and any "
+#~ "external resources it requires, such as images, will be saved in a single "
+#~ "MHTML file"
+#~ msgstr ""
+#~ "페이지 전체 내용을 저장합니다. 페이지와 그림 등 외부 참조를 단일 MHTML 파"
+#~ "일로 저장합니다"
+
+#~ msgid "As &directory"
+#~ msgstr "디렉터리로(&D)"
 
 #~ msgid "Save &Frame As..."
 #~ msgstr "프레임을 다른 이름으로 저장(&F)..."

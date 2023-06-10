@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 00:46+0000\n"
+"POT-Creation-Date: 2023-06-10 00:48+0000\n"
 "PO-Revision-Date: 2023-05-18 14:05+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -532,20 +532,26 @@ msgstr ""
 "<td>Liitännäinen</td>"
 
 #: src/choosepagesaveformatdlg.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The page is saved as a single HTML page. Only the text of the page will "
+#| "be saved. External resources such as images won't be saved"
 msgid ""
-"The page is saved as a single HTML page. Only the text of the page will be "
-"saved. External resources such as images won't be saved"
+"The page will be saved as a single HTML file. Only the text of the page will "
+"be saved. External resources such as images won't be saved"
 msgstr ""
 "Tallentaa sivun yhdeksi HTML-tiedostoksi. Vain sivun teksti tallentuu, eivät "
 "ulkoiset resurssit kuten kuvat"
 
 #: src/choosepagesaveformatdlg.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The complete contents of the page will be saved. The page and any "
+#| "external resources it requires, such as images, will be saved inside a "
+#| "single directory"
 msgid ""
-"The complete contents of the page will be saved. The page and any external "
-"resources it requires, such as images, will be saved inside a single "
-"directory"
+"The page will be saved as an HTML file. Any external resources the page "
+"requires, such as images, will be saved inside an apposite directory"
 msgstr ""
 "Tallentaa sivun koko sisällön. Sivu kaikkine vaadittuine ulkoisine "
 "resursseineen kuten kuvineen tallennetaan yksittäiseen kansioon"
@@ -553,12 +559,11 @@ msgstr ""
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
 msgid ""
-"The complete contents of the page will be saved. Both the page and any "
-"external resources it requires, such as images, will be saved in a single "
-"MHTML file"
+"The page will be saved as a MTHML file which contains both the text of the "
+"page an any external resources it requires, such as images. "
+"<br><strong>Note</strong>: not all browsers are able to display this kind of "
+"files"
 msgstr ""
-"Tallentaa sivun koko sisällön. Sivu kaikkine vaadittuine ulkoisine "
-"resursseineen kuten kuvineen tallennetaan yhdeksi MHTML-tiedostoksi"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
@@ -575,24 +580,26 @@ msgstr "Miten haluat sivun tallentaa?"
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
-msgid "As a &Single HTML page"
-msgstr "&Yhdeksi HTML-sivuksi"
+msgid "As an HTML file &without external resources"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
-#, kde-format
-msgid "As &directory"
-msgstr "&Kansioksi"
+#, fuzzy, kde-format
+#| msgid "As a &Single HTML page"
+msgid "As a &complete HTML page"
+msgstr "&Yhdeksi HTML-sivuksi"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
-#, kde-format
-msgid "As single MHTML file"
+#, fuzzy, kde-format
+#| msgid "As single MHTML file"
+msgid "As a &MHTML file"
 msgstr "Yhdeksi MHTML-tiedostoksi"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: src/choosepagesaveformatdlg.ui:51 src/webenginepartcertificateerrordlg.ui:23
+#: src/choosepagesaveformatdlg.ui:57 src/webenginepartcertificateerrordlg.ui:23
 #, kde-format
 msgid "TextLabel"
 msgstr "Tekstiselite"
@@ -1301,30 +1308,30 @@ msgstr "Ai&he"
 msgid "&Issuer"
 msgstr "M&yöntäjä"
 
-#: src/webenginepartdownloadmanager.cpp:304
+#: src/webenginepartdownloadmanager.cpp:295
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Tiedostoa tallennettaessa tapahtui virhe: %1"
 
-#: src/webenginepartdownloadmanager.cpp:312
+#: src/webenginepartdownloadmanager.cpp:303
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Ladataan"
 
-#: src/webenginepartdownloadmanager.cpp:313
+#: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Lähde"
 
-#: src/webenginepartdownloadmanager.cpp:314
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Kohde"
 
-#: src/webenginepartdownloadmanager.cpp:327
+#: src/webenginepartdownloadmanager.cpp:318
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
@@ -1634,6 +1641,17 @@ msgstr ""
 "li><li><b>Kentän tunniste:</b> %3</li><li><b>Kenttä on vain luettavissa:</b> "
 "%4</li><li><b>Kenttä on käytössä:</b> %5</li><li><b>Automaattitäydennys on "
 "käytössä:</b> %6</li></ul>"
+
+#~ msgid ""
+#~ "The complete contents of the page will be saved. Both the page and any "
+#~ "external resources it requires, such as images, will be saved in a single "
+#~ "MHTML file"
+#~ msgstr ""
+#~ "Tallentaa sivun koko sisällön. Sivu kaikkine vaadittuine ulkoisine "
+#~ "resursseineen kuten kuvineen tallennetaan yhdeksi MHTML-tiedostoksi"
+
+#~ msgid "As &directory"
+#~ msgstr "&Kansioksi"
 
 #~ msgid "Save &Frame As..."
 #~ msgstr "Tallenna ke&hys nimellä…"

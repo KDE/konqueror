@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 00:46+0000\n"
+"POT-Creation-Date: 2023-06-10 00:48+0000\n"
 "PO-Revision-Date: 2023-03-13 21:10+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -544,20 +544,26 @@ msgstr ""
 "<td>Tipo MIME</td><td>Descripción</td><td>Sufijos</td><td>Complemento</td>"
 
 #: src/choosepagesaveformatdlg.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The page is saved as a single HTML page. Only the text of the page will "
+#| "be saved. External resources such as images won't be saved"
 msgid ""
-"The page is saved as a single HTML page. Only the text of the page will be "
-"saved. External resources such as images won't be saved"
+"The page will be saved as a single HTML file. Only the text of the page will "
+"be saved. External resources such as images won't be saved"
 msgstr ""
 "La página se guarda como página HTML única. Solo se guardará el texto de la "
 "página. Los recursos externos, como las imágenes, no se guardarán."
 
 #: src/choosepagesaveformatdlg.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The complete contents of the page will be saved. The page and any "
+#| "external resources it requires, such as images, will be saved inside a "
+#| "single directory"
 msgid ""
-"The complete contents of the page will be saved. The page and any external "
-"resources it requires, such as images, will be saved inside a single "
-"directory"
+"The page will be saved as an HTML file. Any external resources the page "
+"requires, such as images, will be saved inside an apposite directory"
 msgstr ""
 "Se guardará el contenido completo de la página. La página y cualquier "
 "recurso externo que necesite, como las imágenes, se guardarán dentro de un "
@@ -566,13 +572,11 @@ msgstr ""
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
 msgid ""
-"The complete contents of the page will be saved. Both the page and any "
-"external resources it requires, such as images, will be saved in a single "
-"MHTML file"
+"The page will be saved as a MTHML file which contains both the text of the "
+"page an any external resources it requires, such as images. "
+"<br><strong>Note</strong>: not all browsers are able to display this kind of "
+"files"
 msgstr ""
-"Se guardará el contenido completo de la página. Tanto la página como "
-"cualquier recurso externo que necesite, como las imágenes, se guardarán "
-"dentro de un único archivo MHTML."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
@@ -589,24 +593,26 @@ msgstr "¿Cómo le gustaría guardar la página?"
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
-msgid "As a &Single HTML page"
-msgstr "Como una sola &página HTML"
+msgid "As an HTML file &without external resources"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
-#, kde-format
-msgid "As &directory"
-msgstr "Como &directorio"
+#, fuzzy, kde-format
+#| msgid "As a &Single HTML page"
+msgid "As a &complete HTML page"
+msgstr "Como una sola &página HTML"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
-#, kde-format
-msgid "As single MHTML file"
+#, fuzzy, kde-format
+#| msgid "As single MHTML file"
+msgid "As a &MHTML file"
 msgstr "Como un solo archivo MHTML"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: src/choosepagesaveformatdlg.ui:51 src/webenginepartcertificateerrordlg.ui:23
+#: src/choosepagesaveformatdlg.ui:57 src/webenginepartcertificateerrordlg.ui:23
 #, kde-format
 msgid "TextLabel"
 msgstr "Etiqueta de texto"
@@ -1320,30 +1326,30 @@ msgstr "&Asunto"
 msgid "&Issuer"
 msgstr "&Emisor"
 
-#: src/webenginepartdownloadmanager.cpp:304
+#: src/webenginepartdownloadmanager.cpp:295
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Ha ocurrido un error al guardar el archivo: %1"
 
-#: src/webenginepartdownloadmanager.cpp:312
+#: src/webenginepartdownloadmanager.cpp:303
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Descargando"
 
-#: src/webenginepartdownloadmanager.cpp:313
+#: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Origen"
 
-#: src/webenginepartdownloadmanager.cpp:314
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Destino"
 
-#: src/webenginepartdownloadmanager.cpp:327
+#: src/webenginepartdownloadmanager.cpp:318
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
@@ -1651,6 +1657,18 @@ msgstr ""
 "%2</li><li><b>ID del campo: </b>%3</li><li><b>Campo de solo lectura: </b>%4</"
 "li><li><b>Campo activado: </b>%5</li><li><b>Terminación automática activada: "
 "</b>%6</li></ul>"
+
+#~ msgid ""
+#~ "The complete contents of the page will be saved. Both the page and any "
+#~ "external resources it requires, such as images, will be saved in a single "
+#~ "MHTML file"
+#~ msgstr ""
+#~ "Se guardará el contenido completo de la página. Tanto la página como "
+#~ "cualquier recurso externo que necesite, como las imágenes, se guardarán "
+#~ "dentro de un único archivo MHTML."
+
+#~ msgid "As &directory"
+#~ msgstr "Como &directorio"
 
 #~ msgid "Save &Frame As..."
 #~ msgstr "Guardar &marco como..."

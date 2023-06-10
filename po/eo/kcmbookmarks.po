@@ -9,10 +9,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kcmkio\n"
+"Project-Id-Version: kcmbookmarks\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-10-01 00:18+0000\n"
-"PO-Revision-Date: 2023-01-05 14:30+0100\n"
+"PO-Revision-Date: 2023-06-09 20:56+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -29,6 +29,9 @@ msgid ""
 "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
 "\">bookmarks:/</a>.</p>"
 msgstr ""
+"<h1>Miaj legosignoj</h1><p>Ĉi tiu modulo ebligas al vi agordi la ĉefpaĝon de "
+"legosignoj.</p><p>La ĉefpaĝo de legosignoj estas alirebla ĉe <a href="
+"\"bookmarks:/\">bookmarks:/</a>.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -44,12 +47,15 @@ msgid ""
 "a folder) are not displayed.\n"
 "If checked, they are gathered in a \"root\" folder."
 msgstr ""
+"Se ĉi tiu opcio estas nemarkita, legosignoj ĉe la radiko de la hierarkio (ne "
+"en dosierujo) ne estas montrataj.\n"
+"Se markite, ili estas kolektitaj en dosierujo \"radiko\"."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
 #: bookmarks.ui:26
 #, kde-format
 msgid "&Show bookmarks without folder"
-msgstr ""
+msgstr "Montri lego&signojn sen dosierujo"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
 #: bookmarks.ui:37
@@ -60,6 +66,10 @@ msgid ""
 "It looks less nice but it may help if you have a very big folder you want to "
 "spread in two columns."
 msgstr ""
+"Subdosierujoj estas montritaj ene de sia gepatro defaŭlte. Se vi aktivigas "
+"ĉi tiun opcion, subdosierujoj montriĝas memstare.\n"
+"Ĝi aspektas malpli bela sed eble helpos se vi havas tre grandan dosierujon, "
+"kiun vi volas disvastigi en du kolumnoj."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
 #: bookmarks.ui:40
@@ -74,6 +84,8 @@ msgid ""
 "Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
 "as a file manager."
 msgstr ""
+"Montru skatolon kun KDE-lokoj (Hejmo, Reto, ...). Utila se vi uzas konqueror "
+"kiel dosieradministranton."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
 #: bookmarks.ui:50
@@ -95,6 +107,9 @@ msgid ""
 "of columns depends on the width of the konqueror window and the number of "
 "bookmarks you have."
 msgstr ""
+"Dosierujoj estas aŭtomate distribuitaj en pluraj kolumnoj. La optimuma "
+"nombro da kolumnoj dependas de la larĝo de la konqueror-fenestro kaj la "
+"nombro da legosignoj kiujn vi havas."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: bookmarks.ui:74
