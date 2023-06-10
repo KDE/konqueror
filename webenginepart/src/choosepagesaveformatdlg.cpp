@@ -40,7 +40,7 @@ void ChoosePageSaveFormatDlg::updateInfoText(int id)
             info = i18n("The page will be saved as an HTML file. Any external resources the page requires, such as images, will be saved inside an apposite directory");
             break;
         case QWebEngineDownloadItem::MimeHtmlSaveFormat:
-            info = i18n("The page will be saved as a MTHML file which contains both the text of the page an any external resources it requires, such as images. <br><strong>Note</strong>: not all browsers are able to display this kind of files");
+            info = i18n("The page will be saved as a MTHML file which contains both the text of the page and any external resources it requires, such as images. <br><strong>Note</strong>: not all browsers are able to display this kind of files");
             break;
         case QWebEngineDownloadItem::UnknownSaveFormat: //This should never happen
             info = QString();
