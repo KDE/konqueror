@@ -1,5 +1,6 @@
 # translation of kcmperformance.po to Esperanto
 # Copyright (C) 2003, 2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the konqueror package.
 # Heiko Evermann <heiko@evermann.de>, 2003.
 # Cindy McKee <cfmckee@gmail.com>, 2007.
 # Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
@@ -9,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-10-21 00:16+0000\n"
-"PO-Revision-Date: 2023-03-25 16:10+0100\n"
+"PO-Revision-Date: 2023-06-10 09:59+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -57,6 +58,11 @@ msgid ""
 "be able to work while it is loading, so you may not even notice that it is "
 "taking longer).</p>"
 msgstr ""
+"<p>Se ĝi estas ebligita, ekzemplero de Konqueror estos antaŭŝargita post la "
+"ordinara Plasma lanĉa sekvenco.</p><p>Ĉi tio igos la unuan Konqueror-"
+"fenestron malfermiĝi pli rapide, sed koste de pli longaj Plasma lanĉtempoj "
+"(sed vi faros povi funkcii dum ĝi ŝargas, do vi eble eĉ ne rimarkos, ke ĝi "
+"daŭras pli longe).</p>"
 
 #: konqueror.cpp:30
 #, kde-format
@@ -67,6 +73,10 @@ msgid ""
 "In some cases, it is actually possible that this will reduce perceived "
 "performance.</p>"
 msgstr ""
+"<p>Se ebligita, Konqueror ĉiam provos havi unu antaŭŝargitan ekzempleron "
+"preta; antaŭŝargi novan kazon en la fono kiam ajn ne estas disponebla, tiel "
+"ke fenestroj ĉiam malfermos rapide.</p><p><b>Averto:</b> En iuj kazoj, "
+"efektive eblas, ke tio reduktos perceptita rendimento.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
 #: konqueror_ui.ui:17

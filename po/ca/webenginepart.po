@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-10 00:48+0000\n"
-"PO-Revision-Date: 2023-03-13 10:29+0100\n"
+"POT-Creation-Date: 2023-06-11 00:47+0000\n"
+"PO-Revision-Date: 2023-06-10 09:54+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -535,39 +535,40 @@ msgstr ""
 "<td>Tipus MIME</td><td>Descripció</td><td>Sufixos</td><td>Connector</td>"
 
 #: src/choosepagesaveformatdlg.cpp:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "The page is saved as a single HTML page. Only the text of the page will "
-#| "be saved. External resources such as images won't be saved"
+#, kde-format
 msgid ""
 "The page will be saved as a single HTML file. Only the text of the page will "
 "be saved. External resources such as images won't be saved"
 msgstr ""
-"La pàgina es desarà com una pàgina HTML individual. Només es desarà el text "
+"La pàgina es desarà com un fitxer HTML individual. Només es desarà el text "
 "de la pàgina. No es desaran els recursos externs com ara les imatges"
 
 #: src/choosepagesaveformatdlg.cpp:40
-#, fuzzy, kde-format
-#| msgid ""
-#| "The complete contents of the page will be saved. The page and any "
-#| "external resources it requires, such as images, will be saved inside a "
-#| "single directory"
+#, kde-format
 msgid ""
 "The page will be saved as an HTML file. Any external resources the page "
 "requires, such as images, will be saved inside an apposite directory"
 msgstr ""
-"Es desarà el contingut complet de la pàgina. La pàgina i els recursos "
-"externs que requereixi, com ara les imatges, es desaran dins d'un directori "
-"individual"
+"La pàgina es desarà com un fitxer HTML. Qualsevol recurs extern requerit per "
+"la pàgina, com ara imatges, es desarà dins d'un directori adequat"
 
 #: src/choosepagesaveformatdlg.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The page will be saved as a MTHML file which contains both the text of "
+#| "the page an any external resources it requires, such as images. "
+#| "<br><strong>Note</strong>: not all browsers are able to display this kind "
+#| "of files"
 msgid ""
 "The page will be saved as a MTHML file which contains both the text of the "
-"page an any external resources it requires, such as images. "
+"page and any external resources it requires, such as images. "
 "<br><strong>Note</strong>: not all browsers are able to display this kind of "
 "files"
 msgstr ""
+"La pàgina es desarà com un fitxer MTHML que conté tant el text de la pàgina "
+"com qualsevol recurs extern que requereixi, com ara imatges. "
+"<br><strong>Nota</strong>: no tots els navegadors poden mostrar aquest tipus "
+"de fitxers"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
@@ -585,21 +586,19 @@ msgstr "Com us agradaria desar la pàgina?"
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As an HTML file &without external resources"
-msgstr ""
+msgstr "Com un fitxer HTML &sense recursos externs"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
-#, fuzzy, kde-format
-#| msgid "As a &Single HTML page"
+#, kde-format
 msgid "As a &complete HTML page"
-msgstr "Com una pàgina &HTML individual"
+msgstr "Com una pàgina HTML &completa"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "As single MHTML file"
+#, kde-format
 msgid "As a &MHTML file"
-msgstr "Crea un fitxer MHTML individual"
+msgstr "Com un fitxer &MHTML"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -1652,15 +1651,3 @@ msgstr ""
 "li><li><b>ID del camp: </b>%3</li><li><b>El camp és de només lectura: </b>"
 "%4</li><li><b>El camp està habilitat: </b>%5</li><li><b>La compleció "
 "automàtica està habilitada: </b>%6</li></ul>"
-
-#~ msgid ""
-#~ "The complete contents of the page will be saved. Both the page and any "
-#~ "external resources it requires, such as images, will be saved in a single "
-#~ "MHTML file"
-#~ msgstr ""
-#~ "Es desarà el contingut complet de la pàgina. La pàgina i els recursos "
-#~ "externs que requereixi, com ara les imatges, es desaran dins d'un fitxer "
-#~ "MHTML individual"
-
-#~ msgid "As &directory"
-#~ msgstr "Com un &directori"

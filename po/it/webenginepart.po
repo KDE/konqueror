@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-10 00:48+0000\n"
+"POT-Creation-Date: 2023-06-11 00:47+0000\n"
 "PO-Revision-Date: 2023-03-18 11:11+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -556,13 +556,19 @@ msgstr ""
 "un'unica cartella"
 
 #: src/choosepagesaveformatdlg.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The page is saved as a single HTML page. Only the text of the page will "
+#| "be saved. External resources such as images won't be saved"
 msgid ""
 "The page will be saved as a MTHML file which contains both the text of the "
-"page an any external resources it requires, such as images. "
+"page and any external resources it requires, such as images. "
 "<br><strong>Note</strong>: not all browsers are able to display this kind of "
 "files"
 msgstr ""
+"La pagina viene salvata come pagina HTML singola. Verrà salvato solo il "
+"testo della pagina. Le risorse esterne, tipo le immagini, non verranno "
+"salvate"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14

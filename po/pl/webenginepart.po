@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-10 00:48+0000\n"
+"POT-Creation-Date: 2023-06-11 00:47+0000\n"
 "PO-Revision-Date: 2023-03-25 09:50+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -555,13 +555,18 @@ msgstr ""
 "potrzebuje, takie jak obrazy, zostaną zapisane wewnątrz pojedynczego katalogu"
 
 #: src/choosepagesaveformatdlg.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The page is saved as a single HTML page. Only the text of the page will "
+#| "be saved. External resources such as images won't be saved"
 msgid ""
 "The page will be saved as a MTHML file which contains both the text of the "
-"page an any external resources it requires, such as images. "
+"page and any external resources it requires, such as images. "
 "<br><strong>Note</strong>: not all browsers are able to display this kind of "
 "files"
 msgstr ""
+"Strona zostanie zapisana jako pojedyncza HTML. Tylko tekst na stronie "
+"zostanie zapisany. Zasoby zewnętrzne takie jak obrazy nie zostaną zapisane"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14

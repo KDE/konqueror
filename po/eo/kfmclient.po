@@ -1,16 +1,17 @@
 # translation of kfmclient.po to Esperanto
 # e-aj msĝ de kfmclient
 # Copyright (C) 1999, 2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the konqueror package.
 # Wolfram Diestel <wolfram@steloj.de>, 1999.
 # Cindy McKee <cfmckee@gmail.com>, 2007.
-#
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-10 00:46+0000\n"
-"PO-Revision-Date: 2023-03-25 16:19+0100\n"
+"PO-Revision-Date: 2023-06-10 09:59+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -23,12 +24,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Wolfram Diestel,Cindy McKee,Oliver Kellogg"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "wolfram@steloj.de,cfmckee@gmail.com,okellogg@users.sourceforge.net"
 
 #: kfmclient.cpp:55
 #, kde-format
@@ -63,7 +64,7 @@ msgstr "Argumentoj por komando"
 #: kfmclient.cpp:72
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
-msgstr ""
+msgstr "La dosieroj/URL malfermitaj de la aplikaĵo estos forigitaj post uzo"
 
 #: kfmclient.cpp:80
 #, kde-format
@@ -124,14 +125,14 @@ msgstr ""
 #: kfmclient.cpp:267
 #, kde-format
 msgid "Syntax error, not enough arguments\n"
-msgstr ""
+msgstr "Sintaksa eraro, ne sufiĉas argumentoj\n"
 
 #: kfmclient.cpp:271
 #, kde-format
 msgid "Syntax error, too many arguments\n"
-msgstr ""
+msgstr "Sintaksa eraro, tro da argumentoj\n"
 
 #: kfmclient.cpp:323
 #, kde-format
 msgid "Syntax error, unknown command '%1'\n"
-msgstr ""
+msgstr "Sintaks-eraro, nekonata komando '%1'\n"
