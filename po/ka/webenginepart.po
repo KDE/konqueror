@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-11 00:47+0000\n"
-"PO-Revision-Date: 2023-03-14 05:13+0100\n"
+"PO-Revision-Date: 2023-06-11 06:14+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -202,6 +202,8 @@ msgid ""
 "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
 "\"%2\">HTML 4.01</A>"
 msgstr ""
+"<A HREF=\"%1\">DOM-ზე</A> (დონე 1, ნაწილობრივ დონე 2) ბაზირებული<A HREF="
+"\"%2\">HTML 4.01</A>"
 
 #: src/about/konq_aboutpage.cpp:205 src/about/konq_aboutpage.cpp:207
 #: src/about/konq_aboutpage.cpp:219 src/about/konq_aboutpage.cpp:224
@@ -508,17 +510,15 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
-#, fuzzy, kde-format
-#| msgid "As a &Single HTML page"
+#, kde-format
 msgid "As a &complete HTML page"
-msgstr "როგორც &ერთი HTML გვერდი"
+msgstr "როგორც &სრული HTML გვერდი"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "As single MHTML file"
+#, kde-format
 msgid "As a &MHTML file"
-msgstr "როგორც ერთი MHTML ფაილი"
+msgstr "როგორც &MHTML ფაილი"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)

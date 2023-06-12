@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: extragear-base-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-11 00:47+0000\n"
-"PO-Revision-Date: 2023-06-10 11:45+0300\n"
+"PO-Revision-Date: 2023-06-11 21:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -53,7 +53,7 @@ msgstr "Konqueror"
 #, kde-format
 msgid "Konqueror is a web browser, file manager and universal document viewer."
 msgstr ""
-"Konqueror; bir web tarayıcı, dosya yöneticisi ve genel bir belge "
+"Konqueror; bir web tarayıcısı, dosya yöneticisi ve genel bir belge "
 "görüntüleyicidir."
 
 #: src/about/konq_aboutpage.cpp:76 src/about/konq_aboutpage.cpp:136
@@ -553,12 +553,7 @@ msgstr ""
 "diğer özkaynaklar (örn. görseller), dosyaya eşlik eden bir dizine kaydedilir"
 
 #: src/choosepagesaveformatdlg.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "The page will be saved as a MTHML file which contains both the text of "
-#| "the page an any external resources it requires, such as images. "
-#| "<br><strong>Note</strong>: not all browsers are able to display this kind "
-#| "of files"
+#, kde-format
 msgid ""
 "The page will be saved as a MTHML file which contains both the text of the "
 "page and any external resources it requires, such as images. "
