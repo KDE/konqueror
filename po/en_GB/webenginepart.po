@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-11 00:47+0000\n"
-"PO-Revision-Date: 2023-03-14 20:56+0000\n"
+"PO-Revision-Date: 2023-06-17 12:14+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -521,44 +521,35 @@ msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 
 #: src/choosepagesaveformatdlg.cpp:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "The page is saved as a single HTML page. Only the text of the page will "
-#| "be saved. External resources such as images won't be saved"
+#, kde-format
 msgid ""
 "The page will be saved as a single HTML file. Only the text of the page will "
 "be saved. External resources such as images won't be saved"
 msgstr ""
-"The page is saved as a single HTML page. Only the text of the page will be "
-"saved. External resources such as images won't be saved"
+"The page will be saved as a single HTML file. Only the text of the page will "
+"be saved. External resources such as images won't be saved"
 
 #: src/choosepagesaveformatdlg.cpp:40
-#, fuzzy, kde-format
-#| msgid ""
-#| "The complete contents of the page will be saved. The page and any "
-#| "external resources it requires, such as images, will be saved inside a "
-#| "single directory"
+#, kde-format
 msgid ""
 "The page will be saved as an HTML file. Any external resources the page "
 "requires, such as images, will be saved inside an apposite directory"
 msgstr ""
-"The complete contents of the page will be saved. The page and any external "
-"resources it requires, such as images, will be saved inside a single "
-"directory"
+"The page will be saved as an HTML file. Any external resources the page "
+"requires, such as images, will be saved inside an apposite directory"
 
 #: src/choosepagesaveformatdlg.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "The page is saved as a single HTML page. Only the text of the page will "
-#| "be saved. External resources such as images won't be saved"
+#, kde-format
 msgid ""
 "The page will be saved as a MTHML file which contains both the text of the "
 "page and any external resources it requires, such as images. "
 "<br><strong>Note</strong>: not all browsers are able to display this kind of "
 "files"
 msgstr ""
-"The page is saved as a single HTML page. Only the text of the page will be "
-"saved. External resources such as images won't be saved"
+"The page will be saved as a MTHML file which contains both the text of the "
+"page and any external resources it requires, such as images. "
+"<br><strong>Note</strong>: not all browsers are able to display this kind of "
+"files"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
@@ -576,21 +567,19 @@ msgstr "How would you like to save the page?"
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As an HTML file &without external resources"
-msgstr ""
+msgstr "As an HTML file &without external resources"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
-#, fuzzy, kde-format
-#| msgid "As a &Single HTML page"
+#, kde-format
 msgid "As a &complete HTML page"
-msgstr "As a &Single HTML page"
+msgstr "As a &complete HTML page"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "As single MHTML file"
+#, kde-format
 msgid "As a &MHTML file"
-msgstr "As single MHTML file"
+msgstr "As a &MHTML file"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
