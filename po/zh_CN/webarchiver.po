@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-01-12 00:45+0000\n"
-"PO-Revision-Date: 2023-05-22 14:04\n"
+"PO-Revision-Date: 2023-06-17 04:13\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -37,7 +37,7 @@ msgstr "未命名"
 #: app/archivedialog.cpp:92
 #, kde-format
 msgid "Create Archive"
-msgstr "创建压缩包"
+msgstr "创建存档"
 
 #: app/archivedialog.cpp:108
 #, kde-format
@@ -52,17 +52,17 @@ msgstr "源 &URL："
 #: app/archivedialog.cpp:120
 #, kde-format
 msgid "Web archive (*.war)"
-msgstr "网页压缩包 (*.war)"
+msgstr "网页存档 (*.war)"
 
 #: app/archivedialog.cpp:121
 #, kde-format
 msgid "Tar archive (*.tar)"
-msgstr "Tar 压缩包 (*.tar)"
+msgstr "Tar 压缩文件 (*.tar)"
 
 #: app/archivedialog.cpp:122
 #, kde-format
 msgid "Zip archive (*.zip)"
-msgstr "Zip 压缩包 (*.zip)"
+msgstr "Zip 压缩文件 (*.zip)"
 
 #: app/archivedialog.cpp:123
 #, kde-format
@@ -72,7 +72,7 @@ msgstr "目录"
 #: app/archivedialog.cpp:128
 #, kde-format
 msgid "The file or directory where the archived page will be saved"
-msgstr "页面压缩包的保存位置"
+msgstr "网页存档的保存位置"
 
 #: app/archivedialog.cpp:129
 #, kde-format
@@ -101,7 +101,7 @@ msgctxt "@info"
 msgid ""
 "The web archive download cannot use the current proxy settings. No proxy "
 "will be used."
-msgstr "网页压缩包下载无法使用当前的代理设置，故未使用任何代理。"
+msgstr "网页存档下载程序无法使用当前的代理设置。不使用任何代理。"
 
 #: app/archivedialog.cpp:351
 #, kde-format
@@ -127,13 +127,13 @@ msgctxt "@info"
 msgid ""
 "The archive directory<nl/><filename>%1</filename><nl/>already exists as a "
 "file."
-msgstr "压缩包目录<nl/><filename>%1</filename><nl/>为已存在的文件。"
+msgstr "网页存档的目录名<nl/><filename>%1</filename><nl/>已被已有文件使用。"
 
 #: app/archivedialog.cpp:411
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
-msgstr "压缩包目录<nl/><filename>%1</filename><nl/>已存在。"
+msgstr "网页存档目录<nl/><filename>%1</filename><nl/>已存在。"
 
 #: app/archivedialog.cpp:415
 #, kde-kuit-format
@@ -152,13 +152,13 @@ msgstr "压缩文件<nl/><filename>%1</filename><nl/>已存在。"
 #: app/archivedialog.cpp:420
 #, kde-format
 msgid "Archive Already Exists"
-msgstr "压缩包已存在"
+msgstr "网页存档已存在"
 
 #: app/archivedialog.cpp:450
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
-msgstr "无法删除原压缩包<nl/><filename>%1</filename><nl/>%2"
+msgstr "无法删除原始网页存档<nl/><filename>%1</filename><nl/>%2"
 
 #: app/archivedialog.cpp:467
 #, kde-kuit-format
@@ -206,12 +206,12 @@ msgstr "<para>可能只是表示页面上的部分元素出现了 404 错误。<
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
-msgstr "<para>保留不完整的网页压缩包吗？</para>"
+msgstr "<para>保留不完整的网页存档吗？</para>"
 
 #: app/archivedialog.cpp:572
 #, kde-format
 msgid "Retain Archive?"
-msgstr "是否保留压缩包？"
+msgstr "是否保留网页存档？"
 
 #: app/archivedialog.cpp:573
 #, kde-format
@@ -222,13 +222,13 @@ msgstr "保留"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."
-msgstr "网页压缩包创建失败。"
+msgstr "网页存档创建失败。"
 
 #: app/archivedialog.cpp:721
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
-msgstr "无法将压缩包复制到<nl/><filename>%1</filename><nl/>%2"
+msgstr "无法复制网页存档到<nl/><filename>%1</filename><nl/>%2"
 
 #: app/archivedialog.cpp:751
 #, kde-kuit-format
@@ -240,7 +240,7 @@ msgstr "无法设置<nl/><filename>%1</filename><nl/>的权限%2"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"
-msgstr "已将网页压缩包保存为<nl/><filename><link>%1</link></filename>"
+msgstr "网页存档已被保存为<nl/><filename><link>%1</link></filename>"
 
 #: app/main.cpp:26
 #, kde-format
@@ -317,7 +317,7 @@ msgstr "使请求间的等待时间各不相同，用以混淆服务器日志分
 #: app/settings.kcfg:30
 #, kde-format
 msgid "Save in standard web archive format"
-msgstr "保存为标准的网页压缩包格式"
+msgstr "保存为标准网页存档格式"
 
 #. i18n: ectx: tooltip, entry (FixExtensions), group (Options)
 #: app/settings.kcfg:37
@@ -339,13 +339,13 @@ msgid ""
 "original URL refers to a directory but does not end with a slash.</p>\n"
 "      "
 msgstr ""
-"<p>将所有下载的文件保存在同一个目录下，并让文件名、拓展名更适合本地浏览。\n"
+"<p>将所有下载的文件保存在同一个目录下，并让文件名、扩展名更适合本地浏览。\n"
 "                        例如：主 HTML 页面文件名总为“index.html”，远程 .php "
-"页面会被保存为标准 .html 拓展名。</p>\n"
-"               <p>保持启用此项可生成标准网页压缩包 (.war) 文件。</p>\n"
+"页面会被保存为标准 .html 扩展名。</p>\n"
+"               <p>保持启用此项可生成标准网页存档 (.war) 文件。</p>\n"
 "               <p>禁用此项后，文件会保存为下载时的状态。\n"
 "                        也就是说，这些文件会根据原网站的结构被存储在各个子文"
-"件夹中，且其拓展名不做更改。\n"
+"件夹中，且其扩展名不作更改。\n"
 "                        请注意，原 URL 指向目录但并未以斜杠结尾时，下载可能会"
 "无法正常工作。</p>\n"
 "      "
@@ -388,13 +388,13 @@ msgstr "下载成功完成后关闭此窗口"
 #: app/settings.kcfg:56
 #, kde-format
 msgid "Archive &type:"
-msgstr "压缩包类型(&T)："
+msgstr "网页存档类型(&T)："
 
 #. i18n: ectx: tooltip, entry (ArchiveType), group (Options)
 #: app/settings.kcfg:57
 #, kde-format
 msgid "The type of web archive to save"
-msgstr "网页压缩包的保存类型"
+msgstr "网页存档的保存类型"
 
 #: plugin_webarchiver.cpp:31
 #, kde-format
@@ -414,7 +414,7 @@ msgstr ""
 #: plugin_webarchiver.cpp:50
 #, kde-format
 msgid "Cannot Create Web Archive"
-msgstr "无法创建网页压缩包"
+msgstr "无法创建网页存档"
 
 #. i18n: ectx: Menu (tools)
 #: webarchiverplugin.rc:4
