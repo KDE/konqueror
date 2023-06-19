@@ -1,24 +1,25 @@
 # translation of imgalleryplugin.po to galician
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # mvillarino <mvillarino@users.sourceforge.net>, 2007, 2009.
 # marce villarino <mvillarino@users.sourceforge.net>, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2011, 2012, 2013, 2014.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-07-14 00:45+0000\n"
-"PO-Revision-Date: 2019-03-02 22:18+0100\n"
+"PO-Revision-Date: 2023-06-18 14:47+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Galician <kde-i18n-doc@kde.org>\n"
+"Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #: imgallerydialog.cpp:37
 #, kde-format
@@ -59,17 +60,17 @@ msgstr "I&maxes por liña:"
 #: imgallerydialog.cpp:95
 #, kde-format
 msgid "Show image file &name"
-msgstr "Mostrar o &nome do ficheiro"
+msgstr "Amosar o &nome do ficheiro"
 
 #: imgallerydialog.cpp:99
 #, kde-format
 msgid "Show image file &size"
-msgstr "&Mostrar o tamaño do ficheiro"
+msgstr "Amo&sar o tamaño do ficheiro"
 
 #: imgallerydialog.cpp:103
 #, kde-format
 msgid "Show image &dimensions"
-msgstr "Mostrar as &dimensións da imaxe"
+msgstr "Amosar as &dimensións da imaxe"
 
 #: imgallerydialog.cpp:114
 #, kde-format
@@ -132,7 +133,7 @@ msgid ""
 "traverse to by setting an upper bound for the recursion depth.</p>"
 msgstr ""
 "<p>Pode limitar o número de cartafoles que percorrerá o creador da galería "
-"indicando un límite superior do nivel de recursión.</p>"
+"indicando un límite superior do nivel de recursividade.</p>"
 
 #: imgallerydialog.cpp:168
 #, kde-format
@@ -178,7 +179,7 @@ msgid ""
 "><br />and so on</p>"
 msgstr ""
 "<p>Aquí pode indicar o nome do ficheiro de comentario. Este contén os "
-"subtítulos das imaxes. O formato deste ficheiro é:</p> <p>NOMEFICHEIRO1:<br /"
+"subtítulos das imaxes. O formato deste ficheiro é:</p> <p>FICHEIRO1:<br /"
 ">Descrición<br /><br />FICHEIRO2:<br />Descrición<br /><br />e "
 "sucesivamente</p>"
 
@@ -195,7 +196,7 @@ msgstr "Miniaturas"
 #: imgallerydialog.cpp:224
 #, kde-format
 msgid "Image f&ormat:"
-msgstr ""
+msgstr "F&ormato da imaxe:"
 
 #: imgallerydialog.cpp:232
 #, kde-format
@@ -210,7 +211,7 @@ msgstr "Definir unha profundidade de cor di&stinta:"
 #: imgallerydialog.cpp:246
 #, kde-format
 msgid "Color depth:"
-msgstr ""
+msgstr "Profundidade da cor:"
 
 #: imgalleryplugin.cpp:52
 #, kde-format
