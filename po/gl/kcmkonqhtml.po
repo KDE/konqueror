@@ -133,8 +133,8 @@ msgid ""
 "This will display the tab bar only if there are two or more tabs. Otherwise "
 "it will always be displayed."
 msgstr ""
-"Isto mostrará a barra de separadores só se hai dous ou máis separadores. En "
-"caso contrario, mostrarase sempre."
+"Isto amosará a barra de separadores só se hai dous ou máis separadores. En "
+"caso contrario, amosarase sempre."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
 #: advancedTabOptions.ui:74
@@ -146,13 +146,13 @@ msgstr "Agochar a barra de separadores cando só estea aberto un separador"
 #: advancedTabOptions.ui:81
 #, kde-format
 msgid "This will display close buttons inside each tab."
-msgstr "Isto mostrará o botón de pechar dentro de cada separador."
+msgstr "Isto amosará o botón de pechar dentro de cada separador."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
 #: advancedTabOptions.ui:84
 #, kde-format
 msgid "&Show close button on tabs"
-msgstr "&Mostrar o botón de pechar nos separadores"
+msgstr "&Amosar o botón de pechar nos separadores"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
 #: advancedTabOptions.ui:91
@@ -240,7 +240,7 @@ msgid ""
 "probably want to check this box to enhance your browsing experience.</html>"
 msgstr ""
 "<html>Se marca esta opción, Konqueror cargará automaticamente todas as "
-"imaxes dunha páxina web. En caso contrario, mostrará ocos para as imaxes, e "
+"imaxes dunha páxina web. En caso contrario, amosará ocos para as imaxes, e "
 "poderá cargalas manualmente premendo o botón de Imaxes.<br />A non ser que "
 "teña unha conexión moi lenta á rede, probabelmente quererá marcar esta "
 "opción para mellorar a experiencia de navegación.</html>"
@@ -278,7 +278,7 @@ msgstr "Desactivadas"
 #: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
-msgstr "Mostrar só unha vez"
+msgstr "Amosar só unha vez"
 
 #: appearance.cpp:77
 #, kde-format
@@ -291,7 +291,7 @@ msgstr ""
 "<html>Controla como mostra Konqueror as imaxes animadas: <br /><ul> "
 "<li><b>Activadas</b>: Mostra todas as animacións completamente.</li> "
 "<li><b>Desactivada</b>: Non mostra nunca as animacións, mostra só a imaxe "
-"inicial</li><li><b>Mostrar só unha vez</b>: Mostra todas as animacións "
+"inicial</li><li><b>Amosar só unha vez</b>: Mostra todas as animacións "
 "completamente pero non as repite</li></ul></html>"
 
 #: appearance.cpp:82
@@ -374,12 +374,12 @@ msgid ""
 "scrolling on pages where it can be achieved with moderate usage of system "
 "resources.</li></ul></html>"
 msgstr ""
-"<html>Determina se Konqueror debe empregar pasos suaves no desprazamento "
-"polas páxinas HTML, ou pasos enteiros:<br /><ul> <li><b>Sempre</b>: Empregar "
-"sempre pasos suaves para desprazarse.</li> <li><b>Nunca</b>: Nunha emprega "
-"pasos suaves, no canto dá pasos enteiros.</li> <li><b>Cando sexa eficiente</"
-"b>: Só emprega o desprazamento suave en páxinas onde poida acadarse cun "
-"consumo moderado dos recursos do sistema.</li></ul></html>"
+"<html>Determina se Konqueror debe usar pasos suaves no desprazamento polas "
+"páxinas HTML, ou pasos enteiros:<br /><ul> <li><b>Sempre</b>: Usar sempre "
+"pasos suaves para desprazarse.</li> <li><b>Nunca</b>: Nunha usa pasos "
+"suaves, no canto dá pasos enteiros.</li> <li><b>Cando sexa eficiente</b>: Só "
+"usa o desprazamento suave en páxinas onde poida acadarse cun consumo "
+"moderado dos recursos do sistema.</li></ul></html>"
 
 #: appearance.cpp:119
 #, kde-format
@@ -388,7 +388,7 @@ msgid ""
 "Konqueror should use to display the web pages you view."
 msgstr ""
 "<h1>Tipos de letra en Konqueror</h1>Nesta páxina pode configurar os tipos de "
-"letra que debe empregar Konqueror para mostrar as páxinas web."
+"letra que debe usar Konqueror para amosar as páxinas web."
 
 #: appearance.cpp:131
 #, kde-format
@@ -399,7 +399,7 @@ msgstr "&Tamaño do tipo de letra"
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr ""
-"Este é o tamaño de tipo de letra relativo que usa Konqueror para mostrar os "
+"Este é o tamaño de tipo de letra relativo que usa Konqueror para amosar os "
 "sitios web."
 
 #: appearance.cpp:138
@@ -413,7 +413,7 @@ msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
 "any other settings."
 msgstr ""
-"Konqueror nunca mostrará texto nun tamaño máis pequeno que este, <br /"
+"Konqueror nunca amosará texto nun tamaño máis pequeno que este, <br /"
 ">independentemente de calquera outra indicación."
 
 #: appearance.cpp:147
@@ -600,7 +600,7 @@ msgid ""
 "<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
 "render style sheets.</p>"
 msgstr ""
-"<b>Follas de estilo</b><p>Empregue estas alternativas para determinar como "
+"<b>Follas de estilo</b><p>Use estas alternativas para determinar como "
 "debuxará Konqueror as follas de estilo.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
@@ -616,8 +616,8 @@ msgid ""
 "<b>Use default stylesheet</b><p>Select this option to use the default "
 "stylesheet.</p>"
 msgstr ""
-"<b>Usar a folla de estilo predeterminada</b><p>Escolla esta opción para "
-"empregar a folla de estilo predeterminada.</p>"
+"<b>Usar a folla de estilo predeterminada</b><p>Escolla esta opción para usar "
+"a folla de estilo predeterminada.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useDefault)
 #: css/cssconfig.ui:29
@@ -720,7 +720,7 @@ msgstr ""
 #: css/csscustom.ui:47
 #, kde-format
 msgid "Use same family for all text"
-msgstr "Empregar a mesma familia para todos os textos"
+msgstr "Usar a mesma familia para todos os textos"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
 #: css/csscustom.ui:57
@@ -822,13 +822,13 @@ msgid ""
 msgstr ""
 "<b>Usar o mesmo tamaño para todos os elementos</b><p>Marque esta opción para "
 "substituír os tamaños de tipo de letra personalizados polo tamaño de tipo de "
-"letra base. Todos os textos han mostrarse co mesmo tamaño.</p>"
+"letra base. Todos os textos han amosarse co mesmo tamaño.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, dontScale)
 #: css/csscustom.ui:151
 #, kde-format
 msgid "&Use same size for all elements"
-msgstr "Empregar o &mesmo tamaño para todos os elementos"
+msgstr "Usar o &mesmo tamaño para todos os elementos"
 
 #. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
 #: css/csscustom.ui:161
@@ -885,7 +885,7 @@ msgid ""
 "<b>Background</b><p>This background color is the one displayed behind the "
 "text by default. A background image will override this.</p>"
 msgstr ""
-"<b>Fondo</b><p>Esta é a cor mostrada de maneira predeterminada detrás do "
+"<b>Fondo</b><p>Esta é a cor amosada de maneira predeterminada detrás do "
 "texto. Unha imaxe de fondo sobrescribiría este valor.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, txtBackground)
@@ -993,12 +993,11 @@ msgid ""
 "design."
 msgstr ""
 "<h1>Follas de estilo de Konqueror</h1>Este módulo permítelle aplicar a súa "
-"configuración de cor e tipos de letra a Konqueror empregando follas de "
-"estilo (CSS). Pode especificar opcións ou aplicar as súas propias follas de "
-"estilo apuntando á súa localización.<br/>Lembre que estas preferencias terán "
-"sempre preferencia sobre as opcións fornecidas polo autor do sitio. Isto "
-"pode ser bo para páxinas mal feitas e para xente con problemas graves na "
-"vista."
+"configuración de cor e tipos de letra a Konqueror usando follas de estilo "
+"(CSS). Pode especificar opcións ou aplicar as súas propias follas de estilo "
+"apuntando á súa localización.<br/>Lembre que estas preferencias terán sempre "
+"preferencia sobre as opcións fornecidas polo autor do sitio. Isto pode ser "
+"bo para páxinas mal feitas e para xente con problemas graves na vista."
 
 #: css/kcmcss.cpp:336
 #, kde-format
@@ -1249,12 +1248,12 @@ msgid ""
 msgstr ""
 "<qt><p>Insira unha expresión a filtrar. Os filtros poden definirse como:"
 "<ul><li>Expresións estilo consola, como <tt>http://www.example.com/ads*</"
-"tt>. Poden empregarse os símbolos <tt>*?[]</tt>.</li><li>Expresións "
-"regulares, delimitadas por barras inclinadas («<tt>/</tt>»), como <tt>/\\/"
-"(ad|banner)\\./</tt></li></ul><p>Calquera expresión de filtrado pode "
-"precederse de «<tt>@@</tt>» para permitir os URL que se correspondan con "
-"ela. As expresións de filtrado de URL permitidos teñen prioridade sobre "
-"calquera lista negra."
+"tt>. Poden usarse os símbolos <tt>*?[]</tt>.</li><li>Expresións regulares, "
+"delimitadas por barras inclinadas («<tt>/</tt>»), como <tt>/\\/(ad|"
+"banner)\\./</tt></li></ul><p>Calquera expresión de filtrado pode precederse "
+"de «<tt>@@</tt>» para permitir os URL que se correspondan con ela. As "
+"expresións de filtrado de URL permitidos teñen prioridade sobre calquera "
+"lista negra."
 
 #: filteropts.cpp:183
 #, kde-format
@@ -1336,25 +1335,25 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
-msgstr "Mostrar a páxina de introdución"
+msgstr "Amosar a páxina de introdución"
 
 #: generalopts.cpp:95
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
-msgstr "Mostrar a miña páxina de inicio"
+msgstr "Amosar a miña páxina de inicio"
 
 #: generalopts.cpp:96
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
-msgstr "Mostrar unha páxina en branco"
+msgstr "Amosar unha páxina en branco"
 
 #: generalopts.cpp:97
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
-msgstr "Mostrar os meus marcadores"
+msgstr "Amosar os meus marcadores"
 
 #: generalopts.cpp:103
 #, kde-format
@@ -1365,7 +1364,7 @@ msgstr "Escolla a páxina de inicio"
 #: generalopts.cpp:108
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
-msgstr "Este é o URL da páxina web que Konqueror mostrará ao iniciar."
+msgstr "Este é o URL da páxina web que Konqueror amosará ao iniciar."
 
 #: generalopts.cpp:119
 #, kde-format
@@ -1450,7 +1449,7 @@ msgstr ""
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr ""
-"Mostrar só os marcadores sinalados na barra de ferramentas de marcadores"
+"Amosar só os marcadores sinalados na barra de ferramentas de marcadores"
 
 #: htmlopts.cpp:58
 #, kde-format
@@ -1458,7 +1457,7 @@ msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
 "bookmark toolbar which you have marked to do so in the bookmark editor."
 msgstr ""
-"Se marca esta opción, Konqueror mostrará só os marcadores da barra de "
+"Se marca esta opción, Konqueror amosará só os marcadores da barra de "
 "ferramentas de marcadores marcados para tal fin no editor de marcadores."
 
 #: htmlopts.cpp:65
@@ -1600,14 +1599,14 @@ msgstr ""
 #: htmlopts.cpp:135
 #, kde-format
 msgid "Display online PDF files using WebEngine"
-msgstr "Mostrar os ficheiros PDF de Internet usando WebEngine"
+msgstr "Amosar os ficheiros PDF de Internet usando WebEngine"
 
 #: htmlopts.cpp:136
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
 msgstr ""
-"Desmarque esta caixa para mostrar os ficheiros PDF de Internet segundo a "
+"Desmarque esta caixa para amosar os ficheiros PDF de Internet segundo a "
 "configuración do sistema"
 
 #: javaopts.cpp:78
@@ -1628,7 +1627,7 @@ msgstr "&Usar o xestor de seguridade"
 #: javaopts.cpp:101
 #, kde-format
 msgid "Use &KIO"
-msgstr "Empregar &KIO"
+msgstr "Usar &KIO"
 
 #: javaopts.cpp:105
 #, kde-format
@@ -1727,8 +1726,8 @@ msgid ""
 msgstr ""
 "Se activa o xestor de seguridade, jvm executarase co Xestor de Seguridade. "
 "Isto evitará que os miniaplicativos poidan ler e escribir no sistema de "
-"ficheiros, crear sockets arbitrarios e outras accións que se poderían "
-"empregar para comprometer o seu sistema. Desactive esta opción baixo a súa "
+"ficheiros, crear sockets arbitrarios e outras accións que se poderían usar "
+"para comprometer o seu sistema. Desactive esta opción baixo a súa "
 "responsabilidade. Pode modificar o seu ficheiro $HOME/.java.policy coa "
 "ferramenta de políticas de Java para permitir que código descargado de "
 "determinados sitios obteña máis permisos."
@@ -1736,8 +1735,7 @@ msgstr ""
 #: javaopts.cpp:170
 #, kde-format
 msgid "Enabling this will cause the jvm to use KIO for network transport "
-msgstr ""
-"Se activa isto a máquina de java empregará KIO para o transporte en rede "
+msgstr "Se activa isto a máquina de java usará KIO para o transporte en rede "
 
 #: javaopts.cpp:172
 #, kde-format
@@ -1747,10 +1745,10 @@ msgid ""
 "the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
 "the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
 msgstr ""
-"Insira a ruta ao executábel java. Se quere empregar o jre, simplemente "
-"déixeo como «java». Se precisa empregar un jre distinto, insira a ruta ao "
-"executábel (p.ex. /usr/lib/jdk/bin/java), ou a ruta ao directorio que contén "
-"«bin/java» (p.ex. /opt/IBMJava2-13)."
+"Insira a ruta ao executábel java. Se quere usar o jre, simplemente déixeo "
+"como «java». Se precisa usar un jre distinto, insira a ruta ao executábel (p."
+"ex. /usr/lib/jdk/bin/java), ou a ruta ao directorio que contén «bin/java» (p."
+"ex. /opt/IBMJava2-13)."
 
 #: javaopts.cpp:177
 #, kde-format
@@ -1772,10 +1770,10 @@ msgid ""
 msgstr ""
 "Cando se destrúan todos os miniaplicativos, o servidor de miniaplicativos "
 "debería apagarse. Porén, o inicio de jvm tarda moito. Se quere manter os "
-"procesos de Java a executárense cando vostede estea navegando, pode "
-"estabelecer o valor do tempo de agarda segundo lle prouba. Para manter os "
-"procesos java a executarse durante todo tempo que estea aberto konqueror, "
-"deixe a opción de Apagar o servidor de miniaplicativos desmarcada."
+"procesos de Java a executárense cando vostede estea navegando, pode definir "
+"o valor do tempo de agarda segundo lle prouba. Para manter os procesos java "
+"a executarse durante todo tempo que estea aberto konqueror, deixe a opción "
+"de Apagar o servidor de miniaplicativos desmarcada."
 
 #: javaopts.cpp:288
 #, kde-format
@@ -1957,13 +1955,13 @@ msgstr "Abrir novas xanelas:"
 #: jspolicies.cpp:308
 #, kde-format
 msgid "Use global"
-msgstr "Empregar a global"
+msgstr "Usar a global"
 
 #: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
 #: jspolicies.cpp:309
 #, kde-format
 msgid "Use setting from global policy."
-msgstr "Empregar a opción da política global."
+msgstr "Usar a opción da política global."
 
 #: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
 #: jspolicies.cpp:315
@@ -2024,7 +2022,7 @@ msgstr ""
 "fan uso extensivo desta orde para as xanelas emerxentes e a publicidade.<br/"
 "><br/><b>Nota:</b> Desactivar esta opción podería tamén causar o mal "
 "funcionamento de certos sitios que requiren de <i>window.open()</i> para un "
-"funcionamento correcto. Empregue esta funcionalidade con coidado."
+"funcionamento correcto. Use esta funcionalidade con coidado."
 
 #: jspolicies.cpp:187
 #, kde-format
@@ -2057,9 +2055,9 @@ msgid ""
 "resizeBy()</i> or <i>window.resizeTo()</i>. This option specifies the "
 "treatment of such attempts."
 msgstr ""
-"Algúns sitios web cambian o tamaño da xanela empregando <i>window."
-"resizeBy()</i> ou <i>window.resizeTo()</i>. Esta opción especifica o "
-"tratamento destes intentos."
+"Algúns sitios web cambian o tamaño da xanela usando <i>window.resizeBy()</i> "
+"ou <i>window.resizeTo()</i>. Esta opción especifica o tratamento destes "
+"intentos."
 
 #: jspolicies.cpp:224
 #, kde-format
@@ -2088,9 +2086,9 @@ msgid ""
 "moveBy()</i> or <i>window.moveTo()</i>. This option specifies the treatment "
 "of such attempts."
 msgstr ""
-"Algúns sitios web cambian a posición da xanela empregando <i>window."
-"moveBy()</i> ou <i>window.moveTo()</i>. Esta opción especifica o tratamento "
-"destes intentos."
+"Algúns sitios web cambian a posición da xanela usando <i>window.moveBy()</i> "
+"ou <i>window.moveTo()</i>. Esta opción especifica o tratamento destes "
+"intentos."
 
 #: jspolicies.cpp:261
 #, kde-format
@@ -2121,7 +2119,7 @@ msgid ""
 "front interrupting whatever action the user was dedicated to at that time. "
 "This option specifies the treatment of such attempts."
 msgstr ""
-"Algúns sitios web focalizan a súa xanela de navegador empregando <i>window."
+"Algúns sitios web focalizan a súa xanela de navegador usando <i>window."
 "focus()</i>. Isto trae aparellado que a xanela sexa normalmente movida ao "
 "primeiro plano interrompendo calquera acción que o usuario estivera a "
 "realizar nese momento. Esta opción indica o xeito de xestionar eses intentos."
@@ -2155,7 +2153,7 @@ msgid ""
 msgstr ""
 "Algúns sitios web cambian o texto da súa barra de estado coa opción "
 "<i>window.status</i> ou <i>window.defaultStatus</i>, facendo a veces que non "
-"se mostre o URL real das ligazóns. Esta opción indica o xeito de xestionar "
+"se amose o URL real das ligazóns. Esta opción indica o xeito de xestionar "
 "eses intentos."
 
 #: main.cpp:43
