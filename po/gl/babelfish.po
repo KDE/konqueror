@@ -1,24 +1,25 @@
 # translation of babelfish.po to galician
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # mvillarino <mvillarino@users.sourceforge.net>, 2007.
 # marce villarino <mvillarino@users.sourceforge.net>, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2012.
-# Adrián Chaves <adrian@chaves.io>, 2017.
+# Adrián Chaves <adrian@chaves.io>, 2017, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: babelfish\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-07 00:44+0000\n"
-"PO-Revision-Date: 2017-07-24 15:19+0100\n"
-"Last-Translator: Adrián Chaves <adrian@chaves.io>\n"
-"Language-Team: Galician <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2023-06-21 08:42+0200\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -197,12 +198,7 @@ msgid "The URL you entered is not valid, please correct it and try again."
 msgstr "O URL que inseriu non é correcto, corríxao e vólvao intentar."
 
 #: plugin_babelfish.cpp:271
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "You are viewing this page over a secure connection.<nl/><nl/>The URL of "
-#| "the page will sent to the online translation service, which may fetch the "
-#| "insecure version of the page."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "You are viewing this page over a secure connection.<nl/><nl/>The URL of the "
@@ -210,8 +206,8 @@ msgid ""
 "insecure version of the page."
 msgstr ""
 "Está accedendo a esta páxina a través dunha conexión segura.<nl/> <nl/> O "
-"URL da páxina enviarase ao servizo de tradución por Internet, que é posíbel "
-"que obteña a versión insegura da páxina."
+"URL da páxina enviarase ao servizo de tradución por Internet,<nl/> que é "
+"posíbel que obteña a versión insegura da páxina."
 
 #: plugin_babelfish.cpp:275
 #, kde-format
