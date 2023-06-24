@@ -1659,7 +1659,7 @@ msgid ""
 "HTML pages. Note that, as with any browser, enabling active contents can be "
 "a security problem."
 msgstr ""
-"Activa a execución de scripts escritos en Java que poden estar contidos en "
+"Activa a execución de guións escritos en Java que poden estar contidos en "
 "páxinas HTML. Lembre que, como con calquera navegador, activar contido "
 "activo pode supor un problema de seguridade."
 
@@ -1815,9 +1815,9 @@ msgid ""
 "JavaScript) that can be contained in HTML pages. Note that, as with any "
 "browser, enabling scripting languages can be a security problem."
 msgstr ""
-"Activa a execución de scripts escritos en ECMA-Script (coñecido como "
+"Activa a execución de guións escritos en ECMA-Script (coñecido como "
 "JavaScript) que poden estar contidos en páxinas HTML. Lembre que, como con "
-"calquera navegador, activar linguaxes de script pode supor un problema de "
+"calquera navegador, activar linguaxes de guión pode supor un problema de "
 "seguridade."
 
 #: jsopts.cpp:59
@@ -2032,7 +2032,7 @@ msgstr "Cambiar o tamaño da xanela:"
 #: jspolicies.cpp:202
 #, kde-format
 msgid "Allow scripts to change the window size."
-msgstr "Permite que os scripts cambien o tamaño da xanela."
+msgstr "Permite que os guións cambien o tamaño da xanela."
 
 #: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
 #, kde-format
@@ -2045,7 +2045,7 @@ msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
 "<i>think</i> it changed the size but the actual window is not affected."
 msgstr ""
-"Ignorar os intentos dos script de cambiar o tamaño da xanela. A páxina web "
+"Ignorar os intentos dos guión de cambiar o tamaño da xanela. A páxina web "
 "<i>pensará</i> que cambiou o tamaño pero en realidade quedará como estaba."
 
 #: jspolicies.cpp:215
@@ -2067,7 +2067,7 @@ msgstr "Mover a xanela:"
 #: jspolicies.cpp:239
 #, kde-format
 msgid "Allow scripts to change the window position."
-msgstr "Permitir que os scripts cambien a posición da xanela."
+msgstr "Permitir que os guións cambien a posición da xanela."
 
 #: jspolicies.cpp:245
 #, kde-format
@@ -2075,8 +2075,8 @@ msgid ""
 "Ignore attempts of scripts to change the window position. The web page will "
 "<i>think</i> it moved the window but the actual position is not affected."
 msgstr ""
-"Ignorar os intentos dos scripts de cambiar a posición da xanela. A páxina "
-"web <i>pensará</i> que se moveu a xanela pero a posición actual non se verá "
+"Ignorar os intentos dos guións de cambiar a posición da xanela. A páxina web "
+"<i>pensará</i> que se moveu a xanela pero a posición actual non se verá "
 "afectada."
 
 #: jspolicies.cpp:252
@@ -2098,7 +2098,7 @@ msgstr "Focalizar a xanela:"
 #: jspolicies.cpp:276
 #, kde-format
 msgid "Allow scripts to focus the window."
-msgstr "Permitir que os scripts dean foco á xanela."
+msgstr "Permitir que os guións dean foco á xanela."
 
 #: jspolicies.cpp:282
 #, kde-format
@@ -2107,7 +2107,7 @@ msgid ""
 "i> it brought the focus to the window but the actual focus will remain "
 "unchanged."
 msgstr ""
-"Ignora os intentos dos scripts de focalizar a xanela. A páxina web "
+"Ignora os intentos dos guións de focalizar a xanela. A páxina web "
 "<i>pensará</i> que efectivamente se lle concedeu o foco, pero o foco non "
 "cambiará."
 
@@ -2132,7 +2132,7 @@ msgstr "Modificar o texto da barra de estado:"
 #: jspolicies.cpp:316
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
-msgstr "Permitir que os scripts cambien o texto da barra de estado."
+msgstr "Permitir que os guións cambien o texto da barra de estado."
 
 #: jspolicies.cpp:322
 #, kde-format
@@ -2140,7 +2140,7 @@ msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
 "<i>think</i> it changed the text but the actual text will remain unchanged."
 msgstr ""
-"Ignora os intentos dos scripts de cambiar o texto da barra de estado. A "
+"Ignora os intentos dos guións de cambiar o texto da barra de estado. A "
 "páxina web <i>pensará</i> que o texto se cambiou pero quedará sen cambios."
 
 # skip-rule: trasno-window
