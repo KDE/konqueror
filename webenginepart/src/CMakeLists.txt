@@ -75,8 +75,8 @@ target_link_libraries(kwebenginepartlib
         KF5::Wallet
         KF5::Notifications
         KF5::KIOWidgets
-    PRIVATE
         KF5::Konq
+    PRIVATE
         KF5::I18n
         Qt5::PrintSupport
         KF5::SonnetCore

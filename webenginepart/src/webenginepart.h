@@ -121,6 +121,9 @@ public:
      */
     void setPage(WebEnginePage *newPage);
 
+    WebEnginePage* page();
+    const WebEnginePage* page() const;
+
     QWebEngineProfile *profile() const;
 
     bool isWebEnginePart() const {return true;}
@@ -182,8 +185,6 @@ private Q_SLOTS:
     void updateWalletActions();
 
 private:
-    WebEnginePage* page();
-    const WebEnginePage* page() const;
     static void initWebEngineUrlSchemes();
 
     void deleteStatusBarWalletLabel();

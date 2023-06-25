@@ -48,8 +48,13 @@
 #include <QWebEngineHistory>
 #include <QMimeData>
 #include <QPrinterInfo>
+#include <QJsonDocument>
+#include <QJsonArray>
+
 #define QL1S(x)     QLatin1String(x)
 #define QL1C(x)     QLatin1Char(x)
+
+using Element = KParts::SelectorInterface::Element;
 
 // A functor that calls a member function
 template<typename Arg, typename R, typename C>
@@ -910,6 +915,18 @@ WebEngineHtmlExtension::WebEngineHtmlExtension(WebEnginePart* part)
 {
 }
 
+QWebEngineScript WebEngineHtmlExtension::querySelectorScript()
+{
+    static QWebEngineScript s_selectorScript;
+    if (s_selectorScript.isNull()) {
+        QFile jsfile(":/queryselector.js");
+        jsfile.open(QIODevice::ReadOnly);
+        s_selectorScript.setSourceCode(QString(jsfile.readAll()));
+        s_selectorScript.setInjectionPoint(QWebEngineScript::DocumentCreation);
+        s_selectorScript.setWorldId(QWebEngineScript::ApplicationWorld);
+    }
+    return s_selectorScript;
+}
 
 QUrl WebEngineHtmlExtension::baseUrl() const
 {
@@ -921,133 +938,82 @@ bool WebEngineHtmlExtension::hasSelection() const
     return part()->view()->hasSelection();
 }
 
-KParts::SelectorInterface::QueryMethods WebEngineHtmlExtension::supportedQueryMethods() const
+KParts::SelectorInterface::QueryMethods WebEngineHtmlExtension::supportedAsyncQueryMethods() const
 {
-    return (KParts::SelectorInterface::EntireContent
-            | KParts::SelectorInterface::SelectedContent);
+    return KParts::SelectorInterface::EntireContent;
 }
 
-#if 0
-static KParts::SelectorInterface::Element convertWebElement(const QWebElement& webElem)
+QList<KParts::SelectorInterface::Element> WebEngineHtmlExtension::jsonToElementList(const QVariant& json)
 {
-    KParts::SelectorInterface::Element element;
-    element.setTagName(webElem.tagName());
-    Q_FOREACH(const QString &attr, webElem.attributeNames()) {
-        element.setAttribute(attr, webElem.attribute(attr));
+    QList<KParts::SelectorInterface::Element> res;
+    QJsonDocument doc = QJsonDocument::fromVariant(json);
+    if (!doc.isArray()) {
+        return res;
     }
-    return element;
+
+    QJsonArray array = doc.array();
+    std::transform(array.constBegin(), array.constEnd(), std::back_inserter(res), [](const QJsonValue &val){return WebEngineHtmlExtension::jsonToElement(val.toObject());});
+    return res;
 }
 
-static QString queryOne(const QString& query)
+KParts::SelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const QVariant& json)
 {
-   QString jsQuery = QL1S("(function(query) { var element; var selectedElement = window.getSelection().getRangeAt(0).cloneContents().querySelector(\"");
-   jsQuery += query;
-   jsQuery += QL1S("\"); if (selectedElement && selectedElement.length > 0) { element = new Object; "
-                   "element.tagName = String(selectedElements[0].tagName); element.href = String(selectedElements[0].href); } "
-                   "return element; }())");
-   return jsQuery;
+    QJsonDocument doc = QJsonDocument::fromVariant(json);
+    if (!doc.isObject()) {
+        return KParts::SelectorInterface::Element();
+    }
+    QJsonObject obj = doc.object();
+    return jsonToElement(obj);
 }
 
-static QString queryAll(const QString& query)
+KParts::SelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const QJsonObject& obj)
 {
-   QString jsQuery = QL1S("(function(query) { var elements = []; var selectedElements = window.getSelection().getRangeAt(0).cloneContents().querySelectorAll(\"");
-   jsQuery += query;
-   jsQuery += QL1S("\"); var numSelectedElements = (selectedElements ? selectedElements.length : 0);"
-                   "for (var i = 0; i < numSelectedElements; ++i) { var element = new Object; "
-                   "element.tagName = String(selectedElements[i].tagName); element.href = String(selectedElements[i].href);"
-                   "elements.push(element); } return elements; } ())");
-   return jsQuery;
+    KParts::SelectorInterface::Element res;
+    QJsonValue nameVal = obj.value(QLatin1String("tag"));
+    if (nameVal.isUndefined()) {
+        return res;
+    }
+    res.setTagName(nameVal.toString());
+    QVariantHash attributes = obj.value(QLatin1String("attributes")).toObject().toVariantHash();
+    for (auto it = attributes.constBegin(); it != attributes.constEnd(); ++it) {
+        res.setAttribute(it.key(), it.value().toString());
+    }
+    return res;
 }
 
-static KParts::SelectorInterface::Element convertSelectionElement(const QVariant& variant)
+void WebEngineHtmlExtension::querySelectorAllAsync(const QString& query, KParts::SelectorInterface::QueryMethod method, MultipleElementSelectorCallback& callback)
 {
-    KParts::SelectorInterface::Element element;
-    if (!variant.isNull() && variant.type() == QVariant::Map) {
-        const QVariantMap elementMap (variant.toMap());
-        element.setTagName(elementMap.value(QL1S("tagName")).toString());
-        element.setAttribute(QL1S("href"), elementMap.value(QL1S("href")).toString());
+    QList<Element> result;
+    if (method == KParts::SelectorInterface::None || !part() || !part()->page() || !(supportedAsyncQueryMethods() & method)) {
+        callback(result);
+        return;
     }
-    return element;
+
+    auto internalCallback = [callback] (const QVariant &res) {
+        callback(WebEngineHtmlExtension::jsonToElementList(res));
+    };
+
+    static const QString s_allSelectorTemplate = QStringLiteral("querySelectorAllToList(\"%1\")");
+    QString fullQuery = s_allSelectorTemplate.arg(query);
+    // QString test = "function findElements(sel) {\nvar list = document.querySelectorAll(sel);var result = []; for (const e of list) { var obj = {'tag': e.tagName, 'attributes' : {}}; for (const a of e.attributes) { obj.attributes[a.name] = a.value; } result.push(obj); } return result; } findElements(%1);";
+    part()->page()->runJavaScript(fullQuery, QWebEngineScript::ApplicationWorld, internalCallback);
 }
 
-static QList<KParts::SelectorInterface::Element> convertSelectionElements(const QVariant& variant)
+void WebEngineHtmlExtension::querySelectorAsync(const QString& query, KParts::SelectorInterface::QueryMethod method, SingleElementSelectorCallback& callback)
 {
-    QList<KParts::SelectorInterface::Element> elements;
-    const QVariantList resultList (variant.toList());
-    Q_FOREACH(const QVariant& result, resultList) {
-        const QVariantMap elementMap = result.toMap();
-        KParts::SelectorInterface::Element element;
-        element.setTagName(elementMap.value(QL1S("tagName")).toString());
-        element.setAttribute(QL1S("href"), elementMap.value(QL1S("href")).toString());
-        elements.append(element);
+    Element result;
+    if (method == KParts::SelectorInterface::None || !part() || !part()->page() || !(supportedAsyncQueryMethods() & method)) {
+        callback(result);
+        return;
     }
-    return elements;
-}
-#endif
 
-KParts::SelectorInterface::Element WebEngineHtmlExtension::querySelector(const QString& query, KParts::SelectorInterface::QueryMethod method) const
-{
-    KParts::SelectorInterface::Element element;
+    auto internalCallback = [callback] (const QVariant &res) {
+        callback(WebEngineHtmlExtension::jsonToElement(res));
+    };
 
-    // If the specified method is None, return an empty list...
-    if (method == KParts::SelectorInterface::None)
-        return element;
-
-    // If the specified method is not supported, return an empty list...
-    if (!(supportedQueryMethods() & method))
-        return element;
-
-#if 0
-    switch (method) {
-    case KParts::SelectorInterface::EntireContent: {
-        const QWebFrame* webFrame = part()->view()->page()->mainFrame();
-        element = convertWebElement(webFrame->findFirstElement(query));
-        break;
-    }
-    case KParts::SelectorInterface::SelectedContent: {
-        QWebFrame* webFrame = part()->view()->page()->mainFrame();
-        element = convertSelectionElement(webFrame->evaluateJavaScript(queryOne(query)));
-        break;
-    }
-    default:
-        break;
-    }
-#endif
-
-    return element;
-}
-
-QList<KParts::SelectorInterface::Element> WebEngineHtmlExtension::querySelectorAll(const QString& query, KParts::SelectorInterface::QueryMethod method) const
-{
-    QList<KParts::SelectorInterface::Element> elements;
-
-    // If the specified method is None, return an empty list...
-    if (method == KParts::SelectorInterface::None)
-        return elements;
-
-    // If the specified method is not supported, return an empty list...
-    if (!(supportedQueryMethods() & method))
-        return elements;
-#if 0
-    switch (method) {
-    case KParts::SelectorInterface::EntireContent: {
-        const QWebFrame* webFrame = part()->view()->page()->mainFrame();
-        const QWebElementCollection collection = webFrame->findAllElements(query);
-        elements.reserve(collection.count());
-        Q_FOREACH(const QWebElement& element, collection)
-            elements.append(convertWebElement(element));
-        break;
-    }
-    case KParts::SelectorInterface::SelectedContent: {
-        QWebFrame* webFrame = part()->view()->page()->mainFrame();
-        elements = convertSelectionElements(webFrame->evaluateJavaScript(queryAll(query)));
-        break;
-    }
-    default:
-        break;
-    }
-#endif
-    return elements;
+    static const QString s_selectorTemplate = QStringLiteral("querySelectorToObject(\"%1\")");
+    QString fullQuery = s_selectorTemplate.arg(query);
+    part()->page()->runJavaScript(fullQuery, QWebEngineScript::ApplicationWorld, internalCallback);
 }
 
 QVariant WebEngineHtmlExtension::htmlSettingsProperty(KParts::HtmlSettingsInterface::HtmlSettingsType type) const

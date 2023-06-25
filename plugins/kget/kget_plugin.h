@@ -15,7 +15,14 @@
 #include <konq_kpart_plugin.h>
 #include <QPointer>
 
+#include <KParts/SelectorInterface>
+
 class KToggleAction;
+class AsyncSelectorInterface;
+
+namespace KParts {
+    class HtmlExtension;
+};
 
 class KGetPlugin : public KonqParts::Plugin
 {
@@ -33,6 +40,53 @@ private Q_SLOTS:
 
 private:
     void getLinks(bool selectedOnly = false);
+    void fillLinkListFromHtml(const QUrl &baseUrl, const QList<KParts::SelectorInterface::Element> &elements);
+
+    /**
+     * @brief The kind of html selector interface to use
+     */
+    enum class SelectorInterfaceType {
+        None, /**< No interface type is supported by the part */
+        Sync, /**< Use the synchronous interface */
+        Async /**< Use the asynchronous interface */
+    };
+
+    /**
+     * @brief Struct encapsulating the different selector interfaces supported by the plugin
+     */
+    struct SelectorInterface {
+        /**
+         * @brief Constructor
+         * @param ext The HTML Extension
+         */
+        SelectorInterface(KParts::HtmlExtension *ext);
+        /**
+         * @brief The query methods supported by the HTML part
+         * @return The query methods supported by the HTML part or KParts::SelectionInterface::None if no selector interface
+         * is provided by the part
+         */
+        KParts::SelectorInterface::QueryMethods supportedMethods() const;
+        /**
+         * @brief Whether the HTML extension provides either the synchronous or the asynchronous interface
+         * @return `true` if the HTML extension provides at least one of the two interfaces and `false` otherwise
+         */
+        bool hasInterface() const;
+
+        /**
+         * @brief The type of selector interface provided by the HTML extension
+         */
+        SelectorInterfaceType interfaceType = SelectorInterfaceType::None;
+        /**
+         * @brief A pointer to the KParts::SelectorInterface or `nullptr` if he HTML extension doesn't provide the
+         * KParts::SelectorInterface interface
+         **/
+        KParts::SelectorInterface *syncInterface = nullptr;
+        /**
+         * @brief A pointer to the AsyncSelectorInterface or `nullptr` if he HTML extension doesn't provide the
+         * AsyncSelectorInterface interface
+         **/
+        AsyncSelectorInterface *asyncInterface = nullptr;
+    };
 
     QStringList m_linkList;
     KToggleAction *m_dropTargetAction;

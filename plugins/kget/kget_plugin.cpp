@@ -38,7 +38,9 @@
 #include <KPluginFactory>
 #include <KProtocolInfo>
 #include <KToggleAction>
+
 #include <konq_kpart_plugin.h>
+#include <asyncselectorinterface.h>
 
 #define QL1S(x) QLatin1String(x)
 
@@ -77,8 +79,9 @@ KGetPlugin::KGetPlugin(QObject *parent, const QVariantList &)
 
     // Hide this plugin if the parent part does not support either
     // The FileInfo or Html extensions...
-    if (!KParts::HtmlExtension::childObject(parent) && !KParts::FileInfoExtension::childObject(parent))
+    if (!KParts::HtmlExtension::childObject(parent) && !KParts::FileInfoExtension::childObject(parent)) {
         menu->setVisible(false);
+    }
 }
 
 KGetPlugin::~KGetPlugin()
@@ -100,23 +103,57 @@ static bool hasDropTarget()
     return found;
 }
 
+KGetPlugin::SelectorInterface::SelectorInterface(KParts::HtmlExtension* ext)
+{
+    KParts::SelectorInterface *syncIface = qobject_cast<KParts::SelectorInterface*>(ext);
+    if (syncIface) {
+        interfaceType = SelectorInterfaceType::Sync;
+        syncInterface = syncIface;
+    } else {
+        AsyncSelectorInterface *asyncIface = qobject_cast<AsyncSelectorInterface*>(ext);
+        if (asyncIface) {
+            interfaceType = SelectorInterfaceType::Async;
+            asyncInterface = asyncIface;
+        }
+    }
+}
+
+bool KGetPlugin::SelectorInterface::hasInterface() const
+{
+    return ((interfaceType == SelectorInterfaceType::Sync && syncInterface) || (interfaceType == SelectorInterfaceType::Async && asyncInterface));
+}
+
+KParts::SelectorInterface::QueryMethods KGetPlugin::SelectorInterface::supportedMethods() const
+{
+    switch (interfaceType) {
+        case SelectorInterfaceType::Sync:
+            return syncInterface->supportedQueryMethods();
+        case SelectorInterfaceType::Async:
+            return asyncInterface->supportedAsyncQueryMethods();
+        default:
+            return KParts::SelectorInterface::None;
+    }
+}
+
 void KGetPlugin::showPopup()
 {
     // Check for HtmlExtension support...
     KParts::HtmlExtension *htmlExtn = KParts::HtmlExtension::childObject(parent());
     if (htmlExtn) {
-        KParts::SelectorInterface *selector = qobject_cast<KParts::SelectorInterface *>(htmlExtn);
-        if (selector) {
-            m_dropTargetAction->setChecked(hasDropTarget());
-            const KParts::SelectorInterface::QueryMethods methods = selector->supportedQueryMethods();
-            bool enable = (methods & KParts::SelectorInterface::EntireContent);
-            actionCollection()->action(QL1S("show_links"))->setEnabled(enable);
-            enable = (htmlExtn->hasSelection() && (methods & KParts::SelectorInterface::SelectedContent));
-            actionCollection()->action(QL1S("show_selected_links"))->setEnabled(enable);
-            enable = (actionCollection()->action(QL1S("show_links"))->isEnabled() || actionCollection()->action(QL1S("show_selected_links"))->isEnabled());
-            actionCollection()->action(QL1S("show_drop"))->setEnabled(enable);
-            return;
-        }
+        SelectorInterface iface(htmlExtn);
+        KParts::SelectorInterface::QueryMethods methods = iface.supportedMethods();
+        m_dropTargetAction->setChecked(hasDropTarget());
+
+        bool enable = (methods & KParts::SelectorInterface::EntireContent);
+        actionCollection()->action(QL1S("show_links"))->setEnabled(enable);
+
+        enable = (htmlExtn->hasSelection() && (methods & KParts::SelectorInterface::SelectedContent));
+        actionCollection()->action(QL1S("show_selected_links"))->setEnabled(enable);
+
+        enable = (actionCollection()->action(QL1S("show_links"))->isEnabled() || actionCollection()->action(QL1S("show_selected_links"))->isEnabled());
+        actionCollection()->action(QL1S("show_drop"))->setEnabled(enable);
+
+        return;
     }
 
     // Check for FileInfoExtension support...
@@ -136,8 +173,9 @@ void KGetPlugin::showPopup()
     actionCollection()->action(QL1S("show_selected_links"))->setEnabled(false);
     actionCollection()->action(QL1S("show_links"))->setEnabled(false);
     actionCollection()->action(QL1S("show_drop"))->setEnabled(false);
-    if (m_dropTargetAction->isChecked())
+    if (m_dropTargetAction->isChecked()) {
         m_dropTargetAction->setChecked(false);
+    }
 }
 
 void KGetPlugin::slotShowDrop()
@@ -178,37 +216,48 @@ void KGetPlugin::slotImportLinks()
     kgetInterface.importLinks(m_linkList);
 }
 
+void KGetPlugin::fillLinkListFromHtml(const QUrl& baseUrl, const QList< KParts::SelectorInterface::Element >& elements)
+{
+    QString attr;
+    for (const KParts::SelectorInterface::Element &element : elements) {
+        if (element.hasAttribute(QL1S("href")))
+            attr = QL1S("href");
+        else if (element.hasAttribute(QL1S("src")))
+            attr = QL1S("src");
+        else if (element.hasAttribute(QL1S("data")))
+            attr = QL1S("data");
+        const QUrl resolvedUrl(baseUrl.resolved(QUrl(element.attribute(attr))));
+        // Only select valid and non-local links for download...
+        if (resolvedUrl.isValid() && !resolvedUrl.isLocalFile() && !resolvedUrl.host().isEmpty()) {
+            if (element.hasAttribute(QL1S("type")))
+                m_linkList << QString(QL1S("url ") + resolvedUrl.url() + QL1S(" type ") + element.attribute(QL1S("type")));
+            else
+                m_linkList << resolvedUrl.url();
+        }
+    }
+    slotImportLinks();
+}
+
 void KGetPlugin::getLinks(bool selectedOnly)
 {
     KParts::HtmlExtension *htmlExtn = KParts::HtmlExtension::childObject(parent());
     if (htmlExtn) {
-        KParts::SelectorInterface *selector = qobject_cast<KParts::SelectorInterface *>(htmlExtn);
-        if (selector) {
+        SelectorInterface iface(htmlExtn);
+        if (iface.hasInterface()) {
             m_linkList.clear();
             const QUrl baseUrl = htmlExtn->baseUrl();
             const QString query = QL1S("a[href], img[src], audio[src], video[src], embed[src], object[data]");
-            const KParts::SelectorInterface::QueryMethod method =
-                (selectedOnly ? KParts::SelectorInterface::SelectedContent : KParts::SelectorInterface::EntireContent);
-            const QList<KParts::SelectorInterface::Element> elements = selector->querySelectorAll(query, method);
-            QString attr;
-            Q_FOREACH (const KParts::SelectorInterface::Element &element, elements) {
-                if (element.hasAttribute(QL1S("href")))
-                    attr = QL1S("href");
-                else if (element.hasAttribute(QL1S("src")))
-                    attr = QL1S("src");
-                else if (element.hasAttribute(QL1S("data")))
-                    attr = QL1S("data");
-                const QUrl resolvedUrl(baseUrl.resolved(QUrl(element.attribute(attr))));
-                // Only select valid and non-local links for download...
-                if (resolvedUrl.isValid() && !resolvedUrl.isLocalFile() && !resolvedUrl.host().isEmpty()) {
-                    if (element.hasAttribute(QL1S("type")))
-                        m_linkList << QString(QL1S("url ") + resolvedUrl.url() + QL1S(" type ") + element.attribute(QL1S("type")));
-                    else
-                        m_linkList << resolvedUrl.url();
-                }
+            const KParts::SelectorInterface::QueryMethod method = (selectedOnly ? KParts::SelectorInterface::SelectedContent : KParts::SelectorInterface::EntireContent);
+            if (iface.interfaceType == SelectorInterfaceType::Sync) {
+                const QList<KParts::SelectorInterface::Element> elements = iface.syncInterface->querySelectorAll(query, method);
+                fillLinkListFromHtml(baseUrl, elements);
+            } else if (iface.interfaceType == SelectorInterfaceType::Async) {
+                auto callback = [this, baseUrl](const QList<KParts::SelectorInterface::Element>& elements){
+                    fillLinkListFromHtml(baseUrl, elements);
+                };
+                iface.asyncInterface->querySelectorAllAsync(query, method, callback);
             }
         }
-        slotImportLinks();
     }
 
     KParts::FileInfoExtension *fileinfoExtn = KParts::FileInfoExtension::childObject(parent());

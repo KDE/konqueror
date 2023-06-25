@@ -20,6 +20,7 @@
 #include "webenginepart.h"
 #include "webenginepage.h"
 #include "navigationrecorder.h"
+#include "webenginepart_ext.h"
 
 #include <KProtocolInfo>
 #include <KSharedConfig>
@@ -77,7 +78,9 @@ void WebEnginePartControls::setup(QWebEngineProfile* profile)
     }
     m_profile = profile;
 
-    m_profile->scripts()->insert({WebEngineWallet::formDetectorFunctionsScript(), WebEnginePart::detectRefreshScript()});
+    m_profile->scripts()->insert({WebEngineWallet::formDetectorFunctionsScript(),
+                                    WebEnginePart::detectRefreshScript(),
+                                    WebEngineHtmlExtension::querySelectorScript()});
 
     m_profile->installUrlSchemeHandler("error", new WebEnginePartErrorSchemeHandler(m_profile));
     m_profile->installUrlSchemeHandler("konq", new KonqUrlSchemeHandler(m_profile));

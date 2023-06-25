@@ -42,6 +42,7 @@
 #include <QStandardPaths>
 
 #include "searchbar_debug.h"
+#include <asyncselectorinterface.h>
 
 K_PLUGIN_CLASS_WITH_JSON(SearchBarPlugin, "searchbar.json")
 
@@ -446,24 +447,35 @@ void SearchBarPlugin::HTMLDocLoaded()
         return;
     }
 
+    //NOTE: the link below seems to be dead
     // Testcase for this code: http://search.iwsearch.net
     KParts::HtmlExtension *ext = KParts::HtmlExtension::childObject(m_part);
     KParts::SelectorInterface *selectorInterface = qobject_cast<KParts::SelectorInterface *>(ext);
+    const QString query(QStringLiteral("head > link[rel=\"search\"][type=\"application/opensearchdescription+xml\"]"));
 
     if (selectorInterface) {
         //if (headElelement.getAttribute("profile") != "http://a9.com/-/spec/opensearch/1.1/") {
         //    kWarning() << "Warning: there is no profile attribute or wrong profile attribute in <head>, as specified by open search specification 1.1";
         //}
-        const QString query(QStringLiteral("head > link[rel=\"search\"][type=\"application/opensearchdescription+xml\"]"));
         const QList<KParts::SelectorInterface::Element> linkNodes = selectorInterface->querySelectorAll(query, KParts::SelectorInterface::EntireContent);
-        //qCDebug(SEARCHBAR_LOG) << "Found" << linkNodes.length() << "links in" << m_part->url();
-        Q_FOREACH (const KParts::SelectorInterface::Element &link, linkNodes) {
-            const QString title = link.attribute(QStringLiteral("title"));
-            const QString href = link.attribute(QStringLiteral("href"));
-            //qCDebug(SEARCHBAR_LOG) << "Found opensearch" << title << href;
-            m_openSearchDescs.insert(title, href);
-            // TODO associate this with m_part; we can get descs from multiple tabs here...
-        }
+        insertOpenSearchEntries(linkNodes);
+    } else {
+        AsyncSelectorInterface *asyncIface = qobject_cast<AsyncSelectorInterface*>(ext);
+        auto callback = [this](const QList<KParts::SelectorInterface::Element>& elements) {
+            insertOpenSearchEntries(elements);
+        };
+        asyncIface->querySelectorAllAsync(query, KParts::SelectorInterface::EntireContent, callback);
+    }
+}
+
+void SearchBarPlugin::insertOpenSearchEntries(const QList<KParts::SelectorInterface::Element>& elements)
+{
+    for (const KParts::SelectorInterface::Element &link : elements) {
+        const QString title = link.attribute(QStringLiteral("title"));
+        const QString href = link.attribute(QStringLiteral("href"));
+        //qCDebug(SEARCHBAR_LOG) << "Found opensearch" << title << href;
+        m_openSearchDescs.insert(title, href);
+        // TODO associate this with m_part; we can get descs from multiple tabs here...
     }
 }
 

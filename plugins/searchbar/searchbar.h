@@ -10,6 +10,8 @@
 
 #include <KHistoryComboBox>
 #include <KUriFilter>
+#include <KParts/SelectorInterface>
+
 #include <konq_kpart_plugin.h>
 
 #include <QStringList>
@@ -176,6 +178,8 @@ private Q_SLOTS:
     void HTMLLoadingStarted();
 
     void HTMLDocLoaded();
+
+    void insertOpenSearchEntries(const QList<KParts::SelectorInterface::Element> &elements);
 
     void openSearchEngineAdded(const QString &name, const QString &searchUrl, const QString &fileName);
 
