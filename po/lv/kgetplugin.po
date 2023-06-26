@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kget\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"POT-Creation-Date: 2023-06-26 00:50+0000\n"
 "PO-Revision-Date: 2010-01-09 18:49+0200\n"
 "Last-Translator: Viesturs Zarins <viesturs.zarins@mii.lu.lv>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -21,33 +21,33 @@ msgstr ""
 "2);\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: kget_plugin.cpp:56
+#: kget_plugin.cpp:58
 #, kde-format
 msgid "Download Manager"
 msgstr "Lejupielāžu pārvaldnieks"
 
-#: kget_plugin.cpp:62
+#: kget_plugin.cpp:64
 #, kde-format
 msgid "Show Drop Target"
 msgstr "Rādīt nomešanas mērķi"
 
-#: kget_plugin.cpp:69
+#: kget_plugin.cpp:71
 #, kde-format
 msgid "List All Links"
 msgstr "Rādīt visas saites"
 
-#: kget_plugin.cpp:74
+#: kget_plugin.cpp:76
 #, kde-format
 msgid "List Selected Links"
 msgstr "Rādīt izvēlētās saites"
 
-#: kget_plugin.cpp:170
+#: kget_plugin.cpp:208
 #, fuzzy, kde-format
 #| msgid "Download failed, no working URLs were found."
 msgid "No downloadable links were found."
 msgstr "Lejupielāde neveiksmīga, netika atrasts neviens strādājošs URLs."
 
-#: kget_plugin.cpp:170
+#: kget_plugin.cpp:208
 #, kde-format
 msgid "No Links"
 msgstr "Nav saišu"

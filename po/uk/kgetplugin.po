@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgetplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"POT-Creation-Date: 2023-06-26 00:50+0000\n"
 "PO-Revision-Date: 2011-02-05 09:15+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -19,32 +19,32 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: kget_plugin.cpp:56
+#: kget_plugin.cpp:58
 #, kde-format
 msgid "Download Manager"
 msgstr "Керування отриманнями"
 
-#: kget_plugin.cpp:62
+#: kget_plugin.cpp:64
 #, kde-format
 msgid "Show Drop Target"
 msgstr "Показати вікно для кидання посилань"
 
-#: kget_plugin.cpp:69
+#: kget_plugin.cpp:71
 #, kde-format
 msgid "List All Links"
 msgstr "Показати список всіх посилань"
 
-#: kget_plugin.cpp:74
+#: kget_plugin.cpp:76
 #, kde-format
 msgid "List Selected Links"
 msgstr "Побудувати список вибраних посилань"
 
-#: kget_plugin.cpp:170
+#: kget_plugin.cpp:208
 #, kde-format
 msgid "No downloadable links were found."
 msgstr "Не знайдено придатних для отримання посилань."
 
-#: kget_plugin.cpp:170
+#: kget_plugin.cpp:208
 #, kde-format
 msgid "No Links"
 msgstr "Немає посилань"

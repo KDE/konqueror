@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kget\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"POT-Creation-Date: 2023-06-26 00:50+0000\n"
 "PO-Revision-Date: 2010-03-04 21:36+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -19,33 +19,33 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: kget_plugin.cpp:56
+#: kget_plugin.cpp:58
 #, kde-format
 msgid "Download Manager"
 msgstr "จัดการการดาวน์โหลด"
 
-#: kget_plugin.cpp:62
+#: kget_plugin.cpp:64
 #, kde-format
 msgid "Show Drop Target"
 msgstr "แสดงไอคอน หย่อนเพื่อดาวน์โหลด"
 
-#: kget_plugin.cpp:69
+#: kget_plugin.cpp:71
 #, kde-format
 msgid "List All Links"
 msgstr "แสดงที่อยู่เชื่อมโยงทั้งหมด"
 
-#: kget_plugin.cpp:74
+#: kget_plugin.cpp:76
 #, kde-format
 msgid "List Selected Links"
 msgstr "แสดงที่อยู่เชื่อมโยงต่าง ๆ ที่เลือกไว้"
 
-#: kget_plugin.cpp:170
+#: kget_plugin.cpp:208
 #, fuzzy, kde-format
 #| msgid "Download failed, no working URLs were found."
 msgid "No downloadable links were found."
 msgstr "การดาวน์โหลดล้มเหลว ไม่พบที่อยู่ URL ที่ทำงานได้"
 
-#: kget_plugin.cpp:170
+#: kget_plugin.cpp:208
 #, kde-format
 msgid "No Links"
 msgstr "ไม่มีที่อยู่เชื่อมโยงใด ๆ"

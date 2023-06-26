@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgetplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"POT-Creation-Date: 2023-06-26 00:50+0000\n"
 "PO-Revision-Date: 2011-06-23 13:29+0300\n"
 "Last-Translator: Tomas Straupis <tomasstraupis@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -19,32 +19,32 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Lokalize 1.2\n"
 
-#: kget_plugin.cpp:56
+#: kget_plugin.cpp:58
 #, kde-format
 msgid "Download Manager"
 msgstr "Atsiuntimo valdyklė"
 
-#: kget_plugin.cpp:62
+#: kget_plugin.cpp:64
 #, kde-format
 msgid "Show Drop Target"
 msgstr "Rodyti KGet rodyklę"
 
-#: kget_plugin.cpp:69
+#: kget_plugin.cpp:71
 #, kde-format
 msgid "List All Links"
 msgstr "Rodyti visas nuorodas"
 
-#: kget_plugin.cpp:74
+#: kget_plugin.cpp:76
 #, kde-format
 msgid "List Selected Links"
 msgstr "Rodyti pažymėtas nuorodas"
 
-#: kget_plugin.cpp:170
+#: kget_plugin.cpp:208
 #, kde-format
 msgid "No downloadable links were found."
 msgstr "Nerasta nei viena atsiuntimo nuoroda."
 
-#: kget_plugin.cpp:170
+#: kget_plugin.cpp:208
 #, kde-format
 msgid "No Links"
 msgstr "Nėra nuorodų"
