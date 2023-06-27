@@ -451,6 +451,7 @@ void SearchBarPlugin::HTMLDocLoaded()
     // Testcase for this code: http://search.iwsearch.net
     KParts::HtmlExtension *ext = KParts::HtmlExtension::childObject(m_part);
     KParts::SelectorInterface *selectorInterface = qobject_cast<KParts::SelectorInterface *>(ext);
+    AsyncSelectorInterface *asyncIface = qobject_cast<AsyncSelectorInterface*>(ext);
     const QString query(QStringLiteral("head > link[rel=\"search\"][type=\"application/opensearchdescription+xml\"]"));
 
     if (selectorInterface) {
@@ -459,8 +460,7 @@ void SearchBarPlugin::HTMLDocLoaded()
         //}
         const QList<KParts::SelectorInterface::Element> linkNodes = selectorInterface->querySelectorAll(query, KParts::SelectorInterface::EntireContent);
         insertOpenSearchEntries(linkNodes);
-    } else {
-        AsyncSelectorInterface *asyncIface = qobject_cast<AsyncSelectorInterface*>(ext);
+    } else if (asyncIface) {
         auto callback = [this](const QList<KParts::SelectorInterface::Element>& elements) {
             insertOpenSearchEntries(elements);
         };
