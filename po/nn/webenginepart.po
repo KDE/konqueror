@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-11 00:47+0000\n"
+"POT-Creation-Date: 2023-06-26 00:50+0000\n"
 "PO-Revision-Date: 2021-01-16 15:33+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -999,61 +999,61 @@ msgstr "Tillat"
 msgid "Do Not Allow"
 msgstr "Ikkje tillat"
 
-#: src/webenginepart.cpp:223
+#: src/webenginepart.cpp:211
 #, kde-format
 msgid "Save Full HTML Page As..."
 msgstr ""
 
-#: src/webenginepart.cpp:227
+#: src/webenginepart.cpp:215
 #, kde-format
 msgid "Print Preview"
 msgstr "Førehandsvising av utskrift"
 
-#: src/webenginepart.cpp:231
+#: src/webenginepart.cpp:219
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Forstørr"
 
-#: src/webenginepart.cpp:236
+#: src/webenginepart.cpp:224
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Forminsk"
 
-#: src/webenginepart.cpp:241
+#: src/webenginepart.cpp:229
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Verkeleg storleik"
 
-#: src/webenginepart.cpp:246
+#: src/webenginepart.cpp:234
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Forstørr berre tekst"
 
-#: src/webenginepart.cpp:254
+#: src/webenginepart.cpp:242
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Forstørr til DPI"
 
-#: src/webenginepart.cpp:267
+#: src/webenginepart.cpp:255
 #, kde-format
 msgid "Set &Encoding"
 msgstr "Vel &teiknkoding"
 
-#: src/webenginepart.cpp:270
+#: src/webenginepart.cpp:258
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Vis &dokumentkjelde"
 
-#: src/webenginepart.cpp:275 src/webenginepart.cpp:575
+#: src/webenginepart.cpp:263 src/webenginepart.cpp:563
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:281
+#: src/webenginepart.cpp:269
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1063,12 +1063,12 @@ msgstr ""
 "<h3>Finn tekst</h3>Viser eit dialogvindauge du kan bruka til å finna tekst "
 "på den viste sida."
 
-#: src/webenginepart.cpp:573
+#: src/webenginepart.cpp:561
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "SSL-informasjonen for nettsida ser ut til å vera øydelagd."
 
-#: src/webenginepart.cpp:654
+#: src/webenginepart.cpp:642
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1076,7 +1076,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "E-post: "
 
-#: src/webenginepart.cpp:683
+#: src/webenginepart.cpp:671
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1084,7 +1084,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " – kopi til: "
 
-#: src/webenginepart.cpp:685
+#: src/webenginepart.cpp:673
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1092,7 +1092,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " – blindkopi til: "
 
-#: src/webenginepart.cpp:687
+#: src/webenginepart.cpp:675
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1100,42 +1100,42 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " – emne: "
 
-#: src/webenginepart.cpp:691 src/webenginepart.cpp:702
+#: src/webenginepart.cpp:679 src/webenginepart.cpp:690
 #, kde-format
 msgid " (In new window)"
 msgstr " (i nytt vindauge)"
 
-#: src/webenginepart.cpp:700
+#: src/webenginepart.cpp:688
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (i forelderramme)"
 
-#: src/webenginepart.cpp:764
+#: src/webenginepart.cpp:752
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Vil du søkja etter <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:765
+#: src/webenginepart.cpp:753
 #, kde-format
 msgid "Internet Search"
 msgstr "Nettsøk"
 
-#: src/webenginepart.cpp:765
+#: src/webenginepart.cpp:753
 #, kde-format
 msgid "&Search"
 msgstr "&Søk"
 
-#: src/webenginepart.cpp:876
+#: src/webenginepart.cpp:864
 #, kde-format
 msgid "Close window?"
 msgstr "Vil du lukka vindauget?"
 
-#: src/webenginepart.cpp:876
+#: src/webenginepart.cpp:864
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Treng stadfesting"
 
-#: src/webenginepart.cpp:950
+#: src/webenginepart.cpp:938
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
@@ -1143,43 +1143,43 @@ msgstr ""
 "<html>Ønskjer du at %1 skal hugsa innloggingsinformasjon for <b>%2</b>?</"
 "html>"
 
-#: src/webenginepart.cpp:1021
+#: src/webenginepart.cpp:1009
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr "&Fyll inn skjema no"
 
-#: src/webenginepart.cpp:1026
+#: src/webenginepart.cpp:1014
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr "&Hugs passorda på denne sida no"
 
-#: src/webenginepart.cpp:1030
+#: src/webenginepart.cpp:1018
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr "&Tilpass felt som skal hugsast for denne sida …"
 
-#: src/webenginepart.cpp:1034
+#: src/webenginepart.cpp:1022
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr "Fjern tilpassa innstillingar for datalagring for denne sida"
 
-#: src/webenginepart.cpp:1038
+#: src/webenginepart.cpp:1026
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "&Tillat passordlagring for nettstaden"
 
-#: src/webenginepart.cpp:1042
+#: src/webenginepart.cpp:1030
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "Fjern alle lagra passord for nettstaden"
 
-#: src/webenginepart.cpp:1046
+#: src/webenginepart.cpp:1034
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Køyr lommebokhandsamaren"
 
-#: src/webenginepart.cpp:1050
+#: src/webenginepart.cpp:1038
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Lukk lommebok"
@@ -1220,17 +1220,17 @@ msgstr "&Handsaming og brukarnamn og passord"
 msgid "HTML Toolbar"
 msgstr "HTML-verktøylinje"
 
-#: src/webenginepart_ext.cpp:264
+#: src/webenginepart_ext.cpp:269
 #, kde-format
 msgid "Print Document"
 msgstr "Skriv ut dokument"
 
-#: src/webenginepart_ext.cpp:481
+#: src/webenginepart_ext.cpp:486
 #, kde-format
 msgid "Add URL to Filter"
 msgstr "Legg nettadresse til filter"
 
-#: src/webenginepart_ext.cpp:482
+#: src/webenginepart_ext.cpp:487
 #, kde-format
 msgid "Enter the URL:"
 msgstr "Skriv inn adresse:"
