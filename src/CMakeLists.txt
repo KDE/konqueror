@@ -31,12 +31,8 @@ target_link_libraries(konquerorprivate
    KF5::Konq
    KF5::Parts
    KF5::KIOGui
+   Qt5::X11Extras
 )
-
-if(KONQ_HAVE_X11)
-  target_link_libraries(konquerorprivate Qt5::X11Extras)
-endif()
-
 
 set_target_properties(konquerorprivate PROPERTIES VERSION ${KONQUEROR_LIB_VERSION} SOVERSION "5" )
 install(TARGETS konquerorprivate ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)

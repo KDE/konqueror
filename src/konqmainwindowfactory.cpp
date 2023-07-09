@@ -16,6 +16,7 @@
 #include <KStartupInfo>
 #include <QTimer>
 #include <QX11Info>
+#include <KWindowSystem>
 
 // Terminates fullscreen-mode for any full-screen window on the current desktop
 static void abortFullScreenMode()
@@ -59,7 +60,8 @@ KonqMainWindow *KonqMainWindowFactory::createEmptyWindow()
     KonqMainWindow *win = findPreloadedWindow();
     if (win) {
         qCDebug(KONQUEROR_LOG) << "Reusing preloaded window" << win;
-        KStartupInfo::setNewStartupId(win->windowHandle(), QX11Info::nextStartupId());
+        QByteArray startupId = KWindowSystem::isPlatformX11() ? QX11Info::nextStartupId() : qEnvironmentVariable("XDG_ACTIVATION_TOKEN").toUtf8();
+        KStartupInfo::setNewStartupId(win->windowHandle(), startupId);
     } else {
         win = new KonqMainWindow(KonqUrl::url(KonqUrl::Type::Blank));
     }

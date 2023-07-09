@@ -5,7 +5,6 @@
 */
 
 #include "konqclientrequest.h"
-#include <config-konqueror.h> // KONQ_HAVE_X11
 #include <konq_main_interface.h>
 #include <konq_mainwindow_interface.h>
 
@@ -15,10 +14,7 @@
 #include <QDBusReply>
 #include <QProcess>
 #include <QUrl>
-
-#if KONQ_HAVE_X11
 #include <QX11Info>
-#endif
 
 #include <KConfig>
 #include <KConfigGroup>
@@ -42,11 +38,11 @@ public:
 KonqClientRequest::KonqClientRequest()
     : d(new KonqClientRequestPrivate)
 {
-#if KONQ_HAVE_X11
     if (KWindowSystem::isPlatformX11()) {
         d->startup_id_str = QX11Info::nextStartupId();
+    } else if (KWindowSystem::isPlatformWayland()) {
+        d->startup_id_str = qEnvironmentVariable("XDG_ACTIVATION_TOKEN").toUtf8();
     }
-#endif
 }
 
 KonqClientRequest::~KonqClientRequest()
@@ -75,8 +71,7 @@ void KonqClientRequest::setMimeType(const QString &mimeType)
 
 void KonqClientRequestPrivate::sendASNChange()
 {
-#if KONQ_HAVE_X11
-    if (KWindowSystem::platform() == KWindowSystem::Platform::X11) {
+    if (KWindowSystem::isPlatformX11()) {
         KStartupInfoId id;
         id.initId(startup_id_str);
         KStartupInfoData data;
@@ -84,7 +79,6 @@ void KonqClientRequestPrivate::sendASNChange()
         data.setHostname(); // ( no need to bother to get this konqy's PID )
         KStartupInfo::sendChangeXcb(QX11Info::connection(), QX11Info::appScreen(), id, data);
     }
-#endif
 }
 
 bool KonqClientRequest::openUrl()
