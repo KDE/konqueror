@@ -352,8 +352,12 @@ int KonquerorApplication::performStart(const QString& workingDirectory, bool fir
     KonqMainWindow *mw = result.first;
     if (!firstInstance && mw) {
         mw ->setAttribute(Qt::WA_NativeWindow, true);
-        KStartupInfo::setNewStartupId(mw->windowHandle(), QX11Info::nextStartupId());
-        KX11Extras::forceActiveWindow(mw->winId());
+        if (KWindowSystem::isPlatformX11()) {
+            KStartupInfo::setNewStartupId(mw->windowHandle(), QX11Info::nextStartupId());
+            KX11Extras::forceActiveWindow(mw->winId());
+        } else {
+            KStartupInfo::setNewStartupId(mw->windowHandle(), qEnvironmentVariable("XDG_ACTIVATION_TOKEN").toUtf8());
+        }
     }
 
     return result.second;

@@ -32,16 +32,10 @@ include(GenerateExportHeader)
 set(KONQUEROR_LIB_VERSION "${RELEASE_SERVICE_VERSION}")
 set(KONQUEROR_VERSION "${KONQUEROR_LIB_VERSION}")
 
-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets WebEngineWidgets)
+find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets WebEngineWidgets X11Extras)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Parts KCMUtils Archive Crash WindowSystem Init IconThemes DBusAddons GuiAddons)
 
 find_package(KF5 ${KF5_MIN_VERSION} COMPONENTS Activities DocTools) # Optional
-
-option(WITHOUT_X11 "Build without X11 integration (skips finding Qt5X11Extras)" OFF)
-if(NOT WITHOUT_X11)
-    find_package(Qt5X11Extras)
-    set(KONQ_HAVE_X11 ${Qt5X11Extras_FOUND})
-endif()
 
 add_definitions(
     -DQT_USE_QSTRINGBUILDER

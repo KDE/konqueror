@@ -21,9 +21,7 @@
 #include <KStartupInfo>
 
 #include <QFile>
-#if KONQ_HAVE_X11
 #include <QX11Info>
-#endif
 
 #ifdef KActivities_FOUND
 #include <KActivities/Consumer>
@@ -51,9 +49,7 @@ KonquerorAdaptor::~KonquerorAdaptor()
 static void setStartupId(const QByteArray &startup_id)
 {
     KStartupInfo::setStartupId(startup_id);
-#if KONQ_HAVE_X11
     QX11Info::setAppUserTime(0);
-#endif
 }
 
 QDBusObjectPath KonquerorAdaptor::openBrowserWindow(const QString &url, const QByteArray &startup_id)

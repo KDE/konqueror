@@ -77,9 +77,7 @@
 #include <QClipboard>
 #include <QStackedWidget>
 #include <QFileInfo>
-#if KONQ_HAVE_X11
 #include <QX11Info>
-#endif
 #include <QEvent>
 #include <QKeyEvent>
 #include <QByteRef>
@@ -1206,11 +1204,9 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
         mainWindow->viewManager()->setActivePart(*part);
     }
 
-#if KONQ_HAVE_X11
     // WORKAROUND: Clear the window state information set by KMainWindow::restoreWindowSize
     // so that the size and location settings we set below always take effect.
     KWindowSystem::clearState(mainWindow->winId(), NET::Max);
-#endif
 
     // process the window args
     const int xPos = ((windowArgs.x() == -1) ?  mainWindow->x() : windowArgs.x());
@@ -1310,8 +1306,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
 // and the WM should take care of it itself.
     bool wm_usertime_support = false;
 
-#if KONQ_HAVE_X11
-    if (KWindowSystem::platform() == KWindowSystem::Platform::X11) {
+    if (KWindowSystem::isPlatformX11()) {
         auto saved_last_input_time = QX11Info::appUserTime();
         if (windowArgs.lowerWindow()) {
             NETRootInfo wm_info(QX11Info::connection(), NET::Supported);
@@ -1342,9 +1337,6 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
             }
         }
     }
-#else // KONQ_HAVE_X11
-    mainWindow->show();
-#endif
 
     if (windowArgs.isFullScreen()) {
         mainWindow->action("fullscreen")->trigger();
