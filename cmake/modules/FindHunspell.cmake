@@ -32,18 +32,33 @@ find_package_handle_standard_args(Hunspell
 )
 
 if (Hunspell_FOUND)
-  #Find which hunspell dictionaries are availlable
+  #Call hunspell -D to find list of available dictionaries
   execute_process(COMMAND ${Hunspell_EXECUTABLE} "-D" OUTPUT_VARIABLE Hunspell_OUTPUT ERROR_VARIABLE Hunspell_OUTPUT)
-  #Remove useless output
-  string(REGEX MATCH "AVAILABLE DICTIONARIES [^\n]*\n(.*)" Hunspell_DICTIONARIES ${Hunspell_OUTPUT})
-  #Convert string into list - CMAKE_MATCH_1 comes from the REGEX MATCH,
-  #although the value has **also** been stored as Hunspell_DICTIONARIES
-  string(REGEX REPLACE "\n" ";" Hunspell_DICTIONARIES "${CMAKE_MATCH_1}")
+  #Convert output to a list of lines
+  string(REPLACE "\n" ";" OUTPUT_AS_LIST ${Hunspell_OUTPUT})
+  #NOTE: don't rely on the exact text of the first lines, as it can be translated
+  #Remove the first 3 lines, as they aren't part of the dictionary list
+  list(SUBLIST OUTPUT_AS_LIST 3 -1 OUTPUT_AS_LIST)
+
+  set(Hunspell_DICTIONARIES "")
   set(Hunspell_UNIQUE_DICTIONARIES "")
   set(Hunspell_unique_dict_names "")
 
-  #
-  foreach(D ${Hunspell_DICTIONARIES})
+  #There may be more than one dictionary with the same name. We need a list
+  #of unique dictionaries (as QtWebEngine only takes into account their name
+  #and not their path)
+  foreach(D ${OUTPUT_AS_LIST})
+  #The content of Hunspell_DICTIONARIES isn't just the list of dictionaries:
+  #the last entries are the line LOADED DICTIONARIES followed by a list of loaded
+  #dictionary files which we aren't interested in. As soon as we find a line
+  #not containing the path separator (/) we know that we have reached the LOADED DICTIONARIES
+  #line and we can exit the loop
+    string(FIND ${D} "/" separator_idx)
+    #This means that / wasn't in the string
+    if (separator_idx EQUAL -1)
+      break()
+    endif()
+    list(APPEND Hunspell_DICTIONARIES ${D})
     get_filename_component(base ${D} NAME)
     list(FIND Hunspell_unique_dict_names ${base} dict_found)
     if (${dict_found} EQUAL -1)
@@ -52,3 +67,5 @@ if (Hunspell_FOUND)
     endif()
   endforeach()
 endif()
+list(JOIN Hunspell_unique_dict_names ", " detected_dictionaries)
+add_feature_info(Hunspell Hunspell_FOUND "with dictionaries ${detected_dictionaries}")
