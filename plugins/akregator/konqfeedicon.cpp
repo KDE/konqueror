@@ -1,7 +1,8 @@
 /*
     This file is part of Akregator.
 
-    SPDX-FileCopyrightText: 2004 Teemu Rytilahti <tpr@d5k.net> 2023 Stefano Crocco <stefano.crocco@alice.it>
+    SPDX-FileCopyrightText: 2004 Teemu Rytilahti <tpr@d5k.net>
+    SPDX-FileCopyrightText: 2023 Stefano Crocco <stefano.crocco@alice.it>
 
     SPDX-License-Identifier: GPL-2.0-or-later WITH LicenseRef-Qt-exception
 */
@@ -17,15 +18,20 @@
 #include <kparts/part.h>
 #include <kparts/statusbarextension.h>
 #include <KParts/ReadOnlyPart>
+#include <KParts/BrowserExtension>
 #include <KParts/HtmlExtension>
 #include <KParts/SelectorInterface>
 #include <kio/job.h>
 #include <kurllabel.h>
 #include <kprotocolinfo.h>
+#include <KCharsets>
 
 #include <QApplication>
 #include <QStatusBar>
 #include <QStyle>
+#include <QClipboard>
+#include <QWidgetAction>
+#include <QInputDialog>
 
 #include <asyncselectorinterface.h>
 
@@ -104,23 +110,41 @@ bool Akregator::KonqFeedIcon::isUrlUsable() const
     return true;
 }
 
+QAction * Akregator::KonqFeedIcon::actionTitleForFeed(const QString &title, QWidget* parent)
+{
+    QLabel *l = new QLabel(title);
+    l->setAlignment(Qt::AlignCenter);
+    QWidgetAction *wa = new QWidgetAction(parent);
+    wa->setDefaultWidget(l);
+    return wa;
+}
+
+QMenu * Akregator::KonqFeedIcon::createMenuForFeed(const Feed& feed, QWidget* parent, bool addSection)
+{
+    QMenu *menu = new QMenu(feed.title(), parent);
+    if (addSection) {
+        menu->addAction(actionTitleForFeed(feed.title(), menu));
+        menu->addSeparator();
+    }
+    menu->addAction(QIcon::fromTheme(QStringLiteral("bookmark-new")), i18n("Add feed to Akregator"), menu, [feed, this](){addFeedToAkregator(feed.url());});
+    menu->addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy feed URL to clipboard"), menu, [feed, this](){copyFeedUrlToClipboard(feed.url());});
+    menu->addAction(QIcon::fromTheme(QStringLiteral("document-open")), i18n("Open feed URL"), menu, [feed, this](){openFeedUrl(feed.url(), feed.mimeType());});
+    return menu;
+}
+
 void KonqFeedIcon::contextMenu()
 {
     delete m_menu;
-    m_menu = new QMenu(m_part->widget());
     if (m_feedList.count() == 1) {
-        m_menu->setTitle(m_feedList.first().title());
-        m_menu->addAction(QIcon::fromTheme("bookmark-new"), i18n("Add Feed to Akregator"), this, &KonqFeedIcon::addAllFeeds);
+        m_menu = createMenuForFeed(m_feedList.first(), m_part->widget(), true);
     } else {
-        m_menu->setTitle(i18n("Add Feeds to Akregator"));
-        int id = 0;
-        for (FeedDetectorEntryList::Iterator it = m_feedList.begin(); it != m_feedList.end(); ++it) {
-            QAction *action = m_menu->addAction(QIcon::fromTheme(QStringLiteral("bookmark-new")), (*it).title(), this, &KonqFeedIcon::addFeed);
-            action->setData(QVariant::fromValue(id));
-            id++;
-        }
-        //disconnect(m_menu, SIGNAL(activated(int)), this, SLOT(addFeed(int)));
+        m_menu = new QMenu(m_part->widget());
+        m_menu->addAction(actionTitleForFeed(i18nc("@title:menu title for the feeds menu", "Feeds"), m_menu));
         m_menu->addSeparator();
+        for (const Feed &f : m_feedList) {
+            m_menu->addMenu(createMenuForFeed(f, m_menu));
+            m_menu->addSeparator();
+        }
         m_menu->addAction(QIcon::fromTheme(QStringLiteral("bookmark-new")), i18n("Add All Found Feeds to Akregator"), this, &KonqFeedIcon::addAllFeeds);
     }
     m_menu->popup(QCursor::pos());
@@ -165,21 +189,34 @@ void KonqFeedIcon::updateFeedIcon()
 void Akregator::KonqFeedIcon::fillFeedList(const QList<Element> &linkNodes)
 {
     QString doc;
-    for (int i = 0; i < linkNodes.count(); i++) {
-        const KParts::SelectorInterface::Element element = linkNodes.at(i);
-
-        // TODO parse the attributes directly here, rather than re-assembling
-        // and then re-parsing in extractFromLinkTags!
-        doc += QLatin1String("<link ");
-        for (const QString &attrName : element.attributeNames()) {
-            doc += attrName + "=\"";
-            doc += element.attribute(attrName).toHtmlEscaped().replace(QLatin1String("\""), QLatin1String("&quot;"));
-            doc += QLatin1String("\" ");
+    for (const Element &e : linkNodes) {
+        QString rel = e.attribute(QStringLiteral("rel")).toLower();
+        if (!rel.endsWith(QStringLiteral("alternate")) && !rel.endsWith(QStringLiteral("feed")) && !rel.endsWith(QStringLiteral("service.feed"))) {
+            continue;
         }
-        doc += QLatin1String("/>");
+
+        static const QStringList acceptableMimeTypes =  {
+            QStringLiteral("application/rss+xml"),
+            QStringLiteral("application/rdf+xml"),
+            QStringLiteral("application/atom+xml"),
+            QStringLiteral("application/xml")
+        };
+        QString mimeType = e.attribute("type").toLower();
+        if (!acceptableMimeTypes.contains(mimeType)) {
+            continue;
+        }
+        QString url = KCharsets::resolveEntities(e.attribute(QStringLiteral("href")));
+        if (url.isEmpty()) {
+            continue;
+        }
+        url = PluginUtil::fixRelativeURL(url, baseUrl(m_part));
+
+        QString title = KCharsets::resolveEntities(e.attribute(QStringLiteral("title")));
+        if (title.isEmpty()) {
+            title = url;
+        }
+        m_feedList.append(Feed(url, title, mimeType));
     }
-    qCDebug(AKREGATORPLUGIN_LOG) << doc;
-    m_feedList = FeedDetector::extractFromLinkTags(doc);
 }
 
 void Akregator::KonqFeedIcon::addFeedIcon()
@@ -218,24 +255,35 @@ void KonqFeedIcon::removeFeedIcon()
     m_menu = nullptr;
 }
 
-void KonqFeedIcon::addFeed()
-{
-    bool ok = false;
-    const int id = sender() ? qobject_cast<QAction *>(sender())->data().toInt(&ok) : -1;
-    if (!ok || id == -1) {
-        return;
-    }
-    PluginUtil::addFeeds(QStringList(PluginUtil::fixRelativeURL(m_feedList[id].url(), baseUrl(m_part))));
-}
-
 // from akregatorplugin.cpp
 void KonqFeedIcon::addAllFeeds()
 {
     QStringList list;
-    foreach (const FeedDetectorEntry &it, m_feedList) {
-        list.append(PluginUtil::fixRelativeURL(it.url(), baseUrl(m_part)));
-    }
+    std::transform(m_feedList.constBegin(), m_feedList.constEnd(), std::back_inserter(list), [](const Feed &f){return f.url();});
     PluginUtil::addFeeds(list);
+}
+
+void Akregator::KonqFeedIcon::addFeedToAkregator(const QString& url)
+{
+    PluginUtil::addFeeds({url});
+}
+
+void Akregator::KonqFeedIcon::copyFeedUrlToClipboard(const QString& url)
+{
+    QApplication::clipboard()->setText(url);
+}
+
+void Akregator::KonqFeedIcon::openFeedUrl(const QString& url, const QString &mimeType)
+{
+    KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(m_part);
+    if (!ext) {
+        return;
+    }
+    KParts::OpenUrlArguments args;
+    args.setMimeType(mimeType);
+    KParts::BrowserArguments bargs;
+    bargs.setNewTab(true);
+    emit ext->openUrlRequest(QUrl(url), args, bargs);
 }
 
 #include "konqfeedicon.moc"

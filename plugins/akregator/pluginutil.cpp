@@ -12,7 +12,6 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 
-#include "feeddetector.h"
 #include "akregatorplugindebug.h"
 
 #include <QStringList>
