@@ -29,23 +29,6 @@ AkregatorMenu::AkregatorMenu(QObject *parent, const QVariantList &args)
   : KAbstractFileItemActionPlugin(parent)
 {
     Q_UNUSED(args);
-
-#if 0
-    if (QByteArray(kapp->name()) == "kdesktop" && !KAuthorized::authorizeAction("editable_desktop_icons")) {
-        return;
-    }
-#endif
-    // Do nothing if user has turned us off.
-    // TODO: Not yet implemented in aKregator settings.
-
-    /*
-    m_conf = new KConfig( "akregatorrc" );
-    m_conf->setGroup( "AkregatorKonqPlugin" );
-    if ( !m_conf->readEntry( "Enable", true ) )
-        return;
-    */
-
-    m_feedMimeTypes << "application/rss+xml" << "text/rdf" << "application/xml";
 }
 
 
@@ -55,22 +38,21 @@ QList<QAction *> AkregatorMenu::actions(const KFileItemListProperties &fileItemI
 
     QList<QAction *> acts;
     const KFileItemList items = fileItemInfos.items();
-    foreach (const KFileItem &item, items) {
+    for (const KFileItem &item : items ) {
         if (isFeedUrl(item)) {
             qCDebug(AKREGATORPLUGIN_LOG) << "found feed" << item.url();
 
             QAction *action = new QAction(this);
             action->setText(i18nc("@action:inmenu", "Add Feed to Akregator"));
             action->setIcon(QIcon::fromTheme("akregator"));
-            action->setData(item.url());
-            connect(action, &QAction::triggered, this, &AkregatorMenu::slotAddFeed);
+            QString url = item.url().url();
+            connect(action, &QAction::triggered, this, [url, this](){addFeed(url);});
             acts.append(action);
         }
     }
 
     return acts;
 }
-
 
 static bool isFeedUrl(const QString &urlPath)
 {
@@ -97,14 +79,10 @@ bool AkregatorMenu::isFeedUrl(const KFileItem &item) const
     return false;
 }
 
-void AkregatorMenu::slotAddFeed()
+void Akregator::AkregatorMenu::addFeed(const QString& url)
 {
-    QAction *action = qobject_cast<QAction *>(sender());
-    Q_ASSERT(action!=nullptr);
-
-    QString url = action->data().toUrl().url();
-    qCDebug(AKREGATORPLUGIN_LOG) << "for feed url" << url;
-    PluginUtil::addFeeds(QStringList(url));
+    PluginUtil::addFeeds({url});
 }
+
 
 #include "akregatorplugin.moc"

@@ -13,7 +13,7 @@ target_link_libraries(akregatorplugin KF5::I18n KF5::KIOWidgets Qt5::DBus)
 
 ########### next target ###############
 
-set(akregatorkonqfeedicon_PART_SRCS konqfeedicon.cpp feeddetector.cpp pluginutil.cpp )
+set(akregatorkonqfeedicon_PART_SRCS konqfeedicon.cpp pluginutil.cpp )
 
 add_library(akregatorkonqfeedicon MODULE ${akregatorkonqfeedicon_PART_SRCS} ${akregatorplugin_DEBUG_SRCS})
 
