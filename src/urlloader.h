@@ -162,6 +162,7 @@ private:
 
     bool shouldEmbedThis() const;
     void saveUrlUsingKIO(const QUrl &orig, const QUrl &dest);
+    void detectArchiveSettings();
     void detectSettingsForLocalFiles();
     void detectSettingsForRemoteFiles();
     void launchMimeTypeFinderJob();

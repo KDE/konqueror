@@ -356,6 +356,12 @@ void UrlLoader::mimetypeDeterminedByJob()
 {
     if (!m_mimeTypeFinderJob->error()) {
         m_mimeType=m_mimeTypeFinderJob->mimeType();
+        //Only check whether the URL represents an archive when it is a local file. This can be either because
+        //QUrl::isLocalFile returns true or because its scheme corresponds to a protocol with class :local
+        //(for example, tar)
+        if (m_url.isLocalFile() || KProtocolInfo::protocolClass(m_url.scheme()) == QLatin1String(":local")) {
+            detectArchiveSettings();
+        }
         decideAction();
     } else {
         m_jobErrorCode = m_mimeTypeFinderJob->error();
@@ -410,6 +416,37 @@ int UrlLoader::checkAccessToLocalFile(const QString& path)
     }
 }
 
+void UrlLoader::detectArchiveSettings()
+{
+    // Generic mechanism for redirecting to tar:/<path>/ when clicking on a tar file,
+    // zip:/<path>/ when clicking on a zip file, etc.
+    // The .protocol file specifies the mimetype that the kioslave handles.
+    // Note that we don't use mimetype inheritance since we don't want to
+    // open OpenDocument files as zip folders...
+    const QString protocol = KProtocolManager::protocolForArchiveMimetype(m_mimeType);
+    if (protocol.isEmpty() && !KProtocolInfo::archiveMimetypes(m_url.scheme()).isEmpty() && m_mimeType == QLatin1String("inode/directory")) {
+        m_url.setScheme(QStringLiteral("file"));
+    } else if (!protocol.isEmpty() && KonqFMSettings::settings()->shouldEmbed(m_mimeType)) {
+        m_url.setScheme(protocol);
+        //If the URL ends with /, we assume that it was the result of the user using the Up button while displaying the webarchive.
+        //This means that we don't want to add the /index.html part, otherwise the effect will be to have the same URL but with
+        //an increasing number of slashes before index.html
+        if (m_mimeType == QLatin1String("application/x-webarchive") && !m_url.path().endsWith('/')) {
+            m_url.setPath(m_url.path() + QStringLiteral("/index.html"));
+            m_mimeType = QStringLiteral("text/html");
+        } else {
+            if (KProtocolManager::outputType(m_url) == KProtocolInfo::T_FILESYSTEM) {
+                if (!m_url.path().endsWith('/')) {
+                    m_url.setPath(m_url.path() + '/');
+                }
+                m_mimeType = QStringLiteral("inode/directory");
+            } else {
+                m_mimeType.clear();
+            }
+        }
+    }
+}
+
 void UrlLoader::detectSettingsForLocalFiles()
 {
     if (!m_url.isLocalFile()) {
@@ -419,31 +456,7 @@ void UrlLoader::detectSettingsForLocalFiles()
     m_jobErrorCode = checkAccessToLocalFile(m_url.path());
 
     if (!m_mimeType.isEmpty()) {
-        // Generic mechanism for redirecting to tar:/<path>/ when clicking on a tar file,
-        // zip:/<path>/ when clicking on a zip file, etc.
-        // The .protocol file specifies the mimetype that the kioslave handles.
-        // Note that we don't use mimetype inheritance since we don't want to
-        // open OpenDocument files as zip folders...
-        // Also note that we do this here and not in openView anymore,
-        // because in the case of foo.bz2 we don't know the final mimetype, we need a konqrun...
-        const QString protocol = KProtocolManager::protocolForArchiveMimetype(m_mimeType);
-        if (!protocol.isEmpty() && KonqFMSettings::settings()->shouldEmbed(m_mimeType)) {
-            m_url.setScheme(protocol);
-            if (m_mimeType == QLatin1String("application/x-webarchive")) {
-                m_url.setPath(m_url.path() + QStringLiteral("/index.html"));
-                m_mimeType = QStringLiteral("text/html");
-            } else {
-                if (KProtocolManager::outputType(m_url) == KProtocolInfo::T_FILESYSTEM) {
-                    if (!m_url.path().endsWith('/')) {
-                        m_url.setPath(m_url.path() + '/');
-                    }
-                    m_mimeType = QStringLiteral("inode/directory");
-                } else {
-                    m_mimeType.clear();
-                }
-            }
-        }
-
+        detectArchiveSettings();
         // Redirect to the url in Type=Link desktop files
         if (m_mimeType == QLatin1String("application/x-desktop")) {
             KDesktopFile df(m_url.toLocalFile());
