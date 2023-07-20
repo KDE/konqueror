@@ -45,6 +45,18 @@
 #include <iostream>
 #include <unistd.h>
 
+#ifdef KActivities_FOUND
+#include <KActivities/Consumer>
+#endif
+
+#ifdef KActivities_FOUND
+QString KonquerorApplication::currentActivity()
+{
+    KonquerorApplication* app = qobject_cast<KonquerorApplication*>(QApplication::instance());
+    return app ? app->m_activityConsumer->currentActivity() : QString();
+}
+#endif
+
 KonquerorApplication::KonquerorApplication(int &argc, char **argv)
     : QApplication(argc, argv)
 {
@@ -78,6 +90,10 @@ KonquerorApplication::KonquerorApplication(int &argc, char **argv)
 
     qputenv("QTWEBENGINE_CHROMIUM_FLAGS", flags);
     KLocalizedString::setApplicationDomain("konqueror");
+
+#ifdef KActivities_FOUND
+    m_activityConsumer = new KActivities::Consumer(this);
+#endif
 }
 
 KonquerorApplication::KonquerorAsRootBehavior KonquerorApplication::checkRootBehavior()
