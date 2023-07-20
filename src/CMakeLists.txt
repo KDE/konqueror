@@ -114,8 +114,9 @@ target_link_libraries(kdeinit_konqueror
    KF5::SonnetUi
 )
 
-if (KActivities_FOUND)
+if (KF5Activities_FOUND)
   target_link_libraries(kdeinit_konqueror KF5::Activities)
+  target_compile_definitions(kdeinit_konqueror PUBLIC KActivities_FOUND)
 endif (KActivities_FOUND)
 
 if (NOT WIN32)

@@ -14,6 +14,7 @@
 #include "konqview.h"
 #include "konqsettingsxt.h"
 #include "konqsettings.h"
+#include "konqapplication.h"
 
 #include "konqdebug.h"
 #include <kwindowsystem.h>
@@ -22,6 +23,10 @@
 #include <QFile>
 #if KONQ_HAVE_X11
 #include <QX11Info>
+#endif
+
+#ifdef KActivities_FOUND
+#include <KActivities/Consumer>
 #endif
 
 // these DBus calls come from outside, so any windows created by these
@@ -123,16 +128,44 @@ QStringList KonquerorAdaptor::urls() const
 QDBusObjectPath KonquerorAdaptor::windowForTab()
 {
     QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
-    if (mainWindows) {
-        foreach (KonqMainWindow *window, *mainWindows) {
-            KWindowInfo winfo(window->winId(), NET::WMDesktop);
-            if (winfo.isOnCurrentDesktop()) {  // we want a tab in an already shown window
-                Q_ASSERT(!window->dbusName().isEmpty());
-                return QDBusObjectPath(window->dbusName());
-            }
-        }
+    if (!mainWindows) {
+        return QDBusObjectPath("/");
     }
-    // We can't use QDBusObjectPath(), dbus type 'o' must be a valid object path.
-    // So we use "/" as an indicator for not found.
-    return QDBusObjectPath("/");
+    //Accept only windows which are on the current desktop and in the current activity
+    //(if activities are enabled)
+    auto filter = [](KonqMainWindow *mw) {
+        KWindowInfo winfo(mw->winId(), NET::WMDesktop, NET::WM2Activities);
+#ifdef KActivities_FOUND
+        QString currentActivity = KonquerorApplication::currentActivity();
+        //if currentActivity is empty, it means that the activity service status is not running
+        if (winfo.isOnCurrentDesktop() && (currentActivity.isEmpty() || winfo.activities().contains(currentActivity))) {
+#else
+        if (winfo.isOnCurrentDesktop()) {
+#endif
+            Q_ASSERT(!mw->dbusName().isEmpty());
+            return true;
+        } else {
+            return false;
+        }
+    };
+    QList<KonqMainWindow*> visibleWindows;
+    std::copy_if(mainWindows->constBegin(), mainWindows->constEnd(), std::back_inserter(visibleWindows), filter);
+
+    //Sort the windows according to the last deactivation order, so that windows deactivated last come first
+    //(if a window is active, it'll come before the others)
+    auto sorter = [](KonqMainWindow *w1, KonqMainWindow *w2) {
+        if (w1->isActiveWindow()) {
+            return true;
+        } else if (w2->isActiveWindow()) {
+            return false;
+        } else {
+            return w2->lastDeactivationTime() < w1->lastDeactivationTime();
+        }
+    };
+    std::sort(visibleWindows.begin(), visibleWindows.end(), sorter);
+    if (!visibleWindows.isEmpty()) {
+        return QDBusObjectPath(visibleWindows.first()->dbusName());
+    } else {
+        return QDBusObjectPath("/");
+    }
 }

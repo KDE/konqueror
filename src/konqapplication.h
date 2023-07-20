@@ -14,6 +14,12 @@
 
 #include <QCommandLineParser>
 
+#ifdef KActivities_FOUND
+namespace KActivities {
+    class Consumer;
+}
+#endif
+
 class KonqMainWindow;
 class QDBusMessage;
 
@@ -23,6 +29,10 @@ class KONQ_TESTS_EXPORT KonquerorApplication : public QApplication
 public:
     KonquerorApplication(int &argc, char **argv);
     int start();
+
+#ifdef KActivities_FOUND
+    static QString currentActivity();
+#endif
 
 public slots:
     void slotReparseConfiguration();
@@ -70,6 +80,9 @@ private:
     QCommandLineParser m_parser;
     bool m_sessionRecoveryAttempted = false;
     KonquerorAsRootBehavior m_runningAsRootBehavior = NotRoot;
+#ifdef KActivities_FOUND
+    KActivities::Consumer* m_activityConsumer;
+#endif
 
 };
 

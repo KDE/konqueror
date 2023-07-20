@@ -337,6 +337,13 @@ public:
     // Public for unit tests
     void prepareForPopupMenu(const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs);
 
+    /**
+     * @brief The last time the window was deactivated
+     *
+     * @return the last time the window was deactivated, as milliseconds from Epoch. If the window was never deactivated, this is 0
+     */
+    qint64 lastDeactivationTime() const;
+
 Q_SIGNALS:
     void viewAdded(KonqView *view);
     void viewRemoved(KonqView *view);
@@ -771,6 +778,9 @@ private: // members
     */
     bool m_isPopupWithProxyWindow;
     QPointer<KonqMainWindow> m_popupProxyWindow;
+
+    //The last time the window was deactivated, stored as millisecond from epoch
+    qint64 m_lastDeactivationTime = 0;
     
     friend class KonqBrowserInterface;
 };

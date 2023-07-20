@@ -5383,6 +5383,9 @@ bool KonqMainWindow::refuseExecutingKonqueror(const QString &mimeType)
 
 bool KonqMainWindow::event(QEvent *e)
 {
+    if (e->type() == QEvent::ActivationChange && !isActiveWindow()) {
+        m_lastDeactivationTime = QDateTime::currentMSecsSinceEpoch();
+    }
     if (e->type() == QEvent::StatusTip) {
         if (m_currentView && m_currentView->frame()->statusbar()) {
             KonqFrameStatusBar *statusBar = m_currentView->frame()->statusbar();
@@ -5611,4 +5614,9 @@ void KonqMainWindow::readGlobalProperties(KConfig* sessionConfig)
     KConfigGroup cg = sessionConfig->group(QStringLiteral("PreloadedWindows"));
     QList<int> preloadedNumbers = cg.readEntry(QStringLiteral("PreloadedWindowsNumber"), QList<int>{});
     KonqSessionManager::self()->setPreloadedWindowsNumber(preloadedNumbers);
+}
+
+qint64 KonqMainWindow::lastDeactivationTime() const
+{
+    return m_lastDeactivationTime;
 }

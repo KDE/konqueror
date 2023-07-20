@@ -37,6 +37,7 @@
 #include <QMimeData>
 
 #ifdef KActivities_FOUND
+#include <KActivities/ResourceInstance>
 #endif
 #include <kparts_version.h>
 
