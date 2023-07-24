@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-10 00:48+0000\n"
-"PO-Revision-Date: 2023-04-22 00:37+0200\n"
+"PO-Revision-Date: 2023-07-23 20:55+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -445,7 +445,7 @@ msgstr ""
 #: src/konqapplication.cpp:189
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
-msgstr "프로그램에서 연 파일/URL을 사용한 후 삭제합니다"
+msgstr "앱에서 연 파일/URL을 사용한 후 삭제합니다"
 
 #: src/konqapplication.cpp:191
 #, kde-format
@@ -453,6 +453,8 @@ msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
 "only when developing Konqueror itself"
 msgstr ""
+"기존 Konqueror 프로세스가 있어도 새 Konqueror 프로세스를 생성합니다. "
+"Konqueror를 개발할 때 사용하는 옵션입니다"
 
 #: src/konqapplication.cpp:193
 #, kde-format
@@ -1149,8 +1151,8 @@ msgid ""
 "clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
 "Konqueror and other KDE applications.</html>"
 msgstr ""
-"<html>선택한 텍스트/항목 클립보드로 이동<br /><br />Konqueror나 다른 KDE 프로"
-"그램에서 <b>붙여넣기</b> 명령으로 붙여넣을 수 있습니다.</html>"
+"<html>선택한 텍스트/항목 클립보드로 이동<br /><br />Konqueror나 다른 KDE 앱에"
+"서 <b>붙여넣기</b> 명령으로 붙여넣을 수 있습니다.</html>"
 
 #: src/konqmainwindow.cpp:3736
 #, kde-format
@@ -1164,8 +1166,8 @@ msgid ""
 "clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
 "Konqueror and other KDE applications.</html>"
 msgstr ""
-"<html>선택한 텍스트/항목 클립보드에 복사<br /><br />Konqueror나 다른 KDE 프로"
-"그램에서 <b>붙여넣기</b> 명령으로 붙여넣을 수 있습니다.</html>"
+"<html>선택한 텍스트/항목 클립보드에 복사<br /><br />Konqueror나 다른 KDE 앱에"
+"서 <b>붙여넣기</b> 명령으로 붙여넣을 수 있습니다.</html>"
 
 #: src/konqmainwindow.cpp:3742
 #, kde-format
@@ -1178,8 +1180,8 @@ msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
 "also works for text copied or cut from other KDE applications.</html>"
 msgstr ""
-"<html>클립보드 내용 붙여넣기<br /><br />다른 KDE 프로그램에서 잘라 내거나 복"
-"사한 내용에도 동작합니다.</html>"
+"<html>클립보드 내용 붙여넣기<br /><br />다른 KDE 앱에서 잘라 내거나 복사한 내"
+"용에도 동작합니다.</html>"
 
 #: src/konqmainwindow.cpp:3747
 #, kde-format
@@ -1317,7 +1319,7 @@ msgstr "보기 모드(&V)"
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
-msgstr "현재 창에 탭이 여러 개 열려 있습니다. 정말 종료하시겠습니까?"
+msgstr "현재 창에 여러 탭이 열려 있습니다. 종료하시겠습니까?"
 
 #: src/konqmainwindow.cpp:4837
 #, kde-format
