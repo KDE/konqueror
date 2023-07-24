@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-08 00:46+0000\n"
-"PO-Revision-Date: 2023-03-01 01:58+0100\n"
+"PO-Revision-Date: 2023-07-23 20:55+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1280,7 +1280,7 @@ msgstr "사용자 정의 페이지를 선택하십시오"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
-msgstr ""
+msgstr "새 탭을 생성할 때(&T)"
 
 #: generalopts.cpp:94
 #, kde-format
@@ -1359,7 +1359,7 @@ msgstr "로컬 파일을 볼 때만 현재 보기 복제"
 #: generalopts.cpp:155
 #, kde-format
 msgid "When starting up, restore state from last time"
-msgstr ""
+msgstr "시작할 때 마지막 상태 복원"
 
 #: htmlopts.cpp:36
 #, kde-format
@@ -2014,12 +2014,12 @@ msgstr ""
 #: jspolicies.cpp:261
 #, kde-format
 msgid "Focus window:"
-msgstr "창 초점 맞추기:"
+msgstr "창 포커스 맞추기:"
 
 #: jspolicies.cpp:276
 #, kde-format
 msgid "Allow scripts to focus the window."
-msgstr "창에 초점을 맞추는 스크립트를 허용합니다."
+msgstr "창에 포커스를 맞추는 스크립트를 허용합니다."
 
 #: jspolicies.cpp:282
 #, kde-format
@@ -2028,8 +2028,8 @@ msgid ""
 "i> it brought the focus to the window but the actual focus will remain "
 "unchanged."
 msgstr ""
-"창에 초점을 맞추는 스크립트를 무시합니다. 웹 페이지는 창의 초점이 <i>바뀌었다"
-"고</i> 간주하지만 실제 초점은 바뀌지 않습니다."
+"창에 포커스를 맞추는 스크립트를 무시합니다. 웹 페이지는 창의 포커스가 <i>바뀌"
+"었다고</i> 간주하지만 실제 포커스는 바뀌지 않습니다."
 
 #: jspolicies.cpp:290
 #, kde-format
@@ -2039,9 +2039,9 @@ msgid ""
 "front interrupting whatever action the user was dedicated to at that time. "
 "This option specifies the treatment of such attempts."
 msgstr ""
-"일부 웹사이트에서는 <i>window.focus()</i>를 사용해서 브라우저 창의 초점을 변"
-"경합니다. 이것은 사용자가 원하지 않은 창이 화면의 앞쪽에 표시되도록 합니다. "
-"이 설정을 사용하면 이러한 시도를 무력화시킵니다."
+"일부 웹사이트에서는 <i>window.focus()</i>를 사용해서 브라우저 창의 포커스를 "
+"변경합니다. 이것은 사용자가 원하지 않은 창이 화면의 앞쪽에 표시되도록 합니"
+"다. 이 설정을 사용하면 이러한 시도를 무력화시킵니다."
 
 #: jspolicies.cpp:301
 #, kde-format
