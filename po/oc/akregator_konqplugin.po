@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akregator_konqplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-26 00:50+0000\n"
+"POT-Creation-Date: 2023-07-25 00:45+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -18,45 +18,60 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: akregatorplugin.cpp:63
+#: akregatorplugin.cpp:46
 #, fuzzy, kde-format
 #| msgid "Add Feed to Akregator"
 msgctxt "@action:inmenu"
 msgid "Add Feed to Akregator"
 msgstr "Apondre lo flus a Akregator"
 
-#: konqfeedicon.cpp:113
-#, kde-format
-msgid "Add Feed to Akregator"
+#: konqfeedicon.cpp:129
+#, fuzzy, kde-format
+#| msgid "Add Feed to Akregator"
+msgid "Add feed to Akregator"
 msgstr "Apondre lo flus a Akregator"
 
-#: konqfeedicon.cpp:115
+#: konqfeedicon.cpp:130
 #, kde-format
-msgid "Add Feeds to Akregator"
-msgstr "Apondre de fluses a Akregator"
+msgid "Copy feed URL to clipboard"
+msgstr ""
 
-#: konqfeedicon.cpp:124
+#: konqfeedicon.cpp:131
+#, kde-format
+msgid "Open feed URL"
+msgstr ""
+
+#: konqfeedicon.cpp:142
+#, kde-format
+msgctxt "@title:menu title for the feeds menu"
+msgid "Feeds"
+msgstr ""
+
+#: konqfeedicon.cpp:148
 #, kde-format
 msgid "Add All Found Feeds to Akregator"
 msgstr "Apondre totes los fluses trobats a Akregator"
 
-#: konqfeedicon.cpp:200
+#: konqfeedicon.cpp:237
 #, kde-format
 msgid "Subscribe to site updates (using news feed)"
 msgstr "S'inscriure a las mesas a jorn del sit (amb lo flus de novèlas)"
 
-#: pluginutil.cpp:36 pluginutil.cpp:46
+#: pluginutil.cpp:35 pluginutil.cpp:45
 #, kde-format
 msgid "Imported Feeds"
 msgstr "Fluses importats"
 
-#: pluginutil.cpp:38
+#: pluginutil.cpp:37
 #, kde-format
 msgid "Unable to contact Akregator via D-Bus"
 msgstr ""
 
-#: pluginutil.cpp:39
+#: pluginutil.cpp:38
 #, kde-format
 msgctxt "@title:window"
 msgid "D-Bus call failed"
 msgstr ""
+
+#~ msgid "Add Feeds to Akregator"
+#~ msgstr "Apondre de fluses a Akregator"

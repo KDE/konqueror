@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akregator_konqplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-26 00:50+0000\n"
+"POT-Creation-Date: 2023-07-25 00:45+0000\n"
 "PO-Revision-Date: 2007-08-19 15:06+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -16,45 +16,60 @@ msgstr ""
 "\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: akregatorplugin.cpp:63
+#: akregatorplugin.cpp:46
 #, fuzzy, kde-format
 #| msgid "Add Feed to Akregator"
 msgctxt "@action:inmenu"
 msgid "Add Feed to Akregator"
 msgstr "एक्रिगेटरमा फिड थप्नुहोस्"
 
-#: konqfeedicon.cpp:113
-#, kde-format
-msgid "Add Feed to Akregator"
+#: konqfeedicon.cpp:129
+#, fuzzy, kde-format
+#| msgid "Add Feed to Akregator"
+msgid "Add feed to Akregator"
 msgstr "एक्रिगेटरमा फिड थप्नुहोस्"
 
-#: konqfeedicon.cpp:115
+#: konqfeedicon.cpp:130
 #, kde-format
-msgid "Add Feeds to Akregator"
-msgstr "एक्रिगेटरमा फिड थप्नुहोस्"
+msgid "Copy feed URL to clipboard"
+msgstr ""
 
-#: konqfeedicon.cpp:124
+#: konqfeedicon.cpp:131
+#, kde-format
+msgid "Open feed URL"
+msgstr ""
+
+#: konqfeedicon.cpp:142
+#, kde-format
+msgctxt "@title:menu title for the feeds menu"
+msgid "Feeds"
+msgstr ""
+
+#: konqfeedicon.cpp:148
 #, kde-format
 msgid "Add All Found Feeds to Akregator"
 msgstr "एक्रिगेटरमा फेला परेका सबै फिड थप्नुहोस्"
 
-#: konqfeedicon.cpp:200
+#: konqfeedicon.cpp:237
 #, kde-format
 msgid "Subscribe to site updates (using news feed)"
 msgstr "साइट अद्यावधिक गर्न सदस्यता दिनुहोस् (समाचार फिडको प्रयोग)"
 
-#: pluginutil.cpp:36 pluginutil.cpp:46
+#: pluginutil.cpp:35 pluginutil.cpp:45
 #, kde-format
 msgid "Imported Feeds"
 msgstr "आयातित फिड"
 
-#: pluginutil.cpp:38
+#: pluginutil.cpp:37
 #, kde-format
 msgid "Unable to contact Akregator via D-Bus"
 msgstr ""
 
-#: pluginutil.cpp:39
+#: pluginutil.cpp:38
 #, kde-format
 msgctxt "@title:window"
 msgid "D-Bus call failed"
 msgstr ""
+
+#~ msgid "Add Feeds to Akregator"
+#~ msgstr "एक्रिगेटरमा फिड थप्नुहोस्"
