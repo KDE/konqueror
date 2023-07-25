@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akregator_konqplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-26 00:50+0000\n"
+"POT-Creation-Date: 2023-07-25 02:30+0000\n"
 "PO-Revision-Date: 2011-06-28 19:52+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -17,50 +17,65 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: akregatorplugin.cpp:63
+#: akregatorplugin.cpp:46
 #, fuzzy, kde-format
 #| msgid "Add Feed to Akregator"
 msgctxt "@action:inmenu"
 msgid "Add Feed to Akregator"
 msgstr "ਅਕਰੀਗੇਟਰ ਲਈ ਫੀਡ ਸ਼ਾਮਿਲ"
 
-#: konqfeedicon.cpp:113
-#, kde-format
-msgid "Add Feed to Akregator"
+#: konqfeedicon.cpp:129
+#, fuzzy, kde-format
+#| msgid "Add Feed to Akregator"
+msgid "Add feed to Akregator"
 msgstr "ਅਕਰੀਗੇਟਰ ਲਈ ਫੀਡ ਸ਼ਾਮਿਲ"
 
-#: konqfeedicon.cpp:115
+#: konqfeedicon.cpp:130
 #, kde-format
-msgid "Add Feeds to Akregator"
-msgstr "ਅਕਰੀਗੇਟਰ ਲਈ ਫੀਡਾਂ ਸ਼ਾਮਿਲ"
+msgid "Copy feed URL to clipboard"
+msgstr ""
 
-#: konqfeedicon.cpp:124
+#: konqfeedicon.cpp:131
+#, kde-format
+msgid "Open feed URL"
+msgstr ""
+
+#: konqfeedicon.cpp:142
+#, kde-format
+msgctxt "@title:menu title for the feeds menu"
+msgid "Feeds"
+msgstr ""
+
+#: konqfeedicon.cpp:148
 #, kde-format
 msgid "Add All Found Feeds to Akregator"
 msgstr "ਅਕਰੀਗੇਟਰ ਲਈ ਸਭ ਮਿਲੀ ਫੀਡ ਸ਼ਾਮਿਲ"
 
-#: konqfeedicon.cpp:200
+#: konqfeedicon.cpp:237
 #, kde-format
 msgid "Subscribe to site updates (using news feed)"
 msgstr "ਸਾਇਟ ਅੱਪਡੇਟ ਲਈ ਮੈਂਬਰ ਬਣੋ (ਨਿਊਜ਼ ਫੀਡ ਨਾਲ)"
 
-#: pluginutil.cpp:36 pluginutil.cpp:46
+#: pluginutil.cpp:35 pluginutil.cpp:45
 #, kde-format
 msgid "Imported Feeds"
 msgstr "ਇੰਪੋਰਟ ਕੀਤੇ ਫੀਡ"
 
-#: pluginutil.cpp:38
+#: pluginutil.cpp:37
 #, kde-format
 msgid "Unable to contact Akregator via D-Bus"
 msgstr ""
 
-#: pluginutil.cpp:39
+#: pluginutil.cpp:38
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "The DBus call addFeedToGroup failed"
 msgctxt "@title:window"
 msgid "D-Bus call failed"
 msgstr "DBus  ਕਾਲ addFeedToGroup ਫੇਲ੍ਹ ਹੋਈ"
+
+#~ msgid "Add Feeds to Akregator"
+#~ msgstr "ਅਕਰੀਗੇਟਰ ਲਈ ਫੀਡਾਂ ਸ਼ਾਮਿਲ"
 
 #~ msgid "Akregator feed icon - DBus Call failed"
 #~ msgstr "ਐਕਰੀਗੇਟਰ ਫੀਡ ਆਈਕਾਨ - DBus ਕਾਲ ਫੇਲ੍ਹ ਹੋਈ"

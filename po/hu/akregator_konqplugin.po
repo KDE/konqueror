@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-26 00:50+0000\n"
+"POT-Creation-Date: 2023-07-25 02:30+0000\n"
 "PO-Revision-Date: 2019-11-04 17:02+0100\n"
 "Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -19,47 +19,62 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 19.11.70\n"
 
-#: akregatorplugin.cpp:63
+#: akregatorplugin.cpp:46
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Add Feed to Akregator"
 msgstr "Hírforrás hozzáadása az Akregatorhoz"
 
-#: konqfeedicon.cpp:113
-#, kde-format
-msgid "Add Feed to Akregator"
+#: konqfeedicon.cpp:129
+#, fuzzy, kde-format
+#| msgid "Add Feed to Akregator"
+msgid "Add feed to Akregator"
 msgstr "Hírforrás hozzáadása az Akregatorhoz"
 
-#: konqfeedicon.cpp:115
+#: konqfeedicon.cpp:130
 #, kde-format
-msgid "Add Feeds to Akregator"
-msgstr "Hírforrások hozzáadása az Akregatorhoz"
+msgid "Copy feed URL to clipboard"
+msgstr ""
 
-#: konqfeedicon.cpp:124
+#: konqfeedicon.cpp:131
+#, kde-format
+msgid "Open feed URL"
+msgstr ""
+
+#: konqfeedicon.cpp:142
+#, kde-format
+msgctxt "@title:menu title for the feeds menu"
+msgid "Feeds"
+msgstr ""
+
+#: konqfeedicon.cpp:148
 #, kde-format
 msgid "Add All Found Feeds to Akregator"
 msgstr "Az összes elérhető hírforrás hozzáadása az Akregatorhoz"
 
-#: konqfeedicon.cpp:200
+#: konqfeedicon.cpp:237
 #, kde-format
 msgid "Subscribe to site updates (using news feed)"
 msgstr "Feliratkozás a webhelyfrissítésekre a hírforrások használatával"
 
-#: pluginutil.cpp:36 pluginutil.cpp:46
+#: pluginutil.cpp:35 pluginutil.cpp:45
 #, kde-format
 msgid "Imported Feeds"
 msgstr "Importált hírforrások"
 
-#: pluginutil.cpp:38
+#: pluginutil.cpp:37
 #, kde-format
 msgid "Unable to contact Akregator via D-Bus"
 msgstr "Nem lehet kapcsolódni az Akregatorhoz D-Buson"
 
-#: pluginutil.cpp:39
+#: pluginutil.cpp:38
 #, kde-format
 msgctxt "@title:window"
 msgid "D-Bus call failed"
 msgstr "Sikertelen D-Bus hívás"
+
+#~ msgid "Add Feeds to Akregator"
+#~ msgstr "Hírforrások hozzáadása az Akregatorhoz"
 
 #~ msgid "Akregator feed icon - DBus Call failed"
 #~ msgstr "Akregator hírforrásikon - sikertelen DBus hívás"
