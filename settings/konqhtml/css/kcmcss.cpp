@@ -309,7 +309,7 @@ CSSCustomDialog::CSSCustomDialog(QWidget *parent)
     //QStringList fonts;
     //KFontChooser::getFontList(fonts, 0);
     //fontFamily->addItems(fonts);
-    part = KParts::PartLoader::createPartInstanceForMimeType<KParts::ReadOnlyPart>(QStringLiteral("text/html"));
+    part = KParts::PartLoader::createPartInstanceForMimeType<KParts::ReadOnlyPart>(QStringLiteral("text/html"), nullptr, this);
     QVBoxLayout *l = new QVBoxLayout(previewBox);
     l->addWidget(part->widget());
 }
