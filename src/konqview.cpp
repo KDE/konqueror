@@ -377,8 +377,10 @@ void KonqView::connectPart()
         KonqBrowserWindowInterface *bi = new KonqBrowserWindowInterface(mainWindow(), m_pPart);
         ext->setBrowserInterface(bi);
         
-        connect(ext, SIGNAL(openUrlRequestDelayed(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
-                m_pMainWindow, SLOT(slotOpenURLRequest(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)));
+        connect(ext, &KParts::BrowserExtension::openUrlRequestDelayed, ext,
+                [ext, this](const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs){
+                    m_pMainWindow->slotOpenURLRequest(url, args, bargs, qobject_cast<KParts::ReadOnlyPart*>(ext->parent()));
+                });
 
         if (m_bPopupMenuEnabled) {
             m_bPopupMenuEnabled = false; // force

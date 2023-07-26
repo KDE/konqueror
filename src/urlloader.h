@@ -30,6 +30,8 @@ namespace KIO {
 
 class KonqMainWindow;
 class KonqView;
+class DownloaderInterface;
+class DownloaderJob;
 
 /**
  * @brief Class which takes care of finding out what to do with an URL and carries out the chosen action
@@ -45,7 +47,17 @@ class KonqView;
  * - call viewToUse() to find out where the URL should be opened. If needed, create a new view and call setView()
  * passing the new view
  * - call goOn(): this will asynchronously determine the mimetype and the action to carry out, if not already done,
- * and perform the action itself
+ * and perform the action itself.
+ *
+ * @internal
+ * For remote files, what happens after goOn depends on whether the metadata associated with the request to open the
+ * URL (`m_request.args.metaData()`) contains the key DownloaderInterface::requestDownloadByPartKey():
+ * - if the key doesn't exist, this class will determine the mimetype of the URL (if needed), then embed, open or save it
+ *   depending on the mimetype and the user's previous choices
+ * - if the key exists, (after determining the mimetype of the URL, if not already known), this class will check whether
+ *   the requesting part implements the DownloaderInterface. If so, it'll let the job returned by DownloaderInterface::downloadJob()
+ *   to download the URL, then it will update #m_url so that it contains the path of the downloaded file. It then proceeds as
+ *   in the above case. If the file should be saved, it'll simply moved from the download location to the location chosen by the user
  */
 class UrlLoader : public QObject
 {
@@ -63,7 +75,7 @@ public:
      * @param trustedSource whether the source of the URL is trusted
      * @param forceOpen tells never to embed the URL
      */
-    UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url, const QString &mimeType, const KonqOpenURLRequest &req, bool trustedSource, bool forceOpen=false);
+    UrlLoader(KonqMainWindow* mainWindow, KonqView* view, const QUrl& url, const QString& mimeType, const KonqOpenURLRequest& req, bool trustedSource, bool dontEmbed = false);
     ~UrlLoader();
 
 
@@ -153,6 +165,13 @@ private slots:
     void jobFinished(KJob* job);
     void done(KJob *job=nullptr);
 
+    /**
+     * @brief Slot called when a part which has asked to download itself the URL has finished doing so
+     *
+     * @param job the DownloaderJob used by the part to download the URL
+     */
+    void downloaderJobDone(KJob *job);
+
 private:
 
     void embed();
@@ -161,7 +180,7 @@ private:
     void save();
 
     bool shouldEmbedThis() const;
-    void saveUrlUsingKIO(const QUrl &orig, const QUrl &dest);
+    void performSave(const QUrl &orig, const QUrl &dest);
     void detectArchiveSettings();
     void detectSettingsForLocalFiles();
     void detectSettingsForRemoteFiles();
@@ -177,6 +196,29 @@ private:
     bool shouldUseDefaultHttpMimeype() const;
     void decideAction();
     bool isViewLocked() const;
+
+    /**
+     * @brief Casts the requesting part or one of its children to a DownloaderInterface*, if possible
+     * @note Since this uses DownloaderInterface::interface(), it's slower than a simple cast
+     * @return the requesting part or one of its children casted to a DownloaderInterface* or `nullptr` if
+     * the requesting part is `nullptr` or neither it nor its children implement DownloaderInterface
+     */
+    DownloaderInterface* downloaderInterface() const;
+
+    /**
+     * @brief Retrieves from the requesting part a DownloaderJob to download the URL
+     *
+     * The retrieved job is stored in #m_partDownloaderJob. If downloaderInterface()
+     * returns `nullptr`, #m_partDownloaderJob is set to `nullptr`
+     */
+    void getDownloaderJobFromPart();
+
+    /**
+     * @brief Downloads the URL using the job provided by the requesting part, if any
+     *
+     * If #m_partDownloaderJob is `nullptr`, nothing is done
+     */
+    void downloadUrlWithRequestingPart();
 
     /**
      * @brief Checks whether the given file can be read and, in case of a directory, entered into
@@ -234,10 +276,13 @@ private:
     QPointer<KIO::OpenUrlJob> m_openUrlJob;
     QPointer<KIO::ApplicationLauncherJob> m_applicationLauncherJob;
     QPointer<KIO::MimeTypeFinderJob> m_mimeTypeFinderJob;
+    QPointer<DownloaderJob> m_partDownloaderJob;
     QString m_oldLocationBarUrl;
-    int m_jobErrorCode;
+    int m_jobErrorCode = 0;
     bool m_dontPassToWebEnginePart;
     bool m_protocolAllowsReading;
+    bool m_letRequestingPartDownloadUrl = false; ///<Whether the URL should be downloaded by the part before opening/embedding/saving it
+    bool m_forceSave; ///<Whether the part explicitly asked for the URL to be saved
 };
 
 QDebug operator<<(QDebug dbg, UrlLoader::OpenUrlAction action);

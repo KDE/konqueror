@@ -528,13 +528,15 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
     if (mimeType.isEmpty()) {
         mimeType = req.args.mimeType();
     }
+
+    static const QStringList s_validProtocols {QStringLiteral("error"), QStringLiteral("mailto"), QStringLiteral("data"), QStringLiteral("blob")};
     if (!url.isValid()) {
         // I think we can't really get here anymore; I tried and didn't succeed.
         // URL filtering catches this case before hand, and in cases without filtering
         // (e.g. HTML link), the url is empty here, not invalid.
         // But just to be safe, let's keep this code path
         url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url(), url);
-    } else if (!KProtocolInfo::isKnownProtocol(url) && url.scheme() != QLatin1String("error") && !KonqUrl::hasKonqScheme(url) && url.scheme() != QLatin1String("mailto") && url.scheme() != QLatin1String("data")) {
+    } else if (!KProtocolInfo::isKnownProtocol(url) && !KonqUrl::hasKonqScheme(url) && !s_validProtocols.contains(url.scheme())) {
         url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_UNSUPPORTED_PROTOCOL, url.scheme(), url);
     }
 
@@ -900,11 +902,10 @@ static KonqView *findChildView(KParts::ReadOnlyPart *callingPart, const QString 
     return nullptr;
 }
 
-void KonqMainWindow::slotOpenURLRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs)
+void KonqMainWindow::slotOpenURLRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::ReadOnlyPart *callingPart)
 {
     //qCDebug(KONQUEROR_LOG) << "frameName=" << browserArgs.frameName;
 
-    KParts::ReadOnlyPart *callingPart = static_cast<KParts::ReadOnlyPart *>(sender()->parent());
     QString frameName = browserArgs.frameName;
 
     if (!frameName.isEmpty()) {
@@ -935,30 +936,31 @@ void KonqMainWindow::slotOpenURLRequest(const QUrl &url, const KParts::OpenUrlAr
                     return;
                 }
 
-                mainWindow->openUrlRequestHelper(view, url, args, browserArgs);
+                mainWindow->openUrlRequestHelper(view, url, args, browserArgs, callingPart);
                 return;
             }
 
-            openUrlRequestHelper(view, url, args, browserArgs);
+            openUrlRequestHelper(view, url, args, browserArgs, callingPart);
             return;
         }
     }
 
     KonqView *view = browserArgs.newTab() ? nullptr : childView(callingPart);
-    openUrlRequestHelper(view, url, args, browserArgs);
+    openUrlRequestHelper(view, url, args, browserArgs, callingPart);
 }
 
 //Called by slotOpenURLRequest
-void KonqMainWindow::openUrlRequestHelper(KonqView *childView, const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs)
+void KonqMainWindow::openUrlRequestHelper(KonqView *childView, const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::ReadOnlyPart *callingPart)
 {
     //qCDebug(KONQUEROR_LOG) << "url=" << url;
     KonqOpenURLRequest req;
     req.args = args;
-    if (args.metaData().value("konq-temp-file") == "1") {
+    if (args.metaData().contains(QStringLiteral("TempFile"))) {
         req.tempFile = true;
     }
     req.suggestedFileName =args.metaData().value("SuggestedFileName");
     req.browserArgs = browserArgs;
+    req.requestingPart = callingPart;
     openUrl(childView, url, args.mimeType(), req, browserArgs.trustedSource);
 }
 

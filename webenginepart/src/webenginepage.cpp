@@ -35,6 +35,7 @@
 #include <KIO/Job>
 #include <KIO/AccessManager>
 #include <KIO/CommandLauncherJob>
+#include <KJobTrackerInterface>
 #include <KUserTimestamp>
 #include <KPasswdServerClient>
 #include <KParts/BrowserInterface>
@@ -122,13 +123,13 @@ void WebEnginePage::setSslInfo (const WebSslInfo& info)
     m_sslInfo = info;
 }
 
-static void checkForDownloadManager(QWidget* widget, QString& cmd)
+static QString checkForDownloadManager(QWidget* widget)
 {
-    cmd.clear();
     KConfigGroup cfg (KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals), "HTML Settings");
     const QString fileName (cfg.readPathEntry("DownloadManager", QString()));
-    if (fileName.isEmpty())
-        return;
+    if (fileName.isEmpty()) {
+        return QString();
+    }
 
     const QString exeName = QStandardPaths::findExecutable(fileName);
     if (exeName.isEmpty()) {
@@ -137,10 +138,88 @@ static void checkForDownloadManager(QWidget* widget, QString& cmd)
                                    i18n("Try to reinstall it and make sure that it is available in $PATH. \n\nThe integration will be disabled."));
         cfg.writePathEntry("DownloadManager", QString());
         cfg.sync();
+        return QString();
+    }
+    return exeName;
+}
+
+bool WebEnginePage::downloadWithExternalDonwloadManager(const QUrl &url)
+{
+    if (url.isLocalFile()) {
+        return false;
+    }
+
+    KConfigGroup cfg (KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals), "HTML Settings");
+    const QString fileName (cfg.readPathEntry("DownloadManager", QString()));
+    if (fileName.isEmpty()) {
+        return false;
+    }
+
+    const QString managerExe = QStandardPaths::findExecutable(fileName);
+    if (managerExe.isEmpty()) {
+        KMessageBox::detailedError(view(),
+                                   i18n("The download manager (%1) could not be found in your installation.", fileName),
+                                   i18n("Try to reinstall it and make sure that it is available in $PATH. \n\nThe integration will be disabled."));
+        cfg.writePathEntry("DownloadManager", QString());
+        cfg.sync();
+        return false;
+    }
+
+    //qCDebug(WEBENGINEPART_LOG) << "Calling command" << cmd;
+    KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(managerExe, {url.toString()});
+    job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, view()));
+    job->start();
+    return true;
+}
+
+void WebEnginePage::requestDownload(QWebEngineDownloadItem *item, bool newWindow, bool requestSave)
+{
+    QUrl url = item->url();
+    if (downloadWithExternalDonwloadManager(url)) {
+        item->cancel();
+        item->deleteLater();
         return;
     }
 
-    cmd = exeName;
+    item->accept();
+    item->pause();
+    m_downloadItems.insert(url, item);
+    auto removeItem = [this, url] (QObject *obj) {m_downloadItems.remove(url, dynamic_cast<QWebEngineDownloadItem*>(obj));};
+    connect(item, &QWebEngineDownloadItem::destroyed, this, removeItem);
+
+    KParts::BrowserArguments bArgs;
+    bArgs.setForcesNewWindow(newWindow);
+    KParts::OpenUrlArguments args;
+    args.setMimeType(item->mimeType());
+    args.metaData().insert(QStringLiteral("DontSendToDefaultHTMLPart"), QString());
+    args.metaData().insert(QStringLiteral("SuggestedFileName"), item->suggestedFileName());
+    args.metaData().insert(QStringLiteral("TempFile"), QString());
+//TODO: when only Qt6 will be supported, remove the conditional inside the version checks
+#if QT_VERSION_MAJOR < 6
+    if (item->url().scheme() == QStringLiteral("blob")) {
+#endif
+    args.metaData().insert(DownloaderInterface::jobIDKey(), QString::number(item->id()));
+    args.metaData().insert(DownloaderInterface::requestDownloadByPartKey(), QString());
+#if QT_VERSION_MAJOR < 6
+    }
+#endif
+    if (requestSave) {
+        //The value doesn't matter
+        args.metaData().insert(QStringLiteral("ForceSave"), QString());
+    }
+    emit m_part->browserExtension()->openUrlRequest(url, args, bArgs);
+}
+
+WebEngineDownloadJob * WebEnginePage::downloadJob(const QUrl& url, quint32 id, QObject *parent)
+{
+    auto items = m_downloadItems.values(url);
+    if (items.isEmpty()) {
+        return nullptr;
+    }
+    auto it = std::find_if(items.constBegin(), items.constEnd(), [id](QWebEngineDownloadItem* it){return it->id() == id;});
+    //If no job with the given ID is found, return the last one, which is the first created
+    QWebEngineDownloadItem *item = it != items.constEnd() ? *it : items.last();
+    return WebEnginePartDownloadManager::createDownloadJob(item, parent);
 }
 
 void WebEnginePage::downloadItem(QWebEngineDownloadItem *it, bool newWindow)
@@ -148,8 +227,7 @@ void WebEnginePage::downloadItem(QWebEngineDownloadItem *it, bool newWindow)
     QUrl url = it->url();
     // Integration with a download manager...
     if (!url.isLocalFile()) {
-        QString managerExe;
-        checkForDownloadManager(view(), managerExe);
+        QString managerExe = checkForDownloadManager(view());
         if (!managerExe.isEmpty()) {
             //qCDebug(WEBENGINEPART_LOG) << "Calling command" << cmd;
             KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(managerExe, {url.toString()});

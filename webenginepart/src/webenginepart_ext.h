@@ -10,6 +10,7 @@
 #define WEBENGINEPART_EXT_H
 
 #include "kwebenginepartlib_export.h"
+#include "downloaderinterface.h"
 
 #include <QPointer>
 
@@ -29,7 +30,7 @@ class QPrinter;
 class QJsonObject;
 class QWebEngineScript;
 
-class KWEBENGINEPARTLIB_EXPORT WebEngineBrowserExtension : public KParts::BrowserExtension
+class KWEBENGINEPARTLIB_EXPORT WebEngineBrowserExtension : public KParts::BrowserExtension, public DownloaderInterface
 {
     Q_OBJECT
 
@@ -42,6 +43,9 @@ public:
     void saveState(QDataStream &) override;
     void restoreState(QDataStream &) override;
     void saveHistory();
+
+    //DownloaderInterface
+    DownloaderJob* downloadJob(const QUrl & url, quint32 id, QObject *parent = nullptr) override;
 
 Q_SIGNALS:
     void saveUrl(const QUrl &);

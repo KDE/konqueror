@@ -107,6 +107,12 @@ WebEngineBrowserExtension::~WebEngineBrowserExtension()
 {
 }
 
+DownloaderJob* WebEngineBrowserExtension::downloadJob(const QUrl &url, quint32 id, QObject *parent)
+{
+    WebEnginePage *pg = m_part->page();
+    return pg ? pg->downloadJob(url, id, parent) : nullptr;
+}
+
 WebEngineView* WebEngineBrowserExtension::view()
 {
     if (!m_view && m_part) {
@@ -1109,3 +1115,4 @@ WebEnginePart* WebEngineHtmlExtension::part() const
 {
     return static_cast<WebEnginePart*>(parent());
 }
+

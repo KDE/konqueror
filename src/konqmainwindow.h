@@ -361,12 +361,9 @@ public Q_SLOTS:
     void slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::BrowserExtension::PopupFlags flags, const KParts::BrowserExtension::ActionGroupMap &);
     void slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::BrowserExtension::PopupFlags f, const KParts::BrowserExtension::ActionGroupMap &);
 
-    /**
-     * __NEEEEVER__ call this method directly. It relies on sender() (the part)
-     */
-    void slotOpenURLRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs);
+    void slotOpenURLRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::ReadOnlyPart *callingPart);
 
-    void openUrlRequestHelper(KonqView *childView, const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs);
+    void openUrlRequestHelper(KonqView *childView, const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::ReadOnlyPart *callingPart);
 
     void slotCreateNewWindow(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs,
                              const KParts::WindowArgs &windowArgs = KParts::WindowArgs(),

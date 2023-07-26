@@ -28,6 +28,7 @@ class WebSslInfo;
 class WebEnginePart;
 class KPasswdServerClient;
 class WebEngineWallet;
+class WebEngineDownloadJob;
 
 class WebEnginePage : public QWebEnginePage
 {
@@ -52,9 +53,13 @@ public:
 
     void downloadItem(QWebEngineDownloadItem *it, bool newWindow = false);
 
+    void requestDownload(QWebEngineDownloadItem *item, bool newWindow, bool requestSave);
+
     void requestOpenFileAsTemporary(const QUrl &url, const QString &mimeType = "", bool newWindow = false, bool newTab = false);
 
     void setStatusBarText(const QString &text);
+
+    WebEngineDownloadJob* downloadJob(const QUrl &url, quint32 id, QObject *parent = nullptr);
 
     /**
     * @brief Tells the page that the part has requested to load the given URL
@@ -163,6 +168,7 @@ private:
     bool handleMailToUrl (const QUrl& , NavigationType type) const;
     void setPageJScriptPolicy(const QUrl& url);
     bool askBrowserToOpenUrl(const QUrl &url, const QString &mimetype=QString(), const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(), const KParts::BrowserArguments &bargs = KParts::BrowserArguments());
+    bool downloadWithExternalDonwloadManager(const QUrl &url);
 //     bool askBrowserToOpenUrlInPart(const QUrl &url, const QString &part);
 
     //Whether a local URL should be opened by this part or by another part. This takes into account the user preferences
@@ -213,6 +219,8 @@ private:
      */
     QTimer *m_dropOperationTimer;
 #endif
+
+    QMultiHash<QUrl, QWebEngineDownloadItem*> m_downloadItems;
 };
 
 

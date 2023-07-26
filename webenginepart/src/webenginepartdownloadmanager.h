@@ -15,13 +15,14 @@
 #include <QTemporaryDir>
 #include <QDateTime>
 #include <QSet>
-
 #include <KJob>
 
 #include "browseropenorsavequestion.h"
+#include <downloaderinterface.h>
 
 class WebEnginePage;
 class QWebEngineProfile;
+class WebEngineDownloadJob;
 
 class WebEnginePartDownloadManager : public QObject
 {
@@ -45,25 +46,19 @@ public:
      */
     void setForceDownload(const QUrl &url, WebEnginePage *page);
 
+    /**
+     * @brief Sets up a new download job
+     * @overload
+     * @param file the path of the downloaded file
+     * @param it the object which will perform the actual download
+     */
+    // void startDownloadJob(const QString &file, QWebEngineDownloadItem *it);
+
+    static WebEngineDownloadJob* createDownloadJob(QWebEngineDownloadItem *it, QObject *parent = nullptr);
+
 private:
 
-    /**
-     * Makes WebEnginePart itself download a file, rather than letting the application do it
-     *
-     * This is needed in two situations:
-     * - when downloading an URL with the `blob` scheme
-     * - when the file is the response to a POST request
-     *
-     * In both cases, this is needed because the application can't repeat the request (in particular,
-     * in the case of POST requests, `QtWebEngine` doesn't provide access to the POST data itself).
-     *
-     * This function uses `KParts::BrowserOpenOrSaveQuestion` to ask the user what to do, then
-     * calls saveFile() or openFile() to perform the chosen action.
-     * @param it the download item representing the download request
-     * @param disposition the argument to pass to `KParts::BrowserOpenOrSaveQuestion::askEmebedOrSave`
-     */
-    void downloadFile(QWebEngineDownloadItem *it, BrowserOpenOrSaveQuestion::AskEmbedOrSaveFlags disposition, bool forceNewTab = false);
-    QString generateDownloadTempFileName(QString const &suggestedName, const QString &ext) const;
+    static QString generateDownloadTempFileName(QString const &suggestedName, const QString &ext);
 
     /**
      * @brief Checks whether a download request for the given URL by the given page should be treated as a forced download or not
@@ -85,27 +80,18 @@ private:
      */
     void saveHtmlPage(QWebEngineDownloadItem *it, WebEnginePage *page);
 
+    static QTemporaryDir& tempDownloadDir();
+
 public Q_SLOTS:
     void addPage(WebEnginePage *page);
     void removePage(QObject *page);
 
 private Q_SLOTS:
     void performDownload(QWebEngineDownloadItem *it);
-    void saveFile(QWebEngineDownloadItem *it);
-    void openFile(QWebEngineDownloadItem *it, WebEnginePage *page, bool forceNewTab = false);
-    void downloadToFileCompleted(QWebEngineDownloadItem *it, WebEnginePage *page, bool forceNewTab = false);
 
-    /**
-     * @brief Sets up a new download job
-     * @overload
-     * @param file the path of the downloaded file
-     * @param it the object which will perform the actual download
-     */
-    void startDownloadJob(const QString &file, QWebEngineDownloadItem *it);
 
 private:
     QVector<WebEnginePage*> m_pages;
-    QTemporaryDir m_tempDownloadDir;
 
     /**
      * @brief Urls which the download manager should download by itself rather than passing them to the application, when the download is requested by the appropriate page
@@ -113,17 +99,22 @@ private:
     QMultiHash<QUrl, QPointer<WebEnginePage>> m_forcedDownloads;
 };
 
-class WebEngineDownloadJob : public KJob
+class WebEngineDownloadJob : public DownloaderJob
 {
     Q_OBJECT
 
 public:
     WebEngineDownloadJob(QWebEngineDownloadItem *it, QObject *parent = nullptr);
-    ~WebEngineDownloadJob() override{}
+    ~WebEngineDownloadJob() override;
 
     void start() override;
 
     QString errorString() const override;
+
+    QString downloadPath() const override;
+    bool finished() const override;
+
+    QWebEngineDownloadItem* item() const;
 
 protected:
     bool doKill() override;
@@ -137,8 +128,8 @@ private slots:
     void downloadFinished();
 
 private:
-    QWebEngineDownloadItem *m_downloadItem;
-    QDateTime m_startTime;
+    bool m_started = false; ///<! @brief Whether the job has been started or not
+    QPointer<QWebEngineDownloadItem> m_downloadItem;
 };
 
 #endif // WEBENGINEPARTDOWNLOADMANAGER_H
