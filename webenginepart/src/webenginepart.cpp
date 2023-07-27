@@ -130,7 +130,6 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
     // Add text and html extensions...
     new WebEngineTextExtension(this);
     new WebEngineHtmlExtension(this);
-    new WebEngineScriptableExtension(this);
 
 
     // Layout the GUI...

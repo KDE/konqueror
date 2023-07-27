@@ -14,7 +14,6 @@
 #include <QPointer>
 
 #include <KParts/BrowserExtension>
-#include <KParts/ScriptableExtension>
 #include <KParts/SelectorInterface>
 
 #include <asyncselectorinterface.h>
@@ -196,33 +195,6 @@ private:
      * @param obj the JSON object representing the element as returned by the javascript function `querySelectorToObject()`
      */
     static KParts::SelectorInterface::Element jsonToElement(const QJsonObject &obj);
-};
-
-class WebEngineScriptableExtension : public KParts::ScriptableExtension
-{
-  Q_OBJECT
-
-public:
-    WebEngineScriptableExtension(WebEnginePart* part);
-
-    QVariant rootObject() override;
-
-    QVariant get(ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName) override;
-
-    bool put(ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName, const QVariant& value) override;
-
-    bool setException(ScriptableExtension* callerPrincipal, const QString& message) override;
-
-    QVariant evaluateScript(ScriptableExtension* callerPrincipal,
-                                    quint64 contextObjectId,
-                                    const QString& code,
-                                    ScriptLanguage language = ECMAScript) override;
-
-    bool isScriptLanguageSupported(ScriptLanguage lang) const override;
-
-private:
-     QVariant encloserForKid(KParts::ScriptableExtension* kid) override;
-     WebEnginePart* part();
 };
 
 #endif // WEBENGINEPART_EXT_H
