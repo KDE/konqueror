@@ -22,7 +22,6 @@
 #include <KParts/Part>
 #include <KParts/BrowserExtension>
 #include <KParts/TextExtension>
-#include <KParts/HtmlExtension>
 #include <KParts/SelectorInterface>
 #include <KParts/PartActivateEvent>
 #include <KLocalizedString>
@@ -43,6 +42,7 @@
 
 #include "searchbar_debug.h"
 #include <asyncselectorinterface.h>
+#include <htmlextension.h>
 
 K_PLUGIN_CLASS_WITH_JSON(SearchBarPlugin, "searchbar.json")
 
@@ -449,7 +449,7 @@ void SearchBarPlugin::HTMLDocLoaded()
 
     //NOTE: the link below seems to be dead
     // Testcase for this code: http://search.iwsearch.net
-    KParts::HtmlExtension *ext = KParts::HtmlExtension::childObject(m_part);
+    HtmlExtension *ext = HtmlExtension::childObject(m_part);
     KParts::SelectorInterface *selectorInterface = qobject_cast<KParts::SelectorInterface *>(ext);
     AsyncSelectorInterface *asyncIface = qobject_cast<AsyncSelectorInterface*>(ext);
     const QString query(QStringLiteral("head > link[rel=\"search\"][type=\"application/opensearchdescription+xml\"]"));

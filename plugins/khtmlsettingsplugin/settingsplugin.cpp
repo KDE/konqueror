@@ -20,8 +20,6 @@
 #include <kactionmenu.h>
 
 #include <kparts/part.h>
-#include <kparts/htmlextension.h>
-#include <kparts/htmlsettingsinterface.h>
 #include <kparts/readonlypart.h>
 #include <KConfigGroup>
 
@@ -29,6 +27,9 @@
 #include <QDBusInterface>
 #include <QDBusMessage>
 #include <QDBusReply>
+
+#include <htmlextension.h>
+#include <htmlsettingsinterface.h>
 
 K_PLUGIN_CLASS_WITH_JSON(SettingsPlugin, "khtmlsettingsplugin.json")
 
@@ -98,10 +99,10 @@ SettingsPlugin::~SettingsPlugin()
     delete mConfig;
 }
 
-static KParts::HtmlSettingsInterface *settingsInterfaceFor(QObject *obj)
+static HtmlSettingsInterface *settingsInterfaceFor(QObject *obj)
 {
-    KParts::HtmlExtension *extension = KParts::HtmlExtension::childObject(obj);
-    return qobject_cast< KParts::HtmlSettingsInterface *>(extension);
+    HtmlExtension *extension = HtmlExtension::childObject(obj);
+    return qobject_cast< HtmlSettingsInterface *>(extension);
 }
 
 void SettingsPlugin::showPopup()
@@ -118,12 +119,12 @@ void SettingsPlugin::showPopup()
     actionCollection()->action(QStringLiteral("useproxy"))->setChecked(KProtocolManager::useProxy());
     actionCollection()->action(QStringLiteral("usecache"))->setChecked(KProtocolManager::useCache());
 
-    KParts::HtmlSettingsInterface *settings = settingsInterfaceFor(part);
+    HtmlSettingsInterface *settings = settingsInterfaceFor(part);
     if (settings) {
-        actionCollection()->action(QStringLiteral("java"))->setChecked(settings->htmlSettingsProperty(KParts::HtmlSettingsInterface::JavaEnabled).toBool());
-        actionCollection()->action(QStringLiteral("javascript"))->setChecked(settings->htmlSettingsProperty(KParts::HtmlSettingsInterface::JavascriptEnabled).toBool());
-        actionCollection()->action(QStringLiteral("plugins"))->setChecked(settings->htmlSettingsProperty(KParts::HtmlSettingsInterface::PluginsEnabled).toBool());
-        actionCollection()->action(QStringLiteral("imageloading"))->setChecked(settings->htmlSettingsProperty(KParts::HtmlSettingsInterface::AutoLoadImages).toBool());
+        actionCollection()->action(QStringLiteral("java"))->setChecked(settings->htmlSettingsProperty(HtmlSettingsInterface::JavaEnabled).toBool());
+        actionCollection()->action(QStringLiteral("javascript"))->setChecked(settings->htmlSettingsProperty(HtmlSettingsInterface::JavascriptEnabled).toBool());
+        actionCollection()->action(QStringLiteral("plugins"))->setChecked(settings->htmlSettingsProperty(HtmlSettingsInterface::PluginsEnabled).toBool());
+        actionCollection()->action(QStringLiteral("imageloading"))->setChecked(settings->htmlSettingsProperty(HtmlSettingsInterface::AutoLoadImages).toBool());
     }
 
     KIO::CacheControl cc = KProtocolManager::cacheControl();
@@ -146,17 +147,17 @@ void SettingsPlugin::showPopup()
 
 void SettingsPlugin::toggleJava(bool checked)
 {
-    KParts::HtmlSettingsInterface *settings = settingsInterfaceFor(parent());
+    HtmlSettingsInterface *settings = settingsInterfaceFor(parent());
     if (settings) {
-        settings->setHtmlSettingsProperty(KParts::HtmlSettingsInterface::JavaEnabled, checked);
+        settings->setHtmlSettingsProperty(HtmlSettingsInterface::JavaEnabled, checked);
     }
 }
 
 void SettingsPlugin::toggleJavascript(bool checked)
 {
-    KParts::HtmlSettingsInterface *settings = settingsInterfaceFor(parent());
+    HtmlSettingsInterface *settings = settingsInterfaceFor(parent());
     if (settings) {
-        settings->setHtmlSettingsProperty(KParts::HtmlSettingsInterface::JavascriptEnabled, checked);
+        settings->setHtmlSettingsProperty(HtmlSettingsInterface::JavascriptEnabled, checked);
     }
 }
 
@@ -185,17 +186,17 @@ void SettingsPlugin::toggleCookies(bool checked)
 
 void SettingsPlugin::togglePlugins(bool checked)
 {
-    KParts::HtmlSettingsInterface *settings = settingsInterfaceFor(parent());
+    HtmlSettingsInterface *settings = settingsInterfaceFor(parent());
     if (settings) {
-        settings->setHtmlSettingsProperty(KParts::HtmlSettingsInterface::PluginsEnabled, checked);
+        settings->setHtmlSettingsProperty(HtmlSettingsInterface::PluginsEnabled, checked);
     }
 }
 
 void SettingsPlugin::toggleImageLoading(bool checked)
 {
-    KParts::HtmlSettingsInterface *settings = settingsInterfaceFor(parent());
+    HtmlSettingsInterface *settings = settingsInterfaceFor(parent());
     if (settings) {
-        settings->setHtmlSettingsProperty(KParts::HtmlSettingsInterface::AutoLoadImages, checked);
+        settings->setHtmlSettingsProperty(HtmlSettingsInterface::AutoLoadImages, checked);
     }
 }
 

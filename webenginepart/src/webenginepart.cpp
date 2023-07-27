@@ -854,7 +854,7 @@ void WebEnginePart::slotSetTextEncoding(QTextCodec * codec)
 void WebEnginePart::slotSetStatusBarText(const QString& text)
 {
     const QString host (page() ? page()->url().host() : QString());
-    if (WebEngineSettings::self()->windowStatusPolicy(host) == KParts::HtmlSettingsInterface::JSWindowStatusAllow)
+    if (WebEngineSettings::self()->windowStatusPolicy(host) == HtmlSettingsInterface::JSWindowStatusAllow)
         emit setStatusBarText(text);
 }
 

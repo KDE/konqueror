@@ -13,6 +13,8 @@ set(konq_LIB_SRCS
    asyncselectorinterface.cpp
    browseropenorsavequestion.cpp
    historyprovider.cpp
+   htmlextension.cpp
+   htmlsettingsinterface.cpp
 )
 
 ecm_qt_declare_logging_category(konq_LIB_SRCS HEADER libkonq_debug.h IDENTIFIER LIBKONQ_LOG CATEGORY_NAME org.kde.libkonq)

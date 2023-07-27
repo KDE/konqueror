@@ -17,8 +17,8 @@ class KConfigGroup;
 #include <QDebug>
 #include <QVector>
 
-#include <KParts/HtmlExtension>
-#include <KParts/HtmlSettingsInterface>
+#include <htmlextension.h>
+#include <htmlsettingsinterface.h>
 
 struct KPerDomainSettings;
 class WebEngineSettingsPrivate;
@@ -93,11 +93,11 @@ public:
     // Favicons
     bool favIconsEnabled() const;
 
-    KParts::HtmlSettingsInterface::JSWindowOpenPolicy windowOpenPolicy( const QString& hostname = QString() ) const;
-    KParts::HtmlSettingsInterface::JSWindowMovePolicy windowMovePolicy( const QString& hostname = QString() ) const;
-    KParts::HtmlSettingsInterface::JSWindowResizePolicy windowResizePolicy( const QString& hostname = QString() ) const;
-    KParts::HtmlSettingsInterface::JSWindowStatusPolicy windowStatusPolicy( const QString& hostname = QString() ) const;
-    KParts::HtmlSettingsInterface::JSWindowFocusPolicy windowFocusPolicy( const QString& hostname = QString() ) const;
+    HtmlSettingsInterface::JSWindowOpenPolicy windowOpenPolicy( const QString& hostname = QString() ) const;
+    HtmlSettingsInterface::JSWindowMovePolicy windowMovePolicy( const QString& hostname = QString() ) const;
+    HtmlSettingsInterface::JSWindowResizePolicy windowResizePolicy( const QString& hostname = QString() ) const;
+    HtmlSettingsInterface::JSWindowStatusPolicy windowStatusPolicy( const QString& hostname = QString() ) const;
+    HtmlSettingsInterface::JSWindowFocusPolicy windowFocusPolicy( const QString& hostname = QString() ) const;
 
     QString settingsToCSS() const;
     QString userStyleSheet() const;

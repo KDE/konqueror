@@ -15,12 +15,12 @@
 
 #include <KParts/BrowserExtension>
 #include <KParts/TextExtension>
-#include <KParts/HtmlExtension>
-#include <KParts/HtmlSettingsInterface>
 #include <KParts/ScriptableExtension>
 #include <KParts/SelectorInterface>
 
 #include <asyncselectorinterface.h>
+#include <htmlextension.h>
+#include <htmlsettingsinterface.h>
 
 class QUrl;
 class WebEnginePart;
@@ -139,13 +139,13 @@ private:
  * @internal
  * Implements the HtmlExtension interface
  */
-class WebEngineHtmlExtension : public KParts::HtmlExtension,
+class WebEngineHtmlExtension : public HtmlExtension,
                              public AsyncSelectorInterface,
-                             public KParts::HtmlSettingsInterface
+                             public HtmlSettingsInterface
 {
     Q_OBJECT
     Q_INTERFACES(AsyncSelectorInterface)
-    Q_INTERFACES(KParts::HtmlSettingsInterface)
+    Q_INTERFACES(HtmlSettingsInterface)
 
 public:
     WebEngineHtmlExtension(WebEnginePart* part);

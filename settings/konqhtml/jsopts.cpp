@@ -31,11 +31,11 @@
 #include <kconfiggroup.h>
 #include <kurlrequester.h>
 #include <KLocalizedString>
-#include <kparts/htmlextension.h>
 
 // Local
 #include "htmlopts.h"
 #include "policydlg.h"
+#include <htmlextension.h>
 
 // == class KJavaScriptOptions =====
 KJavaScriptOptions::KJavaScriptOptions(KSharedConfig::Ptr config, const QString &group, QWidget *parent) :
@@ -187,16 +187,16 @@ void JSDomainListView::updateDomainListLegacy(const QStringList &domainConfig)
     for (QStringList::ConstIterator it = domainConfig.begin();
             it != domainConfig.end(); ++it) {
         QString domain;
-        KParts::HtmlSettingsInterface::JavaScriptAdvice javaAdvice;
-        KParts::HtmlSettingsInterface::JavaScriptAdvice javaScriptAdvice;
-        KParts::HtmlSettingsInterface::splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
-        if (javaScriptAdvice != KParts::HtmlSettingsInterface::JavaScriptDunno) {
+        HtmlSettingsInterface::JavaScriptAdvice javaAdvice;
+        HtmlSettingsInterface::JavaScriptAdvice javaScriptAdvice;
+        HtmlSettingsInterface::splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
+        if (javaScriptAdvice != HtmlSettingsInterface::JavaScriptDunno) {
             QTreeWidgetItem *index =
                 new QTreeWidgetItem(domainSpecificLV, QStringList() << domain <<
-                                    i18n(KParts::HtmlSettingsInterface::javascriptAdviceToText(javaScriptAdvice)));
+                                    i18n(HtmlSettingsInterface::javascriptAdviceToText(javaScriptAdvice)));
 
             pol.setDomain(domain);
-            pol.setFeatureEnabled(javaScriptAdvice != KParts::HtmlSettingsInterface::JavaScriptReject);
+            pol.setFeatureEnabled(javaScriptAdvice != HtmlSettingsInterface::JavaScriptReject);
             domainPolicies[index] = new JSPolicies(pol);
         }
     }

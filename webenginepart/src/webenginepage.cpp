@@ -35,7 +35,6 @@
 #include <KIO/Job>
 #include <KIO/AccessManager>
 #include <KIO/CommandLauncherJob>
-#include <KParts/HtmlExtension>
 #include <KUserTimestamp>
 #include <KPasswdServerClient>
 #include <KParts/BrowserInterface>
@@ -60,6 +59,7 @@
 #include <KToggleFullScreenAction>
 //#include <QWebSecurityOrigin>
 #include "utils.h"
+#include "htmlextension.h"
 
 WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
         : QWebEnginePage(parent),
@@ -562,7 +562,7 @@ void WebEnginePage::slotGeometryChangeRequested(const QRect & rect)
     // time of its creation, which is always the case in QWebEnginePage::createWindow,
     // then any move operation will seem not to work. That is because the new
     // window will be in maximized mode where moving it will not be possible...
-    if (WebEngineSettings::self()->windowMovePolicy(host) == KParts::HtmlSettingsInterface::JSWindowMoveAllow &&
+    if (WebEngineSettings::self()->windowMovePolicy(host) == HtmlSettingsInterface::JSWindowMoveAllow &&
         (view()->x() != rect.x() || view()->y() != rect.y()))
         emit m_part->browserExtension()->moveTopLevelWidget(rect.x(), rect.y());
 
@@ -583,7 +583,7 @@ void WebEnginePage::slotGeometryChangeRequested(const QRect & rect)
         return;
     }
 
-    if (WebEngineSettings::self()->windowResizePolicy(host) == KParts::HtmlSettingsInterface::JSWindowResizeAllow) {
+    if (WebEngineSettings::self()->windowResizePolicy(host) == HtmlSettingsInterface::JSWindowResizeAllow) {
         //qCDebug(WEBENGINEPART_LOG) << "resizing to " << width << "x" << height;
         emit m_part->browserExtension()->resizeTopLevelWidget(width, height);
     }
@@ -598,7 +598,7 @@ void WebEnginePage::slotGeometryChangeRequested(const QRect & rect)
     if (bottom > sg.bottom())
         moveByY = - bottom + sg.bottom(); // always <0
 
-    if ((moveByX || moveByY) && WebEngineSettings::self()->windowMovePolicy(host) == KParts::HtmlSettingsInterface::JSWindowMoveAllow)
+    if ((moveByX || moveByY) && WebEngineSettings::self()->windowMovePolicy(host) == HtmlSettingsInterface::JSWindowMoveAllow)
         emit m_part->browserExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
 }
 
@@ -758,10 +758,10 @@ void WebEnginePage::setPageJScriptPolicy(const QUrl &url)
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled,
                              WebEngineSettings::self()->isJavaScriptEnabled(hostname));
 
-    const KParts::HtmlSettingsInterface::JSWindowOpenPolicy policy = WebEngineSettings::self()->windowOpenPolicy(hostname);
+    const HtmlSettingsInterface::JSWindowOpenPolicy policy = WebEngineSettings::self()->windowOpenPolicy(hostname);
     settings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows,
-                             (policy != KParts::HtmlSettingsInterface::JSWindowOpenDeny &&
-                              policy != KParts::HtmlSettingsInterface::JSWindowOpenSmart));
+                             (policy != HtmlSettingsInterface::JSWindowOpenDeny &&
+                              policy != HtmlSettingsInterface::JSWindowOpenSmart));
 }
 
 void WebEnginePage::slotAuthenticationRequired(const QUrl &requestUrl, QAuthenticator *auth)
@@ -864,13 +864,13 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
             if (!part() && !isMainFrame) {
                 return false;
             }
-            const KParts::HtmlSettingsInterface::JSWindowOpenPolicy policy = WebEngineSettings::self()->windowOpenPolicy(reqUrl.host());
+            const HtmlSettingsInterface::JSWindowOpenPolicy policy = WebEngineSettings::self()->windowOpenPolicy(reqUrl.host());
             switch (policy) {
-            case KParts::HtmlSettingsInterface::JSWindowOpenDeny:
+            case HtmlSettingsInterface::JSWindowOpenDeny:
                 // TODO: Implement support for dealing with blocked pop up windows.
                 this->deleteLater();
                 return false;
-            case KParts::HtmlSettingsInterface::JSWindowOpenAsk: {
+            case HtmlSettingsInterface::JSWindowOpenAsk: {
                 const QString message = (reqUrl.isEmpty() ?
                                           i18n("This site is requesting to open a new popup window.\n"
                                                "Do you want to allow this?") :

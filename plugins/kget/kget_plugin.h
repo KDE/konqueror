@@ -19,10 +19,7 @@
 
 class KToggleAction;
 class AsyncSelectorInterface;
-
-namespace KParts {
-    class HtmlExtension;
-};
+class HtmlExtension;
 
 class KGetPlugin : public KonqParts::Plugin
 {
@@ -59,7 +56,7 @@ private:
          * @brief Constructor
          * @param ext The HTML Extension
          */
-        SelectorInterface(KParts::HtmlExtension *ext);
+        SelectorInterface(HtmlExtension *ext);
         /**
          * @brief The query methods supported by the HTML part
          * @return The query methods supported by the HTML part or KParts::SelectionInterface::None if no selector interface

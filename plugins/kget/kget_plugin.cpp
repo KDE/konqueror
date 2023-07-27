@@ -30,7 +30,6 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KParts/FileInfoExtension>
-#include <KParts/HtmlExtension>
 #include <KParts/Part>
 #include <KParts/PartManager>
 #include <KParts/ReadOnlyPart>
@@ -41,6 +40,7 @@
 
 #include <konq_kpart_plugin.h>
 #include <asyncselectorinterface.h>
+#include <htmlextension.h>
 
 #define QL1S(x) QLatin1String(x)
 
@@ -79,7 +79,7 @@ KGetPlugin::KGetPlugin(QObject *parent, const QVariantList &)
 
     // Hide this plugin if the parent part does not support either
     // The FileInfo or Html extensions...
-    if (!KParts::HtmlExtension::childObject(parent) && !KParts::FileInfoExtension::childObject(parent)) {
+    if (!HtmlExtension::childObject(parent) && !KParts::FileInfoExtension::childObject(parent)) {
         menu->setVisible(false);
     }
 }
@@ -103,7 +103,7 @@ static bool hasDropTarget()
     return found;
 }
 
-KGetPlugin::SelectorInterface::SelectorInterface(KParts::HtmlExtension* ext)
+KGetPlugin::SelectorInterface::SelectorInterface(HtmlExtension* ext)
 {
     KParts::SelectorInterface *syncIface = qobject_cast<KParts::SelectorInterface*>(ext);
     if (syncIface) {
@@ -138,7 +138,7 @@ KParts::SelectorInterface::QueryMethods KGetPlugin::SelectorInterface::supported
 void KGetPlugin::showPopup()
 {
     // Check for HtmlExtension support...
-    KParts::HtmlExtension *htmlExtn = KParts::HtmlExtension::childObject(parent());
+    HtmlExtension *htmlExtn = HtmlExtension::childObject(parent());
     if (htmlExtn) {
         SelectorInterface iface(htmlExtn);
         KParts::SelectorInterface::QueryMethods methods = iface.supportedMethods();
@@ -240,7 +240,7 @@ void KGetPlugin::fillLinkListFromHtml(const QUrl& baseUrl, const QList< KParts::
 
 void KGetPlugin::getLinks(bool selectedOnly)
 {
-    KParts::HtmlExtension *htmlExtn = KParts::HtmlExtension::childObject(parent());
+    HtmlExtension *htmlExtn = HtmlExtension::childObject(parent());
     if (htmlExtn) {
         SelectorInterface iface(htmlExtn);
         if (iface.hasInterface()) {

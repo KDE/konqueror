@@ -11,8 +11,8 @@
 
 #include <QGroupBox>
 
-#include <kparts/htmlextension.h>
-#include <kparts/htmlsettingsinterface.h>
+#include <htmlextension.h>
+#include <htmlsettingsinterface.h>
 #include <KSharedConfig>
 #include "policies.h"
 
@@ -67,9 +67,9 @@ public:
      * This will return an illegal value if isWindowOpenPolicyInherited is
      * true.
      */
-    KParts::HtmlSettingsInterface::JSWindowOpenPolicy windowOpenPolicy() const
+    HtmlSettingsInterface::JSWindowOpenPolicy windowOpenPolicy() const
     {
-        return static_cast<KParts::HtmlSettingsInterface::JSWindowOpenPolicy>(window_open);
+        return static_cast<HtmlSettingsInterface::JSWindowOpenPolicy>(window_open);
     }
 
     /**
@@ -85,9 +85,9 @@ public:
      * This will return an illegal value if isWindowResizePolicyInherited is
      * true.
      */
-    KParts::HtmlSettingsInterface::JSWindowResizePolicy windowResizePolicy() const
+    HtmlSettingsInterface::JSWindowResizePolicy windowResizePolicy() const
     {
-        return static_cast<KParts::HtmlSettingsInterface::JSWindowResizePolicy>(window_resize);
+        return static_cast<HtmlSettingsInterface::JSWindowResizePolicy>(window_resize);
     }
 
     /**
@@ -103,9 +103,9 @@ public:
      * This will return an illegal value if isWindowMovePolicyInherited is
      * true.
      */
-    KParts::HtmlSettingsInterface::JSWindowMovePolicy windowMovePolicy() const
+    HtmlSettingsInterface::JSWindowMovePolicy windowMovePolicy() const
     {
-        return static_cast<KParts::HtmlSettingsInterface::JSWindowMovePolicy>(window_move);
+        return static_cast<HtmlSettingsInterface::JSWindowMovePolicy>(window_move);
     }
 
     /**
@@ -121,9 +121,9 @@ public:
      * This will return an illegal value if isWindowFocusPolicyInherited is
      * true.
      */
-    KParts::HtmlSettingsInterface::JSWindowFocusPolicy windowFocusPolicy() const
+    HtmlSettingsInterface::JSWindowFocusPolicy windowFocusPolicy() const
     {
-        return static_cast<KParts::HtmlSettingsInterface::JSWindowFocusPolicy>(window_focus);
+        return static_cast<HtmlSettingsInterface::JSWindowFocusPolicy>(window_focus);
     }
 
     /**
@@ -139,9 +139,9 @@ public:
      * This will return an illegal value if isWindowStatusPolicyInherited is
      * true.
      */
-    KParts::HtmlSettingsInterface::JSWindowStatusPolicy windowStatusPolicy() const
+    HtmlSettingsInterface::JSWindowStatusPolicy windowStatusPolicy() const
     {
-        return static_cast<KParts::HtmlSettingsInterface::JSWindowStatusPolicy>(window_status);
+        return static_cast<HtmlSettingsInterface::JSWindowStatusPolicy>(window_status);
     }
 
     /**
@@ -158,15 +158,15 @@ public:
     void defaults() override;
 
 private:
-    // one of KParts::HtmlSettingsInterface::JSWindowOpenPolicy or INHERIT_POLICY
+    // one of HtmlSettingsInterface::JSWindowOpenPolicy or INHERIT_POLICY
     unsigned int window_open;
-    // one of KParts::HtmlSettingsInterface::JSWindowResizePolicy or INHERIT_POLICY
+    // one of HtmlSettingsInterface::JSWindowResizePolicy or INHERIT_POLICY
     unsigned int window_resize;
-    // one of KParts::HtmlSettingsInterface::JSWindowMovePolicy or INHERIT_POLICY
+    // one of HtmlSettingsInterface::JSWindowMovePolicy or INHERIT_POLICY
     unsigned int window_move;
-    // one of KParts::HtmlSettingsInterface::JSWindowFocusPolicy or INHERIT_POLICY
+    // one of HtmlSettingsInterface::JSWindowFocusPolicy or INHERIT_POLICY
     unsigned int window_focus;
-    // one of KParts::HtmlSettingsInterface::JSWindowStatusPolicy or INHERIT_POLICY
+    // one of HtmlSettingsInterface::JSWindowStatusPolicy or INHERIT_POLICY
     unsigned int window_status;
 
     friend class JSPoliciesFrame; // for changing policies

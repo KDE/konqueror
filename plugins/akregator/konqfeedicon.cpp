@@ -19,7 +19,6 @@
 #include <kparts/statusbarextension.h>
 #include <KParts/ReadOnlyPart>
 #include <KParts/BrowserExtension>
-#include <KParts/HtmlExtension>
 #include <KParts/SelectorInterface>
 #include <kio/job.h>
 #include <kurllabel.h>
@@ -34,6 +33,7 @@
 #include <QInputDialog>
 
 #include <asyncselectorinterface.h>
+#include <htmlextension.h>
 
 using namespace Akregator;
 
@@ -42,7 +42,7 @@ K_PLUGIN_CLASS_WITH_JSON(KonqFeedIcon, "akregator_konqfeedicon.json")
 static QUrl baseUrl(KParts::ReadOnlyPart *part)
 {
     QUrl url;
-    KParts::HtmlExtension *ext = KParts::HtmlExtension::childObject(part);
+    HtmlExtension *ext = HtmlExtension::childObject(part);
     if (ext) {
         url = ext->baseUrl();
     }
@@ -68,7 +68,7 @@ KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &args)
 
     KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(parent);
     if (part) {
-        KParts::HtmlExtension *ext = KParts::HtmlExtension::childObject(part);
+        HtmlExtension *ext = HtmlExtension::childObject(part);
         KParts::SelectorInterface *syncSelectorInterface = qobject_cast<KParts::SelectorInterface *>(ext);
         AsyncSelectorInterface *asyncSelectorInterface = qobject_cast<AsyncSelectorInterface*>(ext);
         if (syncSelectorInterface || asyncSelectorInterface) {
@@ -156,7 +156,7 @@ void Akregator::KonqFeedIcon::updateFeedIconAsync()
         return;
     }
 
-    AsyncSelectorInterface *asyncIface = qobject_cast<AsyncSelectorInterface*>(KParts::HtmlExtension::childObject(m_part));
+    AsyncSelectorInterface *asyncIface = qobject_cast<AsyncSelectorInterface*>(HtmlExtension::childObject(m_part));
     if (!asyncIface) {
         return;
     }
@@ -176,7 +176,7 @@ void KonqFeedIcon::updateFeedIcon()
         return;
     }
 
-    KParts::HtmlExtension *ext = KParts::HtmlExtension::childObject(m_part);
+    HtmlExtension *ext = HtmlExtension::childObject(m_part);
     KParts::SelectorInterface *syncInterface = qobject_cast<KParts::SelectorInterface *>(ext);
     QList<KParts::SelectorInterface::Element> linkNodes = syncInterface->querySelectorAll(query(), KParts::SelectorInterface::EntireContent);
     fillFeedList(linkNodes);
