@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"POT-Creation-Date: 2023-07-27 00:46+0000\n"
 "PO-Revision-Date: 2019-12-03 10:46+0000\n"
 "Last-Translator: Subin Siby <subins2000@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -18,58 +18,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: uachangerplugin.cpp:43
+#: uachangerplugin.cpp:47
 #, kde-format
+msgctxt "@title:menu Changes the browser identification"
 msgid "Change Browser Identification"
 msgstr ""
 
-#: uachangerplugin.cpp:108
+#: uachangerplugin.cpp:81
 #, kde-format
-msgid "Other"
-msgstr ""
-
-#: uachangerplugin.cpp:136
-#, kde-format
-msgctxt "%1 = browser version (e.g. 2.0)"
-msgid "Version %1"
-msgstr ""
-
-#: uachangerplugin.cpp:139
-#, kde-format
-msgctxt "%1 = browser name, %2 = browser version (e.g. Firefox, 2.0)"
-msgid "%1 %2"
-msgstr ""
-
-#: uachangerplugin.cpp:143
-#, kde-format
-msgctxt "%1 = browser version, %2 = platform (e.g. 2.0, Windows XP)"
-msgid "Version %1 on %2"
-msgstr ""
-
-#: uachangerplugin.cpp:146
-#, kde-format
-msgctxt ""
-"%1 = browser name, %2 = browser version, %3 = platform (e.g. Firefox, 2.0, "
-"Windows XP)"
-msgid "%1 %2 on %3"
-msgstr ""
-
-#: uachangerplugin.cpp:199
-#, kde-format
+msgctxt "@action:inmenu Uses the default browser identification"
 msgid "Default Identification"
-msgstr ""
-
-#. i18n("Reload Identifications"), this,
-#. SLOT(slotReloadDescriptions()),
-#. 0, ++count );
-#: uachangerplugin.cpp:227
-#, kde-format
-msgid "Apply to Entire Site"
-msgstr ""
-
-#: uachangerplugin.cpp:233
-#, kde-format
-msgid "Configure..."
 msgstr ""
 
 #. i18n: ectx: Menu (tools)

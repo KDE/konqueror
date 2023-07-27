@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 00:46+0000\n"
+"POT-Creation-Date: 2023-07-27 00:46+0000\n"
 "PO-Revision-Date: 2010-10-22 18:32+0200\n"
 "Last-Translator: Jean Cayron <jean.cayron@gmail.com>\n"
 "Language-Team: Walloon <linux@walon.org>\n"
@@ -960,7 +960,8 @@ msgstr "Lodjoe/Dominne"
 msgid "Policy"
 msgstr "Politike"
 
-#: domainlistview.cpp:45
+#. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
+#: domainlistview.cpp:45 useragent/useragent.ui:84
 #, kde-format
 msgid "&New..."
 msgstr "&Novea..."
@@ -1191,7 +1192,8 @@ msgid ""
 "are either discarded or replaced with a placeholder image. "
 msgstr ""
 
-#: filteropts.cpp:558
+#. i18n: ectx: property (text), widget (QTreeWidget, templates)
+#: filteropts.cpp:558 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "No"
@@ -2038,6 +2040,88 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "Vos dvoz aprume intrer on no d' dominne."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UserAgent)
+#: useragent/useragent.ui:14
+#, kde-format
+msgid "Form"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, customUABox)
+#: useragent/useragent.ui:23
+#, kde-format
+msgid "Existing identifications"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
+#. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
+#. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:36 useragent/useragent.ui:81
+#: useragent/useragent.ui:150 useragent/useragent.ui:163
+#, kde-format
+msgid "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, templates)
+#: useragent/useragent.ui:66
+#, kde-format
+msgid "Content"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
+#: useragent/useragent.ui:97
+#, fuzzy, kde-format
+#| msgid "&Export..."
+msgid "&Edit..."
+msgstr "&Eberweter..."
+
+#. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
+#: useragent/useragent.ui:110
+#, kde-format
+msgid "&Rename..."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
+#: useragent/useragent.ui:123
+#, kde-format
+msgid "Du&plicate..."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
+#: useragent/useragent.ui:136
+#, fuzzy, kde-format
+#| msgid "De&lete"
+msgid "&Delete"
+msgstr "Dis&facer"
+
+#. i18n: ectx: property (text), widget (QPushButton, useTemplateBtn)
+#: useragent/useragent.ui:153
+#, kde-format
+msgid "Choose &selected identification"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:166
+#, kde-format
+msgid "Use &default identification"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: useragent/useragent.ui:181
+#, kde-format
+msgid "&Custom identification"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
+#: useragent/useragent.ui:191
+#, kde-format
+msgid ""
+"<html><head/><body><p>The browser identification to use when the default "
+"identification is disabled.</p><p>You can enter it manually or start from "
+"one in the list below and change it according to your needs.</p></body></"
+"html>"
+msgstr ""
 
 #~ msgctxt "@label:listbox"
 #~ msgid "When &Konqueror starts:"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uachangerplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"POT-Creation-Date: 2023-07-27 00:46+0000\n"
 "PO-Revision-Date: 2010-01-05 22:33+0200\n"
 "Last-Translator: Einars Sprugis <einars8@gmail.com>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -19,59 +19,19 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
-#: uachangerplugin.cpp:43
-#, kde-format
+#: uachangerplugin.cpp:47
+#, fuzzy, kde-format
+#| msgid "Change Browser Identification"
+msgctxt "@title:menu Changes the browser identification"
 msgid "Change Browser Identification"
 msgstr "Mainīt pārlūka identifikāciju"
 
-#: uachangerplugin.cpp:108
-#, kde-format
-msgid "Other"
-msgstr "Cita"
-
-#: uachangerplugin.cpp:136
-#, kde-format
-msgctxt "%1 = browser version (e.g. 2.0)"
-msgid "Version %1"
-msgstr "Versija %1"
-
-#: uachangerplugin.cpp:139
-#, kde-format
-msgctxt "%1 = browser name, %2 = browser version (e.g. Firefox, 2.0)"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: uachangerplugin.cpp:143
-#, kde-format
-msgctxt "%1 = browser version, %2 = platform (e.g. 2.0, Windows XP)"
-msgid "Version %1 on %2"
-msgstr "Versija %1 uz %2"
-
-#: uachangerplugin.cpp:146
-#, kde-format
-msgctxt ""
-"%1 = browser name, %2 = browser version, %3 = platform (e.g. Firefox, 2.0, "
-"Windows XP)"
-msgid "%1 %2 on %3"
-msgstr "%1 %2 uz %3"
-
-#: uachangerplugin.cpp:199
-#, kde-format
+#: uachangerplugin.cpp:81
+#, fuzzy, kde-format
+#| msgid "Default Identification"
+msgctxt "@action:inmenu Uses the default browser identification"
 msgid "Default Identification"
 msgstr "Noklusētā identifikācija"
-
-#. i18n("Reload Identifications"), this,
-#. SLOT(slotReloadDescriptions()),
-#. 0, ++count );
-#: uachangerplugin.cpp:227
-#, kde-format
-msgid "Apply to Entire Site"
-msgstr "Lietot visai vietnei"
-
-#: uachangerplugin.cpp:233
-#, kde-format
-msgid "Configure..."
-msgstr "Konfigurēt..."
 
 #. i18n: ectx: Menu (tools)
 #: uachangerplugin.rc:4
@@ -84,6 +44,33 @@ msgstr "&Rīki"
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Papildu rīkjosla"
+
+#~ msgid "Other"
+#~ msgstr "Cita"
+
+#~ msgctxt "%1 = browser version (e.g. 2.0)"
+#~ msgid "Version %1"
+#~ msgstr "Versija %1"
+
+#~ msgctxt "%1 = browser name, %2 = browser version (e.g. Firefox, 2.0)"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgctxt "%1 = browser version, %2 = platform (e.g. 2.0, Windows XP)"
+#~ msgid "Version %1 on %2"
+#~ msgstr "Versija %1 uz %2"
+
+#~ msgctxt ""
+#~ "%1 = browser name, %2 = browser version, %3 = platform (e.g. Firefox, "
+#~ "2.0, Windows XP)"
+#~ msgid "%1 %2 on %3"
+#~ msgstr "%1 %2 uz %3"
+
+#~ msgid "Apply to Entire Site"
+#~ msgstr "Lietot visai vietnei"
+
+#~ msgid "Configure..."
+#~ msgstr "Konfigurēt..."
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

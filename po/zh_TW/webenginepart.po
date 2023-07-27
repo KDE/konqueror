@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-26 00:50+0000\n"
+"POT-Creation-Date: 2023-07-27 00:46+0000\n"
 "PO-Revision-Date: 2020-05-02 22:59+0800\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -999,62 +999,62 @@ msgstr "允許"
 msgid "Do Not Allow"
 msgstr "不允許"
 
-#: src/webenginepart.cpp:211
+#: src/webenginepart.cpp:213
 #, fuzzy, kde-format
 #| msgid "Save Image As..."
 msgid "Save Full HTML Page As..."
 msgstr "另存影像為..."
 
-#: src/webenginepart.cpp:215
+#: src/webenginepart.cpp:217
 #, kde-format
 msgid "Print Preview"
 msgstr "預覽列印"
 
-#: src/webenginepart.cpp:219
+#: src/webenginepart.cpp:221
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "放大"
 
-#: src/webenginepart.cpp:224
+#: src/webenginepart.cpp:226
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: src/webenginepart.cpp:229
+#: src/webenginepart.cpp:231
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "實際大小"
 
-#: src/webenginepart.cpp:234
+#: src/webenginepart.cpp:236
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "只縮放文字"
 
-#: src/webenginepart.cpp:242
+#: src/webenginepart.cpp:244
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "縮放到 DPI"
 
-#: src/webenginepart.cpp:255
+#: src/webenginepart.cpp:257
 #, kde-format
 msgid "Set &Encoding"
 msgstr "設定編碼(&E)"
 
-#: src/webenginepart.cpp:258
+#: src/webenginepart.cpp:260
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "檢視文件原始碼(&C)"
 
-#: src/webenginepart.cpp:263 src/webenginepart.cpp:563
+#: src/webenginepart.cpp:265 src/webenginepart.cpp:565
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:269
+#: src/webenginepart.cpp:271
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1062,12 +1062,12 @@ msgid ""
 "displayed page."
 msgstr "<h3>尋找文字</h3>顯示一個文字尋找對話框。"
 
-#: src/webenginepart.cpp:561
+#: src/webenginepart.cpp:563
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "此站台的 SSL 資訊可能已損毀。"
 
-#: src/webenginepart.cpp:642
+#: src/webenginepart.cpp:644
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1075,7 +1075,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "電子郵件： "
 
-#: src/webenginepart.cpp:671
+#: src/webenginepart.cpp:673
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1083,7 +1083,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - 副本："
 
-#: src/webenginepart.cpp:673
+#: src/webenginepart.cpp:675
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1091,7 +1091,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - 密件副本："
 
-#: src/webenginepart.cpp:675
+#: src/webenginepart.cpp:677
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1099,87 +1099,87 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - 主題："
 
-#: src/webenginepart.cpp:679 src/webenginepart.cpp:690
+#: src/webenginepart.cpp:681 src/webenginepart.cpp:692
 #, kde-format
 msgid " (In new window)"
 msgstr " (在新視窗)"
 
-#: src/webenginepart.cpp:688
+#: src/webenginepart.cpp:690
 #, kde-format
 msgid " (In parent frame)"
 msgstr "(於父框架)"
 
-#: src/webenginepart.cpp:752
+#: src/webenginepart.cpp:754
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>您要搜尋 <b>%1</b> 嗎？</qt>"
 
-#: src/webenginepart.cpp:753
+#: src/webenginepart.cpp:755
 #, kde-format
 msgid "Internet Search"
 msgstr "網路搜尋"
 
-#: src/webenginepart.cpp:753
+#: src/webenginepart.cpp:755
 #, kde-format
 msgid "&Search"
 msgstr "搜尋(&S)"
 
-#: src/webenginepart.cpp:864
+#: src/webenginepart.cpp:866
 #, kde-format
 msgid "Close window?"
 msgstr "關閉視窗？"
 
-#: src/webenginepart.cpp:864
+#: src/webenginepart.cpp:866
 #, kde-format
 msgid "Confirmation Required"
 msgstr "需要確認"
 
-#: src/webenginepart.cpp:938
+#: src/webenginepart.cpp:940
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>您要 %1 記住 %2 的登入資訊嗎？</html>"
 
-#: src/webenginepart.cpp:1009
+#: src/webenginepart.cpp:1011
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr ""
 
-#: src/webenginepart.cpp:1014
+#: src/webenginepart.cpp:1016
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "&Memorize Passwords in This Page Now"
 msgstr "移除此站台所有的快取住的密碼"
 
-#: src/webenginepart.cpp:1018
+#: src/webenginepart.cpp:1020
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1022
+#: src/webenginepart.cpp:1024
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1026
+#: src/webenginepart.cpp:1028
 #, fuzzy, kde-format
 #| msgid "&Allow password caching for this site"
 msgid "&Allow Password Caching for This Site"
 msgstr "允許此站台使用密碼快取(&A)"
 
-#: src/webenginepart.cpp:1030
+#: src/webenginepart.cpp:1032
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "移除此站台所有的快取住的密碼"
 
-#: src/webenginepart.cpp:1034
+#: src/webenginepart.cpp:1036
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1038
+#: src/webenginepart.cpp:1040
 #, kde-format
 msgid "&Close Wallet"
 msgstr "關閉錢包(Wallet)(&C)"
