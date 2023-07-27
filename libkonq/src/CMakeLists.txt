@@ -11,6 +11,7 @@ set(konq_LIB_SRCS
    konq_spellcheckingconfigurationdispatcher.cpp #konqueror and webenginepart
    konq_kpart_plugin.cpp
    asyncselectorinterface.cpp
+   browseropenorsavequestion.cpp
 )
 
 ecm_qt_declare_logging_category(konq_LIB_SRCS HEADER libkonq_debug.h IDENTIFIER LIBKONQ_LOG CATEGORY_NAME org.kde.libkonq)

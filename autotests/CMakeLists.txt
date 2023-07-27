@@ -30,4 +30,9 @@ ecm_add_test(konqhtmltest.cpp
 ecm_add_test(konqviewtest.cpp
     LINK_LIBRARIES kdeinit_konqueror Qt5::Core Qt5::Test)
 
+########### openorsavequestion_unittest ###############
+
+ecm_add_test(openorsavequestion_unittest.cpp
+    LINK_LIBRARIES kdeinit_konqueror Qt5::Core Qt5::Test)
+
 endif (NOT WIN32)

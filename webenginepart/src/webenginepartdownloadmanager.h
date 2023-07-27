@@ -17,7 +17,8 @@
 #include <QSet>
 
 #include <KJob>
-#include <KParts/BrowserOpenOrSaveQuestion>
+
+#include "browseropenorsavequestion.h"
 
 class WebEnginePage;
 class QWebEngineProfile;
@@ -61,7 +62,7 @@ private:
      * @param it the download item representing the download request
      * @param disposition the argument to pass to `KParts::BrowserOpenOrSaveQuestion::askEmebedOrSave`
      */
-    void downloadFile(QWebEngineDownloadItem *it, KParts::BrowserOpenOrSaveQuestion::AskEmbedOrSaveFlags disposition, bool forceNewTab = false);
+    void downloadFile(QWebEngineDownloadItem *it, BrowserOpenOrSaveQuestion::AskEmbedOrSaveFlags disposition, bool forceNewTab = false);
     QString generateDownloadTempFileName(QString const &suggestedName, const QString &ext) const;
 
     /**

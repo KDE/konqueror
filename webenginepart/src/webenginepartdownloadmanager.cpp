@@ -99,7 +99,7 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
 
     if (WebEnginePartControls::self()->navigationRecorder()->isPostRequest(it->url(), page)) {
         WebEnginePartControls::self()->navigationRecorder()->recordNavigationFinished(page, url);
-        downloadFile(it, KParts::BrowserOpenOrSaveQuestion::InlineDisposition, true);
+        downloadFile(it, BrowserOpenOrSaveQuestion::InlineDisposition, true);
         return;
     }
 
@@ -107,25 +107,25 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
     if (!forceDownload && it->url().scheme() != "blob") {
         page->downloadItem(it, forceNew);
     } else {
-        downloadFile(it, KParts::BrowserOpenOrSaveQuestion::AttachmentDisposition);
+        downloadFile(it, BrowserOpenOrSaveQuestion::AttachmentDisposition);
     }
 }
 
-void WebEnginePartDownloadManager::downloadFile(QWebEngineDownloadItem* it, KParts::BrowserOpenOrSaveQuestion::AskEmbedOrSaveFlags disposition, bool forceNewTab)
+void WebEnginePartDownloadManager::downloadFile(QWebEngineDownloadItem* it, BrowserOpenOrSaveQuestion::AskEmbedOrSaveFlags disposition, bool forceNewTab)
 {
     WebEnginePage *p = qobject_cast<WebEnginePage*>(it->page());
     QWidget *w = p ? p->view() : nullptr;
-    KParts::BrowserOpenOrSaveQuestion askDlg(w, it->url(), it->mimeType());
-    KParts::BrowserOpenOrSaveQuestion::Result ans = askDlg.askEmbedOrSave(disposition);
+    BrowserOpenOrSaveQuestion askDlg(w, it->url(), it->mimeType());
+    BrowserOpenOrSaveQuestion::Result ans = askDlg.askEmbedOrSave(disposition);
     switch (ans) { 
-        case KParts::BrowserOpenOrSaveQuestion::Cancel:
+        case BrowserOpenOrSaveQuestion::Cancel:
             it->cancel();
             return;
-        case KParts::BrowserOpenOrSaveQuestion::Save:
+        case BrowserOpenOrSaveQuestion::Save:
             saveFile(it);
             break;
-        case KParts::BrowserOpenOrSaveQuestion::Embed:
-        case KParts::BrowserOpenOrSaveQuestion::Open:
+        case BrowserOpenOrSaveQuestion::Embed:
+        case BrowserOpenOrSaveQuestion::Open:
             openFile(it, p, forceNewTab);
             break;
     }

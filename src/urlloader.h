@@ -10,12 +10,12 @@
 #define URLLLOADER_H
 
 #include "konqopenurlrequest.h"
+#include "browseropenorsavequestion.h"
 
 #include <QObject>
 #include <QUrl>
 
 #include <KService>
-#include <KParts/BrowserOpenOrSaveQuestion>
 
 namespace KParts {
     class ReadOnlyPart;

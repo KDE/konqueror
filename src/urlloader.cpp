@@ -18,6 +18,7 @@
 #include <KParts/ReadOnlyPart>
 #include <KParts/BrowserInterface>
 #include <KParts/BrowserExtension>
+#include <KParts/BrowserRun>
 #include <KParts/PartLoader>
 #include <KIO/FileCopyJob>
 #include <KIO/MimeTypeFinderJob>
@@ -568,19 +569,19 @@ bool UrlLoader::isTextExecutable(const QString &mimeType)
 
 UrlLoader::OpenSaveAnswer UrlLoader::askSaveOrOpen(OpenEmbedMode mode) const
 {
-    KParts::BrowserOpenOrSaveQuestion dlg(m_mainWindow, m_url, m_mimeType);
+    BrowserOpenOrSaveQuestion dlg(m_mainWindow, m_url, m_mimeType);
     dlg.setSuggestedFileName(m_request.suggestedFileName);
-    dlg.setFeatures(KParts::BrowserOpenOrSaveQuestion::ServiceSelection);
-    KParts::BrowserOpenOrSaveQuestion::Result ans = mode == OpenEmbedMode::Open ? dlg.askOpenOrSave() : dlg.askEmbedOrSave();
+    dlg.setFeatures(BrowserOpenOrSaveQuestion::ServiceSelection);
+    BrowserOpenOrSaveQuestion::Result ans = mode == OpenEmbedMode::Open ? dlg.askOpenOrSave() : dlg.askEmbedOrSave();
     OpenUrlAction action;
     switch (ans) {
-        case KParts::BrowserOpenOrSaveQuestion::Save:
+        case BrowserOpenOrSaveQuestion::Save:
             action = OpenUrlAction::Save;
             break;
-        case KParts::BrowserOpenOrSaveQuestion::Open:
+        case BrowserOpenOrSaveQuestion::Open:
             action = OpenUrlAction::Open;
             break;
-        case KParts::BrowserOpenOrSaveQuestion::Embed:
+        case BrowserOpenOrSaveQuestion::Embed:
             action = OpenUrlAction::Embed;
             break;
         default:

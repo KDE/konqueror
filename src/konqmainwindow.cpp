@@ -41,6 +41,7 @@
 #include "konqbrowserinterface.h"
 #include "urlloader.h"
 #include "pluginmetadatautils.h"
+#include "browseropenorsavequestion.h"
 
 #include <konq_events.h>
 #include <konqpixmapprovider.h>
@@ -121,8 +122,8 @@
 #include <KIO/CopyJob>
 #include <KIO/Job>
 #include <KIO/FileUndoManager>
-#include <kparts/browseropenorsavequestion.h>
 #include <KParts/OpenUrlEvent>
+#include <KParts/BrowserRun>
 #include <KCompletionMatches>
 #include <kacceleratormanager.h>
 #include <kuser.h>
@@ -786,12 +787,12 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
             suggestedFileName = loader->suggestedFileName();
         }
 
-        KParts::BrowserOpenOrSaveQuestion dlg(this, url, mimeType);
+        BrowserOpenOrSaveQuestion dlg(this, url, mimeType);
         dlg.setSuggestedFileName(suggestedFileName);
-        const KParts::BrowserOpenOrSaveQuestion::Result res = dlg.askEmbedOrSave();
-        if (res == KParts::BrowserOpenOrSaveQuestion::Embed) {
+        const BrowserOpenOrSaveQuestion::Result res = dlg.askEmbedOrSave();
+        if (res == BrowserOpenOrSaveQuestion::Embed) {
             forceAutoEmbed = true;
-        } else if (res == KParts::BrowserOpenOrSaveQuestion::Cancel) {
+        } else if (res == BrowserOpenOrSaveQuestion::Cancel) {
             return true;    // handled, don't do anything else
         } else { // Save
             KParts::BrowserRun::saveUrl(url, suggestedFileName, this, req.args);
