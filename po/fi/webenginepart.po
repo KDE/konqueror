@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-26 00:50+0000\n"
-"PO-Revision-Date: 2023-05-18 14:05+0300\n"
+"POT-Creation-Date: 2023-07-27 02:26+0000\n"
+"PO-Revision-Date: 2023-07-25 13:43+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2012-12-01 22:20:04+0000\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -532,43 +532,34 @@ msgstr ""
 "<td>Liitännäinen</td>"
 
 #: src/choosepagesaveformatdlg.cpp:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "The page is saved as a single HTML page. Only the text of the page will "
-#| "be saved. External resources such as images won't be saved"
+#, kde-format
 msgid ""
 "The page will be saved as a single HTML file. Only the text of the page will "
 "be saved. External resources such as images won't be saved"
 msgstr ""
-"Tallentaa sivun yhdeksi HTML-tiedostoksi. Vain sivun teksti tallentuu, eivät "
-"ulkoiset resurssit kuten kuvat"
+"Tallentaa sivun yhdeksi HTML-tiedostoksi. Vain sivun teksti tallennetaan. "
+"Ulkoisia resursseja kuten kuvia ei tallenneta"
 
 #: src/choosepagesaveformatdlg.cpp:40
-#, fuzzy, kde-format
-#| msgid ""
-#| "The complete contents of the page will be saved. The page and any "
-#| "external resources it requires, such as images, will be saved inside a "
-#| "single directory"
+#, kde-format
 msgid ""
 "The page will be saved as an HTML file. Any external resources the page "
 "requires, such as images, will be saved inside an apposite directory"
 msgstr ""
-"Tallentaa sivun koko sisällön. Sivu kaikkine vaadittuine ulkoisine "
-"resursseineen kuten kuvineen tallennetaan yksittäiseen kansioon"
+"Tallentaa sivun HTML-tiedostoksi. Sivun vaatimat ulkoiset resurssit kuten "
+"kuvat tallennetaan alikansioon"
 
 #: src/choosepagesaveformatdlg.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "The page is saved as a single HTML page. Only the text of the page will "
-#| "be saved. External resources such as images won't be saved"
+#, kde-format
 msgid ""
 "The page will be saved as a MTHML file which contains both the text of the "
 "page and any external resources it requires, such as images. "
 "<br><strong>Note</strong>: not all browsers are able to display this kind of "
 "files"
 msgstr ""
-"Tallentaa sivun yhdeksi HTML-tiedostoksi. Vain sivun teksti tallentuu, eivät "
-"ulkoiset resurssit kuten kuvat"
+"Tallentaa sivun MHTML-tiedostoksi, joka sisältää niin sivun tekstin kuin "
+"kaikki sen vaatimat ulkoiset resurssit kuten kuvat.<br><strong>Huom!</"
+"strong> Kaikki selaimet eivät tue tällaisia tiedostoja"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
@@ -586,21 +577,19 @@ msgstr "Miten haluat sivun tallentaa?"
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As an HTML file &without external resources"
-msgstr ""
+msgstr "HTML-&sivuksi ilman ulkoisia resursseja"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
-#, fuzzy, kde-format
-#| msgid "As a &Single HTML page"
+#, kde-format
 msgid "As a &complete HTML page"
-msgstr "&Yhdeksi HTML-sivuksi"
+msgstr "&Täydelliseksi HTML-sivuksi"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "As single MHTML file"
+#, kde-format
 msgid "As a &MHTML file"
-msgstr "Yhdeksi MHTML-tiedostoksi"
+msgstr "&MHTML-tiedostoksi"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -1026,61 +1015,61 @@ msgstr "Salli"
 msgid "Do Not Allow"
 msgstr "Älä salli"
 
-#: src/webenginepart.cpp:211
+#: src/webenginepart.cpp:213
 #, kde-format
 msgid "Save Full HTML Page As..."
 msgstr "Tallenna koko HTML-sivu nimellä…"
 
-#: src/webenginepart.cpp:215
+#: src/webenginepart.cpp:217
 #, kde-format
 msgid "Print Preview"
 msgstr "Tulostuksen esikatselu"
 
-#: src/webenginepart.cpp:219
+#: src/webenginepart.cpp:221
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Lähennä"
 
-#: src/webenginepart.cpp:224
+#: src/webenginepart.cpp:226
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Loitonna"
 
-#: src/webenginepart.cpp:229
+#: src/webenginepart.cpp:231
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Todellinen koko"
 
-#: src/webenginepart.cpp:234
+#: src/webenginepart.cpp:236
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Muuta vain tekstin kokoa"
 
-#: src/webenginepart.cpp:242
+#: src/webenginepart.cpp:244
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Lähennä DPI:hin"
 
-#: src/webenginepart.cpp:255
+#: src/webenginepart.cpp:257
 #, kde-format
 msgid "Set &Encoding"
 msgstr "Aseta &merkistö"
 
-#: src/webenginepart.cpp:258
+#: src/webenginepart.cpp:260
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Näytä tiedoston &lähdekoodi"
 
-#: src/webenginepart.cpp:263 src/webenginepart.cpp:563
+#: src/webenginepart.cpp:265 src/webenginepart.cpp:565
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:269
+#: src/webenginepart.cpp:271
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1090,12 +1079,12 @@ msgstr ""
 "<h3>Etsi tekstiä</h3>Näyttää kyselyikkunan, jonka avulla voit etsiä tekstiä "
 "näytetyltä sivulta."
 
-#: src/webenginepart.cpp:561
+#: src/webenginepart.cpp:563
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "Sivuston SSL-tieto näyttää olevan vioittunut."
 
-#: src/webenginepart.cpp:642
+#: src/webenginepart.cpp:644
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1103,7 +1092,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "Sähköposti: "
 
-#: src/webenginepart.cpp:671
+#: src/webenginepart.cpp:673
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1111,7 +1100,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " – Kopio: "
 
-#: src/webenginepart.cpp:673
+#: src/webenginepart.cpp:675
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1119,7 +1108,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " – Piilokopio: "
 
-#: src/webenginepart.cpp:675
+#: src/webenginepart.cpp:677
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1127,42 +1116,42 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " – Aihe: "
 
-#: src/webenginepart.cpp:679 src/webenginepart.cpp:690
+#: src/webenginepart.cpp:681 src/webenginepart.cpp:692
 #, kde-format
 msgid " (In new window)"
 msgstr " (Uuteen ikkunaan)"
 
-#: src/webenginepart.cpp:688
+#: src/webenginepart.cpp:690
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (Ylempään kehykseen)"
 
-#: src/webenginepart.cpp:752
+#: src/webenginepart.cpp:754
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Haluatko etsiä kohdetta <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:753
+#: src/webenginepart.cpp:755
 #, kde-format
 msgid "Internet Search"
 msgstr "Internethaku"
 
-#: src/webenginepart.cpp:753
+#: src/webenginepart.cpp:755
 #, kde-format
 msgid "&Search"
 msgstr "&Etsi"
 
-#: src/webenginepart.cpp:864
+#: src/webenginepart.cpp:866
 #, kde-format
 msgid "Close window?"
 msgstr "Suljetaanko ikkuna?"
 
-#: src/webenginepart.cpp:864
+#: src/webenginepart.cpp:866
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Vaaditaan vahvistus"
 
-#: src/webenginepart.cpp:938
+#: src/webenginepart.cpp:940
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
@@ -1170,43 +1159,43 @@ msgstr ""
 "<html>Haluatko ohjelman %1 muistavan sivun <b>%2</b> kirjautumistiedot?</"
 "html>"
 
-#: src/webenginepart.cpp:1009
+#: src/webenginepart.cpp:1011
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr "&Täytä lomakkeet nyt"
 
-#: src/webenginepart.cpp:1014
+#: src/webenginepart.cpp:1016
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr "&Muista tämän sivun salasanat nyt"
 
-#: src/webenginepart.cpp:1018
+#: src/webenginepart.cpp:1020
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr "&Mukauta kenttiä tämän sivun muistamiseksi…"
 
-#: src/webenginepart.cpp:1022
+#: src/webenginepart.cpp:1024
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr "Poista tämän sivun mukautetut muistiasetukset"
 
-#: src/webenginepart.cpp:1026
+#: src/webenginepart.cpp:1028
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "&Käytä tässä sivustossa salasanavälimuistia"
 
-#: src/webenginepart.cpp:1030
+#: src/webenginepart.cpp:1032
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "Poista kaikki sivustosta muistetut salasanat"
 
-#: src/webenginepart.cpp:1034
+#: src/webenginepart.cpp:1036
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Käynnistä lompakonhallinta"
 
-#: src/webenginepart.cpp:1038
+#: src/webenginepart.cpp:1040
 #, kde-format
 msgid "&Close Wallet"
 msgstr "Sulje &lompakko"

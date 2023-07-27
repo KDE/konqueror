@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uachangerplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"POT-Creation-Date: 2023-07-27 02:26+0000\n"
 "PO-Revision-Date: 2010-07-22 20:07+0400\n"
 "Last-Translator: Alexander Potashev <aspotashev@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -26,59 +26,19 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: uachangerplugin.cpp:43
-#, kde-format
+#: uachangerplugin.cpp:47
+#, fuzzy, kde-format
+#| msgid "Change Browser Identification"
+msgctxt "@title:menu Changes the browser identification"
 msgid "Change Browser Identification"
 msgstr "Изменение строки описания веб-браузера"
 
-#: uachangerplugin.cpp:108
-#, kde-format
-msgid "Other"
-msgstr "Другое"
-
-#: uachangerplugin.cpp:136
-#, kde-format
-msgctxt "%1 = browser version (e.g. 2.0)"
-msgid "Version %1"
-msgstr "Версия %1"
-
-#: uachangerplugin.cpp:139
-#, kde-format
-msgctxt "%1 = browser name, %2 = browser version (e.g. Firefox, 2.0)"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: uachangerplugin.cpp:143
-#, kde-format
-msgctxt "%1 = browser version, %2 = platform (e.g. 2.0, Windows XP)"
-msgid "Version %1 on %2"
-msgstr "Версия %1 на %2"
-
-#: uachangerplugin.cpp:146
-#, kde-format
-msgctxt ""
-"%1 = browser name, %2 = browser version, %3 = platform (e.g. Firefox, 2.0, "
-"Windows XP)"
-msgid "%1 %2 on %3"
-msgstr "%1 %2 на %3"
-
-#: uachangerplugin.cpp:199
-#, kde-format
+#: uachangerplugin.cpp:81
+#, fuzzy, kde-format
+#| msgid "Default Identification"
+msgctxt "@action:inmenu Uses the default browser identification"
 msgid "Default Identification"
 msgstr "Строка описания по умолчанию"
-
-#. i18n("Reload Identifications"), this,
-#. SLOT(slotReloadDescriptions()),
-#. 0, ++count );
-#: uachangerplugin.cpp:227
-#, kde-format
-msgid "Apply to Entire Site"
-msgstr "Применить ко всему сайту"
-
-#: uachangerplugin.cpp:233
-#, kde-format
-msgid "Configure..."
-msgstr "Настройка..."
 
 #. i18n: ectx: Menu (tools)
 #: uachangerplugin.rc:4
@@ -91,6 +51,33 @@ msgstr "С&ервис"
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Дополнительная панель инструментов"
+
+#~ msgid "Other"
+#~ msgstr "Другое"
+
+#~ msgctxt "%1 = browser version (e.g. 2.0)"
+#~ msgid "Version %1"
+#~ msgstr "Версия %1"
+
+#~ msgctxt "%1 = browser name, %2 = browser version (e.g. Firefox, 2.0)"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgctxt "%1 = browser version, %2 = platform (e.g. 2.0, Windows XP)"
+#~ msgid "Version %1 on %2"
+#~ msgstr "Версия %1 на %2"
+
+#~ msgctxt ""
+#~ "%1 = browser name, %2 = browser version, %3 = platform (e.g. Firefox, "
+#~ "2.0, Windows XP)"
+#~ msgid "%1 %2 on %3"
+#~ msgstr "%1 %2 на %3"
+
+#~ msgid "Apply to Entire Site"
+#~ msgstr "Применить ко всему сайту"
+
+#~ msgid "Configure..."
+#~ msgstr "Настройка..."
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

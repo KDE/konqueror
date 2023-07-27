@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-26 00:50+0000\n"
+"POT-Creation-Date: 2023-07-27 02:26+0000\n"
 "PO-Revision-Date: 2023-07-23 20:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -996,61 +996,61 @@ msgstr "허용"
 msgid "Do Not Allow"
 msgstr "허용하지 않음"
 
-#: src/webenginepart.cpp:211
+#: src/webenginepart.cpp:213
 #, kde-format
 msgid "Save Full HTML Page As..."
 msgstr "다른 이름으로 전체 HTML 페이지 저장..."
 
-#: src/webenginepart.cpp:215
+#: src/webenginepart.cpp:217
 #, kde-format
 msgid "Print Preview"
 msgstr "인쇄 미리 보기"
 
-#: src/webenginepart.cpp:219
+#: src/webenginepart.cpp:221
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "확대"
 
-#: src/webenginepart.cpp:224
+#: src/webenginepart.cpp:226
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "축소"
 
-#: src/webenginepart.cpp:229
+#: src/webenginepart.cpp:231
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "원래 크기로"
 
-#: src/webenginepart.cpp:234
+#: src/webenginepart.cpp:236
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "텍스트만 확대/축소"
 
-#: src/webenginepart.cpp:242
+#: src/webenginepart.cpp:244
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "DPI로 크기 조절"
 
-#: src/webenginepart.cpp:255
+#: src/webenginepart.cpp:257
 #, kde-format
 msgid "Set &Encoding"
 msgstr "인코딩 설정(&E)"
 
-#: src/webenginepart.cpp:258
+#: src/webenginepart.cpp:260
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "문서 원본 보기(&C)"
 
-#: src/webenginepart.cpp:263 src/webenginepart.cpp:563
+#: src/webenginepart.cpp:265 src/webenginepart.cpp:565
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:269
+#: src/webenginepart.cpp:271
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1060,12 +1060,12 @@ msgstr ""
 "<h3>텍스트 찾기</h3>현재 페이지의 텍스트를 찾을 수 있는 대화 상자를 표시합니"
 "다."
 
-#: src/webenginepart.cpp:561
+#: src/webenginepart.cpp:563
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "이 사이트의 SSL 정보가 잘못된 것 같습니다."
 
-#: src/webenginepart.cpp:642
+#: src/webenginepart.cpp:644
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1073,7 +1073,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "전자 우편: "
 
-#: src/webenginepart.cpp:671
+#: src/webenginepart.cpp:673
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1081,7 +1081,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - 참조: "
 
-#: src/webenginepart.cpp:673
+#: src/webenginepart.cpp:675
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1089,7 +1089,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - 숨은 참조: "
 
-#: src/webenginepart.cpp:675
+#: src/webenginepart.cpp:677
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1097,84 +1097,84 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - 제목: "
 
-#: src/webenginepart.cpp:679 src/webenginepart.cpp:690
+#: src/webenginepart.cpp:681 src/webenginepart.cpp:692
 #, kde-format
 msgid " (In new window)"
 msgstr " (새 창에서)"
 
-#: src/webenginepart.cpp:688
+#: src/webenginepart.cpp:690
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (부모 프레임에서)"
 
-#: src/webenginepart.cpp:752
+#: src/webenginepart.cpp:754
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt><b>%1</b>(으)로 검색하시겠습니까?</qt>"
 
-#: src/webenginepart.cpp:753
+#: src/webenginepart.cpp:755
 #, kde-format
 msgid "Internet Search"
 msgstr "인터넷 검색"
 
-#: src/webenginepart.cpp:753
+#: src/webenginepart.cpp:755
 #, kde-format
 msgid "&Search"
 msgstr "찾기(&S)"
 
-#: src/webenginepart.cpp:864
+#: src/webenginepart.cpp:866
 #, kde-format
 msgid "Close window?"
 msgstr "창을 닫으시겠습니까?"
 
-#: src/webenginepart.cpp:864
+#: src/webenginepart.cpp:866
 #, kde-format
 msgid "Confirmation Required"
 msgstr "확인 필요"
 
-#: src/webenginepart.cpp:938
+#: src/webenginepart.cpp:940
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>%1에서 <b>%2</b>의 로그인 정보를 기억하도록 하시겠습니까?</html>"
 
-#: src/webenginepart.cpp:1009
+#: src/webenginepart.cpp:1011
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr "지금 양식 채우기(&F)"
 
-#: src/webenginepart.cpp:1014
+#: src/webenginepart.cpp:1016
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr "지금 이 페이지의 암호 기억(&M)"
 
-#: src/webenginepart.cpp:1018
+#: src/webenginepart.cpp:1020
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr "이 페이지에서 기억할 필드 사용자 정의(&C)..."
 
-#: src/webenginepart.cpp:1022
+#: src/webenginepart.cpp:1024
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr "이 페이지의 사용자 정의 기억 설정 삭제"
 
-#: src/webenginepart.cpp:1026
+#: src/webenginepart.cpp:1028
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "이 사이트에 암호 저장 허용(&A)"
 
-#: src/webenginepart.cpp:1030
+#: src/webenginepart.cpp:1032
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "이 사이트의 모든 저장된 암호 삭제"
 
-#: src/webenginepart.cpp:1034
+#: src/webenginepart.cpp:1036
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "지갑 관리자 실행하기(&L)"
 
-#: src/webenginepart.cpp:1038
+#: src/webenginepart.cpp:1040
 #, kde-format
 msgid "&Close Wallet"
 msgstr "지갑 닫기(&C)"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-26 00:50+0000\n"
+"POT-Creation-Date: 2023-07-27 02:26+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -972,62 +972,62 @@ msgstr "ئىجازەت"
 msgid "Do Not Allow"
 msgstr "يول قويما"
 
-#: src/webenginepart.cpp:211
+#: src/webenginepart.cpp:213
 #, fuzzy, kde-format
 #| msgid "Save Image As..."
 msgid "Save Full HTML Page As..."
 msgstr "سۈرەتنى باشقا ئاتتا ساقلا…"
 
-#: src/webenginepart.cpp:215
+#: src/webenginepart.cpp:217
 #, kde-format
 msgid "Print Preview"
 msgstr "بېسىشنى ئالدىن كۆر"
 
-#: src/webenginepart.cpp:219
+#: src/webenginepart.cpp:221
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "چوڭايت"
 
-#: src/webenginepart.cpp:224
+#: src/webenginepart.cpp:226
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "كىچىكلىتىش"
 
-#: src/webenginepart.cpp:229
+#: src/webenginepart.cpp:231
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "ئەمەلىي چوڭلۇقى"
 
-#: src/webenginepart.cpp:234
+#: src/webenginepart.cpp:236
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "خەتنىلا چوڭايت"
 
-#: src/webenginepart.cpp:242
+#: src/webenginepart.cpp:244
 #, kde-format
 msgid "Zoom To DPI"
 msgstr ""
 
-#: src/webenginepart.cpp:255
+#: src/webenginepart.cpp:257
 #, kde-format
 msgid "Set &Encoding"
 msgstr "كود تەڭشەك(&E)"
 
-#: src/webenginepart.cpp:258
+#: src/webenginepart.cpp:260
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "پۈتۈك مەنبە كودىنى كۆرسەت(&C)"
 
-#: src/webenginepart.cpp:263 src/webenginepart.cpp:563
+#: src/webenginepart.cpp:265 src/webenginepart.cpp:565
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:269
+#: src/webenginepart.cpp:271
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1037,12 +1037,12 @@ msgstr ""
 "<h3>تېكىست ئىزدە</h3> سۆزلەشكۈدىن بىرنى كۆرسىتىدۇ، كۆرۈنگەن بەتتە تېكىست "
 "ئىزدىيەلەيسىز."
 
-#: src/webenginepart.cpp:561
+#: src/webenginepart.cpp:563
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "بۇ بەتنىڭ SSL ئۇچۇرى بۇزۇلغاندەك قىلىدۇ."
 
-#: src/webenginepart.cpp:642
+#: src/webenginepart.cpp:644
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1050,7 +1050,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "ئېلخەت: "
 
-#: src/webenginepart.cpp:671
+#: src/webenginepart.cpp:673
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1058,7 +1058,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - قوشۇمچە: "
 
-#: src/webenginepart.cpp:673
+#: src/webenginepart.cpp:675
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1066,7 +1066,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - يوشۇرۇن: "
 
-#: src/webenginepart.cpp:675
+#: src/webenginepart.cpp:677
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1074,42 +1074,42 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - ماۋزۇ: "
 
-#: src/webenginepart.cpp:679 src/webenginepart.cpp:690
+#: src/webenginepart.cpp:681 src/webenginepart.cpp:692
 #, kde-format
 msgid " (In new window)"
 msgstr " (يېڭى كۆزنەكتە)"
 
-#: src/webenginepart.cpp:688
+#: src/webenginepart.cpp:690
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (ئانا كاندۇكتا)"
 
-#: src/webenginepart.cpp:752
+#: src/webenginepart.cpp:754
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>توردىن <b>%1</b> نى ئىزدەمسىز؟</qt>"
 
-#: src/webenginepart.cpp:753
+#: src/webenginepart.cpp:755
 #, kde-format
 msgid "Internet Search"
 msgstr "ئىنتېرنېتتا ئىزدەش"
 
-#: src/webenginepart.cpp:753
+#: src/webenginepart.cpp:755
 #, kde-format
 msgid "&Search"
 msgstr "ئىزدە(&S)"
 
-#: src/webenginepart.cpp:864
+#: src/webenginepart.cpp:866
 #, kde-format
 msgid "Close window?"
 msgstr "كۆزنەكنى تاقىسۇنمۇ؟"
 
-#: src/webenginepart.cpp:864
+#: src/webenginepart.cpp:866
 #, kde-format
 msgid "Confirmation Required"
 msgstr "جەزملەش زۆرۈر"
 
-#: src/webenginepart.cpp:938
+#: src/webenginepart.cpp:940
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
@@ -1117,46 +1117,46 @@ msgstr ""
 "<html>سىز %1 نىڭ <b>%2</b> غا كىرىشتە ئىشلىتىدىغان ئۇچۇرلارنى ئەستە "
 "ساقلىشىنى خالامسىز؟</html>"
 
-#: src/webenginepart.cpp:1009
+#: src/webenginepart.cpp:1011
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr ""
 
-#: src/webenginepart.cpp:1014
+#: src/webenginepart.cpp:1016
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "&Memorize Passwords in This Page Now"
 msgstr "بۇ تورتۇرانىڭ غەملەنگەن بارلىق ئىملىرىنى ئۆچۈر"
 
-#: src/webenginepart.cpp:1018
+#: src/webenginepart.cpp:1020
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1022
+#: src/webenginepart.cpp:1024
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1026
+#: src/webenginepart.cpp:1028
 #, fuzzy, kde-format
 #| msgid "&Allow password caching for this site"
 msgid "&Allow Password Caching for This Site"
 msgstr "بۇ تورتۇرانىڭ ئىمىنى غەملەشكە ئىجازەت قىل(&A)"
 
-#: src/webenginepart.cpp:1030
+#: src/webenginepart.cpp:1032
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "بۇ تورتۇرانىڭ غەملەنگەن بارلىق ئىملىرىنى ئۆچۈر"
 
-#: src/webenginepart.cpp:1034
+#: src/webenginepart.cpp:1036
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1038
+#: src/webenginepart.cpp:1040
 #, kde-format
 msgid "&Close Wallet"
 msgstr "ھەمياننى ياپ(&C)"
