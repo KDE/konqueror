@@ -245,7 +245,7 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
         int mode = KonqSettings::settingsCompletionMode();
         s_pCompletion->setCompletionMode(static_cast<KCompletion::CompletionMode>(mode));
     }
-    connect(KParts::HistoryProvider::self(), &KParts::HistoryProvider::cleared, this, &KonqMainWindow::slotClearComboHistory);
+    connect(HistoryProvider::self(), &HistoryProvider::cleared, this, &KonqMainWindow::slotClearComboHistory);
 
     KonqPixmapProvider *prov = KonqPixmapProvider::self();
     if (!s_comboConfig) {

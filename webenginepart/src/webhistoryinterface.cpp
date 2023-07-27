@@ -8,7 +8,7 @@
 
 #include "webhistoryinterface.h"
 
-#include <KParts/HistoryProvider>
+#include <historyprovider.h>
 
 
 WebHistoryInterface::WebHistoryInterface(QObject* parent)
@@ -17,10 +17,10 @@ WebHistoryInterface::WebHistoryInterface(QObject* parent)
 
 void WebHistoryInterface::addHistoryEntry(const QString& url)
 {
-    KParts::HistoryProvider::self()->insert(url);
+    HistoryProvider::self()->insert(url);
 }
 
 bool WebHistoryInterface::historyContains(const QString& url) const
 {
-    return KParts::HistoryProvider::self()->contains(url);
+    return HistoryProvider::self()->contains(url);
 }

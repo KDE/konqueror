@@ -38,7 +38,7 @@ HistorySidebarConfig::HistorySidebarConfig(QWidget *parent, const QVariantList &
 {
     m_settings = KonqHistorySettings::self();
 
-    if (!KParts::HistoryProvider::exists()) {
+    if (!HistoryProvider::exists()) {
         new KonqHistoryProvider(this);
     }
 

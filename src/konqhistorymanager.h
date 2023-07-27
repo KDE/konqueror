@@ -41,7 +41,7 @@ public:
      */
     static KonqHistoryManager *kself()
     {
-        return static_cast<KonqHistoryManager *>(KParts::HistoryProvider::self());
+        return static_cast<KonqHistoryManager *>(HistoryProvider::self());
     }
 
     explicit KonqHistoryManager(KBookmarkManager *bookmarkManager, QObject *parent = nullptr);

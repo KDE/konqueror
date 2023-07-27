@@ -131,7 +131,7 @@ KonqHistoryProviderPrivate::KonqHistoryProviderPrivate(KonqHistoryProvider *qq)
 ////
 
 KonqHistoryProvider::KonqHistoryProvider(QObject *parent)
-    : KParts::HistoryProvider(parent), d(new KonqHistoryProviderPrivate(this))
+    : HistoryProvider(parent), d(new KonqHistoryProviderPrivate(this))
 {
 }
 
@@ -160,14 +160,14 @@ bool KonqHistoryProvider::loadHistory()
     while (it.hasNext()) {
         const KonqHistoryEntry &entry = it.next();
 
-        // Fill the entries into KParts::HistoryProvider.
+        // Fill the entries into HistoryProvider.
         const QString urlString = entry.url.url();
-        KParts::HistoryProvider::insert(urlString);
+        HistoryProvider::insert(urlString);
         // DF: also insert the "pretty" version if different
         // This helps getting 'visited' links on websites which don't use fully-escaped urls.
         const QString prettyUrlString = entry.url.toDisplayString();
         if (urlString != prettyUrlString) {
-            KParts::HistoryProvider::insert(prettyUrlString);
+            HistoryProvider::insert(prettyUrlString);
         }
     }
 
@@ -273,7 +273,7 @@ void KonqHistoryProviderPrivate::slotNotifyHistoryEntry(const QByteArray &data)
         entry.url = e.url;
         entry.firstVisited = e.firstVisited;
         entry.numberOfTimesVisited = 0; // will get set to 1 below
-        q->KParts::HistoryProvider::insert(urlString);
+        q->HistoryProvider::insert(urlString);
     }
 
     if (!e.typedUrl.isEmpty()) {
@@ -336,7 +336,7 @@ void KonqHistoryProviderPrivate::slotNotifyClear()
         saveHistory();
     }
 
-    q->KParts::HistoryProvider::clear(); // also emits the cleared() signal
+    q->HistoryProvider::clear(); // also emits the cleared() signal
 }
 
 void KonqHistoryProviderPrivate::slotNotifyRemove(const QString &urlStr)
@@ -375,7 +375,7 @@ void KonqHistoryProvider::removeEntry(KonqHistoryList::iterator existingEntry)
     const KonqHistoryEntry entry = *existingEntry; // make copy, due to erase call below
     const QString urlString = entry.url.url();
 
-    KParts::HistoryProvider::remove(urlString);
+    HistoryProvider::remove(urlString);
 
     d->m_history.erase(existingEntry);
     emit entryRemoved(entry);
@@ -424,7 +424,7 @@ bool KonqHistoryProviderPrivate::saveHistory()
 KonqHistoryList::iterator KonqHistoryProvider::findEntry(const QUrl &url)
 {
     // small optimization (dict lookup) for items _not_ in our history
-    if (!KParts::HistoryProvider::contains(url.url())) {
+    if (!HistoryProvider::contains(url.url())) {
         return d->m_history.end();
     }
     return d->m_history.findEntry(url);
@@ -433,7 +433,7 @@ KonqHistoryList::iterator KonqHistoryProvider::findEntry(const QUrl &url)
 KonqHistoryList::const_iterator KonqHistoryProvider::constFindEntry(const QUrl &url) const
 {
     // small optimization (dict lookup) for items _not_ in our history
-    if (!KParts::HistoryProvider::contains(url.url())) {
+    if (!HistoryProvider::contains(url.url())) {
         return d->m_history.constEnd();
     }
     return d->m_history.constFindEntry(url);

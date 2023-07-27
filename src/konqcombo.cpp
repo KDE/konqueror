@@ -141,7 +141,7 @@ KonqCombo::KonqCombo(QWidget *parent)
     // Connect to the returnPressed signal when completionMode == CompletionNone. #314736
     slotCompletionModeChanged(completionMode());
 
-    connect(KonqHistoryManager::kself(), &KParts::HistoryProvider::cleared, this, &KonqCombo::slotCleared);
+    connect(KonqHistoryManager::kself(), &HistoryProvider::cleared, this, &KonqCombo::slotCleared);
     connect(this, &KHistoryComboBox::cleared, this, &KonqCombo::slotCleared);
     // The overload resolution is still needed until QComboBox::highlight(QString)
     // is either removed or hidden.

@@ -8,7 +8,7 @@
 #ifndef KONQ_HISTORYPROVIDER_H
 #define KONQ_HISTORYPROVIDER_H
 
-#include <kparts/historyprovider.h>
+#include <historyprovider.h>
 #include <QUrl>
 #include "libkonq_export.h"
 #include "konq_historyentry.h"
@@ -23,7 +23,7 @@ class KonqHistoryProviderPrivate;
  * other processes (konqueror, history list, krunner etc.) via D-Bus to keep
  * one global and persistent history.
  */
-class LIBKONQ_EXPORT KonqHistoryProvider : public KParts::HistoryProvider
+class LIBKONQ_EXPORT KonqHistoryProvider : public HistoryProvider
 {
     Q_OBJECT
 
@@ -36,7 +36,7 @@ public:
      */
     static KonqHistoryProvider *self()
     {
-        return static_cast<KonqHistoryProvider *>(KParts::HistoryProvider::self());
+        return static_cast<KonqHistoryProvider *>(HistoryProvider::self());
     }
 
     explicit KonqHistoryProvider(QObject *parent = nullptr);

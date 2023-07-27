@@ -197,7 +197,7 @@ bool KonqHistoryManager::filterOut(const QUrl &url)
 
 void KonqHistoryManager::slotEmitUpdated()
 {
-    emit KParts::HistoryProvider::updated(m_updateURLs);
+    emit HistoryProvider::updated(m_updateURLs);
     m_updateURLs.clear();
 }
 
