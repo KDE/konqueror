@@ -39,7 +39,7 @@ private:
     using TemplateMap = QMap<QString, QString>;
 
     void initMenu();
-    void fillMenu(const TemplateMap &templates);
+    QList<QAction*> fillMenu(const TemplateMap &templates);
     void clearMenu();
 
     KParts::ReadOnlyPart *m_part;

@@ -62,10 +62,10 @@ void UAChangerPlugin::slotAboutToShow()
 
     KConfigGroup grp = KSharedConfig::openConfig("useragenttemplatesrc")->group("Templates");
     TemplateMap templates = grp.entryMap();
-    fillMenu(templates);
+    QList<QAction*> actions = fillMenu(templates);
+    actions.append(m_defaultAction);
 
     const QString currentUA = QWebEngineProfile::defaultProfile()->httpUserAgent();
-    QList<QAction*> actions = m_actionGroup->actions();
     auto isCurrentUA = [currentUA](QAction *a){return currentUA == a->data().toString();};
     auto found = std::find_if(actions.constBegin(), actions.constEnd(), isCurrentUA);
     if (found != actions.constEnd()) {
@@ -78,6 +78,7 @@ void UAChangerPlugin::slotAboutToShow()
 void UAChangerPlugin::initMenu()
 {
     m_actionGroup = new QActionGroup(m_pUAMenu->menu());
+    m_actionGroup->setExclusive(true);
     m_defaultAction = new QAction(i18nc("@action:inmenu Uses the default browser identification", "Default Identification"), this);
     m_defaultAction->setCheckable(true);
     m_pUAMenu->menu()->addAction(m_defaultAction);
@@ -86,16 +87,19 @@ void UAChangerPlugin::initMenu()
     connect(m_actionGroup, &QActionGroup::triggered, this, &UAChangerPlugin::slotItemSelected);
 }
 
-void UAChangerPlugin::fillMenu(const TemplateMap &templates)
+QList<QAction*> UAChangerPlugin::fillMenu(const TemplateMap &templates)
 {
     m_pUAMenu->menu()->addSeparator();
+    QList<QAction*> actions;
     for (auto it = templates.constBegin(); it != templates.constEnd(); ++it) {
         QAction *a = new QAction(it.key());
         a->setData(it.value());
         m_pUAMenu->addAction(a);
         m_actionGroup->addAction(a);
         a->setCheckable(true);
+        actions.append(a);
     }
+    return actions;
 }
 
 void UAChangerPlugin::clearMenu()
