@@ -8,6 +8,7 @@
 
 // Own
 #include "khtmltts.h"
+#include "textextension.h"
 
 // Qt
 #include <QAction>
@@ -18,13 +19,12 @@
 #include <KActionCollection>
 #include <KLocalizedString>
 #include <KParts/ReadOnlyPart>
-#include <kparts/textextension.h>
 #include <kpluginfactory.h>
 
 KHTMLPluginTTS::KHTMLPluginTTS(QObject *parent, const QVariantList &)
     : KonqParts::Plugin(parent)
 {
-    KParts::TextExtension *textExt = KParts::TextExtension::childObject(parent);
+    TextExtension *textExt = TextExtension::childObject(parent);
     if (textExt && qobject_cast<KParts::ReadOnlyPart *>(parent)) {
         m_tts = std::unique_ptr<QTextToSpeech>(new QTextToSpeech);
 
@@ -41,9 +41,9 @@ KHTMLPluginTTS::~KHTMLPluginTTS()
 
 void KHTMLPluginTTS::slotReadOut()
 {
-    KParts::TextExtension *textExt = KParts::TextExtension::childObject(parent());
+    TextExtension *textExt = TextExtension::childObject(parent());
     QString query;
-    const KParts::TextExtension::Format format = KParts::TextExtension::PlainText;
+    const TextExtension::Format format = TextExtension::PlainText;
     if (textExt->hasSelection()) {
         query = textExt->selectedText(format);
     } else {

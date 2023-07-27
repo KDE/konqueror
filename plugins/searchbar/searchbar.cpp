@@ -21,7 +21,6 @@
 #include <KMainWindow>
 #include <KParts/Part>
 #include <KParts/BrowserExtension>
-#include <KParts/TextExtension>
 #include <KParts/SelectorInterface>
 #include <KParts/PartActivateEvent>
 #include <KLocalizedString>
@@ -43,6 +42,7 @@
 #include "searchbar_debug.h"
 #include <asyncselectorinterface.h>
 #include <htmlextension.h>
+#include <textextension.h>
 
 K_PLUGIN_CLASS_WITH_JSON(SearchBarPlugin, "searchbar.json")
 
@@ -195,7 +195,7 @@ void SearchBarPlugin::startSearch(const QString &search)
     m_lastSearch = search;
 
     if (m_searchMode == FindInThisPage) {
-        KParts::TextExtension *textExt = KParts::TextExtension::childObject(m_part);
+        TextExtension *textExt = TextExtension::childObject(m_part);
         if (textExt) {
             textExt->findText(search, KFind::SearchOptions());
         }

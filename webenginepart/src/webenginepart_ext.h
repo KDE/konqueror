@@ -14,13 +14,13 @@
 #include <QPointer>
 
 #include <KParts/BrowserExtension>
-#include <KParts/TextExtension>
 #include <KParts/ScriptableExtension>
 #include <KParts/SelectorInterface>
 
 #include <asyncselectorinterface.h>
 #include <htmlextension.h>
 #include <htmlsettingsinterface.h>
+#include <textextension.h>
 
 class QUrl;
 class WebEnginePart;
@@ -121,7 +121,7 @@ private:
  * @internal
  * Implements the TextExtension interface
  */
-class WebEngineTextExtension : public KParts::TextExtension
+class WebEngineTextExtension : public TextExtension
 {
     Q_OBJECT
 public:

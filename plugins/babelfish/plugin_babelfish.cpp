@@ -17,7 +17,6 @@
 
 #include <kparts/part.h>
 #include <kparts/browserextension.h>
-#include <kparts/textextension.h>
 
 #include <kwidgetsaddons_version.h>
 #include <kactioncollection.h>
@@ -32,6 +31,8 @@
 #include <KConfigGroup>
 
 #include <QDebug>
+
+#include "textextension.h"
 
 static const KAboutData aboutdata(QStringLiteral("babelfish"), i18n("Translate Web Page"), QStringLiteral("1.0"));
 K_PLUGIN_CLASS_WITH_JSON(PluginBabelFish, "plugin_translator.json")
@@ -208,7 +209,7 @@ PluginBabelFish::~PluginBabelFish()
 void PluginBabelFish::slotEnableMenu()
 {
     KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(parent());
-    KParts::TextExtension *textExt = KParts::TextExtension::childObject(parent());
+    TextExtension *textExt = TextExtension::childObject(parent());
 
     //if (part)
     //    kDebug() << part->url();
@@ -230,7 +231,7 @@ void PluginBabelFish::translateURL(QAction *action)
 {
     // KHTMLPart and KWebKitPart provide a TextExtension, at least.
     // So if we got a part without a TextExtension, give an error.
-    KParts::TextExtension *textExt = KParts::TextExtension::childObject(parent());
+    TextExtension *textExt = TextExtension::childObject(parent());
     Q_ASSERT(textExt); // already checked in slotAboutToShow
 
     // Select engine
@@ -252,7 +253,7 @@ void PluginBabelFish::translateURL(QAction *action)
     const bool hasSelection = textExt->hasSelection();
 
     if (hasSelection) {
-        QString selection = textExt->selectedText(KParts::TextExtension::PlainText);
+        QString selection = textExt->selectedText(TextExtension::PlainText);
         textForQuery = QString::fromLatin1(QUrl::toPercentEncoding(selection));
     } else {
         // Check syntax

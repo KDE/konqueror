@@ -858,9 +858,9 @@ void WebEngineBrowserExtension::slotLinkInTop()
 ////
 
 WebEngineTextExtension::WebEngineTextExtension(WebEnginePart* part)
-    : KParts::TextExtension(part)
+    : TextExtension(part)
 {
-    connect(part->view(), &QWebEngineView::selectionChanged, this, &KParts::TextExtension::selectionChanged);
+    connect(part->view(), &QWebEngineView::selectionChanged, this, &TextExtension::selectionChanged);
 }
 
 WebEnginePart* WebEngineTextExtension::part() const
