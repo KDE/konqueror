@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 00:46+0000\n"
+"POT-Creation-Date: 2023-07-27 02:26+0000\n"
 "PO-Revision-Date: 2012-07-20 00:48+0200\n"
 "Last-Translator: Kjetil Kilhavn <kjetil@kilhavn.no>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1034,7 +1034,8 @@ msgstr "Vert/domene"
 msgid "Policy"
 msgstr "Regel"
 
-#: domainlistview.cpp:45
+#. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
+#: domainlistview.cpp:45 useragent/useragent.ui:84
 #, kde-format
 msgid "&New..."
 msgstr "&Ny …"
@@ -1279,7 +1280,8 @@ msgstr ""
 "liste over filter som bilde og rammer skal sjekkes mot. Nettadresser som "
 "passer blir enten kasta vekk eller bytte ut med et plassholderbilde. "
 
-#: filteropts.cpp:558
+#. i18n: ectx: property (text), widget (QTreeWidget, templates)
+#: filteropts.cpp:558 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "Navn"
@@ -2231,3 +2233,83 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "Du må først oppgi et domenenavn."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UserAgent)
+#: useragent/useragent.ui:14
+#, kde-format
+msgid "Form"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, customUABox)
+#: useragent/useragent.ui:23
+#, kde-format
+msgid "Existing identifications"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
+#. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
+#. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:36 useragent/useragent.ui:81
+#: useragent/useragent.ui:150 useragent/useragent.ui:163
+#, kde-format
+msgid "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, templates)
+#: useragent/useragent.ui:66
+#, kde-format
+msgid "Content"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
+#: useragent/useragent.ui:97
+#, kde-format
+msgid "&Edit..."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
+#: useragent/useragent.ui:110
+#, kde-format
+msgid "&Rename..."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
+#: useragent/useragent.ui:123
+#, kde-format
+msgid "Du&plicate..."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
+#: useragent/useragent.ui:136
+#, kde-format
+msgid "&Delete"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, useTemplateBtn)
+#: useragent/useragent.ui:153
+#, kde-format
+msgid "Choose &selected identification"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:166
+#, kde-format
+msgid "Use &default identification"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: useragent/useragent.ui:181
+#, kde-format
+msgid "&Custom identification"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
+#: useragent/useragent.ui:191
+#, kde-format
+msgid ""
+"<html><head/><body><p>The browser identification to use when the default "
+"identification is disabled.</p><p>You can enter it manually or start from "
+"one in the list below and change it according to your needs.</p></body></"
+"html>"
+msgstr ""

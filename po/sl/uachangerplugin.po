@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uachangerplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 02:26+0000\n"
-"PO-Revision-Date: 2011-06-15 21:11+0100\n"
-"Last-Translator: Klemen Košir <klemen.kosir@gmx.com>\n"
+"POT-Creation-Date: 2023-07-28 02:35+0000\n"
+"PO-Revision-Date: 2023-07-27 08:33+0200\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -19,20 +19,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: uachangerplugin.cpp:47
-#, fuzzy, kde-format
-#| msgid "Change Browser Identification"
+#, kde-format
 msgctxt "@title:menu Changes the browser identification"
 msgid "Change Browser Identification"
-msgstr "Spremeni istovetnost brskalnika"
+msgstr "Spremeni identifikacijo brskalnika"
 
-#: uachangerplugin.cpp:81
-#, fuzzy, kde-format
-#| msgid "Default Identification"
+#: uachangerplugin.cpp:82
+#, kde-format
 msgctxt "@action:inmenu Uses the default browser identification"
 msgid "Default Identification"
-msgstr "Privzeta istovetnost"
+msgstr "Privzeta identifikacija"
 
 #. i18n: ectx: Menu (tools)
 #: uachangerplugin.rc:4
