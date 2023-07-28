@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 00:46+0000\n"
-"PO-Revision-Date: 2023-03-25 16:19+0100\n"
+"PO-Revision-Date: 2023-07-27 06:29+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -2187,27 +2187,25 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
 #: useragent/useragent.ui:97
-#, fuzzy, kde-format
-#| msgid "&Export..."
+#, kde-format
 msgid "&Edit..."
-msgstr "&Eksporti..."
+msgstr "R&edakti..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:110
 #, kde-format
 msgid "&Rename..."
-msgstr ""
+msgstr "&Renomi..."
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
 #: useragent/useragent.ui:123
 #, kde-format
 msgid "Du&plicate..."
-msgstr ""
+msgstr "Duo&bligi..."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:136
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "&Delete"
 msgstr "&Forigi"
 
@@ -2215,19 +2213,19 @@ msgstr "&Forigi"
 #: useragent/useragent.ui:153
 #, kde-format
 msgid "Choose &selected identification"
-msgstr ""
+msgstr "Elekti &selektitan identigilon"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
 msgid "Use &default identification"
-msgstr ""
+msgstr "Uzi &defaŭltan identigilon"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:181
 #, kde-format
 msgid "&Custom identification"
-msgstr ""
+msgstr "&Propra identigilo"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
 #: useragent/useragent.ui:191
@@ -2238,7 +2236,6 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
-
-#~ msgctxt "@label:listbox"
-#~ msgid "When &Konqueror starts:"
-#~ msgstr "Kiam Konkeranto startas:"
+"<html><head/><body><p>La retumila identigo uzenda kiam la defaŭlta identigo "
+"estas malŝaltita.</p><p>Vi povas enigi ĝin permane aŭ komenci de unu en la "
+"suba listo kaj ŝanĝi ĝin laŭ viaj bezonoj.</p></body></html>"

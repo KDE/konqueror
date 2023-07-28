@@ -1,38 +1,36 @@
 # Translation of uachangerplugin.po to Catalan
-# Copyright (C) 2002-2016 This_file_is_part_of_KDE
+# Copyright (C) 2002-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2002, 2003, 2016.
 # Albert Astals Cid <aacid@kde.org>, 2004.
-# Josep M. Ferrer <txemaq@gmail.com>, 2006, 2008.
+# Josep M. Ferrer <txemaq@gmail.com>, 2006, 2008, 2023.
 # Manuel Tortosa Moreno <manutortosa@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 00:46+0000\n"
-"PO-Revision-Date: 2016-08-16 15:40+0100\n"
-"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"POT-Creation-Date: 2023-07-28 00:46+0000\n"
+"PO-Revision-Date: 2023-07-27 09:44+0300\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
 #: uachangerplugin.cpp:47
-#, fuzzy, kde-format
-#| msgid "Change Browser Identification"
+#, kde-format
 msgctxt "@title:menu Changes the browser identification"
 msgid "Change Browser Identification"
-msgstr "Canvia la identificació del navegador"
+msgstr "Canvi de la identificació del navegador"
 
-#: uachangerplugin.cpp:81
-#, fuzzy, kde-format
-#| msgid "Default Identification"
+#: uachangerplugin.cpp:82
+#, kde-format
 msgctxt "@action:inmenu Uses the default browser identification"
 msgid "Default Identification"
 msgstr "Identificació predeterminada"
@@ -48,44 +46,3 @@ msgstr "&Eines"
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Barra d'eines extra"
-
-#~ msgid "Other"
-#~ msgstr "Altres"
-
-#~ msgctxt "%1 = browser version (e.g. 2.0)"
-#~ msgid "Version %1"
-#~ msgstr "Versió %1"
-
-#~ msgctxt "%1 = browser name, %2 = browser version (e.g. Firefox, 2.0)"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
-
-#~ msgctxt "%1 = browser version, %2 = platform (e.g. 2.0, Windows XP)"
-#~ msgid "Version %1 on %2"
-#~ msgstr "Versió %1 en %2"
-
-#~ msgctxt ""
-#~ "%1 = browser name, %2 = browser version, %3 = platform (e.g. Firefox, "
-#~ "2.0, Windows XP)"
-#~ msgid "%1 %2 on %3"
-#~ msgstr "%1 %2 en %3"
-
-#~ msgid "Apply to Entire Site"
-#~ msgstr "Aplica a tot el lloc"
-
-#~ msgid "Configure..."
-#~ msgstr "Configura..."
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Antoni Bella"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "antonibella5@yahoo.com"
-
-#~ msgid "Change Browser &Identification"
-#~ msgstr "Canvia la &identificació del navegador"
-
-#~ msgid "Identify As"
-#~ msgstr "Identifica com a"

@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 00:46+0000\n"
-"PO-Revision-Date: 2023-06-11 21:41+0300\n"
+"PO-Revision-Date: 2023-07-27 14:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2274,7 +2274,7 @@ msgstr "Form"
 #: useragent/useragent.ui:23
 #, kde-format
 msgid "Existing identifications"
-msgstr ""
+msgstr "Var olan tanımlamalar"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
@@ -2284,37 +2284,35 @@ msgstr ""
 #: useragent/useragent.ui:150 useragent/useragent.ui:163
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: useragent/useragent.ui:66
 #, kde-format
 msgid "Content"
-msgstr ""
+msgstr "İçerik"
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
 #: useragent/useragent.ui:97
-#, fuzzy, kde-format
-#| msgid "&Export..."
+#, kde-format
 msgid "&Edit..."
-msgstr "&Kaydet..."
+msgstr "&Düzenle..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:110
 #, kde-format
 msgid "&Rename..."
-msgstr ""
+msgstr "&Yeniden Adlandır..."
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
 #: useragent/useragent.ui:123
 #, kde-format
 msgid "Du&plicate..."
-msgstr ""
+msgstr "&Çoğalt..."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:136
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "&Delete"
 msgstr "&Sil"
 
@@ -2322,19 +2320,19 @@ msgstr "&Sil"
 #: useragent/useragent.ui:153
 #, kde-format
 msgid "Choose &selected identification"
-msgstr ""
+msgstr "&Seçili tanımlamayı seç"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
 msgid "Use &default identification"
-msgstr ""
+msgstr "&Öntanımlı tanımlamayı kullan"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:181
 #, kde-format
 msgid "&Custom identification"
-msgstr ""
+msgstr "Ö&zel tanımlama"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
 #: useragent/useragent.ui:191
@@ -2345,6 +2343,9 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>Öntanımlı tanımlama devre dışıyken kullanılacak "
+"tarayıcı tanımlaması.</p><p>Bunu elle girebilirsiniz veya aşağıdaki listeden "
+"başlayıp gereksinimlerinize göre değiştirebilirsiniz.</p></body></html>"
 
 #~ msgctxt "@label:listbox"
 #~ msgid "When &Konqueror starts:"

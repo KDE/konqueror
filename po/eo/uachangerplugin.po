@@ -1,13 +1,16 @@
+# translation of uachangerplugin.pot to Esperanto
 # Copyright (C) 2012 Free Software Foundation, Inc.
-#
+# This file is distributed under the same license as the konqueror package.
 # Michael Moroni <michael.moroni@mailoo.org>, 2012.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: uachangerplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 00:46+0000\n"
-"PO-Revision-Date: 2012-05-23 11:47+0200\n"
-"Last-Translator: Michael Moroni <michael.moroni@mailoo.org>\n"
+"POT-Creation-Date: 2023-07-28 00:46+0000\n"
+"PO-Revision-Date: 2023-07-27 06:29+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -17,18 +20,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: uachangerplugin.cpp:47
-#, fuzzy, kde-format
-#| msgid "Change Browser Identification"
+#, kde-format
 msgctxt "@title:menu Changes the browser identification"
 msgid "Change Browser Identification"
-msgstr "Ŝanĝi identigilon de la retumilo"
+msgstr "Ŝanĝi Identigilon de la Retumilo"
 
-#: uachangerplugin.cpp:81
-#, fuzzy, kde-format
-#| msgid "Default Identification"
+#: uachangerplugin.cpp:82
+#, kde-format
 msgctxt "@action:inmenu Uses the default browser identification"
 msgid "Default Identification"
-msgstr "Apriora identigilo"
+msgstr "Apriora Identigilo"
 
 #. i18n: ectx: Menu (tools)
 #: uachangerplugin.rc:4
@@ -40,45 +41,4 @@ msgstr "&Iloj"
 #: uachangerplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
-msgstr "Kroma ilobreto"
-
-#~ msgid "Other"
-#~ msgstr "Alia"
-
-#~ msgctxt "%1 = browser version (e.g. 2.0)"
-#~ msgid "Version %1"
-#~ msgstr "Versio %1"
-
-#~ msgctxt "%1 = browser name, %2 = browser version (e.g. Firefox, 2.0)"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
-
-#~ msgctxt "%1 = browser version, %2 = platform (e.g. 2.0, Windows XP)"
-#~ msgid "Version %1 on %2"
-#~ msgstr "Versio %1 en %2"
-
-#~ msgctxt ""
-#~ "%1 = browser name, %2 = browser version, %3 = platform (e.g. Firefox, "
-#~ "2.0, Windows XP)"
-#~ msgid "%1 %2 on %3"
-#~ msgstr "%1 %2 en %3"
-
-#~ msgid "Apply to Entire Site"
-#~ msgstr "Apliki al tuta retejo"
-
-#~ msgid "Configure..."
-#~ msgstr "Agordi..."
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Axel Rousseau, Michael Moroni"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "axel@esperanto-jeunes.org, michael.moroni@mailoo.org"
-
-#~ msgid "Change Browser &Identification"
-#~ msgstr "Ŝanĝi &identigilon de la retumilo"
-
-#~ msgid "Identify As"
-#~ msgstr "Identigi kiel"
+msgstr "Kroma Ilobreto"
