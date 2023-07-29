@@ -4,19 +4,20 @@
 # Aleksandar Yordanov <punkin.drublik@gmail.com>, 2007.
 # Yasen Pramatarov <yasen@lindeas.com>, 2009, 2011, 2019, 2021.
 # Svetoslav Stefanov <svetlisashkov@yahoo.com>, 2019.
+# Mincho Kondarev <mkondarev@yahoo.de>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: akregator_konqplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-25 00:45+0000\n"
-"PO-Revision-Date: 2021-01-07 11:28+0200\n"
-"Last-Translator: Yasen Pramatarov <yasen@lindeas.com>\n"
-"Language-Team: Bulgarian <dict@ludost.net>\n"
+"PO-Revision-Date: 2023-07-28 11:16+0200\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.08.2\n"
+"X-Generator: Lokalize 23.04.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: akregatorplugin.cpp:46
@@ -26,26 +27,25 @@ msgid "Add Feed to Akregator"
 msgstr "Добавяне на емисия към Akregator"
 
 #: konqfeedicon.cpp:129
-#, fuzzy, kde-format
-#| msgid "Add Feed to Akregator"
+#, kde-format
 msgid "Add feed to Akregator"
 msgstr "Добавяне на емисия към Akregator"
 
 #: konqfeedicon.cpp:130
 #, kde-format
 msgid "Copy feed URL to clipboard"
-msgstr ""
+msgstr "Копиране на URL адреса на емисията в клипборда"
 
 #: konqfeedicon.cpp:131
 #, kde-format
 msgid "Open feed URL"
-msgstr ""
+msgstr "Отваряне на адрес (URL) на емисия"
 
 #: konqfeedicon.cpp:142
 #, kde-format
 msgctxt "@title:menu title for the feeds menu"
 msgid "Feeds"
-msgstr ""
+msgstr "Емисии"
 
 #: konqfeedicon.cpp:148
 #, kde-format

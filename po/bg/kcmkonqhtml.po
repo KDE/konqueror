@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 00:46+0000\n"
-"PO-Revision-Date: 2023-05-09 19:31+0200\n"
+"PO-Revision-Date: 2023-07-28 11:15+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 23.04.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -2234,13 +2234,13 @@ msgstr "Трябва да въведете име на домейн."
 #: useragent/useragent.ui:14
 #, kde-format
 msgid "Form"
-msgstr ""
+msgstr "Формуляр"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:23
 #, kde-format
 msgid "Existing identifications"
-msgstr ""
+msgstr "Налични идентификации"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
@@ -2250,37 +2250,35 @@ msgstr ""
 #: useragent/useragent.ui:150 useragent/useragent.ui:163
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: useragent/useragent.ui:66
 #, kde-format
 msgid "Content"
-msgstr ""
+msgstr "Съдържание"
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
 #: useragent/useragent.ui:97
-#, fuzzy, kde-format
-#| msgid "&Export..."
+#, kde-format
 msgid "&Edit..."
-msgstr "&Експортиране..."
+msgstr "&Редактиране..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:110
 #, kde-format
 msgid "&Rename..."
-msgstr ""
+msgstr "&Преименуване..."
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
 #: useragent/useragent.ui:123
 #, kde-format
 msgid "Du&plicate..."
-msgstr ""
+msgstr "&Дублиране..."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:136
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "&Delete"
 msgstr "Из&триване"
 
@@ -2288,19 +2286,19 @@ msgstr "Из&триване"
 #: useragent/useragent.ui:153
 #, kde-format
 msgid "Choose &selected identification"
-msgstr ""
+msgstr "Избиране на идентификация"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
 msgid "Use &default identification"
-msgstr ""
+msgstr "Използване на стандартна идентификация"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:181
 #, kde-format
 msgid "&Custom identification"
-msgstr ""
+msgstr "&Персонализирана идентификация"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
 #: useragent/useragent.ui:191
@@ -2311,6 +2309,10 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>Идентификация на браузъра, когато стандартната "
+"идентификация е деактивирана.</p><p>Можете да я въведете ръчно или да "
+"зададете една от списъка по-долу, като я промените според нуждите.</p></"
+"body></html>"
 
 #~ msgctxt "@label:listbox"
 #~ msgid "When &Konqueror starts:"
