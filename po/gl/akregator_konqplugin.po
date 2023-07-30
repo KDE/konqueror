@@ -4,14 +4,14 @@
 # mvillarino <mvillarino@users.sourceforge.net>, 2007.
 # marce villarino <mvillarino@users.sourceforge.net>, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2012.
-# Adrian Chaves <adrian@chaves.io>, 2018, 2019.
+# Adrian Chaves <adrian@chaves.io>, 2018, 2019, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: akregator_konqplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-25 00:45+0000\n"
-"PO-Revision-Date: 2019-08-16 10:45+0200\n"
+"PO-Revision-Date: 2023-07-29 08:06+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.04.3\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: akregatorplugin.cpp:46
 #, kde-format
@@ -28,26 +28,25 @@ msgid "Add Feed to Akregator"
 msgstr "Engadir a fonte a Akregator"
 
 #: konqfeedicon.cpp:129
-#, fuzzy, kde-format
-#| msgid "Add Feed to Akregator"
+#, kde-format
 msgid "Add feed to Akregator"
 msgstr "Engadir a fonte a Akregator"
 
 #: konqfeedicon.cpp:130
 #, kde-format
 msgid "Copy feed URL to clipboard"
-msgstr ""
+msgstr "Copiar o URL da fonte no portapapeis"
 
 #: konqfeedicon.cpp:131
 #, kde-format
 msgid "Open feed URL"
-msgstr ""
+msgstr "Abrir o URL da fonte"
 
 #: konqfeedicon.cpp:142
 #, kde-format
 msgctxt "@title:menu title for the feeds menu"
 msgid "Feeds"
-msgstr ""
+msgstr "Fontes"
 
 #: konqfeedicon.cpp:148
 #, kde-format
