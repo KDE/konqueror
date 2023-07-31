@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-13 00:56+0000\n"
+"POT-Creation-Date: 2023-07-31 00:46+0000\n"
 "PO-Revision-Date: 2008-10-03 23:27+0300\n"
 "Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
 "Language-Team: Belarusian Latin <i18n@mova.org>\n"
@@ -19,6 +19,72 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
 "%100>=11 && n%100<=14 ? 2 : 3);\n"
+
+#: src/browseropenorsavequestion.cpp:89
+#, kde-format
+msgctxt "@label Type of file"
+msgid "Type: %1"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:97
+#, kde-format
+msgctxt "@label:checkbox"
+msgid "Remember action for files of this type"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:149 src/browseropenorsavequestion.cpp:237
+#, fuzzy, kde-format
+#| msgid "Open &with %1"
+msgctxt "@label:button"
+msgid "&Open with %1"
+msgstr "A&dčyni ŭ „%1”"
+
+#: src/browseropenorsavequestion.cpp:213
+#, fuzzy, kde-format
+#| msgid "Open &with %1"
+msgctxt "@action:inmenu"
+msgid "Open &with %1"
+msgstr "A&dčyni ŭ „%1”"
+
+#: src/browseropenorsavequestion.cpp:224 src/browseropenorsavequestion.cpp:318
+#, fuzzy, kde-format
+#| msgid "Open &with %1"
+msgctxt "@info"
+msgid "Open '%1'?"
+msgstr "A&dčyni ŭ „%1”"
+
+#: src/browseropenorsavequestion.cpp:228
+#, fuzzy, kde-format
+#| msgid "&Open With..."
+msgctxt "@label:button"
+msgid "&Open with..."
+msgstr "&Adčyni..."
+
+#: src/browseropenorsavequestion.cpp:246
+#, fuzzy, kde-format
+#| msgid "&Open With"
+msgctxt "@label:button"
+msgid "&Open with"
+msgstr "&Adčyni"
+
+#: src/browseropenorsavequestion.cpp:315
+#, fuzzy, kde-format
+#| msgid "&Open"
+msgctxt "@label:button"
+msgid "&Open"
+msgstr "&Adčyni"
+
+#: src/browseropenorsavequestion.cpp:339
+#, kde-format
+msgctxt "@label File name"
+msgid "Name: %1"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:341
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "This is the file name suggested by the server"
+msgstr ""
 
 #: src/konq_popupmenu.cpp:219
 #, kde-format
@@ -207,22 +273,7 @@ msgstr "&Ułaścivaści"
 #~ msgstr "&Aperacyi"
 
 #, fuzzy
-#~| msgid "&Open With"
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With"
-#~ msgstr "&Adčyni"
-
-#, fuzzy
 #~| msgid "&Other..."
 #~ msgctxt "@action:inmenu Open With"
 #~ msgid "&Other..."
 #~ msgstr "&Inšaje..."
-
-#, fuzzy
-#~| msgid "&Open With..."
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With..."
-#~ msgstr "&Adčyni..."
-
-#~ msgid "Open &with %1"
-#~ msgstr "A&dčyni ŭ „%1”"

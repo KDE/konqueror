@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-13 00:56+0000\n"
+"POT-Creation-Date: 2023-07-31 00:46+0000\n"
 "PO-Revision-Date: 2020-11-26 10:50+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -20,6 +20,68 @@ msgstr ""
 "X-Generator: Lokalize 2.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
+
+#: src/browseropenorsavequestion.cpp:89
+#, kde-format
+msgctxt "@label Type of file"
+msgid "Type: %1"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:97
+#, kde-format
+msgctxt "@label:checkbox"
+msgid "Remember action for files of this type"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:149 src/browseropenorsavequestion.cpp:237
+#, kde-format
+msgctxt "@label:button"
+msgid "&Open with %1"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:213
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Open &with %1"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:224 src/browseropenorsavequestion.cpp:318
+#, kde-format
+msgctxt "@info"
+msgid "Open '%1'?"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:228
+#, kde-format
+msgctxt "@label:button"
+msgid "&Open with..."
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:246
+#, fuzzy, kde-format
+#| msgid "&Open"
+msgctxt "@label:button"
+msgid "&Open with"
+msgstr "O&bri"
+
+#: src/browseropenorsavequestion.cpp:315
+#, fuzzy, kde-format
+#| msgid "&Open"
+msgctxt "@label:button"
+msgid "&Open"
+msgstr "O&bri"
+
+#: src/browseropenorsavequestion.cpp:339
+#, kde-format
+msgctxt "@label File name"
+msgid "Name: %1"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:341
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "This is the file name suggested by the server"
+msgstr ""
 
 #: src/konq_popupmenu.cpp:219
 #, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-13 00:56+0000\n"
+"POT-Creation-Date: 2023-07-31 00:46+0000\n"
 "PO-Revision-Date: 2013-03-20 01:42+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -19,6 +19,70 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "\n"
 "\n"
+
+#: src/browseropenorsavequestion.cpp:89
+#, kde-format
+msgctxt "@label Type of file"
+msgid "Type: %1"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:97
+#, kde-format
+msgctxt "@label:checkbox"
+msgid "Remember action for files of this type"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:149 src/browseropenorsavequestion.cpp:237
+#, fuzzy, kde-format
+#| msgid "Open &with %1"
+msgctxt "@label:button"
+msgid "&Open with %1"
+msgstr "%1 &дегенмен ашу"
+
+#: src/browseropenorsavequestion.cpp:213
+#, fuzzy, kde-format
+#| msgid "Open &with %1"
+msgctxt "@action:inmenu"
+msgid "Open &with %1"
+msgstr "%1 &дегенмен ашу"
+
+#: src/browseropenorsavequestion.cpp:224 src/browseropenorsavequestion.cpp:318
+#, fuzzy, kde-format
+#| msgid "Open &with %1"
+msgctxt "@info"
+msgid "Open '%1'?"
+msgstr "%1 &дегенмен ашу"
+
+#: src/browseropenorsavequestion.cpp:228
+#, fuzzy, kde-format
+msgctxt "@label:button"
+msgid "&Open with..."
+msgstr "Мынамен &ашу..."
+
+#: src/browseropenorsavequestion.cpp:246
+#, fuzzy, kde-format
+msgctxt "@label:button"
+msgid "&Open with"
+msgstr "Мынамен &ашу"
+
+#: src/browseropenorsavequestion.cpp:315
+#, fuzzy, kde-format
+#| msgid "&Open"
+msgctxt "@label:button"
+msgid "&Open"
+msgstr "&Ашу"
+
+#: src/browseropenorsavequestion.cpp:339
+#, kde-format
+msgctxt "@label File name"
+msgid "Name: %1"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:341
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "This is the file name suggested by the server"
+msgstr ""
 
 #: src/konq_popupmenu.cpp:219
 #, kde-format
@@ -238,22 +302,9 @@ msgstr "Қасиетте&р"
 #~ msgstr "Әреке&ттер"
 
 #, fuzzy
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With"
-#~ msgstr "Мынамен &ашу"
-
-#, fuzzy
 #~ msgctxt "@action:inmenu Open With"
 #~ msgid "&Other..."
 #~ msgstr "Б&асқа..."
-
-#, fuzzy
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With..."
-#~ msgstr "Мынамен &ашу..."
-
-#~ msgid "Open &with %1"
-#~ msgstr "%1 &дегенмен ашу"
 
 #~ msgid ""
 #~ "Basic links can only point to local files or directories.\n"

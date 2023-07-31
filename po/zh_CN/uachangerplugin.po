@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-28 00:46+0000\n"
-"PO-Revision-Date: 2023-07-23 12:28\n"
+"PO-Revision-Date: 2023-07-30 07:09\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -18,15 +18,13 @@ msgstr ""
 "X-Crowdin-File-ID: 5373\n"
 
 #: uachangerplugin.cpp:47
-#, fuzzy, kde-format
-#| msgid "Change Browser Identification"
+#, kde-format
 msgctxt "@title:menu Changes the browser identification"
 msgid "Change Browser Identification"
 msgstr "更改浏览器标识"
 
 #: uachangerplugin.cpp:82
-#, fuzzy, kde-format
-#| msgid "Default Identification"
+#, kde-format
 msgctxt "@action:inmenu Uses the default browser identification"
 msgid "Default Identification"
 msgstr "默认标识"
@@ -42,30 +40,3 @@ msgstr "工具(&T)"
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "额外工具栏"
-
-#~ msgid "Other"
-#~ msgstr "其他"
-
-#~ msgctxt "%1 = browser version (e.g. 2.0)"
-#~ msgid "Version %1"
-#~ msgstr "版本 %1"
-
-#~ msgctxt "%1 = browser name, %2 = browser version (e.g. Firefox, 2.0)"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
-
-#~ msgctxt "%1 = browser version, %2 = platform (e.g. 2.0, Windows XP)"
-#~ msgid "Version %1 on %2"
-#~ msgstr "版本 %1 运行于 %2"
-
-#~ msgctxt ""
-#~ "%1 = browser name, %2 = browser version, %3 = platform (e.g. Firefox, "
-#~ "2.0, Windows XP)"
-#~ msgid "%1 %2 on %3"
-#~ msgstr "%1 %2 运行于 %3"
-
-#~ msgid "Apply to Entire Site"
-#~ msgstr "应用到整个站点"
-
-#~ msgid "Configure..."
-#~ msgstr "配置..."

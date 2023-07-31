@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-13 00:56+0000\n"
+"POT-Creation-Date: 2023-07-31 00:46+0000\n"
 "PO-Revision-Date: 2011-09-04 13:45+0200\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -20,6 +20,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/browseropenorsavequestion.cpp:89
+#, kde-format
+msgctxt "@label Type of file"
+msgid "Type: %1"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:97
+#, kde-format
+msgctxt "@label:checkbox"
+msgid "Remember action for files of this type"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:149 src/browseropenorsavequestion.cpp:237
+#, fuzzy, kde-format
+#| msgid "Open &with %1"
+msgctxt "@label:button"
+msgid "&Open with %1"
+msgstr "&Mit %1 opmaken"
+
+#: src/browseropenorsavequestion.cpp:213
+#, fuzzy, kde-format
+#| msgid "Open &with %1"
+msgctxt "@action:inmenu"
+msgid "Open &with %1"
+msgstr "&Mit %1 opmaken"
+
+#: src/browseropenorsavequestion.cpp:224 src/browseropenorsavequestion.cpp:318
+#, fuzzy, kde-format
+#| msgid "Open &with %1"
+msgctxt "@info"
+msgid "Open '%1'?"
+msgstr "&Mit %1 opmaken"
+
+#: src/browseropenorsavequestion.cpp:228
+#, fuzzy, kde-format
+#| msgctxt "@title:menu"
+#| msgid "&Open With..."
+msgctxt "@label:button"
+msgid "&Open with..."
+msgstr "&Opmaken mit..."
+
+#: src/browseropenorsavequestion.cpp:246
+#, fuzzy, kde-format
+#| msgctxt "@title:menu"
+#| msgid "&Open With"
+msgctxt "@label:button"
+msgid "&Open with"
+msgstr "&Opmaken mit"
+
+#: src/browseropenorsavequestion.cpp:315
+#, fuzzy, kde-format
+#| msgid "&Open"
+msgctxt "@label:button"
+msgid "&Open"
+msgstr "&Opmaken"
+
+#: src/browseropenorsavequestion.cpp:339
+#, kde-format
+msgctxt "@label File name"
+msgid "Name: %1"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:341
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "This is the file name suggested by the server"
+msgstr ""
 
 #: src/konq_popupmenu.cpp:219
 #, kde-format
@@ -247,20 +315,9 @@ msgstr "Egenscha&ppen"
 #~ msgid "&Actions"
 #~ msgstr "&Akschonen"
 
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With"
-#~ msgstr "&Opmaken mit"
-
 #~ msgctxt "@action:inmenu Open With"
 #~ msgid "&Other..."
 #~ msgstr "&Annere..."
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With..."
-#~ msgstr "&Opmaken mit..."
-
-#~ msgid "Open &with %1"
-#~ msgstr "&Mit %1 opmaken"
 
 #~ msgid "Open in New &Window"
 #~ msgstr "In'n nieg &Finster opmaken"
