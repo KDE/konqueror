@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-25 02:30+0000\n"
-"PO-Revision-Date: 2023-07-23 12:30\n"
+"PO-Revision-Date: 2023-07-30 07:12\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -24,41 +24,40 @@ msgid "Add Feed to Akregator"
 msgstr "向 Akregator 添加订阅"
 
 #: konqfeedicon.cpp:129
-#, fuzzy, kde-format
-#| msgid "Add Feed to Akregator"
+#, kde-format
 msgid "Add feed to Akregator"
-msgstr "向 Akregator 添加订阅"
+msgstr "添加订阅源到 Akregator"
 
 #: konqfeedicon.cpp:130
 #, kde-format
 msgid "Copy feed URL to clipboard"
-msgstr ""
+msgstr "复制订阅源 URL 到剪贴板"
 
 #: konqfeedicon.cpp:131
 #, kde-format
 msgid "Open feed URL"
-msgstr ""
+msgstr "打开订阅源 URL"
 
 #: konqfeedicon.cpp:142
 #, kde-format
 msgctxt "@title:menu title for the feeds menu"
 msgid "Feeds"
-msgstr ""
+msgstr "订阅源"
 
 #: konqfeedicon.cpp:148
 #, kde-format
 msgid "Add All Found Feeds to Akregator"
-msgstr "将发现的全部订阅添加到 Akregator"
+msgstr "添加所有已发现的订阅源到 Akregator"
 
 #: konqfeedicon.cpp:237
 #, kde-format
 msgid "Subscribe to site updates (using news feed)"
-msgstr "订阅网站的更新（使用新闻订阅）"
+msgstr "订阅网站的更新 (使用新闻订阅源)"
 
 #: pluginutil.cpp:35 pluginutil.cpp:45
 #, kde-format
 msgid "Imported Feeds"
-msgstr "导入的订阅"
+msgstr "已导入的订阅源"
 
 #: pluginutil.cpp:37
 #, kde-format
@@ -70,6 +69,3 @@ msgstr "无法通过 D-Bus 联系 Akregator"
 msgctxt "@title:window"
 msgid "D-Bus call failed"
 msgstr "D-Bus 调用失败"
-
-#~ msgid "Add Feeds to Akregator"
-#~ msgstr "向 Akregator 添加订阅"

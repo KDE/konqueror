@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 02:26+0000\n"
-"PO-Revision-Date: 2023-07-20 17:49+0200\n"
+"PO-Revision-Date: 2023-07-30 08:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -2287,13 +2287,13 @@ msgstr "Domeinu-izen bat sartu behar duzu lehenago."
 #: useragent/useragent.ui:14
 #, kde-format
 msgid "Form"
-msgstr ""
+msgstr "Inprimakia"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:23
 #, kde-format
 msgid "Existing identifications"
-msgstr ""
+msgstr "Dauden identifikazioak"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
@@ -2303,37 +2303,35 @@ msgstr ""
 #: useragent/useragent.ui:150 useragent/useragent.ui:163
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: useragent/useragent.ui:66
 #, kde-format
 msgid "Content"
-msgstr ""
+msgstr "Edukia"
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
 #: useragent/useragent.ui:97
-#, fuzzy, kde-format
-#| msgid "&Export..."
+#, kde-format
 msgid "&Edit..."
-msgstr "&Esportatu..."
+msgstr "&Editatu..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:110
 #, kde-format
 msgid "&Rename..."
-msgstr ""
+msgstr "Be&rrizendatu..."
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
 #: useragent/useragent.ui:123
 #, kde-format
 msgid "Du&plicate..."
-msgstr ""
+msgstr "Bi&koiztu..."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:136
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "&Delete"
 msgstr "E&zabatu"
 
@@ -2341,19 +2339,19 @@ msgstr "E&zabatu"
 #: useragent/useragent.ui:153
 #, kde-format
 msgid "Choose &selected identification"
-msgstr ""
+msgstr "Hautatu &aukeratutako identifikazioa"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
 msgid "Use &default identification"
-msgstr ""
+msgstr "Erabili identifikazio &lehenetsia"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:181
 #, kde-format
 msgid "&Custom identification"
-msgstr ""
+msgstr "&Neurrira egindako identifikazioa"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
 #: useragent/useragent.ui:191
@@ -2364,6 +2362,10 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>Arakatzailearen identifikazio lehenetsia ezgaituta "
+"dagoenean erabili beharreko identifikazioa.</p><p>Eskuz sartu dezakezu edo "
+"beheko zerrendako batekin hasi eta zure beharren arabera alda dezakezu.</p></"
+"body></html>"
 
 #~ msgctxt "@label:listbox"
 #~ msgid "When &Konqueror starts:"
