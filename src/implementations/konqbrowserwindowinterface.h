@@ -9,7 +9,7 @@
 #ifndef KONQBROWSERWINDOWINTERFACE_H
 #define KONQBROWSERWINDOWINTERFACE_H
 
-#include <KParts/BrowserInterface>
+#include "browserinterface.h"
 
 class KonqMainWindow;
 
@@ -20,7 +20,7 @@ namespace KParts {
 /**
  * Implementation of KParts::BrowserInterface which redirects calls to KonqMainWindow
  */
-class KonqBrowserWindowInterface : public KParts::BrowserInterface
+class KonqBrowserWindowInterface : public BrowserInterface
 {
     Q_OBJECT
 

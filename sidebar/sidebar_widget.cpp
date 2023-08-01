@@ -736,27 +736,53 @@ void Sidebar_Widget::submitFormRequest(const char *action,
                                        const QString & /*boundary*/)
 {
     KParts::OpenUrlArguments arguments;
-    KParts::BrowserArguments browserArguments;
+    BrowserArguments browserArguments;
     browserArguments.setContentType("Content-Type: " + contentType);
     browserArguments.postData = formData;
     browserArguments.setDoPost(QByteArray(action).toLower() == "post");
     // boundary?
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     emit getExtension()->openUrlRequest(QUrl(url), arguments, browserArguments);
+#else
+    if (getBrowserExtension()) {
+        emit getBrowserExtension()->browserOpenUrlRequest(QUrl(url), arguments, browserArguments);
+    } else {
+        emit getExtension()->openUrlRequest(QUrl(url));
+    }
+#endif
 }
 
-void Sidebar_Widget::openUrlRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs)
+void Sidebar_Widget::openUrlRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs)
 {
     if (m_storedCurViewUrl == url) { // don't pollute the history stack
         return;
     }
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     getExtension()->openUrlRequest(url, args, browserArgs);
+#else
+    if (getBrowserExtension()) {
+        getBrowserExtension()->browserOpenUrlRequest(url, args, browserArgs);
+    } else {
+        getExtension()->openUrlRequest(url);
+    }
+#endif
+
     setStoredCurViewUrl(url);
 }
 
-void Sidebar_Widget::createNewWindow(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs,
-                                     const KParts::WindowArgs &windowArgs)
+void Sidebar_Widget::createNewWindow(const QUrl &url, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs,
+                                     const WindowArgs &windowArgs)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     getExtension()->createNewWindow(url, args, browserArgs, windowArgs);
+#else
+    if (getBrowserExtension()) {
+        getBrowserExtension()->browserCreateNewWindow(url, args, browserArgs, windowArgs);
+    } else {
+        getExtension()->createNewWindow(url);
+    }
+#endif
 }
 
 void Sidebar_Widget::slotEnableAction(KonqSidebarModule *module, const char *name, bool enabled)
@@ -855,13 +881,22 @@ KonqSidebarPlugin *ButtonInfo::plugin(QObject *parent)
 void Sidebar_Widget::slotPopupMenu(KonqSidebarModule *module,
                                    const QPoint &global, const KFileItemList &items,
                                    const KParts::OpenUrlArguments &args,
-                                   const KParts::BrowserArguments &browserArgs,
+                                   const BrowserArguments &browserArgs,
                                    KParts::NavigationExtension::PopupFlags flags,
                                    const KParts::NavigationExtension::ActionGroupMap &actionGroups)
 {
     m_activeModule = module;
     doEnableActions();
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     emit getExtension()->popupMenu(global, items, args, browserArgs, flags, actionGroups);
+#else
+    if (getBrowserExtension()) {
+        emit getBrowserExtension()->browserPopupMenuFromFiles(global, items, args, browserArgs, flags, actionGroups);
+    } else {
+        emit getExtension()->popupMenu(global, items, args, flags, actionGroups);
+    }
+#endif
 }
 
 void Sidebar_Widget::slotUrlsDropped(const QList<QUrl> &urls)
@@ -892,4 +927,10 @@ void Sidebar_Widget::slotStatResult(KJob *job)
         }
     }
 }
+
+BrowserExtension *Sidebar_Widget::getBrowserExtension()
+{
+    return qobject_cast<BrowserExtension*>(getExtension());
+}
+
 

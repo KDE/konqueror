@@ -41,7 +41,7 @@ set(fsviewpart_PART_SRCS fsview_part.cpp ${libfsview_SRCS})
 
 add_library(fsviewpart MODULE ${fsviewpart_PART_SRCS})
 
-target_link_libraries(fsviewpart KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::Parts KF${KF_MAJOR_VERSION}::IconThemes KF${KF_MAJOR_VERSION}::KIOWidgets)
+target_link_libraries(fsviewpart KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::Parts KF${KF_MAJOR_VERSION}::IconThemes KF${KF_MAJOR_VERSION}::KIOWidgets KF${KF_MAJOR_VERSION}Konq)
 
 install(TARGETS fsviewpart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${KF_MAJOR_VERSION}/parts)
 

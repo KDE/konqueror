@@ -23,7 +23,6 @@
 #include <KIO/CopyJob>
 #include <KMessageBox>
 #include <KParts/ReadOnlyPart>
-#include <KParts/BrowserInterface>
 #include "kf5compat.h" //For NavigationExtension
 #include <KParts/PartLoader>
 #include <KJobWidgets>

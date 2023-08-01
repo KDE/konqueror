@@ -21,6 +21,10 @@ set(konq_LIB_SRCS
    interfaces/common.h
    interfaces/downloaderextension.cpp
    libkonq_utils.cpp
+   browserarguments.cpp
+   browserextension.cpp
+   windowargs.cpp
+   browserinterface.cpp
 )
 
 ecm_qt_declare_logging_category(konq_LIB_SRCS HEADER libkonq_debug.h IDENTIFIER LIBKONQ_LOG CATEGORY_NAME org.kde.libkonq)

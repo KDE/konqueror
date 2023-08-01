@@ -29,6 +29,7 @@
 #include "konqopenurlrequest.h"
 #include "kf5compat.h" //For NavigationExtension
 #include "configdialog.h"
+#include "windowargs.h"
 
 class QActionGroup;
 class KUrlCompletion;
@@ -67,7 +68,6 @@ namespace KParts
 // class NavigationExtension;
 class ReadOnlyPart;
 class OpenUrlArguments;
-struct BrowserArguments;
 }
 
 class KonqExtendedBookmarkOwner;
@@ -338,7 +338,7 @@ public:
     int tabsCount() const;
 
     // Public for unit tests
-    void prepareForPopupMenu(const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs);
+    void prepareForPopupMenu(const KFileItemList &items, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs);
 
     /**
      * @brief The last time the window was deactivated
@@ -362,15 +362,15 @@ public Q_SLOTS:
 
     void slotCtrlTabPressed();
 
-    void slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags flags, const KParts::NavigationExtension::ActionGroupMap &);
-    void slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags f, const KParts::NavigationExtension::ActionGroupMap &);
+    void slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags flags, const KParts::NavigationExtension::ActionGroupMap &);
+    void slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags f, const KParts::NavigationExtension::ActionGroupMap &);
 
     void slotOpenURLRequest(const QUrl &url, KonqOpenURLRequest &req);
 
     void openUrl(KonqView *childView, const QUrl &url, KonqOpenURLRequest &req);
 
     void slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest& req,
-                             const KParts::WindowArgs &windowArgs = KParts::WindowArgs(),
+                             const WindowArgs &windowArgs = WindowArgs(),
                              KParts::ReadOnlyPart **part = nullptr);
 
     void slotNewWindow();
@@ -531,7 +531,7 @@ protected:
 
     bool makeViewsFollow(const QUrl &url,
                          const KParts::OpenUrlArguments &args,
-                         const KParts::BrowserArguments &browserArgs, const QString &serviceType,
+                         const BrowserArguments &browserArgs, const QString &serviceType,
                          KonqView *senderView);
 
     void applyKonqMainWindowSettings();
@@ -744,7 +744,7 @@ private: // members
     QUrl m_popupUrl;
     KFileItemList m_popupItems;
     KParts::OpenUrlArguments m_popupUrlArgs;
-    KParts::BrowserArguments m_popupUrlBrowserArgs;
+    BrowserArguments m_popupUrlBrowserArgs;
 
     Konq::ConfigDialog *m_configureDialog;
 

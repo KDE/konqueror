@@ -14,26 +14,16 @@
 #include <kparts_version.h>
 #include <kparts/part.h>
 
-//We don't use kf5compat.h to avoid linking with libkonq
-//TODO KF6: when removing compatibility with KF5, remove #if
-#include <QtGlobal>
-#if QT_VERSION_MAJOR < 6
-#include <KParts/BrowserExtension>
-namespace KParts {
-  typedef BrowserExtension NavigationExtension;
-}
-#else
-#include <KParts/NavigationExtension>
-#endif
 #include <kio/jobclasses.h>
 
 #include "fsview.h"
+#include "browserextension.h"
 
 class KActionMenu;
 
 class FSViewPart;
 
-class FSViewNavigationExtension : public KParts::NavigationExtension
+class FSViewNavigationExtension : public BrowserExtension
 {
     Q_OBJECT
 

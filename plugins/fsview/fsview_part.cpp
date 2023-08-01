@@ -427,12 +427,21 @@ void FSViewPart::contextMenu(TreeMapItem * /*item*/, const QPoint &p)
     actionGroups.insert(QStringLiteral("editactions"), editActions);
 
     const KFileItemList items = selectedFileItems();
-    if (items.count() > 0)
+    if (items.count() > 0) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         emit _ext->popupMenu(_view->mapToGlobal(p), items,
                              KParts::OpenUrlArguments(),
-                             KParts::BrowserArguments(),
+                             BrowserArguments(),
                              flags,
                              actionGroups);
+#else
+        emit _ext->browserPopupMenuFromFiles(_view->mapToGlobal(p), items,
+                             KParts::OpenUrlArguments(),
+                             BrowserArguments(),
+                             flags,
+                             actionGroups);
+#endif
+    }
 }
 
 void FSViewPart::slotProperties()
@@ -450,7 +459,7 @@ void FSViewPart::slotProperties()
 // FSViewNavigationExtension
 
 FSViewNavigationExtension::FSViewNavigationExtension(FSViewPart *viewPart)
-    : KParts::NavigationExtension(viewPart)
+    : BrowserExtension(viewPart)
 {
     _view = viewPart->view();
 }

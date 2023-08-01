@@ -26,6 +26,9 @@ namespace KParts {
 #include <kio/job.h>
 #include <kfileitem.h>
 
+#include "browserarguments.h"
+#include "windowargs.h"
+
 #ifndef KONQSIDEBARPLUGIN_EXPORT
 # if defined(MAKE_KONQSIDEBARPLUGIN_LIB)
 /* We are building this library */
@@ -70,7 +73,7 @@ public:
 
     void showPopupMenu(const QPoint &global, const KFileItemList &items,
                        const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                       const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
+                       const BrowserArguments &browserArgs = BrowserArguments(),
                        KParts::NavigationExtension::PopupFlags flags = KParts::NavigationExtension::DefaultPopupItems,
                        const KParts::NavigationExtension::ActionGroupMap &actionGroups = KParts::NavigationExtension::ActionGroupMap());
 
@@ -105,13 +108,13 @@ Q_SIGNALS:
      * Ask konqueror to open @p url.
      */
     void openUrlRequest(const QUrl &url, const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                        const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments());
+                        const BrowserArguments &browserArgs = BrowserArguments());
     /**
      * Ask konqueror to create a new window (or tab, see BrowserArguments) for @p url.
      */
     void createNewWindow(const QUrl &url, const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                         const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
-                         const KParts::WindowArgs & = KParts::WindowArgs());
+                         const BrowserArguments &browserArgs = BrowserArguments(),
+                         const WindowArgs & = WindowArgs());
 
     /**
      * Ask konqueror to show the standard popup menu for the given @p items.
@@ -119,7 +122,7 @@ Q_SIGNALS:
     void popupMenu(KonqSidebarModule *module,
                    const QPoint &global, const KFileItemList &items,
                    const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                   const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
+                   const BrowserArguments &browserArgs = BrowserArguments(),
                    KParts::NavigationExtension::PopupFlags flags = KParts::NavigationExtension::DefaultPopupItems,
                    const KParts::NavigationExtension::ActionGroupMap &actionGroups = KParts::NavigationExtension::ActionGroupMap());
 

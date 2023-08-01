@@ -25,6 +25,7 @@
 #include <htmlextension.h>
 #include <htmlsettingsinterface.h>
 #include <textextension.h>
+#include <browserextension.h>
 
 class QUrl;
 class WebEnginePart;
@@ -34,7 +35,7 @@ class QPrinter;
 class QJsonObject;
 class QWebEngineScript;
 
-class KWEBENGINEPARTLIB_EXPORT WebEngineNavigationExtension : public KParts::NavigationExtension
+class KWEBENGINEPARTLIB_EXPORT WebEngineNavigationExtension : public BrowserExtension
 {
     Q_OBJECT
 

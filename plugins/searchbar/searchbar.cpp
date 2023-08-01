@@ -42,6 +42,8 @@
 #include <asyncselectorinterface.h>
 #include <htmlextension.h>
 #include <textextension.h>
+#include <browserarguments.h>
+#include <browserextension.h>
 
 K_PLUGIN_CLASS_WITH_JSON(SearchBarPlugin, "searchbar.json")
 
@@ -212,10 +214,19 @@ void SearchBarPlugin::startSearch(const QString &search)
         KParts::NavigationExtension *ext = KParts::NavigationExtension::childObject(m_part);
         if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
             KParts::OpenUrlArguments arguments;
-            KParts::BrowserArguments browserArguments;
+            BrowserArguments browserArguments;
             browserArguments.setNewTab(true);
             if (ext) {
-                emit ext->createNewWindow(data.uri(), arguments, browserArguments);
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+                emit ext->createNewWindow(data.uri());
+#else
+                if (auto browserExtension = qobject_cast<BrowserExtension *>(ext)) {
+                     emit browserExtension->browserCreateNewWindow(data.uri(), arguments, browserArguments);
+                } else {
+                     emit ext->createNewWindow(data.uri());
+                }
+#endif
             }
         } else {
             if (ext) {

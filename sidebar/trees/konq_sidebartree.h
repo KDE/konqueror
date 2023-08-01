@@ -216,9 +216,9 @@ signals:
 #define signals protected
 #endif
     void openUrlRequest(const QUrl &url, const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                        const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments());
+                        const BrowserArguments &browserArgs = BrowserArguments());
     void createNewWindow(const QUrl &url, const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                         const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments());
+                         const BrowserArguments &browserArgs = BrowserArguments());
 };
 
 #endif // KONQ_SIDEBARTREE_H

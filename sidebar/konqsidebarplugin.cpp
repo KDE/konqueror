@@ -5,6 +5,7 @@
 */
 
 #include "konqsidebarplugin.h"
+#include "browserarguments.h"
 
 class KonqSidebarModulePrivate
 {
@@ -88,7 +89,7 @@ bool KonqSidebarModule::isPasteEnabled() const
 
 void KonqSidebarModule::showPopupMenu(const QPoint &global, const KFileItemList &items,
                                       const KParts::OpenUrlArguments &args,
-                                      const KParts::BrowserArguments &browserArgs,
+                                      const BrowserArguments &browserArgs,
                                       KParts::NavigationExtension::PopupFlags flags,
                                       const KParts::NavigationExtension::ActionGroupMap &actionGroups)
 {

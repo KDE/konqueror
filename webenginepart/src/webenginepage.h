@@ -14,8 +14,8 @@
 #include "websslinfo.h"
 #include "kwebenginepartlib_export.h"
 #include "qtwebengine6compat.h"
+#include "browserextension.h"
 
-#include "kf5compat.h" //For NavigationExtension
 #include <QWebEnginePage>
 
 #include <QUrl>
@@ -169,7 +169,7 @@ private:
     bool checkFormData(const QUrl& url) const;
     bool handleMailToUrl (const QUrl& , NavigationType type) const;
     void setPageJScriptPolicy(const QUrl& url);
-    bool askBrowserToOpenUrl(const QUrl &url, const QString &mimetype=QString(), const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(), const KParts::BrowserArguments &bargs = KParts::BrowserArguments());
+    bool askBrowserToOpenUrl(const QUrl &url, const QString &mimetype=QString(), const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(), const BrowserArguments &bargs = BrowserArguments());
     bool downloadWithExternalDonwloadManager(const QUrl &url);
 //     bool askBrowserToOpenUrlInPart(const QUrl &url, const QString &part);
 
@@ -257,7 +257,7 @@ private Q_SLOTS:
     void slotLoadFinished(bool);
 
 private:
-    KParts::WindowArgs m_windowArgs;
+    WindowArgs m_windowArgs;
     WebWindowType m_type;
     bool m_createNewWindow;
 };

@@ -254,7 +254,7 @@ void KonqSidebarDirTreeItem::rightButtonPressed()
     actionGroups.insert("editactions", editActions);
 
     emit tree()->sidebarModule()->showPopupMenu(QCursor::pos(), items,
-            KParts::OpenUrlArguments(), KParts::BrowserArguments(),
+            KParts::OpenUrlArguments(), BrowserArguments(),
             popupFlags, actionGroups);
 }
 

@@ -497,7 +497,7 @@ void KonqSidebarTree::slotExecuted(Q3ListViewItem *item)
 
     KParts::OpenUrlArguments args;
     args.setMimeType(dItem->externalMimeType());
-    KParts::BrowserArguments browserArgs;
+    BrowserArguments browserArgs;
     browserArgs.trustedSource = true; // is this needed?
     QUrl externalURL = dItem->externalURL();
     if (!externalURL.isEmpty()) {
@@ -995,7 +995,7 @@ void KonqSidebarTree::slotOpenTab()
     if (!m_currentTopLevelItem) {
         return;
     }
-    KParts::BrowserArguments browserArgs;
+    BrowserArguments browserArgs;
     browserArgs.setNewTab(true);
     emit createNewWindow(m_currentTopLevelItem->externalURL(),
                          KParts::OpenUrlArguments(),

@@ -16,6 +16,7 @@
 #include "settings/webenginesettings.h"
 #include "webenginepart_ext.h"
 #include "spellcheckermanager.h"
+#include "browserinterface.h"
 
 #include <KIO/Global>
 #include <KAboutData>
@@ -27,7 +28,6 @@
 #include <KStringHandler>
 #include <KLocalizedString>
 #include <KIO/CommandLauncherJob>
-#include <KParts/BrowserInterface>
 
 #include <QTimer>
 #include <QMimeData>
@@ -72,7 +72,7 @@ WebEngineView::~WebEngineView()
     //qCDebug(WEBENGINEPART_LOG);
 }
 
-void WebEngineView::loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs)
+void WebEngineView::loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const BrowserArguments& bargs)
 {
     WebEnginePage *pg = qobject_cast<WebEnginePage*>(page());
     if (!pg) {
@@ -182,11 +182,15 @@ void WebEngineView::contextMenuEvent(QContextMenuEvent* e)
 
     if (!mapAction.isEmpty()) {
         KParts::OpenUrlArguments args;
-        KParts::BrowserArguments bargs;
+        BrowserArguments bargs;
         args.setMimeType(mimeType);
         bargs.setForcesNewWindow(forcesNewWindow);
         e->accept();
-        emit m_part->navigationExtension()->popupMenu(e->globalPos(), emitUrl, static_cast<mode_t>(-1), args, bargs, flags, mapAction);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+        emit m_part->browserExtension()->popupMenu(e->globalPos(), emitUrl, static_cast<mode_t>(-1), args, bargs, flags, mapAction);
+#else
+        emit m_part->browserExtension()->browserPopupMenuFromUrl(e->globalPos(), emitUrl, static_cast<mode_t>(-1), args, bargs, flags, mapAction);
+#endif
         return;
     }
 

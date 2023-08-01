@@ -478,7 +478,7 @@ void ViewMgrTest::testPopupNewTab() // RMB, "Open in new tab"
     KonqFrameTabs *tabs = mainWindow.viewManager()->tabContainer();
     QCOMPARE(tabs->currentIndex(), 0);
     KFileItem item(QUrl(QStringLiteral("data:text/html, hello")), QStringLiteral("text/html"), S_IFREG);
-    mainWindow.prepareForPopupMenu(KFileItemList() << item, KParts::OpenUrlArguments(), KParts::BrowserArguments());
+    mainWindow.prepareForPopupMenu(KFileItemList() << item, KParts::OpenUrlArguments(), BrowserArguments());
     QMetaObject::invokeMethod(&mainWindow, "slotPopupNewTab");
     QTest::qWait(1000);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
@@ -509,7 +509,7 @@ void ViewMgrTest::testPopupNewWindow() // RMB, "Open new window"
     KonqMainWindow mainWindow;
     openHtmlWithLink(mainWindow);
     KFileItem item(QUrl(QStringLiteral("data:text/html, hello")), QStringLiteral("text/html"), S_IFREG);
-    mainWindow.prepareForPopupMenu(KFileItemList() << item, KParts::OpenUrlArguments(), KParts::BrowserArguments());
+    mainWindow.prepareForPopupMenu(KFileItemList() << item, KParts::OpenUrlArguments(), BrowserArguments());
     QMetaObject::invokeMethod(&mainWindow, "slotPopupNewWindow");
     QTRY_COMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].")); // mainWindow, tab widget, one tab
     QVERIFY(KMainWindow::memberList().last() != &mainWindow);
@@ -847,12 +847,16 @@ void ViewMgrTest::testBrowserArgumentsNewTab()
     KonqMainWindow mainWindow;
     mainWindow.openUrl(nullptr, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
     KParts::OpenUrlArguments urlArgs;
-    KParts::BrowserArguments browserArgs;
+    BrowserArguments browserArgs;
     browserArgs.setNewTab(true);
     KonqView *view = mainWindow.currentView();
-    KParts::NavigationExtension *ext = view->browserExtension();
+    BrowserExtension *ext = qobject_cast<BrowserExtension *>(view->browserExtension());
     QVERIFY(ext);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     emit ext->openUrlRequest(QUrl(QStringLiteral("data:text/html, <p>Second tab test</p>")), urlArgs, browserArgs);
+#else
+    emit ext->browserOpenUrlRequest(QUrl(QStringLiteral("data:text/html, <p>Second tab test</p>")), urlArgs, browserArgs);
+#endif
     QTest::qWait(5000);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
     QCOMPARE(view->url(), QUrl("data:text/html, <p>Hello World</p>"));

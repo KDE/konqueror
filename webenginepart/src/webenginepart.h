@@ -12,7 +12,7 @@
 
 #include "kwebenginepartlib_export.h"
 
-#include "kf5compat.h" //For NavigationExtension
+#include "browserextension.h"
 
 #include <QWebEnginePage>
 
@@ -129,6 +129,7 @@ public:
 
     WebEnginePage* page();
     const WebEnginePage* page() const;
+    BrowserExtension *browserExtension() const;
 
     QWebEngineProfile *profile() const;
 

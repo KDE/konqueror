@@ -41,7 +41,6 @@
 #include <KJobTrackerInterface>
 #include <KUserTimestamp>
 #include <KPasswdServerClient>
-#include <KParts/BrowserInterface>
 #include <KJobWidgets>
 #include <KPluginMetaData>
 
@@ -204,7 +203,7 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
         downloader->addDownloadRequest(item);
     }
 
-    KParts::BrowserArguments bArgs;
+    BrowserArguments bArgs;
     bArgs.setForcesNewWindow(newWindow);
     KParts::OpenUrlArguments args;
 
@@ -241,7 +240,12 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
         requestDownloadAndOpen();
     } else { //It should never happen
         qCDebug(WEBENGINEPART_LOG()) << "WebEnginePart for" << part()->url() << "doesn't have a WebEnginePartDownloaderExtension";
-        emit m_part->navigationExtension()->openUrlRequest(url, args, bArgs);
+#if QT_VERSION_MAJOR < 6
+        emit m_part->browserExtension()->openUrlRequest(url, args, bArgs);
+#else
+        emit m_part->browserExtension()->browserOpenUrlRequest(url, args, bArgs);
+#endif
+
         item->cancel();
         item->deleteLater();
     }
@@ -311,19 +315,23 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
     return (u1List == u2List);
 }
 
-bool WebEnginePage::askBrowserToOpenUrl(const QUrl& url, const QString& mimetype, const KParts::OpenUrlArguments &_args, const KParts::BrowserArguments &bargs)
+bool WebEnginePage::askBrowserToOpenUrl(const QUrl& url, const QString& mimetype, const KParts::OpenUrlArguments &_args, const BrowserArguments &bargs)
 {
     KParts::OpenUrlArguments args(_args);
     args.setMimeType(mimetype);
     args.metaData().insert("DontSendToDefaultHTMLPart", "");
-    emit m_part->navigationExtension()->openUrlRequest(url, args, bargs);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    emit m_part->browserExtension()->openUrlRequest(url, args, bargs);
+#else
+    emit m_part->browserExtension()->browserOpenUrlRequest(url, args, bargs);
+#endif
     return true;
 }
 
 bool WebEnginePage::shouldOpenLocalUrl(const QUrl& url) const
 {
     Q_ASSERT(url.isLocalFile());
-    KParts::BrowserInterface *bi = m_part->navigationExtension()->browserInterface();
+    BrowserInterface *bi = m_part->browserExtension()->browserInterface();
     bool useThisPart = false;
     //We don't check whether bi is valid, as invokeMethod will fail if it's nullptr
     //If invokeMethod fails, useThisPart will keep its default value (false) which is what we need to return, so there's no
@@ -796,7 +804,7 @@ void WebEnginePage::slotAuthenticationRequired(const QUrl &requestUrl, QAuthenti
 
 void WebEnginePage::changeFullScreenMode(QWebEngineFullScreenRequest req)
 {
-        KParts::BrowserInterface *iface = part()->navigationExtension()->browserInterface();
+        BrowserInterface *iface = part()->browserExtension()->browserInterface();
         if (iface) {
             req.accept();
             iface->callMethod("toggleCompleteFullScreen", req.toggleOn());
@@ -847,9 +855,9 @@ NewWindowPage::~NewWindowPage()
 {
 }
 
-static KParts::BrowserArguments browserArgs(WebEnginePage::WebWindowType type)
+static BrowserArguments browserArgs(WebEnginePage::WebWindowType type)
 {
-    KParts::BrowserArguments bargs;
+    BrowserArguments bargs;
     switch (type) {
         case WebEnginePage::WebDialog:
         case WebEnginePage::WebBrowserWindow:
@@ -907,7 +915,7 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
         }
 
         // Browser args...
-        KParts::BrowserArguments bargs = browserArgs(m_type);
+        BrowserArguments bargs = browserArgs(m_type);
 
         // OpenUrl args...
         KParts::OpenUrlArguments uargs;
@@ -915,10 +923,14 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
         uargs.setActionRequestedByUser(actionRequestedByUser);
 
         // Window args...
-        KParts::WindowArgs wargs (m_windowArgs);
+        WindowArgs wargs (m_windowArgs);
 
         KParts::ReadOnlyPart* newWindowPart =nullptr;
-        emit part()->navigationExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+        emit part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
+#else
+        emit part()->browserExtension()->browserCreateNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
+#endif
         qCDebug(WEBENGINEPART_LOG) << "Created new window" << newWindowPart;
 
         if (!newWindowPart) {
@@ -999,7 +1011,7 @@ void NewWindowPage::slotLoadFinished(bool ok)
     const bool actionRequestedByUser = true; // ### we don't have the information here, unlike in acceptNavigationRequest
 
     // Browser args...
-    KParts::BrowserArguments bargs = browserArgs(m_type);
+    BrowserArguments bargs = browserArgs(m_type);
     //bargs.frameName = mainFrame()->frameName();
 
     // OpenUrl args...
@@ -1008,10 +1020,15 @@ void NewWindowPage::slotLoadFinished(bool ok)
     uargs.setActionRequestedByUser(actionRequestedByUser);
 
     // Window args...
-    KParts::WindowArgs wargs (m_windowArgs);
+    WindowArgs wargs (m_windowArgs);
 
     KParts::ReadOnlyPart* newWindowPart =nullptr;
-    emit part()->navigationExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    emit part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
+#else
+    emit part()->browserExtension()->browserCreateNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
+#endif
 
     qCDebug(WEBENGINEPART_LOG) << "Created new window or tab" << newWindowPart;
 

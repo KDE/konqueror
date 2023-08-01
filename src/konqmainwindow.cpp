@@ -43,6 +43,7 @@
 #include "pluginmetadatautils.h"
 #include "browseropenorsavequestion.h"
 #include "configdialog.h"
+#include "browserextension.h"
 
 #include <konq_events.h>
 #include <konqpixmapprovider.h>
@@ -888,7 +889,13 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
             childView->part()->setArguments(req.args);
         }
         if (childView->browserExtension()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             childView->browserExtension()->setBrowserArguments(req.browserArgs);
+#else
+            if (auto browserExt = qobject_cast<BrowserExtension *>(childView->browserExtension())) {
+                browserExt->setBrowserArguments(req.browserArgs);
+            }
+#endif
         }
 
         // see dolphinpart
@@ -989,7 +996,7 @@ QObject *KonqMainWindow::lastFrame(KonqView *view)
 // Linked-views feature, plus "sidebar follows URL opened in the active view" feature
 bool KonqMainWindow::makeViewsFollow(const QUrl &url,
                                      const KParts::OpenUrlArguments &args,
-                                     const KParts::BrowserArguments &browserArgs,
+                                     const BrowserArguments &browserArgs,
                                      const QString &serviceType, KonqView *senderView)
 {
     if (!senderView->isLinkedView() && senderView != m_currentView) {
@@ -1069,7 +1076,7 @@ void KonqMainWindow::abortLoading()
 
 // Are there any indications that this window has a strong popup
 // nature and should therefore not be embedded into a tab?
-static bool isPopupWindow(const KParts::WindowArgs &windowArgs)
+static bool isPopupWindow(const WindowArgs &windowArgs)
 {
     // ### other settings to respect?
     return windowArgs.x() != -1 || windowArgs.y() != -1 ||
@@ -1082,7 +1089,7 @@ static bool isPopupWindow(const KParts::WindowArgs &windowArgs)
 // This is called for the javascript window.open call.
 // Also called for MMB on link, target="_blank" link, MMB on folder, etc.
 void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &req,
-        const KParts::WindowArgs &windowArgs, KParts::ReadOnlyPart **part)
+        const WindowArgs &windowArgs, KParts::ReadOnlyPart **part)
 {
     // NOTE: 'part' may be null
 
@@ -2637,7 +2644,7 @@ void KonqMainWindow::slotGoHistoryDelayed()
         m_currentView->go(m_goBuffer);
         makeViewsFollow(m_currentView->url(),
                         KParts::OpenUrlArguments(),
-                        KParts::BrowserArguments(),
+                        BrowserArguments(),
                         m_currentView->serviceType(),
                         m_currentView);
     }
@@ -4253,7 +4260,7 @@ static KonqPopupMenu::ActionGroupMap convertActionGroups(const KParts::Navigatio
     return agm;
 }
 
-void KonqMainWindow::slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags flags, const KParts::NavigationExtension::ActionGroupMap &actionGroups)
+void KonqMainWindow::slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags flags, const KParts::NavigationExtension::ActionGroupMap &actionGroups)
 {
     KFileItem item(url, args.mimeType(), mode);
     KFileItemList items;
@@ -4261,7 +4268,7 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const QUrl &url, mode_t
     slotPopupMenu(global, items, args, browserArgs, flags, actionGroups);
 }
 
-void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags itemFlags, const KParts::NavigationExtension::ActionGroupMap &actionGroups)
+void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags itemFlags, const KParts::NavigationExtension::ActionGroupMap &actionGroups)
 {
     KonqView *m_oldView = m_currentView;
     KonqView *currentView = childView(static_cast<KParts::ReadOnlyPart *>(sender()->parent()));
@@ -4472,7 +4479,7 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
     }
 }
 
-void KonqMainWindow::prepareForPopupMenu(const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs)
+void KonqMainWindow::prepareForPopupMenu(const KFileItemList &items, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs)
 {
     if (!items.isEmpty()) {
         m_popupUrl = items.first().url();

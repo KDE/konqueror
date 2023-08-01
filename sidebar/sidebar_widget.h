@@ -20,6 +20,7 @@
 
 #include "konqsidebarplugin.h"
 #include "module_manager.h"
+#include "browserextension.h"
 
 class KonqMultiTabBar;
 class KonqSidebarPlugin;
@@ -76,6 +77,7 @@ public:
     void stdAction(const char *handlestd);
 
     KParts::NavigationExtension *getExtension();
+    BrowserExtension *getBrowserExtension();
     QSize sizeHint() const override;
 
 public Q_SLOTS:
@@ -117,13 +119,13 @@ Q_SIGNALS:
 
     /* The following public slots are wrappers for browserextension signals */
 public Q_SLOTS:
-    void openUrlRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs);
+    void openUrlRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs);
     /* @internal
      * ### KDE4 remove me
      */
     void submitFormRequest(const char *, const QString &, const QByteArray &, const QString &, const QString &, const QString &);
-    void createNewWindow(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs,
-                         const KParts::WindowArgs &windowArgs);
+    void createNewWindow(const QUrl &url, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs,
+                         const WindowArgs &windowArgs);
 
     void slotEnableAction(KonqSidebarModule *module, const char *name, bool enabled);
 
@@ -164,7 +166,7 @@ private Q_SLOTS:
 
     void slotPopupMenu(KonqSidebarModule *, const QPoint &global, const KFileItemList &items,
                        const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                       const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
+                       const BrowserArguments &browserArgs = BrowserArguments(),
                        KParts::NavigationExtension::PopupFlags flags = KParts::NavigationExtension::DefaultPopupItems,
                        const KParts::NavigationExtension::ActionGroupMap &actionGroups = KParts::NavigationExtension::ActionGroupMap());
 

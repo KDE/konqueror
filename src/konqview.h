@@ -13,6 +13,7 @@
 #include "konqframe.h"
 #include "konqutils.h"
 #include "kf5compat.h" //For NavigationExtension
+#include "browserarguments.h"
 
 #include <kservice.h>
 #include <QMimeType>
@@ -483,7 +484,7 @@ public:
 
     // Called before reloading this view. Sets args.reload to true, and offers to repost form data.
     // Returns false in case the reload must be canceled.
-    bool prepareReload(KParts::OpenUrlArguments &args, KParts::BrowserArguments &browserArgs, bool softReload);
+    bool prepareReload(KParts::OpenUrlArguments &args, BrowserArguments &browserArgs, bool softReload);
 
     // overload for the QString version
     void setLocationBarURL(const QUrl &locationBarURL);
@@ -559,6 +560,17 @@ private Q_SLOTS:
     void slotCanceled(const QString &errMsg);
     void slotPercent(KJob *, unsigned long percent);
     void slotSpeed(KJob *, unsigned long bytesPerSecond);
+    void slotPopupMenuFiles(const QPoint &global,
+            const KFileItemList &items,
+            const KParts::OpenUrlArguments &args,
+            KParts::NavigationExtension::PopupFlags flags,
+            const KParts::NavigationExtension::ActionGroupMap &actionGroups);
+    void slotPopupMenuUrl(const QPoint &global,
+                   const QUrl &url,
+                   mode_t mode,
+                   const KParts::OpenUrlArguments &arguments,
+                   KParts::NavigationExtension::PopupFlags flags,
+                   const KParts::NavigationExtension::ActionGroupMap &actionGroups);
 
     /**
      * Connected to the NavigationExtension

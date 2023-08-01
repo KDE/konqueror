@@ -12,6 +12,7 @@
 #include <QStringList>
 
 #include "kf5compat.h" //For NavigationExtension
+#include "browserarguments.h"
 
 namespace KParts {
     class ReadOnlyPart;
@@ -23,7 +24,7 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
 
     KonqOpenURLRequest(const QString &url) : typedUrl(url) {}
 
-    KonqOpenURLRequest(const KParts::OpenUrlArguments &_args, const KParts::BrowserArguments &_browserArgs,
+    KonqOpenURLRequest(const KParts::OpenUrlArguments &_args, const BrowserArguments &_browserArgs,
                        KParts::ReadOnlyPart *_requestingPart, bool _letPartPerformDownload=false, quint32 _downloadId=-1) {
         args = _args;
         browserArgs = _browserArgs;
@@ -85,7 +86,7 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
     bool tempFile = false; ///< if true, the URL should be deleted after use
     bool userRequestedReload = false; ///< `args.reload` because the user requested it, not a website
     KParts::OpenUrlArguments args;
-    KParts::BrowserArguments browserArgs;
+    BrowserArguments browserArgs;
     QList<QUrl> filesToSelect; ///< files to select in a konqdirpart
     QString suggestedFileName; ///< The suggested name when saving an URL
     KParts::ReadOnlyPart *requestingPart = nullptr; ///< The part which requested the download of an URL

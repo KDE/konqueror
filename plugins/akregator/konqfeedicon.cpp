@@ -32,6 +32,8 @@
 #include <QInputDialog>
 
 #include <htmlextension.h>
+#include <browserarguments.h>
+#include <browserextension.h>
 
 using namespace Akregator;
 
@@ -290,9 +292,19 @@ void Akregator::KonqFeedIcon::openFeedUrl(const QString& url, const QString &mim
     }
     KParts::OpenUrlArguments args;
     args.setMimeType(mimeType);
-    KParts::BrowserArguments bargs;
+    BrowserArguments bargs;
     bargs.setNewTab(true);
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     emit ext->openUrlRequest(QUrl(url), args, bargs);
+#else
+    if (auto browserExtension = qobject_cast<BrowserExtension *>(ext)) {
+        emit browserExtension->browserOpenUrlRequest(QUrl(url), args, bargs);
+    } else {
+        emit ext->openUrlRequest(QUrl(url));
+    }
+#endif
+
 }
 
 #include "konqfeedicon.moc"

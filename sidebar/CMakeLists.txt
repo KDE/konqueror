@@ -29,7 +29,7 @@ set(konqsidebarplugin_LIB_SRCS konqsidebarplugin.cpp )
 
 add_library(konqsidebarplugin SHARED ${konqsidebarplugin_LIB_SRCS} ${sidebar_DEBUG_SRCS})
 
-target_link_libraries(konqsidebarplugin KF${KF_MAJOR_VERSION}::Parts KF${KF_MAJOR_VERSION}::KIOFileWidgets)
+target_link_libraries(konqsidebarplugin KF${KF_MAJOR_VERSION}::Parts KF${KF_MAJOR_VERSION}::KIOFileWidgets KF${KF_MAJOR_VERSION}Konq)
 set_target_properties(konqsidebarplugin PROPERTIES VERSION ${KONQUEROR_LIB_VERSION} SOVERSION "${KF_MAJOR_VERSION}" )
 install(TARGETS konqsidebarplugin ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 

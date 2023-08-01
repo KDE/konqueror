@@ -14,6 +14,7 @@
 #include <QPointer>
 #include "kf5compat.h" //For NavigationExtension
 #include "qtwebengine6compat.h" //For QWebEngineContextMenuRequest
+#include "browserarguments.h"
 
 #include <QWebEngineView>
 
@@ -30,13 +31,13 @@ public:
     /**
      * Same as QWebEnginePage::load, but with KParts style arguments instead.
      *
-     * @see KParts::OpenUrlArguments, KParts::BrowserArguments.
+     * @see KParts::OpenUrlArguments, BrowserArguments.
      *
      * @param url     the url to load.
      * @param args    reference to a OpenUrlArguments object.
      * @param bargs   reference to a BrowserArguments object.
      */
-    void loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs);
+    void loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const BrowserArguments& bargs);
 
     const QWebEngineContextMenuRequest* contextMenuResult() const;
 

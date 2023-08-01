@@ -410,7 +410,7 @@ void KonqSidebarBookmarkModule::slotOpenNewWindow()
 
     KParts::OpenUrlArguments args;
     args.setActionRequestedByUser(true);
-    KParts::BrowserArguments browserArgs;
+    BrowserArguments browserArgs;
     browserArgs.setForcesNewWindow(true);
     emit tree()->createNewWindow(bi->bookmark().url(), args, browserArgs);
 }
@@ -429,7 +429,7 @@ void KonqSidebarBookmarkModule::slotOpenTab()
 
     KParts::OpenUrlArguments args;
     args.setActionRequestedByUser(true);
-    KParts::BrowserArguments browserArguments;
+    BrowserArguments browserArguments;
     browserArguments.setNewTab(true);
     if (bookmark.isGroup()) {
         KBookmarkGroup group = bookmark.toGroup();

@@ -62,7 +62,6 @@
 #include <KSslInfoDialog>
 #include <KProtocolManager>
 #include <KParts/PartActivateEvent>
-#include <KParts/BrowserInterface>
 #include <KIO/ApplicationLauncherJob>
 
 #include <QFile>
@@ -382,7 +381,7 @@ bool WebEnginePart::openUrl(const QUrl& _u)
     WebEnginePage* p = page();
     Q_ASSERT(p);
 
-    KParts::BrowserArguments bargs (m_browserExtension->browserArguments());
+    BrowserArguments bargs (m_browserExtension->browserArguments());
     KParts::OpenUrlArguments args (arguments());
 
     if (!Utils::isBlankUrl(u)) {
@@ -1111,3 +1110,8 @@ KParts::NavigationExtension* WebEnginePart::navigationExtension() const
     return browserExtension();
 }
 #endif
+
+BrowserExtension *WebEnginePart::browserExtension() const
+{
+    return findChild<BrowserExtension *>();
+}

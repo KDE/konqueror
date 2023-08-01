@@ -76,7 +76,7 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
 }
 
 WebEngineNavigationExtension::WebEngineNavigationExtension(WebEnginePart *parent, const QByteArray& cachedHistoryData)
-                       :KParts::NavigationExtension(parent),
+                       : BrowserExtension(parent),
                         m_part(parent),
                         mCurrentPrinter(nullptr)
 {
@@ -332,9 +332,13 @@ void WebEngineNavigationExtension::searchProvider()
     if (!url.isValid())
       return;
 
-    KParts::BrowserArguments bargs;
+    BrowserArguments bargs;
     bargs.frameName = QL1S("_blank");
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     emit openUrlRequest(url, KParts::OpenUrlArguments(), bargs);
+#else
+    emit browserOpenUrlRequest(url, KParts::OpenUrlArguments(), bargs);
+#endif
 }
 
 void WebEngineNavigationExtension::reparseConfiguration()
@@ -850,9 +854,13 @@ void WebEngineNavigationExtension::slotOpenSelection()
 {
     QAction *action = qobject_cast<QAction*>(sender());
     if (action) {
-        KParts::BrowserArguments browserArgs;
+        BrowserArguments browserArgs;
         browserArgs.frameName = QStringLiteral("_blank");
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         emit openUrlRequest(QUrl(action->data().toUrl()), KParts::OpenUrlArguments(), browserArgs);
+#else
+        emit browserOpenUrlRequest(QUrl(action->data().toUrl()), KParts::OpenUrlArguments(), browserArgs);
+#endif
     }
 }
 
@@ -865,12 +873,16 @@ void WebEngineNavigationExtension::slotLinkInTop()
     KParts::OpenUrlArguments uargs;
     uargs.setActionRequestedByUser(true);
 
-    KParts::BrowserArguments bargs;
+    BrowserArguments bargs;
     bargs.frameName = QL1S("_top");
 
     const QUrl url(view()->contextMenuResult()->linkUrl());
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     emit openUrlRequest(url, uargs, bargs);
+#else
+    emit browserOpenUrlRequest(url, uargs, bargs);
+#endif
 }
 
 ////
