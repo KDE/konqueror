@@ -8,13 +8,13 @@
 # obsoleteman <tulliana@gmail.com>, 2008-2009.
 # obsoleteman <tulliana@gmail.com>, 2010,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-31 00:46+0000\n"
-"PO-Revision-Date: 2022-10-18 05:06+0300\n"
+"POT-Creation-Date: 2023-08-01 00:45+0000\n"
+"PO-Revision-Date: 2023-07-31 13:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -22,54 +22,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 23.11.70\n"
 
 #: src/browseropenorsavequestion.cpp:89
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "Tür: %1"
 
 #: src/browseropenorsavequestion.cpp:97
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "Bu dosya türü için eylemi anımsa"
 
 #: src/browseropenorsavequestion.cpp:149 src/browseropenorsavequestion.cpp:237
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr ""
+msgstr "%1 ile &Aç"
 
 #: src/browseropenorsavequestion.cpp:213
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr ""
+msgstr "%1 ile &Aç"
 
 #: src/browseropenorsavequestion.cpp:224 src/browseropenorsavequestion.cpp:318
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr ""
+msgstr "Aç: '%1'?"
 
 #: src/browseropenorsavequestion.cpp:228
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr ""
+msgstr "Birlikte &Aç..."
 
 #: src/browseropenorsavequestion.cpp:246
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
-msgstr "&Aç"
+msgstr "Birlikte &Aç"
 
 #: src/browseropenorsavequestion.cpp:315
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "&Aç"
@@ -78,12 +76,20 @@ msgstr "&Aç"
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr ""
+msgstr "Ad: %1"
 
 #: src/browseropenorsavequestion.cpp:341
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
+msgstr "Bu, sunucu tarafından önerilen dosya adıdır"
+
+#: src/htmlsettingsinterface.cpp:19
+msgid "Accept"
+msgstr ""
+
+#: src/htmlsettingsinterface.cpp:21
+msgid "Reject"
 msgstr ""
 
 #: src/konq_popupmenu.cpp:219

@@ -5,13 +5,13 @@
 # Per Lindström <pelinstr@algonet.se>, 2000.
 # Mattias Newzella <newzella@linux.nu>, 2000, 2001, 2002,2003, 2004, 2005.
 # Stefan Asserhäll <stefan.asserhall@bredband.net>, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
-# Stefan Asserhall <stefan.asserhall@bredband.net>, 2005, 2010, 2011, 2012, 2013, 2016, 2017, 2019, 2020, 2021, 2022.
+# Stefan Asserhall <stefan.asserhall@bredband.net>, 2005, 2010, 2011, 2012, 2013, 2016, 2017, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-31 00:46+0000\n"
-"PO-Revision-Date: 2022-04-05 20:04+0200\n"
+"PO-Revision-Date: 2023-07-25 15:43+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -37,6 +37,8 @@ msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
+"<p>Du kör Konqueror som systemadministratör. Det kräver att ett ytterst "
+"osäkert läge aktiveras i webbläsarkomponenten.</p><p>Vad vill du göra?</p>"
 
 #: src/konqapplication.cpp:144
 #, kde-format
@@ -458,6 +460,8 @@ msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
 "only when developing Konqueror itself"
 msgstr ""
+"Skapa en ny Konqueror-process, även om det redan finns en. Bara avsett att "
+"användas när själva Konqueror utvecklas."
 
 #: src/konqapplication.cpp:209
 #, kde-format
@@ -465,11 +469,10 @@ msgid "Location to open"
 msgstr "Plats att öppna"
 
 #: src/konqapplication.cpp:314
-#, fuzzy, kde-format
-#| msgid "Session to open"
+#, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "Session att öppna"
+msgstr "Session %1 kunde inte öppnas"
 
 #: src/konqapplication.cpp:439
 #, kde-format
@@ -477,6 +480,8 @@ msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr ""
+"Du kan inte skicka med webbadresser när väljaren --preload används. "
+"Webbadresserna kommer att ignoreras\n"
 
 #: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4895
 #: src/konqmainwindow.cpp:4941
@@ -1285,11 +1290,10 @@ msgid "Open bookmarks folder in new tabs"
 msgstr "Öppna bokmärkeskatalog under nya flikar"
 
 #: src/konqmainwindow.cpp:4260
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "Ö&ppna"
+msgstr "Öppna"
 
 #: src/konqmainwindow.cpp:4419
 #, kde-format
@@ -1977,44 +1981,33 @@ msgid "Resend"
 msgstr "Skicka igen"
 
 #: src/urlloader.cpp:277
-#, fuzzy, kde-format
-#| msgctxt "Execute an executable file"
-#| msgid "Execute it"
+#, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
-msgstr "Kör den"
+msgstr "Kör"
 
 #: src/urlloader.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display it"
+#, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
-msgstr "Visa den"
+msgstr "Visa"
 
 #: src/urlloader.cpp:286
-#, fuzzy, kde-kuit-format
-#| msgctxt ""
-#| "The user has to decide whether to execute an executable file or display it"
-#| msgid ""
-#| "<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
+#, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
 "display it"
 msgid ""
 "<filename>%1</filename> can be executed. Do you want to execute it or to "
 "display it?"
-msgstr "<tt>%1</tt> kan köras. Vill du köra den eller visa den?"
+msgstr "<filename>%1</filename> går att köra. Vill du köra den eller visa den?"
 
 #: src/urlloader.cpp:292
-#, fuzzy, kde-kuit-format
-#| msgctxt ""
-#| "The user has to decide whether to execute an executable file or not"
-#| msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+#, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
-msgstr "<tt>%1</tt> kan köras. Vill du köra den?"
+msgstr "<filename>%1</filename> går att köra. Vill du köra den?"
 
 #: src/urlloader.cpp:507
 #, kde-format

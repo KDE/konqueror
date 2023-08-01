@@ -1,7 +1,7 @@
 # Translation of khtmlsettingsplugin.po to Slovenian
 # SLOVENIAN TRANSLATION OF KHTMLSETTINGSPLUGIN.
 # Copyright (C) 2001, 2003, 2004 Free Software Foundation, Inc.
-# $Id: khtmlsettingsplugin.po 1629187 2022-07-14 01:36:31Z scripty $
+# $Id: khtmlsettingsplugin.po 1657240 2023-08-01 01:27:39Z scripty $
 # $Source$
 #
 # Gregor Rakar <gregor.rakar@kiss.uni-lj.si>, 2001.
@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"POT-Creation-Date: 2023-08-01 00:45+0000\n"
 "PO-Revision-Date: 2020-09-01 16:29+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -36,67 +36,67 @@ msgstr "Orodja"
 msgid "Extra Toolbar"
 msgstr "Dodatna orodna vrstica"
 
-#: settingsplugin.cpp:41
+#: settingsplugin.cpp:42
 #, kde-format
 msgid "HTML Settings"
 msgstr "Nastavitve HTML"
 
-#: settingsplugin.cpp:46
+#: settingsplugin.cpp:47
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"
 
-#: settingsplugin.cpp:51
+#: settingsplugin.cpp:52
 #, kde-format
 msgid "&Java"
 msgstr "&Java"
 
-#: settingsplugin.cpp:56
+#: settingsplugin.cpp:57
 #, kde-format
 msgid "&Cookies"
 msgstr "Piškotki"
 
-#: settingsplugin.cpp:61
+#: settingsplugin.cpp:62
 #, kde-format
 msgid "&Plugins"
 msgstr "Vstavki"
 
-#: settingsplugin.cpp:66
+#: settingsplugin.cpp:67
 #, kde-format
 msgid "Autoload &Images"
 msgstr "Samodejno naloži slike"
 
-#: settingsplugin.cpp:73
+#: settingsplugin.cpp:74
 #, kde-format
 msgid "Enable Pro&xy"
 msgstr "Omogoči posredniški strežnik"
 
-#: settingsplugin.cpp:78
+#: settingsplugin.cpp:79
 #, kde-format
 msgid "Enable Cac&he"
 msgstr "Omogoči predpomnilnik"
 
-#: settingsplugin.cpp:83
+#: settingsplugin.cpp:84
 #, kde-format
 msgid "Cache Po&licy"
 msgstr "Pravi&lnik za predpomnilnik"
 
-#: settingsplugin.cpp:85
+#: settingsplugin.cpp:86
 #, kde-format
 msgid "&Keep Cache in Sync"
 msgstr "Usklajuj predpomnilnik"
 
-#: settingsplugin.cpp:86
+#: settingsplugin.cpp:87
 #, kde-format
 msgid "&Use Cache if Possible"
 msgstr "&Uporabi predpomnilnik, če je mogoče"
 
-#: settingsplugin.cpp:87
+#: settingsplugin.cpp:88
 #, kde-format
 msgid "&Offline Browsing Mode"
 msgstr "Način brskanja brez povezave"
 
-#: settingsplugin.cpp:180
+#: settingsplugin.cpp:181
 #, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
@@ -105,7 +105,7 @@ msgstr ""
 "Nastavitev piškotkov ni bilo mogoče spremeniti, ker ni bilo mogoče stopiti v "
 "stik z ozadnjim programom za piškotke."
 
-#: settingsplugin.cpp:182
+#: settingsplugin.cpp:183
 #, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"

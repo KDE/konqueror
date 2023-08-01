@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2016, 2017, 2018, 2020, 2021, 2022.
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2016, 2017, 2018, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 00:46+0000\n"
-"PO-Revision-Date: 2022-01-03 21:12+0100\n"
+"PO-Revision-Date: 2023-07-25 15:40+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -527,6 +527,8 @@ msgid ""
 "The page will be saved as a single HTML file. Only the text of the page will "
 "be saved. External resources such as images won't be saved"
 msgstr ""
+"Sidan sparas som en enda HTML-fil. Bara sidans text sparas. Externa resurser "
+"som bilder sparas inte."
 
 #: src/choosepagesaveformatdlg.cpp:40
 #, kde-format
@@ -534,6 +536,8 @@ msgid ""
 "The page will be saved as an HTML file. Any external resources the page "
 "requires, such as images, will be saved inside an apposite directory"
 msgstr ""
+"Sidan sparas som en HTML-fil. Alla externa resurser som sidan kräver, såsom "
+"bilder, sparas inne i en lämplig katalog"
 
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
@@ -543,38 +547,39 @@ msgid ""
 "<br><strong>Note</strong>: not all browsers are able to display this kind of "
 "files"
 msgstr ""
+"Sidan sparas som en MTHML-fil, som innehåller både sidans text och "
+"eventuella externa resurser den kräver, såsom bilder.<br><strong>Observera</"
+"strong>: alla webbläsare kan inte visa den här sortens filer."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
-#, fuzzy, kde-format
-#| msgctxt "input dialog text for selecting html elements"
-#| msgid "Choose elements"
+#, kde-format
 msgid "Choose Save Format"
-msgstr "Välj element"
+msgstr "Välj format för att spara"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:20
 #, kde-format
 msgid "How would you like to save the page?"
-msgstr ""
+msgstr "Hur skulle du vilja spara sidan?"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As an HTML file &without external resources"
-msgstr ""
+msgstr "Som en HTML-fil &utan externa resurser"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
 #, kde-format
 msgid "As a &complete HTML page"
-msgstr ""
+msgstr "Som en fullständig &HTML-sida"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As a &MHTML file"
-msgstr ""
+msgstr "Som en &MHTML-fil"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -1005,10 +1010,9 @@ msgid "Do Not Allow"
 msgstr "Tillåt inte"
 
 #: src/webenginepart.cpp:213
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "Spara bild som..."
+msgstr "Spara fullständig HTML-sida som..."
 
 #: src/webenginepart.cpp:217
 #, kde-format

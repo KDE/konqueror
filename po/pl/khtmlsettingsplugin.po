@@ -1,5 +1,5 @@
 # translation of khtmlsettingsplugin.po to
-# Version: $Revision: 1646898 $
+# Version: $Revision: 1657240 $
 #
 # Copyright (C) 2002, 2004, 2005, 2007 Free Software Foundation, Inc.
 # Marcin Giedz <mgiedz@elka.pw.edu.pl>, 2002.
@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"POT-Creation-Date: 2023-08-01 00:45+0000\n"
 "PO-Revision-Date: 2023-03-12 09:03+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -34,67 +34,67 @@ msgstr "&Narzędzia"
 msgid "Extra Toolbar"
 msgstr "Dodatkowy pasek"
 
-#: settingsplugin.cpp:41
+#: settingsplugin.cpp:42
 #, kde-format
 msgid "HTML Settings"
 msgstr "Ustawienia HTML"
 
-#: settingsplugin.cpp:46
+#: settingsplugin.cpp:47
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"
 
-#: settingsplugin.cpp:51
+#: settingsplugin.cpp:52
 #, kde-format
 msgid "&Java"
 msgstr "&Java"
 
-#: settingsplugin.cpp:56
+#: settingsplugin.cpp:57
 #, kde-format
 msgid "&Cookies"
 msgstr "&Ciasteczka"
 
-#: settingsplugin.cpp:61
+#: settingsplugin.cpp:62
 #, kde-format
 msgid "&Plugins"
 msgstr "&Wtyczki"
 
-#: settingsplugin.cpp:66
+#: settingsplugin.cpp:67
 #, kde-format
 msgid "Autoload &Images"
 msgstr "Automatyczne wczytywanie &obrazków"
 
-#: settingsplugin.cpp:73
+#: settingsplugin.cpp:74
 #, kde-format
 msgid "Enable Pro&xy"
 msgstr "Włącz &pośrednika"
 
-#: settingsplugin.cpp:78
+#: settingsplugin.cpp:79
 #, kde-format
 msgid "Enable Cac&he"
 msgstr "&Włącz pamięć"
 
-#: settingsplugin.cpp:83
+#: settingsplugin.cpp:84
 #, kde-format
 msgid "Cache Po&licy"
 msgstr "&Zasady pamięci"
 
-#: settingsplugin.cpp:85
+#: settingsplugin.cpp:86
 #, kde-format
 msgid "&Keep Cache in Sync"
 msgstr "&Utrzymuj zsynchronizowaną pamięć podręczną"
 
-#: settingsplugin.cpp:86
+#: settingsplugin.cpp:87
 #, kde-format
 msgid "&Use Cache if Possible"
 msgstr "&Użyj pamięci podręcznej jeśli możliwe"
 
-#: settingsplugin.cpp:87
+#: settingsplugin.cpp:88
 #, kde-format
 msgid "&Offline Browsing Mode"
 msgstr "Tryb przeglądania &offline"
 
-#: settingsplugin.cpp:180
+#: settingsplugin.cpp:181
 #, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
@@ -103,7 +103,7 @@ msgstr ""
 "Nie można zmienić ustawienia ciasteczek, ponieważ usługa ciasteczek nie "
 "mógła zostać uruchomiona."
 
-#: settingsplugin.cpp:182
+#: settingsplugin.cpp:183
 #, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"
