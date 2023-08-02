@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-01 00:45+0000\n"
-"PO-Revision-Date: 2022-08-19 06:32+0200\n"
+"PO-Revision-Date: 2023-08-01 06:32+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,54 +16,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: src/browseropenorsavequestion.cpp:89
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "ტიპი: %1"
 
 #: src/browseropenorsavequestion.cpp:97
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "ქმედების დამახსოვრება ამ ტიპის ფაილებისათვის"
 
 #: src/browseropenorsavequestion.cpp:149 src/browseropenorsavequestion.cpp:237
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr ""
+msgstr "%1-ით &გახსნა"
 
 #: src/browseropenorsavequestion.cpp:213
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr ""
+msgstr "%1-ით &გახსნა"
 
 #: src/browseropenorsavequestion.cpp:224 src/browseropenorsavequestion.cpp:318
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr ""
+msgstr "&გავხსნა \"%1\"?"
 
 #: src/browseropenorsavequestion.cpp:228
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr ""
+msgstr "&გამხსნელი პროგრამა..."
 
 #: src/browseropenorsavequestion.cpp:246
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
-msgstr "&გახსნა"
+msgstr "&გამხსნელი პროგრამა"
 
 #: src/browseropenorsavequestion.cpp:315
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "&გახსნა"
@@ -72,21 +70,21 @@ msgstr "&გახსნა"
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr ""
+msgstr "სახელი: %1"
 
 #: src/browseropenorsavequestion.cpp:341
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "ფაილის სახელი ნარჩევია სერვერის მიერ"
 
 #: src/htmlsettingsinterface.cpp:19
 msgid "Accept"
-msgstr ""
+msgstr "დასტური"
 
 #: src/htmlsettingsinterface.cpp:21
 msgid "Reject"
-msgstr ""
+msgstr "უარყოფა"
 
 #: src/konq_popupmenu.cpp:219
 #, kde-format

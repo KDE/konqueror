@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 00:46+0000\n"
+"POT-Creation-Date: 2023-08-02 00:47+0000\n"
 "PO-Revision-Date: 2013-02-09 00:50+0200\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -989,64 +989,64 @@ msgstr "Permite"
 msgid "Do Not Allow"
 msgstr ""
 
-#: src/webenginepart.cpp:213
+#: src/webenginepart.cpp:212
 #, fuzzy, kde-format
 #| msgid "Save Image As..."
 msgid "Save Full HTML Page As..."
 msgstr "Salvare imagine ca..."
 
-#: src/webenginepart.cpp:217
+#: src/webenginepart.cpp:216
 #, kde-format
 msgid "Print Preview"
 msgstr "Previzualizare pentru tipărire"
 
-#: src/webenginepart.cpp:221
+#: src/webenginepart.cpp:220
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Apropie"
 
-#: src/webenginepart.cpp:226
+#: src/webenginepart.cpp:225
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Depărtează"
 
-#: src/webenginepart.cpp:231
+#: src/webenginepart.cpp:230
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Dimensiune reală"
 
-#: src/webenginepart.cpp:236
+#: src/webenginepart.cpp:235
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Apropie numai textul"
 
-#: src/webenginepart.cpp:244
+#: src/webenginepart.cpp:243
 #, fuzzy, kde-format
 #| msgctxt "zoom in action"
 #| msgid "Zoom In"
 msgid "Zoom To DPI"
 msgstr "Apropie"
 
-#: src/webenginepart.cpp:257
+#: src/webenginepart.cpp:256
 #, kde-format
 msgid "Set &Encoding"
 msgstr "Stabil&ește codarea"
 
-#: src/webenginepart.cpp:260
+#: src/webenginepart.cpp:259
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Afișează s&ursa documentului"
 
-#: src/webenginepart.cpp:265 src/webenginepart.cpp:565
+#: src/webenginepart.cpp:264 src/webenginepart.cpp:564
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:271
+#: src/webenginepart.cpp:270
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1056,12 +1056,12 @@ msgstr ""
 "<h3>Caută text</h3>Arată un dialog care vă permite să găsiți un text în "
 "pagina afișată."
 
-#: src/webenginepart.cpp:563
+#: src/webenginepart.cpp:562
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "Informațiile SSL pentru acest sait par să fie deteriorate."
 
-#: src/webenginepart.cpp:644
+#: src/webenginepart.cpp:643
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1069,7 +1069,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "Email: "
 
-#: src/webenginepart.cpp:673
+#: src/webenginepart.cpp:672
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1077,7 +1077,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - Copie: "
 
-#: src/webenginepart.cpp:675
+#: src/webenginepart.cpp:674
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1085,7 +1085,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - Copie oarbă: "
 
-#: src/webenginepart.cpp:677
+#: src/webenginepart.cpp:676
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1093,42 +1093,42 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Subiect: "
 
-#: src/webenginepart.cpp:681 src/webenginepart.cpp:692
+#: src/webenginepart.cpp:680 src/webenginepart.cpp:691
 #, kde-format
 msgid " (In new window)"
 msgstr " (În fereastră nouă)"
 
-#: src/webenginepart.cpp:690
+#: src/webenginepart.cpp:689
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (În cadrul părinte)"
 
-#: src/webenginepart.cpp:754
+#: src/webenginepart.cpp:753
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Doriți să căutați <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:755
+#: src/webenginepart.cpp:754
 #, kde-format
 msgid "Internet Search"
 msgstr "Căutare Internet"
 
-#: src/webenginepart.cpp:755
+#: src/webenginepart.cpp:754
 #, kde-format
 msgid "&Search"
 msgstr "&Caută"
 
-#: src/webenginepart.cpp:866
+#: src/webenginepart.cpp:865
 #, kde-format
 msgid "Close window?"
 msgstr "Închideți fereastra?"
 
-#: src/webenginepart.cpp:866
+#: src/webenginepart.cpp:865
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Cerere de confirmare"
 
-#: src/webenginepart.cpp:940
+#: src/webenginepart.cpp:939
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
@@ -1136,46 +1136,46 @@ msgstr ""
 "<html>Doriți ca %1 să rețină informațiile de autentificare pentru <b>%2</b>?"
 "</html>"
 
-#: src/webenginepart.cpp:1011
+#: src/webenginepart.cpp:1010
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr ""
 
-#: src/webenginepart.cpp:1016
+#: src/webenginepart.cpp:1015
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "&Memorize Passwords in This Page Now"
 msgstr "Elimină toate parolele păstrate pentru acest sait"
 
-#: src/webenginepart.cpp:1020
+#: src/webenginepart.cpp:1019
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1024
+#: src/webenginepart.cpp:1023
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1028
+#: src/webenginepart.cpp:1027
 #, fuzzy, kde-format
 #| msgid "&Allow password caching for this site"
 msgid "&Allow Password Caching for This Site"
 msgstr "Permite păstr&area parolelor pentru acest sait"
 
-#: src/webenginepart.cpp:1032
+#: src/webenginepart.cpp:1031
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "Elimină toate parolele păstrate pentru acest sait"
 
-#: src/webenginepart.cpp:1036
+#: src/webenginepart.cpp:1035
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1040
+#: src/webenginepart.cpp:1039
 #, kde-format
 msgid "&Close Wallet"
 msgstr "În&chide portofelul"

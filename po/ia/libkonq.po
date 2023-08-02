@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# g.sora <g.sora@tiscali.it>, 2010, 2011, 2020, 2021.
+# g.sora <g.sora@tiscali.it>, 2010, 2011, 2020, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-01 00:45+0000\n"
-"PO-Revision-Date: 2021-08-05 21:55+0200\n"
+"PO-Revision-Date: 2023-08-01 22:26+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,54 +15,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.04.3\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: src/browseropenorsavequestion.cpp:89
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "Typo: %1"
 
 #: src/browseropenorsavequestion.cpp:97
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "Memora action pe files de iste typo"
 
 #: src/browseropenorsavequestion.cpp:149 src/browseropenorsavequestion.cpp:237
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr ""
+msgstr "Aperi c&on %1"
 
 #: src/browseropenorsavequestion.cpp:213
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr ""
+msgstr "Aperi &con %1"
 
 #: src/browseropenorsavequestion.cpp:224 src/browseropenorsavequestion.cpp:318
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr ""
+msgstr "Aperi '%1'?"
 
 #: src/browseropenorsavequestion.cpp:228
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr ""
+msgstr "Aperi co&n ..."
 
 #: src/browseropenorsavequestion.cpp:246
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
-msgstr "&Aperi"
+msgstr "&Aperi con"
 
 #: src/browseropenorsavequestion.cpp:315
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "&Aperi"
@@ -71,21 +69,21 @@ msgstr "&Aperi"
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr ""
+msgstr "Nomine: %1"
 
 #: src/browseropenorsavequestion.cpp:341
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "Isto es le nomine de file suggestionate per le servitor"
 
 #: src/htmlsettingsinterface.cpp:19
 msgid "Accept"
-msgstr ""
+msgstr "Accepta"
 
 #: src/htmlsettingsinterface.cpp:21
 msgid "Reject"
-msgstr ""
+msgstr "Rejecta"
 
 #: src/konq_popupmenu.cpp:219
 #, kde-format
