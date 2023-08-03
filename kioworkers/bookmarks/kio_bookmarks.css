@@ -1,0 +1,105 @@
+/*
+SPDX-FileCopyrightText: 2008 Xavier Vello <xavier.vello@gmail.com>
+
+SPDX-License-Identifier: GPL-2.0-or-later
+*/
+
+body {
+  margin: 0 42px;
+  font-size: small;
+  font-family: "sans-serif";
+  line-height: 16px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+div.column {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+  max-width: 300px;
+  min-width: 150px;
+  padding-top: 5px;
+  text-align: left;
+}
+
+ul li {
+  list-style: none;
+  white-space: normal;
+  margin: 0;
+  padding: 0;
+}
+
+div.column > ul {
+  margin: 5px 5px 10px 5px;
+  padding: 0 5px 5px 5px;
+  min-height: 150px;
+  background: no-repeat 90% 95%;
+}
+
+div.column > ul > li.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 100%;
+  margin: 2px -6px 5px -6px;
+  border-bottom: 1px solid #AAA;
+}
+
+li.link {
+  padding: 2px 5px 2px 20px;
+  margin-bottom: 0px;
+}
+
+ul ul {
+  margin-bottom: 5px;
+  border-left: 1px solid #AAA;
+  margin-left: 8px;
+  padding-left: 5px;
+}
+
+ul ul li.title {
+  padding: 0px 5px 2px 20px;
+  margin-left: -13px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid #AAA;
+  height: 10px;
+}
+
+li img {
+  float: left;
+  margin-left: -20px;
+}
+
+a, a:hover a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+hr {
+  width: 66%;
+  margin: 7px auto 7px auto;
+  background-color: #AAA;
+  border: none;
+  height: 1px;
+}
+
+p.message {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  margin-top: 2em;
+  padding: 2em;
+}
+
+div.toolbar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 2px 0;
+}
+
+div.toolbar img {
+  display: block;
+  padding: 2px 5px;
+  margin: 0;
+}

@@ -65,6 +65,7 @@ add_subdirectory( pics )
 add_subdirectory( sidebar )
 add_subdirectory( settings )
 add_subdirectory( plugins )
+add_subdirectory( kioworkers )
 
 if (KF5DocTools_FOUND)
     add_subdirectory( doc )
