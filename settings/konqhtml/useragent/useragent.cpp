@@ -44,7 +44,7 @@ UserAgent::UserAgent(QWidget* parent, const QVariantList& ): KCModule(parent),
     connect(m_ui->templates, &QTreeWidget::itemDoubleClicked, this, &UserAgent::useDblClickedTemplate);
     connect(m_ui->templates, &QTreeWidget::itemSelectionChanged, this, &UserAgent::templateSelectionChanged);
     connect(m_ui->useDefaultUA, &QCheckBox::toggled, this, [this](bool on){toggleCustomUA(!on);});
-    connect(m_ui->userAgentString, &QLineEdit::textEdited, this, [this](){emit changed(true);});
+    connect(m_ui->userAgentString, &QLineEdit::textChanged, this, [this](){emit changed(true);});
     connect(m_ui->editTemplateBtn, &QPushButton::clicked, this, &UserAgent::editTemplate);
     connect(m_ui->newTemplateBtn, &QPushButton::clicked, this, &UserAgent::createNewTemplate);
     connect(m_ui->duplicateTemplateBtn, &QPushButton::clicked, this, &UserAgent::duplicateTemplate);
