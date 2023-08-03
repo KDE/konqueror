@@ -18,110 +18,10 @@
 #include <kactioncollection.h>
 #include <kstringhandler.h>
 
-#include "kbookmarkimporter.h"
-#include "kbookmarkimporter_opera.h"
-#include "kbookmarkimporter_ie.h"
 #include "kbookmarkmanager.h"
-#include "konqbookmarkmenu_p.h"
 #include "konqpixmapprovider.h"
 
 using namespace Konqueror;
-
-KImportedBookmarkMenu::KImportedBookmarkMenu(KBookmarkManager *mgr,
-        KBookmarkOwner *owner, QMenu *parentMenu,
-        const QString &type, const QString &location)
-    : KBookmarkMenu(mgr, owner, parentMenu, QString()), m_type(type), m_location(location)
-{
-    connect(parentMenu, &QMenu::aboutToShow, this, &KImportedBookmarkMenu::slotNSLoad);
-}
-
-KImportedBookmarkMenu::KImportedBookmarkMenu(KBookmarkManager *mgr,
-        KBookmarkOwner *owner, QMenu *parentMenu)
-    : KBookmarkMenu(mgr, owner, parentMenu, QString()), m_type(QString()), m_location(QString())
-{
-}
-
-KImportedBookmarkMenu::~KImportedBookmarkMenu()
-{
-}
-
-void KImportedBookmarkMenu::refill()
-{
-}
-
-void KImportedBookmarkMenu::clear()
-{
-}
-
-void KImportedBookmarkMenu::slotNSLoad()
-{
-    // qCDebug(KBOOKMARKS_LOG)<<"**** slotNSLoad  ****"<<m_type<<"  "<<m_location;
-    // only fill menu once
-    disconnect(parentMenu(), &QMenu::aboutToShow, nullptr, nullptr);
-
-    // not NSImporter, but kept old name for BC reasons
-    KBookmarkMenuImporter importer(manager(), this);
-    importer.openBookmarks(m_location, m_type);
-}
-
-/********************************************************************/
-
-void KBookmarkMenuImporter::openBookmarks(const QString &location, const QString &type)
-{
-    mstack.push(m_menu);
-
-    KBookmarkImporterBase *importer = KBookmarkImporterBase::factory(type);
-    if (!importer) {
-        return;
-    }
-    importer->setFilename(location);
-    connectToImporter(*importer);
-    importer->parse();
-
-    delete importer;
-}
-
-void KBookmarkMenuImporter::connectToImporter(const QObject &importer)
-{
-    connect(&importer, SIGNAL(newBookmark(QString,QString,QString)),
-            SLOT(newBookmark(QString,QString,QString)));
-    connect(&importer, SIGNAL(newFolder(QString,bool,QString)),
-            SLOT(newFolder(QString,bool,QString)));
-    connect(&importer, SIGNAL(newSeparator()), SLOT(newSeparator()));
-    connect(&importer, SIGNAL(endFolder()), SLOT(endFolder()));
-}
-
-void KBookmarkMenuImporter::newBookmark(const QString &text, const QString &url, const QString &)
-{
-    KBookmark bm = KBookmark::standaloneBookmark(text, QUrl(url), QStringLiteral("html"));
-    QAction *action = new KBookmarkAction(bm, mstack.top()->owner(), this);
-    mstack.top()->parentMenu()->addAction(action);
-    mstack.top()->m_actions.append(action);
-}
-
-void KBookmarkMenuImporter::newFolder(const QString &text, bool, const QString &)
-{
-    QString _text = KStringHandler::csqueeze(text).replace(QLatin1Char('&'), QLatin1String("&&"));
-    KActionMenu *actionMenu = new KImportedBookmarkActionMenu(QIcon::fromTheme(QStringLiteral("folder")), _text, this);
-    mstack.top()->parentMenu()->addAction(actionMenu);
-    mstack.top()->m_actions.append(actionMenu);
-    KImportedBookmarkMenu *subMenu = new KImportedBookmarkMenu(m_pManager, m_menu->owner(), actionMenu->menu());
-    mstack.top()->m_lstSubMenus.append(subMenu);
-
-    mstack.push(subMenu);
-}
-
-void KBookmarkMenuImporter::newSeparator()
-{
-    mstack.top()->parentMenu()->addSeparator();
-}
-
-void KBookmarkMenuImporter::endFolder()
-{
-    mstack.pop();
-}
-
-/********************************************************************/
 
 KonqBookmarkContextMenu::KonqBookmarkContextMenu(const KBookmark &bm, KBookmarkManager *mgr, KBookmarkOwner *owner)
     : KBookmarkContextMenu(bm, mgr, owner)
@@ -183,47 +83,11 @@ void KonqBookmarkContextMenu::openInNewWindow()
 /******************************/
 /******************************/
 
-void KonqBookmarkMenu::fillDynamicBookmarks()
-{
-    if (isDirty()
-            && KBookmarkManager::userBookmarksManager()->path() == manager()->path()) {
-        bool haveSep = false;
-
-        const QStringList keys = KonqBookmarkMenu::dynamicBookmarksList();
-        for (QStringList::const_iterator it = keys.begin(); it != keys.end(); ++it) {
-            DynMenuInfo info;
-            info = showDynamicBookmarks((*it));
-
-            if (!info.show || !QFile::exists(info.location)) {
-                continue;
-            }
-
-            if (!haveSep) {
-                parentMenu()->addSeparator();
-                haveSep = true;
-            }
-
-            KActionMenu *actionMenu;
-            actionMenu = new KActionMenu(QIcon::fromTheme(info.type), info.name, this);
-            m_actionCollection->addAction(QStringLiteral("kbookmarkmenu"), actionMenu);
-
-            parentMenu()->addAction(actionMenu);
-            m_actions.append(actionMenu);
-
-            KImportedBookmarkMenu *subMenu =
-                new KImportedBookmarkMenu(manager(), owner(), actionMenu->menu(),
-                                          info.type, info.location);
-            m_lstSubMenus.append(subMenu);
-        }
-    }
-}
-
 void KonqBookmarkMenu::refill()
 {
     if (isRoot()) {
         addActions();
     }
-    fillDynamicBookmarks();
     fillBookmarks();
     if (!isRoot()) {
         addActions();
@@ -259,66 +123,6 @@ QAction *KonqBookmarkMenu::actionForBookmark(const KBookmark &_bm)
         m_actions.append(action);
         return action;
     }
-}
-
-KonqBookmarkMenu::DynMenuInfo KonqBookmarkMenu::showDynamicBookmarks(const QString &id)
-{
-    KConfig bookmarkrc(QStringLiteral("kbookmarkrc"), KConfig::NoGlobals);
-    KConfigGroup config(&bookmarkrc, "Bookmarks");
-
-    DynMenuInfo info;
-    info.show = false;
-    info.d = nullptr;
-
-    if (!config.hasKey("DynamicMenus")) {
-        const QString dynamicMenuGroupId = QLatin1String("DynamicMenu-") + id;
-        if (bookmarkrc.hasGroup(dynamicMenuGroupId)) {
-            KConfigGroup dynGroup(&bookmarkrc, dynamicMenuGroupId);
-            info.show = dynGroup.readEntry("Show", false);
-            info.location = dynGroup.readPathEntry("Location", QString());
-            info.type = dynGroup.readEntry("Type");
-            info.name = dynGroup.readEntry("Name");
-        }
-    }
-    return info;
-}
-
-QStringList KonqBookmarkMenu::dynamicBookmarksList()
-{
-    KConfigGroup config = KSharedConfig::openConfig(QStringLiteral("kbookmarkrc"), KConfig::NoGlobals)->group("Bookmarks");
-
-    QStringList mlist;
-    if (config.hasKey("DynamicMenus")) {
-        mlist = config.readEntry("DynamicMenus", QStringList());
-    }
-
-    return mlist;
-}
-
-void KonqBookmarkMenu::setDynamicBookmarks(const QString &id, const DynMenuInfo &newMenu)
-{
-    KSharedConfig::Ptr kbookmarkrc = KSharedConfig::openConfig(QStringLiteral("kbookmarkrc"), KConfig::NoGlobals);
-    KConfigGroup dynConfig = kbookmarkrc->group(QLatin1String("DynamicMenu-") + id);
-
-    // add group unconditionally
-    dynConfig.writeEntry("Show", newMenu.show);
-    dynConfig.writePathEntry("Location", newMenu.location);
-    dynConfig.writeEntry("Type", newMenu.type);
-    dynConfig.writeEntry("Name", newMenu.name);
-
-    QStringList elist;
-    KConfigGroup config = kbookmarkrc->group("Bookmarks");
-    if (config.hasKey("DynamicMenus")) {
-        elist = config.readEntry("DynamicMenus", QStringList());
-    }
-
-    // make sure list includes type
-    if (!elist.contains(id)) {
-        elist << id;
-        config.writeEntry("DynamicMenus", elist);
-    }
-
-    config.sync();
 }
 
 QMenu *KonqBookmarkMenu::contextMenu(QAction *action)

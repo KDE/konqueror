@@ -52,41 +52,9 @@ public:
     }
 
 protected:
-    /**
-     * Structure used for storing information about
-     * the dynamic menu setting
-     */
-    struct DynMenuInfo {
-        bool show;
-        QString location;
-        QString type;
-        QString name;
-        class DynMenuInfoPrivate *d;
-    };
-
-    /**
-     * @return dynmenu info block for the given dynmenu name
-     */
-    static DynMenuInfo showDynamicBookmarks(const QString &id);
-
-    /**
-     * Shows an extra menu for the given bookmarks file and type.
-     * Upgrades from option inside XBEL to option in rc file
-     * on first call of this function.
-     * @param id the unique identification for the dynamic menu
-     * @param info a DynMenuInfo struct containing the to be added/modified data
-     */
-    static void setDynamicBookmarks(const QString &id, const DynMenuInfo &info);
-
-    /**
-     * @return list of dynamic menu ids
-     */
-    static QStringList dynamicBookmarksList();
-
     void refill() override;
     QAction *actionForBookmark(const KBookmark &bm) override;
     QMenu *contextMenu(QAction *action) override;
-    void fillDynamicBookmarks();
 };
 
 class KonqBookmarkContextMenu : public KBookmarkContextMenu
