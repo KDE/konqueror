@@ -312,7 +312,7 @@ bool ClientApp::doIt(const QCommandLineParser &parser)
         //kfmclient_* desktop entries.
         if (parser.isSet(QStringLiteral("mimetype")) && argc == 1) {
             KConfigGroup grp = KSharedConfig::openConfig(QStringLiteral("konquerorrc"))->group("UserSettings");
-            url = QUrl(grp.readEntry("StartURL", QStringLiteral("konq:blank")));
+            url = QUrl(grp.readEntry("StartURL", QStringLiteral("konq:konqueror")));
         } else if (argc > 1) {
             url = filteredUrl(args.at(1));
         }
