@@ -1,7 +1,7 @@
 [Desktop Entry]
 # This desktop file is the one used by kcmshell5 componentchooser
 Type=Application
-Exec=kfmclient openURL %u inode/directory
+Exec=kfmclient --mimetype inode/directory openURL %u
 Icon=konqueror
 Terminal=false
 MimeType=inode/directory;

@@ -25,6 +25,7 @@
 #include <KAboutData>
 #include <KWindowSystem>
 #include <KShell>
+#include <KSharedConfig>
 
 #include <kcoreaddons_version.h>
 
@@ -65,6 +66,16 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 
     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("commands"), i18n("Show available commands")));
 
+    //This option is needed to fix a bug caused by the fact that Plasma inserts kfmclient_html in the Favorites section of the K menu.
+    //kfmclient_html calls "kfmclient_openURL %u text/html", where %u is replaced by an URL. However, when the user
+    //activates it from the K menu, there's no URL, so the command becomes "kfmclient openURL text/html", which causes
+    //kfmclient to attempt to open the URL text/html. Adding this option allows to change the exec line in kfmclient_html
+    //to kfmclient --mimetype text/html openURL %u, allowing an easy fix of the bug (see doIt()).
+    //TODO: remove the old syntax of specifying the mimetype after the URL when building for KF6
+    parser.addOption({{QStringLiteral("mimetype"), QStringLiteral("t")},
+        i18n("The mimetype of the URL. Allows Konqueror to determine in advance which component to use, making it start faster."),
+        i18nc("the name for a the value of an option on the command line help", "type"), QString()});
+
     parser.addPositionalArgument(QStringLiteral("command"), i18n("Command (see --commands)"));
 
     parser.addPositionalArgument(QStringLiteral("[URL(s)]"), i18n("Arguments for command"));
@@ -82,10 +93,12 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
                   "            # Opens a window showing 'url'.\n"
                   "            #  'url' may be a relative path\n"
                   "            #   or file name, such as . or subdir/\n"
-                  "            #   If 'url' is omitted, $HOME is used instead.\n\n").toLocal8Bit());
+                  "            #   If 'url' is omitted, the start page is shown.\n\n").toLocal8Bit());
         puts(i18n("            # If 'mimetype' is specified, it will be used to determine the\n"
                   "            #   component that Konqueror should use. For instance, set it to\n"
-                  "            #   text/html for a web page, to make it appear faster\n\n").toLocal8Bit());
+                  "            #   text/html for a web page, to make it appear faster\n"
+                  "            # Note: this way of specifying mimetype is deprecated.\n"
+                  "            #   Please use the --mimetype option\n\n").toLocal8Bit());
 
         puts(i18n("  kfmclient newTab 'url' ['mimetype']\n"
                   "            # Same as above but opens a new tab with 'url' in an existing Konqueror\n"
@@ -290,13 +303,16 @@ bool ClientApp::doIt(const QCommandLineParser &parser)
 
         QUrl url = argc > 1 ? filteredUrl(args.at(1)) : QUrl();
 
-        //If the given URL is empty an "Undocumented error" error page would be displayed.
-        //To avoid this, default to the user's home directory, as if no URL had been given
+        //If the given URL is empty, show the start page
         if (url.isEmpty()) {
-            url = QUrl::fromLocalFile(QDir::homePath());
+            KConfigGroup grp = KSharedConfig::openConfig(QStringLiteral("konquerorrc"))->group("UserSettings");
+            url = QUrl(grp.readEntry("StartURL", QStringLiteral("konq:konqueror")));
         }
 
         QString mimetype = argc == 3 ? args.at(2) : QString();
+        if (mimetype.isEmpty()) {
+            mimetype = parser.value(QStringLiteral("mimetype"));
+        }
 
         return createNewWindow(url, command == QLatin1String("newTab"), tempFile, mimetype);
     } else if (command == QLatin1String("openProfile")) { // deprecated command, kept for compat
