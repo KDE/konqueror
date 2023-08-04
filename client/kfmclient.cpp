@@ -25,6 +25,7 @@
 #include <KAboutData>
 #include <KWindowSystem>
 #include <KShell>
+#include <KSharedConfig>
 
 #include <kcoreaddons_version.h>
 
@@ -64,6 +65,18 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("noninteractive"), i18n("Non interactive use: no message boxes")));
 
     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("commands"), i18n("Show available commands")));
+
+    //This option is needed to fix a bug caused by the fact that Plasma inserts kfmclient_html in the Favorites section of the K menu.
+    //kfmclient_html calls "kfmclient_openURL %u text/html", where %u is replaced by an URL. However, when the user
+    //activates it from the K menu, there's no URL, so the command becomes "kfmclient openURL text/html", which causes
+    //kfmclient to attempt to open the URL text/html. Adding this option allows to change the exec line in kfmclient_html
+    //to kfmclient --mimetype text/html openURL %u, allowing an easy fix of the bug (see doIt()).
+    //The option is hidden because string freeze forbids to add text visible to the user.
+    QCommandLineOption typeOption{{QStringLiteral("mimetype"), QStringLiteral("t")},
+        QStringLiteral("The mimetype of the URL. Allows Konqueror to determine in advance which component to use, making it start faster."),
+        QStringLiteral("type"), QString()};
+    typeOption.setFlags(QCommandLineOption::HiddenFromHelp);
+    parser.addOption(typeOption);
 
     parser.addPositionalArgument(QStringLiteral("command"), i18n("Command (see --commands)"));
 
@@ -288,7 +301,21 @@ bool ClientApp::doIt(const QCommandLineParser &parser)
         checkArgumentCount(argc, 1, 3);
         const bool tempFile = parser.isSet(QStringLiteral("tempfile"));
 
-        QUrl url = argc > 1 ? filteredUrl(args.at(1)) : QUrl();
+        QUrl url;
+        //This is a workaround to ensure that, when kfmclient_html is launched from
+        //the Favorites section of the K menu, the starting page is loaded as expected
+        //instead of the home page (it would make more sense to load the starting page
+        //also when no URL is given, but can't do that right now because of string freeze:
+        //the behavior when no URL is given is displayed in the help
+        //Since --mimetype is (for now) an internal option, it's safe to assume that when
+        //that option is set, it means that kfmclient has been called from one of the
+        //kfmclient_* desktop entries.
+        if (parser.isSet(QStringLiteral("mimetype")) && argc == 1) {
+            KConfigGroup grp = KSharedConfig::openConfig(QStringLiteral("konquerorrc"))->group("UserSettings");
+            url = QUrl(grp.readEntry("StartURL", QStringLiteral("konq:blank")));
+        } else if (argc > 1) {
+            url = filteredUrl(args.at(1));
+        }
 
         //If the given URL is empty an "Undocumented error" error page would be displayed.
         //To avoid this, default to the user's home directory, as if no URL had been given
@@ -297,6 +324,9 @@ bool ClientApp::doIt(const QCommandLineParser &parser)
         }
 
         QString mimetype = argc == 3 ? args.at(2) : QString();
+        if (mimetype.isEmpty()) {
+            mimetype = parser.value(QStringLiteral("mimetype"));
+        }
 
         return createNewWindow(url, command == QLatin1String("newTab"), tempFile, mimetype);
     } else if (command == QLatin1String("openProfile")) { // deprecated command, kept for compat

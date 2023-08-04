@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=kfmclient openURL %u application/x-webarchive
+Exec=kfmclient --mimetype application/x-webarchive openURL %u
 Icon=konqueror
 Terminal=false
 MimeType=application/x-webarchive;
