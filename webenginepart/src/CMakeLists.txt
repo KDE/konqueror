@@ -29,7 +29,6 @@ set(kwebenginepartlib_LIB_SRCS
     webenginewallet.cpp
     webengineparterrorschemehandler.cpp
     webenginepartkiohandler.cpp
-    webenginepartcookiejar.cpp
     settings/webenginesettings.cpp
     settings/webengine_filter.cpp
     ui/searchbar.cpp
@@ -48,7 +47,22 @@ set(kwebenginepartlib_LIB_SRCS
     choosepagesaveformatdlg.cpp
 )
 
-ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS webenginecustomizecacheablefieldsdlg.ui ui/credentialsdetailswidget.ui webenginepartcertificateerrordlg.ui choosepagesaveformatdlg.ui)
+if (ManageCookiesInternally)
+  list(APPEND kwebenginepartlib_LIB_SRCS
+    cookies/webenginepartcookiejar6.cpp
+    cookies/cookiealertdlg.cpp
+    )
+  ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS cookies/cookiealertdlg.ui)
+else()
+  list(APPEND kwebenginepartlib_LIB_SRCS cookies/webenginepartcookiejar_kio.cpp)
+endif()
+
+ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS
+  webenginecustomizecacheablefieldsdlg.ui
+  ui/credentialsdetailswidget.ui
+  webenginepartcertificateerrordlg.ui
+  choosepagesaveformatdlg.ui
+  )
 
 qt5_add_resources(kwebenginepartlib_LIB_SRCS webenginepart.qrc)
 

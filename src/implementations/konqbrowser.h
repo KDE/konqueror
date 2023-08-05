@@ -11,6 +11,11 @@
 
 #include <QPointer>
 
+namespace KonqInterfaces
+{
+    class CookieJar;
+}
+
 /**
  * @brief Implementation of KonqInterfaces::Browser
  */
@@ -27,6 +32,14 @@ public:
     KonqBrowser(QObject* parent = nullptr);
 
     ~KonqBrowser();  ///< Destructor
+
+    KonqInterfaces::CookieJar* cookieJar() const override; ///< Implementation of KonqInterfaces::Browser::cookieJar()
+
+    void setCookieJar(KonqInterfaces::CookieJar* jar) override; ///< Implementation of KonqInterfaces::Browser::setCookieJar()
+
+private:
+
+    QPointer<KonqInterfaces::CookieJar> m_cookieJar; ///< Holds the cookie jar
 };
 
 #endif // KONQBROWSER_H

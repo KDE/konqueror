@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>KCookiesPolicySelectionDlgUI</class>
+ <widget class="QWidget" name="KCookiesPolicySelectionDlgUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>287</width>
+    <height>81</height>
+   </rect>
+  </property>
+  <layout class="QFormLayout" name="formLayout">
+   <property name="fieldGrowthPolicy">
+    <enum>QFormLayout::ExpandingFieldsGrow</enum>
+   </property>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lbDomain">
+     <property name="whatsThis">
+      <string>&lt;qt&gt;
+Enter the host or domain to which this policy applies, e.g. &lt;b&gt;www.kde.org&lt;/b&gt; or &lt;b&gt;.kde.org&lt;/b&gt;.
+&lt;/qt&gt;</string>
+     </property>
+     <property name="text">
+      <string>Site name:</string>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+     <property name="buddy">
+      <cstring>leDomain</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="leDomain">
+     <property name="whatsThis">
+      <string>Enter the host or domain name, e.g. .kde.org, this policy applies to.</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lbPolicy">
+     <property name="whatsThis">
+      <string>&lt;qt&gt;
+Select the desired policy:
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Accept&lt;/b&gt; - Allows this site to set cookies&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Accept until end of session&lt;/b&gt; - Allows this site to set cookies but they will expire at the end of the session.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Reject&lt;/b&gt; - Refuse all cookies sent from this site&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Ask&lt;/b&gt; - Prompt when cookies are received from this site&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/qt&gt;</string>
+     </property>
+     <property name="text">
+      <string>Policy:</string>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+     <property name="buddy">
+      <cstring>cbPolicy</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QComboBox" name="cbPolicy">
+     <property name="whatsThis">
+      <string>&lt;qt&gt;
+Select the desired policy:
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Accept&lt;/b&gt; - Allows this site to set cookies&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Accept until end of session&lt;/b&gt; - Allows this site to set cookies but they will expire at the end of the session.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Reject&lt;/b&gt; - Refuse all cookies sent from this site&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Ask&lt;/b&gt; - Prompt when cookies are received from this site&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/qt&gt;</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Accept</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Accept until end of session</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Reject</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Ask</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

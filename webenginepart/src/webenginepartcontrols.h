@@ -14,10 +14,17 @@
 
 #include <kwebenginepartlib_export.h>
 
+#ifdef MANAGE_COOKIES_INTERNALLY
+#include "cookies/webenginepartcookiejar6.h"
+typedef WebEnginePartCookieJar6 WebEnginePartCookieJar;
+#else
+#include "cookies/webenginepartcookiejar_kio.h"
+typedef WebEnginePartCookieJarKIO WebEnginePartCookieJar;
+#endif
+
 class QWebEngineProfile;
 class QWebEngineScript;
 
-class WebEnginePartCookieJar;
 class SpellCheckerManager;
 class WebEnginePartDownloadManager;
 class WebEnginePage;

@@ -6,7 +6,7 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#include "webenginepartcookiejar.h"
+#include "webenginepartcookiejar_kio.h"
 #include "settings/webenginesettings.h"
 #include <webenginepart_debug.h>
 
@@ -20,7 +20,7 @@
 #include <QApplication>
 #include <kio_version.h>
 
-const QVariant WebEnginePartCookieJar::s_findCookieFields = QVariant::fromValue(QList<int>{
+const QVariant WebEnginePartCookieJarKIO::s_findCookieFields = QVariant::fromValue(QList<int>{
         static_cast<int>(CookieDetails::domain),
         static_cast<int>(CookieDetails::path),
         static_cast<int>(CookieDetails::name),
@@ -32,24 +32,24 @@ const QVariant WebEnginePartCookieJar::s_findCookieFields = QVariant::fromValue(
     }
 );
 
-WebEnginePartCookieJar::CookieIdentifier::CookieIdentifier(const QNetworkCookie& cookie):
+WebEnginePartCookieJarKIO::CookieIdentifier::CookieIdentifier(const QNetworkCookie& cookie):
     name(cookie.name()), domain(cookie.domain()), path(cookie.path())
 {
 }
 
-WebEnginePartCookieJar::CookieIdentifier::CookieIdentifier(const QString& n, const QString& d, const QString& p):
+WebEnginePartCookieJarKIO::CookieIdentifier::CookieIdentifier(const QString& n, const QString& d, const QString& p):
     name(n), domain(d), path(p)
 {
 }
 
-WebEnginePartCookieJar::WebEnginePartCookieJar(QWebEngineProfile *prof, QObject *parent):
+WebEnginePartCookieJarKIO::WebEnginePartCookieJarKIO(QWebEngineProfile *prof, QObject *parent):
     QObject(parent), m_cookieStore(prof->cookieStore()),
     m_cookieServer("org.kde.kcookiejar5", "/modules/kcookiejar", "org.kde.KCookieServer")
 {
     prof->setPersistentCookiesPolicy(QWebEngineProfile::NoPersistentCookies);
-    connect(qApp, &QApplication::lastWindowClosed, this, &WebEnginePartCookieJar::deleteSessionCookies);
-    connect(m_cookieStore, &QWebEngineCookieStore::cookieAdded, this, &WebEnginePartCookieJar::addCookie);
-    connect(m_cookieStore, &QWebEngineCookieStore::cookieRemoved, this, &WebEnginePartCookieJar::removeCookie);
+    connect(qApp, &QApplication::lastWindowClosed, this, &WebEnginePartCookieJarKIO::deleteSessionCookies);
+    connect(m_cookieStore, &QWebEngineCookieStore::cookieAdded, this, &WebEnginePartCookieJarKIO::addCookie);
+    connect(m_cookieStore, &QWebEngineCookieStore::cookieRemoved, this, &WebEnginePartCookieJarKIO::removeCookie);
     if(!m_cookieServer.isValid()){
         qCDebug(WEBENGINEPART_LOG) << "Couldn't connect to KCookieServer";
     }
@@ -60,16 +60,16 @@ WebEnginePartCookieJar::WebEnginePartCookieJar(QWebEngineProfile *prof, QObject 
     m_cookieStore->setCookieFilter(filter);
 }
 
-WebEnginePartCookieJar::~WebEnginePartCookieJar()
+WebEnginePartCookieJarKIO::~WebEnginePartCookieJarKIO()
 {
 }
 
-bool WebEnginePartCookieJar::filterCookie(const QWebEngineCookieStore::FilterRequest& req)
+bool WebEnginePartCookieJarKIO::filterCookie(const QWebEngineCookieStore::FilterRequest& req)
 {
     return WebEngineSettings::self()->acceptCrossDomainCookies() || !req.thirdParty;
 }
 
-void WebEnginePartCookieJar::deleteSessionCookies()
+void WebEnginePartCookieJarKIO::deleteSessionCookies()
 {
     if (!m_cookieServer.isValid()) {
         return;
@@ -79,7 +79,7 @@ void WebEnginePartCookieJar::deleteSessionCookies()
     }
 }
 
-QUrl WebEnginePartCookieJar::constructUrlForCookie(const QNetworkCookie& cookie) const
+QUrl WebEnginePartCookieJarKIO::constructUrlForCookie(const QNetworkCookie& cookie) const
 {
     QUrl url;
     QString domain = cookie.domain().startsWith(".") ? cookie.domain().mid(1) : cookie.domain();
@@ -93,7 +93,7 @@ QUrl WebEnginePartCookieJar::constructUrlForCookie(const QNetworkCookie& cookie)
     return url;
 }
 
-qlonglong WebEnginePartCookieJar::findWinID()
+qlonglong WebEnginePartCookieJarKIO::findWinID()
 {
     QWidget *mainWindow = qApp->activeWindow();
     if (mainWindow && !mainWindow->windowFlags().testFlag(Qt::Dialog)) {
@@ -109,14 +109,14 @@ qlonglong WebEnginePartCookieJar::findWinID()
     return 0;
 }
 
-void WebEnginePartCookieJar::removeCookieDomain(QNetworkCookie& cookie)
+void WebEnginePartCookieJarKIO::removeCookieDomain(QNetworkCookie& cookie)
 {
     if (!cookie.domain().startsWith('.')) {
         cookie.setDomain(QString());
     }
 }
 
-void WebEnginePartCookieJar::addCookie(const QNetworkCookie& _cookie)
+void WebEnginePartCookieJarKIO::addCookie(const QNetworkCookie& _cookie)
 {   
     //If the added cookie is in m_cookiesLoadedFromKCookieServer, it means
     //we're loading the cookie from KCookieServer (from the call to loadKIOCookies
@@ -183,7 +183,7 @@ void WebEnginePartCookieJar::addCookie(const QNetworkCookie& _cookie)
     }
 }
 
-QString WebEnginePartCookieJar::askAdvice(const QUrl& url)
+QString WebEnginePartCookieJarKIO::askAdvice(const QUrl& url)
 {
     if (!m_cookieServer.isValid()) {
         return QString();
@@ -197,7 +197,7 @@ QString WebEnginePartCookieJar::askAdvice(const QUrl& url)
     }
 }
 
-bool WebEnginePartCookieJar::cookieInKCookieJar(const WebEnginePartCookieJar::CookieIdentifier& id, const QUrl& url)
+bool WebEnginePartCookieJarKIO::cookieInKCookieJar(const WebEnginePartCookieJarKIO::CookieIdentifier& id, const QUrl& url)
 {
     if (!m_cookieServer.isValid()) {
         return false;
@@ -221,7 +221,7 @@ bool WebEnginePartCookieJar::cookieInKCookieJar(const WebEnginePartCookieJar::Co
     return false;
 }
 
-void WebEnginePartCookieJar::removeCookie(const QNetworkCookie& _cookie)
+void WebEnginePartCookieJarKIO::removeCookie(const QNetworkCookie& _cookie)
 {
     
     int pos = m_pendingRejectedCookies.indexOf(CookieIdentifier(_cookie));
@@ -245,10 +245,10 @@ void WebEnginePartCookieJar::removeCookie(const QNetworkCookie& _cookie)
     
     QDBusPendingCall pcall = m_cookieServer.asyncCall("deleteCookie", cookie.domain(), url.host(), cookie.path(), QString(cookie.name()));
     QDBusPendingCallWatcher *w = new QDBusPendingCallWatcher(pcall, this);
-    connect(w, &QDBusPendingCallWatcher::finished, this, &WebEnginePartCookieJar::cookieRemovalFailed);
+    connect(w, &QDBusPendingCallWatcher::finished, this, &WebEnginePartCookieJarKIO::cookieRemovalFailed);
 }
 
-void WebEnginePartCookieJar::cookieRemovalFailed(QDBusPendingCallWatcher *watcher)
+void WebEnginePartCookieJarKIO::cookieRemovalFailed(QDBusPendingCallWatcher *watcher)
 {
     QDBusPendingReply<> r = *watcher;
     if (r.isError()){
@@ -257,7 +257,7 @@ void WebEnginePartCookieJar::cookieRemovalFailed(QDBusPendingCallWatcher *watche
     watcher->deleteLater();
 }
 
-void WebEnginePartCookieJar::loadKIOCookies()
+void WebEnginePartCookieJarKIO::loadKIOCookies()
 {
     const CookieUrlList cookies = findKIOCookies();
     for (const CookieWithUrl& cookieWithUrl : cookies){
@@ -277,7 +277,7 @@ void WebEnginePartCookieJar::loadKIOCookies()
     }
 }
 
-WebEnginePartCookieJar::CookieUrlList WebEnginePartCookieJar::findKIOCookies()
+WebEnginePartCookieJarKIO::CookieUrlList WebEnginePartCookieJarKIO::findKIOCookies()
 {
     CookieUrlList res;
     if (!m_cookieServer.isValid()) {
@@ -308,7 +308,7 @@ WebEnginePartCookieJar::CookieUrlList WebEnginePartCookieJar::findKIOCookies()
 //in turns normalizes the cookie. One could think that calling normalize twice wouldn't be a problem, but that would be wrong. If the cookie
 //domain is originally empty, after a call to normalize it will contain the cookie origin host. The second call to normalize will see a cookie
 //whose domain is not empty and doesn't start with a dot and will add a dot to it.
-WebEnginePartCookieJar::CookieWithUrl WebEnginePartCookieJar::parseKIOCookie(const QStringList& data, int start)
+WebEnginePartCookieJarKIO::CookieWithUrl WebEnginePartCookieJarKIO::parseKIOCookie(const QStringList& data, int start)
 {
     QNetworkCookie c;
     auto extractField = [data, start](CookieDetails field){return data.at(start + static_cast<int>(field));};
@@ -328,7 +328,7 @@ WebEnginePartCookieJar::CookieWithUrl WebEnginePartCookieJar::parseKIOCookie(con
     return CookieWithUrl{c, url};
 }
 
-QDebug operator<<(QDebug deb, const WebEnginePartCookieJar::CookieIdentifier& id)
+QDebug operator<<(QDebug deb, const WebEnginePartCookieJarKIO::CookieIdentifier& id)
 {
     QDebugStateSaver saver(deb);
     deb << "(" << id.name << "," << id.domain << "," << id.path << ")";

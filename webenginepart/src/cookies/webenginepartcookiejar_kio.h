@@ -6,8 +6,8 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef WEBENGINEPARTCOOKIEJAR_H
-#define WEBENGINEPARTCOOKIEJAR_H
+#ifndef WEBENGINEPARTCOOKIEJAR_KIO_H
+#define WEBENGINEPARTCOOKIEJAR_KIO_H
 
 #include <QObject>
 #include <QNetworkCookie>
@@ -31,7 +31,7 @@ class QDBusPendingCallWatcher;
 /**
  * @brief Class which takes care of synchronizing Chromium cookies from `QWebEngineCookieStore` with KIO
  */
-class KWEBENGINEPARTLIB_EXPORT WebEnginePartCookieJar : public QObject
+class KWEBENGINEPARTLIB_EXPORT WebEnginePartCookieJarKIO : public QObject
 {
     Q_OBJECT
 
@@ -45,12 +45,12 @@ public:
     * @note The `PersistentCookiePolicy` of the given profile will be set to `NoPersistentCookies` so that, on application startup, 
     * only cookies from KIO will be inside the store
     */
-    WebEnginePartCookieJar(QWebEngineProfile* prof, QObject* parent = nullptr);
+    WebEnginePartCookieJarKIO(QWebEngineProfile* prof, QObject* parent = nullptr);
 
     /**
      * @brief Destructor
      */
-    ~WebEnginePartCookieJar() override;
+    ~WebEnginePartCookieJarKIO() override;
 
 private slots:
     
@@ -322,18 +322,18 @@ private:
     
 #ifdef BUILD_TESTING
     QList<QNetworkCookie> m_testCookies;
-    friend class TestWebEnginePartCookieJar;
+    friend class TestWebEnginePartCookieJarKIO;
 #endif
     
 };
 
 /**
-* @brief Overload of operator `<<` to allow a WebEnginePartCookieJar::CookieIdentifier to be written to a `QDebug`
+* @brief Overload of operator `<<` to allow a WebEnginePartCookieJarKIO::CookieIdentifier to be written to a `QDebug`
 * 
 * @param deb the debug object
 * @param id the identifier to write
 * @return the debug object
 */
-QDebug operator<<(QDebug deb, const WebEnginePartCookieJar::CookieIdentifier &id);
+QDebug operator<<(QDebug deb, const WebEnginePartCookieJarKIO::CookieIdentifier &id);
 
-#endif // WEBENGINEPARTCOOKIEJAR_H
+#endif // WEBENGINEPARTCOOKIEJAR_KIO_H

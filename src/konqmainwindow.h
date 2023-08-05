@@ -348,6 +348,7 @@ Q_SIGNALS:
     void viewAdded(KonqView *view);
     void viewRemoved(KonqView *view);
     void popupItemsDisturbed();
+    void aboutToConfigure();
 
 public Q_SLOTS:
     void updateViewModeActions();

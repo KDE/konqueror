@@ -5,20 +5,20 @@
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
-#ifndef TESTWEBENGINEPARTCOOKIEJAR_H
-#define TESTWEBENGINEPARTCOOKIEJAR_H
+#ifndef TESTWEBENGINEPARTCOOKIEJARKIO_H
+#define TESTWEBENGINEPARTCOOKIEJARKIO_H
 
 #include <QObject>
 #include <QDateTime>
 #include <QDBusError>
 
 class QWebEngineCookieStore;
-class WebEnginePartCookieJar;
+class WebEnginePartCookieJarKIO;
 class QNetworkCookie;
 class QWebEngineProfile;
 class QDBusInterface;
 
-class TestWebEnginePartCookieJar : public QObject
+class TestWebEnginePartCookieJarKIO : public QObject
 {
     Q_OBJECT
     
@@ -67,9 +67,9 @@ private:
     
     QString m_cookieName;
     QWebEngineCookieStore *m_store;
-    WebEnginePartCookieJar *m_jar;
+    WebEnginePartCookieJarKIO *m_jar;
     QWebEngineProfile *m_profile;
     QDBusInterface *m_server;
 };
 
-#endif // TESTWEBENGINEPARTCOOKIEJAR_H
+#endif // TESTWEBENGINEPARTCOOKIEJARKIO_H

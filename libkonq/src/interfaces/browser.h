@@ -13,6 +13,8 @@
 
 namespace KonqInterfaces {
 
+class CookieJar;
+
 /**
  * @brief Abstract class representing the Konqueror browser
  */
@@ -28,6 +30,21 @@ public:
      */
     Browser(QObject* parent = nullptr);
     virtual ~Browser(); ///< Destructor
+
+    /**
+     * @brief Sets the object to use for cookies management
+     *
+     * @note this object *wont't* take ownership of @p jar.
+     *
+     * @param jar the object to use for cookie management
+     */
+    virtual void setCookieJar(CookieJar *jar) = 0;
+
+    /**
+     * @brief The object to use for cookie management
+     * @return the object to use for cookie management
+     */
+    virtual CookieJar* cookieJar() const = 0;
 
     /**
      * @brief Casts the given object or one of its children to a Browser

@@ -28,7 +28,6 @@
 #include "webhistoryinterface.h"
 #include "webenginewallet.h"
 #include "webengineparterrorschemehandler.h"
-#include "webenginepartcookiejar.h"
 #include "webengineurlrequestinterceptor.h"
 #include "spellcheckermanager.h"
 #include "webenginepartdownloadmanager.h"

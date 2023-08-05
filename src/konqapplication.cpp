@@ -229,6 +229,7 @@ static void fixOldStartUrl() {
 
 int KonquerorApplication::startFirstInstance()
 {
+    qDebug() << "START FIRST INSTANCE";
     fixOldStartUrl();
 
     m_browser = new KonqBrowser(this);
@@ -307,11 +308,13 @@ int KonquerorApplication::start()
         QObject::connect(&dbusService, &KDBusService::activateRequested, activateApp);
     }
 
+    qDebug() << "CALLING START FIRST INSTANCE";
     return startFirstInstance();
 }
 
 int KonquerorApplication::performStart(const QString& workingDirectory, bool firstInstance)
 {
+    qDebug() << "PERFORM START";
     const QStringList args = m_parser.positionalArguments();
 
     if (m_parser.isSet("sessions")) {

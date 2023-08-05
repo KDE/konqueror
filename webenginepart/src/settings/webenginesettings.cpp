@@ -91,7 +91,9 @@ public:
     bool m_accessKeysEnabled : 1;
     bool m_zoomTextOnly : 1;
     bool m_useCookieJar : 1;
+#ifndef MANAGE_COOKIES_INTERNALLY
     bool m_acceptCrossDomainCookies : 1;
+#endif
     bool m_bAutoRefreshPage: 1;
     bool m_bEnableFavicon:1;
     bool m_disableInternalPluginHandling:1;
@@ -1176,6 +1178,7 @@ bool WebEngineSettings::jsPopupBlockerPassivePopup() const
     return d->m_jsPopupBlockerPassivePopup;
 }
 
+#ifndef MANAGE_COOKIES_INTERNALLY
 bool WebEngineSettings::isCookieJarEnabled() const
 {
     return d->m_useCookieJar;
@@ -1185,6 +1188,7 @@ bool WebEngineSettings::acceptCrossDomainCookies() const
 {
     return d->m_acceptCrossDomainCookies;
 }
+#endif
 
 // Password storage...
 KConfigGroup WebEngineSettings::nonPasswordStorableSitesCg() const
@@ -1311,7 +1315,9 @@ void WebEngineSettings::initCookieJarSettings()
     KSharedConfig::Ptr cookieCfgPtr = KSharedConfig::openConfig(QStringLiteral("kcookiejarrc"), KConfig::NoGlobals);
     KConfigGroup cookieCfg ( cookieCfgPtr, "Cookie Policy");
     d->m_useCookieJar = cookieCfg.readEntry("Cookies", false);
+#ifndef MANAGE_COOKIES_INTERNALLY
     d->m_acceptCrossDomainCookies = !cookieCfg.readEntry("RejectCrossDomainCookies", true);
+#endif
 }
 
 void WebEngineSettings::initNSPluginSettings()

@@ -249,6 +249,11 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     }
     connect(HistoryProvider::self(), &HistoryProvider::cleared, this, &KonqMainWindow::slotClearComboHistory);
 
+    KonquerorApplication *app = qobject_cast<KonquerorApplication*>(qApp);
+    if (app) {
+        connect(this, &KonqMainWindow::aboutToConfigure, app, &KonquerorApplication::aboutToConfigure);
+    }
+
     KonqPixmapProvider *prov = KonqPixmapProvider::self();
     if (!s_comboConfig) {
         s_comboConfig = new KConfig(QStringLiteral("konq_history"), KConfig::NoGlobals);
@@ -1664,6 +1669,7 @@ void KonqMainWindow::slotConfigureExtensions()
 
 void KonqMainWindow::slotConfigure(const QString startingModule)
 {
+    emit aboutToConfigure();
     KPageWidgetItem *startingItem = nullptr;
     if (!m_configureDialog) {
         m_configureDialog = new KCMultiDialog(this);
@@ -1713,11 +1719,10 @@ void KonqMainWindow::slotConfigure(const QString startingModule)
             "kcm_webshortcuts",
             "kcm_proxy",
             "konqueror_kcms/kcm_history",
-#if KIO_VERSION >= QT_VERSION_CHECK(5,95,0)
-
-            "plasma/kcms/systemsettings_qwidgets/kcm_cookies",
+#ifdef MANAGE_COOKIES_INTERNALLY
+            "konqueror_kcms/khtml_cookies",
 #else
-            "kcm_cookies",
+            "plasma/kcms/systemsettings_qwidgets/kcm_cookies",
 #endif
             "konqueror_kcms/khtml_java_js",
             "konqueror_kcms/khtml_useragent"

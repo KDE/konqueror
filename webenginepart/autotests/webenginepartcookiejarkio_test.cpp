@@ -5,8 +5,8 @@
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
-#include "webenginepartcookiejar_test.h"
-#include <webenginepartcookiejar.h>
+#include "webenginepartcookiejarkio_test.h"
+#include <cookies/webenginepartcookiejar_kio.h>
 
 #include <QTest>
 
@@ -36,22 +36,22 @@ namespace QTest {
     }
 }
 
-QTEST_MAIN(TestWebEnginePartCookieJar);
+QTEST_MAIN(TestWebEnginePartCookieJarKIO);
 
-void TestWebEnginePartCookieJar::initTestCase()
+void TestWebEnginePartCookieJarKIO::initTestCase()
 {
     m_cookieName = "webenginepartcookiejartest";
 }
 
-void TestWebEnginePartCookieJar::init()
+void TestWebEnginePartCookieJarKIO::init()
 {
     m_server = new QDBusInterface("org.kde.kcookiejar5", "/modules/kcookiejar", "org.kde.KCookieServer");
     m_profile = new QWebEngineProfile(this);
     m_store = m_profile->cookieStore();
-    m_jar = new WebEnginePartCookieJar(m_profile, this);
+    m_jar = new WebEnginePartCookieJarKIO(m_profile, this);
 }
 
-void TestWebEnginePartCookieJar::cleanup()
+void TestWebEnginePartCookieJarKIO::cleanup()
 {
     if (m_server->isValid()) {
         deleteCookies(findTestCookies());
@@ -65,7 +65,7 @@ void TestWebEnginePartCookieJar::cleanup()
     m_profile = nullptr;
 }
 
-QNetworkCookie TestWebEnginePartCookieJar::CookieData::cookie() const
+QNetworkCookie TestWebEnginePartCookieJarKIO::CookieData::cookie() const
 {
     QNetworkCookie cookie;
     cookie.setName(name.toUtf8());
@@ -77,7 +77,7 @@ QNetworkCookie TestWebEnginePartCookieJar::CookieData::cookie() const
     return cookie;
 }
 
-void TestWebEnginePartCookieJar::testCookieAddedToStoreAreAddedToKCookieServer_data()
+void TestWebEnginePartCookieJarKIO::testCookieAddedToStoreAreAddedToKCookieServer_data()
 {
     QTest::addColumn<QNetworkCookie>("cookie");
     QTest::addColumn<QString>("name");
@@ -119,7 +119,7 @@ void TestWebEnginePartCookieJar::testCookieAddedToStoreAreAddedToKCookieServer_d
     }
 }
 
-void TestWebEnginePartCookieJar::testCookieAddedToStoreAreAddedToKCookieServer()
+void TestWebEnginePartCookieJarKIO::testCookieAddedToStoreAreAddedToKCookieServer()
 {
     QFETCH(const QNetworkCookie, cookie);
     QFETCH(const QString, name);
@@ -162,7 +162,7 @@ void TestWebEnginePartCookieJar::testCookieAddedToStoreAreAddedToKCookieServer()
     QCOMPARE(sec, secure);
 }
 
-QList<TestWebEnginePartCookieJar::CookieData> TestWebEnginePartCookieJar::findTestCookies()
+QList<TestWebEnginePartCookieJarKIO::CookieData> TestWebEnginePartCookieJarKIO::findTestCookies()
 {
     QList<CookieData> cookies;
     if (!m_server->isValid()) {
@@ -197,7 +197,7 @@ QList<TestWebEnginePartCookieJar::CookieData> TestWebEnginePartCookieJar::findTe
     return cookies;
 }
 
-void TestWebEnginePartCookieJar::deleteCookies(const QList<TestWebEnginePartCookieJar::CookieData> &cookies)
+void TestWebEnginePartCookieJarKIO::deleteCookies(const QList<TestWebEnginePartCookieJarKIO::CookieData> &cookies)
 {
     if (!m_server->isValid()) {
         return;
@@ -210,7 +210,7 @@ void TestWebEnginePartCookieJar::deleteCookies(const QList<TestWebEnginePartCook
     }
 }
 
-void TestWebEnginePartCookieJar::testCookieRemovedFromStoreAreRemovedFromKCookieServer_data()
+void TestWebEnginePartCookieJarKIO::testCookieRemovedFromStoreAreRemovedFromKCookieServer_data()
 {
     QTest::addColumn<QNetworkCookie>("cookie");
     QTest::addColumn<QString>("name");
@@ -248,7 +248,7 @@ void TestWebEnginePartCookieJar::testCookieRemovedFromStoreAreRemovedFromKCookie
         QTest::newRow(labels.at(i).toLatin1()) << c << ex.name << ex.domain << ex.path << ex.host;
     }}
 
-void TestWebEnginePartCookieJar::testCookieRemovedFromStoreAreRemovedFromKCookieServer()
+void TestWebEnginePartCookieJarKIO::testCookieRemovedFromStoreAreRemovedFromKCookieServer()
 {
     QFETCH(const QNetworkCookie, cookie);
     QFETCH(const QString, name);
@@ -279,7 +279,7 @@ void TestWebEnginePartCookieJar::testCookieRemovedFromStoreAreRemovedFromKCookie
     QVERIFY2(!reply.value().contains(name), "Cookie wasn't removed from server");
 }
 
-QDBusError TestWebEnginePartCookieJar::addCookieToKCookieServer(const QNetworkCookie& _cookie, const QString& host)
+QDBusError TestWebEnginePartCookieJarKIO::addCookieToKCookieServer(const QNetworkCookie& _cookie, const QString& host)
 {
     QNetworkCookie cookie(_cookie);
     QUrl url;
@@ -293,7 +293,7 @@ QDBusError TestWebEnginePartCookieJar::addCookieToKCookieServer(const QNetworkCo
     return m_server->lastError();
 }
 
-void TestWebEnginePartCookieJar::testPersistentCookiesAreAddedToStoreOnCreation()
+void TestWebEnginePartCookieJarKIO::testPersistentCookiesAreAddedToStoreOnCreation()
 {
     delete m_jar;
     QDateTime exp = QDateTime::currentDateTime().addYears(1);
@@ -311,7 +311,7 @@ void TestWebEnginePartCookieJar::testPersistentCookiesAreAddedToStoreOnCreation(
         QVERIFY2(!e.isValid(), qPrintable(e.message()));
         expected << c;
     }
-    m_jar = new WebEnginePartCookieJar(m_profile, this);
+    m_jar = new WebEnginePartCookieJarKIO(m_profile, this);
     QList<QNetworkCookie> cookiesInsertedIntoJar;
     for(const QNetworkCookie &c: qAsConst(m_jar->m_testCookies)){
         if(QString(c.name()).startsWith(baseCookieName)) {
@@ -331,13 +331,13 @@ void TestWebEnginePartCookieJar::testPersistentCookiesAreAddedToStoreOnCreation(
     QCOMPARE(cookiesInsertedIntoJar, expected);
 }
 
-void TestWebEnginePartCookieJar::testSessionCookiesAreNotAddedToStoreOnCreation()
+void TestWebEnginePartCookieJarKIO::testSessionCookiesAreNotAddedToStoreOnCreation()
 {
     delete m_jar;
     CookieData data{m_cookieName + "-startup-session", "test-value", ".yyy.xxx.com", "/abc/def", "zzz.yyy.xxx.com", QDateTime(), true};
     QDBusError e = addCookieToKCookieServer(data.cookie(), data.host);
     QVERIFY2(!e.isValid(), qPrintable(e.message()));
-    m_jar = new WebEnginePartCookieJar(m_profile, this);
+    m_jar = new WebEnginePartCookieJarKIO(m_profile, this);
     QList<QNetworkCookie> cookiesInsertedIntoJar;
     for(const QNetworkCookie &c: qAsConst(m_jar->m_testCookies)) {
         if (c.name() == data.name) {

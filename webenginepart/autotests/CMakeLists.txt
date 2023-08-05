@@ -13,7 +13,12 @@ endmacro(webenginepart_unit_tests)
 
 webenginepart_unit_tests(
   webengine_partapi_test
-  webenginepartcookiejar_test
 )
 
-target_link_libraries(webenginepartcookiejar_test Qt5::DBus)
+if (NOT(ManageCookiesInternally))
+  webenginepart_unit_tests(
+    webenginepartcookiejarkio_test
+  )
+  target_link_libraries(webenginepartcookiejarkio_test Qt5::DBus)
+endif()
+

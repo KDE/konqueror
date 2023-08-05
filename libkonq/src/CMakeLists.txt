@@ -17,6 +17,7 @@ set(konq_LIB_SRCS
    htmlsettingsinterface.cpp
    textextension.cpp
    interfaces/browser.cpp
+   interfaces/cookiejar.cpp
    interfaces/common.h
    downloaderinterface.cpp
 )

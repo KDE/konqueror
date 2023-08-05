@@ -42,6 +42,11 @@ add_definitions(
 )
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
+if (BUILD_WITH_QT6)
+add_compile_definitions(-DMANAGE_COOKIES_INTERNALLY)
+set(ManageCookiesInternally TRUE)
+endif()
+
 include (CheckSymbolExists)
 check_symbol_exists(mallinfo        "malloc.h"                 KDE_MALLINFO_MALLOC)
 check_symbol_exists(mallinfo        "stdlib.h"                 KDE_MALLINFO_STDLIB)

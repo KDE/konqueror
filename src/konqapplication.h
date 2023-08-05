@@ -45,6 +45,7 @@ public slots:
     void slotReparseConfiguration();
 signals:
     void configurationChanged();
+    void aboutToConfigure();
 
 private slots:
     void slotAddToCombo(const QString &url, const QDBusMessage &msg);

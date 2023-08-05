@@ -8,11 +8,9 @@
 
 #include "webenginepartcontrols.h"
 #include "webengineparterrorschemehandler.h"
-#include "webenginepartcookiejar.h"
 #include "webengineurlrequestinterceptor.h"
 #include "webenginepartkiohandler.h"
 #include "about/konq_aboutpage.h"
-#include "webenginepartcookiejar.h"
 #include "spellcheckermanager.h"
 #include "webenginepartdownloadmanager.h"
 #include "certificateerrordialogmanager.h"
@@ -21,6 +19,7 @@
 #include "webenginepage.h"
 #include "navigationrecorder.h"
 #include <webenginepart_debug.h>
+#include "interfaces/browser.h"
 
 #include <KProtocolInfo>
 #include <KSharedConfig>
@@ -34,6 +33,8 @@
 #include <QLocale>
 #include <QSettings>
 #include <QJsonDocument>
+
+using namespace KonqInterfaces;
 
 WebEnginePartControls::WebEnginePartControls(): QObject(),
     m_profile(nullptr), m_cookieJar(nullptr), m_spellCheckerManager(nullptr), m_downloadManager(nullptr),
@@ -54,7 +55,11 @@ WebEnginePartControls::WebEnginePartControls(): QObject(),
         QWebEngineUrlScheme::registerScheme(scheme);
     }
 
-    connect(QApplication::instance(), SIGNAL(configurationChanged()), this, SLOT(reparseConfiguration()));
+    Browser* browser = Browser::browser(qApp);
+    if (browser) {
+        connect(browser, &Browser::configurationChanged, this, &WebEnginePartControls::reparseConfiguration);
+    }
+
 }
 
 WebEnginePartControls::~WebEnginePartControls()
@@ -148,6 +153,12 @@ void WebEnginePartControls::setup(QWebEngineProfile* profile)
     m_profile->setUrlRequestInterceptor(new WebEngineUrlRequestInterceptor(this));
 
     m_cookieJar = new WebEnginePartCookieJar(profile, this);
+#ifdef MANAGE_COOKIES_INTERNALLY
+    Browser *browser = Browser::browser(qApp);
+    if (browser) {
+        browser->setCookieJar(m_cookieJar);
+    }
+#endif
     m_spellCheckerManager = new SpellCheckerManager(profile, this);
     m_downloadManager= new WebEnginePartDownloadManager(profile, this);
     m_profile->settings()->setAttribute(QWebEngineSettings::ScreenCaptureEnabled, true);
