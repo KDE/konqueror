@@ -1,7 +1,7 @@
 # translation of kfmclient.po to Slovenian
 # Translation of kfmclient.po to Slovenian
 # SLOVENIAN TRANSLATION OF KFMCLIENT.
-# $Id: kfmclient.po 1637734 2022-11-10 01:38:46Z scripty $
+# $Id: kfmclient.po 1657534 2023-08-05 02:56:47Z scripty $
 # $Source$
 #
 # Copyright (C) 2001, 2003, 2004, 2005 Free Software Foundation, Inc.
@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-10 00:46+0000\n"
+"POT-Creation-Date: 2023-08-05 02:25+0000\n"
 "PO-Revision-Date: 2020-09-01 16:29+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -37,42 +37,42 @@ msgstr ""
 "roman.maurer@amis.net,gregor.rakar@kiss.si,jlp@holodeck1.com,andrejm@ubuntu."
 "si"
 
-#: kfmclient.cpp:55
+#: kfmclient.cpp:56
 #, kde-format
 msgid "kfmclient"
 msgstr "kfmclient"
 
-#: kfmclient.cpp:56
+#: kfmclient.cpp:57
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "KDE-jevo orodje za odpiranje URL-jev iz ukazne vrstice"
 
-#: kfmclient.cpp:64
+#: kfmclient.cpp:65
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr "Brez vzajemne uporabe: brez oken s sporočili"
 
-#: kfmclient.cpp:66
+#: kfmclient.cpp:67
 #, kde-format
 msgid "Show available commands"
 msgstr "Pokaže razpoložljive ukaze"
 
-#: kfmclient.cpp:68
+#: kfmclient.cpp:81
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "Ukaz (glejte --commands)"
 
-#: kfmclient.cpp:70
+#: kfmclient.cpp:83
 #, kde-format
 msgid "Arguments for command"
 msgstr "Argumenti ukaza"
 
-#: kfmclient.cpp:72
+#: kfmclient.cpp:85
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr "Datoteke in URL-ji, ki jih odpre program, bodo izbrisani po uporabi"
 
-#: kfmclient.cpp:80
+#: kfmclient.cpp:93
 #, kde-format
 msgid ""
 "\n"
@@ -81,7 +81,7 @@ msgstr ""
 "\n"
 "Skladnja:\n"
 
-#: kfmclient.cpp:81
+#: kfmclient.cpp:94
 #, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
@@ -98,7 +98,7 @@ msgstr ""
 "            #   Če je »url« izpuščen, se privzame $HOME.\n"
 "\n"
 
-#: kfmclient.cpp:86
+#: kfmclient.cpp:99
 #, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
@@ -114,7 +114,7 @@ msgstr ""
 "            #   text/html za spletno stran, da jo hitreje prikažete\n"
 "\n"
 
-#: kfmclient.cpp:90
+#: kfmclient.cpp:103
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -129,17 +129,17 @@ msgstr ""
 "            #   na trenutnem dejavnem namizju, če je to mogoče.\n"
 "\n"
 
-#: kfmclient.cpp:267
+#: kfmclient.cpp:280
 #, kde-format
 msgid "Syntax error, not enough arguments\n"
 msgstr "Skladenjska napaka: premalo argumentov\n"
 
-#: kfmclient.cpp:271
+#: kfmclient.cpp:284
 #, kde-format
 msgid "Syntax error, too many arguments\n"
 msgstr "Skladenjska napaka: preveč argumentov\n"
 
-#: kfmclient.cpp:323
+#: kfmclient.cpp:353
 #, kde-format
 msgid "Syntax error, unknown command '%1'\n"
 msgstr "Skladenjska napaka: neznan ukaz »%1«\n"

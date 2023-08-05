@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-10 00:46+0000\n"
+"POT-Creation-Date: 2023-08-05 02:25+0000\n"
 "PO-Revision-Date: 2022-08-19 05:56+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -28,42 +28,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: kfmclient.cpp:55
+#: kfmclient.cpp:56
 #, kde-format
 msgid "kfmclient"
 msgstr "kfmclient"
 
-#: kfmclient.cpp:56
+#: kfmclient.cpp:57
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "KDE ინსტრუმენტი ბრძანების სტრიქონიდან URL– ების გახსნისთვის"
 
-#: kfmclient.cpp:64
+#: kfmclient.cpp:65
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr "არაინტერაქტიული გამოყენება: შეტყობინებების გარეშე"
 
-#: kfmclient.cpp:66
+#: kfmclient.cpp:67
 #, kde-format
 msgid "Show available commands"
 msgstr "ხელმისაწვდომი ბრძანებების ჩვენება"
 
-#: kfmclient.cpp:68
+#: kfmclient.cpp:81
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "ბრძანება (იხ. --commands)"
 
-#: kfmclient.cpp:70
+#: kfmclient.cpp:83
 #, kde-format
 msgid "Arguments for command"
 msgstr "ბრძანების არგუმენტები"
 
-#: kfmclient.cpp:72
+#: kfmclient.cpp:85
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr ""
 
-#: kfmclient.cpp:80
+#: kfmclient.cpp:93
 #, kde-format
 msgid ""
 "\n"
@@ -72,7 +72,7 @@ msgstr ""
 "\n"
 "სინტაქსი:\n"
 
-#: kfmclient.cpp:81
+#: kfmclient.cpp:94
 #, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
@@ -83,7 +83,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: kfmclient.cpp:86
+#: kfmclient.cpp:99
 #, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
@@ -93,7 +93,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: kfmclient.cpp:90
+#: kfmclient.cpp:103
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -103,17 +103,17 @@ msgid ""
 "\n"
 msgstr ""
 
-#: kfmclient.cpp:267
+#: kfmclient.cpp:280
 #, kde-format
 msgid "Syntax error, not enough arguments\n"
 msgstr "სინტაქსის შეცდომა. არგუმენტები საკმარისი არაა\n"
 
-#: kfmclient.cpp:271
+#: kfmclient.cpp:284
 #, kde-format
 msgid "Syntax error, too many arguments\n"
 msgstr "სინტაქსის შეცდომა. მითითებულია მეტისმეტად ბევრი არგუმენტი.\n"
 
-#: kfmclient.cpp:323
+#: kfmclient.cpp:353
 #, kde-format
 msgid "Syntax error, unknown command '%1'\n"
 msgstr "სინტაქსის შეცდომა. უცნობი ბრძანება: %1\n"
