@@ -1,14 +1,14 @@
 # Translation of uachangerplugin to Korean.
 # Copyright (C) 2008 This_file_is_part_of_KDE
 # This file is distributed under the same license as the extragear-base package.
-# Shinjo Park <kde@peremen.name>, 2008, 2009, 2020, 2021.
+# Shinjo Park <kde@peremen.name>, 2008, 2009, 2020, 2021, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: uachangerplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-28 00:46+0000\n"
-"PO-Revision-Date: 2021-05-30 19:18+0200\n"
+"PO-Revision-Date: 2023-08-06 21:39+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -16,21 +16,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 20.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: uachangerplugin.cpp:47
-#, fuzzy, kde-format
-#| msgid "Change Browser Identification"
+#, kde-format
 msgctxt "@title:menu Changes the browser identification"
 msgid "Change Browser Identification"
-msgstr "브라우저 증명 변경"
+msgstr "브라우저 식별 변경"
 
 #: uachangerplugin.cpp:82
-#, fuzzy, kde-format
-#| msgid "Default Identification"
+#, kde-format
 msgctxt "@action:inmenu Uses the default browser identification"
 msgid "Default Identification"
-msgstr "기본 증명"
+msgstr "기본 식별"
 
 #. i18n: ectx: Menu (tools)
 #: uachangerplugin.rc:4

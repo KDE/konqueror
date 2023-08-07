@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 00:46+0000\n"
-"PO-Revision-Date: 2023-07-23 20:55+0200\n"
+"PO-Revision-Date: 2023-08-06 21:39+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -2190,13 +2190,13 @@ msgstr "도메인 이름을 먼저 입력해야 합니다."
 #: useragent/useragent.ui:14
 #, kde-format
 msgid "Form"
-msgstr ""
+msgstr "폼"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:23
 #, kde-format
 msgid "Existing identifications"
-msgstr ""
+msgstr "기존 식별자"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
@@ -2206,57 +2206,55 @@ msgstr ""
 #: useragent/useragent.ui:150 useragent/useragent.ui:163
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: useragent/useragent.ui:66
 #, kde-format
 msgid "Content"
-msgstr ""
+msgstr "내용"
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
 #: useragent/useragent.ui:97
-#, fuzzy, kde-format
-#| msgid "&Export..."
+#, kde-format
 msgid "&Edit..."
-msgstr "내보내기(&E)..."
+msgstr "편집(&E)..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:110
 #, kde-format
 msgid "&Rename..."
-msgstr ""
+msgstr "이름 바꾸기(&R)..."
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
 #: useragent/useragent.ui:123
 #, kde-format
 msgid "Du&plicate..."
-msgstr ""
+msgstr "복제(&P)..."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:136
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "&Delete"
-msgstr "삭제(&L)"
+msgstr "삭제(&D)"
 
 #. i18n: ectx: property (text), widget (QPushButton, useTemplateBtn)
 #: useragent/useragent.ui:153
 #, kde-format
 msgid "Choose &selected identification"
-msgstr ""
+msgstr "선택한 식별자 사용(&S)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
 msgid "Use &default identification"
-msgstr ""
+msgstr "기본 식별자 사용(&D)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:181
 #, kde-format
 msgid "&Custom identification"
-msgstr ""
+msgstr "사용자 정의 식별자(&C)"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
 #: useragent/useragent.ui:191
@@ -2267,6 +2265,9 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>기본 식별자가 비활성화되었을 때 사용할 브라우저 식별자"
+"입니다.</p><p>직접 입력하거나 아래 목록에 있는 항목을 선택한 후 필요에 따라 "
+"변경할 수 있습니다.</p></body></html>"
 
 #~ msgctxt "@label:listbox"
 #~ msgid "When &Konqueror starts:"

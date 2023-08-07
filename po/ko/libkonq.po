@@ -1,14 +1,14 @@
 # Translation of libkonq to Korean.
 # Copyright (C) 2001 Free Software Foundation, Inc.
 # Sae-keun Kim <segni@susekorea.net>, 2001.
-# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2010, 2011, 2012, 2020, 2021.
+# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2010, 2011, 2012, 2020, 2021, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-01 00:45+0000\n"
-"PO-Revision-Date: 2021-05-30 19:29+0200\n"
+"PO-Revision-Date: 2023-08-06 21:55+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -16,54 +16,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 20.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: src/browseropenorsavequestion.cpp:89
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "형식: %1"
 
 #: src/browseropenorsavequestion.cpp:97
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "이 파일 형식과 연결된 동작 기억하기"
 
 #: src/browseropenorsavequestion.cpp:149 src/browseropenorsavequestion.cpp:237
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr ""
+msgstr "%1(으)로 열기(&O)"
 
 #: src/browseropenorsavequestion.cpp:213
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr ""
+msgstr "%1(으)로 열기(&W)"
 
 #: src/browseropenorsavequestion.cpp:224 src/browseropenorsavequestion.cpp:318
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr ""
+msgstr "'%1'을(를) 여시겠습니까?"
 
 #: src/browseropenorsavequestion.cpp:228
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr ""
+msgstr "다음으로 열기(&O)..."
 
 #: src/browseropenorsavequestion.cpp:246
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
-msgstr "열기(&O)"
+msgstr "다음으로 열기(&O)"
 
 #: src/browseropenorsavequestion.cpp:315
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "열기(&O)"
@@ -72,21 +70,21 @@ msgstr "열기(&O)"
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr ""
+msgstr "이름: %1"
 
 #: src/browseropenorsavequestion.cpp:341
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "서버에서 제안한 파일 이름입니다"
 
 #: src/htmlsettingsinterface.cpp:19
 msgid "Accept"
-msgstr ""
+msgstr "수락"
 
 #: src/htmlsettingsinterface.cpp:21
 msgid "Reject"
-msgstr ""
+msgstr "거부"
 
 #: src/konq_popupmenu.cpp:219
 #, kde-format
