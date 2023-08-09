@@ -19,8 +19,8 @@ This will define the following variables:
 ``WebEngineDictConverter_EXECUTABLE``
   The path to the qwebengine_convert_dict executable
 #]=======================================================================]
-include(ECMQueryQmake)
-query_qmake(QT_BINARIES_DIR QT_INSTALL_BINS)
+include(ECMQueryQt)
+ecm_query_qt(QT_BINARIES_DIR QT_INSTALL_BINS)
 find_program(WebEngineDictConverter_EXECUTABLE qwebengine_convert_dict HINTS ${QT_BINARIES_DIR})
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(WebEngineDictConverter

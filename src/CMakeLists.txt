@@ -113,7 +113,7 @@ target_link_libraries(kdeinit_konqueror
 if (KF5Activities_FOUND)
   target_link_libraries(kdeinit_konqueror KF5::Activities)
   target_compile_definitions(kdeinit_konqueror PUBLIC KActivities_FOUND)
-endif (KActivities_FOUND)
+endif ()
 
 if (NOT WIN32)
     install(TARGETS kdeinit_konqueror  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
