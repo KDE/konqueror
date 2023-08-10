@@ -1,0 +1,66 @@
+# Translation of kio6_bookmarks to Norwegian Nynorsk
+#
+# Eirik U. Birkeland <eirbir@gmail.com>, 2008.
+# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-07-22 00:50+0000\n"
+"PO-Revision-Date: 2020-11-01 09:31+0100\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.08.2\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: kio_bookmarks.cpp:80
+#, kde-format
+msgid "Root"
+msgstr "Rot"
+
+#: kio_bookmarks.cpp:113
+#, kde-format
+msgid "Places"
+msgstr "Stadar"
+
+#: kio_bookmarks.cpp:189
+#, kde-format
+msgid "Could not find bookmarks config"
+msgstr "Fann ikkje bokmerkeoppsettet"
+
+#: kio_bookmarks.cpp:199
+#, kde-format
+msgid "Could not find bookmarks editor"
+msgstr "Fann ikkje bokmerkeprogram"
+
+#: kio_bookmarks.cpp:205
+#, kde-format
+msgid "Wrong request: %1"
+msgstr "Feil førespurnad: %1"
+
+#: kio_bookmarks_html.cpp:85
+#, kde-format
+msgid "There are no bookmarks to display yet."
+msgstr "Det finst ingen bokmerke å visa enno."
+
+#: kio_bookmarks_html.cpp:124
+#, kde-format
+msgid ""
+"kio_bookmarks CSS file not found. Output will look ugly.\n"
+"Check your installation."
+msgstr ""
+"Fann ikkje CSS-fila til «kio_bookmarks». Resultatet vil ikkje sjå så fint "
+"ut.\n"
+"Kontroller at programmet er rett installert."
+
+#: kio_bookmarks_html.cpp:133
+#, kde-format
+msgid "My Bookmarks"
+msgstr "Mine bokmerke"

@@ -1,0 +1,82 @@
+# translation of kio_bookmarks.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Maciej Wikło <maciej.wiklo@wp.pl>, 2008.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_bookmarks\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-08-10 00:46+0000\n"
+"PO-Revision-Date: 2021-01-01 11:45+0100\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@lists.kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.08.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#: kio_bookmarks.cpp:80
+#, kde-format
+msgid "Root"
+msgstr "Katalog główny"
+
+#: kio_bookmarks.cpp:113
+#, kde-format
+msgid "Places"
+msgstr "Miejsca"
+
+#: kio_bookmarks.cpp:189
+#, kde-format
+msgid "Could not find bookmarks config"
+msgstr "Nie można znaleźć ustawień zakładek"
+
+#: kio_bookmarks.cpp:199
+#, kde-format
+msgid "Could not find bookmarks editor"
+msgstr "Nie można znaleźć edytora zakładek"
+
+#: kio_bookmarks.cpp:205
+#, kde-format
+msgid "Wrong request: %1"
+msgstr "Złe zapytanie: %1"
+
+#: kio_bookmarks_html.cpp:85
+#, kde-format
+msgid "There are no bookmarks to display yet."
+msgstr "Nie ma żadnych zakładek do wyświetlenia."
+
+#: kio_bookmarks_html.cpp:124
+#, kde-format
+msgid ""
+"kio_bookmarks CSS file not found. Output will look ugly.\n"
+"Check your installation."
+msgstr ""
+"Nie znaleziono pliku CSS kio_bookmarks. Efekt będzie wyglądał nienajlepiej.\n"
+"Sprawdź swoją instalację."
+
+#: kio_bookmarks_html.cpp:133
+#, kde-format
+msgid "My Bookmarks"
+msgstr "Moje zakładki"
+
+#~ msgid "My bookmarks"
+#~ msgstr "Moje zakładki"
+
+#~ msgid "Xavier Vello"
+#~ msgstr "Xavier Vello"
+
+#~ msgid "Initial developer"
+#~ msgstr "Pierwszy autor"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Maciej Wikło"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "maciej.wiklo@wp.pl"

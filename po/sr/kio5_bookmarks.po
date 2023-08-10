@@ -1,0 +1,55 @@
+# Translation of kio_bookmarks.po into Serbian.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2009, 2010, 2014.
+# Dalibor Djuric <dalibor.djuric@mozilla-srbija.org>, 2009.
+# Dalibor Djuric <daliborddjuric@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_bookmarks\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-04-06 03:18+0200\n"
+"PO-Revision-Date: 2010-04-26 14:43+0200\n"
+"Last-Translator: Dalibor Djuric <daliborddjuric@gmail.com>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#: kio_bookmarks.cpp:87
+#, kde-format
+msgid "Root"
+msgstr "Корен"
+
+#: kio_bookmarks.cpp:120
+#, kde-format
+msgid "Places"
+msgstr "Места"
+
+#: kio_bookmarks.cpp:199
+#, kde-format
+msgid "Wrong request: %1"
+msgstr "Погрешан захтев: %1"
+
+#: kio_bookmarks_html.cpp:97
+#, kde-format
+msgid "There are no bookmarks to display yet."
+msgstr "Још увек нема обележивача за приказ."
+
+#: kio_bookmarks_html.cpp:136
+#, kde-format
+msgid ""
+"kio_bookmarks CSS file not found. Output will look ugly.\n"
+"Check your installation."
+msgstr ""
+"ЦСС фајл није нађен. Излаз ће бити ружан.\n"
+"Проверите инсталацију."
+
+#: kio_bookmarks_html.cpp:145
+#, kde-format
+msgid "My Bookmarks"
+msgstr "Моји обележивачи"

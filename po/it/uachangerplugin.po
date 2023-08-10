@@ -1,34 +1,34 @@
 # translation of uachangerplugin.po to Italian
 # Copyright (C) 2003, 2004, 2009 Free Software Foundation, Inc.
-#
 # Daniele Medri <madrid@linuxmeeting.net>, 2003.
 # Marco L. Spolaore <mspolaore@e-tree.com>, 2004.
 # Federico Zenith <federico.zenith@member.fsf.org>, 2004.
 # Pino Toscano <toscano.pino@tiscali.it>, 2009.
+# Paolo Zamponi <feus73@gmail.com>, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: uachangerplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-28 00:46+0000\n"
-"PO-Revision-Date: 2009-06-03 18:27+0200\n"
-"Last-Translator: Pino Toscano <toscano.pino@tiscali.it>\n"
+"PO-Revision-Date: 2023-08-07 18:46+0200\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: uachangerplugin.cpp:47
-#, fuzzy, kde-format
-#| msgid "Change Browser Identification"
+#, kde-format
 msgctxt "@title:menu Changes the browser identification"
 msgid "Change Browser Identification"
 msgstr "Cambia identificazione del browser"
 
 #: uachangerplugin.cpp:82
-#, fuzzy, kde-format
-#| msgid "Default Identification"
+#, kde-format
 msgctxt "@action:inmenu Uses the default browser identification"
 msgid "Default Identification"
 msgstr "Identificazione predefinita"

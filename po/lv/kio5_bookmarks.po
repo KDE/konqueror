@@ -1,0 +1,82 @@
+# translation of kio_bookmarks.po to Latvian
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
+# Maris Nartiss <maris.kde@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_bookmarks\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-08-10 00:46+0000\n"
+"PO-Revision-Date: 2008-11-23 11:54+0200\n"
+"Last-Translator: Maris Nartiss <maris.kde@gmail.com>\n"
+"Language-Team: Latvian <locale@laka.lv>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+
+#: kio_bookmarks.cpp:80
+#, kde-format
+msgid "Root"
+msgstr "Sakne"
+
+#: kio_bookmarks.cpp:113
+#, kde-format
+msgid "Places"
+msgstr "Vietas"
+
+#: kio_bookmarks.cpp:189
+#, kde-format
+msgid "Could not find bookmarks config"
+msgstr ""
+
+#: kio_bookmarks.cpp:199
+#, kde-format
+msgid "Could not find bookmarks editor"
+msgstr ""
+
+#: kio_bookmarks.cpp:205
+#, kde-format
+msgid "Wrong request: %1"
+msgstr "Nepareizs pieprasījums: %1"
+
+#: kio_bookmarks_html.cpp:85
+#, kde-format
+msgid "There are no bookmarks to display yet."
+msgstr "Vēl nav nevienas grāmatzīmes, ko rādīt."
+
+#: kio_bookmarks_html.cpp:124
+#, kde-format
+msgid ""
+"kio_bookmarks CSS file not found. Output will look ugly.\n"
+"Check your installation."
+msgstr ""
+"Neizdevās atrast kio_bookmarks CSS failu. Izvads izskatīsies neglīts.\n"
+"Pārbaudiet savu instalāciju."
+
+#: kio_bookmarks_html.cpp:133
+#, kde-format
+msgid "My Bookmarks"
+msgstr "Manas grāmatzīmes"
+
+#~ msgid "My bookmarks"
+#~ msgstr "Manas grāmatzīmes"
+
+#~ msgid "Xavier Vello"
+#~ msgstr "Xavier Vello"
+
+#~ msgid "Initial developer"
+#~ msgstr "Sākotnējais izstrādātājs"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Viesturs Zariņš"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "viesturs.zarins@mii.lu.lv"

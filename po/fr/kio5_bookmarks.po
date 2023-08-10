@@ -1,0 +1,88 @@
+# translation of kio_bookmarks.po to Francais
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Stanislas Zeller <uncensored.assault@gmail.com>, 2008.
+# Mickael Sibelle <kimael@gmail.com>, 2008.
+# xavier <ktranslator31@yahoo.fr>, 2013.
+# Vincent Pinon <vpinon@kde.org>, 2016.
+# Xavier Besnard <xavier.besnard@neuf.fr>, 2020, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_bookmarks\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-08-10 00:46+0000\n"
+"PO-Revision-Date: 2021-01-12 13:46+0100\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 20.12.0\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: kio_bookmarks.cpp:80
+#, kde-format
+msgid "Root"
+msgstr "Racine"
+
+#: kio_bookmarks.cpp:113
+#, kde-format
+msgid "Places"
+msgstr "Emplacements"
+
+#: kio_bookmarks.cpp:189
+#, kde-format
+msgid "Could not find bookmarks config"
+msgstr "Impossible de trouver la configuration des préférés"
+
+#: kio_bookmarks.cpp:199
+#, kde-format
+msgid "Could not find bookmarks editor"
+msgstr "Impossible de trouver l'éditeur de préférés"
+
+#: kio_bookmarks.cpp:205
+#, kde-format
+msgid "Wrong request: %1"
+msgstr "Requête incorrecte : %1"
+
+#: kio_bookmarks_html.cpp:85
+#, kde-format
+msgid "There are no bookmarks to display yet."
+msgstr "Il n'y a aucun signet à afficher pour le moment."
+
+#: kio_bookmarks_html.cpp:124
+#, kde-format
+msgid ""
+"kio_bookmarks CSS file not found. Output will look ugly.\n"
+"Check your installation."
+msgstr ""
+"Impossible de trouver le fichier CSS « kio_bookmarks ». L'affichage ne sera "
+"pas optimal.\n"
+"Veuillez vérifier votre configuration."
+
+#: kio_bookmarks_html.cpp:133
+#, kde-format
+msgid "My Bookmarks"
+msgstr "Mes signets"
+
+#~ msgid "My bookmarks"
+#~ msgstr "Mes signets"
+
+#~ msgid "Xavier Vello"
+#~ msgstr "Xavier Vello"
+
+#~ msgid "Initial developer"
+#~ msgstr "Développeur originel"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Stanislas Zeller"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "uncensored.assault@gmail.com"

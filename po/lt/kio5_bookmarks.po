@@ -1,0 +1,63 @@
+# Lithuanian translations for kio_bookmarks package.
+# This file is distributed under the same license as the kio_bookmarks package.
+# Andrius Štikonas <andrius@stikonas.eu>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_bookmarks\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-08-10 00:46+0000\n"
+"PO-Revision-Date: 2021-08-21 19:03+0300\n"
+"Last-Translator: Andrius Štikonas <andrius@stikonas.eu>\n"
+"Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.0\n"
+
+#: kio_bookmarks.cpp:80
+#, kde-format
+msgid "Root"
+msgstr "Šakninis aplankas"
+
+#: kio_bookmarks.cpp:113
+#, kde-format
+msgid "Places"
+msgstr "Vietos"
+
+#: kio_bookmarks.cpp:189
+#, kde-format
+msgid "Could not find bookmarks config"
+msgstr "Nepavyko rasti žymelių konfigūracijos"
+
+#: kio_bookmarks.cpp:199
+#, kde-format
+msgid "Could not find bookmarks editor"
+msgstr "Nepavyko rasti žymelių redaktoriaus"
+
+#: kio_bookmarks.cpp:205
+#, kde-format
+msgid "Wrong request: %1"
+msgstr "Bloga užklausa: %1"
+
+#: kio_bookmarks_html.cpp:85
+#, kde-format
+msgid "There are no bookmarks to display yet."
+msgstr "Dar nėra žymelių, kurias būtų galima rodyti."
+
+#: kio_bookmarks_html.cpp:124
+#, kde-format
+msgid ""
+"kio_bookmarks CSS file not found. Output will look ugly.\n"
+"Check your installation."
+msgstr ""
+"Nerastas kio_bookmarks CSS failas. Išvestis atrodys bjauriai.\n"
+"Patikrinkite savo diegimą."
+
+#: kio_bookmarks_html.cpp:133
+#, kde-format
+msgid "My Bookmarks"
+msgstr "Mano žymelės"
