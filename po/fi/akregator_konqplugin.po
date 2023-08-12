@@ -6,13 +6,13 @@
 # Teemu Rytilahti <teemu.rytilahti@d5k.net>, 2008.
 # Jorma Karvonen <karvonen.jorma@gmail.com>, 2009.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2011, 2018.
-# Tommi Nieminen <translator@legisign.org>, 2019.
+# Tommi Nieminen <translator@legisign.org>, 2019, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: akregator_konqplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-25 00:45+0000\n"
-"PO-Revision-Date: 2019-10-16 12:34+0300\n"
+"PO-Revision-Date: 2023-07-27 15:21+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2012-12-01 22:21:52+0000\n"
-"X-Generator: Lokalize 18.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: akregatorplugin.cpp:46
 #, kde-format
@@ -30,26 +30,25 @@ msgid "Add Feed to Akregator"
 msgstr "Lisää syöte Akregatoriin"
 
 #: konqfeedicon.cpp:129
-#, fuzzy, kde-format
-#| msgid "Add Feed to Akregator"
+#, kde-format
 msgid "Add feed to Akregator"
 msgstr "Lisää syöte Akregatoriin"
 
 #: konqfeedicon.cpp:130
 #, kde-format
 msgid "Copy feed URL to clipboard"
-msgstr ""
+msgstr "Kopioi syötteen verkko-osoite leikepöydälle"
 
 #: konqfeedicon.cpp:131
 #, kde-format
 msgid "Open feed URL"
-msgstr ""
+msgstr "Avaa syötteen verkko-osoite"
 
 #: konqfeedicon.cpp:142
 #, kde-format
 msgctxt "@title:menu title for the feeds menu"
 msgid "Feeds"
-msgstr ""
+msgstr "Syötteet"
 
 #: konqfeedicon.cpp:148
 #, kde-format
