@@ -6,8 +6,8 @@
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
-#ifndef KONQBROWSERINTERFACE_H
-#define KONQBROWSERINTERFACE_H
+#ifndef KONQBROWSERWINDOWINTERFACE_H
+#define KONQBROWSERWINDOWINTERFACE_H
 
 #include <KParts/BrowserInterface>
 
@@ -20,7 +20,7 @@ namespace KParts {
 /**
  * Implementation of KParts::BrowserInterface which redirects calls to KonqMainWindow
  */
-class KonqBrowserInterface : public KParts::BrowserInterface
+class KonqBrowserWindowInterface : public KParts::BrowserInterface
 {
     Q_OBJECT
 
@@ -28,8 +28,8 @@ public:
     /**
      * Default constructor
      */
-    KonqBrowserInterface(KonqMainWindow *mainWindow, KParts::ReadOnlyPart *part);
-    ~KonqBrowserInterface() override {}
+    KonqBrowserWindowInterface(KonqMainWindow *mainWindow, KParts::ReadOnlyPart *part);
+    ~KonqBrowserWindowInterface() override {}
 
 public slots:
     void toggleCompleteFullScreen(bool on);
@@ -51,4 +51,4 @@ private:
 
 };
 
-#endif // KONQBROWSERINTERFACE_H
+#endif // KONQBROWSERWINDOWINTERFACE_H

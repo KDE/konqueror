@@ -78,10 +78,11 @@ set(konqueror_KDEINIT_SRCS
    konqhistorydialog.cpp
    konqstatusbarmessagelabel.cpp
    konqurl.cpp
-   konqbrowserinterface.cpp
    urlloader.cpp
    konqsettings.cpp
    pluginmetadatautils.cpp
+   implementations/konqbrowser.cpp
+   implementations/konqbrowserwindowinterface.cpp
 )
 
 kconfig_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)

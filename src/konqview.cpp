@@ -16,7 +16,7 @@
 #include "konqtabs.h"
 #include "konqhistorymanager.h"
 #include "konqpixmapprovider.h"
-#include "konqbrowserinterface.h"
+#include "implementations/konqbrowserwindowinterface.h"
 
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
@@ -374,7 +374,7 @@ void KonqView::connectPart()
 
     if (ext) {
         
-        KonqBrowserInterface *bi = new KonqBrowserInterface(mainWindow(), m_pPart);
+        KonqBrowserWindowInterface *bi = new KonqBrowserWindowInterface(mainWindow(), m_pPart);
         ext->setBrowserInterface(bi);
         
         connect(ext, SIGNAL(openUrlRequestDelayed(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),

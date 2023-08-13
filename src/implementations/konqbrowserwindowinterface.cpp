@@ -7,22 +7,22 @@
 */
 #include <KParts/ReadOnlyPart>
 
-#include "konqbrowserinterface.h"
+#include "implementations/konqbrowserwindowinterface.h"
 #include "konqmainwindow.h"
 #include "urlloader.h"
 #include "konqview.h"
 
-KonqBrowserInterface::KonqBrowserInterface(KonqMainWindow *mainWindow, KParts::ReadOnlyPart *part):
+KonqBrowserWindowInterface::KonqBrowserWindowInterface(KonqMainWindow *mainWindow, KParts::ReadOnlyPart *part):
     KParts::BrowserInterface(mainWindow), m_mainWindow(mainWindow), m_part(part)
 {
 }
 
-void KonqBrowserInterface::toggleCompleteFullScreen(bool on)
+void KonqBrowserWindowInterface::toggleCompleteFullScreen(bool on)
 {
     m_mainWindow->toggleCompleteFullScreen(on);
 }
 
-bool KonqBrowserInterface::isCorrectPartForLocalFile(KParts::ReadOnlyPart *part, const QString &path)
+bool KonqBrowserWindowInterface::isCorrectPartForLocalFile(KParts::ReadOnlyPart *part, const QString &path)
 {
     return part->metaData().pluginId() == UrlLoader::partForLocalFile(path);
 }

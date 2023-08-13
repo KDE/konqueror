@@ -38,7 +38,7 @@
 #include <config-konqueror.h>
 #include <kstringhandler.h>
 #include "konqurl.h"
-#include "konqbrowserinterface.h"
+#include "implementations/konqbrowserwindowinterface.h"
 #include "urlloader.h"
 #include "pluginmetadatautils.h"
 #include "browseropenorsavequestion.h"

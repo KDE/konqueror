@@ -16,6 +16,8 @@ set(konq_LIB_SRCS
    htmlextension.cpp
    htmlsettingsinterface.cpp
    textextension.cpp
+   interfaces/browser.cpp
+   interfaces/common.h
 )
 
 ecm_qt_declare_logging_category(konq_LIB_SRCS HEADER libkonq_debug.h IDENTIFIER LIBKONQ_LOG CATEGORY_NAME org.kde.libkonq)

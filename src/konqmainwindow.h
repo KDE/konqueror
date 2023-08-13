@@ -782,7 +782,7 @@ private: // members
     //The last time the window was deactivated, stored as millisecond from epoch
     qint64 m_lastDeactivationTime = 0;
     
-    friend class KonqBrowserInterface;
+    friend class KonqBrowserWindowInterface;
 };
 
 #endif // KONQMAINWINDOW_H
