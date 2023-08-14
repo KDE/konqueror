@@ -65,6 +65,8 @@ namespace KonqWebEnginePart {
          * @return @b true if the certificate was overridable and @b false if it wasn't overridable.
          * @note In case the certificate wasn't overridable, @c rejectCertificate will be called on the
          * certificate.
+         * @note In Qt6 the return value is ignored
+         * @todo When removing compatibility with KF5, change the return value to `void`
          */
         bool handleCertificateError(const QWebEngineCertificateError  &_ce, WebEnginePage *page);
 

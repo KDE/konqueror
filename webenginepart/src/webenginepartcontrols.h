@@ -59,6 +59,7 @@ public:
 
     NavigationRecorder* navigationRecorder() const;
 
+    //TODO KF6: change the return value to void
     bool handleCertificateError(const QWebEngineCertificateError &ce, WebEnginePage *page);
 
     QString httpUserAgent() const;

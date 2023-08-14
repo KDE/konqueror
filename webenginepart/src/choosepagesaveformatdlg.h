@@ -7,6 +7,8 @@
 #ifndef CHOOSEPAGESAVEFORMATDLG_H
 #define CHOOSEPAGESAVEFORMATDLG_H
 
+#include "qtwebengine6compat.h"
+
 #include <QDialog>
 #include <QScopedPointer>
 #include <QWebEngineDownloadItem>
@@ -29,7 +31,7 @@ public:
     ChoosePageSaveFormatDlg(QWidget* parent=nullptr);
     ~ChoosePageSaveFormatDlg();
 
-    QWebEngineDownloadItem::SavePageFormat choosenFormat() const;
+    QWebEngineDownloadRequest::SavePageFormat choosenFormat() const;
 
 private slots:
     void updateInfoText(int id);

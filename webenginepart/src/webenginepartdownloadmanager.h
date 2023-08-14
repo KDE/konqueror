@@ -11,12 +11,12 @@
 
 #include <QObject>
 #include <QVector>
-#include <QWebEngineDownloadItem>
 #include <QTemporaryDir>
 #include <QDateTime>
 #include <QSet>
 #include <KJob>
 
+#include "qtwebengine6compat.h"
 #include "browseropenorsavequestion.h"
 #include <downloaderinterface.h>
 
@@ -52,9 +52,9 @@ public:
      * @param file the path of the downloaded file
      * @param it the object which will perform the actual download
      */
-    // void startDownloadJob(const QString &file, QWebEngineDownloadItem *it);
+    // void startDownloadJob(const QString &file, QWebEngineDownloadRequest *it);
 
-    static WebEngineDownloadJob* createDownloadJob(QWebEngineDownloadItem *it, QObject *parent = nullptr);
+    static WebEngineDownloadJob* createDownloadJob(QWebEngineDownloadRequest *it, QObject *parent = nullptr);
 
 private:
 
@@ -74,11 +74,11 @@ private:
     /**
      * @brief Saves a full HTML page, after asking the user which formats he wants to use
      *
-     * The available formats are described in `QWebEngineDownloadItem::SavePageFormat`
+     * The available formats are described in `QWebEngineDownloadRequest::SavePageFormat`
      * @param it the item to use for the download
      * @param page the page which requested the download
      */
-    void saveHtmlPage(QWebEngineDownloadItem *it, WebEnginePage *page);
+    void saveHtmlPage(QWebEngineDownloadRequest *it, WebEnginePage *page);
 
     static QTemporaryDir& tempDownloadDir();
 
@@ -87,7 +87,7 @@ public Q_SLOTS:
     void removePage(QObject *page);
 
 private Q_SLOTS:
-    void performDownload(QWebEngineDownloadItem *it);
+    void performDownload(QWebEngineDownloadRequest *it);
 
 
 private:
@@ -104,7 +104,7 @@ class WebEngineDownloadJob : public DownloaderJob
     Q_OBJECT
 
 public:
-    WebEngineDownloadJob(QWebEngineDownloadItem *it, QObject *parent = nullptr);
+    WebEngineDownloadJob(QWebEngineDownloadRequest *it, QObject *parent = nullptr);
     ~WebEngineDownloadJob() override;
 
     void start() override;
@@ -114,7 +114,7 @@ public:
     QString downloadPath() const override;
     bool finished() const override;
 
-    QWebEngineDownloadItem* item() const;
+    QWebEngineDownloadRequest* item() const;
 
 protected:
     bool doKill() override;
@@ -123,13 +123,13 @@ protected:
 
 private slots:
     void downloadProgressed(quint64 received, quint64 total);
-    void stateChanged(QWebEngineDownloadItem::DownloadState state);
+    void stateChanged(QWebEngineDownloadRequest::DownloadState state);
     void startDownloading();
     void downloadFinished();
 
 private:
     bool m_started = false; ///<! @brief Whether the job has been started or not
-    QPointer<QWebEngineDownloadItem> m_downloadItem;
+    QPointer<QWebEngineDownloadRequest> m_downloadItem;
 };
 
 #endif // WEBENGINEPARTDOWNLOADMANAGER_H

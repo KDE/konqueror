@@ -13,6 +13,7 @@
 
 #include "websslinfo.h"
 #include "kwebenginepartlib_export.h"
+#include "qtwebengine6compat.h"
 
 #include <KParts/BrowserExtension>
 #include <QWebEnginePage>
@@ -51,7 +52,7 @@ public:
      */
     void setSslInfo (const WebSslInfo &other);
 
-    void downloadItem(QWebEngineDownloadItem *it, bool newWindow = false);
+    void downloadItem(QWebEngineDownloadRequest *it, bool newWindow = false);
 
     void requestDownload(QWebEngineDownloadItem *item, bool newWindow, bool requestSave);
 
@@ -98,6 +99,10 @@ public:
     void setDropOperationStarted();
 #endif
 
+#if QT_VERSION_MAJOR == 6
+    QWidget* view() const;
+#endif
+
 Q_SIGNALS:
     /**
      * This signal is emitted whenever a user cancels/aborts a load resource
@@ -135,6 +140,7 @@ protected:
      */
     bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame) override;
 
+#if QT_VERSION_MAJOR < 6
     /**
     * @brief Override of `QWebEnginePage::certificateError`
     *
@@ -152,6 +158,11 @@ protected:
     * the return value is ignored.
     */
     bool certificateError(const QWebEngineCertificateError &_ce) override;
+#else
+signals:
+protected Q_SLOTS:
+    void handleCertificateError(const QWebEngineCertificateError &ce);
+#endif
 
 protected Q_SLOTS:
     void slotLoadFinished(bool ok);
@@ -196,7 +207,7 @@ private:
      *
      * @param it the item describing the download
      */
-     void saveUrlToDisk(QWebEngineDownloadItem *it);
+     void saveUrlToDisk(QWebEngineDownloadRequest *it);
      void saveUrlUsingKIO(const QUrl &origUrl, const QUrl &destUrl);
 
 private:

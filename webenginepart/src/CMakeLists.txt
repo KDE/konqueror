@@ -45,6 +45,7 @@ set(kwebenginepartlib_LIB_SRCS
     certificateerrordialogmanager.cpp
     navigationrecorder.cpp
     choosepagesaveformatdlg.cpp
+    qtwebengine6compat.h
 )
 
 if (DontUseKCookieJar)

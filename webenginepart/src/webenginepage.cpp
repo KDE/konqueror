@@ -24,6 +24,7 @@
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>
 #include <KDialogJobUiDelegate>
+#include <QWebEngineView>
 
 #include <KMessageBox>
 #include <KLocalizedString>
@@ -96,6 +97,10 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     m_dropOperationTimer->setSingleShot(true);
 #endif
 
+#if QT_VERSION_MAJOR == 6
+    connect(this, &QWebEnginePage::certificateError, this, &WebEnginePage::handleCertificateError);
+#endif
+
     //If this part is displaying the developer tools for another part, inform the other page it's not displaying the developer tools anymore.
     //I'm not sure this is needed, but I think it's better to do it, just to be on the safe side
     auto unsetInspectedPageIfNeeded = [this](bool ok) {
@@ -118,6 +123,13 @@ const WebSslInfo& WebEnginePage::sslInfo() const
 {
     return m_sslInfo;
 }
+
+#if QT_VERSION_MAJOR == 6
+QWidget *WebEnginePage::view() const
+{
+    return QWebEngineView::viewForPage(this);
+}
+#endif
 
 void WebEnginePage::setSslInfo (const WebSslInfo& info)
 {
@@ -225,7 +237,7 @@ WebEngineDownloadJob * WebEnginePage::downloadJob(const QUrl& url, quint32 id, Q
     return WebEnginePartDownloadManager::createDownloadJob(item, parent);
 }
 
-void WebEnginePage::downloadItem(QWebEngineDownloadItem *it, bool newWindow)
+void WebEnginePage::downloadItem(QWebEngineDownloadRequest *it, bool newWindow)
 {
     QUrl url = it->url();
     // Integration with a download manager...
@@ -469,10 +481,17 @@ static int errorCodeFromReply(QNetworkReply* reply)
 }
 #endif
 
+#if QT_VERSION_MAJOR < 6
 bool WebEnginePage::certificateError(const QWebEngineCertificateError& ce)
 {
     return WebEnginePartControls::self()->handleCertificateError(ce, this);
 }
+#else
+void WebEnginePage::handleCertificateError(const QWebEngineCertificateError &ce) {
+    WebEnginePartControls::self()->handleCertificateError(ce, this);
+}
+#endif
+
 
 WebEnginePart* WebEnginePage::part() const
 {

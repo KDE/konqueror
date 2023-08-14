@@ -36,7 +36,11 @@ bool CertificateErrorDialogManager::handleCertificateError(const QWebEngineCerti
     }
     bool ignore = userAlreadyChoseToIgnoreError(ce);
     if (ignore) {
+#if QT_VERSION_MAJOR < 6
         ce.ignoreCertificateError();
+#else
+        ce.acceptCertificate()
+#endif
     } else {
         ce.defer();
         QPointer<WebEnginePage> ptr(page);
@@ -118,7 +122,11 @@ void CertificateErrorDialogManager::applyUserChoice(WebEnginePartCertificateErro
     if (choice == WebEnginePartCertificateErrorDlg::UserChoice::DontIgnoreError) {
         error.rejectCertificate();
     } else {
+#if QT_VERSION_MAJOR < 6
         error.ignoreCertificateError();
+#else
+        error.acceptCertificate()
+#endif
         if (choice == WebEnginePartCertificateErrorDlg::UserChoice::IgnoreErrorForever) {
             recordIgnoreForeverChoice(error);
         }
