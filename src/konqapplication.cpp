@@ -21,6 +21,9 @@
 #include "konqmainwindowfactory.h"
 #include "konqmisc.h"
 #include <config-konqueror.h>
+#include "implementations/konqbrowser.h"
+
+#include "interfaces/browser.h"
 
 #include <QDBusConnection>
 #include <QDBusMessage>
@@ -49,6 +52,8 @@
 #include <KActivities/Consumer>
 #endif
 
+using namespace KonqInterfaces;
+
 #ifdef KActivities_FOUND
 QString KonquerorApplication::currentActivity()
 {
@@ -58,7 +63,7 @@ QString KonquerorApplication::currentActivity()
 #endif
 
 KonquerorApplication::KonquerorApplication(int &argc, char **argv)
-    : QApplication(argc, argv)
+    : QApplication(argc, argv), m_browser(nullptr)
 {
     // enable high dpi support
     setAttribute(Qt::AA_UseHighDpiPixmaps, true);
@@ -221,6 +226,9 @@ static void fixOldStartUrl() {
 int KonquerorApplication::startFirstInstance()
 {
     fixOldStartUrl();
+
+    m_browser = new KonqBrowser(this);
+    connect(this, &KonquerorApplication::configurationChanged, m_browser, &KonqBrowser::configurationChanged);
 
     if (isSessionRestored()) {
         restoreSession();
