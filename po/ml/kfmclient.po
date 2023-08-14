@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE Malayalam Translation\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-10 00:46+0000\n"
+"POT-Creation-Date: 2023-08-14 00:46+0000\n"
 "PO-Revision-Date: 2019-12-12 21:24+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: SMC <smc.org.in>\n"
@@ -28,42 +28,55 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "shijualexonline@gmail.com,snalledam@dataone.in,vivekkj2004@gmail.com"
 
-#: kfmclient.cpp:55
+#: kfmclient.cpp:56
 #, kde-format
 msgid "kfmclient"
 msgstr "കെഎഫ്എംക്ലയന്റ്"
 
-#: kfmclient.cpp:56
+#: kfmclient.cpp:57
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "ആജ്ഞാസ്ഥലത്തു നിന്നു് യുആര്‍എല്ലുകള്‍ തുറക്കാനുള്ള കെഡിഇ ഉപകരണം"
 
-#: kfmclient.cpp:64
+#: kfmclient.cpp:65
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr "ഇന്ററാക്ടിവല്ലാത്ത ഉപയോഗം: സന്ദേശപെട്ടികളില്ല"
 
-#: kfmclient.cpp:66
+#: kfmclient.cpp:67
 #, kde-format
 msgid "Show available commands"
 msgstr "ലഭ്യമായ ആജ്ഞകള്‍ കാണിയ്ക്കുക"
 
-#: kfmclient.cpp:68
+#: kfmclient.cpp:76
+#, kde-format
+msgid ""
+"The mimetype of the URL. Allows Konqueror to determine in advance which "
+"component to use, making it start faster."
+msgstr ""
+
+#: kfmclient.cpp:77
+#, kde-format
+msgctxt "the name for a the value of an option on the command line help"
+msgid "type"
+msgstr ""
+
+#: kfmclient.cpp:79
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "ആജ്ഞ (--commands കാണുക)"
 
-#: kfmclient.cpp:70
+#: kfmclient.cpp:81
 #, kde-format
 msgid "Arguments for command"
 msgstr "ആജ്ഞയ്ക്കായുള്ള ആര്‍ഗ്യുമെന്റുകള്‍"
 
-#: kfmclient.cpp:72
+#: kfmclient.cpp:83
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr ""
 
-#: kfmclient.cpp:80
+#: kfmclient.cpp:91
 #, kde-format
 msgid ""
 "\n"
@@ -72,14 +85,21 @@ msgstr ""
 "\n"
 "വ്യാകരണം:\n"
 
-#: kfmclient.cpp:81
-#, kde-format
+#: kfmclient.cpp:92
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kfmclient openURL 'url' ['mimetype']\n"
+#| "            # Opens a window showing 'url'.\n"
+#| "            #  'url' may be a relative path\n"
+#| "            #   or file name, such as . or subdir/\n"
+#| "            #   If 'url' is omitted, $HOME is used instead.\n"
+#| "\n"
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
 "            # Opens a window showing 'url'.\n"
 "            #  'url' may be a relative path\n"
 "            #   or file name, such as . or subdir/\n"
-"            #   If 'url' is omitted, $HOME is used instead.\n"
+"            #   If 'url' is omitted, the start page is shown.\n"
 "\n"
 msgstr ""
 "  kfmclient openURL 'url' ['mimetype']\n"
@@ -89,13 +109,22 @@ msgstr ""
 "#'url' ഒഴിവാക്കുകയാണെങ്കില്‍, പകരം $HOME ഉപയോഗിക്കപ്പെടുന്നു.\n"
 "\n"
 
-#: kfmclient.cpp:86
-#, kde-format
+#: kfmclient.cpp:97
+#, fuzzy, kde-format
+#| msgid ""
+#| "            # If 'mimetype' is specified, it will be used to determine "
+#| "the\n"
+#| "            #   component that Konqueror should use. For instance, set it "
+#| "to\n"
+#| "            #   text/html for a web page, to make it appear faster\n"
+#| "\n"
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
 "            #   component that Konqueror should use. For instance, set it "
 "to\n"
 "            #   text/html for a web page, to make it appear faster\n"
+"            # Note: this way of specifying mimetype is deprecated.\n"
+"            #   Please use the --mimetype option\n"
 "\n"
 msgstr ""
 "            # 'മൈമ്ടൈപ്പ്' വ്യക്തമാക്കിയിട്ടുണ്ടെങ്കില്‍, കോണ്‍ക്വറര്‍ ഉപയോഗിക്കേണ്ട\n"
@@ -103,7 +132,7 @@ msgstr ""
 "            #   പെട്ടെന്നു് കാണുന്നതിനായി അതു് text/html ആക്കുക\n"
 "\n"
 
-#: kfmclient.cpp:90
+#: kfmclient.cpp:103
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -118,17 +147,17 @@ msgstr ""
 "            #   കോണ്‍ക്വറര്‍ ജാലകത്തില്‍ 'url'-നായി ഒരു പുതിയ ടാബ് തുറക്കുന്നു.\n"
 "\n"
 
-#: kfmclient.cpp:267
+#: kfmclient.cpp:280
 #, fuzzy, kde-format
 msgid "Syntax error, not enough arguments\n"
 msgstr "വ്യാകരണ തെറ്റു്: ആവശ്യത്തിനു് ആര്‍ഗ്യുമെന്റുകള്‍ ഇല്ല\n"
 
-#: kfmclient.cpp:271
+#: kfmclient.cpp:284
 #, fuzzy, kde-format
 msgid "Syntax error, too many arguments\n"
 msgstr "വ്യാകരണ തെറ്റു്: ആവശ്യത്തിലധികും ആര്‍ഗ്യുമെന്റുകള്‍\n"
 
-#: kfmclient.cpp:323
+#: kfmclient.cpp:339
 #, fuzzy, kde-format
 msgid "Syntax error, unknown command '%1'\n"
 msgstr "വ്യാകരണ തെറ്റു്: അറിയാത്ത ആജ്ഞ '%1'\n"

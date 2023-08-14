@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-10 00:46+0000\n"
+"POT-Creation-Date: 2023-08-14 00:46+0000\n"
 "PO-Revision-Date: 2020-01-12 13:08+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -39,44 +39,57 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "adrian@chaves.io"
 
-#: kfmclient.cpp:55
+#: kfmclient.cpp:56
 #, kde-format
 msgid "kfmclient"
 msgstr "kfmclient"
 
-#: kfmclient.cpp:56
+#: kfmclient.cpp:57
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "Ferramenta de KDE para abrir URL desde a liña de ordes"
 
-#: kfmclient.cpp:64
+#: kfmclient.cpp:65
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr "Uso non interactivo: sen diálogos"
 
-#: kfmclient.cpp:66
+#: kfmclient.cpp:67
 #, kde-format
 msgid "Show available commands"
 msgstr "Amosar as ordes dispoñíbeis"
 
-#: kfmclient.cpp:68
+#: kfmclient.cpp:76
+#, kde-format
+msgid ""
+"The mimetype of the URL. Allows Konqueror to determine in advance which "
+"component to use, making it start faster."
+msgstr ""
+
+#: kfmclient.cpp:77
+#, kde-format
+msgctxt "the name for a the value of an option on the command line help"
+msgid "type"
+msgstr ""
+
+#: kfmclient.cpp:79
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "Orde (consulte --commands)"
 
-#: kfmclient.cpp:70
+#: kfmclient.cpp:81
 #, kde-format
 msgid "Arguments for command"
 msgstr "Argumentos para a orde"
 
-#: kfmclient.cpp:72
+#: kfmclient.cpp:83
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr ""
 "Os ficheiros ou enderezos URL abertos pola aplicación eliminaranse despois "
 "de usalos"
 
-#: kfmclient.cpp:80
+#: kfmclient.cpp:91
 #, kde-format
 msgid ""
 "\n"
@@ -85,14 +98,21 @@ msgstr ""
 "\n"
 "Sintaxe:\n"
 
-#: kfmclient.cpp:81
-#, kde-format
+#: kfmclient.cpp:92
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kfmclient openURL 'url' ['mimetype']\n"
+#| "            # Opens a window showing 'url'.\n"
+#| "            #  'url' may be a relative path\n"
+#| "            #   or file name, such as . or subdir/\n"
+#| "            #   If 'url' is omitted, $HOME is used instead.\n"
+#| "\n"
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
 "            # Opens a window showing 'url'.\n"
 "            #  'url' may be a relative path\n"
 "            #   or file name, such as . or subdir/\n"
-"            #   If 'url' is omitted, $HOME is used instead.\n"
+"            #   If 'url' is omitted, the start page is shown.\n"
 "\n"
 msgstr ""
 "  kfmclient openURL 'url' ['tipomime']\n"
@@ -102,13 +122,22 @@ msgstr ""
 "            #   Se omite «url», usarase no seu canto $HOME.\n"
 "\n"
 
-#: kfmclient.cpp:86
-#, kde-format
+#: kfmclient.cpp:97
+#, fuzzy, kde-format
+#| msgid ""
+#| "            # If 'mimetype' is specified, it will be used to determine "
+#| "the\n"
+#| "            #   component that Konqueror should use. For instance, set it "
+#| "to\n"
+#| "            #   text/html for a web page, to make it appear faster\n"
+#| "\n"
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
 "            #   component that Konqueror should use. For instance, set it "
 "to\n"
 "            #   text/html for a web page, to make it appear faster\n"
+"            # Note: this way of specifying mimetype is deprecated.\n"
+"            #   Please use the --mimetype option\n"
 "\n"
 msgstr ""
 "            # De especificar «mimetype», usarase para determinar a\n"
@@ -118,7 +147,7 @@ msgstr ""
 "axiña\n"
 "\n"
 
-#: kfmclient.cpp:90
+#: kfmclient.cpp:103
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -133,17 +162,17 @@ msgstr ""
 "            #   xa existente no escritorio activo se é posíbel.\n"
 "\n"
 
-#: kfmclient.cpp:267
+#: kfmclient.cpp:280
 #, kde-format
 msgid "Syntax error, not enough arguments\n"
 msgstr "Erro de sintaxe: non hai argumentos de abondo\n"
 
-#: kfmclient.cpp:271
+#: kfmclient.cpp:284
 #, kde-format
 msgid "Syntax error, too many arguments\n"
 msgstr "Erro de sintaxe: demasiados argumentos\n"
 
-#: kfmclient.cpp:323
+#: kfmclient.cpp:339
 #, kde-format
 msgid "Syntax error, unknown command '%1'\n"
 msgstr "Erro de sintaxe: non se coñece a orde «%1»\n"

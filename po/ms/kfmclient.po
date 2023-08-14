@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-10 00:46+0000\n"
+"POT-Creation-Date: 2023-08-14 00:46+0000\n"
 "PO-Revision-Date: 2010-05-28 12:59+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
@@ -29,42 +29,55 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: kfmclient.cpp:55
+#: kfmclient.cpp:56
 #, kde-format
 msgid "kfmclient"
 msgstr "kfmclient"
 
-#: kfmclient.cpp:56
+#: kfmclient.cpp:57
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "Alatan KDE untuk pembukaan URL daripada baris arahan"
 
-#: kfmclient.cpp:64
+#: kfmclient.cpp:65
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr "Penggunaan tidak interaktif: tiada kekotak mesej"
 
-#: kfmclient.cpp:66
+#: kfmclient.cpp:67
 #, kde-format
 msgid "Show available commands"
 msgstr "Papar arahan yang ada"
 
-#: kfmclient.cpp:68
+#: kfmclient.cpp:76
+#, kde-format
+msgid ""
+"The mimetype of the URL. Allows Konqueror to determine in advance which "
+"component to use, making it start faster."
+msgstr ""
+
+#: kfmclient.cpp:77
+#, kde-format
+msgctxt "the name for a the value of an option on the command line help"
+msgid "type"
+msgstr ""
+
+#: kfmclient.cpp:79
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "Arahan (lihat --commands)"
 
-#: kfmclient.cpp:70
+#: kfmclient.cpp:81
 #, kde-format
 msgid "Arguments for command"
 msgstr "Hujah untuk arahan"
 
-#: kfmclient.cpp:72
+#: kfmclient.cpp:83
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr ""
 
-#: kfmclient.cpp:80
+#: kfmclient.cpp:91
 #, kde-format
 msgid ""
 "\n"
@@ -73,14 +86,21 @@ msgstr ""
 "\n"
 "Sintaks:\n"
 
-#: kfmclient.cpp:81
-#, kde-format
+#: kfmclient.cpp:92
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kfmclient openURL 'url' ['mimetype']\n"
+#| "            # Opens a window showing 'url'.\n"
+#| "            #  'url' may be a relative path\n"
+#| "            #   or file name, such as . or subdir/\n"
+#| "            #   If 'url' is omitted, $HOME is used instead.\n"
+#| "\n"
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
 "            # Opens a window showing 'url'.\n"
 "            #  'url' may be a relative path\n"
 "            #   or file name, such as . or subdir/\n"
-"            #   If 'url' is omitted, $HOME is used instead.\n"
+"            #   If 'url' is omitted, the start page is shown.\n"
 "\n"
 msgstr ""
 "  kfmclient openURL 'url' ['mimetype']\n"
@@ -90,13 +110,22 @@ msgstr ""
 "            #   Jika 'url' dibuang, $HOME digunakan.\n"
 "\n"
 
-#: kfmclient.cpp:86
-#, kde-format
+#: kfmclient.cpp:97
+#, fuzzy, kde-format
+#| msgid ""
+#| "            # If 'mimetype' is specified, it will be used to determine "
+#| "the\n"
+#| "            #   component that Konqueror should use. For instance, set it "
+#| "to\n"
+#| "            #   text/html for a web page, to make it appear faster\n"
+#| "\n"
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
 "            #   component that Konqueror should use. For instance, set it "
 "to\n"
 "            #   text/html for a web page, to make it appear faster\n"
+"            # Note: this way of specifying mimetype is deprecated.\n"
+"            #   Please use the --mimetype option\n"
 "\n"
 msgstr ""
 "            # Jika 'jenis mime' dinyatakan, ia akan digunakan untuk "
@@ -107,7 +136,7 @@ msgstr ""
 "lebih pantas\n"
 "\n"
 
-#: kfmclient.cpp:90
+#: kfmclient.cpp:103
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -122,19 +151,19 @@ msgstr ""
 "            #   tetingkap dalam desktop aktif semasa, jika mungkin.\n"
 "\n"
 
-#: kfmclient.cpp:267
+#: kfmclient.cpp:280
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Not enough arguments\n"
 msgid "Syntax error, not enough arguments\n"
 msgstr "Ralat sintaks: Tidak cukup hujah\n"
 
-#: kfmclient.cpp:271
+#: kfmclient.cpp:284
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Too many arguments\n"
 msgid "Syntax error, too many arguments\n"
 msgstr "Ralat sintaks: Terlalu banyak hujah\n"
 
-#: kfmclient.cpp:323
+#: kfmclient.cpp:339
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Unknown command '%1'\n"
 msgid "Syntax error, unknown command '%1'\n"
