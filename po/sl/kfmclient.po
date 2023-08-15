@@ -1,7 +1,7 @@
 # translation of kfmclient.po to Slovenian
 # Translation of kfmclient.po to Slovenian
 # SLOVENIAN TRANSLATION OF KFMCLIENT.
-# $Id: kfmclient.po 1658125 2023-08-14 01:26:50Z scripty $
+# $Id: kfmclient.po 1658182 2023-08-15 01:26:02Z scripty $
 # $Source$
 #
 # Copyright (C) 2001, 2003, 2004, 2005 Free Software Foundation, Inc.
@@ -14,16 +14,16 @@ msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-14 00:46+0000\n"
-"PO-Revision-Date: 2020-09-01 16:29+0200\n"
+"PO-Revision-Date: 2023-08-14 11:42+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -63,12 +63,14 @@ msgid ""
 "The mimetype of the URL. Allows Konqueror to determine in advance which "
 "component to use, making it start faster."
 msgstr ""
+"Vrsta mime URL-ja. Konquerorju omogoča, da vnaprej določi, katero komponento "
+"naj uporabi, zaradi česar se zažene hitreje."
 
 #: kfmclient.cpp:77
 #, kde-format
 msgctxt "the name for a the value of an option on the command line help"
 msgid "type"
-msgstr ""
+msgstr "vrsta"
 
 #: kfmclient.cpp:79
 #, kde-format
@@ -95,14 +97,7 @@ msgstr ""
 "Skladnja:\n"
 
 #: kfmclient.cpp:92
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kfmclient openURL 'url' ['mimetype']\n"
-#| "            # Opens a window showing 'url'.\n"
-#| "            #  'url' may be a relative path\n"
-#| "            #   or file name, such as . or subdir/\n"
-#| "            #   If 'url' is omitted, $HOME is used instead.\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
 "            # Opens a window showing 'url'.\n"
@@ -112,21 +107,14 @@ msgid ""
 "\n"
 msgstr ""
 "  kfmclient openURL »url« [»vrsta_mime«]\n"
-"            # Odpre okno in prikaže »url«.\n"
-"            #  »url« je lahko relativna pot\n"
+"            # Odpre okno in prikaže 'url'.\n"
+"            #  'url' je lahko relativna pot\n"
 "            #   ali ime datoteke, kot npr. . ali podmapa/\n"
-"            #   Če je »url« izpuščen, se privzame $HOME.\n"
+"            #   Če je 'url' izpuščen, se prikaže začetna stran.\n"
 "\n"
 
 #: kfmclient.cpp:97
-#, fuzzy, kde-format
-#| msgid ""
-#| "            # If 'mimetype' is specified, it will be used to determine "
-#| "the\n"
-#| "            #   component that Konqueror should use. For instance, set it "
-#| "to\n"
-#| "            #   text/html for a web page, to make it appear faster\n"
-#| "\n"
+#, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
 "            #   component that Konqueror should use. For instance, set it "
@@ -136,11 +124,13 @@ msgid ""
 "            #   Please use the --mimetype option\n"
 "\n"
 msgstr ""
-"            # Če je 'vrsta_mime' določen, potem bo uporabljen za "
+"            # Če je 'vrsta_mime' določena, potem bo uporabljena za "
 "ugotavljanje\n"
 "            #   sestavnega dela, ki naj jo Konqueror uporabi. Npr. nastavite "
 "ga na\n"
 "            #   text/html za spletno stran, da jo hitreje prikažete\n"
+"            # Opomba: ta način določanja vrste mime je zastarel.\n"
+"            # Uporabite možnost --mimetype\n"
 "\n"
 
 #: kfmclient.cpp:103
