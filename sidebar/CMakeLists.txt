@@ -5,12 +5,14 @@ find_package(KF${KF_MAJOR_VERSION} REQUIRED COMPONENTS JobWidgets IconThemes)
 #NOTE: it must be set before calling add_subdirectory
 set(KONQ_SIDEBAR_PLUGIN_DIR "${KDE_INSTALL_PLUGINDIR}/konqueror/sidebar")
 
+#TODO KF6: check what to do with this: either port it to Qt6 or remove it
 if (${QT_QT3SUPPORT_FOUND})
 add_subdirectory( trees )
 endif()
 
 add_subdirectory( bookmarks_module )
 add_subdirectory( tree_module )
+#TODO KF6: check what to do with this: either port it to WebEnginePart or remove it
 # add_subdirectory( web_module ) # requires refactoring away from KHtml
 add_subdirectory( history_module )
 add_subdirectory( places_module )
