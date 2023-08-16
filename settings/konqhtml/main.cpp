@@ -39,24 +39,6 @@ KJSParts::KJSParts(QWidget *parent, const QVariantList &)
     : KCModule(parent)
 {
     mConfig = KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals);
-    KAboutData *about =
-        new KAboutData(QStringLiteral("kcmkonqhtml"), i18n("Konqueror Browsing Control Module"),
-                       QLatin1String(""), QLatin1String(""), KAboutLicense::GPL,
-                       i18n("(c) 1999 - 2001 The Konqueror Developers"));
-
-    about->addAuthor(i18n("Waldo Bastian"), QLatin1String(""), QStringLiteral("bastian@kde.org"));
-    about->addAuthor(i18n("David Faure"), QLatin1String(""), QStringLiteral("faure@kde.org"));
-    about->addAuthor(i18n("Matthias Kalle Dalheimer"), QLatin1String(""), QStringLiteral("kalle@kde.org"));
-    about->addAuthor(i18n("Lars Knoll"), QLatin1String(""), QStringLiteral("knoll@kde.org"));
-    about->addAuthor(i18n("Dirk Mueller"), QLatin1String(""), QStringLiteral("mueller@kde.org"));
-    about->addAuthor(i18n("Daniel Molkentin"), QLatin1String(""), QStringLiteral("molkentin@kde.org"));
-    about->addAuthor(i18n("Wynn Wilkes"), QLatin1String(""), QStringLiteral("wynnw@caldera.com"));
-
-    about->addCredit(i18n("Leo Savernik"), i18n("JavaScript access controls\n"
-                     "Per-domain policies extensions"),
-                     QStringLiteral("l.savernik@aon.at"));
-
-    setAboutData(about);
 
     QVBoxLayout *layout = new QVBoxLayout(this);
     tab = new QTabWidget(this);

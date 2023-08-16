@@ -11,6 +11,7 @@
 #include "konqmainwindow.h" // hmm, please move PageSecurity out of konq_mainwindow...
 #include "konqfactory.h"
 #include "konqframe.h"
+#include "konqutils.h"
 
 #include <kservice.h>
 #include <QMimeType>
@@ -330,7 +331,7 @@ public:
      */
     QStringList serviceTypes() const
     {
-        return m_service.serviceTypes();
+        return Konq::serviceTypes(m_service);
     }
 
     /**

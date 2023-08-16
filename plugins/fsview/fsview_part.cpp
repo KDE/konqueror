@@ -38,6 +38,7 @@
 #include <ksharedconfig.h>
 #include <KLocalizedString>
 #include <KIO/ApplicationLauncherJob>
+#include <KIO/JobUiDelegateFactory>
 
 #include <QApplication>
 #include <QMimeData>
@@ -219,7 +220,7 @@ void FSViewPart::showHelp()
 void FSViewPart::startedSlot()
 {
     _job = new FSJob(_view);
-    _job->setUiDelegate(new KIO::JobUiDelegate());
+    _job->setUiDelegate(KIO::createDefaultJobUiDelegate());
     emit started(_job);
 }
 
@@ -448,9 +449,10 @@ FSViewBrowserExtension::~FSViewBrowserExtension()
 void FSViewBrowserExtension::del()
 {
     const QList<QUrl> urls = _view->selectedUrls();
-    KIO::JobUiDelegate uiDelegate;
-    uiDelegate.setWindow(_view);
-    if (uiDelegate.askDeleteConfirmation(urls,
+    KJobUiDelegate* baseUiDelegate = KIO::createDefaultJobUiDelegate(KJobUiDelegate::Flags{}, _view);
+    KIO::JobUiDelegate* uiDelegate = qobject_cast<KIO::JobUiDelegate*>(baseUiDelegate);
+    uiDelegate->setWindow(_view);
+    if (uiDelegate && uiDelegate->askDeleteConfirmation(urls,
                                          KIO::JobUiDelegate::Delete, KIO::JobUiDelegate::DefaultConfirmation)) {
         KIO::Job *job = KIO::del(urls);
         KJobWidgets::setWindow(job, _view);
@@ -465,10 +467,11 @@ void FSViewBrowserExtension::trash()
     if (deleteNotTrash) {
         del();
     } else {
-        KIO::JobUiDelegate uiDelegate;
-        uiDelegate.setWindow(_view);
+        KJobUiDelegate* baseUiDelegate = KIO::createDefaultJobUiDelegate(KJobUiDelegate::Flags{}, _view);
+        KIO::JobUiDelegate* uiDelegate = qobject_cast<KIO::JobUiDelegate*>(baseUiDelegate);
+        uiDelegate->setWindow(_view);
         const QList<QUrl> urls = _view->selectedUrls();
-        if (uiDelegate.askDeleteConfirmation(urls,
+        if (uiDelegate && uiDelegate->askDeleteConfirmation(urls,
                                              KIO::JobUiDelegate::Trash, KIO::JobUiDelegate::DefaultConfirmation)) {
             KIO::Job *job = KIO::trash(urls);
             KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Trash, urls, QUrl("trash:/"), job);

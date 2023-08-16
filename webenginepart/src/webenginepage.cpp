@@ -132,7 +132,7 @@ static void checkForDownloadManager(QWidget* widget, QString& cmd)
 
     const QString exeName = QStandardPaths::findExecutable(fileName);
     if (exeName.isEmpty()) {
-        KMessageBox::detailedSorry(widget,
+        KMessageBox::detailedError(widget,
                                    i18n("The download manager (%1) could not be found in your installation.", fileName),
                                    i18n("Try to reinstall it and make sure that it is available in $PATH. \n\nThe integration will be disabled."));
         cfg.writePathEntry("DownloadManager", QString());

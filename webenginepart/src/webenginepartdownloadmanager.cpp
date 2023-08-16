@@ -31,6 +31,7 @@
 #include <KIO/OpenUrlJob>
 #include <KFileUtils>
 #include <KIO/JobUiDelegate>
+#include <KIO/JobUiDelegateFactory>
 
 WebEnginePartDownloadManager::WebEnginePartDownloadManager(QWebEngineProfile *profile, QObject *parent)
     : QObject(parent), m_tempDownloadDir(QDir(QDir::tempPath()).filePath("WebEnginePartDownloadManager"))
@@ -186,7 +187,7 @@ void WebEnginePartDownloadManager::downloadToFileCompleted(QWebEngineDownloadIte
         page->requestOpenFileAsTemporary(QUrl::fromLocalFile(file), it->mimeType(), false, true);
     } else {
         KIO::OpenUrlJob *j = new KIO::OpenUrlJob(QUrl::fromLocalFile(file), it->mimeType(), this);
-        j->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+        j->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
         j->start();
     }
 }

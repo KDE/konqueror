@@ -149,7 +149,7 @@ void KonquerorApplication::setupAboutData()
     KAboutData m_aboutData("konqueror", i18n("Konqueror"), KONQUEROR_VERSION);
     m_aboutData.setShortDescription(i18n("Web browser, file manager and document viewer."));
     m_aboutData.addLicense(KAboutLicense::GPL_V2);
-    m_aboutData.setCopyrightStatement(i18n("(C) 1999-2016, The Konqueror developers"));
+    m_aboutData.setCopyrightStatement(i18n("(C) 1999-2023, The Konqueror developers"));
     m_aboutData.setHomepage("https://apps.kde.org/konqueror");
 
     m_aboutData.addAuthor(i18n("Stefano Crocco"), i18n("Current maintainer"), "stefano.crocco@alice.it");
@@ -190,7 +190,11 @@ void KonquerorApplication::setupAboutData()
     m_aboutData.addAuthor(i18n("Stephan Binner"), i18n("Developer (misc stuff)"), "binner@kde.org");
     m_aboutData.addAuthor(i18n("Ivor Hewitt"), i18n("Developer (AdBlock filter)"), "ivor@ivor.org");
     m_aboutData.addAuthor(i18n("Eduardo Robles Elvira"), i18n("Developer (framework)"), "edulix@gmail.com");
-
+    m_aboutData.addAuthor(i18n("Matthias Kalle Dalheimer"), QLatin1String(""), QStringLiteral("kalle@kde.org"));
+    m_aboutData.addAuthor(i18n("Daniel Molkentin"), QLatin1String(""), QStringLiteral("molkentin@kde.org"));
+    m_aboutData.addCredit(i18n("Leo Savernik"), i18n("JavaScript access controls\n"
+                     "Per-domain policies extensions"),
+                     QStringLiteral("l.savernik@aon.at"));
     KAboutData::setApplicationData(m_aboutData);
 }
 
@@ -318,7 +322,7 @@ int KonquerorApplication::performStart(const QString& workingDirectory, bool fir
         QString sessionName = m_parser.value("open-session");
         int result = openSession(sessionName);
         if (result != 0) {
-            KMessageBox::sorry(nullptr, i18nc("The session asked by the user doesn't exist or can't be opened",
+            KMessageBox::error(nullptr, i18nc("The session asked by the user doesn't exist or can't be opened",
                                               "Session %1 couldn't be opened", sessionName));
         }
         //If there was an error opening the session and this is the first instance, don't return immediately

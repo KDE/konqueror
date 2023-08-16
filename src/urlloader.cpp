@@ -347,7 +347,7 @@ bool UrlLoader::serviceIsKonqueror(KService::Ptr service)
 void UrlLoader::launchMimeTypeFinderJob()
 {
     m_mimeTypeFinderJob = new KIO::MimeTypeFinderJob(m_url, this);
-    m_mimeTypeFinderJob->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
+    m_mimeTypeFinderJob->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
     m_mimeTypeFinderJob->setSuggestedFileName(m_request.suggestedFileName);
     connect(m_mimeTypeFinderJob, &KIO::MimeTypeFinderJob::result, this, [this](KJob*){mimetypeDeterminedByJob();});
     m_mimeTypeFinderJob->start();

@@ -40,6 +40,7 @@ public:
 
 public Q_SLOTS:
     void setChanged(bool c);
+    //TODO: Is this used anymore?
     void reparseConfiguration(const QByteArray &);
     void slotOk();
     void slotApply();

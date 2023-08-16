@@ -181,7 +181,7 @@ void KonqHistoryProviderPrivate::adjustSize()
     }
 
     KonqHistoryEntry entry = m_history.first();
-    const QDateTime expirationDate(QDate::currentDate().addDays(-m_maxAgeDays));
+    const QDateTime expirationDate(QDate::currentDate().addDays(-m_maxAgeDays).startOfDay());
 
     while (m_history.count() > qint32(m_maxCount) ||
             (m_maxAgeDays > 0 && entry.lastVisited.isValid() && entry.lastVisited < expirationDate)) { // i.e. entry is expired

@@ -167,7 +167,7 @@ private Q_SLOTS:
     void slotLaunchWalletManager();
     void togglePasswordStorableState(bool on);
     void slotRemoveCachedPasswords();
-    void slotSetTextEncoding(QTextCodec*);
+    void slotSetTextEncoding(const QString &codecName);
     void slotSetStatusBarText(const QString& text);
     void slotWindowCloseRequested();
     void slotSaveFormDataRequested(const QString &, const QUrl &);

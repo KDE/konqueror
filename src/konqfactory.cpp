@@ -11,6 +11,7 @@
 #include "konqdebug.h"
 #include "konqsettings.h"
 #include "konqmainwindow.h"
+#include "konqutils.h"
 
 // std
 #include <assert.h>
@@ -42,7 +43,6 @@ KParts::ReadOnlyPart *KonqViewFactory::create(QWidget *parentWidget, QObject *pa
     if (!m_factory) {
         return nullptr;
     }
-
     KParts::ReadOnlyPart *part = m_factory->create<KParts::ReadOnlyPart>(parentWidget, parent, m_args);
 
     if (!part) {
@@ -162,7 +162,7 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
         args << QVariant(str);
     }
 
-    if (service.serviceTypes().contains(QStringLiteral("Browser/View"))) {
+    if (Konq::serviceTypes(service).contains(QStringLiteral("Browser/View"))) {
         args << QLatin1String("Browser/View");
     }
 
@@ -177,7 +177,7 @@ void KonqFactory::getOffers(const QString &serviceType, QVector<KPluginMetaData>
 #endif
     if (partServiceOffers && serviceType.length() > 0 && serviceType[0].isUpper()) {
         //TODO port away from query: check whether it's still necessary to exclude kfmclient* from this vector (they aren't parts, so I think they shouldn't be included here)
-        auto filter = [serviceType](const KPluginMetaData &md){return md.serviceTypes().contains(serviceType);};
+        auto filter = [serviceType](const KPluginMetaData &md){return Konq::serviceTypes(md).contains(serviceType);};
         *partServiceOffers = KPluginMetaData::findPlugins(QStringLiteral("kf5/parts"), filter);
         //Some parts, in particular konsolepart (at least version 22.12.3), aren't installed if kf5/parts but in the plugins directory, so we need to look for them separately
         //TODO: remove this line when (if) all parts are installed in kf5/parts

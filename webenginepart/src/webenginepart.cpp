@@ -255,7 +255,7 @@ void WebEnginePart::initActions()
 
     KCodecAction *codecAction = new KCodecAction( QIcon::fromTheme(QStringLiteral("character-set")), i18n( "Set &Encoding" ), this, true );
     actionCollection()->addAction( QStringLiteral("setEncoding"), codecAction );
-    connect(codecAction, &KCodecAction::codecTriggered, this, &WebEnginePart::slotSetTextEncoding);
+    connect(codecAction, &KCodecAction::codecNameTriggered, this, &WebEnginePart::slotSetTextEncoding);
     action = new QAction(i18n("View Do&cument Source"), this);
     actionCollection()->addAction(QStringLiteral("viewDocumentSource"), action);
     actionCollection()->setDefaultShortcut(action, QKeySequence(Qt::CTRL | Qt::Key_U));
@@ -834,7 +834,7 @@ void WebEnginePart::slotRemoveCachedPasswords()
     updateWalletData(WalletData::HasCachedData, false);
 }
 
-void WebEnginePart::slotSetTextEncoding(QTextCodec * codec)
+void WebEnginePart::slotSetTextEncoding(const QString &codecName)
 {
     // FIXME: The code below that sets the text encoding has been reported not to work.
     if (!page())
@@ -844,9 +844,9 @@ void WebEnginePart::slotSetTextEncoding(QTextCodec * codec)
     if (!localSettings)
         return;
 
-    qCDebug(WEBENGINEPART_LOG) << "Encoding: new=>" << localSettings->defaultTextEncoding() << ", old=>" << codec->name();
+    qCDebug(WEBENGINEPART_LOG) << "Encoding: new=>" << localSettings->defaultTextEncoding() << ", old=>" << codecName;
 
-    localSettings->setDefaultTextEncoding(codec->name());
+    localSettings->setDefaultTextEncoding(codecName);
     page()->triggerAction(QWebEnginePage::Reload);
 }
 

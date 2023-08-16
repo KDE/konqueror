@@ -22,6 +22,8 @@
 #include "konqframevisitor.h"
 #include "konqframestatusbar.h"
 #include "konqviewmanager.h"
+#include "pluginmetadatautils.h"
+#include "konqutils.h"
 
 PopupMenuGUIClient::PopupMenuGUIClient(const QVector<KPluginMetaData> &embeddingServices,
                                        KonqPopupMenu::ActionGroupMap &actionGroups,
@@ -91,55 +93,53 @@ ToggleViewGUIClient::ToggleViewGUIClient(KonqMainWindow *mainWindow)
 {
     m_mainWindow = mainWindow;
 
-    KService::List offers = KServiceTypeTrader::self()->query(QStringLiteral("Browser/View"));
-    KService::List::Iterator it = offers.begin();
-    while (it != offers.end()) {
-        QVariant prop = (*it)->property(QStringLiteral("X-KDE-BrowserView-Toggable"));
-        QVariant orientation = (*it)->property(QStringLiteral("X-KDE-BrowserView-ToggableView-Orientation"));
-
-        if (!prop.isValid() || !prop.toBool() ||
-                !orientation.isValid() || orientation.toString().isEmpty()) {
-            offers.erase(it);
-            it = offers.begin();
-        } else {
-            ++it;
+    auto filter = [](const KPluginMetaData &md) {
+        if (!Konq::serviceTypes(md).contains(QStringLiteral("Browser/View"))) {
+            return false;
         }
-    }
-
-    m_empty = (offers.count() == 0);
-
-    if (m_empty) {
+        bool toggable = md.value(QStringLiteral("X-KDE-BrowserView-Toggable"), false);
+        if (!toggable) {
+            return false;
+        }
+        QString orientation = (QStringLiteral("X-KDE-BrowserView-ToggableView-Orientation"), QString());
+        if (!orientation.isEmpty()) {
+            return false;
+        }
+        return true;
+    };
+    QVector<KPluginMetaData> mds = findParts(filter, true);
+    //TODO KF6: check whether this is still true
+    //Sometimes there may be duplicates, so remove them
+    std::sort(mds.begin(), mds.end(), [](const KPluginMetaData &md1, const KPluginMetaData &md2){return md1.pluginId() <= md2.pluginId();});
+    auto last = std::unique(mds.begin(), mds.end(), [](const KPluginMetaData &md1, const KPluginMetaData &md2){return md1.pluginId() == md2.pluginId();});
+    mds.erase(last, mds.end());
+    if (mds.isEmpty()) {
         return;
     }
 
-    KService::List::ConstIterator cIt = offers.constBegin();
-    KService::List::ConstIterator cEnd = offers.constEnd();
-    for (; cIt != cEnd; ++cIt) {
-        QString description = i18n("Show %1", (*cIt)->name());
-        QString name = (*cIt)->desktopEntryName();
+    for (const KPluginMetaData &md : mds) {
+        QString description = i18n("Show %1", md.name());
+        QString name = md.pluginId();
         //qCDebug(KONQUEROR_LOG) << "ToggleViewGUIClient: name=" << name;
         KToggleAction *action = new KToggleAction(description, this);
         mainWindow->actionCollection()->addAction(name.toLatin1(), action);
 
         // HACK
-        if ((*cIt)->icon() != QLatin1String("unknown")) {
-            action->setIcon(QIcon::fromTheme((*cIt)->icon()));
+        if (md.iconName() != QLatin1String("unknown")) {
+            action->setIcon(QIcon::fromTheme(md.iconName()));
         }
 
-        connect(action, SIGNAL(toggled(bool)),
-                this, SLOT(slotToggleView(bool)));
+        connect(action, &QAction::toggled, this, &ToggleViewGUIClient::slotToggleView);
 
         m_actions.insert(name, action);
 
-        QVariant orientation = (*cIt)->property(QStringLiteral("X-KDE-BrowserView-ToggableView-Orientation"));
+        QVariant orientation = md.value(QStringLiteral("X-KDE-BrowserView-ToggableView-Orientation"));
         bool horizontal = orientation.toString().toLower() == QLatin1String("horizontal");
         m_mapOrientation.insert(name, horizontal);
     }
 
-    connect(m_mainWindow, SIGNAL(viewAdded(KonqView*)),
-            this, SLOT(slotViewAdded(KonqView*)));
-    connect(m_mainWindow, SIGNAL(viewRemoved(KonqView*)),
-            this, SLOT(slotViewRemoved(KonqView*)));
+    connect(m_mainWindow, &KonqMainWindow::viewAdded, this, &ToggleViewGUIClient::slotViewAdded);
+    connect(m_mainWindow, &KonqMainWindow::viewRemoved, this, &ToggleViewGUIClient::slotViewRemoved);
 }
 
 ToggleViewGUIClient::~ToggleViewGUIClient()
@@ -245,11 +245,9 @@ void ToggleViewGUIClient::slotViewAdded(KonqView *view)
     QAction *action = m_actions.value(name);
 
     if (action) {
-        disconnect(action, SIGNAL(toggled(bool)),
-                   this, SLOT(slotToggleView(bool)));
+        disconnect(action, &QAction::toggled, this, &ToggleViewGUIClient::slotToggleView);
         static_cast<KToggleAction *>(action)->setChecked(true);
-        connect(action, SIGNAL(toggled(bool)),
-                this, SLOT(slotToggleView(bool)));
+        connect(action, &QAction::toggled, this, &ToggleViewGUIClient::slotToggleView);
 
         saveConfig(true, name);
 
@@ -277,11 +275,9 @@ void ToggleViewGUIClient::slotViewRemoved(KonqView *view)
     QAction *action = m_actions.value(name);
 
     if (action) {
-        disconnect(action, SIGNAL(toggled(bool)),
-                   this, SLOT(slotToggleView(bool)));
-        static_cast<KToggleAction *>(action)->setChecked(false);
-        connect(action, SIGNAL(toggled(bool)),
-                this, SLOT(slotToggleView(bool)));
+        disconnect(action, &QAction::toggled, this, &ToggleViewGUIClient::slotToggleView);
+        static_cast<KToggleAction *>(action)->setChecked(true);
+        connect(action, &QAction::toggled, this, &ToggleViewGUIClient::slotToggleView);
         saveConfig(false, name);
     }
 }

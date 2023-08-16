@@ -149,7 +149,7 @@ void KonqPopupMenuTest::initTestCase()
     QAction *viewDocumentSource = new QAction(m_partActions);
     m_actionCollection.addAction(QStringLiteral("viewDocumentSource"), viewDocumentSource);
 
-    m_newMenu = new KNewFileMenu(&m_actionCollection, QStringLiteral("newmenu"), nullptr);
+    m_newMenu = new KNewFileMenu(nullptr);
 
     // Check if extractActionNames works
     QMenu popup;

@@ -96,7 +96,7 @@ KonqExtensionManager::~KonqExtensionManager()
 
 void KonqExtensionManager::reparseConfiguration(const QByteArray &conf)
 {
-    KSettings::Dispatcher::reparseConfiguration(conf);
+    KSharedConfig::openConfig(conf + QLatin1String("rc"))->reparseConfiguration();
 }
 
 void KonqExtensionManager::setChanged(bool c)

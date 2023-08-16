@@ -36,6 +36,7 @@
 #include <KIO/OpenUrlJob>
 #include <KParts/BrowserRun>
 #include <KEMailClientLauncherJob>
+#include <KIO/JobUiDelegateFactory>
 
 #include <QBuffer>
 #include <QVariant>
@@ -548,7 +549,7 @@ void WebEngineBrowserExtension::slotViewDocumentSource()
     const QUrl pageUrl (view()->url());
     if (pageUrl.isLocalFile()) {
         KIO::OpenUrlJob *job = new KIO::OpenUrlJob(pageUrl, QL1S("text/plain"));
-        job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, view()));
+        job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, view()));
         job->start();
     } else {
         view()->page()->toHtml([this](const QString& html) {
@@ -559,7 +560,7 @@ void WebEngineBrowserExtension::slotViewDocumentSource()
                 tempFile.write(html.toUtf8());
                 tempFile.close();
                 KIO::OpenUrlJob *job = new KIO::OpenUrlJob(QUrl::fromLocalFile(tempFile.fileName()), QL1S("text/plain"));
-                job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, view()));
+                job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, view()));
                 job->setDeleteTemporaryFile(true);
                 job->start();
             }

@@ -57,23 +57,12 @@ ArchiveDialog::ArchiveDialog(const QUrl &url, QWidget *parent)
     archiveName.chop(db.suffixForFileName(archiveName).length());
     if (archiveName.isEmpty())
     {
-        // If there was no file name, then generate a name from the host name.
-        // Remove the top level domain suffix, then take the last component.
-        // For example, QUrl::topLevelDomain("http://www.kde.org") gives ".org"
-        // which leaves "www.kde", the last component is "kde" which is used
-        // as the archive base name.
+        //The implementation in KF5 constructed the archive name basing on QUrl::topLevelDomain()
+        //Since that function doesn't exist anymore, and there's no easy way to replace it,
+        //use a simpler algorithm: just replace each dot in the host with an underscore
+        archiveName = url.host().replace(".", "_");				// host name from URL
 
-        QString host = url.host();				// host name from URL
-        const QString tld = url.topLevelDomain(QUrl::EncodeUnicode);
-        if (!tld.isEmpty()) host.chop(tld.length());		// remove TLD suffix
-
-        const int idx = host.lastIndexOf(QLatin1Char('.'));	// get last remaining component
-        host = host.mid(idx+1);					// works even if no '.'
-        archiveName = host;
     }
-
-    // Unable to generate a default archive name
-    if (archiveName.isEmpty()) archiveName = i18n("Untitled");
 
     // Find the last archive save location used
     QString dir = KRecentDirs::dir(":save");

@@ -47,6 +47,7 @@
 #include <konqpixmapprovider.h>
 #include <konqsettings.h>
 #include <konq_spellcheckingconfigurationdispatcher.h>
+#include <kcmutils_version.h>
 
 #include <kwidgetsaddons_version.h>
 #include <kxmlgui_version.h>
@@ -132,6 +133,7 @@
 #include <kwindowsystem.h>
 #include <netwm.h>
 #include <kio_version.h>
+#include <KIO/JobUiDelegateFactory>
 
 #include <kauthorized.h>
 #include <QDBusConnection>
@@ -1481,7 +1483,7 @@ void KonqMainWindow::slotOpenWith()
         if (service->desktopEntryName() == serviceName) {
             KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(service);
             job->setUrls({ m_currentView->url() });
-            job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+            job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
             job->start();
             return;
         }
@@ -1694,7 +1696,9 @@ void KonqMainWindow::slotConfigure(const QString startingModule)
         KPluginMetaData fileTypesData(QStringLiteral("plasma/kcms/systemsettings_qwidgets/kcm_filetypes"));
         if (!fileTypesData.isValid()) {
             QString desktopFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kservices5/filetypes.desktop"));
+#if KCMUTILS_VERSION_MAJOR < 6
             fileTypesData = KPluginMetaData::fromDesktopFile(desktopFile, {QStringLiteral("kcmodule.desktop")});
+#endif
         }
         m_configureDialog->addModule(fileTypesData);
 
@@ -3334,7 +3338,7 @@ void KonqMainWindow::initActions()
     // If any one needs to be initially disabled, put that code in enableAllActions
 
     // For the popup menu only.
-    m_pMenuNew = new KNewFileMenu(actionCollection(), QStringLiteral("new_menu"), this);
+    m_pMenuNew = new KNewFileMenu(this);
 
     // File menu
 

@@ -39,6 +39,7 @@
 #include <KJobUiDelegate>
 #include <KMimeTypeEditor>
 #include <KPluginMetaData>
+#include <KIO/JobUiDelegateFactory>
 
 #include <QIcon>
 #include <QFileInfo>
@@ -231,7 +232,7 @@ void KonqPopupMenuPrivate::populate()
         if ((currentDir || mkdirRequested) && m_pMenuNew) { // Current dir -> add the "new" menu
             // As requested by KNewFileMenu :
             m_pMenuNew->checkUpToDate();
-            m_pMenuNew->setPopupFiles(m_popupItemProperties.urlList());
+            m_pMenuNew->setWorkingDirectory(url);
 
             q->addAction(m_pMenuNew);
             q->addSeparator();
@@ -475,7 +476,7 @@ void KonqPopupMenuPrivate::slotPopupNewView()
 {
     Q_FOREACH (const QUrl &url, m_popupItemProperties.urlList()) {
         KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url);
-        job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_parentWidget));
+        job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_parentWidget));
         job->start();
     }
 }
@@ -487,9 +488,10 @@ void KonqPopupMenuPrivate::slotPopupNewDir()
 
 void KonqPopupMenuPrivate::slotPopupEmptyTrashBin()
 {
-    KIO::JobUiDelegate uiDelegate;
-    uiDelegate.setWindow(m_parentWidget);
-    if (uiDelegate.askDeleteConfirmation(QList<QUrl>(), KIO::JobUiDelegate::EmptyTrash, KIO::JobUiDelegate::DefaultConfirmation)) {
+    KJobUiDelegate* baseUiDelegate = KIO::createDefaultJobUiDelegate(KJobUiDelegate::Flags{}, m_parentWidget);
+    KIO::JobUiDelegate* uiDelegate = qobject_cast<KIO::JobUiDelegate*>(baseUiDelegate);
+    uiDelegate->setWindow(m_parentWidget);
+    if (uiDelegate && uiDelegate->askDeleteConfirmation(QList<QUrl>(), KIO::JobUiDelegate::EmptyTrash, KIO::JobUiDelegate::DefaultConfirmation)) {
         KIO::Job *job = KIO::emptyTrash();
         KJobWidgets::setWindow(job, m_parentWidget);
         job->uiDelegate()->setAutoErrorHandlingEnabled(true); // or connect to the result signal
@@ -555,6 +557,6 @@ void KonqPopupMenuPrivate::slotShowOriginalFile()
     destUrl = destUrl.adjusted(QUrl::RemoveFilename);
 
     KIO::OpenUrlJob *job = new KIO::OpenUrlJob(destUrl, QStringLiteral("inode/directory"));
-    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_parentWidget));
+    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_parentWidget));
     job->start();
 }

@@ -83,6 +83,7 @@ set(konqueror_KDEINIT_SRCS
    pluginmetadatautils.cpp
    implementations/konqbrowser.cpp
    implementations/konqbrowserwindowinterface.cpp
+   konqutils.cpp
 )
 
 kconfig_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)

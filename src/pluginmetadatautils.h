@@ -23,6 +23,10 @@ KPluginMetaData findPartById(const QString &id);
  */
 KPluginMetaData preferredPart(const QString &mimeType);
 
+QVector<KPluginMetaData> findParts(std::function<bool(const KPluginMetaData &)> filter, bool includeDefaultDir);
+
+QVector<KPluginMetaData> findParts(std::function<bool(const KPluginMetaData &)> filter={});
+
 QDebug operator<<(QDebug debug, const KPluginMetaData &md);
 
 QDebug operator<<(QDebug debug, const QVector<KPluginMetaData> &vec);

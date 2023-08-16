@@ -26,6 +26,20 @@ KPluginMetaData preferredPart(const QString &mimeType) {
     }
 }
 
+QVector<KPluginMetaData> findParts(std::function<bool (const KPluginMetaData &)> filter)
+{
+    return KPluginMetaData::findPlugins(QStringLiteral("kf5/parts"), filter);
+}
+
+QVector<KPluginMetaData> findParts(std::function<bool (const KPluginMetaData &)> filter, bool includeDefaultDir)
+{
+    QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("kf5/parts"), filter);
+    if (includeDefaultDir) {
+        plugins.append(KPluginMetaData::findPlugins(QString(), filter));
+    }
+    return plugins;
+}
+
 QDebug operator<<(QDebug debug, const KPluginMetaData& md)
 {
     QDebugStateSaver saver(debug);
