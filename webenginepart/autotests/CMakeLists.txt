@@ -15,7 +15,7 @@ webenginepart_unit_tests(
   webengine_partapi_test
 )
 
-if (NOT(ManageCookiesInternally))
+if (NOT(DontUseKCookieJar))
   webenginepart_unit_tests(
     webenginepartcookiejarkio_test
   )

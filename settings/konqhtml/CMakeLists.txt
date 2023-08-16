@@ -23,7 +23,7 @@ set(kcm_konqhtml_PART_SRCS
    useragent/useragent.cpp
    )
 
-if (ManageCookiesInternally)
+if (DontUseKCookieJar)
     list(APPEND kcm_konqhtml_PART_SRCS
         cookies/kcookiesmain.cpp
         cookies/kcookiesmanagement.cpp
@@ -69,9 +69,8 @@ target_link_libraries(khtml_cache kcm_konqhtml_static)
 kcoreaddons_add_plugin(khtml_useragent SOURCES plugins/khtml_useragent.cpp INSTALL_NAMESPACE konqueror_kcms)
 target_link_libraries(khtml_useragent kcm_konqhtml_static)
 
-if (ManageCookiesInternally)
+if (DontUseKCookieJar)
     kcoreaddons_add_plugin(khtml_cookies SOURCES plugins/khtml_cookies.cpp INSTALL_NAMESPACE konqueror_kcms)
-    kcoreaddons_desktop_to_json(khtml_cookies cookies/khtml_cookies.desktop)
     target_link_libraries(khtml_cookies kcm_konqhtml_static)
 endif()
 

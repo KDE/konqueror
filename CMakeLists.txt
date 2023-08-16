@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules")
+include(CMakeDependentOption)
 
 # KDE Application Version, managed by release script
 set (RELEASE_SERVICE_VERSION_MAJOR "23")
@@ -42,9 +43,10 @@ add_definitions(
 )
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
-if (BUILD_WITH_QT6)
+cmake_dependent_option(DontUseKCookieJar "Don't use KCookieJar to manage cookies" FALSE "QT_MAJOR_VERSION STREQUAL 5" TRUE)
+if(DontUseKCookieJar)
 add_compile_definitions(-DMANAGE_COOKIES_INTERNALLY)
-set(ManageCookiesInternally TRUE)
+else()
 endif()
 
 include (CheckSymbolExists)

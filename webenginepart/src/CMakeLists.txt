@@ -47,7 +47,7 @@ set(kwebenginepartlib_LIB_SRCS
     choosepagesaveformatdlg.cpp
 )
 
-if (ManageCookiesInternally)
+if (DontUseKCookieJar)
   list(APPEND kwebenginepartlib_LIB_SRCS
     cookies/webenginepartcookiejar6.cpp
     cookies/cookiealertdlg.cpp
