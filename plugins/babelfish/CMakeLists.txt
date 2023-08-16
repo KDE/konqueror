@@ -6,7 +6,6 @@ set(babelfishplugin_PART_SRCS plugin_babelfish.cpp )
 
 add_library(babelfishplugin MODULE ${babelfishplugin_PART_SRCS})
 
-kcoreaddons_desktop_to_json(babelfishplugin plugin_translator.desktop)
 target_link_libraries(babelfishplugin KF5::I18n KF5::Parts KF5Konq)
 
 konqueror_install_plugin_in_namespaces(babelfishplugin)

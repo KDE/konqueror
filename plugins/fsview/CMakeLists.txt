@@ -35,12 +35,11 @@ install(TARGETS fsview ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### next target ###############
 
-configure_file(fsview_part.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/fsview_part.desktop)
+configure_file(fsview_part.json.in ${CMAKE_CURRENT_BINARY_DIR}/fsview_part.json)
 
 set(fsviewpart_PART_SRCS fsview_part.cpp ${libfsview_SRCS})
 
 add_library(fsviewpart MODULE ${fsviewpart_PART_SRCS})
-kcoreaddons_desktop_to_json(fsviewpart ${CMAKE_CURRENT_BINARY_DIR}/fsview_part.desktop)
 
 target_link_libraries(fsviewpart KF5::I18n KF5::Parts KF5::IconThemes)
 
@@ -49,7 +48,6 @@ install(TARGETS fsviewpart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/parts)
 
 ########### install files ###############
 
-install( FILES ${CMAKE_CURRENT_BINARY_DIR}/fsview_part.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
 install( FILES fsview_part.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/fsview )
 
 ecm_qt_install_logging_categories(EXPORT fsview DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})

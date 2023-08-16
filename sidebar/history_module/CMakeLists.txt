@@ -16,7 +16,6 @@ install(FILES konqsidebar_history.desktop DESTINATION ${KDE_INSTALL_DATADIR}/kon
 set(kcm_history_SRCS kcmhistory.cpp ../../src/konqhistorysettings.cpp)
 ki18n_wrap_ui(kcm_history_SRCS history_dlg.ui )
 kcoreaddons_add_plugin(kcm_history SOURCES ${kcm_history_SRCS} INSTALL_NAMESPACE konqueror_kcms)
-kcoreaddons_desktop_to_json(kcm_history kcmhistory.desktop)
 
 # konquerorprivate is only needed for konqhistorysettings...
 target_link_libraries(kcm_history konquerorprivate KF5::Konq KF5::Parts)

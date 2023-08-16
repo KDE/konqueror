@@ -94,14 +94,10 @@ install(TARGETS kwebenginepartlib ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 
 add_library(webenginepart MODULE webenginepartfactory.cpp)
-kcoreaddons_desktop_to_json(webenginepart webenginepart.desktop)
-
 
 target_link_libraries(webenginepart kwebenginepartlib)
 
 install(TARGETS webenginepart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/parts)
-
-install(FILES webenginepart.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
 
 install(FILES webenginepart.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/webenginepart)
 

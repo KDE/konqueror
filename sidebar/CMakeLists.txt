@@ -31,7 +31,7 @@ install(TARGETS konqsidebarplugin ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 set(konq_sidebar_VERSION 0.2)
 
-configure_file(konq_sidebartng.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/konq_sidebartng.desktop)
+configure_file(konq_sidebartng.json.in ${CMAKE_CURRENT_BINARY_DIR}/konq_sidebartng.json)
 
 set(konq_sidebar_PART_SRCS 
  sidebar_part.cpp
@@ -41,7 +41,6 @@ set(konq_sidebar_PART_SRCS
 )
 
 add_library(konq_sidebar MODULE ${konq_sidebar_PART_SRCS} ${sidebar_DEBUG_SRCS})
-kcoreaddons_desktop_to_json(konq_sidebar ${CMAKE_CURRENT_BINARY_DIR}/konq_sidebartng.desktop)
 
 target_link_libraries(konq_sidebar KF5::I18n KF5::Parts KF5::Konq konqsidebarplugin KF5::KCMUtils KF5::IconThemes)
 
@@ -49,6 +48,5 @@ install(TARGETS konq_sidebar DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/parts)
 
 ########### install files ###############
 
-install( FILES ${CMAKE_CURRENT_BINARY_DIR}/konq_sidebartng.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR})
 install( FILES konqsidebartngrc  DESTINATION  ${KDE_INSTALL_CONFDIR} )
 install( FILES konqsidebarplugin.h DESTINATION ${KDE_INSTALL_INCLUDEDIR} COMPONENT Devel )

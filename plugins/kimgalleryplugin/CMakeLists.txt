@@ -6,7 +6,6 @@ ecm_qt_declare_logging_category(kimgallery_PART_SRCS HEADER imgallery_debug.h ID
 
 add_library(kimgallery MODULE ${kimgallery_PART_SRCS})
 
-kcoreaddons_desktop_to_json(kimgallery kimgalleryplugin.desktop)
 target_link_libraries(kimgallery KF5::I18n KF5::WidgetsAddons KF5::KIOWidgets KF5::Parts KF5Konq)
 
 install(TARGETS kimgallery DESTINATION ${KDE_INSTALL_PLUGINDIR}/dolphinpart/kpartplugins)

@@ -6,7 +6,6 @@ ecm_qt_declare_logging_category(akregatorplugin_DEBUG_SRCS HEADER akregatorplugi
 set(akregatorplugin_PART_SRCS akregatorplugin.cpp pluginutil.cpp )
 
 kcoreaddons_add_plugin(akregatorplugin SOURCES ${akregatorplugin_PART_SRCS} ${akregatorplugin_DEBUG_SRCS} INSTALL_NAMESPACE "kf5/kfileitemaction")
-kcoreaddons_desktop_to_json(akregatorplugin akregator_konqplugin.desktop)
 
 target_compile_definitions(akregatorplugin PRIVATE TRANSLATION_DOMAIN="akregator_konqplugin")
 target_link_libraries(akregatorplugin KF5::I18n KF5::KIOWidgets Qt5::DBus)
@@ -17,7 +16,6 @@ set(akregatorkonqfeedicon_PART_SRCS konqfeedicon.cpp pluginutil.cpp )
 
 add_library(akregatorkonqfeedicon MODULE ${akregatorkonqfeedicon_PART_SRCS} ${akregatorplugin_DEBUG_SRCS})
 
-kcoreaddons_desktop_to_json(akregatorkonqfeedicon akregator_konqfeedicon.desktop)
 target_compile_definitions(akregatorkonqfeedicon PRIVATE TRANSLATION_DOMAIN="akregator_konqplugin")
 target_link_libraries(akregatorkonqfeedicon KF5::I18n KF5::IconThemes KF5Konq)
 
