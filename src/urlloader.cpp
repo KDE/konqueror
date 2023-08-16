@@ -31,6 +31,7 @@
 #include <KApplicationTrader>
 #include <KParts/PartLoader>
 #include <KLocalizedString>
+#include <KIO/JobUiDelegateFactory>
 
 #include <QDebug>
 #include <QArgument>
@@ -325,7 +326,9 @@ UrlLoader::OpenUrlAction UrlLoader::decideExecute() const {
 
 void UrlLoader::performAction()
 {
-    if (!m_ready) { //If m_ready is false, it means that m_letRequestingPartDownloadUrl is true
+    //If m_ready is false, it means that m_letRequestingPartDownloadUrl is true. Don't attempt to download the URL if the action is
+    //DoNothing (it means the user canceled the download) or UnknownAction (it shouldn't happen, but better be sure).
+    if (!m_ready && m_action != OpenUrlAction::DoNothing && m_action != OpenUrlAction::UnknwonAction) {
         downloadUrlWithRequestingPart();
         return;
     }
@@ -377,7 +380,7 @@ void UrlLoader::downloadUrlWithRequestingPart()
         performAction();
         return;
     }
-    m_partDownloaderJob->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
+    m_partDownloaderJob->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
     connect(m_partDownloaderJob, &KJob::result, this, &UrlLoader::downloaderJobDone);
     connect(m_partDownloaderJob, &KJob::result, this, &UrlLoader::jobFinished);
     m_partDownloaderJob->start();
