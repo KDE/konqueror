@@ -5,6 +5,7 @@
 */
 
 #include "uachangerplugin.h"
+#include "interfaces/browser.h"
 
 #include <sys/utsname.h>
 
@@ -32,7 +33,7 @@
 #include <kio/job.h>
 #include <kio/scheduler.h>
 
-#include "webenginepartcontrols.h"
+using namespace KonqInterfaces;
 
 K_PLUGIN_CLASS_WITH_JSON(UAChangerPlugin, "uachangerplugin.json")
 
@@ -65,7 +66,9 @@ void UAChangerPlugin::slotAboutToShow()
     QList<QAction*> actions = fillMenu(templates);
     actions.append(m_defaultAction);
 
-    const QString currentUA = QWebEngineProfile::defaultProfile()->httpUserAgent();
+    Browser *browser = Browser::browser(qApp);
+    const QString currentUA = browser ? browser->userAgent() : QString();
+
     auto isCurrentUA = [currentUA](QAction *a){return currentUA == a->data().toString();};
     auto found = std::find_if(actions.constBegin(), actions.constEnd(), isCurrentUA);
     if (found != actions.constEnd()) {
@@ -114,19 +117,15 @@ void UAChangerPlugin::clearMenu()
 
 void UAChangerPlugin::slotItemSelected(QAction *action)
 {
-    WebEnginePartControls *ctrls = WebEnginePartControls::self();
+    Browser *browser = Browser::browser(qApp);
+    if (!browser) {
+        return;
+    }
     QString uaString = action->data().toString();
     if (action == m_defaultAction) {
-        KConfigGroup grp = KSharedConfig::openConfig()->group("UserAgent");
-        bool useCustomUserAgent = grp.readEntry("UseCustomUserAgent", false);
-        QString defaultUA = ctrls->defaultHttpUserAgent();
-        if (useCustomUserAgent) {
-            uaString = grp.readEntry("CustomUserAgent", defaultUA);
-        } else {
-            uaString = defaultUA;
-        }
+        uaString.clear();
     }
-    ctrls->setHttpUserAgent(uaString);
+    browser->setTemporaryUserAgent(uaString);
 }
 
 #include "uachangerplugin.moc"

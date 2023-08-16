@@ -47,6 +47,44 @@ public:
     virtual CookieJar* cookieJar() const = 0;
 
     /**
+     * @brief The standard user agent used by Konqueror
+     * @return The standard user agent used by Konqueror
+     */
+    virtual QString konqUserAgent() const = 0;
+
+    /**
+     * @brief The default user agent
+     * @return The default user agent
+     */
+    virtual QString defaultUserAgent() const = 0;
+
+    /**
+     * @brief The user agent currently in use
+     *
+     * This can be either defaultUserAgent() or a temporary user agent set with setTemporaryUserAgent()
+     * @return The user agent currently in use
+     * @see setTemporaryUserAgent()
+     */
+    virtual QString userAgent() const = 0;
+
+    /**
+     * @brief Sets a temporary user agent to be used instead of the default one
+     *
+     * The temporary user agent remains in use until the application is closed or this is called again.
+     *
+     * Implementations should emit the userAgentChanged() signal, unless the new user
+     * agent is effectively equal to to old. If switching from the default user agent to a
+     * temporary user agent but the two are equal (or vice versa) the signal shouldn't be emitted
+     * @param newUA the new user agent string.
+     */
+    virtual void setTemporaryUserAgent(const QString &newUA) = 0;
+
+    /**
+     * @brief Stops using a temporary user agent and returns to the default one
+     */
+    virtual void clearTemporaryUserAgent() = 0;
+
+    /**
      * @brief Casts the given object or one of its children to a Browser
      *
      * This is similar to
@@ -62,6 +100,19 @@ public:
 
 signals:
     void configurationChanged(); ///< Signal emitted after the configuration has changed
+
+    /**
+     * @brief Signal emitted when the user agent changes
+     *
+     * This signal can be emitted in several situations:
+     * - the default user agent is in use and the user changes it
+     * - the user switched from the default user agent to a temporary one (or vice versa) and the two are different
+     * - the user switched from a temporary user agent to a different temporary user agent
+     *
+     * @param currentUA the new current user agent
+     * @see setTemporaryUserAgent()
+     */
+    void userAgentChanged(const QString &currentUA);
 };
 
 }

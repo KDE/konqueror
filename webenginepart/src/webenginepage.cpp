@@ -18,6 +18,7 @@
 #include <webenginepart_debug.h>
 #include "webenginepartcontrols.h"
 #include "navigationrecorder.h"
+#include "profile.h"
 
 #include <QWebEngineCertificateError>
 #include <QWebEngineSettings>
@@ -63,7 +64,7 @@
 #include "htmlextension.h"
 
 WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
-        : QWebEnginePage(parent),
+        : QWebEnginePage(KonqWebEnginePart::Profile::defaultProfile(), parent),
          m_kioErrorCode(0),
          m_ignoreError(false),
          m_part(part),

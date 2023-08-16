@@ -119,6 +119,7 @@ void KonquerorApplication::slotReparseConfiguration()
 {
     KSharedConfig::openConfig()->reparseConfiguration();
     KonqFMSettings::reparseConfiguration();
+    m_browser->applyConfiguration();
 
     QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
     if (mainWindows) {
@@ -126,6 +127,7 @@ void KonquerorApplication::slotReparseConfiguration()
             window->reparseConfiguration();
         }
     }
+
     emit configurationChanged();
 }
 

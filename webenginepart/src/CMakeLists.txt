@@ -64,6 +64,10 @@ ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS
   choosepagesaveformatdlg.ui
   )
 
+if (QT_MAJOR_VERSION STREQUAL 6)
+list(APPEND kwebenginepartlib_LIB_SRCS profile.cpp)
+endif()
+
 qt5_add_resources(kwebenginepartlib_LIB_SRCS webenginepart.qrc)
 
 qt5_wrap_ui(kwebenginepartlib_LIB_SRCS

@@ -19,6 +19,7 @@
 #include "webenginepage.h"
 #include "navigationrecorder.h"
 #include <webenginepart_debug.h>
+#include "profile.h"
 #include "interfaces/browser.h"
 
 #include <KProtocolInfo>
@@ -55,11 +56,11 @@ WebEnginePartControls::WebEnginePartControls(): QObject(),
         QWebEngineUrlScheme::registerScheme(scheme);
     }
 
-    Browser* browser = Browser::browser(qApp);
+    Browser *browser = Browser::browser(qApp);
     if (browser) {
         connect(browser, &Browser::configurationChanged, this, &WebEnginePartControls::reparseConfiguration);
+        connect(browser, &Browser::userAgentChanged, this, &WebEnginePartControls::setHttpUserAgent);
     }
-
 }
 
 WebEnginePartControls::~WebEnginePartControls()
@@ -132,15 +133,12 @@ QWebEngineScript WebEnginePartControls::scriptFromJson(const QString& name, cons
     return script;
 }
 
-void WebEnginePartControls::setup(QWebEngineProfile* profile)
+void WebEnginePartControls::setup(KonqWebEnginePart::Profile* profile)
 {
     if (!profile || isReady()) {
         return;
     }
     m_profile = profile;
-    m_defaultUserAgent = m_profile->httpUserAgent() + QLatin1String(" Konqueror (WebEngine)");
-    //This property is used to communicate the default user agent to the UserAgent settings widget
-    m_profile->setProperty("defaultUserAgent",m_defaultUserAgent);
 
     registerScripts();
 
@@ -153,12 +151,13 @@ void WebEnginePartControls::setup(QWebEngineProfile* profile)
     m_profile->setUrlRequestInterceptor(new WebEngineUrlRequestInterceptor(this));
 
     m_cookieJar = new WebEnginePartCookieJar(profile, this);
-#ifdef MANAGE_COOKIES_INTERNALLY
     Browser *browser = Browser::browser(qApp);
     if (browser) {
+        m_profile->setHttpUserAgent(browser->userAgent());
+#ifdef MANAGE_COOKIES_INTERNALLY
         browser->setCookieJar(m_cookieJar);
-    }
 #endif
+    }
     m_spellCheckerManager = new SpellCheckerManager(profile, this);
     m_downloadManager= new WebEnginePartDownloadManager(profile, this);
     m_profile->settings()->setAttribute(QWebEngineSettings::ScreenCaptureEnabled, true);
@@ -236,11 +235,6 @@ void WebEnginePartControls::reparseConfiguration()
     } else {
         m_profile->setHttpCacheType(QWebEngineProfile::NoCache);
     }
-
-    grp = KSharedConfig::openConfig(QString(), KConfig::NoGlobals)->group(QStringLiteral("UserAgent"));
-    bool useCustomUserAgent = grp.readEntry(QStringLiteral("UseCustomUserAgent"), false);
-    QString userAgent = useCustomUserAgent ? grp.readEntry(QStringLiteral("CustomUserAgent"), m_defaultUserAgent) : m_defaultUserAgent;
-    setHttpUserAgent(userAgent);
 }
 
 QString WebEnginePartControls::httpUserAgent() const

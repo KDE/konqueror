@@ -8,6 +8,7 @@
 
 #include "useragent.h"
 #include "ui_useragent.h"
+#include "interfaces/browser.h"
 
 #include <KConfigGroup>
 #include <KMessageWidget>
@@ -18,20 +19,6 @@
 #include <QWebEngineProfile>
 #include <QDir>
 
-QString UserAgent::defaultUserAgent()
-{
-    static QString s_defaultUserAgent;
-    if (s_defaultUserAgent.isEmpty()) {
-        QWebEngineProfile *prof = QWebEngineProfile::defaultProfile();
-        QVariant defaultUserAgent = prof->property("defaultUserAgent");
-        if (defaultUserAgent.isValid()) {
-            s_defaultUserAgent = defaultUserAgent.toString();
-        } else {
-            s_defaultUserAgent = prof->httpUserAgent();
-        }
-    }
-    return s_defaultUserAgent;
-}
 
 UserAgent::UserAgent(QWidget* parent, const QVariantList& ): KCModule(parent),
     m_ui(new Ui::UserAgent),
@@ -205,7 +192,9 @@ QTreeWidgetItem* UserAgent::createNewTemplateInternal()
     if (!ok) {
         return nullptr;
     }
-    QTreeWidgetItem *it = new QTreeWidgetItem({name, defaultUserAgent()});
+    KonqInterfaces::Browser* browser = KonqInterfaces::Browser::browser(qApp);
+    QString defaultUserAgent = browser ? browser->konqUserAgent() : QString();
+    QTreeWidgetItem *it = new QTreeWidgetItem({name, defaultUserAgent});
     it->setFlags(it->flags() | Qt::ItemIsEditable);
     m_ui->templates->addTopLevelItem(it);
     checkTemplatesValidity();

@@ -32,6 +32,7 @@
 #include "spellcheckermanager.h"
 #include "webenginepartdownloadmanager.h"
 #include "webenginepartcontrols.h"
+#include "profile.h"
 
 #include "ui/searchbar.h"
 #include "ui/passwordbar.h"
@@ -90,7 +91,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
              m_wallet(nullptr)
 {
     if (!WebEnginePartControls::self()->isReady()) {
-        WebEnginePartControls::self()->setup(QWebEngineProfile::defaultProfile());
+        WebEnginePartControls::self()->setup(KonqWebEnginePart::Profile::defaultProfile());
     }
 
     connect(WebEnginePartControls::self(), &WebEnginePartControls::userAgentChanged, this, &WebEnginePart::reloadAfterUAChange);
@@ -122,10 +123,6 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
     // Add status bar extension...
     m_statusBarExtension = new KParts::StatusBarExtension(this);
 
-    // Add a web history interface for storing visited links.
-//    if (!QWebEngineHistoryInterface::defaultInterface())
-//        QWebHistoryInterface::setDefaultInterface(new WebHistoryInterface(this));
-
     // Add text and html extensions...
     new WebEngineTextExtension(this);
     new WebEngineHtmlExtension(this);
@@ -148,10 +145,6 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
             this, &Part::setWindowCaption);
     connect(m_webView, &QWebEngineView::urlChanged,
             this, &WebEnginePart::slotUrlChanged);
-//    connect(m_webView, SIGNAL(linkMiddleOrCtrlClicked(QUrl)),
-//            this, SLOT(slotLinkMiddleOrCtrlClicked(QUrl)));
-//    connect(m_webView, SIGNAL(selectionClipboardUrlPasted(QUrl,QString)),
-//            this, SLOT(slotSelectionClipboardUrlPasted(QUrl,QString)));
     connect(m_webView, &QWebEngineView::loadFinished,
             this, &WebEnginePart::slotLoadFinished);
 
@@ -299,21 +292,7 @@ void WebEnginePart::connectWebEnginePageSignals(WebEnginePage* page)
     connect(page, &QWebEnginePage::loadStarted, this, &WebEnginePart::slotLoadStarted);
     connect(page, &WebEnginePage::loadAborted, this, &WebEnginePart::slotLoadAborted);
     connect(page, &QWebEnginePage::linkHovered, this, &WebEnginePart::slotLinkHovered);
-//    connect(page, SIGNAL(saveFrameStateRequested(QWebFrame*,QWebHistoryItem*)),
-//            this, SLOT(slotSaveFrameState(QWebFrame*,QWebHistoryItem*)));
-//    connect(page, SIGNAL(restoreFrameStateRequested(QWebFrame*)),
-//            this, SLOT(slotRestoreFrameState(QWebFrame*)));
-//    connect(page, SIGNAL(statusBarMessage(QString)),
-//            this, SLOT(slotSetStatusBarText(QString)));
     connect(page, &QWebEnginePage::windowCloseRequested, this, &WebEnginePart::slotWindowCloseRequested);
-//    connect(page, SIGNAL(printRequested(QWebFrame*)),
-//            m_browserExtension, SLOT(slotPrintRequested(QWebFrame*)));
- //   connect(page, SIGNAL(frameCreated(QWebFrame*)),
- //           this, SLOT(slotFrameCreated(QWebFrame*)));
-
-//    connect(m_webView, SIGNAL(linkShiftClicked(QUrl)),
-//            page, SLOT(downloadUrl(QUrl)));
-
     connect(page, &QWebEnginePage::loadProgress, m_browserExtension, &KParts::BrowserExtension::loadingProgress);
     connect(page, &QWebEnginePage::selectionChanged, m_browserExtension, &WebEngineBrowserExtension::updateEditActions);
 //    connect(m_browserExtension, SIGNAL(saveUrl(QUrl)),
@@ -360,7 +339,7 @@ WebEngineWallet* WebEnginePart::wallet() const
 void WebEnginePart::attemptInstallKIOSchemeHandler(const QUrl& url)
 {
      if (KProtocolManager::defaultMimetype(url) == "text/html") { // man:, info:, etc.
-        QWebEngineProfile *prof = QWebEngineProfile::defaultProfile();
+        auto *prof = KonqWebEnginePart::Profile::defaultProfile();
         QByteArray scheme = url.scheme().toUtf8();
         //Qt complains about installing a scheme handler overriding the internal "about" scheme
         if (scheme != "about" && !prof->urlSchemeHandler(scheme)) {

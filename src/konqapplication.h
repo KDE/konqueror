@@ -22,9 +22,7 @@ namespace KActivities {
 
 class KonqMainWindow;
 class QDBusMessage;
-namespace KonqInterfaces {
-    class Browser;
-}
+class KonqBrowser;
 
 namespace KParts {
     class Part;
@@ -92,7 +90,7 @@ private:
     KActivities::Consumer* m_activityConsumer;
 #endif
 
-    KonqInterfaces::Browser *m_browser;
+    KonqBrowser *m_browser;
 
 };
 

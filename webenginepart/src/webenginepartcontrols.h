@@ -32,6 +32,11 @@ class NavigationRecorder;
 
 namespace KonqWebEnginePart {
     class CertificateErrorDialogManager;
+#if QT_VERSION_MAJOR == 6
+    class Profile;
+#else
+    typedef QWebEngineProfile Profile;
+#endif
 }
 
 class KWEBENGINEPARTLIB_EXPORT WebEnginePartControls : public QObject
@@ -46,7 +51,7 @@ public:
 
     bool isReady() const;
 
-    void setup(QWebEngineProfile *profile);
+    void setup(KonqWebEnginePart::Profile *profile);
 
     SpellCheckerManager* spellCheckerManager() const;
 
@@ -60,10 +65,9 @@ public:
 
     QString defaultHttpUserAgent() const;
 
-    void setHttpUserAgent(const QString &uaString);
-
 private slots:
     void reparseConfiguration();
+    void setHttpUserAgent(const QString &uaString);
 
 signals:
     void userAgentChanged(const QString &uaString);
@@ -130,7 +134,7 @@ private:
      */
     static QWebEngineScript scriptFromJson(const QString &name, const QJsonObject &obj);
 
-    QWebEngineProfile *m_profile;
+    KonqWebEnginePart::Profile *m_profile;
     WebEnginePartCookieJar *m_cookieJar;
     SpellCheckerManager *m_spellCheckerManager;
     WebEnginePartDownloadManager *m_downloadManager;
