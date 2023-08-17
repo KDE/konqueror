@@ -207,15 +207,15 @@ void WebEnginePage::requestDownload(QWebEngineDownloadItem *item, bool newWindow
     args.metaData().insert(QStringLiteral("DontSendToDefaultHTMLPart"), QString());
     args.metaData().insert(QStringLiteral("SuggestedFileName"), item->suggestedFileName());
     args.metaData().insert(QStringLiteral("TempFile"), QString());
-//TODO KF6: remove #ifdef and line inside it when compatibility with KF5 isn't needed anymore.
+//TODO KF6: remove #ifndef and line inside it when compatibility with KF5 isn't needed anymore.
 // blob URLs can't be downloaded by KIO, so use the part to download them even when using KCookieJar
-#ifdef MANAGE_COOKIES_INTERNALLY
+#ifndef MANAGE_COOKIES_INTERNALLY
     if (item->url().scheme() == QStringLiteral("blob")) {
 #endif
     args.metaData().insert(DownloaderInterface::jobIDKey(), QString::number(item->id()));
     args.metaData().insert(DownloaderInterface::requestDownloadByPartKey(), QString());
-//TODO KF6: remove #ifdef and line inside it when compatibility with KF5 isn't needed anymore.
-#ifdef MANAGE_COOKIES_INTERNALLY
+//TODO KF6: remove #ifndef and line inside it when compatibility with KF5 isn't needed anymore.
+#ifndef MANAGE_COOKIES_INTERNALLY
     }
 #endif
     if (requestSave) {
