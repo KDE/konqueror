@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 00:45+0000\n"
+"POT-Creation-Date: 2023-08-17 00:46+0000\n"
 "PO-Revision-Date: 2023-07-23 20:55+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -38,245 +38,246 @@ msgstr ""
 "<p>Konqueror를 루트로 실행하고 있습니다. 브라우저 구성 요소의 보안을 해칠 수 "
 "있습니다.</p><p>무엇을 하시겠습니까?</p>"
 
-#: src/konqapplication.cpp:149
+#: src/konqapplication.cpp:151
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: src/konqapplication.cpp:150
+#: src/konqapplication.cpp:152
 #, kde-format
 msgid "Web browser, file manager and document viewer."
 msgstr "웹 브라우저, 파일 관리자, 문서 뷰어."
 
-#: src/konqapplication.cpp:152
-#, kde-format
-msgid "(C) 1999-2016, The Konqueror developers"
+#: src/konqapplication.cpp:154
+#, fuzzy, kde-format
+#| msgid "(C) 1999-2016, The Konqueror developers"
+msgid "(C) 1999-2023, The Konqueror developers"
 msgstr "(C) 1999-2016, The Konqueror developers"
 
-#: src/konqapplication.cpp:155
+#: src/konqapplication.cpp:157
 #, kde-format
 msgid "Stefano Crocco"
 msgstr "Stefano Crocco"
 
-#: src/konqapplication.cpp:155
+#: src/konqapplication.cpp:157
 #, kde-format
 msgid "Current maintainer"
 msgstr "현재 관리자"
 
-#: src/konqapplication.cpp:156
+#: src/konqapplication.cpp:158
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: src/konqapplication.cpp:156
+#: src/konqapplication.cpp:158
 #, kde-format
 msgid ""
 "Developer (framework, parts, JavaScript, I/O library) and former maintainer"
 msgstr ""
 "개발자 (프레임워크, 부분, 자바스크립트, 입출력 라이브러리), 이전 관리자"
 
-#: src/konqapplication.cpp:157
+#: src/konqapplication.cpp:159
 #, kde-format
 msgid "Simon Hausmann"
 msgstr "Simon Hausmann"
 
-#: src/konqapplication.cpp:157
+#: src/konqapplication.cpp:159
 #, kde-format
 msgid "Developer (framework, parts)"
 msgstr "개발자 (프레임워크, 부분)"
 
-#: src/konqapplication.cpp:158
+#: src/konqapplication.cpp:160
 #, kde-format
 msgid "Michael Reiher"
 msgstr "Michael Reiher"
 
-#: src/konqapplication.cpp:158 src/konqapplication.cpp:186
-#: src/konqapplication.cpp:192
+#: src/konqapplication.cpp:160 src/konqapplication.cpp:188
+#: src/konqapplication.cpp:194
 #, kde-format
 msgid "Developer (framework)"
 msgstr "개발자 (프레임워크)"
 
-#: src/konqapplication.cpp:159
+#: src/konqapplication.cpp:161
 #, kde-format
 msgid "Matthias Welk"
 msgstr "Matthias Welk"
 
-#: src/konqapplication.cpp:159
+#: src/konqapplication.cpp:161
 #, kde-format
 msgid "Developer"
 msgstr "개발자"
 
-#: src/konqapplication.cpp:160
+#: src/konqapplication.cpp:162
 #, kde-format
 msgid "Alexander Neundorf"
 msgstr "Alexander Neundorf"
 
-#: src/konqapplication.cpp:160
+#: src/konqapplication.cpp:162
 #, kde-format
 msgid "Developer (List views)"
 msgstr "개발자 (목록 보기)"
 
-#: src/konqapplication.cpp:161
+#: src/konqapplication.cpp:163
 #, kde-format
 msgid "Michael Brade"
 msgstr "Michael Brade"
 
-#: src/konqapplication.cpp:161
+#: src/konqapplication.cpp:163
 #, kde-format
 msgid "Developer (List views, I/O library)"
 msgstr "개발자 (목록 보기, 입출력 라이브러리)"
 
-#: src/konqapplication.cpp:162
+#: src/konqapplication.cpp:164
 #, kde-format
 msgid "Lars Knoll"
 msgstr "Lars Knoll"
 
-#: src/konqapplication.cpp:162 src/konqapplication.cpp:163
-#: src/konqapplication.cpp:164 src/konqapplication.cpp:166
-#: src/konqapplication.cpp:167 src/konqapplication.cpp:169
-#: src/konqapplication.cpp:170 src/konqapplication.cpp:171
-#: src/konqapplication.cpp:172 src/konqapplication.cpp:174
+#: src/konqapplication.cpp:164 src/konqapplication.cpp:165
+#: src/konqapplication.cpp:166 src/konqapplication.cpp:168
+#: src/konqapplication.cpp:169 src/konqapplication.cpp:171
+#: src/konqapplication.cpp:172 src/konqapplication.cpp:173
+#: src/konqapplication.cpp:174 src/konqapplication.cpp:176
 #, kde-format
 msgid "Developer (HTML rendering engine)"
 msgstr "개발자 (HTML 렌더링 엔진)"
 
-#: src/konqapplication.cpp:163
+#: src/konqapplication.cpp:165
 #, kde-format
 msgid "Dirk Mueller"
 msgstr "Dirk Mueller"
 
-#: src/konqapplication.cpp:164
+#: src/konqapplication.cpp:166
 #, kde-format
 msgid "Peter Kelly"
 msgstr "Peter Kelly"
 
-#: src/konqapplication.cpp:165
+#: src/konqapplication.cpp:167
 #, kde-format
 msgid "Waldo Bastian"
 msgstr "Waldo Bastian"
 
-#: src/konqapplication.cpp:165
+#: src/konqapplication.cpp:167
 #, kde-format
 msgid "Developer (HTML rendering engine, I/O library)"
 msgstr "개발자 (HTML 렌더링 엔진, 입출력 라이브러리)"
 
-#: src/konqapplication.cpp:166
+#: src/konqapplication.cpp:168
 #, kde-format
 msgid "Germain Garand"
 msgstr "Germain Garand"
 
-#: src/konqapplication.cpp:167
+#: src/konqapplication.cpp:169 src/konqapplication.cpp:197
 #, kde-format
 msgid "Leo Savernik"
 msgstr "Leo Savernik"
 
-#: src/konqapplication.cpp:168
+#: src/konqapplication.cpp:170
 #, kde-format
 msgid "Stephan Kulow"
 msgstr "Stephan Kulow"
 
-#: src/konqapplication.cpp:168
+#: src/konqapplication.cpp:170
 #, kde-format
 msgid ""
 "Developer (HTML rendering engine, I/O library, regression test framework)"
 msgstr "개발자 (HTML 렌더링 엔진, 입출력 라이브러리, 재귀 테스트 프레임워크)"
 
-#: src/konqapplication.cpp:169
+#: src/konqapplication.cpp:171
 #, kde-format
 msgid "Antti Koivisto"
 msgstr "Antti Koivisto"
 
-#: src/konqapplication.cpp:170
+#: src/konqapplication.cpp:172
 #, kde-format
 msgid "Zack Rusin"
 msgstr "Zack Rusin"
 
-#: src/konqapplication.cpp:171
+#: src/konqapplication.cpp:173
 #, kde-format
 msgid "Tobias Anton"
 msgstr "Tobias Anton"
 
-#: src/konqapplication.cpp:172
+#: src/konqapplication.cpp:174
 #, kde-format
 msgid "Lubos Lunak"
 msgstr "Lubos Lunak"
 
-#: src/konqapplication.cpp:173
+#: src/konqapplication.cpp:175
 #, kde-format
 msgid "Maks Orlovich"
 msgstr "Maks Orlovich"
 
-#: src/konqapplication.cpp:173 src/konqapplication.cpp:175
+#: src/konqapplication.cpp:175 src/konqapplication.cpp:177
 #, kde-format
 msgid "Developer (HTML rendering engine, JavaScript)"
 msgstr "개발자 (HTML 렌더링 엔진, 자바스크립트)"
 
-#: src/konqapplication.cpp:174
+#: src/konqapplication.cpp:176
 #, kde-format
 msgid "Allan Sandfeld Jensen"
 msgstr "Allan Sandfeld Jensen"
 
-#: src/konqapplication.cpp:175
+#: src/konqapplication.cpp:177
 #, kde-format
 msgid "Apple Safari Developers"
 msgstr "애플 사파리 개발자"
 
-#: src/konqapplication.cpp:176
+#: src/konqapplication.cpp:178
 #, kde-format
 msgid "Harri Porten"
 msgstr "Harri Porten"
 
-#: src/konqapplication.cpp:176
+#: src/konqapplication.cpp:178
 #, kde-format
 msgid "Developer (JavaScript)"
 msgstr "개발자 (자바스크립트)"
 
-#: src/konqapplication.cpp:177
+#: src/konqapplication.cpp:179
 #, kde-format
 msgid "Koos Vriezen"
 msgstr "Koos Vriezen"
 
-#: src/konqapplication.cpp:177
+#: src/konqapplication.cpp:179
 #, kde-format
 msgid "Developer (Java applets and other embedded objects)"
 msgstr "개발자 (자바 애플릿, 기타 첨부 가능한 개체)"
 
-#: src/konqapplication.cpp:178
+#: src/konqapplication.cpp:180
 #, kde-format
 msgid "Matt Koss"
 msgstr "Matt Koss"
 
-#: src/konqapplication.cpp:178 src/konqapplication.cpp:179
+#: src/konqapplication.cpp:180 src/konqapplication.cpp:181
 #, kde-format
 msgid "Developer (I/O library)"
 msgstr "개발자 (입출력 라이브러리)"
 
-#: src/konqapplication.cpp:179
+#: src/konqapplication.cpp:181
 #, kde-format
 msgid "Alex Zepeda"
 msgstr "Alex Zepeda"
 
-#: src/konqapplication.cpp:180
+#: src/konqapplication.cpp:182
 #, kde-format
 msgid "Richard Moore"
 msgstr "Richard Moore"
 
-#: src/konqapplication.cpp:180 src/konqapplication.cpp:181
+#: src/konqapplication.cpp:182 src/konqapplication.cpp:183
 #, kde-format
 msgid "Developer (Java applet support)"
 msgstr "개발자 (자바 애플릿 지원)"
 
-#: src/konqapplication.cpp:181
+#: src/konqapplication.cpp:183
 #, kde-format
 msgid "Dima Rogozin"
 msgstr "Dima Rogozin"
 
-#: src/konqapplication.cpp:182
+#: src/konqapplication.cpp:184
 #, kde-format
 msgid "Wynn Wilkes"
 msgstr "Wynn Wilkes"
 
-#: src/konqapplication.cpp:182
+#: src/konqapplication.cpp:184
 #, kde-format
 msgid ""
 "Developer (Java 2 security manager support,\n"
@@ -285,102 +286,119 @@ msgstr ""
 "개발자 (자바 2 보안 관리자 지원,\n"
 " 애플릿 지원 개선)"
 
-#: src/konqapplication.cpp:183
+#: src/konqapplication.cpp:185
 #, kde-format
 msgid "Stefan Schimanski"
 msgstr "Stefan Schimanski"
 
-#: src/konqapplication.cpp:183
+#: src/konqapplication.cpp:185
 #, kde-format
 msgid "Developer (Netscape plugin support)"
 msgstr "개발자 (넷스케이프 플러그인 지원)"
 
-#: src/konqapplication.cpp:184
+#: src/konqapplication.cpp:186
 #, kde-format
 msgid "George Staikos"
 msgstr "George Staikos"
 
-#: src/konqapplication.cpp:184
+#: src/konqapplication.cpp:186
 #, kde-format
 msgid "Developer (SSL, Netscape plugins)"
 msgstr "개발자 (SSL, 넷스케이프 플러그인)"
 
-#: src/konqapplication.cpp:185
+#: src/konqapplication.cpp:187
 #, kde-format
 msgid "Dawit Alemayehu"
 msgstr "Dawit Alemayehu"
 
-#: src/konqapplication.cpp:185
+#: src/konqapplication.cpp:187
 #, kde-format
 msgid "Developer (I/O library, Authentication support)"
 msgstr "개발자 (입출력 라이브러리, 인증 지원)"
 
-#: src/konqapplication.cpp:186
+#: src/konqapplication.cpp:188
 #, kde-format
 msgid "Carsten Pfeiffer"
 msgstr "Carsten Pfeiffer"
 
-#: src/konqapplication.cpp:187
+#: src/konqapplication.cpp:189
 #, kde-format
 msgid "Torsten Rahn"
 msgstr "Torsten Rahn"
 
-#: src/konqapplication.cpp:187
+#: src/konqapplication.cpp:189
 #, kde-format
 msgid "Graphics/icons"
 msgstr "그림과 아이콘"
 
-#: src/konqapplication.cpp:188
+#: src/konqapplication.cpp:190
 #, kde-format
 msgid "Torben Weis"
 msgstr "Torben Weis"
 
-#: src/konqapplication.cpp:188
+#: src/konqapplication.cpp:190
 #, kde-format
 msgid "KFM author"
 msgstr "KFM 작성자"
 
-#: src/konqapplication.cpp:189
+#: src/konqapplication.cpp:191
 #, kde-format
 msgid "Joseph Wenninger"
 msgstr "Joseph Wenninger"
 
-#: src/konqapplication.cpp:189
+#: src/konqapplication.cpp:191
 #, kde-format
 msgid "Developer (navigation panel framework)"
 msgstr "개발자 (탐색 패널 프레임워크)"
 
-#: src/konqapplication.cpp:190
+#: src/konqapplication.cpp:192
 #, kde-format
 msgid "Stephan Binner"
 msgstr "Stephan Binner"
 
-#: src/konqapplication.cpp:190
+#: src/konqapplication.cpp:192
 #, kde-format
 msgid "Developer (misc stuff)"
 msgstr "개발자 (잡다한 것)"
 
-#: src/konqapplication.cpp:191
+#: src/konqapplication.cpp:193
 #, kde-format
 msgid "Ivor Hewitt"
 msgstr "Ivor Hewitt"
 
-#: src/konqapplication.cpp:191
+#: src/konqapplication.cpp:193
 #, kde-format
 msgid "Developer (AdBlock filter)"
 msgstr "개발자 (AdBlock 필터)"
 
-#: src/konqapplication.cpp:192
+#: src/konqapplication.cpp:194
 #, kde-format
 msgid "Eduardo Robles Elvira"
 msgstr "Eduardo Robles Elvira"
 
-#: src/konqapplication.cpp:202
+#: src/konqapplication.cpp:195
+#, kde-format
+msgid "Matthias Kalle Dalheimer"
+msgstr ""
+
+#: src/konqapplication.cpp:196
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr ""
+
+#: src/konqapplication.cpp:197
+#, kde-format
+msgid ""
+"JavaScript access controls\n"
+"Per-domain policies extensions"
+msgstr ""
+
+#: src/konqapplication.cpp:208
 #, kde-format
 msgid "Start without a default window, when called without URLs"
 msgstr "URL 없이 실행되었을 때 기본 창 없이 시작하기"
 
-#: src/konqapplication.cpp:203
+#: src/konqapplication.cpp:209
 #, kde-format
 msgid ""
 "Preload for later use. This mode does not support URLs on the command line"
@@ -388,52 +406,52 @@ msgstr ""
 "나중에 사용할 수 있도록 미리 불러오기. 이 모드에서는 명령행에서 입력한 URL을 "
 "무시합니다"
 
-#: src/konqapplication.cpp:204
+#: src/konqapplication.cpp:210
 #, kde-format
 msgid "Profile to open (DEPRECATED, IGNORED)"
 msgstr "열 프로필(폐기됨, 무시함)"
 
-#: src/konqapplication.cpp:204
+#: src/konqapplication.cpp:210
 #, kde-format
 msgid "profile"
 msgstr "프로필"
 
-#: src/konqapplication.cpp:205
+#: src/konqapplication.cpp:211
 #, kde-format
 msgid "List available sessions"
 msgstr "사용 가능한 세션 목록"
 
-#: src/konqapplication.cpp:206
+#: src/konqapplication.cpp:212
 #, kde-format
 msgid "Session to open"
 msgstr "열려는 세션"
 
-#: src/konqapplication.cpp:206
+#: src/konqapplication.cpp:212
 #, kde-format
 msgid "session"
 msgstr "세션"
 
-#: src/konqapplication.cpp:207
+#: src/konqapplication.cpp:213
 #, kde-format
 msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
 msgstr "이 URL에 사용할 MIME 형식 (예: text/html 또는 inode/directory)"
 
-#: src/konqapplication.cpp:207
+#: src/konqapplication.cpp:213
 #, kde-format
 msgid "mimetype"
 msgstr "MIME 형식"
 
-#: src/konqapplication.cpp:208
+#: src/konqapplication.cpp:214
 #, kde-format
 msgid "Part to use (e.g. khtml or kwebkitpart)"
 msgstr "사용할 부분 (khtml/kwebkitpart)"
 
-#: src/konqapplication.cpp:208
+#: src/konqapplication.cpp:214
 #, kde-format
 msgid "service"
 msgstr "서비스"
 
-#: src/konqapplication.cpp:209
+#: src/konqapplication.cpp:215
 #, kde-format
 msgid ""
 "For URLs that point to files, opens the directory and selects the file, "
@@ -442,12 +460,12 @@ msgstr ""
 "파일을 가리키는 URL에 대해서 파일을 여는 대신 디렉터리를 열고 파일을 선택합니"
 "다."
 
-#: src/konqapplication.cpp:210
+#: src/konqapplication.cpp:216
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr "앱에서 연 파일/URL을 사용한 후 삭제합니다"
 
-#: src/konqapplication.cpp:212
+#: src/konqapplication.cpp:218
 #, kde-format
 msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
@@ -456,26 +474,26 @@ msgstr ""
 "기존 Konqueror 프로세스가 있어도 새 Konqueror 프로세스를 생성합니다. "
 "Konqueror를 개발할 때 사용하는 옵션입니다"
 
-#: src/konqapplication.cpp:214
+#: src/konqapplication.cpp:220
 #, kde-format
 msgid "Location to open"
 msgstr "열려는 위치."
 
-#: src/konqapplication.cpp:322
+#: src/konqapplication.cpp:331
 #, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
 msgstr "%1 세션을 열 수 없음"
 
-#: src/konqapplication.cpp:447
+#: src/konqapplication.cpp:456
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr "--preload 스위치에는 URL을 지정할 수 없습니다. URL을 무시합니다\n"
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4895
-#: src/konqmainwindow.cpp:4941
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4906
+#: src/konqmainwindow.cpp:4952
 #, kde-format
 msgid "no name"
 msgstr "이름 없음"
@@ -531,12 +549,12 @@ msgstr "%1/초"
 msgid "Stalled"
 msgstr "중지됨"
 
-#: src/konqguiclients.cpp:51
+#: src/konqguiclients.cpp:53
 #, kde-format
 msgid "Preview &in %1"
 msgstr "%1에서 미리 보기(&I)"
 
-#: src/konqguiclients.cpp:118
+#: src/konqguiclients.cpp:121
 #, kde-format
 msgid "Show %1"
 msgstr "%1 보기"
@@ -572,7 +590,7 @@ msgstr "로컬"
 msgid "Miscellaneous"
 msgstr "기타"
 
-#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4426
+#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4437
 #, kde-format
 msgid "Open in New &Window"
 msgstr "새 창으로 열기(&W)"
@@ -633,28 +651,28 @@ msgctxt "@title:window"
 msgid "Clear History?"
 msgstr "과거 기록 삭제?"
 
-#: src/konqmainwindow.cpp:656
+#: src/konqmainwindow.cpp:665
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
 msgstr "불러오는 중..."
 
-#: src/konqmainwindow.cpp:688
+#: src/konqmainwindow.cpp:697
 #, kde-format
 msgid "Access denied"
 msgstr "접근이 거부됨"
 
-#: src/konqmainwindow.cpp:1456
+#: src/konqmainwindow.cpp:1465
 #, kde-format
 msgid "Open File"
 msgstr "파일 열기"
 
-#: src/konqmainwindow.cpp:1539
+#: src/konqmainwindow.cpp:1548
 #, kde-format
 msgid "Canceled."
 msgstr "취소됨."
 
-#: src/konqmainwindow.cpp:1575
+#: src/konqmainwindow.cpp:1584
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -663,55 +681,55 @@ msgstr ""
 "이 페이지에는 저장되지 않은 변경 사항이 들어 있습니다.\n"
 "페이지를 새로 고치면 변경된 부분은 버려집니다."
 
-#: src/konqmainwindow.cpp:1576 src/konqmainwindow.cpp:2275
-#: src/konqmainwindow.cpp:2368 src/konqmainwindow.cpp:2400
-#: src/konqmainwindow.cpp:2443 src/konqmainwindow.cpp:2465
-#: src/konqmainwindow.cpp:4863
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2286
+#: src/konqmainwindow.cpp:2379 src/konqmainwindow.cpp:2411
+#: src/konqmainwindow.cpp:2454 src/konqmainwindow.cpp:2476
+#: src/konqmainwindow.cpp:4874
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
 msgstr "변경 사항을 취소하시겠습니까?"
 
-#: src/konqmainwindow.cpp:1576 src/konqmainwindow.cpp:2275
-#: src/konqmainwindow.cpp:2368 src/konqmainwindow.cpp:2400
-#: src/konqmainwindow.cpp:2443 src/konqmainwindow.cpp:2466
-#: src/konqmainwindow.cpp:4863
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2286
+#: src/konqmainwindow.cpp:2379 src/konqmainwindow.cpp:2411
+#: src/konqmainwindow.cpp:2454 src/konqmainwindow.cpp:2477
+#: src/konqmainwindow.cpp:4874
 #, kde-format
 msgid "&Discard Changes"
 msgstr "변경 사항 취소(&D)"
 
-#: src/konqmainwindow.cpp:1945 src/konqmainwindow.cpp:1951
+#: src/konqmainwindow.cpp:1956 src/konqmainwindow.cpp:1962
 #, kde-format
 msgid "Home Folder"
 msgstr "홈 폴더"
 
-#: src/konqmainwindow.cpp:1946 src/konqmainwindow.cpp:3434
+#: src/konqmainwindow.cpp:1957 src/konqmainwindow.cpp:3445
 #, kde-format
 msgid "Home"
 msgstr "홈"
 
-#: src/konqmainwindow.cpp:1952
+#: src/konqmainwindow.cpp:1963
 #, kde-format
 msgid "Navigate to your 'Home Folder'"
 msgstr "홈 폴더로 이동"
 
-#: src/konqmainwindow.cpp:1953
+#: src/konqmainwindow.cpp:1964
 #, kde-format
 msgid "Navigate to your local 'Home Folder'"
 msgstr "로컬 홈 폴더로 이동"
 
 #. i18n: ectx: label, entry, group (UserSettings)
-#: src/konqmainwindow.cpp:1956 src/konqueror.kcfg:16
+#: src/konqmainwindow.cpp:1967 src/konqueror.kcfg:16
 #, kde-format
 msgid "Home Page"
 msgstr "홈페이지"
 
-#: src/konqmainwindow.cpp:1958
+#: src/konqmainwindow.cpp:1969
 #, kde-format
 msgid "Navigate to your 'Home Page'"
 msgstr "홈페이지로 이동"
 
-#: src/konqmainwindow.cpp:1959
+#: src/konqmainwindow.cpp:1970
 #, kde-format
 msgid ""
 "<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
@@ -721,7 +739,7 @@ msgstr ""
 "<html>홈페이지로 이동<br /><br /><b>설정 -> Konqueror 설정 -> 일반</b>에서 "
 "이 단추를 눌렀을 때 이동할 위치를 설정할 수 있습니다.</html>"
 
-#: src/konqmainwindow.cpp:2274
+#: src/konqmainwindow.cpp:2285
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -730,7 +748,7 @@ msgstr ""
 "이 페이지에는 저장되지 않은 변경 사항이 들어 있습니다.\n"
 "탭을 떼내면 변경된 부분은 버려집니다."
 
-#: src/konqmainwindow.cpp:2367
+#: src/konqmainwindow.cpp:2378
 #, kde-format
 msgid ""
 "This view contains changes that have not been submitted.\n"
@@ -739,7 +757,7 @@ msgstr ""
 "이 페이지에는 저장되지 않은 변경 사항이 들어 있습니다.\n"
 "보기를 닫으면 변경된 부분은 버려집니다."
 
-#: src/konqmainwindow.cpp:2399
+#: src/konqmainwindow.cpp:2410
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -748,23 +766,23 @@ msgstr ""
 "이 페이지에는 저장되지 않은 변경 사항이 들어 있습니다.\n"
 "탭을 닫으면 변경된 부분은 버려집니다."
 
-#: src/konqmainwindow.cpp:2425
+#: src/konqmainwindow.cpp:2436
 #, kde-format
 msgid "Do you really want to close all other tabs?"
 msgstr "나머지 모든 탭을 닫으시겠습니까?"
 
-#: src/konqmainwindow.cpp:2426 src/konqmainwindow.cpp:3515 src/konqtabs.cpp:335
+#: src/konqmainwindow.cpp:2437 src/konqmainwindow.cpp:3526 src/konqtabs.cpp:335
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr "다른 탭 닫기(&O)"
 
-#: src/konqmainwindow.cpp:2426
+#: src/konqmainwindow.cpp:2437
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
 msgstr "다른 탭 닫기 확인"
 
-#: src/konqmainwindow.cpp:2442
+#: src/konqmainwindow.cpp:2453
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -773,7 +791,7 @@ msgstr ""
 "이 페이지에는 저장되지 않은 변경 사항이 들어 있습니다.\n"
 "다른 탭을 닫으면 변경된 부분은 버려집니다."
 
-#: src/konqmainwindow.cpp:2464
+#: src/konqmainwindow.cpp:2475
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -782,233 +800,233 @@ msgstr ""
 "이 페이지에는 저장되지 않은 변경 사항이 들어 있습니다.\n"
 "탭을 새로 고치면 변경된 부분은 버려집니다."
 
-#: src/konqmainwindow.cpp:2521
+#: src/konqmainwindow.cpp:2532
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Target"
 msgstr "대상을 입력하십시오"
 
-#: src/konqmainwindow.cpp:2528
+#: src/konqmainwindow.cpp:2539
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
 msgstr "<qt><b>%1</b>은(는) 올바르지 않습니다</qt>"
 
-#: src/konqmainwindow.cpp:2538
+#: src/konqmainwindow.cpp:2549
 #, kde-format
 msgid "Copy selected files from %1 to:"
 msgstr "선택한 파일을 %1에서 다음으로 복사하기:"
 
-#: src/konqmainwindow.cpp:2551
+#: src/konqmainwindow.cpp:2562
 #, kde-format
 msgid "Move selected files from %1 to:"
 msgstr "선택한 파일을 %1에서 다음으로 이동하기:"
 
-#: src/konqmainwindow.cpp:2725
+#: src/konqmainwindow.cpp:2736
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
 msgstr "과거에 닫은 탭 기록 비우기"
 
-#: src/konqmainwindow.cpp:2748
+#: src/konqmainwindow.cpp:2759
 #, kde-format
 msgid "Save As..."
 msgstr "다른 이름으로 저장..."
 
-#: src/konqmainwindow.cpp:2750
+#: src/konqmainwindow.cpp:2761
 #, kde-format
 msgid "Manage..."
 msgstr "관리..."
 
-#: src/konqmainwindow.cpp:3343
+#: src/konqmainwindow.cpp:3354
 #, kde-format
 msgid "New &Window"
 msgstr "새 창(&W)"
 
-#: src/konqmainwindow.cpp:3348
+#: src/konqmainwindow.cpp:3359
 #, kde-format
 msgid "&Duplicate Window"
 msgstr "창 복제(&D)"
 
-#: src/konqmainwindow.cpp:3353
+#: src/konqmainwindow.cpp:3364
 #, kde-format
 msgid "Send &Link Address..."
 msgstr "링크 주소 보내기(&L)..."
 
-#: src/konqmainwindow.cpp:3357
+#: src/konqmainwindow.cpp:3368
 #, kde-format
 msgid "S&end File..."
 msgstr "파일 보내기(&E)..."
 
-#: src/konqmainwindow.cpp:3361
+#: src/konqmainwindow.cpp:3372
 #, kde-format
 msgid "&Open Location"
 msgstr "위치 열기(&O)"
 
-#: src/konqmainwindow.cpp:3367
+#: src/konqmainwindow.cpp:3378
 #, kde-format
 msgid "&Open File..."
 msgstr "파일 열기(&O)..."
 
-#: src/konqmainwindow.cpp:3372
+#: src/konqmainwindow.cpp:3383
 #, kde-format
 msgid "&Find File..."
 msgstr "파일 찾기(&F)..."
 
-#: src/konqmainwindow.cpp:3381
+#: src/konqmainwindow.cpp:3392
 #, kde-format
 msgid "Lock to Current Location"
 msgstr "현재 위치로 잠금"
 
-#: src/konqmainwindow.cpp:3384
+#: src/konqmainwindow.cpp:3395
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr "보기 연결시키기(&K)"
 
-#: src/konqmainwindow.cpp:3389
+#: src/konqmainwindow.cpp:3400
 #, kde-format
 msgid "&Up"
 msgstr "위로(&U)"
 
-#: src/konqmainwindow.cpp:3399
+#: src/konqmainwindow.cpp:3410
 #, kde-format
 msgid "Closed Items"
 msgstr "닫힌 항목"
 
-#: src/konqmainwindow.cpp:3412
+#: src/konqmainwindow.cpp:3423
 #, kde-format
 msgid "Sessions"
 msgstr "세션"
 
-#: src/konqmainwindow.cpp:3439
+#: src/konqmainwindow.cpp:3450
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr "가장 자주 방문한 곳"
 
-#: src/konqmainwindow.cpp:3443
+#: src/konqmainwindow.cpp:3454
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr "최근 방문한 곳"
 
-#: src/konqmainwindow.cpp:3452
+#: src/konqmainwindow.cpp:3463
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr "과거 기록 보기"
 
-#: src/konqmainwindow.cpp:3465
+#: src/konqmainwindow.cpp:3476
 #, kde-format
 msgid "Configure Extensions..."
 msgstr "확장 기능 설정..."
 
-#: src/konqmainwindow.cpp:3469
+#: src/konqmainwindow.cpp:3480
 #, kde-format
 msgid "Configure Spell Checking..."
 msgstr "맞춤법 검사 설정..."
 
-#: src/konqmainwindow.cpp:3475
+#: src/konqmainwindow.cpp:3486
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr "왼쪽/오른쪽으로 보기 나누기(&L)"
 
-#: src/konqmainwindow.cpp:3480
+#: src/konqmainwindow.cpp:3491
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr "위/아래로 보기 나누기(&T)"
 
-#: src/konqmainwindow.cpp:3485 src/konqtabs.cpp:456
+#: src/konqmainwindow.cpp:3496 src/konqtabs.cpp:456
 #, kde-format
 msgid "&New Tab"
 msgstr "새 탭(&N)"
 
-#: src/konqmainwindow.cpp:3494
+#: src/konqmainwindow.cpp:3505
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr "현재 탭 복제(&D)"
 
-#: src/konqmainwindow.cpp:3499
+#: src/konqmainwindow.cpp:3510
 #, kde-format
 msgid "Detach Current Tab"
 msgstr "현재 탭 떼내기"
 
-#: src/konqmainwindow.cpp:3504
+#: src/konqmainwindow.cpp:3515
 #, kde-format
 msgid "&Close Active View"
 msgstr "활성화된 보기 닫기(&C)"
 
-#: src/konqmainwindow.cpp:3509
+#: src/konqmainwindow.cpp:3520
 #, kde-format
 msgid "Close Current Tab"
 msgstr "현재 탭 닫기"
 
-#: src/konqmainwindow.cpp:3519
+#: src/konqmainwindow.cpp:3530
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "다음 탭 활성화"
 
-#: src/konqmainwindow.cpp:3523
+#: src/konqmainwindow.cpp:3534
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "이전 탭 활성화"
 
-#: src/konqmainwindow.cpp:3530
+#: src/konqmainwindow.cpp:3541
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "탭 %1 활성화"
 
-#: src/konqmainwindow.cpp:3535
+#: src/konqmainwindow.cpp:3546
 #, kde-format
 msgid "Move Tab Left"
 msgstr "탭 왼쪽으로 이동"
 
-#: src/konqmainwindow.cpp:3540
+#: src/konqmainwindow.cpp:3551
 #, kde-format
 msgid "Move Tab Right"
 msgstr "탭 오른쪽으로 이동"
 
-#: src/konqmainwindow.cpp:3548
+#: src/konqmainwindow.cpp:3559
 #, kde-format
 msgid "Dump Debug Info"
 msgstr "디버그 정보 덤프"
 
-#: src/konqmainwindow.cpp:3566
+#: src/konqmainwindow.cpp:3577
 #, kde-format
 msgid "&Reload"
 msgstr "새로 고침(&R)"
 
-#: src/konqmainwindow.cpp:3571 src/konqtabs.cpp:313
+#: src/konqmainwindow.cpp:3582 src/konqtabs.cpp:313
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr "모든 탭 새로 고침(&R)"
 
-#: src/konqmainwindow.cpp:3579
+#: src/konqmainwindow.cpp:3590
 #, kde-format
 msgid "&Force Reload"
 msgstr "강제로 새로 고침(&F)"
 
-#: src/konqmainwindow.cpp:3605
+#: src/konqmainwindow.cpp:3616
 #, kde-format
 msgid "&Stop"
 msgstr "정지(&S)"
 
-#: src/konqmainwindow.cpp:3614
+#: src/konqmainwindow.cpp:3625
 #, kde-format
 msgid "Throbber"
 msgstr "진행 표시기"
 
-#: src/konqmainwindow.cpp:3618 src/konqmainwindow.cpp:3621
+#: src/konqmainwindow.cpp:3629 src/konqmainwindow.cpp:3632
 #, kde-format
 msgid "L&ocation: "
 msgstr "위치(&O): "
 
-#: src/konqmainwindow.cpp:3628
+#: src/konqmainwindow.cpp:3639
 #, kde-format
 msgid "Location Bar"
 msgstr "주소 표시줄"
 
-#: src/konqmainwindow.cpp:3634
+#: src/konqmainwindow.cpp:3645
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
@@ -1016,12 +1034,12 @@ msgstr ""
 "<html>주소 표시줄<br /><br />웹 주소나 찾고자 하는 용어를 입력하십시오.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3638
+#: src/konqmainwindow.cpp:3649
 #, kde-format
 msgid "Clear Location Bar"
 msgstr "주소 표시줄지 우기"
 
-#: src/konqmainwindow.cpp:3642
+#: src/konqmainwindow.cpp:3653
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
@@ -1029,29 +1047,29 @@ msgid ""
 msgstr ""
 "<html>주소 표시줄지 우기<br /><br />주소 표시줄의 내용을 삭제합니다.</html>"
 
-#: src/konqmainwindow.cpp:3647
+#: src/konqmainwindow.cpp:3658
 #, kde-format
 msgid "&Bookmarks"
 msgstr "책갈피(&B)"
 
-#: src/konqmainwindow.cpp:3675
+#: src/konqmainwindow.cpp:3686
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "Konqueror 소개(&Q)"
 
-#: src/konqmainwindow.cpp:3680
+#: src/konqmainwindow.cpp:3691
 #, kde-format
 msgid "Go"
 msgstr "이동"
 
-#: src/konqmainwindow.cpp:3682
+#: src/konqmainwindow.cpp:3693
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
 "bar.</html>"
 msgstr "<html>이동<br /><br />주소 표시줄에 입력한 페이지로 이동합니다.</html>"
 
-#: src/konqmainwindow.cpp:3690
+#: src/konqmainwindow.cpp:3701
 #, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
@@ -1061,27 +1079,27 @@ msgstr ""
 "<html>상위 폴더로 가기<br /><br />예를 들어, 현재 위치가 file:/home/%1 이면 "
 "이 단추를 클릭했을 때 file:/home으로 이동합니다.</html>"
 
-#: src/konqmainwindow.cpp:3693
+#: src/konqmainwindow.cpp:3704
 #, kde-format
 msgid "Enter the parent folder"
 msgstr "상위 폴더로 가기"
 
-#: src/konqmainwindow.cpp:3695 src/konqmainwindow.cpp:3696
+#: src/konqmainwindow.cpp:3706 src/konqmainwindow.cpp:3707
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "탐색 기록에서 한 단계 뒤로 이동합니다"
 
-#: src/konqmainwindow.cpp:3698 src/konqmainwindow.cpp:3699
+#: src/konqmainwindow.cpp:3709 src/konqmainwindow.cpp:3710
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "탐색 기록에서 한 단계 앞으로 이동합니다"
 
-#: src/konqmainwindow.cpp:3701 src/konqmainwindow.cpp:3702
+#: src/konqmainwindow.cpp:3712 src/konqmainwindow.cpp:3713
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
 msgstr "닫힌 탭 기록에서 한 단계 뒤로 이동합니다"
 
-#: src/konqmainwindow.cpp:3704
+#: src/konqmainwindow.cpp:3715
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1091,12 +1109,12 @@ msgstr ""
 "<html>현재 문서 새로 고침<br /><br />웹 페이지가 불러온 이후에 바뀌었다면 변"
 "경 사항을 보려고 새로 고칠 수 있습니다.</html>"
 
-#: src/konqmainwindow.cpp:3707
+#: src/konqmainwindow.cpp:3718
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "현재 문서 새로 고침"
 
-#: src/konqmainwindow.cpp:3709
+#: src/konqmainwindow.cpp:3720
 #, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1106,12 +1124,12 @@ msgstr ""
 "<html>모든 탭 새로 고침<br /><br />웹 페이지가 불러온 이후에 바뀌었다면 변경 "
 "사항을 보려고 새로 고칠 수 있습니다.</html>"
 
-#: src/konqmainwindow.cpp:3712
+#: src/konqmainwindow.cpp:3723
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr "모든 탭 새로 고침"
 
-#: src/konqmainwindow.cpp:3714
+#: src/konqmainwindow.cpp:3725
 #, kde-format
 msgid ""
 "<html>Stop loading the document<br /><br />All network transfers will be "
@@ -1121,7 +1139,7 @@ msgstr ""
 "<html>문서 불러오기 중지<br /><br />모든 네트워크 동작이 중지되고 Konqueror에"
 "서 지금까지 받아 온 내용만 표시합니다.</html>"
 
-#: src/konqmainwindow.cpp:3718
+#: src/konqmainwindow.cpp:3729
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1133,18 +1151,18 @@ msgstr ""
 "경 사항을 보려고 새로 고칠 수 있습니다. 캐시된 사본이 있다고 해도 페이지에 있"
 "는 모든 그림을 다시 다운로드합니다.</html>"
 
-#: src/konqmainwindow.cpp:3722
+#: src/konqmainwindow.cpp:3733
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr "현재 표시된 문서와 모든 그림을 강제로 새로 고칩니다"
 
-#: src/konqmainwindow.cpp:3724
+#: src/konqmainwindow.cpp:3735
 #, kde-format
 msgid "Stop loading the document"
 msgstr "문서 불러오기 중지"
 
-#: src/konqmainwindow.cpp:3726
+#: src/konqmainwindow.cpp:3737
 #, kde-format
 msgid ""
 "<html>Cut the currently selected text or item(s) and move it to the system "
@@ -1154,12 +1172,12 @@ msgstr ""
 "<html>선택한 텍스트/항목 클립보드로 이동<br /><br />Konqueror나 다른 KDE 앱에"
 "서 <b>붙여넣기</b> 명령으로 붙여넣을 수 있습니다.</html>"
 
-#: src/konqmainwindow.cpp:3730
+#: src/konqmainwindow.cpp:3741
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr "선택한 텍스트/항목 클립보드로 이동"
 
-#: src/konqmainwindow.cpp:3732
+#: src/konqmainwindow.cpp:3743
 #, kde-format
 msgid ""
 "<html>Copy the currently selected text or item(s) to the system "
@@ -1169,12 +1187,12 @@ msgstr ""
 "<html>선택한 텍스트/항목 클립보드에 복사<br /><br />Konqueror나 다른 KDE 앱에"
 "서 <b>붙여넣기</b> 명령으로 붙여넣을 수 있습니다.</html>"
 
-#: src/konqmainwindow.cpp:3736
+#: src/konqmainwindow.cpp:3747
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr "선택한 텍스트/항목 클립보드에 복사"
 
-#: src/konqmainwindow.cpp:3738
+#: src/konqmainwindow.cpp:3749
 #, kde-format
 msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
@@ -1183,12 +1201,12 @@ msgstr ""
 "<html>클립보드 내용 붙여넣기<br /><br />다른 KDE 앱에서 잘라 내거나 복사한 내"
 "용에도 동작합니다.</html>"
 
-#: src/konqmainwindow.cpp:3741
+#: src/konqmainwindow.cpp:3752
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "클립보드 내용 붙여넣기"
 
-#: src/konqmainwindow.cpp:3743
+#: src/konqmainwindow.cpp:3754
 #, kde-format
 msgid ""
 "<html>Print the currently displayed document<br /><br />You will be "
@@ -1201,12 +1219,12 @@ msgstr ""
 "화 상자가 표시됩니다.<br /><br />현재 문서를 PDF로 출력하는 것과 같은 KDE 특"
 "수 인쇄 서비스에 접근하는 것도 지원합니다.</html>"
 
-#: src/konqmainwindow.cpp:3749
+#: src/konqmainwindow.cpp:3760
 #, kde-format
 msgid "Print the current document"
 msgstr "현재 문서 인쇄"
 
-#: src/konqmainwindow.cpp:3751
+#: src/konqmainwindow.cpp:3762
 #, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
@@ -1215,7 +1233,7 @@ msgstr ""
 "잠겨 있는 보기에서는 폴더를 바꿀 수 없습니다. '보기 연결'과 같이 사용하면 한 "
 "폴더에서 많은 파일을 볼 수 있습니다."
 
-#: src/konqmainwindow.cpp:3752
+#: src/konqmainwindow.cpp:3763
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
@@ -1224,12 +1242,12 @@ msgstr ""
 "보기를 '연결된' 것으로 설정합니다. 연결된 보기의 변경 사항은 다른 연결된 보기"
 "에도 반영됩니다."
 
-#: src/konqmainwindow.cpp:3756
+#: src/konqmainwindow.cpp:3767
 #, kde-format
 msgid "&Inspect Current Page"
 msgstr "현재 페이지 조사(&L)"
 
-#: src/konqmainwindow.cpp:3757
+#: src/konqmainwindow.cpp:3768
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
@@ -1238,22 +1256,22 @@ msgstr ""
 "<html>현재 페이지 개발자 도구 표시<br/><br/>현재 보기를 둘로 나눠서 두 번째 "
 "보기에 개발자 도구를 표시합니다"
 
-#: src/konqmainwindow.cpp:3758
+#: src/konqmainwindow.cpp:3769
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr "현재 페이지 개발자 도구 표시"
 
-#: src/konqmainwindow.cpp:3924
+#: src/konqmainwindow.cpp:3935
 #, kde-format
 msgid "Copy &Files..."
 msgstr "파일 복사(&F)..."
 
-#: src/konqmainwindow.cpp:3928
+#: src/konqmainwindow.cpp:3939
 #, kde-format
 msgid "M&ove Files..."
 msgstr "파일 이동(&O)..."
 
-#: src/konqmainwindow.cpp:4257
+#: src/konqmainwindow.cpp:4268
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
@@ -1262,77 +1280,77 @@ msgstr ""
 "20개 이상의 책갈피를 각각 탭으로 열려고 하고 있습니다. 시간이 지연될 수도 있"
 "습니다. 계속 진행하시겠습니까?"
 
-#: src/konqmainwindow.cpp:4259
+#: src/konqmainwindow.cpp:4270
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "책갈피 폴더를 새 탭에 열기"
 
-#: src/konqmainwindow.cpp:4260
+#: src/konqmainwindow.cpp:4271
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr "열기"
 
-#: src/konqmainwindow.cpp:4419
+#: src/konqmainwindow.cpp:4430
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "현재 창에서 열기(&H)"
 
-#: src/konqmainwindow.cpp:4420
+#: src/konqmainwindow.cpp:4431
 #, kde-format
 msgid "Open the document in current window"
 msgstr "문서를 현재 창에서 열기"
 
-#: src/konqmainwindow.cpp:4427
+#: src/konqmainwindow.cpp:4438
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "문서를 새 창으로 열기"
 
-#: src/konqmainwindow.cpp:4433
+#: src/konqmainwindow.cpp:4444
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "새 탭으로 열기(&N)"
 
-#: src/konqmainwindow.cpp:4435
+#: src/konqmainwindow.cpp:4446
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "문서를 새 탭으로 열기"
 
-#: src/konqmainwindow.cpp:4651
+#: src/konqmainwindow.cpp:4662
 #, kde-format
 msgid "&Open With"
 msgstr "다음으로 열기(&O)"
 
-#: src/konqmainwindow.cpp:4664
+#: src/konqmainwindow.cpp:4675
 #, kde-format
 msgid "Open with %1"
 msgstr "%1(으)로 열기|/|%1$[으 %1]로 열기"
 
-#: src/konqmainwindow.cpp:4712
+#: src/konqmainwindow.cpp:4723
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "보기 모드(&V)"
 
-#: src/konqmainwindow.cpp:4829
+#: src/konqmainwindow.cpp:4840
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr "현재 창에 여러 탭이 열려 있습니다. 종료하시겠습니까?"
 
-#: src/konqmainwindow.cpp:4831
+#: src/konqmainwindow.cpp:4842
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "확인"
 
-#: src/konqmainwindow.cpp:4833
+#: src/konqmainwindow.cpp:4844
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "현재 탭 닫기(&L)"
 
-#: src/konqmainwindow.cpp:4859
+#: src/konqmainwindow.cpp:4870
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1341,7 +1359,7 @@ msgstr ""
 "이 탭에는 저장되지 않은 변경 사항이 들어 있습니다.\n"
 "다른 탭을 닫으면 변경된 부분은 버려집니다."
 
-#: src/konqmainwindow.cpp:4860
+#: src/konqmainwindow.cpp:4871
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1350,35 +1368,35 @@ msgstr ""
 "이 페이지에는 저장되지 않은 변경 사항이 들어 있습니다.\n"
 "다른 탭을 닫으면 변경된 부분은 버려집니다."
 
-#: src/konqmainwindow.cpp:5017
+#: src/konqmainwindow.cpp:5028
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr ""
 "사이드바가 동작하지 않거나 사용할 수 없습니다. 새 항목을 추가할 수 없습니다."
 
-#: src/konqmainwindow.cpp:5017 src/konqmainwindow.cpp:5024
+#: src/konqmainwindow.cpp:5028 src/konqmainwindow.cpp:5035
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "웹 사이드바"
 
-#: src/konqmainwindow.cpp:5022
+#: src/konqmainwindow.cpp:5033
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "새 웹 확장 기능 \"%1\"을(를) 사이드바에 추가하시겠습니까?"
 
-#: src/konqmainwindow.cpp:5024
+#: src/konqmainwindow.cpp:5035
 #, kde-format
 msgid "Add"
 msgstr "추가"
 
-#: src/konqmainwindow.cpp:5024
+#: src/konqmainwindow.cpp:5035
 #, kde-format
 msgid "Do Not Add"
 msgstr "추가하지 않기"
 
-#: src/konqmainwindow.cpp:5372
+#: src/konqmainwindow.cpp:5383
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1387,7 +1405,7 @@ msgstr ""
 "설정 오류가 있는 것 같습니다. Konqueror에게 %1 형식의 파일을 처리하라고 했지"
 "만, 이 파일 형식은 처리할 수 없습니다."
 
-#: src/konqmainwindow.cpp:5456
+#: src/konqmainwindow.cpp:5467
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1407,22 +1425,22 @@ msgstr ""
 "시스템 프록시 설정을 선택하거나 설정 대화 상자에서 프록시 URL을 직접 지정하십"
 "시오. 지금 프록시 설정을 변경하시겠습니까?"
 
-#: src/konqmainwindow.cpp:5461
+#: src/konqmainwindow.cpp:5472
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "지원하지 않는 프록시 설정"
 
-#: src/konqmainwindow.cpp:5461
+#: src/konqmainwindow.cpp:5472
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "프록시 사용하지 않음"
 
-#: src/konqmainwindow.cpp:5462 src/konqmainwindow.cpp:5480
+#: src/konqmainwindow.cpp:5473 src/konqmainwindow.cpp:5491
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "프록시 설정 대화 상자 표시"
 
-#: src/konqmainwindow.cpp:5476
+#: src/konqmainwindow.cpp:5487
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1435,22 +1453,22 @@ msgstr ""
 "<p><b>HTTP 프록시:</b> <tt>%1</tt></p><p><b>HTTPS 프록시: </b><tt>%2</tt></p>"
 "무엇을 하시겠습니까?"
 
-#: src/konqmainwindow.cpp:5479
+#: src/konqmainwindow.cpp:5490
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "프록시 설정 충돌"
 
-#: src/konqmainwindow.cpp:5480
+#: src/konqmainwindow.cpp:5491
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "HTTP 프록시 사용(이번만)"
 
-#: src/konqmainwindow.cpp:5480
+#: src/konqmainwindow.cpp:5491
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "HTTPS 프록시 사용(이번만)"
 
-#: src/konqmainwindow.cpp:5557
+#: src/konqmainwindow.cpp:5568
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1917,7 +1935,7 @@ msgstr "실행 취소: 창 닫기(&O)"
 msgid "Und&o"
 msgstr "실행 취소(&O)"
 
-#: src/konqview.cpp:1163
+#: src/konqview.cpp:1165
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1927,30 +1945,30 @@ msgstr ""
 "보려고 하는 페이지는 제출한 폼의 결과입니다. 데이터를 다시 보내면, 검색이나 "
 "온라인 구매 같은 폼의 동작이 다시 수행될 수 있습니다."
 
-#: src/konqview.cpp:1165
+#: src/konqview.cpp:1167
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "경고"
 
-#: src/konqview.cpp:1165
+#: src/konqview.cpp:1167
 #, kde-format
 msgid "Resend"
 msgstr "다시 보내기"
 
-#: src/urlloader.cpp:277
+#: src/urlloader.cpp:296
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "실행"
 
-#: src/urlloader.cpp:279
+#: src/urlloader.cpp:298
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
 msgstr "표시"
 
-#: src/urlloader.cpp:286
+#: src/urlloader.cpp:305
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -1962,14 +1980,14 @@ msgstr ""
 "<filename>%1</filename>을(를) 실행할 수 있습니다. 실행하거나 표시하시겠습니"
 "까?"
 
-#: src/urlloader.cpp:292
+#: src/urlloader.cpp:311
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename>을(를) 실행할 수 있습니다. 실행하시겠습니까?"
 
-#: src/urlloader.cpp:507
+#: src/urlloader.cpp:616
 #, kde-format
 msgid "Save As"
 msgstr "다른 이름으로 저장"

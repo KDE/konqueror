@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 00:47+0000\n"
+"POT-Creation-Date: 2023-08-17 00:46+0000\n"
 "PO-Revision-Date: 2023-07-23 20:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -579,7 +579,143 @@ msgstr "MHTML 파일로(&M)"
 msgid "TextLabel"
 msgstr "텍스트 레이블"
 
-#: src/settings/webenginesettings.cpp:907
+#: src/cookies/cookiealertdlg.cpp:22
+#, kde-format
+msgctxt "@label the cookie expires when the browser session ends"
+msgid "End of Session"
+msgstr ""
+
+#: src/cookies/cookiealertdlg.cpp:29
+#, kde-format
+msgctxt "@label exposure string - the cookie may only be used by https servers"
+msgid "Secure servers only"
+msgstr ""
+
+#: src/cookies/cookiealertdlg.cpp:31
+#, kde-format
+msgctxt ""
+"@label exposure string - the cookie may be used by https servers AND client-"
+"side javascripts"
+msgid "Secure servers, page scripts"
+msgstr ""
+
+#: src/cookies/cookiealertdlg.cpp:35
+#, kde-format
+msgctxt "@label exposure string - the cookie may only be used by http servers"
+msgid "Servers"
+msgstr ""
+
+#: src/cookies/cookiealertdlg.cpp:37
+#, kde-format
+msgctxt ""
+"@label exposure string - the cookie may be used by http servers AND client-"
+"side javascripts"
+msgid "Servers, page scripts"
+msgstr ""
+
+#: src/cookies/cookiealertdlg.cpp:41
+#, kde-format
+msgctxt "@label accept cookie"
+msgid "Accept"
+msgstr ""
+
+#: src/cookies/cookiealertdlg.cpp:42
+#, fuzzy, kde-format
+#| msgctxt "@action:never for this site"
+#| msgid "Ne&ver for this site"
+msgctxt "@label accept cookie for this session only"
+msgid "Accept for this session"
+msgstr "이 사이트에서는 안 함(&V)"
+
+#: src/cookies/cookiealertdlg.cpp:45
+#, kde-format
+msgctxt "@label reject cookie"
+msgid "Reject"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, CookieAlertDlg)
+#: src/cookies/cookiealertdlg.ui:14
+#, kde-format
+msgid "CookieAlertDlg"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, header)
+#: src/cookies/cookiealertdlg.ui:20
+#, no-c-format, kde-format
+msgid ""
+"<html><head/><body><p>You received a cookie from %1</p><p>Do you want to "
+"accept or reject this cookie?</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/cookies/cookiealertdlg.ui:30
+#, fuzzy, kde-format
+#| msgctxt "@action:hide details about credentials to store"
+#| msgid "&Hide details"
+msgid "Cookie details"
+msgstr "자세한 정보 숨기기(&H)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: src/cookies/cookiealertdlg.ui:36
+#, kde-format
+msgid "Name"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: src/cookies/cookiealertdlg.ui:50
+#, kde-format
+msgid "Value"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: src/cookies/cookiealertdlg.ui:64
+#, kde-format
+msgid "Expires"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: src/cookies/cookiealertdlg.ui:78
+#, kde-format
+msgid "Path"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: src/cookies/cookiealertdlg.ui:99
+#, kde-format
+msgid "Exposure"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: src/cookies/cookiealertdlg.ui:113
+#, kde-format
+msgid "Domain"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: src/cookies/cookiealertdlg.ui:123
+#, kde-format
+msgid "Apply choice to"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, applyToThis)
+#: src/cookies/cookiealertdlg.ui:129
+#, kde-format
+msgid "Only this cookie"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, applyToDomain)
+#: src/cookies/cookiealertdlg.ui:136
+#, kde-format
+msgid "All cookies from this domain"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, applyToAll)
+#: src/cookies/cookiealertdlg.ui:143
+#, kde-format
+msgid "All cookies"
+msgstr ""
+
+#: src/settings/webenginesettings.cpp:909
 #, kde-format
 msgid "Filter error"
 msgstr "필터 오류"
@@ -807,12 +943,12 @@ msgstr "대화 상자를 닫을 때 양식 데이터를 KWallet에 저장"
 msgid "&Immediately memorize form data"
 msgstr "양식 데이터 즉시 기억(&I)"
 
-#: src/webenginepage.cpp:136
+#: src/webenginepage.cpp:150 src/webenginepage.cpp:174
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "다운로드 관리자(%1)를 찾을 수 없습니다."
 
-#: src/webenginepage.cpp:137
+#: src/webenginepage.cpp:151 src/webenginepage.cpp:175
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -823,7 +959,7 @@ msgstr ""
 "\n"
 "통합을 사용할 수 없습니다."
 
-#: src/webenginepage.cpp:295
+#: src/webenginepage.cpp:388
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -836,12 +972,12 @@ msgstr ""
 "중으로 주문되는 것을 막으려면 취소 단추를 클릭하십시오. 그렇지 않으면 계속 단"
 "추를 클릭해서 웹 페이지를 다시 보십시오.</p>"
 
-#: src/webenginepage.cpp:302
+#: src/webenginepage.cpp:395
 #, kde-format
 msgid "Resubmit Information"
 msgstr "정보 다시 제출"
 
-#: src/webenginepage.cpp:537
+#: src/webenginepage.cpp:637
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -850,18 +986,18 @@ msgstr ""
 "이 사이트에서 현재 물리적 위치에 접근하려고 합니다.\n"
 "접근을 허용하시겠습니까?"
 
-#: src/webenginepage.cpp:541 src/webenginepage.cpp:658
-#: src/webenginepage.cpp:669
+#: src/webenginepage.cpp:641 src/webenginepage.cpp:758
+#: src/webenginepage.cpp:769
 #, kde-format
 msgid "Network Transmission"
 msgstr "네트워크 전송"
 
-#: src/webenginepage.cpp:542
+#: src/webenginepage.cpp:642
 #, kde-format
 msgid "Allow access"
 msgstr "접근 허용"
 
-#: src/webenginepage.cpp:617
+#: src/webenginepage.cpp:717
 #, kde-format
 msgid ""
 "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
@@ -870,30 +1006,30 @@ msgstr ""
 "<qt>이 신뢰할 수 없는 페이지는<br/><b>%1</b><br/>(으)로 링크합니다. 따라가시"
 "겠습니까?</qt>"
 
-#: src/webenginepage.cpp:619
+#: src/webenginepage.cpp:719
 #, kde-format
 msgid "Security Warning"
 msgstr "보안 경고"
 
-#: src/webenginepage.cpp:620
+#: src/webenginepage.cpp:720
 #, kde-format
 msgctxt "follow link despite of security warning"
 msgid "Follow"
 msgstr "따라가기"
 
-#: src/webenginepage.cpp:622
+#: src/webenginepage.cpp:722
 #, kde-format
 msgid "Security Alert"
 msgstr "보안 경고"
 
-#: src/webenginepage.cpp:623
+#: src/webenginepage.cpp:723
 #, kde-format
 msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
 msgstr ""
 "<qt>신뢰할 수 없는 페이지에서<br/><b>%1</b><br/>에 접근하는 것을 차단했습니"
 "다.</qt>"
 
-#: src/webenginepage.cpp:651
+#: src/webenginepage.cpp:751
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -906,12 +1042,12 @@ msgstr ""
 "제 3자가 이 정보를 보고 가로챌 수도 있습니다.\n"
 "데이터를 암호화하지 안고 보내시겠습니까?"
 
-#: src/webenginepage.cpp:659
+#: src/webenginepage.cpp:759
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "암호화하지 않고 보냄(&S)"
 
-#: src/webenginepage.cpp:666
+#: src/webenginepage.cpp:766
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -920,12 +1056,12 @@ msgstr ""
 "이 사이트는 폼 데이터를 이메일로 보내려고 하고 있습니다.\n"
 "계속 진행하시겠습니까?"
 
-#: src/webenginepage.cpp:670
+#: src/webenginepage.cpp:770
 #, kde-format
 msgid "&Send Email"
 msgstr "이메일 보내기(&S)"
 
-#: src/webenginepage.cpp:719
+#: src/webenginepage.cpp:819
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -934,22 +1070,22 @@ msgstr ""
 "<qt>이 사이트에서 이메일 메시지에 다음 파일을 첨부할 수 있도록 허용하시겠습니"
 "까?</qt>"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:821
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "이메일 첨부 확인"
 
-#: src/webenginepage.cpp:722
+#: src/webenginepage.cpp:822
 #, kde-format
 msgid "&Allow attachments"
 msgstr "첨부 허용(&A)"
 
-#: src/webenginepage.cpp:723
+#: src/webenginepage.cpp:823
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "첨부 무시(&I)"
 
-#: src/webenginepage.cpp:737
+#: src/webenginepage.cpp:837
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -958,12 +1094,12 @@ msgstr ""
 "이 사이트는 폼을 제출하는 과정에서 컴퓨터에 있는 파일을 첨부하려고 시도했습니"
 "다. 보안을 위해서 첨부 파일을 삭제했습니다."
 
-#: src/webenginepage.cpp:740
+#: src/webenginepage.cpp:840
 #, kde-format
 msgid "Attachment Removed"
 msgstr "첨부 삭제됨"
 
-#: src/webenginepage.cpp:875
+#: src/webenginepage.cpp:975
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -972,7 +1108,7 @@ msgstr ""
 "이 사이트에서 새 창을 열려고 합니다.\n"
 "허용하시겠습니까?"
 
-#: src/webenginepage.cpp:877
+#: src/webenginepage.cpp:977
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -981,76 +1117,76 @@ msgstr ""
 "<qt>이 사이트에서 팝업 창으로<p>%1</p><br/>을(를) 열려고 합니다. 허용하시겠습"
 "니까?</qt>"
 
-#: src/webenginepage.cpp:881
+#: src/webenginepage.cpp:981
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "자바스크립트 팝업 확인"
 
-#: src/webenginepage.cpp:882
+#: src/webenginepage.cpp:982
 #, kde-format
 msgid "Allow"
 msgstr "허용"
 
-#: src/webenginepage.cpp:883
+#: src/webenginepage.cpp:983
 #, kde-format
 msgid "Do Not Allow"
 msgstr "허용하지 않음"
 
-#: src/webenginepart.cpp:212
+#: src/webenginepart.cpp:204
 #, kde-format
 msgid "Save Full HTML Page As..."
 msgstr "다른 이름으로 전체 HTML 페이지 저장..."
 
-#: src/webenginepart.cpp:216
+#: src/webenginepart.cpp:208
 #, kde-format
 msgid "Print Preview"
 msgstr "인쇄 미리 보기"
 
-#: src/webenginepart.cpp:220
+#: src/webenginepart.cpp:212
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "확대"
 
-#: src/webenginepart.cpp:225
+#: src/webenginepart.cpp:217
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "축소"
 
-#: src/webenginepart.cpp:230
+#: src/webenginepart.cpp:222
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "원래 크기로"
 
-#: src/webenginepart.cpp:235
+#: src/webenginepart.cpp:227
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "텍스트만 확대/축소"
 
-#: src/webenginepart.cpp:243
+#: src/webenginepart.cpp:235
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "DPI로 크기 조절"
 
-#: src/webenginepart.cpp:256
+#: src/webenginepart.cpp:248
 #, kde-format
 msgid "Set &Encoding"
 msgstr "인코딩 설정(&E)"
 
-#: src/webenginepart.cpp:259
+#: src/webenginepart.cpp:251
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "문서 원본 보기(&C)"
 
-#: src/webenginepart.cpp:264 src/webenginepart.cpp:564
+#: src/webenginepart.cpp:256 src/webenginepart.cpp:542
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:270
+#: src/webenginepart.cpp:262
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1060,12 +1196,12 @@ msgstr ""
 "<h3>텍스트 찾기</h3>현재 페이지의 텍스트를 찾을 수 있는 대화 상자를 표시합니"
 "다."
 
-#: src/webenginepart.cpp:562
+#: src/webenginepart.cpp:540
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "이 사이트의 SSL 정보가 잘못된 것 같습니다."
 
-#: src/webenginepart.cpp:643
+#: src/webenginepart.cpp:621
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1073,7 +1209,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "전자 우편: "
 
-#: src/webenginepart.cpp:672
+#: src/webenginepart.cpp:650
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1081,7 +1217,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - 참조: "
 
-#: src/webenginepart.cpp:674
+#: src/webenginepart.cpp:652
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1089,7 +1225,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - 숨은 참조: "
 
-#: src/webenginepart.cpp:676
+#: src/webenginepart.cpp:654
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1097,84 +1233,84 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - 제목: "
 
-#: src/webenginepart.cpp:680 src/webenginepart.cpp:691
+#: src/webenginepart.cpp:658 src/webenginepart.cpp:669
 #, kde-format
 msgid " (In new window)"
 msgstr " (새 창에서)"
 
-#: src/webenginepart.cpp:689
+#: src/webenginepart.cpp:667
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (부모 프레임에서)"
 
-#: src/webenginepart.cpp:753
+#: src/webenginepart.cpp:731
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt><b>%1</b>(으)로 검색하시겠습니까?</qt>"
 
-#: src/webenginepart.cpp:754
+#: src/webenginepart.cpp:732
 #, kde-format
 msgid "Internet Search"
 msgstr "인터넷 검색"
 
-#: src/webenginepart.cpp:754
+#: src/webenginepart.cpp:732
 #, kde-format
 msgid "&Search"
 msgstr "찾기(&S)"
 
-#: src/webenginepart.cpp:865
+#: src/webenginepart.cpp:843
 #, kde-format
 msgid "Close window?"
 msgstr "창을 닫으시겠습니까?"
 
-#: src/webenginepart.cpp:865
+#: src/webenginepart.cpp:843
 #, kde-format
 msgid "Confirmation Required"
 msgstr "확인 필요"
 
-#: src/webenginepart.cpp:939
+#: src/webenginepart.cpp:917
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>%1에서 <b>%2</b>의 로그인 정보를 기억하도록 하시겠습니까?</html>"
 
-#: src/webenginepart.cpp:1010
+#: src/webenginepart.cpp:988
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr "지금 양식 채우기(&F)"
 
-#: src/webenginepart.cpp:1015
+#: src/webenginepart.cpp:993
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr "지금 이 페이지의 암호 기억(&M)"
 
-#: src/webenginepart.cpp:1019
+#: src/webenginepart.cpp:997
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr "이 페이지에서 기억할 필드 사용자 정의(&C)..."
 
-#: src/webenginepart.cpp:1023
+#: src/webenginepart.cpp:1001
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr "이 페이지의 사용자 정의 기억 설정 삭제"
 
-#: src/webenginepart.cpp:1027
+#: src/webenginepart.cpp:1005
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "이 사이트에 암호 저장 허용(&A)"
 
-#: src/webenginepart.cpp:1031
+#: src/webenginepart.cpp:1009
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "이 사이트의 모든 저장된 암호 삭제"
 
-#: src/webenginepart.cpp:1035
+#: src/webenginepart.cpp:1013
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "지갑 관리자 실행하기(&L)"
 
-#: src/webenginepart.cpp:1039
+#: src/webenginepart.cpp:1017
 #, kde-format
 msgid "&Close Wallet"
 msgstr "지갑 닫기(&C)"
@@ -1215,17 +1351,17 @@ msgstr "인증 정보 관리(&C)"
 msgid "HTML Toolbar"
 msgstr "HTML 도구 모음"
 
-#: src/webenginepart_ext.cpp:269
+#: src/webenginepart_ext.cpp:276
 #, kde-format
 msgid "Print Document"
 msgstr "문서 인쇄"
 
-#: src/webenginepart_ext.cpp:486
+#: src/webenginepart_ext.cpp:493
 #, kde-format
 msgid "Add URL to Filter"
 msgstr "필터에 URL 추가"
 
-#: src/webenginepart_ext.cpp:487
+#: src/webenginepart_ext.cpp:494
 #, kde-format
 msgid "Enter the URL:"
 msgstr "URL 입력:"
@@ -1281,34 +1417,28 @@ msgstr "주체(&S)"
 msgid "&Issuer"
 msgstr "발급자(&I):"
 
-#: src/webenginepartdownloadmanager.cpp:295
+#: src/webenginepartdownloadmanager.cpp:259
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "파일을 저장하는 중 오류 발생: %1"
 
-#: src/webenginepartdownloadmanager.cpp:303
+#: src/webenginepartdownloadmanager.cpp:269
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "다운로드"
 
-#: src/webenginepartdownloadmanager.cpp:304
+#: src/webenginepartdownloadmanager.cpp:270
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "원본"
 
-#: src/webenginepartdownloadmanager.cpp:305
+#: src/webenginepartdownloadmanager.cpp:271
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "대상"
-
-#: src/webenginepartdownloadmanager.cpp:318
-#, kde-format
-msgctxt "Finished saving BLOB URL"
-msgid "Finished saving %1 as %2"
-msgstr "%1을(를) %2에 저장 완료"
 
 #: src/webengineparterrorschemehandler.cpp:94
 #, kde-format
@@ -1611,6 +1741,10 @@ msgstr ""
 "<ul><li><b>필드 내부 이름: </b>%1</li><li><b>필드 종류: </b>%2</li><li><b>필"
 "드 ID: </b>%3</li><li><b>필드 읽기 전용 여부: </b>%4</li><li><b>필드 활성화 "
 "여부: </b>%5</li><li><b>자동 완성 활성화 여부: </b>%6</li></ul>"
+
+#~ msgctxt "Finished saving BLOB URL"
+#~ msgid "Finished saving %1 as %2"
+#~ msgstr "%1을(를) %2에 저장 완료"
 
 #~ msgid ""
 #~ "The complete contents of the page will be saved. Both the page and any "

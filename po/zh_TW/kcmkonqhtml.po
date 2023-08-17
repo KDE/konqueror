@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 00:46+0000\n"
+"POT-Creation-Date: 2023-08-17 00:46+0000\n"
 "PO-Revision-Date: 2023-02-07 19:36+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -25,16 +25,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 23.03.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Kenduest Lee,ChaoHsiung Liao, Jeff Huang"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "kenduest@i18n.linux.org.tw,pesder@seed.net.tw, s8321414@gmail.com"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: advancedTabOptions.ui:21
@@ -547,6 +537,372 @@ msgstr ""
 msgid "The custom directory to store cache"
 msgstr ""
 
+#. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
+#: cookies/kcookiesmanagement.ui:20
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search"
+msgstr "搜尋："
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
+#: cookies/kcookiesmanagement.ui:27
+#, kde-format
+msgid "Search interactively for domains and hosts"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
+#: cookies/kcookiesmanagement.ui:43
+#, kde-format
+msgid "Site"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
+#: cookies/kcookiesmanagement.ui:48
+#, kde-format
+msgid "Cookie Name"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, pbDelete)
+#. i18n: ectx: property (text), widget (QPushButton, deleteButton)
+#: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
+#, fuzzy, kde-format
+#| msgid "De&lete"
+msgid "D&elete"
+msgstr "刪除(&L)"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
+#. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
+#: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
+#, fuzzy, kde-format
+#| msgid "De&lete"
+msgid "Delete A&ll"
+msgstr "刪除(&L)"
+
+#. i18n: ectx: property (text), widget (QPushButton, configPolicyButton)
+#: cookies/kcookiesmanagement.ui:70
+#, kde-format
+msgid "Configure &Policy..."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, reloadButton)
+#: cookies/kcookiesmanagement.ui:77
+#, kde-format
+msgid "&Reload List"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, detailsGroupBox)
+#: cookies/kcookiesmanagement.ui:97
+#, kde-format
+msgid "Details"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, nameLabel)
+#: cookies/kcookiesmanagement.ui:106
+#, fuzzy, kde-format
+#| msgid "Name"
+msgid "Name:"
+msgstr "名稱"
+
+#. i18n: ectx: property (text), widget (QLabel, valueLabel)
+#: cookies/kcookiesmanagement.ui:129
+#, fuzzy, kde-format
+#| msgid "Value"
+msgid "Value:"
+msgstr "數值"
+
+#. i18n: ectx: property (text), widget (QLabel, domainLabel)
+#: cookies/kcookiesmanagement.ui:152
+#, fuzzy, kde-format
+#| msgid "Host/Domain"
+msgid "Domain:"
+msgstr "主機/網域"
+
+#. i18n: ectx: property (text), widget (QLabel, patchLabel)
+#: cookies/kcookiesmanagement.ui:175
+#, kde-format
+msgid "Path:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, expiresLabel)
+#: cookies/kcookiesmanagement.ui:198
+#, kde-format
+msgid "Expires:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, secureLabel)
+#: cookies/kcookiesmanagement.ui:221
+#, kde-format
+msgid "Secure:"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
+#: cookies/kcookiespolicies.ui:20
+#, kde-format
+msgid ""
+"<qt>\n"
+"<p>Enable cookie support. Normally you will want to have cookie support "
+"enabled and customize it to suit your privacy needs.</p><p>\n"
+"Please note that disabling cookie support might make many web sites "
+"unbrowsable.</p>\n"
+"</qt>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
+#: cookies/kcookiespolicies.ui:23
+#, fuzzy, kde-format
+#| msgid "Enable filters"
+msgid "Enable coo&kies"
+msgstr "啟用過濾器"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
+#: cookies/kcookiespolicies.ui:35
+#, kde-format
+msgid ""
+"<qt>\n"
+"Reject the so called third-party cookies. These are cookies that originate "
+"from a site other than the one you are currently browsing. For example, if "
+"you visit <b>www.foobar.com</b> while this option is on, only cookies that "
+"originate from www.foobar.com will be processed per your settings. Cookies "
+"from any other site will be rejected. This reduces the chances of site "
+"operators compiling a profile about your daily browsing habits.\n"
+"</qt>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
+#: cookies/kcookiespolicies.ui:38
+#, kde-format
+msgid "Only acce&pt cookies from originating server"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
+#: cookies/kcookiespolicies.ui:46
+#, kde-format
+msgid ""
+"<p>\n"
+"Automatically accept temporary cookies meant to expire at the end of the "
+"current session. Such cookies will not be stored in your computer's hard "
+"drive or storage device. Instead, they are deleted when you close all "
+"applications (e.g. your browser) that use them.</p><p><u>NOTE</u> Checking "
+"this option overrides your default as well as site specific cookie policies "
+"for session cookies.</p>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
+#: cookies/kcookiespolicies.ui:49
+#, fuzzy, kde-format
+#| msgid "A&utomatically load images"
+msgid "Automaticall&y accept session cookies"
+msgstr "自動載入影像(&U)"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
+#: cookies/kcookiespolicies.ui:68
+#, kde-format
+msgid ""
+"<qt>\n"
+"Determines how cookies received from a remote machine will be handled: \n"
+"<ul>\n"
+"<li><b>Ask</b> will cause KDE to ask for your confirmation whenever a server "
+"wants to set a cookie.</li>\n"
+"<li><b>Accept</b> will cause cookies to be accepted without prompting you.</"
+"li>\n"
+"<li><b>Accept until end of session</b> will cause cookies to be accepted but "
+"they will expire at the end of the session.</li>\n"
+"<li><b>Reject</b> will cause the cookiejar to refuse all cookies it receives."
+"</li>\n"
+"</ul><p>\n"
+"<u>NOTE:</u> Domain specific policies, which can be set below, always take "
+"precedence over the default policy.</p>\n"
+"</qt>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
+#: cookies/kcookiespolicies.ui:71
+#, fuzzy, kde-format
+#| msgid "Default encoding:"
+msgid "Default Policy"
+msgstr "預設編碼:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
+#: cookies/kcookiespolicies.ui:77
+#, kde-format
+msgid "Accep&t all cookies"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
+#: cookies/kcookiespolicies.ui:84
+#, kde-format
+msgid "Accept &until end of session"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
+#: cookies/kcookiespolicies.ui:91
+#, fuzzy, kde-format
+#| msgid "A&nimations:"
+msgid "Ask &for confirmation"
+msgstr "動畫(&N):"
+
+#. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
+#: cookies/kcookiespolicies.ui:98
+#, kde-format
+msgid "Re&ject all cookies"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
+#: cookies/kcookiespolicies.ui:123
+#, fuzzy, kde-format
+#| msgid ""
+#| "Here you can set specific Java policies for any particular host or "
+#| "domain. To add a new policy, simply click the <i>New...</i> button and "
+#| "supply the necessary information requested by the dialog box. To change "
+#| "an existing policy, click on the <i>Change...</i> button and choose the "
+#| "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#| "button will remove the selected policy, causing the default policy "
+#| "setting to be used for that domain."
+msgid ""
+"<qt>\n"
+"To add a new policy, simply click on the <b>Add...</b> button and supply the "
+"necessary information. To change an existing policy, use the <b>Change...</"
+"b> button and choose the new policy from the policy dialog box. Clicking on "
+"the <b>Delete</b> button will remove the currently selected policy causing "
+"the default policy setting to be used for that domain, whereas <b>Delete "
+"All</b> will remove all the site specific policies.\n"
+"</qt>"
+msgstr ""
+"您可以在這裡設定任何特定主機或網域的特定 Java 政策。要增加新政策，只要單擊<i>"
+"新增...</i>按鈕並提供對話方塊要求的必要資訊。要改變現有的政策，單擊<i>改變..."
+"</i>按鈕並從政策對話方塊選擇新政策。單擊<i>刪除</i>按鈕會移除選擇的政策，並使"
+"用預設政策設定於該網域。"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
+#: cookies/kcookiespolicies.ui:126
+#, fuzzy, kde-format
+#| msgid "Policy"
+msgid "Site Policy"
+msgstr "政策"
+
+#. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
+#: cookies/kcookiespolicies.ui:135
+#, kde-format
+msgid "Search interactively for domains"
+msgstr ""
+
+#. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
+#: cookies/kcookiespolicies.ui:138
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search..."
+msgstr "搜尋："
+
+#. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
+#: cookies/kcookiespolicies.ui:147
+#, kde-format
+msgid ""
+"<qt>\n"
+"List of sites for which you have set a specific cookie policy. Specific "
+"policies override the default policy setting for these sites.\n"
+"</qt>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
+#: cookies/kcookiespolicies.ui:163
+#, fuzzy, kde-format
+#| msgid "Host/Domain"
+msgid "Domain"
+msgstr "主機/網域"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
+#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
+#, kde-format
+msgid "Policy"
+msgstr "政策"
+
+#. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
+#. i18n: ectx: property (text), widget (QPushButton, pbNew)
+#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:45
+#: useragent/useragent.ui:84
+#, kde-format
+msgid "&New..."
+msgstr "新增(&N)..."
+
+#. i18n: ectx: property (text), widget (QPushButton, pbChange)
+#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:49
+#, kde-format
+msgid "Chan&ge..."
+msgstr "改變(&H)..."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lbDomain)
+#: cookies/kcookiespolicyselectiondlg.ui:22
+#, kde-format
+msgid ""
+"<qt>\n"
+"Enter the host or domain to which this policy applies, e.g. <b>www.kde.org</"
+"b> or <b>.kde.org</b>.\n"
+"</qt>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lbDomain)
+#: cookies/kcookiespolicyselectiondlg.ui:25
+#, kde-format
+msgid "Site name:"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, leDomain)
+#: cookies/kcookiespolicyselectiondlg.ui:38
+#, kde-format
+msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
+#. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
+#: cookies/kcookiespolicyselectiondlg.ui:53
+#: cookies/kcookiespolicyselectiondlg.ui:77
+#, kde-format
+msgid ""
+"<qt>\n"
+"Select the desired policy:\n"
+"<ul>\n"
+"<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+"<li><b>Accept until end of session</b> - Allows this site to set cookies but "
+"they will expire at the end of the session.</li>\n"
+"<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+"<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+"</ul>\n"
+"</qt>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lbPolicy)
+#: cookies/kcookiespolicyselectiondlg.ui:56
+#, fuzzy, kde-format
+#| msgid "Policy"
+msgid "Policy:"
+msgstr "政策"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
+#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
+#: policydlg.cpp:63
+#, kde-format
+msgid "Accept"
+msgstr "接受"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
+#: cookies/kcookiespolicyselectiondlg.ui:86
+#, kde-format
+msgid "Accept until end of session"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
+#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
+#: policydlg.cpp:63
+#, kde-format
+msgid "Reject"
+msgstr "拒絕"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
+#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:153
+#, kde-format
+msgid "Ask"
+msgstr "詢問"
+
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
 #: css/cssconfig.ui:5 css/csscustom.ui:13
@@ -990,22 +1346,6 @@ msgstr ""
 msgid "Host/Domain"
 msgstr "主機/網域"
 
-#: domainlistview.cpp:37
-#, kde-format
-msgid "Policy"
-msgstr "政策"
-
-#. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
-#: domainlistview.cpp:45 useragent/useragent.ui:84
-#, kde-format
-msgid "&New..."
-msgstr "新增(&N)..."
-
-#: domainlistview.cpp:49
-#, kde-format
-msgid "Chan&ge..."
-msgstr "改變(&H)..."
-
 #: domainlistview.cpp:53
 #, kde-format
 msgid "De&lete"
@@ -1054,16 +1394,6 @@ msgstr "您必須先選擇要刪除的政策。"
 #, kde-format
 msgid "Use Global"
 msgstr "使用全域"
-
-#: domainlistview.cpp:189 policydlg.cpp:63
-#, kde-format
-msgid "Accept"
-msgstr "接受"
-
-#: domainlistview.cpp:191 policydlg.cpp:63
-#, kde-format
-msgid "Reject"
-msgstr "拒絕"
 
 #: filteropts.cpp:48
 #, kde-format
@@ -1852,11 +2182,6 @@ msgstr "允許"
 msgid "Accept all popup window requests."
 msgstr "接受所有彈出式視窗的要求。"
 
-#: jspolicies.cpp:153
-#, kde-format
-msgid "Ask"
-msgstr "詢問"
-
 #: jspolicies.cpp:154
 #, kde-format
 msgid "Prompt every time a popup window is requested."
@@ -2023,76 +2348,17 @@ msgstr ""
 "列的文字，這樣一來有時會妨礙真實網址的顯示。這個選項指定了要如何處理這類的意"
 "圖。"
 
-#: main.cpp:43
-#, kde-format
-msgid "Konqueror Browsing Control Module"
-msgstr "Konqueror 瀏覽控制模組"
-
-#: main.cpp:45
-#, kde-format
-msgid "(c) 1999 - 2001 The Konqueror Developers"
-msgstr "(c) 1999 - 2001 Konqueror 開發者"
-
-#: main.cpp:47
-#, kde-format
-msgid "Waldo Bastian"
-msgstr "Waldo Bastian"
-
-#: main.cpp:48
-#, kde-format
-msgid "David Faure"
-msgstr "David Faure"
-
 #: main.cpp:49
-#, kde-format
-msgid "Matthias Kalle Dalheimer"
-msgstr "Matthias Kalle Dalheimer"
-
-#: main.cpp:50
-#, kde-format
-msgid "Lars Knoll"
-msgstr "Lars Knoll"
-
-#: main.cpp:51
-#, kde-format
-msgid "Dirk Mueller"
-msgstr "Dirk Mueller"
-
-#: main.cpp:52
-#, kde-format
-msgid "Daniel Molkentin"
-msgstr "Daniel Molkentin"
-
-#: main.cpp:53
-#, kde-format
-msgid "Wynn Wilkes"
-msgstr "Wynn Wilkes"
-
-#: main.cpp:55
-#, kde-format
-msgid "Leo Savernik"
-msgstr "Leo Savernik"
-
-#: main.cpp:55
-#, kde-format
-msgid ""
-"JavaScript access controls\n"
-"Per-domain policies extensions"
-msgstr ""
-"JavaScript 存取控制\n"
-"網域政策延伸功能"
-
-#: main.cpp:67
 #, kde-format
 msgid "&Java"
 msgstr "&Java"
 
-#: main.cpp:71
+#: main.cpp:53
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"
 
-#: main.cpp:111
+#: main.cpp:93
 #, kde-format
 msgid ""
 "<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
@@ -2215,6 +2481,51 @@ msgid ""
 "html>"
 msgstr ""
 
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Kenduest Lee,ChaoHsiung Liao, Jeff Huang"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kenduest@i18n.linux.org.tw,pesder@seed.net.tw, s8321414@gmail.com"
+
+#~ msgid "Konqueror Browsing Control Module"
+#~ msgstr "Konqueror 瀏覽控制模組"
+
+#~ msgid "(c) 1999 - 2001 The Konqueror Developers"
+#~ msgstr "(c) 1999 - 2001 Konqueror 開發者"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Matthias Kalle Dalheimer"
+#~ msgstr "Matthias Kalle Dalheimer"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Daniel Molkentin"
+#~ msgstr "Daniel Molkentin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid ""
+#~ "JavaScript access controls\n"
+#~ "Per-domain policies extensions"
+#~ msgstr ""
+#~ "JavaScript 存取控制\n"
+#~ "網域政策延伸功能"
+
 #~ msgctxt "@label:listbox"
 #~ msgid "When &Konqueror starts:"
 #~ msgstr "Konqueror 啟動時(&K)："
@@ -2254,9 +2565,6 @@ msgstr ""
 
 #~ msgid "Information"
 #~ msgstr "資訊"
-
-#~ msgid "Value"
-#~ msgstr "數值"
 
 #~ msgid "Global Settings"
 #~ msgstr "全域設定"

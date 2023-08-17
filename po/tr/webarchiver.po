@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"POT-Creation-Date: 2023-08-17 00:46+0000\n"
 "PO-Revision-Date: 2022-10-18 05:06+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -27,74 +27,69 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emir_sari@icloud.com"
 
-#: app/archivedialog.cpp:76
-#, kde-format
-msgid "Untitled"
-msgstr "Başlıksız"
-
-#: app/archivedialog.cpp:92
+#: app/archivedialog.cpp:81
 #, kde-format
 msgid "Create Archive"
 msgstr "Arşiv Oluştur"
 
-#: app/archivedialog.cpp:108
+#: app/archivedialog.cpp:97
 #, kde-format
 msgid "The URL of the page that is to be archived"
 msgstr "Arşivlenecek sayfanın URL'si"
 
-#: app/archivedialog.cpp:111
+#: app/archivedialog.cpp:100
 #, kde-format
 msgid "Source &URL:"
 msgstr "Kaynak &URL:"
 
-#: app/archivedialog.cpp:120
+#: app/archivedialog.cpp:109
 #, kde-format
 msgid "Web archive (*.war)"
 msgstr "Web arşivi (*.war)"
 
-#: app/archivedialog.cpp:121
+#: app/archivedialog.cpp:110
 #, kde-format
 msgid "Tar archive (*.tar)"
 msgstr "Tar arşivi (*.tar)"
 
-#: app/archivedialog.cpp:122
+#: app/archivedialog.cpp:111
 #, kde-format
 msgid "Zip archive (*.zip)"
 msgstr "Zip arşivi (*.zip)"
 
-#: app/archivedialog.cpp:123
+#: app/archivedialog.cpp:112
 #, kde-format
 msgid "Directory"
 msgstr "Dizin"
 
-#: app/archivedialog.cpp:128
+#: app/archivedialog.cpp:117
 #, kde-format
 msgid "The file or directory where the archived page will be saved"
 msgstr "Arşivlenen sayfanın kaydedileceği dosya veya dizin"
 
-#: app/archivedialog.cpp:129
+#: app/archivedialog.cpp:118
 #, kde-format
 msgid "&Save to:"
 msgstr "Şuraya &kaydet:"
 
-#: app/archivedialog.cpp:131
+#: app/archivedialog.cpp:120
 #, kde-format
 msgid "Options"
 msgstr "Seçenekler"
 
-#: app/archivedialog.cpp:141
+#: app/archivedialog.cpp:130
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
 msgstr[0] " saniye"
 msgstr[1] " saniye"
 
-#: app/archivedialog.cpp:142
+#: app/archivedialog.cpp:131
 #, kde-format
 msgid "None"
 msgstr "Hiçbiri"
 
-#: app/archivedialog.cpp:212
+#: app/archivedialog.cpp:201
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -104,25 +99,25 @@ msgstr ""
 "Web arşivi indirmesi, geçerli vekil ayarlarını kullanamıyor. Bir vekil "
 "kullanılmayacak."
 
-#: app/archivedialog.cpp:351
+#: app/archivedialog.cpp:340
 #, kde-format
 msgctxt "@info"
 msgid "The save location is not valid."
 msgstr "Kaydetme konumu geçerli değil."
 
-#: app/archivedialog.cpp:371
+#: app/archivedialog.cpp:360
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
 msgstr "wget(1) komutu bulunamıyor;<nl/>bkz. <link>%1</link>."
 
-#: app/archivedialog.cpp:393
+#: app/archivedialog.cpp:382
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
 msgstr "Hedef doğrulanamıyor:<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:410
+#: app/archivedialog.cpp:399
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -132,13 +127,13 @@ msgstr ""
 "Arşiv dizini<nl/><filename>%1</filename>,<nl/>halihazırda bir dosya olarak "
 "var."
 
-#: app/archivedialog.cpp:411
+#: app/archivedialog.cpp:400
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
 msgstr "Arşiv dizini<nl/><filename>%1</filename>,<nl/>halihazırda var."
 
-#: app/archivedialog.cpp:415
+#: app/archivedialog.cpp:404
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -148,42 +143,42 @@ msgstr ""
 "Arşiv dosyası<nl/><filename>%1</filename>,<nl/>halihazırda bir dizin olarak "
 "var."
 
-#: app/archivedialog.cpp:416
+#: app/archivedialog.cpp:405
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
 msgstr "Arşiv dosyası<nl/><filename>%1</filename>,<nl/>halihazırda var."
 
-#: app/archivedialog.cpp:420
+#: app/archivedialog.cpp:409
 #, kde-format
 msgid "Archive Already Exists"
 msgstr "Arşiv Halihazırda Var"
 
-#: app/archivedialog.cpp:450
+#: app/archivedialog.cpp:439
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
 msgstr "Özgün arşiv silinemiyor:<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:467
+#: app/archivedialog.cpp:456
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
 msgstr "Geçici bir dizin oluşturulamıyor:<nl/><filename>%1</filename><nl/>"
 
-#: app/archivedialog.cpp:539
+#: app/archivedialog.cpp:528
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot start the archiver process <filename>%1</filename>"
 msgstr "<filename>%1</filename> arşivleyici süreci başlatılamıyor"
 
-#: app/archivedialog.cpp:555
+#: app/archivedialog.cpp:544
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The download process was interrupted."
 msgstr "İndirme süreci yarıda kesildi."
 
-#: app/archivedialog.cpp:556
+#: app/archivedialog.cpp:545
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -193,7 +188,7 @@ msgstr ""
 "<para><filename>%1</filename> indirme süreci, %2 sinyaliyle başarısız oldu.</"
 "para>"
 
-#: app/archivedialog.cpp:561
+#: app/archivedialog.cpp:550
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -203,7 +198,7 @@ msgstr ""
 "<para><filename>%1</filename> indirme süreci, %2 durumuyla başarısız oldu.</"
 "para>"
 
-#: app/archivedialog.cpp:565
+#: app/archivedialog.cpp:554
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -212,41 +207,41 @@ msgid ""
 msgstr ""
 "<para>Bu, bazı sayfa ögeleri için bir 404 durumu belirtiyor olabilir.</para>"
 
-#: app/archivedialog.cpp:571
+#: app/archivedialog.cpp:560
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
 msgstr "<para>Arşivlenen kısım korunsun mu?</para>"
 
-#: app/archivedialog.cpp:572
+#: app/archivedialog.cpp:561
 #, kde-format
 msgid "Retain Archive?"
 msgstr "Arşiv Korunsun mu?"
 
-#: app/archivedialog.cpp:573
+#: app/archivedialog.cpp:562
 #, kde-format
 msgid "Retain"
 msgstr "Koru"
 
-#: app/archivedialog.cpp:577
+#: app/archivedialog.cpp:566
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."
 msgstr "Web arşivi oluşturma başarısız."
 
-#: app/archivedialog.cpp:721
+#: app/archivedialog.cpp:710
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
 msgstr "Arşiv, şu konuma kopyalanamadı:<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:751
+#: app/archivedialog.cpp:740
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
 msgstr "Şunun için izinler ayarlanamadı:<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:759
+#: app/archivedialog.cpp:748
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"
@@ -445,3 +440,6 @@ msgstr "&Araçlar"
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Ek Araç Çubuğu"
+
+#~ msgid "Untitled"
+#~ msgstr "Başlıksız"

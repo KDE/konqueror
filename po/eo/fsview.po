@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fsview\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"POT-Creation-Date: 2023-08-17 00:46+0000\n"
 "PO-Revision-Date: 2023-03-25 16:19+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -71,12 +71,12 @@ msgstr "Mime-tipo"
 msgid "Go To"
 msgstr "Iri al"
 
-#: fsview.cpp:284 fsview_part.cpp:106
+#: fsview.cpp:284 fsview_part.cpp:107
 #, kde-format
 msgid "Stop at Depth"
 msgstr ""
 
-#: fsview.cpp:285 fsview_part.cpp:103
+#: fsview.cpp:285 fsview_part.cpp:104
 #, kde-format
 msgid "Stop at Area"
 msgstr ""
@@ -106,12 +106,12 @@ msgstr "Refreŝigi"
 msgid "Refresh '%1'"
 msgstr ""
 
-#: fsview.cpp:313 fsview_part.cpp:113
+#: fsview.cpp:313 fsview_part.cpp:114
 #, kde-format
 msgid "Color Mode"
 msgstr "Kolormodo"
 
-#: fsview.cpp:316 fsview_part.cpp:109
+#: fsview.cpp:316 fsview_part.cpp:110
 #, kde-format
 msgid "Visualization"
 msgstr ""
@@ -126,21 +126,21 @@ msgstr "Neniu"
 msgid "Depth"
 msgstr "Profundeco"
 
-#: fsview_part.cpp:69
+#: fsview_part.cpp:70
 #, kde-format
 msgid "Read 1 folder, in %2"
 msgid_plural "Read %1 folders, in %2"
 msgstr[0] ""
 msgstr[1] ""
 
-#: fsview_part.cpp:73
+#: fsview_part.cpp:74
 #, kde-format
 msgid "1 folder"
 msgid_plural "%1 folders"
 msgstr[0] "%1 dosierujo"
 msgstr[1] "%1 dosierujoj"
 
-#: fsview_part.cpp:87
+#: fsview_part.cpp:88
 #, kde-format
 msgid ""
 "<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
@@ -150,46 +150,46 @@ msgid ""
 "help under menu 'Help/FSView Manual'.</p>"
 msgstr ""
 
-#: fsview_part.cpp:119
+#: fsview_part.cpp:120
 #, kde-format
 msgid "&FSView Manual"
 msgstr ""
 
-#: fsview_part.cpp:121
+#: fsview_part.cpp:122
 #, kde-format
 msgid "Show FSView manual"
 msgstr ""
 
-#: fsview_part.cpp:122
+#: fsview_part.cpp:123
 #, kde-format
 msgid "Opens the help browser with the FSView documentation"
 msgstr ""
 
-#: fsview_part.cpp:154
+#: fsview_part.cpp:155
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Move to Trash"
 msgstr "Movi rubujen"
 
-#: fsview_part.cpp:161
+#: fsview_part.cpp:162
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Delete"
 msgstr "Forigi"
 
-#: fsview_part.cpp:166
+#: fsview_part.cpp:167
 #, kde-format
 msgctxt "@action:inmenu Edit"
 msgid "&Edit File Type..."
 msgstr "&Modifi dosiertipon..."
 
-#: fsview_part.cpp:170
+#: fsview_part.cpp:171
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Properties"
 msgstr "Ecoj"
 
-#: fsview_part.cpp:203
+#: fsview_part.cpp:204
 #, kde-format
 msgid ""
 "FSView intentionally does not support automatic updates when changes are "

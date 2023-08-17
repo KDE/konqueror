@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 00:47+0000\n"
+"POT-Creation-Date: 2023-08-17 00:46+0000\n"
 "PO-Revision-Date: 2012-02-29 00:24+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <kde-i18n-fa@kde.org>\n"
@@ -525,7 +525,139 @@ msgstr ""
 msgid "TextLabel"
 msgstr ""
 
-#: src/settings/webenginesettings.cpp:907
+#: src/cookies/cookiealertdlg.cpp:22
+#, kde-format
+msgctxt "@label the cookie expires when the browser session ends"
+msgid "End of Session"
+msgstr ""
+
+#: src/cookies/cookiealertdlg.cpp:29
+#, kde-format
+msgctxt "@label exposure string - the cookie may only be used by https servers"
+msgid "Secure servers only"
+msgstr ""
+
+#: src/cookies/cookiealertdlg.cpp:31
+#, kde-format
+msgctxt ""
+"@label exposure string - the cookie may be used by https servers AND client-"
+"side javascripts"
+msgid "Secure servers, page scripts"
+msgstr ""
+
+#: src/cookies/cookiealertdlg.cpp:35
+#, kde-format
+msgctxt "@label exposure string - the cookie may only be used by http servers"
+msgid "Servers"
+msgstr ""
+
+#: src/cookies/cookiealertdlg.cpp:37
+#, kde-format
+msgctxt ""
+"@label exposure string - the cookie may be used by http servers AND client-"
+"side javascripts"
+msgid "Servers, page scripts"
+msgstr ""
+
+#: src/cookies/cookiealertdlg.cpp:41
+#, fuzzy, kde-format
+msgctxt "@label accept cookie"
+msgid "Accept"
+msgstr "پذیرفتن"
+
+#: src/cookies/cookiealertdlg.cpp:42
+#, kde-format
+msgctxt "@label accept cookie for this session only"
+msgid "Accept for this session"
+msgstr ""
+
+#: src/cookies/cookiealertdlg.cpp:45
+#, fuzzy, kde-format
+msgctxt "@label reject cookie"
+msgid "Reject"
+msgstr "رد کردن"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, CookieAlertDlg)
+#: src/cookies/cookiealertdlg.ui:14
+#, kde-format
+msgid "CookieAlertDlg"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, header)
+#: src/cookies/cookiealertdlg.ui:20
+#, no-c-format, kde-format
+msgid ""
+"<html><head/><body><p>You received a cookie from %1</p><p>Do you want to "
+"accept or reject this cookie?</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/cookies/cookiealertdlg.ui:30
+#, kde-format
+msgid "Cookie details"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: src/cookies/cookiealertdlg.ui:36
+#, kde-format
+msgid "Name"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: src/cookies/cookiealertdlg.ui:50
+#, kde-format
+msgid "Value"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: src/cookies/cookiealertdlg.ui:64
+#, kde-format
+msgid "Expires"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: src/cookies/cookiealertdlg.ui:78
+#, kde-format
+msgid "Path"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: src/cookies/cookiealertdlg.ui:99
+#, kde-format
+msgid "Exposure"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: src/cookies/cookiealertdlg.ui:113
+#, kde-format
+msgid "Domain"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: src/cookies/cookiealertdlg.ui:123
+#, kde-format
+msgid "Apply choice to"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, applyToThis)
+#: src/cookies/cookiealertdlg.ui:129
+#, kde-format
+msgid "Only this cookie"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, applyToDomain)
+#: src/cookies/cookiealertdlg.ui:136
+#, kde-format
+msgid "All cookies from this domain"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, applyToAll)
+#: src/cookies/cookiealertdlg.ui:143
+#, kde-format
+msgid "All cookies"
+msgstr ""
+
+#: src/settings/webenginesettings.cpp:909
 #, kde-format
 msgid "Filter error"
 msgstr "خطای پالایه"
@@ -751,12 +883,12 @@ msgstr ""
 msgid "&Immediately memorize form data"
 msgstr ""
 
-#: src/webenginepage.cpp:136
+#: src/webenginepage.cpp:150 src/webenginepage.cpp:174
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr ""
 
-#: src/webenginepage.cpp:137
+#: src/webenginepage.cpp:151 src/webenginepage.cpp:175
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -764,7 +896,7 @@ msgid ""
 "The integration will be disabled."
 msgstr ""
 
-#: src/webenginepage.cpp:295
+#: src/webenginepage.cpp:388
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -773,13 +905,13 @@ msgid ""
 "Otherwise, click the Continue button to display the webpage again.</p>"
 msgstr ""
 
-#: src/webenginepage.cpp:302
+#: src/webenginepage.cpp:395
 #, fuzzy, kde-format
 #| msgid "Additional Information: %1"
 msgid "Resubmit Information"
 msgstr "اطلاعات اضافی: %1"
 
-#: src/webenginepage.cpp:537
+#: src/webenginepage.cpp:637
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is attempting to submit form data via email.\n"
@@ -791,18 +923,18 @@ msgstr ""
 "این پایگاه تلاش می‌کند، داده‌ها را از طریق رایانامه ارائه کند.\n"
 "می‌خواهید ادامه دهید؟"
 
-#: src/webenginepage.cpp:541 src/webenginepage.cpp:658
-#: src/webenginepage.cpp:669
+#: src/webenginepage.cpp:641 src/webenginepage.cpp:758
+#: src/webenginepage.cpp:769
 #, kde-format
 msgid "Network Transmission"
 msgstr "انتقال شبکه"
 
-#: src/webenginepage.cpp:542
+#: src/webenginepage.cpp:642
 #, kde-format
 msgid "Allow access"
 msgstr ""
 
-#: src/webenginepage.cpp:617
+#: src/webenginepage.cpp:717
 #, fuzzy, kde-format
 msgid ""
 "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
@@ -811,29 +943,29 @@ msgstr ""
 "<qt>این صفحه غیرقابل اعتماد به <br /><b>%1</b> می‌پیوندد.<br />آیا می‌خواهید "
 "پیوند را ادامه دهید؟</qt>"
 
-#: src/webenginepage.cpp:619
+#: src/webenginepage.cpp:719
 #, fuzzy, kde-format
 msgid "Security Warning"
 msgstr "اخطار امنیت"
 
-#: src/webenginepage.cpp:620
+#: src/webenginepage.cpp:720
 #, kde-format
 msgctxt "follow link despite of security warning"
 msgid "Follow"
 msgstr "دنبال کردن"
 
-#: src/webenginepage.cpp:622
+#: src/webenginepage.cpp:722
 #, kde-format
 msgid "Security Alert"
 msgstr "اخطار امنیت"
 
-#: src/webenginepage.cpp:623
+#: src/webenginepage.cpp:723
 #, fuzzy, kde-format
 msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
 msgstr ""
 "<qt>دستیابی توسط صفحه غیرقابل اعتماد به<br /><b>%1</b><br /> انکار شد.</qt>"
 
-#: src/webenginepage.cpp:651
+#: src/webenginepage.cpp:751
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -842,12 +974,12 @@ msgid ""
 "Are you sure you want to send the data unencrypted?"
 msgstr ""
 
-#: src/webenginepage.cpp:659
+#: src/webenginepage.cpp:759
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&ارسال رمزبندی‌نشده‌"
 
-#: src/webenginepage.cpp:666
+#: src/webenginepage.cpp:766
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -856,34 +988,34 @@ msgstr ""
 "این پایگاه تلاش می‌کند، داده‌ها را از طریق رایانامه ارائه کند.\n"
 "می‌خواهید ادامه دهید؟"
 
-#: src/webenginepage.cpp:670
+#: src/webenginepage.cpp:770
 #, kde-format
 msgid "&Send Email"
 msgstr "&ارسال رایانامه‌"
 
-#: src/webenginepage.cpp:719
+#: src/webenginepage.cpp:819
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 msgstr ""
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:821
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr ""
 
-#: src/webenginepage.cpp:722
+#: src/webenginepage.cpp:822
 #, kde-format
 msgid "&Allow attachments"
 msgstr ""
 
-#: src/webenginepage.cpp:723
+#: src/webenginepage.cpp:823
 #, kde-format
 msgid "&Ignore attachments"
 msgstr ""
 
-#: src/webenginepage.cpp:737
+#: src/webenginepage.cpp:837
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -892,12 +1024,12 @@ msgstr ""
 "این پایگاه تلاش می‌کند، یک پرونده را از رایانه شما در برگه ارائه پیوست کند. "
 "پیوست برای حفاظت شما حذف شد."
 
-#: src/webenginepage.cpp:740
+#: src/webenginepage.cpp:840
 #, kde-format
 msgid "Attachment Removed"
 msgstr ""
 
-#: src/webenginepage.cpp:875
+#: src/webenginepage.cpp:975
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is attempting to submit form data via email.\n"
@@ -909,7 +1041,7 @@ msgstr ""
 "این پایگاه تلاش می‌کند، داده‌ها را از طریق رایانامه ارائه کند.\n"
 "می‌خواهید ادامه دهید؟"
 
-#: src/webenginepage.cpp:877
+#: src/webenginepage.cpp:977
 #, fuzzy, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -918,81 +1050,81 @@ msgstr ""
 "<qt>این صفحه غیرقابل اعتماد به <br /><b>%1</b> می‌پیوندد.<br />آیا می‌خواهید "
 "پیوند را ادامه دهید؟</qt>"
 
-#: src/webenginepage.cpp:881
+#: src/webenginepage.cpp:981
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr ""
 
-#: src/webenginepage.cpp:882
+#: src/webenginepage.cpp:982
 #, fuzzy, kde-format
 #| msgctxt "follow link despite of security warning"
 #| msgid "Follow"
 msgid "Allow"
 msgstr "دنبال کردن"
 
-#: src/webenginepage.cpp:883
+#: src/webenginepage.cpp:983
 #, kde-format
 msgid "Do Not Allow"
 msgstr ""
 
-#: src/webenginepart.cpp:212
+#: src/webenginepart.cpp:204
 #, fuzzy, kde-format
 #| msgid "Save Image As..."
 msgid "Save Full HTML Page As..."
 msgstr "ذخیره تصویر به عنوان..."
 
-#: src/webenginepart.cpp:216
+#: src/webenginepart.cpp:208
 #, kde-format
 msgid "Print Preview"
 msgstr ""
 
-#: src/webenginepart.cpp:220
+#: src/webenginepart.cpp:212
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "بزرگ‌نمایی"
 
-#: src/webenginepart.cpp:225
+#: src/webenginepart.cpp:217
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "کوچک‌نمایی"
 
-#: src/webenginepart.cpp:230
+#: src/webenginepart.cpp:222
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "اندازه واقعی‌"
 
-#: src/webenginepart.cpp:235
+#: src/webenginepart.cpp:227
 #, kde-format
 msgid "Zoom Text Only"
 msgstr ""
 
-#: src/webenginepart.cpp:243
+#: src/webenginepart.cpp:235
 #, fuzzy, kde-format
 #| msgctxt "zoom in action"
 #| msgid "Zoom In"
 msgid "Zoom To DPI"
 msgstr "بزرگ‌نمایی"
 
-#: src/webenginepart.cpp:256
+#: src/webenginepart.cpp:248
 #, kde-format
 msgid "Set &Encoding"
 msgstr "تنظیم &کدبندی‌"
 
-#: src/webenginepart.cpp:259
+#: src/webenginepart.cpp:251
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "مشاهده متن &سند‌"
 
-#: src/webenginepart.cpp:264 src/webenginepart.cpp:564
+#: src/webenginepart.cpp:256 src/webenginepart.cpp:542
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:270
+#: src/webenginepart.cpp:262
 #, fuzzy, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1002,12 +1134,12 @@ msgstr ""
 "<qt>یافتن متن<br /><br />محاوره‌ای را نشان می‌دهد که به شما اجازه یافتن متن در "
 "صفحه نمایش داده‌شده را می‌دهد.</qt>"
 
-#: src/webenginepart.cpp:562
+#: src/webenginepart.cpp:540
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr ""
 
-#: src/webenginepart.cpp:643
+#: src/webenginepart.cpp:621
 #, fuzzy, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1015,7 +1147,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "رایانامه"
 
-#: src/webenginepart.cpp:672
+#: src/webenginepart.cpp:650
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1023,7 +1155,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - ر.ن:"
 
-#: src/webenginepart.cpp:674
+#: src/webenginepart.cpp:652
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1031,7 +1163,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - ر.ن.م:"
 
-#: src/webenginepart.cpp:676
+#: src/webenginepart.cpp:654
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1039,84 +1171,84 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - موضوع:"
 
-#: src/webenginepart.cpp:680 src/webenginepart.cpp:691
+#: src/webenginepart.cpp:658 src/webenginepart.cpp:669
 #, kde-format
 msgid " (In new window)"
 msgstr "(در پنجره جدید)"
 
-#: src/webenginepart.cpp:689
+#: src/webenginepart.cpp:667
 #, kde-format
 msgid " (In parent frame)"
 msgstr ""
 
-#: src/webenginepart.cpp:753
+#: src/webenginepart.cpp:731
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr ""
 
-#: src/webenginepart.cpp:754
+#: src/webenginepart.cpp:732
 #, kde-format
 msgid "Internet Search"
 msgstr "جستجوی اینترنت"
 
-#: src/webenginepart.cpp:754
+#: src/webenginepart.cpp:732
 #, kde-format
 msgid "&Search"
 msgstr "&جستجو‌"
 
-#: src/webenginepart.cpp:865
+#: src/webenginepart.cpp:843
 #, kde-format
 msgid "Close window?"
 msgstr "پنجره بسته شود؟"
 
-#: src/webenginepart.cpp:865
+#: src/webenginepart.cpp:843
 #, kde-format
 msgid "Confirmation Required"
 msgstr "تأیید مورد نیاز"
 
-#: src/webenginepart.cpp:939
+#: src/webenginepart.cpp:917
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 
-#: src/webenginepart.cpp:1010
+#: src/webenginepart.cpp:988
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr ""
 
-#: src/webenginepart.cpp:1015
+#: src/webenginepart.cpp:993
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr ""
 
-#: src/webenginepart.cpp:1019
+#: src/webenginepart.cpp:997
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1023
+#: src/webenginepart.cpp:1001
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1027
+#: src/webenginepart.cpp:1005
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr ""
 
-#: src/webenginepart.cpp:1031
+#: src/webenginepart.cpp:1009
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr ""
 
-#: src/webenginepart.cpp:1035
+#: src/webenginepart.cpp:1013
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1039
+#: src/webenginepart.cpp:1017
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&بستن Wallet‌"
@@ -1157,17 +1289,17 @@ msgstr ""
 msgid "HTML Toolbar"
 msgstr "میله ابزار HTML"
 
-#: src/webenginepart_ext.cpp:269
+#: src/webenginepart_ext.cpp:276
 #, kde-format
 msgid "Print Document"
 msgstr ""
 
-#: src/webenginepart_ext.cpp:486
+#: src/webenginepart_ext.cpp:493
 #, kde-format
 msgid "Add URL to Filter"
 msgstr "افزودن نشانی وب به پالایه"
 
-#: src/webenginepart_ext.cpp:487
+#: src/webenginepart_ext.cpp:494
 #, kde-format
 msgid "Enter the URL:"
 msgstr "نشانی وب را وارد کنید:"
@@ -1226,35 +1358,29 @@ msgstr " - موضوع:"
 msgid "&Issuer"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:295
+#: src/webenginepartdownloadmanager.cpp:259
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:303
+#: src/webenginepartdownloadmanager.cpp:269
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:304
+#: src/webenginepartdownloadmanager.cpp:270
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:305
+#: src/webenginepartdownloadmanager.cpp:271
 #, fuzzy, kde-format
 #| msgid "Description:"
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "توصیف:"
-
-#: src/webenginepartdownloadmanager.cpp:318
-#, kde-format
-msgctxt "Finished saving BLOB URL"
-msgid "Finished saving %1 as %2"
-msgstr ""
 
 #: src/webengineparterrorschemehandler.cpp:94
 #, kde-format
@@ -1641,14 +1767,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "&Loop"
 #~ msgstr "حلقه"
-
-#, fuzzy
-#~ msgid "Accept"
-#~ msgstr "پذیرفتن"
-
-#, fuzzy
-#~ msgid "Reject"
-#~ msgstr "رد کردن"
 
 #~ msgid "Esc"
 #~ msgstr "گریز"

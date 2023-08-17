@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uachangerplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:46+0000\n"
+"POT-Creation-Date: 2023-08-17 00:46+0000\n"
 "PO-Revision-Date: 2009-04-19 17:36+0300\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -21,14 +21,14 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
 "%100>=11 && n%100<=14 ? 2 : 3);\n"
 
-#: uachangerplugin.cpp:47
+#: uachangerplugin.cpp:48
 #, fuzzy, kde-format
 #| msgid "Change Browser Identification"
 msgctxt "@title:menu Changes the browser identification"
 msgid "Change Browser Identification"
 msgstr "Ідэнтыфікацыя вандроўніка"
 
-#: uachangerplugin.cpp:82
+#: uachangerplugin.cpp:85
 #, fuzzy, kde-format
 #| msgid "Default Identification"
 msgctxt "@action:inmenu Uses the default browser identification"
