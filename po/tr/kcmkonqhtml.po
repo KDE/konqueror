@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 02:26+0000\n"
-"PO-Revision-Date: 2023-08-07 17:54+0300\n"
+"PO-Revision-Date: 2023-08-17 13:12+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1046,7 +1046,7 @@ msgstr ""
 #: domainlistview.cpp:37
 #, kde-format
 msgid "Host/Domain"
-msgstr "Makine/Etki Alanı"
+msgstr "Makine/Alan Adı"
 
 #: domainlistview.cpp:37
 #, kde-format
@@ -1083,7 +1083,7 @@ msgstr "&Kaydet..."
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr ""
-"El ile, makineye veya etki alanına özel politika eklemek için bu düğmeye "
+"El ile, makineye veya alan adına özel politika eklemek için bu düğmeye "
 "tıklayın."
 
 #: domainlistview.cpp:73
@@ -1092,8 +1092,8 @@ msgid ""
 "Click on this button to change the policy for the host or domain selected in "
 "the list box."
 msgstr ""
-"Liste kutusundaki seçili makine veya etki alanı için politikayı değiştirmek "
-"için bu düğmeye tıklayın."
+"Liste kutusundaki seçili makine veya alan adı için politikayı değiştirmek "
+"üzere bu düğmeye tıklayın."
 
 #: domainlistview.cpp:75
 #, kde-format
@@ -1101,8 +1101,8 @@ msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
 "the list box."
 msgstr ""
-"Liste kutusunda seçilen makine veya etki alanı için politikayı silmek için "
-"bu düğmeye tıklayın."
+"Liste kutusunda seçilen makine veya alan adı için politikayı silmek üzere bu "
+"düğmeye tıklayın."
 
 #: domainlistview.cpp:122
 #, kde-format
@@ -1279,7 +1279,7 @@ msgstr ""
 #: filteropts.cpp:256
 #, kde-format
 msgid "Import Filters"
-msgstr "Süzgeçleri İçe Aktar"
+msgstr "Süzgeçler İçe Aktar"
 
 #: filteropts.cpp:301
 #, kde-format
@@ -1665,9 +1665,9 @@ msgid ""
 "p><p>Select a policy and use the controls on the right to modify it.</p>"
 msgstr ""
 "<p>Bu kutu Java politikası belirlediğiniz etki alanlarını ve makineleri "
-"içerir. Bu politika bu etki alanı ve makinelerden gönderilen sayfalardaki "
+"içerir. Bu politika bu alan adı ve makinelerden gönderilen sayfalardaki "
 "Javaları çalıştırıp çalıştırmamada öntanımlı politika yerine kullanılacaktır."
-"</p><p>Bir politika seçin ve sağdaki kontrolleri kullanarak düzenleyin.</p>"
+"</p><p>Bir politika seçin ve sağdaki denetimleri kullanarak düzenleyin.</p>"
 
 #: javaopts.cpp:142
 #, kde-format
@@ -1700,13 +1700,13 @@ msgid ""
 "selected policy, causing the default policy setting to be used for that "
 "domain."
 msgstr ""
-"Buradan belirli makineler veya etki alanları için özel Java politikaları "
+"Buradan belirli makineler veya alan adları için özel Java politikaları "
 "tanımlayabilirsiniz. Yeni bir politika eklemek için, <i>Ekle...</i> "
-"düğmesine basıp gerekli bilgileri çıkan diyalog kutusuna girin. Var olan bir "
-"politikayı değiştirmek için, <i>Değiştir...</i> düğmesine basın ve diyalog "
-"kutusundan yeni politikayı seçin. <i>Sil</i> düğmesine basmak seçili "
-"politikanın silinmesini ve o etki alanı için öntanımlı politikanın "
-"kullanılmasını sağlar."
+"düğmesine basıp gerekli bilgileri çıkan iletişim kutusuna girin. Var olan "
+"bir politikayı değiştirmek için, <i>Değiştir...</i> düğmesine basın ve "
+"iletişim kutusundan kutusundan yeni politikayı seçin. <i>Sil</i> düğmesine "
+"basmak seçili politikanın silinmesini ve o alan adı için öntanımlı "
+"politikanın kullanılmasını sağlar."
 
 #: javaopts.cpp:162
 #, kde-format
@@ -1795,7 +1795,7 @@ msgstr "&Java politikası:"
 #: javaopts.cpp:331
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
-msgstr "Yukarıdaki makine veya etki alanı için bir Java politikası seçin."
+msgstr "Yukarıdaki makine veya alan adı için bir Java politikası seçin."
 
 #: jsopts.cpp:50
 #, kde-format
@@ -1857,12 +1857,12 @@ msgid ""
 msgstr ""
 "Buradan belirli bir makine veya etki alanı için özel JavaScript politikaları "
 "tanımlayabilirsiniz. Yeni bir politika eklemek için, <i>Ekle...</i> "
-"düğmesine basıp gerekli bilgileri çıkan dialog kutusuna girin. Var olan bir "
-"politikayı değiştirmek için, <i>Değiştir...</i> düğmesine basın ve dialog "
-"kutusundan yeni politikayı seçin. <i>Sil</i> düğmesine basmak seçili "
-"politikanın silinmesini ve o etki alanı için öntanımlı politikanın "
+"düğmesine basıp gerekli bilgileri çıkan iletişim kutusuna kutusuna girin. "
+"Var olan bir politikayı değiştirmek için, <i>Değiştir...</i> düğmesine basın "
+"ve iletişim kutusundan yeni politikayı seçin. <i>Sil</i> düğmesine basmak "
+"seçili politikanın silinmesini ve o alan adı için öntanımlı politikanın "
 "kullanılmasını sağlar.<i>Al</i> ve <i>Ver</i> düğmeleri, politikaları zip "
-"yardımıyla sıkıştırılmış dosyalarda saklayarak ve alarak diğer insanlar ile "
+"yardımıyla sıkıştırılmış dosyalarda saklayarak ve alarak diğer kişiler ile "
 "paylaşmanızı sağlar."
 
 #: jsopts.cpp:89
@@ -1877,7 +1877,7 @@ msgstr ""
 "<p>Bu kutu JavaScript politikası belirlediğiniz etki alanlarını ve "
 "makineleri içerir. Bu politika bu etki alanı ve makinelerden gönderilen "
 "sayfalardaki JavaScriptleri çalıştırıp çalıştırmamada öntanımlı politika "
-"yerine kullanılacaktır.</p><p>Bir politika seçin ve sağdaki kontrolleri "
+"yerine kullanılacaktır.</p><p>Bir politika seçin ve sağdaki denetimleri "
 "kullanarak onu düzenleyin.</p>"
 
 #: jsopts.cpp:96
@@ -1933,13 +1933,12 @@ msgstr "JavaScript politikası:"
 #: jsopts.cpp:220
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
-msgstr ""
-"Yukarıdaki makine veya etki alanı için bir JavaScript politikası seçin."
+msgstr "Yukarıdaki makine veya alan adı için bir JavaScript politikası seçin."
 
 #: jsopts.cpp:222
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
-msgstr "Etki Alanına Özel JavaScript Politikaları"
+msgstr "Alan Adına Özel JavaScript Politikaları"
 
 #: jspolicies.cpp:132
 #, kde-format
@@ -2248,7 +2247,7 @@ msgstr "Alan Adına Özel Politikalar"
 #: policydlg.cpp:47
 #, kde-format
 msgid "&Host or domain name:"
-msgstr "&Makine veya etki alanı adı:"
+msgstr "&Makine veya alan adı:"
 
 #: policydlg.cpp:55
 #, kde-format
@@ -2256,13 +2255,13 @@ msgid ""
 "Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
 "(like .kde.org or .org)"
 msgstr ""
-"Makine adını (www.kde.org gibi) veya etki alanı adını, nokta ile başlayacak, "
-"(.kde.org veya .org) giriniz"
+"Makine adını (www.kde.org gibi) veya alan adını, nokta ile başlayan biçimde "
+"(.kde.org veya .org) girin"
 
 #: policydlg.cpp:139
 #, kde-format
 msgid "You must first enter a domain name."
-msgstr "Önce bir etki alanı adı girmelisiniz."
+msgstr "Önce bir alan adı girmelisiniz."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, UserAgent)
 #: useragent/useragent.ui:14
