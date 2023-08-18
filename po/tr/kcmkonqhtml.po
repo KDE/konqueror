@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-17 00:46+0000\n"
-"PO-Revision-Date: 2023-08-07 17:54+0300\n"
+"PO-Revision-Date: 2023-08-17 13:12+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -580,100 +580,95 @@ msgstr "Önbelleği depolamak için kullanılacak özel dizin"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search"
-msgstr "Ara:"
+msgstr "Ara"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:27
 #, kde-format
 msgid "Search interactively for domains and hosts"
-msgstr ""
+msgstr "Alan adlarında ve makinelerde etkileşimli olarak ara"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:43
 #, kde-format
 msgid "Site"
-msgstr ""
+msgstr "Site"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:48
 #, kde-format
 msgid "Cookie Name"
-msgstr ""
+msgstr "Çerez Adı"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDelete)
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgid "D&elete"
 msgstr "&Sil"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
 #: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgid "Delete A&ll"
-msgstr "&Sil"
+msgstr "&Tümünü Sil"
 
 #. i18n: ectx: property (text), widget (QPushButton, configPolicyButton)
 #: cookies/kcookiesmanagement.ui:70
 #, kde-format
 msgid "Configure &Policy..."
-msgstr ""
+msgstr "&Politikayı Yapılandır..."
 
 #. i18n: ectx: property (text), widget (QPushButton, reloadButton)
 #: cookies/kcookiesmanagement.ui:77
 #, kde-format
 msgid "&Reload List"
-msgstr ""
+msgstr "Listeyi &Yeniden Yükle"
 
 #. i18n: ectx: property (title), widget (QGroupBox, detailsGroupBox)
 #: cookies/kcookiesmanagement.ui:97
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Ayrıntılar"
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
 #: cookies/kcookiesmanagement.ui:106
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "Ad"
+msgstr "Ad:"
 
 #. i18n: ectx: property (text), widget (QLabel, valueLabel)
 #: cookies/kcookiesmanagement.ui:129
 #, kde-format
 msgid "Value:"
-msgstr ""
+msgstr "Değer:"
 
 #. i18n: ectx: property (text), widget (QLabel, domainLabel)
 #: cookies/kcookiesmanagement.ui:152
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain:"
-msgstr "Makine/Etki Alanı"
+msgstr "Alan adı:"
 
 #. i18n: ectx: property (text), widget (QLabel, patchLabel)
 #: cookies/kcookiesmanagement.ui:175
 #, kde-format
 msgid "Path:"
-msgstr ""
+msgstr "Yol:"
 
 #. i18n: ectx: property (text), widget (QLabel, expiresLabel)
 #: cookies/kcookiesmanagement.ui:198
 #, kde-format
 msgid "Expires:"
-msgstr ""
+msgstr "Son kullanım:"
 
 #. i18n: ectx: property (text), widget (QLabel, secureLabel)
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
-msgstr ""
+msgstr "Güvenli:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -686,13 +681,18 @@ msgid ""
 "unbrowsable.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"<p>Çerez desteğini etkinleştirin. Normalde, çerez desteğinin etkin olması ve "
+"onu gizlilik gereksinimlerinize göre özelleştirmeniz önerilir.</p><p>\n"
+"Çerez desteğinin devre dışı bırakılmasının pek çok siteyi kullanılamaz "
+"duruma getirebileceğini unutmayın.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
-#, fuzzy, kde-format
-#| msgid "Enable filters"
+#, kde-format
 msgid "Enable coo&kies"
-msgstr "Süzgeçleri etkinleştir"
+msgstr "Çere&zleri etkinleştir"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -707,12 +707,20 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Tüm üçüncü parti çerezleri reddedin. Bunlar, şu anda göz attığınız site "
+"yerine başka sitelerden gelen çerezlerdir. Örneğin, bu seçenek açıkken "
+"<b>www.foobar.com</b> sitesini ziyaret ettiğinizde, yalnızca kökeni www."
+"foobar.com olan çerezler tercihlerinize istinaden işlenir. Başka sitelerden "
+"olan çerezler reddedilir. Bu, site operatörlerinin sizin günlük tarama "
+"alışkanlıklarınız üzerine bir profil çıkarmasını zorlaştırır.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
 #, kde-format
 msgid "Only acce&pt cookies from originating server"
-msgstr ""
+msgstr "Yalnızca kaynak sunucudan gelen çerezleri ka&bul et"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:46
@@ -726,13 +734,19 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
+"<p>\n"
+"Geçerli oturumun sonunda sona erecek olan çerezleri otomatik olarak kabul "
+"edin. Bu tür çerezler, bilgisayarınızın sabit sürücüsünde veya depolama "
+"aygıtında depolanmayacaktır. Bunun yerine, onları kullanan tüm uygulamaları "
+"(örn. tarayıcınız) kapattığınızda silinirler.</p><p><u>NOT</u> Bu seçeneğin "
+"işaretlenmesi, oturum çerezleri için öntanımlı ve siteye özel çerez "
+"politikalarını geçersiz kılar.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
-#, fuzzy, kde-format
-#| msgid "A&utomatically load images"
+#, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr "Görs&elleri otomatik yükle"
+msgstr "Oturum çerezlerini otomat&ik olarak kabul et"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -754,50 +768,54 @@ msgid ""
 "precedence over the default policy.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Uzak bir makineden alınan çerezlerin nasıl işleneceğini belirler: \n"
+"<ul>\n"
+"<li><b>Sor</b>: Herhangi bir sunucu bir çerez koymak istediğinde KDE'nin "
+"sizin onayınızı sormasına neden olur.</li>\n"
+"<li><b>Kabul Et</b>: Çerezlerin size sorulmadan alınmasına neden olur.</li>\n"
+"<li><b>Oturumun sonuna dek kabul et</b>: Çerezleri kabul eder; ancak oturum "
+"sonunda onları siler.</li>\n"
+"<li><b>Reddet</b>: Çerez kavanozunun gelecek tüm çerezleri reddetmesine "
+"neden olur.</li>\n"
+"</ul><p>\n"
+"<u>NOT:</u> Aşağıda ayarlanabilen alan adına özgü politikalar, her zaman "
+"öntanımlı politikaya göre önceliklidir.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
-#, fuzzy, kde-format
-#| msgid "Default encoding:"
+#, kde-format
 msgid "Default Policy"
-msgstr "Öntanımlı karakter kümesi:"
+msgstr "Öntanımlı Politika"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
 #, kde-format
 msgid "Accep&t all cookies"
-msgstr ""
+msgstr "Tüm çerezleri &kabul et"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr ""
+msgstr "Oturumun sonuna &dek kabul et"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
-#, fuzzy, kde-format
-#| msgid "A&nimations:"
+#, kde-format
 msgid "Ask &for confirmation"
-msgstr "&Canlandırmalar:"
+msgstr "Onay &iste"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
 #: cookies/kcookiespolicies.ui:98
 #, kde-format
 msgid "Re&ject all cookies"
-msgstr ""
+msgstr "Tüm çerezleri &reddet"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can set specific Java policies for any particular host or "
-#| "domain. To add a new policy, simply click the <i>New...</i> button and "
-#| "supply the necessary information requested by the dialog box. To change "
-#| "an existing policy, click on the <i>Change...</i> button and choose the "
-#| "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#| "button will remove the selected policy, causing the default policy "
-#| "setting to be used for that domain."
+#, kde-format
 msgid ""
 "<qt>\n"
 "To add a new policy, simply click on the <b>Add...</b> button and supply the "
@@ -808,33 +826,33 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
-"Buradan belirli makineler veya etki alanları için özel Java politikaları "
-"tanımlayabilirsiniz. Yeni bir politika eklemek için, <i>Ekle...</i> "
-"düğmesine basıp gerekli bilgileri çıkan diyalog kutusuna girin. Var olan bir "
-"politikayı değiştirmek için, <i>Değiştir...</i> düğmesine basın ve diyalog "
-"kutusundan yeni politikayı seçin. <i>Sil</i> düğmesine basmak seçili "
-"politikanın silinmesini ve o etki alanı için öntanımlı politikanın "
-"kullanılmasını sağlar."
+"<qt>\n"
+"Yeni bir politika eklemek için <b>Ekle...</b> düğmesine tıklamanız ve "
+"gerekli bilgileri girmeniz yeterlidir. Var olan bir politikayı değiştirmek "
+"için <b>Değiştir...</b> düğmesini kullanın ve politika iletişim kutusundan "
+"yeni politikayı seçin. <b>Sil</b> düğmesinin tıklanması, o anda seçili olan "
+"politikayı kaldırarak söz konusu alan adı için öntanımlı politika ayarının "
+"kullanılmasına neden olur, oysa <b>Tümünü Sil</b>, siteye özgü tüm "
+"politikaları kaldırır.\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Site Policy"
-msgstr "Davranış"
+msgstr "Site Politikası"
 
 #. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr ""
+msgstr "Alan adlarını etkileşimli ara"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search..."
-msgstr "Ara:"
+msgstr "Ara..."
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -845,13 +863,16 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Belirli bir çerez politikası ayarladığınız sitelerin listesi. Belirli "
+"politikalar, bu siteler için öntanımlı politikaya göre önceliklidir.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain"
-msgstr "Makine/Etki Alanı"
+msgstr "Alan Adı"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
@@ -882,18 +903,24 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Bu politikanın geçerli olacağı makine veya alan adı adresini girin; örn. "
+"<b>www.kde.org</b> veya <b>.kde.org</b>.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
 #, kde-format
 msgid "Site name:"
-msgstr ""
+msgstr "Site adı:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:38
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
 msgstr ""
+"Bu politikanın geçerli olacağı makine veya alan adı adresini girin; örn. ."
+"kde.org."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -912,13 +939,22 @@ msgid ""
 "</ul>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"İstenen politikayı seçin:\n"
+"<ul>\n"
+"<li><b>Kabul et</b> - Bu sitenin çerez ayarlayabilmesine izin verir</li>\n"
+"<li><b>Oturumun sonuna dek kabul et</b> - Bu sitenin oturum kapatılana dek "
+"çerezler ayarlayabilmesine izin verir</li>\n"
+"<li><b>Reddet</b> - Bu siteden gönderilen tüm çerezleri reddeder</li>\n"
+"<li><b>Sor</b> - Bu siteden çerezler alındığında ne yapılacağını sorar</li>\n"
+"</ul>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Policy:"
-msgstr "Davranış"
+msgstr "Politika:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
@@ -931,7 +967,7 @@ msgstr "Kabul et"
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr ""
+msgstr "Oturumun sonuna dek kabul et"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
@@ -1402,7 +1438,7 @@ msgstr ""
 #: domainlistview.cpp:37
 #, kde-format
 msgid "Host/Domain"
-msgstr "Makine/Etki Alanı"
+msgstr "Makine/Alan Adı"
 
 #: domainlistview.cpp:53
 #, kde-format
@@ -1423,7 +1459,7 @@ msgstr "&Kaydet..."
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr ""
-"El ile, makineye veya etki alanına özel politika eklemek için bu düğmeye "
+"El ile, makineye veya alan adına özel politika eklemek için bu düğmeye "
 "tıklayın."
 
 #: domainlistview.cpp:73
@@ -1432,8 +1468,8 @@ msgid ""
 "Click on this button to change the policy for the host or domain selected in "
 "the list box."
 msgstr ""
-"Liste kutusundaki seçili makine veya etki alanı için politikayı değiştirmek "
-"için bu düğmeye tıklayın."
+"Liste kutusundaki seçili makine veya alan adı için politikayı değiştirmek "
+"üzere bu düğmeye tıklayın."
 
 #: domainlistview.cpp:75
 #, kde-format
@@ -1441,8 +1477,8 @@ msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
 "the list box."
 msgstr ""
-"Liste kutusunda seçilen makine veya etki alanı için politikayı silmek için "
-"bu düğmeye tıklayın."
+"Liste kutusunda seçilen makine veya alan adı için politikayı silmek üzere bu "
+"düğmeye tıklayın."
 
 #: domainlistview.cpp:122
 #, kde-format
@@ -1609,7 +1645,7 @@ msgstr ""
 #: filteropts.cpp:256
 #, kde-format
 msgid "Import Filters"
-msgstr "Süzgeçleri İçe Aktar"
+msgstr "Süzgeçler İçe Aktar"
 
 #: filteropts.cpp:301
 #, kde-format
@@ -1995,9 +2031,9 @@ msgid ""
 "p><p>Select a policy and use the controls on the right to modify it.</p>"
 msgstr ""
 "<p>Bu kutu Java politikası belirlediğiniz etki alanlarını ve makineleri "
-"içerir. Bu politika bu etki alanı ve makinelerden gönderilen sayfalardaki "
+"içerir. Bu politika bu alan adı ve makinelerden gönderilen sayfalardaki "
 "Javaları çalıştırıp çalıştırmamada öntanımlı politika yerine kullanılacaktır."
-"</p><p>Bir politika seçin ve sağdaki kontrolleri kullanarak düzenleyin.</p>"
+"</p><p>Bir politika seçin ve sağdaki denetimleri kullanarak düzenleyin.</p>"
 
 #: javaopts.cpp:142
 #, kde-format
@@ -2030,13 +2066,13 @@ msgid ""
 "selected policy, causing the default policy setting to be used for that "
 "domain."
 msgstr ""
-"Buradan belirli makineler veya etki alanları için özel Java politikaları "
+"Buradan belirli makineler veya alan adları için özel Java politikaları "
 "tanımlayabilirsiniz. Yeni bir politika eklemek için, <i>Ekle...</i> "
-"düğmesine basıp gerekli bilgileri çıkan diyalog kutusuna girin. Var olan bir "
-"politikayı değiştirmek için, <i>Değiştir...</i> düğmesine basın ve diyalog "
-"kutusundan yeni politikayı seçin. <i>Sil</i> düğmesine basmak seçili "
-"politikanın silinmesini ve o etki alanı için öntanımlı politikanın "
-"kullanılmasını sağlar."
+"düğmesine basıp gerekli bilgileri çıkan iletişim kutusuna girin. Var olan "
+"bir politikayı değiştirmek için, <i>Değiştir...</i> düğmesine basın ve "
+"iletişim kutusundan kutusundan yeni politikayı seçin. <i>Sil</i> düğmesine "
+"basmak seçili politikanın silinmesini ve o alan adı için öntanımlı "
+"politikanın kullanılmasını sağlar."
 
 #: javaopts.cpp:162
 #, kde-format
@@ -2125,7 +2161,7 @@ msgstr "&Java politikası:"
 #: javaopts.cpp:331
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
-msgstr "Yukarıdaki makine veya etki alanı için bir Java politikası seçin."
+msgstr "Yukarıdaki makine veya alan adı için bir Java politikası seçin."
 
 #: jsopts.cpp:50
 #, kde-format
@@ -2187,12 +2223,12 @@ msgid ""
 msgstr ""
 "Buradan belirli bir makine veya etki alanı için özel JavaScript politikaları "
 "tanımlayabilirsiniz. Yeni bir politika eklemek için, <i>Ekle...</i> "
-"düğmesine basıp gerekli bilgileri çıkan dialog kutusuna girin. Var olan bir "
-"politikayı değiştirmek için, <i>Değiştir...</i> düğmesine basın ve dialog "
-"kutusundan yeni politikayı seçin. <i>Sil</i> düğmesine basmak seçili "
-"politikanın silinmesini ve o etki alanı için öntanımlı politikanın "
+"düğmesine basıp gerekli bilgileri çıkan iletişim kutusuna kutusuna girin. "
+"Var olan bir politikayı değiştirmek için, <i>Değiştir...</i> düğmesine basın "
+"ve iletişim kutusundan yeni politikayı seçin. <i>Sil</i> düğmesine basmak "
+"seçili politikanın silinmesini ve o alan adı için öntanımlı politikanın "
 "kullanılmasını sağlar.<i>Al</i> ve <i>Ver</i> düğmeleri, politikaları zip "
-"yardımıyla sıkıştırılmış dosyalarda saklayarak ve alarak diğer insanlar ile "
+"yardımıyla sıkıştırılmış dosyalarda saklayarak ve alarak diğer kişiler ile "
 "paylaşmanızı sağlar."
 
 #: jsopts.cpp:89
@@ -2207,7 +2243,7 @@ msgstr ""
 "<p>Bu kutu JavaScript politikası belirlediğiniz etki alanlarını ve "
 "makineleri içerir. Bu politika bu etki alanı ve makinelerden gönderilen "
 "sayfalardaki JavaScriptleri çalıştırıp çalıştırmamada öntanımlı politika "
-"yerine kullanılacaktır.</p><p>Bir politika seçin ve sağdaki kontrolleri "
+"yerine kullanılacaktır.</p><p>Bir politika seçin ve sağdaki denetimleri "
 "kullanarak onu düzenleyin.</p>"
 
 #: jsopts.cpp:96
@@ -2263,13 +2299,12 @@ msgstr "JavaScript politikası:"
 #: jsopts.cpp:220
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
-msgstr ""
-"Yukarıdaki makine veya etki alanı için bir JavaScript politikası seçin."
+msgstr "Yukarıdaki makine veya alan adı için bir JavaScript politikası seçin."
 
 #: jsopts.cpp:222
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
-msgstr "Etki Alanına Özel JavaScript Politikaları"
+msgstr "Alan Adına Özel JavaScript Politikaları"
 
 #: jspolicies.cpp:132
 #, kde-format
@@ -2514,7 +2549,7 @@ msgstr "Alan Adına Özel Politikalar"
 #: policydlg.cpp:47
 #, kde-format
 msgid "&Host or domain name:"
-msgstr "&Makine veya etki alanı adı:"
+msgstr "&Makine veya alan adı:"
 
 #: policydlg.cpp:55
 #, kde-format
@@ -2522,13 +2557,13 @@ msgid ""
 "Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
 "(like .kde.org or .org)"
 msgstr ""
-"Makine adını (www.kde.org gibi) veya etki alanı adını, nokta ile başlayacak, "
-"(.kde.org veya .org) giriniz"
+"Makine adını (www.kde.org gibi) veya alan adını, nokta ile başlayan biçimde "
+"(.kde.org veya .org) girin"
 
 #: policydlg.cpp:139
 #, kde-format
 msgid "You must first enter a domain name."
-msgstr "Önce bir etki alanı adı girmelisiniz."
+msgstr "Önce bir alan adı girmelisiniz."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, UserAgent)
 #: useragent/useragent.ui:14

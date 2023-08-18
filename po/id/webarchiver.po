@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"POT-Creation-Date: 2023-08-17 00:46+0000\n"
 "PO-Revision-Date: 2022-09-27 17:54+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -27,74 +27,69 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wantoyek@gmail.com"
 
-#: app/archivedialog.cpp:76
-#, kde-format
-msgid "Untitled"
-msgstr "Tidak berjudul"
-
-#: app/archivedialog.cpp:92
+#: app/archivedialog.cpp:81
 #, kde-format
 msgid "Create Archive"
 msgstr "Buat Arsip"
 
-#: app/archivedialog.cpp:108
+#: app/archivedialog.cpp:97
 #, kde-format
 msgid "The URL of the page that is to be archived"
 msgstr "URL-nya halaman itu telah diarsipkan"
 
-#: app/archivedialog.cpp:111
+#: app/archivedialog.cpp:100
 #, kde-format
 msgid "Source &URL:"
 msgstr "Sumber &URL:"
 
-#: app/archivedialog.cpp:120
+#: app/archivedialog.cpp:109
 #, kde-format
 msgid "Web archive (*.war)"
 msgstr "Arsip web (*.war)"
 
-#: app/archivedialog.cpp:121
+#: app/archivedialog.cpp:110
 #, kde-format
 msgid "Tar archive (*.tar)"
 msgstr "Arsip tar (*.tar)"
 
-#: app/archivedialog.cpp:122
+#: app/archivedialog.cpp:111
 #, kde-format
 msgid "Zip archive (*.zip)"
 msgstr "Arsip zip (*.zip)"
 
-#: app/archivedialog.cpp:123
+#: app/archivedialog.cpp:112
 #, kde-format
 msgid "Directory"
 msgstr "Direktori"
 
-#: app/archivedialog.cpp:128
+#: app/archivedialog.cpp:117
 #, kde-format
 msgid "The file or directory where the archived page will be saved"
 msgstr "File atau direktori dimana halaman yang diarsipkan akan disimpan"
 
-#: app/archivedialog.cpp:129
+#: app/archivedialog.cpp:118
 #, kde-format
 msgid "&Save to:"
 msgstr "&Simpan ke:"
 
-#: app/archivedialog.cpp:131
+#: app/archivedialog.cpp:120
 #, kde-format
 msgid "Options"
 msgstr "Opsi"
 
-#: app/archivedialog.cpp:141
+#: app/archivedialog.cpp:130
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
 msgstr[0] " detik"
 msgstr[1] " detik"
 
-#: app/archivedialog.cpp:142
+#: app/archivedialog.cpp:131
 #, kde-format
 msgid "None"
 msgstr "Nihil"
 
-#: app/archivedialog.cpp:212
+#: app/archivedialog.cpp:201
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -104,25 +99,25 @@ msgstr ""
 "Unduhan arsip web tidak bisa digunakan pengaturan proxy saat ini. Tanpa "
 "proxy akan digunakan."
 
-#: app/archivedialog.cpp:351
+#: app/archivedialog.cpp:340
 #, kde-format
 msgctxt "@info"
 msgid "The save location is not valid."
 msgstr "Lokasi simpanan tidak valid."
 
-#: app/archivedialog.cpp:371
+#: app/archivedialog.cpp:360
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
 msgstr "Tidak bisa menemukan perintah wget(1),<nl/>lihat <link>%1</link>."
 
-#: app/archivedialog.cpp:393
+#: app/archivedialog.cpp:382
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
 msgstr "Tidak bisa menverifikasi tujuan<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:410
+#: app/archivedialog.cpp:399
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -131,13 +126,13 @@ msgid ""
 msgstr ""
 "Direktori arsip<nl/><filename>%1</filename><nl/>sudah ada sebagai file."
 
-#: app/archivedialog.cpp:411
+#: app/archivedialog.cpp:400
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
 msgstr "Direktori arsip<nl/><filename>%1</filename><nl/>sudah ada."
 
-#: app/archivedialog.cpp:415
+#: app/archivedialog.cpp:404
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -146,42 +141,42 @@ msgid ""
 msgstr ""
 "File arsip<nl/><filename>%1</filename><nl/>sudah ada sebagai direktori."
 
-#: app/archivedialog.cpp:416
+#: app/archivedialog.cpp:405
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
 msgstr "File arsip<nl/><filename>%1</filename><nl/>sudah ada."
 
-#: app/archivedialog.cpp:420
+#: app/archivedialog.cpp:409
 #, kde-format
 msgid "Archive Already Exists"
 msgstr "Arsip Sudah Ada"
 
-#: app/archivedialog.cpp:450
+#: app/archivedialog.cpp:439
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
 msgstr "Tidak bisa menghapus arsip asli<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:467
+#: app/archivedialog.cpp:456
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
 msgstr "Tidak bisa membuat direktori temporer<nl/><filename>%1</filename><nl/>"
 
-#: app/archivedialog.cpp:539
+#: app/archivedialog.cpp:528
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot start the archiver process <filename>%1</filename>"
 msgstr "Tidak bisa memulai proses pengarsipan <filename>%1</filename>"
 
-#: app/archivedialog.cpp:555
+#: app/archivedialog.cpp:544
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The download process was interrupted."
 msgstr "Proses unduh telah terceletuk."
 
-#: app/archivedialog.cpp:556
+#: app/archivedialog.cpp:545
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -191,7 +186,7 @@ msgstr ""
 "<para>Proses pengunduhan <filename>%1</filename> gagal dengan aba-aba %2.</"
 "para>"
 
-#: app/archivedialog.cpp:561
+#: app/archivedialog.cpp:550
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -201,7 +196,7 @@ msgstr ""
 "<para>Proses pengunduhan <filename>%1</filename> gagal dengan status %2.</"
 "para>"
 
-#: app/archivedialog.cpp:565
+#: app/archivedialog.cpp:554
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -211,41 +206,41 @@ msgstr ""
 "<para>Ini mungkin hanya menunjukkan galat 404 untuk beberapa elemen halaman."
 "</para>"
 
-#: app/archivedialog.cpp:571
+#: app/archivedialog.cpp:560
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
 msgstr "<para>Pertahankan arsip web parsial?</para>"
 
-#: app/archivedialog.cpp:572
+#: app/archivedialog.cpp:561
 #, kde-format
 msgid "Retain Archive?"
 msgstr "Pertahankan Arsip?"
 
-#: app/archivedialog.cpp:573
+#: app/archivedialog.cpp:562
 #, kde-format
 msgid "Retain"
 msgstr "Pertahankan"
 
-#: app/archivedialog.cpp:577
+#: app/archivedialog.cpp:566
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."
 msgstr "Pembuatan arsip web gagal."
 
-#: app/archivedialog.cpp:721
+#: app/archivedialog.cpp:710
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
 msgstr "Tidak bisa menyalin arsip ke<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:751
+#: app/archivedialog.cpp:740
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
 msgstr "Tidak bisa mengatur perizinan di<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:759
+#: app/archivedialog.cpp:748
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"
@@ -446,3 +441,6 @@ msgstr "Pera&latan"
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Bilah Alat Ekstra"
+
+#~ msgid "Untitled"
+#~ msgstr "Tidak berjudul"

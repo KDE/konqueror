@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-17 00:46+0000\n"
-"PO-Revision-Date: 2023-07-27 09:42+0200\n"
+"PO-Revision-Date: 2023-08-17 13:36+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -590,101 +590,95 @@ msgstr "Een aangepaste map om de cache in op te slaan"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search"
-msgstr "Zoeken:"
+msgstr "Zoeken"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:27
 #, kde-format
 msgid "Search interactively for domains and hosts"
-msgstr ""
+msgstr "Interactief zoeken naar hosts en domeinen"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:43
 #, kde-format
 msgid "Site"
-msgstr ""
+msgstr "Site"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:48
 #, kde-format
 msgid "Cookie Name"
-msgstr ""
+msgstr "Cookienaam"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDelete)
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgid "D&elete"
-msgstr "Verwij&deren"
+msgstr "V&erwijderen"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
 #: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgid "Delete A&ll"
-msgstr "Verwij&deren"
+msgstr "A&lles verwijderen"
 
 #. i18n: ectx: property (text), widget (QPushButton, configPolicyButton)
 #: cookies/kcookiesmanagement.ui:70
 #, kde-format
 msgid "Configure &Policy..."
-msgstr ""
+msgstr "&Beleid instellen..."
 
 #. i18n: ectx: property (text), widget (QPushButton, reloadButton)
 #: cookies/kcookiesmanagement.ui:77
 #, kde-format
 msgid "&Reload List"
-msgstr ""
+msgstr "Lijst he&rladen"
 
 #. i18n: ectx: property (title), widget (QGroupBox, detailsGroupBox)
 #: cookies/kcookiesmanagement.ui:97
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Details"
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
 #: cookies/kcookiesmanagement.ui:106
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "Naam"
+msgstr "Naam:"
 
 #. i18n: ectx: property (text), widget (QLabel, valueLabel)
 #: cookies/kcookiesmanagement.ui:129
-#, fuzzy, kde-format
-#| msgid "Value"
+#, kde-format
 msgid "Value:"
-msgstr "Waarde"
+msgstr "Waarde:"
 
 #. i18n: ectx: property (text), widget (QLabel, domainLabel)
 #: cookies/kcookiesmanagement.ui:152
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain:"
-msgstr "Host/Domein"
+msgstr "Domein:"
 
 #. i18n: ectx: property (text), widget (QLabel, patchLabel)
 #: cookies/kcookiesmanagement.ui:175
 #, kde-format
 msgid "Path:"
-msgstr ""
+msgstr "Pad:"
 
 #. i18n: ectx: property (text), widget (QLabel, expiresLabel)
 #: cookies/kcookiesmanagement.ui:198
 #, kde-format
 msgid "Expires:"
-msgstr ""
+msgstr "Verloopt op:"
 
 #. i18n: ectx: property (text), widget (QLabel, secureLabel)
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
-msgstr ""
+msgstr "Is beveiligd:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -697,13 +691,19 @@ msgid ""
 "unbrowsable.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"<p>Deze optie activeert de cookie-ondersteuning. Normaal wilt u cookie-"
+"ondersteuning activeren en aanpassen zodat deze tegemoet komt aan uw "
+"privacybehoeften.</p><p>\n"
+"Opmerking: het uitschakelen van cookie-ondersteuning kan er voor zorgen dat "
+"veel websites ontoegankelijk worden.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
-#, fuzzy, kde-format
-#| msgid "Enable filters"
+#, kde-format
 msgid "Enable coo&kies"
-msgstr "Filters inschakelen"
+msgstr "Coo&kies accepteren"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -718,12 +718,20 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Verwerp zogenaamde cookies van derden. Dit zijn cookies die niet afkomstig "
+"zijn van de site die u bezoekt. Bijvoorbeeld, als u de site <b>www.kde.nl</"
+"b> bezoekt met deze optie ingeschakeld, dan worden alleen cookies van www."
+"kde.nl verwerkt volgens uw instellingen. Alle andere cookies zullen "
+"automatisch worden verworpen. Hiermee beperkt u de kans dat sitebeheerders "
+"een profiel kunnen opbouwen van uw dagelijkse internetgewoonten.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
 #, kde-format
 msgid "Only acce&pt cookies from originating server"
-msgstr ""
+msgstr "Alleen cookies van originele server acce&pteren"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:46
@@ -737,13 +745,20 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
+"<p>\n"
+"Automatisch cookies accepteren die zullen verlopen aan het einde van de "
+"huidige sessie. Dergelijke cookies zullen niet worden opgeslagen op uw harde "
+"schijf of ander opslagapparaat. In plaats daarvan zullen ze worden "
+"verwijderd zodra u alle toepassingen (zoals uw browser) die gebruik maken "
+"van deze cookies hebt afgesloten.</p><p><u>Opmerking:</u> als u deze optie "
+"selecteert, dan zullen deze uw standaardinstelling alsook uw site-specifieke "
+"cookie-instellingen overschrijven.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
-#, fuzzy, kde-format
-#| msgid "A&utomatically load images"
+#, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr "Afbeeldingen a&utomatisch laden"
+msgstr "Sessie-cookies automat&isch accepteren"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -765,50 +780,55 @@ msgid ""
 "precedence over the default policy.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Bepaalt hoe cookies die worden ontvangen van een externe computer zullen "
+"worden afgehandeld:\n"
+"<ul>\n"
+"<li><b>Vragen</b> zorgt ervoor dat KDE u vraagt om een bevestiging, telkens "
+"als een server een cookie wil plaatsen.</li>\n"
+"<li><b>Accepteren</b> zorgt ervoor dat KDE alle cookies zwijgend accepteert."
+"</li>\n"
+"<li><b>Tot het eind van de sessie accepteren</b> zorgt ervoor dat KDE alle "
+"cookies accepteert, maar dat ze aan het eind van de sessie vervallen.</li>\n"
+"<li><b>Weigeren</b> zorgt ervoor dat KDE geen cookies accepteert.</li>\n"
+"</ul><p>\n"
+"<u>Opmerking:</u> Domeinspecifiekbeleid, welke hieronder kan worden "
+"ingesteld, wordt altijd gebruikt in plaats van het standaardbeleid.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
-#, fuzzy, kde-format
-#| msgid "Default encoding:"
+#, kde-format
 msgid "Default Policy"
-msgstr "Standaard codering:"
+msgstr "Standaardbeleid"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
 #, kde-format
 msgid "Accep&t all cookies"
-msgstr ""
+msgstr "Alle cookies accep&teren"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr ""
+msgstr "&Tot het einde van de sessie accepteren"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
-#, fuzzy, kde-format
-#| msgid "A&nimations:"
+#, kde-format
 msgid "Ask &for confirmation"
-msgstr "A&nimaties:"
+msgstr "Om beve&stiging vragen"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
 #: cookies/kcookiespolicies.ui:98
 #, kde-format
 msgid "Re&ject all cookies"
-msgstr ""
+msgstr "Alle cookies &verwerpen"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can set specific Java policies for any particular host or "
-#| "domain. To add a new policy, simply click the <i>New...</i> button and "
-#| "supply the necessary information requested by the dialog box. To change "
-#| "an existing policy, click on the <i>Change...</i> button and choose the "
-#| "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#| "button will remove the selected policy, causing the default policy "
-#| "setting to be used for that domain."
+#, kde-format
 msgid ""
 "<qt>\n"
 "To add a new policy, simply click on the <b>Add...</b> button and supply the "
@@ -819,32 +839,33 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
-"U kunt hier voor elke host of domein uw eigen Java-beleid instellen. Om een "
-"nieuw beleid toe te voegen drukt u eenvoudigweg op de knop <i>Toevoegen...</"
-"i> en vult u de benodigde informatie in. Om een bestaand beleid te wijzigen "
-"drukt u op de knop <i>Bewerken...</i> en kiest u een ander beleid in het "
-"dialoogvenster. U verwijdert een beleid door op de knop <i>Verwijderen</i> "
-"te drukken. Het standaardbeleid wordt dan voortaan op dit domein toegepast."
+"<qt>\n"
+"Om een nieuw beleid toe te voegen, klik eenvoudigweg op de knop "
+"<b>Toevoegen...</b> en vul de nodige informatie in in het dialoogvenster. Om "
+"een bestaand beleid te wijzigen klikt u op de knop <b>Wijzigen...</b> en "
+"kiest u een nieuw beleid in het dialoogvenster. Als u op de knop "
+"<b>Verwijderen...</b> klikt, dan wordt voor het gekozen domein het standaard "
+"cookiebeleid gebruikt. De knop <b>Alles verwijderen</b> zal elk "
+"websitespecifiek beleid verwijderen.\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Site Policy"
-msgstr "Beleid"
+msgstr "Websitebeleid"
 
 #. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr ""
+msgstr "Interactief zoeken naar domeinen"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search..."
-msgstr "Zoeken:"
+msgstr "Zoeken..."
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -855,13 +876,16 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Lijst met de websites waarvoor u een specifiek cookiebeleid hebt ingesteld. "
+"Specifiek beleid overschrijft het standaardbeleid voor deze websites.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain"
-msgstr "Host/Domein"
+msgstr "Domein"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
@@ -892,18 +916,24 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Voer de naam in van de host of het domein waar dit beleid van toepassing op "
+"is. Bijv. <i>www.kde.nl</i> of <i>.kde.nl</i>.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
 #, kde-format
 msgid "Site name:"
-msgstr ""
+msgstr "Sitenaam:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:38
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
 msgstr ""
+"Voer de host- of domeinnaam in, bijv. .kde.org, waarop het beleid van "
+"toepassing is."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -922,13 +952,23 @@ msgid ""
 "</ul>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Selecteer het gewenste beleid:\n"
+"<ul>\n"
+"<li><b>Accepteren</b> - staat deze site toe om een cookie te sturen</li>\n"
+"<li><b>Tot het einde van de sessie accepteren</b> - stelt deze site in staat "
+"cookies in te stellen die zullen vervallen aan het eind van de sessie.</li>\n"
+"<li><b>Verwerpen</b> - verwerpt alle cookies die van deze site afkomstig "
+"zijn.</li>\n"
+"<li><b>Vragen</b> - vraagt u om een bevestiging als er een cookie van deze "
+"site wordt ontvangen</li></ul>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Policy:"
-msgstr "Beleid"
+msgstr "Beleid:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
@@ -941,7 +981,7 @@ msgstr "Accepteren"
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr ""
+msgstr "Tot het einde van de sessie accepteren"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-17 00:46+0000\n"
-"PO-Revision-Date: 2023-08-08 14:38+0200\n"
+"PO-Revision-Date: 2023-08-17 16:33+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -490,7 +490,7 @@ msgstr "Usa la codificació de l'idioma"
 #: appearance.cpp:205
 #, kde-format
 msgid "Default encoding:"
-msgstr "Codificació per omissió:"
+msgstr "Codificació predeterminada:"
 
 #: appearance.cpp:207
 #, kde-format
@@ -498,8 +498,8 @@ msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
 "language encoding' and should not have to change this."
 msgstr ""
-"Seleccioneu la codificació que s'usarà per omissió; normalment, en tindreu "
-"prou amb «Usa la codificació de l'idioma» i no ho hauríeu de canviar."
+"Seleccioneu la codificació predeterminada que s'usarà; normalment, en "
+"tindreu prou amb «Usa la codificació de l'idioma» i no ho hauríeu de canviar."
 
 #. i18n: ectx: property (title), widget (QGroupBox, cacheEnabled)
 #: cache/cache.ui:17
@@ -580,100 +580,95 @@ msgstr "El directori personalitzat per a emmagatzemar la memòria cau"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search"
-msgstr "Cerca:"
+msgstr "Cerca"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:27
 #, kde-format
 msgid "Search interactively for domains and hosts"
-msgstr ""
+msgstr "Cerca dominis i ordinadors remots interactivament"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:43
 #, kde-format
 msgid "Site"
-msgstr ""
+msgstr "Lloc"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:48
 #, kde-format
 msgid "Cookie Name"
-msgstr ""
+msgstr "Nom de la galeta"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDelete)
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgid "D&elete"
-msgstr "Su&primeix"
+msgstr "Suprim&eix"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
 #: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgid "Delete A&ll"
-msgstr "Su&primeix"
+msgstr "Suprimeix-ho &tot"
 
 #. i18n: ectx: property (text), widget (QPushButton, configPolicyButton)
 #: cookies/kcookiesmanagement.ui:70
 #, kde-format
 msgid "Configure &Policy..."
-msgstr ""
+msgstr "Configura la &política..."
 
 #. i18n: ectx: property (text), widget (QPushButton, reloadButton)
 #: cookies/kcookiesmanagement.ui:77
 #, kde-format
 msgid "&Reload List"
-msgstr ""
+msgstr "&Recarrega la llista"
 
 #. i18n: ectx: property (title), widget (QGroupBox, detailsGroupBox)
 #: cookies/kcookiesmanagement.ui:97
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Detalls"
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
 #: cookies/kcookiesmanagement.ui:106
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "Nom"
+msgstr "Nom:"
 
 #. i18n: ectx: property (text), widget (QLabel, valueLabel)
 #: cookies/kcookiesmanagement.ui:129
 #, kde-format
 msgid "Value:"
-msgstr ""
+msgstr "Valor:"
 
 #. i18n: ectx: property (text), widget (QLabel, domainLabel)
 #: cookies/kcookiesmanagement.ui:152
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain:"
-msgstr "Servidor/Domini"
+msgstr "Domini:"
 
 #. i18n: ectx: property (text), widget (QLabel, patchLabel)
 #: cookies/kcookiesmanagement.ui:175
 #, kde-format
 msgid "Path:"
-msgstr ""
+msgstr "Camí:"
 
 #. i18n: ectx: property (text), widget (QLabel, expiresLabel)
 #: cookies/kcookiesmanagement.ui:198
 #, kde-format
 msgid "Expires:"
-msgstr ""
+msgstr "Caduca:"
 
 #. i18n: ectx: property (text), widget (QLabel, secureLabel)
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
-msgstr ""
+msgstr "Seguretat:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -686,13 +681,19 @@ msgid ""
 "unbrowsable.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"<p>Activa el funcionament de les galetes. Normalment, voldreu tenir el "
+"funcionament de les galetes activat i personalitzar-lo per a adequar-lo a "
+"les vostres necessitats de privadesa.</p><p>\n"
+"Cal tenir present que si es desactiva el funcionament de les galetes, molts "
+"llocs web podrien ser no navegables.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
-#, fuzzy, kde-format
-#| msgid "Enable filters"
+#, kde-format
 msgid "Enable coo&kies"
-msgstr "Habilita els filtres"
+msgstr "Activa les &galetes"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -707,12 +708,20 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Rebutja les galetes anomenades de tercers. Són galetes originades des d'un "
+"lloc diferent del que esteu navegant. Per exemple, si visiteu <b>www.example."
+"com</b> amb aquesta opció seleccionada, la configuració només processarà les "
+"galetes originades a www.example.com. Es rebutjaran les galetes de qualsevol "
+"altre lloc. Això reduirà les possibilitats que els operadors dels llocs "
+"apleguin informació quant als vostres hàbits de navegació diaris.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
 #, kde-format
 msgid "Only acce&pt cookies from originating server"
-msgstr ""
+msgstr "Acce&pta només les galetes del servidor original"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:46
@@ -726,13 +735,19 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
+"<p>\n"
+"Accepta automàticament les galetes temporals que expiraran al final de la "
+"sessió actual. Aquestes galetes no es desaran al disc dur o dispositiu "
+"d'emmagatzematge. En comptes d'això, se suprimiran quan tanqueu totes les "
+"aplicacions que les usen (p. ex. el navegador).</p><p><u>NOTA:</u> Si "
+"activeu aquesta opció, s'anul·laran les polítiques de galetes de sessió per "
+"omissió i específiques de lloc.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
-#, fuzzy, kde-format
-#| msgid "A&utomatically load images"
+#, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr "Carrega a&utomàticament les imatges"
+msgstr "Accepta automàt&icament les galetes de sessió"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -754,50 +769,55 @@ msgid ""
 "precedence over the default policy.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Determina com es gestionaran les galetes rebudes des d'un servidor remot:\n"
+"<ul>\n"
+"<li><b>Pregunta</b> farà que el KDE us demani confirmació sempre que un "
+"servidor vulgui establir una galeta.</li>\n"
+"<li><b>Accepta</b> farà que s'acceptin les galetes sense preguntar.</li>\n"
+"<li><b>Accepta fins al final de sessió</b> farà que s'acceptin les galetes, "
+"però expiraran al final de la sessió.</li>\n"
+"<li><b>Rebutja</b> farà que el programa «cookiejar» rebutgi totes les "
+"galetes que rep.</li>\n"
+"</ul><p>\n"
+"<u>NOTA:</u> Les polítiques específiques de domini, les quals es poden "
+"establir a sota, sempre tenen precedència sobre la política predeterminada.</"
+"p>\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
-#, fuzzy, kde-format
-#| msgid "Default encoding:"
+#, kde-format
 msgid "Default Policy"
-msgstr "Codificació per omissió:"
+msgstr "Política predeterminada"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
 #, kde-format
 msgid "Accep&t all cookies"
-msgstr ""
+msgstr "Accep&ta totes les galetes"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr ""
+msgstr "Accepta &fins al final de la sessió"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
-#, fuzzy, kde-format
-#| msgid "A&nimations:"
+#, kde-format
 msgid "Ask &for confirmation"
-msgstr "A&nimacions:"
+msgstr "De&mana confirmació"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
 #: cookies/kcookiespolicies.ui:98
 #, kde-format
 msgid "Re&ject all cookies"
-msgstr ""
+msgstr "Rebut&ja totes les galetes"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can set specific Java policies for any particular host or "
-#| "domain. To add a new policy, simply click the <i>New...</i> button and "
-#| "supply the necessary information requested by the dialog box. To change "
-#| "an existing policy, click on the <i>Change...</i> button and choose the "
-#| "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#| "button will remove the selected policy, causing the default policy "
-#| "setting to be used for that domain."
+#, kde-format
 msgid ""
 "<qt>\n"
 "To add a new policy, simply click on the <b>Add...</b> button and supply the "
@@ -808,33 +828,33 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
-"Aquí podeu establir polítiques específiques del Java per a qualsevol "
-"servidor o domini en particular. Per a afegir una política nova, "
-"senzillament cliqueu al botó <i>Nova...</i> i ompliu la informació que us "
-"demana el diàleg. Per a canviar una política existent, cliqueu al botó "
-"<i>Canvia...</i> i trieu una nova política del diàleg. En clicar a "
-"<i>Elimina</i> s'eliminarà la política seleccionada, fent que s'usi "
-"l'arranjament de política per omissió per a aquest domini."
+"<qt>\n"
+"Per a afegir una política nova, simplement cliqueu el botó <b>Afegeix...</b> "
+"i proporcioneu la informació necessària. Per a canviar una política "
+"existent, cliqueu el botó <b>Canvia...</b> i trieu la nova política del "
+"quadre de diàleg de polítiques. En clicar al botó <b>Suprimeix</b> "
+"s'eliminarà la política seleccionada, fent que per a aquest domini s'usi la "
+"política predeterminada, mentre que <b>Suprimeix-ho tot</b> eliminarà totes "
+"les polítiques específiques de lloc.\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Site Policy"
-msgstr "Política"
+msgstr "Política de lloc"
 
 #. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr ""
+msgstr "Cerca dominis interactivament"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search..."
-msgstr "Cerca:"
+msgstr "Cerca..."
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -845,13 +865,17 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Llista de llocs per als quals heu establert polítiques de galeta "
+"específiques. Les polítiques específiques anul·len els valors de política "
+"predeterminada per a aquests llocs.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain"
-msgstr "Servidor/Domini"
+msgstr "Domini"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
@@ -882,18 +906,24 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Introduïu el servidor o domini al qual s'aplica aquesta política, p. ex. "
+"<b>www.kde.org</b> o <b>.kde.org</b>.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
 #, kde-format
 msgid "Site name:"
-msgstr ""
+msgstr "Nom del lloc:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:38
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
 msgstr ""
+"Introduïu el nom de l'ordinador o del domini al qual s'aplica aquesta "
+"política, p. ex. kde.org."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -912,13 +942,23 @@ msgid ""
 "</ul>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Seleccioneu la política desitjada:\n"
+"<ul>\n"
+"<li><b>Accepta</b> - Permet a aquest lloc establir galetes</li>\n"
+"<li><b>Accepta fins al final de sessió</b> Permet que aquest lloc estableixi "
+"galetes, però expiraran al final de la sessió.</li>\n"
+"<li><b>Rebutja</b> - Rebutja totes les galetes enviades des d'aquest lloc</"
+"li>\n"
+"<li><b>Pregunta</b> - Demana quan es rebin galetes des d'aquest lloc</li>\n"
+"</ul>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Policy:"
-msgstr "Política"
+msgstr "Política:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
@@ -931,7 +971,7 @@ msgstr "Accepta"
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr ""
+msgstr "Accepta fins al final de la sessió"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
@@ -987,7 +1027,7 @@ msgstr ""
 #: css/cssconfig.ui:29
 #, kde-format
 msgid "Us&e default stylesheet"
-msgstr "Usa e&l full d'estil per omissió"
+msgstr "Usa e&l full d'estil predeterminat"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
 #: css/cssconfig.ui:39
@@ -1024,9 +1064,9 @@ msgid ""
 "your desired options.</p>"
 msgstr ""
 "<b>Usa el full d'estil d'accessibilitat</b><p> Si seleccioneu aquesta opció, "
-"podreu definir un tipus de lletra per omissió, una mida i un color de tipus "
-"de lletra amb uns quants clics de ratolí. Senzillament, exploreu el diàleg "
-"Personalitza... i trieu les opcions desitjades.</p>"
+"podreu definir un tipus de lletra predeterminat, una mida i un color de "
+"tipus de lletra amb uns quants clics de ratolí. Senzillament, exploreu el "
+"diàleg Personalitza... i trieu les opcions desitjades.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useAccess)
 #: css/cssconfig.ui:97
@@ -1237,7 +1277,7 @@ msgid ""
 "font.</p>"
 msgstr ""
 "<b>Personalitza</b><p>Seleccioneu aquesta opció per a definir un color per "
-"al tipus de lletra per omissió.</p>"
+"al tipus de lletra predeterminat.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, customColor)
 #: css/csscustom.ui:209
@@ -1269,7 +1309,7 @@ msgid ""
 "default background.</p>"
 msgstr ""
 "<b>Fons</b><p>Aquí està la possibilitat d'habilitar la selecció d'un fons "
-"per omissió personalitzat.</p>"
+"predeterminat personalitzat.</p>"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
 #: css/csscustom.ui:248
@@ -1280,7 +1320,7 @@ msgid ""
 "stylesheet.</p>"
 msgstr ""
 "<b>Usa el mateix color per a tot el text</b><p>Seleccioneu aquesta opció per "
-"a aplicar la vostra elecció del color al tipus de lletra per omissió així "
+"a aplicar la vostra elecció del color al tipus de lletra predeterminat així "
 "com a qualsevol dels tipus de lletra especificats en un full d'estil.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameColor)
@@ -2022,8 +2062,8 @@ msgid ""
 msgstr ""
 "<p>Aquesta casella conté els dominis i servidors per als quals heu establert "
 "una política Java específica. Aquesta política s'usarà en comptes de la "
-"política per omissió per tal d'habilitar o inhabilitar miniaplicacions Java "
-"a les pàgines enviades per aquests dominis o servidors.</p><p>Trieu una "
+"política predeterminada per tal d'habilitar o inhabilitar miniaplicacions "
+"Java a les pàgines enviades per aquests dominis o servidors.</p><p>Trieu una "
 "política i useu els controls a la dreta per a modificar-la.</p>"
 
 #: javaopts.cpp:142
@@ -2063,7 +2103,7 @@ msgstr ""
 "demana el diàleg. Per a canviar una política existent, cliqueu al botó "
 "<i>Canvia...</i> i trieu una nova política del diàleg. En clicar a "
 "<i>Elimina</i> s'eliminarà la política seleccionada, fent que s'usi "
-"l'arranjament de política per omissió per a aquest domini."
+"l'arranjament de política predeterminada per a aquest domini."
 
 #: javaopts.cpp:162
 #, kde-format
@@ -2221,7 +2261,7 @@ msgstr ""
 "demana el diàleg. Per a canviar una política existent, cliqueu al botó "
 "<i>Canvia...</i> i trieu una nova política des del diàleg. En clicar a "
 "<i>Elimina</i> s'eliminarà la política seleccionada, fent que s'usi "
-"l'arranjament de política per omissió per a aquest domini. Els botons "
+"l'arranjament de política predeterminada per a aquest domini. Els botons "
 "<i>Importa</i> i <i>Exporta</i> us permeten compartir fàcilment les vostres "
 "polítiques amb d'altra gent, deixant-vos desar-les i recuperar-les des d'un "
 "fitxer zip."
@@ -2237,9 +2277,10 @@ msgid ""
 msgstr ""
 "<p>Aquest quadre conté els dominis i servidors per als quals heu establert "
 "una política de JavaScript específica. Aquesta política s'usarà en comptes "
-"de la política per omissió per tal d'habilitar o inhabilitar el JavaScript a "
-"les pàgines enviades per aquests dominis o servidors.</p><p>Trieu una "
-"política i useu els controls a la dreta per a modificar-la.</p>"
+"de la política predeterminada per tal d'habilitar o inhabilitar el "
+"JavaScript a les pàgines enviades per aquests dominis o servidors.</"
+"p><p>Trieu una política i useu els controls a la dreta per a modificar-la.</"
+"p>"
 
 #: jsopts.cpp:96
 #, kde-format

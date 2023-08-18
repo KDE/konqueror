@@ -1,7 +1,7 @@
 # translation of kcmkonqhtml.po to
 # Translation of kcmkonqhtml.po to Slovenian
 # SLOVENIAN TRANSLATION OF KCMKONQHTML.
-# $Id: kcmkonqhtml.po 1658386 2023-08-17 01:27:17Z scripty $
+# $Id: kcmkonqhtml.po 1658469 2023-08-18 01:25:22Z scripty $
 # $Source$
 #
 # Copyright (C) 2002, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
@@ -18,15 +18,15 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-17 00:46+0000\n"
-"PO-Revision-Date: 2023-07-28 10:06+0200\n"
+"PO-Revision-Date: 2023-08-17 09:11+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "X-Generator: Poedit 3.3.2\n"
 
@@ -571,101 +571,95 @@ msgstr "Imenik po meri za shranjevanje medpomnilnika"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search"
-msgstr "Poišči:"
+msgstr "Poišči"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:27
 #, kde-format
 msgid "Search interactively for domains and hosts"
-msgstr ""
+msgstr "Interaktivno poišči domene in gostitelje"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:43
 #, kde-format
 msgid "Site"
-msgstr ""
+msgstr "Spletišče"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:48
 #, kde-format
 msgid "Cookie Name"
-msgstr ""
+msgstr "Ime piškotka"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDelete)
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgid "D&elete"
 msgstr "Izbriši"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
 #: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgid "Delete A&ll"
-msgstr "Izbriši"
+msgstr "Izbriši vse"
 
 #. i18n: ectx: property (text), widget (QPushButton, configPolicyButton)
 #: cookies/kcookiesmanagement.ui:70
 #, kde-format
 msgid "Configure &Policy..."
-msgstr ""
+msgstr "Konfiguracija in politika..."
 
 #. i18n: ectx: property (text), widget (QPushButton, reloadButton)
 #: cookies/kcookiesmanagement.ui:77
 #, kde-format
 msgid "&Reload List"
-msgstr ""
+msgstr "Ponovno naloži seznam"
 
 #. i18n: ectx: property (title), widget (QGroupBox, detailsGroupBox)
 #: cookies/kcookiesmanagement.ui:97
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Podrobnosti"
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
 #: cookies/kcookiesmanagement.ui:106
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "Ime"
+msgstr "Ime:"
 
 #. i18n: ectx: property (text), widget (QLabel, valueLabel)
 #: cookies/kcookiesmanagement.ui:129
-#, fuzzy, kde-format
-#| msgid "Value"
+#, kde-format
 msgid "Value:"
-msgstr "Vrednost"
+msgstr "Vrednost:"
 
 #. i18n: ectx: property (text), widget (QLabel, domainLabel)
 #: cookies/kcookiesmanagement.ui:152
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain:"
-msgstr "Gostitelj/domena"
+msgstr "Domena:"
 
 #. i18n: ectx: property (text), widget (QLabel, patchLabel)
 #: cookies/kcookiesmanagement.ui:175
 #, kde-format
 msgid "Path:"
-msgstr ""
+msgstr "Pot:"
 
 #. i18n: ectx: property (text), widget (QLabel, expiresLabel)
 #: cookies/kcookiesmanagement.ui:198
 #, kde-format
 msgid "Expires:"
-msgstr ""
+msgstr "Poteče:"
 
 #. i18n: ectx: property (text), widget (QLabel, secureLabel)
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
-msgstr ""
+msgstr "Zavaruj:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -678,13 +672,19 @@ msgid ""
 "unbrowsable.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"<p>Omogoči podporo za piškotke. Običajno boste želeli imeti omogočeno "
+"podporo za piškotke in jo prilagoditi svojim potrebam glede zasebnosti.</"
+"p><p>\n"
+"Upoštevajte, da onemogočanje podpore za piškotke morda onemogoči brskanje po "
+"številnih spletnih mestih.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
-#, fuzzy, kde-format
-#| msgid "Enable filters"
+#, kde-format
 msgid "Enable coo&kies"
-msgstr "Omogoči filtre"
+msgstr "Omogoči piš&kotke"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -699,12 +699,21 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Zavračajte tako imenovane piškotke tretjih oseb. To so piškotki, ki izvirajo "
+"iz  strani, ki ni tista, ki jo trenutno brskate. Na primer, če obiščete "
+"<b>www.foobar.com</b>, medtem ko je ta možnost vklopljena, bodo glede na "
+"vaše nastavitve obdelani samo piškotki, ki izvirajo iz www.foobar.com. "
+"Piškotki s katerega koli drugega mesta bodo zavrnjeni. To zmanjša možnosti, "
+"da bi operaterji spletnega mesta sestavili profil o vaših vsakodnevnih "
+"brskalnih navadah.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
 #, kde-format
 msgid "Only acce&pt cookies from originating server"
-msgstr ""
+msgstr "Sprejemajte samo piškotke izvornega strežnika"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:46
@@ -718,13 +727,19 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
+"<p>\n"
+"Samodejno sprejmajte začasne piškotke, ki potečejo ob koncu trenutne seje. "
+"Takšni piškotki ne bodo shranjeni na trdi disk vašega računalnika ali "
+"pomnilniške naprave. Namesto tega se izbrišejo, ko zaprete vse aplikacije "
+"(npr. brskalnik), ki jih uporabljajo.</p><p><u>OPOMBA</u> Če potrdite to "
+"možnost, preglasite privzete politike in politike o piškotkih za piškotke "
+"seje, specifične za spletno mesto. </p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
-#, fuzzy, kde-format
-#| msgid "A&utomatically load images"
+#, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr "Samodejno naloži slike"
+msgstr "Samodejno sprejemajte piškotke seje"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -746,50 +761,55 @@ msgid ""
 "precedence over the default policy.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Določa, kako bodo obravnavani piškotki, prejeti iz oddaljenega računalnika:\n"
+"<ul>\n"
+"<li><b>Vprašaj</b> bo povzročil, da bo KDE zahteval vašo potrditev vsakič, "
+"ko strežnik želi nastaviti piškotek.</li>\n"
+"<li><b>Sprejmi</b> bo povzročil, da bodo piškotki sprejeti, ne da bi vas o "
+"tem pozvali.</li>\n"
+"<li><b>Sprejmi do konca seje</b> povzroči, da bodo piškotki sprejeti, vendar "
+"bodo ob koncu seje potekli.</li>\n"
+"<li><b>Zavrni</b> povzroči, da posoda za piškotke zavrne vse piškotke, ki "
+"jih prejme.</li>\n"
+"</ul><p>\n"
+"<u>OPOMBA:</u> Politike, specifičnieza domeno, ki jih lahko nastavite "
+"spodaj, imajo vedno prednost pred privzeto politiko.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
-#, fuzzy, kde-format
-#| msgid "Default encoding:"
+#, kde-format
 msgid "Default Policy"
-msgstr "Privzeto kodiranje:"
+msgstr "Privzeta politika"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
 #, kde-format
 msgid "Accep&t all cookies"
-msgstr ""
+msgstr "Sprejmi piškotke"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr ""
+msgstr "Sprejmi do konca seje"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
-#, fuzzy, kde-format
-#| msgid "A&nimations:"
+#, kde-format
 msgid "Ask &for confirmation"
-msgstr "A&nimacije:"
+msgstr "Vprašaj za potrditev"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
 #: cookies/kcookiespolicies.ui:98
 #, kde-format
 msgid "Re&ject all cookies"
-msgstr ""
+msgstr "Zavrni vse piškotke"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can set specific Java policies for any particular host or "
-#| "domain. To add a new policy, simply click the <i>New...</i> button and "
-#| "supply the necessary information requested by the dialog box. To change "
-#| "an existing policy, click on the <i>Change...</i> button and choose the "
-#| "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#| "button will remove the selected policy, causing the default policy "
-#| "setting to be used for that domain."
+#, kde-format
 msgid ""
 "<qt>\n"
 "To add a new policy, simply click on the <b>Add...</b> button and supply the "
@@ -800,32 +820,33 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
-"Tu lahko nastavite določene pravilnike za Javo za kateregakoli gostitelja "
-"ali domeno. Nov pravilnik dodate tako, da kliknete gumb <i>Nov ...</i> in v "
-"pogovorno okno vnesete zahtevane podatke. Da spremenite obstoječ pravilnik, "
-"kliknite na gumb <i>Spremeni ...</i> in v pogovornem oknu izberete nov "
-"pravilnik. Klik na gumb <i>Izbriši</i> bo odstranil izbran pravilnik in za "
-"to domeno bo uporabljena nastavitev privzetega pravilnika."
+"<qt>\n"
+"Če želite dodati novo politiko, preprosto kliknite gumb <b>Dodaj...</b> in "
+"vnesite potrebne informacije. Če želite spremeniti obstoječo politiko, "
+"uporabite gumb <b>Spremeni...</b> in v pogovornem oknu pravilnika izberite "
+"novo politiko. Če kliknete gumb <b>Izbriši</b>, boste odstranili trenutno "
+"izbrano politiko, zaradi česar bo za to domeno uporabljena privzeta "
+"nastavitev, medtem ko bo <b>Izbriši vse</b> odstranil vse politike, "
+"specifične za spletno mesto.\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Site Policy"
-msgstr "Pravilnik"
+msgstr "Politika spletišča"
 
 #. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr ""
+msgstr "Interaktivno poišči domene"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search..."
-msgstr "Poišči:"
+msgstr "Poišči..."
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -836,19 +857,22 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Seznam spletišč, za katere ste nastavili posebno politiko piškotkov. Posebne "
+"politike preglasijo privzeto nastavitev politik za ta spletišča.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain"
-msgstr "Gostitelj/domena"
+msgstr "Domena"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
 #, kde-format
 msgid "Policy"
-msgstr "Pravilnik"
+msgstr "Politika"
 
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
@@ -856,7 +880,7 @@ msgstr "Pravilnik"
 #: useragent/useragent.ui:84
 #, kde-format
 msgid "&New..."
-msgstr "&Nov ..."
+msgstr "&Nova..."
 
 #. i18n: ectx: property (text), widget (QPushButton, pbChange)
 #: cookies/kcookiespolicies.ui:183 domainlistview.cpp:49
@@ -873,18 +897,24 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Vnesite gostitelja ali domeno, za katero velja ta politika, npr. <b>www.kde."
+"org</b> ali <b>.kde.org</b>.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
 #, kde-format
 msgid "Site name:"
-msgstr ""
+msgstr "Ime spletišča:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:38
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
 msgstr ""
+"Vnesite ime gostitelja ali domene, npr. .kde.org, za katerega velja ta "
+"politika."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -903,13 +933,22 @@ msgid ""
 "</ul>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Izberite želeno politiko:\n"
+"<ul>\n"
+"<li><b>Sprejmi</b> – Dovoljuje tej strani, da nastavi piškotke</li>\n"
+"<li><b>Sprejmi do konca seje</b> - Temu spletnemu mestu dovoljuje, da "
+"nastavi piškotke, vendar bodo ob koncu seje potekli.</li>\n"
+"<li><b>Zavrni</b> – Zavrni vse piškotke, poslane s tega mesta</li>\n"
+"<li><b>Vprašaj</b> - vprašaj, ko prejme piškotke s tega mesta</li>\n"
+"</ul>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Policy:"
-msgstr "Pravilnik"
+msgstr "Politika:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
@@ -922,7 +961,7 @@ msgstr "Sprejmi"
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr ""
+msgstr "Sprejmi do konca seje"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
