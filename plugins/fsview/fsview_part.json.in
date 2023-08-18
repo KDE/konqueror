@@ -4,11 +4,35 @@
         "Authors": [
             {
                 "Email": "",
-                "Name": "Josef Weidendorfer"
+                "Name": "Josef Weidendorfer",
+                "Name[ca]": "Josef Weidendorfer",
+                "Name[es]": "Josef Weidendorfer",
+                "Name[eu]": "Josef Weidendorfer",
+                "Name[nl]": "Josef Weidendorfer",
+                "Name[sv]": "Josef Weidendorfer",
+                "Name[tr]": "Josef Weidendorfer",
+                "Name[uk]": "Josef Weidendorfer",
+                "Name[x-test]": "xxJosef Weidendorferxx"
             }
         ],
         "Copyright": "Copyright 2002 Josef Weidendorfer",
+        "Copyright[ca]": "Copyright 2002 Josef Weidendorfer",
+        "Copyright[es]": "Copyright 2002 Josef Weidendorfer",
+        "Copyright[eu]": "Copyright 2002 Josef Weidendorfer",
+        "Copyright[nl]": "Copyright 2002 Josef Weidendorfer",
+        "Copyright[sv]": "Copyright 2002 Josef Weidendorfer",
+        "Copyright[tr]": "Telif hakkı 2002 Josef Weidendorfer",
+        "Copyright[uk]": "Авторські права належать © Josef Weidendorfer, 2022",
+        "Copyright[x-test]": "xxCopyright 2002 Josef Weidendorferxx",
         "Description": "Enables a proportional view of directories and files based on file size",
+        "Description[ca]": "Habilita una vista proporcional dels directoris i fitxers basada en la mida dels fitxers",
+        "Description[es]": "Activa una vista proporcional de directorios y archivos según su tamaño",
+        "Description[eu]": "Tamainan oinarritutako direktorioen eta fitxategian ikuspegi proportzional bat gaitzen du",
+        "Description[nl]": "Biedt een proportionele weergave van mappen en bestanden gebaseerd op hun grootte",
+        "Description[sv]": "Möjliggör proportionell visning av kataloger och filer baserat på filstorlek",
+        "Description[tr]": "Dosya boyutuna göre dizinlerin ve dosyaların oransal bir görünümünü etkinleştirir",
+        "Description[uk]": "Пропорційний показ тек і файлів залежно від їхнього розміру",
+        "Description[x-test]": "xxEnables a proportional view of directories and files based on file sizexx",
         "Icon": "fsview",
         "Id": "fsviewpart",
         "License": "GPL",
@@ -16,6 +40,15 @@
             "inode/directory"
         ],
         "Name": "File Size View",
+        "Name[ca]": "Vista de mida de fitxers",
+        "Name[es]": "Vista de tamaño de archivos",
+        "Name[eu]": "Fitxategi-tamainaren ikuspegia",
+        "Name[id]": "Tampilan Ukuran File",
+        "Name[nl]": "Bestandsgrootte tonen",
+        "Name[sv]": "Filstorleksvy",
+        "Name[tr]": "Dosya Boyutu Görünümü",
+        "Name[uk]": "Перегляд розміру файлів",
+        "Name[x-test]": "xxFile Size Viewxx",
         "ServiceTypes": [
             "KParts/ReadOnlyPart"
         ],

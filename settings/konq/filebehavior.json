@@ -1,8 +1,25 @@
 {
     "KPlugin": {
         "Description": "You can configure how Konqueror behaves as a file manager here",
+        "Description[ca]": "Aquí podeu configurar com es comportarà el Konqueror com a gestor de fitxers",
+        "Description[es]": "Aquí puede configurar el comportamiento de Konqueror como gestor de archivos",
+        "Description[eu]": "«Konqueror»rek fitxategi-kudeatzaile gisa duen jokabidea hemen konfigura dezakezu",
+        "Description[nl]": "Hier kunt u het gedrag van Konqueror als bestandsbeheerder instellen",
+        "Description[sv]": "Anpassa hur Konqueror beter sig som filhanterare",
+        "Description[tr]": "Buradan, Konqueror'un bir dosya yöneticisi olarak nasıl davranacağını yapılandırabilirsiniz",
+        "Description[uk]": "Тут можна налаштувати поведінку Konqueror, як інструмента керування файлами",
+        "Description[x-test]": "xxYou can configure how Konqueror behaves as a file manager herexx",
         "Icon": "system-file-manager",
         "Name": "Behavior",
+        "Name[ca]": "Comportament",
+        "Name[es]": "Comportamiento",
+        "Name[eu]": "Jokabidea",
+        "Name[id]": "Perilaku",
+        "Name[nl]": "Gedrag",
+        "Name[sv]": "Beteende",
+        "Name[tr]": "Davranış",
+        "Name[uk]": "Поведінка",
+        "Name[x-test]": "xxBehaviorxx",
         "ServiceTypes": [
             "KCModule"
         ]

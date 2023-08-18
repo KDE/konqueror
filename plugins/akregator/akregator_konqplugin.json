@@ -1,11 +1,28 @@
 {
     "KPlugin": {
         "Description": "Adds selected feed to Akregator",
+        "Description[ca]": "Afegeix la font seleccionada a l'Akregator",
+        "Description[es]": "Añade la fuente seleccionada a Akregator",
+        "Description[eu]": "Hautatutako jarioa «Akregator»ren gehitzen du",
+        "Description[nl]": "Voegt geselecteerde feeds toe aan aKregator",
+        "Description[sv]": "Lägger till vald kanal i Akregator",
+        "Description[tr]": "Seçili beslemeyi Akregatör'e ekler",
+        "Description[uk]": "Додає вибрану подачу у Akregator",
+        "Description[x-test]": "xxAdds selected feed to Akregatorxx",
         "Icon": "akregator",
         "MimeTypes": [
             "application/octet-stream"
         ],
         "Name": "Add Feed to Akregator",
+        "Name[ca]": "Afegeix aquesta font a l'Akregator",
+        "Name[es]": "Añadir fuente a Akregator",
+        "Name[eu]": "Gehitu Jarioa «Akregator»rera",
+        "Name[id]": "Tambah Feed ke Akregator",
+        "Name[nl]": "Feed aan Akregator toevoegen",
+        "Name[sv]": "Lägg till kanal i Akregator",
+        "Name[tr]": "Beslemeyi Akregatör'e Ekle",
+        "Name[uk]": "Додати подачу в Akregator",
+        "Name[x-test]": "xxAdd Feed to Akregatorxx",
         "ServiceTypes": [
             "KFileItemAction/Plugin"
         ]

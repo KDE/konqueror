@@ -1,9 +1,25 @@
 {
     "KPlugin": {
         "Description": "Configure the way cookies work",
+        "Description[ca]": "Configura com funcionaran les galetes",
+        "Description[es]": "Configurar el funcionamiento de las cookies",
+        "Description[eu]": "Konfiguratu «cookie»n lan egiteko era",
+        "Description[nl]": "Hier kunt u het cookiesbeleid instellen",
+        "Description[sv]": "Anpassa hur kakor fungerar",
+        "Description[tr]": "Çerezlerin nasıl çalıştığını yapılandırın",
+        "Description[uk]": "Налаштування механізму кук",
+        "Description[x-test]": "xxConfigure the way cookies workxx",
         "Icon": "preferences-web-browser-cookies",
         "Id": "cookies",
         "Name": "Cookies",
+        "Name[ca]": "Galetes",
+        "Name[es]": "Cookies",
+        "Name[eu]": "«Cookie»ak",
+        "Name[nl]": "Cookies",
+        "Name[sv]": "Kakor",
+        "Name[tr]": "Çerezler",
+        "Name[uk]": "Куки",
+        "Name[x-test]": "xxCookiesxx",
         "ServiceTypes": [
             "KCModule"
         ]

@@ -2,8 +2,24 @@
     "Categories": "Qt;KDE;X-KDE-settings-webbrowsing;",
     "KPlugin": {
         "Description": "Configure the user agent string",
+        "Description[ca]": "Configura la cadena d'agent d'usuari",
+        "Description[es]": "Configurar la cadena de agente de usuario",
+        "Description[eu]": "Konfiguratu erabiltzaile-agentearen katea",
+        "Description[nl]": "De tekenreeks van de gebruikersagent configureren",
+        "Description[sv]": "Anpassa användaragentsträngen",
+        "Description[tr]": "Kullanıcı aracısı dizisini yapılandırın",
+        "Description[uk]": "Налаштування рядка агента користувача",
+        "Description[x-test]": "xxConfigure the user agent stringxx",
         "Icon": "preferences-desktop-theme",
         "Name": "Browser Identification",
+        "Name[ca]": "Identificació del navegador",
+        "Name[es]": "Identificación del navegador",
+        "Name[eu]": "Arakatzailearen identifikazioa",
+        "Name[nl]": "Browseridentificatie",
+        "Name[sv]": "Webbläsaridentifikation",
+        "Name[tr]": "Tarayıcı Tanımlaması",
+        "Name[uk]": "Ідентифікація навігатора",
+        "Name[x-test]": "xxBrowser Identificationxx",
         "ServiceTypes": [
             "KCModule"
         ]
