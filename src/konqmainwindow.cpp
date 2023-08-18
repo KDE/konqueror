@@ -5514,13 +5514,17 @@ void KonqMainWindow::toggleCompleteFullScreen(bool on)
         menuBar()->setVisible(false);
 
         //Hide the side bar
-        QAction *a = m_toggleViewGUIClient->action(QStringLiteral("konq_sidebartng"));
-        if (a) {
-            KToggleAction *ta = static_cast<KToggleAction*>(a);
-            if (ta){
-                m_fullScreenData.wasSidebarVisible = ta->isChecked();
-                a->setChecked(false);
+        if (m_toggleViewGUIClient) {
+            QAction *a = m_toggleViewGUIClient->action(QStringLiteral("konq_sidebartng"));
+            if (a) {
+                KToggleAction *ta = static_cast<KToggleAction*>(a);
+                if (ta){
+                    m_fullScreenData.wasSidebarVisible = ta->isChecked();
+                    a->setChecked(false);
+                }
             }
+        } else {
+            m_fullScreenData.wasSidebarVisible = false;
         }
 
         //Hide the tool bars
@@ -5535,14 +5539,17 @@ void KonqMainWindow::toggleCompleteFullScreen(bool on)
     //Status bar and side bar are not managed by autoSaveSettings
 
     //Hide or show the sidebar
-    QAction *a = m_toggleViewGUIClient->action(QStringLiteral("konq_sidebartng"));
-    KToggleAction *sideBarAction = qobject_cast<KToggleAction*>(a);
-    if (sideBarAction) {
-        if (on) {
-            m_fullScreenData.wasSidebarVisible = sideBarAction ->isChecked();
-            sideBarAction ->setChecked(false);
-        } else if (m_fullScreenData.wasSidebarVisible) {
-            sideBarAction->setChecked(true);
+    //TODO: isn't this a duplicate of the above?
+    if (m_toggleViewGUIClient) {
+        QAction *a = m_toggleViewGUIClient->action(QStringLiteral("konq_sidebartng"));
+        KToggleAction *sideBarAction = qobject_cast<KToggleAction*>(a);
+        if (sideBarAction) {
+            if (on) {
+                m_fullScreenData.wasSidebarVisible = sideBarAction ->isChecked();
+                sideBarAction ->setChecked(false);
+            } else if (m_fullScreenData.wasSidebarVisible) {
+                sideBarAction->setChecked(true);
+            }
         }
     }
 

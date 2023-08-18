@@ -113,7 +113,9 @@ ToggleViewGUIClient::ToggleViewGUIClient(KonqMainWindow *mainWindow)
     std::sort(mds.begin(), mds.end(), [](const KPluginMetaData &md1, const KPluginMetaData &md2){return md1.pluginId() <= md2.pluginId();});
     auto last = std::unique(mds.begin(), mds.end(), [](const KPluginMetaData &md1, const KPluginMetaData &md2){return md1.pluginId() == md2.pluginId();});
     mds.erase(last, mds.end());
-    if (mds.isEmpty()) {
+
+    m_empty = mds.isEmpty();
+    if (m_empty) {
         return;
     }
 

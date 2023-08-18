@@ -80,6 +80,8 @@ private Q_SLOTS:
 private:
     KonqMainWindow *m_mainWindow;
     QHash<QString, QAction *> m_actions;
+
+    //TODO: is this really needed? Wouldn't it be enough to use m_actions.isEmpty()?
     bool m_empty;
     QMap<QString, bool> m_mapOrientation;
 };
