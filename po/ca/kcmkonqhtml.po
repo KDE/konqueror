@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 02:26+0000\n"
-"PO-Revision-Date: 2023-08-08 14:38+0200\n"
+"PO-Revision-Date: 2023-08-17 16:33+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -500,7 +500,7 @@ msgstr "Usa la codificació de l'idioma"
 #: appearance.cpp:205
 #, kde-format
 msgid "Default encoding:"
-msgstr "Codificació per omissió:"
+msgstr "Codificació predeterminada:"
 
 #: appearance.cpp:207
 #, kde-format
@@ -508,8 +508,8 @@ msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
 "language encoding' and should not have to change this."
 msgstr ""
-"Seleccioneu la codificació que s'usarà per omissió; normalment, en tindreu "
-"prou amb «Usa la codificació de l'idioma» i no ho hauríeu de canviar."
+"Seleccioneu la codificació predeterminada que s'usarà; normalment, en "
+"tindreu prou amb «Usa la codificació de l'idioma» i no ho hauríeu de canviar."
 
 #. i18n: ectx: property (title), widget (QGroupBox, cacheEnabled)
 #: cache/cache.ui:17
@@ -629,7 +629,7 @@ msgstr ""
 #: css/cssconfig.ui:29
 #, kde-format
 msgid "Us&e default stylesheet"
-msgstr "Usa e&l full d'estil per omissió"
+msgstr "Usa e&l full d'estil predeterminat"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
 #: css/cssconfig.ui:39
@@ -666,9 +666,9 @@ msgid ""
 "your desired options.</p>"
 msgstr ""
 "<b>Usa el full d'estil d'accessibilitat</b><p> Si seleccioneu aquesta opció, "
-"podreu definir un tipus de lletra per omissió, una mida i un color de tipus "
-"de lletra amb uns quants clics de ratolí. Senzillament, exploreu el diàleg "
-"Personalitza... i trieu les opcions desitjades.</p>"
+"podreu definir un tipus de lletra predeterminat, una mida i un color de "
+"tipus de lletra amb uns quants clics de ratolí. Senzillament, exploreu el "
+"diàleg Personalitza... i trieu les opcions desitjades.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useAccess)
 #: css/cssconfig.ui:97
@@ -879,7 +879,7 @@ msgid ""
 "font.</p>"
 msgstr ""
 "<b>Personalitza</b><p>Seleccioneu aquesta opció per a definir un color per "
-"al tipus de lletra per omissió.</p>"
+"al tipus de lletra predeterminat.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, customColor)
 #: css/csscustom.ui:209
@@ -911,7 +911,7 @@ msgid ""
 "default background.</p>"
 msgstr ""
 "<b>Fons</b><p>Aquí està la possibilitat d'habilitar la selecció d'un fons "
-"per omissió personalitzat.</p>"
+"predeterminat personalitzat.</p>"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
 #: css/csscustom.ui:248
@@ -922,7 +922,7 @@ msgid ""
 "stylesheet.</p>"
 msgstr ""
 "<b>Usa el mateix color per a tot el text</b><p>Seleccioneu aquesta opció per "
-"a aplicar la vostra elecció del color al tipus de lletra per omissió així "
+"a aplicar la vostra elecció del color al tipus de lletra predeterminat així "
 "com a qualsevol dels tipus de lletra especificats en un full d'estil.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameColor)
@@ -1689,8 +1689,8 @@ msgid ""
 msgstr ""
 "<p>Aquesta casella conté els dominis i servidors per als quals heu establert "
 "una política Java específica. Aquesta política s'usarà en comptes de la "
-"política per omissió per tal d'habilitar o inhabilitar miniaplicacions Java "
-"a les pàgines enviades per aquests dominis o servidors.</p><p>Trieu una "
+"política predeterminada per tal d'habilitar o inhabilitar miniaplicacions "
+"Java a les pàgines enviades per aquests dominis o servidors.</p><p>Trieu una "
 "política i useu els controls a la dreta per a modificar-la.</p>"
 
 #: javaopts.cpp:142
@@ -1730,7 +1730,7 @@ msgstr ""
 "demana el diàleg. Per a canviar una política existent, cliqueu al botó "
 "<i>Canvia...</i> i trieu una nova política del diàleg. En clicar a "
 "<i>Elimina</i> s'eliminarà la política seleccionada, fent que s'usi "
-"l'arranjament de política per omissió per a aquest domini."
+"l'arranjament de política predeterminada per a aquest domini."
 
 #: javaopts.cpp:162
 #, kde-format
@@ -1888,7 +1888,7 @@ msgstr ""
 "demana el diàleg. Per a canviar una política existent, cliqueu al botó "
 "<i>Canvia...</i> i trieu una nova política des del diàleg. En clicar a "
 "<i>Elimina</i> s'eliminarà la política seleccionada, fent que s'usi "
-"l'arranjament de política per omissió per a aquest domini. Els botons "
+"l'arranjament de política predeterminada per a aquest domini. Els botons "
 "<i>Importa</i> i <i>Exporta</i> us permeten compartir fàcilment les vostres "
 "polítiques amb d'altra gent, deixant-vos desar-les i recuperar-les des d'un "
 "fitxer zip."
@@ -1904,9 +1904,10 @@ msgid ""
 msgstr ""
 "<p>Aquest quadre conté els dominis i servidors per als quals heu establert "
 "una política de JavaScript específica. Aquesta política s'usarà en comptes "
-"de la política per omissió per tal d'habilitar o inhabilitar el JavaScript a "
-"les pàgines enviades per aquests dominis o servidors.</p><p>Trieu una "
-"política i useu els controls a la dreta per a modificar-la.</p>"
+"de la política predeterminada per tal d'habilitar o inhabilitar el "
+"JavaScript a les pàgines enviades per aquests dominis o servidors.</"
+"p><p>Trieu una política i useu els controls a la dreta per a modificar-la.</"
+"p>"
 
 #: jsopts.cpp:96
 #, kde-format
