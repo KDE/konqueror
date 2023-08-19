@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-17 00:46+0000\n"
-"PO-Revision-Date: 2023-08-17 21:00+0200\n"
+"PO-Revision-Date: 2023-08-18 18:06+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -720,6 +720,15 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Rechazar lo que se denomina cookies de terceros. Estas cookies se originan "
+"en un sitio diferente al que está navegando. Por ejemplo, si visita <b>www."
+"ejemplo.com</b> mientras esta opción está activada, solo se procesarán las "
+"cookies que se originen en www.ejemplo.com según su configuración. Las "
+"cookies de cualquier otro sitio serán rechazadas. Esto reduce las "
+"posibilidades de que los operadores del sitio compilen un perfil sobre sus "
+"hábitos de navegación diarios.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
@@ -739,6 +748,14 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
+"<p>\n"
+"Aceptar automáticamente cookies temporales que caducan al final de la sesión "
+"actual. Estas cookies no se almacenarán en el disco duro ni en ningún "
+"dispositivo de almacenamiento de su equipo. En lugar de ello, se eliminarán "
+"cuando cierre todas las aplicaciones (por ejemplo, su navegador) que las "
+"usan.</p><p><u>NOTA</u> Al marcar esta opción, se anulan las políticas de "
+"cookies predeterminadas y específicas del sitio para las cookies de sesión.</"
+"p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
@@ -799,15 +816,7 @@ msgstr "Recha&zar todas las cookies"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can set specific Java policies for any particular host or "
-#| "domain. To add a new policy, simply click the <i>New...</i> button and "
-#| "supply the necessary information requested by the dialog box. To change "
-#| "an existing policy, click on the <i>Change...</i> button and choose the "
-#| "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#| "button will remove the selected policy, causing the default policy "
-#| "setting to be used for that domain."
+#, kde-format
 msgid ""
 "<qt>\n"
 "To add a new policy, simply click on the <b>Add...</b> button and supply the "
@@ -818,13 +827,15 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
-"Aquí puede ajustar políticas específicas Java para cualquier dominio o "
-"máquina en particular. Para añadir una nueva política, simplemente pulse en "
-"el botón <i>Nuevo...</i> y suministre la información necesaria solicitada "
-"por el cuadro de diálogo. Para modificar una política existente, pulse en el "
-"botón <i>Cambiar...</i> y elija la nueva política del cuadro de diálogo de "
-"política. Pulsando el botón <i>Borrar</i>, la política elegida será "
-"suprimida y la configuración de política estándar se usará para este dominio."
+"<qt>\n"
+"Para añadir una nueva política, pulse el botón <b>Añadir...</b> e introduzca "
+"la información necesaria. Para cambiar una política existente, use el botón "
+"<b>Cambiar...</b> y escoja la nueva política en el diálogo de políticas. Si "
+"pulsa el botón <b>Borrar</b> se eliminará la política seleccionada, haciendo "
+"que se use la política predeterminada para este dominio, mientras que el "
+"botón <b>Borrar todas</b> eliminará todas las políticas específicas del "
+"sitio.\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
@@ -853,6 +864,11 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Lista de sitios para los que ha definido una política de cookies específica. "
+"Las políticas específicas tienen preferencia sobre la configuración de la "
+"política predeterminada para estos sitios.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
@@ -889,6 +905,10 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Introduzca la máquina o el dominio al que se aplica esta política (por "
+"ejemplo, <b>www.kde.org</b> o <b>.kde.org</b>.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
@@ -901,6 +921,8 @@ msgstr "Nombre del sitio:"
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
 msgstr ""
+"Introduzca la máquina o el nombre de dominio (como .kde.org) al que se "
+"aplica esta política."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -919,6 +941,18 @@ msgid ""
 "</ul>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Seleccione la política deseada:\n"
+"<ul>\n"
+"<li><b>Aceptar</b>: Permite que este sitio establezca cookies</li>\n"
+"<li><b>Aceptar hasta el final de la sesión</b>: Permite que este sitio "
+"establezca cookies, aunque caducarán al final de la sesión.</li>\n"
+"<li><b>Rechazar</b>: Declinar todas las cookies enviadas por este sitio</"
+"li>\n"
+"<li><b>Preguntar</b>: Preguntar cuando se reciban cookies de este sitio</"
+"li>\n"
+"</ul>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56

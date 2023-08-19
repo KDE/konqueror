@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-17 00:46+0000\n"
-"PO-Revision-Date: 2023-08-01 06:37+0200\n"
+"PO-Revision-Date: 2023-08-18 06:18+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -483,7 +483,7 @@ msgstr " მბ"
 #: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr ""
+msgstr "ქეშის საქაღალდის ხელით მითითება"
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:88
@@ -505,100 +505,95 @@ msgstr "ქეშის საქაღალდის მითითება"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search"
-msgstr "ძებნა:"
+msgstr "ძებნა"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:27
 #, kde-format
 msgid "Search interactively for domains and hosts"
-msgstr ""
+msgstr "დომენების და ჰოსტების ინტერაქტიული ძებნა"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:43
 #, kde-format
 msgid "Site"
-msgstr ""
+msgstr "საიტი"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:48
 #, kde-format
 msgid "Cookie Name"
-msgstr ""
+msgstr "ქუქის სახელი"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDelete)
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgid "D&elete"
 msgstr "&წაშლა"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
 #: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgid "Delete A&ll"
-msgstr "&წაშლა"
+msgstr "ყვე&ლაფრის წაშლა"
 
 #. i18n: ectx: property (text), widget (QPushButton, configPolicyButton)
 #: cookies/kcookiesmanagement.ui:70
 #, kde-format
 msgid "Configure &Policy..."
-msgstr ""
+msgstr "წესების მო&რგება..."
 
 #. i18n: ectx: property (text), widget (QPushButton, reloadButton)
 #: cookies/kcookiesmanagement.ui:77
 #, kde-format
 msgid "&Reload List"
-msgstr ""
+msgstr "სიის &თავიდან ჩატვირთვა"
 
 #. i18n: ectx: property (title), widget (QGroupBox, detailsGroupBox)
 #: cookies/kcookiesmanagement.ui:97
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "დეტალები"
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
 #: cookies/kcookiesmanagement.ui:106
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "სახელი"
+msgstr "სახელი:"
 
 #. i18n: ectx: property (text), widget (QLabel, valueLabel)
 #: cookies/kcookiesmanagement.ui:129
 #, kde-format
 msgid "Value:"
-msgstr ""
+msgstr "მნიშვნელობა:"
 
 #. i18n: ectx: property (text), widget (QLabel, domainLabel)
 #: cookies/kcookiesmanagement.ui:152
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain:"
-msgstr "ჰოსტი/დომენი"
+msgstr "დომენი:"
 
 #. i18n: ectx: property (text), widget (QLabel, patchLabel)
 #: cookies/kcookiesmanagement.ui:175
 #, kde-format
 msgid "Path:"
-msgstr ""
+msgstr "ბილიკი:"
 
 #. i18n: ectx: property (text), widget (QLabel, expiresLabel)
 #: cookies/kcookiesmanagement.ui:198
 #, kde-format
 msgid "Expires:"
-msgstr ""
+msgstr "იწურება:"
 
 #. i18n: ectx: property (text), widget (QLabel, secureLabel)
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
-msgstr ""
+msgstr "დაცული:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -611,13 +606,18 @@ msgid ""
 "unbrowsable.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"<p>ქუქიების ფაილების მხარდაჭერის ჩართვა. ჩვეულებრივ, სასურველია, ქუქიები "
+"ჩართული და თქვენს საჭიროებებზე მორგებული გქონდეთ.</p><p>\n"
+"გაითვალისწინეთ, რომ ქუქიებს მხარდაჭერის გამორთვის შემდეგ საიტების უმეტესობა "
+"მუშაობას უბრალოდ შეწყვეტს.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
-#, fuzzy, kde-format
-#| msgid "Enable filters"
+#, kde-format
 msgid "Enable coo&kies"
-msgstr "ფილტრების ჩართვა"
+msgstr "&ქუქიების ჩართვა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -632,12 +632,21 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"ე.წ. მესამე პირების ქუქიების უარყოფა. ეს ის ქუქიებია, რომლებიც მოდიან "
+"საიტიდან, რომლებიც თქვენს მიერ ამჟამად გახსნილ საიტს არ წარმოადგენს. მაგ. თუ "
+"გახსნით <b>www.foobar.com</b> როცა ეს პარამეტრი ჩართულია, მიიღებთ მხოლოდ "
+"ქუქიებს, რომლებიც www.foobar.com-დან მოდიან. ქუქიები, რომლებიც ნებისმიერი "
+"სხვა საიტიდან მოდიან, უარყოფილი იქნება. ეს ამცირებს შანსს, რომ საიტის "
+"ოპერატორებს თქვენი ყოველდღიური ინტერნეტში მუშაობის ჩვევების შესახებ "
+"ინფორმაცია ექნებთ.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
 #, kde-format
 msgid "Only acce&pt cookies from originating server"
-msgstr ""
+msgstr "&ქუქიების მხოლოდ საწყისი სერვერიდან მიღება"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:46
@@ -651,13 +660,18 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
+"<p>\n"
+"დროებითი ქუქიების, რომლებიც მიმდინარე სესიის ბოლოს იწურებიან, ავტომატური "
+"მიღება. ასეთი ქუქიები კომპიუტერში დამახსოვრებული არა. ისინი წაიშლება, როცა "
+"დახურავთ აპლიკაციას (ბრაუზერს), რომელიც მათ იყენებს.</p><p><u>შენიშვნა</u>ამ "
+"პარამეტრის ჩართვა გადაფარავს როგორც ნაგულისხმებ პარამეტრებს, ისე საიტისთვის "
+"მითითებულ ქუქიების პოლიტიკას.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
-#, fuzzy, kde-format
-#| msgid "A&utomatically load images"
+#, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr "გამოსახულებების &ავტომატური ჩატვირთვა"
+msgstr "&სესიის ქუქიების ავტომატური მიღება"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -679,38 +693,49 @@ msgid ""
 "precedence over the default policy.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"განსაზღვრავს, როგორ ვექცევით დაშორებული მანქანებიდან მიღებულ ქუქებს: \n"
+"<ul>\n"
+"<li><b>კითხვა</b> KDE ყოველთვის გკითხავთ, გნებავთ ქუქის დაყენება, თუ არა.</"
+"li>\n"
+"<li><b>მიღება</b> ქუქიებზე დათანხმება თქვენთვის კითხვის გარეშე.</li>\n"
+"<li><b>სესიის ბოლომდე დათანხმება</b> ქუქიების მიღების შესახებ არ გკითხავთ, "
+"მაგრამ სესიის ბოლოს ყველა ქუქი წაიშლება.</li>\n"
+"<li><b>უარყოფა</b> ყველა ქუქი უარყოფილი იქნება.</li>\n"
+"</ul><p>\n"
+"<u>NOTE:</u> Domain specific policies, which can be set below, always take "
+"precedence over the default policy.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
-#, fuzzy, kde-format
-#| msgid "Default encoding:"
+#, kde-format
 msgid "Default Policy"
-msgstr "ნაგულისხმები კოდირება:"
+msgstr "ნაგულისხმები პოლიტიკა"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
 #, kde-format
 msgid "Accep&t all cookies"
-msgstr ""
+msgstr "ყველა ქუქის მიღება"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr ""
+msgstr "ყველა ქუქის მიღება ამ სესიის ბოლომდე"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
-#, fuzzy, kde-format
-#| msgid "A&nimations:"
+#, kde-format
 msgid "Ask &for confirmation"
-msgstr "&ანიმაციები:"
+msgstr "&დადასტურების მოთხოვნა"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
 #: cookies/kcookiespolicies.ui:98
 #, kde-format
 msgid "Re&ject all cookies"
-msgstr ""
+msgstr "ყველა ქუქის უარყოფა"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
@@ -728,23 +753,21 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Site Policy"
-msgstr "წესები"
+msgstr "საიტის პოლიტიკა"
 
 #. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr ""
+msgstr "დომენების ინტერაქტიული ძებნა"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search..."
-msgstr "ძებნა:"
+msgstr "ძებნა..."
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -755,13 +778,16 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"საიტების სია, რომლებისთვისაც ქუქიების პოლიტიკა ხელით გაქვთ მითითებული. "
+"მითითებული პოლიტიკა ამ საიტებისთვის ნაგულისხმებ პოლიტიკას გადაფარავს.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain"
-msgstr "ჰოსტი/დომენი"
+msgstr "დომენი"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
@@ -792,18 +818,24 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"შეიყვანეთ ჰოსტი ან დომენი, რომელზედაც ეს პოლიტიკა ვრცელდება. მაგ: <b>www.kde."
+"org</b> ან <b>.kde.org</b>.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
 #, kde-format
 msgid "Site name:"
-msgstr ""
+msgstr "საიტის სახელი:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:38
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
 msgstr ""
+"შეიყვანეთ ჰოსტის ან დომენის სახელი (მაგ: .kde.org) , რომელზეც ეს წესი "
+"ვრცელდება."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -822,13 +854,24 @@ msgid ""
 "</ul>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"აირჩიეთ სასურველი პოლიტიკა:\n"
+"<ul>\n"
+"<li><b>მიღება</b> - ამ საიტისთვის ქუქიების დამახსოვრების უფლების მიცემა</"
+"li>\n"
+"<li><b>სესიის ბოლომდე მიღება</b> - საიტს ქუქიების დამახსოვრების უფლება "
+"სესიის დასრულებამდე ექნება.</li>\n"
+"<li><b>უარყოფა</b> - ამ საიტიდან ქუქიების უარყოფა</li>\n"
+"<li><b>კითხვა</b> - ყოველ ჯერზე, რამდენჯერაც ამ საიტიდან ქუქის მიიღებთ, "
+"ეკრანზე კითხვას გამოგიტანთ</li>\n"
+"</ul>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Policy:"
-msgstr "წესები"
+msgstr "პოლიტიკა:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
@@ -841,7 +884,7 @@ msgstr "დასტური"
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr ""
+msgstr "ყველა ქუქის მიღება ამ სესიის ბოლომდე"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
