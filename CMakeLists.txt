@@ -52,6 +52,12 @@ else()
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS GuiPrivate)
 endif()
 
+if (QT_MAJOR_VERSION STRLESS 6)
+    find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS X11Extras)
+else()
+    find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS GuiPrivate)
+endif()
+
 add_definitions(
     -DQT_USE_QSTRINGBUILDER
 )
