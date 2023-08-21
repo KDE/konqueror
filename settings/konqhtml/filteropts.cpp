@@ -8,7 +8,7 @@
 #include "filteropts.h"
 
 // Qt
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QTextStream>
 #include <QDBusConnection>
 #include <QDBusMessage>
@@ -271,13 +271,12 @@ void KCMFilter::importFilters()
                 if (!line.startsWith(QLatin1String("!"))) { //krazy:exclude=doublequote_chars
                     if (line.length() > 2 && line[0] == '/' && line[line.length() - 1] == '/') {
                         QString inside = line.mid(1, line.length() - 2);
-                        QRegExp rx(inside);
+                        QRegularExpression rx(inside);
                         if (!rx.isValid()) {
                             continue;
                         }
                     } else {
-                        QRegExp rx(line);
-                        rx.setPatternSyntax(QRegExp::Wildcard);
+                        QRegularExpression rx(QRegularExpression::wildcardToRegularExpression(line));
                         if (!rx.isValid()) {
                             continue;
                         }

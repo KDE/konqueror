@@ -23,6 +23,7 @@
 #include <QDesktopServices>
 #include <QGuiApplication>
 #include <QTimer>
+#include <QRegularExpression>
 
 #include <klocalizedstring.h>
 #include <kurlrequester.h>
@@ -593,8 +594,7 @@ void ArchiveDialog::finishArchive()
         // this does not apply.  However, do the rename anyway so that the
         // file naming is consistent regardless of what is being saved.
 
-        QRegExp rx("(?!^index)\\.html?$");		// a negative lookahead assertion!
-        rx.setCaseSensitivity(Qt::CaseInsensitive);
+        QRegularExpression rx(QStringLiteral("(?!^index)\\.html?$"), QRegularExpression::CaseInsensitiveOption);		// a negative lookahead assertion!
         QString indexHtml;				// the index file found
 
         // This listing can simply use QDir::entryList() because only the

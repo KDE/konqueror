@@ -11,7 +11,7 @@
 #define WEBENGNINE_FILTER_H
 
 #include <QString>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QVector>
 #include <webenginepart.h>
 
@@ -36,7 +36,7 @@ public:
     void clear();
 
 private:
-    QVector<QRegExp> reFilters;
+    QVector<QRegularExpression> reFilters;
     StringsMatcher* stringFiltersMatcher;
 };
 

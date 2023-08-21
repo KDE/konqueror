@@ -16,7 +16,6 @@
 #include <QApplication>
 #include <QDebug>
 #include <QPainter>
-#include <QRegExp>
 #include <QStyle>
 #include <QShowEvent>
 #include <QToolTip>

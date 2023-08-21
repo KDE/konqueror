@@ -115,7 +115,8 @@ public:
                             int remStart = k - 7 + flen;
                             QString remainder = QString::fromRawData(str.unicode() + remStart,
                                                                     str.length() - remStart);
-                            if (reFilters[index].exactMatch(remainder)) {
+                            QRegularExpression exactMatchRegexp = QRegularExpression(QRegularExpression::anchoredPattern(reFilters[index].pattern()));
+                            if (exactMatchRegexp.match(remainder).hasMatch()) {
                                 if (by != nullptr) *by = rePrefixes[index]+reFilters[index].pattern();
                                 return true;
                             }
@@ -129,7 +130,7 @@ public:
     }
 
     // add filter to matching set with wildcards (*,?) in it
-    void addWildedString(const QString& prefix, const QRegExp& rx)
+    void addWildedString(const QString& prefix, const QRegularExpression& rx)
     {
         rePrefixes.append(prefix);
         reFilters.append(rx);
@@ -165,7 +166,7 @@ public:
 private:
     QVector<QString> stringFilters;
     QVector<QString> shortStringFilters;
-    QVector<QRegExp> reFilters;
+    QVector<QRegularExpression> reFilters;
     QVector<QString> rePrefixes;
     QBitArray fastLookUp;
 
@@ -174,29 +175,19 @@ private:
 
 
 // We only want a subset of features of wildcards -- just the 
-// star, so we escape the rest before passing to QRegExp. 
-// The \ is escaped due to a QRegExp bug.
-// ### we really should rather parse it ourselves, in order to 
-// handle adblock-special things like | and ^ properly.
-static QRegExp fromAdBlockWildcard(const QString& wcStr) {
-    QRegExp rx;
-    rx.setPatternSyntax(QRegExp::Wildcard);
-
-    QString out;
-    for (int p = 0; p < wcStr.length(); ++p) {
-        QChar c = wcStr[p];
-        if (c == QLatin1Char('?'))
-            out += QLatin1String("[?]");
-        else if (c == QLatin1Char('['))
-            out += QLatin1String("[[]");
-        else if (c == QLatin1Char('\\'))
-            out += QLatin1String("[\\]");
-        else
-            out += c;
+// star, so we can't use QRegularExpression::wildcardToRegularExpression
+static QRegularExpression fromAdBlockWildcard(const QString& wcStr) {
+    QString pattern;
+    for (const QChar &c : wcStr) {
+        if (c == QLatin1Char('*')) {
+            pattern.append(QLatin1String(".*"));
+        } else if (c == QLatin1Char('?') || c == QLatin1Char('[') || c == QLatin1Char(']')) {
+            pattern.append(QLatin1String("\\") + c);
+        } else {
+            pattern.append(c);
+        }
     }
-
-    rx.setPattern(out);
-    return rx;
+    return QRegularExpression(pattern);
 }
 
 FilterSet::FilterSet()
@@ -241,7 +232,7 @@ void FilterSet::addFilter(const QString& filterStr)
     if (filter.length()>2 && filter.startsWith(QLatin1Char('/')) && filter.endsWith(QLatin1Char('/')))
     {
         QString inside = filter.mid(1, filter.length()-2);
-        QRegExp rx(inside);
+        QRegularExpression rx(inside);
         reFilters.append(rx);
 //         qCDebug(WEBENGINEPART_LOG) << "R:" << inside;
     }
@@ -273,11 +264,11 @@ void FilterSet::addFilter(const QString& filterStr)
             if (aPos < 0)
                 aPos = filter.length();
             if (aPos > 7) {
-                QRegExp rx = fromAdBlockWildcard(filter.mid(aPos) + QLatin1Char('*'));
+                QRegularExpression rx = fromAdBlockWildcard(filter.mid(aPos) + QLatin1Char('*'));
                 // We pad the final r.e. with * so we can check for an exact match
                 stringFiltersMatcher->addWildedString(filter.mid(0, aPos), rx);
             } else {
-                QRegExp rx = fromAdBlockWildcard(filter);
+                QRegularExpression rx = fromAdBlockWildcard(filter);
                 reFilters.append(rx);
             }
         }

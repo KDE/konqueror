@@ -10,7 +10,6 @@
 #include <sys/utsname.h>
 
 #include <QMenu>
-#include <QRegExp>
 #include <QWebEngineProfile>
 #include <QApplication>
 #include <QMetaObject>
