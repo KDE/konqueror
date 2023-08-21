@@ -283,7 +283,7 @@ QDebug operator<<(QDebug deb, const WebEnginePartCookieJar6::CookieIdentifier& i
     return deb;
 }
 
-uint qHash(const QNetworkCookie& cookie, uint seed)
+qHashReturnType qHash(const QNetworkCookie& cookie, uint seed)
 {
     return qHash(QStringList{cookie.name(), cookie.domain(), cookie.path()}, seed);
 }

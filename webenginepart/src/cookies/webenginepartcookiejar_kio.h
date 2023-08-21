@@ -9,6 +9,8 @@
 #ifndef WEBENGINEPARTCOOKIEJAR_KIO_H
 #define WEBENGINEPARTCOOKIEJAR_KIO_H
 
+#include "qtwebengine6compat.h"
+
 #include <QObject>
 #include <QNetworkCookie>
 #include <QHash>
@@ -299,7 +301,7 @@ private:
     * @param seed: the seed
     * @return The hash value of the identifier
     */
-    friend uint qHash(const CookieIdentifier &id, uint seed){return qHash(QStringList{id.name, id.domain, id.path}, seed);};
+    friend qHashReturnType qHash(const CookieIdentifier &id, uint seed){return qHash(QStringList{id.name, id.domain, id.path}, seed);};
     
     /**
     * @brief A list of cookies which were added to the `QWebEngineCookieStore` but were rejected by KCookieJar and must

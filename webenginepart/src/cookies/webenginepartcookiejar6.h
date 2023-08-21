@@ -10,6 +10,7 @@
 #define WEBENGINEPARTCOOKIEJAR_H
 
 #include "interfaces/cookiejar.h"
+#include "qtwebengine6compat.h"
 
 #include <QObject>
 #include <QNetworkCookie>
@@ -266,7 +267,7 @@ private:
     * @param seed: the seed
     * @return The hash value of the identifier
     */
-    friend uint qHash(const CookieIdentifier &id, uint seed){return qHash(QStringList{id.name, id.domain, id.path}, seed);};
+    friend qHashReturnType qHash(const CookieIdentifier &id, uint seed){return qHash(QStringList{id.name, id.domain, id.path}, seed);};
     
     /**
      * @brief The cookies stored in #m_cookieStore
@@ -308,7 +309,7 @@ private:
 * @param seed: the seed
 * @return The hash value of the cookie
 */
-uint qHash(const QNetworkCookie &cookie, uint seed);
+qHashReturnType qHash(const QNetworkCookie &cookie, uint seed);
 
 /**
 * @brief Overload of operator `<<` to allow a WebEnginePartCookieJar6::CookieIdentifier to be written to a `QDebug`

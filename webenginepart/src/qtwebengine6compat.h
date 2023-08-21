@@ -9,9 +9,13 @@
 #include <QWebEngineContextMenuData>
 typedef QWebEngineDownloadItem QWebEngineDownloadRequest;
 typedef QWebEngineContextMenuData QWebEngineContextMenuRequest;
+typedef uint qHashReturnType;
 #else
 #include <QWebEngineDownloadRequest>
 #include <QWebEngineContextMenuRequest>
+
+//TODO: when dropping support for Qt5, change the return type of the various qHash functions from qHashReturnType to size_t
+typedef size_t qHashReturnType;
 #endif
 
 #endif //QTWEBENGINE6COMPAT_H
