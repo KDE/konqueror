@@ -41,10 +41,16 @@ include(FeatureSummary)
 set(KONQUEROR_LIB_VERSION "${RELEASE_SERVICE_VERSION}")
 set(KONQUEROR_VERSION "${KONQUEROR_LIB_VERSION}")
 
-find_package(Qt${KF_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets WebEngineWidgets X11Extras)
+find_package(Qt${KF_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets WebEngineWidgets)
 find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Parts KCMUtils Archive Crash WindowSystem Init IconThemes DBusAddons GuiAddons)
 
 find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} COMPONENTS Activities DocTools) # Optional
+
+if (QT_MAJOR_VERSION STRLESS 6)
+    find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS X11Extras)
+else()
+    find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS GuiPrivate)
+endif()
 
 add_definitions(
     -DQT_USE_QSTRINGBUILDER

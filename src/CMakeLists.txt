@@ -31,10 +31,17 @@ target_link_libraries(konquerorprivate
    KF${KF_MAJOR_VERSION}::Konq
    KF${KF_MAJOR_VERSION}::Parts
    KF${KF_MAJOR_VERSION}::KIOGui
-   Qt${KF_MAJOR_VERSION}::X11Extras
 )
 
 set_target_properties(konquerorprivate PROPERTIES VERSION ${KONQUEROR_LIB_VERSION} SOVERSION "${KF_MAJOR_VERSION}" )
+
+if (QT_MAJOR_VERSION STRLESS "6")
+   target_link_libraries(konquerorprivate Qt5::X11Extras)
+else()
+   target_link_libraries(konquerorprivate Qt${KF_MAJOR_VERSION}::GuiPrivate)
+endif()
+
+set_target_properties(konquerorprivate PROPERTIES VERSION ${KONQUEROR_LIB_VERSION} SOVERSION "5" )
 install(TARGETS konquerorprivate ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
 
 generate_export_header(konquerorprivate BASE_NAME konquerorprivate EXPORT_FILE_NAME konquerorprivate_export.h)

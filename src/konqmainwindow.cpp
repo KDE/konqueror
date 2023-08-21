@@ -79,8 +79,14 @@
 #include <QClipboard>
 #include <QStackedWidget>
 #include <QFileInfo>
-#include <QX11Info>
 #include <QEvent>
+
+#if QT_VERSION_MAJOR < 6
+#include <QX11Info>
+#else
+#include <QtGui/private/qtx11extras_p.h>
+#endif
+
 #include <QKeyEvent>
 #include <QByteRef>
 #include <QPixmap>

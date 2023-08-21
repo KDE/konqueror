@@ -21,7 +21,12 @@
 #include <KStartupInfo>
 
 #include <QFile>
+
+#if QT_VERSION_MAJOR < 6
 #include <QX11Info>
+#else
+#include <QtGui/private/qtx11extras_p.h>
+#endif
 
 #ifdef KActivities_FOUND
 #include <KActivities/Consumer>

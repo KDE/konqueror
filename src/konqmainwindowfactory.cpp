@@ -15,7 +15,13 @@
 #include <KWindowInfo>
 #include <KStartupInfo>
 #include <QTimer>
+
+#if QT_VERSION_MAJOR < 6
 #include <QX11Info>
+#else
+#include <QtGui/private/qtx11extras_p.h>
+#endif
+
 #include <KWindowSystem>
 
 // Terminates fullscreen-mode for any full-screen window on the current desktop

@@ -33,7 +33,12 @@
 #include <QProcess>
 #include <QDirIterator>
 #include <QTextStream>
+
+#if QT_VERSION_MAJOR < 6
 #include <QX11Info>
+#else
+#include <QtGui/private/qtx11extras_p.h>
+#endif
 
 #include <KCrash>
 #include <KLocalizedString>
