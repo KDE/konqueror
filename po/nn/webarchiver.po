@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"POT-Creation-Date: 2023-08-17 00:46+0000\n"
 "PO-Revision-Date: 2021-02-09 19:05+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -29,74 +29,69 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "karl@huftis.org"
 
-#: app/archivedialog.cpp:76
-#, kde-format
-msgid "Untitled"
-msgstr "Namnlaus"
-
-#: app/archivedialog.cpp:92
+#: app/archivedialog.cpp:81
 #, kde-format
 msgid "Create Archive"
 msgstr "Lag nytt arkiv"
 
-#: app/archivedialog.cpp:108
+#: app/archivedialog.cpp:97
 #, kde-format
 msgid "The URL of the page that is to be archived"
 msgstr "Adressa til sida du vil arkivera"
 
-#: app/archivedialog.cpp:111
+#: app/archivedialog.cpp:100
 #, kde-format
 msgid "Source &URL:"
 msgstr "&Kjeldeadresse:"
 
-#: app/archivedialog.cpp:120
+#: app/archivedialog.cpp:109
 #, kde-format
 msgid "Web archive (*.war)"
 msgstr "Vevarkiv (*.war)"
 
-#: app/archivedialog.cpp:121
+#: app/archivedialog.cpp:110
 #, kde-format
 msgid "Tar archive (*.tar)"
 msgstr "Tar-arkiv (*.tar)"
 
-#: app/archivedialog.cpp:122
+#: app/archivedialog.cpp:111
 #, kde-format
 msgid "Zip archive (*.zip)"
 msgstr "Zip-arkiv (*.zip)"
 
-#: app/archivedialog.cpp:123
+#: app/archivedialog.cpp:112
 #, kde-format
 msgid "Directory"
 msgstr "Mappe"
 
-#: app/archivedialog.cpp:128
+#: app/archivedialog.cpp:117
 #, kde-format
 msgid "The file or directory where the archived page will be saved"
 msgstr "Fila eller mappa som arkivfila skal lagrast til"
 
-#: app/archivedialog.cpp:129
+#: app/archivedialog.cpp:118
 #, kde-format
 msgid "&Save to:"
 msgstr "&Lagra til:"
 
-#: app/archivedialog.cpp:131
+#: app/archivedialog.cpp:120
 #, kde-format
 msgid "Options"
 msgstr "Val"
 
-#: app/archivedialog.cpp:141
+#: app/archivedialog.cpp:130
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
 msgstr[0] " sekund"
 msgstr[1] " sekund"
 
-#: app/archivedialog.cpp:142
+#: app/archivedialog.cpp:131
 #, kde-format
 msgid "None"
 msgstr "Ingen"
 
-#: app/archivedialog.cpp:212
+#: app/archivedialog.cpp:201
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -106,25 +101,25 @@ msgstr ""
 "Vevarkiv-nedlastinga kan ikkje bruka dei gjeldande innstillingane for "
 "mellomtenar. Ingen mellomtenar vert brukt."
 
-#: app/archivedialog.cpp:351
+#: app/archivedialog.cpp:340
 #, kde-format
 msgctxt "@info"
 msgid "The save location is not valid."
 msgstr "Lagringsadressa er ikkje gyldig."
 
-#: app/archivedialog.cpp:371
+#: app/archivedialog.cpp:360
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
 msgstr "Fann ikkje wget(1)-kommandoen.<nl/>Sjå <link>%1</link>."
 
-#: app/archivedialog.cpp:393
+#: app/archivedialog.cpp:382
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
 msgstr "Kan ikkje stadfesta målfila<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:410
+#: app/archivedialog.cpp:399
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -132,13 +127,13 @@ msgid ""
 "file."
 msgstr "Arkivmappa<nl/><filename>%1</filename><nl/>finst frå før som ei fil."
 
-#: app/archivedialog.cpp:411
+#: app/archivedialog.cpp:400
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
 msgstr "Arkivmappa<nl/><filename>%1</filename><nl/>finst frå før."
 
-#: app/archivedialog.cpp:415
+#: app/archivedialog.cpp:404
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -146,43 +141,43 @@ msgid ""
 "directory."
 msgstr "Arkivfila<nl/><filename>%1</filename><nl/>finst frå før som ei mappe."
 
-#: app/archivedialog.cpp:416
+#: app/archivedialog.cpp:405
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
 msgstr "Arkivfila<nl/><filename>%1</filename><nl/>finst frå før."
 
-#: app/archivedialog.cpp:420
+#: app/archivedialog.cpp:409
 #, kde-format
 msgid "Archive Already Exists"
 msgstr "Arkivet finst frå før"
 
-#: app/archivedialog.cpp:450
+#: app/archivedialog.cpp:439
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
 msgstr ""
 "Kan ikkje sletta det opphavlege arkivet<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:467
+#: app/archivedialog.cpp:456
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
 msgstr "Kan ikkje oppretta mellombels mappe<nl/><filename>%1</filename><nl/>"
 
-#: app/archivedialog.cpp:539
+#: app/archivedialog.cpp:528
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot start the archiver process <filename>%1</filename>"
 msgstr "Kan ikkje starta arkivprosessen <filename>%1</filename>"
 
-#: app/archivedialog.cpp:555
+#: app/archivedialog.cpp:544
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The download process was interrupted."
 msgstr "Nedlastinga vart avbroten."
 
-#: app/archivedialog.cpp:556
+#: app/archivedialog.cpp:545
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -192,7 +187,7 @@ msgstr ""
 "<para>Nedlastingsprosessen <filename>%1</filename> gav feilsignalet %2.</"
 "para>"
 
-#: app/archivedialog.cpp:561
+#: app/archivedialog.cpp:550
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -202,7 +197,7 @@ msgstr ""
 "<para>Nedlastingsprosessen <filename>%1</filename> gav feilstatusen %2.</"
 "para>"
 
-#: app/archivedialog.cpp:565
+#: app/archivedialog.cpp:554
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -212,41 +207,41 @@ msgstr ""
 "<para>Dette kan skuldast ei 404-feilmelding for nokre av elementa på sida.</"
 "para>"
 
-#: app/archivedialog.cpp:571
+#: app/archivedialog.cpp:560
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
 msgstr "<para>Ta vare på delvis vevarkiv?</para>"
 
-#: app/archivedialog.cpp:572
+#: app/archivedialog.cpp:561
 #, kde-format
 msgid "Retain Archive?"
 msgstr "Ta vare på arkivet?"
 
-#: app/archivedialog.cpp:573
+#: app/archivedialog.cpp:562
 #, kde-format
 msgid "Retain"
 msgstr "Ta vere på det"
 
-#: app/archivedialog.cpp:577
+#: app/archivedialog.cpp:566
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."
 msgstr "Klarte ikkje oppretta nytt vevarkiv."
 
-#: app/archivedialog.cpp:721
+#: app/archivedialog.cpp:710
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
 msgstr "Kan ikkje kopiera arkivet til<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:751
+#: app/archivedialog.cpp:740
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
 msgstr "Kan ikkje endra løyve på<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:759
+#: app/archivedialog.cpp:748
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"

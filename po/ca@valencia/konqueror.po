@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-17 00:46+0000\n"
-"PO-Revision-Date: 2023-04-25 10:14+0200\n"
+"PO-Revision-Date: 2023-08-17 13:28+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 23.04.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -57,10 +57,9 @@ msgid "Web browser, file manager and document viewer."
 msgstr "Navegador web, gestor de fitxers i visor de documents."
 
 #: src/konqapplication.cpp:154
-#, fuzzy, kde-format
-#| msgid "(C) 1999-2016, The Konqueror developers"
+#, kde-format
 msgid "(C) 1999-2023, The Konqueror developers"
-msgstr "(C) 1999-2016, Els desenvolupadors de Konqueror"
+msgstr "(C) 1999-2023, Els desenvolupadors de Konqueror"
 
 #: src/konqapplication.cpp:157
 #, kde-format
@@ -390,12 +389,12 @@ msgstr "Eduardo Robles Elvira"
 #: src/konqapplication.cpp:195
 #, kde-format
 msgid "Matthias Kalle Dalheimer"
-msgstr ""
+msgstr "Matthias Kalle Dalheimer"
 
 #: src/konqapplication.cpp:196
 #, kde-format
 msgid "Daniel Molkentin"
-msgstr ""
+msgstr "Daniel Molkentin"
 
 #: src/konqapplication.cpp:197
 #, kde-format
@@ -403,6 +402,8 @@ msgid ""
 "JavaScript access controls\n"
 "Per-domain policies extensions"
 msgstr ""
+"Controls d'accés de JavaScript\n"
+"Mitjançant polítiques sobre les extensions de domini"
 
 #: src/konqapplication.cpp:208
 #, kde-format
@@ -446,7 +447,7 @@ msgstr "sessió"
 #, kde-format
 msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
 msgstr ""
-"Tipus MIME que s'ha d'utilitzar per a este URL, (p. ex. text/html o inode/"
+"Tipus MIME que s'ha d'utilitzar per a este URL, (p. ex., text/html o inode/"
 "directory)"
 
 #: src/konqapplication.cpp:213
@@ -457,7 +458,7 @@ msgstr "tipus MIME"
 #: src/konqapplication.cpp:214
 #, kde-format
 msgid "Part to use (e.g. khtml or kwebkitpart)"
-msgstr "Part que s'ha d'utilitzar (p. ex. khtml o kwebkitpart)"
+msgstr "Part que s'ha d'utilitzar (p. ex., khtml o kwebkitpart)"
 
 #: src/konqapplication.cpp:214
 #, kde-format
