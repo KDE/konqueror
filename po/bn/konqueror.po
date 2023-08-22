@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:46+0000\n"
+"POT-Creation-Date: 2023-08-22 00:46+0000\n"
 "PO-Revision-Date: 2008-12-26 23:24-0800\n"
 "Last-Translator: Deepayan Sarkar <deepayan.sarkar@gmail.com>\n"
 "Language-Team: en_US <kde-translation@bengalinux.org>\n"
@@ -489,14 +489,14 @@ msgstr ""
 msgid "Location to open"
 msgstr "যে অবস্থান খোলা হবে"
 
-#: src/konqapplication.cpp:331
+#: src/konqapplication.cpp:328
 #, fuzzy, kde-format
 #| msgid "Session to open"
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
 msgstr "যে সেশন খোলা হবে"
 
-#: src/konqapplication.cpp:456
+#: src/konqapplication.cpp:453
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
@@ -566,7 +566,7 @@ msgstr "স্থগিত"
 msgid "Preview &in %1"
 msgstr "%1 ব্যবহার &করে প্রাকদর্শন করো"
 
-#: src/konqguiclients.cpp:121
+#: src/konqguiclients.cpp:123
 #, kde-format
 msgid "Show %1"
 msgstr "%1 দেখাও"
@@ -1494,7 +1494,7 @@ msgstr ""
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5568
+#: src/konqmainwindow.cpp:5575
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
