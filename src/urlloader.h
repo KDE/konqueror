@@ -14,6 +14,7 @@
 
 #include <QObject>
 #include <QUrl>
+#include <QPointer>
 
 #include <KService>
 #include <KJob>
@@ -147,7 +148,13 @@ public:
     QString oldLocationBarUrl() const {return m_oldLocationBarUrl;}
     bool hasError() const {return m_jobErrorCode;}
     void setNewTab(bool newTab);
-    static bool isExecutable(const QString &mimeType);
+
+    /**
+     * @brief whether a given mimetype refers to an executable program instead of a data file
+     * @param mimeTypeName the mimetype to test
+     * @return `true` if @p mimeTypeName refers to an executable and `false` otherwise
+     */
+    static bool isExecutable(const QString &mimeTypeName);
     QString suggestedFileName() const {return m_request.suggestedFileName;}
 
     /**

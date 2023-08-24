@@ -11,7 +11,7 @@
 
 #include <QStringList>
 
-#include <kparts/browserextension.h>
+#include "kf5compat.h" //For NavigationExtension
 
 namespace KParts {
     class ReadOnlyPart;

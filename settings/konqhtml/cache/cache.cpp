@@ -16,11 +16,11 @@
 
 int constexpr conversionFactor = 1000000;
 
-Cache::Cache(QWidget* parent, const QVariantList& ): KCModule(parent),
+Cache::Cache(QObject *parent, const KPluginMetaData &md, const QVariantList &): KCModule(parent, md),
     m_ui(new Ui::Cache),
     m_config(KSharedConfig::openConfig(QString(), KConfig::NoGlobals))
 {
-    m_ui->setupUi(this);
+    m_ui->setupUi(widget());
     connect(m_ui->memoryCache, &QCheckBox::toggled, this, &Cache::toggleMemoryCache);
     connect(m_ui->cacheSize, QOverload<int>::of(&QSpinBox::valueChanged), this, [this](int){markAsChanged();});
     auto changedBoolArg = [this](bool){markAsChanged();};
@@ -41,7 +41,7 @@ void Cache::defaults()
     m_ui->cacheSize->setValue(0);
     m_ui->useCustomCacheDir->setChecked(false);
     m_ui->customCacheDir->setUrl(QUrl());
-    emit changed(true);
+    setNeedsSave(true);
 }
 
 void Cache::load()
@@ -56,7 +56,7 @@ void Cache::load()
     QString path = grp.readEntry("CustomCacheDir", QString());
     m_ui->useCustomCacheDir->setChecked(!path.isEmpty());
     m_ui->customCacheDir->setUrl(QUrl::fromLocalFile(path));
-    emit changed(false);
+    setNeedsSave(false);
 }
 
 void Cache::save()
@@ -74,7 +74,7 @@ void Cache::save()
     QDBusMessage message =
         QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
-    emit changed(false);
+    setNeedsSave(false);
 }
 
 void Cache::toggleMemoryCache(bool on)

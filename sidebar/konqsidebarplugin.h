@@ -11,7 +11,18 @@
 #include <QWidget>
 
 #include <kparts/part.h>
-#include <kparts/browserextension.h>
+
+//We don't use kf5compat.h to avoid linking with libkonq
+//TODO KF6: when removing compatibility with KF5, remove #if
+#include <QtGlobal>
+#if QT_VERSION_MAJOR < 6
+#include <KParts/BrowserExtension>
+namespace KParts {
+  typedef BrowserExtension NavigationExtension;
+}
+#else
+#include <KParts/NavigationExtension>
+#endif
 #include <kio/job.h>
 #include <kfileitem.h>
 
@@ -48,7 +59,7 @@ public:
 
     /**
      * Enable/disable a standard konqueror action (cut, copy, paste, print)
-     * See KParts::BrowserExtension::enableAction
+     * See KParts::NavigationExtension::enableAction
      */
     void enableCopy(bool enabled);
     void enableCut(bool enabled);
@@ -60,8 +71,8 @@ public:
     void showPopupMenu(const QPoint &global, const KFileItemList &items,
                        const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
                        const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
-                       KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems,
-                       const KParts::BrowserExtension::ActionGroupMap &actionGroups = KParts::BrowserExtension::ActionGroupMap());
+                       KParts::NavigationExtension::PopupFlags flags = KParts::NavigationExtension::DefaultPopupItems,
+                       const KParts::NavigationExtension::ActionGroupMap &actionGroups = KParts::NavigationExtension::ActionGroupMap());
 
 protected:
     /**
@@ -109,8 +120,8 @@ Q_SIGNALS:
                    const QPoint &global, const KFileItemList &items,
                    const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
                    const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
-                   KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems,
-                   const KParts::BrowserExtension::ActionGroupMap &actionGroups = KParts::BrowserExtension::ActionGroupMap());
+                   KParts::NavigationExtension::PopupFlags flags = KParts::NavigationExtension::DefaultPopupItems,
+                   const KParts::NavigationExtension::ActionGroupMap &actionGroups = KParts::NavigationExtension::ActionGroupMap());
 
     // TODO
     void submitFormRequest(const char *, const QString &, const QByteArray &, const QString &, const QString &, const QString &);

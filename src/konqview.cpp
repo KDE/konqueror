@@ -31,7 +31,6 @@
 
 #include <QApplication>
 #include <QArgument>
-#include <QByteRef>
 #include <QFile>
 #include <QDropEvent>
 #include <QDBusConnection>
@@ -49,7 +48,7 @@
 #include <KParts/BrowserArguments>
 #include <KParts/OpenUrlEvent>
 #include <KParts/OpenUrlArguments>
-#include <KParts/BrowserExtension>
+#include "kf5compat.h" //For NavigationExtension
 #include <KParts/WindowArgs>
 #include <QMimeDatabase>
 
@@ -146,7 +145,7 @@ void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
         args = m_pPart->arguments();
     }
 
-    KParts::BrowserExtension *ext = browserExtension();
+    KParts::NavigationExtension *ext = browserExtension();
     KParts::BrowserArguments browserArgs;
     if (ext) {
         browserArgs = ext->browserArguments();
@@ -400,14 +399,14 @@ void KonqView::connectPart()
         }
     }
 
-    KParts::BrowserExtension *ext = browserExtension();
+    KParts::NavigationExtension *ext = browserExtension();
 
     if (ext) {
         
         KonqBrowserWindowInterface *bi = new KonqBrowserWindowInterface(mainWindow(), m_pPart);
         ext->setBrowserInterface(bi);
         
-        connect(ext, &KParts::BrowserExtension::openUrlRequestDelayed, ext,
+        connect(ext, &KParts::NavigationExtension::openUrlRequestDelayed, ext,
                 [ext, this](const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs){
                     KonqOpenURLRequest req(args, bargs, qobject_cast<KParts::ReadOnlyPart*>(ext->parent()));
                     m_pMainWindow->slotOpenURLRequest(url, req);
@@ -464,7 +463,7 @@ void KonqView::connectPart()
                 this, SLOT(slotRequestFocus(KParts::ReadOnlyPart*)));
 
         if (service().pluginId() != QLatin1String("konq_sidebartng")) {
-            connect(ext, &KParts::BrowserExtension::infoMessage, m_pKonqFrame->statusbar(), &KonqFrameStatusBar::message);
+            connect(ext, &KParts::NavigationExtension::infoMessage, m_pKonqFrame->statusbar(), &KonqFrameStatusBar::message);
 
             //Must use this form of connect because slotAddWebSideBar is private
             connect(ext, SIGNAL(addWebSideBar(QUrl,QString)), m_pMainWindow, SLOT(slotAddWebSideBar(QUrl,QString)));
@@ -1035,7 +1034,7 @@ void KonqView::setPartMimeType()
 
 bool KonqView::callExtensionMethod(const char *methodName)
 {
-    QObject *obj = KParts::BrowserExtension::childObject(m_pPart);
+    QObject *obj = KParts::NavigationExtension::childObject(m_pPart);
     if (!obj) { // not all views have a browser extension !
         return false;
     }
@@ -1045,7 +1044,7 @@ bool KonqView::callExtensionMethod(const char *methodName)
 
 bool KonqView::callExtensionBoolMethod(const char *methodName, bool value)
 {
-    QObject *obj = KParts::BrowserExtension::childObject(m_pPart);
+    QObject *obj = KParts::NavigationExtension::childObject(m_pPart);
     if (!obj) { // not all views have a browser extension !
         return false;
     }
@@ -1055,7 +1054,7 @@ bool KonqView::callExtensionBoolMethod(const char *methodName, bool value)
 
 bool KonqView::callExtensionURLMethod(const char *methodName, const QUrl &value)
 {
-    QObject *obj = KParts::BrowserExtension::childObject(m_pPart);
+    QObject *obj = KParts::NavigationExtension::childObject(m_pPart);
     if (!obj) { // not all views have a browser extension !
         return false;
     }
@@ -1080,7 +1079,7 @@ void KonqView::enablePopupMenu(bool b)
 {
     Q_ASSERT(m_pMainWindow);
 
-    KParts::BrowserExtension *ext = browserExtension();
+    KParts::NavigationExtension *ext = browserExtension();
 
     if (!ext) {
         return;
@@ -1090,23 +1089,24 @@ void KonqView::enablePopupMenu(bool b)
         return;
     }
 
-    // enable context popup
-    if (b) {
+    //Store signal and slot overloads in variable so that they can be reused in both branches
+    using namespace KParts;
+    auto sigOverloadFileItem = QOverload<const QPoint&, const KFileItemList&, const OpenUrlArguments &, const BrowserArguments&,
+        NavigationExtension::PopupFlags, const NavigationExtension::ActionGroupMap&>::of(&NavigationExtension::popupMenu);
+    auto slotOverloadFileItem = QOverload<const QPoint&, const KFileItemList&, const OpenUrlArguments &, const BrowserArguments&,
+        NavigationExtension::PopupFlags, const NavigationExtension::ActionGroupMap&>::of(&KonqMainWindow::slotPopupMenu);
+    auto sigOverloadUrl = QOverload<const QPoint&, const QUrl&, mode_t, const OpenUrlArguments& , const BrowserArguments& ,
+        NavigationExtension::PopupFlags, const NavigationExtension::ActionGroupMap&>::of(&NavigationExtension::popupMenu);
+    auto slotOverloadUrl = QOverload<const QPoint&, const QUrl&, mode_t, const OpenUrlArguments& , const BrowserArguments& ,
+        NavigationExtension::PopupFlags, const NavigationExtension::ActionGroupMap&>::of(&KonqMainWindow::slotPopupMenu);
+    if (b) { // enable context popup
         m_bPopupMenuEnabled = true;
-
-        connect(ext, SIGNAL(popupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
-                m_pMainWindow, SLOT(slotPopupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)));
-
-        connect(ext, SIGNAL(popupMenu(QPoint,QUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
-                m_pMainWindow, SLOT(slotPopupMenu(QPoint,QUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)));
+        connect(ext,sigOverloadFileItem, m_pMainWindow, slotOverloadFileItem);
+        connect(ext, sigOverloadUrl, m_pMainWindow, slotOverloadUrl);
     } else { // disable context popup
         m_bPopupMenuEnabled = false;
-
-        disconnect(ext, SIGNAL(popupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
-                   m_pMainWindow, SLOT(slotPopupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)));
-
-        disconnect(ext, SIGNAL(popupMenu(QPoint,QUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
-                   m_pMainWindow, SLOT(slotPopupMenu(QPoint,QUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)));
+        disconnect(ext,sigOverloadFileItem, m_pMainWindow, slotOverloadFileItem);
+        disconnect(ext, sigOverloadUrl, m_pMainWindow, slotOverloadUrl);
     }
 }
 
@@ -1171,7 +1171,7 @@ bool KonqView::eventFilter(QObject *obj, QEvent *e)
         const QMimeData *mimeData = ev->mimeData();
 
         QList<QUrl> lstDragURLs = KUrlMimeData::urlsFromMimeData(mimeData);
-        KParts::BrowserExtension *ext = browserExtension();
+        KParts::NavigationExtension *ext = browserExtension();
         if (!lstDragURLs.isEmpty() && ext && lstDragURLs.first().isValid()) {
             emit ext->openUrlRequest(lstDragURLs.first());    // this will call m_pMainWindow::slotOpenURLRequest delayed
         }
@@ -1216,9 +1216,9 @@ bool KonqView::prepareReload(KParts::OpenUrlArguments &args, KParts::BrowserArgu
     return true;
 }
 
-KParts::BrowserExtension *KonqView::browserExtension() const
+KParts::NavigationExtension *KonqView::browserExtension() const
 {
-    return m_pPart ? KParts::BrowserExtension::childObject(m_pPart) : nullptr;
+    return m_pPart ? KParts::NavigationExtension::childObject(m_pPart) : nullptr;
 }
 
 KParts::StatusBarExtension *KonqView::statusBarExtension() const

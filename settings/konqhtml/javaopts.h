@@ -90,6 +90,10 @@ public:
 
     bool _removeJavaScriptDomainAdvice;
 
+#if QT_VERSION_MAJOR < 6
+    void setNeedsSave(bool needs) {emit changed(needs);}
+#endif
+
 private Q_SLOTS:
     void slotChanged();
     void toggleJavaControls();

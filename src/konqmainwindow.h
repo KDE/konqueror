@@ -27,6 +27,7 @@
 #include "konqframe.h"
 #include "konqframecontainer.h"
 #include "konqopenurlrequest.h"
+#include "kf5compat.h" //For NavigationExtension
 
 class QActionGroup;
 class KUrlCompletion;
@@ -61,7 +62,8 @@ class UrlLoader;
 
 namespace KParts
 {
-class BrowserExtension;
+//TODO KF6: when removing compatibility with KF5, uncomment the line below
+// class NavigationExtension;
 class ReadOnlyPart;
 class OpenUrlArguments;
 struct BrowserArguments;
@@ -359,8 +361,8 @@ public Q_SLOTS:
 
     void slotCtrlTabPressed();
 
-    void slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::BrowserExtension::PopupFlags flags, const KParts::BrowserExtension::ActionGroupMap &);
-    void slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::BrowserExtension::PopupFlags f, const KParts::BrowserExtension::ActionGroupMap &);
+    void slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags flags, const KParts::NavigationExtension::ActionGroupMap &);
+    void slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags f, const KParts::NavigationExtension::ActionGroupMap &);
 
     void slotOpenURLRequest(const QUrl &url, KonqOpenURLRequest &req);
 
@@ -625,8 +627,8 @@ private:
     */
     static QString findIndexFile(const QString &directory);
 
-    void connectExtension(KParts::BrowserExtension *ext);
-    void disconnectExtension(KParts::BrowserExtension *ext);
+    void connectExtension(KParts::NavigationExtension *ext);
+    void disconnectExtension(KParts::NavigationExtension *ext);
 
     void plugViewModeActions();
     void unplugViewModeActions();

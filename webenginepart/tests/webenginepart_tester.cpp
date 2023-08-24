@@ -15,6 +15,7 @@
 #include <KLineEdit>
 #include <KPluginMetaData>
 #include <webenginepart.h>
+#include <profile.h>
 
 #include <QJsonDocument>
 #include <QInputDialog>
@@ -377,12 +378,12 @@ int main(int argc, char **argv)
 
     QString url = QStringLiteral("%1/%2").arg(QDir::homePath()).arg(QStringLiteral("index.html"));
 
-//    QWebEngineSettings::defaultSettings()->setMaximumPagesInCache(4);
+//    Profile::defaultProfile()->settings()->setMaximumPagesInCache(4);
 
 //    QWebEngineSettings::setObjectCacheCapacities((16*1024*1024) / 8, (16*1024*1024) / 8, 16*1024*1024);
 
-    QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::PluginsEnabled, true);
-//    QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::DeveloperExtrasEnabled, true);
+    KonqWebEnginePart::Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::PluginsEnabled, true);
+//    Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::DeveloperExtrasEnabled, true);
 
     const QStringList args = app.arguments();
 

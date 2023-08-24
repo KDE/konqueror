@@ -27,12 +27,12 @@ class KJSParts : public KCModule
 
 public:
 
-    KJSParts(QWidget *parent, const QVariantList &);
+    //TODO KF6: when dropping compatibility with KF5, remove QVariantList argument
+    KJSParts(QObject *parent, const KPluginMetaData &md={}, const QVariantList &args={});
 
     void load() override;
     void save() override;
     void defaults() override;
-    QString quickHelp() const override;
 
 private:
     QTabWidget   *tab;

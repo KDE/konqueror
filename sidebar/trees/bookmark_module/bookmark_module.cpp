@@ -17,6 +17,7 @@
 #include <QMenu>
 #include <QIcon>
 #include <QAction>
+#include <QStandardPaths>
 
 // KDE
 #include <k3bookmarkdrag.h>
@@ -38,7 +39,12 @@ KonqSidebarBookmarkModule::KonqSidebarBookmarkModule(KonqSidebarTree *parentTree
       m_topLevelItem(0L), m_ignoreOpenChange(true)
 {
     if (!s_bookmarkManager) {
+#if QT_VERSION_MAJOR < 6
         s_bookmarkManager = KBookmarkManager::userBookmarksManager();
+#else
+        const QString bookmarksFile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/konqueror/bookmarks.xml");
+        s_manager = KBookmarkManager::managerForFile(bookmarksFile);
+#endif
     }
 
     // formats handled by K3BookmarkDrag:

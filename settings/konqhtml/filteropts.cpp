@@ -34,8 +34,8 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 
-KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
-    : KCModule(parent),
+KCMFilter::KCMFilter(QObject *parent, const KPluginMetaData &md, const QVariantList &)
+    : KCModule(parent, md),
       mGroupname(QStringLiteral("Filter Settings")),
       mSelCount(0),
       mOriginalString(QString())
@@ -43,15 +43,15 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
     mConfig = KSharedConfig::openConfig(QStringLiteral("khtmlrc"), KConfig::NoGlobals);
     setButtons(Default | Apply | Help);
 
-    QVBoxLayout *topLayout = new QVBoxLayout(this);
+    QVBoxLayout *topLayout = new QVBoxLayout(widget());
 
-    mEnableCheck = new QCheckBox(i18n("Enable filters"), this);
+    mEnableCheck = new QCheckBox(i18n("Enable filters"), widget());
     topLayout->addWidget(mEnableCheck);
 
-    mKillCheck = new QCheckBox(i18n("Hide filtered images"), this);
+    mKillCheck = new QCheckBox(i18n("Hide filtered images"), widget());
     topLayout->addWidget(mKillCheck);
 
-    mFilterWidget = new QTabWidget(this);
+    mFilterWidget = new QTabWidget(widget());
     topLayout->addWidget(mFilterWidget);
 
     QWidget *container = new QWidget(mFilterWidget);
@@ -81,7 +81,7 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
 
     vbox->addWidget(mListBox);
 
-    QLabel *exprLabel = new QLabel(i18n("<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href=\"filterhelp\">more information</a>):"), this);
+    QLabel *exprLabel = new QLabel(i18n("<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href=\"filterhelp\">more information</a>):"), widget());
     connect(exprLabel, &QLabel::linkActivated, this, &KCMFilter::slotInfoLinkActivated);
     vbox->addWidget(exprLabel);
 
@@ -114,7 +114,11 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
     mRefreshFreqSpinBox->setSuffix(ki18np(" day", " days"));
 
     /** connect signals and slots */
+#if QT_VERSION_MAJOR < 6
     connect(&mAutomaticFilterModel, &AutomaticFilterModel::changed, this, QOverload<bool>::of(&KCModule::changed));
+#else
+    connect(&mAutomaticFilterModel, &AutomaticFilterModel::changed, this, [this](bool changed){setNeedsSave(changed);});
+#endif
     connect(mRefreshFreqSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this, &KCMFilter::spinBoxChanged);
 
     mInsertButton = new QPushButton(QIcon::fromTheme(QStringLiteral("list-add")), i18n("Insert"), buttonBox);
@@ -192,13 +196,13 @@ void KCMFilter::slotInfoLinkActivated(const QString &url)
 
 void KCMFilter::slotKillChecked()
 {
-    emit changed(true);
+    setNeedsSave(true);
 }
 
 void KCMFilter::slotEnableChecked()
 {
     updateButton();
-    emit changed(true);
+    setNeedsSave(true);
 }
 
 void KCMFilter::slotItemSelected()
@@ -253,7 +257,7 @@ void KCMFilter::updateButton()
 
 void KCMFilter::importFilters()
 {
-    QString inFile = QFileDialog::getOpenFileName(this, i18n("Import Filters"));
+    QString inFile = QFileDialog::getOpenFileName(widget(), i18n("Import Filters"));
     if (!inFile.isEmpty()) {
         QFile f(inFile);
         if (f.open(QIODevice::ReadOnly)) {
@@ -290,20 +294,22 @@ void KCMFilter::importFilters()
             f.close();
 
             mListBox->addItems(paths);
-            emit changed(true);
+            setNeedsSave(true);
         }
     }
 }
 
 void KCMFilter::exportFilters()
 {
-    QString outFile = QFileDialog::getSaveFileName(this, i18n("Export Filters"));
+    QString outFile = QFileDialog::getSaveFileName(widget(), i18n("Export Filters"));
     if (!outFile.isEmpty()) {
 
         QFile f(outFile);
         if (f.open(QIODevice::WriteOnly)) {
             QTextStream ts(&f);
+#if QT_VERSION_MAJOR < 6
             ts.setCodec("UTF-8");
+#endif
             ts << "[AdBlock]" << Qt::endl;
 
             int nbLine =  mListBox->count();
@@ -402,7 +408,7 @@ void KCMFilter::insertFilter()
         }
 
         updateButton();
-        emit changed(true);
+        setNeedsSave(true);
     }
 }
 
@@ -414,7 +420,7 @@ void KCMFilter::removeFilter()
         }
     }
     mString->clear();
-    emit changed(true);
+    setNeedsSave(true);
     updateButton();
 }
 
@@ -424,22 +430,15 @@ void KCMFilter::updateFilter()
         int index = mListBox->currentRow();
         if (index >= 0) {
             mListBox->item(index)->setText(mString->text());
-            emit changed(true);
+            setNeedsSave(true);
         }
     }
     updateButton();
 }
 
-QString KCMFilter::quickHelp() const
-{
-    return i18n("<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of filters"
-                " that are checked against linked images and frames. URL's that match are either discarded or"
-                " replaced with a placeholder image. ");
-}
-
 void KCMFilter::spinBoxChanged(int)
 {
-    emit changed(true);
+    setNeedsSave(true);
 }
 
 AutomaticFilterModel::AutomaticFilterModel(QObject *parent)

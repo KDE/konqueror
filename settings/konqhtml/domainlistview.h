@@ -17,7 +17,6 @@
 
 class QTreeWidgetItem;
 class QPushButton;
-class QStringList;
 
 class QTreeWidget;
 

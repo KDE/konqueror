@@ -38,6 +38,9 @@ public:
         : KBookmarkMenu(mgr, owner, parentMenu->menu())
     {
         m_actionCollection = collec;
+#if QT_VERSION_MAJOR >= 6
+        setBrowserMode(true);
+#endif
     }
     ~KonqBookmarkMenu() override
     {}
@@ -55,6 +58,10 @@ protected:
     void refill() override;
     QAction *actionForBookmark(const KBookmark &bm) override;
     QMenu *contextMenu(QAction *action) override;
+    void fillDynamicBookmarks();
+#if QT_VERSION_MAJOR > 5
+        KActionCollection *m_actionCollection = nullptr;
+#endif
 };
 
 class KonqBookmarkContextMenu : public KBookmarkContextMenu

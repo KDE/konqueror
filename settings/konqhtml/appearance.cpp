@@ -25,22 +25,26 @@ enum SmoothScrollingType { SmoothScrollingAlways = 0, SmoothScrollingNever = 1, 
 
 enum UnderlineLinkType { UnderlineAlways = 0, UnderlineNever = 1, UnderlineHover = 2 };
 
-KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
-    : KCModule(parent), m_groupname(QStringLiteral("HTML Settings")),
+KAppearanceOptions::KAppearanceOptions(QObject *parent, const KPluginMetaData &md, const QVariantList &)
+    : KCModule(parent, md), m_groupname(QStringLiteral("HTML Settings")),
       fSize(10), fMinSize(HTML_DEFAULT_MIN_FONT_SIZE)
 
 {
-    QVBoxLayout *l = new QVBoxLayout(this);
-    QTabWidget *tabWidget = new QTabWidget(this);
+    QVBoxLayout *l = new QVBoxLayout(widget());
+    QTabWidget *tabWidget = new QTabWidget(widget());
     l->addWidget(tabWidget);
-    QWidget *mainTab = new QWidget(this);
-    QWidget *fontsTab = new QWidget(this);
-    cssConfig = new CSSConfig(this);
+    QWidget *mainTab = new QWidget(widget());
+    QWidget *fontsTab = new QWidget(widget());
+    cssConfig = new CSSConfig(widget());
     tabWidget->addTab(mainTab, i18nc("@title:tab", "General"));
     tabWidget->addTab(fontsTab, i18nc("@title:tab", "Fonts"));
     tabWidget->addTab(cssConfig, i18nc("@title:tab", "Stylesheets"));
 
+#if QT_VERSION_MAJOR < 6
     connect(cssConfig, &CSSConfig::changed, this, &KAppearanceOptions::markAsChanged);
+#else
+    connect(cssConfig, &CSSConfig::changed, this, [this](){setNeedsSave(true);});
+#endif
 
     l = new QVBoxLayout(mainTab);
 
@@ -49,7 +53,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
     l->addWidget(box);
     QFormLayout *fl = new QFormLayout(box);
 
-    m_pAutoLoadImagesCheckBox = new QCheckBox(i18n("A&utomatically load images"), this);
+    m_pAutoLoadImagesCheckBox = new QCheckBox(i18n("A&utomatically load images"), widget());
     m_pAutoLoadImagesCheckBox->setToolTip(i18n("<html>If this box is checked, Konqueror will"
                                                " automatically load any images that are embedded in a web page."
                                                " Otherwise, it will display placeholders for the images, and"
@@ -60,7 +64,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
     connect(m_pAutoLoadImagesCheckBox, &QAbstractButton::toggled, this, &KAppearanceOptions::markAsChanged);
     fl->addRow(m_pAutoLoadImagesCheckBox);
 
-    m_pUnfinishedImageFrameCheckBox = new QCheckBox(i18n("Dra&w frame around not completely loaded images"), this);
+    m_pUnfinishedImageFrameCheckBox = new QCheckBox(i18n("Dra&w frame around not completely loaded images"), widget());
     m_pUnfinishedImageFrameCheckBox->setToolTip(i18n("<html>If this box is checked, Konqueror will draw"
                                                      " a frame as a placeholder around images embedded in a web page that are"
                                                      " not yet fully loaded.<br />You will probably want to check this box to"
@@ -69,7 +73,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
     connect(m_pUnfinishedImageFrameCheckBox, &QAbstractButton::toggled, this, &KAppearanceOptions::markAsChanged);
     fl->addRow(m_pUnfinishedImageFrameCheckBox);
 
-    m_pAnimationsCombo = new QComboBox(this);
+    m_pAnimationsCombo = new QComboBox(widget());
     m_pAnimationsCombo->setEditable(false);
     m_pAnimationsCombo->insertItem(AnimationsAlways, i18nc("animations", "Enabled"));
     m_pAnimationsCombo->insertItem(AnimationsNever, i18nc("animations", "Disabled"));
@@ -85,7 +89,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
     box = new QGroupBox(i18nc("@title:group", "Miscellaneous"), mainTab);
     l->addWidget(box);
     fl = new QFormLayout(box);
-    m_pUnderlineCombo = new QComboBox(this);
+    m_pUnderlineCombo = new QComboBox(widget());
     m_pUnderlineCombo->setEditable(false);
     m_pUnderlineCombo->insertItem(UnderlineAlways, i18nc("underline", "Enabled"));
     m_pUnderlineCombo->insertItem(UnderlineNever, i18nc("underline", "Disabled"));
@@ -100,7 +104,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
                                       "</ul><br /><i>Note: The site's CSS definitions can override this value.</i></html>"));
     connect(m_pUnderlineCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &KAppearanceOptions::markAsChanged);
 
-    m_pSmoothScrollingCombo = new QComboBox(this);
+    m_pSmoothScrollingCombo = new QComboBox(widget());
     m_pSmoothScrollingCombo->setEditable(false);
     m_pSmoothScrollingCombo->insertItem(SmoothScrollingWhenEfficient, i18n("When Efficient"));
     m_pSmoothScrollingCombo->insertItem(SmoothScrollingAlways, i18nc("smooth scrolling", "Always"));
@@ -116,9 +120,6 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
     l->addStretch(5);
 
     m_pConfig = KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals);
-    setQuickHelp(i18n("<h1>Konqueror Fonts</h1>On this page, you can configure "
-                      "which fonts Konqueror should use to display the web "
-                      "pages you view.") + "<br /><br />" + cssConfig->whatsThis());
 
     QString empty;
     //initialise fonts list otherwise it crashs
@@ -166,22 +167,22 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
     m_pFonts[1]->setToolTip(i18n("This is the font used to display fixed-width (i.e. non-proportional) text."));
     connect(m_pFonts[1], &QFontComboBox::currentFontChanged, this, &KAppearanceOptions::slotFixedFont);
 
-    m_pFonts[2] = new QFontComboBox(this);
+    m_pFonts[2] = new QFontComboBox(widget());
     fl->addRow(i18n("S&erif font:"),  m_pFonts[2]);
     m_pFonts[2]->setToolTip(i18n("This is the font used to display text that is marked up as serif."));
     connect(m_pFonts[2], &QFontComboBox::currentFontChanged, this, &KAppearanceOptions::slotSerifFont);
 
-    m_pFonts[3] = new QFontComboBox(this);
+    m_pFonts[3] = new QFontComboBox(widget());
     fl->addRow(i18n("Sa&ns serif font:"),  m_pFonts[3]);
     m_pFonts[3]->setToolTip(i18n("This is the font used to display text that is marked up as sans-serif."));
     connect(m_pFonts[3], &QFontComboBox::currentFontChanged, this, &KAppearanceOptions::slotSansSerifFont);
 
-    m_pFonts[4] = new QFontComboBox(this);
+    m_pFonts[4] = new QFontComboBox(widget());
     fl->addRow(i18n("C&ursive font:"),  m_pFonts[4]);
     m_pFonts[4]->setToolTip(i18n("This is the font used to display text that is marked up as italic."));
     connect(m_pFonts[4], &QFontComboBox::currentFontChanged, this, &KAppearanceOptions::slotCursiveFont);
 
-    m_pFonts[5] = new QFontComboBox(this);
+    m_pFonts[5] = new QFontComboBox(widget());
     fl->addRow(i18n("Fantas&y font:"), m_pFonts[5]);
     m_pFonts[5]->setToolTip(i18n("This is the font used to display text that is marked up as a fantasy font."));
     connect(m_pFonts[5], &QFontComboBox::currentFontChanged, this, &KAppearanceOptions::slotFantasyFont);
@@ -189,7 +190,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
     for (int i = 0; i < 6; ++i)
         connect(m_pFonts[i], &QFontComboBox::currentFontChanged, this, &KAppearanceOptions::markAsChanged);
 
-    m_pFontSizeAdjust = new QSpinBox(this);
+    m_pFontSizeAdjust = new QSpinBox(widget());
     m_pFontSizeAdjust->setRange(-5, 5);
     m_pFontSizeAdjust->setSingleStep(1);
     fl->addRow(i18n("Font &size adjustment for this encoding:"), m_pFontSizeAdjust);
@@ -197,7 +198,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
     connect(m_pFontSizeAdjust, QOverload<int>::of(&QSpinBox::valueChanged), this, &KAppearanceOptions::slotFontSizeAdjust);
     connect(m_pFontSizeAdjust, QOverload<int>::of(&QSpinBox::valueChanged), this, &KAppearanceOptions::markAsChanged);
 
-    m_pEncoding = new QComboBox(this);
+    m_pEncoding = new QComboBox(widget());
     m_pEncoding->setEditable(false);
     encodings = KCharsets::charsets()->availableEncodingNames();
     encodings.prepend(i18n("Use Language Encoding"));
@@ -346,7 +347,7 @@ void KAppearanceOptions::load()
     cssConfig->load();
 
     updateGUI();
-    emit changed(false);
+    setNeedsSave(false);
 }
 
 void KAppearanceOptions::defaults()
@@ -357,7 +358,7 @@ void KAppearanceOptions::defaults()
     m_pConfig->setReadDefaults(old);
 
     cssConfig->defaults();
-    emit changed(true);
+    setNeedsSave(true);
 }
 
 void KAppearanceOptions::updateGUI()
@@ -419,6 +420,6 @@ void KAppearanceOptions::save()
         QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
 
-    emit changed(false);
+    setNeedsSave(false);
 }
 

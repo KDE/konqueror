@@ -15,7 +15,7 @@
 #include <QInputDialog>
 #include <QFontDatabase>
 
-#include <kdesu/process.h>
+#include <KDESu/PtyProcess>
 #include <KLocalizedString>
 
 

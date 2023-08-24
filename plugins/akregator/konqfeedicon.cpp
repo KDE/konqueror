@@ -18,7 +18,7 @@
 #include <kparts/part.h>
 #include <kparts/statusbarextension.h>
 #include <KParts/ReadOnlyPart>
-#include <KParts/BrowserExtension>
+#include "kf5compat.h" //For NavigationExtension
 #include <KParts/SelectorInterface>
 #include <kio/job.h>
 #include <kurllabel.h>
@@ -275,7 +275,7 @@ void Akregator::KonqFeedIcon::copyFeedUrlToClipboard(const QString& url)
 
 void Akregator::KonqFeedIcon::openFeedUrl(const QString& url, const QString &mimeType)
 {
-    KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(m_part);
+    KParts::NavigationExtension *ext = KParts::NavigationExtension::childObject(m_part);
     if (!ext) {
         return;
     }

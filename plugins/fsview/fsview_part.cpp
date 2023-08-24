@@ -24,7 +24,7 @@
 #include <kprotocolmanager.h>
 #include <kio/copyjob.h>
 #include <kio/deletejob.h>
-#include <kio/paste.h>
+#include <KIO/Paste>
 #include <kmessagebox.h>
 #include <kactionmenu.h>
 #include <kactioncollection.h>
@@ -69,11 +69,18 @@ void FSJob::progressSlot(int percent, int dirs, const QString &cDir)
         emitPercent(percent, 100);
         slotInfoMessage(this, i18np("Read 1 folder, in %2",
                                     "Read %1 folders, in %2",
-                                    dirs, cDir), QString());
+                                    dirs, cDir));
     } else {
-        slotInfoMessage(this, i18np("1 folder", "%1 folders", dirs), QString());
+        slotInfoMessage(this, i18np("1 folder", "%1 folders", dirs));
     }
 }
+
+#if QT_VERSION_MAJOR < 6
+void FSJob::slotInfoMessage(KJob* job, const QString& plain, const QString& rich)
+{
+    KCompositeJob::slotInfoMessage(job, plain, rich);
+}
+#endif
 
 // FSViewPart
 
@@ -81,9 +88,14 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
                        QObject *parent,
                        const KPluginMetaData& metaData,
                        const QList<QVariant> & /* args */)
+#if QT_VERSION_MAJOR < 6
     : KParts::ReadOnlyPart(parent)
 {
     setMetaData(metaData);
+#else
+    : KParts::ReadOnlyPart(parent, metaData)
+{
+#endif
     _view = new FSView(new Inode(), parentWidget);
     _view->setWhatsThis(i18n("<p>This is the FSView plugin, a graphical "
                              "browsing mode showing filesystem utilization "
@@ -98,7 +110,7 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
     _view->show();
     setWidget(_view);
 
-    _ext = new FSViewBrowserExtension(this);
+    _ext = new FSViewNavigationExtension(this);
     _job = nullptr;
 
     _areaMenu = new KActionMenu(i18n("Stop at Area"),
@@ -132,10 +144,10 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
     // Both of these click signals are connected.  Whether a single or
     // double click activates an item is checked against the current
     // style setting when the click happens.
-    connect(_view, &FSView::clicked, _ext, &FSViewBrowserExtension::itemSingleClicked);
-    connect(_view, &FSView::doubleClicked, _ext, &FSViewBrowserExtension::itemDoubleClicked);
+    connect(_view, &FSView::clicked, _ext, &FSViewNavigationExtension::itemSingleClicked);
+    connect(_view, &FSView::doubleClicked, _ext, &FSViewNavigationExtension::itemDoubleClicked);
 
-    connect(_view, &TreeMapWidget::returnPressed, _ext, &FSViewBrowserExtension::selected);
+    connect(_view, &TreeMapWidget::returnPressed, _ext, &FSViewNavigationExtension::selected);
     connect(_view, QOverload<>::of(&TreeMapWidget::selectionChanged), this, &FSViewPart::updateActions);
     connect(_view, &TreeMapWidget::contextMenuRequested, this, &FSViewPart::contextMenu);
 
@@ -155,17 +167,17 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
     moveToTrashAction->setText(i18nc("@action:inmenu File", "Move to Trash"));
     moveToTrashAction->setIcon(QIcon::fromTheme(QStringLiteral("user-trash")));
     actionCollection()->setDefaultShortcut(moveToTrashAction, QKeySequence(QKeySequence::Delete));
-    connect(moveToTrashAction, &QAction::triggered, _ext, &FSViewBrowserExtension::trash);
+    connect(moveToTrashAction, &QAction::triggered, _ext, &FSViewNavigationExtension::trash);
 
     QAction *deleteAction = actionCollection()->addAction(QStringLiteral("delete"));
     deleteAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     deleteAction->setText(i18nc("@action:inmenu File", "Delete"));
     actionCollection()->setDefaultShortcut(deleteAction, QKeySequence(Qt::SHIFT | Qt::Key_Delete));
-    connect(deleteAction, &QAction::triggered, _ext, &FSViewBrowserExtension::del);
+    connect(deleteAction, &QAction::triggered, _ext, &FSViewNavigationExtension::del);
 
     QAction *editMimeTypeAction = actionCollection()->addAction(QStringLiteral("editMimeType"));
     editMimeTypeAction->setText(i18nc("@action:inmenu Edit", "&Edit File Type..."));
-    connect(editMimeTypeAction, &QAction::triggered, _ext, &FSViewBrowserExtension::editMimeType);
+    connect(editMimeTypeAction, &QAction::triggered, _ext, &FSViewNavigationExtension::editMimeType);
 
     QAction *propertiesAction = actionCollection()->addAction(QStringLiteral("properties"));
     propertiesAction->setText(i18nc("@action:inmenu File", "Properties"));
@@ -321,7 +333,7 @@ void FSViewPart::updateActions()
         }
     }
 
-    // Standard KBrowserExtension actions.
+    // Standard KNavigationExtension actions.
     emit _ext->enableAction("copy", canCopy > 0);
     emit _ext->enableAction("cut", canMove > 0);
     // Custom actions.
@@ -381,14 +393,14 @@ void FSViewPart::contextMenu(TreeMapItem * /*item*/, const QPoint &p)
     }
 
     QList<QAction *> editActions;
-    KParts::BrowserExtension::ActionGroupMap actionGroups;
-    KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::ShowUrlOperations |
-            KParts::BrowserExtension::ShowProperties;
+    KParts::NavigationExtension::ActionGroupMap actionGroups;
+    KParts::NavigationExtension::PopupFlags flags = KParts::NavigationExtension::ShowUrlOperations |
+            KParts::NavigationExtension::ShowProperties;
 
     bool addTrash = (canMove > 0);
     bool addDel = false;
     if (canDel == 0) {
-        flags |= KParts::BrowserExtension::NoDeletion;
+        flags |= KParts::NavigationExtension::NoDeletion;
     } else {
         if (!url().isLocalFile()) {
             addDel = true;
@@ -435,18 +447,18 @@ void FSViewPart::slotProperties()
     }
 }
 
-// FSViewBrowserExtension
+// FSViewNavigationExtension
 
-FSViewBrowserExtension::FSViewBrowserExtension(FSViewPart *viewPart)
-    : KParts::BrowserExtension(viewPart)
+FSViewNavigationExtension::FSViewNavigationExtension(FSViewPart *viewPart)
+    : KParts::NavigationExtension(viewPart)
 {
     _view = viewPart->view();
 }
 
-FSViewBrowserExtension::~FSViewBrowserExtension()
+FSViewNavigationExtension::~FSViewNavigationExtension()
 {}
 
-void FSViewBrowserExtension::del()
+void FSViewNavigationExtension::del()
 {
     const QList<QUrl> urls = _view->selectedUrls();
     KJobUiDelegate* baseUiDelegate = KIO::createDefaultJobUiDelegate(KJobUiDelegate::Flags{}, _view);
@@ -457,11 +469,11 @@ void FSViewBrowserExtension::del()
         KIO::Job *job = KIO::del(urls);
         KJobWidgets::setWindow(job, _view);
         job->uiDelegate()->setAutoErrorHandlingEnabled(true);
-        connect(job, &KJob::result, this, &FSViewBrowserExtension::refresh);
+        connect(job, &KJob::result, this, &FSViewNavigationExtension::refresh);
     }
 }
 
-void FSViewBrowserExtension::trash()
+void FSViewNavigationExtension::trash()
 {
     bool deleteNotTrash = ((QGuiApplication::keyboardModifiers() & Qt::ShiftModifier) != 0);
     if (deleteNotTrash) {
@@ -477,12 +489,12 @@ void FSViewBrowserExtension::trash()
             KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Trash, urls, QUrl("trash:/"), job);
             KJobWidgets::setWindow(job, _view);
             job->uiDelegate()->setAutoErrorHandlingEnabled(true);
-            connect(job, &KJob::result, this, &FSViewBrowserExtension::refresh);
+            connect(job, &KJob::result, this, &FSViewNavigationExtension::refresh);
         }
     }
 }
 
-void FSViewBrowserExtension::copySelection(bool move)
+void FSViewNavigationExtension::copySelection(bool move)
 {
     QMimeData *data = new QMimeData;
     data->setUrls(_view->selectedUrls());
@@ -490,7 +502,7 @@ void FSViewBrowserExtension::copySelection(bool move)
     QApplication::clipboard()->setMimeData(data);
 }
 
-void FSViewBrowserExtension::editMimeType()
+void FSViewNavigationExtension::editMimeType()
 {
     Inode *i = (Inode *) _view->selection().first();
     if (i) {
@@ -499,7 +511,7 @@ void FSViewBrowserExtension::editMimeType()
 }
 
 // refresh treemap at end of KIO jobs
-void FSViewBrowserExtension::refresh()
+void FSViewNavigationExtension::refresh()
 {
     // only need to refresh common ancestor for all selected items
     TreeMapItem *commonParent = _view->selection().commonParent();
@@ -521,7 +533,7 @@ void FSViewBrowserExtension::refresh()
     _view->requestUpdate((Inode *)commonParent);
 }
 
-void FSViewBrowserExtension::itemSingleClicked(TreeMapItem *i)
+void FSViewNavigationExtension::itemSingleClicked(TreeMapItem *i)
 {
     if (_view->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick)) {
         selected(i);
@@ -529,14 +541,14 @@ void FSViewBrowserExtension::itemSingleClicked(TreeMapItem *i)
 }
 
 
-void FSViewBrowserExtension::itemDoubleClicked(TreeMapItem *i)
+void FSViewNavigationExtension::itemDoubleClicked(TreeMapItem *i)
 {
     if (!_view->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick)) {
         selected(i);
     }
 }
 
-void FSViewBrowserExtension::selected(TreeMapItem *i)
+void FSViewNavigationExtension::selected(TreeMapItem *i)
 {
     if (!i) {
         return;

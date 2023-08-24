@@ -28,12 +28,15 @@ class Cache: public KCModule
     Q_OBJECT
 
 public:
+    //TODO KF6: when dropping compatibility with KF5, remove QVariantList argument
     /**
      * @brief Constructor
      *
      * @param parent the parent widget
+     * @param md as in `KCModule` constructor
+     * @param args as in `KCModule` constructor
      */
-    Cache(QWidget* parent, const QVariantList&);
+    Cache(QObject *parent, const KPluginMetaData &md={}, const QVariantList &args={});
 
     /**
      * @brief Destructor
@@ -55,6 +58,10 @@ public:
      *
      */
     void save() override;
+
+#if QT_VERSION_MAJOR < 6
+    void setNeedsSave(bool needs) {emit changed(needs);}
+#endif
 
 private slots:
 

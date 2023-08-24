@@ -33,12 +33,12 @@
 #include <kmessagebox.h>
 #include <QMenu>
 #include <QApplication>
-#include <QDesktopWidget>
 #include <QStandardPaths>
 #include <KSharedConfig>
 #include <KWindowConfig>
 #include <QMimeDatabase>
 #include <QMimeType>
+#include <QScreen>
 
 //#define DEBUG_VIEWMGR
 
@@ -1042,7 +1042,7 @@ static QSize readDefaultSize(const KConfigGroup &cfg, QWidget *widget)
     QString heightStr = cfg.readEntry("Height");
     int width = -1;
     int height = -1;
-    const QRect geom = QApplication::desktop()->screenGeometry(widget);
+    const QRect geom = widget->screen()->geometry();
 
     bool ok;
     if (widthStr.endsWith('%')) {

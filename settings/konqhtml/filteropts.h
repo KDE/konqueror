@@ -60,13 +60,13 @@ class KCMFilter : public KCModule
 {
     Q_OBJECT
 public:
-    KCMFilter(QWidget *parent, const QVariantList &);
+    //TODO KF6: when dropping compatibility with KF5, remove QVariantList argument
+    KCMFilter(QObject *parent, const KPluginMetaData &md={}, const QVariantList &args={});
     ~KCMFilter() override;
 
     void load() override;
     void save() override;
     void defaults() override;
-    QString quickHelp() const override;
 
 protected Q_SLOTS:
     void insertFilter();
@@ -82,6 +82,10 @@ protected Q_SLOTS:
     void updateButton();
 
     void spinBoxChanged(int);
+
+#if QT_VERSION_MAJOR < 6
+    void setNeedsSave(bool needs) {emit changed(needs);}
+#endif
 
 private:
     QListWidget *mListBox;

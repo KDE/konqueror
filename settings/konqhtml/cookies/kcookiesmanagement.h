@@ -58,13 +58,17 @@ class KCookiesManagement : public KCModule
     Q_OBJECT
 
 public:
-    explicit KCookiesManagement(QWidget *parent, const QVariantList &args);
+    //TODO KF6: when dropping compatibility with KF5, remove QVariantList argument
+    explicit KCookiesManagement(QObject *parent, const KPluginMetaData &md={}, const QVariantList &args={});
     ~KCookiesManagement() override;
 
     void load() override;
     void save() override;
     void defaults() override;
-    QString quickHelp() const override;
+
+#if QT_VERSION_MAJOR < 6
+    void setNeedsSave(bool needs) {emit changed(needs);}
+#endif
 
 private Q_SLOTS:
     void deleteCurrent();

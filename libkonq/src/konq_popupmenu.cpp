@@ -21,7 +21,6 @@
 #include <KIO/JobUiDelegate>
 #include <kprotocolmanager.h>
 #include <knewfilemenu.h>
-#include <kmimetypetrader.h>
 #include <kconfiggroup.h>
 #include <KSharedConfig>
 #include <kdesktopfile.h>

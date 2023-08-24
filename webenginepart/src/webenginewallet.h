@@ -223,13 +223,6 @@ public:
     void removeFormData(WebEnginePage *page);
 
     /**
-     * @brief The script to use to detect web forms in a page
-     *
-     * @return The script to use to detect web forms in a page
-     */
-    static QWebEngineScript formDetectorFunctionsScript();
-
-    /**
      * @brief Removes the form data specified by @p forms from the persistent storage.
      *
      * @param forms The forms to remove

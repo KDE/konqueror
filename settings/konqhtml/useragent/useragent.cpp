@@ -20,18 +20,18 @@
 #include <QDir>
 
 
-UserAgent::UserAgent(QWidget* parent, const QVariantList& ): KCModule(parent),
+UserAgent::UserAgent(QObject *parent, const KPluginMetaData &md, const QVariantList &): KCModule(parent, md),
     m_ui(new Ui::UserAgent),
     m_config(KSharedConfig::openConfig(QString(), KConfig::NoGlobals)),
     m_templatesConfig(KSharedConfig::openConfig("useragenttemplatesrc"))
 {
-    m_ui->setupUi(this);
+    m_ui->setupUi(widget());
     fillTemplateWidget(m_templatesConfig->group("Templates").entryMap());
     connect(m_ui->useTemplateBtn, &QPushButton::clicked, this, &UserAgent::useSelectedTemplate);
     connect(m_ui->templates, &QTreeWidget::itemDoubleClicked, this, &UserAgent::useDblClickedTemplate);
     connect(m_ui->templates, &QTreeWidget::itemSelectionChanged, this, &UserAgent::templateSelectionChanged);
     connect(m_ui->useDefaultUA, &QCheckBox::toggled, this, [this](bool on){toggleCustomUA(!on);});
-    connect(m_ui->userAgentString, &QLineEdit::textChanged, this, [this](){emit changed(true);});
+    connect(m_ui->userAgentString, &QLineEdit::textChanged, this, [this](){setNeedsSave(true);});
     connect(m_ui->editTemplateBtn, &QPushButton::clicked, this, &UserAgent::editTemplate);
     connect(m_ui->newTemplateBtn, &QPushButton::clicked, this, &UserAgent::createNewTemplate);
     connect(m_ui->duplicateTemplateBtn, &QPushButton::clicked, this, &UserAgent::duplicateTemplate);
@@ -73,7 +73,7 @@ void UserAgent::defaults()
 
     m_ui->useDefaultUA->setChecked(true);
     m_ui->userAgentString->setText(QString());
-    emit changed(true);
+    setNeedsSave(true);
 }
 
 void UserAgent::load()
@@ -83,7 +83,7 @@ void UserAgent::load()
     m_ui->useDefaultUA->setChecked(grp.readEntry("UseDefaultUserAgent", true));
     toggleCustomUA(useCustomUserAgent());
     m_ui->invalidTemplateNameWidget->hide(); //There can't be problems when loading
-    emit changed(false);
+    setNeedsSave(false);
 }
 
 void UserAgent::save()
@@ -96,7 +96,7 @@ void UserAgent::save()
     QDBusMessage message = QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"),
                                                       QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
-    emit changed(false);
+    setNeedsSave(false);
 }
 
 void UserAgent::saveTemplates()
@@ -125,7 +125,7 @@ void UserAgent::toggleCustomUA(bool on)
     m_ui->userAgentString->setEnabled(on);
     m_ui->customUABox->setEnabled(on);
     enableDisableUseSelectedTemplateBtn();
-    emit changed(true);
+    setNeedsSave(true);
 }
 
 QTreeWidgetItem * UserAgent::selectedTemplate() const
@@ -187,7 +187,7 @@ void UserAgent::duplicateTemplate()
 QTreeWidgetItem* UserAgent::createNewTemplateInternal()
 {
     bool ok = false;
-    QString name = QInputDialog::getText(this, i18nc("@title:window Title of dialog to choose name to given to new User Agent", "Choose User Agent name"),
+    QString name = QInputDialog::getText(widget(), i18nc("@title:window Title of dialog to choose name to given to new User Agent", "Choose User Agent name"),
                                          i18nc("Name of the new User Agent", "User Agent name"), QLineEdit::Normal, QString(), &ok);
     if (!ok) {
         return nullptr;
@@ -209,7 +209,7 @@ void UserAgent::deleteTemplate()
     QTreeWidgetItem *it = selectedTemplate();
     if (it) {
         delete it;
-        emit changed(true);
+        setNeedsSave(true);
     }
 }
 
@@ -234,7 +234,7 @@ void UserAgent::templateChanged(QTreeWidgetItem*, int col)
     if (col == 0) {
         checkTemplatesValidity();
     }
-    emit changed(true);
+    setNeedsSave(true);
 }
 
 UserAgent::TemplateMap UserAgent::templatesFromUI() const

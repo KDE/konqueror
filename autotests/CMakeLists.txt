@@ -8,7 +8,7 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/..  )
 ########### konqviewmgrtest ###############
 
 ecm_add_test(konqviewmgrtest.cpp
-    LINK_LIBRARIES kdeinit_konqueror Qt${KF_MAJOR_VERSION}::Core Qt${KF_MAJOR_VERSION}::Gui kwebenginepartlib Qt${KF_MAJOR_VERSION}::WebEngineWidgets Qt${KF_MAJOR_VERSION}::Test)
+    LINK_LIBRARIES konqueror_internal_lib Qt${KF_MAJOR_VERSION}::Core Qt${KF_MAJOR_VERSION}::Gui kwebenginepartlib Qt${KF_MAJOR_VERSION}::WebEngineWidgets Qt${KF_MAJOR_VERSION}::Test)
 
 ########### historymanagertest ###############
 
@@ -18,21 +18,21 @@ ecm_add_test(historymanagertest.cpp
 ########### undomanagertest ###############
 
 ecm_add_test(undomanagertest.cpp
-    LINK_LIBRARIES kdeinit_konqueror Qt${KF_MAJOR_VERSION}::Core Qt${KF_MAJOR_VERSION}::Test)
+    LINK_LIBRARIES konqueror_internal_lib Qt${KF_MAJOR_VERSION}::Core Qt${KF_MAJOR_VERSION}::Test)
 
 ########### konqhtmltest ###############
 
 ecm_add_test(konqhtmltest.cpp
-    LINK_LIBRARIES kdeinit_konqueror kwebenginepartlib Qt${KF_MAJOR_VERSION}::Core Qt${KF_MAJOR_VERSION}::Test)
+    LINK_LIBRARIES konqueror_internal_lib kwebenginepartlib Qt${KF_MAJOR_VERSION}::Core Qt${KF_MAJOR_VERSION}::Test)
 
 ########### konqviewtest ###############
 
 ecm_add_test(konqviewtest.cpp
-    LINK_LIBRARIES kdeinit_konqueror Qt${KF_MAJOR_VERSION}::Core Qt${KF_MAJOR_VERSION}::Test)
+    LINK_LIBRARIES konqueror_internal_lib Qt${KF_MAJOR_VERSION}::Core Qt${KF_MAJOR_VERSION}::Test)
 
 ########### openorsavequestion_unittest ###############
 
 ecm_add_test(openorsavequestion_unittest.cpp
-    LINK_LIBRARIES kdeinit_konqueror Qt${KF_MAJOR_VERSION}::Core Qt${KF_MAJOR_VERSION}::Test)
+    LINK_LIBRARIES konqueror_internal_lib Qt${KF_MAJOR_VERSION}::Core Qt${KF_MAJOR_VERSION}::Test KF${KF_MAJOR_VERSION}::Service)
 
 endif (NOT WIN32)

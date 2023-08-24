@@ -26,7 +26,6 @@ class KonqSidebarPlugin;
 class QMenu;
 class QHBoxLayout;
 class QSplitter;
-class QStringList;
 
 class ButtonInfo
 {
@@ -76,7 +75,7 @@ public:
     bool openUrl(const QUrl &url);
     void stdAction(const char *handlestd);
 
-    KParts::BrowserExtension *getExtension();
+    KParts::NavigationExtension *getExtension();
     QSize sizeHint() const override;
 
 public Q_SLOTS:
@@ -166,8 +165,8 @@ private Q_SLOTS:
     void slotPopupMenu(KonqSidebarModule *, const QPoint &global, const KFileItemList &items,
                        const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
                        const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
-                       KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems,
-                       const KParts::BrowserExtension::ActionGroupMap &actionGroups = KParts::BrowserExtension::ActionGroupMap());
+                       KParts::NavigationExtension::PopupFlags flags = KParts::NavigationExtension::DefaultPopupItems,
+                       const KParts::NavigationExtension::ActionGroupMap &actionGroups = KParts::NavigationExtension::ActionGroupMap());
 
     void slotStatResult(KJob *job);
 

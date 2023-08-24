@@ -12,6 +12,7 @@
 #include <QMap>
 #include <QPixmap>
 #include <QUrl>
+#include <QObject>
 
 class KConfigGroup;
 class KConfig;

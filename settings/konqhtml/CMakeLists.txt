@@ -49,9 +49,11 @@ add_library(kcm_konqhtml_static STATIC ${kcm_konqhtml_PART_SRCS})
 target_link_libraries(kcm_konqhtml_static
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::ConfigWidgets
+    KF${KF_MAJOR_VERSION}::KCMUtils
     KF${KF_MAJOR_VERSION}::TextWidgets
     KF${KF_MAJOR_VERSION}::Parts
     KF${KF_MAJOR_VERSION}::ItemViews
+    KF${KF_MAJOR_VERSION}::Codecs
     Qt${KF_MAJOR_VERSION}::WebEngineWidgets
     KF${KF_MAJOR_VERSION}::Konq)
 

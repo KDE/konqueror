@@ -30,19 +30,6 @@
 #define QL1S(x)   QLatin1String(x)
 #define QL1C(x)   QLatin1Char(x)
 
-QWebEngineScript WebEngineWallet::formDetectorFunctionsScript()
-{
-    static QWebEngineScript s_formDetectorFunctionsScript;
-    if (s_formDetectorFunctionsScript.isNull()) {
-        QFile jsfile(":/formautofiller.js");
-        jsfile.open(QIODevice::ReadOnly);
-        s_formDetectorFunctionsScript.setSourceCode(QString(jsfile.readAll()));
-        s_formDetectorFunctionsScript.setInjectionPoint(QWebEngineScript::DocumentCreation);
-        s_formDetectorFunctionsScript.setWorldId(QWebEngineScript::ApplicationWorld);
-    }
-    return s_formDetectorFunctionsScript;
-}
-
 WebEngineSettings::WebFormInfo WebEngineWallet::WebForm::toSettingsInfo() const
 {
     QStringList fieldNames;

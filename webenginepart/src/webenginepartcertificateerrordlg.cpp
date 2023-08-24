@@ -45,7 +45,12 @@ WebEnginePartCertificateErrorDlg::WebEnginePartCertificateErrorDlg(const QWebEng
     m_ui->buttons->button(QDialogButtonBox::YesToAll)->setText(i18nc("Ignore the certificate error for this URL now and in the future", "Yes, &forever"));
     m_ui->details->hide();
 
-    QString translatedDesc = i18n(m_error.errorDescription().toUtf8());
+    //According to the documentation, QWebEngineCertificateError::description() returns a localized string
+#if QT_VERSION_MAJOR < 6
+    QString translatedDesc = m_error.errorDescription().toUtf8();
+#else
+    QString translatedDesc = m_error.description().toUtf8();
+#endif
     QString text = i18n("<p>The server <tt>%1</tt> failed the authenticity check. The error is:</p><p><tt>%2</tt></p>Do you want to ignore this error?",
                         m_error.url().host(), translatedDesc);
     m_ui->label->setText(text);

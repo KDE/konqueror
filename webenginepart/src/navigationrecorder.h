@@ -13,6 +13,7 @@
 #include <QUrl>
 #include <QPointer>
 #include <QWebEngineUrlRequestInfo>
+#include <QMultiHash>
 
 class WebEnginePage;
 

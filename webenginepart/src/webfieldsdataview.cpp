@@ -31,7 +31,7 @@ QString WebFieldsDataViewPasswordDelegate::passwordReplacement(const QStyleOptio
 {
         const QWidget *w = option.widget;
         QStyle *s = w->style();
-        QChar passwdChar = s->styleHint(QStyle::StyleHint::SH_LineEdit_PasswordCharacter, &option, w);
+        QChar passwdChar(s->styleHint(QStyle::StyleHint::SH_LineEdit_PasswordCharacter, &option, w));
         return QString(index.data().toString().length(), passwdChar);
 }
 

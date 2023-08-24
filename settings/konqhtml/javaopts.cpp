@@ -70,12 +70,12 @@ KJavaOptions::KJavaOptions(const KSharedConfig::Ptr &config, const QString &grou
       java_global_policies(config, group, true),
       _removeJavaDomainSettings(false)
 {
-    QVBoxLayout *toplevel = new QVBoxLayout(this);
+    QVBoxLayout *toplevel = new QVBoxLayout(widget());
 
     /***************************************************************************
      ********************* Global Settings *************************************
      **************************************************************************/
-    enableJavaGloballyCB = new QCheckBox(i18n("Enable Ja&va globally"), this);
+    enableJavaGloballyCB = new QCheckBox(i18n("Enable Ja&va globally"), widget());
     connect(enableJavaGloballyCB, &QAbstractButton::clicked, this, &KJavaOptions::slotChanged);
     connect(enableJavaGloballyCB, &QAbstractButton::clicked, this, &KJavaOptions::toggleJavaControls);
     toplevel->addWidget(enableJavaGloballyCB);
@@ -83,26 +83,26 @@ KJavaOptions::KJavaOptions(const KSharedConfig::Ptr &config, const QString &grou
     /***************************************************************************
      ***************** Domain Specific Settings ********************************
      **************************************************************************/
-    domainSpecific = new JavaDomainListView(m_pConfig, m_groupname, this, this);
+    domainSpecific = new JavaDomainListView(m_pConfig, m_groupname, this, widget());
     connect(domainSpecific, &DomainListView::changed, this, &KJavaOptions::slotChanged);
     toplevel->addWidget(domainSpecific, 2);
 
     /***************************************************************************
      ***************** Java Runtime Settings ***********************************
      **************************************************************************/
-    QGroupBox *javartGB = new QGroupBox(i18n("Java Runtime Settings"), this);
+    QGroupBox *javartGB = new QGroupBox(i18n("Java Runtime Settings"), widget());
     QFormLayout *laygroup1 = new QFormLayout(javartGB);
     toplevel->addWidget(javartGB);
 
-    javaSecurityManagerCB = new QCheckBox(i18n("&Use security manager"), this);
+    javaSecurityManagerCB = new QCheckBox(i18n("&Use security manager"), widget());
     laygroup1->addRow(javaSecurityManagerCB);
     connect(javaSecurityManagerCB, &QAbstractButton::toggled, this, &KJavaOptions::slotChanged);
 
-    useKioCB = new QCheckBox(i18n("Use &KIO"), this);
+    useKioCB = new QCheckBox(i18n("Use &KIO"), widget());
     laygroup1->addRow(useKioCB);
     connect(useKioCB, &QAbstractButton::toggled, this, &KJavaOptions::slotChanged);
 
-    enableShutdownCB = new QCheckBox(i18n("Shu&tdown applet server when inactive for more than"), this);
+    enableShutdownCB = new QCheckBox(i18n("Shu&tdown applet server when inactive for more than"), widget());
     connect(enableShutdownCB, &QAbstractButton::toggled, this, &KJavaOptions::slotChanged);
     connect(enableShutdownCB, &QAbstractButton::clicked, this, &KJavaOptions::toggleJavaControls);
     QWidget *secondsHB = new QWidget(javartGB);
@@ -118,11 +118,11 @@ KJavaOptions::KJavaOptions(const KSharedConfig::Ptr &config, const QString &grou
     connect(serverTimeoutSB, QOverload<int>::of(&QSpinBox::valueChanged), this, [this](){ slotChanged(); });
     laygroup1->addRow(enableShutdownCB, serverTimeoutSB);
 
-    pathED = new  KUrlRequester(this);
+    pathED = new  KUrlRequester(widget());
     connect(pathED, &KUrlRequester::textChanged, this, &KJavaOptions::slotChanged);
     laygroup1->addRow(i18n("&Path to Java executable, or 'java':"), pathED);
 
-    addArgED = new QLineEdit(this);
+    addArgED = new QLineEdit(widget());
     connect(addArgED, &QLineEdit::textChanged, this, &KJavaOptions::slotChanged);
     laygroup1->addRow(i18n("Additional Java a&rguments:"), addArgED);
 
@@ -223,7 +223,7 @@ void KJavaOptions::load()
     serverTimeoutSB->setValue(serverTimeout);
 
     toggleJavaControls();
-    emit changed(false);
+    setNeedsSave(false);
 }
 
 void KJavaOptions::defaults()
@@ -237,7 +237,7 @@ void KJavaOptions::defaults()
     enableShutdownCB->setChecked(true);
     serverTimeoutSB->setValue(60);
     toggleJavaControls();
-    emit changed(true);
+    setNeedsSave(true);
 }
 
 void KJavaOptions::save()
@@ -259,12 +259,12 @@ void KJavaOptions::save()
 
     // sync moved to KJSParts::save
 //    m_pConfig->sync();
-    emit changed(false);
+    setNeedsSave(false);
 }
 
 void KJavaOptions::slotChanged()
 {
-    emit changed(true);
+    setNeedsSave(true);
 }
 
 void KJavaOptions::toggleJavaControls()

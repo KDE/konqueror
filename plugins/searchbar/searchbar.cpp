@@ -20,7 +20,7 @@
 #include <KIO/CommandLauncherJob>
 #include <KMainWindow>
 #include <KParts/Part>
-#include <KParts/BrowserExtension>
+#include "kf5compat.h" //For NavigationExtension
 #include <KParts/SelectorInterface>
 #include <KParts/PartActivateEvent>
 #include <KLocalizedString>
@@ -210,7 +210,7 @@ void SearchBarPlugin::startSearch(const QString &search)
             return;
         }
 
-        KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(m_part);
+        KParts::NavigationExtension *ext = KParts::NavigationExtension::childObject(m_part);
         if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
             KParts::OpenUrlArguments arguments;
             KParts::BrowserArguments browserArguments;

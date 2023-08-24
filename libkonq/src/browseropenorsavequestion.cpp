@@ -27,7 +27,6 @@
 #include <QStyleOption>
 #include <QVBoxLayout>
 
-using namespace KParts;
 Q_DECLARE_METATYPE(KService::Ptr)
 
 class BrowserOpenOrSaveQuestionPrivate : public QDialog

@@ -13,7 +13,6 @@
 #include <config-konqueror.h>
 
 #include <kmessagebox.h>
-#include <kmimetypetrader.h>
 #include <kservice.h>
 #include <KIO/CommandLauncherJob>
 #include <KIO/ApplicationLauncherJob>
@@ -48,7 +47,11 @@
 static const char appName[] = "kfmclient";
 static const char version[] = "2.0";
 
+#if QT_VERSION_MAJOR < 6
 extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
+#else
+int main(int argc, char **argv)
+#endif
 {
     QApplication app(argc, argv);
     KLocalizedString::setApplicationDomain("kfmclient");

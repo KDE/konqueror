@@ -15,6 +15,7 @@
 #include <QDateTime>
 #include <QSet>
 #include <KJob>
+#include <QPointer>
 
 #include "qtwebengine6compat.h"
 
@@ -115,7 +116,12 @@ protected:
     bool doSuspend() override;
 
 private slots:
+#if QT_VERSION_MAJOR < 6
     void downloadProgressed(quint64 received, quint64 total);
+#else
+    void downloadProgressed();
+#endif
+
     void stateChanged(QWebEngineDownloadRequest::DownloadState state);
     void startDownloading();
     void downloadFinished();

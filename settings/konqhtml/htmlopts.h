@@ -28,7 +28,8 @@ class KMiscHTMLOptions : public KCModule
     Q_OBJECT
 
 public:
-    KMiscHTMLOptions(QWidget *parent, const QVariantList &);
+    //TODO KF6: when dropping compatibility with KF5, remove QVariantList argument
+    KMiscHTMLOptions(QObject *parent, const KPluginMetaData &md={}, const QVariantList &args={});
     ~KMiscHTMLOptions() override;
     void load() override;
     void save() override;

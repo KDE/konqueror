@@ -9,6 +9,7 @@
 #include "webengine_filter.h"
 #include <webenginepart_debug.h>
 #include "../../src/htmldefaults.h"
+#include "profile.h"
 
 #include <KConfig>
 #include <KSharedConfig>
@@ -22,6 +23,10 @@
 #include <QFontDatabase>
 #include <QFileInfo>
 #include <QDir>
+#include <QStringView>
+#include <QRegularExpression>
+
+using namespace KonqWebEnginePart;
 
 QDataStream & operator<<(QDataStream& ds, const WebEngineSettings::WebFormInfo& info)
 {
@@ -365,7 +370,7 @@ void WebEngineSettings::init( KConfig * config, bool reset )
               else
                   d->adBlackList.addFilter(url);
           }
-          else if (name.startsWith(QLatin1String("HTMLFilterListName-")) && (id = name.midRef(19).toInt()) > 0)
+          else if (name.startsWith(QLatin1String("HTMLFilterListName-")) && (id = QStringView{name}.mid(19).toInt()) > 0)
           {
               /** check if entry is enabled */
               bool filterEnabled = cgFilter.readEntry(QStringLiteral("HTMLFilterListEnabled-").append(QString::number(id))) != QLatin1String("false");
@@ -678,51 +683,52 @@ void WebEngineSettings::init( KConfig * config, bool reset )
     QString value = cgHtml.readEntry( "DNSPrefetch", "Enabled" ).toLower();
 
     if (value == "enabled")
-        QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::DnsPrefetchEnabled, true);
+        Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::DnsPrefetchEnabled, true);
     else
-        QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::DnsPrefetchEnabled, false);
+        Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::DnsPrefetchEnabled, false);
   }
 
   // Sync with QWebEngineSettings.
   if (!d->m_encoding.isEmpty())
-      QWebEngineSettings::defaultSettings()->setDefaultTextEncoding(d->m_encoding);
-  QWebEngineSettings::defaultSettings()->setUserStyleSheetUrl(QUrl::fromUserInput(userStyleSheet()));
+      Profile::defaultProfile()->settings()->setDefaultTextEncoding(d->m_encoding);
+  Profile::defaultProfile()->settings()->setUserStyleSheetUrl(QUrl::fromUserInput(userStyleSheet()));
 #endif
 
-  QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::AutoLoadImages, autoLoadImages());
-  QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::JavascriptEnabled, isJavaScriptEnabled());
- // QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::JavaEnabled, isJavaEnabled());
-  QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::PluginsEnabled, isPluginsEnabled());
+
+  Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::AutoLoadImages, autoLoadImages());
+  Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, isJavaScriptEnabled());
+ // Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::JavaEnabled, isJavaEnabled());
+  Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::PluginsEnabled, isPluginsEnabled());
 
   // By default disable JS window.open when policy is deny or smart.
   const HtmlSettingsInterface::JSWindowOpenPolicy policy = windowOpenPolicy();
   if (policy == HtmlSettingsInterface::JSWindowOpenDeny || policy == HtmlSettingsInterface::JSWindowOpenSmart)
-      QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, false);
+      Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, false);
   else
-      QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, true);
+      Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, true);
 
-//  QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::ZoomTextOnly, zoomTextOnly());
-//  QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::DeveloperExtrasEnabled, isJavaScriptDebugEnabled());
-  QWebEngineSettings::defaultSettings()->setFontFamily(QWebEngineSettings::StandardFont, stdFontName());
-  QWebEngineSettings::defaultSettings()->setFontFamily(QWebEngineSettings::FixedFont, fixedFontName());
-  QWebEngineSettings::defaultSettings()->setFontFamily(QWebEngineSettings::SerifFont, serifFontName());
-  QWebEngineSettings::defaultSettings()->setFontFamily(QWebEngineSettings::SansSerifFont, sansSerifFontName());
-  QWebEngineSettings::defaultSettings()->setFontFamily(QWebEngineSettings::CursiveFont, cursiveFontName());
-  QWebEngineSettings::defaultSettings()->setFontFamily(QWebEngineSettings::FantasyFont, fantasyFontName());
+//  Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::ZoomTextOnly, zoomTextOnly());
+//  Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::DeveloperExtrasEnabled, isJavaScriptDebugEnabled());
+  Profile::defaultProfile()->settings()->setFontFamily(QWebEngineSettings::StandardFont, stdFontName());
+  Profile::defaultProfile()->settings()->setFontFamily(QWebEngineSettings::FixedFont, fixedFontName());
+  Profile::defaultProfile()->settings()->setFontFamily(QWebEngineSettings::SerifFont, serifFontName());
+  Profile::defaultProfile()->settings()->setFontFamily(QWebEngineSettings::SansSerifFont, sansSerifFontName());
+  Profile::defaultProfile()->settings()->setFontFamily(QWebEngineSettings::CursiveFont, cursiveFontName());
+  Profile::defaultProfile()->settings()->setFontFamily(QWebEngineSettings::FantasyFont, fantasyFontName());
 
   // TODO: Create a webengine config module that gets embedded into Konqueror's kcm.
   // Turn on WebGL support
-//  QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::WebGLEnabled, d->m_enableWebGL);
+//  Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::WebGLEnabled, d->m_enableWebGL);
   // Turn on HTML 5 local and offline storage capabilities...
-//  QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::OfflineStorageDatabaseEnabled, d->m_enableOfflineStorageDb);
-//  QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::OfflineWebApplicationCacheEnabled, d->m_enableOfflineWebAppCache);
-  QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::LocalStorageEnabled, d->m_enableLocalStorage);
+//  Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::OfflineStorageDatabaseEnabled, d->m_enableOfflineStorageDb);
+//  Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::OfflineWebApplicationCacheEnabled, d->m_enableOfflineWebAppCache);
+  Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::LocalStorageEnabled, d->m_enableLocalStorage);
 
-  QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::ScrollAnimatorEnabled, smoothScrolling() != KSmoothScrollingDisabled);
+  Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::ScrollAnimatorEnabled, smoothScrolling() != KSmoothScrollingDisabled);
 
-  QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::PdfViewerEnabled, internalPdfViewer());
+  Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::PdfViewerEnabled, internalPdfViewer());
 
-  QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, true);
+  Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, true);
 
   // These numbers should be calculated from real "logical" DPI/72, using a default dpi of 96 for now
   computeFontSizes(96);
@@ -740,8 +746,8 @@ void WebEngineSettings::computeFontSizes( int logicalDpi )
   if (toPix < 96.0/72.0)
       toPix = 96.0/72.0;
 
-  QWebEngineSettings::defaultSettings()->setFontSize(QWebEngineSettings::MinimumFontSize, qRound(minFontSize() * toPix));
-  QWebEngineSettings::defaultSettings()->setFontSize(QWebEngineSettings::DefaultFontSize, qRound(mediumFontSize() * toPix));
+  Profile::defaultProfile()->settings()->setFontSize(QWebEngineSettings::MinimumFontSize, qRound(minFontSize() * toPix));
+  Profile::defaultProfile()->settings()->setFontSize(QWebEngineSettings::DefaultFontSize, qRound(mediumFontSize() * toPix));
 }
 
 bool WebEngineSettings::zoomToDPI() const
@@ -874,7 +880,7 @@ void WebEngineSettings::addAdFilter( const QString &url )
 {
     KConfigGroup config = KSharedConfig::openConfig( QStringLiteral("khtmlrc"), KConfig::NoGlobals )->group( "Filter Settings" );
 
-    QRegExp rx;
+    QRegularExpression rx;
 
     // Try compiling to avoid invalid stuff. Only support the basic syntax here...
     // ### refactor somewhat
@@ -885,8 +891,7 @@ void WebEngineSettings::addAdFilter( const QString &url )
     }
     else
     {
-        rx.setPatternSyntax(QRegExp::Wildcard);
-        rx.setPattern(url);
+        rx.setPattern(QRegularExpression::wildcardToRegularExpression(url));
     }
 
     if (rx.isValid())

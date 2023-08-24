@@ -22,19 +22,24 @@ K_PLUGIN_FACTORY_WITH_JSON(KCMPerformanceConfigFactory, "kcmperformance.json", r
 namespace KCMPerformance
 {
 
-Config::Config(QWidget *parent_P, const QVariantList &)
-    : KCModule(parent_P)
+Config::Config(QObject *parent, const KPluginMetaData &md, const QVariantList &)
+    : KCModule(parent, md)
 {
-    setQuickHelp(i18n("<h1>KDE Performance</h1>"
-                      " You can configure settings that improve KDE performance here."));
-
-    QVBoxLayout *topLayout = new QVBoxLayout(this);
-    QTabWidget *tabs = new QTabWidget(this);
+    QVBoxLayout *topLayout = new QVBoxLayout(widget());
+    QTabWidget *tabs = new QTabWidget(widget());
     konqueror_widget = new Konqueror;
+#if QT_VERSION_MAJOR < 6
     connect(konqueror_widget, &Konqueror::changed, this, &Config::markAsChanged);
+#else
+    connect(konqueror_widget, &Konqueror::changed, this, [this](){setNeedsSave(true);});
+#endif
     tabs->addTab(konqueror_widget, i18n("Konqueror"));
     system_widget = new SystemWidget;
+#if QT_VERSION_MAJOR < 6
     connect(system_widget, &SystemWidget::changed, this, &Config::markAsChanged);
+#else
+    connect(system_widget, &SystemWidget::changed, this, [this](){setNeedsSave(true);});
+#endif
     tabs->addTab(system_widget, i18n("System"));
     topLayout->addWidget(tabs);
 }
@@ -57,34 +62,33 @@ void Config::defaults()
     system_widget->defaults();
 }
 
-KonquerorConfig::KonquerorConfig(QWidget *parent_P, const QVariantList &)
-    : KCModule(parent_P)
+KonquerorConfig::KonquerorConfig(QObject *parent, const KPluginMetaData &md, const QVariantList &)
+    : KCModule(parent, md)
 {
-    setQuickHelp(i18n("<h1>Konqueror Performance</h1>"
-                      " You can configure several settings that improve Konqueror performance here."
-                      " These include options for reusing already running instances"
-                      " and for keeping instances preloaded."));
-
-    QVBoxLayout *topLayout = new QVBoxLayout(this);
+    QVBoxLayout *topLayout = new QVBoxLayout(widget());
     topLayout->setContentsMargins(0, 0, 0, 0);
-    widget = new Konqueror(this);
-    connect(widget, &Konqueror::changed, this, &KonquerorConfig::markAsChanged);
-    topLayout->addWidget(widget);
+    m_widget = new Konqueror(widget());
+#if QT_VERSION_MAJOR < 6
+    connect(m_widget, &Konqueror::changed, this, &KonquerorConfig::markAsChanged);
+#else
+    connect(m_widget, &Konqueror::changed, this, [this](){setNeedsSave(true);});
+#endif
+    topLayout->addWidget(m_widget);
 }
 
 void KonquerorConfig::load()
 {
-    widget->load();
+    m_widget->load();
 }
 
 void KonquerorConfig::save()
 {
-    widget->save();
+    m_widget->save();
 }
 
 void KonquerorConfig::defaults()
 {
-    widget->defaults();
+    m_widget->defaults();
 }
 
 } // namespace

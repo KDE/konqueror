@@ -20,6 +20,7 @@ set(konq_LIB_SRCS
    interfaces/cookiejar.cpp
    interfaces/common.h
    interfaces/downloaderextension.cpp
+   libkonq_utils.cpp
 )
 
 ecm_qt_declare_logging_category(konq_LIB_SRCS HEADER libkonq_debug.h IDENTIFIER LIBKONQ_LOG CATEGORY_NAME org.kde.libkonq)
@@ -40,6 +41,7 @@ target_link_libraries(KF${KF_MAJOR_VERSION}Konq
     KF${KF_MAJOR_VERSION}::Service
     KF${KF_MAJOR_VERSION}::Parts
     Qt${KF_MAJOR_VERSION}::WebEngineWidgets
+    KF${KF_MAJOR_VERSION}::TextWidgets
     PRIVATE
     KF${KF_MAJOR_VERSION}::Bookmarks
     KF${KF_MAJOR_VERSION}::I18n

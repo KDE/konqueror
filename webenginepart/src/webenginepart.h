@@ -12,6 +12,8 @@
 
 #include "kwebenginepartlib_export.h"
 
+#include "kf5compat.h" //For NavigationExtension
+
 #include <QWebEnginePage>
 
 #include <kparts_version.h>
@@ -20,7 +22,8 @@
 #include <QWebEngineScript>
 
 namespace KParts {
-  class BrowserExtension;
+//TODO KF6: when removing compatibility with KF5, uncomment the line below
+  // class NavigationExtension;
   class StatusBarExtension;
 }
 
@@ -32,7 +35,7 @@ class SearchBar;
 class PasswordBar;
 class FeaturePermissionBar;
 class KUrlLabel;
-class WebEngineBrowserExtension;
+class WebEngineNavigationExtension;
 class WebEngineWallet;
 class KPluginMetaData;
 class WebEnginePartControls;
@@ -107,6 +110,10 @@ public:
     void setWallet(WebEngineWallet* wallet);
 
     WebEngineWallet* wallet() const;
+
+#if QT_VERSION_MAJOR < 6
+    KParts::NavigationExtension* navigationExtension() const;
+#endif
 
     /**
      * @brief Changes the page object associated with the part
@@ -215,7 +222,7 @@ private:
     SearchBar* m_searchBar;
     PasswordBar* m_passwordBar;
     QVector<FeaturePermissionBar*> m_permissionBars;
-    WebEngineBrowserExtension* m_browserExtension;
+    WebEngineNavigationExtension* m_browserExtension;
     KParts::StatusBarExtension* m_statusBarExtension;
     WebEngineView* m_webView;
     WebEngineWallet* m_wallet;

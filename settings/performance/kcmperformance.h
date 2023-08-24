@@ -20,7 +20,8 @@ class Config
 {
     Q_OBJECT
 public:
-    Config(QWidget *parent_P, const QVariantList &args);
+    //TODO KF6: when dropping compatibility with KF5, remove QVariantList argument
+    Config(QObject *parent_P, const KPluginMetaData &md={}, const QVariantList &args={});
     void load() override;
     void save() override;
     void defaults() override;
@@ -34,12 +35,13 @@ class KonquerorConfig
 {
     Q_OBJECT
 public:
-    KonquerorConfig(QWidget *parent_P, const QVariantList &args);
+    //TODO KF6: when dropping compatibility with KF5, remove QVariantList argument
+    KonquerorConfig(QObject *parent, const KPluginMetaData &md={}, const QVariantList &args={});
     void load() override;
     void save() override;
     void defaults() override;
 private:
-    Konqueror *widget;
+    Konqueror *m_widget;
 };
 
 } // namespace

@@ -112,7 +112,7 @@ KonqCombo::KonqCombo(QWidget *parent)
     setLayoutDirection(Qt::LeftToRight);
     setInsertPolicy(NoInsert);
     setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed));
-    setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
+    setSizeAdjustPolicy(QComboBox::AdjustToContents);
 
     Q_ASSERT(s_config);
 
@@ -377,7 +377,7 @@ void KonqCombo::slotSetIcon(int index)
 void KonqCombo::getStyleOption(QStyleOptionComboBox *comboOpt)
 {
     //We only use this for querying metrics,so it's rough..
-    comboOpt->init(this);
+    comboOpt->initFrom(this);
     comboOpt->editable = isEditable();
     comboOpt->frame    = hasFrame();
     comboOpt->iconSize = iconSize();
@@ -735,7 +735,9 @@ QSize KonqComboItemDelegate::sizeHint(const QStyleOptionViewItem &option,
     QSize size(1, qMax(option.fontMetrics.lineSpacing(), option.decorationSize.height()));
     size.rheight() += vMargin * 2;
 
-    return size.expandedTo(QApplication::globalStrut());
+    //TODO KF6: QApplication::globalStrut doesn't exist in Qt6, so we're treating as
+    //if it were QSize(0,0). Check whether the assumption is correct
+    return size;
 }
 
 void KonqComboItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,

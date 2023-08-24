@@ -1,8 +1,8 @@
 /* This file is part of the KDE project
-    SPDX-FileCopyrightText: 1998, 1999 Torben Weis <weis@kde.org>
-    SPDX-FileCopyrightText: 2006 Daniel Teske <teske@squorn.de>
+SPDX-FileCopyrightText: 1998, 1999 Torben Weis <weis@kde.org>
+SPDX-FileCopyrightText: 2006 Daniel Teske <teske@squorn.de>
 
-    SPDX-License-Identifier: LGPL-2.0-or-later
+SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
 #include "konqbookmarkmenu.h"
@@ -20,11 +20,12 @@
 
 #include "kbookmarkmanager.h"
 #include "konqpixmapprovider.h"
+#include "libkonq_utils.h"
 
 using namespace Konqueror;
 
 KonqBookmarkContextMenu::KonqBookmarkContextMenu(const KBookmark &bm, KBookmarkManager *mgr, KBookmarkOwner *owner)
-    : KBookmarkContextMenu(bm, mgr, owner)
+: KBookmarkContextMenu(bm, mgr, owner)
 {
 }
 
@@ -34,49 +35,49 @@ KonqBookmarkContextMenu::~KonqBookmarkContextMenu()
 
 void KonqBookmarkContextMenu::addActions()
 {
-    KConfigGroup config = KSharedConfig::openConfig(QStringLiteral("kbookmarkrc"), KConfig::NoGlobals)->group("Bookmarks");
-    bool filteredToolbar = config.readEntry("FilteredToolbar", false);
+KConfigGroup config = KSharedConfig::openConfig(QStringLiteral("kbookmarkrc"), KConfig::NoGlobals)->group("Bookmarks");
+bool filteredToolbar = config.readEntry("FilteredToolbar", false);
 
-    if (bookmark().isGroup()) {
-        addOpenFolderInTabs();
-        addBookmark();
+if (bookmark().isGroup()) {
+    addOpenFolderInTabs();
+    addBookmark();
 
-        if (filteredToolbar) {
-            QString text = bookmark().showInToolbar() ? tr("Hide in toolbar") : tr("Show in toolbar");
-            addAction(text, this, &KonqBookmarkContextMenu::toggleShowInToolbar);
-        }
-
-        addFolderActions();
-    } else {
-        if (owner()) {
-            addAction(QIcon::fromTheme(QStringLiteral("window-new")), tr("Open in New Window"), this, &KonqBookmarkContextMenu::openInNewWindow);
-            addAction(QIcon::fromTheme(QStringLiteral("tab-new")), tr("Open in New Tab"), this, &KonqBookmarkContextMenu::openInNewTab);
-        }
-        addBookmark();
-
-        if (filteredToolbar) {
-            QString text = bookmark().showInToolbar() ? tr("Hide in toolbar") : tr("Show in toolbar");
-            addAction(text, this, &KonqBookmarkContextMenu::toggleShowInToolbar);
-        }
-
-        addBookmarkActions();
+    if (filteredToolbar) {
+        QString text = bookmark().showInToolbar() ? tr("Hide in toolbar") : tr("Show in toolbar");
+        addAction(text, this, &KonqBookmarkContextMenu::toggleShowInToolbar);
     }
+
+    addFolderActions();
+} else {
+    if (owner()) {
+        addAction(QIcon::fromTheme(QStringLiteral("window-new")), tr("Open in New Window"), this, &KonqBookmarkContextMenu::openInNewWindow);
+        addAction(QIcon::fromTheme(QStringLiteral("tab-new")), tr("Open in New Tab"), this, &KonqBookmarkContextMenu::openInNewTab);
+    }
+    addBookmark();
+
+    if (filteredToolbar) {
+        QString text = bookmark().showInToolbar() ? tr("Hide in toolbar") : tr("Show in toolbar");
+        addAction(text, this, &KonqBookmarkContextMenu::toggleShowInToolbar);
+    }
+
+    addBookmarkActions();
+}
 }
 
 void KonqBookmarkContextMenu::toggleShowInToolbar()
 {
-    bookmark().setShowInToolbar(!bookmark().showInToolbar());
-    manager()->emitChanged(bookmark().parentGroup());
+bookmark().setShowInToolbar(!bookmark().showInToolbar());
+manager()->emitChanged(bookmark().parentGroup());
 }
 
 void KonqBookmarkContextMenu::openInNewTab()
 {
-    owner()->openInNewTab(bookmark());
+owner()->openInNewTab(bookmark());
 }
 
 void KonqBookmarkContextMenu::openInNewWindow()
 {
-    owner()->openInNewWindow(bookmark());
+owner()->openInNewWindow(bookmark());
 }
 
 /******************************/

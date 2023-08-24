@@ -94,7 +94,7 @@ void WebEnginePartControls::registerScripts()
         QJsonObject scriptData = it.value().toObject();
         Q_ASSERT(!scriptData.isEmpty());
         QWebEngineScript script = scriptFromJson(it.key(), scriptData);
-        if (!script.isNull()) {
+        if (!script.name().isEmpty()) {
             m_profile->scripts()->insert(script);
         }
     }
@@ -204,7 +204,10 @@ QString WebEnginePartControls::determineHttpAcceptLanguageHeader() const
     }
     QStringList languages = lang.split(':');
     QString header = languages.at(0);
-    int max = std::min(languages.length(), 10);
+    //In Qt6, QList::length() returns a qsizetype, which means you can't pass it to std::min.
+    //Casting it to an int shouldn't be a problem, since the number of languages should be
+    //small
+    int max = std::min(static_cast<int>(languages.length()), 10);
     //The counter starts from 1 because the first entry has already been inserted above
     for (int i = 1; i < max; ++i) {
         header.append(QString(", %1;q=0.%2").arg(languages.at(i)).arg(10-i));

@@ -54,7 +54,12 @@ target_link_libraries(konq_sidebar
     KF${KF_MAJOR_VERSION}::Konq
     KF${KF_MAJOR_VERSION}::KCMUtils
     KF${KF_MAJOR_VERSION}::IconThemes
+    KF${KF_MAJOR_VERSION}::KIOFileWidgets
     konqsidebarplugin)
+
+if (KF_MAJOR_VERSION STRGREATER "5")
+    target_link_libraries(konq_sidebar KF${KF_MAJOR_VERSION}::IconWidgets)
+endif()
 
 install(TARGETS konq_sidebar DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${KF_MAJOR_VERSION}/parts)
 

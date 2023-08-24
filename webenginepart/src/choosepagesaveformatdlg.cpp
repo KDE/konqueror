@@ -10,7 +10,7 @@
 #include <QButtonGroup>
 
 ChoosePageSaveFormatDlg::ChoosePageSaveFormatDlg(QWidget* parent)
-    : m_ui(new Ui::ChoosePageSaveFormatDlg), m_choicesGroup(new QButtonGroup(this))
+    : QDialog(parent), m_ui(new Ui::ChoosePageSaveFormatDlg), m_choicesGroup(new QButtonGroup(this))
 {
     m_ui->setupUi(this);
     m_choicesGroup->addButton(m_ui->m_singleHTMLPage, QWebEngineDownloadRequest::SavePageFormat::SingleHtmlSaveFormat);

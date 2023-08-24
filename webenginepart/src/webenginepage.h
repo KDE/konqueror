@@ -15,7 +15,7 @@
 #include "kwebenginepartlib_export.h"
 #include "qtwebengine6compat.h"
 
-#include <KParts/BrowserExtension>
+#include "kf5compat.h" //For NavigationExtension
 #include <QWebEnginePage>
 
 #include <QUrl>
@@ -55,17 +55,6 @@ public:
     void requestDownload(QWebEngineDownloadItem *item, bool newWindow, bool requestSave);
 
     void setStatusBarText(const QString &text);
-
-    /**
-    * @brief Tells the page that the part has requested to load the given URL
-    *
-    * @note Calling this function doesn't cause the page to be loaded: you still need to call load() to do so.
-    * @see m_urlRequestedByApp
-    * @param url the requested URL
-    */
-//     void markUrlAsRequestedByApp(const QUrl &url){m_urlRequestedByApp = url;}
-
-//     void forceLoadingOfUrl(const QUrl &url){m_forcedUrl = url;}
 
     /**
      * @brief Sets the webengine part to be used by this object.
@@ -160,7 +149,6 @@ protected Q_SLOTS:
 
 protected Q_SLOTS:
     void slotLoadFinished(bool ok);
-    void slotUnsupportedContent(QNetworkReply* reply);
     virtual void slotGeometryChangeRequested(const QRect& rect);
     void slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature);
     void slotAuthenticationRequired(const QUrl &requestUrl, QAuthenticator *auth);
@@ -168,7 +156,6 @@ protected Q_SLOTS:
     void changeLifecycleState(QWebEnginePage::LifecycleState recommendedState);
 
 private:
-    bool checkLinkSecurity(const QNetworkRequest& req, NavigationType type) const;
     bool checkFormData(const QUrl& url) const;
     bool handleMailToUrl (const QUrl& , NavigationType type) const;
     void setPageJScriptPolicy(const QUrl& url);
@@ -225,7 +212,7 @@ private:
     QTimer *m_dropOperationTimer;
 #endif
 
-    QMultiHash<QUrl, QWebEngineDownloadItem*> m_downloadItems;
+    QMultiHash<QUrl, QWebEngineDownloadRequest*> m_downloadItems;
 };
 
 

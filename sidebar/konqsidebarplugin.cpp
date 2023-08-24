@@ -89,8 +89,8 @@ bool KonqSidebarModule::isPasteEnabled() const
 void KonqSidebarModule::showPopupMenu(const QPoint &global, const KFileItemList &items,
                                       const KParts::OpenUrlArguments &args,
                                       const KParts::BrowserArguments &browserArgs,
-                                      KParts::BrowserExtension::PopupFlags flags,
-                                      const KParts::BrowserExtension::ActionGroupMap &actionGroups)
+                                      KParts::NavigationExtension::PopupFlags flags,
+                                      const KParts::NavigationExtension::ActionGroupMap &actionGroups)
 {
     emit popupMenu(this, global, items, args, browserArgs, flags, actionGroups);
 }

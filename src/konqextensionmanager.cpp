@@ -26,7 +26,6 @@
 #include <KLocalizedString>
 #include <KPluginWidget>
 #include <KSharedConfig>
-#include <ksettings/dispatcher.h>
 #include <kstandardguiitem.h>
 
 // Local

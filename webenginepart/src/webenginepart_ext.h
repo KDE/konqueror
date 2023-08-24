@@ -16,7 +16,7 @@
 
 #include <QPointer>
 
-#include <KParts/BrowserExtension>
+#include "kf5compat.h" //For NavigationExtension
 #include <KParts/SelectorInterface>
 
 #include <asyncselectorinterface.h>
@@ -32,13 +32,13 @@ class QPrinter;
 class QJsonObject;
 class QWebEngineScript;
 
-class KWEBENGINEPARTLIB_EXPORT WebEngineBrowserExtension : public KParts::BrowserExtension
+class KWEBENGINEPARTLIB_EXPORT WebEngineNavigationExtension : public KParts::NavigationExtension
 {
     Q_OBJECT
 
 public:
-    WebEngineBrowserExtension(WebEnginePart *parent, const QByteArray& cachedHistoryData);
-    ~WebEngineBrowserExtension() override;
+    WebEngineNavigationExtension(WebEnginePart *parent, const QByteArray& cachedHistoryData);
+    ~WebEngineNavigationExtension() override;
 
     int xOffset() override;
     int yOffset() override;
@@ -168,13 +168,6 @@ public:
     // HtmlSettingsInterface
     QVariant htmlSettingsProperty(HtmlSettingsType type) const override;
     bool setHtmlSettingsProperty(HtmlSettingsType type, const QVariant& value) override;
-
-    /**
-     * @brief The script containing the definition of the JS functions to call to execute CSS queries
-     * @return the script object
-     * @warning To be used only by WebEnginePartControls
-     */
-    static QWebEngineScript querySelectorScript();
 
 private:
     WebEnginePart* part() const;

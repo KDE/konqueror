@@ -35,13 +35,13 @@
 #include <QTreeWidget>
 #include <QScrollBar>
 #include <QApplication>
-#include <QDesktopWidget>
 #include <QStandardPaths>
 #include <QSessionManager>
 #include <KSharedConfig>
 #include <KConfigGroup>
 #include <QDialogButtonBox>
 #include <KGuiItem>
+#include <QScreen>
 
 class KonqSessionManagerPrivate
 {
@@ -101,7 +101,7 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
         iconLayout->addWidget(iconLabel);
         iconLayout->addStretch(5);
         hLayout->addLayout(iconLayout, 0);
-        hLayout->addSpacing(style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+        hLayout->addSpacing(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing));
     }
 
     const QString text(i18n("Konqueror did not close correctly. Would you like to restore these previous sessions?"));
@@ -122,7 +122,7 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
     styleOption.initFrom(m_treeWidget);
     QFontMetrics fm(styleOption.font);
     int w = m_treeWidget->width();
-    const QRect desktop = QApplication::desktop()->screenGeometry(this);
+    const QRect desktop = screen()->geometry();
 
     // Collect info from the sessions to restore
     Q_FOREACH (const QString &sessionFile, sessionFilePaths) {

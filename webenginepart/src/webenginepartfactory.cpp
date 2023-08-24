@@ -33,9 +33,9 @@ QObject *WebEngineFactory::create(const char* iface, QWidget *parentWidget, QObj
     QByteArray histData (m_historyBufContainer.value(parentWidget));
     if (!histData.isEmpty()) histData = qUncompress(histData);
     WebEnginePart* part = new WebEnginePart(parentWidget, parent, metaData(), histData);
-    WebEngineBrowserExtension* ext = qobject_cast<WebEngineBrowserExtension*>(part->browserExtension());
+    WebEngineNavigationExtension* ext = qobject_cast<WebEngineNavigationExtension*>(part->browserExtension());
     if (ext) {
-        connect(ext, QOverload<QObject *, const QByteArray &>::of(&WebEngineBrowserExtension::saveHistory),
+        connect(ext, QOverload<QObject *, const QByteArray &>::of(&WebEngineNavigationExtension::saveHistory),
                 this, &WebEngineFactory::slotSaveHistory);
     }
     return part;

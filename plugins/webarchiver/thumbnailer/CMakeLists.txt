@@ -5,7 +5,7 @@ if (THUMBNAIL_USE_WEBKIT)
   find_package(Qt${KF_MAJOR_VERSION} REQUIRED WebKit WebKitWidgets)
   add_definitions(-DTHUMBNAIL_USE_WEBKIT)
 else ()
-  find_package(Qt${KF_MAJOR_VERSION} REQUIRED COMPONENTS WebEngine WebEngineWidgets)
+  find_package(Qt${KF_MAJOR_VERSION} REQUIRED COMPONENTS WebEngineCore WebEngineWidgets)
 endif ()
 
 find_package(KF${KF_MAJOR_VERSION} REQUIRED COMPONENTS KIO Archive)
@@ -24,10 +24,9 @@ target_link_libraries(webarchivethumbnail
 if (THUMBNAIL_USE_WEBKIT)
   target_link_libraries(webarchivethumbnail Qt${KF_MAJOR_VERSION}::WebKit Qt${KF_MAJOR_VERSION}::WebKitWidgets)
 else ()
-  target_link_libraries(webarchivethumbnail Qt${KF_MAJOR_VERSION}::WebEngine Qt${KF_MAJOR_VERSION}::WebEngineWidgets)
+  target_link_libraries(webarchivethumbnail Qt${KF_MAJOR_VERSION}::WebEngineCore Qt${KF_MAJOR_VERSION}::WebEngineWidgets)
 endif ()
 
 ########### install files ###############
 
 install(TARGETS webarchivethumbnail  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
-install(FILES webarchivethumbnail.desktop  DESTINATION  ${KDE_INSTALL_KSERVICESDIR} )

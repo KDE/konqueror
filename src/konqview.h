@@ -12,6 +12,7 @@
 #include "konqfactory.h"
 #include "konqframe.h"
 #include "konqutils.h"
+#include "kf5compat.h" //For NavigationExtension
 
 #include <kservice.h>
 #include <QMimeType>
@@ -29,7 +30,8 @@ class UrlLoader;
 class KonqFrame;
 namespace KParts
 {
-class BrowserExtension;
+//TODO KF6: when removing compatibility with KF5, uncomment the line below
+//class NavigationExtension;
 class StatusBarExtension;
 }
 
@@ -299,7 +301,7 @@ public:
         return m_bAborted;
     }
 
-    KParts::BrowserExtension *browserExtension() const;
+    KParts::NavigationExtension *browserExtension() const;
 
     KParts::StatusBarExtension *statusBarExtension() const;
 
@@ -535,7 +537,7 @@ public Q_SLOTS:
      */
     void setLocationBarURL(const QString &locationBarURL);
     /**
-     * get an icon for the URL from the BrowserExtension
+     * get an icon for the URL from the NavigationExtension
      */
     void setIconURL(const QUrl &iconURL);
 
@@ -559,7 +561,7 @@ private Q_SLOTS:
     void slotSpeed(KJob *, unsigned long bytesPerSecond);
 
     /**
-     * Connected to the BrowserExtension
+     * Connected to the NavigationExtension
      */
     void slotSelectionInfo(const KFileItemList &items);
     void slotMouseOverInfo(const KFileItem &item);

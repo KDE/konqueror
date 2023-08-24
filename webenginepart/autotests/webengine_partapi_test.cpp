@@ -8,7 +8,7 @@
 #include "webengine_testutils.h"
 
 #include <KIO/Job>
-#include <KParts/BrowserExtension>
+#include "kf5compat.h" //For NavigationExtension
 #include <KPluginMetaData>
 
 #include <QTest>
@@ -35,7 +35,7 @@ class WebEnginePartApiTest : public QObject
     Q_OBJECT
 private Q_SLOTS:
     void initTestCase();
-    void shouldHaveBrowserExtension();
+    void shouldHaveNavigationExtension();
     void shouldEmitStartedAndCompleted();
     void shouldEmitStartAndCompleteWithPendingAction();
     void shouldEmitSetWindowCaption();
@@ -48,13 +48,13 @@ void WebEnginePartApiTest::initTestCase()
     qRegisterMetaType<KIO::Job *>(); // for the KParts started signal
 }
 
-void WebEnginePartApiTest::shouldHaveBrowserExtension()
+void WebEnginePartApiTest::shouldHaveNavigationExtension()
 {
     // GIVEN
     WebEnginePart part(nullptr, nullptr, dummyMetaData());
 
     // WHEN
-    KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(&part);
+    KParts::NavigationExtension *ext = KParts::NavigationExtension::childObject(&part);
 
     // THEN
     QVERIFY(ext);
@@ -67,8 +67,8 @@ void WebEnginePartApiTest::shouldEmitStartedAndCompleted()
     QSignalSpy spyStarted(&part, &KParts::ReadOnlyPart::started);
     QSignalSpy spyCompleted(&part, SIGNAL(completed()));
     QSignalSpy spySetWindowCaption(&part, &KParts::ReadOnlyPart::setWindowCaption);
-    KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(&part);
-    QSignalSpy spyOpenUrlNotify(ext, &KParts::BrowserExtension::openUrlNotify);
+    KParts::NavigationExtension *ext = KParts::NavigationExtension::childObject(&part);
+    QSignalSpy spyOpenUrlNotify(ext, &KParts::NavigationExtension::openUrlNotify);
     const QUrl url(QStringLiteral("data:text/html, <p>Hello World</p>"));
 
     // WHEN
@@ -89,8 +89,8 @@ void WebEnginePartApiTest::shouldEmitStartAndCompleteWithPendingAction()
     QSignalSpy spyStarted(&part, &KParts::ReadOnlyPart::started);
     QSignalSpy spyCompleted(&part, SIGNAL(completedWithPendingAction()));
     QSignalSpy spySetWindowCaption(&part, &KParts::ReadOnlyPart::setWindowCaption);
-    KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(&part);
-    QSignalSpy spyOpenUrlNotify(ext, &KParts::BrowserExtension::openUrlNotify);
+    KParts::NavigationExtension *ext = KParts::NavigationExtension::childObject(&part);
+    QSignalSpy spyOpenUrlNotify(ext, &KParts::NavigationExtension::openUrlNotify);
     const QUrl url(QStringLiteral("data:text/html, <html><head><meta http-equiv=\"refresh\"><body><p>Hello World</p></body></html>"));
 
     // WHEN
@@ -130,8 +130,8 @@ void WebEnginePartApiTest::shouldEmitOpenUrlNotifyOnClick()
     QSignalSpy spyStarted(&part, &KParts::ReadOnlyPart::started);
     QSignalSpy spyCompleted(&part, SIGNAL(completed()));
     QSignalSpy spySetWindowCaption(&part, &KParts::ReadOnlyPart::setWindowCaption);
-    KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(&part);
-    QSignalSpy spyOpenUrlNotify(ext, &KParts::BrowserExtension::openUrlNotify);
+    KParts::NavigationExtension *ext = KParts::NavigationExtension::childObject(&part);
+    QSignalSpy spyOpenUrlNotify(ext, &KParts::NavigationExtension::openUrlNotify);
     const QString file = QFINDTESTDATA("data/page-with-link.html");
     QVERIFY(!file.isEmpty());
     const QUrl url = QUrl::fromLocalFile(file);

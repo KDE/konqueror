@@ -13,7 +13,6 @@
 #include <QIcon>
 #include <kiconloader.h>
 #include <KLocalizedString>
-#include <kservicetypetrader.h>
 
 // Local
 #include "konqview.h"

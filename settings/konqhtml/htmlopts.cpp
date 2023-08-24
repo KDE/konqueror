@@ -26,20 +26,11 @@
 
 //-----------------------------------------------------------------------------
 
-KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList &)
-    : KCModule(parent), m_groupname(QStringLiteral("HTML Settings"))
+KMiscHTMLOptions::KMiscHTMLOptions(QObject *parent, const KPluginMetaData &md, const QVariantList &)
+    : KCModule(parent, md), m_groupname(QStringLiteral("HTML Settings"))
 {
     m_pConfig = KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals);
-    QVBoxLayout *lay = new QVBoxLayout(this);
-
-    // Bookmarks
-    setQuickHelp(i18n("<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
-                      "functionality. Please note that the file manager "
-                      "functionality has to be configured using the \"File Manager\" "
-                      "configuration module. You can make some "
-                      "settings how Konqueror should handle the HTML code in "
-                      "the web pages it loads. It is usually not necessary to "
-                      "change anything here."));
+    QVBoxLayout *lay = new QVBoxLayout(widget());
 
     QGroupBox *bgBookmarks = new QGroupBox(i18n("Boo&kmarks"));
     QVBoxLayout *laygroup1 = new QVBoxLayout;
@@ -62,7 +53,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList &)
     lay->addWidget(bgBookmarks);
 
     // Form completion
-    m_pFormCompletionCheckBox = new QGroupBox(i18n("Form Com&pletion"), this);
+    m_pFormCompletionCheckBox = new QGroupBox(i18n("Form Com&pletion"), widget());
     m_pFormCompletionCheckBox->setCheckable(true);
     QFormLayout *laygroup2 = new QFormLayout(m_pFormCompletionCheckBox);
 
@@ -70,7 +61,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList &)
                                             " the data you enter in web forms and suggest it in similar fields for all forms."));
     connect(m_pFormCompletionCheckBox, &QGroupBox::toggled, this, &KMiscHTMLOptions::markAsChanged);
 
-    m_pMaxFormCompletionItems = new QSpinBox(this);
+    m_pMaxFormCompletionItems = new QSpinBox(widget());
     m_pMaxFormCompletionItems->setRange(0, 100);
     laygroup2->addRow(i18n("&Maximum completions:"), m_pMaxFormCompletionItems);
     m_pMaxFormCompletionItems->setToolTip(
@@ -110,24 +101,24 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList &)
     QGroupBox *bgMisc = new QGroupBox(i18nc("@title:group", "Miscellaneous"));
     QFormLayout *fl = new QFormLayout(bgMisc);
 
-    m_pAutoRedirectCheckBox = new QCheckBox(i18n("Allow automatic delayed &reloading/redirecting"), this);
+    m_pAutoRedirectCheckBox = new QCheckBox(i18n("Allow automatic delayed &reloading/redirecting"), widget());
     m_pAutoRedirectCheckBox->setToolTip(i18n("Some web pages request an automatic reload or redirection after"
                                           " a certain period of time. By unchecking this box Konqueror will ignore these requests."));
     connect(m_pAutoRedirectCheckBox, QOverload<bool>::of(&QAbstractButton::toggled), this, &KMiscHTMLOptions::markAsChanged);
     fl->addRow(m_pAutoRedirectCheckBox);
 
     // Checkbox to enable/disable Access Key activation through the Ctrl key.
-    m_pAccessKeys = new QCheckBox(i18n("Enable Access Ke&y activation with Ctrl key"), this);
+    m_pAccessKeys = new QCheckBox(i18n("Enable Access Ke&y activation with Ctrl key"), widget());
     m_pAccessKeys->setToolTip(i18n("Pressing the Ctrl key when viewing webpages activates Access Keys. Unchecking this box will disable this accessibility feature. (Konqueror needs to be restarted for this change to take effect.)"));
     connect(m_pAccessKeys, QOverload<bool>::of(&QAbstractButton::toggled), this, &KMiscHTMLOptions::markAsChanged);
     fl->addRow(m_pAccessKeys);
 
-    m_pDoNotTrack = new QCheckBox(i18n("Send the DNT header to tell web sites you do not want to be tracked"), this);
+    m_pDoNotTrack = new QCheckBox(i18n("Send the DNT header to tell web sites you do not want to be tracked"), widget());
     m_pDoNotTrack->setToolTip(i18n("Check this box if you want to inform a web site that you do not want your web browsing habits tracked."));
     connect(m_pDoNotTrack, QOverload<bool>::of(&QAbstractButton::toggled), this, &KMiscHTMLOptions::markAsChanged);
     fl->addRow(m_pDoNotTrack);
 
-    m_pOfferToSaveWebsitePassword = new QCheckBox(i18n("Offer to save website passwords"), this);
+    m_pOfferToSaveWebsitePassword = new QCheckBox(i18n("Offer to save website passwords"), widget());
     m_pOfferToSaveWebsitePassword->setToolTip(i18n("Uncheck this box to prevent being prompted to save website passwords"));
     connect(m_pOfferToSaveWebsitePassword, QOverload<bool>::of(&QAbstractButton::toggled), this, &KMiscHTMLOptions::markAsChanged);
     fl->addRow(m_pOfferToSaveWebsitePassword);
@@ -140,7 +131,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList &)
     lay->addWidget(bgMisc);
     lay->addStretch(5);
 
-    emit changed(false);
+    setNeedsSave(false);
 }
 
 KMiscHTMLOptions::~KMiscHTMLOptions()
@@ -228,5 +219,5 @@ void KMiscHTMLOptions::save()
     sessionBus.send(QDBusMessage::createSignal(QStringLiteral("/KBookmarkManager/konqueror"), QStringLiteral("org.kde.KIO.KBookmarkManager"), QStringLiteral("bookmarkConfigChanged")));
     sessionBus.send(QDBusMessage::createSignal(QStringLiteral("/KIO/Scheduler"), QStringLiteral("org.kde.KIO.Scheduler"), QStringLiteral("reparseSlaveConfiguration")));
 
-    emit changed(false);
+    setNeedsSave(false);
 }

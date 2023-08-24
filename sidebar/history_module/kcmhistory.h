@@ -10,7 +10,7 @@
 #ifndef __kcmhistory_h__
 #define __kcmhistory_h__
 
-#include <kcmodule.h>
+#include <KCModule>
 #include "ui_history_dlg.h"
 
 class KonqHistoryManager;
@@ -31,13 +31,15 @@ class HistorySidebarConfig : public KCModule
     Q_OBJECT
 
 public:
-    explicit HistorySidebarConfig(QWidget *parent = nullptr, const QVariantList &list = QVariantList());
+    explicit HistorySidebarConfig(QObject *parent = nullptr, const KPluginMetaData& md={}, const QVariantList &list = {});
 
     void load() override;
     void save() override;
     void defaults() override;
 
-    QString quickHelp() const override;
+#if QT_VERSION_MAJOR < 6
+    void setNeedSave(bool needs){emit changed(needs);}
+#endif
 
 private Q_SLOTS:
     void configChanged();

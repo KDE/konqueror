@@ -130,7 +130,7 @@ private:
      * @brief Creates a QWebEngineScript from it's JSON description and its name
      * @param name the name to give to the script (will be passed to QWebEngineScript::setName()
      * @param obj the JSON object describing the script
-     * @return the script object
+     * @return the script object. If script creation fails for any reason, the name of the script will be empty
      * @see registerScripts() for the description of the fields in @p object
      */
     static QWebEngineScript scriptFromJson(const QString &name, const QJsonObject &obj);

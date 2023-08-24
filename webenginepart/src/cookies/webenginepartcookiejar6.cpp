@@ -25,6 +25,7 @@
 #include <QFile>
 #include <QDataStream>
 #include <QDir>
+#include <QNetworkCookie>
 
 #include <kio_version.h>
 #include <KSharedConfig>

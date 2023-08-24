@@ -13,7 +13,18 @@
 
 #include <kparts_version.h>
 #include <kparts/part.h>
-#include <kparts/browserextension.h>
+
+//We don't use kf5compat.h to avoid linking with libkonq
+//TODO KF6: when removing compatibility with KF5, remove #if
+#include <QtGlobal>
+#if QT_VERSION_MAJOR < 6
+#include <KParts/BrowserExtension>
+namespace KParts {
+  typedef BrowserExtension NavigationExtension;
+}
+#else
+#include <KParts/NavigationExtension>
+#endif
 #include <kio/jobclasses.h>
 
 #include "fsview.h"
@@ -22,13 +33,13 @@ class KActionMenu;
 
 class FSViewPart;
 
-class FSViewBrowserExtension : public KParts::BrowserExtension
+class FSViewNavigationExtension : public KParts::NavigationExtension
 {
     Q_OBJECT
 
 public:
-    explicit FSViewBrowserExtension(FSViewPart *viewPart);
-    ~FSViewBrowserExtension() override;
+    explicit FSViewNavigationExtension(FSViewPart *viewPart);
+    ~FSViewNavigationExtension() override;
 
 public slots:
     void selected(TreeMapItem *);
@@ -67,6 +78,11 @@ public:
 
 public slots:
     void progressSlot(int percent, int dirs, const QString &lastDir);
+
+#if QT_VERSION_MAJOR < 6
+protected slots:
+    void slotInfoMessage(KJob * job, const QString & plain, const QString & rich=QString()) override;
+#endif
 
 private:
     FSView *_view;
@@ -125,7 +141,7 @@ private:
 
     FSView *_view;
     FSJob *_job;
-    FSViewBrowserExtension *_ext;
+    FSViewNavigationExtension *_ext;
     KActionMenu *_visMenu, *_areaMenu, *_depthMenu, *_colorMenu;
 };
 

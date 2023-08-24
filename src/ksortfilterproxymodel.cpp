@@ -35,7 +35,7 @@ KSortFilterProxyModel::~KSortFilterProxyModel()
 
 bool KSortFilterProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
-    if (filterRegExp().isEmpty()) {
+    if (filterRegularExpression().pattern().isEmpty()) {
         return true;    //Shortcut for common case
     }
 

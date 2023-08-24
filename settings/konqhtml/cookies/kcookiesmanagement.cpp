@@ -100,12 +100,12 @@ CookieProp *CookieListViewItem::leaveCookie()
     return ret;
 }
 
-KCookiesManagement::KCookiesManagement(QWidget *parent, const QVariantList &args)
-    : KCModule(parent, args)
+KCookiesManagement::KCookiesManagement(QObject *parent, const KPluginMetaData &md, const QVariantList &)
+    : KCModule(parent, md)
     , mDeleteAllFlag(false)
-    , mMainWidget(parent)
+    , mMainWidget(qobject_cast<QWidget*>(parent))
 {
-    mUi.setupUi(this);
+    mUi.setupUi(widget());
     mUi.searchLineEdit->setTreeWidget(mUi.cookiesTreeWidget);
     mUi.cookiesTreeWidget->setColumnWidth(0, 150);
 
@@ -159,7 +159,7 @@ void KCookiesManagement::save()
         }
     }
     mDeletedCookies.clear();
-    Q_EMIT changed(false);
+    setNeedsSave(false);
 }
 
 void KCookiesManagement::defaults()
@@ -192,11 +192,6 @@ void KCookiesManagement::clearCookieDetails()
     mUi.pathLineEdit->clear();
     mUi.expiresLineEdit->clear();
     mUi.secureLineEdit->clear();
-}
-
-QString KCookiesManagement::quickHelp() const
-{
-    return i18n("<h1>Cookie Management Quick Help</h1>");
 }
 
 QSet<QNetworkCookie> KCookiesManagement::getCookies()
@@ -232,7 +227,7 @@ void KCookiesManagement::reload()
     // are there any cookies?
     mUi.deleteAllButton->setEnabled(mUi.cookiesTreeWidget->topLevelItemCount() > 0);
     mUi.cookiesTreeWidget->sortItems(0, Qt::AscendingOrder);
-    Q_EMIT changed(false);
+    setNeedsSave(false);
 }
 
 Q_DECLARE_METATYPE(QList<int>)
@@ -361,12 +356,12 @@ void KCookiesManagement::deleteCurrent()
 
     mUi.deleteAllButton->setEnabled(mUi.cookiesTreeWidget->topLevelItemCount() > 0);
 
-    Q_EMIT changed(true);
+    setNeedsSave(true);
 }
 
 void KCookiesManagement::deleteAll()
 {
     mDeleteAllFlag = true;
     reset(true);
-    Q_EMIT changed(true);
+    setNeedsSave(true);
 }

@@ -24,8 +24,7 @@
 #include <KMessageBox>
 #include <KParts/ReadOnlyPart>
 #include <KParts/BrowserInterface>
-#include <KParts/BrowserExtension>
-#include <KParts/BrowserRun>
+#include "kf5compat.h" //For NavigationExtension
 #include <KParts/PartLoader>
 #include <KJobWidgets>
 #include <KProtocolManager>
@@ -63,9 +62,19 @@ bool UrlLoader::embedWithoutAskingToSave(const QString &mimeType)
     return s_mimeTypes.contains(mimeType);
 }
 
-bool UrlLoader::isExecutable(const QString& mimeType)
+//Code copied from kio/krun.cpp (KF5.109) written by:
+//- Torben Weis <weis@kde.org>
+//- David Faure <faure@kde.org>
+//- Michael Pyne <michael.pyne@kdemail.net>
+//- Harald Sitter <sitter@kde.org>
+bool UrlLoader::isExecutable(const QString& mimeTypeName)
 {
-    return KParts::BrowserRun::isExecutable(mimeType);
+    QMimeDatabase db;
+    QMimeType mimeType = db.mimeTypeForName(mimeTypeName);
+    return (mimeType.inherits(QStringLiteral("application/x-desktop")) || mimeType.inherits(QStringLiteral("application/x-executable")) ||
+            /* See https://bugs.freedesktop.org/show_bug.cgi?id=97226 */
+            mimeType.inherits(QStringLiteral("application/x-sharedlib")) || mimeType.inherits(QStringLiteral("application/x-ms-dos-executable"))
+            || mimeType.inherits(QStringLiteral("application/x-shellscript")));
 }
 
 UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url, const QString &mimeType, const KonqOpenURLRequest &req, bool trustedSource, bool dontEmbed):
@@ -320,7 +329,7 @@ void UrlLoader::decideOpenOrSave()
 }
 
 UrlLoader::OpenUrlAction UrlLoader::decideExecute() const {
-    if (!m_url.isLocalFile() || !KRun::isExecutable(m_mimeType)) {
+    if (!m_url.isLocalFile() || !isExecutable(m_mimeType)) {
         return OpenUrlAction::UnknwonAction;
     }
     bool canDisplay = !KParts::PartLoader::partsForMimeType(m_mimeType).isEmpty();
@@ -478,7 +487,7 @@ void UrlLoader::mimetypeDeterminedByJob()
 {
     if (m_mimeTypeFinderJob->error()) {
         m_jobErrorCode = m_mimeTypeFinderJob->error();
-        m_url = KParts::BrowserRun::makeErrorUrl(m_jobErrorCode, m_mimeTypeFinderJob->errorString(), m_url);
+        m_url = Konq::makeErrorUrl(m_jobErrorCode, m_mimeTypeFinderJob->errorString(), m_url);
         m_mimeType = QStringLiteral("text/html");
         m_action = OpenUrlAction::Embed;
         performAction();
@@ -629,7 +638,7 @@ void UrlLoader::embed()
 {
     if (m_jobErrorCode) {
         QUrl url = m_url;
-        m_url = KParts::BrowserRun::makeErrorUrl(m_jobErrorCode, m_url.scheme(), m_url);
+        m_url = Konq::makeErrorUrl(m_jobErrorCode, m_url.scheme(), m_url);
         m_mimeType = QStringLiteral("text/html");
         m_part = findPartById(QStringLiteral("webenginepart"));
     }

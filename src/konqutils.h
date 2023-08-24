@@ -22,5 +22,16 @@ namespace Konq
      * @return A list of the service types implemented by @p md
      */
     QStringList serviceTypes(const KPluginMetaData &md);
+
+    /**
+     * @brief Creates an URL with scheme `error` describing the error occurred while attempting to load an URL
+     *
+     * @param error the `KIO` error code (or `KIO::ERR_WORKER_DEFINED` if not from `KIO`)
+     * @param errorText the text of the error message
+     * @param initialUrl the URL that we were trying to open
+     * @return the `error` URL
+     */
+    QUrl makeErrorUrl(int error, const QString &errorText, const QUrl &initialUrl);
+
 }
 #endif //KONQUTILS_H

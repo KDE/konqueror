@@ -10,7 +10,7 @@ if(BUILD_TESTING)
   add_definitions(-DBUILD_TESTING)
 endif(BUILD_TESTING)
 
-#Before Qt .1. QtWebEngineView didn't allow opening a remote URL by dropping it
+#Before Qt 5.15.5 QtWebEngineView didn't allow opening a remote URL by dropping it
 #on the view itself, so WebEngineView needed to handle that itself.
 if(QtWebEngineWidgets_VERSION VERSION_LESS "5.15.5")
   add_definitions(-DREMOTE_DND_NOT_HANDLED_BY_WEBENGINE)
@@ -94,6 +94,7 @@ target_link_libraries(kwebenginepartlib
         KF${KF_MAJOR_VERSION}::Wallet
         KF${KF_MAJOR_VERSION}::Notifications
         KF${KF_MAJOR_VERSION}::KIOWidgets
+        KF${KF_MAJOR_VERSION}::TextWidgets
         KF${KF_MAJOR_VERSION}::Konq
     PRIVATE
         KF${KF_MAJOR_VERSION}::I18n
@@ -128,7 +129,13 @@ set(USE_SYSTEM_DICTIONARIES 0 CACHE BOOL "Don't build QtWebEngine dictionaries b
 if((NOT USE_SYSTEM_DICTIONARIES) AND Hunspell_FOUND)
   set(WEBENGINEPART_OWN_DICTIONARY_DIR ${CMAKE_INSTALL_PREFIX}/share/konqueror/webengine_dictionaries CACHE PATH "The directory where dictionary files built for WebEnginePart will be installed")
   add_compile_definitions(WEBENGINEPART_OWN_DICTIONARY_DIR="${WEBENGINEPART_OWN_DICTIONARY_DIR}")
-  target_compile_definitions(kdeinit_konqueror PUBLIC WEBENGINEPART_OWN_DICTIONARY_DIR="${WEBENGINEPART_OWN_DICTIONARY_DIR}")
+  
+if (KF_MAJOR_VERSION STRLESS "6")
+   set(konqueror_internal_lib_target kdeinit_konqueror)
+else()
+   set(konqueror_internal_lib_target konqueror_internal_lib)
+endif()
+  target_compile_definitions(${konqueror_internal_lib_target} PUBLIC WEBENGINEPART_OWN_DICTIONARY_DIR="${WEBENGINEPART_OWN_DICTIONARY_DIR}")
 
   #COMPILE HUNSPELL DICTIONARIES AS BDIC FILES
   find_package(WebEngineDictConverter)

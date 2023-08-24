@@ -13,10 +13,9 @@
 #include <QSet>
 #include <QUrl>
 #include <QVector>
+#include <QNetworkCookie>
 
 class KConfigGroup;
-
-class QNetworkCookie;
 
 namespace KonqInterfaces {
 

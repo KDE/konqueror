@@ -4,7 +4,6 @@
 #include <QDir>
 #include <QSaveFile>
 #include <QStandardPaths>
-#include <QTextCodec>
 #include <QTextStream>
 #include <QUrl>
 #include <QBuffer>
