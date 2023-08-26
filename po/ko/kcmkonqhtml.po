@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-17 00:46+0000\n"
-"PO-Revision-Date: 2023-08-06 21:39+0200\n"
+"PO-Revision-Date: 2023-08-25 22:51+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -550,101 +550,95 @@ msgstr "캐시를 저장할 사용자 정의 디렉터리"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search"
-msgstr "찾기:"
+msgstr "검색"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:27
 #, kde-format
 msgid "Search interactively for domains and hosts"
-msgstr ""
+msgstr "도메인 및 호스트에 대해 양방향으로 검색"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:43
 #, kde-format
 msgid "Site"
-msgstr ""
+msgstr "사이트"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:48
 #, kde-format
 msgid "Cookie Name"
-msgstr ""
+msgstr "쿠키 이름"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDelete)
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgid "D&elete"
-msgstr "삭제(&D)"
+msgstr "삭제(&E)"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
 #: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgid "Delete A&ll"
-msgstr "삭제(&D)"
+msgstr "모두 삭제(&L)"
 
 #. i18n: ectx: property (text), widget (QPushButton, configPolicyButton)
 #: cookies/kcookiesmanagement.ui:70
 #, kde-format
 msgid "Configure &Policy..."
-msgstr ""
+msgstr "정책 설정(&P)..."
 
 #. i18n: ectx: property (text), widget (QPushButton, reloadButton)
 #: cookies/kcookiesmanagement.ui:77
 #, kde-format
 msgid "&Reload List"
-msgstr ""
+msgstr "목록 새로 고침(&R)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, detailsGroupBox)
 #: cookies/kcookiesmanagement.ui:97
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "자세히"
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
 #: cookies/kcookiesmanagement.ui:106
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "이름"
+msgstr "이름:"
 
 #. i18n: ectx: property (text), widget (QLabel, valueLabel)
 #: cookies/kcookiesmanagement.ui:129
-#, fuzzy, kde-format
-#| msgid "Value"
+#, kde-format
 msgid "Value:"
-msgstr "값"
+msgstr "값:"
 
 #. i18n: ectx: property (text), widget (QLabel, domainLabel)
 #: cookies/kcookiesmanagement.ui:152
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain:"
-msgstr "호스트/도메인"
+msgstr "도메인:"
 
 #. i18n: ectx: property (text), widget (QLabel, patchLabel)
 #: cookies/kcookiesmanagement.ui:175
 #, kde-format
 msgid "Path:"
-msgstr ""
+msgstr "경로:"
 
 #. i18n: ectx: property (text), widget (QLabel, expiresLabel)
 #: cookies/kcookiesmanagement.ui:198
 #, kde-format
 msgid "Expires:"
-msgstr ""
+msgstr "만료 시간:"
 
 #. i18n: ectx: property (text), widget (QLabel, secureLabel)
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
-msgstr ""
+msgstr "보안:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -657,13 +651,17 @@ msgid ""
 "unbrowsable.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"<p>쿠키를 사용합니다. 대개 쿠키를 사용하면서 보안 설정에 따라 변경할 수 있습"
+"니다.</p><p>\n"
+"쿠키를 허용하지 않으면 많은 웹사이트를 사용할 수 없습니다.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
-#, fuzzy, kde-format
-#| msgid "Enable filters"
+#, kde-format
 msgid "Enable coo&kies"
-msgstr "필터 사용하기"
+msgstr "쿠키 사용(&K)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -678,12 +676,20 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"일명 제 3자 쿠키라 불리는 쿠키를 거부합니다. 이 쿠키는 현재 탐색 중인 사이트 "
+"밖에서 만든 쿠키를 말합니다. 예를 들어, 이 설정을 사용하는 동안 <b>www."
+"foobar.com</b>이라는 사이트를 방문한다면, www.foobar.com에서 만들어진 쿠키만"
+"이 사용자의 설정에 따라 처리됩니다. 그 외 다른 곳에서 만든 쿠키는 거부됩니"
+"다. 사이트 관리자가 사용자의 인터넷 탐색 성향을 쉽게 파악하지 못하도록 합니"
+"다.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
 #, kde-format
 msgid "Only acce&pt cookies from originating server"
-msgstr ""
+msgstr "원본 서버의 쿠키만 허용(&P)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:46
@@ -697,13 +703,18 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
+"<p>\n"
+"현재 세션이 끝날 때 만료되는 쿠키를 자동으로 승인합니다. 이러한 쿠키는 사용자"
+"의 컴퓨터 하드디스크나 저장 장치에 저장되지 않습니다. 대신 이 쿠키는 이 쿠키"
+"를 사용하는 모든 앱(예를 들어 웹 브라우저)을 종료했을 때 삭제됩니다.</"
+"p><p><u>참고:</u> 이 옵션을 사용하면 기본 세션 쿠키 설정 및 사이트 지정 세션 "
+"쿠키 설정을 덮어씁니다.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
-#, fuzzy, kde-format
-#| msgid "A&utomatically load images"
+#, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr "자동으로 그림 불러오기(&U)"
+msgstr "자동으로 세션 쿠키 승인(&Y)"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -725,50 +736,53 @@ msgid ""
 "precedence over the default policy.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"원격 시스템에서 받은 쿠키를 어떻게 처리할 것인지 결정합니다.\n"
+"<ul>\n"
+"<li><b>묻기</b>를 선택하면 서버에서 쿠키를 설정할 때마다 KDE에서 물어봅니다."
+"</li>\n"
+"<li><b>수락</b>을 선택하면 물어 보지 않고 쿠키를 허용합니다.</li>\n"
+"<li><b>세션 종료시까지 수락</b>을 선택하면 쿠키를 허용하지만 세션이 끝난 이"
+"후 무효화합니다.</li>\n"
+"<li><b>거부</b>를 선택하면 쿠키병을 통해 받는 모든 쿠키를 거부합니다.</li>\n"
+"</ul><p>\n"
+"<u>참고:</u> 아래에서 설정할 도메인 지정 정책은 항상 기본 정책보다 우선합니"
+"다.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
-#, fuzzy, kde-format
-#| msgid "Default encoding:"
+#, kde-format
 msgid "Default Policy"
-msgstr "기본 인코딩:"
+msgstr "기본 정책"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
 #, kde-format
 msgid "Accep&t all cookies"
-msgstr ""
+msgstr "모든 쿠키 허용(&T)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr ""
+msgstr "세션 종료시까지 수락(&U)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
-#, fuzzy, kde-format
-#| msgid "A&nimations:"
+#, kde-format
 msgid "Ask &for confirmation"
-msgstr "애니메이션(&N):"
+msgstr "쿠키 받기 전에 확인(&F)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
 #: cookies/kcookiespolicies.ui:98
 #, kde-format
 msgid "Re&ject all cookies"
-msgstr ""
+msgstr "모든 쿠키 거부(&J)"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can set specific Java policies for any particular host or "
-#| "domain. To add a new policy, simply click the <i>New...</i> button and "
-#| "supply the necessary information requested by the dialog box. To change "
-#| "an existing policy, click on the <i>Change...</i> button and choose the "
-#| "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#| "button will remove the selected policy, causing the default policy "
-#| "setting to be used for that domain."
+#, kde-format
 msgid ""
 "<qt>\n"
 "To add a new policy, simply click on the <b>Add...</b> button and supply the "
@@ -779,31 +793,30 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
-"자주 방문하는 호스트나 도메인에 대한 자바 정책을 지정할 수 있습니다. 새로운 "
-"정책을 추가하려면 간단히 <i>새로 만들기...</i> 단추를 클릭한 다음 대화 상자"
-"에 필요한 정보를 입력하십시오. 기존 정책을 변경하려면 <i>변경...</i> 단추를 "
-"클릭한 다음 정책 대화 상자에 새로운 정책을 입력하십시오. <i>삭제</i> 단추를 "
-"클릭하면 선택한 정책을 삭제하고 기본 정책을 적용합니다."
+"<qt>\n"
+"새 정책을 추가하려면 <b>추가...</b> 단추를 클릭하고 정보를 입력하십시오. 존재"
+"하는 정책을 변경하려면 <b>변경...</b> 단추를 클릭하고 새 정책을 입력하십시"
+"오. <b>삭제</b> 단추를 클릭하면 선택한 정책을 삭제합니다. <b>모두 삭제</b> 단"
+"추를 클릭하면 모든 사이트 지정 정책을 삭제합니다.\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Site Policy"
-msgstr "정책"
+msgstr "사이트 정책"
 
 #. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr ""
+msgstr "도메인 양방향 검색"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search..."
-msgstr "찾기:"
+msgstr "검색..."
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -814,13 +827,16 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"사이트 지정 쿠키 정책이 있는 사이트 목록입니다. 사이트 지정 정책은 기본 정책"
+"에 우선합니다.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain"
-msgstr "호스트/도메인"
+msgstr "도메인"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
@@ -851,18 +867,22 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"이 정책을 적용할 호스트 또는 도메인을 입력하십시오. 예: <b>www.kde.org</b> 또"
+"는 <b>.kde.org</b>.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
 #, kde-format
 msgid "Site name:"
-msgstr ""
+msgstr "사이트 이름:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:38
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
-msgstr ""
+msgstr "이 정책을 적용할 호스트나 도메인 이름을 입력하십시오. 예: .kde.org"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -881,13 +901,25 @@ msgid ""
 "</ul>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"원하는 정책을 선택하십시오:\n"
+"<ul>\n"
+"<li><b>수락</b>을 선택하면 이 사이트에서 보내는 모든 쿠키를 허용합니다.</"
+"li>\n"
+"<li><b>세션 종료 시까지 수락</b>을 선택하면 쿠키를 허용하지만 세션이 끝난 이"
+"후 무효화합니다.</li>\n"
+"<li><b>거부</b>를 선택하면 이 사이트에서 보내는 모든 쿠키를 거부합니다.</"
+"li>\n"
+"<li><b>묻기</b>를 선택하면 이 사이트에서 쿠키를 설정할 때마다 KDE에서 물어봅"
+"니다.</li>\n"
+"</ul>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Policy:"
-msgstr "정책"
+msgstr "정책:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
@@ -900,7 +932,7 @@ msgstr "수락"
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr ""
+msgstr "세션 종료 시까지 수락"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191

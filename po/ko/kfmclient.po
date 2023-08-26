@@ -3,14 +3,14 @@
 # Sae-keun Kim <segni@susekorea.net>, 2001.
 # KIM KyungHeon <tody@kde.or.kr>, 2002.
 # Seok Lee <ddoman@kde.or.kr>, 2004.
-# Shinjo Park <kde@peremen.name>, 2007, 2010, 2011, 2016, 2020.
+# Shinjo Park <kde@peremen.name>, 2007, 2010, 2011, 2016, 2020, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-14 00:46+0000\n"
-"PO-Revision-Date: 2020-04-05 00:47+0200\n"
+"PO-Revision-Date: 2023-08-25 22:53+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 19.04.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -56,12 +56,14 @@ msgid ""
 "The mimetype of the URL. Allows Konqueror to determine in advance which "
 "component to use, making it start faster."
 msgstr ""
+"URL의 MIME 형식입니다. Konqueror에서 사용할 구성 요소를 미리 결정하여 시작을 "
+"빠르게 합니다."
 
 #: kfmclient.cpp:77
 #, kde-format
 msgctxt "the name for a the value of an option on the command line help"
 msgid "type"
-msgstr ""
+msgstr "type"
 
 #: kfmclient.cpp:79
 #, kde-format
@@ -88,14 +90,7 @@ msgstr ""
 "문법:\n"
 
 #: kfmclient.cpp:92
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kfmclient openURL 'url' ['mimetype']\n"
-#| "            # Opens a window showing 'url'.\n"
-#| "            #  'url' may be a relative path\n"
-#| "            #   or file name, such as . or subdir/\n"
-#| "            #   If 'url' is omitted, $HOME is used instead.\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
 "            # Opens a window showing 'url'.\n"
@@ -108,18 +103,11 @@ msgstr ""
 "            # 'url'을 새 창으로 엽니다.\n"
 "            #   'url'은 상대 경로나 파일 이름입니다. \n"
 "            #   예를 들어 .이나 subdir/ 입니다.\n"
-"            #   만약 'url'을 생략하면 $HOME으로 대신합니다.\n"
+"            #   만약 'url'을 생략하면 시작 페이지를 표시합니다.\n"
 "\n"
 
 #: kfmclient.cpp:97
-#, fuzzy, kde-format
-#| msgid ""
-#| "            # If 'mimetype' is specified, it will be used to determine "
-#| "the\n"
-#| "            #   component that Konqueror should use. For instance, set it "
-#| "to\n"
-#| "            #   text/html for a web page, to make it appear faster\n"
-#| "\n"
+#, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
 "            #   component that Konqueror should use. For instance, set it "
@@ -133,6 +121,9 @@ msgstr ""
 "            #   요소를 지정하는 데 사용합니다. 예를 들어 웹 페이지를 text/"
 "html로\n"
 "            #   설정했다면 좀 더 빠르게 보여 줍니다.\n"
+"            # 메모: 이 방식으로 MIME 형식을 지정하는 것은 폐기 예고되었습니"
+"다.\n"
+"            #   --mimetype 옵션을 사용하십시오\n"
 "\n"
 
 #: kfmclient.cpp:103

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-22 00:46+0000\n"
-"PO-Revision-Date: 2023-07-23 20:55+0200\n"
+"PO-Revision-Date: 2023-08-25 22:53+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -49,10 +49,9 @@ msgid "Web browser, file manager and document viewer."
 msgstr "웹 브라우저, 파일 관리자, 문서 뷰어."
 
 #: src/konqapplication.cpp:154
-#, fuzzy, kde-format
-#| msgid "(C) 1999-2016, The Konqueror developers"
+#, kde-format
 msgid "(C) 1999-2023, The Konqueror developers"
-msgstr "(C) 1999-2016, The Konqueror developers"
+msgstr "(C) 1999-2023, The Konqueror developers"
 
 #: src/konqapplication.cpp:157
 #, kde-format
@@ -379,12 +378,12 @@ msgstr "Eduardo Robles Elvira"
 #: src/konqapplication.cpp:195
 #, kde-format
 msgid "Matthias Kalle Dalheimer"
-msgstr ""
+msgstr "Matthias Kalle Dalheimer"
 
 #: src/konqapplication.cpp:196
 #, kde-format
 msgid "Daniel Molkentin"
-msgstr ""
+msgstr "Daniel Molkentin"
 
 #: src/konqapplication.cpp:197
 #, kde-format
@@ -392,6 +391,8 @@ msgid ""
 "JavaScript access controls\n"
 "Per-domain policies extensions"
 msgstr ""
+"자바스크립트 접근 제어\n"
+"도메인별 정책 확장 기능"
 
 #: src/konqapplication.cpp:208
 #, kde-format
