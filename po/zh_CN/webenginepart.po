@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-17 00:46+0000\n"
-"PO-Revision-Date: 2023-08-02 12:40\n"
+"PO-Revision-Date: 2023-08-27 03:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -34,7 +34,7 @@ msgstr "shuizhuyuanluo@126.com, tysontan@tysontan.com, amesists@gmail.com"
 #, kde-format
 msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
 msgid "Be free."
-msgstr "畅游世界。"
+msgstr "为自由而生！"
 
 #: src/about/konq_aboutpage.cpp:73 src/about/konq_aboutpage.cpp:133
 #: src/about/konq_aboutpage.cpp:185 src/about/konq_aboutpage.cpp:285
@@ -574,13 +574,13 @@ msgstr "文字标签"
 #, kde-format
 msgctxt "@label the cookie expires when the browser session ends"
 msgid "End of Session"
-msgstr ""
+msgstr "当次会话"
 
 #: src/cookies/cookiealertdlg.cpp:29
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by https servers"
 msgid "Secure servers only"
-msgstr ""
+msgstr "HTTPS 服务器"
 
 #: src/cookies/cookiealertdlg.cpp:31
 #, kde-format
@@ -588,13 +588,13 @@ msgctxt ""
 "@label exposure string - the cookie may be used by https servers AND client-"
 "side javascripts"
 msgid "Secure servers, page scripts"
-msgstr ""
+msgstr "HTTPS 服务器、页面脚本"
 
 #: src/cookies/cookiealertdlg.cpp:35
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by http servers"
 msgid "Servers"
-msgstr ""
+msgstr "HTTP 服务器"
 
 #: src/cookies/cookiealertdlg.cpp:37
 #, kde-format
@@ -602,33 +602,31 @@ msgctxt ""
 "@label exposure string - the cookie may be used by http servers AND client-"
 "side javascripts"
 msgid "Servers, page scripts"
-msgstr ""
+msgstr "HTTP 服务器、页面脚本"
 
 #: src/cookies/cookiealertdlg.cpp:41
 #, kde-format
 msgctxt "@label accept cookie"
 msgid "Accept"
-msgstr ""
+msgstr "接受"
 
 #: src/cookies/cookiealertdlg.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@action:never for this site"
-#| msgid "Ne&ver for this site"
+#, kde-format
 msgctxt "@label accept cookie for this session only"
 msgid "Accept for this session"
-msgstr "对此网站不记住密码(&V)"
+msgstr "接受 (当次会话)(&S)"
 
 #: src/cookies/cookiealertdlg.cpp:45
 #, kde-format
 msgctxt "@label reject cookie"
 msgid "Reject"
-msgstr ""
+msgstr "拒绝"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CookieAlertDlg)
 #: src/cookies/cookiealertdlg.ui:14
 #, kde-format
 msgid "CookieAlertDlg"
-msgstr ""
+msgstr "Cookie 警告对话框"
 
 #. i18n: ectx: property (text), widget (QLabel, header)
 #: src/cookies/cookiealertdlg.ui:20
@@ -637,74 +635,74 @@ msgid ""
 "<html><head/><body><p>You received a cookie from %1</p><p>Do you want to "
 "accept or reject this cookie?</p></body></html>"
 msgstr ""
+"<html><head/><body><p>您接收到了一个来自 %1 的 Cookie</p><p>您想要接受还是拒"
+"绝这个 cookie？</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/cookies/cookiealertdlg.ui:30
-#, fuzzy, kde-format
-#| msgctxt "@action:hide details about credentials to store"
-#| msgid "&Hide details"
+#, kde-format
 msgid "Cookie details"
-msgstr "隐藏详情(&H)"
+msgstr "Cookie 详情"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/cookies/cookiealertdlg.ui:36
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: src/cookies/cookiealertdlg.ui:50
 #, kde-format
 msgid "Value"
-msgstr ""
+msgstr "值"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: src/cookies/cookiealertdlg.ui:64
 #, kde-format
 msgid "Expires"
-msgstr ""
+msgstr "过期"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: src/cookies/cookiealertdlg.ui:78
 #, kde-format
 msgid "Path"
-msgstr ""
+msgstr "路径"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: src/cookies/cookiealertdlg.ui:99
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "暴露"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: src/cookies/cookiealertdlg.ui:113
 #, kde-format
 msgid "Domain"
-msgstr ""
+msgstr "域名"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: src/cookies/cookiealertdlg.ui:123
 #, kde-format
 msgid "Apply choice to"
-msgstr ""
+msgstr "应用此选择到"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToThis)
 #: src/cookies/cookiealertdlg.ui:129
 #, kde-format
 msgid "Only this cookie"
-msgstr ""
+msgstr "仅这个 Cookie"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToDomain)
 #: src/cookies/cookiealertdlg.ui:136
 #, kde-format
 msgid "All cookies from this domain"
-msgstr ""
+msgstr "所有来自此域名的 Cookie"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToAll)
 #: src/cookies/cookiealertdlg.ui:143
 #, kde-format
 msgid "All cookies"
-msgstr ""
+msgstr "所有 Cookie"
 
 #: src/settings/webenginesettings.cpp:909
 #, kde-format
@@ -1719,7 +1717,3 @@ msgstr ""
 "<ul><li><b>字段内部名称：</b>%1</li><li><b>字段类型：</b>%2</li><li><b>字段 "
 "ID：</b>%3</li><li><b>字段是否为只读：</b>%4</li><li><b>字段是否已启用：</b>"
 "%5</li><li><b>是否开启自动补全：</b>%6</li></ul>"
-
-#~ msgctxt "Finished saving BLOB URL"
-#~ msgid "Finished saving %1 as %2"
-#~ msgstr "已将 %1 保存为 %2"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-14 00:46+0000\n"
-"PO-Revision-Date: 2023-08-02 12:40\n"
+"PO-Revision-Date: 2023-08-27 03:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -53,12 +53,13 @@ msgid ""
 "The mimetype of the URL. Allows Konqueror to determine in advance which "
 "component to use, making it start faster."
 msgstr ""
+"URL 的 MIME 类型。让 Konqueror 可以预先确定需要使用的组件，提高启动速度。"
 
 #: kfmclient.cpp:77
 #, kde-format
 msgctxt "the name for a the value of an option on the command line help"
 msgid "type"
-msgstr ""
+msgstr "类型"
 
 #: kfmclient.cpp:79
 #, kde-format
@@ -85,14 +86,7 @@ msgstr ""
 "语法：\n"
 
 #: kfmclient.cpp:92
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kfmclient openURL 'url' ['mimetype']\n"
-#| "            # Opens a window showing 'url'.\n"
-#| "            #  'url' may be a relative path\n"
-#| "            #   or file name, such as . or subdir/\n"
-#| "            #   If 'url' is omitted, $HOME is used instead.\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
 "            # Opens a window showing 'url'.\n"
@@ -102,21 +96,14 @@ msgid ""
 "\n"
 msgstr ""
 "  kfmclient openURL 'url' ['mimetype']\n"
-"            # 打开一个窗口并显示“url”。\n"
-"            #   “url”可以是相对路径或\n"
-"            #   文件名，例如 . 或 subdir/\n"
-"            #   如果省略“url”，则使用 $HOME 替代。\n"
+"            # 打开一个显示“url”地址的窗口\n"
+"            #  “url”可以是相对路径\n"
+"            #   也可以是文件名，例如 . 或者 subdir/\n"
+"            #   如果“url”字段没有填写，则显示开始页面。\n"
 "\n"
 
 #: kfmclient.cpp:97
-#, fuzzy, kde-format
-#| msgid ""
-#| "            # If 'mimetype' is specified, it will be used to determine "
-#| "the\n"
-#| "            #   component that Konqueror should use. For instance, set it "
-#| "to\n"
-#| "            #   text/html for a web page, to make it appear faster\n"
-#| "\n"
+#, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
 "            #   component that Konqueror should use. For instance, set it "
@@ -126,9 +113,11 @@ msgid ""
 "            #   Please use the --mimetype option\n"
 "\n"
 msgstr ""
-"            # 如果指定了“mimetype”，它将被用来确定\n"
-"            #   Konqueror 应使用的部件。例如，为 Web 页\n"
-"            #   设置成 text/html，使其处理得更快\n"
+"            # 如果指定了“mimetype”，\n"
+"            #  它将被用于确定 Konqueror 应该使用的组件。\n"
+"            #  例如为网页设置为 text/html 可以加快显示速度。\n"
+"            # 提示：这种指定 mimetype 的方式已被废弃。\n"
+"            #   请使用 --mimetype 选项\n"
 "\n"
 
 #: kfmclient.cpp:103

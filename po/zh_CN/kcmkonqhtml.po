@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-17 00:46+0000\n"
-"PO-Revision-Date: 2023-08-02 12:40\n"
+"PO-Revision-Date: 2023-08-27 03:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -533,100 +533,95 @@ msgstr "用于存储缓存的自定义目录"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search"
-msgstr "搜索："
+msgstr "搜索"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:27
 #, kde-format
 msgid "Search interactively for domains and hosts"
-msgstr ""
+msgstr "搜索域名和主机 (交互式)"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:43
 #, kde-format
 msgid "Site"
-msgstr ""
+msgstr "网站"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:48
 #, kde-format
 msgid "Cookie Name"
-msgstr ""
+msgstr "Cookie 名称"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDelete)
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgid "D&elete"
-msgstr "删除(&D)"
+msgstr "删除(&E)"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
 #: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgid "Delete A&ll"
-msgstr "删除(&D)"
+msgstr "删除所有(&L)"
 
 #. i18n: ectx: property (text), widget (QPushButton, configPolicyButton)
 #: cookies/kcookiesmanagement.ui:70
 #, kde-format
 msgid "Configure &Policy..."
-msgstr ""
+msgstr "配置策略(&P)..."
 
 #. i18n: ectx: property (text), widget (QPushButton, reloadButton)
 #: cookies/kcookiesmanagement.ui:77
 #, kde-format
 msgid "&Reload List"
-msgstr ""
+msgstr "刷新列表(&R)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, detailsGroupBox)
 #: cookies/kcookiesmanagement.ui:97
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "详细信息"
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
 #: cookies/kcookiesmanagement.ui:106
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "名称"
+msgstr "名称："
 
 #. i18n: ectx: property (text), widget (QLabel, valueLabel)
 #: cookies/kcookiesmanagement.ui:129
 #, kde-format
 msgid "Value:"
-msgstr ""
+msgstr "值："
 
 #. i18n: ectx: property (text), widget (QLabel, domainLabel)
 #: cookies/kcookiesmanagement.ui:152
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain:"
-msgstr "主机/域名"
+msgstr "域名："
 
 #. i18n: ectx: property (text), widget (QLabel, patchLabel)
 #: cookies/kcookiesmanagement.ui:175
 #, kde-format
 msgid "Path:"
-msgstr ""
+msgstr "路径："
 
 #. i18n: ectx: property (text), widget (QLabel, expiresLabel)
 #: cookies/kcookiesmanagement.ui:198
 #, kde-format
 msgid "Expires:"
-msgstr ""
+msgstr "过期："
 
 #. i18n: ectx: property (text), widget (QLabel, secureLabel)
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
-msgstr ""
+msgstr "安全："
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -639,13 +634,17 @@ msgid ""
 "unbrowsable.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"<p>启用 Cookie 支持。在正常情况下您可以启用 Cookie 支持，并按照您对隐私的要求"
+"来自定义相关策略。</p><p>\n"
+"请注意，禁用 Cookie 支持可能会导致很多网站无法浏览。</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
-#, fuzzy, kde-format
-#| msgid "Enable filters"
+#, kde-format
 msgid "Enable coo&kies"
-msgstr "启用过滤器"
+msgstr "启用 Coo&kie"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -660,12 +659,18 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"拒绝第三方 Cookies。第三方 Cookies 来自您当前浏览网站之外的网站。例如：您在勾"
+"选此项后访问了 <b>www.foobar.com</b>，那么按照此选项的设置，只有来自 www."
+"foobar.com 网站的 Cookies 才会被接受。来自其他网站的所有 Cookies 会被自动拒"
+"绝。此功能可以妨碍网站对您的日常浏览习惯进行收集和汇总。\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
 #, kde-format
 msgid "Only acce&pt cookies from originating server"
-msgstr ""
+msgstr "仅接受始发服务器的 Cookie(&P)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:46
@@ -679,13 +684,17 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
+"<p>\n"
+"自动接受在本次会话结束时自动过期的临时 Cookies。这种 Cookies 不会长期保存在电"
+"脑的硬盘或者其他存储设备里。在您关闭所有使用它们的程序 (例如网页浏览器) 后，"
+"它们就会被删除。</p><p><u>注意：</u>勾选此项后，它的设置将覆盖您的默认 "
+"Cookies 策略和指定网站的当次会话 Cookies 策略。</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
-#, fuzzy, kde-format
-#| msgid "A&utomatically load images"
+#, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr "自动加载图像(&U)"
+msgstr "自动接受单次会话 Cookie(&Y)"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -707,50 +716,51 @@ msgid ""
 "precedence over the default policy.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"指定从远程机器收到 Cookies 时的处理方式：\n"
+"<ul>\n"
+"<li><b>询问：</b>每当服务器请求建立 Cookies 时，KDE 都会征求您的同意。</li>\n"
+"<li><b>接受：</b> 接受 Cookiess，不提示。</li>\n"
+"<li><b>接受 (当次会话)：</b> 接受 Cookies，但在当次会话结束后过期。</li>\n"
+"<li><b>拒绝：</b>cookiejar 程序将拒绝所有收到的 Cookies。</li>\n"
+"</ul><p>\n"
+"<u>请注意：</u>您可以在下方为每个域名指定独立的策略，它们的优先权高于默认策"
+"略。</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
-#, fuzzy, kde-format
-#| msgid "Default encoding:"
+#, kde-format
 msgid "Default Policy"
-msgstr "默认编码："
+msgstr "默认策略"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
 #, kde-format
 msgid "Accep&t all cookies"
-msgstr ""
+msgstr "接受所有 Cookie(&T)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr ""
+msgstr "接受 (当次会话)(&U)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
-#, fuzzy, kde-format
-#| msgid "A&nimations:"
+#, kde-format
 msgid "Ask &for confirmation"
-msgstr "动画(&N)："
+msgstr "请求确认(&F)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
 #: cookies/kcookiespolicies.ui:98
 #, kde-format
 msgid "Re&ject all cookies"
-msgstr ""
+msgstr "拒绝所有 Cookie(&J)"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can set specific Java policies for any particular host or "
-#| "domain. To add a new policy, simply click the <i>New...</i> button and "
-#| "supply the necessary information requested by the dialog box. To change "
-#| "an existing policy, click on the <i>Change...</i> button and choose the "
-#| "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#| "button will remove the selected policy, causing the default policy "
-#| "setting to be used for that domain."
+#, kde-format
 msgid ""
 "<qt>\n"
 "To add a new policy, simply click on the <b>Add...</b> button and supply the "
@@ -761,30 +771,30 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
-"您可以在这里为特定的主机或域名设置 Java 策略。要添加新的策略，请单击<i>新"
-"建...</i>按钮并在对话框中提供必要的信息。要更改已有的策略，请单击<i>更改...</"
-"i>按钮并从策略对话框中选择新的策略。单击<i>删除</i>按钮将删除选中策略，这将使"
-"得对该域名应用默认的策略设置。"
+"<qt>\n"
+"要添加新策略，请点击<b>添加...</b>按钮并提供所需信息。要更改已有策略，请点击"
+"<b>更改...</b>按钮并在策略对话框中选择新的策略。点击<b>删除</b>按钮将移除选中"
+"的策略，该域名将在此后使用默认策略；点击<b>删除所有</b>按钮将移除所有的域名特"
+"定策略。\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Site Policy"
-msgstr "策略"
+msgstr "网站策略"
 
 #. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr ""
+msgstr "搜索域名 (交互式)"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search..."
-msgstr "搜索："
+msgstr "搜索..."
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -795,13 +805,16 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"已指定了域名特定 Cookies 策略的网站列表。这些网站将使用指定给它们的策略设置覆"
+"盖默认策略。\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain"
-msgstr "主机/域名"
+msgstr "域名"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
@@ -832,18 +845,22 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"输入要应用此策略的主机或者域名，例如 <b>www.kde.org</b> 或者 <b>.kde.org</"
+"b>。\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
 #, kde-format
 msgid "Site name:"
-msgstr ""
+msgstr "网站名称："
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:38
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
-msgstr ""
+msgstr "输入要应用此策略的主机或者域名，例如 .kde.org。"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -862,13 +879,22 @@ msgid ""
 "</ul>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"选择想要使用的策略：\n"
+"<ul>\n"
+"<li><b>接受</b> - 允许此网站建立 Cookies</li>\n"
+"<li><b>接受 (当次会话)</b> - 允许此网站建立 Cookies，但在本次会话结束之后过期"
+"</li>\n"
+"<li><b>拒绝</b> - 拒绝此网站的所有 Cookies</li>\n"
+"<li><b>询问</b> - 收到此网站的 Cookies 时询问用户如何处理。</li>\n"
+"</ul>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Policy:"
-msgstr "策略"
+msgstr "策略："
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
@@ -881,7 +907,7 @@ msgstr "接受"
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr ""
+msgstr "接受 (当次会话)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
@@ -2469,48 +2495,3 @@ msgstr ""
 "<html><head/><body><p>默认标识被禁用时要使用的浏览器标识。</p><p>您可以手动输"
 "入一个浏览器标识，或者从下面的列表中选择一个，然后按照自己的需要进行修改。</"
 "p></body></html>"
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "KDE 中国, Guo Yunhe, Tyson Tan"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "kde-china@kde.org, i@guoyunhe.me, tysontan@tysontan.com"
-
-#~ msgid "Konqueror Browsing Control Module"
-#~ msgstr "Konqueror 浏览控制模块"
-
-#~ msgid "(c) 1999 - 2001 The Konqueror Developers"
-#~ msgstr "(c) 1999 - 2001 The Konqueror Developers"
-
-#~ msgid "Waldo Bastian"
-#~ msgstr "Waldo Bastian"
-
-#~ msgid "David Faure"
-#~ msgstr "David Faure"
-
-#~ msgid "Matthias Kalle Dalheimer"
-#~ msgstr "Matthias Kalle Dalheimer"
-
-#~ msgid "Lars Knoll"
-#~ msgstr "Lars Knoll"
-
-#~ msgid "Dirk Mueller"
-#~ msgstr "Dirk Mueller"
-
-#~ msgid "Daniel Molkentin"
-#~ msgstr "Daniel Molkentin"
-
-#~ msgid "Wynn Wilkes"
-#~ msgstr "Wynn Wilkes"
-
-#~ msgid "Leo Savernik"
-#~ msgstr "Leo Savernik"
-
-#~ msgid ""
-#~ "JavaScript access controls\n"
-#~ "Per-domain policies extensions"
-#~ msgstr ""
-#~ "JavaScript 访问控制\n"
-#~ "特定域策略扩展"

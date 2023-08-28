@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-13 00:56+0000\n"
+"POT-Creation-Date: 2023-08-17 00:46+0000\n"
 "PO-Revision-Date: 2007-12-24 02:54+0100\n"
 "Last-Translator: Børre Gaup <boerre@skolelinux.no>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -19,77 +19,145 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: src/konq_popupmenu.cpp:219
+#: src/browseropenorsavequestion.cpp:89
+#, kde-format
+msgctxt "@label Type of file"
+msgid "Type: %1"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:97
+#, kde-format
+msgctxt "@label:checkbox"
+msgid "Remember action for files of this type"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:149 src/browseropenorsavequestion.cpp:237
+#, kde-format
+msgctxt "@label:button"
+msgid "&Open with %1"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:213
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Open &with %1"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:224 src/browseropenorsavequestion.cpp:318
+#, kde-format
+msgctxt "@info"
+msgid "Open '%1'?"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:228
+#, kde-format
+msgctxt "@label:button"
+msgid "&Open with..."
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:246
+#, kde-format
+msgctxt "@label:button"
+msgid "&Open with"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:315
+#, kde-format
+msgctxt "@label:button"
+msgid "&Open"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:339
+#, kde-format
+msgctxt "@label File name"
+msgid "Name: %1"
+msgstr ""
+
+#: src/browseropenorsavequestion.cpp:341
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "This is the file name suggested by the server"
+msgstr ""
+
+#: src/htmlsettingsinterface.cpp:19
+msgid "Accept"
+msgstr ""
+
+#: src/htmlsettingsinterface.cpp:21
+msgid "Reject"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:220
 #, kde-format
 msgid "&Open"
 msgstr "&Raba"
 
-#: src/konq_popupmenu.cpp:242
+#: src/konq_popupmenu.cpp:243
 #, kde-format
 msgid "Create &Folder..."
 msgstr "Ráhkat &máhpa …"
 
-#: src/konq_popupmenu.cpp:253
+#: src/konq_popupmenu.cpp:254
 #, kde-format
 msgid "&Restore"
 msgstr "&Máhcat"
 
-#: src/konq_popupmenu.cpp:265
+#: src/konq_popupmenu.cpp:266
 #, kde-format
 msgid "Show Original Directory"
 msgstr ""
 
-#: src/konq_popupmenu.cpp:265
+#: src/konq_popupmenu.cpp:266
 #, kde-format
 msgid "Show Original File"
 msgstr ""
 
-#: src/konq_popupmenu.cpp:300
+#: src/konq_popupmenu.cpp:301
 #, kde-format
 msgid "&Empty Trash Bin"
 msgstr "&Gurre ruskalihti"
 
-#: src/konq_popupmenu.cpp:312
+#: src/konq_popupmenu.cpp:313
 #, kde-format
 msgid "&Configure Trash Bin"
 msgstr ""
 
-#: src/konq_popupmenu.cpp:336
+#: src/konq_popupmenu.cpp:337
 #, kde-format
 msgid "&Bookmark This Page"
 msgstr "Ráhkat &girjemearkka dán siidui"
 
-#: src/konq_popupmenu.cpp:338
+#: src/konq_popupmenu.cpp:339
 #, kde-format
 msgid "&Bookmark This Location"
 msgstr "Bija &girjemearkka dán čujuhussii"
 
-#: src/konq_popupmenu.cpp:341
+#: src/konq_popupmenu.cpp:342
 #, kde-format
 msgid "&Bookmark This Folder"
 msgstr "Ráhkat girjemearkka dán máhppii"
 
-#: src/konq_popupmenu.cpp:343
+#: src/konq_popupmenu.cpp:344
 #, kde-format
 msgid "&Bookmark This Link"
 msgstr "Ráhkat gir&jemearkka dán leŋkii"
 
-#: src/konq_popupmenu.cpp:345
+#: src/konq_popupmenu.cpp:346
 #, kde-format
 msgid "&Bookmark This File"
 msgstr "Ráhkat g&irjemearkka dán fiilii"
 
-#: src/konq_popupmenu.cpp:384
+#: src/konq_popupmenu.cpp:385
 #, kde-format
 msgid "Preview In"
 msgstr "Ovdačájeheapmi dás"
 
-#: src/konq_popupmenu.cpp:395
+#: src/konq_popupmenu.cpp:396
 #, kde-format
 msgid "Open Terminal Here"
 msgstr ""
 
-#: src/konq_popupmenu.cpp:431
+#: src/konq_popupmenu.cpp:432
 #, kde-format
 msgid "&Properties"
 msgstr "&Iešvuođat"
