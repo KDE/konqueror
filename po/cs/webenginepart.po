@@ -590,13 +590,13 @@ msgstr "Textový štítek"
 #, kde-format
 msgctxt "@label the cookie expires when the browser session ends"
 msgid "End of Session"
-msgstr ""
+msgstr "Konec sezení"
 
 #: src/cookies/cookiealertdlg.cpp:29
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by https servers"
 msgid "Secure servers only"
-msgstr ""
+msgstr "Pouze bezpečné servery"
 
 #: src/cookies/cookiealertdlg.cpp:31
 #, kde-format
@@ -604,13 +604,13 @@ msgctxt ""
 "@label exposure string - the cookie may be used by https servers AND client-"
 "side javascripts"
 msgid "Secure servers, page scripts"
-msgstr ""
+msgstr "Bezpečné servery, skripty na stránkách"
 
 #: src/cookies/cookiealertdlg.cpp:35
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by http servers"
 msgid "Servers"
-msgstr ""
+msgstr "Servery"
 
 #: src/cookies/cookiealertdlg.cpp:37
 #, kde-format
@@ -618,7 +618,7 @@ msgctxt ""
 "@label exposure string - the cookie may be used by http servers AND client-"
 "side javascripts"
 msgid "Servers, page scripts"
-msgstr ""
+msgstr "Servery, skripty na stránkách"
 
 #: src/cookies/cookiealertdlg.cpp:41
 #, kde-format
@@ -627,12 +627,10 @@ msgid "Accept"
 msgstr ""
 
 #: src/cookies/cookiealertdlg.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@action:never for this site"
-#| msgid "Ne&ver for this site"
+#, kde-format
 msgctxt "@label accept cookie for this session only"
 msgid "Accept for this session"
-msgstr "Nikdy pro tuto st&ránku"
+msgstr ""
 
 #: src/cookies/cookiealertdlg.cpp:45
 #, kde-format
@@ -656,47 +654,46 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/cookies/cookiealertdlg.ui:30
-#, fuzzy, kde-format
-#| msgctxt "@action:hide details about credentials to store"
-#| msgid "&Hide details"
+#, kde-format
 msgid "Cookie details"
-msgstr "Sk&rýt podrobnosti"
+msgstr ""
 
+# Tohle vypadá na název vlastnosti. Jméno bycvh nechal pro lidi a zvířata.
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/cookies/cookiealertdlg.ui:36
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Název"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: src/cookies/cookiealertdlg.ui:50
 #, kde-format
 msgid "Value"
-msgstr ""
+msgstr "Hodnota"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: src/cookies/cookiealertdlg.ui:64
 #, kde-format
 msgid "Expires"
-msgstr ""
+msgstr "Vyprší"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: src/cookies/cookiealertdlg.ui:78
 #, kde-format
 msgid "Path"
-msgstr ""
+msgstr "Cesta"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: src/cookies/cookiealertdlg.ui:99
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "Expozice"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: src/cookies/cookiealertdlg.ui:113
 #, kde-format
 msgid "Domain"
-msgstr ""
+msgstr "Doména"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: src/cookies/cookiealertdlg.ui:123
@@ -1736,7 +1733,3 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
-
-#~ msgctxt "Finished saving BLOB URL"
-#~ msgid "Finished saving %1 as %2"
-#~ msgstr "Dokončeno ukládání %1 jako %2"

@@ -564,100 +564,95 @@ msgstr "Vlastní adresář pro uložení mezipaměti"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search"
-msgstr "Hledat:"
+msgstr "Hledat"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:27
 #, kde-format
 msgid "Search interactively for domains and hosts"
-msgstr ""
+msgstr "Interaktivně hledat domény a hostitele"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:43
 #, kde-format
 msgid "Site"
-msgstr ""
+msgstr "Server"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:48
 #, kde-format
 msgid "Cookie Name"
-msgstr ""
+msgstr "Název cookie"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDelete)
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgid "D&elete"
-msgstr "&Smazat"
+msgstr "S&mazat"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
 #: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgid "Delete A&ll"
-msgstr "&Smazat"
+msgstr "Smazat &všechny"
 
 #. i18n: ectx: property (text), widget (QPushButton, configPolicyButton)
 #: cookies/kcookiesmanagement.ui:70
 #, kde-format
 msgid "Configure &Policy..."
-msgstr ""
+msgstr "Nastavit &zásady..."
 
 #. i18n: ectx: property (text), widget (QPushButton, reloadButton)
 #: cookies/kcookiesmanagement.ui:77
 #, kde-format
 msgid "&Reload List"
-msgstr ""
+msgstr "&Znovu načíst seznam"
 
 #. i18n: ectx: property (title), widget (QGroupBox, detailsGroupBox)
 #: cookies/kcookiesmanagement.ui:97
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Podrobnosti"
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
 #: cookies/kcookiesmanagement.ui:106
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "Název"
+msgstr "Název:"
 
 #. i18n: ectx: property (text), widget (QLabel, valueLabel)
 #: cookies/kcookiesmanagement.ui:129
 #, kde-format
 msgid "Value:"
-msgstr ""
+msgstr "Hodnota:"
 
 #. i18n: ectx: property (text), widget (QLabel, domainLabel)
 #: cookies/kcookiesmanagement.ui:152
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain:"
-msgstr "Hostitel/Doména"
+msgstr "Doména:"
 
 #. i18n: ectx: property (text), widget (QLabel, patchLabel)
 #: cookies/kcookiesmanagement.ui:175
 #, kde-format
 msgid "Path:"
-msgstr ""
+msgstr "Cesta:"
 
 #. i18n: ectx: property (text), widget (QLabel, expiresLabel)
 #: cookies/kcookiesmanagement.ui:198
 #, kde-format
 msgid "Expires:"
-msgstr ""
+msgstr "Vyprší:"
 
 #. i18n: ectx: property (text), widget (QLabel, secureLabel)
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
-msgstr ""
+msgstr "Bezpečný:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -673,10 +668,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
-#, fuzzy, kde-format
-#| msgid "Enable filters"
+#, kde-format
 msgid "Enable coo&kies"
-msgstr "Povolit filtry"
+msgstr "Povolit coo&kies"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -691,12 +685,21 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Povolením této možnosti odmítnete všechny cookies, které pocházejí z jiných "
+"serverů než těch, kterých jste se dotázali. Pokud například navštívíte "
+"<b>czechia.kde.org</b> a tato volba je povolená, pouze ty cookies, které "
+"pocházejí z czechia.kde.org budou zpracovány podle vašeho nastavení. Všechny "
+"ostatní cookies budou automaticky zahozeny. To snižuje šanci, že by někdo "
+"mohl sbírat informace a statistiky o vašich návycích při surfováním "
+"Internetem.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
 #, kde-format
 msgid "Only acce&pt cookies from originating server"
-msgstr ""
+msgstr "&Přijímat cookies pouze z původního serveru"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:46
@@ -710,13 +713,19 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
+"<p>\n"
+"Povolte tuto možnost k automatickému přijetí dočasných cookies, které mají "
+"vypršet na konci současného sezení. Takové cookies nebudou uloženy na disku "
+"vašeho počítače, namísto toho budou smazány, jakmile uzavřete všechna okna "
+"svého prohlížeče, která je používají.</p><p><u>Poznámka:</u> Zaškrtnutím "
+"tohoto políčka obejdete svá výchozí nastavení a standardní chování cookies "
+"pro sezení.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
-#, fuzzy, kde-format
-#| msgid "A&utomatically load images"
+#, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr "A&utomaticky načítat obrázky"
+msgstr "Automatick&y přijímat cookies sezení"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -741,47 +750,37 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
-#, fuzzy, kde-format
-#| msgid "Default encoding:"
+#, kde-format
 msgid "Default Policy"
-msgstr "Výchozí kódování:"
+msgstr "Standardní chování"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
 #, kde-format
 msgid "Accep&t all cookies"
-msgstr ""
+msgstr "Přijmou&t všechny cookie"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr ""
+msgstr "Přijmo&ut do konce sezení"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
-#, fuzzy, kde-format
-#| msgid "A&nimations:"
+#, kde-format
 msgid "Ask &for confirmation"
-msgstr "A&nimace:"
+msgstr "V&yžadovat potvrzení"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
 #: cookies/kcookiespolicies.ui:98
 #, kde-format
 msgid "Re&ject all cookies"
-msgstr ""
+msgstr "O&dmítnout všechna cookie"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can set specific Java policies for any particular host or "
-#| "domain. To add a new policy, simply click the <i>New...</i> button and "
-#| "supply the necessary information requested by the dialog box. To change "
-#| "an existing policy, click on the <i>Change...</i> button and choose the "
-#| "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#| "button will remove the selected policy, causing the default policy "
-#| "setting to be used for that domain."
+#, kde-format
 msgid ""
 "<qt>\n"
 "To add a new policy, simply click on the <b>Add...</b> button and supply the "
@@ -792,32 +791,33 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
-"Zde je možné nastavit zásadu chování pro Javu pro určité domény nebo "
-"hostitele. Novou zásadu lze přidat jednoduše kliknutím na tlačítko <i>Nový..."
-"</i> a poskytnutím požadovaných informací. Změnu již existující zásady lze "
-"kliknutím na tlačítko <i>Změnit...</i> a výběrem nového chování. Kliknutí na "
-"tlačítko <i>Smazat</i> odstraní zásadu chování a způsobí použití "
-"standardního chování pro tuto doménu nebo hostitele."
+"<qt>\n"
+"Zde je možné nastavit zásady zacházení s cookie z jednotlivých domén. "
+"Kliknutím na tlačítko <b>Přidat...</b> a doplněním nezbytných informací "
+"vyžadovaných v dialogovém okně je možné přidat nové zásady zacházení s "
+"cookie. Změnu zásad je možné provést kliknutím na tlačítko <b>Změnit...</b> "
+"a vybráním  nového způsobu zacházení v dialogovém okně. Kliknutí na tlačítko "
+"<b>Smazat</b> odstraní zásadu ze seznamu zapůsobí, že pro tuto doménu bude "
+"použita standardní zásada.\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Site Policy"
-msgstr "Chování"
+msgstr "Chování pro server"
 
 #. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr ""
+msgstr "Interaktivně hledat domény"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search..."
-msgstr "Hledat:"
+msgstr "Hledat..."
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -828,13 +828,16 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Seznam serverů, pro které jste nastavili specifické chování. Specifická "
+"chování ruší platnost výchozího chování pro tyto servery.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain"
-msgstr "Hostitel/Doména"
+msgstr "Doména"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
@@ -865,12 +868,16 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Zadejte název serveru nebo domény, pro kterou má chování platit. Např. "
+"<i>www.kde.org</i> nebo <i>.kde.org</i>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
 #, kde-format
 msgid "Site name:"
-msgstr ""
+msgstr "Název serveru:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:38
@@ -895,13 +902,23 @@ msgid ""
 "</ul>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Vyberte požadované chování:\n"
+"<ul>\n"
+"<li><b>Přijmout</b> - umožní tomuto serveru nastavit cookie.</li>\n"
+"<li><b>Přijmout do konce sezení</b> - Umožní tomuto serveru nastavit cookies "
+"ale ty budou po konci sezení zneplatněny.</li>\n"
+"<li><b>Odmítnout</b> - odmítne všechna cookie z tohoto serveru.</li>\n"
+"<li><b>Dotázat se</b> - dotáže se při každém cookie přijatém z tohoto "
+"serveru.</li>\n"
+"</ul>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Policy:"
-msgstr "Chování"
+msgstr "Zásady:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
@@ -914,7 +931,7 @@ msgstr "Přijmout"
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr ""
+msgstr "Přijmout do konce sezení"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
@@ -2582,48 +2599,3 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Lukáš Tinkl,Miroslav Flídr"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "lukas@kde.org,flidr@kky.zcu.cz"
-
-#~ msgid "Konqueror Browsing Control Module"
-#~ msgstr "Ovládací modul Konqueroru - prohlížeče Internetu"
-
-#~ msgid "(c) 1999 - 2001 The Konqueror Developers"
-#~ msgstr "(c) 1999 - 2001 vývojáři aplikace Konqueror"
-
-#~ msgid "Waldo Bastian"
-#~ msgstr "Waldo Bastian"
-
-#~ msgid "David Faure"
-#~ msgstr "David Faure"
-
-#~ msgid "Matthias Kalle Dalheimer"
-#~ msgstr "Matthias Kalle Dalheimer"
-
-#~ msgid "Lars Knoll"
-#~ msgstr "Lars Knoll"
-
-#~ msgid "Dirk Mueller"
-#~ msgstr "Dirk Mueller"
-
-#~ msgid "Daniel Molkentin"
-#~ msgstr "Daniel Molkentin"
-
-#~ msgid "Wynn Wilkes"
-#~ msgstr "Wynn Wilkes"
-
-#~ msgid "Leo Savernik"
-#~ msgstr "Leo Savernik"
-
-#~ msgid ""
-#~ "JavaScript access controls\n"
-#~ "Per-domain policies extensions"
-#~ msgstr ""
-#~ "Nastavení přístupu JavaScriptu\n"
-#~ "Rozšíření chování podle domén"

@@ -85,14 +85,7 @@ msgstr ""
 "Syntaxe:\n"
 
 #: kfmclient.cpp:92
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kfmclient openURL 'url' ['mimetype']\n"
-#| "            # Opens a window showing 'url'.\n"
-#| "            #  'url' may be a relative path\n"
-#| "            #   or file name, such as . or subdir/\n"
-#| "            #   If 'url' is omitted, $HOME is used instead.\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
 "            # Opens a window showing 'url'.\n"
@@ -101,22 +94,9 @@ msgid ""
 "            #   If 'url' is omitted, the start page is shown.\n"
 "\n"
 msgstr ""
-"  kfmclient openURL 'url' ['mimetyp']\n"
-"            # Otevře okno zobrazující 'url'.\n"
-"            # 'url' může být relativní cestou\n"
-"            # nebo názvem souboru, jako . nebo subdir/\n"
-"            # Je-li 'url' vynecháno, použije se $HOME.\n"
-"\n"
 
 #: kfmclient.cpp:97
-#, fuzzy, kde-format
-#| msgid ""
-#| "            # If 'mimetype' is specified, it will be used to determine "
-#| "the\n"
-#| "            #   component that Konqueror should use. For instance, set it "
-#| "to\n"
-#| "            #   text/html for a web page, to make it appear faster\n"
-#| "\n"
+#, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
 "            #   component that Konqueror should use. For instance, set it "
@@ -126,10 +106,6 @@ msgid ""
 "            #   Please use the --mimetype option\n"
 "\n"
 msgstr ""
-"            # Je-li zadán 'mimetyp', bude použit k určení\n"
-"            # komponenty, kterou Konqueror použije. Např. text/html\n"
-"            # pro www stránku, která tak bude nahrána rychleji.\n"
-"\n"
 
 #: kfmclient.cpp:103
 #, kde-format
