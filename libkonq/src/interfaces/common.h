@@ -16,36 +16,73 @@ namespace KonqInterfaces {
      * @param obj the object to cast
      * @return @p obj or one of its children cast to a `T*` or `nullptr` if neither @p obj nor
      * its children can be cast to a `T*`
-     * @note the cast is performed using `qobject_cast()` if `T` is a subclass of `QObject` and
-     * using `dynamic_cast()` otherwise.
+     * @internal
+     * This function has two implementations, depending on whether or not `T` derives from `QObject`.
+     * This allows to make use `QObject::findChild` when possible.
+     *
+     * To distinguish the two cases, as() uses `std::conditional`, delegating the actual implementation
+     * either to CallAsForExtension::call() or CallAsForInterface::call()
+     * @endinternal
      */
     template <typename T> T* as(QObject *obj);
+
+    /**
+     * @brief Struct used to implement as() when the template is a `QObject`
+     */
+    struct CallAsForExtension {
+        /**
+        * @brief Casts either the given object or one of its children as a pointer to T if possible
+        *
+        * This function assumes that `T` is a `QObject`-derived class and uses `QObject::findChild`
+        * to determine the return value, except if @p obj can itself be cast to `T*`
+        * @return @p obj or one of its children cast to a `T*` or `nullptr` if neither @p obj nor
+        * its children can be cast to a `T*`
+        */
+        template <typename T> T* call(QObject* obj);
+    };
+    /**
+     * @brief Struct used to implement as() when the template is not a `QObject`
+     */
+    struct CallAsForInterface {
+        /**
+        * @brief Casts either the given object or one of its children as a pointer to T if possible
+        *
+        * Unlike CallAsForExtension::call(), this function doesn't make any assumption about the type
+        * of `T`, so it always works. However, it uses `dynamic_cast` and custom code rather than
+        * the more specialized `QObject::findChild`.
+        * @return @p obj or one of its children cast to a `T*` or `nullptr` if neither @p obj nor
+        * its children can be cast to a `T*`
+        */
+        template <typename T> T* call(QObject* obj);
+    };
 }
 
-template<typename T> T * KonqInterfaces::as(QObject* obj)
+template<typename T> T* KonqInterfaces::as(QObject *obj)
 {
-    //We have two different implementations depending on whether T is a QObject or not
-    //to allow the use of findChild when possible
-    if (std::is_base_of<QObject*,T*>()) {
-        T* res = qobject_cast<T*>(obj);
-        if (res) {
-            return res;
-        }
-        return obj->findChild<T*>();
-    } else {
-        T* res = dynamic_cast<T*>(obj);
-        if (res) {
-            return res;
-        }
-        QObjectList children = obj->findChildren<QObject*>();
-        for (QObject *c : children) {
-            res = dynamic_cast<T*>(c);
-            if (res) {
-                return res;
-            }
-        }
-        return nullptr;
+    typename std::conditional<(std::is_base_of<QObject, T>()), CallAsForExtension, CallAsForInterface>::type func;
+    return func.template call<T>(obj);
+}
+
+template<typename T> T* KonqInterfaces::CallAsForExtension::call(QObject *obj)
+{
+    T* res = qobject_cast<T*>(obj);
+    return res ? res : obj->findChild<T*>();
+}
+
+template<typename T> T* KonqInterfaces::CallAsForInterface::call(QObject *obj)
+{
+    T* res = dynamic_cast<T*>(obj);
+    if (res) {
+        return res;
     }
+    QObjectList children = obj->findChildren<QObject*>();
+    for (QObject *c : children) {
+        res = dynamic_cast<T*>(c);
+        if (res) {
+            return res;
+        }
+    }
+    return nullptr;
 }
 
 #endif //KONQINTERFACES_COMMON

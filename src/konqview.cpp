@@ -17,6 +17,7 @@
 #include "konqhistorymanager.h"
 #include "konqpixmapprovider.h"
 #include "implementations/konqbrowserwindowinterface.h"
+#include "interfaces/downloaderextension.h"
 
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
@@ -370,6 +371,17 @@ void KonqView::connectPart()
                 m_pMainWindow, SLOT(slotInternalViewModeChanged()));
     }
 
+    if (m_pPart) {
+        KonqInterfaces::DownloaderExtension *dext = KonqInterfaces::DownloaderExtension::downloader(m_pPart);
+        if (dext) {
+            connect(dext, &KonqInterfaces::DownloaderExtension::downloadAndOpenUrl, m_pMainWindow, [dext, this](const QUrl &url, int id, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs, bool temp){
+                    KonqOpenURLRequest req(args, bargs, dext->part(), true, id);
+                    req.tempFile = temp;
+                    m_pMainWindow->slotOpenURLRequest(url, req);
+                });
+        }
+    }
+
     KParts::BrowserExtension *ext = browserExtension();
 
     if (ext) {
@@ -379,7 +391,8 @@ void KonqView::connectPart()
         
         connect(ext, &KParts::BrowserExtension::openUrlRequestDelayed, ext,
                 [ext, this](const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs){
-                    m_pMainWindow->slotOpenURLRequest(url, args, bargs, qobject_cast<KParts::ReadOnlyPart*>(ext->parent()));
+                    KonqOpenURLRequest req(args, bargs, qobject_cast<KParts::ReadOnlyPart*>(ext->parent()));
+                    m_pMainWindow->slotOpenURLRequest(url, req);
                 });
 
         if (m_bPopupMenuEnabled) {
@@ -396,8 +409,11 @@ void KonqView::connectPart()
         connect(ext, SIGNAL(setPageSecurity(int)),
                 this, SLOT(setPageSecurity(int)));
 
-        connect(ext, SIGNAL(createNewWindow(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs,KParts::ReadOnlyPart**)),
-                m_pMainWindow, SLOT(slotCreateNewWindow(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs,KParts::ReadOnlyPart**)));
+        connect(ext, &KParts::BrowserExtension::createNewWindow, ext,
+                [ext, this] (const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs, const KParts::WindowArgs &wargs ,KParts::ReadOnlyPart** part) {
+                    KonqOpenURLRequest req(args, bargs, qobject_cast<KParts::ReadOnlyPart*>(ext->parent()));
+                    m_pMainWindow->slotCreateNewWindow(url, req, wargs, part);
+                });
 
         connect(ext, SIGNAL(loadingProgress(int)),
                 m_pKonqFrame->statusbar(), SLOT(slotLoadingProgress(int)));

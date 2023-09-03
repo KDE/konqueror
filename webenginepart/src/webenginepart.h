@@ -36,6 +36,7 @@ class WebEngineBrowserExtension;
 class WebEngineWallet;
 class KPluginMetaData;
 class WebEnginePartControls;
+class WebEngineDownloaderExtension;
 
 /**
  * A KPart wrapper for the QtWebEngine's browser rendering engine.
@@ -128,6 +129,8 @@ public:
 
     Q_PROPERTY(bool isWebEnginePart READ isWebEnginePart)
 
+    WebEngineDownloaderExtension* downloader() const {return m_downloader;}
+
 public Q_SLOTS:
     void exitFullScreen();
     void setInspectedPart(KParts::ReadOnlyPart *part);
@@ -216,6 +219,7 @@ private:
     KParts::StatusBarExtension* m_statusBarExtension;
     WebEngineView* m_webView;
     WebEngineWallet* m_wallet;
+    WebEngineDownloaderExtension* m_downloader;
 };
 
 #endif // WEBENGINEPART_H

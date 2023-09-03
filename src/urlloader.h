@@ -16,6 +16,7 @@
 #include <QUrl>
 
 #include <KService>
+#include <KJob>
 
 namespace KParts {
     class ReadOnlyPart;
@@ -27,11 +28,13 @@ namespace KIO {
     class ApplicationLauncherJob;
     class MimeTypeFinderJob;
 }
-
+namespace KonqInterfaces {
+    class DownloaderExtension;
+    class DownloaderJob;
+}
 class KonqMainWindow;
 class KonqView;
-class DownloaderInterface;
-class DownloaderJob;
+
 
 /**
  * @brief Class which takes care of finding out what to do with an URL and carries out the chosen action
@@ -170,7 +173,7 @@ private slots:
      *
      * @param job the DownloaderJob used by the part to download the URL
      */
-    void downloaderJobDone(KJob *job);
+    void downloadForEmbeddingDone(KJob *job);
 
 private:
 
@@ -196,6 +199,15 @@ private:
     bool shouldUseDefaultHttpMimeype() const;
     void decideAction();
     bool isViewLocked() const;
+    /**
+     * @brief Determines #m_mimeType in the constructor
+     *
+     * The algorithm used is the following:
+     * - if #m_mimeType isn't empty or a default mimetype, use it
+     * - if #m_request.args.mimeType() isn't empty or a default mimetype, use it
+     * - otherwise use an empty string
+     */
+    void determineStartingMimetype();
 
     /**
      * @brief Casts the requesting part or one of its children to a DownloaderInterface*, if possible
@@ -203,7 +215,7 @@ private:
      * @return the requesting part or one of its children casted to a DownloaderInterface* or `nullptr` if
      * the requesting part is `nullptr` or neither it nor its children implement DownloaderInterface
      */
-    DownloaderInterface* downloaderInterface() const;
+    KonqInterfaces::DownloaderExtension* downloaderInterface() const;
 
     /**
      * @brief Retrieves from the requesting part a DownloaderJob to download the URL
@@ -218,7 +230,7 @@ private:
      *
      * If #m_partDownloaderJob is `nullptr`, nothing is done
      */
-    void downloadUrlWithRequestingPart();
+    void downloadForEmbeddingOrOpening();
 
     /**
      * @brief Checks whether the given file can be read and, in case of a directory, entered into
@@ -263,6 +275,16 @@ private:
 private:
     QPointer<KonqMainWindow> m_mainWindow;
     QUrl m_url;
+
+    /**
+     * @brief The mimetype of the URL
+     *
+     * If this is empty, it means that the mimetype isn't known and must be determined somehow.
+     * If this is not empty, it is assumed that its value is the correct mimetype for the URL and
+     * no other attempts to determine the mimetype will be done (even if this is the default mimetype).
+     * @see launchMimeTypeFinderJob()
+     * @see mimetypeDeterminedByJob()
+     */
     QString m_mimeType;
     KonqOpenURLRequest m_request;
     KonqView *m_view;
@@ -276,7 +298,7 @@ private:
     QPointer<KIO::OpenUrlJob> m_openUrlJob;
     QPointer<KIO::ApplicationLauncherJob> m_applicationLauncherJob;
     QPointer<KIO::MimeTypeFinderJob> m_mimeTypeFinderJob;
-    QPointer<DownloaderJob> m_partDownloaderJob;
+    QPointer<KonqInterfaces::DownloaderJob> m_partDownloaderJob;
     QString m_oldLocationBarUrl;
     int m_jobErrorCode = 0;
     bool m_dontPassToWebEnginePart;

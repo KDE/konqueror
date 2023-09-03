@@ -907,11 +907,11 @@ static KonqView *findChildView(KParts::ReadOnlyPart *callingPart, const QString 
     return nullptr;
 }
 
-void KonqMainWindow::slotOpenURLRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::ReadOnlyPart *callingPart)
+void KonqMainWindow::slotOpenURLRequest(const QUrl &url, KonqOpenURLRequest &req)
 {
     //qCDebug(KONQUEROR_LOG) << "frameName=" << browserArgs.frameName;
 
-    QString frameName = browserArgs.frameName;
+    QString frameName = req.browserArgs.frameName;
 
     if (!frameName.isEmpty()) {
         static QString _top = QStringLiteral("_top");
@@ -921,7 +921,7 @@ void KonqMainWindow::slotOpenURLRequest(const QUrl &url, const KParts::OpenUrlAr
 
         if (frameName.toLower() == _blank) {
             KonqMainWindow *mainWindow = (m_popupProxyWindow ? m_popupProxyWindow.data() : this);
-            mainWindow->slotCreateNewWindow(url, args, browserArgs);
+            mainWindow->slotCreateNewWindow(url, req);
             if (m_isPopupWithProxyWindow) {
                 raiseWindow(mainWindow);
             }
@@ -931,42 +931,34 @@ void KonqMainWindow::slotOpenURLRequest(const QUrl &url, const KParts::OpenUrlAr
         if (frameName.toLower() != _top &&
                 frameName.toLower() != _self &&
                 frameName.toLower() != _parent) {
-            KonqView *view = childView(callingPart, frameName, nullptr);
+            KonqView *view = childView(req.requestingPart, frameName, nullptr);
             if (!view) {
                 KonqMainWindow *mainWindow = nullptr;
-                view = findChildView(callingPart, frameName, mainWindow, nullptr);
+                view = findChildView(req.requestingPart, frameName, mainWindow, nullptr);
 
                 if (!view || !mainWindow) {
-                    slotCreateNewWindow(url, args, browserArgs);
+                    slotCreateNewWindow(url, req);
                     return;
                 }
 
-                mainWindow->openUrlRequestHelper(view, url, args, browserArgs, callingPart);
+                mainWindow->openUrl(view, url, req);
                 return;
             }
 
-            openUrlRequestHelper(view, url, args, browserArgs, callingPart);
+            openUrl(view, url, req);
             return;
         }
     }
 
-    KonqView *view = browserArgs.newTab() ? nullptr : childView(callingPart);
-    openUrlRequestHelper(view, url, args, browserArgs, callingPart);
+    KonqView *view = req.browserArgs.newTab() ? nullptr : childView(req.requestingPart);
+    openUrl(view, url, req);
 }
 
 //Called by slotOpenURLRequest
-void KonqMainWindow::openUrlRequestHelper(KonqView *childView, const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::ReadOnlyPart *callingPart)
+void KonqMainWindow::openUrl(KonqView *childView, const QUrl &url, KonqOpenURLRequest &req)
 {
     //qCDebug(KONQUEROR_LOG) << "url=" << url;
-    KonqOpenURLRequest req;
-    req.args = args;
-    if (args.metaData().contains(QStringLiteral("TempFile"))) {
-        req.tempFile = true;
-    }
-    req.suggestedFileName =args.metaData().value("SuggestedFileName");
-    req.browserArgs = browserArgs;
-    req.requestingPart = callingPart;
-    openUrl(childView, url, args.mimeType(), req, browserArgs.trustedSource);
+    openUrl(childView, url, req.args.mimeType(), req, req.browserArgs.trustedSource);
 }
 
 QObject *KonqMainWindow::lastFrame(KonqView *view)
@@ -1076,19 +1068,17 @@ static bool isPopupWindow(const KParts::WindowArgs &windowArgs)
 
 // This is called for the javascript window.open call.
 // Also called for MMB on link, target="_blank" link, MMB on folder, etc.
-void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
-        const KParts::OpenUrlArguments &args,
-        const KParts::BrowserArguments &browserArgs,
+void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &req,
         const KParts::WindowArgs &windowArgs, KParts::ReadOnlyPart **part)
 {
     // NOTE: 'part' may be null
 
-    qCDebug(KONQUEROR_LOG) << "url=" << url << "args.mimeType()=" << args.mimeType()
-             << "browserArgs.frameName=" << browserArgs.frameName;
+    qCDebug(KONQUEROR_LOG) << "url=" << url << "args.mimeType()=" << req.args.mimeType()
+             << "browserArgs.frameName=" << req.browserArgs.frameName;
 
     // If we are a popup window, forward the request the proxy window.
     if (m_isPopupWithProxyWindow && m_popupProxyWindow) {
-        m_popupProxyWindow->slotCreateNewWindow(url, args, browserArgs, windowArgs, part);
+        m_popupProxyWindow->slotCreateNewWindow(url, req, windowArgs, part);
         raiseWindow(m_popupProxyWindow);
         return;
     }
@@ -1098,23 +1088,23 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
     }
 
     KonqMainWindow *mainWindow = nullptr;
-    if (!browserArgs.frameName.isEmpty() && browserArgs.frameName.toLower() != QLatin1String("_blank")) {
+    if (!req.browserArgs.frameName.isEmpty() && req.browserArgs.frameName.toLower() != QLatin1String("_blank")) {
         KParts::ReadOnlyPart *ro_part = nullptr;
         KParts::BrowserExtension *be = ::qobject_cast<KParts::BrowserExtension *>(sender());
         if (be) {
             ro_part = ::qobject_cast<KParts::ReadOnlyPart *>(be->parent());
         }
-        if (findChildView(ro_part, browserArgs.frameName, mainWindow, part)) {
+        if (findChildView(ro_part, req.browserArgs.frameName, mainWindow, part)) {
             // Found a view. If url isn't empty, we should open it - but this never happens currently
             // findChildView put the resulting part in 'part', so we can just return now
-            //qCDebug(KONQUEROR_LOG) << "frame=" << browserArgs.frameName << "-> found part=" << part << part->name();
+            //qCDebug(KONQUEROR_LOG) << "frame=" << req.browserArgs.frameName << "-> found part=" << part << part->name();
             return;
         }
     }
 
-    bool createTab = browserArgs.newTab();
-    if (!createTab && !browserArgs.forcesNewWindow() /* explicit "Open in New Window" action, e.g. on frame or history item */) {
-        if (args.actionRequestedByUser()) { // MMB or some RMB popupmenu action
+    bool createTab = req.browserArgs.newTab();
+    if (!createTab && !req.browserArgs.forcesNewWindow() /* explicit "Open in New Window" action, e.g. on frame or history item */) {
+        if (req.args.actionRequestedByUser()) { // MMB or some RMB popupmenu action
             createTab = KonqSettings::mmbOpensTab();
         } else { // Javascript popup
             createTab = KonqSettings::popupsWithinTabs() &&
@@ -1131,16 +1121,13 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
         }
         const bool aftercurrentpage = KonqSettings::openAfterCurrentPage();
 
-        KonqOpenURLRequest req;
-        req.args = args;
-        req.browserArgs = browserArgs;
         // Can we use the standard way (openUrl), or do we need the part pointer immediately?
         if (!part) {
             req.browserArgs.setNewTab(true);
             req.forceAutoEmbed = true; // testcase: MMB on link-to-PDF, when pdf setting is "show file in external browser".
             req.newTabInFront = newtabsinfront;
             req.openAfterCurrentPage = aftercurrentpage;
-            openUrl(nullptr, url, args.mimeType(), req);
+            openUrl(nullptr, url, req.args.mimeType(), req);
         } else {
             KonqView *newView = m_pViewManager->addTab(QStringLiteral("text/html"), QString(), false, aftercurrentpage);
             if (newView == nullptr) {
@@ -1152,7 +1139,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
             }
 
             openUrl(newView, url.isEmpty() ? KonqUrl::url(KonqUrl::Type::Blank) : url, QString(), req);
-            newView->setViewName(browserArgs.frameName);
+            newView->setViewName(req.browserArgs.frameName);
 
             *part = newView->part();
         }
@@ -1169,21 +1156,18 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
         return;
     }
 
-    KonqOpenURLRequest req;
-    req.args = args;
-    req.browserArgs = browserArgs;
     req.browserArgs.setNewTab(false); // we got a new window, no need for a new tab in that window
     req.forceAutoEmbed = true;
-    req.serviceName = preferredService(m_currentView, args.mimeType());
+    req.serviceName = preferredService(m_currentView, req.args.mimeType());
 
     mainWindow = KonqMainWindowFactory::createEmptyWindow();
     mainWindow->resetAutoSaveSettings(); // Don't autosave
 
     // Do we know the mimetype? If not, go to generic openUrl which will use a KonqRun.
-    if (args.mimeType().isEmpty()) {
+    if (req.args.mimeType().isEmpty()) {
         mainWindow->openUrl(nullptr, url, QString(), req);
     } else {
-        if (!mainWindow->openView(args.mimeType(), url, mainWindow->currentView(), req)) {
+        if (!mainWindow->openView(req.args.mimeType(), url, mainWindow->currentView(), req)) {
             // we have problems. abort.
             delete mainWindow;
 

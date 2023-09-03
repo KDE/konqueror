@@ -10,7 +10,9 @@
 #define WEBENGINEPART_EXT_H
 
 #include "kwebenginepartlib_export.h"
-#include "downloaderinterface.h"
+
+#include "interfaces/downloaderextension.h"
+#include "qtwebengine6compat.h"
 
 #include <QPointer>
 
@@ -30,7 +32,7 @@ class QPrinter;
 class QJsonObject;
 class QWebEngineScript;
 
-class KWEBENGINEPARTLIB_EXPORT WebEngineBrowserExtension : public KParts::BrowserExtension, public DownloaderInterface
+class KWEBENGINEPARTLIB_EXPORT WebEngineBrowserExtension : public KParts::BrowserExtension
 {
     Q_OBJECT
 
@@ -43,9 +45,6 @@ public:
     void saveState(QDataStream &) override;
     void restoreState(QDataStream &) override;
     void saveHistory();
-
-    //DownloaderInterface
-    DownloaderJob* downloadJob(const QUrl & url, quint32 id, QObject *parent = nullptr) override;
 
 Q_SIGNALS:
     void saveUrl(const QUrl &);
@@ -199,6 +198,20 @@ private:
      * @param obj the JSON object representing the element as returned by the javascript function `querySelectorToObject()`
      */
     static KParts::SelectorInterface::Element jsonToElement(const QJsonObject &obj);
+};
+
+class WebEngineDownloaderExtension : public KonqInterfaces::DownloaderExtension
+{
+    Q_OBJECT
+public:
+    WebEngineDownloaderExtension(WebEnginePart *parent);
+    ~WebEngineDownloaderExtension();
+    KonqInterfaces::DownloaderJob* downloadJob(const QUrl &url, quint32 id, QObject *parent=nullptr) override;
+    void addDownloadRequest(QWebEngineDownloadRequest *req);
+    KParts::ReadOnlyPart* part() const override;
+
+private:
+    QMultiHash<QUrl, QWebEngineDownloadRequest*> m_downloadRequests;
 };
 
 #endif // WEBENGINEPART_EXT_H

@@ -17,8 +17,9 @@
 #include <KJob>
 
 #include "qtwebengine6compat.h"
+
 #include "browseropenorsavequestion.h"
-#include <downloaderinterface.h>
+#include "interfaces/downloaderextension.h"
 
 class WebEnginePage;
 class QWebEngineProfile;
@@ -45,16 +46,6 @@ public:
      * usual
      */
     void setForceDownload(const QUrl &url, WebEnginePage *page);
-
-    /**
-     * @brief Sets up a new download job
-     * @overload
-     * @param file the path of the downloaded file
-     * @param it the object which will perform the actual download
-     */
-    // void startDownloadJob(const QString &file, QWebEngineDownloadRequest *it);
-
-    static WebEngineDownloadJob* createDownloadJob(QWebEngineDownloadRequest *it, QObject *parent = nullptr);
 
 private:
 
@@ -99,7 +90,7 @@ private:
     QMultiHash<QUrl, QPointer<WebEnginePage>> m_forcedDownloads;
 };
 
-class WebEngineDownloadJob : public DownloaderJob
+class WebEngineDownloadJob : public KonqInterfaces::DownloaderJob
 {
     Q_OBJECT
 
@@ -111,7 +102,9 @@ public:
 
     QString errorString() const override;
 
+    bool setDownloadPath(const QString & path) override;
     QString downloadPath() const override;
+    bool canChangeDownloadPath() const override;
     bool finished() const override;
 
     QWebEngineDownloadRequest* item() const;
@@ -130,6 +123,7 @@ private slots:
 private:
     bool m_started = false; ///<! @brief Whether the job has been started or not
     QPointer<QWebEngineDownloadRequest> m_downloadItem;
+    QDateTime m_startTime;
 };
 
 #endif // WEBENGINEPARTDOWNLOADMANAGER_H

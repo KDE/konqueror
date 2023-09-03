@@ -13,6 +13,8 @@
 #include "konqurl.h"
 #include "konqdebug.h"
 
+#include "interfaces/downloaderextension.h"
+
 #include <KIO/OpenUrlJob>
 #include <KIO/JobUiDelegate>
 #include <KIO/FileCopyJob>
@@ -32,6 +34,7 @@
 #include <KParts/PartLoader>
 #include <KLocalizedString>
 #include <KIO/JobUiDelegateFactory>
+#include <KJobTrackerInterface>
 
 #include <QDebug>
 #include <QArgument>
@@ -42,7 +45,7 @@
 #include <QFileInfo>
 #include <QLoggingCategory>
 
-#include <downloaderinterface.h>
+using namespace KonqInterfaces;
 
 bool UrlLoader::embedWithoutAskingToSave(const QString &mimeType)
 {
@@ -74,18 +77,36 @@ UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url
     m_view(view),
     m_trustedSource(trustedSource),
     m_dontEmbed(dontEmbed),
-    m_protocolAllowsReading(KProtocolManager::supportsReading(m_url) || !KProtocolInfo::isKnownProtocol(m_url)), // If the protocol is unknown, assumes it allows reading
-    m_letRequestingPartDownloadUrl(req.args.metaData().contains(DownloaderInterface::requestDownloadByPartKey())),
+    m_protocolAllowsReading(KProtocolManager::supportsReading(m_url) || !KProtocolInfo::isKnownProtocol(m_url)), // If the protocol is unknown, assume it allows reading
+    m_letRequestingPartDownloadUrl(req.letPartPerformDownload),
     m_forceSave(m_request.args.metaData().contains(QStringLiteral("ForceSave")))
 {
-    if (!isMimeTypeKnown(m_mimeType) && !m_request.args.mimeType().isEmpty()) {
-        m_mimeType = m_request.args.mimeType();
-    }
+    getDownloaderJobFromPart();
+    determineStartingMimetype();
     m_dontPassToWebEnginePart = m_request.args.metaData().contains("DontSendToDefaultHTMLPart");
 }
 
 UrlLoader::~UrlLoader()
 {
+}
+
+void UrlLoader::determineStartingMimetype()
+{
+    QMimeDatabase db;
+    if (!m_mimeType.isEmpty()) {
+        if (m_letRequestingPartDownloadUrl || !db.mimeTypeForName(m_mimeType).isDefault()) {
+            return;
+        }
+    }
+
+    m_mimeType = m_request.args.mimeType();
+    //In theory, this should never happen, as parts requesting to download the URL
+    //by themselves should already have set the mimetype. However, let's check, just in case
+    if (m_letRequestingPartDownloadUrl && m_mimeType.isEmpty()) {
+        m_mimeType = QStringLiteral("application/octet-stream");
+    } else if (db.mimeTypeForName(m_mimeType).isDefault()) {
+        m_mimeType.clear();
+    }
 }
 
 QString UrlLoader::mimeType() const
@@ -95,7 +116,7 @@ QString UrlLoader::mimeType() const
 
 bool UrlLoader::isMimeTypeKnown(const QString &mimeType)
 {
-    return !mimeType.isEmpty() && mimeType != QLatin1String("application/octet-stream");
+    return !mimeType.isEmpty();
 }
 
 void UrlLoader::setView(KonqView* view)
@@ -158,7 +179,7 @@ void UrlLoader::decideAction()
             m_ready = true;
             return;
         default:
-            if (m_mimeType.isEmpty() && !m_protocolAllowsReading) {
+            if (isMimeTypeKnown(m_mimeType) && !m_protocolAllowsReading) {
                 //If the protocol doesn't allow reading and we don't have a mimetype associated with it,
                 //use the Open action, as we most likely won't be able to find out the mimetype. This is
                 //what happens, for example, for mailto URLs
@@ -326,10 +347,15 @@ UrlLoader::OpenUrlAction UrlLoader::decideExecute() const {
 
 void UrlLoader::performAction()
 {
-    //If m_ready is false, it means that m_letRequestingPartDownloadUrl is true. Don't attempt to download the URL if the action is
-    //DoNothing (it means the user canceled the download) or UnknownAction (it shouldn't happen, but better be sure).
-    if (!m_ready && m_action != OpenUrlAction::DoNothing && m_action != OpenUrlAction::UnknwonAction) {
-        downloadUrlWithRequestingPart();
+    //If we still aren't ready, it means that the part wants to download the URL
+    //by itself. Do this only when opening or embedding, however, since when
+    //saving we first need to ask the user where to save. save() will launch the
+    //job itself.
+    //When the part has finished downloading the URL, the slot connected with the
+    //job's result() signal will call again this function, after setting m_ready
+    //to true
+    if (!m_ready && (m_action == OpenUrlAction::Embed || m_action == OpenUrlAction::Open)) {
+        downloadForEmbeddingOrOpening();
         return;
     }
     switch (m_action) {
@@ -357,36 +383,41 @@ void UrlLoader::getDownloaderJobFromPart()
     if (!m_letRequestingPartDownloadUrl) {
         return;
     }
-    DownloaderInterface *iface = downloaderInterface();
-    if (!iface) {
+    DownloaderExtension *iface = downloaderInterface();
+    if (iface) {
+        m_partDownloaderJob = iface->downloadJob(m_url, m_request.downloadId, this);
+    } else {
         qCDebug(KONQUEROR_LOG) << "Wanting to let part download" << m_url << "but part doesn't implement the DownloaderInterface";
-        return;
     }
-    quint32 id = m_request.args.metaData().value(DownloaderInterface::jobIDKey()).toUInt();
-    m_partDownloaderJob = downloaderInterface()->downloadJob(m_url, id, this);
-}
 
-void UrlLoader::downloadUrlWithRequestingPart()
-{
-    getDownloaderJobFromPart();
     //If we can't get a job for whatever reason (it shouldn't happen, but let's be sure)
     //try to open the URL in the usual way. Maybe it'll work (most likely, it will if
     //there's no need to have special cookies set to access it)
     if (!m_partDownloaderJob) {
         qCDebug(KONQUEROR_LOG) << "Couldn't get DownloadJob for" << m_url << "from part" << m_part;
-        m_ready = true;
         m_letRequestingPartDownloadUrl = false;
         m_request.tempFile = false; //Opening a remote URL with tempFile will fail
-        performAction();
+    }
+}
+
+void UrlLoader::downloadForEmbeddingOrOpening()
+{
+    //This shouldn't happen
+    if (!m_partDownloaderJob) {
+        done();
         return;
     }
     m_partDownloaderJob->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
-    connect(m_partDownloaderJob, &KJob::result, this, &UrlLoader::downloaderJobDone);
+    KJobTrackerInterface *t = KIO::getJobTracker();
+    if (t) {
+        t->registerJob(m_partDownloaderJob);
+    }
+    connect(m_partDownloaderJob, &KJob::result, this, &UrlLoader::downloadForEmbeddingDone);
     connect(m_partDownloaderJob, &KJob::result, this, &UrlLoader::jobFinished);
     m_partDownloaderJob->start();
 }
 
-void UrlLoader::downloaderJobDone(KJob* job)
+void UrlLoader::downloadForEmbeddingDone(KJob* job)
 {
     DownloaderJob *dj = qobject_cast<DownloaderJob*>(job);
     if (dj && dj->error() == 0) {
@@ -394,8 +425,9 @@ void UrlLoader::downloaderJobDone(KJob* job)
         m_url = QUrl::fromLocalFile(dj->downloadPath());
         m_ready = true;
         m_request.tempFile = true;
-    } else if (!dj) {
+    } else if (!dj || dj->error() == KIO::ERR_USER_CANCELED) {
         m_action = OpenUrlAction::DoNothing;
+        m_ready = true;
     }
     performAction();
 }
@@ -432,59 +464,50 @@ void UrlLoader::launchMimeTypeFinderJob()
 
 void UrlLoader::mimetypeDeterminedByJob()
 {
-    if (!m_mimeTypeFinderJob->error()) {
-        m_mimeType=m_mimeTypeFinderJob->mimeType();
-        //Only check whether the URL represents an archive when it is a local file. This can be either because
-        //QUrl::isLocalFile returns true or because its scheme corresponds to a protocol with class :local
-        //(for example, tar)
-        if (m_url.isLocalFile() || KProtocolInfo::protocolClass(m_url.scheme()) == QLatin1String(":local")) {
-            detectArchiveSettings();
-        }
-        decideAction();
-        if (m_letRequestingPartDownloadUrl) {
-            m_ready = false;
-            downloadUrlWithRequestingPart();
-            return;
-        }
-    } else {
+    if (m_mimeTypeFinderJob->error()) {
         m_jobErrorCode = m_mimeTypeFinderJob->error();
         m_url = KParts::BrowserRun::makeErrorUrl(m_jobErrorCode, m_mimeTypeFinderJob->errorString(), m_url);
         m_mimeType = QStringLiteral("text/html");
         m_action = OpenUrlAction::Embed;
+        performAction();
+        return;
     }
-    performAction();
+    m_mimeType=m_mimeTypeFinderJob->mimeType();
+    if (m_mimeType.isEmpty()) {
+        //Ensure the mimetype is not empty so that goOn (called below) won't attempt to determine it again
+        //In theory, KIO::MimeTypeFinderJob::mimeType() should never return an empty string
+        m_mimeType = QStringLiteral("application/octet-stream");
+    }
+    //Only check whether the URL represents an archive when it is a local file. This can be either because
+    //QUrl::isLocalFile returns true or because its scheme corresponds to a protocol with class :local
+    //(for example, tar)
+    if (m_url.isLocalFile() || KProtocolInfo::protocolClass(m_url.scheme()) == QLatin1String(":local")) {
+        detectArchiveSettings();
+    }
+    goOn();
 }
 
 bool UrlLoader::shouldUseDefaultHttpMimeype() const
 {
-    const QVector<QString> webengineSchemes = {"error", "konq"};
     if (m_dontPassToWebEnginePart || isMimeTypeKnown(m_mimeType)) {
         return false;
-    } else if (m_url.scheme().startsWith(QStringLiteral("http")) || webengineSchemes.contains(m_url.scheme())) {
-        return true;
-    } else {
-        return false;
     }
+    const QVector<QString> webengineSchemes = {QStringLiteral("error"), QStringLiteral("konq")};
+    return m_url.scheme().startsWith(QStringLiteral("http")) || webengineSchemes.contains(m_url.scheme());
 }
 
-DownloaderInterface* UrlLoader::downloaderInterface() const
+DownloaderExtension* UrlLoader::downloaderInterface() const
 {
     if (!m_request.requestingPart) {
         return nullptr;
     }
-    return DownloaderInterface::interface(m_request.requestingPart);
+    return DownloaderExtension::downloader(m_request.requestingPart);
 }
 
 void UrlLoader::detectSettingsForRemoteFiles()
 {
     if (m_url.isLocalFile()) {
         return;
-    }
-
-    //We check this here rather than in the constructor as the DownloaderInterface is never used for local files
-    if (m_letRequestingPartDownloadUrl && !downloaderInterface()) {
-        qCDebug(KONQUEROR_LOG) << "Part" << m_part << "asked to handle the download of" << m_url << "but it doesn't implement DownloaderInterface";
-        m_letRequestingPartDownloadUrl = false;
     }
 
     if (m_url.scheme() == QLatin1String("error")) {
@@ -503,7 +526,6 @@ void UrlLoader::detectSettingsForRemoteFiles()
         m_mimeType = QLatin1String("text/plain");
         m_request.args.setMimeType(QStringLiteral("text/plain"));
     }
-
 }
 
 int UrlLoader::checkAccessToLocalFile(const QString& path)
@@ -586,7 +608,6 @@ void UrlLoader::detectSettingsForLocalFiles()
     }
 }
 
-
 bool UrlLoader::shouldEmbedThis() const
 {
     return !m_dontEmbed && (m_request.forceAutoEmbed || KonqFMSettings::settings()->shouldEmbed(m_mimeType));
@@ -611,34 +632,44 @@ void UrlLoader::embed()
 
 void UrlLoader::save()
 {
-    QFileDialog *dlg = new QFileDialog(m_mainWindow);
-    dlg->setAcceptMode(QFileDialog::AcceptSave);
-    dlg->setWindowTitle(i18n("Save As"));
-    dlg->setOption(QFileDialog::DontConfirmOverwrite, false);
-    dlg->setAttribute(Qt::WA_DeleteOnClose);
+    QFileDialog dlg(m_mainWindow);
+    dlg.setAcceptMode(QFileDialog::AcceptSave);
+    dlg.setWindowTitle(i18n("Save As"));
+    dlg.setOption(QFileDialog::DontConfirmOverwrite, false);
     QString suggestedName = !m_request.suggestedFileName.isEmpty() ? m_request.suggestedFileName : m_url.fileName();
-    dlg->selectFile(suggestedName);
-    dlg->setDirectory(QStandardPaths::writableLocation(QStandardPaths::DownloadLocation));
-    auto savePrc = [this, dlg](){
-        QUrl dest = dlg->selectedUrls().value(0);
-        if (dest.isValid()) {
-            performSave(m_url, dest);
-        }
-    };
-    connect(dlg, &QDialog::accepted, dlg, savePrc);
-    dlg->show();
+    dlg.selectFile(suggestedName);
+    dlg.setDirectory(QStandardPaths::writableLocation(QStandardPaths::DownloadLocation));
+    //NOTE: we can't use QDialog::open() because the dialog needs to be synchronous so that we can call
+    //DownloaderJob::setDownloadPath()
+    if (dlg.exec() == QDialog::Rejected) {
+        done();
+        return;
+    }
+    performSave(m_url, dlg.selectedUrls().value(0));
 }
 
 void UrlLoader::performSave(const QUrl& orig, const QUrl& dest)
 {
     KJob *job = nullptr;
     if (m_letRequestingPartDownloadUrl) {
-        job = KIO::move(orig, dest, KIO::Overwrite);
+        getDownloaderJobFromPart();
+        if (m_partDownloaderJob) {
+            bool ok = m_partDownloaderJob->setDownloadPath(dest.path());
+        }
+        job = m_partDownloaderJob;
     } else {
         KIO::file_copy(orig, dest, -1, KIO::Overwrite);
     }
+    if (!job) {
+        done();
+        return;
+    }
     KJobWidgets::setWindow(job, m_mainWindow);
-    job->uiDelegate()->setAutoErrorHandlingEnabled(true);
+    KJobTrackerInterface *t = KIO::getJobTracker();
+    if (t) {
+        t->registerJob(job);
+    }
+    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
     connect(job, &KJob::finished, this, [this, job](){done(job);});
     job->start();
 }
@@ -762,3 +793,4 @@ QDebug operator<<(QDebug dbg, UrlLoader::OpenUrlAction action)
     }
     return dbg;
 }
+

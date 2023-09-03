@@ -19,7 +19,7 @@ set(konq_LIB_SRCS
    interfaces/browser.cpp
    interfaces/cookiejar.cpp
    interfaces/common.h
-   downloaderinterface.cpp
+   interfaces/downloaderextension.cpp
 )
 
 ecm_qt_declare_logging_category(konq_LIB_SRCS HEADER libkonq_debug.h IDENTIFIER LIBKONQ_LOG CATEGORY_NAME org.kde.libkonq)

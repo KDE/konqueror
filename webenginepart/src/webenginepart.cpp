@@ -88,13 +88,17 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
              m_statusBarWalletLabel(nullptr),
              m_searchBar(nullptr),
              m_passwordBar(nullptr),
-             m_wallet(nullptr)
+             m_wallet(nullptr),
+             m_downloader(new WebEngineDownloaderExtension(this))
 {
     if (!WebEnginePartControls::self()->isReady()) {
         WebEnginePartControls::self()->setup(KonqWebEnginePart::Profile::defaultProfile());
     }
 
     connect(WebEnginePartControls::self(), &WebEnginePartControls::userAgentChanged, this, &WebEnginePart::reloadAfterUAChange);
+
+    //Used by KonqInterfaces::DownloaderExtension::downloader()
+    setProperty("DownloaderExtension", QVariant::fromValue(WebEnginePartControls::self()->downloadManager()));
 
     setMetaData(metaData);
 

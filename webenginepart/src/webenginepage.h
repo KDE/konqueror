@@ -52,15 +52,9 @@ public:
      */
     void setSslInfo (const WebSslInfo &other);
 
-    void downloadItem(QWebEngineDownloadRequest *it, bool newWindow = false);
-
     void requestDownload(QWebEngineDownloadItem *item, bool newWindow, bool requestSave);
 
-    void requestOpenFileAsTemporary(const QUrl &url, const QString &mimeType = "", bool newWindow = false, bool newTab = false);
-
     void setStatusBarText(const QString &text);
-
-    WebEngineDownloadJob* downloadJob(const QUrl &url, quint32 id, QObject *parent = nullptr);
 
     /**
     * @brief Tells the page that the part has requested to load the given URL

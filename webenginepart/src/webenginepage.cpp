@@ -19,6 +19,7 @@
 #include "webenginepartcontrols.h"
 #include "navigationrecorder.h"
 #include "profile.h"
+#include "webenginepart_ext.h"
 
 #include <QWebEngineCertificateError>
 #include <QWebEngineSettings>
@@ -48,6 +49,7 @@
 #include <QDesktopWidget>
 #include <QFileDialog>
 #include <QDialogButtonBox>
+#include <QMimeDatabase>
 
 #include <QFile>
 #include <QAuthenticator>
@@ -63,6 +65,8 @@
 //#include <QWebSecurityOrigin>
 #include "utils.h"
 #include "htmlextension.h"
+
+using namespace KonqInterfaces;
 
 WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
         : QWebEnginePage(KonqWebEnginePart::Profile::defaultProfile(), parent),
@@ -194,79 +198,61 @@ void WebEnginePage::requestDownload(QWebEngineDownloadItem *item, bool newWindow
         return;
     }
 
-    item->accept();
-    item->pause();
-    m_downloadItems.insert(url, item);
-    auto removeItem = [this, url] (QObject *obj) {m_downloadItems.remove(url, dynamic_cast<QWebEngineDownloadItem*>(obj));};
-    connect(item, &QWebEngineDownloadItem::destroyed, this, removeItem);
+    WebEngineDownloaderExtension *downloader = m_part->downloader();
+    if (downloader) {
+        downloader->addDownloadRequest(item);
+    }
 
     KParts::BrowserArguments bArgs;
     bArgs.setForcesNewWindow(newWindow);
     KParts::OpenUrlArguments args;
-    args.setMimeType(item->mimeType());
+
+    QMimeDatabase db;
+    QMimeType mime = db.mimeTypeForName(item->mimeType());
+    if (!mime.isValid() || mime.isDefault()) {
+        mime = db.mimeTypeForFile(item->suggestedFileName(), QMimeDatabase::MatchExtension);
+    }
+    args.setMimeType(mime.name());
+
     args.metaData().insert(QStringLiteral("DontSendToDefaultHTMLPart"), QString());
     args.metaData().insert(QStringLiteral("SuggestedFileName"), item->suggestedFileName());
-    args.metaData().insert(QStringLiteral("TempFile"), QString());
-//TODO KF6: remove #ifndef and line inside it when compatibility with KF5 isn't needed anymore.
-// blob URLs can't be downloaded by KIO, so use the part to download them even when using KCookieJar
-#ifndef MANAGE_COOKIES_INTERNALLY
-    if (item->url().scheme() == QStringLiteral("blob")) {
-#endif
-    args.metaData().insert(DownloaderInterface::jobIDKey(), QString::number(item->id()));
-    args.metaData().insert(DownloaderInterface::requestDownloadByPartKey(), QString());
-//TODO KF6: remove #ifndef and line inside it when compatibility with KF5 isn't needed anymore.
-#ifndef MANAGE_COOKIES_INTERNALLY
-    }
-#endif
     if (requestSave) {
         //The value doesn't matter
         args.metaData().insert(QStringLiteral("ForceSave"), QString());
     }
-    emit m_part->browserExtension()->openUrlRequest(url, args, bArgs);
-}
 
-WebEngineDownloadJob * WebEnginePage::downloadJob(const QUrl& url, quint32 id, QObject *parent)
-{
-    auto items = m_downloadItems.values(url);
-    if (items.isEmpty()) {
-        return nullptr;
-    }
-    auto it = std::find_if(items.constBegin(), items.constEnd(), [id](QWebEngineDownloadItem* it){return it->id() == id;});
-    //If no job with the given ID is found, return the last one, which is the first created
-    QWebEngineDownloadItem *item = it != items.constEnd() ? *it : items.last();
-    return WebEnginePartDownloadManager::createDownloadJob(item, parent);
-}
-
-void WebEnginePage::downloadItem(QWebEngineDownloadRequest *it, bool newWindow)
-{
-    QUrl url = it->url();
-    // Integration with a download manager...
-    if (!url.isLocalFile()) {
-        QString managerExe = checkForDownloadManager(view());
-        if (!managerExe.isEmpty()) {
-            //qCDebug(WEBENGINEPART_LOG) << "Calling command" << cmd;
-            KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(managerExe, {url.toString()});
-            job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, view()));
-            job->start();
-            return;
+//TODO KF6: this lamba only exists to reduce code duplication in the two #ifdef
+//branches below. When KF5 compatibility will be removed, cookies will always
+//be managed internally, so remove the #ifdef and the lambda and move its body
+//inside the `if (downloader)`
+    auto requestDownloadAndOpen = [&]() {
+        args.metaData().insert(QStringLiteral("TempFile"), QString());
+        emit downloader->downloadAndOpenUrl(url, item->id(), args, bArgs, true);
+        if (item->state() == QWebEngineDownloadRequest::DownloadRequested) {
+            qCDebug(WEBENGINEPART_LOG()) << "Automatically accepting download for" << item->url() << "This shouldn't happen";
+            item->accept();
         }
+    };
+//TODO KF6: remove #ifndef and line inside it when compatibility with KF5 isn't needed anymore.
+#ifdef MANAGE_COOKIES_INTERNALLY
+    if (downloader) {
+        requestDownloadAndOpen();
+    } else { //It should never happen
+        qCDebug(WEBENGINEPART_LOG()) << "WebEnginePart for" << part()->url() << "doesn't have a WebEnginePartDownloaderExtension";
+        emit m_part->browserExtension()->openUrlRequest(url, args, bArgs);
+        item->cancel();
+        item->deleteLater();
     }
-    KParts::BrowserArguments bArgs;
-    bArgs.setForcesNewWindow(newWindow);
-    KParts::OpenUrlArguments urlArgs;
-    urlArgs.metaData().insert("SuggestedFileName", it->suggestedFileName());
-    askBrowserToOpenUrl(url, it->mimeType(), urlArgs, bArgs);
-}
-
-void WebEnginePage::requestOpenFileAsTemporary(const QUrl& url, const QString &mimeType, bool newWindow, bool newTab)
-{
-    KParts::BrowserArguments bArgs;
-    bArgs.setForcesNewWindow(newWindow);
-    bArgs.setNewTab(newTab);
-    KParts::OpenUrlArguments oArgs;
-    oArgs.setMimeType(mimeType);
-    oArgs.metaData().insert("konq-temp-file", "1");
-    emit part()->browserExtension()->openUrlRequest(url, oArgs, bArgs);
+#else
+// blob URLs can't be downloaded by KIO, so use the part to download them even when using KCookieJar
+    if (item->url().scheme() == QStringLiteral("blob") && downloader) {
+        requestDownloadAndOpen();
+    } else {
+        emit m_part->browserExtension()->openUrlRequest(url, args, bArgs);
+        item->cancel();
+        item->deleteLater();
+    }
+#endif
 }
 
 # ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE

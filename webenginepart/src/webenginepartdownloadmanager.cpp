@@ -33,6 +33,8 @@
 #include <KIO/JobUiDelegate>
 #include <KIO/JobUiDelegateFactory>
 
+using namespace KonqInterfaces;
+
 QTemporaryDir& WebEnginePartDownloadManager::tempDownloadDir()
 {
     static QTemporaryDir s_tempDownloadDir(QDir(QDir::tempPath()).filePath(QStringLiteral("WebEnginePartDownloadManager")));
@@ -172,25 +174,17 @@ void WebEnginePartDownloadManager::saveHtmlPage(QWebEngineDownloadRequest* it, W
 
     it->setDownloadDirectory(dir);
     it->setDownloadFileName(relativePath);
-    WebEngineDownloadJob *job = createDownloadJob(it, this);
-    job->start();
-}
-
-WebEngineDownloadJob* WebEnginePartDownloadManager::createDownloadJob(QWebEngineDownloadRequest* it, QObject *parent)
-{
-    WebEngineDownloadJob *j = new WebEngineDownloadJob(it, parent);
+    WebEngineDownloadJob *job = new WebEngineDownloadJob(it, this);
     KJobTrackerInterface *t = KIO::getJobTracker();
     if (t) {
-        t->registerJob(j);
+        t->registerJob(job);
     }
-    return j;
+    job->start();
 }
 
 WebEngineDownloadJob::WebEngineDownloadJob(QWebEngineDownloadRequest* it, QObject* parent) : DownloaderJob(parent), m_downloadItem(it)
 {
     setCapabilities(KJob::Killable|KJob::Suspendable);
-    it->accept();
-    it->pause();
     connect(m_downloadItem, &QWebEngineDownloadRequest::stateChanged, this, &WebEngineDownloadJob::stateChanged);
     setTotalAmount(KJob::Bytes, m_downloadItem->totalBytes());
     setFinishedNotificationHidden(true);
@@ -207,6 +201,9 @@ WebEngineDownloadJob::~WebEngineDownloadJob() noexcept
 
 void WebEngineDownloadJob::start()
 {
+    if (m_downloadItem && m_downloadItem->state() == QWebEngineDownloadItem::DownloadRequested) {
+        m_downloadItem->accept();
+    }
     QTimer::singleShot(0, this, &WebEngineDownloadJob::startDownloading);
 }
 
@@ -265,6 +262,7 @@ void WebEngineDownloadJob::startDownloading()
     if (!m_downloadItem) {
         return;
     }
+    m_startTime = QDateTime::currentDateTime();
     QString name = m_downloadItem->downloadFileName();
     emit description(this, i18nc("Notification about downloading a file", "Downloading"),
                     QPair<QString, QString>(i18nc("Source of a file being downloaded", "Source"), m_downloadItem->url().toString()),
@@ -284,7 +282,15 @@ void WebEngineDownloadJob::startDownloading()
 
 void WebEngineDownloadJob::downloadFinished()
 {
+    QPointer<WebEnginePage> page = m_downloadItem ? qobject_cast<WebEnginePage*>(m_downloadItem->page()) : nullptr;
     emitResult();
+    QDateTime now = QDateTime::currentDateTime();
+    if (m_startTime.msecsTo(now) < 500) {
+        if (page) {
+            QString filePath = QDir(m_downloadItem->downloadDirectory()).filePath(m_downloadItem->downloadFileName());
+            emit page->setStatusBarText(i18nc("Finished saving URL", "Saved %1 as %2", m_downloadItem->url().toString(), filePath));
+        }
+    }
 }
 
 QString WebEngineDownloadJob::downloadPath() const
@@ -298,4 +304,20 @@ QString WebEngineDownloadJob::downloadPath() const
 QWebEngineDownloadRequest * WebEngineDownloadJob::item() const
 {
     return m_downloadItem;
+}
+
+bool WebEngineDownloadJob::setDownloadPath(const QString& path)
+{
+    if (!canChangeDownloadPath()) {
+        return false;
+    }
+    QFileInfo info(path);
+    m_downloadItem->setDownloadFileName(info.fileName());
+    m_downloadItem->setDownloadDirectory(info.path());
+    return true;
+}
+
+bool WebEngineDownloadJob::canChangeDownloadPath() const
+{
+    return m_downloadItem && m_downloadItem->state() == QWebEngineDownloadItem::DownloadRequested;
 }

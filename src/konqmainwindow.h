@@ -362,11 +362,11 @@ public Q_SLOTS:
     void slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::BrowserExtension::PopupFlags flags, const KParts::BrowserExtension::ActionGroupMap &);
     void slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::BrowserExtension::PopupFlags f, const KParts::BrowserExtension::ActionGroupMap &);
 
-    void slotOpenURLRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::ReadOnlyPart *callingPart);
+    void slotOpenURLRequest(const QUrl &url, KonqOpenURLRequest &req);
 
-    void openUrlRequestHelper(KonqView *childView, const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::ReadOnlyPart *callingPart);
+    void openUrl(KonqView *childView, const QUrl &url, KonqOpenURLRequest &req);
 
-    void slotCreateNewWindow(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs,
+    void slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest& req,
                              const KParts::WindowArgs &windowArgs = KParts::WindowArgs(),
                              KParts::ReadOnlyPart **part = nullptr);
 
