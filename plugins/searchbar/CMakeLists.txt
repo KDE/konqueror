@@ -13,7 +13,7 @@ ecm_qt_declare_logging_category(searchbarplugin_PART_SRCS HEADER searchbar_debug
 
 add_library(searchbarplugin MODULE ${searchbarplugin_PART_SRCS})
 
-target_link_libraries(searchbarplugin KF5::I18n KF5::TextWidgets KF5::Parts KF5Konq)
+target_link_libraries(searchbarplugin KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::TextWidgets KF${KF_MAJOR_VERSION}::Parts KF${KF_MAJOR_VERSION}::Konq)
 
 install(TARGETS searchbarplugin DESTINATION ${KDE_INSTALL_PLUGINDIR}/konqueror/kpartplugins)
 install(FILES searchbarplugin.rc DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/partsrcfiles)

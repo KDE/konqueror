@@ -1,6 +1,6 @@
 
-find_package(Qt5TextToSpeech ${QT_REQUIRED_VERSION} QUIET)
-set_package_properties(Qt5TextToSpeech PROPERTIES
+find_package(QtTextToSpeech ${QT_REQUIRED_VERSION} QUIET)
+set_package_properties(QtTextToSpeech PROPERTIES
       PURPOSE "Gives Konqueror a plugin to speak portions or all of a website")
 
 function (konqueror_install_plugin_in_namespaces name)
@@ -26,7 +26,7 @@ add_subdirectory( babelfish )
 add_subdirectory( webarchiver )
 add_subdirectory( kget )
 
-if (Qt5TextToSpeech_FOUND)
+if (QtTextToSpeech_FOUND)
    add_subdirectory(ttsplugin)
 endif()
 

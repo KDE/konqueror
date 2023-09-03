@@ -6,7 +6,7 @@ set(konqsidebar_tree_SRCS
 
 add_library(konqsidebar_tree MODULE ${konqsidebar_tree_SRCS})
 
-target_link_libraries(konqsidebar_tree KF5::I18n KF5::Konq konqsidebarplugin )
+target_link_libraries(konqsidebar_tree KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::Konq konqsidebarplugin )
 
 install(TARGETS konqsidebar_tree DESTINATION ${KDE_INSTALL_PLUGINDIR})
 

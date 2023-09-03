@@ -1,6 +1,6 @@
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Wallet)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Notifications )
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Sonnet)
+find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Wallet)
+find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Notifications )
+find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Sonnet)
 
 find_package(Hunspell)
 
@@ -10,9 +10,9 @@ if(BUILD_TESTING)
   add_definitions(-DBUILD_TESTING)
 endif(BUILD_TESTING)
 
-#Before Qt 5.15.5 QtWebEngineView didn't allow opening a remote URL by dropping it
+#Before Qt .1. QtWebEngineView didn't allow opening a remote URL by dropping it
 #on the view itself, so WebEngineView needed to handle that itself.
-if(Qt5WebEngineWidgets_VERSION VERSION_LESS "5.15.5")
+if(QtWebEngineWidgets_VERSION VERSION_LESS "5.15.5")
   add_definitions(-DREMOTE_DND_NOT_HANDLED_BY_WEBENGINE)
 endif()
 
@@ -69,9 +69,9 @@ if (QT_MAJOR_VERSION STREQUAL 6)
 list(APPEND kwebenginepartlib_LIB_SRCS profile.cpp)
 endif()
 
-qt5_add_resources(kwebenginepartlib_LIB_SRCS webenginepart.qrc)
+qt_add_resources(kwebenginepartlib_LIB_SRCS webenginepart.qrc)
 
-qt5_wrap_ui(kwebenginepartlib_LIB_SRCS
+qt_wrap_ui(kwebenginepartlib_LIB_SRCS
                   ui/searchbar.ui
 )
 ecm_qt_declare_logging_category(kwebenginepartlib_LIB_SRCS
@@ -85,23 +85,23 @@ generate_export_header(kwebenginepartlib)
 
 target_link_libraries(kwebenginepartlib
     PUBLIC
-        Qt5::Core
-        Qt5::DBus
-        Qt5::Gui
-        Qt5::Widgets
-        Qt5::WebEngineWidgets
-        KF5::Parts
-        KF5::Wallet
-        KF5::Notifications
-        KF5::KIOWidgets
-        KF5::Konq
+        Qt${KF_MAJOR_VERSION}::Core
+        Qt${KF_MAJOR_VERSION}::DBus
+        Qt${KF_MAJOR_VERSION}::Gui
+        Qt${KF_MAJOR_VERSION}::Widgets
+        Qt${KF_MAJOR_VERSION}::WebEngineWidgets
+        KF${KF_MAJOR_VERSION}::Parts
+        KF${KF_MAJOR_VERSION}::Wallet
+        KF${KF_MAJOR_VERSION}::Notifications
+        KF${KF_MAJOR_VERSION}::KIOWidgets
+        KF${KF_MAJOR_VERSION}::Konq
     PRIVATE
-        KF5::I18n
-        Qt5::PrintSupport
-        KF5::SonnetCore
-        KF5::IconThemes #for KIconLoader used by WebEnginePartErrorSchemeHandler
-        KF5::WindowSystem  # for KUserTimestamp
-        KF5::SonnetUi
+        KF${KF_MAJOR_VERSION}::I18n
+        Qt${KF_MAJOR_VERSION}::PrintSupport
+        KF${KF_MAJOR_VERSION}::SonnetCore
+        KF${KF_MAJOR_VERSION}::IconThemes #for KIconLoader used by WebEnginePartErrorSchemeHandler
+        KF${KF_MAJOR_VERSION}::WindowSystem  # for KUserTimestamp
+        KF${KF_MAJOR_VERSION}::SonnetUi
 )
 
 target_include_directories(kwebenginepartlib PUBLIC
@@ -116,7 +116,7 @@ add_library(webenginepart MODULE webenginepartfactory.cpp)
 
 target_link_libraries(webenginepart kwebenginepartlib)
 
-install(TARGETS webenginepart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/parts)
+install(TARGETS webenginepart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${KF_MAJOR_VERSION}/parts)
 
 install(FILES webenginepart.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/webenginepart)
 

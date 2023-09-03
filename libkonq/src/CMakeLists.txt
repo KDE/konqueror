@@ -24,43 +24,43 @@ set(konq_LIB_SRCS
 
 ecm_qt_declare_logging_category(konq_LIB_SRCS HEADER libkonq_debug.h IDENTIFIER LIBKONQ_LOG CATEGORY_NAME org.kde.libkonq)
 
-add_library(KF5Konq ${konq_LIB_SRCS})
+add_library(KF${KF_MAJOR_VERSION}Konq ${konq_LIB_SRCS})
 
-generate_export_header(KF5Konq BASE_NAME libkonq EXPORT_FILE_NAME libkonq_export.h)
+generate_export_header(KF${KF_MAJOR_VERSION}Konq BASE_NAME libkonq EXPORT_FILE_NAME libkonq_export.h)
 
-add_library(KF5::Konq ALIAS KF5Konq)
+add_library(KF${KF_MAJOR_VERSION}::Konq ALIAS KF${KF_MAJOR_VERSION}Konq)
 
-target_link_libraries(KF5Konq
+target_link_libraries(KF${KF_MAJOR_VERSION}Konq
     PUBLIC
-    KF5::XmlGui
-    KF5::ConfigCore
-    KF5::KIOCore
-    KF5::KIOFileWidgets
-    KF5::CoreAddons
-    KF5::Service
-    KF5::Parts
-    Qt5::WebEngineWidgets
+    KF${KF_MAJOR_VERSION}::XmlGui
+    KF${KF_MAJOR_VERSION}::ConfigCore
+    KF${KF_MAJOR_VERSION}::KIOCore
+    KF${KF_MAJOR_VERSION}::KIOFileWidgets
+    KF${KF_MAJOR_VERSION}::CoreAddons
+    KF${KF_MAJOR_VERSION}::Service
+    KF${KF_MAJOR_VERSION}::Parts
+    Qt${KF_MAJOR_VERSION}::WebEngineWidgets
     PRIVATE
-    KF5::Bookmarks
-    KF5::I18n
+    KF${KF_MAJOR_VERSION}::Bookmarks
+    KF${KF_MAJOR_VERSION}::I18n
     ${ZLIB_LIBRARY}
 )
 
 # For crc32 in konq_historyloader.cpp
-target_include_directories(KF5Konq PRIVATE ${ZLIB_INCLUDE_DIR})
+target_include_directories(KF${KF_MAJOR_VERSION}Konq PRIVATE ${ZLIB_INCLUDE_DIR})
 
 
-set_target_properties(KF5Konq PROPERTIES
+set_target_properties(KF${KF_MAJOR_VERSION}Konq PROPERTIES
     VERSION ${KONQ_VERSION}
     SOVERSION ${KONQ_SOVERSION}
     EXPORT_NAME Konq
 )
 
-install(TARGETS KF5Konq EXPORT KF5KonqTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF${KF_MAJOR_VERSION}Konq EXPORT KF${KF_MAJOR_VERSION}KonqTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
-install(FILES directory_bookmarkbar.desktop DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kbookmark)
+install(FILES directory_bookmarkbar.desktop DESTINATION ${KDE_INSTALL_DATADIR_KF}/kbookmark)
 install(FILES
     konq_events.h
     konq_historyentry.h
@@ -70,7 +70,7 @@ install(FILES
     ${LibKonq_BINARY_DIR}/src/libkonq_export.h
     asyncselectorinterface.h
 
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}
     COMPONENT Devel
 )
 

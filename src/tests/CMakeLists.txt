@@ -7,6 +7,6 @@ include(ECMMarkAsTest)
 add_executable(centralwidget centralwidget.cpp)
 ecm_mark_as_test(centralwidget)
 target_link_libraries(centralwidget
-   Qt5::Widgets
+   Qt${KF_MAJOR_VERSION}::Widgets
 )
 

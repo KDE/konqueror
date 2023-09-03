@@ -1,5 +1,5 @@
 include_directories (${CMAKE_CURRENT_SOURCE_DIR})
-find_package(KF5 REQUIRED COMPONENTS JobWidgets IconThemes)
+find_package(KF${KF_MAJOR_VERSION} REQUIRED COMPONENTS JobWidgets IconThemes)
 
 if (${QT_QT3SUPPORT_FOUND})
 add_subdirectory( trees )
@@ -23,8 +23,8 @@ set(konqsidebarplugin_LIB_SRCS konqsidebarplugin.cpp )
 
 add_library(konqsidebarplugin SHARED ${konqsidebarplugin_LIB_SRCS} ${sidebar_DEBUG_SRCS})
 
-target_link_libraries(konqsidebarplugin KF5::Parts KF5::KIOFileWidgets)
-set_target_properties(konqsidebarplugin PROPERTIES VERSION ${KONQUEROR_LIB_VERSION} SOVERSION "5" )
+target_link_libraries(konqsidebarplugin KF${KF_MAJOR_VERSION}::Parts KF${KF_MAJOR_VERSION}::KIOFileWidgets)
+set_target_properties(konqsidebarplugin PROPERTIES VERSION ${KONQUEROR_LIB_VERSION} SOVERSION "${KF_MAJOR_VERSION}" )
 install(TARGETS konqsidebarplugin ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### konq_sidebar plugin: contains the KParts used by konqueror ###############
@@ -42,11 +42,17 @@ set(konq_sidebar_PART_SRCS
 
 add_library(konq_sidebar MODULE ${konq_sidebar_PART_SRCS} ${sidebar_DEBUG_SRCS})
 
-target_link_libraries(konq_sidebar KF5::I18n KF5::Parts KF5::Konq konqsidebarplugin KF5::KCMUtils KF5::IconThemes)
+target_link_libraries(konq_sidebar
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::Parts
+    KF${KF_MAJOR_VERSION}::Konq
+    KF${KF_MAJOR_VERSION}::KCMUtils
+    KF${KF_MAJOR_VERSION}::IconThemes
+    konqsidebarplugin)
 
-install(TARGETS konq_sidebar DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/parts)
+install(TARGETS konq_sidebar DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${KF_MAJOR_VERSION}/parts)
 
 ########### install files ###############
 
 install( FILES konqsidebartngrc  DESTINATION  ${KDE_INSTALL_CONFDIR} )
-install( FILES konqsidebarplugin.h DESTINATION ${KDE_INSTALL_INCLUDEDIR} COMPONENT Devel )
+install( FILES konqsidebarplugin.h DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF} COMPONENT Devel )

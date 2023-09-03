@@ -1,5 +1,5 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"webarchiver\")
-find_package(KF5 REQUIRED COMPONENTS I18n Crash KIO Archive XmlGui TextWidgets)
+find_package(KF${KF_MAJOR_VERSION} REQUIRED COMPONENTS I18n Crash KIO Archive XmlGui TextWidgets)
 
 ########### next target ###############
 
@@ -10,13 +10,16 @@ add_executable(kcreatewebarchive ${kcreatewebarchive_SRCS})
 target_include_directories(kcreatewebarchive PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/.)
 target_link_libraries(kcreatewebarchive
   webarchiverdebug
-  KF5::I18n
-  KF5::XmlGui
-  KF5::TextWidgets
-  KF5::Crash
-  KF5::KIOCore KF5::KIOWidgets KF5::KIOFileWidgets
-  KF5::Archive
-  Qt5::Core Qt5::Widgets)
+  KF${KF_MAJOR_VERSION}::I18n
+  KF${KF_MAJOR_VERSION}::XmlGui
+  KF${KF_MAJOR_VERSION}::TextWidgets
+  KF${KF_MAJOR_VERSION}::Crash
+  KF${KF_MAJOR_VERSION}::KIOCore
+  KF${KF_MAJOR_VERSION}::KIOWidgets
+  KF${KF_MAJOR_VERSION}::KIOFileWidgets
+  KF${KF_MAJOR_VERSION}::Archive
+  Qt${KF_MAJOR_VERSION}::Core
+  Qt${KF_MAJOR_VERSION}::Widgets)
 
 ########### install files ###############
 

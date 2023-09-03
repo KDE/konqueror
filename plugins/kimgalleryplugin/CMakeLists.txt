@@ -6,7 +6,12 @@ ecm_qt_declare_logging_category(kimgallery_PART_SRCS HEADER imgallery_debug.h ID
 
 add_library(kimgallery MODULE ${kimgallery_PART_SRCS})
 
-target_link_libraries(kimgallery KF5::I18n KF5::WidgetsAddons KF5::KIOWidgets KF5::Parts KF5Konq)
+target_link_libraries(kimgallery
+  KF${KF_MAJOR_VERSION}::I18n
+  KF${KF_MAJOR_VERSION}::WidgetsAddons
+  KF${KF_MAJOR_VERSION}::KIOWidgets
+  KF${KF_MAJOR_VERSION}::Parts
+  KF${KF_MAJOR_VERSION}::Konq)
 
 install(TARGETS kimgallery DESTINATION ${KDE_INSTALL_PLUGINDIR}/dolphinpart/kpartplugins)
 install(FILES kimgallery.rc DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/partsrcfiles)

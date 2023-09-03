@@ -46,7 +46,14 @@ ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
     )
 
 add_library(kcm_konqhtml_static STATIC ${kcm_konqhtml_PART_SRCS})
-target_link_libraries(kcm_konqhtml_static KF5::I18n KF5::ConfigWidgets KF5::TextWidgets KF5::Parts KF5::ItemViews Qt5::WebEngineWidgets KF5Konq)
+target_link_libraries(kcm_konqhtml_static
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::ConfigWidgets
+    KF${KF_MAJOR_VERSION}::TextWidgets
+    KF${KF_MAJOR_VERSION}::Parts
+    KF${KF_MAJOR_VERSION}::ItemViews
+    Qt${KF_MAJOR_VERSION}::WebEngineWidgets
+    KF${KF_MAJOR_VERSION}::Konq)
 
 kcoreaddons_add_plugin(khtml_general SOURCES plugins/khtml_general.cpp INSTALL_NAMESPACE konqueror_kcms)
 target_link_libraries(khtml_general kcm_konqhtml_static)

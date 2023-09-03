@@ -2,13 +2,13 @@
 option(THUMBNAIL_USE_WEBKIT "Use WebKit to generate HTML and web archive thumbnails" OFF)
 
 if (THUMBNAIL_USE_WEBKIT)
-  find_package(Qt5 REQUIRED WebKit WebKitWidgets)
+  find_package(Qt${KF_MAJOR_VERSION} REQUIRED WebKit WebKitWidgets)
   add_definitions(-DTHUMBNAIL_USE_WEBKIT)
 else ()
-  find_package(Qt5 REQUIRED COMPONENTS WebEngine WebEngineWidgets)
+  find_package(Qt${KF_MAJOR_VERSION} REQUIRED COMPONENTS WebEngine WebEngineWidgets)
 endif ()
 
-find_package(KF5 REQUIRED COMPONENTS KIO Archive)
+find_package(KF${KF_MAJOR_VERSION} REQUIRED COMPONENTS KIO Archive)
 
 ########### next target ###############
 
@@ -17,17 +17,17 @@ add_library(webarchivethumbnail MODULE ${webarchivethumbnail_SRCS})
 target_include_directories(webarchivethumbnail PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/.)
 target_link_libraries(webarchivethumbnail
   webarchiverdebug
-  KF5::KIOWidgets
-  KF5::Archive
+  KF${KF_MAJOR_VERSION}::KIOWidgets
+  KF${KF_MAJOR_VERSION}::Archive
 )
 
 if (THUMBNAIL_USE_WEBKIT)
-  target_link_libraries(webarchivethumbnail Qt5::WebKit Qt5::WebKitWidgets)
+  target_link_libraries(webarchivethumbnail Qt${KF_MAJOR_VERSION}::WebKit Qt${KF_MAJOR_VERSION}::WebKitWidgets)
 else ()
-  target_link_libraries(webarchivethumbnail Qt5::WebEngine Qt5::WebEngineWidgets)
+  target_link_libraries(webarchivethumbnail Qt${KF_MAJOR_VERSION}::WebEngine Qt${KF_MAJOR_VERSION}::WebEngineWidgets)
 endif ()
 
 ########### install files ###############
 
 install(TARGETS webarchivethumbnail  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
-install(FILES webarchivethumbnail.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
+install(FILES webarchivethumbnail.desktop  DESTINATION  ${KDE_INSTALL_KSERVICESDIR} )

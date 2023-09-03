@@ -8,7 +8,7 @@ target_sources(konqueror_kget_browser_integration PRIVATE
    ${kget_browser_integration_dbus_SRCS}
 )
 
-target_link_libraries(konqueror_kget_browser_integration KF5::CoreAddons KF5::I18n KF5::IconThemes KF5Konq)
+target_link_libraries(konqueror_kget_browser_integration KF${KF_MAJOR_VERSION}::CoreAddons KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::IconThemes KF${KF_MAJOR_VERSION}::Konq)
 target_compile_definitions(konqueror_kget_browser_integration PRIVATE TRANSLATION_DOMAIN="kgetplugin")
 
 konqueror_install_plugin_in_namespaces(konqueror_kget_browser_integration)

@@ -6,7 +6,7 @@ set(babelfishplugin_PART_SRCS plugin_babelfish.cpp )
 
 add_library(babelfishplugin MODULE ${babelfishplugin_PART_SRCS})
 
-target_link_libraries(babelfishplugin KF5::I18n KF5::Parts KF5Konq)
+target_link_libraries(babelfishplugin KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::Parts KF${KF_MAJOR_VERSION}Konq)
 
 konqueror_install_plugin_in_namespaces(babelfishplugin)
 install(FILES translaterc DESTINATION ${KDE_INSTALL_CONFDIR})

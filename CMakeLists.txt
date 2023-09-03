@@ -3,26 +3,23 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules")
 include(CMakeDependentOption)
 
 # KDE Application Version, managed by release script
-set (RELEASE_SERVICE_VERSION_MAJOR "23")
+set (RELEASE_SERVICE_MAJOR_VERSION "23")
 set (RELEASE_SERVICE_VERSION_MINOR "11")
 set (RELEASE_SERVICE_VERSION_MICRO "70")
-set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
+set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_MAJOR_VERSION}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
 
 project(Konqueror VERSION ${RELEASE_SERVICE_VERSION})
 
 set(QT_MIN_VERSION "5.15.2")
 set(KF5_MIN_VERSION "5.101.0")
-set(KDE_COMPILERSETTINGS_LEVEL "5.82.0")
 
-find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
-
-include(FeatureSummary)
 
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_MODULE_PATH})
+find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
+list(APPEND CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
-include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMInstallIcons)
 include(ECMSetupVersion)
 include(ECMAddAppIcon)
@@ -30,13 +27,24 @@ include(ECMQtDeclareLoggingCategory)
 include(CMakePackageConfigHelpers)
 include(GenerateExportHeader)
 
+
+if (QT_MAJOR_VERSION STREQUAL "6")
+    set(KF_MAJOR_VERSION "6")
+else()
+    set(KF_MAJOR_VERSION "5")
+    set(KDE_COMPILERSETTINGS_LEVEL "5.82.0")
+endif()
+include(KDECompilerSettings NO_POLICY_SCOPE)
+
+include(FeatureSummary)
+
 set(KONQUEROR_LIB_VERSION "${RELEASE_SERVICE_VERSION}")
 set(KONQUEROR_VERSION "${KONQUEROR_LIB_VERSION}")
 
-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets WebEngineWidgets X11Extras)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Parts KCMUtils Archive Crash WindowSystem Init IconThemes DBusAddons GuiAddons)
+find_package(Qt${KF_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets WebEngineWidgets X11Extras)
+find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Parts KCMUtils Archive Crash WindowSystem Init IconThemes DBusAddons GuiAddons)
 
-find_package(KF5 ${KF5_MIN_VERSION} COMPONENTS Activities DocTools) # Optional
+find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} COMPONENTS Activities DocTools) # Optional
 
 add_definitions(
     -DQT_USE_QSTRINGBUILDER
@@ -74,7 +82,7 @@ add_subdirectory( settings )
 add_subdirectory( plugins )
 add_subdirectory( kioworkers )
 
-if (KF5DocTools_FOUND)
+if (KF${KF_MAJOR_VERSION}DocTools_FOUND)
     add_subdirectory( doc )
 endif()
 
@@ -99,7 +107,7 @@ install(FILES konqy_preload.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR})
 install(FILES konqueror.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 
 ki18n_install(po)
-if (KF5DocTools_FOUND)
+if (KF${KF_MAJOR_VERSION}DocTools_FOUND)
     kdoctools_install(po)
 endif()
 

@@ -1,12 +1,12 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"webarchiver\")
-find_package(KF5 REQUIRED COMPONENTS CoreAddons Parts)
+find_package(KF${KF_MAJOR_VERSION} REQUIRED COMPONENTS CoreAddons Parts)
 
 ########### next target ###############
 
 set(webarchiverplugin_PART_SRCS plugin_webarchiver.cpp)
 add_library(webarchiverplugin MODULE ${webarchiverplugin_PART_SRCS})
 target_include_directories(webarchiverplugin PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/logging)
-target_link_libraries(webarchiverplugin webarchiverdebug KF5::I18n KF5::Parts Qt5::Core Qt5::Widgets KF5Konq)
+target_link_libraries(webarchiverplugin webarchiverdebug KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::Parts Qt${KF_MAJOR_VERSION}::Core Qt${KF_MAJOR_VERSION}::Widgets KF${KF_MAJOR_VERSION}::Konq)
 
 konqueror_install_plugin_in_namespaces(webarchiverplugin)
 

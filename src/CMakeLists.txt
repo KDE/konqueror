@@ -26,15 +26,15 @@ ecm_qt_declare_logging_category(konquerorprivate_SRCS HEADER konqdebug.h IDENTIF
 
 add_library(konquerorprivate SHARED ${konquerorprivate_SRCS})
 target_link_libraries(konquerorprivate
-   KF5::I18n
-   KF5::IconThemes
-   KF5::Konq
-   KF5::Parts
-   KF5::KIOGui
-   Qt5::X11Extras
+   KF${KF_MAJOR_VERSION}::I18n
+   KF${KF_MAJOR_VERSION}::IconThemes
+   KF${KF_MAJOR_VERSION}::Konq
+   KF${KF_MAJOR_VERSION}::Parts
+   KF${KF_MAJOR_VERSION}::KIOGui
+   Qt${KF_MAJOR_VERSION}::X11Extras
 )
 
-set_target_properties(konquerorprivate PROPERTIES VERSION ${KONQUEROR_LIB_VERSION} SOVERSION "5" )
+set_target_properties(konquerorprivate PROPERTIES VERSION ${KONQUEROR_LIB_VERSION} SOVERSION "${KF_MAJOR_VERSION}" )
 install(TARGETS konquerorprivate ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
 
 generate_export_header(konquerorprivate BASE_NAME konquerorprivate EXPORT_FILE_NAME konquerorprivate_export.h)
@@ -89,31 +89,35 @@ set(konqueror_KDEINIT_SRCS
 kconfig_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
 ki18n_wrap_ui(konqueror_KDEINIT_SRCS konqsessiondlg_base.ui)
 ki18n_wrap_ui(konqueror_KDEINIT_SRCS konqnewsessiondlg_base.ui)
-qt5_add_resources(konqueror_KDEINIT_SRCS konqueror.qrc)
+qt_add_resources(konqueror_KDEINIT_SRCS konqueror.qrc)
 
-qt5_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.Main.xml konqueror_interface)
-qt5_add_dbus_adaptor(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqclosedwindowsmanager.h KonqClosedWindowsManager konqclosedwindowsmanageradaptor KonqClosedWindowsManagerAdaptor)
-qt5_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqclosedwindowsmanager_interface)
-qt5_add_dbus_adaptor(konqueror_KDEINIT_SRCS org.kde.Konqueror.SessionManager.xml konqsessionmanager.h KonqSessionManager konqsessionmanageradaptor KonqSessionManagerAdaptor)
-qt5_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.SessionManager.xml konqsessionmanager_interface)
+qt_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.Main.xml konqueror_interface)
+qt_add_dbus_adaptor(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqclosedwindowsmanager.h KonqClosedWindowsManager konqclosedwindowsmanageradaptor KonqClosedWindowsManagerAdaptor)
+qt_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqclosedwindowsmanager_interface)
+qt_add_dbus_adaptor(konqueror_KDEINIT_SRCS org.kde.Konqueror.SessionManager.xml konqsessionmanager.h KonqSessionManager konqsessionmanageradaptor KonqSessionManagerAdaptor)
+qt_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.SessionManager.xml konqsessionmanager_interface)
 
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../pics/*-apps-konqueror.png")
 ecm_add_app_icon(konqueror_KDEINIT_SRCS ICONS ${ICONS_SRCS})
-kf5_add_kdeinit_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
+if (KF_MAJOR_VERSION STREQUAL "6")
+   kf6_add_kdeinit_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
+else()
+   kf5_add_kdeinit_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
+endif()
 target_link_libraries(kdeinit_konqueror
    konquerorprivate
-   KF5::Archive
-   KF5::KCMUtils
-   KF5::Konq
-   KF5::Parts
-   KF5::DBusAddons
-   KF5::Crash
-   KF5::WindowSystem
-   KF5::SonnetUi
+   KF${KF_MAJOR_VERSION}::Archive
+   KF${KF_MAJOR_VERSION}::KCMUtils
+   KF${KF_MAJOR_VERSION}::Konq
+   KF${KF_MAJOR_VERSION}::Parts
+   KF${KF_MAJOR_VERSION}::DBusAddons
+   KF${KF_MAJOR_VERSION}::Crash
+   KF${KF_MAJOR_VERSION}::WindowSystem
+   KF${KF_MAJOR_VERSION}::SonnetUi
 )
 
-if (KF5Activities_FOUND)
-  target_link_libraries(kdeinit_konqueror KF5::Activities)
+if (KFActivities_FOUND)
+  target_link_libraries(kdeinit_konqueror KFActivities)
   target_compile_definitions(kdeinit_konqueror PUBLIC KActivities_FOUND)
 endif ()
 

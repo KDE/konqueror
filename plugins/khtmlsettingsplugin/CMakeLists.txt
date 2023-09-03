@@ -14,6 +14,6 @@ set(khtmlsettingsplugin_PART_SRCS settingsplugin.cpp )
 add_library(khtmlsettingsplugin MODULE ${khtmlsettingsplugin_PART_SRCS})
 
 
-target_link_libraries(khtmlsettingsplugin KF5::I18n KF5::Parts KF5Konq)
+target_link_libraries(khtmlsettingsplugin KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::Parts KF${KF_MAJOR_VERSION}Konq)
 
 konqueror_install_plugin_in_namespaces(khtmlsettingsplugin)
