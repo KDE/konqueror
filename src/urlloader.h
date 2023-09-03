@@ -173,7 +173,7 @@ private slots:
      *
      * @param job the DownloaderJob used by the part to download the URL
      */
-    void downloadForEmbeddingDone(KJob *job);
+    void downloadForEmbeddingOrOpeningDone(KJob *job);
 
 private:
 

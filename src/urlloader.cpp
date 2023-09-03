@@ -304,6 +304,18 @@ void UrlLoader::decideOpenOrSave()
     }
 
     m_action = answerWithService.first;
+
+    //If the URL should be opened in an external application and it should be downloaded by the requesting part,
+    //ensure it's not downloaded in Konqueror's temporary directory but in the global temporary directory,
+    //otherwise if the user closes Konqueror before closing the application, there could be issues because the
+    //external application wouldn't find the file anymore.
+    //Problem: if the application doesn't support the --tempfile switch, the file will remain even after both Konqueror
+    //and the external application are closed and will only be removed automatically if the temporary directory is deleted
+    //or emptied.
+    if (m_letRequestingPartDownloadUrl && m_action == OpenUrlAction::Open && m_partDownloaderJob) {
+        QString fileName = QFileInfo(m_partDownloaderJob->downloadPath()).fileName();
+        m_partDownloaderJob->setDownloadPath(QDir::temp().filePath(fileName));
+    }
     m_service = answerWithService.second;
 }
 
@@ -412,12 +424,12 @@ void UrlLoader::downloadForEmbeddingOrOpening()
     if (t) {
         t->registerJob(m_partDownloaderJob);
     }
-    connect(m_partDownloaderJob, &KJob::result, this, &UrlLoader::downloadForEmbeddingDone);
+    connect(m_partDownloaderJob, &KJob::result, this, &UrlLoader::downloadForEmbeddingOrOpeningDone);
     connect(m_partDownloaderJob, &KJob::result, this, &UrlLoader::jobFinished);
     m_partDownloaderJob->start();
 }
 
-void UrlLoader::downloadForEmbeddingDone(KJob* job)
+void UrlLoader::downloadForEmbeddingOrOpeningDone(KJob* job)
 {
     DownloaderJob *dj = qobject_cast<DownloaderJob*>(job);
     if (dj && dj->error() == 0) {
