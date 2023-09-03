@@ -654,7 +654,7 @@ void UrlLoader::performSave(const QUrl& orig, const QUrl& dest)
     if (m_letRequestingPartDownloadUrl) {
         getDownloaderJobFromPart();
         if (m_partDownloaderJob) {
-            bool ok = m_partDownloaderJob->setDownloadPath(dest.path());
+            m_partDownloaderJob->setDownloadPath(dest.path());
         }
         job = m_partDownloaderJob;
     } else {

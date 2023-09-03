@@ -115,6 +115,7 @@ public:
      * @param serviceName allows to enforce a particular service to be chosen,
      *        @see KonqFactory.
      * @param forceAutoEmbed
+     * @param dontDeleteTemporaryFile
      */
     bool changePart(const QString &mimeType,
                     const QString &serviceName = QString(),
@@ -222,7 +223,7 @@ public:
     /**
      * Stop loading
      */
-    void stop();
+    void stop(bool keepTemporaryFile = false);
 
     /**
      * Retrieve view's URL
@@ -502,6 +503,17 @@ public:
      */
     void saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options);
     void loadHistoryConfig(const KConfigGroup &config, const QString &prefix);
+
+    /**
+     * @brief Changes the part used to display the current url
+     * @param newPluginId the plugin id of the new part to use
+     * @param newInternalViewMode the new view mode for the part, if any
+     *
+     * If the current URL is a temporary file, according to #m_tempFile, it __won't be deleted__. This is because
+     * we want to display the same URL, not navigate to another one. Deleting the temporary file would mean
+     * the new part doesn't actually have a file to display.
+     */
+    void switchEmbeddingPart(const QString &newPluginId, const QString &newInternalViewMode = {});
 
 Q_SIGNALS:
 

@@ -236,6 +236,24 @@ void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
 #endif
 }
 
+void KonqView::switchEmbeddingPart(const QString& newPluginId, const QString& newInternalViewMode)
+{
+    if (service().pluginId() == newPluginId) {
+        return;
+    }
+    //We don't want to delete the temporary file, otherwise the new part won't have a file to display
+    stop(true);
+    lockHistory();
+    const QUrl origUrl = url();
+    const QString locationBarURL = m_sLocationBarURL;
+    bool tempFile = !m_tempFile.isEmpty();
+    changePart(serviceType(), newPluginId);
+    openUrl(origUrl, locationBarURL, {}, tempFile);
+    if (!newInternalViewMode.isEmpty() && newInternalViewMode != internalViewMode()){
+        setInternalViewMode(newInternalViewMode);
+    }
+}
+
 void KonqView::switchView(KonqViewFactory &viewFactory)
 {
     //qCDebug(KONQUEROR_LOG);
@@ -921,11 +939,15 @@ void KonqView::setUrlLoader(UrlLoader *run)
     m_loader = run;
 }
 
-void KonqView::stop()
+void KonqView::stop(bool keepTemporaryFile)
 {
     //qCDebug(KONQUEROR_LOG);
     m_bAborted = false;
-    finishedWithCurrentURL();
+
+    //Don't remove the temporary file if we're just changing the part used to display it
+    if (!keepTemporaryFile) {
+        finishedWithCurrentURL();
+    }
     if (m_bLoading || m_bPendingRedirection) {
         // aborted -> confirm the pending url. We might as well remove it, but
         // we decided to keep it :)

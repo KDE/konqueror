@@ -1499,27 +1499,7 @@ void KonqMainWindow::slotViewModeTriggered(QAction *action)
     Q_ASSERT(modeName.endsWith("-viewmode"));
     modeName.chop(9);
     const QString internalViewMode = action->data().toString();
-
-    if (m_currentView->service().pluginId() != modeName) {
-        m_currentView->stop();
-        m_currentView->lockHistory();
-
-        // Save those, because changePart will lose them
-        const QUrl url = m_currentView->url();
-        const QString locationBarURL = m_currentView->locationBarURL();
-#if 0
-        // Problem: dolphinpart doesn't currently implement it. But we don't need it that much
-        // now that it's the main filemanagement part for all standard modes.
-        QList<QUrl> filesToSelect = childView->part()->property("filesToSelect").value<QList<QUrl>>();
-#endif
-
-        m_currentView->changePart(m_currentView->serviceType(), modeName);
-        m_currentView->openUrl(url, locationBarURL);
-    }
-
-    if (!internalViewMode.isEmpty() && internalViewMode != m_currentView->internalViewMode()) {
-        m_currentView->setInternalViewMode(internalViewMode);
-    }
+    m_currentView->switchEmbeddingPart(modeName, internalViewMode);
 }
 
 void KonqMainWindow::slotLockView()
