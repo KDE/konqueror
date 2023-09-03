@@ -56,11 +56,11 @@ private:
      *
      * @warning This function @b should only be called @b once for each download, because it removes information about the download from the internal
      * state (this is for performance reasons).
-     * @param url the url to download
+     * @param req the download request
      * @param page the page which requested the download
      * @return `true` if the page should be downloaded by the download manager and `false` if it should be processed as usual
      */
-    bool checkForceDownload(const QUrl &url, WebEnginePage *page);
+    bool checkForceDownload(QWebEngineDownloadRequest *req, WebEnginePage *page);
 
     /**
      * @brief Saves a full HTML page, after asking the user which formats he wants to use

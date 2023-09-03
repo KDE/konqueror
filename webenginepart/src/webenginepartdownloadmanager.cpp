@@ -56,12 +56,12 @@ void WebEnginePartDownloadManager::setForceDownload(const QUrl& url, WebEnginePa
     m_forcedDownloads.insert(url, page);
 }
 
-bool WebEnginePartDownloadManager::checkForceDownload(const QUrl& url, WebEnginePage *page)
+bool WebEnginePartDownloadManager::checkForceDownload(QWebEngineDownloadRequest *req, WebEnginePage *page)
 {
     if (!page) {
         return false;
     }
-    bool force = m_forcedDownloads.remove(url, page) != 0;
+    bool force = m_forcedDownloads.remove(req->url(), page) != 0;
 
     // Bookkeeping: remove any entry with an invalid page. Note that in most cases, m_forcedDownloads
     // will be empty, since entries are usually added just before this is called indirectly from
@@ -70,8 +70,32 @@ bool WebEnginePartDownloadManager::checkForceDownload(const QUrl& url, WebEngine
     for (const QUrl &k : m_forcedDownloads.uniqueKeys()) {
         m_forcedDownloads.remove(k, nullptr);
     }
+    if (force) {
+        return true;
+    }
 
-    return force;
+    //Check whether the mimetypes is one known to be displayed by QtWebEngine itself. If so, it means
+    //that the file should be saved (otherwise, QtWebEngine would have displayed it and not requested
+    //a download.
+    //TODO: find out all the mimetypes supported by QtWebEngine
+    static const QStringList s_supportedMimetypes = {
+        QStringLiteral("audio/mp4"),
+        QStringLiteral("audio/mpeg"),
+        QStringLiteral("audio/ogg"),
+        QStringLiteral("image/bmp"),
+        QStringLiteral("image/gif"),
+        QStringLiteral("image/jpeg"),
+        QStringLiteral("image/png"),
+        QStringLiteral("image/svg+xml"),
+        QStringLiteral("video/mp4"),
+        QStringLiteral("video/ogg"),
+        QStringLiteral("application/xml"),
+        QStringLiteral("text/plain"),
+        QStringLiteral("text/html"),
+        QStringLiteral("text/xml"),
+        QStringLiteral("text/markdown"),
+    };
+    return s_supportedMimetypes.contains(req->mimeType());
 }
 
 void WebEnginePartDownloadManager::addPage(WebEnginePage* page)
@@ -113,7 +137,7 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadRequest* it
         //can be problematic
         forceNew = true;
     }
-    bool forceDownload = checkForceDownload(url, page);
+    bool forceDownload = checkForceDownload(it, page);
 
     it->setDownloadDirectory(tempDownloadDir().path());
     QMimeDatabase db;
