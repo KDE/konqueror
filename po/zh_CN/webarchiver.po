@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:46+0000\n"
+"POT-Creation-Date: 2023-09-04 00:46+0000\n"
 "PO-Revision-Date: 2023-09-02 02:57\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -29,68 +29,68 @@ msgstr ""
 "kde-china@kde.org, i@guoyunhe.me, tysontan@tysontan.com, magsom@kde.org, "
 "archfeh@kde.org, wordless@echo.moe"
 
-#: app/archivedialog.cpp:81
+#: app/archivedialog.cpp:82
 #, kde-format
 msgid "Create Archive"
 msgstr "创建存档"
 
-#: app/archivedialog.cpp:97
+#: app/archivedialog.cpp:98
 #, kde-format
 msgid "The URL of the page that is to be archived"
 msgstr "要归档的页面 URL"
 
-#: app/archivedialog.cpp:100
+#: app/archivedialog.cpp:101
 #, kde-format
 msgid "Source &URL:"
 msgstr "源 &URL："
 
-#: app/archivedialog.cpp:109
+#: app/archivedialog.cpp:110
 #, kde-format
 msgid "Web archive (*.war)"
 msgstr "网页存档 (*.war)"
 
-#: app/archivedialog.cpp:110
+#: app/archivedialog.cpp:111
 #, kde-format
 msgid "Tar archive (*.tar)"
 msgstr "Tar 压缩文件 (*.tar)"
 
-#: app/archivedialog.cpp:111
+#: app/archivedialog.cpp:112
 #, kde-format
 msgid "Zip archive (*.zip)"
 msgstr "Zip 压缩文件 (*.zip)"
 
-#: app/archivedialog.cpp:112
+#: app/archivedialog.cpp:113
 #, kde-format
 msgid "Directory"
 msgstr "目录"
 
-#: app/archivedialog.cpp:117
+#: app/archivedialog.cpp:118
 #, kde-format
 msgid "The file or directory where the archived page will be saved"
 msgstr "网页存档的保存位置"
 
-#: app/archivedialog.cpp:118
+#: app/archivedialog.cpp:119
 #, kde-format
 msgid "&Save to:"
 msgstr "保存到(&S)："
 
-#: app/archivedialog.cpp:120
+#: app/archivedialog.cpp:121
 #, kde-format
 msgid "Options"
 msgstr "选项"
 
-#: app/archivedialog.cpp:130
+#: app/archivedialog.cpp:131
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
 msgstr[0] " 秒"
 
-#: app/archivedialog.cpp:131
+#: app/archivedialog.cpp:132
 #, kde-format
 msgid "None"
 msgstr "无"
 
-#: app/archivedialog.cpp:201
+#: app/archivedialog.cpp:202
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -98,25 +98,25 @@ msgid ""
 "will be used."
 msgstr "网页存档下载程序无法使用当前的代理设置。不使用任何代理。"
 
-#: app/archivedialog.cpp:340
+#: app/archivedialog.cpp:341
 #, kde-format
 msgctxt "@info"
 msgid "The save location is not valid."
 msgstr "保存位置无效。"
 
-#: app/archivedialog.cpp:360
+#: app/archivedialog.cpp:361
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
 msgstr "无法找到 wget(1) 命令，<nl/>详见 <link>%1</link>。"
 
-#: app/archivedialog.cpp:382
+#: app/archivedialog.cpp:383
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
 msgstr "无法验证目标<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:399
+#: app/archivedialog.cpp:400
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -124,13 +124,13 @@ msgid ""
 "file."
 msgstr "网页存档的目录名<nl/><filename>%1</filename><nl/>已被已有文件使用。"
 
-#: app/archivedialog.cpp:400
+#: app/archivedialog.cpp:401
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
 msgstr "网页存档目录<nl/><filename>%1</filename><nl/>已存在。"
 
-#: app/archivedialog.cpp:404
+#: app/archivedialog.cpp:405
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -138,42 +138,42 @@ msgid ""
 "directory."
 msgstr "压缩文件<nl/><filename>%1</filename><nl/>为已存在的目录。"
 
-#: app/archivedialog.cpp:405
+#: app/archivedialog.cpp:406
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
 msgstr "压缩文件<nl/><filename>%1</filename><nl/>已存在。"
 
-#: app/archivedialog.cpp:409
+#: app/archivedialog.cpp:410
 #, kde-format
 msgid "Archive Already Exists"
 msgstr "网页存档已存在"
 
-#: app/archivedialog.cpp:439
+#: app/archivedialog.cpp:440
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
 msgstr "无法删除原始网页存档<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:456
+#: app/archivedialog.cpp:457
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
 msgstr "无法创建临时目录<nl/><filename>%1</filename><nl/>"
 
-#: app/archivedialog.cpp:528
+#: app/archivedialog.cpp:529
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot start the archiver process <filename>%1</filename>"
 msgstr "无法启动压缩器进程 <filename>%1</filename>"
 
-#: app/archivedialog.cpp:544
+#: app/archivedialog.cpp:545
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The download process was interrupted."
 msgstr "下载进程已被中断。"
 
-#: app/archivedialog.cpp:545
+#: app/archivedialog.cpp:546
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -181,7 +181,7 @@ msgid ""
 "para>"
 msgstr "<para>下载进程 <filename>%1</filename> 出错，退出代码为 %2。</para>"
 
-#: app/archivedialog.cpp:550
+#: app/archivedialog.cpp:551
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -189,7 +189,7 @@ msgid ""
 "para>"
 msgstr "<para>下载进程 <filename>%1</filename> 出错，状态为 %2。</para>"
 
-#: app/archivedialog.cpp:554
+#: app/archivedialog.cpp:555
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -197,23 +197,23 @@ msgid ""
 "para>"
 msgstr "<para>可能只是表示页面上的部分元素出现了 404 错误。</para>"
 
-#: app/archivedialog.cpp:560
+#: app/archivedialog.cpp:561
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
 msgstr "<para>保留不完整的网页存档吗？</para>"
 
-#: app/archivedialog.cpp:561
+#: app/archivedialog.cpp:562
 #, kde-format
 msgid "Retain Archive?"
 msgstr "是否保留网页存档？"
 
-#: app/archivedialog.cpp:562
+#: app/archivedialog.cpp:563
 #, kde-format
 msgid "Retain"
 msgstr "保留"
 
-#: app/archivedialog.cpp:566
+#: app/archivedialog.cpp:567
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."

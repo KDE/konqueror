@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webarchiver\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:46+0000\n"
+"POT-Creation-Date: 2023-09-04 00:46+0000\n"
 "PO-Revision-Date: 2020-09-25 16:17+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -30,57 +30,57 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: app/archivedialog.cpp:81
+#: app/archivedialog.cpp:82
 #, kde-format
 msgid "Create Archive"
 msgstr "Створення архіву"
 
-#: app/archivedialog.cpp:97
+#: app/archivedialog.cpp:98
 #, kde-format
 msgid "The URL of the page that is to be archived"
 msgstr "Адреса сторінки, яку буде архівовано"
 
-#: app/archivedialog.cpp:100
+#: app/archivedialog.cpp:101
 #, kde-format
 msgid "Source &URL:"
 msgstr "&Адреса джерела:"
 
-#: app/archivedialog.cpp:109
+#: app/archivedialog.cpp:110
 #, kde-format
 msgid "Web archive (*.war)"
 msgstr "вебархів (*.war)"
 
-#: app/archivedialog.cpp:110
+#: app/archivedialog.cpp:111
 #, kde-format
 msgid "Tar archive (*.tar)"
 msgstr "архів tar (*.tar)"
 
-#: app/archivedialog.cpp:111
+#: app/archivedialog.cpp:112
 #, kde-format
 msgid "Zip archive (*.zip)"
 msgstr "архів zip (*.zip)"
 
-#: app/archivedialog.cpp:112
+#: app/archivedialog.cpp:113
 #, kde-format
 msgid "Directory"
 msgstr "Каталог"
 
-#: app/archivedialog.cpp:117
+#: app/archivedialog.cpp:118
 #, kde-format
 msgid "The file or directory where the archived page will be saved"
 msgstr "Файл або каталог, до якого буде збережено архівовану сторінку"
 
-#: app/archivedialog.cpp:118
+#: app/archivedialog.cpp:119
 #, kde-format
 msgid "&Save to:"
 msgstr "З&берегти до:"
 
-#: app/archivedialog.cpp:120
+#: app/archivedialog.cpp:121
 #, kde-format
 msgid "Options"
 msgstr "Параметри"
 
-#: app/archivedialog.cpp:130
+#: app/archivedialog.cpp:131
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
@@ -89,12 +89,12 @@ msgstr[1] " секунди"
 msgstr[2] " секунд"
 msgstr[3] " секунда"
 
-#: app/archivedialog.cpp:131
+#: app/archivedialog.cpp:132
 #, kde-format
 msgid "None"
 msgstr "Немає"
 
-#: app/archivedialog.cpp:201
+#: app/archivedialog.cpp:202
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -104,25 +104,25 @@ msgstr ""
 "Засобу отримання вебархіву не вдалося скористатися поточними параметрами "
 "проксі-сервера. Проксі-сервер не використовуватиметься."
 
-#: app/archivedialog.cpp:340
+#: app/archivedialog.cpp:341
 #, kde-format
 msgctxt "@info"
 msgid "The save location is not valid."
 msgstr "Вказане місце для збереження є некоректним."
 
-#: app/archivedialog.cpp:360
+#: app/archivedialog.cpp:361
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
 msgstr "Не вдалося знайти команду wget(1),<nl/>див. <link>%1</link>."
 
-#: app/archivedialog.cpp:382
+#: app/archivedialog.cpp:383
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
 msgstr "Не вдалося перевірити призначення<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:399
+#: app/archivedialog.cpp:400
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -130,13 +130,13 @@ msgid ""
 "file."
 msgstr "Каталог архіву<nl/><filename>%1</filename><nl/>вже існує як файл."
 
-#: app/archivedialog.cpp:400
+#: app/archivedialog.cpp:401
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
 msgstr "Каталог архіву<nl/><filename>%1</filename><nl/>вже існує."
 
-#: app/archivedialog.cpp:404
+#: app/archivedialog.cpp:405
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -144,44 +144,44 @@ msgid ""
 "directory."
 msgstr "Файл архіву<nl/><filename>%1</filename><nl/>вже існує як каталог."
 
-#: app/archivedialog.cpp:405
+#: app/archivedialog.cpp:406
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
 msgstr "Файл архіву<nl/><filename>%1</filename><nl/>вже існує."
 
-#: app/archivedialog.cpp:409
+#: app/archivedialog.cpp:410
 #, kde-format
 msgid "Archive Already Exists"
 msgstr "Архів вже існує"
 
-#: app/archivedialog.cpp:439
+#: app/archivedialog.cpp:440
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
 msgstr ""
 "Не вдалося вилучити початковий архів<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:456
+#: app/archivedialog.cpp:457
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
 msgstr ""
 "Не вдалося створити тимчасовий каталог<nl/><filename>%1</filename><nl/>"
 
-#: app/archivedialog.cpp:528
+#: app/archivedialog.cpp:529
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot start the archiver process <filename>%1</filename>"
 msgstr "Не вдалося запустити процес засобу архівування <filename>%1</filename>"
 
-#: app/archivedialog.cpp:544
+#: app/archivedialog.cpp:545
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The download process was interrupted."
 msgstr "Процес отримання даних було перервано."
 
-#: app/archivedialog.cpp:545
+#: app/archivedialog.cpp:546
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -191,7 +191,7 @@ msgstr ""
 "<para>Процес отримання даних <filename>%1</filename> завершив роботу в "
 "аварійному режимі з сигналом %2.</para>"
 
-#: app/archivedialog.cpp:550
+#: app/archivedialog.cpp:551
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -201,7 +201,7 @@ msgstr ""
 "<para>Процес отримання даних <filename>%1</filename> завершив роботу в "
 "аварійному режимі зі станом %2.</para>"
 
-#: app/archivedialog.cpp:554
+#: app/archivedialog.cpp:555
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -211,23 +211,23 @@ msgstr ""
 "<para>Це може свідчити про просту помилку 404  для деяких елементів сторінки."
 "</para>"
 
-#: app/archivedialog.cpp:560
+#: app/archivedialog.cpp:561
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
 msgstr "<para>Зберегти частковий вебархів?</para>"
 
-#: app/archivedialog.cpp:561
+#: app/archivedialog.cpp:562
 #, kde-format
 msgid "Retain Archive?"
 msgstr "Зберегти частковий архів?"
 
-#: app/archivedialog.cpp:562
+#: app/archivedialog.cpp:563
 #, kde-format
 msgid "Retain"
 msgstr "Зберегти"
 
-#: app/archivedialog.cpp:566
+#: app/archivedialog.cpp:567
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."

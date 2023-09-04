@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:46+0000\n"
+"POT-Creation-Date: 2023-09-04 00:46+0000\n"
 "PO-Revision-Date: 2021-10-09 16:34+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -29,69 +29,69 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com"
 
-#: app/archivedialog.cpp:81
+#: app/archivedialog.cpp:82
 #, kde-format
 msgid "Create Archive"
 msgstr "Crea un arxiu"
 
-#: app/archivedialog.cpp:97
+#: app/archivedialog.cpp:98
 #, kde-format
 msgid "The URL of the page that is to be archived"
 msgstr "L'URL de la pàgina que s'arxivarà"
 
-#: app/archivedialog.cpp:100
+#: app/archivedialog.cpp:101
 #, kde-format
 msgid "Source &URL:"
 msgstr "&URL d'origen:"
 
-#: app/archivedialog.cpp:109
+#: app/archivedialog.cpp:110
 #, kde-format
 msgid "Web archive (*.war)"
 msgstr "Arxiu web (*.war)"
 
-#: app/archivedialog.cpp:110
+#: app/archivedialog.cpp:111
 #, kde-format
 msgid "Tar archive (*.tar)"
 msgstr "Arxiu Tar (*.tar)"
 
-#: app/archivedialog.cpp:111
+#: app/archivedialog.cpp:112
 #, kde-format
 msgid "Zip archive (*.zip)"
 msgstr "Arxiu Zip (*.zip)"
 
-#: app/archivedialog.cpp:112
+#: app/archivedialog.cpp:113
 #, kde-format
 msgid "Directory"
 msgstr "Directori"
 
-#: app/archivedialog.cpp:117
+#: app/archivedialog.cpp:118
 #, kde-format
 msgid "The file or directory where the archived page will be saved"
 msgstr "El fitxer o directori a on es guardarà la pàgina arxivada"
 
-#: app/archivedialog.cpp:118
+#: app/archivedialog.cpp:119
 #, kde-format
 msgid "&Save to:"
 msgstr "Guar&da a:"
 
-#: app/archivedialog.cpp:120
+#: app/archivedialog.cpp:121
 #, kde-format
 msgid "Options"
 msgstr "Opcions"
 
-#: app/archivedialog.cpp:130
+#: app/archivedialog.cpp:131
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
 msgstr[0] " segon"
 msgstr[1] " segons"
 
-#: app/archivedialog.cpp:131
+#: app/archivedialog.cpp:132
 #, kde-format
 msgid "None"
 msgstr "Res"
 
-#: app/archivedialog.cpp:201
+#: app/archivedialog.cpp:202
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -101,26 +101,26 @@ msgstr ""
 "La baixada de l'arxiu web no pot utilitzar la configuració actual del "
 "servidor intermediari. No s'utilitzarà cap servidor intermediari."
 
-#: app/archivedialog.cpp:340
+#: app/archivedialog.cpp:341
 #, kde-format
 msgctxt "@info"
 msgid "The save location is not valid."
 msgstr "La ubicació de guardada no és vàlida."
 
-#: app/archivedialog.cpp:360
+#: app/archivedialog.cpp:361
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
 msgstr "No s'ha pogut trobar l'ordre wget(1),<nl/>vegeu <link>%1</link>."
 
-#: app/archivedialog.cpp:382
+#: app/archivedialog.cpp:383
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
 msgstr ""
 "No s'ha pogut verificar la destinació<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:399
+#: app/archivedialog.cpp:400
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -129,13 +129,13 @@ msgid ""
 msgstr ""
 "El directori d'arxiu<nl/><filename>%1</filename><nl/>ja existix com a fitxer."
 
-#: app/archivedialog.cpp:400
+#: app/archivedialog.cpp:401
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
 msgstr "El directori d'arxiu<nl/><filename>%1</filename><nl/>ja existix."
 
-#: app/archivedialog.cpp:404
+#: app/archivedialog.cpp:405
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -144,44 +144,44 @@ msgid ""
 msgstr ""
 "El fitxer d'arxiu<nl/><filename>%1</filename><nl/>ja existix com a directori."
 
-#: app/archivedialog.cpp:405
+#: app/archivedialog.cpp:406
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
 msgstr "El fitxer d'arxiu <nl/><filename>%1</filename><nl/>ja existix."
 
-#: app/archivedialog.cpp:409
+#: app/archivedialog.cpp:410
 #, kde-format
 msgid "Archive Already Exists"
 msgstr "L'arxiu ja existix"
 
-#: app/archivedialog.cpp:439
+#: app/archivedialog.cpp:440
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
 msgstr ""
 "No s'ha pogut suprimir l'arxiu original<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:456
+#: app/archivedialog.cpp:457
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
 msgstr ""
 "No s'ha pogut crear un directori temporal<nl/><filename>%1</filename><nl/>"
 
-#: app/archivedialog.cpp:528
+#: app/archivedialog.cpp:529
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot start the archiver process <filename>%1</filename>"
 msgstr "No s'ha pogut iniciar el procés arxivador <filename>%1</filename>"
 
-#: app/archivedialog.cpp:544
+#: app/archivedialog.cpp:545
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The download process was interrupted."
 msgstr "S'ha interromput el procés de baixada."
 
-#: app/archivedialog.cpp:545
+#: app/archivedialog.cpp:546
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -191,7 +191,7 @@ msgstr ""
 "<para>El procés de baixada de <filename>%1</filename> ha fallat amb el "
 "senyal %2.</para>"
 
-#: app/archivedialog.cpp:550
+#: app/archivedialog.cpp:551
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -201,7 +201,7 @@ msgstr ""
 "<para>El procés de baixada de <filename>%1</filename> ha fallat amb l'estat "
 "%2.</para>"
 
-#: app/archivedialog.cpp:554
+#: app/archivedialog.cpp:555
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -211,23 +211,23 @@ msgstr ""
 "<para>Açò podria implicar un error 404 per algun dels elements de la pàgina."
 "</para>"
 
-#: app/archivedialog.cpp:560
+#: app/archivedialog.cpp:561
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
 msgstr "<para>Mantinc l'arxiu web parcial?</para>"
 
-#: app/archivedialog.cpp:561
+#: app/archivedialog.cpp:562
 #, kde-format
 msgid "Retain Archive?"
 msgstr "Mantinc l'arxiu?"
 
-#: app/archivedialog.cpp:562
+#: app/archivedialog.cpp:563
 #, kde-format
 msgid "Retain"
 msgstr "Mantín"
 
-#: app/archivedialog.cpp:566
+#: app/archivedialog.cpp:567
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."

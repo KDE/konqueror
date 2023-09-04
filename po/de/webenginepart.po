@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:46+0000\n"
+"POT-Creation-Date: 2023-09-04 00:46+0000\n"
 "PO-Revision-Date: 2023-05-05 19:50+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -993,12 +993,12 @@ msgstr "Formulardaten beim Schließen des Dialogs in KWallet speichern"
 msgid "&Immediately memorize form data"
 msgstr "&Formulardaten sofort speichern"
 
-#: src/webenginepage.cpp:150 src/webenginepage.cpp:174
+#: src/webenginepage.cpp:154 src/webenginepage.cpp:178
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Der Download-Manager (%1) ist auf Ihrem System nicht auffindbar."
 
-#: src/webenginepage.cpp:151 src/webenginepage.cpp:175
+#: src/webenginepage.cpp:155 src/webenginepage.cpp:179
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -1010,7 +1010,7 @@ msgstr ""
 "\n"
 "Die Einbindung wird deaktiviert."
 
-#: src/webenginepage.cpp:388
+#: src/webenginepage.cpp:374
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -1024,12 +1024,12 @@ msgstr ""
 "doppelten Einkauf zu verhindern. Ansonsten klicken Sie auf den Knopf "
 "Fortsetzen, um die Webseite wieder anzuzeigen.</p>"
 
-#: src/webenginepage.cpp:395
+#: src/webenginepage.cpp:381
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Information erneut senden"
 
-#: src/webenginepage.cpp:637
+#: src/webenginepage.cpp:623
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -1039,18 +1039,18 @@ msgstr ""
 "Standort erhalten.\n"
 "Möchten Sie dies zulassen?"
 
-#: src/webenginepage.cpp:641 src/webenginepage.cpp:758
-#: src/webenginepage.cpp:769
+#: src/webenginepage.cpp:627 src/webenginepage.cpp:744
+#: src/webenginepage.cpp:755
 #, kde-format
 msgid "Network Transmission"
 msgstr "Netzwerk-Übertragung"
 
-#: src/webenginepage.cpp:642
+#: src/webenginepage.cpp:628
 #, kde-format
 msgid "Allow access"
 msgstr "Zugriff erlauben"
 
-#: src/webenginepage.cpp:717
+#: src/webenginepage.cpp:703
 #, kde-format
 msgid ""
 "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
@@ -1059,30 +1059,30 @@ msgstr ""
 "<qt>Diese Seite ist nicht als sicher eingestuft und enthält die Verknüpfung "
 "<br/><b>%1</b>.<br/>Möchten Sie diese Adresse aufrufen?</qt>"
 
-#: src/webenginepage.cpp:719
+#: src/webenginepage.cpp:705
 #, kde-format
 msgid "Security Warning"
 msgstr "Sicherheitswarnung"
 
-#: src/webenginepage.cpp:720
+#: src/webenginepage.cpp:706
 #, kde-format
 msgctxt "follow link despite of security warning"
 msgid "Follow"
 msgstr "Aufrufen"
 
-#: src/webenginepage.cpp:722
+#: src/webenginepage.cpp:708
 #, kde-format
 msgid "Security Alert"
 msgstr "Sicherheitshinweis"
 
-#: src/webenginepage.cpp:723
+#: src/webenginepage.cpp:709
 #, kde-format
 msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
 msgstr ""
 "<qt>Zugriff auf <br/><b>%1</b><br/> wurde abgelehnt, weil die Seite nicht "
 "als sicher eingestuft ist.</qt>"
 
-#: src/webenginepage.cpp:751
+#: src/webenginepage.cpp:737
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1095,12 +1095,12 @@ msgstr ""
 "Ein Außenstehender könnte diese Daten abfangen und lesen.\n"
 "Möchten Sie die Daten unverschlüsselt senden?"
 
-#: src/webenginepage.cpp:759
+#: src/webenginepage.cpp:745
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Unverschlüsselt senden"
 
-#: src/webenginepage.cpp:766
+#: src/webenginepage.cpp:752
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1109,12 +1109,12 @@ msgstr ""
 "Der Server versucht, Formulardaten per E-Mail zu verschicken.\n"
 "Möchten Sie fortfahren?"
 
-#: src/webenginepage.cpp:770
+#: src/webenginepage.cpp:756
 #, kde-format
 msgid "&Send Email"
 msgstr "E-&Mail versenden"
 
-#: src/webenginepage.cpp:819
+#: src/webenginepage.cpp:805
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1123,22 +1123,22 @@ msgstr ""
 "<qt>Möchten Sie dieser Seite erlauben, folgende Dateien an die E-Mail "
 "anzuhängen?</qt>"
 
-#: src/webenginepage.cpp:821
+#: src/webenginepage.cpp:807
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Bestätigung von E-Mail-Anhang"
 
-#: src/webenginepage.cpp:822
+#: src/webenginepage.cpp:808
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Anhänge erlauben"
 
-#: src/webenginepage.cpp:823
+#: src/webenginepage.cpp:809
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "Anhänge &ignorieren"
 
-#: src/webenginepage.cpp:837
+#: src/webenginepage.cpp:823
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1148,12 +1148,12 @@ msgstr ""
 "Formularübertragung anzuhängen. Der Dateianhang wurde zu Ihrer Sicherheit "
 "entfernt."
 
-#: src/webenginepage.cpp:840
+#: src/webenginepage.cpp:826
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Anhang entfernt"
 
-#: src/webenginepage.cpp:975
+#: src/webenginepage.cpp:961
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1162,7 +1162,7 @@ msgstr ""
 "Diese Seite versucht, ein neues Popup-Fenster zu öffnen.\n"
 "Möchten Sie das zulassen?"
 
-#: src/webenginepage.cpp:977
+#: src/webenginepage.cpp:963
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1171,76 +1171,76 @@ msgstr ""
 "<qt>Diese Seite, ein neues Popup-Fenster mit der Adresse  <br/><b>%1</b> zu "
 "öffnen.<br/>Möchten Sie das zulassen?</qt>"
 
-#: src/webenginepage.cpp:981
+#: src/webenginepage.cpp:967
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Bestätigung für Javascript-Popup-Fenster"
 
-#: src/webenginepage.cpp:982
+#: src/webenginepage.cpp:968
 #, kde-format
 msgid "Allow"
 msgstr "Erlauben"
 
-#: src/webenginepage.cpp:983
+#: src/webenginepage.cpp:969
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Ablehnen"
 
-#: src/webenginepart.cpp:204
+#: src/webenginepart.cpp:208
 #, kde-format
 msgid "Save Full HTML Page As..."
 msgstr "Vollständige HTML-Seite speichern unter ..."
 
-#: src/webenginepart.cpp:208
+#: src/webenginepart.cpp:212
 #, kde-format
 msgid "Print Preview"
 msgstr "Druckvorschau"
 
-#: src/webenginepart.cpp:212
+#: src/webenginepart.cpp:216
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Vergrößern"
 
-#: src/webenginepart.cpp:217
+#: src/webenginepart.cpp:221
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Verkleinern"
 
-#: src/webenginepart.cpp:222
+#: src/webenginepart.cpp:226
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Tatsächliche Größe"
 
-#: src/webenginepart.cpp:227
+#: src/webenginepart.cpp:231
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Nur Text vergrößern"
 
-#: src/webenginepart.cpp:235
+#: src/webenginepart.cpp:239
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Auf DPI vergrößern"
 
-#: src/webenginepart.cpp:248
+#: src/webenginepart.cpp:252
 #, kde-format
 msgid "Set &Encoding"
 msgstr "&Kodierung festlegen"
 
-#: src/webenginepart.cpp:251
+#: src/webenginepart.cpp:255
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "&Quelltext anzeigen"
 
-#: src/webenginepart.cpp:256 src/webenginepart.cpp:542
+#: src/webenginepart.cpp:260 src/webenginepart.cpp:546
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:262
+#: src/webenginepart.cpp:266
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1250,12 +1250,12 @@ msgstr ""
 "<h3>Text suchen</h3>Ruft einen Dialog auf, der die Suche nach Text auf der "
 "angezeigten Seite ermöglicht."
 
-#: src/webenginepart.cpp:540
+#: src/webenginepart.cpp:544
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "Die SSL-Informationen dieser Seite scheinen fehlerhaft zu sein."
 
-#: src/webenginepart.cpp:621
+#: src/webenginepart.cpp:625
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1263,7 +1263,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "E-Mail: "
 
-#: src/webenginepart.cpp:650
+#: src/webenginepart.cpp:654
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1271,7 +1271,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " – Kopie: "
 
-#: src/webenginepart.cpp:652
+#: src/webenginepart.cpp:656
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1279,7 +1279,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " – Blindkopie: "
 
-#: src/webenginepart.cpp:654
+#: src/webenginepart.cpp:658
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1287,42 +1287,42 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " – Betreff: "
 
-#: src/webenginepart.cpp:658 src/webenginepart.cpp:669
+#: src/webenginepart.cpp:662 src/webenginepart.cpp:673
 #, kde-format
 msgid " (In new window)"
 msgstr "(In neuem Fenster)"
 
-#: src/webenginepart.cpp:667
+#: src/webenginepart.cpp:671
 #, kde-format
 msgid " (In parent frame)"
 msgstr "(Im übergeordnetem Rahmen)"
 
-#: src/webenginepart.cpp:731
+#: src/webenginepart.cpp:735
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Möchten Sie nach <b>%1</b> suchen?</qt>"
 
-#: src/webenginepart.cpp:732
+#: src/webenginepart.cpp:736
 #, kde-format
 msgid "Internet Search"
 msgstr "Internet-Suche"
 
-#: src/webenginepart.cpp:732
+#: src/webenginepart.cpp:736
 #, kde-format
 msgid "&Search"
 msgstr "&Suchen"
 
-#: src/webenginepart.cpp:843
+#: src/webenginepart.cpp:847
 #, kde-format
 msgid "Close window?"
 msgstr "Fenster schließen?"
 
-#: src/webenginepart.cpp:843
+#: src/webenginepart.cpp:847
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Bestätigung erforderlich"
 
-#: src/webenginepart.cpp:917
+#: src/webenginepart.cpp:921
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
@@ -1330,44 +1330,44 @@ msgstr ""
 "<html>Möchten Sie, dass %1 die Zugangsinformationen für <b>%2</b> speichert?"
 "</html>"
 
-#: src/webenginepart.cpp:988
+#: src/webenginepart.cpp:992
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr "&Formulare jetzt ausfüllen"
 
-#: src/webenginepart.cpp:993
+#: src/webenginepart.cpp:997
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr "&Passwörter für diese Seite jetzt merken"
 
-#: src/webenginepart.cpp:997
+#: src/webenginepart.cpp:1001
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr "&Gespeicherte Felder für diese Seite anpassen"
 
-#: src/webenginepart.cpp:1001
+#: src/webenginepart.cpp:1005
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 "Benutzerdefinierte gespeicherte Einstellungen für diese Seite entfernen"
 
-#: src/webenginepart.cpp:1005
+#: src/webenginepart.cpp:1009
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "&Passwort-Zwischenspeicherung für diese Seite erlauben"
 
-#: src/webenginepart.cpp:1009
+#: src/webenginepart.cpp:1013
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "Alle gemerkten Passwörter für diese Seite entfernen"
 
-#: src/webenginepart.cpp:1013
+#: src/webenginepart.cpp:1017
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Passwortverwaltung starten"
 
-#: src/webenginepart.cpp:1017
+#: src/webenginepart.cpp:1021
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Passwortspeicher schließen"
@@ -1408,17 +1408,17 @@ msgstr "&Anmeldungsverwaltung"
 msgid "HTML Toolbar"
 msgstr "HTML-Werkzeugleiste"
 
-#: src/webenginepart_ext.cpp:276
+#: src/webenginepart_ext.cpp:272
 #, kde-format
 msgid "Print Document"
 msgstr "Dokument drucken"
 
-#: src/webenginepart_ext.cpp:493
+#: src/webenginepart_ext.cpp:489
 #, kde-format
 msgid "Add URL to Filter"
 msgstr "Adresse (URL) zum Filter hinzufügen"
 
-#: src/webenginepart_ext.cpp:494
+#: src/webenginepart_ext.cpp:490
 #, kde-format
 msgid "Enter the URL:"
 msgstr "Geben Sie die Adresse (URL) ein:"
@@ -1481,28 +1481,34 @@ msgstr " – Betreff: "
 msgid "&Issuer"
 msgstr "&Aussteller"
 
-#: src/webenginepartdownloadmanager.cpp:259
+#: src/webenginepartdownloadmanager.cpp:256
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Beim Speichern der Datei ist ein Fehler aufgetreten: %1"
 
-#: src/webenginepartdownloadmanager.cpp:269
+#: src/webenginepartdownloadmanager.cpp:267
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Herunterladen"
 
-#: src/webenginepartdownloadmanager.cpp:270
+#: src/webenginepartdownloadmanager.cpp:268
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Quelle"
 
-#: src/webenginepartdownloadmanager.cpp:271
+#: src/webenginepartdownloadmanager.cpp:269
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Ziel"
+
+#: src/webenginepartdownloadmanager.cpp:291
+#, kde-format
+msgctxt "Finished saving URL"
+msgid "Saved %1 as %2"
+msgstr ""
 
 #: src/webengineparterrorschemehandler.cpp:94
 #, kde-format

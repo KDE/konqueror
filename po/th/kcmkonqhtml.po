@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:46+0000\n"
+"POT-Creation-Date: 2023-09-04 00:46+0000\n"
 "PO-Revision-Date: 2010-12-06 15:07+0700\n"
 "Last-Translator: Phuwanat Sakornsakolpat <narachai@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1573,13 +1573,13 @@ msgstr ""
 msgid "Import Filters"
 msgstr "กรองอัตโนมัติ"
 
-#: filteropts.cpp:301
+#: filteropts.cpp:300
 #, fuzzy, kde-format
 #| msgid "URL Expressions to Filter"
 msgid "Export Filters"
 msgstr "รูปแบบที่อยู่ URL ที่จะกรอง"
 
-#: filteropts.cpp:436
+#: filteropts.cpp:435
 #, kde-format
 msgid ""
 "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
@@ -1591,12 +1591,12 @@ msgstr ""
 "ที่ตรงกับเงื่อนไขของตัวกรองอาจจะถูกทิ้งไปหรือแทนที่ด้วยภาพสำหรับแทนที่"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:558 useragent/useragent.ui:61
+#: filteropts.cpp:557 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "ชื่อ"
 
-#: filteropts.cpp:559
+#: filteropts.cpp:558
 #, kde-format
 msgid "URL"
 msgstr "ที่อยู่ URL"

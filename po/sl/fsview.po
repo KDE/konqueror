@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fsview\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:46+0000\n"
+"POT-Creation-Date: 2023-09-04 00:46+0000\n"
 "PO-Revision-Date: 2023-03-10 07:08+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -257,142 +257,142 @@ msgstr "© 2002, Josef Weidendorfer"
 msgid "View filesystem starting from this folder"
 msgstr "Poglej datotečni sistem od te mape naprej"
 
-#: treemap.cpp:1436
+#: treemap.cpp:1435
 #, kde-format
 msgid "Text %1"
 msgstr "Besedilo %1"
 
-#: treemap.cpp:3163
+#: treemap.cpp:3162
 #, kde-format
 msgid "Recursive Bisection"
 msgstr "Rekurzivna bisekcija"
 
-#: treemap.cpp:3165
+#: treemap.cpp:3164
 #, kde-format
 msgid "Columns"
 msgstr "Stolpci"
 
-#: treemap.cpp:3167
+#: treemap.cpp:3166
 #, kde-format
 msgid "Rows"
 msgstr "Vrstice"
 
-#: treemap.cpp:3169
+#: treemap.cpp:3168
 #, kde-format
 msgid "Always Best"
 msgstr "Vedno najboljše"
 
-#: treemap.cpp:3171
+#: treemap.cpp:3170
 #, kde-format
 msgid "Best"
 msgstr "Najboljše"
 
-#: treemap.cpp:3173
+#: treemap.cpp:3172
 #, kde-format
 msgid "Alternate (V)"
 msgstr "Alternativno (N)"
 
-#: treemap.cpp:3175
+#: treemap.cpp:3174
 #, kde-format
 msgid "Alternate (H)"
 msgstr "Alternativno (V)"
 
-#: treemap.cpp:3177
+#: treemap.cpp:3176
 #, kde-format
 msgid "Horizontal"
 msgstr "Vodoravno"
 
-#: treemap.cpp:3179
+#: treemap.cpp:3178
 #, kde-format
 msgid "Vertical"
 msgstr "Navpično"
 
-#: treemap.cpp:3231
+#: treemap.cpp:3230
 #, kde-format
 msgid "Nesting"
 msgstr "Gnezdenje"
 
-#: treemap.cpp:3235
+#: treemap.cpp:3234
 #, kde-format
 msgid "Border"
 msgstr "Obroba"
 
-#: treemap.cpp:3238
+#: treemap.cpp:3237
 #, kde-format
 msgid "Correct Borders Only"
 msgstr "Popravi samo obrobe"
 
-#: treemap.cpp:3241
+#: treemap.cpp:3240
 #, kde-format
 msgid "Width %1"
 msgstr "Širina %1"
 
-#: treemap.cpp:3244
+#: treemap.cpp:3243
 #, kde-format
 msgid "Allow Rotation"
 msgstr "Dovoli vrtenje"
 
-#: treemap.cpp:3245
+#: treemap.cpp:3244
 #, kde-format
 msgid "Shading"
 msgstr "Senčenje"
 
-#: treemap.cpp:3256
+#: treemap.cpp:3255
 #, kde-format
 msgid "Visible"
 msgstr "Vidno"
 
-#: treemap.cpp:3257
+#: treemap.cpp:3256
 #, kde-format
 msgid "Take Space From Children"
 msgstr "Odvzemi prostor podrejenim"
 
-#: treemap.cpp:3261
+#: treemap.cpp:3260
 #, kde-format
 msgid "Top Left"
 msgstr "Zgoraj levo"
 
-#: treemap.cpp:3264
+#: treemap.cpp:3263
 #, kde-format
 msgid "Top Center"
 msgstr "Zgoraj na sredini"
 
-#: treemap.cpp:3267
+#: treemap.cpp:3266
 #, kde-format
 msgid "Top Right"
 msgstr "Zgoraj desno"
 
-#: treemap.cpp:3270
+#: treemap.cpp:3269
 #, kde-format
 msgid "Bottom Left"
 msgstr "Spodaj levo"
 
-#: treemap.cpp:3273
+#: treemap.cpp:3272
 #, kde-format
 msgid "Bottom Center"
 msgstr "Spodaj v sredini"
 
-#: treemap.cpp:3276
+#: treemap.cpp:3275
 #, kde-format
 msgid "Bottom Right"
 msgstr "Spodaj desno"
 
-#: treemap.cpp:3343
+#: treemap.cpp:3342
 #, kde-format
 msgid "No %1 Limit"
 msgstr "Brez omejitve %1"
 
-#: treemap.cpp:3402
+#: treemap.cpp:3401
 #, kde-format
 msgid "No Area Limit"
 msgstr "Brez omejitve območja"
 
-#: treemap.cpp:3408
+#: treemap.cpp:3407
 #, kde-format
 msgid "Area of '%1' (%2)"
 msgstr "Območje '%1' (%2)"
 
-#: treemap.cpp:3420 treemap.cpp:3433
+#: treemap.cpp:3419 treemap.cpp:3432
 #, kde-format
 msgid "1 Pixel"
 msgid_plural "%1 Pixels"
@@ -401,37 +401,37 @@ msgstr[1] "%1 slik. točki"
 msgstr[2] "%1 slik. točke"
 msgstr[3] "%1 slik. točk"
 
-#: treemap.cpp:3437
+#: treemap.cpp:3436
 #, kde-format
 msgid "Double Area Limit (to %1)"
 msgstr "Podvoji omejitev območja (v %1)"
 
-#: treemap.cpp:3439
+#: treemap.cpp:3438
 #, kde-format
 msgid "Halve Area Limit (to %1)"
 msgstr "Razpolovi omejitev območja (v %1)"
 
-#: treemap.cpp:3475
+#: treemap.cpp:3474
 #, kde-format
 msgid "No Depth Limit"
 msgstr "Brez omejitve globine"
 
-#: treemap.cpp:3481
+#: treemap.cpp:3480
 #, kde-format
 msgid "Depth of '%1' (%2)"
 msgstr "Globina '%1' (%2)"
 
-#: treemap.cpp:3493 treemap.cpp:3506
+#: treemap.cpp:3492 treemap.cpp:3505
 #, kde-format
 msgid "Depth %1"
 msgstr "Globina %1"
 
-#: treemap.cpp:3510
+#: treemap.cpp:3509
 #, kde-format
 msgid "Decrement (to %1)"
 msgstr "Zmanjšaj (na %1)"
 
-#: treemap.cpp:3512
+#: treemap.cpp:3511
 #, kde-format
 msgid "Increment (to %1)"
 msgstr "Povečaj (na %1)"

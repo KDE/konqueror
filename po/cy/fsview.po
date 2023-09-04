@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fsview\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:46+0000\n"
+"POT-Creation-Date: 2023-09-04 00:46+0000\n"
 "PO-Revision-Date: 2004-02-24 11:29+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -250,179 +250,179 @@ msgstr "(h) 2002, Josef Weidendorfer"
 msgid "View filesystem starting from this folder"
 msgstr "Edrych ar y cysawd ffeiliau gan gychwyn o'r blygell hon"
 
-#: treemap.cpp:1436
+#: treemap.cpp:1435
 #, kde-format
 msgid "Text %1"
 msgstr "Testun %1"
 
-#: treemap.cpp:3163
+#: treemap.cpp:3162
 #, kde-format
 msgid "Recursive Bisection"
 msgstr "Hanneru Ymgylchol"
 
-#: treemap.cpp:3165
+#: treemap.cpp:3164
 #, kde-format
 msgid "Columns"
 msgstr "Colofnau"
 
-#: treemap.cpp:3167
+#: treemap.cpp:3166
 #, kde-format
 msgid "Rows"
 msgstr "Rhesi"
 
-#: treemap.cpp:3169
+#: treemap.cpp:3168
 #, kde-format
 msgid "Always Best"
 msgstr "Y Gorau Bob Tro"
 
-#: treemap.cpp:3171
+#: treemap.cpp:3170
 #, kde-format
 msgid "Best"
 msgstr "Y Gorau"
 
-#: treemap.cpp:3173
+#: treemap.cpp:3172
 #, kde-format
 msgid "Alternate (V)"
 msgstr "Bob yn Ail (Fertigol)"
 
-#: treemap.cpp:3175
+#: treemap.cpp:3174
 #, kde-format
 msgid "Alternate (H)"
 msgstr "Bob yn Ail (Llorweddol)"
 
-#: treemap.cpp:3177
+#: treemap.cpp:3176
 #, kde-format
 msgid "Horizontal"
 msgstr ""
 
-#: treemap.cpp:3179
+#: treemap.cpp:3178
 #, kde-format
 msgid "Vertical"
 msgstr ""
 
-#: treemap.cpp:3231
+#: treemap.cpp:3230
 #, kde-format
 msgid "Nesting"
 msgstr "Ymnythu"
 
-#: treemap.cpp:3235
+#: treemap.cpp:3234
 #, kde-format
 msgid "Border"
 msgstr ""
 
-#: treemap.cpp:3238
+#: treemap.cpp:3237
 #, kde-format
 msgid "Correct Borders Only"
 msgstr "Cywiro Ffiniau'n Unig"
 
-#: treemap.cpp:3241
+#: treemap.cpp:3240
 #, kde-format
 msgid "Width %1"
 msgstr "Lled %1"
 
-#: treemap.cpp:3244
+#: treemap.cpp:3243
 #, kde-format
 msgid "Allow Rotation"
 msgstr "Caniatau Cylchdroi"
 
-#: treemap.cpp:3245
+#: treemap.cpp:3244
 #, kde-format
 msgid "Shading"
 msgstr "Arliwio"
 
-#: treemap.cpp:3256
+#: treemap.cpp:3255
 #, kde-format
 msgid "Visible"
 msgstr "Gweledol"
 
-#: treemap.cpp:3257
+#: treemap.cpp:3256
 #, kde-format
 msgid "Take Space From Children"
 msgstr "Tynnu Lle o'i Blant"
 
-#: treemap.cpp:3261
+#: treemap.cpp:3260
 #, kde-format
 msgid "Top Left"
 msgstr "Chwith Uchaf"
 
-#: treemap.cpp:3264
+#: treemap.cpp:3263
 #, kde-format
 msgid "Top Center"
 msgstr "Canol Uchaf"
 
-#: treemap.cpp:3267
+#: treemap.cpp:3266
 #, kde-format
 msgid "Top Right"
 msgstr "De Uchaf"
 
-#: treemap.cpp:3270
+#: treemap.cpp:3269
 #, kde-format
 msgid "Bottom Left"
 msgstr "Chwith Gwaelod"
 
-#: treemap.cpp:3273
+#: treemap.cpp:3272
 #, kde-format
 msgid "Bottom Center"
 msgstr "Canol Gwaelod"
 
-#: treemap.cpp:3276
+#: treemap.cpp:3275
 #, kde-format
 msgid "Bottom Right"
 msgstr "De Gwaelod"
 
-#: treemap.cpp:3343
+#: treemap.cpp:3342
 #, kde-format
 msgid "No %1 Limit"
 msgstr "Dim Cyfyngiad %1 "
 
-#: treemap.cpp:3402
+#: treemap.cpp:3401
 #, kde-format
 msgid "No Area Limit"
 msgstr "Dim Cyfyngiad Ardal"
 
-#: treemap.cpp:3408
+#: treemap.cpp:3407
 #, kde-format
 msgid "Area of '%1' (%2)"
 msgstr "Ardal '%1' (%2)"
 
-#: treemap.cpp:3420 treemap.cpp:3433
+#: treemap.cpp:3419 treemap.cpp:3432
 #, fuzzy, kde-format
 msgid "1 Pixel"
 msgid_plural "%1 Pixels"
 msgstr[0] "1 Picsel"
 msgstr[1] " %1 Picsel"
 
-#: treemap.cpp:3437
+#: treemap.cpp:3436
 #, kde-format
 msgid "Double Area Limit (to %1)"
 msgstr "Cyfyngiad Ardal Dwbl (i %1)"
 
-#: treemap.cpp:3439
+#: treemap.cpp:3438
 #, kde-format
 msgid "Halve Area Limit (to %1)"
 msgstr "Haneru Cyfyngiad Ardal (i %1)"
 
-#: treemap.cpp:3475
+#: treemap.cpp:3474
 #, kde-format
 msgid "No Depth Limit"
 msgstr "Dim Cyfyngiad Dyfnder"
 
-#: treemap.cpp:3481
+#: treemap.cpp:3480
 #, kde-format
 msgid "Depth of '%1' (%2)"
 msgstr "Dyfnder o '%1' (%2)"
 
-#: treemap.cpp:3493 treemap.cpp:3506
+#: treemap.cpp:3492 treemap.cpp:3505
 #, kde-format
 msgid "Depth %1"
 msgstr "Dyfnder %1"
 
-#: treemap.cpp:3510
+#: treemap.cpp:3509
 #, kde-format
 msgid "Decrement (to %1)"
 msgstr "Iselhau fesul un (hyd at %1)"
 
-#: treemap.cpp:3512
+#: treemap.cpp:3511
 #, kde-format
 msgid "Increment (to %1)"
 msgstr "Cynyddu fesul un (hyd at %1)"
