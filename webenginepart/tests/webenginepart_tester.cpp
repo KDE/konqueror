@@ -10,7 +10,6 @@
 
 #include <KAboutData>
 #include <QDebug>
-#include <KIO/AccessManager>
 #include <KUriFilter>
 #include <KLineEdit>
 #include <KPluginMetaData>
@@ -377,13 +376,6 @@ int main(int argc, char **argv)
     about.processCommandLine(&parser);
 
     QString url = QStringLiteral("%1/%2").arg(QDir::homePath()).arg(QStringLiteral("index.html"));
-
-//    Profile::defaultProfile()->settings()->setMaximumPagesInCache(4);
-
-//    QWebEngineSettings::setObjectCacheCapacities((16*1024*1024) / 8, (16*1024*1024) / 8, 16*1024*1024);
-
-    KonqWebEnginePart::Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::PluginsEnabled, true);
-//    Profile::defaultProfile()->settings()->setAttribute(QWebEngineSettings::DeveloperExtrasEnabled, true);
 
     const QStringList args = app.arguments();
 

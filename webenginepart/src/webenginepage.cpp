@@ -239,7 +239,7 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
         requestDownloadAndOpen();
     } else { //It should never happen
         qCDebug(WEBENGINEPART_LOG()) << "WebEnginePart for" << part()->url() << "doesn't have a WebEnginePartDownloaderExtension";
-        emit m_part->browserExtension()->openUrlRequest(url, args, bArgs);
+        emit m_part->navigationExtension()->openUrlRequest(url, args, bArgs);
         item->cancel();
         item->deleteLater();
     }

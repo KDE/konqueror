@@ -17,7 +17,7 @@ set(akregatorkonqfeedicon_PART_SRCS konqfeedicon.cpp pluginutil.cpp )
 add_library(akregatorkonqfeedicon MODULE ${akregatorkonqfeedicon_PART_SRCS} ${akregatorplugin_DEBUG_SRCS})
 
 target_compile_definitions(akregatorkonqfeedicon PRIVATE TRANSLATION_DOMAIN="akregator_konqplugin")
-target_link_libraries(akregatorkonqfeedicon KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::IconThemes KF${KF_MAJOR_VERSION}::Konq)
+target_link_libraries(akregatorkonqfeedicon KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::IconThemes KF${KF_MAJOR_VERSION}::Codecs KF${KF_MAJOR_VERSION}::Konq)
 
 konqueror_install_plugin_in_namespaces(akregatorkonqfeedicon)
 

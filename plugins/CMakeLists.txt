@@ -24,14 +24,9 @@ add_subdirectory( dirfilter )
 add_subdirectory( uachanger )
 add_subdirectory( babelfish )
 add_subdirectory( webarchiver )
-# TODO KF6: after dropping compatibility with KF5, port these plugins to AsyncSelectorInterface and
-# remove the if. Since KParts::SelectorInterface is going away in KF6, supporting them in both versions
-# is too difficult
-if (KF_MAJOR_VERSION STRLESS "6")
 add_subdirectory( kget )
 add_subdirectory( akregator )
 add_subdirectory( searchbar )
-endif()
 
 if (QtTextToSpeech_FOUND)
    add_subdirectory(ttsplugin)

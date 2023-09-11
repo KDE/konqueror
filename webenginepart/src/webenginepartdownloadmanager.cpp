@@ -224,7 +224,7 @@ WebEngineDownloadJob::~WebEngineDownloadJob() noexcept
 
 void WebEngineDownloadJob::start()
 {
-    if (m_downloadItem && m_downloadItem->state() == QWebEngineDownloadItem::DownloadRequested) {
+    if (m_downloadItem && m_downloadItem->state() == QWebEngineDownloadRequest::DownloadRequested) {
         m_downloadItem->accept();
     }
     QTimer::singleShot(0, this, &WebEngineDownloadJob::startDownloading);
@@ -358,5 +358,5 @@ bool WebEngineDownloadJob::setDownloadPath(const QString& path)
 
 bool WebEngineDownloadJob::canChangeDownloadPath() const
 {
-    return m_downloadItem && m_downloadItem->state() == QWebEngineDownloadItem::DownloadRequested;
+    return m_downloadItem && m_downloadItem->state() == QWebEngineDownloadRequest::DownloadRequested;
 }

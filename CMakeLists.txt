@@ -56,12 +56,6 @@ if (QT_MAJOR_VERSION STRLESS 6)
     find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS X11Extras)
 endif()
 
-if (QT_MAJOR_VERSION STRLESS 6)
-    find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS X11Extras)
-else()
-    find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS GuiPrivate)
-endif()
-
 add_definitions(
     -DQT_USE_QSTRINGBUILDER
 )
@@ -98,10 +92,9 @@ add_subdirectory( settings )
 add_subdirectory( plugins )
 add_subdirectory( kioworkers )
 
-#TODO KF6: make documentation compile
-# if (KF${KF_MAJOR_VERSION}DocTools_FOUND)
-#     add_subdirectory( doc )
-# endif()
+if (KF${KF_MAJOR_VERSION}DocTools_FOUND)
+    add_subdirectory( doc )
+endif()
 
 set(DEVELOPER_MODE false CACHE BOOL "Enables developer mode, which allows running separate instances of Konqueror")
 
@@ -127,10 +120,9 @@ install(FILES konqy_preload.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR})
 
 install(FILES konqueror.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 
-#TODO KF6: make documentation compile
-# ki18n_install(po)
-# if (KF${KF_MAJOR_VERSION}DocTools_FOUND)
-#     kdoctools_install(po)
-# endif()
+ki18n_install(po)
+if (KF${KF_MAJOR_VERSION}DocTools_FOUND)
+    kdoctools_install(po)
+endif()
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

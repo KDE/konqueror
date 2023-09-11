@@ -23,9 +23,13 @@
 #include <kbookmarkmanager.h>
 
 #include "konqbookmarkmenu.h"
+
+#if QT_VERSION_MAJOR < 6
 #include "kbookmarkimporter.h"
-#include "kbookmarkaction.h"
 #include "kbookmarkdombuilder.h"
+#endif
+
+#include "kbookmarkaction.h"
 #include "konqpixmapprovider.h"
 
 class KBookmarkBarPrivate

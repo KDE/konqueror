@@ -52,7 +52,7 @@ public:
      */
     void setSslInfo (const WebSslInfo &other);
 
-    void requestDownload(QWebEngineDownloadItem *item, bool newWindow, bool requestSave);
+    void requestDownload(QWebEngineDownloadRequest *item, bool newWindow, bool requestSave);
 
     void setStatusBarText(const QString &text);
 

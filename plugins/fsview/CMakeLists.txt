@@ -48,7 +48,7 @@ install(TARGETS fsviewpart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${KF_MAJOR_VER
 
 ########### install files ###############
 
-install( FILES fsview_part.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/fsview )
+install(FILES fsview_part.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/konqueror/partsrcfiles)
 
 ecm_qt_install_logging_categories(EXPORT fsview DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 

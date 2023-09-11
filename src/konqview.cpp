@@ -426,7 +426,7 @@ void KonqView::connectPart()
         connect(ext, SIGNAL(setPageSecurity(int)),
                 this, SLOT(setPageSecurity(int)));
 
-        connect(ext, &KParts::BrowserExtension::createNewWindow, ext,
+        connect(ext, &KParts::NavigationExtension::createNewWindow, ext,
                 [ext, this] (const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs, const KParts::WindowArgs &wargs ,KParts::ReadOnlyPart** part) {
                     KonqOpenURLRequest req(args, bargs, qobject_cast<KParts::ReadOnlyPart*>(ext->parent()));
                     m_pMainWindow->slotCreateNewWindow(url, req, wargs, part);

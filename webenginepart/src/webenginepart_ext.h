@@ -17,7 +17,9 @@
 #include <QPointer>
 
 #include "kf5compat.h" //For NavigationExtension
+#if QT_VERSION_MAJOR < 6
 #include <KParts/SelectorInterface>
+#endif
 
 #include <asyncselectorinterface.h>
 #include <htmlextension.h>
@@ -159,11 +161,11 @@ public:
     // AsyncSelectorInterface
     /**
      * @brief The async query methods supported by the part
-     * @return A list containing only KParts::SelectorInterface::EntireContent
+     * @return A list containing only AsyncSelectorInterface::EntireContent
      */
-    KParts::SelectorInterface::QueryMethods supportedAsyncQueryMethods() const override;
-    void querySelectorAsync(const QString& query, KParts::SelectorInterface::QueryMethod method, SingleElementSelectorCallback& callback) override;
-    void querySelectorAllAsync(const QString & query, KParts::SelectorInterface::QueryMethod method, MultipleElementSelectorCallback & callback) override;
+    AsyncSelectorInterface::QueryMethods supportedAsyncQueryMethods() const override;
+    void querySelectorAsync(const QString& query, AsyncSelectorInterface::QueryMethod method, SingleElementSelectorCallback& callback) override;
+    void querySelectorAllAsync(const QString & query, AsyncSelectorInterface::QueryMethod method, MultipleElementSelectorCallback & callback) override;
 
     // HtmlSettingsInterface
     QVariant htmlSettingsProperty(HtmlSettingsType type) const override;
@@ -177,20 +179,20 @@ private:
      * @param json A QVariant containing the JSON representation of the object returned by the javascript function `querySelectorAllToList()`
      * @return all the elements contained in @p json represented as KParts::SelectorInterface::Element
      */
-    static QList<KParts::SelectorInterface::Element> jsonToElementList(const QVariant &json);
+    static QList<AsyncSelectorInterface::Element> jsonToElementList(const QVariant &json);
 
     /**
      * @brief Converts the JSON object returned by the javascript function `querySelectorToObject()` in a KParts::SelectorInterface::Element
      * @param json a QVariant containing the JSON representation of the object returned by the javascript function `querySelectorToObject()`
      * @return the element in @p json represented as KParts::SelectorInterface::Element
      */
-    static KParts::SelectorInterface::Element jsonToElement(const QVariant &json);
+    static AsyncSelectorInterface::Element jsonToElement(const QVariant &json);
 
     /**
      * @overload
      * @param obj the JSON object representing the element as returned by the javascript function `querySelectorToObject()`
      */
-    static KParts::SelectorInterface::Element jsonToElement(const QJsonObject &obj);
+    static AsyncSelectorInterface::Element jsonToElement(const QJsonObject &obj);
 };
 
 class WebEngineDownloaderExtension : public KonqInterfaces::DownloaderExtension

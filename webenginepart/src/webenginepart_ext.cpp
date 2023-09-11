@@ -54,7 +54,7 @@
 #define QL1S(x)     QLatin1String(x)
 #define QL1C(x)     QLatin1Char(x)
 
-using Element = KParts::SelectorInterface::Element;
+using Element = AsyncSelectorInterface::Element;
 
 using namespace KonqInterfaces;
 
@@ -943,14 +943,14 @@ bool WebEngineHtmlExtension::hasSelection() const
     return part()->view()->hasSelection();
 }
 
-KParts::SelectorInterface::QueryMethods WebEngineHtmlExtension::supportedAsyncQueryMethods() const
+AsyncSelectorInterface::QueryMethods WebEngineHtmlExtension::supportedAsyncQueryMethods() const
 {
-    return KParts::SelectorInterface::EntireContent;
+    return AsyncSelectorInterface::EntireContent;
 }
 
-QList<KParts::SelectorInterface::Element> WebEngineHtmlExtension::jsonToElementList(const QVariant& json)
+QList<AsyncSelectorInterface::Element> WebEngineHtmlExtension::jsonToElementList(const QVariant& json)
 {
-    QList<KParts::SelectorInterface::Element> res;
+    QList<AsyncSelectorInterface::Element> res;
     QJsonDocument doc = QJsonDocument::fromVariant(json);
     if (!doc.isArray()) {
         return res;
@@ -961,19 +961,19 @@ QList<KParts::SelectorInterface::Element> WebEngineHtmlExtension::jsonToElementL
     return res;
 }
 
-KParts::SelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const QVariant& json)
+AsyncSelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const QVariant& json)
 {
     QJsonDocument doc = QJsonDocument::fromVariant(json);
     if (!doc.isObject()) {
-        return KParts::SelectorInterface::Element();
+        return AsyncSelectorInterface::Element();
     }
     QJsonObject obj = doc.object();
     return jsonToElement(obj);
 }
 
-KParts::SelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const QJsonObject& obj)
+AsyncSelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const QJsonObject& obj)
 {
-    KParts::SelectorInterface::Element res;
+    AsyncSelectorInterface::Element res;
     QJsonValue nameVal = obj.value(QLatin1String("tag"));
     if (nameVal.isUndefined()) {
         return res;
@@ -986,10 +986,10 @@ KParts::SelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const Q
     return res;
 }
 
-void WebEngineHtmlExtension::querySelectorAllAsync(const QString& query, KParts::SelectorInterface::QueryMethod method, MultipleElementSelectorCallback& callback)
+void WebEngineHtmlExtension::querySelectorAllAsync(const QString& query, AsyncSelectorInterface::QueryMethod method, MultipleElementSelectorCallback& callback)
 {
     QList<Element> result;
-    if (method == KParts::SelectorInterface::None || !part() || !part()->page() || !(supportedAsyncQueryMethods() & method)) {
+    if (method == None || !part() || !part()->page() || !(supportedAsyncQueryMethods() & method)) {
         callback(result);
         return;
     }
@@ -1004,10 +1004,10 @@ void WebEngineHtmlExtension::querySelectorAllAsync(const QString& query, KParts:
     part()->page()->runJavaScript(fullQuery, QWebEngineScript::ApplicationWorld, internalCallback);
 }
 
-void WebEngineHtmlExtension::querySelectorAsync(const QString& query, KParts::SelectorInterface::QueryMethod method, SingleElementSelectorCallback& callback)
+void WebEngineHtmlExtension::querySelectorAsync(const QString& query, AsyncSelectorInterface::QueryMethod method, SingleElementSelectorCallback& callback)
 {
     Element result;
-    if (method == KParts::SelectorInterface::None || !part() || !part()->page() || !(supportedAsyncQueryMethods() & method)) {
+    if (method == AsyncSelectorInterface::None || !part() || !part()->page() || !(supportedAsyncQueryMethods() & method)) {
         callback(result);
         return;
     }
@@ -1132,7 +1132,7 @@ void WebEngineDownloaderExtension::addDownloadRequest(QWebEngineDownloadRequest*
     QUrl url = req->url();
     m_downloadRequests.insert(url, req);
     auto removeRequest = [this, url] (QObject *obj) {m_downloadRequests.remove(url, dynamic_cast<QWebEngineDownloadRequest*>(obj));};
-    connect(req, &QWebEngineDownloadItem::destroyed, this, removeRequest);
+    connect(req, &QWebEngineDownloadRequest::destroyed, this, removeRequest);
 }
 
 KonqInterfaces::DownloaderJob* WebEngineDownloaderExtension::downloadJob(const QUrl& url, quint32 id, QObject* parent)
@@ -1141,8 +1141,8 @@ KonqInterfaces::DownloaderJob* WebEngineDownloaderExtension::downloadJob(const Q
     if (items.isEmpty()) {
         return nullptr;
     }
-    auto it = std::find_if(items.constBegin(), items.constEnd(), [id](QWebEngineDownloadItem* it){return it->id() == id;});
+    auto it = std::find_if(items.constBegin(), items.constEnd(), [id](QWebEngineDownloadRequest* it){return it->id() == id;});
     //If no job with the given ID is found, return the last one, which is the first created
-    QWebEngineDownloadItem *item = it != items.constEnd() ? *it : items.last();
+    QWebEngineDownloadRequest *item = it != items.constEnd() ? *it : items.last();
     return new WebEngineDownloadJob(item, parent);
 }

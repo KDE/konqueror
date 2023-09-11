@@ -53,7 +53,6 @@ void Sidebar_Widget::aboutToShowAddMenu()
     }
 
 //TODO KF6: remove version check and replace with code using json
-#if QT_VERSION_MAJOR < 6
     // We need to instantiate all available plugins
     // And since the web module isn't in the default entries at all, we can't just collect
     // the plugins there.
@@ -82,7 +81,6 @@ void Sidebar_Widget::aboutToShowAddMenu()
     m_addMenu->addSeparator();
     m_addMenu->addAction(KStandardGuiItem::defaults().icon(), i18n("Restore All Removed Default Buttons"), this, &Sidebar_Widget::slotRestoreDeletedButtons);
     m_addMenu->addAction(KStandardGuiItem::defaults().icon(), i18n("Rollback to System Default"), this, &Sidebar_Widget::slotRollback);
-#endif
 }
 
 void Sidebar_Widget::triggeredAddMenu(QAction *action)

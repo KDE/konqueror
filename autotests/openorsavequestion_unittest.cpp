@@ -17,8 +17,6 @@
 #include <QPushButton>
 #include <QWidget>
 
-using namespace KParts;
-
 // SYNC - keep this in sync with browseropenorsavequestion.cpp
 static const QString Save = QStringLiteral("saveButton");
 static const QString OpenDefault = QStringLiteral("openDefaultButton");

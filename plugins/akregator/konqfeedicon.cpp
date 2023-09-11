@@ -19,7 +19,6 @@
 #include <kparts/statusbarextension.h>
 #include <KParts/ReadOnlyPart>
 #include "kf5compat.h" //For NavigationExtension
-#include <KParts/SelectorInterface>
 #include <kio/job.h>
 #include <kurllabel.h>
 #include <kprotocolinfo.h>
@@ -32,7 +31,6 @@
 #include <QWidgetAction>
 #include <QInputDialog>
 
-#include <asyncselectorinterface.h>
 #include <htmlextension.h>
 
 using namespace Akregator;
@@ -69,11 +67,19 @@ KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &args)
     KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(parent);
     if (part) {
         HtmlExtension *ext = HtmlExtension::childObject(part);
+#if QT_VERSION_MAJOR < 6
         KParts::SelectorInterface *syncSelectorInterface = qobject_cast<KParts::SelectorInterface *>(ext);
+#else
+        AsyncSelectorInterface *syncSelectorInterface = nullptr;
+#endif
         AsyncSelectorInterface *asyncSelectorInterface = qobject_cast<AsyncSelectorInterface*>(ext);
         if (syncSelectorInterface || asyncSelectorInterface) {
             m_part = part;
+#if QT_VERSION_MAJOR < 6
             auto slot = syncSelectorInterface ? &KonqFeedIcon::updateFeedIcon : &KonqFeedIcon::updateFeedIconAsync;
+#else
+            auto slot = &KonqFeedIcon::updateFeedIconAsync;
+#endif
             connect(m_part, QOverload<>::of(&KParts::ReadOnlyPart::completed), this, slot);
             connect(m_part, &KParts::ReadOnlyPart::completedWithPendingAction, this, slot);
             connect(m_part, &KParts::ReadOnlyPart::started, this, &KonqFeedIcon::removeFeedIcon);
@@ -167,9 +173,10 @@ void Akregator::KonqFeedIcon::updateFeedIconAsync()
             addFeedIcon();
         }
     };
-    asyncIface->querySelectorAllAsync(query(), KParts::SelectorInterface::EntireContent, callback);
+    asyncIface->querySelectorAllAsync(query(), AsyncSelectorInterface::EntireContent, callback);
 }
 
+#if QT_VERSION_MAJOR < 6
 void KonqFeedIcon::updateFeedIcon()
 {
     if (!isUrlUsable() || m_feedIcon) {
@@ -185,6 +192,7 @@ void KonqFeedIcon::updateFeedIcon()
     }
     addFeedIcon();
 }
+#endif
 
 void Akregator::KonqFeedIcon::fillFeedList(const QList<Element> &linkNodes)
 {
