@@ -69,23 +69,9 @@ QStringList ModuleManager::modules() const
     return fileNames;
 }
 
-KService::List ModuleManager::availablePlugins() const
+QVector<KPluginMetaData> ModuleManager::availablePlugins() const
 {
-    // For the "add" menu, we need all available plugins.
-    // We could use KServiceTypeTrader for that; not sure 2 files make a big performance difference though.
-
-    KService::List services;
-    const QStringList pluginDirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "konqsidebartng/plugins", QStandardPaths::LocateDirectory);
-    for (const QString &pluginDir : pluginDirs) {
-        QDir dir(pluginDir);
-        QStringList files = dir.entryList((QStringList() << "*.desktop"), QDir::Files);
-
-        for (const QString &file : files) {
-            KDesktopFile df(dir.absoluteFilePath(file)); // no merging. KService warns, and we don't need it.
-            services.append(KService::Ptr(new KService(&df)));
-        }
-    }
-    return services;
+    return KPluginMetaData::findPlugins(pluginDirectory());
 }
 
 QString ModuleManager::moduleDataPath(const QString &fileName) const

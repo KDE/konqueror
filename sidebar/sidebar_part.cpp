@@ -6,6 +6,7 @@
 #include "sidebar_part.h"
 
 #include <KPluginMetaData>
+#include <KPluginFactory>
 
 #include <QApplication>
 

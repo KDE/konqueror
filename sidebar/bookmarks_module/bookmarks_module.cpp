@@ -10,7 +10,7 @@
 
 #include <KParts/PartActivateEvent>
 #include <KLocalizedString>
-#include <kpluginfactory.h>
+#include <KPluginFactory>
 #include <QAction>
 #include <QIcon>
 #include <QStandardItemModel>
@@ -136,8 +136,7 @@ public:
     }
 };
 
-K_PLUGIN_FACTORY(KonqSidebarBookmarksPluginFactory, registerPlugin<KonqSidebarBookmarksPlugin>();)
-// K_EXPORT_PLUGIN(KonqSidebarBookmarksPluginFactory())
+K_PLUGIN_FACTORY_WITH_JSON(KonqSidebarBookmarksPluginFactory, "konqsidebar_bookmarks.json", registerPlugin<KonqSidebarBookmarksPlugin>();)
 
 #include "bookmarks_module.moc"
 

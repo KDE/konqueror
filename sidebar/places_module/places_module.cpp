@@ -102,6 +102,6 @@ public:
     }
 };
 
-K_PLUGIN_FACTORY(KonqSidebarPlacesPluginFactory, registerPlugin<KonqSidebarPlacesPlugin>();)
+K_PLUGIN_FACTORY_WITH_JSON(KonqSidebarPlacesPluginFactory, "konqsidebar_places.json", registerPlugin<KonqSidebarPlacesPlugin>();)
 
 #include "places_module.moc"

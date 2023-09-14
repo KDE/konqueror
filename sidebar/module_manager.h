@@ -7,8 +7,10 @@
 #ifndef MODULE_MANAGER_H
 #define MODULE_MANAGER_H
 
+#include <KPluginMetaData>
+
 #include <QStringList>
-#include <kservice.h>
+
 class KConfigGroup;
 
 /**
@@ -27,7 +29,7 @@ public:
 
     /// Returns the names of the available plugin libraries
     /// Example: konqsidebar_tree, konqsidebar_web
-    KService::List availablePlugins() const;
+    QVector<KPluginMetaData> availablePlugins() const;
 
     /// Returns the paths of all modules that match a given filter, like websidebarplugin*.desktop
     QStringList localModulePaths(const QString &filter) const;
@@ -63,6 +65,15 @@ public:
 
     /// Remove a module (deletes the local .desktop file)
     void removeModule(const QString &fileName);
+
+    /**
+     * @brief The relative directory where to look for plugins
+     *
+     * The returned value is suitable to pass as first argument to KPluginMetaData::findPluginById()
+     * and KPluginMetaData::findPlugins().
+     * @return the relative directory where plugins are stored
+     */
+    static QString pluginDirectory() {return QStringLiteral("konqueror/sidebar");}
 
 private:
     void sortGlobalEntries(QStringList &fileNames) const;

@@ -37,11 +37,11 @@ public:
     ButtonInfo(const KSharedConfig::Ptr &configFile_,
                const QString &file_,
                const QUrl &url_,
-               const QString &lib,
+               const QString &id,
                const QString &dispName_,
                const QString &iconName_)
         : configFile(configFile_), file(file_),
-          libName(lib), displayName(dispName_),
+          pluginId(id), displayName(dispName_),
           iconName(iconName_), initURL(url_)
     {
     }
@@ -54,7 +54,7 @@ public:
     KonqSidebarModule *module = nullptr;
     KonqSidebarPlugin *m_plugin = nullptr;
 
-    QString libName;
+    QString pluginId;
     QString displayName;
     QString iconName;
     QUrl initURL;

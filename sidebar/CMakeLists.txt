@@ -1,6 +1,10 @@
 include_directories (${CMAKE_CURRENT_SOURCE_DIR})
 find_package(KF${KF_MAJOR_VERSION} REQUIRED COMPONENTS JobWidgets IconThemes)
 
+#Used in subdirectories to install the plugins in the correct place
+#NOTE: it must be set before calling add_subdirectory
+set(KONQ_SIDEBAR_PLUGIN_DIR "${KDE_INSTALL_PLUGINDIR}/konqueror/sidebar")
+
 if (${QT_QT3SUPPORT_FOUND})
 add_subdirectory( trees )
 endif()

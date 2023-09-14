@@ -199,11 +199,11 @@ void ModuleManagerTest::testRollback()
 
 void ModuleManagerTest::testAvailablePlugins()
 {
-    KService::List availablePlugins = m_moduleManager->availablePlugins();
+    QVector<KPluginMetaData> availablePlugins = m_moduleManager->availablePlugins();
     QVERIFY(availablePlugins.count() >= 2);
     QStringList libs;
-    Q_FOREACH (KService::Ptr service, availablePlugins) {
-        libs.append(service->library());
+    for (const KPluginMetaData &service : availablePlugins) {
+        libs.append(service.pluginId());
     }
     qDebug() << libs;
     QVERIFY(libs.contains("konqsidebar_tree"));

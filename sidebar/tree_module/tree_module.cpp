@@ -29,7 +29,7 @@ BUGS:
 #include <konq_events.h>
 
 #include <KLocalizedString>
-#include <kpluginfactory.h>
+#include <KPluginFactory>
 
 #include <QAction>
 #include <QKeyEvent>
@@ -282,7 +282,7 @@ public:
     }
 };
 
-K_PLUGIN_FACTORY(KonqSidebarTreePluginFactory, registerPlugin<KonqSidebarTreePlugin>();)
+K_PLUGIN_FACTORY_WITH_JSON(KonqSidebarTreePluginFactory, "konqsidebar_tree.json", registerPlugin<KonqSidebarTreePlugin>();)
 // K_EXPORT_PLUGIN(KonqSidebarTreePluginFactory())
 
 #include "tree_module.moc"

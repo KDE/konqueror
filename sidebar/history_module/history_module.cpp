@@ -13,7 +13,7 @@
 #include <QIcon>
 
 #include <KLocalizedString>
-#include <kpluginfactory.h>
+#include <KPluginFactory>
 
 KonqSidebarHistoryModule::KonqSidebarHistoryModule(QWidget *parent,
         const KConfigGroup &configGroup)
@@ -165,6 +165,6 @@ public:
     }
 };
 
-K_PLUGIN_FACTORY(KonqSidebarHistoryPluginFactory, registerPlugin<KonqSidebarHistoryPlugin>();)
+K_PLUGIN_FACTORY_WITH_JSON(KonqSidebarHistoryPluginFactory, "konqsidebar_history.json", registerPlugin<KonqSidebarHistoryPlugin>();)
 
 #include "history_module.moc"

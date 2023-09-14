@@ -24,6 +24,7 @@
 #include <QInputDialog>
 #include <QIcon>
 #include <QHBoxLayout>
+#include <QStandardPaths>
 
 // KDE
 #include <KLocalizedString>
@@ -38,7 +39,7 @@
 #include <KUrlRequester>
 #include <KJobUiDelegate>
 #include <KJobWidgets>
-#include <QStandardPaths>
+#include <KPluginFactory>
 
 void Sidebar_Widget::aboutToShowAddMenu()
 {
@@ -54,12 +55,12 @@ void Sidebar_Widget::aboutToShowAddMenu()
     // We need to instantiate all available plugins
     // And since the web module isn't in the default entries at all, we can't just collect
     // the plugins there.
-    const KService::List list = m_moduleManager.availablePlugins();
-    Q_FOREACH (const KService::Ptr &service, list) {
-        if (!service->isValid()) {
+    const QVector<KPluginMetaData> plugins = m_moduleManager.availablePlugins();
+    for (const KPluginMetaData &service : plugins) {
+        if (!service.isValid()) {
             continue;
         }
-        auto pluginResult = KPluginFactory::instantiatePlugin<KonqSidebarPlugin>(KPluginMetaData(service->library()), this);
+        auto pluginResult = KPluginFactory::instantiatePlugin<KonqSidebarPlugin>(service, this);
         if (pluginResult) {
           KonqSidebarPlugin *plugin = pluginResult.plugin;
           const QList<QAction *> actions = plugin->addNewActions(&m_addMenuActionGroup,
@@ -528,6 +529,7 @@ bool Sidebar_Widget::addButton(const QString &desktopFileName, int pos)
     const QString lib = configGroup.readEntry("X-KDE-KonqSidebarModule");
     const QString configOpenStr = configGroup.readEntry("Open", QString()); // NOTE: is this redundant?
 
+    qDebug() << "Adding button for" << desktopFileName << "at position" << pos;
     if (pos == -1) { // TODO handle insertion
         m_buttonBar->appendTab(QIcon::fromTheme(icon), lastbtn, name);
         ButtonInfo buttonInfo(config, desktopFileName, cleanupURL(url), lib, name, icon);
@@ -838,12 +840,13 @@ void Sidebar_Widget::customEvent(QEvent *ev)
 KonqSidebarPlugin *ButtonInfo::plugin(QObject *parent)
 {
     if (!m_plugin) {
-      auto pluginResult = KPluginFactory::instantiatePlugin<KonqSidebarPlugin>(KPluginMetaData(libName), parent);
-      if (pluginResult) {
-        m_plugin = pluginResult.plugin;
-      } else {
-        qCWarning(SIDEBAR_LOG) << "error loading sidebar plugin" << pluginResult.errorText;
-      }
+        KPluginMetaData md = KPluginMetaData::findPluginById(ModuleManager::pluginDirectory(), pluginId);
+        auto pluginResult = KPluginFactory::instantiatePlugin<KonqSidebarPlugin>(md, parent);
+        if (pluginResult) {
+            m_plugin = pluginResult.plugin;
+        } else {
+            qCWarning(SIDEBAR_LOG) << "error loading sidebar plugin" << pluginResult.errorText;
+        }
     }
     return m_plugin;
 }
