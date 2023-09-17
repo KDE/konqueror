@@ -281,7 +281,7 @@ void UserAgent::checkTemplatesValidity()
         }
     }
     names.sort();
-    bool hasDuplicates = std::unique(names.begin(), names.end()) != names.constEnd();
+    bool hasDuplicates = std::unique(names.begin(), names.end()) != names.end();
     if (!emptyNames && !hasDuplicates) {
         m_ui->invalidTemplateNameWidget->animatedHide();
         return;
