@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-04 00:46+0000\n"
+"POT-Creation-Date: 2023-09-18 00:45+0000\n"
 "PO-Revision-Date: 2012-02-29 00:24+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <kde-i18n-fa@kde.org>\n"
@@ -1358,31 +1358,31 @@ msgstr " - موضوع:"
 msgid "&Issuer"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:256
+#: src/webenginepartdownloadmanager.cpp:280
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:267
+#: src/webenginepartdownloadmanager.cpp:291
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:268
+#: src/webenginepartdownloadmanager.cpp:292
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:269
+#: src/webenginepartdownloadmanager.cpp:293
 #, fuzzy, kde-format
 #| msgid "Description:"
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "توصیف:"
 
-#: src/webenginepartdownloadmanager.cpp:291
+#: src/webenginepartdownloadmanager.cpp:315
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

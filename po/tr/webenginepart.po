@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-base-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-04 00:46+0000\n"
+"POT-Creation-Date: 2023-09-18 00:45+0000\n"
 "PO-Revision-Date: 2023-09-07 14:38+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1444,30 +1444,30 @@ msgstr "&Konu"
 msgid "&Issuer"
 msgstr "&Veren"
 
-#: src/webenginepartdownloadmanager.cpp:256
+#: src/webenginepartdownloadmanager.cpp:280
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Dosyayı kaydederken bir hata oluştu: %1"
 
-#: src/webenginepartdownloadmanager.cpp:267
+#: src/webenginepartdownloadmanager.cpp:291
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "İndiriliyor"
 
-#: src/webenginepartdownloadmanager.cpp:268
+#: src/webenginepartdownloadmanager.cpp:292
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Kaynak"
 
-#: src/webenginepartdownloadmanager.cpp:269
+#: src/webenginepartdownloadmanager.cpp:293
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Hedef"
 
-#: src/webenginepartdownloadmanager.cpp:291
+#: src/webenginepartdownloadmanager.cpp:315
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

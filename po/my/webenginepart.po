@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-04 00:46+0000\n"
+"POT-Creation-Date: 2023-09-18 00:45+0000\n"
 "PO-Revision-Date: 2021-09-15 20:37+0630\n"
 "Last-Translator: \n"
 "Language-Team: Burmese <kde-i18n-doc@kde.org>\n"
@@ -1328,30 +1328,30 @@ msgstr "အကြောင်းအရာ -"
 msgid "&Issuer"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:256
+#: src/webenginepartdownloadmanager.cpp:280
 #, fuzzy, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "'%1'ရယူအသုံးပြုနေစဥ် အမှားဖြစ်ပေါ်ခဲ့သည်"
 
-#: src/webenginepartdownloadmanager.cpp:267
+#: src/webenginepartdownloadmanager.cpp:291
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "ဒေါင်းလုတ်ဆွဲနေသည်"
 
-#: src/webenginepartdownloadmanager.cpp:268
+#: src/webenginepartdownloadmanager.cpp:292
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "မူလဖိုင်လ်"
 
-#: src/webenginepartdownloadmanager.cpp:269
+#: src/webenginepartdownloadmanager.cpp:293
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "ဦိးတည်ဖိုင်လ်"
 
-#: src/webenginepartdownloadmanager.cpp:291
+#: src/webenginepartdownloadmanager.cpp:315
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

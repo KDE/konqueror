@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-04 00:46+0000\n"
+"POT-Creation-Date: 2023-09-18 00:45+0000\n"
 "PO-Revision-Date: 2023-09-04 09:04+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -1443,30 +1443,30 @@ msgstr "&Призначення"
 msgid "&Issuer"
 msgstr "&Видавець"
 
-#: src/webenginepartdownloadmanager.cpp:256
+#: src/webenginepartdownloadmanager.cpp:280
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Під час спроби зберегти файл сталася помилка: %1"
 
-#: src/webenginepartdownloadmanager.cpp:267
+#: src/webenginepartdownloadmanager.cpp:291
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Отримання"
 
-#: src/webenginepartdownloadmanager.cpp:268
+#: src/webenginepartdownloadmanager.cpp:292
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Джерело"
 
-#: src/webenginepartdownloadmanager.cpp:269
+#: src/webenginepartdownloadmanager.cpp:293
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Призначення"
 
-#: src/webenginepartdownloadmanager.cpp:291
+#: src/webenginepartdownloadmanager.cpp:315
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
