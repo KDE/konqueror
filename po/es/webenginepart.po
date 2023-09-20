@@ -5,7 +5,7 @@
 #
 # Enrique Matias Sanchez <cronopios@gmail.com>, 2009.
 # Cristina Yenyxe Gonzalez Garcia <the.blue.valkyrie@gmail.com>, 2009.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2009, 2010, 2011, 2012, 2016, 2017, 2018, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2016, 2017, 2018, 2020, 2021, 2022, 2023 Eloy Cuadra <ecuadra@eloihr.net>
 # Ricardo Varas Santana <ricardoivaras@gmail.com>, 2009.
 # Jaime Robles <jaime@kde.org>, 2009.
 # Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>, 2010, 2011.
@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 02:26+0000\n"
-"PO-Revision-Date: 2023-06-11 21:47+0200\n"
+"PO-Revision-Date: 2023-09-20 02:22+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "com>\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -1118,7 +1118,7 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid " - CC: "
-msgstr " - CC: "
+msgstr " - Cc: "
 
 #: src/webenginepart.cpp:675
 #, kde-format
@@ -1126,7 +1126,7 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid " - BCC: "
-msgstr " - BCC: "
+msgstr " - Cco: "
 
 #: src/webenginepart.cpp:677
 #, kde-format
