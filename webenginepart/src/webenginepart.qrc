@@ -1,5 +1,8 @@
 <!DOCTYPE RCC>
 <RCC version="1.0">
+  <qresource prefix="/kxmlgui5/webenginepart">
+    <file>webenginepart.rc</file>
+  </qresource>
   <qresource>
     <file>formautofiller.js</file>
     <file>hasrefresh.js</file>

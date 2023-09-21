@@ -39,6 +39,8 @@ configure_file(fsview_part.json.in ${CMAKE_CURRENT_BINARY_DIR}/fsview_part.json)
 
 set(fsviewpart_PART_SRCS fsview_part.cpp ${libfsview_SRCS})
 
+qt5_add_resources(fsviewpart_PART_SRCS fsview_part.qrc)
+
 add_library(fsviewpart MODULE ${fsviewpart_PART_SRCS})
 
 target_link_libraries(fsviewpart KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::Parts KF${KF_MAJOR_VERSION}::IconThemes)
@@ -47,8 +49,6 @@ install(TARGETS fsviewpart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${KF_MAJOR_VER
 
 
 ########### install files ###############
-
-install( FILES fsview_part.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/fsview )
 
 ecm_qt_install_logging_categories(EXPORT fsview DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 

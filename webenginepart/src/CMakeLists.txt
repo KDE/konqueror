@@ -118,8 +118,6 @@ target_link_libraries(webenginepart kwebenginepartlib)
 
 install(TARGETS webenginepart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${KF_MAJOR_VERSION}/parts)
 
-install(FILES webenginepart.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/webenginepart)
-
 install(FILES error.html DESTINATION ${KDE_INSTALL_DATADIR}/webenginepart)
 
 install(FILES settings/kconf_update/webenginepart.upd DESTINATION ${KDE_INSTALL_KCONFUPDATEDIR})
