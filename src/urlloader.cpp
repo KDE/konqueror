@@ -53,8 +53,12 @@ bool UrlLoader::embedWithoutAskingToSave(const QString &mimeType)
     if (s_mimeTypes.isEmpty()) {
         QStringList names{QStringLiteral("kfmclient_html"), QStringLiteral("kfmclient_dir"), QStringLiteral("kfmclient_war")};
         for (const QString &name : names) {
-            KPluginMetaData md = findPartById(name);
-            s_mimeTypes.append(md.mimeTypes());
+            KService::Ptr s = KService::serviceByStorageId(name);
+            if (s) {
+                s_mimeTypes.append(s->mimeTypes());
+            } else {
+                qCDebug(KONQUEROR_LOG()) << "Couldn't find service" << name;
+            }
         }
         //The user may want to save xml files rather than embedding them
         //TODO: is there a better way to do this?
