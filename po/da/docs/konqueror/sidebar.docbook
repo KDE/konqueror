@@ -1,0 +1,312 @@
+<chapter id="sidebar">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&erik.kjaer.pedersen.role; 
+</authorgroup>
+<date
+>2002-09-22</date
+> <releaseinfo
+>3.1</releaseinfo
+> </chapterinfo>
+
+<title
+>Navigeringspanelet</title>
+
+<para
+>Navigationspanelet kommer frem som en adskilt visning til venstre for &konqueror;'s vindue. Dette kan kaldes med <menuchoice
+><guimenu
+>Vindue </guimenu
+><guimenuitem
+>Vis navigationspanel</guimenuitem
+></menuchoice
+> eller slås til og fra mede <keycap
+>F9</keycap
+>-tasten.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dirtree.png"/></imageobject>
+<textobject>
+<phrase
+>Med navigationspanelet</phrase
+>  
+</textobject>
+</mediaobject>
+
+<para
+>Det indeholder et antal fanebladssider; <mousebutton
+>venstre</mousebutton
+>-klik på et faneblads ikon for at vise den side. <mousebutton
+>Venstre</mousebutton
+> klik på ikonen for den synlige side vil kollapse navigationspanelet så kun fanebladsikonerne er synlige.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guilabel
+>Bogmærker</guilabel
+></term>
+<listitem
+><para
+>Denne side viser en trævisning af dine bogmærker. <mousebutton
+> Venstre</mousebutton
+>-klik på et punkt for at åbne det i hovedvisningen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Historik</guilabel
+></term>
+<listitem
+><para
+>Denne side giver en trævisning af din netsøgningshistorik. <mousebutton
+>Venstre</mousebutton
+>-klik på et punkt vil åbne det i hovedvisningen, eller du kan åbne det i et nyt &konqueror; vindue ved at <mousebutton
+>højre</mousebutton
+>-klikke og vælge <guimenuitem
+>Nyt vindue</guimenuitem
+> fra popop-menuen.</para>
+<para
+>Du kan fjerne et punkt fra historikken ved at <mousebutton
+>højre</mousebutton
+>-klikke på den og vælge <guimenuitem
+>Fjern indgang</guimenuitem
+>. Valg af <guimenuitem
+>Ryd historik...</guimenuitem
+> vil slette alle indgange.</para>
+<para
+>Popop-menuen du får når du <mousebutton
+>højre</mousebutton
+>-klikker på en indgang i historik-siden, giver dig også muligheden for at vælge om hele historikken er sorteret efter navn eller efter dato.</para>
+<para
+>Valg af <guimenuitem
+>Indstillinger...</guimenuitem
+> fra denne popop-menu får <guilabel
+>Historiksidebjælke</guilabel
+>-kontrolmodulet frem. Dette kan bruges til at sætte den maksimale størrelse af din historik og sætte en tid efter hvilken punkter automatisk fjernes. Du kan også sætte forskellige skrifttyper for nye og gamle &URL;er. <guilabel
+>Detaljerede værktøjsvink</guilabel
+> afkrydsningsfeltet kontrollerer hvor megen information der vises når du svæver med musen over et punkt i historiksiden.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Hjemmemappe</guilabel
+></term>
+<listitem
+><para
+>Denne side giver en trævisning af undermapperne i din hjemmemappe. Bemærk at <quote
+>skjulte</quote
+> mapper (de navne der begynder med et punktum) vises ikke. <mousebutton
+>Venstre</mousebutton
+>-klik på et punkt for at åbne det i hovedvisningen, eller <mousebutton
+>højre</mousebutton
+>-klik for at vise en popop-menu der tillader dig at åbne undermappen i et nyt vindue eller som en ny fanebladsside i hovedvisningen. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Netværk</guilabel
+></term>
+<listitem
+><para
+>Denne side er beregnet til at give en trævisning af dine vigtige netværksforbindelser, selvom lokale mapper også kan være inkluderet. Du kan også her <mousebutton
+>venstre</mousebutton
+>-klikke på et punkt for at åbne det i hovevisningen eller <mousebutton
+>højre</mousebutton
+>-klikke for at få en menu frem med flere muligheder.</para>
+<para
+>Mapperne vist på <guilabel
+>Netværks</guilabel
+>siden holdes i mappen <filename class="directory"
+> ~/.kde/share/apps/konqsidebartng/virtual_folders/remote/</filename
+>, og du kan lave nye på samme måde som du viller lave en vilkårlig anden undermappe. Punkterne indeni disse mapper holdes som <literal role="extension"
+>.desktop</literal
+>-filer og kan laves med &konqueror;'s <menuchoice
+><guisubmenu
+>Opret ny</guisubmenu
+> <guimenuitem
+>Link til sted (URL)...</guimenuitem
+></menuchoice
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Rodmappe</guilabel
+></term>
+<listitem
+><para
+>Rodmappe-træet har sti <filename class="directory"
+>/</filename
+>, og er basismappen for dit systems lokale filer. Hvis du udvider <quote
+>Rod</quote
+> mappen vil du finde en anden mappe der hedder <filename class="directory"
+>root</filename
+>. Den tilhører systemadministratoren eller superbrugeren og er hendes hjemmemappe. Du vil også finde en mappe der hedder <filename class="directory"
+>home</filename
+>, hvori du skulle kunne finde din egen <quote
+>Hjemme</quote
+>mappe igen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Tjenester</guilabel
+></term>
+<listitem
+><para
+>Denne side giver hurtig adgang til følgende tjenester: </para>
+<para
+><guilabel
+>Lyd-cd søgeren</guilabel
+>.</para>
+<para
+><guilabel
+>Enheder</guilabel
+>. Dette er en trævisning af din harddisk, partitioner, floppy-disk og &CD-ROM;. <mousebutton
+>Venstre</mousebutton
+>-klik på et enheds- eller partitionsnavn for at montere og vise indholdet i hovedvisningen. En monteret enhed eller partition kan afmonteres ved at <mousebutton
+>højre</mousebutton
+>-klikke på enhedens navn og vælge <guimenuitem
+>Afmontér </guimenuitem
+> fra popop-menuen. </para>
+<para
+><guilabel
+>LAN-søgeren</guilabel
+> tillader dig at gennemse andre maskiner forbundet til dit LAN (Local Area Network).</para>
+<para
+>(</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Navigationspanelindstillingerne kan ændres ved at <mousebutton
+>højre </mousebutton
+>-klikke på det tomme område under den nederste fanebladsikon eller ved at <mousebutton
+>venstre</mousebutton
+>-klikke på <guilabel
+>Indstillingsknap</guilabel
+>-ikonen (den øverste ikon i forrige skærmaftryk, den er muligvis ikke til stede i din opsætning). Dette får en menu frem med følgende valgmuligheder:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guisubmenu
+>Tilføj ny</guisubmenu
+></term>
+<listitem
+><para
+>Denne valgmulighed lader dig tilføje en ny fanebladsside til navigationspanelet. Den nye side kan indeholder <guimenuitem
+>Sidebjælke medieafspilleren </guimenuitem
+> (en <link linkend="konq-plugin"
+>&konqueror;-plugin</link
+> egenskab) eller en ny <guimenuitem
+>Mappe</guimenuitem
+>-trævisning.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Flere visninger</guimenuitem
+></term>
+<listitem
+><para
+>Dette valg opdeler navigationspanelet så to fanebladssider kan ses på én gang.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Vis tabulatorer til venstre</guimenuitem
+></term>
+<listitem
+><para
+>Dette valg lader dig bestemme om fanebladsikonerne skal vises til venstre eller højre i navigationspanelet.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Vis indstillingsknap</guimenuitem
+></term>
+<listitem
+><para
+>Brug dette til at vise eller skjule <guilabel
+>Indstillingsknap</guilabel
+>-ikonen.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+><mousebutton
+>Højre</mousebutton
+>-klik på et faneblad vil få en menu frem med følgende valgmuligheder:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Sæt URL</guimenuitem
+></term>
+<listitem
+><para
+>Dette er kun tilgængeligt for mappe-sider. Det lader dig ændre &URL;'en (stien) for mappen der ses på denne side.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Sæt ikon</guimenuitem
+></term>
+<listitem
+><para
+>Til at ændre fanebladsikonen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Fjern</guimenuitem
+></term>
+<listitem
+><para
+>For at fjerne fanebladssiden fra navigationspanelet.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

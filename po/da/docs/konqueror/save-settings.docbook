@@ -1,0 +1,156 @@
+<chapter id="save-settings">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&erik.kjaer.pedersen.role; 
+</authorgroup>
+<date
+>2003-11-06</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+<title
+>Gemning af opsætning &amp; profiler</title>
+<sect1 id="save-settings-general">
+<title
+>Generel opsætning</title>
+<para
+>Når du lukker &konqueror; vil din aktuelle <guimenu
+>Visnings</guimenu
+>menu opsætning (såsom <guimenuitem
+>Visningstilstand</guimenuitem
+>, <guimenuitem
+>Brug index.html</guimenuitem
+> og <guimenuitem
+>Vis skjulte filer</guimenuitem
+>) bliver ikke automatisk gemt som standardvalg. Du kan imidlertid få &konqueror; til at huske disse indstillinger ved at vælge <menuchoice
+><guimenu
+>Opsætning</guimenu
+><guimenuitem
+>Gem visningsprofil " Browsing"...</guimenuitem
+></menuchoice
+>, så vil den nuværende indstilling blive til standardindstillingen der bruges næste gang &konqueror; startes.</para>
+
+<para
+>Men du kan også angive en anden <guimenu
+>Visnings</guimenu
+>menu opsætning for en individuel mappe. For at gøre dette afkryds <guimenuitem
+>Vis egenskaber gemt i mappe</guimenuitem
+> feltet i <guimenu
+>Opsætnings</guimenu
+>menuen, ændr <guimenu
+>Visning</guimenu
+> opsætningen til det du ønsker så fjern krydset fra  <guimenuitem
+>Vis egenskaber gemt i mappe</guimenuitem
+> feltet. Når du gør dette bliver der oprettet en <filename
+>.directory</filename
+> fil i den mappe der indeholder mappens <guimenu
+>Visnings</guimenu
+> opsætning. Brug <menuchoice
+><guimenu
+> Opsætning</guimenu
+><guimenuitem
+>Fjern mappeegenskaber</guimenuitem
+> </menuchoice
+> for at fjerne de mappespecifikke indstillinger (eller slet bare <filename
+>.directory</filename
+> filen).</para>
+<note
+><para
+>En sjov brug af denne egenskab er hvis du har en mappe fyldt med billeder. Du kan så sætte denne specielle mappe til at vise miniaturer af billederne (ved at vælge <guimenuitem
+>Ikonvisning</guimenuitem
+> og <menuchoice
+> <guisubmenu
+>Forhåndsvisning</guisubmenu
+><guimenuitem
+>Billeder</guimenuitem
+></menuchoice
+> fra <guimenu
+>Visnings</guimenu
+>menuen) når du åbner den, mens du samtidigt ikke viser billeder som miniaturer i andre mapper.</para
+></note>
+</sect1>
+
+<sect1 id="save-settings-view-profiles">
+<title
+>Visningsprofiler</title>
+<para
+>&konqueror; kan gemme et helt sæt tilvalg som en <quote
+>Visningsprofil</quote
+>. Nogle visningsprofiler er en del af en standardiseret &konqueror; installation, såsom <property
+>Netsøgning</property
+> og <property
+>Filhåndtering</property
+>, men du kan også tilføje dine egne.</para>
+
+<para
+>For at ændre en visningsprofil (såsom <property
+>Netsøgnings</property
+> profilen),indlæses profilen med <menuchoice
+><guimenu
+>Opsætning</guimenu
+><guisubmenu
+>Indlæs visningprofil</guisubmenu
+><guimenuitem
+>Netsøgning</guimenuitem
+> </menuchoice
+>, hvorpå &konqueror;'s opsætning ændres til det du ønsker. Vælg nu <menuchoice
+><guimenu
+>Opsætning</guimenu
+><guimenuitem
+>Gem visningsprofil "Netsøgning"...</guimenuitem
+></menuchoice
+>. I den dialog der kommer frem, kan du ændre navnet på profilen, hvilket vil lave en ny profil med dette navn, eller du kan lade navnet være som det er så den nuværende profil ændres. Hvis du vælger <guilabel
+>Gem URL'er i profil</guilabel
+>, vil den nuværende &URL; blive hentet når du indlæser denne visningsprofil. Dette virker på en lignende måde som <quote
+>Hjem siden</quote
+> i mange browsere. Hvis du ønsker at &konqueror; skal starte op med et tomt vindue, skal du skrive <userinput
+>about:blank</userinput
+> i stedlinjen før du gemmer profilen.</para>
+
+<note
+><para
+>Du kan lave en desktopikon, der starter &konqueror; med din nye profil. Lav først en desktopikon ved at trække &konqueror; ikonen fra <guimenu
+>K</guimenu
+>-menuen på desktoppen og vælge <guimenuitem
+>Kopiér her</guimenuitem
+>. Klik så med <mousebutton
+>højre</mousebutton
+> museknap på den nye ikon, vælg <guimenuitem
+>Egenskaber...</guimenuitem
+> og ændr <guilabel
+>Programnavn</guilabel
+> i <guilabel
+>Kør</guilabel
+> fanebladssiden til <userinput
+><command
+>kfmclient</command
+> <option
+>openProfile <replaceable
+>MinNyeProfil</replaceable
+></option
+></userinput
+>, hvor <replaceable
+>MinNyeProfil</replaceable
+> er det du kaldte den nye nye profil. Så kan du ændre navnet i <guilabel
+>Generelt</guilabel
+> fanebladssiden til nye i retning af <filename
+>MinNyeProfil</filename
+> og vælge en mere passende ikon.</para
+></note>
+
+</sect1>
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

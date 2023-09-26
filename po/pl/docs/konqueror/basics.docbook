@@ -1,0 +1,608 @@
+<chapter id="basics">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>(c) 2005 Mandriva</firstname
+><surname
+>Poland</surname
+><affiliation
+><address
+><email
+>biuro@mandriva.pl</email
+></address
+></affiliation
+><contrib
+>Polskie tłumaczenie</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-10-20</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+<title
+>Podstawy &konqueror-dopelniacz;</title>
+
+<important
+><para
+>Podobnie jak wszystkie programy &kde;, &konqueror-biernik; można w pełni skonfigurować. Ten dokument opisuje działania &konqueror-dopelniacz; przy ustawieniach domyślnych.</para>
+<para
+>Podczas pracy z &konqueror-miejscownik; oraz każdym innym programem &kde;, korzystne jest posiadanie myszy z trzema przyciskami. Jeśli Twoja mysz posiada tylko dwa przyciski, to powinieneś tak ustawić system, abyś mógł symulować środkowy przycisk myszy przyciśnięciem obydwu przycisków naraz.</para>
+<para
+>Więcej na temat korzystania z myszy możesz przeczytać w <xref linkend="lmb-mmb"/></para>
+<para
+>Jeżeli przywykłeś do podwójnego kliknięcia, to musisz uważać, ponieważ w przypadku &konqueror-dopelniacz;, podobnie jak w całym &kde;, domyślnym ustawieniem jest pojedyncze kliknięcie.</para
+></important>
+
+<sect1 id="konq-start">
+<title
+>Uruchamianie &konqueror-dopelniacz;</title>
+
+<para
+>&konqueror; jest połączeniem menedżera plików oraz przeglądarki internetowej i będzie się przełączał automatycznie pomiędzy tymi dwoma trybami w miarę potrzeby. Niemniej wygodnie jest ustawić, który tryb ma być wybrany przy rozpoczynaniu pracy programu.</para>
+
+<itemizedlist>
+<listitem
+><para
+>Jeśli posiadasz ikonę z wizerunkiem <guiicon
+>domu</guiicon
+> na panelu lub pulpicie, to kliknij lewym przyciskiem myszy, aby otworzyć &konqueror-biernik; jako menedżer plików.</para
+></listitem>
+
+<listitem
+><para
+>Aby otworzyć &konqueror-dopelniacz; w trybie przeglądarki internetowej kliknij <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na ikonę z wizerunkiem <guiicon
+>kuli ziemskiej</guiicon
+> umieszczoną na pulpicie lub panelu.</para
+></listitem>
+
+<listitem
+><para
+>Z menu <guimenu
+>K</guimenu
+>, wybierz <menuchoice
+><guisubmenu
+>Internet</guisubmenu
+><guimenuitem
+>Przeglądarka Internetowa Konqueror</guimenuitem
+></menuchoice
+>, aby uruchomić program w trybie przeglądarki internetowej lub <guimenuitem
+>Katalog domowy</guimenuitem
+>, aby uruchomić program w trybie menedżera plików. </para
+></listitem>
+
+<listitem
+><para
+>Kombinacja klawiszy <keycombo action="simul"
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> spowoduje otworzenie okna <guilabel
+>Uruchom polecenie</guilabel
+>. Wpisz tam <userinput
+><command
+>konqueror</command
+></userinput
+> (małe litery) i naciśnij <keycap
+>Enter</keycap
+> lub przycisk <guibutton
+>Uruchom</guibutton
+>, aby uruchomić program w trybie menedżera plików, albo wpisz adres &URL;, jak na przykład <userinput
+>http://www.konqueror.org</userinput
+>, aby uruchomić &konqueror-biernik; w trybie przeglądarki.</para
+></listitem>
+
+</itemizedlist>
+
+<para
+>&konqueror; jest także uruchamiany automatycznie, kiedy klikniesz <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na ikonę folderu, taką jak na przykład dysk twardy, czy ikonę <guiicon
+>Kosza</guiicon
+>. </para>
+
+
+</sect1>
+
+<sect1 id="parts">
+<title
+>Części &konqueror-dopelniacz;</title>
+
+<para
+>Krótki przegląd elementów okna głównego &konqueror-dopelniacz;:</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="parts.png"/></imageobject>
+<textobject>
+<phrase
+>Oto zdjęcie przedstawiające &konqueror-biernik;</phrase>
+</textobject>
+</mediaobject>
+
+<para
+><interface
+>Pasek tytułowy</interface
+> to pasek biegnący u góry okna, który działa w ten sam sposób jak w innych programach &kde;. Jeśli klikniesz na nim <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy, to wyświetlone zostanie menu podręczne paska tytułowego.</para>
+
+<para
+><interface
+>Pasek menu</interface
+>, to pasek zawierający nazwy rozwijanych menu, znajdujący się pod paskiem tytułowym. Kliknięcie <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy powoduje rozwinięcie lub zwinięcie menu; możesz także użyć klawisza <keycombo action="simul"
+>&Alt;<keycap
+> oraz podkreślonej litery</keycap
+></keycombo
+> w nazwie, jako klawisza skrótu, na przykład <keycombo action="simul"
+>&Alt;<keycap
+>E</keycap
+></keycombo
+> aby wyświetlić menu <guimenu
+>Edycja</guimenu
+>. Poszczególne menu są opisane w dziale <link linkend="menubar"
+>Pasek menu</link
+> tego dokumentu.</para>
+
+<para
+><interface
+>Pasek narzędzi</interface
+> zawiera ikony często używanych operacji. Kliknięcie <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na ikonę uruchamia operację. Jeżeli włączyłeś podpowiedzi w zakładce <menuchoice
+><guimenu
+> Wygląd i motywy</guimenu
+><guisubmenu
+>Styl</guisubmenu
+></menuchoice
+> Centrum sterowania &kde;, to gdy przytrzymasz wskaźnik myszy nad przyciskiem paska narzędzi, pojawi się krótki opis tego przycisku.</para>
+
+<para
+>Niektóre ikony, na przykład ikony 'Do góry' i 'W tył' na zdjęciu poprzednim, posiadają mały czarny trójkąt u dołu po prawej stronie. Jeśli przytrzymasz nad nim wciśnięty lewy przycisk myszy, to wyświetlone zostanie małe menu rozwijane.</para
+> <para
+>Kliknięcie <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na <interface
+>Pasku narzędzi </interface
+> spowoduje wyświetlenie<link linkend="rmb-menus"
+><guilabel
+>Menu paska narzędzi</guilabel
+></link
+>, którego możesz użyć do zmiany wyglądu i położenia <interface
+>Paska narzędzi</interface
+>.</para>
+
+<para
+><interface
+>Pasek adresu</interface
+> pokazuje ścieżkę katalogu, adres &URL; strony WWW lub przeglądanego pliku. Możesz wpisać tutaj ścieżkę lub adres &URL; i wcisnąć &Enter; lub kliknąć <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na ikonę <guiicon
+>Idź</guiicon
+> znajdującą się po prawej stronie <interface
+>Paska adresu</interface
+>, aby przejść w wybrane miejsce. Czarna ikona po lewej stronie <interface
+>Paska adresu</interface
+> powoduje wymazanie całej zawartości tego pola.</para>
+
+<para
+><interface
+>Pasek zakładek</interface
+> jest paskiem znajdującym się poniżej <interface
+>Paska adresu</interface
+>. Możesz tutaj umieścić często używane zakładki. Zobacz dział <link linkend="orgbmark"
+>Organizowanie zakładek</link
+> w dalszej części tego dokumentu.</para>
+
+<para
+><interface
+>Okno</interface
+>, to główny obszar &konqueror-dopelniacz;, w którym możesz zobaczyć zawartość katalogu, stronę internetową, dokument lub obrazek. Korzystając z menu <link linkend="menu-window"
+><guimenu
+>Okno</guimenu
+></link
+> możesz podzielić główne okno &konqueror-dopelniacz; na jeden lub wiecej oddzielnych widoków, co jest użyteczne przy stosowaniu metody przeciągnij i upuść. Możesz również otworzyć jedną lub więcej kart z różną zawartością. </para>
+
+<para
+><interface
+>Pasek stanu</interface
+> biegnie u dołu okna programu &konqueror;, przeważnie pokazuje on ogólne informacje dotyczącego tego nad czym znajduje się wskaźnik myszy. Jeśli podzieliłeś okno na wiele widoków, to będziesz posiadał pasek stanu dla każdego widoku. Dodatkowo pasek będzie zawierał małe zielone światełko informujące który z widoków jest obecnie <quote
+>aktywny</quote
+>. Kliknięcie prawym przyciskiem myszy na pasek stanu powoduje otwarcie<link linkend="rmb-menus"
+>Podręcznego menu paska stanu</link
+>.</para>
+
+<note
+><para
+>Nie martw się, jeżeli &konqueror; nie wygląda dokładnie tak samo jak na powyższym obrazku - można go w różny sposób skonfigurować. W szczególności:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Możesz użyć menu <link linkend="menu-settings"
+><guimenu
+>Ustawienia</guimenu
+></link
+>, aby wybrać, czy pokazywać, czy chować pasek menu, pasek narzędzi, pasek adresu, pasek zakładek lub nawet dodać pasek dodatkowy.</para
+></listitem>
+<listitem
+><para
+>Możesz także <quote
+>oderwać</quote
+> paski narzędzi od okna klikając <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na pionowe linie znajdujące się po lewej stronie pasków lub zmienić ich położenie przytrzymując lewy przycisk myszy na pasku, a następnie poruszając myszą po ekranie. </para
+></listitem>
+<listitem
+><para
+>Ten obrazek nie pokazuje dodatkowego <link linkend="sidebar"
+> Panelu nawigacji</link
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Aby uzyskać więcej szczegółów na temat jak zmienić wygląd &konqueror-dopelniacz;, sprawdź dział <link linkend="config"
+>Konfiguracja &konqueror-dopelniacz;</link
+></para
+></note>
+
+</sect1>
+
+<sect1 id="bubble">
+<title
+>Podpowiedzi oraz <quote
+>Co to jest?</quote
+></title>
+
+<para
+>Możesz się dowiedzieć wiele na temat działania &konqueror-dopelniacz; bez czytania tego całego dokumentu, jeśli skorzystasz z <guilabel
+>Podpowiedzi</guilabel
+> oraz funkcji <guimenuitem
+>Co to jest?</guimenuitem
+>.</para>
+
+<para
+>Jeśli <guilabel
+>podpowiedzi</guilabel
+> zostały włączone w &kde; (Menu K <menuchoice
+><guimenu
+>Centrum sterowania</guimenu
+><guisubmenu
+>Wygląd i motywy</guisubmenu
+><guisubmenu
+>Styl</guisubmenu
+></menuchoice
+>, okno <guilabel
+>Styl</guilabel
+>), to za każdym razem, gdy przytrzymasz kursor myszy nad paskiem narzędzi lub panelem nawigacji, wyświetlony zostanie krótki komunikat o działaniu przycisku.</para>
+
+<para
+>Funkcję <guimenuitem
+>Co to jest?</guimenuitem
+> można wywołać z paska menu <menuchoice
+><guimenu
+>Pomoc</guimenu
+><guimenuitem
+>Co to jest?</guimenuitem
+></menuchoice
+>, oraz za pomocą kombinacji klawiszy <keycombo action="simul"
+>&Shift;<keycap
+>F1</keycap
+></keycombo
+>, lub przez kliknięcie lewym przyciskiem myszy na znak zapytania w prawym górnym rogu okna &konqueror-dopelniacz;. Po wykonaniu jednej z powyższych czynności, wskaźnik myszy zamienia się w strzałkę ze znakiem zapytania.</para>
+
+<para
+>Kiedy ta forma wskaźnika jest już dostępna, to za pomocą lewego przycisku myszy nie można wykonać żadnej czynności poza uzyskaniem pomocy w formie krótkich porad umieszczonych ponad niektórymi składnikami okna. Większość obiektów &konqueror-dopelniacz; obsługuje funkcję <guimenuitem
+>Co to jest?</guimenuitem
+>.</para>
+
+</sect1>
+
+<sect1 id="lmb-mmb">
+<title
+>Funkcje <mousebutton
+>lewego</mousebutton
+> oraz <mousebutton
+>środkowego</mousebutton
+> przycisku myszy</title>
+
+<para
+>Jeśli klikniesz lewym przyciskiem myszy na elemencie w oknie &konqueror-dopelniacz;, to zostanie on <quote
+>uaktywniony</quote
+>. Dlatego</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Kliknięcie <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na ikonę w pasku narzędzi spowoduje wykonanie działania do którego ikona była przypisana. </para
+></listitem>
+<listitem
+><para
+>Kliknięcie <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na obiekt paska menu spowoduje rozwinięcie się listy menu.</para
+></listitem>
+<listitem
+><para
+>Kliknięcie <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na obiekt w menu spowoduje wykonanie polecenia.</para
+></listitem
+> 
+<listitem
+><para
+>Kliknięcie <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na ikonę na pasku zakładek spowoduje otworzenie przypisanego jej adresu &URL;.</para
+></listitem>
+<listitem
+><para
+>Kliknięcie <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na odnośnik na stronie internetowej spowoduje otwarcie tego odnośnika w &konqueror-miejscownik;.</para
+></listitem>
+<listitem
+><para
+>Kliknięcie <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na ikonie lub nazwie katalogu spowoduje otworzenie tego katalogu w &konqueror-miejscownik; (i wyświetlenie jego zawartości). </para
+></listitem>
+<listitem
+><para
+>Kliknięcie <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na nazwie lub ikonie pliku spowoduje wykonanie działania przypisanego do danego typu pliku. Zwykle oznacza to otworzenie strony <acronym
+>HTML</acronym
+>, podglądu pliku tekstowego, obrazka, dokumentu pakietu biurowego i pokazanie ich w oknie &konqueror-dopelniacz; (<quote
+>Podgląd</quote
+> oznacza, że możesz zobaczyć plik, ale nie możesz go zmienić).</para
+> 
+
+<para
+>&konqueror; decyduje jaki jest rodzaj pliku poprzez dopasowanie rozszerzenia pliku z listą znanych rozszerzeń. Jeżeli mu się to nie uda, to próbuje odgadnąć rodzaj pliku analizując jego zawartość. Możesz zmienić listę znanych typów plików oraz związanych z nimi działań w dziale <guilabel
+>Skojarzenia plików</guilabel
+> w menu <menuchoice
+><guimenu
+>Ustawienia</guimenu
+><guimenuitem
+>Konfiguracja: Konqueror... </guimenuitem
+></menuchoice
+>.</para
+></listitem>
+
+</itemizedlist>
+
+<para
+>Klikając na plik, nazwę katalogu lub ikonę środkowym przyciskiem myszy spowodujesz działanie takie same jak w przypadku <mousebutton
+>lewego</mousebutton
+> przycisku myszy, poza tym, że działanie zostanie wykonane w nowym oknie &konqueror-dopelniacz; (chyba, że opcja <guilabel
+>Otwórz odnośniki w nowej karcie, a nie w nowym oknie</guilabel
+> została zaznaczona w dziale <guimenuitem
+>Przeglądanie WWW</guimenuitem
+> menu <menuchoice
+><guimenu
+>Ustawienia</guimenu
+><guimenuitem
+>Konfiguracja: Konqueror...</guimenuitem
+></menuchoice
+>). &konqueror; może otwierać w nowym oknie lub nowej karcie odnośniki do stron, ale działa to również dla przycisku <menuchoice
+><guimenu
+>Zakładki</guimenu
+></menuchoice
+>, <guibutton
+>Katalog domowy</guibutton
+>, <guibutton
+>Do góry</guibutton
+>, <guibutton
+>W tył</guibutton
+> i <guibutton
+>W przód</guibutton
+>.</para>
+
+<para
+>Przytrzymanie klawisza &Shift; przy naciśnięciu środkowego przycisku myszy spowoduje otworzenie odnośnika w tle.</para>
+<important
+><para
+>Jeśli klikniesz środkowym przyciskiem myszy podczas gdy wskaźnik myszy jest nad pustą częścią głównego okna (nie nad odnośnikiem, nazwą pliku, czy ikoną), to &konqueror; skopiuje zawartość schowka do paska adresu i spróbuje wykorzystać ją jako adres &URL;.</para
+></important>
+</sect1>
+
+<sect1 id="rmb-menus">
+<title
+>Menu <mousebutton
+>prawego</mousebutton
+> przycisku myszy</title>
+
+<para
+>Klikając prawym przyciskiem myszy prawie w każdym miejscu okna &konqueror-dopelniacz; spowoduje wyświetlenie się odpowiedniego menu podręcznego.</para>
+
+<note
+><para
+>Jeśli uaktywniona została opcja <guilabel
+>Prawy przycisk myszy cofa</guilabel
+> w <link linkend="othersettings"
+>konfiguracji</link
+> &konqueror-dopelniacz;, to zwyczajne kliknięcie <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy jest równoznaczne z kliknięciem na przycisk <guibutton
+>W tył</guibutton
+>. W tym przypadku podręczne menu możesz wywołać przesunięciem myszy, gdy trzymasz wciśnięty jej <mousebutton
+>prawy</mousebutton
+> przycisk.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+>Na pasku tytułowym</term>
+<listitem
+><para
+>Kliknięcie <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na jakiekolwiek puste pole na pasku tytułowym spowoduje wyświetlenie menu paska tytułowego, pozwalającego na kontrolę położenia okna &konqueror-dopelniacz; oraz na zmianę wyglądu wszystkich okien programów &kde;. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Na głównym pasku narzędzi</term>
+<listitem
+><para
+>Kliknięcie <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na jakiekolwiek puste pole na pasku narzędzi spowoduje wyświetlenie menu paska narzędzi, pozwalającego na określenie położenia paska, u góry, u dołu, po lewej lub po prawej stronie okna &konqueror-dopelniacz;. Możesz także wykorzystać menu paska narzędzi do ustalenia rozmiaru jego przycisków oraz czy są one pokazywane jako ikony, tekst, czy jako jedne i drugie.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>Na pasku adresu</term>
+<listitem
+><para
+>Kliknięcie <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na polu wprowadzania adresu &URL; umożliwia skopiowanie, wycięcie, wklejenie lub wyczyszczenie adresu oraz zmianę funkcji automatycznego <link linkend="path-complete"
+>dopełniania tekstu</link
+>.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>Na pasku zakładek</term>
+<listitem
+><para
+>Jeśli widoczny jest pasek zakładek, to kliknięcie <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na jakiekolwiek jego puste pole spowoduje wyświetlenie menu paska zakładek, pozwalającego na określenie położenia paska i sposobu wyświetlania elementów - jako tekst, ikona lub oba naraz. </para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>Na widoku</term>
+<listitem
+><para
+>Kliknięcie <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na jakiekolwiek puste pole na powierzchni widoku spowoduje wyświetlenie menu, które zawiera między innymi polecenia nawigacji, takie jak: <guiicon
+>W górę</guiicon
+>, <guiicon
+>W tył</guiicon
+>, <guiicon
+>W przód</guiicon
+> oraz <guiicon
+>Odśwież</guiicon
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Na pliku lub katalogu</term>
+<listitem
+><para
+>Jest to najbardziej użyteczna funkcja. Kliknięcie <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na nazwę lub ikonę dowolnego pliku, czy katalogu nie tylko <quote
+>zaznacza</quote
+> ten obiekt, ale także powoduje wyświetlenie menu pozwalającego na <guiicon
+>wycięcie</guiicon
+>, przeniesienie, <guiicon
+>skopiowanie</guiicon
+> lub usunięcie obiektu w różny sposób, dodanie go do swoich <guimenu
+>zakładek</guimenu
+>, otworzenie go za pomocą programu wybranego przez Ciebie, podejrzenie zawartości, zmianę nazwy, typu pliku lub właściwości.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+>Na pasku stanu</term>
+<listitem
+><para
+>Kliknięcie <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na pasek stanu u dołu ekranu umożliwia usunięcie i dodanie widoku w oknie &konqueror-dopelniacz;.</para
+></listitem
+> 
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="man-info">
+<title
+>Pomoc, podręcznik i strony informacyjne</title>
+
+<para
+>Możesz przeglądać strony pomocy &kde; oraz podręcznik i strony informacyjne &UNIX; bezpośrednio w &konqueror-miejscownik;, bez konieczności uruchamiania <application
+>Centrum pomocy KDE</application
+>. </para>
+
+<para
+>Aby przeglądać strony pomocy &kde; wpisz <userinput
+>help:/<replaceable
+>nazwa programu</replaceable
+></userinput
+> (na przykład<userinput
+>help:/kmail</userinput
+>, aby zobaczyć dokumentację &kmail-dopelniacz;) w pasku adresu &konqueror-dopelniacz;. </para>
+
+<para
+>Jeśli chcesz przeglądać strony podręcznika &UNIX;, to &konqueror; także Ci to umożliwia. Na przykład wpisz <userinput
+>man:/touch</userinput
+> lub <userinput
+>#touch</userinput
+> w pasku adresu, aby zobaczyć stronę podręcznika na temat polecenia <command
+>touch</command
+>.</para
+> 
+
+<para
+>Aby przeglądać strony informacyjne &UNIX;, wpisz <userinput
+>info:/dir</userinput
+>, a zostaniesz przeniesiony do szczytowego katalogu informacji. Wtedy musisz tylko kliknąć na odpowiednim odnośniku, aby znaleźć stronę, której szukasz. Możesz także użyć adresu <userinput
+>info:/<replaceable
+></replaceable
+></userinput
+>, aby przejść bezpośrednio do odpowiedniej strony informacyjnej.</para>
+
+<note
+><para
+>Niestety strony pomocy &kde; są przechowywane tak, że nie mogą być przeglądane przez inne przeglądarki. Jeżeli naprawdę nie masz innego sposobu przejrzenia ich, to możesz odwiedzić stronę internetową<ulink url="http://docs.kde.org"
+> http://docs.kde.org</ulink
+>.</para
+></note>
+</sect1>
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

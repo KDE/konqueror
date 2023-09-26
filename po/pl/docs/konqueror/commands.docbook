@@ -1,0 +1,2115 @@
+<chapter id="commands">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>(c) 2005 Mandriva</firstname
+><surname
+>Poland</surname
+><affiliation
+><address
+><email
+>biuro@mandriva.pl</email
+></address
+></affiliation
+><contrib
+>Polskie tłumaczenie</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-11-06</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+<title
+>Polecenia</title>
+
+<note
+><para
+>Klawisze skrótów opisane w niniejszym rozdziale są skrótami domyślnymi. Mogą oczywiście być <link linkend="configshort"
+>zmienione</link
+>. </para
+></note>
+
+<sect1 id="specshort">
+<title
+>Skróty specjalne</title>
+<para
+>Istnieje kilka użytecznych skrótów, które nie są przedstawione w żadnym z menu:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><keycap
+>F6</keycap
+></term>
+<listitem>
+<para
+>Uaktywnia pole paska adresu.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><keycombo action="simul"
+>&Ctrl;<keycap
+>]</keycap
+></keycombo
+></term>
+<listitem>
+<para
+>Przełącza na kolejną kartę.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><keycombo action="simul"
+>&Ctrl;<keycap
+>[</keycap
+></keycombo
+></term>
+<listitem>
+<para
+>Przełącza na poprzednią kartę.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</sect1>
+
+<sect1 id="menubar">
+<title
+>Menu</title
+> <para
+>Zwróć uwagę, że niektóre opcje menu pojawiają się w przypadku otwarcia określonych plików w &konqueror-miejscownik;. Na przykład polecenie <menuchoice
+><guimenu
+>Edycja</guimenu
+><guimenuitem
+>Znajdź...</guimenuitem
+> </menuchoice
+> nie będzie wyświetlone podczas przeglądania zawartości katalogu.</para>
+<sect2 id="menu-location">
+<title
+>Menu <guimenu
+>Adres</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Adres</guimenu
+> <guimenuitem
+>Nowe okno</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera kolejne okno &konqueror-dopelniacz;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Adres</guimenu
+> <guimenuitem
+>Nowa karta</guimenuitem
+> </menuchoice
+></term
+> 
+<listitem
+><para
+>Otwiera kolejną kartę &konqueror-dopelniacz;, zawierającą pustą stronę.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>D</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Adres</guimenu
+> <guimenuitem
+>Powiel okno</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera kolejne okno &konqueror-dopelniacz;, duplikując zawartość okna bieżącego.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Adres</guimenu
+> <guimenuitem
+>Otwórz adres...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera katalog lub plik po wpisaniu jego ścieżki dostępu (na przykład <filename class="directory"
+>/home/pam</filename
+> lub <filename
+>/home/pam/fred.txt</filename
+>) w polu dialogowym.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Adres</guimenu
+> <guimenuitem
+>Wyślij adres odnośnika</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Wysyła e-mail zawierający odnośnik do bieżącej lokalizacji.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Adres</guimenu
+> <guimenuitem
+>Wyślij plik</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Wysyła e-mail zawierający zaznaczony plik w załączniku.</para
+></listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Adres</guimenu
+> <guimenuitem
+>Zapisz obrazek tła jako...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Działa tylko w przypadku przeglądania strony internetowej z obrazkiem w tle. Otwiera okno, które pozwala zapisać obraz tła wyświetlanej strony na Twoim komputerze.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Adres</guimenu
+> <guimenuitem
+>Zapisz jako...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Działa tylko w przypadku przeglądania dokumentu lub strony internetowej, umożliwia zapisanie kopii strony na Twoim komputerze.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Adres</guimenu
+> <guimenuitem
+>Zapisz ramkę jako...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Działa podobnie jak <guimenuitem
+>Zapisz jako...</guimenuitem
+>, ale ma zastosowanie do strony z ramkami.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Adres</guimenu
+> <guimenuitem
+>Drukuj...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Drukuje stronę.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Adres</guimenu
+> <guimenuitem
+>Drukuj ramkę...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Drukuje zaznaczoną ramkę strony internetowej.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Adres</guimenu
+> <guimenuitem
+>Otwórz w programie Netscape/Mozilla</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera przeglądaną w &konqueror-miejscownik; stronę za pomocą programu &Netscape;/<application
+>Mozilla</application
+>.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Adres</guimenu
+> <guimenuitem
+>Zakończ</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Zamyka okno &konqueror-dopelniacz;.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-edit">
+<title
+>Menu <guimenu
+>Edycja</guimenu
+></title>
+
+<note
+><para
+>Większość obiektów z menu <guimenu
+>Edycja</guimenu
+> można odnaleźć klikając prawym przyciskiem myszy na wolnym obszarze w widoku.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edycja</guimenu
+> <guimenuitem
+>Cofnij</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Pozwala na cofnięcie błędnego działania.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edycja</guimenu
+> <guimenuitem
+>Wytnij</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Umieszcza zaznaczone obiekty (lub obiekt) w schowku. Po zastosowaniu polecenia <guimenuitem
+>Wklej</guimenuitem
+> zostaną one usunięte ze swojej dotychczasowej lokalizacji i umieszczone w nowej.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edycja</guimenu
+> <guimenuitem
+>Kopiuj</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Kopiuje zaznaczone obiekty do schowka.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edycja</guimenu
+> <guimenuitem
+>Wklej</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Wkleja obiekty ze schowka do obecnie przeglądanego katalogu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F2</keycap
+> </shortcut
+><guimenu
+>Edycja</guimenu
+> <guimenuitem
+>Zmień nazwę</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Pozwala na zmianę nazwy pliku lub katalogu bez konieczności otwierania okna <guimenuitem
+>Właściwości...</guimenuitem
+>. </para
+></listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Delete</keycap
+></shortcut
+> <guimenu
+>Edycja</guimenu
+> <guimenuitem
+>Przenieś do kosza</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Przenosi zaznaczone obiekty do Kosza.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Shift;<keycap
+>Delete</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edycja</guimenu
+> <guimenuitem
+>Usuń</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Usuwa zaznaczone obiekty.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F7</keycap
+></shortcut
+> <guimenu
+>Edycja</guimenu
+> <guimenuitem
+>Kopiuj pliki</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Kopiuje zaznaczone obiekty do innego katalogu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Edycja</guimenu
+> <guimenuitem
+>Przenieś pliki</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Przenosi zaznaczone pliki do innego katalogu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Edycja</guimenu
+> <guimenuitem
+>Utwórz nowe</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Tworzy skrót do programu, adresu <acronym
+>URL</acronym
+>, stacji dyskietek lub &CD-ROM;, albo tworzy nowy katalog lub plik tekstowy/<acronym
+>HTML</acronym
+>. Zobacz dział <link linkend="making"
+>Utwórz nowy...</link
+>, aby uzyskać więcej szczegółów.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Edycja</guimenu
+> <guimenuitem
+>Modyfikuj typ pliku...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera okno <guilabel
+>edycji typu pliku</guilabel
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Edycja</guimenu
+> <guimenuitem
+>Właściwości..</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera okno <guilabel
+>edycji właściwości</guilabel
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Edycja</guimenu
+><guisubmenu
+>Zaznaczenie</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Zawiera kilka opcji służących do zmiany właściwości obiektów zaznaczonych w oknie &konqueror-dopelniacz;: <variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edycja</guimenu
+> <guisubmenu
+>Zaznaczenie</guisubmenu
+> <guimenuitem
+>Zaznacz...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Razem z poleceniami <guimenuitem
+>Usuń zaznaczenie...</guimenuitem
+>, <guimenuitem
+>Usuń całe zaznaczenie</guimenuitem
+> oraz <guimenuitem
+>Odwróć zaznaczenie</guimenuitem
+>, jest to użyteczne narzędzie do zaznaczania wielu plików.</para>
+<para
+>Otwiera proste okno dialogowe w które należy wprowadzić nazwę pliku za pomocą znaków wieloznacznych * oraz ?, na przykład wprowadzając <literal role="extension"
+>*.html</literal
+> zostaną zaznaczone wszystkie pliki kończące się rozszerzeniem <literal role="extension"
+>.html</literal
+>, natomiast po wprowadzeniu <filename
+>?a*</filename
+> zostaną zaznaczone wszystkie pliki, których drugą literą w nazwie jest 'a'.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edycja</guimenu
+> <guisubmenu
+>Zaznaczenie</guisubmenu
+> <guimenuitem
+>Usuń zaznaczenie...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Usuwa zaznaczenie plików i katalogów za pomocą okna dialogowego podobnego do tego używanego w poleceniu <guimenuitem
+>Zaznacz...</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>U</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edycja</guimenu
+> <guisubmenu
+>Zaznaczenie</guisubmenu
+> <guimenuitem
+>Usuń całe zaznaczenie</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Usuwa zaznaczenie wszystkich plików i katalogów.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>*</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Edycja</guimenu
+> <guisubmenu
+>Zaznaczenie</guisubmenu
+> <guimenuitem
+>Odwróć zaznaczenie</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Odwraca bieżące zaznaczenie.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Edycja</guimenu
+> <guisubmenu
+>Zaznaczenie</guisubmenu
+> <guimenuitem
+>Zaznacz wszystko</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Zaznacza cały tekst na stronie &HTML; lub przeglądanej stronie tekstowej, dzięki temu możesz go <guimenuitem
+>skopiować</guimenuitem
+>, a później <guimenuitem
+>wkleić</guimenuitem
+> do edytora tekstów.</para
+></listitem
+> </varlistentry>
+</variablelist>
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Edycja</guimenu
+> <guimenuitem
+>Znajdź...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Wyszukuje określony tekst w przeglądanej stronie tekstowej lub na stronie &HTML;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F3</keycap
+></shortcut
+> <guimenu
+>Edycja</guimenu
+> <guimenuitem
+>Znajdź następny</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Wyszukuje następne wystąpienie oznaczonego ciągu znaków w tekście lub na stronie &HTML;.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Edycja</guimenu
+> <guimenuitem
+>Idź do wiersza...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Przechodzi do określonego wiersza na stronie tekstowej, którą przeglądasz.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-view">
+
+<title
+>Menu <guimenu
+>Widok</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Widok</guimenu
+> <guisubmenu
+>Tryb widoku...</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Daje możliwość wyboru następujących trybów widoku: <guimenuitem
+>Widok ikon</guimenuitem
+>, <guimenuitem
+>Widok wielokolumnowy</guimenuitem
+>, <guimenuitem
+>Widok drzewa</guimenuitem
+>, <guimenuitem
+>Widok z listą szczegółową</guimenuitem
+> lub <guimenuitem
+>Widok tekstowy</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Widok</guimenu
+> <guimenuitem
+>Użyj index.html</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Jeżeli wybrany katalog zawiera plik <filename
+>index.html</filename
+>, to zostanie on otwarty jako strona internetowa zamiast pokazywania listy plików katalogu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Widok</guimenu
+> <guimenuitem
+>Zablokuj bieżący adres</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Blokuje przeglądarkę na bieżącym adresie. </para
+></listitem>
+</varlistentry>
+	  
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Widok</guimenu
+> <guimenuitem
+>Odblokuj wszystkie widoki</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Odblokowuje wszystkie widoki. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Widok</guimenu
+> <guimenuitem
+>Połącz widok</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Łączy bieżący widok z innymi w oknie z wieloma widokami.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Widok</guimenu
+> <guimenuitem
+>Odśwież</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Odświeża widok.</para
+></listitem>
+</varlistentry>
+	  
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Esc</keycap
+></shortcut
+> <guimenu
+>Widok</guimenu
+> <guimenuitem
+>Zatrzymaj</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Zatrzymuje wczytywanie (szczególnie użyteczne przy przeglądaniu stron WWW).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Widok</guimenu
+> <guimenuitem
+>Rozmiar ikon</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Umożliwia wybór rozmiaru ikon podczas przeglądania katalogu w widoku ikon.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Widok</guimenu
+> <guisubmenu
+>Sortuj</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Wybiera kolejność, w jakiej obiekty są przedstawiane w oknie podczas przeglądania katalogów w widoku ikon lub wielokolumnowym.</para
+></listitem>
+</varlistentry>
+	  
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Widok</guimenu
+> <guimenuitem
+>Sortowanie bez rozróżniania wielkości liter</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Decyduje, czy sortowanie w widoku drzewa, listy szczegółowej lub tekstowym uwzględnia wielkość liter.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>U</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>Widok</guimenu
+> <guimenuitem
+>Pokaż źródło dokumentu</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Umożliwia przeglądanie źródła strony WWW.</para>
+<para
+>Opcja dostępna tylko w przypadku przeglądania stron internetowych lub plików &HTML;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Widok</guimenu
+> <guimenuitem
+>Pokaż źródło ramki</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Pokazuje źródło ramki</para>
+<para
+>Opcja jest dostępna tylko, gdy przeglądasz stronę internetową, która korzysta z ramek. Podobne do <guimenuitem
+>Pokaż źródło dokumentu</guimenuitem
+>. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>I</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>Widok</guimenu
+> <guimenuitem
+>Pokaż informacje o dokumencie</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Pokazuje informacje o dokumencie, takie jak tytuł, &URL; czy nagłówki &HTTP; użyte przy pobieraniu dokumentu.</para>
+<para
+>Opcja jest dostępna tylko jeśli przeglądasz stronę &HTML;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Widok</guimenu
+> <guimenuitem
+>Bezpieczeństwo...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Informuje, czy bieżące połączenie przeglądarki jest zabezpieczone za pomocą <acronym
+>SSL</acronym
+> i umożliwia wywołanie okna <guilabel
+>Ustawień szyfrowania...</guilabel
+>. Kliknięcie <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na ikonę kłódki znajdującą się na pasku narzędzi ma to samo działanie.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Widok</guimenu
+> <guimenuitem
+>Ustaw kodowanie</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ustawia kodowanie</para>
+<para
+>Pozwala na wybranie sposobu kodowania wyświetlanych stron &HTML;. <guimenuitem
+>Rozpoznawanie automatyczne</guimenuitem
+> jest zazwyczaj najlepszym wyborem.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Widok</guimenu
+> <guisubmenu
+>Podgląd</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Pozwala na pokazanie podglądu obrazków, plików tekstowych lub stron &HTML; zamiast zwykłych ikon w widoku ikon lub wielokolumnowym.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Widok</guimenu
+> <guimenuitem
+>Pokaż ukryte pliki</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Pokazuje ukryte pliki.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Widok</guimenu
+> <guimenuitem
+>Pokaż szczegóły...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Pozwala na wybranie, które szczegóły mają być pokazane w widoku drzewa, listy szczegółowej oraz tekstowym.</para
+></listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Widok</guimenu
+> <guimenuitem
+>Kolor tła...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Pozwala na wybranie koloru tła dla trybu menedżera plików. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Widok</guimenu
+> <guimenuitem
+>Konfiguracja tła...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Wybiera obrazek tła dla trybu menedżera plików. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-go">
+<title
+>Menu <guimenu
+>Idź</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>strzałka w górę</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Idź</guimenu
+> <guimenuitem
+>Do góry</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Przechodzi poziom w górę w hierarchii katalogów.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>strzałka w lewo</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Idź</guimenu
+> <guimenuitem
+>W tył</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Wraca do poprzedniej strony/katalogu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Strzałka w prawo</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Idź</guimenu
+> <guimenuitem
+>W przód</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>W przód możesz przejść tylko, jeżeli wcześniej przeszedłeś w tył.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Home</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Idź</guimenu
+> <guimenuitem
+>Katalog domowy</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Przechodzi do katalogu domowego.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Idź</guimenu
+> <guimenuitem
+>Programy</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera folder zawierający Twoje programy.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Idź</guimenu
+> <guimenuitem
+>Kosz</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera folder <filename class="directory"
+>Kosz</filename
+> w oddzielnym oknie.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Idź</guimenu
+> <guimenuitem
+>Szablony</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera folder <filename class="directory"
+>Szablonów</filename
+> w nowym oknie.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Idź</guimenu
+> <guimenuitem
+>Autostart</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera folder <filename class="directory"
+>Autostart</filename
+> w oddzielnym oknie.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Idź</guimenu
+> <guisubmenu
+>Najczęściej odwiedzane</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Wyświetla podmenu zawierające ostatnio odwiedzone adresy &URL;. Wybranie jednego z nich spowoduje jego otwarcie w głównym widoku &konqueror-dopelniacz;.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-bookmarks">
+<title
+>Menu <guimenu
+>Zakładki</guimenu
+></title>
+
+<note
+><para
+>Zobacz dział <link linkend="bookmarks"
+>Korzystanie z zakładek</link
+> w tym podręczniku, aby uzyskać dodatkowe informacje na temat tego menu. </para
+></note>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Zakładki</guimenu
+> <guimenuitem
+>Dodaj zakładkę</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Dodaje bieżącą stronę do zakładek.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Zakładki</guimenu
+> <guimenuitem
+>Folder zakładek z kart...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Tworzy folder zakładek zawierający odnośniki do wszystkich adresów otwartych obecnie w kartach. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Zakładki</guimenu
+> <guimenuitem
+>Modyfikuj zakładki</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera <link linkend="bookmarks"
+>Edytor zakładek</link
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Zakładki</guimenu
+> <guimenuitem
+>Nowy folder zakładek</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Tworzy nowy folder w folderze zakładek.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-tools">
+<title
+>Menu <guimenu
+>Narzędzia</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Narzędzia</guimenu
+> <guimenuitem
+>Wykonaj polecenie...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Uruchamia program po wpisaniu jego nazwy do prostego okna dialogowego.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Narzędzia</guimenu
+> <guimenuitem
+>Otwórz terminal</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera okno terminala.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Narzędzia</guimenu
+> <guimenuitem
+>Znajdź plik...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera program &kfind;, umożliwiający wyszukiwanie plików według różnych kryteriów.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Jeśli posiadasz zainstalowane wtyczki &konqueror-dopelniacz;, to w menu <guimenu
+>Narzędzia</guimenu
+> pojawią się dodatkowe polecenia. Zobacz rozdział <link linkend="konq-plugin"
+>Wtyczki &konqueror-dopelniacz;</link
+>, aby uzyskać dodatkowe informacje.</para>
+</sect2>
+
+<sect2 id="menu-settings">
+<title
+>Menu <guimenu
+>Ustawienia</guimenu
+></title>
+
+<note
+><para
+>Zobacz także dział <link linkend="save-settings"
+>Zapisywanie profili i ustawień</link
+>.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Ustawienia</guimenu
+> <guimenuitem
+>Pokaż menu</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Pokazuje/ukrywa pasek menu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ustawienia</guimenu
+> <guimenuitem
+>Paski narzędzi</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera podmenu, za pomocą którego możesz wybrać, które paski narzędzi mają być widoczne.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift; <keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ustawienia</guimenu
+> <guimenuitem
+>Tryb pełnoekranowy</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Przełącza &konqueror-dopelniacz; w tryb pełnoekranowy, w którym okno &konqueror-dopelniacz; zajmuje cały ekran i nie zawiera wielu elementów normalnego okna. Aby wyjść z trybu pełnoekranowego, kliknij na ikonę <guiicon
+>Zakończ tryb pełnoekranowy</guiicon
+> znajdującą się na pasku narzędzi, lub wciśnij <keycombo action="simul"
+>&Ctrl;&Shift; <keycap
+>F</keycap
+></keycombo
+>.</para>
+</listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ustawienia</guimenu
+> <guimenuitem
+>Właściwości widoku zapisywane w katalogu</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Zapisuje właściwości widoku dla bieżącego katalogu. Jeżeli zostanie wybrane to polecenie, to w bieżącym katalogu zostanie utworzony plik <filename
+>.directory</filename
+>, który będzie przechowywał wszystkie informacje na temat rodzaju widoku w jakim był katalog ostatnio przeglądany. Ustawienia te będą wykorzystywane przy ponownym otwarciu tego katalogu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ustawienia</guimenu
+> <guimenuitem
+>Usuń właściwości katalogu</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Usuwa ustawienia katalogu zapisane za pomocą polecenia <guimenuitem
+>Właściwości widoku zapisywane w katalogu</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ustawienia</guimenu
+> <guisubmenu
+>Wczytaj profil widoku</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Wczytuje ustawienia związane z określonym profilem widoku.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ustawienia</guimenu
+> <guimenuitem
+>Zapisz profil widoku "<replaceable
+>NazwaProfilu</replaceable
+>"...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Zapisuje bieżące ustawienia do bieżącego profilu widoku.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ustawienia</guimenu
+> <guimenuitem
+>Konfiguruj profile widoków</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Pozwala zmienić bieżący profil widoku lub stworzyć nowy.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ustawienia</guimenu
+> <guimenuitem
+>Konfiguracja skrótów...</guimenuitem
+> </menuchoice
+></term
+> <listitem
+><para
+>Pozwala przeglądać i zmieniać skróty klawiszowe &konqueror-dopelniacz;, np. skrót związany z poleceniem <guimenuitem
+>Kopiuj</guimenuitem
+> to kombinacja klawiszy <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+>. Pamiętaj, aby przy zmianie nie podać już używanego skrótu.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ustawienia</guimenu
+> <guimenuitem
+>Konfiguracja pasków narzędzi...</guimenuitem
+> </menuchoice
+></term
+> <listitem
+><para
+>Pozwala skonfigurować główny pasek narzędzi, pasek adresu i pasek dodatkowy. Zobacz dział <link linkend="configure-bars"
+>Zmiany pasków</link
+>. </para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ustawienia</guimenu
+> <guimenuitem
+>Konfiguracja: &konqueror;...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Pozwala konfigurować menedżera plików, skojarzenia plików, przeglądarkę, słowa kluczowe, ciasteczka, pośredników, szyfrowanie oraz paski narzędzi.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ustawienia</guimenu
+> <guimenuitem
+>Konfiguruj sprawdzanie pisowni...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Wyświetla okno konfiguracyjne sprawdzania pisowni w którym możesz zmieniać ustawienia dotyczące modułu sprawdzania pisowni w &konqueror-miejscownik;.</para>
+</listitem>
+</varlistentry>
+
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-window">
+<title
+>Menu <guimenu
+>Okno</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Okno</guimenu
+> <guimenuitem
+>Podziel widok w pionie</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Dzieli widok w pionie, na część lewą i prawą.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Okno</guimenu
+> <guimenuitem
+>Podziel widok w poziomie</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Dzieli widok w poziomie, na część górną i dolną.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Okno</guimenu
+> <guimenuitem
+>Zamknij aktywny widok</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Zamyka aktywny widok.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Okno</guimenu
+> <guimenuitem
+>Nowa karta</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera nową, pustą kartę.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>D</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Okno</guimenu
+> <guimenuitem
+>Powiel bieżącą kartę</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Duplikuje bieżącą kartę.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>B</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Okno</guimenu
+> <guimenuitem
+>Odłącz bieżącą kartę</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Pokazuje bieżącą kartę w nowym oknie &konqueror-dopelniacz;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Okno</guimenu
+> <guimenuitem
+>Zamknij bieżącą kartę</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Zamyka bieżącą kartę.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>strzałka w lewo</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Okno</guimenu
+> <guimenuitem
+>Przesuń kartę w lewo</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Przesuwa bieżącą kartę o jedno miejsce w lewo na liście kart.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>strzałka w prawo</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Okno</guimenu
+> <guimenuitem
+>Przesuń kartę w prawo</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Przesuwa bieżącą kartę o jedno miejsce w prawo na liście kart.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Okno</guimenu
+> <guimenuitem
+>Pokaż emulator terminala</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera niewielki widok terminala u dołu głównego okna.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>F9</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Okno</guimenu
+> <guimenuitem
+>Pokaż panel nawigacyjny</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Włącza i wyłącza panel nawigacyjny &konqueror-dopelniacz;. Zobacz <xref linkend="sidebar"/>.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-help">
+<title
+>Menu <guimenu
+>Pomoc</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Pomoc</guimenu
+> <guimenuitem
+>Podręcznik &konqueror;</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera niniejszy dokument.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Shift;<keycap
+>F1</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Pomoc</guimenu
+> <guimenuitem
+>Co to jest?</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Umieszcza znak zapytania przy wskaźniku myszy. Kliknięcie na element okna, jak na przykład przycisk <guiicon
+>Stop</guiicon
+>, powoduje wyświetlenie krótkiego wyjaśnienia. Zobacz <link linkend="bubble"
+>Podpowiedzi oraz Co to jest?</link
+> .</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Pomoc</guimenu
+> <guimenuitem
+>Wprowadzenie do &konqueror-dopelniacz;</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Wyświetla ponownie okna wprowadzające do &konqueror-dopelniacz;, takie jak przy pierwszym uruchomieniu programu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Pomoc</guimenu
+> <guimenuitem
+>Raport o błędzie...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Otwiera okno zgłoszenia błędu w programie.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Pomoc</guimenu
+> <guimenuitem
+>O programie &konqueror;...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Wyświetla krótką informację na temat &konqueror-dopelniacz; - numer wersji, autorów i licencję.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Pomoc</guimenu
+> <guimenuitem
+>Informacje o KDE...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Pokazuje informacje na temat wersji &kde;, którą używasz.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+</sect1>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

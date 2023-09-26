@@ -1,0 +1,195 @@
+<chapter id="config">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>(c) 2005 Mandriva</firstname
+><surname
+>Poland</surname
+><affiliation
+><address
+><email
+>biuro@mandriva.pl</email
+></address
+></affiliation
+><contrib
+>Polskie tłumaczenie</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-11-06</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+
+<title
+>Konfiguracja &konqueror-dopelniacz;</title>
+
+<para
+>Podobnie jak inne programy środowiska &kde;, &konqueror; jest w pełni możliwy do skonfigurowania. Dzięki temu możesz dokładnie dostosować jego wygląd i zachowanie do swoich potrzeb.</para>
+
+<sect1 id="configure-bars">
+<title
+>Paski narzędzi</title>
+
+<para
+>Po zainstalowaniu &kde;, &konqueror; posiada następujące paski: pasek menu, główny pasek narzędzi, pasek adresu i ewentualnie pasek zakładek.</para>
+
+<para
+>Być może nie potrzebujesz wszystkich tych pasków. Aby ukryć któryś z nich wystarczy przejść do menu <menuchoice
+><guimenu
+>Ustawienia</guimenu
+><guisubmenu
+>Paski narzędzi</guisubmenu
+> </menuchoice
+> i odznaczyć wybrany pasek. Aby pasek został wyświetlony należy pole zaznaczyć.</para
+> 
+
+<para
+>Pasek menu może być włączany i wyłączany za pomocą kombinacji klawiszy <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+>. </para>
+
+<!-- FIXME -->
+<para
+>Po lewej stronie każdego paska widoczne są pionowe linie. Klikając na nie lewym przyciskiem myszy, powodujemy <quote
+>zwinięcie</quote
+> paska, co oznacza, że jest on ukryty, ale może być łatwo pokazany po ponownym kliknięciu na pionowej linii. Za ich pomocą można także zmienić położenie paska przeciągając go w granicach okna.</para>
+
+<para
+>Jeżeli klikniesz <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na pasek, to wyświetlone zostanie jego menu konfiguracyjne. Możesz wybrać orientację, pozycję tekstu oraz rozmiar ikon</para>
+
+<para
+>Ikony pokazane na różnych paskach mogą zostać zmieniane za pomocą polecenia z menu <menuchoice
+><guimenu
+>Ustawienia</guimenu
+> <guimenuitem
+>Konfiguracja pasków narzędzi...</guimenuitem
+></menuchoice
+> , które powoduje wyświetlenie okna <guilabel
+>Konfiguracji pasków narzędzi</guilabel
+>. Główny i dodatkowe paski narzędzi są podzielone na działy, takie jak "Główny pasek narzędzi &lt;&konqueror;&gt;", "Główny pasek narzędzi &lt;khtmlpart&gt;" oraz "Dodatkowy pasek narzędzi &lt;khtmlsettingsplugin&gt;". Liczba i rodzaj tych działów zależeć będzie od tego, czy &konqueror; działa w trybie przeglądarki internetowej, czy menedżera plików, oraz od zainstalowanych wtyczek.</para>
+
+</sect1>
+
+<sect1 id="configshort">
+<title
+>Skróty klawiszowe</title>
+<para
+>Aby zmienić domyślne skróty klawiszowe wykorzystywane przez &konqueror-dopelniacz; wybierz menu<menuchoice
+><guimenu
+>Ustawienia</guimenu
+><guimenuitem
+>Konfiguracja skrótów... </guimenuitem
+></menuchoice
+>. Wyświetlone zostanie okno pokazane na poniższym obrazku. </para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Konfiguracja skrótów ekran 1</phrase>
+</textobject>
+</mediaobject>
+<para
+>Wyszukaj odpowiednie polecenie do którego chcesz dodać lub któremu chcesz zmienić skrót klawiszowy i zaznacz je klikając lewym przyciskiem myszy. Będziesz miał wtedy możliwość zmiany skrótu zaznaczając pole <guilabel
+>Brak</guilabel
+>, <guilabel
+>Domyślny</guilabel
+> lub <guilabel
+>Własny</guilabel
+> lub klikając na duży przycisk <guilabel
+>Skrót dla wybranej akcji</guilabel
+>.</para>
+
+<para
+>Jeśli wybierzesz <guilabel
+>Własny</guilabel
+>, a następnie <guilabel
+>Zaawansowane</guilabel
+>, pojawi się następujące okno: </para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Konfiguracja skrótów ekran 2</phrase>
+</textobject>
+</mediaobject>
+<para
+>Wybierz czy chcesz zmienić skrót <guilabel
+>Główny</guilabel
+>, czy <guilabel
+>Alternatywny</guilabel
+> i wciśnij kombinację, która ma działać jako skrót, na przykład <keycombo action="simul"
+> &Ctrl;&Shift;<keycap
+>S</keycap
+></keycombo
+>. Jeżeli pole<guilabel
+>Zamknij automatycznie</guilabel
+> jest zaznaczone, to okno zostanie zamknięte zaraz po wciśnięciu kombinacji klawiszy. Jeśli nie, musisz wcisnąć albo przycisk <guibutton
+>OK</guibutton
+>, albo <guibutton
+>Anuluj</guibutton
+>. Klikając na czarną ikonę z białym krzyżykiem spowodujesz usunięcie skrótu.</para>
+
+<sect2 id="userdefmenus">
+<title
+>Menu użytkownika</title>
+<para
+>Możesz dodać własne menu rozwijane do &konqueror-dopelniacz;, które zostanie wyświetlone po wciśnięciu odpowiedniej kombinacji klawiszy. Natomiast wybranie z niego odpowiedniej pozycji nastąpi za pomocą klawiszy strzałek lub poprzez naciśnięcie odpowiedniego klawisza.</para>
+<para
+>Aby utworzyć takie menu ustaw <guilabel
+>Własny</guilabel
+> skrót do każdego z poleceń, które chcesz, aby się pojawiło w menu, a w oknie <guilabel
+>Konfiguracji skrótu</guilabel
+> zaznacz opcję <guilabel
+>Tryb wieloklawiszowy</guilabel
+>. Następnie naciśnij kombinację klawiszy, która ma wywołać nowe menu, a potem klawisz, który ma wywoływać tę akcję.</para>
+</sect2>
+</sect1>
+
+<sect1 id="othersettings">
+<title
+>Inne ustawienia</title>
+<para
+>Po wybraniu z menu <menuchoice
+><guimenu
+>Ustawienia</guimenu
+><guimenuitem
+> Konfiguracja: Konqueror...</guimenuitem
+></menuchoice
+> otworzy się okno dialogowe, które możesz wykorzystać do ustawienia większości zachowań &konqueror-dopelniacz;. Posiada ono kilka działów, pomiędzy którymi można się przełączać za pomocą kliknięcia <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na jedną z ikon znajdujących się po lewej stronie okna.</para>
+<para
+>Klikając na przycisk <guibutton
+>Pomoc</guibutton
+> uzyskasz szczegółowe instrukcje na temat korzystania z każdego z tych działów. Możesz także skorzystać z funkcji <link linkend="bubble"
+>Co to jest?</link
+>.</para>
+</sect1>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

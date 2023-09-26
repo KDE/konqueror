@@ -9,14 +9,14 @@
 # Ilpo Kantonen <ilpo@iki.fi>, 2005.
 # Mikko Piippo <piippo@cc.helsinki.fi>, 2007.
 # Teemu Rytilahti <teemu.rytilahti@d5k.net>, 2008.
-# Tommi Nieminen <translator@legisign.org>, 2009, 2010, 2011, 2020.
+# Tommi Nieminen <translator@legisign.org>, 2009, 2010, 2011, 2020, 2023.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-17 00:46+0000\n"
-"PO-Revision-Date: 2020-12-16 20:08+0200\n"
+"PO-Revision-Date: 2023-08-26 18:24+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -25,58 +25,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2012-12-01 22:22:04+0000\n"
-"X-Generator: Lokalize 20.08.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: src/browseropenorsavequestion.cpp:89
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "Tyyppi: %1"
 
 #: src/browseropenorsavequestion.cpp:97
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "Muista toiminto tämän tyypin tiedostoille"
 
 #: src/browseropenorsavequestion.cpp:149 src/browseropenorsavequestion.cpp:237
-#, fuzzy, kde-format
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr "&Avaa ohjelmalla %1"
+msgstr "A&vaa ohjelmalla %1"
 
 #: src/browseropenorsavequestion.cpp:213
-#, fuzzy, kde-format
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "&Avaa ohjelmalla %1"
+msgstr "A&vaa ohjelmalla %1"
 
 #: src/browseropenorsavequestion.cpp:224 src/browseropenorsavequestion.cpp:318
-#, fuzzy, kde-format
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr "&Avaa ohjelmalla %1"
+msgstr "Avataanko ”%1”?"
 
 #: src/browseropenorsavequestion.cpp:228
-#, fuzzy, kde-format
-#| msgid "&Open With..."
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr "&Avaa ohjelmalla..."
+msgstr "Avaa &ohjelmalla…"
 
 #: src/browseropenorsavequestion.cpp:246
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
-msgstr "&Avaa ohjelmalla"
+msgstr "Avaa &ohjelmalla"
 
 #: src/browseropenorsavequestion.cpp:315
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "&Avaa"
@@ -85,21 +79,21 @@ msgstr "&Avaa"
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr ""
+msgstr "Nimi: %1"
 
 #: src/browseropenorsavequestion.cpp:341
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "Tämä on palvelimen ehdottama nimi"
 
 #: src/htmlsettingsinterface.cpp:19
 msgid "Accept"
-msgstr ""
+msgstr "Hyväksy"
 
 #: src/htmlsettingsinterface.cpp:21
 msgid "Reject"
-msgstr ""
+msgstr "Hylkää"
 
 #: src/konq_popupmenu.cpp:220
 #, kde-format

@@ -1,0 +1,701 @@
+<chapter id="browser">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>(c) 2005 Mandriva</firstname
+><surname
+>Poland</surname
+><affiliation
+><address
+><email
+>biuro@mandriva.pl</email
+></address
+></affiliation
+><contrib
+>Polskie tłumaczenie</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-11-05</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+
+<title
+>&konqueror; - przeglądarka internetowa</title>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="konqorg.png"/></imageobject>
+<textobject>
+<phrase
+>Przeglądanie www.konqueror.org</phrase>
+</textobject>
+</mediaobject>
+
+<sect1 id="conn-inet">
+<title
+>Łączenie się z Internetem</title>
+
+<para
+>Jeśli jesteś już podłączony do Internetu, to możesz używać &konqueror-dopelniacz; do przeglądania sieci tak samo łatwo, jak do obsługi Twoich plików lokalnych. Wystarczy wpisać adres &URL; w pasku <guilabel
+>adresu</guilabel
+>, wcisnąć klawisz &Enter; i gotowe!</para>
+
+<itemizedlist>
+<listitem
+><para
+>Jeśli korzystasz z połączenia modemowego, to zapewne używasz programu &kppp; lub podobnego do nawiązania połączenia.</para
+></listitem>
+
+<listitem
+><para
+>Jeśli Twój komputer jest w sieci lokalnej (<acronym
+>LAN</acronym
+>) podłączonej do Internetu przez pośrednika (proxy), to będzie konieczne odpowiednie skonfigurowanie &konqueror-dopelniacz;. Można to zrobić w zakładce <guilabel
+>Pośrednik (Proxy)</guilabel
+> wybierając z menu <menuchoice
+><guimenu
+>Ustawienia</guimenu
+><guimenuitem
+>Konfiguracja: Konqueror...</guimenuitem
+> </menuchoice
+>.</para
+></listitem>
+
+<listitem
+><para
+>Jeśli jesteś szczęściarzem i posiadasz szybkie połączenie kablowe, to dostawca internetowy prawdopodobnie dostarczył Ci modem za pomocą którego łączysz się z siecią zewnętrzną. Niestety sposób ustanowienia połączenia zależy od usługodawcy internetowego i w pewnym sensie od dystrybucji systemu Linux/&UNIX;, jakiej używasz. Niektórzy <acronym
+>dostawcy</acronym
+> łączą swoich klientów z internetem za pośrednictwem serwera proxy, a w tym przypadku konieczne będzie odpowiednie skonfigurowanie &konqueror-dopelniacz;. Jeśli pojawią się problemy ze skonfigurowaniem połączenia, pomocne może być listy dyskusyjnej użytkowników Twojej dystrybucji.</para>
+</listitem>
+</itemizedlist>
+
+<note
+><para
+>Komunikat o błędzie, taki jak <errorname
+>Nieznany serwer</errorname
+> zazwyczaj oznacza, że &konqueror; nie może nawiązać połączenia z Internetem albo podany został błędny adres &URL;.</para
+></note>
+
+</sect1>
+
+<sect1 id="surf">
+<title
+>Przeglądanie sieci i wyszukiwanie</title>
+
+<para
+>Kiedy już posiadasz dostęp do Internetu, możesz za pomocą &konqueror-dopelniacz; przeglądać jego zasoby, tak jak to możesz robić każdą inną przeglądarką WWW.</para>
+
+<para
+>Wpisz adres &URL; do paska adresu i wciśnij klawisz &Enter; lub kliknij <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na przycisk <guibutton
+>Idź</guibutton
+>, znajdujący się na prawo od paska adresu, a &konqueror; pobierze i wyświetli stronę. Jeśli odwiedzałeś już tę stronę wcześniej, to opcja programu &konqueror; <link linkend="path-complete"
+>automatycznego dopełniania tekstu</link
+> pomoże Ci wpisać adres &URL;. Możesz także przeszukać stronę <guilabel
+>Historii</guilabel
+> w <link linkend="sidebar"
+>Panelu nawigacji</link
+>. Jeśli chcesz skorzystać z jednej z wyszukiwarek zawartych w programie &konqueror;, to funkcja <link linkend="enhanced-browsing"
+>skrótów sieciowych</link
+> może Ci to ułatwić.</para>
+
+<para
+>Kliknij <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na odnośnik do strony, aby na nią przejść.</para>
+
+<para
+>Aby otworzyć odnośnik w nowym oknie &konqueror-dopelniacz;, pozostawiając stare ciągle widoczne, kliknij środkowym przyciskiem myszy na odnośniku lub kliknij na nim <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy i wybierz polecenie <guimenuitem
+>Otwórz w nowym oknie</guimenuitem
+>. Możesz również wybrać polecenie <guimenuitem
+>Otwórz w nowej karcie</guimenuitem
+>. <link linkend="tabbrowse"
+>Karty</link
+> umożliwią Ci otworzenie wielu stron w jednym oknie &konqueror-dopelniacz;, co ułatwi szybkie przełączanie się pomiędzy nimi - za pomocą jednego kliknięcia.</para>
+
+<para
+>Możesz także wybrać tryb wielowidokowy wciskając klawisze <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+> </keycombo
+> lub wybierając z menu <menuchoice
+><guimenu
+>Okno</guimenu
+><guimenuitem
+>Podziel widok w pionie/poziomie</guimenuitem
+></menuchoice
+>, która pozwoli Ci przeglądać różne strony w tym samym czasie. Może być to użyteczne, gdy przeglądasz wiele skomplikowanych stron <acronym
+>HTML</acronym
+>, jednak gdy to robisz, upewnij się, że niewielkie pole połączenia widoków (z ikoną symbolizującą ogniwo łańcucha) znajdujące się w prawym dolnym rogu jest puste.</para>
+<para
+>Aby powrócić do poprzedniej strony użyj klawiszy skrótu <keycombo action="simul"
+>&Alt;<keysym
+>strzałka w lewo</keysym
+></keycombo
+>, przycisku <guibutton
+>W tył</guibutton
+> na pasku narzędzi lub opcji menu <menuchoice
+><guimenu
+>Idź</guimenu
+> <guimenuitem
+>W tył</guimenuitem
+></menuchoice
+>.</para>
+<para
+>Podobnie, kiedy przeszedłeś w tył, możesz wrócić z powrotem używając klawiszy <keycombo action="simul"
+>&Alt;<keysym
+>strzałka w prawo</keysym
+></keycombo
+>, przycisku <guibutton
+>W przód</guibutton
+> lub opcji menu <menuchoice
+><guimenu
+>Idź</guimenu
+> <guimenuitem
+>W przód</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Jeśli z jakiegokolwiek powodu chcesz zatrzymać pobieranie, to użyj klawisza <keycap
+>Esc</keycap
+>, przycisku paska narzędzi <guibutton
+>Zatrzymaj</guibutton
+> lub polecenia menu <menuchoice
+><guimenu
+>Widok</guimenu
+> <guimenuitem
+>Zatrzymaj</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Kiedy przeglądasz strony internetowe, powinieneś zobaczyć dwie nowe ikony w pasku narzędzi - wyglądające jak lupy ze znakiem <keycap
+>+</keycap
+> i <keycap
+>-</keycap
+>. Użyj ich do zmiany rozmiaru tekstu na stronie, jeśli trudno będzie Ci go czytać. Działanie tego narzędzia zależy od tego, jak została skonstruowana strona internetowa.</para>
+</sect1>
+
+<sect1 id="tabbrowse">
+<title
+>Przeglądanie w kartach</title>
+<para
+>Używając tej opcji, możesz spowodować, że &konqueror; załaduje wiele stron internetowych w tym samym oknie i będzie można się między nimi przełączać używając kart. W ten sposób możesz wczytywać stronę <quote
+>w tle</quote
+> podczas, gdy czytasz inną.</para>
+
+<para
+>Aby używać kart do przeglądania stron, kliknij <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na odnośniku i z menu podręcznego wybierz <guimenuitem
+>Otwórz w nowej karcie</guimenuitem
+>. Strona zostanie pobrana i wyświetlona jak zwykle, ale z kartami u góry widoku, jedna karta na jedną stronę. Kliknij <mousebutton
+>lewym </mousebutton
+> przyciskiem myszy na kartę, aby ją przeglądać lub użyj skrótów <keycombo action="simul"
+>&Ctrl;<keycap
+>[</keycap
+></keycombo
+> oraz <keycombo action="simul"
+>&Ctrl;<keycap
+>]</keycap
+></keycombo
+> do przełączania się między kartami. Możesz również przechodzić między kartami za pomocą <mousebutton
+>kółka</mousebutton
+> myszy, o ile kursor myszy znajduje się nad paskiem z kartami. Natomiast podwójne kliknięcie nad pustym obszarem na pasku kart otwiera nową kartę.</para>
+
+<para
+>Polecenie <guimenuitem
+>Otwórz kartę w tle</guimenuitem
+>, wyświetlane po kliknięciu prawym przyciskiem myszy powoduje także pobranie strony i stworzenie dla niej karty, jednak karta zostanie wyświetlona dopiero po kliknięciu na nią <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy.</para>
+
+<para
+>Jeśli zaznaczysz pole <guilabel
+>Otwórz odnośniki w nowej karcie, a nie w nowym oknie </guilabel
+> w dziale <guimenuitem
+>Przeglądanie WWW</guimenuitem
+> w menu <menuchoice
+><guimenu
+>Ustawienia</guimenu
+><guimenuitem
+>Konfiguracja: Konqueror... </guimenuitem
+></menuchoice
+>, to kliknięcie środkowym przyciskiem myszy spowoduje wyświetlenie strony w nowej karcie, a jeżeli w trakcie kliknięcia zostanie przytrzymany klawisz &Shift;i to karta zostanie otwarta w tle.</para>
+
+<para
+>Klikając <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na kartę, spowodujemy wyświetlenie się menu z następującymi opcjami:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nowa karta</guimenuitem
+></term>
+<listitem
+><para
+>Otwiera nową, pustą kartę. Możesz do niej wczytać stronę internetową wpisując adres &URL; do paska adresu lub wybierając jedną z zakładek lub jeden z elementów historii, znajdującej się w <link linkend="sidebar"
+>panelu nawigacyjnym</link
+>.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Powiel kartę</guimenuitem
+></term>
+<listitem
+><para
+>Tworzy duplikat aktywnej karty.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Odłącz kartę</guimenuitem
+></term>
+<listitem
+><para
+>Usuwa zaznaczoną kartę z bieżącego okna &konqueror-dopelniacz; i otwiera ją w nowym oknie &konqueror-dopelniacz;.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Zamknij kartę</guimenuitem
+></term>
+<listitem
+><para
+>Zamyka zaznaczoną kartę.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Odśwież</guimenuitem
+></term>
+<listitem
+><para
+>Odświeża zawartość bieżącej karty.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guisubmenu
+>Inne karty</guisubmenu
+></term>
+<listitem
+><para
+>Wyświetla podmenu pokazujące wszystkie pozostałe karty. Po wybraniu karty z tej listy zostaje ona uaktywniona.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guisubmenu
+>Inne karty</guisubmenu
+><guimenuitem
+>Odśwież wszystkie karty</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Wczytuje ponownie zawartość każdej z kart.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guisubmenu
+>Inne karty</guisubmenu
+><guimenuitem
+>Zamknij pozostałe karty</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Zamyka wszystkie karty za wyjątkiem zaznaczonej.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="enhanced-browsing">
+<title
+>Skróty sieciowe</title
+> 
+
+<para
+>Jeśli funkcja skrótów sieciowych programu &konqueror; jest włączona, to pozwala Ci ona na dostarczenie zapytania bezpośrednio do wyszukiwarki lub podobnej strony internetowej, bez konieczności jej wcześniejszego odwiedzania.</para
+> <para
+>Na przykład, wprowadzenie do paska adresu formuły <userinput
+>gg:konqueror</userinput
+> i wciśnięcie przycisku &Enter; wyśle zapytanie do <trademark
+>Google</trademark
+> strony związane z &konqueror-miejscownik;.</para
+> <para
+>Aby zobaczyć, jakie skróty sieciowe są dostępne, a także dodać własne użyj menu <menuchoice
+><guimenu
+>Ustawienia</guimenu
+><guimenuitem
+>Konfiguracja Konqueror...</guimenuitem
+></menuchoice
+> do otwarcia okna ustawień, a następnie wybierz dział <guiicon
+>Skróty sieciowe</guiicon
+>.</para>
+
+<para
+>Kiedy otworzysz to okno. możesz stworzyć nowy skrót sieciowy za pomocą przycisku <guibutton
+>Nowy...</guibutton
+>. Pojawi się okienko dialogowe z prośbą o podanie niezbędnych danych dla nowego skrótu sieciowego. Pierwsze pole zawiera zrozumiałą dla użytkownika nazwę serwisu wyszukiwania. Na przykład <trademark
+>Google</trademark
+>.</para>
+
+<para
+>Kolejne pole zawiera &URI; (szablon adresu), które zostanie użyte do wyszukania. Tekst, który ma zostać wyszukany powinien zostać oznaczony za pomocą <userinput
+>\{@}</userinput
+> lub <userinput
+>\{0}</userinput
+>. Preferowane jest <userinput
+>\{@}</userinput
+>, ponieważ usuwa wszystkie zmienne zapytania (<replaceable
+>nazwa</replaceable
+>=<replaceable
+>wartość</replaceable
+>) z wyszukiwanego tekstu, podczas gdy <userinput
+>\{0}</userinput
+> zostanie wstawione bez zmian. </para>
+
+<para
+>Możesz użyć <userinput
+>\{1}</userinput
+> ... <userinput
+>\{n}</userinput
+>, aby wstawić odpowiednie słowa z zapytania, a także <userinput
+>\{<varname
+><replaceable
+>nazwa</replaceable
+></varname
+>}</userinput
+> by wstawić wartość podaną jako <userinput
+><varname
+><replaceable
+>nazwa</replaceable
+></varname
+>=<replaceable
+>wartość</replaceable
+></userinput
+> w zapytaniu użytkownika. Ponadto możliwe jest podanie wielu elementów zapytania (nazw, liczb lub ciągów znaków) jednocześnie, np. <userinput
+>(\{<varname
+><replaceable
+>nazwa1</replaceable
+></varname
+>,<varname
+><replaceable
+>nazwa2</replaceable
+></varname
+>,...,"<replaceable
+>ciąg znaków</replaceable
+>"})</userinput
+>. Pierwsza od lewej pasująca wartość zostanie użyta w wynikowym &URI; zapytania. Można użyć ciągu znaków w cudzysłowach, który zostanie użyty jeśli nic innego nie zostanie dopasowane z listy.</para>
+
+<para
+>Aby stworzyć skrót sieciowy potrzebny jest przede wszystkim adres &URI;, który zostanie użyty do wyszukiwania. Kontynuując poprzedni przykład wyszukiwarki <trademark
+>Google</trademark
+>, dla niej należałoby wpisać <userinput
+>http://www.google.com/search?q=\{@}&amp;ie=UTF-8&amp;oe=UTF-8</userinput
+>. Często można w łatwy sposób dowiedzieć się, gdzie umieścić <userinput
+>\{@}</userinput
+> używając wyszukiwarki do znalezienia jakiegoś słowa, a następnie analizując adres &URL;. Na przykład, wyszukując słowo &konqueror; w <trademark
+>Google</trademark
+> dostaniemy następujący &URL;: <ulink url="http://www.google.com/search?q=konqueror&amp;ie=UTF-8&amp;oe=UTF-8"
+>http://www.google.com/search?q=konqueror&amp;ie=UTF-8&amp;oe=UTF-8</ulink
+>. Teraz trzeba tylko zamienić słowo &konqueror; na <userinput
+>\{@}</userinput
+>, aby uzyskać poszukiwany adres &URI;.</para>
+
+<para
+>W trzecim polu trzeba podać skrót &URI;. Na przykład <userinput
+>gg</userinput
+> w <userinput
+>gg:konqueror</userinput
+>. Dalej, w liście rozwijanej, można wybrać kodowanie znaków, które zostanie użyte do wygenerowania zapytania wyszukującego. Na koniec wciśnij &Enter; i Twój nowy skrót powinien już być dostępny w &konqueror-miejscownik;.</para>
+
+</sect1>
+
+<sect1 id="accesskeys">
+
+<title
+>Klawisze dostępu</title>
+
+<para
+>&konqueror; obsługuje w pełni atrybut <sgmltag class="attribute"
+>accesskey</sgmltag
+> &HTML;. Klawisze dostępu pozwalają używać klawiatury do wykonywania czynności, które zwykle wykonuje się myszą, takich jak na przykład otwieranie odnośników. Zaletą tego jest, po prostu, że można korzystać ze strony za pomocą innych urządzeń niż urządzenia wskazujące.</para>
+
+<para
+>Aby uaktywnić klawisze dostępu w &konqueror-miejscownik;, naciśnij i puść klawisz &Ctrl;. Wtedy jeśli odnośniki na stronie mają ustawiony atrybut <sgmltag class="attribute"
+>accesskey</sgmltag
+>, to nad odnośnikiem pojawi się znak (lub znaki), które określają, który klawisz należy nacisnąć. Możesz je nacisnąć, zamiast klikać myszą, żeby podążyć za tym odnośnikiem. Aby wyłączyć klawisze dostępu, naciśnij klawisz &Ctrl; jeszcze raz.</para>
+
+<note
+><para
+>Żeby używać tej funkcji, projektant strony musi przypisać klawisze dostępu do odnośników stron za pomocą atrybutu  <sgmltag class="attribute"
+>accesskey</sgmltag
+>. Wielu projektantów stron nie umieszcza tego atrybutu i wtedy ta funkcja nie działa na tej konkretnej stronie.</para
+></note>
+
+</sect1>
+
+<sect1 id="useragent">
+<title
+>Identyfikacja przeglądarki</title>
+<para
+>Kiedy &konqueror; łączy się ze stroną internetową, to przesyła krótką informację na temat przeglądarki. Wiele stron internetowych używa tej informacji do dostosowywania się do poszczególnych przeglądarek.</para>
+<para
+>Niestety, niektóre źle napisane strony odmawiają pracy, jeśli przeglądarka która odbiera stronę nie jest przez nią rozpoznawana jako <quote
+>odpowiednia</quote
+>. Na szczęście, &konqueror; powinien pracować poprawnie z większością stron internetowych.</para>
+<para
+>Mimo to, aby pokonać ten potencjalny problem, możesz zmienić informację identyfikującą przeglądarkę, którą wysyła &konqueror; do stron lub domen, poprzez wybranie z menu <menuchoice
+><guimenu
+>Ustawienia</guimenu
+><guimenuitem
+>Konfiguracja: Konqueror...</guimenuitem
+></menuchoice
+> działu <guiicon
+>Identyfikacja przeglądarki</guiicon
+>.</para>
+<note
+><para
+>Problemy z poprawnym działaniem strony mogą być także spowodowane wykorzystaniem języka &Java;, czy JavaScript. Jeśli podejrzewasz, że to może być przyczyną, upewnij się, że zostały one włączone w dziale <guiicon
+>Java i JavaScript </guiicon
+> w oknie <guilabel
+>Ustawienia</guilabel
+>.</para
+></note>
+
+</sect1>
+
+<sect1 id="save-print-web">
+<title
+>Zapisywanie i drukowanie stron</title>
+
+<para
+>Kiedy przeglądasz stronę internetową, to możesz ją zapisać (lub co najmniej jej tekst źródłowy <acronym
+>HTML</acronym
+>, czy podobny) na swoim dysku lokalnym za pomocą polecenia z menu <menuchoice
+><guimenu
+>Adres</guimenu
+><guimenuitem
+>Zapisz jako...</guimenuitem
+></menuchoice
+>. Jeśli przeglądana przez Ciebie strona używa ramek, to także uaktywnione zostanie polecenie <menuchoice
+><guimenu
+>Adres</guimenu
+><guimenuitem
+>Zapisz ramkę jako...</guimenuitem
+></menuchoice
+>. Kliknij najpierw <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na ramkę, którą chcesz zapisać.</para>
+
+<para
+>Jeśli strona używa obrazu w tle, możesz go również zapisać stosując polecenie <menuchoice
+><guimenu
+>Adres</guimenu
+><guimenuitem
+>Zapisz obrazek tła jako...</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Natomiast jeśli chcesz zapisać zwykły obrazek zamieszczony na stronie, to kliknij <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na ten obrazek i z podręcznego menu wybierz polecenie <guimenuitem
+>Zapisz obrazek jako...</guimenuitem
+>. Pamiętaj o respektowaniu praw autorskich i zapytaj o pozwolenie zanim użyjesz zapisanego obrazka inaczej niż tylko dla własnej przyjemności oglądania.</para>
+
+<para
+>Jeśli klikniesz <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na odnośniku (który może być także zdjęciem) i wybierzesz z podręcznego menu polecenie <guimenuitem
+>Zapisz odnośnik jako...</guimenuitem
+>, to podstawowy tekst źródłowy <acronym
+>HTML</acronym
+> lub podobny zostanie pobrany i zapisany na Twoim dysku lokalnym.</para>
+
+<para
+>Jeśli klikniesz <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na odnośniku (który może być także zdjęciem) i wybierzesz z podręcznego menu polecenie <guimenuitem
+>Skopiuj adres odnośnika...</guimenuitem
+>, to adres &URL; odnośnika zostanie skopiowany do schowka, z którego będzie można go wkleić na przykład do wiadomości e-mail.</para>
+
+<para
+>Jeśli klikniesz <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na obrazek i wybierzesz z podręcznego menu polecenie <guimenuitem
+>Kopiuj adres obrazka</guimenuitem
+>, to adres &URL; obrazka zostanie skopiowany do schowka.</para>
+
+<para
+>Aby zapisać całą stronę, łącznie z obrazkami, użyj polecenia <guimenuitem
+>Archiwizuj stronę WWW...</guimenuitem
+> z menu <guimenu
+>Narzędzia</guimenu
+>. Zwróć uwagę, że ta funkcja jest obsługiwana przez <link linkend="konq-plugin"
+>wtyczkę </link
+> i mogła nie zostać zainstalowana w Twoim systemie. Strona zostanie zapisana w formie pojedynczego pliku z rozszerzeniem <literal role="extension"
+>.war</literal
+> i może zostać otworzona za pomocą kliknięcia <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na nazwę pliku.</para>
+
+<para
+>Drukowanie kopii przeglądanej strony jest wykonywane łatwo za pomocą polecenia menu <menuchoice
+><guimenu
+>Adres</guimenu
+> <guimenuitem
+>Drukuj...</guimenuitem
+></menuchoice
+> lub <guimenuitem
+>Drukuj ramkę</guimenuitem
+>, ewentualnie za pomocą przycisku <guiicon
+>Drukuj</guiicon
+> znajdującego się na pasku narzędzi.</para>
+
+</sect1>
+
+<sect1 id="ftp">
+<title
+>&FTP;</title>
+
+<para
+>&FTP;, czyli File Transfer Protocol, jest jednym z pierwszych i jak dotąd prawdopodobnie najlepszym sposobem transferu plików pomiędzy komputerami w Internecie.</para>
+
+<para
+>Za pomocą &FTP; możesz przeglądać pliki i katalogi na innym komputerze tak, jakby były one w Twoim własnym systemie, a także pobrać je na swój komputer używając zwykłego polecenia &konqueror-dopelniacz; <guimenuitem
+>Kopiuj</guimenuitem
+> i <guimenuitem
+>Wklej</guimenuitem
+>, czy korzystając z techniki przeciągnij i upuść. A jeśli istnieje taka możliwość, możesz także skopiować pliki ze swojego komputera do systemu plików innej maszyny. Aby spróbować wpisz adres &URL;</para>
+
+<screen
+><userinput
+>ftp://ftp.kde.org/pub/kde</userinput
+>
+</screen>
+
+<para
+>w pasku adresu i wciśnij &Enter;. Jeśli jesteś podłączony do Internetu i jeśli strona &FTP; &kde; nie jest przeciążona, to powinieneś zobaczyć katalog <filename class="directory"
+>/pub/kde</filename
+> na &kde-ftp;</para>
+
+<note
+><para
+>Jednakże, tak dla uściślenia, adres &URL; &FTP; powinien być wpisany rozpoczynając od <userinput
+>ftp://</userinput
+>, a adres &URL; <acronym
+>WWW </acronym
+> powinien zaczynać się od <userinput
+>http://</userinput
+>. Mimo to &konqueror; jest zwykle na tyle inteligentny, że domyśla się o jaki adres chodzi i sam wstawia te początkowe znaki, jeśli ich nie podasz.</para
+></note>
+
+<para
+>Kiedy uzyskujesz dostęp do strony &FTP; to zazwyczaj potrzebna będzie jakaś forma nazwy użytkownika i hasła. Aby uprościć ten proces, większość stron &FTP; oferuje pliki do darmowego pobierania pod nazwą użytkownika <systemitem class="username"
+>anonymous</systemitem
+> i z Twoim adresem e-mail jako hasłem. Aby jeszcze bardziej ułatwić Ci życie, &konqueror; automatycznie wprowadzi te dane bez zawracania Ci głowy. </para>
+
+<note
+><para
+>Jeśli chcesz skorzystać ze strony &FTP;, która nie wymaga nazwy użytkownika i hasła, ale która jest zbyt zajęta, aby zaakceptować kolejne połączenia, to &konqueror; zwykle interpretuje komunikaty <quote
+>zajęty</quote
+> jako żądanie o nazwę i hasło, i dlatego wyświetli okno z prośbą o ich podanie.</para
+></note>
+
+<para
+>Strony, które posiadają zabezpieczenia będą potrzebowały odpowiedniej nazwy użytkownika i hasła, i program &konqueror; proprosi Cię o ich podanie, lecz możesz także wpisać nazwę użytkownika w pasek adresu - na przykład</para>
+
+<screen
+><userinput
+>ftp://<replaceable
+>nazwa_użytkownika</replaceable
+>@ftp.cia.org</userinput
+>
+</screen>
+
+<para
+>Wtedy &konqueror; poprosi Cię o podanie hasła.</para>
+
+<para
+>&konqueror; obsługuje także automatyczne logowanie, jakie zostało określone w pliku <filename
+>.netrc</filename
+>. Szczegóły dotyczące włączenia tej usługi znajdują się na stronie <ulink url="http://www.konqueror.org/faq.html#netrc"
+> http://www.konqueror.org/faq.html#netrc</ulink
+></para>
+
+</sect1>
+
+
+<sect1 id="portnumbers">
+<title
+>Adresy &URL; z numerami portów</title>
+<para
+>Jeśli w podawanym adresie &URL; określisz numer portu, jak na przykład <userinput
+>http://intranet.corp.com:1080</userinput
+>, możesz otrzymać komunikat o błędzie <quote
+>Dostęp do żądanego portu został zabroniony</quote
+>. Tak się dzieje ze względów bezpieczeństwa. Jeśli koniecznie potrzebujesz dostać się do serwera na tym porcie, to po prostu dodaj wiersz <screen
+><userinput>
+OverridePorts=OddzielonaPrzecinkamiListaDozwolonychPortów
+</userinput
+></screen
+> do <filename
+>$KDEDIR/share/config/kio_httprc </filename
+> lub <filename
+>~/.kde/share/config/kio_httprc</filename
+>.</para>
+<para
+>Na przykład <screen
+><userinput
+>OverridePorts=23,15
+</userinput
+></screen
+> (nie powinno być żadnych spacji).</para>
+<para
+>&konqueror; odrzuci następujące porty (lista jest zapisana na stałe w <filename
+>kdelibs/kio/kio/job.cpp</filename
+>):</para>
+<para
+>1, 7, 9, 11, 13, 15, 17, 19, 20, 21, 22, 23, 25, 37, 42, 43, 53, 77, 79, 87, 95, 101, 102, 103, 104, 109, 110, 111, 113, 115, 117, 119, 123, 135, 139, 143, 179, 389, 512, 513, 514, 515, 526, 530, 531, 532, 540, 556, 587, 601, 989, 990, 992, 993, 995, 1080, 2049, 4045, 6000, 6667 </para>
+</sect1>
+
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

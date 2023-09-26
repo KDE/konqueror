@@ -1,0 +1,281 @@
+<chapter id="faq">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&erik.kjaer.pedersen.role; 
+</authorgroup>
+<date
+>2003-11-06</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+<title
+>Spørgsmål og svar</title>
+
+<qandaset>
+
+<!-- Link is dead, unfortunately. I suppose this is a more general thing anyway
+<qandaentry>
+<question
+><para
+>How can I browse web sites using non latin
+ scripts?</para
+></question>
+<answer
+><para
+>Detailed instructions can be found at <ulink
+url="http://www.konqueror.org/i18n.html"
+>http://www.konqueror.org/i18n.html</ulink
+></para
+></answer>
+</qandaentry>
+-->
+
+<qandaentry>
+<question
+><para
+>Kan jeg køre &konqueror; fra en anden vindueshåndtering?</para
+></question>
+
+<answer
+><para
+>Installér blot &Qt;, kdelibs og kdebase, og fra din foretrukne vindueshåndtering, start &konqueror;. Det burde virke helt fint, men hvis det ikke gør (&kde;-udviklerne undersøger ikke dette tilfælde særlig ofte), så rapportér det til <ulink url="http://bugs.kde.org"
+>http://bugs.kde.org</ulink
+> og prøv at  køre <application
+>kdeinit</application
+> før du kører &konqueror;, det hjælper sædvanligvis.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Hvor opbevarer &konqueror; alle sine indstillingsdata?</para
+></question>
+<answer
+><para
+>Generelt i <filename
+>~/.kde</filename
+>-mappen. (det kan også være <filename
+>~/.kde3</filename
+> på dit system, afhængig af hvordan &kde; 3 blev installeret). Lav ikke om på disse filer med mindre du ved hvad du foretager dig.</para>
+
+<itemizedlist>
+
+<listitem
+><para
+><filename class="directory"
+>~/.kde/share/apps/konqueror/profiles</filename
+> mappen holder individuelle indstillinger for hver af dine <link linkend="save-settings"
+>profiler. </link
+></para
+></listitem>
+
+<listitem
+><para
+>Dine bogmærker holdes i <filename class="directory"
+>~/.kde/share/apps/konqueror/bookmarks.xml</filename
+></para
+></listitem>
+<listitem
+><para
+>Cookier holdes i <filename class="directory"
+>~/.kde/share/apps/kcookiejar/cookies</filename
+></para
+></listitem>
+<listitem
+><para
+>Din historik, som bruges til auto-kompletteringsegenskaben, er i <filename
+>~/.kde/share/config/konq_history</filename
+></para
+></listitem>
+
+<listitem
+><para
+>I mappen <filename class="directory"
+>~/.kde/share/config/</filename
+> holder filerne <filename
+>konqiconviewrc</filename
+>, <filename
+>konqlistviewrc</filename
+> og <filename
+>konquerorrc</filename
+> en hel masse generel indstillingsopsætning.</para
+></listitem>
+
+<listitem
+><para
+>Mappen <filename class="directory"
+>~/.kde/share/cache/http/</filename
+> indeholder browser-cachen.</para
+></listitem>
+
+<listitem
+><para
+>Navigationspanelet bruger filerne og undermapperne i <filename class="directory"
+>~/.kde/share/apps/konqsidebartng</filename
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>En vilkårlig mappespecifik visningsindstilling findes i <literal role="extension"
+>.directory</literal
+> filerne i de individuelle mapper.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Hvordan rydder jeg historikfilen?</para
+></question>
+<answer
+><para
+>Der er to <quote
+>historikker</quote
+>:</para>
+<itemizedlist>
+<listitem
+><para
+>Én bruges til tekstkomplettering i stedlinjens tekstindgangsfelt. For at rydde denne <mousebutton
+>højre</mousebutton
+>-klikkes på  tekstindgangsfeltet og <guimenuitem
+>Ryd historik </guimenuitem
+> vælges.</para>
+</listitem>
+<listitem
+><para
+>Den anden er en logfil af steder der er besøgt. Vælg historiksiden i Navigationspanelet, <mousebutton
+>højre</mousebutton
+>-klik på en indgang og vælg <guimenuitem
+>Fjern indgang</guimenuitem
+> for blot at fjerne denne indgang eller <guimenuitem
+>Ryd historik</guimenuitem
+> for at slette alle indgange.</para
+></listitem>
+
+</itemizedlist>
+
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Hvordan aktiverer, deaktiverer eller rydder jeg browserens cache?</para
+></question
+> <answer>
+<para
+>Hvis du vælger <guimenuitem
+>Cache</guimenuitem
+> i dialogen startet  ved at vælge <menuchoice
+><guimenu
+>Indstillinger</guimenu
+><guimenuitem
+>Indstil Konqueror...</guimenuitem
+></menuchoice
+>, vil du blive præsenteret for en dialog der lader dig deaktivere cachen, rydde den eller sætter dens størrelse, og ændrer cache-politikken.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Hvordan kan jeg ændre tidsudløbsværdierne der bruges af &konqueror; ved netsøgning?</para
+></question
+> <answer>
+<para
+>I kontrolcentret <menuchoice
+><guimenu
+>Internet &amp; Netværk</guimenu
+> <guimenuitem
+>Indstillinger</guimenuitem
+></menuchoice
+>-siden.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Hvordan indstiller jeg min <quote
+>hjemme</quote
+>side - siden der bliver indlæser ved opstart?</para
+></question>
+<answer
+><para
+>Start &konqueror; med <guiicon
+>Browser</guiicon
+>-ikonen i panelet. Åbn siden du ønsker skal indlæses i enhver  nyt<quote
+>Browser</quote
+>-vindue og vælg <guimenuitem
+>Gem visningsprofil "Netsøgning"</guimenuitem
+> fra <guimenu
+>Opsætnings</guimenu
+>menuen.</para>
+
+<para
+>Alle nye &konqueror;-vinduer der startes med <guiicon
+>Browser</guiicon
+>-ikonen i panelet, eller fra <guimenu
+>sted</guimenu
+>-menuen, og nye tomme faneblade, vil nu starte på denne side.</para>
+
+<note
+><para
+>Dette ændrer ikke opførslen af <guiicon
+>Hjem</guiicon
+>-knappen i &konqueror;'s værktøjslinje, som fortsat vil tage dig til den &URI; der er defineret i &konqueror;'s indstillingsmodul. Du kan nå den modul indefra &konqueror;, via <menuchoice
+><guimenu
+>Opsætning</guimenu
+><guimenuitem
+>Indstil Konqueror</guimenuitem
+><guilabel
+>Opførsel</guilabel
+></menuchoice
+>. Som standard er den sat til <userinput
+>~</userinput
+>, hvilket er din hjemmemappe. Du kan sætte den til en vilkårlig &URI;, enten lokal eller ekstern, og så vil tryk på <guiicon
+>Hjem</guiicon
+>-ikonen i værktøjslinjen vise den.</para
+></note>
+
+<para
+>For at få &konqueror; til at starte op uden nogen side indlæst, bruges  <userinput
+>about:blank</userinput
+>.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Jeg kan ikke finde svaret på mit spørgsmål her.</para
+></question
+> 
+<answer>
+<para
+>Kig engang på <ulink url="http://www.konqueror.org/faq.html"
+> http://www.konqueror.org/faq.html</ulink
+> eller <ulink url="http://www.konqueror.org/konq-java.html"
+> http://www.konqueror.org/konq-java.html</ulink
+>.</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->
