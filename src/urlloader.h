@@ -199,6 +199,47 @@ private:
     bool shouldUseDefaultHttpMimeype() const;
     void decideAction();
     bool isViewLocked() const;
+
+    /**
+     * @brief Checks whether a file downloaded by a part really has the mime type described by the HTML header
+     *
+     * This function is called when the part requesting to download an URL wants to perform the download itself,
+     * after the download has finished. It attempts to determine the mime type both using the file contents and the
+     * file extension. The algorithm used is the following:
+     * - determine the mime type using the contents
+     * - determine the mime type using the extension
+     * - if the mime type determined from the extension inherits the one determined by content, use the former, otherwise
+     *  use the latter.
+     * This way to determine the mimetype is different from that used by `QMimeDataBase::mimeTypeForFile` when called
+     * with `QMimeDatabase::MatchDefault`, which only checks the content as a fallback.
+     *
+     * If the mime type is different from the original one, it replaces the original one and attempts to determine
+     * again what to do with the file. If the determined mime type is `application/octet-stream`, the original mime type
+     * is kept.
+     *
+     * This function is only called if the user had decided to embed or open the file; it isn't called if the user
+     * decided to save it (saving doesn't depend on the mime type).
+     *
+     * @note This function is needed because sometimes the mime type in the HTTP header is different from the actual
+     * mimetype of the file.
+     */
+    void checkDownloadedMimetype();
+
+    /**
+     * @brief Finds the part to use to embed the URL
+     *
+     * The part is found according to the mimetype and the user preferences. If #m_dontPassToWebEnginePart is `true`
+     * `webenginepart` won't be returned (even if no other parts are available).
+     *
+     * If the `serviceName` variable of #m_request is not empty, that part will be used, regardless of other user
+     * preferences. If @p forceServiceName is `false`, that part will only be used if it actually supports the mimetype
+     * @param forceServiceName whether to force the use of the part whose name is in `m_request.serviceName`, even if
+     * it doesn't support the mimetype
+     * @return the metadata representing the chosen part or an empty `KPluginMetaData` if no suitable part can be found
+     * @see m_dontPassToWebEnginePart
+     */
+    KPluginMetaData findEmbeddingPart(bool forceServiceName=true) const;
+
     /**
      * @brief Determines #m_mimeType in the constructor
      *

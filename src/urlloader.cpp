@@ -218,30 +218,34 @@ void UrlLoader::goOn()
     }
 }
 
-bool UrlLoader::decideEmbedOrSave()
+KPluginMetaData UrlLoader::findEmbeddingPart(bool forceServiceName) const
 {
     const QLatin1String webEngineName("webenginepart");
 
     //Use WebEnginePart for konq: URLs even if it's not the default html engine
     if (KonqUrl::hasKonqScheme(m_url)) {
-        m_part = findPartById(webEngineName);
-    } else {
-        //Check whether the view can display the mimetype, but only if the URL hasn't been explicitly
-        //typed by the user: in this case, use the preferred service. This is needed to avoid the situation
-        //where m_view is a Kate part, the user enters the URL of a web page and the page is opened within
-        //the Kate part because it can handle html files.
-        if (m_view && m_request.typedUrl.isEmpty() && m_view->supportsMimeType(m_mimeType)) {
-            m_part = m_view->service();
-        } else {
-            if (!m_request.serviceName.isEmpty()) {
-                // If the service name has been set by the "--part" command line argument
-                // (detected in handleCommandLine() in konqmain.cpp), then use it as is.
-                m_part = findPartById(m_request.serviceName);
-            } else {
-                // Otherwise, use the preferred service for the MIME type.
-                m_part = preferredPart(m_mimeType);
-            }
+        return findPartById(webEngineName);
+    }
+
+    KPluginMetaData part;
+
+    //Check whether the view can display the mimetype, but only if the URL hasn't been explicitly
+    //typed by the user: in this case, use the preferred service. This is needed to avoid the situation
+    //where m_view is a Kate part, the user enters the URL of a web page and the page is opened within
+    //the Kate part because it can handle html files.
+    if (m_view && m_request.typedUrl.isEmpty() && m_view->supportsMimeType(m_mimeType)) {
+        part = m_view->service();
+    } else if (!m_request.serviceName.isEmpty()) {
+        // If the service name has been set by the "--part" command line argument
+        // (detected in handleCommandLine() in konqmain.cpp), then use it as is.
+        part = findPartById(m_request.serviceName);
+        if (!forceServiceName && !part.supportsMimeType(m_mimeType)) {
+            part = KPluginMetaData();
         }
+    }
+
+    if (!part.isValid()) {
+        part = preferredPart(m_mimeType);
     }
 
     /* Corner case: webenginepart can't determine mimetype (gives application/octet-stream) but
@@ -261,13 +265,19 @@ bool UrlLoader::decideEmbedOrSave()
         auto findPart = [&webEngineName](const KPluginMetaData &md){return md.pluginId() != webEngineName;};
         QVector<KPluginMetaData>::const_iterator partToUse = std::find_if(parts.constBegin(), parts.constEnd(), findPart);
         if (partToUse != parts.constEnd()) {
-            m_part = *partToUse;
+            part = *partToUse;
         } else {
-            m_part = KPluginMetaData();
+            part = KPluginMetaData();
         }
     }
+    return part;
+}
 
-    //If we can't find a service, return false, so that the caller can use decideOpenOrSave to allow the
+bool UrlLoader::decideEmbedOrSave()
+{
+    m_part = findEmbeddingPart();
+
+    //If we can't find a part, return false, so that the caller can use decideOpenOrSave to allow the
     //user the possibility of opening the file, since embedding wasn't possibile
     if (!m_part.isValid()) {
         return false;
@@ -441,7 +451,34 @@ void UrlLoader::downloadForEmbeddingOrOpeningDone(KJob* job)
         m_action = OpenUrlAction::DoNothing;
         m_ready = true;
     }
+    checkDownloadedMimetype();
     performAction();
+}
+
+void UrlLoader::checkDownloadedMimetype()
+{
+    QMimeDatabase db;
+    QMimeType typeByContent = db.mimeTypeForFile(m_url.path(), QMimeDatabase::MatchContent);
+    QMimeType typeByName = db.mimeTypeForFile(m_url.path(), QMimeDatabase::MatchExtension);
+    QString type = (typeByName.inherits(typeByContent.name()) ? typeByName : typeByContent).name();
+    if (type == m_mimeType) {
+        return;
+    }
+    m_mimeType = type;
+    //The URL is a local file now, so there are no problems in opening it with WebEnginePart
+    m_dontPassToWebEnginePart = false;
+    if (shouldEmbedThis()) {
+        m_part = findEmbeddingPart(false);
+        if (m_part.isValid()) {
+            m_action = OpenUrlAction::Embed;
+            return;
+        }
+    }
+    m_action = OpenUrlAction::Open;
+    if (m_service && m_service->hasMimeType(m_mimeType)) {
+        return;
+    }
+    m_service = KApplicationTrader::preferredService(m_mimeType);
 }
 
 void UrlLoader::done(KJob *job)
