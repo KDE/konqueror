@@ -10,8 +10,8 @@
 
 class KBookmarkManager;
 
-namespace LIBKONQ_EXPORT Konq {
-    KBookmarkManager* userBookmarksManager();
+namespace Konq {
+   LIBKONQ_EXPORT KBookmarkManager* userBookmarksManager();
 }
 #endif //LIBKONQ_UTILS_H
 
