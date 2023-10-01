@@ -13,10 +13,9 @@ find_package(KF${KF_MAJOR_VERSION} REQUIRED COMPONENTS KIO Archive)
 ########### next target ###############
 
 set(webarchivethumbnail_SRCS webarchivecreator.cpp )
-add_library(webarchivethumbnail MODULE ${webarchivethumbnail_SRCS})
-target_include_directories(webarchivethumbnail PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/.)
+add_library(webarchivethumbnail MODULE ${webarchivethumbnail_SRCS} ${webarchiverplugin_DEBUG_SRCS})
+target_include_directories(webarchivethumbnail PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/..)
 target_link_libraries(webarchivethumbnail
-  webarchiverdebug
   KF${KF_MAJOR_VERSION}::KIOWidgets
   KF${KF_MAJOR_VERSION}::Archive
 )

@@ -6,10 +6,9 @@ find_package(KF${KF_MAJOR_VERSION} REQUIRED COMPONENTS I18n Crash KIO Archive Xm
 set(kcreatewebarchive_SRCS main.cpp archivedialog.cpp)
 kconfig_add_kcfg_files(kcreatewebarchive_SRCS settings.kcfgc)
 
-add_executable(kcreatewebarchive ${kcreatewebarchive_SRCS})
-target_include_directories(kcreatewebarchive PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/.)
+add_executable(kcreatewebarchive ${kcreatewebarchive_SRCS} ${webarchiverplugin_DEBUG_SRCS})
+target_include_directories(kcreatewebarchive PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/..)
 target_link_libraries(kcreatewebarchive
-  webarchiverdebug
   KF${KF_MAJOR_VERSION}::I18n
   KF${KF_MAJOR_VERSION}::XmlGui
   KF${KF_MAJOR_VERSION}::TextWidgets
