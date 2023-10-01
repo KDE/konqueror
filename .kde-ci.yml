@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['@all']
+- 'on': ['Linux/Qt5', 'FreeBSD/Qt5']
   'require':
     'frameworks/extra-cmake-modules': '@stable'
     'frameworks/ki18n': '@stable'
@@ -19,3 +19,21 @@ Dependencies:
     'frameworks/kactivities': '@stable'
     'frameworks/kdoctools': '@stable'
     'frameworks/kdesu': '@stable'
+
+- 'on': ['Linux/Qt6', 'FreeBSD/Qt6']
+  'require':
+    'frameworks/extra-cmake-modules': '@latest-kf6'
+    'frameworks/ki18n': '@latest-kf6'
+    'frameworks/kparts': '@latest-kf6'
+    'frameworks/kcmutils': '@latest-kf6'
+    'frameworks/kio': '@latest-kf6'
+    'frameworks/karchive': '@latest-kf6'
+    'frameworks/kcrash': '@latest-kf6'
+    'frameworks/kwindowsystem': '@latest-kf6'
+    'frameworks/kinit': '@latest-kf6'
+    'frameworks/kiconthemes': '@latest-kf6'
+    'frameworks/kdbusaddons': '@latest-kf6'
+    'frameworks/kguiaddons': '@latest-kf6'
+    'frameworks/kactivities': '@latest-kf6'
+    'frameworks/kdoctools': '@latest-kf6'
+    'frameworks/kdesu': '@latest-kf6'
