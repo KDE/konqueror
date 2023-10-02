@@ -1,6 +1,6 @@
 # translation of konqueror.po to Polish
 # translation of konqueror.po to
-# Version: $Revision: 1660420 $
+# Version: $Revision: 1661481 $
 # Tłumaczenie autorstwa Artura Skury, marzec 2000
 # Aktualne tłumaczenie Norbert Popiołek <norbert@kde.com.pl>, czerwiec 2001
 # Norbert Popiołek <norbert@kde.com.pl>
@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-18 00:45+0000\n"
-"PO-Revision-Date: 2023-04-29 11:23+0200\n"
+"POT-Creation-Date: 2023-10-02 00:42+0000\n"
+"PO-Revision-Date: 2023-10-01 09:22+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -47,7 +47,7 @@ msgstr ""
 ">\n"
 ">\n"
 ">\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -84,10 +84,9 @@ msgstr ""
 "dokumentów."
 
 #: src/konqapplication.cpp:159
-#, fuzzy, kde-format
-#| msgid "(C) 1999-2016, The Konqueror developers"
+#, kde-format
 msgid "(C) 1999-2023, The Konqueror developers"
-msgstr "(c) 1999-2016, Autorzy Konquerora"
+msgstr "(C) 1999-2023, Programiści Konquerora"
 
 #: src/konqapplication.cpp:162
 #, kde-format
@@ -415,12 +414,12 @@ msgstr "Eduardo Robles Elvira"
 #: src/konqapplication.cpp:200
 #, kde-format
 msgid "Matthias Kalle Dalheimer"
-msgstr ""
+msgstr "Matthias Kalle Dalheimer"
 
 #: src/konqapplication.cpp:201
 #, kde-format
 msgid "Daniel Molkentin"
-msgstr ""
+msgstr "Daniel Molkentin"
 
 #: src/konqapplication.cpp:202
 #, kde-format
@@ -428,6 +427,8 @@ msgid ""
 "JavaScript access controls\n"
 "Per-domain policies extensions"
 msgstr ""
+"Kontrola dostępu JavaScript\n"
+"Rozszerzenia polityki dla poszczególnych domen"
 
 #: src/konqapplication.cpp:213
 #, kde-format
@@ -2020,19 +2021,19 @@ msgstr "Ostrzeżenie"
 msgid "Resend"
 msgstr "Wyślij ponownie"
 
-#: src/urlloader.cpp:329
+#: src/urlloader.cpp:343
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "Wykonaj"
 
-#: src/urlloader.cpp:331
+#: src/urlloader.cpp:345
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
 msgstr "Wyświetlanie"
 
-#: src/urlloader.cpp:338
+#: src/urlloader.cpp:352
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -2043,14 +2044,14 @@ msgid ""
 msgstr ""
 "<filename>%1</filename> może zostać wykonany. Wykonać, czy wyświetlić go?"
 
-#: src/urlloader.cpp:344
+#: src/urlloader.cpp:358
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename> może zostać wykonany. Czy wyświetlić go?"
 
-#: src/urlloader.cpp:649
+#: src/urlloader.cpp:690
 #, kde-format
 msgid "Save As"
 msgstr "Zapisz jako"

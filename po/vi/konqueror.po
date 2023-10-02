@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-18 00:45+0000\n"
+"POT-Creation-Date: 2023-10-02 00:42+0000\n"
 "PO-Revision-Date: 2022-09-05 11:32+0200\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -2059,19 +2059,19 @@ msgstr "Cảnh báo"
 msgid "Resend"
 msgstr "Gửi lại"
 
-#: src/urlloader.cpp:329
+#: src/urlloader.cpp:343
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr ""
 
-#: src/urlloader.cpp:331
+#: src/urlloader.cpp:345
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
 msgstr ""
 
-#: src/urlloader.cpp:338
+#: src/urlloader.cpp:352
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -2081,14 +2081,14 @@ msgid ""
 "display it?"
 msgstr ""
 
-#: src/urlloader.cpp:344
+#: src/urlloader.cpp:358
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
-#: src/urlloader.cpp:649
+#: src/urlloader.cpp:690
 #, fuzzy, kde-format
 #| msgid "Set Name..."
 msgid "Save As"

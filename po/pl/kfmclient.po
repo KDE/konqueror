@@ -1,6 +1,6 @@
 # translation of kfmclient.po to polish
 # translation of kfmclient.po to
-# Version: $Revision: 1658125 $
+# Version: $Revision: 1661481 $
 # translation of kfmclient.po to
 # translation of kfmclient.po to
 #
@@ -10,20 +10,20 @@
 # Michal Rudolf <mrudolf@kdewebdev.org>, 2003.
 # Mikolaj Machowski <mikmach@wp.pl>, 2004.
 # Robert Gomulka <rgom@o2.pl>, 2006.
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2016.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2016, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-14 00:46+0000\n"
-"PO-Revision-Date: 2016-11-20 08:47+0100\n"
+"PO-Revision-Date: 2023-10-01 09:24+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 23.04.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -63,12 +63,14 @@ msgid ""
 "The mimetype of the URL. Allows Konqueror to determine in advance which "
 "component to use, making it start faster."
 msgstr ""
+"Rodzaj mime adresu URL. Umożliwia Konqueror-owi określenie z wyprzedzeniem "
+"jakiego składnika użyć, czyniąc uruchamianie szybszym."
 
 #: kfmclient.cpp:77
 #, kde-format
 msgctxt "the name for a the value of an option on the command line help"
 msgid "type"
-msgstr ""
+msgstr "rodzaj"
 
 #: kfmclient.cpp:79
 #, kde-format
@@ -95,14 +97,7 @@ msgstr ""
 "Składnia:\n"
 
 #: kfmclient.cpp:92
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kfmclient openURL 'url' ['mimetype']\n"
-#| "            # Opens a window showing 'url'.\n"
-#| "            #  'url' may be a relative path\n"
-#| "            #   or file name, such as . or subdir/\n"
-#| "            #   If 'url' is omitted, $HOME is used instead.\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
 "            # Opens a window showing 'url'.\n"
@@ -115,18 +110,12 @@ msgstr ""
 "            # Otwiera okno pokazujące 'url'.\n"
 "            #  'url' może być względną ścieżką\n"
 "            #   lub nazwą pliku, taką jak . lub podkat/\n"
-"            #   Jeśli 'url' jest pominięty, zostanie użyty $HOME\n"
+"            #   Jeśli 'url' jest pominięty, zostanie pokazana strona "
+"początkowa.\n"
 "\n"
 
 #: kfmclient.cpp:97
-#, fuzzy, kde-format
-#| msgid ""
-#| "            # If 'mimetype' is specified, it will be used to determine "
-#| "the\n"
-#| "            #   component that Konqueror should use. For instance, set it "
-#| "to\n"
-#| "            #   text/html for a web page, to make it appear faster\n"
-#| "\n"
+#, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
 "            #   component that Konqueror should use. For instance, set it "
@@ -141,6 +130,8 @@ msgstr ""
 "            #   komponentu, jakiego powinien użyć Konqueror. Na przykład, "
 "ustaw\n"
 "            #   text/html dla strony html, aby pokazywała się szybciej\n"
+"            # Pamiętaj: ten sposób określania mimetype jest przestarzały.\n"
+"            #   Użyj opcji --mimetype\n"
 "\n"
 
 #: kfmclient.cpp:103
