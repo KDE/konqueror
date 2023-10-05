@@ -1,5 +1,8 @@
 [Desktop Entry]
-# This desktop file is the one used by kcmshell5 componentchooser
+# This desktop file is the one used by kcmshell5 componentchooser.
+# Therefore "Categories" below must include "FileManager" for it
+# to be included in the chooser list.  The "NoDisplay" setting
+# is ignored by that application.
 Type=Application
 Exec=kfmclient --mimetype inode/directory openURL %u
 Icon=konqueror
@@ -99,4 +102,4 @@ Name[xh]=Konqueror
 Name[x-test]=xxKonquerorxx
 Name[zh_CN]=Konqueror
 Name[zh_TW]=Konqueror
-Categories=Qt;KDE;System;
+Categories=Qt;KDE;System;FileManager;
