@@ -7,7 +7,7 @@
 # mvillarino <mvillarino@users.sourceforge.net>, 2007, 2009.
 # marce villarino <mvillarino@users.sourceforge.net>, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2011, 2012.
-# Adrián Chaves <adrian@chaves.io>, 2017, 2019, 2020.
+# SPDX-FileCopyrightText: 2017, 2019, 2020, 2023 Adrián Chaves <adrian@chaves.io>
 #
 # Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
 # colaborar connosco, podes atopar máis información en http://trasno.gpul.org
@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-14 00:46+0000\n"
-"PO-Revision-Date: 2020-01-12 13:08+0100\n"
+"PO-Revision-Date: 2023-10-07 20:46+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.08.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -65,12 +65,14 @@ msgid ""
 "The mimetype of the URL. Allows Konqueror to determine in advance which "
 "component to use, making it start faster."
 msgstr ""
+"O tipo MIME do URL. Permite a Konqueror determinar por adiantado que "
+"compoñente usar, acelerando o inicio."
 
 #: kfmclient.cpp:77
 #, kde-format
 msgctxt "the name for a the value of an option on the command line help"
 msgid "type"
-msgstr ""
+msgstr "tipo"
 
 #: kfmclient.cpp:79
 #, kde-format
@@ -99,14 +101,7 @@ msgstr ""
 "Sintaxe:\n"
 
 #: kfmclient.cpp:92
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kfmclient openURL 'url' ['mimetype']\n"
-#| "            # Opens a window showing 'url'.\n"
-#| "            #  'url' may be a relative path\n"
-#| "            #   or file name, such as . or subdir/\n"
-#| "            #   If 'url' is omitted, $HOME is used instead.\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
 "            # Opens a window showing 'url'.\n"
@@ -115,22 +110,15 @@ msgid ""
 "            #   If 'url' is omitted, the start page is shown.\n"
 "\n"
 msgstr ""
-"  kfmclient openURL 'url' ['tipomime']\n"
-"            # Abre unha xanela amosando o url.\n"
-"            #   O «url» pode ser unha ruta relativa\n"
-"            #   ou un nome de ficheiro, como . ou subdir/\n"
-"            #   Se omite «url», usarase no seu canto $HOME.\n"
+"  kfmclient openURL 'URL' ['tipo MIME']\n"
+"            # Abre unha xanela amosando o URL.\n"
+"            #   'URL' pode ser unha ruta relativa\n"
+"            #   ou un nome de ficheiro, como . ou subcartafol/\n"
+"            #   Se omite 'URL', amosarase a páxina de inicio.\n"
 "\n"
 
 #: kfmclient.cpp:97
-#, fuzzy, kde-format
-#| msgid ""
-#| "            # If 'mimetype' is specified, it will be used to determine "
-#| "the\n"
-#| "            #   component that Konqueror should use. For instance, set it "
-#| "to\n"
-#| "            #   text/html for a web page, to make it appear faster\n"
-#| "\n"
+#, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
 "            #   component that Konqueror should use. For instance, set it "
@@ -140,12 +128,13 @@ msgid ""
 "            #   Please use the --mimetype option\n"
 "\n"
 msgstr ""
-"            # De especificar «mimetype», usarase para determinar a\n"
+"            # De indicar «mimetype», usarase para determinar a\n"
 "            #   compoñente que deberá usar Konqueror. Por exemplo, póñao "
 "como\n"
 "            #   text/html para unha páxina web, para facer que apareza máis "
-"axiña\n"
-"\n"
+"axiña.\n"
+"            # Nota: este xeito de indicar o tipo MIME está obsoleto.\n"
+"            #   Use a opción «--mimetype».\n"
 
 #: kfmclient.cpp:103
 #, kde-format
@@ -156,8 +145,8 @@ msgid ""
 "            #   window on the current active desktop if possible.\n"
 "\n"
 msgstr ""
-"  kfmclient newTab 'url' ['mimetype']\n"
-"            # Igual que enriba pero abre un novo separador co 'url' nunha "
+"  kfmclient newTab 'URL' ['tipo MIME']\n"
+"            # Igual que enriba pero abre unha nova lapela co 'URL' nunha "
 "xanela de Konqueror\n"
 "            #   xa existente no escritorio activo se é posíbel.\n"
 "\n"
