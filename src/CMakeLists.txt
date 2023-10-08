@@ -135,6 +135,10 @@ target_link_libraries(${konqueror_internal_lib_target}
    KF${KF_MAJOR_VERSION}::Bookmarks
 )
 
+if (KF_MAJOR_VERSION STRGREATER "5")
+    target_link_libraries(${konqueror_internal_lib_target} KF${KF_MAJOR_VERSION}::BookmarksWidgets)
+endif()
+
 if (KF${KF_MAJOR_VERSION}Activities_FOUND)
   target_link_libraries(${konqueror_internal_lib_target} KF${KF_MAJOR_VERSION}::Activities)
   target_compile_definitions(${konqueror_internal_lib_target} PUBLIC KActivities_FOUND)
