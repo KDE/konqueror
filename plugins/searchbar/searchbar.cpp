@@ -311,7 +311,7 @@ void SearchBarPlugin::showSelectionMenu()
                                this, &SearchBarPlugin::selectSearchEngines);
         connect(m_popupMenu, &QMenu::triggered, this, &SearchBarPlugin::menuActionTriggered);
     } else {
-        Q_FOREACH (QAction *action, m_addSearchActions) {
+        for (QAction *action: m_addSearchActions) {
             m_popupMenu->removeAction(action);
             delete action;
         }
@@ -324,7 +324,7 @@ void SearchBarPlugin::showSelectionMenu()
         before = actions[actions.size() - 2];
     }
 
-    Q_FOREACH (const QString &title, m_openSearchDescs.keys()) {
+    for (const QString &title: m_openSearchDescs.keys()) {
         QAction *addSearchAction = new QAction(m_popupMenu);
         addSearchAction->setText(i18n("Add %1...", title));
         m_addSearchActions.append(addSearchAction);
@@ -393,7 +393,7 @@ void SearchBarPlugin::configurationChanged()
 
     if (KUriFilter::self()->filterSearchUri(data, KUriFilter::NormalTextFilter)) {
         m_delimiter = data.searchTermSeparator();
-        Q_FOREACH (const QString &engine, data.preferredSearchProviders()) {
+        for (const QString &engine: data.preferredSearchProviders()) {
             //qCDebug(SEARCHBAR_LOG) << "Found search provider:" << engine;
             const KUriFilterSearchProvider &provider = data.queryForSearchProvider(engine);
 

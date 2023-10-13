@@ -48,7 +48,7 @@ private Q_SLOTS:
         bool needsUpdate = false;
         KSharedConfig::Ptr profile = KSharedConfig::openConfig(QStringLiteral("mimeapps.list"), KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
         KConfigGroup addedServices(profile, "Added KDE Service Associations");
-        Q_FOREACH (const QString &mimeType, QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
+        for (const QString &mimeType: {"text/html", "application/xhtml+xml", "application/xml"}) {
             QStringList services = addedServices.readXdgListEntry(mimeType);
             const QString wanted = QStringLiteral("webenginepart.desktop");
             if (services.isEmpty() || services.at(0) != wanted) {
@@ -77,7 +77,7 @@ private Q_SLOTS:
         KonqView *view = mainWindow.currentView();
         QVERIFY(view);
         QVERIFY(view->part());
-        QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
+        QSignalSpy spyCompleted(view, &KonqView::viewCompleted);
         QVERIFY(spyCompleted.wait(20000));
         QCOMPARE(view->serviceType(), QString("text/html"));
         WebEnginePart* part = qobject_cast<WebEnginePart *>(view->part());
@@ -91,7 +91,7 @@ private Q_SLOTS:
         mainWindow.openUrl(nullptr, url, QStringLiteral("text/html"));
         KonqView *view = mainWindow.currentView();
         qDebug() << "Waiting for first completed signal";
-        QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
+        QSignalSpy spyCompleted(view, &KonqView::viewCompleted);
         QVERIFY(spyCompleted.wait(20000));        // error calls openUrlRequest
         if (view->aborted()) {
             qDebug() << "Waiting for second completed signal";
@@ -198,7 +198,7 @@ private Q_SLOTS:
         KonqView *view = mainWindow->currentView();
         QVERIFY(view);
         QVERIFY(view->part());
-        QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
+        QSignalSpy spyCompleted(view, &KonqView::viewCompleted);
         QVERIFY(spyCompleted.wait(20000));
         QCOMPARE(view->serviceType(), QString("text/html"));
         delete view->part();
@@ -244,7 +244,7 @@ private:
     {
         const QList<KMainWindow *> windows = KMainWindow::memberList();
         qDebug() << "hiding" << windows.count() << "windows";
-        Q_FOREACH (KMainWindow *window, windows) {
+        for (KMainWindow *window: windows) {
             window->hide();
         }
     }

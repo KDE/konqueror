@@ -61,14 +61,14 @@ void HistoryManagerTest::testGetSetMaxAge()
 static void waitForAddedSignal(KonqHistoryManager *mgr)
 {
     QEventLoop eventLoop;
-    QObject::connect(mgr, SIGNAL(entryAdded(KonqHistoryEntry)), &eventLoop, SLOT(quit()));
+    QObject::connect(mgr, &KonqHistoryManager::entryAdded, &eventLoop, &QEventLoop::quit);
     eventLoop.exec(QEventLoop::ExcludeUserInputEvents);
 }
 
 static void waitForRemovedSignal(KonqHistoryManager *mgr)
 {
     QEventLoop eventLoop;
-    QObject::connect(mgr, SIGNAL(entryRemoved(KonqHistoryEntry)), &eventLoop, SLOT(quit()));
+    QObject::connect(mgr, &KonqHistoryManager::entryRemoved, &eventLoop, &QEventLoop::quit);
     eventLoop.exec(QEventLoop::ExcludeUserInputEvents);
 }
 
@@ -76,8 +76,8 @@ void HistoryManagerTest::testAddHistoryEntry()
 {
     KonqHistoryManager mgr(nullptr);
     qRegisterMetaType<KonqHistoryEntry>("KonqHistoryEntry");
-    QSignalSpy addedSpy(&mgr, SIGNAL(entryAdded(KonqHistoryEntry)));
-    QSignalSpy removedSpy(&mgr, SIGNAL(entryRemoved(KonqHistoryEntry)));
+    QSignalSpy addedSpy(&mgr, &KonqHistoryManager::entryAdded);
+    QSignalSpy removedSpy(&mgr,  &KonqHistoryManager::entryRemoved);
     const QUrl url(QStringLiteral("http://user@historymgrtest.org/"));
     const QString typedUrl = QStringLiteral("http://www.example.net");
     const QString title = QStringLiteral("The Title");

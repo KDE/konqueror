@@ -220,7 +220,7 @@ void KonqHistoryProvider::emitRemoveFromHistory(const QUrl &url)
 void KonqHistoryProvider::emitRemoveListFromHistory(const QList<QUrl> &urls)
 {
     QStringList result;
-    foreach (const QUrl &url, urls) {
+    for (const QUrl &url: urls) {
         result << url.url();
     }
     emit d->notifyRemoveList(result);

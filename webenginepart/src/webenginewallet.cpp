@@ -278,8 +278,8 @@ void WebEngineWallet::fillWebForm(const QUrl &url, const WebEngineWallet::WebFor
     QString script;
     bool wasFilled = false;
 
-    Q_FOREACH (const WebEngineWallet::WebForm &form, forms) {
-        Q_FOREACH (const WebEngineWallet::WebForm::WebField &field, form.fields) {
+    for (const WebEngineWallet::WebForm &form: forms) {
+        for (const WebEngineWallet::WebForm::WebField &field: form.fields) {
             QString value = field.value;
             value.replace(QL1C('\\'), QL1S("\\\\"));
             if (!field.value.isEmpty()) {

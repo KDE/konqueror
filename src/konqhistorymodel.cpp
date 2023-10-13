@@ -168,7 +168,7 @@ QVariant GroupEntry::data(int role, int /*column*/) const
             return QDateTime();
         }
         QDateTime dt = entries.first()->entry.lastVisited;
-        Q_FOREACH (HistoryEntry *e, entries) {
+        for (HistoryEntry *e: entries) {
             if (e->entry.lastVisited > dt) {
                 dt = e->entry.lastVisited;
             }
@@ -199,7 +199,7 @@ HistoryEntry *GroupEntry::findChild(const KonqHistoryEntry &entry, int *index) c
 QList<QUrl> GroupEntry::urls() const
 {
     QList<QUrl> list;
-    Q_FOREACH (HistoryEntry *e, entries) {
+    for (HistoryEntry *e: entries) {
         list.append(e->entry.url);
     }
     return list;

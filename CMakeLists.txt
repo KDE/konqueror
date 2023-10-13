@@ -30,14 +30,14 @@ include(GenerateExportHeader)
 
 if (QT_MAJOR_VERSION STREQUAL "6")
     set(KF_MAJOR_VERSION "6")
-    #TODO KF6: remove when it builds with KF6
-    set(KDE_QT_MODERNCODE_DEFINITIONS_LEVEL "5.82.0")
+    set(KDE_COMPILERSETTINGS_LEVEL "5.85.0")
 else()
     set(KF_MAJOR_VERSION "5")
     set(KDE_COMPILERSETTINGS_LEVEL "5.82.0")
 endif()
 include(KDECompilerSettings NO_POLICY_SCOPE)
 remove_definitions(-DQT_NO_KEYWORDS)
+remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 
 include(FeatureSummary)
 

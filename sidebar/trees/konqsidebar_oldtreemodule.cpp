@@ -134,7 +134,7 @@ public:
         Q_UNUSED(unused);
 
         QStringList existingTreeModules;
-        Q_FOREACH (const KConfigGroup &cfg, existingModules) {
+        for (const KConfigGroup &cfg: existingModules) {
             existingTreeModules.append(cfg.readEntry("X-KDE-TreeModule", QString()));
         }
 
@@ -142,7 +142,7 @@ public:
         const QStringList list = KGlobal::dirs()->findAllResources("data",
                                  "konqsidebartng/dirtree/*.desktop",
                                  KStandardDirs::NoDuplicates);
-        Q_FOREACH (const QString &desktopFile, list) {
+        for (const QString &desktopFile: list) {
             KDesktopFile df(desktopFile);
             const KConfigGroup desktopGroup = df.desktopGroup();
             const bool hasUrl = !(desktopGroup.readEntry("X-KDE-Default-URL", QString()).isEmpty());

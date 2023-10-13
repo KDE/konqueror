@@ -52,7 +52,7 @@ QStringList ModuleManager::modules() const
     QDir globalDir(entries_dirs.last());
     //qCDebug(SIDEBAR_LOG) << "Listing" << entries_dirs.last();
     const QStringList globalDirEntries = globalDir.entryList(QDir::Files | QDir::NoDotAndDotDot);
-    Q_FOREACH (const QString &globalEntry, globalDirEntries) {
+    for (const QString &globalEntry: globalDirEntries) {
         //qCDebug(SIDEBAR_LOG) << " found" << globalEntry;
         if (!deletedModules.contains(globalEntry)) {
             fileNames.append(globalEntry);
@@ -60,7 +60,7 @@ QStringList ModuleManager::modules() const
     }
     sortGlobalEntries(fileNames);
     //qCDebug(SIDEBAR_LOG) << "Adding local modules:" << addedModules;
-    Q_FOREACH (const QString &module, addedModules) {
+    for (const QString &module: addedModules) {
         if (!fileNames.contains(module)) {
             fileNames.append(module);
         }
@@ -103,7 +103,7 @@ void ModuleManager::rollbackToDefault()
     const QString loc = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/konqsidebartng/";
     QDir dir(loc);
     const QStringList dirEntries = dir.entryList(QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
-    Q_FOREACH (const QString &subdir, dirEntries) {
+    for (const QString &subdir: dirEntries) {
         if (subdir != "add") {
             qCDebug(SIDEBAR_LOG) << "Deleting" << (loc + subdir);
             KIO::Job *job = KIO::del(QUrl::fromLocalFile(loc + subdir), KIO::HideProgressInfo);
@@ -239,7 +239,7 @@ QStringList ModuleManager::localModulePaths(const QString &filter) const
 void ModuleManager::sortGlobalEntries(QStringList &fileNames) const
 {
     QMap<int, QString> sorter;
-    Q_FOREACH (const QString &fileName, fileNames) {
+    for (const QString &fileName: fileNames) {
         const QString path = moduleDataPath(fileName);
         if (QStandardPaths::locate(QStandardPaths::GenericDataLocation, path).isEmpty()) {
             // doesn't exist anymore, skip it

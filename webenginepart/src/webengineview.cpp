@@ -604,7 +604,7 @@ void WebEngineView::addSearchActions(QList<QAction*>& selectActions, QWebEngineV
         if (!preferredSearchProviders.isEmpty()) {
             KActionMenu* providerList = new KActionMenu(i18nc("Search for \"text\" with",
                                                               "Search for '%1' with", squeezedText), view);
-            Q_FOREACH(const QString &searchProvider, preferredSearchProviders) {
+            for (const QString &searchProvider: preferredSearchProviders) {
                 if (searchProvider == data.searchProvider())
                     continue;
 

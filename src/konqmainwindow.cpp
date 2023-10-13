@@ -918,7 +918,7 @@ static KonqView *findChildView(KParts::ReadOnlyPart *callingPart, const QString 
         return nullptr;
     }
 
-    foreach (KonqMainWindow *window, *KonqMainWindow::mainWindowList()) {
+    for (KonqMainWindow *window: *KonqMainWindow::mainWindowList()) {
         KonqView *res = window->childView(callingPart, name, part);
         if (res) {
             mainWindow = window;
@@ -1018,7 +1018,7 @@ bool KonqMainWindow::makeViewsFollow(const QUrl &url,
 
     QObject *senderFrame = lastFrame(senderView);
 
-    foreach (KonqView *view, listViews) {
+    for (KonqView *view: listViews) {
         if (view == senderView) {
             continue;
         }
@@ -1256,7 +1256,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
         const bool showLocationBar = cfg.readEntry("LocationBar", true);
         KToolBar *locationToolBar = mainWindow->toolBar(QStringLiteral("locationToolBar"));
 
-        Q_FOREACH (KToolBar *bar, mainWindow->findChildren<KToolBar *>()) {
+        for (KToolBar *bar: mainWindow->findChildren<KToolBar *>()) {
             if (bar != locationToolBar || !showLocationBar) {
                 bar->hide();
             }
@@ -2843,7 +2843,7 @@ void KonqMainWindow::slotCompletionModeChanged(KCompletion::CompletionMode m)
     KonqSettings::self()->save();
 
     // tell the other windows too (only this instance currently)
-    foreach (KonqMainWindow *window, *s_lstMainWindows) {
+    for (KonqMainWindow *window: *s_lstMainWindows) {
         if (window && window->m_combo) {
             window->m_combo->setCompletionMode(m);
             window->m_pURLCompletion->setCompletionMode(m);
@@ -3148,7 +3148,7 @@ void KonqMainWindow::slotUpdateFullScreen(bool set)
         bool haveFullScreenButton = false;
 
         //Walk over the toolbars and check whether there is a show fullscreen button in any of them
-        foreach (KToolBar *bar, findChildren<KToolBar *>()) {
+        for (KToolBar *bar: findChildren<KToolBar *>()) {
             //Are we plugged here, in a visible toolbar?
             if (bar->isVisible() &&
                     action("fullscreen")->associatedWidgets().contains(bar)) {
@@ -3219,7 +3219,7 @@ void KonqMainWindow::comboAction(int action, const QString &url, const QString &
     }
 
     KonqCombo *combo = nullptr;
-    foreach (KonqMainWindow *window, *s_lstMainWindows) {
+    for (KonqMainWindow *window: *s_lstMainWindows) {
         if (window && window->m_combo) {
             combo = window->m_combo;
 
@@ -3937,9 +3937,14 @@ void KonqMainWindow::connectExtension(KParts::NavigationExtension *ext)
         if (act) {
             // Does the extension have a slot with the name of this action ?
             if (ext->metaObject()->indexOfSlot(QByteArray(it.key() + "()").constData()) != -1) {
-                connect(act, SIGNAL(triggered()), ext, it.value() /* SLOT(slot name) */);
-                act->setEnabled(ext->isActionEnabled(it.key()));
-                const QString text = ext->actionText(it.key());
+                //Can't use modern connect syntax as the slot name is stored inside the map
+#if QT_VERSION_MAJOR < 6
+                connect(act, SIGNAL(triggered()), ext, it.value().constData() /* SLOT(slot name) */);
+#else
+                connect(act, SIGNAL(triggered()), ext, it.value().constData() /* SLOT(slot name) */);
+#endif
+                act->setEnabled(ext->isActionEnabled(it.key().constData()));
+                const QString text = ext->actionText(it.key().constData());
                 if (!text.isEmpty()) {
                     act->setText(text);
                 }
@@ -4162,7 +4167,7 @@ QList<KBookmarkOwner::FutureBookmark> KonqExtendedBookmarkOwner::currentBookmark
     QList<KBookmarkOwner::FutureBookmark> list;
     KonqFrameTabs *tabContainer = m_pKonqMainWindow->viewManager()->tabContainer();
 
-    foreach (KonqFrameBase *frame, tabContainer->childFrameList()) {
+    for (KonqFrameBase *frame: tabContainer->childFrameList()) {
         if (!frame || !frame->activeChildView()) {
             continue;
         }
@@ -4734,7 +4739,7 @@ void KonqMainWindow::slotInternalViewModeChanged()
     if (view) {
         const QString actionName = view->service().pluginId();
         const QString actionData = view->internalViewMode();
-        Q_FOREACH (QAction *action, m_viewModesGroup->actions()) {
+        for (QAction *action: m_viewModesGroup->actions()) {
             if (action->objectName() == actionName + QLatin1String("-viewmode") &&
                     action->data().toString() == actionData) {
                 action->setChecked(true);

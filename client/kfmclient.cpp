@@ -91,22 +91,21 @@ int main(int argc, char **argv)
     const QStringList args = parser.positionalArguments();
 
     if (args.isEmpty() || parser.isSet(QStringLiteral("commands"))) {
-        puts(i18n("\nSyntax:\n").toLocal8Bit());
-        puts(i18n("  kfmclient openURL 'url' ['mimetype']\n"
+        QTextStream ts(stdout, QIODevice::WriteOnly);
+        ts << i18n("\nSyntax:\n");
+        ts << i18n("  kfmclient openURL 'url' ['mimetype']\n"
                   "            # Opens a window showing 'url'.\n"
                   "            #  'url' may be a relative path\n"
                   "            #   or file name, such as . or subdir/\n"
-                  "            #   If 'url' is omitted, the start page is shown.\n\n").toLocal8Bit());
-        puts(i18n("            # If 'mimetype' is specified, it will be used to determine the\n"
+                  "            #   If 'url' is omitted, the start page is shown.\n\n");
+        ts << i18n("            # If 'mimetype' is specified, it will be used to determine the\n"
                   "            #   component that Konqueror should use. For instance, set it to\n"
                   "            #   text/html for a web page, to make it appear faster\n"
                   "            # Note: this way of specifying mimetype is deprecated.\n"
-                  "            #   Please use the --mimetype option\n\n").toLocal8Bit());
-
-        puts(i18n("  kfmclient newTab 'url' ['mimetype']\n"
+                  "            #   Please use the --mimetype option\n\n");
+        ts << i18n("  kfmclient newTab 'url' ['mimetype']\n"
                   "            # Same as above but opens a new tab with 'url' in an existing Konqueror\n"
-                  "            #   window on the current active desktop if possible.\n\n").toLocal8Bit());
-
+                  "            #   window on the current active desktop if possible.\n\n");
         return 0;
     }
 

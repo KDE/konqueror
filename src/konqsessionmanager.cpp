@@ -125,14 +125,14 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
     const QRect desktop = screen()->geometry();
 
     // Collect info from the sessions to restore
-    Q_FOREACH (const QString &sessionFile, sessionFilePaths) {
+    for (const QString &sessionFile: sessionFilePaths) {
         qCDebug(KONQUEROR_LOG) << sessionFile;
         QTreeWidgetItem *windowItem = nullptr;
         KConfig config(sessionFile, KConfig::SimpleConfig);
         const QList<KConfigGroup> groups = windowConfigGroups(config);
-        Q_FOREACH (const KConfigGroup &group, groups) {
+        for (const KConfigGroup &group: groups) {
             // To avoid a recursive search, let's do linear search on Foo_CurrentHistoryItem=1
-            Q_FOREACH (const QString &key, group.keyList()) {
+            for (const QString &key: group.keyList()) {
                 if (key.endsWith(QLatin1String("_CurrentHistoryItem"))) {
                     const QString viewId = key.left(key.length() - qstrlen("_CurrentHistoryItem"));
                     const QString historyIndex = group.readEntry(key, QString());
@@ -529,7 +529,7 @@ void KonqSessionManager::saveCurrentSessionToFile(KConfig *config, const QList<K
         return;
     }
 
-    foreach (KonqMainWindow *window, mainWindows) {
+    for (KonqMainWindow *window: mainWindows) {
         if (!window->isPreloaded()) {
             KConfigGroup configGroup(config, "Window" + QString::number(counter));
             window->saveProperties(configGroup);
@@ -619,7 +619,7 @@ QStringList KonqSessionManager::takeSessionsOwnership()
 void KonqSessionManager::restoreSessions(const QStringList &sessionFilePathsList,
         bool openTabsInsideCurrentWindow, KonqMainWindow *parent)
 {
-    foreach (const QString &sessionFilePath, sessionFilePathsList) {
+    for (const QString &sessionFilePath: sessionFilePathsList) {
         restoreSession(sessionFilePath, openTabsInsideCurrentWindow, parent);
     }
 }
@@ -644,7 +644,7 @@ void KonqSessionManager::restoreSession(const QString &sessionFilePath, bool
 
     KConfig config(sessionFilePath, KConfig::SimpleConfig);
     const QList<KConfigGroup> groups = windowConfigGroups(config);
-    Q_FOREACH (const KConfigGroup &configGroup, groups) {
+    for (const KConfigGroup &configGroup: groups) {
         if (!openTabsInsideCurrentWindow) {
             KonqViewManager::openSavedWindow(configGroup)->show();
         } else {
@@ -677,7 +677,7 @@ static void removeDiscardedSessions(const QStringList &sessionFiles, const QStri
         return;
     }
 
-    Q_FOREACH (const QString &sessionFile, sessionFiles) {
+    for (const QString &sessionFile: sessionFiles) {
         KConfig config(sessionFile, KConfig::SimpleConfig);
         QList<KConfigGroup> groups = windowConfigGroups(config);
         for (int i = 0, count = groups.count(); i < count; ++i) {

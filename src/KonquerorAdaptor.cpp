@@ -104,7 +104,7 @@ QList<QDBusObjectPath> KonquerorAdaptor::getWindows()
     QList<QDBusObjectPath> lst;
     QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
     if (mainWindows) {
-        foreach (KonqMainWindow *window, *mainWindows) {
+        for (KonqMainWindow *window: *mainWindows) {
             lst.append(QDBusObjectPath(window->dbusName()));
         }
     }

@@ -117,7 +117,7 @@ protected:
 
 private slots:
 #if QT_VERSION_MAJOR < 6
-    void downloadProgressed(quint64 received, quint64 total);
+    void downloadProgressed(qint64 received, qint64 total);
 #else
     void downloadProgressed();
 #endif

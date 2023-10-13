@@ -39,7 +39,7 @@ static QStringList extractActionNames(QMenu &menu)
     QString lastObjectName;
     QStringList ret;
     bool lastIsSeparator = false;
-    foreach (const QAction *action, menu.actions()) {
+    for (const QAction *action: menu.actions()) {
         if (action->isSeparator()) {
             if (!lastIsSeparator) { // Qt gets rid of duplicate separators, so we should too
                 ret.append(QStringLiteral("separator"));

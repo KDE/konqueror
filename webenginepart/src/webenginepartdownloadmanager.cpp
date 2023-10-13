@@ -258,7 +258,7 @@ bool WebEngineDownloadJob::doSuspend()
 }
 
 #if QT_VERSION_MAJOR < 6
-void WebEngineDownloadJob::downloadProgressed(quint64 received, quint64 total)
+void WebEngineDownloadJob::downloadProgressed(qint64 received, qint64 total)
 {
     setPercent(total != 0 ? received*100.0/total : 0);
 }

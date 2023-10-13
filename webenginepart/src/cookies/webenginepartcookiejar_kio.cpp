@@ -74,7 +74,7 @@ void WebEnginePartCookieJarKIO::deleteSessionCookies()
     if (!m_cookieServer.isValid()) {
         return;
     }
-    foreach(qlonglong id, m_windowsWithSessionCookies) {
+    for (qlonglong id: m_windowsWithSessionCookies) {
         m_cookieServer.call(QDBus::NoBlock, "deleteSessionCookies", id);
     }
 }
@@ -100,7 +100,7 @@ qlonglong WebEnginePartCookieJarKIO::findWinID()
         return mainWindow->winId();
     } else {
         QWidgetList windows = qApp->topLevelWidgets();
-        foreach(QWidget *w, windows){
+        for(QWidget *w: windows){
             if (!w->windowFlags().testFlag(Qt::Dialog)) {
                 return w->winId();
             }
@@ -290,7 +290,7 @@ WebEnginePartCookieJarKIO::CookieUrlList WebEnginePartCookieJarKIO::findKIOCooki
     }
     QStringList domains = rep.value();
     uint fieldsCount = 8;
-    foreach( const QString &d, domains){
+    for( const QString &d: domains){
     QDBusReply<QStringList> rep = m_cookieServer.call(QDBus::Block, "findCookies", s_findCookieFields, d, "", "", "");
         if (!rep.isValid()) {
             qCDebug(WEBENGINEPART_LOG) << rep.error().message();

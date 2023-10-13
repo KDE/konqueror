@@ -302,7 +302,7 @@ void DirFilterPlugin::slotShowPopup()
     if (!inodes.isEmpty()) {
         filterMenu->addSeparator();
 
-        Q_FOREACH (const QString &inode, inodes) {
+        for (const QString &inode: inodes) {
             if (!globalSessionManager->showCount) {
                 label = m_pMimeInfo[inode].mimeComment;
             } else {
@@ -412,7 +412,7 @@ void DirFilterPlugin::slotListingEvent(KParts::ListingNotificationExtension::Not
     switch (type) {
     case KParts::ListingNotificationExtension::ItemsAdded: {
         const QStringList filters = m_listingExt->filter(KParts::ListingFilterExtension::MimeType).toStringList();
-        Q_FOREACH (const KFileItem &item, items) {
+        for (const KFileItem &item: items) {
             const QString mimeType(item.mimetype());
             if (m_pMimeInfo.contains(mimeType)) {
                 m_pMimeInfo[mimeType].filenames.insert(item.name());
@@ -427,7 +427,7 @@ void DirFilterPlugin::slotListingEvent(KParts::ListingNotificationExtension::Not
         break;
     }
     case KParts::ListingNotificationExtension::ItemsDeleted:
-        Q_FOREACH (const KFileItem &item, items) {
+        for (const KFileItem &item: items) {
             const QString mimeType(item.mimetype());
             MimeInfoMap::iterator it = m_pMimeInfo.find(mimeType);
             if (it != m_pMimeInfo.end()) {
@@ -529,7 +529,7 @@ void DirFilterPlugin::setFilterBar()
         m_filterBar->setEnableTypeFilterMenu(m_pMimeInfo.count() > 1);
     }
 
-    Q_FOREACH (const QString &mimeType, savedFilters.typeFilters) {
+    for (const QString &mimeType: savedFilters.typeFilters) {
         if (m_pMimeInfo.contains(mimeType)) {
             m_pMimeInfo[mimeType].useAsFilter = true;
         }

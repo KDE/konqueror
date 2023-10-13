@@ -29,7 +29,7 @@ static void abortFullScreenMode()
 {
     QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
     if (mainWindows) {
-        foreach (KonqMainWindow *window, *mainWindows) {
+        for (KonqMainWindow *window: *mainWindows) {
             if (window->fullScreenMode()) {
                 KWindowInfo info(window->winId(), NET::WMDesktop);
                 if (info.valid() && info.isOnCurrentDesktop()) {

@@ -414,7 +414,7 @@ void KonqViewManager::removeTab(KonqFrameBase *currentFrame, bool emitAboutToRem
     }
 
     const QList<KonqView *> viewList = KonqViewCollector::collect(currentFrame);
-    foreach (KonqView *view, viewList) {
+    for (KonqView *view: viewList) {
         if (view == m_pMainWindow->currentView()) {
             setActivePart(nullptr);
         }
@@ -438,7 +438,7 @@ void KonqViewManager::removeTab(KonqFrameBase *currentFrame, bool emitAboutToRem
 
 void KonqViewManager::reloadAllTabs()
 {
-    foreach (KonqFrameBase *frame, tabContainer()->childFrameList()) {
+    for(KonqFrameBase *frame: tabContainer()->childFrameList()) {
         if (frame && frame->activeChildView()) {
             if (!frame->activeChildView()->locationBarURL().isEmpty()) {
                 frame->activeChildView()->openUrl(frame->activeChildView()->url(), frame->activeChildView()->locationBarURL());
@@ -547,7 +547,7 @@ void KonqViewManager::showTab(int tabIndex)
 void KonqViewManager::updatePixmaps()
 {
     const QList<KonqView *> viewList = KonqViewCollector::collect(tabContainer());
-    foreach (KonqView *view, viewList) {
+    for (KonqView *view: viewList) {
         view->setTabIcon(QUrl::fromUserInput(view->locationBarURL()));
     }
 }
@@ -722,7 +722,7 @@ void KonqViewManager::clear()
     if (!viewList.isEmpty()) {
         //qCDebug(KONQUEROR_LOG) << viewList.count() << "items";
 
-        foreach (KonqView *view, viewList) {
+        for (KonqView *view: viewList) {
             m_pMainWindow->removeChildView(view);
             //qCDebug(KONQUEROR_LOG) << "Deleting" << view;
             delete view;
@@ -1314,7 +1314,7 @@ void KonqViewManager::printSizeInfo(KonqFrameBase *frame,
     if (parent->frameType() == KonqFrameBase::Container) {
         const QList<int> sizes = static_cast<KonqFrameContainer *>(parent)->sizes();
         printf("Parent sizes %s :", msg);
-        foreach (int i, sizes) {
+        for (int i: sizes) {
             printf(" %d", i);
         }
         printf("\n");

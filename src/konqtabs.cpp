@@ -135,7 +135,7 @@ void KonqFrameTabs::saveConfig(KConfigGroup &config, const QString &prefix, cons
     QStringList strlst;
     int i = 0;
     QString newPrefix;
-    foreach (KonqFrameBase *frame, m_childFrameList) {
+    for (KonqFrameBase *frame: m_childFrameList) {
         newPrefix = KonqFrameBase::frameTypeToString(frame->frameType()) + 'T' + QString::number(i);
         strlst.append(newPrefix);
         newPrefix.append(QLatin1Char('_'));
@@ -315,7 +315,7 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
                                   SLOT(slotReloadAllTabs()),
                                   m_pViewManager->mainWindow()->action("reload_all_tabs")->shortcut());
     m_pSubPopupMenuTab->addSeparator();
-    foreach (KonqFrameBase *frameBase, m_childFrameList) {
+    for (KonqFrameBase *frameBase: m_childFrameList) {
         KonqFrame *frame = dynamic_cast<KonqFrame *>(frameBase);
         if (frame && frame->activeChildView()) {
             QString title = frame->title().trimmed();
@@ -498,7 +498,7 @@ bool KonqFrameTabs::accept(KonqFrameVisitor *visitor)
         return false;
     }
     if (visitor->visitAllTabs()) {
-        foreach (KonqFrameBase *frame, m_childFrameList) {
+        for (KonqFrameBase *frame: m_childFrameList) {
             Q_ASSERT(frame);
             if (!frame->accept(visitor)) {
                 return false;

@@ -283,7 +283,7 @@ void KGetPlugin::getLinks(bool selectedOnly)
         m_linkList.clear();
         const KParts::FileInfoExtension::QueryMode mode = (selectedOnly ? KParts::FileInfoExtension::SelectedItems : KParts::FileInfoExtension::AllItems);
         const KFileItemList items = fileinfoExtn->queryFor(mode);
-        Q_FOREACH (const KFileItem &item, items) {
+        for (const KFileItem &item: items) {
             const QUrl url = item.url();
             // Only select valid and non local links for download...
             if (item.isReadable() && item.isFile() && !item.isLocalFile() && !url.host().isEmpty()) {

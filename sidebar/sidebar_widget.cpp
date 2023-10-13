@@ -70,7 +70,7 @@ void Sidebar_Widget::aboutToShowAddMenu()
           // Remember which plugin the action came from.
           // We can't use QAction::setData for that, because we let plugins use
           // that already.
-          Q_FOREACH (QAction *action, actions) {
+          for (QAction *action: actions) {
             m_pluginForAction.insert(action, plugin);
           }
           m_addMenu->addActions(actions);
@@ -202,7 +202,7 @@ void Sidebar_Widget::addWebSideBar(const QUrl &url, const QString &name)
 
     // Look for existing ones with this URL
     const QStringList files = m_moduleManager.localModulePaths("websidebarplugin*.desktop");
-    Q_FOREACH (const QString &file, files) {
+    for (const QString &file: files) {
         KConfig _scf(file, KConfig::SimpleConfig);
         KConfigGroup scf(&_scf, "Desktop Entry");
         if (scf.readPathEntry("URL", QString()) == url.url()) {
@@ -417,7 +417,7 @@ void Sidebar_Widget::updateButtons()
 void Sidebar_Widget::createButtons()
 {
     const QStringList modules = m_moduleManager.modules();
-    Q_FOREACH (const QString &fileName, modules) {
+    for (const QString &fileName: modules) {
         addButton(fileName);
     }
 
@@ -901,7 +901,7 @@ void Sidebar_Widget::slotPopupMenu(KonqSidebarModule *module,
 
 void Sidebar_Widget::slotUrlsDropped(const QList<QUrl> &urls)
 {
-    Q_FOREACH (const QUrl &url, urls) {
+    for (const QUrl &url: urls) {
         KIO::StatJob *job = KIO::stat(url);
         KJobWidgets::setWindow(job, this);
         connect(job, &KIO::StatJob::result, this, &Sidebar_Widget::slotStatResult);

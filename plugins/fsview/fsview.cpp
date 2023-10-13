@@ -148,7 +148,7 @@ QList<QUrl> FSView::selectedUrls()
 {
     QList<QUrl> urls;
 
-    foreach (TreeMapItem *i, selection()) {
+    for (TreeMapItem *i: selection()) {
         QUrl u = QUrl::fromLocalFile(((Inode *)i)->path());
         urls.append(u);
     }

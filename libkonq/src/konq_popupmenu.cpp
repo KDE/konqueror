@@ -473,7 +473,7 @@ void KonqPopupMenu::setURLTitle(const QString &urlTitle)
 
 void KonqPopupMenuPrivate::slotPopupNewView()
 {
-    Q_FOREACH (const QUrl &url, m_popupItemProperties.urlList()) {
+    for (const QUrl &url: m_popupItemProperties.urlList()) {
         KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url);
         job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_parentWidget));
         job->start();
@@ -521,7 +521,7 @@ void KonqPopupMenuPrivate::slotPopupAddToBookmark()
         dlg.addBookmark(title, url, QString());
     } else {
         root = m_bookmarkManager->root();
-        Q_FOREACH (const QUrl &url, m_popupItemProperties.urlList()) {
+        for(const QUrl &url: m_popupItemProperties.urlList()) {
             root.addBookmark(url.toDisplayString(), url, QString());
         }
         m_bookmarkManager->emitChanged(root);

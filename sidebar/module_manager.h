@@ -39,7 +39,7 @@ public:
     /// Returns the relative path of the entries directory in the "data" resource
     QString relativeDataPath() const
     {
-        return "konqsidebartng/entries/";
+        return QStringLiteral("konqsidebartng/entries/");
     }
     /// Returns the full path for a given module. TEMP HACK, TO BE REMOVED
     QString moduleFullPath(const QString &fileName) const;

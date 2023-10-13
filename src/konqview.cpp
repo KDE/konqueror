@@ -936,7 +936,7 @@ void KonqView::copyHistory(KonqView *other)
     qDeleteAll(m_lstHistory);
     m_lstHistory.clear();
 
-    foreach (HistoryEntry *he, other->m_lstHistory) {
+    for (HistoryEntry *he: other->m_lstHistory) {
         appendHistoryEntry(new HistoryEntry(*he));
     }
     setHistoryIndex(other->historyIndex());

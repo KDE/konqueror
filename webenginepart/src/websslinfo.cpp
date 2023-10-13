@@ -127,7 +127,7 @@ bool WebSslInfo::saveTo(QMap<QString, QVariant>& data) const
     data.insert(QStringLiteral("ssl_cipher_used_bits"), d->usedCipherBits);
     data.insert(QStringLiteral("ssl_cipher_bits"), d->supportedCipherBits);
     QByteArray certChain;
-    Q_FOREACH(const QSslCertificate& cert, d->certificateChain)
+    for (const QSslCertificate& cert: d->certificateChain)
         certChain += cert.toPem();
     data.insert(QStringLiteral("ssl_peer_chain"), certChain);
   }
