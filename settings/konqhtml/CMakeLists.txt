@@ -46,7 +46,7 @@ ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
     )
 
 add_library(kcm_konqhtml_static STATIC ${kcm_konqhtml_PART_SRCS})
-target_compile_options(kcm_konqhtml_static PUBLIC "-fPIC")
+set_target_properties(kcm_konqhtml_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(kcm_konqhtml_static
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::ConfigWidgets
