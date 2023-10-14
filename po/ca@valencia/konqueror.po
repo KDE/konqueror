@@ -980,12 +980,12 @@ msgstr "Activa la pestanya %1"
 #: src/konqmainwindow.cpp:3534
 #, kde-format
 msgid "Move Tab Left"
-msgstr "Mou la pestanya a l'esquerra"
+msgstr "Mou la pestanya cap a l'esquerra"
 
 #: src/konqmainwindow.cpp:3539
 #, kde-format
 msgid "Move Tab Right"
-msgstr "Mou la pestanya a la dreta"
+msgstr "Mou la pestanya cap a la dreta"
 
 #: src/konqmainwindow.cpp:3547
 #, kde-format
@@ -1182,8 +1182,8 @@ msgid ""
 "clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
 "Konqueror and other KDE applications.</html>"
 msgstr ""
-"<html>Talla el text o elements seleccionats actualment i el mou al porta-"
-"retalls <br /><br />Açò el fa disponible a l'ordre <b>Apega</b> a Konqueror "
+"<html>Talla el text o elements seleccionats actualment i el mou cap al porta-"
+"retalls <br /><br />Açò el fa disponible a l'ordre <b>Apega</b> en Konqueror "
 "i altres aplicacions de KDE.</html>"
 
 #: src/konqmainwindow.cpp:3729
@@ -1198,9 +1198,9 @@ msgid ""
 "clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
 "Konqueror and other KDE applications.</html>"
 msgstr ""
-"<html>Copia al porta-retalls el text o elements seleccionats actualment<br /"
-"><br />Açò els fa disponibles a l'ordre <b>Apega</b> a Konqueror i altres "
-"aplicacions de KDE.</html>"
+"<html>Copia a dins del porta-retalls el text o elements seleccionats "
+"actualment<br /><br />Açò els fa disponibles a l'ordre <b>Apega</b> en "
+"Konqueror i altres aplicacions de KDE.</html>"
 
 #: src/konqmainwindow.cpp:3735
 #, kde-format
@@ -1814,7 +1814,7 @@ msgstr ""
 "Activeu-la si voleu mostrar les ordres de menú «Suprimix» en l'escriptori i "
 "en els menús del gestor de fitxers i en els menús contextuals. Quan estiguen "
 "ocultes, sempre podreu suprimir els fitxers prement la tecla de majúscules "
-"mentre se selecciona «Mou a la paperera»."
+"mentre se selecciona «Mou cap a dins de la paperera»."
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
@@ -1866,7 +1866,7 @@ msgstr ""
 #: src/konqueror.kcfg:510
 #, kde-format
 msgid "Ask confirmation for move to trash"
-msgstr "Demana confirmació per a moure a la paperera"
+msgstr "Demana confirmació per a moure cap a dins de la paperera"
 
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: src/konqueror.kcfg:511
