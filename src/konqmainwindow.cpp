@@ -5472,7 +5472,7 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
     }
     QString httpProxy = KProtocolManager::proxyFor(QStringLiteral("http"));
     QString httpsProxy = KProtocolManager::proxyFor(QStringLiteral("https"));
-    if (httpProxy == "DIRECT" && httpsProxy == "DIRECT") {
+    if ((httpProxy.isEmpty() && httpsProxy.isEmpty()) || (httpProxy == "DIRECT" && httpsProxy == "DIRECT")) {
         QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
     } else {
         QUrl url(httpsProxy);
