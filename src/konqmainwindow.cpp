@@ -1962,12 +1962,12 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
         m_paHomePopup->setStatusTip(viewShowsDir ? actHomeFolder->statusTip() : actHomePage->statusTip());
         m_paHomePopup->setWhatsThis(viewShowsDir ? actHomeFolder->whatsThis() : actHomePage->whatsThis());
         m_paHomePopup->setData(viewShowsDir ? actHomeFolder->data() : actHomePage->data());
-        m_paHomePopup->menu()->clear();
+        m_paHomePopup->popupMenu()->clear();
         if (viewShowsDir) {
-            m_paHomePopup->menu()->addAction(actHomePage);
+            m_paHomePopup->popupMenu()->addAction(actHomePage);
             delete actHomeFolder;
         } else {
-            m_paHomePopup->menu()->addAction(actHomeFolder);
+            m_paHomePopup->popupMenu()->addAction(actHomeFolder);
             delete actHomePage;
         }
     }
@@ -3426,7 +3426,7 @@ void KonqMainWindow::initActions()
     m_paHomePopup = new KToolBarPopupAction (QIcon::fromTheme(QStringLiteral("go-home")), i18n("Home"), this);
     actionCollection()->addAction(QStringLiteral("go_home_popup"), m_paHomePopup);
     connect(m_paHomePopup, SIGNAL(triggered()), this, SLOT(slotHome()));
-    connect(m_paHomePopup->menu(), SIGNAL(triggered(QAction*)), this, SLOT(slotHomePopupActivated(QAction*)));
+    connect(m_paHomePopup->popupMenu(), SIGNAL(triggered(QAction*)), this, SLOT(slotHomePopupActivated(QAction*)));
 
     KonqMostOftenURLSAction *mostOften = new KonqMostOftenURLSAction(i18nc("@action:inmenu Go", "Most Often Visited"), this);
     actionCollection()->addAction(QStringLiteral("go_most_often"), mostOften);
