@@ -1209,7 +1209,11 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
 
     // WORKAROUND: Clear the window state information set by KMainWindow::restoreWindowSize
     // so that the size and location settings we set below always take effect.
+#if QT_VERSION_MAJOR < 6
     KWindowSystem::clearState(mainWindow->winId(), NET::Max);
+#else
+    KX11Extras::clearState(mainWindow->winId(), NET::Max);
+#endif
 
     // process the window args
     const int xPos = ((windowArgs.x() == -1) ?  mainWindow->x() : windowArgs.x());
