@@ -117,7 +117,7 @@ if (KF_MAJOR_VERSION STRLESS "6")
    set(konqueror_internal_lib_target kdeinit_konqueror)
 else()
 #We need a library because some tests link to it
-   add_library(konqueror_internal_lib ${konqueror_KDEINIT_SRCS})
+   add_library(konqueror_internal_lib STATIC ${konqueror_KDEINIT_SRCS})
    add_executable(konqueror konqmain.cpp)
    target_link_libraries(konqueror konqueror_internal_lib)
    set(konqueror_internal_lib_target konqueror_internal_lib)
