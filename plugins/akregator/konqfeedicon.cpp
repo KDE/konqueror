@@ -89,13 +89,14 @@ KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &args)
 
 KonqFeedIcon::~KonqFeedIcon()
 {
-    m_statusBarEx = KParts::StatusBarExtension::childObject(m_part);
-    if (m_statusBarEx) {
-        m_statusBarEx->removeStatusBarItem(m_feedIcon);
-        // if the statusbar extension is deleted, the icon is deleted as well (being the child of the status bar)
-        delete m_feedIcon;
+    //When the part is destroyed, this becomes nullptr before this destructor is called
+    if (m_part) {
+        m_statusBarEx = KParts::StatusBarExtension::childObject(m_part);
+        if (m_statusBarEx) {
+            m_statusBarEx->removeStatusBarItem(m_feedIcon);
+        }
     }
-    // the icon is deleted in every case
+    delete m_feedIcon;
     m_feedIcon = nullptr;
     delete m_menu;
     m_menu = nullptr;
