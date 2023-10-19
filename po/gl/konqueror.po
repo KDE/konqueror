@@ -10,7 +10,7 @@
 # marce villarino <mvillarino@gmail.com>, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2009, 2011, 2012, 2013, 2014.
 # Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>, 2017.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2020, 2023.
+# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
 #
 # Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
 # colaborar connosco, podes atopar máis información en http://trasno.gpul.org
@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 02:26+0000\n"
-"PO-Revision-Date: 2023-09-03 13:21+0200\n"
+"PO-Revision-Date: 2023-10-18 22:07+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -30,7 +30,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -48,6 +48,8 @@ msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
+"<p>Está a executar Konqueror como root. Isto require activar un modo "
+"altamente inseguro no compoñente do navegador.</p><p>Que quere facer?</p>"
 
 #: src/konqapplication.cpp:144
 #, kde-format
@@ -468,6 +470,8 @@ msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
 "only when developing Konqueror itself"
 msgstr ""
+"Crear un novo proceso de Konqueror aínda que xa exista un. Só está pensado "
+"para usarse durante o desenvolvemento do propio Konqueror."
 
 #: src/konqapplication.cpp:209
 #, kde-format
@@ -475,18 +479,17 @@ msgid "Location to open"
 msgstr "Lugar para abrir"
 
 #: src/konqapplication.cpp:314
-#, fuzzy, kde-format
-#| msgid "Session to open"
+#, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "Sesión para abrir"
+msgstr "Non foi posíbel abrir a sesión %1."
 
 #: src/konqapplication.cpp:439
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
-msgstr ""
+msgstr "Non pode pasar URL ao usar a opción «--preload». Os URL ignoraranse.\n"
 
 #: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4894
 #: src/konqmainwindow.cpp:4940
@@ -495,11 +498,10 @@ msgid "no name"
 msgstr "sen nome"
 
 #: src/konqextensionmanager.cpp:50
-#, fuzzy, kde-format
-#| msgid "Configure Extensions..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Extensions"
-msgstr "Configurar as extensións…"
+msgstr "Configurar as extensións"
 
 #: src/konqextensionmanager.cpp:70
 #, kde-format
@@ -600,10 +602,9 @@ msgid "Open in New Tab"
 msgstr "Abrir nun novo separador"
 
 #: src/konqhistoryview.cpp:63
-#, fuzzy, kde-format
-#| msgid "Open in New Tab"
+#, kde-format
 msgid "Open in Current Tab"
-msgstr "Abrir nun novo separador"
+msgstr "Abrir na lapela actual"
 
 #: src/konqhistoryview.cpp:67
 #, kde-format
@@ -1256,10 +1257,9 @@ msgstr ""
 "feitos noutras vistas ligadas."
 
 #: src/konqmainwindow.cpp:3755
-#, fuzzy, kde-format
-#| msgid "C&lose Current Tab"
+#, kde-format
 msgid "&Inspect Current Page"
-msgstr "Pechar o separador actua&l"
+msgstr "Inspeccionar a páxina actual"
 
 #: src/konqmainwindow.cpp:3756
 #, kde-format
@@ -1267,11 +1267,14 @@ msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
+"<html>Amosa as ferramentas de desenvolvemento da páxina actual.<br/><br/>A "
+"vista actual está dividida en dous e as ferramentas de desenvolvemento "
+"amósanse na segunda metade."
 
 #: src/konqmainwindow.cpp:3757
 #, kde-format
 msgid "Shows the developer tools for the current page"
-msgstr ""
+msgstr "Amosa as ferramentas de desenvolvemento da páxina actual."
 
 #: src/konqmainwindow.cpp:3923
 #, kde-format
@@ -1299,11 +1302,10 @@ msgid "Open bookmarks folder in new tabs"
 msgstr "Abrir o cartafol de marcadores en novos separadores"
 
 #: src/konqmainwindow.cpp:4259
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "&Abrir"
+msgstr "Abrir"
 
 #: src/konqmainwindow.cpp:4418
 #, kde-format
@@ -1431,22 +1433,29 @@ msgid ""
 "proxy URL manually in the settings dialog. Do you want to change proxy "
 "settings now?"
 msgstr ""
+"A súa configuración de devasa non pode usarse co motor de HTML de "
+"QtWebEngine. Non se usará ningunha devasa.\n"
+"\n"
+" QtWebEngine só permite unha devasa fixa, así que a configuración automática "
+"de devasa (PAC) e o protocolo de descubrimento automático de devasa web non "
+"poden usarse con QtWebEngine. Se necesita unha devasa, seleccione a "
+"configuración de devasa do sistema ou indique un URL de devasa manualmente "
+"no diálogo de configuración. Quere cambiar a configuración de devasa agora?"
 
 #: src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Unsupported proxy configuration"
-msgstr ""
+msgstr "Configuración de devasa non permitida"
 
 #: src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Don't use a proxy"
-msgstr ""
+msgstr "Non usar unha devasa."
 
 #: src/konqmainwindow.cpp:5461 src/konqmainwindow.cpp:5479
-#, fuzzy, kde-format
-#| msgid "Show Configuration Button"
+#, kde-format
 msgid "Show proxy configuration dialog"
-msgstr "Mostrar o botón de configuración"
+msgstr "Amosar o diálogo de configuración de devasa"
 
 #: src/konqmainwindow.cpp:5475
 #, kde-format
@@ -1456,21 +1465,25 @@ msgid ""
 "protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
+"A súa configuración de devasa non pode usarse co motor de HTML QtWebEngine "
+"porque non permite ter distintas devasas para os protocolos HTTP e HTTPS. A "
+"súa configuración actual é:<p><b>Devasa para HTTP:</b> <tt>%1</tt></"
+"p><p><b>Devasa para HTTPS: </b><tt>%2</tt></p>Que quere facer?"
 
 #: src/konqmainwindow.cpp:5478
 #, kde-format
 msgid "Conflicting proxy configuration"
-msgstr ""
+msgstr "Configuración de devasa en conflito"
 
 #: src/konqmainwindow.cpp:5479
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
-msgstr ""
+msgstr "Usar a devasa de HTTP (só esta vez)"
 
 #: src/konqmainwindow.cpp:5479
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
-msgstr ""
+msgstr "Usar a devasa de HTTPS (só esta vez)"
 
 #: src/konqmainwindow.cpp:5556
 #, kde-format
@@ -1479,6 +1492,8 @@ msgid ""
 "hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
 "Mode (%1)"
 msgstr ""
+"Entrou no modo de pantalla completa (a interface agóchase completamente). "
+"Pode saír premendo o atallo de teclado do modo de pantalla completa (%1)."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
@@ -1888,7 +1903,7 @@ msgstr "&Ir a"
 #: src/konqueror.rc:54
 #, kde-format
 msgid "&Tools"
-msgstr ""
+msgstr "&Ferramentas"
 
 #. i18n: ectx: Menu (settings)
 #: src/konqueror.rc:59
@@ -1974,13 +1989,13 @@ msgstr "Enviar de novo"
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
-msgstr ""
+msgstr "Executar"
 
 #: src/urlloader.cpp:278
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
-msgstr ""
+msgstr "Amosar"
 
 #: src/urlloader.cpp:285
 #, kde-kuit-format
@@ -1990,20 +2005,19 @@ msgctxt ""
 msgid ""
 "<filename>%1</filename> can be executed. Do you want to execute it or to "
 "display it?"
-msgstr ""
+msgstr "<filename>%1</filename> pode executarse. Quere executalo ou amosalo?"
 
 #: src/urlloader.cpp:291
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
-msgstr ""
+msgstr "<filename>%1</filename> pode executarse. Quere executalo?"
 
 #: src/urlloader.cpp:506
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As"
-msgstr "Gardar como…"
+msgstr "Gardar como"
 
 #~ msgid "File Management"
 #~ msgstr "Xestión de ficheiros"
