@@ -42,7 +42,7 @@ BookmarksProtocol::BookmarksProtocol( const QByteArray &pool, const QByteArray &
     manager = KBookmarkManager::userBookmarksManager();
 #else
     const QString bookmarksFile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/konqueror/bookmarks.xml");
-    manager = KBookmarkManager::managerForFile(bookmarksFile);
+    manager = new KBookmarkManager(bookmarksFile);
 #endif
     cfg = new KConfig( "kiobookmarksrc" );
     config = cfg->group("General");

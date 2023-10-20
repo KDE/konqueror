@@ -16,12 +16,9 @@ KBookmarkManager * Konq::userBookmarksManager()
 #if QT_VERSION_MAJOR < 6
     return KBookmarkManager::userBookmarksManager();
 #else
-    static KBookmarkManager *s_manager = nullptr;
-    if (!s_manager) {
-        const QString bookmarksFile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/konqueror/bookmarks.xml");
-        s_manager = KBookmarkManager::managerForFile(bookmarksFile);
-    }
-    return s_manager;
+    static const QString bookmarksFile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/konqueror/bookmarks.xml");
+    static KBookmarkManager s_manager(bookmarksFile);
+    return &s_manager;
 #endif
 }
 
