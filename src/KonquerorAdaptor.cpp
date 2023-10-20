@@ -17,8 +17,9 @@
 #include "konqapplication.h"
 
 #include "konqdebug.h"
-#include <kwindowsystem.h>
 #include <KStartupInfo>
+#include <KWindowInfo>
+#include <kwindowsystem.h>
 
 #include <QFile>
 
