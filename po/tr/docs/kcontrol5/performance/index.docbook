@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Turkish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>Performans</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Kaan</firstname
+><surname
+>Özdinçer</surname
+><affiliation
+><address
+><email
+>kaanozdincer@gmail.com</email
+></address
+></affiliation
+><contrib
+>Çeviri</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Uygulamalar 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Sistem ayarları</keyword>
+<keyword
+>performans</keyword>
+<keyword
+>önyükleme</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>Performans Ayarları</title>
+
+<para
+>&konqueror;, çok çeşitli bilgisayarlarda çok çeşitli kullanıcılar tarafından kullanılmaktadır. Başarım kategorisi altında, bu iletişim kutusu her kullanıcının, &konqueror;'un kurulu olduğu bilgisayarın daha duyarlı olmasını sağlayacak seçenekleri ayarlamasına olanak tanır. </para>
+
+<sect2
+><title
+>Önyükleme</title>
+<para
+><guilabel
+>Önyükleme</guilabel
+> etiketli alt bölüm, bellek ile performans arasında bir ödünleşim yapar.</para>
+
+<para
+><emphasis
+>Önyükleme</emphasis
+>, bir kullanıcının, &konqueror; başlatmasını istemeden önce bir &konqueror; örneğini belleğe yüklemeyi ifade eder. Bunun olumlu etkisi, bir kullanıcı &konqueror;'u yüklemesini istediğinde, pencerenin anında görüntülenebilmesidir, çünkü uygulamanın bir kısmı önceden yüklenmiş olacaktır. Negatif etkisi, &konqueror; örneğinin diğer programlar tarafından kullanılabilecek belleği kullanmasıdır. Varsayılan olarak, bir kullanıcı &konqueror;'u kapattığında, örnek kapatılmaz. Bu, bir dahaki sefere bir kullanıcının &konqueror; yüklenmesini istediği zaman hızlıca görünmesini sağlayacaktır.</para>
+
+<para
+><guilabel
+>Her zaman önceden yüklenmiş bir örneğe sahip olmayı deneyin</guilabel
+> etiketli son onay kutusu, önceden yüklenmiş, ancak kullanılmayan &konqueror; örneğini veya her zaman mevcut olmasını sağlayacaktır. Bu seçenek bazı makinelerde (özellikle de sınırlı fiziksel belleğe sahip olanlarda) performansı düşürecektir.</para>
+</sect2>
+</sect1>
+
+</article>

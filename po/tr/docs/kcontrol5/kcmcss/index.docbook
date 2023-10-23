@@ -1,0 +1,454 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Turkish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="kcmcss" lang="&language;">
+<articleinfo>
+<title
+>Görünüm</title>
+<authorgroup>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<othercredit role="translator"
+><firstname
+>Kaan</firstname
+><surname
+>Özdinçer</surname
+><affiliation
+><address
+><email
+>kaanozdincer@gmail.com</email
+></address
+></affiliation
+><contrib
+>Çeviri</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Uygulamalar 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Görünüm</keyword>
+<keyword
+>Yazı Tipi</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Biçim Dosyaları</keyword>
+<keyword
+>Erişilebilirlik</keyword>
+</keywordset>
+
+</articleinfo>
+
+<sect1 id="appearance">
+<title
+>Görünüm</title>
+<para
+>Bu modül, web sayfalarını nasıl görüntüleyeceğinizi yapılandırma seçeneklerine sahip üç sekmeden oluşur.</para>
+
+<sect2 id="general">
+<title
+>Genel</title
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-html"-->
+
+<para
+><guilabel
+>Resimleri otomatik olarak yükle</guilabel
+> etiketli işaret kutusu, web sayfalarındaki resimlerin varsayılan olarak yüklenip yüklenmediğini kontrol etmenizi sağlar. Bağlantılarınız çok yavaş olmadığı sürece, resimsiz kullanmak çok zor olan pek çok web sayfası olduğu için, bu seçeneği seçili bırakmak isteyeceksinizdir. Görüntüleri otomatik olarak yükleme seçeneğini seçerseniz, sayfadaki metni görüntülemeye devam edebilir ve ardından ihtiyaç duyarsanız görüntüleri yükleyebilirsiniz.</para>
+
+<para
+><guilabel
+>Tamamen yüklenmeyen resimler çerçevesini çiz</guilabel
+> işaretliyse, &konqueror; web sayfalarında bulunan ve tam olarak yüklenmemiş olan resimler yerine çerçeveler içerisinde tutucular çizecektir. Ağ bağlantınızın yavaş olduğu durumlarda, bu kutuyu işaretleyip web gezintinizi daha zevkli hale getirebilirsiniz.</para>
+
+<para
+>Birçok web sayfası canlandırmalı gif resimlerini kullanır ve bunlar çok sinir bozucu olabilir, bazı durumlarda sistem kaynakları da fazlaca kullanabilir. <guilabel
+>Canlandırmalar</guilabel
+> seçeneği, canlandırmaların ne zaman etkinleştirileceğini seçmenizi sağlar. Varsayılan değer etkindir, ancak dosyanın kendisinde canlandırmadan daha fazla veya sürekli çalıştırılacağı yönergeleri olsa bile, bunu devre dışı bırakabilir veya canlandırmayı yalnızca bir kez çalıştırabilirsiniz.</para>
+
+<para
+>Sonraki ayar, <guilabel
+>Alt çizgili bağlantılar:</guilabel
+>. <guilabel
+>Etkin</guilabel
+> bağlantılarının altını çizmeyi seçebilirsiniz. Bu seçenek seçilirse, web sayfalarındaki bağlantı olarak işlev gören herhangi bir metin altı çizili bir yazı tipiyle gösterilir. Birçok web sayfası, bağlantı olarak davranan metni ayırt etmek için renk kullanırken, alt çizgi, bağlantıları bulmayı çok kolay hale getirmektedir.</para>
+
+<para
+>Altı çizili bağlantılardan hoşlanmazsanız, <guilabel
+>Kapalı</guilabel
+> seçeneğini işaretleyebilirsiniz, böylece herhangi bir bağlantının altı çizilmez. Ayrıca, fare imlecini üzerlerine geldiğinde altının çizilmesi için, bağlantıların altını çizecek şekilde <guilabel
+>Yalnızca Üstüne Geldiğinde</guilabel
+> seçeneğini seçebilirsiniz.</para>
+
+<note
+><para
+>Bu sitenin CSS tanımlamaları, bu değerin üstüne yazabilir.</para
+></note>
+
+<para
+><guilabel
+>Yumuşak kaydırma</guilabel
+>, &konqueror;'un &HTML; sayfalarını veya yumuşak kaydırmak için pürüzsüz basamakları kullanıp kullanmamasını belirler: <itemizedlist>
+<listitem
+><para
+><guilabel
+>Her Zaman</guilabel
+>: Kaydırma sırasında her zaman yumuşak geçişleri kullanır.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Asla</guilabel
+>: Asla pürüzsüz kaydırma kullanmaz, bunun yerine tüm geçişleri gösterir.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Mümkün Olduğunda</guilabel
+>: Sistem kaynaklarının iyi kullanılmasıyla elde edilebilecek sayfalarda yalnızca yumuşak kaydırma kullanır.</para
+></listitem>
+</itemizedlist>
+</para>
+
+</sect2>
+
+<sect2 id="fonts"
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-appearance"-->
+<title
+>Yazı Tipleri</title>
+<para
+>Bu sekmede, yazı tiplerinin kullanımı ile ilgili çeşitli seçenekleri seçebilirsiniz. Yazı tiplerinin şekilleri ve boyutları genellikle web sayfasının tasarımının bir parçası olsa da, &konqueror;'un kullanacağı bazı varsayılan ayarları seçebilirsiniz.</para>
+
+<para
+>Burada ayarlayabileceğiniz ilk şey yazı tipi boyutudur. Size rahat bir tarayıcı deneyimi sağlamak için birlikte çalışan iki ayar vardır.</para>
+
+<para
+>Öncelikle, bir <guilabel
+>Azami yazı tipi boyutu</guilabel
+> seçeneğini ayarlayabilirsiniz. Bu, yazı tipi boyutu özellikle görüntülediğiniz sayfada ayarlanmış olsa bile, &konqueror; bu talimatları yoksayar ve asla burada ayarladığınızdan daha küçük fontlar göstermez.</para>
+
+<para
+>Ardından, bir <guilabel
+>Ortalama yazı tipi boyutu</guilabel
+> seçeneğini ayarlayabilirsiniz. Bu, sayfa boyutları belirtmediğinde kullanılan varsayılan metnin boyutu değil, aynı zamanda, göreceli yazı tipi boyutlarına karşı hesaplanan temel boyut olarak da kullanılır. Yani HTML talimatı <quote
+>daha küçük</quote
+>, seçeneği için ayarladığınız boyuttan daha küçük olacaktır.</para>
+
+<para
+>Her iki seçenek için de, seçenek etiketinin yanındaki yukarı/aşağı döndürme kontrolünü (veya sadece yazarak) kullanarak tam yazı tipi boyutunu belirleyebilirsiniz.</para>
+
+<para
+>Bu seçenekler birbirinden bağımsızdır. Yazı tipi boyutunu ayarlamayan veya varsayılanı isteyen sayfalar, <guilabel
+>Oratalama yazı tipi boyutu</guilabel
+> seçeneğinde belirlediğiniz boyutla gösterilirken, <guilabel
+>Asgari yazı tipi boyutu</guilabel
+> daha küçük bir boyut isteyen sayfalar, bunu gösterecektir. Biri diğerini etkilemez.</para>
+
+<para
+>Kalan seçenekler, yazı tiplerinin &HTML; sayfalarında kullanılan farklı işaretleme türleri ile ilişkilendirilmesi içindir. Birçok web sayfasının bu ayarları geçersiz kılabileceğini unutmayın. Her tür font için isteğe bağlı olarak (Standart, Sabit, Serif, &etc;), farklı bir yazı tipi seçebilirsiniz.</para>
+
+<para
+>Aşağıda, <guilabel
+>Bu kodlama için bir yazı tipi boyutu ayarı</guilabel
+> ayarlayabilirsiniz . Bazen belirli bir kodlama veya dil için kullanmak istediğiniz yazı tipleri ortalamadan çok daha büyük veya küçüktür, dolayısıyla bunları aynı satıra getirmek için bu ayarı kullanabilirsiniz.</para>
+
+<para
+>&konqueror;, sayfaları oluştururken varsayılacak olan kodlamayı ayarlayabilirsiniz. Varsayılan ayar <guilabel
+>Dil Kodlamasını Kullan</guilabel
+> şeklindedir, ancak listede bulunan herhangi bir kodlamayla değiştirebilirsiniz.</para>
+
+</sect2>
+
+<sect2 id="stylesheets">
+
+<title
+>Biçim Dosyaları</title>
+
+<sect3>
+<title
+>Giriş</title>
+
+<para
+><acronym
+>CSS</acronym
+> Biçim dosyaları, web sayfalarının görünme biçimini etkiler. <acronym
+>CSS</acronym
+> kısaltma olarak: <emphasis
+>C</emphasis
+>ascading <emphasis
+>S</emphasis
+>tyle <emphasis
+>S</emphasis
+>heets.</para>
+
+<para
+>&kde; basit varsayılanlara ve masaüstünüz için kullandığınız renk düzenine dayanan kendi biçim dosyasını kullanabilir. &kde; kendiniz yazdığınız bir biçim dosyasını da kullanabilir. Son olarak, bu modülde bir biçim dosyası belirleyebilirsiniz. Bu modülde sunulan seçenekler, özellikle görme yeteneği düşük kişiler için erişilebilirlik amacıyla ayarlanmıştır.</para>
+
+<para
+>Buradaki seçimleriniz, HTML'yi &kde;'nin kendi oluşturucusu (khtml adı verilen) ile işleyen her &kde; uygulamasını etkiler. Bunlara &kmail;, &khelpcenter; ve tabii ki &konqueror; dahildir. Buradaki seçimler &firefox; gibi diğer tarayıcıları etkilemez.</para>
+
+</sect3>
+
+<sect3 id="css-general">
+<title
+>Biçim Dosyaları</title>
+
+<para
+>Bu bölüm aşağıdaki seçenekleri içerir:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Varsayılan biçim dosyasını kullan</guilabel
+></term>
+<listitem>
+<para
+>&kde; varsayılan biçim dosyasını kullanacaktır. Bazı renkler varsayılan olarak seçtiğiniz renk düzeninde tanımlanan renklerdir. Çoğu ayar, görüntülediğiniz sayfada kolayca geçersiz kılınabilir.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Kullanıcı tanımlı biçim dosyası kullan</guilabel
+></term>
+<listitem>
+<para
+>&kde;, kendinizin yazdığı bir biçim dosyasını kullanacaktır. Sisteminizdeki biçim dosyasını bulmak için gözat düğmesini kullanabilirsiniz. <acronym
+>CSS</acronym
+> dosyaları geleneksel olarak <literal role="extension"
+>.css</literal
+> uzantısına sahiptir, ancak bu zorunlu değildir.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Erişilebilirlik biçim dosyasını kullan</guilabel
+></term>
+<listitem>
+<para
+><guilabel
+>Özelleştir</guilabel
+> penceresinde tanımlanan ayarları kullanın. Bu seçeneğin etkinleştirilmesi, biçim dosyası ayarları tanımlamak için <guibutton
+>Özelleştir</guibutton
+> düğmesini etkinleştirilmesini sağlayacaktır.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="css-customize">
+<title
+>Özelleştir</title>
+
+<para
+>Bu pencerede bir kullanıcı biçim dosyası oluşturabilirsiniz. Mevcut seçenekler, yalnızca bir biçim dosyasına ekleyebileceğiniz talimatların bir alt kümesidir ve kullanıcıların web sayfalarını, kde yardım dosyalarını daha okunabilir hale getiren bir biçim dosyası oluşturmalarına izin vermek için görme yeteneği düşük kişilere yöneliktir.</para>
+
+<para
+><guilabel
+>Erişilebilirlik biçim dosyasını kullan</guilabel
+> seçilmediği sürece bu iletişim kutusundaki seçenekler devre dışı bırakılacaktır.</para>
+
+<sect4>
+<title
+><guilabel
+>Yazı Tipi Ailesi</guilabel
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Teme aile</guilabel
+></term>
+<listitem>
+<para
+>Gövde metni için kullanılacak olan yazı tipi ailesini seç.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Tüm metinlerde aynı aileyi kullan</guilabel
+></term>
+<listitem>
+<para
+>Bunu etkinleştirirseniz, görüntülediğiniz sayfada, ayarlara bakılmaksızın, tüm yazı tipleri için, aynı yazı tipi ailesi kullanılacaktır. Bu, başlıklar için süslü veya okunması zor yazı tipi kullanan sayfalar için yararlıdır.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Yazı Tipi Boyutu</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Teme yazı tipi boyutu</guilabel
+></term>
+<listitem>
+<para
+>Bu, sayfadaki metin için varsayılan boyuttur. Birçok web sitesi, metni daha büyük yapmak için, <quote
+>daha büyük</quote
+> veya <quote
+>+1</quote
+> ve metnini küçültmek için, <quote
+> daha küçük</quote
+> veya <quote
+>-1 </quote
+> ile bu yazı tipi boyutlarını belirler.</para>
+<para
+>Birçok kişi web sayfalarını normal kullanıcıların okuması için  varsayılan metin boyutunun çok büyük olduğu platformlarda tasarlar, dolayısıyla yazı tipini bu şekilde daha küçük boyuta zorlayan web sayfalarına rastlamak çok yaygındır.</para>
+<para
+>Bu ayar, varsayılan yazı tipini rahat bir boyuta ayarlamanıza izin verir, böylece göreceli boyutlar da rahat olabilmesi için büyütülür.</para>
+<para
+>&konqueror;'un asgari bir boyut uygulayabileceğini, böylece metnin <emphasis
+>asla</emphasis
+> okunamayacak kadar küçük olabileceğini unutmayın. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Tüm ögeler için aynı yazı tipi boyutunu kullan</guilabel
+></term>
+<listitem>
+<para
+>Bu seçeneği etkinleştirirseniz, sayfanın içerdiği talimatlara bakılmaksızın, tüm metinler belirtilen font boyutunda oluşturulur. Göreceli yazı tipi boyutları daha önce açıklandığı gibi olacak ve metnin belli bir boyutta oluşturulması gereken özel yönergeler geçersiz kılınacaktır.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Resimler</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Resimleri gizle</guilabel
+></term>
+<listitem>
+<para
+>Resimleri görüntülemek istemiyorsanız, özelliği buradan kapatabilirsiniz.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Arkaplan resimlerini gizle</guilabel
+></term>
+<listitem>
+<para
+>Görme kaybı olan kullanıcılar için önemli bir sorun, arka plan resimlerinin metni okumasına izin vermek için yeterli karşıtlık oluşturmamasıdır. Arka plan resimlerini burada, tüm görüntüleri izlemek için yukarıdaki seçiminizden bağımsız olarak devre dışı bırakabilirsiniz.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Renkler</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Beyaz üzerine siyah</guilabel
+></term>
+<listitem>
+<para
+>Görme kaybı olan birçok kişi beyaz bir ekranda siyah metin olduğunda ve en çok karşıtlık olduğunda rahat okuyor. Bu sizin için de geçerliyse, buradan ayarlayabilirsiniz.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Siyah üzerine beyaz</guilabel
+></term>
+<listitem>
+<para
+>Azalan görme yeteneği olan pek çok kişi bunun tam tersini, karanlık bir ekranda beyaz metni okumayı daha kolay buluyor.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Özel</guilabel
+></term>
+<listitem>
+<para
+>Yine de başka insanlar, saf siyah beyazın her iki sırayla da okunması zor olduğunu bulmuşlardır. Burada hem özel, hem de <guilabel
+>Arkaplan</guilabel
+> ve <guilabel
+>Önplan</guilabel
+> renklerini ayarlayabilirsiniz.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Tüm metin için aynı rengi kullan</guilabel
+></term>
+<listitem>
+<para
+>Çoğu web sitesi, başlıklar veya diğerleri için farklı, genellikle zıt renkler kullanır. Bu, içeriği okumanızı zorlaştırıyorsa, &kde;'nin tüm metin için yukarıda belirlediğiniz renkleri kullanması için bu onay kutusunu etkinleştirebilirsiniz.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect4>
+
+<sect4>
+<title
+>Önizleme</title>
+
+<para
+><guilabel
+>Önizleme</guilabel
+> bölümü, değişikliklerinizin etkisini görmenizi sağlar. Biçim dosyanızla birlikte çeşitli başlık türleri görüntülenir ve varsayılan gövde metninde bir cümle görüntülenir.</para>
+
+<para
+>Bu, rahatça okuyabileceğiniz duruma gelinceye kadar biçim dosyasınıza ince ayar yapmanıza izin vermelidir.</para>
+
+<para
+>İyi gezinmeler!</para>
+
+</sect4>
+
+</sect3>
+
+</sect2>
+
+</sect1>
+
+</article>
