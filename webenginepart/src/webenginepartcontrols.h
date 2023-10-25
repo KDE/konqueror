@@ -73,6 +73,12 @@ private slots:
 signals:
     void userAgentChanged(const QString &uaString);
 
+    /**
+     * @brief Informs pages that the user-defined stylesheet has changed
+     * @param script the source of the javascript script to run to update the stylesheet
+     */
+    void updateStyleSheet(const QString &script);
+
 private:
 
     WebEnginePartControls();
@@ -135,6 +141,19 @@ private:
      */
     static QWebEngineScript scriptFromJson(const QString &name, const QJsonObject &obj);
 
+    /**
+     * @brief Applies the user stylesheet according to the user settings
+     *
+     * Since QtWebEngine doesn't provide special support for using custom stylesheets, custom stylesheets are
+     * applied using a script. This script is inserted in the profile script list so that it's automatically
+     * applied to new pages. To update existing pages, the updateStyleSheet() signal is emitted with the code
+     * of the script.
+     *
+     * If the user chose to use the default stylesheet while previously a custom one was in use, the script
+     * will delete the old stylesheet.
+     */
+    void updateUserStyleSheetScript();
+
     KonqWebEnginePart::Profile *m_profile;
     WebEnginePartCookieJar *m_cookieJar;
     SpellCheckerManager *m_spellCheckerManager;
@@ -142,6 +161,7 @@ private:
     KonqWebEnginePart::CertificateErrorDialogManager *m_certificateErrorDialogManager;
     NavigationRecorder *m_navigationRecorder;
     QString m_defaultUserAgent;
+    static constexpr const char* s_userStyleSheetScriptName{"apply konqueror user stylesheet"};
 };
 
 #endif // WEBENGINEPARTCONTROLS_H

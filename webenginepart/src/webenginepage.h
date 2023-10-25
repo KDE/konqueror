@@ -155,6 +155,16 @@ protected Q_SLOTS:
     void changeFullScreenMode(QWebEngineFullScreenRequest req);
     void changeLifecycleState(QWebEnginePage::LifecycleState recommendedState);
 
+    /**
+     * @brief Updates the stylesheet applied to the page
+     *
+     * Since `QtWebEngine` doesn't directly support custom stylesheets, this is done using javascript
+     * @param script the script to run to update the stylesheet
+     * @see WebEnginePartControls::updateUserStyleSheet
+     * @see WebEnginePartControls::updateStyleSheet
+     */
+    void updateUserStyleSheet(const QString &script);
+
 private:
     bool checkFormData(const QUrl& url) const;
     bool handleMailToUrl (const QUrl& , NavigationType type) const;

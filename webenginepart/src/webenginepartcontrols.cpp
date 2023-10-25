@@ -25,6 +25,7 @@
 #include <KProtocolInfo>
 #include <KSharedConfig>
 #include <KConfigGroup>
+#include <KLocalizedString>
 
 #include <QWebEngineProfile>
 #include <QWebEngineUrlScheme>
@@ -34,6 +35,7 @@
 #include <QLocale>
 #include <QSettings>
 #include <QJsonDocument>
+#include <QMessageBox>
 
 using namespace KonqInterfaces;
 
@@ -238,7 +240,75 @@ void WebEnginePartControls::reparseConfiguration()
     } else {
         m_profile->setHttpCacheType(QWebEngineProfile::NoCache);
     }
+
+    updateUserStyleSheetScript();
 }
+
+void WebEnginePartControls::updateUserStyleSheetScript()
+{
+#if QT_VERSION_MAJOR < 6
+    QList<QWebEngineScript> oldScripts = m_profile->scripts()->findScripts(s_userStyleSheetScriptName);
+#else
+    QList<QWebEngineScript> oldScripts = m_profile->scripts()->find(s_userStyleSheetScriptName);
+#endif
+    bool hadUserStyleSheet = !oldScripts.isEmpty();
+    //Remove old style sheets. Note that oldScripts should either be empty or contain only one element
+    //In theory, we could reuse the previous script, if it turns out to be the same as the new one, but
+    //I think this way is faster (besides being easier)
+    for (const QWebEngineScript &s : oldScripts) {
+        m_profile->scripts()->remove(s);
+    }
+    QUrl userStyleSheetUrl(WebEngineSettings::self()->userStyleSheet());
+    bool userStyleSheetEnabled = !userStyleSheetUrl.isEmpty();
+    //If the user stylesheet is disable and it was already disabled, there's nothing to do; if there was a custom stylesheet in use,
+    //we'll have to remove it, so we can't return
+    if (!userStyleSheetEnabled && !hadUserStyleSheet) {
+        return;
+    }
+
+    QString css;
+    if (userStyleSheetEnabled) {
+        //Read the contents of the custom style sheet
+        QFile cssFile(userStyleSheetUrl.path());
+        cssFile.open(QFile::ReadOnly);
+        if (cssFile.isOpen()) {
+            css = cssFile.readAll();
+            cssFile.close();
+        }
+        else {
+            auto msg = i18n("Couldn't open the file <tt>%1</tt> containing the user style sheet. The default style sheet will be used", userStyleSheetUrl.path());
+            QMessageBox::warning(qApp->activeWindow(), QString(), msg);
+            //Only return if no custom stylesheet was in use
+            if (!hadUserStyleSheet) {
+                return;
+            }
+            userStyleSheetEnabled = false;
+        }
+    }
+
+    //Create the js code
+    QFile applyUserCssFile(":/applyuserstylesheet.js");
+    applyUserCssFile.open(QFile::ReadOnly);
+    Q_ASSERT(applyUserCssFile.isOpen());
+    QString code{QString(applyUserCssFile.readAll()).arg(s_userStyleSheetScriptName).arg(css.simplified())};
+    applyUserCssFile.close();
+
+    //Tell pages to update their stylesheet. If `css` is empty, the script will remove the <style> element from the pages;
+    //if `css` is not empty, it will update or create the appropriate <style> element
+    emit updateStyleSheet(code);
+    if (!userStyleSheetEnabled) {
+        return;
+    }
+
+    //Create a script to inject in new pages
+    QWebEngineScript applyUserCss;
+    applyUserCss.setName(s_userStyleSheetScriptName);
+    applyUserCss.setInjectionPoint(QWebEngineScript::DocumentReady);
+    applyUserCss.setWorldId(QWebEngineScript::ApplicationWorld);
+    applyUserCss.setSourceCode(code);
+    m_profile->scripts()->insert(applyUserCss);
+}
+
 
 QString WebEnginePartControls::httpUserAgent() const
 {

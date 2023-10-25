@@ -115,6 +115,8 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
 
     WebEnginePartControls::self()->navigationRecorder()->registerPage(this);
     m_part->downloadManager()->addPage(this);
+
+    connect(WebEnginePartControls::self(), &WebEnginePartControls::updateStyleSheet, this, &WebEnginePage::updateUserStyleSheet);
 }
 
 WebEnginePage::~WebEnginePage()
@@ -814,6 +816,11 @@ void WebEnginePage::setStatusBarText(const QString& text)
 void WebEnginePage::changeLifecycleState(QWebEnginePage::LifecycleState recommendedState)
 {
     setLifecycleState(recommendedState == LifecycleState::Discarded ? LifecycleState::Frozen : recommendedState);
+}
+
+void WebEnginePage::updateUserStyleSheet(const QString& script)
+{
+    runJavaScript(script, QWebEngineScript::ApplicationWorld);
 }
 
 /************************************* Begin NewWindowPage ******************************************/
