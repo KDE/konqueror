@@ -3330,9 +3330,9 @@ void KonqMainWindow::initActions()
     m_paUp = new KToolBarPopupAction(QIcon::fromTheme(QStringLiteral("go-up")), i18n("&Up"), this);
     actionCollection()->addAction(QStringLiteral("go_up"), m_paUp);
     actionCollection()->setDefaultShortcuts(m_paUp, KStandardShortcut::shortcut(KStandardShortcut::Up));
-    connect(m_paUp, SIGNAL(triggered()), this, SLOT(slotUp()));
-    connect(m_paUp->menu(), SIGNAL(aboutToShow()), this, SLOT(slotUpAboutToShow()));
-    connect(m_paUp->menu(), SIGNAL(triggered(QAction*)), this, SLOT(slotUpActivated(QAction*)));
+    connect(m_paUp, &QAction::triggered, this, &KonqMainWindow::slotUp);
+    connect(m_paUp->popupMenu(), &QMenu::aboutToShow, this, &KonqMainWindow::slotUpAboutToShow);
+    connect(m_paUp->popupMenu(), &QMenu::triggered, this, &KonqMainWindow::slotUpActivated);
 
     QPair< KGuiItem, KGuiItem > backForward = KStandardGuiItem::backAndForward();
 
@@ -3343,7 +3343,7 @@ void KonqMainWindow::initActions()
 
     // set the closed tabs list shown
     connect(m_paClosedItems, &KToolBarPopupAction::triggered, m_pUndoManager, &KonqUndoManager::undoLastClosedItem);
-    connect(m_paClosedItems->menu(), SIGNAL(aboutToShow()), this, SLOT(slotClosedItemsListAboutToShow()));
+    connect(m_paClosedItems->popupMenu(), &QMenu::aboutToShow, this, &KonqMainWindow::slotClosedItemsListAboutToShow);
     connect(m_closedItemsGroup, &QActionGroup::triggered, m_pUndoManager, &KonqUndoManager::slotClosedItemsActivated);
     connect(m_pViewManager, &KonqViewManager::aboutToRemoveTab, this, &KonqMainWindow::slotAddClosedUrl);
     connect(m_pUndoManager, &KonqUndoManager::openClosedTab, m_pViewManager, &KonqViewManager::openClosedTab);
@@ -3353,29 +3353,29 @@ void KonqMainWindow::initActions()
     m_paSessions = new KActionMenu(i18n("Sessions"), this);
     actionCollection()->addAction(QStringLiteral("sessions"), m_paSessions);
     m_sessionsGroup = new QActionGroup(m_paSessions->menu());
-    connect(m_paSessions->menu(), SIGNAL(aboutToShow()), this, SLOT(slotSessionsListAboutToShow()));
+    connect(m_paSessions->menu(), &QMenu::aboutToShow, this, &KonqMainWindow::slotSessionsListAboutToShow);
     connect(m_sessionsGroup, &QActionGroup::triggered, this, &KonqMainWindow::slotSessionActivated);
 
     m_paBack = new KToolBarPopupAction(QIcon::fromTheme(backForward.first.iconName()), backForward.first.text(), this);
     actionCollection()->addAction(QStringLiteral("go_back"), m_paBack);
     actionCollection()->setDefaultShortcuts(m_paBack, KStandardShortcut::shortcut(KStandardShortcut::Back));
-    connect(m_paBack, SIGNAL(triggered()), this, SLOT(slotBack()));
-    connect(m_paBack->menu(), SIGNAL(aboutToShow()), this, SLOT(slotBackAboutToShow()));
-    connect(m_paBack->menu(), SIGNAL(triggered(QAction*)), this, SLOT(slotBackActivated(QAction*)));
+    connect(m_paBack, &QAction::triggered, this, &KonqMainWindow::slotBack);
+    connect(m_paBack->popupMenu(), &QMenu::aboutToShow, this, &KonqMainWindow::slotBackAboutToShow);
+    connect(m_paBack->popupMenu(), &QMenu::triggered, this, &KonqMainWindow::slotBackActivated);
 
     m_paForward = new KToolBarPopupAction(QIcon::fromTheme(backForward.second.iconName()), backForward.second.text(), this);
     actionCollection()->addAction(QStringLiteral("go_forward"), m_paForward);
     actionCollection()->setDefaultShortcuts(m_paForward, KStandardShortcut::shortcut(KStandardShortcut::Forward));
-    connect(m_paForward, SIGNAL(triggered()), this, SLOT(slotForward()));
-    connect(m_paForward->menu(), SIGNAL(aboutToShow()), this, SLOT(slotForwardAboutToShow()));
-    connect(m_paForward->menu(), SIGNAL(triggered(QAction*)), this, SLOT(slotForwardActivated(QAction*)));
+    connect(m_paForward, &QAction::triggered, this, &KonqMainWindow::slotForward);
+    connect(m_paForward->popupMenu(), &QMenu::aboutToShow, this, &KonqMainWindow::slotForwardAboutToShow);
+    connect(m_paForward->popupMenu(), &QMenu::triggered, this, &KonqMainWindow::slotForwardActivated);
 
     m_paHome = actionCollection()->addAction(KStandardAction::Home);
-    connect(m_paHome, SIGNAL(triggered(bool)), this, SLOT(slotHome()));
+    connect(m_paHome, &QAction::triggered, this, &KonqMainWindow::slotHome);
     m_paHomePopup = new KToolBarPopupAction (QIcon::fromTheme(QStringLiteral("go-home")), i18n("Home"), this);
     actionCollection()->addAction(QStringLiteral("go_home_popup"), m_paHomePopup);
-    connect(m_paHomePopup, SIGNAL(triggered()), this, SLOT(slotHome()));
-    connect(m_paHomePopup->popupMenu(), SIGNAL(triggered(QAction*)), this, SLOT(slotHomePopupActivated(QAction*)));
+    connect(m_paHomePopup, &QAction::triggered, this, &KonqMainWindow::slotHome);
+    connect(m_paHomePopup->popupMenu(), &QMenu::triggered, this, &KonqMainWindow::slotHomePopupActivated);
 
     KonqMostOftenURLSAction *mostOften = new KonqMostOftenURLSAction(i18nc("@action:inmenu Go", "Most Often Visited"), this);
     actionCollection()->addAction(QStringLiteral("go_most_often"), mostOften);

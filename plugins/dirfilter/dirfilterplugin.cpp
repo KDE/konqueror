@@ -213,9 +213,13 @@ DirFilterPlugin::DirFilterPlugin(QObject *parent, const QVariantList &)
 {
     m_part = qobject_cast<KParts::ReadOnlyPart *>(parent);
     if (m_part) {
+        //Can't use modern connect syntax because aboutToOpenURL is specific to Dolphin part
         connect(m_part, SIGNAL(aboutToOpenURL()), this, SLOT(slotOpenURL()));
-        //connect(m_part, SIGNAL(completed()), this, SLOT(slotOpenURLCompleted()));
-        connect(m_part, SIGNAL(completed(bool)), this, SLOT(slotOpenURLCompleted()));
+#if QT_VERSION_MAJOR < 6
+        connect(m_part, QOverload<>::of(&KParts::ReadOnlyPart::completed), this, &DirFilterPlugin::slotOpenURLCompleted);
+#else
+        connect(m_part, &KParts::ReadOnlyPart::completed, this, &DirFilterPlugin::slotOpenURLCompleted);
+#endif
     }
 
     KParts::ListingNotificationExtension *notifyExt = KParts::ListingNotificationExtension::childObject(m_part);

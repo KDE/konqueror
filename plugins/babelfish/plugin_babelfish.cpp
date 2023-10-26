@@ -27,6 +27,7 @@
 #include <kconfig.h>
 #include <kpluginfactory.h>
 #include <kaboutdata.h>
+#include <KIO/Job>
 
 #include <KConfigGroup>
 
@@ -46,17 +47,17 @@ PluginBabelFish::PluginBabelFish(QObject *parent,
                              actionCollection());
     actionCollection()->addAction(QStringLiteral("translatewebpage"), m_menu);
     m_menu->setPopupMode(QToolButton::InstantPopup);
-    connect(m_menu->menu(), SIGNAL(aboutToShow()),
-            this, SLOT(slotAboutToShow()));
+    connect(m_menu->menu(), &QMenu::aboutToShow, this, &PluginBabelFish::slotAboutToShow);
 
     KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(parent);
     if (part) {
-        connect(part, SIGNAL(started(KIO::Job*)), this,
-                SLOT(slotEnableMenu()));
-        connect(part, SIGNAL(completed()), this,
-                SLOT(slotEnableMenu()));
-        connect(part, SIGNAL(completed(bool)), this,
-                SLOT(slotEnableMenu()));
+        connect(part, &KParts::ReadOnlyPart::started, this, &PluginBabelFish::slotEnableMenu);
+#if QT_VERSION_MAJOR < 6
+        connect(part, QOverload<>::of(&KParts::ReadOnlyPart::completed), this, &PluginBabelFish::slotEnableMenu);
+#else
+        connect(part, &KParts::ReadOnlyPart::completed, this, &PluginBabelFish::slotEnableMenu);
+#endif
+        connect(part, &KParts::ReadOnlyPart::completedWithPendingAction, this, &PluginBabelFish::slotEnableMenu);
     }
 }
 
