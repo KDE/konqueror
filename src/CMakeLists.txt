@@ -94,6 +94,7 @@ set(konqueror_KDEINIT_SRCS
    implementations/konqbrowserwindowinterface.cpp
    konqutils.cpp
    implementations/konqbrowser.cpp
+   configdialog.cpp
 )
 
 kconfig_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)

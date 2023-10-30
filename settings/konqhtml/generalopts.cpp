@@ -27,9 +27,7 @@
 #include <KSharedConfig>
 #include <KMessageWidget>
 #include <KParts/PartLoader>
-
-// Local
-#include "ui_advancedTabOptions.h"
+#include <KLocalizedString>
 
 // Keep in sync with konqueror.kcfg
 static const char DEFAULT_STARTPAGE[] = "konq:konqueror";
@@ -47,25 +45,6 @@ KKonqGeneralOptions::KKonqGeneralOptions(QObject *parent, const KPluginMetaData 
     lay->setContentsMargins(0, 0, 0, 0);
 
     addHomeUrlWidgets(lay);
-
-    QGroupBox *tabsGroup = new QGroupBox(i18n("Tabbed Browsing"));
-
-    tabOptions = new Ui_advancedTabOptions;
-    tabOptions->setupUi(tabsGroup);
-
-    connect(tabOptions->m_pShowMMBInTabs, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pDynamicTabbarHide, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pNewTabsInBackground, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pOpenAfterCurrentPage, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pTabConfirm, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pTabCloseActivatePrevious, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pPermanentCloseButton, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pKonquerorTabforExternalURL, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pPopupsWithinTabs, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pMiddleClickClose, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-
-    lay->addWidget(tabsGroup);
-
     setNeedsSave(false);
 }
 
@@ -157,7 +136,6 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
 
 KKonqGeneralOptions::~KKonqGeneralOptions()
 {
-    delete tabOptions;
 }
 
 void KKonqGeneralOptions::displayEmpytStartPageWarningIfNeeded()
@@ -234,23 +212,6 @@ void KKonqGeneralOptions::load()
     for (const KPluginMetaData &md : partOfferList) {
         m_webEngineCombo->addItem(QIcon::fromTheme(md.iconName()), md.name(), md.pluginId());
     }
-
-    KConfigGroup cg(m_pConfig, "FMSettings"); // ### what a wrong group name for these settings...
-
-    tabOptions->m_pShowMMBInTabs->setChecked(cg.readEntry("MMBOpensTab", true));
-    tabOptions->m_pDynamicTabbarHide->setChecked(!(cg.readEntry("AlwaysTabbedMode", false)));
-
-    tabOptions->m_pNewTabsInBackground->setChecked(!(cg.readEntry("NewTabsInFront", false)));
-    tabOptions->m_pOpenAfterCurrentPage->setChecked(cg.readEntry("OpenAfterCurrentPage", false));
-    tabOptions->m_pPermanentCloseButton->setChecked(cg.readEntry("PermanentCloseButton", true));
-    tabOptions->m_pKonquerorTabforExternalURL->setChecked(cg.readEntry("KonquerorTabforExternalURL", false));
-    tabOptions->m_pPopupsWithinTabs->setChecked(cg.readEntry("PopupsWithinTabs", false));
-    tabOptions->m_pTabCloseActivatePrevious->setChecked(cg.readEntry("TabCloseActivatePrevious", false));
-    tabOptions->m_pMiddleClickClose->setChecked(cg.readEntry("MouseMiddleClickClosesTab", false));
-
-    cg = KConfigGroup(m_pConfig, "Notification Messages");
-    tabOptions->m_pTabConfirm->setChecked(!cg.hasKey("MultipleTabConfirm"));
-
 }
 
 void KKonqGeneralOptions::defaults()
@@ -299,25 +260,6 @@ void KKonqGeneralOptions::save()
         KBuildSycocaProgressDialog::rebuildKSycoca(widget());
     }
 
-    KConfigGroup cg(m_pConfig, "FMSettings");
-    cg.writeEntry("MMBOpensTab", tabOptions->m_pShowMMBInTabs->isChecked());
-    cg.writeEntry("AlwaysTabbedMode", !(tabOptions->m_pDynamicTabbarHide->isChecked()));
-
-    cg.writeEntry("NewTabsInFront", !(tabOptions->m_pNewTabsInBackground->isChecked()));
-    cg.writeEntry("OpenAfterCurrentPage", tabOptions->m_pOpenAfterCurrentPage->isChecked());
-    cg.writeEntry("PermanentCloseButton", tabOptions->m_pPermanentCloseButton->isChecked());
-    cg.writeEntry("KonquerorTabforExternalURL", tabOptions->m_pKonquerorTabforExternalURL->isChecked());
-    cg.writeEntry("PopupsWithinTabs", tabOptions->m_pPopupsWithinTabs->isChecked());
-    cg.writeEntry("TabCloseActivatePrevious", tabOptions->m_pTabCloseActivatePrevious->isChecked());
-    cg.writeEntry("MouseMiddleClickClosesTab", tabOptions->m_pMiddleClickClose->isChecked());
-    cg.sync();
-    // It only matters whether the key is present, its value has no meaning
-    cg = KConfigGroup(m_pConfig, "Notification Messages");
-    if (tabOptions->m_pTabConfirm->isChecked()) {
-        cg.deleteEntry("MultipleTabConfirm");
-    } else {
-        cg.writeEntry("MultipleTabConfirm", true);
-    }
     // Send signal to all konqueror instances
     QDBusMessage message =
         QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));

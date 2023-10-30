@@ -42,6 +42,7 @@
 #include "urlloader.h"
 #include "pluginmetadatautils.h"
 #include "browseropenorsavequestion.h"
+#include "configdialog.h"
 
 #include <konq_events.h>
 #include <konqpixmapprovider.h>
@@ -157,6 +158,8 @@
 #include <QMetaObject>
 #include <QMetaMethod>
 #include <QActionGroup>
+
+#include <KCModule>
 
 template class QList<QPixmap *>;
 template class QList<KToggleAction *>;
@@ -1645,80 +1648,25 @@ void KonqMainWindow::slotConfigureExtensions()
     extensionManager.exec();
 }
 
-void KonqMainWindow::slotConfigure(const QString startingModule)
+void KonqMainWindow::slotConfigure()
 {
     emit aboutToConfigure();
-    KPageWidgetItem *startingItem = nullptr;
+
     if (!m_configureDialog) {
-        m_configureDialog = new KCMultiDialog(this);
-        m_configureDialog->setObjectName(QStringLiteral("configureDialog"));
-        m_configureDialog->setFaceType(KPageDialog::Tree);
-        connect(m_configureDialog, &KCMultiDialog::finished, this, &KonqMainWindow::slotConfigureDone);
-
-        const char *const toplevelModules[] = {
-            "konqueror_kcms/khtml_general",
-#ifndef Q_OS_WIN
-            "konqueror_kcms/kcm_performance",
-#endif
-            "konqueror_kcms/kcm_bookmarks",
-        };
-        for (uint i = 0; i < sizeof(toplevelModules) / sizeof(char *); ++i) {
-            const QString kcmName = QString(toplevelModules[i]);
-            m_configureDialog->addModule(KPluginMetaData(kcmName));
-        }
-        m_configureDialog->addModule(KPluginMetaData(QStringLiteral("konqueror_kcms/kcm_konq")));
-        const char *const fmModules[] = {
-            "dolphin/kcms/kcm_dolphinviewmodes",
-            "dolphin/kcms/kcm_dolphinnavigation",
-            "dolphin/kcms/kcm_dolphingeneral",
-            "kcm_trash",
-        };
-        for (uint i = 0; i < sizeof(fmModules) / sizeof(char *); ++i) {
-            KPageWidgetItem *it = m_configureDialog->addModule(KPluginMetaData(QString(fmModules[i])));
-            if (!startingItem && startingModule == fmModules[i]) {
-                startingItem = it;
-            }
-        }
-        KPluginMetaData fileTypesData(QStringLiteral("plasma/kcms/systemsettings_qwidgets/kcm_filetypes"));
-        if (!fileTypesData.isValid()) {
-            QString desktopFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kservices5/filetypes.desktop"));
-#if QT_VERSION_MAJOR < 6
-            fileTypesData = KPluginMetaData::fromDesktopFile(desktopFile, {QStringLiteral("kcmodule.desktop")});
-#endif
-        }
-        m_configureDialog->addModule(fileTypesData);
-
-        m_configureDialog->addModule(KPluginMetaData(QStringLiteral("konqueror_kcms/khtml_behavior")));
-
-        const char *const webModules[] = {
-            "konqueror_kcms/khtml_appearance",
-            "konqueror_kcms/khtml_filter",
-            "konqueror_kcms/khtml_cache",
-            "kcm_webshortcuts",
-            "kcm_proxy",
-            "konqueror_kcms/kcm_history",
-#ifdef MANAGE_COOKIES_INTERNALLY
-            "konqueror_kcms/khtml_cookies",
-#else
-            "plasma/kcms/systemsettings_qwidgets/kcm_cookies",
-#endif
-            "konqueror_kcms/khtml_java_js",
-            "konqueror_kcms/khtml_useragent"
-        };
-        for (uint i = 0; i < sizeof(webModules) / sizeof(char *); ++i) {
-            KPageWidgetItem *it = m_configureDialog->addModule(KPluginMetaData(QString(webModules[i])));
-            if (!startingItem && startingModule == webModules[i]) {
-                startingItem = it;
-            }
-        }
+        m_configureDialog = new Konq::ConfigDialog(this);
     }
 
-    if (startingItem) {
-        m_configureDialog->setCurrentPage(startingItem);
-    }
     m_configureDialog->show();
-
 }
+
+void KonqMainWindow::slotConfigure(Konq::ConfigDialog::Module module)
+{
+    slotConfigure();
+    if (m_configureDialog) {
+        m_configureDialog->setCurrentPage(module);
+    }
+}
+
 
 void KonqMainWindow::slotConfigureDone()
 {
@@ -3446,8 +3394,7 @@ void KonqMainWindow::initActions()
     connect(action, &QAction::triggered, this, &KonqMainWindow::slotGoHistory);
 
     // Settings menu
-    actionCollection()->addAction(KStandardAction::Preferences, this, SLOT(slotConfigure()));
-
+    actionCollection()->addAction(KStandardAction::Preferences, QStringLiteral("options_configure"), this, QOverload<>::of(&KonqMainWindow::slotConfigure));
 
     KStandardAction::keyBindings(guiFactory(), &KXMLGUIFactory::showConfigureShortcutsDialog, actionCollection());
 
@@ -5467,7 +5414,7 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
                                                                 KGuiItem(i18n("Show proxy configuration dialog")), "WebEngineUnsupportedProxyType");
         QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
         if (ans == KMessageBox::SecondaryAction) {
-            slotConfigure("proxy");
+            slotConfigure(Konq::ConfigDialog::ProxyModule);
             return;
         }
     }
@@ -5486,7 +5433,7 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
             if (ans == KMessageBox::PrimaryAction) {
                 url = QUrl(httpProxy);
             } else if (ans == KMessageBox::Cancel) {
-                slotConfigure("proxy");
+                slotConfigure(Konq::ConfigDialog::ProxyModule);
                 return;
             }
         }

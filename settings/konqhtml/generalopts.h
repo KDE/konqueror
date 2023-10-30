@@ -16,7 +16,6 @@
 
 class QComboBox;
 class QLineEdit;
-class Ui_advancedTabOptions;
 class QVBoxLayout;
 class KMessageWidget;
 class QCheckBox;
@@ -53,8 +52,6 @@ private:
     QComboBox *m_splitBehaviour;
     KMessageWidget *m_emptyStartUrlWarning;
     QCheckBox *m_restoreLastState;
-
-    Ui_advancedTabOptions *tabOptions;
 };
 
 #endif // GENERALOPTS_H

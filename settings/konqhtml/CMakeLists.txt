@@ -21,6 +21,7 @@ set(kcm_konqhtml_PART_SRCS
    css/kcmcss.cpp
    cache/cache.cpp
    useragent/useragent.cpp
+   tabs/tabsoptions.cpp
    )
 
 if (DontUseKCookieJar)
@@ -38,7 +39,7 @@ if (DontUseKCookieJar)
 endif()
 
 ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
-    advancedTabOptions.ui
+    tabs/tabsoptions.ui
     css/csscustom.ui
     css/cssconfig.ui
     cache/cache.ui
@@ -60,6 +61,9 @@ target_link_libraries(kcm_konqhtml_static
 
 kcoreaddons_add_plugin(khtml_general SOURCES plugins/khtml_general.cpp INSTALL_NAMESPACE konqueror_kcms)
 target_link_libraries(khtml_general kcm_konqhtml_static)
+
+kcoreaddons_add_plugin(khtml_tabs SOURCES plugins/khtml_tabs.cpp INSTALL_NAMESPACE konqueror_kcms)
+target_link_libraries(khtml_tabs kcm_konqhtml_static)
 
 kcoreaddons_add_plugin(khtml_behavior SOURCES plugins/khtml_behavior.cpp INSTALL_NAMESPACE konqueror_kcms)
 target_link_libraries(khtml_behavior kcm_konqhtml_static)

@@ -28,6 +28,7 @@
 #include "konqframecontainer.h"
 #include "konqopenurlrequest.h"
 #include "kf5compat.h" //For NavigationExtension
+#include "configdialog.h"
 
 class QActionGroup;
 class KUrlCompletion;
@@ -398,7 +399,8 @@ public Q_SLOTS:
 
     void slotAddClosedUrl(KonqFrameBase *tab);
 
-    void slotConfigure(QString startingModule = QString());
+    void slotConfigure();
+    void slotConfigure(Konq::ConfigDialog::Module module);
     void slotConfigureDone();
     void slotConfigureToolbars();
     void slotConfigureExtensions();
@@ -744,7 +746,7 @@ private: // members
     KParts::OpenUrlArguments m_popupUrlArgs;
     KParts::BrowserArguments m_popupUrlBrowserArgs;
 
-    KCMultiDialog *m_configureDialog;
+    Konq::ConfigDialog *m_configureDialog;
 
     QLabel *m_locationLabel;
     QPointer<KonqCombo> m_combo;
