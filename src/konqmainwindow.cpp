@@ -202,6 +202,7 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     , m_pURLCompletion(nullptr)
     , m_isPopupWithProxyWindow(false)
 {
+    Q_INIT_RESOURCE(konqueror);
     if (!s_lstMainWindows) {
         s_lstMainWindows = new QList<KonqMainWindow *>;
     }
