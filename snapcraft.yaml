@@ -9,7 +9,7 @@ apps:
         # extensions:
         # - kde-neon
         common-id: org.kde.konqueror.desktop
-        desktop: usr/share/applications/org.kde.konqueror.desktop
+        desktop: usr/share/applications/konqbrowser.desktop
         command: usr/bin/konqueror
         plugs:
         - home
