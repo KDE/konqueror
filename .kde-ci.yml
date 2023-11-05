@@ -16,9 +16,9 @@ Dependencies:
     'frameworks/kiconthemes': '@stable'
     'frameworks/kdbusaddons': '@stable'
     'frameworks/kguiaddons': '@stable'
-    'frameworks/kactivities': '@stable'
     'frameworks/kdoctools': '@stable'
     'frameworks/kdesu': '@stable'
+    'plasma/kactivities': '@stable'
 
 - 'on': ['Linux/Qt6', 'FreeBSD/Qt6']
   'require':
@@ -33,6 +33,6 @@ Dependencies:
     'frameworks/kiconthemes': '@latest-kf6'
     'frameworks/kdbusaddons': '@latest-kf6'
     'frameworks/kguiaddons': '@latest-kf6'
-    'frameworks/kactivities': '@latest-kf6'
     'frameworks/kdoctools': '@latest-kf6'
     'frameworks/kdesu': '@latest-kf6'
+    'plasma/kactivities': '@latest-kf6'
