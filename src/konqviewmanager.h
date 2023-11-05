@@ -289,6 +289,11 @@ public Q_SLOTS:
      */
     void openClosedTab(const KonqClosedTabItem &closedTab);
 
+    /**
+     * @brief Applies any relevant configuration settings
+     */
+    void reparseConfiguration();
+
 private Q_SLOTS:
     void emitActivePartChanged();
 

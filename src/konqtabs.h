@@ -107,6 +107,7 @@ public Q_SLOTS:
     void slotCurrentChanged(int index);
     void setAlwaysTabbedMode(bool);
     void forceHideTabBar(bool force);
+    void reparseConfiguration();
 
 Q_SIGNALS:
     void removeTabPopup();
@@ -122,6 +123,13 @@ private:
      * or -1 if the frame is not in the tab widget or it's not active.
      */
     int tabWhereActive(KonqFrameBase *frame) const;
+
+    /**
+     * @brief Applies the user choice regarding the tab bar position
+     *
+     * If the option contains an invalid value, `North` will be used
+     */
+    void applyTabBarPositionOption();
 
 private Q_SLOTS:
     void slotContextMenu(const QPoint &);

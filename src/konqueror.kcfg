@@ -143,10 +143,10 @@
       <whatsthis></whatsthis>
       <!-- checked -->
     </entry>
-    <entry key="TabPosition" type="String">
+    <entry key="TabBarPosition" type="Int">
+      <default>0</default>
       <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
+      <whatsthis>Choose where to display the tabs bar</whatsthis>
     </entry>
     <entry key="OpenWithItems" type="Int">
       <default>2</default>

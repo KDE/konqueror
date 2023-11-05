@@ -4548,6 +4548,7 @@ void KonqMainWindow::reparseConfiguration()
     KonqSettings::self()->load();
     m_pViewManager->applyConfiguration();
     KonqMouseEventFilter::self()->reparseConfiguration();
+    m_pViewManager->reparseConfiguration();
 
     MapViews::ConstIterator it = m_mapViews.constBegin();
     MapViews::ConstIterator end = m_mapViews.constEnd();

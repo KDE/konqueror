@@ -66,9 +66,8 @@ KonqFrameTabs::KonqFrameTabs(QWidget *parent, KonqFrameContainerBase *parentCont
     tabBar()->setSelectionBehaviorOnRemove(
         KonqSettings::tabCloseActivatePrevious() ? QTabBar::SelectPreviousTab : QTabBar::SelectRightTab);
 
-    if (KonqSettings::tabPosition() == QLatin1String("Bottom")) {
-        setTabPosition(QTabWidget::South);
-    }
+    applyTabBarPositionOption();
+
     connect(this, &KonqFrameTabs::tabCloseRequested, this, &KonqFrameTabs::slotCloseRequest);
     connect(this, SIGNAL(removeTabPopup()),
             m_pViewManager->mainWindow(), SLOT(slotRemoveTabPopup()));
@@ -621,3 +620,16 @@ bool KonqFrameTabs::eventFilter(QObject *watched, QEvent *event)
     return KTabWidget::eventFilter(watched, event);
 }
 
+void KonqFrameTabs::reparseConfiguration()
+{
+    applyTabBarPositionOption();
+}
+
+void KonqFrameTabs::applyTabBarPositionOption()
+{
+    int tabBarPosition = KonqSettings::tabBarPosition();
+    if (tabBarPosition < North || tabBarPosition > East) {
+        tabBarPosition = 0;
+    }
+    setTabPosition(static_cast<TabPosition>(tabBarPosition));
+}

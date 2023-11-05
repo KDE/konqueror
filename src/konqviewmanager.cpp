@@ -1460,4 +1460,12 @@ KonqMainWindow *KonqViewManager::duplicateWindow()
     return mainWindow;
 }
 
+void KonqViewManager::reparseConfiguration()
+{
+    if (m_tabContainer) {
+        m_tabContainer->reparseConfiguration();
+    }
+}
+
+
 

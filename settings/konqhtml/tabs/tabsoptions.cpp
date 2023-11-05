@@ -30,6 +30,7 @@ TabsOptions::TabsOptions(QObject* parent, const KPluginMetaData& md, const QVari
     connect(m_ui->m_pKonquerorTabforExternalURL, &QAbstractButton::toggled, this, [this](bool){setNeedsSave(true);});
     connect(m_ui->m_pPopupsWithinTabs, &QAbstractButton::toggled, this, [this](bool){setNeedsSave(true);});
     connect(m_ui->m_pMiddleClickClose, &QAbstractButton::toggled, this, [this](bool){setNeedsSave(true);});
+    connect(m_ui->tabbarPosition, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this](int){setNeedsSave(true);});
 }
 
 TabsOptions::~TabsOptions() noexcept
@@ -57,6 +58,7 @@ void TabsOptions::load()
     m_ui->m_pPopupsWithinTabs->setChecked(cg.readEntry("PopupsWithinTabs", false));
     m_ui->m_pTabCloseActivatePrevious->setChecked(cg.readEntry("TabCloseActivatePrevious", false));
     m_ui->m_pMiddleClickClose->setChecked(cg.readEntry("MouseMiddleClickClosesTab", false));
+    m_ui->tabbarPosition->setCurrentIndex(cg.readEntry("TabBarPosition", 0));
 
     cg = KConfigGroup(m_config, "Notification Messages");
     m_ui->m_pTabConfirm->setChecked(!cg.hasKey("MultipleTabConfirm"));
@@ -76,6 +78,7 @@ void TabsOptions::save()
     cg.writeEntry("PopupsWithinTabs", m_ui->m_pPopupsWithinTabs->isChecked());
     cg.writeEntry("TabCloseActivatePrevious", m_ui->m_pTabCloseActivatePrevious->isChecked());
     cg.writeEntry("MouseMiddleClickClosesTab", m_ui->m_pMiddleClickClose->isChecked());
+    cg.writeEntry("TabBarPosition", m_ui->tabbarPosition->currentIndex());
     cg.sync();
     // It only matters whether the key is present, its value has no meaning
     cg = KConfigGroup(m_config, "Notification Messages");
