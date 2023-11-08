@@ -95,8 +95,10 @@ KonqView::KonqView(KonqViewFactory &viewFactory,
     m_bURLDropHandling = false;
     m_bErrorURL = false;
 
+#if QT_VERSION_MAJOR < 6
 #ifdef KActivities_FOUND
     m_activityResourceInstance = new KActivities::ResourceInstance(mainWindow->winId(), this);
+#endif
 #endif
 
     switchView(viewFactory);
@@ -226,11 +228,15 @@ void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
 #endif
 
 #ifdef KActivities_FOUND
+#if QT_VERSION_MAJOR < 6
     m_activityResourceInstance->setUri(url);
 
     if (m_pPart->widget()->hasFocus()) {
         m_activityResourceInstance->notifyFocusedIn();
     }
+#else
+    KActivities::ResourceInstance::notifyAccessed(url);
+#endif
 #endif
 }
 
@@ -1264,6 +1270,7 @@ bool KonqView::eventFilter(QObject *obj, QEvent *e)
         }
     }
 
+#if QT_VERSION_MAJOR < 6
 #ifdef KActivities_FOUND
     if (e->type() == QEvent::FocusIn) {
         m_activityResourceInstance->notifyFocusedIn();
@@ -1272,6 +1279,7 @@ bool KonqView::eventFilter(QObject *obj, QEvent *e)
     if (e->type() == QEvent::FocusOut) {
         m_activityResourceInstance->notifyFocusedOut();
     }
+#endif
 #endif
 
     return false;

@@ -36,11 +36,13 @@ namespace KParts
 class StatusBarExtension;
 }
 
+#if QT_VERSION_MAJOR < 6
 #ifdef KActivities_FOUND
 namespace KActivities
 {
 class ResourceInstance;
 }
+#endif
 #endif
 
 // TODO: make the history-handling code reuseable (e.g. in kparts) for people who want to use a
@@ -680,8 +682,10 @@ private:
     QString m_tempFile;
     QString m_dbusObjectPath;
 
+#if QT_VERSION_MAJOR < 6
 #ifdef KActivities_FOUND
     KActivities::ResourceInstance *m_activityResourceInstance;
+#endif
 #endif
 };
 
