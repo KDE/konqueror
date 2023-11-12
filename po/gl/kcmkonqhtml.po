@@ -9,7 +9,7 @@
 # marce villarino <mvillarino@users.sourceforge.net>, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2009, 2011, 2012, 2013, 2014.
 # Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>, 2017.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2020, 2023.
+# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
 #
 # Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
 # colaborar connosco, podes atopar máis información en http://trasno.gpul.org
@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 02:26+0000\n"
-"PO-Revision-Date: 2023-09-03 12:29+0200\n"
+"PO-Revision-Date: 2023-11-11 17:52+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -515,7 +515,7 @@ msgstr ""
 #: cache/cache.ui:17
 #, kde-format
 msgid "&Enable cache"
-msgstr ""
+msgstr "Activar a cac&hé"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:29
@@ -525,18 +525,21 @@ msgid ""
 "p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Non almacenar a caché no disco, só en memoria.</"
+"p><p>Activar isto fará que a caché se baleire ao saír de Konqueror.</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:32
 #, kde-format
 msgid "Keep cache in &memory"
-msgstr ""
+msgstr "Manter a caché na &memoria"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: cache/cache.ui:41
 #, kde-format
 msgid "&Cache size"
-msgstr ""
+msgstr "Tamaño da &caché"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:51
@@ -545,42 +548,44 @@ msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
+"O espazo máximo en disco ou memoria que pode usar a caché. Cando se acada "
+"este límite, as páxinas anteriores retiraranse para facer espazo para novas."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:54
 #, kde-format
 msgid "Auto"
-msgstr ""
+msgstr "Automático"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:57
 #, kde-format
 msgid " MB"
-msgstr ""
+msgstr " MB"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr ""
+msgstr "Usar un cartafol automático para manter a caché."
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:88
 #, kde-format
 msgid "&Custom cache directory"
-msgstr ""
+msgstr "&Cartafol de caché personalizado"
 
 #. i18n: ectx: property (text), widget (QLabel, customCachePathLabel)
 #: cache/cache.ui:100
 #, kde-format
 msgid "Cache &Directory"
-msgstr ""
+msgstr "Cartafol &da caché"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
 #: cache/cache.ui:113
 #, kde-format
 msgid "The custom directory to store cache"
-msgstr ""
+msgstr "O cartafol personalizado para almacenar a caché."
 
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
@@ -1280,16 +1285,14 @@ msgstr ""
 "filtros van cada un na súa liña."
 
 #: filteropts.cpp:256
-#, fuzzy, kde-format
-#| msgid "Automatic Filter"
+#, kde-format
 msgid "Import Filters"
-msgstr "Filtro automático"
+msgstr "Importar filtros"
 
 #: filteropts.cpp:301
-#, fuzzy, kde-format
-#| msgid "Automatic Filter"
+#, kde-format
 msgid "Export Filters"
-msgstr "Filtro automático"
+msgstr "Exportar filtros"
 
 #: filteropts.cpp:436
 #, kde-format
@@ -1325,13 +1328,13 @@ msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
 "empty"
 msgid "Please, insert the custom start page"
-msgstr ""
+msgstr "Inserir a páxina de inicio personalizada"
 
 #: generalopts.cpp:85
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
-msgstr ""
+msgstr "Cando se crea unha nova &lapela"
 
 #: generalopts.cpp:94
 #, kde-format
@@ -1395,22 +1398,22 @@ msgstr "Motor predeterminado do navegador web:"
 #: generalopts.cpp:144
 #, kde-format
 msgid "When splitting a view"
-msgstr ""
+msgstr "Ao dividir unha vista"
 
 #: generalopts.cpp:148
 #, kde-format
 msgid "Always duplicate current view"
-msgstr ""
+msgstr "Duplicar sempre a vista actual"
 
 #: generalopts.cpp:149
 #, kde-format
 msgid "Duplicate current view only for local files"
-msgstr ""
+msgstr "Duplicar a vista actual só para os ficheiros locais"
 
 #: generalopts.cpp:155
 #, kde-format
 msgid "When starting up, restore state from last time"
-msgstr ""
+msgstr "Ao iniciar, restaurar o estado anterior"
 
 #: htmlopts.cpp:36
 #, kde-format
@@ -2275,13 +2278,13 @@ msgstr "Primeiro ten que inserir un nome de dominio."
 #: useragent/useragent.ui:14
 #, kde-format
 msgid "Form"
-msgstr ""
+msgstr "Formulario"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:23
 #, kde-format
 msgid "Existing identifications"
-msgstr ""
+msgstr "Identificacións existentes"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
@@ -2291,57 +2294,55 @@ msgstr ""
 #: useragent/useragent.ui:150 useragent/useragent.ui:163
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: useragent/useragent.ui:66
 #, kde-format
 msgid "Content"
-msgstr ""
+msgstr "Contido"
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
 #: useragent/useragent.ui:97
-#, fuzzy, kde-format
-#| msgid "&Export..."
+#, kde-format
 msgid "&Edit..."
-msgstr "&Exportar…"
+msgstr "&Editar…"
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:110
 #, kde-format
 msgid "&Rename..."
-msgstr ""
+msgstr "&Renomear…"
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
 #: useragent/useragent.ui:123
 #, kde-format
 msgid "Du&plicate..."
-msgstr ""
+msgstr "Du&plicar…"
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:136
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "&Delete"
-msgstr "E&liminar"
+msgstr "&Eliminar"
 
 #. i18n: ectx: property (text), widget (QPushButton, useTemplateBtn)
 #: useragent/useragent.ui:153
 #, kde-format
 msgid "Choose &selected identification"
-msgstr ""
+msgstr "Escoller a identificación &seleccionada"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
 msgid "Use &default identification"
-msgstr ""
+msgstr "Usar a identificación pre&determinada"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:181
 #, kde-format
 msgid "&Custom identification"
-msgstr ""
+msgstr "Identifi&cación personalizada"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
 #: useragent/useragent.ui:191
@@ -2352,6 +2353,9 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>A identificación do navegador para usar cando se "
+"desactive a identificación personalizada.</p><p>Pode escribila a man ou "
+"partir dunha da lista embaixo e cambiala como queira.</p></body></html>"
 
 #~ msgctxt "@label:listbox"
 #~ msgid "When &Konqueror starts:"
