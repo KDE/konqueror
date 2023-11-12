@@ -159,6 +159,8 @@
 #include <QMetaObject>
 #include <QMetaMethod>
 #include <QActionGroup>
+#include <QNetworkProxyFactory>
+#include <QNetworkProxyQuery>
 
 #include <KCModule>
 
@@ -5410,8 +5412,9 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
         return;
     }
 
-    KProtocolManager::ProxyType proxyType = KProtocolManager::proxyType();
-    if (proxyType == KProtocolManager::WPADProxy || proxyType == KProtocolManager::PACProxy) {
+    int proxyTypeAsInt =  KConfig(QStringLiteral("kioslaverc"), KConfig::NoGlobals).group("Proxy Settings").readEntry("ProxyType", 0);
+    //According to kioextras/kcms/saveioconfig.h, 2 is PACProxy and 3 is WPADProxy
+    if (proxyTypeAsInt == 2 || proxyTypeAsInt == 3) {
         QString msg = i18n("Your proxy configuration can't be used with the QtWebEngine HTML engine. "
                            "No proxy will be used\n\n QtWebEngine only support a fixed proxy, so proxy auto-configuration (PAC) "
                            "and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you need a proxy, please select "
@@ -5425,27 +5428,52 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
             return;
         }
     }
-    QString httpProxy = KProtocolManager::proxyFor(QStringLiteral("http"));
-    QString httpsProxy = KProtocolManager::proxyFor(QStringLiteral("https"));
-    if ((httpProxy.isEmpty() && httpsProxy.isEmpty()) || (httpProxy == "DIRECT" && httpsProxy == "DIRECT")) {
+
+    bool proxyConfigurationSupported = false;
+    QNetworkProxy httpProxy;
+    QNetworkProxy httpsProxy;
+#if QT_VERSION_MAJOR < 6
+    QString httpProxyHost = KProtocolManager::proxyFor(QStringLiteral("http"));
+    QString httpsProxyHost = KProtocolManager::proxyFor(QStringLiteral("https"));
+    proxyConfigurationSupported = httpsProxyHost == httpProxyHost;
+    if ((httpProxyHost.isEmpty() && httpsProxyHost.isEmpty()) || (httpProxyHost == "DIRECT" && httpsProxyHost == "DIRECT")) {
         QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
-    } else {
-        QUrl url(httpsProxy);
-        if (httpProxy != httpsProxy) {
-            QString msg =  i18n("Your proxy configuration can't be used with the QtWebEngine HTML engine because it doesn't support having different proxies for the HTTP and HTTPS protocols. Your current settings are:"
-            "<p><b>HTTP proxy:</b> <tt>%1</tt></p><p><b>HTTPS proxy: </b><tt>%2</tt></p>"
-            "What do you want to do?", httpProxy, httpsProxy);
-            KMessageBox::ButtonCode ans = KMessageBox::questionTwoActionsCancel(this, msg, i18n("Conflicting proxy configuration"),
-                KGuiItem(i18n("Use HTTP proxy (only this time)")), KGuiItem(i18n("Use HTTPS proxy (only this time)")), KGuiItem(i18n("Show proxy configuration dialog")), "WebEngineConflictingProxy");
-            if (ans == KMessageBox::PrimaryAction) {
-                url = QUrl(httpProxy);
-            } else if (ans == KMessageBox::Cancel) {
-                slotConfigure(Konq::ConfigDialog::ProxyModule);
-                return;
-            }
-        }
-        QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::HttpProxy, url.host(), url.port(), url.userName(), url.password()));
+        return;
     }
+    if (!httpProxyHost.isEmpty() && httpProxyHost != QStringLiteral("DIRECT")) {
+        httpProxy = {QNetworkProxy::HttpProxy, httpProxyHost};
+    }
+    if (!httpsProxyHost.isEmpty() && httpsProxyHost != QStringLiteral("DIRECT")) {
+        httpsProxy = {QNetworkProxy::HttpProxy, httpsProxyHost};
+    }
+#else
+    QList<QNetworkProxy> httpProxies = QNetworkProxyFactory::proxyForQuery(QNetworkProxyQuery{QUrl("http:")});
+    QList<QNetworkProxy> httpsProxies = QNetworkProxyFactory::proxyForQuery(QNetworkProxyQuery{QUrl("https:")});
+    if (!httpProxies.isEmpty()) {
+        httpProxy = httpProxies.first();
+    }
+    if (!httpsProxies.isEmpty()) {
+        httpsProxy = httpsProxies.first();
+    }
+    proxyConfigurationSupported = httpProxy == httpsProxy;
+#endif
+
+    QNetworkProxy proxy = httpsProxy;
+
+    if (!proxyConfigurationSupported) {
+        QString msg =  i18n("Your proxy configuration can't be used with the QtWebEngine HTML engine because it doesn't support having different proxies for the HTTP and HTTPS protocols. Your current settings are:"
+        "<p><b>HTTP proxy:</b> <tt>%1</tt></p><p><b>HTTPS proxy: </b><tt>%2</tt></p>"
+        "What do you want to do?", httpProxy.hostName(), httpsProxy.hostName());
+        KMessageBox::ButtonCode ans = KMessageBox::questionTwoActionsCancel(this, msg, i18n("Conflicting proxy configuration"),
+            KGuiItem(i18n("Use HTTP proxy (only this time)")), KGuiItem(i18n("Use HTTPS proxy (only this time)")), KGuiItem(i18n("Show proxy configuration dialog")), "WebEngineConflictingProxy");
+        if (ans == KMessageBox::PrimaryAction) {
+            proxy = httpProxy;
+        } else if (ans == KMessageBox::Cancel) {
+            slotConfigure(Konq::ConfigDialog::ProxyModule);
+            return;
+        }
+    }
+    QNetworkProxy::setApplicationProxy(proxy);
 }
 
 void KonqMainWindow::toggleCompleteFullScreen(bool on)

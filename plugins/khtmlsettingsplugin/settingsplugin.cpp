@@ -27,6 +27,7 @@
 #include <QDBusInterface>
 #include <QDBusMessage>
 #include <QDBusReply>
+#include <QNetworkProxy>
 
 #include <htmlextension.h>
 #include <htmlsettingsinterface.h>
@@ -116,7 +117,12 @@ void SettingsPlugin::showPopup()
     KProtocolManager::reparseConfiguration();
     const bool cookies = cookiesEnabled(part->url().url());
     actionCollection()->action(QStringLiteral("cookies"))->setChecked(cookies);
+#if QT_VERSION_MAJOR < 6
     actionCollection()->action(QStringLiteral("useproxy"))->setChecked(KProtocolManager::useProxy());
+#else
+    actionCollection()->action(QStringLiteral("useproxy"))->setChecked(QNetworkProxy::applicationProxy().type() != QNetworkProxy::NoProxy);
+#endif
+
 // TODO KF6: check whether there's a way to implement cache settings directly using QtWebEngine settings. Also, check whether
 // these settings are actually applied to WebEnginePart
 #if QT_VERSION_MAJOR < 6
@@ -239,10 +245,12 @@ void SettingsPlugin::toggleProxy(bool checked)
     int type;
 
     if (checked) {
-        type = grp.readEntry("SavedProxyType", static_cast<int>(KProtocolManager::ManualProxy));
+        //According with kioextras/kcms/ksaveioconfig.h, 1 is ManualProxy
+        type = grp.readEntry("SavedProxyType", 1);
     } else {
-        grp.writeEntry("SavedProxyType", static_cast<int>(KProtocolManager::proxyType()));
-        type = KProtocolManager::NoProxy;
+        grp.writeEntry("SavedProxyType",proxyType());
+        //According with kioextras/kcms/ksaveioconfig.h, 1 is NoProxy
+        type = 0;
     }
 
     KConfig _config(QStringLiteral("kioslaverc"), KConfig::NoGlobals);
@@ -295,6 +303,15 @@ void SettingsPlugin::updateIOSlaves()
                            QStringLiteral("reparseSlaveConfiguration"));
     message << QString();
     QDBusConnection::sessionBus().send(message);
+}
+
+int SettingsPlugin::proxyType()
+{
+#if QT_VERSION_MAJOR < 6
+    return KProtocolManager::proxyType();
+#else
+    return KConfig(QStringLiteral("kioslaverc"), KConfig::NoGlobals).group("Proxy Settings").readEntry("ProxyType", 0);
+#endif
 }
 
 #include "settingsplugin.moc"

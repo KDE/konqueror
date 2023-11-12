@@ -30,7 +30,6 @@
 #include <kparts/openurlarguments.h>
 
 #include <kio/job.h>
-#include <kio/scheduler.h>
 
 using namespace KonqInterfaces;
 
