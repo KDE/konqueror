@@ -231,12 +231,11 @@ msgid ""
 "image button.<br />Unless you have a very slow network connection, you will "
 "probably want to check this box to enhance your browsing experience.</html>"
 msgstr ""
-"<html>Si esta casella està marcada, Konqueror carregarà automàticament "
-"qualsevol imatge incrustada a una pàgina web. D'altra manera, mostrarà "
-"l'espai de les imatges i llavors podreu carregar-les manualment clicant en "
-"el botó d'imatge. <br />Si no és que teniu una connexió de xarxa molt lenta, "
-"segurament voldreu marcar esta casella per a millorar la vostra navegació.</"
-"html>"
+"<html>Si se selecciona, Konqueror carregarà automàticament qualsevol imatge "
+"incrustada a una pàgina web. D'altra manera, mostrarà l'espai de les imatges "
+"i llavors podreu carregar-les manualment clicant en el botó d'imatge. <br /"
+">Si no és que teniu una connexió de xarxa molt lenta, segurament voldreu "
+"seleccionar esta casella per a millorar la vostra navegació.</html>"
 
 #: appearance.cpp:63
 #, kde-format
@@ -251,10 +250,10 @@ msgid ""
 "will probably want to check this box to enhance your browsing experience, "
 "especially if have a slow network connection.</html>"
 msgstr ""
-"<html>Si esta casella està marcada, Konqueror dibuixarà un marc contenidor "
-"al voltant de les imatges incrustades d'una pàgina web encara a mig "
-"carregar. <br />Especialment si teniu una connexió de xarxa molt lenta, "
-"segurament voldreu marcar esta casella per a millorar la navegació.</html>"
+"<html>Si se selecciona, Konqueror dibuixarà un marc contenidor al voltant de "
+"les imatges incrustades d'una pàgina web encara a mig carregar. <br /"
+">Especialment si teniu una connexió de xarxa molt lenta, segurament voldreu "
+"seleccionar esta casella per a millorar la navegació.</html>"
 
 #: appearance.cpp:74
 #, kde-format
@@ -644,7 +643,7 @@ msgid ""
 "sheet (see http://www.w3.org/Style/CSS for further information on cascading "
 "style sheets).</p>"
 msgstr ""
-"<b>Fulls d'estil definits per l'usuari</b> <p>Si marqueu esta casella, "
+"<b>Fulls d'estil definits per l'usuari</b> <p>Si seleccioneu esta casella, "
 "Konqueror provarà de carregar un full d'estil definit per l'usuari tal com "
 "s'especifica en la ubicació inferior. Els fulls d'estil vos permeten "
 "modificar completament el mode com es mostren les pàgines web al vostre "
@@ -1059,7 +1058,7 @@ msgstr ""
 #: domainlistview.cpp:37
 #, kde-format
 msgid "Host/Domain"
-msgstr "Servidor/Domini"
+msgstr "Amfitrió o domini"
 
 #: domainlistview.cpp:37
 #, kde-format
@@ -1097,7 +1096,7 @@ msgstr "&Exporta..."
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr ""
 "Cliqueu en este botó per a afegir manualment una política específica per a "
-"un servidor o domini."
+"un amfitrió o domini."
 
 #: domainlistview.cpp:73
 #, kde-format
@@ -1105,7 +1104,7 @@ msgid ""
 "Click on this button to change the policy for the host or domain selected in "
 "the list box."
 msgstr ""
-"Cliqueu en este botó per a canviar la política per a un servidor o domini "
+"Cliqueu en este botó per a canviar la política per a un amfitrió o domini "
 "seleccionat en el quadro de llista."
 
 #: domainlistview.cpp:75
@@ -1114,7 +1113,7 @@ msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
 "the list box."
 msgstr ""
-"Cliqueu en este botó per a eliminar la política per a un servidor o domini "
+"Cliqueu en este botó per a eliminar la política per a un amfitrió o domini "
 "seleccionat en el quadro de llista."
 
 #: domainlistview.cpp:122
@@ -1457,9 +1456,9 @@ msgid ""
 "bookmark and choose a folder in which to store it when you add a new "
 "bookmark."
 msgstr ""
-"Si esta casella està marcada, Konqueror us permetrà canviar el títol de "
-"l'adreça d'interés i triar una carpeta on guardar-la quan afegiu una adreça "
-"d'interés nova."
+"Si se selecciona, Konqueror us permetrà canviar el títol de l'adreça "
+"d'interés i triar una carpeta on guardar-la quan afegiu una adreça d'interés "
+"nova."
 
 #: htmlopts.cpp:56
 #, kde-format
@@ -1473,9 +1472,9 @@ msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
 "bookmark toolbar which you have marked to do so in the bookmark editor."
 msgstr ""
-"Si esta casella està marcada, Konqueror mostrarà en la barra d'eines "
-"d'adreces d'interés només aquelles adreces d'interés que heu marcat per a "
-"ser mostrats en l'editor d'adreces d'interés."
+"Si se selecciona, Konqueror mostrarà en la barra d'eines d'adreces d'interés "
+"només aquelles adreces d'interés que heu marcat per a ser mostrats en "
+"l'editor d'adreces d'interés."
 
 #: htmlopts.cpp:65
 #, kde-format
@@ -1534,8 +1533,8 @@ msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
 "clicking on a Konqueror view."
 msgstr ""
-"Si esta casella està marcada, podeu obrir l'URL de la selecció clicant amb "
-"el botó del mig a una vista de Konqueror."
+"Si se selecciona, podreu obrir l'URL de la selecció clicant amb el botó del "
+"mig a una vista de Konqueror."
 
 #: htmlopts.cpp:100
 #, kde-format
@@ -1549,9 +1548,9 @@ msgid ""
 "Konqueror view. To access the context menu, press the right mouse button and "
 "move."
 msgstr ""
-"Si esta casella està marcada, podeu retrocedir en l'historial fent clic dret "
-"en una vista de Konqueror. Per a accedir al menú contextual, premeu el botó "
-"dret del ratolí i moveu-lo."
+"Si se selecciona, podreu retrocedir en l'historial fent clic dret en una "
+"vista de Konqueror. Per a accedir al menú contextual, premeu el botó dret "
+"del ratolí i moveu-lo."
 
 #: htmlopts.cpp:113
 #, kde-format
@@ -1598,8 +1597,8 @@ msgid ""
 "Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked."
 msgstr ""
-"Marqueu esta casella si voleu informar a un lloc web que no voleu que els "
-"vostres hàbits de navegació se seguisquen."
+"Seleccioneu esta casella si voleu informar a un lloc web que no voleu que "
+"els vostres hàbits de navegació se seguisquen."
 
 #: htmlopts.cpp:130
 #, kde-format
@@ -1610,7 +1609,7 @@ msgstr "Permet guardar les contrasenyes dels llocs web"
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr ""
-"Desactiveu esta casella per a evitar que se vos sol·licite guardar les "
+"Desseleccioneu esta casella per a evitar que se vos sol·licite guardar les "
 "contrasenyes web"
 
 #: htmlopts.cpp:135
@@ -1687,11 +1686,12 @@ msgid ""
 "enabling or disabling Java applets on pages sent by these domains or hosts.</"
 "p><p>Select a policy and use the controls on the right to modify it.</p>"
 msgstr ""
-"<p>Esta casella conté els dominis i servidors per als quals heu establit una "
-"política Java específica. Esta política s'utilitzarà en comptes de la "
+"<p>Esta casella conté els dominis i amfitrions per als quals heu establit "
+"una política Java específica. Esta política s'utilitzarà en comptes de la "
 "política predeterminada per tal d'habilitar o inhabilitar miniaplicacions "
-"Java a les pàgines enviades per estos dominis o servidors.</p><p>Seleccioneu "
-"una política i utilitzeu els controls a la dreta per a modificar-la.</p>"
+"Java a les pàgines enviades per estos dominis o amfitrions.</"
+"p><p>Seleccioneu una política i utilitzeu els controls a la dreta per a "
+"modificar-la.</p>"
 
 #: javaopts.cpp:142
 #, kde-format
@@ -1724,7 +1724,7 @@ msgid ""
 "selected policy, causing the default policy setting to be used for that "
 "domain."
 msgstr ""
-"Ací podeu establir polítiques específiques de Java per a qualsevol servidor "
+"Ací podeu establir polítiques específiques de Java per a qualsevol amfitrió "
 "o domini en particular. Per a afegir una política nova, senzillament cliqueu "
 "en el botó <i>Nova...</i> i empleneu la informació que vos demana el diàleg. "
 "Per a canviar una política existent, cliqueu en el botó <i>Canvia...</i> i "
@@ -1746,7 +1746,7 @@ msgstr ""
 "Seguretat inclòs. Açò farà que les miniaplicacions no puguen llegir i "
 "escriure el vostre sistema de fitxers, crear sòcols arbitraris i altres "
 "accions que podrien utilitzar-se per a comprometre el vostre sistema. "
-"Desactiveu esta opció al vostre risc. Podeu modificar el vostre fitxer "
+"Desseleccioneu esta opció al vostre risc. Podeu modificar el vostre fitxer "
 "$HOME/.java.policy amb la utilitat Java policytool per a donar més permisos "
 "al codi descarregat de certs llocs."
 
@@ -1794,8 +1794,8 @@ msgstr ""
 "temps. Si vos agradaria mantindre en execució el procés java mentre esteu "
 "navegant, podeu establir el temps d'expiració al valor que vulgueu. Per a "
 "mantindre el procés java executant-se durant el mateix temps que el procés "
-"konqueror, deixeu sense activar la casella de selecció Parada del servidor "
-"de miniaplicacions."
+"konqueror, deixeu sense seleccionar la casella de selecció Parada del "
+"servidor de miniaplicacions."
 
 #: javaopts.cpp:288
 #, kde-format
@@ -1823,7 +1823,7 @@ msgstr "Política &Java:"
 #: javaopts.cpp:331
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
-msgstr "Tria una política Java per al servidor o domini d'amunt."
+msgstr "Tria una política Java per a l'amfitrió o domini d'amunt."
 
 #: jsopts.cpp:50
 #, kde-format
@@ -1884,7 +1884,7 @@ msgid ""
 "them from a zipped file."
 msgstr ""
 "Ací podeu establir polítiques específiques de JavaScript per a qualsevol "
-"servidor o domini en particular. Per a afegir una política nova, "
+"amfitrió o domini en particular. Per a afegir una política nova, "
 "senzillament cliqueu en el botó <i>Nova...</i> i empleneu la informació que "
 "vos demana el diàleg. Per a canviar una política existent, cliqueu en el "
 "botó <i>Canvia...</i> i trieu una política nova des del diàleg. Clicant en "
@@ -1903,10 +1903,10 @@ msgid ""
 "or hosts.</p><p>Select a policy and use the controls on the right to modify "
 "it.</p>"
 msgstr ""
-"<p>Este quadro conté els dominis i servidors per als quals heu establit una "
+"<p>Este quadro conté els dominis i amfitrions per als quals heu establit una "
 "política de JavaScript específica. Esta política s'utilitzarà en comptes de "
 "la política predeterminada per tal d'habilitar o inhabilitar JavaScript a "
-"les pàgines enviades per estos dominis o servidors.</p><p>Seleccioneu una "
+"les pàgines enviades per estos dominis o amfitrions.</p><p>Seleccioneu una "
 "política i utilitzeu els controls a la dreta per a modificar-la.</p>"
 
 #: jsopts.cpp:96
@@ -1962,7 +1962,7 @@ msgstr "Política de JavaScript:"
 #: jsopts.cpp:220
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
-msgstr "Tria una política de JavaScript per al servidor o domini d'amunt."
+msgstr "Tria una política de JavaScript per a l'amfitrió o domini d'amunt."
 
 #: jsopts.cpp:222
 #, kde-format
@@ -2041,12 +2041,12 @@ msgid ""
 "Disabling this option might also break certain sites that require <i>window."
 "open()</i> for proper operation. Use this feature carefully."
 msgstr ""
-"Si desactiveu esta opció, Konqueror no interpretarà l'ordre de JavaScript "
-"<i>window.open()</i>. Açò és útil si soleu visitar llocs que fan ús extensiu "
-"d'esta ordre per a mostrar finestres emergents de publicitat.<br /><br /"
-"><b>Nota:</b> En desactivar esta opció potser també fareu malbé alguns llocs "
-"que requerixen <i>window.open()</i> per a funcionar correctament. Utilitzeu "
-"esta característica amb compte."
+"Si desseleccioneu esta opció, Konqueror no interpretarà l'ordre de "
+"JavaScript <i>window.open()</i>. Açò és útil si soleu visitar llocs que fan "
+"ús extensiu d'esta ordre per a mostrar finestres emergents de publicitat."
+"<br /><br /><b>Nota:</b> En desseleccionar esta opció potser també fareu "
+"malbé alguns llocs que requerixen <i>window.open()</i> per a funcionar "
+"correctament. Utilitzeu esta característica amb compte."
 
 #: jspolicies.cpp:187
 #, kde-format
@@ -2268,8 +2268,8 @@ msgstr ""
 "miniaplicacions Java incrustades a les pàgines web se'ls ha de permetre "
 "l'execució en Konqueror.<br /><br /><b>Nota:</b> El contingut actiu és "
 "sempre un risc de seguretat, per la qual cosa Konqueror us permet "
-"especificar molt afinadament des de quins servidors voleu executar programes "
-"en Java i/o JavaScript."
+"especificar molt afinadament des de quins amfitrions voleu executar "
+"programes en Java i/o JavaScript."
 
 #: policydlg.cpp:30
 #, kde-format
@@ -2280,7 +2280,7 @@ msgstr "Polítiques específiques de domini"
 #: policydlg.cpp:47
 #, kde-format
 msgid "&Host or domain name:"
-msgstr "Nom del &servidor o domini:"
+msgstr "Nom de l'am&fitrió o domini:"
 
 #: policydlg.cpp:55
 #, kde-format
@@ -2288,7 +2288,7 @@ msgid ""
 "Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
 "(like .kde.org or .org)"
 msgstr ""
-"Introduïu el nom d'un servidor (com ara www.kde.org) o un domini, començant "
+"Introduïu el nom d'un amfitrió (com ara www.kde.org) o un domini, començant "
 "amb un punt (com ara .kde.org o .org)"
 
 #: policydlg.cpp:139
