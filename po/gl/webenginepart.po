@@ -9,13 +9,13 @@
 # Marce Villarino <mvillarino@kde-espana.es>, 2012, 2013, 2014.
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2012.
 # Miguel Branco <mgl.branco@gmail.com>, 2013.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2020.
+# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
 msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 02:26+0000\n"
-"PO-Revision-Date: 2020-01-12 12:52+0100\n"
+"PO-Revision-Date: 2023-11-16 22:11+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -23,12 +23,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.08.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Marce Villarino, Xosé Calvo, Adrián Chaves Fernández (Gallaecio)"
+msgstr "Marce Villarino, Xosé Calvo, Adrián Chaves (Gallaecio)"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -43,101 +43,99 @@ msgstr ""
 #, kde-format
 msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
 msgid "Be free."
-msgstr ""
+msgstr "Sexa libre."
 
 #: src/about/konq_aboutpage.cpp:73 src/about/konq_aboutpage.cpp:133
 #: src/about/konq_aboutpage.cpp:185 src/about/konq_aboutpage.cpp:285
 #, kde-format
 msgid "Konqueror"
-msgstr ""
+msgstr "Konqueror"
 
 #: src/about/konq_aboutpage.cpp:75 src/about/konq_aboutpage.cpp:135
 #: src/about/konq_aboutpage.cpp:187 src/about/konq_aboutpage.cpp:287
 #, kde-format
 msgid "Konqueror is a web browser, file manager and universal document viewer."
 msgstr ""
+"Konqueror é un navegador web, xestor de ficheiros e visor universal de "
+"documentos."
 
 #: src/about/konq_aboutpage.cpp:76 src/about/konq_aboutpage.cpp:136
 #: src/about/konq_aboutpage.cpp:188 src/about/konq_aboutpage.cpp:288
-#, fuzzy, kde-format
-#| msgid "Start Plugin"
+#, kde-format
 msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
 "Points contains links to Home, Network Folders, Trash, etc."
 msgid "Starting Points"
-msgstr "Complemento de inicio"
+msgstr "Puntos de inicio"
 
 #: src/about/konq_aboutpage.cpp:77 src/about/konq_aboutpage.cpp:137
 #: src/about/konq_aboutpage.cpp:189 src/about/konq_aboutpage.cpp:289
 #, kde-format
 msgid "Introduction"
-msgstr ""
+msgstr "Introdución"
 
 #: src/about/konq_aboutpage.cpp:78 src/about/konq_aboutpage.cpp:138
 #: src/about/konq_aboutpage.cpp:190 src/about/konq_aboutpage.cpp:290
 #, kde-format
 msgid "Tips"
-msgstr ""
+msgstr "Consellos"
 
 #: src/about/konq_aboutpage.cpp:79 src/about/konq_aboutpage.cpp:139
 #: src/about/konq_aboutpage.cpp:191 src/about/konq_aboutpage.cpp:192
 #: src/about/konq_aboutpage.cpp:291
 #, kde-format
 msgid "Specifications"
-msgstr ""
+msgstr "Especificacións"
 
 #: src/about/konq_aboutpage.cpp:84
 #, kde-format
 msgid "Home Folder"
-msgstr ""
+msgstr "Cartafol persoal"
 
 #: src/about/konq_aboutpage.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "EMAIL OF TRANSLATORS"
-#| msgid "Your emails"
+#, kde-format
 msgid "Your personal files"
-msgstr ""
-"mvillarino@users.sourceforge.net, xosecalvo@gmail.com, adrian@chaves.io"
+msgstr "Os seus ficheiros persoais"
 
 #: src/about/konq_aboutpage.cpp:88
 #, kde-format
 msgid "Trash"
-msgstr ""
+msgstr "Lixo"
 
 #: src/about/konq_aboutpage.cpp:89
 #, kde-format
 msgid "Browse and restore the trash"
-msgstr ""
+msgstr "Navegar e recuperar o lixo"
 
 #: src/about/konq_aboutpage.cpp:92
 #, kde-format
 msgid "Network Folders"
-msgstr ""
+msgstr "Cartafoles en rede"
 
 #: src/about/konq_aboutpage.cpp:93
 #, kde-format
 msgid "Shared files and folders"
-msgstr ""
+msgstr "Ficheiros e cartafoles compartidos"
 
 #: src/about/konq_aboutpage.cpp:96
 #, kde-format
 msgid "Bookmarks"
-msgstr ""
+msgstr "Marcadores"
 
 #: src/about/konq_aboutpage.cpp:97
 #, kde-format
 msgid "Quick access to your bookmarks"
-msgstr ""
+msgstr "Acceso rápido aos seus marcadores"
 
 #: src/about/konq_aboutpage.cpp:100
 #, kde-format
 msgid "Next: An Introduction to Konqueror"
-msgstr ""
+msgstr "Seguinte: Unha introdución a Konqueror"
 
 #: src/about/konq_aboutpage.cpp:102
 #, kde-format
 msgid "Search the Web"
-msgstr ""
+msgstr "Buscar na web"
 
 #: src/about/konq_aboutpage.cpp:140
 #, kde-format
@@ -146,6 +144,9 @@ msgid ""
 "both local and networked folders while enjoying advanced features such as "
 "the powerful sidebar and file previews."
 msgstr ""
+"Konqueror fai doado o traballo e xestión dos ficheiros. Pode examinar tanto "
+"cartafoles en rede como locais mentres goza de características avanzadas "
+"como unha barra lateral moi potente e vistas previas dos ficheiros."
 
 #: src/about/konq_aboutpage.cpp:144
 #, kde-format
@@ -155,6 +156,11 @@ msgid ""
 "kde.org\">http://www.kde.org</a>) of a web page you would like to visit in "
 "the location bar and press Enter, or choose an entry from the Bookmarks menu."
 msgstr ""
+"Konqueror é tamén un navegador web con moitas características e de uso doado "
+"que pode usar para explorar Internet. Simplemente insira o enderezo de "
+"Internet (p.ex. <a href=\"http://www.kde.org\"> http://www.kde.org</a>) da "
+"páxina que desexe visitar e prema Intro, ou escolla unha das entradas no seu "
+"menú de Marcadores."
 
 #: src/about/konq_aboutpage.cpp:149
 #, kde-format
@@ -162,6 +168,8 @@ msgid ""
 "To return to the previous location, press the back button <img width='16' "
 "height='16' src=\"%1\"></img> in the toolbar. "
 msgstr ""
+"Para volver á páxina anterior, prema o botón atrás <img width='16' "
+"height='16' src=\"%1\"></img> na barra de ferramentas. "
 
 #: src/about/konq_aboutpage.cpp:152
 #, kde-format
@@ -169,17 +177,21 @@ msgid ""
 "To quickly go to your Home folder press the home button <img width='16' "
 "height='16' src=\"%1\"></img>."
 msgstr ""
+"Se quere ir axiña ao seu cartafol persoal, prema o botón persoal <img "
+"width='16' height='16' src=\"%1\"></img>."
 
 #: src/about/konq_aboutpage.cpp:154
 #, kde-format
 msgid ""
 "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
 msgstr ""
+"Para ler unha documentación máis detallada sobre Konqueror prema <a href="
+"\"%1\">aquí</a>."
 
 #: src/about/konq_aboutpage.cpp:157
 #, kde-format
 msgid "Next: Tips & Tricks"
-msgstr ""
+msgstr "Seguinte: Consellos e trucos"
 
 #: src/about/konq_aboutpage.cpp:193
 #, kde-format
@@ -191,21 +203,28 @@ msgid ""
 "Along with this support, for such functions as favicons, Web Shortcuts, and "
 "<A HREF=\"%1\">XBEL bookmarks</A>, Konqueror also implements:"
 msgstr ""
+"Konqueror está deseñado para ser compatíbel con e fomentar os estándares de "
+"Internet. O obxectivo é realizar completamente os estándares oficialmente "
+"promulgados por organizacións como W3 e OASIS, engadindo ademais "
+"compatibilidade adicional con outras características de usabilidade moi "
+"comúns en Internet. Xunto con esta compatibilidade, que inclúe iconas "
+"favoritas, Palabras clave de Internet e <A HREF=\"%1\">Marcadores XBEL</A>, "
+"Konqueror tamén realiza:"
 
 #: src/about/konq_aboutpage.cpp:200
 #, kde-format
 msgid "Web Browsing"
-msgstr ""
+msgstr "Navegación web"
 
 #: src/about/konq_aboutpage.cpp:201
 #, kde-format
 msgid "Supported standards"
-msgstr ""
+msgstr "Estándares compatíbeis"
 
 #: src/about/konq_aboutpage.cpp:202
 #, kde-format
 msgid "Additional requirements*"
-msgstr ""
+msgstr "Requirimentos adicionais*"
 
 #: src/about/konq_aboutpage.cpp:203
 #, kde-format
@@ -213,29 +232,35 @@ msgid ""
 "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
 "\"%2\">HTML 4.01</A>"
 msgstr ""
+"<A HREF=\"%2\">HTML 4.01</A> baseado en <A HREF=\"%1\">DOM</A> (Nivel 1, "
+"parcialmente Nivel 2)"
 
 #: src/about/konq_aboutpage.cpp:205 src/about/konq_aboutpage.cpp:207
 #: src/about/konq_aboutpage.cpp:219 src/about/konq_aboutpage.cpp:224
 #: src/about/konq_aboutpage.cpp:226
 #, kde-format
 msgid "built-in"
-msgstr ""
+msgstr "incluído"
 
 #: src/about/konq_aboutpage.cpp:206
 #, kde-format
 msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
-msgstr ""
+msgstr "<A HREF=\"%1\">Follas de estilo</A> (CSS 1, parcialmente CSS 2)"
 
 #: src/about/konq_aboutpage.cpp:208
 #, kde-format
 msgid "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
 msgstr ""
+"<A HREF=\"%1\">ECMA-262</A> Edición 3 (equivale aproximadamente a JavaScript "
+"1.5)"
 
 #: src/about/konq_aboutpage.cpp:210
 #, kde-format
 msgid ""
 "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
 msgstr ""
+"JavaScript está desactivado (globalmente). Active JavaScript <A HREF="
+"\"%1\">aquí</A>."
 
 #: src/about/konq_aboutpage.cpp:211
 #, kde-format
@@ -243,11 +268,13 @@ msgid ""
 "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\\">here</"
 "A>."
 msgstr ""
+"JavaScript está activado (globalmente). Configure JavaScript <A HREF=\\\"%1\\"
+"\">aquí</A>."
 
 #: src/about/konq_aboutpage.cpp:212
 #, kde-format
 msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
-msgstr ""
+msgstr "Compatibilidade con <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> seguro"
 
 #: src/about/konq_aboutpage.cpp:213
 #, kde-format
@@ -255,11 +282,13 @@ msgid ""
 "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
 "\"%2\">Sun/Oracle</A>)"
 msgstr ""
+"VM compatíbel con JDK 1.2.0 (Java 2) (<A HREF=\"%1\">OpenJDK</A> ou <A HREF="
+"\"%2\">Sun/Oracle</A>)"
 
 #: src/about/konq_aboutpage.cpp:215
 #, kde-format
 msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
-msgstr ""
+msgstr "Active Java (globalmente) <A HREF=\"%1\">aquí</A>."
 
 #: src/about/konq_aboutpage.cpp:216
 #, kde-format
@@ -267,98 +296,101 @@ msgid ""
 "NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF=\"%1\">Flash<SUP>&reg;"
 "</SUP></A>, etc.)"
 msgstr ""
+"<A HREF=\"%2\">Complementos</A> NPAPI (para ver <A HREF="
+"\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)"
 
 #: src/about/konq_aboutpage.cpp:220
 #, kde-format
 msgid "Secure Sockets Layer"
-msgstr ""
+msgstr "Capa segura de sockets"
 
 #: src/about/konq_aboutpage.cpp:221
 #, kde-format
 msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
-msgstr ""
+msgstr "(TLS/SSL v2/3) para comunicacións seguras de ata 168bit"
 
 #: src/about/konq_aboutpage.cpp:222
 #, kde-format
 msgid "OpenSSL"
-msgstr ""
+msgstr "OpenSSL"
 
 #: src/about/konq_aboutpage.cpp:223
 #, kde-format
 msgid "Bidirectional 16bit unicode support"
-msgstr ""
+msgstr "Compatibilidade con unicode bidireccional de 16bit"
 
 #: src/about/konq_aboutpage.cpp:225
 #, kde-format
 msgid "AutoCompletion for forms"
-msgstr ""
+msgstr "Completación automática de formularios"
 
 #: src/about/konq_aboutpage.cpp:227
 #, kde-format
 msgctxt "Title of an html 'group box' explaining konqueror features"
 msgid "General"
-msgstr ""
+msgstr "Xeral"
 
 #: src/about/konq_aboutpage.cpp:228
 #, kde-format
 msgid "Feature"
-msgstr ""
+msgstr "Funcionalidade"
 
 #: src/about/konq_aboutpage.cpp:229
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Detalles"
 
 #: src/about/konq_aboutpage.cpp:230
 #, kde-format
 msgid "Image formats"
-msgstr ""
+msgstr "Formatos de imaxe"
 
 #: src/about/konq_aboutpage.cpp:231
 #, kde-format
 msgid "PNG<br />JPG<br />GIF"
-msgstr ""
+msgstr "PNG<br />JPG<br />GIF"
 
 #: src/about/konq_aboutpage.cpp:232
 #, kde-format
 msgid "Transfer protocols"
-msgstr ""
+msgstr "Protocolos de transferencia"
 
 #: src/about/konq_aboutpage.cpp:233
 #, kde-format
 msgid "HTTP 1.1 (including gzip/bzip2 compression)"
-msgstr ""
+msgstr "HTTP 1.1 (incluíndo compresión gzip/bzip2)"
 
 #: src/about/konq_aboutpage.cpp:234
 #, kde-format
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: src/about/konq_aboutpage.cpp:235
 #, kde-format
 msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
 msgstr ""
+"e <A HREF=\"%1\">moitos máis (consulte os Kioslaves en KHelpCenter)…</A>"
 
 #: src/about/konq_aboutpage.cpp:236
 #, kde-format
 msgctxt "A feature of Konqueror"
 msgid "URL-Completion"
-msgstr ""
+msgstr "Completación de URL"
 
 #: src/about/konq_aboutpage.cpp:237
 #, kde-format
 msgid "Manual"
-msgstr ""
+msgstr "Manual"
 
 #: src/about/konq_aboutpage.cpp:238
 #, kde-format
 msgid "Popup"
-msgstr ""
+msgstr "Xanela emerxente"
 
 #: src/about/konq_aboutpage.cpp:239
 #, kde-format
 msgid "(Short-) Automatic"
-msgstr ""
+msgstr "(Curto) automático"
 
 #: src/about/konq_aboutpage.cpp:241
 #, kde-format
@@ -366,12 +398,12 @@ msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
 "Points contains links to Home, Network Folders, Trash, etc."
 msgid "<a href=\"%1\">Return to Starting Points</a>"
-msgstr ""
+msgstr "<a href=\"%1\">Volver aos puntos de inicio</a>"
 
 #: src/about/konq_aboutpage.cpp:292
 #, kde-format
 msgid "Tips & Tricks"
-msgstr ""
+msgstr "Consellos e trucos"
 
 #: src/about/konq_aboutpage.cpp:293
 #, kde-format
@@ -382,6 +414,10 @@ msgid ""
 "encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-"
 "Shortcuts."
 msgstr ""
+"Uso de atallos web: se escribe «gg: KDE», pode buscar por Internet, mediante "
+"Google, a palabra «KDE». Hai moitos atallos web predefinidos para buscar "
+"programas ou termos en enciclopedias. Mesmo pode <a href=\"%1\">crear os "
+"seus propios</a> atallos web."
 
 #: src/about/konq_aboutpage.cpp:298
 #, kde-format
@@ -389,6 +425,8 @@ msgid ""
 "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
 "the HTML toolbar to increase the font size on your web page."
 msgstr ""
+"Use o botón de aumento <img width='16' height='16' src=\"%1\"></img> na "
+"barra de ferramentas para incrementar o tamaño das letras na páxina web."
 
 #: src/about/konq_aboutpage.cpp:300
 #, kde-format
@@ -397,6 +435,9 @@ msgid ""
 "want to clear the current entry by pressing the black arrow with the white "
 "cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
 msgstr ""
+"Cando queira pegar un enderezo na barra de enderezos podería querer limpar a "
+"entrada actual premendo a frecha negra coa cruz branca <img width='16' "
+"height='16' src=\"%1\"></img> na barra de ferramentas."
 
 #: src/about/konq_aboutpage.cpp:304
 #, kde-format
@@ -405,6 +446,9 @@ msgid ""
 "the icon (favicon) that is to the left of the Location toolbar, drop it on "
 "to the desktop, and choose \"Icon\"."
 msgstr ""
+"Para crear unha ligazón no escritorio que apunte á páxina actual, "
+"simplemente arrastre a icona da esquerda da barra de lugar, déixea sobre o "
+"escritorio e escolla «Icona»."
 
 #: src/about/konq_aboutpage.cpp:307
 #, kde-format
@@ -413,6 +457,9 @@ msgid ""
 "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
 "sessions."
 msgstr ""
+"Tamén pode atopar o <img width='16' height='16' src=\"%1\" /> «Modo a "
+"pantalla completa» no menú de configuración. Esta característica é moi útil "
+"para sesións de «Conversa»."
 
 #: src/about/konq_aboutpage.cpp:310
 #, kde-format
@@ -421,6 +468,10 @@ msgid ""
 "two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> Split "
 "View Left/Right) you can make Konqueror appear the way you like."
 msgstr ""
+"Divide et impera (do lat. «Divide e conquire»): dividindo a xanela en dúas "
+"partes (ppr ex. Xanela -> <img width='16' height='16' src=\"%1\" />Dividir a "
+"xanela en esquerda/dereita) pode facer que Konqueror se axuste aos seus "
+"gustos."
 
 #: src/about/konq_aboutpage.cpp:313
 #, kde-format
@@ -429,6 +480,9 @@ msgid ""
 "visiting asks you to use a different browser (and do not forget to send a "
 "complaint to the webmaster!)"
 msgstr ""
+"Use a funcionalidade <a href=\"%1\">user-agent</a> se o sitio web que está a "
+"visitar require un navegador distinto (e non esqueza enviar unha queixa ao "
+"responsábel do sitio!)"
 
 #: src/about/konq_aboutpage.cpp:316
 #, kde-format
@@ -436,12 +490,15 @@ msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
 "ensures that you can keep track of the pages you have visited recently."
 msgstr ""
+"O <img width='16' height='16' src=\"%1\"></img> historial na barra lateral "
+"garante non perderlle a pista ás páxinas visitadas recentemente."
 
 #: src/about/konq_aboutpage.cpp:318
 #, kde-format
 msgid ""
 "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet connection."
 msgstr ""
+"Use un <A HREF=\"%1\">proxy</A> caché para acelerar a conexión a Internet."
 
 #: src/about/konq_aboutpage.cpp:320
 #, kde-format
@@ -450,32 +507,35 @@ msgid ""
 "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
 "Terminal Emulator)."
 msgstr ""
+"Os usuarios avanzados estimarán Konsole, que se pode incluír en Konqueror "
+"(Configuración -> <img width='16' height='16' SRC=\"%1\"></img> Mostrar o "
+"emulador de terminal)."
 
 #: src/about/konq_aboutpage.cpp:324
 #, kde-format
 msgid "Next: Specifications"
-msgstr ""
+msgstr "Seguinte: Especificacións"
 
 #: src/about/konq_aboutpage.cpp:338
-#, fuzzy, kde-format
-#| msgid "Start Plugin"
+#, kde-format
 msgid "Installed Plugins"
-msgstr "Complemento de inicio"
+msgstr "Complementos instalados"
 
 #: src/about/konq_aboutpage.cpp:339
 #, kde-format
 msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
-msgstr ""
+msgstr "<td>Complemento</td><td>Descrición</td><td>Ficheiro</td><td>Tipos</td>"
 
 #: src/about/konq_aboutpage.cpp:340
 #, kde-format
 msgid "Installed"
-msgstr ""
+msgstr "Instalado"
 
 #: src/about/konq_aboutpage.cpp:341
 #, kde-format
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr ""
+"<td>Tipo Mime</td><td>Descrición</td><td>Sufixos</td><td>Complemento</td>"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -483,6 +543,8 @@ msgid ""
 "The page will be saved as a single HTML file. Only the text of the page will "
 "be saved. External resources such as images won't be saved"
 msgstr ""
+"Esta páxina gardarase como un ficheiro HTML único. Só se gardará o texto da "
+"páxina. Non se cargarán recursos externos como imaxes."
 
 #: src/choosepagesaveformatdlg.cpp:40
 #, kde-format
@@ -490,6 +552,8 @@ msgid ""
 "The page will be saved as an HTML file. Any external resources the page "
 "requires, such as images, will be saved inside an apposite directory"
 msgstr ""
+"A páxina gardarase como un ficheiro HTML. Os recursos externos que a páxina "
+"necesite, como imaxes, gardaranse nun cartafol axeitado."
 
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
@@ -499,45 +563,47 @@ msgid ""
 "<br><strong>Note</strong>: not all browsers are able to display this kind of "
 "files"
 msgstr ""
+"Esta páxina gardarase como un ficheiro MTHML que contén tanto o texto da "
+"páxina como calquera recurso externo que necesita,  como imaxes."
+"<br><strong>Nota:</strong> non todos os navegadores poden amosar este tipo "
+"de ficheiros."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
-#, fuzzy, kde-format
-#| msgctxt "input dialog text for selecting html elements"
-#| msgid "Choose elements"
+#, kde-format
 msgid "Choose Save Format"
-msgstr "Escolla os elementos"
+msgstr "Escoller un formato de garda"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:20
 #, kde-format
 msgid "How would you like to save the page?"
-msgstr ""
+msgstr "Como quere gardar a páxina?"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As an HTML file &without external resources"
-msgstr ""
+msgstr "Como un ficheiro HTML sen recursos e&xternos"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
 #, kde-format
 msgid "As a &complete HTML page"
-msgstr ""
+msgstr "Como unha páxina HTML &completa"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As a &MHTML file"
-msgstr ""
+msgstr "Como un ficheiro &MHTML"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:57 src/webenginepartcertificateerrordlg.ui:23
 #, kde-format
 msgid "TextLabel"
-msgstr ""
+msgstr "Etiqueta de texto"
 
 #: src/settings/webenginesettings.cpp:907
 #, kde-format
@@ -545,131 +611,94 @@ msgid "Filter error"
 msgstr "Erro do filtro"
 
 #: src/spellcheckermanager.cpp:98
-#, fuzzy, kde-format
-#| msgid "Check Spelling..."
+#, kde-format
 msgid "Spelling"
-msgstr "Corrixir a ortografía…"
+msgstr "Ortografía"
 
 #: src/spellcheckermanager.cpp:102
 #, kde-format
 msgid "Spell Checking Enabled"
-msgstr ""
+msgstr "Activouse a corrección ortográfica"
 
 #: src/spellcheckermanager.cpp:120
 #, kde-format
 msgid "&Languages"
-msgstr ""
+msgstr "&Idiomas"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/ui/credentialsdetailswidget.ui:34
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
 #, kde-format
 msgid "&Show passwords"
-msgstr ""
+msgstr "Amo&sar os contrasinais"
 
 #: src/ui/featurepermissionbar.cpp:22
-#, fuzzy, kde-format
-#| msgctxt "@action:deny access"
-#| msgid "&Deny access"
+#, kde-format
 msgctxt "@action:deny permission"
 msgid "&Deny permission"
-msgstr "&Denegar o acceso"
+msgstr "&Denegar o permiso"
 
 #: src/ui/featurepermissionbar.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@action:grant access"
-#| msgid "&Grant access"
+#, kde-format
 msgctxt "@action:grant permission"
 msgid "&Grant permission"
-msgstr "&Conceder o acceso"
+msgstr "&Conceder o permiso"
 
 #: src/ui/featurepermissionbar.cpp:57
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid "<html><b>%1</b> would like to send you notifications"
-msgstr ""
-"<html>Quere concederlle acceso a este sitio a información sobre o seu lugar "
-"físico actual?"
+msgstr "<html><b>%1</b> quere enviarlle notificacións."
 
 #: src/ui/featurepermissionbar.cpp:59
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access information about your current physical "
 "location"
 msgstr ""
-"<html>Quere concederlle acceso a este sitio a información sobre o seu lugar "
-"físico actual?"
+"<html><b>%1</b> quere acceder a información sobre a súa localización física "
+"actual."
 
 #: src/ui/featurepermissionbar.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your microphone and other audio capture "
 "devices"
 msgstr ""
-"<html>Quere concederlle acceso a este sitio a información sobre o seu lugar "
-"físico actual?"
+"<html><b>%1</b> quere acceder ao seu micrófono e outros dispositivos de "
+"captura de son."
 
 #: src/ui/featurepermissionbar.cpp:63
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your camera and other video capture "
 "devices"
 msgstr ""
-"<html>Quere concederlle acceso a este sitio a información sobre o seu lugar "
-"físico actual?"
+"<html><b>%1</b> quere acceder á súa cámara e outros dispositivos de captura "
+"de vídeo."
 
 #: src/ui/featurepermissionbar.cpp:65
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access to your microphone, camera and other "
 "audio and video capture devices"
 msgstr ""
-"<html>Quere concederlle acceso a este sitio a información sobre o seu lugar "
-"físico actual?"
+"<html><b>%1</b> quere acceder ao seu micrófono, cámara e outros dispositivos "
+"de captura de son e de vídeo."
 
 #: src/ui/featurepermissionbar.cpp:67
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
-msgstr ""
-"<qt>Quere permitir que o sitio anexe os seguintes ficheiros á mensaxe de "
-"correo?</qt>"
+msgstr "<html><b>%1</b> quere bloquear o rato dentro da páxina web."
 
 #: src/ui/featurepermissionbar.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid "<html><b>%1</b> would like to record your screen"
-msgstr ""
-"<html>Quere concederlle acceso a este sitio a información sobre o seu lugar "
-"físico actual?"
+msgstr "<html><b>%1</b> quere gravar a súa pantalla."
 
 #: src/ui/featurepermissionbar.cpp:71
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid "<html><b>%1</b> would like to record your screen and your audio"
-msgstr ""
-"<html>Quere concederlle acceso a este sitio a información sobre o seu lugar "
-"físico actual?"
+msgstr "<html><b>%1</b> quere gravar a súa pantalla e o seu son."
 
 #: src/ui/passwordbar.cpp:29
 #, kde-format
@@ -693,19 +722,18 @@ msgstr "Agora &non"
 #, kde-format
 msgctxt "@action:display details about credentials to store"
 msgid "&Show details"
-msgstr ""
+msgstr "Amo&sar os detalles"
 
 #: src/ui/passwordbar.cpp:123
 #, kde-format
 msgctxt "@action:hide details about credentials to store"
 msgid "&Hide details"
-msgstr ""
+msgstr "Agoc&har os detalles"
 
 #: src/ui/searchbar.cpp:38
-#, fuzzy, kde-format
-#| msgid "&Find:"
+#, kde-format
 msgid "Find..."
-msgstr "A&topar:"
+msgstr "Atopar..."
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, closeButton)
 #: src/ui/searchbar.ui:23
@@ -770,47 +798,46 @@ msgstr "Realzar as aparicións atopadas."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "Choose files to upload"
+#, kde-format
 msgid "Choose fields to remember"
-msgstr "Escolla os ficheiros a enviar"
+msgstr "Escolla os ficheiros para lembrar"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
 #, kde-format
 msgid "Switch between displaying passwords or placeholders"
-msgstr ""
+msgstr "Alternar entre amosar contrasinais ou marcadores de posición."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
 #, kde-format
 msgid "Show advanced information about the fields"
-msgstr ""
+msgstr "Amosar información avanzada sobre os campos."
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
 #: src/webenginepartcertificateerrordlg.ui:30
 #, kde-format
 msgid "&Show details"
-msgstr ""
+msgstr "Amo&sar os detalles"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
 #, kde-format
 msgid "Available &fields"
-msgstr ""
+msgstr "&Campos dispoñíbeis"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:101
 #, kde-format
 msgid "Store form data in KWallet when closing the dialog"
-msgstr ""
+msgstr "Almacenar os datos do formulario en KWallet ao pechar o diálogo."
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
 #, kde-format
 msgid "&Immediately memorize form data"
-msgstr ""
+msgstr "Memorizar &inmediatamente os datos do formulario."
 
 #: src/webenginepage.cpp:136
 #, kde-format
@@ -1004,10 +1031,9 @@ msgid "Do Not Allow"
 msgstr "Denegar"
 
 #: src/webenginepart.cpp:213
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "Gardar a imaxe como…"
+msgstr "Gardar a páxina HTML completa como…"
 
 #: src/webenginepart.cpp:217
 #, kde-format
@@ -1150,40 +1176,37 @@ msgstr "<html>Quere que %1 lembre a información de acceso de <b>%2</b>?</html>"
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
-msgstr ""
+msgstr "Completar os &formularios"
 
 #: src/webenginepart.cpp:1016
-#, fuzzy, kde-format
-#| msgid "Remove all cached passwords for this site"
+#, kde-format
 msgid "&Memorize Passwords in This Page Now"
-msgstr "Retirar todos os contrasinais que se lembran deste sitio"
+msgstr "&Memorizar os contrasinais desta páxina"
 
 #: src/webenginepart.cpp:1020
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
-msgstr ""
+msgstr "Personalizar os &campos para memorizar desta páxina…"
 
 #: src/webenginepart.cpp:1024
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
-msgstr ""
+msgstr "Retirar a configuración personalizada de memorización desta páxina"
 
 #: src/webenginepart.cpp:1028
-#, fuzzy, kde-format
-#| msgid "&Allow password caching for this site"
+#, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "&Permitir lembrar os contrasinais deste sitio"
 
 #: src/webenginepart.cpp:1032
-#, fuzzy, kde-format
-#| msgid "Remove all cached passwords for this site"
+#, kde-format
 msgid "Remove All Memorized Passwords for This Site"
-msgstr "Retirar todos os contrasinais que se lembran deste sitio"
+msgstr "Retirar todos os contrasinais memorizados deste sitio"
 
 #: src/webenginepart.cpp:1036
 #, kde-format
 msgid "&Launch Wallet Manager"
-msgstr ""
+msgstr "&Iniciar o xestor de carteiras"
 
 #: src/webenginepart.cpp:1040
 #, kde-format
@@ -1210,8 +1233,7 @@ msgstr "&Vista"
 
 #. i18n: ectx: Menu (tools)
 #: src/webenginepart.rc:30
-#, fuzzy, kde-format
-#| msgid "&Tools"
+#, kde-format
 msgid "&Tools"
 msgstr "Ferramen&tas"
 
@@ -1219,7 +1241,7 @@ msgstr "Ferramen&tas"
 #: src/webenginepart.rc:32
 #, kde-format
 msgid "&Credential management"
-msgstr ""
+msgstr "Xestión de &credenciais"
 
 #. i18n: ectx: ToolBar (htmlToolBar)
 #: src/webenginepart.rc:47
@@ -1246,90 +1268,81 @@ msgstr "Escriba o URL:"
 #, kde-format
 msgctxt "Ignore the certificate error for this URL only for now"
 msgid "Yes, &once"
-msgstr ""
+msgstr "Si, &unha vez"
 
 #: src/webenginepartcertificateerrordlg.cpp:45
 #, kde-format
 msgctxt "Ignore the certificate error for this URL now and in the future"
 msgid "Yes, &forever"
-msgstr ""
+msgstr "Si, &sempre"
 
 #: src/webenginepartcertificateerrordlg.cpp:49
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The server failed the authenticity check (%1). The error is:</p><p><tt>"
-#| "%2</tt></p>Do you want to ignore this error?"
+#, kde-format
 msgid ""
 "<p>The server <tt>%1</tt> failed the authenticity check. The error is:</"
 "p><p><tt>%2</tt></p>Do you want to ignore this error?"
 msgstr ""
-"<p>O servidor fallou a comprobación de autenticidade (%1). O erro é:</"
+"<p>O servidor <tt>%1</tt> fallou a comprobación de autenticidade. O erro é:</"
 "p><p><tt>%2</tt></p>Quere ignorar esta mensaxe?"
 
 #: src/webenginepartcertificateerrordlg.cpp:55
-#, fuzzy, kde-format
-#| msgid "Authentication error"
+#, kde-format
 msgctxt "title of a dialog asking what to do about a SSL certificate error"
 msgid "Certificate error"
-msgstr "Erro de autenticación"
+msgstr "Erro de certificado"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEnginePartCertificateErrorDlg)
 #: src/webenginepartcertificateerrordlg.ui:14
 #, kde-format
 msgid "Dialog"
-msgstr ""
+msgstr "Diálogo"
 
 #. i18n: ectx: property (title), widget (QGroupBox, details)
 #: src/webenginepartcertificateerrordlg.ui:50
 #, kde-format
 msgid "Certificate details"
-msgstr ""
+msgstr "Detalles do certificado"
 
 #. i18n: ectx: attribute (title), widget (QWidget, subjectTab)
 #: src/webenginepartcertificateerrordlg.ui:63
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
-#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
-#| msgid " - Subject: "
+#, kde-format
 msgid "&Subject"
-msgstr " - Asunto: "
+msgstr "&Asunto"
 
 #. i18n: ectx: attribute (title), widget (QWidget, issuerTab)
 #: src/webenginepartcertificateerrordlg.ui:73
 #, kde-format
 msgid "&Issuer"
-msgstr ""
+msgstr "&Expedidor"
 
 #: src/webenginepartdownloadmanager.cpp:295
 #, kde-format
 msgid "An error occurred while saving the file: %1"
-msgstr ""
+msgstr "Produciuse un erro ao gardar o ficheiro: %1"
 
 #: src/webenginepartdownloadmanager.cpp:303
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
-msgstr ""
+msgstr "Descargando"
 
 #: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
-msgstr ""
+msgstr "Orixe"
 
 #: src/webenginepartdownloadmanager.cpp:305
-#, fuzzy, kde-format
-#| msgid "Description:"
+#, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
-msgstr "Descrición:"
+msgstr "Destino"
 
 #: src/webenginepartdownloadmanager.cpp:318
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
-msgstr ""
+msgstr "Rematouse a garda de %1 como %2"
 
 #: src/webengineparterrorschemehandler.cpp:94
 #, kde-format
@@ -1536,96 +1549,91 @@ msgstr "Configurar os atallos web…"
 #, kde-format
 msgctxt "Web field with type 'text'"
 msgid "text"
-msgstr ""
+msgstr "texto"
 
 #: src/webenginewallet.cpp:105
 #, kde-format
 msgctxt "Web field with type 'password'"
 msgid "password"
-msgstr ""
+msgstr "contrasinal"
 
 #: src/webenginewallet.cpp:106
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
-#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
-#| msgid "Email: "
+#, kde-format
 msgctxt "Web field with type 'e-mail'"
 msgid "e-mail"
-msgstr "Correo: "
+msgstr "enderezo de correo electrónico"
 
 #: src/webenginewallet.cpp:107
 #, kde-format
 msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
 msgid "other"
-msgstr ""
+msgstr "outro"
 
 #: src/webfieldsdataview.cpp:61
 #, kde-format
 msgctxt "Label of a web field"
 msgid "Field name"
-msgstr ""
+msgstr "Nome do campo"
 
 #: src/webfieldsdataview.cpp:62
 #, kde-format
 msgctxt "Value of a web field"
 msgid "Field value"
-msgstr ""
+msgstr "Valor do campo"
 
 #: src/webfieldsdataview.cpp:63
 #, kde-format
 msgctxt "Name attribute of a web field"
 msgid "Internal field name"
-msgstr ""
+msgstr "Nome interno do campo"
 
 #: src/webfieldsdataview.cpp:64
 #, kde-format
 msgctxt "Type of a web field"
 msgid "Field type"
-msgstr ""
+msgstr "Tipo de campo"
 
 #: src/webfieldsdataview.cpp:65
 #, kde-format
 msgctxt "The id of a web field"
 msgid "Field id"
-msgstr ""
+msgstr "Identificador do campo"
 
 #: src/webfieldsdataview.cpp:66
 #, kde-format
 msgctxt "Other details about a web field"
 msgid "Details"
-msgstr ""
+msgstr "Detalles"
 
 #: src/webfieldsdataview.cpp:125
 #, kde-format
 msgctxt "web field has the readonly attribute"
 msgid "read only"
-msgstr ""
+msgstr "só lectura"
 
 #: src/webfieldsdataview.cpp:128
 #, kde-format
 msgctxt "web field has the autocomplete attribute set to off"
 msgid "auto-completion off"
-msgstr ""
+msgstr "completación automática desactivada"
 
 #: src/webfieldsdataview.cpp:131
-#, fuzzy, kde-format
-#| msgid "Set Editable"
+#, kde-format
 msgctxt "web field is disabled"
 msgid "disabled"
-msgstr "Facer modificábel"
+msgstr "desactivado"
 
 #: src/webfieldsdataview.cpp:159
 #, kde-format
 msgctxt "A statement about a field is true"
 msgid "yes"
-msgstr ""
+msgstr "si"
 
 #: src/webfieldsdataview.cpp:160
 #, kde-format
 msgctxt "A statement about a field is false"
 msgid "no"
-msgstr ""
+msgstr "non"
 
 #: src/webfieldsdataview.cpp:163
 #, kde-format
@@ -1635,6 +1643,10 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
+"<ul><li><b>Nome interno do campo: </b>%1</li><li><b>Tipo de campo: </b>%2</"
+"li><li><b>Identificador do campo: </b>%3</li><li><b>O campo é de só lectura: "
+"</b>%4</li><li><b>O campo está activado: </b>%5</li><li><b>A completación "
+"automática está activada: </b>%6</li></ul>"
 
 #~ msgid "Save &Frame As..."
 #~ msgstr "Gardar o &marco como…"
