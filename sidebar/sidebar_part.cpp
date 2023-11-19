@@ -13,23 +13,30 @@
 #include <konq_events.h>
 #include <kacceleratormanager.h>
 #include <KLocalizedString>
+#include <KPluginFactory>
 
 K_PLUGIN_CLASS_WITH_JSON(KonqSidebarPart, "konq_sidebartng.json")
 
 KonqSidebarPart::KonqSidebarPart(QWidget *parentWidget, QObject *parent, const KPluginMetaData& metaData, const QVariantList &)
+#if QT_VERSION_MAJOR < 6
     : KParts::ReadOnlyPart(parent)
+#else
+    : KParts::ReadOnlyPart(parent, metaData)
+#endif
 {
+#if QT_VERSION_MAJOR < 6
     setMetaData(metaData);
+#endif
 
     QString currentProfile = parentWidget->window()->property("currentProfile").toString();
     if (currentProfile.isEmpty()) {
         currentProfile = "default";
     }
     m_widget = new Sidebar_Widget(parentWidget, this, currentProfile);
-    m_extension = new KonqSidebarBrowserExtension(this, m_widget);
+    m_extension = new KonqSidebarNavigationExtension(this, m_widget);
     connect(m_widget, &Sidebar_Widget::started, this, &KParts::ReadOnlyPart::started);
     connect(m_widget, &Sidebar_Widget::completed, this, QOverload<>::of(&KParts::ReadOnlyPart::completed));
-    connect(m_extension, &KonqSidebarBrowserExtension::addWebSideBar, m_widget, &Sidebar_Widget::addWebSideBar);
+    connect(m_extension, &KonqSidebarNavigationExtension::addWebSideBar, m_widget, &Sidebar_Widget::addWebSideBar);
     KAcceleratorManager::setNoAccel(m_widget);
     setWidget(m_widget);
 }
@@ -60,8 +67,8 @@ void KonqSidebarPart::customEvent(QEvent *ev)
 
 ////
 
-KonqSidebarBrowserExtension::KonqSidebarBrowserExtension(KonqSidebarPart *part, Sidebar_Widget *widget_)
-    : KParts::BrowserExtension(part), widget(widget_)
+KonqSidebarNavigationExtension::KonqSidebarNavigationExtension(KonqSidebarPart *part, Sidebar_Widget *widget_)
+    : KParts::NavigationExtension(part), widget(widget_)
 {
 }
 

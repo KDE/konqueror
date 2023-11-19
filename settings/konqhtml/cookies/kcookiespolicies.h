@@ -27,15 +27,19 @@ class KCookiesPolicies : public KCModule
     Q_OBJECT
 
 public:
-    explicit KCookiesPolicies(QWidget *parent, const QVariantList &args);
+    //TODO KF6: when dropping compatibility with KF5, remove QVariantList argument
+    explicit KCookiesPolicies(QObject *parent, const KPluginMetaData &md={}, const QVariantList &args={});
     ~KCookiesPolicies() override;
 
     void load() override;
     void save() override;
     void defaults() override;
-    QString quickHelp() const override;
 
     void setPolicy(const QString &domain);
+
+#if QT_VERSION_MAJOR < 6
+    void setNeedsSave(bool needs) {emit changed(needs);}
+#endif
 
 protected Q_SLOTS:
     void cookiesEnabled(bool);

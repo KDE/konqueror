@@ -18,13 +18,17 @@ class BookmarksConfigModule : public KCModule
     Q_OBJECT
 
 public:
-    BookmarksConfigModule(QWidget *parent, const QVariantList &args);
+    //TODO KF6: when dropping compatibility with KF5, remove QVariantList argument
+    BookmarksConfigModule(QObject *parent, const KPluginMetaData &md={}, const QVariantList &args={});
     ~BookmarksConfigModule() override;
 
     void load() override;
     void save() override;
     void defaults() override;
-    QString quickHelp() const override;
+
+#if QT_VERSION_MAJOR < 6
+    void setNeedsSave(bool needs) {emit changed(needs);}
+#endif
 
 private Q_SLOTS:
     void clearCache();

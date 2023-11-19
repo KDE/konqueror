@@ -30,19 +30,6 @@
 #define QL1S(x)   QLatin1String(x)
 #define QL1C(x)   QLatin1Char(x)
 
-QWebEngineScript WebEngineWallet::formDetectorFunctionsScript()
-{
-    static QWebEngineScript s_formDetectorFunctionsScript;
-    if (s_formDetectorFunctionsScript.isNull()) {
-        QFile jsfile(":/formautofiller.js");
-        jsfile.open(QIODevice::ReadOnly);
-        s_formDetectorFunctionsScript.setSourceCode(QString(jsfile.readAll()));
-        s_formDetectorFunctionsScript.setInjectionPoint(QWebEngineScript::DocumentCreation);
-        s_formDetectorFunctionsScript.setWorldId(QWebEngineScript::ApplicationWorld);
-    }
-    return s_formDetectorFunctionsScript;
-}
-
 WebEngineSettings::WebFormInfo WebEngineWallet::WebForm::toSettingsInfo() const
 {
     QStringList fieldNames;
@@ -291,8 +278,8 @@ void WebEngineWallet::fillWebForm(const QUrl &url, const WebEngineWallet::WebFor
     QString script;
     bool wasFilled = false;
 
-    Q_FOREACH (const WebEngineWallet::WebForm &form, forms) {
-        Q_FOREACH (const WebEngineWallet::WebForm::WebField &field, form.fields) {
+    for (const WebEngineWallet::WebForm &form: forms) {
+        for (const WebEngineWallet::WebForm::WebField &field: form.fields) {
             QString value = field.value;
             value.replace(QL1C('\\'), QL1S("\\\\"));
             if (!field.value.isEmpty()) {

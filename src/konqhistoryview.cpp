@@ -23,6 +23,7 @@
 #include <QTimer>
 #include <QTreeView>
 #include <QVBoxLayout>
+#include <QActionGroup>
 
 #include <kactioncollection.h>
 #include "konqdebug.h"

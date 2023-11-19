@@ -17,6 +17,7 @@ class KToolBar;
 class KBookmarkMenu;
 class KBookmarkOwner;
 class KBookmarkBarPrivate;
+class KBookmarkManager;
 
 /**
  * This class provides a bookmark toolbar.  Using this class is nearly

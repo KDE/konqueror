@@ -20,8 +20,15 @@ This will define the following variables:
   The path to the qwebengine_convert_dict executable
 #]=======================================================================]
 include(ECMQueryQt)
-ecm_query_qt(QT_BINARIES_DIR QT_INSTALL_BINS)
-find_program(WebEngineDictConverter_EXECUTABLE qwebengine_convert_dict HINTS ${QT_BINARIES_DIR})
+if (KF_MAJOR_VERSION STRLESS "6")
+  ecm_query_qt(CONVERTER_HINT_DIR QT_INSTALL_BINS)
+  set(hint "${CONVERTER_HINT_DIR}")
+else()
+  ecm_query_qt(CONVERTER_HINT_DIR QT_INSTALL_LIBEXECS)
+  set(hint "${CONVERTER_HINT_DIR}")
+endif()
+find_program(WebEngineDictConverter_EXECUTABLE qwebengine_convert_dict HINTS ${hint})
+
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(WebEngineDictConverter
   FOUND_VAR WebEngineDictConverter_FOUND

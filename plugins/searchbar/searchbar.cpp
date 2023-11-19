@@ -20,8 +20,7 @@
 #include <KIO/CommandLauncherJob>
 #include <KMainWindow>
 #include <KParts/Part>
-#include <KParts/BrowserExtension>
-#include <KParts/SelectorInterface>
+#include "kf5compat.h" //For NavigationExtension
 #include <KParts/PartActivateEvent>
 #include <KLocalizedString>
 #include <KIO/Job>
@@ -43,6 +42,8 @@
 #include <asyncselectorinterface.h>
 #include <htmlextension.h>
 #include <textextension.h>
+#include <browserarguments.h>
+#include <browserextension.h>
 
 K_PLUGIN_CLASS_WITH_JSON(SearchBarPlugin, "searchbar.json")
 
@@ -210,13 +211,22 @@ void SearchBarPlugin::startSearch(const QString &search)
             return;
         }
 
-        KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(m_part);
+        KParts::NavigationExtension *ext = KParts::NavigationExtension::childObject(m_part);
         if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
             KParts::OpenUrlArguments arguments;
-            KParts::BrowserArguments browserArguments;
+            BrowserArguments browserArguments;
             browserArguments.setNewTab(true);
             if (ext) {
-                emit ext->createNewWindow(data.uri(), arguments, browserArguments);
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+                emit ext->createNewWindow(data.uri());
+#else
+                if (auto browserExtension = qobject_cast<BrowserExtension *>(ext)) {
+                     emit browserExtension->browserCreateNewWindow(data.uri(), arguments, browserArguments);
+                } else {
+                     emit ext->createNewWindow(data.uri());
+                }
+#endif
             }
         } else {
             if (ext) {
@@ -301,7 +311,7 @@ void SearchBarPlugin::showSelectionMenu()
                                this, &SearchBarPlugin::selectSearchEngines);
         connect(m_popupMenu, &QMenu::triggered, this, &SearchBarPlugin::menuActionTriggered);
     } else {
-        Q_FOREACH (QAction *action, m_addSearchActions) {
+        for (QAction *action: m_addSearchActions) {
             m_popupMenu->removeAction(action);
             delete action;
         }
@@ -314,7 +324,7 @@ void SearchBarPlugin::showSelectionMenu()
         before = actions[actions.size() - 2];
     }
 
-    Q_FOREACH (const QString &title, m_openSearchDescs.keys()) {
+    for (const QString &title: m_openSearchDescs.keys()) {
         QAction *addSearchAction = new QAction(m_popupMenu);
         addSearchAction->setText(i18n("Add %1...", title));
         m_addSearchActions.append(addSearchAction);
@@ -383,7 +393,7 @@ void SearchBarPlugin::configurationChanged()
 
     if (KUriFilter::self()->filterSearchUri(data, KUriFilter::NormalTextFilter)) {
         m_delimiter = data.searchTermSeparator();
-        Q_FOREACH (const QString &engine, data.preferredSearchProviders()) {
+        for (const QString &engine: data.preferredSearchProviders()) {
             //qCDebug(SEARCHBAR_LOG) << "Found search provider:" << engine;
             const KUriFilterSearchProvider &provider = data.queryForSearchProvider(engine);
 
@@ -450,9 +460,10 @@ void SearchBarPlugin::HTMLDocLoaded()
     //NOTE: the link below seems to be dead
     // Testcase for this code: http://search.iwsearch.net
     HtmlExtension *ext = HtmlExtension::childObject(m_part);
-    KParts::SelectorInterface *selectorInterface = qobject_cast<KParts::SelectorInterface *>(ext);
     AsyncSelectorInterface *asyncIface = qobject_cast<AsyncSelectorInterface*>(ext);
     const QString query(QStringLiteral("head > link[rel=\"search\"][type=\"application/opensearchdescription+xml\"]"));
+#if QT_VERSION_MAJOR < 6
+    KParts::SelectorInterface *selectorInterface = qobject_cast<KParts::SelectorInterface *>(ext);
 
     if (selectorInterface) {
         //if (headElelement.getAttribute("profile") != "http://a9.com/-/spec/opensearch/1.1/") {
@@ -461,16 +472,19 @@ void SearchBarPlugin::HTMLDocLoaded()
         const QList<KParts::SelectorInterface::Element> linkNodes = selectorInterface->querySelectorAll(query, KParts::SelectorInterface::EntireContent);
         insertOpenSearchEntries(linkNodes);
     } else if (asyncIface) {
-        auto callback = [this](const QList<KParts::SelectorInterface::Element>& elements) {
+#else
+    if (asyncIface) {
+#endif
+        auto callback = [this](const QList<AsyncSelectorInterface::Element>& elements) {
             insertOpenSearchEntries(elements);
         };
-        asyncIface->querySelectorAllAsync(query, KParts::SelectorInterface::EntireContent, callback);
+        asyncIface->querySelectorAllAsync(query, AsyncSelectorInterface::EntireContent, callback);
     }
 }
 
-void SearchBarPlugin::insertOpenSearchEntries(const QList<KParts::SelectorInterface::Element>& elements)
+void SearchBarPlugin::insertOpenSearchEntries(const QList<AsyncSelectorInterface::Element>& elements)
 {
-    for (const KParts::SelectorInterface::Element &link : elements) {
+    for (const AsyncSelectorInterface::Element &link : elements) {
         const QString title = link.attribute(QStringLiteral("title"));
         const QString href = link.attribute(QStringLiteral("href"));
         //qCDebug(SEARCHBAR_LOG) << "Found opensearch" << title << href;

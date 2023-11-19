@@ -9,7 +9,6 @@
 */
 
 #include "webenginepart_ext.h"
-#include <QtWebEngine/QtWebEngineVersion>
 
 #include "webenginepart.h"
 #include "webengineview.h"
@@ -34,7 +33,6 @@
 #include <sonnet/backgroundchecker.h>
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
-#include <KParts/BrowserRun>
 #include <KEMailClientLauncherJob>
 #include <KIO/JobUiDelegateFactory>
 
@@ -51,11 +49,12 @@
 #include <QPrinterInfo>
 #include <QJsonDocument>
 #include <QJsonArray>
+#include <QStringView>
 
 #define QL1S(x)     QLatin1String(x)
 #define QL1C(x)     QLatin1Char(x)
 
-using Element = KParts::SelectorInterface::Element;
+using Element = AsyncSelectorInterface::Element;
 
 using namespace KonqInterfaces;
 
@@ -76,8 +75,8 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
     return InvokeWrapper<Arg, R, C>{receiver, memberFun};
 }
 
-WebEngineBrowserExtension::WebEngineBrowserExtension(WebEnginePart *parent, const QByteArray& cachedHistoryData)
-                       :KParts::BrowserExtension(parent),
+WebEngineNavigationExtension::WebEngineNavigationExtension(WebEnginePart *parent, const QByteArray& cachedHistoryData)
+                       : BrowserExtension(parent),
                         m_part(parent),
                         mCurrentPrinter(nullptr)
 {
@@ -85,6 +84,10 @@ WebEngineBrowserExtension::WebEngineBrowserExtension(WebEnginePart *parent, cons
     emit enableAction("copy", false);
     emit enableAction("paste", false);
     emit enableAction("print", true);
+
+#if QT_VERSION_MAJOR >= 6
+    connect(view(), &QWebEngineView::printFinished, this, &WebEngineNavigationExtension::slotHandlePagePrinted);
+#endif
 
     if (cachedHistoryData.isEmpty()) {
         return;
@@ -96,7 +99,7 @@ WebEngineBrowserExtension::WebEngineBrowserExtension(WebEnginePart *parent, cons
         return;
     }
 
-    // NOTE: When restoring history, webengine PORTING_TODO automatically navigates to
+    // NOTE: When restoring history, webengine automatically navigates to
     // the previous "currentItem". Since we do not want that to happen,
     // we set a property on the WebEnginePage object that is used to allow or
     // disallow history navigation in WebEnginePage::acceptNavigationRequest.
@@ -105,11 +108,11 @@ WebEngineBrowserExtension::WebEngineBrowserExtension(WebEnginePart *parent, cons
     s >> *(view()->history());
 }
 
-WebEngineBrowserExtension::~WebEngineBrowserExtension()
+WebEngineNavigationExtension::~WebEngineNavigationExtension()
 {
 }
 
-WebEngineView* WebEngineBrowserExtension::view()
+WebEngineView* WebEngineNavigationExtension::view()
 {
     if (!m_view && m_part) {
         m_view = qobject_cast<WebEngineView*>(m_part->view());
@@ -118,7 +121,7 @@ WebEngineView* WebEngineBrowserExtension::view()
     return m_view;
 }
 
-WebEnginePage* WebEngineBrowserExtension::page()
+WebEnginePage* WebEngineNavigationExtension::page()
 {
     WebEngineView *v = view();
     if (v) {
@@ -128,25 +131,25 @@ WebEnginePage* WebEngineBrowserExtension::page()
     }
 }
 
-int WebEngineBrowserExtension::xOffset()
+int WebEngineNavigationExtension::xOffset()
 {
     if (view()) {
         return view()->page()->scrollPosition().x();
     }
 
-    return KParts::BrowserExtension::xOffset();
+    return KParts::NavigationExtension::xOffset();
 }
 
-int WebEngineBrowserExtension::yOffset()
+int WebEngineNavigationExtension::yOffset()
 {
    if (view()) {
         return view()->page()->scrollPosition().y();
    }
 
-    return KParts::BrowserExtension::yOffset();
+    return KParts::NavigationExtension::yOffset();
 }
 
-void WebEngineBrowserExtension::saveState(QDataStream &stream)
+void WebEngineNavigationExtension::saveState(QDataStream &stream)
 {
     // TODO: Save information such as form data from the current page.
     QWebEngineHistory* history = (view() ? view()->history() : nullptr);
@@ -160,7 +163,7 @@ void WebEngineBrowserExtension::saveState(QDataStream &stream)
            << m_historyData;
 }
 
-void WebEngineBrowserExtension::restoreState(QDataStream &stream)
+void WebEngineNavigationExtension::restoreState(QDataStream &stream)
 {
     QUrl u;
     QByteArray historyData;
@@ -229,25 +232,25 @@ void WebEngineBrowserExtension::restoreState(QDataStream &stream)
 }
 
 
-void WebEngineBrowserExtension::cut()
+void WebEngineNavigationExtension::cut()
 {
     if (view())
         view()->triggerPageAction(QWebEnginePage::Cut);
 }
 
-void WebEngineBrowserExtension::copy()
+void WebEngineNavigationExtension::copy()
 {
     if (view())
         view()->triggerPageAction(QWebEnginePage::Copy);
 }
 
-void WebEngineBrowserExtension::paste()
+void WebEngineNavigationExtension::paste()
 {
     if (view())
         view()->triggerPageAction(QWebEnginePage::Paste);
 }
 
-void WebEngineBrowserExtension::slotSaveDocument()
+void WebEngineNavigationExtension::slotSaveDocument()
 {
     WebEnginePage *pg = page();
     if (pg) {
@@ -256,7 +259,7 @@ void WebEngineBrowserExtension::slotSaveDocument()
     }
 }
 
-void WebEngineBrowserExtension::slotSaveFullHTMLPage()
+void WebEngineNavigationExtension::slotSaveFullHTMLPage()
 {
     WebEnginePage *p = page();
     if (p) {
@@ -264,7 +267,7 @@ void WebEngineBrowserExtension::slotSaveFullHTMLPage()
     }
 }
 
-void WebEngineBrowserExtension::print()
+void WebEngineNavigationExtension::print()
 {
     if (view()) {
         mCurrentPrinter = new QPrinter();
@@ -276,18 +279,22 @@ void WebEngineBrowserExtension::print()
             return;
         }
         delete dialog;
-        view()->page()->print(mCurrentPrinter, invoke(this, &WebEngineBrowserExtension::slotHandlePagePrinted));
+#if QT_VERSION_MAJOR < 6
+        view()->page()->print(mCurrentPrinter, invoke(this, &WebEngineNavigationExtension::slotHandlePagePrinted));
+#else
+        view()->print(mCurrentPrinter);
+#endif
     }
 }
 
-void WebEngineBrowserExtension::slotHandlePagePrinted(bool result)
+void WebEngineNavigationExtension::slotHandlePagePrinted(bool result)
 {
     Q_UNUSED(result);
     delete mCurrentPrinter;
     mCurrentPrinter = nullptr;
 }
 
-void WebEngineBrowserExtension::updateEditActions()
+void WebEngineNavigationExtension::updateEditActions()
 {
     if (!view())
         return;
@@ -297,14 +304,14 @@ void WebEngineBrowserExtension::updateEditActions()
     emit enableAction("paste", view()->pageAction(QWebEnginePage::Paste)->isEnabled());
 }
 
-void WebEngineBrowserExtension::updateActions()
+void WebEngineNavigationExtension::updateActions()
 {
     const QString protocol (m_part->url().scheme());
     const bool isValidDocument = (protocol != QL1S("about") && protocol != QL1S("error") && protocol != QL1S("konq"));
     emit enableAction("print", isValidDocument);
 }
 
-void WebEngineBrowserExtension::searchProvider()
+void WebEngineNavigationExtension::searchProvider()
 {
     if (!view())
         return;
@@ -325,18 +332,22 @@ void WebEngineBrowserExtension::searchProvider()
     if (!url.isValid())
       return;
 
-    KParts::BrowserArguments bargs;
+    BrowserArguments bargs;
     bargs.frameName = QL1S("_blank");
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     emit openUrlRequest(url, KParts::OpenUrlArguments(), bargs);
+#else
+    emit browserOpenUrlRequest(url, KParts::OpenUrlArguments(), bargs);
+#endif
 }
 
-void WebEngineBrowserExtension::reparseConfiguration()
+void WebEngineNavigationExtension::reparseConfiguration()
 {
     // Force the configuration stuff to reparse...
     WebEngineSettings::self()->init();
 }
 
-void WebEngineBrowserExtension::disableScrolling()
+void WebEngineNavigationExtension::disableScrolling()
 {
     QWebEngineView* currentView = view();
     QWebEnginePage* page = currentView ? currentView->page() : nullptr;
@@ -347,19 +358,19 @@ void WebEngineBrowserExtension::disableScrolling()
     page->runJavaScript(QStringLiteral("document.documentElement.style.overflow = 'hidden';"));
 }
 
-void WebEngineBrowserExtension::zoomIn()
+void WebEngineNavigationExtension::zoomIn()
 {
     if (view())
         view()->setZoomFactor(view()->zoomFactor() + 0.1);
 }
 
-void WebEngineBrowserExtension::zoomOut()
+void WebEngineNavigationExtension::zoomOut()
 {
     if (view())
         view()->setZoomFactor(view()->zoomFactor() - 0.1);
 }
 
-void WebEngineBrowserExtension::zoomNormal()
+void WebEngineNavigationExtension::zoomNormal()
 {
     if (view()) {
         if (WebEngineSettings::self()->zoomToDPI())
@@ -369,7 +380,7 @@ void WebEngineBrowserExtension::zoomNormal()
     }
 }
 
-void WebEngineBrowserExtension::toogleZoomTextOnly()
+void WebEngineNavigationExtension::toogleZoomTextOnly()
 {
     if (!view())
         return;
@@ -382,7 +393,7 @@ void WebEngineBrowserExtension::toogleZoomTextOnly()
     // view()->settings()->setAttribute(QWebEngineSettings::ZoomTextOnly, !zoomTextOnly);
 }
 
-void WebEngineBrowserExtension::toogleZoomToDPI()
+void WebEngineNavigationExtension::toogleZoomToDPI()
 {
     if (!view())
         return;
@@ -399,26 +410,26 @@ void WebEngineBrowserExtension::toogleZoomToDPI()
     WebEngineSettings::self()->computeFontSizes(view()->logicalDpiY());
 }
 
-void WebEngineBrowserExtension::slotSelectAll()
+void WebEngineNavigationExtension::slotSelectAll()
 {
     if (view())
         view()->triggerPageAction(QWebEnginePage::SelectAll);
 }
 
-void WebEngineBrowserExtension::slotSaveImageAs()
+void WebEngineNavigationExtension::slotSaveImageAs()
 {
     if (view())
         view()->triggerPageAction(QWebEnginePage::DownloadImageToDisk);
 }
 
-void WebEngineBrowserExtension::slotSendImage()
+void WebEngineNavigationExtension::slotSendImage()
 {
     if (!view()) {
         return;
     }
 
-    QList<QUrl> urls = {view()->contextMenuResult().mediaUrl()};
-    const QString subject = view()->contextMenuResult().mediaUrl().path();
+    QList<QUrl> urls = {view()->contextMenuResult()->mediaUrl()};
+    const QString subject = view()->contextMenuResult()->mediaUrl().path();
 
     auto *job = new KEMailClientLauncherJob;
     job->setSubject(subject);
@@ -426,13 +437,13 @@ void WebEngineBrowserExtension::slotSendImage()
     job->start();
 }
 
-void WebEngineBrowserExtension::slotCopyImageURL()
+void WebEngineNavigationExtension::slotCopyImageURL()
 {
     if (!view()) {
         return;
     }
 
-    QUrl safeURL = view()->contextMenuResult().mediaUrl();
+    QUrl safeURL = view()->contextMenuResult()->mediaUrl();
     safeURL.setPassword(QString());
     // Set it in both the mouse selection and in the clipboard
     QMimeData* mimeData = new QMimeData;
@@ -448,18 +459,18 @@ void WebEngineBrowserExtension::slotCopyImageURL()
 }
 
 
-void WebEngineBrowserExtension::slotCopyImage()
+void WebEngineNavigationExtension::slotCopyImage()
 {
     if (!view()) {
         return;
     }
 
-    QUrl safeURL; //(view()->contextMenuResult().imageUrl());
+    QUrl safeURL; //(view()->contextMenuResult()->imageUrl());
     safeURL.setPassword(QString());
 
     // Set it in both the mouse selection and in the clipboard
     QMimeData* mimeData = new QMimeData;
-//    mimeData->setImageData(view()->contextMenuResult().pixmap());
+//    mimeData->setImageData(view()->contextMenuResult()->pixmap());
 //TODO: Porting: test
     QList<QUrl> safeURLList;
     safeURLList.append(safeURL);
@@ -467,19 +478,19 @@ void WebEngineBrowserExtension::slotCopyImage()
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
 
     mimeData = new QMimeData;
-//    mimeData->setImageData(view()->contextMenuResult().pixmap());
+//    mimeData->setImageData(view()->contextMenuResult()->pixmap());
     mimeData->setUrls(safeURLList);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
 }
 
-void WebEngineBrowserExtension::slotViewImage()
+void WebEngineNavigationExtension::slotViewImage()
 {
     if (view()) {
-        emit createNewWindow(view()->contextMenuResult().mediaUrl());
+        emit createNewWindow(view()->contextMenuResult()->mediaUrl());
     }
 }
 
-void WebEngineBrowserExtension::slotBlockImage()
+void WebEngineNavigationExtension::slotBlockImage()
 {
     if (!view()) {
         return;
@@ -488,7 +499,7 @@ void WebEngineBrowserExtension::slotBlockImage()
     bool ok = false;
     const QString url = QInputDialog::getText(view(), i18n("Add URL to Filter"),
                                               i18n("Enter the URL:"), QLineEdit::Normal,
-                                              view()->contextMenuResult().mediaUrl().toString(),
+                                              view()->contextMenuResult()->mediaUrl().toString(),
                                               &ok);
     if (ok) {
         WebEngineSettings::self()->addAdFilter(url);
@@ -496,54 +507,57 @@ void WebEngineBrowserExtension::slotBlockImage()
     }
 }
 
-void WebEngineBrowserExtension::slotBlockHost()
+void WebEngineNavigationExtension::slotBlockHost()
 {
     if (!view())
         return;
 
-    QUrl url; // (view()->contextMenuResult().imageUrl());
+    QUrl url; // (view()->contextMenuResult()->imageUrl());
     url.setPath(QL1S("/*"));
     WebEngineSettings::self()->addAdFilter(url.toString(QUrl::RemoveUserInfo | QUrl::RemovePort));
     reparseConfiguration();
 }
 
-void WebEngineBrowserExtension::slotCopyLinkURL()
+void WebEngineNavigationExtension::slotCopyLinkURL()
 {
     if (view())
         view()->triggerPageAction(QWebEnginePage::CopyLinkToClipboard);
 }
 
-void WebEngineBrowserExtension::slotCopyLinkText()
+void WebEngineNavigationExtension::slotCopyLinkText()
 {
     if (view()) {
         QMimeData* data = new QMimeData;
-        data->setText(view()->contextMenuResult().linkText());
+        data->setText(view()->contextMenuResult()->linkText());
         QApplication::clipboard()->setMimeData(data, QClipboard::Clipboard);
     }
 }
 
-void WebEngineBrowserExtension::slotCopyEmailAddress()
+void WebEngineNavigationExtension::slotCopyEmailAddress()
 {
     if (view()) {
         QMimeData* data = new QMimeData;
-        const QUrl url(view()->contextMenuResult().linkUrl());
+        const QUrl url(view()->contextMenuResult()->linkUrl());
         data->setText(url.path());
         QApplication::clipboard()->setMimeData(data, QClipboard::Clipboard);
     }
 }
 
-void WebEngineBrowserExtension::slotSaveLinkAs(const QUrl &url)
+void WebEngineNavigationExtension::slotSaveLinkAs(const QUrl &url)
 {
-    if (view()) {
-        if (!url.isEmpty()) {
-            KParts::BrowserRun::saveUrl(url, url.path(), view(), KParts::OpenUrlArguments());
-        } else {
-            view()->triggerPageAction(QWebEnginePage::DownloadLinkToDisk);
+    if (!view()) {
+        return;
+    }
+    if (!url.isEmpty()) {
+        WebEnginePage *pg = qobject_cast<WebEnginePage*>(view()->page());
+        if (pg) {
+            WebEnginePartControls::self()->downloadManager()->setForceDownload(url, pg);
         }
     }
+    view()->triggerPageAction(QWebEnginePage::DownloadLinkToDisk);
 }
 
-void WebEngineBrowserExtension::slotViewDocumentSource()
+void WebEngineNavigationExtension::slotViewDocumentSource()
 {
     if (!view())
         return;
@@ -570,62 +584,62 @@ void WebEngineBrowserExtension::slotViewDocumentSource()
     }
 }
 
-static bool isMultimediaElement(QWebEngineContextMenuData::MediaType mediaType)
+static bool isMultimediaElement(QWebEngineContextMenuRequest::MediaType mediaType)
 {
     switch(mediaType)
     {
-        case QWebEngineContextMenuData::MediaTypeVideo:
-        case QWebEngineContextMenuData::MediaTypeAudio:
+        case QWebEngineContextMenuRequest::MediaTypeVideo:
+        case QWebEngineContextMenuRequest::MediaTypeAudio:
             return true;
         default:
             return false;
     }
 }
 
-void WebEngineBrowserExtension::slotLoopMedia()
+void WebEngineNavigationExtension::slotLoopMedia()
 {
     if (!view()) {
         return;
     }
 
-    QWebEngineContextMenuData data =  view()->contextMenuResult();
-    if (!isMultimediaElement( data.mediaType()))
+    const QWebEngineContextMenuRequest *data =  view()->contextMenuResult();
+    if (!isMultimediaElement( data->mediaType()))
         return;
     view()->page()->triggerAction(QWebEnginePage::ToggleMediaLoop);
 }
 
-void WebEngineBrowserExtension::slotMuteMedia()
+void WebEngineNavigationExtension::slotMuteMedia()
 {
     if (!view()) {
         return;
     }
 
-    QWebEngineContextMenuData data =  view()->contextMenuResult();
-    if (!isMultimediaElement( data.mediaType()))
+    const QWebEngineContextMenuRequest *data =  view()->contextMenuResult();
+    if (!isMultimediaElement( data->mediaType()))
         return;
     view()->page()->triggerAction(QWebEnginePage::ToggleMediaMute);
 }
 
-void WebEngineBrowserExtension::slotPlayMedia()
+void WebEngineNavigationExtension::slotPlayMedia()
 {
     if (!view()) {
         return;
     }
 
-    QWebEngineContextMenuData data =  view()->contextMenuResult();
-    if (!isMultimediaElement( data.mediaType()))
+    const QWebEngineContextMenuRequest *data =  view()->contextMenuResult();
+    if (!isMultimediaElement( data->mediaType()))
         return;
     view()->page()->triggerAction(QWebEnginePage::ToggleMediaPlayPause);
 }
 
-void WebEngineBrowserExtension::slotShowMediaControls()
+void WebEngineNavigationExtension::slotShowMediaControls()
 {
     if (!view()) {
         return;
     }
 
-    QWebEngineContextMenuData data =  view()->contextMenuResult();
-    if (!isMultimediaElement( data.mediaType()))
+    const QWebEngineContextMenuRequest *data =  view()->contextMenuResult();
+    if (!isMultimediaElement( data->mediaType()))
         return;
     view()->page()->triggerAction(QWebEnginePage::ToggleMediaControls);
 }
@@ -645,31 +659,31 @@ static QUrl mediaUrlFrom(QWebElement& element)
 }
 #endif
 
-void WebEngineBrowserExtension::slotSaveMedia()
+void WebEngineNavigationExtension::slotSaveMedia()
 {
     WebEnginePage *pg = page();
-    QWebEngineContextMenuData data =  view()->contextMenuResult();
-    if (!isMultimediaElement( data.mediaType())) {
+    const QWebEngineContextMenuRequest *data =  view()->contextMenuResult();
+    if (!isMultimediaElement( data->mediaType())) {
         return;
     }
     if (pg) {
-        if (data.mediaUrl().isValid()) {
-            WebEnginePartControls::self()->downloadManager()->setForceDownload(data.mediaUrl(), pg);
+        if (data->mediaUrl().isValid()) {
+            WebEnginePartControls::self()->downloadManager()->setForceDownload(data->mediaUrl(), pg);
         }
         pg->triggerAction(QWebEnginePage::DownloadMediaToDisk);
     }
 }
 
-void WebEngineBrowserExtension::slotCopyMedia()
+void WebEngineNavigationExtension::slotCopyMedia()
 {
     if (!view()) {
         return;
     }
-    QWebEngineContextMenuData data =  view()->contextMenuResult();
-    if (!isMultimediaElement( data.mediaType()))
+    const QWebEngineContextMenuRequest *data =  view()->contextMenuResult();
+    if (!isMultimediaElement( data->mediaType()))
         return;
 
-    QUrl safeURL(data.mediaUrl());
+    QUrl safeURL(data->mediaUrl());
     if (!safeURL.isValid())
         return;
 
@@ -687,7 +701,7 @@ void WebEngineBrowserExtension::slotCopyMedia()
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
 }
 
-void WebEngineBrowserExtension::slotTextDirectionChanged()
+void WebEngineNavigationExtension::slotTextDirectionChanged()
 {
     QAction* action = qobject_cast<QAction*>(sender());
     if (action) {
@@ -699,7 +713,7 @@ void WebEngineBrowserExtension::slotTextDirectionChanged()
     }
 }
 
-void WebEngineBrowserExtension::slotCheckSpelling()
+void WebEngineNavigationExtension::slotCheckSpelling()
 {
     view()->page()->runJavaScript(QL1S("this.value"), [this](const QVariant &value) {
         const QString text = value.toString();
@@ -712,15 +726,15 @@ void WebEngineBrowserExtension::slotCheckSpelling()
             backgroundSpellCheck->setParent(spellDialog);
             spellDialog->setAttribute(Qt::WA_DeleteOnClose, true);
             spellDialog->showSpellCheckCompletionMessage(true);
-            connect(spellDialog, &Sonnet::Dialog::replace, this, &WebEngineBrowserExtension::spellCheckerCorrected);
-            connect(spellDialog, &Sonnet::Dialog::misspelling, this, &WebEngineBrowserExtension::spellCheckerMisspelling);
+            connect(spellDialog, &Sonnet::Dialog::replace, this, &WebEngineNavigationExtension::spellCheckerCorrected);
+            connect(spellDialog, &Sonnet::Dialog::misspelling, this, &WebEngineNavigationExtension::spellCheckerMisspelling);
             spellDialog->setBuffer(text);
             spellDialog->show();
         }
     });
 }
 
-void WebEngineBrowserExtension::slotSpellCheckSelection()
+void WebEngineNavigationExtension::slotSpellCheckSelection()
 {
     view()->page()->runJavaScript(QL1S("this.value"), [this](const QVariant &value) {
         const QString text = value.toString();
@@ -728,8 +742,8 @@ void WebEngineBrowserExtension::slotSpellCheckSelection()
             view()->page()->runJavaScript(QL1S("this.selectionStart + ' ' + this.selectionEnd"), [this, text](const QVariant &value) {
                 const QString values = value.toString();
                 const int pos = values.indexOf(' ');
-                m_spellTextSelectionStart = qMax(0, values.leftRef(pos).toInt());
-                m_spellTextSelectionEnd = qMax(0, values.midRef(pos + 1).toInt());
+                m_spellTextSelectionStart = qMax(0, QStringView{values}.left(pos).toInt());
+                m_spellTextSelectionEnd = qMax(0, QStringView{values}.mid(pos + 1).toInt());
                 // qCDebug(WEBENGINEPART_LOG) << "selection start:" << m_spellTextSelectionStart << "end:" << m_spellTextSelectionEnd;
 
                 Sonnet::BackgroundChecker *backgroundSpellCheck = new Sonnet::BackgroundChecker;
@@ -737,9 +751,9 @@ void WebEngineBrowserExtension::slotSpellCheckSelection()
                 backgroundSpellCheck->setParent(spellDialog);
                 spellDialog->setAttribute(Qt::WA_DeleteOnClose, true);
                 spellDialog->showSpellCheckCompletionMessage(true);
-                connect(spellDialog, &Sonnet::Dialog::replace, this, &WebEngineBrowserExtension::spellCheckerCorrected);
-                connect(spellDialog, &Sonnet::Dialog::misspelling, this, &WebEngineBrowserExtension::spellCheckerMisspelling);
-                connect(spellDialog, &Sonnet::Dialog::spellCheckDone, this, &WebEngineBrowserExtension::slotSpellCheckDone);
+                connect(spellDialog, &Sonnet::Dialog::replace, this, &WebEngineNavigationExtension::spellCheckerCorrected);
+                connect(spellDialog, &Sonnet::Dialog::misspelling, this, &WebEngineNavigationExtension::spellCheckerMisspelling);
+                connect(spellDialog, &Sonnet::Dialog::spellCheckDone, this, &WebEngineNavigationExtension::slotSpellCheckDone);
                 spellDialog->setBuffer(text.mid(m_spellTextSelectionStart, (m_spellTextSelectionEnd - m_spellTextSelectionStart)));
                 spellDialog->show();
             });
@@ -747,7 +761,7 @@ void WebEngineBrowserExtension::slotSpellCheckSelection()
     });
 }
 
-void WebEngineBrowserExtension::spellCheckerCorrected(const QString& original, int pos, const QString& replacement)
+void WebEngineNavigationExtension::spellCheckerCorrected(const QString& original, int pos, const QString& replacement)
 {
     // Adjust the selection end...
     if (m_spellTextSelectionEnd > 0) {
@@ -767,7 +781,7 @@ void WebEngineBrowserExtension::spellCheckerCorrected(const QString& original, i
     view()->page()->runJavaScript(script);
 }
 
-void WebEngineBrowserExtension::spellCheckerMisspelling(const QString& text, int pos)
+void WebEngineNavigationExtension::spellCheckerMisspelling(const QString& text, int pos)
 {
     // qCDebug(WEBENGINEPART_LOG) << text << pos;
     QString selectionScript (QL1S("this.setSelectionRange("));
@@ -778,7 +792,7 @@ void WebEngineBrowserExtension::spellCheckerMisspelling(const QString& text, int
     view()->page()->runJavaScript(selectionScript);
 }
 
-void WebEngineBrowserExtension::slotSpellCheckDone(const QString&)
+void WebEngineNavigationExtension::slotSpellCheckDone(const QString&)
 {
     // Restore the text selection if one was present before we started the
     // spell check.
@@ -792,7 +806,7 @@ void WebEngineBrowserExtension::slotSpellCheckDone(const QString&)
     }
 }
 
-void WebEngineBrowserExtension::saveHistory()
+void WebEngineNavigationExtension::saveHistory()
 {
     QWebEngineHistory* history = (view() ? view()->history() : nullptr);
 
@@ -817,31 +831,40 @@ void WebEngineBrowserExtension::saveHistory()
     }
 }
 
-void WebEngineBrowserExtension::slotPrintPreview()
+void WebEngineNavigationExtension::slotPrintPreview()
 {
     QPrinter printer;
     QPrintPreviewDialog dlg(&printer, view());
     auto printPreview = [this](QPrinter *p){
         QEventLoop loop;
         auto preview = [&](bool) {loop.quit();};
+#if QT_VERSION_MAJOR < 6
         m_view->page()->print(p, preview);
+#else
+        m_view->print(p);
+        connect(m_view, &QWebEngineView::printFinished, &loop, preview);
+#endif
         loop.exec();
     };
     connect(&dlg, &QPrintPreviewDialog::paintRequested, this, printPreview);
     dlg.exec();
 }
 
-void WebEngineBrowserExtension::slotOpenSelection()
+void WebEngineNavigationExtension::slotOpenSelection()
 {
     QAction *action = qobject_cast<QAction*>(sender());
     if (action) {
-        KParts::BrowserArguments browserArgs;
+        BrowserArguments browserArgs;
         browserArgs.frameName = QStringLiteral("_blank");
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         emit openUrlRequest(QUrl(action->data().toUrl()), KParts::OpenUrlArguments(), browserArgs);
+#else
+        emit browserOpenUrlRequest(QUrl(action->data().toUrl()), KParts::OpenUrlArguments(), browserArgs);
+#endif
     }
 }
 
-void WebEngineBrowserExtension::slotLinkInTop()
+void WebEngineNavigationExtension::slotLinkInTop()
 {
     if (!view()) {
         return;
@@ -850,12 +873,16 @@ void WebEngineBrowserExtension::slotLinkInTop()
     KParts::OpenUrlArguments uargs;
     uargs.setActionRequestedByUser(true);
 
-    KParts::BrowserArguments bargs;
+    BrowserArguments bargs;
     bargs.frameName = QL1S("_top");
 
-    const QUrl url(view()->contextMenuResult().linkUrl());
+    const QUrl url(view()->contextMenuResult()->linkUrl());
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     emit openUrlRequest(url, uargs, bargs);
+#else
+    emit browserOpenUrlRequest(url, uargs, bargs);
+#endif
 }
 
 ////
@@ -918,19 +945,6 @@ WebEngineHtmlExtension::WebEngineHtmlExtension(WebEnginePart* part)
 {
 }
 
-QWebEngineScript WebEngineHtmlExtension::querySelectorScript()
-{
-    static QWebEngineScript s_selectorScript;
-    if (s_selectorScript.isNull()) {
-        QFile jsfile(":/queryselector.js");
-        jsfile.open(QIODevice::ReadOnly);
-        s_selectorScript.setSourceCode(QString(jsfile.readAll()));
-        s_selectorScript.setInjectionPoint(QWebEngineScript::DocumentCreation);
-        s_selectorScript.setWorldId(QWebEngineScript::ApplicationWorld);
-    }
-    return s_selectorScript;
-}
-
 QUrl WebEngineHtmlExtension::baseUrl() const
 {
     return part()->view()->page()->url();
@@ -941,14 +955,14 @@ bool WebEngineHtmlExtension::hasSelection() const
     return part()->view()->hasSelection();
 }
 
-KParts::SelectorInterface::QueryMethods WebEngineHtmlExtension::supportedAsyncQueryMethods() const
+AsyncSelectorInterface::QueryMethods WebEngineHtmlExtension::supportedAsyncQueryMethods() const
 {
-    return KParts::SelectorInterface::EntireContent;
+    return AsyncSelectorInterface::EntireContent;
 }
 
-QList<KParts::SelectorInterface::Element> WebEngineHtmlExtension::jsonToElementList(const QVariant& json)
+QList<AsyncSelectorInterface::Element> WebEngineHtmlExtension::jsonToElementList(const QVariant& json)
 {
-    QList<KParts::SelectorInterface::Element> res;
+    QList<AsyncSelectorInterface::Element> res;
     QJsonDocument doc = QJsonDocument::fromVariant(json);
     if (!doc.isArray()) {
         return res;
@@ -959,19 +973,19 @@ QList<KParts::SelectorInterface::Element> WebEngineHtmlExtension::jsonToElementL
     return res;
 }
 
-KParts::SelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const QVariant& json)
+AsyncSelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const QVariant& json)
 {
     QJsonDocument doc = QJsonDocument::fromVariant(json);
     if (!doc.isObject()) {
-        return KParts::SelectorInterface::Element();
+        return AsyncSelectorInterface::Element();
     }
     QJsonObject obj = doc.object();
     return jsonToElement(obj);
 }
 
-KParts::SelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const QJsonObject& obj)
+AsyncSelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const QJsonObject& obj)
 {
-    KParts::SelectorInterface::Element res;
+    AsyncSelectorInterface::Element res;
     QJsonValue nameVal = obj.value(QLatin1String("tag"));
     if (nameVal.isUndefined()) {
         return res;
@@ -984,10 +998,10 @@ KParts::SelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const Q
     return res;
 }
 
-void WebEngineHtmlExtension::querySelectorAllAsync(const QString& query, KParts::SelectorInterface::QueryMethod method, MultipleElementSelectorCallback& callback)
+void WebEngineHtmlExtension::querySelectorAllAsync(const QString& query, AsyncSelectorInterface::QueryMethod method, MultipleElementSelectorCallback& callback)
 {
     QList<Element> result;
-    if (method == KParts::SelectorInterface::None || !part() || !part()->page() || !(supportedAsyncQueryMethods() & method)) {
+    if (method == None || !part() || !part()->page() || !(supportedAsyncQueryMethods() & method)) {
         callback(result);
         return;
     }
@@ -1002,10 +1016,10 @@ void WebEngineHtmlExtension::querySelectorAllAsync(const QString& query, KParts:
     part()->page()->runJavaScript(fullQuery, QWebEngineScript::ApplicationWorld, internalCallback);
 }
 
-void WebEngineHtmlExtension::querySelectorAsync(const QString& query, KParts::SelectorInterface::QueryMethod method, SingleElementSelectorCallback& callback)
+void WebEngineHtmlExtension::querySelectorAsync(const QString& query, AsyncSelectorInterface::QueryMethod method, SingleElementSelectorCallback& callback)
 {
     Element result;
-    if (method == KParts::SelectorInterface::None || !part() || !part()->page() || !(supportedAsyncQueryMethods() & method)) {
+    if (method == AsyncSelectorInterface::None || !part() || !part()->page() || !(supportedAsyncQueryMethods() & method)) {
         callback(result);
         return;
     }
@@ -1130,7 +1144,7 @@ void WebEngineDownloaderExtension::addDownloadRequest(QWebEngineDownloadRequest*
     QUrl url = req->url();
     m_downloadRequests.insert(url, req);
     auto removeRequest = [this, url] (QObject *obj) {m_downloadRequests.remove(url, dynamic_cast<QWebEngineDownloadRequest*>(obj));};
-    connect(req, &QWebEngineDownloadItem::destroyed, this, removeRequest);
+    connect(req, &QWebEngineDownloadRequest::destroyed, this, removeRequest);
 }
 
 KonqInterfaces::DownloaderJob* WebEngineDownloaderExtension::downloadJob(const QUrl& url, quint32 id, QObject* parent)
@@ -1139,8 +1153,8 @@ KonqInterfaces::DownloaderJob* WebEngineDownloaderExtension::downloadJob(const Q
     if (items.isEmpty()) {
         return nullptr;
     }
-    auto it = std::find_if(items.constBegin(), items.constEnd(), [id](QWebEngineDownloadItem* it){return it->id() == id;});
+    auto it = std::find_if(items.constBegin(), items.constEnd(), [id](QWebEngineDownloadRequest* it){return it->id() == id;});
     //If no job with the given ID is found, return the last one, which is the first created
-    QWebEngineDownloadItem *item = it != items.constEnd() ? *it : items.last();
+    QWebEngineDownloadRequest *item = it != items.constEnd() ? *it : items.last();
     return new WebEngineDownloadJob(item, parent);
 }

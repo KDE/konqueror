@@ -17,4 +17,4 @@ ki18n_wrap_ui(kcm_history_SRCS history_dlg.ui )
 kcoreaddons_add_plugin(kcm_history SOURCES ${kcm_history_SRCS} INSTALL_NAMESPACE konqueror_kcms)
 
 # konquerorprivate is only needed for konqhistorysettings...
-target_link_libraries(kcm_history konquerorprivate KF${KF_MAJOR_VERSION}::Konq KF${KF_MAJOR_VERSION}::Parts)
+target_link_libraries(kcm_history konquerorprivate KF${KF_MAJOR_VERSION}::Konq KF${KF_MAJOR_VERSION}::Parts KF${KF_MAJOR_VERSION}::KCMUtils)

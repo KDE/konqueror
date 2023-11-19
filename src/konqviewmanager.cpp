@@ -33,12 +33,12 @@
 #include <kmessagebox.h>
 #include <QMenu>
 #include <QApplication>
-#include <QDesktopWidget>
 #include <QStandardPaths>
 #include <KSharedConfig>
 #include <KWindowConfig>
 #include <QMimeDatabase>
 #include <QMimeType>
+#include <QScreen>
 
 //#define DEBUG_VIEWMGR
 
@@ -414,7 +414,7 @@ void KonqViewManager::removeTab(KonqFrameBase *currentFrame, bool emitAboutToRem
     }
 
     const QList<KonqView *> viewList = KonqViewCollector::collect(currentFrame);
-    foreach (KonqView *view, viewList) {
+    for (KonqView *view: viewList) {
         if (view == m_pMainWindow->currentView()) {
             setActivePart(nullptr);
         }
@@ -438,7 +438,7 @@ void KonqViewManager::removeTab(KonqFrameBase *currentFrame, bool emitAboutToRem
 
 void KonqViewManager::reloadAllTabs()
 {
-    foreach (KonqFrameBase *frame, tabContainer()->childFrameList()) {
+    for(KonqFrameBase *frame: tabContainer()->childFrameList()) {
         if (frame && frame->activeChildView()) {
             if (!frame->activeChildView()->locationBarURL().isEmpty()) {
                 frame->activeChildView()->openUrl(frame->activeChildView()->url(), frame->activeChildView()->locationBarURL());
@@ -547,7 +547,7 @@ void KonqViewManager::showTab(int tabIndex)
 void KonqViewManager::updatePixmaps()
 {
     const QList<KonqView *> viewList = KonqViewCollector::collect(tabContainer());
-    foreach (KonqView *view, viewList) {
+    for (KonqView *view: viewList) {
         view->setTabIcon(QUrl::fromUserInput(view->locationBarURL()));
     }
 }
@@ -722,7 +722,7 @@ void KonqViewManager::clear()
     if (!viewList.isEmpty()) {
         //qCDebug(KONQUEROR_LOG) << viewList.count() << "items";
 
-        foreach (KonqView *view, viewList) {
+        for (KonqView *view: viewList) {
             m_pMainWindow->removeChildView(view);
             //qCDebug(KONQUEROR_LOG) << "Deleting" << view;
             delete view;
@@ -1042,7 +1042,7 @@ static QSize readDefaultSize(const KConfigGroup &cfg, QWidget *widget)
     QString heightStr = cfg.readEntry("Height");
     int width = -1;
     int height = -1;
-    const QRect geom = QApplication::desktop()->screenGeometry(widget);
+    const QRect geom = widget->screen()->geometry();
 
     bool ok;
     if (widthStr.endsWith('%')) {
@@ -1314,7 +1314,7 @@ void KonqViewManager::printSizeInfo(KonqFrameBase *frame,
     if (parent->frameType() == KonqFrameBase::Container) {
         const QList<int> sizes = static_cast<KonqFrameContainer *>(parent)->sizes();
         printf("Parent sizes %s :", msg);
-        foreach (int i, sizes) {
+        for (int i: sizes) {
             printf(" %d", i);
         }
         printf("\n");
@@ -1459,5 +1459,13 @@ KonqMainWindow *KonqViewManager::duplicateWindow()
 #endif
     return mainWindow;
 }
+
+void KonqViewManager::reparseConfiguration()
+{
+    if (m_tabContainer) {
+        m_tabContainer->reparseConfiguration();
+    }
+}
+
 
 

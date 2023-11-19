@@ -13,21 +13,21 @@
 #include <QNetworkCookieJar>
 #endif // THUMBNAIL_USE_WEBKIT
 
-#include <kio/thumbcreator.h>
+#include <KIO/ThumbnailCreator>
 
 
 class QTemporaryDir;
 
 
-class WebArchiveCreator : public QObject, public ThumbCreator
+class WebArchiveCreator : public KIO::ThumbnailCreator
 {
     Q_OBJECT
 
 public:
-    WebArchiveCreator();
+    WebArchiveCreator(QObject *parent, const QVariantList &va);
     ~WebArchiveCreator() override;
 
-    bool create(const QString &path, int width, int height, QImage &img) override;
+    KIO::ThumbnailResult create(const KIO::ThumbnailRequest & request) override;
 
 private slots:
     void slotLoadFinished(bool ok);

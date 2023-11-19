@@ -42,12 +42,15 @@
 #include "urlloader.h"
 #include "pluginmetadatautils.h"
 #include "browseropenorsavequestion.h"
+#include "configdialog.h"
+#include "browserextension.h"
 
 #include <konq_events.h>
 #include <konqpixmapprovider.h>
 #include <konqsettings.h>
 #include <konq_spellcheckingconfigurationdispatcher.h>
 #include <kcmutils_version.h>
+#include "libkonq_utils.h"
 
 #include <kwidgetsaddons_version.h>
 #include <kxmlgui_version.h>
@@ -88,7 +91,6 @@
 #endif
 
 #include <QKeyEvent>
-#include <QByteRef>
 #include <QPixmap>
 #include <QLineEdit>
 #include <QNetworkProxy>
@@ -118,7 +120,6 @@
 #include <kurlcompletion.h>
 #include <kurlrequesterdialog.h>
 #include <kurlrequester.h>
-#include <kmimetypetrader.h>
 #include <KJobWidgets>
 #include <KLocalizedString>
 #include <QIcon>
@@ -130,7 +131,6 @@
 #include <KIO/Job>
 #include <KIO/FileUndoManager>
 #include <KParts/OpenUrlEvent>
-#include <KParts/BrowserRun>
 #include <KCompletionMatches>
 #include <kacceleratormanager.h>
 #include <kuser.h>
@@ -158,6 +158,11 @@
 
 #include <QMetaObject>
 #include <QMetaMethod>
+#include <QActionGroup>
+#include <QNetworkProxyFactory>
+#include <QNetworkProxyQuery>
+
+#include <KCModule>
 
 template class QList<QPixmap *>;
 template class QList<KToggleAction *>;
@@ -203,6 +208,7 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     , m_pURLCompletion(nullptr)
     , m_isPopupWithProxyWindow(false)
 {
+    Q_INIT_RESOURCE(konqueror);
     if (!s_lstMainWindows) {
         s_lstMainWindows = new QList<KonqMainWindow *>;
     }
@@ -240,10 +246,12 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
 
     // init history-manager, load history, get completion object
     if (!s_pCompletion) {
-        s_bookmarkManager = KBookmarkManager::userBookmarksManager();
+        s_bookmarkManager = Konq::userBookmarksManager();
 
+#if QT_VERSION_MAJOR < 6
         // let the KBookmarkManager know that we are a browser, equals to "keditbookmarks --browser"
         s_bookmarkManager->setEditorOptions(QStringLiteral("konqueror"), true);
+#endif
 
         KonqHistoryManager *mgr = new KonqHistoryManager(s_bookmarkManager);
         s_pCompletion = mgr->completionObject();
@@ -546,9 +554,9 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
         // URL filtering catches this case before hand, and in cases without filtering
         // (e.g. HTML link), the url is empty here, not invalid.
         // But just to be safe, let's keep this code path
-        url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url(), url);
+        url = Konq::makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url(), url);
     } else if (!KProtocolInfo::isKnownProtocol(url) && !KonqUrl::hasKonqScheme(url) && !s_validProtocols.contains(url.scheme())) {
-        url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_UNSUPPORTED_PROTOCOL, url.scheme(), url);
+        url = Konq::makeErrorUrl(KIO::ERR_UNSUPPORTED_PROTOCOL, url.scheme(), url);
     }
 
     const QString nameFilter = detectNameFilter(url);
@@ -795,25 +803,27 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
     // If the protocol doesn't support writing (e.g. HTTP) then we might want to save instead of just embedding.
     // So (if embedding would succeed, hence the checks above) we ask the user
     // Otherwise the user will get asked 'open or save' in openUrl anyway.
-    if (!forceAutoEmbed && !KProtocolManager::supportsWriting(url)) {
-        QString suggestedFileName;
-        UrlLoader *loader = childView ? childView->urlLoader() : nullptr;
-        if (loader) {
-            suggestedFileName = loader->suggestedFileName();
-        }
-
-        BrowserOpenOrSaveQuestion dlg(this, url, mimeType);
-        dlg.setSuggestedFileName(suggestedFileName);
-        const BrowserOpenOrSaveQuestion::Result res = dlg.askEmbedOrSave();
-        if (res == BrowserOpenOrSaveQuestion::Embed) {
-            forceAutoEmbed = true;
-        } else if (res == BrowserOpenOrSaveQuestion::Cancel) {
-            return true;    // handled, don't do anything else
-        } else { // Save
-            KParts::BrowserRun::saveUrl(url, suggestedFileName, this, req.args);
-            return true; // handled
-        }
-    }
+    //TODO KF6: remove commented code below. This shouldn't be needed, since UrlLoader
+    //already asked the user whether to save or to embed
+    // if (!forceAutoEmbed && !KProtocolManager::supportsWriting(url)) {
+    //     QString suggestedFileName;
+    //     UrlLoader *loader = childView ? childView->urlLoader() : nullptr;
+    //     if (loader) {
+    //         suggestedFileName = loader->suggestedFileName();
+    //     }
+    //
+    //     BrowserOpenOrSaveQuestion dlg(this, url, mimeType);
+    //     dlg.setSuggestedFileName(suggestedFileName);
+    //     const BrowserOpenOrSaveQuestion::Result res = dlg.askEmbedOrSave();
+    //     if (res == BrowserOpenOrSaveQuestion::Embed) {
+    //         forceAutoEmbed = true;
+    //     } else if (res == BrowserOpenOrSaveQuestion::Cancel) {
+    //         return true;    // handled, don't do anything else
+    //     } else { // Save
+    //         KParts::BrowserRun::saveUrl(url, suggestedFileName, this, req.args);
+    //         return true; // handled
+    //     }
+    // }
 
     bool ok = true;
     if (!childView) {
@@ -881,7 +891,13 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
             childView->part()->setArguments(req.args);
         }
         if (childView->browserExtension()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             childView->browserExtension()->setBrowserArguments(req.browserArgs);
+#else
+            if (auto browserExt = qobject_cast<BrowserExtension *>(childView->browserExtension())) {
+                browserExt->setBrowserArguments(req.browserArgs);
+            }
+#endif
         }
 
         // see dolphinpart
@@ -902,7 +918,7 @@ static KonqView *findChildView(KParts::ReadOnlyPart *callingPart, const QString 
         return nullptr;
     }
 
-    foreach (KonqMainWindow *window, *KonqMainWindow::mainWindowList()) {
+    for (KonqMainWindow *window: *KonqMainWindow::mainWindowList()) {
         KonqView *res = window->childView(callingPart, name, part);
         if (res) {
             mainWindow = window;
@@ -982,7 +998,7 @@ QObject *KonqMainWindow::lastFrame(KonqView *view)
 // Linked-views feature, plus "sidebar follows URL opened in the active view" feature
 bool KonqMainWindow::makeViewsFollow(const QUrl &url,
                                      const KParts::OpenUrlArguments &args,
-                                     const KParts::BrowserArguments &browserArgs,
+                                     const BrowserArguments &browserArgs,
                                      const QString &serviceType, KonqView *senderView)
 {
     if (!senderView->isLinkedView() && senderView != m_currentView) {
@@ -1002,7 +1018,7 @@ bool KonqMainWindow::makeViewsFollow(const QUrl &url,
 
     QObject *senderFrame = lastFrame(senderView);
 
-    foreach (KonqView *view, listViews) {
+    for (KonqView *view: listViews) {
         if (view == senderView) {
             continue;
         }
@@ -1062,7 +1078,7 @@ void KonqMainWindow::abortLoading()
 
 // Are there any indications that this window has a strong popup
 // nature and should therefore not be embedded into a tab?
-static bool isPopupWindow(const KParts::WindowArgs &windowArgs)
+static bool isPopupWindow(const WindowArgs &windowArgs)
 {
     // ### other settings to respect?
     return windowArgs.x() != -1 || windowArgs.y() != -1 ||
@@ -1075,7 +1091,7 @@ static bool isPopupWindow(const KParts::WindowArgs &windowArgs)
 // This is called for the javascript window.open call.
 // Also called for MMB on link, target="_blank" link, MMB on folder, etc.
 void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &req,
-        const KParts::WindowArgs &windowArgs, KParts::ReadOnlyPart **part)
+        const WindowArgs &windowArgs, KParts::ReadOnlyPart **part)
 {
     // NOTE: 'part' may be null
 
@@ -1096,7 +1112,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
     KonqMainWindow *mainWindow = nullptr;
     if (!req.browserArgs.frameName.isEmpty() && req.browserArgs.frameName.toLower() != QLatin1String("_blank")) {
         KParts::ReadOnlyPart *ro_part = nullptr;
-        KParts::BrowserExtension *be = ::qobject_cast<KParts::BrowserExtension *>(sender());
+        KParts::NavigationExtension *be = ::qobject_cast<KParts::NavigationExtension *>(sender());
         if (be) {
             ro_part = ::qobject_cast<KParts::ReadOnlyPart *>(be->parent());
         }
@@ -1152,7 +1168,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
 
         // Raise the current window if the request to create the tab came from a popup
         // window, e.g. clicking on links with target = "_blank" in popup windows.
-        KParts::BrowserExtension *be = qobject_cast<KParts::BrowserExtension *>(sender());
+        KParts::NavigationExtension *be = qobject_cast<KParts::NavigationExtension *>(sender());
         KonqView *view = (be ? childView(qobject_cast<KParts::ReadOnlyPart *>(be->parent())) : nullptr);
         KonqMainWindow *window = view ? view->mainWindow() : nullptr;
         if (window && window->m_isPopupWithProxyWindow && !m_isPopupWithProxyWindow) {
@@ -1206,7 +1222,11 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
 
     // WORKAROUND: Clear the window state information set by KMainWindow::restoreWindowSize
     // so that the size and location settings we set below always take effect.
+#if QT_VERSION_MAJOR < 6
     KWindowSystem::clearState(mainWindow->winId(), NET::Max);
+#else
+    KX11Extras::clearState(mainWindow->winId(), NET::Max);
+#endif
 
     // process the window args
     const int xPos = ((windowArgs.x() == -1) ?  mainWindow->x() : windowArgs.x());
@@ -1236,7 +1256,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
         const bool showLocationBar = cfg.readEntry("LocationBar", true);
         KToolBar *locationToolBar = mainWindow->toolBar(QStringLiteral("locationToolBar"));
 
-        Q_FOREACH (KToolBar *bar, mainWindow->findChildren<KToolBar *>()) {
+        for (KToolBar *bar: mainWindow->findChildren<KToolBar *>()) {
             if (bar != locationToolBar || !showLocationBar) {
                 bar->hide();
             }
@@ -1637,80 +1657,25 @@ void KonqMainWindow::slotConfigureExtensions()
     extensionManager.exec();
 }
 
-void KonqMainWindow::slotConfigure(const QString startingModule)
+void KonqMainWindow::slotConfigure()
 {
     emit aboutToConfigure();
-    KPageWidgetItem *startingItem = nullptr;
+
     if (!m_configureDialog) {
-        m_configureDialog = new KCMultiDialog(this);
-        m_configureDialog->setObjectName(QStringLiteral("configureDialog"));
-        m_configureDialog->setFaceType(KPageDialog::Tree);
-        connect(m_configureDialog, &KCMultiDialog::finished, this, &KonqMainWindow::slotConfigureDone);
-
-        const char *const toplevelModules[] = {
-            "konqueror_kcms/khtml_general",
-#ifndef Q_OS_WIN
-            "konqueror_kcms/kcm_performance",
-#endif
-            "konqueror_kcms/kcm_bookmarks",
-        };
-        for (uint i = 0; i < sizeof(toplevelModules) / sizeof(char *); ++i) {
-            const QString kcmName = QString(toplevelModules[i]);
-            m_configureDialog->addModule(KPluginMetaData(kcmName));
-        }
-        m_configureDialog->addModule(KPluginMetaData(QStringLiteral("konqueror_kcms/kcm_konq")));
-        const char *const fmModules[] = {
-            "dolphin/kcms/kcm_dolphinviewmodes",
-            "dolphin/kcms/kcm_dolphinnavigation",
-            "dolphin/kcms/kcm_dolphingeneral",
-            "kcm_trash",
-        };
-        for (uint i = 0; i < sizeof(fmModules) / sizeof(char *); ++i) {
-            KPageWidgetItem *it = m_configureDialog->addModule(KPluginMetaData(QString(fmModules[i])));
-            if (!startingItem && startingModule == fmModules[i]) {
-                startingItem = it;
-            }
-        }
-        KPluginMetaData fileTypesData(QStringLiteral("plasma/kcms/systemsettings_qwidgets/kcm_filetypes"));
-        if (!fileTypesData.isValid()) {
-            QString desktopFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kservices5/filetypes.desktop"));
-#if KCMUTILS_VERSION_MAJOR < 6
-            fileTypesData = KPluginMetaData::fromDesktopFile(desktopFile, {QStringLiteral("kcmodule.desktop")});
-#endif
-        }
-        m_configureDialog->addModule(fileTypesData);
-
-        m_configureDialog->addModule(KPluginMetaData(QStringLiteral("konqueror_kcms/khtml_behavior")));
-
-        const char *const webModules[] = {
-            "konqueror_kcms/khtml_appearance",
-            "konqueror_kcms/khtml_filter",
-            "konqueror_kcms/khtml_cache",
-            "kcm_webshortcuts",
-            "kcm_proxy",
-            "konqueror_kcms/kcm_history",
-#ifdef MANAGE_COOKIES_INTERNALLY
-            "konqueror_kcms/khtml_cookies",
-#else
-            "plasma/kcms/systemsettings_qwidgets/kcm_cookies",
-#endif
-            "konqueror_kcms/khtml_java_js",
-            "konqueror_kcms/khtml_useragent"
-        };
-        for (uint i = 0; i < sizeof(webModules) / sizeof(char *); ++i) {
-            KPageWidgetItem *it = m_configureDialog->addModule(KPluginMetaData(QString(webModules[i])));
-            if (!startingItem && startingModule == webModules[i]) {
-                startingItem = it;
-            }
-        }
+        m_configureDialog = new Konq::ConfigDialog(this);
     }
 
-    if (startingItem) {
-        m_configureDialog->setCurrentPage(startingItem);
-    }
     m_configureDialog->show();
-
 }
+
+void KonqMainWindow::slotConfigure(Konq::ConfigDialog::Module module)
+{
+    slotConfigure();
+    if (m_configureDialog) {
+        m_configureDialog->setCurrentPage(module);
+    }
+}
+
 
 void KonqMainWindow::slotConfigureDone()
 {
@@ -1855,7 +1820,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
         }
     }
 
-    KParts::BrowserExtension *ext = nullptr;
+    KParts::NavigationExtension *ext = nullptr;
 
     if (oldView) {
         ext = oldView->browserExtension();
@@ -1887,9 +1852,13 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
         qCDebug(KONQUEROR_LOG) << "No Browser Extension for the new part";
         // Disable all browser-extension actions
 
-        KParts::BrowserExtension::ActionSlotMap *actionSlotMap = KParts::BrowserExtension::actionSlotMapPtr();
-        KParts::BrowserExtension::ActionSlotMap::ConstIterator it = actionSlotMap->constBegin();
-        const KParts::BrowserExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->constEnd();
+#if QT_VERSION_MAJOR < 6
+        KParts::NavigationExtension::ActionSlotMap *actionSlotMap = KParts::NavigationExtension::actionSlotMapPtr();
+#else
+        KParts::NavigationExtension::ActionSlotMap *actionSlotMap = KParts::NavigationExtension::actionSlotMap();
+#endif
+        KParts::NavigationExtension::ActionSlotMap::ConstIterator it = actionSlotMap->constBegin();
+        const KParts::NavigationExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->constEnd();
         for (; it != itEnd; ++it) {
             QAction *act = actionCollection()->action(QString::fromLatin1(it.key()));
             Q_ASSERT(act);
@@ -1951,12 +1920,12 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
         m_paHomePopup->setStatusTip(viewShowsDir ? actHomeFolder->statusTip() : actHomePage->statusTip());
         m_paHomePopup->setWhatsThis(viewShowsDir ? actHomeFolder->whatsThis() : actHomePage->whatsThis());
         m_paHomePopup->setData(viewShowsDir ? actHomeFolder->data() : actHomePage->data());
-        m_paHomePopup->menu()->clear();
+        m_paHomePopup->popupMenu()->clear();
         if (viewShowsDir) {
-            m_paHomePopup->menu()->addAction(actHomePage);
+            m_paHomePopup->popupMenu()->addAction(actHomePage);
             delete actHomeFolder;
         } else {
-            m_paHomePopup->menu()->addAction(actHomeFolder);
+            m_paHomePopup->popupMenu()->addAction(actHomeFolder);
             delete actHomePage;
         }
     }
@@ -2483,7 +2452,7 @@ void KonqMainWindow::slotActivatePrevTab()
 
 void KonqMainWindow::slotActivateTab()
 {
-    m_pViewManager->activateTab(sender()->objectName().rightRef(2).toInt() - 1);
+    m_pViewManager->activateTab(QStringView{sender()->objectName()}.right(2).toInt() - 1);
 }
 
 void KonqMainWindow::slotDumpDebugInfo()
@@ -2677,7 +2646,7 @@ void KonqMainWindow::slotGoHistoryDelayed()
         m_currentView->go(m_goBuffer);
         makeViewsFollow(m_currentView->url(),
                         KParts::OpenUrlArguments(),
-                        KParts::BrowserArguments(),
+                        BrowserArguments(),
                         m_currentView->serviceType(),
                         m_currentView);
     }
@@ -2874,7 +2843,7 @@ void KonqMainWindow::slotCompletionModeChanged(KCompletion::CompletionMode m)
     KonqSettings::self()->save();
 
     // tell the other windows too (only this instance currently)
-    foreach (KonqMainWindow *window, *s_lstMainWindows) {
+    for (KonqMainWindow *window: *s_lstMainWindows) {
         if (window && window->m_combo) {
             window->m_combo->setCompletionMode(m);
             window->m_pURLCompletion->setCompletionMode(m);
@@ -3021,7 +2990,7 @@ bool KonqMainWindow::eventFilter(QObject *obj, QEvent *ev)
             return KParts::MainWindow::eventFilter(obj, ev);
         }
 
-        KParts::BrowserExtension *ext = nullptr;
+        KParts::NavigationExtension *ext = nullptr;
         if (m_currentView) {
             ext = m_currentView->browserExtension();
         }
@@ -3179,7 +3148,7 @@ void KonqMainWindow::slotUpdateFullScreen(bool set)
         bool haveFullScreenButton = false;
 
         //Walk over the toolbars and check whether there is a show fullscreen button in any of them
-        foreach (KToolBar *bar, findChildren<KToolBar *>()) {
+        for (KToolBar *bar: findChildren<KToolBar *>()) {
             //Are we plugged here, in a visible toolbar?
             if (bar->isVisible() &&
                     action("fullscreen")->associatedWidgets().contains(bar)) {
@@ -3250,7 +3219,7 @@ void KonqMainWindow::comboAction(int action, const QString &url, const QString &
     }
 
     KonqCombo *combo = nullptr;
-    foreach (KonqMainWindow *window, *s_lstMainWindows) {
+    for (KonqMainWindow *window: *s_lstMainWindows) {
         if (window && window->m_combo) {
             combo = window->m_combo;
 
@@ -3328,7 +3297,7 @@ void KonqMainWindow::initActions()
     action->setIcon(QIcon::fromTheme(QStringLiteral("window-duplicate")));
     action->setText(i18n("&Duplicate Window"));
     connect(action, &QAction::triggered, this, &KonqMainWindow::slotDuplicateWindow);
-    actionCollection()->setDefaultShortcut(action, Qt::CTRL+Qt::SHIFT+Qt::Key_D);
+    actionCollection()->setDefaultShortcut(action, Qt::CTRL | Qt::SHIFT | Qt::Key_D);
     action = actionCollection()->addAction(QStringLiteral("sendURL"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("mail-message-new")));
     action->setText(i18n("Send &Link Address..."));
@@ -3340,7 +3309,7 @@ void KonqMainWindow::initActions()
     action = actionCollection()->addAction(QStringLiteral("open_location"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("document-open-remote")));
     action->setText(i18n("&Open Location"));
-    actionCollection()->setDefaultShortcut(action, Qt::ALT+Qt::Key_O);
+    actionCollection()->setDefaultShortcut(action, Qt::ALT | Qt::Key_O);
     connect(action, &QAction::triggered, this, &KonqMainWindow::slotOpenLocation);
 
     action = actionCollection()->addAction(QStringLiteral("open_file"));
@@ -3370,9 +3339,9 @@ void KonqMainWindow::initActions()
     m_paUp = new KToolBarPopupAction(QIcon::fromTheme(QStringLiteral("go-up")), i18n("&Up"), this);
     actionCollection()->addAction(QStringLiteral("go_up"), m_paUp);
     actionCollection()->setDefaultShortcuts(m_paUp, KStandardShortcut::shortcut(KStandardShortcut::Up));
-    connect(m_paUp, SIGNAL(triggered()), this, SLOT(slotUp()));
-    connect(m_paUp->menu(), SIGNAL(aboutToShow()), this, SLOT(slotUpAboutToShow()));
-    connect(m_paUp->menu(), SIGNAL(triggered(QAction*)), this, SLOT(slotUpActivated(QAction*)));
+    connect(m_paUp, &QAction::triggered, this, &KonqMainWindow::slotUp);
+    connect(m_paUp->popupMenu(), &QMenu::aboutToShow, this, &KonqMainWindow::slotUpAboutToShow);
+    connect(m_paUp->popupMenu(), &QMenu::triggered, this, &KonqMainWindow::slotUpActivated);
 
     QPair< KGuiItem, KGuiItem > backForward = KStandardGuiItem::backAndForward();
 
@@ -3383,7 +3352,7 @@ void KonqMainWindow::initActions()
 
     // set the closed tabs list shown
     connect(m_paClosedItems, &KToolBarPopupAction::triggered, m_pUndoManager, &KonqUndoManager::undoLastClosedItem);
-    connect(m_paClosedItems->menu(), SIGNAL(aboutToShow()), this, SLOT(slotClosedItemsListAboutToShow()));
+    connect(m_paClosedItems->popupMenu(), &QMenu::aboutToShow, this, &KonqMainWindow::slotClosedItemsListAboutToShow);
     connect(m_closedItemsGroup, &QActionGroup::triggered, m_pUndoManager, &KonqUndoManager::slotClosedItemsActivated);
     connect(m_pViewManager, &KonqViewManager::aboutToRemoveTab, this, &KonqMainWindow::slotAddClosedUrl);
     connect(m_pUndoManager, &KonqUndoManager::openClosedTab, m_pViewManager, &KonqViewManager::openClosedTab);
@@ -3393,29 +3362,29 @@ void KonqMainWindow::initActions()
     m_paSessions = new KActionMenu(i18n("Sessions"), this);
     actionCollection()->addAction(QStringLiteral("sessions"), m_paSessions);
     m_sessionsGroup = new QActionGroup(m_paSessions->menu());
-    connect(m_paSessions->menu(), SIGNAL(aboutToShow()), this, SLOT(slotSessionsListAboutToShow()));
+    connect(m_paSessions->menu(), &QMenu::aboutToShow, this, &KonqMainWindow::slotSessionsListAboutToShow);
     connect(m_sessionsGroup, &QActionGroup::triggered, this, &KonqMainWindow::slotSessionActivated);
 
     m_paBack = new KToolBarPopupAction(QIcon::fromTheme(backForward.first.iconName()), backForward.first.text(), this);
     actionCollection()->addAction(QStringLiteral("go_back"), m_paBack);
     actionCollection()->setDefaultShortcuts(m_paBack, KStandardShortcut::shortcut(KStandardShortcut::Back));
-    connect(m_paBack, SIGNAL(triggered()), this, SLOT(slotBack()));
-    connect(m_paBack->menu(), SIGNAL(aboutToShow()), this, SLOT(slotBackAboutToShow()));
-    connect(m_paBack->menu(), SIGNAL(triggered(QAction*)), this, SLOT(slotBackActivated(QAction*)));
+    connect(m_paBack, &QAction::triggered, this, &KonqMainWindow::slotBack);
+    connect(m_paBack->popupMenu(), &QMenu::aboutToShow, this, &KonqMainWindow::slotBackAboutToShow);
+    connect(m_paBack->popupMenu(), &QMenu::triggered, this, &KonqMainWindow::slotBackActivated);
 
     m_paForward = new KToolBarPopupAction(QIcon::fromTheme(backForward.second.iconName()), backForward.second.text(), this);
     actionCollection()->addAction(QStringLiteral("go_forward"), m_paForward);
     actionCollection()->setDefaultShortcuts(m_paForward, KStandardShortcut::shortcut(KStandardShortcut::Forward));
-    connect(m_paForward, SIGNAL(triggered()), this, SLOT(slotForward()));
-    connect(m_paForward->menu(), SIGNAL(aboutToShow()), this, SLOT(slotForwardAboutToShow()));
-    connect(m_paForward->menu(), SIGNAL(triggered(QAction*)), this, SLOT(slotForwardActivated(QAction*)));
+    connect(m_paForward, &QAction::triggered, this, &KonqMainWindow::slotForward);
+    connect(m_paForward->popupMenu(), &QMenu::aboutToShow, this, &KonqMainWindow::slotForwardAboutToShow);
+    connect(m_paForward->popupMenu(), &QMenu::triggered, this, &KonqMainWindow::slotForwardActivated);
 
     m_paHome = actionCollection()->addAction(KStandardAction::Home);
-    connect(m_paHome, SIGNAL(triggered(bool)), this, SLOT(slotHome()));
+    connect(m_paHome, &QAction::triggered, this, &KonqMainWindow::slotHome);
     m_paHomePopup = new KToolBarPopupAction (QIcon::fromTheme(QStringLiteral("go-home")), i18n("Home"), this);
     actionCollection()->addAction(QStringLiteral("go_home_popup"), m_paHomePopup);
-    connect(m_paHomePopup, SIGNAL(triggered()), this, SLOT(slotHome()));
-    connect(m_paHomePopup->menu(), SIGNAL(triggered(QAction*)), this, SLOT(slotHomePopupActivated(QAction*)));
+    connect(m_paHomePopup, &QAction::triggered, this, &KonqMainWindow::slotHome);
+    connect(m_paHomePopup->popupMenu(), &QMenu::triggered, this, &KonqMainWindow::slotHomePopupActivated);
 
     KonqMostOftenURLSAction *mostOften = new KonqMostOftenURLSAction(i18nc("@action:inmenu Go", "Most Often Visited"), this);
     actionCollection()->addAction(QStringLiteral("go_most_often"), mostOften);
@@ -3429,13 +3398,12 @@ void KonqMainWindow::initActions()
     action->setIcon(QIcon::fromTheme(QStringLiteral("view-history")));
     // Ctrl+Shift+H, shortcut from firefox
     // TODO: and Ctrl+H should open the sidebar history module
-    actionCollection()->setDefaultShortcut(action, Qt::CTRL+Qt::SHIFT+Qt::Key_H);
+    actionCollection()->setDefaultShortcut(action, Qt::CTRL | Qt::SHIFT | Qt::Key_H);
     action->setText(i18nc("@action:inmenu Go", "Show History"));
     connect(action, &QAction::triggered, this, &KonqMainWindow::slotGoHistory);
 
     // Settings menu
-    actionCollection()->addAction(KStandardAction::Preferences, this, SLOT(slotConfigure()));
-
+    actionCollection()->addAction(KStandardAction::Preferences, QStringLiteral("options_configure"), this, QOverload<>::of(&KonqMainWindow::slotConfigure));
 
     KStandardAction::keyBindings(guiFactory(), &KXMLGUIFactory::showConfigureShortcutsDialog, actionCollection());
 
@@ -3455,41 +3423,41 @@ void KonqMainWindow::initActions()
     m_paSplitViewHor->setIcon(QIcon::fromTheme(QStringLiteral("view-split-left-right")));
     m_paSplitViewHor->setText(i18n("Split View &Left/Right"));
     connect(m_paSplitViewHor, &QAction::triggered, this, &KonqMainWindow::slotSplitViewHorizontal);
-    actionCollection()->setDefaultShortcut(m_paSplitViewHor, Qt::CTRL+Qt::SHIFT+Qt::Key_L);
+    actionCollection()->setDefaultShortcut(m_paSplitViewHor, Qt::CTRL | Qt::SHIFT | Qt::Key_L);
     m_paSplitViewVer = actionCollection()->addAction(QStringLiteral("splitviewv"));
     m_paSplitViewVer->setIcon(QIcon::fromTheme(QStringLiteral("view-split-top-bottom")));
     m_paSplitViewVer->setText(i18n("Split View &Top/Bottom"));
     connect(m_paSplitViewVer, &QAction::triggered, this, &KonqMainWindow::slotSplitViewVertical);
-    actionCollection()->setDefaultShortcut(m_paSplitViewVer, Qt::CTRL+Qt::SHIFT+Qt::Key_T);
+    actionCollection()->setDefaultShortcut(m_paSplitViewVer, Qt::CTRL | Qt::SHIFT | Qt::Key_T);
     m_paAddTab = actionCollection()->addAction(QStringLiteral("newtab"));
     m_paAddTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-new")));
     m_paAddTab->setText(i18n("&New Tab"));
     connect(m_paAddTab, &QAction::triggered, this, &KonqMainWindow::slotAddTab);
     QList<QKeySequence> addTabShortcuts;
-    addTabShortcuts.append(QKeySequence(Qt::CTRL+Qt::Key_T));
-    addTabShortcuts.append(QKeySequence(Qt::CTRL+Qt::SHIFT+Qt::Key_N));
+    addTabShortcuts.append(QKeySequence(Qt::CTRL | Qt::Key_T));
+    addTabShortcuts.append(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_N));
     actionCollection()->setDefaultShortcuts(m_paAddTab, addTabShortcuts);
 
     m_paDuplicateTab = actionCollection()->addAction(QStringLiteral("duplicatecurrenttab"));
     m_paDuplicateTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-duplicate")));
     m_paDuplicateTab->setText(i18n("&Duplicate Current Tab"));
     connect(m_paDuplicateTab, &QAction::triggered, this, &KonqMainWindow::slotDuplicateTab);
-    actionCollection()->setDefaultShortcut(m_paDuplicateTab, Qt::CTRL+Qt::Key_D);
+    actionCollection()->setDefaultShortcut(m_paDuplicateTab, Qt::CTRL | Qt::Key_D);
     m_paBreakOffTab = actionCollection()->addAction(QStringLiteral("breakoffcurrenttab"));
     m_paBreakOffTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-detach")));
     m_paBreakOffTab->setText(i18n("Detach Current Tab"));
     connect(m_paBreakOffTab, &QAction::triggered, this, &KonqMainWindow::slotBreakOffTab);
-    actionCollection()->setDefaultShortcut(m_paBreakOffTab, Qt::CTRL+Qt::SHIFT+Qt::Key_B);
+    actionCollection()->setDefaultShortcut(m_paBreakOffTab, Qt::CTRL | Qt::SHIFT | Qt::Key_B);
     m_paRemoveView = actionCollection()->addAction(QStringLiteral("removeview"));
     m_paRemoveView->setIcon(QIcon::fromTheme(QStringLiteral("view-close")));
     m_paRemoveView->setText(i18n("&Close Active View"));
     connect(m_paRemoveView, &QAction::triggered, this, &KonqMainWindow::slotRemoveView);
-    actionCollection()->setDefaultShortcut(m_paRemoveView, Qt::CTRL+Qt::SHIFT+Qt::Key_W);
+    actionCollection()->setDefaultShortcut(m_paRemoveView, Qt::CTRL | Qt::SHIFT | Qt::Key_W);
     m_paRemoveTab = actionCollection()->addAction(QStringLiteral("removecurrenttab"));
     m_paRemoveTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
     m_paRemoveTab->setText(i18n("Close Current Tab"));
-    connect(m_paRemoveTab, &QAction::triggered, this, &KonqMainWindow::slotRemoveTab, Qt::QueuedConnection /* exit Ctrl+W handler before deleting */);
-    actionCollection()->setDefaultShortcut(m_paRemoveTab, Qt::CTRL+Qt::Key_W);
+    connect(m_paRemoveTab, &QAction::triggered, this, &KonqMainWindow::slotRemoveTab, Qt::QueuedConnection /* exit Ctrl | W handler before deleting */);
+    actionCollection()->setDefaultShortcut(m_paRemoveTab, Qt::CTRL | Qt::Key_W);
     m_paRemoveTab->setAutoRepeat(false);
     m_paRemoveOtherTabs = actionCollection()->addAction(QStringLiteral("removeothertabs"));
     m_paRemoveOtherTabs->setIcon(QIcon::fromTheme(QStringLiteral("tab-close-other")));
@@ -3516,12 +3484,12 @@ void KonqMainWindow::initActions()
     m_paMoveTabLeft->setText(i18n("Move Tab Left"));
     m_paMoveTabLeft->setIcon(QIcon::fromTheme(QStringLiteral("arrow-left")));
     connect(m_paMoveTabLeft, &QAction::triggered, this, &KonqMainWindow::slotMoveTabLeft);
-    actionCollection()->setDefaultShortcut(m_paMoveTabLeft, Qt::CTRL+Qt::SHIFT+Qt::Key_Left);
+    actionCollection()->setDefaultShortcut(m_paMoveTabLeft, Qt::CTRL | Qt::SHIFT | Qt::Key_Left);
     m_paMoveTabRight = actionCollection()->addAction(QStringLiteral("tab_move_right"));
     m_paMoveTabRight->setText(i18n("Move Tab Right"));
     m_paMoveTabRight->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right")));
     connect(m_paMoveTabRight, &QAction::triggered, this, &KonqMainWindow::slotMoveTabRight);
-    actionCollection()->setDefaultShortcut(m_paMoveTabRight, Qt::CTRL+Qt::SHIFT+Qt::Key_Right);
+    actionCollection()->setDefaultShortcut(m_paMoveTabRight, Qt::CTRL | Qt::SHIFT | Qt::Key_Right);
 
 #ifndef NDEBUG
     action = actionCollection()->addAction(QStringLiteral("dumpdebuginfo"));
@@ -3551,7 +3519,7 @@ void KonqMainWindow::initActions()
     m_paReloadAllTabs->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh-all")));
     m_paReloadAllTabs->setText(i18n("&Reload All Tabs"));
     connect(m_paReloadAllTabs, &QAction::triggered, this, &KonqMainWindow::slotReloadAllTabs);
-    actionCollection()->setDefaultShortcut(m_paReloadAllTabs, Qt::SHIFT+Qt::Key_F5);
+    actionCollection()->setDefaultShortcut(m_paReloadAllTabs, Qt::SHIFT | Qt::Key_F5);
     // "Forced"/ "Hard" reload action - re-downloads all e.g. images even if a cached
     // version already exists.
     m_paForceReload = actionCollection()->addAction(QStringLiteral("hard_reload"));
@@ -3560,8 +3528,8 @@ void KonqMainWindow::initActions()
     m_paForceReload->setText(i18n("&Force Reload"));
     connect(m_paForceReload, &QAction::triggered, this, &KonqMainWindow::slotForceReload);
     QList<QKeySequence> forceReloadShortcuts;
-    forceReloadShortcuts.append(QKeySequence(Qt::CTRL+Qt::Key_F5));
-    forceReloadShortcuts.append(QKeySequence(Qt::CTRL+Qt::SHIFT+Qt::Key_R));
+    forceReloadShortcuts.append(QKeySequence(Qt::CTRL | Qt::Key_F5));
+    forceReloadShortcuts.append(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_R));
     actionCollection()->setDefaultShortcuts(m_paForceReload, forceReloadShortcuts);
 
     m_paUndo = KStandardAction::undo(m_pUndoManager, SLOT(undo()), this);
@@ -3574,7 +3542,7 @@ void KonqMainWindow::initActions()
     actionCollection()->addAction(QStringLiteral("cut"), m_paCut);
 
     QList<QKeySequence> cutShortcuts(m_paCut->shortcuts());
-    cutShortcuts.removeAll(QKeySequence(Qt::SHIFT+Qt::Key_Delete)); // used for deleting files
+    cutShortcuts.removeAll(QKeySequence(Qt::SHIFT | Qt::Key_Delete)); // used for deleting files
     actionCollection()->setDefaultShortcuts(m_paCut, cutShortcuts);
 
     m_paCopy = KStandardAction::copy(nullptr, nullptr, this);
@@ -3617,7 +3585,7 @@ void KonqMainWindow::initActions()
     QAction *clearLocation = actionCollection()->addAction(QStringLiteral("clear_location"));
     clearLocation->setIcon(QIcon::fromTheme(QApplication::isRightToLeft() ? "edit-clear-locationbar-rtl" : "edit-clear-locationbar-ltr"));
     clearLocation->setText(i18n("Clear Location Bar"));
-    actionCollection()->setDefaultShortcut(clearLocation, Qt::CTRL+Qt::Key_L);
+    actionCollection()->setDefaultShortcut(clearLocation, Qt::CTRL | Qt::Key_L);
     connect(clearLocation, SIGNAL(triggered()),
             SLOT(slotClearLocationBar()));
     clearLocation->setWhatsThis(i18n("<html>Clear Location bar<br /><br />"
@@ -3733,7 +3701,7 @@ void KonqMainWindow::initActions()
     m_paLinkView->setStatusTip(i18n("Sets the view as 'linked'. A linked view follows folder changes made in other linked views."));
 
     m_paShowDeveloperTools = actionCollection()->addAction("inspect_page", this, &KonqMainWindow::inspectCurrentPage);
-    actionCollection()->setDefaultShortcut(m_paShowDeveloperTools, QKeySequence("Ctrl+Shift+I"));
+    actionCollection()->setDefaultShortcut(m_paShowDeveloperTools, QKeySequence("Ctrl | Shift | I"));
     m_paShowDeveloperTools->setText(i18n("&Inspect Current Page"));
     m_paShowDeveloperTools->setWhatsThis(i18n("<html>Shows the developer tools for the current page<br/><br/>The current view is split in two and the developer tools are displayed in the second half"));
     m_paShowDeveloperTools->setStatusTip(i18n("Shows the developer tools for the current page"));
@@ -3953,11 +3921,15 @@ QString KonqMainWindow::findIndexFile(const QString &dir)
     return QString();
 }
 
-void KonqMainWindow::connectExtension(KParts::BrowserExtension *ext)
+void KonqMainWindow::connectExtension(KParts::NavigationExtension *ext)
 {
-    KParts::BrowserExtension::ActionSlotMap *actionSlotMap = KParts::BrowserExtension::actionSlotMapPtr();
-    KParts::BrowserExtension::ActionSlotMap::ConstIterator it = actionSlotMap->constBegin();
-    KParts::BrowserExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->constEnd();
+#if QT_VERSION_MAJOR < 6
+    KParts::NavigationExtension::ActionSlotMap *actionSlotMap = KParts::NavigationExtension::actionSlotMapPtr();
+#else
+    KParts::NavigationExtension::ActionSlotMap *actionSlotMap = KParts::NavigationExtension::actionSlotMap();
+#endif
+    KParts::NavigationExtension::ActionSlotMap::ConstIterator it = actionSlotMap->constBegin();
+    KParts::NavigationExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->constEnd();
 
     for (; it != itEnd; ++it) {
         QAction *act = actionCollection()->action(it.key().data());
@@ -3965,9 +3937,14 @@ void KonqMainWindow::connectExtension(KParts::BrowserExtension *ext)
         if (act) {
             // Does the extension have a slot with the name of this action ?
             if (ext->metaObject()->indexOfSlot(QByteArray(it.key() + "()").constData()) != -1) {
-                connect(act, SIGNAL(triggered()), ext, it.value() /* SLOT(slot name) */);
-                act->setEnabled(ext->isActionEnabled(it.key()));
-                const QString text = ext->actionText(it.key());
+                //Can't use modern connect syntax as the slot name is stored inside the map
+#if QT_VERSION_MAJOR < 6
+                connect(act, SIGNAL(triggered()), ext, it.value().constData() /* SLOT(slot name) */);
+#else
+                connect(act, SIGNAL(triggered()), ext, it.value().constData() /* SLOT(slot name) */);
+#endif
+                act->setEnabled(ext->isActionEnabled(it.key().constData()));
+                const QString text = ext->actionText(it.key().constData());
                 if (!text.isEmpty()) {
                     act->setText(text);
                 }
@@ -3978,17 +3955,21 @@ void KonqMainWindow::connectExtension(KParts::BrowserExtension *ext)
             }
 
         } else {
-            qCWarning(KONQUEROR_LOG) << "Error in BrowserExtension::actionSlotMap(), unknown action : " << it.key();
+            qCWarning(KONQUEROR_LOG) << "Error in NavigationExtension::actionSlotMap(), unknown action : " << it.key();
         }
     }
 
 }
 
-void KonqMainWindow::disconnectExtension(KParts::BrowserExtension *ext)
+void KonqMainWindow::disconnectExtension(KParts::NavigationExtension *ext)
 {
-    KParts::BrowserExtension::ActionSlotMap *actionSlotMap = KParts::BrowserExtension::actionSlotMapPtr();
-    KParts::BrowserExtension::ActionSlotMap::ConstIterator it = actionSlotMap->constBegin();
-    KParts::BrowserExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->constEnd();
+#if QT_VERSION_MAJOR < 6
+    KParts::NavigationExtension::ActionSlotMap *actionSlotMap = KParts::NavigationExtension::actionSlotMapPtr();
+#else
+    KParts::NavigationExtension::ActionSlotMap *actionSlotMap = KParts::NavigationExtension::actionSlotMap();
+#endif
+    KParts::NavigationExtension::ActionSlotMap::ConstIterator it = actionSlotMap->constBegin();
+    KParts::NavigationExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->constEnd();
 
     for (; it != itEnd; ++it) {
         QAction *act = actionCollection()->action(it.key().data());
@@ -4038,7 +4019,11 @@ void KonqMainWindow::setActionText(const char *name, const QString &text)
 void KonqMainWindow::enableAllActions(bool enable)
 {
     //qCDebug(KONQUEROR_LOG) << enable;
-    KParts::BrowserExtension::ActionSlotMap *actionSlotMap = KParts::BrowserExtension::actionSlotMapPtr();
+#if QT_VERSION_MAJOR < 6
+    KParts::NavigationExtension::ActionSlotMap *actionSlotMap = KParts::NavigationExtension::actionSlotMapPtr();
+#else
+    KParts::NavigationExtension::ActionSlotMap *actionSlotMap = KParts::NavigationExtension::actionSlotMap();
+#endif
 
     const QList<QAction *> actions = actionCollection()->actions();
     QList<QAction *>::ConstIterator it = actions.constBegin();
@@ -4182,7 +4167,7 @@ QList<KBookmarkOwner::FutureBookmark> KonqExtendedBookmarkOwner::currentBookmark
     QList<KBookmarkOwner::FutureBookmark> list;
     KonqFrameTabs *tabContainer = m_pKonqMainWindow->viewManager()->tabContainer();
 
-    foreach (KonqFrameBase *frame, tabContainer->childFrameList()) {
+    for (KonqFrameBase *frame: tabContainer->childFrameList()) {
         if (!frame || !frame->activeChildView()) {
             continue;
         }
@@ -4268,9 +4253,9 @@ QString KonqMainWindow::currentTitle() const
     return m_currentView ? m_currentView->caption() : QString();
 }
 
-// Convert between deprecated string-based KParts::BrowserExtension::ActionGroupMap
+// Convert between deprecated string-based KParts::NavigationExtension::ActionGroupMap
 // to newer enum-based KonqPopupMenu::ActionGroupMap
-static KonqPopupMenu::ActionGroupMap convertActionGroups(const KParts::BrowserExtension::ActionGroupMap &input)
+static KonqPopupMenu::ActionGroupMap convertActionGroups(const KParts::NavigationExtension::ActionGroupMap &input)
 {
     KonqPopupMenu::ActionGroupMap agm;
     agm.insert(KonqPopupMenu::TopActions, input.value(QStringLiteral("topactions")));
@@ -4282,7 +4267,7 @@ static KonqPopupMenu::ActionGroupMap convertActionGroups(const KParts::BrowserEx
     return agm;
 }
 
-void KonqMainWindow::slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::BrowserExtension::PopupFlags flags, const KParts::BrowserExtension::ActionGroupMap &actionGroups)
+void KonqMainWindow::slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags flags, const KParts::NavigationExtension::ActionGroupMap &actionGroups)
 {
     KFileItem item(url, args.mimeType(), mode);
     KFileItemList items;
@@ -4290,7 +4275,7 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const QUrl &url, mode_t
     slotPopupMenu(global, items, args, browserArgs, flags, actionGroups);
 }
 
-void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::BrowserExtension::PopupFlags itemFlags, const KParts::BrowserExtension::ActionGroupMap &actionGroups)
+void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags itemFlags, const KParts::NavigationExtension::ActionGroupMap &actionGroups)
 {
     KonqView *m_oldView = m_currentView;
     KonqView *currentView = childView(static_cast<KParts::ReadOnlyPart *>(sender()->parent()));
@@ -4366,7 +4351,7 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
     const bool doTabHandling = !openedForViewURL && !isIntoTrash && sReading;
     const bool showEmbeddingServices = items.count() == 1 && !m_popupMimeType.isEmpty() &&
                                        !isIntoTrash && !devicesFile &&
-                                       (itemFlags & KParts::BrowserExtension::ShowTextSelectionItems) == 0;
+                                       (itemFlags & KParts::NavigationExtension::ShowTextSelectionItems) == 0;
 
     QVector<KPluginMetaData> embeddingServices;
     if (showEmbeddingServices) {
@@ -4380,7 +4365,7 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
         std::copy_if(allEmbeddingServices.begin(), allEmbeddingServices.end(), std::back_inserter(embeddingServices), filter);
     }
 
-    // TODO: get rid of KParts::BrowserExtension::PopupFlags
+    // TODO: get rid of KParts::NavigationExtension::PopupFlags
     KonqPopupMenu::Flags popupFlags = static_cast<KonqPopupMenu::Flags>(static_cast<int>(itemFlags));
 
     KonqPopupMenu::ActionGroupMap popupActionGroups = convertActionGroups(actionGroups);
@@ -4441,7 +4426,7 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
         pPopupMenu->setURLTitle(currentView->caption());
     }
 
-    QPointer<KParts::BrowserExtension> be = ::qobject_cast<KParts::BrowserExtension *>(sender());
+    QPointer<KParts::NavigationExtension> be = ::qobject_cast<KParts::NavigationExtension *>(sender());
 
     if (be) {
         QObject::connect(this, &KonqMainWindow::popupItemsDisturbed, pPopupMenu.data(), &KonqPopupMenu::close);
@@ -4501,7 +4486,7 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
     }
 }
 
-void KonqMainWindow::prepareForPopupMenu(const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs)
+void KonqMainWindow::prepareForPopupMenu(const KFileItemList &items, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs)
 {
     if (!items.isEmpty()) {
         m_popupUrl = items.first().url();
@@ -4563,6 +4548,7 @@ void KonqMainWindow::reparseConfiguration()
     KonqSettings::self()->load();
     m_pViewManager->applyConfiguration();
     KonqMouseEventFilter::self()->reparseConfiguration();
+    m_pViewManager->reparseConfiguration();
 
     MapViews::ConstIterator it = m_mapViews.constBegin();
     MapViews::ConstIterator end = m_mapViews.constEnd();
@@ -4703,7 +4689,7 @@ void KonqMainWindow::updateViewModeActions()
         const QString actionDesktopFile = md.value("X-Konqueror-Actions-File");
 
         if (!actionDesktopFile.isEmpty()) {
-            KDesktopFile df(QStandardPaths::DataLocation, actionDesktopFile);
+            KDesktopFile df(QStandardPaths::AppDataLocation, actionDesktopFile);
             QStringList actionNames = df.readActions();
 
             for (const QString &name : actionNames) {
@@ -4754,7 +4740,7 @@ void KonqMainWindow::slotInternalViewModeChanged()
     if (view) {
         const QString actionName = view->service().pluginId();
         const QString actionData = view->internalViewMode();
-        Q_FOREACH (QAction *action, m_viewModesGroup->actions()) {
+        for (QAction *action: m_viewModesGroup->actions()) {
             if (action->objectName() == actionName + QLatin1String("-viewmode") &&
                     action->data().toString() == actionData) {
                 action->setChecked(true);
@@ -5432,8 +5418,9 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
         return;
     }
 
-    KProtocolManager::ProxyType proxyType = KProtocolManager::proxyType();
-    if (proxyType == KProtocolManager::WPADProxy || proxyType == KProtocolManager::PACProxy) {
+    int proxyTypeAsInt =  KConfig(QStringLiteral("kioslaverc"), KConfig::NoGlobals).group("Proxy Settings").readEntry("ProxyType", 0);
+    //According to kioextras/kcms/saveioconfig.h, 2 is PACProxy and 3 is WPADProxy
+    if (proxyTypeAsInt == 2 || proxyTypeAsInt == 3) {
         QString msg = i18n("Your proxy configuration can't be used with the QtWebEngine HTML engine. "
                            "No proxy will be used\n\n QtWebEngine only support a fixed proxy, so proxy auto-configuration (PAC) "
                            "and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you need a proxy, please select "
@@ -5443,31 +5430,56 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
                                                                 KGuiItem(i18n("Show proxy configuration dialog")), "WebEngineUnsupportedProxyType");
         QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
         if (ans == KMessageBox::SecondaryAction) {
-            slotConfigure("proxy");
+            slotConfigure(Konq::ConfigDialog::ProxyModule);
             return;
         }
     }
-    QString httpProxy = KProtocolManager::proxyForUrl(QUrl("http://fakeurl.test.com"));
-    QString httpsProxy = KProtocolManager::proxyForUrl(QUrl("https://fakeurl.test.com"));
-    if (httpProxy == "DIRECT" && httpsProxy == "DIRECT") {
+
+    bool proxyConfigurationSupported = false;
+    QNetworkProxy httpProxy;
+    QNetworkProxy httpsProxy;
+#if QT_VERSION_MAJOR < 6
+    QString httpProxyHost = KProtocolManager::proxyFor(QStringLiteral("http"));
+    QString httpsProxyHost = KProtocolManager::proxyFor(QStringLiteral("https"));
+    proxyConfigurationSupported = httpsProxyHost == httpProxyHost;
+    if ((httpProxyHost.isEmpty() && httpsProxyHost.isEmpty()) || (httpProxyHost == "DIRECT" && httpsProxyHost == "DIRECT")) {
         QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
-    } else {
-        QUrl url(httpsProxy);
-        if (httpProxy != httpsProxy) {
-            QString msg =  i18n("Your proxy configuration can't be used with the QtWebEngine HTML engine because it doesn't support having different proxies for the HTTP and HTTPS protocols. Your current settings are:"
-            "<p><b>HTTP proxy:</b> <tt>%1</tt></p><p><b>HTTPS proxy: </b><tt>%2</tt></p>"
-            "What do you want to do?", httpProxy, httpsProxy);
-            KMessageBox::ButtonCode ans = KMessageBox::questionTwoActionsCancel(this, msg, i18n("Conflicting proxy configuration"),
-                KGuiItem(i18n("Use HTTP proxy (only this time)")), KGuiItem(i18n("Use HTTPS proxy (only this time)")), KGuiItem(i18n("Show proxy configuration dialog")), "WebEngineConflictingProxy");
-            if (ans == KMessageBox::PrimaryAction) {
-                url = QUrl(httpProxy);
-            } else if (ans == KMessageBox::Cancel) {
-                slotConfigure("proxy");
-                return;
-            }
-        }
-        QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::HttpProxy, url.host(), url.port(), url.userName(), url.password()));
+        return;
     }
+    if (!httpProxyHost.isEmpty() && httpProxyHost != QStringLiteral("DIRECT")) {
+        httpProxy = {QNetworkProxy::HttpProxy, httpProxyHost};
+    }
+    if (!httpsProxyHost.isEmpty() && httpsProxyHost != QStringLiteral("DIRECT")) {
+        httpsProxy = {QNetworkProxy::HttpProxy, httpsProxyHost};
+    }
+#else
+    QList<QNetworkProxy> httpProxies = QNetworkProxyFactory::proxyForQuery(QNetworkProxyQuery{QUrl("http:")});
+    QList<QNetworkProxy> httpsProxies = QNetworkProxyFactory::proxyForQuery(QNetworkProxyQuery{QUrl("https:")});
+    if (!httpProxies.isEmpty()) {
+        httpProxy = httpProxies.first();
+    }
+    if (!httpsProxies.isEmpty()) {
+        httpsProxy = httpsProxies.first();
+    }
+    proxyConfigurationSupported = httpProxy == httpsProxy;
+#endif
+
+    QNetworkProxy proxy = httpsProxy;
+
+    if (!proxyConfigurationSupported) {
+        QString msg =  i18n("Your proxy configuration can't be used with the QtWebEngine HTML engine because it doesn't support having different proxies for the HTTP and HTTPS protocols. Your current settings are:"
+        "<p><b>HTTP proxy:</b> <tt>%1</tt></p><p><b>HTTPS proxy: </b><tt>%2</tt></p>"
+        "What do you want to do?", httpProxy.hostName(), httpsProxy.hostName());
+        KMessageBox::ButtonCode ans = KMessageBox::questionTwoActionsCancel(this, msg, i18n("Conflicting proxy configuration"),
+            KGuiItem(i18n("Use HTTP proxy (only this time)")), KGuiItem(i18n("Use HTTPS proxy (only this time)")), KGuiItem(i18n("Show proxy configuration dialog")), "WebEngineConflictingProxy");
+        if (ans == KMessageBox::PrimaryAction) {
+            proxy = httpProxy;
+        } else if (ans == KMessageBox::Cancel) {
+            slotConfigure(Konq::ConfigDialog::ProxyModule);
+            return;
+        }
+    }
+    QNetworkProxy::setApplicationProxy(proxy);
 }
 
 void KonqMainWindow::toggleCompleteFullScreen(bool on)

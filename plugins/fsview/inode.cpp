@@ -340,7 +340,7 @@ QString Inode::text(int i) const
     if (i == 1) {
         QString text = KIO::convertSize(static_cast<KIO::filesize_t>(size()+0.5));
         if (_sizeEstimation > 0) {
-            text += '+';
+            text += QChar::fromLatin1('+');
         }
         return text;
     }

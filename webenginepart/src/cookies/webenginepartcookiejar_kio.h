@@ -21,7 +21,6 @@
 #include <QVector>
 #include <QDBusInterface>
 #include <QSet>
-#include <QtWebEngine/QtWebEngineVersion>
 
 #include "kwebenginepartlib_export.h"
 

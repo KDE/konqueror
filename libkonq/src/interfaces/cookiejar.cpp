@@ -8,8 +8,6 @@
 
 #include <KConfigGroup>
 
-#include <QNetworkCookie>
-
 using namespace KonqInterfaces;
 
 CookieJar::CookieJar(QObject* parent) : QObject(parent)

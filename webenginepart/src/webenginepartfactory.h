@@ -22,7 +22,11 @@ class WebEngineFactory : public KPluginFactory
     Q_INTERFACES(KPluginFactory)
 public:
     ~WebEngineFactory() override;
+#if QT_VERSION_MAJOR < 6
     QObject *create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList& args, const QString &keyword) override;
+#else
+    QObject *create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList& args) override;
+#endif
 
 private Q_SLOTS:
     void slotDestroyed(QObject* object);

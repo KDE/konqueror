@@ -38,6 +38,7 @@
 
 #undef SHOW_RENDER_WINDOW
 
+//TODO KF6: remove all instances of THUMBNAIL_USE_WEBKIT
 
 // This is an time limit for the entire thumbnail generation process
 // (page loading and rendering).  If it expires then it is assumed
@@ -62,16 +63,16 @@ static const double c_renderScale = 0.5;
 
 extern "C"
 {
-    Q_DECL_EXPORT ThumbCreator *new_creator()
+    Q_DECL_EXPORT KIO::ThumbnailCreator *new_creator()
     {
-        return (new WebArchiveCreator);
+        return (new WebArchiveCreator{nullptr, {}});
     }
 }
 
-
-WebArchiveCreator::WebArchiveCreator()
-    : ThumbCreator()
+WebArchiveCreator::WebArchiveCreator(QObject *parent, const QVariantList &va)
+    : KIO::ThumbnailCreator(parent, va)
 {
+    qDebug() << "WEBARCHIVECREATOR CREATED";
     m_tempDir = nullptr;
 }
 
@@ -89,9 +90,15 @@ static bool disallowWebEngineCookies(const QWebEngineCookieStore::FilterRequest 
 }
 #endif // THUMBNAIL_USE_WEBKIT
 
-
-bool WebArchiveCreator::create(const QString &path, int width, int height, QImage &img)
+KIO::ThumbnailResult WebArchiveCreator::create(const KIO::ThumbnailRequest& request)
 {
+    // QImage img;
+    // bool success = create(request.url().path(), request.targetSize().width(), request.targetSize().height(), img);
+    // return success ? KIO::ThumbnailResult::pass(img) : KIO::ThumbnailResult::fail();
+    QString path = request.url().path();
+    int width = request.targetSize().width();
+    int height = request.targetSize().height();
+
     QMimeDatabase db;
     // Only use the file path to look up its MIME type.  Web archives are
     // gzip-compressed tar files, so if the content detection has to be
@@ -129,7 +136,7 @@ bool WebArchiveCreator::create(const QString &path, int width, int height, QImag
         if (path.isEmpty())
         {
             qCWarning(WEBARCHIVERPLUGIN_LOG) << "Cannot create temporary directory";
-            return (false);
+            return (KIO::ThumbnailResult::fail());
         }
 
         qCDebug(WEBARCHIVERPLUGIN_LOG) << "extracting to tempPath" << tempPath;
@@ -165,7 +172,7 @@ bool WebArchiveCreator::create(const QString &path, int width, int height, QImag
         if (indexHtml.isEmpty())
         {
             qCWarning(WEBARCHIVERPLUGIN_LOG) << "No HTML file found in archive";
-            return (false);
+            return (KIO::ThumbnailResult::fail());
         }
 
         qCDebug(WEBARCHIVERPLUGIN_LOG) << "identified index file" << indexHtml;
@@ -239,7 +246,7 @@ bool WebArchiveCreator::create(const QString &path, int width, int height, QImag
     QTimer::singleShot(c_completionTimeout, this, &WebArchiveCreator::slotProcessingTimeout);
     while (!m_error && !m_rendered) qApp->processEvents(QEventLoop::WaitForMoreEvents);
     qCDebug(WEBARCHIVERPLUGIN_LOG) << "finished loop error?" << m_error;
-    if (m_error) return (false);			// load error or timeout
+    if (m_error) return (KIO::ThumbnailResult::fail());			// load error or timeout
 
     // Render the HTML page on a bigger pixmap and leave the scaling to the
     // caller.  Looks better than directly scaling with the QPainter (malte).
@@ -267,10 +274,8 @@ bool WebArchiveCreator::create(const QString &path, int width, int height, QImag
 #endif // QT_VERSION
 #endif // THUMBNAIL_USE_WEBKIT
 
-    img = pix.toImage();				// return the rendered thumbnail
-    return (true);
+    return KIO::ThumbnailResult::pass(pix.toImage());
 }
-
 
 void WebArchiveCreator::slotLoadFinished(bool ok)
 {

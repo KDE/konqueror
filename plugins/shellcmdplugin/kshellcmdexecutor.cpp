@@ -15,7 +15,7 @@
 #include <QInputDialog>
 #include <QFontDatabase>
 
-#include <kdesu/process.h>
+#include <KDESu/PtyProcess>
 #include <KLocalizedString>
 
 
@@ -109,7 +109,7 @@ void KShellCommandExecutor::writeDataToShell()
                                         &ok);
     if (ok) {
         QByteArray input = str.toLocal8Bit();
-        ::write(m_shellProcess->fd(), input, input.length());
+        ::write(m_shellProcess->fd(), input.constData(), input.length());
         ::write(m_shellProcess->fd(), "\n", 1);
     } else {
         slotFinished();

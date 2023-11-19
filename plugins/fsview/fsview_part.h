@@ -13,22 +13,23 @@
 
 #include <kparts_version.h>
 #include <kparts/part.h>
-#include <kparts/browserextension.h>
+
 #include <kio/jobclasses.h>
 
 #include "fsview.h"
+#include "browserextension.h"
 
 class KActionMenu;
 
 class FSViewPart;
 
-class FSViewBrowserExtension : public KParts::BrowserExtension
+class FSViewNavigationExtension : public BrowserExtension
 {
     Q_OBJECT
 
 public:
-    explicit FSViewBrowserExtension(FSViewPart *viewPart);
-    ~FSViewBrowserExtension() override;
+    explicit FSViewNavigationExtension(FSViewPart *viewPart);
+    ~FSViewNavigationExtension() override;
 
 public slots:
     void selected(TreeMapItem *);
@@ -67,6 +68,11 @@ public:
 
 public slots:
     void progressSlot(int percent, int dirs, const QString &lastDir);
+
+#if QT_VERSION_MAJOR < 6
+protected slots:
+    void slotInfoMessage(KJob * job, const QString & plain, const QString & rich=QString()) override;
+#endif
 
 private:
     FSView *_view;
@@ -125,7 +131,7 @@ private:
 
     FSView *_view;
     FSJob *_job;
-    FSViewBrowserExtension *_ext;
+    FSViewNavigationExtension *_ext;
     KActionMenu *_visMenu, *_areaMenu, *_depthMenu, *_colorMenu;
 };
 

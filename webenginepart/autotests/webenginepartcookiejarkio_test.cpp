@@ -115,7 +115,7 @@ void TestWebEnginePartCookieJarKIO::testCookieAddedToStoreAreAddedToKCookieServe
         if (in.domain.isEmpty()) {
             c.normalize(QUrl("https://" + in.host));
         }
-        QTest::newRow(labels.at(i).toLatin1()) << c << ex.name << ex.value << ex.domain << ex.path << ex.host << ex.expiration << ex.secure;
+        QTest::newRow(labels.at(i).toLatin1().constData()) << c << ex.name << ex.value << ex.domain << ex.path << ex.host << ex.expiration << ex.secure;
     }
 }
 
@@ -137,7 +137,7 @@ void TestWebEnginePartCookieJarKIO::testCookieAddedToStoreAreAddedToKCookieServe
     
     emit m_store->cookieAdded(cookie);
     const QDBusReply<QStringList> res = m_server->call(QDBus::Block, "findCookies", QVariant::fromValue(fields), domain, host, cookie.path(), QString(cookie.name()));
-    QVERIFY2(!m_server->lastError().isValid(), m_server->lastError().message().toLatin1());
+    QVERIFY2(!m_server->lastError().isValid(), m_server->lastError().message().toLatin1().constData());
     QStringList resFields = res.value();
     
     QVERIFY(!resFields.isEmpty());
@@ -176,7 +176,7 @@ QList<TestWebEnginePartCookieJarKIO::CookieData> TestWebEnginePartCookieJarKIO::
     QStringList domains = rep.value();
     //domain, path, name, host
     const QList<int> fields{0,1,2,3};
-    foreach (const QString &d, domains){
+    for (const QString &d: domains){
     rep = m_server->call(QDBus::Block, "findCookies", QVariant::fromValue(fields), d, "", "", "");
         if (!rep.isValid()) {
             qDebug() << rep.error().message();
@@ -245,7 +245,7 @@ void TestWebEnginePartCookieJarKIO::testCookieRemovedFromStoreAreRemovedFromKCoo
         if (in.domain.isEmpty()) {
             c.normalize(QUrl("https://" + in.host));
         }
-        QTest::newRow(labels.at(i).toLatin1()) << c << ex.name << ex.domain << ex.path << ex.host;
+        QTest::newRow(labels.at(i).toLatin1().constData()) << c << ex.name << ex.domain << ex.path << ex.host;
     }}
 
 void TestWebEnginePartCookieJarKIO::testCookieRemovedFromStoreAreRemovedFromKCookieServer()

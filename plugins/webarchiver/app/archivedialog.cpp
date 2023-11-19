@@ -189,13 +189,30 @@ ArchiveDialog::ArchiveDialog(const QUrl &url, QWidget *parent)
     // wget(1) can only use proxy environment variables;  if KIO is set to
     // use these also then there is no problem.  Otherwise, warn the user
     // that the settings cannot be used.
-    const KProtocolManager::ProxyType proxyType = KProtocolManager::proxyType();
-    if (proxyType==KProtocolManager::NoProxy)		// no proxy configured.
+    enum ProxySettings {NoProxy, EnvVarProxy, SpecialProxy};
+    ProxySettings proxyType = NoProxy;
+#if QT_VERSION_MAJOR < 6
+    const KProtocolManager::ProxyType proxyTypeFromProtocolManager = KProtocolManager::proxyType();
+    if (proxyTypeFromProtocolManager == KProtocolManager::EnvVarProxy) {
+        proxyType = EnvVarProxy;
+    } else if (proxyTypeFromProtocolManager != KProtocolManager::NoProxy) {
+        proxyType = SpecialProxy;
+    }
+#else
+    int proxyTypeAsInt = KSharedConfig::openConfig(QStringLiteral("kioslaverc"), KConfig::NoGlobals)->group("Proxy Settings").readEntry("ProxyType", 0);
+    //According to kio-extras/kcms/ksaveioconfig.h, 0 means "No proxy" and 4 means "proxy from environment variable"
+    if (proxyTypeAsInt == 4) {
+        proxyType = EnvVarProxy;
+    } else if (proxyTypeAsInt != 0) {
+        proxyType = SpecialProxy;
+    }
+#endif
+    if (proxyType == NoProxy)		// no proxy configured.
     {							// we cannot use one either
         m_noProxyCheck->setChecked(true);
         m_noProxyCheck->setEnabled(false);
     }
-    else if (proxyType!=KProtocolManager::EnvVarProxy)	// special KIO setting,
+    else if (proxyType == SpecialProxy)	// special KIO setting,
     {							// but we cannot use it
         m_noProxyCheck->setChecked(true);
         m_noProxyCheck->setEnabled(false);

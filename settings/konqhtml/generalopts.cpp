@@ -23,15 +23,11 @@
 
 // KDE
 #include <kbuildsycocaprogressdialog.h>
-// #include <kmimetypetrader.h>
-// #include <kservice.h>
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <KMessageWidget>
 #include <KParts/PartLoader>
-
-// Local
-#include "ui_advancedTabOptions.h"
+#include <KLocalizedString>
 
 // Keep in sync with konqueror.kcfg
 static const char DEFAULT_STARTPAGE[] = "konq:konqueror";
@@ -41,34 +37,15 @@ enum StartPage { ShowAboutPage, ShowStartUrlPage, ShowBlankPage, ShowBookmarksPa
 
 //-----------------------------------------------------------------------------
 
-KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList &)
-    : KCModule(parent), m_emptyStartUrlWarning(new KMessageWidget(this))
+KKonqGeneralOptions::KKonqGeneralOptions(QObject *parent, const KPluginMetaData &md, const QVariantList &)
+    : KCModule(parent, md), m_emptyStartUrlWarning(new KMessageWidget(widget()))
 {
     m_pConfig = KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals);
-    QVBoxLayout *lay = new QVBoxLayout(this);
+    QVBoxLayout *lay = new QVBoxLayout(widget());
     lay->setContentsMargins(0, 0, 0, 0);
 
     addHomeUrlWidgets(lay);
-
-    QGroupBox *tabsGroup = new QGroupBox(i18n("Tabbed Browsing"));
-
-    tabOptions = new Ui_advancedTabOptions;
-    tabOptions->setupUi(tabsGroup);
-
-    connect(tabOptions->m_pShowMMBInTabs, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pDynamicTabbarHide, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pNewTabsInBackground, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pOpenAfterCurrentPage, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pTabConfirm, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pTabCloseActivatePrevious, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pPermanentCloseButton, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pKonquerorTabforExternalURL, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pPopupsWithinTabs, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-    connect(tabOptions->m_pMiddleClickClose, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
-
-    lay->addWidget(tabsGroup);
-
-    emit changed(false);
+    setNeedsSave(false);
 }
 
 void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
@@ -82,14 +59,14 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     m_emptyStartUrlWarning->hide();
     formLayout->addRow(m_emptyStartUrlWarning);
 
-    QLabel *startLabel = new QLabel(i18nc("@label:listbox", "When a new &Tab is created"), this);
+    QLabel *startLabel = new QLabel(i18nc("@label:listbox", "When a new &Tab is created"), widget());
 
-    QWidget *containerWidget = new QWidget(this);
+    QWidget *containerWidget = new QWidget(widget());
     QHBoxLayout *hboxLayout = new QHBoxLayout(containerWidget);
     hboxLayout->setContentsMargins(0, 0, 0, 0);
     formLayout->addRow(startLabel, containerWidget);
 
-    m_startCombo = new QComboBox(this);
+    m_startCombo = new QComboBox(widget());
     m_startCombo->setEditable(false);
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show Introduction Page"), ShowAboutPage);
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show My Start Page"), ShowStartUrlPage);
@@ -99,7 +76,7 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     connect(m_startCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &KKonqGeneralOptions::slotChanged);
     hboxLayout->addWidget(m_startCombo);
 
-    startURL = new QLineEdit(this);
+    startURL = new QLineEdit(widget());
     startURL->setWindowTitle(i18nc("@title:window", "Select Start Page"));
     hboxLayout->addWidget(startURL);
     connect(startURL, &QLineEdit::textChanged, this, &KKonqGeneralOptions::displayEmpytStartPageWarningIfNeeded);
@@ -116,9 +93,9 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
 
     ////
 
-    QLabel *label = new QLabel(i18n("Home page:"), this);
+    QLabel *label = new QLabel(i18n("Home page:"), widget());
 
-    homeURL = new QLineEdit(this);
+    homeURL = new QLineEdit(widget());
     homeURL->setWindowTitle(i18nc("@title:window", "Select Home Page"));
     formLayout->addRow(label, homeURL);
     connect(homeURL, &QLineEdit::textChanged, this, &KKonqGeneralOptions::slotChanged);
@@ -132,9 +109,9 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
 
     ////
 
-    QLabel *webLabel = new QLabel(i18n("Default web browser engine:"), this);
+    QLabel *webLabel = new QLabel(i18n("Default web browser engine:"), widget());
 
-    m_webEngineCombo = new QComboBox(this);
+    m_webEngineCombo = new QComboBox(widget());
     m_webEngineCombo->setEditable(false);
     m_webEngineCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     formLayout->addRow(webLabel, m_webEngineCombo);
@@ -142,7 +119,7 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     connect(m_webEngineCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &KKonqGeneralOptions::slotChanged);
 
     QLabel *splitLabel = new QLabel(i18n("When splitting a view"));
-    m_splitBehaviour = new QComboBox(this);
+    m_splitBehaviour = new QComboBox(widget());
     //Keep items order in sync with KonqMainWindow::SplitBehaviour
     m_splitBehaviour->addItems({
         i18n("Always duplicate current view"),
@@ -152,14 +129,13 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     formLayout->addRow(splitLabel, m_splitBehaviour);
     connect(m_splitBehaviour, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &KKonqGeneralOptions::slotChanged);
 
-    m_restoreLastState = new QCheckBox(i18n("When starting up, restore state from last time"), this);
+    m_restoreLastState = new QCheckBox(i18n("When starting up, restore state from last time"), widget());
     connect(m_restoreLastState, &QCheckBox::stateChanged, this, &KKonqGeneralOptions::slotChanged);
     formLayout->addRow(m_restoreLastState);
 }
 
 KKonqGeneralOptions::~KKonqGeneralOptions()
 {
-    delete tabOptions;
 }
 
 void KKonqGeneralOptions::displayEmpytStartPageWarningIfNeeded()
@@ -236,23 +212,6 @@ void KKonqGeneralOptions::load()
     for (const KPluginMetaData &md : partOfferList) {
         m_webEngineCombo->addItem(QIcon::fromTheme(md.iconName()), md.name(), md.pluginId());
     }
-
-    KConfigGroup cg(m_pConfig, "FMSettings"); // ### what a wrong group name for these settings...
-
-    tabOptions->m_pShowMMBInTabs->setChecked(cg.readEntry("MMBOpensTab", true));
-    tabOptions->m_pDynamicTabbarHide->setChecked(!(cg.readEntry("AlwaysTabbedMode", false)));
-
-    tabOptions->m_pNewTabsInBackground->setChecked(!(cg.readEntry("NewTabsInFront", false)));
-    tabOptions->m_pOpenAfterCurrentPage->setChecked(cg.readEntry("OpenAfterCurrentPage", false));
-    tabOptions->m_pPermanentCloseButton->setChecked(cg.readEntry("PermanentCloseButton", true));
-    tabOptions->m_pKonquerorTabforExternalURL->setChecked(cg.readEntry("KonquerorTabforExternalURL", false));
-    tabOptions->m_pPopupsWithinTabs->setChecked(cg.readEntry("PopupsWithinTabs", false));
-    tabOptions->m_pTabCloseActivatePrevious->setChecked(cg.readEntry("TabCloseActivatePrevious", false));
-    tabOptions->m_pMiddleClickClose->setChecked(cg.readEntry("MouseMiddleClickClosesTab", false));
-
-    cg = KConfigGroup(m_pConfig, "Notification Messages");
-    tabOptions->m_pTabConfirm->setChecked(!cg.hasKey("MultipleTabConfirm"));
-
 }
 
 void KKonqGeneralOptions::defaults()
@@ -289,7 +248,7 @@ void KKonqGeneralOptions::save()
 
         KSharedConfig::Ptr profile = KSharedConfig::openConfig(QStringLiteral("mimeapps.list"), KConfig::NoGlobals, QStandardPaths::ConfigLocation);
         KConfigGroup addedServices(profile, "Added KDE Service Associations");
-        Q_FOREACH (const QString &mimeType, QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
+        for (const QString &mimeType: QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
             QStringList services = addedServices.readXdgListEntry(mimeType);
             services.removeAll(preferredWebEngine);
             services.prepend(preferredWebEngine); // make it the preferred one
@@ -298,38 +257,19 @@ void KKonqGeneralOptions::save()
         profile->sync();
 
         // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
-        KBuildSycocaProgressDialog::rebuildKSycoca(this);
+        KBuildSycocaProgressDialog::rebuildKSycoca(widget());
     }
 
-    KConfigGroup cg(m_pConfig, "FMSettings");
-    cg.writeEntry("MMBOpensTab", tabOptions->m_pShowMMBInTabs->isChecked());
-    cg.writeEntry("AlwaysTabbedMode", !(tabOptions->m_pDynamicTabbarHide->isChecked()));
-
-    cg.writeEntry("NewTabsInFront", !(tabOptions->m_pNewTabsInBackground->isChecked()));
-    cg.writeEntry("OpenAfterCurrentPage", tabOptions->m_pOpenAfterCurrentPage->isChecked());
-    cg.writeEntry("PermanentCloseButton", tabOptions->m_pPermanentCloseButton->isChecked());
-    cg.writeEntry("KonquerorTabforExternalURL", tabOptions->m_pKonquerorTabforExternalURL->isChecked());
-    cg.writeEntry("PopupsWithinTabs", tabOptions->m_pPopupsWithinTabs->isChecked());
-    cg.writeEntry("TabCloseActivatePrevious", tabOptions->m_pTabCloseActivatePrevious->isChecked());
-    cg.writeEntry("MouseMiddleClickClosesTab", tabOptions->m_pMiddleClickClose->isChecked());
-    cg.sync();
-    // It only matters whether the key is present, its value has no meaning
-    cg = KConfigGroup(m_pConfig, "Notification Messages");
-    if (tabOptions->m_pTabConfirm->isChecked()) {
-        cg.deleteEntry("MultipleTabConfirm");
-    } else {
-        cg.writeEntry("MultipleTabConfirm", true);
-    }
     // Send signal to all konqueror instances
     QDBusMessage message =
         QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
 
-    emit changed(false);
+    setNeedsSave(false);
 }
 
 void KKonqGeneralOptions::slotChanged()
 {
-    emit changed(true);
+    setNeedsSave(true);
 }
 

@@ -9,8 +9,9 @@
 #ifndef PLUGINUTIL_H
 #define PLUGINUTIL_H
 
-class QString;
-class QStringList;
+#include <QString>
+#include <QStringList>
+
 class QUrl;
 
 namespace Akregator

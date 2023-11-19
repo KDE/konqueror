@@ -20,10 +20,10 @@
 
 K_PLUGIN_CLASS_WITH_JSON(BookmarksConfigModule, "kcm_bookmarks.json")
 
-BookmarksConfigModule::BookmarksConfigModule(QWidget *parent, const QVariantList &)
-    : KCModule(parent)
+BookmarksConfigModule::BookmarksConfigModule(QObject *parent, const KPluginMetaData &md, const QVariantList &)
+    : KCModule(parent, md)
 {
-    ui.setupUi(this);
+    ui.setupUi(widget());
 }
 
 BookmarksConfigModule::~BookmarksConfigModule()
@@ -58,7 +58,7 @@ void BookmarksConfigModule::load()
     connect(ui.clearCacheButton, &QAbstractButton::clicked, this, &BookmarksConfigModule::clearCache);
 
     delete c;
-    emit changed(false);
+    setNeedsSave(false);
 }
 
 void BookmarksConfigModule::save()
@@ -74,7 +74,7 @@ void BookmarksConfigModule::save()
 
     c->sync();
     delete c;
-    emit changed(false);
+    setNeedsSave(false);
 }
 
 void BookmarksConfigModule::defaults()
@@ -87,15 +87,9 @@ void BookmarksConfigModule::defaults()
     ui.sbCacheSize->setValue(5 * 1024);
 }
 
-QString BookmarksConfigModule::quickHelp() const
-{
-    return i18n("<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home page.</p>"
-                "<p>The bookmarks home page is accessible at <a href=\"bookmarks:/\">bookmarks:/</a>.</p>");
-}
-
 void BookmarksConfigModule::configChanged()
 {
-    emit changed(true);
+    setNeedsSave(true);
 }
 
 #include "bookmarks.moc"

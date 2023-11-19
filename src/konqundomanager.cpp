@@ -13,6 +13,7 @@
 #include <kio/fileundomanager.h>
 #include "konqdebug.h"
 #include <KLocalizedString>
+#include <QWidget>
 
 KonqUndoManager::KonqUndoManager(KonqClosedWindowsManager *cwManager, QWidget *parent)
     : QObject(parent), m_cwManager(cwManager)

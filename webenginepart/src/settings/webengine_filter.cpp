@@ -11,6 +11,7 @@
 
 #include <QHash>
 #include <QBitArray>
+#include <QStringView>
 
 // rolling hash parameters
 #define HASH_P (1997)
@@ -102,7 +103,7 @@ public:
                     // check if we got simple string or REs prefix
                     if (index >= 0) {
                         int flen = stringFilters[index].length();
-                        if (k - flen + 1 >= 0 && stringFilters[index] == str.midRef(k - flen + 1 , flen))
+                        if (k - flen + 1 >= 0 && stringFilters[index] == QStringView{str}.mid(k - flen + 1 , flen))
                         {
                             if (by != nullptr) *by = stringFilters[index];
                             return true;
@@ -110,7 +111,7 @@ public:
                     } else {
                         index = -index - 1;
                         int flen = rePrefixes[index].length();
-                        if (k - 8 + flen < len && rePrefixes[index] == str.midRef(k - 7, flen))
+                        if (k - 8 + flen < len && rePrefixes[index] == QStringView{str}.mid(k - 7, flen))
                         {
                             int remStart = k - 7 + flen;
                             QString remainder = QString::fromRawData(str.unicode() + remStart,

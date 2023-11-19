@@ -33,8 +33,8 @@
 
 K_PLUGIN_CLASS_WITH_JSON(HistorySidebarConfig, "kcmhistory.json")
 
-HistorySidebarConfig::HistorySidebarConfig(QWidget *parent, const QVariantList &)
-    : KCModule(parent, QVariantList())
+HistorySidebarConfig::HistorySidebarConfig(QObject *parent, const KPluginMetaData& md, const QVariantList &list)
+    : KCModule(parent, md)
 {
     m_settings = KonqHistorySettings::self();
 
@@ -42,8 +42,8 @@ HistorySidebarConfig::HistorySidebarConfig(QWidget *parent, const QVariantList &
         new KonqHistoryProvider(this);
     }
 
-    QVBoxLayout *topLayout = new QVBoxLayout(this);
-    dialog = new KonqSidebarHistoryDlg(this);
+    QVBoxLayout *topLayout = new QVBoxLayout(widget());
+    dialog = new KonqSidebarHistoryDlg(widget());
 
     dialog->comboDefaultAction->addItem(i18nc("Automatically decide which action to perform", "Auto"));
     dialog->comboDefaultAction->addItem(i18nc("Open URL in new tab", "Open in new tab"));
@@ -101,7 +101,7 @@ HistorySidebarConfig::HistorySidebarConfig(QWidget *parent, const QVariantList &
 
 void HistorySidebarConfig::configChanged()
 {
-    emit changed(true);
+    setNeedsSave(true);
 }
 
 void HistorySidebarConfig::load()
@@ -133,7 +133,7 @@ void HistorySidebarConfig::load()
     slotNewerChanged(dialog->spinNewer->value());
     slotOlderChanged(dialog->spinOlder->value());
 
-    emit changed(false);
+    setNeedsSave(false);
 }
 
 void HistorySidebarConfig::save()
@@ -159,7 +159,7 @@ void HistorySidebarConfig::save()
 
     m_settings->applySettings();
 
-    emit changed(false);
+    setNeedsSave(false);
 }
 
 void HistorySidebarConfig::defaults()
@@ -181,12 +181,6 @@ void HistorySidebarConfig::defaults()
     m_fontNewer = QFont();
     m_fontNewer.setItalic(true);
     m_fontOlder = QFont();
-}
-
-QString HistorySidebarConfig::quickHelp() const
-{
-    return i18n("<h1>History Sidebar</h1>"
-                " You can configure the history sidebar here.");
 }
 
 void HistorySidebarConfig::slotExpireChanged()
@@ -227,7 +221,7 @@ void HistorySidebarConfig::slotOlderChanged(int value)
 void HistorySidebarConfig::slotGetFontNewer()
 {
     bool ok = false;
-    m_fontNewer = QFontDialog::getFont(&ok, m_fontNewer, this);
+    m_fontNewer = QFontDialog::getFont(&ok, m_fontNewer, widget());
     if (ok) {
         configChanged();
     }
@@ -236,7 +230,7 @@ void HistorySidebarConfig::slotGetFontNewer()
 void HistorySidebarConfig::slotGetFontOlder()
 {
     bool ok = false;
-    m_fontOlder = QFontDialog::getFont(&ok, m_fontOlder, this);
+    m_fontOlder = QFontDialog::getFont(&ok, m_fontOlder, widget());
     if (ok) {
         configChanged();
     }
@@ -246,7 +240,7 @@ void HistorySidebarConfig::slotClearHistory()
 {
     KGuiItem guiitem = KStandardGuiItem::clear();
     guiitem.setIcon(QIcon::fromTheme("edit-clear-history"));
-    if (KMessageBox::warningContinueCancel(this,
+    if (KMessageBox::warningContinueCancel(widget(),
                                            i18n("Do you really want to clear "
                                                    "the entire history?"),
                                            i18nc("@title:window", "Clear History?"), guiitem)

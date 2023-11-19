@@ -128,7 +128,7 @@ void KonquerorApplication::slotReparseConfiguration()
 
     QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
     if (mainWindows) {
-        foreach (KonqMainWindow *window, *mainWindows) {
+        for (KonqMainWindow *window: *mainWindows) {
             window->reparseConfiguration();
         }
     }

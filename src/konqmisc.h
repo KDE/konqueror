@@ -11,7 +11,7 @@
 
 #include <QUrl>
 
-#include <kparts/browserextension.h>
+#include "kf5compat.h" //For NavigationExtension
 
 class KonqMainWindow;
 class KonqView;

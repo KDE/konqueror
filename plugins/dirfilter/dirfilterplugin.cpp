@@ -25,7 +25,7 @@
 #include <kactioncollection.h>
 #include <KConfigGroup>
 #include <KConfig>
-#include <kparts/browserextension.h>
+#include "kf5compat.h" //For NavigationExtension
 
 
 Q_GLOBAL_STATIC(SessionManager, globalSessionManager)
@@ -213,9 +213,13 @@ DirFilterPlugin::DirFilterPlugin(QObject *parent, const QVariantList &)
 {
     m_part = qobject_cast<KParts::ReadOnlyPart *>(parent);
     if (m_part) {
+        //Can't use modern connect syntax because aboutToOpenURL is specific to Dolphin part
         connect(m_part, SIGNAL(aboutToOpenURL()), this, SLOT(slotOpenURL()));
-        //connect(m_part, SIGNAL(completed()), this, SLOT(slotOpenURLCompleted()));
-        connect(m_part, SIGNAL(completed(bool)), this, SLOT(slotOpenURLCompleted()));
+#if QT_VERSION_MAJOR < 6
+        connect(m_part, QOverload<>::of(&KParts::ReadOnlyPart::completed), this, &DirFilterPlugin::slotOpenURLCompleted);
+#else
+        connect(m_part, &KParts::ReadOnlyPart::completed, this, &DirFilterPlugin::slotOpenURLCompleted);
+#endif
     }
 
     KParts::ListingNotificationExtension *notifyExt = KParts::ListingNotificationExtension::childObject(m_part);
@@ -298,7 +302,7 @@ void DirFilterPlugin::slotShowPopup()
     if (!inodes.isEmpty()) {
         filterMenu->addSeparator();
 
-        Q_FOREACH (const QString &inode, inodes) {
+        for (const QString &inode: inodes) {
             if (!globalSessionManager->showCount) {
                 label = m_pMimeInfo[inode].mimeComment;
             } else {
@@ -408,7 +412,7 @@ void DirFilterPlugin::slotListingEvent(KParts::ListingNotificationExtension::Not
     switch (type) {
     case KParts::ListingNotificationExtension::ItemsAdded: {
         const QStringList filters = m_listingExt->filter(KParts::ListingFilterExtension::MimeType).toStringList();
-        Q_FOREACH (const KFileItem &item, items) {
+        for (const KFileItem &item: items) {
             const QString mimeType(item.mimetype());
             if (m_pMimeInfo.contains(mimeType)) {
                 m_pMimeInfo[mimeType].filenames.insert(item.name());
@@ -423,7 +427,7 @@ void DirFilterPlugin::slotListingEvent(KParts::ListingNotificationExtension::Not
         break;
     }
     case KParts::ListingNotificationExtension::ItemsDeleted:
-        Q_FOREACH (const KFileItem &item, items) {
+        for (const KFileItem &item: items) {
             const QString mimeType(item.mimetype());
             MimeInfoMap::iterator it = m_pMimeInfo.find(mimeType);
             if (it != m_pMimeInfo.end()) {
@@ -525,7 +529,7 @@ void DirFilterPlugin::setFilterBar()
         m_filterBar->setEnableTypeFilterMenu(m_pMimeInfo.count() > 1);
     }
 
-    Q_FOREACH (const QString &mimeType, savedFilters.typeFilters) {
+    for (const QString &mimeType: savedFilters.typeFilters) {
         if (m_pMimeInfo.contains(mimeType)) {
             m_pMimeInfo[mimeType].useAsFilter = true;
         }

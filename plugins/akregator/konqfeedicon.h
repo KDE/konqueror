@@ -14,7 +14,11 @@
 #include <konq_kpart_plugin.h>
 #include <QMenu>
 
+#include "asyncselectorinterface.h"
+
+#if QT_VERSION_MAJOR < 6
 #include <KParts/SelectorInterface>
+#endif
 
 /**
 @author Teemu Rytilahti
@@ -130,7 +134,7 @@ private:
 
     static QAction* actionTitleForFeed(const QString &title, QWidget *parent);
 
-    typedef KParts::SelectorInterface::Element Element;
+    typedef AsyncSelectorInterface::Element Element;
     /**
      * @brief Fills the feeds list from the list of `link` elements found in a page
      * @param linkNodes the list of link nodes contained in the page
@@ -171,12 +175,14 @@ private slots:
      */
     void contextMenu();
 
+#if QT_VERSION_MAJOR < 6
     /**
      * @brief Looks for feed links in the page using the _synchronous_ interface and adds the feed widget to the status bar if needed
      * @note This function is _synchronous_
      * @warning This should only be called after making sure the part supports the `KParts::SelectorInterface` interface
      */
     void updateFeedIcon();
+#endif
 
     /**
      * @brief Looks for feed links in the page using the _asynchronous_ interface and adds the feed widget to the status bar if needed

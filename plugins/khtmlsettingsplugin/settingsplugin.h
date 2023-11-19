@@ -24,6 +24,7 @@ public:
 private:
     bool cookiesEnabled(const QString &url);
     void updateIOSlaves();
+    int proxyType();
 
 private slots:
     void toggleJavascript(bool checked);

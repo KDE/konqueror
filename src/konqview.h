@@ -12,6 +12,8 @@
 #include "konqfactory.h"
 #include "konqframe.h"
 #include "konqutils.h"
+#include "kf5compat.h" //For NavigationExtension
+#include "browserarguments.h"
 
 #include <kservice.h>
 #include <QMimeType>
@@ -29,15 +31,18 @@ class UrlLoader;
 class KonqFrame;
 namespace KParts
 {
-class BrowserExtension;
+//TODO KF6: when removing compatibility with KF5, uncomment the line below
+//class NavigationExtension;
 class StatusBarExtension;
 }
 
+#if QT_VERSION_MAJOR < 6
 #ifdef KActivities_FOUND
 namespace KActivities
 {
 class ResourceInstance;
 }
+#endif
 #endif
 
 // TODO: make the history-handling code reuseable (e.g. in kparts) for people who want to use a
@@ -299,7 +304,7 @@ public:
         return m_bAborted;
     }
 
-    KParts::BrowserExtension *browserExtension() const;
+    KParts::NavigationExtension *browserExtension() const;
 
     KParts::StatusBarExtension *statusBarExtension() const;
 
@@ -481,7 +486,7 @@ public:
 
     // Called before reloading this view. Sets args.reload to true, and offers to repost form data.
     // Returns false in case the reload must be canceled.
-    bool prepareReload(KParts::OpenUrlArguments &args, KParts::BrowserArguments &browserArgs, bool softReload);
+    bool prepareReload(KParts::OpenUrlArguments &args, BrowserArguments &browserArgs, bool softReload);
 
     // overload for the QString version
     void setLocationBarURL(const QUrl &locationBarURL);
@@ -535,7 +540,7 @@ public Q_SLOTS:
      */
     void setLocationBarURL(const QString &locationBarURL);
     /**
-     * get an icon for the URL from the BrowserExtension
+     * get an icon for the URL from the NavigationExtension
      */
     void setIconURL(const QUrl &iconURL);
 
@@ -557,9 +562,20 @@ private Q_SLOTS:
     void slotCanceled(const QString &errMsg);
     void slotPercent(KJob *, unsigned long percent);
     void slotSpeed(KJob *, unsigned long bytesPerSecond);
+    void slotPopupMenuFiles(const QPoint &global,
+            const KFileItemList &items,
+            const KParts::OpenUrlArguments &args,
+            KParts::NavigationExtension::PopupFlags flags,
+            const KParts::NavigationExtension::ActionGroupMap &actionGroups);
+    void slotPopupMenuUrl(const QPoint &global,
+                   const QUrl &url,
+                   mode_t mode,
+                   const KParts::OpenUrlArguments &arguments,
+                   KParts::NavigationExtension::PopupFlags flags,
+                   const KParts::NavigationExtension::ActionGroupMap &actionGroups);
 
     /**
-     * Connected to the BrowserExtension
+     * Connected to the NavigationExtension
      */
     void slotSelectionInfo(const KFileItemList &items);
     void slotMouseOverInfo(const KFileItem &item);
@@ -666,8 +682,10 @@ private:
     QString m_tempFile;
     QString m_dbusObjectPath;
 
+#if QT_VERSION_MAJOR < 6
 #ifdef KActivities_FOUND
     KActivities::ResourceInstance *m_activityResourceInstance;
+#endif
 #endif
 };
 

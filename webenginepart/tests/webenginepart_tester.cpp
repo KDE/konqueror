@@ -10,11 +10,11 @@
 
 #include <KAboutData>
 #include <QDebug>
-#include <KIO/AccessManager>
 #include <KUriFilter>
 #include <KLineEdit>
 #include <KPluginMetaData>
 #include <webenginepart.h>
+#include <profile.h>
 
 #include <QJsonDocument>
 #include <QInputDialog>
@@ -376,13 +376,6 @@ int main(int argc, char **argv)
     about.processCommandLine(&parser);
 
     QString url = QStringLiteral("%1/%2").arg(QDir::homePath()).arg(QStringLiteral("index.html"));
-
-//    QWebEngineSettings::defaultSettings()->setMaximumPagesInCache(4);
-
-//    QWebEngineSettings::setObjectCacheCapacities((16*1024*1024) / 8, (16*1024*1024) / 8, 16*1024*1024);
-
-    QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::PluginsEnabled, true);
-//    QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::DeveloperExtrasEnabled, true);
 
     const QStringList args = app.arguments();
 

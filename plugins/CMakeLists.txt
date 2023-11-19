@@ -25,6 +25,8 @@ add_subdirectory( uachanger )
 add_subdirectory( babelfish )
 add_subdirectory( webarchiver )
 add_subdirectory( kget )
+add_subdirectory( akregator )
+add_subdirectory( searchbar )
 
 if (QtTextToSpeech_FOUND)
    add_subdirectory(ttsplugin)
@@ -39,7 +41,4 @@ add_subdirectory( autorefresh )
 if(UNIX)
    add_subdirectory( fsview )
 endif()
-add_subdirectory( searchbar )
-
-add_subdirectory( akregator )
 

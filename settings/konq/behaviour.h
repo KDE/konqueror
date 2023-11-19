@@ -19,7 +19,7 @@ class KBehaviourOptions : public KCModule
 {
     Q_OBJECT
 public:
-    explicit KBehaviourOptions(QWidget *parent, const QVariantList &args = QVariantList());
+    explicit KBehaviourOptions(QObject *parent, const KPluginMetaData &md={}, const QVariantList &args={});
     ~KBehaviourOptions() override;
     void load() override;
     void save() override;

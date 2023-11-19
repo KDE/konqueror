@@ -90,7 +90,7 @@ void ViewMgrTest::sendAllPendingResizeEvents(QWidget *mainWindow)
         foundOne = false;
         QList<QWidget *> allChildWidgets = mainWindow->findChildren<QWidget *>();
         allChildWidgets.prepend(mainWindow);
-        foreach (QWidget *w, allChildWidgets) {
+        for (QWidget *w: allChildWidgets) {
             if (w->testAttribute(Qt::WA_PendingResizeEvent)) {
                 w->setAttribute(Qt::WA_WState_Created, true); // hack: avoid assert in Qt-4.6
                 //qDebug() << "Resizing" << w << " to " << w->size() << endl;
@@ -107,7 +107,7 @@ void ViewMgrTest::sendAllPendingResizeEvents(QWidget *mainWindow)
         //qDebug() << "Loop done, checking again";
 
         if (!foundOne) { // about to exit, reset visible flag, to avoid crashes in qt
-            foreach (QWidget *w, allChildWidgets) {
+            for (QWidget *w: allChildWidgets) {
                 w->setAttribute(Qt::WA_WState_Visible, false);
             }
         }
@@ -181,7 +181,7 @@ void ViewMgrTest::initTestCase()
     QString configLocationDir = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation);
     const QLatin1String expConfigDir(".qttest/config");
     QString msg = QString("Can't remove the config file because it isn't in the %1 directory but in %2").arg(expConfigDir).arg(configLocationDir);
-    QVERIFY2(configLocationDir.endsWith(expConfigDir), msg.toLatin1());
+    QVERIFY2(configLocationDir.endsWith(expConfigDir), msg.toLatin1().constData());
     QDir(configLocationDir).remove("konquerorrc");
 
     KonqSessionManager::self()->disableAutosave();
@@ -415,7 +415,7 @@ static void openHtmlWithLink(KonqMainWindow &mainWindow)
     mainWindow.openUrl(nullptr, QUrl(QStringLiteral("data:text/html, <a href=\"data:text/plain, Link target\" id=\"linkid\">Click me</a>")), QStringLiteral("text/html"));
     KonqView *view = mainWindow.currentView();
     QVERIFY(view);
-    QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
+    QSignalSpy spyCompleted(view, &KonqView::viewCompleted);
     QVERIFY(spyCompleted.wait(20000));
     QCOMPARE(view->serviceType(), QString("text/html"));
 }
@@ -434,7 +434,7 @@ void ViewMgrTest::testLinkedViews()
     QVERIFY(view2);
     QCOMPARE(view2->serviceType(), QString("text/html"));
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)]."));   // mainWindow, tab widget, one splitter, two frames
-    QSignalSpy spyCompleted(view2, SIGNAL(viewCompleted(KonqView*)));
+    QSignalSpy spyCompleted(view2, &KonqView::viewCompleted);
     QVERIFY(spyCompleted.wait(20000));
     const QUrl origUrl = view->url();
     QCOMPARE(view2->url().url(), origUrl.url());
@@ -478,7 +478,7 @@ void ViewMgrTest::testPopupNewTab() // RMB, "Open in new tab"
     KonqFrameTabs *tabs = mainWindow.viewManager()->tabContainer();
     QCOMPARE(tabs->currentIndex(), 0);
     KFileItem item(QUrl(QStringLiteral("data:text/html, hello")), QStringLiteral("text/html"), S_IFREG);
-    mainWindow.prepareForPopupMenu(KFileItemList() << item, KParts::OpenUrlArguments(), KParts::BrowserArguments());
+    mainWindow.prepareForPopupMenu(KFileItemList() << item, KParts::OpenUrlArguments(), BrowserArguments());
     QMetaObject::invokeMethod(&mainWindow, "slotPopupNewTab");
     QTest::qWait(1000);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
@@ -509,7 +509,7 @@ void ViewMgrTest::testPopupNewWindow() // RMB, "Open new window"
     KonqMainWindow mainWindow;
     openHtmlWithLink(mainWindow);
     KFileItem item(QUrl(QStringLiteral("data:text/html, hello")), QStringLiteral("text/html"), S_IFREG);
-    mainWindow.prepareForPopupMenu(KFileItemList() << item, KParts::OpenUrlArguments(), KParts::BrowserArguments());
+    mainWindow.prepareForPopupMenu(KFileItemList() << item, KParts::OpenUrlArguments(), BrowserArguments());
     QMetaObject::invokeMethod(&mainWindow, "slotPopupNewWindow");
     QTRY_COMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].")); // mainWindow, tab widget, one tab
     QVERIFY(KMainWindow::memberList().last() != &mainWindow);
@@ -587,7 +587,7 @@ static void openTabWithTitle(KonqMainWindow &mainWindow, const QString &title, K
     QVERIFY(view->supportsMimeType("application/x-netscape-bookmarks"));
     // Tab caption test
     view->openUrl(QUrl(QStringLiteral("data:text/html, <title>") + title + QStringLiteral("</title>")), QStringLiteral("http://loc.bar.url"));
-    QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
+    QSignalSpy spyCompleted(view, &KonqView::viewCompleted);
     QVERIFY(spyCompleted.wait(10000));
     QCOMPARE(view->caption(), title);
     QCOMPARE(view->locationBarURL(), QString("http://loc.bar.url"));
@@ -847,12 +847,16 @@ void ViewMgrTest::testBrowserArgumentsNewTab()
     KonqMainWindow mainWindow;
     mainWindow.openUrl(nullptr, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
     KParts::OpenUrlArguments urlArgs;
-    KParts::BrowserArguments browserArgs;
+    BrowserArguments browserArgs;
     browserArgs.setNewTab(true);
     KonqView *view = mainWindow.currentView();
-    KParts::BrowserExtension *ext = view->browserExtension();
+    BrowserExtension *ext = qobject_cast<BrowserExtension *>(view->browserExtension());
     QVERIFY(ext);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     emit ext->openUrlRequest(QUrl(QStringLiteral("data:text/html, <p>Second tab test</p>")), urlArgs, browserArgs);
+#else
+    emit ext->browserOpenUrlRequest(QUrl(QStringLiteral("data:text/html, <p>Second tab test</p>")), urlArgs, browserArgs);
+#endif
     QTest::qWait(5000);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
     QCOMPARE(view->url(), QUrl("data:text/html, <p>Hello World</p>"));

@@ -8,18 +8,18 @@
 
 #include <kparts_version.h>
 #include <kparts/part.h>
-#include <kparts/browserextension.h>
+#include "kf5compat.h" //For NavigationExtension
 #include <QPointer>
 #include "sidebar_widget.h"
 
 class KonqSidebarPart;
 
-class KonqSidebarBrowserExtension : public KParts::BrowserExtension
+class KonqSidebarNavigationExtension : public KParts::NavigationExtension
 {
     Q_OBJECT
 public:
-    KonqSidebarBrowserExtension(KonqSidebarPart *part, Sidebar_Widget *widget);
-    ~KonqSidebarBrowserExtension() override {}
+    KonqSidebarNavigationExtension(KonqSidebarPart *part, Sidebar_Widget *widget);
+    ~KonqSidebarNavigationExtension() override {}
 
 protected:
     QPointer<Sidebar_Widget> widget;
@@ -81,7 +81,7 @@ protected:
     /**
      * This must be implemented by each part
      */
-    KonqSidebarBrowserExtension *m_extension;
+    KonqSidebarNavigationExtension *m_extension;
     bool openFile() override;
 
     void customEvent(QEvent *ev) override;

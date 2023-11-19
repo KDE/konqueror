@@ -16,7 +16,7 @@
 #include "plugin_babelfish.h"
 
 #include <kparts/part.h>
-#include <kparts/browserextension.h>
+#include "kf5compat.h" //For NavigationExtension
 
 #include <kwidgetsaddons_version.h>
 #include <kactioncollection.h>
@@ -27,6 +27,7 @@
 #include <kconfig.h>
 #include <kpluginfactory.h>
 #include <kaboutdata.h>
+#include <KIO/Job>
 
 #include <KConfigGroup>
 
@@ -46,17 +47,17 @@ PluginBabelFish::PluginBabelFish(QObject *parent,
                              actionCollection());
     actionCollection()->addAction(QStringLiteral("translatewebpage"), m_menu);
     m_menu->setPopupMode(QToolButton::InstantPopup);
-    connect(m_menu->menu(), SIGNAL(aboutToShow()),
-            this, SLOT(slotAboutToShow()));
+    connect(m_menu->menu(), &QMenu::aboutToShow, this, &PluginBabelFish::slotAboutToShow);
 
     KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(parent);
     if (part) {
-        connect(part, SIGNAL(started(KIO::Job*)), this,
-                SLOT(slotEnableMenu()));
-        connect(part, SIGNAL(completed()), this,
-                SLOT(slotEnableMenu()));
-        connect(part, SIGNAL(completed(bool)), this,
-                SLOT(slotEnableMenu()));
+        connect(part, &KParts::ReadOnlyPart::started, this, &PluginBabelFish::slotEnableMenu);
+#if QT_VERSION_MAJOR < 6
+        connect(part, QOverload<>::of(&KParts::ReadOnlyPart::completed), this, &PluginBabelFish::slotEnableMenu);
+#else
+        connect(part, &KParts::ReadOnlyPart::completed, this, &PluginBabelFish::slotEnableMenu);
+#endif
+        connect(part, &KParts::ReadOnlyPart::completedWithPendingAction, this, &PluginBabelFish::slotEnableMenu);
     }
 }
 
@@ -217,7 +218,7 @@ void PluginBabelFish::slotEnableMenu()
     if (part && textExt) {
         const QString scheme = part->url().scheme();	// always lower case
         if ((scheme == QLatin1String("http")) || (scheme == QLatin1String("https"))) {
-            if (KParts::BrowserExtension::childObject(part)) {
+            if (KParts::NavigationExtension::childObject(part)) {
                 m_menu->setEnabled(true);
                 return;
             }
@@ -240,7 +241,7 @@ void PluginBabelFish::translateURL(QAction *action)
     const QString language = action->objectName();
     const QString engine = grp.readEntry(language, QStringLiteral("google"));
 
-    KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(parent());
+    KParts::NavigationExtension *ext = KParts::NavigationExtension::childObject(parent());
     if (!ext) {
         return;
     }

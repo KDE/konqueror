@@ -66,9 +66,8 @@ KonqFrameTabs::KonqFrameTabs(QWidget *parent, KonqFrameContainerBase *parentCont
     tabBar()->setSelectionBehaviorOnRemove(
         KonqSettings::tabCloseActivatePrevious() ? QTabBar::SelectPreviousTab : QTabBar::SelectRightTab);
 
-    if (KonqSettings::tabPosition() == QLatin1String("Bottom")) {
-        setTabPosition(QTabWidget::South);
-    }
+    applyTabBarPositionOption();
+
     connect(this, &KonqFrameTabs::tabCloseRequested, this, &KonqFrameTabs::slotCloseRequest);
     connect(this, SIGNAL(removeTabPopup()),
             m_pViewManager->mainWindow(), SLOT(slotRemoveTabPopup()));
@@ -135,7 +134,7 @@ void KonqFrameTabs::saveConfig(KConfigGroup &config, const QString &prefix, cons
     QStringList strlst;
     int i = 0;
     QString newPrefix;
-    foreach (KonqFrameBase *frame, m_childFrameList) {
+    for (KonqFrameBase *frame: m_childFrameList) {
         newPrefix = KonqFrameBase::frameTypeToString(frame->frameType()) + 'T' + QString::number(i);
         strlst.append(newPrefix);
         newPrefix.append(QLatin1Char('_'));
@@ -315,7 +314,7 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
                                   SLOT(slotReloadAllTabs()),
                                   m_pViewManager->mainWindow()->action("reload_all_tabs")->shortcut());
     m_pSubPopupMenuTab->addSeparator();
-    foreach (KonqFrameBase *frameBase, m_childFrameList) {
+    for (KonqFrameBase *frameBase: m_childFrameList) {
         KonqFrame *frame = dynamic_cast<KonqFrame *>(frameBase);
         if (frame && frame->activeChildView()) {
             QString title = frame->title().trimmed();
@@ -498,7 +497,7 @@ bool KonqFrameTabs::accept(KonqFrameVisitor *visitor)
         return false;
     }
     if (visitor->visitAllTabs()) {
-        foreach (KonqFrameBase *frame, m_childFrameList) {
+        for (KonqFrameBase *frame: m_childFrameList) {
             Q_ASSERT(frame);
             if (!frame->accept(visitor)) {
                 return false;
@@ -621,3 +620,16 @@ bool KonqFrameTabs::eventFilter(QObject *watched, QEvent *event)
     return KTabWidget::eventFilter(watched, event);
 }
 
+void KonqFrameTabs::reparseConfiguration()
+{
+    applyTabBarPositionOption();
+}
+
+void KonqFrameTabs::applyTabBarPositionOption()
+{
+    int tabBarPosition = KonqSettings::tabBarPosition();
+    if (tabBarPosition < North || tabBarPosition > East) {
+        tabBarPosition = 0;
+    }
+    setTabPosition(static_cast<TabPosition>(tabBarPosition));
+}

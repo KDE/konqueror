@@ -145,5 +145,5 @@ QPoint PasswordBar::computeDetailsWidgetPosition() const
     if (!m_detailsWidget) {
         return QPoint();
     }
-    return mapTo(parentWidget(), {width() - m_detailsWidget->width(), height()});
+    return mapTo(parentWidget(), QPoint{width() - m_detailsWidget->width(), height()});
 }

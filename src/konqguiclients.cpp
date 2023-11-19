@@ -13,7 +13,6 @@
 #include <QIcon>
 #include <kiconloader.h>
 #include <KLocalizedString>
-#include <kservicetypetrader.h>
 
 // Local
 #include "konqview.h"
@@ -212,7 +211,7 @@ void ToggleViewGUIClient::slotToggleView(bool toggle)
 
     } else {
         const QList<KonqView *> viewList = KonqViewCollector::collect(m_mainWindow);
-        foreach (KonqView *view, viewList) {
+        for (KonqView *view: viewList) {
             if (view->service().pluginId() == serviceName)
                 // takes care of choosing the new active view, and also calls slotViewRemoved
             {

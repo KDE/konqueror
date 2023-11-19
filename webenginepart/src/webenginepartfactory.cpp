@@ -20,10 +20,13 @@ WebEngineFactory::~WebEngineFactory()
     // qCDebug(WEBENGINEPART_LOG) << this;
 }
 
-QObject *WebEngineFactory::create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList &args, const QString& keyword)
+#if QT_VERSION_MAJOR < 6
+QObject *WebEngineFactory::create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList &args, const QString&)
+#else
+QObject *WebEngineFactory::create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList &args)
+#endif
 {
     Q_UNUSED(iface);
-    Q_UNUSED(keyword);
     Q_UNUSED(args);
 
     connect(parentWidget, &QObject::destroyed, this, &WebEngineFactory::slotDestroyed);
@@ -33,9 +36,9 @@ QObject *WebEngineFactory::create(const char* iface, QWidget *parentWidget, QObj
     QByteArray histData (m_historyBufContainer.value(parentWidget));
     if (!histData.isEmpty()) histData = qUncompress(histData);
     WebEnginePart* part = new WebEnginePart(parentWidget, parent, metaData(), histData);
-    WebEngineBrowserExtension* ext = qobject_cast<WebEngineBrowserExtension*>(part->browserExtension());
+    WebEngineNavigationExtension* ext = qobject_cast<WebEngineNavigationExtension*>(part->navigationExtension());
     if (ext) {
-        connect(ext, QOverload<QObject *, const QByteArray &>::of(&WebEngineBrowserExtension::saveHistory),
+        connect(ext, QOverload<QObject *, const QByteArray &>::of(&WebEngineNavigationExtension::saveHistory),
                 this, &WebEngineFactory::slotSaveHistory);
     }
     return part;

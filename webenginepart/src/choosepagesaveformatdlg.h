@@ -11,7 +11,6 @@
 
 #include <QDialog>
 #include <QScopedPointer>
-#include <QWebEngineDownloadItem>
 
 class QButtonGroup;
 

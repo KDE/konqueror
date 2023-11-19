@@ -13,10 +13,10 @@
 #include <QWebEngineProfile>
 #include <QApplication>
 #include <QMetaObject>
+#include <QActionGroup>
 
 #include <kwidgetsaddons_version.h>
 #include <kactionmenu.h>
-#include <kservicetypetrader.h>
 #include <klocalizedstring.h>
 #include <kservice.h>
 #include <kconfiggroup.h>
@@ -30,7 +30,6 @@
 #include <kparts/openurlarguments.h>
 
 #include <kio/job.h>
-#include <kio/scheduler.h>
 
 using namespace KonqInterfaces;
 

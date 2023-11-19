@@ -266,8 +266,12 @@ int KTabWidget::tabBarWidthForMaxChars(int maxLength)
             // FIXME: how to get the size of the close button directly from the tabBar()?
             iw += KIconLoader::SizeSmall * 3 / 2;
         }
+        //TODO KF6: the third argument used to be a size whose width was the maximum between
+        //lw + hframe + iw and QApplication::globalStrut().width(). Since QApplication::globalStrut()
+        //has been removed in KF6, we assume it's 0: check whether this is correct or what should
+        //be used in place of globalStrut
         x += (tabBar()->style()->sizeFromContents(QStyle::CT_TabBarTab, nullptr,
-                QSize(qMax(lw + hframe + iw, QApplication::globalStrut().width()), 0),
+                QSize(lw + hframe + iw, 0),
                 this)).width();
     }
 

@@ -28,25 +28,23 @@
 
 K_PLUGIN_CLASS_WITH_JSON(KBehaviourOptions, "filebehavior.json")
 
-KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
-    : KCModule(parent)
+KBehaviourOptions::KBehaviourOptions(QObject *parent, const KPluginMetaData &md, const QVariantList &)
+    : KCModule(parent, md)
     , g_pConfig(KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::IncludeGlobals))
     , groupname(QStringLiteral("FMSettings"))
 {
-    setQuickHelp(i18n("<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a file manager here."));
+    QVBoxLayout *mainLayout = new QVBoxLayout(widget());
 
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
-
-    QGroupBox *miscGb = new QGroupBox(i18n("Misc Options"), this);
+    QGroupBox *miscGb = new QGroupBox(i18n("Misc Options"), widget());
     QHBoxLayout *miscHLayout = new QHBoxLayout;
     QVBoxLayout *miscLayout = new QVBoxLayout;
 
-    winPixmap = new QLabel(this);
+    winPixmap = new QLabel(widget());
     winPixmap->setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
     winPixmap->setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kcontrol/pics/onlyone.png"))));
     winPixmap->setFixedSize(winPixmap->sizeHint());
 
-    cbNewWin = new QCheckBox(i18n("Open folders in separate &windows"), this);
+    cbNewWin = new QCheckBox(i18n("Open folders in separate &windows"), widget());
     cbNewWin->setToolTip(i18n("If this option is checked, Konqueror will open a new window when "
                                 "you open a folder, rather than showing that folder's contents in the current window."));
     connect(cbNewWin, &QAbstractButton::toggled, this, &KBehaviourOptions::markAsChanged);
@@ -55,7 +53,7 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
     miscLayout->addWidget(cbNewWin);
 
     QHBoxLayout *previewLayout = new QHBoxLayout;
-    QWidget *spacer = new QWidget(this);
+    QWidget *spacer = new QWidget(widget());
     spacer->setMinimumSize(20, 0);
     spacer->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum);
 
@@ -70,7 +68,7 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
 
     mainLayout->addWidget(miscGb);
 
-    cbShowDeleteCommand = new QCheckBox(i18n("Show 'Delete' me&nu entries which bypass the trashcan"), this);
+    cbShowDeleteCommand = new QCheckBox(i18n("Show 'Delete' me&nu entries which bypass the trashcan"), widget());
     mainLayout->addWidget(cbShowDeleteCommand);
     connect(cbShowDeleteCommand, &QAbstractButton::toggled, this, &KBehaviourOptions::markAsChanged);
 

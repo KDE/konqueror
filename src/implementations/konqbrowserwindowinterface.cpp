@@ -13,7 +13,7 @@
 #include "konqview.h"
 
 KonqBrowserWindowInterface::KonqBrowserWindowInterface(KonqMainWindow *mainWindow, KParts::ReadOnlyPart *part):
-    KParts::BrowserInterface(mainWindow), m_mainWindow(mainWindow), m_part(part)
+    BrowserInterface(mainWindow), m_mainWindow(mainWindow), m_part(part)
 {
 }
 

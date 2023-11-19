@@ -30,11 +30,14 @@ include(GenerateExportHeader)
 
 if (QT_MAJOR_VERSION STREQUAL "6")
     set(KF_MAJOR_VERSION "6")
+    set(KDE_COMPILERSETTINGS_LEVEL "5.85.0")
 else()
     set(KF_MAJOR_VERSION "5")
     set(KDE_COMPILERSETTINGS_LEVEL "5.82.0")
 endif()
 include(KDECompilerSettings NO_POLICY_SCOPE)
+remove_definitions(-DQT_NO_KEYWORDS)
+remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 
 include(FeatureSummary)
 
@@ -42,14 +45,15 @@ set(KONQUEROR_LIB_VERSION "${RELEASE_SERVICE_VERSION}")
 set(KONQUEROR_VERSION "${KONQUEROR_LIB_VERSION}")
 
 find_package(Qt${KF_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets WebEngineWidgets)
-find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Parts KCMUtils Archive Crash WindowSystem Init IconThemes DBusAddons GuiAddons)
+find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Parts KCMUtils Archive Crash WindowSystem IconThemes DBusAddons GuiAddons I18n Sonnet TextWidgets Codecs)
+if (KF_MAJOR_VERSION STRLESS "6")
+    find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Init)
+endif()
 
 find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} COMPONENTS Activities DocTools) # Optional
 
 if (QT_MAJOR_VERSION STRLESS 6)
     find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS X11Extras)
-else()
-    find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS GuiPrivate)
 endif()
 
 add_definitions(
@@ -103,7 +107,11 @@ install(FILES org.kde.konqueror.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODI
 
 # Make sure kfmclient can find konqueror.desktop even if people remove it from the K menu (#62242)
 # This is why konqueror.desktop is installed into services.
-install( FILES org.kde.konqueror.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
+#TODO KF6: check whether the above comment is still relevant (remove Konqueror from the K menu and check
+#whether kfmclient works correctly. If it doesn't, find out how to make it work in KF6
+if (KF_MAJOR_VERSION STRLESS "6")
+    install( FILES org.kde.konqueror.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
+endif()
 # On Wayland the icon to use for the main window is read from the desktop file, which needs
 # to be in the applications directory, so it needs to be installed there, too (bug #452149)
 install( FILES org.kde.konqueror.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )

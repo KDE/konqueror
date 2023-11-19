@@ -197,10 +197,10 @@ void KonqSidebarDirTreeItem::middleButtonClicked()
 
 void KonqSidebarDirTreeItem::rightButtonPressed()
 {
-    KParts::BrowserExtension::PopupFlags popupFlags = KParts::BrowserExtension::DefaultPopupItems
-            | KParts::BrowserExtension::ShowProperties
-            | KParts::BrowserExtension::ShowUrlOperations;
-    KParts::BrowserExtension::ActionGroupMap actionGroups;
+    KParts::NavigationExtension::PopupFlags popupFlags = KParts::NavigationExtension::DefaultPopupItems
+            | KParts::NavigationExtension::ShowProperties
+            | KParts::NavigationExtension::ShowUrlOperations;
+    KParts::NavigationExtension::ActionGroupMap actionGroups;
     QList<QAction *> editActions;
     KActionCollection *actionCollection = tree()->actionCollection();
 
@@ -213,7 +213,7 @@ void KonqSidebarDirTreeItem::rightButtonPressed()
     bool supportsDeleting = capabilities.supportsDeleting();
     bool supportsMoving = capabilities.supportsMoving();
     if (!supportsDeleting) {
-        popupFlags |= KParts::BrowserExtension::NoDeletion;
+        popupFlags |= KParts::NavigationExtension::NoDeletion;
     }
 
     Q_ASSERT(actionCollection->action("rename"));
@@ -249,12 +249,12 @@ void KonqSidebarDirTreeItem::rightButtonPressed()
     // Normally KonqPopupMenu only shows the "Create new" submenu in the current view
     // since otherwise the created file would not be visible.
     // But in treeview mode we should allow it.
-    popupFlags |= KParts::BrowserExtension::ShowCreateDirectory;
+    popupFlags |= KParts::NavigationExtension::ShowCreateDirectory;
 
     actionGroups.insert("editactions", editActions);
 
     emit tree()->sidebarModule()->showPopupMenu(QCursor::pos(), items,
-            KParts::OpenUrlArguments(), KParts::BrowserArguments(),
+            KParts::OpenUrlArguments(), BrowserArguments(),
             popupFlags, actionGroups);
 }
 

@@ -7,6 +7,7 @@
 #undef QT_NO_CAST_FROM_ASCII
 
 #include "konqpopupmenutest.h"
+#include "libkonq_utils.h"
 
 #include <kconfiggroup.h>
 #include <kbookmarkmanager.h>
@@ -21,6 +22,7 @@
 #include <QStandardPaths>
 #include <QFile>
 #include <QTextStream>
+#include <QActionGroup>
 
 QTEST_MAIN(KonqPopupMenuTest)
 
@@ -37,7 +39,7 @@ static QStringList extractActionNames(QMenu &menu)
     QString lastObjectName;
     QStringList ret;
     bool lastIsSeparator = false;
-    foreach (const QAction *action, menu.actions()) {
+    for (const QAction *action: menu.actions()) {
         if (action->isSeparator()) {
             if (!lastIsSeparator) { // Qt gets rid of duplicate separators, so we should too
                 ret.append(QStringLiteral("separator"));
@@ -494,7 +496,7 @@ void KonqPopupMenuTest::testHtmlLink()
     KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, flags);
     popup.setNewFileMenu(m_newMenu);
     popup.setActionGroups(actionGroups);
-    popup.setBookmarkManager(KBookmarkManager::userBookmarksManager());
+    popup.setBookmarkManager(Konq::userBookmarksManager());
 
     QStringList actions = extractActionNames(popup);
     // Be tolerant with openwith, it could be there once or twice
@@ -546,7 +548,7 @@ void KonqPopupMenuTest::testHtmlPage()
     KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, flags);
     popup.setNewFileMenu(m_newMenu);
     popup.setActionGroups(actionGroups);
-    popup.setBookmarkManager(KBookmarkManager::userBookmarksManager());
+    popup.setBookmarkManager(Konq::userBookmarksManager());
 
     QStringList actions = extractActionNames(popup);
     // Be tolerant with openwith, it could be there once or twice

@@ -58,7 +58,7 @@ void KShellCmdPlugin::slotExecuteShellCommand()
     if (ext && ext->hasSelection() && (ext->supportedQueryModes() & KParts::FileInfoExtension::SelectedItems)) {
         KFileItemList list = ext->queryFor(KParts::FileInfoExtension::SelectedItems);
         QStringList fileNames;
-        Q_FOREACH (const KFileItem &item, list) {
+        for (const KFileItem &item: list) {
             fileNames << item.name();
         }
         path = KShell::joinArgs(fileNames);

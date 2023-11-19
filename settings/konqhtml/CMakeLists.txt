@@ -21,6 +21,7 @@ set(kcm_konqhtml_PART_SRCS
    css/kcmcss.cpp
    cache/cache.cpp
    useragent/useragent.cpp
+   tabs/tabsoptions.cpp
    )
 
 if (DontUseKCookieJar)
@@ -38,7 +39,7 @@ if (DontUseKCookieJar)
 endif()
 
 ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
-    advancedTabOptions.ui
+    tabs/tabsoptions.ui
     css/csscustom.ui
     css/cssconfig.ui
     cache/cache.ui
@@ -46,17 +47,23 @@ ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
     )
 
 add_library(kcm_konqhtml_static STATIC ${kcm_konqhtml_PART_SRCS})
+set_target_properties(kcm_konqhtml_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(kcm_konqhtml_static
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::ConfigWidgets
+    KF${KF_MAJOR_VERSION}::KCMUtils
     KF${KF_MAJOR_VERSION}::TextWidgets
     KF${KF_MAJOR_VERSION}::Parts
     KF${KF_MAJOR_VERSION}::ItemViews
+    KF${KF_MAJOR_VERSION}::Codecs
     Qt${KF_MAJOR_VERSION}::WebEngineWidgets
     KF${KF_MAJOR_VERSION}::Konq)
 
 kcoreaddons_add_plugin(khtml_general SOURCES plugins/khtml_general.cpp INSTALL_NAMESPACE konqueror_kcms)
 target_link_libraries(khtml_general kcm_konqhtml_static)
+
+kcoreaddons_add_plugin(khtml_tabs SOURCES plugins/khtml_tabs.cpp INSTALL_NAMESPACE konqueror_kcms)
+target_link_libraries(khtml_tabs kcm_konqhtml_static)
 
 kcoreaddons_add_plugin(khtml_behavior SOURCES plugins/khtml_behavior.cpp INSTALL_NAMESPACE konqueror_kcms)
 target_link_libraries(khtml_behavior kcm_konqhtml_static)

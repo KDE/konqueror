@@ -45,7 +45,7 @@ KJavaScriptOptions::KJavaScriptOptions(KSharedConfig::Ptr config, const QString 
     js_global_policies(config, group, true, QString()),
     _removeECMADomainSettings(false)
 {
-    QVBoxLayout *toplevel = new QVBoxLayout(this);
+    QVBoxLayout *toplevel = new QVBoxLayout(widget());
 
     enableJavaScriptGloballyCB = new QCheckBox(i18n("Ena&ble JavaScript globally"));
     enableJavaScriptGloballyCB->setToolTip(i18n("Enables the execution of scripts written in ECMA-Script "
@@ -72,8 +72,12 @@ KJavaScriptOptions::KJavaScriptOptions(KSharedConfig::Ptr config, const QString 
     hbox->addWidget(reportErrorsCB);
 
     // the domain-specific listview
-    domainSpecific = new JSDomainListView(m_pConfig, m_groupname, this, this);
+    domainSpecific = new JSDomainListView(m_pConfig, m_groupname, this, widget());
+#if QT_VERSION_MAJOR < 6
     connect(domainSpecific, &DomainListView::changed, this, &KJavaScriptOptions::markAsChanged);
+#else
+    connect(domainSpecific, &DomainListView::changed, this, [this](bool changed){setNeedsSave(changed);});
+#endif
     toplevel->addWidget(domainSpecific, 2);
 
     domainSpecific->setToolTip(i18n("Here you can set specific JavaScript policies for any particular "
@@ -102,9 +106,13 @@ KJavaScriptOptions::KJavaScriptOptions(KSharedConfig::Ptr config, const QString 
 
     // the frame containing the JavaScript policies settings
     js_policies_frame = new JSPoliciesFrame(&js_global_policies,
-                                            i18n("Global JavaScript Policies"), this);
+                                            i18n("Global JavaScript Policies"), widget());
     toplevel->addWidget(js_policies_frame);
+#if QT_VERSION_MAJOR < 6
     connect(js_policies_frame, &JSPoliciesFrame::changed, this, &KJavaScriptOptions::markAsChanged);
+#else
+    connect(js_policies_frame, &JSPoliciesFrame::changed, this, [this](){setNeedsSave(true);});
+#endif
 
 }
 
@@ -129,7 +137,7 @@ void KJavaScriptOptions::load()
     reportErrorsCB->setChecked(cg.readEntry("ReportJavaScriptErrors", false));
     jsDebugWindow->setChecked(cg.readEntry("EnableJavaScriptDebug", false));
 //    js_popup->setButton( m_pConfig->readUnsignedNumEntry("WindowOpenPolicy", 0) );
-    emit changed(false);
+    setNeedsSave(false);
 }
 
 void KJavaScriptOptions::defaults()
@@ -139,7 +147,7 @@ void KJavaScriptOptions::defaults()
         js_global_policies.isFeatureEnabled());
     reportErrorsCB->setChecked(false);
     jsDebugWindow->setChecked(false);
-    emit changed(true);
+    setNeedsSave(true);
 }
 
 void KJavaScriptOptions::save()
@@ -158,7 +166,7 @@ void KJavaScriptOptions::save()
 
     // sync moved to KJSParts::save
 //    cg.sync();
-    emit changed(false);
+    setNeedsSave(false);
 }
 
 void KJavaScriptOptions::slotChangeJSEnabled()

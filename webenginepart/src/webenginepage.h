@@ -14,8 +14,8 @@
 #include "websslinfo.h"
 #include "kwebenginepartlib_export.h"
 #include "qtwebengine6compat.h"
+#include "browserextension.h"
 
-#include <KParts/BrowserExtension>
 #include <QWebEnginePage>
 
 #include <QUrl>
@@ -52,20 +52,9 @@ public:
      */
     void setSslInfo (const WebSslInfo &other);
 
-    void requestDownload(QWebEngineDownloadItem *item, bool newWindow, bool requestSave);
+    void requestDownload(QWebEngineDownloadRequest *item, bool newWindow, bool requestSave);
 
     void setStatusBarText(const QString &text);
-
-    /**
-    * @brief Tells the page that the part has requested to load the given URL
-    *
-    * @note Calling this function doesn't cause the page to be loaded: you still need to call load() to do so.
-    * @see m_urlRequestedByApp
-    * @param url the requested URL
-    */
-//     void markUrlAsRequestedByApp(const QUrl &url){m_urlRequestedByApp = url;}
-
-//     void forceLoadingOfUrl(const QUrl &url){m_forcedUrl = url;}
 
     /**
      * @brief Sets the webengine part to be used by this object.
@@ -160,19 +149,27 @@ protected Q_SLOTS:
 
 protected Q_SLOTS:
     void slotLoadFinished(bool ok);
-    void slotUnsupportedContent(QNetworkReply* reply);
     virtual void slotGeometryChangeRequested(const QRect& rect);
     void slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature);
     void slotAuthenticationRequired(const QUrl &requestUrl, QAuthenticator *auth);
     void changeFullScreenMode(QWebEngineFullScreenRequest req);
     void changeLifecycleState(QWebEnginePage::LifecycleState recommendedState);
 
+    /**
+     * @brief Updates the stylesheet applied to the page
+     *
+     * Since `QtWebEngine` doesn't directly support custom stylesheets, this is done using javascript
+     * @param script the script to run to update the stylesheet
+     * @see WebEnginePartControls::updateUserStyleSheet
+     * @see WebEnginePartControls::updateStyleSheet
+     */
+    void updateUserStyleSheet(const QString &script);
+
 private:
-    bool checkLinkSecurity(const QNetworkRequest& req, NavigationType type) const;
     bool checkFormData(const QUrl& url) const;
     bool handleMailToUrl (const QUrl& , NavigationType type) const;
     void setPageJScriptPolicy(const QUrl& url);
-    bool askBrowserToOpenUrl(const QUrl &url, const QString &mimetype=QString(), const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(), const KParts::BrowserArguments &bargs = KParts::BrowserArguments());
+    bool askBrowserToOpenUrl(const QUrl &url, const QString &mimetype=QString(), const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(), const BrowserArguments &bargs = BrowserArguments());
     bool downloadWithExternalDonwloadManager(const QUrl &url);
 //     bool askBrowserToOpenUrlInPart(const QUrl &url, const QString &part);
 
@@ -225,7 +222,7 @@ private:
     QTimer *m_dropOperationTimer;
 #endif
 
-    QMultiHash<QUrl, QWebEngineDownloadItem*> m_downloadItems;
+    QMultiHash<QUrl, QWebEngineDownloadRequest*> m_downloadItems;
 };
 
 
@@ -260,7 +257,7 @@ private Q_SLOTS:
     void slotLoadFinished(bool);
 
 private:
-    KParts::WindowArgs m_windowArgs;
+    WindowArgs m_windowArgs;
     WebWindowType m_type;
     bool m_createNewWindow;
 };

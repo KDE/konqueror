@@ -62,11 +62,9 @@
 #include <KSslInfoDialog>
 #include <KProtocolManager>
 #include <KParts/PartActivateEvent>
-#include <KParts/BrowserInterface>
 #include <KIO/ApplicationLauncherJob>
 
 #include <QFile>
-#include <QTextCodec>
 #include <QCoreApplication>
 #include <QVBoxLayout>
 #include <QDBusInterface>
@@ -74,6 +72,9 @@
 #include <QStatusBar>
 #include <QWebEngineScriptCollection>
 #include <QDir>
+#if QT_VERSION_MAJOR > 5
+#include <QWebEngineFindTextResult>
+#endif
 
 #include "utils.h"
 #include <kio_version.h>
@@ -81,7 +82,11 @@
 WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
                          const KPluginMetaData& metaData,
                          const QByteArray& cachedHistory, const QStringList& /*args*/)
+#if QT_VERSION_MAJOR < 6
             :KParts::ReadOnlyPart(parent),
+#else
+            :KParts::ReadOnlyPart(parent, metaData),
+#endif
              m_emitOpenUrlNotify(true),
              m_walletData{false, false, false},
              m_doLoadFinishedActions(false),
@@ -97,10 +102,9 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
 
     connect(WebEnginePartControls::self(), &WebEnginePartControls::userAgentChanged, this, &WebEnginePart::reloadAfterUAChange);
 
-    //Used by KonqInterfaces::DownloaderExtension::downloader()
-    setProperty("DownloaderExtension", QVariant::fromValue(WebEnginePartControls::self()->downloadManager()));
-
+#if QT_VERSION_MAJOR < 6
     setMetaData(metaData);
+#endif
 
 #if 0
     // NOTE: If the application does not set its version number, we automatically
@@ -122,7 +126,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
     m_webView = new WebEngineView (this, parentWidget);
 
     // Create the browser extension.
-    m_browserExtension = new WebEngineBrowserExtension(this, cachedHistory);
+    m_browserExtension = new WebEngineNavigationExtension(this, cachedHistory);
 
     // Add status bar extension...
     m_statusBarExtension = new KParts::StatusBarExtension(this);
@@ -203,30 +207,30 @@ SpellCheckerManager * WebEnginePart::spellCheckerManager()
 
 void WebEnginePart::initActions()
 {
-    QAction *action = actionCollection()->addAction(KStandardAction::SaveAs, QLatin1String("saveDocument"), m_browserExtension, &WebEngineBrowserExtension::slotSaveDocument);
+    QAction *action = actionCollection()->addAction(KStandardAction::SaveAs, QLatin1String("saveDocument"), m_browserExtension, &WebEngineNavigationExtension::slotSaveDocument);
 
     action = new QAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("Save Full HTML Page As..."), this);
     actionCollection()->addAction(QStringLiteral("saveFullHtmlPage"), action);
-    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::slotSaveFullHTMLPage);
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineNavigationExtension::slotSaveFullHTMLPage);
 
     action = new QAction(QIcon::fromTheme(QStringLiteral("document-print-preview")), i18n("Print Preview"), this);
     actionCollection()->addAction(QStringLiteral("printPreview"), action);
-    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::slotPrintPreview);
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineNavigationExtension::slotPrintPreview);
 
     action = new QAction(QIcon::fromTheme(QStringLiteral("zoom-in")), i18nc("zoom in action", "Zoom In"), this);
     actionCollection()->addAction(QStringLiteral("zoomIn"), action);
     actionCollection()->setDefaultShortcuts(action, QList<QKeySequence> () << QKeySequence(QStringLiteral("CTRL++")) << QKeySequence(QStringLiteral("CTRL+=")));
-    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::zoomIn);
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineNavigationExtension::zoomIn);
 
     action = new QAction(QIcon::fromTheme(QStringLiteral("zoom-out")), i18nc("zoom out action", "Zoom Out"), this);
     actionCollection()->addAction(QStringLiteral("zoomOut"), action);
     actionCollection()->setDefaultShortcuts(action, QList<QKeySequence> () << QKeySequence(QStringLiteral("CTRL+-")) << QKeySequence(QStringLiteral("CTRL+_")));
-    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::zoomOut);
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineNavigationExtension::zoomOut);
 
     action = new QAction(QIcon::fromTheme(QStringLiteral("zoom-original")), i18nc("reset zoom action", "Actual Size"), this);
     actionCollection()->addAction(QStringLiteral("zoomNormal"), action);
     actionCollection()->setDefaultShortcut(action, QKeySequence(QStringLiteral("CTRL+0")));
-    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::zoomNormal);
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineNavigationExtension::zoomNormal);
 
     action = new QAction(i18n("Zoom Text Only"), this);
     action->setCheckable(true);
@@ -234,17 +238,17 @@ void WebEnginePart::initActions()
     bool zoomTextOnly = cgHtml.readEntry("ZoomTextOnly", false);
     action->setChecked(zoomTextOnly);
     actionCollection()->addAction(QStringLiteral("zoomTextOnly"), action);
-    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::toogleZoomTextOnly);
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineNavigationExtension::toogleZoomTextOnly);
 
     action = new QAction(i18n("Zoom To DPI"), this);
     action->setCheckable(true);
     bool zoomToDPI = cgHtml.readEntry("ZoomToDPI", false);
     action->setChecked(zoomToDPI);
     actionCollection()->addAction(QStringLiteral("zoomToDPI"), action);
-    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::toogleZoomToDPI);
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineNavigationExtension::toogleZoomToDPI);
 
 
-    action = KStandardAction::create(KStandardAction::SelectAll, m_browserExtension, &WebEngineBrowserExtension::slotSelectAll,
+    action = KStandardAction::create(KStandardAction::SelectAll, m_browserExtension, &WebEngineNavigationExtension::slotSelectAll,
                                      actionCollection());
     action->setShortcutContext(Qt::WidgetShortcut);
     m_webView->addAction(action);
@@ -255,7 +259,7 @@ void WebEnginePart::initActions()
     action = new QAction(i18n("View Do&cument Source"), this);
     actionCollection()->addAction(QStringLiteral("viewDocumentSource"), action);
     actionCollection()->setDefaultShortcut(action, QKeySequence(Qt::CTRL | Qt::Key_U));
-    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::slotViewDocumentSource);
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineNavigationExtension::slotViewDocumentSource);
 
     action = new QAction(i18nc("Secure Sockets Layer", "SSL"), this);
     actionCollection()->addAction(QStringLiteral("security"), action);
@@ -297,8 +301,8 @@ void WebEnginePart::connectWebEnginePageSignals(WebEnginePage* page)
     connect(page, &WebEnginePage::loadAborted, this, &WebEnginePart::slotLoadAborted);
     connect(page, &QWebEnginePage::linkHovered, this, &WebEnginePart::slotLinkHovered);
     connect(page, &QWebEnginePage::windowCloseRequested, this, &WebEnginePart::slotWindowCloseRequested);
-    connect(page, &QWebEnginePage::loadProgress, m_browserExtension, &KParts::BrowserExtension::loadingProgress);
-    connect(page, &QWebEnginePage::selectionChanged, m_browserExtension, &WebEngineBrowserExtension::updateEditActions);
+    connect(page, &QWebEnginePage::loadProgress, m_browserExtension, &KParts::NavigationExtension::loadingProgress);
+    connect(page, &QWebEnginePage::selectionChanged, m_browserExtension, &WebEngineNavigationExtension::updateEditActions);
 //    connect(m_browserExtension, SIGNAL(saveUrl(QUrl)),
 //            page, SLOT(downloadUrl(QUrl)));
 
@@ -377,7 +381,7 @@ bool WebEnginePart::openUrl(const QUrl& _u)
     WebEnginePage* p = page();
     Q_ASSERT(p);
 
-    KParts::BrowserArguments bargs (m_browserExtension->browserArguments());
+    BrowserArguments bargs (m_browserExtension->browserArguments());
     KParts::OpenUrlArguments args (arguments());
 
     if (!Utils::isBlankUrl(u)) {
@@ -689,13 +693,19 @@ void WebEnginePart::slotSearchForText(const QString &text, bool backward)
     if (backward)
         flags |= QWebEnginePage::FindBackward;
 
-    if (m_searchBar->caseSensitive())
+    if (m_searchBar->caseSensitive()) {
         flags |= QWebEnginePage::FindCaseSensitively;
+    }
 
+#if QT_VERSION_MAJOR < 6
+    auto callback = [this](bool found){m_searchBar->setFoundMatch(found);};
+#else
+    auto callback = [this](const QWebEngineFindTextResult &res){m_searchBar->setFoundMatch(res.numberOfMatches() > 0);};
+#endif
     //qCDebug(WEBENGINEPART_LOG) << "search for text:" << text << ", backward ?" << backward;
-    page()->findText(text, flags, [this](bool found) {
-        m_searchBar->setFoundMatch(found);
-    });
+    //TODO KF6: when dropping compatibility with KF5, see whether it's better to connect to the
+    //QWebEnginePage::findTextFinished signal rather than using the callback
+    page()->findText(text, flags, callback);
 }
 
 void WebEnginePart::slotShowSearchBar()
@@ -1092,4 +1102,16 @@ void WebEnginePart::reloadAfterUAChange(const QString &)
     if (!url().isLocalFile() && !url().isEmpty() && url().scheme() != "konq") {
         m_webView->triggerPageAction(QWebEnginePage::Reload);
     }
+}
+
+#if QT_VERSION_MAJOR < 6
+KParts::NavigationExtension* WebEnginePart::navigationExtension() const
+{
+    return browserExtension();
+}
+#endif
+
+BrowserExtension *WebEnginePart::browserExtension() const
+{
+    return findChild<BrowserExtension *>();
 }

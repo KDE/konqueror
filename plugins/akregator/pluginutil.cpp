@@ -43,7 +43,7 @@ static void addFeedsViaCmdLine(const QStringList &urls)
 {
     KProcess proc;
     proc << QStringLiteral("akregator") << QStringLiteral("-g") << i18n("Imported Feeds");
-    foreach (const QString &url, urls) {
+    for (const QString &url: urls) {
         proc << QStringLiteral("-a") << url;
     }
     proc.startDetached();

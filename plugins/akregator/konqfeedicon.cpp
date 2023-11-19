@@ -18,8 +18,7 @@
 #include <kparts/part.h>
 #include <kparts/statusbarextension.h>
 #include <KParts/ReadOnlyPart>
-#include <KParts/BrowserExtension>
-#include <KParts/SelectorInterface>
+#include "kf5compat.h" //For NavigationExtension
 #include <kio/job.h>
 #include <kurllabel.h>
 #include <kprotocolinfo.h>
@@ -32,8 +31,9 @@
 #include <QWidgetAction>
 #include <QInputDialog>
 
-#include <asyncselectorinterface.h>
 #include <htmlextension.h>
+#include <browserarguments.h>
+#include <browserextension.h>
 
 using namespace Akregator;
 
@@ -69,11 +69,19 @@ KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &args)
     KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(parent);
     if (part) {
         HtmlExtension *ext = HtmlExtension::childObject(part);
+#if QT_VERSION_MAJOR < 6
         KParts::SelectorInterface *syncSelectorInterface = qobject_cast<KParts::SelectorInterface *>(ext);
+#else
+        AsyncSelectorInterface *syncSelectorInterface = nullptr;
+#endif
         AsyncSelectorInterface *asyncSelectorInterface = qobject_cast<AsyncSelectorInterface*>(ext);
         if (syncSelectorInterface || asyncSelectorInterface) {
             m_part = part;
+#if QT_VERSION_MAJOR < 6
             auto slot = syncSelectorInterface ? &KonqFeedIcon::updateFeedIcon : &KonqFeedIcon::updateFeedIconAsync;
+#else
+            auto slot = &KonqFeedIcon::updateFeedIconAsync;
+#endif
             connect(m_part, QOverload<>::of(&KParts::ReadOnlyPart::completed), this, slot);
             connect(m_part, &KParts::ReadOnlyPart::completedWithPendingAction, this, slot);
             connect(m_part, &KParts::ReadOnlyPart::started, this, &KonqFeedIcon::removeFeedIcon);
@@ -83,13 +91,14 @@ KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &args)
 
 KonqFeedIcon::~KonqFeedIcon()
 {
-    m_statusBarEx = KParts::StatusBarExtension::childObject(m_part);
-    if (m_statusBarEx) {
-        m_statusBarEx->removeStatusBarItem(m_feedIcon);
-        // if the statusbar extension is deleted, the icon is deleted as well (being the child of the status bar)
-        delete m_feedIcon;
+    //When the part is destroyed, this becomes nullptr before this destructor is called
+    if (m_part) {
+        m_statusBarEx = KParts::StatusBarExtension::childObject(m_part);
+        if (m_statusBarEx) {
+            m_statusBarEx->removeStatusBarItem(m_feedIcon);
+        }
     }
-    // the icon is deleted in every case
+    delete m_feedIcon;
     m_feedIcon = nullptr;
     delete m_menu;
     m_menu = nullptr;
@@ -167,9 +176,10 @@ void Akregator::KonqFeedIcon::updateFeedIconAsync()
             addFeedIcon();
         }
     };
-    asyncIface->querySelectorAllAsync(query(), KParts::SelectorInterface::EntireContent, callback);
+    asyncIface->querySelectorAllAsync(query(), AsyncSelectorInterface::EntireContent, callback);
 }
 
+#if QT_VERSION_MAJOR < 6
 void KonqFeedIcon::updateFeedIcon()
 {
     if (!isUrlUsable() || m_feedIcon) {
@@ -185,6 +195,7 @@ void KonqFeedIcon::updateFeedIcon()
     }
     addFeedIcon();
 }
+#endif
 
 void Akregator::KonqFeedIcon::fillFeedList(const QList<Element> &linkNodes)
 {
@@ -275,15 +286,25 @@ void Akregator::KonqFeedIcon::copyFeedUrlToClipboard(const QString& url)
 
 void Akregator::KonqFeedIcon::openFeedUrl(const QString& url, const QString &mimeType)
 {
-    KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(m_part);
+    KParts::NavigationExtension *ext = KParts::NavigationExtension::childObject(m_part);
     if (!ext) {
         return;
     }
     KParts::OpenUrlArguments args;
     args.setMimeType(mimeType);
-    KParts::BrowserArguments bargs;
+    BrowserArguments bargs;
     bargs.setNewTab(true);
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     emit ext->openUrlRequest(QUrl(url), args, bargs);
+#else
+    if (auto browserExtension = qobject_cast<BrowserExtension *>(ext)) {
+        emit browserExtension->browserOpenUrlRequest(QUrl(url), args, bargs);
+    } else {
+        emit ext->openUrlRequest(QUrl(url));
+    }
+#endif
+
 }
 
 #include "konqfeedicon.moc"

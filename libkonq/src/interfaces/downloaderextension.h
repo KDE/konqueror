@@ -9,9 +9,10 @@
 
 #include <KJob>
 #include <KParts/OpenUrlArguments>
-#include <KParts/BrowserArguments>
 
 #include <QObject>
+
+#include "browserarguments.h"
 
 #include <libkonq_export.h>
 
@@ -112,7 +113,7 @@ signals:
      * @param temp whether the downloaded file, if opened or embedded, should be deleted after use. This will be ignored if the user chooses to save the URL
      */
     void downloadAndOpenUrl(const QUrl &url, quint32 downloadId, const KParts::OpenUrlArguments &arguments = KParts::OpenUrlArguments(),
-                            const KParts::BrowserArguments &browserArguments = KParts::BrowserArguments(), bool temp=true);
+                            const BrowserArguments &browserArguments = BrowserArguments(), bool temp=true);
 };
 
 /**

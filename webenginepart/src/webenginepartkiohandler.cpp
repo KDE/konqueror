@@ -10,7 +10,6 @@
 
 #include <QMimeDatabase>
 #include <QBuffer>
-#include <QtWebEngine/QtWebEngineVersion>
 
 #include <KIO/StoredTransferJob>
 
@@ -74,7 +73,7 @@ void WebEnginePartKIOHandler::processSlaveOutput()
 
 void WebEnginePartKIOHandler::createDataFromErrorString(KIO::StoredTransferJob* job)
 {
-    if (job->error() == KIO::ERR_SLAVE_DEFINED && job->errorString().contains("<html>")) {
+    if (job->error() == KIO::ERR_WORKER_DEFINED && job->errorString().contains("<html>")) {
         m_data = job->data();
     } else if (job->error() != 0 && !job->errorString().isEmpty()) {
         QString html = QString("<html><body><h1>Error</h1>%1</body></html>").arg(job->errorString());

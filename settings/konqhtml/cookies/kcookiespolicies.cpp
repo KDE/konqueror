@@ -64,11 +64,11 @@ static QByteArray tolerantToAce(const QString &_domain)
     return ret;
 }
 
-KCookiesPolicies::KCookiesPolicies(QWidget *parent, const QVariantList &args)
-    : KCModule(parent, args)
+KCookiesPolicies::KCookiesPolicies(QObject *parent, const KPluginMetaData &md, const QVariantList &)
+    : KCModule(parent, md)
     , mSelectedItemsCount(0)
 {
-    mUi.setupUi(this);
+    mUi.setupUi(widget());
     mUi.kListViewSearchLine->setTreeWidget(mUi.policyTreeWidget);
     QList<int> columns;
     columns.append(0);
@@ -109,7 +109,7 @@ KCookiesPolicies::~KCookiesPolicies()
 void KCookiesPolicies::configChanged()
 {
     // kDebug() << "KCookiesPolicies::configChanged...";
-    Q_EMIT changed(true);
+    setNeedsSave(true);
 }
 
 void KCookiesPolicies::cookiesEnabled(bool enable)
@@ -153,7 +153,7 @@ void KCookiesPolicies::changePressed(QTreeWidgetItem *item, bool state)
     Q_ASSERT(item);
     const QString oldDomain(item->text(0));
 
-    KCookiesPolicySelectionDlg pdlg(this);
+    KCookiesPolicySelectionDlg pdlg(widget());
     pdlg.setWindowTitle(i18nc("@title:window", "Change Cookie Policy"));
     pdlg.setPolicy(mDomainPolicyMap.value(oldDomain));
     pdlg.setEnableHostEdit(state, oldDomain);
@@ -172,7 +172,7 @@ void KCookiesPolicies::changePressed(QTreeWidgetItem *item, bool state)
 
 void KCookiesPolicies::addPressed(const QString &domain, bool state)
 {
-    KCookiesPolicySelectionDlg pdlg(this);
+    KCookiesPolicySelectionDlg pdlg(widget());
     pdlg.setWindowTitle(i18nc("@title:window", "New Cookie Policy"));
     pdlg.setEnableHostEdit(state, domain);
 
@@ -205,7 +205,7 @@ bool KCookiesPolicies::handleDuplicate(const QString &domain, CookieJar::CookieA
     QTreeWidgetItem *item = mUi.policyTreeWidget->topLevelItem(0);
     while (item != nullptr) {
         if (item->text(0) == domain) {
-            const int res = KMessageBox::warningContinueCancel(this,
+            const int res = KMessageBox::warningContinueCancel(widget(),
                                                                i18n("<qt>A policy already exists for"
                                                                     "<center><b>%1</b></center>"
                                                                     "Do you want to replace it?</qt>",
@@ -372,7 +372,7 @@ void KCookiesPolicies::save()
     QDBusMessage message =
         QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
-    Q_EMIT changed(false);
+    setNeedsSave(false);
 }
 
 void KCookiesPolicies::defaults()
@@ -402,31 +402,4 @@ void KCookiesPolicies::splitDomainAdvice(const QString &cfg, QString &domain, Co
 
     domain = cfg.left(sepPos);
     advice = KCookieAdvice::strToAdvice(cfg.mid(sepPos + 1));
-}
-
-QString KCookiesPolicies::quickHelp() const
-{
-    return i18n(
-        "<h1>Cookies</h1><p>Cookies contain information that KDE"
-        " application using the HTTP protocol (like Konqueror) stores"
-        " on your computer from a remote Internet server. This means"
-        " that a web server can store information about you and your"
-        " browsing activities on your machine for later use. You might"
-        " consider this an invasion of privacy.</p><p>However, cookies are"
-        " useful in certain situations. For example, they are often used"
-        " by Internet shops, so you can 'put things into a shopping"
-        " basket'. Some sites require you have a browser that supports"
-        " cookies.</p><p>Because most people want a compromise between privacy"
-        " and the benefits cookies offer, KDE offers you the ability to"
-        " customize the way it handles cookies. You might, for example"
-        " want to set KDE's default policy to ask you whenever a server"
-        " wants to set a cookie or simply reject or accept everything."
-        " For example, you might choose to accept all cookies from your"
-        " favorite shopping web site. For this all you have to do is"
-        " either browse to that particular site and when you are presented"
-        " with the cookie dialog box, click on <i> This domain </i> under"
-        " the 'apply to' tab and choose accept or simply specify the name"
-        " of the site in the <i> Domain Specific Policy </i> tab and set"
-        " it to accept. This enables you to receive cookies from trusted"
-        " web sites without being asked every time KDE receives a cookie.</p>");
 }

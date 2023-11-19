@@ -27,6 +27,9 @@
 #include "konqframe.h"
 #include "konqframecontainer.h"
 #include "konqopenurlrequest.h"
+#include "kf5compat.h" //For NavigationExtension
+#include "configdialog.h"
+#include "windowargs.h"
 
 class QActionGroup;
 class KUrlCompletion;
@@ -61,10 +64,10 @@ class UrlLoader;
 
 namespace KParts
 {
-class BrowserExtension;
+//TODO KF6: when removing compatibility with KF5, uncomment the line below
+// class NavigationExtension;
 class ReadOnlyPart;
 class OpenUrlArguments;
-struct BrowserArguments;
 }
 
 class KonqExtendedBookmarkOwner;
@@ -335,7 +338,7 @@ public:
     int tabsCount() const;
 
     // Public for unit tests
-    void prepareForPopupMenu(const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs);
+    void prepareForPopupMenu(const KFileItemList &items, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs);
 
     /**
      * @brief The last time the window was deactivated
@@ -359,15 +362,15 @@ public Q_SLOTS:
 
     void slotCtrlTabPressed();
 
-    void slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::BrowserExtension::PopupFlags flags, const KParts::BrowserExtension::ActionGroupMap &);
-    void slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::BrowserExtension::PopupFlags f, const KParts::BrowserExtension::ActionGroupMap &);
+    void slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags flags, const KParts::NavigationExtension::ActionGroupMap &);
+    void slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags f, const KParts::NavigationExtension::ActionGroupMap &);
 
     void slotOpenURLRequest(const QUrl &url, KonqOpenURLRequest &req);
 
     void openUrl(KonqView *childView, const QUrl &url, KonqOpenURLRequest &req);
 
     void slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest& req,
-                             const KParts::WindowArgs &windowArgs = KParts::WindowArgs(),
+                             const WindowArgs &windowArgs = WindowArgs(),
                              KParts::ReadOnlyPart **part = nullptr);
 
     void slotNewWindow();
@@ -396,7 +399,8 @@ public Q_SLOTS:
 
     void slotAddClosedUrl(KonqFrameBase *tab);
 
-    void slotConfigure(QString startingModule = QString());
+    void slotConfigure();
+    void slotConfigure(Konq::ConfigDialog::Module module);
     void slotConfigureDone();
     void slotConfigureToolbars();
     void slotConfigureExtensions();
@@ -527,7 +531,7 @@ protected:
 
     bool makeViewsFollow(const QUrl &url,
                          const KParts::OpenUrlArguments &args,
-                         const KParts::BrowserArguments &browserArgs, const QString &serviceType,
+                         const BrowserArguments &browserArgs, const QString &serviceType,
                          KonqView *senderView);
 
     void applyKonqMainWindowSettings();
@@ -625,8 +629,8 @@ private:
     */
     static QString findIndexFile(const QString &directory);
 
-    void connectExtension(KParts::BrowserExtension *ext);
-    void disconnectExtension(KParts::BrowserExtension *ext);
+    void connectExtension(KParts::NavigationExtension *ext);
+    void disconnectExtension(KParts::NavigationExtension *ext);
 
     void plugViewModeActions();
     void unplugViewModeActions();
@@ -740,9 +744,9 @@ private: // members
     QUrl m_popupUrl;
     KFileItemList m_popupItems;
     KParts::OpenUrlArguments m_popupUrlArgs;
-    KParts::BrowserArguments m_popupUrlBrowserArgs;
+    BrowserArguments m_popupUrlBrowserArgs;
 
-    KCMultiDialog *m_configureDialog;
+    Konq::ConfigDialog *m_configureDialog;
 
     QLabel *m_locationLabel;
     QPointer<KonqCombo> m_combo;

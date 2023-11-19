@@ -14,7 +14,7 @@
 
 KPluginMetaData findPartById(const QString& id)
 {
-    return KPluginMetaData::findPluginById(QStringLiteral("kf5/parts"), id);
+    return KPluginMetaData::findPluginById(QStringLiteral("kf" QT_STRINGIFY(QT_VERSION_MAJOR) "/parts"), id);
 }
 
 KPluginMetaData preferredPart(const QString &mimeType) {
@@ -33,7 +33,7 @@ QVector<KPluginMetaData> findParts(std::function<bool (const KPluginMetaData &)>
 
 QVector<KPluginMetaData> findParts(std::function<bool (const KPluginMetaData &)> filter, bool includeDefaultDir)
 {
-    QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("kf5/parts"), filter);
+    QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("kf" QT_STRINGIFY(QT_VERSION_MAJOR) "/parts"), filter);
     if (includeDefaultDir) {
         plugins.append(KPluginMetaData::findPlugins(QString(), filter));
     }

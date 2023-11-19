@@ -20,6 +20,7 @@
 #include "navigationrecorder.h"
 #include "profile.h"
 #include "webenginepart_ext.h"
+#include "qtwebengine6compat.h"
 
 #include <QWebEngineCertificateError>
 #include <QWebEngineSettings>
@@ -36,17 +37,15 @@
 #include <KSharedConfig>
 #include <KIO/AuthInfo>
 #include <KIO/Job>
-#include <KIO/AccessManager>
 #include <KIO/CommandLauncherJob>
 #include <KJobTrackerInterface>
 #include <KUserTimestamp>
 #include <KPasswdServerClient>
-#include <KParts/BrowserInterface>
 #include <KJobWidgets>
 #include <KPluginMetaData>
 
 #include <QStandardPaths>
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QFileDialog>
 #include <QDialogButtonBox>
 #include <QMimeDatabase>
@@ -58,7 +57,6 @@
 #include <QTimer>
 #include <QWebEngineHistory>
 #include <QWebEngineHistoryItem>
-#include <QWebEngineDownloadItem>
 #include <QUrlQuery>
 #include <KConfigGroup>
 #include <KToggleFullScreenAction>
@@ -116,6 +114,8 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
 
     WebEnginePartControls::self()->navigationRecorder()->registerPage(this);
     m_part->downloadManager()->addPage(this);
+
+    connect(WebEnginePartControls::self(), &WebEnginePartControls::updateStyleSheet, this, &WebEnginePage::updateUserStyleSheet);
 }
 
 WebEnginePage::~WebEnginePage()
@@ -128,10 +128,10 @@ const WebSslInfo& WebEnginePage::sslInfo() const
     return m_sslInfo;
 }
 
-#if QT_VERSION_MAJOR == 6
+#if QT_VERSION_MAJOR > 5
 QWidget *WebEnginePage::view() const
 {
-    return QWebEngineView::viewForPage(this);
+    return QWebEngineView::forPage(this);
 }
 #endif
 
@@ -189,7 +189,7 @@ bool WebEnginePage::downloadWithExternalDonwloadManager(const QUrl &url)
     return true;
 }
 
-void WebEnginePage::requestDownload(QWebEngineDownloadItem *item, bool newWindow, bool requestSave)
+void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWindow, bool requestSave)
 {
     QUrl url = item->url();
     if (downloadWithExternalDonwloadManager(url)) {
@@ -203,7 +203,7 @@ void WebEnginePage::requestDownload(QWebEngineDownloadItem *item, bool newWindow
         downloader->addDownloadRequest(item);
     }
 
-    KParts::BrowserArguments bArgs;
+    BrowserArguments bArgs;
     bArgs.setForcesNewWindow(newWindow);
     KParts::OpenUrlArguments args;
 
@@ -233,13 +233,19 @@ void WebEnginePage::requestDownload(QWebEngineDownloadItem *item, bool newWindow
             item->accept();
         }
     };
+
 //TODO KF6: remove #ifndef and line inside it when compatibility with KF5 isn't needed anymore.
 #ifdef MANAGE_COOKIES_INTERNALLY
     if (downloader) {
         requestDownloadAndOpen();
     } else { //It should never happen
         qCDebug(WEBENGINEPART_LOG()) << "WebEnginePart for" << part()->url() << "doesn't have a WebEnginePartDownloaderExtension";
+#if QT_VERSION_MAJOR < 6
         emit m_part->browserExtension()->openUrlRequest(url, args, bArgs);
+#else
+        emit m_part->browserExtension()->browserOpenUrlRequest(url, args, bArgs);
+#endif
+
         item->cancel();
         item->deleteLater();
     }
@@ -309,19 +315,23 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
     return (u1List == u2List);
 }
 
-bool WebEnginePage::askBrowserToOpenUrl(const QUrl& url, const QString& mimetype, const KParts::OpenUrlArguments &_args, const KParts::BrowserArguments &bargs)
+bool WebEnginePage::askBrowserToOpenUrl(const QUrl& url, const QString& mimetype, const KParts::OpenUrlArguments &_args, const BrowserArguments &bargs)
 {
     KParts::OpenUrlArguments args(_args);
     args.setMimeType(mimetype);
     args.metaData().insert("DontSendToDefaultHTMLPart", "");
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     emit m_part->browserExtension()->openUrlRequest(url, args, bargs);
+#else
+    emit m_part->browserExtension()->browserOpenUrlRequest(url, args, bargs);
+#endif
     return true;
 }
 
 bool WebEnginePage::shouldOpenLocalUrl(const QUrl& url) const
 {
     Q_ASSERT(url.isLocalFile());
-    KParts::BrowserInterface *bi = m_part->browserExtension()->browserInterface();
+    BrowserInterface *bi = m_part->browserExtension()->browserInterface();
     bool useThisPart = false;
     //We don't check whether bi is valid, as invokeMethod will fail if it's nullptr
     //If invokeMethod fails, useThisPart will keep its default value (false) which is what we need to return, so there's no
@@ -559,50 +569,10 @@ void WebEnginePage::slotLoadFinished(bool ok)
 
     if (isMainFrameRequest) {
         const WebEnginePageSecurity security = (m_sslInfo.isValid() ? PageEncrypted : PageUnencrypted);
-        emit m_part->browserExtension()->setPageSecurity(security);
+        emit m_part->navigationExtension()->setPageSecurity(security);
     }
 }
 
-void WebEnginePage::slotUnsupportedContent(QNetworkReply* reply)
-{
-#if 0
-    //qCDebug(WEBENGINEPART_LOG) << reply->url();
-    QString mimeType;
-    KIO::MetaData metaData;
-
-    KIO::AccessManager::putReplyOnHold(reply);
-    QString downloadCmd;
-    checkForDownloadManager(view(), downloadCmd);
-    if (!downloadCmd.isEmpty()) {
-        reply->setProperty("DownloadManagerExe", downloadCmd);
-    }
-
-    if (QWePage::handleReply(reply, &mimeType, &metaData)) {
-        reply->deleteLater();
-        if (qobject_cast<NewWindowPage*>(this) && isBlankUrl(m_part->url())) {
-            m_part->closeUrl();
-            if (m_part->arguments().metaData().contains(QL1S("new-window"))) {
-                m_part->widget()->topLevelWidget()->close();
-            } else {
-                delete m_part;
-            }
-        }
-        return;
-    }
-
-    //qCDebug(WEBENGINEPART_LOG) << "mimetype=" << mimeType << "metadata:" << metaData;
-
-    if (reply->request().originatingObject() == this->mainFrame()) {
-        KParts::OpenUrlArguments args;
-        args.setMimeType(mimeType);
-        args.metaData() = metaData;
-        emit m_part->browserExtension()->openUrlRequest(reply->url(), args, KParts::BrowserArguments());
-        return;
-    }
-#endif
-    reply->deleteLater();
-
-}
 void WebEnginePage::slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature)
 {
     //url.path() is always / (meaning that permissions should be granted site-wide and not per page)
@@ -650,7 +620,7 @@ void WebEnginePage::slotGeometryChangeRequested(const QRect & rect)
     // window will be in maximized mode where moving it will not be possible...
     if (WebEngineSettings::self()->windowMovePolicy(host) == HtmlSettingsInterface::JSWindowMoveAllow &&
         (view()->x() != rect.x() || view()->y() != rect.y()))
-        emit m_part->browserExtension()->moveTopLevelWidget(rect.x(), rect.y());
+        emit m_part->navigationExtension()->moveTopLevelWidget(rect.x(), rect.y());
 
     const int height = rect.height();
     const int width = rect.width();
@@ -662,7 +632,7 @@ void WebEnginePage::slotGeometryChangeRequested(const QRect & rect)
         return;
     }
 
-    QRect sg = QApplication::desktop()->screenGeometry(view());
+    QRect sg = view()->screen()->virtualGeometry();
 
     if (width > sg.width() || height > sg.height()) {
         qCWarning(WEBENGINEPART_LOG) << "Window resize refused, window would be too big (" << width << "," << height << ")";
@@ -671,7 +641,7 @@ void WebEnginePage::slotGeometryChangeRequested(const QRect & rect)
 
     if (WebEngineSettings::self()->windowResizePolicy(host) == HtmlSettingsInterface::JSWindowResizeAllow) {
         //qCDebug(WEBENGINEPART_LOG) << "resizing to " << width << "x" << height;
-        emit m_part->browserExtension()->resizeTopLevelWidget(width, height);
+        emit m_part->navigationExtension()->resizeTopLevelWidget(width, height);
     }
 
     // If the window is out of the desktop, move it up/left
@@ -685,46 +655,7 @@ void WebEnginePage::slotGeometryChangeRequested(const QRect & rect)
         moveByY = - bottom + sg.bottom(); // always <0
 
     if ((moveByX || moveByY) && WebEngineSettings::self()->windowMovePolicy(host) == HtmlSettingsInterface::JSWindowMoveAllow)
-        emit m_part->browserExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
-}
-
-bool WebEnginePage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const
-{
-    // Check whether the request is authorized or not...
-    if (!KUrlAuthorized::authorizeUrlAction(QStringLiteral("redirect"), url(), req.url())) {
-
-        //qCDebug(WEBENGINEPART_LOG) << "*** Failed security check: base-url=" << mainFrame()->url() << ", dest-url=" << req.url();
-        QString buttonText, title, message;
-
-        int response = KMessageBox::Cancel;
-        QUrl linkUrl (req.url());
-
-        if (type == QWebEnginePage::NavigationTypeLinkClicked) {
-            message = i18n("<qt>This untrusted page links to<br/><b>%1</b>."
-                           "<br/>Do you want to follow the link?</qt>", linkUrl.url());
-            title = i18n("Security Warning");
-            buttonText = i18nc("follow link despite of security warning", "Follow");
-        } else {
-            title = i18n("Security Alert");
-            message = i18n("<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>",
-                           linkUrl.toDisplayString().toHtmlEscaped());
-        }
-
-        if (buttonText.isEmpty()) {
-            KMessageBox::error( nullptr, message, title);
-        } else {
-            // Dangerous flag makes the Cancel button the default
-            response = KMessageBox::warningContinueCancel(nullptr, message, title,
-                                                          KGuiItem(buttonText),
-                                                          KStandardGuiItem::cancel(),
-                                                          QString(), // no don't ask again info
-                                                          KMessageBox::Notify | KMessageBox::Dangerous);
-        }
-
-        return (response == KMessageBox::Continue);
-    }
-
-    return true;
+        emit m_part->navigationExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
 }
 
 bool WebEnginePage::checkFormData(const QUrl &url) const
@@ -831,7 +762,7 @@ bool WebEnginePage::handleMailToUrl (const QUrl &url, NavigationType type) const
         }
 
         //qCDebug(WEBENGINEPART_LOG) << "Emitting openUrlRequest with " << mailtoUrl;
-        emit m_part->browserExtension()->openUrlRequest(mailtoUrl);
+        emit m_part->navigationExtension()->openUrlRequest(mailtoUrl);
         return true;
     }
 
@@ -873,7 +804,7 @@ void WebEnginePage::slotAuthenticationRequired(const QUrl &requestUrl, QAuthenti
 
 void WebEnginePage::changeFullScreenMode(QWebEngineFullScreenRequest req)
 {
-        KParts::BrowserInterface *iface = part()->browserExtension()->browserInterface();
+        BrowserInterface *iface = part()->browserExtension()->browserInterface();
         if (iface) {
             req.accept();
             iface->callMethod("toggleCompleteFullScreen", req.toggleOn());
@@ -893,6 +824,11 @@ void WebEnginePage::setStatusBarText(const QString& text)
 void WebEnginePage::changeLifecycleState(QWebEnginePage::LifecycleState recommendedState)
 {
     setLifecycleState(recommendedState == LifecycleState::Discarded ? LifecycleState::Frozen : recommendedState);
+}
+
+void WebEnginePage::updateUserStyleSheet(const QString& script)
+{
+    runJavaScript(script, QWebEngineScript::ApplicationWorld);
 }
 
 /************************************* Begin NewWindowPage ******************************************/
@@ -919,9 +855,9 @@ NewWindowPage::~NewWindowPage()
 {
 }
 
-static KParts::BrowserArguments browserArgs(WebEnginePage::WebWindowType type)
+static BrowserArguments browserArgs(WebEnginePage::WebWindowType type)
 {
-    KParts::BrowserArguments bargs;
+    BrowserArguments bargs;
     switch (type) {
         case WebEnginePage::WebDialog:
         case WebEnginePage::WebBrowserWindow:
@@ -979,7 +915,7 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
         }
 
         // Browser args...
-        KParts::BrowserArguments bargs = browserArgs(m_type);
+        BrowserArguments bargs = browserArgs(m_type);
 
         // OpenUrl args...
         KParts::OpenUrlArguments uargs;
@@ -987,10 +923,14 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
         uargs.setActionRequestedByUser(actionRequestedByUser);
 
         // Window args...
-        KParts::WindowArgs wargs (m_windowArgs);
+        WindowArgs wargs (m_windowArgs);
 
         KParts::ReadOnlyPart* newWindowPart =nullptr;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         emit part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
+#else
+        emit part()->browserExtension()->browserCreateNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
+#endif
         qCDebug(WEBENGINEPART_LOG) << "Created new window" << newWindowPart;
 
         if (!newWindowPart) {
@@ -1016,7 +956,7 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
         //Set the create new window flag to false...
         m_createNewWindow = false;
         if (webenginePart) {
-            QTimer::singleShot(0, webenginePart, [webenginePart, url](){emit webenginePart->browserExtension()->openUrlRequest(url);});
+            QTimer::singleShot(0, webenginePart, [webenginePart, url](){emit webenginePart->navigationExtension()->openUrlRequest(url);});
             return false;
         }
 
@@ -1071,7 +1011,7 @@ void NewWindowPage::slotLoadFinished(bool ok)
     const bool actionRequestedByUser = true; // ### we don't have the information here, unlike in acceptNavigationRequest
 
     // Browser args...
-    KParts::BrowserArguments bargs = browserArgs(m_type);
+    BrowserArguments bargs = browserArgs(m_type);
     //bargs.frameName = mainFrame()->frameName();
 
     // OpenUrl args...
@@ -1080,10 +1020,15 @@ void NewWindowPage::slotLoadFinished(bool ok)
     uargs.setActionRequestedByUser(actionRequestedByUser);
 
     // Window args...
-    KParts::WindowArgs wargs (m_windowArgs);
+    WindowArgs wargs (m_windowArgs);
 
     KParts::ReadOnlyPart* newWindowPart =nullptr;
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     emit part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
+#else
+    emit part()->browserExtension()->browserCreateNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
+#endif
 
     qCDebug(WEBENGINEPART_LOG) << "Created new window or tab" << newWindowPart;
 

@@ -13,7 +13,9 @@
 #include <QDateTime>
 #include <QPixmap>
 #include <QImage>
+#if QT_VERSION_MAJOR < 6
 #include <QTextCodec>
+#endif
 #include <QApplication>
 #include <QDesktopServices>
 #include <QImageReader>
@@ -121,7 +123,14 @@ bool KImGalleryPlugin::createDirectory(const QDir &dir, const QString &imgGaller
 
 void KImGalleryPlugin::createHead(QTextStream &stream)
 {
-    const QString chsetName = QTextCodec::codecForLocale()->name();
+    const QString chsetName =
+//TODO KF6: in Qt6, QTextCodec doesn't exist anymore and its "replacement", QStringConverter, only supports a
+//small number of encodigs. For the time being, use the default (UTF-8).
+#if QT_VERSION_MAJOR < 6
+    QTextCodec::codecForLocale()->name();
+#else
+    QStringLiteral("UTF-8");
+#endif
 
     stream << "<?xml version=\"1.0\" encoding=\"" +  chsetName + "\" ?>" << endl;
     stream << "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">" << endl;
@@ -327,7 +336,11 @@ bool KImGalleryPlugin::createHtml(const QUrl &url, const QString &sourceDirName,
 
     if (imageDir.exists() && file.open(QIODevice::WriteOnly)) {
         QTextStream stream(&file);
+//TODO KF6: in Qt6, QTextCodec doesn't exist anymore and its "replacement", QStringConverter, only supports a
+//small number of encodigs. For the time being, use the default (UTF-8).
+#if QT_VERSION_MAJOR < 6
         stream.setCodec(QTextCodec::codecForLocale());
+#endif
 
         createHead(stream);
         createBody(stream, sourceDirName, subDirList, imageDir, url, imageFormat); //ugly
@@ -401,7 +414,12 @@ void KImGalleryPlugin::loadCommentFile()
         qCDebug(IMAGEGALLERY_LOG) << "File opened.";
 
         QTextStream *m_textStream = new QTextStream(&file);
+
+//TODO KF6: in Qt6, QTextCodec doesn't exist anymore and its "replacement", QStringConverter, only supports a
+//small number of encodigs. For the time being, use the default (UTF-8).
+#if QT_VERSION_MAJOR < 6
         m_textStream->setCodec(QTextCodec::codecForLocale());
+#endif
 
         delete m_commentMap;
         m_commentMap = new CommentMap;
@@ -510,7 +528,7 @@ bool KImGalleryPlugin::createThumb(const QString &imgName, const QString &source
             }
         }
         qCDebug(IMAGEGALLERY_LOG) << "Saving thumbnail to: " << thumbDir + imgNameFormat;
-        if (!img.save(thumbDir + imgNameFormat, imageFormat.toLatin1())) {
+        if (!img.save(thumbDir + imgNameFormat, imageFormat.toLatin1().constData())) {
             qCDebug(IMAGEGALLERY_LOG) << "Saving failed. Aborting.";
             return false;
         }

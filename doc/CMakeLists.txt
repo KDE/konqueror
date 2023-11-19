@@ -1,5 +1,5 @@
 ########### install files ###############
 
-add_subdirectory( kcontrol${KF_MAJOR_VERSION} )
+add_subdirectory( kcontrol )
 
 add_subdirectory( konqueror )

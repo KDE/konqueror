@@ -52,6 +52,7 @@ void Sidebar_Widget::aboutToShowAddMenu()
         existingGroups.append(m_buttons[i].configFile->group("Desktop Entry"));
     }
 
+//TODO KF6: remove version check and replace with code using json
     // We need to instantiate all available plugins
     // And since the web module isn't in the default entries at all, we can't just collect
     // the plugins there.
@@ -69,7 +70,7 @@ void Sidebar_Widget::aboutToShowAddMenu()
           // Remember which plugin the action came from.
           // We can't use QAction::setData for that, because we let plugins use
           // that already.
-          Q_FOREACH (QAction *action, actions) {
+          for (QAction *action: actions) {
             m_pluginForAction.insert(action, plugin);
           }
           m_addMenu->addActions(actions);
@@ -201,7 +202,7 @@ void Sidebar_Widget::addWebSideBar(const QUrl &url, const QString &name)
 
     // Look for existing ones with this URL
     const QStringList files = m_moduleManager.localModulePaths("websidebarplugin*.desktop");
-    Q_FOREACH (const QString &file, files) {
+    for (const QString &file: files) {
         KConfig _scf(file, KConfig::SimpleConfig);
         KConfigGroup scf(&_scf, "Desktop Entry");
         if (scf.readPathEntry("URL", QString()) == url.url()) {
@@ -416,7 +417,7 @@ void Sidebar_Widget::updateButtons()
 void Sidebar_Widget::createButtons()
 {
     const QStringList modules = m_moduleManager.modules();
-    Q_FOREACH (const QString &fileName, modules) {
+    for (const QString &fileName: modules) {
         addButton(fileName);
     }
 
@@ -608,9 +609,9 @@ KonqSidebarModule *Sidebar_Widget::loadModule(QWidget *parent, const QString &de
     return plugin->createModule(parent, configGroup, desktopName, QVariant());
 }
 
-KParts::BrowserExtension *Sidebar_Widget::getExtension()
+KParts::NavigationExtension *Sidebar_Widget::getExtension()
 {
-    return KParts::BrowserExtension::childObject(m_partParent);
+    return KParts::NavigationExtension::childObject(m_partParent);
 }
 
 bool Sidebar_Widget::createView(ButtonInfo &buttonInfo)
@@ -735,27 +736,53 @@ void Sidebar_Widget::submitFormRequest(const char *action,
                                        const QString & /*boundary*/)
 {
     KParts::OpenUrlArguments arguments;
-    KParts::BrowserArguments browserArguments;
+    BrowserArguments browserArguments;
     browserArguments.setContentType("Content-Type: " + contentType);
     browserArguments.postData = formData;
     browserArguments.setDoPost(QByteArray(action).toLower() == "post");
     // boundary?
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     emit getExtension()->openUrlRequest(QUrl(url), arguments, browserArguments);
+#else
+    if (getBrowserExtension()) {
+        emit getBrowserExtension()->browserOpenUrlRequest(QUrl(url), arguments, browserArguments);
+    } else {
+        emit getExtension()->openUrlRequest(QUrl(url));
+    }
+#endif
 }
 
-void Sidebar_Widget::openUrlRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs)
+void Sidebar_Widget::openUrlRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs)
 {
     if (m_storedCurViewUrl == url) { // don't pollute the history stack
         return;
     }
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     getExtension()->openUrlRequest(url, args, browserArgs);
+#else
+    if (getBrowserExtension()) {
+        getBrowserExtension()->browserOpenUrlRequest(url, args, browserArgs);
+    } else {
+        getExtension()->openUrlRequest(url);
+    }
+#endif
+
     setStoredCurViewUrl(url);
 }
 
-void Sidebar_Widget::createNewWindow(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs,
-                                     const KParts::WindowArgs &windowArgs)
+void Sidebar_Widget::createNewWindow(const QUrl &url, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs,
+                                     const WindowArgs &windowArgs)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     getExtension()->createNewWindow(url, args, browserArgs, windowArgs);
+#else
+    if (getBrowserExtension()) {
+        getBrowserExtension()->browserCreateNewWindow(url, args, browserArgs, windowArgs);
+    } else {
+        getExtension()->createNewWindow(url);
+    }
+#endif
 }
 
 void Sidebar_Widget::slotEnableAction(KonqSidebarModule *module, const char *name, bool enabled)
@@ -854,18 +881,27 @@ KonqSidebarPlugin *ButtonInfo::plugin(QObject *parent)
 void Sidebar_Widget::slotPopupMenu(KonqSidebarModule *module,
                                    const QPoint &global, const KFileItemList &items,
                                    const KParts::OpenUrlArguments &args,
-                                   const KParts::BrowserArguments &browserArgs,
-                                   KParts::BrowserExtension::PopupFlags flags,
-                                   const KParts::BrowserExtension::ActionGroupMap &actionGroups)
+                                   const BrowserArguments &browserArgs,
+                                   KParts::NavigationExtension::PopupFlags flags,
+                                   const KParts::NavigationExtension::ActionGroupMap &actionGroups)
 {
     m_activeModule = module;
     doEnableActions();
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     emit getExtension()->popupMenu(global, items, args, browserArgs, flags, actionGroups);
+#else
+    if (getBrowserExtension()) {
+        emit getBrowserExtension()->browserPopupMenuFromFiles(global, items, args, browserArgs, flags, actionGroups);
+    } else {
+        emit getExtension()->popupMenu(global, items, args, flags, actionGroups);
+    }
+#endif
 }
 
 void Sidebar_Widget::slotUrlsDropped(const QList<QUrl> &urls)
 {
-    Q_FOREACH (const QUrl &url, urls) {
+    for (const QUrl &url: urls) {
         KIO::StatJob *job = KIO::stat(url);
         KJobWidgets::setWindow(job, this);
         connect(job, &KIO::StatJob::result, this, &Sidebar_Widget::slotStatResult);
@@ -891,4 +927,10 @@ void Sidebar_Widget::slotStatResult(KJob *job)
         }
     }
 }
+
+BrowserExtension *Sidebar_Widget::getBrowserExtension()
+{
+    return qobject_cast<BrowserExtension*>(getExtension());
+}
+
 

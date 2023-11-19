@@ -17,6 +17,7 @@
 #include <QMenu>
 #include <QIcon>
 #include <QAction>
+#include <QStandardPaths>
 
 // KDE
 #include <k3bookmarkdrag.h>
@@ -38,7 +39,12 @@ KonqSidebarBookmarkModule::KonqSidebarBookmarkModule(KonqSidebarTree *parentTree
       m_topLevelItem(0L), m_ignoreOpenChange(true)
 {
     if (!s_bookmarkManager) {
+#if QT_VERSION_MAJOR < 6
         s_bookmarkManager = KBookmarkManager::userBookmarksManager();
+#else
+        const QString bookmarksFile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/konqueror/bookmarks.xml");
+        s_manager = KBookmarkManager::managerForFile(bookmarksFile);
+#endif
     }
 
     // formats handled by K3BookmarkDrag:
@@ -404,7 +410,7 @@ void KonqSidebarBookmarkModule::slotOpenNewWindow()
 
     KParts::OpenUrlArguments args;
     args.setActionRequestedByUser(true);
-    KParts::BrowserArguments browserArgs;
+    BrowserArguments browserArgs;
     browserArgs.setForcesNewWindow(true);
     emit tree()->createNewWindow(bi->bookmark().url(), args, browserArgs);
 }
@@ -423,7 +429,7 @@ void KonqSidebarBookmarkModule::slotOpenTab()
 
     KParts::OpenUrlArguments args;
     args.setActionRequestedByUser(true);
-    KParts::BrowserArguments browserArguments;
+    BrowserArguments browserArguments;
     browserArguments.setNewTab(true);
     if (bookmark.isGroup()) {
         KBookmarkGroup group = bookmark.toGroup();

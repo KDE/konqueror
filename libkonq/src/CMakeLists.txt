@@ -20,6 +20,11 @@ set(konq_LIB_SRCS
    interfaces/cookiejar.cpp
    interfaces/common.h
    interfaces/downloaderextension.cpp
+   libkonq_utils.cpp
+   browserarguments.cpp
+   browserextension.cpp
+   windowargs.cpp
+   browserinterface.cpp
 )
 
 ecm_qt_declare_logging_category(konq_LIB_SRCS HEADER libkonq_debug.h IDENTIFIER LIBKONQ_LOG CATEGORY_NAME org.kde.libkonq)
@@ -40,11 +45,16 @@ target_link_libraries(KF${KF_MAJOR_VERSION}Konq
     KF${KF_MAJOR_VERSION}::Service
     KF${KF_MAJOR_VERSION}::Parts
     Qt${KF_MAJOR_VERSION}::WebEngineWidgets
+    KF${KF_MAJOR_VERSION}::TextWidgets
     PRIVATE
     KF${KF_MAJOR_VERSION}::Bookmarks
     KF${KF_MAJOR_VERSION}::I18n
     ${ZLIB_LIBRARY}
 )
+
+if (KF_MAJOR_VERSION STRGREATER "5")
+    target_link_libraries(KF${KF_MAJOR_VERSION}Konq PRIVATE KF${KF_MAJOR_VERSION}::BookmarksWidgets)
+endif()
 
 # For crc32 in konq_historyloader.cpp
 target_include_directories(KF${KF_MAJOR_VERSION}Konq PRIVATE ${ZLIB_INCLUDE_DIR})

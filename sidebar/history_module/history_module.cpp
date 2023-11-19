@@ -64,7 +64,7 @@ void KonqSidebarHistoryModule::slotActivated(const QModelIndex &index)
         slotOpenWindow(url);
         return;
     }
-    KParts::BrowserArguments bargs;
+    BrowserArguments bargs;
     //Ideally, if m_defaultAction is Auto, the current tab should only be created if the current tab
     //has a konq: or an empty URL. However, it seems you can't get this information from here, so always
     //open a new tab unless the default action is OpenCurrentTab
@@ -98,7 +98,7 @@ void KonqSidebarHistoryModule::slotOpenWindow(const QUrl &url)
 {
     KParts::OpenUrlArguments args;
     args.setActionRequestedByUser(true);
-    KParts::BrowserArguments browserArgs;
+    BrowserArguments browserArgs;
     browserArgs.setForcesNewWindow(true);
     createNewWindow(url, args, browserArgs);
 }
@@ -107,7 +107,7 @@ void KonqSidebarHistoryModule::slotOpenTab(const QUrl &url)
 {
     KParts::OpenUrlArguments args;
     args.setActionRequestedByUser(true);
-    KParts::BrowserArguments browserArgs;
+    BrowserArguments browserArgs;
     browserArgs.setNewTab(true);
     createNewWindow(url, args, browserArgs);
 }

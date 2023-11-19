@@ -13,12 +13,15 @@
 #define KGETPLUGIN_H
 
 #include <konq_kpart_plugin.h>
+#include "asyncselectorinterface.h"
+
 #include <QPointer>
 
+#if QT_VERSION_MAJOR < 6
 #include <KParts/SelectorInterface>
+#endif
 
 class KToggleAction;
-class AsyncSelectorInterface;
 class HtmlExtension;
 
 class KGetPlugin : public KonqParts::Plugin
@@ -37,7 +40,7 @@ private Q_SLOTS:
 
 private:
     void getLinks(bool selectedOnly = false);
-    void fillLinkListFromHtml(const QUrl &baseUrl, const QList<KParts::SelectorInterface::Element> &elements);
+    void fillLinkListFromHtml(const QUrl &baseUrl, const QList<AsyncSelectorInterface::Element> &elements);
 
     /**
      * @brief The kind of html selector interface to use
@@ -62,7 +65,7 @@ private:
          * @return The query methods supported by the HTML part or KParts::SelectionInterface::None if no selector interface
          * is provided by the part
          */
-        KParts::SelectorInterface::QueryMethods supportedMethods() const;
+        AsyncSelectorInterface::QueryMethods supportedMethods() const;
         /**
          * @brief Whether the HTML extension provides either the synchronous or the asynchronous interface
          * @return `true` if the HTML extension provides at least one of the two interfaces and `false` otherwise
@@ -77,7 +80,9 @@ private:
          * @brief A pointer to the KParts::SelectorInterface or `nullptr` if he HTML extension doesn't provide the
          * KParts::SelectorInterface interface
          **/
+#if QT_VERSION_MAJOR < 6
         KParts::SelectorInterface *syncInterface = nullptr;
+#endif
         /**
          * @brief A pointer to the AsyncSelectorInterface or `nullptr` if he HTML extension doesn't provide the
          * AsyncSelectorInterface interface

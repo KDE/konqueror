@@ -12,11 +12,11 @@
 #define WEBENGINEVIEW_H
 
 #include <QPointer>
-#include <KParts/BrowserExtension>
+#include "kf5compat.h" //For NavigationExtension
+#include "qtwebengine6compat.h" //For QWebEngineContextMenuRequest
+#include "browserarguments.h"
 
 #include <QWebEngineView>
-#include <QtWebEngine/QtWebEngineVersion>
-#include <QWebEngineContextMenuData>
 
 class QUrl;
 class WebEnginePart;
@@ -31,15 +31,15 @@ public:
     /**
      * Same as QWebEnginePage::load, but with KParts style arguments instead.
      *
-     * @see KParts::OpenUrlArguments, KParts::BrowserArguments.
+     * @see KParts::OpenUrlArguments, BrowserArguments.
      *
      * @param url     the url to load.
      * @param args    reference to a OpenUrlArguments object.
      * @param bargs   reference to a BrowserArguments object.
      */
-    void loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs);
+    void loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const BrowserArguments& bargs);
 
-    QWebEngineContextMenuData contextMenuResult() const;
+    const QWebEngineContextMenuRequest* contextMenuResult() const;
 
 protected:
     /**
@@ -127,15 +127,23 @@ private Q_SLOTS:
     void slotStopAutoScroll();
 
 private:
-    void editableContentActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
-    void selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
-    void linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
-    void partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &);
-    void multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
+    void editableContentActionPopupMenu(KParts::NavigationExtension::ActionGroupMap&);
+    void selectActionPopupMenu(KParts::NavigationExtension::ActionGroupMap&);
+    void linkActionPopupMenu(KParts::NavigationExtension::ActionGroupMap&);
+    void partActionPopupMenu(KParts::NavigationExtension::ActionGroupMap &);
+    void multimediaActionPopupMenu(KParts::NavigationExtension::ActionGroupMap&);
     void addSearchActions(QList<QAction*>& selectActions, QWebEngineView*);
 
+    //TODO KF6: when dropping compatibility with KF5, remove these and use m_result directly
+    QWebEngineContextMenuRequest* result();
+    const QWebEngineContextMenuRequest* result() const;
+
     KActionCollection* m_actionCollection;
-    QWebEngineContextMenuData m_result;
+#if QT_VERSION_MAJOR < 6
+    QWebEngineContextMenuRequest m_result;
+#else
+    QPointer<QWebEngineContextMenuRequest> m_result = nullptr;
+#endif
     QPointer<WebEnginePart> m_part;
 
     qint32 m_autoScrollTimerId;

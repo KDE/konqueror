@@ -25,7 +25,6 @@
 #include <QDialog>
 
 #include <KLocalizedString>
-#include <KNotificationJobUiDelegate>
 #include <KJobTrackerInterface>
 #include <KIO/JobTracker>
 #include <KIO/OpenUrlJob>
@@ -225,7 +224,7 @@ WebEngineDownloadJob::~WebEngineDownloadJob() noexcept
 
 void WebEngineDownloadJob::start()
 {
-    if (m_downloadItem && m_downloadItem->state() == QWebEngineDownloadItem::DownloadRequested) {
+    if (m_downloadItem && m_downloadItem->state() == QWebEngineDownloadRequest::DownloadRequested) {
         m_downloadItem->accept();
     }
     QTimer::singleShot(0, this, &WebEngineDownloadJob::startDownloading);
@@ -258,10 +257,17 @@ bool WebEngineDownloadJob::doSuspend()
     return true;
 }
 
-void WebEngineDownloadJob::downloadProgressed(quint64 received, quint64 total)
+#if QT_VERSION_MAJOR < 6
+void WebEngineDownloadJob::downloadProgressed(qint64 received, qint64 total)
 {
-    setPercent(received*100.0/total);
+    setPercent(total != 0 ? received*100.0/total : 0);
 }
+#else
+void WebEngineDownloadJob::downloadProgressed()
+{
+    setPercent(m_downloadItem->totalBytes() != 0 ? m_downloadItem->receivedBytes()*100/m_downloadItem->totalBytes() : 0);
+}
+#endif
 
 void WebEngineDownloadJob::stateChanged(QWebEngineDownloadRequest::DownloadState state)
 {
@@ -295,11 +301,20 @@ void WebEngineDownloadJob::startDownloading()
     //This means that, for small files, it's possible that when WebEngineDownloadJob::start is called, the download will already have been
     //completed. In that case, set the download progress to 100% and emit the result() signal
     if (!m_downloadItem->isFinished()) {
+#if QT_VERSION_MAJOR < 6
         connect(m_downloadItem, &QWebEngineDownloadRequest::downloadProgress, this, &WebEngineDownloadJob::downloadProgressed);
         connect(m_downloadItem, &QWebEngineDownloadRequest::finished, this, &WebEngineDownloadJob::downloadFinished);
+#else
+        connect(m_downloadItem, &QWebEngineDownloadRequest::receivedBytesChanged, this, &WebEngineDownloadJob::downloadProgressed);
+        connect(m_downloadItem, &QWebEngineDownloadRequest::isFinishedChanged, this, &WebEngineDownloadJob::downloadFinished);
+#endif
         m_downloadItem->resume();
     } else {
+#if QT_VERSION_MAJOR < 6
         downloadProgressed(m_downloadItem->receivedBytes(), m_downloadItem->totalBytes());
+#else
+        downloadProgressed();
+#endif
         emitResult();
     }
 }
@@ -343,5 +358,5 @@ bool WebEngineDownloadJob::setDownloadPath(const QString& path)
 
 bool WebEngineDownloadJob::canChangeDownloadPath() const
 {
-    return m_downloadItem && m_downloadItem->state() == QWebEngineDownloadItem::DownloadRequested;
+    return m_downloadItem && m_downloadItem->state() == QWebEngineDownloadRequest::DownloadRequested;
 }

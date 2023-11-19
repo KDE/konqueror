@@ -27,10 +27,10 @@ Q_SIGNALS:
     void submitFormRequest(const char *, const QString &, const QByteArray &, const QString &, const QString &, const QString &);
     void openUrlRequest(const QString &url,
                         const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                        const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments());
+                        const BrowserArguments &browserArgs = BrowserArguments());
     void openUrlNewWindow(const QString &url,
                           const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                          const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
+                          const BrowserArguments &browserArgs = BrowserArguments(),
                           const KParts::WindowArgs &windowArgs = KParts::WindowArgs());
     void reload();
     void setAutoReload();
@@ -39,7 +39,7 @@ protected:
     virtual bool urlSelected(const QString &url, int button,
                              int state, const QString &_target,
                              const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                             const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments());
+                             const BrowserArguments &browserArgs = BrowserArguments());
 
 protected Q_SLOTS:
     void loadPage()
@@ -114,9 +114,9 @@ protected:
     virtual void handleURL(const QUrl &url);
 
 private Q_SLOTS:
-    void urlClicked(const QString &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs);
-    void formClicked(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs);
-    void urlNewWindow(const QString &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, const KParts::WindowArgs &windowArgs = KParts::WindowArgs());
+    void urlClicked(const QString &url, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs);
+    void formClicked(const QUrl &url, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs);
+    void urlNewWindow(const QString &url, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, const KParts::WindowArgs &windowArgs = KParts::WindowArgs());
     void pageLoaded();
     void loadFavicon();
     void setTitle(const QString &);

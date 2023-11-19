@@ -1151,7 +1151,7 @@ void TreeMapItem::resort(bool recursive)
     }
 
     if (recursive)
-        foreach (TreeMapItem *i, *_children) {
+        for (TreeMapItem *i: *_children) {
             i->resort(recursive);
         }
 }
@@ -1840,12 +1840,12 @@ TreeMapItemList TreeMapWidget::diff(TreeMapItemList &l1,
 {
     TreeMapItemList l;
 
-    foreach (TreeMapItem *i, l1)
+    for (TreeMapItem *i: l1)
         if (!l2.contains(i)) {
             l.append(i);
         }
 
-    foreach (TreeMapItem *i, l2)
+    for (TreeMapItem *i: l2)
         if (!l1.contains(i)) {
             l.append(i);
         }
@@ -1876,7 +1876,7 @@ TreeMapItem *TreeMapWidget::setTmpSelected(TreeMapItem *item, bool selected)
     } else {
         if (selected) {
             // first remove any selection which is parent or child of <item>
-            foreach (TreeMapItem *i, _tmpSelection)
+            for (TreeMapItem *i: _tmpSelection)
                 if (i->isChildOf(item) || item->isChildOf(i)) {
                     _tmpSelection.removeAll(i);
                 }
@@ -1895,7 +1895,7 @@ bool TreeMapWidget::clearSelection(TreeMapItem *parent)
     TreeMapItemList old = _selection;
 
     // remove any selection which is child of <parent>
-    foreach (TreeMapItem *i, _selection)
+    for (TreeMapItem *i: _selection)
         if (i->isChildOf(parent)) {
             _selection.removeAll(i);
         }
@@ -2022,7 +2022,7 @@ TreeMapItem *TreeMapWidget::setTmpRangeSelection(TreeMapItem *i1,
     }
 
     bool between = false;
-    foreach (TreeMapItem *i, *list) {
+    for (TreeMapItem *i: *list) {
         if (between) {
             if (i == i1 || i == i2) {
                 break;
@@ -2399,7 +2399,7 @@ bool TreeMapWidget::event(QEvent *event)
         bool hasTip = false;
         if (i) {
             const QList<QRect> &rList = i->freeRects();
-            foreach (const QRect &r, rList) {
+            for (const QRect &r: rList) {
                 if (r.contains(helpEvent->pos())) {
                     hasTip = true;
                     break;
@@ -2509,7 +2509,7 @@ void TreeMapWidget::drawItem(QPainter *p,
             }
         }
     } else {
-        foreach (TreeMapItem *i, _tmpSelection) {
+        for (TreeMapItem *i: _tmpSelection) {
             if (item->isChildOf(i)) {
                 isSelected = true;
                 break;
@@ -2612,7 +2612,7 @@ void TreeMapWidget::drawItems(QPainter *p,
     if (stopDrawing) {
         if (list) {
             // invalidate rects
-            foreach (TreeMapItem *i, *list) {
+            for (TreeMapItem *i: *list) {
                 i->clearItemRect();
             }
         }
@@ -2647,7 +2647,7 @@ void TreeMapWidget::drawItems(QPainter *p,
 
     // own sum
     child_sum = 0;
-    foreach (TreeMapItem *i, *list) {
+    for (TreeMapItem *i: *list) {
         child_sum += i->value();
         if (DEBUG_DRAWING)
             qCDebug(FSVIEWLOG) << "  child: " << i->text(0) << ", value "
