@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2015-03-16 09:43+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: icelandic <translation-team-is@lists.sourceforge.net>\n"
@@ -27,26 +27,17 @@ msgstr ""
 "\n"
 "\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
-"file manager here."
-msgstr ""
-"<h1>Hegðan Konqueror</h1> Hér getur þú getur stillt hvernig Konqueror hegðar "
-"sér sem skráastjóri."
-
-#: behaviour.cpp:40
+#: behaviour.cpp:38
 #, kde-format
 msgid "Misc Options"
 msgstr "Ýmsir valkostir"
 
-#: behaviour.cpp:49
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "Opna möppur í sér &glugga"
 
-#: behaviour.cpp:50
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -55,12 +46,12 @@ msgstr ""
 "Ef þessi kostur er valinn opnar Konqueror nýjan glugga þegar þú opnar möppu "
 "í stað þess að sýna innihald möppunnar í sama glugga."
 
-#: behaviour.cpp:73
+#: behaviour.cpp:71
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "Sýna 'Eyða' í valmy&ndum sem fer framhjá ruslatunnunni"
 
-#: behaviour.cpp:77
+#: behaviour.cpp:75
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -70,6 +61,13 @@ msgstr ""
 "Hakaðu við hér ef þú vilt að 'Eyða' valmyndaskipanir séu sýndar á skjáborði "
 "og í samhengisvalmyndum skráarstjórans. Þú getur alltaf eytt skrám með því "
 "að halda niðri Shift lyklinum þegar þú notar 'Henda í ruslið'."
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>Hegðan Konqueror</h1> Hér getur þú getur stillt hvernig Konqueror "
+#~ "hegðar sér sem skráastjóri."
 
 #~ msgctxt "@title:window"
 #~ msgid "Menu Editor"

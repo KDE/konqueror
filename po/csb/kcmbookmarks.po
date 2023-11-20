@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2009-08-03 17:47+0200\n"
 "Last-Translator: Michôł Òstrowsczi <michol@linuxcsb.org>\n"
 "Language-Team: Kashubian <i18n-csb@linuxcsb.org>\n"
@@ -20,17 +20,6 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2)\n"
-
-#: bookmarks.cpp:92
-#, kde-format
-msgid ""
-"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
-msgstr ""
-"<h1>Mòjé Załóżczi</h1><p>Nen mòdul zezwôlô na kònfigùracëjã domôcy starnë "
-"załóżków.</p><p>Domôcô starna załóżków je przëstspnô na <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -154,6 +143,15 @@ msgstr "Wëczëszczë pòdrãczną pamiãc piksmapë"
 #, kde-format
 msgid "&Clear Cache"
 msgstr "Wë&czësczë pòdrãczną pamiãc"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "<h1>Mòjé Załóżczi</h1><p>Nen mòdul zezwôlô na kònfigùracëjã domôcy starnë "
+#~ "załóżków.</p><p>Domôcô starna załóżków je przëstspnô na <a href="
+#~ "\"bookmarks:/\">bookmarks:/</a>.</p>"
 
 #~ msgid ""
 #~ "<h1>Cache</h1><p>This module lets you configure your cache settings.</"

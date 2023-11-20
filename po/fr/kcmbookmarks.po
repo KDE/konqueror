@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2014-08-31 17:40+0200\n"
 "Last-Translator: Sebastien Renard <renard@kde.org>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -30,17 +30,6 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-
-#: bookmarks.cpp:92
-#, kde-format
-msgid ""
-"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
-msgstr ""
-"<h1>Mes signets</h1><p>Ce module vous permet de configurer la page d'accueil "
-"des signets.</p><p>La page d'accueil des signets est accessible à partir de "
-"<a href=\"bookmarks:/\">signets : /</a>.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -176,6 +165,15 @@ msgstr "Vider le cache « pixmaps »"
 #, kde-format
 msgid "&Clear Cache"
 msgstr "Vider le &cache"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "<h1>Mes signets</h1><p>Ce module vous permet de configurer la page "
+#~ "d'accueil des signets.</p><p>La page d'accueil des signets est accessible "
+#~ "à partir de <a href=\"bookmarks:/\">signets : /</a>.</p>"
 
 #~ msgid ""
 #~ "<h1>Cache</h1><p>This module lets you configure your cache settings.</"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
-"PO-Revision-Date: 2023-10-21 13:54\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"PO-Revision-Date: 2023-11-19 03:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -16,16 +16,6 @@ msgstr ""
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: /kf5-trunk/messages/konqueror/kcmbookmarks.pot\n"
 "X-Crowdin-File-ID: 5337\n"
-
-#: bookmarks.cpp:92
-#, kde-format
-msgid ""
-"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
-msgstr ""
-"<h1>我的书签</h1><p>这个模块让您配置自己的书签页。</p><p>此书签页可以通过 <a "
-"href=\"bookmarks:/\">bookmarks:/</a> 地址来访问。</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -154,3 +144,11 @@ msgstr "清空图片缓存"
 #, kde-format
 msgid "&Clear Cache"
 msgstr "清空缓存(&C)"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "<h1>我的书签</h1><p>这个模块让您配置自己的书签页。</p><p>此书签页可以通过 "
+#~ "<a href=\"bookmarks:/\">bookmarks:/</a> 地址来访问。</p>"

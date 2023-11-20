@@ -1,24 +1,24 @@
 # Translation of imgalleryplugin.po to Catalan
-# Copyright (C) 2002-2020 This_file_is_part_of_KDE
+# Copyright (C) 2002-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2002, 2003, 2019.
 # Albert Astals Cid <aacid@kde.org>, 2004, 2005.
-# Josep M. Ferrer <txemaq@gmail.com>, 2006, 2007, 2011, 2015, 2020.
+# Josep M. Ferrer <txemaq@gmail.com>, 2006, 2007, 2011, 2015, 2020, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
-"PO-Revision-Date: 2020-07-16 11:10+0100\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"PO-Revision-Date: 2023-11-19 21:26+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -76,12 +76,12 @@ msgstr "Mostra les &dimensions de la imatge"
 #: imgallerydialog.cpp:114
 #, kde-format
 msgid "Fon&t name:"
-msgstr "Nom del &tipus de lletra:"
+msgstr "Nom de la &lletra:"
 
 #: imgallerydialog.cpp:122
 #, kde-format
 msgid "Font si&ze:"
-msgstr "&Mida del tipus de lletra:"
+msgstr "&Mida de la lletra:"
 
 #: imgallerydialog.cpp:126
 #, kde-format
@@ -215,47 +215,47 @@ msgstr "E&stableix una profunditat de color diferent:"
 msgid "Color depth:"
 msgstr "Profunditat de color:"
 
-#: imgalleryplugin.cpp:52
+#: imgalleryplugin.cpp:54
 #, kde-format
 msgid "&Create Image Gallery..."
 msgstr "&Crea la galeria d'imatges..."
 
-#: imgalleryplugin.cpp:62
+#: imgalleryplugin.cpp:64
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
 msgstr "No s'ha pogut crear el connector, si us plau, informeu d'un error."
 
-#: imgalleryplugin.cpp:68
+#: imgalleryplugin.cpp:70
 #, kde-format
 msgid "Creating an image gallery works only on local folders."
 msgstr "Crear una galeria d'imatges tan sols funciona en carpetes locals."
 
-#: imgalleryplugin.cpp:88
+#: imgalleryplugin.cpp:90
 #, kde-format
 msgid "Creating thumbnails"
 msgstr "S'estan creant les miniatures"
 
-#: imgalleryplugin.cpp:111 imgalleryplugin.cpp:275
+#: imgalleryplugin.cpp:113 imgalleryplugin.cpp:284
 #, kde-format
 msgid "Could not create folder: %1"
 msgstr "No s'ha pogut crear la carpeta: %1"
 
-#: imgalleryplugin.cpp:173
+#: imgalleryplugin.cpp:182
 #, kde-format
 msgid "<i>Number of images</i>: %1"
 msgstr "<i>Nombre d'imatges</i>: %1"
 
-#: imgalleryplugin.cpp:174
+#: imgalleryplugin.cpp:183
 #, kde-format
 msgid "<i>Created on</i>: %1"
 msgstr "<i>Creat el</i>: %1"
 
-#: imgalleryplugin.cpp:179
+#: imgalleryplugin.cpp:188
 #, kde-format
 msgid "<i>Subfolders</i>:"
 msgstr "<i>Subcarpetes</i>:"
 
-#: imgalleryplugin.cpp:212
+#: imgalleryplugin.cpp:221
 #, kde-format
 msgid ""
 "Created thumbnail for: \n"
@@ -264,7 +264,7 @@ msgstr ""
 "Miniatura creada per a: \n"
 "%1"
 
-#: imgalleryplugin.cpp:215
+#: imgalleryplugin.cpp:224
 #, kde-format
 msgid ""
 "Creating thumbnail for: \n"
@@ -275,12 +275,12 @@ msgstr ""
 "%1\n"
 " ha fallat"
 
-#: imgalleryplugin.cpp:230
+#: imgalleryplugin.cpp:239
 #, kde-format
 msgid "KiB"
 msgstr "KiB"
 
-#: imgalleryplugin.cpp:344 imgalleryplugin.cpp:439
+#: imgalleryplugin.cpp:357 imgalleryplugin.cpp:457
 #, kde-format
 msgid "Could not open file: %1"
 msgstr "No es pot obrir el fitxer: %1"
@@ -290,10 +290,3 @@ msgstr "No es pot obrir el fitxer: %1"
 #, kde-format
 msgid "&Tools"
 msgstr "&Eines"
-
-#~ msgid "Image format f&or the thumbnails:"
-#~ msgstr "Format de la imatge &per a les miniatures:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure"
-#~ msgstr "Configuració"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2011-05-25 22:08+0200\n"
 "Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -30,67 +30,67 @@ msgstr "&Eszközök"
 msgid "Extra Toolbar"
 msgstr "Extra eszköztár"
 
-#: settingsplugin.cpp:42
+#: settingsplugin.cpp:43
 #, kde-format
 msgid "HTML Settings"
 msgstr "HTML-beállítások"
 
-#: settingsplugin.cpp:47
+#: settingsplugin.cpp:48
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"
 
-#: settingsplugin.cpp:52
+#: settingsplugin.cpp:53
 #, kde-format
 msgid "&Java"
 msgstr "&Java"
 
-#: settingsplugin.cpp:57
+#: settingsplugin.cpp:58
 #, kde-format
 msgid "&Cookies"
 msgstr "&Sütik"
 
-#: settingsplugin.cpp:62
+#: settingsplugin.cpp:63
 #, kde-format
 msgid "&Plugins"
 msgstr "&Bővítőmodulok"
 
-#: settingsplugin.cpp:67
+#: settingsplugin.cpp:68
 #, kde-format
 msgid "Autoload &Images"
 msgstr "A képek automatikus be&töltése"
 
-#: settingsplugin.cpp:74
+#: settingsplugin.cpp:75
 #, kde-format
 msgid "Enable Pro&xy"
 msgstr "A pro&xy-kezelés engedélyezése"
 
-#: settingsplugin.cpp:79
+#: settingsplugin.cpp:80
 #, kde-format
 msgid "Enable Cac&he"
 msgstr "A &gyorsítótár bekapcsolása"
 
-#: settingsplugin.cpp:84
+#: settingsplugin.cpp:85
 #, kde-format
 msgid "Cache Po&licy"
 msgstr "A gy&orsítótárkezelés beállításai"
 
-#: settingsplugin.cpp:86
+#: settingsplugin.cpp:87
 #, kde-format
 msgid "&Keep Cache in Sync"
 msgstr "A gy&orsítótár folyamatos frissítése"
 
-#: settingsplugin.cpp:87
+#: settingsplugin.cpp:88
 #, kde-format
 msgid "&Use Cache if Possible"
 msgstr "A gyorsítótár &használata, ha lehetséges"
 
-#: settingsplugin.cpp:88
+#: settingsplugin.cpp:89
 #, kde-format
 msgid "&Offline Browsing Mode"
 msgstr "Ka&pcsolat nélküli mód"
 
-#: settingsplugin.cpp:181
+#: settingsplugin.cpp:193
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cookies could not be enabled, because the cookie daemon could not be "
@@ -101,7 +101,7 @@ msgid ""
 msgstr ""
 "A sütik nem engedélyezhetők, mivel a sütiszolgáltatás nem indítható el."
 
-#: settingsplugin.cpp:183
+#: settingsplugin.cpp:195
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Cookies Disabled"

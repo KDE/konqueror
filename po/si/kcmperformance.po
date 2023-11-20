@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2009-12-29 19:54+0530\n"
 "Last-Translator: Danishka Navin <danishka@gmail.com>\n"
 "Language-Team: Sinhala <danishka@gmail.com>\n"
@@ -17,35 +17,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 0.3\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>KDE කාර්‍යක්‍ෂමතාව</h1> ඔබට KDE හී කාර්‍යක්‍ෂමතාව වැඩිදියුණු කිරීම සඳහා සැකසුම් මෙහිදී සිදුකල "
-"හැක."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "පද්ධතිය"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Konqueror කාර්‍යක්‍ෂමතාව</h1> මෙහිදී Konqueror හී කාර්‍යක්‍ෂමතාව වැඩිදියුණු කිරීම සඳහා "
-"සැකසුම් කිහිපයක් මෙහිදී ඉටුකල හැක. මෙහි දැනටමත් භාවිතයේ පවතින අවස්ථා සඳහා හා පූර්‍ණය කල "
-"අවස්ථා සඳහා වන අභිප්‍රේත මෙයට ඇතුළත් වේ."
 
 #: konqueror.cpp:24
 #, fuzzy, kde-format
@@ -152,6 +132,22 @@ msgid ""
 msgstr ""
 "මෙම චිකල්පය කලාතුරකින් විවිධ ගැටළු වලට හේතුවේ. වැඩිදුර තොරතුරු සඳහා මෙය කුමක්ද  (Shift+F1) "
 "සහාය ලබාගන්න."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDE කාර්‍යක්‍ෂමතාව</h1> ඔබට KDE හී කාර්‍යක්‍ෂමතාව වැඩිදියුණු කිරීම සඳහා සැකසුම් මෙහිදී "
+#~ "සිදුකල හැක."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Konqueror කාර්‍යක්‍ෂමතාව</h1> මෙහිදී Konqueror හී කාර්‍යක්‍ෂමතාව වැඩිදියුණු කිරීම සඳහා "
+#~ "සැකසුම් කිහිපයක් මෙහිදී ඉටුකල හැක. මෙහි දැනටමත් භාවිතයේ පවතින අවස්ථා සඳහා හා පූර්‍ණය කල "
+#~ "අවස්ථා සඳහා වන අභිප්‍රේත මෙයට ඇතුළත් වේ."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

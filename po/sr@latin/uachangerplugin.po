@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uachangerplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-05-11 02:43+0200\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2012-07-06 15:24+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -22,63 +22,19 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: uachangerplugin.cpp:56
-#, kde-format
+#: uachangerplugin.cpp:46
+#, fuzzy, kde-format
+#| msgid "Change Browser Identification"
+msgctxt "@title:menu Changes the browser identification"
 msgid "Change Browser Identification"
 msgstr "Promeni identifikaciju pregledača"
 
-#: uachangerplugin.cpp:121
-#, kde-format
-msgid "Other"
-msgstr "Drugo"
-
-# >> @item:inmenu
-#: uachangerplugin.cpp:149
-#, kde-format
-msgctxt "%1 = browser version (e.g. 2.0)"
-msgid "Version %1"
-msgstr "izdanje %1"
-
-# >> @item:inmenu
-#: uachangerplugin.cpp:152
-#, kde-format
-msgctxt "%1 = browser name, %2 = browser version (e.g. Firefox, 2.0)"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-# >> @item:inmenu
-#: uachangerplugin.cpp:156
-#, kde-format
-msgctxt "%1 = browser version, %2 = platform (e.g. 2.0, Windows XP)"
-msgid "Version %1 on %2"
-msgstr "izdanje %1 na %2|/|izdanje %1 na $[lok %2]"
-
-# >> @item:inmenu
-#: uachangerplugin.cpp:159
-#, kde-format
-msgctxt ""
-"%1 = browser name, %2 = browser version, %3 = platform (e.g. Firefox, 2.0, "
-"Windows XP)"
-msgid "%1 %2 on %3"
-msgstr "%1 %2 na %3|/|%1 %2 na $[lok %3]"
-
-#: uachangerplugin.cpp:212
-#, kde-format
+#: uachangerplugin.cpp:83
+#, fuzzy, kde-format
+#| msgid "Default Identification"
+msgctxt "@action:inmenu Uses the default browser identification"
 msgid "Default Identification"
 msgstr "Podrazumevana identifikacija"
-
-#. i18n("Reload Identifications"), this,
-#. SLOT(slotReloadDescriptions()),
-#. 0, ++count );
-#: uachangerplugin.cpp:240
-#, kde-format
-msgid "Apply to Entire Site"
-msgstr "Primeni na ceo sajt"
-
-#: uachangerplugin.cpp:246
-#, kde-format
-msgid "Configure..."
-msgstr "Podesi..."
 
 #. i18n: ectx: Menu (tools)
 #: uachangerplugin.rc:4
@@ -91,3 +47,34 @@ msgstr "&Alatke"
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Dodatna traka"
+
+#~ msgid "Other"
+#~ msgstr "Drugo"
+
+# >> @item:inmenu
+#~ msgctxt "%1 = browser version (e.g. 2.0)"
+#~ msgid "Version %1"
+#~ msgstr "izdanje %1"
+
+# >> @item:inmenu
+#~ msgctxt "%1 = browser name, %2 = browser version (e.g. Firefox, 2.0)"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+# >> @item:inmenu
+#~ msgctxt "%1 = browser version, %2 = platform (e.g. 2.0, Windows XP)"
+#~ msgid "Version %1 on %2"
+#~ msgstr "izdanje %1 na %2|/|izdanje %1 na $[lok %2]"
+
+# >> @item:inmenu
+#~ msgctxt ""
+#~ "%1 = browser name, %2 = browser version, %3 = platform (e.g. Firefox, "
+#~ "2.0, Windows XP)"
+#~ msgid "%1 %2 on %3"
+#~ msgstr "%1 %2 na %3|/|%1 %2 na $[lok %3]"
+
+#~ msgid "Apply to Entire Site"
+#~ msgstr "Primeni na ceo sajt"
+
+#~ msgid "Configure..."
+#~ msgstr "Podesi..."

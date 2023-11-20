@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2012-04-28 08:09-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_br@kde.org>\n"
@@ -21,26 +21,17 @@ msgstr ""
 "X-Generator: Lokalize 1.4\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
-"file manager here."
-msgstr ""
-"<h1>Comportamento do Konqueror</h1> Você pode configurar aqui como o "
-"Konqueror se comporta como gerenciador de arquivos."
-
-#: behaviour.cpp:40
+#: behaviour.cpp:38
 #, kde-format
 msgid "Misc Options"
 msgstr "Opções diversas"
 
-#: behaviour.cpp:49
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "&Abrir pastas em janelas separadas"
 
-#: behaviour.cpp:50
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -50,12 +41,12 @@ msgstr ""
 "você abrir uma pasta, em vez de exibir o conteúdo daquela pasta na janela "
 "atual."
 
-#: behaviour.cpp:73
+#: behaviour.cpp:71
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "Exibir a entrada 'Excluir' nos me&nus para ignorar a Lixeira"
 
-#: behaviour.cpp:77
+#: behaviour.cpp:75
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -66,6 +57,13 @@ msgstr ""
 "de trabalho e nos menus normais e de contexto do gerenciador de arquivos. "
 "Você sempre poderá excluir arquivos pressionando a tecla Shift, enquanto "
 "chama a opção 'Mover para a Lixeira'."
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>Comportamento do Konqueror</h1> Você pode configurar aqui como o "
+#~ "Konqueror se comporta como gerenciador de arquivos."
 
 #~ msgctxt "@title:window"
 #~ msgid "Menu Editor"

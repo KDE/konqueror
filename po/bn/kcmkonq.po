@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2005-12-25 00:41-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -15,26 +15,17 @@ msgstr ""
 "X-Generator: KBabel 1.9.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
-"file manager here."
-msgstr ""
-"<h1>কনকরার আচরণ</h1>এখানে আপনি ফাইল ম্যানেজার হিসাবে কনকরার-এর ব্যবহার নির্ধারণ "
-"করতে পারবেন"
-
-#: behaviour.cpp:40
+#: behaviour.cpp:38
 #, kde-format
 msgid "Misc Options"
 msgstr "বিবিধ অপশন"
 
-#: behaviour.cpp:49
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "ফোল্ডার আলাদা &উইণ্ডোয় খোলো"
 
-#: behaviour.cpp:50
+#: behaviour.cpp:48
 #, fuzzy, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -43,18 +34,25 @@ msgstr ""
 "এই অপশনটি সক্রিয় থাকলে কনকরার কোনো ফোল্ডার খোলার সময় একই উইণ্ডো ব্যবহার করার "
 "বদলে নতুন একটি উইণ্ডো খুলবে।"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:71
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr ""
 
-#: behaviour.cpp:77
+#: behaviour.cpp:75
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
 "and in the file manager's menus and context menus. You can always delete "
 "files by holding the Shift key while calling 'Move to Trash'."
 msgstr ""
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>কনকরার আচরণ</h1>এখানে আপনি ফাইল ম্যানেজার হিসাবে কনকরার-এর ব্যবহার "
+#~ "নির্ধারণ করতে পারবেন"
 
 #, fuzzy
 #~| msgid "Des&ktop path:"

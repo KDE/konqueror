@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2002-11-07 11:25+0200\n"
 "Last-Translator: WEB-Translator <http://kde.af.org.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -196,47 +196,47 @@ msgstr ""
 msgid "Color depth:"
 msgstr ""
 
-#: imgalleryplugin.cpp:52
+#: imgalleryplugin.cpp:54
 #, kde-format
 msgid "&Create Image Gallery..."
 msgstr "Skep Beeld Galery..."
 
-#: imgalleryplugin.cpp:62
+#: imgalleryplugin.cpp:64
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
 msgstr ""
 
-#: imgalleryplugin.cpp:68
+#: imgalleryplugin.cpp:70
 #, fuzzy, kde-format
 msgid "Creating an image gallery works only on local folders."
 msgstr "Te skep 'n beeld galery werk slegs op plaaslike gidse."
 
-#: imgalleryplugin.cpp:88
+#: imgalleryplugin.cpp:90
 #, kde-format
 msgid "Creating thumbnails"
 msgstr "Te skep duimnaelskets"
 
-#: imgalleryplugin.cpp:111 imgalleryplugin.cpp:275
+#: imgalleryplugin.cpp:113 imgalleryplugin.cpp:284
 #, kde-format
 msgid "Could not create folder: %1"
 msgstr ""
 
-#: imgalleryplugin.cpp:173
+#: imgalleryplugin.cpp:182
 #, kde-format
 msgid "<i>Number of images</i>: %1"
 msgstr "<i>Nommer van beelde</i>: %1"
 
-#: imgalleryplugin.cpp:174
+#: imgalleryplugin.cpp:183
 #, kde-format
 msgid "<i>Created on</i>: %1"
 msgstr "<i>Geskep op</i>: %1"
 
-#: imgalleryplugin.cpp:179
+#: imgalleryplugin.cpp:188
 #, fuzzy, kde-format
 msgid "<i>Subfolders</i>:"
 msgstr "<i>Sub-gidse</i>:"
 
-#: imgalleryplugin.cpp:212
+#: imgalleryplugin.cpp:221
 #, kde-format
 msgid ""
 "Created thumbnail for: \n"
@@ -245,7 +245,7 @@ msgstr ""
 "Geskep duimnael vir: \n"
 "%1"
 
-#: imgalleryplugin.cpp:215
+#: imgalleryplugin.cpp:224
 #, kde-format
 msgid ""
 "Creating thumbnail for: \n"
@@ -256,13 +256,13 @@ msgstr ""
 "%1\n"
 " gevaal"
 
-#: imgalleryplugin.cpp:230
+#: imgalleryplugin.cpp:239
 #, fuzzy, kde-format
 #| msgid "KB"
 msgid "KiB"
 msgstr "Kb"
 
-#: imgalleryplugin.cpp:344 imgalleryplugin.cpp:439
+#: imgalleryplugin.cpp:357 imgalleryplugin.cpp:457
 #, kde-format
 msgid "Could not open file: %1"
 msgstr ""

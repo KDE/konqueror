@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2017-03-23 20:39+0800\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
@@ -22,32 +22,15 @@ msgstr ""
 "X-Generator: Lokalize 2.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr "<h1>KDE Performanace</h1>在這裡，你可以設定組態來增加 KDE 的效能。"
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "系統"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Konqueror Performance</h1>您可以設定數種組態來增加 Konqueror 的效能。這些"
-"組態包括重用已執行實體和預先載入實體"
 
 #: konqueror.cpp:24
 #, kde-format
@@ -141,3 +124,16 @@ msgid ""
 msgstr ""
 "在一些罕見的情況下，這個選項會導致某些問題。詳細資料請查詢「這是什麼」(Shift"
 "+F1)。"
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr "<h1>KDE Performanace</h1>在這裡，你可以設定組態來增加 KDE 的效能。"
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Konqueror Performance</h1>您可以設定數種組態來增加 Konqueror 的效能。"
+#~ "這些組態包括重用已執行實體和預先載入實體"

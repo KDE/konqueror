@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2019-10-29 20:29+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -18,33 +18,15 @@ msgstr ""
 "X-Generator: Lokalize 19.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr "<h1>KDE jõudlus</h1> Siin saab seadistada KDE jõudsamalt töötama."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Süsteem"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Konquerori jõudlus</h1> Siin saab muuta üht-teist, mis paneb Konquerori "
-"jõudsamalt tööle, sealhulgas võimalused kasutada juba töötavaid protsesse ja "
-"laadida Konqueror juba enne käivitamist."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -145,6 +127,20 @@ msgid ""
 msgstr ""
 "See võib üksikjuhtudel tuua kaasa mitmesuguseid probleeme. Tutvu nendega "
 "'Mis see on?' abi vahendusel (Shift+F1)."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr "<h1>KDE jõudlus</h1> Siin saab seadistada KDE jõudsamalt töötama."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Konquerori jõudlus</h1> Siin saab muuta üht-teist, mis paneb "
+#~ "Konquerori jõudsamalt tööle, sealhulgas võimalused kasutada juba "
+#~ "töötavaid protsesse ja laadida Konqueror juba enne käivitamist."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

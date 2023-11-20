@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2016-12-13 17:35+0100\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -19,17 +19,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: bookmarks.cpp:92
-#, kde-format
-msgid ""
-"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
-msgstr ""
-"<h1>Meine Lesezeichen</h1><p>Mit diesem Modul können Sie die Lesezeichen-"
-"Seite einrichten.</p><p>Die Lesezeichen-Seite können Sie über die Adresse <a "
-"href=\"bookmarks:/\">Lesezeichen</a> aufrufen.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -165,6 +154,15 @@ msgstr "Pixmap-Zwischenspeicher leeren"
 #, kde-format
 msgid "&Clear Cache"
 msgstr "Zwischenspeicher &leeren"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "<h1>Meine Lesezeichen</h1><p>Mit diesem Modul können Sie die Lesezeichen-"
+#~ "Seite einrichten.</p><p>Die Lesezeichen-Seite können Sie über die Adresse "
+#~ "<a href=\"bookmarks:/\">Lesezeichen</a> aufrufen.</p>"
 
 #~ msgid ""
 #~ "<h1>Cache</h1><p>This module lets you configure your cache settings.</"

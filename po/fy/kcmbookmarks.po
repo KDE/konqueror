@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2009-06-21 13:33+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -17,17 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-
-#: bookmarks.cpp:92
-#, kde-format
-msgid ""
-"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
-msgstr ""
-"<h1>Myn blêdwizers</h1><p>Dizze module lit jo it blêdwizer thúsblêd ynstelle."
-"</p><p>It blêdwizer thúsblêd is tagonglik op <a href=\"bookmarks:/"
-"\">blêdwizers:/</a>.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -163,6 +152,15 @@ msgstr "Pixmap lytsûnthâld opskjinje"
 #, kde-format
 msgid "&Clear Cache"
 msgstr "Lytsûnthâld op&skjinje"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "<h1>Myn blêdwizers</h1><p>Dizze module lit jo it blêdwizer thúsblêd "
+#~ "ynstelle.</p><p>It blêdwizer thúsblêd is tagonglik op <a href="
+#~ "\"bookmarks:/\">blêdwizers:/</a>.</p>"
 
 #~ msgid ""
 #~ "<h1>Cache</h1><p>This module lets you configure your cache settings.</"

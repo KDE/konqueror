@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2017-05-16 06:37-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
@@ -20,32 +20,15 @@ msgstr ""
 "X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr "<h1>KDE ביצועי</h1> אתה יכול לשנות הגדרות ולשפר ביצועי KDE כאן."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "מערכת"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>התנהגות Konqueror</h1> כאן ניתן להגדיר כמה דברים שישפרו את ההתנהגות של "
-"Konqueror. אפשרויות אלו כוללות שימוש מחדש של מופעים וטעינה מראש של מופעים."
 
 #: konqueror.cpp:24
 #, fuzzy, kde-format
@@ -140,3 +123,17 @@ msgid ""
 msgstr ""
 "אפשרות זו במקרים קיצוניים עלולה לגרום לבעיות שונות. פנה אל עזרת \"מה זה"
 "\" (Shift + F1) לפרטים נוספים."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr "<h1>KDE ביצועי</h1> אתה יכול לשנות הגדרות ולשפר ביצועי KDE כאן."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>התנהגות Konqueror</h1> כאן ניתן להגדיר כמה דברים שישפרו את ההתנהגות "
+#~ "של Konqueror. אפשרויות אלו כוללות שימוש מחדש של מופעים וטעינה מראש של "
+#~ "מופעים."

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance 0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2009-08-17 14:35+0200\n"
 "Last-Translator: \n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -20,35 +20,15 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>KDE performanse</h1>Ovdje možete urediti postavke koje poboljšavaju KDE "
-"performanse."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Sustav"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Konqueror performanse</h1> Možete podesiti nekoliko postavki koje "
-"poboljšavaju performanse Konquerora. To uključuje opcije za ponovno "
-"korištenje instanci koje se izvode i za očuvanje unaprijed učitanih instanci."
 
 #: konqueror.cpp:24
 #, fuzzy, kde-format
@@ -165,6 +145,23 @@ msgid ""
 msgstr ""
 "Ova opcija u rijetkim slučajevima vodi do različitih problema. Posavjetujte "
 "se s pomoći Što Je Ovo (Shift+F1) za detalje."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDE performanse</h1>Ovdje možete urediti postavke koje poboljšavaju "
+#~ "KDE performanse."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Konqueror performanse</h1> Možete podesiti nekoliko postavki koje "
+#~ "poboljšavaju performanse Konquerora. To uključuje opcije za ponovno "
+#~ "korištenje instanci koje se izvode i za očuvanje unaprijed učitanih "
+#~ "instanci."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

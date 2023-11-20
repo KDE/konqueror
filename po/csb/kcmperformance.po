@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2009-01-08 18:55+0100\n"
 "Last-Translator: Mark Kwidzińsczi <mark@linuxcsb.org>\n"
 "Language-Team: Kashubian <i18n-csb@linuxcsb.org>\n"
@@ -19,34 +19,15 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2)\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>Spòrosc KDE</h1> Tuwò mòże skònfigùrowac elementë cësnące na spòrosc KDE."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Systema"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Spòrosc Konquerora</h1> Tuwò mòże skònfigùrowac elementë cësnącé na "
-"spòrosc Konquerora, m.jin. wëzwëskanié ju dzejającëc kòpiji ë preladowanié "
-"programë do pamiãcë."
 
 #: konqueror.cpp:24
 #, fuzzy, kde-format
@@ -159,6 +140,22 @@ msgid ""
 msgstr ""
 "Ta òptacëjô w gwësnëch apartnëch lëżnoscach mòże sprawiac wszelejaczé "
 "problemë. Proszã przeczëtac kòntekstową pòmòc (Shift+F1), abë pòznac detale."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>Spòrosc KDE</h1> Tuwò mòże skònfigùrowac elementë cësnące na spòrosc "
+#~ "KDE."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Spòrosc Konquerora</h1> Tuwò mòże skònfigùrowac elementë cësnącé na "
+#~ "spòrosc Konquerora, m.jin. wëzwëskanié ju dzejającëc kòpiji ë "
+#~ "preladowanié programë do pamiãcë."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

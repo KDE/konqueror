@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2008-06-29 16:30+0200\n"
 "Last-Translator: Jean Cayron <jean.cayron@gmail.com>\n"
 "Language-Team: Walloon <linux@walon.org>\n"
@@ -17,36 +17,15 @@ msgstr ""
 "X-Generator: LoKalize 0.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>Performances di KDE</h1> Vos ploz apontyî chal les tchuzes po -z amidrer "
-"les performances di KDE."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Sistinme"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Performances di Konqueror</h1> Vos ploz chal apontyî sacwantès tchuzes "
-"k' amidrèt les performances di Konqueror. I gn a dins cesses-lale des "
-"tchuzes po reployî des instances dedja enondêyes eyet po wårder des "
-"instances prétcherdjeyes."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -127,6 +106,23 @@ msgid ""
 msgstr ""
 "Cisse tchuze pout dins des råles cas moenner a sacwantès rujhes. Waitîz l' "
 "aidance Cwè çki c' est d' ça (MAJ+F1) po pus di detays."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>Performances di KDE</h1> Vos ploz apontyî chal les tchuzes po -z "
+#~ "amidrer les performances di KDE."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Performances di Konqueror</h1> Vos ploz chal apontyî sacwantès "
+#~ "tchuzes k' amidrèt les performances di Konqueror. I gn a dins cesses-lale "
+#~ "des tchuzes po reployî des instances dedja enondêyes eyet po wårder des "
+#~ "instances prétcherdjeyes."
 
 #, fuzzy
 #~| msgid "Maximum number of instances kept &preloaded:"

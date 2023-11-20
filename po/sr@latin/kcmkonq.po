@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-05-20 02:40+0200\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2011-06-27 14:11+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -22,26 +22,17 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: behaviour.cpp:48
-#, kde-format
-msgid ""
-"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
-"file manager here."
-msgstr ""
-"<h1>Ponašanje K‑osvajača</h1><p>Ovde možete podesiti kako će K‑osvajač "
-"raditi u ulozi menadžera fajlova.</p>"
-
-#: behaviour.cpp:52
+#: behaviour.cpp:38
 #, kde-format
 msgid "Misc Options"
 msgstr "Razne opcije"
 
-#: behaviour.cpp:61
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "Otvaraj fascikle u &novim prozorima"
 
-#: behaviour.cpp:62
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -50,12 +41,12 @@ msgstr ""
 "Ako je ova opcija uključena, K‑osvajača će svaku otvorenu fasciklu dati u "
 "novom prozoru, umesto da je prikaže u tekućem prozoru."
 
-#: behaviour.cpp:85
+#: behaviour.cpp:71
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "&Brisanje u menijima zaobilazi smeće"
 
-#: behaviour.cpp:89
+#: behaviour.cpp:75
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -67,34 +58,29 @@ msgstr ""
 "slučaju možete obrisati držanjem tastera Shift pri izvršenju naredbe "
 "„Premesti u smeće“."
 
-#: kcustommenueditor.cpp:95
-#, kde-format
-msgctxt "@title:window"
-msgid "Menu Editor"
-msgstr "Uređivač menija"
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>Ponašanje K‑osvajača</h1><p>Ovde možete podesiti kako će K‑osvajač "
+#~ "raditi u ulozi menadžera fajlova.</p>"
 
-#: kcustommenueditor.cpp:104
-#, kde-format
-msgid "Menu"
-msgstr "Meni"
+#~ msgctxt "@title:window"
+#~ msgid "Menu Editor"
+#~ msgstr "Uređivač menija"
+
+#~ msgid "Menu"
+#~ msgstr "Meni"
 
 # >> @action:button New item in menu
-#: kcustommenueditor.cpp:108
-#, kde-format
-msgid "New..."
-msgstr "Novo..."
+#~ msgid "New..."
+#~ msgstr "Novo..."
 
-#: kcustommenueditor.cpp:109
-#, kde-format
-msgid "Remove"
-msgstr "Ukloni"
+#~ msgid "Remove"
+#~ msgstr "Ukloni"
 
-#: kcustommenueditor.cpp:110
-#, kde-format
-msgid "Move Up"
-msgstr "Pomeri nagore"
+#~ msgid "Move Up"
+#~ msgstr "Pomeri nagore"
 
-#: kcustommenueditor.cpp:111
-#, kde-format
-msgid "Move Down"
-msgstr "Pomeri nadole"
+#~ msgid "Move Down"
+#~ msgstr "Pomeri nadole"

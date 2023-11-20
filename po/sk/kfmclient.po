@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2016-11-12 18:30+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -30,55 +30,55 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"
 
-#: kfmclient.cpp:56
+#: kfmclient.cpp:59
 #, kde-format
 msgid "kfmclient"
 msgstr "kfmclient"
 
-#: kfmclient.cpp:57
+#: kfmclient.cpp:60
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "KDE nástroj pre otváranie URL z príkazového riadku"
 
-#: kfmclient.cpp:65
+#: kfmclient.cpp:68
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr "Neinteraktívne použitie: žiadne správy"
 
-#: kfmclient.cpp:67
+#: kfmclient.cpp:70
 #, kde-format
 msgid "Show available commands"
 msgstr "Zobrazí dostupné príkazy"
 
-#: kfmclient.cpp:76
+#: kfmclient.cpp:79
 #, kde-format
 msgid ""
 "The mimetype of the URL. Allows Konqueror to determine in advance which "
 "component to use, making it start faster."
 msgstr ""
 
-#: kfmclient.cpp:77
+#: kfmclient.cpp:80
 #, kde-format
 msgctxt "the name for a the value of an option on the command line help"
 msgid "type"
 msgstr ""
 
-#: kfmclient.cpp:79
+#: kfmclient.cpp:82
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "Príkaz (viď --commands)"
 
-#: kfmclient.cpp:81
+#: kfmclient.cpp:84
 #, kde-format
 msgid "Arguments for command"
 msgstr "Argumenty pre príkaz"
 
-#: kfmclient.cpp:83
+#: kfmclient.cpp:86
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr "Súbory/URL otvorené aplikáciou budú odstránené po použití"
 
-#: kfmclient.cpp:91
+#: kfmclient.cpp:95
 #, kde-format
 msgid ""
 "\n"
@@ -87,7 +87,7 @@ msgstr ""
 "\n"
 "Syntax:\n"
 
-#: kfmclient.cpp:92
+#: kfmclient.cpp:96
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kfmclient openURL 'url' ['mimetype']\n"
@@ -111,7 +111,7 @@ msgstr ""
 "            #   Ak chýba 'url', použije sa $HOME.\n"
 "\n"
 
-#: kfmclient.cpp:97
+#: kfmclient.cpp:101
 #, fuzzy, kde-format
 #| msgid ""
 #| "            # If 'mimetype' is specified, it will be used to determine "
@@ -134,7 +134,7 @@ msgstr ""
 "            #   text/html pre WWW stránku, aby sa zobrazila rýchlejšie\n"
 "\n"
 
-#: kfmclient.cpp:103
+#: kfmclient.cpp:106
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -149,17 +149,17 @@ msgstr ""
 "            #  Konquerora na aktuálnej ploche, ak je k dispozícii.\n"
 "\n"
 
-#: kfmclient.cpp:280
+#: kfmclient.cpp:282
 #, kde-format
 msgid "Syntax error, not enough arguments\n"
 msgstr "Chyba syntaxe, nedostatok parametrov\n"
 
-#: kfmclient.cpp:284
+#: kfmclient.cpp:286
 #, kde-format
 msgid "Syntax error, too many arguments\n"
 msgstr "Chyba syntaxe, príliš veľa parametrov\n"
 
-#: kfmclient.cpp:339
+#: kfmclient.cpp:341
 #, kde-format
 msgid "Syntax error, unknown command '%1'\n"
 msgstr "Chyba syntaxe, neznámy príkaz '%1'\n"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2022-06-21 17:45+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -22,35 +22,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>Rendiment del KDE</h1> Aquí podeu configurar els valors que milloren el "
-"rendiment del KDE."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Sistema"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Rendiment del Konqueror</h1> Aquí podeu configurar diversos valors que "
-"milloren el rendiment del Konqueror. Aquests inclouen opcions per a tornar a "
-"usar instàncies ja en execució i per a conservar instàncies precarregades."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -154,3 +134,20 @@ msgid ""
 msgstr ""
 "Aquesta opció pot portar diversos problemes en rares ocasions. Consulteu els "
 "detalls a l'ajuda Què és això (Maj+F1)."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>Rendiment del KDE</h1> Aquí podeu configurar els valors que milloren "
+#~ "el rendiment del KDE."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Rendiment del Konqueror</h1> Aquí podeu configurar diversos valors "
+#~ "que milloren el rendiment del Konqueror. Aquests inclouen opcions per a "
+#~ "tornar a usar instàncies ja en execució i per a conservar instàncies "
+#~ "precarregades."

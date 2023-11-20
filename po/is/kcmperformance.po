@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2019-11-05 18:25+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
@@ -25,34 +25,15 @@ msgstr ""
 "\n"
 "\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>KDE Afköst</h1> Þú getur breytt stillingum sem auka afköst KDE hér."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Kerfi"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Afköst Konqueror</h1> Hér geturðu breytt stillingum sem auka afköst "
-"Konqueror.  Þar á meðal val um að endurnýta keyrandi tilvik og að halda "
-"tilvikum forhlöðnum."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -152,6 +133,21 @@ msgid ""
 msgstr ""
 "Þessi valkostur gæti í sjalgæfum tilvikum leitt til ýmissa vandamála. "
 "Skoðaðu \"Hvað er þetta\" hjálpina (Shift+F1) fyrir nánari upplýsingar."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDE Afköst</h1> Þú getur breytt stillingum sem auka afköst KDE hér."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Afköst Konqueror</h1> Hér geturðu breytt stillingum sem auka afköst "
+#~ "Konqueror.  Þar á meðal val um að endurnýta keyrandi tilvik og að halda "
+#~ "tilvikum forhlöðnum."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

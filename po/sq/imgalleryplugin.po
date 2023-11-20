@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konq-plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2009-08-08 01:47+0000\n"
 "Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -214,47 +214,47 @@ msgstr "&Vendos një thellësi të ndryshme ngjyre:"
 msgid "Color depth:"
 msgstr ""
 
-#: imgalleryplugin.cpp:52
+#: imgalleryplugin.cpp:54
 #, kde-format
 msgid "&Create Image Gallery..."
 msgstr "&Krijo Galeri Imazhesh:"
 
-#: imgalleryplugin.cpp:62
+#: imgalleryplugin.cpp:64
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
 msgstr "Nuk mund të krijoj plugin-in, ju lutemi të raportoni një gabim."
 
-#: imgalleryplugin.cpp:68
+#: imgalleryplugin.cpp:70
 #, kde-format
 msgid "Creating an image gallery works only on local folders."
 msgstr "Krijimi i një galerie të imazheve punon vetëm me dosjet lokale."
 
-#: imgalleryplugin.cpp:88
+#: imgalleryplugin.cpp:90
 #, kde-format
 msgid "Creating thumbnails"
 msgstr "Duke krijuar mini imazhet"
 
-#: imgalleryplugin.cpp:111 imgalleryplugin.cpp:275
+#: imgalleryplugin.cpp:113 imgalleryplugin.cpp:284
 #, kde-format
 msgid "Could not create folder: %1"
 msgstr "Nuk mund të krijoj skedarin: %1"
 
-#: imgalleryplugin.cpp:173
+#: imgalleryplugin.cpp:182
 #, kde-format
 msgid "<i>Number of images</i>: %1"
 msgstr "<i>Numri i imazheve</i>: %1"
 
-#: imgalleryplugin.cpp:174
+#: imgalleryplugin.cpp:183
 #, kde-format
 msgid "<i>Created on</i>: %1"
 msgstr "<i>Krijuar në</i>: %1"
 
-#: imgalleryplugin.cpp:179
+#: imgalleryplugin.cpp:188
 #, kde-format
 msgid "<i>Subfolders</i>:"
 msgstr "<i>Nëndosjet</i>:"
 
-#: imgalleryplugin.cpp:212
+#: imgalleryplugin.cpp:221
 #, kde-format
 msgid ""
 "Created thumbnail for: \n"
@@ -263,7 +263,7 @@ msgstr ""
 "U krijua mini imazhi për: \n"
 "%1"
 
-#: imgalleryplugin.cpp:215
+#: imgalleryplugin.cpp:224
 #, kde-format
 msgid ""
 "Creating thumbnail for: \n"
@@ -274,13 +274,13 @@ msgstr ""
 "%1\n"
 " dështoi"
 
-#: imgalleryplugin.cpp:230
+#: imgalleryplugin.cpp:239
 #, fuzzy, kde-format
 #| msgid "KB"
 msgid "KiB"
 msgstr "KB"
 
-#: imgalleryplugin.cpp:344 imgalleryplugin.cpp:439
+#: imgalleryplugin.cpp:357 imgalleryplugin.cpp:457
 #, kde-format
 msgid "Could not open file: %1"
 msgstr "Nuk mund të hapim skedarin: %1"

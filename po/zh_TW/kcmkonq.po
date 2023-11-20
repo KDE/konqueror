@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2011-05-12 11:20+0800\n"
 "Last-Translator: Franklin Weng <franklin@goodhorse.idv.tw>\n"
 "Language-Team: Chinese Traditional <zh-l10n@lists.linux.org.tw>\n"
@@ -24,25 +24,17 @@ msgstr ""
 "X-Generator: Lokalize 1.1\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
-"file manager here."
-msgstr ""
-"<h1>Konqueror 行為</h1> 您可以在這裡設定 Konqueror 做為檔案管理程式的行為。"
-
-#: behaviour.cpp:40
+#: behaviour.cpp:38
 #, kde-format
 msgid "Misc Options"
 msgstr "雜項選項"
 
-#: behaviour.cpp:49
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "在不同的視窗開啟目錄(&w)"
 
-#: behaviour.cpp:50
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -51,12 +43,12 @@ msgstr ""
 "如果核取此選項，當您開啟一個目錄時 Konqueror 會開啟一個新視窗，而不是在目前的"
 "視窗顯示目錄內容。"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:71
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "在選單中顯示「刪除」，將物件移到垃圾桶(&N)"
 
-#: behaviour.cpp:77
+#: behaviour.cpp:75
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -65,6 +57,13 @@ msgid ""
 msgstr ""
 "如果您希望「刪除」選單指令顯示在桌面和檔案管理程式的快顯選單與內文中請核取此"
 "項。您隨時可以按住 Shift 按鍵並選擇「移至垃圾桶」來刪除檔案。"
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>Konqueror 行為</h1> 您可以在這裡設定 Konqueror 做為檔案管理程式的行"
+#~ "為。"
 
 #~ msgctxt "@title:window"
 #~ msgid "Menu Editor"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
-"PO-Revision-Date: 2023-10-21 13:54\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"PO-Revision-Date: 2023-11-19 03:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -17,32 +17,15 @@ msgstr ""
 "X-Crowdin-File: /kf5-trunk/messages/konqueror/kcmperformance.pot\n"
 "X-Crowdin-File-ID: 5342\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr "<h1>KDE 性能</h1> 您可以在此配置提高 KDE 性能的选项。"
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "系统"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Konqueror 性能</h1> 您可以在此配置提高 Konqueror 性能的一些选项，包括是否"
-"利用已经在运行的实例，或者保留预加载实例的选项。"
 
 #: konqueror.cpp:24
 #, kde-format
@@ -134,3 +117,16 @@ msgid ""
 "This (Shift+F1) help for details."
 msgstr ""
 "此选项可能在极少数情况下导致各种问题。详情请查看“这是什么”帮助(Shift+F1)。"
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr "<h1>KDE 性能</h1> 您可以在此配置提高 KDE 性能的选项。"
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Konqueror 性能</h1> 您可以在此配置提高 Konqueror 性能的一些选项，包括"
+#~ "是否利用已经在运行的实例，或者保留预加载实例的选项。"

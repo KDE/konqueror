@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-08-01 09:38+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -24,61 +24,61 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: src/browseropenorsavequestion.cpp:89
+#: src/browseropenorsavequestion.cpp:88
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
 msgstr "Тип: %1"
 
-#: src/browseropenorsavequestion.cpp:97
+#: src/browseropenorsavequestion.cpp:96
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr "Запам’ятати дію для файлів цього типу"
 
-#: src/browseropenorsavequestion.cpp:149 src/browseropenorsavequestion.cpp:237
+#: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
 msgstr "В&ідкрити за допомогою %1"
 
-#: src/browseropenorsavequestion.cpp:213
+#: src/browseropenorsavequestion.cpp:212
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "Ві&дкрити за допомогою %1"
 
-#: src/browseropenorsavequestion.cpp:224 src/browseropenorsavequestion.cpp:318
+#: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
 msgstr "Відкрити «%1»?"
 
-#: src/browseropenorsavequestion.cpp:228
+#: src/browseropenorsavequestion.cpp:227
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "В&ідкрити за допомогою…"
 
-#: src/browseropenorsavequestion.cpp:246
+#: src/browseropenorsavequestion.cpp:245
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "В&ідкрити за допомогою"
 
-#: src/browseropenorsavequestion.cpp:315
+#: src/browseropenorsavequestion.cpp:314
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "&Відкрити"
 
-#: src/browseropenorsavequestion.cpp:339
+#: src/browseropenorsavequestion.cpp:338
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr "Назва: %1"
 
-#: src/browseropenorsavequestion.cpp:341
+#: src/browseropenorsavequestion.cpp:340
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
@@ -92,77 +92,77 @@ msgstr "Прийняти"
 msgid "Reject"
 msgstr "Відкинути"
 
-#: src/konq_popupmenu.cpp:220
+#: src/konq_popupmenu.cpp:219
 #, kde-format
 msgid "&Open"
 msgstr "&Відкрити"
 
-#: src/konq_popupmenu.cpp:243
+#: src/konq_popupmenu.cpp:242
 #, kde-format
 msgid "Create &Folder..."
 msgstr "Створити &теку..."
 
-#: src/konq_popupmenu.cpp:254
+#: src/konq_popupmenu.cpp:253
 #, kde-format
 msgid "&Restore"
 msgstr "&Відновити"
 
-#: src/konq_popupmenu.cpp:266
+#: src/konq_popupmenu.cpp:265
 #, kde-format
 msgid "Show Original Directory"
 msgstr "Показати початковий каталог"
 
-#: src/konq_popupmenu.cpp:266
+#: src/konq_popupmenu.cpp:265
 #, kde-format
 msgid "Show Original File"
 msgstr "Показати початковий файл"
 
-#: src/konq_popupmenu.cpp:301
+#: src/konq_popupmenu.cpp:300
 #, kde-format
 msgid "&Empty Trash Bin"
 msgstr "С&порожнити смітник"
 
-#: src/konq_popupmenu.cpp:313
+#: src/konq_popupmenu.cpp:312
 #, kde-format
 msgid "&Configure Trash Bin"
 msgstr "&Налаштувати смітник"
 
-#: src/konq_popupmenu.cpp:337
+#: src/konq_popupmenu.cpp:336
 #, kde-format
 msgid "&Bookmark This Page"
 msgstr "&Зробити закладку на цій сторінці"
 
-#: src/konq_popupmenu.cpp:339
+#: src/konq_popupmenu.cpp:338
 #, kde-format
 msgid "&Bookmark This Location"
 msgstr "&Зробити закладку на цій адресі"
 
-#: src/konq_popupmenu.cpp:342
+#: src/konq_popupmenu.cpp:341
 #, kde-format
 msgid "&Bookmark This Folder"
 msgstr "&Зробити закладку на цій теці"
 
-#: src/konq_popupmenu.cpp:344
+#: src/konq_popupmenu.cpp:343
 #, kde-format
 msgid "&Bookmark This Link"
 msgstr "&Зробити закладку на цьому посиланні"
 
-#: src/konq_popupmenu.cpp:346
+#: src/konq_popupmenu.cpp:345
 #, kde-format
 msgid "&Bookmark This File"
 msgstr "&Зробити закладку на цьому файлі"
 
-#: src/konq_popupmenu.cpp:385
+#: src/konq_popupmenu.cpp:384
 #, kde-format
 msgid "Preview In"
 msgstr "Перегляд в"
 
-#: src/konq_popupmenu.cpp:396
+#: src/konq_popupmenu.cpp:395
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Викликати термінал тут"
 
-#: src/konq_popupmenu.cpp:432
+#: src/konq_popupmenu.cpp:431
 #, kde-format
 msgid "&Properties"
 msgstr "В&ластивості"

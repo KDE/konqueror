@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-05-20 02:40+0200\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2012-07-06 15:24+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -23,116 +23,111 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: imgallerydialog.cpp:53
+#: imgallerydialog.cpp:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Image Gallery"
 msgstr "Стварање галерије слика"
 
-#: imgallerydialog.cpp:54
+#: imgallerydialog.cpp:38
 #, kde-format
 msgid "Create"
 msgstr "Направи"
 
-#: imgallerydialog.cpp:64 imgallerydialog.cpp:104
+#: imgallerydialog.cpp:48 imgallerydialog.cpp:84
 #, kde-format
 msgid "Image Gallery for %1"
 msgstr "Галерија слика за %1"
 
-#: imgallerydialog.cpp:92
+#: imgallerydialog.cpp:76
 #, kde-format
 msgid "Look"
 msgstr "Изглед"
 
-#: imgallerydialog.cpp:93
+#: imgallerydialog.cpp:77
 #, kde-format
 msgid "Page Look"
 msgstr "Изглед странице"
 
-#: imgallerydialog.cpp:101
+#: imgallerydialog.cpp:85
 #, kde-format
 msgid "&Page title:"
 msgstr "&Наслов странице:"
 
-#: imgallerydialog.cpp:111
+#: imgallerydialog.cpp:93
 #, kde-format
 msgid "I&mages per row:"
 msgstr "&Сликâ по врсти:"
 
-#: imgallerydialog.cpp:119
+#: imgallerydialog.cpp:95
 #, kde-format
 msgid "Show image file &name"
 msgstr "Прикажи &име фајла слике"
 
-#: imgallerydialog.cpp:123
+#: imgallerydialog.cpp:99
 #, kde-format
 msgid "Show image file &size"
 msgstr "Прикажи &величину фајла слике"
 
-#: imgallerydialog.cpp:127
+#: imgallerydialog.cpp:103
 #, kde-format
 msgid "Show image &dimensions"
 msgstr "Прикажи &димензије слике"
 
-#: imgallerydialog.cpp:140
+#: imgallerydialog.cpp:114
 #, kde-format
 msgid "Fon&t name:"
 msgstr "Име &фонта:"
 
-#: imgallerydialog.cpp:155
+#: imgallerydialog.cpp:122
 #, kde-format
 msgid "Font si&ze:"
 msgstr "Ве&личина фонта:"
 
-#: imgallerydialog.cpp:167
+#: imgallerydialog.cpp:126
 #, kde-format
 msgid "&Foreground color:"
 msgstr "&Боја исписа:"
 
-#: imgallerydialog.cpp:179
+#: imgallerydialog.cpp:130
 #, kde-format
 msgid "&Background color:"
 msgstr "&Боја позадине:"
 
-#: imgallerydialog.cpp:191 imgallerydialog.cpp:192
+#: imgallerydialog.cpp:136 imgallerydialog.cpp:137
 #, kde-format
 msgid "Folders"
 msgstr "Фасцикле"
 
-#: imgallerydialog.cpp:201
+#: imgallerydialog.cpp:145
 #, kde-format
 msgid "&Save to HTML file:"
 msgstr "&Сачувај у ХТМЛ фајл:"
 
-#: imgallerydialog.cpp:204
+#: imgallerydialog.cpp:147
 #, kde-format
 msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
 msgstr "<p>Име ХТМЛ фајла у коме ће се сачувати ова галерија.</p>"
 
-#: imgallerydialog.cpp:215
+#: imgallerydialog.cpp:150
 #, kde-format
 msgid "&Recurse subfolders"
 msgstr "&Рекурзивно кроз потфасцикле"
 
-#: imgallerydialog.cpp:217
+#: imgallerydialog.cpp:152
 #, kde-format
 msgid ""
 "<p>Whether subfolders should be included for the image gallery creation or "
 "not.</p>"
 msgstr "<p>Треба ли укључити потфасцикле при прављењу галерије слика.</p>"
 
-#: imgallerydialog.cpp:225
-#, kde-format
-msgid "Rec&ursion depth:"
-msgstr "&Дубина рекурзије:"
-
 # >> @item
-#: imgallerydialog.cpp:227
+#: imgallerydialog.cpp:163
 #, kde-format
 msgid "Endless"
 msgstr "бесконачно"
 
-#: imgallerydialog.cpp:230
+#: imgallerydialog.cpp:165
 #, kde-format
 msgid ""
 "<p>You can limit the number of folders the image gallery creator will "
@@ -141,12 +136,17 @@ msgstr ""
 "<p>Број фасцикли кроз које ће стваралац галерије слика проћи можете "
 "ограничити постављањем горње границе за дубину рекурзије.</p>"
 
-#: imgallerydialog.cpp:241
+#: imgallerydialog.cpp:168
+#, kde-format
+msgid "Rec&ursion depth:"
+msgstr "&Дубина рекурзије:"
+
+#: imgallerydialog.cpp:172
 #, kde-format
 msgid "Copy or&iginal files"
 msgstr "Копирај &изворне фајлове"
 
-#: imgallerydialog.cpp:244
+#: imgallerydialog.cpp:174
 #, kde-format
 msgid ""
 "<p>This makes a copy of all images and the gallery will refer to these "
@@ -155,13 +155,13 @@ msgstr ""
 "<p>Прави копију свих слика, и галерија ће се позивати на те копије умјесто "
 "на изворне слике.</p>"
 
-#: imgallerydialog.cpp:249
+#: imgallerydialog.cpp:179
 #, kde-format
 msgid "Use &comment file"
 msgstr "Употреби фајл са &коментарима"
 
 # rewrite-msgid: /subtitle/caption/
-#: imgallerydialog.cpp:253
+#: imgallerydialog.cpp:181
 #, kde-format
 msgid ""
 "<p>If you enable this option you can specify a comment file which will be "
@@ -172,15 +172,10 @@ msgstr ""
 "коришћен за генерисање натписа за слике.</p><p>За детаље о формату фајла "
 "погледајте „Шта је ово?“ испод.</p>"
 
-#: imgallerydialog.cpp:260
-#, kde-format
-msgid "Comments &file:"
-msgstr "&Фајл са коментарима:"
-
 # literal-segment: FILENAME
 # literal-segment: ИМЕФАЈЛА
 # rewrite-msgid: /subtitle/caption/
-#: imgallerydialog.cpp:263
+#: imgallerydialog.cpp:190
 #, kde-format
 msgid ""
 "<p>You can specify the name of the comment file here. The comment file "
@@ -192,67 +187,77 @@ msgstr ""
 "слике. Формат овог фајла је:</p><p>ИМЕФАЈЛА1: <br />опис<br /><br /"
 ">ИМЕФАЈЛА2:<br />опис<br /><br />итд.</p>"
 
-#: imgallerydialog.cpp:294 imgallerydialog.cpp:295
+#: imgallerydialog.cpp:200
+#, kde-format
+msgid "Comments &file:"
+msgstr "&Фајл са коментарима:"
+
+#: imgallerydialog.cpp:210 imgallerydialog.cpp:211
 #, kde-format
 msgid "Thumbnails"
 msgstr "Сличице"
 
-#: imgallerydialog.cpp:314
+#: imgallerydialog.cpp:224
 #, kde-format
-msgid "Image format f&or the thumbnails:"
-msgstr "&Формат сличица:"
+msgid "Image f&ormat:"
+msgstr ""
 
-#: imgallerydialog.cpp:322
+#: imgallerydialog.cpp:232
 #, kde-format
 msgid "Thumbnail size:"
 msgstr "Величина сличица:"
 
-#: imgallerydialog.cpp:334
+#: imgallerydialog.cpp:235
 #, kde-format
 msgid "&Set different color depth:"
 msgstr "&Различита дубина боја:"
 
-#: imgalleryplugin.cpp:64
+#: imgallerydialog.cpp:246
+#, kde-format
+msgid "Color depth:"
+msgstr ""
+
+#: imgalleryplugin.cpp:54
 #, kde-format
 msgid "&Create Image Gallery..."
 msgstr "&Направи галерију слика..."
 
-#: imgalleryplugin.cpp:74
+#: imgalleryplugin.cpp:64
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
 msgstr "Не могу да направим прикључак, пријавите ово као грешку."
 
-#: imgalleryplugin.cpp:80
+#: imgalleryplugin.cpp:70
 #, kde-format
 msgid "Creating an image gallery works only on local folders."
 msgstr "Стварање галерије слика ради само над локалним фасциклама."
 
-#: imgalleryplugin.cpp:100
+#: imgalleryplugin.cpp:90
 #, kde-format
 msgid "Creating thumbnails"
 msgstr "Правим сличице..."
 
-#: imgalleryplugin.cpp:123 imgalleryplugin.cpp:290
+#: imgalleryplugin.cpp:113 imgalleryplugin.cpp:284
 #, kde-format
 msgid "Could not create folder: %1"
 msgstr "Не могу да направим фасциклу: %1"
 
-#: imgalleryplugin.cpp:185
+#: imgalleryplugin.cpp:182
 #, kde-format
 msgid "<i>Number of images</i>: %1"
 msgstr "<i>Број слика</i>: %1"
 
-#: imgalleryplugin.cpp:186
+#: imgalleryplugin.cpp:183
 #, kde-format
 msgid "<i>Created on</i>: %1"
 msgstr "<i>Направљено</i>: %1|/|<i>Направљено</i>: $[на-ријеч %1 ген]"
 
-#: imgalleryplugin.cpp:191
+#: imgalleryplugin.cpp:188
 #, kde-format
 msgid "<i>Subfolders</i>:"
 msgstr "<i>Потфасцикле</i>:"
 
-#: imgalleryplugin.cpp:224
+#: imgalleryplugin.cpp:221
 #, kde-format
 msgid ""
 "Created thumbnail for: \n"
@@ -261,7 +266,7 @@ msgstr ""
 "Сличица направљена за:\n"
 "%1"
 
-#: imgalleryplugin.cpp:227
+#: imgalleryplugin.cpp:224
 #, kde-format
 msgid ""
 "Creating thumbnail for: \n"
@@ -272,18 +277,21 @@ msgstr ""
 "%1\n"
 "није успјело."
 
-#: imgalleryplugin.cpp:245
+#: imgalleryplugin.cpp:239
 #, kde-format
 msgid "KiB"
 msgstr "KiB"
 
-#: imgalleryplugin.cpp:352 imgalleryplugin.cpp:447
+#: imgalleryplugin.cpp:357 imgalleryplugin.cpp:457
 #, kde-format
 msgid "Could not open file: %1"
 msgstr "Не могу да отворим фајл: %1"
 
 #. i18n: ectx: Menu (tools)
-#: kimgalleryplugin.rc:4
+#: kimgallery.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "&Алатке"
+
+#~ msgid "Image format f&or the thumbnails:"
+#~ msgstr "&Формат сличица:"

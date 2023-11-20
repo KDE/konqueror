@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2010-06-08 14:00+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -18,35 +18,15 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>ដំណើរ​ការ​របស់​ KDE</h1> អ្នក​អាច​កំណត់​រចនាសម្ព័ន្ធ​ការ​កំណត់​ដែល​ធ្វើ​ឲ្យ​ដំណើរ​ការ​របស់ KDE កាន់​តែ​"
-"ប្រសើរ​នៅ​ទីនេះ ។​"
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "ប្រព័ន្ធ"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>ដំណើរ​ការរបស់ Konqueror</h1> អ្នក​អាច​កំណត់​រចនាសម្ព័ន្ធ​ការ​កំណត់​ជាច្រើន​ដែល​ធ្វើ​ឲ្យ​ដំណើរ​ការ​"
-"របស់ Konqueror កាន់​តែ​ប្រសើរ​នៅ​ទីនេះ ។ ទាំងនេះ​រួម​បញ្ចូល​ជម្រើស​សម្រាប់​ប្រើ​វត្ថុ​ដែល​រត់​រួច​ឡើង​វិញ និង​"
-"សម្រាប់​រក្សា​ទុក​វត្ថុ​ដែល​បាន​បើក​ជាមុន ។​"
 
 #: konqueror.cpp:24
 #, fuzzy, kde-format
@@ -165,6 +145,22 @@ msgid ""
 msgstr ""
 "ជម្រើស​នេះ​ក្នុង​ករណី​កំរ​នាំ​ឲ្យ​មាន​បញ្ហា​ផ្សេងៗ ។ ពិគ្រោះ​ជាមួយ​ជំនួយ នេះ​ជា​អ្វី (ប្ដូរ (Shift+F1)) "
 "សម្រាប់​លម្អិត ។"
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>ដំណើរ​ការ​របស់​ KDE</h1> អ្នក​អាច​កំណត់​រចនាសម្ព័ន្ធ​ការ​កំណត់​ដែល​ធ្វើ​ឲ្យ​ដំណើរ​ការ​របស់ KDE កាន់​"
+#~ "តែ​ប្រសើរ​នៅ​ទីនេះ ។​"
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>ដំណើរ​ការរបស់ Konqueror</h1> អ្នក​អាច​កំណត់​រចនាសម្ព័ន្ធ​ការ​កំណត់​ជាច្រើន​ដែល​ធ្វើ​ឲ្យ​ដំណើរ​"
+#~ "ការ​របស់ Konqueror កាន់​តែ​ប្រសើរ​នៅ​ទីនេះ ។ ទាំងនេះ​រួម​បញ្ចូល​ជម្រើស​សម្រាប់​ប្រើ​វត្ថុ​ដែល​រត់​រួច​ឡើង​"
+#~ "វិញ និង​សម្រាប់​រក្សា​ទុក​វត្ថុ​ដែល​បាន​បើក​ជាមុន ។​"
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

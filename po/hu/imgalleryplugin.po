@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2011-07-29 00:08+0200\n"
 "Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -211,48 +211,48 @@ msgstr "A színmé&lység előírása:"
 msgid "Color depth:"
 msgstr ""
 
-#: imgalleryplugin.cpp:52
+#: imgalleryplugin.cpp:54
 #, kde-format
 msgid "&Create Image Gallery..."
 msgstr "Képgyűjtemény &létrehozása…"
 
-#: imgalleryplugin.cpp:62
+#: imgalleryplugin.cpp:64
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
 msgstr ""
 "A modul létrehozása nem sikerült, kérjük jelezze ezt a hibát a fejlesztőknek."
 
-#: imgalleryplugin.cpp:68
+#: imgalleryplugin.cpp:70
 #, kde-format
 msgid "Creating an image gallery works only on local folders."
 msgstr "Csak helyi könyvtárakban lehet képgyűjteményt létrehozni."
 
-#: imgalleryplugin.cpp:88
+#: imgalleryplugin.cpp:90
 #, kde-format
 msgid "Creating thumbnails"
 msgstr "A gyorsnézeti képek létrehozása"
 
-#: imgalleryplugin.cpp:111 imgalleryplugin.cpp:275
+#: imgalleryplugin.cpp:113 imgalleryplugin.cpp:284
 #, kde-format
 msgid "Could not create folder: %1"
 msgstr "A(z) %1 könyvtár nem hozható létre"
 
-#: imgalleryplugin.cpp:173
+#: imgalleryplugin.cpp:182
 #, kde-format
 msgid "<i>Number of images</i>: %1"
 msgstr "<i>A képek száma</i>: %1"
 
-#: imgalleryplugin.cpp:174
+#: imgalleryplugin.cpp:183
 #, kde-format
 msgid "<i>Created on</i>: %1"
 msgstr "<i>Létrehozva</i>: %1"
 
-#: imgalleryplugin.cpp:179
+#: imgalleryplugin.cpp:188
 #, kde-format
 msgid "<i>Subfolders</i>:"
 msgstr "<i>Alkönyvtárak</i>:"
 
-#: imgalleryplugin.cpp:212
+#: imgalleryplugin.cpp:221
 #, kde-format
 msgid ""
 "Created thumbnail for: \n"
@@ -261,7 +261,7 @@ msgstr ""
 "Gyorsnézeti kép létrehozva: \n"
 "%1"
 
-#: imgalleryplugin.cpp:215
+#: imgalleryplugin.cpp:224
 #, kde-format
 msgid ""
 "Creating thumbnail for: \n"
@@ -272,12 +272,12 @@ msgstr ""
 "%1\n"
 " "
 
-#: imgalleryplugin.cpp:230
+#: imgalleryplugin.cpp:239
 #, kde-format
 msgid "KiB"
 msgstr "KiB"
 
-#: imgalleryplugin.cpp:344 imgalleryplugin.cpp:439
+#: imgalleryplugin.cpp:357 imgalleryplugin.cpp:457
 #, kde-format
 msgid "Could not open file: %1"
 msgstr "A(z) %1 fájl nem nyitható meg"

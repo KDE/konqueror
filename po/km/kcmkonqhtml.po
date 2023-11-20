@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2012-06-11 09:39+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -18,168 +18,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: WordForge 0.8 RC1\n"
 "X-Language: km-CM\n"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
-#: advancedTabOptions.ui:21
-#, kde-format
-msgid ""
-"This will open a new tab instead of a new window in various situations, such "
-"as choosing a link or a folder with the middle mouse button."
-msgstr ""
-"ការ​នេះ​នឹង​បើក​តំណ​ក្នុង​ផ្ទាំង​ថ្មី​មួយ ដើម្បី​ជំនួស​ឲ្យ​បង្អួច​ថ្មី​នៅ​ក្នុង​ស្ថានភាព​ផ្សេងៗ​ដូចជា ជ្រើស​តំណ ឬ​ថត​មួយ ​"
-"ដោយ​ប្រើ​ប៊ូតុង​កណ្ដុរ​កណ្ដាល ។"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
-#: advancedTabOptions.ui:24
-#, kde-format
-msgid "Open &links in new tab instead of in new window"
-msgstr "បើក​តំណ​ក្នុង​ផ្ទាំង​ថ្មី ជំនួស​ឲ្យ​បង្អួច​ថ្មី"
-
-#  i18n: file advancedTabOptions.ui line 104
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
-#: advancedTabOptions.ui:31
-#, kde-format
-msgid ""
-"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
-"new window."
-msgstr "ថា​តើ JavaScript លេច​ឡើង បើ​អនុញ្ញាត គួរ​តែ​បើក​ក្នុង​ផ្ទាំង​ថ្មី ឬ​ក្នុង​បង្អួច​ថ្មី ។"
-
-#  i18n: file advancedTabOptions.ui line 101
-#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
-#: advancedTabOptions.ui:34
-#, kde-format
-msgid "Open pop&ups in new tab instead of in new window"
-msgstr "បើក​បង្អួច​លេច​ឡើង​ក្នុង​ផ្ទាំង​ថ្មី ជំនួស​ឲ្យ​បង្អួច​ថ្មី "
-
-#  i18n: file advancedTabOptions.ui line 126
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
-#: advancedTabOptions.ui:41
-#, kde-format
-msgid ""
-"When you click a URL in another KDE program or call kfmclient to open a URL, "
-"the current desktop will be searched for a non-minimized Konqueror and, if "
-"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
-"window will be opened with the required URL."
-msgstr ""
-"ពេល​អ្នក​ចុច URL ក្នុង​កម្មវិធី KDE មួយ​ផ្សេងទៀត​ ឬ​ហៅ​កម្មវិធី kfmclient ដើម្បី​បើក URL ផ្ទៃតុ​"
-"បច្ចុប្បន្ន​នឹង​ត្រូវ​បាន​ស្វែង​រក​សម្រាប់ Konqueror ដែល​មិន​បាន​បង្រួម​អប្បបរមា បន្ទាប់​មក URL ត្រូវ​បាន​"
-"បើក​ជា​ផ្ទាំង​ថ្មី​មួយ​ខាង​ក្នុង​វា (បើ​រក​ឃើញ)។ មិន​ដូច្នោះ​ទេ បង្អួច Konqueror ថ្មី​មួយ​នឹង​ត្រូវ​បើក​ជាមួយ​នឹង "
-"URL ដែល​វា​ទាមទារ ។"
-
-#  i18n: file advancedTabOptions.ui line 123
-#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
-#: advancedTabOptions.ui:44
-#, kde-format
-msgid "Open as tab in existing Konqueror when URL is called externally"
-msgstr "បើក​ជា​ផ្ទាំង​ក្នុង Konqueror ដែល​មាន​ស្រាប់ ពេល URL ត្រូវ​បាន​ហៅ​ពី​ខាង​ក្រៅ"
-
-#  i18n: file advancedTabOptions.ui line 60
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
-#: advancedTabOptions.ui:51
-#, kde-format
-msgid ""
-"This will open a new tab in the background, instead of in the foreground."
-msgstr "ការ​​នេះ​នឹង​បើក​ផ្ទាំង​ថ្មី​មួយ​ក្នុង​ផ្ទៃ​ខាង​ក្រោយ ជំនួស​ឲ្យ​ផ្ទៃ​ខាង​មុខ ។"
-
-#  i18n: file advancedTabOptions.ui line 57
-#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
-#: advancedTabOptions.ui:54
-#, kde-format
-msgid "O&pen new tabs in the background"
-msgstr "បើក​ផ្ទាំង​ថ្មី​ក្នុង​ផ្ទៃ​ខាង​ក្រោយ"
-
-#  i18n: file advancedTabOptions.ui line 71
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
-#: advancedTabOptions.ui:61
-#, kde-format
-msgid ""
-"This will open a new tab opened from a page after the current tab, instead "
-"of after the last tab."
-msgstr "ការ​នេះ​នឹង​បើក​ផ្ទាំង​ថ្មី​ដែល​បាន​បើក​ពី​ទំព័រ​ បន្ទាប់​ពី​បើក​ផ្ទាំង​បច្ចុប្បន្ន ជំនួស​ឲ្យ​ផ្ទាំង​ចុង​ក្រោយ ។"
-
-#  i18n: file advancedTabOptions.ui line 68
-#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
-#: advancedTabOptions.ui:64
-#, kde-format
-msgid "Open &new tab after current tab"
-msgstr "បើក​ផ្ទាំង​ថ្មី បន្ទាប់​ពី​បើក​ផ្ទាំង​បច្ចុប្បន្ន"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
-#: advancedTabOptions.ui:71
-#, kde-format
-msgid ""
-"This will display the tab bar only if there are two or more tabs. Otherwise "
-"it will always be displayed."
-msgstr ""
-"វានឹង​បង្ហាញ​របារ​ផ្ទាំង តែ​ក្នុង​ករណីមាន​ផ្ទាំង​ពីរ ឬ ច្រើន​ ។ បើ​មិន​ដូច្នោះ​ទេ វា​នឹង​បង្ហាញ​ជានិច្ច ។"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
-#: advancedTabOptions.ui:74
-#, kde-format
-msgid "Hide the tab bar when only one tab is open"
-msgstr "លាក់​របារ​ផ្ទាំង ពេល​ដែល​មាន​តែ​ផ្ទាំង​មួយ​បើក"
-
-#  i18n: file advancedTabOptions.ui line 93
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
-#: advancedTabOptions.ui:81
-#, kde-format
-msgid "This will display close buttons inside each tab."
-msgstr "វា​នឹង​បង្ហាញ​ប៊ូតុង​បិទ​នៅ​​ខាង​ក្នុង​ផ្ទាំង​នីមួយៗ ។"
-
-#  i18n: file advancedTabOptions.ui line 90
-#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
-#: advancedTabOptions.ui:84
-#, kde-format
-msgid "&Show close button on tabs"
-msgstr "បង្ហាញ​ប៊ូតុង​បិទ នៅ​លើ​ផ្ទាំង"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
-#: advancedTabOptions.ui:91
-#, kde-format
-msgid ""
-"When you click on a tab using the middle mouse button or mouse wheel, it "
-"will close that tab."
-msgstr "នៅ​ពេល​​អ្នក​ចុច​លើ​ផ្ទាំង​ដោយ​ប្រើ​ប៊ូតុង​កណ្ដុរ​កណ្ដាល ឬ​កង់​កណ្ដុរ វា​នឹង​បិទ​ផ្ទាំង​នោះ ។"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
-#: advancedTabOptions.ui:94
-#, kde-format
-msgid "Middle-click on a tab to close it"
-msgstr "ចុច​​ប៊ូតុង​កណ្ដាល​នៅ​លើ​ផ្ទាំង​ដើម្បី​បិទ​វា"
-
-#  i18n: file advancedTabOptions.ui line 82
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
-#: advancedTabOptions.ui:101
-#, kde-format
-msgid ""
-"This will ask you whether you are sure you want to close a window when it "
-"has multiple tabs opened in it."
-msgstr "ការ​​នេះ​នឹង​សួរ​អ្នក ថា​តើ​អ្នក​ពិតជា​ចង់​បិទ​បង្អួច​ ពេល​ដែល​មាន​ផ្ទាំង​ច្រើន​បើក​ក្នុង​បង្អួច​តែ​មួយ ។"
-
-#  i18n: file advancedTabOptions.ui line 79
-#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
-#: advancedTabOptions.ui:104
-#, kde-format
-msgid "Confirm &when closing windows with multiple tabs"
-msgstr "អះអាង ពេល​បិទ​បង្អួច​ដែល​មាន​ផ្ទាំង​ច្រើន"
-
-#  i18n: file advancedTabOptions.ui line 115
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: advancedTabOptions.ui:111
-#, kde-format
-msgid ""
-"When checking this the previous used or opened tab will be activated when "
-"you close the current active tab instead of the one right to the current tab."
-msgstr ""
-"ពេល​ធីក ផ្ទាំង​ដែល​បាន​ប្រើ​ពីមុន ឬ​ផ្ទាំង​ដែល​បាន​បើក​រួច​ហើយ​ក៏​នឹង​ត្រូវ​បាន​ធ្វើ​​ឲ្យ​សកម្ម​ ពេល​អ្នក​បិទ​ផ្ទាំង​សកម្ម​"
-"បច្ចុប្បន្ន​ ជំនួស​ផ្ទាំង​ត្រឹមត្រូវ​មួយ​ជា​ផ្ទាំង​បច្ចុប្បន្ន ។"
-
-#  i18n: file advancedTabOptions.ui line 112
-#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: advancedTabOptions.ui:114
-#, kde-format
-msgid "Activate previously used tab when closing the current tab"
-msgstr "ធ្វើ​ឲ្យ​ផ្ទាំង​ដែល​បាន​ប្រើ​ពី​មុន​សកម្ម ពេល​បិទ​ផ្ទាំង​បច្ចុប្បន្ន"
 
 #: appearance.cpp:39
 #, kde-format
@@ -200,17 +38,17 @@ msgid "Stylesheets"
 msgstr "សន្លឹក​រចនាប័ទ្ម"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:48 css/csscustom.ui:296
+#: appearance.cpp:52 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "រូបភាព"
 
-#: appearance.cpp:52
+#: appearance.cpp:56
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "ផ្ទុក​រូបភាព​ស្វ័យប្រវត្តិ​"
 
-#: appearance.cpp:53
+#: appearance.cpp:57
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -224,12 +62,12 @@ msgstr ""
 "ដោយ​ចុច​លើ​ប៊ូតុង​រូបភាព ។<br /> បើ​​អ្នក​មាន​ការ​តភ្ជាប់​បណ្ដាញ​យឺត នោះ​អ្នក​ប្រហែល​ជា​ចង់​ធីក​ប្រអប់​នេះ ដើម្បី​"
 "ជួយ​បង្កើន​ល្បឿន​ការ​រុករក​របស់​អ្នក ។</html>"
 
-#: appearance.cpp:63
+#: appearance.cpp:67
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "ដាក់​​ស៊ុម​ជុំវិញ​រូបភាព​ដែល​មិន​ទាន់​បាន​ផ្ទុក​ពេញលេញ"
 
-#: appearance.cpp:64
+#: appearance.cpp:68
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -241,24 +79,24 @@ msgstr ""
 "ពេញលេញ​នៅ​ឡើយ​ក្នុង​ទំព័រ​បណ្ដាញ ។ <br />ពិសេស​បើ​អ្នក​មាន​ការ​តភ្ជាប់​បណ្ដាញ​យឺត ​មួយ​នោះ​អ្នក​ប្រហែល​ជា​ចង់​"
 "ធីក​ប្រអប់​នេះ ដើម្បី​បង្កើន​ការ​​រុករក​របស់​អ្នក ។</html>"
 
-#: appearance.cpp:74
+#: appearance.cpp:78
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "បាន​បើក"
 
-#: appearance.cpp:75
+#: appearance.cpp:79
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "បាន​បិទ"
 
-#: appearance.cpp:76
+#: appearance.cpp:80
 #, kde-format
 msgid "Show Only Once"
 msgstr "បង្ហាញ​បាន​តែ​ម្តង​"
 
-#: appearance.cpp:77
+#: appearance.cpp:81
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -271,40 +109,40 @@ msgstr ""
 "។</li><li><b>បង្ហាញ​បាន​តែ​ម្ដង​</b> ៖ បង្ហាញ​ចលនា​ទាំងអស់ ប៉ុន្តែ​កុំ​ធ្វើ​វា​ពួក​វា​ម្ដង​ទៀត ។</li></"
 "ul>"
 
-#: appearance.cpp:82
+#: appearance.cpp:86
 #, kde-format
 msgid "A&nimations:"
 msgstr "ចលនា ៖"
 
-#: appearance.cpp:85 htmlopts.cpp:110
+#: appearance.cpp:89 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "ផ្សេងៗ"
 
-#: appearance.cpp:90
+#: appearance.cpp:94
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "បាន​បើក"
 
-#: appearance.cpp:91
+#: appearance.cpp:95
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "បាន​បិទ"
 
-#: appearance.cpp:92
+#: appearance.cpp:96
 #, kde-format
 msgid "Only on Hover"
 msgstr "នៅ​ពេល​សំកាំង"
 
-#: appearance.cpp:93
+#: appearance.cpp:97
 #, kde-format
 msgid "Und&erline links:"
 msgstr "គូស​បន្ទាត់​ពី​ក្រោម​តំណ ៖"
 
-#: appearance.cpp:96
+#: appearance.cpp:100
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -319,29 +157,29 @@ msgstr ""
 "ផ្លាស់ទី​ពី​លើ​តំណ</li></ul><br /><i>ចំណាំ ៖ និយមន័យ CSS របស់​តំបន់​​បណ្ដាញ​អាច​បដិសេធ​តម្លៃ​នេះ</i></"
 "html>"
 
-#: appearance.cpp:105
+#: appearance.cpp:109
 #, kde-format
 msgid "When Efficient"
 msgstr "នៅ​ពេល​មាន​ប្រសិទ្ធិភាព"
 
-#: appearance.cpp:106
+#: appearance.cpp:110
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "ជា​និច្ច"
 
-#: appearance.cpp:107
+#: appearance.cpp:111
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "កុំ"
 
-#: appearance.cpp:108
+#: appearance.cpp:112
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "កា​ររមូរ​រលូន ៖"
 
-#: appearance.cpp:110
+#: appearance.cpp:114
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -356,120 +194,111 @@ msgstr ""
 "រមូរ​រលូន រមូរ​ដោយ​ប្រើ​ជំហាន​ទាំងមូល​ជំនួស​វិញ ។</li><li><b>នៅ​ពេល​មាន​ប្រសិទ្ធភាព</b> ៖ ប្រើ​តែ​ការ​"
 "រមូរ​រលូន​នៅ​លើ​ទំព័រ​ដែល​វា​អាច​សម្រេច​ជាមួយ​ការ​ប្រើ​អន្តរការី​របស់​ធនធាន​ប្រព័ន្ធ ។</li></ul></html>"
 
-#: appearance.cpp:119
-#, kde-format
-msgid ""
-"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
-"Konqueror should use to display the web pages you view."
-msgstr ""
-"<h1>ពុម្ព​អក្សរ Konqueror</h1>លើ​ទំព័រ​នេះ អ្នក​អាច​កំណត់​រចនាសម្ព័ន្ធ​ថា​តើ​ពុម្ព​អក្សរ Konqueror "
-"ណាខ្លះ ដែល​គួរ​ប្រើ ដើម្បី​​បង្ហាញ​ទំព័រ​បណ្ដាញ​ពេល​អ្នក​មើល ។"
-
-#: appearance.cpp:131
+#: appearance.cpp:132
 #, kde-format
 msgid "Font Si&ze"
 msgstr "ទំហំ​ពុម្ព​អក្សរ"
 
-#: appearance.cpp:134 appearance.cpp:152
+#: appearance.cpp:135 appearance.cpp:153
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr "នេះ​ជា​ទំហំ​ពុម្ព​អក្សរ​ដែល​ជាប់​ទាក់ទង ហើយ​ Konqueror ប្រើ​សម្រាប់​បង្ហាញ​តំបន់​បណ្ដាញ ។"
 
-#: appearance.cpp:138
+#: appearance.cpp:139
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "ទំហំ​ពុម្ព​អក្សរ​អប្បបរមា ៖"
 
-#: appearance.cpp:142
+#: appearance.cpp:143
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
 "any other settings."
 msgstr "Konqueror នឹង​មិន​បង្ហាញ​អត្ថបទ​តូច​ជាង​ទំហំ​នេះ​ទេ<br /> ដោយ​វា​បដិសេធ​រាល់​ការ​កំណត់​ផ្សេងៗ ។"
 
-#: appearance.cpp:147
+#: appearance.cpp:148
 #, kde-format
 msgid "&Medium font size:"
 msgstr "ទំហំ​ពុម្ព​អក្សរ​មធ្យម ​៖"
 
-#: appearance.cpp:160
+#: appearance.cpp:161
 #, kde-format
 msgid "S&tandard font:"
 msgstr "ពុម្ព​អក្សរ​ស្តង់ដារ ៖"
 
-#: appearance.cpp:161
+#: appearance.cpp:162
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr "នេះ​ជា​ពុម្ព​អក្សរ​ដែល​ប្រើ ​សម្រាប់​បង្ហាញ​អត្ថបទ​ធម្មតា​ក្នុង​ទំព័រ​បណ្ដាញ​មួយ ។"
 
-#: appearance.cpp:165
+#: appearance.cpp:166
 #, kde-format
 msgid "&Fixed font:"
 msgstr "ពុម្ព​អក្សរ​ថេរ ៖"
 
-#: appearance.cpp:166
+#: appearance.cpp:167
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr "នេះ​ជា​ពុម្ព​អក្សរ​ដែល​ប្រើ សម្រាប់​បង្ហាញ​អត្ថបទ​ដែល​មាន​ទទឹង​ថេរ (មិន​សមាមាត្រ)"
 
-#: appearance.cpp:170
+#: appearance.cpp:171
 #, kde-format
 msgid "S&erif font:"
 msgstr "ពុម្ព​អក្សរ Serif ៖"
 
-#: appearance.cpp:171
+#: appearance.cpp:172
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr "នេះ​ជា​ពុម្ព​អក្សរ​ដែល​ប្រើ សម្រាប់​បង្ហាញ​អត្ថបទ​ដែល​បង្កើត​បាន​ជា serif ។"
 
-#: appearance.cpp:175
+#: appearance.cpp:176
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "ពុម្ព​អក្សរ Sans serif ៖"
 
-#: appearance.cpp:176
+#: appearance.cpp:177
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr "នេះ​ជា​ពុម្ព​អក្សរ​ដែល​ប្រើ​ សម្រាប់​បង្ហាញ​អត្ថបទ​ដែល​បង្កើត​បាន​ជា sans-serif  ។"
 
-#: appearance.cpp:180
+#: appearance.cpp:181
 #, kde-format
 msgid "C&ursive font:"
 msgstr "ពុម្ព​អក្សរ Cursive ៖"
 
-#: appearance.cpp:181
+#: appearance.cpp:182
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr "នេះ​ជា​ពុម្ព​អក្សរ​ដែល​ប្រើ សម្រាប់​បង្ហាញ​អត្ថបទ​ដែល​ដិត ។"
 
-#: appearance.cpp:185
+#: appearance.cpp:186
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "ពុម្ព​អក្សរ Fantasy ៖"
 
-#: appearance.cpp:186
+#: appearance.cpp:187
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr "នេះ​ជា​ពុម្ព​អក្សរ​ដែល​ប្រើ សម្រាប់​បង្ហាញ​អត្ថបទ​ដែល​ប្រើ​ពុម្ព​អក្សរ fantasy ។"
 
-#: appearance.cpp:195
+#: appearance.cpp:196
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "ការ​លៃ​តម្រូវ​ទំហំ​ពុម្ព​អក្សរ សម្រាប់​ការ​អ៊ិនកូដ​នេះ ៖"
 
-#: appearance.cpp:203 appearance.cpp:401
+#: appearance.cpp:204 appearance.cpp:402
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "ប្រើ​ការ​អ៊ិនកូដ​ភាសា​"
 
-#: appearance.cpp:205
+#: appearance.cpp:206
 #, kde-format
 msgid "Default encoding:"
 msgstr "ការ​អ៊ិនកូដ​លំនាំ​ដើម ៖"
 
-#: appearance.cpp:207
+#: appearance.cpp:208
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1513,32 +1342,32 @@ msgid " day"
 msgid_plural " days"
 msgstr[0] "ថ្ងៃ"
 
-#: filteropts.cpp:120
+#: filteropts.cpp:124
 #, kde-format
 msgid "Insert"
 msgstr "បញ្ចូល​"
 
-#: filteropts.cpp:123
+#: filteropts.cpp:127
 #, kde-format
 msgid "Update"
 msgstr "ធ្វើបច្ចុប្បន្នភាព"
 
-#: filteropts.cpp:126
+#: filteropts.cpp:130
 #, kde-format
 msgid "Remove"
 msgstr "យក​ចេញ​"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:134
 #, kde-format
 msgid "Import..."
 msgstr "នាំចូល..."
 
-#: filteropts.cpp:133
+#: filteropts.cpp:137
 #, kde-format
 msgid "Export..."
 msgstr "នាំចេញ..."
 
-#: filteropts.cpp:140
+#: filteropts.cpp:144
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
@@ -1547,7 +1376,7 @@ msgstr ""
 "<qt>ព័ត៌មាន​បន្ថែម​អំពី <a href=\"importhelp\">ទ្រង់ទ្រាយ​នាំចូល</a><a href=\"exporthelp"
 "\">ទ្រង់ទ្រាយ​នាំចេញ</a>"
 
-#: filteropts.cpp:154
+#: filteropts.cpp:158
 #, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
@@ -1556,7 +1385,7 @@ msgstr ""
 "បិទ ឬ​បើក​តម្រង AdBlocK ។ ពេល​តម្រង​នេះ​បើក សំណុំ​កន្សោម​ដែល​ត្រូវ​បាន​ទប់​ស្កាត់​កំណត់​ក្នុង​បញ្ជី​តម្រង​សម្រាប់​"
 "ទប់​ស្កាត់​ដើម្បី​ធ្វើ​ឲ្យ​វា​មាន​ប្រសិទ្ធ​ភាព ។"
 
-#: filteropts.cpp:156
+#: filteropts.cpp:160
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
@@ -1565,14 +1394,14 @@ msgstr ""
 "ការ​អនុញ្ញាត​ត្រូវ​បាន​ទប់​ស្កាត់​ រូបភាព​នឹង​ត្រូវ​បាន​យក​ចេញ​ទាំងស្រុង​ពី​ទំព័រ  មិន​ដូច្នោះ​ទេ​កន្លែង​​ដាក់​រូបភាព​ដែល​"
 "ត្រូវ 'ទប់ស្កាត់'​ នឹង​ត្រូវ​បាន​ប្រើ ។"
 
-#: filteropts.cpp:163
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
 "and media objects."
 msgstr "នេះ​ជា​បញ្ជី​របស់​តម្រង URL ដែល​នឹង​ត្រូ​វបាន​អនុវត្ត​​ទៅ​​វត្ថុមេឌៀ និង​រូបភាព​ដែលបានបង្កប់​ទាំងអស់​ ។"
 
-#: filteropts.cpp:167
+#: filteropts.cpp:171
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1589,7 +1418,7 @@ msgstr ""
 "banner)\\./</tt></li></ul><p>ខ្សែ​អក្សរ​​តំណ​ណាមួយ​អាច​ត្រូវ​បាន​នាំមុខ​ដោយ '<tt>@@</tt>' "
 "ទៅកាន់​បញ្ជី (អនុញ្ញាត) ការ​ផ្គូផ្គង URL ណាមួយ​ដែល​មាន​អាទិភាព​លើ​តម្រង​​បញ្ជី​ខ្មៅ (ទប់ស្កាត់) ។"
 
-#: filteropts.cpp:183
+#: filteropts.cpp:187
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1600,7 +1429,7 @@ msgstr ""
 "'<tt>!</tt>' និង​បន្ទាត់​ក្បាល <tt>[AdBlock]</tt> ត្រូវ​បានមិនអើពើ ។ បន្ទាត់​ផ្សេង​ទៀត​​ណាមួយ​"
 "ត្រូវ​បាន​បន្ថែម​ជា​កន្សោម​តម្រង ។"
 
-#: filteropts.cpp:188
+#: filteropts.cpp:192
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1610,46 +1439,30 @@ msgstr ""
 "<qt><p>ទ្រង់ទ្រាយ​នាំចេញ​តម្រង​គឺជា​ឯកសារ​អត្ថបទ​ធម្មតា ។ ឯកសារ​ចាប់ផ្ដើម​ដោយ​បន្ទាត់​ក្បាល "
 "<tt>[AdBlock]</tt> បន្ទាប់​មក​តម្រង​ទាំងអស់​តាម​បន្ទាត់​នីមួយៗ ។"
 
-#: filteropts.cpp:256
+#: filteropts.cpp:260
 #, fuzzy, kde-format
 #| msgid "Automatic Filter"
 msgid "Import Filters"
 msgstr "ត្រង​ដោយ​ស្វ័យ​ប្រវត្តិ"
 
-#: filteropts.cpp:300
+#: filteropts.cpp:304
 #, fuzzy, kde-format
 #| msgid "Automatic Filter"
 msgid "Export Filters"
 msgstr "ត្រង​ដោយ​ស្វ័យ​ប្រវត្តិ"
 
-#: filteropts.cpp:435
-#, kde-format
-msgid ""
-"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
-"filters that are checked against linked images and frames. URL's that match "
-"are either discarded or replaced with a placeholder image. "
-msgstr ""
-"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK អនុញ្ញាត​ឲ្យ​អ្នក​បង្កើត​បញ្ជី​តម្រង​មួយ ដែល​ត្រូវ​"
-"បាន​ពិនិត្យ​ជាមួយ​រូបភាព និង​​ស៊ុម​តំណ ។ URL ដែល​ផ្គូផ្គង​អាច​ត្រូវ​បាន​បោះបង់​ចោល ឬ​ជំនួស​ដោយ​កន្លែង​ដាក់​រូបភាព​"
-"មួយ ។"
-
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:557 useragent/useragent.ui:61
+#: filteropts.cpp:556 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "ឈ្មោះ"
 
-#: filteropts.cpp:558
+#: filteropts.cpp:557
 #, kde-format
 msgid "URL"
 msgstr "URL"
 
-#: generalopts.cpp:53
-#, kde-format
-msgid "Tabbed Browsing"
-msgstr "ការ​រុករក​ជា​ផ្ទាំង"
-
-#: generalopts.cpp:79
+#: generalopts.cpp:56
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1657,19 +1470,19 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr ""
 
-#: generalopts.cpp:85
+#: generalopts.cpp:62
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr ""
 
-#: generalopts.cpp:94
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "បង្ហាញ​ទំព័រ​ណែនាំ"
 
-#: generalopts.cpp:95
+#: generalopts.cpp:72
 #, fuzzy, kde-format
 #| msgctxt "@item:inlistbox"
 #| msgid "Show My Home Page"
@@ -1677,19 +1490,19 @@ msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "បង្ហាញ​គេហទំព័រ​របស់​ខ្ញុំ"
 
-#: generalopts.cpp:96
+#: generalopts.cpp:73
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "បង្ហាញ​ទំព័រ​ទទេ"
 
-#: generalopts.cpp:97
+#: generalopts.cpp:74
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "បង្ហាញ​ចំណាំ​របស់​ខ្ញុំ"
 
-#: generalopts.cpp:103
+#: generalopts.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Home Page"
@@ -1697,23 +1510,23 @@ msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "ជ្រើស​គេហទំព័រ"
 
-#: generalopts.cpp:108
+#: generalopts.cpp:85
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr ""
 
-#: generalopts.cpp:119
+#: generalopts.cpp:96
 #, kde-format
 msgid "Home page:"
 msgstr "គេហទំព័រ ៖"
 
-#: generalopts.cpp:122
+#: generalopts.cpp:99
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "ជ្រើស​គេហទំព័រ"
 
-#: generalopts.cpp:127
+#: generalopts.cpp:104
 #, fuzzy, kde-format
 #| msgid ""
 #| "This is the URL of the web page where Konqueror (as web browser) will "
@@ -1728,56 +1541,42 @@ msgstr ""
 "\"ដើម\" ។ នៅពេល​ដែល Konqueror ចាប់ផ្ដើម​ជា​កម្មវិធី​គ្រប់គ្រង​ឯកសារ ដែល​ប៊ូតុង​នោះ​ធ្វើ​ឲ្យ​វា​លោត​ទៅ​"
 "ថត​ផ្ទះ​មូលដ្ឋាន​​ជំនួស​វិញ ។"
 
-#: generalopts.cpp:135
+#: generalopts.cpp:112
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "ម៉ាស៊ីន​កម្មវិធី​រុករក​បណ្ដាញ​លំនាំដើម ៖"
 
-#: generalopts.cpp:144
+#: generalopts.cpp:121
 #, kde-format
 msgid "When splitting a view"
 msgstr ""
 
-#: generalopts.cpp:148
+#: generalopts.cpp:125
 #, kde-format
 msgid "Always duplicate current view"
 msgstr ""
 
-#: generalopts.cpp:149
+#: generalopts.cpp:126
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr ""
 
-#: generalopts.cpp:155
+#: generalopts.cpp:132
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr ""
 
-#: htmlopts.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
-"functionality. Please note that the file manager functionality has to be "
-"configured using the \"File Manager\" configuration module. You can make "
-"some settings how Konqueror should handle the HTML code in the web pages it "
-"loads. It is usually not necessary to change anything here."
-msgstr ""
-"<h1>កម្មវិធី​រុករក Konqueror</h1> នៅ​ទីនេះ អ្នក​អាច​កំណត់​រចនាសម្ព័ន្ធ​មុខងារ​របស់​កម្មវិធី​រុករក "
-"Konqueror ។ សូម​ចំណាំ​ថា មុខងារ​កម្មវិធី​គ្រប់គ្រង​ឯកសារ​ត្រូវ​តែ​កំណត់​រចនាសម្ព័ន្ធ​ដោយ​ប្រើ​ម៉ូឌុល​កំណត់​"
-"រចនាសម្ព័ន្ធ​\"កម្មវិធី​​គ្រប់គ្រង​​ឯកសារ\" ។ អ្នក​អាច​ធ្វើ​ការ​កំណត់​ខ្លះ ពី​របៀប​ដែល Konqueror គួរ​ត្រូវ​"
-"ដោះស្រាយ​កូដ HTML ក្នុង​ទំព័រ​បណ្ដាញ​​ដែល​វា​ផ្ទុក ។ ជា​ធម្មតា​មិន​ចាំបាច់​ប្តូរ​អ្វីៗ​នៅទីនេះ​ទេ ។"
-
-#: htmlopts.cpp:44
+#: htmlopts.cpp:35
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "ចំណាំ"
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:38
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "ស្នើ​សុំ​ឈ្មោះ និង​ថត ពេល​កំពុង​បន្ថែម​​ចំណាំ"
 
-#: htmlopts.cpp:50
+#: htmlopts.cpp:41
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1787,12 +1586,12 @@ msgstr ""
 "ប្រសិនបើ​​ធីក​ប្រអប់​នេះ នោះ Konqueror នឹង​អនុញ្ញាត​ឲ្យ​អ្នក​ផ្លាស់ប្ដូរ​ចំណង​ជើង​ចំណាំ ហើយ​ជ្រើស​ថត​មួយ សម្រាប់​"
 "ឲ្យ​អ្នក​ផ្ទុក​វា​ពេល​បន្ថែម​ចំណាំ​ថ្មី​មួយ ។"
 
-#: htmlopts.cpp:56
+#: htmlopts.cpp:47
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "បង្ហាញ​តែ​ចំណាំ​ណា​​ដែល​បាន​សម្គាល់ ក្នុង​របារ​ឧបករណ៍​ចំណាំ​តែ​ប៉ុណ្ណោះ"
 
-#: htmlopts.cpp:58
+#: htmlopts.cpp:49
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1801,12 +1600,12 @@ msgstr ""
 "បើ​ប្រអប់​នេះ​ត្រូវ​បាន​ធីក នោះ Konqueror នឹង​បង្ហាញ​តែ​ចំណាំ​ទាំងឡាយ​មាន​ក្នុង​របារ​ឧបករណ៍​ចំណាំ ដែល​អ្នក​"
 "បាន​សម្គាល់​នៅ​ក្នុង​កម្មវិធី​​កែសម្រួល​ចំណាំ ។"
 
-#: htmlopts.cpp:65
+#: htmlopts.cpp:56
 #, kde-format
 msgid "Form Com&pletion"
 msgstr "ការ​បំពេញ​សំណុំ​បែបបទ"
 
-#: htmlopts.cpp:69
+#: htmlopts.cpp:60
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1815,28 +1614,28 @@ msgstr ""
 "បើ​ប្រអប់​នេះ​ត្រូវ​បាន​ធីក​នោះ Konqueror នឹង​ចង​ចាំ​តែ​ទិន្នន័យ​ដែល​អ្នក​បាន​បញ្ចូល​ក្នុង​សំណុំ​បែប​បទ​របស់​បណ្ដាញ "
 "ហើយ​ស្នើ​ឲ្យ​បញ្ចូល​វា​ក្នុង​វាល​ស្រដៀង សម្រាប់​សំណុំ​បែបបទ​ទាំងអស់ ។"
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:66
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "ការ​បំពេញ​អតិបរមា ៖"
 
-#: htmlopts.cpp:77
+#: htmlopts.cpp:68
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
 msgstr "នៅ​ទីនេះ អ្នក​អាច​ជ្រើស​ចំនួន​របស់​តម្លៃ​ដែល Konqueror នឹង​ចងចាំ​សម្រាប់​វាល​សំណុំ​បែបបទ ។"
 
-#: htmlopts.cpp:84
+#: htmlopts.cpp:75
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "ឥរិយាបថ​របស់​កណ្ដុរ"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:78
 #, kde-format
 msgid "Chan&ge cursor over links"
 msgstr "ផ្លាស់ប្តូរ​ទស្សន៍​ទ្រនិច​ពី​លើ​តំណ"
 
-#: htmlopts.cpp:89
+#: htmlopts.cpp:80
 #, kde-format
 msgid ""
 "If this option is set, the shape of the cursor will change (usually to a "
@@ -1845,12 +1644,12 @@ msgstr ""
 "បើ​ជម្រើស​នេះ​ត្រូវ​បាន​កំណត់ នោះ​រាង​ទស្សន៍ទ្រនិច​នឹង​ផ្លាស់ប្ដូរ (ជា​ទូទៅ​រាង​ជា​ដៃ) ប្រសិនបើ​វាត្រូវ​បាន​ផ្លាស់​"
 "ទី​លើ​តំណ​ខ្ពស់​មួយ ។"
 
-#: htmlopts.cpp:93
+#: htmlopts.cpp:84
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "ចុច​កណ្ដុរ​​កណ្ដាល​បើក​ URL ក្នុង​ជម្រើស"
 
-#: htmlopts.cpp:96
+#: htmlopts.cpp:87
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
@@ -1858,12 +1657,12 @@ msgid ""
 msgstr ""
 "បើ​ធីក​ប្រអប់​នេះ នោះ​អ្នក​អាច​បើក URL ក្នុង​ជម្រើស ​ដោយ​ចុច​កណ្ដុរ​កណ្ដាល​លើ​​ទិដ្ឋភាព Konqueror ។"
 
-#: htmlopts.cpp:100
+#: htmlopts.cpp:91
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "ចុច​កណ្ដុរ​ស្ដាំ​ត្រឡប់​ទៅ​ក្នុង​ប្រវត្តិ"
 
-#: htmlopts.cpp:103
+#: htmlopts.cpp:94
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1873,12 +1672,12 @@ msgstr ""
 "ប្រសិនបើ​​ធីក​ប្រអប់​នេះ នោះ​អ្នក​អាច​ត្រឡប់​ទៅ​ក្នុង​ប្រវត្តិ​ដោយ​ចុច​កណ្ដុរ​ស្ដាំ​លើ​ទិដ្ឋភាព Konqueror ។ ដើម្បី​"
 "ចូល​​ដំណើរការ​ម៉ឺនុយ​បរិបទ ចុច​​កណ្ដុរ​ស្ដាំ ហើយ​ផ្លាស់ទី ។"
 
-#: htmlopts.cpp:113
+#: htmlopts.cpp:104
 #, kde-format
 msgid "Allow automatic delayed &reloading/redirecting"
 msgstr "អនុញ្ញាត​ឲ្យ​ពន្យារពេល ផ្ទុក​ឡើង​វិញ និង​ប្ដូរ​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: htmlopts.cpp:114
+#: htmlopts.cpp:105
 #, kde-format
 msgid ""
 "Some web pages request an automatic reload or redirection after a certain "
@@ -1887,12 +1686,12 @@ msgstr ""
 "ទំព័រ​បណ្ដាញ​មួយ​ចំនួន​​ស្នើ​សុំ​ការ​ផ្ទុក​ឡើង​វិញ ឬ​ការ​​ប្ដូរ​​ទិស​ដោយ​ស្វ័យ​ប្រវត្តិ បន្ទាប់​ពី​កំណត់​រយៈ​ពេល​ជាក់លាក់​មួយ ។ "
 "ដោយ​ដោះ​ធីក​ប្រអប់​នេះ Konqueror នឹង​មិន​អើពើ​សំណើ​ទាំង​នេះ​ឡើយ ។"
 
-#: htmlopts.cpp:120
+#: htmlopts.cpp:111
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "បើក​​ការ​ធ្វើ​ឲ្យ​គ្រាប់​ចុច​ចូល​ដំណើរការ​សកម្ម​ដោយ​ប្រើ​គ្រាប់​ចុច​បញ្ជា (Ctrl)"
 
-#: htmlopts.cpp:121
+#: htmlopts.cpp:112
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1903,12 +1702,12 @@ msgstr ""
 "ធីក​ប្រអប់​នេះ នឹង​បិទ​លក្ខណៈ​ពិសេស​មធ្យោបាយ​ងាយស្រួល​នេះ ។ (Konqueror ត្រូវ​តែ​ចាប់​ផ្តើម​ឡើង​វិញ​ ដើម្បី​"
 "មាន​ប្រសិទ្ធភាព )"
 
-#: htmlopts.cpp:125
+#: htmlopts.cpp:116
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr "ផ្ញើ​បឋមកថា​ DNT ​ដើម្បី​ប្រាប់​តំបន់​បណ្ដាញ​ដែល​អ្នក​មិន​ចង់​តាមដាន "
 
-#: htmlopts.cpp:126
+#: htmlopts.cpp:117
 #, kde-format
 msgid ""
 "Check this box if you want to inform a web site that you do not want your "
@@ -1916,22 +1715,22 @@ msgid ""
 msgstr ""
 "ធីក​ប្រអប់​ បើ​អ្នក​មិន​ចង់​ឲ្យ​តំបន់​បណ្ដាញ​ដែល​អ្នក​មិន​ចង់​ឲ្យ​តំបន់​បណ្ដាញ​របស់​អ្នក​ដោយ​រក​មើល​បាន​តាមដាន​​​ជាទំលាប់ ។"
 
-#: htmlopts.cpp:130
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Offer to save website passwords"
 msgstr "ផ្ដល់​​ពាក្យ​សម្ងាត់​​តំបន់​បណ្ដាញ​ដែល​បាន​រក្សាទុក"
 
-#: htmlopts.cpp:131
+#: htmlopts.cpp:122
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr "ដោះ​ធីក​ប្រអប់​នេះ​ ដើម្បី​រារាំង​ដាក់​ប្រអប់​បញ្ចូល ដើម្បី​រក្សាទុក​ពាក្យ​សម្ងាត់​តំបន់​បណ្ដាញ"
 
-#: htmlopts.cpp:135
+#: htmlopts.cpp:126
 #, kde-format
 msgid "Display online PDF files using WebEngine"
 msgstr ""
 
-#: htmlopts.cpp:136
+#: htmlopts.cpp:127
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
@@ -2160,7 +1959,7 @@ msgid ""
 "Enables the reporting of errors that occur when JavaScript code is executed."
 msgstr "អនុញ្ញាត​ការ​រាយការណ៍​កំហុស​ដែល​កើត​ឡើង ពេល​ប្រតិបត្តិ​កូដ JavaScript ។"
 
-#: jsopts.cpp:79
+#: jsopts.cpp:83
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2180,7 +1979,7 @@ msgstr ""
 "បាន​សម្រាប់​ដែន​នោះ ។ ប៊ូតុង<i>នាំ​ចូល</i> និង<i>នាំ​ចេញ</i> អនុញ្ញាត​ឲ្យ​អ្នក​ចែក​រំលែក​គោលការណ៍​របស់​"
 "អ្នក ជា​មួយ​អ្នក​ដទៃ​បាន​​ងាយ​ស្រួល ដោយ​អនុញ្ញាត​ឲ្យ​អ្នក​រក្សា​ទុក និង​យក​ពួក​វា​ពី​ឯកសារ​ដែល​បាន​បង្ហាប់ ។"
 
-#: jsopts.cpp:89
+#: jsopts.cpp:93
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2193,7 +1992,7 @@ msgstr ""
 "ជំនួស​ឲ្យ​គោលការណ៍​លំនាំ​ដើម សម្រាប់​ធ្វើ​ឲ្យ JavaScript លើ​ទំព័រ​ដែល​ត្រូវ​បាន​បញ្ចូន​ដោយ​ដែន ឬ​ម៉ាស៊ីន​ទាំងនេះ​"
 "អាច​ប្រើ​បាន ឬ​មិន​បាន ។</p><p>ជ្រើស​គោលការណ៍​ហើយ​ប្រើ​បញ្ជា​នៅ​ខាង​ស្តាំ ដើម្បី​កែ​សម្រួល​វា ។</p>"
 
-#: jsopts.cpp:96
+#: jsopts.cpp:100
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2203,7 +2002,7 @@ msgstr ""
 "ចុច​ប៊ូតុង​នេះ ដើម្បី​ជ្រើស​ឯកសារ​ដែល​មាន​គោលការណ៍ Java ។ គោលការណ៍​ទាំងនេះ នឹង​ត្រូវ​បានដាក់​បញ្ចូល​គ្នា​"
 "ជាមួយ​នឹង​គោលការណ៍​ដែល​មាន​ស្រាប់ ។ ធាតុ​ស្ទួន​មិន​ត្រូវ​បាន​អើពើ ។"
 
-#: jsopts.cpp:99
+#: jsopts.cpp:103
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2213,40 +2012,40 @@ msgstr ""
 "ចុច​ប៊ូតុង​នេះ ដើម្បី​រក្សា​ទុក​គោលការណ៍ JavaScript ទៅ​កាន់​ឯកសារ​ដែល​បាន​បង្ហាប់ ។ ឯកសារ​ឈ្មោះ "
 "<b>javascript_policy.tgz</b> នឹង​ត្រូវ​បាន​រក្សា​ទុក​ជា​ទីតាំង​នៃ​ជម្រើស​របស់​អ្នក ។"
 
-#: jsopts.cpp:105
+#: jsopts.cpp:109
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "គោលការណ៍ JavaScript សកល"
 
-#: jsopts.cpp:173
+#: jsopts.cpp:181
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "ដែន​ជាក់លាក់"
 
-#: jsopts.cpp:212
+#: jsopts.cpp:220
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "គោលការណ៍ JavaScript ថ្មី"
 
-#: jsopts.cpp:215
+#: jsopts.cpp:223
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "ផ្លាស់ប្តូរ​គោលការណ៍ JavaScript"
 
-#: jsopts.cpp:219
+#: jsopts.cpp:227
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "គោលការណ៍ JavaScript ៖"
 
-#: jsopts.cpp:220
+#: jsopts.cpp:228
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "ជ្រើស​គោលការណ៍ JavaScript មួយ សម្រាប់​ដែន ឬ​ម៉ាស៊ីន​ខាង​លើ ។"
 
-#: jsopts.cpp:222
+#: jsopts.cpp:230
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "គោលការណ៍ JavaScript ដែន​ជាក់លាក់"
@@ -2452,28 +2251,10 @@ msgstr ""
 msgid "&Java"
 msgstr "Java"
 
-#: main.cpp:53
+#: main.cpp:57
 #, kde-format
 msgid "Java&Script"
 msgstr "JavaScript"
-
-#: main.cpp:93
-#, kde-format
-msgid ""
-"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
-"programs embedded in web pages should be allowed to be executed by Konqueror."
-"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
-"in web pages should be allowed to be executed by Konqueror.<br /><br /"
-"><b>Note:</b> Active content is always a security risk, which is why "
-"Konqueror allows you to specify very fine-grained from which hosts you want "
-"to execute Java and/or JavaScript programs."
-msgstr ""
-"<h2>JavaScript</h2>នៅ​លើ​ទំព័រ​នេះ អ្នក​អាច​កំណត់​រចនាសម្ព័ន្ធ​ថា​តើ​កម្មវិធី JavaScript ដែល​បាន​"
-"បង្កប់​ក្នុង​ទំព័រ​បណ្ដាញ​គួរ​ត្រូវ​បាន​អនុញ្ញាត​ឲ្យ​ប្រតិបត្តិ​ដោយ Konqueror ឬ​ទេ ។<h2>Java</h2>នៅលើ​ទំព័រ​"
-"នេះ អ្នក​អាច​កំណត់​រចនាសម្ព័ន្ធ​ថា​តើ​កម្មវិធី​អាប់ភ្លេត Java ដែល​បាន​បង្កប់​ក្នុង​ទំព័រ​បណ្ដាញ​គួរ​តែ​ត្រូវ​បាន​"
-"អនុញ្ញាត​ឲ្យ​ប្រតិបត្តិ​ដោយ Konqueror ឬ​ទេ ។<br /><br /><b>ចំណាំ ៖</b> មាតិកា​ដែល​សកម្ម​តែងតែ​ជួប​"
-"បញ្ហា​សុវត្ថិភាព​ច្រើន ដូច្នេះ​ហើយ​ទើប Konqueror អនុញ្ញាត​ឲ្យ​អ្នក​បញ្ជាក់​ម៉ាស៊ីន​ដែល​អ្នក​ចង់​ប្រតិបត្តិ "
-"Java និង/ឬ កម្មវិធី JavaScript ។"
 
 #: policydlg.cpp:30
 #, kde-format
@@ -2499,6 +2280,236 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "អ្នក​ត្រូវ​បញ្ចូល​ឈ្មោះ​ដែន​ជាមុន​សិន ។"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
+#: tabs/tabsoptions.ui:14
+#, fuzzy, kde-format
+#| msgid "Mouse Beha&vior"
+msgid "Tabs Behavior"
+msgstr "ឥរិយាបថ​របស់​កណ្ដុរ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: tabs/tabsoptions.ui:20
+#, kde-format
+msgid "Aspect"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: tabs/tabsoptions.ui:26
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr ""
+"វានឹង​បង្ហាញ​របារ​ផ្ទាំង តែ​ក្នុង​ករណីមាន​ផ្ទាំង​ពីរ ឬ ច្រើន​ ។ បើ​មិន​ដូច្នោះ​ទេ វា​នឹង​បង្ហាញ​ជានិច្ច ។"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: tabs/tabsoptions.ui:29
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr "លាក់​របារ​ផ្ទាំង ពេល​ដែល​មាន​តែ​ផ្ទាំង​មួយ​បើក"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: tabs/tabsoptions.ui:38
+#, kde-format
+msgid "Tab bar position"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:48
+#, kde-format
+msgid "Choose where to display the tabs bar"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:52
+#, kde-format
+msgid "Above contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:57
+#, kde-format
+msgid "Below contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:62
+#, kde-format
+msgid "Left of contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:67
+#, kde-format
+msgid "Right of contents"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: tabs/tabsoptions.ui:93
+#, kde-format
+msgid "Usage"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: tabs/tabsoptions.ui:99
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr ""
+"ការ​នេះ​នឹង​បើក​តំណ​ក្នុង​ផ្ទាំង​ថ្មី​មួយ ដើម្បី​ជំនួស​ឲ្យ​បង្អួច​ថ្មី​នៅ​ក្នុង​ស្ថានភាព​ផ្សេងៗ​ដូចជា ជ្រើស​តំណ ឬ​ថត​មួយ ​"
+"ដោយ​ប្រើ​ប៊ូតុង​កណ្ដុរ​កណ្ដាល ។"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: tabs/tabsoptions.ui:102
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "បើក​តំណ​ក្នុង​ផ្ទាំង​ថ្មី ជំនួស​ឲ្យ​បង្អួច​ថ្មី"
+
+#  i18n: file advancedTabOptions.ui line 104
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: tabs/tabsoptions.ui:109
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr "ថា​តើ JavaScript លេច​ឡើង បើ​អនុញ្ញាត គួរ​តែ​បើក​ក្នុង​ផ្ទាំង​ថ្មី ឬ​ក្នុង​បង្អួច​ថ្មី ។"
+
+#  i18n: file advancedTabOptions.ui line 101
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: tabs/tabsoptions.ui:112
+#, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr "បើក​បង្អួច​លេច​ឡើង​ក្នុង​ផ្ទាំង​ថ្មី ជំនួស​ឲ្យ​បង្អួច​ថ្មី "
+
+#  i18n: file advancedTabOptions.ui line 126
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: tabs/tabsoptions.ui:119
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+"ពេល​អ្នក​ចុច URL ក្នុង​កម្មវិធី KDE មួយ​ផ្សេងទៀត​ ឬ​ហៅ​កម្មវិធី kfmclient ដើម្បី​បើក URL ផ្ទៃតុ​"
+"បច្ចុប្បន្ន​នឹង​ត្រូវ​បាន​ស្វែង​រក​សម្រាប់ Konqueror ដែល​មិន​បាន​បង្រួម​អប្បបរមា បន្ទាប់​មក URL ត្រូវ​បាន​"
+"បើក​ជា​ផ្ទាំង​ថ្មី​មួយ​ខាង​ក្នុង​វា (បើ​រក​ឃើញ)។ មិន​ដូច្នោះ​ទេ បង្អួច Konqueror ថ្មី​មួយ​នឹង​ត្រូវ​បើក​ជាមួយ​នឹង "
+"URL ដែល​វា​ទាមទារ ។"
+
+#  i18n: file advancedTabOptions.ui line 123
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: tabs/tabsoptions.ui:122
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr "បើក​ជា​ផ្ទាំង​ក្នុង Konqueror ដែល​មាន​ស្រាប់ ពេល URL ត្រូវ​បាន​ហៅ​ពី​ខាង​ក្រៅ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: tabs/tabsoptions.ui:132
+#, fuzzy, kde-format
+#| msgid "Mouse Beha&vior"
+msgid "New Tab Behavior"
+msgstr "ឥរិយាបថ​របស់​កណ្ដុរ"
+
+#  i18n: file advancedTabOptions.ui line 60
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: tabs/tabsoptions.ui:138
+#, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr "ការ​​នេះ​នឹង​បើក​ផ្ទាំង​ថ្មី​មួយ​ក្នុង​ផ្ទៃ​ខាង​ក្រោយ ជំនួស​ឲ្យ​ផ្ទៃ​ខាង​មុខ ។"
+
+#  i18n: file advancedTabOptions.ui line 57
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: tabs/tabsoptions.ui:141
+#, kde-format
+msgid "O&pen new tabs in the background"
+msgstr "បើក​ផ្ទាំង​ថ្មី​ក្នុង​ផ្ទៃ​ខាង​ក្រោយ"
+
+#  i18n: file advancedTabOptions.ui line 71
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: tabs/tabsoptions.ui:148
+#, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr "ការ​នេះ​នឹង​បើក​ផ្ទាំង​ថ្មី​ដែល​បាន​បើក​ពី​ទំព័រ​ បន្ទាប់​ពី​បើក​ផ្ទាំង​បច្ចុប្បន្ន ជំនួស​ឲ្យ​ផ្ទាំង​ចុង​ក្រោយ ។"
+
+#  i18n: file advancedTabOptions.ui line 68
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: tabs/tabsoptions.ui:151
+#, kde-format
+msgid "Open &new tab after current tab"
+msgstr "បើក​ផ្ទាំង​ថ្មី បន្ទាប់​ពី​បើក​ផ្ទាំង​បច្ចុប្បន្ន"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: tabs/tabsoptions.ui:161
+#, kde-format
+msgid "Closing"
+msgstr ""
+
+#  i18n: file advancedTabOptions.ui line 93
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: tabs/tabsoptions.ui:167
+#, kde-format
+msgid "This will display close buttons inside each tab."
+msgstr "វា​នឹង​បង្ហាញ​ប៊ូតុង​បិទ​នៅ​​ខាង​ក្នុង​ផ្ទាំង​នីមួយៗ ។"
+
+#  i18n: file advancedTabOptions.ui line 90
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: tabs/tabsoptions.ui:170
+#, kde-format
+msgid "&Show close button on tabs"
+msgstr "បង្ហាញ​ប៊ូតុង​បិទ នៅ​លើ​ផ្ទាំង"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: tabs/tabsoptions.ui:177
+#, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr "នៅ​ពេល​​អ្នក​ចុច​លើ​ផ្ទាំង​ដោយ​ប្រើ​ប៊ូតុង​កណ្ដុរ​កណ្ដាល ឬ​កង់​កណ្ដុរ វា​នឹង​បិទ​ផ្ទាំង​នោះ ។"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: tabs/tabsoptions.ui:180
+#, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr "ចុច​​ប៊ូតុង​កណ្ដាល​នៅ​លើ​ផ្ទាំង​ដើម្បី​បិទ​វា"
+
+#  i18n: file advancedTabOptions.ui line 82
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: tabs/tabsoptions.ui:187
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr "ការ​​នេះ​នឹង​សួរ​អ្នក ថា​តើ​អ្នក​ពិតជា​ចង់​បិទ​បង្អួច​ ពេល​ដែល​មាន​ផ្ទាំង​ច្រើន​បើក​ក្នុង​បង្អួច​តែ​មួយ ។"
+
+#  i18n: file advancedTabOptions.ui line 79
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: tabs/tabsoptions.ui:190
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr "អះអាង ពេល​បិទ​បង្អួច​ដែល​មាន​ផ្ទាំង​ច្រើន"
+
+#  i18n: file advancedTabOptions.ui line 115
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: tabs/tabsoptions.ui:197
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+"ពេល​ធីក ផ្ទាំង​ដែល​បាន​ប្រើ​ពីមុន ឬ​ផ្ទាំង​ដែល​បាន​បើក​រួច​ហើយ​ក៏​នឹង​ត្រូវ​បាន​ធ្វើ​​ឲ្យ​សកម្ម​ ពេល​អ្នក​បិទ​ផ្ទាំង​សកម្ម​"
+"បច្ចុប្បន្ន​ ជំនួស​ផ្ទាំង​ត្រឹមត្រូវ​មួយ​ជា​ផ្ទាំង​បច្ចុប្បន្ន ។"
+
+#  i18n: file advancedTabOptions.ui line 112
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: tabs/tabsoptions.ui:200
+#, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr "ធ្វើ​ឲ្យ​ផ្ទាំង​ដែល​បាន​ប្រើ​ពី​មុន​សកម្ម ពេល​បិទ​ផ្ទាំង​បច្ចុប្បន្ន"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, UserAgent)
 #: useragent/useragent.ui:14
@@ -2581,6 +2592,53 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+
+#~ msgid ""
+#~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+#~ "Konqueror should use to display the web pages you view."
+#~ msgstr ""
+#~ "<h1>ពុម្ព​អក្សរ Konqueror</h1>លើ​ទំព័រ​នេះ អ្នក​អាច​កំណត់​រចនាសម្ព័ន្ធ​ថា​តើ​ពុម្ព​អក្សរ "
+#~ "Konqueror ណាខ្លះ ដែល​គួរ​ប្រើ ដើម្បី​​បង្ហាញ​ទំព័រ​បណ្ដាញ​ពេល​អ្នក​មើល ។"
+
+#~ msgid ""
+#~ "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list "
+#~ "of filters that are checked against linked images and frames. URL's that "
+#~ "match are either discarded or replaced with a placeholder image. "
+#~ msgstr ""
+#~ "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK អនុញ្ញាត​ឲ្យ​អ្នក​បង្កើត​បញ្ជី​តម្រង​មួយ ដែល​"
+#~ "ត្រូវ​បាន​ពិនិត្យ​ជាមួយ​រូបភាព និង​​ស៊ុម​តំណ ។ URL ដែល​ផ្គូផ្គង​អាច​ត្រូវ​បាន​បោះបង់​ចោល ឬ​ជំនួស​ដោយ​កន្លែង​ដាក់​"
+#~ "រូបភាព​មួយ ។"
+
+#~ msgid "Tabbed Browsing"
+#~ msgstr "ការ​រុករក​ជា​ផ្ទាំង"
+
+#~ msgid ""
+#~ "<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+#~ "functionality. Please note that the file manager functionality has to be "
+#~ "configured using the \"File Manager\" configuration module. You can make "
+#~ "some settings how Konqueror should handle the HTML code in the web pages "
+#~ "it loads. It is usually not necessary to change anything here."
+#~ msgstr ""
+#~ "<h1>កម្មវិធី​រុករក Konqueror</h1> នៅ​ទីនេះ អ្នក​អាច​កំណត់​រចនាសម្ព័ន្ធ​មុខងារ​របស់​កម្មវិធី​រុករក "
+#~ "Konqueror ។ សូម​ចំណាំ​ថា មុខងារ​កម្មវិធី​គ្រប់គ្រង​ឯកសារ​ត្រូវ​តែ​កំណត់​រចនាសម្ព័ន្ធ​ដោយ​ប្រើ​ម៉ូឌុល​កំណត់​"
+#~ "រចនាសម្ព័ន្ធ​\"កម្មវិធី​​គ្រប់គ្រង​​ឯកសារ\" ។ អ្នក​អាច​ធ្វើ​ការ​កំណត់​ខ្លះ ពី​របៀប​ដែល Konqueror គួរ​"
+#~ "ត្រូវ​ដោះស្រាយ​កូដ HTML ក្នុង​ទំព័រ​បណ្ដាញ​​ដែល​វា​ផ្ទុក ។ ជា​ធម្មតា​មិន​ចាំបាច់​ប្តូរ​អ្វីៗ​នៅទីនេះ​ទេ ។"
+
+#~ msgid ""
+#~ "<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+#~ "programs embedded in web pages should be allowed to be executed by "
+#~ "Konqueror.<h2>Java</h2>On this page, you can configure whether Java "
+#~ "applets embedded in web pages should be allowed to be executed by "
+#~ "Konqueror.<br /><br /><b>Note:</b> Active content is always a security "
+#~ "risk, which is why Konqueror allows you to specify very fine-grained from "
+#~ "which hosts you want to execute Java and/or JavaScript programs."
+#~ msgstr ""
+#~ "<h2>JavaScript</h2>នៅ​លើ​ទំព័រ​នេះ អ្នក​អាច​កំណត់​រចនាសម្ព័ន្ធ​ថា​តើ​កម្មវិធី JavaScript ដែល​"
+#~ "បាន​បង្កប់​ក្នុង​ទំព័រ​បណ្ដាញ​គួរ​ត្រូវ​បាន​អនុញ្ញាត​ឲ្យ​ប្រតិបត្តិ​ដោយ Konqueror ឬ​ទេ ។<h2>Java</"
+#~ "h2>នៅលើ​ទំព័រ​នេះ អ្នក​អាច​កំណត់​រចនាសម្ព័ន្ធ​ថា​តើ​កម្មវិធី​អាប់ភ្លេត Java ដែល​បាន​បង្កប់​ក្នុង​ទំព័រ​"
+#~ "បណ្ដាញ​គួរ​តែ​ត្រូវ​បាន​អនុញ្ញាត​ឲ្យ​ប្រតិបត្តិ​ដោយ Konqueror ឬ​ទេ ។<br /><br /><b>ចំណាំ ៖</b> "
+#~ "មាតិកា​ដែល​សកម្ម​តែងតែ​ជួប​បញ្ហា​សុវត្ថិភាព​ច្រើន ដូច្នេះ​ហើយ​ទើប Konqueror អនុញ្ញាត​ឲ្យ​អ្នក​បញ្ជាក់​"
+#~ "ម៉ាស៊ីន​ដែល​អ្នក​ចង់​ប្រតិបត្តិ Java និង/ឬ កម្មវិធី JavaScript ។"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2010-12-17 00:51+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -19,26 +19,17 @@ msgstr ""
 "X-Generator: Lokalize 1.1\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
-"file manager here."
-msgstr ""
-"<h1>พฤติกรรมของ Konqueror</h1> คุณสามารถปรับแต่งพฤติกรรมเมื่อ Konqueror "
-"ทำหน้าที่เป็นเครื่องมือจัดการแฟ้มได้ที่นี่"
-
-#: behaviour.cpp:40
+#: behaviour.cpp:38
 #, kde-format
 msgid "Misc Options"
 msgstr "ตัวเลือกเบ็ดเตล็ด"
 
-#: behaviour.cpp:49
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "เปิดโฟลเดอร์ในอีกหน้าต่าง"
 
-#: behaviour.cpp:50
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -47,12 +38,12 @@ msgstr ""
 "หากกาเลือกตัวเลือกนี้ จะทำให้ Konqueror ทำการเปิดหน้าต่างใหม่เมื่อคุณเปิดโฟลเดอร์ "
 "แทนการแสดงเนื้อหาของโฟลเดอร์ในหน้าต่างปัจจุบัน"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:71
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "แสดงตัวเลือก 'ลบทิ้ง' ในเม&นูคลิกขวา ซึ่งจะลบทิ้งจริงโดยไม่ทิ้งลงถังขยะ"
 
-#: behaviour.cpp:77
+#: behaviour.cpp:75
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -62,6 +53,13 @@ msgstr ""
 "กาเลือกที่นี่ หากคุณต้องการให้คำสั่งเมนู 'ลบทิ้ง' ปรากฏบนพื้นที่หน้าจอ "
 "และในเมนูคลิกขวาของตัวจัดการแฟ้ม นอกจากนี้ คุณยังสามารถลบแฟ้มทิ้งได้เสมอ โดยการกดปุ่ม Shift "
 "ขณะเรียกใช้คำสั่ง 'ทิ้งลงถังขยะ'"
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>พฤติกรรมของ Konqueror</h1> คุณสามารถปรับแต่งพฤติกรรมเมื่อ Konqueror "
+#~ "ทำหน้าที่เป็นเครื่องมือจัดการแฟ้มได้ที่นี่"
 
 #, fuzzy
 #~| msgid "Menu Editor"

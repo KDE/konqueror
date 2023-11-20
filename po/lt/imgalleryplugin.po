@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2013-04-28 15:32+0300\n"
 "Last-Translator: Liudas Alisauskas <liudas@akmc.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -214,47 +214,47 @@ msgstr "&Nustatyti kitokį spalvų gylį:"
 msgid "Color depth:"
 msgstr ""
 
-#: imgalleryplugin.cpp:52
+#: imgalleryplugin.cpp:54
 #, kde-format
 msgid "&Create Image Gallery..."
 msgstr "Su&kurti piešinių galeriją..."
 
-#: imgalleryplugin.cpp:62
+#: imgalleryplugin.cpp:64
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
 msgstr "Nepavyko sukurti priedo, praneškite apie šią programos klaidą."
 
-#: imgalleryplugin.cpp:68
+#: imgalleryplugin.cpp:70
 #, kde-format
 msgid "Creating an image gallery works only on local folders."
 msgstr "Piešinių galerijos kūrimas galimas tik vietiniuose aplankuose."
 
-#: imgalleryplugin.cpp:88
+#: imgalleryplugin.cpp:90
 #, kde-format
 msgid "Creating thumbnails"
 msgstr "Sukuriamos miniatiūros"
 
-#: imgalleryplugin.cpp:111 imgalleryplugin.cpp:275
+#: imgalleryplugin.cpp:113 imgalleryplugin.cpp:284
 #, kde-format
 msgid "Could not create folder: %1"
 msgstr "Nepavyko sukurti aplanko: %1"
 
-#: imgalleryplugin.cpp:173
+#: imgalleryplugin.cpp:182
 #, kde-format
 msgid "<i>Number of images</i>: %1"
 msgstr "<i>Piešinių skaičius</i>: %1"
 
-#: imgalleryplugin.cpp:174
+#: imgalleryplugin.cpp:183
 #, kde-format
 msgid "<i>Created on</i>: %1"
 msgstr "<i>Sukurta</i>: %1"
 
-#: imgalleryplugin.cpp:179
+#: imgalleryplugin.cpp:188
 #, kde-format
 msgid "<i>Subfolders</i>:"
 msgstr "<i>Poaplankiai</i>:"
 
-#: imgalleryplugin.cpp:212
+#: imgalleryplugin.cpp:221
 #, kde-format
 msgid ""
 "Created thumbnail for: \n"
@@ -263,7 +263,7 @@ msgstr ""
 "Sukurta miniatiūra: \n"
 "%1"
 
-#: imgalleryplugin.cpp:215
+#: imgalleryplugin.cpp:224
 #, kde-format
 msgid ""
 "Creating thumbnail for: \n"
@@ -274,12 +274,12 @@ msgstr ""
 "%1\n"
 " nepavyko"
 
-#: imgalleryplugin.cpp:230
+#: imgalleryplugin.cpp:239
 #, kde-format
 msgid "KiB"
 msgstr "KiB"
 
-#: imgalleryplugin.cpp:344 imgalleryplugin.cpp:439
+#: imgalleryplugin.cpp:357 imgalleryplugin.cpp:457
 #, kde-format
 msgid "Could not open file: %1"
 msgstr "Nepavyko atverti failo: %1"

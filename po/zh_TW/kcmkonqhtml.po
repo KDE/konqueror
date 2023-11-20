@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-02-07 19:36+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -25,152 +25,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 23.03.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
-#: advancedTabOptions.ui:21
-#, kde-format
-msgid ""
-"This will open a new tab instead of a new window in various situations, such "
-"as choosing a link or a folder with the middle mouse button."
-msgstr ""
-"這個選項會在許多情況下開啟新分頁而非新視窗，像是以滑鼠中鍵選擇連結或資料夾"
-"時。"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
-#: advancedTabOptions.ui:24
-#, kde-format
-msgid "Open &links in new tab instead of in new window"
-msgstr "在新分頁而非新視窗開啟連結(&L)"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
-#: advancedTabOptions.ui:31
-#, kde-format
-msgid ""
-"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
-"new window."
-msgstr "是否允許 JavaScript 彈出視窗，如果允許，要在新的分頁和新的視窗中開啟。"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
-#: advancedTabOptions.ui:34
-#, kde-format
-msgid "Open pop&ups in new tab instead of in new window"
-msgstr "在新分頁而非新視窗開啟連結(&U)"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
-#: advancedTabOptions.ui:41
-#, kde-format
-msgid ""
-"When you click a URL in another KDE program or call kfmclient to open a URL, "
-"the current desktop will be searched for a non-minimized Konqueror and, if "
-"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
-"window will be opened with the required URL."
-msgstr ""
-"當您在其他程式點選網址或者呼叫 kfmclient 開啟網址，目前的桌面將搜尋未最小化"
-"的 Konqueror，如果找到了，該網址會在其中開啟為新的分頁。否則將會開啟一個新的 "
-"Konqueror 視窗給該要求的網址。"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
-#: advancedTabOptions.ui:44
-#, kde-format
-msgid "Open as tab in existing Konqueror when URL is called externally"
-msgstr "當收到外部網址呼叫時在既存的 Konqueror 開啟為分頁"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
-#: advancedTabOptions.ui:51
-#, kde-format
-msgid ""
-"This will open a new tab in the background, instead of in the foreground."
-msgstr "這會在背景開啟新的分頁，而非在前景。"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
-#: advancedTabOptions.ui:54
-#, kde-format
-msgid "O&pen new tabs in the background"
-msgstr "在背景開啟新的分頁(&P)"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
-#: advancedTabOptions.ui:61
-#, kde-format
-msgid ""
-"This will open a new tab opened from a page after the current tab, instead "
-"of after the last tab."
-msgstr "這會在目前分頁之後開啟新的分頁，而非在最後一個分頁之後。"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
-#: advancedTabOptions.ui:64
-#, kde-format
-msgid "Open &new tab after current tab"
-msgstr "在目前分頁之後開啟新的分頁(&N)"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
-#: advancedTabOptions.ui:71
-#, kde-format
-msgid ""
-"This will display the tab bar only if there are two or more tabs. Otherwise "
-"it will always be displayed."
-msgstr "這樣只有在開啟兩個以上的分頁使才會顯示分頁列。否則它將永遠顯示。"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
-#: advancedTabOptions.ui:74
-#, kde-format
-msgid "Hide the tab bar when only one tab is open"
-msgstr "只開啟一個分頁時隱藏分頁列"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
-#: advancedTabOptions.ui:81
-#, kde-format
-msgid "This will display close buttons inside each tab."
-msgstr "這會在每個分頁標籤裡顯示關閉按鈕。"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
-#: advancedTabOptions.ui:84
-#, kde-format
-msgid "&Show close button on tabs"
-msgstr "在分頁列顯示關閉按鈕(&S)"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
-#: advancedTabOptions.ui:91
-#, kde-format
-msgid ""
-"When you click on a tab using the middle mouse button or mouse wheel, it "
-"will close that tab."
-msgstr "您在分頁標籤上按下滑鼠中鍵或滑鼠的滾輪，可以關閉該分頁。"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
-#: advancedTabOptions.ui:94
-#, kde-format
-msgid "Middle-click on a tab to close it"
-msgstr "在分頁上點擊中間來關閉該分頁"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
-#: advancedTabOptions.ui:101
-#, kde-format
-msgid ""
-"This will ask you whether you are sure you want to close a window when it "
-"has multiple tabs opened in it."
-msgstr "這會詢問您是否確定要關閉一個已經開啟多重分頁的視窗。"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
-#: advancedTabOptions.ui:104
-#, kde-format
-msgid "Confirm &when closing windows with multiple tabs"
-msgstr "當關閉有多重分頁的視窗時先確認(&W)"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: advancedTabOptions.ui:111
-#, kde-format
-msgid ""
-"When checking this the previous used or opened tab will be activated when "
-"you close the current active tab instead of the one right to the current tab."
-msgstr ""
-"當您關閉目前使用中的分頁時會使用前一個用過或開啟的分頁而非位於目前分頁右邊的"
-"分頁。"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: advancedTabOptions.ui:114
-#, kde-format
-msgid "Activate previously used tab when closing the current tab"
-msgstr "當關閉目前分頁時跳到前一個使用的分頁"
 
 #: appearance.cpp:39
 #, kde-format
@@ -191,17 +45,17 @@ msgid "Stylesheets"
 msgstr "樣式表單"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:48 css/csscustom.ui:296
+#: appearance.cpp:52 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "影像"
 
-#: appearance.cpp:52
+#: appearance.cpp:56
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "自動載入影像(&U)"
 
-#: appearance.cpp:53
+#: appearance.cpp:57
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -214,12 +68,12 @@ msgstr ""
 "顯示該影像的保留位置，而您可以單擊影像按鈕手動載入影像。<br />除非您的網路連"
 "線速度很慢，不然此選項可以增強您的瀏覽經驗。</html>"
 
-#: appearance.cpp:63
+#: appearance.cpp:67
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "尚未完全下載的圖片周圍先繪製框架(&W)"
 
-#: appearance.cpp:64
+#: appearance.cpp:68
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -231,24 +85,24 @@ msgstr ""
 "網頁中的保留位置。<br />除非您的網路連線速度很慢，不然核取此方塊可以增強您的"
 "瀏覽經驗。</html>"
 
-#: appearance.cpp:74
+#: appearance.cpp:78
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "已啟用"
 
-#: appearance.cpp:75
+#: appearance.cpp:79
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "已停用"
 
-#: appearance.cpp:76
+#: appearance.cpp:80
 #, kde-format
 msgid "Show Only Once"
 msgstr "只顯示一次"
 
-#: appearance.cpp:77
+#: appearance.cpp:81
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -260,40 +114,40 @@ msgstr ""
 "動畫。</li><li><b>關閉</b>：永遠不顯示動畫，只顯示起始影像。</li><li><b>只顯"
 "示一次</b>：完整顯所有動畫但不重複播放。</li></ul></html>"
 
-#: appearance.cpp:82
+#: appearance.cpp:86
 #, kde-format
 msgid "A&nimations:"
 msgstr "動畫(&N):"
 
-#: appearance.cpp:85 htmlopts.cpp:110
+#: appearance.cpp:89 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "雜項"
 
-#: appearance.cpp:90
+#: appearance.cpp:94
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "已啟用"
 
-#: appearance.cpp:91
+#: appearance.cpp:95
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "已停用"
 
-#: appearance.cpp:92
+#: appearance.cpp:96
 #, kde-format
 msgid "Only on Hover"
 msgstr "只有停留其上時"
 
-#: appearance.cpp:93
+#: appearance.cpp:97
 #, kde-format
 msgid "Und&erline links:"
 msgstr "連結加底線(&E):"
 
-#: appearance.cpp:96
+#: appearance.cpp:100
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -307,29 +161,29 @@ msgstr ""
 "</b>：當滑鼠越過連結時才加底線</li></ul><br /><i>注意：網站的 CSS 定義可以覆"
 "蓋此設定</i></html>"
 
-#: appearance.cpp:105
+#: appearance.cpp:109
 #, kde-format
 msgid "When Efficient"
 msgstr "有效使用"
 
-#: appearance.cpp:106
+#: appearance.cpp:110
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "總是使用"
 
-#: appearance.cpp:107
+#: appearance.cpp:111
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "不使用"
 
-#: appearance.cpp:108
+#: appearance.cpp:112
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "平滑捲動(&M)："
 
-#: appearance.cpp:110
+#: appearance.cpp:114
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -343,31 +197,22 @@ msgstr ""
 "</b>：總是使用平滑捲動。</li> <li><b>不使用</b>：不使用平滑捲動功能。</li> "
 "<li><b>有效使用</b>：只在系統資源足夠時使用</li></ul></html>"
 
-#: appearance.cpp:119
-#, kde-format
-msgid ""
-"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
-"Konqueror should use to display the web pages you view."
-msgstr ""
-"<h1>Konqueror 字型</h1>在此分頁，您可以設定 Konqueror 應該使用哪種字型來顯示"
-"您檢視的網頁。"
-
-#: appearance.cpp:131
+#: appearance.cpp:132
 #, kde-format
 msgid "Font Si&ze"
 msgstr "字型大小(&Z)"
 
-#: appearance.cpp:134 appearance.cpp:152
+#: appearance.cpp:135 appearance.cpp:153
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr "這是 Konqueror 用來顯示網站的相對字型大小。"
 
-#: appearance.cpp:138
+#: appearance.cpp:139
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "字型最小值(&I):"
 
-#: appearance.cpp:142
+#: appearance.cpp:143
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
@@ -375,89 +220,89 @@ msgid ""
 msgstr ""
 "Konqueror 永遠不會顯示小於這個大小的文字，<br /> 此設定值會覆蓋其他設定"
 
-#: appearance.cpp:147
+#: appearance.cpp:148
 #, kde-format
 msgid "&Medium font size:"
 msgstr "中等字型大小(&M):"
 
-#: appearance.cpp:160
+#: appearance.cpp:161
 #, kde-format
 msgid "S&tandard font:"
 msgstr "標準字型(&T):"
 
-#: appearance.cpp:161
+#: appearance.cpp:162
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr "這是用來顯示網頁中一般文字的字型。"
 
-#: appearance.cpp:165
+#: appearance.cpp:166
 #, kde-format
 msgid "&Fixed font:"
 msgstr "固定字型(&F):"
 
-#: appearance.cpp:166
+#: appearance.cpp:167
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr "這是用來顯示固定寬度（例如：非等比例的）文字的字型。"
 
-#: appearance.cpp:170
+#: appearance.cpp:171
 #, kde-format
 msgid "S&erif font:"
 msgstr "S&erif 字型:"
 
-#: appearance.cpp:171
+#: appearance.cpp:172
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr "這是用來顯示標記為 serif 文字的字型。"
 
-#: appearance.cpp:175
+#: appearance.cpp:176
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "Sa&ns Serif 字型:"
 
-#: appearance.cpp:176
+#: appearance.cpp:177
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr "這是用來顯示標記為 sans-serif 文字的字型。"
 
-#: appearance.cpp:180
+#: appearance.cpp:181
 #, kde-format
 msgid "C&ursive font:"
 msgstr "C&ursive 字型:"
 
-#: appearance.cpp:181
+#: appearance.cpp:182
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr "這是用來顯示標記為斜體文字的字型。"
 
-#: appearance.cpp:185
+#: appearance.cpp:186
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "Fontas&y 字型:"
 
-#: appearance.cpp:186
+#: appearance.cpp:187
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr "這是用來顯示標記為 fantasy 文字的字型。"
 
-#: appearance.cpp:195
+#: appearance.cpp:196
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "為此編碼調整字型大小(&S):"
 
-#: appearance.cpp:203 appearance.cpp:401
+#: appearance.cpp:204 appearance.cpp:402
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "使用語言編碼"
 
-#: appearance.cpp:205
+#: appearance.cpp:206
 #, kde-format
 msgid "Default encoding:"
 msgstr "預設編碼:"
 
-#: appearance.cpp:207
+#: appearance.cpp:208
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1440,32 +1285,32 @@ msgid " day"
 msgid_plural " days"
 msgstr[0] " 天"
 
-#: filteropts.cpp:120
+#: filteropts.cpp:124
 #, kde-format
 msgid "Insert"
 msgstr "插入"
 
-#: filteropts.cpp:123
+#: filteropts.cpp:127
 #, kde-format
 msgid "Update"
 msgstr "更新"
 
-#: filteropts.cpp:126
+#: filteropts.cpp:130
 #, kde-format
 msgid "Remove"
 msgstr "移除"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:134
 #, kde-format
 msgid "Import..."
 msgstr "匯入..."
 
-#: filteropts.cpp:133
+#: filteropts.cpp:137
 #, kde-format
 msgid "Export..."
 msgstr "匯出..."
 
-#: filteropts.cpp:140
+#: filteropts.cpp:144
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
@@ -1474,7 +1319,7 @@ msgstr ""
 "<qt>請參考關於<a href=\"importhelp\">匯入格式</a>與<a href=\"exporthelp\">匯"
 "出格式</a>的更多資訊。"
 
-#: filteropts.cpp:154
+#: filteropts.cpp:158
 #, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
@@ -1483,7 +1328,7 @@ msgstr ""
 "啟用或停用 AdBlocK 過濾器。當啟用時應在過濾器清單中定義網址的表示式才能使阻擋"
 "功能生效。"
 
-#: filteropts.cpp:156
+#: filteropts.cpp:160
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
@@ -1491,14 +1336,14 @@ msgid ""
 msgstr ""
 "當啟用時被阻擋的圖片會完全從網頁中移除，另外就是使用「被阻擋的」佔位符圖片。"
 
-#: filteropts.cpp:163
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
 "and media objects."
 msgstr "這是套用到所有連結的圖片與框架的網址過濾器清單。"
 
-#: filteropts.cpp:167
+#: filteropts.cpp:171
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1515,7 +1360,7 @@ msgstr ""
 "banner)\\./</tt></li> </ul> <p>任何過濾器前面加上 <tt>@@</tt> 都表示是屬於白"
 "名單，優先權在黑名單之前。"
 
-#: filteropts.cpp:183
+#: filteropts.cpp:187
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1525,7 +1370,7 @@ msgstr ""
 "<qt><p>過濾器匯入格式是純文字檔。空白行、以 '<tt>!</tt>' 開頭的註解行，以及標"
 "頭行 <tt>[AdBlock]</tt> 會被忽略。任何其它行都會視為過濾器表示式。"
 
-#: filteropts.cpp:188
+#: filteropts.cpp:192
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1535,43 +1380,28 @@ msgstr ""
 "<qt><p>過濾器匯出格式是純文字檔。空白行、以 '<tt>!</tt>' 開頭的註解行，以及標"
 "頭行 <tt>[AdBlock]</tt> 會被忽略。每個過濾器都會單獨一行。"
 
-#: filteropts.cpp:256
+#: filteropts.cpp:260
 #, kde-format
 msgid "Import Filters"
 msgstr "匯入過濾器"
 
-#: filteropts.cpp:300
+#: filteropts.cpp:304
 #, kde-format
 msgid "Export Filters"
 msgstr "匯出過濾器"
 
-#: filteropts.cpp:435
-#, kde-format
-msgid ""
-"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
-"filters that are checked against linked images and frames. URL's that match "
-"are either discarded or replaced with a placeholder image. "
-msgstr ""
-"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK 讓您建立一個過濾器清單來檢查連結"
-"的圖片和框架。符合的 URL 會被取消或以佔位符圖片代替。"
-
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:557 useragent/useragent.ui:61
+#: filteropts.cpp:556 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "名稱"
 
-#: filteropts.cpp:558
+#: filteropts.cpp:557
 #, kde-format
 msgid "URL"
 msgstr "網址"
 
-#: generalopts.cpp:53
-#, kde-format
-msgid "Tabbed Browsing"
-msgstr "分頁瀏覽"
-
-#: generalopts.cpp:79
+#: generalopts.cpp:56
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1579,114 +1409,101 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr "請插入自訂開始頁"
 
-#: generalopts.cpp:85
+#: generalopts.cpp:62
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr ""
 
-#: generalopts.cpp:94
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "顯示介紹頁面"
 
-#: generalopts.cpp:95
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "顯示我的開始頁"
 
-#: generalopts.cpp:96
+#: generalopts.cpp:73
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "顯示空白頁"
 
-#: generalopts.cpp:97
+#: generalopts.cpp:74
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "顯示我的書籤"
 
-#: generalopts.cpp:103
+#: generalopts.cpp:80
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "選擇開始頁"
 
-#: generalopts.cpp:108
+#: generalopts.cpp:85
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr "這是 Konqueror 在啟動時將會顯示的網頁的 URL。"
 
-#: generalopts.cpp:119
+#: generalopts.cpp:96
 #, kde-format
 msgid "Home page:"
 msgstr "首頁："
 
-#: generalopts.cpp:122
+#: generalopts.cpp:99
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "選擇首頁"
 
-#: generalopts.cpp:127
+#: generalopts.cpp:104
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
 "\" button is pressed."
 msgstr "這是 Konqueror 按下「首頁」鍵時會跳到的網頁的 URL。"
 
-#: generalopts.cpp:135
+#: generalopts.cpp:112
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "預設的網頁瀏覽器引擎："
 
-#: generalopts.cpp:144
+#: generalopts.cpp:121
 #, kde-format
 msgid "When splitting a view"
 msgstr "當分割檢視時"
 
-#: generalopts.cpp:148
+#: generalopts.cpp:125
 #, kde-format
 msgid "Always duplicate current view"
 msgstr "總是複製目前檢視"
 
-#: generalopts.cpp:149
+#: generalopts.cpp:126
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "只為本機檔案複製目前檢視"
 
-#: generalopts.cpp:155
+#: generalopts.cpp:132
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr ""
 
-#: htmlopts.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
-"functionality. Please note that the file manager functionality has to be "
-"configured using the \"File Manager\" configuration module. You can make "
-"some settings how Konqueror should handle the HTML code in the web pages it "
-"loads. It is usually not necessary to change anything here."
-msgstr ""
-"<h1>Konqueror 瀏覽器</h1>您可以在這裡設定 Konqueror 的瀏覽功能。請注意檔案管"
-"理功能必須使用「檔案管理程式」組態模組來設定。您可以設定 Konqueror 要如何處理"
-"它所載入的網頁中的 HTML 碼。通常是不需要在這裡做任何改變的。"
-
-#: htmlopts.cpp:44
+#: htmlopts.cpp:35
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "書籤(&K)"
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:38
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "當加入書籤時詢問名稱與資料夾"
 
-#: htmlopts.cpp:50
+#: htmlopts.cpp:41
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1696,12 +1513,12 @@ msgstr ""
 "如果核取此方塊，Konqueror 將允許您在加入新書籤時改變書籤的標題並選擇要將之儲"
 "存於哪個資料夾。"
 
-#: htmlopts.cpp:56
+#: htmlopts.cpp:47
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "在書籤工具列中只顯示標記的書籤"
 
-#: htmlopts.cpp:58
+#: htmlopts.cpp:49
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1710,12 +1527,12 @@ msgstr ""
 "如果核取這個方塊，Konqueror 在書籤工具列中將只顯示您在書籤編輯器中標記的書"
 "籤。"
 
-#: htmlopts.cpp:65
+#: htmlopts.cpp:56
 #, kde-format
 msgid "Form Com&pletion"
 msgstr "自動補齊表單(&P)"
 
-#: htmlopts.cpp:69
+#: htmlopts.cpp:60
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1724,28 +1541,28 @@ msgstr ""
 "如果核取此方塊， Konqueror 會記住您在網頁表單中輸入的資料，並且在所有表單中的"
 "類似欄位自動輸入。"
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:66
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "自動補齊最大值(&M):"
 
-#: htmlopts.cpp:77
+#: htmlopts.cpp:68
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
 msgstr "您可以在這裡選擇 Konqueror 能記住多少表單欄位的數值。"
 
-#: htmlopts.cpp:84
+#: htmlopts.cpp:75
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "滑鼠行為(&V)"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:78
 #, kde-format
 msgid "Chan&ge cursor over links"
 msgstr "穿越連結時改變游標(&G)"
 
-#: htmlopts.cpp:89
+#: htmlopts.cpp:80
 #, kde-format
 msgid ""
 "If this option is set, the shape of the cursor will change (usually to a "
@@ -1754,24 +1571,24 @@ msgstr ""
 "如果設定此選項，當游標移至超連結上時，其形狀會有所變化（通常是變成手的形"
 "狀）。"
 
-#: htmlopts.cpp:93
+#: htmlopts.cpp:84
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "按中鍵開啟選擇區中的網址(&I)"
 
-#: htmlopts.cpp:96
+#: htmlopts.cpp:87
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
 "clicking on a Konqueror view."
 msgstr "如果核取這個方塊，您可以在檢視中按下滑鼠中間來開啟選擇區中的網址。"
 
-#: htmlopts.cpp:100
+#: htmlopts.cpp:91
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "右擊回到紀錄的上一步(&B)"
 
-#: htmlopts.cpp:103
+#: htmlopts.cpp:94
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1781,12 +1598,12 @@ msgstr ""
 "如果核取此方塊，您可以在 Konqueror 檢視中按滑鼠右鍵以回到紀錄中的上一步。要使"
 "用前後選單，按下滑鼠右鍵並移動。"
 
-#: htmlopts.cpp:113
+#: htmlopts.cpp:104
 #, kde-format
 msgid "Allow automatic delayed &reloading/redirecting"
 msgstr "允許自動延遲的重新載入/導向(&R)"
 
-#: htmlopts.cpp:114
+#: htmlopts.cpp:105
 #, kde-format
 msgid ""
 "Some web pages request an automatic reload or redirection after a certain "
@@ -1795,12 +1612,12 @@ msgstr ""
 "有些網頁會在一段時間後要求自動重新載入或重新導向。若核消此方塊， Konqueror 會"
 "忽略這些要求。"
 
-#: htmlopts.cpp:120
+#: htmlopts.cpp:111
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "開啟 Ctrl 鍵顯示存取按鍵的功能(&Y)"
 
-#: htmlopts.cpp:121
+#: htmlopts.cpp:112
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1810,34 +1627,34 @@ msgstr ""
 "瀏覽網頁時按下 Ctrl 鍵可以顯示快速存取鍵。取消勾選此選項的話會關閉此功能"
 "（Konqueror 要重新啟動此選項才會生效）"
 
-#: htmlopts.cpp:125
+#: htmlopts.cpp:116
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr "傳送 DNT 標頭告訴網站您不想被追蹤。"
 
-#: htmlopts.cpp:126
+#: htmlopts.cpp:117
 #, kde-format
 msgid ""
 "Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked."
 msgstr "勾選此項目，您可以通知網站，您不希望您的網路瀏覽習慣被追蹤。"
 
-#: htmlopts.cpp:130
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Offer to save website passwords"
 msgstr "儲存網站密碼"
 
-#: htmlopts.cpp:131
+#: htmlopts.cpp:122
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr "取消勾選此選項，就不會跳出提示詢問是否要儲存網站密碼"
 
-#: htmlopts.cpp:135
+#: htmlopts.cpp:126
 #, kde-format
 msgid "Display online PDF files using WebEngine"
 msgstr "使用 WebEngine 顯示線上 PDF 檔案"
 
-#: htmlopts.cpp:136
+#: htmlopts.cpp:127
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
@@ -2064,7 +1881,7 @@ msgid ""
 "Enables the reporting of errors that occur when JavaScript code is executed."
 msgstr "啟用回報當執行 JavaScript 程式碼時產生的錯誤。"
 
-#: jsopts.cpp:79
+#: jsopts.cpp:83
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2083,7 +1900,7 @@ msgstr ""
 "策並使用預設政策設定於該網域。<i>匯入</i>與<i>匯出</i>按鈕讓你可以用壓縮檔案"
 "的方式儲存與接收政策，以便和別人分享您的政策。"
 
-#: jsopts.cpp:89
+#: jsopts.cpp:93
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2096,7 +1913,7 @@ msgstr ""
 "以決定要啟用或停用由這些網域或主機所傳送的網頁的JavaScript 。</p> <p>選擇一個"
 "政策並使用右邊的控制項來編輯它。</p>"
 
-#: jsopts.cpp:96
+#: jsopts.cpp:100
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2106,7 +1923,7 @@ msgstr ""
 "單擊此按鈕以選擇含有 JavaScript 政策的檔案。這些政策會被合併到現有的政策中。"
 "重複的項目會被忽略。"
 
-#: jsopts.cpp:99
+#: jsopts.cpp:103
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2116,40 +1933,40 @@ msgstr ""
 "單擊此按鈕來把 JavaScript 政策儲存為壓縮的檔案。這個名為<b>javascript_policy."
 "tgz</b>的檔案會儲存到您選擇的位置。"
 
-#: jsopts.cpp:105
+#: jsopts.cpp:109
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "全域 JavaScript 政策"
 
-#: jsopts.cpp:173
+#: jsopts.cpp:181
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "特定網域(&M)"
 
-#: jsopts.cpp:212
+#: jsopts.cpp:220
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "新增 JavaScript 政策"
 
-#: jsopts.cpp:215
+#: jsopts.cpp:223
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "改變 JavaScript 政策"
 
-#: jsopts.cpp:219
+#: jsopts.cpp:227
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "JavaScript 政策:"
 
-#: jsopts.cpp:220
+#: jsopts.cpp:228
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "選擇上面主機或網域的 JavaScript 政策。"
 
-#: jsopts.cpp:222
+#: jsopts.cpp:230
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "特定網域的 JavaScript 政策"
@@ -2353,27 +2170,10 @@ msgstr ""
 msgid "&Java"
 msgstr "&Java"
 
-#: main.cpp:53
+#: main.cpp:57
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"
-
-#: main.cpp:93
-#, kde-format
-msgid ""
-"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
-"programs embedded in web pages should be allowed to be executed by Konqueror."
-"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
-"in web pages should be allowed to be executed by Konqueror.<br /><br /"
-"><b>Note:</b> Active content is always a security risk, which is why "
-"Konqueror allows you to specify very fine-grained from which hosts you want "
-"to execute Java and/or JavaScript programs."
-msgstr ""
-"<h2>JavaScript</h2>在此分頁，您可以設定 Konqueror 是否允許執行內嵌於網頁中的 "
-"JavaScript 程式。<h2>Java</h2>在此分頁，您可以設定 Konqueror 是否允許執行內嵌"
-"於網頁中的 Java Applet 程式。<br /><br /><b>注意：</b>動態的內容常常會有安全"
-"性的顧慮，這也是為什麼 Konqueror 讓您指定您想執行來自哪個主機的 Java 和/或 "
-"JavaScript 程式。"
 
 #: policydlg.cpp:30
 #, kde-format
@@ -2398,6 +2198,220 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "您必須先輸入網域名稱。"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
+#: tabs/tabsoptions.ui:14
+#, fuzzy, kde-format
+#| msgid "Mouse Beha&vior"
+msgid "Tabs Behavior"
+msgstr "滑鼠行為(&V)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: tabs/tabsoptions.ui:20
+#, kde-format
+msgid "Aspect"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: tabs/tabsoptions.ui:26
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr "這樣只有在開啟兩個以上的分頁使才會顯示分頁列。否則它將永遠顯示。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: tabs/tabsoptions.ui:29
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr "只開啟一個分頁時隱藏分頁列"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: tabs/tabsoptions.ui:38
+#, kde-format
+msgid "Tab bar position"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:48
+#, kde-format
+msgid "Choose where to display the tabs bar"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:52
+#, kde-format
+msgid "Above contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:57
+#, kde-format
+msgid "Below contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:62
+#, kde-format
+msgid "Left of contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:67
+#, kde-format
+msgid "Right of contents"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: tabs/tabsoptions.ui:93
+#, kde-format
+msgid "Usage"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: tabs/tabsoptions.ui:99
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr ""
+"這個選項會在許多情況下開啟新分頁而非新視窗，像是以滑鼠中鍵選擇連結或資料夾"
+"時。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: tabs/tabsoptions.ui:102
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "在新分頁而非新視窗開啟連結(&L)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: tabs/tabsoptions.ui:109
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr "是否允許 JavaScript 彈出視窗，如果允許，要在新的分頁和新的視窗中開啟。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: tabs/tabsoptions.ui:112
+#, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr "在新分頁而非新視窗開啟連結(&U)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: tabs/tabsoptions.ui:119
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+"當您在其他程式點選網址或者呼叫 kfmclient 開啟網址，目前的桌面將搜尋未最小化"
+"的 Konqueror，如果找到了，該網址會在其中開啟為新的分頁。否則將會開啟一個新的 "
+"Konqueror 視窗給該要求的網址。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: tabs/tabsoptions.ui:122
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr "當收到外部網址呼叫時在既存的 Konqueror 開啟為分頁"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: tabs/tabsoptions.ui:132
+#, fuzzy, kde-format
+#| msgid "Mouse Beha&vior"
+msgid "New Tab Behavior"
+msgstr "滑鼠行為(&V)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: tabs/tabsoptions.ui:138
+#, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr "這會在背景開啟新的分頁，而非在前景。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: tabs/tabsoptions.ui:141
+#, kde-format
+msgid "O&pen new tabs in the background"
+msgstr "在背景開啟新的分頁(&P)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: tabs/tabsoptions.ui:148
+#, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr "這會在目前分頁之後開啟新的分頁，而非在最後一個分頁之後。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: tabs/tabsoptions.ui:151
+#, kde-format
+msgid "Open &new tab after current tab"
+msgstr "在目前分頁之後開啟新的分頁(&N)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: tabs/tabsoptions.ui:161
+#, kde-format
+msgid "Closing"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: tabs/tabsoptions.ui:167
+#, kde-format
+msgid "This will display close buttons inside each tab."
+msgstr "這會在每個分頁標籤裡顯示關閉按鈕。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: tabs/tabsoptions.ui:170
+#, kde-format
+msgid "&Show close button on tabs"
+msgstr "在分頁列顯示關閉按鈕(&S)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: tabs/tabsoptions.ui:177
+#, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr "您在分頁標籤上按下滑鼠中鍵或滑鼠的滾輪，可以關閉該分頁。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: tabs/tabsoptions.ui:180
+#, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr "在分頁上點擊中間來關閉該分頁"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: tabs/tabsoptions.ui:187
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr "這會詢問您是否確定要關閉一個已經開啟多重分頁的視窗。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: tabs/tabsoptions.ui:190
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr "當關閉有多重分頁的視窗時先確認(&W)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: tabs/tabsoptions.ui:197
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+"當您關閉目前使用中的分頁時會使用前一個用過或開啟的分頁而非位於目前分頁右邊的"
+"分頁。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: tabs/tabsoptions.ui:200
+#, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr "當關閉目前分頁時跳到前一個使用的分頁"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, UserAgent)
 #: useragent/useragent.ui:14
@@ -2480,6 +2494,50 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+
+#~ msgid ""
+#~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+#~ "Konqueror should use to display the web pages you view."
+#~ msgstr ""
+#~ "<h1>Konqueror 字型</h1>在此分頁，您可以設定 Konqueror 應該使用哪種字型來顯"
+#~ "示您檢視的網頁。"
+
+#~ msgid ""
+#~ "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list "
+#~ "of filters that are checked against linked images and frames. URL's that "
+#~ "match are either discarded or replaced with a placeholder image. "
+#~ msgstr ""
+#~ "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK 讓您建立一個過濾器清單來檢查"
+#~ "連結的圖片和框架。符合的 URL 會被取消或以佔位符圖片代替。"
+
+#~ msgid "Tabbed Browsing"
+#~ msgstr "分頁瀏覽"
+
+#~ msgid ""
+#~ "<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+#~ "functionality. Please note that the file manager functionality has to be "
+#~ "configured using the \"File Manager\" configuration module. You can make "
+#~ "some settings how Konqueror should handle the HTML code in the web pages "
+#~ "it loads. It is usually not necessary to change anything here."
+#~ msgstr ""
+#~ "<h1>Konqueror 瀏覽器</h1>您可以在這裡設定 Konqueror 的瀏覽功能。請注意檔案"
+#~ "管理功能必須使用「檔案管理程式」組態模組來設定。您可以設定 Konqueror 要如"
+#~ "何處理它所載入的網頁中的 HTML 碼。通常是不需要在這裡做任何改變的。"
+
+#~ msgid ""
+#~ "<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+#~ "programs embedded in web pages should be allowed to be executed by "
+#~ "Konqueror.<h2>Java</h2>On this page, you can configure whether Java "
+#~ "applets embedded in web pages should be allowed to be executed by "
+#~ "Konqueror.<br /><br /><b>Note:</b> Active content is always a security "
+#~ "risk, which is why Konqueror allows you to specify very fine-grained from "
+#~ "which hosts you want to execute Java and/or JavaScript programs."
+#~ msgstr ""
+#~ "<h2>JavaScript</h2>在此分頁，您可以設定 Konqueror 是否允許執行內嵌於網頁中"
+#~ "的 JavaScript 程式。<h2>Java</h2>在此分頁，您可以設定 Konqueror 是否允許執"
+#~ "行內嵌於網頁中的 Java Applet 程式。<br /><br /><b>注意：</b>動態的內容常常"
+#~ "會有安全性的顧慮，這也是為什麼 Konqueror 讓您指定您想執行來自哪個主機的 "
+#~ "Java 和/或 JavaScript 程式。"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

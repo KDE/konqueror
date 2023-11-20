@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2008-04-01 17:37+0300\n"
 "Last-Translator: Sergiu Bivol <sergiu-bivol@mail.md>\n"
 "Language-Team: Română\n"
@@ -20,36 +20,15 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>Performanța KDE</h1> Aici puteți configura setări care îmbunătățesc "
-"performanța KDE."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Sistem"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Performanța Konqueror</h1> Aici puteți configura mai multe setări care "
-"îmbunătățesc performanța Konqueror printre care opțiuni pentru reutilizarea "
-"unei instanțe care rulează deja și menținerea în execuție a unor instanțe "
-"preîncărcate."
 
 #: konqueror.cpp:24
 #, fuzzy, kde-format
@@ -169,6 +148,23 @@ msgid ""
 msgstr ""
 "În cazuri foarte rare, această opțiune poate să genereze diferite probleme. "
 "Consultați ajutorul rapid „Ce înseamnă aceasta?” pentru detalii."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>Performanța KDE</h1> Aici puteți configura setări care îmbunătățesc "
+#~ "performanța KDE."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Performanța Konqueror</h1> Aici puteți configura mai multe setări "
+#~ "care îmbunătățesc performanța Konqueror printre care opțiuni pentru "
+#~ "reutilizarea unei instanțe care rulează deja și menținerea în execuție a "
+#~ "unor instanțe preîncărcate."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

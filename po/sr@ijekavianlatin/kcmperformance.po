@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-05-20 02:40+0200\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2017-09-28 17:56+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -20,37 +20,17 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: kcmperformance.cpp:43
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>Performanse KDE‑a</h1><p>U ovom modulu zadajete postavke koje se tiču "
-"performansi KDE‑a.</p>"
-
-#: kcmperformance.cpp:50
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "K‑osvajač"
 
-#: kcmperformance.cpp:53
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Sistem"
 
-#: kcmperformance.cpp:78
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Performanse K‑osvajača</h1><p>Ovdje možete odrediti nekoliko postavki "
-"koje poboljšavaju performanse K‑osvajača. U njih spadaju opcija za reciklažu "
-"već pokrenutih primjeraka i za održavanje primjerakâ učitanim.</p>"
-
-#: konqueror.cpp:36
+#: konqueror.cpp:24
 #, kde-format
 msgid ""
 "<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
@@ -64,7 +44,7 @@ msgstr ""
 "račun dužeg podizanja Plasme. Ali, pošto možete početi s radom dok se još "
 "uvijek učitava, ne morate ni primijetiti ovo kašnjenje.</p>"
 
-#: konqueror.cpp:42
+#: konqueror.cpp:30
 #, kde-format
 msgid ""
 "<p>If enabled, Konqueror will always try to have one preloaded instance "
@@ -96,7 +76,7 @@ msgstr "Učitaj primjerak po pokretanju površi"
 msgid "Always try to have one preloaded instance"
 msgstr "Uvijek održavaj jedan učitan primjerak"
 
-#: system.cpp:34
+#: system.cpp:22
 #, kde-format
 msgid ""
 "<p>During startup KDE needs to perform a check of its system configuration "
@@ -147,3 +127,20 @@ msgid ""
 msgstr ""
 "<html>Ova opcija u rijetkim slučajevima može dovesti do raznih problema. "
 "Pogledajte „Šta je ovo?“ (<b>Shift+F1</b>) za detalje.</html>"
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>Performanse KDE‑a</h1><p>U ovom modulu zadajete postavke koje se tiču "
+#~ "performansi KDE‑a.</p>"
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Performanse K‑osvajača</h1><p>Ovdje možete odrediti nekoliko postavki "
+#~ "koje poboljšavaju performanse K‑osvajača. U njih spadaju opcija za "
+#~ "reciklažu već pokrenutih primjeraka i za održavanje primjerakâ učitanim.</"
+#~ "p>"

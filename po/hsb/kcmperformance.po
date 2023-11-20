@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdebase\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2021-10-18 16:24+0200\n"
 "Last-Translator: Eduard Werner <edi.werner@gmx.de>\n"
 "Language-Team: en_US <kde-i18n-doc@lists.kde.org>\n"
@@ -17,35 +17,15 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
 "%100==4 ? 2 : 3;\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>KDE Wukonitosć</h1>Tu móžeće wšelake wěcy nastajić, kiž polěpša "
-"wukonitosć KDE."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "System"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>KDE Wukonitosć</h1>Tu móžeće wšelake wěcy nastajić, kiž polěpša "
-"wukonitosć KDE. Mjez nimi su opcije za znowawužiwanje hižo běžacych "
-"instancow a dočasne začitanje instancow."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -143,6 +123,22 @@ msgid ""
 msgstr ""
 "Tuta opcija móže w rědkich padach problemy zawinić. Hladajće do \"Što to je?"
 "\" (Wulkopis+F1) po nadrobnosće."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDE Wukonitosć</h1>Tu móžeće wšelake wěcy nastajić, kiž polěpša "
+#~ "wukonitosć KDE."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>KDE Wukonitosć</h1>Tu móžeće wšelake wěcy nastajić, kiž polěpša "
+#~ "wukonitosć KDE. Mjez nimi su opcije za znowawužiwanje hižo běžacych "
+#~ "instancow a dočasne začitanje instancow."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

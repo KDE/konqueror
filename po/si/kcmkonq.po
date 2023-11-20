@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2009-12-26 16:58+0530\n"
 "Last-Translator: Danishka Navin <danishka@gmail.com>\n"
 "Language-Team: Sinhala <danishka@gmail.com>\n"
@@ -17,26 +17,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 0.3\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
-"file manager here."
-msgstr ""
-"<h1>Konqueror හැසිරීම</h1>මෙහිදී ඔබට Konqueror ගොනු පාලකයක් වශයෙන් හැසිරිය යුතු ආකාරය "
-"සැකසිය හැක."
-
-#: behaviour.cpp:40
+#: behaviour.cpp:38
 #, kde-format
 msgid "Misc Options"
 msgstr "බහු සැකසුම්"
 
-#: behaviour.cpp:49
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "බාහාළුම් වෙන වෙනම කවුළු වල විවෘත කරන්න (&w)"
 
-#: behaviour.cpp:50
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -45,13 +36,13 @@ msgstr ""
 "මෙම විකල්පය තෝරා ඇත්නම්, ඔබ බහාලුමක් විවෘත කරන විට වත්මන් කවුළුවේම එහි අන්තර්ගතය පෙන්වනු "
 "වෙනුවට Konqueror විසින් එය නව කවුළුවක විවෘත කරනු ඇත."
 
-#: behaviour.cpp:73
+#: behaviour.cpp:71
 #, fuzzy, kde-format
 #| msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "ඉවලන බහලුම මඟහරින 'මකන්න' සන්දර්ඹ මෙනු ඇතුළත්කිරීම් පෙන්වන්න (&n)"
 
-#: behaviour.cpp:77
+#: behaviour.cpp:75
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if you want 'Delete' menu commands to be displayed on the "
@@ -64,6 +55,13 @@ msgid ""
 msgstr ""
 "වැඩතලයේ හා ගොනු කළමනාකරු හි 'මකන්න' මෙනු විධානය පෙන්වීමට මෙය සලකුණු කරන්න, ඔබට සැමවිටම "
 "SHIFT යතුර ඔබාගෙන 'ඉවතලන බඳුනට ගෙනයන්න' කැඳවීමෙන් ගොනු මකාදැමිය හැක."
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>Konqueror හැසිරීම</h1>මෙහිදී ඔබට Konqueror ගොනු පාලකයක් වශයෙන් හැසිරිය යුතු "
+#~ "ආකාරය සැකසිය හැක."
 
 #, fuzzy
 #~| msgid "Menu Editor"

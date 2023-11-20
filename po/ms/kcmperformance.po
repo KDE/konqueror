@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2008-05-08 21:23+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -18,35 +18,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=1;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>Prestasi KDE</h1> Anda boleh selaraskan tetapan untuk meningkatkan lagi "
-"prestasi KDE di sini."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Sistem"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Prestasi KDE</h1> Anda boleh selaraskan beberapa tetapan untuk "
-"meningkatkan lagi prestasi Konqueror di sini. Ini termasuklah pilihan untuk "
-"guna-semula instans sedang berjalan dan untuk membiarkan instans dipra-muat."
 
 #: konqueror.cpp:24
 #, fuzzy, kde-format
@@ -162,6 +142,23 @@ msgid ""
 msgstr ""
 "Pilihan ini mungkin amat jarang membawa kepada pelbagai masalah. Lihat "
 "What's This (Shift+F1) untuk maklumat lanjut."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>Prestasi KDE</h1> Anda boleh selaraskan tetapan untuk meningkatkan "
+#~ "lagi prestasi KDE di sini."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Prestasi KDE</h1> Anda boleh selaraskan beberapa tetapan untuk "
+#~ "meningkatkan lagi prestasi Konqueror di sini. Ini termasuklah pilihan "
+#~ "untuk guna-semula instans sedang berjalan dan untuk membiarkan instans "
+#~ "dipra-muat."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

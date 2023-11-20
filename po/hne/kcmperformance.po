@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2009-02-09 18:28+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -19,35 +19,15 @@ msgstr ""
 "X-Generator: Lokalize 0.2\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>केडीई परफार्मेंस</h1> इहां आप मन सेटिंग मन ल कान्फिगर कर सकथो जऊन आप मन के केडीई "
-"परफार्मेंस ल बढ़िया बनाथें."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "कान्करर"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "तंत्र"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>कान्करर परफार्मेंस</h1> इहां आप मन झौंहा सेटिंग मन ल कान्फिगर कर सकथो जऊन आप मन के "
-"कान्करर परफार्मेंस ल बेहतर बनाथें. एमां सामिल हे पहिली से चलत इंस्टैंसेस के फिर से  उपयोग तथा "
-"इंसटैंसेस ल प्री-लोडेड बनाय रखना."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -127,6 +107,22 @@ msgid ""
 "This (Shift+F1) help for details."
 msgstr ""
 "ये विकल्प कुछ हालत मं बहुत से समस्या पैदा कर सकथे. विवरन बर ए का हे (सिफ्ट+एफ१) मदद देखव."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>केडीई परफार्मेंस</h1> इहां आप मन सेटिंग मन ल कान्फिगर कर सकथो जऊन आप मन के "
+#~ "केडीई परफार्मेंस ल बढ़िया बनाथें."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>कान्करर परफार्मेंस</h1> इहां आप मन झौंहा सेटिंग मन ल कान्फिगर कर सकथो जऊन आप "
+#~ "मन के कान्करर परफार्मेंस ल बेहतर बनाथें. एमां सामिल हे पहिली से चलत इंस्टैंसेस के फिर से  "
+#~ "उपयोग तथा इंसटैंसेस ल प्री-लोडेड बनाय रखना."
 
 #, fuzzy
 #~| msgid "Maximum number of instances kept &preloaded:"

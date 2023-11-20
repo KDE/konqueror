@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2016-01-16 16:44+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
@@ -27,17 +27,6 @@ msgstr ""
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 "\n"
-
-#: bookmarks.cpp:92
-#, kde-format
-msgid ""
-"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
-msgstr ""
-"<h1>Bókamerkin mín</h1><p>Þessi eining gerir þér kleift að stilla "
-"upphafssíðu bókamerkjanna þinna.</p><p>Upphafssíða bókamerkja sést til dæmis "
-"með því að slá inn slóðina <a href=\"bookmarks:/\">bookmarks:/</a>.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -169,6 +158,16 @@ msgstr "Hreinsa skyndiminni bitamynda"
 #, kde-format
 msgid "&Clear Cache"
 msgstr "&Tæma skyndiminni"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "<h1>Bókamerkin mín</h1><p>Þessi eining gerir þér kleift að stilla "
+#~ "upphafssíðu bókamerkjanna þinna.</p><p>Upphafssíða bókamerkja sést til "
+#~ "dæmis með því að slá inn slóðina <a href=\"bookmarks:/\">bookmarks:/</a>."
+#~ "</p>"
 
 #~ msgid ""
 #~ "<h1>Cache</h1><p>This module lets you configure your cache settings.</"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2011-08-27 14:06-0700\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -24,17 +24,6 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "X-Generator: Lokalize 1.1\n"
-
-#: bookmarks.cpp:92
-#, kde-format
-msgid ""
-"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
-msgstr ""
-"<h1>マイブックマーク</h1><p>このモジュールでブックマークのホームページを設定"
-"します。</p><p>ブックマークのホームページは <a href=\"bookmarks:/"
-"\">bookmarks:/</a> で開くことができます。</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -169,3 +158,12 @@ msgstr "ピクスマップキャッシュをクリアします"
 #, kde-format
 msgid "&Clear Cache"
 msgstr "キャッシュをクリア(&L)"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "<h1>マイブックマーク</h1><p>このモジュールでブックマークのホームページを設"
+#~ "定します。</p><p>ブックマークのホームページは <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a> で開くことができます。</p>"

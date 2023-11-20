@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2009-12-29 09:06+0530\n"
 "Last-Translator: Danishka Navin <danishka@gmail.com>\n"
 "Language-Team: Sinhala <danishka@gmail.com>\n"
@@ -16,17 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 0.3\n"
-
-#: bookmarks.cpp:92
-#, kde-format
-msgid ""
-"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
-msgstr ""
-"<h1>මගේ පොත් සලකුණු</h1><p>මෙම මොඩියුලය ඔබට ඔබේ පොත් සලකුණු නිවෙස් පිටුව සැකසීමට ඉඩ දෙයි.</"
-"p><p> <a href=\"bookmarks:/\">පොත් සලකුණු:/</a>. හීදී පොත් සලකුණු නිවෙස් පිටුවට යා හැක</"
-"p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -157,6 +146,15 @@ msgstr "Pixmap කැච් පිරිසිදු කරන්න"
 #, kde-format
 msgid "&Clear Cache"
 msgstr "කැච් පිරිසිදු කරන්න (&C)"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "<h1>මගේ පොත් සලකුණු</h1><p>මෙම මොඩියුලය ඔබට ඔබේ පොත් සලකුණු නිවෙස් පිටුව සැකසීමට ඉඩ "
+#~ "දෙයි.</p><p> <a href=\"bookmarks:/\">පොත් සලකුණු:/</a>. හීදී පොත් සලකුණු නිවෙස් පිටුවට "
+#~ "යා හැක</p>"
 
 #~ msgid ""
 #~ "<h1>Cache</h1><p>This module lets you configure your cache settings.</"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq stable\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2006-01-17 21:16+0200\n"
 "Last-Translator: Frikkie Thirion <frikkie.thirion@deneloptronics.co.za>\n"
 "Language-Team: Afrikaans <af@li.org>\n"
@@ -19,67 +19,67 @@ msgstr ""
 "X-Generator: KBabel 1.10\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: src/browseropenorsavequestion.cpp:89
+#: src/browseropenorsavequestion.cpp:88
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
 msgstr ""
 
-#: src/browseropenorsavequestion.cpp:97
+#: src/browseropenorsavequestion.cpp:96
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr ""
 
-#: src/browseropenorsavequestion.cpp:149 src/browseropenorsavequestion.cpp:237
+#: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
 #, fuzzy, kde-format
 #| msgid "Open with %1"
 msgctxt "@label:button"
 msgid "&Open with %1"
 msgstr "Maak met %1 oop"
 
-#: src/browseropenorsavequestion.cpp:213
+#: src/browseropenorsavequestion.cpp:212
 #, fuzzy, kde-format
 #| msgid "Open with %1"
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "Maak met %1 oop"
 
-#: src/browseropenorsavequestion.cpp:224 src/browseropenorsavequestion.cpp:318
+#: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
 #, fuzzy, kde-format
 #| msgid "Open with %1"
 msgctxt "@info"
 msgid "Open '%1'?"
 msgstr "Maak met %1 oop"
 
-#: src/browseropenorsavequestion.cpp:228
+#: src/browseropenorsavequestion.cpp:227
 #, fuzzy, kde-format
 #| msgid "&Open With..."
 msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "Maak Oop Met..."
 
-#: src/browseropenorsavequestion.cpp:246
+#: src/browseropenorsavequestion.cpp:245
 #, fuzzy, kde-format
 #| msgid "&Open With"
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "Maak oop met"
 
-#: src/browseropenorsavequestion.cpp:315
+#: src/browseropenorsavequestion.cpp:314
 #, fuzzy, kde-format
 #| msgid "&Open"
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "Maak oop"
 
-#: src/browseropenorsavequestion.cpp:339
+#: src/browseropenorsavequestion.cpp:338
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr ""
 
-#: src/browseropenorsavequestion.cpp:341
+#: src/browseropenorsavequestion.cpp:340
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
@@ -93,79 +93,79 @@ msgstr ""
 msgid "Reject"
 msgstr ""
 
-#: src/konq_popupmenu.cpp:220
+#: src/konq_popupmenu.cpp:219
 #, kde-format
 msgid "&Open"
 msgstr "Maak oop"
 
-#: src/konq_popupmenu.cpp:243
+#: src/konq_popupmenu.cpp:242
 #, kde-format
 msgid "Create &Folder..."
 msgstr "Skep Gids..."
 
-#: src/konq_popupmenu.cpp:254
+#: src/konq_popupmenu.cpp:253
 #, kde-format
 msgid "&Restore"
 msgstr "Herstel"
 
-#: src/konq_popupmenu.cpp:266
+#: src/konq_popupmenu.cpp:265
 #, kde-format
 msgid "Show Original Directory"
 msgstr ""
 
-#: src/konq_popupmenu.cpp:266
+#: src/konq_popupmenu.cpp:265
 #, kde-format
 msgid "Show Original File"
 msgstr ""
 
-#: src/konq_popupmenu.cpp:301
+#: src/konq_popupmenu.cpp:300
 #, kde-format
 msgid "&Empty Trash Bin"
 msgstr "Maak asblik leeg"
 
-#: src/konq_popupmenu.cpp:313
+#: src/konq_popupmenu.cpp:312
 #, fuzzy, kde-format
 #| msgid "&Empty Trash Bin"
 msgid "&Configure Trash Bin"
 msgstr "Maak asblik leeg"
 
-#: src/konq_popupmenu.cpp:337
+#: src/konq_popupmenu.cpp:336
 #, kde-format
 msgid "&Bookmark This Page"
 msgstr "Boekmerk hierdie bladsy"
 
-#: src/konq_popupmenu.cpp:339
+#: src/konq_popupmenu.cpp:338
 #, kde-format
 msgid "&Bookmark This Location"
 msgstr "Boekmerk hierdie ligging"
 
-#: src/konq_popupmenu.cpp:342
+#: src/konq_popupmenu.cpp:341
 #, kde-format
 msgid "&Bookmark This Folder"
 msgstr "Boekmerk hierdie gids"
 
-#: src/konq_popupmenu.cpp:344
+#: src/konq_popupmenu.cpp:343
 #, kde-format
 msgid "&Bookmark This Link"
 msgstr "Boekmerk hierdie skakel"
 
-#: src/konq_popupmenu.cpp:346
+#: src/konq_popupmenu.cpp:345
 #, kde-format
 msgid "&Bookmark This File"
 msgstr "Boekmerk hierdie lêer"
 
-#: src/konq_popupmenu.cpp:385
+#: src/konq_popupmenu.cpp:384
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgid "Preview In"
 msgstr "Voorskou"
 
-#: src/konq_popupmenu.cpp:396
+#: src/konq_popupmenu.cpp:395
 #, kde-format
 msgid "Open Terminal Here"
 msgstr ""
 
-#: src/konq_popupmenu.cpp:432
+#: src/konq_popupmenu.cpp:431
 #, kde-format
 msgid "&Properties"
 msgstr "Eienskappe"

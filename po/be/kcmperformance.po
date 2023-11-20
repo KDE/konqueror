@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2007-08-26 22:07+0300\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -19,36 +19,15 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
 "%100>=11 && n%100<=14 ? 2 : 3);\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>Хуткасць працы KDE</h1> Тут вы можаце змяніць настаўленні, якія "
-"ўплываюць на хуткасць працы KDE."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Сістэма"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Хуткасць працы Konqueror</h1> Вы можаце наставіць некаторыя параметры, "
-"якія ўздзейнічаюць на хуткасць працы Konqueror. Сярод іх - параметры для "
-"паўторнага выкарыстання ўжо загружаных копіяў і для захоўвання папярэдне "
-"загружаных копіяў."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -129,6 +108,23 @@ msgid ""
 msgstr ""
 "Гэты параметр можа прывоздіць да розных праблемаў. Пракансультуйцеся з "
 "кантэкстнай падказкай (Shift-F1) для падрабязнасцей."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>Хуткасць працы KDE</h1> Тут вы можаце змяніць настаўленні, якія "
+#~ "ўплываюць на хуткасць працы KDE."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Хуткасць працы Konqueror</h1> Вы можаце наставіць некаторыя "
+#~ "параметры, якія ўздзейнічаюць на хуткасць працы Konqueror. Сярод іх - "
+#~ "параметры для паўторнага выкарыстання ўжо загружаных копіяў і для "
+#~ "захоўвання папярэдне загружаных копіяў."
 
 #~ msgid ""
 #~ "Disables the minimization of memory usage and allows you to make each "

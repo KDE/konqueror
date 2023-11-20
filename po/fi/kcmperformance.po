@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2017-06-11 12:53+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -25,36 +25,15 @@ msgstr ""
 "X-POT-Import-Date: 2012-12-01 22:22:02+0000\n"
 "X-Generator: Lokalize 2.0\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>KDE:n suorituskyky</h1> Tässä moduulissa voit muokata asetuksia, jotka "
-"vaikuttavat KDE:n suorituskykyyn."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Järjestelmä"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Konquerorin suorituskyky</h1> Täältä voit muokata useita asetuksia, "
-"jotka vaikuttavat Konquerorin suorituskykyyn. Näihin asetuksiin sisältyy "
-"valmiina päällä olevien instanssien uudelleen käyttö sekä instanssien "
-"esiladattuna pitäminen."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -158,6 +137,23 @@ msgid ""
 msgstr ""
 "<b>VAROITUS:</b> Tämä asetus voi johtaa harvinaisissa tilanteissa erilaisiin "
 "ongelmiin. Katso lisätietoja Mitä tämä on (Shift+F1) -avustajasta."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDE:n suorituskyky</h1> Tässä moduulissa voit muokata asetuksia, "
+#~ "jotka vaikuttavat KDE:n suorituskykyyn."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Konquerorin suorituskyky</h1> Täältä voit muokata useita asetuksia, "
+#~ "jotka vaikuttavat Konquerorin suorituskykyyn. Näihin asetuksiin sisältyy "
+#~ "valmiina päällä olevien instanssien uudelleen käyttö sekä instanssien "
+#~ "esiladattuna pitäminen."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

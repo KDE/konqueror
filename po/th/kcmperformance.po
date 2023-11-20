@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2008-04-26 12:10+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -18,35 +18,15 @@ msgstr ""
 "X-Generator: LoKalize 0.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>ประสิทธิภาพของ KDE</h1> คุณสามารถปรับแต่งการตั้งค่าเพื่อปรับปรุงประสิทธิภาพของ KDE ได้ที่นี่"
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "ระบบ"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>ประสิทธิภาพของ Konqueror </h1> "
-"คุณสามารถปรับแต่งการตั้งค่าที่จะใช้ในการปรับปรุงประสิทธิภาพการทำงานของ Konqueror ได้ที่นี่ "
-"รวมถึงปรับตัวเลือกในการโหลดใช้งานโปรแกรมบางส่วนก่อน (เรียกว่า preloading) "
-"เพื่อความรวดเร็วในการเริ่มทำงานของ Konqueror "
 
 #: konqueror.cpp:24
 #, fuzzy, kde-format
@@ -159,6 +139,23 @@ msgid ""
 msgstr ""
 "ตัวเลือกนี้อาจก่อปัญหาได้หลายประการ แม้ว่าจะเกิดได้ยากมาก โปรดดูที่ 'นี่คืออะไร?' (Shift+F1) "
 "สำหรับรายละเอียด"
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>ประสิทธิภาพของ KDE</h1> คุณสามารถปรับแต่งการตั้งค่าเพื่อปรับปรุงประสิทธิภาพของ KDE "
+#~ "ได้ที่นี่"
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>ประสิทธิภาพของ Konqueror </h1> "
+#~ "คุณสามารถปรับแต่งการตั้งค่าที่จะใช้ในการปรับปรุงประสิทธิภาพการทำงานของ Konqueror ได้ที่นี่ "
+#~ "รวมถึงปรับตัวเลือกในการโหลดใช้งานโปรแกรมบางส่วนก่อน (เรียกว่า preloading) "
+#~ "เพื่อความรวดเร็วในการเริ่มทำงานของ Konqueror "
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

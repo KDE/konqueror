@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-05-20 02:40+0200\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2016-08-14 23:47+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -21,16 +21,6 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Бојан Божовић"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "bole89@infosky.net"
-
 #. i18n: ectx: Menu (tools)
 #: khtmlsettingsplugin.rc:4
 #, kde-format
@@ -43,67 +33,67 @@ msgstr "&Алатке"
 msgid "Extra Toolbar"
 msgstr "Додатна трака"
 
-#: settingsplugin.cpp:52 settingsplugin.cpp:53
+#: settingsplugin.cpp:43
 #, kde-format
 msgid "HTML Settings"
 msgstr "ХТМЛ поставке"
 
-#: settingsplugin.cpp:58
+#: settingsplugin.cpp:48
 #, kde-format
 msgid "Java&Script"
 msgstr "Јаваскрипт"
 
-#: settingsplugin.cpp:63
+#: settingsplugin.cpp:53
 #, kde-format
 msgid "&Java"
 msgstr "Јава"
 
-#: settingsplugin.cpp:68
+#: settingsplugin.cpp:58
 #, kde-format
 msgid "&Cookies"
 msgstr "&Колачићи"
 
-#: settingsplugin.cpp:73
+#: settingsplugin.cpp:63
 #, kde-format
 msgid "&Plugins"
 msgstr "&Прикључци"
 
-#: settingsplugin.cpp:78
+#: settingsplugin.cpp:68
 #, kde-format
 msgid "Autoload &Images"
 msgstr "Самоучитавање &слика"
 
-#: settingsplugin.cpp:85
+#: settingsplugin.cpp:75
 #, kde-format
 msgid "Enable Pro&xy"
 msgstr "Укључи про&кси"
 
-#: settingsplugin.cpp:90
+#: settingsplugin.cpp:80
 #, kde-format
 msgid "Enable Cac&he"
 msgstr "Укључи к&еш"
 
-#: settingsplugin.cpp:95
+#: settingsplugin.cpp:85
 #, kde-format
 msgid "Cache Po&licy"
 msgstr "По&нашање кеша"
 
-#: settingsplugin.cpp:97
+#: settingsplugin.cpp:87
 #, kde-format
 msgid "&Keep Cache in Sync"
 msgstr "Одржавај &кеш синхронизованим"
 
-#: settingsplugin.cpp:98
+#: settingsplugin.cpp:88
 #, kde-format
 msgid "&Use Cache if Possible"
 msgstr "Користи кеш ако је &могуће"
 
-#: settingsplugin.cpp:99
+#: settingsplugin.cpp:89
 #, kde-format
 msgid "&Offline Browsing Mode"
 msgstr "Режим претраживања &ван везе"
 
-#: settingsplugin.cpp:192
+#: settingsplugin.cpp:193
 #, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
@@ -112,8 +102,16 @@ msgstr ""
 "Поставке колачића није могуће изменити зато што не може да се контактира "
 "демон колачића."
 
-#: settingsplugin.cpp:194
+#: settingsplugin.cpp:195
 #, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"
 msgstr "Поставке колачића недоступне"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Бојан Божовић"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "bole89@infosky.net"

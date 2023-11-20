@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: searchbarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-05-11 02:43+0200\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2016-07-23 22:41+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: searchbar.cpp:76
+#: searchbar.cpp:67
 #, kde-format
 msgid ""
 "Search Bar<p>Enter a search term. Click on the icon to change search mode or "
@@ -32,54 +32,58 @@ msgstr ""
 "Traka pretrage<p>Unesite izraz za traženje. Kliknite na ikonicu da promenite "
 "režim ili dobavljača pretrage.</p>"
 
-#: searchbar.cpp:82
+#: searchbar.cpp:72
 #, kde-format
 msgid "Search Bar"
 msgstr "Traka pretrage"
 
-#: searchbar.cpp:87
+#: searchbar.cpp:77
 #, kde-format
 msgid "Focus Searchbar"
 msgstr "Fokusiraj traku pretrage"
 
-#: searchbar.cpp:304
+#: searchbar.cpp:278
+#, fuzzy, kde-format
+#| msgid "Find in This Page"
+msgid "Find in Page..."
+msgstr "Pronađi na ovoj stranici"
+
+#: searchbar.cpp:298
 #, kde-format
 msgid "Find in This Page"
 msgstr "Pronađi na ovoj stranici"
 
-#: searchbar.cpp:315
+#: searchbar.cpp:310
 #, kde-format
 msgid "Select Search Engines..."
 msgstr "Izaberi motor pretrage..."
 
-#: searchbar.cpp:334
+#: searchbar.cpp:329
 #, kde-format
 msgid "Add %1..."
 msgstr "Dodaj %1...|/|Dodaj $[aku %1]..."
 
-#: searchbar.cpp:585
-#, kde-format
-msgid "Enable Suggestion"
-msgstr "Uključi predloge"
-
 #. i18n: ectx: ToolBar (locationToolBar)
-#: searchbar.rc:3
+#: searchbarplugin.rc:3
 #, kde-format
 msgid "Search Toolbar"
 msgstr "Traka pretrage"
 
 # >> @title
-#: WebShortcutWidget.cpp:46
+#: WebShortcutWidget.cpp:33
 #, kde-format
 msgid "Set Uri Shortcuts"
 msgstr "Postavljanje prečica ka URI‑ju"
 
-#: WebShortcutWidget.cpp:60
+#: WebShortcutWidget.cpp:47
 #, kde-format
 msgid "Name:"
 msgstr "Ime:"
 
-#: WebShortcutWidget.cpp:64
+#: WebShortcutWidget.cpp:51
 #, kde-format
 msgid "Shortcuts:"
 msgstr "Prečica:"
+
+#~ msgid "Enable Suggestion"
+#~ msgstr "Uključi predloge"

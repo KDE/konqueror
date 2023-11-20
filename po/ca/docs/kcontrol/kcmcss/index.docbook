@@ -1,0 +1,430 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Catalan  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="kcmcss" lang="&language;">
+<articleinfo>
+<title
+>Aparença</title>
+<authorgroup>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+&traductor.Antoni.Bella; 
+</authorgroup>
+
+<date
+>8 de novembre de 2016</date>
+<releaseinfo
+>Aplicacions 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Aparença</keyword>
+<keyword
+>Lletra</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Fulls d'estil</keyword>
+<keyword
+>Accessibilitat</keyword>
+</keywordset>
+
+</articleinfo>
+
+<sect1 id="appearance">
+<title
+>Aparença</title>
+<para
+>Aquest mòdul consisteix en tres pestanyes amb opcions de configuració quant a la visualització de pàgines web.</para>
+
+<sect2 id="general">
+<title
+>General</title
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-html"-->
+
+<para
+>La casella de selecció anomenada <guilabel
+>Carrega automàticament les imatges</guilabel
+> us permet controlar si es carregaran per omissió les imatges de les pàgines web. A menys que tingueu una connexió molt lenta, probablement voldreu deixar seleccionada aquesta opció, atès que hi ha moltes pàgines web que són difícils d'utilitzar sense imatges. Si no heu seleccionat l'opció de carregar automàticament les imatges, encara podreu veure el text de la pàgina i després carregar les imatges si les necessiteu.</para>
+
+<para
+>Si està marcat <guilabel
+>Dibuixa un marc al voltant de les imatges a mig carregar</guilabel
+>, el &konqueror; dibuixarà un marc contenidor al voltant de les imatges incrustades d'una pàgina web encara a mig carregar. Segurament voldreu marcar aquesta casella per a millorar la navegació, especialment si teniu una connexió lenta de xarxa.</para>
+
+<para
+>Moltes pàgines web empren imatges gif animades, i aquestes poden resultar molt molestes i en alguns casos, una càrrega per als recursos del vostre sistema. L'opció <guilabel
+>Animacions</guilabel
+> us permet escollir quan s'habilitaran aquestes animacions. En el valor per omissió estan activades, però podeu establir-lo a desactivades o permetre que l'animació tan sols s'executi una vegada, fins i tot si el fitxer conté instruccions indicant que s'hauria d'executar moltes vegades o contínuament.</para>
+
+<para
+>L'opció següent és <guilabel
+>Subratlla els enllaços:</guilabel
+>. Podeu escollir subratllar els enllaços amb <guilabel
+>Activat</guilabel
+>. Quan aquesta opció està seleccionada, qualsevol text en les pàgines web que actuï com un enllaç es mostrarà amb una lletra subratllada. Mentre moltes pàgines web utilitzen colors per a distingir el text que actua com un enllaç, el subratllat facilitarà trobar-los.</para>
+
+<para
+>Si no us agraden els enllaços subratllats, podeu escollir <guilabel
+>Desactiva</guilabel
+>, de manera que no se subratllin. O podeu escollir un terme mitjà, <guilabel
+>Només al damunt</guilabel
+>, de manera que se subratllin quan el cursor del ratolí passa per sobre seu, i que no se subratllin la resta del temps.</para>
+
+<note
+><para
+>Les definicions CSS del lloc poden substituir aquest valor.</para
+></note>
+
+<para
+><guilabel
+>Desplaçament suau</guilabel
+> determina si el &konqueror; hauria d'utilitzar passos suaus per a desplaçar-se per les pàgines &HTML;, o passos complets: <itemizedlist>
+<listitem
+><para
+><guilabel
+>Sempre</guilabel
+>: Sempre utilitzarà passos suaus en desplaçar-se.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Mai</guilabel
+>: Mai utilitzarà el desplaçament suau, en el seu lloc es desplaçarà amb passos complets.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Quan sigui eficaç</guilabel
+>: Sols utilitzarà el desplaçament suau en pàgines en què es pot dur a terme amb un consum moderat de recursos del sistema.</para
+></listitem>
+</itemizedlist>
+</para>
+
+</sect2>
+
+<sect2 id="fonts"
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-appearance"-->
+<title
+>Lletres</title>
+<para
+>Sota aquesta pestanya, podeu seleccionar diverses opcions relacionades amb l'ús de les lletres. Encara que sovint la forma i mida de les lletres formen part del disseny d'una pàgina web, podeu seleccionar algunes opcions per omissió per a ser utilitzades pel &konqueror;.</para>
+
+<para
+>La primera opció que podeu configurar és la mida de la lletra. Hi ha dues opcions que funcionen conjuntament per a permetre una experiència de navegació confortable.</para>
+
+<para
+>Primer, podeu definir una <guilabel
+>Mida mínima de la lletra</guilabel
+>. Això significa que, encara que la mida de la lletra es defineixi específicament en la pàgina que esteu visualitzant, el &konqueror; ignorarà aquesta instrucció i mai mostrarà lletres més petites que les que indiqueu aquí.</para>
+
+<para
+>El següent que podeu definir és una <guilabel
+>Mida mitjana de la lletra</guilabel
+>. A banda de la mida per omissió del text, que s'utilitza quan la pàgina no indica les mides, també s'utilitza com a lletra base sobre la qual es calculen les mides relatives de les lletres. Això és, la instrucció &HTML; «smaller», que significa més petita que la mida definida per a aquesta opció.</para>
+
+<para
+>Per a cada opció, podeu seleccionar la mida exacta de la lletra en punts utilitzant els botons amunt/avall de selecció de valors (o simplement escrivint-la) al costat de l'etiqueta d'opció.</para>
+
+<para
+>Aquestes opcions són independents entre elles. Les pàgines que no indiquin una mida de lletra, o demanin el predeterminat, mostraran la mida definida a <guilabel
+>Mida mitjana de la lletra</guilabel
+>, mentre que les pàgines que demanin una lletra més petita que l'opció <guilabel
+>Mida mínima de la lletra</guilabel
+> mostraran aquesta mida. Les unes no afecten les altres.</para>
+
+<para
+>Les opcions restants són per a les lletres que s'associaran amb els diferents marcadors utilitzats a les pàgines &HTML;. Tingueu en compte que moltes pàgines web substituiran aquestes opcions. Per qualsevol lletra (Estàndard, Fix, Serif, &etc;) podeu seleccionar una lletra diferent, si ho desitgeu.</para>
+
+<para
+>A sota d'això podeu configurar un <guilabel
+>Ajustament de la mida de la lletra per a aquesta codificació</guilabel
+>. Algunes vegades les lletres que desitgeu utilitzar per a una codificació en particular o idioma són molt més grans o més petites que la mitjana, de manera que podeu utilitzar aquesta opció de configuració per a ajustar-ne les mides.</para>
+
+<para
+>Podeu definir una codificació per omissió que el &konqueror; assumirà per a les pàgines quan les representi. L'opció per omissió és <guilabel
+>Usa la codificació de l'idioma</guilabel
+>, però podeu canviar-ho a qualsevol codificació disponible a la llista.</para>
+
+</sect2>
+
+<sect2 id="stylesheets">
+
+<title
+>Fulls d'estil</title>
+
+<sect3>
+<title
+>Introducció</title>
+
+<para
+>Els fulls d'estil <acronym
+>CSS</acronym
+> afecten el mode en què apareixen les pàgines web. <acronym
+>CSS</acronym
+> és un acrònim de <emphasis
+>C</emphasis
+>ascading <emphasis
+>S</emphasis
+>tyle <emphasis
+>S</emphasis
+>heets (fulls d'estil en cascada).</para>
+
+<para
+>El &kde; pot emprar el seu propi full d'estil, basat en valors per omissió simples i en l'esquema de color que utilitzeu al vostre escriptori. El &kde; també pot emprar un full d'estil que hàgiu escrit. Finalment, podeu especificar un full d'estil en aquest mòdul. Les opcions presentades són ajustables per motius d'accessibilitat, especialment per a persones amb visió reduïda.</para>
+
+<para
+>Les vostres opcions afectaran totes les aplicacions &kde; que mostrin HTML amb el motor de renderitzat del &kde;, el qual s'anomena khtml. Entre altres s'inclou al &kmail;, al &khelpcenter; i per descomptat al &konqueror;. Els canvis aquí representats no afectaran d'altres navegadors com ara al &firefox;.</para>
+
+</sect3>
+
+<sect3 id="css-general">
+<title
+>Fulls d'estil</title>
+
+<para
+>Aquesta secció conté les següents opcions:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Usa el full d'estil per omissió</guilabel
+></term>
+<listitem>
+<para
+>El &kde; emprarà el full d'estil per omissió. Alguns dels colors per omissió seran els definits en el vostre esquema de color actual. La majoria de les opcions seran fàcilment substituïdes per la pàgina que esteu visualitzant.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usa el full d'estil definit per l'usuari</guilabel
+></term>
+<listitem>
+<para
+>El &kde; emprarà un full d'estil que hàgiu escrit. Per a localitzar-lo al vostre sistema podeu emprar el botó de navegació. Els fitxers <acronym
+>CSS</acronym
+> tradicionalment tenen una extensió <literal role="extension"
+>.css</literal
+>, però aquesta no és requerida.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usa el full d'estil d'accessibilitat</guilabel
+></term>
+<listitem>
+<para
+>Empra les opcions definides al diàleg <guilabel
+>Personalitza</guilabel
+>. Activant aquesta opció s'activarà el botó <guibutton
+>Personalitza</guibutton
+> per a executar un diàleg per a definir les opcions del full d'estil.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="css-customize">
+<title
+>Personalitza</title>
+
+<para
+>En aquest diàleg podeu configurar un full d'estil de l'usuari. Les opcions disponibles sols són un subconjunt de les instruccions que podeu afegir a un full d'estil i estan enfocades a persones amb visió reduïda, per a permetre als usuaris crear un full d'estils que faci més llegibles les pàgines web i els fitxers d'ajuda del &kde;.</para>
+
+<para
+>Les opcions en aquest diàleg estaran desactivades a menys que escolliu <guilabel
+>Usa el full d'estil d'accessibilitat</guilabel
+>.</para>
+
+<sect4>
+<title
+><guilabel
+>Família de la lletra</guilabel
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Família base</guilabel
+></term>
+<listitem>
+<para
+>Escolliu una família de la lletra per a utilitzar al text del cos.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usa la mateixa família per a tot el text</guilabel
+></term>
+<listitem>
+<para
+>Si activeu aquesta opció, aleshores s'emprarà la mateixa família de lletra per a tot el text independentment de l'arranjament de la pàgina que estigueu visualitzant. Això resulta d'utilitat per a pàgines que utilitzen una lletra decorativa o difícil de llegir per als títols.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Mida de la lletra</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mida de la lletra base</guilabel
+></term>
+<listitem>
+<para
+>Aquesta és la mida per omissió del text en la pàgina. Molts llocs web les configuren mides relatives de les seves lletres a aquest valor per omissió i emprant; «larger» o «+1» per a fer al text més gran i «smaller» o «-1» per a fer-lo més petit.</para>
+<para
+>Moltes persones dissenyen les seves pàgines web en plataformes a on la mida per omissió del text ordinari és massa gran perquè l'usuari mitjà la llegeixi, de manera que és molt habitual visitar pàgines web que han forçat la lletra d'aquesta manera perquè sigui més petita.</para>
+<para
+>Aquesta opció de configuració us permetrà configurar la lletra per omissió a una mida còmoda, de manera que les mides relatives s'augmentin prou per a ser còmodes.</para>
+<para
+>No oblideu que podeu forçar al &konqueror; a emprar una mida mínima, de manera que el text <emphasis
+>mai</emphasis
+> resulti massa petit per a llegir-lo. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usa la mateixa mida per a tots els elements</guilabel
+></term>
+<listitem>
+<para
+>Si activeu aquesta opció, aleshores tot el text es mostrarà amb la mida de la lletra especificada, independentment de les instruccions contingudes a la pàgina. Les mides relatives de les lletres s'han discutit prèviament, fins i tot se substituiran les instruccions específiques com que el text s'hauria de mostrar amb una certa mida.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Imatges</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Suprimeix les imatges</guilabel
+></term>
+<listitem>
+<para
+>Si no desitgeu veure imatges, aquí les podeu desactivar.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Suprimeix les imatges de fons</guilabel
+></term>
+<listitem>
+<para
+>Un dels problemes principals per a persones amb visió reduïda és que les imatges de fons no proporcionen prou contrast per a permetre'ls llegir el text. Aquí podreu desactivar-les, independentment del que heu escollit anteriorment per a veure totes les imatges.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Colors</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Negre sobre blanc</guilabel
+></term>
+<listitem>
+<para
+>Moltes persones amb visió reduïda consideren que el text negre sobre una pantalla blanca els ofereix un major contrast i, tanmateix, els és més fàcil de llegir. Si aquest és el vostre cas, podeu configurar aquí aquesta opció.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Blanc sobre negre</guilabel
+></term>
+<listitem>
+<para
+>Moltes persones amb visió reduïda consideren que tot el contrari és cert i que el text blanc sobre pantalla negra és més fàcil de llegir.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Personalitza</guilabel
+></term>
+<listitem>
+<para
+>Fins i tot es troba gent que tenen dificultat en llegir el negre i blanc purs. Aquí podreu configurar els colors personalitzats, tant per al <guilabel
+>Fons</guilabel
+> com per al <guilabel
+>Text</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usa el mateix color per a tot el text</guilabel
+></term>
+<listitem>
+<para
+>Molts llocs web empren títols amb colors en un contrast diferent o d'altres floridures. Si això interfereix amb la vostra capacitat de llegir el contingut, podeu activar aquesta casella de selecció per a fer que el &kde; empri per a tot el text els colors que heu configurat anteriorment.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect4>
+
+<sect4>
+<title
+>Vista prèvia</title>
+
+<para
+>La secció <guilabel
+>Vista prèvia</guilabel
+> us permet veure l'efecte dels vostres canvis. Es mostrarà l'aspecte dels diferents tipus de capçaleres amb el vostre full d'estil i una sentència en el text del cos per omissió.</para>
+
+<para
+>Això us hauria de permetre configurar amb precisió el vostre full d'estils fins que us resulti còmoda la lectura.</para>
+
+<para
+>A gaudir-ho!</para>
+
+</sect4>
+
+</sect3>
+
+</sect2>
+
+</sect1>
+
+</article>

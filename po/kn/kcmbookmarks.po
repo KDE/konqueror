@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2009-01-06 16:58+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: Kannada <en@li.org>\n"
@@ -17,17 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-
-#: bookmarks.cpp:92
-#, kde-format
-msgid ""
-"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
-msgstr ""
-"<h1>ನನ್ನ ಪುಟಗುರುತುಗಳು</h1><p>ಈ ಪುಟವು ನಿಮ್ಮ ಪುಟಗುರುತಗಳ ನೆಲೆ ಪುಟವನ್ನು ಸಂರಚಿಸಲು "
-"ಅನುವು ಮಾಡಿಕೊಡುತ್ತದೆ.</p><p>ಪುಟಗುರುತುಗಳ ನೆಲೆಪುಟವನ್ನು <a href=\"bookmarks:/"
-"\">bookmarks:/</a> ನಲ್ಲಿ ಕಾಣಬಹುದಾಗಿದೆ.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -151,6 +140,15 @@ msgstr "ಹಿಡಿದಿಡಲಾದ ಪಿಕ್ಸ್‍ಮ್ಯಾಪ್�
 #, kde-format
 msgid "&Clear Cache"
 msgstr "ಕ್ಯಾಶೆಯನ್ನು ಅಳಿಸು(&C)"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "<h1>ನನ್ನ ಪುಟಗುರುತುಗಳು</h1><p>ಈ ಪುಟವು ನಿಮ್ಮ ಪುಟಗುರುತಗಳ ನೆಲೆ ಪುಟವನ್ನು ಸಂರಚಿಸಲು "
+#~ "ಅನುವು ಮಾಡಿಕೊಡುತ್ತದೆ.</p><p>ಪುಟಗುರುತುಗಳ ನೆಲೆಪುಟವನ್ನು <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a> ನಲ್ಲಿ ಕಾಣಬಹುದಾಗಿದೆ.</p>"
 
 #~ msgid "&Use cache"
 #~ msgstr "ಕ್ಯಾಶೆಯನ್ನು ಬಳಸು(&U)"

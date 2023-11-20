@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2011-05-08 14:45+0300\n"
 "Last-Translator: Tomas Straupis <tomasstraupis@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -29,55 +29,55 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: kfmclient.cpp:56
+#: kfmclient.cpp:59
 #, kde-format
 msgid "kfmclient"
 msgstr "kfmclient"
 
-#: kfmclient.cpp:57
+#: kfmclient.cpp:60
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "KDE įrankis URL atidarymui naudojant komandinę eilutę"
 
-#: kfmclient.cpp:65
+#: kfmclient.cpp:68
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr "Neinteraktyvus naudojimas: be pranešimų dialogų"
 
-#: kfmclient.cpp:67
+#: kfmclient.cpp:70
 #, kde-format
 msgid "Show available commands"
 msgstr "Rodyti komandų sąrašą"
 
-#: kfmclient.cpp:76
+#: kfmclient.cpp:79
 #, kde-format
 msgid ""
 "The mimetype of the URL. Allows Konqueror to determine in advance which "
 "component to use, making it start faster."
 msgstr ""
 
-#: kfmclient.cpp:77
+#: kfmclient.cpp:80
 #, kde-format
 msgctxt "the name for a the value of an option on the command line help"
 msgid "type"
 msgstr ""
 
-#: kfmclient.cpp:79
+#: kfmclient.cpp:82
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "Komanda (žr. --commands)"
 
-#: kfmclient.cpp:81
+#: kfmclient.cpp:84
 #, kde-format
 msgid "Arguments for command"
 msgstr "Komandos argumentai"
 
-#: kfmclient.cpp:83
+#: kfmclient.cpp:86
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr ""
 
-#: kfmclient.cpp:91
+#: kfmclient.cpp:95
 #, kde-format
 msgid ""
 "\n"
@@ -86,7 +86,7 @@ msgstr ""
 "\n"
 "Sintaksė:\n"
 
-#: kfmclient.cpp:92
+#: kfmclient.cpp:96
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kfmclient openURL 'url' ['mimetype']\n"
@@ -110,7 +110,7 @@ msgstr ""
 "            #   Nenurodžius 'url', vietoje jo naudojamas $HOME.\n"
 "\n"
 
-#: kfmclient.cpp:97
+#: kfmclient.cpp:101
 #, fuzzy, kde-format
 #| msgid ""
 #| "            # If 'mimetype' is specified, it will be used to determine "
@@ -134,7 +134,7 @@ msgstr ""
 "greičiau\n"
 "\n"
 
-#: kfmclient.cpp:103
+#: kfmclient.cpp:106
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -149,19 +149,19 @@ msgstr ""
 "            #    lange aktyviame darbastalyje, jei tai įmanoma.\n"
 "\n"
 
-#: kfmclient.cpp:280
+#: kfmclient.cpp:282
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Not enough arguments\n"
 msgid "Syntax error, not enough arguments\n"
 msgstr "Sintaksės klaida: per mažai argumentų\n"
 
-#: kfmclient.cpp:284
+#: kfmclient.cpp:286
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Too many arguments\n"
 msgid "Syntax error, too many arguments\n"
 msgstr "Sintaksės klaida: per daug argumentų\n"
 
-#: kfmclient.cpp:339
+#: kfmclient.cpp:341
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Unknown command '%1'\n"
 msgid "Syntax error, unknown command '%1'\n"

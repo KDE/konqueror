@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: searchbarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2014-08-17 14:18+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: searchbar.cpp:66
+#: searchbar.cpp:67
 #, kde-format
 msgid ""
 "Search Bar<p>Enter a search term. Click on the icon to change search mode or "
@@ -29,33 +29,33 @@ msgstr ""
 "شريط البحث<p>أدخِل كلمة البحث. انقر على الأيقونة لتغيير وضع البحث أو المزوّد.</"
 "p>"
 
-#: searchbar.cpp:71
+#: searchbar.cpp:72
 #, kde-format
 msgid "Search Bar"
 msgstr "شريط البحث"
 
-#: searchbar.cpp:76
+#: searchbar.cpp:77
 #, kde-format
 msgid "Focus Searchbar"
 msgstr "ركّز شريط البحث"
 
-#: searchbar.cpp:268
+#: searchbar.cpp:278
 #, fuzzy, kde-format
 #| msgid "Find in This Page"
 msgid "Find in Page..."
 msgstr "اعثر في هذه الصفحة"
 
-#: searchbar.cpp:288
+#: searchbar.cpp:298
 #, kde-format
 msgid "Find in This Page"
 msgstr "اعثر في هذه الصفحة"
 
-#: searchbar.cpp:300
+#: searchbar.cpp:310
 #, kde-format
 msgid "Select Search Engines..."
 msgstr "اختر محرّكات البحث..."
 
-#: searchbar.cpp:319
+#: searchbar.cpp:329
 #, kde-format
 msgid "Add %1..."
 msgstr "أضف %1..."

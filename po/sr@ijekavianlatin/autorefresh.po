@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: autorefresh\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-05-20 02:40+0200\n"
+"POT-Creation-Date: 2023-11-05 12:32+0000\n"
 "PO-Revision-Date: 2012-07-06 15:24+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -22,84 +22,84 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: autorefresh.cpp:41
+#: autorefresh.cpp:28
 #, kde-format
 msgid "&Auto Refresh"
 msgstr "&Automatsko osvježavanje"
 
 # >> @item:inlistbox no auto refresh
-#: autorefresh.cpp:45
+#: autorefresh.cpp:32
 #, kde-format
 msgid "None"
 msgstr "bez"
 
 # >> @item:inlistbox
-#: autorefresh.cpp:46
+#: autorefresh.cpp:33
 #, kde-format
 msgid "Every 15 Seconds"
 msgstr "svakih 15 sekundi"
 
 # >> @item:inlistbox
-#: autorefresh.cpp:47
+#: autorefresh.cpp:34
 #, kde-format
 msgid "Every 30 Seconds"
 msgstr "svakih 30 sekundi"
 
 # >> @item:inlistbox
-#: autorefresh.cpp:48
+#: autorefresh.cpp:35
 #, kde-format
 msgid "Every Minute"
 msgstr "svaki minut"
 
 # >> @item:inlistbox
-#: autorefresh.cpp:49
+#: autorefresh.cpp:36
 #, kde-format
 msgid "Every 5 Minutes"
 msgstr "svakih 5 minuta"
 
 # >> @item:inlistbox
-#: autorefresh.cpp:50
+#: autorefresh.cpp:37
 #, kde-format
 msgid "Every 10 Minutes"
 msgstr "svakih 10 minuta"
 
 # >> @item:inlistbox
-#: autorefresh.cpp:51
+#: autorefresh.cpp:38
 #, kde-format
 msgid "Every 15 Minutes"
 msgstr "svakih 15 minuta"
 
 # >> @item:inlistbox
-#: autorefresh.cpp:52
+#: autorefresh.cpp:39
 #, kde-format
 msgid "Every 30 Minutes"
 msgstr "svakih 30 minuta"
 
 # >> @item:inlistbox
-#: autorefresh.cpp:53
+#: autorefresh.cpp:40
 #, kde-format
 msgid "Every 60 Minutes"
 msgstr "svakih 60 minuta"
 
 # >> @item:inlistbox
-#: autorefresh.cpp:54
+#: autorefresh.cpp:41
 #, kde-format
 msgid "Every 2 Hours"
 msgstr "svaka 2 sata"
 
 # >> @item:inlistbox
-#: autorefresh.cpp:55
+#: autorefresh.cpp:42
 #, kde-format
 msgid "Every 6 Hours"
 msgstr "svakih 6 sati"
 
-#: autorefresh.cpp:113
+#: autorefresh.cpp:100
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot Refresh Source"
 msgstr "Nije moguće osvježiti izvor"
 
-#: autorefresh.cpp:114
+#: autorefresh.cpp:101
 #, kde-format
 msgid "<qt>This plugin cannot auto-refresh the current part.</qt>"
 msgstr "<qt>Ovaj priključak ne može automatski da osvježi tekući dio.</qt>"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2011-02-15 21:25+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -16,26 +16,17 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=1;\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
-"file manager here."
-msgstr ""
-"<h1>Kelakuan Konqueror</h1> Anda boleh konfigur bagaimana Konqueror sebagai "
-"pengurus fail di sini."
-
-#: behaviour.cpp:40
+#: behaviour.cpp:38
 #, kde-format
 msgid "Misc Options"
 msgstr "Pilihan Lain"
 
-#: behaviour.cpp:49
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "&Buka folder dalam tetingkap berlainan"
 
-#: behaviour.cpp:50
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -44,12 +35,12 @@ msgstr ""
 "Jika pilihan ini ditanda, Konqueror akan membuka tetingkap baru apabila anda "
 "membuka folder, bukan menayangkan kandungan folder dalam tetingkap semasa."
 
-#: behaviour.cpp:73
+#: behaviour.cpp:71
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "Papar masukan me&nu 'Padam' yang memintas tong sampah"
 
-#: behaviour.cpp:77
+#: behaviour.cpp:75
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -59,6 +50,13 @@ msgstr ""
 "Tandakan ini jika anda ingin arahan menu 'Padam' dipapar pada desktop dan "
 "dalam menu pengurus fail dan menu konteks. Anda boleh sentiasa memadam fail "
 "dengan memegang kekunci Shift sambil memanggil 'Pindah ke Tong Sampah'."
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>Kelakuan Konqueror</h1> Anda boleh konfigur bagaimana Konqueror "
+#~ "sebagai pengurus fail di sini."
 
 #, fuzzy
 #~| msgid "Menu Editor"

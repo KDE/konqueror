@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2017-05-16 06:36-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -30,159 +30,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
-#: advancedTabOptions.ui:21
-#, kde-format
-msgid ""
-"This will open a new tab instead of a new window in various situations, such "
-"as choosing a link or a folder with the middle mouse button."
-msgstr ""
-"פתיחת לשונית חדשה במקום לפתוח חלון חדש במספר מצבים, למשל בעת בחירת קישור או "
-"תיקיה עם הלחצן האמצעי של העכבר."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
-#: advancedTabOptions.ui:24
-#, kde-format
-msgid "Open &links in new tab instead of in new window"
-msgstr "פתח קישורים ב&לשונית חדשה במקום חלון חדש"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
-#: advancedTabOptions.ui:31
-#, kde-format
-msgid ""
-"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
-"new window."
-msgstr ""
-"האם (במידה ומאופשר חלון JavaScript קופץ) החלון יפתח בלשונית חדשה או בחלון "
-"חדש."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
-#: advancedTabOptions.ui:34
-#, kde-format
-msgid "Open pop&ups in new tab instead of in new window"
-msgstr "פתח חלונות נפתחים ב&לשונית חדשה במקום חלון חדש"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
-#: advancedTabOptions.ui:41
-#, kde-format
-msgid ""
-"When you click a URL in another KDE program or call kfmclient to open a URL, "
-"the current desktop will be searched for a non-minimized Konqueror and, if "
-"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
-"window will be opened with the required URL."
-msgstr ""
-"כאשר אתה לוחץ על כתובת URL בתוכנית KDE אחרת או בקריאה ל-kfmclient לפתוח URL, "
-"שולחן העבודה הנוכחי ייסרק בחיפוש אחר Konqueror לא ממוזער, ואם ימצא, הURL "
-"יפתח כלשונית חדשה בו. בכל מקרה אחר חלון Konqueror חדש יפתח עם ה-URL המבוקש."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
-#: advancedTabOptions.ui:44
-#, kde-format
-msgid "Open as tab in existing Konqueror when URL is called externally"
-msgstr ""
-"פתח כלשונית חדשה בהפעלת Konqueror קיימת כאשר ישנה קריאה מבחוץ לכתובת URL."
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
-#: advancedTabOptions.ui:51
-#, kde-format
-msgid ""
-"This will open a new tab in the background, instead of in the foreground."
-msgstr "פתיחת לשונית חדשה בחזית, אחרת היא תיפתח ככרטיסיית רקע."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
-#: advancedTabOptions.ui:54
-#, kde-format
-msgid "O&pen new tabs in the background"
-msgstr "&פתח לשוניות חדשות בחזית "
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
-#: advancedTabOptions.ui:61
-#, kde-format
-msgid ""
-"This will open a new tab opened from a page after the current tab, instead "
-"of after the last tab."
-msgstr "פתיחת לשונית חדשה אחרי הנוכחית, אחרת היא תיפתח אחרי הלשונית האחרונה."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
-#: advancedTabOptions.ui:64
-#, kde-format
-msgid "Open &new tab after current tab"
-msgstr "פתח לשונית חדשה אחרי הנוכחית"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
-#: advancedTabOptions.ui:71
-#, kde-format
-msgid ""
-"This will display the tab bar only if there are two or more tabs. Otherwise "
-"it will always be displayed."
-msgstr ""
-"אפשרות זו תציג את סרגל הסימניות רק אם יש שני לשוניות או יותר. אחרת הסרגל "
-"תמיד יוצג."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
-#: advancedTabOptions.ui:74
-#, kde-format
-msgid "Hide the tab bar when only one tab is open"
-msgstr "הסתר את סרגל הלשוניות כאשר לשונית אחת בלבד פתוחה"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
-#: advancedTabOptions.ui:81
-#, fuzzy, kde-format
-msgid "This will display close buttons inside each tab."
-msgstr "יציג כפתורי סגירה בצד כל לשונית, במקום הסמלים של האתרים."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
-#: advancedTabOptions.ui:84
-#, kde-format
-msgid "&Show close button on tabs"
-msgstr "&הצג כפתור סגירה בלשוניות"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
-#: advancedTabOptions.ui:91
-#, fuzzy, kde-format
-msgid ""
-"When you click on a tab using the middle mouse button or mouse wheel, it "
-"will close that tab."
-msgstr ""
-"כאשר אתה לוחץ על לשונית באמצעות הלחצן האמצעי של העכבר או הגלגלת, הלשונית "
-"תסגר. (יש צורך להפעיל מחדש את Konqueror על מנת שהשינויים יוחלו)"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
-#: advancedTabOptions.ui:94
-#, kde-format
-msgid "Middle-click on a tab to close it"
-msgstr "לחיצה אמצעית סוגרת את הלשונית"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
-#: advancedTabOptions.ui:101
-#, kde-format
-msgid ""
-"This will ask you whether you are sure you want to close a window when it "
-"has multiple tabs opened in it."
-msgstr "הצגת בקשה לאישור סגירת חלון כאשר יש בתוכו מספר לשוניות פתוחות."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
-#: advancedTabOptions.ui:104
-#, kde-format
-msgid "Confirm &when closing windows with multiple tabs"
-msgstr "שאל לפני סגירת &חלונות עם מספר לשוניות"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: advancedTabOptions.ui:111
-#, kde-format
-msgid ""
-"When checking this the previous used or opened tab will be activated when "
-"you close the current active tab instead of the one right to the current tab."
-msgstr ""
-"בעת סימון אפשרות זו, בעת סגירת לשונית פעילה, הלשונית האחרונה לפניה בשימוש "
-"תהפך לפעילה, במקום הלשונית הימנית ללשונית הפעילה."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: advancedTabOptions.ui:114
-#, kde-format
-msgid "Activate previously used tab when closing the current tab"
-msgstr "עבור ללשונית האחרונה בה היה שימוש בעת סגירת לשונית נוכחית"
 
 #: appearance.cpp:39
 #, kde-format
@@ -203,17 +50,17 @@ msgid "Stylesheets"
 msgstr "גיליונות סגנון"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:48 css/csscustom.ui:296
+#: appearance.cpp:52 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "תמונות"
 
-#: appearance.cpp:52
+#: appearance.cpp:56
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "&טען תמונות באופן אוטומטי"
 
-#: appearance.cpp:53
+#: appearance.cpp:57
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -227,12 +74,12 @@ msgstr ""
 "ידי לחיצה על כפתור התמונה. <br /> אלא אם כן יש לך חיבור אטי מאוד, כדאי לך "
 "לסמן תיבה זו, וזאת על מנת לשפר את חווית הגלישה שלך. </html>"
 
-#: appearance.cpp:63
+#: appearance.cpp:67
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "צייר מסגרות סביב לתמונות שלא נטענו באופן מלא"
 
-#: appearance.cpp:64
+#: appearance.cpp:68
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -244,24 +91,24 @@ msgstr ""
 "עדיין. <br />אם יש לך חיבור אטי מאוד, כדאי לך לסמן תיבה זו, וזאת על מנת לשפר "
 "את חווית הגלישה שלך. </html>"
 
-#: appearance.cpp:74
+#: appearance.cpp:78
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "כן"
 
-#: appearance.cpp:75
+#: appearance.cpp:79
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "לא"
 
-#: appearance.cpp:76
+#: appearance.cpp:80
 #, kde-format
 msgid "Show Only Once"
 msgstr "הצג פעם אחת בלבד"
 
-#: appearance.cpp:77
+#: appearance.cpp:81
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -274,40 +121,40 @@ msgstr ""
 "התמונה בלבד</li> <li><b>הצג פעם אחת בלבד</b>: הצגת כל ההנפשות במלואן, אך "
 "מבלי לחזור עליהן שוב ושוב.</li></ul></html>"
 
-#: appearance.cpp:82
+#: appearance.cpp:86
 #, kde-format
 msgid "A&nimations:"
 msgstr "ה&נפשות:"
 
-#: appearance.cpp:85 htmlopts.cpp:110
+#: appearance.cpp:89 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "שונות"
 
-#: appearance.cpp:90
+#: appearance.cpp:94
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "כן"
 
-#: appearance.cpp:91
+#: appearance.cpp:95
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "לא"
 
-#: appearance.cpp:92
+#: appearance.cpp:96
 #, kde-format
 msgid "Only on Hover"
 msgstr "בעת ריחוף בלבד"
 
-#: appearance.cpp:93
+#: appearance.cpp:97
 #, kde-format
 msgid "Und&erline links:"
 msgstr "מתח קו מתחת לקישורי&ם:"
 
-#: appearance.cpp:96
+#: appearance.cpp:100
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -322,29 +169,29 @@ msgstr ""
 "עובר מעל לקישור</li> </ul> <br  /> <i>הערה: הגדרות גיליון הסגנון של האתר "
 "עשויות לעקוף ערך זה</i> </html>"
 
-#: appearance.cpp:105
+#: appearance.cpp:109
 #, kde-format
 msgid "When Efficient"
 msgstr "כאשר יעיל"
 
-#: appearance.cpp:106
+#: appearance.cpp:110
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "תמיד"
 
-#: appearance.cpp:107
+#: appearance.cpp:111
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "אף פעם"
 
-#: appearance.cpp:108
+#: appearance.cpp:112
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "גלילה &חלקה:"
 
-#: appearance.cpp:110
+#: appearance.cpp:114
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -360,31 +207,22 @@ msgstr ""
 "b>:השתמש בגלילה חלקה רק בדפים בהם פעולה זו תבוצע תוך שימוש סביר במשאבי "
 "המערכת.</li></ul></html>"
 
-#: appearance.cpp:119
-#, kde-format
-msgid ""
-"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
-"Konqueror should use to display the web pages you view."
-msgstr ""
-"<h1>גופנים של Konqueror</h1>בדף זה באפשרותך לקבוע את הגופנים שבהם Konqueror "
-"ישתמש להצגת דפי האינטרנט בהם אתה צופה."
-
-#: appearance.cpp:131
+#: appearance.cpp:132
 #, kde-format
 msgid "Font Si&ze"
 msgstr "ג&ודל גופנים"
 
-#: appearance.cpp:134 appearance.cpp:152
+#: appearance.cpp:135 appearance.cpp:153
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr "זהו גודל הגופן היחסי ש־Konqueror משתמש בו להצגת אתרים."
 
-#: appearance.cpp:138
+#: appearance.cpp:139
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "&גודל גופן מינימלי:"
 
-#: appearance.cpp:142
+#: appearance.cpp:143
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
@@ -393,89 +231,89 @@ msgstr ""
 "הדפדפן Konqueror לעולם לא יציג טקסט קטן מגודל זה, <br /> תוך שהוא עוקף כל "
 "הגדרה אחרת במקרה הצורך."
 
-#: appearance.cpp:147
+#: appearance.cpp:148
 #, kde-format
 msgid "&Medium font size:"
 msgstr "גודל גופן בי&נוני:"
 
-#: appearance.cpp:160
+#: appearance.cpp:161
 #, kde-format
 msgid "S&tandard font:"
 msgstr "גופן רגי&ל:"
 
-#: appearance.cpp:161
+#: appearance.cpp:162
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr "זהו הגופן המשמש להצגת טקסט רגיל בדפי אינטרנט."
 
-#: appearance.cpp:165
+#: appearance.cpp:166
 #, kde-format
 msgid "&Fixed font:"
 msgstr "גופ&ן ברוחב קבוע:"
 
-#: appearance.cpp:166
+#: appearance.cpp:167
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr "זהו הגופן המשמש להצגת טקסט ברוחב קבוע (לא פרופורציונלי)."
 
-#: appearance.cpp:170
+#: appearance.cpp:171
 #, kde-format
 msgid "S&erif font:"
 msgstr "גופן ע&ם תגים:"
 
-#: appearance.cpp:171
+#: appearance.cpp:172
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr "זהו הגופן המשמש להצגת טקסט המסומן בתור גופן עם תגים."
 
-#: appearance.cpp:175
+#: appearance.cpp:176
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "גו&פן בלי תגים:"
 
-#: appearance.cpp:176
+#: appearance.cpp:177
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr "זהו הגופן המשמש להצגת טקסט המסומן בתור גופן ללא תגים."
 
-#: appearance.cpp:180
+#: appearance.cpp:181
 #, kde-format
 msgid "C&ursive font:"
 msgstr "גופן &מחובר:"
 
-#: appearance.cpp:181
+#: appearance.cpp:182
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr "זהו הגופן המשמש להצגת טקסט המסומן בתור גופן נטוי."
 
-#: appearance.cpp:185
+#: appearance.cpp:186
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "גופן פנ&טזיה:"
 
-#: appearance.cpp:186
+#: appearance.cpp:187
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr "זהו הגופן המשמש להצגת טקסט המסומן בתור גופן פנטזיה."
 
-#: appearance.cpp:195
+#: appearance.cpp:196
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "התאמת גו&דל גופן לקידוד זה:"
 
-#: appearance.cpp:203 appearance.cpp:401
+#: appearance.cpp:204 appearance.cpp:402
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "השתמש בקידוד של השפה"
 
-#: appearance.cpp:205
+#: appearance.cpp:206
 #, kde-format
 msgid "Default encoding:"
 msgstr "קידוד ברירת מחדל:"
 
-#: appearance.cpp:207
+#: appearance.cpp:208
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1469,32 +1307,32 @@ msgid_plural " days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: filteropts.cpp:120
+#: filteropts.cpp:124
 #, kde-format
 msgid "Insert"
 msgstr "הוסף"
 
-#: filteropts.cpp:123
+#: filteropts.cpp:127
 #, kde-format
 msgid "Update"
 msgstr "עדכן"
 
-#: filteropts.cpp:126
+#: filteropts.cpp:130
 #, kde-format
 msgid "Remove"
 msgstr "הסר"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:134
 #, kde-format
 msgid "Import..."
 msgstr "ייבוא..."
 
-#: filteropts.cpp:133
+#: filteropts.cpp:137
 #, kde-format
 msgid "Export..."
 msgstr "ייצוא..."
 
-#: filteropts.cpp:140
+#: filteropts.cpp:144
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
@@ -1503,7 +1341,7 @@ msgstr ""
 "‏<qt>מידע נוסף על <a href=\"importhelp\">ייבור פורמט</a>, <a href=\"exporthelp"
 "\">ייצור פורמט</a>"
 
-#: filteropts.cpp:154
+#: filteropts.cpp:158
 #, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
@@ -1512,7 +1350,7 @@ msgstr ""
 "אפשר או אל תאפשר מסנני AdBlocK. כאשר מופעל, יש צורך בהגדרת סידרת ביטויי URL "
 "במסנן כדי שהחסימה תתבצע."
 
-#: filteropts.cpp:156
+#: filteropts.cpp:160
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
@@ -1521,14 +1359,14 @@ msgstr ""
 "כאשר מופעל, תמונות חסומות יוסרו מהדף לחלוטין, במקרה אחר תוצג תמונת 'חסום' "
 "במקום התמונה."
 
-#: filteropts.cpp:163
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
 "and media objects."
 msgstr "רשימת מסנני ה-URL שיוספו לכל התמונות המשובצות ואובייקטי המדיה."
 
-#: filteropts.cpp:167
+#: filteropts.cpp:171
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1546,7 +1384,7 @@ msgstr ""
 "סינון שבתחילתה '<tt>@@</tt>' ברשימה הלבנה של כתובות URL, תהיה בעדיפות על כל "
 "מסנן פילטור ברשימה שחורה."
 
-#: filteropts.cpp:183
+#: filteropts.cpp:187
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1557,7 +1395,7 @@ msgstr ""
 "הערות המתחילות בתו '<tt>!</tt>' ושורת הכותרת <tt>[AdBlock]</tt>. כל שורה "
 "אחרת תוסף כביטוי מסנן."
 
-#: filteropts.cpp:188
+#: filteropts.cpp:192
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1567,44 +1405,28 @@ msgstr ""
 "‏<qt><p>פורמט הקובץ המיוצא הוא של קובץ טקסט. הקובץ מתחיל עם שורת הכותרת "
 "<tt>[AdBlock]</tt>, ולאחר מכן כל מסנן מוצג בשורת נפרדת."
 
-#: filteropts.cpp:256
+#: filteropts.cpp:260
 #, kde-format
 msgid "Import Filters"
 msgstr ""
 
-#: filteropts.cpp:300
+#: filteropts.cpp:304
 #, kde-format
 msgid "Export Filters"
 msgstr ""
 
-#: filteropts.cpp:435
-#, kde-format
-msgid ""
-"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
-"filters that are checked against linked images and frames. URL's that match "
-"are either discarded or replaced with a placeholder image. "
-msgstr ""
-"‏<h1>Konqueror AdBlocK</h1>  Konqueror AdBlocK מאפשר ליצור רשימת מסננים "
-"שיבדקו מול קישורים לתמונות ומסגרות. כתובות URL תואמות למסנן יועלמו או יוחלפו "
-"עם תמונה אחרת."
-
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:557 useragent/useragent.ui:61
+#: filteropts.cpp:556 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr ""
 
-#: filteropts.cpp:558
+#: filteropts.cpp:557
 #, kde-format
 msgid "URL"
 msgstr ""
 
-#: generalopts.cpp:53
-#, kde-format
-msgid "Tabbed Browsing"
-msgstr "גלישה עם לשוניות"
-
-#: generalopts.cpp:79
+#: generalopts.cpp:56
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1612,59 +1434,59 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr ""
 
-#: generalopts.cpp:85
+#: generalopts.cpp:62
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr ""
 
-#: generalopts.cpp:94
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "הצג את עמוד המבוא"
 
-#: generalopts.cpp:95
+#: generalopts.cpp:72
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "הצג את עמוד הבית שלי"
 
-#: generalopts.cpp:96
+#: generalopts.cpp:73
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "הצג עמוד ריק"
 
-#: generalopts.cpp:97
+#: generalopts.cpp:74
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "הצג את הסימניות שלי"
 
-#: generalopts.cpp:103
+#: generalopts.cpp:80
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "בחר את עמוד הבית"
 
-#: generalopts.cpp:108
+#: generalopts.cpp:85
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr ""
 
-#: generalopts.cpp:119
+#: generalopts.cpp:96
 #, kde-format
 msgid "Home page:"
 msgstr "עמוד הבית:"
 
-#: generalopts.cpp:122
+#: generalopts.cpp:99
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "בחר את עמוד הבית"
 
-#: generalopts.cpp:127
+#: generalopts.cpp:104
 #, fuzzy, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
@@ -1674,56 +1496,42 @@ msgstr ""
 "כפתור \"בית\". כאשר Konqueror מופעל כמנהל קבצים, כפתור זה יוביל לספריית הבית "
 "המקומית."
 
-#: generalopts.cpp:135
+#: generalopts.cpp:112
 #, kde-format
 msgid "Default web browser engine:"
 msgstr ""
 
-#: generalopts.cpp:144
+#: generalopts.cpp:121
 #, kde-format
 msgid "When splitting a view"
 msgstr ""
 
-#: generalopts.cpp:148
+#: generalopts.cpp:125
 #, kde-format
 msgid "Always duplicate current view"
 msgstr ""
 
-#: generalopts.cpp:149
+#: generalopts.cpp:126
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr ""
 
-#: generalopts.cpp:155
+#: generalopts.cpp:132
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr ""
 
-#: htmlopts.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
-"functionality. Please note that the file manager functionality has to be "
-"configured using the \"File Manager\" configuration module. You can make "
-"some settings how Konqueror should handle the HTML code in the web pages it "
-"loads. It is usually not necessary to change anything here."
-msgstr ""
-"<h1>דפדפן Konqueror</h1> כאן באפשרותך לקבוע את הגדרות הפעולה של הדפדפן "
-"Konqueror. שים לב כי את פעולת מנהל הקבצים יש להגדיר באמצעות מודול ההגדרות "
-"\"מנהל הקבצים\". באפשרותך לקבוע הגדרות מסוימות לגבי דרך הטיפול של Konqueror "
-"בקוד ה־HTML בדפי האינטרנט שהוא טוען. בדרך כלל אין צורך לשנות כאן שום דבר."
-
-#: htmlopts.cpp:44
+#: htmlopts.cpp:35
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "&סימניות"
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:38
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "בקש עבור שם ותיקייה כאשר אתה מוסיף לסימניות"
 
-#: htmlopts.cpp:50
+#: htmlopts.cpp:41
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1733,12 +1541,12 @@ msgstr ""
 "בחר באפשרות זו, כדי לשנות את הכתרת של הסימנייה ולבחור תיקייה לשמירה כאשר אתה "
 "מוסיף סימנייה."
 
-#: htmlopts.cpp:56
+#: htmlopts.cpp:47
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "הצג רק סימניות מסומנות בסרגל הסימניות"
 
-#: htmlopts.cpp:58
+#: htmlopts.cpp:49
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1747,12 +1555,12 @@ msgstr ""
 "אם אפשרות זו מסומנת, Konqueror יציג רק את הסימניות בסרגל הסימניות שאתה סימנת "
 "בעורך הסימניות."
 
-#: htmlopts.cpp:65
+#: htmlopts.cpp:56
 #, kde-format
 msgid "Form Com&pletion"
 msgstr "מיל&וי טפסים"
 
-#: htmlopts.cpp:69
+#: htmlopts.cpp:60
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1761,28 +1569,28 @@ msgstr ""
 "אם אפשרות זו נבחרת, Konqueror יזכור את הנתונים המוזנים בטפסי אינטרנט ויציע "
 "אותם בשדות דומים בכל טופס אחר."
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:66
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "מ&ספר מרבי של השלמות:"
 
-#: htmlopts.cpp:77
+#: htmlopts.cpp:68
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
 msgstr "כאן באפשרותך לבחור כמה ערכים יזכור Konqueror עבור שדה בטופס."
 
-#: htmlopts.cpp:84
+#: htmlopts.cpp:75
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "&התנהגות עכבר"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:78
 #, kde-format
 msgid "Chan&ge cursor over links"
 msgstr "שנה את המ&צביע מעל לקישורים"
 
-#: htmlopts.cpp:89
+#: htmlopts.cpp:80
 #, kde-format
 msgid ""
 "If this option is set, the shape of the cursor will change (usually to a "
@@ -1791,12 +1599,12 @@ msgstr ""
 "אם אפשרות זו נבחרת, צורת המצביע תשתנה (בדרך כלל לצורת יד) אם הוא מוזז מעל "
 "לקישור."
 
-#: htmlopts.cpp:93
+#: htmlopts.cpp:84
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "&כפתור אמצעי פותח כתובת מסומנת"
 
-#: htmlopts.cpp:96
+#: htmlopts.cpp:87
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
@@ -1805,12 +1613,12 @@ msgstr ""
 "אם אפשרות זו מסומנת, אתה יכול לפתוח את הכתובת בטקסט הנבחר על ידי לחיצה על "
 "הכפתור האמצעי בעכבר בתצוגה של Konqueror."
 
-#: htmlopts.cpp:100
+#: htmlopts.cpp:91
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "&לחיצה ימנית חוזרת אחורה בהיסטוריה"
 
-#: htmlopts.cpp:103
+#: htmlopts.cpp:94
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1821,12 +1629,12 @@ msgstr ""
 "העכבר בתוך תצוגה של Konqueror. במצב זה יש ללחוץ עם הלחצן הימני של העכבר "
 "ולהזיזו כדי לגשת אל התפריט המוקפץ."
 
-#: htmlopts.cpp:113
+#: htmlopts.cpp:104
 #, kde-format
 msgid "Allow automatic delayed &reloading/redirecting"
 msgstr "אפשר טעינה\\הפניה מח&דש באופן אוטומטי לאחר השהיה"
 
-#: htmlopts.cpp:114
+#: htmlopts.cpp:105
 #, kde-format
 msgid ""
 "Some web pages request an automatic reload or redirection after a certain "
@@ -1835,12 +1643,12 @@ msgstr ""
 "דפי אינטרנט מסוימים מבקשים טעינה או הפניה מחדש אוטומטית אחרי משך זמן מסוים. "
 "אם לא תבחר באפשרות זו, Konqueror יתעלם מבקשות אלה."
 
-#: htmlopts.cpp:120
+#: htmlopts.cpp:111
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "אפשר הפעלת אפשרויות נגישות באמצעות המ&קש Ctrl"
 
-#: htmlopts.cpp:121
+#: htmlopts.cpp:112
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1851,34 +1659,34 @@ msgstr ""
 "תיבה זו יבטל את תכונת הנגישות. (יש צורך להפעיל מחדש את Konqueror על מנת "
 "להחיל שינוי זה)"
 
-#: htmlopts.cpp:125
+#: htmlopts.cpp:116
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr ""
 
-#: htmlopts.cpp:126
+#: htmlopts.cpp:117
 #, kde-format
 msgid ""
 "Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked."
 msgstr ""
 
-#: htmlopts.cpp:130
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Offer to save website passwords"
 msgstr ""
 
-#: htmlopts.cpp:131
+#: htmlopts.cpp:122
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr ""
 
-#: htmlopts.cpp:135
+#: htmlopts.cpp:126
 #, kde-format
 msgid "Display online PDF files using WebEngine"
 msgstr ""
 
-#: htmlopts.cpp:136
+#: htmlopts.cpp:127
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
@@ -2115,7 +1923,7 @@ msgid ""
 msgstr ""
 "אם תבחר באפשרות זו, במקרה של שגיאות בהרצה של קוד JavaScript יתקבל דיווח."
 
-#: jsopts.cpp:79
+#: jsopts.cpp:83
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2137,7 +1945,7 @@ msgstr ""
 "המדיניויות שלך עם אנשים אחרים, וזאת באמצעות שמירתם ואחזורם מקובץ דחוס על ידי "
 "ZIP."
 
-#: jsopts.cpp:89
+#: jsopts.cpp:93
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2151,7 +1959,7 @@ msgstr ""
 "הפיכת JavaScript ללא זמין בדפים הנשלחים על ידי התחומים או המארחים האלה. </p> "
 "<p> בחר מדיניות והשתמש באפשרויות שמשמאל כדי לשנותה. </p> "
 
-#: jsopts.cpp:96
+#: jsopts.cpp:100
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2161,7 +1969,7 @@ msgstr ""
 "לחץ על כפתור זה כדי לבחור את הקובץ המכיל את מדיניויות ה־JavaScript. "
 "מדיניויות אלה ישולבו ביחד עם המדיניויות הקיימות, כשמרשומות כפולות יתעלמו."
 
-#: jsopts.cpp:99
+#: jsopts.cpp:103
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2171,40 +1979,40 @@ msgstr ""
 "לחץ על כפתור זה כדי לשמור את מדיניות ה־JavaScript לקובץ דחוס על ידי Zip. "
 "הקובץ, שייקרא <b>javascript_policy.tgz</b>, יישמר למיקום שתבחר."
 
-#: jsopts.cpp:105
+#: jsopts.cpp:109
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "מדיניות JavaScript גלובליות"
 
-#: jsopts.cpp:173
+#: jsopts.cpp:181
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "&ספציפית למתחם"
 
-#: jsopts.cpp:212
+#: jsopts.cpp:220
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "מדיניות JavaScript חדשה"
 
-#: jsopts.cpp:215
+#: jsopts.cpp:223
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "שינוי מדיניות JavaScript"
 
-#: jsopts.cpp:219
+#: jsopts.cpp:227
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "מדיניות JavaScript:"
 
-#: jsopts.cpp:220
+#: jsopts.cpp:228
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "בחר מדיניות JavaScript למארח או למתחם הנ\"ל."
 
-#: jsopts.cpp:222
+#: jsopts.cpp:230
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "שינוי מדיניות JavaScript ספציפיות עבור מתחם"
@@ -2411,29 +2219,10 @@ msgstr ""
 msgid "&Java"
 msgstr "&Java"
 
-#: main.cpp:53
+#: main.cpp:57
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"
-
-#: main.cpp:93
-#, kde-format
-msgid ""
-"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
-"programs embedded in web pages should be allowed to be executed by Konqueror."
-"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
-"in web pages should be allowed to be executed by Konqueror.<br /><br /"
-"><b>Note:</b> Active content is always a security risk, which is why "
-"Konqueror allows you to specify very fine-grained from which hosts you want "
-"to execute Java and/or JavaScript programs."
-msgstr ""
-"<h2>דפדפן Konqueror</h2>   כאן באפשרותך לקבוע את הגדרות התפקוד של הדפדפן Konqueror. שים לב כי את "
-"התפקוד של מנהל הקבצים יש להגדיר דרך מודול התצורה \"מנהל הקבצים\".  <h2>הגדרות HTML</h2>  בכרטיסיית ה־HTML באפשרותך לבצע מספר הגדרות שיקבעו כיצד יטפל Konqueror בקוד "
-"HTML בדפי האינטרנט שהוא טוען. בדרך כלל אין צורך לשנות כאן דבר.  <h2>מראה</h2> בלשונית זו באפשרותך לקבוע באילו גופנים ישתמש Konqeuror לצורך "
-"הצגת אתרי האינטרנט שאתה גולש בהם.<h2>JavaScript</h2>  בלשונית זו באפשרותך להגדיר האם תוכניות JavaScript המוכלות בדפי אינטרנט יורשו "
-"לפעול עם Konqueror.  <h2>Java</h2>  בלשונית זו באפשרותך להגדיר האם יישומוני Java המוטבעים בדפי אינטרנט יורשו "
-"לפעול עם Konqueror.  <br /><br />  <b>הערה:</b> תכנים פעילים הם תמיד סיכון אבטחתי, ולכן Konqueror מאפשר לך "
-"לציין בדקדקנות את המארחים שמהם ברצונך להפעיל תוכניות Java ו\\או JavaScript."
 
 #: policydlg.cpp:30
 #, fuzzy, kde-format
@@ -2459,6 +2248,227 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "תחילה יש להזין שם תחום."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
+#: tabs/tabsoptions.ui:14
+#, fuzzy, kde-format
+#| msgid "Mouse Beha&vior"
+msgid "Tabs Behavior"
+msgstr "&התנהגות עכבר"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: tabs/tabsoptions.ui:20
+#, kde-format
+msgid "Aspect"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: tabs/tabsoptions.ui:26
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr ""
+"אפשרות זו תציג את סרגל הסימניות רק אם יש שני לשוניות או יותר. אחרת הסרגל "
+"תמיד יוצג."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: tabs/tabsoptions.ui:29
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr "הסתר את סרגל הלשוניות כאשר לשונית אחת בלבד פתוחה"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: tabs/tabsoptions.ui:38
+#, kde-format
+msgid "Tab bar position"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:48
+#, kde-format
+msgid "Choose where to display the tabs bar"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:52
+#, kde-format
+msgid "Above contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:57
+#, kde-format
+msgid "Below contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:62
+#, kde-format
+msgid "Left of contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:67
+#, kde-format
+msgid "Right of contents"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: tabs/tabsoptions.ui:93
+#, kde-format
+msgid "Usage"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: tabs/tabsoptions.ui:99
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr ""
+"פתיחת לשונית חדשה במקום לפתוח חלון חדש במספר מצבים, למשל בעת בחירת קישור או "
+"תיקיה עם הלחצן האמצעי של העכבר."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: tabs/tabsoptions.ui:102
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "פתח קישורים ב&לשונית חדשה במקום חלון חדש"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: tabs/tabsoptions.ui:109
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr ""
+"האם (במידה ומאופשר חלון JavaScript קופץ) החלון יפתח בלשונית חדשה או בחלון "
+"חדש."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: tabs/tabsoptions.ui:112
+#, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr "פתח חלונות נפתחים ב&לשונית חדשה במקום חלון חדש"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: tabs/tabsoptions.ui:119
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+"כאשר אתה לוחץ על כתובת URL בתוכנית KDE אחרת או בקריאה ל-kfmclient לפתוח URL, "
+"שולחן העבודה הנוכחי ייסרק בחיפוש אחר Konqueror לא ממוזער, ואם ימצא, הURL "
+"יפתח כלשונית חדשה בו. בכל מקרה אחר חלון Konqueror חדש יפתח עם ה-URL המבוקש."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: tabs/tabsoptions.ui:122
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr ""
+"פתח כלשונית חדשה בהפעלת Konqueror קיימת כאשר ישנה קריאה מבחוץ לכתובת URL."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: tabs/tabsoptions.ui:132
+#, fuzzy, kde-format
+#| msgid "Mouse Beha&vior"
+msgid "New Tab Behavior"
+msgstr "&התנהגות עכבר"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: tabs/tabsoptions.ui:138
+#, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr "פתיחת לשונית חדשה בחזית, אחרת היא תיפתח ככרטיסיית רקע."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: tabs/tabsoptions.ui:141
+#, kde-format
+msgid "O&pen new tabs in the background"
+msgstr "&פתח לשוניות חדשות בחזית "
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: tabs/tabsoptions.ui:148
+#, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr "פתיחת לשונית חדשה אחרי הנוכחית, אחרת היא תיפתח אחרי הלשונית האחרונה."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: tabs/tabsoptions.ui:151
+#, kde-format
+msgid "Open &new tab after current tab"
+msgstr "פתח לשונית חדשה אחרי הנוכחית"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: tabs/tabsoptions.ui:161
+#, kde-format
+msgid "Closing"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: tabs/tabsoptions.ui:167
+#, fuzzy, kde-format
+msgid "This will display close buttons inside each tab."
+msgstr "יציג כפתורי סגירה בצד כל לשונית, במקום הסמלים של האתרים."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: tabs/tabsoptions.ui:170
+#, kde-format
+msgid "&Show close button on tabs"
+msgstr "&הצג כפתור סגירה בלשוניות"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: tabs/tabsoptions.ui:177
+#, fuzzy, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr ""
+"כאשר אתה לוחץ על לשונית באמצעות הלחצן האמצעי של העכבר או הגלגלת, הלשונית "
+"תסגר. (יש צורך להפעיל מחדש את Konqueror על מנת שהשינויים יוחלו)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: tabs/tabsoptions.ui:180
+#, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr "לחיצה אמצעית סוגרת את הלשונית"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: tabs/tabsoptions.ui:187
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr "הצגת בקשה לאישור סגירת חלון כאשר יש בתוכו מספר לשוניות פתוחות."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: tabs/tabsoptions.ui:190
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr "שאל לפני סגירת &חלונות עם מספר לשוניות"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: tabs/tabsoptions.ui:197
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+"בעת סימון אפשרות זו, בעת סגירת לשונית פעילה, הלשונית האחרונה לפניה בשימוש "
+"תהפך לפעילה, במקום הלשונית הימנית ללשונית הפעילה."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: tabs/tabsoptions.ui:200
+#, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr "עבור ללשונית האחרונה בה היה שימוש בעת סגירת לשונית נוכחית"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, UserAgent)
 #: useragent/useragent.ui:14
@@ -2541,6 +2551,56 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+
+#~ msgid ""
+#~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+#~ "Konqueror should use to display the web pages you view."
+#~ msgstr ""
+#~ "<h1>גופנים של Konqueror</h1>בדף זה באפשרותך לקבוע את הגופנים שבהם "
+#~ "Konqueror ישתמש להצגת דפי האינטרנט בהם אתה צופה."
+
+#~ msgid ""
+#~ "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list "
+#~ "of filters that are checked against linked images and frames. URL's that "
+#~ "match are either discarded or replaced with a placeholder image. "
+#~ msgstr ""
+#~ "‏<h1>Konqueror AdBlocK</h1>  Konqueror AdBlocK מאפשר ליצור רשימת מסננים "
+#~ "שיבדקו מול קישורים לתמונות ומסגרות. כתובות URL תואמות למסנן יועלמו או "
+#~ "יוחלפו עם תמונה אחרת."
+
+#~ msgid "Tabbed Browsing"
+#~ msgstr "גלישה עם לשוניות"
+
+#~ msgid ""
+#~ "<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+#~ "functionality. Please note that the file manager functionality has to be "
+#~ "configured using the \"File Manager\" configuration module. You can make "
+#~ "some settings how Konqueror should handle the HTML code in the web pages "
+#~ "it loads. It is usually not necessary to change anything here."
+#~ msgstr ""
+#~ "<h1>דפדפן Konqueror</h1> כאן באפשרותך לקבוע את הגדרות הפעולה של הדפדפן "
+#~ "Konqueror. שים לב כי את פעולת מנהל הקבצים יש להגדיר באמצעות מודול ההגדרות "
+#~ "\"מנהל הקבצים\". באפשרותך לקבוע הגדרות מסוימות לגבי דרך הטיפול של "
+#~ "Konqueror בקוד ה־HTML בדפי האינטרנט שהוא טוען. בדרך כלל אין צורך לשנות "
+#~ "כאן שום דבר."
+
+#~ msgid ""
+#~ "<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+#~ "programs embedded in web pages should be allowed to be executed by "
+#~ "Konqueror.<h2>Java</h2>On this page, you can configure whether Java "
+#~ "applets embedded in web pages should be allowed to be executed by "
+#~ "Konqueror.<br /><br /><b>Note:</b> Active content is always a security "
+#~ "risk, which is why Konqueror allows you to specify very fine-grained from "
+#~ "which hosts you want to execute Java and/or JavaScript programs."
+#~ msgstr ""
+#~ "<h2>דפדפן Konqueror</h2>   כאן באפשרותך לקבוע את הגדרות התפקוד של הדפדפן Konqueror. שים לב כי את "
+#~ "התפקוד של מנהל הקבצים יש להגדיר דרך מודול התצורה \"מנהל הקבצים\".  <h2>הגדרות HTML</h2>  בכרטיסיית ה־HTML באפשרותך לבצע מספר הגדרות שיקבעו כיצד יטפל Konqueror "
+#~ "בקוד HTML בדפי האינטרנט שהוא טוען. בדרך כלל אין צורך לשנות כאן דבר.  <h2>מראה</h2> בלשונית זו באפשרותך לקבוע באילו גופנים ישתמש Konqeuror "
+#~ "לצורך הצגת אתרי האינטרנט שאתה גולש בהם.<h2>JavaScript</h2>  בלשונית זו באפשרותך להגדיר האם תוכניות JavaScript המוכלות בדפי אינטרנט "
+#~ "יורשו לפעול עם Konqueror.  <h2>Java</h2>  בלשונית זו באפשרותך להגדיר האם יישומוני Java המוטבעים בדפי אינטרנט יורשו "
+#~ "לפעול עם Konqueror.  <br /><br />  <b>הערה:</b> תכנים פעילים הם תמיד סיכון אבטחתי, ולכן Konqueror מאפשר לך "
+#~ "לציין בדקדקנות את המארחים שמהם ברצונך להפעיל תוכניות Java ו\\או "
+#~ "JavaScript."
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

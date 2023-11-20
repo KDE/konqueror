@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2021-01-13 07:36+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -86,7 +86,7 @@ msgstr[1] " secondes"
 msgid "None"
 msgstr "Aucun"
 
-#: app/archivedialog.cpp:202
+#: app/archivedialog.cpp:219
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -96,13 +96,13 @@ msgstr ""
 "Le téléchargement de l'archive Web ne peut utilisé les paramètres actuels du "
 "serveur mandataire. Aucun serveur mandataire ne sera utilisé."
 
-#: app/archivedialog.cpp:341
+#: app/archivedialog.cpp:358
 #, kde-format
 msgctxt "@info"
 msgid "The save location is not valid."
 msgstr "L'emplacement de sauvegarde est non valable."
 
-#: app/archivedialog.cpp:361
+#: app/archivedialog.cpp:378
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
@@ -110,14 +110,14 @@ msgstr ""
 "Impossible de trouver la commande « wget(1) » <nl/>Veuillez consulter <link>"
 "%1</link>."
 
-#: app/archivedialog.cpp:383
+#: app/archivedialog.cpp:400
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
 msgstr ""
 "Impossible de vérifier la destination<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:400
+#: app/archivedialog.cpp:417
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -127,13 +127,13 @@ msgstr ""
 "Le dossier d'archive<nl/><filename>%1</filename><nl/>existe déjà comme "
 "fichier."
 
-#: app/archivedialog.cpp:401
+#: app/archivedialog.cpp:418
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
 msgstr "Le dossier d'archive <nl/><filename>%1</filename><nl/>existe déjà."
 
-#: app/archivedialog.cpp:405
+#: app/archivedialog.cpp:422
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -143,19 +143,19 @@ msgstr ""
 "Le fichier d'archive <nl/><filename>%1</filename><nl/>existe déjà comme un "
 "dossier."
 
-#: app/archivedialog.cpp:406
+#: app/archivedialog.cpp:423
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
 msgstr ""
 "Le fichier d'archive file <nl/><filename>%1</filename><nl/>existe déjà."
 
-#: app/archivedialog.cpp:410
+#: app/archivedialog.cpp:427
 #, kde-format
 msgid "Archive Already Exists"
 msgstr "L'archive existe déjà"
 
-#: app/archivedialog.cpp:440
+#: app/archivedialog.cpp:457
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
@@ -163,27 +163,27 @@ msgstr ""
 "Impossible de supprimer l'archive originale<nl/><filename>%1</filename><nl/>"
 "%2"
 
-#: app/archivedialog.cpp:457
+#: app/archivedialog.cpp:474
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
 msgstr ""
 "Impossible de créer un dossier temporaire<nl/><filename>%1</filename><nl/>"
 
-#: app/archivedialog.cpp:529
+#: app/archivedialog.cpp:546
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot start the archiver process <filename>%1</filename>"
 msgstr ""
 "Impossible de démarrer le processus d'archivage <filename>%1</filename>"
 
-#: app/archivedialog.cpp:545
+#: app/archivedialog.cpp:562
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The download process was interrupted."
 msgstr "Le processus de téléchargement a été interrompu"
 
-#: app/archivedialog.cpp:546
+#: app/archivedialog.cpp:563
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -193,7 +193,7 @@ msgstr ""
 "<para>Le processus de téléchargement <filename>%1</filename> a été stoppé "
 "avec le signal %2.</para>"
 
-#: app/archivedialog.cpp:551
+#: app/archivedialog.cpp:568
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -203,7 +203,7 @@ msgstr ""
 "<para>Le processus de téléchargement <filename>%1</filename> a été stoppé "
 "avec l'état %2.</para>"
 
-#: app/archivedialog.cpp:555
+#: app/archivedialog.cpp:572
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -213,42 +213,42 @@ msgstr ""
 "<para>Ceci peut être tout simplement une indication d'erreur « 404 » pour "
 "certains éléments de la page.</para>"
 
-#: app/archivedialog.cpp:561
+#: app/archivedialog.cpp:578
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
 msgstr "<para>Conserver l'archive partielle web ?</para>"
 
-#: app/archivedialog.cpp:562
+#: app/archivedialog.cpp:579
 #, kde-format
 msgid "Retain Archive?"
 msgstr "Conserver l'archive ?"
 
-#: app/archivedialog.cpp:563
+#: app/archivedialog.cpp:580
 #, kde-format
 msgid "Retain"
 msgstr "Conserver"
 
-#: app/archivedialog.cpp:567
+#: app/archivedialog.cpp:584
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."
 msgstr "La création de l'archive Web a échoué."
 
-#: app/archivedialog.cpp:710
+#: app/archivedialog.cpp:727
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
 msgstr "Impossible de copier l'archive vers<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:740
+#: app/archivedialog.cpp:757
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
 msgstr ""
 "Impossible de définir les permissions de<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:748
+#: app/archivedialog.cpp:765
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"
@@ -276,17 +276,17 @@ msgstr "Archiver un page Web"
 msgid "Copyright (c) 2020 Jonathan Marten"
 msgstr "Copyright (c) 2020 Jonathan Marten"
 
-#: app/main.cpp:34
+#: app/main.cpp:31
 #, kde-format
 msgid "Jonathan Marten"
 msgstr "Jonathan Marten"
 
-#: app/main.cpp:46
+#: app/main.cpp:43
 #, kde-format
 msgid "URL of the web page to archive"
 msgstr "« URL » de la page Web à archiver"
 
-#: app/main.cpp:46
+#: app/main.cpp:43
 #, kde-format
 msgid "url"
 msgstr "URL"

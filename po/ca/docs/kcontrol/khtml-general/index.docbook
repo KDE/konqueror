@@ -1,0 +1,180 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Catalan  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="konq-general-behavior">
+<title
+>Comportament general del &konqueror;</title>
+<articleinfo>
+
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+&traductor.Antoni.Bella; 
+</authorgroup>
+
+<date
+>8 de novembre de 2016</date>
+<releaseinfo
+>Aplicacions 16.12</releaseinfo>
+
+</articleinfo>
+<para
+>En aquesta pàgina podeu trobar la configuració per a la pàgina d'inici i el comportament de la navegació amb pestanyes, tant per al mode gestor de fitxers com per al mode de navegador del &konqueror;.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Quan s'iniciï el Konqueror</guilabel
+></term>
+<listitem>
+<para
+>Aquesta opció determina quina pàgina es mostrarà quan s'iniciï el &konqueror;, la pàgina d'introducció, la pàgina d'inici, una pàgina en blanc o la pàgina de les adreces d'interès. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Pàgina d'inici</guilabel
+></term>
+<listitem
+><para
+>Aquest és l'&URL; (&pex; una carpeta o una pàgina web) on el &konqueror; en mode navegador saltarà quan es premi el botó <guibutton
+>Pàgina d'inici</guibutton
+> a la barra d'eines. Podeu establir un camí que serà la vostra <guilabel
+>Pàgina d'inici</guilabel
+> escrivint en el camp de text, utilitzant la icona del <guiicon
+>navegador</guiicon
+> per a seleccionar una carpeta local. El &konqueror; haurà de ser reiniciat perquè els canvis tinguin efecte.</para>
+<para
+>Quan el &konqueror; és emprat en el mode gestor de fitxers, el botó de <guilabel
+>Pàgina d'inici</guilabel
+> a la barra d'eines se substitueix per un botó <guilabel
+>Carpeta d'inici</guilabel
+> que us farà saltar a la vostra carpeta d'inici (l'arrel local de l'usuari).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Obre els enllaços a una pestanya nova en comptes d'una finestra nova</guilabel
+></term>
+<listitem
+><para
+>Per omissió el &konqueror; està configurat a una sola finestra per pàgina, però és capaç d'obrir múltiples <firstterm
+>pestanyes</firstterm
+> dins d'una sola finestra. El &konqueror;, per omissió, també té una drecera amb el &BMR; per a obrir un enllaç en una finestra nova. Si activeu <guilabel
+>Obre els enllaços a una pestanya nova en comptes d'una finestra nova</guilabel
+>, podreu fer clic amb el &BMR; sobre un enllaç perquè s'obri en una pestanya nova.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Obre els emergents a una pestanya nova en comptes d'una finestra nova</guilabel
+></term>
+<listitem
+><para
+>Sigui o no un emergent del JavaScript, si estan permesos s'hauran d'obrir a una pestanya nova o a una finestra nova.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Obre com a pestanya al Konqueror existent quan es cridi un URL extern</guilabel
+></term>
+<listitem
+><para
+>Quan feu clic a un &URL; en un altre programa del &kde; o kfmclient cridi per obrir un &URL;, l'escriptori actual cercarà un &konqueror; sense minimitzar, si el troba, l'&URL; serà obert com a una pestanya nova dintre seu. En cas contrari s'obrirà en una finestra nova del &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Obre les pestanyes noves al darrere</guilabel
+></term>
+<listitem
+><para
+>Si utilitzeu la navegació amb pestanyes, podeu decidir si una pestanya nova serà convertida en l'activa («al davant»), o anirà al darrere. En una connexió lenta a Internet, o mentre navegueu per una pàgina que té una llista de titulars o una llista d'enllaços, és possible que us agradi tenir la càrrega de les noves pestanyes en segon pla mentre seguiu llegint. En aquest cas, activeu aquesta opció. Altrament, si preferiu anar directament a la pàgina nova, deixant l'altra al darrere per a tornar-hi després, desactiveu-la.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Obre una pestanya nova després de l'actual</guilabel
+></term>
+<listitem
+><para
+>Això obrirà una pestanya nova després de la pestanya actual, en comptes de després de la darrera pestanya.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Oculta la barra de pestanyes si tan sols n'hi ha una d'oberta</guilabel
+></term>
+<listitem
+><para
+>Aquesta opció tan sols mostrarà la barra de pestanyes si hi ha dues o més pestanyes obertes.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostra el botó de tancar a les pestanyes</guilabel
+></term>
+<listitem
+><para
+>Això mostrarà botons de tancar encastats a cada pestanya en comptes de les icones dels llocs web.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Tanca la pestanya amb un clic amb el botó del mig</guilabel
+></term>
+<listitem
+><para
+>Quan feu clic sobre una pestanya amb el &BMR; o la roda del ratolí, es tancarà aquesta pestanya. El &konqueror; ha de ser reiniciat perquè els canvis tinguin efecte.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Confirma en tancar finestres amb múltiples pestanyes</guilabel
+></term>
+<listitem
+><para
+>Si tanqueu una finestra del &konqueror; que disposi de múltiples pestanyes obertes, el &konqueror; us demanarà si esteu segur de la intenció de tancar-la. Podeu canviar aquest comportament amb aquesta casella de selecció.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Activa la pestanya usada prèviament en tancar la pestanya actual</guilabel
+></term>
+<listitem
+><para
+>En marcar això la pestanya usada o oberta prèviament s'activarà quan tanqueu la pestanya activa actualment, en comptes de la que hi ha a la dreta de la pestanya actual.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</article>

@@ -1,0 +1,64 @@
+# Translation of kio_bookmarks.po to Brazilian Portuguese
+# Copyright (C) 2008-2015 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# André Marcelo Alvarenga <alvarenga@kde.org>, 2008, 2015.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_bookmarks\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"PO-Revision-Date: 2020-11-04 14:27-0300\n"
+"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 20.04.3\n"
+
+#: kio_bookmarks.cpp:85
+#, kde-format
+msgid "Root"
+msgstr "Raiz"
+
+#: kio_bookmarks.cpp:118
+#, kde-format
+msgid "Places"
+msgstr "Locais"
+
+#: kio_bookmarks.cpp:194
+#, kde-format
+msgid "Could not find bookmarks config"
+msgstr "Não foi possível encontrar a configuração dos favoritos"
+
+#: kio_bookmarks.cpp:204
+#, kde-format
+msgid "Could not find bookmarks editor"
+msgstr "Não foi possível encontrar o editor de favoritos"
+
+#: kio_bookmarks.cpp:210
+#, kde-format
+msgid "Wrong request: %1"
+msgstr "Solicitação inválida: %1"
+
+#: kio_bookmarks_html.cpp:85
+#, kde-format
+msgid "There are no bookmarks to display yet."
+msgstr "Não há favoritos a serem exibidos."
+
+#: kio_bookmarks_html.cpp:124
+#, kde-format
+msgid ""
+"kio_bookmarks CSS file not found. Output will look ugly.\n"
+"Check your installation."
+msgstr ""
+"O arquivo CSS do kio_bookmarks não foi encontrado. A saída parecerá feia.\n"
+"Verifique sua instalação."
+
+#: kio_bookmarks_html.cpp:133
+#, kde-format
+msgid "My Bookmarks"
+msgstr "Meus favoritos"

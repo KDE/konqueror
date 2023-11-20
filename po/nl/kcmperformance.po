@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2017-03-18 10:00+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -22,35 +22,15 @@ msgstr ""
 "X-Generator: Lokalize 2.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>KDE-prestaties</h1>Hier kunt u de snelheid en prestaties van KDE "
-"verbeteren."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Systeem"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Konqueror-prestaties</h1> Hier kunt u de prestaties van Konqueror "
-"verbeteren. U vindt hier bijv. opties voor het hergebruiken van reeds "
-"gestarte exemplaren en om Konqueror vooraf geladen te houden."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -156,6 +136,22 @@ msgid ""
 msgstr ""
 "Deze optie kan in sommige gevallen leiden tot problemen. Raadpleeg de \"Wat "
 "is dit?\"-tekstballonnen (Shift+F1) voor meer details."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDE-prestaties</h1>Hier kunt u de snelheid en prestaties van KDE "
+#~ "verbeteren."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Konqueror-prestaties</h1> Hier kunt u de prestaties van Konqueror "
+#~ "verbeteren. U vindt hier bijv. opties voor het hergebruiken van reeds "
+#~ "gestarte exemplaren en om Konqueror vooraf geladen te houden."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

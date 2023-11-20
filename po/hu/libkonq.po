@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2011-09-23 22:04+0200\n"
 "Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -16,67 +16,67 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.2\n"
 
-#: src/browseropenorsavequestion.cpp:89
+#: src/browseropenorsavequestion.cpp:88
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
 msgstr ""
 
-#: src/browseropenorsavequestion.cpp:97
+#: src/browseropenorsavequestion.cpp:96
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr ""
 
-#: src/browseropenorsavequestion.cpp:149 src/browseropenorsavequestion.cpp:237
+#: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
 #, fuzzy, kde-format
 #| msgid "Open &with %1"
 msgctxt "@label:button"
 msgid "&Open with %1"
 msgstr "Megnyitás &ezzel: %1"
 
-#: src/browseropenorsavequestion.cpp:213
+#: src/browseropenorsavequestion.cpp:212
 #, fuzzy, kde-format
 #| msgid "Open &with %1"
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "Megnyitás &ezzel: %1"
 
-#: src/browseropenorsavequestion.cpp:224 src/browseropenorsavequestion.cpp:318
+#: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
 #, fuzzy, kde-format
 #| msgid "Open &with %1"
 msgctxt "@info"
 msgid "Open '%1'?"
 msgstr "Megnyitás &ezzel: %1"
 
-#: src/browseropenorsavequestion.cpp:228
+#: src/browseropenorsavequestion.cpp:227
 #, fuzzy, kde-format
 #| msgid "&Open With..."
 msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "Megny&itás ezzel..."
 
-#: src/browseropenorsavequestion.cpp:246
+#: src/browseropenorsavequestion.cpp:245
 #, fuzzy, kde-format
 #| msgid "&Open With"
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "Megnyitás máss&al"
 
-#: src/browseropenorsavequestion.cpp:315
+#: src/browseropenorsavequestion.cpp:314
 #, fuzzy, kde-format
 #| msgid "&Open"
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "Megny&itás"
 
-#: src/browseropenorsavequestion.cpp:339
+#: src/browseropenorsavequestion.cpp:338
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr ""
 
-#: src/browseropenorsavequestion.cpp:341
+#: src/browseropenorsavequestion.cpp:340
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
@@ -90,77 +90,77 @@ msgstr ""
 msgid "Reject"
 msgstr ""
 
-#: src/konq_popupmenu.cpp:220
+#: src/konq_popupmenu.cpp:219
 #, kde-format
 msgid "&Open"
 msgstr "Megny&itás"
 
-#: src/konq_popupmenu.cpp:243
+#: src/konq_popupmenu.cpp:242
 #, kde-format
 msgid "Create &Folder..."
 msgstr "Köny&vtár létrehozása..."
 
-#: src/konq_popupmenu.cpp:254
+#: src/konq_popupmenu.cpp:253
 #, kde-format
 msgid "&Restore"
 msgstr "&Visszaállítás"
 
-#: src/konq_popupmenu.cpp:266
+#: src/konq_popupmenu.cpp:265
 #, kde-format
 msgid "Show Original Directory"
 msgstr "Eredeti mappa megjelenítése"
 
-#: src/konq_popupmenu.cpp:266
+#: src/konq_popupmenu.cpp:265
 #, kde-format
 msgid "Show Original File"
 msgstr "Eredeti fájl megjelenítése"
 
-#: src/konq_popupmenu.cpp:301
+#: src/konq_popupmenu.cpp:300
 #, kde-format
 msgid "&Empty Trash Bin"
 msgstr "A Kuka ü&rítése"
 
-#: src/konq_popupmenu.cpp:313
+#: src/konq_popupmenu.cpp:312
 #, kde-format
 msgid "&Configure Trash Bin"
 msgstr "A &Kuka beállítása"
 
-#: src/konq_popupmenu.cpp:337
+#: src/konq_popupmenu.cpp:336
 #, kde-format
 msgid "&Bookmark This Page"
 msgstr "Könyvjel&ző erre az oldalra"
 
-#: src/konq_popupmenu.cpp:339
+#: src/konq_popupmenu.cpp:338
 #, kde-format
 msgid "&Bookmark This Location"
 msgstr "Könyvj&elző erre a címre"
 
-#: src/konq_popupmenu.cpp:342
+#: src/konq_popupmenu.cpp:341
 #, kde-format
 msgid "&Bookmark This Folder"
 msgstr "Könyvjelző erre a &könyvtárra"
 
-#: src/konq_popupmenu.cpp:344
+#: src/konq_popupmenu.cpp:343
 #, kde-format
 msgid "&Bookmark This Link"
 msgstr "Könyvjelző erre a l&inkre"
 
-#: src/konq_popupmenu.cpp:346
+#: src/konq_popupmenu.cpp:345
 #, kde-format
 msgid "&Bookmark This File"
 msgstr "Könyvjelző erre a &fájlra"
 
-#: src/konq_popupmenu.cpp:385
+#: src/konq_popupmenu.cpp:384
 #, kde-format
 msgid "Preview In"
 msgstr "Előnézet ezzel"
 
-#: src/konq_popupmenu.cpp:396
+#: src/konq_popupmenu.cpp:395
 #, kde-format
 msgid "Open Terminal Here"
 msgstr ""
 
-#: src/konq_popupmenu.cpp:432
+#: src/konq_popupmenu.cpp:431
 #, kde-format
 msgid "&Properties"
 msgstr "&Tulajdonságok"

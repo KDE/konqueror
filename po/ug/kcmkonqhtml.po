@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -16,154 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
-#: advancedTabOptions.ui:21
-#, kde-format
-msgid ""
-"This will open a new tab instead of a new window in various situations, such "
-"as choosing a link or a folder with the middle mouse button."
-msgstr "بۇ كۆپ چاغلار يېڭى كۆزنەك ئاچماستىن، يېڭى بەتكۈچ ئاچىدۇ."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
-#: advancedTabOptions.ui:24
-#, kde-format
-msgid "Open &links in new tab instead of in new window"
-msgstr "ئۇلانمىنى يېڭى كۆزنەكتە ئەمەس يېڭى بەتكۈچتە ئاچ(&L)"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
-#: advancedTabOptions.ui:31
-#, kde-format
-msgid ""
-"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
-"new window."
-msgstr ""
-"JavaScript تا سەكرىمىگە يول قويۇلغان بولسا، سەكرىمە كۆزنەكنى يېڭى كۆزنەكتە "
-"ئەمەس، بەلكى يېڭى بەتكۈچتە ئاچىدۇ."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
-#: advancedTabOptions.ui:34
-#, kde-format
-msgid "Open pop&ups in new tab instead of in new window"
-msgstr "سەكرىمە كۆزنەكنى يېڭى كۆزنەكتە ئەمەس، يېڭى بەتكۈچتە ئاچ(&U)"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
-#: advancedTabOptions.ui:41
-#, kde-format
-msgid ""
-"When you click a URL in another KDE program or call kfmclient to open a URL, "
-"the current desktop will be searched for a non-minimized Konqueror and, if "
-"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
-"window will be opened with the required URL."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
-#: advancedTabOptions.ui:44
-#, kde-format
-msgid "Open as tab in existing Konqueror when URL is called externally"
-msgstr ""
-"سىرتتىن URL ئېچىش ئىلتىماسى  كەلگەندە، ئۇنى Konqueror نىڭ بەتكۈچىدە ئاچسۇن"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
-#: advancedTabOptions.ui:51
-#, kde-format
-msgid ""
-"This will open a new tab in the background, instead of in the foreground."
-msgstr "بۇ يېڭى بەتكۈچنى ئالدى تەرەپتە ئەمەس،ئارقا تەرەپتە ئاچىدۇ."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
-#: advancedTabOptions.ui:54
-#, kde-format
-msgid "O&pen new tabs in the background"
-msgstr "يېڭى بەتكۈچنى ئارقا تەرەپتە ئاچ(&P)"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
-#: advancedTabOptions.ui:61
-#, kde-format
-msgid ""
-"This will open a new tab opened from a page after the current tab, instead "
-"of after the last tab."
-msgstr ""
-"بۇ يېڭى بەتكۈچنى نۆۋەتتىكى ئەڭ ئاخىرقى بەتكۈچنىڭ كەينىدە ئەمەس، نۆۋەتتىكى "
-"بەتكۈچنىڭ كەينىدە ئاچىدۇ"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
-#: advancedTabOptions.ui:64
-#, kde-format
-msgid "Open &new tab after current tab"
-msgstr "يېڭى بەتكۈچنى نۆۋەتتىكى بەتكۈچنىڭ كەينىدە ئاچ(&N)"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
-#: advancedTabOptions.ui:71
-#, kde-format
-msgid ""
-"This will display the tab bar only if there are two or more tabs. Otherwise "
-"it will always be displayed."
-msgstr ""
-"بەتكۈچتىن 2 ياكى ئۇنىڭدىن جىق بولسا بەتكۈچ بالدىقىنى كۆرسىتىدۇ. بولمىسا "
-"بەتكۈچ بالدىقى ھەمىشە كۆرسىتىلىدۇ."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
-#: advancedTabOptions.ui:74
-#, kde-format
-msgid "Hide the tab bar when only one tab is open"
-msgstr "ئەگەر بىرلا بەتكۈچ بولسا ئۇنى يوشۇر"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
-#: advancedTabOptions.ui:81
-#, kde-format
-msgid "This will display close buttons inside each tab."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
-#: advancedTabOptions.ui:84
-#, kde-format
-msgid "&Show close button on tabs"
-msgstr "بەتكۈچتە «ياپ» توپچىسىنى كۆرسەت(&S)"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
-#: advancedTabOptions.ui:91
-#, kde-format
-msgid ""
-"When you click on a tab using the middle mouse button or mouse wheel, it "
-"will close that tab."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
-#: advancedTabOptions.ui:94
-#, kde-format
-msgid "Middle-click on a tab to close it"
-msgstr "بەتكۈچتە ئوتتۇرا توپچا چېكىلسە ياپسۇن"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
-#: advancedTabOptions.ui:101
-#, kde-format
-msgid ""
-"This will ask you whether you are sure you want to close a window when it "
-"has multiple tabs opened in it."
-msgstr "بىر قانچە بەتكۈچ بار كۆزنى ياپماقچى بولغان، سورايدىغان بولىدۇ."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
-#: advancedTabOptions.ui:104
-#, kde-format
-msgid "Confirm &when closing windows with multiple tabs"
-msgstr "بىر قانچە بەتكۈچ بار چاغدا كۆزنەكنى ياپماقچى بولسا جەزملىسۇن(&W)"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: advancedTabOptions.ui:111
-#, kde-format
-msgid ""
-"When checking this the previous used or opened tab will be activated when "
-"you close the current active tab instead of the one right to the current tab."
-msgstr ""
-"بۇ تاللانسا، ھازىرقى ئاكتىپ بەتكۈچ يېپىلسا، بۇنىڭ ئادىدا ئېچىلغان ياكى "
-"ئىشلىتىلگەن بەتكۈچ ئاكتىپلىنىدۇ."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: advancedTabOptions.ui:114
-#, kde-format
-msgid "Activate previously used tab when closing the current tab"
-msgstr "ھازىرقى بەتكۈچ يېپىلسا بۇرۇن ئۇنىڭ ئالدىدىكى بەتكۈچنى ئاكتىپلا"
 
 #: appearance.cpp:39
 #, kde-format
@@ -184,17 +36,17 @@ msgid "Stylesheets"
 msgstr "ئۇسلۇب جەدۋىلى"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:48 css/csscustom.ui:296
+#: appearance.cpp:52 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "سۈرەتلەر"
 
-#: appearance.cpp:52
+#: appearance.cpp:56
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "رەسىملەرنى ئاپتوماتىك يۈكلە(&U)"
 
-#: appearance.cpp:53
+#: appearance.cpp:57
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -208,12 +60,12 @@ msgstr ""
 "سىز ئۇنى چېكىش ئارقىلىق ئوقۇسىڭىز بولىدۇ. <br /> تور سۈرئىتىڭىز ئاستا "
 "بولمىسا بۇنى چېكىپ ئىشلەتسىڭىز بولۇۋېرىدۇ. </html>"
 
-#: appearance.cpp:63
+#: appearance.cpp:67
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "تولۇق ئوقۇلۇپ بولۇنمىغان رەسىمنىڭ كاندۇكنى سىزسۇن(&W)"
 
-#: appearance.cpp:64
+#: appearance.cpp:68
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -222,24 +74,24 @@ msgid ""
 "especially if have a slow network connection.</html>"
 msgstr ""
 
-#: appearance.cpp:74
+#: appearance.cpp:78
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "ئىناۋەتلىك قىلىنغان"
 
-#: appearance.cpp:75
+#: appearance.cpp:79
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "ئىناۋەتسىز قىلىنغان"
 
-#: appearance.cpp:76
+#: appearance.cpp:80
 #, kde-format
 msgid "Show Only Once"
 msgstr "پەقەت بىرلا قېتىم كۆرسەت"
 
-#: appearance.cpp:77
+#: appearance.cpp:81
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -248,40 +100,40 @@ msgid ""
 "Show all animations completely but do not repeat them.</li></ul></html>"
 msgstr ""
 
-#: appearance.cpp:82
+#: appearance.cpp:86
 #, kde-format
 msgid "A&nimations:"
 msgstr "جانلاندۇرۇم(&N):"
 
-#: appearance.cpp:85 htmlopts.cpp:110
+#: appearance.cpp:89 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "باشقىلار"
 
-#: appearance.cpp:90
+#: appearance.cpp:94
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "ئىناۋەتلىك قىلىنغان"
 
-#: appearance.cpp:91
+#: appearance.cpp:95
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "ئىناۋەتسىز قىلىنغان"
 
-#: appearance.cpp:92
+#: appearance.cpp:96
 #, kde-format
 msgid "Only on Hover"
 msgstr "پەقەت ئۈستىدە جىم تۇرغاندا"
 
-#: appearance.cpp:93
+#: appearance.cpp:97
 #, kde-format
 msgid "Und&erline links:"
 msgstr "ئاستى سىزىلغان ئۇلانما(&E):"
 
-#: appearance.cpp:96
+#: appearance.cpp:100
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -291,29 +143,29 @@ msgid ""
 "can override this value.</i></html>"
 msgstr ""
 
-#: appearance.cpp:105
+#: appearance.cpp:109
 #, kde-format
 msgid "When Efficient"
 msgstr "ئۈنۈملۈك بولغاندا"
 
-#: appearance.cpp:106
+#: appearance.cpp:110
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "ھەمىشە"
 
-#: appearance.cpp:107
+#: appearance.cpp:111
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "ھەرگىز"
 
-#: appearance.cpp:108
+#: appearance.cpp:112
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "سىلىق سىيرىلىش(&M):"
 
-#: appearance.cpp:110
+#: appearance.cpp:114
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -324,31 +176,22 @@ msgid ""
 "resources.</li></ul></html>"
 msgstr ""
 
-#: appearance.cpp:119
-#, kde-format
-msgid ""
-"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
-"Konqueror should use to display the web pages you view."
-msgstr ""
-"<h1>Konqueror خەت نۇسخىلىرى</h1> بۇ بەتتە سىز، تور بەتلىرىنى كۆرسىتىشتە "
-"ئىشلىتىدىغان خەت نۇسخىلىرىنى سەپلىيەلەيسىز."
-
-#: appearance.cpp:131
+#: appearance.cpp:132
 #, kde-format
 msgid "Font Si&ze"
 msgstr "خەت نۇسخا چوڭلۇقى(&Z)"
 
-#: appearance.cpp:134 appearance.cpp:152
+#: appearance.cpp:135 appearance.cpp:153
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr "تور بەتلىرىنى كۆرسىتىشتە ئىشلىتىدىغان نىسپىي خەت نۇسخىسى چوڭلۇقىدۇر."
 
-#: appearance.cpp:138
+#: appearance.cpp:139
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "ئەڭ كىچىك خەت چوڭلۇقى(&I):"
 
-#: appearance.cpp:142
+#: appearance.cpp:143
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
@@ -357,71 +200,71 @@ msgstr ""
 "تېكىستلەرنى كۆرسەتكەندە چوڭلۇقىنى بۇنىڭدىن كىچىك قىلىپ كۆرسەتمەيدۇ، <br /> "
 "باشقا تەڭشەكلەر قاپلىۋېتىلىدۇ."
 
-#: appearance.cpp:147
+#: appearance.cpp:148
 #, kde-format
 msgid "&Medium font size:"
 msgstr "ئوتتۇرا خەت نۇسخىسى چوڭلۇقى(&Z):"
 
-#: appearance.cpp:160
+#: appearance.cpp:161
 #, kde-format
 msgid "S&tandard font:"
 msgstr "ئۆلچەملىك خەت نۇسخىسى(&T):"
 
-#: appearance.cpp:161
+#: appearance.cpp:162
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr ""
 "بۇ تور بەتلىرىدىكى نورمال تېكىستلەرنى كۆرسىتىشتە ئىشلىتىدىغان خەت نۇسخىسىدۇر."
 
-#: appearance.cpp:165
+#: appearance.cpp:166
 #, kde-format
 msgid "&Fixed font:"
 msgstr "تەڭ كەڭلىكتىكى خەت نۇسخىسى(&F):"
 
-#: appearance.cpp:166
+#: appearance.cpp:167
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr ""
 "بۇ تەڭ كەڭلىكتىكى تېكىستلەرنى كۆرسىتىشتە ئىشلىتىلىدىغان خەت نۇسخىسىدۇر."
 
-#: appearance.cpp:170
+#: appearance.cpp:171
 #, kde-format
 msgid "S&erif font:"
 msgstr "Serif خەت نۇسخىسى(&E):"
 
-#: appearance.cpp:171
+#: appearance.cpp:172
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr "بۇ تېكىستلەرنى serif شەكلىدە كۆرسىتىشتە ئىشلىتىلىدىغان خەت نۇسخىسىدۇر."
 
-#: appearance.cpp:175
+#: appearance.cpp:176
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "Sans serif خەت نۇسخا(&N):"
 
-#: appearance.cpp:176
+#: appearance.cpp:177
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr ""
 "بۇ تېكىستلەرنى sans-serif شەكلىدە كۆرسىتىشتە ئىشلىتىلىدىغان خەت نۇسخىسىدۇر."
 
-#: appearance.cpp:180
+#: appearance.cpp:181
 #, kde-format
 msgid "C&ursive font:"
 msgstr "يازمىچە خەت نۇسخىلىرى(&U):"
 
-#: appearance.cpp:181
+#: appearance.cpp:182
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr "بۇ تېكىستلەرنى يانتۇ كۆرسىتىشتە ئىشلىتىلىدىغان خەت نۇسخىسىدۇر."
 
-#: appearance.cpp:185
+#: appearance.cpp:186
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "فانتازىيە خەت نۇسخىسى(&Y):"
 
-#: appearance.cpp:186
+#: appearance.cpp:187
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
@@ -429,22 +272,22 @@ msgstr ""
 "بۇ خەت نۇسخىسى فانتازىيە بەلگىسى قويۇلغان تېكىستلەرنى كۆرسىتىش ئۈچۈن "
 "ئىشلىتىلىدۇ."
 
-#: appearance.cpp:195
+#: appearance.cpp:196
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "بۇ كودلاشنىڭ خەت نۇسخا چوڭلۇقنى تەڭشەش:"
 
-#: appearance.cpp:203 appearance.cpp:401
+#: appearance.cpp:204 appearance.cpp:402
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "تىل كودلىشىنى ئىشلەت"
 
-#: appearance.cpp:205
+#: appearance.cpp:206
 #, kde-format
 msgid "Default encoding:"
 msgstr "كۆڭۈلدىكى كودلاش:"
 
-#: appearance.cpp:207
+#: appearance.cpp:208
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1396,32 +1239,32 @@ msgid " day"
 msgid_plural " days"
 msgstr[0] " كۈن"
 
-#: filteropts.cpp:120
+#: filteropts.cpp:124
 #, kde-format
 msgid "Insert"
 msgstr "قىستۇر"
 
-#: filteropts.cpp:123
+#: filteropts.cpp:127
 #, kde-format
 msgid "Update"
 msgstr "يېڭىلا"
 
-#: filteropts.cpp:126
+#: filteropts.cpp:130
 #, kde-format
 msgid "Remove"
 msgstr "چىقىرىۋەت"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:134
 #, kde-format
 msgid "Import..."
 msgstr "ئەكىر…"
 
-#: filteropts.cpp:133
+#: filteropts.cpp:137
 #, kde-format
 msgid "Export..."
 msgstr "چىقار…"
 
-#: filteropts.cpp:140
+#: filteropts.cpp:144
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
@@ -1430,7 +1273,7 @@ msgstr ""
 "<qt><a href=\"importhelp\">مۇھىم پىچىملار ھەققىدە</a> تېخىمۇ كۆپ ئۇچۇر، <a "
 "href=\"exporthelp\">چىرىش پىچىمى</a>"
 
-#: filteropts.cpp:154
+#: filteropts.cpp:158
 #, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
@@ -1440,7 +1283,7 @@ msgstr ""
 "تىزىمىدا بىر توپ URL ئىپادىلىرى بەلگىلىنىشى كېرەك، شۇندىلا چەكلەش ئۈنۈمىگە "
 "ئېرىشكىلى بولىدۇ."
 
-#: filteropts.cpp:156
+#: filteropts.cpp:160
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
@@ -1449,7 +1292,7 @@ msgstr ""
 "سۈرەتلەرنى چەكلەش ئىقتىدارى چىقىرىۋېتىلمىگۈچە «چەكلەنگەن» سۈرەت ئورنى "
 "كۆرسىتىلىدۇ."
 
-#: filteropts.cpp:163
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
@@ -1458,7 +1301,7 @@ msgstr ""
 "بۇ بارلىق سىڭدۈرمە سۈرەت ۋە ۋاسىتە نەڭلىرىنى سۈزۈش ئۈچۈن ئىشلىتىلىدىغان URL "
 "سۈزگۈچ تىزىمىدۇر."
 
-#: filteropts.cpp:167
+#: filteropts.cpp:171
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1470,7 +1313,7 @@ msgid ""
 "filter."
 msgstr ""
 
-#: filteropts.cpp:183
+#: filteropts.cpp:187
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1478,7 +1321,7 @@ msgid ""
 "ignored. Any other line is added as a filter expression."
 msgstr ""
 
-#: filteropts.cpp:188
+#: filteropts.cpp:192
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1486,43 +1329,30 @@ msgid ""
 "separate line."
 msgstr ""
 
-#: filteropts.cpp:256
+#: filteropts.cpp:260
 #, fuzzy, kde-format
 #| msgid "Automatic Filter"
 msgid "Import Filters"
 msgstr "ئاپتوماتىك سۈزۈش"
 
-#: filteropts.cpp:300
+#: filteropts.cpp:304
 #, fuzzy, kde-format
 #| msgid "Automatic Filter"
 msgid "Export Filters"
 msgstr "ئاپتوماتىك سۈزۈش"
 
-#: filteropts.cpp:435
-#, kde-format
-msgid ""
-"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
-"filters that are checked against linked images and frames. URL's that match "
-"are either discarded or replaced with a placeholder image. "
-msgstr ""
-
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:557 useragent/useragent.ui:61
+#: filteropts.cpp:556 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "ئاتى"
 
-#: filteropts.cpp:558
+#: filteropts.cpp:557
 #, kde-format
 msgid "URL"
 msgstr "URL"
 
-#: generalopts.cpp:53
-#, kde-format
-msgid "Tabbed Browsing"
-msgstr "بەتكۈچلۈك كۆرۈش"
-
-#: generalopts.cpp:79
+#: generalopts.cpp:56
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1530,19 +1360,19 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr ""
 
-#: generalopts.cpp:85
+#: generalopts.cpp:62
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr ""
 
-#: generalopts.cpp:94
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "چۈشەندۈرۈش بېتىنى كۆرسەت"
 
-#: generalopts.cpp:95
+#: generalopts.cpp:72
 #, fuzzy, kde-format
 #| msgctxt "@item:inlistbox"
 #| msgid "Show My Home Page"
@@ -1550,19 +1380,19 @@ msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "تور تۇرايىمنى كۆرسەت"
 
-#: generalopts.cpp:96
+#: generalopts.cpp:73
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "قۇرۇق بەت كۆرسەت"
 
-#: generalopts.cpp:97
+#: generalopts.cpp:74
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "خەتكۈچلىرىمنى كۆرسەت"
 
-#: generalopts.cpp:103
+#: generalopts.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Home Page"
@@ -1570,75 +1400,65 @@ msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "ماكان بەتنى تاللا"
 
-#: generalopts.cpp:108
+#: generalopts.cpp:85
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr ""
 
-#: generalopts.cpp:119
+#: generalopts.cpp:96
 #, kde-format
 msgid "Home page:"
 msgstr "باش بەت:"
 
-#: generalopts.cpp:122
+#: generalopts.cpp:99
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "ماكان بەتنى تاللا"
 
-#: generalopts.cpp:127
+#: generalopts.cpp:104
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
 "\" button is pressed."
 msgstr ""
 
-#: generalopts.cpp:135
+#: generalopts.cpp:112
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "كۆڭۈلدىكى توركۆرگۈ ماتورى:"
 
-#: generalopts.cpp:144
+#: generalopts.cpp:121
 #, kde-format
 msgid "When splitting a view"
 msgstr ""
 
-#: generalopts.cpp:148
+#: generalopts.cpp:125
 #, kde-format
 msgid "Always duplicate current view"
 msgstr ""
 
-#: generalopts.cpp:149
+#: generalopts.cpp:126
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr ""
 
-#: generalopts.cpp:155
+#: generalopts.cpp:132
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr ""
 
-#: htmlopts.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
-"functionality. Please note that the file manager functionality has to be "
-"configured using the \"File Manager\" configuration module. You can make "
-"some settings how Konqueror should handle the HTML code in the web pages it "
-"loads. It is usually not necessary to change anything here."
-msgstr ""
-
-#: htmlopts.cpp:44
+#: htmlopts.cpp:35
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "خەتكۈچلەر(&K)"
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:38
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "خەتكۈچلەرنى قوشقاندا ئات ۋە قىسقۇچنى سورا"
 
-#: htmlopts.cpp:50
+#: htmlopts.cpp:41
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1646,24 +1466,24 @@ msgid ""
 "bookmark."
 msgstr ""
 
-#: htmlopts.cpp:56
+#: htmlopts.cpp:47
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "خەتكۈش قورال بالدىقىدا بەلگە قويۇلغان خەتكۈچلەرنىلا كۆرسەت"
 
-#: htmlopts.cpp:58
+#: htmlopts.cpp:49
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
 "bookmark toolbar which you have marked to do so in the bookmark editor."
 msgstr ""
 
-#: htmlopts.cpp:65
+#: htmlopts.cpp:56
 #, kde-format
 msgid "Form Com&pletion"
 msgstr "كىرگۈزۈشنى تاماملاش(&P)"
 
-#: htmlopts.cpp:69
+#: htmlopts.cpp:60
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1673,12 +1493,12 @@ msgstr ""
 "شۇنىڭغا ئوخشاش يەرلەردە سىزگە ساقلىۋالغان ئۇچۇرنى تەۋسىيە شەكلىدە كۆرسىتىپ "
 "بېرىدۇ."
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:66
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "ئەڭ چوڭ تاماملاش سانى(&M):"
 
-#: htmlopts.cpp:77
+#: htmlopts.cpp:68
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
@@ -1686,17 +1506,17 @@ msgstr ""
 "بۇ يەردە سىز Konqueror دا ئەڭ كۆپ بولغاندا قانچىلىك كىرگۈزگەن ئۇچۇرنى "
 "ساقلىۋالىدىغانلىقىنى تاللىيالايسىز."
 
-#: htmlopts.cpp:84
+#: htmlopts.cpp:75
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "چاشقىنەك ھەرىكىتى(&V)"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:78
 #, kde-format
 msgid "Chan&ge cursor over links"
 msgstr "ئۇلانمىلار ئۇستىدىكى نۇربەلگىنى ئۆزگەرت(&G)"
 
-#: htmlopts.cpp:89
+#: htmlopts.cpp:80
 #, kde-format
 msgid ""
 "If this option is set, the shape of the cursor will change (usually to a "
@@ -1705,12 +1525,12 @@ msgstr ""
 "بۇ تاللانسا، چاشقىنەك ئۇلانما ئۈستىگە كەلگەندە شەكلىنى ئۆزگەرتىدۇ(ئادەتتە "
 "قولنىڭ شەكلى)."
 
-#: htmlopts.cpp:93
+#: htmlopts.cpp:84
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "ئوتتۇرا توپچا چېكىلگەندە تاللانغان URL نى ئاچسۇن(&I)"
 
-#: htmlopts.cpp:96
+#: htmlopts.cpp:87
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
@@ -1719,12 +1539,12 @@ msgstr ""
 "بۇ تاللانما تاللانسا، چاشقىنەكنىڭ ئوتتۇرا توپچىسىنى چېكىپ Konqueror "
 "كۆرۈنۈشىدىكى URL نى ئاچقىلى بولىدۇ."
 
-#: htmlopts.cpp:100
+#: htmlopts.cpp:91
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "ئوڭ توپچا چېكىلسە ئىزغا قايتىدۇ(&B)"
 
-#: htmlopts.cpp:103
+#: htmlopts.cpp:94
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1735,12 +1555,12 @@ msgstr ""
 "قايتقىلى(ئالدىنقى كۆرگەن بەتلەر) بولىدۇ. مەزمۇن تىزىملىكىنى ئىشلىتىش ئۈچۈن، "
 "چاشقىنەك ئوڭ توپچىسىنى چېكىپ تۇرۇپ يۆتكىسە بولىدۇ."
 
-#: htmlopts.cpp:113
+#: htmlopts.cpp:104
 #, kde-format
 msgid "Allow automatic delayed &reloading/redirecting"
 msgstr "قايتا ئوقۇش/باشقا بەتنى ئوقۇشتا ئاپتوماتىك كېچىكتۈرسۇن(&R)"
 
-#: htmlopts.cpp:114
+#: htmlopts.cpp:105
 #, kde-format
 msgid ""
 "Some web pages request an automatic reload or redirection after a certain "
@@ -1750,13 +1570,13 @@ msgstr ""
 "ئېلىپ بارىدۇ. بۇنى تاللىمىسىڭىز، Konqueror بۇ ئىلتىماسلارنى بېجىرمەيدىغان "
 "بولىدۇ."
 
-#: htmlopts.cpp:120
+#: htmlopts.cpp:111
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr ""
 "زىيارەت كۇنۇپكىسىنى Ctrl كۇنۇپكىسى بىلەن ئاكتىپلاشنى ئىناۋەتلىك قىل(&Y)"
 
-#: htmlopts.cpp:121
+#: htmlopts.cpp:112
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1764,14 +1584,14 @@ msgid ""
 "needs to be restarted for this change to take effect.)"
 msgstr ""
 
-#: htmlopts.cpp:125
+#: htmlopts.cpp:116
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr ""
 "تور بېتىگە DNT باشىنى ئەۋەتىش ئارقىلىق ئۆزىڭىزنىڭ ئىزلىنىشنى "
 "خالىمايدىغانلىقىڭىزنى بىلدۈرۈڭ"
 
-#: htmlopts.cpp:126
+#: htmlopts.cpp:117
 #, kde-format
 msgid ""
 "Check this box if you want to inform a web site that you do not want your "
@@ -1780,22 +1600,22 @@ msgstr ""
 "تور بېتىگە، ئۆزىڭىزنىڭ ئىزلىنىشنى خالىمايدىغانلىقىڭىزنى بىلدۈرمەكچى بولسىڭىز "
 "بۇنى تاللىسىڭىز بولىدۇ."
 
-#: htmlopts.cpp:130
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Offer to save website passwords"
 msgstr ""
 
-#: htmlopts.cpp:131
+#: htmlopts.cpp:122
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr ""
 
-#: htmlopts.cpp:135
+#: htmlopts.cpp:126
 #, kde-format
 msgid "Display online PDF files using WebEngine"
 msgstr ""
 
-#: htmlopts.cpp:136
+#: htmlopts.cpp:127
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
@@ -2008,7 +1828,7 @@ msgstr ""
 "JavaScript ئىجرا بولغاندا كۆرۈلگەن خاتالىقلارنى مەلۇم قىلىشنى ئىناۋەتلىك "
 "قىلىدۇ."
 
-#: jsopts.cpp:79
+#: jsopts.cpp:83
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2022,7 +1842,7 @@ msgid ""
 "them from a zipped file."
 msgstr ""
 
-#: jsopts.cpp:89
+#: jsopts.cpp:93
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2032,7 +1852,7 @@ msgid ""
 "it.</p>"
 msgstr ""
 
-#: jsopts.cpp:96
+#: jsopts.cpp:100
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2040,7 +1860,7 @@ msgid ""
 "ignored."
 msgstr ""
 
-#: jsopts.cpp:99
+#: jsopts.cpp:103
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2048,41 +1868,41 @@ msgid ""
 "choice."
 msgstr ""
 
-#: jsopts.cpp:105
+#: jsopts.cpp:109
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "ئومۇمىي JavaScript تاكتىكىسى"
 
-#: jsopts.cpp:173
+#: jsopts.cpp:181
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "دائىرىگە خاس(&M)"
 
-#: jsopts.cpp:212
+#: jsopts.cpp:220
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "يېڭى JavaScript تاكتىكىسى"
 
-#: jsopts.cpp:215
+#: jsopts.cpp:223
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "JavaScript تاكتىكىسىنى ئۆزگەرت"
 
-#: jsopts.cpp:219
+#: jsopts.cpp:227
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "JavaScript تاكتىكىسى"
 
-#: jsopts.cpp:220
+#: jsopts.cpp:228
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr ""
 "يۇقىرىقى ئاساسىي ماشىنا ياكى دائىرە ئۈچۈن JavaScript تاكتىكىسىنى تاللاڭ."
 
-#: jsopts.cpp:222
+#: jsopts.cpp:230
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "دائىرىگە خاس JavaScript تاكتىكىسى"
@@ -2267,22 +2087,10 @@ msgstr ""
 msgid "&Java"
 msgstr "&Java"
 
-#: main.cpp:53
+#: main.cpp:57
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"
-
-#: main.cpp:93
-#, kde-format
-msgid ""
-"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
-"programs embedded in web pages should be allowed to be executed by Konqueror."
-"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
-"in web pages should be allowed to be executed by Konqueror.<br /><br /"
-"><b>Note:</b> Active content is always a security risk, which is why "
-"Konqueror allows you to specify very fine-grained from which hosts you want "
-"to execute Java and/or JavaScript programs."
-msgstr ""
 
 #: policydlg.cpp:30
 #, kde-format
@@ -2308,6 +2116,222 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "ئالدى بىلەن دائىرە ئاتىنى چوقۇم كىرگۈزۈشىڭىز كېرەك."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
+#: tabs/tabsoptions.ui:14
+#, fuzzy, kde-format
+#| msgid "Mouse Beha&vior"
+msgid "Tabs Behavior"
+msgstr "چاشقىنەك ھەرىكىتى(&V)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: tabs/tabsoptions.ui:20
+#, kde-format
+msgid "Aspect"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: tabs/tabsoptions.ui:26
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr ""
+"بەتكۈچتىن 2 ياكى ئۇنىڭدىن جىق بولسا بەتكۈچ بالدىقىنى كۆرسىتىدۇ. بولمىسا "
+"بەتكۈچ بالدىقى ھەمىشە كۆرسىتىلىدۇ."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: tabs/tabsoptions.ui:29
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr "ئەگەر بىرلا بەتكۈچ بولسا ئۇنى يوشۇر"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: tabs/tabsoptions.ui:38
+#, kde-format
+msgid "Tab bar position"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:48
+#, kde-format
+msgid "Choose where to display the tabs bar"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:52
+#, kde-format
+msgid "Above contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:57
+#, kde-format
+msgid "Below contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:62
+#, kde-format
+msgid "Left of contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:67
+#, kde-format
+msgid "Right of contents"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: tabs/tabsoptions.ui:93
+#, kde-format
+msgid "Usage"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: tabs/tabsoptions.ui:99
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr "بۇ كۆپ چاغلار يېڭى كۆزنەك ئاچماستىن، يېڭى بەتكۈچ ئاچىدۇ."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: tabs/tabsoptions.ui:102
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "ئۇلانمىنى يېڭى كۆزنەكتە ئەمەس يېڭى بەتكۈچتە ئاچ(&L)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: tabs/tabsoptions.ui:109
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr ""
+"JavaScript تا سەكرىمىگە يول قويۇلغان بولسا، سەكرىمە كۆزنەكنى يېڭى كۆزنەكتە "
+"ئەمەس، بەلكى يېڭى بەتكۈچتە ئاچىدۇ."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: tabs/tabsoptions.ui:112
+#, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr "سەكرىمە كۆزنەكنى يېڭى كۆزنەكتە ئەمەس، يېڭى بەتكۈچتە ئاچ(&U)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: tabs/tabsoptions.ui:119
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: tabs/tabsoptions.ui:122
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr ""
+"سىرتتىن URL ئېچىش ئىلتىماسى  كەلگەندە، ئۇنى Konqueror نىڭ بەتكۈچىدە ئاچسۇن"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: tabs/tabsoptions.ui:132
+#, fuzzy, kde-format
+#| msgid "Mouse Beha&vior"
+msgid "New Tab Behavior"
+msgstr "چاشقىنەك ھەرىكىتى(&V)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: tabs/tabsoptions.ui:138
+#, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr "بۇ يېڭى بەتكۈچنى ئالدى تەرەپتە ئەمەس،ئارقا تەرەپتە ئاچىدۇ."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: tabs/tabsoptions.ui:141
+#, kde-format
+msgid "O&pen new tabs in the background"
+msgstr "يېڭى بەتكۈچنى ئارقا تەرەپتە ئاچ(&P)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: tabs/tabsoptions.ui:148
+#, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr ""
+"بۇ يېڭى بەتكۈچنى نۆۋەتتىكى ئەڭ ئاخىرقى بەتكۈچنىڭ كەينىدە ئەمەس، نۆۋەتتىكى "
+"بەتكۈچنىڭ كەينىدە ئاچىدۇ"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: tabs/tabsoptions.ui:151
+#, kde-format
+msgid "Open &new tab after current tab"
+msgstr "يېڭى بەتكۈچنى نۆۋەتتىكى بەتكۈچنىڭ كەينىدە ئاچ(&N)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: tabs/tabsoptions.ui:161
+#, kde-format
+msgid "Closing"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: tabs/tabsoptions.ui:167
+#, kde-format
+msgid "This will display close buttons inside each tab."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: tabs/tabsoptions.ui:170
+#, kde-format
+msgid "&Show close button on tabs"
+msgstr "بەتكۈچتە «ياپ» توپچىسىنى كۆرسەت(&S)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: tabs/tabsoptions.ui:177
+#, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: tabs/tabsoptions.ui:180
+#, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr "بەتكۈچتە ئوتتۇرا توپچا چېكىلسە ياپسۇن"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: tabs/tabsoptions.ui:187
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr "بىر قانچە بەتكۈچ بار كۆزنى ياپماقچى بولغان، سورايدىغان بولىدۇ."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: tabs/tabsoptions.ui:190
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr "بىر قانچە بەتكۈچ بار چاغدا كۆزنەكنى ياپماقچى بولسا جەزملىسۇن(&W)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: tabs/tabsoptions.ui:197
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+"بۇ تاللانسا، ھازىرقى ئاكتىپ بەتكۈچ يېپىلسا، بۇنىڭ ئادىدا ئېچىلغان ياكى "
+"ئىشلىتىلگەن بەتكۈچ ئاكتىپلىنىدۇ."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: tabs/tabsoptions.ui:200
+#, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr "ھازىرقى بەتكۈچ يېپىلسا بۇرۇن ئۇنىڭ ئالدىدىكى بەتكۈچنى ئاكتىپلا"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, UserAgent)
 #: useragent/useragent.ui:14
@@ -2390,6 +2414,16 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+
+#~ msgid ""
+#~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+#~ "Konqueror should use to display the web pages you view."
+#~ msgstr ""
+#~ "<h1>Konqueror خەت نۇسخىلىرى</h1> بۇ بەتتە سىز، تور بەتلىرىنى كۆرسىتىشتە "
+#~ "ئىشلىتىدىغان خەت نۇسخىلىرىنى سەپلىيەلەيسىز."
+
+#~ msgid "Tabbed Browsing"
+#~ msgstr "بەتكۈچلۈك كۆرۈش"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

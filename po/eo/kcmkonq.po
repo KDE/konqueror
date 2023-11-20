@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-01-06 22:00+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
@@ -21,26 +21,17 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
-"file manager here."
-msgstr ""
-"<h1>Konkeranta konduto</h1> Vi povas agordi la konduton de Konkeranto kiel "
-"dosiero-administrilo."
-
-#: behaviour.cpp:40
+#: behaviour.cpp:38
 #, kde-format
 msgid "Misc Options"
 msgstr "Diversaj opcioj"
 
-#: behaviour.cpp:49
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "&Malfermi dosierujojn en apartaj fenestroj"
 
-#: behaviour.cpp:50
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -49,13 +40,13 @@ msgstr ""
 "Se tiu opcio estas ebligita, Konkeranto malfermos novan fenestron kiam ajn "
 "vi malfermas dosierujon, anstataŭ montri la dosierujon en la nuna fenestro."
 
-#: behaviour.cpp:73
+#: behaviour.cpp:71
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr ""
 "Montri 'Forigi' erojn en kuntekstaj &menuoj kiuj NE sendos la erojn rubujen"
 
-#: behaviour.cpp:77
+#: behaviour.cpp:75
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -66,3 +57,10 @@ msgstr ""
 "kaj en la kuntekstaj menuoj kaj en la menuoj de la dosiera administrilo. "
 "Notu ke vi povas forigi dosierojn per premo de la majuskla klavo dum vi uzas "
 "la 'Rubujen' opcion."
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>Konkeranta konduto</h1> Vi povas agordi la konduton de Konkeranto "
+#~ "kiel dosiero-administrilo."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2004-10-13 21:59-0800\n"
 "Last-Translator: Tamil PC <tamilpc@ambalam.com>\n"
 "Language-Team: KDE <kde-i18n-doc@kde.org>\n"
@@ -16,36 +16,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>KDE செயல்திறன்</h1>தாங்கள் இங்கு உள்ளமைப்புகளின் அமைப்புகளை மாற்றி  KDEயின் "
-"செயல்திறனை மேம்படுத்த முடியும்."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "கான்குயிரர்"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "அமைப்பு"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>கான்குயிரர் செயல்திறன்</h1> தாங்கள் இங்கு பல உள்ளமைப்புகளின் அமைப்புகளை மாற்றி  "
-"கான்குயரின் செயல்திறனை மேம்படுத்த முடியும். இவற்றுள் முன்னரே இயங்கிக் கொண்டிருக்கும் "
-"நிகழ்வுகளை மறுமுறை பயன்படுத்தவும் மற்றும் அந்நிகழ்வுகளை முன் மேலேற்றவும் தேவையான "
-"விருப்பத்தேர்வுகளைக் கொண்டுள்ளது."
 
 #: konqueror.cpp:24
 #, fuzzy, kde-format
@@ -162,6 +141,23 @@ msgid ""
 msgstr ""
 "<b>எச்சரிக்கை:</b> இந்த விருப்பத்தேர்வு சில சமயங்களில் பல பிரச்னைகளுக்கு கொண்டுவிடும். "
 "விவரங்களுக்கு இது என்ன உதவி (Shift+F1) என்பதை பார்க்கவும்,."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDE செயல்திறன்</h1>தாங்கள் இங்கு உள்ளமைப்புகளின் அமைப்புகளை மாற்றி  KDEயின் "
+#~ "செயல்திறனை மேம்படுத்த முடியும்."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>கான்குயிரர் செயல்திறன்</h1> தாங்கள் இங்கு பல உள்ளமைப்புகளின் அமைப்புகளை மாற்றி  "
+#~ "கான்குயரின் செயல்திறனை மேம்படுத்த முடியும். இவற்றுள் முன்னரே இயங்கிக் கொண்டிருக்கும் "
+#~ "நிகழ்வுகளை மறுமுறை பயன்படுத்தவும் மற்றும் அந்நிகழ்வுகளை முன் மேலேற்றவும் தேவையான "
+#~ "விருப்பத்தேர்வுகளைக் கொண்டுள்ளது."
 
 #, fuzzy
 #~| msgid ""

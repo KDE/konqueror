@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: searchbarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2013-01-23 22:30+0000\n"
 "Last-Translator: Vedran Ljubovic <vljubovic@smartnet.ba>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: searchbar.cpp:66
+#: searchbar.cpp:67
 #, kde-format
 msgid ""
 "Search Bar<p>Enter a search term. Click on the icon to change search mode or "
@@ -27,33 +27,33 @@ msgstr ""
 "Traka za Pretragu<p>Unesite uslove pretrage. Kliknite na ikonu da "
 "promijenite način pretrage ili dobavljača.</p>"
 
-#: searchbar.cpp:71
+#: searchbar.cpp:72
 #, kde-format
 msgid "Search Bar"
 msgstr "Traka za Pretragu"
 
-#: searchbar.cpp:76
+#: searchbar.cpp:77
 #, kde-format
 msgid "Focus Searchbar"
 msgstr "Fokusiraj Pretražnu Traku"
 
-#: searchbar.cpp:268
+#: searchbar.cpp:278
 #, fuzzy, kde-format
 #| msgid "Find in This Page"
 msgid "Find in Page..."
 msgstr "Pronađi na ovoj stranici"
 
-#: searchbar.cpp:288
+#: searchbar.cpp:298
 #, kde-format
 msgid "Find in This Page"
 msgstr "Pronađi na ovoj stranici"
 
-#: searchbar.cpp:300
+#: searchbar.cpp:310
 #, kde-format
 msgid "Select Search Engines..."
 msgstr "Izaberi motor pretrage..."
 
-#: searchbar.cpp:319
+#: searchbar.cpp:329
 #, kde-format
 msgid "Add %1..."
 msgstr "Dodaj %1..."

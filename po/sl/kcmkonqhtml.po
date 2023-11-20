@@ -1,7 +1,7 @@
 # translation of kcmkonqhtml.po to
 # Translation of kcmkonqhtml.po to Slovenian
 # SLOVENIAN TRANSLATION OF KCMKONQHTML.
-# $Id: kcmkonqhtml.po 1664120 2023-11-05 13:15:21Z scripty $
+# $Id: kcmkonqhtml.po 1665461 2023-11-20 02:24:03Z scripty $
 # $Source$
 #
 # Copyright (C) 2002, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-08-17 09:11+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -29,162 +29,6 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "X-Generator: Poedit 3.3.2\n"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
-#: advancedTabOptions.ui:21
-#, kde-format
-msgid ""
-"This will open a new tab instead of a new window in various situations, such "
-"as choosing a link or a folder with the middle mouse button."
-msgstr ""
-"V različnih primerih bo namesto novega okna odprt nov zavihek; npr. pri "
-"kliku povezave ali mape s srednjim miškinim gumbom."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
-#: advancedTabOptions.ui:24
-#, kde-format
-msgid "Open &links in new tab instead of in new window"
-msgstr "Odpri povezave v novem zavihku namesto v novem oknu"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
-#: advancedTabOptions.ui:31
-#, kde-format
-msgid ""
-"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
-"new window."
-msgstr ""
-"Ali se naj pojavna okna JavaScript odprejo v novem zavihku ali v novem oknu."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
-#: advancedTabOptions.ui:34
-#, kde-format
-msgid "Open pop&ups in new tab instead of in new window"
-msgstr "Odpri pojavna okna v novem zavihku namesto v novem oknu"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
-#: advancedTabOptions.ui:41
-#, kde-format
-msgid ""
-"When you click a URL in another KDE program or call kfmclient to open a URL, "
-"the current desktop will be searched for a non-minimized Konqueror and, if "
-"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
-"window will be opened with the required URL."
-msgstr ""
-"Ko kliknete URL v drugem programu za KDE ali kličete kfmclient za odprtje "
-"URL-ja, bo na trenutnem namizju poiskan primerek Konquerorja, ki ni skrčen. "
-"Če obstaja, bo URL odprlo v novem zavihku primerka , sicer bo odprto novo "
-"okno Konquerorja z zahtevanim URL-jem."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
-#: advancedTabOptions.ui:44
-#, kde-format
-msgid "Open as tab in existing Konqueror when URL is called externally"
-msgstr "Odpri kot zavihek v obstoječem Konquerorju, ko je URL odprt od zunaj"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
-#: advancedTabOptions.ui:51
-#, kde-format
-msgid ""
-"This will open a new tab in the background, instead of in the foreground."
-msgstr "Novi zavihku se bodo odprli v ozadju, namesto v ospredju."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
-#: advancedTabOptions.ui:54
-#, kde-format
-msgid "O&pen new tabs in the background"
-msgstr "Odpri nove zavihke v ozadju"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
-#: advancedTabOptions.ui:61
-#, kde-format
-msgid ""
-"This will open a new tab opened from a page after the current tab, instead "
-"of after the last tab."
-msgstr ""
-"Nov zavihek se bo odprl takoj zraven trenutnega zavihka, namesto desno od "
-"zadnjega zavihka."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
-#: advancedTabOptions.ui:64
-#, kde-format
-msgid "Open &new tab after current tab"
-msgstr "Odpri &nov zavihek poleg trenutnega"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
-#: advancedTabOptions.ui:71
-#, kde-format
-msgid ""
-"This will display the tab bar only if there are two or more tabs. Otherwise "
-"it will always be displayed."
-msgstr ""
-"Vrstica z zavihki bo prikazana le, če sta prisotna dva ali več zavihkov. "
-"Sicer bo vrstica vedno prikazana."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
-#: advancedTabOptions.ui:74
-#, kde-format
-msgid "Hide the tab bar when only one tab is open"
-msgstr "Skrij vrstico zavihkov, ko je odprt le en zavihek"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
-#: advancedTabOptions.ui:81
-#, kde-format
-msgid "This will display close buttons inside each tab."
-msgstr "Znotraj vsakega zavihka bo prikazan gumb za zaprtje zavihka."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
-#: advancedTabOptions.ui:84
-#, kde-format
-msgid "&Show close button on tabs"
-msgstr "Na zavihkih pokaži gumb za zaprtje"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
-#: advancedTabOptions.ui:91
-#, kde-format
-msgid ""
-"When you click on a tab using the middle mouse button or mouse wheel, it "
-"will close that tab."
-msgstr ""
-"Če na zavihek kliknete s srednjim miškinim gumbom ali miškinim koleščkom, "
-"boste tako zaprli zavihek."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
-#: advancedTabOptions.ui:94
-#, kde-format
-msgid "Middle-click on a tab to close it"
-msgstr "Srednji klik na zavihek ga zapre"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
-#: advancedTabOptions.ui:101
-#, kde-format
-msgid ""
-"This will ask you whether you are sure you want to close a window when it "
-"has multiple tabs opened in it."
-msgstr ""
-"Če boste želeli zapreti okno z več odprtimi zavihki, bo pred nadaljevanjem "
-"zahtevana potrditev."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
-#: advancedTabOptions.ui:104
-#, kde-format
-msgid "Confirm &when closing windows with multiple tabs"
-msgstr "Potrdi zapiranje okna z več zavihki"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: advancedTabOptions.ui:111
-#, kde-format
-msgid ""
-"When checking this the previous used or opened tab will be activated when "
-"you close the current active tab instead of the one right to the current tab."
-msgstr ""
-"Ko označite to možnost, se ob zaprtju trenutno dejavnega zavihka omogoči "
-"prej odprt ali uporabljen zavihek namesto zavihka, ki je desno od trenutnega."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: advancedTabOptions.ui:114
-#, kde-format
-msgid "Activate previously used tab when closing the current tab"
-msgstr "Ob zaprtju trenutnega zavihka omogoči prej uporabljen zavihek"
 
 #: appearance.cpp:39
 #, kde-format
@@ -205,17 +49,17 @@ msgid "Stylesheets"
 msgstr "Slogovne predloge"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:48 css/csscustom.ui:296
+#: appearance.cpp:52 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "Slike"
 
-#: appearance.cpp:52
+#: appearance.cpp:56
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "Samodejno naloži slike"
 
-#: appearance.cpp:53
+#: appearance.cpp:57
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -230,12 +74,12 @@ msgstr ""
 "slik.<br />To možnost boste verjetno izbrali, razen če nimate zares počasne "
 "povezave, saj bo potem prijetneje brskati po spletu.</html>"
 
-#: appearance.cpp:63
+#: appearance.cpp:67
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "Izriši okvir okoli slik, ki niso v celoti naložene"
 
-#: appearance.cpp:64
+#: appearance.cpp:68
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -248,24 +92,24 @@ msgstr ""
 "boste izbrali, če imate počasno povezavo, saj bo potem prijetneje brskati po "
 "spletu.</html>"
 
-#: appearance.cpp:74
+#: appearance.cpp:78
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "Omogočene"
 
-#: appearance.cpp:75
+#: appearance.cpp:79
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "Onemogočene"
 
-#: appearance.cpp:76
+#: appearance.cpp:80
 #, kde-format
 msgid "Show Only Once"
 msgstr "Pokaži samo enkrat"
 
-#: appearance.cpp:77
+#: appearance.cpp:81
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -278,40 +122,40 @@ msgstr ""
 "b>: nikoli ne pokaže animacije, samo prvo sliko.</li><li><b>Pokaži samo "
 "enkrat</b>: pokaže celotno animacijo, vendar je ne ponavlja.</li></ul></html>"
 
-#: appearance.cpp:82
+#: appearance.cpp:86
 #, kde-format
 msgid "A&nimations:"
 msgstr "A&nimacije:"
 
-#: appearance.cpp:85 htmlopts.cpp:110
+#: appearance.cpp:89 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "Razno"
 
-#: appearance.cpp:90
+#: appearance.cpp:94
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "Omogočeno"
 
-#: appearance.cpp:91
+#: appearance.cpp:95
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "Onemogočeno"
 
-#: appearance.cpp:92
+#: appearance.cpp:96
 #, kde-format
 msgid "Only on Hover"
 msgstr "Samo ob prehodu"
 
-#: appearance.cpp:93
+#: appearance.cpp:97
 #, kde-format
 msgid "Und&erline links:"
 msgstr "Podčrtaj povezave:"
 
-#: appearance.cpp:96
+#: appearance.cpp:100
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -326,29 +170,29 @@ msgstr ""
 "podčrta ob prehodu kazalke miške</li></ul><br /><i>Opomba: Nastavitve CSS "
 "spletne strani lahko prepišejo to nastavitev.</i></html>"
 
-#: appearance.cpp:105
+#: appearance.cpp:109
 #, kde-format
 msgid "When Efficient"
 msgstr "Ko je učinkovito"
 
-#: appearance.cpp:106
+#: appearance.cpp:110
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "Vedno"
 
-#: appearance.cpp:107
+#: appearance.cpp:111
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "Nikoli"
 
-#: appearance.cpp:108
+#: appearance.cpp:112
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "Gladko drsenje:"
 
-#: appearance.cpp:110
+#: appearance.cpp:114
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -364,33 +208,24 @@ msgstr ""
 "učinkovito</b>: gladko drsenje se uporabi le na straneh, kjer to ne bo "
 "preveč obremenilo računalnika.</li></ul></html>"
 
-#: appearance.cpp:119
-#, kde-format
-msgid ""
-"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
-"Konqueror should use to display the web pages you view."
-msgstr ""
-"<h1>Pisave Konquerorja</h1>Na tej strani lahko nastavite, katere pisave naj "
-"Konqueror uporabi za prikaz spletnih strani."
-
-#: appearance.cpp:131
+#: appearance.cpp:132
 #, kde-format
 msgid "Font Si&ze"
 msgstr "Velikost pisave"
 
-#: appearance.cpp:134 appearance.cpp:152
+#: appearance.cpp:135 appearance.cpp:153
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr ""
 "To je relativna velikost pisave, ki jo Konqueror uporablja za prikazovanje "
 "spletnih strani."
 
-#: appearance.cpp:138
+#: appearance.cpp:139
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "Najmanjša velikost pisave:"
 
-#: appearance.cpp:142
+#: appearance.cpp:143
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
@@ -399,91 +234,91 @@ msgstr ""
 "Konqueror besedila ne bo nikoli prikazal večjega, kot je določeno tu,<br /> "
 "ne glede na nastavitev spletne strani."
 
-#: appearance.cpp:147
+#: appearance.cpp:148
 #, kde-format
 msgid "&Medium font size:"
 msgstr "Srednja velikost pisave:"
 
-#: appearance.cpp:160
+#: appearance.cpp:161
 #, kde-format
 msgid "S&tandard font:"
 msgstr "Običajna pisava:"
 
-#: appearance.cpp:161
+#: appearance.cpp:162
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr "To je pisava za prikaz običajnega besedila na spletni strani."
 
-#: appearance.cpp:165
+#: appearance.cpp:166
 #, kde-format
 msgid "&Fixed font:"
 msgstr "Pisava stalne širine:"
 
-#: appearance.cpp:166
+#: appearance.cpp:167
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr "To je pisava za prikaz besedila stalne širine (tj. nesorazmernega)."
 
-#: appearance.cpp:170
+#: appearance.cpp:171
 #, kde-format
 msgid "S&erif font:"
 msgstr "Pisava z nastavki:"
 
-#: appearance.cpp:171
+#: appearance.cpp:172
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr ""
 "To je pisava za prikaz besedila, ki je označeno kot besedilo z nastavki."
 
-#: appearance.cpp:175
+#: appearance.cpp:176
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "Pisava brez nastavkov:"
 
-#: appearance.cpp:176
+#: appearance.cpp:177
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr ""
 "To je pisava za prikaz besedila, ki je označeno kot besedilo brez nastavkov."
 
-#: appearance.cpp:180
+#: appearance.cpp:181
 #, kde-format
 msgid "C&ursive font:"
 msgstr "Ležeča pisava:"
 
-#: appearance.cpp:181
+#: appearance.cpp:182
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr "To je pisava za prikaz besedila, ki je označeno kot ležeče."
 
-#: appearance.cpp:185
+#: appearance.cpp:186
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "Fantazijska pisava:"
 
-#: appearance.cpp:186
+#: appearance.cpp:187
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr "To je pisava za prikaz besedila, ki je označeno kot fantazijsko."
 
-#: appearance.cpp:195
+#: appearance.cpp:196
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "Prilagoditev velikosti pisave za to kodiranje:"
 
-#: appearance.cpp:203 appearance.cpp:401
+#: appearance.cpp:204 appearance.cpp:402
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "Uporabi kodiranje jezika"
 
-#: appearance.cpp:205
+#: appearance.cpp:206
 #, kde-format
 msgid "Default encoding:"
 msgstr "Privzeto kodiranje:"
 
-#: appearance.cpp:207
+#: appearance.cpp:208
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1544,32 +1379,32 @@ msgstr[1] " dneva"
 msgstr[2] " dnevi"
 msgstr[3] " dni"
 
-#: filteropts.cpp:120
+#: filteropts.cpp:124
 #, kde-format
 msgid "Insert"
 msgstr "Vstavi"
 
-#: filteropts.cpp:123
+#: filteropts.cpp:127
 #, kde-format
 msgid "Update"
 msgstr "Posodobi"
 
-#: filteropts.cpp:126
+#: filteropts.cpp:130
 #, kde-format
 msgid "Remove"
 msgstr "Odstrani"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:134
 #, kde-format
 msgid "Import..."
 msgstr "Uvozi ..."
 
-#: filteropts.cpp:133
+#: filteropts.cpp:137
 #, kde-format
 msgid "Export..."
 msgstr "Izvozi ..."
 
-#: filteropts.cpp:140
+#: filteropts.cpp:144
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
@@ -1578,7 +1413,7 @@ msgstr ""
 "<qt>Več podrobnosti o <a href=\"importhelp\">obliki za uvoz</a>, <a href="
 "\"exporthelp\">obliki za izvoz</a>"
 
-#: filteropts.cpp:154
+#: filteropts.cpp:158
 #, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
@@ -1587,7 +1422,7 @@ msgstr ""
 "Omogoči ali onemogoči filtre AdBlocK. Ko so omogočeni, mora biti v "
 "filtrirnem seznamu določen nabor izrazov URL, da bo blokiranje uveljavljeno."
 
-#: filteropts.cpp:156
+#: filteropts.cpp:160
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
@@ -1596,7 +1431,7 @@ msgstr ""
 "Ko je omogočena ta možnost, bodo blokirane slike popolnoma odstranjene s "
 "strani. V nasprotnem primeru jih zamenja vsebnik slike, ki označuje blokado."
 
-#: filteropts.cpp:163
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
@@ -1605,7 +1440,7 @@ msgstr ""
 "To je seznam filtrov URL, ki bodo uveljavljeni za vse vstavljene slike in "
 "predstavnostne predmete."
 
-#: filteropts.cpp:167
+#: filteropts.cpp:171
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1623,7 +1458,7 @@ msgstr ""
 "ul><p>Pred katerimkoli filtrirni niz lahko dodate  »<tt>@@</tt>«, kar dovoli "
 "katerikoli ujemajoč URL. To ima prednost pred filtrom črnega seznama."
 
-#: filteropts.cpp:183
+#: filteropts.cpp:187
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1635,7 +1470,7 @@ msgstr ""
 "<tt>[AdBlock]</tt> so prezrti. Vse ostale vrstice se dodajo kot filtrirni "
 "izrazi."
 
-#: filteropts.cpp:188
+#: filteropts.cpp:192
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1646,44 +1481,28 @@ msgstr ""
 "začne z vrstico z glavo <tt>[AdBlock]</tt>, potem pa sledijo vsi filtri, "
 "vsak v svoji vrstici."
 
-#: filteropts.cpp:256
+#: filteropts.cpp:260
 #, kde-format
 msgid "Import Filters"
 msgstr "Uvozi filtre"
 
-#: filteropts.cpp:300
+#: filteropts.cpp:304
 #, kde-format
 msgid "Export Filters"
 msgstr "Izvozi filtre"
 
-#: filteropts.cpp:435
-#, kde-format
-msgid ""
-"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
-"filters that are checked against linked images and frames. URL's that match "
-"are either discarded or replaced with a placeholder image. "
-msgstr ""
-"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK vam omogoča, da ustvarite "
-"seznam filtrov, ki preverjajo povezave do slik in okvirjev. URL-ji, ki se "
-"ujemajo so zavrženi ali pa zamenjani s sliko vsebnika. "
-
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:557 useragent/useragent.ui:61
+#: filteropts.cpp:556 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "Ime"
 
-#: filteropts.cpp:558
+#: filteropts.cpp:557
 #, kde-format
 msgid "URL"
 msgstr "URL"
 
-#: generalopts.cpp:53
-#, kde-format
-msgid "Tabbed Browsing"
-msgstr "Brskanje z zavihki"
-
-#: generalopts.cpp:79
+#: generalopts.cpp:56
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1691,60 +1510,60 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr "Vstavite začetno stran po meri"
 
-#: generalopts.cpp:85
+#: generalopts.cpp:62
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr "Kadar je ustvarjen novi zavihek"
 
-#: generalopts.cpp:94
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "Pokaži uvodno stran"
 
-#: generalopts.cpp:95
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "Pokaži mojo začetno stran"
 
-#: generalopts.cpp:96
+#: generalopts.cpp:73
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "Pokaži prazno stran"
 
-#: generalopts.cpp:97
+#: generalopts.cpp:74
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "Pokaži moje zaznamke"
 
-#: generalopts.cpp:103
+#: generalopts.cpp:80
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "Izberite začetno stran"
 
-#: generalopts.cpp:108
+#: generalopts.cpp:85
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr ""
 "To je naslov URL spletne strani, ki jo bo ob zagonu prikazal Konqueror."
 
-#: generalopts.cpp:119
+#: generalopts.cpp:96
 #, kde-format
 msgid "Home page:"
 msgstr "Domača stran:"
 
-#: generalopts.cpp:122
+#: generalopts.cpp:99
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "Izberite domačo stran"
 
-#: generalopts.cpp:127
+#: generalopts.cpp:104
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
@@ -1753,57 +1572,42 @@ msgstr ""
 "To je naslov URL spletne strani, na katero bo skočil Konqueror, ko boste "
 "pritisnili na gumb »Domov«."
 
-#: generalopts.cpp:135
+#: generalopts.cpp:112
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "Privzeti pogon za spletni brskalnik:"
 
-#: generalopts.cpp:144
+#: generalopts.cpp:121
 #, kde-format
 msgid "When splitting a view"
 msgstr "Ob razcepljanju pogleda"
 
-#: generalopts.cpp:148
+#: generalopts.cpp:125
 #, kde-format
 msgid "Always duplicate current view"
 msgstr "Vedno dupliciraj trenutni pogled"
 
-#: generalopts.cpp:149
+#: generalopts.cpp:126
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "Dupliciraj trenutni pogled samo za lokalne datoteke"
 
-#: generalopts.cpp:155
+#: generalopts.cpp:132
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr "Ob zagonu obnovi prejšnje stanje"
 
-#: htmlopts.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
-"functionality. Please note that the file manager functionality has to be "
-"configured using the \"File Manager\" configuration module. You can make "
-"some settings how Konqueror should handle the HTML code in the web pages it "
-"loads. It is usually not necessary to change anything here."
-msgstr ""
-"<h1>Brskalnik Konqueror</h1> Tu lahko nastavite Konquerorjeve zmožnosti "
-"brskanja. Vedite, da morate zmožnost upravljalnika datotek nastaviti z "
-"uporabo  nastavitvenega modula »Upravljalnik datotek«. Nastavite lahko "
-"nekatere možnosti, kako naj Konqueror upravlja s kodo HTML na naloženih "
-"spletnih straneh. Običajno tu ni potrebno ničesar spreminjati."
-
-#: htmlopts.cpp:44
+#: htmlopts.cpp:35
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "Zaznamki"
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:38
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "Vprašaj za ime in mapo ob dodajanju zaznamkov"
 
-#: htmlopts.cpp:50
+#: htmlopts.cpp:41
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1813,12 +1617,12 @@ msgstr ""
 "Če je označena ta možnost, vam bo Konqueror dovolil spremeniti naslov "
 "zaznamka in izbrati mapo, kamor ga boste shranili, ko boste dodali novega."
 
-#: htmlopts.cpp:56
+#: htmlopts.cpp:47
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "Pokaži samo označene zaznamke v orodni vrstici zaznamkov"
 
-#: htmlopts.cpp:58
+#: htmlopts.cpp:49
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1827,12 +1631,12 @@ msgstr ""
 "Če je označena ta možnost, bo Konqueror v orodni vrstici zaznamkov prikazal "
 "samo tiste zaznamke, ki ste jih označili v urejevalniku zaznamkov."
 
-#: htmlopts.cpp:65
+#: htmlopts.cpp:56
 #, kde-format
 msgid "Form Com&pletion"
 msgstr "Dopolnjevanje obrazcev"
 
-#: htmlopts.cpp:69
+#: htmlopts.cpp:60
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1842,12 +1646,12 @@ msgstr ""
 "vnesli v spletne obrazce in vam jih za podobna polja priporočil za vse "
 "obrazce."
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:66
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "Največ dopolnjevanj:"
 
-#: htmlopts.cpp:77
+#: htmlopts.cpp:68
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
@@ -1855,17 +1659,17 @@ msgstr ""
 "Tu lahko izberete, koliko vrednosti si bo Konqueror zapomnil za polja "
 "obrazcev."
 
-#: htmlopts.cpp:84
+#: htmlopts.cpp:75
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "Obnašanje miške"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:78
 #, kde-format
 msgid "Chan&ge cursor over links"
 msgstr "Spremeni kazalko nad povezavami"
 
-#: htmlopts.cpp:89
+#: htmlopts.cpp:80
 #, kde-format
 msgid ""
 "If this option is set, the shape of the cursor will change (usually to a "
@@ -1874,12 +1678,12 @@ msgstr ""
 "Če je označena ta možnost, se oblika kazalke spremeni ob prehodu nad "
 "povezavo (navadno v roko)."
 
-#: htmlopts.cpp:93
+#: htmlopts.cpp:84
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "Srednji klik odpre URL v izboru"
 
-#: htmlopts.cpp:96
+#: htmlopts.cpp:87
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
@@ -1888,12 +1692,12 @@ msgstr ""
 "Če je označena ta možnost, potem lahko odprete URL v izboru s srednjim "
 "klikom na prikaz Konquerorja."
 
-#: htmlopts.cpp:100
+#: htmlopts.cpp:91
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "Desni klik gre nazaj v zgodovini"
 
-#: htmlopts.cpp:103
+#: htmlopts.cpp:94
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1904,12 +1708,12 @@ msgstr ""
 "prikaz Konquerorja. Za dostop do vsebinskega menija, pritisnite desni miškin "
 "gumb in premaknite."
 
-#: htmlopts.cpp:113
+#: htmlopts.cpp:104
 #, kde-format
 msgid "Allow automatic delayed &reloading/redirecting"
 msgstr "Dovoli samodejno zakasnjeno osveževanje/preusmeritev"
 
-#: htmlopts.cpp:114
+#: htmlopts.cpp:105
 #, kde-format
 msgid ""
 "Some web pages request an automatic reload or redirection after a certain "
@@ -1919,12 +1723,12 @@ msgstr ""
 "preusmeritev po določenem pretečenem času. Če to možnost izključite, bo "
 "Konqueror prezrl te zahteve."
 
-#: htmlopts.cpp:120
+#: htmlopts.cpp:111
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "Omogoči omogočitev dostopnih tipk s tipko Ctrl"
 
-#: htmlopts.cpp:121
+#: htmlopts.cpp:112
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1935,13 +1739,13 @@ msgstr ""
 "Če odstranite oznako, boste onemogočili to zmožnost za dostopnost. Da "
 "sprememba stopi v veljavo, je potrebno znova zagnati Konqueror."
 
-#: htmlopts.cpp:125
+#: htmlopts.cpp:116
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr ""
 "Pošlji glavo DNT in tako sporoči spletnim stranem, da ne želim, da mi sledijo"
 
-#: htmlopts.cpp:126
+#: htmlopts.cpp:117
 #, kde-format
 msgid ""
 "Check this box if you want to inform a web site that you do not want your "
@@ -1950,24 +1754,24 @@ msgstr ""
 "Označite to možnost, če želite spletno stran obvestiti, da ne želite, da "
 "sledi vašim navadam pri brskanju."
 
-#: htmlopts.cpp:130
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Offer to save website passwords"
 msgstr "Ponudi shranjevanje gesel za spletišča"
 
-#: htmlopts.cpp:131
+#: htmlopts.cpp:122
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr ""
 "Odstranite oznako, če ne želite prejemati pozivov za shranjevanje gesel za "
 "spletišča"
 
-#: htmlopts.cpp:135
+#: htmlopts.cpp:126
 #, kde-format
 msgid "Display online PDF files using WebEngine"
 msgstr "Prikaži datoteke PDF z uporabo komponente WebEngine"
 
-#: htmlopts.cpp:136
+#: htmlopts.cpp:127
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
@@ -2211,7 +2015,7 @@ msgid ""
 "Enables the reporting of errors that occur when JavaScript code is executed."
 msgstr "Omogoča poročanje o napakah, ki se zgodijo med izvajanjem JavaScripta."
 
-#: jsopts.cpp:79
+#: jsopts.cpp:83
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2233,7 +2037,7 @@ msgstr ""
 "gumboma <i>Uvozi</i> in <i>Izvozi</i> lahko vaše pravilnike shranite ali "
 "obnovite iz stisnjene datoteke in jih tako enostavno delite z drugimi."
 
-#: jsopts.cpp:89
+#: jsopts.cpp:93
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2248,7 +2052,7 @@ msgstr ""
 "domene ali gostitelji.</p><p>Izberite pravilnik in uporabite gumbe na desni, "
 "če ga želite spremeniti.</p>"
 
-#: jsopts.cpp:96
+#: jsopts.cpp:100
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2258,7 +2062,7 @@ msgstr ""
 "Kliknite ta gumb, če želite izbrati datoteko s pravilniki za JavaScript. Ti "
 "pravilniki bodo združeni z že obstoječimi. Podvojeni vnosi bodo prezrti."
 
-#: jsopts.cpp:99
+#: jsopts.cpp:103
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2269,40 +2073,40 @@ msgstr ""
 "datoteko Ta datoteka bo poimenovana <b>javascript_policy.tgz</b> in "
 "shranjena na mesto, ki ga boste izbrali."
 
-#: jsopts.cpp:105
+#: jsopts.cpp:109
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "Splošni pravilniki za JavaScript"
 
-#: jsopts.cpp:173
+#: jsopts.cpp:181
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "Določeno za do&meno"
 
-#: jsopts.cpp:212
+#: jsopts.cpp:220
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "Nov pravilnik za JavaScript"
 
-#: jsopts.cpp:215
+#: jsopts.cpp:223
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "Spremeni pravilnik za JavaScript"
 
-#: jsopts.cpp:219
+#: jsopts.cpp:227
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "Pravilnik za JavaScript:"
 
-#: jsopts.cpp:220
+#: jsopts.cpp:228
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "Za zgornjega gostitelja ali domeno izberite pravilnik za JavaScript."
 
-#: jsopts.cpp:222
+#: jsopts.cpp:230
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "Pravilniki za JavaScript določeni za domeno"
@@ -2513,29 +2317,10 @@ msgstr ""
 msgid "&Java"
 msgstr "&Java"
 
-#: main.cpp:53
+#: main.cpp:57
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"
-
-#: main.cpp:93
-#, kde-format
-msgid ""
-"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
-"programs embedded in web pages should be allowed to be executed by Konqueror."
-"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
-"in web pages should be allowed to be executed by Konqueror.<br /><br /"
-"><b>Note:</b> Active content is always a security risk, which is why "
-"Konqueror allows you to specify very fine-grained from which hosts you want "
-"to execute Java and/or JavaScript programs."
-msgstr ""
-"<h2>JavaScript</h2>Na tej strani lahko nastavite, ali naj bo Konquerorju "
-"dovoljeno izvajati programe JavaScript, vstavljene v spletne strani. "
-"<h2>Java</h2>Na tej strani lahko nastavite, ali naj bo Konquerorju dovoljeno "
-"izvajati aplete Java, vstavljene v spletne strani.<br /><br /><b>Opomba:</"
-"b>Dejavna vsebina vedno ogrozi varnost, zato vam Konqueror omogoča, da zelo "
-"natančno določite gostitelje, ki jim dovolj zaupate, da lahko zaženejo "
-"programe napisane v Javi ali JavaScriptu."
 
 #: policydlg.cpp:30
 #, kde-format
@@ -2561,6 +2346,230 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "Najprej morate vnesti ime domene."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
+#: tabs/tabsoptions.ui:14
+#, fuzzy, kde-format
+#| msgid "Mouse Beha&vior"
+msgid "Tabs Behavior"
+msgstr "Obnašanje miške"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: tabs/tabsoptions.ui:20
+#, kde-format
+msgid "Aspect"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: tabs/tabsoptions.ui:26
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr ""
+"Vrstica z zavihki bo prikazana le, če sta prisotna dva ali več zavihkov. "
+"Sicer bo vrstica vedno prikazana."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: tabs/tabsoptions.ui:29
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr "Skrij vrstico zavihkov, ko je odprt le en zavihek"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: tabs/tabsoptions.ui:38
+#, kde-format
+msgid "Tab bar position"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:48
+#, kde-format
+msgid "Choose where to display the tabs bar"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:52
+#, kde-format
+msgid "Above contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:57
+#, kde-format
+msgid "Below contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:62
+#, kde-format
+msgid "Left of contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:67
+#, kde-format
+msgid "Right of contents"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: tabs/tabsoptions.ui:93
+#, kde-format
+msgid "Usage"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: tabs/tabsoptions.ui:99
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr ""
+"V različnih primerih bo namesto novega okna odprt nov zavihek; npr. pri "
+"kliku povezave ali mape s srednjim miškinim gumbom."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: tabs/tabsoptions.ui:102
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "Odpri povezave v novem zavihku namesto v novem oknu"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: tabs/tabsoptions.ui:109
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr ""
+"Ali se naj pojavna okna JavaScript odprejo v novem zavihku ali v novem oknu."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: tabs/tabsoptions.ui:112
+#, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr "Odpri pojavna okna v novem zavihku namesto v novem oknu"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: tabs/tabsoptions.ui:119
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+"Ko kliknete URL v drugem programu za KDE ali kličete kfmclient za odprtje "
+"URL-ja, bo na trenutnem namizju poiskan primerek Konquerorja, ki ni skrčen. "
+"Če obstaja, bo URL odprlo v novem zavihku primerka , sicer bo odprto novo "
+"okno Konquerorja z zahtevanim URL-jem."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: tabs/tabsoptions.ui:122
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr "Odpri kot zavihek v obstoječem Konquerorju, ko je URL odprt od zunaj"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: tabs/tabsoptions.ui:132
+#, fuzzy, kde-format
+#| msgid "Mouse Beha&vior"
+msgid "New Tab Behavior"
+msgstr "Obnašanje miške"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: tabs/tabsoptions.ui:138
+#, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr "Novi zavihku se bodo odprli v ozadju, namesto v ospredju."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: tabs/tabsoptions.ui:141
+#, kde-format
+msgid "O&pen new tabs in the background"
+msgstr "Odpri nove zavihke v ozadju"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: tabs/tabsoptions.ui:148
+#, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr ""
+"Nov zavihek se bo odprl takoj zraven trenutnega zavihka, namesto desno od "
+"zadnjega zavihka."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: tabs/tabsoptions.ui:151
+#, kde-format
+msgid "Open &new tab after current tab"
+msgstr "Odpri &nov zavihek poleg trenutnega"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: tabs/tabsoptions.ui:161
+#, kde-format
+msgid "Closing"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: tabs/tabsoptions.ui:167
+#, kde-format
+msgid "This will display close buttons inside each tab."
+msgstr "Znotraj vsakega zavihka bo prikazan gumb za zaprtje zavihka."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: tabs/tabsoptions.ui:170
+#, kde-format
+msgid "&Show close button on tabs"
+msgstr "Na zavihkih pokaži gumb za zaprtje"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: tabs/tabsoptions.ui:177
+#, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr ""
+"Če na zavihek kliknete s srednjim miškinim gumbom ali miškinim koleščkom, "
+"boste tako zaprli zavihek."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: tabs/tabsoptions.ui:180
+#, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr "Srednji klik na zavihek ga zapre"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: tabs/tabsoptions.ui:187
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr ""
+"Če boste želeli zapreti okno z več odprtimi zavihki, bo pred nadaljevanjem "
+"zahtevana potrditev."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: tabs/tabsoptions.ui:190
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr "Potrdi zapiranje okna z več zavihki"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: tabs/tabsoptions.ui:197
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+"Ko označite to možnost, se ob zaprtju trenutno dejavnega zavihka omogoči "
+"prej odprt ali uporabljen zavihek namesto zavihka, ki je desno od trenutnega."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: tabs/tabsoptions.ui:200
+#, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr "Ob zaprtju trenutnega zavihka omogoči prej uporabljen zavihek"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, UserAgent)
 #: useragent/useragent.ui:14
@@ -2645,6 +2654,55 @@ msgstr ""
 "privzeta identifikacija onemogočena.</p><p>Vnesete jo lahko ročno ali "
 "začnete z eno na spodnjem seznamu in jo spremenite glede na vaše potrebe.</"
 "p></body></html>"
+
+#~ msgid ""
+#~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+#~ "Konqueror should use to display the web pages you view."
+#~ msgstr ""
+#~ "<h1>Pisave Konquerorja</h1>Na tej strani lahko nastavite, katere pisave "
+#~ "naj Konqueror uporabi za prikaz spletnih strani."
+
+#~ msgid ""
+#~ "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list "
+#~ "of filters that are checked against linked images and frames. URL's that "
+#~ "match are either discarded or replaced with a placeholder image. "
+#~ msgstr ""
+#~ "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK vam omogoča, da ustvarite "
+#~ "seznam filtrov, ki preverjajo povezave do slik in okvirjev. URL-ji, ki se "
+#~ "ujemajo so zavrženi ali pa zamenjani s sliko vsebnika. "
+
+#~ msgid "Tabbed Browsing"
+#~ msgstr "Brskanje z zavihki"
+
+#~ msgid ""
+#~ "<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+#~ "functionality. Please note that the file manager functionality has to be "
+#~ "configured using the \"File Manager\" configuration module. You can make "
+#~ "some settings how Konqueror should handle the HTML code in the web pages "
+#~ "it loads. It is usually not necessary to change anything here."
+#~ msgstr ""
+#~ "<h1>Brskalnik Konqueror</h1> Tu lahko nastavite Konquerorjeve zmožnosti "
+#~ "brskanja. Vedite, da morate zmožnost upravljalnika datotek nastaviti z "
+#~ "uporabo  nastavitvenega modula »Upravljalnik datotek«. Nastavite lahko "
+#~ "nekatere možnosti, kako naj Konqueror upravlja s kodo HTML na naloženih "
+#~ "spletnih straneh. Običajno tu ni potrebno ničesar spreminjati."
+
+#~ msgid ""
+#~ "<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+#~ "programs embedded in web pages should be allowed to be executed by "
+#~ "Konqueror.<h2>Java</h2>On this page, you can configure whether Java "
+#~ "applets embedded in web pages should be allowed to be executed by "
+#~ "Konqueror.<br /><br /><b>Note:</b> Active content is always a security "
+#~ "risk, which is why Konqueror allows you to specify very fine-grained from "
+#~ "which hosts you want to execute Java and/or JavaScript programs."
+#~ msgstr ""
+#~ "<h2>JavaScript</h2>Na tej strani lahko nastavite, ali naj bo Konquerorju "
+#~ "dovoljeno izvajati programe JavaScript, vstavljene v spletne strani. "
+#~ "<h2>Java</h2>Na tej strani lahko nastavite, ali naj bo Konquerorju "
+#~ "dovoljeno izvajati aplete Java, vstavljene v spletne strani.<br /><br /"
+#~ "><b>Opomba:</b>Dejavna vsebina vedno ogrozi varnost, zato vam Konqueror "
+#~ "omogoča, da zelo natančno določite gostitelje, ki jim dovolj zaupate, da "
+#~ "lahko zaženejo programe napisane v Javi ali JavaScriptu."
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

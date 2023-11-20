@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2007-11-01 20:13+0545\n"
 "Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -19,35 +19,15 @@ msgstr ""
 "\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>केडीई सम्पादन</h1> तपाईँले यहाँ केडीईको सम्पादन सुधार गर्ने सेटिङ कन्फिगर गर्न सक्नुहुन्छ "
-"।"
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "कन्क्वेरर"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "प्रणाली"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>कन्क्वेरर सम्पादन</h1> यहाँ तपाईँले कन्क्वेरर सम्पादन सुधार गर्ने धेरै सेटिङ कन्फिगर गर्न "
-"सक्नुहुन्छ । यिनले पहिले चलेको दृष्टान्त पुन: प्रयोग गर्नका लागि र पहिले लोड गरिएका दृष्टान्त "
-"राख्नका लागि विकल्प समावेश गर्छ ।"
 
 #: konqueror.cpp:24
 #, fuzzy, kde-format
@@ -160,6 +140,22 @@ msgid ""
 msgstr ""
 "यो विकल्पले एकदम न्यून परिस्थितिमा थुप्रै समस्या पार्न सक्छ । विस्तृत विवरणका लागि ' यो के "
 "हो? ' (Shift+F1) मद्दत  हेर्नुहोस् ।"
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>केडीई सम्पादन</h1> तपाईँले यहाँ केडीईको सम्पादन सुधार गर्ने सेटिङ कन्फिगर गर्न "
+#~ "सक्नुहुन्छ ।"
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>कन्क्वेरर सम्पादन</h1> यहाँ तपाईँले कन्क्वेरर सम्पादन सुधार गर्ने धेरै सेटिङ कन्फिगर "
+#~ "गर्न सक्नुहुन्छ । यिनले पहिले चलेको दृष्टान्त पुन: प्रयोग गर्नका लागि र पहिले लोड गरिएका "
+#~ "दृष्टान्त राख्नका लागि विकल्प समावेश गर्छ ।"
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

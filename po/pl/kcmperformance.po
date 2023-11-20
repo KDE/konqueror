@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2017-03-25 05:21+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -22,34 +22,15 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "(n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>Wydajność KDE</h1> Tu można ustawić elementy wpływające na wydajność KDE."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "System"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Wydajność Konquerora</h1> Tu można ustawić elementy wpływające na "
-"wydajność Konquerora, m. in. wykorzystanie już działających kopii i wczesne "
-"wczytywanie programu do pamięci."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -153,6 +134,22 @@ msgid ""
 msgstr ""
 "Ta opcja w pewnych rzadkich sytuacjach może spowodować rozmaite problemy. "
 "Proszę przeczytać pomoc kontekstową (Shift+F1), aby poznać szczegóły."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>Wydajność KDE</h1> Tu można ustawić elementy wpływające na wydajność "
+#~ "KDE."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Wydajność Konquerora</h1> Tu można ustawić elementy wpływające na "
+#~ "wydajność Konquerora, m. in. wykorzystanie już działających kopii i "
+#~ "wczesne wczytywanie programu do pamięci."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

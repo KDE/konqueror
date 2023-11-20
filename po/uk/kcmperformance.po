@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2017-03-18 09:53+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -23,36 +23,15 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>Швидкодія KDE</h1> Тут ви можете налаштувати параметри, що впливають на "
-"швидкість роботи KDE."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Система"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Швидкодія навігатора Konqueror</h1> Тут можна налаштувати декілька "
-"параметрів, які можуть покращити швидкодію навігатора Konqueror. "
-"Здебільшого, тут знаходяться параметри для повторного використання вже "
-"запущених екземплярів навігатора та для попереднього завантаження навігатора."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -159,6 +138,24 @@ msgid ""
 msgstr ""
 "Цей параметр може іноді призводити до виникнення різноманітних проблем. Щоб "
 "дізнатись подробиці, прочитайте довідку «Що це?» (Shift+F1)."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>Швидкодія KDE</h1> Тут ви можете налаштувати параметри, що впливають "
+#~ "на швидкість роботи KDE."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Швидкодія навігатора Konqueror</h1> Тут можна налаштувати декілька "
+#~ "параметрів, які можуть покращити швидкодію навігатора Konqueror. "
+#~ "Здебільшого, тут знаходяться параметри для повторного використання вже "
+#~ "запущених екземплярів навігатора та для попереднього завантаження "
+#~ "навігатора."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

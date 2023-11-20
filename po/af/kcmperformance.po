@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance stable\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2005-06-13 16:33+0200\n"
 "Last-Translator: Juanita Franz <juanita.franz@vr-web.de>\n"
 "Language-Team: AFRIKAANS <translate-discuss-af@lists.sourceforge.net>\n"
@@ -16,36 +16,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>KDE Werkverrigting</h1> U kan hier instellings konfigureer wat KDE se "
-"werkverrigting verbeter."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Stelsel"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Konqueror Werkverrigting</h1>. U kan meerdere instellings hier "
-"konfigureer om Konqueror se werkverrigting te verbeter. Hierdie sluit in "
-"opsies vir hergebruik van reeds lopende voorbeelde en om voorbeelde "
-"voorgelaai te hou."
 
 #: konqueror.cpp:24
 #, fuzzy, kde-format
@@ -168,6 +147,23 @@ msgstr ""
 "<b>WAARSKUWING:</b> Hierdie opsie mag in seldene gevalle lei tot "
 "verskillende probleme. Konsulteer die Wat is dit (Skuif F1) help ver "
 "besonderhede."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDE Werkverrigting</h1> U kan hier instellings konfigureer wat KDE se "
+#~ "werkverrigting verbeter."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Konqueror Werkverrigting</h1>. U kan meerdere instellings hier "
+#~ "konfigureer om Konqueror se werkverrigting te verbeter. Hierdie sluit in "
+#~ "opsies vir hergebruik van reeds lopende voorbeelde en om voorbeelde "
+#~ "voorgelaai te hou."
 
 #, fuzzy
 #~| msgid ""

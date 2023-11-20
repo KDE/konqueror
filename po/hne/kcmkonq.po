@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2009-02-10 12:00+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -19,26 +19,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Lokalize 0.2\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
-"file manager here."
-msgstr ""
-"<h1>कान्करर बर्ताव</h1> आप मन कान्फिगर कर सकथो कि इहां कान्करर फाइल प्रबंधक के जइसन "
-"कइसन बर्ताव करे."
-
-#: behaviour.cpp:40
+#: behaviour.cpp:38
 #, kde-format
 msgid "Misc Options"
 msgstr "विविध विकल्प"
 
-#: behaviour.cpp:49
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "फोल्डर अलग विंडो मं खोलव (&w)"
 
-#: behaviour.cpp:50
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -47,19 +38,26 @@ msgstr ""
 "यदि ए विकल्प चुने जाथे,  तहां जब आप मन कोनो फोल्डर खोलहू तहां बदला मा ओही विंडो मं "
 "फोल्डर के सामान ल देखाय के, कान्करर एक नवा विंडो मं खुलही."
 
-#: behaviour.cpp:73
+#: behaviour.cpp:71
 #, fuzzy, kde-format
 #| msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "'मेटाव' संदर्भित मेन्यू देखाव जऊन घुरुवा ल बायपास करही (&n)"
 
-#: behaviour.cpp:77
+#: behaviour.cpp:75
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
 "and in the file manager's menus and context menus. You can always delete "
 "files by holding the Shift key while calling 'Move to Trash'."
 msgstr ""
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>कान्करर बर्ताव</h1> आप मन कान्फिगर कर सकथो कि इहां कान्करर फाइल प्रबंधक के "
+#~ "जइसन कइसन बर्ताव करे."
 
 #, fuzzy
 #~| msgid "Menu Editor"

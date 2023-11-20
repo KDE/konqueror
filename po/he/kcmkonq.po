@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2017-05-16 06:36-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -28,26 +28,17 @@ msgstr ""
 "X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
-"file manager here."
-msgstr ""
-"<h1>הפעולה של Konqueror</h1> כאן באפשרותך לקבוע כיצד Konqueror יפעל בתור "
-"מנהל קבצים."
-
-#: behaviour.cpp:40
+#: behaviour.cpp:38
 #, kde-format
 msgid "Misc Options"
 msgstr "אפשרויות שונות"
 
-#: behaviour.cpp:49
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "פתח תיקיות בחלונות &נפרדים"
 
-#: behaviour.cpp:50
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -56,12 +47,12 @@ msgstr ""
 "אם אפשרות זו נבחרת, Konqueror יפתח חלון חדש כאשר אתה פותח תיקייה במקום להציג "
 "את תוכן התיקייה הזו בחלון הנוכחי."
 
-#: behaviour.cpp:73
+#: behaviour.cpp:71
 #, fuzzy, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "הצג פקודות \"מחק\" ב&תפריט, העוקפות את האשפה"
 
-#: behaviour.cpp:77
+#: behaviour.cpp:75
 #, fuzzy, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -71,6 +62,13 @@ msgstr ""
 "בחר באפשרות זו, אם ברצונך לקבל פקודות \"מחק\" בשולחן עבודה ובתפריטי ההקשר של "
 "מנהל הקבצים. ניתן למחוק ישירות גם על ידי לחיצה על shift ולחיצה על \"העבר "
 "לאשפה\"."
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>הפעולה של Konqueror</h1> כאן באפשרותך לקבוע כיצד Konqueror יפעל בתור "
+#~ "מנהל קבצים."
 
 #, fuzzy
 #~ msgctxt "@title:window"

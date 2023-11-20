@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -17,168 +17,6 @@ msgstr ""
 "X-Generator: KBabel 1.0beta1\n"
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
-#: advancedTabOptions.ui:21
-#, kde-format
-msgid ""
-"This will open a new tab instead of a new window in various situations, such "
-"as choosing a link or a folder with the middle mouse button."
-msgstr ""
-"Osclóidh sé seo cluaisín nua in ionad fuinneoige nuaí in áiteanna éagsúla, "
-"mar shampla nuair a roghnaíonn tú nasc nó fillteán leis an gcnaipe luiche sa "
-"lár."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
-#: advancedTabOptions.ui:24
-#, kde-format
-msgid "Open &links in new tab instead of in new window"
-msgstr "Oscai&l naisc i gcluaisín nua in ionad fuinneoige nua"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
-#: advancedTabOptions.ui:31
-#, kde-format
-msgid ""
-"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
-"new window."
-msgstr ""
-"Leis seo is féidir roghnú cén áit a n-osclóidh preabfhuinneoga JavaScript "
-"(má tá siad ceadaithe): i gcluaisín nua nó i bhfuinneog nua."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
-#: advancedTabOptions.ui:34
-#, kde-format
-msgid "Open pop&ups in new tab instead of in new window"
-msgstr "Oscail preabfh&uinneoga i gcluaisín nua, nach i bhfuinneog nua"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
-#: advancedTabOptions.ui:41
-#, kde-format
-msgid ""
-"When you click a URL in another KDE program or call kfmclient to open a URL, "
-"the current desktop will be searched for a non-minimized Konqueror and, if "
-"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
-"window will be opened with the required URL."
-msgstr ""
-"Nuair a chliceálann tú URL i ríomhchlár KDE eile, nó nuair a ghlaonn tú "
-"kfmclient chun URL a oscailt, cuardófar an deasc reatha ar fhuinneog "
-"Konqueror nach bhfuil íoslaghdaithe.  Má aimsítear a leithéid fhuinneoige, "
-"osclófar an URL inti, agus mura n-aimsítear, osclófar fuinneog nua Konqueror "
-"leis an URL iarrtha."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
-#: advancedTabOptions.ui:44
-#, kde-format
-msgid "Open as tab in existing Konqueror when URL is called externally"
-msgstr "Oscail mar chluaisín i Konqueror nuair a ghlaoitear URL go seachtrach"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
-#: advancedTabOptions.ui:51
-#, kde-format
-msgid ""
-"This will open a new tab in the background, instead of in the foreground."
-msgstr "Osclóidh sé seo cluaisín nua sa chúlra in ionad sa tulra."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
-#: advancedTabOptions.ui:54
-#, kde-format
-msgid "O&pen new tabs in the background"
-msgstr "O&scail cluaisíní nua sa chúlra"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
-#: advancedTabOptions.ui:61
-#, kde-format
-msgid ""
-"This will open a new tab opened from a page after the current tab, instead "
-"of after the last tab."
-msgstr ""
-"Osclóidh sé seo cluaisín nua tar éis an chluaisín reatha, seachas tar éis an "
-"chluaisín deiridh."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
-#: advancedTabOptions.ui:64
-#, kde-format
-msgid "Open &new tab after current tab"
-msgstr "Oscail cluaisín &nua tar éis an chluaisín reatha"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
-#: advancedTabOptions.ui:71
-#, kde-format
-msgid ""
-"This will display the tab bar only if there are two or more tabs. Otherwise "
-"it will always be displayed."
-msgstr ""
-"Leis an rogha seo, ní thaispeánfar barra na gcluaisíní mura bhfuil dhá "
-"chluaisín ann ar a laghad. Gan an rogha seo, taispeánfar é i gcónaí."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
-#: advancedTabOptions.ui:74
-#, kde-format
-msgid "Hide the tab bar when only one tab is open"
-msgstr ""
-"Folaigh an barra cluaisíní nuair nach bhfuil ach cluaisín amháin oscailte"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
-#: advancedTabOptions.ui:81
-#, kde-format
-msgid "This will display close buttons inside each tab."
-msgstr "Leis seo taispeánfar cnaipí dúnta laistigh de gach cluaisín."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
-#: advancedTabOptions.ui:84
-#, kde-format
-msgid "&Show close button on tabs"
-msgstr "Tai&speáin cnaipe dúnta ar chluaisíní"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
-#: advancedTabOptions.ui:91
-#, kde-format
-msgid ""
-"When you click on a tab using the middle mouse button or mouse wheel, it "
-"will close that tab."
-msgstr ""
-"Nuair a chliceálfaidh tú cluaisín le lárchnaipe na luiche nó le roth na "
-"luiche, dúnfar an cluaisín sin."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
-#: advancedTabOptions.ui:94
-#, kde-format
-msgid "Middle-click on a tab to close it"
-msgstr "Lárchliceáil cluaisín chun é a dhúnadh"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
-#: advancedTabOptions.ui:101
-#, kde-format
-msgid ""
-"This will ask you whether you are sure you want to close a window when it "
-"has multiple tabs opened in it."
-msgstr ""
-"Leis an rogha seo, fiafrófar díot má tá tú cinnte gur mian leat fuinneog a "
-"dhúnadh nuair atá cluaisíní iomadúla oscailte inti."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
-#: advancedTabOptions.ui:104
-#, kde-format
-msgid "Confirm &when closing windows with multiple tabs"
-msgstr "&Fiafraigh díom agus fuinneog ina bhfuil cluaisíní iomadúla á dúnadh"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: advancedTabOptions.ui:111
-#, kde-format
-msgid ""
-"When checking this the previous used or opened tab will be activated when "
-"you close the current active tab instead of the one right to the current tab."
-msgstr ""
-"Má chuireann tú tic anseo, gníomhachtófar an cluaisín a bhí in úsáid nó "
-"oscailte roimhe seo nuair a dhúnfaidh tú an cluaisín reatha.  Gan tic anseo, "
-"gníomhachtófar an cluaisín ar an taobh deas den chluaisín reatha."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: advancedTabOptions.ui:114
-#, kde-format
-msgid "Activate previously used tab when closing the current tab"
-msgstr ""
-"Gníomhachtaigh an cluaisín roimhe seo agus an cluaisín reatha á dhúnadh"
 
 #: appearance.cpp:39
 #, kde-format
@@ -199,17 +37,17 @@ msgid "Stylesheets"
 msgstr "Stílbhileoga"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:48 css/csscustom.ui:296
+#: appearance.cpp:52 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "Íomhánna"
 
-#: appearance.cpp:52
+#: appearance.cpp:56
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "L&uchtaigh íomhánna go huathoibríoch"
 
-#: appearance.cpp:53
+#: appearance.cpp:57
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -225,12 +63,12 @@ msgstr ""
 "bhfuil ceangal an-mhall leis an Idirlíon, ba chóir duit tic a chur sa bhosca "
 "seo chun feabhas a chur ar do chuairt ar líne.</html>"
 
-#: appearance.cpp:63
+#: appearance.cpp:67
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "&Dear fráma timpeall íomhánna nach luchtaithe"
 
-#: appearance.cpp:64
+#: appearance.cpp:68
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -244,24 +82,24 @@ msgstr ""
 "do chuairt ar líne, go háirithe má tá ceangal mall leis an Idirlíon agat.</"
 "html>"
 
-#: appearance.cpp:74
+#: appearance.cpp:78
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "Cumasaithe"
 
-#: appearance.cpp:75
+#: appearance.cpp:79
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "Díchumasaithe"
 
-#: appearance.cpp:76
+#: appearance.cpp:80
 #, kde-format
 msgid "Show Only Once"
 msgstr "Ná taispeáin ach uair amháin"
 
-#: appearance.cpp:77
+#: appearance.cpp:81
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -275,40 +113,40 @@ msgstr ""
 "íomhá thosaigh.</li><li><b>Ná taispeáin ach uair amháin</b>: Taispeáin gach "
 "beochan go hiomlán ach ná taispeáin iad arís is arís eile.</li></ul></html>"
 
-#: appearance.cpp:82
+#: appearance.cpp:86
 #, kde-format
 msgid "A&nimations:"
 msgstr "Íomhá&nna Beo:"
 
-#: appearance.cpp:85 htmlopts.cpp:110
+#: appearance.cpp:89 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "Rudaí éagsúla"
 
-#: appearance.cpp:90
+#: appearance.cpp:94
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "Cumasaithe"
 
-#: appearance.cpp:91
+#: appearance.cpp:95
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "Díchumasaithe"
 
-#: appearance.cpp:92
+#: appearance.cpp:96
 #, kde-format
 msgid "Only on Hover"
 msgstr "Ar Ainliú Amháin"
 
-#: appearance.cpp:93
+#: appearance.cpp:97
 #, kde-format
 msgid "Und&erline links:"
 msgstr "Cuir lín&e faoi naisc:"
 
-#: appearance.cpp:96
+#: appearance.cpp:100
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -324,29 +162,29 @@ msgstr ""
 "chionn</li></ul><br /><i>Nóta: seans go sáróidh sainroghanna CSS an tsuímh "
 "an luach seo.</i></html>"
 
-#: appearance.cpp:105
+#: appearance.cpp:109
 #, kde-format
 msgid "When Efficient"
 msgstr "Nuair a bheadh sé éifeachtach"
 
-#: appearance.cpp:106
+#: appearance.cpp:110
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "I gcónaí"
 
-#: appearance.cpp:107
+#: appearance.cpp:111
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "Riamh"
 
-#: appearance.cpp:108
+#: appearance.cpp:112
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "&Mínscrollú:"
 
-#: appearance.cpp:110
+#: appearance.cpp:114
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -363,34 +201,24 @@ msgstr ""
 "li><li><b>Nuair a bheadh sé éifeachtach</b>: Ná húsáid mínscrollú ach nuair "
 "is féidir é a dhéanamh gan luas a bhaint den chóras.</li></ul></html>"
 
-#: appearance.cpp:119
-#, kde-format
-msgid ""
-"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
-"Konqueror should use to display the web pages you view."
-msgstr ""
-"<h1>Clónna Konqueror</h1>Ar an leathanach seo, is féidir leat clónna a "
-"roghnú ar chóir do Konqueror iad a úsáid agus leathanaigh Ghréasáin á "
-"dtaispeáint."
-
-#: appearance.cpp:131
+#: appearance.cpp:132
 #, kde-format
 msgid "Font Si&ze"
 msgstr "C&lómhéid"
 
-#: appearance.cpp:134 appearance.cpp:152
+#: appearance.cpp:135 appearance.cpp:153
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr ""
 "Seo é an chlómhéid choibhneasta a úsáideann Konqueror chun suímh Ghréasáin a "
 "thaispeáint."
 
-#: appearance.cpp:138
+#: appearance.cpp:139
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "C&lómhéid is lú:"
 
-#: appearance.cpp:142
+#: appearance.cpp:143
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
@@ -399,92 +227,92 @@ msgstr ""
 "Ní thaispeánfaidh Konqueror téacs níos lú ná é seo riamh,<br />ag sárú aon "
 "socruithe eile."
 
-#: appearance.cpp:147
+#: appearance.cpp:148
 #, kde-format
 msgid "&Medium font size:"
 msgstr "Clómhéid &measartha:"
 
-#: appearance.cpp:160
+#: appearance.cpp:161
 #, kde-format
 msgid "S&tandard font:"
 msgstr "Cló &caighdeánach:"
 
-#: appearance.cpp:161
+#: appearance.cpp:162
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr ""
 "Seo é an cló a úsáidtear chun gnáth-théacs a thaispeáint ar leathanach "
 "Gréasáin."
 
-#: appearance.cpp:165
+#: appearance.cpp:166
 #, kde-format
 msgid "&Fixed font:"
 msgstr "Cló &aonleithid:"
 
-#: appearance.cpp:166
+#: appearance.cpp:167
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr "Seo é an cló a úsáidtear chun téacs aonleithid a thaispeáint."
 
-#: appearance.cpp:170
+#: appearance.cpp:171
 #, kde-format
 msgid "S&erif font:"
 msgstr "Cló S&erif:"
 
-#: appearance.cpp:171
+#: appearance.cpp:172
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr "Seo é an cló a úsáidtear chun téacs serif a thaispeáint."
 
-#: appearance.cpp:175
+#: appearance.cpp:176
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "Cló Sa&ns serif:"
 
-#: appearance.cpp:176
+#: appearance.cpp:177
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr "Seo é an cló a úsáidtear chun téacs sans-serif a thaispeáint."
 
-#: appearance.cpp:180
+#: appearance.cpp:181
 #, kde-format
 msgid "C&ursive font:"
 msgstr "Cló &scríbhneoireachta reatha:"
 
-#: appearance.cpp:181
+#: appearance.cpp:182
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr "Seo é an cló a úsáidtear chun téacs iodálach a thaispeáint."
 
-#: appearance.cpp:185
+#: appearance.cpp:186
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "Cló &Ornáidíocht:"
 
-#: appearance.cpp:186
+#: appearance.cpp:187
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr ""
 "Seo é an cló a úsáidtear chun téacs marcáilte mar 'fantasy' a thaispeáint."
 
-#: appearance.cpp:195
+#: appearance.cpp:196
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "Coigeartú na clómhéide don ionchódú &seo:"
 
-#: appearance.cpp:203 appearance.cpp:401
+#: appearance.cpp:204 appearance.cpp:402
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "Úsáid Ionchódú Teanga"
 
-#: appearance.cpp:205
+#: appearance.cpp:206
 #, kde-format
 msgid "Default encoding:"
 msgstr "Ionchódú réamhshocraithe:"
 
-#: appearance.cpp:207
+#: appearance.cpp:208
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1500,32 +1328,32 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: filteropts.cpp:120
+#: filteropts.cpp:124
 #, kde-format
 msgid "Insert"
 msgstr "Ionsáigh"
 
-#: filteropts.cpp:123
+#: filteropts.cpp:127
 #, kde-format
 msgid "Update"
 msgstr "Nuashonraigh"
 
-#: filteropts.cpp:126
+#: filteropts.cpp:130
 #, kde-format
 msgid "Remove"
 msgstr "Bain"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:134
 #, kde-format
 msgid "Import..."
 msgstr "Iompórtáil..."
 
-#: filteropts.cpp:133
+#: filteropts.cpp:137
 #, kde-format
 msgid "Export..."
 msgstr "Easpórtáil..."
 
-#: filteropts.cpp:140
+#: filteropts.cpp:144
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
@@ -1534,7 +1362,7 @@ msgstr ""
 "<qt>Tuilleadh eolais faoi <a href=\"importhelp\">formáid iompórtála</a>, <a "
 "href=\"exporthelp\">formáid easpórtála</a>"
 
-#: filteropts.cpp:154
+#: filteropts.cpp:158
 #, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
@@ -1544,7 +1372,7 @@ msgstr ""
 "chóir duit sloinn a gcuirfear cosc orthu a thabhairt sa liosta scagairí chun "
 "scagadh a chur i bhfeidhm."
 
-#: filteropts.cpp:156
+#: filteropts.cpp:160
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
@@ -1553,7 +1381,7 @@ msgstr ""
 "Leis an rogha seo, bainfear íomhánna a cuireadh cosc orthu ón leathanach go "
 "hiomlán; is é seo nó úsáidfear íomhá ionadchoinneálaí."
 
-#: filteropts.cpp:163
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
@@ -1562,7 +1390,7 @@ msgstr ""
 "Seo é an liosta de scagairí URL a chuirfear i bhfeidhm ar gach íomhá agus "
 "meán leabaithe."
 
-#: filteropts.cpp:167
+#: filteropts.cpp:171
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1581,7 +1409,7 @@ msgstr ""
 "chur roimh aon scagaire chun URLanna comhoiriúnacha a cheadú, rud a "
 "sháraíonn aon scagaire a chuireann bac ar an URL."
 
-#: filteropts.cpp:183
+#: filteropts.cpp:187
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1593,7 +1421,7 @@ msgstr ""
 "den líne cheanntáisc <tt>[AdBlock]</tt>.  Bainfear úsáid as gach líne eile "
 "mar scagaire."
 
-#: filteropts.cpp:188
+#: filteropts.cpp:192
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1604,47 +1432,30 @@ msgstr ""
 "comhad le líne cheanntáisc <tt>[AdBlock]</tt>, ansin na scagairí, gach ceann "
 "ar líne ar leith."
 
-#: filteropts.cpp:256
+#: filteropts.cpp:260
 #, fuzzy, kde-format
 #| msgid "Automatic Filter"
 msgid "Import Filters"
 msgstr "Scagaire Uathoibríoch"
 
-#: filteropts.cpp:300
+#: filteropts.cpp:304
 #, fuzzy, kde-format
 #| msgid "URL Expressions to Filter"
 msgid "Export Filters"
 msgstr "Sloinn URL le Scagadh"
 
-#: filteropts.cpp:435
-#, kde-format
-msgid ""
-"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
-"filters that are checked against linked images and frames. URL's that match "
-"are either discarded or replaced with a placeholder image. "
-msgstr ""
-"<h1>AdBlocK Konqueror</h1> Ceadaíonn AdBlocK Konqueror duit liosta de "
-"scagairí a chruthú a chuirfear i gcomparáid le híomhánna agus frámaí "
-"nasctha. Caithfear URLanna comhoiriúnacha i gcártaí, nó úsáidfear "
-"ionadchoinneálaithe. "
-
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:557 useragent/useragent.ui:61
+#: filteropts.cpp:556 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "Ainm"
 
-#: filteropts.cpp:558
+#: filteropts.cpp:557
 #, kde-format
 msgid "URL"
 msgstr "URL"
 
-#: generalopts.cpp:53
-#, kde-format
-msgid "Tabbed Browsing"
-msgstr "Brabhsáil le Cluaisíní"
-
-#: generalopts.cpp:79
+#: generalopts.cpp:56
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1652,19 +1463,19 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr ""
 
-#: generalopts.cpp:85
+#: generalopts.cpp:62
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr ""
 
-#: generalopts.cpp:94
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "Taispeáin Leathanach Tosaigh"
 
-#: generalopts.cpp:95
+#: generalopts.cpp:72
 #, fuzzy, kde-format
 #| msgctxt "@item:inlistbox"
 #| msgid "Show My Home Page"
@@ -1672,19 +1483,19 @@ msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "Taispeáin Mo Leathanach Baile"
 
-#: generalopts.cpp:96
+#: generalopts.cpp:73
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "Taispeáin Leathanach Folamh"
 
-#: generalopts.cpp:97
+#: generalopts.cpp:74
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "Taispeáin Mo Chuid Leabharmharcanna"
 
-#: generalopts.cpp:103
+#: generalopts.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Home Page"
@@ -1692,23 +1503,23 @@ msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "Roghnaigh Leathanach Baile"
 
-#: generalopts.cpp:108
+#: generalopts.cpp:85
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr ""
 
-#: generalopts.cpp:119
+#: generalopts.cpp:96
 #, kde-format
 msgid "Home page:"
 msgstr "Leathanach baile:"
 
-#: generalopts.cpp:122
+#: generalopts.cpp:99
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "Roghnaigh Leathanach Baile"
 
-#: generalopts.cpp:127
+#: generalopts.cpp:104
 #, fuzzy, kde-format
 #| msgid ""
 #| "This is the URL of the web page where Konqueror (as web browser) will "
@@ -1723,57 +1534,42 @@ msgstr ""
 "chuige nuair a bhrúitear an cnaipe \"Baile\". Nuair a thosaítear Konqueror "
 "mar bhainisteoir comhad, rachaidh sé chuig an bhfillteán logánta baile."
 
-#: generalopts.cpp:135
+#: generalopts.cpp:112
 #, kde-format
 msgid "Default web browser engine:"
 msgstr ""
 
-#: generalopts.cpp:144
+#: generalopts.cpp:121
 #, kde-format
 msgid "When splitting a view"
 msgstr ""
 
-#: generalopts.cpp:148
+#: generalopts.cpp:125
 #, kde-format
 msgid "Always duplicate current view"
 msgstr ""
 
-#: generalopts.cpp:149
+#: generalopts.cpp:126
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr ""
 
-#: generalopts.cpp:155
+#: generalopts.cpp:132
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr ""
 
-#: htmlopts.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
-"functionality. Please note that the file manager functionality has to be "
-"configured using the \"File Manager\" configuration module. You can make "
-"some settings how Konqueror should handle the HTML code in the web pages it "
-"loads. It is usually not necessary to change anything here."
-msgstr ""
-"<h1>Brabhsálaí Konqueror</h1> Anseo is féidir leat feidhmiúlacht bhrabhsála "
-"Konqueror a chumrú. Tabhair faoi deara go gcaithfear é a chumrú mar "
-"bhainisteoir comhad tríd an modúl cumraíochta \"Bainisteoir Comhad\". Is "
-"féidir athruithe a dhéanamh ar an gcaoi a láimhseálann Konqueror an cód HTML "
-"sna leathanaigh a luchtaíonn sé. Go hiondúil, ní gá aon rud a athrú anseo."
-
-#: htmlopts.cpp:44
+#: htmlopts.cpp:35
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "Leabhar&mharcanna"
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:38
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "Iarr ainm agus fillteán agus leabharmharcanna á chruthú"
 
-#: htmlopts.cpp:50
+#: htmlopts.cpp:41
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1784,14 +1580,14 @@ msgstr ""
 "leabharmhairc a athrú agus an fillteán ina gcuirfear an leabharmharc a "
 "roghnú nuair a chruthóidh tú leabharmharc nua."
 
-#: htmlopts.cpp:56
+#: htmlopts.cpp:47
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr ""
 "Ná taispeáin ach leabharmharcanna marcáilte i mbarra uirlisí na "
 "leabharmharcanna"
 
-#: htmlopts.cpp:58
+#: htmlopts.cpp:49
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1801,12 +1597,12 @@ msgstr ""
 "uirlisí ach na leabharmharcanna a mharcálann tú le taispeáint in eagarthóir "
 "na leabharmharcanna."
 
-#: htmlopts.cpp:65
+#: htmlopts.cpp:56
 #, kde-format
 msgid "Form Com&pletion"
 msgstr "Comhlánú &Foirme"
 
-#: htmlopts.cpp:69
+#: htmlopts.cpp:60
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1816,12 +1612,12 @@ msgstr ""
 "chuireann tú ar fhoirmeacha Gréasáin agus molfaidh sé na sonraí seo i "
 "bhfoirmeacha eile nuair is cuí."
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:66
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "&Líon uasta comhlánuithe:"
 
-#: htmlopts.cpp:77
+#: htmlopts.cpp:68
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
@@ -1829,17 +1625,17 @@ msgstr ""
 "Anseo is féidir an méid luachanna a mheabhróidh Konqueror le haghaidh réimse "
 "i bhfoirm a roghnú."
 
-#: htmlopts.cpp:84
+#: htmlopts.cpp:75
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "Oibriú na &Luiche"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:78
 #, kde-format
 msgid "Chan&ge cursor over links"
 msgstr "Athrai&gh an cúrsóir os cionn nasc"
 
-#: htmlopts.cpp:89
+#: htmlopts.cpp:80
 #, kde-format
 msgid ""
 "If this option is set, the shape of the cursor will change (usually to a "
@@ -1848,12 +1644,12 @@ msgstr ""
 "Leis an rogha seo, athróidh cruth an chúrsóra (go dtí lámh go hiondúil) "
 "nuair atá sé ag ainliú os cionn hipearnaisc."
 
-#: htmlopts.cpp:93
+#: htmlopts.cpp:84
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "&Lárchliceáil chun an URL sa roghnúchán a oscailt"
 
-#: htmlopts.cpp:96
+#: htmlopts.cpp:87
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
@@ -1862,12 +1658,12 @@ msgstr ""
 "Má chuireann tú tic sa bhosca seo, is féidir an URL sa roghnúchán a oscailt "
 "trí lárchliceáil ar amharc Konqueror."
 
-#: htmlopts.cpp:100
+#: htmlopts.cpp:91
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "Deaschliceáil chun &dul ar ais sa stair"
 
-#: htmlopts.cpp:103
+#: htmlopts.cpp:94
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1878,12 +1674,12 @@ msgstr ""
 "dheaschliceáil in amharc Konqueror. Chun an roghchlár comhthéacs a rochtain, "
 "brúigh an cnaipe luiche ar dheis agus bog."
 
-#: htmlopts.cpp:113
+#: htmlopts.cpp:104
 #, kde-format
 msgid "Allow automatic delayed &reloading/redirecting"
 msgstr "Ceadaigh &athluchtú/atreorú moillithe uathoibríoch"
 
-#: htmlopts.cpp:114
+#: htmlopts.cpp:105
 #, kde-format
 msgid ""
 "Some web pages request an automatic reload or redirection after a certain "
@@ -1893,12 +1689,12 @@ msgstr ""
 "tréimhse áirithe. Bain an tic ón bhosca seo más mian leat go ndéanfaidh "
 "Konqueror neamhaird de na hiarratais seo."
 
-#: htmlopts.cpp:120
+#: htmlopts.cpp:111
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "Cumasaigh gníomhachtú &Eochracha Rochtana leis an eochair Ctrl"
 
-#: htmlopts.cpp:121
+#: htmlopts.cpp:112
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1910,34 +1706,34 @@ msgstr ""
 "mian leat an ghné inrochtaineachta seo a dhíchumasú. (Caithfidh tú Konqueror "
 "a atosú chun an t-athrú seo a chur i bhfeidhm.)"
 
-#: htmlopts.cpp:125
+#: htmlopts.cpp:116
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr ""
 
-#: htmlopts.cpp:126
+#: htmlopts.cpp:117
 #, kde-format
 msgid ""
 "Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked."
 msgstr ""
 
-#: htmlopts.cpp:130
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Offer to save website passwords"
 msgstr ""
 
-#: htmlopts.cpp:131
+#: htmlopts.cpp:122
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr ""
 
-#: htmlopts.cpp:135
+#: htmlopts.cpp:126
 #, kde-format
 msgid "Display online PDF files using WebEngine"
 msgstr ""
 
-#: htmlopts.cpp:136
+#: htmlopts.cpp:127
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
@@ -2189,7 +1985,7 @@ msgstr ""
 "Leis an rogha seo déanfar tuairisc ar earráidí a tharlaíonn nuair a ritear "
 "cód JavaScript."
 
-#: jsopts.cpp:79
+#: jsopts.cpp:83
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2212,7 +2008,7 @@ msgstr ""
 "<i>Iompórtáil</i> agus <i>Easpórtáil</i> is féidir leat do chuid polasaithe "
 "a roinnt le daoine eile go héasca trí chomhad zip a iompórtáil/easpórtáil."
 
-#: jsopts.cpp:89
+#: jsopts.cpp:93
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2227,7 +2023,7 @@ msgstr ""
 "sheolfaidh na fearainn nó na hóstríomhairí seo.</p><p>Roghnaigh polasaí agus "
 "bain úsáid as na rialtáin ar dheis chun é a mhionathrú.</p>"
 
-#: jsopts.cpp:96
+#: jsopts.cpp:100
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2238,7 +2034,7 @@ msgstr ""
 "a roghnú. Cumascfar na polasaithe seo leis na cinn atá ann faoi láthair. "
 "Déanfar neamhaird d'iontrálacha dúblacha."
 
-#: jsopts.cpp:99
+#: jsopts.cpp:103
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2249,41 +2045,41 @@ msgstr ""
 "Sábhálfar an comhad, darb ainm <b>javascript_policy.tgz</b>, sa suíomh a "
 "roghnóidh tú."
 
-#: jsopts.cpp:105
+#: jsopts.cpp:109
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "Polasaithe Comhchoiteanna JavaScript"
 
-#: jsopts.cpp:173
+#: jsopts.cpp:181
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "Sai&niúil don Fhearann"
 
-#: jsopts.cpp:212
+#: jsopts.cpp:220
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "Polasaí Nua JavaScript"
 
-#: jsopts.cpp:215
+#: jsopts.cpp:223
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "Athraigh an Polasaí JavaScript"
 
-#: jsopts.cpp:219
+#: jsopts.cpp:227
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "Polasaí JavaScript:"
 
-#: jsopts.cpp:220
+#: jsopts.cpp:228
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr ""
 "Roghnaigh polasaí JavaScript le haghaidh an óstríomhaire nó fearainn thuas."
 
-#: jsopts.cpp:222
+#: jsopts.cpp:230
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "Polasaithe JavaScript Sainiúil don Fhearann"
@@ -2500,29 +2296,10 @@ msgstr ""
 msgid "&Java"
 msgstr "&Java"
 
-#: main.cpp:53
+#: main.cpp:57
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"
-
-#: main.cpp:93
-#, kde-format
-msgid ""
-"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
-"programs embedded in web pages should be allowed to be executed by Konqueror."
-"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
-"in web pages should be allowed to be executed by Konqueror.<br /><br /"
-"><b>Note:</b> Active content is always a security risk, which is why "
-"Konqueror allows you to specify very fine-grained from which hosts you want "
-"to execute Java and/or JavaScript programs."
-msgstr ""
-"<h2>JavaScript</h2>Ar an leathanach seo, is féidir leat socrú an mbeidh cead "
-"ag Konqueror ríomhchláir JavaScript leabaithe i leathanaigh Ghréasáin a rith."
-"<h2>Java</h2>Ar an leathanach seo, is féidir leat socrú an mbeidh cead ag "
-"Konqueror feidhmchláiríní Java leabaithe i leathanaigh Ghréasáin a rith.<br /"
-"><br /><b>Nóta:</b> Tá ábhar gníomhach ina phriacal slándála i gcónaí agus "
-"dá bharr seo ceadaíonn Konqueror duit na hóstríomhairí a nglacfaidh tú "
-"ríomhchláir Java agus JavaScript uathu a shonrú i slí mhín."
 
 #: policydlg.cpp:30
 #, kde-format
@@ -2548,6 +2325,236 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "Caithfidh tú ainm fearainn a iontráil ar dtús."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
+#: tabs/tabsoptions.ui:14
+#, fuzzy, kde-format
+#| msgid "Mouse Beha&vior"
+msgid "Tabs Behavior"
+msgstr "Oibriú na &Luiche"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: tabs/tabsoptions.ui:20
+#, kde-format
+msgid "Aspect"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: tabs/tabsoptions.ui:26
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr ""
+"Leis an rogha seo, ní thaispeánfar barra na gcluaisíní mura bhfuil dhá "
+"chluaisín ann ar a laghad. Gan an rogha seo, taispeánfar é i gcónaí."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: tabs/tabsoptions.ui:29
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr ""
+"Folaigh an barra cluaisíní nuair nach bhfuil ach cluaisín amháin oscailte"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: tabs/tabsoptions.ui:38
+#, kde-format
+msgid "Tab bar position"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:48
+#, kde-format
+msgid "Choose where to display the tabs bar"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:52
+#, kde-format
+msgid "Above contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:57
+#, kde-format
+msgid "Below contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:62
+#, kde-format
+msgid "Left of contents"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
+#: tabs/tabsoptions.ui:67
+#, kde-format
+msgid "Right of contents"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: tabs/tabsoptions.ui:93
+#, kde-format
+msgid "Usage"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: tabs/tabsoptions.ui:99
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr ""
+"Osclóidh sé seo cluaisín nua in ionad fuinneoige nuaí in áiteanna éagsúla, "
+"mar shampla nuair a roghnaíonn tú nasc nó fillteán leis an gcnaipe luiche sa "
+"lár."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: tabs/tabsoptions.ui:102
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "Oscai&l naisc i gcluaisín nua in ionad fuinneoige nua"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: tabs/tabsoptions.ui:109
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr ""
+"Leis seo is féidir roghnú cén áit a n-osclóidh preabfhuinneoga JavaScript "
+"(má tá siad ceadaithe): i gcluaisín nua nó i bhfuinneog nua."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: tabs/tabsoptions.ui:112
+#, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr "Oscail preabfh&uinneoga i gcluaisín nua, nach i bhfuinneog nua"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: tabs/tabsoptions.ui:119
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+"Nuair a chliceálann tú URL i ríomhchlár KDE eile, nó nuair a ghlaonn tú "
+"kfmclient chun URL a oscailt, cuardófar an deasc reatha ar fhuinneog "
+"Konqueror nach bhfuil íoslaghdaithe.  Má aimsítear a leithéid fhuinneoige, "
+"osclófar an URL inti, agus mura n-aimsítear, osclófar fuinneog nua Konqueror "
+"leis an URL iarrtha."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: tabs/tabsoptions.ui:122
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr "Oscail mar chluaisín i Konqueror nuair a ghlaoitear URL go seachtrach"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: tabs/tabsoptions.ui:132
+#, fuzzy, kde-format
+#| msgid "Mouse Beha&vior"
+msgid "New Tab Behavior"
+msgstr "Oibriú na &Luiche"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: tabs/tabsoptions.ui:138
+#, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr "Osclóidh sé seo cluaisín nua sa chúlra in ionad sa tulra."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: tabs/tabsoptions.ui:141
+#, kde-format
+msgid "O&pen new tabs in the background"
+msgstr "O&scail cluaisíní nua sa chúlra"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: tabs/tabsoptions.ui:148
+#, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr ""
+"Osclóidh sé seo cluaisín nua tar éis an chluaisín reatha, seachas tar éis an "
+"chluaisín deiridh."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: tabs/tabsoptions.ui:151
+#, kde-format
+msgid "Open &new tab after current tab"
+msgstr "Oscail cluaisín &nua tar éis an chluaisín reatha"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: tabs/tabsoptions.ui:161
+#, kde-format
+msgid "Closing"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: tabs/tabsoptions.ui:167
+#, kde-format
+msgid "This will display close buttons inside each tab."
+msgstr "Leis seo taispeánfar cnaipí dúnta laistigh de gach cluaisín."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: tabs/tabsoptions.ui:170
+#, kde-format
+msgid "&Show close button on tabs"
+msgstr "Tai&speáin cnaipe dúnta ar chluaisíní"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: tabs/tabsoptions.ui:177
+#, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr ""
+"Nuair a chliceálfaidh tú cluaisín le lárchnaipe na luiche nó le roth na "
+"luiche, dúnfar an cluaisín sin."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: tabs/tabsoptions.ui:180
+#, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr "Lárchliceáil cluaisín chun é a dhúnadh"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: tabs/tabsoptions.ui:187
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr ""
+"Leis an rogha seo, fiafrófar díot má tá tú cinnte gur mian leat fuinneog a "
+"dhúnadh nuair atá cluaisíní iomadúla oscailte inti."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: tabs/tabsoptions.ui:190
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr "&Fiafraigh díom agus fuinneog ina bhfuil cluaisíní iomadúla á dúnadh"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: tabs/tabsoptions.ui:197
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+"Má chuireann tú tic anseo, gníomhachtófar an cluaisín a bhí in úsáid nó "
+"oscailte roimhe seo nuair a dhúnfaidh tú an cluaisín reatha.  Gan tic anseo, "
+"gníomhachtófar an cluaisín ar an taobh deas den chluaisín reatha."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: tabs/tabsoptions.ui:200
+#, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr ""
+"Gníomhachtaigh an cluaisín roimhe seo agus an cluaisín reatha á dhúnadh"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, UserAgent)
 #: useragent/useragent.ui:14
@@ -2630,6 +2637,59 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+
+#~ msgid ""
+#~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+#~ "Konqueror should use to display the web pages you view."
+#~ msgstr ""
+#~ "<h1>Clónna Konqueror</h1>Ar an leathanach seo, is féidir leat clónna a "
+#~ "roghnú ar chóir do Konqueror iad a úsáid agus leathanaigh Ghréasáin á "
+#~ "dtaispeáint."
+
+#~ msgid ""
+#~ "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list "
+#~ "of filters that are checked against linked images and frames. URL's that "
+#~ "match are either discarded or replaced with a placeholder image. "
+#~ msgstr ""
+#~ "<h1>AdBlocK Konqueror</h1> Ceadaíonn AdBlocK Konqueror duit liosta de "
+#~ "scagairí a chruthú a chuirfear i gcomparáid le híomhánna agus frámaí "
+#~ "nasctha. Caithfear URLanna comhoiriúnacha i gcártaí, nó úsáidfear "
+#~ "ionadchoinneálaithe. "
+
+#~ msgid "Tabbed Browsing"
+#~ msgstr "Brabhsáil le Cluaisíní"
+
+#~ msgid ""
+#~ "<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+#~ "functionality. Please note that the file manager functionality has to be "
+#~ "configured using the \"File Manager\" configuration module. You can make "
+#~ "some settings how Konqueror should handle the HTML code in the web pages "
+#~ "it loads. It is usually not necessary to change anything here."
+#~ msgstr ""
+#~ "<h1>Brabhsálaí Konqueror</h1> Anseo is féidir leat feidhmiúlacht "
+#~ "bhrabhsála Konqueror a chumrú. Tabhair faoi deara go gcaithfear é a "
+#~ "chumrú mar bhainisteoir comhad tríd an modúl cumraíochta \"Bainisteoir "
+#~ "Comhad\". Is féidir athruithe a dhéanamh ar an gcaoi a láimhseálann "
+#~ "Konqueror an cód HTML sna leathanaigh a luchtaíonn sé. Go hiondúil, ní gá "
+#~ "aon rud a athrú anseo."
+
+#~ msgid ""
+#~ "<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+#~ "programs embedded in web pages should be allowed to be executed by "
+#~ "Konqueror.<h2>Java</h2>On this page, you can configure whether Java "
+#~ "applets embedded in web pages should be allowed to be executed by "
+#~ "Konqueror.<br /><br /><b>Note:</b> Active content is always a security "
+#~ "risk, which is why Konqueror allows you to specify very fine-grained from "
+#~ "which hosts you want to execute Java and/or JavaScript programs."
+#~ msgstr ""
+#~ "<h2>JavaScript</h2>Ar an leathanach seo, is féidir leat socrú an mbeidh "
+#~ "cead ag Konqueror ríomhchláir JavaScript leabaithe i leathanaigh "
+#~ "Ghréasáin a rith.<h2>Java</h2>Ar an leathanach seo, is féidir leat socrú "
+#~ "an mbeidh cead ag Konqueror feidhmchláiríní Java leabaithe i leathanaigh "
+#~ "Ghréasáin a rith.<br /><br /><b>Nóta:</b> Tá ábhar gníomhach ina phriacal "
+#~ "slándála i gcónaí agus dá bharr seo ceadaíonn Konqueror duit na "
+#~ "hóstríomhairí a nglacfaidh tú ríomhchláir Java agus JavaScript uathu a "
+#~ "shonrú i slí mhín."
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

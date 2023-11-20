@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: searchbarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2007-08-23 17:26+0300\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -20,39 +20,39 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
 "%100>=11 && n%100<=14 ? 2 : 3);\n"
 
-#: searchbar.cpp:66
+#: searchbar.cpp:67
 #, kde-format
 msgid ""
 "Search Bar<p>Enter a search term. Click on the icon to change search mode or "
 "provider.</p>"
 msgstr ""
 
-#: searchbar.cpp:71
+#: searchbar.cpp:72
 #, kde-format
 msgid "Search Bar"
 msgstr "Панель пошуку"
 
-#: searchbar.cpp:76
+#: searchbar.cpp:77
 #, kde-format
 msgid "Focus Searchbar"
 msgstr ""
 
-#: searchbar.cpp:268
+#: searchbar.cpp:278
 #, kde-format
 msgid "Find in Page..."
 msgstr ""
 
-#: searchbar.cpp:288
+#: searchbar.cpp:298
 #, kde-format
 msgid "Find in This Page"
 msgstr ""
 
-#: searchbar.cpp:300
+#: searchbar.cpp:310
 #, kde-format
 msgid "Select Search Engines..."
 msgstr ""
 
-#: searchbar.cpp:319
+#: searchbar.cpp:329
 #, kde-format
 msgid "Add %1..."
 msgstr ""

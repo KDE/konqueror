@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2007-06-23 20:25+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -17,26 +17,17 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: LocFactoryEditor 1.6.4a2\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
-"file manager here."
-msgstr ""
-"<h1>Ứng xử Konqueror</h1>Ở đây bạn có thể cấu hình khả năng quản lí tệp của "
-"trình duyệt Mạng Konqueror."
-
-#: behaviour.cpp:40
+#: behaviour.cpp:38
 #, kde-format
 msgid "Misc Options"
 msgstr "Tuỳ chọn lặt vặt"
 
-#: behaviour.cpp:49
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "Mở thư mục trong cửa sổ riêng"
 
-#: behaviour.cpp:50
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -46,13 +37,13 @@ msgstr ""
 "mở thư mục nào, thay vào hiển thị nội dung của thư mục đó trong cửa sổ hiện "
 "thời."
 
-#: behaviour.cpp:73
+#: behaviour.cpp:71
 #, fuzzy, kde-format
 #| msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "Hiện mục trình đơn ngữ cảnh « Xoá bỏ » mà đi qua Sọt Rác"
 
-#: behaviour.cpp:77
+#: behaviour.cpp:75
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if you want 'Delete' menu commands to be displayed on the "
@@ -67,3 +58,10 @@ msgstr ""
 "trên màn hình nền và trong các trình đơn ngữ cảnh của bộ quản lí tệp. Bạn "
 "cũng có khả năng xoá bỏ tệp bằng cách bấm giữ phím Shift trong khi chọn lệnh "
 "« Chuyển vào Sọt Rác »."
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>Ứng xử Konqueror</h1>Ở đây bạn có thể cấu hình khả năng quản lí tệp "
+#~ "của trình duyệt Mạng Konqueror."

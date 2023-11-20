@@ -1,0 +1,82 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Jure Repinc <jlp@holodeck1.com>, 2009.
+# Andrej Mernik <andrejm@ubuntu.si>, 2013.
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_bookmarks\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"PO-Revision-Date: 2020-11-05 08:36+0100\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.08.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+
+#: kio_bookmarks.cpp:85
+#, kde-format
+msgid "Root"
+msgstr "Vrh"
+
+#: kio_bookmarks.cpp:118
+#, kde-format
+msgid "Places"
+msgstr "Mesta"
+
+#: kio_bookmarks.cpp:194
+#, kde-format
+msgid "Could not find bookmarks config"
+msgstr "Nastavitve zaznamkov ni bilo mogoče najti"
+
+#: kio_bookmarks.cpp:204
+#, kde-format
+msgid "Could not find bookmarks editor"
+msgstr "Urejevalnika zaznamkov ni bilo mogoče najti"
+
+#: kio_bookmarks.cpp:210
+#, kde-format
+msgid "Wrong request: %1"
+msgstr "Napačna zahteva: %1"
+
+#: kio_bookmarks_html.cpp:85
+#, kde-format
+msgid "There are no bookmarks to display yet."
+msgstr "Za prikaz ni na voljo nobenega zaznamka."
+
+#: kio_bookmarks_html.cpp:124
+#, kde-format
+msgid ""
+"kio_bookmarks CSS file not found. Output will look ugly.\n"
+"Check your installation."
+msgstr ""
+"Ni bilo mogoče najti datoteke CSS kio_bookmarks. Izpis bo grd.\n"
+"Preverite namestitev."
+
+#: kio_bookmarks_html.cpp:133
+#, kde-format
+msgid "My Bookmarks"
+msgstr "Moji zaznamki"
+
+#~ msgid "My bookmarks"
+#~ msgstr "Moji zaznamki"
+
+#~ msgid "Xavier Vello"
+#~ msgstr "Xavier Vello"
+
+#~ msgid "Initial developer"
+#~ msgstr "Prvotni razvijalec"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Jure Repinc"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "jlp@holodeck1.com"

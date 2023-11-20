@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2019-09-29 12:27+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -19,36 +19,15 @@ msgstr ""
 "X-Generator: Lokalize 19.04.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>KDE Амалкарда</h1> Шумо метавонед танзимоти марбут ба амалкардаи KDEдар "
-"ин ҷо танзим намоед."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr ""
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Амалкардаи Konqueror</h1> Шумо метавонед таъдоди аз танзимоте ки "
-"амалкардаи Konqueror-ро беҳбуд мебахшанд, дар ин ҷо танзим намоед. Ин "
-"танзимот шомили интихоботҳои барои истифодаи дубора аз намунаҳои дар ҳоли "
-"иҷро ва барои пешроҳандозии баъзе намунаҳо мебошанд."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -127,6 +106,23 @@ msgid ""
 "This option may in rare cases lead to various problems. Consult the What's "
 "This (Shift+F1) help for details."
 msgstr ""
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDE Амалкарда</h1> Шумо метавонед танзимоти марбут ба амалкардаи "
+#~ "KDEдар ин ҷо танзим намоед."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Амалкардаи Konqueror</h1> Шумо метавонед таъдоди аз танзимоте ки "
+#~ "амалкардаи Konqueror-ро беҳбуд мебахшанд, дар ин ҷо танзим намоед. Ин "
+#~ "танзимот шомили интихоботҳои барои истифодаи дубора аз намунаҳои дар ҳоли "
+#~ "иҷро ва барои пешроҳандозии баъзе намунаҳо мебошанд."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

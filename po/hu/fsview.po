@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2011-04-14 22:07+0200\n"
 "Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -72,12 +72,12 @@ msgstr "MIME-típus"
 msgid "Go To"
 msgstr "Ugrás"
 
-#: fsview.cpp:284 fsview_part.cpp:107
+#: fsview.cpp:284 fsview_part.cpp:119
 #, kde-format
 msgid "Stop at Depth"
 msgstr "Megállási mélység"
 
-#: fsview.cpp:285 fsview_part.cpp:104
+#: fsview.cpp:285 fsview_part.cpp:116
 #, kde-format
 msgid "Stop at Area"
 msgstr "Eddig a területig"
@@ -107,12 +107,12 @@ msgstr "Frissítés"
 msgid "Refresh '%1'"
 msgstr "„%1” frissítése"
 
-#: fsview.cpp:313 fsview_part.cpp:114
+#: fsview.cpp:313 fsview_part.cpp:126
 #, kde-format
 msgid "Color Mode"
 msgstr "Színezési mód"
 
-#: fsview.cpp:316 fsview_part.cpp:110
+#: fsview.cpp:316 fsview_part.cpp:122
 #, kde-format
 msgid "Visualization"
 msgstr "Vizualizáció"
@@ -141,7 +141,7 @@ msgid_plural "%1 folders"
 msgstr[0] "1 könyvtár"
 msgstr[1] "%1 könyvtár"
 
-#: fsview_part.cpp:88
+#: fsview_part.cpp:100
 #, kde-format
 msgid ""
 "<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
@@ -157,46 +157,46 @@ msgstr ""
 "rendelkezésre álló opciók leírása a Segítség menü „FSView kézikönyv” "
 "menüpontjából érhető el.</p>"
 
-#: fsview_part.cpp:120
+#: fsview_part.cpp:132
 #, kde-format
 msgid "&FSView Manual"
 msgstr "FSVi&ew kézikönyv"
 
-#: fsview_part.cpp:122
+#: fsview_part.cpp:134
 #, kde-format
 msgid "Show FSView manual"
 msgstr "Az FSView kézikönyv megnyitása"
 
-#: fsview_part.cpp:123
+#: fsview_part.cpp:135
 #, kde-format
 msgid "Opens the help browser with the FSView documentation"
 msgstr "Megnyitja az FSView dokumentációját"
 
-#: fsview_part.cpp:155
+#: fsview_part.cpp:167
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Move to Trash"
 msgstr "Áthelyezés a kukába"
 
-#: fsview_part.cpp:162
+#: fsview_part.cpp:174
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Delete"
 msgstr "Törlés"
 
-#: fsview_part.cpp:167
+#: fsview_part.cpp:179
 #, kde-format
 msgctxt "@action:inmenu Edit"
 msgid "&Edit File Type..."
 msgstr "Fájltípus s&zerkesztése…"
 
-#: fsview_part.cpp:171
+#: fsview_part.cpp:183
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Properties"
 msgstr "Tulajdonságok"
 
-#: fsview_part.cpp:204
+#: fsview_part.cpp:216
 #, kde-format
 msgid ""
 "FSView intentionally does not support automatic updates when changes are "

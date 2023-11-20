@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2009-12-19 18:43+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -16,26 +16,17 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
-"file manager here."
-msgstr ""
-"<h1>Konqueror-hâlden</h1> Hjir kinne jo ynstelle hoe't Konqueror him as "
-"triembehearder hâld."
-
-#: behaviour.cpp:40
+#: behaviour.cpp:38
 #, kde-format
 msgid "Misc Options"
 msgstr "Ferskate opsjes"
 
-#: behaviour.cpp:49
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "Mappen iepenje yn ôfskiede &finsters"
 
-#: behaviour.cpp:50
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -45,14 +36,14 @@ msgstr ""
 "jo in map iepenje, oars soe er de ynhâld fan dizze map sjen litte yn it "
 "altive finster."
 
-#: behaviour.cpp:73
+#: behaviour.cpp:71
 #, fuzzy, kde-format
 #| msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr ""
 "De me&nuopsje 'Wiskje', dy't it jiskefet omsyld, sjen litte yn ferbânmenu's"
 
-#: behaviour.cpp:77
+#: behaviour.cpp:75
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if you want 'Delete' menu commands to be displayed on the "
@@ -67,6 +58,13 @@ msgstr ""
 "yn de ferbânmenu's fan de triembehearder en it buroblêd. Jo kinne triemmen "
 "altyd permanint wiskje troch de fluchtoets 'Shift' yndrukt te hâlden wylst "
 "se nei it jiskefet te ferpleatse."
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>Konqueror-hâlden</h1> Hjir kinne jo ynstelle hoe't Konqueror him as "
+#~ "triembehearder hâld."
 
 #, fuzzy
 #~| msgid "Menu Editor"

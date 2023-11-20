@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2016-10-28 12:30+0800\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
@@ -32,74 +32,74 @@ msgstr "工具(&T)"
 msgid "Extra Toolbar"
 msgstr "額外工具列"
 
-#: settingsplugin.cpp:42
+#: settingsplugin.cpp:43
 #, kde-format
 msgid "HTML Settings"
 msgstr "HTML 設定"
 
-#: settingsplugin.cpp:47
+#: settingsplugin.cpp:48
 #, kde-format
 msgid "Java&Script"
 msgstr "JavaScript (&S)"
 
-#: settingsplugin.cpp:52
+#: settingsplugin.cpp:53
 #, kde-format
 msgid "&Java"
 msgstr "Java(&J)"
 
-#: settingsplugin.cpp:57
+#: settingsplugin.cpp:58
 #, kde-format
 msgid "&Cookies"
 msgstr "Cookie(&C)"
 
-#: settingsplugin.cpp:62
+#: settingsplugin.cpp:63
 #, kde-format
 msgid "&Plugins"
 msgstr "外掛程式(&P)"
 
-#: settingsplugin.cpp:67
+#: settingsplugin.cpp:68
 #, kde-format
 msgid "Autoload &Images"
 msgstr "自動載入圖案(&I)"
 
-#: settingsplugin.cpp:74
+#: settingsplugin.cpp:75
 #, kde-format
 msgid "Enable Pro&xy"
 msgstr "開啟代理伺服器(&X)"
 
-#: settingsplugin.cpp:79
+#: settingsplugin.cpp:80
 #, kde-format
 msgid "Enable Cac&he"
 msgstr "開啟快取(&H)"
 
-#: settingsplugin.cpp:84
+#: settingsplugin.cpp:85
 #, kde-format
 msgid "Cache Po&licy"
 msgstr "快取政策(&L)"
 
-#: settingsplugin.cpp:86
+#: settingsplugin.cpp:87
 #, kde-format
 msgid "&Keep Cache in Sync"
 msgstr "同步時保留快取(&K)"
 
-#: settingsplugin.cpp:87
+#: settingsplugin.cpp:88
 #, kde-format
 msgid "&Use Cache if Possible"
 msgstr "可能的話使用快取(&U)"
 
-#: settingsplugin.cpp:88
+#: settingsplugin.cpp:89
 #, kde-format
 msgid "&Offline Browsing Mode"
 msgstr "離線瀏覽模式(&O)"
 
-#: settingsplugin.cpp:181
+#: settingsplugin.cpp:193
 #, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
 "be contacted."
 msgstr "因為無法連上 cookie 守護程式，所以 cookie 設定無法變更。"
 
-#: settingsplugin.cpp:183
+#: settingsplugin.cpp:195
 #, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"

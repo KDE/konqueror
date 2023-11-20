@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kshellcmdplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-05-20 02:40+0200\n"
+"POT-Creation-Date: 2023-11-05 12:32+0000\n"
 "PO-Revision-Date: 2011-06-29 00:52+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -23,17 +23,23 @@ msgstr ""
 "X-Associated-UI-Catalogs: libkonq kio4 kdelibs4\n"
 "X-Environment: kde\n"
 
-#: kshellcmdexecutor.cpp:119
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Alatke"
+
+#: kshellcmdexecutor.cpp:106
 #, kde-format
 msgid "Input Required:"
 msgstr "Potreban unos:"
 
-#: kshellcmdplugin.cpp:43
+#: kshellcmdplugin.cpp:32
 #, kde-format
 msgid "&Execute Shell Command..."
 msgstr "&Izvrši naredbu školjke..."
 
-#: kshellcmdplugin.cpp:52
+#: kshellcmdplugin.cpp:41
 #, kde-format
 msgid ""
 "KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
@@ -41,29 +47,23 @@ msgstr ""
 "KShellCmdPlugin::slotExecuteShellCommand: greška u programu, prijavite "
 "defekt."
 
-#: kshellcmdplugin.cpp:58
+#: kshellcmdplugin.cpp:51
 #, kde-format
 msgid "Executing shell commands works only on local directories."
 msgstr "Izvršavanje naredbi školjke radi važi samo za lokalne fascikle."
 
-#: kshellcmdplugin.cpp:79
+#: kshellcmdplugin.cpp:73
 #, kde-format
 msgctxt "@title:window"
 msgid "Execute Shell Command"
 msgstr "Izvršavanje naredbe školjke"
 
-#: kshellcmdplugin.cpp:80
+#: kshellcmdplugin.cpp:74
 #, kde-format
 msgid "Execute shell command in current directory:"
 msgstr "Izvrši naredbu školjke u tekućoj fascikli:"
 
-#: kshellcmdplugin.cpp:89
+#: kshellcmdplugin.cpp:85
 #, kde-format
 msgid "Output from command: \"%1\""
 msgstr "Izlaz naredbe: „%1“"
-
-#. i18n: ectx: Menu (tools)
-#: kshellcmdplugin.rc:4
-#, kde-format
-msgid "&Tools"
-msgstr "&Alatke"

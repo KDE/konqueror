@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fsview\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2009-11-01 18:26+0000\n"
 "Last-Translator: Andrew Coles <andrew_coles@yahoo.co.uk>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -73,12 +73,12 @@ msgstr "Mime Type"
 msgid "Go To"
 msgstr "Go To"
 
-#: fsview.cpp:284 fsview_part.cpp:107
+#: fsview.cpp:284 fsview_part.cpp:119
 #, kde-format
 msgid "Stop at Depth"
 msgstr "Stop at Depth"
 
-#: fsview.cpp:285 fsview_part.cpp:104
+#: fsview.cpp:285 fsview_part.cpp:116
 #, kde-format
 msgid "Stop at Area"
 msgstr "Stop at Area"
@@ -108,12 +108,12 @@ msgstr "Refresh"
 msgid "Refresh '%1'"
 msgstr "Refresh '%1'"
 
-#: fsview.cpp:313 fsview_part.cpp:114
+#: fsview.cpp:313 fsview_part.cpp:126
 #, kde-format
 msgid "Color Mode"
 msgstr "Colour Mode"
 
-#: fsview.cpp:316 fsview_part.cpp:110
+#: fsview.cpp:316 fsview_part.cpp:122
 #, kde-format
 msgid "Visualization"
 msgstr "Visualisation"
@@ -142,7 +142,7 @@ msgid_plural "%1 folders"
 msgstr[0] "1 folder"
 msgstr[1] "%1 folders"
 
-#: fsview_part.cpp:88
+#: fsview_part.cpp:100
 #, kde-format
 msgid ""
 "<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
@@ -157,46 +157,46 @@ msgstr ""
 "b> done.</p><p>For details on usage and options available, see the online "
 "help under menu 'Help/FSView Manual'.</p>"
 
-#: fsview_part.cpp:120
+#: fsview_part.cpp:132
 #, kde-format
 msgid "&FSView Manual"
 msgstr "&FSView Manual"
 
-#: fsview_part.cpp:122
+#: fsview_part.cpp:134
 #, kde-format
 msgid "Show FSView manual"
 msgstr "Show FSView manual"
 
-#: fsview_part.cpp:123
+#: fsview_part.cpp:135
 #, kde-format
 msgid "Opens the help browser with the FSView documentation"
 msgstr "Opens the help browser with the FSView documentation"
 
-#: fsview_part.cpp:155
+#: fsview_part.cpp:167
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Move to Trash"
 msgstr "Move to Wastebin"
 
-#: fsview_part.cpp:162
+#: fsview_part.cpp:174
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Delete"
 msgstr "Delete"
 
-#: fsview_part.cpp:167
+#: fsview_part.cpp:179
 #, kde-format
 msgctxt "@action:inmenu Edit"
 msgid "&Edit File Type..."
 msgstr "&Edit File Type..."
 
-#: fsview_part.cpp:171
+#: fsview_part.cpp:183
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Properties"
 msgstr "Properties"
 
-#: fsview_part.cpp:204
+#: fsview_part.cpp:216
 #, kde-format
 msgid ""
 "FSView intentionally does not support automatic updates when changes are "

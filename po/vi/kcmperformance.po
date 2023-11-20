@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2007-06-24 14:08+0930\n"
 "Last-Translator: Phan Vĩnh Thịnh <teppi82@gmail.com>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -17,35 +17,15 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: KBabel 1.10\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>Hiệu suất của KDE</h1> Bạn có thể cấu hình những thiết lập làm tăng hiệu "
-"suất làm việc của KDE ở đây."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Hệ thống"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Hiệu suất Konqueror</h1> Bạn có thể cấu hình những thiết lập làm tăng "
-"hiệu suất làm việc của KDE ở đây. Chúng bao gồm những tuỳ chọn để dùng lại "
-"những tiến trình Konqueror đang chạy và giữ chúng nạp trước."
 
 #: konqueror.cpp:24
 #, fuzzy, kde-format
@@ -157,3 +137,19 @@ msgid ""
 msgstr ""
 "Tuỳ chọn này trong một số hiếm trường hợp có thể gây ra vấn đề. Xem trợ giúp "
 "« Cái này là gì? » (Shift+F1) để biết chi tiết."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>Hiệu suất của KDE</h1> Bạn có thể cấu hình những thiết lập làm tăng "
+#~ "hiệu suất làm việc của KDE ở đây."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Hiệu suất Konqueror</h1> Bạn có thể cấu hình những thiết lập làm tăng "
+#~ "hiệu suất làm việc của KDE ở đây. Chúng bao gồm những tuỳ chọn để dùng "
+#~ "lại những tiến trình Konqueror đang chạy và giữ chúng nạp trước."

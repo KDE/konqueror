@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2012-05-17 22:13+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -21,17 +21,6 @@ msgstr ""
 "X-Generator: Lokalize 1.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
-
-#: bookmarks.cpp:92
-#, kde-format
-msgid ""
-"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
-msgstr ""
-"<h1>ਮੇਰੇ ਬੁੱਕਮਾਰਕ</h1><p>ਇਹ ਮੋਡੀਊਲ ਤੁਹਾਨੂੰ ਮੁੱਖ ਸਫ਼ੇ ਲਈ ਬੁੱਕਮਾਰਕ ਦੀ ਸੰਰਚਨਾ ਕਰਨ ਲਈ ਹੈ।</p> "
-"<p>ਬੁੱਕਮਾਰਕ ਮੁੱਖ ਸਫ਼ੇ ਨੂੰ <a href=\"bookmarks:/\">bookmarks:/</a> ਰਾਹੀਂ ਵਰਤਿਆ ਜਾ ਸਕਦਾ "
-"ਹੈ।</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -152,6 +141,15 @@ msgstr "ਪਿਕਸਮੈਪ ਕੈਸ਼ ਸਾਫ਼ ਕਰੋ"
 #, kde-format
 msgid "&Clear Cache"
 msgstr "ਕੈਸ਼ ਸਾਫ ਕਰੋ(&l)"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "<h1>ਮੇਰੇ ਬੁੱਕਮਾਰਕ</h1><p>ਇਹ ਮੋਡੀਊਲ ਤੁਹਾਨੂੰ ਮੁੱਖ ਸਫ਼ੇ ਲਈ ਬੁੱਕਮਾਰਕ ਦੀ ਸੰਰਚਨਾ ਕਰਨ ਲਈ ਹੈ।</p> "
+#~ "<p>ਬੁੱਕਮਾਰਕ ਮੁੱਖ ਸਫ਼ੇ ਨੂੰ <a href=\"bookmarks:/\">bookmarks:/</a> ਰਾਹੀਂ ਵਰਤਿਆ ਜਾ "
+#~ "ਸਕਦਾ ਹੈ।</p>"
 
 #~ msgid "&Use cache"
 #~ msgstr "ਕੈਸ਼ ਵਰਤੋਂ(&U)"

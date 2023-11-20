@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fsview\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2011-07-07 23:26+0300\n"
 "Last-Translator: Rūdofls Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -77,12 +77,12 @@ msgstr "Mime tips"
 msgid "Go To"
 msgstr "Iet uz"
 
-#: fsview.cpp:284 fsview_part.cpp:107
+#: fsview.cpp:284 fsview_part.cpp:119
 #, kde-format
 msgid "Stop at Depth"
 msgstr "Apstāties pie dziļuma"
 
-#: fsview.cpp:285 fsview_part.cpp:104
+#: fsview.cpp:285 fsview_part.cpp:116
 #, kde-format
 msgid "Stop at Area"
 msgstr "Apstāties pie apgabala"
@@ -112,12 +112,12 @@ msgstr "Pārlādēt"
 msgid "Refresh '%1'"
 msgstr "Pārlādēt '%1'"
 
-#: fsview.cpp:313 fsview_part.cpp:114
+#: fsview.cpp:313 fsview_part.cpp:126
 #, kde-format
 msgid "Color Mode"
 msgstr "Krāsu režīms"
 
-#: fsview.cpp:316 fsview_part.cpp:110
+#: fsview.cpp:316 fsview_part.cpp:122
 #, kde-format
 msgid "Visualization"
 msgstr "Vizualizācija"
@@ -148,7 +148,7 @@ msgstr[0] "%1 mape"
 msgstr[1] "%1 mapes"
 msgstr[2] "%1 mapju"
 
-#: fsview_part.cpp:88
+#: fsview_part.cpp:100
 #, kde-format
 msgid ""
 "<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
@@ -163,46 +163,46 @@ msgstr ""
 "izmaiņas.</p><p>Vairāk informācijas par lietošanu un pieejamajām iespējām "
 "skatiet tīmekļa palīdzību  izvēlnē 'Palīdzība/FSView rokasgrāmata'.</p>"
 
-#: fsview_part.cpp:120
+#: fsview_part.cpp:132
 #, kde-format
 msgid "&FSView Manual"
 msgstr "&FSView rokasgrāmata"
 
-#: fsview_part.cpp:122
+#: fsview_part.cpp:134
 #, kde-format
 msgid "Show FSView manual"
 msgstr "Parāda FSView rokasgrāmatu"
 
-#: fsview_part.cpp:123
+#: fsview_part.cpp:135
 #, kde-format
 msgid "Opens the help browser with the FSView documentation"
 msgstr "Atver FSView dokumentāciju palīdzības pārlūkā"
 
-#: fsview_part.cpp:155
+#: fsview_part.cpp:167
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Move to Trash"
 msgstr "Pārvietot uz miskasti"
 
-#: fsview_part.cpp:162
+#: fsview_part.cpp:174
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Delete"
 msgstr "Dzēst"
 
-#: fsview_part.cpp:167
+#: fsview_part.cpp:179
 #, kde-format
 msgctxt "@action:inmenu Edit"
 msgid "&Edit File Type..."
 msgstr "R&ediģēt failu tipu..."
 
-#: fsview_part.cpp:171
+#: fsview_part.cpp:183
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Properties"
 msgstr "Īpašības"
 
-#: fsview_part.cpp:204
+#: fsview_part.cpp:216
 #, kde-format
 msgid ""
 "FSView intentionally does not support automatic updates when changes are "

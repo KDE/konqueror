@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2016-08-03 12:23+0100\n"
 "Last-Translator: José Nuno Pires <zepires@gmail.com>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -82,17 +82,6 @@ msgstr ""
 "X-POFile-SpellExtra: FTPPROXY SOCKSPROXY PASV part org WPAD HTTPSPROXY\n"
 "X-POFile-SpellExtra: Navigator Protocol WINS firewalls favicon\n"
 "X-POFile-SpellExtra: kpasswdserver kiod SFTP bookmarks\n"
-
-#: bookmarks.cpp:92
-#, kde-format
-msgid ""
-"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
-msgstr ""
-"<h1>Os Meus Favoritos</h1><p>Este módulo permite-lhe configurar a página "
-"inicial dos favoritos.</p><p>Esta está acessível em <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -226,3 +215,12 @@ msgstr "Limpar a 'cache' das imagens"
 #, kde-format
 msgid "&Clear Cache"
 msgstr "&Limpar a 'Cache'"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "<h1>Os Meus Favoritos</h1><p>Este módulo permite-lhe configurar a página "
+#~ "inicial dos favoritos.</p><p>Esta está acessível em <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"

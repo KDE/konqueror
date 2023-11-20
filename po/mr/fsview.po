@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -72,12 +72,12 @@ msgstr "माइम प्रकार"
 msgid "Go To"
 msgstr "येथे जा"
 
-#: fsview.cpp:284 fsview_part.cpp:107
+#: fsview.cpp:284 fsview_part.cpp:119
 #, kde-format
 msgid "Stop at Depth"
 msgstr ""
 
-#: fsview.cpp:285 fsview_part.cpp:104
+#: fsview.cpp:285 fsview_part.cpp:116
 #, kde-format
 msgid "Stop at Area"
 msgstr ""
@@ -107,12 +107,12 @@ msgstr "ताजे करा"
 msgid "Refresh '%1'"
 msgstr "ताजे करा '%1'"
 
-#: fsview.cpp:313 fsview_part.cpp:114
+#: fsview.cpp:313 fsview_part.cpp:126
 #, kde-format
 msgid "Color Mode"
 msgstr "रंग पद्धत"
 
-#: fsview.cpp:316 fsview_part.cpp:110
+#: fsview.cpp:316 fsview_part.cpp:122
 #, kde-format
 msgid "Visualization"
 msgstr ""
@@ -141,7 +141,7 @@ msgid_plural "%1 folders"
 msgstr[0] "%1 संचयीका"
 msgstr[1] "%1 संचयीका"
 
-#: fsview_part.cpp:88
+#: fsview_part.cpp:100
 #, kde-format
 msgid ""
 "<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
@@ -151,46 +151,46 @@ msgid ""
 "help under menu 'Help/FSView Manual'.</p>"
 msgstr ""
 
-#: fsview_part.cpp:120
+#: fsview_part.cpp:132
 #, kde-format
 msgid "&FSView Manual"
 msgstr "एफएस-व्यू पुस्तिका (&F)"
 
-#: fsview_part.cpp:122
+#: fsview_part.cpp:134
 #, kde-format
 msgid "Show FSView manual"
 msgstr "एफएस-व्यू पुस्तिका दर्शवा"
 
-#: fsview_part.cpp:123
+#: fsview_part.cpp:135
 #, kde-format
 msgid "Opens the help browser with the FSView documentation"
 msgstr ""
 
-#: fsview_part.cpp:155
+#: fsview_part.cpp:167
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Move to Trash"
 msgstr "कचरापेटीत टाका"
 
-#: fsview_part.cpp:162
+#: fsview_part.cpp:174
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Delete"
 msgstr "काढून टाका"
 
-#: fsview_part.cpp:167
+#: fsview_part.cpp:179
 #, kde-format
 msgctxt "@action:inmenu Edit"
 msgid "&Edit File Type..."
 msgstr "फाईल प्रकार संपादित करा (&E)..."
 
-#: fsview_part.cpp:171
+#: fsview_part.cpp:183
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Properties"
 msgstr "गुणधर्म"
 
-#: fsview_part.cpp:204
+#: fsview_part.cpp:216
 #, kde-format
 msgid ""
 "FSView intentionally does not support automatic updates when changes are "

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmbookmarks\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2017-05-16 06:36-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -27,16 +27,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-
-#: bookmarks.cpp:92
-#, kde-format
-msgid ""
-"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
-msgstr ""
-"‏<h1>הסימניות שלי</h1><p>במודל זה ניתן להגדיר את סימניות דף הבית.</p><p>ניתן "
-"לגשת לסימניות אתר הבית ב-<a href=\"bookmarks:/\">סימניות:/</a>.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -167,3 +157,12 @@ msgstr "נקה את מטמון מפת הפיקסלים"
 #, kde-format
 msgid "&Clear Cache"
 msgstr "&נקה מטמון"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "‏<h1>הסימניות שלי</h1><p>במודל זה ניתן להגדיר את סימניות דף הבית.</"
+#~ "p><p>ניתן לגשת לסימניות אתר הבית ב-<a href=\"bookmarks:/\">סימניות:/</a>."
+#~ "</p>"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kget\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-04-24 03:34+0200\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2011-01-15 13:08+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -24,48 +24,44 @@ msgstr ""
 "X-Associated-UI-Catalogs: kdelibs4\n"
 "X-Environment: kde, kget\n"
 
-#: kget_plug_in.cpp:55
+#: kget_plugin.cpp:57
 #, kde-format
 msgid "Download Manager"
 msgstr "Менаџер преузимања"
 
-#: kget_plug_in.cpp:61
+#: kget_plugin.cpp:63
 #, kde-format
 msgid "Show Drop Target"
 msgstr "Прикажи место за спуштање"
 
-#: kget_plug_in.cpp:68
+#: kget_plugin.cpp:70
 #, kde-format
 msgid "List All Links"
 msgstr "Испиши све везе"
 
-#: kget_plug_in.cpp:73
+#: kget_plugin.cpp:75
 #, kde-format
 msgid "List Selected Links"
 msgstr "Испиши изабране везе"
 
-#: kget_plug_in.cpp:173
+#: kget_plugin.cpp:224
 #, kde-format
 msgid "No downloadable links were found."
 msgstr "Није нађена ниједна преузимљива веза."
 
-#: kget_plug_in.cpp:174
+#: kget_plugin.cpp:224
 #, kde-format
 msgid "No Links"
 msgstr "Нема веза"
 
-#: kget_plug_in.cpp:184
-#, kde-format
-msgid "Unable to communicate with the KGet download manager."
-msgstr "Не могу да дозовем менаџер преузимања К‑гет."
-
-#: kget_plug_in.cpp:185
-#, kde-format
-msgid "Communication Error"
-msgstr "Грешка у комуникацији"
-
 #. i18n: ectx: Menu (tools)
-#: kget_plug_in.rc:4
+#: konqueror_kget_browser_integration.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "&Алатке"
+
+#~ msgid "Unable to communicate with the KGet download manager."
+#~ msgstr "Не могу да дозовем менаџер преузимања К‑гет."
+
+#~ msgid "Communication Error"
+#~ msgstr "Грешка у комуникацији"

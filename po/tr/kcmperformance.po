@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-06-04 02:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -21,34 +21,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 23.07.70\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>KDE Başarımı</h1> Bu bölümden KDE'nin başarımını ayarlayabilirsiniz."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Sistem"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Konqueror Başarımı</h1> Konqueror'un başarımına illişkin pek çok ayarı "
-"buradan yapabilirsiniz. Buna çalışan programları yeniden kullanma ve yeniden "
-"yüklenmesini engelleme de dahildir."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -149,6 +130,21 @@ msgid ""
 msgstr ""
 "Bu seçenek, nadir durumlarda çeşitli problemlere yol açabilir. Detaylar için "
 "Bu Nedir (Üst Karakter+F1) kullanın."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDE Başarımı</h1> Bu bölümden KDE'nin başarımını ayarlayabilirsiniz."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Konqueror Başarımı</h1> Konqueror'un başarımına illişkin pek çok "
+#~ "ayarı buradan yapabilirsiniz. Buna çalışan programları yeniden kullanma "
+#~ "ve yeniden yüklenmesini engelleme de dahildir."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

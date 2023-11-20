@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-06-10 09:59+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -19,35 +19,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>KDE-rendimento</h1> Ĉi tie vi povas ĝustigi agordojn kiuj plibonigos KDE-"
-"rendimenton."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konkeranto"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Sistemo"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Konkeranta rendimento</h1> Ĉi tie vi povas ĝustigi agordojn kiuj "
-"plibonigos Konkerantan rendimenton. La opcioj inkluzivas la reuzon de jam "
-"ruliĝantaj okazoj kaj la antaŭŝargon de okazoj."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -146,3 +126,19 @@ msgid ""
 msgstr ""
 "Malofte ĉi tiu opcio kaŭzas diversajn problemojn. Vidu la 'Kio estas tio?' "
 "helpon (Majuskla+F1) por detaloj."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDE-rendimento</h1> Ĉi tie vi povas ĝustigi agordojn kiuj plibonigos "
+#~ "KDE-rendimenton."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Konkeranta rendimento</h1> Ĉi tie vi povas ĝustigi agordojn kiuj "
+#~ "plibonigos Konkerantan rendimenton. La opcioj inkluzivas la reuzon de jam "
+#~ "ruliĝantaj okazoj kaj la antaŭŝargon de okazoj."

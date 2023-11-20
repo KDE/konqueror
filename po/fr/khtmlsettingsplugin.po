@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2017-01-04 09:13+0100\n"
 "Last-Translator: Vincent Pinon <vpinon@kde.org>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -40,67 +40,67 @@ msgstr "Ou&tils"
 msgid "Extra Toolbar"
 msgstr "Barre d'outils supplémentaires"
 
-#: settingsplugin.cpp:42
+#: settingsplugin.cpp:43
 #, kde-format
 msgid "HTML Settings"
 msgstr "Configuration HTML"
 
-#: settingsplugin.cpp:47
+#: settingsplugin.cpp:48
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"
 
-#: settingsplugin.cpp:52
+#: settingsplugin.cpp:53
 #, kde-format
 msgid "&Java"
 msgstr "&Java"
 
-#: settingsplugin.cpp:57
+#: settingsplugin.cpp:58
 #, kde-format
 msgid "&Cookies"
 msgstr "&Cookies"
 
-#: settingsplugin.cpp:62
+#: settingsplugin.cpp:63
 #, kde-format
 msgid "&Plugins"
 msgstr "&Modules externes"
 
-#: settingsplugin.cpp:67
+#: settingsplugin.cpp:68
 #, kde-format
 msgid "Autoload &Images"
 msgstr "Chargement automatique des &images"
 
-#: settingsplugin.cpp:74
+#: settingsplugin.cpp:75
 #, kde-format
 msgid "Enable Pro&xy"
 msgstr "Activer les serveurs mandataires (pro&xy)"
 
-#: settingsplugin.cpp:79
+#: settingsplugin.cpp:80
 #, kde-format
 msgid "Enable Cac&he"
 msgstr "Activer le cac&he"
 
-#: settingsplugin.cpp:84
+#: settingsplugin.cpp:85
 #, kde-format
 msgid "Cache Po&licy"
 msgstr "&Gestion du cache"
 
-#: settingsplugin.cpp:86
+#: settingsplugin.cpp:87
 #, kde-format
 msgid "&Keep Cache in Sync"
 msgstr "Assurer la s&ynchronisation du cache"
 
-#: settingsplugin.cpp:87
+#: settingsplugin.cpp:88
 #, kde-format
 msgid "&Use Cache if Possible"
 msgstr "&Utiliser le cache si possible"
 
-#: settingsplugin.cpp:88
+#: settingsplugin.cpp:89
 #, kde-format
 msgid "&Offline Browsing Mode"
 msgstr "Navigation h&ors-ligne"
 
-#: settingsplugin.cpp:181
+#: settingsplugin.cpp:193
 #, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
@@ -109,7 +109,7 @@ msgstr ""
 "Impossible de modifier le paramètre de cookie, car il est impossible de "
 "contacter le démon associé."
 
-#: settingsplugin.cpp:183
+#: settingsplugin.cpp:195
 #, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"

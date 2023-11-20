@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2016-04-24 21:21+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -21,17 +21,6 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-
-#: bookmarks.cpp:92
-#, kde-format
-msgid ""
-"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
-msgstr ""
-"<h1>Mine bokmerke</h1><p>Med denne modulen kan du setja opp heimesida for "
-"bokmerke.</p><p>Bokmerkesida finn du ved å skriva <a href=\"bookmarks:/"
-"\">bookmarks:/</a> i adressefeltet.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -164,3 +153,12 @@ msgstr "Tøm punktbiletlageret"
 #, kde-format
 msgid "&Clear Cache"
 msgstr "&Tøm mellomlageret"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "<h1>Mine bokmerke</h1><p>Med denne modulen kan du setja opp heimesida for "
+#~ "bokmerke.</p><p>Bokmerkesida finn du ved å skriva <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a> i adressefeltet.</p>"

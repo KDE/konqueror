@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2007-09-02 15:02+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -19,35 +19,15 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>کارایی KDE</h1> شما می‌توانید تنظیماتی که کارایی KDE را بهبود می‌بخشد، در "
-"اینجا پیکربندی کنید."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "سیستم"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>کارایی Konqueror</h1> می‌توانید برخی تنظیماتی که کارایی Konqueror را "
-"بهبود می‌بخشد، در اینجا تنظیم کنید. شامل گزینه‌هایی برای استفاده مجدد نمونه‌های "
-"در حال اجرا و نگهداری نمونه‌های بارگذاری‌شده قبلی است."
 
 #: konqueror.cpp:24
 #, fuzzy, kde-format
@@ -161,6 +141,22 @@ msgid ""
 msgstr ""
 "این گزینه ممکن است در موارد نادری منجر به مسائل گوناگونی شود. برای جزئیات به "
 "کمک این چیست؟ )کلید تبدیل+F1( مراجعه شود."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>کارایی KDE</h1> شما می‌توانید تنظیماتی که کارایی KDE را بهبود می‌بخشد، "
+#~ "در اینجا پیکربندی کنید."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>کارایی Konqueror</h1> می‌توانید برخی تنظیماتی که کارایی Konqueror را "
+#~ "بهبود می‌بخشد، در اینجا تنظیم کنید. شامل گزینه‌هایی برای استفاده مجدد "
+#~ "نمونه‌های در حال اجرا و نگهداری نمونه‌های بارگذاری‌شده قبلی است."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

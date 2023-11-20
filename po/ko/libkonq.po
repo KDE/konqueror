@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-08-06 21:55+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -18,61 +18,61 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: src/browseropenorsavequestion.cpp:89
+#: src/browseropenorsavequestion.cpp:88
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
 msgstr "형식: %1"
 
-#: src/browseropenorsavequestion.cpp:97
+#: src/browseropenorsavequestion.cpp:96
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr "이 파일 형식과 연결된 동작 기억하기"
 
-#: src/browseropenorsavequestion.cpp:149 src/browseropenorsavequestion.cpp:237
+#: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
 msgstr "%1(으)로 열기(&O)"
 
-#: src/browseropenorsavequestion.cpp:213
+#: src/browseropenorsavequestion.cpp:212
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "%1(으)로 열기(&W)"
 
-#: src/browseropenorsavequestion.cpp:224 src/browseropenorsavequestion.cpp:318
+#: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
 msgstr "'%1'을(를) 여시겠습니까?"
 
-#: src/browseropenorsavequestion.cpp:228
+#: src/browseropenorsavequestion.cpp:227
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "다음으로 열기(&O)..."
 
-#: src/browseropenorsavequestion.cpp:246
+#: src/browseropenorsavequestion.cpp:245
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "다음으로 열기(&O)"
 
-#: src/browseropenorsavequestion.cpp:315
+#: src/browseropenorsavequestion.cpp:314
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "열기(&O)"
 
-#: src/browseropenorsavequestion.cpp:339
+#: src/browseropenorsavequestion.cpp:338
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr "이름: %1"
 
-#: src/browseropenorsavequestion.cpp:341
+#: src/browseropenorsavequestion.cpp:340
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
@@ -86,77 +86,77 @@ msgstr "수락"
 msgid "Reject"
 msgstr "거부"
 
-#: src/konq_popupmenu.cpp:220
+#: src/konq_popupmenu.cpp:219
 #, kde-format
 msgid "&Open"
 msgstr "열기(&O)"
 
-#: src/konq_popupmenu.cpp:243
+#: src/konq_popupmenu.cpp:242
 #, kde-format
 msgid "Create &Folder..."
 msgstr "새 폴더 만들기(&F)..."
 
-#: src/konq_popupmenu.cpp:254
+#: src/konq_popupmenu.cpp:253
 #, kde-format
 msgid "&Restore"
 msgstr "복원(&R)"
 
-#: src/konq_popupmenu.cpp:266
+#: src/konq_popupmenu.cpp:265
 #, kde-format
 msgid "Show Original Directory"
 msgstr "원본 디렉터리 표시"
 
-#: src/konq_popupmenu.cpp:266
+#: src/konq_popupmenu.cpp:265
 #, kde-format
 msgid "Show Original File"
 msgstr "원본 파일 표시"
 
-#: src/konq_popupmenu.cpp:301
+#: src/konq_popupmenu.cpp:300
 #, kde-format
 msgid "&Empty Trash Bin"
 msgstr "휴지통 비우기(&E)"
 
-#: src/konq_popupmenu.cpp:313
+#: src/konq_popupmenu.cpp:312
 #, kde-format
 msgid "&Configure Trash Bin"
 msgstr "휴지통 설정(&C)"
 
-#: src/konq_popupmenu.cpp:337
+#: src/konq_popupmenu.cpp:336
 #, kde-format
 msgid "&Bookmark This Page"
 msgstr "페이지를 책갈피에 추가하기(&B)"
 
-#: src/konq_popupmenu.cpp:339
+#: src/konq_popupmenu.cpp:338
 #, kde-format
 msgid "&Bookmark This Location"
 msgstr "위치를 책갈피에 추가(&B)"
 
-#: src/konq_popupmenu.cpp:342
+#: src/konq_popupmenu.cpp:341
 #, kde-format
 msgid "&Bookmark This Folder"
 msgstr "폴더를 책갈피에 추가(&B)"
 
-#: src/konq_popupmenu.cpp:344
+#: src/konq_popupmenu.cpp:343
 #, kde-format
 msgid "&Bookmark This Link"
 msgstr "링크를 책갈피에 추가(&B)"
 
-#: src/konq_popupmenu.cpp:346
+#: src/konq_popupmenu.cpp:345
 #, kde-format
 msgid "&Bookmark This File"
 msgstr "파일을 책갈피에 추가(&B)"
 
-#: src/konq_popupmenu.cpp:385
+#: src/konq_popupmenu.cpp:384
 #, kde-format
 msgid "Preview In"
 msgstr "다음에서 미리 보기"
 
-#: src/konq_popupmenu.cpp:396
+#: src/konq_popupmenu.cpp:395
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "여기에서 터미널 열기"
 
-#: src/konq_popupmenu.cpp:432
+#: src/konq_popupmenu.cpp:431
 #, kde-format
 msgid "&Properties"
 msgstr "속성(&P)"

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2018-08-09 20:32+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@euskalnet.net>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -25,36 +25,15 @@ msgstr ""
 "X-Generator: Lokalize 2.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>KDEren performantzia</h1> KDEren performantzia hobetzeko ezarpenak "
-"konfigura ditzakezu hemen."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Sistema"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Konqueror-en performantzia</h1> Konqueror-en performantzia hobetzeko "
-"hainbat ezarpen konfigura ditzakezu hemen. Barne hartzen ditu dagoeneko "
-"ibiltzen ari diren instantziak berrerabiltzeko eta instantziak aurretiaz "
-"zamatuta izateko aukerak."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -155,6 +134,23 @@ msgid ""
 msgstr ""
 "Aukera honek kasu bakan batzutan hainbat arazo eragin ditzake. Kontsultatu "
 "Zer da hau (Maius+F1) laguntza xehetasun gehiago izateko."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDEren performantzia</h1> KDEren performantzia hobetzeko ezarpenak "
+#~ "konfigura ditzakezu hemen."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Konqueror-en performantzia</h1> Konqueror-en performantzia hobetzeko "
+#~ "hainbat ezarpen konfigura ditzakezu hemen. Barne hartzen ditu dagoeneko "
+#~ "ibiltzen ari diren instantziak berrerabiltzeko eta instantziak aurretiaz "
+#~ "zamatuta izateko aukerak."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
-"PO-Revision-Date: 2022-08-19 05:53+0200\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"PO-Revision-Date: 2023-11-19 22:04+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,32 +16,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "სისტემა"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
 
 #: konqueror.cpp:24
 #, kde-format
@@ -52,6 +37,10 @@ msgid ""
 "be able to work while it is loading, so you may not even notice that it is "
 "taking longer).</p>"
 msgstr ""
+"<p>თუ ჩართულია, Konqueror-ის გაშვებული ასლი Plasma-ის გაშვებისას ჩაიტვირთება."
+"</p><p>ეს Konqueror-ის პირველ ფანჯარას უფრო სწრაფად გახსნის, იმის ხარჯზე, "
+"რომ Plasma უფრო ნელა გაეშვება (მაგრამ მისი ჩატვირთვისას მუშაობა მაინც "
+"შეგეძლებათ, ასე რომ, ეს შეიძლება ვერც კი შეამჩნიოთ).</p>"
 
 #: konqueror.cpp:30
 #, kde-format
@@ -62,6 +51,10 @@ msgid ""
 "In some cases, it is actually possible that this will reduce perceived "
 "performance.</p>"
 msgstr ""
+"<p>თუ ჩართულია, Konqueror ყოველთვის სცდის, ერთი გაშვებული ასლი მზად "
+"ყოველთვის ჰქონდეს. ის ფონურად ჩაიტვირთება მაშინ, როცა ხელმისაწვდომი არაა, "
+"ასე რომ, ფანჯრები უფრო სწრაფად გაიხსნება.</p><p><b>გაფრთხილება:</b> ზოგიერთ "
+"შემთხვევაში ამან შეიძლება წარმადობა დააგდოს კიდეც.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
 #: konqueror_ui.ui:17
@@ -98,6 +91,18 @@ msgid ""
 "recommended to turn this option temporarily off while (un)installing "
 "applications.</p>"
 msgstr ""
+"<p>გაშვებისას KDE-ს სჭრდება, სისტემის კონფიგურაცია (MIME ტიპები, დაყენებული "
+"აპლიკაციები და ა.შ.) შეამოწმოს და იმ შემთხვევაში, თუ კონფიგურაცია შეიცვალა, "
+"სისტემური კონფიგურაციის კეში (kSyCoCa) განაახლოს.</p><p>ეს პარამეტრი "
+"დააყოვნებს შემოწმებას, რაც თავიდან აიცილებს KDE-ის გაშვებისას შესამოწმებელი "
+"ფაილების საქაღალდეების სკანირებას, რის გამოც KDE უფრო სწრაფად გაეშვება. "
+"მაგრამ, იშვიათ შემთხვევებში, როცა სისტემის კონფიგურაცია შეიცვლება და "
+"ცვლილება საჭიროა მანამდე, სანამ დაყოვნებული შემოწმება მოხდება, ამ "
+"პარამეტრმა, შეიძლება, სხვადასხვა პრობლემებამდე (ნაკლული აპლიკაციები K "
+"მენიუში, აპლიკაციების ჩივილი, რომ MIME ტიპები დაყენებული არაა და ა.შ.) "
+"გამოიწვიოს.</p><p>სისტემის კონფიგურაციის ცვლილებები, ძირითადად, აპლიკაციების "
+"დაყენებისას ან წაშლისას ხდება. ამიტომ, რეკომენდებულია, აპლიკაციების "
+"დაყენების ან წაშლისას, ეს პარამეტრი, დროებით, გამორთოთ.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gb_)
 #: system_ui.ui:8
@@ -118,3 +123,22 @@ msgid ""
 "This option may in rare cases lead to various problems. Consult the What's "
 "This (Shift+F1) help for details."
 msgstr ""
+"ამ პარამეტრმა, იშვიათ შემთხვევებში, სხვადასხვა პრობლემებამდე შეიძლება, "
+"მიგიყვანოთ. მეტი დეტალებისთვის იხილეთ 'რა არის ეს?' (Shift+F1)."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDE-ის წარმადობა</h1> აქ შეგიძლიათ მოირგოთ პარამეტრები, რომლებიც KDE-"
+#~ "ის წარმადობას ზრდიან."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Konqueror-ის წარმადობა</h1> აქ შეგიძლიათ მოირგოთ რამდენიმე პარამეტრი, "
+#~ "რომელიც Konqueror-ის წარმადობას ზრდის. ეს შეიცავს პარამეტრებს უკვე "
+#~ "გაშვებული ასლების თავიდან გამოყენების და ასლების წინასწარ გაშვების "
+#~ "შესახებ."

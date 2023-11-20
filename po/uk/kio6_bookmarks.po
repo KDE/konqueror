@@ -1,0 +1,65 @@
+# Translation of kio5_bookmarks.po to Ukrainian
+# Copyright (C) 2015-2020 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2015, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio5_bookmarks\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"PO-Revision-Date: 2020-10-31 08:56+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.11.70\n"
+
+#: kio_bookmarks.cpp:85
+#, kde-format
+msgid "Root"
+msgstr "Корінь"
+
+#: kio_bookmarks.cpp:118
+#, kde-format
+msgid "Places"
+msgstr "Місця"
+
+#: kio_bookmarks.cpp:194
+#, kde-format
+msgid "Could not find bookmarks config"
+msgstr "Не вдалося знайти налаштування закладок"
+
+#: kio_bookmarks.cpp:204
+#, kde-format
+msgid "Could not find bookmarks editor"
+msgstr "Не вдалося знайти редактор закладок"
+
+#: kio_bookmarks.cpp:210
+#, kde-format
+msgid "Wrong request: %1"
+msgstr "Помилковий запит: %1"
+
+#: kio_bookmarks_html.cpp:85
+#, kde-format
+msgid "There are no bookmarks to display yet."
+msgstr "Закладок ще немає, — немає чого показувати."
+
+#: kio_bookmarks_html.cpp:124
+#, kde-format
+msgid ""
+"kio_bookmarks CSS file not found. Output will look ugly.\n"
+"Check your installation."
+msgstr ""
+"Файл CSS kio_bookmarks не знайдено. Вивід виглядатиме жахливо.\n"
+"Перевірте, чи встановлено відповідні компоненти."
+
+#: kio_bookmarks_html.cpp:133
+#, kde-format
+msgid "My Bookmarks"
+msgstr "Мої закладки"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-08-14 21:56+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -32,27 +32,27 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "stefan.asserhall@bredband.net"
 
-#: kfmclient.cpp:56
+#: kfmclient.cpp:59
 #, kde-format
 msgid "kfmclient"
 msgstr "kfmklient"
 
-#: kfmclient.cpp:57
+#: kfmclient.cpp:60
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "KDE-verktyg för att öppna webbadresser från kommandoraden"
 
-#: kfmclient.cpp:65
+#: kfmclient.cpp:68
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr "Icke-interaktiv användning: inga meddelanderutor"
 
-#: kfmclient.cpp:67
+#: kfmclient.cpp:70
 #, kde-format
 msgid "Show available commands"
 msgstr "Visa tillgängliga kommandon"
 
-#: kfmclient.cpp:76
+#: kfmclient.cpp:79
 #, kde-format
 msgid ""
 "The mimetype of the URL. Allows Konqueror to determine in advance which "
@@ -61,30 +61,30 @@ msgstr ""
 "Webbadressens mime-typ. Låter Konqueror bestämma i förväg vilken komponent "
 "som ska användas, vilket leder till snabbare start."
 
-#: kfmclient.cpp:77
+#: kfmclient.cpp:80
 #, kde-format
 msgctxt "the name for a the value of an option on the command line help"
 msgid "type"
 msgstr "typ"
 
-#: kfmclient.cpp:79
+#: kfmclient.cpp:82
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "Kommando (se --commands)"
 
-#: kfmclient.cpp:81
+#: kfmclient.cpp:84
 #, kde-format
 msgid "Arguments for command"
 msgstr "Argument för kommando"
 
-#: kfmclient.cpp:83
+#: kfmclient.cpp:86
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr ""
 "Filerna eller webbadresserna som öppnas av programmet tas bort efter "
 "användning"
 
-#: kfmclient.cpp:91
+#: kfmclient.cpp:95
 #, kde-format
 msgid ""
 "\n"
@@ -93,7 +93,7 @@ msgstr ""
 "\n"
 "Syntax:\n"
 
-#: kfmclient.cpp:92
+#: kfmclient.cpp:96
 #, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
@@ -110,7 +110,7 @@ msgstr ""
 "            #   om \"webbadress\" utelämnas, visas startsidan istället.\n"
 "\n"
 
-#: kfmclient.cpp:97
+#: kfmclient.cpp:101
 #, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
@@ -130,7 +130,7 @@ msgstr ""
 "            #   Använd --mimetype alternativ\n"
 "\n"
 
-#: kfmclient.cpp:103
+#: kfmclient.cpp:106
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -145,17 +145,17 @@ msgstr ""
 "            #   fönstret på aktuellt aktivt skrivbord om möjligt.\n"
 "\n"
 
-#: kfmclient.cpp:280
+#: kfmclient.cpp:282
 #, kde-format
 msgid "Syntax error, not enough arguments\n"
 msgstr "Syntaxfel: För få argument\n"
 
-#: kfmclient.cpp:284
+#: kfmclient.cpp:286
 #, kde-format
 msgid "Syntax error, too many arguments\n"
 msgstr "Syntaxfel, för många argument\n"
 
-#: kfmclient.cpp:339
+#: kfmclient.cpp:341
 #, kde-format
 msgid "Syntax error, unknown command '%1'\n"
 msgstr "Syntaxfel, okänt kommando '%1'\n"

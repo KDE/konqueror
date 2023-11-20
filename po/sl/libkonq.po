@@ -2,7 +2,7 @@
 # Translation of libkonq.po to Slovenian
 # SLOVENIAN TRANSLATION OF LIBKONQ.
 # Copyright (C) 2001, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
-# $Id: libkonq.po 1664120 2023-11-05 13:15:21Z scripty $
+# $Id: libkonq.po 1665461 2023-11-20 02:24:03Z scripty $
 # $Source$
 #
 # Roman Maurer <roman.maurer@hermes.si>, 2000.
@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-08-01 10:31+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -27,61 +27,61 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: src/browseropenorsavequestion.cpp:89
+#: src/browseropenorsavequestion.cpp:88
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
 msgstr "Vrsta: %1"
 
-#: src/browseropenorsavequestion.cpp:97
+#: src/browseropenorsavequestion.cpp:96
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr "Zapomni si dejanje za datoteke te vrste"
 
-#: src/browseropenorsavequestion.cpp:149 src/browseropenorsavequestion.cpp:237
+#: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
 msgstr "&Odpri z %1"
 
-#: src/browseropenorsavequestion.cpp:213
+#: src/browseropenorsavequestion.cpp:212
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "Odpri z %1"
 
-#: src/browseropenorsavequestion.cpp:224 src/browseropenorsavequestion.cpp:318
+#: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
 msgstr "Odprem '%1'?"
 
-#: src/browseropenorsavequestion.cpp:228
+#: src/browseropenorsavequestion.cpp:227
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "&Odpri z..."
 
-#: src/browseropenorsavequestion.cpp:246
+#: src/browseropenorsavequestion.cpp:245
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "&Odpri z"
 
-#: src/browseropenorsavequestion.cpp:315
+#: src/browseropenorsavequestion.cpp:314
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "&Odpri"
 
-#: src/browseropenorsavequestion.cpp:339
+#: src/browseropenorsavequestion.cpp:338
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr "Ime: %1"
 
-#: src/browseropenorsavequestion.cpp:341
+#: src/browseropenorsavequestion.cpp:340
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
@@ -95,77 +95,77 @@ msgstr "Sprejmi"
 msgid "Reject"
 msgstr "Zavrni"
 
-#: src/konq_popupmenu.cpp:220
+#: src/konq_popupmenu.cpp:219
 #, kde-format
 msgid "&Open"
 msgstr "&Odpri"
 
-#: src/konq_popupmenu.cpp:243
+#: src/konq_popupmenu.cpp:242
 #, kde-format
 msgid "Create &Folder..."
 msgstr "Ustvari mapo..."
 
-#: src/konq_popupmenu.cpp:254
+#: src/konq_popupmenu.cpp:253
 #, kde-format
 msgid "&Restore"
 msgstr "Obnovi"
 
-#: src/konq_popupmenu.cpp:266
+#: src/konq_popupmenu.cpp:265
 #, kde-format
 msgid "Show Original Directory"
 msgstr "Prikaži izvorno mapo"
 
-#: src/konq_popupmenu.cpp:266
+#: src/konq_popupmenu.cpp:265
 #, kde-format
 msgid "Show Original File"
 msgstr "Prikaži izvorno datoteko"
 
-#: src/konq_popupmenu.cpp:301
+#: src/konq_popupmenu.cpp:300
 #, kde-format
 msgid "&Empty Trash Bin"
 msgstr "Izprazni Smeti"
 
-#: src/konq_popupmenu.cpp:313
+#: src/konq_popupmenu.cpp:312
 #, kde-format
 msgid "&Configure Trash Bin"
 msgstr "Nastavi Smeti"
 
-#: src/konq_popupmenu.cpp:337
+#: src/konq_popupmenu.cpp:336
 #, kde-format
 msgid "&Bookmark This Page"
 msgstr "Zaznamuj to stran"
 
-#: src/konq_popupmenu.cpp:339
+#: src/konq_popupmenu.cpp:338
 #, kde-format
 msgid "&Bookmark This Location"
 msgstr "Zaznamuj to mesto"
 
-#: src/konq_popupmenu.cpp:342
+#: src/konq_popupmenu.cpp:341
 #, kde-format
 msgid "&Bookmark This Folder"
 msgstr "Zaznamuj to mapo"
 
-#: src/konq_popupmenu.cpp:344
+#: src/konq_popupmenu.cpp:343
 #, kde-format
 msgid "&Bookmark This Link"
 msgstr "Zaznamuj to povezavo"
 
-#: src/konq_popupmenu.cpp:346
+#: src/konq_popupmenu.cpp:345
 #, kde-format
 msgid "&Bookmark This File"
 msgstr "Zaznamuj to datoteko"
 
-#: src/konq_popupmenu.cpp:385
+#: src/konq_popupmenu.cpp:384
 #, kde-format
 msgid "Preview In"
 msgstr "Predogled v"
 
-#: src/konq_popupmenu.cpp:396
+#: src/konq_popupmenu.cpp:395
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Odpri terminal tukaj"
 
-#: src/konq_popupmenu.cpp:432
+#: src/konq_popupmenu.cpp:431
 #, kde-format
 msgid "&Properties"
 msgstr "Lastnosti"

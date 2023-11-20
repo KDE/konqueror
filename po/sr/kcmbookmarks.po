@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-05-20 02:40+0200\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2015-01-25 02:11+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -22,17 +22,6 @@ msgstr ""
 "X-Associated-UI-Catalogs: krunner kio.desktop systemsettings.desktop "
 "kcmkonqhtml kcompletion5_qt kwidgetsaddons5_qt\n"
 "X-Environment: kde\n"
-
-#: bookmarks.cpp:104
-#, kde-format
-msgid ""
-"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
-msgstr ""
-"<h1>Моји обележивач</h1><p>Ови модулом подешавате домаћу страницу "
-"обележивача.</p><p>Њој можете приступити преко <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -164,3 +153,12 @@ msgstr "Очистите кеш битмапа"
 #, kde-format
 msgid "&Clear Cache"
 msgstr "&Очисти кеш"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "<h1>Моји обележивач</h1><p>Ови модулом подешавате домаћу страницу "
+#~ "обележивача.</p><p>Њој можете приступити преко <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"

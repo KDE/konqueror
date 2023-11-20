@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2007-03-13 18:00+0900\n"
 "Last-Translator: Yukiko Bando <ybando@k6.dion.ne.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -22,37 +22,15 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>KDE パフォーマンス</h1>この設定により、KDE のパフォーマンスを改善すること"
-"ができます。"
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "システム"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Konqueror パフォーマンス</h1>ここでいくつかの設定を変更することによって、"
-"Konqueror のパフォーマンスを改善することができます。これには、起動済みのイン"
-"スタンス (訳注: 実体、この場合、メモリにロードされたプログラムのコードのこ"
-"と) を再利用したり、プリロードしたインスタンスを保持するための設定も含まれて"
-"います。"
 
 #: konqueror.cpp:24
 #, fuzzy, kde-format
@@ -169,3 +147,21 @@ msgid ""
 msgstr ""
 "<p>このオプションは、まれに多様な問題を引き起すことがあります。詳細については"
 "「これは何？」(Shift+F1) を参照してください。</p>"
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDE パフォーマンス</h1>この設定により、KDE のパフォーマンスを改善する"
+#~ "ことができます。"
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Konqueror パフォーマンス</h1>ここでいくつかの設定を変更することによっ"
+#~ "て、Konqueror のパフォーマンスを改善することができます。これには、起動済み"
+#~ "のインスタンス (訳注: 実体、この場合、メモリにロードされたプログラムのコー"
+#~ "ドのこと) を再利用したり、プリロードしたインスタンスを保持するための設定も"
+#~ "含まれています。"

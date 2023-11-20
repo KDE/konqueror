@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2017-11-08 17:30+0200\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish\n"
@@ -19,35 +19,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>KDE's ydelse</h1> Du kan justere indstillinger som forbedrer KDE's "
-"ydelse her."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "System"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Konqueror's ydelse</h1> Du kan indstille adskillige ting til at forbedre "
-"Konqueror's ydelse her. Dette inkluderer tilvalg til at genbruge allerede "
-"kørende udgaver eller at beholde kørende udgaver forudindlæst."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -151,6 +131,22 @@ msgid ""
 msgstr ""
 "Dette kan i sjældne tilfælde føre til forskellige problemer. Konsultér Hvad "
 "er dette (Skift+F1)-hjælpen for detaljer."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDE's ydelse</h1> Du kan justere indstillinger som forbedrer KDE's "
+#~ "ydelse her."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Konqueror's ydelse</h1> Du kan indstille adskillige ting til at "
+#~ "forbedre Konqueror's ydelse her. Dette inkluderer tilvalg til at genbruge "
+#~ "allerede kørende udgaver eller at beholde kørende udgaver forudindlæst."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

@@ -328,7 +328,7 @@
 ><guimenu
 >Arranjament</guimenu
 ></link
-> per triar quan mostrar o ocultar la barra de menús, la barra d'eines principal, la barra d'eines de localització i la barra d'eines d'adreces d'interès, o fins i tot afegir una barra d'eines extra.</para
+> per a triar quan mostrar o ocultar la barra de menús, la barra d'eines principal, la barra d'eines de localització i la barra d'eines d'adreces d'interès, o fins i tot afegir una barra d'eines extra.</para
 ></listitem>
 <listitem
 ><para
@@ -426,7 +426,7 @@ Sidebar</link
 ><para
 >Fer clic <mousebutton
 >esquerre</mousebutton
-> a sobre d'una icona en la barra d'eines d'adreces d'interès per obrir aquest &URL;.</para
+> a sobre d'una icona en la barra d'eines d'adreces d'interès per a obrir aquest &URL;.</para
 ></listitem>
 <listitem
 ><para
@@ -536,7 +536,7 @@ Sidebar</link
 ><para
 >Fer clic <mousebutton
 >dret</mousebutton
-> a sobre de qualsevol àrea buida de la barra d'eines per a mostrar el menú de la barra d'eines. També podeu utilitzar el menú de la barra d'eines per ajustar la mida dels botons a la barra d'eines, i si es mostren com a icones, text o ambdós.</para>
+> a sobre de qualsevol àrea buida de la barra d'eines per a mostrar el menú de la barra d'eines. També podeu utilitzar el menú de la barra d'eines per a ajustar la mida dels botons a la barra d'eines, i si es mostren com a icones, text o ambdós.</para>
 <para
 >Desbloquegeu la barra d'eines i podreu moure-la a la part superior, inferior, esquerra o dreta de la finestra del &konqueror;. </para>
 </listitem>
@@ -582,9 +582,7 @@ Sidebar</link
 ><para
 >Aquesta és una característica molt útil. Fer clic <mousebutton
 >dret</mousebutton
-> a sobre del nom o icona de qualsevol fitxer o carpeta no tan sols <quote
->selecciona</quote
-> aquest element sinó que també farà aparèixer un menú que us permetrà <guimenuitem
+> a sobre del nom o icona de qualsevol fitxer o carpeta no tan sols «selecciona» aquest element sinó que també farà aparèixer un menú que us permetrà <guimenuitem
 >Retallar</guimenuitem
 >, <guimenuitem
 >Moure</guimenuitem
@@ -642,11 +640,11 @@ Sidebar</link
 <para
 >Per a navegar per les pàgines Info d'&UNIX;, introduïu <userinput
 >info:/dir</userinput
->, això us durà al nivell superior del directori Info, després simplement haureu de fer clic a sobre dels enllaços correctes per trobar la pàgina que cerqueu. Alternativament, useu <userinput
+>, això us durà al nivell superior del directori Info, després simplement haureu de fer clic a sobre dels enllaços correctes per a trobar la pàgina que cerqueu. Alternativament, useu <userinput
 >info:/<replaceable
 >nom_ordre</replaceable
 ></userinput
-> per anar directament cap a la pàgina que desitgeu.</para>
+> per a anar directament cap a la pàgina que desitgeu.</para>
 
 <note
 ><para
@@ -679,9 +677,7 @@ Sidebar</link
 >A &UNIX; i &Linux; totes les carpetes estan ordenades en una jerarquia simple. Començant des d'una carpeta principal (també anomenada directori arrel o root), aquesta estructura descendeix en diferents branques que poden contenir fitxers i subcarpetes. Això significa que podeu anar des de qualsevol carpeta a una altra «pujant» fins que abasteu un punt comú i després «descendint» per les subcarpetes apropiades fins a abastar el vostre objectiu.</para>
 
 <para
->La posició de qualsevol fitxer o carpeta en l'estructura (també anomenada arbre de directoris) es pot descriure pel seu <quote
->camí</quote
->, el qual és una simple llista de carpetes per les quals s'ha de descendir fins a abastar la carpeta de destinació. Per exemple <filename class="directory"
+>La posició de qualsevol fitxer o carpeta en l'estructura (també anomenada arbre de directoris) es pot descriure pel seu «camí», el qual és una simple llista de carpetes per les quals s'ha de descendir fins a abastar la carpeta de destinació. Per exemple <filename class="directory"
 >/home/roser</filename
 >; la carpeta <filename class="directory"
 >roser</filename
@@ -691,9 +687,7 @@ Sidebar</link
 > /home/roser/paraules.txt</filename
 >; el fitxer <filename
 >paraules.txt</filename
-> roman en aquesta subcarpeta. El prefix <quote
->/</quote
-> en aquests camins representa la carpeta de nivell principal, l'arrel.</para>
+> roman en aquesta subcarpeta. El prefix «/» en aquests camins representa la carpeta de nivell principal, l'arrel.</para>
 
 <para
 >Cada carpeta accessible des del vostre sistema &mdash;incloent-hi aquelles en altres particions de disc dur, un dispositiu USB o &CD-ROM;&mdash; apareixerà en l'arbre descendent a partir de /, els seus camins exactes dependran de com vàreu configurar el vostre sistema (consulteu també la secció <link linkend="removable-devices"
@@ -719,9 +713,7 @@ Sidebar</link
 <title
 >Modes de vista</title>
 <para
->En el mode gestor de fitxers, el &konqueror; llista quins fitxers i subcarpetes resten continguts en una certa carpeta i pot proveir-vos quelcom d'informació a sobre seu. El <quote
->camí</quote
-> de la carpeta que esteu mirant es mostra en la barra d'eines Localització. El mode en el qual, el &konqueror; mostra els fitxers i carpetes dependrà fonamentalment de l'elecció que feu del mode de vista: <menuchoice
+>En el mode gestor de fitxers, el &konqueror; llista quins fitxers i subcarpetes resten continguts en una certa carpeta i pot proveir-vos quelcom d'informació a sobre seu. El «camí» de la carpeta que esteu mirant es mostra en la barra d'eines Localització. El mode en el qual, el &konqueror; mostra els fitxers i carpetes dependrà fonamentalment de l'elecció que feu del mode de vista: <menuchoice
 ><guimenu
 >Visualitza</guimenu
 ><guisubmenu
@@ -770,7 +762,7 @@ Sidebar</link
 >Detalls</guibutton
 >, el contingut de la carpeta es mostra com una llista detallada que conté el nom, la mida i la data de la darrera modificació de cada element. Es poden afegir columnes addicionals fent clic en la capçalera d'una columna amb el &BDR;. </para>
 <para
->Al menú contextual de la línia de capçalera podeu escollir entre l'amplada de columna personalitzada o automàtica. L'amplada automàtica ajusta totes les columnes una vegada per mostrar l'element més llarg a tota la columna, a excepció de la columna <guilabel
+>Al menú contextual de la línia de capçalera podeu escollir entre l'amplada de columna personalitzada o automàtica. L'amplada automàtica ajusta totes les columnes una vegada per a mostrar l'element més llarg a tota la columna, a excepció de la columna <guilabel
 >Nom</guilabel
 > on l'extensió se substitueix per «...» </para>
 <para
@@ -780,11 +772,7 @@ Sidebar</link
 <para
 >La vista de detalls permet veure el directori actual en forma d'arbre si s'activa <guilabel
 >Carpetes expansibles</guilabel
->: Cada subcarpeta de la carpeta actual es pot <quote
->ampliar</quote
-> o <quote
->plegar</quote
-> fent clic a les icones <guiicon
+>: Cada subcarpeta de la carpeta actual es pot «ampliar» o «plegar» fent clic a les icones <guiicon
 >&gt;</guiicon
 > o <guiicon
 >+</guiicon
@@ -805,7 +793,7 @@ Sidebar</link
 </textobject>
 <caption
 ><para
->Tots els modes de vista tenen suport per ordenar segons el tipus seleccionat a <menuchoice
+>Tots els modes de vista tenen suport per a ordenar segons el tipus seleccionat a <menuchoice
 ><guimenu
 >Visualitza</guimenu
 > <guisubmenu
@@ -1015,7 +1003,7 @@ Sidebar</link
 <title
 >Navegació</title>
 <para
->Per arribar a un fitxer amb el &konqueror; primer haureu de navegar a través de l'arbre de carpetes fins a trobar la carpeta que contingui aquest fitxer.</para>
+>Per a arribar a un fitxer amb el &konqueror; primer haureu de navegar a través de l'arbre de carpetes fins a trobar la carpeta que contingui aquest fitxer.</para>
 
 <para
 >Per a moure's d'una carpeta a l'altra simplement pugeu i baixeu per l'arbre:</para>
@@ -1319,26 +1307,20 @@ find your way around the file system.</para>
 </itemizedlist>
 
 <para
->El mètode més simple per eliminar un fitxer o carpeta és posicionar-se amb el punter del ratolí a sobre del seu nom o icona i prémer el &BDR;, el qual mostrarà un menú que conté les opcions <guimenuitem
+>El mètode més simple per a eliminar un fitxer o carpeta és posicionar-se amb el punter del ratolí a sobre del seu nom o icona i prémer el &BDR;, el qual mostrarà un menú que conté les opcions <guimenuitem
 >A la paperera</guimenuitem
 > i <guimenuitem
 >Suprimeix</guimenuitem
 >.</para>
 
 <para
->O, si heu <quote
->seleccionat</quote
-> l'element, el menú <guimenu
+>O, si heu «seleccionat» l'element, el menú <guimenu
 >Edita</guimenu
-> de la barra de menús us oferirà les opcions <quote
-><guimenuitem
+> de la barra de menús us oferirà les opcions «<guimenuitem
 >A la paperera</guimenuitem
-></quote
-> i <quote
-><guimenuitem
+>» i «<guimenuitem
 >Suprimeix</guimenuitem
-></quote
->.</para>
+>».</para>
 
 <para
 ><keycap
@@ -1435,7 +1417,7 @@ find your way around the file system.</para>
 >dret</mousebutton
 > a sobre d'un fitxer o nom de carpeta en la finestra del gestor de fitxers.</para>
 <para
->Per habilitar aquesta característica, seleccioneu <guilabel
+>Per a habilitar aquesta característica, seleccioneu <guilabel
 >Mostra l'ordre «Copia a» i «Mou a»</guilabel
 > a la pàgina <menuchoice
 ><guimenu
@@ -1473,7 +1455,7 @@ find your way around the file system.</para>
 ><imagedata format="PNG" fileref="dragdrop.png"/></imageobject>
 <textobject>
 <phrase
->Vistes separades per arrossegar i deixar anar</phrase>
+>Vistes separades per a arrossegar i deixar anar</phrase>
 </textobject>
 </mediaobject>
 
@@ -1494,12 +1476,12 @@ find your way around the file system.</para>
 >Per a poder mostrar carpetes diferents en cada vista és millor assegurar-se que no estan enllaçades; els quadres a la cantonada inferior dreta haurien d'estar buits. </para>
 
 <para
->La vista «activa», aquesta serà la que es mostra el seu camí a la barra de localització i que respondrà a les ordres de navegació i de la barra de menús, es mostra per la llumeta verda a la cantonada inferior esquerra. Per tornar a activar una vista, feu clic <mousebutton
+>La vista «activa», aquesta serà la que es mostra el seu camí a la barra de localització i que respondrà a les ordres de navegació i de la barra de menús, es mostra per la llumeta verda a la cantonada inferior esquerra. Per a tornar a activar una vista, feu clic <mousebutton
 >esquerre</mousebutton
 > a sobre d'una àrea buida o en la seva barra d'estat.</para>
 
 <para
->Per eliminar una vista activa de la finestra del &konqueror; empreu la drecera de teclat <keycombo action="simul"
+>Per a eliminar una vista activa de la finestra del &konqueror; empreu la drecera de teclat <keycombo action="simul"
 >&Ctrl;&Maj;<keycap
 >W</keycap
 ></keycombo
@@ -1673,7 +1655,7 @@ find your way around the file system.</para>
 
 <listitem
 ><para
->Seleccioneu un fitxer o carpeta, escriviu les primeres lletres del seu nom i l'element coincident serà seleccionat primer. Per netejar la selecció i cancel·lar premeu la tecla &Esc; o espereu el temps d'espera d'1 segon. </para
+>Seleccioneu un fitxer o carpeta, escriviu les primeres lletres del seu nom i l'element coincident serà seleccionat primer. Per a netejar la selecció i cancel·lar premeu la tecla &Esc; o espereu el temps d'espera d'1 segon. </para
 ></listitem>
 </itemizedlist>
 <!--FIXME end copy from dolphin docbook 16.04-->
@@ -1747,7 +1729,7 @@ find your way around the file system.</para>
 ><guimenuitem
 >Desselecciona elements que coincideixen...</guimenuitem
 ></menuchoice
-> de la barra de menús per especificar quins dels fitxers seleccionats hauran de ser eliminats de la selecció.</para>
+> de la barra de menús per a especificar quins dels fitxers seleccionats hauran de ser eliminats de la selecció.</para>
 
 <para
 >Empreu l'opció de la barra de menús <menuchoice
@@ -1824,7 +1806,7 @@ find your way around the file system.</para>
 >HTML</acronym
 >. Quan escriviu el nou nom de fitxer en el diàleg probablement és millor donar-li una extensió <literal role="extension"
 >.html </literal
-> per evitar confusions.</para
+> per a evitar confusions.</para
 ></listitem>
 </varlistentry>
 
@@ -1848,7 +1830,7 @@ find your way around the file system.</para>
 ></term>
 <listitem
 ><para
->Això us permet crear una icona per obrir el &konqueror; a una carpeta en particular o una pàgina web. Com amb <guimenuitem
+>Això us permet crear una icona per a obrir el &konqueror; a una carpeta en particular o una pàgina web. Com amb <guimenuitem
 >Enllaç a l'aplicació...</guimenuitem
 > podreu fer que la icona de l'aplicació aparegui al vostre escriptori creant l'enllaç a la vostra carpeta <filename
 >~/Desktop</filename
@@ -1910,7 +1892,7 @@ find your way around the file system.</para>
 > <guimenuitem
 >Aplicacions</guimenuitem
 ></menuchoice
->. Després creu una única icona al vostre escriptori per obrir la vostra carpeta d'aplicacions, la qual normalment estarà en <filename class="directory"
+>. Després creu una única icona al vostre escriptori per a obrir la vostra carpeta d'aplicacions, la qual normalment estarà en <filename class="directory"
 >~/.local/share/applications</filename
 >.</para>
 <para
@@ -2010,7 +1992,7 @@ find your way around the file system.</para>
 <!-- TODO: The content should probably be here too, but this'll do for -->
 <!-- now. -->
 <para
->El &kde; proporciona algunes aplicacions amb les quals obrir diferents tipus de fitxers. La majoria de les vegades, els valors per omissió no us donaran problemes, però el &konqueror; proporciona un potent sistema per a permetre canviar l'aplicació emprada per obrir cada tipus de fitxer. Per obtenir més detalls, escolliu l'element del menú <menuchoice
+>El &kde; proporciona algunes aplicacions amb les quals obrir diferents tipus de fitxers. La majoria de les vegades, els valors per omissió no us donaran problemes, però el &konqueror; proporciona un potent sistema per a permetre canviar l'aplicació emprada per a obrir cada tipus de fitxer. Per a obtenir més detalls, escolliu l'element del menú <menuchoice
 ><guimenu
 >Arranjament</guimenu
 ><guimenuitem
@@ -2073,7 +2055,7 @@ find your way around the file system.</para>
 >top</userinput
 > i <userinput
 > less</userinput
-> no funcionaran adequadament, tot i que sí estaran disponibles immediatament en no patir cap retard per l'inici del &konsole;. </para>
+> no funcionaran adequadament, però estaran disponibles immediatament en no patir cap retard per l'inici del &konsole;. </para>
 
 <para
 >Per a operacions més complexes, el &konqueror; disposa d'una altra característica molt pràctica, l'opció <menuchoice
@@ -2202,10 +2184,10 @@ find your way around the file system.</para>
 <para
 >Feu clic <mousebutton
 >esquerre</mousebutton
-> a sobre d'un enllaç en una pàgina per obrir-lo.</para>
+> a sobre d'un enllaç en una pàgina per a obrir-lo.</para>
 
 <para
->Per obrir un enllaç en una nova instància del &konqueror;, mantenint oberta l'antiga, feu clic amb el &BMR; a sobre de l'enllaç i seleccioneu l'opció <guimenuitem
+>Per a obrir un enllaç en una nova instància del &konqueror;, mantenint oberta l'antiga, feu clic amb el &BMR; a sobre de l'enllaç i seleccioneu l'opció <guimenuitem
 >Obre en una finestra nova</guimenuitem
 >. Alternativament, potser desitjareu l'opció <guimenuitem
 >Obre en una pestanya nova</guimenuitem
@@ -2286,7 +2268,7 @@ find your way around the file system.</para>
 >&Maj;<keysym
 >Fletxa amunt</keysym
 ></keycombo
->. A continuació, utilitzeu aquestes tecles per augmentar o disminuir la velocitat del desplaçament. Podeu iniciar o aturar el desplaçament automàtic temporalment prement la tecla &Maj; -premeu qualsevol tecla per a desactivar aquesta funció-. </para>
+>. A continuació, utilitzeu aquestes tecles per a augmentar o disminuir la velocitat del desplaçament. Podeu iniciar o aturar el desplaçament automàtic temporalment prement la tecla &Maj; -premeu qualsevol tecla per a desactivar aquesta funció-. </para>
 <para
 >El desplaçament automàtic només funciona en el mode de vista <guimenuitem
 >KHTML</guimenuitem
@@ -2317,7 +2299,7 @@ find your way around the file system.</para>
 > <imagedata fileref="format-font-size-more.png" format="PNG"/> </imageobject
 ></inlinemediaobject
 ></guiicon
->. Useu-les per ajustar la mida del text a la pàgina si trobeu dificultats de lectura. Encara que això funcioni dependrà de com s'hagi construït la pàgina web.</para>
+>. Useu-les per a ajustar la mida del text a la pàgina si trobeu dificultats de lectura. Encara que això funcioni dependrà de com s'hagi construït la pàgina web.</para>
 </sect1>
 <!-- Tab works in filemanager mode as well-->
 <sect1 id="tabbrowse">
@@ -2502,7 +2484,7 @@ find your way around the file system.</para>
 >Google</trademark
 > que cerqui elements relacionats amb &konqueror;.</para>
 <para
->Per veure quines dreceres web hi ha disponibles, i potser afegir-ne de vostres, obriu el mòdul <ulink url="help:/kcontrol/webshortcuts/"
+>Per a veure quines dreceres web hi ha disponibles, i potser afegir-ne de vostres, obriu el mòdul <ulink url="help:/kcontrol/webshortcuts/"
 >Dreceres web</ulink
 > a la categoria <guilabel
 >Espai de treball</guilabel
@@ -2526,7 +2508,7 @@ find your way around the file system.</para>
 >Navegació web</guilabel
 >.</para>
 <para
->Per activar les tecles d'accessibilitat en el &konqueror;, premeu i deixeu &Ctrl;. Una vegada estigui premuda, si un enllaç d'un lloc web disposa de l'atribut <sgmltag class="attribute"
+>Per a activar les tecles d'accessibilitat en el &konqueror;, premeu i deixeu &Ctrl;. Una vegada estigui premuda, si un enllaç d'un lloc web disposa de l'atribut <sgmltag class="attribute"
 >accesskey</sgmltag
 >, apareixeran el(s) caràcter(s) sobre l'enllaç, que identifiquen aquelles tecles que caldria prémer. Aleshores, podeu introduir el(s) caràcter(s) associats amb l'enllaç com a una alternativa a seguir l'enllaç amb el ratolí. Per a inhabilitar les tecles d'accessibilitat, una vegada que hagin estat activades, podeu prémer &Ctrl; altra vegada.</para>
 
@@ -2694,7 +2676,7 @@ strings.</para
 >WWW</acronym
 > començant per <userinput
 >http://</userinput
->, si les deixeu en blanc, el &konqueror; és prou hàbil per esbrinar les intencions de l'usuari i insereix aquests caràcters.</para
+>, si les deixeu en blanc, el &konqueror; és prou hàbil per a esbrinar les intencions de l'usuari i insereix aquests caràcters.</para
 ></note>
 
 <para
@@ -2704,7 +2686,7 @@ strings.</para
 
 <note
 ><para
->Si intenteu accedir a un lloc &FTP; que no requereixi un nom d'usuari o contrasenya vàlides, però que està molt ocupat per acceptar més connexions, sovint el &konqueror; interpreta el missatge d'«ocupat» com a una petició de nom i contrasenya i per aquest motiu mostrarà un diàleg requerint-vos que les indiqueu.</para
+>Si intenteu accedir a un lloc &FTP; que no requereixi un nom d'usuari o contrasenya vàlides, però que està molt ocupat per a acceptar més connexions, sovint el &konqueror; interpreta el missatge d'«ocupat» com a una petició de nom i contrasenya i per aquest motiu mostrarà un diàleg requerint-vos que les indiqueu.</para
 ></note>
 
 <para
@@ -2826,7 +2808,7 @@ OverridenPorts=Llista_de_ports_permesos_separats_per_comes
 ><para
 >Quan escriviu a la barra d'eines de localització del &konqueror; aquesta es desplegarà automàticament oferint-vos les diferents possibilitats per a completar un camí o &URL;, ressaltant els caràcters afegits. Continueu escrivint si l'obtingut no és el que volíeu o premeu <keysym
 >Retorn</keysym
-> per acceptar-ho.</para
+> per a acceptar-ho.</para
 ></listitem>
  </varlistentry>
 
@@ -2862,7 +2844,7 @@ OverridenPorts=Llista_de_ports_permesos_separats_per_comes
 >&Ctrl;<keycap
 >E</keycap
 ></keycombo
-> o &Tab; per acceptar el suggeriment, i premeu <keysym
+> o &Tab; per a acceptar el suggeriment, i premeu <keysym
 >Retorn</keysym
 > quan es mostri el camí o l'&URL; complet.</para
 ></listitem>
@@ -2925,7 +2907,7 @@ Text Completion function can be viewed and edited in the <guilabel
 >Tot i que podeu usar les adreces d'interès del &konqueror; per a registrar les localitzacions dels vostres propis fitxers i carpetes, aquestes són especialment d'utilitat quan feu surf per la web, permetent-vos crear una llista de llocs útils.</para>
 
 <para
->Per obrir el menú <guimenu
+>Per a obrir el menú <guimenu
 >Adreces d'interès</guimenu
 >, feu clic <mousebutton
 >esquerre</mousebutton
@@ -2936,7 +2918,7 @@ Text Completion function can be viewed and edited in the <guilabel
 > per a visitar la localització seleccionada.</para>
 
 <para
->Per afegir nous elements a la llista utilitzeu el menú <menuchoice
+>Per a afegir elements nous a la llista utilitzeu el menú <menuchoice
 ><guimenu
 >Adreces d'interès</guimenu
 ><guimenuitem
@@ -2961,7 +2943,7 @@ Text Completion function can be viewed and edited in the <guilabel
 ><guimenuitem
 >Carpeta nova d'adreces d'interès...</guimenuitem
 ></menuchoice
->. Per afegir un adreça d'interès en una subcarpeta en comptes de la llista d'adreces d'interès principal, seleccioneu la carpeta amb la llista d'<guimenu
+>. Per a afegir un adreça d'interès en una subcarpeta en comptes de la llista d'adreces d'interès principal, seleccioneu la carpeta amb la llista d'<guimenu
 >Adreces d'interès</guimenu
 > i empreu l'element <guimenuitem
 >Afegeix una adreça d'interès</guimenuitem
@@ -3439,7 +3421,7 @@ as described above.</para>
 >.directory</filename
 > en aquesta carpeta per a mantenir les preferències per a les <guimenu
 >Propietats de la vista</guimenu
-> de la carpeta. Empreu aquest diàleg altra vegada per eliminar les preferències específiques d'aquesta carpeta (o simplement esborreu el fitxer <filename
+> de la carpeta. Empreu aquest diàleg altra vegada per a eliminar les preferències específiques d'aquesta carpeta (o simplement esborreu el fitxer <filename
 >.directory</filename
 >).</para>
 <note
@@ -3830,7 +3812,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 >&Ctrl;<keycap
 >I</keycap
 ></keycombo
-> per crear una pàgina HTML amb miniatures de totes les imatges a la carpeta actual. Per omissió la pàgina HTML s'anomenarà <filename
+> per a crear una pàgina HTML amb miniatures de totes les imatges a la carpeta actual. Per omissió la pàgina HTML s'anomenarà <filename
 >images.html</filename
 > i les miniatures es posaran en una carpeta nova anomenada <filename
 >thumbs</filename
@@ -3843,7 +3825,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 >Aspecte de la pàgina</title>
 <varlistentry>
 <term
->El diàleg «Aspecte» s'usa per ajustar l'aparença de la pàgina de la galeria.</term>
+>El diàleg «Aspecte» s'usa per a ajustar l'aparença de la pàgina de la galeria.</term>
 <listitem>
   
 <screenshot>
@@ -3880,7 +3862,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 ></term>
 <listitem
 ><para
->L'opció «Imatges per fila» conte un control lliscant i un botó de selecció de valors per ajustar el nombre de miniatures que hi haurà en cada fila de la galeria.</para
+>L'opció «Imatges per fila» conte un control lliscant i un botó de selecció de valors per a ajustar el nombre de miniatures que hi haurà en cada fila de la galeria.</para
 ></listitem>
 </varlistentry>
 
@@ -3920,22 +3902,22 @@ The following menu items show a list of popular browsers such as <guimenuitem
 <varlistentry>
 <term
 ><guimenuitem
->Nom del tipus de lletra</guimenuitem
+>Nom de la lletra</guimenuitem
 ></term>
 <listitem
 ><para
->El quadre combinat «Nom del tipus de lletra» us proporciona un mètode per triar el tipus de lletra que s'usarà per a crear la galeria.</para
+>El quadre combinat «Nom de la lletra» us proporciona un mètode per a triar la lletra que s'usarà per a crear la galeria.</para
 ></listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><guimenuitem
->Mida del tipus de lletra</guimenuitem
+>Mida de la lletra</guimenuitem
 ></term>
 <listitem
 ><para
->El botó de selecció de valors «Mida del tipus de lletra» és per a canviar la mida del tipus de lletra que heu seleccionat.</para
+>El botó de selecció de valors «Mida de la lletra» és per a canviar la mida de la lletra que heu seleccionat.</para
 ></listitem>
 </varlistentry>
 
@@ -3946,7 +3928,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 ></term>
 <listitem
 ><para
->L'opció «Color en primer pla» té un selector per triar el color de primer pla de la galeria, incloent-hi les àrees de text.</para
+>L'opció «Color en primer pla» té un selector per a triar el color de primer pla de la galeria, incloent-hi les àrees de text.</para
 ></listitem>
 </varlistentry>
 
@@ -3957,7 +3939,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 ></term>
 <listitem
 ><para
->L'opció «Color de fons» té un selector per triar el color del fons de la galeria.</para
+>L'opció «Color de fons» té un selector per a triar el color del fons de la galeria.</para
 ></listitem>
 </varlistentry>
 
@@ -3968,7 +3950,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 >Carpetes</title>
 <varlistentry>
 <term
->El diàleg «Carpetes» s'usa per triar el lloc en on es desarà la galeria. També s'usa per configurar quines carpetes s'usaran.</term>
+>El diàleg «Carpetes» s'usa per a triar el lloc en on es desarà la galeria. També s'usa per a configurar quines carpetes s'usaran.</term>
 <listitem>
   
 <screenshot>
@@ -4016,7 +3998,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 ></term>
 <listitem
 ><para
->La casella de selecció «Copia els fitxers originals» crea una carpeta d'imatges per desar una còpia de les imatges originals que s'usen en la galeria.</para
+>La casella de selecció «Copia els fitxers originals» crea una carpeta d'imatges per a desar una còpia de les imatges originals que s'usen en la galeria.</para
 ></listitem>
 </varlistentry>
 
@@ -4027,7 +4009,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 ></term>
 <listitem
 ><para
->La casella de selecció «Empra un fitxer de comentari» habilita un selector de fitxers per triar el fitxer de comentaris que s'usarà en la galeria. El fitxer de comentaris conté els subtítols de les imatges.</para>
+>La casella de selecció «Empra un fitxer de comentari» habilita un selector de fitxers per a triar el fitxer de comentaris que s'usarà en la galeria. El fitxer de comentaris conté els subtítols de les imatges.</para>
 <para
 >El format d'aquest fitxer és:</para>
 <programlisting
@@ -4053,7 +4035,7 @@ Descripció
 >Miniatures</title>
 <varlistentry>
 <term
->El diàleg «Miniatures» s'usa per ajustar les propietats de les miniatures en la galeria.</term>
+>El diàleg «Miniatures» s'usa per a ajustar les propietats de les miniatures en la galeria.</term>
 <listitem>
   
 <screenshot>
@@ -4090,7 +4072,7 @@ Descripció
 ></term>
 <listitem
 ><para
->L'opció «Mida de les miniatures» proporciona un control lliscant i un botó de selecció de valors per ajustar les dimensions de les miniatures emprades en la galeria.</para
+>L'opció «Mida de les miniatures» proporciona un control lliscant i un botó de selecció de valors per a ajustar les dimensions de les miniatures emprades en la galeria.</para
 ></listitem>
 </varlistentry>
 
@@ -4221,7 +4203,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > d'&UNIX;.</para>
 
 <para
->La integració de &fsview; com a part del Konqueror permet usar les propietats estàndard com els menús contextuals dels fitxers i les accions sensibles als tipus MIME. Però no fou escollit per implementar actualitzacions automàtiques dels canvis al sistema de fitxers de manera visual: si suprimiu un fitxer mostrat a l'eixida de &fsview; fora del &konqueror;, haureu d'actualitzar manualment, &pex;, prement <keycap
+>La integració de &fsview; com a part del Konqueror permet usar les propietats estàndard com els menús contextuals dels fitxers i les accions sensibles als tipus MIME. Però no fou escollit per a implementar actualitzacions automàtiques dels canvis al sistema de fitxers de manera visual: si suprimiu un fitxer mostrat a l'eixida de &fsview; fora del &konqueror;, haureu d'actualitzar manualment, &pex;, prement <keycap
 >F5</keycap
 >. El motiu d'aquesta decisió és l'enorme nombre potencial de fitxers que s'hauran de verificar per a veure si han canviat, generant d'aquesta manera una gran càrrega en els recursos del sistema per culpa d'una petita característica.</para>
 
@@ -4283,7 +4265,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenuitem
 >Atura a l'àrea</guimenuitem
 ></menuchoice
->. En aquest cas, es dibuixarà un patró amb ombra per indicar que aquest espai està realment ocupat per un fill o fills.</para>
+>. En aquest cas, es dibuixarà un patró amb ombra per a indicar que aquest espai està realment ocupat per un fill o fills.</para>
 
 </sect3>
 
@@ -4770,7 +4752,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><para
 >Similar a <guimenuitem
 >Desa com a...</guimenuitem
-> però per emprar-ho amb un lloc web que usi marcs.</para
+> però per a emprar-ho amb un lloc web que usi marcs.</para
 ></listitem>
 </varlistentry>
 
@@ -5438,7 +5420,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Visualitza</guimenu
 > <guimenuitem
->Augmenta el tipus de lletra</guimenuitem
+>Augmenta la lletra</guimenuitem
 ></menuchoice
 > / <menuchoice
 > <shortcut
@@ -5450,12 +5432,12 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Visualitza</guimenu
 > <guimenuitem
->Minva el tipus de lletra</guimenuitem
+>Minva la lletra</guimenuitem
 ></menuchoice
 > (mode navegador -vista KHTML-)</term>
 <listitem
 ><para
->Utilitzeu-los per ajustar la mida del text a la pàgina si us resulta difícil de llegir. Com de bé funcioni dependrà de com s'ha construït la pàgina web.</para
+>Utilitzeu-los per a ajustar la mida del text a la pàgina si us resulta difícil de llegir. Com de bé funcioni dependrà de com s'ha construït la pàgina web.</para
 ></listitem
 > 
 </varlistentry>
@@ -6205,7 +6187,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ></term>
 <listitem>
 <para
->Canvia el &konqueror; al mode a pantalla completa, en el qual la finestra del &konqueror; tapa tota la pantalla, i no disposa de les decoracions de finestra usuals. Per eixir d'aquest mode, feu clic a sobre de la icona <guiicon
+>Canvia el &konqueror; al mode a pantalla completa, en el qual la finestra del &konqueror; tapa tota la pantalla, i no disposa de les decoracions de finestra usuals. Per a eixir d'aquest mode, feu clic a sobre de la icona <guiicon
 >Surt del mode de pantalla completa</guiicon
 > a sobre de la barra d'eines, o premeu <keycombo action="simul"
 >&Ctrl;&Maj; <keycap
@@ -6563,7 +6545,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ></listitem>
 <listitem
 ><para
->Les galetes (cookies) es mantenen a <filename class="directory"
+>Les galetes es mantenen a <filename class="directory"
 >kcookiejar/cookies</filename
 ></para
 ></listitem>
@@ -6637,9 +6619,9 @@ in the folder <filename class="directory"
 >dret</mousebutton
 > a sobre d'una entrada i escolliu <guimenuitem
 >Elimina l'entrada</guimenuitem
-> (&Del;) per eliminar-la o <guimenuitem
+> (&Del;) per a eliminar-la o <guimenuitem
 >Neteja l'historial</guimenuitem
-> per esborrar totes les entrades.</para
+> per a esborrar totes les entrades.</para
 ></listitem>
 </itemizedlist>
 <note
@@ -6716,7 +6698,7 @@ in the folder <filename class="directory"
 >.</para>
 
 <para
->Per establir la pàgina d'inici de gestor del &konqueror; en el mode gestor de fitxers seleccioneu <guilabel
+>Per a establir la pàgina d'inici de gestor del &konqueror; en el mode gestor de fitxers seleccioneu <guilabel
 >Mostra la pàgina d'introducció</guilabel
 >, <guilabel
 >Mostra la meva pàgina d'inici</guilabel

@@ -1,0 +1,159 @@
+# translation of kio_bookmarks.po to Estonian
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Marek Laane <bald@smail.ee>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_bookmarks\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"PO-Revision-Date: 2008-11-25 23:08+0300\n"
+"Last-Translator: Marek Laane <bald@smail.ee>\n"
+"Language-Team: Estonian <kde-et@linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: kio_bookmarks.cpp:85
+#, kde-format
+msgid "Root"
+msgstr "Juurkataloog"
+
+#: kio_bookmarks.cpp:118
+#, kde-format
+msgid "Places"
+msgstr "Asukohad"
+
+#: kio_bookmarks.cpp:194
+#, kde-format
+msgid "Could not find bookmarks config"
+msgstr ""
+
+#: kio_bookmarks.cpp:204
+#, kde-format
+msgid "Could not find bookmarks editor"
+msgstr ""
+
+#: kio_bookmarks.cpp:210
+#, kde-format
+msgid "Wrong request: %1"
+msgstr "Vale päring: %1"
+
+#: kio_bookmarks_html.cpp:85
+#, kde-format
+msgid "There are no bookmarks to display yet."
+msgstr "Pole ühtegi järjehoidjat näidata."
+
+#: kio_bookmarks_html.cpp:124
+#, kde-format
+msgid ""
+"kio_bookmarks CSS file not found. Output will look ugly.\n"
+"Check your installation."
+msgstr ""
+"kio_bookmarks CSS-faili ei leitud. Väljund tuleb inetu.\n"
+"Kontrolli oma paigaldust."
+
+#: kio_bookmarks_html.cpp:133
+#, kde-format
+msgid "My Bookmarks"
+msgstr "Minu järjehoidjad"
+
+#~ msgid "My bookmarks"
+#~ msgstr "Minu järjehoidjad"
+
+#~ msgid "Xavier Vello"
+#~ msgstr "Xavier Vello"
+
+#~ msgid "Initial developer"
+#~ msgstr "Algne arendaja"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Marek Laane"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "bald@smail.ee"
+
+#~ msgid "Configuration"
+#~ msgstr "Seadistamine"
+
+#~ msgid "Edit bookmarks"
+#~ msgstr "Muuda järjehoidjaid"
+
+#~ msgid "Help"
+#~ msgstr "Abi"
+
+#~ msgid "Bookmarks"
+#~ msgstr "Järjehoidjad"
+
+#~ msgid ""
+#~ "If this option is unchecked, bookmarks at the root of the hierarchy (not "
+#~ "in a folder) are not displayed.\n"
+#~ "If checked, they are gathered in a \"root\" folder."
+#~ msgstr ""
+#~ "Kui see on märkimata, ei näidata hierarhia juurkataloogis asuvaid "
+#~ "järjehoidjaid.\n"
+#~ "Kui see on märgitud, koondatakse need kataloogi \"Juurkataloog\"."
+
+#~ msgid "&Show bookmarks without folder"
+#~ msgstr "&Kataloogita järjehoidjate näitamine"
+
+#~ msgid ""
+#~ "Sub-folders are show within their parent by default. If you activate this "
+#~ "option, sub-folders are displayed on their own.\n"
+#~ "It looks less nice but it may help if you have a very big folder you want "
+#~ "to spread in two columns."
+#~ msgstr ""
+#~ "Vaikimisi näidatakse alamkatalooge eellase all. Selle valiku "
+#~ "sisselülitamisel näidatakse alamkatalooge omaette.\n"
+#~ "See ei ole nii kena, aga võib olla abiks, kui sul on väga suur kataloog, "
+#~ "mida soovid näha kahes veerus."
+
+#~ msgid "&Flatten bookmarks tree"
+#~ msgstr "Ü&htlane järjehoidjapuu"
+
+#~ msgid ""
+#~ "Show a box with KDE places (Home, Network, ...). Useful if you use "
+#~ "konqueror as a file manager."
+#~ msgstr ""
+#~ "KDE asukohtadega (Kodu, Võrk...) kasti näitamine. See on kasulik, kui "
+#~ "kasutad failihaldurina Konquerori."
+
+#~ msgid "Show system &places"
+#~ msgstr "Süsteemi asukohta&de näitamine"
+
+#~ msgid "General settings"
+#~ msgstr "Üldised seadistused"
+
+#~ msgid ""
+#~ "Folders are automatically distributed in several columns. The optimal "
+#~ "number of columns depends on the width of the konqueror window and the "
+#~ "number of bookmarks you have."
+#~ msgstr ""
+#~ "Kataloogid jaotatakse automaatselt mitmesse veergu. Veergude optimaalne "
+#~ "arv sõltub Konquerori akna laiusest ja sinu järjehoidjate arvust."
+
+#~ msgid "Number of columns to show"
+#~ msgstr "Näidatavate veergude arv"
+
+#~ msgid "Disable it on slow system to disable background images."
+#~ msgstr ""
+#~ "Aeglases süsteemis on mõttekas see taustapiltide keelamiseks välja "
+#~ "lülitada."
+
+#~ msgid "Show folder &backgrounds"
+#~ msgstr "Katal&oogide tausta näitamine"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "<h1>Minu järjehoidjad</h1><p>See moodul võimaldab seadistada "
+#~ "järjehoidjate kodulehekülge.</p><p>Järjehoidjate kodulehekülje saab avada "
+#~ "asukohas <a href=\"bookmarks:/\">bookmarks:/</a>.</p>"

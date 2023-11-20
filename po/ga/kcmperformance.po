@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase/kcmperformance.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -17,36 +17,16 @@ msgstr ""
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>Feidhmiúchán KDE</h1> Anseo is féidir leat socruithe a dhéanamh a "
-"chuireann feabhas ar fheidhmiúchán KDE."
-
 # trade name, do not translate
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Córas"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Feidhmiúchán Konqueror</h1> Anseo is féidir leat roinnt socruithe a "
-"dhéanamh a chuireann feabhas ar fheidhmiúchán KDE. Mar shampla, roghanna a "
-"cheadaíonn próisis a athúsáid agus próisis réamhluchtaithe a choinneáil."
 
 #: konqueror.cpp:24
 #, fuzzy, kde-format
@@ -165,6 +145,22 @@ msgid ""
 msgstr ""
 "I gcásanna neamhchoitianta, feicfidh tú fadhbanna éagsúla leis an rogha seo. "
 "Féach ar an gcabhair \"Cad É Seo\" (Shift+F1) chun tuilleadh eolais a fháil."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>Feidhmiúchán KDE</h1> Anseo is féidir leat socruithe a dhéanamh a "
+#~ "chuireann feabhas ar fheidhmiúchán KDE."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Feidhmiúchán Konqueror</h1> Anseo is féidir leat roinnt socruithe a "
+#~ "dhéanamh a chuireann feabhas ar fheidhmiúchán KDE. Mar shampla, roghanna "
+#~ "a cheadaíonn próisis a athúsáid agus próisis réamhluchtaithe a choinneáil."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

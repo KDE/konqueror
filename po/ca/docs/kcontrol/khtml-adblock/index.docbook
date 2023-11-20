@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Catalan  "INCLUDE"
+> <!-- change language only here -->
+]>
+<!-- extragear has another adblock ? -->
+<article lang="&language;" id="khtml-adblock">
+<articleinfo>
+<title
+>Filtres de bloqueig publicitari</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+&traductor.Antoni.Bella; 
+</authorgroup>
+
+<date
+>8 de novembre de 2016</date>
+<releaseinfo
+>Aplicacions 16.12</releaseinfo>
+</articleinfo>
+
+<para
+>Al &konqueror;, l'AdBlock es pot configurar per a substituir o eliminar imatges o marcs de les pàgines web que coincideixin amb una sèrie de filtres.</para>
+
+<para
+>L'opció <guilabel
+>Habilita els filtres</guilabel
+> activa o desactiva l'ús de filtres.</para>
+<para
+>Si està activada l'opció <guilabel
+>Oculta les imatges filtrades</guilabel
+>, les imatges blocades seran eliminades per complet de la pàgina i l'espai serà recuperat. Si l'opció està desactivada, aleshores el seu espai restarà ple -es mantindrà el format de la pàgina-.</para>
+
+<variablelist>
+<varlistentry id="khtml-adblock-manual">
+<term
+><guilabel
+>Filtre manual</guilabel
+></term>
+<listitem>
+<para
+>La part principal d'aquesta pestanya és una llista dels &URL; que es compararan amb les imatges i noms dels marcs per a decidir accions de filtratge. Es poden utilitzar comodins en el nom del fitxer a l'estil de les expressions regulars.</para>
+
+<para
+>Cada filtre es pot expressar com una cadena que contingui un estil de fitxer que inclogui comodins (&pex;, http://www.lloc.com/ads/*) o com una expressió regular completa tancada entre parèntesis (&pex;, //(ads|dclk)\./).</para>
+
+<para
+>Qualsevol cadena de filtrar pot anar precedida per <literal
+>@@</literal
+> per a llista blanca (permetre) qualsevol &URL; coincident, que tindrà prioritat sobre qualsevol filtre de llista negra (blocar).</para>
+
+<para
+>La <guilabel
+>Importació</guilabel
+> i <guilabel
+>Exportació</guilabel
+> desa o llegeix la llista actual de filtres en un fitxer de text net. El fitxer comença amb una línia de capçalera <userinput
+>[AdBlock]</userinput
+>, llavors tots els filtres tindran cadascun una línia separada. Les línies que comencin per una marca d'exclamació (<userinput
+>!</userinput
+>) es tractaran com a comentaris i es poden utilitzar per a clarificar o etiquetar un conjunt de filtres.</para>
+
+<para
+>Ressalteu una entrada de la llista per a canviar-la al quadre d'edició o eliminar aquest element. Introduïu una nova cadena de filtre i afegiu-la a la llista utilitzant el botó <guibutton
+>Insereix</guibutton
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="khtml-adblock-automatic">
+<term
+><guilabel
+>Filtre automàtic</guilabel
+></term>
+<listitem>
+<para
+>Aquesta pestanya mostra una llista de noms i adreces &URL; amb entrades predefinides de filtre AdBlock. Per a activar una entrada marqueu la casella de selecció al costat del nom del filtre i ajusteu <guilabel
+>Interval d'actualització automàtica</guilabel
+> (per omissió 7 dies). </para>
+</listitem>
+</varlistentry>
+  
+</variablelist>
+
+<para
+>Si els filtres AdBlock estan activats, es mostrarà una icona a la part dreta de la barra d'estat. Utilitzeu un clic del &BDR; sobre aquesta icona per a obrir el menú contextual amb les accions per a mostrar tots els elements que es poden blocar en una pàgina web, i obriu aquest mòdul a &systemsettings; i desactiveu el bloqueig d'un lloc o pàgina de forma temporal.</para>
+
+<para
+>Un clic amb el &BER; també mostrarà el diàleg amb tots els elements que es poden blocar a la pàgina web oberta. A partir d'aquest diàleg podreu afegir nous filtres directament sense necessitat d'obrir aquest mòdul a &systemsettings;.</para>
+
+</article>

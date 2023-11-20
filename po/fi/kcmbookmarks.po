@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2018-03-01 15:26+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -29,17 +29,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 2.0\n"
 "X-POT-Import-Date: 2013-01-13 20:43:21+0000\n"
-
-#: bookmarks.cpp:92
-#, kde-format
-msgid ""
-"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
-msgstr ""
-"<h1>Kirjanmerkit</h1><p>Tästä voit muokata kirjanmerkkikotisivua. </"
-"p><p>Sivun saa näkyviin osoitteesta <a href=\"bookmarks:/\">bookmarks:/</a>."
-"</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -171,6 +160,15 @@ msgstr "Tyhjennä kuvavälimuisti"
 #, kde-format
 msgid "&Clear Cache"
 msgstr "&Tyhjennä välimuisti"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "<h1>Kirjanmerkit</h1><p>Tästä voit muokata kirjanmerkkikotisivua. </"
+#~ "p><p>Sivun saa näkyviin osoitteesta <a href=\"bookmarks:/\">bookmarks:/</"
+#~ "a>.</p>"
 
 #~ msgid ""
 #~ "<h1>Cache</h1><p>This module lets you configure your cache settings.</"

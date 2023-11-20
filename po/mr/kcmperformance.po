@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2013-02-23 17:39+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -19,35 +19,15 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>केडीई कार्यक्षमता</h1> केडीई कार्यक्षमता वाढविण्याकरिता संयोजना येथे संयोजीत केले जाऊ "
-"शकते."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "कॉन्करर"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "प्रणाली"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>कॉन्करर कार्यक्षमता</h1> येथे कॉन्करर ची कार्यक्षमता वाढविण्याकरिता अनेक संयोजना "
-"संयोजीत केले जाऊ शकतात. या पर्याय अंतर्गत आधीपासूनच कार्यरत घटना व त्यांस पूर्वदाखलन सज्ज "
-"करण्याकरिता पर्याय समाविष्ट केले गेले आहे."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -128,6 +108,22 @@ msgid ""
 msgstr ""
 "या पर्याय काहिक ठराविक घटना अंतर्गत अनेक अडचणी करिता कारणीभूत ठरू शकते. विस्तृत तपशील "
 "माहिती करिता हे काय आहे (Shift+F1) पहा."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>केडीई कार्यक्षमता</h1> केडीई कार्यक्षमता वाढविण्याकरिता संयोजना येथे संयोजीत केले "
+#~ "जाऊ शकते."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>कॉन्करर कार्यक्षमता</h1> येथे कॉन्करर ची कार्यक्षमता वाढविण्याकरिता अनेक संयोजना "
+#~ "संयोजीत केले जाऊ शकतात. या पर्याय अंतर्गत आधीपासूनच कार्यरत घटना व त्यांस पूर्वदाखलन "
+#~ "सज्ज करण्याकरिता पर्याय समाविष्ट केले गेले आहे."
 
 #, fuzzy
 #~| msgid "Maximum number of instances kept &preloaded:"

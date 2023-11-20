@@ -1,0 +1,65 @@
+# Translation of kio6_bookmarks.po to Catalan
+# Copyright (C) 2008-2020 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Josep M. Ferrer <txemaq@gmail.com>, 2008, 2009, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"PO-Revision-Date: 2020-10-31 10:19+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+
+#: kio_bookmarks.cpp:85
+#, kde-format
+msgid "Root"
+msgstr "Arrel"
+
+#: kio_bookmarks.cpp:118
+#, kde-format
+msgid "Places"
+msgstr "Llocs"
+
+#: kio_bookmarks.cpp:194
+#, kde-format
+msgid "Could not find bookmarks config"
+msgstr "No s'ha pogut trobar la configuració de les adreces d'interès"
+
+#: kio_bookmarks.cpp:204
+#, kde-format
+msgid "Could not find bookmarks editor"
+msgstr "No s'ha pogut trobar l'editor de les adreces d'interès"
+
+#: kio_bookmarks.cpp:210
+#, kde-format
+msgid "Wrong request: %1"
+msgstr "Sol·licitud incorrecta: %1"
+
+#: kio_bookmarks_html.cpp:85
+#, kde-format
+msgid "There are no bookmarks to display yet."
+msgstr "Encara no hi ha adreces d'interès a mostrar."
+
+#: kio_bookmarks_html.cpp:124
+#, kde-format
+msgid ""
+"kio_bookmarks CSS file not found. Output will look ugly.\n"
+"Check your installation."
+msgstr ""
+"No s'ha trobat el fitxer CSS kio_bookmarks. La sortida semblarà lletja.\n"
+"Comproveu la instal·lació."
+
+#: kio_bookmarks_html.cpp:133
+#, kde-format
+msgid "My Bookmarks"
+msgstr "Les meves adreces d'interès"

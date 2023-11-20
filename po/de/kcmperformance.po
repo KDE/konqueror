@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2017-03-26 22:04+0100\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -17,36 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>KDE-Leistung</h1> Hier können Sie Einstellungen vornehmen, um die "
-"Leistung von KDE zu verbessern."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "System"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Konqueror-Leistung</h1> Hier können Sie verschiedene Einstellungen "
-"vornehmen, mit denen die Arbeitsgeschwindigkeit von Konqueror verbessert "
-"werden kann. Dazu gehören Optionen für die Wiederverwendung bereits "
-"laufender Instanzen und das vorausschauende Laden von Instanzen."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -149,6 +128,23 @@ msgid ""
 msgstr ""
 "Diese Einstellung kann in seltenen Fällen zu Problemen führen. Weitere "
 "Einzelheiten erfahren Sie über die „Was ist das?“-Hilfe (Umschalt+F1)."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDE-Leistung</h1> Hier können Sie Einstellungen vornehmen, um die "
+#~ "Leistung von KDE zu verbessern."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Konqueror-Leistung</h1> Hier können Sie verschiedene Einstellungen "
+#~ "vornehmen, mit denen die Arbeitsgeschwindigkeit von Konqueror verbessert "
+#~ "werden kann. Dazu gehören Optionen für die Wiederverwendung bereits "
+#~ "laufender Instanzen und das vorausschauende Laden von Instanzen."
 
 #~ msgid ""
 #~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "

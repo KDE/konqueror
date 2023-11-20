@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2004-07-04 17:09+0100\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -18,36 +18,15 @@ msgstr ""
 "X-Generator: KBabel 1.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>Perfformiad KDE</h1> Gallwch ffurfweddu gosodiadau sy'n gwella "
-"perfformiad KDE yma."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "Cysawd"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>Perfformiad Konqueror</h1> Gallwch ffurfweddu sawl gosodiad sy'n gwella "
-"perfformiad Konqueror yma. Ymysg yr rhain mae dewisiadau ar gyfer "
-"ailddefnyddio enghreifftiau sy'n rhedeg eisioes, ac ar gyfer cadw "
-"enghreifftiau'n rhaglwythedig."
 
 #: konqueror.cpp:24
 #, fuzzy, kde-format
@@ -148,6 +127,23 @@ msgid ""
 "This option may in rare cases lead to various problems. Consult the What's "
 "This (Shift+F1) help for details."
 msgstr ""
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>Perfformiad KDE</h1> Gallwch ffurfweddu gosodiadau sy'n gwella "
+#~ "perfformiad KDE yma."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Perfformiad Konqueror</h1> Gallwch ffurfweddu sawl gosodiad sy'n "
+#~ "gwella perfformiad Konqueror yma. Ymysg yr rhain mae dewisiadau ar gyfer "
+#~ "ailddefnyddio enghreifftiau sy'n rhedeg eisioes, ac ar gyfer cadw "
+#~ "enghreifftiau'n rhaglwythedig."
 
 #, fuzzy
 #~| msgid ""

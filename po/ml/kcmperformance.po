@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2008-07-10 18:09+0530\n"
 "Last-Translator: ANI PETER|അനി പീറ്റര്‍ <peter.ani@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc-"
@@ -18,35 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: kcmperformance.cpp:28
-#, kde-format
-msgid ""
-"<h1>KDE Performance</h1> You can configure settings that improve KDE "
-"performance here."
-msgstr ""
-"<h1>കെഡിഇ പ്രവര്‍ത്തനം</h1> കെഡിഇയുടെ പ്രവര്‍ത്തനം മെച്ചപ്പെടുത്തുന്ന സജ്ജീകരണങ്ങള്‍ നിങ്ങള്‍"
-"ക്കിവിടെ ക്രമീകരിക്കാം."
-
-#: kcmperformance.cpp:35
+#: kcmperformance.cpp:36
 #, kde-format
 msgid "Konqueror"
 msgstr "കോണ്‍ക്വറര്‍"
 
-#: kcmperformance.cpp:38
+#: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
 msgstr "സിസ്റ്റം"
-
-#: kcmperformance.cpp:63
-#, kde-format
-msgid ""
-"<h1>Konqueror Performance</h1> You can configure several settings that "
-"improve Konqueror performance here. These include options for reusing "
-"already running instances and for keeping instances preloaded."
-msgstr ""
-"<h1>കോണ്‍ക്വററിന്റെ പ്രവര്‍ത്തനം</h1> കോണ്‍ക്വററിന്റെ പ്രവര്‍ത്തനം മെച്ചപ്പെടുത്തുന്ന സജ്ജീകരണങ്ങള്‍ "
-"നിങ്ങള്‍ക്കിവിടെ ക്രമീകരിക്കാം. നിലവില്‍ പ്രവര്‍ത്തിക്കുന്ന ഇന്‍സ്റ്റന്‍സുകള്‍ വീണ്ടും ഉപയോഗിക്കുന്നതിനും "
-"ഇന്‍സ്റ്റന്‍സുകള്‍ മുമ്പേ ലഭ്യമാക്കി സൂക്ഷിക്കുന്നതിനുമുള്ള ഐച്ഛികങ്ങള്‍ ഇവിടെ ലഭ്യമാകുന്നു."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -125,6 +105,23 @@ msgid ""
 msgstr ""
 "വളരെ അപൂര്‍വം സാഹചര്യങ്ങളില്‍ ഇതു് പല പ്രശ്നങ്ങളുണ്ടാക്കുന്നു. കൂടുതല്‍ വിവരങ്ങള്‍ക്കായി ഇതെന്താണു് (Shift"
 "+F1) എന്ന സഹായക്കുറിപ്പു കാണുക"
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>കെഡിഇ പ്രവര്‍ത്തനം</h1> കെഡിഇയുടെ പ്രവര്‍ത്തനം മെച്ചപ്പെടുത്തുന്ന സജ്ജീകരണങ്ങള്‍ നിങ്ങള്‍"
+#~ "ക്കിവിടെ ക്രമീകരിക്കാം."
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>കോണ്‍ക്വററിന്റെ പ്രവര്‍ത്തനം</h1> കോണ്‍ക്വററിന്റെ പ്രവര്‍ത്തനം മെച്ചപ്പെടുത്തുന്ന "
+#~ "സജ്ജീകരണങ്ങള്‍ നിങ്ങള്‍ക്കിവിടെ ക്രമീകരിക്കാം. നിലവില്‍ പ്രവര്‍ത്തിക്കുന്ന ഇന്‍സ്റ്റന്‍സുകള്‍ വീണ്ടും "
+#~ "ഉപയോഗിക്കുന്നതിനും ഇന്‍സ്റ്റന്‍സുകള്‍ മുമ്പേ ലഭ്യമാക്കി സൂക്ഷിക്കുന്നതിനുമുള്ള ഐച്ഛികങ്ങള്‍ ഇവിടെ "
+#~ "ലഭ്യമാകുന്നു."
 
 #, fuzzy
 #~ msgid "&Maximum number of instances kept preloaded:"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akregator_konqplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-11-29 02:33+0100\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2017-09-28 17:56+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -21,49 +21,64 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: akregatorplugin.cpp:74
+#: akregatorplugin.cpp:46
 #, fuzzy, kde-format
 #| msgid "Add Feed to Akregator"
 msgctxt "@action:inmenu"
 msgid "Add Feed to Akregator"
 msgstr "Dodaj dovod u Akregator"
 
-#: konqfeedicon.cpp:144
-#, kde-format
-msgid "Add Feed to Akregator"
+#: konqfeedicon.cpp:138
+#, fuzzy, kde-format
+#| msgid "Add Feed to Akregator"
+msgid "Add feed to Akregator"
 msgstr "Dodaj dovod u Akregator"
 
-# >> @title:window
-#: konqfeedicon.cpp:146
+#: konqfeedicon.cpp:139
 #, kde-format
-msgid "Add Feeds to Akregator"
-msgstr "Dodavanje dovoda u Akregator"
+msgid "Copy feed URL to clipboard"
+msgstr ""
 
-#: konqfeedicon.cpp:155
+#: konqfeedicon.cpp:140
+#, kde-format
+msgid "Open feed URL"
+msgstr ""
+
+#: konqfeedicon.cpp:151
+#, kde-format
+msgctxt "@title:menu title for the feeds menu"
+msgid "Feeds"
+msgstr ""
+
+#: konqfeedicon.cpp:157
 #, kde-format
 msgid "Add All Found Feeds to Akregator"
 msgstr "Dodaj sve nađene dovode u Akregator"
 
 # rewrite-msgid: /Subscribe/Follow/
-#: konqfeedicon.cpp:179
+#: konqfeedicon.cpp:248
 #, kde-format
 msgid "Subscribe to site updates (using news feed)"
 msgstr "Prati dopune na sajtu (preko dovoda vijesti)"
 
-#: pluginutil.cpp:52 pluginutil.cpp:62
+#: pluginutil.cpp:35 pluginutil.cpp:45
 #, kde-format
 msgid "Imported Feeds"
 msgstr "Uvezeni dovodi"
 
-#: pluginutil.cpp:54
+#: pluginutil.cpp:37
 #, kde-format
 msgid "Unable to contact Akregator via D-Bus"
 msgstr ""
 
-#: pluginutil.cpp:55
+#: pluginutil.cpp:38
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "The DBus call addFeedToGroup failed"
 msgctxt "@title:window"
 msgid "D-Bus call failed"
 msgstr "D‑Bus poziv addFeedToGroup nije uspio"
+
+# >> @title:window
+#~ msgid "Add Feeds to Akregator"
+#~ msgstr "Dodavanje dovoda u Akregator"

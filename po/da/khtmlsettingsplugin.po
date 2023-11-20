@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2017-03-04 14:38+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -30,67 +30,67 @@ msgstr "Værk&tøjer"
 msgid "Extra Toolbar"
 msgstr "Ekstra-værktøjslinje"
 
-#: settingsplugin.cpp:42
+#: settingsplugin.cpp:43
 #, kde-format
 msgid "HTML Settings"
 msgstr "HTML-indstillinger"
 
-#: settingsplugin.cpp:47
+#: settingsplugin.cpp:48
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"
 
-#: settingsplugin.cpp:52
+#: settingsplugin.cpp:53
 #, kde-format
 msgid "&Java"
 msgstr "&Java"
 
-#: settingsplugin.cpp:57
+#: settingsplugin.cpp:58
 #, kde-format
 msgid "&Cookies"
 msgstr "&Cookies"
 
-#: settingsplugin.cpp:62
+#: settingsplugin.cpp:63
 #, kde-format
 msgid "&Plugins"
 msgstr "&Plugin"
 
-#: settingsplugin.cpp:67
+#: settingsplugin.cpp:68
 #, kde-format
 msgid "Autoload &Images"
 msgstr "Indlæs &billeder automatisk"
 
-#: settingsplugin.cpp:74
+#: settingsplugin.cpp:75
 #, kde-format
 msgid "Enable Pro&xy"
 msgstr "Aktivér pro&xy"
 
-#: settingsplugin.cpp:79
+#: settingsplugin.cpp:80
 #, kde-format
 msgid "Enable Cac&he"
 msgstr "Aktivér cac&he"
 
-#: settingsplugin.cpp:84
+#: settingsplugin.cpp:85
 #, kde-format
 msgid "Cache Po&licy"
 msgstr "Cache-po&litik"
 
-#: settingsplugin.cpp:86
+#: settingsplugin.cpp:87
 #, kde-format
 msgid "&Keep Cache in Sync"
 msgstr "&Hold cache synkroniseret"
 
-#: settingsplugin.cpp:87
+#: settingsplugin.cpp:88
 #, kde-format
 msgid "&Use Cache if Possible"
 msgstr "&Brug cache hvis muligt"
 
-#: settingsplugin.cpp:88
+#: settingsplugin.cpp:89
 #, kde-format
 msgid "&Offline Browsing Mode"
 msgstr "&Søgetilstand uden net"
 
-#: settingsplugin.cpp:181
+#: settingsplugin.cpp:193
 #, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
@@ -99,7 +99,7 @@ msgstr ""
 "Cookie-indstillingen kunne ikke ændres, da cookie-daemonen ikke kunne "
 "kontaktes."
 
-#: settingsplugin.cpp:183
+#: settingsplugin.cpp:195
 #, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"

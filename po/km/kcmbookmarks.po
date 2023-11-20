@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2012-07-09 10:34+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -15,16 +15,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: KBabel 1.11.4\n"
 "X-Language: km-KH\n"
-
-#: bookmarks.cpp:92
-#, kde-format
-msgid ""
-"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-"\">bookmarks:/</a>.</p>"
-msgstr ""
-"<h1>ចំណាំ​របស់​ខ្ញុំ</h1><p>ម៉ូឌុល​នេះ​អនុញ្ញាត​ឲ្យ​អ្នក​កំណត់​រចនាសម្ព័ន្ធ​គេហទំព័រ​ចំណាំ ។</p><p>គេហទំព័រ​ចំណាំ​"
-"អាច​ចូលដំណើរ​បាន​នៅ <a href=\"bookmarks:/\">bookmarks:/</a> ។</p>​"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -156,6 +146,14 @@ msgstr "ជម្រះ​ឃ្លាំង​សម្ងាត់ pixmap​"
 #, kde-format
 msgid "&Clear Cache"
 msgstr "ជម្រះ​ឃ្លាំង​សម្ងាត់"
+
+#~ msgid ""
+#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+#~ "\">bookmarks:/</a>.</p>"
+#~ msgstr ""
+#~ "<h1>ចំណាំ​របស់​ខ្ញុំ</h1><p>ម៉ូឌុល​នេះ​អនុញ្ញាត​ឲ្យ​អ្នក​កំណត់​រចនាសម្ព័ន្ធ​គេហទំព័រ​ចំណាំ ។</p><p>គេហទំព័រ​"
+#~ "ចំណាំ​អាច​ចូលដំណើរ​បាន​នៅ <a href=\"bookmarks:/\">bookmarks:/</a> ។</p>​"
 
 #~ msgid ""
 #~ "<h1>Cache</h1><p>This module lets you configure your cache settings.</"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:32+0000\n"
-"PO-Revision-Date: 2023-10-21 13:54\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"PO-Revision-Date: 2023-11-19 03:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -17,25 +17,17 @@ msgstr ""
 "X-Crowdin-File: /kf5-trunk/messages/konqueror/kcmkonq.pot\n"
 "X-Crowdin-File-ID: 5340\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid ""
-"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
-"file manager here."
-msgstr ""
-"<h1>Konqueror 行为</h1> 您可以在这里配置 Konqueror 作为文件管理器的行为。"
-
-#: behaviour.cpp:40
+#: behaviour.cpp:38
 #, kde-format
 msgid "Misc Options"
 msgstr "其他选项"
 
-#: behaviour.cpp:49
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "在另外的窗口中打开文件夹(&W)"
 
-#: behaviour.cpp:50
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -44,12 +36,12 @@ msgstr ""
 "如果选中该选项，在您打开文件夹时，Konqueror 将打开新窗口，而不是在当前窗口中"
 "显示文件夹内容。"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:71
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "显示跳过回收站的“删除”菜单项(&N)"
 
-#: behaviour.cpp:77
+#: behaviour.cpp:75
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -58,3 +50,9 @@ msgid ""
 msgstr ""
 "如果您想在桌面和文件管理器的快捷菜单中显示“删除”菜单命令，请选中此选项。如果"
 "您想要彻底删除文件，您总是可以在调用“移到回收站”命令时按住 Shift 键。"
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>Konqueror 行为</h1> 您可以在这里配置 Konqueror 作为文件管理器的行为。"
