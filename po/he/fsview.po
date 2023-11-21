@@ -16,7 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Zanata 3.9.6\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -129,18 +130,22 @@ msgid "Depth"
 msgstr "עומק"
 
 #: fsview_part.cpp:70
-#, kde-format
+#, fuzzy, kde-format
 msgid "Read 1 folder, in %2"
 msgid_plural "Read %1 folders, in %2"
 msgstr[0] "נקראה תיקייה אחת, ב־%2"
 msgstr[1] "נקראו %1 תיקיות ב־%2"
+msgstr[2] ""
+msgstr[3] ""
 
 #: fsview_part.cpp:74
-#, kde-format
+#, fuzzy, kde-format
 msgid "1 folder"
 msgid_plural "%1 folders"
 msgstr[0] "תיקייה אחת"
 msgstr[1] "%1 תיקיות"
+msgstr[2] ""
+msgstr[3] ""
 
 #: fsview_part.cpp:100
 #, kde-format
@@ -381,11 +386,13 @@ msgid "Area of '%1' (%2)"
 msgstr "שטח \"%1\" (%2)"
 
 #: treemap.cpp:3419 treemap.cpp:3432
-#, kde-format
+#, fuzzy, kde-format
 msgid "1 Pixel"
 msgid_plural "%1 Pixels"
 msgstr[0] "פיקסל אחד"
 msgstr[1] "%1 פיקסלים"
+msgstr[2] ""
+msgstr[3] ""
 
 #: treemap.cpp:3436
 #, kde-format

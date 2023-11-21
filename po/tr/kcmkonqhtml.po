@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-08-26 12:27+0300\n"
+"PO-Revision-Date: 2023-11-20 12:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2345,16 +2345,15 @@ msgstr "Önce bir alan adı girmelisiniz."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
-msgstr "Fare &Davranışı"
+msgstr "Sekmeler Davranışı"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr ""
+msgstr "Yön"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2376,43 +2375,43 @@ msgstr "Yalnızca bir sekme açıkken sekme çubuğunu gizle"
 #: tabs/tabsoptions.ui:38
 #, kde-format
 msgid "Tab bar position"
-msgstr ""
+msgstr "Sekme çubuğu konum"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "Sekmeler çubuğunun nerede görüntüleneceğini seç"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "İçeriğin üstünde"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "İçeriğin altında"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "İçeriğin solunda"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "İçeriğin sağında"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr ""
+msgstr "Kullanım"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2471,10 +2470,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
-msgstr "Fare &Davranışı"
+msgstr "Yeni Sekme Davranışı"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2508,7 +2506,7 @@ msgstr "&Yeni sekmeyi güncel sekmenin arkasında aç"
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Closing"
-msgstr ""
+msgstr "Kapatım"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167

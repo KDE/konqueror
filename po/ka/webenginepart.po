@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-11-19 22:12+0100\n"
+"PO-Revision-Date: 2023-11-20 07:52+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -195,6 +195,13 @@ msgid ""
 "Along with this support, for such functions as favicons, Web Shortcuts, and "
 "<A HREF=\"%1\">XBEL bookmarks</A>, Konqueror also implements:"
 msgstr ""
+"Konqueror შეიქმნა, რომ მისდიოს და მხარი დაუჭიროს ინტერნეტის სტანდარტებს. "
+"მიზანია, სრულად განვახორციელოთ სტანდარტები ისეთი ორგანიზაციებისგან, "
+"როგორიცაა W3 და OASIS, მაშინ, როცა ვცდილობთ, გვქონდეს მხარდაჭერა დამატებითი "
+"წვდომადობის ფუნქციებთან, რომლებიც ინტერნეტში დე-ფაქტო სტანდარტადაა მიღებული. "
+"ამ ყველაფერთან ერთად, როგორიცაა ვებგვერდის ხატულები (favico), ვებ-"
+"მალსახმობები და <A HREF=\"%1\">XBEL სანიშნეები</A>, Konqueror-ს ასევე აქვს "
+"შემდეგი ტექნოლოგიების მხარდაჭერა:"
 
 #: src/about/konq_aboutpage.cpp:199
 #, kde-format
@@ -396,6 +403,10 @@ msgid ""
 "encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-"
 "Shortcuts."
 msgstr ""
+"გამოიყენეთ ვებ-მალსახმობები: თუ აკრეფთ \"gg: KDE\", Google-ში მოიძებნება "
+"ფრაზა \"KDE\". ჩვენ ძალიან ბევრი ვებ-მალსახმობი გვაქვს, რათა პროგრამებისა და "
+"სხვა საჭირო ინფორმაციის მოძებნაში დაგეხმაროთ. ასევე, შეგიძლიათ, <a href="
+"\"%1\">თქვენი საკუთარი</a> ვებ-მალსახმობებიც."
 
 #: src/about/konq_aboutpage.cpp:297
 #, kde-format
@@ -403,6 +414,8 @@ msgid ""
 "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
 "the HTML toolbar to increase the font size on your web page."
 msgstr ""
+"HTML პანელზე მდებარე გადიდების ღილაკით <img width='16' height='16' src="
+"\"%1\"></img> თქვენს ვებგვერდზე ფონტი ზომის გაზრდა შეგიძლიათ."
 
 #: src/about/konq_aboutpage.cpp:299
 #, kde-format
@@ -411,6 +424,9 @@ msgid ""
 "want to clear the current entry by pressing the black arrow with the white "
 "cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
 msgstr ""
+"როცა გნებავთ, მდებარეობის პანელში ახალი მისამართი ჩასვათ, ძირითადად, ასევე "
+"გნებავთ, იქ ამჟამად მდებარე ტექსტიც გაასუფთაოთ, თეთრი ჯვრის მქონე შავ ისარზე "
+"<img width='16' height='16' src=\"%1\"></img> დაწკაპუნებით."
 
 #: src/about/konq_aboutpage.cpp:303
 #, kde-format
@@ -419,6 +435,10 @@ msgid ""
 "the icon (favicon) that is to the left of the Location toolbar, drop it on "
 "to the desktop, and choose \"Icon\"."
 msgstr ""
+"იმისათვის, რომ სამუშაო მაგიდაზე შეიქმნას მალსახმობი, რომელიც მიმდინარე "
+"გვერდზე მიუთითებს, უბრალოდ გადაათრიეთ მისი ხატულა (favicon), რომელიც "
+"მდებარეობის პანელის მარცხენა მხარესაა, სამუშაო მაგიდაზე და აირჩიეთ \"ხატულა"
+"\"."
 
 #: src/about/konq_aboutpage.cpp:306
 #, kde-format
@@ -427,6 +447,9 @@ msgid ""
 "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
 "sessions."
 msgstr ""
+"მორგების მენიუში ასევე შეგიძლიათ <img width='16' height='16' src=\"%1\" /> "
+"\"სრულეკრანიანი რეჟიმი\" ჩართოთ. ეს ფუნქცია სასარგებლოა \"საუბრის\" "
+"სესიებისთვის."
 
 #: src/about/konq_aboutpage.cpp:309
 #, kde-format
@@ -435,6 +458,9 @@ msgid ""
 "two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> Split "
 "View Left/Right) you can make Konqueror appear the way you like."
 msgstr ""
+"Divide et impera (ლათ: \"დაყავი და დაიპყარი\") - ფანჯრის ორ ნაწილას გაყოფით "
+"(მაგ: ფანჯარა -> <img width='16' height='16' src=\"%1\" /> ხედის მარცხნივ/"
+"მარჯვნივ გაყოფა), შეგიძლიათ Konqueror თქვენს გემოზე მოირგოთ."
 
 #: src/about/konq_aboutpage.cpp:312
 #, kde-format
@@ -443,6 +469,9 @@ msgid ""
 "visiting asks you to use a different browser (and do not forget to send a "
 "complaint to the webmaster!)"
 msgstr ""
+"გამოიყენეთ <a href=\"%1\">user-agent</a> ფუნქცია, თუ ვებგვერდი, სადაც "
+"შედიხართ, სხვა ბრაუზერს ითხოვს (და არ დაგავიწყდეთ, ვებმასტერს საჩივარი "
+"მიწეროთ!)"
 
 #: src/about/konq_aboutpage.cpp:315
 #, kde-format
@@ -450,6 +479,8 @@ msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
 "ensures that you can keep track of the pages you have visited recently."
 msgstr ""
+"<img width='16' height='16' src=\"%1\"></img> ისტორია გვერდით პანელზე "
+"უზრუნველყოფს თქვენს წვდომას ბრაუზერის ისტორიასთან."
 
 #: src/about/konq_aboutpage.cpp:317
 #, kde-format
@@ -465,6 +496,9 @@ msgid ""
 "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
 "Terminal Emulator)."
 msgstr ""
+"განვითარებული მომხმარებლები დააფასებენ Konsole-ს, რომელიც შეგიძლიათ, "
+"Konqueror-ში ჩააშენოთ (მორგება -> <img width='16' height='16' SRC=\"%1\"></"
+"img> ტერმინალის ემულატორის ჩვენება)."
 
 #: src/about/konq_aboutpage.cpp:323
 #, kde-format
@@ -497,6 +531,8 @@ msgid ""
 "The page will be saved as a single HTML file. Only the text of the page will "
 "be saved. External resources such as images won't be saved"
 msgstr ""
+"ეს გვერდი შენახული იქნება ერთ HTML ფაილში. შევინახავ მხოლოდ ტექსტს. გარე "
+"რესურსები, როგორიცაა გამოსახულებები, შენახული არ იქნება"
 
 #: src/choosepagesaveformatdlg.cpp:40
 #, kde-format
@@ -504,6 +540,9 @@ msgid ""
 "The page will be saved as an HTML file. Any external resources the page "
 "requires, such as images, will be saved inside an apposite directory"
 msgstr ""
+"ეს გვერდი შენახული იქნება HTML ფაილში. გარე რესურსები, რომელიც გვერდს "
+"ესაჭიროება, როგორიცაა, მაგალითად გამოსახულებები, შესაბამის საქაღალდეში "
+"გადმოიწერება"
 
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
@@ -513,6 +552,9 @@ msgid ""
 "<br><strong>Note</strong>: not all browsers are able to display this kind of "
 "files"
 msgstr ""
+"ეს გვერდი შენახული იქნება MHTML ფაილში, რომელიც ორივე, ტექსტს და გარე "
+"რესურსებსაც შეიცავს. <br><strong>დაიმახსოვრეთ</strong>: ამ ტიპის ფაილების "
+"ჩვენება ყველა ბრაუზერს არ შეუძლია"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
@@ -616,6 +658,8 @@ msgid ""
 "<html><head/><body><p>You received a cookie from %1</p><p>Do you want to "
 "accept or reject this cookie?</p></body></html>"
 msgstr ""
+"<html><head/><body><p>მიიღეთ ქუქი %1-დან</p><p>მიიღებთ თუ უარჰყოფთ ამ ქუქის?"
+"</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/cookies/cookiealertdlg.ui:30
@@ -1365,7 +1409,7 @@ msgstr "&გამომცემელი"
 msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
 "default style sheet will be used"
-msgstr ""
+msgstr "მომხმარებლის სტილების ცხრილის შემცველი ფაილი <tt>%1</tt> ვერ გავხსენი"
 
 #: src/webenginepartdownloadmanager.cpp:286
 #, kde-format

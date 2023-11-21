@@ -1,7 +1,7 @@
 # translation of kcmkonqhtml.po to
 # Translation of kcmkonqhtml.po to Slovenian
 # SLOVENIAN TRANSLATION OF KCMKONQHTML.
-# $Id: kcmkonqhtml.po 1665461 2023-11-20 02:24:03Z scripty $
+# $Id: kcmkonqhtml.po 1665524 2023-11-21 01:59:37Z scripty $
 # $Source$
 #
 # Copyright (C) 2002, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
@@ -18,17 +18,17 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-08-17 09:11+0200\n"
+"PO-Revision-Date: 2023-11-20 09:10+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.1\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -2349,16 +2349,15 @@ msgstr "Najprej morate vnesti ime domene."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
-msgstr "Obnašanje miške"
+msgstr "Obnašanje zavihkov"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr ""
+msgstr "Aspekt"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2380,43 +2379,43 @@ msgstr "Skrij vrstico zavihkov, ko je odprt le en zavihek"
 #: tabs/tabsoptions.ui:38
 #, kde-format
 msgid "Tab bar position"
-msgstr ""
+msgstr "Pozicija vrstice z zavihki"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "Izberite kje naj bo prikaz vrstice z zavihki"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "Nad vsebino"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "Pod vsebino"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "Levo od vsebine"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "Desno od vsebine"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr ""
+msgstr "Uporaba"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2471,10 +2470,9 @@ msgstr "Odpri kot zavihek v obstoječem Konquerorju, ko je URL odprt od zunaj"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
-msgstr "Obnašanje miške"
+msgstr "Obnašanje novega zavihka"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2509,7 +2507,7 @@ msgstr "Odpri &nov zavihek poleg trenutnega"
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Closing"
-msgstr ""
+msgstr "Zapiranje"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-11-19 22:21+0100\n"
+"PO-Revision-Date: 2023-11-20 16:23+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -56,6 +56,11 @@ msgid ""
 "image button.<br />Unless you have a very slow network connection, you will "
 "probably want to check this box to enhance your browsing experience.</html>"
 msgstr ""
+"<html>თუ ეს ჩართულია, Konqueror ავტომატურად ჩატვირთავს ყველა გამოსახულებას, "
+"რომელიც ვებგვერდშია ჩაშენებული. წინააღმდეგ შემთხვევაში ის მათ ადგილას "
+"ადგილმჭერებს აჩვენებს და ამ გამოსახულებების ჩატვირთვა ხელით შეგიძლიათ, "
+"სურათის ღილაკზე დაჭერით.<br />თუ ძალიან ნელი ინტერნეტი არ გაქვთ, უმრავლეს "
+"შემთხვევაში ეს ველი ჩართული უნდა გქონდეთ.</html>"
 
 #: appearance.cpp:67
 #, kde-format
@@ -70,6 +75,10 @@ msgid ""
 "will probably want to check this box to enhance your browsing experience, "
 "especially if have a slow network connection.</html>"
 msgstr ""
+"<html>თუ ეს ჩართულია, Konqueror ვებგვერდში ჩაშენებული გამოსახულებების, "
+"რომლებიც ჯერ არ ჩატვირთულა, ადგილმჭერების გარშემო საზღვრებს დახატავს.<br /"
+">უმრავლეს შემთხვევაში ალბათ ეს ჩართული უნდა გქონდეთ, განსაკუთრებით, თუ ნელი "
+"ინტერნეტი გაქვთ.</html>"
 
 #: appearance.cpp:78
 #, kde-format
@@ -96,6 +105,11 @@ msgid ""
 "animations, show the starting image only.</li><li><b>Show only once</b>: "
 "Show all animations completely but do not repeat them.</li></ul></html>"
 msgstr ""
+"<html>კონტროლი, როგორ აჩვენებს Konqueror ანიმირებულ გამოსახულებებს:<br /"
+"><ul><li><b>ჩართულია</b>: ყველა ანიმაციის სრულად ჩვენება.</"
+"li><li><b>გამორთულია</b>: პირველი კადრის გარდა ანიმაცია ნაჩვენები არ იქნება."
+"</li><li><b>მხოლოდ ერთხელ ჩვენება</b>: ანიმაცია ნაჩვენები ბოლომდე იქნება, "
+"მაგრამ მხოლოდ ერთხელ.</li></ul></html>"
 
 #: appearance.cpp:86
 #, kde-format
@@ -139,6 +153,12 @@ msgid ""
 "is moved over the link</li></ul><br /><i>Note: The site's CSS definitions "
 "can override this value.</i></html>"
 msgstr ""
+"<html>მართვა, როგორ აკეთებს Konqueror ბმულების ხაზგასმას:<br /"
+"><ul><li><b>ჩართულია</b>: ბმულები, ყოველთვის, ხაზგასმული იქნება</"
+"li><li><b>გამორთულია</b>: ბმულები ხაზგასმული არ იქნება</li><li><b>მხოლოდ "
+"გადატარებისას</b>: ბმულის ხაზგასმა, მხოლოდ, როცა თაგუნას გადაატარებთ</li></"
+"ul><br /><i>შენიშვნა: საიტის CSS-ს შეუძლია, ეს პარამეტრი გადაფაროს.</i></"
+"html>"
 
 #: appearance.cpp:109
 #, kde-format
@@ -172,6 +192,12 @@ msgid ""
 "scrolling on pages where it can be achieved with moderate usage of system "
 "resources.</li></ul></html>"
 msgstr ""
+"<html>განსაზღვრავს, უნდა გამოიყენოს Konqueror-მა გლუვი ბიჯები HTML გვერდების "
+"გადახვევისას, თუ მთლიანი ნაბიჯები:<br /><ul><li><b>ყოველთვის</b>: "
+"გადახვევისას ყოველთვის გლუვი ბიჯების გამოყენება.</li><li><b>არასდროს</b>: "
+"არასდროს გამოიყენო გლუვი გადახვევა, მხოლოდ ნაბიჯებით.</li><li><b>როცა "
+"საჭიროა</b>: გლუვი გადახვევს გამოყენება ვებგვერდებზე, სადაც ამის მიღწევა "
+"დიდი სისტემური რესურსების გამოყენების გარეშე შეიძლება.</li></ul></html>"
 
 #: appearance.cpp:132
 #, kde-format
@@ -182,6 +208,8 @@ msgstr "ფონტის &ზომა"
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr ""
+"ეს ფარდობითი ფონტის ზომაა, რომელსაც Konqueror ვებგვერდების საჩვენებლად "
+"იყენებს."
 
 #: appearance.cpp:139
 #, kde-format
@@ -285,6 +313,8 @@ msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
 "language encoding' and should not have to change this."
 msgstr ""
+"აირჩიეთ ნაგულისხმევი კოდირება გამოსაყენებლად. ჩვეულებრივ, 'ენის კოდირების "
+"გამოყენება' საკმარისია და ამისი შეცვლა არ უნდა დაგჭირდეთ."
 
 #. i18n: ectx: property (title), widget (QGroupBox, cacheEnabled)
 #: cache/cache.ui:17
@@ -300,6 +330,9 @@ msgid ""
 "p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
+"<html><head/><body><p>კეში დისკზე არ იქნება შენახული. მხოლოდ მეხსიერებაში.</"
+"p><p>ამისი ჩართვა ნიშნავს, რომ Konqueror-დან გასვლისას კეში წაიშლება</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:32
@@ -320,6 +353,9 @@ msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
+"მაქსიმალური ადგილი დისკზე ან მეხსიერებაში, რომელიც კეშისთვის იქნება "
+"გამოყენებული. როცა ზღვარი მიღწეული იქნება, ძველი გვერდები წაიშლება, რათა "
+"ადგილი ახლებს დაუთმონ"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:54
@@ -761,6 +797,8 @@ msgid ""
 "<b>Stylesheets</b><p>See http://www.w3.org/Style/CSS for further information "
 "on cascading style sheets.</p>"
 msgstr ""
+"<b>სტილის ცხრილები</b><p>კასკადური სტილის ცხრილების შესახებ მეტი "
+"ინფორმაციისთვის იხილეთ http://www.w3.org/Style/CSS.</p>"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, ButtonGroup1)
 #: css/cssconfig.ui:17
@@ -769,6 +807,8 @@ msgid ""
 "<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
 "render style sheets.</p>"
 msgstr ""
+"<b>სტილის ცხრილები</b><p>აირჩიეთ ეს დამჯგუფებელი, რომ აღწეროთ, როგორ "
+"დაარენდერებს Konqueror სტილის ცხრილებს.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
 #: css/cssconfig.ui:20
@@ -840,6 +880,8 @@ msgid ""
 "another, with family members that are e.g. bold, italic, or any number of "
 "the above.</p>"
 msgstr ""
+"<b>ფონტის ოჯახი</b><p>ფონტის ოჯახი ფონტების ჯგუფია, რომლებიც ერთმანეთს "
+"წააგავენ, წევრებთ, რომლებიც სქელი, კურსივი ან ნებისმიერი ვარიანტია.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:24
@@ -866,6 +908,8 @@ msgid ""
 "<b>Use same family for all text</b><p>Select this option to override custom "
 "fonts everywhere in favor of the base font.</p>"
 msgstr ""
+"<b>ტექსტისთვის იგივე ფონტის გამოყენება</b><p>მონიშნეთ ეს პარამეტრი, რომ "
+"გადაფაროთ მითითებული ფონტები ყველგან, ერთი ფონტის სასარგებლოდ.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
 #: css/csscustom.ui:47
@@ -1015,6 +1059,8 @@ msgid ""
 "<b>Custom</b><p>Select this option to define a custom color for the default "
 "font.</p>"
 msgstr ""
+"<b>ხელით</b><p>აირჩიეთ ეს პარამეტრი, რომ ნაგულისხმევი ფონტის ფერი ხელით "
+"მიუთითოთ.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, customColor)
 #: css/csscustom.ui:209
@@ -1029,6 +1075,8 @@ msgid ""
 "<b>Background</b><p>This background color is the one displayed behind the "
 "text by default. A background image will override this.</p>"
 msgstr ""
+"<b>ფონი</b><p>ფონის ფერი ფერია, რომელიც ტექსტის მიღმა ნაგულისხმევად ჩანს. "
+"ამას ფონის სურათი გადაფარავს.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, txtBackground)
 #: css/csscustom.ui:222
@@ -1043,6 +1091,8 @@ msgid ""
 "<b>Background</b><p>Behind this door lays the ability to choose a custom "
 "default background.</p>"
 msgstr ""
+"<b>ფონი</b><p>ამ კარს უკან იმყოფება შესაძლებლობა, ნაგულისხმევი ფონი ხელით "
+"მიუთითოთ.</p>"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
 #: css/csscustom.ui:248
@@ -1067,6 +1117,8 @@ msgid ""
 "<b>Foreground color</b><p>The foreground color is the color that the text is "
 "drawn in.</p>"
 msgstr ""
+"<b>წინა პლანის ფერი</b><p>წინა პლანის ფერი ფერია, რომელშიც ტექსტი იხატება.</"
+"p>"
 
 #. i18n: ectx: property (text), widget (QLabel, txtForeground)
 #: css/csscustom.ui:264
@@ -1087,6 +1139,8 @@ msgid ""
 "<b>Suppress images</b><p>Selecting this will prevent Konqueror from loading "
 "images.</p>"
 msgstr ""
+"<b>გამოსახულებების მოცილება</b><p>ამის არჩევის შემდეგ Konqueror "
+"გამოსახულებებს აღარ ჩატვირთავს.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, hideImages)
 #: css/csscustom.ui:305
@@ -1101,6 +1155,8 @@ msgid ""
 "<b>Suppress background images</b><p>Selecting this option will prevent "
 "Konqueror from loading background images.</p>"
 msgstr ""
+"<b>ფონის სურათების მოცილება</b><p>ამის არჩევის შემდეგ Konqueror ფონის "
+"სურათებს აღარ ჩატვირთავს.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, hideBackground)
 #: css/csscustom.ui:315
@@ -1182,6 +1238,8 @@ msgid ""
 "Click on this button to change the policy for the host or domain selected in "
 "the list box."
 msgstr ""
+"დააწკაპუნეთ ამ ღილაკზე, რომ შეცვალოთ პოლიტიკა ჰოსტისთვის ან დომენისთვის, "
+"რომელიც ჩამონათვალში აირჩიეთ."
 
 #: domainlistview.cpp:75
 #, kde-format
@@ -1189,6 +1247,8 @@ msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
 "the list box."
 msgstr ""
+"დააწკაპუნეთ ამ ღილაკზე, რომ წაშალოთ პოლიტიკა ჰოსტისთვის ან დომენისთვის, "
+"რომელიც ჩამონათვალში აირჩიეთ."
 
 #: domainlistview.cpp:122
 #, kde-format
@@ -1291,6 +1351,8 @@ msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
 "should be defined in the filter list for blocking to take effect."
 msgstr ""
+"AdBlocK-ის ფილტრების ჩართვა ან გამორთვა. როცა ჩართულია, ძალაში შესასვლელად, "
+"ფილტრების სიაში ბმულის გამოსახულებები უნდა აღწეროთ."
 
 #: filteropts.cpp:160
 #, kde-format
@@ -1298,6 +1360,9 @@ msgid ""
 "When enabled blocked images will be removed from the page completely, "
 "otherwise a placeholder 'blocked' image will be used."
 msgstr ""
+"როცა ჩართულია, დაბლოკილი გამოსახულებები ვებგვერდებიდან სრულად წაიშლება. "
+"წინააღმდეგ შემთხვევაში გამოყენებული იქნება 'დაბლოკილი' გამოსახულების "
+"ადგილმჭერი."
 
 #: filteropts.cpp:167
 #, kde-format
@@ -1305,6 +1370,8 @@ msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
 "and media objects."
 msgstr ""
+"ეს ბმულის ფილტრების სიაა, რომელიც ყველა ჩაშენებულ გამოსახულებაზე და მედიის "
+"ობიექტებზე გადატარდება."
 
 #: filteropts.cpp:171
 #, kde-format
@@ -1421,6 +1488,8 @@ msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
 "\" button is pressed."
 msgstr ""
+"ეს იმ ვებგვერდის ბმულია, სადაც Konqueror გადავა, როცა \"საწყისი გვერდის\" "
+"ღილაკს დააწვებით."
 
 #: generalopts.cpp:112
 #, kde-format
@@ -1464,6 +1533,8 @@ msgid ""
 "bookmark and choose a folder in which to store it when you add a new "
 "bookmark."
 msgstr ""
+"თუ ეს ჩართულია, Konqueror, სანიშნის დამატებისას, უფლებას მოგცემთ, შეცვალოთ "
+"სანიშნეს სათაური და აირჩიოთ საქაღალდე, სადაც ის შეინახება."
 
 #: htmlopts.cpp:47
 #, kde-format
@@ -1476,6 +1547,8 @@ msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
 "bookmark toolbar which you have marked to do so in the bookmark editor."
 msgstr ""
+"თუ ეს ჩართულია, Konqueror, მხოლოდ, იმ სანიშნეებს გაჩვენებთ, რომლებსაც "
+"სანიშნეების რედაქტორში შესაბამისი ჭდე დაუსვით."
 
 #: htmlopts.cpp:56
 #, kde-format
@@ -1488,6 +1561,8 @@ msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
 "forms and suggest it in similar fields for all forms."
 msgstr ""
+"თუ ეს ჩართულია, Konqueror დაიმახსოვრებს მონაცემებს, რომელსაც ვებფორმებში "
+"შეიყვანთ და მათ ყველა ფორმის შესაბამის ველებში შემოგთავაზებთ."
 
 #: htmlopts.cpp:66
 #, kde-format
@@ -1499,6 +1574,8 @@ msgstr "&მაქსიმალური დასრულება:"
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
 msgstr ""
+"აქ შეგიძლიათ აირჩიოთ, რამდენი მნიშვნელობა დაიმახსოვროს Konquer-მა ფორმის "
+"ველისთვის."
 
 #: htmlopts.cpp:75
 #, kde-format
@@ -1516,6 +1593,8 @@ msgid ""
 "If this option is set, the shape of the cursor will change (usually to a "
 "hand) if it is moved over a hyperlink."
 msgstr ""
+"თუ ეს პარამეტრი დაყენებულია, კურსორის ფორმა შეიცვლება (ჩვეულებრივ, ხელზე), "
+"თუ მას ჰიპერბმულს გადაატარებთ."
 
 #: htmlopts.cpp:84
 #, kde-format
@@ -1528,6 +1607,8 @@ msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
 "clicking on a Konqueror view."
 msgstr ""
+"თუ ეს ჩართულია, Konqueror-ის ხედში, მონიშნულში, ბმულების გახსნა, თაგუნას შუა "
+"ღილაკით ზედ დაწკაპუნებით შეგიძლიათ."
 
 #: htmlopts.cpp:91
 #, kde-format
@@ -1541,6 +1622,9 @@ msgid ""
 "Konqueror view. To access the context menu, press the right mouse button and "
 "move."
 msgstr ""
+"თუ ეს ჩართულია, ისტორიაში უკან გადასვლა Konqueror-ის ხედზე თაგუნას მარჯვენა "
+"ღილაკზე დაწკაპუნებით შეგიძლიათ. კონტექსტური მენიუს გამოსაძახებლად დააჭირეთ "
+"თაგუნას მარჯვენა ღილაკს და გადაიტანეთ ის."
 
 #: htmlopts.cpp:104
 #, kde-format
@@ -1553,6 +1637,8 @@ msgid ""
 "Some web pages request an automatic reload or redirection after a certain "
 "period of time. By unchecking this box Konqueror will ignore these requests."
 msgstr ""
+"ზოგიერთი ვებგვერდი ავტომატურ გადატვირთვას ან გადამისამართებას ითხოვენ რაღაც "
+"პერიოდის შემდეგ. ამის გამორთვით Konqueror ამნაირ მოთხოვნებს გათიშავს."
 
 #: htmlopts.cpp:111
 #, kde-format
@@ -1571,6 +1657,8 @@ msgstr ""
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr ""
+"DNT თავსართის გაგზავნა, რომ ვებგვერდებს უთხრათ, რომ არ გნებავთ, ტრეკინგი "
+"განახორციელონ"
 
 #: htmlopts.cpp:117
 #, kde-format
@@ -1587,7 +1675,7 @@ msgstr "ვებგვერდის პაროლის დამახს�
 #: htmlopts.cpp:122
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
-msgstr ""
+msgstr "გამორთეთ ეს თოლია, რათა ვებგვერდების პაროლის შენახვა აღარ მოგთხოვოთ"
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -1599,6 +1687,8 @@ msgstr "ონლაინ PDF ფაილების WebEngine-ით გა�
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
 msgstr ""
+"გამორთეთ ეს, რომ ინტერნეტიდან გახსნილი PDF ფაილები სისტემური პარამეტრების "
+"მიხედვით გაიხსნას"
 
 #: javaopts.cpp:78
 #, kde-format
@@ -1623,7 +1713,7 @@ msgstr "&KIO -ის გამოყენება"
 #: javaopts.cpp:105
 #, kde-format
 msgid "Shu&tdown applet server when inactive for more than"
-msgstr ""
+msgstr "&აპლეტის სერვერის გამორთვა, როცა ის უქმეა მეტი, ვიდრე"
 
 #: javaopts.cpp:117
 #, kde-format
@@ -1666,6 +1756,8 @@ msgid ""
 "policies will be merged with the existing ones. Duplicate entries are "
 "ignored."
 msgstr ""
+"დააწკაპუნეთ ამ ღილაკზე, რომ აირჩიოთ ფაილი, რომელიც Java-ის პოლიტიკებს "
+"შეიცავს. ეს პოლიტიკები არსებულს შეუერთდება. დუბლიკატები გამოტოვებულია."
 
 #: javaopts.cpp:145
 #, kde-format
@@ -1673,6 +1765,8 @@ msgid ""
 "Click this button to save the Java policy to a zipped file. The file, named "
 "<b>java_policy.tgz</b>, will be saved to a location of your choice."
 msgstr ""
+"დააწკაპუნეთ ამ ღილაკზე, რომ Java-ის პოლიტიკა zip-ით შეკუმშულ ფაილში, სახელად "
+"<b>java_policy.tgz</b> შეინახოთ. მდებარეობას თქვენ მიუთითებთ."
 
 #: javaopts.cpp:149
 #, kde-format
@@ -1718,6 +1812,8 @@ msgid ""
 "If you want special arguments to be passed to the virtual machine, enter "
 "them here."
 msgstr ""
+"თუ გნებავთ, ვირტუალურ მანქანას სპეციალური არგუმენტები გადასცეთ, ისინი აქ "
+"უნდა შეიყვანოთ."
 
 #: javaopts.cpp:179
 #, kde-format
@@ -1795,7 +1891,7 @@ msgstr "&შეცდომების გადაცემა"
 #, kde-format
 msgid ""
 "Enables the reporting of errors that occur when JavaScript code is executed."
-msgstr ""
+msgstr "ჩართავს JavaScript-ის კოდის შესრულებისას მომხდარი შეცდომების ჩვენებას."
 
 #: jsopts.cpp:83
 #, kde-format
@@ -2084,16 +2180,15 @@ msgstr "ჯერ დომენის სახელი უნდა შე�
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
-msgstr "თაგუნას &ქცევა"
+msgstr "ჩანართების ქცევა"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr ""
+msgstr "ასპექტი"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2113,43 +2208,43 @@ msgstr "ჩანართების დამალვა, როცა მ�
 #: tabs/tabsoptions.ui:38
 #, kde-format
 msgid "Tab bar position"
-msgstr ""
+msgstr "ჩანართების ზოლის მდებარეობა"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "აირჩიეთ, სად ვაჩვენო ჩანართების ზოლი"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "შემცველობის ზემოთ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "შემცველობის ქვემოთ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "შემცველობის მარცხნივ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "შემცველობის მარჯვნივ"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr ""
+msgstr "გამოყენება"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2200,10 +2295,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
-msgstr "თაგუნას &ქცევა"
+msgstr "ახალი ჩანართის ქცევა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2236,7 +2330,7 @@ msgstr "&ახალი ჩანართის მიმდინარე �
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Closing"
-msgstr ""
+msgstr "დახურვა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167

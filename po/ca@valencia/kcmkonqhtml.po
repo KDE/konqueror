@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-08-17 16:33+0200\n"
+"PO-Revision-Date: 2023-11-20 10:02+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 "X-Accelerator-Marker: &\n"
 
 #: appearance.cpp:39
@@ -31,7 +31,7 @@ msgstr "General"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Fonts"
-msgstr "Tipus de lletra"
+msgstr "Lletres"
 
 #: appearance.cpp:41
 #, kde-format
@@ -204,19 +204,19 @@ msgstr ""
 #: appearance.cpp:132
 #, kde-format
 msgid "Font Si&ze"
-msgstr "&Mida del tipus de lletra"
+msgstr "&Mida de la lletra"
 
 #: appearance.cpp:135 appearance.cpp:153
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr ""
-"Esta és la mida del tipus de lletra relativa que utilitza Konqueror per a "
-"mostrar llocs web."
+"Esta és la mida de la lletra relativa que utilitza Konqueror per a mostrar "
+"llocs web."
 
 #: appearance.cpp:139
 #, kde-format
 msgid "M&inimum font size:"
-msgstr "Mida mín&ima del tipus de lletra:"
+msgstr "Mida mín&ima de la lletra:"
 
 #: appearance.cpp:143
 #, kde-format
@@ -230,85 +230,81 @@ msgstr ""
 #: appearance.cpp:148
 #, kde-format
 msgid "&Medium font size:"
-msgstr "Mida &mitjana del tipus de lletra:"
+msgstr "Mida &mitjana de la lletra:"
 
 #: appearance.cpp:161
 #, kde-format
 msgid "S&tandard font:"
-msgstr "Tipus de lletra es&tàndard:"
+msgstr "Lletra es&tàndard:"
 
 #: appearance.cpp:162
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr ""
-"Este és el tipus de lletra utilitzat per a mostrar text normal a una pàgina "
-"web."
+"Esta és la lletra utilitzada per a mostrar text normal en una pàgina web."
 
 #: appearance.cpp:166
 #, kde-format
 msgid "&Fixed font:"
-msgstr "Tipus de lletra &fixa:"
+msgstr "Lletra d'amplària &fixa:"
 
 #: appearance.cpp:167
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr ""
-"Este és el tipus de lletra utilitzat per a mostrar text d'amplària fixa (no "
+"Esta és la lletra utilitzada per a mostrar text d'amplària fixa (no "
 "proporcional)."
 
 #: appearance.cpp:171
 #, kde-format
 msgid "S&erif font:"
-msgstr "Tipus de lletra s&erif:"
+msgstr "Lletra s&erif:"
 
 #: appearance.cpp:172
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
-msgstr ""
-"Este és el tipus de lletra utilitzat per a mostrar text marcat com a serif."
+msgstr "Esta és la lletra utilitzada per a mostrar text marcat com a serif."
 
 #: appearance.cpp:176
 #, kde-format
 msgid "Sa&ns serif font:"
-msgstr "Tipus de lletra de &pal sec:"
+msgstr "Lletra de &pal sec:"
 
 #: appearance.cpp:177
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr ""
-"Este és el tipus de lletra utilitzat per a mostrar text marcat com a lletra "
-"de pal sec."
+"Esta és la lletra utilitzada per a mostrar text marcat com a lletra de pal "
+"sec."
 
 #: appearance.cpp:181
 #, kde-format
 msgid "C&ursive font:"
-msgstr "Tipus de lletra &cursiu:"
+msgstr "Lletra &cursiva:"
 
 #: appearance.cpp:182
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr ""
-"Este és el tipus de lletra utilitzat per a mostrar text marcat com a lletra "
-"cursiva."
+"Esta és la lletra utilitzada per a mostrar text marcat com a lletra cursiva."
 
 #: appearance.cpp:186
 #, kde-format
 msgid "Fantas&y font:"
-msgstr "Tipus de lletra fantas&ia:"
+msgstr "Lletra fantas&ia:"
 
 #: appearance.cpp:187
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr ""
-"Este és el tipus de lletra utilitzat per a mostrar text marcat com a lletra "
-"fantasia."
+"Esta és la lletra utilitzada per a mostrar text marcat com a lletra fantasia."
 
 #: appearance.cpp:196
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
-msgstr "Ajustament de la mida del tipus de lletra per a a&questa codificació:"
+msgstr "Ajustament de la mida de la lletra per a a&questa codificació:"
 
 #: appearance.cpp:204 appearance.cpp:402
 #, kde-format
@@ -893,9 +889,9 @@ msgid ""
 "your desired options.</p>"
 msgstr ""
 "<b>Utilitza el full d'estil d'accessibilitat</b><p> Si seleccioneu esta "
-"opció, podreu definir un tipus de lletra predeterminat, una mida i un color "
-"de tipus de lletra amb uns quants clics de ratolí. Senzillament, exploreu el "
-"diàleg Personalitza... i trieu les opcions desitjades.</p>"
+"opció, podreu definir una lletra predeterminada, una mida i un color de "
+"lletra amb uns quants clics de ratolí. Senzillament, exploreu el diàleg "
+"Personalitza... i trieu les opcions desitjades.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useAccess)
 #: css/cssconfig.ui:97
@@ -917,15 +913,15 @@ msgid ""
 "another, with family members that are e.g. bold, italic, or any number of "
 "the above.</p>"
 msgstr ""
-"<b>Família del tipus de lletra</b><p>Una família del tipus de lletra és un "
-"grup de tipus de lletres que s'assemblen entre si, amb diferents membres que "
-"són p. ex., negreta, cursiva o qualsevol altre número de dalt.</p>"
+"<b>Família de la lletra</b><p>Una família de la lletra és un grup de lletres "
+"que s'assemblen entre si, amb diferents membres que són p. ex., negreta, "
+"cursiva o qualsevol altre número de dalt.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:24
 #, kde-format
 msgid "Font Family"
-msgstr "Família del tipus de lletra"
+msgstr "Família de la lletra"
 
 #. i18n: ectx: property (text), widget (QLabel, txtBaseFontFamily)
 #: css/csscustom.ui:30
@@ -937,7 +933,7 @@ msgstr "Família base:"
 #: css/csscustom.ui:37
 #, kde-format
 msgid "<p>This is the currently selected font family</p>"
-msgstr "<p>Esta és la família del tipus de lletra actualment seleccionada</p>"
+msgstr "<p>Esta és la família d'al lletra actualment seleccionada</p>"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
 #: css/csscustom.ui:44
@@ -947,8 +943,8 @@ msgid ""
 "fonts everywhere in favor of the base font.</p>"
 msgstr ""
 "<b>Utilitza la mateixa família per a tot el text</b><p>Seleccioneu esta "
-"opció per a modificar els tipus lletra personalitzats en favor del tipus de "
-"lletra base.</p>"
+"opció per a modificar els tipus lletra personalitzats en favor de la lletra "
+"base.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
 #: css/csscustom.ui:47
@@ -960,13 +956,13 @@ msgstr "Utilitza la mateixa família per a tot el text"
 #: css/csscustom.ui:57
 #, kde-format
 msgid "Font Size"
-msgstr "Mida del tipus de lletra"
+msgstr "Mida de la lletra"
 
 #. i18n: ectx: property (text), widget (QLabel, txtFontsize)
 #: css/csscustom.ui:63
 #, kde-format
 msgid "Base font si&ze:"
-msgstr "Mi&da del tipus de lletra base:"
+msgstr "Mi&da de la lletra base:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:80
@@ -1055,9 +1051,9 @@ msgid ""
 "displayed in the same size.</p>"
 msgstr ""
 "<b>Utilitza la mateixa mida per a tots els elements</b><p>Seleccioneu esta "
-"opció per a modificar les mides personalitzades dels tipus de lletra en "
-"favor de la mida dels tipus de lletra base. Tots els tipus de lletra es "
-"mostraran amb la mateixa mida.</p>"
+"opció per a modificar les mides personalitzades de les lletres en favor de "
+"la mida de les lletres base. Totes les lletres es mostraran amb la mateixa "
+"mida.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, dontScale)
 #: css/csscustom.ui:151
@@ -1104,8 +1100,8 @@ msgid ""
 "<b>Custom</b><p>Select this option to define a custom color for the default "
 "font.</p>"
 msgstr ""
-"<b>Personalitza</b><p>Seleccioneu esta opció per a definir un color per al "
-"tipus de lletra predeterminat.</p>"
+"<b>Personalitza</b><p>Seleccioneu esta opció per a definir un color per a la "
+"lletra predeterminada.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, customColor)
 #: css/csscustom.ui:209
@@ -1148,9 +1144,8 @@ msgid ""
 "stylesheet.</p>"
 msgstr ""
 "<b>Utilitza el mateix color per a tot el text</b><p>Seleccioneu esta opció "
-"per a aplicar la vostra elecció del color al tipus de lletra predeterminat "
-"així com a qualsevol dels tipus de lletra especificats en un full d'estil.</"
-"p>"
+"per a aplicar la vostra elecció del color a la lletra predeterminada així "
+"com a qualsevol de les lletres especificades en un full d'estil.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameColor)
 #: css/csscustom.ui:251
@@ -1231,10 +1226,10 @@ msgid ""
 "design."
 msgstr ""
 "<h1>Fulls d'estil de Konqueror</h1> Este mòdul us permetrà aplicar el vostre "
-"propi configuració de colors i tipus de lletra a Konqueror utilitzant els "
-"fulls d'estil (CSS). Podreu especificar opcions o aplicar el vostre propi "
-"full d'estil apuntant cap a esta ubicació.<br /> Cal tindre present que "
-"estes opcions sempre tindran preferència per damunt de les especificades per "
+"propi configuració de colors i lletres a Konqueror utilitzant els fulls "
+"d'estil (CSS). Podreu especificar opcions o aplicar el vostre propi full "
+"d'estil apuntant cap a esta ubicació.<br /> Cal tindre present que estes "
+"opcions sempre tindran preferència per damunt de les especificades per "
 "l'autor del lloc. Açò podria ser útil per a gent amb deficiències visuals o "
 "per a pàgines web que són illegibles per culpa d'un mal disseny."
 
@@ -2383,16 +2378,15 @@ msgstr "Primer heu d'introduir un nom de domini."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
-msgstr "&Comportament del ratolí"
+msgstr "Comportament de les pestanyes"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr ""
+msgstr "Aspecte"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2414,43 +2408,43 @@ msgstr "Oculta la barra de pestanyes si tan sols n'hi ha una d'oberta"
 #: tabs/tabsoptions.ui:38
 #, kde-format
 msgid "Tab bar position"
-msgstr ""
+msgstr "Posició de la barra de pestanyes"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "Seleccioneu a on mostrar la barra de pestanyes"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "Sobre el contingut"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "Davall el contingut"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "Esquerra del contingut"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "Dreta del contingut"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr ""
+msgstr "Ús"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2509,10 +2503,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
-msgstr "&Comportament del ratolí"
+msgstr "Comportament de les pestanyes noves"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2548,7 +2541,7 @@ msgstr "Obri una pestanya &nova després de l'actual"
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Closing"
-msgstr ""
+msgstr "Tancament"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167
@@ -2694,55 +2687,3 @@ msgstr ""
 "identificació predeterminada estiga inhabilitada.</p><p>Podeu introduir-la "
 "manualment o començar amb una de la llista i canviar-la segons les vostres "
 "necessitats.</p></body></html>"
-
-#~ msgid ""
-#~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
-#~ "Konqueror should use to display the web pages you view."
-#~ msgstr ""
-#~ "<h1>Tipus de lletra de Konqueror</h1>En esta pàgina podeu configurar "
-#~ "quins tipus de lletra hauria d'utilitzar Konqueror per a mostrar les "
-#~ "pàgines web que veeu."
-
-#~ msgid ""
-#~ "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list "
-#~ "of filters that are checked against linked images and frames. URL's that "
-#~ "match are either discarded or replaced with a placeholder image. "
-#~ msgstr ""
-#~ "<h1>L'AdBlocK de Konqueror</h1> L'AdBlocK de Konqueror us permet crear "
-#~ "una llista de filtres que es contrasten amb les imatges enllaçades i els "
-#~ "marcs. Els URL que coincidixen es descarten o es canvien per una imatge "
-#~ "de substitució. "
-
-#~ msgid "Tabbed Browsing"
-#~ msgstr "Navegació amb pestanyes"
-
-#~ msgid ""
-#~ "<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
-#~ "functionality. Please note that the file manager functionality has to be "
-#~ "configured using the \"File Manager\" configuration module. You can make "
-#~ "some settings how Konqueror should handle the HTML code in the web pages "
-#~ "it loads. It is usually not necessary to change anything here."
-#~ msgstr ""
-#~ "<h1>Navegador Konqueror</h1> Ací podeu configurar la funcionalitat del "
-#~ "navegador Konqueror. Cal tindre present que la funcionalitat del gestor "
-#~ "de fitxers l'heu de configurar fent servir el mòdul de configuració "
-#~ "«Gestor de fitxers». Podeu establir com Konqueror ha de gestionar el codi "
-#~ "HTML de les pàgines web que carrega. Normalment, ací no cal canviar res."
-
-#~ msgid ""
-#~ "<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
-#~ "programs embedded in web pages should be allowed to be executed by "
-#~ "Konqueror.<h2>Java</h2>On this page, you can configure whether Java "
-#~ "applets embedded in web pages should be allowed to be executed by "
-#~ "Konqueror.<br /><br /><b>Note:</b> Active content is always a security "
-#~ "risk, which is why Konqueror allows you to specify very fine-grained from "
-#~ "which hosts you want to execute Java and/or JavaScript programs."
-#~ msgstr ""
-#~ "<h2>JavaScript</h2>En esta pàgina podeu configurar si els programes "
-#~ "JavaScript incrustats a les pàgines web se'ls ha de permetre l'execució "
-#~ "en Konqueror.<h2>Java</h2>En esta pàgina podeu configurar si a les "
-#~ "miniaplicacions Java incrustades a les pàgines web se'ls ha de permetre "
-#~ "l'execució en Konqueror.<br /><br /><b>Nota:</b> El contingut actiu és "
-#~ "sempre un risc de seguretat, per la qual cosa Konqueror us permet "
-#~ "especificar molt afinadament des de quins amfitrions voleu executar "
-#~ "programes en Java i/o JavaScript."

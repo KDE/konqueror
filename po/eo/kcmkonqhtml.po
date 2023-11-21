@@ -3,14 +3,14 @@
 # Copyright (C) 1999, 2007 Free Software Foundation, Inc.
 # Wolfram Diestel <wolfram@steloj.de>, 1999.
 # Cindy McKee <cfmckee@gmail.com>, 2007.
-#
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-11-19 11:25+0100\n"
+"PO-Revision-Date: 2023-11-20 22:34+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -24,7 +24,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "General"
-msgstr "Ĝenerale"
+msgstr "Ĝenerala"
 
 #: appearance.cpp:40
 #, kde-format
@@ -2338,16 +2338,15 @@ msgstr "Vi devas unue entajpi nomon de retregiono."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
-msgstr "&Musa konduto"
+msgstr "Konduto de Langetoj"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr ""
+msgstr "Aspekto"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2369,43 +2368,43 @@ msgstr "Kaŝi la langetobreton kiam estas nur unu langeto "
 #: tabs/tabsoptions.ui:38
 #, kde-format
 msgid "Tab bar position"
-msgstr ""
+msgstr "Pozicio de langetbreto"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "Elektu kie montri la langetbreton"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "Super enhavo"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "Sub enhavo"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "Maldekstre de enhavo"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "Dekstre de enhavo"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr ""
+msgstr "Uzado"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2463,10 +2462,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
-msgstr "&Musa konduto"
+msgstr "Nova Langetkonduto"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2501,7 +2499,7 @@ msgstr "Malfermi &novan langeton post la nuna"
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Closing"
-msgstr ""
+msgstr "Fermante"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167
@@ -2645,52 +2643,3 @@ msgstr ""
 "<html><head/><body><p>La retumila identigo uzenda kiam la defaŭlta identigo "
 "estas malŝaltita.</p><p>Vi povas enigi ĝin permane aŭ komenci de unu en la "
 "suba listo kaj ŝanĝi ĝin laŭ viaj bezonoj.</p></body></html>"
-
-#~ msgid ""
-#~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
-#~ "Konqueror should use to display the web pages you view."
-#~ msgstr ""
-#~ "<h1>Konkeranto tiparoj</h1> Sur la paĝo vi povas agordi tiujn tiparojn "
-#~ "kiuj estas uzataj por montri la ttt-paĝojn."
-
-#~ msgid ""
-#~ "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list "
-#~ "of filters that are checked against linked images and frames. URL's that "
-#~ "match are either discarded or replaced with a placeholder image. "
-#~ msgstr ""
-#~ "<h1>Konkeranta AdBlocK</h1>Konkeranta AdBlocK permesas la kreon de listo "
-#~ "de filtriloj kiujn Konkeranto uzos por kontroli ligitajn bildojn kaj "
-#~ "kadrojn. Retadresoj kiuj kongruas kun filtrilo estos forprenitaj aŭ "
-#~ "anstataŭigitaj per lokokupila bildo. "
-
-#~ msgid "Tabbed Browsing"
-#~ msgstr "Foliumado kun langetoj"
-
-#~ msgid ""
-#~ "<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
-#~ "functionality. Please note that the file manager functionality has to be "
-#~ "configured using the \"File Manager\" configuration module. You can make "
-#~ "some settings how Konqueror should handle the HTML code in the web pages "
-#~ "it loads. It is usually not necessary to change anything here."
-#~ msgstr ""
-#~ "<h1>Konkeranto - TTT-legilo</h1> Jen vi povas agordi la TTT-an funkcion "
-#~ "de Konkeranto. Atentu ke la dosieradministrila funkcio estas agordata per "
-#~ "alia modulo \"Dosieradministrilo\". Vi povas agordi kiel Konkeranto "
-#~ "traktu HTML-kodon de la legataj TTT-paĝoj. Normale vi ne bezonas ŝanĝi "
-#~ "ion tie ĉi."
-
-#~ msgid ""
-#~ "<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
-#~ "programs embedded in web pages should be allowed to be executed by "
-#~ "Konqueror.<h2>Java</h2>On this page, you can configure whether Java "
-#~ "applets embedded in web pages should be allowed to be executed by "
-#~ "Konqueror.<br /><br /><b>Note:</b> Active content is always a security "
-#~ "risk, which is why Konqueror allows you to specify very fine-grained from "
-#~ "which hosts you want to execute Java and/or JavaScript programs."
-#~ msgstr ""
-#~ "<h2>Ĝavoskripto</h2>Jen vi povas agordi, ĉu Konkeranto rajtas lanĉi "
-#~ "Ĝavoskriptajn programojn enhavataj en TTT-paĝoj.<h2>Ĝavo</h2>Tie vi povas "
-#~ "agordi, ĉu Konkeranto rajtas lanĉi Ĝavoaplikaĵetojn enhavataj en TTT-"
-#~ "paĝoj.<br /><br /><b>Atentu:</b>Aktiva enhavo ĉiam estas sekureca risko, "
-#~ "pro tio Konkeranto permesas tre detalajn difinojn, de kiuj komputiloj "
-#~ "Ĝavo kaj/aŭ Ĝavoskripto estas permesata."

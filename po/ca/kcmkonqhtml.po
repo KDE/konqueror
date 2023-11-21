@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-11-19 21:33+0100\n"
+"PO-Revision-Date: 2023-11-20 10:02+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2378,16 +2378,15 @@ msgstr "Primer heu d'introduir un nom de domini."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
-msgstr "&Comportament del ratolí"
+msgstr "Comportament de les pestanyes"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr ""
+msgstr "Aspecte"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2409,43 +2408,43 @@ msgstr "Oculta la barra de pestanyes si tan sols n'hi ha una d'oberta"
 #: tabs/tabsoptions.ui:38
 #, kde-format
 msgid "Tab bar position"
-msgstr ""
+msgstr "Posició de la barra de pestanyes"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "Trieu a on mostrar la barra de pestanyes"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "Sobre el contingut"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "Sota el contingut"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "Esquerra del contingut"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "Dreta del contingut"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr ""
+msgstr "Ús"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2504,10 +2503,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
-msgstr "&Comportament del ratolí"
+msgstr "Comportament de les pestanyes noves"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2543,7 +2541,7 @@ msgstr "Obre una pestanya &nova després de l'actual"
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Closing"
-msgstr ""
+msgstr "Tancament"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167
@@ -2689,55 +2687,3 @@ msgstr ""
 "identificació predeterminada estigui inhabilitada.</p><p>Podeu introduir-la "
 "manualment o començar amb una de la llista i canviar-la segons les vostres "
 "necessitats.</p></body></html>"
-
-#~ msgid ""
-#~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
-#~ "Konqueror should use to display the web pages you view."
-#~ msgstr ""
-#~ "<h1>Lletres del Konqueror</h1>En aquesta pàgina podeu configurar quines "
-#~ "lletres hauria d'usar el Konqueror per a mostrar les pàgines web que "
-#~ "veieu."
-
-#~ msgid ""
-#~ "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list "
-#~ "of filters that are checked against linked images and frames. URL's that "
-#~ "match are either discarded or replaced with a placeholder image. "
-#~ msgstr ""
-#~ "<h1>L'AdBlocK del Konqueror</h1> L'AdBlocK del Konqueror us permet crear "
-#~ "una llista de filtres que es contrasten amb les imatges enllaçades i els "
-#~ "marcs. Els URL que coincideixen es descarten o es canvien per una imatge "
-#~ "de substitució. "
-
-#~ msgid "Tabbed Browsing"
-#~ msgstr "Navegació amb pestanyes"
-
-#~ msgid ""
-#~ "<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
-#~ "functionality. Please note that the file manager functionality has to be "
-#~ "configured using the \"File Manager\" configuration module. You can make "
-#~ "some settings how Konqueror should handle the HTML code in the web pages "
-#~ "it loads. It is usually not necessary to change anything here."
-#~ msgstr ""
-#~ "<h1>Navegador Konqueror</h1> Aquí podeu configurar la funcionalitat del "
-#~ "navegador Konqueror. Cal tenir present que la funcionalitat del gestor de "
-#~ "fitxers l'heu de configurar fent servir el mòdul de configuració «Gestor "
-#~ "de fitxers». Podeu arranjar com el Konqueror ha de gestionar el codi HTML "
-#~ "de les pàgines web que carrega. Normalment, aquí no cal canviar res."
-
-#~ msgid ""
-#~ "<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
-#~ "programs embedded in web pages should be allowed to be executed by "
-#~ "Konqueror.<h2>Java</h2>On this page, you can configure whether Java "
-#~ "applets embedded in web pages should be allowed to be executed by "
-#~ "Konqueror.<br /><br /><b>Note:</b> Active content is always a security "
-#~ "risk, which is why Konqueror allows you to specify very fine-grained from "
-#~ "which hosts you want to execute Java and/or JavaScript programs."
-#~ msgstr ""
-#~ "<h2>JavaScript</h2>En aquesta pàgina podeu configurar si els programes "
-#~ "JavaScript incrustats a les pàgines web se'ls ha de permetre l'execució "
-#~ "al Konqueror.<h2>Java</h2>En aquesta pàgina podeu configurar si a les "
-#~ "miniaplicacions Java incrustades a les pàgines web se'ls ha de permetre "
-#~ "l'execució al Konqueror.<br /><br /><b>Nota:</b> El contingut actiu és "
-#~ "sempre un risc de seguretat, per la qual cosa el Konqueror us permet "
-#~ "especificar molt afinadament des de quins servidors voleu executar "
-#~ "programes en Java i/o JavaScript."

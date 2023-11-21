@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-11-19 22:34+0100\n"
+"PO-Revision-Date: 2023-11-20 18:12+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -34,6 +34,8 @@ msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
+"<p>Konqueror root-ით გაქვთ გაშვებული. ამას ბრაუზერის კომპონენტში ძალიან "
+"დაუცველი რეჟიმის ჩართვა სჭირდება.</p><p>რას იზამთ?</p>"
 
 #: src/konqapplication.cpp:156
 #, kde-format
@@ -70,6 +72,8 @@ msgstr "David Faure"
 msgid ""
 "Developer (framework, parts, JavaScript, I/O library) and former maintainer"
 msgstr ""
+"პროგრამისტი (გაშვების გარემო, ნაწილები, JavaScript, შეტ/გამოტ ბიბლიოთეკა) და "
+"ყოფილი ლიდერი"
 
 #: src/konqapplication.cpp:164
 #, kde-format
@@ -79,7 +83,7 @@ msgstr "Simon Hausmann"
 #: src/konqapplication.cpp:164
 #, kde-format
 msgid "Developer (framework, parts)"
-msgstr ""
+msgstr "პროგრამისტი (გაშვების გარემო, ნაწილები)"
 
 #: src/konqapplication.cpp:165
 #, kde-format
@@ -90,7 +94,7 @@ msgstr "Michael Reiher"
 #: src/konqapplication.cpp:199
 #, kde-format
 msgid "Developer (framework)"
-msgstr ""
+msgstr "პროგრამისტი (გაშვების გარემო)"
 
 #: src/konqapplication.cpp:166
 #, kde-format
@@ -280,6 +284,8 @@ msgid ""
 "Developer (Java 2 security manager support,\n"
 " and other major improvements to applet support)"
 msgstr ""
+"პროგრამისტი (Java 2-ის უსაფრთხოების მმართვების მხარდაჭერა\n"
+" და სხვა ძირითადი გაფართოებები აპლეტების მხარდაჭერისთვის)"
 
 #: src/konqapplication.cpp:190
 #, kde-format
@@ -387,17 +393,21 @@ msgid ""
 "JavaScript access controls\n"
 "Per-domain policies extensions"
 msgstr ""
+"JavaScript წვდომა აკონტროლებს\n"
+"თითოეული დომენის პოლიტიკის გაფართოებებს"
 
 #: src/konqapplication.cpp:213
 #, kde-format
 msgid "Start without a default window, when called without URLs"
-msgstr ""
+msgstr "ბმულების გარეშე გამოძახებისას ნაგულისხმევი ფანჯრის გარეშე გაშვება"
 
 #: src/konqapplication.cpp:214
 #, kde-format
 msgid ""
 "Preload for later use. This mode does not support URLs on the command line"
 msgstr ""
+"წინასწარი ჩატვირთვა მოგვიანებით გამოსაყენებლად. ამ რეჟიმს ბრძანების "
+"სტრიქონში მითითებული ბმულების მხარდაჭერა არ აქვს"
 
 #: src/konqapplication.cpp:215
 #, kde-format
@@ -450,6 +460,8 @@ msgid ""
 "For URLs that point to files, opens the directory and selects the file, "
 "instead of opening the actual file"
 msgstr ""
+"ბმულებისთვის, რომლებიც ფაილებზე მიუთითებენ, გახსნის საქაღალდეს და აირჩევს "
+"ფაილს, თვითონ ფაილის გახსნის მაგიერ"
 
 #: src/konqapplication.cpp:221
 #, kde-format
@@ -462,6 +474,8 @@ msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
 "only when developing Konqueror itself"
 msgstr ""
+"ახალი Konqueror-ის პროცესის შექმნა მაშინაც კი, როცა ის უკვე არსებობს. "
+"გამოიყენეთ, მხოლოდ, მაშინ, როცა Konqueror-ის პროგრამისტი ბრძანდებით"
 
 #: src/konqapplication.cpp:225
 #, kde-format
@@ -480,6 +494,8 @@ msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr ""
+"--preload პარამეტრის გამოყენებისას ბმულებს ვერ გადასცემთ. ბმულები "
+"გამოტოვებულია\n"
 
 #: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4862
 #: src/konqmainwindow.cpp:4908
@@ -505,6 +521,9 @@ msgid ""
 "The diagnostics is:\n"
 "%2"
 msgstr ""
+"ჩატვირთვის შეცდომა მოდულისთვის %1.\n"
+"დიაგნოსტიკა:\n"
+"%2"
 
 #: src/konqframestatusbar.cpp:108
 #, kde-format
@@ -559,6 +578,8 @@ msgid ""
 "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
 "%3<br />Number of times visited: %4</qt>"
 msgstr ""
+"<qt><center><b>%1</b></center><hr />ბოლოს ნახეთ: %2<br />პირველად ნახეთ: "
+"%3<br />ნახვების რაოდენობა: %4</qt>"
 
 #: src/konqhistorymodel.cpp:213
 #, kde-format
@@ -658,6 +679,8 @@ msgid ""
 "This page contains changes that have not been submitted.\n"
 "Reloading the page will discard these changes."
 msgstr ""
+"ეს გვერდი შეიცავს ცვლილებებს, რომლებიც ჯერ არ გადაცემულა.\n"
+"გვერდის თავიდან ჩატვირთვა ამ ცვლილებებს მოაცილებს."
 
 #: src/konqmainwindow.cpp:1575 src/konqmainwindow.cpp:2225
 #: src/konqmainwindow.cpp:2318 src/konqmainwindow.cpp:2350
@@ -721,6 +744,8 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Detaching the tab will discard these changes."
 msgstr ""
+"ჩანართი შეიცავს ცვლილებებს, რომლებიც ჯერ არ გადაცემულა.\n"
+"ჩანართის მოხსნა ამ ცვლილებებს მოაცილებს."
 
 #: src/konqmainwindow.cpp:2317
 #, kde-format
@@ -728,6 +753,8 @@ msgid ""
 "This view contains changes that have not been submitted.\n"
 "Closing the view will discard these changes."
 msgstr ""
+"ეს ხედი შეიცავს ცვლილებებს, რომლებიც ჯერ არ გადაცემულა.\n"
+"ამ ხედის დახურვა ცვლილებებს მოაცილებს."
 
 #: src/konqmainwindow.cpp:2349
 #, kde-format
@@ -735,6 +762,8 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the tab will discard these changes."
 msgstr ""
+"ეს ჩანართი შეიცავს ცვლილებებს, რომლებიც ჯერ არ გადაცემულა.\n"
+"ჩანართის მოხსნა ამ ცვლილებებს მოაცილებს."
 
 #: src/konqmainwindow.cpp:2375
 #, kde-format
@@ -758,6 +787,8 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing other tabs will discard these changes."
 msgstr ""
+"ეს ჩანართი შეიცავს ცვლილებებს, რომლებიც ჯერ არ გადაცემულა.\n"
+"ჩანართის დახურვა ამ ცვლილებებს მოაცილებს."
 
 #: src/konqmainwindow.cpp:2414
 #, kde-format
@@ -765,6 +796,8 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Reloading all tabs will discard these changes."
 msgstr ""
+"ეს ჩანართი შეიცავს ცვლილებებს, რომლებიც ჯერ არ გადაცემულა.\n"
+"ყველა ჩანართის თავიდან ჩატვირთვა ამ ცვლილებებს მოაცილებს."
 
 #: src/konqmainwindow.cpp:2471
 #, kde-format
@@ -1181,6 +1214,8 @@ msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
 "explore many files from one folder"
 msgstr ""
+"დაბლოკილი ხედი საქაღალდეებს ვერ შეცვლის. გამოიყენეთ ბმულების ხედთან "
+"კომბინაციაში, რათა ერთ საქაღალდეში ბევრი ფაილი დაათვალიეროთ"
 
 #: src/konqmainwindow.cpp:3701
 #, kde-format
@@ -1188,6 +1223,8 @@ msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
 "other linked views."
 msgstr ""
+"მოირგებს ხედს, როგორც 'მიბმულს'. მიბმული ხედი მიჰყვება საქაღალდის "
+"ცვლილებებს, რომლებიც სხვა მიბმულ ხედებში მოხდება."
 
 #: src/konqmainwindow.cpp:3705
 #, kde-format
@@ -1622,6 +1659,8 @@ msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \\"
 "\"Home\\\" button is pressed."
 msgstr ""
+"ეს იმ ვებგვერდის ბმულია, სადაც Konqueror გადავა, როცა \\\"საწყისი გვერდის\\"
+"\" ღილაკს დააწვებით."
 
 #. i18n: ectx: label, entry, group (UndoManagerSettings)
 #: src/konqueror.kcfg:26
@@ -1636,6 +1675,8 @@ msgid ""
 "This sets the maximum number of closed items that will be stored in memory. "
 "This limit will not be surpassed."
 msgstr ""
+"აყენებს მეხსიერებაში შენახული დახურული ელემენტების მაქსიმალურ რაოდენობას. "
+"ზღვარი გადაცილებული არ იქნება."
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #: src/konqueror.kcfg:36
@@ -1702,7 +1743,7 @@ msgstr ""
 #: src/konqueror.kcfg:149
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "აირჩიეთ, სად ვაჩვენო ჩანართების ზოლი"
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #. i18n: ectx: whatsthis, entry, group (FMSettings)

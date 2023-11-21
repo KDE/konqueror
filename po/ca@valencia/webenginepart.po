@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-10-12 09:17+0200\n"
+"PO-Revision-Date: 2023-11-20 10:04+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -421,8 +421,8 @@ msgid ""
 "the HTML toolbar to increase the font size on your web page."
 msgstr ""
 "Utilitzeu el botó d'augment <img width='16' height='16' src=\"%1\"></img> en "
-"la barra d'eines de l'HTML per a augmentar la mida del tipus de lletra de la "
-"pàgina web."
+"la barra d'eines de l'HTML per a augmentar la mida de la lletra de la pàgina "
+"web."
 
 #: src/about/konq_aboutpage.cpp:299
 #, kde-format
@@ -1422,6 +1422,8 @@ msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
 "default style sheet will be used"
 msgstr ""
+"No s'ha pogut obrir el fitxer <tt>%1</tt> que conté el full d'estil "
+"d'usuari. S'utilitzarà el full d'estil predeterminat"
 
 #: src/webenginepartdownloadmanager.cpp:286
 #, kde-format
@@ -1755,23 +1757,3 @@ msgstr ""
 "li><li><b>ID del camp: </b>%3</li><li><b>El camp és de només lectura: </b>"
 "%4</li><li><b>El camp està habilitat: </b>%5</li><li><b>La compleció "
 "automàtica està habilitada: </b>%6</li></ul>"
-
-#~ msgid ""
-#~ "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
-#~ "the link?</qt>"
-#~ msgstr ""
-#~ "<qt>Esta pàgina no fiable enllaça a<br/><b>%1</b>.<br/>Voleu seguir "
-#~ "l'enllaç?</qt>"
-
-#~ msgid "Security Warning"
-#~ msgstr "Avís de seguretat"
-
-#~ msgctxt "follow link despite of security warning"
-#~ msgid "Follow"
-#~ msgstr "Seguix"
-
-#~ msgid "Security Alert"
-#~ msgstr "Alerta de seguretat"
-
-#~ msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
-#~ msgstr "<qt>S'ha denegat l'accés a la pàgina no fiable <br/><b>%1</b>.</qt>"
