@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-11-20 18:12+0100\n"
+"PO-Revision-Date: 2023-11-21 16:25+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -534,6 +534,11 @@ msgid ""
 "useful with different types of views, such as a directory tree with an icon "
 "view or detailed view, and possibly a terminal emulator window."
 msgstr ""
+"ამის ჩართვა სულ ცოტა 2 ხედზე ამ ხედებს, როგორც 'მიბმულს' დააყენებს. შემდეგ, "
+"თუ საქაღალდეს ერთ ხედში შეცვლით, მეორე, მიბმული ხედი ავტომატურად განახლდება, "
+"რათა მიმდინარე საქაღალდე აჩვენოს. ეს გამოსადეგია სხვადასხვა ტიპის "
+"ხედებისთვის, მაგალითად საქარალდის ხედისთვის ხატულის ან დეტალურ ხედში და, "
+"მაგალითად, ტერმინალის ემულატორის ფანჯარა."
 
 #: src/konqframestatusbar.cpp:154
 #, kde-format
@@ -737,6 +742,9 @@ msgid ""
 "where this button takes you under <b>Settings -> Configure Konqueror -> "
 "General</b>.</html>"
 msgstr ""
+"<html>თქვენს 'საწყის გვერდზე' გადასვლა<br /><br />მორგება, ეს ღილაკი სად "
+"გადაგიყვანთ, შეგიძლიათ მენიუში <b>მორგება -> Konqueror-ის მორგება -> ზოგადი</"
+"b>.</html>"
 
 #: src/konqmainwindow.cpp:2224
 #, kde-format
@@ -1078,6 +1086,9 @@ msgid ""
 "location is file:/home/%1 clicking this button will take you to file:/home.</"
 "html>"
 msgstr ""
+"<html>შეიყვანთ მშობელი საქაღალდე<br /><br />მაგალითად, თუ მიმდინარე "
+"მდებარეობაა file:/home/%1, ამ ღილაკზე დაჭერა file:/home-ზე გადაგიყვანთ.</"
+"html>"
 
 #: src/konqmainwindow.cpp:3642
 #, kde-format
@@ -1106,6 +1117,9 @@ msgid ""
 "example, be needed to refresh web pages that have been modified since they "
 "were loaded, in order to make the changes visible.</html>"
 msgstr ""
+"<html>ამჟამად ნაჩვენები დოკუმენტის თავიდან ჩატვირთვა<br /><br />ეს, "
+"მაგალითად, შეიძლება დაგჭირდეთ, რომ განაახლოთ ვებგვერდები, რომლებიც შეიცვალა "
+"მას შემდეგ, რაც ისინი ჩატვირთეთ, იმისთვის, რომ ეს ცვლილებები დაინახოთ.</html>"
 
 #: src/konqmainwindow.cpp:3656
 #, kde-format
@@ -1119,6 +1133,9 @@ msgid ""
 "for example, be needed to refresh web pages that have been modified since "
 "they were loaded, in order to make the changes visible.</html>"
 msgstr ""
+"<html>ჩანართებში ნაჩვენები ყველა დოკუმენტის თავიდან ჩატვირთვა<br /><br />ეს, "
+"მაგალითად, შეიძლება დაგჭირდეთ, რომ ჩატვირთოთ გვერდები, რომლებიც მათი "
+"ჩატვირთვის შემდეგ შეიცვალა, რომ ცვლილებები დაინახოთ.</html>"
 
 #: src/konqmainwindow.cpp:3661
 #, kde-format
@@ -1132,6 +1149,8 @@ msgid ""
 "stopped and Konqueror will display the content that has been received so far."
 "</html>"
 msgstr ""
+"<html>დოკუმენტის ჩატვირთვის გაჩერება<br /><br />ყველა ქსელური მიმოცვლა "
+"გაჩერდება და Konqueror იმას გაჩვენებთ, რისი გადმოწერაც მოასწრო.</html>"
 
 #: src/konqmainwindow.cpp:3667
 #, kde-format
@@ -1141,6 +1160,11 @@ msgid ""
 "were loaded, in order to make the changes visible. Any images on the page "
 "are downloaded again, even if cached copies exist.</html>"
 msgstr ""
+"<html>ამჟამად ნაჩვენები დოკუმენტის თავიდან ჩატვირთვა<br /><br />ეს, "
+"მაგალითად, შეიძლება დაგჭირდეთ, რომ განაახლოთ ვებგვერდები, რომლებიც მათი "
+"ჩატვირთვის შემდეგ შეიცვალა იმისთვის, რომ ეს ცვლილებები დაინახოთ. გვერდზე "
+"არსებული ყველა გამოსახულება თავიდან ჩაიტვირთება იმის მიუხედავად, არსებობს თუ "
+"არა დაკეშილი ასლი.</html>"
 
 #: src/konqmainwindow.cpp:3671
 #, kde-format
@@ -1162,6 +1186,9 @@ msgid ""
 "clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
 "Konqueror and other KDE applications.</html>"
 msgstr ""
+"<html>მონიშნული ელემენტის ან ტექსტის ამოჭრა და სისტემის ბუფერში გადატანა<br /"
+"><br />ეს მას ხელმისაწვდომს გახდის KDE-ის და Konqueror-ის <b>ჩასმის</b> "
+"ბრძანებისთვის.</html>"
 
 #: src/konqmainwindow.cpp:3679
 #, kde-format
@@ -1175,6 +1202,9 @@ msgid ""
 "clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
 "Konqueror and other KDE applications.</html>"
 msgstr ""
+"<html>მონიშნული ელემენტის ან ტექსტის კოპირება და სისტემის ბუფერში "
+"გადატანა<br /><br />ეს მას ხელმისაწვდომს გახდის KDE-ის და Konqueror-ის "
+"<b>ჩასმის</b> ბრძანებისთვის.</html>"
 
 #: src/konqmainwindow.cpp:3685
 #, kde-format
@@ -1187,6 +1217,9 @@ msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
 "also works for text copied or cut from other KDE applications.</html>"
 msgstr ""
+"<html>კოპირებული ან ამოჭრილი ბუფერის შემცველობის ჩასმა<br /><br />ეს ასევე "
+"მუშაობს ტექსტზე, რომელიც სხვა KDE-ის აპლიკაციიდან დააკოპირეთ ან ამოჭერით.</"
+"html>"
 
 #: src/konqmainwindow.cpp:3690
 #, kde-format
@@ -1202,6 +1235,11 @@ msgid ""
 "also provides access to special KDE printing services such as creating a PDF "
 "file from the current document.</html>"
 msgstr ""
+"<html>ამჟამად ნაჩვენები დოკუმენტის დაბეჭდვა<br /><br />წარმოგიდგენთ დიალოგს, "
+"სადაც შეგიძლიათ, სხვადასხვა პარამეტრები დააყენოთ. მაგალითად, რამდენი ასლი "
+"დავბეჭდო ან რომელ პრინტერზე.<br /><br />ეს დიალოგი ასევე მოგაწვდით წვდომას "
+"სპეციალურ KDE-ის ბეჭდვის სერვისებთან, როგორიცაა მიმდინარე დოკუმენტიდან PDF "
+"ფაილის შექმნა.</html>"
 
 #: src/konqmainwindow.cpp:3698
 #, kde-format
@@ -1237,6 +1275,9 @@ msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
+"<html>მიმდინარე გვერდისთვის პროგრამისტის ხელსაწყოების ჩვენება<br/><br/"
+">მიმდინარე ხედი ორად გაიყოფა და მეორე ნაწილში პროგრამისტის ხელსაწყოები "
+"იქნება ნაჩვენები"
 
 #: src/konqmainwindow.cpp:3707
 #, kde-format
@@ -1259,6 +1300,8 @@ msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
 "while. Continue?"
 msgstr ""
+"მოითხოვეთ ჩანართებში 20-ზე მეტი სანიშნეს გახსნა. ამას კარგა ხანი შეიძლება "
+"დასჭირდეს. გავაგრძელო?"
 
 #: src/konqmainwindow.cpp:4225
 #, kde-format
@@ -1338,6 +1381,8 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
+"ეს ჩანართი შეიცავს ცვლილებებს, რომლებიც ჯერ არ გადაცემულა.\n"
+"ფანჯრის მოხსნა ამ ცვლილებებს მოაცილებს."
 
 #: src/konqmainwindow.cpp:4827
 #, kde-format
@@ -1345,6 +1390,8 @@ msgid ""
 "This page contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
+"ეს გვერედი შეიცავს ცვლილებებს, რომლებიც ჯერ არ გადაცემულა.\n"
+"ფანჯრის მოხსნა ამ ცვლილებებს მოაცილებს."
 
 #: src/konqmainwindow.cpp:4984
 #, kde-format
@@ -1381,6 +1428,8 @@ msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
 "with %1, but it cannot handle this file type."
 msgstr ""
+"როგორც ჩანს, კონფიგურაციაში შეცდომაა. თქვენ %1-ის ასოცირება გააკეთეთ "
+"Konqueror-თან, მაგრამ, მას ამ ფაილის ტიპის დამუშავება არ შეუძლია."
 
 #: src/konqmainwindow.cpp:5424
 #, kde-format
@@ -1394,6 +1443,14 @@ msgid ""
 "proxy URL manually in the settings dialog. Do you want to change proxy "
 "settings now?"
 msgstr ""
+"თქვენი პროქსის კონფიგურაცია არ შეიძლება, QtWebEngine HTML ძრავასთან ერთად "
+"გამოიყენოთ. პროქსი გამოყენებული არ იქნება\n"
+"\n"
+" QtWebEngine-ს მხოლოდ ფიქსირებული პროქსის მხარდაჭერა აქვს. პროქსის "
+"ავტომორგებას (PAC) და ვებ-პროქსის ავტოაღმოჩენის პროტოკოლს QtWebEngine-სთან "
+"ერთად ვერ გამოიყენებთ. თუ პროქსი აუცილებელია, აირჩიეთ სისტემური პროქსის "
+"კონფიგურაცია ან მიუთითეთ პროქსის ბმული ხელით კონფიგურაციის ფანჯარაში. "
+"გნებავთ, ახლავე შეცვალოთ პროქსის პარამეტრები?"
 
 #: src/konqmainwindow.cpp:5429
 #, kde-format
@@ -1418,6 +1475,10 @@ msgid ""
 "protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
+"თქვენს პროქსის კონფიგურაციას QtWebEngine HTML ძრავასთან ერთად ვერ "
+"გამოიყენებთ, რადგან მას HTTP და HTTPS პროტოკოლების გარდა არაფრის მხარდაჭერა "
+"არ გააჩნია. თქვენი მიმდინარე პარამეტრებია:<p><b>HTTP პროქსი:</b> <tt>%1</"
+"tt></p><p><b>HTTPS პროქსი: </b><tt>%2</tt></p>რა გნებავთ, ქნათ?"
 
 #: src/konqmainwindow.cpp:5473
 #, kde-format
@@ -1441,6 +1502,9 @@ msgid ""
 "hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
 "Mode (%1)"
 msgstr ""
+"გადახვედით მთლიან სრულეკრანიან რეჟიმში (სადაც მომხმარებლის ინტერფეისი სრულად "
+"დამალულია). ამ რეჟიმიდან გასვლა სრულ ეკრანზე გასვლის კლავიატურის მალსახმობით "
+"(%1) შეგიძლიათ"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
@@ -1604,6 +1668,11 @@ msgid ""
 "over the tab to see the full title, in case it has been shortened to fit the "
 "tab width."
 msgstr ""
+"ეს პანელი ამჟამად ღია ჩანართების სიას შეიცავს. დააწკაპუნეთ ჩანართზე, რათა ის "
+"გაააქტიუროთ. ჩანართებს შორის გადასართავად, ასევე, კლავიატურაც შეგიძლიათ "
+"გამოიყენოთ. ჩანართზე ტექსტი მის შემცველობას აჩვენებს. მოათავსეთ თქვენი "
+"თაგუნა ჩანართის თავზე, რათა მისი თავსართი დაინახოთ, თუ ის შემოკლებულია "
+"პანელის სიგანემდე."
 
 #: src/konqtabs.cpp:85
 #, kde-format
@@ -1707,6 +1776,8 @@ msgid ""
 "Here you can control if, when moving the mouse over a file, you want to see "
 "a small popup window with additional information about that file"
 msgstr ""
+"აქ შეგიძლიათ აკონტროლოთ თუ გნებავთ, როცა თაგუნას ფაილზე გადაატარებთ, "
+"დაინახოთ ამ ფაილის შესახებ ინფორმაციის შემცველი პატარა მხტუნარა ფანჯარა"
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #: src/konqueror.kcfg:54
@@ -1721,6 +1792,8 @@ msgid ""
 "Here you can control if you want the popup window to contain a larger "
 "preview for the file, when moving the mouse over it"
 msgstr ""
+"აქ შეგიძლიათ აკონტროლოთ, თუ გნებავთ, ფაილზე თაგუნას გადატარებისას ნაჩვენებ "
+"პატარა მხტუნარა ფანჯარაში ფაილის უფრო დიდი მინიატურა დაინახოთ"
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #: src/konqueror.kcfg:60
@@ -1738,6 +1811,10 @@ msgid ""
 "and in the file manager's menus and context menus. You can always delete "
 "files when hidden by holding the Shift key while calling 'Move to Trash'."
 msgstr ""
+"ჩართეთ ეს, თუ გნებავთ, მენიუს 'წაშლის' ბრძანებები სამუშაო მაგიდაზე და ფაილის "
+"მმართველის და კონტექსტურ მენიუებში გამოჩნდეს. ფაილების წაშლა, როცა "
+"დამალულია, Shift-ღილაკზე დაჭერით შეგიძლიათ, როცა 'ნაგვის ყუთში გადატანას' "
+"აირჩევთ."
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:149
@@ -1784,6 +1861,9 @@ msgid ""
 "delete a file without using the trash folder. Warning, deleted files can not "
 "be recovered, so it is recommended to leave this confirmation enabled."
 msgstr ""
+"ეს პარამეტრი ეუბნება Konqueror-ს, გკითხოთ თუ არა დადასტურება ფაილის სანაგვე "
+"ყუთის გამოყენების გარეშე წაშალოთ. ფრთხილად, რადგან ფაილების წაშლა "
+"შეუქცევადია, ასევე სჯობს, ეს დადასტურება ჩართული დატოვოთ."
 
 #. i18n: ectx: label, entry, group (Trash)
 #: src/konqueror.kcfg:510
@@ -1798,6 +1878,8 @@ msgid ""
 "This option tells Konqueror whether to ask for a confirmation when you move "
 "the file to your trash folder, from where it can be recovered very easily."
 msgstr ""
+"ეს პარამეტრი ეუბნება Konqueror-ს, გკითხავთ თუ არა დადასტურებას ფაილების "
+"ნაგვის ყუთის საქაღალდეში გადატანისას, საიდანაც მათი აღდგენა ძალიან იოლია."
 
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: src/konqueror.kcfg:518
@@ -1806,6 +1888,8 @@ msgid ""
 "If true, when opening a session from within the sessions dialog the tabs "
 "will be opened inside current window."
 msgstr ""
+"თუ ჭეშმარიტია, სესიის დიალოგიდან სესიის გახსნისას ჩანართები მიმდინარე "
+"ფანჯრის შიგნით გაიხსნება."
 
 #. i18n: ectx: Menu (file)
 #: src/konqueror.rc:5
@@ -1902,6 +1986,9 @@ msgid ""
 "resend the data, any action the form carried out (such as search or online "
 "purchase) will be repeated. "
 msgstr ""
+"გვერდი, რომლის ნახვასაც ცდილობთ, გადაცემული ფორმის მონაცემების შედეგია. თუ "
+"მონაცემებს თავიდან გადააგზავნით, ქმედებები, რომლებიც შესრულდა (ძებნა ან "
+"შეძენა ინტერნეტით), გამეორდება. "
 
 #: src/konqview.cpp:1300
 #, kde-format

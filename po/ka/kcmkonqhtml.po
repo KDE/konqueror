@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-11-20 16:23+0100\n"
+"PO-Revision-Date: 2023-11-21 16:24+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -640,6 +640,14 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"ახალი პოლიტიკის დასამატებლად, უბრალოდ, დააწკაპუნეთ <b>დამატების...</"
+"b>ღილაკზე და შეიყვანეთ საჭირო ინფორმაცია. არსებული პოლიტიკის შესაცვლელად, "
+"<b>შეცვლის...</b> ღილაკი გამოიყენეთ და აირჩიეთ ახალი პოლიტიკა შესაბამისი "
+"დიალოგური ფანჯრიდან. <b>წაშლის</b> ღილაკი ამჟამად მონიშნულ პოლიტიკას წაშლის, "
+"რაც გამოიწვევს, ამ დომენისთვის, ნაგულისხმევი პოლიტიკა იყოს გამოყენებული "
+"მაშინ, როცა <b>ყველაფრის წაშლა</b> ყველა საიტზე დადებულ პოლიტიკას წაშლის.\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
@@ -1924,6 +1932,8 @@ msgid ""
 "These policies will be merged with the existing ones. Duplicate entries are "
 "ignored."
 msgstr ""
+"დააწკაპუნეთ ამ ღილაკზე, რომ აირჩიოთ ფაილი, რომელიც JavaScript-ის პოლიტიკებს "
+"შეიცავს. ეს პოლიტიკები არსებულს შეუერთდება. დუბლიკატები გამოტოვებულია."
 
 #: jsopts.cpp:103
 #, kde-format
@@ -1932,6 +1942,8 @@ msgid ""
 "named <b>javascript_policy.tgz</b>, will be saved to a location of your "
 "choice."
 msgstr ""
+"დააწკაპუნეთ ამ ღილაკზე, რომ JavaScript-ის პოლიტიკა zip-ით შეკუმშულ ფაილში, "
+"სახელად <b>javascript_policy.tgz</b> შეინახოთ. მდებარეობას თქვენ მიუთითებთ."
 
 #: jsopts.cpp:109
 #, kde-format
