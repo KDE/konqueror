@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-11-22 15:35+0100\n"
+"PO-Revision-Date: 2023-11-23 12:33+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -851,6 +851,12 @@ msgid ""
 "sheet (see http://www.w3.org/Style/CSS for further information on cascading "
 "style sheets).</p>"
 msgstr ""
+"<b>მომხმარებლის მიერ აღწერილი სტილების ცხრილის გამოყენება</b><p>თუ ეს "
+"ჩართულია, Konqueror სცდის , ჩატვირთოს მომხმარებლის მიერ აღწერილი სტილების "
+"ცხრილი, როგორც ის ქვემოთაა აღწერილი. სტილის ცხრილი საშუალებას გაძლევთ, "
+"სრულად გადაფაროთ, როგორ რენდერდება ვებგვერდები თქვენს ბრაუზერში. მითითებული "
+"ფაილი სწორ სტილების ცხრილს უნდა შეიცავდეს. (მეტი ინფორმაცია კასკადური სტილის "
+"ცხრილების შესახებ შეგიძლიათ იხილოთ ბმულზე http://www.w3.org/Style/CSS).</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useUser)
 #: css/cssconfig.ui:42
@@ -867,6 +873,10 @@ msgid ""
 "of the mouse. Simply wander over to the Customize... dialog and pick out "
 "your desired options.</p>"
 msgstr ""
+"<b>წვდომადობის სტილების ცხრილის გამოყენება</b><p>ამ პარამეტრის არჩევა "
+"საშუალებას გაძლევთ, აირჩიოთ ნაგულისხმევი ფონტი, მისი ზომა და ფერი თაგუნას "
+"რამდენიმე წკაპით. უბრალოდ გადადით მორგების დიალოგზე და აირჩიეთ სასურველი "
+"პარამეტრები.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useAccess)
 #: css/cssconfig.ui:97
@@ -1023,6 +1033,9 @@ msgid ""
 "custom font sizes in favor of the base font size. All fonts will be "
 "displayed in the same size.</p>"
 msgstr ""
+"<b>იგივე ფონტის ზომის გამოყენება ყველა ელემენტისთვის</b><p>აირჩიეთ ეს "
+"პარამეტრი, რომ გადაფაროთ მითითებული ფონტის ზომები საბაზისო ფონტის ზომით. "
+"ყველა ფონტი იგივე ზომით გამოჩნდება.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, dontScale)
 #: css/csscustom.ui:151
@@ -1110,6 +1123,9 @@ msgid ""
 "color to the default font as well as any custom fonts as specified in a "
 "stylesheet.</p>"
 msgstr ""
+"<b>იგივე ფერის გამოყენება ყველა ტექსტისთვის</b><p>აირჩიეთ ეს პარამეტრი, რათა "
+"გადაატაროთ არჩეული ფერი ნაგულისხმევ ფონტზე ისევე, როგორც ყველა სტილების "
+"ცხრილშია აღწერილ ფონტზე.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameColor)
 #: css/csscustom.ui:251
@@ -1221,6 +1237,25 @@ msgid ""
 "</body>\n"
 "</html>\n"
 msgstr ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>სათაური 1</h1>\n"
+"<h2>სათაური 2</h2>\n"
+"<h3>სათაური 3</h3>\n"
+"\n"
+"<p>მომხმარებლების მიერ აღწერილ სტილის ცხრილებს შეუძლიათ\n"
+"წვდომადობის აწევა მხედველობადაქვეითებული\n"
+"ხალხისთვის.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
 
 #: domainlistview.cpp:37
 #, kde-format
@@ -1400,6 +1435,13 @@ msgid ""
 "(allow) any matching URL, which takes priority over any blacklist (blocking) "
 "filter."
 msgstr ""
+"<qt><p>შეიყვანეთ გამოსახულების ფილტრი. ფილტრები შეგიძლიათ, აღწეროთ:"
+"<ul><li>გარსის სტილის ვაილდკარდით, მაგ: <tt>http://www.example.com/ads*</"
+"tt>, ვაილდკარდები <tt>*?[]</tt> შეგიძლიათ გამოიყენოთ</li><li>სრული "
+"რეგულარული გამოსახულება, მისი '<tt>/</tt>'-ში ჩასმით, მაგ: <tt>/\\/(ad|"
+"banner)\\./</tt></li></ul><p>ნებისმიერ ფიტრის სტრიქონის წინ შეგიძლიათ "
+"დაწეროთ '<tt>@@</tt>', რათა დაუშვათ ნებისმიერი ბმული რომელიც დაემთხვევა, "
+"რასაც უფრო დიდი პრიორიტეტი აქვს, ვიდრე შავ სიაში (დასაბლოკ) მყოფ ფილტრებს."
 
 #: filteropts.cpp:187
 #, kde-format
@@ -1408,6 +1450,10 @@ msgid ""
 "lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
 "ignored. Any other line is added as a filter expression."
 msgstr ""
+"<qt><p>ფილტრის შემოტანის ფორმატი უბრალო ტექსტური ფაილია. ცარიელი ხაზები, "
+"კომენტარები , რომლებიც '<tt>!</tt>'-ით იწყება და თავსართის ხაზი "
+"<tt>[AdBlock]</tt> გამოტოვებულია. დანარჩენი ყველაფერი ფილტრის გამოსახულებას "
+"ემატება."
 
 #: filteropts.cpp:192
 #, kde-format
@@ -1416,6 +1462,9 @@ msgid ""
 "header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
 "separate line."
 msgstr ""
+"<qt><p>ფილტრის გატანის ფორმატი უბრალო ტექსტური ფაილია. ფაილი იწყება "
+"თავსართის ხაზით <tt>[AdBlock]</tt>, შემდეგ კი ფილტრები, თითოეული ცალ-ცალკე "
+"ხაზზე."
 
 #: filteropts.cpp:260
 #, kde-format
@@ -1668,6 +1717,9 @@ msgid ""
 "Unchecking this box will disable this accessibility feature. (Konqueror "
 "needs to be restarted for this change to take effect.)"
 msgstr ""
+"ვებგვერდების თვალიერებისას Ctrl ღილაკის დაწოლა წვდომის ღილაკებს ააქტიურებს. "
+"ამის გამორთვა ამ წვდომადობის ფუნქციას გათიშავს. (ამ ცვლილების ძალაში "
+"შესასვლელად აუცილებელია გადატვირთოთ Konqueror.)"
 
 #: htmlopts.cpp:116
 #, kde-format
@@ -1682,6 +1734,8 @@ msgid ""
 "Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked."
 msgstr ""
+"ჩართეთ, თუ გნებავთ გააფრთხილოთ ვებგვერდი, რომ არ გნებავთ, თქვენი ტრეკინგი "
+"მოხდეს."
 
 #: htmlopts.cpp:121
 #, kde-format
@@ -1755,6 +1809,9 @@ msgid ""
 "HTML pages. Note that, as with any browser, enabling active contents can be "
 "a security problem."
 msgstr ""
+"ჩართავს Java-ზე დაწერილი იმ სკრიპტების შესრულებას, რომლებსაც HTML გვერდები "
+"შეიცავენ. დაიმახსოვრეთ, რომ აქტიური შემცველობის ჩართვა ნებისმიერ ბრაუზერში "
+"სარისკოა."
 
 #: javaopts.cpp:135
 #, kde-format
@@ -1764,6 +1821,11 @@ msgid ""
 "enabling or disabling Java applets on pages sent by these domains or hosts.</"
 "p><p>Select a policy and use the controls on the right to modify it.</p>"
 msgstr ""
+"<p>ეს ყუთი შეიცავს დომენებს და ჰოსტებს, რომლებისთვისაც ცალკე Java-ის "
+"პოლიტიკა დააყენეთ. ეს პოლიტიკა ნაგულისხმევის მაგიერ იქნება გამოყენებული Java "
+"აპლეტების ჩასართავად ან გამოსართავად გვერდებზე, რომლებიც ამ დომენებმა ან "
+"ჰოსტებმა გამოაგზავნეს.</p><p>აირჩიეთ პოლიტიკა და გამოიყენეთ კონტროლები რომ "
+"დააყენოთ ის ზუსტად ან შეცვალოთ ის.</p>"
 
 #: javaopts.cpp:142
 #, kde-format
@@ -1795,6 +1857,13 @@ msgid ""
 "selected policy, causing the default policy setting to be used for that "
 "domain."
 msgstr ""
+"აქ შეგძლიათ, თითოეული დომენის თუ ჰოსტისთვის საკუთარი Java პოლიტიკები "
+"დააყენოთ. პოლიტიკის დასამატებლად, უბრალოდ დააკწაპუნეთ ღილაკზე <i>ახალი...</"
+"i> და შეიყვანეთ საჭირო ინფორმაცია, რომელსაც დიალოგი მოგთხოვთ. არსებული "
+"პოლიტიკის შესაცვლელად დააწკაპუნეთ ღილაკზე <i>შეცვლა...</i> და აირჩიეთ ახალი "
+"პოლიტიკა გამოტანილი დიალოგიდან. თუ დააწკაპუნებთ ღილაკზე <i>წაშლა</i>, "
+"მონიშნულ პოლიტიკა წაიშლება, რაც ამ დომენზე ნაგულისხმევი პოლიტიკის "
+"გამოყენებას გამოიწვევს."
 
 #: javaopts.cpp:162
 #, kde-format
@@ -1806,6 +1875,12 @@ msgid ""
 "risk. You can modify your $HOME/.java.policy file with the Java policytool "
 "utility to give code downloaded from certain sites more permissions."
 msgstr ""
+"უსაფრთხოების მმართველის ჩართვა JVM-ს უსაფრთხოების მმართველით გაუშვებს. ეს "
+"აპლეტებს თქვენს ფაილურ სისტემაში ჩაწერას და წაკითხვას, სოკეტების შექმნას და "
+"სხვა ქმედებებს აუკრძალავს, რომლებსაც, თქვენი უსაფრთხოების დარღვევა შეუძლია. "
+"გამორთეთ ეს პარამეტრი საკუთარი რისკით. შეგიძლიათ, შეცვალოთ თქვენი ფაილი "
+"$HOME/.java.policy Java-ის პოლიტიკის მართვის პროგრამით, რათა ზოგიერთი "
+"საიტიდან გადმოწერილ კოდს მეტი უფლებები მიეცეს."
 
 #: javaopts.cpp:170
 #, kde-format
@@ -1821,6 +1896,11 @@ msgid ""
 "the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
 "the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
 msgstr ""
+"შეიყვანეთ ბილიკი გამშვებ ფაილამდე java. თუ გნებავთ გამოიყენოთ jre, რომელიც "
+"თქვენს PATH გარემოს ცვლადშია, უბრალოდ დატოვეთ, როგორც 'java'. თ გნებავთ, "
+"სხვა jre გამოიყენოთ, შეიყვანეთ ბილიკი გამშვებ ფაილამდე სახელად java (მაგ: /"
+"usr/lib/jdk/bin/java) ან ბილიკი, რომელიც შეიცავს ფაილს 'bin/java' (მაგ: /opt/"
+"IBMJava2-13)."
 
 #: javaopts.cpp:177
 #, kde-format
@@ -1841,6 +1921,12 @@ msgid ""
 "whole time that the konqueror process is, leave the Shutdown Applet Server "
 "checkbox unchecked."
 msgstr ""
+"როცა ყველა აპლეტები განადგურდება, აპლეტის სერვერი უნდა გაითიშოს. მაგრამ JVM-"
+"ის გაშვებას კარგა ხანი სჭირდება. თუ გნებავთ, java-ის პროცესი გაშვებული "
+"დატოვოთ იმ დროისთვის, სანამ ბრაუზერში მუშაობთ, შეგიძლიათ, ამ მოლოდინის ვადა "
+"ნებისმიერ რიცხვზე დააყენოთ. თუ გნებავთ, java-ის პროცესი მთელი იმ დროის "
+"განმავლობაში იყოს მეხსიერებაში, სანამ Konqueror გაშვებულია, დატოვეთ აპლეტის "
+"სერვერის ჩასართავი ჩაურთავად."
 
 #: javaopts.cpp:288
 #, kde-format
@@ -1882,6 +1968,9 @@ msgid ""
 "JavaScript) that can be contained in HTML pages. Note that, as with any "
 "browser, enabling scripting languages can be a security problem."
 msgstr ""
+"ECMA-Script-ზე (რომელიც ასევე ცნობილია, როგორც JacaScript) დაწერილი "
+"სკრიპტების, რომლებსაც შეიძლება, HTML გვერდები შეიცავდეს, გაშვების დაშვება. "
+"დაიმახსოვრეთ, რომ სკრიპტინგის ენების ჩართვა შეიძლება რისკებს შეიცავდეს."
 
 #: jsopts.cpp:59
 #, kde-format
@@ -1922,6 +2011,15 @@ msgid ""
 "share your policies with other people by allowing you to save and retrieve "
 "them from a zipped file."
 msgstr ""
+"აქ შეგძლიათ, თითოეული დომენის თუ ჰოსტისთვის საკუთარი JavaScript-ის "
+"პოლიტიკები დააყენოთ. პოლიტიკის დასამატებლად, უბრალოდ დააკწაპუნეთ ღილაკზე "
+"<i>ახალი...</i> და შეიყვანეთ საჭირო ინფორმაცია, რომელსაც დიალოგი მოგთხოვთ. "
+"არსებული პოლიტიკის შესაცვლელად დააწკაპუნეთ ღილაკზე <i>შეცვლა...</i> და "
+"აირჩიეთ ახალი პოლიტიკა გამოტანილი დიალოგიდან. თუ დააწკაპუნებთ ღილაკზე "
+"<i>წაშლა</i>, მონიშნულ პოლიტიკა წაიშლება, რაც ამ დომენზე ნაგულისხმევი "
+"პოლიტიკის გამოყენებას გამოიწვევს. <i>შემოტანის</i> და <i>გატანის</i> "
+"ღილაკები საშუალებას გაძლევთ, პოლიტიკები სხვებსაც გაუზიაროთ, მათი .zip ფაილის "
+"სახით გატანის და შემოტანის საშუალებით."
 
 #: jsopts.cpp:93
 #, kde-format
@@ -1932,6 +2030,11 @@ msgid ""
 "or hosts.</p><p>Select a policy and use the controls on the right to modify "
 "it.</p>"
 msgstr ""
+"<p>ეს ყუთი შეიცავს დომენებს და ჰოსტებს, რომლებისთვისაც ცალკე JavaScript-ის "
+"პოლიტიკა დააყენეთ. ეს პოლიტიკა ნაგულისხმევის მაგიერ იქნება გამოყენებული "
+"JavaScript-ის ჩასართავად ან გამოსართავად გვერდებზე, რომლებიც ამ დომენებმა ან "
+"ჰოსტებმა გამოაგზავნეს.</p><p>აირჩიეთ პოლიტიკა და გამოიყენეთ კონტროლები რომ "
+"დააყენოთ ის ზუსტად ან შეცვალოთ ის.</p>"
 
 #: jsopts.cpp:100
 #, kde-format
@@ -2045,6 +2148,8 @@ msgid ""
 "Accept popup window requests only when links are activated through an "
 "explicit mouse click or keyboard operation."
 msgstr ""
+"მხტუნარა ფანჯრის მოთხოვნების, მხოლოდ, მაშინ მიღება, როცა ბმული თაგუნას "
+"აშკარა წკაპით, ან კლავიატურის ოპერაციით გააქტიურდება."
 
 #: jspolicies.cpp:173
 #, kde-format
@@ -2055,6 +2160,12 @@ msgid ""
 "Disabling this option might also break certain sites that require <i>window."
 "open()</i> for proper operation. Use this feature carefully."
 msgstr ""
+"თუ ამას გამორთავთ, Konqueror შეწყვეტს <i>window.open()</i> JavaScript-ის "
+"ბრძანებისთვის ყურადღების მიქცევად. ეს გამოგადგებათ, თუ რეგულარულად შედიხართ "
+"საიტებზე, რომლებიც ბანერებს და მხტუნარებს ხშირად იყენებს.<br /><br /"
+"><b>შენიშვნა:</b> ამ პარამეტრის გამორთვამ შეიძლება ხელი შეუშალოს ზოგიერთ "
+"საიტს, რომელიც <i>window.open()</i>-ს სწორი მიზნებისთვის იყენებს. ფრთხილად "
+"იყავით ამ პარამეტრთან."
 
 #: jspolicies.cpp:187
 #, kde-format
@@ -2077,6 +2188,8 @@ msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
 "<i>think</i> it changed the size but the actual window is not affected."
 msgstr ""
+"სკრიპტების მიერ ფანჯრის ზომის შეცვლის მცდელობის გამოტოვება. ვებგვერდი "
+"<i>იფიქრებს</i>, რომ მან ზომა შეცვალა, მაგრამ ფანჯარა არ შეიცვლება."
 
 #: jspolicies.cpp:215
 #, kde-format
@@ -2085,6 +2198,9 @@ msgid ""
 "resizeBy()</i> or <i>window.resizeTo()</i>. This option specifies the "
 "treatment of such attempts."
 msgstr ""
+"ზოგიერთი ვებგვერდი თავისი ფანჯრის ზომას თვითონ ცვლის, <i>window.resizeBy()</"
+"i> ან <i>window.resizeTo()</i> ფუნქციებით. ეს პარამეტრი მიუთითებს, როგორ "
+"ვუწამლოთ ამნაირებს."
 
 #: jspolicies.cpp:224
 #, kde-format
@@ -2102,6 +2218,9 @@ msgid ""
 "Ignore attempts of scripts to change the window position. The web page will "
 "<i>think</i> it moved the window but the actual position is not affected."
 msgstr ""
+"სკრიპტების მიერ ფანჯრის მდებარეობის შეცვლის მცდელობების გამოტოვება. "
+"ვებგვერდი <i>იფიქრებს</i>, რომ მანდ გადაადგილა ფანჯარა, მაგრამ ის არ "
+"შეიცვლება."
 
 #: jspolicies.cpp:252
 #, kde-format
@@ -2110,6 +2229,9 @@ msgid ""
 "moveBy()</i> or <i>window.moveTo()</i>. This option specifies the treatment "
 "of such attempts."
 msgstr ""
+"ზოგიერთი ვებგვერდი თავსი ფანჯრის მდებარეობას თვითონ, <i>window.moveBy()</i> "
+"ან <i>window.moveTo()</i> ფუნქციებით ცვლის. ეს პარამეტრი წყვეტს, როგორ "
+"უწამლოს ამნაირებს."
 
 #: jspolicies.cpp:261
 #, kde-format
@@ -2128,6 +2250,8 @@ msgid ""
 "i> it brought the focus to the window but the actual focus will remain "
 "unchanged."
 msgstr ""
+"ფანჯრის მიერ ფოკუსის აღების მცდელობების გამოტოვება. ვებგვერდი <i>იფიქრებს</"
+"i>, რომ მან მიიღო ფოკუსი იმ დროს, როცა ის არ შეიცვლება."
 
 #: jspolicies.cpp:290
 #, kde-format
@@ -2137,6 +2261,10 @@ msgid ""
 "front interrupting whatever action the user was dedicated to at that time. "
 "This option specifies the treatment of such attempts."
 msgstr ""
+"ზოგიერთი ვებგვერდი ცდილობს, ფოკუსი, თავის თავზე <i>window.focus()</i> "
+"ფუნქციით გადაიტანოს. ეს ჩვეულებრივ იწვევს ამ ფანჯრის წინ გადმოწევას, რითიც "
+"თქვენს სამუშაოს გაგაწყვეტინებთ. ეს პარამეტრი ამნაირებისთვის წამლობის ხერს "
+"მიუთითებს."
 
 #: jspolicies.cpp:301
 #, kde-format
@@ -2154,6 +2282,8 @@ msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
 "<i>think</i> it changed the text but the actual text will remain unchanged."
 msgstr ""
+"სკრიპტების მცდელობის გამოტოვება, სტატუსის ზოლის ტექსტი შეცვალოს. ვებგვერდი "
+"<i>იფიქრებს</i>, რომ მან შეცვალა ტექსტი მაშინ, როცა ის არ შეიცვლება."
 
 #: jspolicies.cpp:330
 #, kde-format
@@ -2162,6 +2292,9 @@ msgid ""
 "<i>window.defaultStatus</i>, thus sometimes preventing displaying the real "
 "URLs of hyperlinks. This option specifies the treatment of such attempts."
 msgstr ""
+"ზოგიერთი ვებგვერდი სტატუსის ზოლის ტექსტს ცვლის, <i>window.status</i> ან "
+"<i>window.defaultStatus</i> ფუნქციებით, რითიც ხელს უშლის რეალური ბმულის "
+"გამოტანას. ეს ფუნქცია ამნაირების წამლობის ხერხზე მიუთითებს."
 
 #: main.cpp:49
 #, kde-format
@@ -2217,6 +2350,8 @@ msgid ""
 "This will display the tab bar only if there are two or more tabs. Otherwise "
 "it will always be displayed."
 msgstr ""
+"ეს გამოაჩენს ჩანართების ველს, მხოლოდ, თუ არსებობს ორი ან მეტი ჩანართი. სხვა "
+"შემთხვევაში ის ყოველთვის ხილულია."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:29
@@ -2273,6 +2408,8 @@ msgid ""
 "This will open a new tab instead of a new window in various situations, such "
 "as choosing a link or a folder with the middle mouse button."
 msgstr ""
+"ეს სხვადასხვა სიტუაციებში ახალი ფანჯრის მაგიერ ახალ ჩანართს გახსნის. "
+"მაგალითად მაშინ, როცა ბმულს ან საქაღალდეს შუა თაგუნას ღილაკით დააწკაპუნებთ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:102
@@ -2305,6 +2442,10 @@ msgid ""
 "found, the URL opened as a new tab within it. Otherwise a new Konqueror "
 "window will be opened with the required URL."
 msgstr ""
+"თუ დააწკაპუნებთ ბმულზე სხვა KDE-ის პროგრამაში ან გამოიძახებთ kfmclient-ს "
+"ბმულის გასახსნელად, მიმდინარე სამუშაო მაგიაზე არაჩაკეცილ Konqueror-ს "
+"მოვძებნი და თუ ვიპოვი, ბმული მასში ახალ ჩანართში გაიხსნება. სხვა შემთხვევაში "
+"მოთხოვნილი ბმულით ახალ ფანჯარას გაგიხსნით."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
 #: tabs/tabsoptions.ui:122
@@ -2339,6 +2480,8 @@ msgid ""
 "This will open a new tab opened from a page after the current tab, instead "
 "of after the last tab."
 msgstr ""
+"ეს გახსნის ახალ ჩანართს, რომელიც გაიხსნება გვერდისგან, რომელიც მიმდინარე "
+"ჩანართის შემდეგაა, უკანასკნელი ჩანართის მაგიერ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
 #: tabs/tabsoptions.ui:151
@@ -2387,6 +2530,8 @@ msgid ""
 "This will ask you whether you are sure you want to close a window when it "
 "has multiple tabs opened in it."
 msgstr ""
+"ეს გკითხავთ, გნებავთ თუ არა ფანჯრის დახურვა, როცა მასში ერთზე მეტი ჩანართია "
+"ღია."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
 #: tabs/tabsoptions.ui:190
@@ -2403,6 +2548,9 @@ msgid ""
 "When checking this the previous used or opened tab will be activated when "
 "you close the current active tab instead of the one right to the current tab."
 msgstr ""
+"თუ ამას ჩართავთ, ამჟამად აქტიური ჩანართის დახურვისას ფოკუსი წინაზე "
+"გამოყენებულ ან გახსნილ ჩანართზე გადართვის მაგიერ, მიმდინარე ჩანართის "
+"მარჯვნივ არსებულ ჩანართზე გადაერთვება."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
 #: tabs/tabsoptions.ui:200
@@ -2489,6 +2637,10 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>გამოყენებული ბრაუზერის იდენტიფიკატორი, როცა "
+"ნაგულისხმევი გამორთულია.</p><p>ის შეგიძლიათ, ხელით შეიყვანოთ ან აირჩიოთ "
+"ქვემოთ მოყვანილი სიიდან და შეცვალოთ ისე, როგორც თქვენ გნებავთ.</p></body></"
+"html>"
 
 #~ msgid "Tabbed Browsing"
 #~ msgstr "ჩანართებიანი ბრაუზერი"

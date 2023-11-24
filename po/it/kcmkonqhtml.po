@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-08-17 23:46+0200\n"
+"PO-Revision-Date: 2023-11-20 13:43+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -2375,16 +2375,15 @@ msgstr "Prima devi inserire un nome di dominio."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
-msgstr "Comportamento del mo&use"
+msgstr "Comportamento delle schede"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr ""
+msgstr "Aspetto"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2406,43 +2405,43 @@ msgstr "Nascondi la barra delle schede quando ce n'è solo una aperta"
 #: tabs/tabsoptions.ui:38
 #, kde-format
 msgid "Tab bar position"
-msgstr ""
+msgstr "Posizione barra delle schede"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "Scegli dove mostrare la barra delle schede"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "Sopra i contenuti"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "Sotto i contenuti"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "A sinistra dei contenuti"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "A destra dei contenuti"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr ""
+msgstr "Uso"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2505,10 +2504,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
-msgstr "Comportamento del mo&use"
+msgstr "Comportamento delle nuove schede"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2544,7 +2542,7 @@ msgstr "Apri &nuova scheda dopo l'attuale"
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Closing"
-msgstr ""
+msgstr "Chiusura"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167

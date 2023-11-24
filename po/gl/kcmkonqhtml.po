@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-11-11 17:52+0100\n"
+"PO-Revision-Date: 2023-11-23 17:23+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -2363,16 +2363,15 @@ msgstr "Primeiro ten que inserir un nome de dominio."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
-msgstr "Comportamento do ra&to"
+msgstr "Comportamento das lapelas"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr ""
+msgstr "Proporción"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2394,43 +2393,43 @@ msgstr "Agochar a barra de lapelas cando só estea aberta unha lapela."
 #: tabs/tabsoptions.ui:38
 #, kde-format
 msgid "Tab bar position"
-msgstr ""
+msgstr "Posición da barra de lapelas"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "Escoller onde amosar a barra de lapelas."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "Sobre o contido"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "Baixo o contido"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "Á esquerda do contido"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "Á dereita do contido"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr ""
+msgstr "Uso"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2489,10 +2488,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
-msgstr "Comportamento do ra&to"
+msgstr "Comportamento das novas lapelas"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2528,7 +2526,7 @@ msgstr "Abrir os &novos separadores despois do actual"
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Closing"
-msgstr ""
+msgstr "Pechando"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167
