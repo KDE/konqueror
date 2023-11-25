@@ -18,7 +18,7 @@ Dependencies:
     'frameworks/kguiaddons': '@stable'
     'frameworks/kdoctools': '@stable'
     'frameworks/kdesu': '@stable'
-    'plasma/kactivities': '@stable'
+    'plasma/plasma-activities': '@stable'
 
 - 'on': ['Linux/Qt6', 'FreeBSD/Qt6']
   'require':
@@ -35,4 +35,4 @@ Dependencies:
     'frameworks/kguiaddons': '@latest-kf6'
     'frameworks/kdoctools': '@latest-kf6'
     'frameworks/kdesu': '@latest-kf6'
-    'plasma/kactivities': '@latest-kf6'
+    'plasma/plasma-activities': '@latest-kf6'
