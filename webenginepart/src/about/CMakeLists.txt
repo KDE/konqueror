@@ -2,7 +2,6 @@ install(FILES
     top-left-konqueror.png
     launch.html
     intro.html
-    specs.html
     tips.html
     plugins.html
     plugins_rtl.html

@@ -7,9 +7,9 @@
 */
 
 #include "webenginepartcontrols.h"
-#include "webengineparterrorschemehandler.h"
+#include "schemehandlers/errorschemehandler.h"
 #include "webengineurlrequestinterceptor.h"
-#include "webenginepartkiohandler.h"
+#include "schemehandlers/kiohandler.h"
 #include "about/konq_aboutpage.h"
 #include "spellcheckermanager.h"
 #include "webenginepartdownloadmanager.h"
@@ -21,6 +21,7 @@
 #include <webenginepart_debug.h>
 #include "profile.h"
 #include "interfaces/browser.h"
+#include "schemehandlers/execschemehandler.h"
 
 #include <KProtocolInfo>
 #include <KSharedConfig>
@@ -38,6 +39,7 @@
 #include <QMessageBox>
 
 using namespace KonqInterfaces;
+using namespace WebEngine;
 
 WebEnginePartControls::WebEnginePartControls(): QObject(),
     m_profile(nullptr), m_cookieJar(nullptr), m_spellCheckerManager(nullptr), m_downloadManager(nullptr),
@@ -57,6 +59,11 @@ WebEnginePartControls::WebEnginePartControls(): QObject(),
         scheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);
         QWebEngineUrlScheme::registerScheme(scheme);
     }
+
+    QWebEngineUrlScheme execScheme(QByteArrayLiteral("exec"));
+    execScheme.setFlags(QWebEngineUrlScheme::LocalScheme);
+    execScheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);
+    QWebEngineUrlScheme::registerScheme(execScheme);
 
     Browser *browser = Browser::browser(qApp);
     if (browser) {
@@ -144,11 +151,12 @@ void WebEnginePartControls::setup(KonqWebEnginePart::Profile* profile)
 
     registerScripts();
 
-    m_profile->installUrlSchemeHandler("error", new WebEnginePartErrorSchemeHandler(m_profile));
+    m_profile->installUrlSchemeHandler("error", new ErrorSchemeHandler(m_profile));
     m_profile->installUrlSchemeHandler("konq", new KonqUrlSchemeHandler(m_profile));
-    m_profile->installUrlSchemeHandler("help", new WebEnginePartKIOHandler(m_profile));
-    m_profile->installUrlSchemeHandler("tar", new WebEnginePartKIOHandler(m_profile));
-    m_profile->installUrlSchemeHandler("bookmarks", new WebEnginePartKIOHandler(m_profile));
+    m_profile->installUrlSchemeHandler("help", new KIOHandler(m_profile));
+    m_profile->installUrlSchemeHandler("tar", new KIOHandler(m_profile));
+    m_profile->installUrlSchemeHandler("bookmarks", new KIOHandler(m_profile));
+    m_profile->installUrlSchemeHandler("exec", new ExecSchemeHandler(m_profile));
 
     m_profile->setUrlRequestInterceptor(new WebEngineUrlRequestInterceptor(this));
 

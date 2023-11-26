@@ -27,8 +27,6 @@ set(kwebenginepartlib_LIB_SRCS
     webhistoryinterface.cpp
     webenginepartdownloadmanager.cpp
     webenginewallet.cpp
-    webengineparterrorschemehandler.cpp
-    webenginepartkiohandler.cpp
     settings/webenginesettings.cpp
     settings/webengine_filter.cpp
     ui/searchbar.cpp
@@ -46,6 +44,9 @@ set(kwebenginepartlib_LIB_SRCS
     navigationrecorder.cpp
     choosepagesaveformatdlg.cpp
     qtwebengine6compat.h
+    schemehandlers/execschemehandler.cpp
+    schemehandlers/errorschemehandler.cpp
+    schemehandlers/kiohandler.cpp
 )
 
 if (DontUseKCookieJar)

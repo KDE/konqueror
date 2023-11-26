@@ -68,14 +68,13 @@ QString KonqAboutPageSingleton::launch()
         res = res.arg(QLatin1String(""));
     }
 
-    res = res.arg(i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free."))
+    res = res.arg(i18nc("KDE 4 tag line", "Be free."))
           .arg(i18n("Konqueror"))
-          .arg(i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free."))
+          .arg(i18nc("KDE 4 tag line", "Be free."))
           .arg(i18n("Konqueror is a web browser, file manager and universal document viewer."))
           .arg(i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "Starting Points"))
           .arg(i18n("Introduction"))
           .arg(i18n("Tips"))
-          .arg(i18n("Specifications"))
           .arg(home_folder)
           .arg(home_icon_path)
           .arg(iconSize).arg(iconSize)
@@ -135,7 +134,6 @@ QString KonqAboutPageSingleton::intro()
           .arg(i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "Starting Points"))
           .arg(i18n("Introduction"))
           .arg(i18n("Tips"))
-          .arg(i18n("Specifications"))
           .arg(i18n("Konqueror makes working with and managing your files easy. You can browse "
                     "both local and networked folders while enjoying advanced features "
                     "such as the powerful sidebar and file previews."
@@ -151,97 +149,12 @@ QString KonqAboutPageSingleton::intro()
           .arg(i18n("To quickly go to your Home folder press the "
                     "home button <img width='16' height='16' src=\"%1\"></img>.", gohome_icon_path))
           .arg(i18n("For more detailed documentation on Konqueror click <a href=\"%1\">here</a>.",
-                    QStringLiteral("exec:/khelpcenter help:/konqueror")))
+                    QStringLiteral("https://docs.kde.org/?application=konqueror")))
           .arg(QStringLiteral("<img width='16' height='16' src=\"%1\">")).arg(continue_icon_path)
           .arg(i18n("Next: Tips & Tricks"))
           ;
 
     m_intro_html = res;
-    return res;
-}
-
-QString KonqAboutPageSingleton::specs()
-{
-    if (!m_specs_html.isEmpty()) {
-        return m_specs_html;
-    }
-
-    KIconLoader *iconloader = KIconLoader::global();
-    QString res = loadFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/specs.html")));
-    QString continue_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small)).toString();
-    if (res.isEmpty()) {
-        return res;
-    }
-
-    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage.css"))).toString());
-    if (qApp->layoutDirection() == Qt::RightToLeft) {
-        res = res.arg(QStringLiteral("@import \"%1\";")).arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage_rtl.css"))).toString());
-    } else {
-        res = res.arg(QLatin1String(""));
-    }
-
-    res = res.arg(i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free."))
-          .arg(i18n("Konqueror"))
-          .arg(i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free."))
-          .arg(i18n("Konqueror is a web browser, file manager and universal document viewer."))
-          .arg(i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "Starting Points"))
-          .arg(i18n("Introduction"))
-          .arg(i18n("Tips"))
-          .arg(i18n("Specifications"))
-          .arg(i18n("Specifications"))
-          .arg(i18n("Konqueror is designed to embrace and support Internet standards. "
-                    "The aim is to fully implement the officially sanctioned standards "
-                    "from organizations such as the W3 and OASIS, while also adding "
-                    "extra support for other common usability features that arise as "
-                    "de facto standards across the Internet. Along with this support, "
-                    "for such functions as favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, "
-                    "Konqueror also implements:", QStringLiteral("http://xbel.sourceforge.net/")))
-          .arg(i18n("Web Browsing"))
-          .arg(i18n("Supported standards"))
-          .arg(i18n("Additional requirements*"))
-          .arg(i18n("<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based "
-                    "<A HREF=\"%2\">HTML 4.01</A>", QStringLiteral("http://www.w3.org/DOM"), QStringLiteral("http://www.w3.org/TR/html4/")))
-          .arg(i18n("built-in"))
-          .arg(i18n("<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)", QStringLiteral("http://www.w3.org/Style/CSS/")))
-          .arg(i18n("built-in"))
-          .arg(i18n("<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)",
-                    QStringLiteral("http://www.ecma-international.org/publications/standards/ECMA-262.HTM")))
-          .arg(i18n("JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>.", QStringLiteral("exec:/kcmshell5 khtml_java_js")))
-          .arg(i18n("JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\\">here</A>.", QStringLiteral("exec:/kcmshell5 khtml_java_js")))   // leave the double backslashes here, they are necessary for javascript !
-          .arg(i18n("Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support", QStringLiteral("http://www.oracle.com/technetwork/java/index.html")))
-          .arg(i18n("JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF=\"%2\">Sun/Oracle</A>)",
-                    QStringLiteral("http://openjdk.java.net/"), QStringLiteral("http://www.oracle.com/technetwork/java/index.html")))
-          .arg(i18n("Enable Java (globally) <A HREF=\"%1\">here</A>.", QStringLiteral("exec:/kcmshell5 khtml_java_js")))   // TODO Maybe test if Java is enabled ?
-          .arg(i18n("NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)",
-                    QStringLiteral("https://get.adobe.com/flashplayer/"),
-                    QStringLiteral("konq:plugins")))
-          .arg(i18n("built-in"))
-          .arg(i18n("Secure Sockets Layer"))
-          .arg(i18n("(TLS/SSL v2/3) for secure communications up to 168bit"))
-          .arg(i18n("OpenSSL"))
-          .arg(i18n("Bidirectional 16bit unicode support"))
-          .arg(i18n("built-in"))
-          .arg(i18n("AutoCompletion for forms"))
-          .arg(i18n("built-in"))
-          .arg(i18nc("Title of an html 'group box' explaining konqueror features", "General"))
-          .arg(i18n("Feature"))
-          .arg(i18n("Details"))
-          .arg(i18n("Image formats"))
-          .arg(i18n("PNG<br />JPG<br />GIF"))
-          .arg(i18n("Transfer protocols"))
-          .arg(i18n("HTTP 1.1 (including gzip/bzip2 compression)"))
-          .arg(i18n("FTP"))
-          .arg(i18n("and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>", QStringLiteral("exec:/khelpcenter")))
-          .arg(i18nc("A feature of Konqueror", "URL-Completion"))
-          .arg(i18n("Manual"))
-          .arg(i18n("Popup"))
-          .arg(i18n("(Short-) Automatic"))
-          .arg(QStringLiteral("<img width='16' height='16' src=\"%1\">")).arg(continue_icon_path)
-          .arg(i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "<a href=\"%1\">Return to Starting Points</a>", QStringLiteral("konq:konqueror")))
-
-          ;
-
-    m_specs_html = res;
     return res;
 }
 
@@ -280,22 +193,19 @@ QString KonqAboutPageSingleton::tips()
         res = res.arg(QLatin1String(""));
     }
 
-    res = res.arg(i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free."))
+    res = res.arg(i18nc("KDE 4 tag line", "Be free."))
           .arg(i18n("Konqueror"))
-          .arg(i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free."))
+          .arg(i18nc("KDE 4 tag line", "Be free."))
           .arg(i18n("Konqueror is a web browser, file manager and universal document viewer."))
           .arg(i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "Starting Points"))
           .arg(i18n("Introduction"))
           .arg(i18n("Tips"))
-          .arg(i18n("Specifications"))
           .arg(i18n("Tips & Tricks"))
           .arg(i18n("Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
                     "using Google, for the search phrase \"KDE\". There are a lot of "
                     "Web-Shortcuts predefined to make searching for software or looking "
                     "up certain words in an encyclopedia a breeze. You can even "
-                    "<a href=\"%1\">create your own</a> Web-Shortcuts.", QStringLiteral("exec:/kcmshell5 webshortcuts")))
-          .arg(i18n("Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in the HTML"
-                    " toolbar to increase the font size on your web page.", viewmag_icon_path))
+                    "<a href=\"%1\">create your own</a> Web-Shortcuts.", QStringLiteral("exec:kcmshell5 webshortcuts")))
           .arg(i18n("When you want to paste a new address into the Location toolbar you might want to "
                     "clear the current entry by pressing the black arrow with the white cross "
                     "<img width='16' height='16' src=\"%1\"></img> in the toolbar.",
@@ -311,16 +221,14 @@ QString KonqAboutPageSingleton::tips()
                     "Left/Right) you can make Konqueror appear the way you like.", view_left_right_icon_path))
           .arg(i18n("Use the <a href=\"%1\">user-agent</a> feature if the website you are visiting "
                     "asks you to use a different browser "
-                    "(and do not forget to send a complaint to the webmaster!)", QStringLiteral("exec:/kcmshell5 useragent")))
+                    "(and do not forget to send a complaint to the webmaster!)", QStringLiteral("exec:kcmshell5 useragent")))
           .arg(i18n("The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar ensures "
                     "that you can keep track of the pages you have visited recently.", history_icon_path))
-          .arg(i18n("Use a caching <a href=\"%1\">proxy</a> to speed up your"
-                    " Internet connection.", QStringLiteral("exec:/kcmshell5 proxy")))
           .arg(i18n("Advanced users will appreciate the Konsole which you can embed into "
                     "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
                     "Terminal Emulator).", openterm_icon_path))
           .arg(QStringLiteral("<img width='16' height='16' src=\"%1\">")).arg(continue_icon_path)
-          .arg(i18n("Next: Specifications"))
+          .arg(i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "<a href=\"%1\">Return to Starting Points</a>", QStringLiteral("konq:konqueror")))
           ;
 
     m_tips_html = res;
@@ -361,9 +269,7 @@ void KonqUrlSchemeHandler::requestStarted(QWebEngineUrlRequestJob *req)
     connect(buf, &QIODevice::aboutToClose, buf, &QObject::deleteLater);
     QString data;
     QString path = req->requestUrl().path();
-    if (path.endsWith(QStringLiteral("specs"))) {
-        data = s_staticData->specs();
-    } else if (path.endsWith(QStringLiteral("blank"))) {
+    if (path.endsWith(QStringLiteral("blank"))) {
         data = QStringLiteral();
     } else if (path.endsWith(QStringLiteral("intro"))) {
         data = s_staticData->intro();

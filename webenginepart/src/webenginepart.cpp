@@ -11,7 +11,7 @@
 */
 
 #include "webenginepart.h"
-#include "webenginepartkiohandler.h"
+#include "schemehandlers/kiohandler.h"
 #include "about/konq_aboutpage.h"
 
 #include <webenginepart_debug.h>
@@ -27,7 +27,7 @@
 #include "websslinfo.h"
 #include "webhistoryinterface.h"
 #include "webenginewallet.h"
-#include "webengineparterrorschemehandler.h"
+#include "schemehandlers/errorschemehandler.h"
 #include "webengineurlrequestinterceptor.h"
 #include "spellcheckermanager.h"
 #include "webenginepartdownloadmanager.h"
@@ -78,6 +78,8 @@
 
 #include "utils.h"
 #include <kio_version.h>
+
+using namespace WebEngine;
 
 WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
                          const KPluginMetaData& metaData,
@@ -351,7 +353,7 @@ void WebEnginePart::attemptInstallKIOSchemeHandler(const QUrl& url)
         QByteArray scheme = url.scheme().toUtf8();
         //Qt complains about installing a scheme handler overriding the internal "about" scheme
         if (scheme != "about" && !prof->urlSchemeHandler(scheme)) {
-            prof->installUrlSchemeHandler(scheme, new WebEnginePartKIOHandler(prof));
+            prof->installUrlSchemeHandler(scheme, new KIOHandler(prof));
         }
     }
 

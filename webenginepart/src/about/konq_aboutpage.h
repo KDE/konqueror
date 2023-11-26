@@ -9,7 +9,6 @@ class KonqAboutPageSingleton
 public:
     QString launch();
     QString intro();
-    QString specs();
     QString tips();
     QString plugins();
 

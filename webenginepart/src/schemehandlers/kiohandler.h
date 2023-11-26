@@ -6,8 +6,8 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef WEBENGINEPARTKIOHANDLER_H
-#define WEBENGINEPARTKIOHANDLER_H
+#ifndef WEBENGINE_KIOHANDLER_H
+#define WEBENGINE_KIOHANDLER_H
 
 #include <QWebEngineUrlSchemeHandler>
 #include <QWebEngineUrlRequestJob>
@@ -17,6 +17,8 @@
 namespace KIO {
   class StoredTransferJob;  
 };
+
+namespace WebEngine {
 
 class WebEnginePartHtmlEmbedder;
 
@@ -38,7 +40,7 @@ class WebEnginePartHtmlEmbedder;
  * Since requestStarted() can be called multiple times, requests are stored in a list and 
  * processed one by one. This is hidden to derived classes, which only work with the current request.
  */
-class WebEnginePartKIOHandler : public QWebEngineUrlSchemeHandler
+class KIOHandler : public QWebEngineUrlSchemeHandler
 {
     Q_OBJECT
 
@@ -48,7 +50,7 @@ public:
      *
      * @param parent the parent object
      */
-    WebEnginePartKIOHandler(QObject* parent);
+    KIOHandler(QObject* parent);
     
     /**
      * @brief Override of `QWebEngineUrlSchemeHandler::requestStarted`
@@ -300,5 +302,6 @@ private:
     QMimeType m_mimeType;
     
 };
+}
 
-#endif // WEBENGINEPARTKIOHANDLER_H
+#endif // WEBENGINE_KIOHANDLER_H

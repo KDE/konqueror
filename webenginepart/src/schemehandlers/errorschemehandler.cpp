@@ -6,7 +6,7 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#include "webengineparterrorschemehandler.h"
+#include "errorschemehandler.h"
 
 #include <QBuffer>
 #include <QByteArray>
@@ -25,12 +25,14 @@
 
 #include "utils.h"
 
-WebEnginePartErrorSchemeHandler::WebEnginePartErrorSchemeHandler(QObject* parent):
+using namespace WebEngine;
+
+ErrorSchemeHandler::ErrorSchemeHandler(QObject* parent):
     QWebEngineUrlSchemeHandler(parent), m_warningIconData(readWarningIconData())
 {
 }
 
-QString WebEnginePartErrorSchemeHandler::readWarningIconData() const
+QString ErrorSchemeHandler::readWarningIconData() const
 {
     QString data;
     QString path = KIconLoader::global()->iconPath("dialog-warning", -KIconLoader::SizeHuge);
@@ -50,7 +52,7 @@ QString WebEnginePartErrorSchemeHandler::readWarningIconData() const
 
 }
 
-void WebEnginePartErrorSchemeHandler::requestStarted(QWebEngineUrlRequestJob* job)
+void ErrorSchemeHandler::requestStarted(QWebEngineUrlRequestJob* job)
 {
     QBuffer *buf = new QBuffer;
     buf->open(QBuffer::ReadWrite);
@@ -61,7 +63,7 @@ void WebEnginePartErrorSchemeHandler::requestStarted(QWebEngineUrlRequestJob* jo
     job->reply("text/html", buf);
 }
 
-WebEnginePartErrorSchemeHandler::ErrorInfo WebEnginePartErrorSchemeHandler::parseErrorUrl(const QUrl& url)
+ErrorSchemeHandler::ErrorInfo ErrorSchemeHandler::parseErrorUrl(const QUrl& url)
 {
     ErrorInfo ei;
     ei.requestUrl = QUrl(url.fragment());
@@ -79,7 +81,7 @@ WebEnginePartErrorSchemeHandler::ErrorInfo WebEnginePartErrorSchemeHandler::pars
     return ei;
 }
 
-void WebEnginePartErrorSchemeHandler::writeErrorPage(QBuffer* buf, const WebEnginePartErrorSchemeHandler::ErrorInfo& info)
+void ErrorSchemeHandler::writeErrorPage(QBuffer* buf, const ErrorSchemeHandler::ErrorInfo& info)
 {
     QString errorName, techName, description;
     QStringList causes, solutions;

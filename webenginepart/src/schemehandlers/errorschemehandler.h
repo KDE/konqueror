@@ -6,8 +6,8 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef WEBENGINEPARTERRORSCHEMEHANDLER_H
-#define WEBENGINEPARTERRORSCHEMEHANDLER_H
+#ifndef ERRORSCHEMEHANDLER_H
+#define ERRORSCHEMEHANDLER_H
 
 #include <QWebEngineUrlSchemeHandler>
 #include <QUrl>
@@ -17,15 +17,17 @@
 
 class QBuffer;
 
-class WebEnginePartErrorSchemeHandler : public QWebEngineUrlSchemeHandler{
+namespace WebEngine {
+
+class ErrorSchemeHandler : public QWebEngineUrlSchemeHandler{
     
     Q_OBJECT
     
 public:
     
-    WebEnginePartErrorSchemeHandler(QObject *parent = nullptr);
+    ErrorSchemeHandler(QObject *parent = nullptr);
     
-    ~WebEnginePartErrorSchemeHandler() override {}
+    ~ErrorSchemeHandler() override {}
     
     void requestStarted(QWebEngineUrlRequestJob * job) override;
     
@@ -46,4 +48,6 @@ private:
     const QString m_warningIconData;
 };
 
-#endif //WEBENGINEPARTERRORSCHEMEHANDLER_H
+}
+
+#endif //ERRORSCHEMEHANDLER_H

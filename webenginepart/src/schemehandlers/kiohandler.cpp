@@ -6,26 +6,28 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#include "webenginepartkiohandler.h"
+#include "kiohandler.h"
 
 #include <QMimeDatabase>
 #include <QBuffer>
 
 #include <KIO/StoredTransferJob>
 
-void WebEnginePartKIOHandler::requestStarted(QWebEngineUrlRequestJob *req)
+using namespace WebEngine;
+
+void KIOHandler::requestStarted(QWebEngineUrlRequestJob *req)
 {
     m_queuedRequests << RequestJobPointer(req);
     processNextRequest();
 }
 
-WebEnginePartKIOHandler::WebEnginePartKIOHandler(QObject* parent):
+KIOHandler::KIOHandler(QObject* parent):
     QWebEngineUrlSchemeHandler(parent)
 {
-    connect(this, &WebEnginePartKIOHandler::ready, this, &WebEnginePartKIOHandler::sendReply);
+    connect(this, &KIOHandler::ready, this, &KIOHandler::sendReply);
 }
 
-void WebEnginePartKIOHandler::sendReply()
+void KIOHandler::sendReply()
 {
     if (m_currentRequest) {
         if (isSuccessful()) {
@@ -43,7 +45,7 @@ void WebEnginePartKIOHandler::sendReply()
     processNextRequest();
 }
 
-void WebEnginePartKIOHandler::processNextRequest()
+void KIOHandler::processNextRequest()
 {
     if (m_currentRequest) {
         return;
@@ -60,18 +62,18 @@ void WebEnginePartKIOHandler::processNextRequest()
     connect(job, &KIO::StoredTransferJob::result, this, [this, job](){kioJobFinished(job);});
 }
 
-void WebEnginePartKIOHandler::embedderFinished(const QString& html)
+void KIOHandler::embedderFinished(const QString& html)
 {
     m_data = html.toUtf8();
     emit ready();
 }
 
-void WebEnginePartKIOHandler::processSlaveOutput()
+void KIOHandler::processSlaveOutput()
 {
     emit ready();
 }
 
-void WebEnginePartKIOHandler::createDataFromErrorString(KIO::StoredTransferJob* job)
+void KIOHandler::createDataFromErrorString(KIO::StoredTransferJob* job)
 {
     if (job->error() == KIO::ERR_WORKER_DEFINED && job->errorString().contains("<html>")) {
         m_data = job->data();
@@ -81,7 +83,7 @@ void WebEnginePartKIOHandler::createDataFromErrorString(KIO::StoredTransferJob* 
     }
 }
 
-void WebEnginePartKIOHandler::kioJobFinished(KIO::StoredTransferJob* job)
+void KIOHandler::kioJobFinished(KIO::StoredTransferJob* job)
 {
     QMimeDatabase db;
     //If the job reported an error and job->errorString is not empty, don't report a failure but use the string
