@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-11-19 03:40\n"
+"PO-Revision-Date: 2023-11-25 02:26\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/konqueror/webenginepart.pot\n"
-"X-Crowdin-File-ID: 5260\n"
+"X-Crowdin-File: /kf6-trunk/messages/konqueror/webenginepart.pot\n"
+"X-Crowdin-File-ID: 48596\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -25,7 +25,7 @@ msgstr "Ni Hui, Tyson Tan, Wang Jiajun"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "shuizhuyuanluo@126.com, tysontan@tysontan.com, amesists@gmail.com"
+msgstr "shuizhuyuanluo@126.com, tds00@qq.com, amesists@gmail.com"
 
 #: src/about/konq_aboutpage.cpp:71 src/about/konq_aboutpage.cpp:73
 #: src/about/konq_aboutpage.cpp:131 src/about/konq_aboutpage.cpp:133
@@ -1701,23 +1701,3 @@ msgstr ""
 "<ul><li><b>字段内部名称：</b>%1</li><li><b>字段类型：</b>%2</li><li><b>字段 "
 "ID：</b>%3</li><li><b>字段是否为只读：</b>%4</li><li><b>字段是否已启用：</b>"
 "%5</li><li><b>是否开启自动补全：</b>%6</li></ul>"
-
-#~ msgid ""
-#~ "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
-#~ "the link?</qt>"
-#~ msgstr ""
-#~ "<qt>此不信任的页面链接到 <br/><b>%1</b>。<br/>您是否想要跟随这个链接？</"
-#~ "qt>"
-
-#~ msgid "Security Warning"
-#~ msgstr "安全警告"
-
-#~ msgctxt "follow link despite of security warning"
-#~ msgid "Follow"
-#~ msgstr "跟随"
-
-#~ msgid "Security Alert"
-#~ msgstr "安全警报"
-
-#~ msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
-#~ msgstr "<qt>无法访问不信任的页面<br/><b>%1</b><br/>。</qt>"

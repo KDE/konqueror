@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-11-19 03:40\n"
+"PO-Revision-Date: 2023-11-25 02:26\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/konqueror/kcmkonqhtml.pot\n"
-"X-Crowdin-File-ID: 5278\n"
+"X-Crowdin-File: /kf6-trunk/messages/konqueror/kcmkonqhtml.pot\n"
+"X-Crowdin-File-ID: 48620\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -2215,16 +2215,15 @@ msgstr "您必须先输入域名。"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
-msgstr "鼠标行为(&V)"
+msgstr "标签页行为"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr ""
+msgstr "宽高比"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2244,43 +2243,43 @@ msgstr "仅打开一个标签时隐藏标签栏"
 #: tabs/tabsoptions.ui:38
 #, kde-format
 msgid "Tab bar position"
-msgstr ""
+msgstr "标签页栏位置"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "选择标签页栏显示的位置"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "在内容上方"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "在内容下方"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "在内容左侧"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "在内容右侧"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr ""
+msgstr "使用方式"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2332,10 +2331,9 @@ msgstr "从外部调用 URL 时，在已有 Konqueror 中打开相应的标签"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
-msgstr "鼠标行为(&V)"
+msgstr "新建标签页行为"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2368,7 +2366,7 @@ msgstr "在当前标签之后打开新标签(&N)"
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Closing"
-msgstr ""
+msgstr "关闭"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167
@@ -2508,48 +2506,3 @@ msgstr ""
 "<html><head/><body><p>默认标识被禁用时要使用的浏览器标识。</p><p>您可以手动输"
 "入一个浏览器标识，或者从下面的列表中选择一个，然后按照自己的需要进行修改。</"
 "p></body></html>"
-
-#~ msgid ""
-#~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
-#~ "Konqueror should use to display the web pages you view."
-#~ msgstr ""
-#~ "<h1>Konqueror 字体</h1>您可以在此页面中配置 Konqueror 应该使用什么字体显示"
-#~ "网页。"
-
-#~ msgid ""
-#~ "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list "
-#~ "of filters that are checked against linked images and frames. URL's that "
-#~ "match are either discarded or replaced with a placeholder image. "
-#~ msgstr ""
-#~ "<h1>Konqueror AdBlocK</h1>Konqueror AdBlocK 允许您创建一组过滤器列表，而 "
-#~ "Konqueror 将会把这些过滤器应用到链接的图像和框架上。匹配的 URL 将被忽略，"
-#~ "或者替换为占位图像。"
-
-#~ msgid "Tabbed Browsing"
-#~ msgstr "标签式浏览"
-
-#~ msgid ""
-#~ "<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
-#~ "functionality. Please note that the file manager functionality has to be "
-#~ "configured using the \"File Manager\" configuration module. You can make "
-#~ "some settings how Konqueror should handle the HTML code in the web pages "
-#~ "it loads. It is usually not necessary to change anything here."
-#~ msgstr ""
-#~ "<h1>Konqueror 浏览器</h1>您可以在这里配置 Konqueror 的浏览器功能。请注意，"
-#~ "文件管理器的功能是在“文件管理器”配置模块中配置的。您可以设置 Konqueror 在"
-#~ "加载网页时如何处理其中的 HTML 代码。通常不必更改这里的全部设置。"
-
-#~ msgid ""
-#~ "<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
-#~ "programs embedded in web pages should be allowed to be executed by "
-#~ "Konqueror.<h2>Java</h2>On this page, you can configure whether Java "
-#~ "applets embedded in web pages should be allowed to be executed by "
-#~ "Konqueror.<br /><br /><b>Note:</b> Active content is always a security "
-#~ "risk, which is why Konqueror allows you to specify very fine-grained from "
-#~ "which hosts you want to execute Java and/or JavaScript programs."
-#~ msgstr ""
-#~ "<h2>JavaScript</h2>您可以在此页面中配置是否允许 Konqueror 执行嵌入于网页中"
-#~ "的 JavaScript 程序。<h2>Java</h2>您可以在此页面中配置是否允许 Konqueror 执"
-#~ "行嵌入于网页中的 Java 程序。<br /><br /><b>注意：</b>活动内容总是会带来安"
-#~ "全的风险，这也是为什么 Konqueror 允许您指定精确指定在哪些主机上可以执行 "
-#~ "Java 和/或 JavaScript 程序的原因。"
