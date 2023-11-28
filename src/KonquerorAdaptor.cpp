@@ -30,8 +30,12 @@
 #endif
 
 #ifdef KActivities_FOUND
+#if QT_VERSION_MAJOR < 6
 #include <KActivities/Consumer>
-#endif
+#else //QT_VERSION_MAJOR
+#include <PlasmaActivities/Consumer>
+#endif //QT_VERSION_MAJOR
+#endif //KActivities_FOUND
 
 // these DBus calls come from outside, so any windows created by these
 // calls would have old user timestamps (for KWin's no-focus-stealing),

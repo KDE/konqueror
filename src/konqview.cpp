@@ -36,9 +36,16 @@
 #include <QDBusConnection>
 #include <QMimeData>
 
+#include <config-konqueror.h>
+
 #ifdef KActivities_FOUND
+#if QT_VERSION_MAJOR < 6
 #include <KActivities/ResourceInstance>
-#endif
+#else //QT_VERSION_MAJOR
+#include <PlasmaActivities/ResourceInstance>
+#endif //QT_VERSION_MAJOR
+#endif //KActivities_FOUND
+
 #include <kparts_version.h>
 
 #include <KJobWidgets>

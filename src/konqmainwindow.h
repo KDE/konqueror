@@ -17,6 +17,7 @@
 #include <QPointer>
 #include <QList>
 #include <QUrl>
+#include <QUuid>
 
 #include <kfileitem.h>
 #include <kparts/mainwindow.h>
@@ -347,11 +348,18 @@ public:
      */
     qint64 lastDeactivationTime() const;
 
+    QString uuid() const {return m_uuid;}
+
+    QStringList activities() const;
+
+    void setOnActivities(const QStringList &ids) const;
+
 Q_SIGNALS:
     void viewAdded(KonqView *view);
     void viewRemoved(KonqView *view);
     void popupItemsDisturbed();
     void aboutToConfigure();
+    void closing(KonqMainWindow *window);
 
 public Q_SLOTS:
     void updateViewModeActions();
@@ -781,8 +789,12 @@ private: // members
     bool m_isPopupWithProxyWindow;
     QPointer<KonqMainWindow> m_popupProxyWindow;
 
-    //The last time the window was deactivated, stored as millisecond from epoch
-    qint64 m_lastDeactivationTime = 0;
+    qint64 m_lastDeactivationTime = 0; //!< The last time the window was deactivated, stored as millisecond from epoch
+
+    /**
+     * @brief Unique identifier for the window. Used for activities
+     */
+    QString m_uuid;
     
     friend class KonqBrowserWindowInterface;
 };

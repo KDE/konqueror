@@ -97,6 +97,10 @@ set(konqueror_KDEINIT_SRCS
    configdialog.cpp
 )
 
+if (${KActivities_FOUND})
+   list(APPEND konqueror_KDEINIT_SRCS activitymanager.cpp)
+endif()
+
 kconfig_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
 ki18n_wrap_ui(konqueror_KDEINIT_SRCS konqsessiondlg_base.ui)
 ki18n_wrap_ui(konqueror_KDEINIT_SRCS konqnewsessiondlg_base.ui)
@@ -140,8 +144,12 @@ if (KF_MAJOR_VERSION STRGREATER "5")
     target_link_libraries(${konqueror_internal_lib_target} KF${KF_MAJOR_VERSION}::BookmarksWidgets)
 endif()
 
-if (KF${KF_MAJOR_VERSION}Activities_FOUND)
-  target_link_libraries(${konqueror_internal_lib_target} KF${KF_MAJOR_VERSION}::Activities)
+if (KActivities_FOUND)
+   if (KF_MAJOR_VERSION STRGREATER "5")
+      target_link_libraries(${konqueror_internal_lib_target} Plasma::Activities)
+   else()
+      target_link_libraries(${konqueror_internal_lib_target} KF${KF_MAJOR_VERSION}::Activities)
+   endif()
   target_compile_definitions(${konqueror_internal_lib_target} PUBLIC KActivities_FOUND)
 endif ()
 

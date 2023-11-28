@@ -50,11 +50,19 @@
 #include <KX11Extras>
 #include <KMessageBox>
 
+#ifdef KActivities_FOUND
+#include "activitymanager.h"
+#if QT_VERSION_MAJOR < 6
+#include <KActivities/Consumer>
+#else //QT_VERSION_MAJOR
+#include <PlasmaActivities/Consumer>
+#endif //QT_VERSION_MAJOR
+#endif //KActivities_FOUND
+
 #include <iostream>
 #include <unistd.h>
 
 #ifdef KActivities_FOUND
-#include <KActivities/Consumer>
 #endif
 
 using namespace KonqInterfaces;
@@ -69,6 +77,9 @@ QString KonquerorApplication::currentActivity()
 
 KonquerorApplication::KonquerorApplication(int &argc, char **argv)
     : QApplication(argc, argv), m_browser(nullptr)
+#ifdef KActivities_FOUND
+    , m_activityConsumer(new KActivities::Consumer(this))
+#endif
 {
     // enable high dpi support
     setAttribute(Qt::AA_UseHighDpiPixmaps, true);
@@ -222,6 +233,7 @@ void KonquerorApplication::setupParser()
 #ifdef DEVELOPER_MODE
     m_parser.addOption(QCommandLineOption({QStringLiteral("force-new-process")}, i18n("Create a new Konqueror process, even if one already exists. Meant to be used only when developing Konqueror itself")));
 #endif
+    m_parser.addOption(QCommandLineOption({QStringLiteral("test-restore")}, i18n("TEST")));
     m_parser.addPositionalArgument(QStringLiteral("[URL]"), i18n("Location to open"));
 }
 
@@ -291,6 +303,7 @@ int KonquerorApplication::start()
 
     m_parser.process(*this);
     m_aboutData.processCommandLine(&m_parser);
+
 #ifdef DEVELOPER_MODE
     bool forceNewProcess = m_runningAsRootBehavior != NotRoot || m_parser.isSet(QStringLiteral("force-new-process"));
 #else
@@ -306,7 +319,7 @@ int KonquerorApplication::start()
     //
     //This also disables reusing an existing instance when running in developer mode
     KDBusService dbusService(forceNewProcess ? KDBusService::Multiple | KDBusService::NoExitOnFailure : KDBusService::Unique);
-    if (m_runningAsRootBehavior == NotRoot) {
+    if (!forceNewProcess) {
         auto activateApp = [this](const QStringList &arguments, const QString &workingDirectory) {
             m_parser.parse(arguments);
             performStart(workingDirectory, false);
@@ -364,7 +377,7 @@ int KonquerorApplication::performStart(const QString& workingDirectory, bool fir
     } else if (sessionRestored){
         result = WindowCreationResult{KonqMainWindow::mainWindows().at(0), 0};
     } else {
-        result = createEmptyWindow(firstInstance);
+        result = createEmptyWindow(firstInstance, true);
     }
 
     KonqMainWindow *mw = result.first;
@@ -460,12 +473,31 @@ void KonquerorApplication::preloadWindow(const QStringList &args)
     KonqMainWindowFactory::createPreloadWindow();
 }
 
-KonquerorApplication::WindowCreationResult KonquerorApplication::createEmptyWindow(bool firstInstance)
+KonquerorApplication::WindowCreationResult KonquerorApplication::createEmptyWindow(bool firstInstance, bool calledFromPerformStart )
 {
     //Always create a new window except when called with the --silent switch or a session has been recovered (see #388333)
     if (m_parser.isSet("silent")) {
         return qMakePair(nullptr, 0);
     }
+
+//WORKAROUND for activities
+//Consider the following situation:
+//- multiple windows, in different activities
+//- the user stops one or more activities. The corresponding windows are closed
+//- the user exits Konqueror
+//- the user restarts Konqueror
+//- the user restarts one of the stopped activities which had Konqueror windows on them
+//What should happen is that the previously open windows in the restarted activity are restored
+//What really happens is that, besides those window, a new, empty window is created. This is because KWin/KSMService attempts
+//to start Konqueror again, passing it the information needed to restore the windows. However, for some reason, no information
+//is given and Konqueror creates an emtpy window. The following check avoids creating the window.
+#ifdef KActivities_FOUND
+    ActivityManager *am = KonqSessionManager::self()->activityManager();
+    if (calledFromPerformStart && am && am->restoringStoppedActivity()) {
+        am->restoringStoppedActivityDone();
+        return qMakePair(nullptr, 0);
+    }
+#endif
 
     if (firstInstance) { // If session recovery created some windows, no need for an empty window here.
         QList<KonqMainWindow *> *mainWindowList = KonqMainWindow::mainWindowList();

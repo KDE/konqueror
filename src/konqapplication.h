@@ -8,6 +8,8 @@
 #define KONQ_APPLICATION_H
 
 #include "konqprivate_export.h"
+#include <config-konqueror.h>
+
 #include <QApplication>
 
 #include <KAboutData>
@@ -61,7 +63,9 @@ private:
     void restoreSession();
     void listSessions();
     int openSession(const QString &session);
-    WindowCreationResult createEmptyWindow(bool firstInstance);
+    //TODO: remove the second argument when workaround with activities won't be necessary anymore
+    //See the comment in the body of createEmptyWindow()
+    WindowCreationResult createEmptyWindow(bool firstInstance, bool calledFromPerformStart = false);
     void preloadWindow(const QStringList &args);
     WindowCreationResult createWindowsForUrlArguments(const QStringList &args, const QString &workingDirectory, KonqMainWindow *mainwin= nullptr);
 
@@ -86,11 +90,12 @@ private:
     QCommandLineParser m_parser;
     bool m_sessionRecoveryAttempted = false;
     KonquerorAsRootBehavior m_runningAsRootBehavior = NotRoot;
+    KonqBrowser *m_browser;
+    bool m_forceNewProcess = false;
+
 #ifdef KActivities_FOUND
     KActivities::Consumer* m_activityConsumer;
 #endif
-
-    KonqBrowser *m_browser;
 
 };
 

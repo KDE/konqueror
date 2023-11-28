@@ -17,6 +17,7 @@
 #include "konqframevisitor.h"
 #include <konq_events.h>
 #include "konqurl.h"
+#include <KX11Extras>
 
 #include <QFileInfo>
 #include <QDBusMessage>
@@ -371,6 +372,9 @@ KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup &configGroup
     mainWindow->viewManager()->loadRootItem(configGroup, mainWindow, QUrl(), true, QUrl());
     mainWindow->applyMainWindowSettings(configGroup);
     mainWindow->activateChild();
+
+    QStringList activities = configGroup.readEntry("Activities", QStringList{});
+    KX11Extras::self()->setOnActivities(mainWindow->winId(), activities);
 
 #ifdef DEBUG_VIEWMGR
     mainWindow->viewManager()->printFullHierarchy();

@@ -13,9 +13,21 @@
 #include "konqviewmanager.h"
 #include "konqsettingsxt.h"
 
+#ifdef KActivities_FOUND
+#include "activitymanager.h"
+#if QT_VERSION_MAJOR < 6
+#include <KActivities/Consumer>
+#else //QT_VERSION_MAJOR
+#include <PlasmaActivities/Consumer>
+#endif //QT_VERSION_MAJOR
+#endif //KActivities_FOUND
+
 #include "konqdebug.h"
 #include <kio/deletejob.h>
 #include <KLocalizedString>
+#include <KWindowInfo>
+#include <KX11Extras>
+
 #include <QUrl>
 #include <QIcon>
 #include <ksqueezedtextlabel.h>
@@ -37,11 +49,14 @@
 #include <QApplication>
 #include <QStandardPaths>
 #include <QSessionManager>
-#include <KSharedConfig>
 #include <KConfigGroup>
 #include <QDialogButtonBox>
 #include <KGuiItem>
 #include <QScreen>
+#include <KSharedConfig>
+
+#include "konqapplication.h"
+#include <QMessageBox>
 
 class KonqSessionManagerPrivate
 {
@@ -347,6 +362,9 @@ KonqSessionManager::KonqSessionManager()
     , m_autosaveEnabled(false) // so that enableAutosave works
     , m_createdOwnedByDir(false)
     , m_sessionConfig(nullptr)
+#ifdef KActivities_FOUND
+    , m_activityManager(new ActivityManager(this))
+#endif
 {
     // Initialize dbus interfaces
     new KonqSessionManagerAdaptor(this);
@@ -533,6 +551,8 @@ void KonqSessionManager::saveCurrentSessionToFile(KConfig *config, const QList<K
         if (!window->isPreloaded()) {
             KConfigGroup configGroup(config, "Window" + QString::number(counter));
             window->saveProperties(configGroup);
+            KWindowInfo info(window->winId(), NET::Properties(), NET::WM2Activities);
+            configGroup.writeEntry("Activities", info.activities());
             counter++;
         }
     }
@@ -755,3 +775,19 @@ void KonqSessionManager::setPreloadedWindowsNumber(const QList<int> &numbers)
 {
     m_preloadedWindowsNumber = numbers;
 }
+
+void KonqSessionManager::registerMainWindow(KonqMainWindow* window)
+{
+#ifdef KActivities_FOUND
+    m_activityManager->registerMainWindow(window);
+#else
+    Q_UNUSED(window);
+#endif
+}
+
+#ifdef KActivities_FOUND
+ActivityManager * KonqSessionManager::activityManager()
+{
+    return m_activityManager;
+}
+#endif

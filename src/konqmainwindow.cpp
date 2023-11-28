@@ -155,6 +155,7 @@
 #include <KParts/PartLoader>
 #include <KApplicationTrader>
 #include <KX11Extras>
+#include <KWindowInfo>
 
 #include <QMetaObject>
 #include <QMetaMethod>
@@ -207,6 +208,7 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     , m_configureDialog(nullptr)
     , m_pURLCompletion(nullptr)
     , m_isPopupWithProxyWindow(false)
+    , m_uuid(QUuid::createUuid().toString())
 {
     Q_INIT_RESOURCE(konqueror);
     if (!s_lstMainWindows) {
@@ -319,6 +321,9 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     updateProxyForWebEngine(false);
     QDBusConnection::sessionBus().connect("", QStringLiteral("/KIO/Scheduler"), QStringLiteral("org.kde.KIO.Scheduler"),
                                           QStringLiteral("reparseSlaveConfiguration"), this, SLOT(updateProxyForWebEngine()));
+
+    KonqSessionManager::self()->registerMainWindow(this);
+
     setAutoSaveSettings();
 
     //qCDebug(KONQUEROR_LOG) << this << "created";
@@ -2688,7 +2693,6 @@ void KonqMainWindow::slotClosedItemsListAboutToShow()
 }
 
 /**
- * Fill the sessions list action menu before it's shown
  */
 void KonqMainWindow::slotSessionsListAboutToShow()
 {
@@ -4562,14 +4566,21 @@ void KonqMainWindow::saveProperties(KConfigGroup &config)
     // Ensure no crash if the sessionmanager timer fires before the ctor is done
     // This can happen via ToggleViewGUIClient -> KServiceTypeTrader::query
     // -> KSycoca running kbuildsycoca -> nested event loop.
-    if (m_fullyConstructed) {
-        KonqFrameBase::Options flags = KonqFrameBase::SaveHistoryItems;
-        m_pViewManager->saveViewConfigToGroup(config, flags);
+    if (!m_fullyConstructed) {
+        return;
     }
+    KonqFrameBase::Options flags = KonqFrameBase::SaveHistoryItems;
+    m_pViewManager->saveViewConfigToGroup(config, flags);
+    config.writeEntry("Uuid", m_uuid);
+    config.writeEntry("Activities", activities());
 }
 
 void KonqMainWindow::readProperties(const KConfigGroup &configGroup)
 {
+    QString uuid = configGroup.readEntry("Uuid");
+    if (!uuid.isEmpty()) {
+        m_uuid = uuid;
+    }
     m_pViewManager->loadViewConfigFromGroup(configGroup, QString() /*no profile name*/);
     // read window settings
     applyMainWindowSettings(configGroup);
@@ -4583,6 +4594,7 @@ void KonqMainWindow::applyMainWindowSettings(const KConfigGroup &config)
         QString entry = config.readEntry("StatusBar", "Enabled");
         m_currentView->frame()->statusbar()->setVisible(entry != QLatin1String("Disabled"));
     }
+    setOnActivities(config.readEntry(QStringLiteral("Activities"), QStringList{}));
 }
 
 void KonqMainWindow::saveMainWindowSettings(KConfigGroup &config)
@@ -4816,6 +4828,8 @@ void KonqMainWindow::closeEvent(QCloseEvent *e)
                 }
             }
         }
+
+        emit closing(this);
 
         const int originalTabIndex = tabContainer->currentIndex();
         for (int tabIndex = 0; tabIndex < tabContainer->count(); ++tabIndex) {
@@ -5613,4 +5627,14 @@ void KonqMainWindow::readGlobalProperties(KConfig* sessionConfig)
 qint64 KonqMainWindow::lastDeactivationTime() const
 {
     return m_lastDeactivationTime;
+}
+
+QStringList KonqMainWindow::activities() const
+{
+    return KWindowInfo(winId(), NET::Properties(), NET::WM2Activities).activities();
+}
+
+void KonqMainWindow::setOnActivities(const QStringList& ids) const
+{
+    KX11Extras::setOnActivities(winId(), ids);
 }

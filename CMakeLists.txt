@@ -50,7 +50,14 @@ if (KF_MAJOR_VERSION STRLESS "6")
     find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Init)
 endif()
 
-find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} COMPONENTS Activities DocTools) # Optional
+find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} COMPONENTS DocTools) # Optional
+if (KF_MAJOR_VERSION STRLESS "6")
+    find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} COMPONENTS Activities DocTools) # Optional
+    set(KActivities_FOUND ${KF5Activities_FOUND})
+else()
+    find_package(PlasmaActivities ${KF_MIN_VERSION}) # Optional
+    set(KActivities_FOUND ${PlasmaActivities_FOUND})
+endif()
 
 if (QT_MAJOR_VERSION STRLESS 6)
     find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS X11Extras)
@@ -73,6 +80,8 @@ check_symbol_exists(mallinfo        "stdlib.h"                 KDE_MALLINFO_STDL
 # TODO KDE_MALLINFO_FIELD_hblkhd
 # TODO KDE_MALLINFO_FIELD_uordblks
 # TODO KDE_MALLINFO_FIELD_usmblks
+
+
 configure_file (config-konqueror.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konqueror.h )
 
 configure_file (konqueror-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/konqueror-version.h)
@@ -126,3 +135,4 @@ if (KF${KF_MAJOR_VERSION}DocTools_FOUND)
 endif()
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
+

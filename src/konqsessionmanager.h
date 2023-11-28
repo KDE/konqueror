@@ -16,12 +16,18 @@
 #include <kconfig.h>
 #include <QDialog>
 #include <konqprivate_export.h>
+#include <config-konqueror.h>
+#include <KX11Extras>
 
 class KonqMainWindow;
 class QDialogButtonBox;
 class QTreeWidget;
 class QTreeWidgetItem;
 class QSessionManager;
+
+#ifdef KActivities_FOUND
+class ActivityManager;
+#endif
 
 class SessionRestoreDialog : public QDialog
 {
@@ -165,6 +171,12 @@ public:
 
     void setPreloadedWindowsNumber(const QList<int> &numbers);
 
+    void registerMainWindow(KonqMainWindow *window);
+
+#ifdef KActivities_FOUND
+    ActivityManager* activityManager();
+#endif
+
 public Q_SLOTS:
     /**
      * Ask the user with a dialog if session should be restored
@@ -220,6 +232,7 @@ private:
     }
 
     void saveCurrentSessionToFile(KConfig *config, const QList<KonqMainWindow *> &mainWindows = QList<KonqMainWindow *>());
+
 private:
     QTimer m_autoSaveTimer;
     QString m_autosaveDir;
@@ -228,6 +241,9 @@ private:
     bool m_createdOwnedByDir;
     KConfig *m_sessionConfig;
     QList<int> m_preloadedWindowsNumber;
+#ifdef KActivities_FOUND
+    ActivityManager *m_activityManager;
+#endif
 
 Q_SIGNALS: // DBUS signals
     /**
