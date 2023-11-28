@@ -55,6 +55,14 @@ KonqViewManager::KonqViewManager(KonqMainWindow *mainWindow)
 
     connect(this, SIGNAL(activePartChanged(KParts::Part*)),
             this, SLOT(slotActivePartChanged(KParts::Part*)));
+
+    //When closing a window, tabs will be removed one by one, meaning each one will be activated:
+    //this would trigger their delayed loading, which we don't want. So, when the main window is closed
+    //disconnect the delayedLoadTab slot
+    connect(mainWindow, &KonqMainWindow::closing, this, [this](){
+            disconnect(m_tabContainer, &QTabWidget::currentChanged, this, &KonqViewManager::delayedLoadTab);
+        }
+    );
 }
 
 KonqView *KonqViewManager::createFirstView(const QString &mimeType, const QString &serviceName)
@@ -825,6 +833,12 @@ KonqViewFactory KonqViewManager::createView(const QString &serviceType,
     return viewFactory;
 }
 
+KonqView* KonqViewManager::setupView(KonqFrameContainerBase* parentContainer, bool passiveMode, bool openAfterCurrentPage, int pos)
+{
+    KonqViewFactory factory;
+    return setupView(parentContainer, factory, {}, {}, {}, {}, passiveMode, openAfterCurrentPage, pos);
+}
+
 KonqView *KonqViewManager::setupView(KonqFrameContainerBase *parentContainer,
                                      KonqViewFactory &viewFactory,
                                      const KPluginMetaData &service,
@@ -839,7 +853,7 @@ KonqView *KonqViewManager::setupView(KonqFrameContainerBase *parentContainer,
 
     QString sType = serviceType;
 
-    if (sType.isEmpty()) { // TODO remove this -- after checking all callers; splitMainContainer seems to need this logic
+    if (sType.isEmpty() && m_pMainWindow->currentView()) { // TODO remove this -- after checking all callers; splitMainContainer seems to need this logic
         sType = m_pMainWindow->currentView()->serviceType();
     }
 
@@ -848,8 +862,13 @@ KonqView *KonqViewManager::setupView(KonqFrameContainerBase *parentContainer,
     newViewFrame->setGeometry(0, 0, m_pMainWindow->width(), m_pMainWindow->height());
 
     //qCDebug(KONQUEROR_LOG) << "Creating KonqView";
-    KonqView *v = new KonqView(viewFactory, newViewFrame,
-                               m_pMainWindow, service, partServiceOffers, appServiceOffers, sType, passiveMode);
+    // KonqView *v = new KonqView(newViewFrame, m_pMainWindow);
+    KonqView *v = nullptr;
+    if (!viewFactory.isNull()) {
+        v = new KonqView(viewFactory, newViewFrame, m_pMainWindow, service, partServiceOffers, appServiceOffers, sType, passiveMode);
+    } else {
+        v = new KonqView(newViewFrame, m_pMainWindow);
+    }
     //qCDebug(KONQUEROR_LOG) << "KonqView created - v=" << v << "v->part()=" << v->part();
 
     connect(v, &KonqView::sigPartChanged, m_pMainWindow, &KonqMainWindow::slotPartChanged);
@@ -1103,6 +1122,15 @@ void KonqViewManager::loadRootItem(const KConfigGroup &cfg, KonqFrameContainerBa
 
     m_bLoadingProfile = false;
 
+    //Actually perform delayed loading of the current tab
+    if (m_tabContainer) {
+        KonqFrameBase *frm = m_tabContainer->currentTab();
+        QList<KonqView*> views = KonqViewCollector::collect(frm);
+        for (KonqView *v : views) {
+            v->loadDelayed();
+        }
+    }
+
     m_pMainWindow->enableAllActions(true);
 
     // This flag disables calls to viewCountChanged while creating the views,
@@ -1147,18 +1175,8 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
                 }
             }
         }
+
         //qCDebug(KONQUEROR_LOG) << "serviceType" << serviceType << serviceName;
-
-        KPluginMetaData service;
-        QVector<KPluginMetaData> partServiceOffers;
-        KService::List appServiceOffers;
-
-        KonqFactory konqFactory;
-        KonqViewFactory viewFactory = konqFactory.createView(serviceType, serviceName, &service, &partServiceOffers, &appServiceOffers, true /*forceAutoEmbed*/);
-        if (viewFactory.isNull()) {
-            qCWarning(KONQUEROR_LOG) << "Profile Loading Error: View creation failed";
-            return; //ugh..
-        }
 
         bool passiveMode = cfg.readEntry(QStringLiteral("PassiveMode").prepend(prefix), false);
 
@@ -1166,7 +1184,20 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
         if (parent == m_pMainWindow) {
             parent = tabContainer();
         }
-        KonqView *childView = setupView(parent, viewFactory, service, partServiceOffers, appServiceOffers, serviceType, passiveMode, openAfterCurrentPage, pos);
+
+        QUrl url;
+        if (openUrl) {
+            const QString urlKey = QStringLiteral("URL").prepend(prefix);
+            if (cfg.hasKey(urlKey)) {
+                url = QUrl(cfg.readPathEntry(urlKey, KonqUrl::string(KonqUrl::Type::Blank)));
+            } else {
+                url = defaultURL;
+            }
+        }
+
+        KonqView *childView = setupView(parent, passiveMode, openAfterCurrentPage, pos);
+        bool lockedLocation = cfg.readEntry(QStringLiteral("LockedLocation").prepend(prefix), false);
+        childView->storeDelayedLoadingData(serviceType, serviceName, openUrl, url, lockedLocation, cfg, prefix);
 
         if (!childView->isFollowActive()) {
             childView->setLinkedView(cfg.readEntry(QStringLiteral("LinkedView").prepend(prefix), false));
@@ -1181,39 +1212,6 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
             // First tab, make it the active one
             parent->setActiveChild(childView->frame());
         }
-
-        if (openUrl) {
-            const QString keyHistoryItems = QStringLiteral("NumberOfHistoryItems").prepend(prefix);
-            if (cfg.hasKey(keyHistoryItems)) {
-                childView->loadHistoryConfig(cfg, prefix);
-                m_pMainWindow->updateHistoryActions();
-            } else {
-                // determine URL
-                const QString urlKey = QStringLiteral("URL").prepend(prefix);
-                QUrl url;
-                if (cfg.hasKey(urlKey)) {
-                    url = QUrl(cfg.readPathEntry(urlKey, KonqUrl::string(KonqUrl::Type::Blank)));
-                } else if (urlKey == QLatin1String("empty_URL")) { // old stuff, not in use anymore
-                    url = KonqUrl::url(KonqUrl::Type::Blank);
-                } else {
-                    url = defaultURL;
-                }
-
-                if (!url.isEmpty()) {
-                    //qCDebug(KONQUEROR_LOG) << "calling openUrl" << url;
-                    //childView->openUrl( url, url.toDisplayString() );
-                    // We need view-follows-view (for the dirtree, for instance)
-                    KonqOpenURLRequest req;
-                    if (!KonqUrl::hasKonqScheme(url)) {
-                        req.typedUrl = url.toDisplayString();
-                    }
-                    m_pMainWindow->openView(serviceType, url, childView, req);
-                }
-                //else qCDebug(KONQUEROR_LOG) << "url is empty";
-            }
-        }
-        // Do this after opening the URL, so that it's actually possible to open it :)
-        childView->setLockedLocation(cfg.readEntry(QStringLiteral("LockedLocation").prepend(prefix), false));
     } else if (name.startsWith(QLatin1String("Container"))) {
         //qCDebug(KONQUEROR_LOG) << "Item is Container";
 
@@ -1437,6 +1435,7 @@ void KonqViewManager::createTabContainer(QWidget *parent, KonqFrameContainerBase
     m_tabContainer = new KonqFrameTabs(parent, parentContainer, this);
     // Delay the opening of the URL for #106641
     bool ok = connect(m_tabContainer, SIGNAL(openUrl(KonqView*,QUrl)), m_pMainWindow, SLOT(openUrl(KonqView*,QUrl)), Qt::QueuedConnection);
+    connect(m_tabContainer, &QTabWidget::currentChanged, this, &KonqViewManager::delayedLoadTab);
     Q_ASSERT(ok);
     Q_UNUSED(ok);
     applyConfiguration();
@@ -1471,5 +1470,16 @@ void KonqViewManager::reparseConfiguration()
     }
 }
 
-
-
+void KonqViewManager::delayedLoadTab(int idx)
+{
+    if (!m_tabContainer || m_bLoadingProfile) {
+        return;
+    }
+    KonqFrameBase *frm = m_tabContainer->tabAt(idx);
+    QList<KonqView*> views = KonqViewCollector::collect(frm);
+    for (KonqView *v : views) {
+        if (v && v->isDelayed()) {
+            v->loadDelayed();
+        }
+    }
+}

@@ -1854,6 +1854,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
     if (ext) {
         connectExtension(ext);
     } else {
+
         qCDebug(KONQUEROR_LOG) << "No Browser Extension for the new part";
         // Disable all browser-extension actions
 
@@ -4856,6 +4857,9 @@ void KonqMainWindow::closeEvent(QCloseEvent *e)
 
         addClosedWindowToUndoList();
     }
+
+    emit closing(this);
+
     // We're going to close - tell the parts
     MapViews::ConstIterator it = m_mapViews.constBegin();
     MapViews::ConstIterator end = m_mapViews.constEnd();

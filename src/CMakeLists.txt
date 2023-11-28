@@ -95,6 +95,7 @@ set(konqueror_KDEINIT_SRCS
    konqutils.cpp
    implementations/konqbrowser.cpp
    configdialog.cpp
+   placeholderpart.cpp
 )
 
 if (${KActivities_FOUND})

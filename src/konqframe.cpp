@@ -14,6 +14,7 @@
 #include "konqviewmanager.h"
 #include "konqframevisitor.h"
 #include "konqframestatusbar.h"
+#include "placeholderpart.h"
 
 // Qt
 #include <QApplication>
@@ -120,7 +121,7 @@ void KonqFrame::copyHistory(KonqFrameBase *other)
     }
 }
 
-KParts::ReadOnlyPart *KonqFrame::attach(const KonqViewFactory &viewFactory)
+KParts::ReadOnlyPart *KonqFrame::attach(const KonqViewFactory &viewFactory, bool allowPlaceholder)
 {
     KonqViewFactory factory(viewFactory);
 
@@ -128,12 +129,19 @@ KParts::ReadOnlyPart *KonqFrame::attach(const KonqViewFactory &viewFactory)
     // We don't want that deleting the widget deletes the part automatically
     // because we already have that taken care of in KParts...
 
-    m_pPart = factory.create(this, nullptr);
+    if (!viewFactory.isNull()) {
+        m_pPart = factory.create(this, nullptr);
+    }
 
     if (!m_pPart) {
-        qCWarning(KONQUEROR_LOG) << "No part was created!";
-        return nullptr;
+        if (allowPlaceholder) {
+            m_pPart = new Konq::PlaceholderPart(nullptr);
+        } else {
+            qCWarning(KONQUEROR_LOG) << "No part was created!";
+            return nullptr;
+        }
     }
+
     if (!m_pPart->widget()) {
         qCWarning(KONQUEROR_LOG) << "The part" << m_pPart << "didn't create a widget!";
         delete m_pPart;
@@ -248,4 +256,3 @@ bool KonqFrame::accept(KonqFrameVisitor *visitor)
 {
     return visitor->visit(this);
 }
-

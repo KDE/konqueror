@@ -45,11 +45,16 @@ class ResourceInstance;
 #endif
 #endif
 
+namespace Konq {
+    class PlaceholderPart;
+}
+
 // TODO: make the history-handling code reuseable (e.g. in kparts) for people who want to use a
 // khtml-based browser in some apps. Back/forward support is all in here currently.
 struct HistoryEntry {
     void loadItem(const KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options);
     void saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options);
+    static HistoryEntry* fromDelayedLoadingData(const KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options);
 
     QUrl url;
     QString locationBarURL; // can be different from url when showing a index.html
@@ -76,7 +81,14 @@ class KONQ_TESTS_EXPORT KonqView : public QObject
 public:
 
     /**
-     * Create a konqueror view
+     * @brief Constructor which creates a view with a PlaceholderPart
+     * @param viewFrame the frame which will contain the view
+     * @param mainWindow the main window the view will belong to
+     */
+    KonqView(KonqFrame *viewFrame, KonqMainWindow* mainWindow);
+
+    /**
+     * Create a konqueror view with an appropriate part
      * @param viewFactory the factory to be used to create the part
      * @param viewFrame the frame where to create the view
      * @param mainWindow is the main window :-)
@@ -510,6 +522,13 @@ public:
     void loadHistoryConfig(const KConfigGroup &config, const QString &prefix);
 
     /**
+     * @brief Creates a view and load an URL according to the delayed loading data and the history content
+     *
+     * It does nothing if there's no delayed loading data
+     */
+    void loadDelayed();
+
+    /**
      * @brief Changes the part used to display the current url
      * @param newPluginId the plugin id of the new part to use
      * @param newInternalViewMode the new view mode for the part, if any
@@ -519,6 +538,34 @@ public:
      * the new part doesn't actually have a file to display.
      */
     void switchEmbeddingPart(const QString &newPluginId, const QString &newInternalViewMode = {});
+
+    /**
+     * @brief Stores the information needed to restore the state of the view
+     *
+     * The history-related information is directly read in #m_lstHistory and #m_lstHistoryIndex,
+     * while the part-specific information is stored in #m_delayedLoadingData.
+     *
+     * This function allows to load the content of the view only when it actually becomes visible
+     * @param mimeType the mimetype of the URL
+     * @param serviceName the id of the part to use
+     * @param openUrl whether an URL should be loaded when the part will be created
+     * @param url the URL to load when the part will be created
+     * @param lockedLocation whether to block the URL when the view will be created
+     * @param grp the object to read configuration options from
+     * @param prexfix the prefix to add to configuration options names when reading from @p grp
+     */
+    void storeDelayedLoadingData(const QString &mimeType, const QString &serviceName, bool openUrl, const QUrl &url,
+                                 bool lockedLocation, const KConfigGroup &grp, const QString &prefix);
+
+    /**
+     * @brief Whether or not loading this view has been delayed
+     *
+     * When this function returns `true` it means that loadDelayed() should be called next time
+     * the tab containing this view is activated.
+     *
+     * @return `true` if the loading has been delayed and `false` otherwise
+     */
+    bool isDelayed() const;
 
 Q_SIGNALS:
 
@@ -588,9 +635,16 @@ private Q_SLOTS:
 
 private:
     /**
-     * Replace the current view with a new view, created by @p viewFactory.
+     * Replace the current part with a new part, created by @p viewFactory.
+     *
+     * If the factory isn't valid and @p allowPlaceholder is `true`, a PlaceholderPart
+     * will be created.
+     *
+     * @param viewFactory the factory to use to create the part
+     * @param allowPlaceholder whether a PlaceholderPart should be used if @p viewFactory isn't valid.
+     *  If this is `false` and @p viewFactory is invalid, nothing will be done
      */
-    void switchView(KonqViewFactory &viewFactory);
+    void switchView(KonqViewFactory &viewFactory, bool allowPlaceholder = false);
 
     /**
      * Connects the internal part to the main window.
@@ -622,6 +676,12 @@ private:
     void finishedWithCurrentURL();
 
     bool eventFilter(QObject *obj, QEvent *e) override;
+
+    /**
+     * @brief Casts the part associated with the view to a Konq::PlaceholderPart
+     * @return the part associated with the view cast to a Konq::PlaceholderPart or `nullptr` if it's not a Konq::PlaceholderPart
+     */
+    Konq::PlaceholderPart *placeholderPart() const;
 
 ////////////////// private members ///////////////
 
@@ -656,7 +716,7 @@ private:
     QString m_pageReferrer;
 
     KonqMainWindow *m_pMainWindow;
-    UrlLoader *m_loader;
+    UrlLoader *m_loader = nullptr;
     KonqFrame *m_pKonqFrame;
 
     uint m_bLoading: 1;

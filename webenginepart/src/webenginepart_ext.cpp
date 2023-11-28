@@ -168,6 +168,7 @@ void WebEngineNavigationExtension::restoreState(QDataStream &stream)
     QUrl u;
     QByteArray historyData;
     qint32 xOfs = -1, yOfs = -1, historyItemIndex = -1;
+    //TODO KF6: it seems that for some reason historyData is empty, at least when restoring a saved session
     stream >> u >> xOfs >> yOfs >> historyItemIndex >> historyData;
 
     QWebEngineHistory* history = (view() ? view()->page()->history() : nullptr);

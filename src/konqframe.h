@@ -118,7 +118,7 @@ public:
      * Attach a view to the KonqFrame.
      * @param viewFactory the view to attach (instead of the current one, if any)
      */
-    KParts::ReadOnlyPart *attach(const KonqViewFactory &viewFactory);
+    KParts::ReadOnlyPart *attach(const KonqViewFactory &viewFactory, bool allowPlaceholder = false);
 
     /**
      * Inserts the widget and the statusbar into the layout

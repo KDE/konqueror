@@ -301,6 +301,13 @@ private Q_SLOTS:
 
     void slotActivePartChanged(KParts::Part *newPart);
 
+    /**
+     * @brief Apply delayed loading to a tab
+     * @param idx the index of the tab
+     * @see KonqView::delayedLoad
+     */
+    void delayedLoadTab(int idx);
+
 private:
 
     /**
@@ -355,6 +362,8 @@ private:
                         const KService::List &appServiceOffers,
                         const QString &serviceType,
                         bool passiveMode, bool openAfterCurrentPage = false, int pos = -1);
+
+    KonqView* setupView(KonqFrameContainerBase *parentContainer, bool passiveMode, bool openAfterCurrentPage = false, int pos = -1);
 
 #ifndef NDEBUG
     //just for debugging

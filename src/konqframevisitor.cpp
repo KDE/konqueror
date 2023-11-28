@@ -17,6 +17,9 @@ bool KonqViewCollector::visit(KonqFrame *frame)
 
 QList<KonqView *> KonqViewCollector::collect(KonqFrameBase *topLevel)
 {
+    if (!topLevel) {
+        return {};
+    }
     KonqViewCollector collector;
     topLevel->accept(&collector);
     return collector.m_views;
@@ -32,6 +35,9 @@ bool KonqLinkableViewsCollector::visit(KonqFrame *frame)
 
 QList<KonqView *> KonqLinkableViewsCollector::collect(KonqFrameBase *topLevel)
 {
+    if (!topLevel) {
+        return {};
+    }
     KonqLinkableViewsCollector collector;
     topLevel->accept(&collector);
     return collector.m_views;
@@ -48,6 +54,9 @@ bool KonqModifiedViewsCollector::visit(KonqFrame *frame)
 
 QList<KonqView *> KonqModifiedViewsCollector::collect(KonqFrameBase *topLevel)
 {
+    if (!topLevel) {
+        return {};
+    }
     KonqModifiedViewsCollector collector;
     topLevel->accept(&collector);
     return collector.m_views;

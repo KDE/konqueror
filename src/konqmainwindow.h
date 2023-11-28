@@ -359,6 +359,11 @@ Q_SIGNALS:
     void viewRemoved(KonqView *view);
     void popupItemsDisturbed();
     void aboutToConfigure();
+
+    /**
+     * @brief Signal emitted before closing the window
+     * @param window the window which was closed (`this`)
+     */
     void closing(KonqMainWindow *window);
 
 public Q_SLOTS:

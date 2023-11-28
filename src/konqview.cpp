@@ -18,6 +18,10 @@
 #include "konqpixmapprovider.h"
 #include "implementations/konqbrowserwindowinterface.h"
 #include "interfaces/downloaderextension.h"
+#include "browserarguments.h"
+#include "browserextension.h"
+#include "placeholderpart.h"
+#include "konqurl.h"
 
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
@@ -55,10 +59,42 @@
 #include <KParts/OpenUrlEvent>
 #include <KParts/OpenUrlArguments>
 #include <QMimeDatabase>
-#include "browserarguments.h"
-#include "browserextension.h"
 
 //#define DEBUG_HISTORY
+
+KonqView::KonqView(KonqFrame *viewFrame, KonqMainWindow *mainWindow) :
+    m_pPart{nullptr},
+    m_pageSecurity{KonqMainWindow::NotCrypted},
+    m_lstHistoryIndex{-1},
+    m_doPost{false},
+    m_pMainWindow{mainWindow},
+    m_loader{nullptr},
+    m_pKonqFrame{viewFrame},
+    m_bLoading{false},
+    m_bLockedLocation{false},
+    m_bPassiveMode{false},
+    m_bLinkedView{false},
+    m_bToggleView{false},
+    m_bLockHistory{false},
+    m_bAborted{false},
+    m_bGotIconURL{false},
+    m_bPopupMenuEnabled{true},
+    m_bFollowActive{false},
+    m_bPendingRedirection{false},
+    m_bBuiltinView{true},
+    m_bURLDropHandling{false},
+    m_bDisableScrolling{false},
+    m_bErrorURL{false}
+#if QT_VERSION_MAJOR < 6
+#ifdef KActivities_FOUND
+    , m_activityResourceInstance{new KActivities::ResourceInstance(mainWindow->winId(), this)}
+#endif
+#endif
+{
+    m_pKonqFrame->setView(this);
+    KonqViewFactory factory;
+    switchView(factory, true);
+}
 
 KonqView::KonqView(KonqViewFactory &viewFactory,
                    KonqFrame *viewFrame,
@@ -265,11 +301,11 @@ void KonqView::switchEmbeddingPart(const QString& newPluginId, const QString& ne
     }
 }
 
-void KonqView::switchView(KonqViewFactory &viewFactory)
+void KonqView::switchView(KonqViewFactory &viewFactory, bool allowPlaceholder)
 {
     //qCDebug(KONQUEROR_LOG);
     KParts::ReadOnlyPart *oldPart = m_pPart;
-    KParts::ReadOnlyPart *part = m_pKonqFrame->attach(viewFactory);   // creates the part
+    KParts::ReadOnlyPart *part = m_pKonqFrame->attach(viewFactory, allowPlaceholder);   // creates the part
     if (!part) {
         return;
     }
@@ -1379,6 +1415,30 @@ void HistoryEntry::saveConfig(KConfigGroup &config, const QString &prefix, const
     }
 }
 
+HistoryEntry* HistoryEntry::fromDelayedLoadingData(const KConfigGroup& config, const QString& prefix, const KonqFrameBase::Options& options)
+{
+    HistoryEntry *entry = new HistoryEntry;
+    if (options & (KonqFrameBase::SaveUrls|KonqFrameBase::SaveHistoryItems)) { // eitentryr one
+        entry->url = QUrl(config.readEntry(QStringLiteral("Url").prepend(prefix), ""));
+        entry->locationBarURL = config.readEntry(QStringLiteral("LocationBarURL").prepend(prefix), "");
+        entry->title = config.readEntry(QStringLiteral("Title").prepend(prefix), "");
+        entry->strServiceType = config.readEntry(QStringLiteral("StrServiceType").prepend(prefix), "");
+        entry->strServiceName = config.readEntry(QStringLiteral("StrServiceName").prepend(prefix), "");
+    }
+    if (options & KonqFrameBase::SaveUrls) {
+        entry->reload = true;
+    } else if (options & KonqFrameBase::SaveHistoryItems) {
+        entry->buffer = config.readEntry(QStringLiteral("Buffer").prepend(prefix), QByteArray());
+        entry->postData = config.readEntry(QStringLiteral("PostData").prepend(prefix), QByteArray());
+        entry->postContentType = config.readEntry(QStringLiteral("PostContentType").prepend(prefix), "");
+        entry->doPost = config.readEntry(QStringLiteral("DoPost").prepend(prefix), false);
+        entry->pageReferrer = config.readEntry(QStringLiteral("PageReferrer").prepend(prefix), "");
+        entry->pageSecurity = static_cast<KonqMainWindow::PageSecurity>(config.readEntry(QStringLiteral("PageSecurity").prepend(prefix), 0));
+        entry->reload = false;
+    }
+    return entry;
+}
+
 void HistoryEntry::loadItem(const KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options)
 {
     if (options & (KonqFrameBase::SaveUrls|KonqFrameBase::SaveHistoryItems)) { // either one
@@ -1402,14 +1462,28 @@ void HistoryEntry::loadItem(const KConfigGroup &config, const QString &prefix, c
     }
 }
 
+Konq::PlaceholderPart* KonqView::placeholderPart() const
+{
+    return qobject_cast<Konq::PlaceholderPart*>(m_pPart);
+}
+
 void KonqView::saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options)
 {
-    config.writeEntry(QStringLiteral("ServiceType").prepend(prefix), serviceType());
-    config.writeEntry(QStringLiteral("ServiceName").prepend(prefix), service().pluginId());
+    //If the view has been delayed, these property can't be got from the part (which will be a PlaceholderPart):
+    //They need to be taken from m_delayedLoadingData.
+    //This can happen when loading a session with several tabs, then saving it again without activating all the
+    //tabs
+    Konq::PlaceholderPart *plPart = placeholderPart();
+    QString mimeType = plPart ? plPart->delayedLoadingData().mimeType : serviceType();
+    QString serviceName = plPart ? plPart->delayedLoadingData().serviceName : service().pluginId();
+    bool locked = plPart ? plPart->delayedLoadingData().lockedLocation : isLockedLocation();
+
+    config.writeEntry(QStringLiteral("ServiceType").prepend(prefix), mimeType);
+    config.writeEntry(QStringLiteral("ServiceName").prepend(prefix), serviceName);
     config.writeEntry(QStringLiteral("PassiveMode").prepend(prefix), isPassiveMode());
     config.writeEntry(QStringLiteral("LinkedView").prepend(prefix), isLinkedView());
     config.writeEntry(QStringLiteral("ToggleView").prepend(prefix), isToggleView());
-    config.writeEntry(QStringLiteral("LockedLocation").prepend(prefix), isLockedLocation());
+    config.writeEntry(QStringLiteral("LockedLocation").prepend(prefix), locked);
 
     if (options & KonqFrameBase::SaveUrls) {
         config.writePathEntry(QStringLiteral("URL").prepend(prefix), url().url());
@@ -1433,6 +1507,62 @@ void KonqView::saveConfig(KConfigGroup &config, const QString &prefix, const Kon
     }
 }
 
+void KonqView::storeDelayedLoadingData(const QString& mimeType, const QString& serviceName, bool openUrl, const QUrl& url, bool lockedLocation, const KConfigGroup& grp, const QString& prefix)
+{
+    Konq::PlaceholderPart *plPart = placeholderPart();
+    if (!plPart) {
+        return;
+    }
+    plPart->setDelayedLoadingData({mimeType, serviceName, openUrl, url, lockedLocation});
+
+    const QString keyHistoryItems = QStringLiteral("NumberOfHistoryItems").prepend(prefix);
+
+    int historySize = grp.readEntry(keyHistoryItems, 0);
+    if (historySize < 1) {
+        //Note: this won't really open the URL because the part will be a PlaceholderPart
+        m_pPart->openUrl(url);
+        return;
+    }
+
+    loadHistoryConfig(grp, prefix);
+    if (!m_lstHistory.isEmpty()) {
+        //Note: this won't really open the URL because the part will be a PlaceholderPart
+        QUrl url = m_lstHistory.at(m_lstHistoryIndex)->url;
+        m_pPart->openUrl(url);
+    }
+}
+
+bool KonqView::isDelayed() const
+{
+    return qobject_cast<Konq::PlaceholderPart*>(m_pPart) != nullptr;
+}
+
+void KonqView::loadDelayed()
+{
+    Konq::PlaceholderPart *plPart = placeholderPart();
+    if (!plPart) {
+        return;
+    }
+
+    Konq::PlaceholderPart::DelayedLoadingData data = plPart->delayedLoadingData();
+    changePart(data.mimeType, data.serviceName, true);
+
+    if (data.openUrl) {
+        if (m_lstHistory.isEmpty()) {
+            QUrl url = data.url;
+            KonqOpenURLRequest req;
+            if (!KonqUrl::hasKonqScheme(url)) {
+                req.typedUrl = url.toDisplayString();
+            }
+            m_pMainWindow->openView(data.mimeType, url, this, req);
+        } else {
+            restoreHistory();
+        }
+    }
+    setLockedLocation(data.lockedLocation);
+    data = {};
+}
+
 void KonqView::loadHistoryConfig(const KConfigGroup &config, const QString &prefix)
 {
     // First, remove any history
@@ -1450,17 +1580,11 @@ void KonqView::loadHistoryConfig(const KConfigGroup &config, const QString &pref
 
     // restore history list
     for (int i = 0; i < historySize; ++i) {
-        HistoryEntry *historyEntry = new HistoryEntry;
 
         // Only current history item saves completely its HistoryEntry
-        KonqFrameBase::Options options;
-        if (i == currentIndex) {
-            options = KonqFrameBase::SaveHistoryItems;
-        } else {
-            options = KonqFrameBase::SaveUrls;
-        }
+        KonqFrameBase::Options options = i == currentIndex ? KonqFrameBase::SaveHistoryItems : KonqFrameBase::SaveUrls;
 
-        historyEntry->loadItem(config, QLatin1String("HistoryItem") + QString::number(i).prepend(prefix), options);
+        HistoryEntry *historyEntry = HistoryEntry::fromDelayedLoadingData(config, QLatin1String("HistoryItem") + QString::number(i).prepend(prefix), options);
 
         appendHistoryEntry(historyEntry);
     }
@@ -1472,7 +1596,6 @@ void KonqView::loadHistoryConfig(const KConfigGroup &config, const QString &pref
 
     // set and load the correct history index
     setHistoryIndex(currentIndex);
-    restoreHistory();
 }
 
 QString KonqView::internalViewMode() const
