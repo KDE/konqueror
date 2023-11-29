@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2023-11-29 01:37+0000\n"
 "PO-Revision-Date: 2021-01-16 15:33+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -30,29 +30,29 @@ msgid "Your emails"
 msgstr "karl@huftis.org"
 
 #: src/about/konq_aboutpage.cpp:71 src/about/konq_aboutpage.cpp:73
-#: src/about/konq_aboutpage.cpp:131 src/about/konq_aboutpage.cpp:133
-#: src/about/konq_aboutpage.cpp:183 src/about/konq_aboutpage.cpp:185
-#: src/about/konq_aboutpage.cpp:283 src/about/konq_aboutpage.cpp:285
-#, kde-format
-msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#: src/about/konq_aboutpage.cpp:196 src/about/konq_aboutpage.cpp:198
+#, fuzzy, kde-format
+#| msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#| msgid "Be free."
+msgctxt "KDE 4 tag line"
 msgid "Be free."
 msgstr "Ver fri."
 
-#: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:132
-#: src/about/konq_aboutpage.cpp:184 src/about/konq_aboutpage.cpp:284
+#: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:131
+#: src/about/konq_aboutpage.cpp:197
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: src/about/konq_aboutpage.cpp:74 src/about/konq_aboutpage.cpp:134
-#: src/about/konq_aboutpage.cpp:186 src/about/konq_aboutpage.cpp:286
+#: src/about/konq_aboutpage.cpp:74 src/about/konq_aboutpage.cpp:133
+#: src/about/konq_aboutpage.cpp:199
 #, kde-format
 msgid "Konqueror is a web browser, file manager and universal document viewer."
 msgstr ""
 "Konqueror er ein filhandsamar, nettlesar og universell dokumentframvisar."
 
-#: src/about/konq_aboutpage.cpp:75 src/about/konq_aboutpage.cpp:135
-#: src/about/konq_aboutpage.cpp:187 src/about/konq_aboutpage.cpp:287
+#: src/about/konq_aboutpage.cpp:75 src/about/konq_aboutpage.cpp:134
+#: src/about/konq_aboutpage.cpp:200
 #, kde-format
 msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
@@ -60,76 +60,75 @@ msgctxt ""
 msgid "Starting Points"
 msgstr "Utgangspunkt"
 
-#: src/about/konq_aboutpage.cpp:76 src/about/konq_aboutpage.cpp:136
-#: src/about/konq_aboutpage.cpp:188 src/about/konq_aboutpage.cpp:288
+#: src/about/konq_aboutpage.cpp:76 src/about/konq_aboutpage.cpp:135
+#: src/about/konq_aboutpage.cpp:201
 #, kde-format
 msgid "Introduction"
 msgstr "Introduksjon"
 
-#: src/about/konq_aboutpage.cpp:77 src/about/konq_aboutpage.cpp:137
-#: src/about/konq_aboutpage.cpp:189 src/about/konq_aboutpage.cpp:289
+#: src/about/konq_aboutpage.cpp:77 src/about/konq_aboutpage.cpp:136
+#: src/about/konq_aboutpage.cpp:202
 #, kde-format
 msgid "Tips"
 msgstr "Tips"
 
-#: src/about/konq_aboutpage.cpp:78 src/about/konq_aboutpage.cpp:138
-#: src/about/konq_aboutpage.cpp:190 src/about/konq_aboutpage.cpp:191
-#: src/about/konq_aboutpage.cpp:290
-#, kde-format
-msgid "Specifications"
-msgstr "Spesifikasjonar"
-
-#: src/about/konq_aboutpage.cpp:83
+#: src/about/konq_aboutpage.cpp:82
 #, kde-format
 msgid "Home Folder"
 msgstr "Heimemappe"
 
-#: src/about/konq_aboutpage.cpp:84
+#: src/about/konq_aboutpage.cpp:83
 #, kde-format
 msgid "Your personal files"
 msgstr "Dine personlege filer"
 
-#: src/about/konq_aboutpage.cpp:87
+#: src/about/konq_aboutpage.cpp:86
 #, kde-format
 msgid "Trash"
 msgstr "Papirkorg"
 
-#: src/about/konq_aboutpage.cpp:88
+#: src/about/konq_aboutpage.cpp:87
 #, kde-format
 msgid "Browse and restore the trash"
 msgstr "Bla gjennom og gjenopprett frå papirkorga"
 
-#: src/about/konq_aboutpage.cpp:91
+#: src/about/konq_aboutpage.cpp:90
 #, kde-format
 msgid "Network Folders"
 msgstr "Nettverksmapper"
 
-#: src/about/konq_aboutpage.cpp:92
+#: src/about/konq_aboutpage.cpp:91
 #, kde-format
 msgid "Shared files and folders"
 msgstr "Delte filer og mapper"
 
-#: src/about/konq_aboutpage.cpp:95
+#: src/about/konq_aboutpage.cpp:94
 #, kde-format
 msgid "Bookmarks"
 msgstr "Bokmerke"
 
-#: src/about/konq_aboutpage.cpp:96
+#: src/about/konq_aboutpage.cpp:95
 #, kde-format
 msgid "Quick access to your bookmarks"
 msgstr "Kjapp tilgang til bokmerka"
 
-#: src/about/konq_aboutpage.cpp:99
+#: src/about/konq_aboutpage.cpp:98
 #, kde-format
 msgid "Next: An Introduction to Konqueror"
 msgstr "Neste: Ei innføring i Konqueror"
 
-#: src/about/konq_aboutpage.cpp:101
+#: src/about/konq_aboutpage.cpp:100
 #, kde-format
 msgid "Search the Web"
 msgstr "Søk på verdsveven"
 
-#: src/about/konq_aboutpage.cpp:139
+#: src/about/konq_aboutpage.cpp:130 src/about/konq_aboutpage.cpp:132
+#, kde-format
+msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+msgid "Be free."
+msgstr "Ver fri."
+
+#: src/about/konq_aboutpage.cpp:137
 #, kde-format
 msgid ""
 "Konqueror makes working with and managing your files easy. You can browse "
@@ -140,7 +139,7 @@ msgstr ""
 "mapper eller nettverksmapper, kan du dra nytte av avanserte funksjonar som "
 "for eksempel sidestolpen og førehandsvising."
 
-#: src/about/konq_aboutpage.cpp:143
+#: src/about/konq_aboutpage.cpp:141
 #, kde-format
 msgid ""
 "Konqueror is also a full featured and easy to use web browser which you can "
@@ -153,7 +152,7 @@ msgstr ""
 "www.kde.org\">http://www.kde.org</a>) til den nettsida du vil sjå og trykk "
 "Enter. Du kan òg velja eit bokmerke frå bokmerkemenyen."
 
-#: src/about/konq_aboutpage.cpp:148
+#: src/about/konq_aboutpage.cpp:146
 #, kde-format
 msgid ""
 "To return to the previous location, press the back button <img width='16' "
@@ -162,7 +161,7 @@ msgstr ""
 "Viss du vil gå tilbake til sida du var på, trykk knappen <img width='16' "
 "height='16' src=\"%1\"></img> på verktøylinja. "
 
-#: src/about/konq_aboutpage.cpp:151
+#: src/about/konq_aboutpage.cpp:149
 #, kde-format
 msgid ""
 "To quickly go to your Home folder press the home button <img width='16' "
@@ -171,7 +170,7 @@ msgstr ""
 "Viss du vil gå til heimemappa, trykk knappen <img width='16' height='16' src="
 "\"%1\"></img>."
 
-#: src/about/konq_aboutpage.cpp:153
+#: src/about/konq_aboutpage.cpp:151
 #, kde-format
 msgid ""
 "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
@@ -179,221 +178,17 @@ msgstr ""
 "Trykk <a href=\"%1\">her</a> for å lesa meir detaljert informasjon om "
 "Konqueror."
 
-#: src/about/konq_aboutpage.cpp:156
+#: src/about/konq_aboutpage.cpp:154
 #, kde-format
 msgid "Next: Tips & Tricks"
 msgstr "Neste: Tips og triks"
 
-#: src/about/konq_aboutpage.cpp:192
-#, kde-format
-msgid ""
-"Konqueror is designed to embrace and support Internet standards. The aim is "
-"to fully implement the officially sanctioned standards from organizations "
-"such as the W3 and OASIS, while also adding extra support for other common "
-"usability features that arise as de facto standards across the Internet. "
-"Along with this support, for such functions as favicons, Web Shortcuts, and "
-"<A HREF=\"%1\">XBEL bookmarks</A>, Konqueror also implements:"
-msgstr ""
-"Konqueror er laga for å støtta Internett-standardane. Målet er å oppfylla "
-"dei offisielt vedtekne standardane frå organisasjonar som W3 og OASIS, saman "
-"med andre nyttige funksjonar som er de facto-standardar på Internett. "
-"Konqueror støttar funksjonar som «favicon», vevsnarvegar og <a href="
-"\"%1\">XBEL-bokmerke</a>, i tillegg til:"
-
-#: src/about/konq_aboutpage.cpp:199
-#, kde-format
-msgid "Web Browsing"
-msgstr "Nettlesing"
-
-#: src/about/konq_aboutpage.cpp:200
-#, kde-format
-msgid "Supported standards"
-msgstr "Standardstøtte"
-
-#: src/about/konq_aboutpage.cpp:201
-#, kde-format
-msgid "Additional requirements*"
-msgstr "Andre krav*"
-
-#: src/about/konq_aboutpage.cpp:202
-#, kde-format
-msgid ""
-"<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
-"\"%2\">HTML 4.01</A>"
-msgstr ""
-"<A HREF=\"%1\">DOM</A>-basert <A HREF=\"%2\">HTML 4.01</A> (nivå 1, delvis "
-"nivå 2) "
-
-#: src/about/konq_aboutpage.cpp:204 src/about/konq_aboutpage.cpp:206
-#: src/about/konq_aboutpage.cpp:218 src/about/konq_aboutpage.cpp:223
-#: src/about/konq_aboutpage.cpp:225
-#, kde-format
-msgid "built-in"
-msgstr "innebygd"
-
-#: src/about/konq_aboutpage.cpp:205
-#, kde-format
-msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
-msgstr ""
-"<A HREF=\"%1\">Stilsett, «Cascading Style Sheets»</A> (CSS 1, delvis CSS 2)"
-
-#: src/about/konq_aboutpage.cpp:207
-#, kde-format
-msgid "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
-msgstr ""
-"<a href=\"%1\">ECMA-262</a> 3. utgåve (tilsvarar grovt sett JavaScript 1.5)"
-
-#: src/about/konq_aboutpage.cpp:209
-#, kde-format
-msgid ""
-"JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
-msgstr ""
-"JavaScript er slått av (globalt). Slå på JavaScript <a href=\"%1\">her</a>."
-
-#: src/about/konq_aboutpage.cpp:210
-#, kde-format
-msgid ""
-"JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\\">here</"
-"A>."
-msgstr ""
-"JavaScript er slått på (globalt). Set opp JavaScript <a href=\"%1\">her</a>."
-
-#: src/about/konq_aboutpage.cpp:211
-#, kde-format
-msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
-msgstr "Sikker <A HREF=\"%1\">Java</A><SUP>&reg;</SUP>-støtte"
-
-#: src/about/konq_aboutpage.cpp:212
-#, kde-format
-msgid ""
-"JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
-"\"%2\">Sun/Oracle</A>)"
-msgstr ""
-"JDK 1.2.0 (Java 2)-kompatibel VM (<A HREF=\"%1\">OpenJDK</A> eller <A HREF="
-"\"%2\">Sun/Oracle</A>)"
-
-#: src/about/konq_aboutpage.cpp:214
-#, kde-format
-msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
-msgstr "Slå på Java (globalt) <a href=\"%1\">her</a>."
-
-#: src/about/konq_aboutpage.cpp:215
-#, kde-format
-msgid ""
-"NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF=\"%1\">Flash<SUP>&reg;"
-"</SUP></A>, etc.)"
-msgstr ""
-"NPAPI-<A HREF=\"%2\">tillegg</A> (for vising av <A HREF="
-"\"%1\">Flash<SUP>&reg;</SUP></A> o.l.)"
-
-#: src/about/konq_aboutpage.cpp:219
-#, kde-format
-msgid "Secure Sockets Layer"
-msgstr "Secure Sockets Layer"
-
-#: src/about/konq_aboutpage.cpp:220
-#, kde-format
-msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
-msgstr "(TLS/SSL v2/3) for sikker kommunikasjon i opptil 168 bit"
-
-#: src/about/konq_aboutpage.cpp:221
-#, kde-format
-msgid "OpenSSL"
-msgstr "OpenSSL"
-
-#: src/about/konq_aboutpage.cpp:222
-#, kde-format
-msgid "Bidirectional 16bit unicode support"
-msgstr "16-bits Unicode-støtte i begge retningar"
-
-#: src/about/konq_aboutpage.cpp:224
-#, kde-format
-msgid "AutoCompletion for forms"
-msgstr "Autofullføring av skjema"
-
-#: src/about/konq_aboutpage.cpp:226
-#, kde-format
-msgctxt "Title of an html 'group box' explaining konqueror features"
-msgid "General"
-msgstr "Generelt"
-
-#: src/about/konq_aboutpage.cpp:227
-#, kde-format
-msgid "Feature"
-msgstr "Funksjon"
-
-#: src/about/konq_aboutpage.cpp:228
-#, kde-format
-msgid "Details"
-msgstr "Detaljar"
-
-#: src/about/konq_aboutpage.cpp:229
-#, kde-format
-msgid "Image formats"
-msgstr "Biletformat"
-
-#: src/about/konq_aboutpage.cpp:230
-#, kde-format
-msgid "PNG<br />JPG<br />GIF"
-msgstr "PNG<br />JPG<br />GIF"
-
-#: src/about/konq_aboutpage.cpp:231
-#, kde-format
-msgid "Transfer protocols"
-msgstr "Overføringsprotokollar"
-
-#: src/about/konq_aboutpage.cpp:232
-#, kde-format
-msgid "HTTP 1.1 (including gzip/bzip2 compression)"
-msgstr "HTTP 1.1 (med gzip-/bzip2-komprimering)"
-
-#: src/about/konq_aboutpage.cpp:233
-#, kde-format
-msgid "FTP"
-msgstr "FTP"
-
-#: src/about/konq_aboutpage.cpp:234
-#, kde-format
-msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
-msgstr ""
-"og <A HREF=\"%1\">mange fleire (sjå avsnittet «Kioslavar» i KDE-"
-"hjelpesenteret) …</A>"
-
-#: src/about/konq_aboutpage.cpp:235
-#, kde-format
-msgctxt "A feature of Konqueror"
-msgid "URL-Completion"
-msgstr "Fullføring av nettadresser"
-
-#: src/about/konq_aboutpage.cpp:236
-#, kde-format
-msgid "Manual"
-msgstr "Manuell"
-
-#: src/about/konq_aboutpage.cpp:237
-#, kde-format
-msgid "Popup"
-msgstr "Sprettopp"
-
-#: src/about/konq_aboutpage.cpp:238
-#, kde-format
-msgid "(Short-) Automatic"
-msgstr "(Kort) automatisk"
-
-#: src/about/konq_aboutpage.cpp:240
-#, kde-format
-msgctxt ""
-"Link that points to the first page of the Konqueror 'about page', Starting "
-"Points contains links to Home, Network Folders, Trash, etc."
-msgid "<a href=\"%1\">Return to Starting Points</a>"
-msgstr "<a href=\"%1\">Tilbake til utgangspunkta</a>"
-
-#: src/about/konq_aboutpage.cpp:291
+#: src/about/konq_aboutpage.cpp:203
 #, kde-format
 msgid "Tips & Tricks"
 msgstr "Tips og triks"
 
-#: src/about/konq_aboutpage.cpp:292
+#: src/about/konq_aboutpage.cpp:204
 #, kde-format
 msgid ""
 "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, using "
@@ -407,16 +202,7 @@ msgstr ""
 "enkelt kan søkja etter programvare eller slå opp ord i ordbøker. Du kan til "
 "og med <a href=\"%1\">laga dine eigne</a> vevsnarvegar."
 
-#: src/about/konq_aboutpage.cpp:297
-#, kde-format
-msgid ""
-"Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
-"the HTML toolbar to increase the font size on your web page."
-msgstr ""
-"Bruk forstørringsknappen <img width='16' height='16' src=\"%1\"></img> på "
-"HTML-verktøylinja for å gjera skrifta på nettsidene større."
-
-#: src/about/konq_aboutpage.cpp:299
+#: src/about/konq_aboutpage.cpp:209
 #, kde-format
 msgid ""
 "When you want to paste a new address into the Location toolbar you might "
@@ -427,7 +213,7 @@ msgstr ""
 "det som står der frå før ved å trykkja på den svarte pila med kvit kross "
 "<img width='16' height='16' src=\"%1\"></img> på verktøylinja."
 
-#: src/about/konq_aboutpage.cpp:303
+#: src/about/konq_aboutpage.cpp:213
 #, kde-format
 msgid ""
 "To create a link on your desktop pointing to the current page, simply drag "
@@ -438,7 +224,7 @@ msgstr ""
 "dra «Adresse»-ikonet som står til venstre på adresselinja over til "
 "skrivebordet og velja «Ikon»."
 
-#: src/about/konq_aboutpage.cpp:306
+#: src/about/konq_aboutpage.cpp:216
 #, kde-format
 msgid ""
 "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
@@ -449,7 +235,7 @@ msgstr ""
 "«Fullskjermsmodus» i vindaugsmenyen. Denne funksjonen er for eksempel nyttig "
 "for «Talk»-økter."
 
-#: src/about/konq_aboutpage.cpp:309
+#: src/about/konq_aboutpage.cpp:219
 #, kde-format
 msgid ""
 "Divide et impera (lat. \"Divide and conquer\") - by splitting a window into "
@@ -460,7 +246,7 @@ msgstr ""
 "width='16' height='16' src=\"%1\" /> Del ruta venstre/høgre»). Slik kan få "
 "Konqueror til å sjå ut nett slik du vil."
 
-#: src/about/konq_aboutpage.cpp:312
+#: src/about/konq_aboutpage.cpp:222
 #, kde-format
 msgid ""
 "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
@@ -471,7 +257,7 @@ msgstr ""
 "krev at du brukar ein annan nettlesar (og ikkje gløym å senda klage til "
 "vevmeisteren!)."
 
-#: src/about/konq_aboutpage.cpp:315
+#: src/about/konq_aboutpage.cpp:225
 #, kde-format
 msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
@@ -480,15 +266,7 @@ msgstr ""
 "<img width='16' height='16' src=\"%1\"></img> Loggen i sidestolpen hjelper "
 "deg med å halda orden på dei sidene du nyleg har vitja."
 
-#: src/about/konq_aboutpage.cpp:317
-#, kde-format
-msgid ""
-"Use a caching <a href=\"%1\">proxy</a> to speed up your Internet connection."
-msgstr ""
-"Bruk ein <a href=\"%1\">mellomtenar</a> med mellomlager for å få raskare "
-"Internett-samband."
-
-#: src/about/konq_aboutpage.cpp:319
+#: src/about/konq_aboutpage.cpp:227
 #, kde-format
 msgid ""
 "Advanced users will appreciate the Konsole which you can embed into "
@@ -499,27 +277,30 @@ msgstr ""
 "Konqueror («Innstillingar → <img width='16' height='16' SRC=\"%1\"></img> "
 "Vis Terminalemulator)."
 
-#: src/about/konq_aboutpage.cpp:323
+#: src/about/konq_aboutpage.cpp:231
 #, kde-format
-msgid "Next: Specifications"
-msgstr "Neste: Spesifikasjonar"
+msgctxt ""
+"Link that points to the first page of the Konqueror 'about page', Starting "
+"Points contains links to Home, Network Folders, Trash, etc."
+msgid "<a href=\"%1\">Return to Starting Points</a>"
+msgstr "<a href=\"%1\">Tilbake til utgangspunkta</a>"
 
-#: src/about/konq_aboutpage.cpp:337
+#: src/about/konq_aboutpage.cpp:245
 #, kde-format
 msgid "Installed Plugins"
 msgstr "Installerte programtillegg"
 
-#: src/about/konq_aboutpage.cpp:338
+#: src/about/konq_aboutpage.cpp:246
 #, kde-format
 msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
 msgstr "<td>Programtillegg</td><td>Skildring</td><td>Fil</td><td>Typar</td>"
 
-#: src/about/konq_aboutpage.cpp:339
+#: src/about/konq_aboutpage.cpp:247
 #, kde-format
 msgid "Installed"
 msgstr "Installert"
 
-#: src/about/konq_aboutpage.cpp:340
+#: src/about/konq_aboutpage.cpp:248
 #, kde-format
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr ""
@@ -717,6 +498,73 @@ msgstr ""
 #, kde-format
 msgid "All cookies"
 msgstr ""
+
+#: src/schemehandlers/errorschemehandler.cpp:96
+#, kde-format
+msgid ""
+"<html><body><h3>Unable to display error message</h3><p>The error template "
+"file <em>error.html</em> could not be found.</p></body></html>"
+msgstr ""
+"<html><body><h3>Klarte ikkje visa feilmelding</h3><p>Fann ikkje malfila med "
+"feilmeldingar, <em>error.html</em>.</p></body></html>"
+
+#: src/schemehandlers/errorschemehandler.cpp:105
+#, kde-format
+msgid "The requested operation could not be completed"
+msgstr "Klarte ikkje fullføra den førespurde operasjonen"
+
+#: src/schemehandlers/errorschemehandler.cpp:112
+#, kde-format
+msgid "Technical Reason: %1"
+msgstr "Teknisk grunn: %1"
+
+#: src/schemehandlers/errorschemehandler.cpp:117
+#, kde-format
+msgid "Details of the Request:"
+msgstr "Detaljar ved førespurnaden:"
+
+#. i18n, and once for HTML.
+#: src/schemehandlers/errorschemehandler.cpp:120
+#, kde-format
+msgid "URL: %1"
+msgstr "Adresse: %1"
+
+#. i18n, and once for HTML.
+#: src/schemehandlers/errorschemehandler.cpp:126
+#, kde-format
+msgid "Protocol: %1"
+msgstr "Protokoll: %1"
+
+#: src/schemehandlers/errorschemehandler.cpp:130
+#, kde-format
+msgid "Date and Time: %1"
+msgstr "Dato og klokkeslett: %1"
+
+#. i18n, and once for HTML.
+#: src/schemehandlers/errorschemehandler.cpp:134
+#, kde-format
+msgid "Additional Information: %1"
+msgstr "Annan informasjon: %1"
+
+#: src/schemehandlers/errorschemehandler.cpp:136
+#, kde-format
+msgid "Description:"
+msgstr "Skildring:"
+
+#: src/schemehandlers/errorschemehandler.cpp:143
+#, kde-format
+msgid "Possible Causes:"
+msgstr "Moglege grunnar:"
+
+#: src/schemehandlers/errorschemehandler.cpp:151
+#, kde-format
+msgid "Possible Solutions:"
+msgstr "Moglege løysingar:"
+
+#: src/schemehandlers/errorschemehandler.cpp:157
+#, kde-format
+msgid "Error: %1"
+msgstr "Feil: %1"
 
 #: src/settings/webenginesettings.cpp:914
 #, kde-format
@@ -1101,61 +949,61 @@ msgstr "Tillat"
 msgid "Do Not Allow"
 msgstr "Ikkje tillat"
 
-#: src/webenginepart.cpp:212
+#: src/webenginepart.cpp:214
 #, kde-format
 msgid "Save Full HTML Page As..."
 msgstr ""
 
-#: src/webenginepart.cpp:216
+#: src/webenginepart.cpp:218
 #, kde-format
 msgid "Print Preview"
 msgstr "Førehandsvising av utskrift"
 
-#: src/webenginepart.cpp:220
+#: src/webenginepart.cpp:222
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Forstørr"
 
-#: src/webenginepart.cpp:225
+#: src/webenginepart.cpp:227
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Forminsk"
 
-#: src/webenginepart.cpp:230
+#: src/webenginepart.cpp:232
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Verkeleg storleik"
 
-#: src/webenginepart.cpp:235
+#: src/webenginepart.cpp:237
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Forstørr berre tekst"
 
-#: src/webenginepart.cpp:243
+#: src/webenginepart.cpp:245
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Forstørr til DPI"
 
-#: src/webenginepart.cpp:256
+#: src/webenginepart.cpp:258
 #, kde-format
 msgid "Set &Encoding"
 msgstr "Vel &teiknkoding"
 
-#: src/webenginepart.cpp:259
+#: src/webenginepart.cpp:261
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Vis &dokumentkjelde"
 
-#: src/webenginepart.cpp:264 src/webenginepart.cpp:550
+#: src/webenginepart.cpp:266 src/webenginepart.cpp:552
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:270
+#: src/webenginepart.cpp:272
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1165,12 +1013,12 @@ msgstr ""
 "<h3>Finn tekst</h3>Viser eit dialogvindauge du kan bruka til å finna tekst "
 "på den viste sida."
 
-#: src/webenginepart.cpp:548
+#: src/webenginepart.cpp:550
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "SSL-informasjonen for nettsida ser ut til å vera øydelagd."
 
-#: src/webenginepart.cpp:629
+#: src/webenginepart.cpp:631
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1178,7 +1026,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "E-post: "
 
-#: src/webenginepart.cpp:658
+#: src/webenginepart.cpp:660
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1186,7 +1034,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " – kopi til: "
 
-#: src/webenginepart.cpp:660
+#: src/webenginepart.cpp:662
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1194,7 +1042,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " – blindkopi til: "
 
-#: src/webenginepart.cpp:662
+#: src/webenginepart.cpp:664
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1202,42 +1050,42 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " – emne: "
 
-#: src/webenginepart.cpp:666 src/webenginepart.cpp:677
+#: src/webenginepart.cpp:668 src/webenginepart.cpp:679
 #, kde-format
 msgid " (In new window)"
 msgstr " (i nytt vindauge)"
 
-#: src/webenginepart.cpp:675
+#: src/webenginepart.cpp:677
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (i forelderramme)"
 
-#: src/webenginepart.cpp:745
+#: src/webenginepart.cpp:747
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Vil du søkja etter <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:746
+#: src/webenginepart.cpp:748
 #, kde-format
 msgid "Internet Search"
 msgstr "Nettsøk"
 
-#: src/webenginepart.cpp:746
+#: src/webenginepart.cpp:748
 #, kde-format
 msgid "&Search"
 msgstr "&Søk"
 
-#: src/webenginepart.cpp:857
+#: src/webenginepart.cpp:859
 #, kde-format
 msgid "Close window?"
 msgstr "Vil du lukka vindauget?"
 
-#: src/webenginepart.cpp:857
+#: src/webenginepart.cpp:859
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Treng stadfesting"
 
-#: src/webenginepart.cpp:931
+#: src/webenginepart.cpp:933
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
@@ -1245,43 +1093,43 @@ msgstr ""
 "<html>Ønskjer du at %1 skal hugsa innloggingsinformasjon for <b>%2</b>?</"
 "html>"
 
-#: src/webenginepart.cpp:1002
+#: src/webenginepart.cpp:1004
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr "&Fyll inn skjema no"
 
-#: src/webenginepart.cpp:1007
+#: src/webenginepart.cpp:1009
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr "&Hugs passorda på denne sida no"
 
-#: src/webenginepart.cpp:1011
+#: src/webenginepart.cpp:1013
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr "&Tilpass felt som skal hugsast for denne sida …"
 
-#: src/webenginepart.cpp:1015
+#: src/webenginepart.cpp:1017
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr "Fjern tilpassa innstillingar for datalagring for denne sida"
 
-#: src/webenginepart.cpp:1019
+#: src/webenginepart.cpp:1021
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "&Tillat passordlagring for nettstaden"
 
-#: src/webenginepart.cpp:1023
+#: src/webenginepart.cpp:1025
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "Fjern alle lagra passord for nettstaden"
 
-#: src/webenginepart.cpp:1027
+#: src/webenginepart.cpp:1029
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Køyr lommebokhandsamaren"
 
-#: src/webenginepart.cpp:1031
+#: src/webenginepart.cpp:1033
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Lukk lommebok"
@@ -1322,17 +1170,17 @@ msgstr "&Handsaming og brukarnamn og passord"
 msgid "HTML Toolbar"
 msgstr "HTML-verktøylinje"
 
-#: src/webenginepart_ext.cpp:275
+#: src/webenginepart_ext.cpp:276
 #, kde-format
 msgid "Print Document"
 msgstr "Skriv ut dokument"
 
-#: src/webenginepart_ext.cpp:500
+#: src/webenginepart_ext.cpp:501
 #, kde-format
 msgid "Add URL to Filter"
 msgstr "Legg nettadresse til filter"
 
-#: src/webenginepart_ext.cpp:501
+#: src/webenginepart_ext.cpp:502
 #, kde-format
 msgid "Enter the URL:"
 msgstr "Skriv inn adresse:"
@@ -1386,7 +1234,7 @@ msgstr ""
 msgid "&Issuer"
 msgstr ""
 
-#: src/webenginepartcontrols.cpp:279
+#: src/webenginepartcontrols.cpp:287
 #, kde-format
 msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
@@ -1421,73 +1269,6 @@ msgstr "Mål"
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
 msgstr ""
-
-#: src/webengineparterrorschemehandler.cpp:94
-#, kde-format
-msgid ""
-"<html><body><h3>Unable to display error message</h3><p>The error template "
-"file <em>error.html</em> could not be found.</p></body></html>"
-msgstr ""
-"<html><body><h3>Klarte ikkje visa feilmelding</h3><p>Fann ikkje malfila med "
-"feilmeldingar, <em>error.html</em>.</p></body></html>"
-
-#: src/webengineparterrorschemehandler.cpp:103
-#, kde-format
-msgid "The requested operation could not be completed"
-msgstr "Klarte ikkje fullføra den førespurde operasjonen"
-
-#: src/webengineparterrorschemehandler.cpp:110
-#, kde-format
-msgid "Technical Reason: %1"
-msgstr "Teknisk grunn: %1"
-
-#: src/webengineparterrorschemehandler.cpp:115
-#, kde-format
-msgid "Details of the Request:"
-msgstr "Detaljar ved førespurnaden:"
-
-#. i18n, and once for HTML.
-#: src/webengineparterrorschemehandler.cpp:118
-#, kde-format
-msgid "URL: %1"
-msgstr "Adresse: %1"
-
-#. i18n, and once for HTML.
-#: src/webengineparterrorschemehandler.cpp:124
-#, kde-format
-msgid "Protocol: %1"
-msgstr "Protokoll: %1"
-
-#: src/webengineparterrorschemehandler.cpp:128
-#, kde-format
-msgid "Date and Time: %1"
-msgstr "Dato og klokkeslett: %1"
-
-#. i18n, and once for HTML.
-#: src/webengineparterrorschemehandler.cpp:132
-#, kde-format
-msgid "Additional Information: %1"
-msgstr "Annan informasjon: %1"
-
-#: src/webengineparterrorschemehandler.cpp:134
-#, kde-format
-msgid "Description:"
-msgstr "Skildring:"
-
-#: src/webengineparterrorschemehandler.cpp:141
-#, kde-format
-msgid "Possible Causes:"
-msgstr "Moglege grunnar:"
-
-#: src/webengineparterrorschemehandler.cpp:149
-#, kde-format
-msgid "Possible Solutions:"
-msgstr "Moglege løysingar:"
-
-#: src/webengineparterrorschemehandler.cpp:155
-#, kde-format
-msgid "Error: %1"
-msgstr "Feil: %1"
 
 #: src/webengineview.cpp:362
 #, kde-format
@@ -1724,3 +1505,159 @@ msgstr ""
 "li><li><b>Felt-ID: </b>%3</li><li><b>Feltet er skriveverna: </b>%4</"
 "li><li><b>Feltet er tilgjengeleg: </b>%5</li><li><b>Autofullføring er slått "
 "på: </b>%6</li></ul>"
+
+#~ msgid "Specifications"
+#~ msgstr "Spesifikasjonar"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror er laga for å støtta Internett-standardane. Målet er å oppfylla "
+#~ "dei offisielt vedtekne standardane frå organisasjonar som W3 og OASIS, "
+#~ "saman med andre nyttige funksjonar som er de facto-standardar på "
+#~ "Internett. Konqueror støttar funksjonar som «favicon», vevsnarvegar og <a "
+#~ "href=\"%1\">XBEL-bokmerke</a>, i tillegg til:"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Nettlesing"
+
+#~ msgid "Supported standards"
+#~ msgstr "Standardstøtte"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Andre krav*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A>-basert <A HREF=\"%2\">HTML 4.01</A> (nivå 1, "
+#~ "delvis nivå 2) "
+
+#~ msgid "built-in"
+#~ msgstr "innebygd"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">Stilsett, «Cascading Style Sheets»</A> (CSS 1, delvis CSS "
+#~ "2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<a href=\"%1\">ECMA-262</a> 3. utgåve (tilsvarar grovt sett JavaScript "
+#~ "1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript er slått av (globalt). Slå på JavaScript <a href=\"%1\">her</"
+#~ "a>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript er slått på (globalt). Set opp JavaScript <a href=\"%1\">her</"
+#~ "a>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Sikker <A HREF=\"%1\">Java</A><SUP>&reg;</SUP>-støtte"
+
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2)-kompatibel VM (<A HREF=\"%1\">OpenJDK</A> eller <A "
+#~ "HREF=\"%2\">Sun/Oracle</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Slå på Java (globalt) <a href=\"%1\">her</a>."
+
+#~ msgid ""
+#~ "NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF="
+#~ "\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)"
+#~ msgstr ""
+#~ "NPAPI-<A HREF=\"%2\">tillegg</A> (for vising av <A HREF="
+#~ "\"%1\">Flash<SUP>&reg;</SUP></A> o.l.)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Secure Sockets Layer"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) for sikker kommunikasjon i opptil 168 bit"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "16-bits Unicode-støtte i begge retningar"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Autofullføring av skjema"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Generelt"
+
+#~ msgid "Feature"
+#~ msgstr "Funksjon"
+
+#~ msgid "Details"
+#~ msgstr "Detaljar"
+
+#~ msgid "Image formats"
+#~ msgstr "Biletformat"
+
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Overføringsprotokollar"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (med gzip-/bzip2-komprimering)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
+#~ msgstr ""
+#~ "og <A HREF=\"%1\">mange fleire (sjå avsnittet «Kioslavar» i KDE-"
+#~ "hjelpesenteret) …</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Fullføring av nettadresser"
+
+#~ msgid "Manual"
+#~ msgstr "Manuell"
+
+#~ msgid "Popup"
+#~ msgstr "Sprettopp"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Kort) automatisk"
+
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Bruk forstørringsknappen <img width='16' height='16' src=\"%1\"></img> på "
+#~ "HTML-verktøylinja for å gjera skrifta på nettsidene større."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Bruk ein <a href=\"%1\">mellomtenar</a> med mellomlager for å få raskare "
+#~ "Internett-samband."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Neste: Spesifikasjonar"

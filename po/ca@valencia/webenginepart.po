@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2023-11-29 01:37+0000\n"
 "PO-Revision-Date: 2023-11-20 10:04+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -32,30 +32,30 @@ msgid "Your emails"
 msgstr "txemaq@gmail.com"
 
 #: src/about/konq_aboutpage.cpp:71 src/about/konq_aboutpage.cpp:73
-#: src/about/konq_aboutpage.cpp:131 src/about/konq_aboutpage.cpp:133
-#: src/about/konq_aboutpage.cpp:183 src/about/konq_aboutpage.cpp:185
-#: src/about/konq_aboutpage.cpp:283 src/about/konq_aboutpage.cpp:285
-#, kde-format
-msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#: src/about/konq_aboutpage.cpp:196 src/about/konq_aboutpage.cpp:198
+#, fuzzy, kde-format
+#| msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#| msgid "Be free."
+msgctxt "KDE 4 tag line"
 msgid "Be free."
 msgstr "Sigueu lliure."
 
-#: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:132
-#: src/about/konq_aboutpage.cpp:184 src/about/konq_aboutpage.cpp:284
+#: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:131
+#: src/about/konq_aboutpage.cpp:197
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: src/about/konq_aboutpage.cpp:74 src/about/konq_aboutpage.cpp:134
-#: src/about/konq_aboutpage.cpp:186 src/about/konq_aboutpage.cpp:286
+#: src/about/konq_aboutpage.cpp:74 src/about/konq_aboutpage.cpp:133
+#: src/about/konq_aboutpage.cpp:199
 #, kde-format
 msgid "Konqueror is a web browser, file manager and universal document viewer."
 msgstr ""
 "Konqueror és el vostre gestor de fitxers, navegador web i visor universal de "
 "documents."
 
-#: src/about/konq_aboutpage.cpp:75 src/about/konq_aboutpage.cpp:135
-#: src/about/konq_aboutpage.cpp:187 src/about/konq_aboutpage.cpp:287
+#: src/about/konq_aboutpage.cpp:75 src/about/konq_aboutpage.cpp:134
+#: src/about/konq_aboutpage.cpp:200
 #, kde-format
 msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
@@ -63,76 +63,75 @@ msgctxt ""
 msgid "Starting Points"
 msgstr "Punts d'inici"
 
-#: src/about/konq_aboutpage.cpp:76 src/about/konq_aboutpage.cpp:136
-#: src/about/konq_aboutpage.cpp:188 src/about/konq_aboutpage.cpp:288
+#: src/about/konq_aboutpage.cpp:76 src/about/konq_aboutpage.cpp:135
+#: src/about/konq_aboutpage.cpp:201
 #, kde-format
 msgid "Introduction"
 msgstr "Introducció"
 
-#: src/about/konq_aboutpage.cpp:77 src/about/konq_aboutpage.cpp:137
-#: src/about/konq_aboutpage.cpp:189 src/about/konq_aboutpage.cpp:289
+#: src/about/konq_aboutpage.cpp:77 src/about/konq_aboutpage.cpp:136
+#: src/about/konq_aboutpage.cpp:202
 #, kde-format
 msgid "Tips"
 msgstr "Consells"
 
-#: src/about/konq_aboutpage.cpp:78 src/about/konq_aboutpage.cpp:138
-#: src/about/konq_aboutpage.cpp:190 src/about/konq_aboutpage.cpp:191
-#: src/about/konq_aboutpage.cpp:290
-#, kde-format
-msgid "Specifications"
-msgstr "Especificacions"
-
-#: src/about/konq_aboutpage.cpp:83
+#: src/about/konq_aboutpage.cpp:82
 #, kde-format
 msgid "Home Folder"
 msgstr "Carpeta d'inici"
 
-#: src/about/konq_aboutpage.cpp:84
+#: src/about/konq_aboutpage.cpp:83
 #, kde-format
 msgid "Your personal files"
 msgstr "Els vostres fitxers personals"
 
-#: src/about/konq_aboutpage.cpp:87
+#: src/about/konq_aboutpage.cpp:86
 #, kde-format
 msgid "Trash"
 msgstr "Paperera"
 
-#: src/about/konq_aboutpage.cpp:88
+#: src/about/konq_aboutpage.cpp:87
 #, kde-format
 msgid "Browse and restore the trash"
 msgstr "Explora i restaura la paperera"
 
-#: src/about/konq_aboutpage.cpp:91
+#: src/about/konq_aboutpage.cpp:90
 #, kde-format
 msgid "Network Folders"
 msgstr "Carpetes de xarxa"
 
-#: src/about/konq_aboutpage.cpp:92
+#: src/about/konq_aboutpage.cpp:91
 #, kde-format
 msgid "Shared files and folders"
 msgstr "Fitxers i carpetes compartides"
 
-#: src/about/konq_aboutpage.cpp:95
+#: src/about/konq_aboutpage.cpp:94
 #, kde-format
 msgid "Bookmarks"
 msgstr "Adreces d'interés"
 
-#: src/about/konq_aboutpage.cpp:96
+#: src/about/konq_aboutpage.cpp:95
 #, kde-format
 msgid "Quick access to your bookmarks"
 msgstr "Accés ràpid a les adreces d'interés"
 
-#: src/about/konq_aboutpage.cpp:99
+#: src/about/konq_aboutpage.cpp:98
 #, kde-format
 msgid "Next: An Introduction to Konqueror"
 msgstr "Següent: una introducció a Konqueror"
 
-#: src/about/konq_aboutpage.cpp:101
+#: src/about/konq_aboutpage.cpp:100
 #, kde-format
 msgid "Search the Web"
 msgstr "Busca al web"
 
-#: src/about/konq_aboutpage.cpp:139
+#: src/about/konq_aboutpage.cpp:130 src/about/konq_aboutpage.cpp:132
+#, kde-format
+msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+msgid "Be free."
+msgstr "Sigueu lliure."
+
+#: src/about/konq_aboutpage.cpp:137
 #, kde-format
 msgid ""
 "Konqueror makes working with and managing your files easy. You can browse "
@@ -143,7 +142,7 @@ msgstr ""
 "navegar per les carpetes locals i de xarxa tot fruint de característiques "
 "avançades com ara la potent barra lateral i les vistes prèvies de fitxers."
 
-#: src/about/konq_aboutpage.cpp:143
+#: src/about/konq_aboutpage.cpp:141
 #, kde-format
 msgid ""
 "Konqueror is also a full featured and easy to use web browser which you can "
@@ -157,7 +156,7 @@ msgstr ""
 "la barra d'ubicació i premeu «Retorn». O trieu una de les entrades en el "
 "menú d'adreces d'interés."
 
-#: src/about/konq_aboutpage.cpp:148
+#: src/about/konq_aboutpage.cpp:146
 #, kde-format
 msgid ""
 "To return to the previous location, press the back button <img width='16' "
@@ -166,7 +165,7 @@ msgstr ""
 "Per a tornar a la ubicació prèvia, premeu el botó arrere <img width='16' "
 "height='16' src=\"%1\"></img> en la barra d'eines. "
 
-#: src/about/konq_aboutpage.cpp:151
+#: src/about/konq_aboutpage.cpp:149
 #, kde-format
 msgid ""
 "To quickly go to your Home folder press the home button <img width='16' "
@@ -175,7 +174,7 @@ msgstr ""
 "Per a anar ràpidament fins la carpeta d'inici, premeu el botó d'inici <img "
 "width='16' height='16' src=\"%1\"></img>."
 
-#: src/about/konq_aboutpage.cpp:153
+#: src/about/konq_aboutpage.cpp:151
 #, kde-format
 msgid ""
 "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
@@ -183,223 +182,17 @@ msgstr ""
 "Per a una documentació més detallada quant a Konqueror, cliqueu <a href="
 "\"%1\">ací</a>."
 
-#: src/about/konq_aboutpage.cpp:156
+#: src/about/konq_aboutpage.cpp:154
 #, kde-format
 msgid "Next: Tips & Tricks"
 msgstr "Següent: Consells i trucs"
 
-#: src/about/konq_aboutpage.cpp:192
-#, kde-format
-msgid ""
-"Konqueror is designed to embrace and support Internet standards. The aim is "
-"to fully implement the officially sanctioned standards from organizations "
-"such as the W3 and OASIS, while also adding extra support for other common "
-"usability features that arise as de facto standards across the Internet. "
-"Along with this support, for such functions as favicons, Web Shortcuts, and "
-"<A HREF=\"%1\">XBEL bookmarks</A>, Konqueror also implements:"
-msgstr ""
-"Konqueror està dissenyat per a adoptar i admetre els estàndards d'Internet. "
-"La intenció és implementar totalment els estàndards sancionats oficialment "
-"per organitzacions com ara el W3 i OASIS, i, a la vegada afegir "
-"implementació addicional per a altres característiques d'usabilitat "
-"habituals que són estàndards de facto a Internet. A més d'esta "
-"implementació, per a funcions com ara les icones de web, dreceres web, i <A "
-"HREF=\"%1\">adreces d'interés XBEL</A>, Konqueror també implementa:"
-
-#: src/about/konq_aboutpage.cpp:199
-#, kde-format
-msgid "Web Browsing"
-msgstr "Navegació web"
-
-#: src/about/konq_aboutpage.cpp:200
-#, kde-format
-msgid "Supported standards"
-msgstr "Estàndards acceptats"
-
-#: src/about/konq_aboutpage.cpp:201
-#, kde-format
-msgid "Additional requirements*"
-msgstr "Requisits addicionals*"
-
-#: src/about/konq_aboutpage.cpp:202
-#, kde-format
-msgid ""
-"<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
-"\"%2\">HTML 4.01</A>"
-msgstr ""
-"<A HREF=\"%1\">DOM</A> basat (Nivell 1, parcialment Nivell 2) <A HREF="
-"\"%2\">HTML 4.01</A>"
-
-#: src/about/konq_aboutpage.cpp:204 src/about/konq_aboutpage.cpp:206
-#: src/about/konq_aboutpage.cpp:218 src/about/konq_aboutpage.cpp:223
-#: src/about/konq_aboutpage.cpp:225
-#, kde-format
-msgid "built-in"
-msgstr "integrat"
-
-#: src/about/konq_aboutpage.cpp:205
-#, kde-format
-msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
-msgstr "<A HREF=\"%1\">Fulls d'estil en cascada</A> (CSS 1, parcialment CSS 2)"
-
-#: src/about/konq_aboutpage.cpp:207
-#, kde-format
-msgid "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
-msgstr ""
-"<A HREF=\"%1\">ECMA-262</A> Edició 3 (aproximadament igual que JavaScript "
-"1.5)"
-
-#: src/about/konq_aboutpage.cpp:209
-#, kde-format
-msgid ""
-"JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
-msgstr ""
-"JavaScript desactivat (globalment). Habilita JavaScript <A HREF=\"%1\">ací</"
-"A>."
-
-#: src/about/konq_aboutpage.cpp:210
-#, kde-format
-msgid ""
-"JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\\">here</"
-"A>."
-msgstr ""
-"JavaScript habilitat (globalment). Configura JavaScript <A HREF=\\\"%1\\"
-"\">ací</A>."
-
-#: src/about/konq_aboutpage.cpp:211
-#, kde-format
-msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
-msgstr "Implementació segura de <A HREF=\"%1\">Java</A><SUP>&reg;</SUP>"
-
-#: src/about/konq_aboutpage.cpp:212
-#, kde-format
-msgid ""
-"JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
-"\"%2\">Sun/Oracle</A>)"
-msgstr ""
-"JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> o <A HREF="
-"\"%2\">Sun/Oracle</A>)"
-
-#: src/about/konq_aboutpage.cpp:214
-#, kde-format
-msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
-msgstr "Habilita Java (globalment) <A HREF=\"%1\">ací</A>."
-
-#: src/about/konq_aboutpage.cpp:215
-#, kde-format
-msgid ""
-"NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF=\"%1\">Flash<SUP>&reg;"
-"</SUP></A>, etc.)"
-msgstr ""
-"NPAPI <A HREF=\"%2\">connectors</A> (per a veure <A HREF="
-"\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)"
-
-#: src/about/konq_aboutpage.cpp:219
-#, kde-format
-msgid "Secure Sockets Layer"
-msgstr "Secure Sockets Layer"
-
-#: src/about/konq_aboutpage.cpp:220
-#, kde-format
-msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
-msgstr "(TLS/SSL v2/3) per a comunicacions segures fins a 168 bits"
-
-#: src/about/konq_aboutpage.cpp:221
-#, kde-format
-msgid "OpenSSL"
-msgstr "OpenSSL"
-
-#: src/about/konq_aboutpage.cpp:222
-#, kde-format
-msgid "Bidirectional 16bit unicode support"
-msgstr "Implementació d'Unicode de 16 bits bidireccional"
-
-#: src/about/konq_aboutpage.cpp:224
-#, kde-format
-msgid "AutoCompletion for forms"
-msgstr "Autocompleció per als formularis"
-
-#: src/about/konq_aboutpage.cpp:226
-#, kde-format
-msgctxt "Title of an html 'group box' explaining konqueror features"
-msgid "General"
-msgstr "General"
-
-#: src/about/konq_aboutpage.cpp:227
-#, kde-format
-msgid "Feature"
-msgstr "Característica"
-
-#: src/about/konq_aboutpage.cpp:228
-#, kde-format
-msgid "Details"
-msgstr "Detalls"
-
-#: src/about/konq_aboutpage.cpp:229
-#, kde-format
-msgid "Image formats"
-msgstr "Formats d'imatge"
-
-#: src/about/konq_aboutpage.cpp:230
-#, kde-format
-msgid "PNG<br />JPG<br />GIF"
-msgstr "PNG<br />JPG<br />GIF"
-
-#: src/about/konq_aboutpage.cpp:231
-#, kde-format
-msgid "Transfer protocols"
-msgstr "Protocols de transferència"
-
-#: src/about/konq_aboutpage.cpp:232
-#, kde-format
-msgid "HTTP 1.1 (including gzip/bzip2 compression)"
-msgstr "HTTP 1.1 (incloent-hi compressió gzip/bzip2)"
-
-#: src/about/konq_aboutpage.cpp:233
-#, kde-format
-msgid "FTP"
-msgstr "FTP"
-
-#: src/about/konq_aboutpage.cpp:234
-#, kde-format
-msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
-msgstr "i <A HREF=\"%1\">molts més (vegeu els Kioslaves en KHelpCenter)...</A>"
-
-#: src/about/konq_aboutpage.cpp:235
-#, kde-format
-msgctxt "A feature of Konqueror"
-msgid "URL-Completion"
-msgstr "Compleció d'URL"
-
-#: src/about/konq_aboutpage.cpp:236
-#, kde-format
-msgid "Manual"
-msgstr "Manual"
-
-#: src/about/konq_aboutpage.cpp:237
-#, kde-format
-msgid "Popup"
-msgstr "Emergent"
-
-#: src/about/konq_aboutpage.cpp:238
-#, kde-format
-msgid "(Short-) Automatic"
-msgstr "(Curt-) Automàtic"
-
-#: src/about/konq_aboutpage.cpp:240
-#, kde-format
-msgctxt ""
-"Link that points to the first page of the Konqueror 'about page', Starting "
-"Points contains links to Home, Network Folders, Trash, etc."
-msgid "<a href=\"%1\">Return to Starting Points</a>"
-msgstr "<a href=\"%1\">Torna als punts d'inici</a>"
-
-#: src/about/konq_aboutpage.cpp:291
+#: src/about/konq_aboutpage.cpp:203
 #, kde-format
 msgid "Tips & Tricks"
 msgstr "Consells i trucs"
 
-#: src/about/konq_aboutpage.cpp:292
+#: src/about/konq_aboutpage.cpp:204
 #, kde-format
 msgid ""
 "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, using "
@@ -414,17 +207,7 @@ msgstr ""
 "bufar i fer ampolles. I a més podeu <a href=\"%1\">crear les vostres "
 "pròpies</a> dreceres Web."
 
-#: src/about/konq_aboutpage.cpp:297
-#, kde-format
-msgid ""
-"Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
-"the HTML toolbar to increase the font size on your web page."
-msgstr ""
-"Utilitzeu el botó d'augment <img width='16' height='16' src=\"%1\"></img> en "
-"la barra d'eines de l'HTML per a augmentar la mida de la lletra de la pàgina "
-"web."
-
-#: src/about/konq_aboutpage.cpp:299
+#: src/about/konq_aboutpage.cpp:209
 #, kde-format
 msgid ""
 "When you want to paste a new address into the Location toolbar you might "
@@ -435,7 +218,7 @@ msgstr ""
 "netejar l'entrada actual prement la fletxa negra amb la creu blanca <img "
 "width='16' height='16' src=\"%1\"></img> en la barra d'eines."
 
-#: src/about/konq_aboutpage.cpp:303
+#: src/about/konq_aboutpage.cpp:213
 #, kde-format
 msgid ""
 "To create a link on your desktop pointing to the current page, simply drag "
@@ -446,7 +229,7 @@ msgstr ""
 "arrossegueu la icona (icona de web) que hi ha a l'esquerra de la barra "
 "d'eines d'ubicació, deixeu-la anar a l'escriptori i trieu «Icona»."
 
-#: src/about/konq_aboutpage.cpp:306
+#: src/about/konq_aboutpage.cpp:216
 #, kde-format
 msgid ""
 "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
@@ -457,7 +240,7 @@ msgstr ""
 "pantalla completa» en el menú Configuració. Esta característica és molt útil "
 "a les sessions de «conversa»."
 
-#: src/about/konq_aboutpage.cpp:309
+#: src/about/konq_aboutpage.cpp:219
 #, kde-format
 msgid ""
 "Divide et impera (lat. \"Divide and conquer\") - by splitting a window into "
@@ -468,7 +251,7 @@ msgstr ""
 "parts (p. ex., Finestra -> <img width='16' height='16' src=\"%1\" /> Dividix "
 "la vista esquerra/dreta) podeu donar a Konqueror l'aspecte que vulgueu."
 
-#: src/about/konq_aboutpage.cpp:312
+#: src/about/konq_aboutpage.cpp:222
 #, kde-format
 msgid ""
 "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
@@ -479,7 +262,7 @@ msgstr ""
 "que visiteu vos demana que utilitzeu un navegador diferent (i no oblideu "
 "d'enviar una queixa a l'administrador de la web!)"
 
-#: src/about/konq_aboutpage.cpp:315
+#: src/about/konq_aboutpage.cpp:225
 #, kde-format
 msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
@@ -488,15 +271,7 @@ msgstr ""
 "L'historial <img width='16' height='16' src=\"%1\"></img> en la barra "
 "lateral assegura que podeu recordar quines pàgines heu visitat recentment."
 
-#: src/about/konq_aboutpage.cpp:317
-#, kde-format
-msgid ""
-"Use a caching <a href=\"%1\">proxy</a> to speed up your Internet connection."
-msgstr ""
-"Utilitzeu un <a href=\"%1\">intermediari</a> amb cau per a accelerar la "
-"vostra connexió amb Internet."
-
-#: src/about/konq_aboutpage.cpp:319
+#: src/about/konq_aboutpage.cpp:227
 #, kde-format
 msgid ""
 "Advanced users will appreciate the Konsole which you can embed into "
@@ -507,27 +282,30 @@ msgstr ""
 "(Configuració -> <img width='16' height='16' SRC=\"%1\"></img> Mostra "
 "l'emulador de terminal)."
 
-#: src/about/konq_aboutpage.cpp:323
+#: src/about/konq_aboutpage.cpp:231
 #, kde-format
-msgid "Next: Specifications"
-msgstr "Següent: Especificacions"
+msgctxt ""
+"Link that points to the first page of the Konqueror 'about page', Starting "
+"Points contains links to Home, Network Folders, Trash, etc."
+msgid "<a href=\"%1\">Return to Starting Points</a>"
+msgstr "<a href=\"%1\">Torna als punts d'inici</a>"
 
-#: src/about/konq_aboutpage.cpp:337
+#: src/about/konq_aboutpage.cpp:245
 #, kde-format
 msgid "Installed Plugins"
 msgstr "Endollats instal·lats"
 
-#: src/about/konq_aboutpage.cpp:338
+#: src/about/konq_aboutpage.cpp:246
 #, kde-format
 msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
 msgstr "<td>Connector</td><td>Descripció</td><td>Fitxer</td><td>Tipus</td>"
 
-#: src/about/konq_aboutpage.cpp:339
+#: src/about/konq_aboutpage.cpp:247
 #, kde-format
 msgid "Installed"
 msgstr "Instal·lat"
 
-#: src/about/konq_aboutpage.cpp:340
+#: src/about/konq_aboutpage.cpp:248
 #, kde-format
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr ""
@@ -734,6 +512,74 @@ msgstr "Totes les galetes d'este domini"
 #, kde-format
 msgid "All cookies"
 msgstr "Totes les galetes"
+
+#: src/schemehandlers/errorschemehandler.cpp:96
+#, kde-format
+msgid ""
+"<html><body><h3>Unable to display error message</h3><p>The error template "
+"file <em>error.html</em> could not be found.</p></body></html>"
+msgstr ""
+"<html><body><h3>No s'ha pogut mostrar el missatge d'error</h3><p>No s'ha "
+"pogut trobar el fitxer de plantilla d'error <em>error.html</em>.</p></body></"
+"html>"
+
+#: src/schemehandlers/errorschemehandler.cpp:105
+#, kde-format
+msgid "The requested operation could not be completed"
+msgstr "L'operació sol·licitada no s'ha pogut completar"
+
+#: src/schemehandlers/errorschemehandler.cpp:112
+#, kde-format
+msgid "Technical Reason: %1"
+msgstr "Motiu tècnic: %1"
+
+#: src/schemehandlers/errorschemehandler.cpp:117
+#, kde-format
+msgid "Details of the Request:"
+msgstr "Detalls de la sol·licitud:"
+
+#. i18n, and once for HTML.
+#: src/schemehandlers/errorschemehandler.cpp:120
+#, kde-format
+msgid "URL: %1"
+msgstr "URL: %1"
+
+#. i18n, and once for HTML.
+#: src/schemehandlers/errorschemehandler.cpp:126
+#, kde-format
+msgid "Protocol: %1"
+msgstr "Protocol: %1"
+
+#: src/schemehandlers/errorschemehandler.cpp:130
+#, kde-format
+msgid "Date and Time: %1"
+msgstr "Data i hora: %1"
+
+#. i18n, and once for HTML.
+#: src/schemehandlers/errorschemehandler.cpp:134
+#, kde-format
+msgid "Additional Information: %1"
+msgstr "Informació addicional: %1"
+
+#: src/schemehandlers/errorschemehandler.cpp:136
+#, kde-format
+msgid "Description:"
+msgstr "Descripció:"
+
+#: src/schemehandlers/errorschemehandler.cpp:143
+#, kde-format
+msgid "Possible Causes:"
+msgstr "Causes possibles:"
+
+#: src/schemehandlers/errorschemehandler.cpp:151
+#, kde-format
+msgid "Possible Solutions:"
+msgstr "Solucions possibles:"
+
+#: src/schemehandlers/errorschemehandler.cpp:157
+#, kde-format
+msgid "Error: %1"
+msgstr "S'ha produït un error: %1"
 
 #: src/settings/webenginesettings.cpp:914
 #, kde-format
@@ -1130,61 +976,61 @@ msgstr "Permet"
 msgid "Do Not Allow"
 msgstr "No permetes"
 
-#: src/webenginepart.cpp:212
+#: src/webenginepart.cpp:214
 #, kde-format
 msgid "Save Full HTML Page As..."
 msgstr "Guarda la pàgina HTML completa com a..."
 
-#: src/webenginepart.cpp:216
+#: src/webenginepart.cpp:218
 #, kde-format
 msgid "Print Preview"
 msgstr "Vista prèvia d'impressió"
 
-#: src/webenginepart.cpp:220
+#: src/webenginepart.cpp:222
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Amplia"
 
-#: src/webenginepart.cpp:225
+#: src/webenginepart.cpp:227
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Allunya"
 
-#: src/webenginepart.cpp:230
+#: src/webenginepart.cpp:232
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Mida real"
 
-#: src/webenginepart.cpp:235
+#: src/webenginepart.cpp:237
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Amplia només el text"
 
-#: src/webenginepart.cpp:243
+#: src/webenginepart.cpp:245
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Zoom a DPI"
 
-#: src/webenginepart.cpp:256
+#: src/webenginepart.cpp:258
 #, kde-format
 msgid "Set &Encoding"
 msgstr "Establix la &codificació"
 
-#: src/webenginepart.cpp:259
+#: src/webenginepart.cpp:261
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Visualitza el codi font del do&cument"
 
-#: src/webenginepart.cpp:264 src/webenginepart.cpp:550
+#: src/webenginepart.cpp:266 src/webenginepart.cpp:552
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:270
+#: src/webenginepart.cpp:272
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1194,12 +1040,12 @@ msgstr ""
 "<h3>Busca el text</h3>Mostra un diàleg que us permet buscar text en la "
 "pàgina mostrada."
 
-#: src/webenginepart.cpp:548
+#: src/webenginepart.cpp:550
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "La informació SSL d'este lloc pareix corrupta."
 
-#: src/webenginepart.cpp:629
+#: src/webenginepart.cpp:631
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1207,7 +1053,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "Adreça electrònica: "
 
-#: src/webenginepart.cpp:658
+#: src/webenginepart.cpp:660
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1215,7 +1061,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - CC: "
 
-#: src/webenginepart.cpp:660
+#: src/webenginepart.cpp:662
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1223,7 +1069,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - BCC: "
 
-#: src/webenginepart.cpp:662
+#: src/webenginepart.cpp:664
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1231,85 +1077,85 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Assumpte: "
 
-#: src/webenginepart.cpp:666 src/webenginepart.cpp:677
+#: src/webenginepart.cpp:668 src/webenginepart.cpp:679
 #, kde-format
 msgid " (In new window)"
 msgstr " (En una finestra nova)"
 
-#: src/webenginepart.cpp:675
+#: src/webenginepart.cpp:677
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (Al marc origen)"
 
-#: src/webenginepart.cpp:745
+#: src/webenginepart.cpp:747
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Voleu buscar <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:746
+#: src/webenginepart.cpp:748
 #, kde-format
 msgid "Internet Search"
 msgstr "Busca a Internet"
 
-#: src/webenginepart.cpp:746
+#: src/webenginepart.cpp:748
 #, kde-format
 msgid "&Search"
 msgstr "Bu&sca"
 
-#: src/webenginepart.cpp:857
+#: src/webenginepart.cpp:859
 #, kde-format
 msgid "Close window?"
 msgstr "Tanque la finestra?"
 
-#: src/webenginepart.cpp:857
+#: src/webenginepart.cpp:859
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Es requerix confirmació"
 
-#: src/webenginepart.cpp:931
+#: src/webenginepart.cpp:933
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 "<html>Voleu que %1 recorde la informació de connexió per a <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1002
+#: src/webenginepart.cpp:1004
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr "Emplena ara els &formularis"
 
-#: src/webenginepart.cpp:1007
+#: src/webenginepart.cpp:1009
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr "&Memoritza ara les contrasenyes d'esta pàgina"
 
-#: src/webenginepart.cpp:1011
+#: src/webenginepart.cpp:1013
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr "&Personalitza els camps que s'han de memoritzar d'esta pàgina..."
 
-#: src/webenginepart.cpp:1015
+#: src/webenginepart.cpp:1017
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr "Elimina la configuració memoritzada de personalització d'esta pàgina"
 
-#: src/webenginepart.cpp:1019
+#: src/webenginepart.cpp:1021
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "Permet l'ús de la memòria c&au de contrasenyes per a este lloc"
 
-#: src/webenginepart.cpp:1023
+#: src/webenginepart.cpp:1025
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "Elimina totes les contrasenyes memoritzades d'este lloc"
 
-#: src/webenginepart.cpp:1027
+#: src/webenginepart.cpp:1029
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Inicia el gestor de carteres"
 
-#: src/webenginepart.cpp:1031
+#: src/webenginepart.cpp:1033
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Tanca la cartera"
@@ -1350,17 +1196,17 @@ msgstr "Gestió de &credencials"
 msgid "HTML Toolbar"
 msgstr "Barra d'eines HTML"
 
-#: src/webenginepart_ext.cpp:275
+#: src/webenginepart_ext.cpp:276
 #, kde-format
 msgid "Print Document"
 msgstr "Imprimix el document"
 
-#: src/webenginepart_ext.cpp:500
+#: src/webenginepart_ext.cpp:501
 #, kde-format
 msgid "Add URL to Filter"
 msgstr "Afig l'URL al filtre"
 
-#: src/webenginepart_ext.cpp:501
+#: src/webenginepart_ext.cpp:502
 #, kde-format
 msgid "Enter the URL:"
 msgstr "Introduïu l'URL:"
@@ -1416,7 +1262,7 @@ msgstr "&Assumpte"
 msgid "&Issuer"
 msgstr "&Emissor"
 
-#: src/webenginepartcontrols.cpp:279
+#: src/webenginepartcontrols.cpp:287
 #, kde-format
 msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
@@ -1453,74 +1299,6 @@ msgstr "Destinació"
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
 msgstr "%1 s'ha guardat com a %2"
-
-#: src/webengineparterrorschemehandler.cpp:94
-#, kde-format
-msgid ""
-"<html><body><h3>Unable to display error message</h3><p>The error template "
-"file <em>error.html</em> could not be found.</p></body></html>"
-msgstr ""
-"<html><body><h3>No s'ha pogut mostrar el missatge d'error</h3><p>No s'ha "
-"pogut trobar el fitxer de plantilla d'error <em>error.html</em>.</p></body></"
-"html>"
-
-#: src/webengineparterrorschemehandler.cpp:103
-#, kde-format
-msgid "The requested operation could not be completed"
-msgstr "L'operació sol·licitada no s'ha pogut completar"
-
-#: src/webengineparterrorschemehandler.cpp:110
-#, kde-format
-msgid "Technical Reason: %1"
-msgstr "Motiu tècnic: %1"
-
-#: src/webengineparterrorschemehandler.cpp:115
-#, kde-format
-msgid "Details of the Request:"
-msgstr "Detalls de la sol·licitud:"
-
-#. i18n, and once for HTML.
-#: src/webengineparterrorschemehandler.cpp:118
-#, kde-format
-msgid "URL: %1"
-msgstr "URL: %1"
-
-#. i18n, and once for HTML.
-#: src/webengineparterrorschemehandler.cpp:124
-#, kde-format
-msgid "Protocol: %1"
-msgstr "Protocol: %1"
-
-#: src/webengineparterrorschemehandler.cpp:128
-#, kde-format
-msgid "Date and Time: %1"
-msgstr "Data i hora: %1"
-
-#. i18n, and once for HTML.
-#: src/webengineparterrorschemehandler.cpp:132
-#, kde-format
-msgid "Additional Information: %1"
-msgstr "Informació addicional: %1"
-
-#: src/webengineparterrorschemehandler.cpp:134
-#, kde-format
-msgid "Description:"
-msgstr "Descripció:"
-
-#: src/webengineparterrorschemehandler.cpp:141
-#, kde-format
-msgid "Possible Causes:"
-msgstr "Causes possibles:"
-
-#: src/webengineparterrorschemehandler.cpp:149
-#, kde-format
-msgid "Possible Solutions:"
-msgstr "Solucions possibles:"
-
-#: src/webengineparterrorschemehandler.cpp:155
-#, kde-format
-msgid "Error: %1"
-msgstr "S'ha produït un error: %1"
 
 #: src/webengineview.cpp:362
 #, kde-format
@@ -1757,3 +1535,161 @@ msgstr ""
 "li><li><b>ID del camp: </b>%3</li><li><b>El camp és de només lectura: </b>"
 "%4</li><li><b>El camp està habilitat: </b>%5</li><li><b>La compleció "
 "automàtica està habilitada: </b>%6</li></ul>"
+
+#~ msgid "Specifications"
+#~ msgstr "Especificacions"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror està dissenyat per a adoptar i admetre els estàndards "
+#~ "d'Internet. La intenció és implementar totalment els estàndards "
+#~ "sancionats oficialment per organitzacions com ara el W3 i OASIS, i, a la "
+#~ "vegada afegir implementació addicional per a altres característiques "
+#~ "d'usabilitat habituals que són estàndards de facto a Internet. A més "
+#~ "d'esta implementació, per a funcions com ara les icones de web, dreceres "
+#~ "web, i <A HREF=\"%1\">adreces d'interés XBEL</A>, Konqueror també "
+#~ "implementa:"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Navegació web"
+
+#~ msgid "Supported standards"
+#~ msgstr "Estàndards acceptats"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Requisits addicionals*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> basat (Nivell 1, parcialment Nivell 2) <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "integrat"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">Fulls d'estil en cascada</A> (CSS 1, parcialment CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edició 3 (aproximadament igual que JavaScript "
+#~ "1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript desactivat (globalment). Habilita JavaScript <A HREF="
+#~ "\"%1\">ací</A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript habilitat (globalment). Configura JavaScript <A HREF=\\\"%1\\"
+#~ "\">ací</A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Implementació segura de <A HREF=\"%1\">Java</A><SUP>&reg;</SUP>"
+
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> o <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Habilita Java (globalment) <A HREF=\"%1\">ací</A>."
+
+#~ msgid ""
+#~ "NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF="
+#~ "\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)"
+#~ msgstr ""
+#~ "NPAPI <A HREF=\"%2\">connectors</A> (per a veure <A HREF="
+#~ "\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Secure Sockets Layer"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) per a comunicacions segures fins a 168 bits"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Implementació d'Unicode de 16 bits bidireccional"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Autocompleció per als formularis"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "General"
+
+#~ msgid "Feature"
+#~ msgstr "Característica"
+
+#~ msgid "Details"
+#~ msgstr "Detalls"
+
+#~ msgid "Image formats"
+#~ msgstr "Formats d'imatge"
+
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Protocols de transferència"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (incloent-hi compressió gzip/bzip2)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
+#~ msgstr ""
+#~ "i <A HREF=\"%1\">molts més (vegeu els Kioslaves en KHelpCenter)...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Compleció d'URL"
+
+#~ msgid "Manual"
+#~ msgstr "Manual"
+
+#~ msgid "Popup"
+#~ msgstr "Emergent"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Curt-) Automàtic"
+
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Utilitzeu el botó d'augment <img width='16' height='16' src=\"%1\"></img> "
+#~ "en la barra d'eines de l'HTML per a augmentar la mida de la lletra de la "
+#~ "pàgina web."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Utilitzeu un <a href=\"%1\">intermediari</a> amb cau per a accelerar la "
+#~ "vostra connexió amb Internet."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Següent: Especificacions"
