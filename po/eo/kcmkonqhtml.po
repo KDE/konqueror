@@ -3,14 +3,14 @@
 # Copyright (C) 1999, 2007 Free Software Foundation, Inc.
 # Wolfram Diestel <wolfram@steloj.de>, 1999.
 # Cindy McKee <cfmckee@gmail.com>, 2007.
-#
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 02:26+0000\n"
-"PO-Revision-Date: 2023-03-25 16:19+0100\n"
+"PO-Revision-Date: 2023-11-26 18:41+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -148,6 +148,8 @@ msgid ""
 "When you click on a tab using the middle mouse button or mouse wheel, it "
 "will close that tab."
 msgstr ""
+"Kiam vi klakas sur langeto uzante la mezan musbutonon aŭ musradon, ĝi fermos "
+"tiun langeton."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
 #: advancedTabOptions.ui:94
@@ -191,7 +193,7 @@ msgstr "Aktivigi antaŭan langeton dum fermo de la nuna langeto"
 #, kde-format
 msgctxt "@title:tab"
 msgid "General"
-msgstr "Ĝenerale"
+msgstr "Ĝenerala"
 
 #: appearance.cpp:40
 #, kde-format
@@ -225,6 +227,11 @@ msgid ""
 "image button.<br />Unless you have a very slow network connection, you will "
 "probably want to check this box to enhance your browsing experience.</html>"
 msgstr ""
+"<html>Se ĉi tiu skatolo estas markita, Konqueror aŭtomate ŝargos iujn ajn "
+"bildojn, kiuj estas enigitaj en retpaĝon. Alie, ĝi montros anstataŭaĵojn por "
+"la bildoj, kaj vi tiam povas mane ŝargi la bildojn alklakante la bildbutonon."
+"<br />Krom se vi havas tre malrapidan retkonekton, vi verŝajne volos marki "
+"ĉi tiun skatolon por plibonigi vian foliumadon. sperto.</html>"
 
 #: appearance.cpp:63
 #, kde-format
@@ -239,6 +246,10 @@ msgid ""
 "will probably want to check this box to enhance your browsing experience, "
 "especially if have a slow network connection.</html>"
 msgstr ""
+"<html>Se ĉi tiu skatolo estas markita, Konqueror desegnos kadron kiel "
+"anstataŭigilon ĉirkaŭ bildoj enigita en retpaĝo kiu ankoraŭ ne estas plene "
+"ŝargita.<br />Vi verŝajne volos marki ĉi tiun skatolon por plibonigi vian "
+"foliuman sperton, precipe se havas malrapidan retkonekton.</html>"
 
 #: appearance.cpp:74
 #, kde-format
@@ -265,6 +276,11 @@ msgid ""
 "animations, show the starting image only.</li><li><b>Show only once</b>: "
 "Show all animations completely but do not repeat them.</li></ul></html>"
 msgstr ""
+"<html>Regas kiel Konqueror montras viglajn bildojn:<br /"
+"><ul><li><b>Ebligita</b>: Montri ĉiujn animaciojn tute.</"
+"li><li><b>Malŝaltita</b>: Neniam montru animaciojn, montru nur la komencan "
+"bildon.</li><li><b>Montri nur unufoje</b>: Montru ĉiujn animaciojn tute sed "
+"ne ripetu ilin.</li></ul></html>"
 
 #: appearance.cpp:82
 #, kde-format
@@ -308,11 +324,16 @@ msgid ""
 "is moved over the link</li></ul><br /><i>Note: The site's CSS definitions "
 "can override this value.</i></html>"
 msgstr ""
+"<html>Kontrolas kiel Konqueror traktas substreki hiperligilojn:<br /"
+"><ul><li><b>Ebligita</b>: Ĉiam substreki ligilojn</li><li><b>Malŝaltita</b>: "
+"Neniam substreki ligilojn</li><li><b>Nur ŝvebi</b>: Substreki kiam la muso "
+"estas movita super la ligilo</li></ul><br /><i>Noto: La CSS-difinoj de la "
+"retejo povas anstataŭi ĉi tiun valoron.</i></html>"
 
 #: appearance.cpp:105
 #, kde-format
 msgid "When Efficient"
-msgstr ""
+msgstr "Kiam Rendimente Efika"
 
 #: appearance.cpp:106
 #, kde-format
@@ -329,7 +350,7 @@ msgstr "Neniam"
 #: appearance.cpp:108
 #, kde-format
 msgid "S&mooth scrolling:"
-msgstr ""
+msgstr "Glata rulu&mado:"
 
 #: appearance.cpp:110
 #, kde-format
@@ -341,6 +362,12 @@ msgid ""
 "scrolling on pages where it can be achieved with moderate usage of system "
 "resources.</li></ul></html>"
 msgstr ""
+"<html>Determinas ĉu Konqueror devas uzi glatajn paŝojn por rulumi HTML-"
+"paĝojn, aŭ tutajn paŝojn:<br /><ul><li><b>Ĉiam</b>: Ĉiam uzu glatajn paŝojn "
+"dum rulumado.</li><li><b>Neniam</b>: Neniam uzu glatan movadon, movu per "
+"tutaj paŝoj anstataŭe.</li><li><b>Kiam Efika</b>: Uzu nur glatan movadon en "
+"paĝoj kie ĝi povas esti atingita. kun modera uzado de sistemaj rimedoj.</"
+"li></ul></html>"
 
 #: appearance.cpp:119
 #, kde-format
@@ -374,6 +401,8 @@ msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
 "any other settings."
 msgstr ""
+"Konqueror neniam montros tekston pli malgrandan ol ĉi tiu grandeco,<br /"
+">anstataŭante iujn ajn aliajn agordojn."
 
 #: appearance.cpp:147
 #, kde-format
@@ -474,7 +503,7 @@ msgstr ""
 #: cache/cache.ui:17
 #, kde-format
 msgid "&Enable cache"
-msgstr ""
+msgstr "&Ebligi kaŝmemoron"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:29
@@ -484,18 +513,21 @@ msgid ""
 "p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Ne konservi la kaŝmemoron en disko sed nur en memoron."
+"</p><p>Enŝalti ĉi tion signifas, ke la kaŝmemoro estos forigita elirante de "
+"Konqueror</p> </body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:32
 #, kde-format
 msgid "Keep cache in &memory"
-msgstr ""
+msgstr "Konservi kaŝmemoron en &memoro"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: cache/cache.ui:41
 #, kde-format
 msgid "&Cache size"
-msgstr ""
+msgstr "&Kaŝmemora grandeco"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:51
@@ -504,42 +536,45 @@ msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
+"La maksimuma spaco sur disko aŭ memoro kiun la kaŝmemoro povas uzi. Kiam ĉi "
+"tiu sojlo estas atingita, malnovaj paĝoj estos forigitaj por fari spacon por "
+"novaj"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:54
 #, kde-format
 msgid "Auto"
-msgstr ""
+msgstr "Aŭtomate"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:57
 #, kde-format
 msgid " MB"
-msgstr ""
+msgstr "MB"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr ""
+msgstr "Uzi propran dosierujon por konservi la kaŝmemoron"
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:88
 #, kde-format
 msgid "&Custom cache directory"
-msgstr ""
+msgstr "&Propra kaŝmemor-dosierujo"
 
 #. i18n: ectx: property (text), widget (QLabel, customCachePathLabel)
 #: cache/cache.ui:100
 #, kde-format
 msgid "Cache &Directory"
-msgstr ""
+msgstr "Kaŝmemora &Dosierujo"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
 #: cache/cache.ui:113
 #, kde-format
 msgid "The custom directory to store cache"
-msgstr ""
+msgstr "La propra dosierujo por konservi kaŝmemoron"
 
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
@@ -566,7 +601,7 @@ msgstr ""
 #: css/cssconfig.ui:20
 #, kde-format
 msgid "Stylesheets"
-msgstr "Stilfolioj"
+msgstr "Stildifinoj"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
 #: css/cssconfig.ui:26
@@ -973,6 +1008,25 @@ msgid ""
 "</body>\n"
 "</html>\n"
 msgstr ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Titolo 1</h1>\n"
+"<h2>Titolo 2</h2>\n"
+"<h3>Titolo 3</h3>\n"
+"\n"
+"<p>Uzant-difinitaj stilfolioj permesas pliigi\n"
+"alireblecon por vidhandikapitoj\n"
+"personoj.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
 
 #: domainlistview.cpp:37
 #, kde-format
@@ -1073,7 +1127,7 @@ msgstr "Kaŝi filtritajn bildojn"
 #: filteropts.cpp:58
 #, kde-format
 msgid "Manual Filter"
-msgstr ""
+msgstr "Mana Filtrilo"
 
 #: filteropts.cpp:76
 #, kde-format
@@ -1086,16 +1140,18 @@ msgid ""
 "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
 "\"filterhelp\">more information</a>):"
 msgstr ""
+"<qt>Filtrila esprimo (ekz. <tt>http://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">pliaj informoj</a>):"
 
 #: filteropts.cpp:100
 #, kde-format
 msgid "Automatic Filter"
-msgstr ""
+msgstr "Aŭtomata Filtrilo"
 
 #: filteropts.cpp:109
 #, kde-format
 msgid "Automatic update interval:"
-msgstr ""
+msgstr "Aŭtomata ĝisdatiga intervalo:"
 
 #: filteropts.cpp:114
 #, kde-format
@@ -1135,6 +1191,8 @@ msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
 "\"exporthelp\">export format</a>"
 msgstr ""
+"<qt>Pliaj informoj pri <a href=\"importhelp\">importformato</a>, <a href="
+"\"exporthelp\">exportformato</a>"
 
 #: filteropts.cpp:154
 #, kde-format
@@ -1160,6 +1218,8 @@ msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
 "and media objects."
 msgstr ""
+"Jen la listo de URL-filtriloj, kiuj estos aplikitaj al ĉiuj enigitaj bildoj "
+"kaj amaskomunikilaj objektoj."
 
 #: filteropts.cpp:167
 #, kde-format
@@ -1172,6 +1232,13 @@ msgid ""
 "(allow) any matching URL, which takes priority over any blacklist (blocking) "
 "filter."
 msgstr ""
+"<qt><p>Enigu esprimon por filtri. Filtriloj povas esti difinitaj kiel aŭ:"
+"<tl><li>ŝelstila ĵokero, ekz. <tt>http://www.example.com/ads*</tt>, la "
+"ĵokeroj <tt>*?[]</tt> povas esti uzataj</li><li>plenan regula esprimo "
+"ĉirkaŭante la ĉeno kun '<tt>/</tt>', ekz. <tt>/\\/(ad|standardo)\\./</tt></"
+"li></ul><p>Ajna filtrila ĉeno povas esti antaŭita de '<tt>@@</tt>' al Blanka "
+"listo (permesi) ajna kongrua URL, kiu havas prioritaton super ajna nigra "
+"listo (blokado) filtrilo."
 
 #: filteropts.cpp:183
 #, kde-format
@@ -1180,6 +1247,10 @@ msgid ""
 "lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
 "ignored. Any other line is added as a filter expression."
 msgstr ""
+"<qt><p>La filtrila importformato estas simpla teksta dosiero. Blankaj "
+"linioj, komentlinioj komencantaj per '<tt>!</tt>' kaj la kaplinio "
+"<tt>[AdBlock]</tt> estas ignorataj. Ajna alia linio estas aldonita kiel "
+"filtrila esprimo."
 
 #: filteropts.cpp:188
 #, kde-format
@@ -1188,16 +1259,19 @@ msgid ""
 "header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
 "separate line."
 msgstr ""
+"<qt><p>La filtrila eksportformato estas simpla teksta dosiero. La dosiero "
+"komenciĝas per kaplinio <tt>[AdBlock]</tt>, tiam ĉiuj filtriloj sekvas ĉiun "
+"sur aparta linio."
 
 #: filteropts.cpp:256
 #, kde-format
 msgid "Import Filters"
-msgstr ""
+msgstr "Importi Filtrilojn"
 
 #: filteropts.cpp:301
 #, kde-format
 msgid "Export Filters"
-msgstr ""
+msgstr "Eksporti Filtrilojn"
 
 #: filteropts.cpp:436
 #, kde-format
@@ -1228,30 +1302,34 @@ msgid "Tabbed Browsing"
 msgstr "Foliumado kun langetoj"
 
 #: generalopts.cpp:79
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "The user chose to use a custom start page but left the corresponding "
+#| "field ¦empty"
+#| msgid "Please, insert the custom start page"
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
 "empty"
 msgid "Please, insert the custom start page"
-msgstr ""
+msgstr "Bonvolu enmeti la propran komencan paĝon"
 
 #: generalopts.cpp:85
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
-msgstr ""
+msgstr "Kiam nova &Lapeto estas kreita"
 
 #: generalopts.cpp:94
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
-msgstr ""
+msgstr "Montri Enkondukan Paĝon"
 
 #: generalopts.cpp:95
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
-msgstr ""
+msgstr "Montri Mian Komencan Paĝon"
 
 #: generalopts.cpp:96
 #, kde-format
@@ -1263,18 +1341,19 @@ msgstr "Montri Blankan Paĝon"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
-msgstr ""
+msgstr "Montri Miajn Legosignojn"
 
 #: generalopts.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
-msgstr ""
+msgstr "Elekti Komencan Paĝon"
 
 #: generalopts.cpp:108
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr ""
+"Ĉi tiu estas la URL de la retpaĝo, kiun Konqueror montros dum la komenco."
 
 #: generalopts.cpp:119
 #, kde-format
@@ -1293,31 +1372,33 @@ msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
 "\" button is pressed."
 msgstr ""
+"Ĉi tiu estas la URL de la retpaĝo al kiu Konqueror saltos kiam la butono "
+"\"Hejmo\" estas premata."
 
 #: generalopts.cpp:135
 #, kde-format
 msgid "Default web browser engine:"
-msgstr ""
+msgstr "Defaŭlta retumila motoro:"
 
 #: generalopts.cpp:144
 #, kde-format
 msgid "When splitting a view"
-msgstr ""
+msgstr "Dum disigo de vido"
 
 #: generalopts.cpp:148
 #, kde-format
 msgid "Always duplicate current view"
-msgstr ""
+msgstr "Ĉiam dupliki nunan vidon"
 
 #: generalopts.cpp:149
 #, kde-format
 msgid "Duplicate current view only for local files"
-msgstr ""
+msgstr "Duobligi aktualan vidon nur por lokaj dosieroj"
 
 #: generalopts.cpp:155
 #, kde-format
 msgid "When starting up, restore state from last time"
-msgstr ""
+msgstr "Ekfunkciigante, restarigi staton de la lasta fojo"
 
 #: htmlopts.cpp:36
 #, kde-format
@@ -1462,7 +1543,7 @@ msgstr ""
 #: htmlopts.cpp:120
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
-msgstr ""
+msgstr "Ebligi Aktivigon de Alirklavo&j per Ctrl-klavo"
 
 #: htmlopts.cpp:121
 #, kde-format
@@ -1471,11 +1552,14 @@ msgid ""
 "Unchecking this box will disable this accessibility feature. (Konqueror "
 "needs to be restarted for this change to take effect.)"
 msgstr ""
+"Premante la Ctrl-klavon dum rigardado de retpaĝoj aktivigas Alirklavojn. "
+"Malmarki ĉi tiun skatolon malŝaltos ĉi tiun alireblecon. (Konqueror devas "
+"esti rekomencita por ke ĉi tiu ŝanĝo efektiviĝu.)"
 
 #: htmlopts.cpp:125
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
-msgstr ""
+msgstr "Sendi la DNT-kapon por diri al retejoj, ke vi ne volas esti spuritaj"
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -1483,27 +1567,33 @@ msgid ""
 "Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked."
 msgstr ""
+"Marku ĉi tiun skatolon se vi volas informi retejon, ke vi ne volas, ke viaj "
+"retludaj kutimoj estas spuritaj."
 
 #: htmlopts.cpp:130
 #, kde-format
 msgid "Offer to save website passwords"
-msgstr ""
+msgstr "Proponi konservi retejajn pasvortojn"
 
 #: htmlopts.cpp:131
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr ""
+"Malmarku ĉi tiun skatolon por eviti ke oni petos konservi pasvortojn de la "
+"retejo"
 
 #: htmlopts.cpp:135
 #, kde-format
 msgid "Display online PDF files using WebEngine"
-msgstr ""
+msgstr "Montri interretajn PDF-dosierojn per WebEngine"
 
 #: htmlopts.cpp:136
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
 msgstr ""
+"Malmarki ĉi tiun skatolon por montri interretajn PDF-dosierojn kiel agorde "
+"en Sistemaj Agordoj"
 
 #: javaopts.cpp:78
 #, kde-format
@@ -1534,8 +1624,8 @@ msgstr "Ĉe&sigi aplikaĵetan servilon se neaktiva pli longe ol"
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " sekundo"
+msgstr[1] " sekundoj"
 
 #: javaopts.cpp:123
 #, kde-format
@@ -2161,13 +2251,13 @@ msgstr "Vi devas unue entajpi nomon de retregiono."
 #: useragent/useragent.ui:14
 #, kde-format
 msgid "Form"
-msgstr ""
+msgstr "Formo"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:23
 #, kde-format
 msgid "Existing identifications"
-msgstr ""
+msgstr "Ekzistantaj identigoj"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
@@ -2177,37 +2267,35 @@ msgstr ""
 #: useragent/useragent.ui:150 useragent/useragent.ui:163
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: useragent/useragent.ui:66
 #, kde-format
 msgid "Content"
-msgstr ""
+msgstr "Enhavo"
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
 #: useragent/useragent.ui:97
-#, fuzzy, kde-format
-#| msgid "&Export..."
+#, kde-format
 msgid "&Edit..."
-msgstr "&Eksporti..."
+msgstr "R&edakti..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:110
 #, kde-format
 msgid "&Rename..."
-msgstr ""
+msgstr "&Renomi..."
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
 #: useragent/useragent.ui:123
 #, kde-format
 msgid "Du&plicate..."
-msgstr ""
+msgstr "Duo&bligi..."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:136
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "&Delete"
 msgstr "&Forigi"
 
@@ -2215,19 +2303,19 @@ msgstr "&Forigi"
 #: useragent/useragent.ui:153
 #, kde-format
 msgid "Choose &selected identification"
-msgstr ""
+msgstr "Elekti &selektitan identigilon"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
 msgid "Use &default identification"
-msgstr ""
+msgstr "Uzi &defaŭltan identigilon"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:181
 #, kde-format
 msgid "&Custom identification"
-msgstr ""
+msgstr "&Propra identigilo"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
 #: useragent/useragent.ui:191
@@ -2238,7 +2326,6 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
-
-#~ msgctxt "@label:listbox"
-#~ msgid "When &Konqueror starts:"
-#~ msgstr "Kiam Konkeranto startas:"
+"<html><head/><body><p>La retumila identigo uzenda kiam la defaŭlta identigo "
+"estas malŝaltita.</p><p>Vi povas enigi ĝin permane aŭ komenci de unu en la "
+"suba listo kaj ŝanĝi ĝin laŭ viaj bezonoj.</p></body></html>"

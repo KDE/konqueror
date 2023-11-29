@@ -8,31 +8,32 @@
 # Stéphane Fillod <f8cfe@free.fr>, 2007.
 # Pierre-Marie Pédrot <pedrotpmx@wanadoo.fr>, 2007.
 # Cindy McKee <cfmckee@gmail.com>, 2007.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 02:26+0000\n"
-"PO-Revision-Date: 2023-04-18 06:31+0100\n"
+"PO-Revision-Date: 2023-11-26 19:44+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Pierre-Marie Pédrot,Cindy McKee"
+msgstr "Pierre-Marie Pédrot,Cindy McKee,Oliver Kellogg"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "pedrotpmx@wanadoo.fr,cfmckee@gmail.com"
+msgstr "pedrotpmx@wanadoo.fr,cfmckee@gmail.com,okellogg@users.sf.net"
 
 #: src/konqapplication.cpp:103
 #, kde-format
@@ -40,6 +41,8 @@ msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
+"<p>Vi rulas Konqueror kiel radiko. Ĉi tio postulas ebligi tre nesekuran "
+"reĝimon en la retumila komponanto.</p><p>Kion vi volas fari?</p>"
 
 #: src/konqapplication.cpp:144
 #, kde-format
@@ -59,12 +62,12 @@ msgstr ""
 #: src/konqapplication.cpp:150
 #, kde-format
 msgid "Stefano Crocco"
-msgstr ""
+msgstr "Stefano Crocco"
 
 #: src/konqapplication.cpp:150
 #, kde-format
 msgid "Current maintainer"
-msgstr ""
+msgstr "Nuna prizorganto"
 
 #: src/konqapplication.cpp:151
 #, kde-format
@@ -76,6 +79,7 @@ msgstr "David Faure"
 msgid ""
 "Developer (framework, parts, JavaScript, I/O library) and former maintainer"
 msgstr ""
+"Ellaboranto (kadro, partoj, JavaScript, I/O-biblioteko) kaj iama prizorganto"
 
 #: src/konqapplication.cpp:152
 #, kde-format
@@ -380,38 +384,40 @@ msgstr "Eduardo Robles Elvira"
 #: src/konqapplication.cpp:197
 #, kde-format
 msgid "Start without a default window, when called without URLs"
-msgstr ""
+msgstr "Komenci sen defaŭlta fenestro, kiam vokita sen URL-oj"
 
 #: src/konqapplication.cpp:198
 #, kde-format
 msgid ""
 "Preload for later use. This mode does not support URLs on the command line"
 msgstr ""
+"Antaŭŝargi por posta uzo. Ĉi tiu reĝimo ne subtenas URL-ojn sur la "
+"komandlinio"
 
 #: src/konqapplication.cpp:199
 #, kde-format
 msgid "Profile to open (DEPRECATED, IGNORED)"
-msgstr ""
+msgstr "Profilo malfermota (Malrekomendita, IGNORITA)"
 
 #: src/konqapplication.cpp:199
 #, kde-format
 msgid "profile"
-msgstr ""
+msgstr "Profilo"
 
 #: src/konqapplication.cpp:200
 #, kde-format
 msgid "List available sessions"
-msgstr ""
+msgstr "Listigi disponeblajn seancojn"
 
 #: src/konqapplication.cpp:201
 #, kde-format
 msgid "Session to open"
-msgstr ""
+msgstr "Seanco malfermenda"
 
 #: src/konqapplication.cpp:201
 #, kde-format
 msgid "session"
-msgstr ""
+msgstr "seanco"
 
 #: src/konqapplication.cpp:202
 #, kde-format
@@ -421,17 +427,17 @@ msgstr "MIME-tipo uzota por tiu URLo, (ekz. text/html aŭ inode/directory)"
 #: src/konqapplication.cpp:202
 #, kde-format
 msgid "mimetype"
-msgstr ""
+msgstr "mimetipo"
 
 #: src/konqapplication.cpp:203
 #, kde-format
 msgid "Part to use (e.g. khtml or kwebkitpart)"
-msgstr ""
+msgstr "Parto por uzi (ekz. khtml aŭ kwebkitpart)"
 
 #: src/konqapplication.cpp:203
 #, kde-format
 msgid "service"
-msgstr ""
+msgstr "servo"
 
 #: src/konqapplication.cpp:204
 #, kde-format
@@ -445,7 +451,7 @@ msgstr ""
 #: src/konqapplication.cpp:205
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
-msgstr ""
+msgstr "La dosieroj/URL malfermitaj de la aplikaĵo estos forigitaj post uzo"
 
 #: src/konqapplication.cpp:207
 #, kde-format
@@ -453,6 +459,8 @@ msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
 "only when developing Konqueror itself"
 msgstr ""
+"Krei novan Konqueror-procezon, eĉ se tia jam ekzistas. Intencita por esti "
+"uzata nur dum evoluado de Konqueror mem"
 
 #: src/konqapplication.cpp:209
 #, kde-format
@@ -463,7 +471,7 @@ msgstr "Dezirata loko"
 #, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr ""
+msgstr "Seanco %1 ne povis esti malfermita"
 
 #: src/konqapplication.cpp:439
 #, kde-format
@@ -471,6 +479,8 @@ msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr ""
+"Vi ne povas pasi URL-ojn kiam vi uzas la --preload-ŝaltilon. La URL-oj estos "
+"ignoritaj\n"
 
 #: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4894
 #: src/konqmainwindow.cpp:4940
@@ -584,7 +594,7 @@ msgstr "Malfermi en Nova Langeto"
 #: src/konqhistoryview.cpp:63
 #, kde-format
 msgid "Open in Current Tab"
-msgstr ""
+msgstr "Malfermi en Aktuala Langeto"
 
 #: src/konqhistoryview.cpp:67
 #, kde-format
@@ -619,7 +629,7 @@ msgstr "Laŭ &dato"
 #: src/konqhistoryview.cpp:107
 #, kde-format
 msgid "Search in history"
-msgstr ""
+msgstr "Serĉi en la historio"
 
 #: src/konqhistoryview.cpp:168
 #, kde-format
@@ -641,7 +651,7 @@ msgstr "Ŝargas..."
 #: src/konqmainwindow.cpp:687
 #, kde-format
 msgid "Access denied"
-msgstr ""
+msgstr "Aliro malakceptita"
 
 #: src/konqmainwindow.cpp:1455
 #, kde-format
@@ -687,28 +697,28 @@ msgstr "Hejma dosierujo"
 #: src/konqmainwindow.cpp:1945 src/konqmainwindow.cpp:3433
 #, kde-format
 msgid "Home"
-msgstr ""
+msgstr "Hejmo"
 
 #: src/konqmainwindow.cpp:1951
 #, kde-format
 msgid "Navigate to your 'Home Folder'"
-msgstr ""
+msgstr "Iri al via 'Hejma Dosierujo'"
 
 #: src/konqmainwindow.cpp:1952
 #, kde-format
 msgid "Navigate to your local 'Home Folder'"
-msgstr ""
+msgstr "Iri al via loka \"Hejma Dosierujo\""
 
 #. i18n: ectx: label, entry, group (UserSettings)
 #: src/konqmainwindow.cpp:1955 src/konqueror.kcfg:16
 #, kde-format
 msgid "Home Page"
-msgstr ""
+msgstr "Hejmpaĝo"
 
 #: src/konqmainwindow.cpp:1957
 #, kde-format
 msgid "Navigate to your 'Home Page'"
-msgstr ""
+msgstr "Iri al via 'Hejmpaĝo'"
 
 #: src/konqmainwindow.cpp:1958
 #, kde-format
@@ -717,6 +727,9 @@ msgid ""
 "where this button takes you under <b>Settings -> Configure Konqueror -> "
 "General</b>.</html>"
 msgstr ""
+"<html>Navigi al via 'Hejmpaĝo'<br /><br />Vi povas agordi la lokon kie ĉi "
+"tiu butono kondukas vin sub <b>Agordoj -> Agordi Konqueror -> Ĝenerala</b>.</"
+"html>"
 
 #: src/konqmainwindow.cpp:2273
 #, kde-format
@@ -804,7 +817,7 @@ msgstr "Movi elektitajn dosierojn de %1 al:"
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
-msgstr ""
+msgstr "Malplena Fermita Eroj Historio"
 
 #: src/konqmainwindow.cpp:2747
 #, kde-format
@@ -814,7 +827,7 @@ msgstr "Konservi kiel..."
 #: src/konqmainwindow.cpp:2749
 #, kde-format
 msgid "Manage..."
-msgstr ""
+msgstr "Administri..."
 
 #: src/konqmainwindow.cpp:3342
 #, kde-format
@@ -870,12 +883,12 @@ msgstr "&Supren"
 #: src/konqmainwindow.cpp:3398
 #, kde-format
 msgid "Closed Items"
-msgstr ""
+msgstr "Fermitaj Eroj"
 
 #: src/konqmainwindow.cpp:3411
 #, kde-format
 msgid "Sessions"
-msgstr ""
+msgstr "Seancoj"
 
 #: src/konqmainwindow.cpp:3438
 #, kde-format
@@ -887,13 +900,13 @@ msgstr "Plej ofte vizititaj"
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
-msgstr ""
+msgstr "Lastatempe Vizitita"
 
 #: src/konqmainwindow.cpp:3451
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
-msgstr ""
+msgstr "Montri Historion"
 
 #: src/konqmainwindow.cpp:3464
 #, kde-format
@@ -903,7 +916,7 @@ msgstr "Agordi aldonajn programetojn..."
 #: src/konqmainwindow.cpp:3468
 #, kde-format
 msgid "Configure Spell Checking..."
-msgstr ""
+msgstr "Agordi Literumkontrolon..."
 
 #: src/konqmainwindow.cpp:3474
 #, kde-format
@@ -983,7 +996,7 @@ msgstr "&Reŝargi ĉiujn langetojn"
 #: src/konqmainwindow.cpp:3578
 #, kde-format
 msgid "&Force Reload"
-msgstr ""
+msgstr "&Devigi Reŝargon"
 
 #: src/konqmainwindow.cpp:3604
 #, kde-format
@@ -993,7 +1006,7 @@ msgstr "&Halti"
 #: src/konqmainwindow.cpp:3613
 #, kde-format
 msgid "Throbber"
-msgstr ""
+msgstr "Pulpisto"
 
 #: src/konqmainwindow.cpp:3617 src/konqmainwindow.cpp:3620
 #, kde-format
@@ -1022,6 +1035,7 @@ msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
 "</html>"
 msgstr ""
+"<html>Malplenigi lokbreton<br /><br />Forviŝas la enhavon de lokbreto.</html>"
 
 #: src/konqmainwindow.cpp:3646
 #, kde-format
@@ -1054,6 +1068,8 @@ msgid ""
 "location is file:/home/%1 clicking this button will take you to file:/home.</"
 "html>"
 msgstr ""
+"<html>Enigu la gepatran dosierujon<br /><br />Ekzemple, se la nuna loko "
+"estas file:/home/%1, klaki ĉi tiun butonon kondukos vin al file:/home.</html>"
 
 #: src/konqmainwindow.cpp:3692
 #, kde-format
@@ -1082,6 +1098,9 @@ msgid ""
 "example, be needed to refresh web pages that have been modified since they "
 "were loaded, in order to make the changes visible.</html>"
 msgstr ""
+"<html>Reŝargi la nuntempe montritan dokumenton<br /><br />Tio povas, "
+"ekzemple, esti bezonata por refreŝigi retpaĝojn kiuj estis modifitaj post "
+"kiam ili estis ŝargitaj, por videbligi la ŝanĝojn.</html>"
 
 #: src/konqmainwindow.cpp:3706
 #, kde-format
@@ -1095,6 +1114,9 @@ msgid ""
 "for example, be needed to refresh web pages that have been modified since "
 "they were loaded, in order to make the changes visible.</html>"
 msgstr ""
+"<html>Reŝargi ĉiujn nuntempe montratajn dokumentojn en langetoj<br /><br /"
+">Tio povas, ekzemple, bezoni por refreŝigi retpaĝojn kiuj estis modifitaj "
+"post kiam ili estis ŝargitaj, por videbligi la ŝanĝojn.</html>"
 
 #: src/konqmainwindow.cpp:3711
 #, kde-format
@@ -1119,12 +1141,17 @@ msgid ""
 "were loaded, in order to make the changes visible. Any images on the page "
 "are downloaded again, even if cached copies exist.</html>"
 msgstr ""
+"<html>Reŝargi la nuntempe montratan dokumenton<br /><br />Tio povas, "
+"ekzemple, esti bezonata por refreŝigi retpaĝojn kiuj estis modifitaj post "
+"kiam ili estis ŝargitaj, por videbligi la ŝanĝojn. Ĉiuj bildoj sur la paĝo "
+"estas elŝutitaj denove, eĉ se kaŝmemoritaj kopioj ekzistas.</html>"
 
 #: src/konqmainwindow.cpp:3721
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr ""
+"Devigi reŝargon de la aktuale montrita dokumento kaj iuj ajn enhavitaj bildoj"
 
 #: src/konqmainwindow.cpp:3723
 #, kde-format
@@ -1218,7 +1245,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:3755
 #, kde-format
 msgid "&Inspect Current Page"
-msgstr ""
+msgstr "&Inspekti Nunan Paĝon"
 
 #: src/konqmainwindow.cpp:3756
 #, kde-format
@@ -1226,11 +1253,13 @@ msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
+"<html>Montras la programilojn por la nuna paĝo<br/><br/>La nuna vido estas "
+"dividita en du kaj la programiloj estas montrataj en la dua duono"
 
 #: src/konqmainwindow.cpp:3757
 #, kde-format
 msgid "Shows the developer tools for the current page"
-msgstr ""
+msgstr "Montras la programilojn por la nuna paĝo"
 
 #: src/konqmainwindow.cpp:3923
 #, kde-format
@@ -1248,18 +1277,20 @@ msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
 "while. Continue?"
 msgstr ""
+"Vi petis malfermi pli ol 20 legosignojn en langetoj. Ĉi tio eble daŭros iom "
+"da tempo. Ĉu daŭrigi?"
 
 #: src/konqmainwindow.cpp:4258
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
-msgstr ""
+msgstr "Malfermi legosignojn en novaj langetoj"
 
 #: src/konqmainwindow.cpp:4259
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr ""
+msgstr "Malfermi"
 
 #: src/konqmainwindow.cpp:4418
 #, kde-format
@@ -1388,21 +1419,29 @@ msgid ""
 "proxy URL manually in the settings dialog. Do you want to change proxy "
 "settings now?"
 msgstr ""
+"Via prokura agordo ne povas esti uzata kun la HTML-motoro de QtWebEngine. "
+"Neniu prokurilo estos uzata\n"
+"\n"
+" QtWebEngine nur subtenas fiksan prokurilon, do prokurilo aŭtomata agordo "
+"(PAC) kaj protokolo de Aŭtomata Malkovro de Web Proxy ne povas esti uzataj "
+"kun QtWebEngine. Se vi bezonas prokurilon, bonvolu elekti la sisteman "
+"prokurilon agordon aŭ specifi prokurilon permane en la agorda dialogo. Ĉu vi "
+"volas ŝanĝi prokurajn agordojn nun?"
 
 #: src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Unsupported proxy configuration"
-msgstr ""
+msgstr "Nesubtenata prokura agordo"
 
 #: src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Don't use a proxy"
-msgstr ""
+msgstr "Ne uzi prokurilon"
 
 #: src/konqmainwindow.cpp:5461 src/konqmainwindow.cpp:5479
 #, kde-format
 msgid "Show proxy configuration dialog"
-msgstr ""
+msgstr "Montri dialogon pri agordo de prokurilo"
 
 #: src/konqmainwindow.cpp:5475
 #, kde-format
@@ -1412,21 +1451,25 @@ msgid ""
 "protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
+"Via prokura agordo ne povas esti uzata kun la HTML-motoro de QtWebEngine ĉar "
+"ĝi ne subtenas havi malsamajn prokurojn por la protokoloj HTTP kaj HTTPS. "
+"Viaj nunaj agordoj estas:<p><b>HTTP-prokurilo:</b> <tt>%1</tt></p><p><b>HTTP-"
+"prokurilo: </b><tt>%2</tt></p>Kion vi volas fari?"
 
 #: src/konqmainwindow.cpp:5478
 #, kde-format
 msgid "Conflicting proxy configuration"
-msgstr ""
+msgstr "Konflikta prokura agordo"
 
 #: src/konqmainwindow.cpp:5479
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
-msgstr ""
+msgstr "Uzi HTTP-prokurilon (nur ĉi-foje)"
 
 #: src/konqmainwindow.cpp:5479
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
-msgstr ""
+msgstr "Uzi HTTPS-prokurilon (nur ĉi-foje)"
 
 #: src/konqmainwindow.cpp:5556
 #, kde-format
@@ -1435,30 +1478,33 @@ msgid ""
 "hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
 "Mode (%1)"
 msgstr ""
+"Vi eniris Plenan Plenan Ekranan reĝimon (la uzantinterfaco estas tute "
+"kaŝita). Vi povas eliri ĝin premante la klavkombinon por Plenekrana Reĝimo "
+"(%1)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
 #, kde-format
 msgid "Save open &tabs and windows for easy retrieval"
-msgstr ""
+msgstr "Konservi malfermi&tajn langetojn kaj fenestrojn por facila retrovo"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_pAllWindows)
 #: src/konqnewsessiondlg_base.ui:34
 #, kde-format
 msgid "A&ll open windows"
-msgstr ""
+msgstr "Ĉiujn ma&lfermitajn fenestrojn"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_pCurrentWindow)
 #: src/konqnewsessiondlg_base.ui:44
 #, kde-format
 msgid "Onl&y current window"
-msgstr ""
+msgstr "Nur akt&ualan fenestron"
 
 #. i18n: ectx: property (text), widget (QLabel, lblSessionName)
 #: src/konqnewsessiondlg_base.ui:56
 #, kde-format
 msgid "Session n&ame:"
-msgstr ""
+msgstr "Nomo de la se&anco:"
 
 #: src/konqsessiondlg.cpp:60
 #, kde-format
@@ -1470,7 +1516,7 @@ msgstr "Mastrumi Seancojn"
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Session"
-msgstr ""
+msgstr "Alinomi Seancon"
 
 #: src/konqsessiondlg.cpp:215
 #, kde-format
@@ -1482,20 +1528,20 @@ msgstr "Konservi seancon"
 #, kde-format
 msgid ""
 "A session with the name '%1' already exists, do you want to overwrite it?"
-msgstr ""
+msgstr "Seanco kun la nomo '%1' jam ekzistas, ĉu vi volas anstataŭigi ĝin?"
 
 #: src/konqsessiondlg.cpp:252
 #, kde-format
 msgctxt "@title:window"
 msgid "Session exists. Overwrite?"
-msgstr ""
+msgstr "Seanco ekzistas. Ĉu anstataŭigi?"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pNewButton)
 #: src/konqsessiondlg_base.ui:26
 #, kde-format
 msgctxt "@action:button New session"
 msgid "New..."
-msgstr ""
+msgstr "Nova..."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
 #: src/konqsessiondlg_base.ui:33
@@ -1516,20 +1562,20 @@ msgstr "Alinomi..."
 #, kde-format
 msgctxt "@action:button Delete session"
 msgid "Delete"
-msgstr ""
+msgstr "Forigi"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
 #. i18n: ectx: label, entry, group (Trash)
 #: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
 #, kde-format
 msgid "Open tabs inside current window"
-msgstr ""
+msgstr "Malfermi langetojn ene de la nuna fenestro"
 
 #: src/konqsessionmanager.cpp:86
 #, kde-format
 msgctxt "@title:window"
 msgid "Restore Session?"
-msgstr ""
+msgstr "Restarigi Seancon?"
 
 #: src/konqsessionmanager.cpp:107
 #, kde-format
@@ -1537,57 +1583,59 @@ msgid ""
 "Konqueror did not close correctly. Would you like to restore these previous "
 "sessions?"
 msgstr ""
+"Konqueror ne ĝuste fermiĝis. Ĉu vi ŝatus restarigi ĉi tiujn antaŭajn "
+"seancojn?"
 
 #: src/konqsessionmanager.cpp:119
 #, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions you do not want to be restored"
-msgstr ""
+msgstr "Malmarki la seancojn, kiujn vi ne volas restarigi"
 
 #: src/konqsessionmanager.cpp:152
 #, kde-format
 msgctxt "@item:treewidget"
 msgid "Window %1"
-msgstr ""
+msgstr "Fenestro %1"
 
 #: src/konqsessionmanager.cpp:190
 #, kde-format
 msgid "Do not ask again"
-msgstr ""
+msgstr "Ne demandi denove"
 
 #: src/konqsessionmanager.cpp:204
 #, kde-format
 msgctxt "@action:button yes"
 msgid "Restore Session"
-msgstr ""
+msgstr "Restarigi Seancon"
 
 #: src/konqsessionmanager.cpp:205
 #, kde-format
 msgctxt "@action:button no"
 msgid "Do Not Restore"
-msgstr ""
+msgstr "Ne Restarigi"
 
 #: src/konqsessionmanager.cpp:206
 #, kde-format
 msgctxt "@action:button ask later"
 msgid "Ask Me Later"
-msgstr ""
+msgstr "Demandu Min Poste"
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid "Close"
-msgstr ""
+msgstr "Fermi"
 
 #: src/konqstatusbarmessagelabel.cpp:68
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "Fermi"
 
 #: src/konqstatusbarmessagelabel.cpp:147
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "Eraro: %1"
 
 #: src/konqtabs.cpp:51
 #, kde-format
@@ -1598,6 +1646,11 @@ msgid ""
 "over the tab to see the full title, in case it has been shortened to fit the "
 "tab width."
 msgstr ""
+"Ĉi tiu breto enhavas la liston de nuntempe malfermitaj langetoj. Alklaku "
+"langeton por aktivigi ĝin. Vi ankaŭ povas uzi klavarajn ŝparvojojn por "
+"navigi tra langetoj. La teksto sur la langeto montras la enhavon nuntempe "
+"malfermita en ĝi; metu vian muson super la langeton por vidi la plenan "
+"titolon, se ĝi estis mallongigita por konveni al la langeto larĝeco."
 
 #: src/konqtabs.cpp:86
 #, kde-format
@@ -1638,13 +1691,13 @@ msgstr "&Fermi la langeton"
 #: src/konqueror.kcfg:11
 #, kde-format
 msgid "Start Page"
-msgstr ""
+msgstr "Komenca Paĝo"
 
 #. i18n: ectx: whatsthis, entry, group (UserSettings)
 #: src/konqueror.kcfg:12
 #, kde-format
 msgid "This is the URL of the web page where Konqueror will start from."
-msgstr ""
+msgstr "Ĉi tiu estas la URL de la retpaĝo de kie Konqueror komencos."
 
 #. i18n: ectx: whatsthis, entry, group (UserSettings)
 #: src/konqueror.kcfg:17
@@ -1653,12 +1706,14 @@ msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \\"
 "\"Home\\\" button is pressed."
 msgstr ""
+"Ĉi tiu estas la URL de la retpaĝo al kiu Konqueror saltos kiam la butono \\"
+"\"Hejmo\\\" estas premata."
 
 #. i18n: ectx: label, entry, group (UndoManagerSettings)
 #: src/konqueror.kcfg:26
 #, kde-format
 msgid "Maximum number of Closed Items"
-msgstr ""
+msgstr "Maksimuma nombro da Fermitaj Eroj"
 
 #. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
 #: src/konqueror.kcfg:27
@@ -1667,12 +1722,14 @@ msgid ""
 "This sets the maximum number of closed items that will be stored in memory. "
 "This limit will not be surpassed."
 msgstr ""
+"Ĉi tio fiksas la maksimuman nombron da fermitaj eroj, kiuj estos konservitaj "
+"en memoro. Ĉi tiu limo ne estos superita."
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #: src/konqueror.kcfg:36
 #, kde-format
 msgid "Open folders in separate windows"
-msgstr ""
+msgstr "Malfermi dosierujojn en apartaj fenestroj"
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:37
@@ -1688,7 +1745,7 @@ msgstr ""
 #: src/konqueror.kcfg:42
 #, kde-format
 msgid "Show file tips"
-msgstr ""
+msgstr "Montri dosierkonsiletojn"
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:43
@@ -1704,7 +1761,7 @@ msgstr ""
 #: src/konqueror.kcfg:54
 #, kde-format
 msgid "Show previews in file tips"
-msgstr ""
+msgstr "Montri antaŭrigardojn en dosierkonsiloj"
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:55
@@ -1713,12 +1770,14 @@ msgid ""
 "Here you can control if you want the popup window to contain a larger "
 "preview for the file, when moving the mouse over it"
 msgstr ""
+"Ĉi tie vi povas regi ĉu vi volas, ke la ŝprucfenestro enhavu pli grandan "
+"antaŭrigardon por la dosiero, kiam vi movas la muson super ĝi."
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #: src/konqueror.kcfg:60
 #, kde-format
 msgid "Show 'Delete' menu entries which bypass the trashcan"
-msgstr ""
+msgstr "Montri 'Forigi' menuajn enirojn, kiuj preteriras la rubujon"
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:61
@@ -1728,37 +1787,42 @@ msgid ""
 "and in the file manager's menus and context menus. You can always delete "
 "files when hidden by holding the Shift key while calling 'Move to Trash'."
 msgstr ""
+"Marku ĉi tion se vi volas ke la menukomandoj 'Forigi' estu montrataj sur la "
+"labortablo kaj en la menuoj kaj kuntekstmenuoj de la dosieradministranto. Vi "
+"ĉiam povas forigi dosierojn kiam ili estas kaŝitaj tenante la Shift-klavon "
+"dum vokado \"Movi al Rubujo\"."
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:153 src/konqueror.kcfg:154
 #, kde-format
 msgid "Number of Open With items in the File menu"
-msgstr ""
+msgstr "Nombro de Open With eroj en la Dosiero-menuo"
 
 #. i18n: ectx: label, entry, group (HTML Settings)
 #: src/konqueror.kcfg:163
 #, kde-format
 msgid "Standard font"
-msgstr ""
+msgstr "Norma tiparo"
 
 #. i18n: ectx: whatsthis, entry, group (HTML Settings)
 #: src/konqueror.kcfg:164
 #, kde-format
 msgid "This is the font used to display text in Konqueror windows."
 msgstr ""
+"Ĉi tiu estas la tiparo uzata por montri tekston en Konqueror-fenestroj."
 
 #. i18n: ectx: label, entry, group (HistorySettings)
 #: src/konqueror.kcfg:314
 #, kde-format
 msgid "Maximum number of history items per view"
-msgstr ""
+msgstr "Maksimuma nombro da historiaj eroj per vido"
 
 #. i18n: ectx: label, entry, group (Trash)
 #: src/konqueror.kcfg:504
 #, kde-format
 msgid "Ask confirmation for deleting a file."
-msgstr ""
+msgstr "Peti konfirmon por forigi dosieron."
 
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: src/konqueror.kcfg:505
@@ -1768,12 +1832,15 @@ msgid ""
 "delete a file without using the trash folder. Warning, deleted files can not "
 "be recovered, so it is recommended to leave this confirmation enabled."
 msgstr ""
+"Ĉi tiu opcio diras al Konqueror ĉu peti konfirmon kiam vi forigas dosieron "
+"sen uzi la rubujon. Averto, forigitaj dosieroj ne povas esti reakiritaj, do "
+"rekomendas lasi ĉi tiun konfirmon ebligita."
 
 #. i18n: ectx: label, entry, group (Trash)
 #: src/konqueror.kcfg:510
 #, kde-format
 msgid "Ask confirmation for move to trash"
-msgstr ""
+msgstr "Peti konfirmon pri movo al rubujo"
 
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: src/konqueror.kcfg:511
@@ -1782,6 +1849,8 @@ msgid ""
 "This option tells Konqueror whether to ask for a confirmation when you move "
 "the file to your trash folder, from where it can be recovered very easily."
 msgstr ""
+"Ĉi tiu opcio diras al Konqueror ĉu peti konfirmon kiam vi movas la dosieron "
+"al via rubujo, de kie ĝi povas esti reakirita tre facile."
 
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: src/konqueror.kcfg:518
@@ -1790,6 +1859,8 @@ msgid ""
 "If true, when opening a session from within the sessions dialog the tabs "
 "will be opened inside current window."
 msgstr ""
+"Se vera, kiam oni malfermas seancon el la dialogo de seancoj, la langetoj "
+"estos malfermitaj en la nuna fenestro."
 
 #. i18n: ectx: Menu (file)
 #: src/konqueror.rc:5
@@ -1872,7 +1943,7 @@ msgstr "Malfari: Fermis f&olion"
 #: src/konqundomanager.cpp:147
 #, kde-format
 msgid "Und&o: Closed Window"
-msgstr ""
+msgstr "Malfar&o: Fermita Fenestro"
 
 #: src/konqundomanager.cpp:105
 #, kde-format
@@ -1905,16 +1976,22 @@ msgstr "Resendi"
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
-msgstr ""
+msgstr "Ruli"
 
 #: src/urlloader.cpp:278
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
-msgstr ""
+msgstr "Montri"
 
 #: src/urlloader.cpp:285
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt ""
+#| "@info The user has to decide whether to execute an executable file or "
+#| "¦display it"
+#| msgid ""
+#| "<filename>%1</filename> can be executed. Do you want to execute it or to "
+#| "display it?"
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
 "display it"
@@ -1922,13 +1999,15 @@ msgid ""
 "<filename>%1</filename> can be executed. Do you want to execute it or to "
 "display it?"
 msgstr ""
+"<filename>%1</filename> povas esti efektivigita. Ĉu vi volas plenumi ĝin aŭ "
+"montri ĝin?"
 
 #: src/urlloader.cpp:291
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
-msgstr ""
+msgstr "<filename>%1</filename> povas esti efektivigita. Ĉu vi volas ruli ĝin?"
 
 #: src/urlloader.cpp:506
 #, kde-format

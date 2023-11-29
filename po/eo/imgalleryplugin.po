@@ -1,20 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Translation of imgalleryplugin.pot into esperanto.
+# Copyright (C) 2023 Free Software Foundation, Inc.
+# This file is distributed under the same license as the konqueror package.
+# Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-07-14 00:45+0000\n"
-"PO-Revision-Date: 2023-03-25 16:19+0100\n"
+"PO-Revision-Date: 2023-11-08 20:06+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
-"Language-Team: Esperanto <eo@li.org>\n"
+"Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 0.9.6\n"
+"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: imgallerydialog.cpp:37
@@ -96,17 +98,18 @@ msgstr "Dosierujoj"
 #: imgallerydialog.cpp:145
 #, kde-format
 msgid "&Save to HTML file:"
-msgstr ""
+msgstr "&Konservi al HTML-dosiero:"
 
 #: imgallerydialog.cpp:147
 #, kde-format
 msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
 msgstr ""
+"<p>La nomo de la HTML-dosiero, en kiu ĉi tiu galerio estos konservita.</p>"
 
 #: imgallerydialog.cpp:150
 #, kde-format
 msgid "&Recurse subfolders"
-msgstr ""
+msgstr "&Rekursi subdosierujojn"
 
 #: imgallerydialog.cpp:152
 #, kde-format
@@ -114,6 +117,7 @@ msgid ""
 "<p>Whether subfolders should be included for the image gallery creation or "
 "not.</p>"
 msgstr ""
+"<p>Ĉu subdosierujoj estu inkluzivitaj por la kreado de bildgalerio aŭ ne.</p>"
 
 #: imgallerydialog.cpp:163
 #, kde-format
@@ -126,6 +130,8 @@ msgid ""
 "<p>You can limit the number of folders the image gallery creator will "
 "traverse to by setting an upper bound for the recursion depth.</p>"
 msgstr ""
+"<p>Vi povas limigi la nombron da dosierujoj, kiujn trairos la kreinto de la "
+"bildgalerio, fiksante supran limon por la rikursa profundo.</p>"
 
 #: imgallerydialog.cpp:168
 #, kde-format
@@ -143,6 +149,8 @@ msgid ""
 "<p>This makes a copy of all images and the gallery will refer to these "
 "copies instead of the original images.</p>"
 msgstr ""
+"<p>Tio faras kopion de ĉiuj bildoj kaj la galerio referencos al ĉi tiuj "
+"kopioj anstataŭ la originalaj bildoj.</p>"
 
 #: imgallerydialog.cpp:179
 #, kde-format
@@ -156,6 +164,9 @@ msgid ""
 "used for generating subtitles for the images.</p><p>For details about the "
 "file format please see the \"What's This?\" help below.</p>"
 msgstr ""
+"<p>Se vi ebligas ĉi tiun opcion, vi povas specifi komentdosieron, kiu estos "
+"uzata por generi subtekstojn por la bildoj.</p><p>Por detaloj pri la "
+"dosierformato bonvolu vidi la suban helpon de \"Kio ĉi tio?\" .</p>"
 
 #: imgallerydialog.cpp:190
 #, kde-format
@@ -165,6 +176,10 @@ msgid ""
 "p><p>FILENAME1:<br />Description<br /><br />FILENAME2:<br />Description<br /"
 "><br />and so on</p>"
 msgstr ""
+"<p>Vi povas specifi la nomon de la komenta dosiero ĉi tie. La komenta "
+"dosiero enhavas la subtekstojn por la bildoj. La formato de ĉi tiu dosiero "
+"estas:</p><p>FILENAME1:<br />Priskribo<br /><br />FILENAME2:<br /"
+">Priskribo<br /><br />kaj tiel plu</p>"
 
 #: imgallerydialog.cpp:200
 #, kde-format
@@ -179,22 +194,22 @@ msgstr "Miniaturoj"
 #: imgallerydialog.cpp:224
 #, kde-format
 msgid "Image f&ormat:"
-msgstr ""
+msgstr "F&ormato de bildo:"
 
 #: imgallerydialog.cpp:232
 #, kde-format
 msgid "Thumbnail size:"
-msgstr ""
+msgstr "Grandeco de bildeto:"
 
 #: imgallerydialog.cpp:235
 #, kde-format
 msgid "&Set different color depth:"
-msgstr ""
+msgstr "Agordi mal&saman kolorprofundon:"
 
 #: imgallerydialog.cpp:246
 #, kde-format
 msgid "Color depth:"
-msgstr ""
+msgstr "Kolora profundo:"
 
 #: imgalleryplugin.cpp:52
 #, kde-format
@@ -204,7 +219,7 @@ msgstr "&Kreu bildogalerion"
 #: imgalleryplugin.cpp:62
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
-msgstr ""
+msgstr "Ne eblis krei la kromprogramon, bonvolu raporti cimon."
 
 #: imgalleryplugin.cpp:68
 #, kde-format
@@ -259,12 +274,12 @@ msgstr ""
 #: imgalleryplugin.cpp:230
 #, kde-format
 msgid "KiB"
-msgstr ""
+msgstr "KiB"
 
 #: imgalleryplugin.cpp:344 imgalleryplugin.cpp:439
 #, kde-format
 msgid "Could not open file: %1"
-msgstr ""
+msgstr "Ne eblis malfermi dosieron: %1"
 
 #. i18n: ectx: Menu (tools)
 #: kimgallery.rc:4

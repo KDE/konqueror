@@ -1,13 +1,15 @@
 # Translation of autorefresh into esperanto.
+# Copyright (C) 2009 Free Software Foundation, Inc.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: autorefresh\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-10-01 00:18+0000\n"
-"PO-Revision-Date: 2009-11-15 12:06+0100\n"
-"Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
+"PO-Revision-Date: 2023-11-08 20:06+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +21,7 @@ msgstr ""
 #: autorefresh.cpp:28
 #, kde-format
 msgid "&Auto Refresh"
-msgstr ""
+msgstr "&Aŭtomata Refreŝigo"
 
 #: autorefresh.cpp:32
 #, kde-format
@@ -29,63 +31,63 @@ msgstr "Neniu"
 #: autorefresh.cpp:33
 #, kde-format
 msgid "Every 15 Seconds"
-msgstr ""
+msgstr "Ĉiujn 15 Sekundojn"
 
 #: autorefresh.cpp:34
 #, kde-format
 msgid "Every 30 Seconds"
-msgstr ""
+msgstr "Ĉiujn 30 Sekundojn"
 
 #: autorefresh.cpp:35
 #, kde-format
 msgid "Every Minute"
-msgstr ""
+msgstr "Ĉiun Minuton"
 
 #: autorefresh.cpp:36
 #, kde-format
 msgid "Every 5 Minutes"
-msgstr ""
+msgstr "Ĉiujn 5 Minutojn"
 
 #: autorefresh.cpp:37
 #, kde-format
 msgid "Every 10 Minutes"
-msgstr ""
+msgstr "Ĉiujn 10 Minutojn"
 
 #: autorefresh.cpp:38
 #, kde-format
 msgid "Every 15 Minutes"
-msgstr ""
+msgstr "Ĉiujn 15 Minutojn"
 
 #: autorefresh.cpp:39
 #, kde-format
 msgid "Every 30 Minutes"
-msgstr ""
+msgstr "Ĉiujn 30 Minutojn"
 
 #: autorefresh.cpp:40
 #, kde-format
 msgid "Every 60 Minutes"
-msgstr ""
+msgstr "Ĉiujn 60 Minutojn"
 
 #: autorefresh.cpp:41
 #, kde-format
 msgid "Every 2 Hours"
-msgstr ""
+msgstr "Ĉiujn 2 Horojn"
 
 #: autorefresh.cpp:42
 #, kde-format
 msgid "Every 6 Hours"
-msgstr ""
+msgstr "Ĉiujn 6 Horojn"
 
 #: autorefresh.cpp:100
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot Refresh Source"
-msgstr ""
+msgstr "Ne povas Refreŝigi Fonton"
 
 #: autorefresh.cpp:101
 #, kde-format
 msgid "<qt>This plugin cannot auto-refresh the current part.</qt>"
-msgstr ""
+msgstr "<qt>Tiu ĉi kromaĵo ne povas aŭtomate refreŝigi la nunan parton.</qt>"
 
 #. i18n: ectx: Menu (tools)
 #: autorefresh.rc:5
