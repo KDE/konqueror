@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-29 01:37+0000\n"
-"PO-Revision-Date: 2023-11-26 18:41+0100\n"
+"PO-Revision-Date: 2023-11-2922:05+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -31,9 +31,7 @@ msgstr "axel@esperanto-jeunes.org,okellogg@users.sourceforge.net"
 
 #: src/about/konq_aboutpage.cpp:71 src/about/konq_aboutpage.cpp:73
 #: src/about/konq_aboutpage.cpp:196 src/about/konq_aboutpage.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
-#| msgid "Be free."
+#, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
 msgstr "Estu libera."
@@ -1519,156 +1517,3 @@ msgstr ""
 "li><li><b>ID de kampo: </b>%3</li><li><b>Kampo estas nur-legebla: </b>%4</"
 "li><li><b>Kampo estas ebligita: </b>%5</li><li><b>Aŭtomata kompletigo estas "
 "ŝaltita: </b>%6</li></ul>"
-
-#~ msgid "Specifications"
-#~ msgstr "Specifoj"
-
-#~ msgid ""
-#~ "Konqueror is designed to embrace and support Internet standards. The aim "
-#~ "is to fully implement the officially sanctioned standards from "
-#~ "organizations such as the W3 and OASIS, while also adding extra support "
-#~ "for other common usability features that arise as de facto standards "
-#~ "across the Internet. Along with this support, for such functions as "
-#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
-#~ "also implements:"
-#~ msgstr ""
-#~ "Konqueror estas desegnita por akcepti kaj subteni Interretajn normojn. La "
-#~ "celo estas plene efektivigi la oficiale aprobitajn normojn de organizoj "
-#~ "kiel ekzemple la W3 kaj OASIS, dum ankaŭ aldonante ekstran subtenon por "
-#~ "aliaj komunaj uzeblotrajtoj kiuj ekestas kiel faktaj normoj tra la "
-#~ "Interreto. Kune kun ĉi tiu subteno, por tiaj funkcioj kiel favicons, "
-#~ "Retaj Ŝparvojoj, kaj <A HREF=\"%1\">XBEL-legosignoj</A>, Konqueror ankaŭ "
-#~ "efektivigas:"
-
-#~ msgid "Web Browsing"
-#~ msgstr "Retumado"
-
-#~ msgid "Supported standards"
-#~ msgstr "Subtenataj normoj"
-
-#~ msgid "Additional requirements*"
-#~ msgstr "Kromaj postuloj*"
-
-#~ msgid ""
-#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
-#~ "\"%2\">HTML 4.01</A>"
-#~ msgstr ""
-#~ "<A HREF=\"%1\">DOM</A> (Nivelo 1, parte Nivelo 2) bazita sur <A HREF="
-#~ "\"%2\">HTML 4.01</A>"
-
-#~ msgid "built-in"
-#~ msgstr "enkonstruita"
-
-#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
-#~ msgstr "<A HREF=\"%1\">Kaskadaj stilfolioj</A> (CSS 1, parte CSS 2)"
-
-#~ msgid ""
-#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
-#~ msgstr ""
-#~ "<A HREF=\"%1\">ECMA-262</A> Eldono 3 (proksimume egalas JavaScript 1.5)"
-
-#~ msgid ""
-#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
-#~ msgstr ""
-#~ "JavaScript malŝaltita (ĉiee). Ebligu JavaScript <A HREF=\"%1\">ĉi tie</A>."
-
-#~ msgid ""
-#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
-#~ "\">here</A>."
-#~ msgstr ""
-#~ "JavaScript ebligita (ĉie). Agordu JavaScript <A HREF=\\\"%1\\\">ĉi tie</"
-#~ "A>."
-
-#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
-#~ msgstr "Sekurigi <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> subtenon"
-
-#~ msgid ""
-#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
-#~ "\"%2\">Sun/Oracle</A>)"
-#~ msgstr ""
-#~ "JDK 1.2.0 (Java 2) kongrua VM (<A HREF=\"%1\">OpenJDK</A> aŭ <A HREF="
-#~ "\"%2\">Sun/Oracle</A>)"
-
-#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
-#~ msgstr "Ebligi Java (ĉiee) <A HREF=\"%1\">ĉi tie</A>."
-
-#~ msgid ""
-#~ "NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF="
-#~ "\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)"
-#~ msgstr ""
-#~ "NPAPI <A HREF=\"%2\">kromaĵoj</A> (por vidi <A HREF=\"%1\">Flash<SUP>&reg;"
-#~ "</SUP></A>, ktp.)"
-
-#~ msgid "Secure Sockets Layer"
-#~ msgstr "Secure Sockets Layer"
-
-#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
-#~ msgstr "(TLS/SSL v2/3) por sekuraj komunikadoj ĝis 168 bitoj"
-
-#~ msgid "OpenSSL"
-#~ msgstr "OpenSSL"
-
-#~ msgid "Bidirectional 16bit unicode support"
-#~ msgstr "Dudirekta 16-bita unikoda subteno"
-
-#~ msgid "AutoCompletion for forms"
-#~ msgstr "Aŭtomata kompletigo por formoj"
-
-#~ msgctxt "Title of an html 'group box' explaining konqueror features"
-#~ msgid "General"
-#~ msgstr "Ĝenerala"
-
-#~ msgid "Feature"
-#~ msgstr "Kapablo"
-
-#~ msgid "Details"
-#~ msgstr "Detaloj"
-
-#~ msgid "Image formats"
-#~ msgstr "Bildaj formatoj"
-
-#~ msgid "PNG<br />JPG<br />GIF"
-#~ msgstr "PNG<br />JPG<br />GIF"
-
-#~ msgid "Transfer protocols"
-#~ msgstr "Transigaj protokoloj"
-
-#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
-#~ msgstr "HTTP 1.1 (inkluzive de kunpremado gzip/bzip2)"
-
-#~ msgid "FTP"
-#~ msgstr "FTP"
-
-#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
-#~ msgstr ""
-#~ "kaj <A HREF=\"%1\">multaj pli (vidu Kioslaves en KHelpCenter)...</A>"
-
-#~ msgctxt "A feature of Konqueror"
-#~ msgid "URL-Completion"
-#~ msgstr "URL-Kompletigo"
-
-#~ msgid "Manual"
-#~ msgstr "Manlibro"
-
-#~ msgid "Popup"
-#~ msgstr "Ŝprucfenestro"
-
-#~ msgid "(Short-) Automatic"
-#~ msgstr "(Mallonga-) Aŭtomata"
-
-#~ msgid ""
-#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
-#~ "the HTML toolbar to increase the font size on your web page."
-#~ msgstr ""
-#~ "Uzu la pligrandigan butonon <img width='16' height='16' src=\"%1\"></img> "
-#~ "en la HTML-ilbreto por pliigi la tiparon en via retpaĝo."
-
-#~ msgid ""
-#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
-#~ "connection."
-#~ msgstr ""
-#~ "Uzu kaŝmemoron <a href=\"%1\">prokurilon</a> por akceli vian interretan "
-#~ "konekton."
-
-#~ msgid "Next: Specifications"
-#~ msgstr "Sekva: Specifoj"
