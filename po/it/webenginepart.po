@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-29 01:37+0000\n"
-"PO-Revision-Date: 2023-09-04 19:58+0200\n"
+"PO-Revision-Date: 2023-12-04 21:48+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.0\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -29,9 +29,7 @@ msgstr "valtermura@gmail.com"
 
 #: src/about/konq_aboutpage.cpp:71 src/about/konq_aboutpage.cpp:73
 #: src/about/konq_aboutpage.cpp:196 src/about/konq_aboutpage.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
-#| msgid "Be free."
+#, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
 msgstr "Vivi libero."
@@ -1270,6 +1268,8 @@ msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
 "default style sheet will be used"
 msgstr ""
+"Impossibile aprire il file <tt>%1</tt> che contiene il foglio di stile "
+"personalizzato. Sarà utilizzato il foglio di stile predefinito"
 
 #: src/webenginepartdownloadmanager.cpp:286
 #, kde-format
