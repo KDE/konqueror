@@ -67,13 +67,15 @@
 
 using namespace KonqInterfaces;
 
-#ifdef KActivities_FOUND
 QString KonquerorApplication::currentActivity()
 {
+#ifdef KActivities_FOUND
     KonquerorApplication* app = qobject_cast<KonquerorApplication*>(QApplication::instance());
     return app ? app->m_activityConsumer->currentActivity() : QString();
-}
+#else
+    return QString();
 #endif
+}
 
 KonquerorApplication::KonquerorApplication(int &argc, char **argv)
     : QApplication(argc, argv), m_browser(nullptr)

@@ -141,13 +141,18 @@ QDBusObjectPath KonquerorAdaptor::windowForTab()
     //(if activities are enabled)
     auto filter = [](KonqMainWindow *mw) {
         KWindowInfo winfo(mw->winId(), NET::WMDesktop, NET::WM2Activities);
-#ifdef KActivities_FOUND
         QString currentActivity = KonquerorApplication::currentActivity();
-        //if currentActivity is empty, it means that the activity service status is not running
-        if (winfo.isOnCurrentDesktop() && (currentActivity.isEmpty() || winfo.activities().contains(currentActivity))) {
-#else
-        if (winfo.isOnCurrentDesktop()) {
-#endif
+        bool isInCurrentActivity = true;
+        //if currentActivity is empty, it means that the activity service status is not running or that activity support is disabled,
+        //so it's useless to check which activity the window is on
+        if (!currentActivity.isEmpty()) {
+            QStringList windowActivities = winfo.activities();
+            //WARNING: a window is in the current activity either when windowActivities contains the current activity
+            //or when windowActivities is empty, since KWindowInfo::activities() returns an empty list when the
+            //window is on all activities
+            isInCurrentActivity = windowActivities.isEmpty() || windowActivities.contains(currentActivity);
+        }
+        if (winfo.isOnCurrentDesktop() && (isInCurrentActivity)) {
             Q_ASSERT(!mw->dbusName().isEmpty());
             return true;
         } else {

@@ -37,9 +37,7 @@ public:
     KonquerorApplication(int &argc, char **argv);
     int start();
 
-#ifdef KActivities_FOUND
     static QString currentActivity();
-#endif
 
 public slots:
     void slotReparseConfiguration();
