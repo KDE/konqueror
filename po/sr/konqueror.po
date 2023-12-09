@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 01:37+0000\n"
+"POT-Creation-Date: 2023-12-09 01:36+0000\n"
 "PO-Revision-Date: 2017-09-29 16:43+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -32,45 +32,45 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "toptan@kde.org.yu,caslav.ilic@gmx.net"
 
-#: src/konqapplication.cpp:124
+#: src/konqapplication.cpp:126
 #, kde-format
 msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
 
-#: src/konqapplication.cpp:167
+#: src/konqapplication.cpp:169
 #, kde-format
 msgid "Konqueror"
 msgstr "К‑освајач"
 
-#: src/konqapplication.cpp:168
+#: src/konqapplication.cpp:170
 #, kde-format
 msgid "Web browser, file manager and document viewer."
 msgstr "Веб прегледач, менаџер фајлова и приказивач докумената."
 
-#: src/konqapplication.cpp:170
+#: src/konqapplication.cpp:172
 #, fuzzy, kde-format
 #| msgid "(C) 1999-2016, The Konqueror developers"
 msgid "(C) 1999-2023, The Konqueror developers"
 msgstr "© 1999-2016, програмери К‑освајача"
 
-#: src/konqapplication.cpp:173
+#: src/konqapplication.cpp:175
 #, kde-format
 msgid "Stefano Crocco"
 msgstr "Стефано Кроко"
 
-#: src/konqapplication.cpp:173
+#: src/konqapplication.cpp:175
 #, kde-format
 msgid "Current maintainer"
 msgstr "тренутни одржавалац"
 
-#: src/konqapplication.cpp:174
+#: src/konqapplication.cpp:176
 #, kde-format
 msgid "David Faure"
 msgstr "Давид Фор"
 
-#: src/konqapplication.cpp:174
+#: src/konqapplication.cpp:176
 #, kde-format
 msgid ""
 "Developer (framework, parts, JavaScript, I/O library) and former maintainer"
@@ -78,107 +78,107 @@ msgstr ""
 "програмер (радни оквир, делови, јаваскрипт, У/И библиотека) и бивши "
 "одржавалац"
 
-#: src/konqapplication.cpp:175
+#: src/konqapplication.cpp:177
 #, kde-format
 msgid "Simon Hausmann"
 msgstr "Симон Хаусман"
 
-#: src/konqapplication.cpp:175
+#: src/konqapplication.cpp:177
 #, kde-format
 msgid "Developer (framework, parts)"
 msgstr "програмер (радни оквир, делови)"
 
-#: src/konqapplication.cpp:176
+#: src/konqapplication.cpp:178
 #, kde-format
 msgid "Michael Reiher"
 msgstr "Михаел Рајхер"
 
-#: src/konqapplication.cpp:176 src/konqapplication.cpp:204
-#: src/konqapplication.cpp:210
+#: src/konqapplication.cpp:178 src/konqapplication.cpp:206
+#: src/konqapplication.cpp:212
 #, kde-format
 msgid "Developer (framework)"
 msgstr "програмер (радни оквир)"
 
-#: src/konqapplication.cpp:177
+#: src/konqapplication.cpp:179
 #, kde-format
 msgid "Matthias Welk"
 msgstr "Матијас Велк"
 
-#: src/konqapplication.cpp:177
+#: src/konqapplication.cpp:179
 #, kde-format
 msgid "Developer"
 msgstr "програмер"
 
-#: src/konqapplication.cpp:178
+#: src/konqapplication.cpp:180
 #, kde-format
 msgid "Alexander Neundorf"
 msgstr "Александер Нојндорф"
 
-#: src/konqapplication.cpp:178
+#: src/konqapplication.cpp:180
 #, kde-format
 msgid "Developer (List views)"
 msgstr "програмер (прикази спискова)"
 
-#: src/konqapplication.cpp:179
+#: src/konqapplication.cpp:181
 #, kde-format
 msgid "Michael Brade"
 msgstr "Михаел Браде"
 
-#: src/konqapplication.cpp:179
+#: src/konqapplication.cpp:181
 #, kde-format
 msgid "Developer (List views, I/O library)"
 msgstr "програмер (прикази спискова, У/И библиотека)"
 
-#: src/konqapplication.cpp:180
+#: src/konqapplication.cpp:182
 #, kde-format
 msgid "Lars Knoll"
 msgstr "Ларс Кнол"
 
-#: src/konqapplication.cpp:180 src/konqapplication.cpp:181
-#: src/konqapplication.cpp:182 src/konqapplication.cpp:184
-#: src/konqapplication.cpp:185 src/konqapplication.cpp:187
-#: src/konqapplication.cpp:188 src/konqapplication.cpp:189
-#: src/konqapplication.cpp:190 src/konqapplication.cpp:192
+#: src/konqapplication.cpp:182 src/konqapplication.cpp:183
+#: src/konqapplication.cpp:184 src/konqapplication.cpp:186
+#: src/konqapplication.cpp:187 src/konqapplication.cpp:189
+#: src/konqapplication.cpp:190 src/konqapplication.cpp:191
+#: src/konqapplication.cpp:192 src/konqapplication.cpp:194
 #, kde-format
 msgid "Developer (HTML rendering engine)"
 msgstr "програмер (мотор за рендеровање ХТМЛ‑а)"
 
-#: src/konqapplication.cpp:181
+#: src/konqapplication.cpp:183
 #, kde-format
 msgid "Dirk Mueller"
 msgstr "Дирк Милер"
 
-#: src/konqapplication.cpp:182
+#: src/konqapplication.cpp:184
 #, kde-format
 msgid "Peter Kelly"
 msgstr "Питер Кели"
 
-#: src/konqapplication.cpp:183
+#: src/konqapplication.cpp:185
 #, kde-format
 msgid "Waldo Bastian"
 msgstr "Валдо Бастијан"
 
-#: src/konqapplication.cpp:183
+#: src/konqapplication.cpp:185
 #, kde-format
 msgid "Developer (HTML rendering engine, I/O library)"
 msgstr "програмер (мотор за рендеровање ХТМЛ‑а, У/И библиотека)"
 
-#: src/konqapplication.cpp:184
+#: src/konqapplication.cpp:186
 #, kde-format
 msgid "Germain Garand"
 msgstr "Жермен Гаран"
 
-#: src/konqapplication.cpp:185 src/konqapplication.cpp:213
+#: src/konqapplication.cpp:187 src/konqapplication.cpp:215
 #, kde-format
 msgid "Leo Savernik"
 msgstr "Лео Саверник"
 
-#: src/konqapplication.cpp:186
+#: src/konqapplication.cpp:188
 #, kde-format
 msgid "Stephan Kulow"
 msgstr "Штефан Кулов"
 
-#: src/konqapplication.cpp:186
+#: src/konqapplication.cpp:188
 #, kde-format
 msgid ""
 "Developer (HTML rendering engine, I/O library, regression test framework)"
@@ -186,103 +186,103 @@ msgstr ""
 "програмер (мотор за рендеровање ХТМЛ‑а, У/И библиотека, радни оквир "
 "регресионих проба)"
 
-#: src/konqapplication.cpp:187
+#: src/konqapplication.cpp:189
 #, kde-format
 msgid "Antti Koivisto"
 msgstr "Анти Коивисто"
 
-#: src/konqapplication.cpp:188
+#: src/konqapplication.cpp:190
 #, kde-format
 msgid "Zack Rusin"
 msgstr "Зaк Расин"
 
-#: src/konqapplication.cpp:189
+#: src/konqapplication.cpp:191
 #, kde-format
 msgid "Tobias Anton"
 msgstr "Тобијас Антон"
 
-#: src/konqapplication.cpp:190
+#: src/konqapplication.cpp:192
 #, kde-format
 msgid "Lubos Lunak"
 msgstr "Лубош Луњак"
 
-#: src/konqapplication.cpp:191
+#: src/konqapplication.cpp:193
 #, kde-format
 msgid "Maks Orlovich"
 msgstr "Максим Орлович"
 
 # Уз ове Епловце одозго, не вреди понављати „Програмери...“
-#: src/konqapplication.cpp:191 src/konqapplication.cpp:193
+#: src/konqapplication.cpp:193 src/konqapplication.cpp:195
 #, kde-format
 msgid "Developer (HTML rendering engine, JavaScript)"
 msgstr "програмер (мотор за рендеровање ХТМЛ‑а, јаваскрипт)"
 
-#: src/konqapplication.cpp:192
+#: src/konqapplication.cpp:194
 #, kde-format
 msgid "Allan Sandfeld Jensen"
 msgstr "Алан Сандфелд Јенсен"
 
-#: src/konqapplication.cpp:193
+#: src/konqapplication.cpp:195
 #, kde-format
 msgid "Apple Safari Developers"
 msgstr "Програмери Епловог Сафарија"
 
-#: src/konqapplication.cpp:194
+#: src/konqapplication.cpp:196
 #, kde-format
 msgid "Harri Porten"
 msgstr "Хари Портен"
 
-#: src/konqapplication.cpp:194
+#: src/konqapplication.cpp:196
 #, kde-format
 msgid "Developer (JavaScript)"
 msgstr "програмер (јаваскрипт)"
 
-#: src/konqapplication.cpp:195
+#: src/konqapplication.cpp:197
 #, kde-format
 msgid "Koos Vriezen"
 msgstr "Кос Вризен"
 
-#: src/konqapplication.cpp:195
+#: src/konqapplication.cpp:197
 #, kde-format
 msgid "Developer (Java applets and other embedded objects)"
 msgstr "програмер (јавански аплети и други угнежђени објекти)"
 
-#: src/konqapplication.cpp:196
+#: src/konqapplication.cpp:198
 #, kde-format
 msgid "Matt Koss"
 msgstr "Матеј Кос"
 
-#: src/konqapplication.cpp:196 src/konqapplication.cpp:197
+#: src/konqapplication.cpp:198 src/konqapplication.cpp:199
 #, kde-format
 msgid "Developer (I/O library)"
 msgstr "програмер (У/И библиотека)"
 
-#: src/konqapplication.cpp:197
+#: src/konqapplication.cpp:199
 #, kde-format
 msgid "Alex Zepeda"
 msgstr "Алекс Зепеда"
 
-#: src/konqapplication.cpp:198
+#: src/konqapplication.cpp:200
 #, kde-format
 msgid "Richard Moore"
 msgstr "Ричард Мур"
 
-#: src/konqapplication.cpp:198 src/konqapplication.cpp:199
+#: src/konqapplication.cpp:200 src/konqapplication.cpp:201
 #, kde-format
 msgid "Developer (Java applet support)"
 msgstr "програмер (подршка за јаванске аплете)"
 
-#: src/konqapplication.cpp:199
+#: src/konqapplication.cpp:201
 #, kde-format
 msgid "Dima Rogozin"
 msgstr "Дима Рогозин"
 
-#: src/konqapplication.cpp:200
+#: src/konqapplication.cpp:202
 #, kde-format
 msgid "Wynn Wilkes"
 msgstr "Вин Вилкс"
 
-#: src/konqapplication.cpp:200
+#: src/konqapplication.cpp:202
 #, kde-format
 msgid ""
 "Developer (Java 2 security manager support,\n"
@@ -291,171 +291,171 @@ msgstr ""
 "програмер (подршка за менаџер безбедности јаве 2, \n"
 "и друга битна побољшања подршке за аплете)"
 
-#: src/konqapplication.cpp:201
+#: src/konqapplication.cpp:203
 #, kde-format
 msgid "Stefan Schimanski"
 msgstr "Штефан Шимански"
 
-#: src/konqapplication.cpp:201
+#: src/konqapplication.cpp:203
 #, kde-format
 msgid "Developer (Netscape plugin support)"
 msgstr "програмер (подршка за Нетскејпове прикључке)"
 
-#: src/konqapplication.cpp:202
+#: src/konqapplication.cpp:204
 #, kde-format
 msgid "George Staikos"
 msgstr "Џорџ Стајкос"
 
-#: src/konqapplication.cpp:202
+#: src/konqapplication.cpp:204
 #, kde-format
 msgid "Developer (SSL, Netscape plugins)"
 msgstr "програмер (ССЛ, Нетскејпови прикључци)"
 
-#: src/konqapplication.cpp:203
+#: src/konqapplication.cpp:205
 #, kde-format
 msgid "Dawit Alemayehu"
 msgstr "Давит Алемајеху"
 
-#: src/konqapplication.cpp:203
+#: src/konqapplication.cpp:205
 #, kde-format
 msgid "Developer (I/O library, Authentication support)"
 msgstr "програмер (У/И библиотека, подршка за аутентификацију)"
 
-#: src/konqapplication.cpp:204
+#: src/konqapplication.cpp:206
 #, kde-format
 msgid "Carsten Pfeiffer"
 msgstr "Карстен Пфајфер"
 
-#: src/konqapplication.cpp:205
+#: src/konqapplication.cpp:207
 #, kde-format
 msgid "Torsten Rahn"
 msgstr "Торстен Ран"
 
-#: src/konqapplication.cpp:205
+#: src/konqapplication.cpp:207
 #, kde-format
 msgid "Graphics/icons"
 msgstr "графика (иконице)"
 
-#: src/konqapplication.cpp:206
+#: src/konqapplication.cpp:208
 #, kde-format
 msgid "Torben Weis"
 msgstr "Торбен Вајс"
 
-#: src/konqapplication.cpp:206
+#: src/konqapplication.cpp:208
 #, kde-format
 msgid "KFM author"
 msgstr "аутор КФМ‑а"
 
-#: src/konqapplication.cpp:207
+#: src/konqapplication.cpp:209
 #, kde-format
 msgid "Joseph Wenninger"
 msgstr "Јозеф Венингер"
 
-#: src/konqapplication.cpp:207
+#: src/konqapplication.cpp:209
 #, kde-format
 msgid "Developer (navigation panel framework)"
 msgstr "програмер (радни оквир панела за навигацију)"
 
-#: src/konqapplication.cpp:208
+#: src/konqapplication.cpp:210
 #, kde-format
 msgid "Stephan Binner"
 msgstr "Штефан Бинер"
 
-#: src/konqapplication.cpp:208
+#: src/konqapplication.cpp:210
 #, kde-format
 msgid "Developer (misc stuff)"
 msgstr "програмер (разно)"
 
-#: src/konqapplication.cpp:209
+#: src/konqapplication.cpp:211
 #, kde-format
 msgid "Ivor Hewitt"
 msgstr "Ајвор Хјуит"
 
-#: src/konqapplication.cpp:209
+#: src/konqapplication.cpp:211
 #, kde-format
 msgid "Developer (AdBlock filter)"
 msgstr "програмер (Адблокови филтери)"
 
-#: src/konqapplication.cpp:210
+#: src/konqapplication.cpp:212
 #, kde-format
 msgid "Eduardo Robles Elvira"
 msgstr "Едуардо Роблес Елвира"
 
-#: src/konqapplication.cpp:211
+#: src/konqapplication.cpp:213
 #, kde-format
 msgid "Matthias Kalle Dalheimer"
 msgstr ""
 
-#: src/konqapplication.cpp:212
+#: src/konqapplication.cpp:214
 #, kde-format
 msgid "Daniel Molkentin"
 msgstr ""
 
-#: src/konqapplication.cpp:213
+#: src/konqapplication.cpp:215
 #, kde-format
 msgid ""
 "JavaScript access controls\n"
 "Per-domain policies extensions"
 msgstr ""
 
-#: src/konqapplication.cpp:224
+#: src/konqapplication.cpp:226
 #, kde-format
 msgid "Start without a default window, when called without URLs"
 msgstr "Покрени без подразумеваног прозора при позиву без УРЛ‑ова"
 
-#: src/konqapplication.cpp:225
+#: src/konqapplication.cpp:227
 #, kde-format
 msgid ""
 "Preload for later use. This mode does not support URLs on the command line"
 msgstr ""
 "Предучитај за касније. Овај режим не подржава УРЛ‑ове у командној линији."
 
-#: src/konqapplication.cpp:226
+#: src/konqapplication.cpp:228
 #, kde-format
 msgid "Profile to open (DEPRECATED, IGNORED)"
 msgstr "Профил за отварање (ПРЕВАЗИЂЕНО, ИГНОРИСАНО)"
 
-#: src/konqapplication.cpp:226
+#: src/konqapplication.cpp:228
 #, kde-format
 msgid "profile"
 msgstr "профил"
 
-#: src/konqapplication.cpp:227
+#: src/konqapplication.cpp:229
 #, kde-format
 msgid "List available sessions"
 msgstr "Наброји доступне сесије"
 
-#: src/konqapplication.cpp:228
+#: src/konqapplication.cpp:230
 #, kde-format
 msgid "Session to open"
 msgstr "Сесија за отварање"
 
-#: src/konqapplication.cpp:228
+#: src/konqapplication.cpp:230
 #, kde-format
 msgid "session"
 msgstr "сесија"
 
-#: src/konqapplication.cpp:229
+#: src/konqapplication.cpp:231
 #, kde-format
 msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
 msgstr "МИМЕ тип за овај УРЛ (нпр. „text/html“ или „inode/directory“)"
 
-#: src/konqapplication.cpp:229
+#: src/konqapplication.cpp:231
 #, kde-format
 msgid "mimetype"
 msgstr "МИМЕ‑тип"
 
-#: src/konqapplication.cpp:230
+#: src/konqapplication.cpp:232
 #, kde-format
 msgid "Part to use (e.g. khtml or kwebkitpart)"
 msgstr "Део који се користи (нпр. khtml или kwebkitpart)"
 
-#: src/konqapplication.cpp:230
+#: src/konqapplication.cpp:232
 #, kde-format
 msgid "service"
 msgstr "сервис"
 
-#: src/konqapplication.cpp:231
+#: src/konqapplication.cpp:233
 #, kde-format
 msgid ""
 "For URLs that point to files, opens the directory and selects the file, "
@@ -464,36 +464,36 @@ msgstr ""
 "За УРЛ‑ове који указују на фајлове, отвара фасциклу и бира фајл, уместо да "
 "отвори сâм фајл"
 
-#: src/konqapplication.cpp:232
+#: src/konqapplication.cpp:234
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr "Фајлови/УРЛ‑ови које програм отвори биће обрисани по употреби"
 
-#: src/konqapplication.cpp:234
+#: src/konqapplication.cpp:236
 #, kde-format
 msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
 "only when developing Konqueror itself"
 msgstr ""
 
-#: src/konqapplication.cpp:236
+#: src/konqapplication.cpp:238
 #, kde-format
 msgid "TEST"
 msgstr ""
 
-#: src/konqapplication.cpp:237
+#: src/konqapplication.cpp:239
 #, kde-format
 msgid "Location to open"
 msgstr "Локација за отварање"
 
-#: src/konqapplication.cpp:346
+#: src/konqapplication.cpp:348
 #, fuzzy, kde-format
 #| msgid "Session to open"
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
 msgstr "Сесија за отварање"
 
-#: src/konqapplication.cpp:471
+#: src/konqapplication.cpp:473
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
