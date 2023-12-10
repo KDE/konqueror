@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-29 01:37+0000\n"
-"PO-Revision-Date: 2023-11-25 02:26\n"
+"PO-Revision-Date: 2023-12-09 09:25\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -29,9 +29,7 @@ msgstr "shuizhuyuanluo@126.com, tds00@qq.com, amesists@gmail.com"
 
 #: src/about/konq_aboutpage.cpp:71 src/about/konq_aboutpage.cpp:73
 #: src/about/konq_aboutpage.cpp:196 src/about/konq_aboutpage.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
-#| msgid "Be free."
+#, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
 msgstr "为自由而生！"
@@ -1225,7 +1223,7 @@ msgstr "发行方(&S)"
 msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
 "default style sheet will be used"
-msgstr ""
+msgstr "无法打开包含用户样式表的文件 <tt>%1</tt>。将使用默认样式表"
 
 #: src/webenginepartdownloadmanager.cpp:286
 #, kde-format
@@ -1490,147 +1488,3 @@ msgstr ""
 "<ul><li><b>字段内部名称：</b>%1</li><li><b>字段类型：</b>%2</li><li><b>字段 "
 "ID：</b>%3</li><li><b>字段是否为只读：</b>%4</li><li><b>字段是否已启用：</b>"
 "%5</li><li><b>是否开启自动补全：</b>%6</li></ul>"
-
-#~ msgid "Specifications"
-#~ msgstr "技术说明"
-
-#~ msgid ""
-#~ "Konqueror is designed to embrace and support Internet standards. The aim "
-#~ "is to fully implement the officially sanctioned standards from "
-#~ "organizations such as the W3 and OASIS, while also adding extra support "
-#~ "for other common usability features that arise as de facto standards "
-#~ "across the Internet. Along with this support, for such functions as "
-#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
-#~ "also implements:"
-#~ msgstr ""
-#~ "Konqueror 设计之初就考虑到了要支持各种 Internet 标准。我们的目标是完全实现"
-#~ "被 W3 和 OASIS 这样的组织正式批准的标准，同时也加入了被作为 Internet 事实"
-#~ "标准的其他常用特性的支持。除了支持网站图标、Web 快捷方式和 <a href="
-#~ "\"%1\">XBEL 书签</a>等，Konqueror 还实现了："
-
-#~ msgid "Web Browsing"
-#~ msgstr "Web 浏览"
-
-#~ msgid "Supported standards"
-#~ msgstr "支持的标准"
-
-#~ msgid "Additional requirements*"
-#~ msgstr "其他需求*"
-
-#~ msgid ""
-#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
-#~ "\"%2\">HTML 4.01</A>"
-#~ msgstr ""
-#~ "基于 <A HREF=\"%1\">DOM</A>(第1级，部分的第2级)的 <A HREF=\"%2\">HTML "
-#~ "4.01</A>"
-
-#~ msgid "built-in"
-#~ msgstr "内建"
-
-#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
-#~ msgstr "<A HREF=\"%1\">层叠样式表</A>(CSS 1，部分的 CSS 2)"
-
-#~ msgid ""
-#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
-#~ msgstr "<A HREF=\"%1\">ECMA-262</A> 第3版(基本相当于 JavaScript 1.5)"
-
-#~ msgid ""
-#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
-#~ msgstr "已禁用 JavaScript(全局)。在<A HREF=\"%1\">这里</A>启用 JavasSript。"
-
-#~ msgid ""
-#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
-#~ "\">here</A>."
-#~ msgstr ""
-#~ "已启用 JavaScript(全局)。在<A HREF=\\\"%1\\\">这里</A>配置 Javascript。"
-
-#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
-#~ msgstr "安全的 <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> 支持"
-
-#~ msgid ""
-#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
-#~ "\"%2\">Sun/Oracle</A>)"
-#~ msgstr ""
-#~ "JDK 1.2.0 (Java 2) 兼容的虚拟机(<A HREF=\"%1\">OpenJDK</A> 或 <A HREF="
-#~ "\"%2\">Sun/Orcale</A>)"
-
-#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
-#~ msgstr "在<A HREF=\"%1\">这里</A>启用 Java(全局)。"
-
-#~ msgid ""
-#~ "NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF="
-#~ "\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)"
-#~ msgstr ""
-#~ "NPAPI <A HREF=\"%2\">插件</A> (用于查看 <A HREF=\"%1\">Flash<SUP>&reg;</"
-#~ "SUP></A> 等)"
-
-#~ msgid "Secure Sockets Layer"
-#~ msgstr "安全套接字层"
-
-#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
-#~ msgstr "(TLS/SSL v2/3) 达到 168 位强度的安全通信"
-
-#~ msgid "OpenSSL"
-#~ msgstr "OpenSSL"
-
-#~ msgid "Bidirectional 16bit unicode support"
-#~ msgstr "双向语言的 16 位 Unicode 支持"
-
-#~ msgid "AutoCompletion for forms"
-#~ msgstr "表单自动补全"
-
-#~ msgctxt "Title of an html 'group box' explaining konqueror features"
-#~ msgid "General"
-#~ msgstr "常规"
-
-#~ msgid "Feature"
-#~ msgstr "特性"
-
-#~ msgid "Details"
-#~ msgstr "细节"
-
-#~ msgid "Image formats"
-#~ msgstr "图像格式"
-
-#~ msgid "PNG<br />JPG<br />GIF"
-#~ msgstr "PNG<br />JPG<br />GIF"
-
-#~ msgid "Transfer protocols"
-#~ msgstr "传输协议"
-
-#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
-#~ msgstr "HTTP 1.1 (包括 gzip/bzip2 压缩)"
-
-#~ msgid "FTP"
-#~ msgstr "FTP"
-
-#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
-#~ msgstr "以及 <A HREF=\"%1\">其他很多(参见 KDE 帮助中心里的 Kioslave)...</A>"
-
-#~ msgctxt "A feature of Konqueror"
-#~ msgid "URL-Completion"
-#~ msgstr "URL 补全"
-
-#~ msgid "Manual"
-#~ msgstr "手工"
-
-#~ msgid "Popup"
-#~ msgstr "弹出菜单"
-
-#~ msgid "(Short-) Automatic"
-#~ msgstr "(快捷-) 自动"
-
-#~ msgid ""
-#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
-#~ "the HTML toolbar to increase the font size on your web page."
-#~ msgstr ""
-#~ "使用 HTML 工具栏中的放大镜按钮 <img width='16' height='16' src=\"%1\"></"
-#~ "img> 来增大网页中的字体大小。"
-
-#~ msgid ""
-#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
-#~ "connection."
-#~ msgstr "使用缓冲<a href=\"%1\">代理服务器</a>来加速您的网络连接。"
-
-#~ msgid "Next: Specifications"
-#~ msgstr "下一页：技术规范"
