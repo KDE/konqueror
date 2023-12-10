@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 02:26+0000\n"
-"PO-Revision-Date: 2023-11-25 02:33\n"
+"PO-Revision-Date: 2023-12-09 09:29\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -34,13 +34,14 @@ msgid ""
 "This will open a new tab instead of a new window in various situations, such "
 "as choosing a link or a folder with the middle mouse button."
 msgstr ""
-"这将在各种情况下在新标签而不是新窗口中打开，如用鼠标中键选择链接或者文件夹。"
+"这将在各种情况下在新标签页而不是新窗口中打开，如用鼠标中键选择链接或者文件"
+"夹。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
 #: advancedTabOptions.ui:24
 #, kde-format
 msgid "Open &links in new tab instead of in new window"
-msgstr "在新的标签而不是在新窗口中打开链接(&L)"
+msgstr "在新的标签页而不是在新窗口中打开链接(&L)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
 #: advancedTabOptions.ui:31
@@ -48,13 +49,13 @@ msgstr "在新的标签而不是在新窗口中打开链接(&L)"
 msgid ""
 "Whether or not JavaScript popups if allowed shall open in a new tab or in a "
 "new window."
-msgstr "允许的 JavaScript 弹出窗口是应该在新标签还是在新窗口中打开。"
+msgstr "允许的 JavaScript 弹出窗口是应该在新标签页还是在新窗口中打开。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
 #: advancedTabOptions.ui:34
 #, kde-format
 msgid "Open pop&ups in new tab instead of in new window"
-msgstr "在新的标签而不是在新窗口中打开弹出窗口(&U)"
+msgstr "在新的标签页而不是在新窗口中打开弹出窗口(&U)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
 #: advancedTabOptions.ui:41
@@ -67,26 +68,26 @@ msgid ""
 msgstr ""
 "当您在其他 KDE 程序中点击 URL 或调用 kfmclient 打开 URL 时，系统将会搜索当前"
 "桌面，看有没有非最小化的 Konqueror。如果有的话，该 URL 将会打开为其中的一个新"
-"标签。否则，将会为所请求的 URL 打开一个新的 Konqueror 窗口。"
+"标签页。否则，将会为所请求的 URL 打开一个新的 Konqueror 窗口。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
 #: advancedTabOptions.ui:44
 #, kde-format
 msgid "Open as tab in existing Konqueror when URL is called externally"
-msgstr "从外部调用 URL 时，在已有 Konqueror 中打开相应的标签"
+msgstr "从外部调用 URL 时，在已有 Konqueror 中打开相应的标签页"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: advancedTabOptions.ui:51
 #, kde-format
 msgid ""
 "This will open a new tab in the background, instead of in the foreground."
-msgstr "这将在后台打开新标签，否则将在前台打开。"
+msgstr "这将在后台打开新标签页，否则将在前台打开。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: advancedTabOptions.ui:54
 #, kde-format
 msgid "O&pen new tabs in the background"
-msgstr "在后台打开新标签(&P)"
+msgstr "在后台打开新标签页(&P)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
 #: advancedTabOptions.ui:61
@@ -94,13 +95,13 @@ msgstr "在后台打开新标签(&P)"
 msgid ""
 "This will open a new tab opened from a page after the current tab, instead "
 "of after the last tab."
-msgstr "这将在当前标签之后打开新标签，否则将在最后一个标签之后打开。"
+msgstr "这将在当前标签页之后打开新标签页，否则将在最后一个标签页之后打开。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
 #: advancedTabOptions.ui:64
 #, kde-format
 msgid "Open &new tab after current tab"
-msgstr "在当前标签之后打开新标签(&N)"
+msgstr "在当前标签页之后打开新标签页(&N)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: advancedTabOptions.ui:71
@@ -108,25 +109,26 @@ msgstr "在当前标签之后打开新标签(&N)"
 msgid ""
 "This will display the tab bar only if there are two or more tabs. Otherwise "
 "it will always be displayed."
-msgstr "仅当打开了两个或更多标签时才显示标签栏。否则，将会总是显示标签栏。"
+msgstr ""
+"仅当打开了两个或更多标签页时才显示标签页栏。否则，将会总是显示标签页栏。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
 #: advancedTabOptions.ui:74
 #, kde-format
 msgid "Hide the tab bar when only one tab is open"
-msgstr "仅打开一个标签时隐藏标签栏"
+msgstr "仅打开一个标签页时隐藏标签页栏"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: advancedTabOptions.ui:81
 #, kde-format
 msgid "This will display close buttons inside each tab."
-msgstr "这将在每个标签上显示关闭按钮。"
+msgstr "这将在每个标签页上显示关闭按钮。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
 #: advancedTabOptions.ui:84
 #, kde-format
 msgid "&Show close button on tabs"
-msgstr "在标签上显示关闭按钮(&S)"
+msgstr "在标签页上显示关闭按钮(&S)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
 #: advancedTabOptions.ui:91
@@ -134,13 +136,13 @@ msgstr "在标签上显示关闭按钮(&S)"
 msgid ""
 "When you click on a tab using the middle mouse button or mouse wheel, it "
 "will close that tab."
-msgstr "当您使用鼠标中键或滚轮点击一个标签时，此标签将会关闭。"
+msgstr "当您使用鼠标中键或滚轮点击一个标签页时，此标签页将会关闭。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
 #: advancedTabOptions.ui:94
 #, kde-format
 msgid "Middle-click on a tab to close it"
-msgstr "中键点击可关闭标签"
+msgstr "中键点击可关闭标签页"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
 #: advancedTabOptions.ui:101
@@ -163,14 +165,14 @@ msgid ""
 "When checking this the previous used or opened tab will be activated when "
 "you close the current active tab instead of the one right to the current tab."
 msgstr ""
-"选中此项时，当您关闭当前激活的标签时将会打开先前使用或打开的标签，而不是当前"
-"标签右侧的标签。"
+"选中此项时，当您关闭当前激活的标签页时将会打开先前使用或打开的标签页，而不是"
+"当前标签右侧的标签页。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
 #: advancedTabOptions.ui:114
 #, kde-format
 msgid "Activate previously used tab when closing the current tab"
-msgstr "关闭当前标签时激活先前使用的标签"
+msgstr "关闭当前标签页时激活先前使用的标签页"
 
 #: appearance.cpp:39
 #, kde-format
@@ -1229,7 +1231,7 @@ msgstr "地址"
 #: generalopts.cpp:53
 #, kde-format
 msgid "Tabbed Browsing"
-msgstr "标签式浏览"
+msgstr "标签页式浏览"
 
 #: generalopts.cpp:79
 #, kde-format
@@ -1243,7 +1245,7 @@ msgstr "请插入自定义起始页"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
-msgstr "创建新标签时(&T)"
+msgstr "创建新标签页时(&T)"
 
 #: generalopts.cpp:94
 #, kde-format

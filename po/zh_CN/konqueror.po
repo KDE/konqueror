@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 02:26+0000\n"
-"PO-Revision-Date: 2023-11-25 02:33\n"
+"PO-Revision-Date: 2023-12-09 09:29\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -572,7 +572,7 @@ msgstr "在新窗口中打开(&W)"
 #: src/konqhistoryview.cpp:58
 #, kde-format
 msgid "Open in New Tab"
-msgstr "在新标签中打开"
+msgstr "在新标签页中打开"
 
 #: src/konqhistoryview.cpp:63
 #, kde-format
@@ -719,8 +719,8 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Detaching the tab will discard these changes."
 msgstr ""
-"此标签包含尚未提交的更改。\n"
-"漂移标签将会丢弃这些更改。"
+"此标签页包含尚未提交的更改。\n"
+"分离标签页将会丢弃这些更改。"
 
 #: src/konqmainwindow.cpp:2366
 #, kde-format
@@ -737,24 +737,24 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the tab will discard these changes."
 msgstr ""
-"此标签包含尚未提交的更改。\n"
-"关闭标签将会丢弃这些更改。"
+"此标签页包含尚未提交的更改。\n"
+"关闭标签页将会丢弃这些更改。"
 
 #: src/konqmainwindow.cpp:2424
 #, kde-format
 msgid "Do you really want to close all other tabs?"
-msgstr "您确定要关闭全部其他标签吗？"
+msgstr "您确定要关闭全部其他标签页吗？"
 
 #: src/konqmainwindow.cpp:2425 src/konqmainwindow.cpp:3514 src/konqtabs.cpp:335
 #, kde-format
 msgid "Close &Other Tabs"
-msgstr "关闭其他标签(&O)"
+msgstr "关闭其他标签页(&O)"
 
 #: src/konqmainwindow.cpp:2425
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
-msgstr "关闭其他标签确认"
+msgstr "关闭其他标签页确认"
 
 #: src/konqmainwindow.cpp:2441
 #, kde-format
@@ -762,8 +762,8 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing other tabs will discard these changes."
 msgstr ""
-"此标签包含尚未提交的更改。\n"
-"关闭其他标签将会丢弃这些更改。"
+"此标签页包含尚未提交的更改。\n"
+"关闭其他标签页将会丢弃这些更改。"
 
 #: src/konqmainwindow.cpp:2463
 #, kde-format
@@ -771,8 +771,8 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Reloading all tabs will discard these changes."
 msgstr ""
-"此标签包含尚未提交的更改。\n"
-"重新加载全部标签将会丢弃这些更改。"
+"此标签页包含尚未提交的更改。\n"
+"重新加载全部标签页将会丢弃这些更改。"
 
 #: src/konqmainwindow.cpp:2520
 #, kde-format
@@ -913,17 +913,17 @@ msgstr "上下拆分视图(&T)"
 #: src/konqmainwindow.cpp:3484 src/konqtabs.cpp:456
 #, kde-format
 msgid "&New Tab"
-msgstr "新建标签(&N)"
+msgstr "新建标签页(&N)"
 
 #: src/konqmainwindow.cpp:3493
 #, kde-format
 msgid "&Duplicate Current Tab"
-msgstr "复制当前标签(&D)"
+msgstr "复制当前标签页(&D)"
 
 #: src/konqmainwindow.cpp:3498
 #, kde-format
 msgid "Detach Current Tab"
-msgstr "漂移当前标签"
+msgstr "分离当前标签页"
 
 #: src/konqmainwindow.cpp:3503
 #, kde-format
@@ -933,32 +933,32 @@ msgstr "关闭活动视图(&C)"
 #: src/konqmainwindow.cpp:3508
 #, kde-format
 msgid "Close Current Tab"
-msgstr "关闭当前标签"
+msgstr "关闭当前标签页"
 
 #: src/konqmainwindow.cpp:3518
 #, kde-format
 msgid "Activate Next Tab"
-msgstr "激活下一标签"
+msgstr "激活下一标签页"
 
 #: src/konqmainwindow.cpp:3522
 #, kde-format
 msgid "Activate Previous Tab"
-msgstr "激活上一标签"
+msgstr "激活上一标签页"
 
 #: src/konqmainwindow.cpp:3529
 #, kde-format
 msgid "Activate Tab %1"
-msgstr "激活第 %1 个标签"
+msgstr "激活第 %1 个标签页"
 
 #: src/konqmainwindow.cpp:3534
 #, kde-format
 msgid "Move Tab Left"
-msgstr "向左移动标签"
+msgstr "左移标签页"
 
 #: src/konqmainwindow.cpp:3539
 #, kde-format
 msgid "Move Tab Right"
-msgstr "向右移动标签"
+msgstr "右移标签页"
 
 #: src/konqmainwindow.cpp:3547
 #, kde-format
@@ -973,7 +973,7 @@ msgstr "重新加载(&R)"
 #: src/konqmainwindow.cpp:3570 src/konqtabs.cpp:313
 #, kde-format
 msgid "&Reload All Tabs"
-msgstr "重新加载全部标签(&R)"
+msgstr "重新加载全部标签页(&R)"
 
 #: src/konqmainwindow.cpp:3578
 #, kde-format
@@ -1068,7 +1068,7 @@ msgstr "在浏览历史中向后退一步"
 #: src/konqmainwindow.cpp:3700 src/konqmainwindow.cpp:3701
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
-msgstr "在已关闭标签历史中向后退一步"
+msgstr "在已关闭标签页历史中向后退一步"
 
 #: src/konqmainwindow.cpp:3703
 #, kde-format
@@ -1247,13 +1247,14 @@ msgstr "移动文件(&O)..."
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
 "while. Continue?"
-msgstr "您要以标签方式打开 20 个以上的书签，此操作可能会花费一点时间。继续吗？"
+msgstr ""
+"您请求了以标签页方式打开 20 个以上的书签，此操作可能会花费一点时间。继续吗？"
 
 #: src/konqmainwindow.cpp:4258
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
-msgstr "在新标签中打开书签文件夹"
+msgstr "在新标签页中打开书签文件夹"
 
 #: src/konqmainwindow.cpp:4259
 #, kde-format
@@ -1279,12 +1280,12 @@ msgstr "在新窗口中打开文档"
 #: src/konqmainwindow.cpp:4432
 #, kde-format
 msgid "Open in &New Tab"
-msgstr "在新建标签中打开(&N)"
+msgstr "在新建标签页中打开(&N)"
 
 #: src/konqmainwindow.cpp:4434
 #, kde-format
 msgid "Open the document in a new tab"
-msgstr "在新标签中打开文档"
+msgstr "在新标签页中打开文档"
 
 #: src/konqmainwindow.cpp:4650
 #, kde-format
@@ -1306,7 +1307,7 @@ msgstr "视图模式(&V)"
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
-msgstr "您在此窗口内有多个标签，您确定要关闭窗口吗？"
+msgstr "此窗口中打开了多个标签页，您确定要退出吗？"
 
 #: src/konqmainwindow.cpp:4830
 #, kde-format
@@ -1317,7 +1318,7 @@ msgstr "确认"
 #: src/konqmainwindow.cpp:4832
 #, kde-format
 msgid "C&lose Current Tab"
-msgstr "关闭当前标签(&L)"
+msgstr "关闭当前标签页(&L)"
 
 #: src/konqmainwindow.cpp:4858
 #, kde-format
@@ -1325,7 +1326,7 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
-"此标签包含尚未提交的更改。\n"
+"此标签页包含尚未提交的更改。\n"
 "关闭窗口将会丢弃这些更改。"
 
 #: src/konqmainwindow.cpp:4859
@@ -1446,7 +1447,7 @@ msgstr ""
 #: src/konqnewsessiondlg_base.ui:28
 #, kde-format
 msgid "Save open &tabs and windows for easy retrieval"
-msgstr "保存打开的标签和窗口，以便恢复(&T)"
+msgstr "保存打开的标签页和窗口，以便恢复(&T)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_pAllWindows)
 #: src/konqnewsessiondlg_base.ui:34
@@ -1529,7 +1530,7 @@ msgstr "删除"
 #: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
 #, kde-format
 msgid "Open tabs inside current window"
-msgstr "在当前窗口中打开标签"
+msgstr "在当前窗口中打开标签页"
 
 #: src/konqsessionmanager.cpp:86
 #, kde-format
@@ -1604,44 +1605,44 @@ msgid ""
 "over the tab to see the full title, in case it has been shortened to fit the "
 "tab width."
 msgstr ""
-"此栏包含目前打开的标签列表。单击标签可激活该标签。您还可以使用键盘快捷键在标"
-"签间导航。标签上的文字是当前打开页面的标题；如果标题太长以致被截短到标签宽度"
-"的话，将您的鼠标指向标签即可查看完整标题。"
+"此栏包含目前打开的标签页列表。单击标签可激活该标签页。您还可以使用键盘快捷键"
+"在标签页间导航。标签页上的文字是当前打开页面的标题；如果标题太长以致被截短到"
+"标签页宽度的话，将您的鼠标指向标签页即可查看完整标题。"
 
 #: src/konqtabs.cpp:86
 #, kde-format
 msgid "Open a new tab"
-msgstr "打开一个新标签"
+msgstr "打开新标签页"
 
 #: src/konqtabs.cpp:95
 #, kde-format
 msgid "Close the current tab"
-msgstr "关闭当前标签"
+msgstr "关闭当前标签页"
 
 #: src/konqtabs.cpp:461
 #, kde-format
 msgid "&Duplicate Tab"
-msgstr "复制标签(&D)"
+msgstr "复制标签页(&D)"
 
 #: src/konqtabs.cpp:466
 #, kde-format
 msgid "&Reload Tab"
-msgstr "重新加载标签(&R)"
+msgstr "重新加载标签页(&R)"
 
 #: src/konqtabs.cpp:473
 #, kde-format
 msgid "Other Tabs"
-msgstr "其他标签"
+msgstr "其他标签页"
 
 #: src/konqtabs.cpp:478
 #, kde-format
 msgid "D&etach Tab"
-msgstr "漂移标签(&E)"
+msgstr "分离标签页(&E)"
 
 #: src/konqtabs.cpp:484
 #, kde-format
 msgid "&Close Tab"
-msgstr "关闭标签(&C)"
+msgstr "关闭标签页(&C)"
 
 #. i18n: ectx: label, entry, group (UserSettings)
 #: src/konqueror.kcfg:11
@@ -1883,7 +1884,7 @@ msgstr "书签工具栏"
 #: src/konqundomanager.cpp:90 src/konqundomanager.cpp:252
 #, kde-format
 msgid "Und&o: Closed Tab"
-msgstr "撤销：已关闭标签(&O)"
+msgstr "撤销：已关闭的标签页(&O)"
 
 #: src/konqundomanager.cpp:92 src/konqundomanager.cpp:103
 #: src/konqundomanager.cpp:147
