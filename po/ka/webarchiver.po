@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-01-12 00:45+0000\n"
-"PO-Revision-Date: 2022-09-12 19:58+0200\n"
+"PO-Revision-Date: 2023-12-11 23:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -102,24 +102,26 @@ msgid ""
 "The web archive download cannot use the current proxy settings. No proxy "
 "will be used."
 msgstr ""
+"ვების არქივის გადმოწერას მიმდინარე პროქსის პარამეტრების გამოყენება არ "
+"შეუძლია. პროქსი გამოყენებული არ იქნება."
 
 #: app/archivedialog.cpp:351
 #, kde-format
 msgctxt "@info"
 msgid "The save location is not valid."
-msgstr ""
+msgstr "შენახვის მდებარეობა არასწორია."
 
 #: app/archivedialog.cpp:371
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
-msgstr ""
+msgstr "ბრძანება wget(1) ვერ ვიპოვე.<nl/>იხ. <link>%1</link>."
 
 #: app/archivedialog.cpp:393
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
-msgstr ""
+msgstr "ვერ გადავამოწმე სამიზნე<nl/><filename>%1</filename><nl/>%2"
 
 #: app/archivedialog.cpp:410
 #, kde-kuit-format
@@ -128,12 +130,14 @@ msgid ""
 "The archive directory<nl/><filename>%1</filename><nl/>already exists as a "
 "file."
 msgstr ""
+"არქვივის საქაღალდე<nl/><filename>%1</filename><nl/>უკვე არსებობს ფაილის "
+"სახით."
 
 #: app/archivedialog.cpp:411
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
-msgstr ""
+msgstr "არქვივის საქაღალდე<nl/><filename>%1</filename><nl/>უკვე არსებობს."
 
 #: app/archivedialog.cpp:415
 #, kde-kuit-format
@@ -142,12 +146,14 @@ msgid ""
 "The archive file<nl/><filename>%1</filename><nl/>already exists as a "
 "directory."
 msgstr ""
+"არქვივის ფაილი<nl/><filename>%1</filename><nl/>უკვე არსებობს საქაღალდის "
+"სახით."
 
 #: app/archivedialog.cpp:416
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
-msgstr ""
+msgstr "არქვივის ფაილი<nl/><filename>%1</filename><nl/>უკვე არსებობს."
 
 #: app/archivedialog.cpp:420
 #, kde-format
@@ -158,25 +164,25 @@ msgstr "არქივი უკვე არსებობს"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
-msgstr ""
+msgstr "ვერ წავშალე საწყისი არქივი<nl/><filename>%1</filename><nl/>%2"
 
 #: app/archivedialog.cpp:467
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
-msgstr ""
+msgstr "ვერ შევქმენი დროებითი საქაღალდე<nl/><filename>%1</filename><nl/>"
 
 #: app/archivedialog.cpp:539
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot start the archiver process <filename>%1</filename>"
-msgstr ""
+msgstr "ვერ გავუშვი არქივატორის პროცესი <filename>%1</filename>"
 
 #: app/archivedialog.cpp:555
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The download process was interrupted."
-msgstr ""
+msgstr "გადმოწერის პროცესი შეწყვეტილია."
 
 #: app/archivedialog.cpp:556
 #, kde-kuit-format
@@ -185,6 +191,7 @@ msgid ""
 "<para>The download process <filename>%1</filename> failed with signal %2.</"
 "para>"
 msgstr ""
+"<para>გადმოწერის პროცესი <filename>%1</filename> ჩავარდა სიგნალით %2.</para>"
 
 #: app/archivedialog.cpp:561
 #, kde-kuit-format
@@ -193,6 +200,7 @@ msgid ""
 "<para>The download process <filename>%1</filename> failed with status %2.</"
 "para>"
 msgstr ""
+"<para>გადმოწერის პროცესი <filename>%1</filename> ჩავარდა სტატუსით %2.</para>"
 
 #: app/archivedialog.cpp:565
 #, kde-kuit-format
@@ -201,12 +209,14 @@ msgid ""
 "<para>This may simply indicate a 404 error for some of the page elements.</"
 "para>"
 msgstr ""
+"<para>ეს, ზოგიერთი გვერდის ელემენტისთვის შეიძლება, უბრალოდ, შეცდომა 404-ს "
+"ნიშნავდეს.</para>"
 
 #: app/archivedialog.cpp:571
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
-msgstr ""
+msgstr "<para>დავიტოვო ნაწილობრივი ვებ-არქივი?</para>"
 
 #: app/archivedialog.cpp:572
 #, kde-format
@@ -229,18 +239,20 @@ msgstr "ვებ არქივის შექმნის შეცდომ
 msgctxt "@info"
 msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
 msgstr ""
+"არქივის კოპირება შეუძლებელია მისამართზე<nl/><filename>%1</filename><nl/>%2"
 
 #: app/archivedialog.cpp:751
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
-msgstr ""
+msgstr "ვერ დავაყენე წვდომები ფაილზე<nl/><filename>%1</filename><nl/>%2"
 
 #: app/archivedialog.cpp:759
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"
 msgstr ""
+"ვებ-არქივი შენახულია მისამართზე<nl/><filename><link>%1</link></filename>"
 
 #: app/main.cpp:26
 #, kde-format
@@ -288,6 +300,8 @@ msgstr "მოლოდინის დრო:"
 #, kde-format
 msgid "The wait time between item requests, to reduce web server load"
 msgstr ""
+"მოლოდინის დრო ელემენტის მოთხოვნებს შორის, რათა ვებსერვერის დატვირთვა "
+"შემცირდეს"
 
 #. i18n: ectx: label, entry (NoProxy), group (Options)
 #: app/settings.kcfg:18
@@ -300,18 +314,21 @@ msgstr "არ გამოიყენო პროქსი"
 #, kde-format
 msgid "Do not use the system proxy settings to fetch the web page"
 msgstr ""
+"ვებგვერდის გამოსათხოვად სისტემური პროქსის პარამეტრები გამოყენებული არ იქნება"
 
 #. i18n: ectx: label, entry (RandomWait), group (Options)
 #: app/settings.kcfg:24
 #, kde-format
 msgid "Randomise wait time"
-msgstr ""
+msgstr "მოლოდინის დროის შემთხვევითობა"
 
 #. i18n: ectx: tooltip, entry (RandomWait), group (Options)
 #: app/settings.kcfg:25
 #, kde-format
 msgid "Vary the wait time between requests, to confuse server log analysis"
 msgstr ""
+"მოთხოვნებს შორის დაყოვნების დროის ცვლილებები სერვერის ჟურნალის ანალიზის "
+"დასაბნევად"
 
 #. i18n: ectx: label, entry (FixExtensions), group (Options)
 #: app/settings.kcfg:30
@@ -357,6 +374,11 @@ msgid ""
 "p>\n"
 "      "
 msgstr ""
+"<p>გადმოწერის პროცესის ტერმინალის ფანჯარაში გაშვება და მისი დახურვა, როცა "
+"გადმოწერა დასრულდება.</p>\n"
+"             <p>თუ ეს პარამეტრი გამორთულია, გადმოწერა ფონურად გაეშვება. მისი "
+"მიმდინარეობის გამოტანა სესიის ჟურნალის ფაილში გამოჩნდება.</p>\n"
+"       "
 
 #. i18n: ectx: label, entry (CloseWhenFinished), group (Options)
 #: app/settings.kcfg:50
@@ -368,7 +390,7 @@ msgstr "დახურვა დასრულებისას"
 #: app/settings.kcfg:51
 #, kde-format
 msgid "Close this window when the download has finished successfully"
-msgstr ""
+msgstr "დახურეთ ეს ფანჯარა, როცა გადმოწერა დასრულდება"
 
 #. i18n: ectx: label, entry (ArchiveType), group (Options)
 #: app/settings.kcfg:56
@@ -394,6 +416,8 @@ msgid ""
 "Cannot find the <command>kcreatewebarchive</command> executable,<nl/>check "
 "the plugin and helper installation."
 msgstr ""
+"ვერ ვიპოვე გამშვები ფაილი <command>kcreatewebarchive</command>.<nl/"
+">შეამოწმეთ დამატების და დამხმარე პროგრამის ფაილები."
 
 #: plugin_webarchiver.cpp:50
 #, kde-format

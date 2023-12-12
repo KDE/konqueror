@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-07-14 00:45+0000\n"
-"PO-Revision-Date: 2022-11-01 06:16+0100\n"
+"PO-Revision-Date: 2023-12-11 23:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -151,6 +151,12 @@ msgid ""
 "b> done.</p><p>For details on usage and options available, see the online "
 "help under menu 'Help/FSView Manual'.</p>"
 msgstr ""
+"<p>ეს დამატება FSView-ია, გრაფიკული თვალიერების რეჟიმი, რომელიც ფაილური "
+"სისტემის გამოყენებას ხის რუკის ვიზუალიზაციის გამოყენებით გაჩვენებთ.</"
+"p><p>დაიმახსოვრეთ, რომ ამ რეჟიმში ავტომატური განახლება მაშინ, როცა ფაილური "
+"სისტემა იცვლება, <b>საგანგებოდ</b> არ ხდება.</p><p>გამოყენების დეტალებსა და "
+"ხელმისაწვდომი პარამეტრების სანახავად იხილეთ დახმარება ინტერნეტში მენიუში "
+"'დახმარება/FSView-ის სახელმძღვანელო'.</p>"
 
 #: fsview_part.cpp:119
 #, kde-format
@@ -165,7 +171,7 @@ msgstr "FSView -ის სახელმძღვანელოს ჩვე�
 #: fsview_part.cpp:122
 #, kde-format
 msgid "Opens the help browser with the FSView documentation"
-msgstr ""
+msgstr "დახმარების ბრაუზერის გახსნა FSView-ის დოკუმენტაციით"
 
 #: fsview_part.cpp:154
 #, kde-format
@@ -236,7 +242,7 @@ msgstr "(c) 2002, Josef Weidendorfer"
 #: main.cpp:33
 #, kde-format
 msgid "View filesystem starting from this folder"
-msgstr ""
+msgstr "ამ საქაღალდიდან დაწყებულ ფაილური სისტემის ნახვა"
 
 #: treemap.cpp:1436
 #, kde-format
@@ -301,7 +307,7 @@ msgstr "საზღვარი"
 #: treemap.cpp:3238
 #, kde-format
 msgid "Correct Borders Only"
-msgstr ""
+msgstr "მხოლოდ საზღვრების შესწორება"
 
 #: treemap.cpp:3241
 #, kde-format
@@ -326,7 +332,7 @@ msgstr "ხილული"
 #: treemap.cpp:3257
 #, kde-format
 msgid "Take Space From Children"
-msgstr ""
+msgstr "სივრცის აღება შვილებიდან"
 
 #: treemap.cpp:3261
 #, kde-format

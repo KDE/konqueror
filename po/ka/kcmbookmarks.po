@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-10-01 00:18+0000\n"
-"PO-Revision-Date: 2022-12-27 07:56+0100\n"
+"PO-Revision-Date: 2023-12-11 23:36+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: bookmarks.cpp:92
 #, kde-format
@@ -25,6 +25,9 @@ msgid ""
 "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
 "\">bookmarks:/</a>.</p>"
 msgstr ""
+"<h1>ჩემი სანიშნეები</h1><p>ეს მოდულის საშუალებას გაძლევთ, სანიშნეების "
+"საწყისი გვერდი მოირგოთ.</p><p>სანიშნეების საწყისი გვერდი წვდომადია "
+"მისამართზე <a href=\"bookmarks:/</a>.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -40,6 +43,9 @@ msgid ""
 "a folder) are not displayed.\n"
 "If checked, they are gathered in a \"root\" folder."
 msgstr ""
+"თუ ეს პარამეტრი გამორთულია, იერარქიის მთავარ საქაღალდეში მყოფი სანიშნეები "
+"(არა-საქაღალდეში) არ გამოჩნდება.\n"
+"თუ ჩართულია, ისინი \"ძირითად\" საქაღალდეშია მოგროვებული."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
 #: bookmarks.ui:26
@@ -56,6 +62,10 @@ msgid ""
 "It looks less nice but it may help if you have a very big folder you want to "
 "spread in two columns."
 msgstr ""
+"ქვესაქაღლდეები ნაგულისხმევად თავიანთ მშობლებშია ნაჩვენები. თუ ამ პარამეტრს "
+"ჩართავთ, ქვესაქაღალდეები ცალკე გამოჩნდება.\n"
+"შორიდან ეს შეიძლება უსარგებლოდ ჩანდეს, მაგრამ ის დაგეხმარებათ, თუ გაქვთ "
+"ძალიან დიდი საქაღალდე, რომელიც ორ სვეტად გნებავთ, გაჰყოთ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
 #: bookmarks.ui:40
@@ -70,6 +80,8 @@ msgid ""
 "Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
 "as a file manager."
 msgstr ""
+"KDE-ის მდებარეობების (საწყისი, ქსელი, ...) შემცველი ფანჯრის ჩვენება. "
+"გამოგადგებათ, თუ konqueror-ს ფაილების მმართველად იყენებთ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
 #: bookmarks.ui:50
@@ -91,6 +103,9 @@ msgid ""
 "of columns depends on the width of the konqueror window and the number of "
 "bookmarks you have."
 msgstr ""
+"საქაღალდეები ავტომატურად ნაწილდება რამდენიმე სვეტში. სვეტების საუკეთესო "
+"რაოდენობა დამოკიდებულია konqueror-ის ფანჯრის სიგანეზე და იმაზე, რამდენი "
+"სანიშნე გაგაჩნიათ."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: bookmarks.ui:74
@@ -102,7 +117,7 @@ msgstr "საჩვენებელი სვეტების რაოდ�
 #: bookmarks.ui:109
 #, kde-format
 msgid "Disable it on slow system to disable background images."
-msgstr ""
+msgstr "გათიშეთ ნელ სისტემებზე ან გამორთეთ ფონის სურათები."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
 #: bookmarks.ui:112

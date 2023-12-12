@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 02:26+0000\n"
-"PO-Revision-Date: 2023-06-11 06:14+0200\n"
+"PO-Revision-Date: 2023-12-11 23:34+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -135,6 +135,10 @@ msgid ""
 "both local and networked folders while enjoying advanced features such as "
 "the powerful sidebar and file previews."
 msgstr ""
+"Konqueror აადვილებს თქვენს ფაილებთან მუშაობას და მათ მართვას. შეგიძლიათ "
+"დაათვალიეროთ როგორც ლოკალური, ისე ქსელური საქაღალდეები მაშინ, როცა წვდომა "
+"გექნებათ ისეთ დამატებით ფუნქციებთან, როგორიცაა მძლავრი გვერდითი პანელი და "
+"ფაილის მინიატურები."
 
 #: src/about/konq_aboutpage.cpp:144
 #, kde-format
@@ -144,6 +148,11 @@ msgid ""
 "kde.org\">http://www.kde.org</a>) of a web page you would like to visit in "
 "the location bar and press Enter, or choose an entry from the Bookmarks menu."
 msgstr ""
+"Konqueror, ასევე, სრულად ფუნქციონალური ვებ-ბრაუზერია, რომელიც შეგიძლიათ, "
+"ინტერნეტში სამუშაოდ გამოიყენოთ. შეიყვანეთ მისამართი (მაგ: <a href=\"https://"
+"www.kde.org\">https://www.kde.org</a>) ვებგვერდისა, რომელზეც გნებავთ "
+"შეხვიდეთ, მდებარეობის პანელზე და დააწექით Enter-ს, ან აირჩიეთ ის სანიშნეების "
+"მენიუდან."
 
 #: src/about/konq_aboutpage.cpp:149
 #, kde-format
@@ -151,6 +160,8 @@ msgid ""
 "To return to the previous location, press the back button <img width='16' "
 "height='16' src=\"%1\"></img> in the toolbar. "
 msgstr ""
+"წინა მდებარეობაზე დასაბრუნებლად, ხელსაწყოების პანელზე უკან გადასვლის ღილაკს "
+"დააწექით <img width='16' height='16' src=\"%1\"></img>. "
 
 #: src/about/konq_aboutpage.cpp:152
 #, kde-format
@@ -158,12 +169,16 @@ msgid ""
 "To quickly go to your Home folder press the home button <img width='16' "
 "height='16' src=\"%1\"></img>."
 msgstr ""
+"თქვენს საწყის საქაღალდეზე გადასასვლელად სახლის ღილაკს დააწექით <img "
+"width='16' height='16' src=\"%1\"></img>."
 
 #: src/about/konq_aboutpage.cpp:154
 #, kde-format
 msgid ""
 "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
 msgstr ""
+"Konqueror-ის შესახებ დეტალური დოკუმენტაციის მისაღებად <a href=\"%1\">აქ</a> "
+"დააწკაპუნეთ."
 
 #: src/about/konq_aboutpage.cpp:157
 #, kde-format
@@ -180,6 +195,13 @@ msgid ""
 "Along with this support, for such functions as favicons, Web Shortcuts, and "
 "<A HREF=\"%1\">XBEL bookmarks</A>, Konqueror also implements:"
 msgstr ""
+"Konqueror შეიქმნა, რომ მისდიოს და მხარი დაუჭიროს ინტერნეტის სტანდარტებს. "
+"მიზანია, სრულად განვახორციელოთ სტანდარტები ისეთი ორგანიზაციებისგან, "
+"როგორიცაა W3 და OASIS, მაშინ, როცა ვცდილობთ, გვქონდეს მხარდაჭერა დამატებითი "
+"წვდომადობის ფუნქციებთან, რომლებიც ინტერნეტში დე-ფაქტო სტანდარტადაა მიღებული. "
+"ამ ყველაფერთან ერთად, როგორიცაა ვებგვერდის ხატულები (favico), ვებ-"
+"მალსახმობები და <A HREF=\"%1\">XBEL სანიშნეები</A>, Konqueror-ს ასევე აქვს "
+"შემდეგი ტექნოლოგიების მხარდაჭერა:"
 
 #: src/about/konq_aboutpage.cpp:200
 #, kde-format
@@ -215,18 +237,20 @@ msgstr "ჩაშენებული"
 #: src/about/konq_aboutpage.cpp:206
 #, kde-format
 msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
-msgstr ""
+msgstr "<A HREF=\"%1\">კასკადური სტილის ცხრილები</A> (CSS 1, partially CSS 2)"
 
 #: src/about/konq_aboutpage.cpp:208
 #, kde-format
 msgid "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
 msgstr ""
+"<A HREF=\"%1\">ECMA-262</A> გამოცემა 3 (უხეშად, იგივე, რაც JavaScript 1.5)"
 
 #: src/about/konq_aboutpage.cpp:210
 #, kde-format
 msgid ""
 "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
 msgstr ""
+"JavaScript გათიშულია (გლობალურად). ჩართეთ JavaScript <A HREF=\"%1\">აქ</A>."
 
 #: src/about/konq_aboutpage.cpp:211
 #, kde-format
@@ -234,6 +258,8 @@ msgid ""
 "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\\">here</"
 "A>."
 msgstr ""
+"JavaScript ჩართულია (გლობალურად). მოირგეთ JavaScript <A HREF=\\\"%1\\\">აქ</"
+"A>."
 
 #: src/about/konq_aboutpage.cpp:212
 #, kde-format
@@ -246,6 +272,8 @@ msgid ""
 "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
 "\"%2\">Sun/Oracle</A>)"
 msgstr ""
+"JDK 1.2.0 (Java 2) თავსებადი VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
+"\"%2\">Sun/Oracle</A>)"
 
 #: src/about/konq_aboutpage.cpp:215
 #, kde-format
@@ -258,6 +286,8 @@ msgid ""
 "NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF=\"%1\">Flash<SUP>&reg;"
 "</SUP></A>, etc.)"
 msgstr ""
+"NPAPI <A HREF=\"%2\">დამატებები</A> (<A HREF=\"%1\">Flash<SUP>&reg;</SUP></"
+"A>, და ა.შ. ფაილების გასახსნელად.)"
 
 #: src/about/konq_aboutpage.cpp:220
 #, kde-format
@@ -267,7 +297,7 @@ msgstr "SSL"
 #: src/about/konq_aboutpage.cpp:221
 #, kde-format
 msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
-msgstr ""
+msgstr "(TLS/SSL v2/3) უსაფრთხო კომუნკაციისთვის 168-ბიტამდე"
 
 #: src/about/konq_aboutpage.cpp:222
 #, kde-format
@@ -328,7 +358,7 @@ msgstr "FTP"
 #: src/about/konq_aboutpage.cpp:235
 #, kde-format
 msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
-msgstr ""
+msgstr "და <A HREF=\"%1\">ბევრი სხვა (იხილეთ Kioslaves KHelpCenter-ში)...</A>"
 
 #: src/about/konq_aboutpage.cpp:236
 #, kde-format
@@ -373,6 +403,10 @@ msgid ""
 "encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-"
 "Shortcuts."
 msgstr ""
+"გამოიყენეთ ვებ-მალსახმობები: თუ აკრეფთ \"gg: KDE\", Google-ში მოიძებნება "
+"ფრაზა \"KDE\". ჩვენ ძალიან ბევრი ვებ-მალსახმობი გვაქვს, რათა პროგრამებისა და "
+"სხვა საჭირო ინფორმაციის მოძებნაში დაგეხმაროთ. ასევე, შეგიძლიათ, <a href="
+"\"%1\">თქვენი საკუთარი</a> ვებ-მალსახმობებიც."
 
 #: src/about/konq_aboutpage.cpp:298
 #, kde-format
@@ -380,6 +414,8 @@ msgid ""
 "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
 "the HTML toolbar to increase the font size on your web page."
 msgstr ""
+"HTML პანელზე მდებარე გადიდების ღილაკით <img width='16' height='16' src="
+"\"%1\"></img> თქვენს ვებგვერდზე ფონტი ზომის გაზრდა შეგიძლიათ."
 
 #: src/about/konq_aboutpage.cpp:300
 #, kde-format
@@ -388,6 +424,9 @@ msgid ""
 "want to clear the current entry by pressing the black arrow with the white "
 "cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
 msgstr ""
+"როცა გნებავთ, მდებარეობის პანელში ახალი მისამართი ჩასვათ, ძირითადად, ასევე "
+"გნებავთ, იქ ამჟამად მდებარე ტექსტიც გაასუფთაოთ, თეთრი ჯვრის მქონე შავ ისარზე "
+"<img width='16' height='16' src=\"%1\"></img> დაწკაპუნებით."
 
 #: src/about/konq_aboutpage.cpp:304
 #, kde-format
@@ -396,6 +435,10 @@ msgid ""
 "the icon (favicon) that is to the left of the Location toolbar, drop it on "
 "to the desktop, and choose \"Icon\"."
 msgstr ""
+"იმისათვის, რომ სამუშაო მაგიდაზე შეიქმნას მალსახმობი, რომელიც მიმდინარე "
+"გვერდზე მიუთითებს, უბრალოდ გადაათრიეთ მისი ხატულა (favicon), რომელიც "
+"მდებარეობის პანელის მარცხენა მხარესაა, სამუშაო მაგიდაზე და აირჩიეთ \"ხატულა"
+"\"."
 
 #: src/about/konq_aboutpage.cpp:307
 #, kde-format
@@ -404,6 +447,9 @@ msgid ""
 "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
 "sessions."
 msgstr ""
+"მორგების მენიუში ასევე შეგიძლიათ <img width='16' height='16' src=\"%1\" /> "
+"\"სრულეკრანიანი რეჟიმი\" ჩართოთ. ეს ფუნქცია სასარგებლოა \"საუბრის\" "
+"სესიებისთვის."
 
 #: src/about/konq_aboutpage.cpp:310
 #, kde-format
@@ -412,6 +458,9 @@ msgid ""
 "two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> Split "
 "View Left/Right) you can make Konqueror appear the way you like."
 msgstr ""
+"Divide et impera (ლათ: \"დაყავი და დაიპყარი\") - ფანჯრის ორ ნაწილას გაყოფით "
+"(მაგ: ფანჯარა -> <img width='16' height='16' src=\"%1\" /> ხედის მარცხნივ/"
+"მარჯვნივ გაყოფა), შეგიძლიათ Konqueror თქვენს გემოზე მოირგოთ."
 
 #: src/about/konq_aboutpage.cpp:313
 #, kde-format
@@ -420,6 +469,9 @@ msgid ""
 "visiting asks you to use a different browser (and do not forget to send a "
 "complaint to the webmaster!)"
 msgstr ""
+"გამოიყენეთ <a href=\"%1\">user-agent</a> ფუნქცია, თუ ვებგვერდი, სადაც "
+"შედიხართ, სხვა ბრაუზერს ითხოვს (და არ დაგავიწყდეთ, ვებმასტერს საჩივარი "
+"მიწეროთ!)"
 
 #: src/about/konq_aboutpage.cpp:316
 #, kde-format
@@ -427,12 +479,15 @@ msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
 "ensures that you can keep track of the pages you have visited recently."
 msgstr ""
+"<img width='16' height='16' src=\"%1\"></img> ისტორია გვერდით პანელზე "
+"უზრუნველყოფს თქვენს წვდომას ბრაუზერის ისტორიასთან."
 
 #: src/about/konq_aboutpage.cpp:318
 #, kde-format
 msgid ""
 "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet connection."
 msgstr ""
+"ინტერნეტის ასაჩქარებლად გამოიყენეთ დამკეშავი <a href=\"%1\">პროქსი</a>."
 
 #: src/about/konq_aboutpage.cpp:320
 #, kde-format
@@ -441,6 +496,9 @@ msgid ""
 "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
 "Terminal Emulator)."
 msgstr ""
+"განვითარებული მომხმარებლები დააფასებენ Konsole-ს, რომელიც შეგიძლიათ, "
+"Konqueror-ში ჩააშენოთ (მორგება -> <img width='16' height='16' SRC=\"%1\"></"
+"img> ტერმინალის ემულატორის ჩვენება)."
 
 #: src/about/konq_aboutpage.cpp:324
 #, kde-format
@@ -473,6 +531,8 @@ msgid ""
 "The page will be saved as a single HTML file. Only the text of the page will "
 "be saved. External resources such as images won't be saved"
 msgstr ""
+"ეს გვერდი შენახული იქნება ერთ HTML ფაილში. შევინახავ მხოლოდ ტექსტს. გარე "
+"რესურსები, როგორიცაა გამოსახულებები, შენახული არ იქნება"
 
 #: src/choosepagesaveformatdlg.cpp:40
 #, kde-format
@@ -480,6 +540,9 @@ msgid ""
 "The page will be saved as an HTML file. Any external resources the page "
 "requires, such as images, will be saved inside an apposite directory"
 msgstr ""
+"ეს გვერდი შენახული იქნება HTML ფაილში. გარე რესურსები, რომელიც გვერდს "
+"ესაჭიროება, როგორიცაა, მაგალითად გამოსახულებები, შესაბამის საქაღალდეში "
+"გადმოიწერება"
 
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
@@ -489,6 +552,9 @@ msgid ""
 "<br><strong>Note</strong>: not all browsers are able to display this kind of "
 "files"
 msgstr ""
+"ეს გვერდი შენახული იქნება MHTML ფაილში, რომელიც ორივე, ტექსტს და გარე "
+"რესურსებსაც შეიცავს. <br><strong>დაიმახსოვრეთ</strong>: ამ ტიპის ფაილების "
+"ჩვენება ყველა ბრაუზერს არ შეუძლია"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
@@ -506,7 +572,7 @@ msgstr "როგორ გნებავთ გვერდის შენა
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As an HTML file &without external resources"
-msgstr ""
+msgstr "როგორც HTML &ფაილი გარე რესურსების გარეშე"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
@@ -569,14 +635,14 @@ msgstr "&წვდომის მიცემა"
 #: src/ui/featurepermissionbar.cpp:57
 #, kde-format
 msgid "<html><b>%1</b> would like to send you notifications"
-msgstr ""
+msgstr "<html><b>%1</b>-ს თქვენთვის გაფრთხილებების გამოგზავნა სურს"
 
 #: src/ui/featurepermissionbar.cpp:59
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access information about your current physical "
 "location"
-msgstr ""
+msgstr "<html><b>%1</b>-ს სურს წვდომა თქვენს მიმდინარე ფიზიკურ მდებარეობასთან"
 
 #: src/ui/featurepermissionbar.cpp:61
 #, kde-format
@@ -584,6 +650,8 @@ msgid ""
 "<html><b>%1</b> would like to access your microphone and other audio capture "
 "devices"
 msgstr ""
+"<html><b>%1</b>-ს სურს წვდომა თქვენს მიკროფონთან და სხვა ხმის ჩამწერ "
+"მოწყობილობებთან"
 
 #: src/ui/featurepermissionbar.cpp:63
 #, kde-format
@@ -591,6 +659,8 @@ msgid ""
 "<html><b>%1</b> would like to access your camera and other video capture "
 "devices"
 msgstr ""
+"<html><b>%1</b>-ს სურს წვდომა თქვენს კამერასთან და სხვა ვიდეოს ჩამწერ "
+"მოწყობილობებთან"
 
 #: src/ui/featurepermissionbar.cpp:65
 #, kde-format
@@ -598,21 +668,23 @@ msgid ""
 "<html><b>%1</b> would like to access to your microphone, camera and other "
 "audio and video capture devices"
 msgstr ""
+"<html><b>%1</b>-ს სურს წვდომა თქვენს კამერასთან, მიკროფოთან და სხვა ხმის და "
+"ვიდეოს ჩამწერ მოწყობილობასთან"
 
 #: src/ui/featurepermissionbar.cpp:67
 #, kde-format
 msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
-msgstr ""
+msgstr "<html><b>%1</b>-ს თქვენი თაგუნას ვებგვერდის შიგნით დაბლოკვა სურს"
 
 #: src/ui/featurepermissionbar.cpp:69
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen"
-msgstr ""
+msgstr "<html><b>%1</b>-ს სურს, თქვენი ეკრანი ჩაიწეროს"
 
 #: src/ui/featurepermissionbar.cpp:71
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen and your audio"
-msgstr ""
+msgstr "<html><b>%1</b>-ს სურს, თქვენი ეკრანი და ხმა ჩაიწეროს"
 
 #: src/ui/passwordbar.cpp:29
 #, kde-format
@@ -1104,7 +1176,7 @@ msgstr "&ამ გვერდისთვის დასამახსოვ
 #: src/webenginepart.cpp:1024
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
-msgstr ""
+msgstr "ამ გვერდისთვის მორგებული დამახსოვრების პარამეტრების წაშლა"
 
 #: src/webenginepart.cpp:1028
 #, kde-format
@@ -1195,6 +1267,8 @@ msgid ""
 "<p>The server <tt>%1</tt> failed the authenticity check. The error is:</"
 "p><p><tt>%2</tt></p>Do you want to ignore this error?"
 msgstr ""
+"<p>სერვერისთვის <tt>%1</tt> სანდოობის გადამოწმების შემოწმება ჩავარდა. "
+"შეცდომა:</p><p><tt>%2</tt></p>გნებავთ ამ შეცდომის იგნორი??"
 
 #: src/webenginepartcertificateerrordlg.cpp:55
 #, kde-format

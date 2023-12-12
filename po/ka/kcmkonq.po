@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-10-01 00:18+0000\n"
-"PO-Revision-Date: 2022-08-19 05:48+0200\n"
+"PO-Revision-Date: 2023-12-11 23:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: behaviour.cpp:36
 #, kde-format
@@ -43,11 +43,15 @@ msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
 "folder, rather than showing that folder's contents in the current window."
 msgstr ""
+"თუ ეს პარამეტრი ჩართულია, Konqueror გახსნის ახალ ფანჯარას, როცა საქაღალდეს "
+"გახსნით, მისი შემცველობის მიმდინარე ფანჯარაში ჩვენების მაგიერ."
 
 #: behaviour.cpp:73
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr ""
+"&მენიუს 'წაშლის' პუნქტების ჩვენება, რომლებიც სანაგვე ყუთის გვერდის ავლით "
+"წაშლის"
 
 #: behaviour.cpp:77
 #, kde-format
@@ -56,3 +60,7 @@ msgid ""
 "and in the file manager's menus and context menus. You can always delete "
 "files by holding the Shift key while calling 'Move to Trash'."
 msgstr ""
+"ჩართეთ ეს, თუ გნებავთ, მენიუს 'წაშლის' ბრძანებები სამუშაო მაგიდაზე და ფაილის "
+"მმართველის და კონტექსტურ მენიუებში გამოჩნდეს. ფაილების წაშლა, როცა "
+"დამალულია, Shift-ღილაკზე დაჭერით შეგიძლიათ, როცა 'ნაგვის ყუთში გადატანას' "
+"აირჩევთ."
