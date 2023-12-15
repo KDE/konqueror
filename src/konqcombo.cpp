@@ -112,7 +112,7 @@ KonqCombo::KonqCombo(QWidget *parent)
     setLayoutDirection(Qt::LeftToRight);
     setInsertPolicy(NoInsert);
     setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed));
-    setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);
 
     Q_ASSERT(s_config);
 
