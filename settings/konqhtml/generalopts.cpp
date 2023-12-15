@@ -259,6 +259,7 @@ void KKonqGeneralOptions::save()
         // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
         KBuildSycocaProgressDialog::rebuildKSycoca(widget());
     }
+    m_pConfig->sync();
 
     // Send signal to all konqueror instances
     QDBusMessage message =
