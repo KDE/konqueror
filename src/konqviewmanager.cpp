@@ -381,9 +381,6 @@ KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup &configGroup
     mainWindow->applyMainWindowSettings(configGroup);
     mainWindow->activateChild();
 
-    QStringList activities = configGroup.readEntry("Activities", QStringList{});
-    KX11Extras::self()->setOnActivities(mainWindow->winId(), activities);
-
 #ifdef DEBUG_VIEWMGR
     mainWindow->viewManager()->printFullHierarchy();
 #endif

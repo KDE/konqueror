@@ -4595,7 +4595,7 @@ void KonqMainWindow::applyMainWindowSettings(const KConfigGroup &config)
         QString entry = config.readEntry("StatusBar", "Enabled");
         m_currentView->frame()->statusbar()->setVisible(entry != QLatin1String("Disabled"));
     }
-    setOnActivities(config.readEntry(QStringLiteral("Activities"), QStringList{}));
+    setOnActivities(config.readEntry(QStringLiteral("Activities"), QStringList{KonquerorApplication::currentActivity()}));
 }
 
 void KonqMainWindow::saveMainWindowSettings(KConfigGroup &config)

@@ -71,7 +71,10 @@ QString KonquerorApplication::currentActivity()
 {
 #ifdef KActivities_FOUND
     KonquerorApplication* app = qobject_cast<KonquerorApplication*>(QApplication::instance());
-    return app ? app->m_activityConsumer->currentActivity() : QString();
+    if (!app || !app->m_activityConsumer || app->m_activityConsumer->serviceStatus() != KActivities::Consumer::Running) {
+        return QString();
+    }
+    return app->m_activityConsumer->currentActivity();
 #else
     return QString();
 #endif
