@@ -383,7 +383,11 @@ void ArchiveDialog::slotCreateButtonClicked()
     }
 
     // Check whether the destination file or directory exists
+#if QT_VERSION_MAJOR < 6
     KIO::StatJob *statJob = KIO::statDetails(m_saveUrl, KIO::StatJob::DestinationSide, KIO::StatBasic);
+#else
+    KIO::StatJob *statJob = KIO::stat(m_saveUrl, KIO::StatJob::DestinationSide, KIO::StatBasic);
+#endif
     connect(statJob, &KJob::result, this, &ArchiveDialog::slotCheckedDestination);
 }
 

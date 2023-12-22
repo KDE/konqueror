@@ -474,7 +474,11 @@ QString KonqMainWindow::detectNameFilter(QUrl &url)
                     nameFilter = fileName;
                 }
             } else { // not a local file
+#if QT_VERSION_MAJOR < 6
                 KIO::StatJob *job = KIO::statDetails(url, KIO::StatJob::DestinationSide, KIO::StatBasic, KIO::HideProgressInfo);
+#else
+                KIO::StatJob *job = KIO::stat(url, KIO::StatJob::DestinationSide, KIO::StatBasic, KIO::HideProgressInfo);
+#endif
                 // if there's an error stat'ing url, then assume it doesn't exist
                 nameFilter = !job->exec() ? fileName : QString();
             }
