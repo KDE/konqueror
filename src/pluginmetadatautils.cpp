@@ -12,9 +12,14 @@
 
 #include <QStringLiteral>
 
+static QString partDir() {
+    static QString s_partDir{QStringLiteral("kf" QT_STRINGIFY(QT_VERSION_MAJOR) "/parts")};
+    return s_partDir;
+}
+
 KPluginMetaData findPartById(const QString& id)
 {
-    return KPluginMetaData::findPluginById(QStringLiteral("kf" QT_STRINGIFY(QT_VERSION_MAJOR) "/parts"), id);
+    return KPluginMetaData::findPluginById(partDir(), id);
 }
 
 KPluginMetaData preferredPart(const QString &mimeType) {
@@ -28,12 +33,12 @@ KPluginMetaData preferredPart(const QString &mimeType) {
 
 QVector<KPluginMetaData> findParts(std::function<bool (const KPluginMetaData &)> filter)
 {
-    return KPluginMetaData::findPlugins(QStringLiteral("kf5/parts"), filter);
+    return KPluginMetaData::findPlugins(partDir(), filter);
 }
 
 QVector<KPluginMetaData> findParts(std::function<bool (const KPluginMetaData &)> filter, bool includeDefaultDir)
 {
-    QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("kf" QT_STRINGIFY(QT_VERSION_MAJOR) "/parts"), filter);
+    QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(partDir(), filter);
     if (includeDefaultDir) {
         plugins.append(KPluginMetaData::findPlugins(QString(), filter));
     }
