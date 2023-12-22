@@ -365,6 +365,18 @@ private:
 
     KonqView* setupView(KonqFrameContainerBase *parentContainer, bool passiveMode, bool openAfterCurrentPage = false, int pos = -1);
 
+    /**
+     * @brief Restore history for the given view from a configuration object and loads the last URL in the view
+     *
+     * This is used when restoring views which aren't in the tab container (mainly toggle views like the sidebar)
+     * @param view the view whose history should be restored
+     * @param cfg the configuration group to read history from
+     * @param prefix the prefix to append to keys to read entries in @p cfg
+     * @param defaultURL a default URL to use
+     * @param serviceType the service type to display
+     */
+    void restoreHistoryInLoadedView(KonqView *view, const KConfigGroup &cfg, const QString &prefix, const QUrl &defaultURL, const QString &serviceType);
+
 #ifndef NDEBUG
     //just for debugging
     void printSizeInfo(KonqFrameBase *frame,

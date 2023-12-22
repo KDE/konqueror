@@ -1192,14 +1192,34 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
             }
         }
 
-        KonqView *childView = setupView(parent, passiveMode, openAfterCurrentPage, pos);
         bool lockedLocation = cfg.readEntry(QStringLiteral("LockedLocation").prepend(prefix), false);
-        childView->storeDelayedLoadingData(serviceType, serviceName, openUrl, url, lockedLocation, cfg, prefix);
+        bool linkedView = cfg.readEntry(QStringLiteral("LinkedView").prepend(prefix), false);
+        const bool isToggleView = cfg.readEntry(QStringLiteral("ToggleView").prepend(prefix), false);
+
+        KonqView *childView = nullptr;
+        if (parent->frameType() == KonqFrameBase::Tabs) {
+            childView = setupView(parent, passiveMode, openAfterCurrentPage, pos);
+            childView->storeDelayedLoadingData(serviceType, serviceName, openUrl, url, lockedLocation, cfg, prefix);
+        }
+        else {
+            KPluginMetaData service;
+            QVector<KPluginMetaData> partServiceOffers;
+            KService::List appServiceOffers;
+            KonqFactory konqFactory;
+            KonqViewFactory viewFactory = konqFactory.createView(serviceType, serviceName, &service, &partServiceOffers, &appServiceOffers, true /*forceAutoEmbed*/);
+            if (viewFactory.isNull()) {
+                qCWarning(KONQUEROR_LOG) << "Profile Loading Error: View creation failed";
+                return; //ugh..
+            }
+            childView = setupView(parent, viewFactory, service, partServiceOffers, appServiceOffers, serviceType, passiveMode, openAfterCurrentPage, pos);
+            if (openUrl) {
+                restoreHistoryInLoadedView(childView, cfg, prefix, defaultURL, serviceType);
+            }
+        }
 
         if (!childView->isFollowActive()) {
-            childView->setLinkedView(cfg.readEntry(QStringLiteral("LinkedView").prepend(prefix), false));
+            childView->setLinkedView(linkedView);
         }
-        const bool isToggleView = cfg.readEntry(QStringLiteral("ToggleView").prepend(prefix), false);
         childView->setToggleView(isToggleView);
         if (isToggleView /*100373*/ || !cfg.readEntry(QStringLiteral("ShowStatusBar").prepend(prefix), true)) {
             childView->frame()->statusbar()->hide();
@@ -1294,6 +1314,38 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
     }
 
     //qCDebug(KONQUEROR_LOG) << "end" << name;
+}
+
+void KonqViewManager::restoreHistoryInLoadedView(KonqView* view, const KConfigGroup& cfg, const QString &prefix, const QUrl &defaultURL, const QString &serviceType)
+{
+    const QString keyHistoryItems = QStringLiteral("NumberOfHistoryItems").prepend(prefix);
+    if (cfg.hasKey(keyHistoryItems)) {
+        view->loadHistoryConfig(cfg, prefix);
+        m_pMainWindow->updateHistoryActions();
+    } else {
+        // determine URL
+        const QString urlKey = QStringLiteral("URL").prepend(prefix);
+        QUrl url;
+        if (cfg.hasKey(urlKey)) {
+            url = QUrl(cfg.readPathEntry(urlKey, KonqUrl::string(KonqUrl::Type::Blank)));
+        } else if (urlKey == QLatin1String("empty_URL")) { // old stuff, not in use anymore
+            url = KonqUrl::url(KonqUrl::Type::Blank);
+        } else {
+            url = defaultURL;
+        }
+
+        if (!url.isEmpty()) {
+            //qCDebug(KONQUEROR_LOG) << "calling openUrl" << url;
+            //childView->openUrl( url, url.toDisplayString() );
+            // We need view-follows-view (for the dirtree, for instance)
+            KonqOpenURLRequest req;
+            if (!KonqUrl::hasKonqScheme(url)) {
+                req.typedUrl = url.toDisplayString();
+            }
+            m_pMainWindow->openView(serviceType, url, view, req);
+        }
+        //else qCDebug(KONQUEROR_LOG) << "url is empty";
+    }
 }
 
 void KonqViewManager::setLoading(KonqView *view, bool loading)
