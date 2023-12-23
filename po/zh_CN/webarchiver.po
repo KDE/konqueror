@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2023-12-23 01:45+0000\n"
 "PO-Revision-Date: 2023-12-20 11:22\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -110,13 +110,13 @@ msgctxt "@info"
 msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
 msgstr "无法找到 wget(1) 命令，<nl/>详见 <link>%1</link>。"
 
-#: app/archivedialog.cpp:400
+#: app/archivedialog.cpp:404
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
 msgstr "无法验证目标<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:417
+#: app/archivedialog.cpp:421
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -124,13 +124,13 @@ msgid ""
 "file."
 msgstr "网页存档的目录名<nl/><filename>%1</filename><nl/>已被已有文件使用。"
 
-#: app/archivedialog.cpp:418
+#: app/archivedialog.cpp:422
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
 msgstr "网页存档目录<nl/><filename>%1</filename><nl/>已存在。"
 
-#: app/archivedialog.cpp:422
+#: app/archivedialog.cpp:426
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -138,42 +138,42 @@ msgid ""
 "directory."
 msgstr "压缩文件<nl/><filename>%1</filename><nl/>为已存在的目录。"
 
-#: app/archivedialog.cpp:423
+#: app/archivedialog.cpp:427
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
 msgstr "压缩文件<nl/><filename>%1</filename><nl/>已存在。"
 
-#: app/archivedialog.cpp:427
+#: app/archivedialog.cpp:431
 #, kde-format
 msgid "Archive Already Exists"
 msgstr "网页存档已存在"
 
-#: app/archivedialog.cpp:457
+#: app/archivedialog.cpp:461
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
 msgstr "无法删除原始网页存档<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:474
+#: app/archivedialog.cpp:478
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
 msgstr "无法创建临时目录<nl/><filename>%1</filename><nl/>"
 
-#: app/archivedialog.cpp:546
+#: app/archivedialog.cpp:550
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot start the archiver process <filename>%1</filename>"
 msgstr "无法启动压缩器进程 <filename>%1</filename>"
 
-#: app/archivedialog.cpp:562
+#: app/archivedialog.cpp:566
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The download process was interrupted."
 msgstr "下载进程已被中断。"
 
-#: app/archivedialog.cpp:563
+#: app/archivedialog.cpp:567
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -181,7 +181,7 @@ msgid ""
 "para>"
 msgstr "<para>下载进程 <filename>%1</filename> 出错，退出代码为 %2。</para>"
 
-#: app/archivedialog.cpp:568
+#: app/archivedialog.cpp:572
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -189,7 +189,7 @@ msgid ""
 "para>"
 msgstr "<para>下载进程 <filename>%1</filename> 出错，状态为 %2。</para>"
 
-#: app/archivedialog.cpp:572
+#: app/archivedialog.cpp:576
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -197,41 +197,41 @@ msgid ""
 "para>"
 msgstr "<para>可能只是表示页面上的部分元素出现了 404 错误。</para>"
 
-#: app/archivedialog.cpp:578
+#: app/archivedialog.cpp:582
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
 msgstr "<para>保留不完整的网页存档吗？</para>"
 
-#: app/archivedialog.cpp:579
+#: app/archivedialog.cpp:583
 #, kde-format
 msgid "Retain Archive?"
 msgstr "是否保留网页存档？"
 
-#: app/archivedialog.cpp:580
+#: app/archivedialog.cpp:584
 #, kde-format
 msgid "Retain"
 msgstr "保留"
 
-#: app/archivedialog.cpp:584
+#: app/archivedialog.cpp:588
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."
 msgstr "网页存档创建失败。"
 
-#: app/archivedialog.cpp:727
+#: app/archivedialog.cpp:731
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
 msgstr "无法复制网页存档到<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:757
+#: app/archivedialog.cpp:761
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
 msgstr "无法设置<nl/><filename>%1</filename><nl/>的权限%2"
 
-#: app/archivedialog.cpp:765
+#: app/archivedialog.cpp:769
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-16 01:37+0000\n"
+"POT-Creation-Date: 2023-12-23 01:45+0000\n"
 "PO-Revision-Date: 2021-09-17 17:27+0630\n"
 "Last-Translator: \n"
 "Language-Team: Burmese <kde-i18n-doc@kde.org>\n"
@@ -491,8 +491,8 @@ msgid ""
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4880
-#: src/konqmainwindow.cpp:4926
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4884
+#: src/konqmainwindow.cpp:4930
 #, kde-format
 msgid "no name"
 msgstr "အမည်မရှိ"
@@ -580,7 +580,7 @@ msgstr "စက်တွင်း"
 msgid "Miscellaneous"
 msgstr "တိုလီမိုလီများ"
 
-#: src/konqhistoryview.cpp:54 src/konqmainwindow.cpp:4397
+#: src/konqhistoryview.cpp:54 src/konqmainwindow.cpp:4401
 #, kde-format
 msgid "Open in New &Window"
 msgstr "&Wဝင်းဒိုးအသစ်တွင် ဖွင့်မည်"
@@ -641,83 +641,83 @@ msgctxt "@title:window"
 msgid "Clear History?"
 msgstr "မှတ်တမ်းရှင်းပစ်မည်လား။"
 
-#: src/konqmainwindow.cpp:684
+#: src/konqmainwindow.cpp:688
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
 msgstr "တွန်းတင်နေသည်..."
 
-#: src/konqmainwindow.cpp:716
+#: src/konqmainwindow.cpp:720
 #, kde-format
 msgid "Access denied"
 msgstr "အသုံးပြုခွင့် ပယ်ခံရ"
 
-#: src/konqmainwindow.cpp:1480
+#: src/konqmainwindow.cpp:1484
 #, kde-format
 msgid "Open File"
 msgstr "ဖိုင်လ်ဖွင့်မည်"
 
-#: src/konqmainwindow.cpp:1543
+#: src/konqmainwindow.cpp:1547
 #, kde-format
 msgid "Canceled."
 msgstr " ပယ်ဖျက်ခဲ့သည်။"
 
-#: src/konqmainwindow.cpp:1579
+#: src/konqmainwindow.cpp:1583
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
 "Reloading the page will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:1580 src/konqmainwindow.cpp:2231
-#: src/konqmainwindow.cpp:2324 src/konqmainwindow.cpp:2356
-#: src/konqmainwindow.cpp:2399 src/konqmainwindow.cpp:2421
-#: src/konqmainwindow.cpp:4845
+#: src/konqmainwindow.cpp:1584 src/konqmainwindow.cpp:2235
+#: src/konqmainwindow.cpp:2328 src/konqmainwindow.cpp:2360
+#: src/konqmainwindow.cpp:2403 src/konqmainwindow.cpp:2425
+#: src/konqmainwindow.cpp:4849
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
 msgstr "ပြောင်းလဲမှုများကို ပစ်ပယ်မှာလား။"
 
-#: src/konqmainwindow.cpp:1580 src/konqmainwindow.cpp:2231
-#: src/konqmainwindow.cpp:2324 src/konqmainwindow.cpp:2356
-#: src/konqmainwindow.cpp:2399 src/konqmainwindow.cpp:2422
-#: src/konqmainwindow.cpp:4845
+#: src/konqmainwindow.cpp:1584 src/konqmainwindow.cpp:2235
+#: src/konqmainwindow.cpp:2328 src/konqmainwindow.cpp:2360
+#: src/konqmainwindow.cpp:2403 src/konqmainwindow.cpp:2426
+#: src/konqmainwindow.cpp:4849
 #, kde-format
 msgid "&Discard Changes"
 msgstr "&Dပြောင်းလဲမှုများ ပစ်ပယ်မည်"
 
-#: src/konqmainwindow.cpp:1901 src/konqmainwindow.cpp:1907
+#: src/konqmainwindow.cpp:1905 src/konqmainwindow.cpp:1911
 #, kde-format
 msgid "Home Folder"
 msgstr "အိမ်ဖိုလ်ဒါ"
 
-#: src/konqmainwindow.cpp:1902 src/konqmainwindow.cpp:3389
+#: src/konqmainwindow.cpp:1906 src/konqmainwindow.cpp:3393
 #, kde-format
 msgid "Home"
 msgstr "အိမ်"
 
-#: src/konqmainwindow.cpp:1908
+#: src/konqmainwindow.cpp:1912
 #, kde-format
 msgid "Navigate to your 'Home Folder'"
 msgstr "'အိမ်ဖိုလ်ဒါ' သို့ သွားမည်"
 
-#: src/konqmainwindow.cpp:1909
+#: src/konqmainwindow.cpp:1913
 #, kde-format
 msgid "Navigate to your local 'Home Folder'"
 msgstr "သင်၏စက်တွင်း 'အိမ်ဖိုလ်ဒါ' သို့ သွားမည်"
 
 #. i18n: ectx: label, entry, group (UserSettings)
-#: src/konqmainwindow.cpp:1912 src/konqueror.kcfg:16
+#: src/konqmainwindow.cpp:1916 src/konqueror.kcfg:16
 #, kde-format
 msgid "Home Page"
 msgstr "အိမ်စာမျက်နှာ"
 
-#: src/konqmainwindow.cpp:1914
+#: src/konqmainwindow.cpp:1918
 #, kde-format
 msgid "Navigate to your 'Home Page'"
 msgstr "'အိမ်စာမျက်နှာ' သို့ သွားမည်"
 
-#: src/konqmainwindow.cpp:1915
+#: src/konqmainwindow.cpp:1919
 #, kde-format
 msgid ""
 "<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
@@ -725,295 +725,295 @@ msgid ""
 "General</b>.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:2230
+#: src/konqmainwindow.cpp:2234
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Detaching the tab will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2323
+#: src/konqmainwindow.cpp:2327
 #, kde-format
 msgid ""
 "This view contains changes that have not been submitted.\n"
 "Closing the view will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2355
+#: src/konqmainwindow.cpp:2359
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the tab will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2381
+#: src/konqmainwindow.cpp:2385
 #, kde-format
 msgid "Do you really want to close all other tabs?"
 msgstr "အခြားတပ်ဘ်အကုန်လုံးပိတ်တော့မည်လား။"
 
-#: src/konqmainwindow.cpp:2382 src/konqmainwindow.cpp:3469 src/konqtabs.cpp:334
+#: src/konqmainwindow.cpp:2386 src/konqmainwindow.cpp:3473 src/konqtabs.cpp:334
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr "&Oအခြားတပ်ဘ်များပိတ်မည်"
 
-#: src/konqmainwindow.cpp:2382
+#: src/konqmainwindow.cpp:2386
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
 msgstr "အခြားတပ်ဘ်များအတည်ပြုချက်ပိတ်မည်"
 
-#: src/konqmainwindow.cpp:2398
+#: src/konqmainwindow.cpp:2402
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing other tabs will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2420
+#: src/konqmainwindow.cpp:2424
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Reloading all tabs will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2477
+#: src/konqmainwindow.cpp:2481
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Target"
 msgstr "ဦးတည်နေရာသို့ ဝင်ရောက်မည်"
 
-#: src/konqmainwindow.cpp:2484
+#: src/konqmainwindow.cpp:2488
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
 msgstr "<qt><b>%1</b>သည် မမှန်ကန်ပါ</qt>"
 
-#: src/konqmainwindow.cpp:2494
+#: src/konqmainwindow.cpp:2498
 #, kde-format
 msgid "Copy selected files from %1 to:"
 msgstr "%1မှ ရွေးချယ်ထားသော ဖိုင်လ်များ ကူးယူမည် -"
 
-#: src/konqmainwindow.cpp:2507
+#: src/konqmainwindow.cpp:2511
 #, kde-format
 msgid "Move selected files from %1 to:"
 msgstr "%1မှ ရွေးချယ်ထားသော ဖိုင်လ်များ အောက်ပါသို့ ရွေ့ပြောင်းမည် -"
 
-#: src/konqmainwindow.cpp:2681
+#: src/konqmainwindow.cpp:2685
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
 msgstr "ပိတ်ခဲ့သောအိုင်တမ်များ မှတ်တမ်းဖျက်မည်"
 
-#: src/konqmainwindow.cpp:2703
+#: src/konqmainwindow.cpp:2707
 #, kde-format
 msgid "Save As..."
 msgstr "အဖြစ်သိမ်းမည်..."
 
-#: src/konqmainwindow.cpp:2705
+#: src/konqmainwindow.cpp:2709
 #, kde-format
 msgid "Manage..."
 msgstr "စီမံမည်..."
 
-#: src/konqmainwindow.cpp:3298
+#: src/konqmainwindow.cpp:3302
 #, kde-format
 msgid "New &Window"
 msgstr "&Wဝင်းဒိုးအသစ်"
 
-#: src/konqmainwindow.cpp:3303
+#: src/konqmainwindow.cpp:3307
 #, kde-format
 msgid "&Duplicate Window"
 msgstr "&Dဝင်းဒိုးပုံတူပွားမည်"
 
-#: src/konqmainwindow.cpp:3308
+#: src/konqmainwindow.cpp:3312
 #, kde-format
 msgid "Send &Link Address..."
 msgstr "&Lလင့်ခ်လိပ်စာပို့မည်"
 
-#: src/konqmainwindow.cpp:3312
+#: src/konqmainwindow.cpp:3316
 #, kde-format
 msgid "S&end File..."
 msgstr "&eဖိုင်လ်ပို့မည်..."
 
-#: src/konqmainwindow.cpp:3316
+#: src/konqmainwindow.cpp:3320
 #, kde-format
 msgid "&Open Location"
 msgstr "&Oတည်နေရာဖွင့်မည်"
 
-#: src/konqmainwindow.cpp:3322
+#: src/konqmainwindow.cpp:3326
 #, kde-format
 msgid "&Open File..."
 msgstr "&Oဖိုင်လ်ဖွင့်မည်..."
 
-#: src/konqmainwindow.cpp:3327
+#: src/konqmainwindow.cpp:3331
 #, kde-format
 msgid "&Find File..."
 msgstr "&Fဖိုင်လ်ရှာမည်..."
 
-#: src/konqmainwindow.cpp:3336
+#: src/konqmainwindow.cpp:3340
 #, kde-format
 msgid "Lock to Current Location"
 msgstr "လက်ရှိတည်နေရာသို့ သော့ခတ်ထားပါ"
 
-#: src/konqmainwindow.cpp:3339
+#: src/konqmainwindow.cpp:3343
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr "&kမြင်ကွင်းကို လင့်ခ်ချိတ်မည်"
 
-#: src/konqmainwindow.cpp:3344
+#: src/konqmainwindow.cpp:3348
 #, kde-format
 msgid "&Up"
 msgstr "&Uအပေါ်"
 
-#: src/konqmainwindow.cpp:3354
+#: src/konqmainwindow.cpp:3358
 #, kde-format
 msgid "Closed Items"
 msgstr "ပိတ်ခဲ့သောအိုင်တမ်များ"
 
-#: src/konqmainwindow.cpp:3367
+#: src/konqmainwindow.cpp:3371
 #, kde-format
 msgid "Sessions"
 msgstr "ဆက်ရှင်များ"
 
-#: src/konqmainwindow.cpp:3394
+#: src/konqmainwindow.cpp:3398
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr "မကြာခဏသွားခဲ့သော"
 
-#: src/konqmainwindow.cpp:3398
+#: src/konqmainwindow.cpp:3402
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr "မကြာသေးမီကသွားခဲ့သော"
 
-#: src/konqmainwindow.cpp:3407
+#: src/konqmainwindow.cpp:3411
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr "မှတ်တမ်းပြမည်"
 
-#: src/konqmainwindow.cpp:3419
+#: src/konqmainwindow.cpp:3423
 #, kde-format
 msgid "Configure Extensions..."
 msgstr "တိုးချဲ့ပရိုဂရမ်ငယ်များ ပြင်ဆင်မည်..."
 
-#: src/konqmainwindow.cpp:3423
+#: src/konqmainwindow.cpp:3427
 #, kde-format
 msgid "Configure Spell Checking..."
 msgstr "သတ်ပုံစစ်ဆေးခြင်း ပြင််ဆင်မည်..."
 
-#: src/konqmainwindow.cpp:3429
+#: src/konqmainwindow.cpp:3433
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr "&Lမြင်ကွင်းကို ဘယ်/ညာခွဲမည်"
 
-#: src/konqmainwindow.cpp:3434
+#: src/konqmainwindow.cpp:3438
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr "&Tမြင်ကွင်းကို အထက်/အောက်ခွဲမည်"
 
-#: src/konqmainwindow.cpp:3439 src/konqtabs.cpp:455
+#: src/konqmainwindow.cpp:3443 src/konqtabs.cpp:455
 #, kde-format
 msgid "&New Tab"
 msgstr "&Nတပ်ဘ်အသစ်"
 
-#: src/konqmainwindow.cpp:3448
+#: src/konqmainwindow.cpp:3452
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr "&Dလက်ရှိတပ်ဘ် ပုံတူပွားမည်"
 
-#: src/konqmainwindow.cpp:3453
+#: src/konqmainwindow.cpp:3457
 #, kde-format
 msgid "Detach Current Tab"
 msgstr "လက်ရှိတပ်ဘ်ကို ဖြုတ်ပစ်မည်"
 
-#: src/konqmainwindow.cpp:3458
+#: src/konqmainwindow.cpp:3462
 #, kde-format
 msgid "&Close Active View"
 msgstr "&Cကြည့်နေသောမြင်ကွင်းပိတ်မည်"
 
-#: src/konqmainwindow.cpp:3463
+#: src/konqmainwindow.cpp:3467
 #, kde-format
 msgid "Close Current Tab"
 msgstr "လက်ရှိတပ်ဘ် ပိတ်မည်"
 
-#: src/konqmainwindow.cpp:3473
+#: src/konqmainwindow.cpp:3477
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "နောက်တပ်ဘ်ကို သက်ဝင်စေမည်"
 
-#: src/konqmainwindow.cpp:3477
+#: src/konqmainwindow.cpp:3481
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "ရှေ့တပ်ဘ်ကို သက်ဝင်စေမည်"
 
-#: src/konqmainwindow.cpp:3484
+#: src/konqmainwindow.cpp:3488
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "တပ်ဘ် %1 ကို သက်ဝင်စေမည်"
 
-#: src/konqmainwindow.cpp:3489
+#: src/konqmainwindow.cpp:3493
 #, kde-format
 msgid "Move Tab Left"
 msgstr "တပ်ဘ် ဘယ်သို့ရွေ့"
 
-#: src/konqmainwindow.cpp:3494
+#: src/konqmainwindow.cpp:3498
 #, kde-format
 msgid "Move Tab Right"
 msgstr "တပ်ဘ် ညာသို့ရွေ့"
 
-#: src/konqmainwindow.cpp:3502
+#: src/konqmainwindow.cpp:3506
 #, kde-format
 msgid "Dump Debug Info"
 msgstr "ဒီဘက်ဆိုင်ရာအချက်အလက်များ ပို့ချမည်"
 
-#: src/konqmainwindow.cpp:3520
+#: src/konqmainwindow.cpp:3524
 #, kde-format
 msgid "&Reload"
 msgstr "&Rပြန်တွန်းတင်မည်"
 
-#: src/konqmainwindow.cpp:3525 src/konqtabs.cpp:312
+#: src/konqmainwindow.cpp:3529 src/konqtabs.cpp:312
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr "&Rတပ်ဘ်အကုန်ပြန်တွန်းတင်မည်"
 
-#: src/konqmainwindow.cpp:3533
+#: src/konqmainwindow.cpp:3537
 #, kde-format
 msgid "&Force Reload"
 msgstr "&Fအတင်းပြန်တွန်းတင်မည်"
 
-#: src/konqmainwindow.cpp:3559
+#: src/konqmainwindow.cpp:3563
 #, kde-format
 msgid "&Stop"
 msgstr "&Sရပ်"
 
-#: src/konqmainwindow.cpp:3568
+#: src/konqmainwindow.cpp:3572
 #, kde-format
 msgid "Throbber"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3572 src/konqmainwindow.cpp:3575
+#: src/konqmainwindow.cpp:3576 src/konqmainwindow.cpp:3579
 #, kde-format
 msgid "L&ocation: "
 msgstr "&oတည်နေရာ - "
 
-#: src/konqmainwindow.cpp:3582
+#: src/konqmainwindow.cpp:3586
 #, kde-format
 msgid "Location Bar"
 msgstr "တည်နေရာပြ-တန်း"
 
-#: src/konqmainwindow.cpp:3588
+#: src/konqmainwindow.cpp:3592
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
 msgstr "<htmlတည်နေရာပြ-တန်း<br /><br />ဝက်ဘ်လိပ်စာ သို့မဟုတ် ရှာလိုသော စကားလုံး ရိုက်ထည့်ပါ။</html>"
 
-#: src/konqmainwindow.cpp:3592
+#: src/konqmainwindow.cpp:3596
 #, kde-format
 msgid "Clear Location Bar"
 msgstr "တည်နေရာပြ-တန်းကို ရှင်းမည်"
 
-#: src/konqmainwindow.cpp:3596
+#: src/konqmainwindow.cpp:3600
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
@@ -1021,29 +1021,29 @@ msgid ""
 msgstr ""
 "<html>တည်နေရာပြ-တန်း ရှင်းမည်<br /><br />တည်နေရာပြ-တန်း၏ပါဝင်ဒေတာများ ရှင်းပစ်သည်။</html>"
 
-#: src/konqmainwindow.cpp:3601
+#: src/konqmainwindow.cpp:3605
 #, kde-format
 msgid "&Bookmarks"
 msgstr "&Bစာမျက်နှာအမှတ်အသားများ"
 
-#: src/konqmainwindow.cpp:3629
+#: src/konqmainwindow.cpp:3633
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "&qကွန်ကွာရာ မိတ်ဆက်"
 
-#: src/konqmainwindow.cpp:3634
+#: src/konqmainwindow.cpp:3638
 #, kde-format
 msgid "Go"
 msgstr "သွားမည်"
 
-#: src/konqmainwindow.cpp:3636
+#: src/konqmainwindow.cpp:3640
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
 "bar.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3644
+#: src/konqmainwindow.cpp:3648
 #, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
@@ -1051,27 +1051,27 @@ msgid ""
 "html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3647
+#: src/konqmainwindow.cpp:3651
 #, kde-format
 msgid "Enter the parent folder"
 msgstr "မိခင်ဖိုလ်ဒါသို့ ဝင်ရောက်မည်"
 
-#: src/konqmainwindow.cpp:3649 src/konqmainwindow.cpp:3650
+#: src/konqmainwindow.cpp:3653 src/konqmainwindow.cpp:3654
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "ရှောက်ကြည့်မှတ်တမ်းတွင် နောက်တစ်လှမ်းဆုတ်မည်"
 
-#: src/konqmainwindow.cpp:3652 src/konqmainwindow.cpp:3653
+#: src/konqmainwindow.cpp:3656 src/konqmainwindow.cpp:3657
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "ရှောက်ကြည့်မှတ်တမ်းတွင် ရှေ့တစ်လှမ်းတိုးမည်"
 
-#: src/konqmainwindow.cpp:3655 src/konqmainwindow.cpp:3656
+#: src/konqmainwindow.cpp:3659 src/konqmainwindow.cpp:3660
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
 msgstr "ပိတ်သိမ်းတပ်ဘ်များမှတ်တမ်းတွင် နောက်တစ်လှမ်းဆုတ်မည်"
 
-#: src/konqmainwindow.cpp:3658
+#: src/konqmainwindow.cpp:3662
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1079,12 +1079,12 @@ msgid ""
 "were loaded, in order to make the changes visible.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3661
+#: src/konqmainwindow.cpp:3665
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "လက်ရှိပြထားသော မှတ်တမ်းပုံနှိပ်မူကို ပြန်တွန်းတင်မည်"
 
-#: src/konqmainwindow.cpp:3663
+#: src/konqmainwindow.cpp:3667
 #, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1092,12 +1092,12 @@ msgid ""
 "they were loaded, in order to make the changes visible.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3666
+#: src/konqmainwindow.cpp:3670
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3668
+#: src/konqmainwindow.cpp:3672
 #, kde-format
 msgid ""
 "<html>Stop loading the document<br /><br />All network transfers will be "
@@ -1105,7 +1105,7 @@ msgid ""
 "</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3672
+#: src/konqmainwindow.cpp:3676
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1114,18 +1114,18 @@ msgid ""
 "are downloaded again, even if cached copies exist.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3676
+#: src/konqmainwindow.cpp:3680
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3678
+#: src/konqmainwindow.cpp:3682
 #, kde-format
 msgid "Stop loading the document"
 msgstr "မှတ်တမ်းပုံနှိပ်မူတွန်းတင်ခြင်းရပ်မည်"
 
-#: src/konqmainwindow.cpp:3680
+#: src/konqmainwindow.cpp:3684
 #, kde-format
 msgid ""
 "<html>Cut the currently selected text or item(s) and move it to the system "
@@ -1133,12 +1133,12 @@ msgid ""
 "Konqueror and other KDE applications.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3684
+#: src/konqmainwindow.cpp:3688
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3686
+#: src/konqmainwindow.cpp:3690
 #, kde-format
 msgid ""
 "<html>Copy the currently selected text or item(s) to the system "
@@ -1146,24 +1146,24 @@ msgid ""
 "Konqueror and other KDE applications.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3690
+#: src/konqmainwindow.cpp:3694
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3692
+#: src/konqmainwindow.cpp:3696
 #, kde-format
 msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
 "also works for text copied or cut from other KDE applications.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3695
+#: src/konqmainwindow.cpp:3699
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "ကလစ်ဘုတ်၏ပါဝင်ဒေတာများ ပွားမည်"
 
-#: src/konqmainwindow.cpp:3697
+#: src/konqmainwindow.cpp:3701
 #, kde-format
 msgid ""
 "<html>Print the currently displayed document<br /><br />You will be "
@@ -1173,179 +1173,179 @@ msgid ""
 "file from the current document.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3703
+#: src/konqmainwindow.cpp:3707
 #, kde-format
 msgid "Print the current document"
 msgstr "လက်ရှိမှတ်တမ်းပုံနှိပ်မူကို ပုံနှိပ်မည်"
 
-#: src/konqmainwindow.cpp:3705
+#: src/konqmainwindow.cpp:3709
 #, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
 "explore many files from one folder"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3706
+#: src/konqmainwindow.cpp:3710
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
 "other linked views."
 msgstr ""
 
-#: src/konqmainwindow.cpp:3710
+#: src/konqmainwindow.cpp:3714
 #, kde-format
 msgid "&Inspect Current Page"
 msgstr "&Iလက်ရှိစာမျက်နှာကို စစ်ဆေးမည်"
 
-#: src/konqmainwindow.cpp:3711
+#: src/konqmainwindow.cpp:3715
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3712
+#: src/konqmainwindow.cpp:3716
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3878
+#: src/konqmainwindow.cpp:3882
 #, kde-format
 msgid "Copy &Files..."
 msgstr "&Fဖိုင်လ်များကူးယူမည်..."
 
-#: src/konqmainwindow.cpp:3882
+#: src/konqmainwindow.cpp:3886
 #, kde-format
 msgid "M&ove Files..."
 msgstr "&oဖိုင်လ်များရွေ့မည်..."
 
-#: src/konqmainwindow.cpp:4228
+#: src/konqmainwindow.cpp:4232
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
 "while. Continue?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4230
+#: src/konqmainwindow.cpp:4234
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "စာမျက်နှာအမှတ်အသားများ ဖိုလ်ဒါကို တပ်ဘ်အသစ်များတွင် ဖွင့်မည်"
 
-#: src/konqmainwindow.cpp:4231
+#: src/konqmainwindow.cpp:4235
 #, fuzzy, kde-format
 #| msgid "Open File"
 msgctxt "@action:button"
 msgid "Open"
 msgstr "ဖိုင်လ်ဖွင့်မည်"
 
-#: src/konqmainwindow.cpp:4390
+#: src/konqmainwindow.cpp:4394
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "&hဤဝင်းဒိုးတွင် ဖွင့်မည်"
 
-#: src/konqmainwindow.cpp:4391
+#: src/konqmainwindow.cpp:4395
 #, kde-format
 msgid "Open the document in current window"
 msgstr "မှတ်တမ်းပုံနှိပ်မူကို လက်ရှိဝင်းဒိုးတွင်ဖွင့်မည်"
 
-#: src/konqmainwindow.cpp:4398
+#: src/konqmainwindow.cpp:4402
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "မှတ်တမ်းပုံနှိပ်မူကို ဝင်းဒိုးအသစ်တွင်ဖွင့်မည်"
 
-#: src/konqmainwindow.cpp:4404
+#: src/konqmainwindow.cpp:4408
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "&Nတပ်ဘ်အသစ်တွင် ဖွင့်မည်"
 
-#: src/konqmainwindow.cpp:4406
+#: src/konqmainwindow.cpp:4410
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "မှတ်တမ်းပုံနှိပ်မူကို တပ်ဘ်အသစ်တွင်ဖွင့်မည်"
 
-#: src/konqmainwindow.cpp:4631
+#: src/konqmainwindow.cpp:4635
 #, kde-format
 msgid "&Open With"
 msgstr "&Oဖြင့်ဖွင့်ရန်"
 
-#: src/konqmainwindow.cpp:4644
+#: src/konqmainwindow.cpp:4648
 #, kde-format
 msgid "Open with %1"
 msgstr "%1 ဖြင့်ဖွင့်ရန်"
 
-#: src/konqmainwindow.cpp:4692
+#: src/konqmainwindow.cpp:4696
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "&Vမြင်ကွင်း ထုံးနည်း"
 
-#: src/konqmainwindow.cpp:4809
+#: src/konqmainwindow.cpp:4813
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4811
+#: src/konqmainwindow.cpp:4815
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "အတည်ပြုချက်"
 
-#: src/konqmainwindow.cpp:4813
+#: src/konqmainwindow.cpp:4817
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "&lလက်ရှိတပ်ဘ် ပိတ်မည်"
 
-#: src/konqmainwindow.cpp:4841
+#: src/konqmainwindow.cpp:4845
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:4842
+#: src/konqmainwindow.cpp:4846
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:5002
+#: src/konqmainwindow.cpp:5006
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr ""
 
-#: src/konqmainwindow.cpp:5002 src/konqmainwindow.cpp:5009
+#: src/konqmainwindow.cpp:5006 src/konqmainwindow.cpp:5013
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "ဝက်ဘ် ဘေးတန်း"
 
-#: src/konqmainwindow.cpp:5007
+#: src/konqmainwindow.cpp:5011
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5009
+#: src/konqmainwindow.cpp:5013
 #, kde-format
 msgid "Add"
 msgstr "ထည့်သွင်းမည်"
 
-#: src/konqmainwindow.cpp:5009
+#: src/konqmainwindow.cpp:5013
 #, kde-format
 msgid "Do Not Add"
 msgstr "မထည့်ပါနှင့်"
 
-#: src/konqmainwindow.cpp:5357
+#: src/konqmainwindow.cpp:5361
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
 "with %1, but it cannot handle this file type."
 msgstr ""
 
-#: src/konqmainwindow.cpp:5442
+#: src/konqmainwindow.cpp:5446
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1358,22 +1358,22 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5447
+#: src/konqmainwindow.cpp:5451
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "မထောက်ပံ့ထားသော ဆ.သ.ရ-ကွန်ရက် ကြားခံ ပြင်ဆင်ချက်"
 
-#: src/konqmainwindow.cpp:5447
+#: src/konqmainwindow.cpp:5451
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "ဆ.သ.ရ-ကွန်ရက်ကြားခံ မသုံးပါနှင့်"
 
-#: src/konqmainwindow.cpp:5448 src/konqmainwindow.cpp:5492
+#: src/konqmainwindow.cpp:5452 src/konqmainwindow.cpp:5496
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "ကြားခံပြင်ဆင်မှုဒိုင်ယာလော့ ပြမည်"
 
-#: src/konqmainwindow.cpp:5488
+#: src/konqmainwindow.cpp:5492
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1382,22 +1382,22 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5491
+#: src/konqmainwindow.cpp:5495
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "အငြင်းပွားဖွယ် ဆ.သ.ရ-ကွန်ရက် ကြားခံ ပြင်ဆင်ချက်"
 
-#: src/konqmainwindow.cpp:5492
+#: src/konqmainwindow.cpp:5496
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "အိပ်ချ်တီတီပီ ကြားခံသုံးမည် (ဤတစ်ကြိမ်သာ)"
 
-#: src/konqmainwindow.cpp:5492
+#: src/konqmainwindow.cpp:5496
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "အိပ်ချ်တီတီပီအက်စ် ကြားခံသုံးမည် (ဤတစ်ကြိမ်သာ)"
 
-#: src/konqmainwindow.cpp:5575
+#: src/konqmainwindow.cpp:5579
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
