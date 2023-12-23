@@ -23,6 +23,7 @@ BrowserExtension::BrowserExtension(KParts::ReadOnlyPart *parent)
     : KParts::NavigationExtension(parent)
 {
     connect(parent, static_cast<void (KParts::ReadOnlyPart::*)()>(&KParts::ReadOnlyPart::completed), this, &BrowserExtension::slotCompleted);
+    connect(this, &BrowserExtension::browserOpenUrlRequest, this, &BrowserExtension::slotOpenUrlRequest);
 }
 
 BrowserExtension::~BrowserExtension()

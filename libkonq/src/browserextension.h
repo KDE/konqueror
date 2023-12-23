@@ -9,6 +9,8 @@
 #ifndef BROWSEREXTENSION_H
 #define BROWSEREXTENSION_H
 
+#include "libkonq_export.h"
+
 #include <kparts/openurlarguments.h>
 #include <kparts/readonlypart.h>
 
@@ -34,7 +36,7 @@ struct DelayedRequest;
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 
-class KPARTS_EXPORT BrowserExtension : public KParts::NavigationExtension
+class LIBKONQ_EXPORT BrowserExtension : public KParts::NavigationExtension
 {
     Q_OBJECT
 public:

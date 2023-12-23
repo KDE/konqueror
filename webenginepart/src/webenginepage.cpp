@@ -249,7 +249,7 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
         item->cancel();
         item->deleteLater();
     }
-#else
+#else //This can only happen in KF5, as MANAGE_COOKIES_INTERNALLY is always defined in KF6
 // blob URLs can't be downloaded by KIO, so use the part to download them even when using KCookieJar
     if (item->url().scheme() == QStringLiteral("blob") && downloader) {
         requestDownloadAndOpen();
@@ -956,7 +956,14 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
         //Set the create new window flag to false...
         m_createNewWindow = false;
         if (webenginePart) {
-            QTimer::singleShot(0, webenginePart, [webenginePart, url](){emit webenginePart->navigationExtension()->openUrlRequest(url);});
+            QTimer::singleShot(0, webenginePart, [webenginePart, url](){
+                //WARNING: emit browserOpenUrlRequest and not openUrlRequest in KF6
+#if QT_VERSION_MAJOR < 6
+                emit webenginePart->navigationExtension()->openUrlRequest(url);}
+#else
+                emit webenginePart->browserExtension()->browserOpenUrlRequest(url);}
+#endif
+            );
             return false;
         }
 
