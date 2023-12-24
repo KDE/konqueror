@@ -277,7 +277,7 @@ void ToggleViewGUIClient::slotViewRemoved(KonqView *view)
 
     if (action) {
         disconnect(action, &QAction::toggled, this, &ToggleViewGUIClient::slotToggleView);
-        static_cast<KToggleAction *>(action)->setChecked(true);
+        static_cast<KToggleAction *>(action)->setChecked(false);
         connect(action, &QAction::toggled, this, &ToggleViewGUIClient::slotToggleView);
         saveConfig(false, name);
     }
