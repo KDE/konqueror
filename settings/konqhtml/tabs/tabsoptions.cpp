@@ -43,6 +43,10 @@ void TabsOptions::defaults()
     m_config->setReadDefaults(true);
     load();
     m_config->setReadDefaults(old);
+
+#if QT_VERSION_MAJOR > 5
+    setRepresentsDefaults(true);
+#endif
 }
 
 void TabsOptions::load()
@@ -62,6 +66,7 @@ void TabsOptions::load()
 
     cg = KConfigGroup(m_config, "Notification Messages");
     m_ui->m_pTabConfirm->setChecked(!cg.hasKey("MultipleTabConfirm"));
+    KCModule::load();
 }
 
 void TabsOptions::save()
@@ -92,7 +97,7 @@ void TabsOptions::save()
         QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
 
-    setNeedsSave(false);
+    KCModule::save();
 }
 
 

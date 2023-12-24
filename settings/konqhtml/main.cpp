@@ -66,6 +66,7 @@ void KJSParts::load()
 {
     javascript->load();
     java->load();
+    KCModule::load();
 }
 
 void KJSParts::save()
@@ -88,10 +89,15 @@ void KJSParts::save()
     QDBusMessage message =
         QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
+    KCModule::save();
 }
 
 void KJSParts::defaults()
 {
     javascript->defaults();
     java->defaults();
+
+#if QT_VERSION_MAJOR > 5
+    setRepresentsDefaults(true);
+#endif
 }

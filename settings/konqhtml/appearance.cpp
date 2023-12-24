@@ -347,7 +347,7 @@ void KAppearanceOptions::load()
     cssConfig->load();
 
     updateGUI();
-    setNeedsSave(false);
+    KCModule::load();
 }
 
 void KAppearanceOptions::defaults()
@@ -359,6 +359,9 @@ void KAppearanceOptions::defaults()
 
     cssConfig->defaults();
     setNeedsSave(true);
+#if QT_VERSION_MAJOR > 5
+    setRepresentsDefaults(true);
+#endif
 }
 
 void KAppearanceOptions::updateGUI()
@@ -420,6 +423,6 @@ void KAppearanceOptions::save()
         QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
 
-    setNeedsSave(false);
+    KCModule::save();
 }
 

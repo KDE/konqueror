@@ -168,6 +168,8 @@ void KMiscHTMLOptions::load()
 
     cg = KConfigGroup(KSharedConfig::openConfig(QStringLiteral("kioslaverc"), KConfig::NoGlobals), QString());
     m_pDoNotTrack->setChecked(cg.readEntry("DoNotTrack", false));
+
+    KCModule::load();
 }
 
 void KMiscHTMLOptions::defaults()
@@ -182,6 +184,10 @@ void KMiscHTMLOptions::defaults()
     m_pOfferToSaveWebsitePassword->setChecked(true);
 
     m_pdfViewer->setChecked(false);
+
+#if QT_VERSION_MAJOR > 5
+    setRepresentsDefaults(true);
+#endif
 }
 
 void KMiscHTMLOptions::save()
@@ -219,5 +225,5 @@ void KMiscHTMLOptions::save()
     sessionBus.send(QDBusMessage::createSignal(QStringLiteral("/KBookmarkManager/konqueror"), QStringLiteral("org.kde.KIO.KBookmarkManager"), QStringLiteral("bookmarkConfigChanged")));
     sessionBus.send(QDBusMessage::createSignal(QStringLiteral("/KIO/Scheduler"), QStringLiteral("org.kde.KIO.Scheduler"), QStringLiteral("reparseSlaveConfiguration")));
 
-    setNeedsSave(false);
+    KCModule::save();
 }

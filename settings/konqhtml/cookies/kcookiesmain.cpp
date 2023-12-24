@@ -58,6 +58,7 @@ void KCookiesMain::save()
     if (management) {
         management->save();
     }
+    KCModule::save();
 }
 
 void KCookiesMain::load()
@@ -66,6 +67,7 @@ void KCookiesMain::load()
     if (management) {
         management->load();
     }
+    KCModule::load();
 }
 
 void KCookiesMain::defaults()
@@ -75,4 +77,8 @@ void KCookiesMain::defaults()
     } else if (management) {
         management->defaults();
     }
+
+#if QT_VERSION_MAJOR > 5
+    setRepresentsDefaults(true);
+#endif
 }

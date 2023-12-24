@@ -212,6 +212,7 @@ void KKonqGeneralOptions::load()
     for (const KPluginMetaData &md : partOfferList) {
         m_webEngineCombo->addItem(QIcon::fromTheme(md.iconName()), md.name(), md.pluginId());
     }
+    KCModule::load();
 }
 
 void KKonqGeneralOptions::defaults()
@@ -225,6 +226,9 @@ void KKonqGeneralOptions::defaults()
     m_pConfig->setReadDefaults(true);
     load();
     m_pConfig->setReadDefaults(old);
+#if QT_VERSION_MAJOR > 5
+    setRepresentsDefaults(true);
+#endif
 }
 
 void KKonqGeneralOptions::save()
@@ -265,8 +269,7 @@ void KKonqGeneralOptions::save()
     QDBusMessage message =
         QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
-
-    setNeedsSave(false);
+    KCModule::save();
 }
 
 void KKonqGeneralOptions::slotChanged()

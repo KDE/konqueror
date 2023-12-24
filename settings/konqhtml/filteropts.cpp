@@ -331,6 +331,10 @@ void KCMFilter::defaults()
     mKillCheck->setChecked(false);
     mString->clear();
     updateButton();
+
+#if QT_VERSION_MAJOR > 5
+    setRepresentsDefaults(true);
+#endif
 }
 
 void KCMFilter::save()
@@ -357,6 +361,8 @@ void KCMFilter::save()
     QDBusMessage message =
         QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
+
+    KCModule::save();
 }
 
 void KCMFilter::load()
@@ -385,6 +391,7 @@ void KCMFilter::load()
 
     mListBox->addItems(paths);
     updateButton();
+    KCModule::load();
 }
 
 void KCMFilter::insertFilter()

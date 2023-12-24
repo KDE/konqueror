@@ -74,6 +74,10 @@ void UserAgent::defaults()
     m_ui->useDefaultUA->setChecked(true);
     m_ui->userAgentString->setText(QString());
     setNeedsSave(true);
+
+#if QT_VERSION_MAJOR > 5
+    setRepresentsDefaults(true);
+#endif
 }
 
 void UserAgent::load()
@@ -83,7 +87,7 @@ void UserAgent::load()
     m_ui->useDefaultUA->setChecked(grp.readEntry("UseDefaultUserAgent", true));
     toggleCustomUA(useCustomUserAgent());
     m_ui->invalidTemplateNameWidget->hide(); //There can't be problems when loading
-    setNeedsSave(false);
+    KCModule::load();
 }
 
 void UserAgent::save()
@@ -96,7 +100,7 @@ void UserAgent::save()
     QDBusMessage message = QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"),
                                                       QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
-    setNeedsSave(false);
+    KCModule::save();
 }
 
 void UserAgent::saveTemplates()

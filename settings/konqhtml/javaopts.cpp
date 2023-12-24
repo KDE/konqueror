@@ -223,7 +223,8 @@ void KJavaOptions::load()
     serverTimeoutSB->setValue(serverTimeout);
 
     toggleJavaControls();
-    setNeedsSave(false);
+
+    KCModule::load();
 }
 
 void KJavaOptions::defaults()
@@ -238,6 +239,10 @@ void KJavaOptions::defaults()
     serverTimeoutSB->setValue(60);
     toggleJavaControls();
     setNeedsSave(true);
+
+#if QT_VERSION_MAJOR > 5
+    setRepresentsDefaults(true);
+#endif
 }
 
 void KJavaOptions::save()
@@ -257,9 +262,7 @@ void KJavaOptions::save()
         _removeJavaDomainSettings = false;
     }
 
-    // sync moved to KJSParts::save
-//    m_pConfig->sync();
-    setNeedsSave(false);
+    KCModule::save();
 }
 
 void KJavaOptions::slotChanged()

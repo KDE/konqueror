@@ -137,7 +137,7 @@ void KJavaScriptOptions::load()
     reportErrorsCB->setChecked(cg.readEntry("ReportJavaScriptErrors", false));
     jsDebugWindow->setChecked(cg.readEntry("EnableJavaScriptDebug", false));
 //    js_popup->setButton( m_pConfig->readUnsignedNumEntry("WindowOpenPolicy", 0) );
-    setNeedsSave(false);
+    KCModule::load();
 }
 
 void KJavaScriptOptions::defaults()
@@ -148,6 +148,10 @@ void KJavaScriptOptions::defaults()
     reportErrorsCB->setChecked(false);
     jsDebugWindow->setChecked(false);
     setNeedsSave(true);
+
+#if QT_VERSION_MAJOR > 5
+    setRepresentsDefaults(true);
+#endif
 }
 
 void KJavaScriptOptions::save()
@@ -164,9 +168,7 @@ void KJavaScriptOptions::save()
         _removeECMADomainSettings = false;
     }
 
-    // sync moved to KJSParts::save
-//    cg.sync();
-    setNeedsSave(false);
+    KCModule::save();
 }
 
 void KJavaScriptOptions::slotChangeJSEnabled()

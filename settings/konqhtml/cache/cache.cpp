@@ -42,6 +42,10 @@ void Cache::defaults()
     m_ui->useCustomCacheDir->setChecked(false);
     m_ui->customCacheDir->setUrl(QUrl());
     setNeedsSave(true);
+
+#if QT_VERSION_MAJOR > 5
+    setRepresentsDefaults(true);
+#endif
 }
 
 void Cache::load()
@@ -56,7 +60,7 @@ void Cache::load()
     QString path = grp.readEntry("CustomCacheDir", QString());
     m_ui->useCustomCacheDir->setChecked(!path.isEmpty());
     m_ui->customCacheDir->setUrl(QUrl::fromLocalFile(path));
-    setNeedsSave(false);
+    KCModule::load();
 }
 
 void Cache::save()
@@ -74,7 +78,7 @@ void Cache::save()
     QDBusMessage message =
         QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
-    setNeedsSave(false);
+    KCModule::save();
 }
 
 void Cache::toggleMemoryCache(bool on)
