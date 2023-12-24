@@ -2,32 +2,30 @@
 # Copyright (C) 2006, 2007 Free Software Foundation, Inc.
 #
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2006, 2007, 2009.
+# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: uachangerplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2009-05-19 08:55+0800\n"
-"Last-Translator: Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv "
-"dot tw>\n"
-"Language-Team: Chinese Traditional <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2023-12-24 06:25+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: uachangerplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Change Browser Identification"
+#, kde-format
 msgctxt "@title:menu Changes the browser identification"
 msgid "Change Browser Identification"
 msgstr "變更瀏覽器識別"
 
 #: uachangerplugin.cpp:83
-#, fuzzy, kde-format
-#| msgid "Default Identification"
+#, kde-format
 msgctxt "@action:inmenu Uses the default browser identification"
 msgid "Default Identification"
 msgstr "預設識別"

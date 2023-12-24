@@ -1,6 +1,6 @@
 # translation of konqueror.po to Polish
 # translation of konqueror.po to
-# Version: $Revision: 1667995 $
+# Version: $Revision: 1668085 $
 # Tłumaczenie autorstwa Artura Skury, marzec 2000
 # Aktualne tłumaczenie Norbert Popiołek <norbert@kde.com.pl>, czerwiec 2001
 # Norbert Popiołek <norbert@kde.com.pl>
@@ -9,14 +9,14 @@
 # Krzysztof Lichota <lichota@mimuw.edu.pl>, 2005, 2006.
 # Robert Gomulka <rgom@o2.pl>, 2006.
 # Marta Rybczyńska <kde-i18n@rybczynska.net>, 2007, 2008, 2011.
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2013, 2014, 2016, 2017, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2016, 2017, 2019, 2020, 2021, 2022, 2023 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:45+0000\n"
-"PO-Revision-Date: 2023-10-01 09:22+0200\n"
-"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"PO-Revision-Date: 2023-12-23 13:43+0100\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmai.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr ""
 ">\n"
 ">\n"
 ">\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -514,7 +514,7 @@ msgstr ""
 #: src/konqapplication.cpp:241
 #, kde-format
 msgid "TEST"
-msgstr ""
+msgstr "PRÓBA"
 
 #: src/konqapplication.cpp:242
 #, kde-format
@@ -1850,7 +1850,7 @@ msgstr ""
 #: src/konqueror.kcfg:149
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "Wybierz miejsce wyświetlania paska kart"
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #. i18n: ectx: whatsthis, entry, group (FMSettings)

@@ -4,19 +4,20 @@
 # Jeff Huang <s8321414@gmail.com>, 2017.
 #
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2006, 2007.
+# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: babelfish\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2017-07-30 21:38+0800\n"
-"Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
-"Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2023-12-24 06:21+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #, kde-format
@@ -196,12 +197,7 @@ msgid "The URL you entered is not valid, please correct it and try again."
 msgstr "您所輸入的網址不合法，請先修正之後再行嚐試。"
 
 #: plugin_babelfish.cpp:273
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "You are viewing this page over a secure connection.<nl/><nl/>The URL of "
-#| "the page will sent to the online translation service, which may fetch the "
-#| "insecure version of the page."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "You are viewing this page over a secure connection.<nl/><nl/>The URL of the "
@@ -209,7 +205,7 @@ msgid ""
 "insecure version of the page."
 msgstr ""
 "您正在透過安全連線檢視此頁面。<nl/><nl/>這個頁面的 URL 將會傳送到線上翻譯服"
-"務，其將會擷取這個頁面的不安全版本。"
+"務，<nl/>它可能擷取這個頁面的不安全版本。"
 
 #: plugin_babelfish.cpp:277
 #, kde-format

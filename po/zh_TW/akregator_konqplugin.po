@@ -3,19 +3,20 @@
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2006, 2007, 2009.
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2011.
 # pan93412 <pan93412@gmail.com>, 2018, 2019.
+# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: akregator_konqplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2019-07-31 16:46+0800\n"
-"Last-Translator: pan93412 <pan93412@gmail.com>\n"
-"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2023-12-24 06:20+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.07.80\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: akregatorplugin.cpp:46
@@ -25,26 +26,25 @@ msgid "Add Feed to Akregator"
 msgstr "加入 Feed 至 Akregator"
 
 #: konqfeedicon.cpp:138
-#, fuzzy, kde-format
-#| msgid "Add Feed to Akregator"
+#, kde-format
 msgid "Add feed to Akregator"
 msgstr "將 Feed 加入 Akregator"
 
 #: konqfeedicon.cpp:139
 #, kde-format
 msgid "Copy feed URL to clipboard"
-msgstr ""
+msgstr "複製 Feed 網址到剪貼簿"
 
 #: konqfeedicon.cpp:140
 #, kde-format
 msgid "Open feed URL"
-msgstr ""
+msgstr "開啟 Feed 網址"
 
 #: konqfeedicon.cpp:151
 #, kde-format
 msgctxt "@title:menu title for the feeds menu"
 msgid "Feeds"
-msgstr ""
+msgstr "Feeds"
 
 #: konqfeedicon.cpp:157
 #, kde-format

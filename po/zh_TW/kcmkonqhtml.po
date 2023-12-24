@@ -10,20 +10,20 @@
 # Franklin Weng <franklin at goodhorse dot idv dot tw>, 2007.
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2008, 2009, 2010.
 # pan93412 <pan93412@gmail.com>, 2019.
-# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
+# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-02-07 19:36+0900\n"
+"PO-Revision-Date: 2023-12-24 06:20+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: appearance.cpp:39
@@ -42,7 +42,7 @@ msgstr "字型"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Stylesheets"
-msgstr "樣式表單"
+msgstr "樣式表"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
 #: appearance.cpp:52 css/csscustom.ui:296
@@ -315,7 +315,7 @@ msgstr ""
 #: cache/cache.ui:17
 #, kde-format
 msgid "&Enable cache"
-msgstr ""
+msgstr "啟用快取(&E)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:29
@@ -325,18 +325,20 @@ msgid ""
 "p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
+"<html><head/><body><p>不將快取儲存於磁碟，只存在記憶體中。</p><p>開啟此選項意"
+"味著快取在離開 Konqueror 時會被清除</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:32
 #, kde-format
 msgid "Keep cache in &memory"
-msgstr ""
+msgstr "將快取保留在記憶體中(&M)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: cache/cache.ui:41
 #, kde-format
 msgid "&Cache size"
-msgstr ""
+msgstr "快取大小(&C)"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:51
@@ -345,140 +347,136 @@ msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
+"快取在磁碟上或記憶體中可以用的最多空間。超過這個閥值的時候舊頁面會被移除來讓"
+"出空間給新頁面"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:54
 #, kde-format
 msgid "Auto"
-msgstr ""
+msgstr "自動"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:57
 #, kde-format
 msgid " MB"
-msgstr ""
+msgstr " MB"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr ""
+msgstr "將快取保留在自訂目錄"
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:88
 #, kde-format
 msgid "&Custom cache directory"
-msgstr ""
+msgstr "自訂快取目錄(&C)"
 
 #. i18n: ectx: property (text), widget (QLabel, customCachePathLabel)
 #: cache/cache.ui:100
 #, kde-format
 msgid "Cache &Directory"
-msgstr ""
+msgstr "快取目錄(&D)"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
 #: cache/cache.ui:113
 #, kde-format
 msgid "The custom directory to store cache"
-msgstr ""
+msgstr "儲存快取用的自訂目錄"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search"
-msgstr "搜尋："
+msgstr "搜尋"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:27
 #, kde-format
 msgid "Search interactively for domains and hosts"
-msgstr ""
+msgstr "互動式搜尋網域和主機"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:43
 #, kde-format
 msgid "Site"
-msgstr ""
+msgstr "網站"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:48
 #, kde-format
 msgid "Cookie Name"
-msgstr ""
+msgstr "Cookie 名稱"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDelete)
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "D&elete"
-msgstr "刪除(&L)"
+msgstr "刪除(&E)"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
 #: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "Delete A&ll"
-msgstr "刪除(&L)"
+msgstr "刪除全部(&L)"
 
 #. i18n: ectx: property (text), widget (QPushButton, configPolicyButton)
 #: cookies/kcookiesmanagement.ui:70
 #, kde-format
 msgid "Configure &Policy..."
-msgstr ""
+msgstr "設定政策(&P)..."
 
 #. i18n: ectx: property (text), widget (QPushButton, reloadButton)
 #: cookies/kcookiesmanagement.ui:77
 #, kde-format
 msgid "&Reload List"
-msgstr ""
+msgstr "重新讀取列表(&R)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, detailsGroupBox)
 #: cookies/kcookiesmanagement.ui:97
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "詳細資料"
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
 #: cookies/kcookiesmanagement.ui:106
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "名稱"
+msgstr "名稱："
 
 #. i18n: ectx: property (text), widget (QLabel, valueLabel)
 #: cookies/kcookiesmanagement.ui:129
-#, fuzzy, kde-format
-#| msgid "Value"
+#, kde-format
 msgid "Value:"
-msgstr "數值"
+msgstr "值："
 
 #. i18n: ectx: property (text), widget (QLabel, domainLabel)
 #: cookies/kcookiesmanagement.ui:152
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain:"
-msgstr "主機/網域"
+msgstr "網域："
 
 #. i18n: ectx: property (text), widget (QLabel, patchLabel)
 #: cookies/kcookiesmanagement.ui:175
 #, kde-format
 msgid "Path:"
-msgstr ""
+msgstr "路徑："
 
 #. i18n: ectx: property (text), widget (QLabel, expiresLabel)
 #: cookies/kcookiesmanagement.ui:198
 #, kde-format
 msgid "Expires:"
-msgstr ""
+msgstr "失效："
 
 #. i18n: ectx: property (text), widget (QLabel, secureLabel)
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
-msgstr ""
+msgstr "安全："
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -491,13 +489,17 @@ msgid ""
 "unbrowsable.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"<p>這個選項將啟動 cookie 支援。一般您會希望啟用 cookie 支援並調整 它以符合您"
+"的隱私需求。</p>\n"
+"<p>請注意停用 cookie 支援可能造成許多網站無法瀏覽。</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
-#, fuzzy, kde-format
-#| msgid "Enable filters"
+#, kde-format
 msgid "Enable coo&kies"
-msgstr "啟用過濾器"
+msgstr "啟用 Cookies(&K)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -512,12 +514,18 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"拒絕所謂的第三方 cookies。這些 cookies 是由您正在瀏覽的網站以外的網站所產生"
+"的。比方說當您參觀 <b>www.foobar.com</b> 時選取了這個選項，只有來自 www."
+"foobar.com 的 cookies 才會被處理。所有其他的 cookies 會被自動拒絕。這減少了網"
+"站管理者收集您每日瀏覽習慣的機會。\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
 #, kde-format
 msgid "Only acce&pt cookies from originating server"
-msgstr ""
+msgstr "只接受來自原伺服器的 cookies(&P)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:46
@@ -531,13 +539,18 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
+"<p>\n"
+"自動接收暫存 cookies 代表它們會在目前的工作階段結束時過期。這類 cookies 不會"
+"儲存在您電腦的硬碟或儲存裝置裡。因為當您關閉所有使用它們的應用程式（例如您的"
+"瀏覽器）時，它們就被刪除了。</p><p><u>注意：</u>勾選此選項連帶地會覆蓋您的特"
+"定網站 cookie 政策。然而，這麼做會增進您的隱私，因為所有的 cookies 會在目前工"
+"作階段結束時移除。</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
-#, fuzzy, kde-format
-#| msgid "A&utomatically load images"
+#, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr "自動載入影像(&U)"
+msgstr "自動接受工作階段 cookies(&Y)"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -559,50 +572,50 @@ msgid ""
 "precedence over the default policy.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"決定收到來自遠端機器的 cookies 將如何處理：\n"
+"<ul>\n"
+"<li><b>詢問</b>會讓 KDE 在每次有伺服器要設定 cookie 時要求您的許可</li>\n"
+"<li><b>接受</b>會不提示您而接受 cookies</li>\n"
+"<li><b>暫時接受</b>會接受 cookies，但是在工作階段結束後就刪除。</li>\n"
+"<li><b>拒絕</b>會拒絕所有收到的 cookies</li>\n"
+"</ul><p>\n"
+"<u>注意：</u>特定網域政策可以在下面設定，它的優先權會高於預設的政策。</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
-#, fuzzy, kde-format
-#| msgid "Default encoding:"
+#, kde-format
 msgid "Default Policy"
-msgstr "預設編碼:"
+msgstr "預設政策"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
 #, kde-format
 msgid "Accep&t all cookies"
-msgstr ""
+msgstr "接受所有 cookies(&T)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr ""
+msgstr "暫時接受到工作階段結束為止(&U)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
-#, fuzzy, kde-format
-#| msgid "A&nimations:"
+#, kde-format
 msgid "Ask &for confirmation"
-msgstr "動畫(&N):"
+msgstr "詢問以獲得確認(&F)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
 #: cookies/kcookiespolicies.ui:98
 #, kde-format
 msgid "Re&ject all cookies"
-msgstr ""
+msgstr "拒絕所有 cookies(&J)"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can set specific Java policies for any particular host or "
-#| "domain. To add a new policy, simply click the <i>New...</i> button and "
-#| "supply the necessary information requested by the dialog box. To change "
-#| "an existing policy, click on the <i>Change...</i> button and choose the "
-#| "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#| "button will remove the selected policy, causing the default policy "
-#| "setting to be used for that domain."
+#, kde-format
 msgid ""
 "<qt>\n"
 "To add a new policy, simply click on the <b>Add...</b> button and supply the "
@@ -613,30 +626,30 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
-"您可以在這裡設定任何特定主機或網域的特定 Java 政策。要增加新政策，只要單擊<i>"
-"新增...</i>按鈕並提供對話方塊要求的必要資訊。要改變現有的政策，單擊<i>改變..."
-"</i>按鈕並從政策對話方塊選擇新政策。單擊<i>刪除</i>按鈕會移除選擇的政策，並使"
-"用預設政策設定於該網域。"
+"<qt>\n"
+"要增加新的政策。只要單擊 <b>新增...</b>按鈕，並提供對話窗中必須的資訊。要變更"
+"一個現存的政策，單擊 <b>變更...</b>按鈕，並在對話窗中選擇新的政策。單擊 <b>刪"
+"除</b> 將會移除您所選擇的項目，並以預設的政策取代該網域的政策。<b>刪除全部</"
+"b> 會移除所有的特定網站政策。\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Site Policy"
-msgstr "政策"
+msgstr "網站政策"
 
 #. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr ""
+msgstr "互動式搜尋網域"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search..."
-msgstr "搜尋："
+msgstr "搜尋…"
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -647,13 +660,16 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"你所設定使用不同的 cookie 處理方式的網站列表。 對這些網站，系統會使用自訂的 "
+"cookie 處理方式，原不是預設的處理方式。\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain"
-msgstr "主機/網域"
+msgstr "網域"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
@@ -684,18 +700,22 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"請輸入此要套用此政策的主機或網域。例如 <i>www.kde.org</i> 或 <i>.kde.org</"
+"i>。\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
 #, kde-format
 msgid "Site name:"
-msgstr ""
+msgstr "網站名稱："
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:38
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
-msgstr ""
+msgstr "輸入此政策要套用到的主機或網域名稱，例如 kde.org。"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -714,13 +734,21 @@ msgid ""
 "</ul>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"選擇欲使用的政策：\n"
+"<ul>\n"
+"<li><b>接受</b> - 允許此網址設定 cookie</li>\n"
+"<li><b>暫時接受</b> - 接受 cookie 但是在工作階段結束後即失效。</li>\n"
+"<li><b>拒絕</b> - 拒絕所有網址送來的 cookie</li>\n"
+"<li><b>詢問</b> - 詢問使用者是否接受cookie</li>\n"
+"</ul>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Policy:"
-msgstr "政策"
+msgstr "政策："
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
@@ -733,7 +761,7 @@ msgstr "接受"
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr ""
+msgstr "暫時接受到工作階段結束為止"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
@@ -1413,7 +1441,7 @@ msgstr "請插入自訂開始頁"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
-msgstr ""
+msgstr "建立新分頁時(&T)"
 
 #: generalopts.cpp:71
 #, kde-format
@@ -1491,7 +1519,7 @@ msgstr "只為本機檔案複製目前檢視"
 #: generalopts.cpp:132
 #, kde-format
 msgid "When starting up, restore state from last time"
-msgstr ""
+msgstr "啟動時回復上次的狀態"
 
 #: htmlopts.cpp:35
 #, kde-format
@@ -2201,16 +2229,15 @@ msgstr "您必須先輸入網域名稱。"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
-msgstr "滑鼠行為(&V)"
+msgstr "分頁行為"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr ""
+msgstr "比例"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2230,43 +2257,43 @@ msgstr "只開啟一個分頁時隱藏分頁列"
 #: tabs/tabsoptions.ui:38
 #, kde-format
 msgid "Tab bar position"
-msgstr ""
+msgstr "分頁列位置"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "選擇要在哪裡顯示分頁列"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "內容上方"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "內容下方"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "內容左方"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "內容右方"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr ""
+msgstr "用法"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2319,10 +2346,9 @@ msgstr "當收到外部網址呼叫時在既存的 Konqueror 開啟為分頁"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
-msgstr "滑鼠行為(&V)"
+msgstr "新分頁行為"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2355,7 +2381,7 @@ msgstr "在目前分頁之後開啟新的分頁(&N)"
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Closing"
-msgstr ""
+msgstr "關閉"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167
@@ -2417,13 +2443,13 @@ msgstr "當關閉目前分頁時跳到前一個使用的分頁"
 #: useragent/useragent.ui:14
 #, kde-format
 msgid "Form"
-msgstr ""
+msgstr "表單"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:23
 #, kde-format
 msgid "Existing identifications"
-msgstr ""
+msgstr "現有的識別"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
@@ -2433,57 +2459,55 @@ msgstr ""
 #: useragent/useragent.ui:150 useragent/useragent.ui:163
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: useragent/useragent.ui:66
 #, kde-format
 msgid "Content"
-msgstr ""
+msgstr "內容"
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
 #: useragent/useragent.ui:97
-#, fuzzy, kde-format
-#| msgid "&Export..."
+#, kde-format
 msgid "&Edit..."
-msgstr "匯出(&E)..."
+msgstr "編輯(&E)..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:110
 #, kde-format
 msgid "&Rename..."
-msgstr ""
+msgstr "重新命名(&R)..."
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
 #: useragent/useragent.ui:123
 #, kde-format
 msgid "Du&plicate..."
-msgstr ""
+msgstr "建立複本(&P)..."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:136
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "&Delete"
-msgstr "刪除(&L)"
+msgstr "刪除(&D)"
 
 #. i18n: ectx: property (text), widget (QPushButton, useTemplateBtn)
 #: useragent/useragent.ui:153
 #, kde-format
 msgid "Choose &selected identification"
-msgstr ""
+msgstr "選擇所選的識別(&S)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
 msgid "Use &default identification"
-msgstr ""
+msgstr "使用預設的識別(&D)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:181
 #, kde-format
 msgid "&Custom identification"
-msgstr ""
+msgstr "自訂識別(&C)"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
 #: useragent/useragent.ui:191
@@ -2494,6 +2518,8 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>停用預設識別的時候要使用的瀏覽器識別。</p><p>您可以手動"
+"輸入它或是從以下列表中選一個並依您的需求修改它。</p></body></html>"
 
 #~ msgid ""
 #~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "

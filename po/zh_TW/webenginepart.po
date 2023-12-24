@@ -5,19 +5,20 @@
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2018, 2020.
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2009, 2010.
+# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-29 01:37+0000\n"
-"PO-Revision-Date: 2020-05-02 22:59+0800\n"
-"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
-"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2023-12-24 06:31+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.04.0\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #, kde-format
@@ -32,12 +33,10 @@ msgstr "franklin@goodhorse.idv.tw, s8321414@gmail.com"
 
 #: src/about/konq_aboutpage.cpp:71 src/about/konq_aboutpage.cpp:73
 #: src/about/konq_aboutpage.cpp:196 src/about/konq_aboutpage.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
-#| msgid "Be free."
+#, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
-msgstr "變得自由。"
+msgstr "擁抱自由。"
 
 #: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:131
 #: src/about/konq_aboutpage.cpp:197
@@ -316,50 +315,50 @@ msgstr ""
 #: src/choosepagesaveformatdlg.ui:14
 #, kde-format
 msgid "Choose Save Format"
-msgstr ""
+msgstr "選擇儲存格式"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:20
 #, kde-format
 msgid "How would you like to save the page?"
-msgstr ""
+msgstr "您要如何儲存這個頁面？"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As an HTML file &without external resources"
-msgstr ""
+msgstr "作為 HTML 檔案而沒有外部資源(&W)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
 #, kde-format
 msgid "As a &complete HTML page"
-msgstr ""
+msgstr "作為完整的 HTML 頁面(&C)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As a &MHTML file"
-msgstr ""
+msgstr "作為 MHTML 檔案(&M)"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:57 src/webenginepartcertificateerrordlg.ui:23
 #, kde-format
 msgid "TextLabel"
-msgstr ""
+msgstr "文字標籤"
 
 #: src/cookies/cookiealertdlg.cpp:22
 #, kde-format
 msgctxt "@label the cookie expires when the browser session ends"
 msgid "End of Session"
-msgstr ""
+msgstr "工作階段結束"
 
 #: src/cookies/cookiealertdlg.cpp:29
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by https servers"
 msgid "Secure servers only"
-msgstr ""
+msgstr "只使用安全伺服器"
 
 #: src/cookies/cookiealertdlg.cpp:31
 #, kde-format
@@ -367,13 +366,13 @@ msgctxt ""
 "@label exposure string - the cookie may be used by https servers AND client-"
 "side javascripts"
 msgid "Secure servers, page scripts"
-msgstr ""
+msgstr "安全伺服器，頁面文稿"
 
 #: src/cookies/cookiealertdlg.cpp:35
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by http servers"
 msgid "Servers"
-msgstr ""
+msgstr "伺服器"
 
 #: src/cookies/cookiealertdlg.cpp:37
 #, kde-format
@@ -381,33 +380,31 @@ msgctxt ""
 "@label exposure string - the cookie may be used by http servers AND client-"
 "side javascripts"
 msgid "Servers, page scripts"
-msgstr ""
+msgstr "伺服器，頁面文稿"
 
 #: src/cookies/cookiealertdlg.cpp:41
 #, kde-format
 msgctxt "@label accept cookie"
 msgid "Accept"
-msgstr ""
+msgstr "接受"
 
 #: src/cookies/cookiealertdlg.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@action:never for this site"
-#| msgid "Ne&ver for this site"
+#, kde-format
 msgctxt "@label accept cookie for this session only"
 msgid "Accept for this session"
-msgstr "此站台永遠不要(&V)"
+msgstr "在此工作階段接受"
 
 #: src/cookies/cookiealertdlg.cpp:45
 #, kde-format
 msgctxt "@label reject cookie"
 msgid "Reject"
-msgstr ""
+msgstr "拒絕"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CookieAlertDlg)
 #: src/cookies/cookiealertdlg.ui:14
 #, kde-format
 msgid "CookieAlertDlg"
-msgstr ""
+msgstr "Cookie 警告對話框"
 
 #. i18n: ectx: property (text), widget (QLabel, header)
 #: src/cookies/cookiealertdlg.ui:20
@@ -419,34 +416,33 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/cookies/cookiealertdlg.ui:30
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgid "Cookie details"
-msgstr "詳細資訊"
+msgstr "Cookie 詳細資料"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/cookies/cookiealertdlg.ui:36
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "名稱"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: src/cookies/cookiealertdlg.ui:50
 #, kde-format
 msgid "Value"
-msgstr ""
+msgstr "數值"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: src/cookies/cookiealertdlg.ui:64
 #, kde-format
 msgid "Expires"
-msgstr ""
+msgstr "失效"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: src/cookies/cookiealertdlg.ui:78
 #, kde-format
 msgid "Path"
-msgstr ""
+msgstr "路徑"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: src/cookies/cookiealertdlg.ui:99
@@ -458,31 +454,31 @@ msgstr ""
 #: src/cookies/cookiealertdlg.ui:113
 #, kde-format
 msgid "Domain"
-msgstr ""
+msgstr "網域"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: src/cookies/cookiealertdlg.ui:123
 #, kde-format
 msgid "Apply choice to"
-msgstr ""
+msgstr "套用選擇到"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToThis)
 #: src/cookies/cookiealertdlg.ui:129
 #, kde-format
 msgid "Only this cookie"
-msgstr ""
+msgstr "僅這個 cookie"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToDomain)
 #: src/cookies/cookiealertdlg.ui:136
 #, kde-format
 msgid "All cookies from this domain"
-msgstr ""
+msgstr "所有來自這個網域的 cookie"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToAll)
 #: src/cookies/cookiealertdlg.ui:143
 #, kde-format
 msgid "All cookies"
-msgstr ""
+msgstr "所有 cookie"
 
 #: src/schemehandlers/errorschemehandler.cpp:96
 #, kde-format
@@ -559,40 +555,36 @@ msgstr "過濾器錯誤"
 #: src/spellcheckermanager.cpp:98
 #, kde-format
 msgid "Spelling"
-msgstr ""
+msgstr "拼字"
 
 #: src/spellcheckermanager.cpp:102
 #, kde-format
 msgid "Spell Checking Enabled"
-msgstr ""
+msgstr "拼字檢查已啟用"
 
 #: src/spellcheckermanager.cpp:120
 #, kde-format
 msgid "&Languages"
-msgstr ""
+msgstr "語言(&L)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/ui/credentialsdetailswidget.ui:34
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
 #, kde-format
 msgid "&Show passwords"
-msgstr ""
+msgstr "顯示密碼(&S)"
 
 #: src/ui/featurepermissionbar.cpp:22
-#, fuzzy, kde-format
-#| msgctxt "@action:deny access"
-#| msgid "&Deny access"
+#, kde-format
 msgctxt "@action:deny permission"
 msgid "&Deny permission"
-msgstr "拒絕存取(&D)"
+msgstr "拒絕權限(&D)"
 
 #: src/ui/featurepermissionbar.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@action:grant access"
-#| msgid "&Grant access"
+#, kde-format
 msgctxt "@action:grant permission"
 msgid "&Grant permission"
-msgstr "允許存取(&G)"
+msgstr "給予權限(&G)"
 
 #: src/ui/featurepermissionbar.cpp:57
 #, fuzzy, kde-format
@@ -685,18 +677,16 @@ msgid "N&ot now"
 msgstr "現在不要(&O)"
 
 #: src/ui/passwordbar.cpp:41 src/ui/passwordbar.cpp:125
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "@action:display details about credentials to store"
 msgid "&Show details"
-msgstr "詳細資訊"
+msgstr "顯示詳細資訊(&S)"
 
 #: src/ui/passwordbar.cpp:123
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "@action:hide details about credentials to store"
 msgid "&Hide details"
-msgstr "詳細資訊"
+msgstr "隱藏詳細資訊(&H)"
 
 #: src/ui/searchbar.cpp:38
 #, kde-format
@@ -768,45 +758,44 @@ msgstr "將符合的地方突顯出來"
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
 #, kde-format
 msgid "Choose fields to remember"
-msgstr ""
+msgstr "選擇要記住的欄位"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
 #, kde-format
 msgid "Switch between displaying passwords or placeholders"
-msgstr ""
+msgstr "切換顯示密碼還是佔位符"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
 #, kde-format
 msgid "Show advanced information about the fields"
-msgstr ""
+msgstr "顯示欄位的進階資訊"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
 #: src/webenginepartcertificateerrordlg.ui:30
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgid "&Show details"
-msgstr "詳細資訊"
+msgstr "顯示詳細資訊(&S)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
 #, kde-format
 msgid "Available &fields"
-msgstr ""
+msgstr "可用的欄位(&F)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:101
 #, kde-format
 msgid "Store form data in KWallet when closing the dialog"
-msgstr ""
+msgstr "關閉對話框時將表單資料儲存於 KWallet"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
 #, kde-format
 msgid "&Immediately memorize form data"
-msgstr ""
+msgstr "馬上記住表單資料(&I)"
 
 #: src/webenginepage.cpp:154 src/webenginepage.cpp:178
 #, kde-format
@@ -961,10 +950,9 @@ msgid "Do Not Allow"
 msgstr "不允許"
 
 #: src/webenginepart.cpp:214
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "另存影像為..."
+msgstr "另存完整 HTML 頁面為..."
 
 #: src/webenginepart.cpp:218
 #, kde-format
@@ -1105,7 +1093,7 @@ msgstr "<html>您要 %1 記住 %2 的登入資訊嗎？</html>"
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
-msgstr ""
+msgstr "現在填入表單(&F)"
 
 #: src/webenginepart.cpp:1009
 #, fuzzy, kde-format
@@ -1138,7 +1126,7 @@ msgstr "移除此站台所有的快取住的密碼"
 #: src/webenginepart.cpp:1029
 #, kde-format
 msgid "&Launch Wallet Manager"
-msgstr ""
+msgstr "啟動錢包管理工具(&L)"
 
 #: src/webenginepart.cpp:1033
 #, kde-format
@@ -1167,13 +1155,13 @@ msgstr "檢視(&V)"
 #: src/webenginepart.rc:30
 #, kde-format
 msgid "&Tools"
-msgstr ""
+msgstr "工具(&T)"
 
 #. i18n: ectx: Menu (wallet)
 #: src/webenginepart.rc:32
 #, kde-format
 msgid "&Credential management"
-msgstr ""
+msgstr "憑證管理(&C)"
 
 #. i18n: ectx: ToolBar (htmlToolBar)
 #: src/webenginepart.rc:47
@@ -1200,13 +1188,13 @@ msgstr "輸入網址："
 #, kde-format
 msgctxt "Ignore the certificate error for this URL only for now"
 msgid "Yes, &once"
-msgstr ""
+msgstr "是，僅這一次(&O)"
 
 #: src/webenginepartcertificateerrordlg.cpp:45
 #, kde-format
 msgctxt "Ignore the certificate error for this URL now and in the future"
 msgid "Yes, &forever"
-msgstr ""
+msgstr "是，永遠(&F)"
 
 #: src/webenginepartcertificateerrordlg.cpp:54
 #, fuzzy, kde-format
@@ -1221,40 +1209,34 @@ msgstr ""
 "誤？"
 
 #: src/webenginepartcertificateerrordlg.cpp:60
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "title of a dialog asking what to do about a SSL certificate error"
 msgid "Certificate error"
-msgstr "詳細資訊"
+msgstr "憑證錯誤"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEnginePartCertificateErrorDlg)
 #: src/webenginepartcertificateerrordlg.ui:14
 #, kde-format
 msgid "Dialog"
-msgstr ""
+msgstr "對話框"
 
 #. i18n: ectx: property (title), widget (QGroupBox, details)
 #: src/webenginepartcertificateerrordlg.ui:50
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgid "Certificate details"
-msgstr "詳細資訊"
+msgstr "憑證詳情"
 
 #. i18n: ectx: attribute (title), widget (QWidget, subjectTab)
 #: src/webenginepartcertificateerrordlg.ui:63
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
-#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
-#| msgid " - Subject: "
+#, kde-format
 msgid "&Subject"
-msgstr " - 主題："
+msgstr "主旨(&S)"
 
 #. i18n: ectx: attribute (title), widget (QWidget, issuerTab)
 #: src/webenginepartcertificateerrordlg.ui:73
 #, kde-format
 msgid "&Issuer"
-msgstr ""
+msgstr "配發者(&I)"
 
 #: src/webenginepartcontrols.cpp:287
 #, kde-format
@@ -1272,26 +1254,25 @@ msgstr ""
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
-msgstr ""
+msgstr "下載中"
 
 #: src/webenginepartdownloadmanager.cpp:298
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
-msgstr ""
+msgstr "來源"
 
 #: src/webenginepartdownloadmanager.cpp:299
-#, fuzzy, kde-format
-#| msgid "Description:"
+#, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
-msgstr "描述："
+msgstr "目的地"
 
 #: src/webenginepartdownloadmanager.cpp:330
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
-msgstr ""
+msgstr "已將 %1 儲存為 %2"
 
 #: src/webengineview.cpp:362
 #, kde-format
@@ -1430,63 +1411,58 @@ msgstr "設定網頁捷徑..."
 #, kde-format
 msgctxt "Web field with type 'text'"
 msgid "text"
-msgstr ""
+msgstr "文字"
 
 #: src/webenginewallet.cpp:92
 #, kde-format
 msgctxt "Web field with type 'password'"
 msgid "password"
-msgstr ""
+msgstr "密碼"
 
 #: src/webenginewallet.cpp:93
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
-#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
-#| msgid "Email: "
+#, kde-format
 msgctxt "Web field with type 'e-mail'"
 msgid "e-mail"
-msgstr "電子郵件： "
+msgstr "電子郵件"
 
 #: src/webenginewallet.cpp:94
 #, kde-format
 msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
 msgid "other"
-msgstr ""
+msgstr "其他"
 
 #: src/webfieldsdataview.cpp:61
 #, kde-format
 msgctxt "Label of a web field"
 msgid "Field name"
-msgstr ""
+msgstr "欄位名稱"
 
 #: src/webfieldsdataview.cpp:62
 #, kde-format
 msgctxt "Value of a web field"
 msgid "Field value"
-msgstr ""
+msgstr "欄位數值"
 
 #: src/webfieldsdataview.cpp:63
 #, kde-format
 msgctxt "Name attribute of a web field"
 msgid "Internal field name"
-msgstr ""
+msgstr "內部欄位名稱"
 
 #: src/webfieldsdataview.cpp:64
 #, kde-format
 msgctxt "Type of a web field"
 msgid "Field type"
-msgstr ""
+msgstr "欄位型態"
 
 #: src/webfieldsdataview.cpp:65
 #, kde-format
 msgctxt "The id of a web field"
 msgid "Field id"
-msgstr ""
+msgstr "欄位 ID"
 
 #: src/webfieldsdataview.cpp:66
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "Other details about a web field"
 msgid "Details"
 msgstr "詳細資訊"
@@ -1495,32 +1471,31 @@ msgstr "詳細資訊"
 #, kde-format
 msgctxt "web field has the readonly attribute"
 msgid "read only"
-msgstr ""
+msgstr "唯讀"
 
 #: src/webfieldsdataview.cpp:128
-#, fuzzy, kde-format
-#| msgid "AutoCompletion for forms"
+#, kde-format
 msgctxt "web field has the autocomplete attribute set to off"
 msgid "auto-completion off"
-msgstr "自動完成表單"
+msgstr "自動完成 關閉"
 
 #: src/webfieldsdataview.cpp:131
 #, kde-format
 msgctxt "web field is disabled"
 msgid "disabled"
-msgstr ""
+msgstr "已停用"
 
 #: src/webfieldsdataview.cpp:159
 #, kde-format
 msgctxt "A statement about a field is true"
 msgid "yes"
-msgstr ""
+msgstr "是"
 
 #: src/webfieldsdataview.cpp:160
 #, kde-format
 msgctxt "A statement about a field is false"
 msgid "no"
-msgstr ""
+msgstr "否"
 
 #: src/webfieldsdataview.cpp:163
 #, kde-format
