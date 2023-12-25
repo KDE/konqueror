@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:45+0000\n"
-"PO-Revision-Date: 2023-12-24 06:39+0900\n"
+"PO-Revision-Date: 2023-12-25 01:57+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -335,6 +335,17 @@ msgid ""
 "original URL refers to a directory but does not end with a slash.</p>\n"
 "      "
 msgstr ""
+"<p>將下載的檔案全部儲存在一個目錄裡，並為檔案設定適合本地瀏覽用的副檔名。\n"
+"                        舉例來說，主要的 HTML 頁面一定會叫做 \"index.html\"，"
+"遠端的 .php 頁面也會用標準的 .html 副檔名進行儲存。</p>\n"
+"               <p>維持這個選項開著來產生標準的網頁封存 (web archive) (.war) "
+"檔案。</p>\n"
+"               <p>關閉此選項時，檔案會被以下載時的原樣保存。\n"
+"                        這代表它們可能會依原始網站的結構而被放在子目錄，並且"
+"副檔名也不會被調整。\n"
+"                        請注意，原始網址是目錄但是不以斜線結尾的時候下載可能"
+"會無法正常運作。</p>\n"
+"      "
 
 #. i18n: ectx: label, entry (RunInTerminal), group (Options)
 #: app/settings.kcfg:42
@@ -353,6 +364,10 @@ msgid ""
 "p>\n"
 "      "
 msgstr ""
+"<p>在終端機視窗中執行下載行程。下載結束後關閉終端機視窗。</p>\n"
+"               <p>關閉此選項時下載會在背景進行。它的進度輸出會出現在工作階段"
+"紀錄檔裡。</p>\n"
+"      "
 
 #. i18n: ectx: label, entry (CloseWhenFinished), group (Options)
 #: app/settings.kcfg:50
@@ -390,6 +405,8 @@ msgid ""
 "Cannot find the <command>kcreatewebarchive</command> executable,<nl/>check "
 "the plugin and helper installation."
 msgstr ""
+"找不到 <command>kcreatewebarchive</command> 執行檔，<nl/>請檢查外掛程式與幫助"
+"工具的安裝。"
 
 #: plugin_webarchiver.cpp:50
 #, kde-format
