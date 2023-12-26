@@ -4276,18 +4276,34 @@ static KonqPopupMenu::ActionGroupMap convertActionGroups(const KParts::Navigatio
     return agm;
 }
 
-void KonqMainWindow::slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags flags, const KParts::NavigationExtension::ActionGroupMap &actionGroups)
+void KonqMainWindow::slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags flags, const KParts::NavigationExtension::ActionGroupMap &actionGroups
+#if QT_VERSION_MAJOR < 6
+                     )
+#else
+, KonqView *currentView)
+#endif
 {
     KFileItem item(url, args.mimeType(), mode);
     KFileItemList items;
     items.append(item);
+#if QT_VERSION_MAJOR < 6
     slotPopupMenu(global, items, args, browserArgs, flags, actionGroups);
+#else
+    slotPopupMenu(global, items, args, browserArgs, flags, actionGroups, currentView);
+#endif
 }
 
-void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags itemFlags, const KParts::NavigationExtension::ActionGroupMap &actionGroups)
+void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags itemFlags, const KParts::NavigationExtension::ActionGroupMap &actionGroups
+#if QT_VERSION_MAJOR < 6
+                     )
+#else
+, KonqView *currentView)
+#endif
 {
     KonqView *m_oldView = m_currentView;
+#if QT_VERSION_MAJOR < 6
     KonqView *currentView = childView(static_cast<KParts::ReadOnlyPart *>(sender()->parent()));
+#endif
 
     //qCDebug(KONQUEROR_LOG) << "m_oldView=" << m_oldView << "new currentView=" << currentView << "passive:" << currentView->isPassiveMode();
 

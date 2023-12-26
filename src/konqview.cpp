@@ -1193,25 +1193,20 @@ void KonqView::enablePopupMenu(bool b)
     }
 #else
     if (auto browserExtension = qobject_cast<BrowserExtension *>(ext)) {
-        using namespace KParts;
-        auto slotOverloadFileItem = QOverload<const QPoint&, const KFileItemList&, const OpenUrlArguments &, const BrowserArguments&,
-                NavigationExtension::PopupFlags, const NavigationExtension::ActionGroupMap&>::of(&KonqMainWindow::slotPopupMenu);
-        auto slotOverloadUrl = QOverload<const QPoint&, const QUrl&, mode_t, const OpenUrlArguments& , const BrowserArguments& ,
-                NavigationExtension::PopupFlags, const NavigationExtension::ActionGroupMap&>::of(&KonqMainWindow::slotPopupMenu);
-
         if (b) {
             m_bPopupMenuEnabled = true;
-            connect(browserExtension, &BrowserExtension::browserPopupMenuFromFiles, m_pMainWindow, slotOverloadFileItem);
-            connect(browserExtension, &BrowserExtension::browserPopupMenuFromUrl, m_pMainWindow, slotOverloadUrl);
+            connect(browserExtension, &BrowserExtension::browserPopupMenuFromFiles, this, &KonqView::slotBrowserPopupMenuFiles);
+            connect(browserExtension, &BrowserExtension::browserPopupMenuFromUrl, this, &KonqView::slotBrowserPopupMenuUrl);
         } else {
              m_bPopupMenuEnabled = false;
-            disconnect(browserExtension, &BrowserExtension::browserPopupMenuFromFiles, m_pMainWindow, slotOverloadFileItem);
-            disconnect(browserExtension, &BrowserExtension::browserPopupMenuFromUrl, m_pMainWindow, slotOverloadUrl);
+            disconnect(browserExtension, &BrowserExtension::browserPopupMenuFromFiles, this, &KonqView::slotBrowserPopupMenuFiles);
+            disconnect(browserExtension, &BrowserExtension::browserPopupMenuFromUrl, this, &KonqView::slotBrowserPopupMenuUrl);
         }
     } else {
         //Store signal and slot overloads in variable so that they can be reused in both branches
         using namespace KParts;
-        auto sigOverloadFileItem = QOverload<const QPoint&, const KFileItemList&, const OpenUrlArguments &,            NavigationExtension::PopupFlags, const NavigationExtension::ActionGroupMap&>::of(&NavigationExtension::popupMenu);
+        auto sigOverloadFileItem = QOverload<const QPoint&, const KFileItemList&, const OpenUrlArguments &,
+            NavigationExtension::PopupFlags, const NavigationExtension::ActionGroupMap&>::of(&NavigationExtension::popupMenu);
         auto sigOverloadUrl = QOverload<const QPoint&, const QUrl&, mode_t, const OpenUrlArguments& ,
             NavigationExtension::PopupFlags, const NavigationExtension::ActionGroupMap&>::of(&NavigationExtension::popupMenu);
         if (b) { // enable context popup
@@ -1227,23 +1222,44 @@ void KonqView::enablePopupMenu(bool b)
 #endif
 }
 
-void KonqView::slotPopupMenuFiles(const QPoint &global,
-            const KFileItemList &items,
-            const KParts::OpenUrlArguments &args,
-            KParts::NavigationExtension::PopupFlags flags,
-            const KParts::NavigationExtension::ActionGroupMap &actionGroups)
+#if QT_VERSION_MAJOR > 5
+void KonqView::slotBrowserPopupMenuFiles(const QPoint& global, const KFileItemList& items,
+                                         const KParts::OpenUrlArguments& args, const BrowserArguments& bargs,
+                                         KParts::NavigationExtension::PopupFlags flags,
+                                         const KParts::NavigationExtension::ActionGroupMap& actionGroups)
 {
-    m_pMainWindow->slotPopupMenu(global, items, args, {}, flags, actionGroups);
+    m_pMainWindow->slotPopupMenu(global, items, args, bargs, flags, actionGroups, this);
 }
 
-void KonqView::slotPopupMenuUrl(const QPoint &global,
-                   const QUrl &url,
-                   mode_t mode,
-                   const KParts::OpenUrlArguments &arguments,
-                   KParts::NavigationExtension::PopupFlags flags,
-                   const KParts::NavigationExtension::ActionGroupMap &actionGroups)
+void KonqView::slotBrowserPopupMenuUrl(const QPoint& global, const QUrl& url, mode_t mode,
+                                       const KParts::OpenUrlArguments& args, const BrowserArguments& bargs,
+                                       KParts::NavigationExtension::PopupFlags flags,
+                                       const KParts::NavigationExtension::ActionGroupMap& actionGroups)
 {
+    m_pMainWindow->slotPopupMenu(global, url, mode, args, bargs, flags, actionGroups, this);
+}
+#endif
+
+void KonqView::slotPopupMenuFiles(const QPoint &global, const KFileItemList &items,
+                                  const KParts::OpenUrlArguments &args, KParts::NavigationExtension::PopupFlags flags,
+                                  const KParts::NavigationExtension::ActionGroupMap &actionGroups)
+{
+#if QT_VERSION_MAJOR < 6
+    m_pMainWindow->slotPopupMenu(global, items, args, {}, flags, actionGroups);
+#else
+    m_pMainWindow->slotPopupMenu(global, items, args, {}, flags, actionGroups, this);
+#endif
+}
+
+void KonqView::slotPopupMenuUrl(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &arguments,
+                                KParts::NavigationExtension::PopupFlags flags,
+                                const KParts::NavigationExtension::ActionGroupMap &actionGroups)
+{
+#if QT_VERSION_MAJOR < 6
     m_pMainWindow->slotPopupMenu(global, url, mode, arguments, {}, flags, actionGroups);
+#else
+    m_pMainWindow->slotPopupMenu(global, url, mode, arguments, {}, flags, actionGroups, this);
+#endif
 }
 
 void KonqView::reparseConfiguration()

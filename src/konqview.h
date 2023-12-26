@@ -609,17 +609,27 @@ private Q_SLOTS:
     void slotCanceled(const QString &errMsg);
     void slotPercent(KJob *, unsigned long percent);
     void slotSpeed(KJob *, unsigned long bytesPerSecond);
+
+    //The four slots below are called in response to the several variants of the NavigationExtension::popupMenu signal.
+    //There are four variants of this signal: two come from KParts::NavigationExtension and two from BrowserExtension,
+    //which (as of KF6) has been moved to Konqueror. For each of them, there are two variants, one taking a KFileItemList
+    //and one taing a QUrl.
+    //
+    //Since these slots need to be disconnected, we can't just use a lambda
+#if QT_VERSION_MAJOR > 5
+    void slotBrowserPopupMenuFiles(const QPoint &global,
+        const KFileItemList &items, const KParts::OpenUrlArguments &args, const BrowserArguments &bargs,
+        KParts::NavigationExtension::PopupFlags flags, const KParts::NavigationExtension::ActionGroupMap &actionGroups);
+    void slotBrowserPopupMenuUrl(const QPoint &global,
+        const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &arguments, const BrowserArguments &bargs,
+        KParts::NavigationExtension::PopupFlags flags, const KParts::NavigationExtension::ActionGroupMap &actionGroups);
+#endif
     void slotPopupMenuFiles(const QPoint &global,
-            const KFileItemList &items,
-            const KParts::OpenUrlArguments &args,
-            KParts::NavigationExtension::PopupFlags flags,
-            const KParts::NavigationExtension::ActionGroupMap &actionGroups);
+        const KFileItemList &items, const KParts::OpenUrlArguments &args, KParts::NavigationExtension::PopupFlags flags,
+        const KParts::NavigationExtension::ActionGroupMap &actionGroups);
     void slotPopupMenuUrl(const QPoint &global,
-                   const QUrl &url,
-                   mode_t mode,
-                   const KParts::OpenUrlArguments &arguments,
-                   KParts::NavigationExtension::PopupFlags flags,
-                   const KParts::NavigationExtension::ActionGroupMap &actionGroups);
+        const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &arguments, KParts::NavigationExtension::PopupFlags flags,
+        const KParts::NavigationExtension::ActionGroupMap &actionGroups);
 
     /**
      * Connected to the NavigationExtension
