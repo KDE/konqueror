@@ -2550,7 +2550,7 @@ void KonqMainWindow::slotUpAboutToShow()
         return;
     }
 
-    QMenu *popup = m_paUp->menu();
+    QMenu *popup = m_paUp->popupMenu();
     popup->clear();
 
     int i = 0;
@@ -2668,9 +2668,9 @@ void KonqMainWindow::slotGoHistoryDelayed()
 
 void KonqMainWindow::slotBackAboutToShow()
 {
-    m_paBack->menu()->clear();
+    m_paBack->popupMenu()->clear();
     if (m_currentView) {
-        KonqActions::fillHistoryPopup(m_currentView->history(), m_currentView->historyIndex(), m_paBack->menu(), true, false);
+        KonqActions::fillHistoryPopup(m_currentView->history(), m_currentView->historyIndex(), m_paBack->popupMenu(), true, false);
     }
 }
 
@@ -2679,7 +2679,7 @@ void KonqMainWindow::slotBackAboutToShow()
  */
 void KonqMainWindow::slotClosedItemsListAboutToShow()
 {
-    QMenu *popup = m_paClosedItems->menu();
+    QMenu *popup = m_paClosedItems->popupMenu();
     // Clear the menu and fill it with a maximum of s_closedItemsListLength number of urls
     popup->clear();
     QAction *clearAction = popup->addAction(i18nc("This menu entry empties the closed items history", "Empty Closed Items History"));
@@ -2760,9 +2760,9 @@ void KonqMainWindow::slotBackActivated(QAction *action)
 
 void KonqMainWindow::slotForwardAboutToShow()
 {
-    m_paForward->menu()->clear();
+    m_paForward->popupMenu()->clear();
     if (m_currentView) {
-        KonqActions::fillHistoryPopup(m_currentView->history(), m_currentView->historyIndex(), m_paForward->menu(), false, true);
+        KonqActions::fillHistoryPopup(m_currentView->history(), m_currentView->historyIndex(), m_paForward->popupMenu(), false, true);
     }
 }
 
@@ -3357,7 +3357,7 @@ void KonqMainWindow::initActions()
     // Trash bin of closed tabs
     m_paClosedItems = new KToolBarPopupAction(QIcon::fromTheme(QStringLiteral("edit-undo-closed-tabs")),  i18n("Closed Items"), this);
     actionCollection()->addAction(QStringLiteral("closeditems"), m_paClosedItems);
-    m_closedItemsGroup = new QActionGroup(m_paClosedItems->menu());
+    m_closedItemsGroup = new QActionGroup(m_paClosedItems->popupMenu());
 
     // set the closed tabs list shown
     connect(m_paClosedItems, &KToolBarPopupAction::triggered, m_pUndoManager, &KonqUndoManager::undoLastClosedItem);
