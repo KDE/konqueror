@@ -116,6 +116,7 @@ KonqFrameStatusBar::KonqFrameStatusBar(KonqFrame *_parent)
             this, SIGNAL(linkedViewClicked(bool)));
 
     m_progressBar = new QProgressBar(this);
+    m_progressBar->setFormat(i18nc("%p is the percent value, % is the percent sign", "%p%"));
     // Minimum width of QProgressBar::sizeHint depends on PM_ProgressBarChunkWidth which doesn't make sense;
     // we don't want chunking but we want a reasonably-sized progressbar :)
     m_progressBar->setMinimumWidth(150);
