@@ -191,7 +191,7 @@ void UrlLoader::decideAction()
             m_ready = true;
             return;
         default:
-            if (isMimeTypeKnown(m_mimeType) && !m_protocolAllowsReading) {
+            if (!isMimeTypeKnown(m_mimeType) && !m_protocolAllowsReading) {
                 //If the protocol doesn't allow reading and we don't have a mimetype associated with it,
                 //use the Open action, as we most likely won't be able to find out the mimetype. This is
                 //what happens, for example, for mailto URLs
