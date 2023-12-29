@@ -105,7 +105,7 @@ QAction *KonqBookmarkMenu::actionForBookmark(const KBookmark &_bm)
         m_actionCollection->addAction(QStringLiteral("kbookmarkmenu"), actionMenu);
         m_actions.append(actionMenu);
 
-        KBookmarkMenu *subMenu = new KonqBookmarkMenu(manager(), owner(), actionMenu, bm.address());
+        KBookmarkMenu *subMenu = new KonqBookmarkMenu(manager(), owner(), actionMenu, bm.address(), m_actionCollection);
 
         m_lstSubMenus.append(subMenu);
         return actionMenu;

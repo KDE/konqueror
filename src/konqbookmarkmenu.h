@@ -49,8 +49,12 @@ public:
      * Creates a bookmark submenu.
      * Only used internally and for bookmark toolbar.
      */
-    KonqBookmarkMenu(KBookmarkManager *mgr, KBookmarkOwner *owner, KBookmarkActionMenu *parentMenu, QString parentAddress)
+    KonqBookmarkMenu(KBookmarkManager *mgr, KBookmarkOwner *owner, KBookmarkActionMenu *parentMenu, QString parentAddress, KActionCollection *collec)
+#if QT_VERSION_MAJOR < 6
         : KBookmarkMenu(mgr, owner, parentMenu->menu(), parentAddress)
+#else
+        : KBookmarkMenu(mgr, owner, parentMenu->menu(), parentAddress), m_actionCollection(collec)
+#endif
     {
     }
 
