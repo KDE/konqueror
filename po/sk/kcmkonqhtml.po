@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2023-12-30 01:37+0000\n"
 "PO-Revision-Date: 2022-04-09 15:18+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -300,7 +300,7 @@ msgstr "Písmo použité na zobrazenie textu označeného ako fantasy."
 msgid "Font &size adjustment for this encoding:"
 msgstr "&Prispôsobenie veľkosti písma pre toto kódovanie:"
 
-#: appearance.cpp:204 appearance.cpp:402
+#: appearance.cpp:204 appearance.cpp:405
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "Použiť znakovú sadu jazyka"
@@ -1434,12 +1434,12 @@ msgid "Export Filters"
 msgstr "Exportovať filtre"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:556 useragent/useragent.ui:61
+#: filteropts.cpp:563 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "Názov"
 
-#: filteropts.cpp:557
+#: filteropts.cpp:564
 #, kde-format
 msgid "URL"
 msgstr "URL"
@@ -1878,30 +1878,30 @@ msgstr ""
 "celého prehliadania. Môžete nastaviť aj čas, po ktorom sa server automaticky "
 "vypne. Ak chcete, aby server bežal stále, nechajte voľbu nezaškrtnutú."
 
-#: javaopts.cpp:288
+#: javaopts.cpp:291
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "Osobitné pre &domény"
 
-#: javaopts.cpp:323
+#: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "Nová politika Java"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "Zmeniť politiku Java"
 
-#: javaopts.cpp:330
+#: javaopts.cpp:333
 #, kde-format
 msgid "&Java policy:"
 msgstr "Politika &Javy:"
 
-#: javaopts.cpp:331
+#: javaopts.cpp:334
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "Vyberte si politiku Javy pre túto doménu alebo hostiteľa."
@@ -2013,35 +2013,35 @@ msgstr ""
 msgid "Global JavaScript Policies"
 msgstr "Globálne politiky pre JavaScript"
 
-#: jsopts.cpp:181
+#: jsopts.cpp:183
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "Osobitné pre &domény"
 
-#: jsopts.cpp:220
+#: jsopts.cpp:222
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "Nová politika JavaScript"
 
-#: jsopts.cpp:223
+#: jsopts.cpp:225
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "Zmeniť politiku JavaScript"
 
-#: jsopts.cpp:227
+#: jsopts.cpp:229
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "Politika JavaSkriptu:"
 
-#: jsopts.cpp:228
+#: jsopts.cpp:230
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "Vyberte si politiku JavaSkriptu pre túto doménu alebo hostiteľa."
 
-#: jsopts.cpp:230
+#: jsopts.cpp:232
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "Politiky JavaScript pre domény"

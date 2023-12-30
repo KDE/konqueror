@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2023-12-30 01:37+0000\n"
 "PO-Revision-Date: 2019-12-12 21:24+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: <Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc-"
@@ -267,7 +267,7 @@ msgstr ""
 msgid "Font &size adjustment for this encoding:"
 msgstr ""
 
-#: appearance.cpp:204 appearance.cpp:402
+#: appearance.cpp:204 appearance.cpp:405
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "ഭാഷാ എന്‍കോഡിങ് ഉപയോഗിക്കുക"
@@ -1350,12 +1350,12 @@ msgid "Export Filters"
 msgstr "ഫില്‍‌റ്റര്‍ ചെയ്യുന്നതിനുള്ള യുആര്‍എല്‍ എക്സ്പ്രെഷനുകള്‍"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:556 useragent/useragent.ui:61
+#: filteropts.cpp:563 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr ""
 
-#: filteropts.cpp:557
+#: filteropts.cpp:564
 #, kde-format
 msgid "URL"
 msgstr ""
@@ -1736,30 +1736,30 @@ msgid ""
 "checkbox unchecked."
 msgstr ""
 
-#: javaopts.cpp:288
+#: javaopts.cpp:291
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "മണ്ഡലാതിഷ്ഠിതം"
 
-#: javaopts.cpp:323
+#: javaopts.cpp:326
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "പുതിയ ജാവാ പോളിസി"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:329
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "ജാവാ പോളിസി മാറ്റുക"
 
-#: javaopts.cpp:330
+#: javaopts.cpp:333
 #, kde-format
 msgid "&Java policy:"
 msgstr "&ജാവാ പോളിസി:"
 
-#: javaopts.cpp:331
+#: javaopts.cpp:334
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr ""
@@ -1850,36 +1850,36 @@ msgstr ""
 msgid "Global JavaScript Policies"
 msgstr "ഗ്ലോബല്‍ ജാവാസ്ക്രിപ്റ്റ് പോളിസികള്‍"
 
-#: jsopts.cpp:181
+#: jsopts.cpp:183
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "മണ്ഡലാതിഷ്ഠിതം"
 
-#: jsopts.cpp:220
+#: jsopts.cpp:222
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "പുതിയ ജാവാസ്ക്രിപ്റ്റ് പോളിസി"
 
-#: jsopts.cpp:223
+#: jsopts.cpp:225
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "ജാവാസ്ക്രിപ്റ്റ് പോളിസി മാറ്റുക"
 
-#: jsopts.cpp:227
+#: jsopts.cpp:229
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "ജാവാസ്ക്രിപ്റ്റ് പോളിസി:"
 
-#: jsopts.cpp:228
+#: jsopts.cpp:230
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr ""
 "മുകളില്‍പറഞ്ഞിരിക്കുന്ന ഹോസ്റ്റ് അല്ലെങ്കില്‍ മണ്ഡലത്തിനു് ഒരു ജാവാസ്ക്രിപ്റ്റ് പോളിസി തിരഞ്ഞെടുക്കുക."
 
-#: jsopts.cpp:230
+#: jsopts.cpp:232
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "മണ്ഡലമതിഷ്ഠിത ജാവാസ്ക്രിപ്റ്റ് പോളിസികള്‍"

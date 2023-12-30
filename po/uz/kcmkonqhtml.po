@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2023-12-30 01:37+0000\n"
 "PO-Revision-Date: 2006-12-17 12:12+0000\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -285,7 +285,7 @@ msgstr "Bu shrift Fantasy deb belgilangan matnni koʻrsatishda ishlatiladi."
 msgid "Font &size adjustment for this encoding:"
 msgstr "Ushbu kodlash usuli uchun shrift &oʻlchami:"
 
-#: appearance.cpp:204 appearance.cpp:402
+#: appearance.cpp:204 appearance.cpp:405
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "Tilning kodlash usulini ishlatish"
@@ -1354,12 +1354,12 @@ msgid "Export Filters"
 msgstr "Koʻrsatilmaydigan manzillar uchun filterlar"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:556 useragent/useragent.ui:61
+#: filteropts.cpp:563 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr ""
 
-#: filteropts.cpp:557
+#: filteropts.cpp:564
 #, kde-format
 msgid "URL"
 msgstr ""
@@ -1759,32 +1759,32 @@ msgid ""
 "checkbox unchecked."
 msgstr ""
 
-#: javaopts.cpp:288
+#: javaopts.cpp:291
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "Domen&ga bogʻliq"
 
-#: javaopts.cpp:323
+#: javaopts.cpp:326
 #, fuzzy, kde-format
 #| msgid "New Java Policy"
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "Yangi Java qoidasi"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:329
 #, fuzzy, kde-format
 #| msgid "Change Java Policy"
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "Java qoidasini oʻzgartirish"
 
-#: javaopts.cpp:330
+#: javaopts.cpp:333
 #, kde-format
 msgid "&Java policy:"
 msgstr "Java qo&idasi:"
 
-#: javaopts.cpp:331
+#: javaopts.cpp:334
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "Yuqorida koʻrsatilgan xost yoki domen uchun Java qoidasini tanlang."
@@ -1879,38 +1879,38 @@ msgstr ""
 msgid "Global JavaScript Policies"
 msgstr "Umumiy JavaScript qoidalari"
 
-#: jsopts.cpp:181
+#: jsopts.cpp:183
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "Domenga &bogʻliq"
 
-#: jsopts.cpp:220
+#: jsopts.cpp:222
 #, fuzzy, kde-format
 #| msgid "New JavaScript Policy"
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "Yangi JavaScript qoidasi"
 
-#: jsopts.cpp:223
+#: jsopts.cpp:225
 #, fuzzy, kde-format
 #| msgid "Change JavaScript Policy"
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "JavaScript qoidasini oʻzgartirish"
 
-#: jsopts.cpp:227
+#: jsopts.cpp:229
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "JavaScript qoidasi:"
 
-#: jsopts.cpp:228
+#: jsopts.cpp:230
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr ""
 "Yuqorida koʻrsatilgan xost yoki domen uchun JavaScript qoidasini tanlang."
 
-#: jsopts.cpp:230
+#: jsopts.cpp:232
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "Domenga bogʻliq JavaScript qoidalari"

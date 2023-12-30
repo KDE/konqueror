@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2023-12-30 01:37+0000\n"
 "PO-Revision-Date: 2020-02-13 19:40+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -306,7 +306,7 @@ msgstr ""
 msgid "Font &size adjustment for this encoding:"
 msgstr "Skrifts&tørrelse-justering for dette tegnsæt:"
 
-#: appearance.cpp:204 appearance.cpp:402
+#: appearance.cpp:204 appearance.cpp:405
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "Brug sprogets tegnsæt"
@@ -1432,12 +1432,12 @@ msgid "Export Filters"
 msgstr "URL-udtryk at filtrere"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:556 useragent/useragent.ui:61
+#: filteropts.cpp:563 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "Navn"
 
-#: filteropts.cpp:557
+#: filteropts.cpp:564
 #, kde-format
 msgid "URL"
 msgstr "URL"
@@ -1880,30 +1880,30 @@ msgstr ""
 "tid. Hvis du vil holde Java-processen kørende hele tiden mens Konqueror "
 "kører, så lad være med at sætte kryds i dette afkrydsningsfelt."
 
-#: javaopts.cpp:288
+#: javaopts.cpp:291
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "D&omænespecifikt"
 
-#: javaopts.cpp:323
+#: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "Ny Java-politik"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "Ændr Java-politik"
 
-#: javaopts.cpp:330
+#: javaopts.cpp:333
 #, kde-format
 msgid "&Java policy:"
 msgstr "&Java-politik:"
 
-#: javaopts.cpp:331
+#: javaopts.cpp:334
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "Vælg en Java-politik for ovenstående vært eller domæne."
@@ -2014,35 +2014,35 @@ msgstr ""
 msgid "Global JavaScript Policies"
 msgstr "Globale JavaScript-politikker"
 
-#: jsopts.cpp:181
+#: jsopts.cpp:183
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "Do&mænespecifikt"
 
-#: jsopts.cpp:220
+#: jsopts.cpp:222
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "Ny JavaScript-politik"
 
-#: jsopts.cpp:223
+#: jsopts.cpp:225
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "Ændr JavaScript-politik"
 
-#: jsopts.cpp:227
+#: jsopts.cpp:229
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "JavaScript-politik:"
 
-#: jsopts.cpp:228
+#: jsopts.cpp:230
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "Vælg en JavaScript-politik for ovenstående vært eller domæne."
 
-#: jsopts.cpp:230
+#: jsopts.cpp:232
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "Domænespecifikke JavaScript-politikker"

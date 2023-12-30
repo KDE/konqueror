@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2023-12-30 01:37+0000\n"
 "PO-Revision-Date: 2023-05-21 14:54+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -296,7 +296,7 @@ msgstr ""
 msgid "Font &size adjustment for this encoding:"
 msgstr "Font &size adjustment for this encoding:"
 
-#: appearance.cpp:204 appearance.cpp:402
+#: appearance.cpp:204 appearance.cpp:405
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "Use Language Encoding"
@@ -1438,12 +1438,12 @@ msgid "Export Filters"
 msgstr "Export Filters"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:556 useragent/useragent.ui:61
+#: filteropts.cpp:563 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "Name"
 
-#: filteropts.cpp:557
+#: filteropts.cpp:564
 #, kde-format
 msgid "URL"
 msgstr "URL"
@@ -1884,30 +1884,30 @@ msgstr ""
 "whole time that the konqueror process is, leave the Shutdown Applet Server "
 "tickbox unticked."
 
-#: javaopts.cpp:288
+#: javaopts.cpp:291
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "Doma&in-Specific"
 
-#: javaopts.cpp:323
+#: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "New Java Policy"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "Change Java Policy"
 
-#: javaopts.cpp:330
+#: javaopts.cpp:333
 #, kde-format
 msgid "&Java policy:"
 msgstr "&Java policy:"
 
-#: javaopts.cpp:331
+#: javaopts.cpp:334
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "Select a Java policy for the above host or domain."
@@ -2020,35 +2020,35 @@ msgstr ""
 msgid "Global JavaScript Policies"
 msgstr "Global JavaScript Policies"
 
-#: jsopts.cpp:181
+#: jsopts.cpp:183
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "Do&main-Specific"
 
-#: jsopts.cpp:220
+#: jsopts.cpp:222
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "New JavaScript Policy"
 
-#: jsopts.cpp:223
+#: jsopts.cpp:225
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "Change JavaScript Policy"
 
-#: jsopts.cpp:227
+#: jsopts.cpp:229
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "JavaScript policy:"
 
-#: jsopts.cpp:228
+#: jsopts.cpp:230
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "Select a JavaScript policy for the above host or domain."
 
-#: jsopts.cpp:230
+#: jsopts.cpp:232
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "Domain-Specific JavaScript Policies"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2023-12-30 01:37+0000\n"
 "PO-Revision-Date: 2023-11-23 12:33+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -297,7 +297,7 @@ msgstr "Fantasy font-ად მონიშნული ტექსტის �
 msgid "Font &size adjustment for this encoding:"
 msgstr "&ფონტის ზომის მორგება ამ კოდირებისთვის:"
 
-#: appearance.cpp:204 appearance.cpp:402
+#: appearance.cpp:204 appearance.cpp:405
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "ენის კოდირების გამოყენება"
@@ -1477,12 +1477,12 @@ msgid "Export Filters"
 msgstr "ფილტრების გატანა"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:556 useragent/useragent.ui:61
+#: filteropts.cpp:563 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "სახელი"
 
-#: filteropts.cpp:557
+#: filteropts.cpp:564
 #, kde-format
 msgid "URL"
 msgstr "URL"
@@ -1928,30 +1928,30 @@ msgstr ""
 "განმავლობაში იყოს მეხსიერებაში, სანამ Konqueror გაშვებულია, დატოვეთ აპლეტის "
 "სერვერის ჩასართავი ჩაურთავად."
 
-#: javaopts.cpp:288
+#: javaopts.cpp:291
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "მხოლოდ მითითებულ &დომენზე"
 
-#: javaopts.cpp:323
+#: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "Java-ის ახალი პოლიტიკა"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "Java-ის პოლიტიკის შეცვლა"
 
-#: javaopts.cpp:330
+#: javaopts.cpp:333
 #, kde-format
 msgid "&Java policy:"
 msgstr "&Java-ის პოლიტიკა:"
 
-#: javaopts.cpp:331
+#: javaopts.cpp:334
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "აირჩიეთ Java-ის პოლიტიკა ზედა ჰოსტის ან დომენისთვის."
@@ -2061,35 +2061,35 @@ msgstr ""
 msgid "Global JavaScript Policies"
 msgstr "JavaScript-ის გლობალური პოლიტიკა"
 
-#: jsopts.cpp:181
+#: jsopts.cpp:183
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "&დომენის"
 
-#: jsopts.cpp:220
+#: jsopts.cpp:222
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "JavaScript -ის ახალი პოლიტიკა"
 
-#: jsopts.cpp:223
+#: jsopts.cpp:225
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "JavaScript -ის პოლიტიკის შეცვლა"
 
-#: jsopts.cpp:227
+#: jsopts.cpp:229
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "JavaScript -ის პოლიტიკა:"
 
-#: jsopts.cpp:228
+#: jsopts.cpp:230
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "აირჩიეთ JavaScript-ის პოლიტიკა ზედა ჰოსტის ან დომენისთვის."
 
-#: jsopts.cpp:230
+#: jsopts.cpp:232
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "JavaScript-ის დომენისთვის სპეციფიკური პოლიტიკები"

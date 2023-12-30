@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2023-12-30 01:37+0000\n"
 "PO-Revision-Date: 2023-12-23 08:00\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -283,7 +283,7 @@ msgstr "该字体用于显示标为绚丽字体的文字。"
 msgid "Font &size adjustment for this encoding:"
 msgstr "该编码的字体大小调整(&S)："
 
-#: appearance.cpp:204 appearance.cpp:402
+#: appearance.cpp:204 appearance.cpp:405
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "使用语言编码"
@@ -1406,12 +1406,12 @@ msgid "Export Filters"
 msgstr "导出过滤器"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:556 useragent/useragent.ui:61
+#: filteropts.cpp:563 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "名称"
 
-#: filteropts.cpp:557
+#: filteropts.cpp:564
 #, kde-format
 msgid "URL"
 msgstr "地址"
@@ -1827,30 +1827,30 @@ msgstr ""
 "为您希望的值。要在 Konqueror 进程全程保留 Java 进程，请不要选中关闭小程序服务"
 "器。"
 
-#: javaopts.cpp:288
+#: javaopts.cpp:291
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "特定域(&I)"
 
-#: javaopts.cpp:323
+#: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "新建 Java 策略"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "修改 Java 策略"
 
-#: javaopts.cpp:330
+#: javaopts.cpp:333
 #, kde-format
 msgid "&Java policy:"
 msgstr "&Java 策略："
 
-#: javaopts.cpp:331
+#: javaopts.cpp:334
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "为以上主机或域选择 Java 策略。"
@@ -1953,35 +1953,35 @@ msgstr ""
 msgid "Global JavaScript Policies"
 msgstr "全局 JavaScript 策略"
 
-#: jsopts.cpp:181
+#: jsopts.cpp:183
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "特定域(&M)"
 
-#: jsopts.cpp:220
+#: jsopts.cpp:222
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "新建 JavaScript 策略"
 
-#: jsopts.cpp:223
+#: jsopts.cpp:225
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "更改 JavaScript 策略"
 
-#: jsopts.cpp:227
+#: jsopts.cpp:229
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "JavaScript 策略："
 
-#: jsopts.cpp:228
+#: jsopts.cpp:230
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "为以上主机或域选择 JavaScript 策略。"
 
-#: jsopts.cpp:230
+#: jsopts.cpp:232
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "特定域的 JavaScript 策略"

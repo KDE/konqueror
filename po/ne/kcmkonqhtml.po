@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2023-12-30 01:37+0000\n"
 "PO-Revision-Date: 2007-11-04 18:18+0545\n"
 "Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -286,7 +286,7 @@ msgstr "यो फेन्टासी फन्टका रुपमा च�
 msgid "Font &size adjustment for this encoding:"
 msgstr "यो सङ्केतनका लागि फन्ट साइज समायोजन:"
 
-#: appearance.cpp:204 appearance.cpp:402
+#: appearance.cpp:204 appearance.cpp:405
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "भाषा सङ्केतन प्रयोग गर्नुहोस्"
@@ -1396,12 +1396,12 @@ msgid "Export Filters"
 msgstr "फिल्टर गर्ने यूआरएल अभिव्यक्ति"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:556 useragent/useragent.ui:61
+#: filteropts.cpp:563 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr ""
 
-#: filteropts.cpp:557
+#: filteropts.cpp:564
 #, kde-format
 msgid "URL"
 msgstr ""
@@ -1832,32 +1832,32 @@ msgstr ""
 "समयसमाप्ति मान सेट गर्न सक्नुहुन्छ । कन्क्वेररको प्रक्रिया हुँदासम्मका लागि जाभा चलाइ राख्न, "
 "बन्द गर्ने एप्लेट सर्भर चिनोबाकसलाई चिनो नगरिकन छोड्नुहोस् ।"
 
-#: javaopts.cpp:288
+#: javaopts.cpp:291
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "डोमेन-निर्दिष्ट"
 
-#: javaopts.cpp:323
+#: javaopts.cpp:326
 #, fuzzy, kde-format
 #| msgid "New Java Policy"
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "नयाँ जाभा नीति"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:329
 #, fuzzy, kde-format
 #| msgid "Change Java Policy"
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "जाभा नीति परिवर्तन गर्नुहोस्"
 
-#: javaopts.cpp:330
+#: javaopts.cpp:333
 #, kde-format
 msgid "&Java policy:"
 msgstr "जाभा नीति:"
 
-#: javaopts.cpp:331
+#: javaopts.cpp:334
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "माथिको होस्ट वा डोमेनका लागि जाभा नीति चयन गर्नुहोस् ।"
@@ -1965,37 +1965,37 @@ msgstr ""
 msgid "Global JavaScript Policies"
 msgstr "विश्वव्यापी जाभा स्क्रिप्ट नीति"
 
-#: jsopts.cpp:181
+#: jsopts.cpp:183
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "डोमेन-निर्दिष्ट"
 
-#: jsopts.cpp:220
+#: jsopts.cpp:222
 #, fuzzy, kde-format
 #| msgid "New JavaScript Policy"
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "नयाँ जाभा स्क्रिप्ट नीति"
 
-#: jsopts.cpp:223
+#: jsopts.cpp:225
 #, fuzzy, kde-format
 #| msgid "Change JavaScript Policy"
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "जाभा स्क्रिप्ट नीति परिवर्तन गर्नुहोस्"
 
-#: jsopts.cpp:227
+#: jsopts.cpp:229
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "जाभा स्क्रिप्ट नीति:"
 
-#: jsopts.cpp:228
+#: jsopts.cpp:230
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "माथिको होस्ट र डोमेनका लागि जाभा स्क्रिप्ट नीति चयन गर्नुहोस् ।"
 
-#: jsopts.cpp:230
+#: jsopts.cpp:232
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "डोमेन-निर्दिष्ट जाभा स्क्रिप्ट नीति"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2023-12-30 01:37+0000\n"
 "PO-Revision-Date: 2010-06-01 10:14-0700\n"
 "Last-Translator: Deepayan Sarkar <deepayan.sarkar@gmail.com>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -291,7 +291,7 @@ msgstr "এই ফন্টটি \"ফ্যাণ্টাসি\" হিস�
 msgid "Font &size adjustment for this encoding:"
 msgstr "এই এনকোডিঙের &জন্য ফন্টের মাপে সংশোধন:"
 
-#: appearance.cpp:204 appearance.cpp:402
+#: appearance.cpp:204 appearance.cpp:405
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "ভাষা এনকোডিং ব্যবহার করো"
@@ -1348,12 +1348,12 @@ msgid "Export Filters"
 msgstr "ফিল্টারে ইউআরএল অভিব্যক্তি"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:556 useragent/useragent.ui:61
+#: filteropts.cpp:563 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "নাম"
 
-#: filteropts.cpp:557
+#: filteropts.cpp:564
 #, kde-format
 msgid "URL"
 msgstr "ইউ-আর-এল"
@@ -1794,32 +1794,32 @@ msgstr ""
 "কিছু আপনি পছন্দ করো। পুরো সময়ের জন্য জাভা পদ্ধতি চলন্ত রাখতে যে কনকরার পদ্ধতি, বন্ধ "
 "অ্যাপলেট সার্ভার চেকবাক্স unchecked ছেড়ে চলে যাও।"
 
-#: javaopts.cpp:288
+#: javaopts.cpp:291
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "ডোমে&ইন-প্রতি"
 
-#: javaopts.cpp:323
+#: javaopts.cpp:326
 #, fuzzy, kde-format
 #| msgid "New Java Policy"
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "নতুন জাভা পলিসি"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:329
 #, fuzzy, kde-format
 #| msgid "Change Java Policy"
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "জাভা পলিসি পরিবর্তন করো"
 
-#: javaopts.cpp:330
+#: javaopts.cpp:333
 #, kde-format
 msgid "&Java policy:"
 msgstr "জাভা &পলিসি:"
 
-#: javaopts.cpp:331
+#: javaopts.cpp:334
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "উপরোক্ত হোস্ট অথবা ডোমেইন-এর জন্য জাভা পলিসি বেছে নিন।"
@@ -1930,37 +1930,37 @@ msgstr ""
 msgid "Global JavaScript Policies"
 msgstr "গ্লোবাল জাভাস্ক্রিপ্ট পলিসি"
 
-#: jsopts.cpp:181
+#: jsopts.cpp:183
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "ডোমেই&ন-প্রতি"
 
-#: jsopts.cpp:220
+#: jsopts.cpp:222
 #, fuzzy, kde-format
 #| msgid "New JavaScript Policy"
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "নতুন জাভাস্ক্রিপ্ট পলিসি"
 
-#: jsopts.cpp:223
+#: jsopts.cpp:225
 #, fuzzy, kde-format
 #| msgid "Change JavaScript Policy"
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "জাভাস্ক্রিপ্ট পলিসি পরিবর্তন করো"
 
-#: jsopts.cpp:227
+#: jsopts.cpp:229
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "জাভাস্ক্রিপ্ট পলিসি:"
 
-#: jsopts.cpp:228
+#: jsopts.cpp:230
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "উপরের হোস্ট অথবা ডোমেইন-এর জন্য একটি জাভাস্ক্রীপ্ট পলিসি নির্বাচন করুন।"
 
-#: jsopts.cpp:230
+#: jsopts.cpp:232
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "ডোমেইন অনুযায়ী জাভা-স্ক্রিপ্ট পলিসি"
