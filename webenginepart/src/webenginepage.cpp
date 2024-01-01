@@ -895,7 +895,11 @@ void WebEnginePage::setStatusBarText(const QString& text)
 
 void WebEnginePage::changeLifecycleState(QWebEnginePage::LifecycleState recommendedState)
 {
-    setLifecycleState(recommendedState == LifecycleState::Discarded ? LifecycleState::Frozen : recommendedState);
+    if (recommendedState != QWebEnginePage::LifecycleState::Active && !view()->isVisible()) {
+        setLifecycleState(QWebEnginePage::LifecycleState::Frozen);
+    } else {
+        setLifecycleState(QWebEnginePage::LifecycleState::Active);
+    }
 }
 
 void WebEnginePage::updateUserStyleSheet(const QString& script)
