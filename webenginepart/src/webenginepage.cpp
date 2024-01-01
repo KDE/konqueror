@@ -23,6 +23,7 @@
 #include "qtwebengine6compat.h"
 
 #include "libkonq_utils.h"
+#include "interfaces/browser.h"
 
 #include <QWebEngineCertificateError>
 #include <QWebEngineSettings>
@@ -399,6 +400,14 @@ bool WebEnginePage::shouldOpenLocalUrl(const QUrl& url) const
 
 bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool isMainFrame)
 {
+    //Ask the browser for permission to navigate away. In Konqueror, if a view is locked, it can't navigate to somewhere else
+    if (isMainFrame) {
+        KonqInterfaces::Browser *browser = KonqInterfaces::Browser::browser(qApp);
+        if (browser && !browser->canNavigateTo(part(), url)) {
+            return false;
+        }
+    }
+
     if (isMainFrame && url.isLocalFile()) {
         qDebug() << "LOCAL FILE" << url;
         if (!shouldOpenLocalUrl(url)) {

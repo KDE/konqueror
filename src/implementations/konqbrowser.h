@@ -52,6 +52,14 @@ public:
 
     static QString konquerorUserAgent(); ///< The standard Konqueror user agent string
 
+    /**
+     * @brief Implementation of KonqInterfaces::Browser::canNavigateTo
+     * @return the value returned by KonqView::canNavigateTo() for the view associated with the part
+     * or if it isn't possible to find such a view (it should never happen)
+     * @see KonqView::canNavigateTo()
+     */
+    bool canNavigateTo(KParts::ReadOnlyPart *part, const QUrl &url) const override;
+
 private:
 
     /**

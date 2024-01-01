@@ -7,9 +7,14 @@
 #include "implementations/konqbrowser.h"
 #include "interfaces/cookiejar.h"
 #include "konqapplication.h"
+#include "konqmainwindow.h"
+#include "konqview.h"
+
+#include <konqdebug.h>
 
 #include <KSharedConfig>
 #include <KConfigGroup>
+#include <KParts/ReadOnlyPart>
 
 using namespace KonqInterfaces;
 
@@ -96,4 +101,18 @@ void KonqBrowser::clearTemporaryUserAgent()
     if (oldUA != newUA) {
         emit userAgentChanged(newUA);
     }
+}
+
+bool KonqBrowser::canNavigateTo(KParts::ReadOnlyPart* part, const QUrl &url) const
+{
+    if (!part || !part->widget()) {
+        return true;
+    }
+    KonqMainWindow *mw = qobject_cast<KonqMainWindow*>(part->widget()->window());
+    if (!mw) {
+        qCDebug(KONQUEROR_LOG()) << "Part window is not a KonqMainWindow. This shouldn't happen";
+        return true;
+    }
+    KonqView *v = mw->childView(part);
+    return v ? v->canNavigateTo(url) : true;
 }

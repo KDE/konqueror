@@ -11,6 +11,10 @@
 
 #include <QObject>
 
+namespace KParts {
+    class ReadOnlyPart;
+};
+
 namespace KonqInterfaces {
 
 class CookieJar;
@@ -97,6 +101,14 @@ public:
      * @return @p obj or one of its children as a Browser* or `nullptr` if neither @p obj nor its children derive from Browser
      */
     static Browser* browser(QObject* obj);
+
+    /**
+     * @brief Whether a part has permission to navigate to the given URL
+     * @param part the part
+     * @param url the URL the part wants to navigate to
+     * @return `true` if @p part can navigate to @p url and `false` otherwise.
+     */
+    virtual bool canNavigateTo(KParts::ReadOnlyPart *part, const QUrl &url) const = 0;
 
 signals:
     void configurationChanged(); ///< Signal emitted after the configuration has changed

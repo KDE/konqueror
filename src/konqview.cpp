@@ -1657,3 +1657,10 @@ bool KonqView::isErrorUrl() const
     return m_bErrorURL;
 }
 
+bool KonqView::canNavigateTo(const QUrl& newUrl) const
+{
+    if (m_bFollowActive) {
+        return m_pMainWindow->currentView()->url() == newUrl;
+    }
+    return !m_bLockedLocation || newUrl == url();
+}

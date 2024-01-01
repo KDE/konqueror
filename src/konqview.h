@@ -428,6 +428,18 @@ public:
         return m_bToggleView || m_bPassiveMode;
     }
 
+    /**
+     * @brief Whether the view can navigate to the given URL
+     *
+     * The view can always navigate to @p newUrl unless it's locked and @p newUrl is different
+     * from the current URL. If the view is following the current view, then the it can navigate to
+     * @p newUrl only if it's the same url as that of the current view
+     *
+     * @param newUrl the URL the view wants to navigate to
+     * @return `true` if the view can navigate to @p newUrl and `false` otherwise
+     */
+    bool canNavigateTo(const QUrl &newUrl) const;
+
     // True if "builtin" (see X-KDE-BrowserView-Built-Into)
     //bool isBuiltinView() const { return m_bBuiltinView; }
 
