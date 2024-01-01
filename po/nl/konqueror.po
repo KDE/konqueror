@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:45+0000\n"
+"POT-Creation-Date: 2024-01-01 01:35+0000\n"
 "PO-Revision-Date: 2023-11-29 17:37+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -520,8 +520,8 @@ msgstr ""
 "U kunt geen URL's doorgeven bij gebruik van de switch --preload. De URL's "
 "zullen genegeerd worden\n"
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4884
-#: src/konqmainwindow.cpp:4930
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4900
+#: src/konqmainwindow.cpp:4946
 #, kde-format
 msgid "no name"
 msgstr "naamloos"
@@ -564,17 +564,23 @@ msgstr ""
 "weergavetypen, zoals een mappenstructuur met een pictogramweergave of een "
 "gedetailleerde weergave."
 
-#: src/konqframestatusbar.cpp:154
+#: src/konqframestatusbar.cpp:119
+#, kde-format
+msgctxt "%p is the percent value, % is the percent sign"
+msgid "%p%"
+msgstr ""
+
+#: src/konqframestatusbar.cpp:155
 #, kde-format
 msgid "Close View"
 msgstr "Deelvenster sluiten"
 
-#: src/konqframestatusbar.cpp:232
+#: src/konqframestatusbar.cpp:233
 #, kde-format
 msgid "%1/s"
 msgstr "%1/s"
 
-#: src/konqframestatusbar.cpp:234
+#: src/konqframestatusbar.cpp:235
 #, kde-format
 msgid "Stalled"
 msgstr "Onderbroken"
@@ -620,7 +626,7 @@ msgstr "Lokaal"
 msgid "Miscellaneous"
 msgstr "Diversen"
 
-#: src/konqhistoryview.cpp:54 src/konqmainwindow.cpp:4401
+#: src/konqhistoryview.cpp:54 src/konqmainwindow.cpp:4417
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Openen in nieu&w venster"
@@ -714,7 +720,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1584 src/konqmainwindow.cpp:2235
 #: src/konqmainwindow.cpp:2328 src/konqmainwindow.cpp:2360
 #: src/konqmainwindow.cpp:2403 src/konqmainwindow.cpp:2425
-#: src/konqmainwindow.cpp:4849
+#: src/konqmainwindow.cpp:4865
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -723,7 +729,7 @@ msgstr "Wijzigingen verwerpen?"
 #: src/konqmainwindow.cpp:1584 src/konqmainwindow.cpp:2235
 #: src/konqmainwindow.cpp:2328 src/konqmainwindow.cpp:2360
 #: src/konqmainwindow.cpp:2403 src/konqmainwindow.cpp:2426
-#: src/konqmainwindow.cpp:4849
+#: src/konqmainwindow.cpp:4865
 #, kde-format
 msgid "&Discard Changes"
 msgstr "Wijzigingen &verwerpen"
@@ -1340,48 +1346,48 @@ msgctxt "@action:button"
 msgid "Open"
 msgstr "Openen"
 
-#: src/konqmainwindow.cpp:4394
+#: src/konqmainwindow.cpp:4410
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "Openen in &dit venster"
 
-#: src/konqmainwindow.cpp:4395
+#: src/konqmainwindow.cpp:4411
 #, kde-format
 msgid "Open the document in current window"
 msgstr "Open het document in het huidige venster"
 
-#: src/konqmainwindow.cpp:4402
+#: src/konqmainwindow.cpp:4418
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "Open het document in een nieuw venster"
 
-#: src/konqmainwindow.cpp:4408
+#: src/konqmainwindow.cpp:4424
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Openen in &nieuw tabblad"
 
-#: src/konqmainwindow.cpp:4410
+#: src/konqmainwindow.cpp:4426
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "Open het document in een nieuw tabblad"
 
-#: src/konqmainwindow.cpp:4635
+#: src/konqmainwindow.cpp:4651
 #, kde-format
 msgid "&Open With"
 msgstr "&Openen met"
 
-#: src/konqmainwindow.cpp:4648
+#: src/konqmainwindow.cpp:4664
 #, kde-format
 msgid "Open with %1"
 msgstr "Openen met %1"
 
-#: src/konqmainwindow.cpp:4696
+#: src/konqmainwindow.cpp:4712
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "&Weergavemodus"
 
-#: src/konqmainwindow.cpp:4813
+#: src/konqmainwindow.cpp:4829
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
@@ -1389,18 +1395,18 @@ msgstr ""
 "U hebt meerdere tabbladen geopend in dit venster. Wilt u het venster  "
 "afsluiten, het tabblad sluiten of annuleren?"
 
-#: src/konqmainwindow.cpp:4815
+#: src/konqmainwindow.cpp:4831
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Bevestiging"
 
-#: src/konqmainwindow.cpp:4817
+#: src/konqmainwindow.cpp:4833
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "Huidig tabblad s&luiten"
 
-#: src/konqmainwindow.cpp:4845
+#: src/konqmainwindow.cpp:4861
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1409,7 +1415,7 @@ msgstr ""
 "Dit tabblad bevat wijzigingen die nog niet zijn ingestuurd.\n"
 "Door het sluiten van het venster worden deze wijzigingen verworpen."
 
-#: src/konqmainwindow.cpp:4846
+#: src/konqmainwindow.cpp:4862
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1418,35 +1424,35 @@ msgstr ""
 "Deze pagina bevat wijzigingen die nog niet zijn ingediend.\n"
 "Door het sluiten van het venster worden deze wijzigingen verworpen."
 
-#: src/konqmainwindow.cpp:5006
+#: src/konqmainwindow.cpp:5022
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr ""
 "De zijbalk is niet beschikbaar Er kan geen nieuw item worden toegevoegd."
 
-#: src/konqmainwindow.cpp:5006 src/konqmainwindow.cpp:5013
+#: src/konqmainwindow.cpp:5022 src/konqmainwindow.cpp:5029
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Internetzijbalk"
 
-#: src/konqmainwindow.cpp:5011
+#: src/konqmainwindow.cpp:5027
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Nieuwe webextensie \"%1\" toevoegen aan uw zijbalk?"
 
-#: src/konqmainwindow.cpp:5013
+#: src/konqmainwindow.cpp:5029
 #, kde-format
 msgid "Add"
 msgstr "Toevoegen"
 
-#: src/konqmainwindow.cpp:5013
+#: src/konqmainwindow.cpp:5029
 #, kde-format
 msgid "Do Not Add"
 msgstr "Niet toevoegen"
 
-#: src/konqmainwindow.cpp:5361
+#: src/konqmainwindow.cpp:5377
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1455,7 +1461,7 @@ msgstr ""
 "Er blijkt een fout in de configuratie te zitten. U hebt Konqueror "
 "geassocieerd met %1, maar Konqueror kan dit bestandstype niet verwerken."
 
-#: src/konqmainwindow.cpp:5446
+#: src/konqmainwindow.cpp:5462
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1476,22 +1482,22 @@ msgstr ""
 "dan de systeemproxy-configuration of specificeer handmatig een proxy URL in "
 "de instellingendialoog. Wilt u proxy-instellingen nu wijzigen?"
 
-#: src/konqmainwindow.cpp:5451
+#: src/konqmainwindow.cpp:5467
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "Niet ondersteunde proxy-configuratie"
 
-#: src/konqmainwindow.cpp:5451
+#: src/konqmainwindow.cpp:5467
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "Geen proxy gebruiken"
 
-#: src/konqmainwindow.cpp:5452 src/konqmainwindow.cpp:5496
+#: src/konqmainwindow.cpp:5468 src/konqmainwindow.cpp:5512
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "Configuratiedialoog voor proxy tonen"
 
-#: src/konqmainwindow.cpp:5492
+#: src/konqmainwindow.cpp:5508
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1504,22 +1510,22 @@ msgstr ""
 "HTTP en HTTPS protocollen. Uw huidige instellingen zijn:<p><b>HTTP-proxy:</"
 "b> <tt>%1</tt></p><p><b>HTTPS-proxy: </b><tt>%2</tt></p>Wat wilt u doen?"
 
-#: src/konqmainwindow.cpp:5495
+#: src/konqmainwindow.cpp:5511
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "Proxy-configuratie bevat conflicten"
 
-#: src/konqmainwindow.cpp:5496
+#: src/konqmainwindow.cpp:5512
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "HTTP-proxy gebruiken (alleen deze keer)"
 
-#: src/konqmainwindow.cpp:5496
+#: src/konqmainwindow.cpp:5512
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "HTTPS-proxy gebruiken (alleen deze keer)"
 
-#: src/konqmainwindow.cpp:5579
+#: src/konqmainwindow.cpp:5595
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -2010,7 +2016,7 @@ msgstr "&Ongedaan maken: gesloten venster"
 msgid "Und&o"
 msgstr "&Ongedaan maken"
 
-#: src/konqview.cpp:1341
+#: src/konqview.cpp:1357
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -2022,13 +2028,13 @@ msgstr ""
 "formulier zijn uitgevoerd (zoals een zoekactie, of een online-aankoop) "
 "worden herhaald. "
 
-#: src/konqview.cpp:1343
+#: src/konqview.cpp:1359
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Waarschuwing"
 
-#: src/konqview.cpp:1343
+#: src/konqview.cpp:1359
 #, kde-format
 msgid "Resend"
 msgstr "Opnieuw verzenden"

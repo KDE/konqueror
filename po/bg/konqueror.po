@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:45+0000\n"
+"POT-Creation-Date: 2024-01-01 01:35+0000\n"
 "PO-Revision-Date: 2023-12-11 11:42+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -503,8 +503,8 @@ msgstr ""
 "Не можете да предавате URL адреси, когато използвате превключвателя --"
 "preload. URL адресите ще бъдат игнорирани\n"
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4884
-#: src/konqmainwindow.cpp:4930
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4900
+#: src/konqmainwindow.cpp:4946
 #, kde-format
 msgid "no name"
 msgstr "без име"
@@ -547,17 +547,23 @@ msgstr ""
 "дадена папка в дървовидния изглед, в другия преглед се показват файловете, "
 "принадлежащи към тази папка. Същото е валидно и за уеб страници."
 
-#: src/konqframestatusbar.cpp:154
+#: src/konqframestatusbar.cpp:119
+#, kde-format
+msgctxt "%p is the percent value, % is the percent sign"
+msgid "%p%"
+msgstr ""
+
+#: src/konqframestatusbar.cpp:155
 #, kde-format
 msgid "Close View"
 msgstr "Затваряне на изглед"
 
-#: src/konqframestatusbar.cpp:232
+#: src/konqframestatusbar.cpp:233
 #, kde-format
 msgid "%1/s"
 msgstr "%1/сек"
 
-#: src/konqframestatusbar.cpp:234
+#: src/konqframestatusbar.cpp:235
 #, kde-format
 msgid "Stalled"
 msgstr "Блокиран"
@@ -603,7 +609,7 @@ msgstr "Локално"
 msgid "Miscellaneous"
 msgstr "Разни"
 
-#: src/konqhistoryview.cpp:54 src/konqmainwindow.cpp:4401
+#: src/konqhistoryview.cpp:54 src/konqmainwindow.cpp:4417
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Отваряне в &нов прозорец"
@@ -698,7 +704,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1584 src/konqmainwindow.cpp:2235
 #: src/konqmainwindow.cpp:2328 src/konqmainwindow.cpp:2360
 #: src/konqmainwindow.cpp:2403 src/konqmainwindow.cpp:2425
-#: src/konqmainwindow.cpp:4849
+#: src/konqmainwindow.cpp:4865
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -707,7 +713,7 @@ msgstr "Да се отменят ли промените?"
 #: src/konqmainwindow.cpp:1584 src/konqmainwindow.cpp:2235
 #: src/konqmainwindow.cpp:2328 src/konqmainwindow.cpp:2360
 #: src/konqmainwindow.cpp:2403 src/konqmainwindow.cpp:2426
-#: src/konqmainwindow.cpp:4849
+#: src/konqmainwindow.cpp:4865
 #, kde-format
 msgid "&Discard Changes"
 msgstr "&Отмяна на промените"
@@ -1320,48 +1326,48 @@ msgctxt "@action:button"
 msgid "Open"
 msgstr "Отваряне"
 
-#: src/konqmainwindow.cpp:4394
+#: src/konqmainwindow.cpp:4410
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "Отваряне в &текущия прозорец"
 
-#: src/konqmainwindow.cpp:4395
+#: src/konqmainwindow.cpp:4411
 #, kde-format
 msgid "Open the document in current window"
 msgstr "Отваряне на документа в текущия прозорец"
 
-#: src/konqmainwindow.cpp:4402
+#: src/konqmainwindow.cpp:4418
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "Отваряне на документа в нов прозорец"
 
-#: src/konqmainwindow.cpp:4408
+#: src/konqmainwindow.cpp:4424
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Отваряне в нов &подпрозорец"
 
-#: src/konqmainwindow.cpp:4410
+#: src/konqmainwindow.cpp:4426
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "Отваряне на документа в нов подпрозорец"
 
-#: src/konqmainwindow.cpp:4635
+#: src/konqmainwindow.cpp:4651
 #, kde-format
 msgid "&Open With"
 msgstr "&Отваряне с"
 
-#: src/konqmainwindow.cpp:4648
+#: src/konqmainwindow.cpp:4664
 #, kde-format
 msgid "Open with %1"
 msgstr "Отваряне с %1"
 
-#: src/konqmainwindow.cpp:4696
+#: src/konqmainwindow.cpp:4712
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "Ре&жим на преглед"
 
-#: src/konqmainwindow.cpp:4813
+#: src/konqmainwindow.cpp:4829
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
@@ -1370,18 +1376,18 @@ msgstr ""
 "\n"
 "Сигурни ли сте, че искате да затворите браузъра?"
 
-#: src/konqmainwindow.cpp:4815
+#: src/konqmainwindow.cpp:4831
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Потвърждение"
 
-#: src/konqmainwindow.cpp:4817
+#: src/konqmainwindow.cpp:4833
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "&Затваряне само на текущия"
 
-#: src/konqmainwindow.cpp:4845
+#: src/konqmainwindow.cpp:4861
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1390,7 +1396,7 @@ msgstr ""
 "Подпрозорецът съдържа неизпратени промени.\n"
 "Затварянето му ще доведе до тяхното игнориране."
 
-#: src/konqmainwindow.cpp:4846
+#: src/konqmainwindow.cpp:4862
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1399,7 +1405,7 @@ msgstr ""
 "Има неизпратени промени.\n"
 "Затварянето на прозореца ще доведе до тяхното игнориране."
 
-#: src/konqmainwindow.cpp:5006
+#: src/konqmainwindow.cpp:5022
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1407,28 +1413,28 @@ msgstr ""
 "Не може да бъде добавен нов запис, защото страничният панел за уеб не "
 "функционира или не е включен."
 
-#: src/konqmainwindow.cpp:5006 src/konqmainwindow.cpp:5013
+#: src/konqmainwindow.cpp:5022 src/konqmainwindow.cpp:5029
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Страничен панел за уеб"
 
-#: src/konqmainwindow.cpp:5011
+#: src/konqmainwindow.cpp:5027
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Добавяне на ново уеб разширение \"%1\" в страничния панел?"
 
-#: src/konqmainwindow.cpp:5013
+#: src/konqmainwindow.cpp:5029
 #, kde-format
 msgid "Add"
 msgstr "Добавяне"
 
-#: src/konqmainwindow.cpp:5013
+#: src/konqmainwindow.cpp:5029
 #, kde-format
 msgid "Do Not Add"
 msgstr "Без добавяне"
 
-#: src/konqmainwindow.cpp:5361
+#: src/konqmainwindow.cpp:5377
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1437,7 +1443,7 @@ msgstr ""
 "Има проблем с настройките. Вие асоциирахте браузъра Konqueror с \"%1\", но "
 "той не поддържа този тип файлове."
 
-#: src/konqmainwindow.cpp:5446
+#: src/konqmainwindow.cpp:5462
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1459,22 +1465,22 @@ msgstr ""
 "диалоговия прозорец за настройки. Искате ли да промените прокси настройките "
 "сега?"
 
-#: src/konqmainwindow.cpp:5451
+#: src/konqmainwindow.cpp:5467
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "Конфигуриране на аудиото"
 
-#: src/konqmainwindow.cpp:5451
+#: src/konqmainwindow.cpp:5467
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "Без използване на прокси"
 
-#: src/konqmainwindow.cpp:5452 src/konqmainwindow.cpp:5496
+#: src/konqmainwindow.cpp:5468 src/konqmainwindow.cpp:5512
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "Отваряне на прозорец за настройки"
 
-#: src/konqmainwindow.cpp:5492
+#: src/konqmainwindow.cpp:5508
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1487,22 +1493,22 @@ msgstr ""
 "протоколи. Текущите ви настройки са: <p> <b> HTTP прокси: </b> <tt>%1 </tt> "
 "</p> <p> <b> HTTPS прокси: </b><tt>%2</tt> </p> Какво искате да направите?"
 
-#: src/konqmainwindow.cpp:5495
+#: src/konqmainwindow.cpp:5511
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "Неправилни настройки"
 
-#: src/konqmainwindow.cpp:5496
+#: src/konqmainwindow.cpp:5512
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "Име на сървър-посредник за HTTP"
 
-#: src/konqmainwindow.cpp:5496
+#: src/konqmainwindow.cpp:5512
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "Име на сървър-посредник за HTTP"
 
-#: src/konqmainwindow.cpp:5579
+#: src/konqmainwindow.cpp:5595
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1991,7 +1997,7 @@ msgstr "&Отмяна: затваряне на прозорец"
 msgid "Und&o"
 msgstr "&Отмяна"
 
-#: src/konqview.cpp:1341
+#: src/konqview.cpp:1357
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -2003,13 +2009,13 @@ msgstr ""
 "случаи това може да има негативен за вас ефект. Примерно, плащане на дадена "
 "сума пари два пъти."
 
-#: src/konqview.cpp:1343
+#: src/konqview.cpp:1359
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Предупреждение"
 
-#: src/konqview.cpp:1343
+#: src/konqview.cpp:1359
 #, kde-format
 msgid "Resend"
 msgstr "Изпращане отново"

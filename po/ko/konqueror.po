@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:45+0000\n"
+"POT-Creation-Date: 2024-01-01 01:35+0000\n"
 "PO-Revision-Date: 2023-08-25 22:53+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -498,8 +498,8 @@ msgid ""
 "ignored\n"
 msgstr "--preload 스위치에는 URL을 지정할 수 없습니다. URL을 무시합니다\n"
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4884
-#: src/konqmainwindow.cpp:4930
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4900
+#: src/konqmainwindow.cpp:4946
 #, kde-format
 msgid "no name"
 msgstr "이름 없음"
@@ -540,17 +540,23 @@ msgstr ""
 "이콘으로 보기나 자세히 보기 같은 서로 다른 보기 형식이나, 터미널 창과 같이 사"
 "용할 때 유용합니다."
 
-#: src/konqframestatusbar.cpp:154
+#: src/konqframestatusbar.cpp:119
+#, kde-format
+msgctxt "%p is the percent value, % is the percent sign"
+msgid "%p%"
+msgstr ""
+
+#: src/konqframestatusbar.cpp:155
 #, kde-format
 msgid "Close View"
 msgstr "보기 닫기"
 
-#: src/konqframestatusbar.cpp:232
+#: src/konqframestatusbar.cpp:233
 #, kde-format
 msgid "%1/s"
 msgstr "%1/초"
 
-#: src/konqframestatusbar.cpp:234
+#: src/konqframestatusbar.cpp:235
 #, kde-format
 msgid "Stalled"
 msgstr "중지됨"
@@ -596,7 +602,7 @@ msgstr "로컬"
 msgid "Miscellaneous"
 msgstr "기타"
 
-#: src/konqhistoryview.cpp:54 src/konqmainwindow.cpp:4401
+#: src/konqhistoryview.cpp:54 src/konqmainwindow.cpp:4417
 #, kde-format
 msgid "Open in New &Window"
 msgstr "새 창으로 열기(&W)"
@@ -690,7 +696,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1584 src/konqmainwindow.cpp:2235
 #: src/konqmainwindow.cpp:2328 src/konqmainwindow.cpp:2360
 #: src/konqmainwindow.cpp:2403 src/konqmainwindow.cpp:2425
-#: src/konqmainwindow.cpp:4849
+#: src/konqmainwindow.cpp:4865
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -699,7 +705,7 @@ msgstr "변경 사항을 취소하시겠습니까?"
 #: src/konqmainwindow.cpp:1584 src/konqmainwindow.cpp:2235
 #: src/konqmainwindow.cpp:2328 src/konqmainwindow.cpp:2360
 #: src/konqmainwindow.cpp:2403 src/konqmainwindow.cpp:2426
-#: src/konqmainwindow.cpp:4849
+#: src/konqmainwindow.cpp:4865
 #, kde-format
 msgid "&Discard Changes"
 msgstr "변경 사항 취소(&D)"
@@ -1298,65 +1304,65 @@ msgctxt "@action:button"
 msgid "Open"
 msgstr "열기"
 
-#: src/konqmainwindow.cpp:4394
+#: src/konqmainwindow.cpp:4410
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "현재 창에서 열기(&H)"
 
-#: src/konqmainwindow.cpp:4395
+#: src/konqmainwindow.cpp:4411
 #, kde-format
 msgid "Open the document in current window"
 msgstr "문서를 현재 창에서 열기"
 
-#: src/konqmainwindow.cpp:4402
+#: src/konqmainwindow.cpp:4418
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "문서를 새 창으로 열기"
 
-#: src/konqmainwindow.cpp:4408
+#: src/konqmainwindow.cpp:4424
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "새 탭으로 열기(&N)"
 
-#: src/konqmainwindow.cpp:4410
+#: src/konqmainwindow.cpp:4426
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "문서를 새 탭으로 열기"
 
-#: src/konqmainwindow.cpp:4635
+#: src/konqmainwindow.cpp:4651
 #, kde-format
 msgid "&Open With"
 msgstr "다음으로 열기(&O)"
 
-#: src/konqmainwindow.cpp:4648
+#: src/konqmainwindow.cpp:4664
 #, kde-format
 msgid "Open with %1"
 msgstr "%1(으)로 열기|/|%1$[으 %1]로 열기"
 
-#: src/konqmainwindow.cpp:4696
+#: src/konqmainwindow.cpp:4712
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "보기 모드(&V)"
 
-#: src/konqmainwindow.cpp:4813
+#: src/konqmainwindow.cpp:4829
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr "현재 창에 여러 탭이 열려 있습니다. 종료하시겠습니까?"
 
-#: src/konqmainwindow.cpp:4815
+#: src/konqmainwindow.cpp:4831
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "확인"
 
-#: src/konqmainwindow.cpp:4817
+#: src/konqmainwindow.cpp:4833
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "현재 탭 닫기(&L)"
 
-#: src/konqmainwindow.cpp:4845
+#: src/konqmainwindow.cpp:4861
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1365,7 +1371,7 @@ msgstr ""
 "이 탭에는 저장되지 않은 변경 사항이 들어 있습니다.\n"
 "다른 탭을 닫으면 변경된 부분은 버려집니다."
 
-#: src/konqmainwindow.cpp:4846
+#: src/konqmainwindow.cpp:4862
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1374,35 +1380,35 @@ msgstr ""
 "이 페이지에는 저장되지 않은 변경 사항이 들어 있습니다.\n"
 "다른 탭을 닫으면 변경된 부분은 버려집니다."
 
-#: src/konqmainwindow.cpp:5006
+#: src/konqmainwindow.cpp:5022
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr ""
 "사이드바가 동작하지 않거나 사용할 수 없습니다. 새 항목을 추가할 수 없습니다."
 
-#: src/konqmainwindow.cpp:5006 src/konqmainwindow.cpp:5013
+#: src/konqmainwindow.cpp:5022 src/konqmainwindow.cpp:5029
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "웹 사이드바"
 
-#: src/konqmainwindow.cpp:5011
+#: src/konqmainwindow.cpp:5027
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "새 웹 확장 기능 \"%1\"을(를) 사이드바에 추가하시겠습니까?"
 
-#: src/konqmainwindow.cpp:5013
+#: src/konqmainwindow.cpp:5029
 #, kde-format
 msgid "Add"
 msgstr "추가"
 
-#: src/konqmainwindow.cpp:5013
+#: src/konqmainwindow.cpp:5029
 #, kde-format
 msgid "Do Not Add"
 msgstr "추가하지 않기"
 
-#: src/konqmainwindow.cpp:5361
+#: src/konqmainwindow.cpp:5377
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1411,7 +1417,7 @@ msgstr ""
 "설정 오류가 있는 것 같습니다. Konqueror에게 %1 형식의 파일을 처리하라고 했지"
 "만, 이 파일 형식은 처리할 수 없습니다."
 
-#: src/konqmainwindow.cpp:5446
+#: src/konqmainwindow.cpp:5462
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1431,22 +1437,22 @@ msgstr ""
 "시스템 프록시 설정을 선택하거나 설정 대화 상자에서 프록시 URL을 직접 지정하십"
 "시오. 지금 프록시 설정을 변경하시겠습니까?"
 
-#: src/konqmainwindow.cpp:5451
+#: src/konqmainwindow.cpp:5467
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "지원하지 않는 프록시 설정"
 
-#: src/konqmainwindow.cpp:5451
+#: src/konqmainwindow.cpp:5467
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "프록시 사용하지 않음"
 
-#: src/konqmainwindow.cpp:5452 src/konqmainwindow.cpp:5496
+#: src/konqmainwindow.cpp:5468 src/konqmainwindow.cpp:5512
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "프록시 설정 대화 상자 표시"
 
-#: src/konqmainwindow.cpp:5492
+#: src/konqmainwindow.cpp:5508
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1459,22 +1465,22 @@ msgstr ""
 "<p><b>HTTP 프록시:</b> <tt>%1</tt></p><p><b>HTTPS 프록시: </b><tt>%2</tt></p>"
 "무엇을 하시겠습니까?"
 
-#: src/konqmainwindow.cpp:5495
+#: src/konqmainwindow.cpp:5511
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "프록시 설정 충돌"
 
-#: src/konqmainwindow.cpp:5496
+#: src/konqmainwindow.cpp:5512
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "HTTP 프록시 사용(이번만)"
 
-#: src/konqmainwindow.cpp:5496
+#: src/konqmainwindow.cpp:5512
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "HTTPS 프록시 사용(이번만)"
 
-#: src/konqmainwindow.cpp:5579
+#: src/konqmainwindow.cpp:5595
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1947,7 +1953,7 @@ msgstr "실행 취소: 창 닫기(&O)"
 msgid "Und&o"
 msgstr "실행 취소(&O)"
 
-#: src/konqview.cpp:1341
+#: src/konqview.cpp:1357
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1957,13 +1963,13 @@ msgstr ""
 "보려고 하는 페이지는 제출한 폼의 결과입니다. 데이터를 다시 보내면, 검색이나 "
 "온라인 구매 같은 폼의 동작이 다시 수행될 수 있습니다."
 
-#: src/konqview.cpp:1343
+#: src/konqview.cpp:1359
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "경고"
 
-#: src/konqview.cpp:1343
+#: src/konqview.cpp:1359
 #, kde-format
 msgid "Resend"
 msgstr "다시 보내기"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:45+0000\n"
+"POT-Creation-Date: 2024-01-01 01:35+0000\n"
 "PO-Revision-Date: 2011-07-11 12:34+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: Kannada <en@li.org>\n"
@@ -495,8 +495,8 @@ msgid ""
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4884
-#: src/konqmainwindow.cpp:4930
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4900
+#: src/konqmainwindow.cpp:4946
 #, kde-format
 msgid "no name"
 msgstr "ಯಾವುದೆ ಹೆಸರುಗಳಿಲ್ಲ"
@@ -539,17 +539,23 @@ msgstr ""
 "ಮಾಡಲ್ಪಡುತ್ತವೆ. ಇದು ವಿಶೇಷವಾಗಿ, ಚಿಹ್ನೆ ನೋಟ ಅಥವ ವಿವರವಾದ ನೋಟ, ಹಾಗು ಸಾಧ್ಯವಿದ್ದಲ್ಲಿ "
 "ಟರ್ಮಿನಲ್ ಎಮ್ಯುಲೇಟರ್ ಕಿಟಕಿಯೊಂದಿಗಿನ ಕೋಶ ವೃಕ್ಷದಂತಹ ಅನೇಕ ಬಗೆಯ ನೋಟಗಳಲ್ಲಿ ಸಹಕಾರಿಯಾಗುತ್ತದೆ."
 
-#: src/konqframestatusbar.cpp:154
+#: src/konqframestatusbar.cpp:119
+#, kde-format
+msgctxt "%p is the percent value, % is the percent sign"
+msgid "%p%"
+msgstr ""
+
+#: src/konqframestatusbar.cpp:155
 #, kde-format
 msgid "Close View"
 msgstr "ನೋಟವನ್ನು ಮುಚ್ಚು"
 
-#: src/konqframestatusbar.cpp:232
+#: src/konqframestatusbar.cpp:233
 #, kde-format
 msgid "%1/s"
 msgstr "%1 ಪ್ರತಿ ಸೆಕೆಂಡಿಗೆ"
 
-#: src/konqframestatusbar.cpp:234
+#: src/konqframestatusbar.cpp:235
 #, kde-format
 msgid "Stalled"
 msgstr "ಸ್ಥಗಿತವಾಗಿದೆ"
@@ -595,7 +601,7 @@ msgstr "ಸ್ಥಳೀಯ"
 msgid "Miscellaneous"
 msgstr "ಇತರೆ"
 
-#: src/konqhistoryview.cpp:54 src/konqmainwindow.cpp:4401
+#: src/konqhistoryview.cpp:54 src/konqmainwindow.cpp:4417
 #, kde-format
 msgid "Open in New &Window"
 msgstr "ಹೊಸ ಕಿಟಕಿಯಲ್ಲಿ ತೆರೆ(&W)"
@@ -691,7 +697,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1584 src/konqmainwindow.cpp:2235
 #: src/konqmainwindow.cpp:2328 src/konqmainwindow.cpp:2360
 #: src/konqmainwindow.cpp:2403 src/konqmainwindow.cpp:2425
-#: src/konqmainwindow.cpp:4849
+#: src/konqmainwindow.cpp:4865
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -700,7 +706,7 @@ msgstr "ಬದಲಾವಣೆಗಳನ್ನು ತ್ಯಜಿಸಬೇಕೇ?
 #: src/konqmainwindow.cpp:1584 src/konqmainwindow.cpp:2235
 #: src/konqmainwindow.cpp:2328 src/konqmainwindow.cpp:2360
 #: src/konqmainwindow.cpp:2403 src/konqmainwindow.cpp:2426
-#: src/konqmainwindow.cpp:4849
+#: src/konqmainwindow.cpp:4865
 #, kde-format
 msgid "&Discard Changes"
 msgstr "ಬದಲಾವಣೆಗಳನ್ನು ತ್ಯಜಿಸು(&D)"
@@ -1317,48 +1323,48 @@ msgctxt "@action:button"
 msgid "Open"
 msgstr "ತೆರೆ(&O)"
 
-#: src/konqmainwindow.cpp:4394
+#: src/konqmainwindow.cpp:4410
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "ಈ ಕಿಟಕಿಯಲ್ಲಿ ತೆರೆ(&h)"
 
-#: src/konqmainwindow.cpp:4395
+#: src/konqmainwindow.cpp:4411
 #, kde-format
 msgid "Open the document in current window"
 msgstr "ದಸ್ತಾವೇಜನ್ನು ಪ್ರಸ್ತುತ ಕಿಟಕಿಯಲ್ಲಿ ತೆರೆ"
 
-#: src/konqmainwindow.cpp:4402
+#: src/konqmainwindow.cpp:4418
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "ದಸ್ತಾವೇಜನ್ನು ಹೊಸ ಕಿಟಕಿಯಲ್ಲಿ ತೆರೆ"
 
-#: src/konqmainwindow.cpp:4408
+#: src/konqmainwindow.cpp:4424
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "ಹೊಸ ಹಾಳೆಯಲ್ಲಿ ತೆರೆ(&N)"
 
-#: src/konqmainwindow.cpp:4410
+#: src/konqmainwindow.cpp:4426
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "ದಸ್ತಾವೇಜನ್ನು ಹೊಸ ಹಾಳೆಯಲ್ಲಿ ತೆರೆ"
 
-#: src/konqmainwindow.cpp:4635
+#: src/konqmainwindow.cpp:4651
 #, kde-format
 msgid "&Open With"
 msgstr "ಇದರಲ್ಲಿ ತೆರೆ(&O)"
 
-#: src/konqmainwindow.cpp:4648
+#: src/konqmainwindow.cpp:4664
 #, kde-format
 msgid "Open with %1"
 msgstr "ಇದರಲ್ಲಿ ತೆರೆ %1"
 
-#: src/konqmainwindow.cpp:4696
+#: src/konqmainwindow.cpp:4712
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "ವೀಕ್ಷಣ ಸ್ಥಿತಿ(&V)"
 
-#: src/konqmainwindow.cpp:4813
+#: src/konqmainwindow.cpp:4829
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
@@ -1366,18 +1372,18 @@ msgstr ""
 "ಈ ವಿಂಡೋದಲ್ಲಿ ನೀವು ಅನೇಕ ಹಾಳೆಗಳನ್ನು ತೆರೆದಿದ್ದೀರಿ, ನಿರ್ಗಮಿಸಬೇಕೆಂಬ ನಿಮ್ಮ ನಿರ್ಣಯವು "
 "ಖಚಿತವೆ?"
 
-#: src/konqmainwindow.cpp:4815
+#: src/konqmainwindow.cpp:4831
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "ಖಚಿತಪಡಿಸುವಿಕೆ"
 
-#: src/konqmainwindow.cpp:4817
+#: src/konqmainwindow.cpp:4833
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "ಪ್ರಸ್ತುತ ಹಾಳೆಯನ್ನು ಮುಚ್ಚು(&l)"
 
-#: src/konqmainwindow.cpp:4845
+#: src/konqmainwindow.cpp:4861
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1386,7 +1392,7 @@ msgstr ""
 "ಈ ಹಾಳೆಯು ಇನ್ನೂ ಸಲ್ಲಿಸದೆ ಇರುವ ಬದಲಾವಣೆಗಳನ್ನು ಹೊಂದಿದೆ. \n"
 "ಕಿಟಕಿಯನ್ನು ಮುಚ್ಚುವುದರಿಂದ ಈ ಬದಲಾವಣೆಗಳನ್ನು ತ್ಯಜಿಸುತ್ತದೆ."
 
-#: src/konqmainwindow.cpp:4846
+#: src/konqmainwindow.cpp:4862
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1395,7 +1401,7 @@ msgstr ""
 "ಈ ಪುಟವು ಇನ್ನೂ ಸಲ್ಲಿಸದೆ ಇರುವ ಬದಲಾವಣೆಗಳನ್ನು ಹೊಂದಿದೆ. \n"
 "ಕಿಟಕಿಯನ್ನು ಮುಚ್ಚುವುದರಿಂದ ಈ ಬದಲಾವಣೆಗಳನ್ನು ತ್ಯಜಿಸುತ್ತದೆ."
 
-#: src/konqmainwindow.cpp:5006
+#: src/konqmainwindow.cpp:5022
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1403,28 +1409,28 @@ msgstr ""
 "ನಿಮ್ಮ ಬದಿ ಪಟ್ಟಿಕೆಯು ಕೆಲಸ ಮಾಡುತ್ತಿಲ್ಲ ಅಥವ ಲಭ್ಯವಿಲ್ಲ. ಒಂದು ಹೊಸ ನಮೂದನ್ನು ಸೇರಿಸಲು "
 "ಸಾಧ್ಯವಿಲ್ಲ."
 
-#: src/konqmainwindow.cpp:5006 src/konqmainwindow.cpp:5013
+#: src/konqmainwindow.cpp:5022 src/konqmainwindow.cpp:5029
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "ಜಾಲ ಬದಿಪಟ್ಟಿ"
 
-#: src/konqmainwindow.cpp:5011
+#: src/konqmainwindow.cpp:5027
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "ಹೊಸ ಜಾಲವಿಸ್ತರಣೆ \"%1\"ಯನ್ನು ನಿಮ್ಮ ಬದಿಪಟ್ಟಿಗೆ ಸೇರಿಸುವುದೇ?"
 
-#: src/konqmainwindow.cpp:5013
+#: src/konqmainwindow.cpp:5029
 #, kde-format
 msgid "Add"
 msgstr "ಸೇರಿಸು"
 
-#: src/konqmainwindow.cpp:5013
+#: src/konqmainwindow.cpp:5029
 #, kde-format
 msgid "Do Not Add"
 msgstr "ಸೇರಿಸಬೇಡ"
 
-#: src/konqmainwindow.cpp:5361
+#: src/konqmainwindow.cpp:5377
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1433,7 +1439,7 @@ msgstr ""
 "ಸಂರಚನಾ ದೋಷವಿದ್ದಂತಿದೆ. ನೀವು ಕಾಂಕರರ್ ಅನ್ನು %1 ಜೊತೆಗೂಡಿಸಿದ್ದೀರಿ, ಆದರೆ ಇದು ಈ ಕಡತ "
 "ಪ್ರಕಾರವನ್ನು ನಿರ್ವಹಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ."
 
-#: src/konqmainwindow.cpp:5446
+#: src/konqmainwindow.cpp:5462
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1446,23 +1452,23 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5451
+#: src/konqmainwindow.cpp:5467
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5451
+#: src/konqmainwindow.cpp:5467
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5452 src/konqmainwindow.cpp:5496
+#: src/konqmainwindow.cpp:5468 src/konqmainwindow.cpp:5512
 #, fuzzy, kde-format
 #| msgid "Show Configuration Button"
 msgid "Show proxy configuration dialog"
 msgstr "ಸಂರಚನಾ ಗುಂಡಿಯನ್ನು ತೋರಿಸು"
 
-#: src/konqmainwindow.cpp:5492
+#: src/konqmainwindow.cpp:5508
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1471,22 +1477,22 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5495
+#: src/konqmainwindow.cpp:5511
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5496
+#: src/konqmainwindow.cpp:5512
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5496
+#: src/konqmainwindow.cpp:5512
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5579
+#: src/konqmainwindow.cpp:5595
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1987,7 +1993,7 @@ msgstr "ರದ್ದು ಮಾಡು(&o): ಮುಚ್ಚಲಾದ ಕಿಟಕ�
 msgid "Und&o"
 msgstr "ರದ್ದುಗೊಳಿಸು(&o)"
 
-#: src/konqview.cpp:1341
+#: src/konqview.cpp:1357
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1998,13 +2004,13 @@ msgstr ""
 "ಉಂಟಾಗಿದೆ. ನೀವು ದತ್ತಾಂಶವನ್ನು ಮರಳಿ ಕಳುಹಿಸಿದಲ್ಲಿ, ಫಾರ್ಮ್ ಈ ಮೊದಲು ಮಾಡಲಾಗಿದ್ದ ಯಾವುದೆ "
 "ಕೆಲಸವನ್ನು (ಹುಡುಕಾಟ ಅಥವ ಆನ್‌ಲೈನ್ ಕೊಳ್ಳುವಿಕೆ) ಮರಳಿ ಮಾಡಲ್ಪಡುತ್ತದೆ. "
 
-#: src/konqview.cpp:1343
+#: src/konqview.cpp:1359
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "ಎಚ್ಚರಿಕೆ"
 
-#: src/konqview.cpp:1343
+#: src/konqview.cpp:1359
 #, kde-format
 msgid "Resend"
 msgstr "ಮರುಕಳುಹಿಸು"
