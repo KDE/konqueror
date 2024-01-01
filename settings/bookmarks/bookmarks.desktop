@@ -1,10 +1,9 @@
 [Desktop Entry]
 Type=Application
-X-KDE-ServiceTypes=KCModule
 X-DocPath=kcontrol5/bookmarks/index.html
 Icon=bookmarks
-
-X-KDE-Library=kcm_bookmarks
+NoDisplay=true
+Exec=kcmshell5 bookmarks
 
 Name=Bookmarks
 Name[af]=Boekmerke
