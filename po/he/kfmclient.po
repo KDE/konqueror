@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2024-01-03 01:35+0000\n"
 "PO-Revision-Date: 2017-05-16 06:37-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
@@ -38,55 +38,55 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: kfmclient.cpp:59
+#: kfmclient.cpp:61
 #, kde-format
 msgid "kfmclient"
 msgstr "kfmclient"
 
-#: kfmclient.cpp:60
+#: kfmclient.cpp:62
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "כלי של KDE לפתיחת כתובות משורת הפקודה"
 
-#: kfmclient.cpp:68
+#: kfmclient.cpp:70
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr "שימוש לא אינטראקטי: ללא תיבות שיחה"
 
-#: kfmclient.cpp:70
+#: kfmclient.cpp:72
 #, kde-format
 msgid "Show available commands"
 msgstr "הצג את הפעולות הזמינות"
 
-#: kfmclient.cpp:79
+#: kfmclient.cpp:81
 #, kde-format
 msgid ""
 "The mimetype of the URL. Allows Konqueror to determine in advance which "
 "component to use, making it start faster."
 msgstr ""
 
-#: kfmclient.cpp:80
+#: kfmclient.cpp:82
 #, kde-format
 msgctxt "the name for a the value of an option on the command line help"
 msgid "type"
 msgstr ""
 
-#: kfmclient.cpp:82
+#: kfmclient.cpp:84
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "(--commands פקודה (ראה"
 
-#: kfmclient.cpp:84
+#: kfmclient.cpp:86
 #, kde-format
 msgid "Arguments for command"
 msgstr "ארגומנטים לפקודה"
 
-#: kfmclient.cpp:86
+#: kfmclient.cpp:88
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr ""
 
-#: kfmclient.cpp:95
+#: kfmclient.cpp:97
 #, kde-format
 msgid ""
 "\n"
@@ -95,7 +95,7 @@ msgstr ""
 "\n"
 "תחביר:\n"
 
-#: kfmclient.cpp:96
+#: kfmclient.cpp:98
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kfmclient openURL 'url' ['mimetype']\n"
@@ -118,7 +118,7 @@ msgstr ""
 "                                    subdir/ או שם קובץ, כגון . או\n"
 "                       .במקום $HOME-מושמט, ייעשה שימוש ב 'url' אם\n"
 
-#: kfmclient.cpp:101
+#: kfmclient.cpp:103
 #, fuzzy, kde-format
 #| msgid ""
 #| "            # If 'mimetype' is specified, it will be used to determine "
@@ -140,7 +140,7 @@ msgstr ""
 "                 לדוגמה, הגדר אותו בתור .Konqueror הרכיב בו ישתמש\n"
 "             .עבור דף רשת, כדי לגרום לו להופיע יותר מהר text/html\n"
 
-#: kfmclient.cpp:106
+#: kfmclient.cpp:108
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -150,17 +150,17 @@ msgid ""
 "\n"
 msgstr ""
 
-#: kfmclient.cpp:282
+#: kfmclient.cpp:284
 #, fuzzy, kde-format
 msgid "Syntax error, not enough arguments\n"
 msgstr "שגיאת תחביר: מעט מדיי ארגומנטים\n"
 
-#: kfmclient.cpp:286
+#: kfmclient.cpp:288
 #, fuzzy, kde-format
 msgid "Syntax error, too many arguments\n"
 msgstr "שגיאת תחביר: יותר מדיי ארגומנטים\n"
 
-#: kfmclient.cpp:341
+#: kfmclient.cpp:343
 #, fuzzy, kde-format
 msgid "Syntax error, unknown command '%1'\n"
 msgstr "\"%1\" שגיאת תחביר: פקודה לא מוכרת\n"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2024-01-03 01:35+0000\n"
 "PO-Revision-Date: 2023-08-25 22:53+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -30,27 +30,27 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: kfmclient.cpp:59
+#: kfmclient.cpp:61
 #, kde-format
 msgid "kfmclient"
 msgstr "kfmclient"
 
-#: kfmclient.cpp:60
+#: kfmclient.cpp:62
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "명령행에서 URL을 열 때 사용하는 KDE 도구"
 
-#: kfmclient.cpp:68
+#: kfmclient.cpp:70
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr "비 인터랙티브 모드: 메시지 상자 사용 안 함"
 
-#: kfmclient.cpp:70
+#: kfmclient.cpp:72
 #, kde-format
 msgid "Show available commands"
 msgstr "사용 가능한 명령 보기"
 
-#: kfmclient.cpp:79
+#: kfmclient.cpp:81
 #, kde-format
 msgid ""
 "The mimetype of the URL. Allows Konqueror to determine in advance which "
@@ -59,28 +59,28 @@ msgstr ""
 "URL의 MIME 형식입니다. Konqueror에서 사용할 구성 요소를 미리 결정하여 시작을 "
 "빠르게 합니다."
 
-#: kfmclient.cpp:80
+#: kfmclient.cpp:82
 #, kde-format
 msgctxt "the name for a the value of an option on the command line help"
 msgid "type"
 msgstr "type"
 
-#: kfmclient.cpp:82
+#: kfmclient.cpp:84
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "명령 (--commands 참고)"
 
-#: kfmclient.cpp:84
+#: kfmclient.cpp:86
 #, kde-format
 msgid "Arguments for command"
 msgstr "명령 인자"
 
-#: kfmclient.cpp:86
+#: kfmclient.cpp:88
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr "앱에서 연 파일/URL을 사용한 후 삭제합니다"
 
-#: kfmclient.cpp:95
+#: kfmclient.cpp:97
 #, kde-format
 msgid ""
 "\n"
@@ -89,7 +89,7 @@ msgstr ""
 "\n"
 "문법:\n"
 
-#: kfmclient.cpp:96
+#: kfmclient.cpp:98
 #, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
@@ -106,7 +106,7 @@ msgstr ""
 "            #   만약 'url'을 생략하면 시작 페이지를 표시합니다.\n"
 "\n"
 
-#: kfmclient.cpp:101
+#: kfmclient.cpp:103
 #, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
@@ -126,7 +126,7 @@ msgstr ""
 "            #   --mimetype 옵션을 사용하십시오\n"
 "\n"
 
-#: kfmclient.cpp:106
+#: kfmclient.cpp:108
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -139,17 +139,17 @@ msgstr ""
 "            # 위와 같지만 'url'을 열려 있는 Konqueror에 새\n"
 "            # 탭으로 엽니다. (사용 가능한 경우)\n"
 
-#: kfmclient.cpp:282
+#: kfmclient.cpp:284
 #, kde-format
 msgid "Syntax error, not enough arguments\n"
 msgstr "문법 오류, 인자 개수가 부족합니다\n"
 
-#: kfmclient.cpp:286
+#: kfmclient.cpp:288
 #, kde-format
 msgid "Syntax error, too many arguments\n"
 msgstr "문법 오류, 인자가 너무 많습니다\n"
 
-#: kfmclient.cpp:341
+#: kfmclient.cpp:343
 #, kde-format
 msgid "Syntax error, unknown command '%1'\n"
 msgstr "문법 오류, 알 수 없는 명령 '%1'\n"

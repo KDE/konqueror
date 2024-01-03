@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: playground-libs/webkitkde.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 01:37+0000\n"
+"POT-Creation-Date: 2024-01-03 01:36+0000\n"
 "PO-Revision-Date: 2009-01-20 11:17-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -463,67 +463,67 @@ msgstr ""
 msgid "All cookies"
 msgstr ""
 
-#: src/schemehandlers/errorschemehandler.cpp:96
+#: src/schemehandlers/errorschemehandler.cpp:97
 #, kde-format
 msgid ""
 "<html><body><h3>Unable to display error message</h3><p>The error template "
 "file <em>error.html</em> could not be found.</p></body></html>"
 msgstr ""
 
-#: src/schemehandlers/errorschemehandler.cpp:105
+#: src/schemehandlers/errorschemehandler.cpp:106
 #, kde-format
 msgid "The requested operation could not be completed"
 msgstr "Níorbh fhéidir an oibríocht iarrtha a chríochnú"
 
-#: src/schemehandlers/errorschemehandler.cpp:112
+#: src/schemehandlers/errorschemehandler.cpp:113
 #, kde-format
 msgid "Technical Reason: %1"
 msgstr ""
 
-#: src/schemehandlers/errorschemehandler.cpp:117
+#: src/schemehandlers/errorschemehandler.cpp:118
 #, kde-format
 msgid "Details of the Request:"
 msgstr "Mionsonraí an Iarratais:"
 
 #. i18n, and once for HTML.
-#: src/schemehandlers/errorschemehandler.cpp:120
+#: src/schemehandlers/errorschemehandler.cpp:121
 #, kde-format
 msgid "URL: %1"
 msgstr "URL: %1"
 
 #. i18n, and once for HTML.
-#: src/schemehandlers/errorschemehandler.cpp:126
+#: src/schemehandlers/errorschemehandler.cpp:127
 #, kde-format
 msgid "Protocol: %1"
 msgstr "Prótacal: %1"
 
-#: src/schemehandlers/errorschemehandler.cpp:130
+#: src/schemehandlers/errorschemehandler.cpp:131
 #, kde-format
 msgid "Date and Time: %1"
 msgstr "Dáta agus Am: %1"
 
 #. i18n, and once for HTML.
-#: src/schemehandlers/errorschemehandler.cpp:134
+#: src/schemehandlers/errorschemehandler.cpp:135
 #, kde-format
 msgid "Additional Information: %1"
 msgstr "Eolas Breise: %1"
 
-#: src/schemehandlers/errorschemehandler.cpp:136
+#: src/schemehandlers/errorschemehandler.cpp:137
 #, kde-format
 msgid "Description:"
 msgstr "Cur Síos:"
 
-#: src/schemehandlers/errorschemehandler.cpp:143
+#: src/schemehandlers/errorschemehandler.cpp:144
 #, kde-format
 msgid "Possible Causes:"
 msgstr "Cúiseanna Incheaptha:"
 
-#: src/schemehandlers/errorschemehandler.cpp:151
+#: src/schemehandlers/errorschemehandler.cpp:152
 #, kde-format
 msgid "Possible Solutions:"
 msgstr "Réitigh Incheaptha:"
 
-#: src/schemehandlers/errorschemehandler.cpp:157
+#: src/schemehandlers/errorschemehandler.cpp:158
 #, kde-format
 msgid "Error: %1"
 msgstr "Earráid: %1"
@@ -904,64 +904,64 @@ msgstr "Ceadaigh"
 msgid "Do Not Allow"
 msgstr "Ná Ceadaigh"
 
-#: src/webenginepart.cpp:214
+#: src/webenginepart.cpp:215
 #, fuzzy, kde-format
 #| msgid "Save Image As..."
 msgid "Save Full HTML Page As..."
 msgstr "Sábháil an Íomhá Mar..."
 
-#: src/webenginepart.cpp:218
+#: src/webenginepart.cpp:219
 #, kde-format
 msgid "Print Preview"
 msgstr "Réamhamharc Priontála"
 
-#: src/webenginepart.cpp:222
+#: src/webenginepart.cpp:223
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Súmáil Isteach"
 
-#: src/webenginepart.cpp:227
+#: src/webenginepart.cpp:228
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Súmáil Amach"
 
-#: src/webenginepart.cpp:232
+#: src/webenginepart.cpp:233
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Fíormhéid"
 
-#: src/webenginepart.cpp:237
+#: src/webenginepart.cpp:238
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Súmáil Téacs Amháin"
 
-#: src/webenginepart.cpp:245
+#: src/webenginepart.cpp:246
 #, fuzzy, kde-format
 #| msgctxt "zoom in action"
 #| msgid "Zoom In"
 msgid "Zoom To DPI"
 msgstr "Súmáil Isteach"
 
-#: src/webenginepart.cpp:258
+#: src/webenginepart.cpp:259
 #, kde-format
 msgid "Set &Encoding"
 msgstr "Socraigh &Ionchódú"
 
-#: src/webenginepart.cpp:261
+#: src/webenginepart.cpp:262
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Féach &Foinse na Cáipéise"
 
-#: src/webenginepart.cpp:266 src/webenginepart.cpp:552
+#: src/webenginepart.cpp:267 src/webenginepart.cpp:553
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:272
+#: src/webenginepart.cpp:273
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -971,12 +971,12 @@ msgstr ""
 "<h3>Aimsigh téacs</h3>Taispeáin dialóg a cheadaíonn duit téacs a aimsiú ar "
 "an leathanach ar taispeáint."
 
-#: src/webenginepart.cpp:550
+#: src/webenginepart.cpp:551
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr ""
 
-#: src/webenginepart.cpp:631
+#: src/webenginepart.cpp:632
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -984,7 +984,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "Ríomhphost: "
 
-#: src/webenginepart.cpp:660
+#: src/webenginepart.cpp:661
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -992,7 +992,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - CC: "
 
-#: src/webenginepart.cpp:662
+#: src/webenginepart.cpp:663
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1000,7 +1000,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - BCC: "
 
-#: src/webenginepart.cpp:664
+#: src/webenginepart.cpp:665
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1008,84 +1008,84 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Ábhar: "
 
-#: src/webenginepart.cpp:668 src/webenginepart.cpp:679
+#: src/webenginepart.cpp:669 src/webenginepart.cpp:680
 #, kde-format
 msgid " (In new window)"
 msgstr " (I bhfuinneog nua)"
 
-#: src/webenginepart.cpp:677
+#: src/webenginepart.cpp:678
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (I máthairfhráma)"
 
-#: src/webenginepart.cpp:747
+#: src/webenginepart.cpp:748
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr ""
 
-#: src/webenginepart.cpp:748
+#: src/webenginepart.cpp:749
 #, kde-format
 msgid "Internet Search"
 msgstr "Cuardach Idirlín"
 
-#: src/webenginepart.cpp:748
+#: src/webenginepart.cpp:749
 #, kde-format
 msgid "&Search"
 msgstr "&Cuardaigh"
 
-#: src/webenginepart.cpp:859
+#: src/webenginepart.cpp:860
 #, kde-format
 msgid "Close window?"
 msgstr "An bhfuil fonn ort an fhuinneog a dhúnadh?"
 
-#: src/webenginepart.cpp:859
+#: src/webenginepart.cpp:860
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Ní mór cinntiú"
 
-#: src/webenginepart.cpp:933
+#: src/webenginepart.cpp:934
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 
-#: src/webenginepart.cpp:1004
+#: src/webenginepart.cpp:1005
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr ""
 
-#: src/webenginepart.cpp:1009
+#: src/webenginepart.cpp:1010
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr ""
 
-#: src/webenginepart.cpp:1013
+#: src/webenginepart.cpp:1014
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1017
+#: src/webenginepart.cpp:1018
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1021
+#: src/webenginepart.cpp:1022
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr ""
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1026
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr ""
 
-#: src/webenginepart.cpp:1029
+#: src/webenginepart.cpp:1030
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1033
+#: src/webenginepart.cpp:1034
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Dún Sparán"
