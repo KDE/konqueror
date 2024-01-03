@@ -14,7 +14,7 @@
 #include <kparts_version.h>
 #include <kparts/part.h>
 
-#include <kio/jobclasses.h>
+#include <KIO/Job>
 
 #include "fsview.h"
 #include "browserextension.h"
