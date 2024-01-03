@@ -40,6 +40,7 @@
 #include <KJobUiDelegate>
 #include <KJobWidgets>
 #include <KPluginFactory>
+#include <KIO/StatJob>
 
 void Sidebar_Widget::aboutToShowAddMenu()
 {

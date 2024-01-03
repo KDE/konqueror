@@ -41,6 +41,8 @@
 #include <process.h>
 #endif
 
+#include <unistd.h>
+
 #include "konqclientrequest.h"
 #include "kfmclient_debug.h"
 

@@ -129,6 +129,7 @@
 #include <KIO/JobUiDelegate>
 #include <KIO/CopyJob>
 #include <KIO/Job>
+#include <KIO/StatJob>
 #include <KIO/FileUndoManager>
 #include <KParts/OpenUrlEvent>
 #include <KCompletionMatches>

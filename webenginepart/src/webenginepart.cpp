@@ -43,6 +43,7 @@
 #include <kconfigwidgets_version.h>
 #include <KCodecAction>
 #include <KIO/Global>
+#include <KIO/MetaData>
 
 #include <KActionCollection>
 #include <KPluginMetaData>

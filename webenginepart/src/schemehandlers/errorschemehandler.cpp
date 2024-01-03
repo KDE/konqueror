@@ -18,6 +18,7 @@
 #include <QLocale>
 #include <QMimeType>
 #include <QMimeDatabase>
+#include <QDateTime>
 
 #include <KIO/Job>
 #include <KIconLoader>

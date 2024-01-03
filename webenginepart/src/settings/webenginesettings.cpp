@@ -16,7 +16,7 @@
 #include <KLocalizedString>
 #include <KConfigGroup>
 #include <KJob>
-#include <KIO/Job>
+#include <KIO/StoredTransferJob>
 #include <KMessageBox>
 
 #include <QWebEngineSettings>

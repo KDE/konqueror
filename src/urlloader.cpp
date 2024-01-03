@@ -21,6 +21,7 @@
 #include <KIO/MimeTypeFinderJob>
 #include <KIO/JobUiDelegateFactory>
 #include <KIO/CopyJob>
+#include <KIO/JobTracker>
 #include <KMessageBox>
 #include <KParts/ReadOnlyPart>
 #include "kf5compat.h" //For NavigationExtension
