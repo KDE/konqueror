@@ -67,10 +67,16 @@ KBookmarkBar::KBookmarkBar(KBookmarkManager *mgr,
         connect(m_toolBar, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contextMenu(QPoint)));
     }
 
+#if QT_VERSION_MAJOR < 6
     connect(mgr, SIGNAL(changed(QString,QString)),
             SLOT(slotBookmarksChanged(QString)));
     connect(mgr, SIGNAL(configChanged()),
             SLOT(slotConfigChanged()));
+#else
+    connect(mgr, SIGNAL(changed(QString)),
+            SLOT(slotBookmarksChanged(QString)));
+#endif
+
 
     KBookmarkGroup toolbar = getToolbar();
     fillBookmarkBar(toolbar);

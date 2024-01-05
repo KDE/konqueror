@@ -100,8 +100,13 @@ KonqSidebarBookmarkModule::KonqSidebarBookmarkModule(KonqSidebarTree *parentTree
                             KStandardAction::editBookmarks(s_bookmarkManager,
                                     SLOT(slotEditBookmarks()), this));
 
+#if QT_VERSION_MAJOR < 6
     connect(s_bookmarkManager, SIGNAL(changed(QString,QString)),
             SLOT(slotBookmarksChanged(QString)));
+#else
+    connect(s_bookmarkManager, SIGNAL(changed(QString)),
+            SLOT(slotBookmarksChanged(QString)));
+#endif
 }
 
 KonqSidebarBookmarkModule::~KonqSidebarBookmarkModule()
