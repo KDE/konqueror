@@ -70,7 +70,9 @@ void BookmarksProtocol::parseTree()
     if (columns < 1)
         columns = 1;
 
+#if QT_VERSION_MAJOR < 6
     manager->notifyCompleteChange("kio_bookmarks");
+#endif
     tree = manager->root();
 
     if(tree.first().isNull())
