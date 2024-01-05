@@ -15,6 +15,7 @@
 #include "kwebenginepartlib_export.h"
 #include "qtwebengine6compat.h"
 #include "browserextension.h"
+#include "webenginepartdownloadmanager.h"
 
 #include <QWebEnginePage>
 
@@ -52,7 +53,7 @@ public:
      */
     void setSslInfo (const WebSslInfo &other);
 
-    void requestDownload(QWebEngineDownloadRequest *item, bool newWindow, bool requestSave);
+    void requestDownload(QWebEngineDownloadRequest *item, bool newWindow, WebEnginePartDownloadManager::DownloadObjective objective);
 
     void setStatusBarText(const QString &text);
 
@@ -171,7 +172,6 @@ private:
     void setPageJScriptPolicy(const QUrl& url);
     bool askBrowserToOpenUrl(const QUrl &url, const QString &mimetype=QString(), const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(), const BrowserArguments &bargs = BrowserArguments());
     bool downloadWithExternalDonwloadManager(const QUrl &url);
-//     bool askBrowserToOpenUrlInPart(const QUrl &url, const QString &part);
 
     //Whether a local URL should be opened by this part or by another part. This takes into account the user preferences
     //and it's needed to avoid, for example, that the link "Home Folder" in the intro page is displayed in WebEnginePart
@@ -179,27 +179,32 @@ private:
     bool shouldOpenLocalUrl(const QUrl &url) const;
 
     /**
-     * @brief Function called when the part is forced to save an URL to disk.
+     * @brief Saves the given remote URL to disk and asks the browser to display it
      *
-     * This function should never be needed because the URL should be handled by the application itself.
-     * However, there can be cases in which this doesn't happen, in particular
-     * if there's something wrong with the system configuration and the application asks the part to
-     * handle something it can't display. In this case, it would work as follow:
-     * - the application asks the part to display the URL
-     * - the part can't display the URL, so a download is triggered, causing the openUrlRequest signal
-     *   to be emitted
-     * - the application receives the signal and decides that the part should handle the URL
-     * - the part can't display the URL and triggers a download
-     * - endless loop
+     * This is used in response to the "Save URL as" entry in the context menu
      *
-     * To avoid this situation, inside download(), the part checks whether it was asked to handle
-     * the URL by the application. In that case, it doesn't emit the openUrlRequest signal
-     * but calls this function to directly download the file to disk.
+     * The URL is saved using the \link KonqInterfaces::DownloaderInterface DownloaderInterface\endlink.
+     * The browser is asked to display the downloaded URL in a new tab and only if it
+     * can be embedded. This is to minimize disturbance for the user (which has already
+     * had to choose the download destination).
      *
-     * @param it the item describing the download
+     * @param req the object describing the download request
+     * @param args the `KParts::OpenUrlArguments` to pass when asking the browser to display the downloaded URL
+     * @param bArgs the `BrowserArguments` arguments to pass when asking the browser to display the downloaded URL
+     * @todo Instead of asking the browser to display the downloaded URL, show a message widget at the bottom with
+     * a button allowing the user to display the file and which disappears automatically after a time. It's similar
+     * to the way Chrome allows to quickly open a file after downloading it, but it is only done when the user
+     * explicitly asks to save the URL.
      */
-     void saveUrlToDisk(QWebEngineDownloadRequest *it);
-     void saveUrlUsingKIO(const QUrl &origUrl, const QUrl &destUrl);
+     void saveUrlToDiskAndDisplay(QWebEngineDownloadRequest *req, const KParts::OpenUrlArguments &args, const BrowserArguments &bArgs);
+
+     /**
+      * @brief Saves the page currently displayed and opens the local copy
+      *
+      * This is used in response to the "Save as" menu entry
+      * @param req the object describing the download request
+      */
+     void saveAs(QWebEngineDownloadRequest *req);
 
 private:
     enum WebEnginePageSecurity { PageUnencrypted, PageEncrypted, PageMixed };

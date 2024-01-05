@@ -14,6 +14,8 @@
 #include "navigationrecorder.h"
 #include "choosepagesaveformatdlg.h"
 
+#include "libkonq_utils.h"
+
 #include <QWebEngineView>
 #include <QWebEngineProfile>
 #include <QFileDialog>
@@ -50,28 +52,32 @@ WebEnginePartDownloadManager::~WebEnginePartDownloadManager()
 {
 }
 
-void WebEnginePartDownloadManager::setForceDownload(const QUrl& url, WebEnginePage *page)
+void WebEnginePartDownloadManager::specifyDownloadObjective(const QUrl& url, WebEnginePage *page, DownloadObjective objective)
 {
-    m_forcedDownloads.insert(url, page);
+    m_downloadObjectives.insert(url, {page, objective});
 }
 
-bool WebEnginePartDownloadManager::checkForceDownload(QWebEngineDownloadRequest *req, WebEnginePage *page)
+WebEnginePartDownloadManager::DownloadObjective WebEnginePartDownloadManager::fetchDownloadObjective(const QUrl &url, WebEnginePage* page)
 {
-    if (!page) {
-        return false;
+    DownloadObjective objective = DownloadObjective::OpenInApplication;
+    auto it = m_downloadObjectives.constFind(url);
+    if (it == m_downloadObjectives.constEnd()) {
+        return objective;
     }
-    bool force = m_forcedDownloads.remove(req->url(), page) != 0;
 
-    // Bookkeeping: remove any entry with an invalid page. Note that in most cases, m_forcedDownloads
-    // will be empty, since entries are usually added just before this is called indirectly from
-    // WebEnginePage::download. The line before this removes one entry from m_forcedDownloads, which
-    // usually will be the one just added, meaning m_forcedDownloads will be empty.
-    for (const QUrl &k : m_forcedDownloads.uniqueKeys()) {
-        m_forcedDownloads.remove(k, nullptr);
+    for (; it != m_downloadObjectives.constEnd() || it.key() != url; ++it) {
+        if (it.value().page == page) {
+            objective = it.value().downloadObjective;
+            break;
+        }
     }
-    if (force) {
-        return true;
+    if (it != m_downloadObjectives.constEnd()) {
+        m_downloadObjectives.remove(url, it.value());
     }
+    return objective;
+}
+
+static QStringList supportedMimetypes() {
 
     //Check whether the mimetypes is one known to be displayed by QtWebEngine itself. If so, it means
     //that the file should be saved (otherwise, QtWebEngine would have displayed it and not requested
@@ -94,7 +100,7 @@ bool WebEnginePartDownloadManager::checkForceDownload(QWebEngineDownloadRequest 
         QStringLiteral("text/xml"),
         QStringLiteral("text/markdown"),
     };
-    return s_supportedMimetypes.contains(req->mimeType());
+    return s_supportedMimetypes;
 }
 
 void WebEnginePartDownloadManager::addPage(WebEnginePage* page)
@@ -136,7 +142,14 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadRequest* it
         //can be problematic
         forceNew = true;
     }
-    bool forceDownload = checkForceDownload(it, page);
+
+    DownloadObjective objective = fetchDownloadObjective(it->url(), page);
+    //If the mimetype is supported and the objective is OpenInApplication, it means that, for whatever reason,
+    //QtWebEngine decided it doesn't want to display the URL: most likely, this means that it should be saved
+    //(for example, because of "attachment" Content-Disposition header)
+    if (objective == DownloadObjective::OpenInApplication && supportedMimetypes().contains(it->mimeType())) {
+        objective = DownloadObjective::SaveOnly;
+    }
 
     it->setDownloadDirectory(tempDownloadDir().path());
     QMimeDatabase db;
@@ -145,7 +158,7 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadRequest* it
     QString fileName = generateDownloadTempFileName(suggestedName, type.preferredSuffix());
     it->setDownloadFileName(fileName);
 
-    page->requestDownload(it, forceNew, forceDownload);
+    page->requestDownload(it, forceNew, objective);
 }
 
 QString WebEnginePartDownloadManager::generateDownloadTempFileName(const QString& suggestedName, const QString& ext)
@@ -208,6 +221,7 @@ void WebEnginePartDownloadManager::saveHtmlPage(QWebEngineDownloadRequest* it, W
 WebEngineDownloadJob::WebEngineDownloadJob(QWebEngineDownloadRequest* it, QObject* parent) : DownloaderJob(parent), m_downloadItem(it)
 {
     setCapabilities(KJob::Killable|KJob::Suspendable);
+    connect(this, &KJob::result, this, &WebEngineDownloadJob::emitDownloadResult);
     connect(m_downloadItem, &QWebEngineDownloadRequest::stateChanged, this, &WebEngineDownloadJob::stateChanged);
     setTotalAmount(KJob::Bytes, m_downloadItem->totalBytes());
     setFinishedNotificationHidden(true);
@@ -220,6 +234,11 @@ WebEngineDownloadJob::~WebEngineDownloadJob() noexcept
         m_downloadItem->deleteLater();
         m_downloadItem = nullptr;
     }
+}
+
+QUrl WebEngineDownloadJob::url() const
+{
+    return m_downloadItem ? m_downloadItem->url() : QUrl{};
 }
 
 void WebEngineDownloadJob::start()
@@ -359,4 +378,13 @@ bool WebEngineDownloadJob::setDownloadPath(const QString& path)
 bool WebEngineDownloadJob::canChangeDownloadPath() const
 {
     return m_downloadItem && m_downloadItem->state() == QWebEngineDownloadRequest::DownloadRequested;
+}
+
+void WebEngineDownloadJob::emitDownloadResult(KJob* job)
+{
+    //job is the same as this, except it's not cast to WebEngineDownloadJob
+    Q_UNUSED(job);
+
+    QUrl resultUrl = error() == 0 ? QUrl::fromLocalFile(downloadPath()) : Konq::makeErrorUrl(error(), errorText(), url());
+    emit downloadResult(this, resultUrl);
 }

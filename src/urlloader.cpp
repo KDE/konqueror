@@ -13,6 +13,8 @@
 #include "konqurl.h"
 #include "konqdebug.h"
 
+#include "libkonq_utils.h"
+
 #include "interfaces/downloaderextension.h"
 
 #include <KIO/OpenUrlJob>
@@ -91,12 +93,22 @@ UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url
     m_trustedSource(trustedSource),
     m_dontEmbed(dontEmbed),
     m_protocolAllowsReading(KProtocolManager::supportsReading(m_url) || !KProtocolInfo::isKnownProtocol(m_url)), // If the protocol is unknown, assume it allows reading
-    m_letRequestingPartDownloadUrl(req.letPartPerformDownload),
-    m_forceSave(m_request.args.metaData().contains(QStringLiteral("ForceSave")))
+    m_letRequestingPartDownloadUrl(req.letPartPerformDownload)
 {
+    //TODO KF6 after implementing a better way to allow the user to display a file after saving it locally
+    //(see comment for WebEnginePage::saveUrlToDiskAndDisplay in webenginepage.cpp), remove all references
+    //to embedOrNothing
+    m_embedOrNothing = m_request.args.metaData().contains(QStringLiteral("EmbedOrNothing"));
+
     getDownloaderJobFromPart();
     determineStartingMimetype();
     m_dontPassToWebEnginePart = m_request.args.metaData().contains("DontSendToDefaultHTMLPart");
+
+    //Obviously this shoud never happen
+    if (m_dontEmbed && m_embedOrNothing) {
+        qCDebug(KONQUEROR_LOG()) << "Conflicting requests for loading" << m_url << ": to never embed and to only embed. Nothing will be done";
+        m_action = OpenUrlAction::DoNothing;
+    }
 }
 
 UrlLoader::~UrlLoader()
@@ -179,11 +191,9 @@ void UrlLoader::decideAction()
         m_action = OpenUrlAction::Embed;
         return;
     }
-    if (m_forceSave) {
-        m_action = OpenUrlAction::Save;
-        return;
+    if (!m_embedOrNothing) {
+        m_action = decideExecute();
     }
-    m_action = decideExecute();
     switch (m_action) {
         case OpenUrlAction::Execute:
             m_ready = true;
@@ -192,15 +202,18 @@ void UrlLoader::decideAction()
             m_ready = true;
             return;
         default:
-            if (!isMimeTypeKnown(m_mimeType) && !m_protocolAllowsReading) {
+            if (!isMimeTypeKnown(m_mimeType) && !m_protocolAllowsReading && !m_embedOrNothing) {
                 //If the protocol doesn't allow reading and we don't have a mimetype associated with it,
                 //use the Open action, as we most likely won't be able to find out the mimetype. This is
                 //what happens, for example, for mailto URLs
                 m_action = OpenUrlAction::Open;
                 return;
-            } else if (isViewLocked() || shouldEmbedThis()) {
+            } else if (isViewLocked() || shouldEmbedThis() || m_embedOrNothing) {
                 bool success = decideEmbedOrSave();
-                if (success) {
+                if (success || m_embedOrNothing) {
+                    if (m_embedOrNothing && m_action != OpenUrlAction::Embed) {
+                        m_action = OpenUrlAction::DoNothing;
+                    }
                     return;
                 }
             }
@@ -299,7 +312,7 @@ bool UrlLoader::decideEmbedOrSave()
     //Ask whether to save or embed, except in the following cases:
     //- it's a web page: always embed
     //- it's a local file: always embed
-    if (embedWithoutAskingToSave(m_mimeType) || m_url.isLocalFile()) {
+    if (embedWithoutAskingToSave(m_mimeType) || m_url.isLocalFile() || m_embedOrNothing) {
         m_action = OpenUrlAction::Embed;
     } else {
         m_action = askSaveOrOpen(OpenEmbedMode::Embed).first;
@@ -442,25 +455,22 @@ void UrlLoader::downloadForEmbeddingOrOpening()
         done();
         return;
     }
-    m_partDownloaderJob->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
-    KJobTrackerInterface *t = KIO::getJobTracker();
-    if (t) {
-        t->registerJob(m_partDownloaderJob);
-    }
-    connect(m_partDownloaderJob, &KJob::result, this, &UrlLoader::downloadForEmbeddingOrOpeningDone);
-    connect(m_partDownloaderJob, &KJob::result, this, &UrlLoader::jobFinished);
-    m_partDownloaderJob->start();
+    connect(m_partDownloaderJob, &DownloaderJob::downloadResult, this, &UrlLoader::jobFinished);
+#if QT_VERSION_MAJOR < 6
+    //In KF5, DownloaderJob::startDownload doesn't connect to the signal
+    connect(m_partDownloaderJob, &DownloaderJob::downloadResult, this, &UrlLoader::downloadForEmbeddingOrOpeningDone);
+#endif
+    m_partDownloaderJob->startDownload(m_mainWindow, this, &UrlLoader::downloadForEmbeddingOrOpeningDone);
 }
 
-void UrlLoader::downloadForEmbeddingOrOpeningDone(KJob* job)
+void UrlLoader::downloadForEmbeddingOrOpeningDone(KonqInterfaces::DownloaderJob *job, const QUrl &url)
 {
-    DownloaderJob *dj = qobject_cast<DownloaderJob*>(job);
-    if (dj && dj->error() == 0) {
+    if (job && job->error() == 0) {
         QUrl origUrl(m_url);
-        m_url = QUrl::fromLocalFile(dj->downloadPath());
+        m_url = url;
         m_ready = true;
         m_request.tempFile = true;
-    } else if (!dj || dj->error() == KIO::ERR_USER_CANCELED) {
+    } else if (!job || job->error() == KIO::ERR_USER_CANCELED) {
         m_action = OpenUrlAction::DoNothing;
         m_ready = true;
     }
@@ -502,7 +512,7 @@ void UrlLoader::done(KJob *job)
         jobFinished(job);
     }
     emit finished(this);
-    //If we reach here and m_partDownloaderJob->finished() is false, it means the job hasn' been started in the first place,
+    //If we reach here and m_partDownloaderJob->finished() is false, it means the job hasn't been started in the first place,
     //(because the user canceled the download), so kill it
     if (m_partDownloaderJob && !m_partDownloaderJob->finished()) {
         m_partDownloaderJob->kill();
@@ -684,7 +694,7 @@ void UrlLoader::embed()
         m_part = findPartById(QStringLiteral("webenginepart"));
     }
     bool embedded = m_mainWindow->openView(m_mimeType, m_url, m_view, m_request);
-    if (embedded) {
+    if (embedded || m_embedOrNothing) {
         done();
     } else {
         decideOpenOrSave();
@@ -716,12 +726,15 @@ void UrlLoader::performSave(const QUrl& orig, const QUrl& dest)
     if (m_letRequestingPartDownloadUrl) {
         getDownloaderJobFromPart();
         if (m_partDownloaderJob) {
-            m_partDownloaderJob->setDownloadPath(dest.path());
+#if QT_VERSION_MAJOR < 6
+            //In KF5, DownloaderJob::startDownload doesn't connect to the signal
+            connect(m_partDownloaderJob, &DownloaderJob::downloadResult, this, [this](DownloaderJob *j){done(j);});
+#endif
+            m_partDownloaderJob->startDownload(dest.path(), m_mainWindow, this, [this](DownloaderJob *j){done(j);});
+            return;
         }
-        job = m_partDownloaderJob;
-    } else {
-        KIO::file_copy(orig, dest, -1, KIO::Overwrite);
     }
+    job = KIO::file_copy(orig, dest, -1, KIO::Overwrite);
     if (!job) {
         done();
         return;

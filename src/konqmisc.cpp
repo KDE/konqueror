@@ -11,6 +11,8 @@
 #include "konqmainwindowfactory.h"
 #include "konqurl.h"
 
+#include "libkonq_utils.h"
+
 #include "konqdebug.h"
 #include <kurifilter.h>
 #include <KLocalizedString>

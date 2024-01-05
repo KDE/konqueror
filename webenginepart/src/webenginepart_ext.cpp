@@ -19,6 +19,8 @@
 #include "webenginepartcontrols.h"
 #include "webenginepartdownloadmanager.h"
 
+#include "libkonq_utils.h"
+
 #include <QWebEngineSettings>
 
 #include <KDesktopFile>
@@ -255,7 +257,8 @@ void WebEngineNavigationExtension::slotSaveDocument()
 {
     WebEnginePage *pg = page();
     if (pg) {
-        WebEnginePartControls::self()->downloadManager()->setForceDownload(pg->url(), pg);
+        WebEnginePartControls::self()->downloadManager()->specifyDownloadObjective(pg->url(), pg,
+            WebEnginePartDownloadManager::DownloadObjective::SaveAs);
         pg->download(pg->url());
     }
 }
@@ -552,7 +555,8 @@ void WebEngineNavigationExtension::slotSaveLinkAs(const QUrl &url)
     if (!url.isEmpty()) {
         WebEnginePage *pg = qobject_cast<WebEnginePage*>(view()->page());
         if (pg) {
-            WebEnginePartControls::self()->downloadManager()->setForceDownload(url, pg);
+            WebEnginePartControls::self()->downloadManager()->specifyDownloadObjective(url,
+                pg, WebEnginePartDownloadManager::DownloadObjective::SaveOnly);
         }
     }
     view()->triggerPageAction(QWebEnginePage::DownloadLinkToDisk);
@@ -669,7 +673,8 @@ void WebEngineNavigationExtension::slotSaveMedia()
     }
     if (pg) {
         if (data->mediaUrl().isValid()) {
-            WebEnginePartControls::self()->downloadManager()->setForceDownload(data->mediaUrl(), pg);
+            WebEnginePartControls::self()->downloadManager()->specifyDownloadObjective(data->mediaUrl(), pg,
+                WebEnginePartDownloadManager::DownloadObjective::SaveOnly);
         }
         pg->triggerAction(QWebEnginePage::DownloadMediaToDisk);
     }

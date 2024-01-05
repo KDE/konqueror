@@ -180,7 +180,7 @@ private slots:
      *
      * @param job the DownloaderJob used by the part to download the URL
      */
-    void downloadForEmbeddingOrOpeningDone(KJob *job);
+    void downloadForEmbeddingOrOpeningDone(KonqInterfaces::DownloaderJob *job, const QUrl &url);
 
 private:
 
@@ -352,7 +352,20 @@ private:
     bool m_dontPassToWebEnginePart;
     bool m_protocolAllowsReading;
     bool m_letRequestingPartDownloadUrl = false; ///<Whether the URL should be downloaded by the part before opening/embedding/saving it
-    bool m_forceSave; ///<Whether the part explicitly asked for the URL to be saved
+    /**
+     * @brief Whether only the `embed` action is allowed
+     *
+     * If `true`, the only action performed will be to embed the URL. If that action can't be performed for any reason (including
+     * not having an available part able to display the URL or an error happening), nothing will be done (including displaying error messages).
+     *
+     * This variable is set if the metadata in the `KonqOpenURLRequest` passed to the constructor contains the `"EmbedOrNothing"` entry.
+     *
+     * @note This is a workaround to allow WebEnginePart to display a downloaded file without risking asking again the user to save
+     *
+     * @todo Remove this after a better way to allow the user to quickly display a file after downloading it has been implemented. See comment
+     * for WebEnginePage::saveUrlToDiskAndDisplay
+     */
+    bool m_embedOrNothing = false;
 };
 
 QDebug operator<<(QDebug dbg, UrlLoader::OpenUrlAction action);

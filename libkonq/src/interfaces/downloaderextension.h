@@ -11,6 +11,7 @@
 #include <KParts/OpenUrlArguments>
 
 #include <QObject>
+#include <QUrl>
 
 #include "browserarguments.h"
 
@@ -23,6 +24,8 @@ namespace KParts {
 }
 
 namespace KonqInterfaces {
+
+class DownloaderJob;
 
 /**
  * @brief Interface for parts which need to download files themselves before they're opened or embedded instead of letting Konqueror do it
@@ -76,7 +79,7 @@ public:
      * this should never happen, unless this method is called for an URL for which the part didn't request
      * a download.
      */
-    virtual class DownloaderJob* downloadJob(const QUrl &url, quint32 id, QObject *parent=nullptr)=0;
+    virtual DownloaderJob* downloadJob(const QUrl &url, quint32 id, QObject *parent=nullptr)=0;
 
     /**
      * @brief The part associated with the extension
@@ -166,7 +169,94 @@ public:
      * @brief Whether or not the download has finished
      */
     virtual bool finished() const = 0;
+
+    /**
+     * @brief The URL to download
+     * @return the URL to download
+     */
+    virtual QUrl url() const = 0;
+
+    /**
+     * @brief Convenience function to start the download
+     *
+     * This sets the job up, setting the Ui delegate and the job tracker interface for the job and changing the
+     * download path, connects the \link DownloaderJob::downloadResult downloadResult \endlink signal to the given
+     * functor and starts the job.
+     *
+     * @param destPath the path where the URL should be downloaded. If empty, the download path won't be changed
+     * @param widget the widget to use for the Ui delegate
+     * @param context the receiver or the context of the signal (depending on whether functor is actually a lambda or functor
+     *  or a pointer to member function)
+     * @param functor the lambda, functor or pointer to member function to connect to the
+     * \link DownloaderJob::downloadResult downloadResult \endlink signal
+     * @warning In Qt5, functor cannot be a member function. If it is, no connection is done
+     */
+    template <typename Functor>
+    void startDownload(const QString &destPath, QWidget *widget, QObject *context, Functor functor);
+
+    /**
+     * @brief Convenience function to start the download
+     *
+     * @overload
+     *
+     * As startDownload(const QString &, QWidget*, QObject*, Functor), except that it doesn't change the download path
+     * @see startDownload(const QString &, QWidget*, QObject*, Functor)
+     */
+    template <typename Functor>
+    void startDownload(QWidget *widget, QObject *context, Functor functor);
+
+private:
+
+    /**
+     * @brief Helper function called by startDownload()
+     *
+     * It sets up the job UI delegate and tracker interface and, optionally, changes the
+     * download destination.
+     *
+     * @param widget the widget to use for the Ui delegate
+     * @param destPath the new download destination. If empty, the download destination won't be changed
+     */
+    void prepareDownloadJob(QWidget *widget, const QString &destPath={});
+
+signals:
+
+    /**
+     * @brief Signal emitted when a download has finished
+     *
+     * This is a convenience signal which is emitted in response to `KJob::result()`. It
+     * provides a the job already cast to DownoaderJob and the local URL where the remote
+     * URL was saved to. You can connect to this signal as you would to `KJob::result()`.
+     *
+     * @param job a pointer to the job. It's the same as the `job` argument in `KJob::result()`
+     * but you don't need to cast it to a DownloaderJob
+     * @param url the URL where the remote URL was saved to. There are three possibilities:
+     *  - if an error occurred, it will have the `error` scheme
+     *  - if the user canceled the download, it will be empty
+     *  - if the download was completed successfully, it will be a local URL
+     */
+    void downloadResult(DownloaderJob *job, const QUrl &url);
 };
+}
+
+template<typename Functor>
+void KonqInterfaces::DownloaderJob::startDownload(const QString& destPath, QWidget* widget, QObject* context, Functor functor)
+{
+    prepareDownloadJob(widget, destPath);
+//With KF5, this call doesn't compile
+#if QT_VERSION_MAJOR > 5
+    connect(this, &DownloaderJob::downloadResult, context, functor);
+#endif
+    start();
+}
+template<typename Functor>
+void KonqInterfaces::DownloaderJob::startDownload(QWidget* widget, QObject* context, Functor functor)
+{
+    prepareDownloadJob(widget, {});
+//With KF5, this call doesn't compile
+#if QT_VERSION_MAJOR > 5
+    connect(this, &DownloaderJob::downloadResult, context, functor);
+#endif
+    start();
 }
 
 #endif // DOWNLOADEREXTENSION_H
