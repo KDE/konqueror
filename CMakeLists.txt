@@ -70,7 +70,7 @@ add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
 cmake_dependent_option(DontUseKCookieJar "Don't use KCookieJar to manage cookies" FALSE "QT_MAJOR_VERSION STREQUAL 5" TRUE)
 if(DontUseKCookieJar)
-add_compile_definitions(-DMANAGE_COOKIES_INTERNALLY)
+add_compile_definitions(MANAGE_COOKIES_INTERNALLY)
 else()
 endif()
 
