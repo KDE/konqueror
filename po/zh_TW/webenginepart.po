@@ -5,13 +5,13 @@
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2018, 2020.
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2009, 2010.
-# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-03 01:36+0000\n"
-"PO-Revision-Date: 2023-12-24 06:31+0900\n"
+"PO-Revision-Date: 2024-01-05 04:42+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -184,7 +184,7 @@ msgid "Tips & Tricks"
 msgstr "小提示 & 技巧"
 
 #: src/about/konq_aboutpage.cpp:204
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, using "
 "Google, for the search phrase \"KDE\". There are a lot of Web-Shortcuts "
@@ -192,8 +192,9 @@ msgid ""
 "encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-"
 "Shortcuts."
 msgstr ""
-"使用網路快捷鍵：輸入「gg: KDE」能使用 Google 在網路搜尋「KDE」搜尋片語。此處"
-"有許多預先定義的網路快捷鍵"
+"使用網路捷徑：輸入「gg: KDE」能使用 Google 在網路搜尋「KDE」搜尋片語。已經有"
+"許多網路捷徑已經預先定義了，讓查詢軟體或在百科全書裡查詢單詞非常簡單。您甚至"
+"可以<a href=\"%1\">建立您自己的</a>網路捷徑。"
 
 #: src/about/konq_aboutpage.cpp:209
 #, kde-format
@@ -587,76 +588,52 @@ msgid "&Grant permission"
 msgstr "給予權限(&G)"
 
 #: src/ui/featurepermissionbar.cpp:57
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid "<html><b>%1</b> would like to send you notifications"
-msgstr "<html>您允許站台存取關於您目前所在位置的資訊嗎？"
+msgstr "<html><b>%1</b> 希望傳送通知給您"
 
 #: src/ui/featurepermissionbar.cpp:59
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access information about your current physical "
 "location"
-msgstr "<html>您允許站台存取關於您目前所在位置的資訊嗎？"
+msgstr "<html><b>%1</b> 希望存取關於您目前物理位置的資訊"
 
 #: src/ui/featurepermissionbar.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your microphone and other audio capture "
 "devices"
-msgstr "<html>您允許站台存取關於您目前所在位置的資訊嗎？"
+msgstr "<html><b>%1</b> 希望存取您的麥克風和其他音訊擷取裝置"
 
 #: src/ui/featurepermissionbar.cpp:63
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your camera and other video capture "
 "devices"
-msgstr "<html>您允許站台存取關於您目前所在位置的資訊嗎？"
+msgstr "<html><b>%1</b> 希望存取您的相機和其他視訊擷取裝置"
 
 #: src/ui/featurepermissionbar.cpp:65
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access to your microphone, camera and other "
 "audio and video capture devices"
-msgstr "<html>您允許站台存取關於您目前所在位置的資訊嗎？"
+msgstr "<html><b>%1</b> 希望存取您的麥克風、相機和其他音訊與視訊擷取裝置"
 
 #: src/ui/featurepermissionbar.cpp:67
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
-msgstr "<qt>您允許此站台附加這些檔案在信件中嗎？</qt>"
+msgstr "<html><b>%1</b> 希望將您的滑鼠鎖在網頁中"
 
 #: src/ui/featurepermissionbar.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid "<html><b>%1</b> would like to record your screen"
-msgstr "<html>您允許站台存取關於您目前所在位置的資訊嗎？"
+msgstr "<html><b>%1</b> 希望能夠錄製您的螢幕"
 
 #: src/ui/featurepermissionbar.cpp:71
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid "<html><b>%1</b> would like to record your screen and your audio"
-msgstr "<html>您允許站台存取關於您目前所在位置的資訊嗎？"
+msgstr "<html><b>%1</b> 希望能夠錄製您的螢幕和音訊"
 
 #: src/ui/passwordbar.cpp:29
 #, kde-format
@@ -1096,32 +1073,29 @@ msgid "&Fill forms now"
 msgstr "現在填入表單(&F)"
 
 #: src/webenginepart.cpp:1010
-#, fuzzy, kde-format
-#| msgid "Remove all cached passwords for this site"
+#, kde-format
 msgid "&Memorize Passwords in This Page Now"
-msgstr "移除此站台所有的快取住的密碼"
+msgstr "現在記住這個頁面的密碼(&M)"
 
 #: src/webenginepart.cpp:1014
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
-msgstr ""
+msgstr "自訂要為此頁面記住的欄位(&C)…"
 
 #: src/webenginepart.cpp:1018
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
-msgstr ""
+msgstr "移除此頁面記住欄位的設定"
 
 #: src/webenginepart.cpp:1022
-#, fuzzy, kde-format
-#| msgid "&Allow password caching for this site"
+#, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "允許此站台使用密碼快取(&A)"
 
 #: src/webenginepart.cpp:1026
-#, fuzzy, kde-format
-#| msgid "Remove all cached passwords for this site"
+#, kde-format
 msgid "Remove All Memorized Passwords for This Site"
-msgstr "移除此站台所有的快取住的密碼"
+msgstr "移除所有為此站台記住的密碼"
 
 #: src/webenginepart.cpp:1030
 #, kde-format
@@ -1197,16 +1171,13 @@ msgid "Yes, &forever"
 msgstr "是，永遠(&F)"
 
 #: src/webenginepartcertificateerrordlg.cpp:54
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The server failed the authenticity check (%1). The error is:</p><p><tt>"
-#| "%2</tt></p>Do you want to ignore this error?"
+#, kde-format
 msgid ""
 "<p>The server <tt>%1</tt> failed the authenticity check. The error is:</"
 "p><p><tt>%2</tt></p>Do you want to ignore this error?"
 msgstr ""
-"<p>伺服器未通過真實性檢查 (%1)。錯誤為：</p><p><tt>%2</tt></p>是否忽略此錯"
-"誤？"
+"<p>伺服器 <tt>%1</tt> 未能通過真實性檢查。錯誤是：</p><p><tt>%2</tt></p>您要"
+"忽略此錯誤嗎？"
 
 #: src/webenginepartcertificateerrordlg.cpp:60
 #, kde-format
@@ -1243,12 +1214,12 @@ msgstr "配發者(&I)"
 msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
 "default style sheet will be used"
-msgstr ""
+msgstr "無法開啟包含使用者樣式表的檔案 <tt>%1</tt>。會使用預設樣式表"
 
 #: src/webenginepartdownloadmanager.cpp:286
 #, kde-format
 msgid "An error occurred while saving the file: %1"
-msgstr ""
+msgstr "儲存檔案時發生錯誤：%1"
 
 #: src/webenginepartdownloadmanager.cpp:297
 #, kde-format
@@ -1505,6 +1476,9 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
+"<ul><li><b>欄位內部名稱：</b>%1</li><li><b>欄位形態：</b>%2</li><li><b>欄位 "
+"ID：</b>%3</li><li><b>欄位是唯讀的：</b>%4</li><li><b>欄位已啟用：</b>%5</"
+"li><li><b>自動完成已啟用：</b>%6</li></ul>"
 
 #~ msgid "Specifications"
 #~ msgstr "規範"
