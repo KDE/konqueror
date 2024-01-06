@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:36+0000\n"
+"POT-Creation-Date: 2024-01-06 01:33+0000\n"
 "PO-Revision-Date: 2013-10-04 03:20+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -806,12 +806,12 @@ msgstr ""
 msgid "&Immediately memorize form data"
 msgstr ""
 
-#: src/webenginepage.cpp:154 src/webenginepage.cpp:178
+#: src/webenginepage.cpp:157 src/webenginepage.cpp:181
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Орнатылымыңызда жүктеу менеджер (%1) бағдарламасы табылмады."
 
-#: src/webenginepage.cpp:155 src/webenginepage.cpp:179
+#: src/webenginepage.cpp:158 src/webenginepage.cpp:182
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -822,7 +822,7 @@ msgstr ""
 "\n"
 "Әзірше енді онымен бірігіп істтеу бұғатталады."
 
-#: src/webenginepage.cpp:384
+#: src/webenginepage.cpp:442
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -835,12 +835,12 @@ msgstr ""
 "тағы бір рет сатып алмау үшін Қайту дегенді басыңыз. Әйтпесе, жәй жаңарту "
 "үшін Жалғастыру дегенді басыңыз."
 
-#: src/webenginepage.cpp:391
+#: src/webenginepage.cpp:449
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Ақпаратты қайта жіберу"
 
-#: src/webenginepage.cpp:593
+#: src/webenginepage.cpp:651
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -849,18 +849,18 @@ msgstr ""
 "Бұл сайт физикалық қай жердеңізді білуге әрекет жасап жатыр.\n"
 "Ол мәліметке қатынау рұқсат па?"
 
-#: src/webenginepage.cpp:597 src/webenginepage.cpp:675
-#: src/webenginepage.cpp:686
+#: src/webenginepage.cpp:655 src/webenginepage.cpp:733
+#: src/webenginepage.cpp:744
 #, kde-format
 msgid "Network Transmission"
 msgstr "Желі арқылы беру"
 
-#: src/webenginepage.cpp:598
+#: src/webenginepage.cpp:656
 #, kde-format
 msgid "Allow access"
 msgstr "Қатынауға рұқсат"
 
-#: src/webenginepage.cpp:668
+#: src/webenginepage.cpp:726
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -873,12 +873,12 @@ msgstr ""
 "Бөтендер бұл ашық ақпаратты сығалауы мүмкін.\n"
 "Бола берсін бе?"
 
-#: src/webenginepage.cpp:676
+#: src/webenginepage.cpp:734
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Шифрламай жіберу"
 
-#: src/webenginepage.cpp:683
+#: src/webenginepage.cpp:741
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -887,12 +887,12 @@ msgstr ""
 "Бұл сайт деректер пішінді эл.пошта арқылы жіберуге әрекет жасап жатыр.\n"
 "Бола берсін бе?"
 
-#: src/webenginepage.cpp:687
+#: src/webenginepage.cpp:745
 #, kde-format
 msgid "&Send Email"
 msgstr "&Эл.поштаны жіберу"
 
-#: src/webenginepage.cpp:736
+#: src/webenginepage.cpp:794
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -901,22 +901,22 @@ msgstr ""
 "<qt>Бұл сайтқа эл.пошта хатқа келесі файлдарды тіркемелеп жіберуге рұқсат "
 "бересіз бе?</qt>"
 
-#: src/webenginepage.cpp:738
+#: src/webenginepage.cpp:796
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Эл.пошта тіркемесі қылуды құптау"
 
-#: src/webenginepage.cpp:739
+#: src/webenginepage.cpp:797
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Тіркемелеуі рұқсат"
 
-#: src/webenginepage.cpp:740
+#: src/webenginepage.cpp:798
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Тіркемелеуге рұқсат жоқ"
 
-#: src/webenginepage.cpp:754
+#: src/webenginepage.cpp:812
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -925,12 +925,12 @@ msgstr ""
 "Сайтқа жіберу пішіміндегі деректерге жергілікті файлды тіркеу әрекеті. "
 "Қауіпсіздігіңіз үшін тіркелген файл жойылды."
 
-#: src/webenginepage.cpp:757
+#: src/webenginepage.cpp:815
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Тіркемесі өшірілді"
 
-#: src/webenginepage.cpp:897
+#: src/webenginepage.cpp:955
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -939,7 +939,7 @@ msgstr ""
 "Бұл сайт жаңа қалқымалы терезе ашу әрекетін жасауда.\n"
 "Бұны рұқсат етесіз бе?"
 
-#: src/webenginepage.cpp:899
+#: src/webenginepage.cpp:957
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -948,17 +948,17 @@ msgstr ""
 "<qt>Бұл сайт <p>%1</p>дегенге қалқымалы терезе ашу әрекетін жасауда.<br/"
 ">Бұны рұқсат етесіз бе?</qt>"
 
-#: src/webenginepage.cpp:903
+#: src/webenginepage.cpp:961
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript қалқымалыны құптау"
 
-#: src/webenginepage.cpp:904
+#: src/webenginepage.cpp:962
 #, kde-format
 msgid "Allow"
 msgstr "Құп"
 
-#: src/webenginepage.cpp:905
+#: src/webenginepage.cpp:963
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Рұқсат жоқ"
@@ -1185,17 +1185,17 @@ msgstr ""
 msgid "HTML Toolbar"
 msgstr "HTML құралдары"
 
-#: src/webenginepart_ext.cpp:276
+#: src/webenginepart_ext.cpp:279
 #, kde-format
 msgid "Print Document"
 msgstr ""
 
-#: src/webenginepart_ext.cpp:501
+#: src/webenginepart_ext.cpp:504
 #, kde-format
 msgid "Add URL to Filter"
 msgstr "URL сілтемені сүзгіге қосу"
 
-#: src/webenginepart_ext.cpp:502
+#: src/webenginepart_ext.cpp:505
 #, kde-format
 msgid "Enter the URL:"
 msgstr "URL-ді келтіріңіз:"
@@ -1261,31 +1261,31 @@ msgid ""
 "default style sheet will be used"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:286
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:297
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:298
+#: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:299
+#: src/webenginepartdownloadmanager.cpp:318
 #, fuzzy, kde-format
 #| msgid "Description:"
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Сипаттамасы:"
 
-#: src/webenginepartdownloadmanager.cpp:330
+#: src/webenginepartdownloadmanager.cpp:349
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

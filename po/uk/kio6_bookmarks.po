@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio5_bookmarks\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2024-01-06 01:33+0000\n"
 "PO-Revision-Date: 2020-10-31 08:56+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -20,27 +20,27 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 20.11.70\n"
 
-#: kio_bookmarks.cpp:85
+#: kio_bookmarks.cpp:87
 #, kde-format
 msgid "Root"
 msgstr "Корінь"
 
-#: kio_bookmarks.cpp:118
+#: kio_bookmarks.cpp:120
 #, kde-format
 msgid "Places"
 msgstr "Місця"
 
-#: kio_bookmarks.cpp:194
+#: kio_bookmarks.cpp:196
 #, kde-format
 msgid "Could not find bookmarks config"
 msgstr "Не вдалося знайти налаштування закладок"
 
-#: kio_bookmarks.cpp:204
+#: kio_bookmarks.cpp:206
 #, kde-format
 msgid "Could not find bookmarks editor"
 msgstr "Не вдалося знайти редактор закладок"
 
-#: kio_bookmarks.cpp:210
+#: kio_bookmarks.cpp:212
 #, kde-format
 msgid "Wrong request: %1"
 msgstr "Помилковий запит: %1"
