@@ -1115,7 +1115,7 @@ void KonqViewManager::loadRootItem(const KConfigGroup &cfg, KonqFrameContainerBa
     // from profile loading (e.g. in switchView)
     m_bLoadingProfile = true;
 
-    loadItem(cfg, parent, rootItem, defaultURL, openUrl, forcedUrl, forcedService, openAfterCurrentPage, pos);
+    loadItem(cfg, parent, rootItem, {defaultURL, forcedUrl, forcedService, openUrl}, openAfterCurrentPage, pos);
 
     m_bLoadingProfile = false;
 
@@ -1136,9 +1136,7 @@ void KonqViewManager::loadRootItem(const KConfigGroup &cfg, KonqFrameContainerBa
 }
 
 void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *parent,
-                               const QString &name, const QUrl &defaultURL, bool openUrl,
-                               const QUrl &forcedUrl,
-                               const QString &forcedService,
+                               const QString &name, const LoadViewUrlData &viewData,
                                bool openAfterCurrentPage, int pos)
 {
     QString prefix;
@@ -1151,164 +1149,13 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
 #endif
 
     if (name.startsWith(QLatin1String("View")) || name == QLatin1String("empty")) {
-        // load view config
-
-        QString serviceType;
-        QString serviceName;
-        if (name == QLatin1String("empty")) {
-            // An empty profile is an empty KHTML part. Makes all KHTML actions available, avoids crashes,
-            // makes it easy to DND a URL onto it, and makes it fast to load a website from there.
-            serviceType = QStringLiteral("text/html");
-            serviceName = forcedService; // coming e.g. from the cmdline, otherwise empty
-        } else {
-            serviceType = cfg.readEntry(QStringLiteral("ServiceType").prepend(prefix), QStringLiteral("inode/directory"));
-            serviceName = cfg.readEntry(QStringLiteral("ServiceName").prepend(prefix), QString());
-            if (serviceName == QLatin1String("konq_aboutpage")) {
-                if ((!forcedUrl.isEmpty() && !KonqUrl::hasKonqScheme(forcedUrl)) ||
-                        (forcedUrl.isEmpty() && openUrl == false)) { // e.g. window.open
-                    // No point in loading the about page if we're going to replace it with a KHTML part right away
-                    serviceType = QStringLiteral("text/html");
-                    serviceName = forcedService; // coming e.g. from the cmdline, otherwise empty
-                }
-            }
-        }
-
-        //qCDebug(KONQUEROR_LOG) << "serviceType" << serviceType << serviceName;
-
-        bool passiveMode = cfg.readEntry(QStringLiteral("PassiveMode").prepend(prefix), false);
-
-        //qCDebug(KONQUEROR_LOG) << "Creating View Stuff; parent=" << parent;
-        if (parent == m_pMainWindow) {
-            parent = tabContainer();
-        }
-
-        QUrl url;
-        if (openUrl) {
-            const QString urlKey = QStringLiteral("URL").prepend(prefix);
-            if (cfg.hasKey(urlKey)) {
-                url = QUrl(cfg.readPathEntry(urlKey, KonqUrl::string(KonqUrl::Type::Blank)));
-            } else {
-                url = defaultURL;
-            }
-        }
-
-        bool lockedLocation = cfg.readEntry(QStringLiteral("LockedLocation").prepend(prefix), false);
-        bool linkedView = cfg.readEntry(QStringLiteral("LinkedView").prepend(prefix), false);
-        const bool isToggleView = cfg.readEntry(QStringLiteral("ToggleView").prepend(prefix), false);
-
-        KonqView *childView = nullptr;
-        if (parent->frameType() == KonqFrameBase::Tabs) {
-            childView = setupView(parent, passiveMode, openAfterCurrentPage, pos);
-            childView->storeDelayedLoadingData(serviceType, serviceName, openUrl, url, lockedLocation, cfg, prefix);
-        }
-        else {
-            KPluginMetaData service;
-            QVector<KPluginMetaData> partServiceOffers;
-            KService::List appServiceOffers;
-            KonqFactory konqFactory;
-            KonqViewFactory viewFactory = konqFactory.createView(serviceType, serviceName, &service, &partServiceOffers, &appServiceOffers, true /*forceAutoEmbed*/);
-            if (viewFactory.isNull()) {
-                qCWarning(KONQUEROR_LOG) << "Profile Loading Error: View creation failed";
-                return; //ugh..
-            }
-            childView = setupView(parent, viewFactory, service, partServiceOffers, appServiceOffers, serviceType, passiveMode, openAfterCurrentPage, pos);
-            if (openUrl) {
-                restoreHistoryInLoadedView(childView, cfg, prefix, defaultURL, serviceType);
-            }
-        }
-
-        if (!childView->isFollowActive()) {
-            childView->setLinkedView(linkedView);
-        }
-        childView->setToggleView(isToggleView);
-        if (isToggleView /*100373*/ || !cfg.readEntry(QStringLiteral("ShowStatusBar").prepend(prefix), true)) {
-            childView->frame()->statusbar()->hide();
-        }
-
-        if (parent == m_tabContainer && m_tabContainer->count() == 1) {
-            // First tab, make it the active one
-            parent->setActiveChild(childView->frame());
-        }
+        loadViewItem(cfg, prefix, parent, name, viewData, openAfterCurrentPage, pos);
     } else if (name.startsWith(QLatin1String("Container"))) {
         //qCDebug(KONQUEROR_LOG) << "Item is Container";
-
-        //load container config
-        QString ostr = cfg.readEntry(QStringLiteral("Orientation").prepend(prefix), QString());
-        //qCDebug(KONQUEROR_LOG) << "Orientation:" << ostr;
-        Qt::Orientation o;
-        if (ostr == QLatin1String("Vertical")) {
-            o = Qt::Vertical;
-        } else if (ostr == QLatin1String("Horizontal")) {
-            o = Qt::Horizontal;
-        } else {
-            qCWarning(KONQUEROR_LOG) << "Profile Loading Error: No orientation specified in" << name;
-            o = Qt::Horizontal;
-        }
-
-        QList<int> sizes =
-            cfg.readEntry(QStringLiteral("SplitterSizes").prepend(prefix), QList<int>());
-
-        int index = cfg.readEntry(QStringLiteral("activeChildIndex").prepend(prefix), -1);
-
-        QStringList childList = cfg.readEntry(QStringLiteral("Children").prepend(prefix), QStringList());
-        if (childList.count() < 2) {
-            qCWarning(KONQUEROR_LOG) << "Profile Loading Error: Less than two children in" << name;
-            // fallback to defaults
-            loadItem(cfg, parent, QStringLiteral("InitialView"), defaultURL, openUrl, forcedUrl, forcedService);
-        } else {
-            KonqFrameContainer *newContainer = new KonqFrameContainer(o, parent->asQWidget(), parent);
-
-            int tabindex = pos;
-            if (openAfterCurrentPage && parent->frameType() == KonqFrameBase::Tabs) { // Need to honor it, if possible
-                tabindex = static_cast<KonqFrameTabs *>(parent)->currentIndex() + 1;
-            }
-            parent->insertChildFrame(newContainer, tabindex);
-
-            loadItem(cfg, newContainer, childList.at(0), defaultURL, openUrl, forcedUrl, forcedService);
-            loadItem(cfg, newContainer, childList.at(1), defaultURL, openUrl, forcedUrl, forcedService);
-
-            //qCDebug(KONQUEROR_LOG) << "setSizes" << sizes;
-            newContainer->setSizes(sizes);
-
-            if (index == 1) {
-                newContainer->setActiveChild(newContainer->secondChild());
-            } else if (index == 0) {
-                newContainer->setActiveChild(newContainer->firstChild());
-            }
-
-            newContainer->show();
-        }
+        loadContainerItem(cfg, prefix, parent, name, openAfterCurrentPage, pos, viewData);
     } else if (name.startsWith(QLatin1String("Tabs"))) {
         //qCDebug(KONQUEROR_LOG) << "Item is a Tabs";
-
-        int index = cfg.readEntry(QStringLiteral("activeChildIndex").prepend(prefix), 0);
-        if (!m_tabContainer) {
-            createTabContainer(parent->asQWidget(), parent);
-            parent->insertChildFrame(m_tabContainer);
-        }
-
-        const QStringList childList = cfg.readEntry(QStringLiteral("Children").prepend(prefix), QStringList());
-        for (QStringList::const_iterator it = childList.begin(); it != childList.end(); ++it) {
-            loadItem(cfg, tabContainer(), *it, defaultURL, openUrl, forcedUrl, forcedService);
-            QWidget *currentPage = m_tabContainer->currentWidget();
-            if (currentPage != nullptr) {
-                KonqView *activeChildView = dynamic_cast<KonqFrameBase *>(currentPage)->activeChildView();
-                if (activeChildView != nullptr) {
-                    activeChildView->setCaption(activeChildView->caption());
-                    activeChildView->setTabIcon(activeChildView->url());
-                }
-            }
-        }
-
-        QWidget *w = m_tabContainer->widget(index);
-        if (w) {
-            m_tabContainer->setActiveChild(dynamic_cast<KonqFrameBase *>(w));
-            m_tabContainer->setCurrentIndex(index);
-            m_tabContainer->show();
-        } else {
-            qCWarning(KONQUEROR_LOG) << "Profile Loading Error: Unknown current item index" << index;
-        }
-
+        loadTabsItem(cfg, prefix, parent, viewData);
     } else {
         qCWarning(KONQUEROR_LOG) << "Profile Loading Error: Unknown item" << name;
     }
@@ -1316,7 +1163,190 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
     //qCDebug(KONQUEROR_LOG) << "end" << name;
 }
 
-void KonqViewManager::restoreHistoryInLoadedView(KonqView* view, const KConfigGroup& cfg, const QString &prefix, const QUrl &defaultURL, const QString &serviceType)
+void KonqViewManager::loadTabsItem(const KConfigGroup& cfg, const QString& prefix, KonqFrameContainerBase *parent,
+                                   const LoadViewUrlData &viewData)
+{
+    int index = cfg.readEntry(QStringLiteral("activeChildIndex").prepend(prefix), 0);
+    if (!m_tabContainer) {
+        createTabContainer(parent->asQWidget(), parent);
+        parent->insertChildFrame(m_tabContainer);
+    }
+
+    const QStringList childList = cfg.readEntry(QStringLiteral("Children").prepend(prefix), QStringList());
+    for (QStringList::const_iterator it = childList.begin(); it != childList.end(); ++it) {
+        loadItem(cfg, tabContainer(), *it, viewData);
+        QWidget *currentPage = m_tabContainer->currentWidget();
+        if (currentPage != nullptr) {
+            KonqView *activeChildView = dynamic_cast<KonqFrameBase *>(currentPage)->activeChildView();
+            if (activeChildView != nullptr) {
+                activeChildView->setCaption(activeChildView->caption());
+                activeChildView->setTabIcon(activeChildView->url());
+            }
+        }
+    }
+
+    QWidget *w = m_tabContainer->widget(index);
+    if (w) {
+        m_tabContainer->setActiveChild(dynamic_cast<KonqFrameBase *>(w));
+        m_tabContainer->setCurrentIndex(index);
+        m_tabContainer->show();
+    } else {
+        qCWarning(KONQUEROR_LOG) << "Profile Loading Error: Unknown current item index" << index;
+    }
+}
+
+void KonqViewManager::loadContainerItem(const KConfigGroup& cfg, const QString& prefix, KonqFrameContainerBase* parent,
+                                        const QString &name, bool openAfterCurrentPage, int pos, const LoadViewUrlData& viewData)
+{
+    //load container config
+    QString ostr = cfg.readEntry(QStringLiteral("Orientation").prepend(prefix), QString());
+    //qCDebug(KONQUEROR_LOG) << "Orientation:" << ostr;
+    Qt::Orientation o;
+    if (ostr == QLatin1String("Vertical")) {
+        o = Qt::Vertical;
+    } else if (ostr == QLatin1String("Horizontal")) {
+        o = Qt::Horizontal;
+    } else {
+        qCWarning(KONQUEROR_LOG) << "Profile Loading Error: No orientation specified in" << name;
+        o = Qt::Horizontal;
+    }
+
+    QList<int> sizes = cfg.readEntry(QStringLiteral("SplitterSizes").prepend(prefix), QList<int>());
+
+    int index = cfg.readEntry(QStringLiteral("activeChildIndex").prepend(prefix), -1);
+    QStringList childList = cfg.readEntry(QStringLiteral("Children").prepend(prefix), QStringList());
+
+    if (childList.count() < 2) {
+        qCWarning(KONQUEROR_LOG) << "Profile Loading Error: Less than two children in" << name;
+        // fallback to defaults
+        loadItem(cfg, parent, QStringLiteral("InitialView"), viewData);
+        return;
+    }
+
+    KonqFrameContainer *newContainer = new KonqFrameContainer(o, parent->asQWidget(), parent);
+
+    int tabindex = pos;
+    if (openAfterCurrentPage && parent->frameType() == KonqFrameBase::Tabs) { // Need to honor it, if possible
+        tabindex = static_cast<KonqFrameTabs *>(parent)->currentIndex() + 1;
+    }
+    parent->insertChildFrame(newContainer, tabindex);
+
+    loadItem(cfg, newContainer, childList.at(0), viewData);
+    loadItem(cfg, newContainer, childList.at(1), viewData);
+
+    //qCDebug(KONQUEROR_LOG) << "setSizes" << sizes;
+    newContainer->setSizes(sizes);
+
+    if (index == 1) {
+        newContainer->setActiveChild(newContainer->secondChild());
+    } else if (index == 0) {
+        newContainer->setActiveChild(newContainer->firstChild());
+    }
+
+    newContainer->show();
+}
+
+//Helper function for KonqViewManager::loadViewItem which determines whether the
+// given frame is the tab container or is (directly or not) contained in the tab container
+bool hasTabAncestor(KonqFrameContainerBase *frm) {
+    while (frm) {
+        if (frm && frm->frameType() == KonqFrameBase::Tabs) {
+            return true;
+        }
+        frm = frm->parentContainer();
+    }
+    return false;
+}
+
+void KonqViewManager::loadViewItem(const KConfigGroup& cfg, const QString &prefix, KonqFrameContainerBase* parent,
+                                   const QString& name, const LoadViewUrlData &data, bool openAfterCurrentPage, int pos)
+{
+    // load view config
+
+    QString serviceType;
+    QString serviceName;
+    if (name == QLatin1String("empty")) {
+        // An empty profile is an empty KHTML part. Makes all KHTML actions available, avoids crashes,
+        // makes it easy to DND a URL onto it, and makes it fast to load a website from there.
+        serviceType = QStringLiteral("text/html");
+        serviceName = data.forcedService; // coming e.g. from the cmdline, otherwise empty
+    } else {
+        serviceType = cfg.readEntry(QStringLiteral("ServiceType").prepend(prefix), QStringLiteral("inode/directory"));
+        serviceName = cfg.readEntry(QStringLiteral("ServiceName").prepend(prefix), QString());
+        if (serviceName == QLatin1String("konq_aboutpage")) {
+            if ((!data.forcedUrl.isEmpty() && !KonqUrl::hasKonqScheme(data.forcedUrl)) ||
+                    (data.forcedUrl.isEmpty() && data.openUrl == false)) { // e.g. window.open
+                // No point in loading the about page if we're going to replace it with a KHTML part right away
+                serviceType = QStringLiteral("text/html");
+                serviceName = data.forcedService; // coming e.g. from the cmdline, otherwise empty
+            }
+        }
+    }
+
+    //qCDebug(KONQUEROR_LOG) << "serviceType" << serviceType << serviceName;
+
+    bool passiveMode = cfg.readEntry(QStringLiteral("PassiveMode").prepend(prefix), false);
+
+    //qCDebug(KONQUEROR_LOG) << "Creating View Stuff; parent=" << parent;
+    if (parent == m_pMainWindow) {
+        parent = tabContainer();
+    }
+
+    QUrl url;
+    if (data.openUrl) {
+        const QString urlKey = QStringLiteral("URL").prepend(prefix);
+        if (cfg.hasKey(urlKey)) {
+            url = QUrl(cfg.readPathEntry(urlKey, KonqUrl::string(KonqUrl::Type::Blank)));
+        } else {
+            url = data.defaultUrl;
+        }
+    }
+
+    bool lockedLocation = cfg.readEntry(QStringLiteral("LockedLocation").prepend(prefix), false);
+    bool linkedView = cfg.readEntry(QStringLiteral("LinkedView").prepend(prefix), false);
+    const bool isToggleView = cfg.readEntry(QStringLiteral("ToggleView").prepend(prefix), false);
+
+    KonqView *childView = nullptr;
+
+    //Don't use delayed loading for views which aren't (directly or indirectly) contained in the tabs widget
+    //This is the case, for example, of the sidebar view or the terminal emulator. Since they don't belong
+    //to any tab, they're always visible, so there's no reason to delay loading them (besides, it wouldn't
+    //work, as the delayed loading would never trigger). See BUG 478255
+    if (hasTabAncestor(parent)) {
+        childView = setupView(parent, passiveMode, openAfterCurrentPage, pos);
+        childView->storeDelayedLoadingData(serviceType, serviceName, data.openUrl, url, lockedLocation, cfg, prefix);
+    }
+    else {
+        KPluginMetaData service;
+        QVector<KPluginMetaData> partServiceOffers;
+        KService::List appServiceOffers;
+        KonqFactory konqFactory;
+        KonqViewFactory viewFactory = konqFactory.createView(serviceType, serviceName, &service, &partServiceOffers, &appServiceOffers, true /*forceAutoEmbed*/);
+        if (viewFactory.isNull()) {
+            qCWarning(KONQUEROR_LOG) << "Profile Loading Error: View creation failed";
+            return; //ugh..
+        }
+        childView = setupView(parent, viewFactory, service, partServiceOffers, appServiceOffers, serviceType, passiveMode, openAfterCurrentPage, pos);
+        if (data.openUrl) {
+            restoreViewOutsideTabContainer(childView, cfg, prefix, data.defaultUrl, serviceType);
+        }
+    }
+
+    if (!childView->isFollowActive()) {
+        childView->setLinkedView(linkedView);
+    }
+    childView->setToggleView(isToggleView);
+    if (isToggleView /*100373*/ || !cfg.readEntry(QStringLiteral("ShowStatusBar").prepend(prefix), true)) {
+        childView->frame()->statusbar()->hide();
+    }
+
+    if (parent == m_tabContainer && m_tabContainer->count() == 1) {
+        // First tab, make it the active one
+        parent->setActiveChild(childView->frame());
+    }
+}
+
+void KonqViewManager::restoreViewOutsideTabContainer(KonqView* view, const KConfigGroup& cfg, const QString &prefix, const QUrl &defaultURL, const QString &serviceType)
 {
     const QString keyHistoryItems = QStringLiteral("NumberOfHistoryItems").prepend(prefix);
     if (cfg.hasKey(keyHistoryItems)) {

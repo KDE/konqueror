@@ -308,21 +308,35 @@ private Q_SLOTS:
      */
     void delayedLoadTab(int idx);
 
+signals:
+// the signal is only emitted when the contents of the view represented by
+// "tab" are going to be lost for good.
+    void aboutToRemoveTab(KonqFrameBase *tab);
+
 private:
 
     /**
+     * @brief Struct containing the parameters to load a view from a configuration object
+     */
+    struct LoadViewUrlData {
+        const QUrl& defaultUrl; //!<The default URL to load if none is specified
+        const QUrl &forcedUrl; //!<The URL to load instead of the one specified in the configuration object
+        const QString &forcedService; //!<The service (part) to use instead of the default one
+        bool openUrl; //!<Whether to open URLs at all
+    };
+
+    /**
      * Load the config entries for a view.
-     * @param cfg the config file
-     * ...
-     * @param defaultURL the URL to use if the profile doesn't contain urls
-     * @param openUrl whether to open urls at all (from the profile or using @p defaultURL).
-     *  (this is set to false when we have a forcedUrl to open)
-     * @param forcedUrl open this URL instead of the one from the profile
-     * @param forcedService use this service (part) instead of the one from the profile
+     * @param cfg the config object
+     * @param parent the container where the new item should be put
+     * @param name the name of the item
+     * @param viewData how to load a view
+     * @param openAfterCurrentPage whether the item should be put after the current tab or not
+     * @param pos the position of the new item. -1 means at the end
+     * @todo Refactor all the loading code
      */
     void loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *parent,
-                  const QString &name, const QUrl &defaultURL, bool openUrl,
-                  const QUrl &forcedUrl, const QString &forcedService,
+                  const QString &name, const LoadViewUrlData &viewData,
                   bool openAfterCurrentPage = false, int pos = -1);
 
     void loadRootItem(const KConfigGroup &cfg, KonqFrameContainerBase *parent,
@@ -333,12 +347,6 @@ private:
 
     void createTabContainer(QWidget *parent, KonqFrameContainerBase *parentContainer);
 
-signals:
-// the signal is only emitted when the contents of the view represented by
-// "tab" are going to be lost for good.
-    void aboutToRemoveTab(KonqFrameBase *tab);
-
-private:
     /**
      * Creates a new View based on the given ServiceType. If serviceType is empty
      * it clones the current view.
@@ -366,16 +374,56 @@ private:
     KonqView* setupView(KonqFrameContainerBase *parentContainer, bool passiveMode, bool openAfterCurrentPage = false, int pos = -1);
 
     /**
-     * @brief Restore history for the given view from a configuration object and loads the last URL in the view
+     * @brief Loads a view item from a `KConfigGroup`
+     * @param cfg the config group to load the view from
+     * @param prefix the string to append to the entry names to obtain the keys in @p cfg
+     * @param parent the frame container the view should belong to
+     * @param name the name of the view
+     * @param defaultURL the default URL to use if none is provided by @p cfg
+     * @param openUrl whether to open an URL in the view
+     * @param forcedService the plugin id of the plugin to use for the view
+     * @param openAfterCurrentPage whether or not the view should be opened after the current page
+     * @param pos the position of the view in @p parent. If -1, the view will be last.
+     *  Ignored if @p openAfterCurrentPage is `true` and @p parent is a container of type \link KonqFrameBase::Tabs Tabs\endlink
+     * @todo Refactor
+     */
+    void loadViewItem(const KConfigGroup &cfg, const QString &prefix, KonqFrameContainerBase *parent,
+                               const QString &name, const LoadViewUrlData &data, bool openAfterCurrentPage, int pos);
+
+    /**
+     * @brief Load an item representing a tab from a configuration object
+     * @param cfg the configuration object
+     * @param prefix the string to append to the entry names to obtain the keys in @p cfg
+     * @param parent the frame container the tab should belong to
+     * @param viewData how to load the views in the tab
+     */
+    void loadTabsItem(const KConfigGroup &cfg, const QString &prefix, KonqFrameContainerBase *parent, const LoadViewUrlData &viewData);
+
+    /**
+     * @brief Load an item representing a container (split view) from a configuration object
+     * @param cfg the configuration object
+     * @param prefix the string to append to the entry names to obtain the keys in @p cfg
+     * @param parent the frame container the container should belong to
+     * @param name the name of the container
+     * @param openAfterCurrentPage whether or not the container should be opened after the current page
+     * @param pos the position of the container in @p parent. If -1, the container will be last.
+     *  Ignored if @p openAfterCurrentPage is `true` and @p parent is a container of type \link KonqFrameBase::Tabs Tabs\endlink
+     * @param viewData how to load the views in the container
+     */
+    void loadContainerItem(const KConfigGroup &cfg, const QString &prefix, KonqFrameContainerBase *parent, const QString &name,
+                           bool openAfterCurrentPage, int pos, const LoadViewUrlData &viewData);
+
+    /**
+     * @brief Restore the status of a view not contained in the tab widget from a configuration group
      *
-     * This is used when restoring views which aren't in the tab container (mainly toggle views like the sidebar)
+     * This restores history and opens the correct URL in the view
      * @param view the view whose history should be restored
      * @param cfg the configuration group to read history from
      * @param prefix the prefix to append to keys to read entries in @p cfg
      * @param defaultURL a default URL to use
      * @param serviceType the service type to display
      */
-    void restoreHistoryInLoadedView(KonqView *view, const KConfigGroup &cfg, const QString &prefix, const QUrl &defaultURL, const QString &serviceType);
+    void restoreViewOutsideTabContainer(KonqView *view, const KConfigGroup &cfg, const QString &prefix, const QUrl &defaultURL, const QString &serviceType);
 
 #ifndef NDEBUG
     //just for debugging
