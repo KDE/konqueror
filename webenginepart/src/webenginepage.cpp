@@ -71,257 +71,257 @@
 using namespace KonqInterfaces;
 
 WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
-        : QWebEnginePage(KonqWebEnginePart::Profile::defaultProfile(), parent),
-         m_kioErrorCode(0),
-         m_ignoreError(false),
-         m_part(part),
-         m_passwdServerClient(new KPasswdServerClient)
+    : QWebEnginePage(KonqWebEnginePart::Profile::defaultProfile(), parent),
+        m_kioErrorCode(0),
+        m_ignoreError(false),
+        m_part(part),
+        m_passwdServerClient(new KPasswdServerClient)
 #ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
-         , m_dropOperationTimer(new QTimer(this))
+        , m_dropOperationTimer(new QTimer(this))
 #endif
 {
-    if (view())
-        WebEngineSettings::self()->computeFontSizes(view()->logicalDpiY());
+if (view())
+    WebEngineSettings::self()->computeFontSizes(view()->logicalDpiY());
 
-    //setForwardUnsupportedContent(true);
+//setForwardUnsupportedContent(true);
 
-    connect(this, &QWebEnginePage::geometryChangeRequested,
-            this, &WebEnginePage::slotGeometryChangeRequested);
+connect(this, &QWebEnginePage::geometryChangeRequested,
+        this, &WebEnginePage::slotGeometryChangeRequested);
 //    connect(this, SIGNAL(unsupportedContent(QNetworkReply*)),
 //            this, SLOT(slotUnsupportedContent(QNetworkReply*)));
-    connect(this, &QWebEnginePage::featurePermissionRequested,
-            this, &WebEnginePage::slotFeaturePermissionRequested);
-    connect(this, &QWebEnginePage::loadFinished,
-            this, &WebEnginePage::slotLoadFinished);
-    connect(this, &QWebEnginePage::authenticationRequired,
-            this, &WebEnginePage::slotAuthenticationRequired);
-    connect(this, &QWebEnginePage::fullScreenRequested, this, &WebEnginePage::changeFullScreenMode);
-    connect(this, &QWebEnginePage::recommendedStateChanged, this, &WebEnginePage::changeLifecycleState);
+connect(this, &QWebEnginePage::featurePermissionRequested,
+        this, &WebEnginePage::slotFeaturePermissionRequested);
+connect(this, &QWebEnginePage::loadFinished,
+        this, &WebEnginePage::slotLoadFinished);
+connect(this, &QWebEnginePage::authenticationRequired,
+        this, &WebEnginePage::slotAuthenticationRequired);
+connect(this, &QWebEnginePage::fullScreenRequested, this, &WebEnginePage::changeFullScreenMode);
+connect(this, &QWebEnginePage::recommendedStateChanged, this, &WebEnginePage::changeLifecycleState);
 
 #ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
-    connect(this, &QWebEnginePage::loadStarted, this, [this](){m_dropOperationTimer->stop();});
-    m_dropOperationTimer->setSingleShot(true);
+connect(this, &QWebEnginePage::loadStarted, this, [this](){m_dropOperationTimer->stop();});
+m_dropOperationTimer->setSingleShot(true);
 #endif
 
 #if QT_VERSION_MAJOR == 6
-    connect(this, &QWebEnginePage::certificateError, this, &WebEnginePage::handleCertificateError);
+connect(this, &QWebEnginePage::certificateError, this, &WebEnginePage::handleCertificateError);
 #endif
 
-    //If this part is displaying the developer tools for another part, inform the other page it's not displaying the developer tools anymore.
-    //I'm not sure this is needed, but I think it's better to do it, just to be on the safe side
-    auto unsetInspectedPageIfNeeded = [this](bool ok) {
-        if (ok && inspectedPage() && url().scheme() != QLatin1String("devtools")) {
-            setInspectedPage(nullptr);
-        }
-    };
-    connect(this, &QWebEnginePage::loadFinished, this, unsetInspectedPageIfNeeded);
+//If this part is displaying the developer tools for another part, inform the other page it's not displaying the developer tools anymore.
+//I'm not sure this is needed, but I think it's better to do it, just to be on the safe side
+auto unsetInspectedPageIfNeeded = [this](bool ok) {
+    if (ok && inspectedPage() && url().scheme() != QLatin1String("devtools")) {
+        setInspectedPage(nullptr);
+    }
+};
+connect(this, &QWebEnginePage::loadFinished, this, unsetInspectedPageIfNeeded);
 
-    WebEnginePartControls::self()->navigationRecorder()->registerPage(this);
-    m_part->downloadManager()->addPage(this);
+WebEnginePartControls::self()->navigationRecorder()->registerPage(this);
+m_part->downloadManager()->addPage(this);
 
-    connect(WebEnginePartControls::self(), &WebEnginePartControls::updateStyleSheet, this, &WebEnginePage::updateUserStyleSheet);
+connect(WebEnginePartControls::self(), &WebEnginePartControls::updateStyleSheet, this, &WebEnginePage::updateUserStyleSheet);
 }
 
 WebEnginePage::~WebEnginePage()
 {
-    //qCDebug(WEBENGINEPART_LOG) << this;
+//qCDebug(WEBENGINEPART_LOG) << this;
 }
 
 const WebSslInfo& WebEnginePage::sslInfo() const
 {
-    return m_sslInfo;
+return m_sslInfo;
 }
 
 #if QT_VERSION_MAJOR > 5
 QWidget *WebEnginePage::view() const
 {
-    return QWebEngineView::forPage(this);
+return QWebEngineView::forPage(this);
 }
 #endif
 
 void WebEnginePage::setSslInfo (const WebSslInfo& info)
 {
-    m_sslInfo = info;
+m_sslInfo = info;
 }
 
 static QString checkForDownloadManager(QWidget* widget)
 {
-    KConfigGroup cfg (KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals), "HTML Settings");
-    const QString fileName (cfg.readPathEntry("DownloadManager", QString()));
-    if (fileName.isEmpty()) {
-        return QString();
-    }
+KConfigGroup cfg (KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals), "HTML Settings");
+const QString fileName (cfg.readPathEntry("DownloadManager", QString()));
+if (fileName.isEmpty()) {
+    return QString();
+}
 
-    const QString exeName = QStandardPaths::findExecutable(fileName);
-    if (exeName.isEmpty()) {
-        KMessageBox::detailedError(widget,
-                                   i18n("The download manager (%1) could not be found in your installation.", fileName),
-                                   i18n("Try to reinstall it and make sure that it is available in $PATH. \n\nThe integration will be disabled."));
-        cfg.writePathEntry("DownloadManager", QString());
-        cfg.sync();
-        return QString();
-    }
-    return exeName;
+const QString exeName = QStandardPaths::findExecutable(fileName);
+if (exeName.isEmpty()) {
+    KMessageBox::detailedError(widget,
+                                i18n("The download manager (%1) could not be found in your installation.", fileName),
+                                i18n("Try to reinstall it and make sure that it is available in $PATH. \n\nThe integration will be disabled."));
+    cfg.writePathEntry("DownloadManager", QString());
+    cfg.sync();
+    return QString();
+}
+return exeName;
 }
 
 bool WebEnginePage::downloadWithExternalDonwloadManager(const QUrl &url)
 {
-    if (url.isLocalFile()) {
-        return false;
-    }
+if (url.isLocalFile()) {
+    return false;
+}
 
-    KConfigGroup cfg (KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals), "HTML Settings");
-    const QString fileName (cfg.readPathEntry("DownloadManager", QString()));
-    if (fileName.isEmpty()) {
-        return false;
-    }
+KConfigGroup cfg (KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals), "HTML Settings");
+const QString fileName (cfg.readPathEntry("DownloadManager", QString()));
+if (fileName.isEmpty()) {
+    return false;
+}
 
-    const QString managerExe = QStandardPaths::findExecutable(fileName);
-    if (managerExe.isEmpty()) {
-        KMessageBox::detailedError(view(),
-                                   i18n("The download manager (%1) could not be found in your installation.", fileName),
-                                   i18n("Try to reinstall it and make sure that it is available in $PATH. \n\nThe integration will be disabled."));
-        cfg.writePathEntry("DownloadManager", QString());
-        cfg.sync();
-        return false;
-    }
+const QString managerExe = QStandardPaths::findExecutable(fileName);
+if (managerExe.isEmpty()) {
+    KMessageBox::detailedError(view(),
+                                i18n("The download manager (%1) could not be found in your installation.", fileName),
+                                i18n("Try to reinstall it and make sure that it is available in $PATH. \n\nThe integration will be disabled."));
+    cfg.writePathEntry("DownloadManager", QString());
+    cfg.sync();
+    return false;
+}
 
-    //qCDebug(WEBENGINEPART_LOG) << "Calling command" << cmd;
-    KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(managerExe, {url.toString()});
-    job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, view()));
-    job->start();
-    return true;
+//qCDebug(WEBENGINEPART_LOG) << "Calling command" << cmd;
+KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(managerExe, {url.toString()});
+job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, view()));
+job->start();
+return true;
 }
 
 void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWindow, WebEnginePartDownloadManager::DownloadObjective objective)
 {
-    QUrl url = item->url();
-    if (downloadWithExternalDonwloadManager(url)) {
-        item->cancel();
-        item->deleteLater();
-        return;
-    }
+QUrl url = item->url();
+if (downloadWithExternalDonwloadManager(url)) {
+    item->cancel();
+    item->deleteLater();
+    return;
+}
 
-    WebEngineDownloaderExtension *downloader = m_part->downloader();
-    Q_ASSERT(downloader);
+WebEngineDownloaderExtension *downloader = m_part->downloader();
+Q_ASSERT(downloader);
 
-    downloader->addDownloadRequest(item);
+downloader->addDownloadRequest(item);
 
-    BrowserArguments bArgs;
-    bArgs.setForcesNewWindow(newWindow);
-    KParts::OpenUrlArguments args;
+BrowserArguments bArgs;
+bArgs.setForcesNewWindow(newWindow);
+KParts::OpenUrlArguments args;
 
-    QMimeDatabase db;
-    QMimeType mime = db.mimeTypeForName(item->mimeType());
-    if (!mime.isValid() || mime.isDefault()) {
-        mime = db.mimeTypeForFile(item->suggestedFileName(), QMimeDatabase::MatchExtension);
-    }
-    args.setMimeType(mime.name());
+QMimeDatabase db;
+QMimeType mime = db.mimeTypeForName(item->mimeType());
+if (!mime.isValid() || mime.isDefault()) {
+    mime = db.mimeTypeForFile(item->suggestedFileName(), QMimeDatabase::MatchExtension);
+}
+args.setMimeType(mime.name());
 
-    args.metaData().insert(QStringLiteral("DontSendToDefaultHTMLPart"), QString());
-    args.metaData().insert(QStringLiteral("SuggestedFileName"), item->suggestedFileName());
+args.metaData().insert(QStringLiteral("DontSendToDefaultHTMLPart"), QString());
+args.metaData().insert(QStringLiteral("SuggestedFileName"), item->suggestedFileName());
 
-    if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveOnly) {
-        args.metaData().insert(QStringLiteral("EmbedOrNothing"), {});
-        bArgs.setForcesNewWindow(true);
-        saveUrlToDiskAndDisplay(item, args, bArgs);
-        return;
-    } else if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveAs) {
-        saveAs(item);
-    } else {
+if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveOnly) {
+    args.metaData().insert(QStringLiteral("EmbedOrNothing"), {});
+    bArgs.setForcesNewWindow(true);
+    saveUrlToDiskAndDisplay(item, args, bArgs);
+    return;
+} else if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveAs) {
+    saveAs(item);
+} else {
 //TODO KF6: this lamba only exists to reduce code duplication in the two #ifdef
 //branches below. When KF5 compatibility will be removed, cookies will always
 //be managed internally, so remove the #ifdef and the lambda and move its body
 //inside the `if (downloader)`
-        auto requestDownloadAndOpen = [&]() {
-            args.metaData().insert(QStringLiteral("TempFile"), QString());
-            emit downloader->downloadAndOpenUrl(url, item->id(), args, bArgs, true);
-            if (item->state() == QWebEngineDownloadRequest::DownloadRequested) {
-                qCDebug(WEBENGINEPART_LOG()) << "Automatically accepting download for" << item->url() << "This shouldn't happen";
-                item->accept();
-            }
-        };
+    auto requestDownloadAndOpen = [&]() {
+        args.metaData().insert(QStringLiteral("TempFile"), QString());
+        emit downloader->downloadAndOpenUrl(url, item->id(), args, bArgs, true);
+        if (item->state() == QWebEngineDownloadRequest::DownloadRequested) {
+            qCDebug(WEBENGINEPART_LOG()) << "Automatically accepting download for" << item->url() << "This shouldn't happen";
+            item->accept();
+        }
+    };
 
 //TODO KF6: remove #ifdef and the #else block when dropping compatibility with KF5
 #ifdef MANAGE_COOKIES_INTERNALLY
-        requestDownloadAndOpen();
+    requestDownloadAndOpen();
 #else //This can only happen in KF5, as MANAGE_COOKIES_INTERNALLY is always defined in KF6
-    // blob URLs can't be downloaded by KIO, so use the part to download them even when using KCookieJar
-        if (item->url().scheme() == QStringLiteral("blob") && downloader) {
-            requestDownloadAndOpen();
-        } else {
-            emit m_part->browserExtension()->openUrlRequest(url, args, bArgs);
-            item->cancel();
-            item->deleteLater();
-        }
-#endif
+// blob URLs can't be downloaded by KIO, so use the part to download them even when using KCookieJar
+    if (item->url().scheme() == QStringLiteral("blob") && downloader) {
+        requestDownloadAndOpen();
+    } else {
+        emit m_part->browserExtension()->openUrlRequest(url, args, bArgs);
+        item->cancel();
+        item->deleteLater();
     }
+#endif
+}
 }
 
 void WebEnginePage::saveUrlToDiskAndDisplay(QWebEngineDownloadRequest* req, const KParts::OpenUrlArguments& args, const BrowserArguments& bArgs)
 {
-    QWidget *window = view() ? view()->window() : nullptr;
+QWidget *window = view() ? view()->window() : nullptr;
 
-    QString suggestedName = !req->suggestedFileName().isEmpty() ? req->suggestedFileName() : req->url().fileName();
-    QString downloadPath = Konq::askDownloadLocation(suggestedName, window);
-    if (downloadPath.isEmpty()) {
-        req->cancel();
-        return;
-    }
+QString suggestedName = !req->suggestedFileName().isEmpty() ? req->suggestedFileName() : req->url().fileName();
+QString downloadPath = Konq::askDownloadLocation(suggestedName, window);
+if (downloadPath.isEmpty()) {
+    req->cancel();
+    return;
+}
 
-    WebEngineDownloaderExtension *downloader = m_part->downloader();
-    DownloaderJob *job = downloader->downloadJob(req->url(), req->id(), this);
-    if (!job) {
-        return;
-    }
+WebEngineDownloaderExtension *downloader = m_part->downloader();
+DownloaderJob *job = downloader->downloadJob(req->url(), req->id(), this);
+if (!job) {
+    return;
+}
 
-    auto lambda = [this, args, bArgs](DownloaderJob *, const QUrl &url) {
+auto lambda = [this, args, bArgs](DownloaderJob *, const QUrl &url) {
 #if QT_VERSION_MAJOR < 6
-        emit m_part->browserExtension()->openUrlRequest(url, args, bArgs);
+    emit m_part->browserExtension()->openUrlRequest(url, args, bArgs);
 #else
-        emit m_part->browserExtension()->browserOpenUrlRequest(url, args, bArgs);
+    emit m_part->browserExtension()->browserOpenUrlRequest(url, args, bArgs);
 #endif
-    };
-    job->startDownload(downloadPath, window, this, lambda);
+};
+job->startDownload(downloadPath, window, this, lambda);
 }
 
 void WebEnginePage::saveAs(QWebEngineDownloadRequest* req)
 {
-    QWidget *window = view() ? view()->window() : nullptr;
+QWidget *window = view() ? view()->window() : nullptr;
 
-    QString suggestedName = !req->suggestedFileName().isEmpty() ? req->suggestedFileName() : req->url().fileName();
-    QString downloadPath = Konq::askDownloadLocation(suggestedName, window);
-    if (downloadPath.isEmpty()) {
-        req->cancel();
+QString suggestedName = !req->suggestedFileName().isEmpty() ? req->suggestedFileName() : req->url().fileName();
+QString downloadPath = Konq::askDownloadLocation(suggestedName, window);
+if (downloadPath.isEmpty()) {
+    req->cancel();
+    return;
+}
+
+WebEngineDownloaderExtension *downloader = m_part->downloader();
+DownloaderJob *job = downloader->downloadJob(req->url(), req->id(), this);
+if (!job) {
+    return;
+}
+
+auto lambda = [this](DownloaderJob *dj, const QUrl &url) {
+    if (dj->error() == 0) {
+        m_part->openUrl(url);
         return;
     }
-
-    WebEngineDownloaderExtension *downloader = m_part->downloader();
-    DownloaderJob *job = downloader->downloadJob(req->url(), req->id(), this);
-    if (!job) {
-        return;
-    }
-
-    auto lambda = [this](DownloaderJob *dj, const QUrl &url) {
-        if (dj->error() == 0) {
-            m_part->openUrl(url);
-            return;
-        }
-        BrowserArguments bArgs;
-        bArgs.setForcesNewWindow(true);
+    BrowserArguments bArgs;
+    bArgs.setForcesNewWindow(true);
 #if QT_VERSION_MAJOR < 6
-        emit m_part->browserExtension()->openUrlRequest(url, {}, bArgs);
+    emit m_part->browserExtension()->openUrlRequest(url, {}, bArgs);
 #else
-        emit m_part->browserExtension()->browserOpenUrlRequest(url, {}, bArgs);
+    emit m_part->browserExtension()->browserOpenUrlRequest(url, {}, bArgs);
 #endif
-    };
-    job->startDownload(downloadPath, window, this, lambda);
+};
+job->startDownload(downloadPath, window, this, lambda);
 }
 
 # ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
 void WebEnginePage::setDropOperationStarted()
 {
-    m_dropOperationTimer->start(100);
+m_dropOperationTimer->start(100);
 }
 #endif
 
@@ -329,73 +329,79 @@ void WebEnginePage::setDropOperationStarted()
 QWebEnginePage *WebEnginePage::createWindow(WebWindowType type)
 {
 #ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
-    if (m_dropOperationTimer->isActive()) {
-        m_dropOperationTimer->stop();
-        return this;
-    }
+if (m_dropOperationTimer->isActive()) {
+    m_dropOperationTimer->stop();
+    return this;
+}
 #endif
 
-    //qCDebug(WEBENGINEPART_LOG) << "window type:" << type;
-    // Crete an instance of NewWindowPage class to capture all the
-    // information we need to create a new window. See documentation of
-    // the class for more information...
-    NewWindowPage* page = new NewWindowPage(type, part());
-    return page;
+//qCDebug(WEBENGINEPART_LOG) << "window type:" << type;
+// Crete an instance of NewWindowPage class to capture all the
+// information we need to create a new window. See documentation of
+// the class for more information...
+NewWindowPage* page = new NewWindowPage(type, part());
+return page;
 }
 
 // Returns true if the scheme and domain of the two urls match...
 static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
 {
-    if (u1.scheme() != u2.scheme())
-        return false;
+if (u1.scheme() != u2.scheme())
+    return false;
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    QStringList u1List = u1.host().split(QL1C('.'), QString::SkipEmptyParts);
+QStringList u1List = u1.host().split(QL1C('.'), QString::SkipEmptyParts);
 #else
-    QStringList u1List = u1.host().split(QL1C('.'), Qt::SkipEmptyParts);
+QStringList u1List = u1.host().split(QL1C('.'), Qt::SkipEmptyParts);
 #endif
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    QStringList u2List = u2.host().split(QL1C('.'), QString::SkipEmptyParts);
+QStringList u2List = u2.host().split(QL1C('.'), QString::SkipEmptyParts);
 #else
-    QStringList u2List = u2.host().split(QL1C('.'), Qt::SkipEmptyParts);
+QStringList u2List = u2.host().split(QL1C('.'), Qt::SkipEmptyParts);
 #endif
 
-    if (qMin(u1List.count(), u2List.count()) < 2)
-        return false;  // better safe than sorry...
+if (qMin(u1List.count(), u2List.count()) < 2)
+    return false;  // better safe than sorry...
 
-    while (u1List.count() > 2)
-        u1List.removeFirst();
+while (u1List.count() > 2)
+    u1List.removeFirst();
 
-    while (u2List.count() > 2)
-        u2List.removeFirst();
+while (u2List.count() > 2)
+    u2List.removeFirst();
 
-    return (u1List == u2List);
+return (u1List == u2List);
 }
 
 bool WebEnginePage::askBrowserToOpenUrl(const QUrl& url, const QString& mimetype, const KParts::OpenUrlArguments &_args, const BrowserArguments &bargs)
 {
-    KParts::OpenUrlArguments args(_args);
-    args.setMimeType(mimetype);
-    args.metaData().insert("DontSendToDefaultHTMLPart", "");
-    qDebug() << "EMITTING OPEN URL REQUEST";
+KParts::OpenUrlArguments args(_args);
+args.setMimeType(mimetype);
+args.metaData().insert("DontSendToDefaultHTMLPart", "");
+qDebug() << "EMITTING OPEN URL REQUEST";
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    emit m_part->browserExtension()->openUrlRequest(url, args, bargs);
+emit m_part->browserExtension()->openUrlRequest(url, args, bargs);
 #else
-    emit m_part->browserExtension()->browserOpenUrlRequest(url, args, bargs);
+emit m_part->browserExtension()->browserOpenUrlRequest(url, args, bargs);
 #endif
-    return true;
+return false;
 }
 
-bool WebEnginePage::shouldOpenLocalUrl(const QUrl& url) const
+bool WebEnginePage::shouldOpenUrl(const QUrl& url) const
 {
-    Q_ASSERT(url.isLocalFile());
-    BrowserInterface *bi = m_part->browserExtension()->browserInterface();
-    bool useThisPart = false;
-    //We don't check whether bi is valid, as invokeMethod will fail if it's nullptr
-    //If invokeMethod fails, useThisPart will keep its default value (false) which is what we need to return, so there's no
-    //need to check the return value of invokeMethod
-    QMetaObject::invokeMethod(bi, "isCorrectPartForLocalFile", Q_RETURN_ARG(bool, useThisPart), Q_ARG(KParts::ReadOnlyPart*, part()), Q_ARG(QString, url.path()));
-    return useThisPart;
+static const QStringList s_forcedSchemes{QStringLiteral("remote"), QStringLiteral("trash")};
+if (s_forcedSchemes.contains(url.scheme())) {
+    return false;
+}
+if (!url.isLocalFile()) {
+    return true;
+}
+BrowserInterface *bi = m_part->browserExtension()->browserInterface();
+bool useThisPart = false;
+//We don't check whether bi is valid, as invokeMethod will fail if it's nullptr
+//If invokeMethod fails, useThisPart will keep its default value (false) which is what we need to return, so there's no
+//need to check the return value of invokeMethod
+QMetaObject::invokeMethod(bi, "isCorrectPartForLocalFile", Q_RETURN_ARG(bool, useThisPart), Q_ARG(KParts::ReadOnlyPart*, part()), Q_ARG(QString, url.path()));
+return useThisPart;
 }
 
 bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool isMainFrame)
@@ -408,9 +414,8 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
         }
     }
 
-    if (isMainFrame && url.isLocalFile()) {
-        qDebug() << "LOCAL FILE" << url;
-        if (!shouldOpenLocalUrl(url)) {
+    if (isMainFrame) {
+        if (!shouldOpenUrl(url)) {
             return askBrowserToOpenUrl(url);
         }
     }

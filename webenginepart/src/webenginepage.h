@@ -176,7 +176,7 @@ private:
     //Whether a local URL should be opened by this part or by another part. This takes into account the user preferences
     //and it's needed to avoid, for example, that the link "Home Folder" in the intro page is displayed in WebEnginePart
     //and not by the part selected by the user to display directories.
-    bool shouldOpenLocalUrl(const QUrl &url) const;
+    bool shouldOpenUrl(const QUrl &url) const;
 
     /**
      * @brief Saves the given remote URL to disk and asks the browser to display it
