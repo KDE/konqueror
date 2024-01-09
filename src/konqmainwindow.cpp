@@ -4717,6 +4717,10 @@ void KonqMainWindow::updateViewModeActions()
         const QString id = md.pluginId();
         bool isCurrentView = id == m_currentView->service().pluginId();
 
+        if (!md.value("X-KDE-BrowserView-Toggable").isEmpty()) {
+            continue;
+        }
+
         //If a view provide several actions, its metadata contains an X-Konqueror-Actions-File entry
         //with the path of a .desktop file where the actions are described. The contents of this file
         //are the same as the action-related part of the old part .desktop file
