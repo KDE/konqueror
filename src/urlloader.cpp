@@ -68,21 +68,6 @@ bool UrlLoader::embedWithoutAskingToSave(const QString &mimeType)
     return s_mimeTypes.contains(mimeType);
 }
 
-//Code copied from kio/krun.cpp (KF5.109) written by:
-//- Torben Weis <weis@kde.org>
-//- David Faure <faure@kde.org>
-//- Michael Pyne <michael.pyne@kdemail.net>
-//- Harald Sitter <sitter@kde.org>
-bool UrlLoader::isExecutable(const QString& mimeTypeName)
-{
-    QMimeDatabase db;
-    QMimeType mimeType = db.mimeTypeForName(mimeTypeName);
-    return (mimeType.inherits(QStringLiteral("application/x-desktop")) || mimeType.inherits(QStringLiteral("application/x-executable")) ||
-            /* See https://bugs.freedesktop.org/show_bug.cgi?id=97226 */
-            mimeType.inherits(QStringLiteral("application/x-sharedlib")) || mimeType.inherits(QStringLiteral("application/x-ms-dos-executable"))
-            || mimeType.inherits(QStringLiteral("application/x-shellscript")));
-}
-
 UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url, const QString &mimeType, const KonqOpenURLRequest &req, bool trustedSource, bool dontEmbed):
     QObject(mainWindow),
     m_mainWindow(mainWindow),
@@ -355,8 +340,38 @@ void UrlLoader::decideOpenOrSave()
     m_service = answerWithService.second;
 }
 
+
+bool UrlLoader::isUrlExecutable() const
+{
+    if (!m_url.isLocalFile()) {
+        return false;
+    }
+
+//Code copied from kio/krun.cpp (KF5.109) written by:
+//- Torben Weis <weis@kde.org>
+//- David Faure <faure@kde.org>
+//- Michael Pyne <michael.pyne@kdemail.net>
+//- Harald Sitter <sitter@kde.org>
+    QMimeDatabase db;
+    QMimeType mimeType = db.mimeTypeForName(m_mimeType);
+    if (!(mimeType.inherits(QStringLiteral("application/x-desktop")) ||
+        mimeType.inherits(QStringLiteral("application/x-executable")) ||
+        /* See https://bugs.freedesktop.org/show_bug.cgi?id=97226 */
+        mimeType.inherits(QStringLiteral("application/x-sharedlib")) ||
+        mimeType.inherits(QStringLiteral("application/x-ms-dos-executable")) ||
+        mimeType.inherits(QStringLiteral("application/x-shellscript")))) {
+        return false;
+    }
+
+    return QFileInfo(m_url.path()).isExecutable();
+}
+
+
 UrlLoader::OpenUrlAction UrlLoader::decideExecute() const {
-    if (!m_url.isLocalFile() || !isExecutable(m_mimeType)) {
+    //We don't want to execute files which aren't local, files which aren't executable (obviously)
+    //and we don't want to execute when we are reloading (the file is visible in the current part,
+    //so we know the user wanted to display it
+    if (!isUrlExecutable() || m_request.args.reload()) {
         return OpenUrlAction::UnknwonAction;
     }
     bool canDisplay = !KParts::PartLoader::partsForMimeType(m_mimeType).isEmpty();

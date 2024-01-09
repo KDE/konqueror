@@ -149,12 +149,12 @@ public:
     bool hasError() const {return m_jobErrorCode;}
     void setNewTab(bool newTab);
 
-    /**
-     * @brief whether a given mimetype refers to an executable program instead of a data file
-     * @param mimeTypeName the mimetype to test
-     * @return `true` if @p mimeTypeName refers to an executable and `false` otherwise
-     */
-    static bool isExecutable(const QString &mimeTypeName);
+    // /**
+    //  * @brief whether a given mimetype refers to an executable program instead of a data file
+    //  * @param mimeTypeName the mimetype to test
+    //  * @return `true` if @p mimeTypeName refers to an executable and `false` otherwise
+    //  */
+    // static bool isExecutable(const QString &mimeTypeName);
     QString suggestedFileName() const {return m_request.suggestedFileName;}
 
     /**
@@ -206,6 +206,18 @@ private:
     bool shouldUseDefaultHttpMimeype() const;
     void decideAction();
     bool isViewLocked() const;
+
+    /**
+     * @brief Whether the URL we are loading is executable
+     *
+     * To be executable, all the following must be true:
+     * - the URL must be local (we don't want to execute files from the web)
+     * - the mimetype should be in a list of known executable types (desktop files, executable files, libraries,
+     *  shell scripts)
+     * - the executable bit must be set
+     * @return `true` if the file is executable and `false` otherwise
+     */
+    bool isUrlExecutable() const;
 
     /**
      * @brief Checks whether a file downloaded by a part really has the mime type described by the HTML header
