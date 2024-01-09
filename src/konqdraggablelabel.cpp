@@ -39,6 +39,7 @@ void KonqDraggableLabel::mouseMoveEvent(QMouseEvent *ev)
         validDrag = false;
         if (m_mw->currentView()) {
             QList<QUrl> lst;
+            //TODO KF6: check whether requestedUrl or realUrl is more suitable here
             lst.append(m_mw->currentView()->url());
             QDrag *drag = new QDrag(m_mw);
             QMimeData *md = new QMimeData;

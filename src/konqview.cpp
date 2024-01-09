@@ -32,6 +32,8 @@
 #include <ktoggleaction.h>
 #include <kjobuidelegate.h>
 #include <KUrlMimeData>
+#include <KIO/CopyJob>
+#include <KFileUtils>
 
 #include <QApplication>
 #include <QArgument>
@@ -39,6 +41,8 @@
 #include <QDropEvent>
 #include <QDBusConnection>
 #include <QMimeData>
+#include <QFileInfo>
+#include <QDir>
 
 #include <config-konqueror.h>
 
@@ -178,7 +182,7 @@ bool KonqView::isWebEngineView() const
 }
 
 void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
-                       const QString &nameFilter, bool tempFile)
+                       const QString &nameFilter, bool tempFile, const QUrl &requestedUrl)
 {
     qCDebug(KONQUEROR_LOG) << "url=" << url << "locationBarURL=" << locationBarURL;
 
@@ -255,6 +259,7 @@ void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
         }
     }
 
+    m_requestedUrl = !requestedUrl.isEmpty() ? requestedUrl : url;
     aboutToOpenURL(url, args);
 
     if (args.metaData().contains("urlRequestedByApp") && isWebEngineView()) {
@@ -291,11 +296,11 @@ void KonqView::switchEmbeddingPart(const QString& newPluginId, const QString& ne
     //We don't want to delete the temporary file, otherwise the new part won't have a file to display
     stop(true);
     lockHistory();
-    const QUrl origUrl = url();
+    const QUrl origUrl = realUrl();
     const QString locationBarURL = m_sLocationBarURL;
     bool tempFile = !m_tempFile.isEmpty();
     changePart(serviceType(), newPluginId);
-    openUrl(origUrl, locationBarURL, {}, tempFile);
+    openUrl(origUrl, locationBarURL, {}, tempFile, url());
     if (!newInternalViewMode.isEmpty() && newInternalViewMode != internalViewMode()){
         setInternalViewMode(newInternalViewMode);
     }
@@ -778,15 +783,20 @@ void KonqView::setCaption(const QString &caption)
     }
 
     QString adjustedCaption = caption;
-    // For local URLs we prefer to use only the directory name
-    if (url().isLocalFile()) {
-        // Is the caption a URL?  If so, is it local?  If so, only display the filename!
-        const QUrl captionUrl(QUrl::fromUserInput(caption));
-        if (captionUrl.isValid() && captionUrl.isLocalFile() && captionUrl.path() == url().path()) {
-            adjustedCaption = captionUrl.adjusted(QUrl::StripTrailingSlash).fileName();
-            if (adjustedCaption.isEmpty()) {
-                adjustedCaption = QLatin1Char('/');
-            }
+    const QUrl captionUrl(QUrl::fromUserInput(caption));
+
+    // If the URL and the real URL are different, then we don't want to use
+    // the caption provided by the part (if it is a URL) because it refers to the
+    // real URL, which is an implementation detail and should be hidden from the user
+    // Problem: if caption is not itself a URL, but it refers to the part's URL,
+    // this doesn't work. There's no way around it, however
+    if (url() != realUrl() && captionUrl.isValid()) {
+        adjustedCaption = url().toString();
+    } else if (url().isLocalFile() && captionUrl.isValid() && captionUrl.path() == url().path()) {
+        // For local URLs we prefer to use only the file name
+        adjustedCaption = captionUrl.adjusted(QUrl::StripTrailingSlash).fileName();
+        if (adjustedCaption.isEmpty()) {
+            adjustedCaption = QLatin1Char('/');
         }
     }
 
@@ -851,8 +861,10 @@ void KonqView::updateHistoryEntry(bool needsReload)
         return;
     }
 
+    QUrl url = m_requestedUrl;
+
 #ifdef DEBUG_HISTORY
-    qCDebug(KONQUEROR_LOG) << "Saving part URL:" << m_pPart->url() << "in history position" << historyIndex();
+    qCDebug(KONQUEROR_LOG) << "Saving part URL:" << url << "in history position" << historyIndex();
 #endif
 
     current->reload = needsReload; // We have a state for it now.
@@ -864,9 +876,9 @@ void KonqView::updateHistoryEntry(bool needsReload)
     }
 
 #ifdef DEBUG_HISTORY
-    qCDebug(KONQUEROR_LOG) << "Saving part URL:" << m_pPart->url() << "in history position" << historyIndex();
+    qCDebug(KONQUEROR_LOG) << "Saving part URL:" << url << "in history position" << historyIndex();
 #endif
-    current->url = m_pPart->url();
+    current->url = url;
 
     if (!needsReload) {
 #ifdef DEBUG_HISTORY
@@ -985,7 +997,7 @@ void KonqView::copyHistory(KonqView *other)
     setHistoryIndex(other->historyIndex());
 }
 
-QUrl KonqView::url() const
+QUrl KonqView::realUrl() const
 {
     Q_ASSERT(m_pPart);
     return m_pPart->url();
@@ -1412,12 +1424,16 @@ void HistoryEntry::saveConfig(KConfigGroup &config, const QString &prefix, const
 {
     if (options & KonqFrameBase::SaveUrls) {
         config.writeEntry(QStringLiteral("Url").prepend(prefix), url.url());
+        qDebug() << "WRITING ENTRY" << url.url();
         config.writeEntry(QStringLiteral("LocationBarURL").prepend(prefix), locationBarURL);
+        qDebug() << "WRITING LOCATION BAR" << locationBarURL;
         config.writeEntry(QStringLiteral("Title").prepend(prefix), title);
         config.writeEntry(QStringLiteral("StrServiceType").prepend(prefix), strServiceType);
         config.writeEntry(QStringLiteral("StrServiceName").prepend(prefix), strServiceName);
     } else if (options & KonqFrameBase::SaveHistoryItems) {
         config.writeEntry(QStringLiteral("Url").prepend(prefix), url.url());
+        qDebug() << "WRITING ENTRY" << url.url();
+        config.writeEntry(QStringLiteral("LocationBarURL").prepend(prefix), locationBarURL);
         config.writeEntry(QStringLiteral("LocationBarURL").prepend(prefix), locationBarURL);
         config.writeEntry(QStringLiteral("Title").prepend(prefix), title);
         config.writeEntry(QStringLiteral("Buffer").prepend(prefix), buffer);
@@ -1663,4 +1679,34 @@ bool KonqView::canNavigateTo(const QUrl& newUrl) const
         return m_pMainWindow->currentView()->url() == newUrl;
     }
     return !m_bLockedLocation || newUrl == url();
+}
+
+void KonqView::duplicateView(KonqView* otherView)
+{
+    // openUrl(otherView->requestedUrl(), otherView->locationBarURL(), otherView->nameFilter(), !otherView->m_tempFile.isEmpty());
+
+    //If requested and real URLs are the same, otherView isn't displaying a downloaded file, so just call openUrl
+    if (otherView->url() == otherView->realUrl()) {
+        openUrl(otherView->url(), otherView->locationBarURL());
+        return;
+    }
+
+    //otherView is displaying a downloaded file. In this case, for efficiency sake, we don't download it again: rather, we create
+    //a copy of the file (using KIO::copy) and open it
+    QString existingFile = QFileInfo(otherView->realUrl().path()).fileName();
+    QUrl dest = QUrl::fromLocalFile(KFileUtils::suggestName(QUrl::fromLocalFile(QDir::tempPath()), existingFile));
+    KIO::CopyJob *j = KIO::copy(otherView->realUrl(), dest);
+
+    const QString locBarUrl = otherView->locationBarURL();
+    //If displaying a downloaded URL, the reaul URL will always be a temporary one
+    bool temp = true;
+    const QString nameFilter = otherView->nameFilter();
+    const QUrl reqUrl = otherView->m_requestedUrl;
+
+    auto doOpening = [this, dest, temp, nameFilter, reqUrl, locBarUrl](KJob *job) {
+        if (!job->error()) {
+            openUrl(dest, locBarUrl, nameFilter, temp, reqUrl);
+        }
+    };
+    connect(j, &KJob::result, this, doOpening);
 }

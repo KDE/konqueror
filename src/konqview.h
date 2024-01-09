@@ -122,7 +122,10 @@ public:
     void openUrl(const QUrl &url,
                  const QString &locationBarURL,
                  const QString &nameFilter = QString(),
-                 bool tempFile = false);
+                 bool tempFile = false,
+                 const QUrl &requestedUrl={});
+
+    void duplicateView(KonqView *otherView);
 
     /**
      * Change the part inside this view if necessary.
@@ -243,9 +246,29 @@ public:
     void stop(bool keepTemporaryFile = false);
 
     /**
-     * Retrieve view's URL
+     * @brief The URL the view was requested to display
+     *
+     * This will be the same as the part's URL except when the URL was downloaded using
+     * a part's \link KonqInterfaces::DownloaderExtension DownloaderExtension\endlink. In this case, this will be the URL the user originally
+     * requested, while realUrl() is the URL of the downloaded file.
+     *
+     * @return the URL the view was requested to display
+     * @see realUrl()
+     * @see KonqInterfaces::DownloaderExtension
      */
-    QUrl url() const;
+    QUrl url() const {return m_requestedUrl;};
+
+    /**
+     * @brief The real URL displayed in the view
+     *
+     * If the URL represents a file which has been downloaded using a part's
+     * \link KonqInterfaces::DownloaderExtension DownloaderExtension\endlink before being displayed, then the real URL is the local
+     * file the URL was downloaded to. In all other cases, this is the same as url().
+     * @return the URL of the local file where a file was downloaded by a part's \link KonqInterfaces::DownloaderExtension DownloaderExtension\endlink
+     * or url() if the URL wasn't downloaded using \link KonqInterfaces::DownloaderExtension DownloaderExtension\endlink
+     * @see KonqInterfaces::DownloaderExtension
+     */
+    QUrl realUrl() const;
 
     QUrl upUrl() const;
 
@@ -358,6 +381,7 @@ public:
      */
     bool supportsMimeType(const QString &mimeType) const;
 
+    //TODO: it seems to be unused. Check and remove it
     /**
      * Whether the view in this part is suitable for web browsing.
      *
@@ -763,6 +787,7 @@ private:
     QString m_caption;
     QString m_tempFile;
     QString m_dbusObjectPath;
+    QUrl m_requestedUrl;
 
 #if QT_VERSION_MAJOR < 6
 #ifdef KActivities_FOUND

@@ -145,7 +145,7 @@ public:
     void setView(KonqView *view);
     bool isAsync() const {return m_isAsync;}
     void setOldLocationBarUrl(const QString &old);
-    QString oldLocationBarUrl() const {return m_oldLocationBarUrl;}
+    // QString oldLocationBarUrl() const {return m_oldLocationBarUrl;}
     bool hasError() const {return m_jobErrorCode;}
     void setNewTab(bool newTab);
 
@@ -378,6 +378,15 @@ private:
      * for WebEnginePage::saveUrlToDiskAndDisplay
      */
     bool m_embedOrNothing = false;
+
+    /**
+     * @brief The URL that the UrlLoader has been asked to open, in case the requesting parts wants to download it itself
+     *
+     * If the requesting part doesn't want to download the URL itself, this is empty. Otherwise, when the UrlLoader is created,
+     * this is the same as #m_url. After the part has finished downloading the URL, #m_url will contain the temporary local file
+     * the URL has been downloaded to, while #m_originalUrl will not be changed
+     */
+    QUrl m_originalUrl;
 };
 
 QDebug operator<<(QDebug dbg, UrlLoader::OpenUrlAction action);

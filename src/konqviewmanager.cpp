@@ -200,7 +200,8 @@ KonqView *KonqViewManager::splitMainContainer(KonqView *currentView,
     newContainer->show();
     newContainer->setActiveChild(mainFrame);
 
-    childView->openUrl(currentView->url(), currentView->locationBarURL());
+    childView->duplicateView(currentView);
+    // childView->openUrl(currentView->url(), currentView->locationBarURL());
 
 #ifdef DEBUG_VIEWMGR
     m_pMainWindow->dumpViewList();
@@ -450,6 +451,7 @@ void KonqViewManager::reloadAllTabs()
     for(KonqFrameBase *frame: tabContainer()->childFrameList()) {
         if (frame && frame->activeChildView()) {
             if (!frame->activeChildView()->locationBarURL().isEmpty()) {
+                //TODO KF6: check whether requestedUrl or realUrl is more suitable here. Do we want to download again a file? I think so
                 frame->activeChildView()->openUrl(frame->activeChildView()->url(), frame->activeChildView()->locationBarURL());
             }
         }

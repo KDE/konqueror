@@ -86,6 +86,9 @@ UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url
     m_embedOrNothing = m_request.args.metaData().contains(QStringLiteral("EmbedOrNothing"));
 
     getDownloaderJobFromPart();
+    if (m_letRequestingPartDownloadUrl) {
+        m_originalUrl = m_url;
+    }
     determineStartingMimetype();
     m_dontPassToWebEnginePart = m_request.args.metaData().contains("DontSendToDefaultHTMLPart");
 
@@ -481,7 +484,6 @@ void UrlLoader::downloadForEmbeddingOrOpening()
 void UrlLoader::downloadForEmbeddingOrOpeningDone(KonqInterfaces::DownloaderJob *job, const QUrl &url)
 {
     if (job && job->error() == 0) {
-        QUrl origUrl(m_url);
         m_url = url;
         m_ready = true;
         m_request.tempFile = true;
@@ -708,7 +710,7 @@ void UrlLoader::embed()
         m_mimeType = QStringLiteral("text/html");
         m_part = findPartById(QStringLiteral("webenginepart"));
     }
-    bool embedded = m_mainWindow->openView(m_mimeType, m_url, m_view, m_request);
+    bool embedded = m_mainWindow->openView(m_mimeType, m_url, m_view, m_request, m_originalUrl);
     if (embedded || m_embedOrNothing) {
         done();
     } else {

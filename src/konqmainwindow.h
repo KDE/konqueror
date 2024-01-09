@@ -130,7 +130,7 @@ public:
      * case a new tab (or the very first view) will be created.
      */
     bool openView(QString mimeType, const QUrl &url, KonqView *childView,
-                  const KonqOpenURLRequest &req = KonqOpenURLRequest::null);
+                  const KonqOpenURLRequest &req = KonqOpenURLRequest::null, QUrl requestedUrl={});
 
 //     bool openView(const QString &mimetype, const QUrl &url, KService::Ptr service);
 

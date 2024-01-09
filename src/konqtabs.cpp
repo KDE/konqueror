@@ -224,6 +224,7 @@ void KonqFrameTabs::insertChildFrame(KonqFrameBase *frame, int index)
 
     if (KonqView *activeChildView = frame->activeChildView()) {
         activeChildView->setCaption(activeChildView->caption());
+        //TODO KF6: check whether requestedUrl or realUrl is more suitable here
         activeChildView->setTabIcon(activeChildView->url());
     }
 

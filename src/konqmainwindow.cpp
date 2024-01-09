@@ -713,7 +713,7 @@ static QString preferredService(KonqView *currentView, const QString &mimeType)
 }
 
 //TODO After removing KonqRun: some of this becomes redundant, at least when called via UrlLoader. Can this be avoided?
-bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *childView, const KonqOpenURLRequest &req)
+bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *childView, const KonqOpenURLRequest &req, QUrl requestedUrl)
 {
     // Second argument is referring URL
     if (!KUrlAuthorized::authorizeUrlAction(QStringLiteral("open"), childView ? childView->url() : QUrl(), _url)) {
@@ -776,6 +776,13 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
             originalURL += '/';
         }
         originalURL += req.nameFilter;
+    } else {
+        //If the part requesting the download wants to perform the download itself,
+        //url will contain the url of the local file, but in the location bar we
+        //want to display the remote URL
+        if (!requestedUrl.isEmpty()) {
+            originalURL = requestedUrl.toString();
+        }
     }
 
     QString serviceName = req.serviceName; // default: none provided
@@ -914,7 +921,8 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
         childView->part()->setProperty("filesToSelect", QVariant::fromValue(req.filesToSelect));
 
         if (!url.isEmpty()) {
-            childView->openUrl(url, originalURL, req.nameFilter, req.tempFile);
+
+            childView->openUrl(url, originalURL, req.nameFilter, req.tempFile, requestedUrl);
         }
     }
     //qCDebug(KONQUEROR_LOG) << "ok=" << ok << "bOthersFollowed=" << bOthersFollowed
@@ -1509,7 +1517,8 @@ void KonqMainWindow::slotOpenWith()
     for (const KService::Ptr &service : offers) {
         if (service->desktopEntryName() == serviceName) {
             KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(service);
-            job->setUrls({ m_currentView->url() });
+            //TODO KF6: check whether requestedUrl or realUrl is more suitable here
+            job->setUrls({ m_currentView->realUrl() });
             job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
             job->start();
             return;
@@ -2143,17 +2152,13 @@ void KonqMainWindow::splitCurrentView(Qt::Orientation orientation)
     QUrl url = oldView->url();
     KSharedConfig::Ptr cfg = KSharedConfig::openConfig("konquerorrc");
     const bool alwaysDuplicateView = cfg->group("UserSettings").readEntry("AlwaysDuplicatePageWhenSplittingView", true);
-    if (!alwaysDuplicateView && !url.isLocalFile()) {
-        url = QUrl(KonqSettings::startURL());
-        if (url.isLocalFile()) {
-            QMimeDatabase db;
-            mime = db.mimeTypeForUrl(url).name();
-        } else {
-            //We can't know the mimetype
-            mime = "text/html";
-        }
+    //TODO KF6: check whether this works correctly
+    if (alwaysDuplicateView || url.isLocalFile()) {
+        newView->duplicateView(oldView);
+        return;
     }
-    openView(mime, url, newView, req);
+    url = QUrl(KonqSettings::startURL());
+    openView(QStringLiteral("text/html"), url, newView, req);
 }
 
 void KonqMainWindow::slotSplitViewHorizontal()
@@ -2523,6 +2528,7 @@ QList<QUrl> KonqMainWindow::currentURLs() const
 {
     QList<QUrl> urls;
     if (m_currentView) {
+        //TODO KF6: check whether requestedUrl or realUrl is more suitable here
         urls.append(m_currentView->url());
         if (!m_currentView->selectedItems().isEmpty()) { // Return list of selected items only if we have a selection
             urls = m_currentView->selectedItems().urlList();
@@ -4150,6 +4156,8 @@ QString KonqMainWindow::currentURL() const
     if (!m_currentView) {
         return QString();
     }
+
+//TODO KF6: check whether requestedUrl or realUrl is more suitable here
     QString url = m_currentView->url().toDisplayString();
 
 #if 0 // do we want this?
