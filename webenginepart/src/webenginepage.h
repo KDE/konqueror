@@ -173,9 +173,21 @@ private:
     bool askBrowserToOpenUrl(const QUrl &url, const QString &mimetype=QString(), const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(), const BrowserArguments &bargs = BrowserArguments());
     bool downloadWithExternalDonwloadManager(const QUrl &url);
 
-    //Whether a local URL should be opened by this part or by another part. This takes into account the user preferences
-    //and it's needed to avoid, for example, that the link "Home Folder" in the intro page is displayed in WebEnginePart
-    //and not by the part selected by the user to display directories.
+    /**
+     * @brief Whether WebEnginePart should open an URL by itself or delegate the main application
+     *
+     * This tries to take into account the user preferences and it's needed, for example, to ensure that
+     * the link "Home Folder" in the introduction page is displayed in the part the user choose for directories
+     * rather than in WebEnginePart.
+     *
+     * This function is meant to be used by acceptNavigationRequest(), which unfortunately means it doesn't know
+     * the URL mimetype. Because of this, only preferences related to the URL's scheme can be applied. In particular:
+     * - if the URL has the `file` scheme, its mimetype is detected using QMimeTypeDatabase and the appropriate
+     *  preferences are enforced
+     * - if the URL has the `trash` or `remote` schemes, it is handled by the application
+     * @param url the URL to open
+     * @return `true` if WebEnginePart should open the URL and `false` if it should let the application open it
+     */
     bool shouldOpenUrl(const QUrl &url) const;
 
     /**
@@ -260,6 +272,14 @@ private Q_SLOTS:
     void slotStatusBarVisibilityChangeRequested(bool visible);
     void slotToolBarVisibilityChangeRequested(bool visible);
     void slotLoadFinished(bool);
+
+private:
+    /**
+     * @brief Decide whether the page is allowed to open a new window requested by javascript or not
+     * @param url the URL to load in the new window
+     * @return `true` if the page is allowed to open the new window and `false` if it isn't
+     */
+    bool decideHandlingOfJavascripWindow(const QUrl url) const;
 
 private:
     WindowArgs m_windowArgs;
