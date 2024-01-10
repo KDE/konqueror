@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 01:33+0000\n"
+"POT-Creation-Date: 2024-01-10 01:34+0000\n"
 "PO-Revision-Date: 2021-11-25 21:50+0100\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -774,12 +774,12 @@ msgstr "Daty z formulara w KWallet zawěsćić, hdyž so dialog začini"
 msgid "&Immediately memorize form data"
 msgstr "Daty z formulara &hnydom spomjatkować"
 
-#: src/webenginepage.cpp:157 src/webenginepage.cpp:181
+#: src/webenginepage.cpp:158 src/webenginepage.cpp:182
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Rjadowak za sćahowanje (%1) pobrachuje we Wašej instalaciji."
 
-#: src/webenginepage.cpp:158 src/webenginepage.cpp:182
+#: src/webenginepage.cpp:159 src/webenginepage.cpp:183
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -790,7 +790,7 @@ msgstr ""
 "\n"
 "Integracija njeje móžna."
 
-#: src/webenginepage.cpp:442
+#: src/webenginepage.cpp:455
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -799,12 +799,12 @@ msgid ""
 "Otherwise, click the Continue button to display the webpage again.</p>"
 msgstr ""
 
-#: src/webenginepage.cpp:449
+#: src/webenginepage.cpp:462
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Informaciju hišće raz pósłać"
 
-#: src/webenginepage.cpp:651
+#: src/webenginepage.cpp:664
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -813,18 +813,18 @@ msgstr ""
 "Tutón serwer spyta zhonić, hdźe tuchwilu sće.\n"
 "Chceće to dowolić?"
 
-#: src/webenginepage.cpp:655 src/webenginepage.cpp:733
-#: src/webenginepage.cpp:744
+#: src/webenginepage.cpp:668 src/webenginepage.cpp:746
+#: src/webenginepage.cpp:757
 #, kde-format
 msgid "Network Transmission"
 msgstr "Přenjesenje přez syć"
 
-#: src/webenginepage.cpp:656
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "Allow access"
 msgstr "Dowolić"
 
-#: src/webenginepage.cpp:726
+#: src/webenginepage.cpp:739
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -833,12 +833,12 @@ msgid ""
 "Are you sure you want to send the data unencrypted?"
 msgstr ""
 
-#: src/webenginepage.cpp:734
+#: src/webenginepage.cpp:747
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&nješifrowane daty pósłać"
 
-#: src/webenginepage.cpp:741
+#: src/webenginepage.cpp:754
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -847,34 +847,34 @@ msgstr ""
 "Tutón server spyta formularowe daty jako emal pósłać\n"
 "Chceće pokročować?"
 
-#: src/webenginepage.cpp:745
+#: src/webenginepage.cpp:758
 #, kde-format
 msgid "&Send Email"
 msgstr "&Mailku pósłać"
 
-#: src/webenginepage.cpp:794
+#: src/webenginepage.cpp:807
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 msgstr ""
 
-#: src/webenginepage.cpp:796
+#: src/webenginepage.cpp:809
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr ""
 
-#: src/webenginepage.cpp:797
+#: src/webenginepage.cpp:810
 #, kde-format
 msgid "&Allow attachments"
 msgstr ""
 
-#: src/webenginepage.cpp:798
+#: src/webenginepage.cpp:811
 #, kde-format
 msgid "&Ignore attachments"
 msgstr ""
 
-#: src/webenginepage.cpp:812
+#: src/webenginepage.cpp:825
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -883,36 +883,36 @@ msgstr ""
 "Tutón server je spytał, na formularowe daty hišće dataju z wašeho computera "
 "připójsnyć. Přiwěšk je so z wěstotnych přičin wotstronił."
 
-#: src/webenginepage.cpp:815
+#: src/webenginepage.cpp:828
 #, kde-format
 msgid "Attachment Removed"
 msgstr ""
 
-#: src/webenginepage.cpp:955
+#: src/webenginepage.cpp:959
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
 "Do you want to allow this?"
 msgstr ""
 
-#: src/webenginepage.cpp:957
+#: src/webenginepage.cpp:961
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
 "want to allow this?</qt>"
 msgstr ""
 
-#: src/webenginepage.cpp:961
+#: src/webenginepage.cpp:964
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr ""
 
-#: src/webenginepage.cpp:962
+#: src/webenginepage.cpp:965
 #, kde-format
 msgid "Allow"
 msgstr "Dowolić"
 
-#: src/webenginepage.cpp:963
+#: src/webenginepage.cpp:965
 #, kde-format
 msgid "Do Not Allow"
 msgstr "nic dowolić"

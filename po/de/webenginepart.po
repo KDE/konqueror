@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 01:33+0000\n"
+"POT-Creation-Date: 2024-01-10 01:34+0000\n"
 "PO-Revision-Date: 2023-05-05 19:50+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -839,12 +839,12 @@ msgstr "Formulardaten beim Schließen des Dialogs in KWallet speichern"
 msgid "&Immediately memorize form data"
 msgstr "&Formulardaten sofort speichern"
 
-#: src/webenginepage.cpp:157 src/webenginepage.cpp:181
+#: src/webenginepage.cpp:158 src/webenginepage.cpp:182
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Der Download-Manager (%1) ist auf Ihrem System nicht auffindbar."
 
-#: src/webenginepage.cpp:158 src/webenginepage.cpp:182
+#: src/webenginepage.cpp:159 src/webenginepage.cpp:183
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -856,7 +856,7 @@ msgstr ""
 "\n"
 "Die Einbindung wird deaktiviert."
 
-#: src/webenginepage.cpp:442
+#: src/webenginepage.cpp:455
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -870,12 +870,12 @@ msgstr ""
 "doppelten Einkauf zu verhindern. Ansonsten klicken Sie auf den Knopf "
 "Fortsetzen, um die Webseite wieder anzuzeigen.</p>"
 
-#: src/webenginepage.cpp:449
+#: src/webenginepage.cpp:462
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Information erneut senden"
 
-#: src/webenginepage.cpp:651
+#: src/webenginepage.cpp:664
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -885,18 +885,18 @@ msgstr ""
 "Standort erhalten.\n"
 "Möchten Sie dies zulassen?"
 
-#: src/webenginepage.cpp:655 src/webenginepage.cpp:733
-#: src/webenginepage.cpp:744
+#: src/webenginepage.cpp:668 src/webenginepage.cpp:746
+#: src/webenginepage.cpp:757
 #, kde-format
 msgid "Network Transmission"
 msgstr "Netzwerk-Übertragung"
 
-#: src/webenginepage.cpp:656
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "Allow access"
 msgstr "Zugriff erlauben"
 
-#: src/webenginepage.cpp:726
+#: src/webenginepage.cpp:739
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -909,12 +909,12 @@ msgstr ""
 "Ein Außenstehender könnte diese Daten abfangen und lesen.\n"
 "Möchten Sie die Daten unverschlüsselt senden?"
 
-#: src/webenginepage.cpp:734
+#: src/webenginepage.cpp:747
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Unverschlüsselt senden"
 
-#: src/webenginepage.cpp:741
+#: src/webenginepage.cpp:754
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -923,12 +923,12 @@ msgstr ""
 "Der Server versucht, Formulardaten per E-Mail zu verschicken.\n"
 "Möchten Sie fortfahren?"
 
-#: src/webenginepage.cpp:745
+#: src/webenginepage.cpp:758
 #, kde-format
 msgid "&Send Email"
 msgstr "E-&Mail versenden"
 
-#: src/webenginepage.cpp:794
+#: src/webenginepage.cpp:807
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -937,22 +937,22 @@ msgstr ""
 "<qt>Möchten Sie dieser Seite erlauben, folgende Dateien an die E-Mail "
 "anzuhängen?</qt>"
 
-#: src/webenginepage.cpp:796
+#: src/webenginepage.cpp:809
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Bestätigung von E-Mail-Anhang"
 
-#: src/webenginepage.cpp:797
+#: src/webenginepage.cpp:810
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Anhänge erlauben"
 
-#: src/webenginepage.cpp:798
+#: src/webenginepage.cpp:811
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "Anhänge &ignorieren"
 
-#: src/webenginepage.cpp:812
+#: src/webenginepage.cpp:825
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -962,12 +962,12 @@ msgstr ""
 "Formularübertragung anzuhängen. Der Dateianhang wurde zu Ihrer Sicherheit "
 "entfernt."
 
-#: src/webenginepage.cpp:815
+#: src/webenginepage.cpp:828
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Anhang entfernt"
 
-#: src/webenginepage.cpp:955
+#: src/webenginepage.cpp:959
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -976,7 +976,7 @@ msgstr ""
 "Diese Seite versucht, ein neues Popup-Fenster zu öffnen.\n"
 "Möchten Sie das zulassen?"
 
-#: src/webenginepage.cpp:957
+#: src/webenginepage.cpp:961
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -985,17 +985,17 @@ msgstr ""
 "<qt>Diese Seite, ein neues Popup-Fenster mit der Adresse  <br/><b>%1</b> zu "
 "öffnen.<br/>Möchten Sie das zulassen?</qt>"
 
-#: src/webenginepage.cpp:961
+#: src/webenginepage.cpp:964
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Bestätigung für Javascript-Popup-Fenster"
 
-#: src/webenginepage.cpp:962
+#: src/webenginepage.cpp:965
 #, kde-format
 msgid "Allow"
 msgstr "Erlauben"
 
-#: src/webenginepage.cpp:963
+#: src/webenginepage.cpp:965
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Ablehnen"

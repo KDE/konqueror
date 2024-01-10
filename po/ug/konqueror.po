@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 01:33+0000\n"
+"POT-Creation-Date: 2024-01-10 01:34+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -495,8 +495,8 @@ msgid ""
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4901
-#: src/konqmainwindow.cpp:4947
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4913
+#: src/konqmainwindow.cpp:4959
 #, kde-format
 msgid "no name"
 msgstr "ئاتسىز"
@@ -603,7 +603,7 @@ msgstr "يەرلىك"
 msgid "Miscellaneous"
 msgstr "باشقىلار"
 
-#: src/konqhistoryview.cpp:54 src/konqmainwindow.cpp:4418
+#: src/konqhistoryview.cpp:54 src/konqmainwindow.cpp:4426
 #, kde-format
 msgid "Open in New &Window"
 msgstr "يېڭى كۆزنەكتە ئاچ(&W)"
@@ -676,18 +676,18 @@ msgstr "ئوقۇۋاتىدۇ…"
 msgid "Access denied"
 msgstr ""
 
-#: src/konqmainwindow.cpp:1485
+#: src/konqmainwindow.cpp:1493
 #, fuzzy, kde-format
 #| msgid "&Open File..."
 msgid "Open File"
 msgstr "ھۆججەت ئاچ(&O)…"
 
-#: src/konqmainwindow.cpp:1548
+#: src/konqmainwindow.cpp:1557
 #, kde-format
 msgid "Canceled."
 msgstr "بىكار قىلىندى."
 
-#: src/konqmainwindow.cpp:1584
+#: src/konqmainwindow.cpp:1593
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -696,55 +696,55 @@ msgstr ""
 "بۇ بەتتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
 "بىر profile نى قايتا ئوقۇسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
 
-#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2236
-#: src/konqmainwindow.cpp:2329 src/konqmainwindow.cpp:2361
-#: src/konqmainwindow.cpp:2404 src/konqmainwindow.cpp:2426
-#: src/konqmainwindow.cpp:4866
+#: src/konqmainwindow.cpp:1594 src/konqmainwindow.cpp:2241
+#: src/konqmainwindow.cpp:2334 src/konqmainwindow.cpp:2366
+#: src/konqmainwindow.cpp:2409 src/konqmainwindow.cpp:2431
+#: src/konqmainwindow.cpp:4878
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
 msgstr "ئۆزگىرىشلەرنى تاشلىۋەتسۇنمۇ؟"
 
-#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2236
-#: src/konqmainwindow.cpp:2329 src/konqmainwindow.cpp:2361
-#: src/konqmainwindow.cpp:2404 src/konqmainwindow.cpp:2427
-#: src/konqmainwindow.cpp:4866
+#: src/konqmainwindow.cpp:1594 src/konqmainwindow.cpp:2241
+#: src/konqmainwindow.cpp:2334 src/konqmainwindow.cpp:2366
+#: src/konqmainwindow.cpp:2409 src/konqmainwindow.cpp:2432
+#: src/konqmainwindow.cpp:4878
 #, kde-format
 msgid "&Discard Changes"
 msgstr "ئۆزگىرىشلەرنى تاشلىۋەت(&D)"
 
-#: src/konqmainwindow.cpp:1906 src/konqmainwindow.cpp:1912
+#: src/konqmainwindow.cpp:1915 src/konqmainwindow.cpp:1921
 #, kde-format
 msgid "Home Folder"
 msgstr "ماكان مۇندەرىجە"
 
-#: src/konqmainwindow.cpp:1907 src/konqmainwindow.cpp:3394
+#: src/konqmainwindow.cpp:1916 src/konqmainwindow.cpp:3400
 #, kde-format
 msgid "Home"
 msgstr "ماكان"
 
-#: src/konqmainwindow.cpp:1913
+#: src/konqmainwindow.cpp:1922
 #, kde-format
 msgid "Navigate to your 'Home Folder'"
 msgstr "«ماكان مۇندەرىجە» گە باشلايدۇ"
 
-#: src/konqmainwindow.cpp:1914
+#: src/konqmainwindow.cpp:1923
 #, kde-format
 msgid "Navigate to your local 'Home Folder'"
 msgstr "يەرلىكتىكى «ماكان مۇندەرىجە» گە باشلايدۇ"
 
 #. i18n: ectx: label, entry, group (UserSettings)
-#: src/konqmainwindow.cpp:1917 src/konqueror.kcfg:16
+#: src/konqmainwindow.cpp:1926 src/konqueror.kcfg:16
 #, kde-format
 msgid "Home Page"
 msgstr "باش بەت"
 
-#: src/konqmainwindow.cpp:1919
+#: src/konqmainwindow.cpp:1928
 #, kde-format
 msgid "Navigate to your 'Home Page'"
 msgstr "«باش بەت»كە باشلايدۇ"
 
-#: src/konqmainwindow.cpp:1920
+#: src/konqmainwindow.cpp:1929
 #, kde-format
 msgid ""
 "<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
@@ -752,7 +752,7 @@ msgid ""
 "General</b>.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:2235
+#: src/konqmainwindow.cpp:2240
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -761,7 +761,7 @@ msgstr ""
 "بۇ بەتكۈچتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
 "بۇ بەتكۈچ ئاجرىتىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
 
-#: src/konqmainwindow.cpp:2328
+#: src/konqmainwindow.cpp:2333
 #, kde-format
 msgid ""
 "This view contains changes that have not been submitted.\n"
@@ -770,7 +770,7 @@ msgstr ""
 "بۇ كۆرۈنۈشتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
 "بۇ كۆرۈنۈش يېپىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
 
-#: src/konqmainwindow.cpp:2360
+#: src/konqmainwindow.cpp:2365
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -779,23 +779,23 @@ msgstr ""
 "بۇ بەتكۈچتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
 "بۇ بەتكۈچ يېپىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
 
-#: src/konqmainwindow.cpp:2386
+#: src/konqmainwindow.cpp:2391
 #, kde-format
 msgid "Do you really want to close all other tabs?"
 msgstr "راستلا ھەممە بەتكۈچلەرنى ياپامسىز؟"
 
-#: src/konqmainwindow.cpp:2387 src/konqmainwindow.cpp:3474 src/konqtabs.cpp:334
+#: src/konqmainwindow.cpp:2392 src/konqmainwindow.cpp:3480 src/konqtabs.cpp:335
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr "باشقا بەتكۈچلەرنى ياپ(&O)"
 
-#: src/konqmainwindow.cpp:2387
+#: src/konqmainwindow.cpp:2392
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
 msgstr ""
 
-#: src/konqmainwindow.cpp:2403
+#: src/konqmainwindow.cpp:2408
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -804,7 +804,7 @@ msgstr ""
 "بۇ بەتكۈچتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
 "باشقا بەتكۈچلەر يېپىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
 
-#: src/konqmainwindow.cpp:2425
+#: src/konqmainwindow.cpp:2430
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -813,233 +813,233 @@ msgstr ""
 "بۇ بەتكۈچتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
 "ھەممە بەتكۈچلەرنى قايتا ئوقۇسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
 
-#: src/konqmainwindow.cpp:2482
+#: src/konqmainwindow.cpp:2487
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Target"
 msgstr "نىشاننى كىرگۈزۈش"
 
-#: src/konqmainwindow.cpp:2489
+#: src/konqmainwindow.cpp:2494
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
 msgstr "<qt><b>%1</b> ئىناۋەتلىك ئەمەس</qt>"
 
-#: src/konqmainwindow.cpp:2499
+#: src/konqmainwindow.cpp:2504
 #, kde-format
 msgid "Copy selected files from %1 to:"
 msgstr "%1 دىن تاللانغان ھۆججەتلەرنى كۆچۈر:"
 
-#: src/konqmainwindow.cpp:2512
+#: src/konqmainwindow.cpp:2517
 #, kde-format
 msgid "Move selected files from %1 to:"
 msgstr "تاللانغان ھۆججەتنى %1 دىن يۆتكە:"
 
-#: src/konqmainwindow.cpp:2686
+#: src/konqmainwindow.cpp:2692
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
 msgstr "يېپىلغان تۇر ئىزىنى قۇرۇقدا"
 
-#: src/konqmainwindow.cpp:2708
+#: src/konqmainwindow.cpp:2714
 #, kde-format
 msgid "Save As..."
 msgstr "باشقا ئاتتا ساقلا…"
 
-#: src/konqmainwindow.cpp:2710
+#: src/konqmainwindow.cpp:2716
 #, kde-format
 msgid "Manage..."
 msgstr "باشقۇر…"
 
-#: src/konqmainwindow.cpp:3303
+#: src/konqmainwindow.cpp:3309
 #, kde-format
 msgid "New &Window"
 msgstr "يېڭى كۆزنەك(&W)"
 
-#: src/konqmainwindow.cpp:3308
+#: src/konqmainwindow.cpp:3314
 #, kde-format
 msgid "&Duplicate Window"
 msgstr "كۆزنەكنى كۆپەيت(&D)"
 
-#: src/konqmainwindow.cpp:3313
+#: src/konqmainwindow.cpp:3319
 #, kde-format
 msgid "Send &Link Address..."
 msgstr "ئۇلانما ئادرېسىنى ئەۋەت(L)…"
 
-#: src/konqmainwindow.cpp:3317
+#: src/konqmainwindow.cpp:3323
 #, kde-format
 msgid "S&end File..."
 msgstr "ھۆججەت ئەۋەت(&E)…"
 
-#: src/konqmainwindow.cpp:3321
+#: src/konqmainwindow.cpp:3327
 #, kde-format
 msgid "&Open Location"
 msgstr "ئورۇن ئاچ(&O)"
 
-#: src/konqmainwindow.cpp:3327
+#: src/konqmainwindow.cpp:3333
 #, kde-format
 msgid "&Open File..."
 msgstr "ھۆججەت ئاچ(&O)…"
 
-#: src/konqmainwindow.cpp:3332
+#: src/konqmainwindow.cpp:3338
 #, kde-format
 msgid "&Find File..."
 msgstr "ھۆججەت ئىزدە(&F)…"
 
-#: src/konqmainwindow.cpp:3341
+#: src/konqmainwindow.cpp:3347
 #, kde-format
 msgid "Lock to Current Location"
 msgstr "نۆۋەتتىكى ئورۇننى قۇلۇپلا"
 
-#: src/konqmainwindow.cpp:3344
+#: src/konqmainwindow.cpp:3350
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr "كۆرۈنۈشنى ئۇلا(&K)"
 
-#: src/konqmainwindow.cpp:3349
+#: src/konqmainwindow.cpp:3355
 #, kde-format
 msgid "&Up"
 msgstr "يۇقىرىغا (&U)"
 
-#: src/konqmainwindow.cpp:3359
+#: src/konqmainwindow.cpp:3365
 #, kde-format
 msgid "Closed Items"
 msgstr "يېپىلغان تۈرلەر"
 
-#: src/konqmainwindow.cpp:3372
+#: src/konqmainwindow.cpp:3378
 #, kde-format
 msgid "Sessions"
 msgstr "ئەڭگىمە"
 
-#: src/konqmainwindow.cpp:3399
+#: src/konqmainwindow.cpp:3405
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr "كۆپ زىيارەت قىلىنغان"
 
-#: src/konqmainwindow.cpp:3403
+#: src/konqmainwindow.cpp:3409
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr "يېقىندا زىيارەت قىلىنغان"
 
-#: src/konqmainwindow.cpp:3412
+#: src/konqmainwindow.cpp:3418
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr "تارىخنى كۆرسەت"
 
-#: src/konqmainwindow.cpp:3424
+#: src/konqmainwindow.cpp:3430
 #, kde-format
 msgid "Configure Extensions..."
 msgstr "كېڭەيتمىلەرنى سەپلە…"
 
-#: src/konqmainwindow.cpp:3428
+#: src/konqmainwindow.cpp:3434
 #, kde-format
 msgid "Configure Spell Checking..."
 msgstr "ئىملا تەكشۈرۈشنى سەپلە"
 
-#: src/konqmainwindow.cpp:3434
+#: src/konqmainwindow.cpp:3440
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr "كۆرۈنۈشنى پارچىلا سول/ئوڭ(&L)"
 
-#: src/konqmainwindow.cpp:3439
+#: src/konqmainwindow.cpp:3445
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr "كۆرۈنۈشنى پارچىلا ئۇستى/ئاستى(&T)"
 
-#: src/konqmainwindow.cpp:3444 src/konqtabs.cpp:455
+#: src/konqmainwindow.cpp:3450 src/konqtabs.cpp:456
 #, kde-format
 msgid "&New Tab"
 msgstr "يېڭى بەتكۈچ(&N)"
 
-#: src/konqmainwindow.cpp:3453
+#: src/konqmainwindow.cpp:3459
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr "نۆۋەتتىكى بەتكۈچنى كۆپەيت(&D)"
 
-#: src/konqmainwindow.cpp:3458
+#: src/konqmainwindow.cpp:3464
 #, kde-format
 msgid "Detach Current Tab"
 msgstr "نۆۋەتتىكى بەتكۈچنى ئاجرات"
 
-#: src/konqmainwindow.cpp:3463
+#: src/konqmainwindow.cpp:3469
 #, kde-format
 msgid "&Close Active View"
 msgstr "ئاكتىپ كۆرۈنۈشنى ياپ(&C)"
 
-#: src/konqmainwindow.cpp:3468
+#: src/konqmainwindow.cpp:3474
 #, kde-format
 msgid "Close Current Tab"
 msgstr "نۆۋەتتىكى بەتكۈچنى ياپ"
 
-#: src/konqmainwindow.cpp:3478
+#: src/konqmainwindow.cpp:3484
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "كېيىنكى بەتكۈچنى ئاكتىپلا"
 
-#: src/konqmainwindow.cpp:3482
+#: src/konqmainwindow.cpp:3488
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "ئالدىنقى بەتكۈچنى ئاكتىپلا"
 
-#: src/konqmainwindow.cpp:3489
+#: src/konqmainwindow.cpp:3495
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "بەتكۈچ %1 نى ئاكتىپلا"
 
-#: src/konqmainwindow.cpp:3494
+#: src/konqmainwindow.cpp:3500
 #, kde-format
 msgid "Move Tab Left"
 msgstr "بەتكۈچنى سولغا يۆتكە"
 
-#: src/konqmainwindow.cpp:3499
+#: src/konqmainwindow.cpp:3505
 #, kde-format
 msgid "Move Tab Right"
 msgstr "بەتكۈچنى ئوڭغا يۆتكە"
 
-#: src/konqmainwindow.cpp:3507
+#: src/konqmainwindow.cpp:3513
 #, kde-format
 msgid "Dump Debug Info"
 msgstr "سازلاش ئۇچۇرىنى تولۇق كۆرسەت"
 
-#: src/konqmainwindow.cpp:3525
+#: src/konqmainwindow.cpp:3531
 #, kde-format
 msgid "&Reload"
 msgstr "قايتا يۈكلە(&R)"
 
-#: src/konqmainwindow.cpp:3530 src/konqtabs.cpp:312
+#: src/konqmainwindow.cpp:3536 src/konqtabs.cpp:313
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr "ھەممە بەتكۈچلەرنى قايتا يۈكلە(&R)"
 
-#: src/konqmainwindow.cpp:3538
+#: src/konqmainwindow.cpp:3544
 #, kde-format
 msgid "&Force Reload"
 msgstr "مەجبۇرىي قايتا ئوقۇ(&F)"
 
-#: src/konqmainwindow.cpp:3564
+#: src/konqmainwindow.cpp:3570
 #, kde-format
 msgid "&Stop"
 msgstr "توختا(&S)"
 
-#: src/konqmainwindow.cpp:3573
+#: src/konqmainwindow.cpp:3579
 #, kde-format
 msgid "Throbber"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3577 src/konqmainwindow.cpp:3580
+#: src/konqmainwindow.cpp:3583 src/konqmainwindow.cpp:3586
 #, kde-format
 msgid "L&ocation: "
 msgstr "ئورۇن(&O): "
 
-#: src/konqmainwindow.cpp:3587
+#: src/konqmainwindow.cpp:3593
 #, kde-format
 msgid "Location Bar"
 msgstr "ئادرېس ئىستونى"
 
-#: src/konqmainwindow.cpp:3593
+#: src/konqmainwindow.cpp:3599
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
@@ -1047,12 +1047,12 @@ msgstr ""
 "<html>ئورۇن بالدىقى<br /><br />تور ئادرېسى ياكى ئىزدەيدىغان ئىبارىنى "
 "كىرگۈزۈڭ.</html>"
 
-#: src/konqmainwindow.cpp:3597
+#: src/konqmainwindow.cpp:3603
 #, kde-format
 msgid "Clear Location Bar"
 msgstr "ئورۇن بالدىقىنى تازىلا"
 
-#: src/konqmainwindow.cpp:3601
+#: src/konqmainwindow.cpp:3607
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
@@ -1061,22 +1061,22 @@ msgstr ""
 "<html>ئورۇن بالدىقىنى تازىلا<br /><br />ئورۇن بالدىقىدىكى مەزمۇنلارنى "
 "تازىلايدۇ.</html>"
 
-#: src/konqmainwindow.cpp:3606
+#: src/konqmainwindow.cpp:3612
 #, kde-format
 msgid "&Bookmarks"
 msgstr "خەتكۈچلەر(&B)"
 
-#: src/konqmainwindow.cpp:3634
+#: src/konqmainwindow.cpp:3640
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "Konqueror نى تونۇشتۇرۇش(&Q)"
 
-#: src/konqmainwindow.cpp:3639
+#: src/konqmainwindow.cpp:3645
 #, kde-format
 msgid "Go"
 msgstr "يۆتكەل"
 
-#: src/konqmainwindow.cpp:3641
+#: src/konqmainwindow.cpp:3647
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
@@ -1084,7 +1084,7 @@ msgid ""
 msgstr ""
 "<html>يۆتكەل<br /><br />ئورۇن بالدىقىغا كىرگۈزۈلگەن بەتكە يۆتكىلىدۇ.</html>"
 
-#: src/konqmainwindow.cpp:3649
+#: src/konqmainwindow.cpp:3655
 #, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
@@ -1092,27 +1092,27 @@ msgid ""
 "html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3652
+#: src/konqmainwindow.cpp:3658
 #, kde-format
 msgid "Enter the parent folder"
 msgstr "ئاتا قىسقۇچنى كىرگۈزۈڭ"
 
-#: src/konqmainwindow.cpp:3654 src/konqmainwindow.cpp:3655
+#: src/konqmainwindow.cpp:3660 src/konqmainwindow.cpp:3661
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "كۆرۈش ئىزىنىڭ كەينىگە بىر قەدەم يانىدۇ"
 
-#: src/konqmainwindow.cpp:3657 src/konqmainwindow.cpp:3658
+#: src/konqmainwindow.cpp:3663 src/konqmainwindow.cpp:3664
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "كۆرۈش ئىزىنىڭ ئالدىغا بىر قەدەم ماڭىدۇ"
 
-#: src/konqmainwindow.cpp:3660 src/konqmainwindow.cpp:3661
+#: src/konqmainwindow.cpp:3666 src/konqmainwindow.cpp:3667
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
 msgstr "يېپىلغان بەتكۈچلەر ئىزىنىڭ كەينىگە بىر قەدەم يانىدۇ"
 
-#: src/konqmainwindow.cpp:3663
+#: src/konqmainwindow.cpp:3669
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1120,12 +1120,12 @@ msgid ""
 "were loaded, in order to make the changes visible.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3666
+#: src/konqmainwindow.cpp:3672
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "نۆۋەتتە كۆرسىتىلگەن مەزمۇننى قايتا ئوقۇيدۇ"
 
-#: src/konqmainwindow.cpp:3668
+#: src/konqmainwindow.cpp:3674
 #, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1133,12 +1133,12 @@ msgid ""
 "they were loaded, in order to make the changes visible.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3671
+#: src/konqmainwindow.cpp:3677
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr "بەتكۈچلەردىكى نۆۋەتتە كۆرسىتىلگەن مەزمۇننى قايتا ئوقۇيدۇ"
 
-#: src/konqmainwindow.cpp:3673
+#: src/konqmainwindow.cpp:3679
 #, kde-format
 msgid ""
 "<html>Stop loading the document<br /><br />All network transfers will be "
@@ -1146,7 +1146,7 @@ msgid ""
 "</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3677
+#: src/konqmainwindow.cpp:3683
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1155,18 +1155,18 @@ msgid ""
 "are downloaded again, even if cached copies exist.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3681
+#: src/konqmainwindow.cpp:3687
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3683
+#: src/konqmainwindow.cpp:3689
 #, kde-format
 msgid "Stop loading the document"
 msgstr "پۈتۈكنى ئوقۇشنى توختىتىدۇ"
 
-#: src/konqmainwindow.cpp:3685
+#: src/konqmainwindow.cpp:3691
 #, kde-format
 msgid ""
 "<html>Cut the currently selected text or item(s) and move it to the system "
@@ -1174,12 +1174,12 @@ msgid ""
 "Konqueror and other KDE applications.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3689
+#: src/konqmainwindow.cpp:3695
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr "تاللانغان تېكىست ياكى تۇرنى چاپلاش تاختىسىغا يۆتكە"
 
-#: src/konqmainwindow.cpp:3691
+#: src/konqmainwindow.cpp:3697
 #, kde-format
 msgid ""
 "<html>Copy the currently selected text or item(s) to the system "
@@ -1187,24 +1187,24 @@ msgid ""
 "Konqueror and other KDE applications.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3695
+#: src/konqmainwindow.cpp:3701
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr "تاللانغان تېكىست ياكى تۈرلەرنى چاپلاش تاختىسىغا كۆچۈر"
 
-#: src/konqmainwindow.cpp:3697
+#: src/konqmainwindow.cpp:3703
 #, kde-format
 msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
 "also works for text copied or cut from other KDE applications.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3700
+#: src/konqmainwindow.cpp:3706
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "چاپلاش تاختىسىنىڭ مەزمۇنلىرىنى چاپلا"
 
-#: src/konqmainwindow.cpp:3702
+#: src/konqmainwindow.cpp:3708
 #, kde-format
 msgid ""
 "<html>Print the currently displayed document<br /><br />You will be "
@@ -1214,54 +1214,54 @@ msgid ""
 "file from the current document.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3708
+#: src/konqmainwindow.cpp:3714
 #, kde-format
 msgid "Print the current document"
 msgstr "نۆۋەتتىكى پۈتۈكنى باس"
 
-#: src/konqmainwindow.cpp:3710
+#: src/konqmainwindow.cpp:3716
 #, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
 "explore many files from one folder"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3711
+#: src/konqmainwindow.cpp:3717
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
 "other linked views."
 msgstr ""
 
-#: src/konqmainwindow.cpp:3715
+#: src/konqmainwindow.cpp:3721
 #, fuzzy, kde-format
 #| msgid "C&lose Current Tab"
 msgid "&Inspect Current Page"
 msgstr "ھازىرقى بەتكۈچنى ياپ(&L)"
 
-#: src/konqmainwindow.cpp:3716
+#: src/konqmainwindow.cpp:3722
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3717
+#: src/konqmainwindow.cpp:3723
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3883
+#: src/konqmainwindow.cpp:3889
 #, kde-format
 msgid "Copy &Files..."
 msgstr "ھۆججەتلەرنى كۆچۈر(&F)…"
 
-#: src/konqmainwindow.cpp:3887
+#: src/konqmainwindow.cpp:3893
 #, kde-format
 msgid "M&ove Files..."
 msgstr "ھۆججەتلەرنى يۆتكە(&O)…"
 
-#: src/konqmainwindow.cpp:4233
+#: src/konqmainwindow.cpp:4241
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
@@ -1270,78 +1270,78 @@ msgstr ""
 "بەتكۈچلەردە 20 دىن ئارتۇق خەتكۈشنى ئېچىشنى تەلەپ قىلدىڭىز. بۇنىڭ ئازراق "
 "ۋاقىت كېتىدۇ. داۋاملاشتۇرسۇنمۇ؟"
 
-#: src/konqmainwindow.cpp:4235
+#: src/konqmainwindow.cpp:4243
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "خەتكۈش قىسقۇچىنى يېڭى بەتكۈچتە ئاچ"
 
-#: src/konqmainwindow.cpp:4236
+#: src/konqmainwindow.cpp:4244
 #, fuzzy, kde-format
 #| msgid "&Open"
 msgctxt "@action:button"
 msgid "Open"
 msgstr "ئاچ(&O)"
 
-#: src/konqmainwindow.cpp:4411
+#: src/konqmainwindow.cpp:4419
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "مەزكۇر كۆزنەكتە ئاچ(&H)"
 
-#: src/konqmainwindow.cpp:4412
+#: src/konqmainwindow.cpp:4420
 #, kde-format
 msgid "Open the document in current window"
 msgstr "پۈتۈكنى مەزكۇر كۆزنەكتە ئاچىدۇ"
 
-#: src/konqmainwindow.cpp:4419
+#: src/konqmainwindow.cpp:4427
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "پۈتۈكنى يېڭى كۆزنەكتە ئاچىدۇ"
 
-#: src/konqmainwindow.cpp:4425
+#: src/konqmainwindow.cpp:4433
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "يېڭى بەتكۈچتە ئاچ(&N)"
 
-#: src/konqmainwindow.cpp:4427
+#: src/konqmainwindow.cpp:4435
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "پۈتۈكنى يېڭى كۆزنەكتە ئاچىدۇ"
 
-#: src/konqmainwindow.cpp:4652
+#: src/konqmainwindow.cpp:4660
 #, kde-format
 msgid "&Open With"
 msgstr "بۇنىڭدا ئاچ(&O)"
 
-#: src/konqmainwindow.cpp:4665
+#: src/konqmainwindow.cpp:4673
 #, kde-format
 msgid "Open with %1"
 msgstr "%1 نىڭ بىلەن ئاچ"
 
-#: src/konqmainwindow.cpp:4713
+#: src/konqmainwindow.cpp:4721
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "كۆرۈش ھالىتى(&V)"
 
-#: src/konqmainwindow.cpp:4830
+#: src/konqmainwindow.cpp:4842
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr "بۇ كۆزنەكتە ئېچىقلىق بەتكۈچىڭىزدىن بىر نەچچىسى بار، راستلا چېكىنەمسىز؟"
 
-#: src/konqmainwindow.cpp:4832
+#: src/konqmainwindow.cpp:4844
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "جەزملەش"
 
-#: src/konqmainwindow.cpp:4834
+#: src/konqmainwindow.cpp:4846
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "ھازىرقى بەتكۈچنى ياپ(&L)"
 
-#: src/konqmainwindow.cpp:4862
+#: src/konqmainwindow.cpp:4874
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1350,7 +1350,7 @@ msgstr ""
 "بۇ بەتكۈچتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
 "بىر كۆزنەك يېپىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
 
-#: src/konqmainwindow.cpp:4863
+#: src/konqmainwindow.cpp:4875
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1359,34 +1359,34 @@ msgstr ""
 "بۇ بەتتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
 "بىر كۆزنەك يېپىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
 
-#: src/konqmainwindow.cpp:5023
+#: src/konqmainwindow.cpp:5035
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr "يان بالدىقىڭىز ئىشلىمىدى ياكى يوق. يېڭى كىرگۈنى قوشقىلى بولمايدۇ."
 
-#: src/konqmainwindow.cpp:5023 src/konqmainwindow.cpp:5030
+#: src/konqmainwindow.cpp:5035 src/konqmainwindow.cpp:5042
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "تور يان بالداق"
 
-#: src/konqmainwindow.cpp:5028
+#: src/konqmainwindow.cpp:5040
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "يېڭى تور كېڭەيتىلمىسى «%1» نى يان بالداققا قوشسۇنمۇ؟"
 
-#: src/konqmainwindow.cpp:5030
+#: src/konqmainwindow.cpp:5042
 #, kde-format
 msgid "Add"
 msgstr "قوش"
 
-#: src/konqmainwindow.cpp:5030
+#: src/konqmainwindow.cpp:5042
 #, kde-format
 msgid "Do Not Add"
 msgstr "قوشما"
 
-#: src/konqmainwindow.cpp:5378
+#: src/konqmainwindow.cpp:5390
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1395,7 +1395,7 @@ msgstr ""
 "سەپلىمە خاتالىق كۆرۈلگەندەك قىلىدۇ. سىز Konqueror بىلەن %1 نى باغلاپسىز، "
 "بىراق Konqueror بۇ تىپتىكى ھۆججەتنى بىر تەرەپ قىلالمايدۇ."
 
-#: src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5475
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1408,23 +1408,23 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5468
+#: src/konqmainwindow.cpp:5480
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5468
+#: src/konqmainwindow.cpp:5480
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5469 src/konqmainwindow.cpp:5513
+#: src/konqmainwindow.cpp:5481 src/konqmainwindow.cpp:5525
 #, fuzzy, kde-format
 #| msgid "Show Configuration Button"
 msgid "Show proxy configuration dialog"
 msgstr "سەپلىمە توپچىسىنى كۆرسەت"
 
-#: src/konqmainwindow.cpp:5509
+#: src/konqmainwindow.cpp:5521
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1433,22 +1433,22 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5512
+#: src/konqmainwindow.cpp:5524
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5513
+#: src/konqmainwindow.cpp:5525
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5513
+#: src/konqmainwindow.cpp:5525
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5596
+#: src/konqmainwindow.cpp:5608
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1636,27 +1636,27 @@ msgstr "يېڭى بەتكۈچتىن بىرنى ئاچىدۇ"
 msgid "Close the current tab"
 msgstr "ھازىرقى بەتكۈچنى تاقايدۇ"
 
-#: src/konqtabs.cpp:460
+#: src/konqtabs.cpp:461
 #, kde-format
 msgid "&Duplicate Tab"
 msgstr "بەتكۈچنى كۆپەيت(&D)"
 
-#: src/konqtabs.cpp:465
+#: src/konqtabs.cpp:466
 #, kde-format
 msgid "&Reload Tab"
 msgstr "بەتكۈچنى قايتا يۈكلە(&R)"
 
-#: src/konqtabs.cpp:472
+#: src/konqtabs.cpp:473
 #, kde-format
 msgid "Other Tabs"
 msgstr "باشقا بەتكۈچلەر"
 
-#: src/konqtabs.cpp:477
+#: src/konqtabs.cpp:478
 #, kde-format
 msgid "D&etach Tab"
 msgstr "بەتكۈچنى ئاجرات(&E)"
 
-#: src/konqtabs.cpp:483
+#: src/konqtabs.cpp:484
 #, kde-format
 msgid "&Close Tab"
 msgstr "بەتكۈچنى ياپ(&C)"
@@ -1911,7 +1911,7 @@ msgstr "يېنىۋال(&O): يېپىلغان كۆزنەك"
 msgid "Und&o"
 msgstr "يېنىۋال(&O)"
 
-#: src/konqview.cpp:1357
+#: src/konqview.cpp:1369
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1923,30 +1923,30 @@ msgstr ""
 "قىلغان ھەر قانداق مەشغۇلات (مەسىلەن ئاختۇرۇش ياكى لىنىيىدە "
 "سېتىۋېلىشلارنىڭ )ھەممىسى تەكرارلىنىدۇ. "
 
-#: src/konqview.cpp:1359
+#: src/konqview.cpp:1371
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "ئاگاھلاندۇرۇش"
 
-#: src/konqview.cpp:1359
+#: src/konqview.cpp:1371
 #, kde-format
 msgid "Resend"
 msgstr "قايتا يوللا"
 
-#: src/urlloader.cpp:365
+#: src/urlloader.cpp:383
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr ""
 
-#: src/urlloader.cpp:367
+#: src/urlloader.cpp:385
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
 msgstr ""
 
-#: src/urlloader.cpp:374
+#: src/urlloader.cpp:392
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -1956,14 +1956,14 @@ msgid ""
 "display it?"
 msgstr ""
 
-#: src/urlloader.cpp:380
+#: src/urlloader.cpp:398
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
-#: src/urlloader.cpp:709
+#: src/urlloader.cpp:726
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As"

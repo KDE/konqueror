@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 01:33+0000\n"
+"POT-Creation-Date: 2024-01-10 01:34+0000\n"
 "PO-Revision-Date: 2017-02-17 15:37+0100\n"
 "Last-Translator: Kiszel Kristóf <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -807,12 +807,12 @@ msgstr ""
 msgid "&Immediately memorize form data"
 msgstr ""
 
-#: src/webenginepage.cpp:157 src/webenginepage.cpp:181
+#: src/webenginepage.cpp:158 src/webenginepage.cpp:182
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "A letöltéskezelő (%1) nem található az Ön telepítésében."
 
-#: src/webenginepage.cpp:158 src/webenginepage.cpp:182
+#: src/webenginepage.cpp:159 src/webenginepage.cpp:183
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -824,7 +824,7 @@ msgstr ""
 "\n"
 "Az integráció letiltásra kerül."
 
-#: src/webenginepage.cpp:442
+#: src/webenginepage.cpp:455
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -838,12 +838,12 @@ msgstr ""
 "érdekében. Egyébként kattintson a Folytatás gombra a weboldal újbóli "
 "megjelenítéséhez.</p>"
 
-#: src/webenginepage.cpp:449
+#: src/webenginepage.cpp:462
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Információk újraküldése"
 
-#: src/webenginepage.cpp:651
+#: src/webenginepage.cpp:664
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -852,18 +852,18 @@ msgstr ""
 "Ez az oldal megpróbál hozzáférni a fizikai helyzetének információihoz.\n"
 "Szeretné engedélyezni a hozzáférést?"
 
-#: src/webenginepage.cpp:655 src/webenginepage.cpp:733
-#: src/webenginepage.cpp:744
+#: src/webenginepage.cpp:668 src/webenginepage.cpp:746
+#: src/webenginepage.cpp:757
 #, kde-format
 msgid "Network Transmission"
 msgstr "Hálózati átvitel"
 
-#: src/webenginepage.cpp:656
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "Allow access"
 msgstr "Hozzáférés engedélyezése"
 
-#: src/webenginepage.cpp:726
+#: src/webenginepage.cpp:739
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -876,12 +876,12 @@ msgstr ""
 "Egy harmadik fél elfoghatja és megtekintheti ezt az információt.\n"
 "Biztosan titkosítatlanul szeretné küldeni az adatokat?"
 
-#: src/webenginepage.cpp:734
+#: src/webenginepage.cpp:747
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "Kü&ldés titkosítatlanul"
 
-#: src/webenginepage.cpp:741
+#: src/webenginepage.cpp:754
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -890,12 +890,12 @@ msgstr ""
 "Az oldal e-mailen keresztül próbálja elküldeni az űrlapadatokat.\n"
 "Szeretné folytatni?"
 
-#: src/webenginepage.cpp:745
+#: src/webenginepage.cpp:758
 #, kde-format
 msgid "&Send Email"
 msgstr "E-mail &küldése"
 
-#: src/webenginepage.cpp:794
+#: src/webenginepage.cpp:807
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -904,22 +904,22 @@ msgstr ""
 "<qt>Engedélyezi az oldalnak a következő fájlok csatolását az e-mail "
 "üzenethez?</qt>"
 
-#: src/webenginepage.cpp:796
+#: src/webenginepage.cpp:809
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "E-mailmelléklet megerősítése"
 
-#: src/webenginepage.cpp:797
+#: src/webenginepage.cpp:810
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Melléklet &engedélyezése"
 
-#: src/webenginepage.cpp:798
+#: src/webenginepage.cpp:811
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "Melléklet &mellőzése"
 
-#: src/webenginepage.cpp:812
+#: src/webenginepage.cpp:825
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -928,12 +928,12 @@ msgstr ""
 "Az oldal egy fájlt próbál csatolni a számítógépéről a beküldési űrlapon. A "
 "melléklet eltávolításra került a védelme érdekében."
 
-#: src/webenginepage.cpp:815
+#: src/webenginepage.cpp:828
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Melléklet eltávolítva"
 
-#: src/webenginepage.cpp:955
+#: src/webenginepage.cpp:959
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -942,7 +942,7 @@ msgstr ""
 "Ez az oldal új felugró ablak megnyitását kéri.\n"
 "Szeretné engedélyezni?"
 
-#: src/webenginepage.cpp:957
+#: src/webenginepage.cpp:961
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -951,17 +951,17 @@ msgstr ""
 "<qt>Ez az oldal felugró ablak megnyitását kéri ehhez:<p>%1</p><br/>Szeretné "
 "engedélyezni?</qt>"
 
-#: src/webenginepage.cpp:961
+#: src/webenginepage.cpp:964
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript felugró megerősítés"
 
-#: src/webenginepage.cpp:962
+#: src/webenginepage.cpp:965
 #, kde-format
 msgid "Allow"
 msgstr "Engedélyezés"
 
-#: src/webenginepage.cpp:963
+#: src/webenginepage.cpp:965
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Tiltás"
