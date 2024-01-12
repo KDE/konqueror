@@ -531,7 +531,6 @@ bool Sidebar_Widget::addButton(const QString &desktopFileName, int pos)
     const QString lib = configGroup.readEntry("X-KDE-KonqSidebarModule");
     const QString configOpenStr = configGroup.readEntry("Open", QString()); // NOTE: is this redundant?
 
-    qDebug() << "Adding button for" << desktopFileName << "at position" << pos;
     if (pos == -1) { // TODO handle insertion
         m_buttonBar->appendTab(QIcon::fromTheme(icon), lastbtn, name);
         ButtonInfo buttonInfo(config, desktopFileName, cleanupURL(url), lib, name, icon);
