@@ -72,7 +72,6 @@ extern "C"
 WebArchiveCreator::WebArchiveCreator(QObject *parent, const QVariantList &va)
     : KIO::ThumbnailCreator(parent, va)
 {
-    qDebug() << "WEBARCHIVECREATOR CREATED";
     m_tempDir = nullptr;
 }
 

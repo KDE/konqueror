@@ -1424,15 +1424,12 @@ void HistoryEntry::saveConfig(KConfigGroup &config, const QString &prefix, const
 {
     if (options & KonqFrameBase::SaveUrls) {
         config.writeEntry(QStringLiteral("Url").prepend(prefix), url.url());
-        qDebug() << "WRITING ENTRY" << url.url();
         config.writeEntry(QStringLiteral("LocationBarURL").prepend(prefix), locationBarURL);
-        qDebug() << "WRITING LOCATION BAR" << locationBarURL;
         config.writeEntry(QStringLiteral("Title").prepend(prefix), title);
         config.writeEntry(QStringLiteral("StrServiceType").prepend(prefix), strServiceType);
         config.writeEntry(QStringLiteral("StrServiceName").prepend(prefix), strServiceName);
     } else if (options & KonqFrameBase::SaveHistoryItems) {
         config.writeEntry(QStringLiteral("Url").prepend(prefix), url.url());
-        qDebug() << "WRITING ENTRY" << url.url();
         config.writeEntry(QStringLiteral("LocationBarURL").prepend(prefix), locationBarURL);
         config.writeEntry(QStringLiteral("LocationBarURL").prepend(prefix), locationBarURL);
         config.writeEntry(QStringLiteral("Title").prepend(prefix), title);
