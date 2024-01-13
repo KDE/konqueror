@@ -5,7 +5,7 @@
 #
 # Enrique Matias Sanchez <cronopios@gmail.com>, 2009.
 # Cristina Yenyxe Gonzalez Garcia <the.blue.valkyrie@gmail.com>, 2009.
-# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2016, 2017, 2018, 2020, 2021, 2022, 2023 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 # Ricardo Varas Santana <ricardoivaras@gmail.com>, 2009.
 # Jaime Robles <jaime@kde.org>, 2009.
 # Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>, 2010, 2011.
@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-10 01:34+0000\n"
-"PO-Revision-Date: 2023-11-30 01:10+0100\n"
+"PO-Revision-Date: 2024-01-11 02:10+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "com>\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -206,11 +206,10 @@ msgid ""
 "encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-"
 "Shortcuts."
 msgstr ""
-"Use accesos rápidos Web: si escribe «gg:KDE» puede buscar la frase «KDE» en "
-"Internet, usando Google. Existe un buen número de accesos rápidos Web "
-"predefinidos para facilitarle la búsqueda de software o de ciertas palabras "
-"en una enciclopedia. También puede <a href=\"%1\">crear sus propios</a> "
-"accesos rápidos Web."
+"Use atajos web: si escribe «gg:KDE» puede buscar la frase «KDE» en Internet, "
+"usando Google. Existe un buen número de atajos web predefinidos para "
+"facilitarle la búsqueda de software o de ciertas palabras en una "
+"enciclopedia. También puede <a href=\"%1\">crear sus propios</a> atajos web."
 
 #: src/about/konq_aboutpage.cpp:209
 #, kde-format
@@ -1437,7 +1436,7 @@ msgstr "Buscar «%1» con"
 #: src/webengineview.cpp:619
 #, kde-format
 msgid "Configure Web Shortcuts..."
-msgstr "Configurar los accesos rápidos de web"
+msgstr "Configurar los atajos web..."
 
 #: src/webenginewallet.cpp:91
 #, kde-format

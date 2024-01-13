@@ -242,7 +242,7 @@
 >&konqueror;</emphasis
 > es una aplicación muy personalizable que cualquiera puede <link linkend="config"
 >configurar</link
-> para que se adecue a sus necesidades. Se puede cambiar el estilo global, y el tamaño de textos e iconos, seleccionar los elementos que aparecen en la barra de menú, cambiar el número y posición de las barras de herramientas e incluso definir nuevas combinaciones de teclas para accesos rápidos. </para>
+> para que se adapte a sus necesidades. Se puede cambiar el estilo global, y el tamaño de textos e iconos, seleccionar los elementos que aparecen en la barra de menú, cambiar el número y posición de las barras de herramientas e incluso definir nuevas combinaciones de teclas para atajos de teclado. </para>
 
 </chapter>
 
@@ -1375,7 +1375,7 @@ find your way around the file system.</para>
 >Buscando archivos y carpetas</title>
 
 <para
->Si no sabe o no recuerda en qué lugar de su sistema se encuentra un archivo o carpeta, utilice el acceso rápido <keycombo action="simul"
+>Si no sabe o no recuerda en qué lugar de su sistema se encuentra un archivo o carpeta, use el atajo de teclado <keycombo action="simul"
 >&Ctrl;<keycap
 >F</keycap
 ></keycombo
@@ -1602,7 +1602,7 @@ find your way around the file system.</para>
 > <guimenuitem
 >Copiar</guimenuitem
 ></menuchoice
-> o el acceso rápido <keycombo action="simul"
+> o el atajo de teclado <keycombo action="simul"
 >&Ctrl;<keycap
 >C</keycap
 ></keycombo
@@ -1621,7 +1621,7 @@ find your way around the file system.</para>
 ><guimenuitem
 >Pegar</guimenuitem
 ></menuchoice
-> de la barra de menús, o el acceso rápido <keycombo
+> de la barra de menús, o el atajo de teclado <keycombo
 >&Ctrl;<keycap
 >V</keycap
 ></keycombo
@@ -1704,7 +1704,7 @@ find your way around the file system.</para>
 ><guimenuitem
 >Dividir vista izquierda/derecha</guimenuitem
 ></menuchoice
->, también disponible con el acceso rápido <keycombo
+>, también disponible con el atajo de teclado <keycombo
 >&Ctrl;&Shift;<keycap
 >L</keycap
 ></keycombo
@@ -1719,7 +1719,7 @@ find your way around the file system.</para>
 > sobre un área vacía o en la barra de estado.</para>
 
 <para
->Para borrar una vista activa de la ventana de &konqueror; utilice el acceso rápido <keycombo action="simul"
+>Para borrar una vista activa de la ventana de &konqueror; use el atajo de teclado <keycombo action="simul"
 >&Ctrl;&Shift;<keycap
 >W</keycap
 ></keycombo
@@ -1919,7 +1919,7 @@ find your way around the file system.</para>
 > <guimenuitem
 >Seleccionar elementos que coincidan...</guimenuitem
 ></menuchoice
-> o el acceso rápido <keycombo action="simul"
+> o el atajo de teclado <keycombo action="simul"
 >&Ctrl;<keycap
 >+</keycap
 ></keycombo
@@ -2466,7 +2466,7 @@ find your way around the file system.</para>
 > en el lado derecho de la barra de dirección y &konqueror; descargará y mostrará esa página. Si usted ha visitado esa página antes, la característica de <link linkend="path-complete"
 >Relleno automático de texto</link
 > de &konqueror; le puede ayudar a introducir la &URL; por segunda vez. Si desea usar uno de los motores de búsqueda, los <link linkend="enhanced-browsing"
-> accesos rápidos web</link
+> atajos web</link
 > de &konqueror; pueden facilitarle el trabajo.</para>
 
 <para
@@ -2508,7 +2508,7 @@ find your way around the file system.</para>
 >HTML</acronym
 >, pero asegúrese de que la casilla de enlaces de la esquina inferior derecha esté vacía cuando realice esta operación.</para>
 <para
->Para volver a la página anterior, use el acceso rápido <keycombo action="simul"
+>Para volver a la página anterior, use el atajo de teclado <keycombo action="simul"
 >&Alt;<keysym
 >Flecha izquierda</keysym
 ></keycombo
@@ -2601,7 +2601,7 @@ find your way around the file system.</para>
 >derecho</mousebutton
 > del ratón sobre un enlace y elija <guimenuitem
 >Abrir en una nueva pestaña</guimenuitem
-> desde el menú desplegable o haga clic con el &MMB;. La página se descargará y se mostrará normalmente, pero con pestañas a lo largo de la parte superior de la vistas, con una pestaña por página. Pulse con el &LMB; sobre una pestaña para ver esa página o utilice los accesos rápidos <keycombo action="simul"
+> desde el menú desplegable o haga clic con el &MMB;. La página se descargará y se mostrará normalmente, pero con pestañas a lo largo de la parte superior de la vistas, con una pestaña por página. Pulse con el &LMB; sobre una pestaña para ver esa página o use los atajos de teclado <keycombo action="simul"
 >&Ctrl;<keycap
 >,</keycap
 ></keycombo
@@ -2758,11 +2758,11 @@ find your way around the file system.</para>
 
 <sect1 id="enhanced-browsing">
 <title
->Accesos rápidos de web</title
+>Atajos web</title
 > 
 
 <para
->Si están activadas, la propiedad de accesos rápidos de web de &konqueror; le permite enviar directamente peticiones a un buscador o sitio web similar sin tener que visitar el sitio primero.</para
+>Si están activadas, la propiedad de atajos web de &konqueror; le permite enviar directamente peticiones a un buscador o sitio web similar sin tener que visitar el sitio primero.</para
 > <para
 >Por ejemplo, si introduce <userinput
 >gg:konqueror</userinput
@@ -2772,8 +2772,8 @@ find your way around the file system.</para>
 >Google</trademark
 > que busque todo lo relacionado con &konqueror;.</para>
 <para
->Para ver los accesos rápidos web disponibles, y para poder añadir otros, abra el módulo <ulink url="help:/kcontrol/webshortcuts/"
->Accesos rápidos web</ulink
+>Para ver los atajos web disponibles, y para poder añadir otros, abra el módulo <ulink url="help:/kcontrol/webshortcuts/"
+>Atajos web</ulink
 > la categoría <guilabel
 >Espacio de trabajo</guilabel
 > de las &systemsettings;.</para>
@@ -4901,10 +4901,10 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 >Cuando &kde; se instala por primera vez, la ventana de &konqueror; contiene una barra de menú, barras de herramientas principal y de dirección y posiblemente una barra de marcadores.</para>
 
 <para
->Para obtener información detallada sobre cómo modificar las barras de herramientas y los accesos rápidos, lea las secciones sobre <ulink url="help:/fundamentals/config.html#toolbars"
+>Para obtener información detallada sobre cómo modificar las barras de herramientas y los atajos de teclado, lea las secciones sobre <ulink url="help:/fundamentals/config.html#toolbars"
 >Barras de herramientas</ulink
 > y <ulink url="help:/fundamentals/config.html#shortcuts"
->Accesos rápidos</ulink
+>Atajos de teclado</ulink
 > en los Fundamentos. </para>
 
 <sect1 id="othersettings">
@@ -5121,14 +5121,14 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 
 <note
 ><para
->Las combinaciones de teclas de acceso directo mostradas en este capítulo son las predeterminadas. Por supuesto, se pueden cambiar. </para
+>Las combinaciones de teclas de atajos de teclado que se muestran en este capítulo son las predeterminadas. Por supuesto, se pueden cambiar. </para
 ></note>
 
 <sect1 id="specshort">
 <title
->Accesos rápidos especiales</title>
+>Atajos de teclado especiales</title>
 <para
->Hay algunos accesos rápidos que no se muestran en ninguno de los menús:</para>
+>Hay algunos atajos de teclado que no se muestran en ninguno de los menús:</para>
 <variablelist>
 
 <varlistentry>
