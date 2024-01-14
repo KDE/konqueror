@@ -80,6 +80,10 @@ UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url
     m_protocolAllowsReading(KProtocolManager::supportsReading(m_url) || !KProtocolInfo::isKnownProtocol(m_url)), // If the protocol is unknown, assume it allows reading
     m_letRequestingPartDownloadUrl(req.letPartPerformDownload)
 {
+    //TODO KF6: currently there's no way to pass the suggested file name. When dropping compatibility with KF5, have a field for this
+    //in BrowserArguments
+    m_request.suggestedFileName = m_request.args.metaData().value(QStringLiteral("SuggestedFileName"));
+
     //TODO KF6 after implementing a better way to allow the user to display a file after saving it locally
     //(see comment for WebEnginePage::saveUrlToDiskAndDisplay in webenginepage.cpp), remove all references
     //to embedOrNothing
