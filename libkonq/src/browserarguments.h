@@ -36,6 +36,8 @@ struct BrowserArgumentsPrivate;
  * for a URL to be opened (with openUrlRequest or createNewWindow).
  */
 struct LIBKONQ_EXPORT BrowserArguments {
+    //TODO KF6: when dropping compatibility with KF5, add a suggestedFileName entry
+    //to be used for downloads and possibly an id for DownloaderJob
     BrowserArguments();
     BrowserArguments(const BrowserArguments &args);
     BrowserArguments &operator=(const BrowserArguments &args);
