@@ -952,6 +952,7 @@ void KonqView::restoreHistory()
 
     setPartMimeType();
 
+    m_requestedUrl = h.url;
     aboutToOpenURL(h.url);
 
     if (h.reload == false && browserExtension() && historyIndex() > 0) {
@@ -1549,6 +1550,7 @@ void KonqView::storeDelayedLoadingData(const QString& mimeType, const QString& s
     int historySize = grp.readEntry(keyHistoryItems, 0);
     if (historySize < 1) {
         //Note: this won't really open the URL because the part will be a PlaceholderPart
+        m_requestedUrl = url;
         m_pPart->openUrl(url);
         return;
     }
@@ -1556,8 +1558,9 @@ void KonqView::storeDelayedLoadingData(const QString& mimeType, const QString& s
     loadHistoryConfig(grp, prefix);
     if (!m_lstHistory.isEmpty()) {
         //Note: this won't really open the URL because the part will be a PlaceholderPart
-        QUrl url = m_lstHistory.at(m_lstHistoryIndex)->url;
-        m_pPart->openUrl(url);
+        QUrl histUrl = m_lstHistory.at(m_lstHistoryIndex)->url;
+        m_requestedUrl = histUrl;
+        m_pPart->openUrl(histUrl);
     }
 }
 
