@@ -43,6 +43,6 @@ Name[x-test]=xxKonqueror preloading during desktop environment startupxx
 Name[zh_CN]=在桌面环境启动时预先加载 Konqueror
 Name[zh_TW]=啟動桌面環境時預先載入 Konqueror
 X-KDE-autostart-condition=konquerorrc:Reusing:PreloadOnStartup:false
-X-KDE-StartupNotify=false
+StartupNotify=false
 X-KDE-autostart-phase=2
 OnlyShowIn=KDE;
