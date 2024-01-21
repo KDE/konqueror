@@ -34,8 +34,13 @@ Konq::ConfigDialog::ConfigDialog(QWidget* parent) : KCMultiDialog(parent)
         {HtmlAppearanceModule, "konqueror_kcms/khtml_appearance"},
         {AdBlockModule, "konqueror_kcms/khtml_filter"},
         {HtmlCacheModule, "konqueror_kcms/khtml_cache"},
+#if QT_VERSION_MAJOR < 6
         {WebShortcutsModule, "kcm_webshortcuts"},
         {ProxyModule, "kcm_proxy"},
+#else
+        {WebShortcutsModule, "plasma/kcms/systemsettings_qwidgets/kcm_webshortcuts"},
+        {ProxyModule, "plasma/kcms/systemsettings_qwidgets/kcm_proxy"},
+#endif
         {HistoryModule, "konqueror_kcms/kcm_history"},
         {CookiesModule, "konqueror_kcms/khtml_cookies"},
         {JavaModule, "konqueror_kcms/khtml_java_js"},
@@ -46,13 +51,16 @@ Konq::ConfigDialog::ConfigDialog(QWidget* parent) : KCMultiDialog(parent)
     modules.remove(PerformanceModule);
 #endif
     for (auto modIt = modules.constBegin(); modIt != modules.constEnd(); ++modIt) {
-        KPageWidgetItem *it = addModule(KPluginMetaData(modIt.value()));
+        KPluginMetaData md(modIt.value());
+        //In KF6, the web shortcuts and the proxy KCMs are provided by kio-extras, which Konqueror doesn't require,
+        //so avoid displaying an invalid entry if they can't be loaded for any reason
+        if (!md.isValid() && (modIt.key() == WebShortcutsModule || modIt.key() == ProxyModule)) {
+            continue;
+        }
+        KPageWidgetItem *it = addModule(md);
         //Attempt to remove the Behavior tab from the Dolphin general module, as it only applies to dolphin
         if (modIt.key() == DolphinGeneralModule) {
-            QTabWidget *tw = it->widget()->findChild<QTabWidget*>();
-            if(tw && tw->count() > 0) {
-                tw->removeTab(0);
-            }
+            fixDolphinGeneralPage(it);
         }
         m_pages[modIt.key()] = it;
     }
@@ -60,6 +68,14 @@ Konq::ConfigDialog::ConfigDialog(QWidget* parent) : KCMultiDialog(parent)
 
 Konq::ConfigDialog::~ConfigDialog() noexcept
 {
+}
+
+void Konq::ConfigDialog::fixDolphinGeneralPage(KPageWidgetItem *it)
+{
+    QTabWidget *tw = it->widget()->findChild<QTabWidget*>();
+    if(tw && tw->count() > 0) {
+        tw->removeTab(0);
+    }
 }
 
 QSize Konq::ConfigDialog::computeSizeHint() const
@@ -74,16 +90,6 @@ QSize Konq::ConfigDialog::computeSizeHint() const
             size.setHeight(s.height());
         }
     }
-    // QList<KCModule*> modules = findChildren<KCModule*>();
-    // for (auto m : modules) {
-    //     QSize s = m->widget()->sizeHint();
-    //     if (size.width() < s.width()) {
-    //         size.setWidth(s.width());
-    //     }
-    //     if (size.height() < s.height()) {
-    //         size.setHeight(s.height());
-    //     }
-    // }
     return size;
 }
 
