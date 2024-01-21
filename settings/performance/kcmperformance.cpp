@@ -48,18 +48,23 @@ void Config::load()
 {
     konqueror_widget->load();
     system_widget->load();
+    KCModule::load();
 }
 
 void Config::save()
 {
     konqueror_widget->save();
     system_widget->save();
+    KCModule::save();
 }
 
 void Config::defaults()
 {
     konqueror_widget->defaults();
     system_widget->defaults();
+#if QT_VERSION_MAJOR > 5
+    setRepresentsDefaults(true);
+#endif
 }
 
 KonquerorConfig::KonquerorConfig(QObject *parent, const KPluginMetaData &md, const QVariantList &)
@@ -79,16 +84,21 @@ KonquerorConfig::KonquerorConfig(QObject *parent, const KPluginMetaData &md, con
 void KonquerorConfig::load()
 {
     m_widget->load();
+    KCModule::load();
 }
 
 void KonquerorConfig::save()
 {
     m_widget->save();
+    KCModule::load();
 }
 
 void KonquerorConfig::defaults()
 {
     m_widget->defaults();
+#if QT_VERSION_MAJOR > 5
+    setRepresentsDefaults(true);
+#endif
 }
 
 } // namespace
