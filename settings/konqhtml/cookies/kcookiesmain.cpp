@@ -33,23 +33,25 @@ KCookiesMain::KCookiesMain(QObject *parent, const KPluginMetaData &md, const QVa
 
     policies = new KCookiesPolicies(widget(), md);
     tab->addTab(policies->widget(), i18n("&Policy"));
-#if QT_VERSION_MAJOR < 6
-    connect(policies, QOverload<bool>::of(&KCModule::changed), this, QOverload<bool>::of(&KCModule::changed));
-#else
-    connect(policies, &KCModule::needsSaveChanged, this, &KCModule::needsSaveChanged);
-#endif
-
     management = new KCookiesManagement(widget(), md);
     tab->addTab(management->widget(), i18n("&Management"));
+
 #if QT_VERSION_MAJOR < 6
+    connect(policies, QOverload<bool>::of(&KCModule::changed), this, QOverload<bool>::of(&KCModule::changed));
     connect(management, QOverload<bool>::of(&KCModule::changed), this, QOverload<bool>::of(&KCModule::changed));
 #else
-    connect(management, &KCModule::needsSaveChanged, this, &KCModule::needsSaveChanged);
+    connect(policies, &KCModule::needsSaveChanged, this, &KCookiesMain::updateNeedsSave);
+    connect(management, &KCModule::needsSaveChanged, this, &KCookiesMain::updateNeedsSave);
 #endif
 }
 
 KCookiesMain::~KCookiesMain()
 {
+}
+
+void KCookiesMain::updateNeedsSave()
+{
+    setNeedsSave(policies->needsSave() || management->needsSave());
 }
 
 void KCookiesMain::save()
