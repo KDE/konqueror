@@ -34,6 +34,12 @@ public:
     void defaults() override;
 
 private:
+    /**
+     * @brief Calls setNeedsSave according to the status of the two submodules
+     */
+    void updateNeedsSave();
+
+private:
     QTabWidget *tab;
     KCookiesPolicies *policies;
     KCookiesManagement *management;
