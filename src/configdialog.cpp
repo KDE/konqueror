@@ -8,6 +8,8 @@
 
 #include <KCModule>
 
+#include <QTabWidget>
+
 using namespace Konq;
 
 Konq::ConfigDialog::ConfigDialog(QWidget* parent) : KCMultiDialog(parent)
@@ -22,7 +24,9 @@ Konq::ConfigDialog::ConfigDialog(QWidget* parent) : KCMultiDialog(parent)
         {BookmarksModule, "konqueror_kcms/kcm_bookmarks"},
         {KonqModule, "konqueror_kcms/kcm_konq"},
         {DolphinGeneralModule, "dolphin/kcms/kcm_dolphingeneral"},
+#if QT_VERSION_MAJOR < 6
         {DolphinNavigationModule, "dolphin/kcms/kcm_dolphinnavigation"},
+#endif
         {DolphinViewModesModule, "dolphin/kcms/kcm_dolphinviewmodes"},
         {TrashModule, "kcm_trash"},
         {FileTypesModule, "plasma/kcms/systemsettings_qwidgets/kcm_filetypes"},
@@ -41,38 +45,15 @@ Konq::ConfigDialog::ConfigDialog(QWidget* parent) : KCMultiDialog(parent)
 #ifdef Q_OS_WIN
     modules.remove(PerformanceModule);
 #endif
-
-//     QStringList modules {
-//         "konqueror_kcms/khtml_general",
-// #ifndef Q_OS_WIN
-//         "konqueror_kcms/kcm_performance",
-// #endif
-//         "konqueror_kcms/khtml_tabs",
-//         "konqueror_kcms/kcm_bookmarks",
-//         "konqueror_kcms/kcm_konq",
-//         "dolphin/kcms/kcm_dolphinviewmodes",
-//         "dolphin/kcms/kcm_dolphinnavigation",
-//         "dolphin/kcms/kcm_dolphingeneral",
-//         "kcm_trash",
-//         "plasma/kcms/systemsettings_qwidgets/kcm_filetypes",
-//         "konqueror_kcms/khtml_behavior",
-//         "konqueror_kcms/khtml_appearance",
-//         "konqueror_kcms/khtml_filter",
-//         "konqueror_kcms/khtml_cache",
-//         "kcm_webshortcuts",
-//         "kcm_proxy",
-//         "konqueror_kcms/kcm_history",
-// #ifdef MANAGE_COOKIES_INTERNALLY
-//         "konqueror_kcms/khtml_cookies",
-// #else
-//         "plasma/kcms/systemsettings_qwidgets/kcm_cookies",
-// #endif
-//         "konqueror_kcms/khtml_java_js",
-//         "konqueror_kcms/khtml_useragent"
-//     };
-
     for (auto modIt = modules.constBegin(); modIt != modules.constEnd(); ++modIt) {
         KPageWidgetItem *it = addModule(KPluginMetaData(modIt.value()));
+        //Attempt to remove the Behavior tab from the Dolphin general module, as it only applies to dolphin
+        if (modIt.key() == DolphinGeneralModule) {
+            QTabWidget *tw = it->widget()->findChild<QTabWidget*>();
+            if(tw && tw->count() > 0) {
+                tw->removeTab(0);
+            }
+        }
         m_pages[modIt.key()] = it;
     }
 }
