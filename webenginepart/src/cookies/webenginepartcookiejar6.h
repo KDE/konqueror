@@ -142,6 +142,8 @@ private slots:
      */
     static QString cookieAdvicePath();
 
+    static QString cookieDataPath();
+
     /**
      * @brief Saves to file the choices the user made for individual cookies
      */
@@ -151,6 +153,8 @@ private slots:
      * @brief Reads from file the choices the user made for individual cookies
      */
     void readCookieAdvice();
+
+    void loadCookies();
     
 private:
     
@@ -335,5 +339,7 @@ QDataStream& operator>>( QDataStream &ds, WebEnginePartCookieJar6::CookieIdentif
  */
 QDataStream& operator<< (QDataStream &ds, const WebEnginePartCookieJar6::CookieIdentifier &id);
 
+QDataStream& operator<< (QDataStream &ds, const QNetworkCookie &cookie);
+QDataStream& operator>> (QDataStream &ds, QNetworkCookie &cookie);
 
 #endif // WEBENGINEPARTCOOKIEJAR_H
