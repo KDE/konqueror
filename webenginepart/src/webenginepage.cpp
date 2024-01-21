@@ -80,8 +80,9 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
         , m_dropOperationTimer(new QTimer(this))
 #endif
 {
-if (view())
-    WebEngineSettings::self()->computeFontSizes(view()->logicalDpiY());
+    if (view()) {
+        WebEngineSettings::self()->computeFontSizes(view()->logicalDpiY());
+    }
 
     //setForwardUnsupportedContent(true);
 
@@ -930,23 +931,6 @@ NewWindowPage::~NewWindowPage()
 {
 }
 
-static BrowserArguments browserArgs(WebEnginePage::WebWindowType type)
-{
-    BrowserArguments bargs;
-    switch (type) {
-        case WebEnginePage::WebDialog:
-        case WebEnginePage::WebBrowserWindow:
-            bargs.setForcesNewWindow(true);
-            break;
-        case WebEnginePage::WebBrowserTab:
-        case WebEnginePage::WebBrowserBackgroundTab:
-            // let konq decide, based on user configuration
-            //bargs.setNewTab(true);
-            break;
-    }
-    return bargs;
-}
-
 bool NewWindowPage::decideHandlingOfJavascripWindow(const QUrl url) const
 {
     const HtmlSettingsInterface::JSWindowOpenPolicy policy = WebEngineSettings::self()->windowOpenPolicy(url.host());
@@ -993,7 +977,9 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
     }
 
     // Browser args...
-    BrowserArguments bargs = browserArgs(m_type);
+    BrowserArguments bargs;
+    //Don't set forcesNewWindow for if m_type is WebDialog because it include popups, which the user may want to open in a new tab
+    bargs.setForcesNewWindow(m_type == WebBrowserWindow);
 
     // OpenUrl args...
     KParts::OpenUrlArguments uargs;
@@ -1066,8 +1052,9 @@ void NewWindowPage::slotLoadFinished(bool ok)
     const bool actionRequestedByUser = true; // ### we don't have the information here, unlike in acceptNavigationRequest
 
     // Browser args...
-    BrowserArguments bargs = browserArgs(m_type);
-    //bargs.frameName = mainFrame()->frameName();
+    BrowserArguments bargs;
+    //Don't set forcesNewWindow for if m_type is WebDialog because it include popups, which the user may want to open in a new tab
+    bargs.setForcesNewWindow(m_type == WebBrowserWindow);
 
     // OpenUrl args...
     KParts::OpenUrlArguments uargs;
