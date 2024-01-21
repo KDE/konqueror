@@ -84,6 +84,14 @@ private:
      */
     QSize computeSizeHint() const;
 
+    /**
+     * @brief Removes a tab with settings which don't apply to Konqueror from the General Dolphin KCM
+     *
+     * The General Dolphin KCM contains a tab which entries which only applies to Dolphin itself, so
+     * we remove that tab to avoid confusing the user.
+     */
+    void fixDolphinGeneralPage(KPageWidgetItem *it);
+
     mutable QSize m_sizeHint; //!< The cached value of the size hint
     QHash<Module, QPointer<KPageWidgetItem>> m_pages; //!< A hash mapping module types to pages
 };
