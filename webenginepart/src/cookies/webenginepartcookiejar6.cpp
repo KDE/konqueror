@@ -31,6 +31,7 @@
 #include <KSharedConfig>
 #include <KConfigGroup>
 
+#include <QTimer>
 
 WebEnginePartCookieJar6::CookieIdentifier::CookieIdentifier(const QNetworkCookie& cookie):
     name(cookie.name()), domain(cookie.domain()), path(cookie.path())
@@ -59,12 +60,30 @@ WebEnginePartCookieJar6::WebEnginePartCookieJar6(QWebEngineProfile *prof, QObjec
     //WARNING: call this *before* applyConfiguration(), otherwise, if the default policy is Ask, the user will be asked again for all cookies
     //already in the jar
     readCookieAdvice();
+    loadCookies();
     m_cookieStore->loadAllCookies();
     applyConfiguration();
 }
 
 WebEnginePartCookieJar6::~WebEnginePartCookieJar6()
 {
+    QFile f(cookieDataPath());
+    if (!f.open(QFile::WriteOnly)) {
+        return;
+    }
+#if QT_VERSION_MAJOR > 5
+    m_cookies.removeIf([](const QNetworkCookie &c){return !c.expirationDate().isValid();});
+#else
+    const QSet<QNetworkCookie> orig (m_cookies);
+    for (const QNetworkCookie &c : orig) {
+        if (!c.expirationDate().isValid()) {
+            m_cookies.remove(c);
+        }
+    }
+#endif
+    QDataStream ds(&f);
+    ds << m_cookies;
+    f.close();
 }
 
 QSet<QNetworkCookie> WebEnginePartCookieJar6::cookies() const
@@ -104,10 +123,8 @@ void WebEnginePartCookieJar6::applyConfiguration()
 
 void WebEnginePartCookieJar6::removeAllCookies()
 {
-    QSet<QNetworkCookie> cookiesOrig(m_cookies);
-    for (auto c : cookiesOrig) {
-        m_cookieStore->deleteCookie(c);
-    }
+    m_cookieStore->deleteAllCookies();
+    m_cookies.clear();
     QFile::remove(cookieAdvicePath());
 }
 
@@ -125,7 +142,7 @@ void WebEnginePartCookieJar6::removeCookiesWithDomain(const QString& domain)
     for (auto c : cookiesOrig) {
         if (possibleDomains.contains(c.domain())) {
             m_cookieStore->deleteCookie(c);
-            if (m_policy.cookieExceptions.remove(CookieIdentifier{c}) > 1) {
+            if (m_policy.cookieExceptions.remove(CookieIdentifier{c}) ) {
                 exceptionsRemoved = true;
             }
         }
@@ -252,6 +269,16 @@ QString WebEnginePartCookieJar6::cookieAdvicePath()
     return s_cookieAdvicePath;
 }
 
+QString WebEnginePartCookieJar6::cookieDataPath()
+{
+    QString s_cookieDataPath;
+    if (s_cookieDataPath.isEmpty()) {
+        QDir dir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
+        dir.mkpath(QStringLiteral("."));
+        s_cookieDataPath = dir.filePath(QStringLiteral("cookies"));
+    }
+    return s_cookieDataPath;
+}
 void WebEnginePartCookieJar6::saveCookieAdvice()
 {
     QFile f(cookieAdvicePath());
@@ -277,6 +304,17 @@ void WebEnginePartCookieJar6::removeCookieFromSet(const QNetworkCookie& cookie)
     m_cookies.remove(cookie);
 }
 
+void WebEnginePartCookieJar6::loadCookies()
+{
+    QFile f(cookieDataPath());
+    if (!f.open(QFile::ReadOnly)) {
+        return;
+    }
+    QDataStream ds(&f);
+    ds >> m_cookies;
+    f.close();
+}
+
 QDebug operator<<(QDebug deb, const WebEnginePartCookieJar6::CookieIdentifier& id)
 {
     QDebugStateSaver saver(deb);
@@ -300,3 +338,26 @@ QDataStream& operator<<(QDataStream& ds, const WebEnginePartCookieJar6::CookieId
     ds << id.name << id.domain << id.path;
     return ds;
 }
+
+QDataStream& operator>>(QDataStream& ds, QNetworkCookie& cookie)
+{
+    QByteArray name, value;
+    QString domain, path;
+    QDateTime expirationDate;
+    bool secure;
+    ds >> name >> value >> domain >> path >> expirationDate >> secure;
+    cookie.setName(name);
+    cookie.setValue(value);
+    cookie.setDomain(domain);
+    cookie.setPath(path);
+    cookie.setExpirationDate(expirationDate);
+    cookie.setSecure(secure);
+    return ds;
+}
+
+QDataStream& operator<<(QDataStream& ds, const QNetworkCookie& cookie)
+{
+    ds << cookie.name() << cookie.value() << cookie.domain() << cookie.path() << cookie.expirationDate() << cookie.isSecure();
+    return ds;
+}
+
