@@ -498,6 +498,9 @@ void WebEnginePart::slotLoadFinished (bool ok)
     }
 
     auto callback = [this](const QVariant &res) {
+        if (!res.isValid()) {
+            return;
+        }
         bool hasRefresh = res.toBool();
         emit hasRefresh ? completedWithPendingAction() : completed();
     };

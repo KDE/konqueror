@@ -292,7 +292,12 @@ void WebEngineWallet::fillWebForm(const QUrl &url, const WebEngineWallet::WebFor
     }
     if (!script.isEmpty()) {
         wasFilled = true;
-        auto callback = [wasFilled, this](const QVariant &){emit fillFormRequestCompleted(wasFilled);};
+        auto callback = [wasFilled, this](const QVariant &res){
+            if (!res.isValid()) {
+                return;
+            }
+            emit fillFormRequestCompleted(wasFilled);
+        };
         page.data()->runJavaScript(script, QWebEngineScript::ApplicationWorld, callback);
     }
 }

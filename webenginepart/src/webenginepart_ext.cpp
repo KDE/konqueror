@@ -722,6 +722,9 @@ void WebEngineNavigationExtension::slotTextDirectionChanged()
 void WebEngineNavigationExtension::slotCheckSpelling()
 {
     view()->page()->runJavaScript(QL1S("this.value"), [this](const QVariant &value) {
+        if (!value.isValid()) {
+            return;
+        }
         const QString text = value.toString();
         if (!text.isEmpty()) {
             m_spellTextSelectionStart = 0;
@@ -743,9 +746,15 @@ void WebEngineNavigationExtension::slotCheckSpelling()
 void WebEngineNavigationExtension::slotSpellCheckSelection()
 {
     view()->page()->runJavaScript(QL1S("this.value"), [this](const QVariant &value) {
+        if (!value.isValid()) {
+            return;
+        }
         const QString text = value.toString();
         if (!text.isEmpty()) {
             view()->page()->runJavaScript(QL1S("this.selectionStart + ' ' + this.selectionEnd"), [this, text](const QVariant &value) {
+                if (!value.isValid()) {
+                    return;
+                }
                 const QString values = value.toString();
                 const int pos = values.indexOf(' ');
                 m_spellTextSelectionStart = qMax(0, QStringView{values}.left(pos).toInt());
@@ -1013,6 +1022,9 @@ void WebEngineHtmlExtension::querySelectorAllAsync(const QString& query, AsyncSe
     }
 
     auto internalCallback = [callback] (const QVariant &res) {
+        if (!res.isValid()) {
+            return;
+        }
         callback(WebEngineHtmlExtension::jsonToElementList(res));
     };
 
@@ -1031,6 +1043,9 @@ void WebEngineHtmlExtension::querySelectorAsync(const QString& query, AsyncSelec
     }
 
     auto internalCallback = [callback] (const QVariant &res) {
+        if (!res.isValid()) {
+            return;
+        }
         callback(WebEngineHtmlExtension::jsonToElement(res));
     };
 
