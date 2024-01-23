@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
+"POT-Creation-Date: 2024-01-23 02:29+0000\n"
 "PO-Revision-Date: 2022-02-15 22:24+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -2000,7 +2000,7 @@ msgstr "&Desfă: Închidere fereastră"
 msgid "Und&o"
 msgstr "&Desfă"
 
-#: src/konqview.cpp:1369
+#: src/konqview.cpp:1370
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -2011,30 +2011,30 @@ msgstr ""
 "formular. Dacă retrimiteți datele orice acțiune pe determinată de fomular "
 "(de exemplu căutare sau cumpărătură \"online\") va fi repetată. "
 
-#: src/konqview.cpp:1371
+#: src/konqview.cpp:1372
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Atenționare"
 
-#: src/konqview.cpp:1371
+#: src/konqview.cpp:1372
 #, kde-format
 msgid "Resend"
 msgstr "Retrimite"
 
-#: src/urlloader.cpp:383
+#: src/urlloader.cpp:387
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr ""
 
-#: src/urlloader.cpp:385
+#: src/urlloader.cpp:389
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
 msgstr ""
 
-#: src/urlloader.cpp:392
+#: src/urlloader.cpp:396
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -2044,14 +2044,14 @@ msgid ""
 "display it?"
 msgstr ""
 
-#: src/urlloader.cpp:398
+#: src/urlloader.cpp:402
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
-#: src/urlloader.cpp:726
+#: src/urlloader.cpp:730
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As"

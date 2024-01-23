@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
+"POT-Creation-Date: 2024-01-23 02:29+0000\n"
 "PO-Revision-Date: 2023-11-10 16:03+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1958,7 +1958,7 @@ msgstr "Zpět: Uzavřené &okno"
 msgid "Und&o"
 msgstr "Z&pět"
 
-#: src/konqview.cpp:1369
+#: src/konqview.cpp:1370
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1969,30 +1969,30 @@ msgstr ""
 "Pokud znovu odešlete data, veškeré činnosti, které formulář provedl (jako je "
 "např. online vyhledávání), budou muset být provedeny znovu."
 
-#: src/konqview.cpp:1371
+#: src/konqview.cpp:1372
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Varování"
 
-#: src/konqview.cpp:1371
+#: src/konqview.cpp:1372
 #, kde-format
 msgid "Resend"
 msgstr "Poslat znovu"
 
-#: src/urlloader.cpp:383
+#: src/urlloader.cpp:387
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "Spustit"
 
-#: src/urlloader.cpp:385
+#: src/urlloader.cpp:389
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
 msgstr "Zobrazení"
 
-#: src/urlloader.cpp:392
+#: src/urlloader.cpp:396
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -2003,14 +2003,14 @@ msgid ""
 msgstr ""
 "<filename>%1</filename>  lze spustit. Přejte si jej spustit nebo zobrazit?"
 
-#: src/urlloader.cpp:398
+#: src/urlloader.cpp:402
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename> lze spustit. Přejte si jej spustit?"
 
-#: src/urlloader.cpp:726
+#: src/urlloader.cpp:730
 #, kde-format
 msgid "Save As"
 msgstr "Uložit jako"

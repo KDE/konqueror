@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
+"POT-Creation-Date: 2024-01-23 02:29+0000\n"
 "PO-Revision-Date: 2023-08-25 22:53+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1953,7 +1953,7 @@ msgstr "실행 취소: 창 닫기(&O)"
 msgid "Und&o"
 msgstr "실행 취소(&O)"
 
-#: src/konqview.cpp:1369
+#: src/konqview.cpp:1370
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1963,30 +1963,30 @@ msgstr ""
 "보려고 하는 페이지는 제출한 폼의 결과입니다. 데이터를 다시 보내면, 검색이나 "
 "온라인 구매 같은 폼의 동작이 다시 수행될 수 있습니다."
 
-#: src/konqview.cpp:1371
+#: src/konqview.cpp:1372
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "경고"
 
-#: src/konqview.cpp:1371
+#: src/konqview.cpp:1372
 #, kde-format
 msgid "Resend"
 msgstr "다시 보내기"
 
-#: src/urlloader.cpp:383
+#: src/urlloader.cpp:387
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "실행"
 
-#: src/urlloader.cpp:385
+#: src/urlloader.cpp:389
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
 msgstr "표시"
 
-#: src/urlloader.cpp:392
+#: src/urlloader.cpp:396
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -1998,14 +1998,14 @@ msgstr ""
 "<filename>%1</filename>을(를) 실행할 수 있습니다. 실행하거나 표시하시겠습니"
 "까?"
 
-#: src/urlloader.cpp:398
+#: src/urlloader.cpp:402
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename>을(를) 실행할 수 있습니다. 실행하시겠습니까?"
 
-#: src/urlloader.cpp:726
+#: src/urlloader.cpp:730
 #, kde-format
 msgid "Save As"
 msgstr "다른 이름으로 저장"

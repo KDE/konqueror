@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
+"POT-Creation-Date: 2024-01-23 02:29+0000\n"
 "PO-Revision-Date: 2023-01-07 10:28+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -2007,7 +2007,7 @@ msgstr "Αναίρεση: Κλείσιμ&ο παραθύρου"
 msgid "Und&o"
 msgstr "Αναί&ρεση"
 
-#: src/konqview.cpp:1369
+#: src/konqview.cpp:1370
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -2018,18 +2018,18 @@ msgstr ""
 "δεδομένων φόρμας. Αν ξαναστείλετε τα δεδομένα οποιαδήποτε ενέργεια που "
 "εκτέλεσε η φόρμα (όπως αναζήτηση η διαδικτυακή αγορά) θα επαναληφθεί. "
 
-#: src/konqview.cpp:1371
+#: src/konqview.cpp:1372
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Προειδοποίηση"
 
-#: src/konqview.cpp:1371
+#: src/konqview.cpp:1372
 #, kde-format
 msgid "Resend"
 msgstr "Αποστολή ξανά"
 
-#: src/urlloader.cpp:383
+#: src/urlloader.cpp:387
 #, fuzzy, kde-format
 #| msgctxt "Execute an executable file"
 #| msgid "Execute it"
@@ -2037,7 +2037,7 @@ msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "Εκτελέστε το"
 
-#: src/urlloader.cpp:385
+#: src/urlloader.cpp:389
 #, fuzzy, kde-format
 #| msgctxt "Display an executable file"
 #| msgid "Display it"
@@ -2045,7 +2045,7 @@ msgctxt "Display an executable file"
 msgid "Display"
 msgstr "Να εμφανιστεί"
 
-#: src/urlloader.cpp:392
+#: src/urlloader.cpp:396
 #, fuzzy, kde-kuit-format
 #| msgctxt ""
 #| "The user has to decide whether to execute an executable file or display it"
@@ -2060,7 +2060,7 @@ msgid ""
 msgstr ""
 "Το <tt>%1</tt> μπορεί να εκτελεστεί. Θα το εκτελέσετε ή θα το εμφανίσετε;"
 
-#: src/urlloader.cpp:398
+#: src/urlloader.cpp:402
 #, fuzzy, kde-kuit-format
 #| msgctxt ""
 #| "The user has to decide whether to execute an executable file or not"
@@ -2070,7 +2070,7 @@ msgctxt ""
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "Το <tt>%1</tt> μπορεί να εκτελεστεί. Θα το εκτελέσετε;"
 
-#: src/urlloader.cpp:726
+#: src/urlloader.cpp:730
 #, kde-format
 msgid "Save As"
 msgstr "Αποθήκευση ως"

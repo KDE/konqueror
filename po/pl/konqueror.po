@@ -1,6 +1,6 @@
 # translation of konqueror.po to Polish
 # translation of konqueror.po to
-# Version: $Revision: 1669497 $
+# Version: $Revision: 1670836 $
 # Tłumaczenie autorstwa Artura Skury, marzec 2000
 # Aktualne tłumaczenie Norbert Popiołek <norbert@kde.com.pl>, czerwiec 2001
 # Norbert Popiołek <norbert@kde.com.pl>
@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
+"POT-Creation-Date: 2024-01-23 02:29+0000\n"
 "PO-Revision-Date: 2024-01-07 11:58+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -2015,7 +2015,7 @@ msgstr "&Cofnij: zamknięte okno"
 msgid "Und&o"
 msgstr "&Cofnij"
 
-#: src/konqview.cpp:1369
+#: src/konqview.cpp:1370
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -2027,30 +2027,30 @@ msgstr ""
 "formularza (np. wysłanie zamówienia lub rozpoczęcie wyszukiwania), zostaną "
 "powtórzone."
 
-#: src/konqview.cpp:1371
+#: src/konqview.cpp:1372
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Ostrzeżenie"
 
-#: src/konqview.cpp:1371
+#: src/konqview.cpp:1372
 #, kde-format
 msgid "Resend"
 msgstr "Wyślij ponownie"
 
-#: src/urlloader.cpp:383
+#: src/urlloader.cpp:387
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "Wykonaj"
 
-#: src/urlloader.cpp:385
+#: src/urlloader.cpp:389
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
 msgstr "Wyświetlanie"
 
-#: src/urlloader.cpp:392
+#: src/urlloader.cpp:396
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -2061,14 +2061,14 @@ msgid ""
 msgstr ""
 "<filename>%1</filename> może zostać wykonany. Wykonać, czy wyświetlić go?"
 
-#: src/urlloader.cpp:398
+#: src/urlloader.cpp:402
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename> może zostać wykonany. Czy wyświetlić go?"
 
-#: src/urlloader.cpp:726
+#: src/urlloader.cpp:730
 #, kde-format
 msgid "Save As"
 msgstr "Zapisz jako"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
+"POT-Creation-Date: 2024-01-23 02:29+0000\n"
 "PO-Revision-Date: 2023-04-29 12:29+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -1984,7 +1984,7 @@ msgstr "Und&o: Closed Window"
 msgid "Und&o"
 msgstr "Und&o"
 
-#: src/konqview.cpp:1369
+#: src/konqview.cpp:1370
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1995,30 +1995,30 @@ msgstr ""
 "resend the data, any action the form carried out (such as search or online "
 "purchase) will be repeated. "
 
-#: src/konqview.cpp:1371
+#: src/konqview.cpp:1372
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Warning"
 
-#: src/konqview.cpp:1371
+#: src/konqview.cpp:1372
 #, kde-format
 msgid "Resend"
 msgstr "Resend"
 
-#: src/urlloader.cpp:383
+#: src/urlloader.cpp:387
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "Execute"
 
-#: src/urlloader.cpp:385
+#: src/urlloader.cpp:389
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
 msgstr "Display"
 
-#: src/urlloader.cpp:392
+#: src/urlloader.cpp:396
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -2030,14 +2030,14 @@ msgstr ""
 "<filename>%1</filename> can be executed. Do you want to execute it or to "
 "display it?"
 
-#: src/urlloader.cpp:398
+#: src/urlloader.cpp:402
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename> can be executed. Do you want to execute it?"
 
-#: src/urlloader.cpp:726
+#: src/urlloader.cpp:730
 #, kde-format
 msgid "Save As"
 msgstr "Save As"

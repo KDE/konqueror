@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
+"POT-Creation-Date: 2024-01-23 02:29+0000\n"
 "PO-Revision-Date: 2010-12-17 20:03+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1991,7 +1991,7 @@ msgstr "เลิกทำ: ปิดแท็บ"
 msgid "Und&o"
 msgstr "เลิ&กทำ"
 
-#: src/konqview.cpp:1369
+#: src/konqview.cpp:1370
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -2001,31 +2001,31 @@ msgstr ""
 "หน้าที่คุณพยายามแสดงผลเป็นผลลัพธ์ของการส่งข้อมูลในแบบฟอร์ม ถ้าคุณส่งข้อมูลอีกครั้ง การกระทำใด ๆ "
 "ที่แบบฟอร์มกำลังทำอยู่ (เช่น การค้นหา หรือการซื้อของออนไลน์) จะถูกกระทำซ้ำ"
 
-#: src/konqview.cpp:1371
+#: src/konqview.cpp:1372
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "คำเตือน"
 
-#: src/konqview.cpp:1371
+#: src/konqview.cpp:1372
 #, kde-format
 msgid "Resend"
 msgstr "ส่งอีกครั้ง"
 
-#: src/urlloader.cpp:383
+#: src/urlloader.cpp:387
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr ""
 
-#: src/urlloader.cpp:385
+#: src/urlloader.cpp:389
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
 msgstr ""
 
-#: src/urlloader.cpp:392
+#: src/urlloader.cpp:396
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -2035,14 +2035,14 @@ msgid ""
 "display it?"
 msgstr ""
 
-#: src/urlloader.cpp:398
+#: src/urlloader.cpp:402
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
-#: src/urlloader.cpp:726
+#: src/urlloader.cpp:730
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As"
