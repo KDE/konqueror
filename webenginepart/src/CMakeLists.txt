@@ -12,7 +12,7 @@ endif(BUILD_TESTING)
 
 #Before Qt 5.15.5 QtWebEngineView didn't allow opening a remote URL by dropping it
 #on the view itself, so WebEngineView needed to handle that itself.
-if(QtWebEngineWidgets_VERSION VERSION_LESS "5.15.5")
+if(KF_MAJOR_VERSION STRLESS "6" AND QtWebEngineWidgets_VERSION VERSION_LESS "5.15.5")
   add_definitions(-DREMOTE_DND_NOT_HANDLED_BY_WEBENGINE)
 endif()
 
