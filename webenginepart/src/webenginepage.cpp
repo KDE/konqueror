@@ -894,7 +894,7 @@ void WebEnginePage::setStatusBarText(const QString& text)
 
 void WebEnginePage::changeLifecycleState(QWebEnginePage::LifecycleState recommendedState)
 {
-    if (recommendedState != QWebEnginePage::LifecycleState::Active && !view()->isVisible()) {
+    if (recommendedState != QWebEnginePage::LifecycleState::Active && !isVisible()) {
         setLifecycleState(QWebEnginePage::LifecycleState::Frozen);
     } else {
         setLifecycleState(QWebEnginePage::LifecycleState::Active);
