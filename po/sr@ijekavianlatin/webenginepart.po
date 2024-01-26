@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
+"POT-Creation-Date: 2024-01-26 00:37+0000\n"
 "PO-Revision-Date: 2017-12-03 22:53+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -976,7 +976,7 @@ msgstr "Postavi &kodiranje"
 msgid "View Do&cument Source"
 msgstr "Prikaži izvor &dokumenta"
 
-#: src/webenginepart.cpp:267 src/webenginepart.cpp:553
+#: src/webenginepart.cpp:267 src/webenginepart.cpp:556
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
@@ -992,12 +992,12 @@ msgstr ""
 "<h3>Nađi tekst</h3>Prikazuje dijalog pomoću kojeg možete tražiti tekst na "
 "prikazanoj stranici."
 
-#: src/webenginepart.cpp:551
+#: src/webenginepart.cpp:554
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "Podaci o SSL‑u za ovaj sajt djeluju iskvareno."
 
-#: src/webenginepart.cpp:632
+#: src/webenginepart.cpp:635
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1005,7 +1005,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "e‑pošta: "
 
-#: src/webenginepart.cpp:661
+#: src/webenginepart.cpp:664
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1013,7 +1013,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " — CC: "
 
-#: src/webenginepart.cpp:663
+#: src/webenginepart.cpp:666
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1021,7 +1021,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " — BCC: "
 
-#: src/webenginepart.cpp:665
+#: src/webenginepart.cpp:668
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1029,88 +1029,88 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " — tema: "
 
-#: src/webenginepart.cpp:669 src/webenginepart.cpp:680
+#: src/webenginepart.cpp:672 src/webenginepart.cpp:683
 #, kde-format
 msgid " (In new window)"
 msgstr " (u novom prozoru)"
 
-#: src/webenginepart.cpp:678
+#: src/webenginepart.cpp:681
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (u roditeljskom okviru)"
 
-#: src/webenginepart.cpp:748
+#: src/webenginepart.cpp:751
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Želite li da potražite <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:749
+#: src/webenginepart.cpp:752
 #, kde-format
 msgid "Internet Search"
 msgstr "Pretraga Interneta"
 
-#: src/webenginepart.cpp:749
+#: src/webenginepart.cpp:752
 #, kde-format
 msgid "&Search"
 msgstr "&Traži"
 
-#: src/webenginepart.cpp:860
+#: src/webenginepart.cpp:863
 #, kde-format
 msgid "Close window?"
 msgstr "Zatvoriti prozor?"
 
-#: src/webenginepart.cpp:860
+#: src/webenginepart.cpp:863
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Potrebna je potvrda"
 
-#: src/webenginepart.cpp:934
+#: src/webenginepart.cpp:937
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>Želite li da %1 upamti podatke o prijavi za <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1005
+#: src/webenginepart.cpp:1008
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr ""
 
-#: src/webenginepart.cpp:1010
+#: src/webenginepart.cpp:1013
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr ""
 
-#: src/webenginepart.cpp:1014
+#: src/webenginepart.cpp:1017
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1018
+#: src/webenginepart.cpp:1021
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 
 # rewrite-msgid: /caching/storing/
-#: src/webenginepart.cpp:1022
+#: src/webenginepart.cpp:1025
 #, fuzzy, kde-format
 #| msgid "&Allow password caching for this site"
 msgid "&Allow Password Caching for This Site"
 msgstr "&Dozvoli skladištenje lozinki za ovaj sajt"
 
 # rewrite-msgid: /cached/stored/
-#: src/webenginepart.cpp:1026
+#: src/webenginepart.cpp:1029
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "Ukloni uskladištene lozinke za ovaj sajt"
 
-#: src/webenginepart.cpp:1030
+#: src/webenginepart.cpp:1033
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1034
+#: src/webenginepart.cpp:1037
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Zatvori novčanik"
