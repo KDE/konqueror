@@ -38,7 +38,11 @@ public:
     void setPolicy(const QString &domain);
 
 #if QT_VERSION_MAJOR < 6
-    void setNeedsSave(bool needs) {emit changed(needs);}
+    void setNeedsSave(bool needs) {
+        m_needsSave = needs;
+        emit changed(needs);
+    }
+    bool needsSave() const {return m_needsSave;}
 #endif
 
 protected Q_SLOTS:
@@ -64,6 +68,9 @@ private:
     quint64 mSelectedItemsCount;
     Ui::KCookiePoliciesUI mUi;
     QMap<QString, KonqInterfaces::CookieJar::CookieAdvice> mDomainPolicyMap;
+#if QT_VERSION_MAJOR < 6
+    bool m_needsSave = false;
+#endif
 };
 
 #endif // KCOOKIESPOLICIES_H
