@@ -6,7 +6,7 @@
 # Kim Enkovaara <kim.enkovaara@iki.fi>, 2006.
 # Mikko Piippo <piippo@cc.helsinki.fi>, 2007.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2016.
-# Tommi Nieminen <translator@legisign.org>, 2017.
+# Tommi Nieminen <translator@legisign.org>, 2017, 2024.
 #
 # KDE Finnish translation sprint participants:
 msgid ""
@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-10-21 00:16+0000\n"
-"PO-Revision-Date: 2017-06-11 12:53+0200\n"
+"PO-Revision-Date: 2024-01-29 21:46+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2012-12-01 22:22:02+0000\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: kcmperformance.cpp:28
 #, kde-format
@@ -51,10 +51,9 @@ msgid ""
 "improve Konqueror performance here. These include options for reusing "
 "already running instances and for keeping instances preloaded."
 msgstr ""
-"<h1>Konquerorin suorituskyky</h1> Täältä voit muokata useita asetuksia, "
-"jotka vaikuttavat Konquerorin suorituskykyyn. Näihin asetuksiin sisältyy "
-"valmiina päällä olevien instanssien uudelleen käyttö sekä instanssien "
-"esiladattuna pitäminen."
+"<h1>Konquerorin suorituskyky</h1>Tässä voi muokata useita Konquerorin "
+"suorituskykyyn vaikuttavia asetuksia. Niihin sisältyvät valmiina käynnissä "
+"olevien ilmentymien uudelleenkäyttö sekä ilmentymien pitäminen esiladattuna."
 
 #: konqueror.cpp:24
 #, kde-format
@@ -66,10 +65,9 @@ msgid ""
 "taking longer).</p>"
 msgstr ""
 "<p>Jos tämä asetus on käytössä, Konqueror ladataan muistiin Plasman "
-"käynnistyksen yhteydessä. </p><p> Konquerorin ikkuna avautuu nopeammin, "
-"mutta Plasman käynnistyminen kestää hieman kauemmin. Voit toki työskennellä, "
-"vaikka selainta ladataan muistiin, joten et välttämättä juuri huomaa eroa.</"
-"p>"
+"käynnistyksen yhteydessä. </p><p>Konqueror-ikkuna avautuu nopeammin, mutta "
+"Plasman käynnistyminen kestää hieman kauemmin. Työskennellä toki voi, vaikka "
+"selainta ladataan muistiin, joten eroa ei välttämättä juuri huomaa.</p>"
 
 #: konqueror.cpp:30
 #, kde-format
@@ -80,10 +78,10 @@ msgid ""
 "In some cases, it is actually possible that this will reduce perceived "
 "performance.</p>"
 msgstr ""
-"<p>Jos tämä asetus on valittu, Konqueror säilyttää muistissa aina yhden "
-"instanssin. Konqueror lataa muistiin aina yhden varainstanssin, jolloin "
-"ikkunat avautuvat nopeasti. </p><p><b>Varoitus:</b> Joissakin tapauksissa "
-"tämä asetus saattaa hidastaa järjestelmän toimintaa.</p>"
+"<p>Jos tämä asetus on valittu, Konqueror säilyttää yhden ilmentymän aina "
+"muistissa. Esiladattua varailmentymää käyttämällä ikkunat avautuvat "
+"nopeammin. </p><p><b>Varoitus:</b> Joissakin tapauksissa asetus saattaa "
+"hidastaa järjestelmän toimintaa.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
 #: konqueror_ui.ui:17
@@ -95,13 +93,13 @@ msgstr "Esilataus"
 #: konqueror_ui.ui:23
 #, kde-format
 msgid "Preload an instance after desktop startup"
-msgstr "Esilataa instanssi työpöydän käynnistyttyä"
+msgstr "Esilataa ilmentymä työpöydän käynnistyessä"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
 #: konqueror_ui.ui:30
 #, kde-format
 msgid "Always try to have one preloaded instance"
-msgstr "Yritä pitää muistissa aina yhtä esiladattua instanssia"
+msgstr "Yritä pitää muistissa aina yksi esiladattu ilmentymä"
 
 #: system.cpp:22
 #, kde-format
