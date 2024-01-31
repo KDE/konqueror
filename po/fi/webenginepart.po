@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-29 00:37+0000\n"
-"PO-Revision-Date: 2023-09-26 17:47+0300\n"
+"PO-Revision-Date: 2023-12-11 15:34+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -37,9 +37,7 @@ msgstr "translator@legisign.org,karvonen.jorma@gmail.com"
 
 #: src/about/konq_aboutpage.cpp:71 src/about/konq_aboutpage.cpp:73
 #: src/about/konq_aboutpage.cpp:196 src/about/konq_aboutpage.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
-#| msgid "Be free."
+#, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
 msgstr "Vapaudu."
@@ -1261,6 +1259,8 @@ msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
 "default style sheet will be used"
 msgstr ""
+"Käyttäjän tyylisivun sisältävää tiedostoa <tt>%1</tt> ei voitu avata. "
+"Käytetään oletustyylisivua"
 
 #: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
