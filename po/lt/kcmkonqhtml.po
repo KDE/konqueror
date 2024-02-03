@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-30 01:37+0000\n"
-"PO-Revision-Date: 2013-04-23 07:39+0300\n"
+"PO-Revision-Date: 2024-02-02 22:47+0200\n"
 "Last-Translator: Liudas Alisauskas <liudas@akmc.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -1759,7 +1759,7 @@ msgstr "Naudoti &KIO"
 #: javaopts.cpp:105
 #, kde-format
 msgid "Shu&tdown applet server when inactive for more than"
-msgstr "Iš&jungti Įskiepių serverį neesant aktyvumo daugiau nei"
+msgstr "Iš&jungti programėlių serverį neesant aktyvumo daugiau nei"
 
 #: javaopts.cpp:117
 #, kde-format
@@ -1801,9 +1801,9 @@ msgid ""
 msgstr ""
 "<p>Šiame langelyje yra domenai ir mazgai, kuriems esate nustatę specifines "
 "Java taisykles. Šios taisyklės bus naudojamos vietoje pagrindinių taisyklių, "
-"leidžiant arba uždraudžiant šių domenų arba mazgų puslapių siunčiamus Java "
-"įskiepius.</p><p>Pažymėkite taisyklę ir, norėdami ją modifikuoti, naudokite "
-"dešinėje esančius mygtukus.</p>"
+"leidžiant arba uždraudžiant šių domenų arba mazgų puslapių siunčiamas Java "
+"programėles.</p><p>Pažymėkite taisyklę ir, norėdami ją modifikuoti, "
+"naudokite dešinėje esančius mygtukus.</p>"
 
 #: javaopts.cpp:142
 #, kde-format
@@ -1856,7 +1856,7 @@ msgid ""
 "utility to give code downloaded from certain sites more permissions."
 msgstr ""
 "Saugumo tvarkyklės įjungimas privers jvm veikti kartu su Saugumo Tvarkykle. "
-"Tai neleis įskiepiams skaityti ir rašyti į Jūsų failų sistemą, kurti bet "
+"Tai neleis programėlėms skaityti ir rašyti į Jūsų failų sistemą, kurti bet "
 "kokius socket'us, ir vykdyti kitus veiksmus, galinčius pakenkti Jūsų "
 "sistemos saugumui.  Išjunkite šią parinktį savo rizika.  Jūs galite pakeist "
 "HOME/.java.policy failą su Java policytool pagalbine programa jei norite "
@@ -1899,11 +1899,11 @@ msgid ""
 "whole time that the konqueror process is, leave the Shutdown Applet Server "
 "checkbox unchecked."
 msgstr ""
-"Kai visi įskiepiai būna sunaikinti, įskiepių serveris išsijungia. Vienok, "
-"jvm paleidimas užima šiek tiek laiko. Jeigu savo naršymo metu norite palikti "
-"java procesą veikiantį, galite nustatyti jums reikalingą laiko reikšmę.  "
-"Norėdami palikti java procesą veikiantį visą konqueror darbo laiką, "
-"nepažymėkite langelio „Išjungti įskiepių serverį“."
+"Kai visos programėlės būna sunaikintos, programėlių serveris išsijungia. "
+"Vienok, jvm paleidimas užima šiek tiek laiko. Jeigu savo naršymo metu norite "
+"palikti java procesą veikiantį, galite nustatyti jums reikalingą laiko "
+"reikšmę.  Norėdami palikti java procesą veikiantį visą konqueror darbo "
+"laiką, nepažymėkite langelio „Išjungti programėlių serverį“."
 
 #: javaopts.cpp:291
 #, kde-format
