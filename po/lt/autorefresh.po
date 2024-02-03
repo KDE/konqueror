@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: autorefresh\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:32+0000\n"
-"PO-Revision-Date: 2011-06-20 17:52+0300\n"
+"PO-Revision-Date: 2024-02-02 22:53+0200\n"
 "Last-Translator: Tomas Straupis <tomasstraupis@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -17,17 +17,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: autorefresh.cpp:28
 #, kde-format
 msgid "&Auto Refresh"
-msgstr "&Automatiškai atnaujinti"
+msgstr "&Automatiškai įkelti iš naujo"
 
 #: autorefresh.cpp:32
 #, kde-format
 msgid "None"
-msgstr "Nieko"
+msgstr "Nėra"
 
 #: autorefresh.cpp:33
 #, kde-format
@@ -83,12 +83,13 @@ msgstr "Kas 6 valandas"
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot Refresh Source"
-msgstr "Nepavyksta atnaujinti šaltinio"
+msgstr "Nepavyksta įkelti šaltinio iš naujo"
 
 #: autorefresh.cpp:101
 #, kde-format
 msgid "<qt>This plugin cannot auto-refresh the current part.</qt>"
-msgstr "<qt>Šis priedas negali atnaujinti dabartinės dalies automatiškai.</qt>"
+msgstr ""
+"<qt>Šis įskiepis negali automatiškai įkelti iš naujo dabartinės dalies.</qt>"
 
 #. i18n: ectx: Menu (tools)
 #: autorefresh.rc:5
