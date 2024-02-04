@@ -14,48 +14,47 @@
 # Zviki Karov <karovz@gmail.com>, 2005.
 # Diego Iastrubni <elcuco@kde.org>, 2005, 2006.
 #
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kget\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2006-02-16 23:35+0200\n"
-"Last-Translator: \n"
-"Language-Team:  <en@li.org>\n"
+"PO-Revision-Date: 2024-02-03 23:33+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
 #: kget_plugin.cpp:57
-#, fuzzy, kde-format
+#, kde-format
 msgid "Download Manager"
-msgstr "מנהל ההורדה"
+msgstr "מנהל הורדות"
 
 #: kget_plugin.cpp:63
-#, fuzzy, kde-format
-#| msgid "Show Drop &Target"
+#, kde-format
 msgid "Show Drop Target"
-msgstr "הצג מטרת &גרירה"
+msgstr "הצגת מטרת גרירה"
 
 #: kget_plugin.cpp:70
 #, kde-format
 msgid "List All Links"
-msgstr "הצג רשימה של כל הקישורים"
+msgstr "הצגת כל הקישורים"
 
 #: kget_plugin.cpp:75
-#, fuzzy, kde-format
-#| msgid "List All Links"
+#, kde-format
 msgid "List Selected Links"
-msgstr "הצג רשימה של כל הקישורים"
+msgstr "הצגת קישורים נבחרים"
 
 #: kget_plugin.cpp:224
 #, kde-format
 msgid "No downloadable links were found."
-msgstr ""
+msgstr "לא נמצאו קישורים שניתן להוריד."
 
 #: kget_plugin.cpp:224
 #, kde-format
@@ -66,7 +65,7 @@ msgstr "אין קישורים"
 #: konqueror_kget_browser_integration.rc:4
 #, kde-format
 msgid "&Tools"
-msgstr ""
+msgstr "&כלים"
 
 #, fuzzy
 #~ msgid "New Group"

@@ -3,19 +3,20 @@
 #
 # Diego Iastrubni <elcuco@kde.org>, 2008, 2012.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kio5_bookmarks\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-06 01:33+0000\n"
-"PO-Revision-Date: 2017-05-16 07:03-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
+"PO-Revision-Date: 2024-02-03 23:40+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -32,22 +33,22 @@ msgstr "מקומות"
 #: kio_bookmarks.cpp:196
 #, kde-format
 msgid "Could not find bookmarks config"
-msgstr ""
+msgstr "לא ניתן למצוא את הגדרות הסימניות"
 
 #: kio_bookmarks.cpp:206
 #, kde-format
 msgid "Could not find bookmarks editor"
-msgstr ""
+msgstr "לא ניתן למצוא את עורך הסימניות"
 
 #: kio_bookmarks.cpp:212
 #, kde-format
 msgid "Wrong request: %1"
-msgstr "בקשה לא תקינה: %1"
+msgstr "בקשה שגויה: %1"
 
 #: kio_bookmarks_html.cpp:85
 #, kde-format
 msgid "There are no bookmarks to display yet."
-msgstr "אין עוד סימניות לתצוגה"
+msgstr "אין עדיין סימניות לתצוגה."
 
 #: kio_bookmarks_html.cpp:124
 #, kde-format
@@ -55,8 +56,8 @@ msgid ""
 "kio_bookmarks CSS file not found. Output will look ugly.\n"
 "Check your installation."
 msgstr ""
-"גיליון הסגנון (CSS) של kio_bookmarks לא נמצא. הפלט לא יראה במיטבו.\n"
-"אנא בדוק את ההתקנה שלך."
+"גיליון הסגנון (CSS) של kio_bookmarks לא נמצא. הפלט לא ייראה במיטבו.\n"
+"נא לבדוק את תקינות ההתקנה שלך."
 
 #: kio_bookmarks_html.cpp:133
 #, kde-format

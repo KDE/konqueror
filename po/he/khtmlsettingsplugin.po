@@ -11,19 +11,20 @@
 # license as the program which it accompanies.
 # Diego Iastrubni <elcuco@kdemail.net>, 2004.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2017-05-16 06:37-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
+"PO-Revision-Date: 2024-02-03 23:28+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -31,7 +32,7 @@ msgstr ""
 #: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
-msgstr ""
+msgstr "&כלים"
 
 #. i18n: ectx: ToolBar (extraToolBar)
 #: khtmlsettingsplugin.rc:8
@@ -67,17 +68,17 @@ msgstr "תו&ספים"
 #: settingsplugin.cpp:68
 #, kde-format
 msgid "Autoload &Images"
-msgstr "&טען תמונות אוטומטית"
+msgstr "&טעינת תמונות אוטומטית"
 
 #: settingsplugin.cpp:75
 #, kde-format
 msgid "Enable Pro&xy"
-msgstr "&אפשר מתווך"
+msgstr "ה&פעלת מתווך"
 
 #: settingsplugin.cpp:80
 #, kde-format
 msgid "Enable Cac&he"
-msgstr "אפשר &מטמון"
+msgstr "הפעלת מ&טמון"
 
 #: settingsplugin.cpp:85
 #, kde-format
@@ -87,32 +88,32 @@ msgstr "מ&דיניות מטמון"
 #: settingsplugin.cpp:87
 #, kde-format
 msgid "&Keep Cache in Sync"
-msgstr "&שמור את המטמון מעודכן"
+msgstr "&שמירה על עדכניות המטמון"
 
 #: settingsplugin.cpp:88
 #, kde-format
 msgid "&Use Cache if Possible"
-msgstr "&השתמש במטמון אם ניתן"
+msgstr "לה&שתמש במטמון אם ניתן"
 
 #: settingsplugin.cpp:89
 #, kde-format
 msgid "&Offline Browsing Mode"
-msgstr "&מצב לא מקוון"
+msgstr "&מצב גלישה לא מקוונת"
 
 #: settingsplugin.cpp:193
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
 "be contacted."
 msgstr ""
-"אין אפשרות לאפשר את התמיכה בעוגיות מכיוון שאין אפשרות להפעיל את תהליך הרקע "
-"של העוגיות."
+"אי אפשר להפעיל את התמיכה בעוגיות מכיוון שאי אפשר להפעיל את תהליך הרקע של "
+"העוגיות."
 
 #: settingsplugin.cpp:195
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"
-msgstr "עוגיות אינן זמינות"
+msgstr "הגדרות עוגיות אינן זמינות"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

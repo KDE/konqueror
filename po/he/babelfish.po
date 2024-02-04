@@ -12,19 +12,20 @@
 #
 # Diego Iastrubni <elcuco@kde.org>, 2004, 2012.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: babelfish\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2017-05-16 06:35-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2024-02-03 23:32+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -53,12 +54,12 @@ msgstr "סרגל כלים נוסף"
 #: plugin_babelfish.cpp:38
 #, kde-format
 msgid "Translate Web Page"
-msgstr "תרגם אתר"
+msgstr "תרגום אתר"
 
 #: plugin_babelfish.cpp:46
 #, kde-format
 msgid "Translate Web &Page"
-msgstr "&תרגם אתר"
+msgstr "&תרגום אתר"
 
 #: plugin_babelfish.cpp:83
 #, kde-format
@@ -88,7 +89,7 @@ msgstr "&ספרדית אל"
 #: plugin_babelfish.cpp:98
 #, kde-format
 msgid "&Portuguese To"
-msgstr "&פורטוגזית אל"
+msgstr "&פורטוגלית אל"
 
 #: plugin_babelfish.cpp:101
 #, kde-format
@@ -107,11 +108,11 @@ msgstr "&רוסית אל"
 
 #: plugin_babelfish.cpp:126
 msgid "&Chinese (Simplified)"
-msgstr "&סינית (מופשט)"
+msgstr "&סינית (מופשטת)"
 
 #: plugin_babelfish.cpp:127
 msgid "Chinese (&Traditional)"
-msgstr "סינית (&מסורתי)"
+msgstr "סינית (מסו&רתית)"
 
 #: plugin_babelfish.cpp:128 plugin_babelfish.cpp:141
 msgid "&Dutch"
@@ -149,7 +150,7 @@ msgstr "&נורווגית"
 
 #: plugin_babelfish.cpp:136 plugin_babelfish.cpp:146
 msgid "&Portuguese"
-msgstr "&פורטוגזית"
+msgstr "&פורטוגלית"
 
 #: plugin_babelfish.cpp:137 plugin_babelfish.cpp:148
 msgid "&Russian"
@@ -176,12 +177,12 @@ msgstr "&אנגלית"
 #: plugin_babelfish.cpp:183
 #, kde-format
 msgid "&Chinese (Simplified) to English"
-msgstr "&מסינית (מופשטת) אל אנגלית"
+msgstr "&מסינית (מפושטת) אל אנגלית"
 
 #: plugin_babelfish.cpp:184
 #, kde-format
 msgid "Chinese (&Traditional) to English"
-msgstr "מסינית (&מסורתית) אל אנגלית"
+msgstr "מסינית (מסו&רתית) אל אנגלית"
 
 #: plugin_babelfish.cpp:193
 #, kde-format
@@ -202,7 +203,7 @@ msgstr "כתובת שגויה"
 #: plugin_babelfish.cpp:263
 #, kde-format
 msgid "The URL you entered is not valid, please correct it and try again."
-msgstr "הכתובת שהזנת אינה תקפה. תקן אותה ונסה שנית."
+msgstr "הכתובת שמילאת לא תקפה. נא לתקן אותה ולנסות שוב."
 
 #: plugin_babelfish.cpp:273
 #, kde-kuit-format
@@ -212,9 +213,11 @@ msgid ""
 "page will sent to the online translation service,<nl/>which may fetch the "
 "insecure version of the page."
 msgstr ""
+"עמוד זה מועבר על גבי חיבור מאובטח.<nl/><nl/>כתובת העמוד תישלח לשירות תרגום "
+"מקוון,<nl/>שעלול למשוך את הגרסה הלא מאובטחת של העמוד."
 
 #: plugin_babelfish.cpp:277
 #, kde-format
 msgctxt "@title:window"
 msgid "Security Warning"
-msgstr ""
+msgstr "אזהרת אבטחה"

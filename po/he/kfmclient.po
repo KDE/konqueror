@@ -12,31 +12,32 @@
 # Diego Iastrubni <elcuco@kdemail.net>, 2004.
 # Diego Iastrubni <elcuco@kde.org>, 2008.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-03 01:35+0000\n"
-"PO-Revision-Date: 2017-05-16 06:37-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
+"PO-Revision-Date: 2024-02-03 23:38+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "צוות התרגום של KDE ישראל"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "kde-l10n-he@kde.org"
 
 #: kfmclient.cpp:61
 #, kde-format
@@ -51,12 +52,12 @@ msgstr "כלי של KDE לפתיחת כתובות משורת הפקודה"
 #: kfmclient.cpp:70
 #, kde-format
 msgid "Non interactive use: no message boxes"
-msgstr "שימוש לא אינטראקטי: ללא תיבות שיחה"
+msgstr "שימוש לא אינטראקטיבי: ללא תיבות שיחה"
 
 #: kfmclient.cpp:72
 #, kde-format
 msgid "Show available commands"
-msgstr "הצג את הפעולות הזמינות"
+msgstr "הצגת הפעולות הזמינות"
 
 #: kfmclient.cpp:81
 #, kde-format
@@ -69,12 +70,12 @@ msgstr ""
 #, kde-format
 msgctxt "the name for a the value of an option on the command line help"
 msgid "type"
-msgstr ""
+msgstr "סוג"
 
 #: kfmclient.cpp:84
 #, kde-format
 msgid "Command (see --commands)"
-msgstr "(--commands פקודה (ראה"
+msgstr "(--commands פקודה (ר׳"
 
 #: kfmclient.cpp:86
 #, kde-format
@@ -84,7 +85,7 @@ msgstr "ארגומנטים לפקודה"
 #: kfmclient.cpp:88
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
-msgstr ""
+msgstr "הקבצים/הכתובות שנפתחו על ידי היישום יימחקו אחרי השימוש"
 
 #: kfmclient.cpp:97
 #, kde-format
@@ -151,16 +152,16 @@ msgid ""
 msgstr ""
 
 #: kfmclient.cpp:284
-#, fuzzy, kde-format
+#, kde-format
 msgid "Syntax error, not enough arguments\n"
-msgstr "שגיאת תחביר: מעט מדיי ארגומנטים\n"
+msgstr "שגיאת תחביר, אין מספיק ארגומנטים\n"
 
 #: kfmclient.cpp:288
-#, fuzzy, kde-format
+#, kde-format
 msgid "Syntax error, too many arguments\n"
-msgstr "שגיאת תחביר: יותר מדיי ארגומנטים\n"
+msgstr "שגיאת תחביר, יותר מדי ארגומנטים\n"
 
 #: kfmclient.cpp:343
-#, fuzzy, kde-format
+#, kde-format
 msgid "Syntax error, unknown command '%1'\n"
-msgstr "\"%1\" שגיאת תחביר: פקודה לא מוכרת\n"
+msgstr "שגיאת תחביר, הפקודה ‚%1’ לא מוכרת\n"

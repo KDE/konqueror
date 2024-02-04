@@ -5,19 +5,20 @@
 # Tahmar1900 <tahmar1900@gmail.com>, 2011.
 # Elkana Bardugo <ttv200@gmail.com>, 2016.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: searchbarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2017-05-16 06:37-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2024-02-03 23:35+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -27,6 +28,8 @@ msgid ""
 "Search Bar<p>Enter a search term. Click on the icon to change search mode or "
 "provider.</p>"
 msgstr ""
+"סרגל חיפוש<p>נא למלא ביטוי לחיפוש. לחיצה על הסמל תאפשר לשנות את מצב או ספק "
+"החיפוש.</p>"
 
 #: searchbar.cpp:72
 #, kde-format
@@ -36,28 +39,27 @@ msgstr "סרגל חיפוש"
 #: searchbar.cpp:77
 #, kde-format
 msgid "Focus Searchbar"
-msgstr ""
+msgstr "התמקדות בסרגל החיפוש"
 
 #: searchbar.cpp:278
-#, fuzzy, kde-format
-#| msgid "Find in This Page"
+#, kde-format
 msgid "Find in Page..."
-msgstr "מצא בדף זה"
+msgstr "איתור בעמוד…"
 
 #: searchbar.cpp:298
 #, kde-format
 msgid "Find in This Page"
-msgstr "מצא בדף זה"
+msgstr "איתור בעמוד זה"
 
 #: searchbar.cpp:310
 #, kde-format
 msgid "Select Search Engines..."
-msgstr "בחר מנועי חיפוש..."
+msgstr "בחירת מנועי חיפוש…"
 
 #: searchbar.cpp:329
 #, kde-format
 msgid "Add %1..."
-msgstr "הוסף %1..."
+msgstr "הוספת %1…"
 
 #. i18n: ectx: ToolBar (locationToolBar)
 #: searchbarplugin.rc:3
@@ -68,7 +70,7 @@ msgstr "סרגל חיפוש"
 #: WebShortcutWidget.cpp:33
 #, kde-format
 msgid "Set Uri Shortcuts"
-msgstr ""
+msgstr "הגדרות קיצורי כתובות"
 
 #: WebShortcutWidget.cpp:47
 #, kde-format
