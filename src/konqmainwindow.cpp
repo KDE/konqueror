@@ -44,6 +44,7 @@
 #include "browseropenorsavequestion.h"
 #include "configdialog.h"
 #include "browserextension.h"
+#include "fullscreenmanager.h"
 
 #include <konq_events.h>
 #include <konqpixmapprovider.h>
@@ -203,7 +204,7 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     , m_bLocationBarConnected(false)
     , m_bURLEnterLock(false)
     , m_urlCompletionStarted(false)
-    , m_fullScreenData{FullScreenState::NoFullScreen, FullScreenState::NoFullScreen, true, true, false}
+    , m_fullScreenManager(new FullScreenManager(this))
     , m_goBuffer(0)
     , m_pBookmarkMenu(nullptr)
     , m_configureDialog(nullptr)
@@ -325,6 +326,7 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
 
     KonqSessionManager::self()->registerMainWindow(this);
 
+    m_fullScreenManager->init();
     setAutoSaveSettings();
 
     //qCDebug(KONQUEROR_LOG) << this << "created";
@@ -1731,7 +1733,7 @@ void KonqMainWindow::updateSpellCheckConfiguration()
 
 void KonqMainWindow::slotConfigureToolbars()
 {
-    slotForceSaveMainWindowSettings();
+    forceSaveMainWindowSettings();
     KEditToolBar dlg(factory(), this);
     connect(&dlg, &KEditToolBar::newToolBarConfig, this, &KonqMainWindow::slotNewToolbarConfig);
     connect(&dlg, &KEditToolBar::newToolBarConfig, this, &KonqMainWindow::initBookmarkBar);
@@ -1820,7 +1822,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
     KonqView *oldView = m_currentView;
 
     //Exit full screen when a new part is activated
-    if (m_fullScreenData.currentState == FullScreenState::CompleteFullScreen) {
+    if (m_fullScreenManager->currentState() == FullScreenManager::FullScreenState::CompleteFullScreen) {
         if (oldView && oldView->part()) {
             QMetaObject::invokeMethod(oldView->part(), "exitFullScreen");
         } else { //This should never happen
@@ -3116,7 +3118,7 @@ void KonqMainWindow::slotClearLocationBar()
     focusLocationBar();
 }
 
-void KonqMainWindow::slotForceSaveMainWindowSettings()
+void KonqMainWindow::forceSaveMainWindowSettings()
 {
     if (autoSaveSettings()) {   // don't do it on e.g. JS window.open windows with no toolbars!
         KConfigGroup config = KSharedConfig::openConfig()->group("MainWindow");
@@ -3127,7 +3129,7 @@ void KonqMainWindow::slotForceSaveMainWindowSettings()
 void KonqMainWindow::slotShowMenuBar()
 {
     menuBar()->setVisible(!menuBar()->isVisible());
-    slotForceSaveMainWindowSettings();
+    forceSaveMainWindowSettings();
 }
 
 void KonqMainWindow::slotShowStatusBar()
@@ -3144,53 +3146,12 @@ void KonqMainWindow::slotShowStatusBar()
     //  view->frame()->statusbar()->setVisible(on);
     //}
 
-    slotForceSaveMainWindowSettings();
+    forceSaveMainWindowSettings();
 }
 
 void KonqMainWindow::slotUpdateFullScreen(bool set)
 {
-    if (m_fullScreenData.currentState == FullScreenState::CompleteFullScreen) {
-        if (m_currentView && m_currentView->part()) {
-            QMetaObject::invokeMethod(m_currentView->part(), "exitFullScreen");
-        }
-        return;
-    }
-
-    KToggleFullScreenAction::setFullScreen(this, set);
-    if (set) {
-        // Create toolbar button for exiting from full-screen mode
-        // ...but only if there isn't one already...
-
-        bool haveFullScreenButton = false;
-
-        //Walk over the toolbars and check whether there is a show fullscreen button in any of them
-        for (KToolBar *bar: findChildren<KToolBar *>()) {
-            //Are we plugged here, in a visible toolbar?
-            if (bar->isVisible() &&
-                    action("fullscreen")->associatedWidgets().contains(bar)) {
-                haveFullScreenButton = true;
-                break;
-            }
-        }
-
-        if (!haveFullScreenButton) {
-            QList<QAction *> lst;
-            lst.append(m_ptaFullScreen);
-            plugActionList(QStringLiteral("fullscreen"), lst);
-        }
-
-        m_fullScreenData.wasMenuBarVisible = menuBar()->isVisible();
-        menuBar()->hide();
-        m_paShowMenuBar->setChecked(false);
-    } else {
-        unplugActionList(QStringLiteral("fullscreen"));
-
-        if (m_fullScreenData.wasMenuBarVisible) {
-            menuBar()->show();
-            m_paShowMenuBar->setChecked(true);
-        }
-    }
-    m_fullScreenData.switchToState(set ? FullScreenState::OrdinaryFullScreen : FullScreenState::NoFullScreen);
+    m_fullScreenManager->fullscreenToggleActionTriggered(set);
 }
 
 void KonqMainWindow::setLocationBarURL(const QUrl &url)
@@ -3519,7 +3480,7 @@ void KonqMainWindow::initActions()
     QList<QKeySequence> fullScreenShortcut = m_ptaFullScreen->shortcuts();
     fullScreenShortcut.append(Qt::Key_F11);
     actionCollection()->setDefaultShortcuts(m_ptaFullScreen, fullScreenShortcut);
-    connect(m_ptaFullScreen, &KToggleFullScreenAction::toggled, this, &KonqMainWindow::slotUpdateFullScreen);
+    connect(m_ptaFullScreen, &KToggleFullScreenAction::toggled, m_fullScreenManager, &FullScreenManager::fullscreenToggleActionTriggered);
 
     QList<QKeySequence> reloadShortcut = KStandardShortcut::shortcut(KStandardShortcut::Reload);
     QKeySequence reloadAlternate(Qt::CTRL | Qt::Key_R);
@@ -5535,89 +5496,12 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
 
 void KonqMainWindow::toggleCompleteFullScreen(bool on)
 {
-    //Do nothing if already in complete full screen mode and on is true or not in complete full screen mode and on is false
-    if (on == (m_fullScreenData.currentState == FullScreenState::CompleteFullScreen)) {
-        return;
-    }
-    if (on) {
-        slotForceSaveMainWindowSettings();
-        resetAutoSaveSettings();
+    m_fullScreenManager->toggleCompleteFullScreen(on);
 
-        //Hide the menu bar
-        menuBar()->setVisible(false);
-
-        //Hide the side bar
-        if (m_toggleViewGUIClient) {
-            QAction *a = m_toggleViewGUIClient->action(QStringLiteral("konq_sidebartng"));
-            if (a) {
-                KToggleAction *ta = static_cast<KToggleAction*>(a);
-                if (ta){
-                    m_fullScreenData.wasSidebarVisible = ta->isChecked();
-                    a->setChecked(false);
-                }
-            }
-        } else {
-            m_fullScreenData.wasSidebarVisible = false;
-        }
-
-        //Hide the tool bars
-        const QList<QAction*> actions = toolBarMenuAction()->menu()->actions();
-        for (QAction *a : actions) {
-            a->setChecked(false);
-        }
-    } else {
-        setAutoSaveSettings();
-    }
-
-    //Status bar and side bar are not managed by autoSaveSettings
-
-    //Hide or show the sidebar
-    //TODO: isn't this a duplicate of the above?
-    if (m_toggleViewGUIClient) {
-        QAction *a = m_toggleViewGUIClient->action(QStringLiteral("konq_sidebartng"));
-        KToggleAction *sideBarAction = qobject_cast<KToggleAction*>(a);
-        if (sideBarAction) {
-            if (on) {
-                m_fullScreenData.wasSidebarVisible = sideBarAction ->isChecked();
-                sideBarAction ->setChecked(false);
-            } else if (m_fullScreenData.wasSidebarVisible) {
-                sideBarAction->setChecked(true);
-            }
-        }
-    }
-
-    //Hide or show the status bar
-    if (m_currentView) {
-        QStatusBar *statusBar = m_currentView->frame()->statusbar();
-        if (on) {
-            m_fullScreenData.wasStatusBarVisible = statusBar->isVisible();
-            statusBar->setVisible(false);
-        } else if (m_fullScreenData.wasStatusBarVisible) {
-            statusBar->setVisible(true);
-        }
-    }
-
-    if (on || m_fullScreenData.previousState == FullScreenState::NoFullScreen) {
-        disconnect(m_ptaFullScreen, &KToggleAction::toggled, this, &KonqMainWindow::slotUpdateFullScreen);
-        KToggleFullScreenAction::setFullScreen(this, on);
-        connect(m_ptaFullScreen, &KToggleAction::toggled, this, &KonqMainWindow::slotUpdateFullScreen);
-    }
-    m_pViewManager->forceHideTabBar(on);
-
-    if (on) {
-    QString msg = i18n("You have entered Complete Full Screen mode (the user interface is completely hidden)."
-    " You can exit it by pressing the keyboard shortcut for Full Screen Mode (%1)", m_ptaFullScreen->shortcut().toString());
-        KMessageBox::information(this, msg, QString(), "Complete Full Screen Warning");
-    }
-
-    m_fullScreenData.switchToState(on ? FullScreenState::CompleteFullScreen : m_fullScreenData.previousState);
-}
-
-void KonqMainWindow::FullScreenData::switchToState(KonqMainWindow::FullScreenState newState)
-{
-    if (newState != currentState) {
-        previousState = currentState;
-        currentState = newState;
+    if (m_fullScreenManager->currentState() == FullScreenManager::FullScreenState::CompleteFullScreen) {
+        QString msg = i18n("You have entered Complete Full Screen mode (the user interface is completely hidden)."
+            " You can exit it by pressing the keyboard shortcut for Full Screen Mode (%1)", m_ptaFullScreen->shortcut().toString());
+            KMessageBox::information(this, msg, QString(), "Complete Full Screen Warning");
     }
 }
 
@@ -5674,4 +5558,12 @@ QStringList KonqMainWindow::activities() const
 void KonqMainWindow::setOnActivities(const QStringList& ids) const
 {
     KX11Extras::setOnActivities(winId(), ids);
+}
+
+QList<QAction *> KonqMainWindow::toggleViewActions() const
+{
+    if (!m_toggleViewGUIClient) {
+        return {};
+    }
+    return m_toggleViewGUIClient->actions();
 }

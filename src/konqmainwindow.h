@@ -32,6 +32,8 @@
 #include "configdialog.h"
 #include "windowargs.h"
 
+#include <KConfigGroup>
+
 class QActionGroup;
 class KUrlCompletion;
 class QLabel;
@@ -62,6 +64,7 @@ class KonqHistoryDialog;
 struct HistoryEntry;
 class QLineEdit;
 class UrlLoader;
+class FullScreenManager;
 
 namespace KParts
 {
@@ -354,6 +357,8 @@ public:
 
     void setOnActivities(const QStringList &ids) const;
 
+    QList<QAction*> toggleViewActions() const;
+
 Q_SIGNALS:
     void viewAdded(KonqView *view);
     void viewRemoved(KonqView *view);
@@ -446,6 +451,14 @@ public Q_SLOTS:
     void slotRemoveOtherTabs();
     void slotRemoveTabPopup();
 
+    /**
+     * @brief Saves the main window settings if suitable for the window
+     *
+     * For some windows saving window settings is not appropriate, for example for windows
+     * with no toolbars opened by javascript using window.open
+     */
+    void forceSaveMainWindowSettings();
+
 private Q_SLOTS:
     void slotViewCompleted(KonqView *view);
 
@@ -484,8 +497,6 @@ private Q_SLOTS:
 
     // Connected to KGlobalSettings
     void slotReconfigure();
-
-    void slotForceSaveMainWindowSettings();
 
     void slotOpenWith();
 
@@ -564,22 +575,6 @@ protected:
     
 private:
     
-    enum class FullScreenState {
-        NoFullScreen,
-        OrdinaryFullScreen,
-        CompleteFullScreen
-    };
-    
-    struct FullScreenData {
-        FullScreenState previousState;
-        FullScreenState currentState;
-        bool wasMenuBarVisible;
-        bool wasStatusBarVisible;
-        bool wasSidebarVisible;
-        
-        void switchToState(FullScreenState newState);
-    };
-
 private Q_SLOTS:
     void slotUndoTextChanged(const QString &newText);
 
@@ -734,7 +729,7 @@ private: // members
     bool m_bNeedApplyKonqMainWindowSettings: 1;
     bool m_urlCompletionStarted: 1;
 
-    FullScreenData m_fullScreenData;
+    FullScreenManager *m_fullScreenManager;
     
     int m_goBuffer;
     Qt::MouseButtons m_goMouseState;
@@ -808,5 +803,6 @@ private: // members
     
     friend class KonqBrowserWindowInterface;
 };
+
 
 #endif // KONQMAINWINDOW_H
