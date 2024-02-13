@@ -96,6 +96,7 @@ set(konqueror_KDEINIT_SRCS
    implementations/konqbrowser.cpp
    configdialog.cpp
    placeholderpart.cpp
+   fullscreenmanager.cpp
 )
 
 if (${KActivities_FOUND})
