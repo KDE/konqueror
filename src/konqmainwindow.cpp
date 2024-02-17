@@ -519,6 +519,15 @@ void KonqMainWindow::openFilteredUrl(const QString &url, const KonqOpenURLReques
     // If it is changed, then it's done in KonqViewManager::doSetActivePart
     if (m_currentView) {
         m_currentView->setFocus();
+#if QT_VERSION_MAJOR >= 6
+        //See KonqView::forceWebEnginePartFocus for an explanation of this code and the Qt bug
+        //it works around
+        KParts::ReadOnlyPart *part = m_currentView->part();
+        if (!KonqUrl::isKonqBlank(filteredURL) && part->metaData().pluginId() == QLatin1String("webenginepart")) {
+            connect(part, &KParts::ReadOnlyPart::completed, m_currentView, &KonqView::forceWebEnginePartFocus);
+            connect(part, &KParts::ReadOnlyPart::completedWithPendingAction, m_currentView, &KonqView::forceWebEnginePartFocus);
+        }
+#endif
     }
 }
 
