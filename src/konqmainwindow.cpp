@@ -300,7 +300,7 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
 
     checkDisableClearButton();
 
-    connect(toolBarMenuAction(), SIGNAL(triggered()), this, SLOT(slotForceSaveMainWindowSettings()));
+    connect(toolBarMenuAction(), SIGNAL(triggered()), this, SLOT(forceSaveMainWindowSettings()));
 
     if (!m_toggleViewGUIClient->empty()) {
         plugActionList(QStringLiteral("toggleview"), m_toggleViewGUIClient->actions());
