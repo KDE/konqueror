@@ -229,9 +229,8 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
 
     m_viewModesGroup = new QActionGroup(this);
     m_viewModesGroup->setExclusive(true);
-    connect(m_viewModesGroup, SIGNAL(triggered(QAction*)),
-            this, SLOT(slotViewModeTriggered(QAction*)),
-            Qt::QueuedConnection); // Queued so that we don't delete the action from the code that triggered it.
+    // Queued so that we don't delete the action from the code that triggered it.
+    connect(m_viewModesGroup, &QActionGroup::triggered, this, &KonqMainWindow::slotViewModeTriggered, Qt::QueuedConnection);
 
     // This has to be called before any action is created for this mainwindow
     const KAboutData applicationData = KAboutData::applicationData();
@@ -280,11 +279,10 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
         prov->load(locationBarGroup, QStringLiteral("ComboIconCache"));
     }
 
-    connect(prov, SIGNAL(changed()), SLOT(slotIconsChanged()));
+    connect(prov, &KonqPixmapProvider::changed, this, &KonqMainWindow::slotIconsChanged);
 
     m_pUndoManager = new KonqUndoManager(KonqClosedWindowsManager::self(), this);
-    connect(m_pUndoManager, SIGNAL(undoAvailable(bool)),
-            this, SLOT(slotUndoAvailable(bool)));
+    connect(m_pUndoManager, qOverload<bool>(&KonqUndoManager::undoAvailable), this, &KonqMainWindow::slotUndoAvailable);
 
     initCombo();
     initActions();
@@ -300,7 +298,7 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
 
     checkDisableClearButton();
 
-    connect(toolBarMenuAction(), SIGNAL(triggered()), this, SLOT(forceSaveMainWindowSettings()));
+    connect(toolBarMenuAction(), &QAction::triggered, this, &KonqMainWindow::forceSaveMainWindowSettings);
 
     if (!m_toggleViewGUIClient->empty()) {
         plugActionList(QStringLiteral("toggleview"), m_toggleViewGUIClient->actions());
@@ -1984,8 +1982,7 @@ void KonqMainWindow::insertChildView(KonqView *childView)
     //qCDebug(KONQUEROR_LOG) << childView;
     m_mapViews.insert(childView->part(), childView);
 
-    connect(childView, SIGNAL(viewCompleted(KonqView*)),
-            this, SLOT(slotViewCompleted(KonqView*)));
+    connect(childView, &KonqView::viewCompleted, this, &KonqMainWindow::slotViewCompleted);
 
     emit viewAdded(childView);
 }
@@ -1995,8 +1992,7 @@ void KonqMainWindow::removeChildView(KonqView *childView)
 {
     //qCDebug(KONQUEROR_LOG) << childView;
 
-    disconnect(childView, SIGNAL(viewCompleted(KonqView*)),
-               this, SLOT(slotViewCompleted(KonqView*)));
+    disconnect(childView, &KonqView::viewCompleted, this, &KonqMainWindow::slotViewCompleted);
 
 #ifndef NDEBUG
     //dumpViewList();
@@ -2820,10 +2816,8 @@ void KonqMainWindow::initCombo()
 
     m_combo->init(s_pCompletion);
 
-    connect(m_combo, SIGNAL(activated(QString,Qt::KeyboardModifiers)),
-            this, SLOT(slotURLEntered(QString,Qt::KeyboardModifiers)));
-    connect(m_combo, SIGNAL(showPageSecurity()),
-            this, SLOT(showPageSecurity()));
+    connect(m_combo, &KonqCombo::activated, this, &KonqMainWindow::slotURLEntered);
+    connect(m_combo, &KonqCombo::showPageSecurity, this, &KonqMainWindow::showPageSecurity);
 
     m_pURLCompletion = new KUrlCompletion();
     m_pURLCompletion->setCompletionMode(s_pCompletion->completionMode());
@@ -2832,18 +2826,12 @@ void KonqMainWindow::initCombo()
     // We do want completion of user names, right?
     //m_pURLCompletion->setReplaceHome( false );  // Leave ~ alone! Will be taken care of by filters!!
 
-    connect(m_combo, SIGNAL(completionModeChanged(KCompletion::CompletionMode)),
-            SLOT(slotCompletionModeChanged(KCompletion::CompletionMode)));
-    connect(m_combo, SIGNAL(completion(QString)),
-            SLOT(slotMakeCompletion(QString)));
-    connect(m_combo, SIGNAL(substringCompletion(QString)),
-            SLOT(slotSubstringcompletion(QString)));
-    connect(m_combo, SIGNAL(textRotation(KCompletionBase::KeyBindingType)),
-            SLOT(slotRotation(KCompletionBase::KeyBindingType)));
-    connect(m_combo, SIGNAL(cleared()),
-            SLOT(slotClearHistory()));
-    connect(m_pURLCompletion, SIGNAL(match(QString)),
-            SLOT(slotMatch(QString)));
+    connect(m_combo, &KonqCombo::completionModeChanged, this, &KonqMainWindow::slotCompletionModeChanged);
+    connect(m_combo, &KonqCombo::completion, this, &KonqMainWindow::slotMakeCompletion);
+    connect(m_combo, &KonqCombo::substringCompletion, this, &KonqMainWindow::slotSubstringcompletion);
+    connect(m_combo, &KonqCombo::textRotation, this, &KonqMainWindow::slotRotation);
+    connect(m_combo, &KonqCombo::cleared, this, &KonqMainWindow::slotClearHistory);
+    connect(m_pURLCompletion, &KUrlCompletion::match, this, &KonqMainWindow::slotMatch);
 
     m_combo->installEventFilter(this);
 
@@ -3041,12 +3029,12 @@ bool KonqMainWindow::eventFilter(QObject *obj, QEvent *ev)
                 duplicate->setEnabled(false);
             }
 
-            connect(m_paCut, SIGNAL(triggered()), m_combo->lineEdit(), SLOT(cut()));
-            connect(m_paCopy, SIGNAL(triggered()), m_combo->lineEdit(), SLOT(copy()));
-            connect(m_paPaste, SIGNAL(triggered()), m_combo->lineEdit(), SLOT(paste()));
-            connect(QApplication::clipboard(), SIGNAL(dataChanged()), this, SLOT(slotClipboardDataChanged()));
-            connect(m_combo->lineEdit(), SIGNAL(textChanged(QString)), this, SLOT(slotCheckComboSelection()));
-            connect(m_combo->lineEdit(), SIGNAL(selectionChanged()), this, SLOT(slotCheckComboSelection()));
+            connect(m_paCut, &QAction::triggered, m_combo->lineEdit(), &QLineEdit::cut);
+            connect(m_paCopy, &QAction::triggered, m_combo->lineEdit(), &QLineEdit::copy);
+            connect(m_paPaste, &QAction::triggered, m_combo->lineEdit(), &QLineEdit::paste);
+            connect(QApplication::clipboard(), &QClipboard::dataChanged, this, &KonqMainWindow::slotClipboardDataChanged);
+            connect(m_combo->lineEdit(), &QLineEdit::textChanged, this, &KonqMainWindow::slotCheckComboSelection);
+            connect(m_combo->lineEdit(), &QLineEdit::selectionChanged, this, &KonqMainWindow::slotCheckComboSelection);
 
             slotClipboardDataChanged();
         } else if (ev->type() == QEvent::FocusOut) {
@@ -3064,12 +3052,12 @@ bool KonqMainWindow::eventFilter(QObject *obj, QEvent *ev)
                 duplicate->setEnabled(currentView() && currentView()->frame());
             }
 
-            disconnect(m_paCut, SIGNAL(triggered()), m_combo->lineEdit(), SLOT(cut()));
-            disconnect(m_paCopy, SIGNAL(triggered()), m_combo->lineEdit(), SLOT(copy()));
-            disconnect(m_paPaste, SIGNAL(triggered()), m_combo->lineEdit(), SLOT(paste()));
-            disconnect(QApplication::clipboard(), SIGNAL(dataChanged()), this, SLOT(slotClipboardDataChanged()));
-            disconnect(m_combo->lineEdit(), SIGNAL(textChanged(QString)), this, SLOT(slotCheckComboSelection()));
-            disconnect(m_combo->lineEdit(), SIGNAL(selectionChanged()), this, SLOT(slotCheckComboSelection()));
+            disconnect(m_paCut, &QAction::triggered, m_combo->lineEdit(), &QLineEdit::cut);
+            disconnect(m_paCopy, &QAction::triggered, m_combo->lineEdit(), &QLineEdit::copy);
+            disconnect(m_paPaste, &QAction::triggered, m_combo->lineEdit(), &QLineEdit::paste);
+            disconnect(QApplication::clipboard(), &QClipboard::dataChanged, this, &KonqMainWindow::slotClipboardDataChanged);
+            disconnect(m_combo->lineEdit(), &QLineEdit::textChanged, this, &KonqMainWindow::slotCheckComboSelection);
+            disconnect(m_combo->lineEdit(), &QLineEdit::selectionChanged, this, &KonqMainWindow::slotCheckComboSelection);
 
             if (ext) {
                 m_paCut->setEnabled(ext->isActionEnabled("cut"));
@@ -3499,7 +3487,7 @@ void KonqMainWindow::initActions()
     m_paReload = actionCollection()->addAction(QStringLiteral("reload"));
     m_paReload->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
     m_paReload->setText(i18n("&Reload"));
-    connect(m_paReload, SIGNAL(triggered()), SLOT(slotReload()));
+    connect(m_paReload, &QAction::triggered, this, [this](){slotReload();});
     actionCollection()->setDefaultShortcuts(m_paReload, reloadShortcut);
     m_paReloadAllTabs = actionCollection()->addAction(QStringLiteral("reload_all_tabs"));
     m_paReloadAllTabs->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh-all")));
@@ -3520,8 +3508,7 @@ void KonqMainWindow::initActions()
 
     m_paUndo = KStandardAction::undo(m_pUndoManager, SLOT(undo()), this);
     actionCollection()->addAction(QStringLiteral("undo"), m_paUndo);
-    connect(m_pUndoManager, SIGNAL(undoTextChanged(QString)),
-            this, SLOT(slotUndoTextChanged(QString)));
+    connect(m_pUndoManager, &KonqUndoManager::undoTextChanged, this, &KonqMainWindow::slotUndoTextChanged);
 
     // Those are connected to the browserextension directly
     m_paCut = KStandardAction::cut(nullptr, nullptr, this);
@@ -3572,8 +3559,7 @@ void KonqMainWindow::initActions()
     clearLocation->setIcon(QIcon::fromTheme(QApplication::isRightToLeft() ? "edit-clear-locationbar-rtl" : "edit-clear-locationbar-ltr"));
     clearLocation->setText(i18n("Clear Location Bar"));
     actionCollection()->setDefaultShortcut(clearLocation, Qt::CTRL | Qt::Key_L);
-    connect(clearLocation, SIGNAL(triggered()),
-            SLOT(slotClearLocationBar()));
+    connect(clearLocation, &QAction::triggered, this, &KonqMainWindow::slotClearLocationBar);
     clearLocation->setWhatsThis(i18n("<html>Clear Location bar<br /><br />"
                                      "Clears the contents of the location bar.</html>"));
 
@@ -4434,8 +4420,7 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
 
     if (be) {
         QObject::connect(this, &KonqMainWindow::popupItemsDisturbed, pPopupMenu.data(), &KonqPopupMenu::close);
-        QObject::connect(be, SIGNAL(itemsRemoved(KFileItemList)),
-                         this, SLOT(slotItemsRemoved(KFileItemList)));
+        QObject::connect(be, &KParts::NavigationExtension::itemsRemoved, this, &KonqMainWindow::slotItemsRemoved);
     }
 
     QPointer<QObject> guard(this);   // #149736, window could be deleted inside popupmenu event loop
@@ -4456,8 +4441,7 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
     }
 
     if (be) {
-        QObject::disconnect(be, SIGNAL(itemsRemoved(KFileItemList)),
-                            this, SLOT(slotItemsRemoved(KFileItemList)));
+        QObject::disconnect(be, &KParts::NavigationExtension::itemsRemoved, this, &KonqMainWindow::slotItemsRemoved);
     }
 
     delete konqyMenuClient;
@@ -4646,8 +4630,7 @@ void KonqMainWindow::updateOpenWithActions()
         }
         action->setIcon(QIcon::fromTheme((*it)->icon()));
 
-        connect(action, SIGNAL(triggered()),
-                this, SLOT(slotOpenWith()));
+        connect(action, &QAction::triggered, this, &KonqMainWindow::slotOpenWith);
 
         actionCollection()->addAction((*it)->desktopEntryName(), action);
         if (idxService < baseOpenWithItems) {
