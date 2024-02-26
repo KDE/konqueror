@@ -1,14 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Sergiu Bivol <sergiu@cip.md>, 2009, 2011.
-# Sergiu Bivol <sergiu@cip.md>, 2010, 2013.
+# Sergiu Bivol <sergiu@cip.md>, 2009, 2010, 2011, 2013, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-29 02:28+0000\n"
-"PO-Revision-Date: 2013-02-09 00:50+0200\n"
+"PO-Revision-Date: 2024-02-24 15:33+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -17,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -248,20 +248,19 @@ msgid "<a href=\"%1\">Return to Starting Points</a>"
 msgstr ""
 
 #: src/about/konq_aboutpage.cpp:245
-#, fuzzy, kde-format
-#| msgid "Start Plugin"
+#, kde-format
 msgid "Installed Plugins"
-msgstr "Pornește extensia"
+msgstr "Extensii instalate"
 
 #: src/about/konq_aboutpage.cpp:246
 #, kde-format
 msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
-msgstr ""
+msgstr "<td>Extensie</td><td>Descriere</td><td>Fișier</td><td>Tipuri</td>"
 
 #: src/about/konq_aboutpage.cpp:247
 #, kde-format
 msgid "Installed"
-msgstr ""
+msgstr "Instalat"
 
 #: src/about/konq_aboutpage.cpp:248
 #, kde-format
@@ -293,54 +292,52 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
-#, fuzzy, kde-format
-#| msgctxt "input dialog text for selecting html elements"
-#| msgid "Choose elements"
+#, kde-format
 msgid "Choose Save Format"
-msgstr "Alege elemente"
+msgstr "Alegeți formatul de salvat"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:20
 #, kde-format
 msgid "How would you like to save the page?"
-msgstr ""
+msgstr "Cum doriți să salvați pagina?"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As an HTML file &without external resources"
-msgstr ""
+msgstr "Ca fișier HTML &fără resurse externe"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
 #, kde-format
 msgid "As a &complete HTML page"
-msgstr ""
+msgstr "Ca pagină HTML &completă"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As a &MHTML file"
-msgstr ""
+msgstr "Ca fișier &MHTML"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:57 src/webenginepartcertificateerrordlg.ui:23
 #, kde-format
 msgid "TextLabel"
-msgstr ""
+msgstr "EtichetăTextuală"
 
 #: src/cookies/cookiealertdlg.cpp:22
 #, kde-format
 msgctxt "@label the cookie expires when the browser session ends"
 msgid "End of Session"
-msgstr ""
+msgstr "Sfârșitul sesiunii"
 
 #: src/cookies/cookiealertdlg.cpp:29
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by https servers"
 msgid "Secure servers only"
-msgstr ""
+msgstr "Numai servere securizate"
 
 #: src/cookies/cookiealertdlg.cpp:31
 #, kde-format
@@ -348,13 +345,13 @@ msgctxt ""
 "@label exposure string - the cookie may be used by https servers AND client-"
 "side javascripts"
 msgid "Secure servers, page scripts"
-msgstr ""
+msgstr "Servere securizate, scripturi din pagină"
 
 #: src/cookies/cookiealertdlg.cpp:35
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by http servers"
 msgid "Servers"
-msgstr ""
+msgstr "Servere"
 
 #: src/cookies/cookiealertdlg.cpp:37
 #, kde-format
@@ -362,29 +359,25 @@ msgctxt ""
 "@label exposure string - the cookie may be used by http servers AND client-"
 "side javascripts"
 msgid "Servers, page scripts"
-msgstr ""
+msgstr "Servere, scripturi din pagină"
 
 #: src/cookies/cookiealertdlg.cpp:41
-#, fuzzy, kde-format
-#| msgid "Accept"
+#, kde-format
 msgctxt "@label accept cookie"
 msgid "Accept"
 msgstr "Acceptă"
 
 #: src/cookies/cookiealertdlg.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@action:never for this site"
-#| msgid "Ne&ver for this site"
+#, kde-format
 msgctxt "@label accept cookie for this session only"
 msgid "Accept for this session"
-msgstr "&Niciodată pentru acest sait"
+msgstr "Acceptă pentru această sesiune"
 
 #: src/cookies/cookiealertdlg.cpp:45
-#, fuzzy, kde-format
-#| msgid "Reject"
+#, kde-format
 msgctxt "@label reject cookie"
 msgid "Reject"
-msgstr "Respinge"
+msgstr "Refuză"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CookieAlertDlg)
 #: src/cookies/cookiealertdlg.ui:14
@@ -399,72 +392,74 @@ msgid ""
 "<html><head/><body><p>You received a cookie from %1</p><p>Do you want to "
 "accept or reject this cookie?</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Ați primit un cookie de la %1</p><p>Doriți să "
+"acceptați sau să refuzați acest cookie?</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/cookies/cookiealertdlg.ui:30
 #, kde-format
 msgid "Cookie details"
-msgstr ""
+msgstr "Detalii cookie"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/cookies/cookiealertdlg.ui:36
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Denumire"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: src/cookies/cookiealertdlg.ui:50
 #, kde-format
 msgid "Value"
-msgstr ""
+msgstr "Valoare"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: src/cookies/cookiealertdlg.ui:64
 #, kde-format
 msgid "Expires"
-msgstr ""
+msgstr "Expiră la"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: src/cookies/cookiealertdlg.ui:78
 #, kde-format
 msgid "Path"
-msgstr ""
+msgstr "Cale"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: src/cookies/cookiealertdlg.ui:99
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "Expunere"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: src/cookies/cookiealertdlg.ui:113
 #, kde-format
 msgid "Domain"
-msgstr ""
+msgstr "Domeniu"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: src/cookies/cookiealertdlg.ui:123
 #, kde-format
 msgid "Apply choice to"
-msgstr ""
+msgstr "Aplică opțiunea la"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToThis)
 #: src/cookies/cookiealertdlg.ui:129
 #, kde-format
 msgid "Only this cookie"
-msgstr ""
+msgstr "Doar acest cookie"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToDomain)
 #: src/cookies/cookiealertdlg.ui:136
 #, kde-format
 msgid "All cookies from this domain"
-msgstr ""
+msgstr "Toate cookie-urile de pe acest domeniu"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToAll)
 #: src/cookies/cookiealertdlg.ui:143
 #, kde-format
 msgid "All cookies"
-msgstr ""
+msgstr "Toate cookie-urile"
 
 #: src/schemehandlers/errorschemehandler.cpp:97
 #, kde-format
@@ -537,49 +532,43 @@ msgid "Filter error"
 msgstr "Eroare de filtru"
 
 #: src/spellcheckermanager.cpp:98
-#, fuzzy, kde-format
-#| msgid "Check Spelling..."
+#, kde-format
 msgid "Spelling"
-msgstr "Verificare ortografică..."
+msgstr "Ortografie"
 
 #: src/spellcheckermanager.cpp:102
 #, kde-format
 msgid "Spell Checking Enabled"
-msgstr ""
+msgstr "Verificare ortografică activă"
 
 #: src/spellcheckermanager.cpp:120
 #, kde-format
 msgid "&Languages"
-msgstr ""
+msgstr "&Limbi"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/ui/credentialsdetailswidget.ui:34
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
 #, kde-format
 msgid "&Show passwords"
-msgstr ""
+msgstr "Afișează &parole"
 
 #: src/ui/featurepermissionbar.cpp:22
 #, kde-format
 msgctxt "@action:deny permission"
 msgid "&Deny permission"
-msgstr ""
+msgstr "&Refuză permisiunea"
 
 #: src/ui/featurepermissionbar.cpp:26
 #, kde-format
 msgctxt "@action:grant permission"
 msgid "&Grant permission"
-msgstr ""
+msgstr "&Acordă permisiunea"
 
 #: src/ui/featurepermissionbar.cpp:57
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "<html><b>%1</b> would like to send you notifications"
-msgstr ""
-"<qt>Permiteți acestui sait să atașeze următoarele fișiere la scrisoarea "
-"electronică?</qt>"
+msgstr "<html><b>%1</b> vrea să vă trimită notificări"
 
 #: src/ui/featurepermissionbar.cpp:59
 #, kde-format
@@ -587,72 +576,50 @@ msgid ""
 "<html><b>%1</b> would like to access information about your current physical "
 "location"
 msgstr ""
+"<html><b>%1</b> vrea să acceseze informații despre amplasarea dumneavoastră "
+"actuală"
 
 #: src/ui/featurepermissionbar.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your microphone and other audio capture "
 "devices"
 msgstr ""
-"<qt>Permiteți acestui sait să atașeze următoarele fișiere la scrisoarea "
-"electronică?</qt>"
+"<html><b>%1</b> vrea să vă acceseze microfonul și alte dispozitive de "
+"captură a sunetului"
 
 #: src/ui/featurepermissionbar.cpp:63
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your camera and other video capture "
 "devices"
 msgstr ""
-"<qt>Permiteți acestui sait să atașeze următoarele fișiere la scrisoarea "
-"electronică?</qt>"
+"<html><b>%1</b> vrea să vă acceseze camera și alte dispozitive de captură a "
+"imaginii"
 
 #: src/ui/featurepermissionbar.cpp:65
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access to your microphone, camera and other "
 "audio and video capture devices"
 msgstr ""
-"<qt>Permiteți acestui sait să atașeze următoarele fișiere la scrisoarea "
-"electronică?</qt>"
+"<html><b>%1</b> vrea să vă acceseze microfonul, camera, și alte dispozitive "
+"de captură a sunetului și imaginii"
 
 #: src/ui/featurepermissionbar.cpp:67
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
-msgstr ""
-"<qt>Permiteți acestui sait să atașeze următoarele fișiere la scrisoarea "
-"electronică?</qt>"
+msgstr "<html><b>%1</b> vrea să vă blocheze mausul în cadrul paginii"
 
 #: src/ui/featurepermissionbar.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "<html><b>%1</b> would like to record your screen"
-msgstr ""
-"<qt>Permiteți acestui sait să atașeze următoarele fișiere la scrisoarea "
-"electronică?</qt>"
+msgstr "<html><b>%1</b> vrea să vă înregistreze ecranul"
 
 #: src/ui/featurepermissionbar.cpp:71
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "<html><b>%1</b> would like to record your screen and your audio"
-msgstr ""
-"<qt>Permiteți acestui sait să atașeze următoarele fișiere la scrisoarea "
-"electronică?</qt>"
+msgstr "<html><b>%1</b> vrea să vă înregistreze ecranul și sunetul"
 
 #: src/ui/passwordbar.cpp:29
 #, kde-format
@@ -664,11 +631,10 @@ msgstr "&Reține"
 #, kde-format
 msgctxt "@action:never for this site"
 msgid "Ne&ver for this site"
-msgstr "&Niciodată pentru acest sait"
+msgstr "Ni&ciodată pentru acest sait"
 
 #: src/ui/passwordbar.cpp:37
-#, fuzzy, kde-format
-#| msgid "&Not Now"
+#, kde-format
 msgctxt "@action:not now"
 msgid "N&ot now"
 msgstr "&Nu acum"
@@ -677,19 +643,18 @@ msgstr "&Nu acum"
 #, kde-format
 msgctxt "@action:display details about credentials to store"
 msgid "&Show details"
-msgstr ""
+msgstr "&Arată detalii"
 
 #: src/ui/passwordbar.cpp:123
 #, kde-format
 msgctxt "@action:hide details about credentials to store"
 msgid "&Hide details"
-msgstr ""
+msgstr "&Ascunde detalii"
 
 #: src/ui/searchbar.cpp:38
-#, fuzzy, kde-format
-#| msgid "&Find:"
+#, kde-format
 msgid "Find..."
-msgstr "&Caută:"
+msgstr "Găsește…"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, closeButton)
 #: src/ui/searchbar.ui:23
@@ -754,10 +719,9 @@ msgstr "Evidențiază potrivirile"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "Choose files to upload"
+#, kde-format
 msgid "Choose fields to remember"
-msgstr "Alegeți fișierele de încărcat"
+msgstr "Alege câmpurile de memorizat"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
@@ -769,20 +733,20 @@ msgstr ""
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
 #, kde-format
 msgid "Show advanced information about the fields"
-msgstr ""
+msgstr "Arată informații detaliate despre câmpuri"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
 #: src/webenginepartcertificateerrordlg.ui:30
 #, kde-format
 msgid "&Show details"
-msgstr ""
+msgstr "&Arată detalii"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
 #, kde-format
 msgid "Available &fields"
-msgstr ""
+msgstr "&Câmpuri disponibile"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:101
@@ -829,16 +793,14 @@ msgid "Resubmit Information"
 msgstr "Retrimite informații"
 
 #: src/webenginepage.cpp:665
-#, fuzzy, kde-format
-#| msgid ""
-#| "This site is attempting to submit form data via email.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
 "Do you want to allow it access?"
 msgstr ""
-"Acest site încearcă să trimită datele formularului prin email.\n"
-"Sînteți sigur că doriți să continuați?"
+"Acest sait încearcă să acceseze informații despre amplasarea fizică a "
+"dumneavoastră\n"
+"Doriți să-i permiteți accesul?"
 
 #: src/webenginepage.cpp:669 src/webenginepage.cpp:747
 #: src/webenginepage.cpp:758
@@ -847,10 +809,9 @@ msgid "Network Transmission"
 msgstr "Transmisiune prin rețea"
 
 #: src/webenginepage.cpp:670
-#, fuzzy, kde-format
-#| msgid "&Allow attachments"
+#, kde-format
 msgid "Allow access"
-msgstr "Permite &atașamente"
+msgstr "Permite accesul"
 
 #: src/webenginepage.cpp:740
 #, kde-format
@@ -860,6 +821,10 @@ msgid ""
 "A third party may be able to intercept and view this information.\n"
 "Are you sure you want to send the data unencrypted?"
 msgstr ""
+"Atenție: Acesta este un formular securizat care încearcă să trimită "
+"necriptat datele dumneavoastră.\n"
+"O terță parte ar putea intercepta datele și să vadă aceste informații.\n"
+"Sigur doriți să trimiteți date necriptate?"
 
 #: src/webenginepage.cpp:748
 #, kde-format
@@ -920,33 +885,27 @@ msgid "Attachment Removed"
 msgstr "Atașament eliminat"
 
 #: src/webenginepage.cpp:943
-#, fuzzy, kde-format
-#| msgid ""
-#| "This site is attempting to submit form data via email.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
 "Do you want to allow this?"
 msgstr ""
-"Acest site încearcă să trimită datele formularului prin email.\n"
-"Sînteți sigur că doriți să continuați?"
+"Acest sait încearcă să deschidă o nouă fereastră contextuală.\n"
+"Doriți să permiteți aceasta?"
 
 #: src/webenginepage.cpp:945
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
-#| "the link?</qt>"
+#, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
 "want to allow this?</qt>"
 msgstr ""
-"<qt>Această pagină care nu este de încredere conține o legătură către <br /"
-"><b>%1</b>.<br />Doriți să urmați legătura?</qt>"
+"<qt>Acest sait încearcă să deschidă o fereastră contextuală la<p>%1</p><br/"
+">Doriți să permiteți aceasta?</qt>"
 
 #: src/webenginepage.cpp:948
 #, kde-format
 msgid "Javascript Popup Confirmation"
-msgstr ""
+msgstr "Confirmare pentru fereastră contextuală Javascript"
 
 #: src/webenginepage.cpp:949
 #, kde-format
@@ -956,13 +915,12 @@ msgstr "Permite"
 #: src/webenginepage.cpp:949
 #, kde-format
 msgid "Do Not Allow"
-msgstr ""
+msgstr "Nu permite"
 
 #: src/webenginepart.cpp:215
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "Salvare imagine ca..."
+msgstr "Salvează pagina HTML completă ca…"
 
 #: src/webenginepart.cpp:219
 #, kde-format
@@ -993,11 +951,9 @@ msgid "Zoom Text Only"
 msgstr "Apropie numai textul"
 
 #: src/webenginepart.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "zoom in action"
-#| msgid "Zoom In"
+#, kde-format
 msgid "Zoom To DPI"
-msgstr "Apropie"
+msgstr "Apropie la DPI"
 
 #: src/webenginepart.cpp:259
 #, kde-format
@@ -1095,7 +1051,7 @@ msgstr "Închideți fereastra?"
 #: src/webenginepart.cpp:863
 #, kde-format
 msgid "Confirmation Required"
-msgstr "Cerere de confirmare"
+msgstr "E necesară confirmarea"
 
 #: src/webenginepart.cpp:937
 #, kde-format
@@ -1530,204 +1486,3 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
-
-#~ msgid ""
-#~ "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
-#~ "the link?</qt>"
-#~ msgstr ""
-#~ "<qt>Această pagină care nu este de încredere conține o legătură către "
-#~ "<br /><b>%1</b>.<br />Doriți să urmați legătura?</qt>"
-
-#~ msgid "Security Warning"
-#~ msgstr "Avertizare de securitate"
-
-#~ msgctxt "follow link despite of security warning"
-#~ msgid "Follow"
-#~ msgstr "Urmează"
-
-#~ msgid "Security Alert"
-#~ msgstr "Alertă de securitate"
-
-#~ msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
-#~ msgstr ""
-#~ "<qt>Accesul paginii care nu este de încredere la <br /><b>%1</b><br /> a "
-#~ "fost respins.</qt>"
-
-#~ msgid "Save &Frame As..."
-#~ msgstr "Salvează &cadrul ca..."
-
-#, fuzzy
-#~| msgctxt "Program Name"
-#~| msgid "KWebKitPart"
-#~ msgctxt "Program Name"
-#~ msgid "WebEnginePart"
-#~ msgstr "Componentă KWebKit"
-
-#, fuzzy
-#~| msgctxt "Short Description"
-#~| msgid "QtWebKit Browser Engine Component"
-#~ msgctxt "Short Description"
-#~ msgid "QtWebEngine Browser Engine Component"
-#~ msgstr "Componentă pentru motor de navigare QtWebKit"
-
-#~ msgid ""
-#~ "(C) 2009-2010 Dawit Alemayehu\n"
-#~ "(C) 2008-2010 Urs Wolfer\n"
-#~ "(C) 2007 Trolltech ASA"
-#~ msgstr ""
-#~ "(C) 2009-2010 Dawit Alemayehu\n"
-#~ "(C) 2008-2010 Urs Wolfer\n"
-#~ "(C) 2007 Trolltech ASA"
-
-#~ msgid "Maintainer, Developer"
-#~ msgstr "Responsabil, dezvoltator"
-
-#~ msgid "Dawit Alemayehu"
-#~ msgstr "Dawit Alemayehu"
-
-#~ msgid "Developer"
-#~ msgstr "Dezvoltator"
-
-#~ msgid "Urs Wolfer"
-#~ msgstr "Urs Wolfer"
-
-#~ msgid "Michael Howell"
-#~ msgstr "Michael Howell"
-
-#~ msgid "Laurent Montel"
-#~ msgstr "Laurent Montel"
-
-#~ msgid "Dirk Mueller"
-#~ msgstr "Dirk Mueller"
-
-#, fuzzy
-#~| msgid "Save Image As..."
-#~ msgid "Save As"
-#~ msgstr "Salvare imagine ca..."
-
-#~ msgctxt "label for input line to find text"
-#~ msgid "&Find:"
-#~ msgstr "&Caută:"
-
-#~ msgctxt "input dialog window title for selecting html elements"
-#~ msgid "Select elements"
-#~ msgstr "Alege elemente"
-
-#~ msgid "New Window"
-#~ msgstr "Fereastră nouă"
-
-#~ msgid "Print"
-#~ msgstr "Tipărește"
-
-#~ msgid "Close"
-#~ msgstr "Închide"
-
-#~ msgid "Zoom &In"
-#~ msgstr "&Apropie"
-
-#~ msgid "Zoom &Out"
-#~ msgstr "&Depărtează"
-
-#~ msgid "Reset Zoom"
-#~ msgstr "Reinițializează apropierea"
-
-#~ msgid "Dump HTML"
-#~ msgstr "Aruncă HTML"
-
-#~ msgid "F&ormat"
-#~ msgstr "F&ormat"
-
-#~ msgid "Writing Direction"
-#~ msgstr "Direcția de scriere"
-
-#~ msgid "Select elements..."
-#~ msgstr "Alege elemente..."
-
-#~ msgid "%1 element selected"
-#~ msgid_plural "%1 elements selected"
-#~ msgstr[0] "%1 element ales"
-#~ msgstr[1] "%1 elemente alese"
-#~ msgstr[2] "%1 de elemente alese"
-
-#~ msgid "Blocked by ad filter"
-#~ msgstr "Blocat de filtrul de reclame"
-
-#~ msgid "Access keys activated"
-#~ msgstr "Chei de acces activate"
-
-#~ msgctxt "Text direction"
-#~ msgid "Direction"
-#~ msgstr "Direcție"
-
-#~ msgid "Default"
-#~ msgstr "Implicit"
-
-#~ msgid "Left to right"
-#~ msgstr "De la stînga la dreapta"
-
-#~ msgid "Right to left"
-#~ msgstr "De la dreapta la stînga"
-
-#~ msgid "Spellcheck selection..."
-#~ msgstr "Verifică ortografia selecției..."
-
-#~ msgctxt "@title:menu HTML frame/iframe"
-#~ msgid "Frame"
-#~ msgstr "Cadru"
-
-#~ msgid "Open in New &Window"
-#~ msgstr "De&schide în fereastră nouă"
-
-#~ msgid "Open in &This Window"
-#~ msgstr "Deschide în &această fereastră"
-
-#~ msgid "Open in &New Tab"
-#~ msgstr "Deschide în filă &nouă"
-
-#~ msgid "Reload Frame"
-#~ msgstr "Reîncarcă cadrul"
-
-#~ msgid "Print Frame..."
-#~ msgstr "Tipărește cadru..."
-
-#~ msgid "View Frame Source"
-#~ msgstr "Arată sursa cadrului"
-
-#, fuzzy
-#~| msgid "Block Image..."
-#~ msgid "Block IFrame..."
-#~ msgstr "Blochează imaginea..."
-
-#~ msgid "&Play"
-#~ msgstr "&Redă"
-
-#~ msgid "&Mute"
-#~ msgstr "&Tăcut"
-
-#~ msgid "&Loop"
-#~ msgstr "&Buclă"
-
-#~ msgid "Esc"
-#~ msgstr "Esc"
-
-#~ msgid "Enter the text to search for here"
-#~ msgstr "Introduceți aici textul de căutat"
-
-#~ msgid "Do you want to store this password?"
-#~ msgstr "Doriți să stocați această parolă?"
-
-#~ msgctxt "Search for \"text\" with \"search provider\""
-#~ msgid "Search for '%1' with %2"
-#~ msgstr "Caută „%1” cu %2"
-
-#~ msgid "JavaScript"
-#~ msgstr "JavaScript"
-
-#~ msgid "Blocked request."
-#~ msgstr "Cerere blocată."
-
-#~ msgid "Enlarge Font"
-#~ msgstr "Mărește fontul"
-
-#~ msgid "Shrink Font"
-#~ msgstr "Micșorează fontul"
