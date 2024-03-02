@@ -14,19 +14,20 @@
 # tahmar1900 <tahmar1900@gmail.com>, 2008.
 # Tahmar1900 <tahmar1900@gmail.com>, 2011.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2017-05-16 06:37-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2024-03-01 15:55+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -34,141 +35,139 @@ msgstr ""
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "סוג: %1"
 
 #: src/browseropenorsavequestion.cpp:96
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "לזכור את הפעולה לקבצים מהסוג הזה"
 
 #: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr ""
+msgstr "&פתיחה עם %1"
 
 #: src/browseropenorsavequestion.cpp:212
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr ""
+msgstr "פתיחה &עם %1"
 
 #: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr ""
+msgstr "לפתוח את ‚%1’?"
 
 #: src/browseropenorsavequestion.cpp:227
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr ""
+msgstr "פתיחה &עם…"
 
 #: src/browseropenorsavequestion.cpp:245
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
-msgstr "&פתח"
+msgstr "&פתיחה עם"
 
 #: src/browseropenorsavequestion.cpp:314
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open"
-msgstr "&פתח"
+msgstr "&פתיחה"
 
 #: src/browseropenorsavequestion.cpp:338
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr ""
+msgstr "שם: %1"
 
 #: src/browseropenorsavequestion.cpp:340
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "זה שם הקובץ שהציע השרת"
 
 #: src/htmlsettingsinterface.cpp:19
 msgid "Accept"
-msgstr ""
+msgstr "לקבל"
 
 #: src/htmlsettingsinterface.cpp:21
 msgid "Reject"
-msgstr ""
+msgstr "לדחות"
 
 #: src/konq_popupmenu.cpp:219
 #, kde-format
 msgid "&Open"
-msgstr "&פתח"
+msgstr "&פתיחה"
 
 #: src/konq_popupmenu.cpp:242
 #, kde-format
 msgid "Create &Folder..."
-msgstr "&צור תיקייה..."
+msgstr "י&צירת תיקייה…"
 
 #: src/konq_popupmenu.cpp:253
 #, kde-format
 msgid "&Restore"
-msgstr "&שחזר"
+msgstr "&שחזור"
 
 #: src/konq_popupmenu.cpp:265
 #, kde-format
 msgid "Show Original Directory"
-msgstr "הראה תיקייה מקורית"
+msgstr "הצגת התיקייה המקורית"
 
 #: src/konq_popupmenu.cpp:265
 #, kde-format
 msgid "Show Original File"
-msgstr "הראה קובץ מקורי"
+msgstr "הצגת הקובץ המקורי"
 
 #: src/konq_popupmenu.cpp:300
 #, kde-format
 msgid "&Empty Trash Bin"
-msgstr "&רוקן פח אשפה"
+msgstr "&פינוי סל האשפה"
 
 #: src/konq_popupmenu.cpp:312
 #, kde-format
 msgid "&Configure Trash Bin"
-msgstr "&הגדר פח אשפה"
+msgstr "ה&גדרת סל אשפה"
 
 #: src/konq_popupmenu.cpp:336
 #, kde-format
 msgid "&Bookmark This Page"
-msgstr "&שים עמוד זה בסימניות"
+msgstr "הוספת ה&עמוד הזה לסימניות"
 
 #: src/konq_popupmenu.cpp:338
 #, kde-format
 msgid "&Bookmark This Location"
-msgstr "&שים מיקום זה בסימניות"
+msgstr "הוספת ה&מקום הזה לסימניות"
 
 #: src/konq_popupmenu.cpp:341
 #, kde-format
 msgid "&Bookmark This Folder"
-msgstr "&שים תיקייה זו בסימניות"
+msgstr "הוספת ה&תיקייה הזאת לסימניות"
 
 #: src/konq_popupmenu.cpp:343
 #, kde-format
 msgid "&Bookmark This Link"
-msgstr "&שים קישור זה בסימניות"
+msgstr "הוספת ה&קישור הזה לסימניות"
 
 #: src/konq_popupmenu.cpp:345
 #, kde-format
 msgid "&Bookmark This File"
-msgstr "&שים קובץ זה בסימניות"
+msgstr "הוספת הקו&בץ הזה לסימניות"
 
 #: src/konq_popupmenu.cpp:384
 #, kde-format
 msgid "Preview In"
-msgstr "תצוגה מקדימה ב..."
+msgstr "תצוגה מקדימה בתוך"
 
 #: src/konq_popupmenu.cpp:395
 #, kde-format
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "לפתוח מסוף מכאן"
 
 #: src/konq_popupmenu.cpp:431
 #, kde-format
