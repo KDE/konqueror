@@ -1164,10 +1164,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
 
     if (createTab && !m_isPopupWithProxyWindow) {
 
-        bool newtabsinfront = !windowArgs.lowerWindow();
-        if (KonqSettings::newTabsInFront()) {
-            newtabsinfront = !newtabsinfront;
-        }
+        bool newtabsinfront = newTabInFront(QApplication::keyboardModifiers());
         const bool aftercurrentpage = KonqSettings::openAfterCurrentPage();
 
         // Can we use the standard way (openUrl), or do we need the part pointer immediately?
@@ -1640,14 +1637,11 @@ void KonqMainWindow::slotHome()
 
     KonqOpenURLRequest req;
     req.browserArgs.setNewTab(true);
-    req.newTabInFront = KonqSettings::newTabsInFront();
 
     Qt::MouseButtons buttons = QApplication::mouseButtons();
     Qt::KeyboardModifiers modifiers = QApplication::keyboardModifiers();
 
-    if (modifiers & Qt::ShiftModifier) {
-        req.newTabInFront = !req.newTabInFront;
-    }
+    req.newTabInFront = newTabInFront(modifiers);
 
     if (modifiers & Qt::ControlModifier) { // Ctrl Left/MMB
         openFilteredUrl(homeURL, req);
@@ -2280,11 +2274,7 @@ void KonqMainWindow::slotPopupNewTab()
         return;
     }
     bool openAfterCurrentPage = KonqSettings::openAfterCurrentPage();
-    bool newTabsInFront = KonqSettings::newTabsInFront();
-
-    if (QApplication::keyboardModifiers() & Qt::ShiftModifier) {
-        newTabsInFront = !newTabsInFront;
-    }
+    bool newTabsInFront = newTabInFront(QApplication::keyboardModifiers());
 
     popupNewTab(newTabsInFront, openAfterCurrentPage);
 }
@@ -2602,11 +2592,7 @@ void KonqMainWindow::slotUp()
     req.forceAutoEmbed = true;
 
     req.openAfterCurrentPage = KonqSettings::openAfterCurrentPage();
-    req.newTabInFront = KonqSettings::newTabsInFront();
-
-    if (goKeyboardState & Qt::ShiftModifier) {
-        req.newTabInFront = !req.newTabInFront;
-    }
+    req.newTabInFront = newTabInFront(goKeyboardState);
 
     const QUrl &url = m_currentView->upUrl();
     if (goKeyboardState & Qt::ControlModifier) {
@@ -2647,10 +2633,7 @@ void KonqMainWindow::slotGoHistoryDelayed()
 
     bool openAfterCurrentPage = KonqSettings::openAfterCurrentPage();
     bool mmbOpensTab = KonqSettings::mmbOpensTab();
-    bool inFront = KonqSettings::newTabsInFront();
-    if (m_goKeyboardState & Qt::ShiftModifier) {
-        inFront = !inFront;
-    }
+    bool inFront = newTabInFront(m_goKeyboardState);
 
     if (m_goKeyboardState & Qt::ControlModifier) {
         KonqView *newView = m_pViewManager->addTabFromHistory(m_currentView, m_goBuffer, openAfterCurrentPage);
@@ -3687,12 +3670,8 @@ void KonqExtendedBookmarkOwner::openBookmark(const KBookmark &bm, Qt::MouseButto
 
     KonqOpenURLRequest req;
     req.browserArgs.setNewTab(true);
-    req.newTabInFront = KonqSettings::newTabsInFront();
+    req.newTabInFront = KonqMainWindow::newTabInFront(km);
     req.forceAutoEmbed = true;
-
-    if (km & Qt::ShiftModifier) {
-        req.newTabInFront = !req.newTabInFront;
-    }
 
     if (km & Qt::ControlModifier) {  // Ctrl Left/MMB
         m_pKonqMainWindow->openFilteredUrl(url, req);
@@ -4161,10 +4140,7 @@ QString KonqExtendedBookmarkOwner::currentTitle() const
 
 void KonqExtendedBookmarkOwner::openInNewTab(const KBookmark &bm)
 {
-    bool newTabsInFront = KonqSettings::newTabsInFront();
-    if (QApplication::keyboardModifiers() & Qt::ShiftModifier) {
-        newTabsInFront = !newTabsInFront;
-    }
+    bool newTabsInFront = KonqMainWindow::newTabInFront(QApplication::keyboardModifiers());
 
     KonqOpenURLRequest req;
     req.browserArgs.setNewTab(true);
@@ -4177,10 +4153,7 @@ void KonqExtendedBookmarkOwner::openInNewTab(const KBookmark &bm)
 
 void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
 {
-    bool newTabsInFront = KonqSettings::newTabsInFront();
-    if (QApplication::keyboardModifiers() & Qt::ShiftModifier) {
-        newTabsInFront = !newTabsInFront;
-    }
+    bool newTabsInFront = KonqMainWindow::newTabInFront(QApplication::keyboardModifiers());
     KonqOpenURLRequest req;
     req.browserArgs.setNewTab(true);
     req.newTabInFront = false;
@@ -5558,4 +5531,10 @@ QList<QAction *> KonqMainWindow::toggleViewActions() const
         return {};
     }
     return m_toggleViewGUIClient->actions();
+}
+
+bool KonqMainWindow::newTabInFront(Qt::KeyboardModifiers mods)
+{
+    bool front = KonqSettings::newTabsInFront();
+    return mods & Qt::ShiftModifier ? !front : front;
 }
