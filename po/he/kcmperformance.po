@@ -5,19 +5,20 @@
 # Diego Iastrubni <iastrubn@actcom.co.il>, 2003.
 # Diego Iastrubni <elcuco@kde.org>, 2005, 2006, 2008.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2017-05-16 06:37-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
+"PO-Revision-Date: 2024-03-02 21:14+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -66,15 +67,15 @@ msgstr "טעינה מקדימה"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
 #: konqueror_ui.ui:23
-#, fuzzy, kde-format
+#, kde-format
 msgid "Preload an instance after desktop startup"
-msgstr "טען מופע מראש בעת ההפעלה של KDE"
+msgstr "לטעון מראש מופיע אחרי הפעלת שולחן העבודה"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
 #: konqueror_ui.ui:30
-#, fuzzy, kde-format
+#, kde-format
 msgid "Always try to have one preloaded instance"
-msgstr "השתדל לשמור מופע אחד טעון"
+msgstr "נא לנסות לשמור על מופע אחד שנטען מראש תמיד"
 
 #: system.cpp:22
 #, kde-format
@@ -113,7 +114,7 @@ msgstr "תצורת מערכת"
 #: system_ui.ui:14
 #, kde-format
 msgid "Disable &system configuration startup check"
-msgstr "בטל את בדיקת תצורת המערכת בעת ההפעלה"
+msgstr "ה&שבתת בדיקת תצורת המערכת בעת ההפעלה"
 
 #. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
 #: system_ui.ui:21
@@ -122,8 +123,8 @@ msgid ""
 "This option may in rare cases lead to various problems. Consult the What's "
 "This (Shift+F1) help for details."
 msgstr ""
-"אפשרות זו במקרים קיצוניים עלולה לגרום לבעיות שונות. פנה אל עזרת \"מה זה"
-"\" (Shift + F1) לפרטים נוספים."
+"אפשרות זו במקרים קיצוניים עלולה לגרום לבעיות שונות. נא לפנות לעזרה דרך „מה "
+"זה” (Shift + F1) לפרטים נוספים."
 
 #~ msgid ""
 #~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "

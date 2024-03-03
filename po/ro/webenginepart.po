@@ -1,5 +1,5 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the konqueror package.
 # Sergiu Bivol <sergiu@cip.md>, 2009, 2010, 2011, 2013, 2024.
 #
 msgid ""
@@ -37,7 +37,8 @@ msgstr ""
 
 #: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:131
 #: src/about/konq_aboutpage.cpp:197
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Konqueror"
 msgid "Konqueror"
 msgstr "Konqueror"
 
@@ -65,22 +66,26 @@ msgstr ""
 
 #: src/about/konq_aboutpage.cpp:77 src/about/konq_aboutpage.cpp:136
 #: src/about/konq_aboutpage.cpp:202
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tips"
 msgid "Tips"
 msgstr "Sfaturi"
 
 #: src/about/konq_aboutpage.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Home Folder"
 msgid "Home Folder"
 msgstr "Dosarul Acasă"
 
 #: src/about/konq_aboutpage.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Your personal files"
 msgid "Your personal files"
 msgstr "Fișierele tale personale"
 
 #: src/about/konq_aboutpage.cpp:86
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Trash"
 msgid "Trash"
 msgstr "Gunoi"
 
