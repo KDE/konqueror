@@ -16,19 +16,20 @@
 # דיאגו יסטרובני <elcuco@kde.org>, 2005, 2013.
 # Netanel_h <netanel@gmx.com>, 2009.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-30 01:37+0000\n"
-"PO-Revision-Date: 2017-05-16 06:36-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2024-03-03 13:35+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -646,10 +647,9 @@ msgstr ""
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search..."
-msgstr "חפש:"
+msgstr "חיפוש…"
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -1864,13 +1864,13 @@ msgid "Doma&in-Specific"
 msgstr "&ספציפית למתחם"
 
 #: javaopts.cpp:326
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "מדיניות Java חדשה"
 
 #: javaopts.cpp:329
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "שינוי מדיניות Java"
@@ -1996,13 +1996,13 @@ msgid "Do&main-Specific"
 msgstr "&ספציפית למתחם"
 
 #: jsopts.cpp:222
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "מדיניות JavaScript חדשה"
 
 #: jsopts.cpp:225
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "שינוי מדיניות JavaScript"
@@ -2256,10 +2256,9 @@ msgstr "תחילה יש להזין שם תחום."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
-msgstr "&התנהגות עכבר"
+msgstr "התנהגות לשוניות"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
@@ -2379,10 +2378,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
-msgstr "&התנהגות עכבר"
+msgstr "התנהגות לשונית חדשה"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2505,10 +2503,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
 #: useragent/useragent.ui:97
-#, fuzzy, kde-format
-#| msgid "&Export..."
+#, kde-format
 msgid "&Edit..."
-msgstr "יי&צוא..."
+msgstr "&עריכה…"
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:110
@@ -2524,10 +2521,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:136
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "&Delete"
-msgstr "&מחק"
+msgstr "מ&חיקה"
 
 #. i18n: ectx: property (text), widget (QPushButton, useTemplateBtn)
 #: useragent/useragent.ui:153
