@@ -485,14 +485,14 @@ bool KImGalleryPlugin::createThumb(const QString &imgName, const QString &source
         // Resizing if to big
         if (w > extent || h > extent) {
             if (w > h) {
-                h = (int)((double)(h * extent) / w);
+                h = static_cast<int>(static_cast<double>(h * extent) / w);
                 if (h == 0) {
                     h = 1;
                 }
                 w = extent;
                 Q_ASSERT(h <= extent);
             } else {
-                w = (int)((double)(w * extent) / h);
+                w = static_cast<int>(static_cast<double>(w * extent) / h);
                 if (w == 0) {
                     w = 1;
                 }
