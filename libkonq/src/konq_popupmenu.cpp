@@ -412,7 +412,7 @@ void KonqPopupMenuPrivate::populate()
 
     // CopyTo/MoveTo menus
     if (m_popupFlags & KonqPopupMenu::ShowUrlOperations &&
-            KConfigGroup(dolphin, "General").readEntry("ShowCopyMoveMenu", false)) {
+            KConfigGroup(dolphin, "ContextMenu").readEntry("ShowCopyMoveMenu", false)) {
 
         m_copyToMenu.setUrls(lstUrls);
         m_copyToMenu.setReadOnly(sMoving == false);
