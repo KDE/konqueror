@@ -28,4 +28,4 @@ endif ()
 
 ########### install files ###############
 
-install(TARGETS webarchivethumbnail  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
+install(TARGETS webarchivethumbnail DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${KF_MAJOR_VERSION}/thumbcreator)

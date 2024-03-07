@@ -32,6 +32,7 @@
 
 #include <ktar.h>
 #include <karchivedirectory.h>
+#include <kpluginfactory.h>
 
 #include "webarchiverdebug.h"
 
@@ -61,13 +62,8 @@ static const QSize c_pixmapSize = QSize(400, 600);
 static const double c_renderScale = 0.5;
 
 
-extern "C"
-{
-    Q_DECL_EXPORT KIO::ThumbnailCreator *new_creator()
-    {
-        return (new WebArchiveCreator{nullptr, {}});
-    }
-}
+K_PLUGIN_CLASS_WITH_JSON(WebArchiveCreator, "webarchivethumbnail.json")
+
 
 WebArchiveCreator::WebArchiveCreator(QObject *parent, const QVariantList &va)
     : KIO::ThumbnailCreator(parent, va)
@@ -91,9 +87,6 @@ static bool disallowWebEngineCookies(const QWebEngineCookieStore::FilterRequest 
 
 KIO::ThumbnailResult WebArchiveCreator::create(const KIO::ThumbnailRequest& request)
 {
-    // QImage img;
-    // bool success = create(request.url().path(), request.targetSize().width(), request.targetSize().height(), img);
-    // return success ? KIO::ThumbnailResult::pass(img) : KIO::ThumbnailResult::fail();
     QString path = request.url().path();
     int width = request.targetSize().width();
     int height = request.targetSize().height();
@@ -108,7 +101,7 @@ KIO::ThumbnailResult WebArchiveCreator::create(const KIO::ThumbnailRequest& requ
     qCDebug(WEBARCHIVERPLUGIN_LOG) << "path" << path;
     qCDebug(WEBARCHIVERPLUGIN_LOG) << "wh" << width << height << "mime" << mimeType.name();
 
-    // We are using QWebEngine here directly, not the WebEnginePart KPart.
+    // We are using QWebEngine here directly, not via the WebEnginePart KPart.
     // This means that it will only be able to use the network access methods
     // that it supports internally, effectively 'file' and 'http(s)'.  In particular
     // it does not support any other KIO protocols, including 'tar' which would
@@ -345,3 +338,6 @@ bool WebArchiveCreatorCookieJar::setCookiesFromUrl(const QList<QNetworkCookie> &
 }
 
 #endif // THUMBNAIL_USE_WEBKIT
+
+#include "moc_webarchivecreator.cpp"
+#include "webarchivecreator.moc"
