@@ -29,6 +29,7 @@
 #include "konqdebug.h"
 #include <KLocalizedString>
 #include <kmessagebox.h>
+#include <ki18n_version.h>
 
 #include <KIO/CommandLauncherJob>
 

@@ -28,6 +28,7 @@
 #include <KStringHandler>
 #include <KLocalizedString>
 #include <KIO/CommandLauncherJob>
+#include <ki18n_version.h>
 
 #include <QTimer>
 #include <QMimeData>

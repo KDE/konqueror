@@ -24,6 +24,7 @@
 #include <KParts/PartActivateEvent>
 #include <KLocalizedString>
 #include <KIO/Job>
+#include <ki18n_version.h>
 
 #include <QLineEdit>
 #include <QApplication>

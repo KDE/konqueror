@@ -11,6 +11,7 @@
 
 #include <kiconloader.h>
 #include <KLocalizedString>
+#include <ki18n_version.h>
 
 #include <webenginepart_debug.h>
 

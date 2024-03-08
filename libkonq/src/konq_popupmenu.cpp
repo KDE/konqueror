@@ -39,6 +39,7 @@
 #include <KMimeTypeEditor>
 #include <KPluginMetaData>
 #include <KIO/JobUiDelegateFactory>
+#include <ki18n_version.h>
 
 #include <QIcon>
 #include <QFileInfo>
