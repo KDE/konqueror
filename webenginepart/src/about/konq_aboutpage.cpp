@@ -205,7 +205,7 @@ QString KonqAboutPageSingleton::tips()
                     "using Google, for the search phrase \"KDE\". There are a lot of "
                     "Web-Shortcuts predefined to make searching for software or looking "
                     "up certain words in an encyclopedia a breeze. You can even "
-                    "<a href=\"%1\">create your own</a> Web-Shortcuts.", QStringLiteral("exec:kcmshell5 webshortcuts")))
+                    "<a href=\"%1\">create your own</a> Web-Shortcuts.", QStringLiteral("exec:kcmshell%1 webshortcuts").arg(KI18N_VERSION_MAJOR)))
           .arg(i18n("When you want to paste a new address into the Location toolbar you might want to "
                     "clear the current entry by pressing the black arrow with the white cross "
                     "<img width='16' height='16' src=\"%1\"></img> in the toolbar.",
@@ -221,7 +221,7 @@ QString KonqAboutPageSingleton::tips()
                     "Left/Right) you can make Konqueror appear the way you like.", view_left_right_icon_path))
           .arg(i18n("Use the <a href=\"%1\">user-agent</a> feature if the website you are visiting "
                     "asks you to use a different browser "
-                    "(and do not forget to send a complaint to the webmaster!)", QStringLiteral("exec:kcmshell5 useragent")))
+                    "(and do not forget to send a complaint to the webmaster!)", QStringLiteral("exec:kcmshell%1 useragent").arg(KI18N_VERSION_MAJOR)))
           .arg(i18n("The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar ensures "
                     "that you can keep track of the pages you have visited recently.", history_icon_path))
           .arg(i18n("Advanced users will appreciate the Konsole which you can embed into "

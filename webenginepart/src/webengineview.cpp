@@ -557,7 +557,7 @@ void WebEngineView::multimediaActionPopupMenu(KParts::NavigationExtension::Actio
 
 void WebEngineView::slotConfigureWebShortcuts()
 {
-    auto job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5"), {QStringLiteral("webshortcuts")});
+    auto job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell%1").arg(KI18N_VERSION_MAJOR), {QStringLiteral("webshortcuts")});
     job->start();
 }
 

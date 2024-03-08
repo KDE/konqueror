@@ -374,7 +374,7 @@ void SearchBarPlugin::menuActionTriggered(QAction *action)
 
 void SearchBarPlugin::selectSearchEngines()
 {
-    KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5 webshortcuts"));
+    KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell%1 webshortcuts").arg(KI18N_VERSION_MAJOR));
     job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, !m_part.isNull() ? m_part->widget() : nullptr));
     job->start();
 }

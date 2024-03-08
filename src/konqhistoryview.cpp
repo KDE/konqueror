@@ -176,7 +176,7 @@ void KonqHistoryView::slotClearHistory()
 void KonqHistoryView::slotPreferences()
 {
     // Run the history sidebar settings.
-    KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5 kcmhistory"));
+    KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell%1 kcmhistory").arg(KI18N_VERSION_MAJOR));
     job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
     job->start();
 }

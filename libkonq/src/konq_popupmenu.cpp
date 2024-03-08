@@ -499,7 +499,7 @@ void KonqPopupMenuPrivate::slotPopupEmptyTrashBin()
 
 void KonqPopupMenuPrivate::slotConfigTrashBin()
 {
-    KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5 kcmtrash"));
+    KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell%1 kcm_trash").arg(KI18N_VERSION_MAJOR));
     job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_parentWidget));
     job->start();
 }
