@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-04 00:37+0000\n"
+"POT-Creation-Date: 2024-03-09 00:37+0000\n"
 "PO-Revision-Date: 2024-01-11 02:08+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -604,7 +604,7 @@ msgctxt "@title:window"
 msgid "History"
 msgstr "Historial"
 
-#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:141
+#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:142
 #, kde-format
 msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
 msgid "Sort"
@@ -629,62 +629,62 @@ msgstr "Local"
 msgid "Miscellaneous"
 msgstr "Varios"
 
-#: src/konqhistoryview.cpp:54 src/konqmainwindow.cpp:4382
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4382
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Abrir en &ventana nueva"
 
-#: src/konqhistoryview.cpp:59
+#: src/konqhistoryview.cpp:60
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Abrir en una pestaña nueva"
 
-#: src/konqhistoryview.cpp:64
+#: src/konqhistoryview.cpp:65
 #, kde-format
 msgid "Open in Current Tab"
 msgstr "Abrir en la pestaña actual"
 
-#: src/konqhistoryview.cpp:68
+#: src/konqhistoryview.cpp:69
 #, kde-format
 msgid "&Copy Link Address"
 msgstr "&Copiar la dirección del enlace"
 
-#: src/konqhistoryview.cpp:73
+#: src/konqhistoryview.cpp:74
 #, kde-format
 msgid "&Remove Entry"
 msgstr "&Eliminar entrada"
 
-#: src/konqhistoryview.cpp:80
+#: src/konqhistoryview.cpp:81
 #, kde-format
 msgid "C&lear History"
 msgstr "&Borrar historial"
 
-#: src/konqhistoryview.cpp:85
+#: src/konqhistoryview.cpp:86
 #, kde-format
 msgid "&Preferences..."
 msgstr "&Preferencias..."
 
-#: src/konqhistoryview.cpp:92
+#: src/konqhistoryview.cpp:93
 #, kde-format
 msgid "By &Name"
 msgstr "Por &nombre"
 
-#: src/konqhistoryview.cpp:98
+#: src/konqhistoryview.cpp:99
 #, kde-format
 msgid "By &Date"
 msgstr "Por &fecha"
 
-#: src/konqhistoryview.cpp:108
+#: src/konqhistoryview.cpp:109
 #, kde-format
 msgid "Search in history"
 msgstr "Buscar en historial"
 
-#: src/konqhistoryview.cpp:169
+#: src/konqhistoryview.cpp:170
 #, kde-format
 msgid "Do you really want to clear the entire history?"
 msgstr "¿Realmente desea borrar el historial completo?"
 
-#: src/konqhistoryview.cpp:170
+#: src/konqhistoryview.cpp:171
 #, kde-format
 msgctxt "@title:window"
 msgid "Clear History?"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-04 00:37+0000\n"
+"POT-Creation-Date: 2024-03-09 00:37+0000\n"
 "PO-Revision-Date: 2017-09-29 16:43+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -581,7 +581,7 @@ msgctxt "@title:window"
 msgid "History"
 msgstr "Историјат"
 
-#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:141
+#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:142
 #, kde-format
 msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
 msgid "Sort"
@@ -606,63 +606,63 @@ msgstr "Локално"
 msgid "Miscellaneous"
 msgstr "Разно"
 
-#: src/konqhistoryview.cpp:54 src/konqmainwindow.cpp:4382
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4382
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Отвори у новом &прозору"
 
-#: src/konqhistoryview.cpp:59
+#: src/konqhistoryview.cpp:60
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Отвори у новом језичку"
 
-#: src/konqhistoryview.cpp:64
+#: src/konqhistoryview.cpp:65
 #, fuzzy, kde-format
 #| msgid "Open in New Tab"
 msgid "Open in Current Tab"
 msgstr "Отвори у новом језичку"
 
-#: src/konqhistoryview.cpp:68
+#: src/konqhistoryview.cpp:69
 #, kde-format
 msgid "&Copy Link Address"
 msgstr "&Копирај адресу везе"
 
-#: src/konqhistoryview.cpp:73
+#: src/konqhistoryview.cpp:74
 #, kde-format
 msgid "&Remove Entry"
 msgstr "&Уклони ставку"
 
-#: src/konqhistoryview.cpp:80
+#: src/konqhistoryview.cpp:81
 #, kde-format
 msgid "C&lear History"
 msgstr "&Очисти историјат"
 
-#: src/konqhistoryview.cpp:85
+#: src/konqhistoryview.cpp:86
 #, kde-format
 msgid "&Preferences..."
 msgstr "&Поставке..."
 
-#: src/konqhistoryview.cpp:92
+#: src/konqhistoryview.cpp:93
 #, kde-format
 msgid "By &Name"
 msgstr "по &имену"
 
-#: src/konqhistoryview.cpp:98
+#: src/konqhistoryview.cpp:99
 #, kde-format
 msgid "By &Date"
 msgstr "по &датуму"
 
-#: src/konqhistoryview.cpp:108
+#: src/konqhistoryview.cpp:109
 #, kde-format
 msgid "Search in history"
 msgstr "Тражи у историјату"
 
-#: src/konqhistoryview.cpp:169
+#: src/konqhistoryview.cpp:170
 #, kde-format
 msgid "Do you really want to clear the entire history?"
 msgstr "Желите ли заиста да испразните цео историјат?"
 
-#: src/konqhistoryview.cpp:170
+#: src/konqhistoryview.cpp:171
 #, kde-format
 msgctxt "@title:window"
 msgid "Clear History?"

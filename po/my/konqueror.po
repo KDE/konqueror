@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-04 00:37+0000\n"
+"POT-Creation-Date: 2024-03-09 00:37+0000\n"
 "PO-Revision-Date: 2021-09-17 17:27+0630\n"
 "Last-Translator: \n"
 "Language-Team: Burmese <kde-i18n-doc@kde.org>\n"
@@ -563,7 +563,7 @@ msgctxt "@title:window"
 msgid "History"
 msgstr "မှတ်တမ်း"
 
-#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:141
+#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:142
 #, kde-format
 msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
 msgid "Sort"
@@ -586,62 +586,62 @@ msgstr "စက်တွင်း"
 msgid "Miscellaneous"
 msgstr "တိုလီမိုလီများ"
 
-#: src/konqhistoryview.cpp:54 src/konqmainwindow.cpp:4382
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4382
 #, kde-format
 msgid "Open in New &Window"
 msgstr "&Wဝင်းဒိုးအသစ်တွင် ဖွင့်မည်"
 
-#: src/konqhistoryview.cpp:59
+#: src/konqhistoryview.cpp:60
 #, kde-format
 msgid "Open in New Tab"
 msgstr "တပ်ဘ်အသစ်တွင် ဖွင့်မည်"
 
-#: src/konqhistoryview.cpp:64
+#: src/konqhistoryview.cpp:65
 #, kde-format
 msgid "Open in Current Tab"
 msgstr "လက်ရှိတပ်ဘ်တွင် ဖွင့်မည်"
 
-#: src/konqhistoryview.cpp:68
+#: src/konqhistoryview.cpp:69
 #, kde-format
 msgid "&Copy Link Address"
 msgstr "&Cလင့်ခ်လိပ်စာ ကူးယူမည်"
 
-#: src/konqhistoryview.cpp:73
+#: src/konqhistoryview.cpp:74
 #, kde-format
 msgid "&Remove Entry"
 msgstr "&Rစာရင်းမှတ်ချက်ဖယ်ရှားမည်"
 
-#: src/konqhistoryview.cpp:80
+#: src/konqhistoryview.cpp:81
 #, kde-format
 msgid "C&lear History"
 msgstr "&lမှတ်တမ်းရှင်းပစ်မည်"
 
-#: src/konqhistoryview.cpp:85
+#: src/konqhistoryview.cpp:86
 #, kde-format
 msgid "&Preferences..."
 msgstr "&Pနှစ်သက်-သတ်မှတ်ချက်များ..."
 
-#: src/konqhistoryview.cpp:92
+#: src/konqhistoryview.cpp:93
 #, kde-format
 msgid "By &Name"
 msgstr "&Nအမည်ဖြင့်"
 
-#: src/konqhistoryview.cpp:98
+#: src/konqhistoryview.cpp:99
 #, kde-format
 msgid "By &Date"
 msgstr "&Dရက်စွဲဖြင့်"
 
-#: src/konqhistoryview.cpp:108
+#: src/konqhistoryview.cpp:109
 #, kde-format
 msgid "Search in history"
 msgstr "မှတ်တမ်းတွင်ရှာမည်"
 
-#: src/konqhistoryview.cpp:169
+#: src/konqhistoryview.cpp:170
 #, kde-format
 msgid "Do you really want to clear the entire history?"
 msgstr "မှတ်တမ်းအကုန်လုံး ရှင်းပစ်တော့မည်လား။"
 
-#: src/konqhistoryview.cpp:170
+#: src/konqhistoryview.cpp:171
 #, kde-format
 msgctxt "@title:window"
 msgid "Clear History?"

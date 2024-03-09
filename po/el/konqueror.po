@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-04 00:37+0000\n"
+"POT-Creation-Date: 2024-03-09 00:37+0000\n"
 "PO-Revision-Date: 2023-01-07 10:28+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -582,7 +582,7 @@ msgctxt "@title:window"
 msgid "History"
 msgstr "Ιστορικό"
 
-#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:141
+#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:142
 #, kde-format
 msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
 msgid "Sort"
@@ -607,62 +607,62 @@ msgstr "Τοπικό"
 msgid "Miscellaneous"
 msgstr "Διάφορα"
 
-#: src/konqhistoryview.cpp:54 src/konqmainwindow.cpp:4382
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4382
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Άνοιγμα σε νέο &παράθυρο"
 
-#: src/konqhistoryview.cpp:59
+#: src/konqhistoryview.cpp:60
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Άνοιγμα σε νέα καρτέλα"
 
-#: src/konqhistoryview.cpp:64
+#: src/konqhistoryview.cpp:65
 #, kde-format
 msgid "Open in Current Tab"
 msgstr "Άνοιγμα σε τρέχουσα καρτέλα"
 
-#: src/konqhistoryview.cpp:68
+#: src/konqhistoryview.cpp:69
 #, kde-format
 msgid "&Copy Link Address"
 msgstr "Αντιγραφή &διεύθυνσης δεσμού"
 
-#: src/konqhistoryview.cpp:73
+#: src/konqhistoryview.cpp:74
 #, kde-format
 msgid "&Remove Entry"
 msgstr "Α&φαίρεση καταχώρησης"
 
-#: src/konqhistoryview.cpp:80
+#: src/konqhistoryview.cpp:81
 #, kde-format
 msgid "C&lear History"
 msgstr "&Καθαρισμός ιστορικού"
 
-#: src/konqhistoryview.cpp:85
+#: src/konqhistoryview.cpp:86
 #, kde-format
 msgid "&Preferences..."
 msgstr "&Προτιμήσεις..."
 
-#: src/konqhistoryview.cpp:92
+#: src/konqhistoryview.cpp:93
 #, kde-format
 msgid "By &Name"
 msgstr "Κατ' όν&ομα"
 
-#: src/konqhistoryview.cpp:98
+#: src/konqhistoryview.cpp:99
 #, kde-format
 msgid "By &Date"
 msgstr "Κατά &ημερομηνία"
 
-#: src/konqhistoryview.cpp:108
+#: src/konqhistoryview.cpp:109
 #, kde-format
 msgid "Search in history"
 msgstr "Αναζήτηση ιστορικού"
 
-#: src/konqhistoryview.cpp:169
+#: src/konqhistoryview.cpp:170
 #, kde-format
 msgid "Do you really want to clear the entire history?"
 msgstr "Θέλετε πραγματικά να σβηστεί όλο το ιστορικό;"
 
-#: src/konqhistoryview.cpp:170
+#: src/konqhistoryview.cpp:171
 #, kde-format
 msgctxt "@title:window"
 msgid "Clear History?"
