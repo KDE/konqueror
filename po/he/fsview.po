@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: fsview\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2024-03-01 16:01+0200\n"
+"PO-Revision-Date: 2024-03-09 22:57+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -131,16 +131,16 @@ msgid "Depth"
 msgstr "עומק"
 
 #: fsview_part.cpp:70
-#, fuzzy, kde-format
+#, kde-format
 msgid "Read 1 folder, in %2"
 msgid_plural "Read %1 folders, in %2"
 msgstr[0] "נקראה תיקייה אחת, ב־%2"
-msgstr[1] "נקראו %1 תיקיות ב־%2"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[1] "נקראו שתי תיקיות, ב־%2"
+msgstr[2] "נקראו %1 תיקיות, ב־%2"
+msgstr[3] "נקראו %1 תיקיות, ב־%2"
 
 #: fsview_part.cpp:74
-#, fuzzy, kde-format
+#, kde-format
 msgid "1 folder"
 msgid_plural "%1 folders"
 msgstr[0] "תיקייה אחת"
@@ -387,7 +387,7 @@ msgid "Area of '%1' (%2)"
 msgstr "השטח של ‚%1’ (%2)"
 
 #: treemap.cpp:3419 treemap.cpp:3432
-#, fuzzy, kde-format
+#, kde-format
 msgid "1 Pixel"
 msgid_plural "%1 Pixels"
 msgstr[0] "פיקסל אחד"

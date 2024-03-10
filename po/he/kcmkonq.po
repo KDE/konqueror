@@ -13,19 +13,20 @@
 # Diego Iastrubni <elcuco@kde.org>, 2004.
 # Diego Iastrubni <elcuco@kde.org>, 2005, 2007, 2008, 2009, 2012.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2017-05-16 06:36-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2024-03-09 22:56+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -37,7 +38,7 @@ msgstr "אפשרויות שונות"
 #: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
-msgstr "פתח תיקיות בחלונות &נפרדים"
+msgstr "פתיחת תיקיות בחלונות &נפרדים"
 
 #: behaviour.cpp:48
 #, kde-format
@@ -45,24 +46,24 @@ msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
 "folder, rather than showing that folder's contents in the current window."
 msgstr ""
-"אם אפשרות זו נבחרת, Konqueror יפתח חלון חדש כאשר אתה פותח תיקייה במקום להציג "
-"את תוכן התיקייה הזו בחלון הנוכחי."
+"אם אפשרות זו מסומנת, Konqueror יפתח חלון חדש בעת פתיחת תיקייה במקום להציג את "
+"תוכן התיקייה הזו בחלון הנוכחי."
 
 #: behaviour.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
-msgstr "הצג פקודות \"מחק\" ב&תפריט, העוקפות את האשפה"
+msgstr "להציג רשומות ‚מחיקה’ ב&תפריט שעוקפות את סל האשפה"
 
 #: behaviour.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
 "and in the file manager's menus and context menus. You can always delete "
 "files by holding the Shift key while calling 'Move to Trash'."
 msgstr ""
-"בחר באפשרות זו, אם ברצונך לקבל פקודות \"מחק\" בשולחן עבודה ובתפריטי ההקשר של "
-"מנהל הקבצים. ניתן למחוק ישירות גם על ידי לחיצה על shift ולחיצה על \"העבר "
-"לאשפה\"."
+"יש לסמן כדי שתופיע פקודת ‚מחיקה’ בתפריטי ההקשר ובתפריטי שולחן העבודה ומנהל "
+"הקבצים. תמיד ניתן למחוק קבצים על ידי החזקת מקש Shift תוך כדי קריאה לפריט "
+"‚העברה לאשפה’."
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

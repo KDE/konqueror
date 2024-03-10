@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-30 01:37+0000\n"
-"PO-Revision-Date: 2024-03-03 13:35+0200\n"
+"PO-Revision-Date: 2024-03-09 23:25+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -60,7 +60,7 @@ msgstr "תמונות"
 #: appearance.cpp:56
 #, kde-format
 msgid "A&utomatically load images"
-msgstr "&טען תמונות באופן אוטומטי"
+msgstr "&טעינת תמונות אוטומטית"
 
 #: appearance.cpp:57
 #, kde-format
@@ -79,7 +79,7 @@ msgstr ""
 #: appearance.cpp:67
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
-msgstr "צייר מסגרות סביב לתמונות שלא נטענו באופן מלא"
+msgstr "צייר מ&סגרות סביב תמונות שלא נטענו באופן מלא"
 
 #: appearance.cpp:68
 #, kde-format
@@ -108,7 +108,7 @@ msgstr "לא"
 #: appearance.cpp:80
 #, kde-format
 msgid "Show Only Once"
-msgstr "הצג פעם אחת בלבד"
+msgstr "להציג פעם אחת בלבד"
 
 #: appearance.cpp:81
 #, kde-format
@@ -397,10 +397,9 @@ msgstr ""
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search"
-msgstr "חפש:"
+msgstr "חיפוש"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:27
@@ -423,18 +422,16 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, pbDelete)
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "D&elete"
-msgstr "&מחק"
+msgstr "מ&חיקה"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
 #: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "Delete A&ll"
-msgstr "&מחק"
+msgstr "מחיקה של ה&כול"
 
 #. i18n: ectx: property (text), widget (QPushButton, configPolicyButton)
 #: cookies/kcookiesmanagement.ui:70
@@ -462,17 +459,15 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, valueLabel)
 #: cookies/kcookiesmanagement.ui:129
-#, fuzzy, kde-format
-#| msgid "Value"
+#, kde-format
 msgid "Value:"
-msgstr "ערך"
+msgstr "ערך:"
 
 #. i18n: ectx: property (text), widget (QLabel, domainLabel)
 #: cookies/kcookiesmanagement.ui:152
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain:"
-msgstr "מארח\\מתחם"
+msgstr "שם תחום:"
 
 #. i18n: ectx: property (text), widget (QLabel, patchLabel)
 #: cookies/kcookiesmanagement.ui:175
@@ -506,10 +501,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
-#, fuzzy, kde-format
-#| msgid "Enable filters"
+#, kde-format
 msgid "Enable coo&kies"
-msgstr "אפשר מסננים"
+msgstr "הפעלת &עוגיות"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -574,10 +568,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
-#, fuzzy, kde-format
-#| msgid "Default encoding:"
+#, kde-format
 msgid "Default Policy"
-msgstr "קידוד ברירת מחדל:"
+msgstr "מדיניות ברירת מחדל"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
@@ -593,10 +586,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
-#, fuzzy, kde-format
-#| msgid "A&nimations:"
+#, kde-format
 msgid "Ask &for confirmation"
-msgstr "ה&נפשות:"
+msgstr "בקשת &אישור"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
 #: cookies/kcookiespolicies.ui:98
@@ -634,10 +626,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Site Policy"
-msgstr "מדיניות"
+msgstr "מדיניות אתר"
 
 #. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:135
@@ -663,10 +654,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain"
-msgstr "מארח\\מתחם"
+msgstr "שם תחום"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
@@ -730,10 +720,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Policy:"
-msgstr "מדיניות"
+msgstr "מדיניות:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
@@ -1273,9 +1262,9 @@ msgid "Hide filtered images"
 msgstr "הסתר תמונות מסוננות"
 
 #: filteropts.cpp:58
-#, fuzzy, kde-format
+#, kde-format
 msgid "Manual Filter"
-msgstr "אפשר מסננים"
+msgstr "מסנן ידני"
 
 #: filteropts.cpp:76
 #, kde-format
@@ -1450,10 +1439,10 @@ msgid "Show Introduction Page"
 msgstr "הצג את עמוד המבוא"
 
 #: generalopts.cpp:72
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
-msgstr "הצג את עמוד הבית שלי"
+msgstr "הצגת עמוד הפתיחה שלי"
 
 #: generalopts.cpp:73
 #, kde-format
@@ -1468,10 +1457,10 @@ msgid "Show My Bookmarks"
 msgstr "הצג את הסימניות שלי"
 
 #: generalopts.cpp:80
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
-msgstr "בחר את עמוד הבית"
+msgstr "בחירת עמוד ההתחלה"
 
 #: generalopts.cpp:85
 #, kde-format
@@ -1484,10 +1473,10 @@ msgid "Home page:"
 msgstr "עמוד הבית:"
 
 #: generalopts.cpp:99
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
-msgstr "בחר את עמוד הבית"
+msgstr "בחירת עמוד הבית"
 
 #: generalopts.cpp:104
 #, fuzzy, kde-format
@@ -2310,19 +2299,19 @@ msgstr ""
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "משמאל לתוכן"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "מימין לתוכן"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr ""
+msgstr "שימוש"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2413,7 +2402,7 @@ msgstr "פתח לשונית חדשה אחרי הנוכחית"
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Closing"
-msgstr ""
+msgstr "סגירה"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167
@@ -2477,13 +2466,13 @@ msgstr "עבור ללשונית האחרונה בה היה שימוש בעת ס�
 #: useragent/useragent.ui:14
 #, kde-format
 msgid "Form"
-msgstr ""
+msgstr "טופס"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:23
 #, kde-format
 msgid "Existing identifications"
-msgstr ""
+msgstr "זהויות קיימות"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
@@ -2493,13 +2482,13 @@ msgstr ""
 #: useragent/useragent.ui:150 useragent/useragent.ui:163
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: useragent/useragent.ui:66
 #, kde-format
 msgid "Content"
-msgstr ""
+msgstr "תוכן"
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
 #: useragent/useragent.ui:97
@@ -2511,13 +2500,13 @@ msgstr "&עריכה…"
 #: useragent/useragent.ui:110
 #, kde-format
 msgid "&Rename..."
-msgstr ""
+msgstr "&שינוי שם…"
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
 #: useragent/useragent.ui:123
 #, kde-format
 msgid "Du&plicate..."
-msgstr ""
+msgstr "&שכפול…"
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:136
@@ -2529,19 +2518,19 @@ msgstr "מ&חיקה"
 #: useragent/useragent.ui:153
 #, kde-format
 msgid "Choose &selected identification"
-msgstr ""
+msgstr "לבחור בזיהוי ה&נבחר"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
 msgid "Use &default identification"
-msgstr ""
+msgstr "להשתמש בזיהוי &ברירת המחדל"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:181
 #, kde-format
 msgid "&Custom identification"
-msgstr ""
+msgstr "&זיהוי מותאם אישית"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
 #: useragent/useragent.ui:191
