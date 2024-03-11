@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 01:37+0000\n"
+"POT-Creation-Date: 2024-03-11 00:37+0000\n"
 "PO-Revision-Date: 2024-01-04 17:19+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -2470,8 +2470,11 @@ msgstr "Nova Langetkonduto"
 #: tabs/tabsoptions.ui:138
 #, kde-format
 msgid ""
-"This will open a new tab in the background, instead of in the foreground."
-msgstr "Tio malfermas novan langeton en la fono, anstataŭ en la ĉefa pozicio."
+"<html><head/><body><p>This will open a new tab in the background, instead of "
+"in the foreground.</p><p>Press <span style=\" font-family:'Fira Code';"
+"\">shift</span> when opening a new tab to reverse this behavior</p></body></"
+"html>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
@@ -2643,3 +2646,8 @@ msgstr ""
 "<html><head/><body><p>La retumila identigo uzenda kiam la defaŭlta identigo "
 "estas malŝaltita.</p><p>Vi povas enigi ĝin permane aŭ komenci de unu en la "
 "suba listo kaj ŝanĝi ĝin laŭ viaj bezonoj.</p></body></html>"
+
+#~ msgid ""
+#~ "This will open a new tab in the background, instead of in the foreground."
+#~ msgstr ""
+#~ "Tio malfermas novan langeton en la fono, anstataŭ en la ĉefa pozicio."

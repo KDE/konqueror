@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 01:37+0000\n"
+"POT-Creation-Date: 2024-03-11 00:37+0000\n"
 "PO-Revision-Date: 2023-07-29 13:43-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -2464,9 +2464,11 @@ msgstr "Comportamento do &mouse"
 #: tabs/tabsoptions.ui:138
 #, kde-format
 msgid ""
-"This will open a new tab in the background, instead of in the foreground."
+"<html><head/><body><p>This will open a new tab in the background, instead of "
+"in the foreground.</p><p>Press <span style=\" font-family:'Fira Code';"
+"\">shift</span> when opening a new tab to reverse this behavior</p></body></"
+"html>"
 msgstr ""
-"Isto abrirá uma nova aba no fundo; caso contrário, será aberta na frente."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
@@ -2639,6 +2641,11 @@ msgstr ""
 "identificação padrão estiver desativada.</p><p>Você pode inseri-la "
 "manualmente ou iniciar a partir de uma na lista abaixo e alterá-la de acordo "
 "com suas necessidades.</p></body></html>"
+
+#~ msgid ""
+#~ "This will open a new tab in the background, instead of in the foreground."
+#~ msgstr ""
+#~ "Isto abrirá uma nova aba no fundo; caso contrário, será aberta na frente."
 
 #~ msgid ""
 #~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "

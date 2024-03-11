@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 01:37+0000\n"
+"POT-Creation-Date: 2024-03-11 00:37+0000\n"
 "PO-Revision-Date: 2009-01-16 22:16+0530\n"
 "Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
 "Language-Team: Telugu <en@li.org>\n"
@@ -2221,8 +2221,11 @@ msgstr "(&v) మౌస్ ప్రవర్తన"
 #: tabs/tabsoptions.ui:138
 #, kde-format
 msgid ""
-"This will open a new tab in the background, instead of in the foreground."
-msgstr "ఇది ఫోర్‌గ్రౌండుకు బదులుగా, కొత్త టాబ్‌ను బ్యాక్‌గ్రౌండు నందు తెరుస్తుంది."
+"<html><head/><body><p>This will open a new tab in the background, instead of "
+"in the foreground.</p><p>Press <span style=\" font-family:'Fira Code';"
+"\">shift</span> when opening a new tab to reverse this behavior</p></body></"
+"html>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
@@ -2387,6 +2390,10 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+
+#~ msgid ""
+#~ "This will open a new tab in the background, instead of in the foreground."
+#~ msgstr "ఇది ఫోర్‌గ్రౌండుకు బదులుగా, కొత్త టాబ్‌ను బ్యాక్‌గ్రౌండు నందు తెరుస్తుంది."
 
 #~ msgid "Tabbed Browsing"
 #~ msgstr "టాబ్ బ్రౌజింగ్"

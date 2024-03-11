@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 01:37+0000\n"
+"POT-Creation-Date: 2024-03-11 00:37+0000\n"
 "PO-Revision-Date: 2010-01-29 22:30+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -2451,8 +2451,11 @@ msgstr "Однесу&вање на глушецот"
 #: tabs/tabsoptions.ui:138
 #, kde-format
 msgid ""
-"This will open a new tab in the background, instead of in the foreground."
-msgstr "Ова ќе го отвори новото ливче во заднина, наместо во преден план."
+"<html><head/><body><p>This will open a new tab in the background, instead of "
+"in the foreground.</p><p>Press <span style=\" font-family:'Fira Code';"
+"\">shift</span> when opening a new tab to reverse this behavior</p></body></"
+"html>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
@@ -2634,6 +2637,10 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+
+#~ msgid ""
+#~ "This will open a new tab in the background, instead of in the foreground."
+#~ msgstr "Ова ќе го отвори новото ливче во заднина, наместо во преден план."
 
 #~ msgid ""
 #~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "

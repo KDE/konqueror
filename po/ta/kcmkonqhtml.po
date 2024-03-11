@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 01:37+0000\n"
+"POT-Creation-Date: 2024-03-11 00:37+0000\n"
 "PO-Revision-Date: 2023-08-20 15:18+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -2354,8 +2354,11 @@ msgstr "சுட்டி செயல்பாடு"
 #: tabs/tabsoptions.ui:138
 #, kde-format
 msgid ""
-"This will open a new tab in the background, instead of in the foreground."
-msgstr "இது ஒரு புதிய தத்தலை முன்னால் திறப்பதக்கு பதிலாக பின்னால் திறக்கும்"
+"<html><head/><body><p>This will open a new tab in the background, instead of "
+"in the foreground.</p><p>Press <span style=\" font-family:'Fira Code';"
+"\">shift</span> when opening a new tab to reverse this behavior</p></body></"
+"html>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
@@ -2520,6 +2523,10 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+
+#~ msgid ""
+#~ "This will open a new tab in the background, instead of in the foreground."
+#~ msgstr "இது ஒரு புதிய தத்தலை முன்னால் திறப்பதக்கு பதிலாக பின்னால் திறக்கும்"
 
 #~ msgid ""
 #~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "

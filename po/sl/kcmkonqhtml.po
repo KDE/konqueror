@@ -1,7 +1,7 @@
 # translation of kcmkonqhtml.po to
 # Translation of kcmkonqhtml.po to Slovenian
 # SLOVENIAN TRANSLATION OF KCMKONQHTML.
-# $Id: kcmkonqhtml.po 1668509 2023-12-30 02:04:43Z scripty $
+# $Id: kcmkonqhtml.po 1675312 2024-03-11 01:07:18Z scripty $
 # $Source$
 #
 # Copyright (C) 2002, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 01:37+0000\n"
+"POT-Creation-Date: 2024-03-11 00:37+0000\n"
 "PO-Revision-Date: 2023-11-20 09:10+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -2478,8 +2478,11 @@ msgstr "Obnašanje novega zavihka"
 #: tabs/tabsoptions.ui:138
 #, kde-format
 msgid ""
-"This will open a new tab in the background, instead of in the foreground."
-msgstr "Novi zavihku se bodo odprli v ozadju, namesto v ospredju."
+"<html><head/><body><p>This will open a new tab in the background, instead of "
+"in the foreground.</p><p>Press <span style=\" font-family:'Fira Code';"
+"\">shift</span> when opening a new tab to reverse this behavior</p></body></"
+"html>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
@@ -2652,6 +2655,10 @@ msgstr ""
 "privzeta identifikacija onemogočena.</p><p>Vnesete jo lahko ročno ali "
 "začnete z eno na spodnjem seznamu in jo spremenite glede na vaše potrebe.</"
 "p></body></html>"
+
+#~ msgid ""
+#~ "This will open a new tab in the background, instead of in the foreground."
+#~ msgstr "Novi zavihku se bodo odprli v ozadju, namesto v ospredju."
 
 #~ msgid ""
 #~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "

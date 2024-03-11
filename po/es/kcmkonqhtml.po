@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 01:37+0000\n"
+"POT-Creation-Date: 2024-03-11 00:37+0000\n"
 "PO-Revision-Date: 2023-11-22 02:36+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2524,10 +2524,11 @@ msgstr "Comportamiento de nuevas pestañas"
 #: tabs/tabsoptions.ui:138
 #, kde-format
 msgid ""
-"This will open a new tab in the background, instead of in the foreground."
+"<html><head/><body><p>This will open a new tab in the background, instead of "
+"in the foreground.</p><p>Press <span style=\" font-family:'Fira Code';"
+"\">shift</span> when opening a new tab to reverse this behavior</p></body></"
+"html>"
 msgstr ""
-"Esto abrirá una nueva pestaña en segundo plano, de lo contrario lo abrirá en "
-"el primer plano."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
@@ -2701,6 +2702,12 @@ msgstr ""
 "cuando está desactivada la identificación predeterminada.</p><p>Puede "
 "introducirla a mano o empezar con una de la lista inferior y modificarla "
 "según sus necesidades.</p></body></html>"
+
+#~ msgid ""
+#~ "This will open a new tab in the background, instead of in the foreground."
+#~ msgstr ""
+#~ "Esto abrirá una nueva pestaña en segundo plano, de lo contrario lo abrirá "
+#~ "en el primer plano."
 
 #~ msgid ""
 #~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "

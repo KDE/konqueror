@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 01:37+0000\n"
+"POT-Creation-Date: 2024-03-11 00:37+0000\n"
 "PO-Revision-Date: 2023-11-23 12:33+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2464,8 +2464,11 @@ msgstr "ახალი ჩანართის ქცევა"
 #: tabs/tabsoptions.ui:138
 #, kde-format
 msgid ""
-"This will open a new tab in the background, instead of in the foreground."
-msgstr "ახალი ჩანართის წინა პლანის მაგიერ ფონზე გახსნა."
+"<html><head/><body><p>This will open a new tab in the background, instead of "
+"in the foreground.</p><p>Press <span style=\" font-family:'Fira Code';"
+"\">shift</span> when opening a new tab to reverse this behavior</p></body></"
+"html>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
@@ -2641,6 +2644,10 @@ msgstr ""
 "ნაგულისხმევი გამორთულია.</p><p>ის შეგიძლიათ, ხელით შეიყვანოთ ან აირჩიოთ "
 "ქვემოთ მოყვანილი სიიდან და შეცვალოთ ისე, როგორც თქვენ გნებავთ.</p></body></"
 "html>"
+
+#~ msgid ""
+#~ "This will open a new tab in the background, instead of in the foreground."
+#~ msgstr "ახალი ჩანართის წინა პლანის მაგიერ ფონზე გახსნა."
 
 #~ msgid "Tabbed Browsing"
 #~ msgstr "ჩანართებიანი ბრაუზერი"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 01:37+0000\n"
+"POT-Creation-Date: 2024-03-11 00:37+0000\n"
 "PO-Revision-Date: 2012-06-11 09:39+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -2412,13 +2412,15 @@ msgstr "បើក​ជា​ផ្ទាំង​ក្នុង Konqueror ដ�
 msgid "New Tab Behavior"
 msgstr "ឥរិយាបថ​របស់​កណ្ដុរ"
 
-#  i18n: file advancedTabOptions.ui line 60
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
 #, kde-format
 msgid ""
-"This will open a new tab in the background, instead of in the foreground."
-msgstr "ការ​​នេះ​នឹង​បើក​ផ្ទាំង​ថ្មី​មួយ​ក្នុង​ផ្ទៃ​ខាង​ក្រោយ ជំនួស​ឲ្យ​ផ្ទៃ​ខាង​មុខ ។"
+"<html><head/><body><p>This will open a new tab in the background, instead of "
+"in the foreground.</p><p>Press <span style=\" font-family:'Fira Code';"
+"\">shift</span> when opening a new tab to reverse this behavior</p></body></"
+"html>"
+msgstr ""
 
 #  i18n: file advancedTabOptions.ui line 57
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
@@ -2592,6 +2594,11 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+
+#  i18n: file advancedTabOptions.ui line 60
+#~ msgid ""
+#~ "This will open a new tab in the background, instead of in the foreground."
+#~ msgstr "ការ​​នេះ​នឹង​បើក​ផ្ទាំង​ថ្មី​មួយ​ក្នុង​ផ្ទៃ​ខាង​ក្រោយ ជំនួស​ឲ្យ​ផ្ទៃ​ខាង​មុខ ។"
 
 #~ msgid ""
 #~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "

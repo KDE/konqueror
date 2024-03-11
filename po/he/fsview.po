@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: fsview\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2024-03-09 22:57+0200\n"
+"PO-Revision-Date: 2024-03-10 16:01+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -149,7 +149,7 @@ msgstr[2] "%1 תיקיות"
 msgstr[3] "%1 תיקיות"
 
 #: fsview_part.cpp:100
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
 "utilization by using a tree map visualization.</p><p>Note that in this mode, "
@@ -157,10 +157,11 @@ msgid ""
 "b> done.</p><p>For details on usage and options available, see the online "
 "help under menu 'Help/FSView Manual'.</p>"
 msgstr ""
-"<p>זהו תוסף FSView, המראה באופן גרפי את השימוש במערכת הקבצים בתצוגת מפה </p> "
-"<p> נא לשים לב שמצב <b>לא נעשים</b> עדכונים, כאשר נעשים שינויים במערכת "
-"הקבצים.</p><p>לקבל פרטים אודות שימוש שאפשרויות קיימות, ניתן להסתכל בתפריט "
-"העזרה תחת: \"עזרה/מדריך FSView\". </p>"
+"<p>זה תוסף FSView, מצב גלישה גרפי שמציג את ניצולת מערכת הקבצים על ידי המחשה "
+"במפת עץ.</p><p>נא לשים לב שבמצב הזה, עדכונים אוטומטיים כשמתבצעים שינויים "
+"במערכת ההפעלה בכוונה <b>לא</b> נמדדים.</p><p>לפרטים על אופן השימוש "
+"והאפשרויות הזמינות, יש לעיין בעזרה המקוונת תחת התפריט ‚עזרה/מדריך FSView’.</"
+"p>"
 
 #: fsview_part.cpp:132
 #, kde-format
