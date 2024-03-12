@@ -9,7 +9,7 @@
 # Juan Manuel Garcia Molina <juanma@superiodico.net>, 2005.
 # Jaime Robles <jaime@robles.nu>, 2005.
 # Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
-# SPDX-FileCopyrightText: 2010, 2012, 2016, 2019, 2020, 2022, 2023 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2010, 2012, 2016, 2019, 2020, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 # Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>, 2010, 2011.
 # Javier Vinal <fjvinal@gmail.com>, 2011.
 # arklad, 2011.
@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-11 00:37+0000\n"
-"PO-Revision-Date: 2023-11-22 02:36+0100\n"
+"PO-Revision-Date: 2024-03-11 17:28+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "com>\n"
 "First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: appearance.cpp:39
@@ -2529,6 +2529,10 @@ msgid ""
 "\">shift</span> when opening a new tab to reverse this behavior</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>Esto abrirá una nueva pestaña en segundo plano en "
+"lugar de hacerlo en primer plano.</p><p>Pulse <span style=\" font-"
+"family:'Fira Code';\">Mayúsculas</span> cuando abra una nueva pestaña para "
+"invertir este comportamiento.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
