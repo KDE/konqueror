@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2024-03-02 21:14+0200\n"
+"PO-Revision-Date: 2024-03-12 06:21+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -33,7 +33,7 @@ msgid "System"
 msgstr "מערכת"
 
 #: konqueror.cpp:24
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
 "Plasma startup sequence.</p><p>This will make the first Konqueror window "
@@ -41,13 +41,13 @@ msgid ""
 "be able to work while it is loading, so you may not even notice that it is "
 "taking longer).</p>"
 msgstr ""
-"‏<p>אם מאופשר, חלק של Konqueror יטען לאחר תהליך האתחול הרגיל של KDE.</"
-"p><p>דבר זה יגרום לכך שההפעלה של Konqueror תהיה מהירה יותר, אך במחיר של זמן "
-"אתחול ארוך יותר של KDE (אך ניתן לעבוד תוך כדי הטעינה, כך שיתכן וכלל לא תרגיש "
-"בעת ששלב זה מתבצע).</p>"
+"<p>אם האפשרות פעילה, עותק של Konqueror ייטען מראש אחרי רצף העלייה השגרתי של "
+"פלזמה.</p><p>כך החלון הראשון של Konqueror ייפתח מהר יותר, אך במחיר של האטת "
+"זמני העלייה של פלזמה (אבל המערכת תהיה זמינה בזמן הטעינה כך שכנראה הארכת "
+"הזמנים אפילו לא תורגש).</p>"
 
 #: konqueror.cpp:30
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<p>If enabled, Konqueror will always try to have one preloaded instance "
 "ready; preloading a new instance in the background whenever there is not one "
@@ -55,9 +55,10 @@ msgid ""
 "In some cases, it is actually possible that this will reduce perceived "
 "performance.</p>"
 msgstr ""
-"‏<p>אם מאופשר, KDE תמיד ינסה להחזיק מקטע של Konqueror מוכן, טוען ברקע חלק כזה "
-"כאשר אין אפילו חלק אחד טעון, כך ש־Konqueror יפתח מהר יותר.</p><p><b>אזהרה:</"
-"b>במספר מקרים, ישנה אפשרות שדבר זה יגרום לירידה בביצועים.</p>"
+"<p>אם האפשרות פעילה, Konqueror ינסה שיהיה לו עותק אחד שנטען מראש מוכן; לטעון "
+"מראש עותק חדש ברקע כשאין אחד זמין כדי שחלונות תמיד ייפתחו מהר.</"
+"p><p><b>אזהרה:</b> בחלק מהמקרים, פעילות כזאת יכולה אף להאט את הביצועים "
+"המתקבלים.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
 #: konqueror_ui.ui:17

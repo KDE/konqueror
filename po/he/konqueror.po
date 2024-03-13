@@ -22,14 +22,14 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-11 00:37+0000\n"
-"PO-Revision-Date: 2024-03-10 16:24+0200\n"
+"PO-Revision-Date: 2024-03-12 06:25+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -180,38 +180,38 @@ msgstr "Germain Garand"
 #: src/konqapplication.cpp:190 src/konqapplication.cpp:218
 #, kde-format
 msgid "Leo Savernik"
-msgstr "Leo Savernik"
+msgstr "לאו סברניק"
 
 #: src/konqapplication.cpp:191
 #, kde-format
 msgid "Stephan Kulow"
-msgstr "Stephan Kulow"
+msgstr "סטיבן קולוב"
 
 #: src/konqapplication.cpp:191
 #, kde-format
 msgid ""
 "Developer (HTML rendering engine, I/O library, regression test framework)"
-msgstr "מפתח (מנוע רינדור HTML, ספריית קלט\\פלט, מערכת בדיקות אוטומטית)"
+msgstr "מפתח (מנוע הצגת HTML, ספריית קלט/פלט, מערכת בדיקות אוטומטית)"
 
 #: src/konqapplication.cpp:192
 #, kde-format
 msgid "Antti Koivisto"
-msgstr "Antti Koivisto"
+msgstr "אנטי קויביסטו"
 
 #: src/konqapplication.cpp:193
 #, kde-format
 msgid "Zack Rusin"
-msgstr "Zack Rusin"
+msgstr "זאק רוסין"
 
 #: src/konqapplication.cpp:194
 #, kde-format
 msgid "Tobias Anton"
-msgstr "Tobias Anton"
+msgstr "טוביאס אנטון"
 
 #: src/konqapplication.cpp:195
 #, kde-format
 msgid "Lubos Lunak"
-msgstr "Lubos Lunak"
+msgstr "לובוש לוניאק"
 
 #: src/konqapplication.cpp:196
 #, kde-format
@@ -221,12 +221,12 @@ msgstr "מקס אורלוביץ׳"
 #: src/konqapplication.cpp:196 src/konqapplication.cpp:198
 #, kde-format
 msgid "Developer (HTML rendering engine, JavaScript)"
-msgstr "מפתח (מנוע רינדור HTML, תסריטי ג'אוה)"
+msgstr "מפתח (מנוע הצגת HTML,‏ JavaScript)"
 
 #: src/konqapplication.cpp:197
 #, kde-format
 msgid "Allan Sandfeld Jensen"
-msgstr "Allan Sandfeld Jensen"
+msgstr "אלן זנדפלד ג׳נסן"
 
 #: src/konqapplication.cpp:198
 #, kde-format
@@ -236,7 +236,7 @@ msgstr "מפתחי Safari של אפל"
 #: src/konqapplication.cpp:199
 #, kde-format
 msgid "Harri Porten"
-msgstr "Harri Porten"
+msgstr "הארי פורטן"
 
 #: src/konqapplication.cpp:199
 #, kde-format
@@ -246,7 +246,7 @@ msgstr "מפתח (JavaScript)"
 #: src/konqapplication.cpp:200
 #, kde-format
 msgid "Koos Vriezen"
-msgstr "Koos Vriezen"
+msgstr "קוס פריזן"
 
 #: src/konqapplication.cpp:200
 #, kde-format
@@ -256,12 +256,12 @@ msgstr "מפתח (תמיכה ביישומוני Java ורכיבים מוטמעי
 #: src/konqapplication.cpp:201
 #, kde-format
 msgid "Matt Koss"
-msgstr "Matt Koss"
+msgstr "מאט קוס"
 
 #: src/konqapplication.cpp:201 src/konqapplication.cpp:202
 #, kde-format
 msgid "Developer (I/O library)"
-msgstr "מפתח (ספריית קלט\\פלט)"
+msgstr "מפתח (ספריית קלט/פלט)"
 
 #: src/konqapplication.cpp:202
 #, kde-format
@@ -281,7 +281,7 @@ msgstr "מפתח (תמיכה ביישומוני Java)"
 #: src/konqapplication.cpp:204
 #, kde-format
 msgid "Dima Rogozin"
-msgstr "Dima Rogozin"
+msgstr "דימה רוגוזין"
 
 #: src/konqapplication.cpp:205
 #, kde-format
@@ -365,7 +365,7 @@ msgstr "מפתח (עבודת מסגרת ללוח הניווט)"
 #: src/konqapplication.cpp:213
 #, kde-format
 msgid "Stephan Binner"
-msgstr "Stephan Binner"
+msgstr "סטפן בינר"
 
 #: src/konqapplication.cpp:213
 #, kde-format
@@ -606,7 +606,7 @@ msgstr ""
 #: src/konqhistorymodel.cpp:213
 #, kde-format
 msgid "Local"
-msgstr ""
+msgstr "מקומי"
 
 #: src/konqhistorymodel.cpp:216
 #, kde-format
@@ -683,7 +683,7 @@ msgstr "טוען..."
 #: src/konqmainwindow.cpp:730
 #, kde-format
 msgid "Access denied"
-msgstr ""
+msgstr "הגישה נדחתה"
 
 #: src/konqmainwindow.cpp:1499
 #, kde-format
@@ -1738,7 +1738,7 @@ msgstr ""
 #: src/konqueror.kcfg:42
 #, kde-format
 msgid "Show file tips"
-msgstr ""
+msgstr "הצגת עצות קובץ"
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:43
@@ -1752,7 +1752,7 @@ msgstr ""
 #: src/konqueror.kcfg:54
 #, kde-format
 msgid "Show previews in file tips"
-msgstr ""
+msgstr "הצגת תצוגות מקדימות בעצות קבצים"
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:55
