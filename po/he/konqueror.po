@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-11 00:37+0000\n"
-"PO-Revision-Date: 2024-03-12 06:25+0200\n"
+"PO-Revision-Date: 2024-03-13 08:48+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -355,12 +355,12 @@ msgstr "הכותב של KFM"
 #: src/konqapplication.cpp:212
 #, kde-format
 msgid "Joseph Wenninger"
-msgstr "Joseph Wenninger"
+msgstr "ג׳וזף ונינגר"
 
 #: src/konqapplication.cpp:212
 #, kde-format
 msgid "Developer (navigation panel framework)"
-msgstr "מפתח (עבודת מסגרת ללוח הניווט)"
+msgstr "מפתח (תשתית לוח הניווט)"
 
 #: src/konqapplication.cpp:213
 #, kde-format
@@ -404,7 +404,7 @@ msgid ""
 "Per-domain policies extensions"
 msgstr ""
 "פקדי גישת JavaScript\n"
-"הרחבות מדיניות מדיניות לפי שם תחום"
+"הרחבות מדיניות לפי שם תחום"
 
 #: src/konqapplication.cpp:229
 #, fuzzy, kde-format
@@ -616,12 +616,12 @@ msgstr "שונות"
 #: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4355
 #, kde-format
 msgid "Open in New &Window"
-msgstr "פתח ב&חלון חדש"
+msgstr "פתיחה ב&חלון חדש"
 
 #: src/konqhistoryview.cpp:60
 #, kde-format
 msgid "Open in New Tab"
-msgstr "פתח בלשונית חדשה"
+msgstr "פתיחה בלשונית חדשה"
 
 #: src/konqhistoryview.cpp:65
 #, kde-format
@@ -636,17 +636,17 @@ msgstr "ה&עתקת כתובת הקישור"
 #: src/konqhistoryview.cpp:74
 #, kde-format
 msgid "&Remove Entry"
-msgstr "ה&סר רשומה"
+msgstr "ה&סרת רשומה"
 
 #: src/konqhistoryview.cpp:81
 #, kde-format
 msgid "C&lear History"
-msgstr "&נקה היסטוריה"
+msgstr "&פינוי היסטוריה"
 
 #: src/konqhistoryview.cpp:86
 #, kde-format
 msgid "&Preferences..."
-msgstr "&מאפיינים..."
+msgstr "&מאפיינים…"
 
 #: src/konqhistoryview.cpp:93
 #, kde-format
@@ -666,7 +666,7 @@ msgstr "חיפוש בהיסטוריה"
 #: src/konqhistoryview.cpp:170
 #, kde-format
 msgid "Do you really want to clear the entire history?"
-msgstr "האם אתה בטוח שברצונך לנקות את כל ההיסטוריה?"
+msgstr "לפנות את כל ההיסטוריה?"
 
 #: src/konqhistoryview.cpp:171
 #, kde-format
@@ -678,7 +678,7 @@ msgstr "לפנות את ההיסטוריה?"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
-msgstr "טוען..."
+msgstr "בטעינה…"
 
 #: src/konqmainwindow.cpp:730
 #, kde-format
@@ -701,8 +701,8 @@ msgid ""
 "This page contains changes that have not been submitted.\n"
 "Reloading the page will discard these changes."
 msgstr ""
-"דף זה מכיל שינויים שלא נשלחו.\n"
-"אם תרענן את הדף השינויים ילכו לאיבוד."
+"דף זה מכיל שינויים שלא הוגשו.\n"
+"רענון הדף יוביל לאובדן השינויים."
 
 #: src/konqmainwindow.cpp:1600 src/konqmainwindow.cpp:2242
 #: src/konqmainwindow.cpp:2331 src/konqmainwindow.cpp:2363
@@ -719,12 +719,12 @@ msgstr "להתעלם מהשינויים?"
 #: src/konqmainwindow.cpp:4804
 #, kde-format
 msgid "&Discard Changes"
-msgstr "&שכח מהשינויים"
+msgstr "להת&עלם מהשינויים"
 
 #: src/konqmainwindow.cpp:1918 src/konqmainwindow.cpp:1924
 #, kde-format
 msgid "Home Folder"
-msgstr "תיקיית בית"
+msgstr "תיקיית הבית"
 
 #: src/konqmainwindow.cpp:1919 src/konqmainwindow.cpp:3341
 #, kde-format
@@ -734,23 +734,23 @@ msgstr "בית"
 #: src/konqmainwindow.cpp:1925
 #, kde-format
 msgid "Navigate to your 'Home Folder'"
-msgstr "ניווט אל \"תיקיית הבית\" שלך"
+msgstr "ניווט ל‚תיקיית הבית’ שלך"
 
 #: src/konqmainwindow.cpp:1926
 #, kde-format
 msgid "Navigate to your local 'Home Folder'"
-msgstr "ניווט אל \"תיקיית הבית\" המקומית שלך"
+msgstr "ניווט ל‚תיקיית הבית’ המקומית שלך"
 
 #. i18n: ectx: label, entry, group (UserSettings)
 #: src/konqmainwindow.cpp:1929 src/konqueror.kcfg:16
 #, kde-format
 msgid "Home Page"
-msgstr "תיקיית בית"
+msgstr "תיקיית הבית"
 
 #: src/konqmainwindow.cpp:1931
 #, kde-format
 msgid "Navigate to your 'Home Page'"
-msgstr "ניווט אל \"דף הבית\" שלך"
+msgstr "ניווט ל‚דף הבית’ שלך"
 
 #: src/konqmainwindow.cpp:1932
 #, kde-format
@@ -759,8 +759,8 @@ msgid ""
 "where this button takes you under <b>Settings -> Configure Konqueror -> "
 "General</b>.</html>"
 msgstr ""
-"<html>  ניווט אל \"דף הבית\" שלך <br /> <br /> באפשרותך להגדיר את המיקום אליו יוביל "
-"כפתור זה תחת <b>הגדרות->הגדרות של Konqueror -> כללי</b>. </html>"
+"<html>  ניווט ל‚דף הבית’ שלך <br /> <br /> ניתן להגדיר את המיקום אליו יוביל כפתור זה "
+"תחת <b>הגדרות -> הגדרות Konqueror -> כללי</b>. </html>"
 
 #: src/konqmainwindow.cpp:2241
 #, kde-format
@@ -768,8 +768,8 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Detaching the tab will discard these changes."
 msgstr ""
-"לשונית זו מכילה שינויים שלא נשלחו.\n"
-"אם תנתק את הלשונית השינויים ילכו לאיבוד."
+"לשונית זו מכילה שינויים שלא הוגשו.\n"
+"ניתוק הלשונית יוביל להתעלמות מהשינויים האלה."
 
 #: src/konqmainwindow.cpp:2330
 #, kde-format
