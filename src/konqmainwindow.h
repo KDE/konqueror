@@ -667,6 +667,15 @@ private:
     void saveGlobalProperties(KConfig * sessionConfig) override;
 
     void readGlobalProperties(KConfig * sessionConfig) override;
+
+    /**
+     * @brief Attempts to show the given window behind this window
+     *
+     * Depending on window manager and platform support, this may or may not completely work
+     *
+     * @param window the window to show
+     */
+    void showBehindThis(KonqMainWindow *window);
     
 private: // members
     KonqUndoManager *m_pUndoManager;

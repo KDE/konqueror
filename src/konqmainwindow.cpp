@@ -1343,47 +1343,55 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
         mainWindow->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
     }
 
+    if (windowArgs.lowerWindow()) {
+        showBehindThis(mainWindow);
+    } else {
+        mainWindow->show();
+    }
+
+    if (windowArgs.isFullScreen()) {
+        mainWindow->action("fullscreen")->trigger();
+    }
+}
+
+void KonqMainWindow::showBehindThis(KonqMainWindow* window)
+{
+    //TODO: see whether there's a way to do this on Wayland
+
 // Trying to show the window initially behind the current window is a bit tricky,
 // as this involves the window manager, which may see things differently.
 // Many WMs raise and activate new windows, which means without WM support this won't work very
 // well. If the WM has support for _NET_WM_USER_TIME, it will be just set to 0 (=don't focus on show),
 // and the WM should take care of it itself.
     bool wm_usertime_support = false;
+    unsigned long saved_last_input_time = 0;
 
     if (KWindowSystem::isPlatformX11()) {
-        auto saved_last_input_time = QX11Info::appUserTime();
-        if (windowArgs.lowerWindow()) {
-            NETRootInfo wm_info(QX11Info::connection(), NET::Supported);
-            wm_usertime_support = wm_info.isSupported(NET::WM2UserTime);
-            if (wm_usertime_support) {
-                // *sigh*, and I thought nobody would need QWidget::dontFocusOnShow().
-                // Avoid Qt's support for user time by setting it to 0, and
-                // set the property ourselves.
-                QX11Info::setAppUserTime(0);
-            }
-            // Put below the current window before showing, in case that actually works with the WM.
-            // First do complete lower(), then stackUnder(), because the latter may not work with many WMs.
-            mainWindow->lower();
-            mainWindow->stackUnder(this);
-        }
-
-        mainWindow->show();
-
-        if (windowArgs.lowerWindow()) {
-            QX11Info::setAppUserTime(saved_last_input_time);
-            if (!wm_usertime_support) {
-                // No WM support. Let's try ugly tricks.
-                mainWindow->lower();
-                mainWindow->stackUnder(this);
-                if (this->isActiveWindow()) {
-                    this->activateWindow();
-                }
-            }
+        saved_last_input_time = QX11Info::appUserTime();
+        NETRootInfo wm_info(QX11Info::connection(), NET::Supported);
+        wm_usertime_support = wm_info.isSupported(NET::WM2UserTime);
+        if (wm_usertime_support) {
+            // *sigh*, and I thought nobody would need QWidget::dontFocusOnShow().
+            // Avoid Qt's support for user time by setting it to 0, and
+            // set the property ourselves.
+            QX11Info::setAppUserTime(0);
         }
     }
+    window->lower();
+    window->stackUnder(this);
 
-    if (windowArgs.isFullScreen()) {
-        mainWindow->action("fullscreen")->trigger();
+    window->show();
+
+    if (KWindowSystem::isPlatformX11()) {
+        QX11Info::setAppUserTime(saved_last_input_time);
+    }
+    if (!wm_usertime_support) {
+        // No WM support. Let's try ugly tricks.
+        window->lower();
+        window->stackUnder(this);
+        if (this->isActiveWindow()) {
+            this->activateWindow();
+        }
     }
 }
 
