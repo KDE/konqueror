@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-11 00:37+0000\n"
-"PO-Revision-Date: 2024-03-12 06:32+0200\n"
+"PO-Revision-Date: 2024-03-14 15:08+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1400,23 +1400,23 @@ msgstr ""
 #: filteropts.cpp:260
 #, kde-format
 msgid "Import Filters"
-msgstr ""
+msgstr "ייבוא מסננים"
 
 #: filteropts.cpp:304
 #, kde-format
 msgid "Export Filters"
-msgstr ""
+msgstr "ייצוא מסננים"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: filteropts.cpp:563 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "שם"
 
 #: filteropts.cpp:564
 #, kde-format
 msgid "URL"
-msgstr ""
+msgstr "כתובת"
 
 #: generalopts.cpp:56
 #, kde-format
@@ -1893,7 +1893,7 @@ msgstr ""
 #: jsopts.cpp:59
 #, kde-format
 msgid "Debugging"
-msgstr "ניפוי באגים"
+msgstr "ניפוי תקלות"
 
 #: jsopts.cpp:63
 #, kde-format
@@ -2219,10 +2219,10 @@ msgid "Java&Script"
 msgstr "Java&Script"
 
 #: policydlg.cpp:30
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Domain-Specific Policies"
-msgstr "הגדרות ספציפית לתחום"
+msgstr "מדיניות תלוית שם תחום"
 
 #: policydlg.cpp:47
 #, kde-format
@@ -2253,7 +2253,7 @@ msgstr "התנהגות לשוניות"
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr ""
+msgstr "היבט"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2275,25 +2275,25 @@ msgstr "הסתר את סרגל הלשוניות כאשר לשונית אחת ב�
 #: tabs/tabsoptions.ui:38
 #, kde-format
 msgid "Tab bar position"
-msgstr ""
+msgstr "מקום סרגל לשוניות"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "נא לבחור איפה להציג את סרגל הלשוניות"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "מעל לתוכן"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "מתחת לתוכן"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
@@ -2331,7 +2331,7 @@ msgstr "פתח קישורים ב&לשונית חדשה במקום חלון חד�
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
 #: tabs/tabsoptions.ui:109
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "Whether or not JavaScript popups if allowed shall open in a new tab or in a "
 "new window."
@@ -2341,13 +2341,13 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
 #: tabs/tabsoptions.ui:112
-#, kde-format
+#, fuzzy, kde-format
 msgid "Open pop&ups in new tab instead of in new window"
 msgstr "פתח חלונות נפתחים ב&לשונית חדשה במקום חלון חדש"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
 #: tabs/tabsoptions.ui:119
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "When you click a URL in another KDE program or call kfmclient to open a URL, "
 "the current desktop will be searched for a non-minimized Konqueror and, if "
@@ -2409,9 +2409,9 @@ msgstr "סגירה"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167
-#, fuzzy, kde-format
+#, kde-format
 msgid "This will display close buttons inside each tab."
-msgstr "יציג כפתורי סגירה בצד כל לשונית, במקום הסמלים של האתרים."
+msgstr "ההגדרה הזאת תציג כפתורי סגירה בכל אחת מהלשוניות."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:170
@@ -2421,13 +2421,11 @@ msgstr "&הצג כפתור סגירה בלשוניות"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
 #: tabs/tabsoptions.ui:177
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "When you click on a tab using the middle mouse button or mouse wheel, it "
 "will close that tab."
-msgstr ""
-"כאשר אתה לוחץ על לשונית באמצעות הלחצן האמצעי של העכבר או הגלגלת, הלשונית "
-"תסגר. (יש צורך להפעיל מחדש את Konqueror על מנת שהשינויים יוחלו)"
+msgstr "לחיצה על לשונית עם לחצן העכבר האמצעי או הגלגלת סוגרת אותה."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
 #: tabs/tabsoptions.ui:180

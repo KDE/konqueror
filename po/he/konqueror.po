@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-11 00:37+0000\n"
-"PO-Revision-Date: 2024-03-13 08:48+0200\n"
+"PO-Revision-Date: 2024-03-14 09:59+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -36,12 +36,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "דרור לוין"
+msgstr "דרור לוין,צוות התרגום של KDE ישראל"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "spatz@012.net.il"
+msgstr "spatz@012.net.il,kde-l10n-he@kde.org"
 
 #: src/konqapplication.cpp:129
 #, kde-format
@@ -49,6 +49,8 @@ msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
+"<p>Konqueror הופעל עם הרשאות משתמש על (root). דורש הפעלת מצב מאוד מפוקפק "
+"ברכיב הדפדפן.</p><p>איך להתקדם מכאן?</p>"
 
 #: src/konqapplication.cpp:172
 #, kde-format
@@ -81,11 +83,10 @@ msgid "David Faure"
 msgstr "דוד פור"
 
 #: src/konqapplication.cpp:179
-#, fuzzy, kde-format
-#| msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#, kde-format
 msgid ""
 "Developer (framework, parts, JavaScript, I/O library) and former maintainer"
-msgstr "מפתח (רכיבים, תסריטי ג'אווה, ספריית קלט\\פלט) ומתחזק"
+msgstr "מפתח (תשתית, רכיבים, JavaScript, ספריית קלט/פלט) ומתחזק לשעבר"
 
 #: src/konqapplication.cpp:180
 #, kde-format
@@ -266,12 +267,12 @@ msgstr "מפתח (ספריית קלט/פלט)"
 #: src/konqapplication.cpp:202
 #, kde-format
 msgid "Alex Zepeda"
-msgstr "Alex Zepeda"
+msgstr "אלכס ספדה"
 
 #: src/konqapplication.cpp:203
 #, kde-format
 msgid "Richard Moore"
-msgstr "Richard Moore"
+msgstr "ריצ׳ארד מור"
 
 #: src/konqapplication.cpp:203 src/konqapplication.cpp:204
 #, kde-format
@@ -286,7 +287,7 @@ msgstr "דימה רוגוזין"
 #: src/konqapplication.cpp:205
 #, kde-format
 msgid "Wynn Wilkes"
-msgstr "Wynn Wilkes"
+msgstr "וין ויילקס"
 
 #: src/konqapplication.cpp:205
 #, kde-format
@@ -300,7 +301,7 @@ msgstr ""
 #: src/konqapplication.cpp:206
 #, kde-format
 msgid "Stefan Schimanski"
-msgstr "Stefan Schimanski"
+msgstr "שטפן שימנסקי"
 
 #: src/konqapplication.cpp:206
 #, kde-format
@@ -310,7 +311,7 @@ msgstr "מפתח (תמיכה בתוספים של Netscape)"
 #: src/konqapplication.cpp:207
 #, kde-format
 msgid "George Staikos"
-msgstr "George Staikos"
+msgstr "ג׳ורג׳ סטייקוס"
 
 #: src/konqapplication.cpp:207
 #, kde-format
@@ -320,22 +321,22 @@ msgstr "מפתח (SSL, תוספים של Netscape)"
 #: src/konqapplication.cpp:208
 #, kde-format
 msgid "Dawit Alemayehu"
-msgstr "Dawit Alemayehu"
+msgstr "דוויט אלמאיהו"
 
 #: src/konqapplication.cpp:208
 #, kde-format
 msgid "Developer (I/O library, Authentication support)"
-msgstr "מפתח (ספריית קלט\\פלט, תמיכה באימות)"
+msgstr "מפתח (ספריית קלט/פלט, תמיכה באימות)"
 
 #: src/konqapplication.cpp:209
 #, kde-format
 msgid "Carsten Pfeiffer"
-msgstr "Carsten Pfeiffer"
+msgstr "קרסטן פייפר"
 
 #: src/konqapplication.cpp:210
 #, kde-format
 msgid "Torsten Rahn"
-msgstr "Torsten Rahn"
+msgstr "טורסטן ראן"
 
 #: src/konqapplication.cpp:210
 #, kde-format
@@ -345,7 +346,7 @@ msgstr "גרפיקה/סמלים"
 #: src/konqapplication.cpp:211
 #, kde-format
 msgid "Torben Weis"
-msgstr "Torben Weis"
+msgstr "טורבן וייס"
 
 #: src/konqapplication.cpp:211
 #, kde-format
@@ -375,7 +376,7 @@ msgstr "מפתח (כולבויניק)"
 #: src/konqapplication.cpp:214
 #, kde-format
 msgid "Ivor Hewitt"
-msgstr "Ivor Hewitt"
+msgstr "איבור יואיט"
 
 #: src/konqapplication.cpp:214
 #, kde-format
@@ -385,7 +386,7 @@ msgstr "מפתח (מסנן AdBlock)"
 #: src/konqapplication.cpp:215
 #, kde-format
 msgid "Eduardo Robles Elvira"
-msgstr "Eduardo Robles Elvira"
+msgstr "אדוארדו רובלס אלווירה"
 
 #: src/konqapplication.cpp:216
 #, kde-format
@@ -407,15 +408,15 @@ msgstr ""
 "הרחבות מדיניות לפי שם תחום"
 
 #: src/konqapplication.cpp:229
-#, fuzzy, kde-format
+#, kde-format
 msgid "Start without a default window, when called without URLs"
-msgstr "             התחל ללא חלון ברירת מחדל"
+msgstr "להתחיל ללא חלון ברירת מחדל, כשמתבצעת קריאה ללא כתובות"
 
 #: src/konqapplication.cpp:230
 #, kde-format
 msgid ""
 "Preload for later use. This mode does not support URLs on the command line"
-msgstr "לטעון מחדש לשימוש עתידי. המצב הזה לא תומך בכתובות משורת הפקודה"
+msgstr "לטעון מראש לשימוש עתידי. המצב הזה לא תומך בכתובות משורת הפקודה"
 
 #: src/konqapplication.cpp:231
 #, kde-format
@@ -430,12 +431,12 @@ msgstr "פרופיל"
 #: src/konqapplication.cpp:232
 #, kde-format
 msgid "List available sessions"
-msgstr "רשימת ההפעלות הזמינות"
+msgstr "הצגת ההפעלות הפעילות"
 
 #: src/konqapplication.cpp:233
 #, kde-format
 msgid "Session to open"
-msgstr "פתח הפעלה"
+msgstr "הפעלה לפתיחה"
 
 #: src/konqapplication.cpp:233
 #, kde-format
@@ -446,8 +447,7 @@ msgstr "הפעלה"
 #, kde-format
 msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
 msgstr ""
-"      לשימוש עבור כתובת זו Mime טיפוס\n"
-"(inode/directory או text/html לדוגמה)"
+"סוג תוכן (MIME) לשימוש לכתובת הזאת (למשל: text/html או inode/directory)"
 
 #: src/konqapplication.cpp:234
 #, kde-format
@@ -457,7 +457,7 @@ msgstr "סוג_תוכן"
 #: src/konqapplication.cpp:235
 #, kde-format
 msgid "Part to use (e.g. khtml or kwebkitpart)"
-msgstr ""
+msgstr "חלק לשימוש (למשל: khtml למשל kwebkitpart)"
 
 #: src/konqapplication.cpp:235
 #, kde-format
@@ -470,8 +470,7 @@ msgid ""
 "For URLs that point to files, opens the directory and selects the file, "
 "instead of opening the actual file"
 msgstr ""
-"עבור כתובות שמצביעות אל קבצים, פותח את התיקייה ומסמן את הקובץ, במקום לפתוח "
-"את הקובץ עצמו"
+"לכתובות שמפנות לקבצים, תיפתח התיקייה וייבחר הקובץ, במקום לפתוח את הקובץ בפועל"
 
 #: src/konqapplication.cpp:237
 #, kde-format
@@ -484,6 +483,8 @@ msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
 "only when developing Konqueror itself"
 msgstr ""
+"יצירת תהליך Konqueror חדש, אפילו אם כבר קיים אחד. מיועד לשימוש רק לטובת "
+"פיתוח Konqueror עצמו"
 
 #: src/konqapplication.cpp:241
 #, kde-format
@@ -493,7 +494,7 @@ msgstr "בדיקה"
 #: src/konqapplication.cpp:242
 #, kde-format
 msgid "Location to open"
-msgstr "מיקום לפתיחה"
+msgstr "מקום לפתיחה"
 
 #: src/konqapplication.cpp:351
 #, kde-format
@@ -506,7 +507,7 @@ msgstr "אי אפשר לפתוח את ההפעלה %1"
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
-msgstr ""
+msgstr "אי אפשר להעביר כתובות יחד עם הבורר ‎--preload. הכתובות לא יועברו הלאה\n"
 
 #: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4839
 #: src/konqmainwindow.cpp:4885
@@ -533,7 +534,7 @@ msgid ""
 "%2"
 msgstr ""
 "אירעה שגיאה בטעינת המודול %1.\n"
-"האבחנה הנה:\n"
+"האבחנה היא:\n"
 "%2"
 
 #: src/konqframestatusbar.cpp:108
@@ -545,11 +546,10 @@ msgid ""
 "useful with different types of views, such as a directory tree with an icon "
 "view or detailed view, and possibly a terminal emulator window."
 msgstr ""
-"בחירה בתיבה זו בלפחות שתי תצוגות מגדירה את התצוגות האלה כ\"מקושרות\". במצב "
-"כזה, כאשר אתה עובר ספריות בתצוגה אחת, התצוגות האחרות שמקושרות אליה יתעדכנו "
-"אוטומטית ויציגו את הספרייה הנוכחית. דבר זה שימושי במיוחד עם סוגים שונים של "
-"תצוגות, כמו עץ ספריות עם תצוגת סמלים או תצוגת פרטים, ואולי גם עם חלון הדמיית "
-"מסוף."
+"סימון תיבה זו בשתי תצוגות לפחות מגדירה את התצוגות האלה כ‚מקושרות’. במצב זה, "
+"כשעוברים בין תיקיות בתצוגה אחת, התצוגות האחרות שמקושרות אליה יתעדכנו "
+"אוטומטית ויציגו את התיקייה הנוכחית. שימושי במיוחד עם סוגים שונים של תצוגות, "
+"כמו עץ ספריות עם תצוגת סמלים או תצוגה מפורטת, ואפילו עם חלון הדמיית מסוף."
 
 #: src/konqframestatusbar.cpp:119
 #, kde-format
@@ -560,7 +560,7 @@ msgstr "%p%"
 #: src/konqframestatusbar.cpp:155
 #, kde-format
 msgid "Close View"
-msgstr "סגור תצוגה"
+msgstr "סגירת תצוגה"
 
 #: src/konqframestatusbar.cpp:233
 #, kde-format
@@ -575,12 +575,12 @@ msgstr "תקוע"
 #: src/konqguiclients.cpp:52
 #, kde-format
 msgid "Preview &in %1"
-msgstr "תצוגה מקדימה &באמצעות %1"
+msgstr "תצוגה מקדימה &עם %1"
 
 #: src/konqguiclients.cpp:122
 #, kde-format
 msgid "Show %1"
-msgstr "הצג את %1"
+msgstr "הצגת %1"
 
 #: src/konqhistorydialog.cpp:39
 #, kde-format
@@ -592,7 +592,7 @@ msgstr "היסטוריה"
 #, kde-format
 msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
 msgid "Sort"
-msgstr "סדר"
+msgstr "סידור"
 
 #: src/konqhistorymodel.cpp:119
 #, kde-format
@@ -759,7 +759,7 @@ msgid ""
 "where this button takes you under <b>Settings -> Configure Konqueror -> "
 "General</b>.</html>"
 msgstr ""
-"<html>  ניווט ל‚דף הבית’ שלך <br /> <br /> ניתן להגדיר את המיקום אליו יוביל כפתור זה "
+"<html>  ניווט ל‚דף הבית’ שלך <br /> <br /> ניתן להגדיר את המקום אליו יוביל כפתור זה "
 "תחת <b>הגדרות -> הגדרות Konqueror -> כללי</b>. </html>"
 
 #: src/konqmainwindow.cpp:2241
@@ -769,7 +769,7 @@ msgid ""
 "Detaching the tab will discard these changes."
 msgstr ""
 "לשונית זו מכילה שינויים שלא הוגשו.\n"
-"ניתוק הלשונית יוביל להתעלמות מהשינויים האלה."
+"ניתוק הלשונית יוביל לאובדן השינויים האלה."
 
 #: src/konqmainwindow.cpp:2330
 #, kde-format
@@ -777,8 +777,8 @@ msgid ""
 "This view contains changes that have not been submitted.\n"
 "Closing the view will discard these changes."
 msgstr ""
-"תצוגה זו מכילה שינויים שלא נשלחו.\n"
-"אם תסגור את התצוגה השינויים ילכו לאיבוד."
+"תצוגה זו מכילה שינויים שלא הוגשו.\n"
+"סגירת התצוגה תוביל לאובדן השינויים."
 
 #: src/konqmainwindow.cpp:2362
 #, kde-format
@@ -786,18 +786,18 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the tab will discard these changes."
 msgstr ""
-"לשונית זו מכילה שינויים שלא נשלחו.\n"
-"אם תסגור את הלשונית השינויים ילכו לאיבוד."
+"לשונית זו מכילה שינויים שלא הוגשו.\n"
+"סגירת הלשונית תוביל לאובדן השינויים."
 
 #: src/konqmainwindow.cpp:2388
 #, kde-format
 msgid "Do you really want to close all other tabs?"
-msgstr "האם אתה בטוח שברצונך לסגור את כל הלשוניות האחרות?"
+msgstr "לסגור את כל שאר הלשוניות?"
 
 #: src/konqmainwindow.cpp:2389 src/konqmainwindow.cpp:3421 src/konqtabs.cpp:335
 #, kde-format
 msgid "Close &Other Tabs"
-msgstr "סגור &את שאר הלשוניות"
+msgstr "סגי&רת שאר הלשוניות"
 
 #: src/konqmainwindow.cpp:2389
 #, kde-format
@@ -811,8 +811,8 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing other tabs will discard these changes."
 msgstr ""
-"לשונית זו מכילה שינויים שלא נשלחו.\n"
-"אם תנתק את הלשוניות האחרות השינויים ילכו לאיבוד."
+"לשונית זו מכילה שינויים שלא הוגשו.\n"
+"סגירת הלשוניות האחרות תוביל לאובדן השינויים."
 
 #: src/konqmainwindow.cpp:2427
 #, kde-format
@@ -820,8 +820,8 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Reloading all tabs will discard these changes."
 msgstr ""
-"לשונית זו מכילה שינויים שלא נשלחו.\n"
-"אם תרענן את כל הלשוניות השינויים ילכו לאיבוד."
+"לשונית זו מכילה שינויים שלא הוגשו.\n"
+"רענון כל הלשוניות יוביל לאובדן השינויים."
 
 #: src/konqmainwindow.cpp:2484
 #, kde-format
@@ -837,28 +837,28 @@ msgstr "<qt><b>%1</b> אינו תקין </qt>"
 #: src/konqmainwindow.cpp:2501
 #, kde-format
 msgid "Copy selected files from %1 to:"
-msgstr "העתק ה־%1 קבצים הנבחרים אל:"
+msgstr "העתקת הקבצים הנבחרים מ־%1 אל:"
 
 #: src/konqmainwindow.cpp:2514
 #, kde-format
 msgid "Move selected files from %1 to:"
-msgstr "העבר את ה־%1 קבצים הנבחרים אל:"
+msgstr "העברת הקבצים הנבחרים מ־%1 אל:"
 
 #: src/konqmainwindow.cpp:2682
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
-msgstr "נקה פריטים שנסגרו בהסטוריה"
+msgstr "פינוי פריטים שנסגרו מההיסטוריה"
 
 #: src/konqmainwindow.cpp:2704
 #, kde-format
 msgid "Save As..."
-msgstr "שמור בשם.."
+msgstr "שמירה בשם…"
 
 #: src/konqmainwindow.cpp:2706
 #, kde-format
 msgid "Manage..."
-msgstr "ניהול..."
+msgstr "ניהול…"
 
 #: src/konqmainwindow.cpp:3250
 #, kde-format
@@ -868,43 +868,43 @@ msgstr "&חלון חדש"
 #: src/konqmainwindow.cpp:3255
 #, kde-format
 msgid "&Duplicate Window"
-msgstr "ש&כפל חלון"
+msgstr "ש&כפול חלון"
 
 #: src/konqmainwindow.cpp:3260
 #, kde-format
 msgid "Send &Link Address..."
-msgstr "שלח כתובת ה&קישור..."
+msgstr "שליחת כתובת ה&קישור…"
 
 #: src/konqmainwindow.cpp:3264
 #, kde-format
 msgid "S&end File..."
-msgstr "ש&לח קובץ..."
+msgstr "ש&ליחת קובץ…"
 
 #: src/konqmainwindow.cpp:3268
 #, kde-format
 msgid "&Open Location"
-msgstr "&פתח מיקום"
+msgstr "&פתיחת מקום"
 
 #: src/konqmainwindow.cpp:3274
 #, kde-format
 msgid "&Open File..."
-msgstr "&פתח קובץ..."
+msgstr "&פתיחת קובץ…"
 
 #: src/konqmainwindow.cpp:3279
 #, kde-format
 msgid "&Find File..."
-msgstr "חפש &קבצים..."
+msgstr "חיפוש &קבצים…"
 
 #: src/konqmainwindow.cpp:3288
 #, kde-format
 msgid "Lock to Current Location"
-msgstr "נעל למיקום הנוכחי"
+msgstr "נעילה למקום הנוכחי"
 
 #: src/konqmainwindow.cpp:3291
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
-msgstr "&קשר תצוגה"
+msgstr "&קישור תצוגה"
 
 #: src/konqmainwindow.cpp:3296
 #, kde-format
@@ -914,7 +914,7 @@ msgstr "ל&מעלה"
 #: src/konqmainwindow.cpp:3306
 #, kde-format
 msgid "Closed Items"
-msgstr "פריטים סגורים"
+msgstr "פריטים שנסגרו"
 
 #: src/konqmainwindow.cpp:3319
 #, kde-format
@@ -942,22 +942,22 @@ msgstr "הצגת היסטוריה"
 #: src/konqmainwindow.cpp:3371
 #, kde-format
 msgid "Configure Extensions..."
-msgstr "הגדרת הרחבות..."
+msgstr "הגדרת הרחבות…"
 
 #: src/konqmainwindow.cpp:3375
 #, kde-format
 msgid "Configure Spell Checking..."
-msgstr "הגדרת בדיקת איות..."
+msgstr "הגדרת בדיקת איות…"
 
 #: src/konqmainwindow.cpp:3381
 #, kde-format
 msgid "Split View &Left/Right"
-msgstr "&פצל תצוגה לימין/שמאל"
+msgstr "&פיצול תצוגה לימין/שמאל"
 
 #: src/konqmainwindow.cpp:3386
 #, kde-format
 msgid "Split View &Top/Bottom"
-msgstr "פ&צל תצוגה מעלה/מטה"
+msgstr "פי&צול תצוגה מעלה/מטה"
 
 #: src/konqmainwindow.cpp:3391 src/konqtabs.cpp:456
 #, kde-format
@@ -967,105 +967,105 @@ msgstr "&לשונית חדשה"
 #: src/konqmainwindow.cpp:3400
 #, kde-format
 msgid "&Duplicate Current Tab"
-msgstr "&שכפל את הלשונית הנוכחית"
+msgstr "&שכפול הלשונית הנוכחית"
 
 #: src/konqmainwindow.cpp:3405
 #, kde-format
 msgid "Detach Current Tab"
-msgstr "נתק את הלשונית הנוכחית"
+msgstr "ניתוק הלשונית הנוכחית"
 
 #: src/konqmainwindow.cpp:3410
 #, kde-format
 msgid "&Close Active View"
-msgstr "&סגור את התצוגה הפעילה"
+msgstr "&סגירת התצוגה הפעילה"
 
 #: src/konqmainwindow.cpp:3415
 #, kde-format
 msgid "Close Current Tab"
-msgstr "סגור את הלשונית הנוכחית"
+msgstr "סגירת הלשונית הנוכחית"
 
 #: src/konqmainwindow.cpp:3425
 #, kde-format
 msgid "Activate Next Tab"
-msgstr "הפעל את הלשונית הבאה"
+msgstr "הפעלת הלשונית הבאה"
 
 #: src/konqmainwindow.cpp:3429
 #, kde-format
 msgid "Activate Previous Tab"
-msgstr "הפעל את הלשונית הקודמת"
+msgstr "הפעלת הלשונית הקודמת"
 
 #: src/konqmainwindow.cpp:3436
 #, kde-format
 msgid "Activate Tab %1"
-msgstr "הפעל את הלשונית %1"
+msgstr "הפעלת הלשונית %1"
 
 #: src/konqmainwindow.cpp:3441
 #, kde-format
 msgid "Move Tab Left"
-msgstr "הזז לשונית שמאלה"
+msgstr "הזזת לשונית שמאלה"
 
 #: src/konqmainwindow.cpp:3446
 #, kde-format
 msgid "Move Tab Right"
-msgstr "הזז לשונית ימינה"
+msgstr "הזזת לשונית ימינה"
 
 #: src/konqmainwindow.cpp:3454
 #, kde-format
 msgid "Dump Debug Info"
-msgstr "הטל מידע ניפוי באגים"
+msgstr "היטל פרטי ניפוי תקלות"
 
 #: src/konqmainwindow.cpp:3472
 #, kde-format
 msgid "&Reload"
-msgstr "&טען מחדש"
+msgstr "&רענון"
 
 #: src/konqmainwindow.cpp:3477 src/konqtabs.cpp:313
 #, kde-format
 msgid "&Reload All Tabs"
-msgstr "&טען מחדש את כל הלשוניות"
+msgstr "&רענון כל הלשוניות"
 
 #: src/konqmainwindow.cpp:3485
 #, kde-format
 msgid "&Force Reload"
-msgstr "&כפה טעינה מחדש"
+msgstr "&אילוץ טעינה מחדש"
 
 #: src/konqmainwindow.cpp:3510
 #, kde-format
 msgid "&Stop"
-msgstr "ע&צור"
+msgstr "ע&צירה"
 
 #: src/konqmainwindow.cpp:3519
 #, kde-format
 msgid "Throbber"
-msgstr ""
+msgstr "שבשבת טעינה"
 
 #: src/konqmainwindow.cpp:3523 src/konqmainwindow.cpp:3526
 #, kde-format
 msgid "L&ocation: "
-msgstr "מ&יקום: "
+msgstr "מ&קום: "
 
 #: src/konqmainwindow.cpp:3533
 #, kde-format
 msgid "Location Bar"
-msgstr "שורת מיקום"
+msgstr "שורת מקום"
 
 #: src/konqmainwindow.cpp:3539
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
-msgstr "<html>תיבת המיקום<br />הזן כתובת רשת או ביטוי לחיפוש.</html>"
+msgstr "<html>שורת המקום<br />נא למלא כתובת אתר או ביטוי לחיפוש.</html>"
 
 #: src/konqmainwindow.cpp:3543
 #, kde-format
 msgid "Clear Location Bar"
-msgstr "נקה את תיבת המיקום"
+msgstr "פינוי שורת המקום"
 
 #: src/konqmainwindow.cpp:3546
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
 "</html>"
-msgstr "<html>נקה את תיבת המיקום<br /> <br />מנקה את תוכן תיבת המיקום. </html>"
+msgstr "<html>פינוי שורת המקום<br /> <br />מפנה את שורת המקום. </html>"
 
 #: src/konqmainwindow.cpp:3551
 #, kde-format
@@ -1080,14 +1080,14 @@ msgstr "מ&בוא ל־Konqueror"
 #: src/konqmainwindow.cpp:3584
 #, kde-format
 msgid "Go"
-msgstr "עבור"
+msgstr "מעבר"
 
 #: src/konqmainwindow.cpp:3586
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
 "bar.</html>"
-msgstr "<html> עבור<br /><br />עובר לעמוד שהוזן לתיבת המיקום.  </html>"
+msgstr "<html> מעבר<br /><br />עובר לעמוד שהוצב בתיבת המקום.  </html>"
 
 #: src/konqmainwindow.cpp:3594
 #, kde-format
@@ -1096,8 +1096,8 @@ msgid ""
 "location is file:/home/%1 clicking this button will take you to file:/home.</"
 "html>"
 msgstr ""
-"<html>  כניסה לתיקיית האב<br /><br />לדוגמה, אם המיקום הנוכחי הוא file:/home/%1, "
-"לחיצה על כפתור זה תיקח אותך אל file:/home.  </html>"
+"<html>  כניסה לתיקיית האב<br /><br />לדוגמה, אם המקום הנוכחי הוא file:/home/%1, "
+"לחיצה על הכפתור תיקח אותך אל file:/home.  </html>"
 
 #: src/konqmainwindow.cpp:3597
 #, kde-format
@@ -1112,7 +1112,7 @@ msgstr "חזרה צעד אחד אחורה בהיסטוריית הגלישה"
 #: src/konqmainwindow.cpp:3602 src/konqmainwindow.cpp:3603
 #, kde-format
 msgid "Move forward one step in the browsing history"
-msgstr "דילוג צעד אחד קדימה בהיסטוריית הגלישה"
+msgstr "התקדמות צעד אחד קדימה בהיסטוריית הגלישה"
 
 #: src/konqmainwindow.cpp:3605 src/konqmainwindow.cpp:3606
 #, kde-format
@@ -1126,13 +1126,13 @@ msgid ""
 "example, be needed to refresh web pages that have been modified since they "
 "were loaded, in order to make the changes visible.</html>"
 msgstr ""
-"<html> טעינה מחדש של המסמך המוצג כרגע<br /><br />דבר זה עשוי להיות נחוץ למשל לצורך "
-"רענון דפי אינטרנט שהשתנו מאז שהם נטענו, וזאת במטרה לראות את השינויים.  </html>"
+"<html> רענון המסמך שמוצג כרגע<br /><br />פעולה זו עשויה להיות נחוצה למשל לצורך "
+"רענון דפי אינטרנט שהשתנו מאז שנטענו, כדי להציג את השינויים.  </html>"
 
 #: src/konqmainwindow.cpp:3611
 #, kde-format
 msgid "Reload the currently displayed document"
-msgstr "טעינה מחדש של המסמך המוצג כרגע"
+msgstr "טעינת המסמך המוצג כרגע מחדש"
 
 #: src/konqmainwindow.cpp:3613
 #, kde-format
@@ -1141,13 +1141,14 @@ msgid ""
 "for example, be needed to refresh web pages that have been modified since "
 "they were loaded, in order to make the changes visible.</html>"
 msgstr ""
-"<html> עינה מחדש של המסמך המוצג כרגע<br /><br />דבר זה עשוי להיות נחוץ למשל לצורך "
-"רענון דפי אינטרנט שהשתנו מאז שהם נטענו, וזאת במטרה לראות את השינויים.  </html>"
+"<html>טעינת המסמכים שמוצגים כרגע בלשוניות מחדש<br /><br />פעולה זו יכולה "
+"להיות נחוצה לרענון דפי אינטרנט שהשתנו מאז שנטענו, כדי להציג את השינויים.</"
+"html>"
 
 #: src/konqmainwindow.cpp:3616
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
-msgstr "טעינה מחדש של המסמכים שבלשוניות"
+msgstr "טעינת כל המסמכים שבלשוניות מחדש"
 
 #: src/konqmainwindow.cpp:3618
 #, kde-format
@@ -1156,25 +1157,25 @@ msgid ""
 "stopped and Konqueror will display the content that has been received so far."
 "</html>"
 msgstr ""
-"<html>  עצירת טעינת המסמך<br /><br /> כל העברות הרשת ייעצרו, ו־Konqueror יציג את "
+"<html>  עצירת טעינת המסמך<br /><br /> כל העברות הרשת תיעצרנה, ו־Konqueror יציג את "
 "התוכן שהתקבל עד כה.  </html>"
 
 #: src/konqmainwindow.cpp:3622
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
 "example, be needed to refresh web pages that have been modified since they "
 "were loaded, in order to make the changes visible. Any images on the page "
 "are downloaded again, even if cached copies exist.</html>"
 msgstr ""
-"<html> טעינה מחדש של המסמך המוצג כרגע<br /><br />דבר זה עשוי להיות נחוץ למשל לצורך "
-"רענון דפי אינטרנט שהשתנו מאז שהם נטענו, וזאת במטרה לראות את השינויים.  </html>"
+"<html> רענון המסמך שמוצג כרגע<br /><br />פעולה זו יכולה להיות נחוצה למשל לצורך "
+"רענון דפי אינטרנט שהשתנו מאז שנטענו, כדי להציג את השינויים.  </html>"
 
 #: src/konqmainwindow.cpp:3626
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
-msgstr "אכוף טעינה מחדש של המסמך הטעון כרגע וכל התמונות המוכלות בו"
+msgstr "אילוץ טעינה מחדש של המסמך שמוצג כרגע על כל התמונות שבו"
 
 #: src/konqmainwindow.cpp:3628
 #, kde-format
@@ -1188,14 +1189,14 @@ msgid ""
 "clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
 "Konqueror and other KDE applications.</html>"
 msgstr ""
-"<html>  גזירת הטקסט או הפריטים הנבחרים והעברתם אל לוח העריכה של המערכת<br /><br /> "
-"דבר זה הופך אותם למוכנים לשימוש עם פקודת ה<b>הדבקה</b> ב־Konqueror וביישומים "
-"אחרים  של KDE.  </html>"
+"<html>  גזירת הטקסט או הפריטים הנבחרים והעברתם ללוח הגזירים של המערכת<br /><br /> "
+"פעולה זו מנגישה אותם לפקודת ה<b>הדבקה</b> ב־Konqueror וביישומים אחרים של "
+"KDE.  </html>"
 
 #: src/konqmainwindow.cpp:3634
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
-msgstr "העברת הטקסט או הפריטים הנבחרים אל לוח העריכה"
+msgstr "העברת הטקסט או הפריטים הנבחרים אל לוח הגזירים"
 
 #: src/konqmainwindow.cpp:3636
 #, kde-format
@@ -1204,14 +1205,13 @@ msgid ""
 "clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
 "Konqueror and other KDE applications.</html>"
 msgstr ""
-"<html>  העתקת הטקסט או הפריטים הנבחרים אל לוח העריכה של המערכת<br /><br />דבר זה "
-"הופך אותם למוכנים לשימוש עם פקודת ה<b>הדבקה</b> ב־Konqueror וביישומים אחרים "
-"של KDE.  </html>"
+"<html>  העתקת הטקסט או הפריטים הנבחרים אל לוח הגזירים של המערכת<br /><br />פעולה זו "
+"מנגישה אותם לפקודת ה<b>הדבקה</b> ב־Konqueror וביישומים אחרים של KDE.  </html>"
 
 #: src/konqmainwindow.cpp:3640
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
-msgstr "העתקת הטקסט או הפריטים הנבחרים אל לוח העריכה"
+msgstr "העתקת הטקסט או הפריטים הנבחרים אל לוח הגזירים"
 
 #: src/konqmainwindow.cpp:3642
 #, kde-format
@@ -1219,13 +1219,13 @@ msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
 "also works for text copied or cut from other KDE applications.</html>"
 msgstr ""
-"<html>  הדבקת תוכן לוח העריכה שנגזר או הועתק מקודם<br /><br />דבר זה עובד גם עם טקסט "
-"שהועתק או נגזר מיישומים אחרים של KDE.  </html>"
+"<html>  הדבקת תוכן לוח הגזירים שנגזר או הועתק מקודם<br /><br />דבר זה עובד גם עם "
+"טקסט שהועתק או נגזר מיישומים אחרים של KDE.  </html>"
 
 #: src/konqmainwindow.cpp:3645
 #, kde-format
 msgid "Paste the clipboard contents"
-msgstr "הדבקת תוכן לוח העריכה"
+msgstr "הדבקת תוכן לוח הגזירים"
 
 #: src/konqmainwindow.cpp:3647
 #, kde-format
@@ -1236,7 +1236,7 @@ msgid ""
 "also provides access to special KDE printing services such as creating a PDF "
 "file from the current document.</html>"
 msgstr ""
-"<html>  הדפסת המסמך המוצג כרגע<br /><br />יוצג בפניך חלון בו תוכל להגדיר אפשרויות "
+"<html>  הדפסת המסמך המוצג כרגע<br /><br />יוצג בפניך חלון בו אפשר להגדיר אפשרויות "
 "שונות, כמו למשל מספר העותקים שיש להדפיס ובאיזו מדפסת יש להשתמש.<br /><br /"
 ">חלון זה נותן גם גישה לשירותי הדפסה מיוחדים של KDE, שירותים כמו יצירת קובץ "
 "PDF מהמסמך הנוכחי.  </html>"
@@ -1252,8 +1252,8 @@ msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
 "explore many files from one folder"
 msgstr ""
-"תצוגה נעולה לא יכולה לעבור תיקיות. השתמש בה בשילוב עם \"תצוגה מקושרת\" כדי "
-"לסייר בין קבצים רבים מאותה התיקייה"
+"תצוגה נעולה לא יכולה לעבור בין תיקיות. יש להשתמש בה בשילוב עם ‚תצוגה מקושרת’ "
+"כדי לסייר בין קבצים רבים מאותה התיקייה"
 
 #: src/konqmainwindow.cpp:3656
 #, kde-format
@@ -1261,7 +1261,7 @@ msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
 "other linked views."
 msgstr ""
-"מגדיר את התצוגה כ\"מקושרת\". תצוגה מקושרת עוקבת אחר החלפות ספריות המבוצעות "
+"מגדיר את התצוגה כ‚מקושרת’. תצוגה מקושרת עוקבת אחר מעבר בין תיקיות שמתבצעות "
 "בתצוגות מקושרות אחרות."
 
 #: src/konqmainwindow.cpp:3660
@@ -1275,36 +1275,36 @@ msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
+"<html>מציג את הכלים למפתחים לעמוד הנוכחי<br/><br/>התצוגה הנוכחית מפוצלת "
+"לשתיים והכלים למפתחים מוצגים בחצי השני"
 
 #: src/konqmainwindow.cpp:3662
 #, kde-format
 msgid "Shows the developer tools for the current page"
-msgstr ""
+msgstr "מציג את הכלים למפתחים לעמוד הנוכחי"
 
 #: src/konqmainwindow.cpp:3824
 #, kde-format
 msgid "Copy &Files..."
-msgstr "העתקת &קבצים..."
+msgstr "העתקת &קבצים…"
 
 #: src/konqmainwindow.cpp:3828
 #, kde-format
 msgid "M&ove Files..."
-msgstr "העברת קב&צים..."
+msgstr "העברת קב&צים…"
 
 #: src/konqmainwindow.cpp:4170
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
 "while. Continue?"
-msgstr ""
-"אתה ביקשת לפתוח יותר מ־20 סימניות בלשוניות. ייתכן כי זה ייקח זמן מה. האם "
-"להמשיך?"
+msgstr "ביקשת לפתוח יותר מ־20 סימניות בלשוניות. זה עלול לארוך זמן מה. להמשיך?"
 
 #: src/konqmainwindow.cpp:4172
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
-msgstr "לפתחות תיקיית סימניות בלשוניות חדשות"
+msgstr "לפתוח תיקיית סימניות בלשוניות חדשות"
 
 #: src/konqmainwindow.cpp:4173
 #, kde-format
@@ -1315,7 +1315,7 @@ msgstr "פתיחה"
 #: src/konqmainwindow.cpp:4348
 #, kde-format
 msgid "Open in T&his Window"
-msgstr "פתח ב&חלון זה"
+msgstr "פתיחה ב&חלון זה"
 
 #: src/konqmainwindow.cpp:4349
 #, kde-format
@@ -1330,22 +1330,22 @@ msgstr "פתיחת המסמך בחלון חדש"
 #: src/konqmainwindow.cpp:4362
 #, kde-format
 msgid "Open in &New Tab"
-msgstr "פתח ב&לשונית חדשה"
+msgstr "פתיחה ב&לשונית חדשה"
 
 #: src/konqmainwindow.cpp:4364
 #, kde-format
 msgid "Open the document in a new tab"
-msgstr "פתח את המסמך בלשונית חדשה"
+msgstr "פתיחת המסמך בלשונית חדשה"
 
 #: src/konqmainwindow.cpp:4587
 #, kde-format
 msgid "&Open With"
-msgstr "&פתח באמצעות"
+msgstr "&פתיחה עם"
 
 #: src/konqmainwindow.cpp:4600
 #, kde-format
 msgid "Open with %1"
-msgstr "פתח באמצעות %1"
+msgstr "פתיחה עם %1"
 
 #: src/konqmainwindow.cpp:4647
 #, kde-format
@@ -1357,7 +1357,7 @@ msgstr "מצב &תצוגה"
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
-msgstr "יש בחלון זה מספר לשוניות פתוחות, האם אתה בטוח שברצונך לצאת מהתכנית?"
+msgstr "יש בחלון זה מספר לשוניות פתוחות, בכל זאת לצאת מהתכנית?"
 
 #: src/konqmainwindow.cpp:4770
 #, kde-format
@@ -1368,7 +1368,7 @@ msgstr "אישור"
 #: src/konqmainwindow.cpp:4772
 #, kde-format
 msgid "C&lose Current Tab"
-msgstr "&סגור את הלשונית הנוכחית"
+msgstr "ל&סגור את הלשונית הנוכחית"
 
 #: src/konqmainwindow.cpp:4800
 #, kde-format
@@ -1376,8 +1376,8 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
-"לשונית זו מכילה שינויים שלא נשלחו.\n"
-"אם תסגור את החלון השינויים ילכו לאיבוד."
+"לשונית זו מכילה שינויים שלא הוגשו.\n"
+"סגירת החלון תוביל לאובדן השינויים."
 
 #: src/konqmainwindow.cpp:4801
 #, kde-format
@@ -1385,14 +1385,14 @@ msgid ""
 "This page contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
-"עמוד זה מכיל שינויים שלא נשלחו.\n"
-"אם תסגור את החלון השינויים ילכו לאיבוד."
+"דף זה מכיל שינויים שלא הוגשו.\n"
+"סגירת החלון תוביל לאובדן השינויים."
 
 #: src/konqmainwindow.cpp:4961
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
-msgstr "סרגל הצד שלך לא מתפקד או אינו זמין. לא ניתן להוסיף רשומה חדשה."
+msgstr "סרגל הצד שלך לא מתפקד או שאינו זמין. לא ניתן להוסיף רשומה חדשה."
 
 #: src/konqmainwindow.cpp:4961 src/konqmainwindow.cpp:4968
 #, kde-format
@@ -1403,17 +1403,17 @@ msgstr "סרגל צד מקוון"
 #: src/konqmainwindow.cpp:4966
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
-msgstr "להוסיף הרחבת רשת חדשה \"%1\" לסרגל הצד?"
+msgstr "להוסיף הרחבת דפדפן חדשה „%1” לסרגל הצד שלך?"
 
 #: src/konqmainwindow.cpp:4968
 #, kde-format
 msgid "Add"
-msgstr "הוסף"
+msgstr "להוסיף"
 
 #: src/konqmainwindow.cpp:4968
 #, kde-format
 msgid "Do Not Add"
-msgstr "אל תוסיף"
+msgstr "לא להוסיף"
 
 #: src/konqmainwindow.cpp:5316
 #, kde-format
@@ -1421,8 +1421,8 @@ msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
 "with %1, but it cannot handle this file type."
 msgstr ""
-"עושה רושם שישנה בעיה בהגדרות. Konqueror שויך ל־%1, אך אין באפשרותו לטפל בסוג "
-"קובץ זה."
+"נראה שיש בעיה בהגדרות. Konqueror שויך ל־%1, אך אין באפשרותו לטפל בסוג קובץ "
+"זה."
 
 #: src/konqmainwindow.cpp:5401
 #, kde-format
@@ -1436,11 +1436,18 @@ msgid ""
 "proxy URL manually in the settings dialog. Do you want to change proxy "
 "settings now?"
 msgstr ""
+"אי אפשר להשתמש בהגדרות המתווך שלך עם מנוע ה־HTML‏ QtWebEngine. לא ייעשה שימוש "
+"במתווך\n"
+"\n"
+"‏QtWebEngine תומך רק במתווך קבוע, לכן הגדרות מתווך אוטומטיות (PAC) ופרוטוקול "
+"גילוי מתווך אינטרנט אוטומטי אינם מתאימים לשימוש עם QtWebEngine. כדי להשתמש "
+"במתווך נא לבחור את הגדרות המתווך של המערכת לא לציין כתובת של מתווך ידנית "
+"בחלונית ההגדרות. לשנות את הגדרות המתווך כעת?"
 
 #: src/konqmainwindow.cpp:5406
 #, kde-format
 msgid "Unsupported proxy configuration"
-msgstr ""
+msgstr "הגדרות המתווך לא נתמכות"
 
 #: src/konqmainwindow.cpp:5406
 #, kde-format
@@ -1450,7 +1457,7 @@ msgstr "לא להשתמש במתווך"
 #: src/konqmainwindow.cpp:5407 src/konqmainwindow.cpp:5451
 #, kde-format
 msgid "Show proxy configuration dialog"
-msgstr ""
+msgstr "הצגת חלונית הגדרות מתווך"
 
 #: src/konqmainwindow.cpp:5447
 #, kde-format
@@ -1460,21 +1467,25 @@ msgid ""
 "protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
+"יש להשתמש בהגדרות המתווך שלך עם מנוע ה־HTML‏ QtWebEngine כיוון שאינו תומך "
+"במתווכים שונים לפרוטוקולים HTTP ו־HTTPS. ההגדרות הנוכחיות שלך הן:<p><b>מתווך "
+"HTTP:</b> <tt>%1</tt></p><p><b>מתווך HTTPS: </b><tt>%2</tt></p> איך להמשיך "
+"מכאן?"
 
 #: src/konqmainwindow.cpp:5450
 #, kde-format
 msgid "Conflicting proxy configuration"
-msgstr ""
+msgstr "הגדרות מתווך סותרות"
 
 #: src/konqmainwindow.cpp:5451
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
-msgstr ""
+msgstr "להשתמש במתווך HTTP (רק הפעם)"
 
 #: src/konqmainwindow.cpp:5451
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
-msgstr ""
+msgstr "להשתמש במתווך HTTPS (רק הפעם)"
 
 #: src/konqmainwindow.cpp:5467
 #, kde-format
@@ -1483,6 +1494,8 @@ msgid ""
 "hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
 "Mode (%1)"
 msgstr ""
+"עברת למצב מסך מלא מוחלט (ממשק המשתמש מוסתר לחלוטין. אפשר לצאת בלחיצה על "
+"קיצור המקשים למצב מסך מלא (%1)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
@@ -1530,7 +1543,7 @@ msgstr "שמירת הפעלה"
 #, kde-format
 msgid ""
 "A session with the name '%1' already exists, do you want to overwrite it?"
-msgstr "כבר קיימת הפעלה עם שם \"%1\", האם ברצונך לשכתב אותה?"
+msgstr "כבר קיימת הפעלה בשם „%1”, לשכתב אותה?"
 
 #: src/konqsessiondlg.cpp:252
 #, kde-format
@@ -1543,7 +1556,7 @@ msgstr "ההפעלה קיימת. לשכתב?"
 #, kde-format
 msgctxt "@action:button New session"
 msgid "New..."
-msgstr "חדש..."
+msgstr "חדש…"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
 #: src/konqsessiondlg_base.ui:33
@@ -1557,14 +1570,14 @@ msgstr "שמירת הנוכחית…"
 #, kde-format
 msgctxt "@action:button Rename session"
 msgid "Rename..."
-msgstr "שנה שם..."
+msgstr "שינוי שם…"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
 #: src/konqsessiondlg_base.ui:47
 #, kde-format
 msgctxt "@action:button Delete session"
 msgid "Delete"
-msgstr "מחק"
+msgstr "מחיקה"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
 #. i18n: ectx: label, entry, group (Trash)
@@ -1584,13 +1597,13 @@ msgstr "לשחזר הפעלה?"
 msgid ""
 "Konqueror did not close correctly. Would you like to restore these previous "
 "sessions?"
-msgstr "Konqueror לא נסגר כראוי. לשחזר את ההפעלות הקודמות שלו?"
+msgstr "Konqueror לא נסגר כראוי. לשחזר את ההפעלות הקודמות האלו שלו?"
 
 #: src/konqsessionmanager.cpp:134
 #, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions you do not want to be restored"
-msgstr ""
+msgstr "יש לבטל את הסימון מההפעלות שלא צריכות להשתחזר"
 
 #: src/konqsessionmanager.cpp:167
 #, kde-format
@@ -1607,7 +1620,7 @@ msgstr "לא לשאול שוב"
 #, kde-format
 msgctxt "@action:button yes"
 msgid "Restore Session"
-msgstr "שחזור הפעלה"
+msgstr "לשחזר הפעלה"
 
 #: src/konqsessionmanager.cpp:220
 #, kde-format
@@ -1646,45 +1659,45 @@ msgid ""
 "over the tab to see the full title, in case it has been shortened to fit the "
 "tab width."
 msgstr ""
-"סרגל זה מכיל את הרשימה של הלשוניות הפתוחות כעת. לחץ על לשונית כדי להפוך אותה "
-"לפעילה. באפשרותך להשתמש במקשי המקלדת כדי לנווט בלשוניות. הטקסט בלשונית מציג "
-"את התוכן שפתוח בו כרגע, העבר את העכבר מעליו כדי לראות את השם המלא שלו, אם "
-"השם המלא לא נכנס במלואו בלשונית והוא נקטע."
+"הסרגל הזה מכיל את רשימת הלשוניות הפתוחות. לחיצה על לשונית מפעילה אותה. אפשר "
+"להשתמש במקשי הקיצור כדי לנווט בין לשוניות. הטקסט על הלשונית מציג את התוכן "
+"שפתוח בה כרגע, יש להציב את העכבר על הלשונית כדי לצפות בכותרת המלאה אם קוצרה "
+"כדי להתאים לרוחב הלשונית."
 
 #: src/konqtabs.cpp:85
 #, kde-format
 msgid "Open a new tab"
-msgstr "פתח לשונית חדשה"
+msgstr "פתיחת לשונית חדשה"
 
 #: src/konqtabs.cpp:94
 #, kde-format
 msgid "Close the current tab"
-msgstr "סגור את הלשונית הנוכחית"
+msgstr "סגירת הלשונית הנוכחית"
 
 #: src/konqtabs.cpp:461
 #, kde-format
 msgid "&Duplicate Tab"
-msgstr "&שכפל לשונית"
+msgstr "&שכפול לשונית"
 
 #: src/konqtabs.cpp:466
 #, kde-format
 msgid "&Reload Tab"
-msgstr "&טען מחדש את הלשונית"
+msgstr "&רענון הלשונית"
 
 #: src/konqtabs.cpp:473
 #, kde-format
 msgid "Other Tabs"
-msgstr "כרטיסיות אחרות"
+msgstr "לשוניות אחרות"
 
 #: src/konqtabs.cpp:478
 #, kde-format
 msgid "D&etach Tab"
-msgstr "&נתק לשונית"
+msgstr "&ניתוק לשונית"
 
 #: src/konqtabs.cpp:484
 #, kde-format
 msgid "&Close Tab"
-msgstr "&סגור לשונית"
+msgstr "&סגירת לשונית"
 
 #. i18n: ectx: label, entry, group (UserSettings)
 #: src/konqueror.kcfg:11
@@ -1696,7 +1709,7 @@ msgstr "עמוד פתיחה"
 #: src/konqueror.kcfg:12
 #, kde-format
 msgid "This is the URL of the web page where Konqueror will start from."
-msgstr ""
+msgstr "זאת כתובת עמוד האתר ממנה יתחיל Konqueror."
 
 #. i18n: ectx: whatsthis, entry, group (UserSettings)
 #: src/konqueror.kcfg:17
@@ -1704,7 +1717,7 @@ msgstr ""
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \\"
 "\"Home\\\" button is pressed."
-msgstr ""
+msgstr "זאת כתובת עמוד האתר אליה יקפוץ Konqueror בלחיצה על כפתור „בית”."
 
 #. i18n: ectx: label, entry, group (UndoManagerSettings)
 #: src/konqueror.kcfg:26
@@ -1719,12 +1732,14 @@ msgid ""
 "This sets the maximum number of closed items that will be stored in memory. "
 "This limit will not be surpassed."
 msgstr ""
+"הגדרה זו קובעת את המספר המרבי של פריטים שנסגרו שיאוחסנו בזיכרון. אי אפשר "
+"לעבור את המגבלה הזאת."
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #: src/konqueror.kcfg:36
 #, kde-format
 msgid "Open folders in separate windows"
-msgstr "פתיחת תיקיות בחלונות נפקדים"
+msgstr "פתיחת תיקיות בחלונות נפרדים"
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:37
@@ -1733,12 +1748,14 @@ msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
 "folder, rather than showing that folder's contents in the current window."
 msgstr ""
+"אם אפשרות זו מסומנת, Konqueror יפתח חלון חדש בעת פתיחת תיקייה במקום להציג את "
+"תוכן התיקייה הזו בחלון הנוכחי."
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #: src/konqueror.kcfg:42
 #, kde-format
 msgid "Show file tips"
-msgstr "הצגת עצות קובץ"
+msgstr "הצגת עצות קבצים"
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:43
@@ -1747,6 +1764,8 @@ msgid ""
 "Here you can control if, when moving the mouse over a file, you want to see "
 "a small popup window with additional information about that file"
 msgstr ""
+"כאן ניתן לשלוט, בעת מעבר עם העכבר מעל קובץ, האם להציג חלונית קטנה עם מידע "
+"נוסף על הקובץ הזה"
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #: src/konqueror.kcfg:54
@@ -1761,12 +1780,14 @@ msgid ""
 "Here you can control if you want the popup window to contain a larger "
 "preview for the file, when moving the mouse over it"
 msgstr ""
+"כאן אפשר לשלוט האם החלון הקובץ יכיל תצוגה מקדימה גדולה יותר של הקובץ "
+"כשמעבירים מעליו את העכבר"
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #: src/konqueror.kcfg:60
 #, kde-format
 msgid "Show 'Delete' menu entries which bypass the trashcan"
-msgstr ""
+msgstr "להציג רשומות ‚מחיקה’ בתפריט שעוקפות את סל האשפה"
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:61
@@ -1776,19 +1797,22 @@ msgid ""
 "and in the file manager's menus and context menus. You can always delete "
 "files when hidden by holding the Shift key while calling 'Move to Trash'."
 msgstr ""
+"יש לסמן כדי שתופיע פקודת ‚מחיקה’ בתפריטי ההקשר ובתפריטי שולחן העבודה ומנהל "
+"הקבצים. תמיד ניתן למחוק קבצים כשהם מוסתרים על ידי החזקת מקש Shift תוך כדי "
+"קריאה לפריט ‚העברה לאשפה’."
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:149
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "נא לבחור איפה להציג את סרגל הלשוניות"
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:153 src/konqueror.kcfg:154
 #, kde-format
 msgid "Number of Open With items in the File menu"
-msgstr ""
+msgstr "מספר הפריטים ל‚פתיחה עם’ בתפריט קובץ"
 
 #. i18n: ectx: label, entry, group (HTML Settings)
 #: src/konqueror.kcfg:163
@@ -1800,19 +1824,19 @@ msgstr "גופן תקני"
 #: src/konqueror.kcfg:164
 #, kde-format
 msgid "This is the font used to display text in Konqueror windows."
-msgstr ""
+msgstr "זה הגופן שישמש להצגת טקסט בחלונות של Konqueror."
 
 #. i18n: ectx: label, entry, group (HistorySettings)
 #: src/konqueror.kcfg:314
 #, kde-format
 msgid "Maximum number of history items per view"
-msgstr ""
+msgstr "מספר פריטי ההיסטוריה המרבי לתצוגה"
 
 #. i18n: ectx: label, entry, group (Trash)
 #: src/konqueror.kcfg:504
 #, kde-format
 msgid "Ask confirmation for deleting a file."
-msgstr ""
+msgstr "בקשת אישור לפני מחיקת קובץ."
 
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: src/konqueror.kcfg:505
@@ -1822,12 +1846,14 @@ msgid ""
 "delete a file without using the trash folder. Warning, deleted files can not "
 "be recovered, so it is recommended to leave this confirmation enabled."
 msgstr ""
+"אפשרות זו אומרת ל־Konqueror האם לבקש אישור למחוק קובץ מבלי להשתמש בתיקיית "
+"האשפה. אזהרה, אי אפשר לשחזר קבצים שנמחקו, מומלץ להשאיר את האישור הזה פעיל."
 
 #. i18n: ectx: label, entry, group (Trash)
 #: src/konqueror.kcfg:510
 #, kde-format
 msgid "Ask confirmation for move to trash"
-msgstr ""
+msgstr "בקשת אישור להעברה לאשפה"
 
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: src/konqueror.kcfg:511
@@ -1836,6 +1862,8 @@ msgid ""
 "This option tells Konqueror whether to ask for a confirmation when you move "
 "the file to your trash folder, from where it can be recovered very easily."
 msgstr ""
+"האפשרות הזאת אומרת ל־Konqueror האם לבקש אישור להעברת קובץ לאשפה, ממנה ניתן "
+"לשחזרו בקלות."
 
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: src/konqueror.kcfg:518
@@ -1844,6 +1872,8 @@ msgid ""
 "If true, when opening a session from within the sessions dialog the tabs "
 "will be opened inside current window."
 msgstr ""
+"אם אמת/true, בעת פתיחת ההפעלה הזאת מחלונית ההפעלות הלשוניות תיפתחנה בתוך "
+"החלון הנוכחי."
 
 #. i18n: ectx: Menu (file)
 #: src/konqueror.rc:5
@@ -1855,7 +1885,7 @@ msgstr "&קובץ"
 #: src/konqueror.rc:24
 #, kde-format
 msgid "&Edit"
-msgstr "&ערוך"
+msgstr "&עריכה"
 
 #. i18n: ectx: Menu (view)
 #: src/konqueror.rc:33
@@ -1867,7 +1897,7 @@ msgstr "&תצוגה"
 #: src/konqueror.rc:44
 #, kde-format
 msgid "&Go"
-msgstr "&מעבר"
+msgstr "מ&עבר"
 
 #. i18n: ectx: Menu (tools)
 #: src/konqueror.rc:54
@@ -1879,7 +1909,7 @@ msgstr "&כלים"
 #: src/konqueror.rc:59
 #, kde-format
 msgid "&Settings"
-msgstr "&הגדרות"
+msgstr "ה&גדרות"
 
 #. i18n: ectx: Menu (window)
 #: src/konqueror.rc:78
@@ -1891,7 +1921,7 @@ msgstr "&חלון"
 #: src/konqueror.rc:94
 #, kde-format
 msgid "&Help"
-msgstr "&עזרה"
+msgstr "ע&זרה"
 
 #. i18n: ectx: ToolBar (mainToolBar)
 #: src/konqueror.rc:99
@@ -1909,7 +1939,7 @@ msgstr "סרגל כלים נוסף"
 #: src/konqueror.rc:117
 #, kde-format
 msgid "Location Toolbar"
-msgstr "שורת מיקום"
+msgstr "סרגל מקום"
 
 #. i18n: ectx: ToolBar (bookmarkToolBar)
 #: src/konqueror.rc:123
@@ -1920,13 +1950,13 @@ msgstr "סרגל סימניות"
 #: src/konqundomanager.cpp:91 src/konqundomanager.cpp:253
 #, kde-format
 msgid "Und&o: Closed Tab"
-msgstr "&ביטול: לשונית סגורה"
+msgstr "ה&סגה: לשונית נסגרה"
 
 #: src/konqundomanager.cpp:93 src/konqundomanager.cpp:104
 #: src/konqundomanager.cpp:148
 #, kde-format
 msgid "Und&o: Closed Window"
-msgstr "&ביטול: חלון סגור"
+msgstr "ה&סגה: חלון נסגר"
 
 #: src/konqundomanager.cpp:106
 #, kde-format
@@ -1940,8 +1970,8 @@ msgid ""
 "resend the data, any action the form carried out (such as search or online "
 "purchase) will be repeated. "
 msgstr ""
-"הדף שאתה מנסה להציג מהווה תוצר של נתוני טופס שנשלחו. אם תשלח שוב את הנתונים, "
-"כל פעולה שהטופס ביצע (למשל, חיפוש או קנייה מקוונת) תבוצע שוב. "
+"הדף שמיועד להצגה הוא תוצאה של נתוני טופס שהוגשו. שליחת הנתונים מחדש, תחזור "
+"על הפעולות שביצע הטופס (כגון חיפוש או רכישה מקוונת)."
 
 #: src/konqview.cpp:1372
 #, kde-format
@@ -1952,19 +1982,19 @@ msgstr "אזהרה"
 #: src/konqview.cpp:1372
 #, kde-format
 msgid "Resend"
-msgstr "שלח שוב"
+msgstr "לשלוח שוב"
 
 #: src/urlloader.cpp:387
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
-msgstr "הפעלה"
+msgstr "להפעיל"
 
 #: src/urlloader.cpp:389
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
-msgstr "תצוגה"
+msgstr "להציג"
 
 #: src/urlloader.cpp:396
 #, kde-kuit-format
