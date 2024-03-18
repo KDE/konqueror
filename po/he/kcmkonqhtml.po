@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-11 00:37+0000\n"
-"PO-Revision-Date: 2024-03-14 15:08+0200\n"
+"PO-Revision-Date: 2024-03-17 09:13+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -692,7 +692,7 @@ msgstr ""
 #: cookies/kcookiespolicyselectiondlg.ui:25
 #, kde-format
 msgid "Site name:"
-msgstr ""
+msgstr "שם האתר:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:38
@@ -869,7 +869,7 @@ msgstr "גופן בסיסי:"
 #: css/csscustom.ui:37
 #, kde-format
 msgid "<p>This is the currently selected font family</p>"
-msgstr "<p>זהו סוג הגופן הנבחר</p>"
+msgstr "<p>זה סוג הגופן הנבחר</p>"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
 #: css/csscustom.ui:44
@@ -1161,7 +1161,7 @@ msgstr ""
 "לקרוא עקב עיצוב קלוקל."
 
 #: css/kcmcss.cpp:336
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<html>\n"
 "<head>\n"
@@ -1184,15 +1184,23 @@ msgid ""
 "</html>\n"
 msgstr ""
 "<html>\n"
-"\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
 "<h1>כותרת 1</h1><br/>\n"
 "<h2>כותרת 2</h2><br/>\n"
 "<h3>כותרת 3</h3><br/>\n"
 "\n"
 "<p>גיליונות סגנון מוגדרים על ידי משתמש\n"
-"מאפשרים יתר נגישות לאנשים עם מגבלות\n"
+"מאפשרים נגישות משופרת לאנשים עם לקות\n"
 "ראיה.</p>\n"
 "\n"
+"</body>\n"
 "</html>\n"
 
 #: domainlistview.cpp:37
@@ -1294,10 +1302,10 @@ msgstr ""
 #, kde-format
 msgid " day"
 msgid_plural " days"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] " יום"
+msgstr[1] " ימים"
+msgstr[2] " ימים"
+msgstr[3] " ימים"
 
 #: filteropts.cpp:124
 #, kde-format
@@ -1436,7 +1444,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
-msgstr "הצג את עמוד המבוא"
+msgstr "הצגת עמוד ההיכרות"
 
 #: generalopts.cpp:72
 #, kde-format
@@ -1448,13 +1456,13 @@ msgstr "הצגת עמוד הפתיחה שלי"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
-msgstr "הצג עמוד ריק"
+msgstr "הצגת עמוד ריק"
 
 #: generalopts.cpp:74
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
-msgstr "הצג את הסימניות שלי"
+msgstr "הצגת הסימניות שלי"
 
 #: generalopts.cpp:80
 #, kde-format
@@ -1479,14 +1487,11 @@ msgid "Select Home Page"
 msgstr "בחירת עמוד הבית"
 
 #: generalopts.cpp:104
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
 "\" button is pressed."
-msgstr ""
-"זו כתובת ה-URL של דף האינטרנט אליו Konqueror (כדפדפן רשת) יוביל בעת לחיצה על "
-"כפתור \"בית\". כאשר Konqueror מופעל כמנהל קבצים, כפתור זה יוביל לספריית הבית "
-"המקומית."
+msgstr "זאת כתובת עמוד האתר אליה יקפוץ Konqueror בלחיצה על כפתור „בית”."
 
 #: generalopts.cpp:112
 #, kde-format
@@ -1521,7 +1526,7 @@ msgstr "&סימניות"
 #: htmlopts.cpp:38
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
-msgstr "בקש עבור שם ותיקייה כאשר אתה מוסיף לסימניות"
+msgstr "לבקש שם ותיקייה בהוספת סימניות"
 
 #: htmlopts.cpp:41
 #, kde-format
@@ -1530,8 +1535,8 @@ msgid ""
 "bookmark and choose a folder in which to store it when you add a new "
 "bookmark."
 msgstr ""
-"בחר באפשרות זו, כדי לשנות את הכתרת של הסימנייה ולבחור תיקייה לשמירה כאשר אתה "
-"מוסיף סימנייה."
+"אם התיבה הזאת מסומנת, Konqueror יאפשר לשנות את כותרת הסימנייה ולבחור בתיקייה "
+"לאחסן אותה בעת הוספת סימנייה חדשה."
 
 #: htmlopts.cpp:47
 #, kde-format
@@ -1710,13 +1715,13 @@ msgid "Shu&tdown applet server when inactive for more than"
 msgstr "כבה את שרת היישומוני&ם כשאין פעילות במשל"
 
 #: javaopts.cpp:117
-#, fuzzy, kde-format
+#, kde-format
 msgid " second"
 msgid_plural " seconds"
-msgstr[0] " שניות"
+msgstr[0] " שנייה"
 msgstr[1] " שניות"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[2] " שניות"
+msgstr[3] " שניות"
 
 #: javaopts.cpp:123
 #, kde-format
@@ -1898,17 +1903,17 @@ msgstr "ניפוי תקלות"
 #: jsopts.cpp:63
 #, kde-format
 msgid "Enable debu&gger"
-msgstr "אפשר &מנפה שגיאות"
+msgstr "לאפשר &מנפה תקלות"
 
 #: jsopts.cpp:64
 #, kde-format
 msgid "Enables builtin JavaScript debugger."
-msgstr "מאפשר את מנפה השגיאות של JavaScript המובנה."
+msgstr "מפעיל את מנפה התקלות המובנה של JavaScript."
 
 #: jsopts.cpp:68
 #, kde-format
 msgid "Report &errors"
-msgstr "דווח על &שגיאות"
+msgstr "דיווח על &שגיאות"
 
 #: jsopts.cpp:69
 #, kde-format
@@ -1982,7 +1987,7 @@ msgstr "מדיניות JavaScript גלובליות"
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
-msgstr "&ספציפית למתחם"
+msgstr "נקודתית לשם &תחום"
 
 #: jsopts.cpp:222
 #, kde-format
@@ -2014,25 +2019,25 @@ msgstr "שינוי מדיניות JavaScript ספציפיות עבור מתחם"
 #: jspolicies.cpp:132
 #, kde-format
 msgid "Open new windows:"
-msgstr "פתח בחלונות חדשים:"
+msgstr "פתיחת חלונות חדשים:"
 
 #: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
 #: jspolicies.cpp:308
 #, kde-format
 msgid "Use global"
-msgstr "השתמש בגלובלי"
+msgstr "להשתמש בכללית"
 
 #: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
 #: jspolicies.cpp:309
 #, kde-format
 msgid "Use setting from global policy."
-msgstr "השתמש בהגדרה של המדיניות הגלובלית."
+msgstr "להשתמש בהגדרת המדיניות הכללית."
 
 #: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
 #: jspolicies.cpp:315
 #, kde-format
 msgid "Allow"
-msgstr "אפשר"
+msgstr "לאפשר"
 
 #: jspolicies.cpp:148
 #, kde-format
@@ -2047,7 +2052,7 @@ msgstr "הצגת שאלה בכל פעם שמתבקש חלון מוקפץ."
 #: jspolicies.cpp:159
 #, kde-format
 msgid "Deny"
-msgstr "אל תאפשר"
+msgstr "לדחות"
 
 #: jspolicies.cpp:160
 #, kde-format
@@ -2331,13 +2336,12 @@ msgstr "פתח קישורים ב&לשונית חדשה במקום חלון חד�
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
 #: tabs/tabsoptions.ui:109
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Whether or not JavaScript popups if allowed shall open in a new tab or in a "
 "new window."
 msgstr ""
-"האם (במידה ומאופשר חלון JavaScript קופץ) החלון יפתח בלשונית חדשה או בחלון "
-"חדש."
+"האם מותר חלוניות קופצות של JavaScript, אם מותר תיפתחנה בלשונית או חלון חדשים."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
 #: tabs/tabsoptions.ui:112
@@ -2347,16 +2351,17 @@ msgstr "פתח חלונות נפתחים ב&לשונית חדשה במקום ח�
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
 #: tabs/tabsoptions.ui:119
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "When you click a URL in another KDE program or call kfmclient to open a URL, "
 "the current desktop will be searched for a non-minimized Konqueror and, if "
 "found, the URL opened as a new tab within it. Otherwise a new Konqueror "
 "window will be opened with the required URL."
 msgstr ""
-"כאשר אתה לוחץ על כתובת URL בתוכנית KDE אחרת או בקריאה ל-kfmclient לפתוח URL, "
-"שולחן העבודה הנוכחי ייסרק בחיפוש אחר Konqueror לא ממוזער, ואם ימצא, הURL "
-"יפתח כלשונית חדשה בו. בכל מקרה אחר חלון Konqueror חדש יפתח עם ה-URL המבוקש."
+"בלחיצה על כתובת בתוכנית אחרת של KDE או בקריאה ל־kfmclient לפתיחת כתובת, "
+"יתבצע חיפוש בשולחן העבודה הנוכחי אחר Konqueror שאינו ממוזער, ואם יש כזה, "
+"הכתובת תיפתח בו בלשונית חדשה. אם אין, ייפתח חלון חדש של Konqueror עם הכתובת "
+"הרצויה."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
 #: tabs/tabsoptions.ui:122
