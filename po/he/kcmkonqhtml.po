@@ -22,14 +22,14 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-11 00:37+0000\n"
-"PO-Revision-Date: 2024-03-17 09:13+0200\n"
+"PO-Revision-Date: 2024-03-18 12:45+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -328,7 +328,7 @@ msgstr ""
 #: cache/cache.ui:17
 #, kde-format
 msgid "&Enable cache"
-msgstr ""
+msgstr "הפעלת מ&טמון"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:29
@@ -338,18 +338,20 @@ msgid ""
 "p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
+"<html><head/><body><p>לא לאחסון את המטמון בכונן אלא רק בזיכרון.</p><p>הפעלת "
+"האפשרות הזאת תגרום לפינוי המטמון ביציאה מ־Konqueror</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:32
 #, kde-format
 msgid "Keep cache in &memory"
-msgstr ""
+msgstr "להשאיר את המטמון ב&זיכרון"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: cache/cache.ui:41
 #, kde-format
 msgid "&Cache size"
-msgstr ""
+msgstr "&גודל המטמון"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:51
@@ -358,12 +360,14 @@ msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
+"הנפח המרבי בכונן או בזיכרון שיכול לשמש לטובת המטמון. כשהסף הזה נחצה, העמודים "
+"הישנים יוסרו כדי לפנות מקום לעמודים חדשים."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:54
 #, kde-format
 msgid "Auto"
-msgstr ""
+msgstr "אוטומטי"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:57
@@ -375,25 +379,25 @@ msgstr " מ״ב"
 #: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr ""
+msgstr "להשתמש בתיקייה מותאת אישית לשמירת המטמון"
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:88
 #, kde-format
 msgid "&Custom cache directory"
-msgstr ""
+msgstr "להשתמש בתיקיית מטמון מותאמת &אישית"
 
 #. i18n: ectx: property (text), widget (QLabel, customCachePathLabel)
 #: cache/cache.ui:100
 #, kde-format
 msgid "Cache &Directory"
-msgstr ""
+msgstr "&תיקיית מטמון"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
 #: cache/cache.ui:113
 #, kde-format
 msgid "The custom directory to store cache"
-msgstr ""
+msgstr "להשתמש בתיקייה מותאמת אישית לאחסון המטמון"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
@@ -405,7 +409,7 @@ msgstr "חיפוש"
 #: cookies/kcookiesmanagement.ui:27
 #, kde-format
 msgid "Search interactively for domains and hosts"
-msgstr ""
+msgstr "לחפש באופן אינטראקטיבי אחר שמות תחום ומארחים"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:43
@@ -523,7 +527,7 @@ msgstr ""
 #: cookies/kcookiespolicies.ui:38
 #, kde-format
 msgid "Only acce&pt cookies from originating server"
-msgstr ""
+msgstr "לאשר עוגיות רק מ&שרת המקור"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:46
@@ -540,10 +544,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
-#, fuzzy, kde-format
-#| msgid "A&utomatically load images"
+#, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr "&טען תמונות באופן אוטומטי"
+msgstr "לקבל עוגיות הפעלה או&טומטית"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -576,13 +579,13 @@ msgstr "מדיניות ברירת מחדל"
 #: cookies/kcookiespolicies.ui:77
 #, kde-format
 msgid "Accep&t all cookies"
-msgstr ""
+msgstr "לקבל את &כל העוגיות"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr ""
+msgstr "לקבל &עד סוף ההפעלה"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
@@ -594,7 +597,7 @@ msgstr "בקשת &אישור"
 #: cookies/kcookiespolicies.ui:98
 #, kde-format
 msgid "Re&ject all cookies"
-msgstr ""
+msgstr "לד&חות את כל העוגיות"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
@@ -634,7 +637,7 @@ msgstr "מדיניות אתר"
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr ""
+msgstr "חיפוש אחר שמות תחום אינטראקטיבית"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
@@ -651,6 +654,10 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"רשימת האתרים שמוגדרת להם מדיניות נקודתית. מדיניויות נקודתיות תבטלנה את "
+"מדיניות ברירת המחדל עבור אתרים אלו.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
@@ -687,6 +694,10 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"נא למלא את המארח או את שם התחום עליו חלה המדיניות הזאת, למשל: <b>www.kde."
+"org</b> או <b>.kde.org</b>.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
@@ -698,7 +709,7 @@ msgstr "שם האתר:"
 #: cookies/kcookiespolicyselectiondlg.ui:38
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
-msgstr ""
+msgstr "נא למלא את המארח או שם התחום, למשל: kde.org, עליו חלה המדיניות הזאת."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -735,7 +746,7 @@ msgstr "קבל"
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr ""
+msgstr "קבלה עד סוף ההפעלה"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
@@ -1291,12 +1302,12 @@ msgstr ""
 #: filteropts.cpp:100
 #, kde-format
 msgid "Automatic Filter"
-msgstr ""
+msgstr "מסנן אוטומטי"
 
 #: filteropts.cpp:109
 #, kde-format
 msgid "Automatic update interval:"
-msgstr ""
+msgstr "משך עדכון אוטומטי:"
 
 #: filteropts.cpp:114
 #, kde-format
@@ -1432,13 +1443,13 @@ msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
 "empty"
 msgid "Please, insert the custom start page"
-msgstr ""
+msgstr "נא לבחור עמוד פתיחה משלך"
 
 #: generalopts.cpp:62
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
-msgstr ""
+msgstr "כאשר נוצרת &לשונית חדשה"
 
 #: generalopts.cpp:71
 #, kde-format
@@ -1473,7 +1484,7 @@ msgstr "בחירת עמוד ההתחלה"
 #: generalopts.cpp:85
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
-msgstr ""
+msgstr "זאת כתובת עמוד האתר שיציג Konqueror עם עלייתו."
 
 #: generalopts.cpp:96
 #, kde-format
@@ -1496,27 +1507,27 @@ msgstr "זאת כתובת עמוד האתר אליה יקפוץ Konqueror בלח
 #: generalopts.cpp:112
 #, kde-format
 msgid "Default web browser engine:"
-msgstr ""
+msgstr "מנוע דפדפן ברירת המחדל:"
 
 #: generalopts.cpp:121
 #, kde-format
 msgid "When splitting a view"
-msgstr ""
+msgstr "בעת פיצול תצוגה"
 
 #: generalopts.cpp:125
 #, kde-format
 msgid "Always duplicate current view"
-msgstr ""
+msgstr "תמיד לשכפל את התצוגה הנוכחית"
 
 #: generalopts.cpp:126
 #, kde-format
 msgid "Duplicate current view only for local files"
-msgstr ""
+msgstr "לשכפל את התצוגה הנוכחית רק לקבצים מקומיים"
 
 #: generalopts.cpp:132
 #, kde-format
 msgid "When starting up, restore state from last time"
-msgstr ""
+msgstr "עם העלייה, לשחזר את המצב מהפעם הקודמת"
 
 #: htmlopts.cpp:35
 #, kde-format
@@ -1607,8 +1618,8 @@ msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
 "clicking on a Konqueror view."
 msgstr ""
-"אם אפשרות זו מסומנת, אתה יכול לפתוח את הכתובת בטקסט הנבחר על ידי לחיצה על "
-"הכפתור האמצעי בעכבר בתצוגה של Konqueror."
+"אם אפשרות זו מסומנת, אפשר לפתוח את הכתובת בטקסט הנבחר על ידי לחיצה על הכפתור "
+"האמצעי בעכבר בתצוגה של Konqueror."
 
 #: htmlopts.cpp:91
 #, kde-format
@@ -1622,9 +1633,9 @@ msgid ""
 "Konqueror view. To access the context menu, press the right mouse button and "
 "move."
 msgstr ""
-"אם אפשרות זו נבחרת יהיה באפשרותך לחזור אחורה בהיסטוריה על ידי לחיצה ימנית של "
-"העכבר בתוך תצוגה של Konqueror. במצב זה יש ללחוץ עם הלחצן הימני של העכבר "
-"ולהזיזו כדי לגשת אל התפריט המוקפץ."
+"אם תיבה זו מסומנת, אפשר לחזור אחורה בהיסטוריה על ידי לחיצה ימנית של העכבר "
+"בתוך תצוגה של Konqueror. במצב זה יש ללחוץ עם הלחצן הימני של העכבר ולהזיזו "
+"כדי לגשת לתפריט ההקשר."
 
 #: htmlopts.cpp:104
 #, kde-format
@@ -1659,7 +1670,7 @@ msgstr ""
 #: htmlopts.cpp:116
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
-msgstr ""
+msgstr "לשלוח את כותרת DNT (לא לעקוב) כדי להודיע לאתרים על סירובך שיעקבו אחריך"
 
 #: htmlopts.cpp:117
 #, kde-format
@@ -1667,32 +1678,36 @@ msgid ""
 "Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked."
 msgstr ""
+"יש לסמן את התיבה הזאת כדי ליידע אתרים על סירובך לאפשר להם לעקוב אחר הרגלי "
+"הגלישה שלך."
 
 #: htmlopts.cpp:121
 #, kde-format
 msgid "Offer to save website passwords"
-msgstr ""
+msgstr "להציג לשמור את סיסמאות האתרים"
 
 #: htmlopts.cpp:122
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
-msgstr ""
+msgstr "ביטול סימון תיבה זו ימנע מהצגת בקשות לשמירת סיסמאות האתרים"
 
 #: htmlopts.cpp:126
 #, kde-format
 msgid "Display online PDF files using WebEngine"
-msgstr ""
+msgstr "להציג קובצי PDF מקוונים באמצעות מנוע האתרים (WebEngine)"
 
 #: htmlopts.cpp:127
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
 msgstr ""
+"יש לבטל את הסימון בתיבה הזאת כיד להציג קובצי PDF מקוונים כפי שהוגדר בהגדרות "
+"המערכת"
 
 #: javaopts.cpp:78
 #, kde-format
 msgid "Enable Ja&va globally"
-msgstr "אפשר Java באופן ג&לובלי"
+msgstr "לאפשר Java באופן &כללי"
 
 #: javaopts.cpp:93
 #, kde-format
@@ -1702,17 +1717,17 @@ msgstr "הגדרות הרצת Java"
 #: javaopts.cpp:97
 #, kde-format
 msgid "&Use security manager"
-msgstr "השתמש במנהל אב&טחה"
+msgstr "להשתמש במנהל אב&טחה"
 
 #: javaopts.cpp:101
 #, kde-format
 msgid "Use &KIO"
-msgstr "השתמש ב־&KIO"
+msgstr "להשתמש ב־&KIO"
 
 #: javaopts.cpp:105
 #, kde-format
 msgid "Shu&tdown applet server when inactive for more than"
-msgstr "כבה את שרת היישומוני&ם כשאין פעילות במשל"
+msgstr "לכבות את שרת היישומוני&ם כשאין פעילות במשך"
 
 #: javaopts.cpp:117
 #, kde-format
@@ -1726,12 +1741,12 @@ msgstr[3] " שניות"
 #: javaopts.cpp:123
 #, kde-format
 msgid "&Path to Java executable, or 'java':"
-msgstr "הנתיב לתו&כנית ה־Java, או \"java\":"
+msgstr "הנתיב לתו&כנית ה־Java, או ‚java’:"
 
 #: javaopts.cpp:127
 #, kde-format
 msgid "Additional Java a&rguments:"
-msgstr "ארגומנטי Java &נוספים:"
+msgstr "ארגומנטים &נוספים ל־Java:"
 
 #: javaopts.cpp:132
 #, kde-format
@@ -1740,8 +1755,8 @@ msgid ""
 "HTML pages. Note that, as with any browser, enabling active contents can be "
 "a security problem."
 msgstr ""
-"מאפשר הרצה של תסריטים שנכתבו ב־Java ושניתן להכיל בדפי HTML. שים לב כי כמו "
-"בכל דפדפן, אפשור תכנים פעילים עלול להוות בעיית אבטחה."
+"מאפשר הרצה של סקריפטים שנכתבו ב־Java וניתן לכלול בדפי HTML. נא לשים לב שכמו "
+"בכל דפדפן, הפעלת תכנים פעילים עלולה להוות בעיית אבטחה."
 
 #: javaopts.cpp:135
 #, kde-format
@@ -1891,8 +1906,8 @@ msgid ""
 "JavaScript) that can be contained in HTML pages. Note that, as with any "
 "browser, enabling scripting languages can be a security problem."
 msgstr ""
-"מאפשר הרצה של תסריטים שנכתבו בשפת תסריטי ECMA (המוכרת גם בשם JavaScript) "
-"שניתן להכיל בדפי HTML. שים לב כמו בכל דפדפן, אפשור שפות תסריטים עלול להוות "
+"מאפשר הרצה של סקריפטיפ שנכתבו בשפת ECMA (המוכרת גם בשם JavaScript) שניתן "
+"לכלול בדפי HTML. נא לשים לב כמו בכל דפדפן, הפעלת שפות סקריפטים עלולה להוות "
 "בעיית אבטחה."
 
 #: jsopts.cpp:59
@@ -2096,7 +2111,7 @@ msgstr "שינוי גודל החלון:"
 #: jspolicies.cpp:202
 #, kde-format
 msgid "Allow scripts to change the window size."
-msgstr "אפשר לתסריטים לשנות את גודל החלון."
+msgstr "לאפשר לסקריפטים לשנות את גודל החלון."
 
 #: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
 #, kde-format
@@ -2109,7 +2124,7 @@ msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
 "<i>think</i> it changed the size but the actual window is not affected."
 msgstr ""
-"התעלם מניסיונות של התסריט לשנות את גודל החלון. הדף <i>יחשוב</i> שהוא גודל "
+"התעלמות מניסיונות של הסקריפט לשנות את גודל החלון. הדף <i>יחשוב</i> שגודל "
 "החלון השתנה, אבל מעשית גודל החלון לא יושפע."
 
 #: jspolicies.cpp:215
@@ -2130,7 +2145,7 @@ msgstr "הזז חלון:"
 #: jspolicies.cpp:239
 #, kde-format
 msgid "Allow scripts to change the window position."
-msgstr "אפשר לתסריטים לשנות את מיקום החלון"
+msgstr "לאפשר לסקריפטים לשנות את מיקום החלון"
 
 #: jspolicies.cpp:245
 #, kde-format
@@ -2159,7 +2174,7 @@ msgstr "מיקוד החלון:"
 #: jspolicies.cpp:276
 #, kde-format
 msgid "Allow scripts to focus the window."
-msgstr "אפשר לתסריטים למקד את החלון."
+msgstr "אפשר לסקריפטים להעביר את המיקוד לחלון."
 
 #: jspolicies.cpp:282
 #, kde-format
@@ -2186,12 +2201,12 @@ msgstr ""
 #: jspolicies.cpp:301
 #, kde-format
 msgid "Modify status bar text:"
-msgstr "שנה שורת מצב"
+msgstr "שינוי כיתוב בשורת המצב:"
 
 #: jspolicies.cpp:316
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
-msgstr "אפשר לתסריטים לשנות את הכיתוב של שורת המצב."
+msgstr "לאפשר לסקריפטים לשנות את הכיתוב של שורת המצב."
 
 #: jspolicies.cpp:322
 #, kde-format
@@ -2240,13 +2255,13 @@ msgid ""
 "Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
 "(like .kde.org or .org)"
 msgstr ""
-"הזן שם של מארח (כגון www.kde.org) או תחום המתחיל בנקודה (כגון kde.org. או "
+"נא למלא שם מארח (כגון www.kde.org) או תחום המתחיל בנקודה (כגון kde.org. או "
 "org.)"
 
 #: policydlg.cpp:139
 #, kde-format
 msgid "You must first enter a domain name."
-msgstr "תחילה יש להזין שם תחום."
+msgstr "תחילה יש למלא שם תחום."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
@@ -2267,14 +2282,14 @@ msgid ""
 "This will display the tab bar only if there are two or more tabs. Otherwise "
 "it will always be displayed."
 msgstr ""
-"אפשרות זו תציג את סרגל הסימניות רק אם יש שני לשוניות או יותר. אחרת הסרגל "
+"אפשרות זו תציג את סרגל הסימניות רק אם יש שתי לשוניות או יותר. אחרת הסרגל "
 "תמיד יוצג."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:29
 #, kde-format
 msgid "Hide the tab bar when only one tab is open"
-msgstr "הסתר את סרגל הלשוניות כאשר לשונית אחת בלבד פתוחה"
+msgstr "להסתיר את סרגל הלשוניות כאשר לשונית אחת בלבד פתוחה"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: tabs/tabsoptions.ui:38
@@ -2345,9 +2360,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
 #: tabs/tabsoptions.ui:112
-#, fuzzy, kde-format
+#, kde-format
 msgid "Open pop&ups in new tab instead of in new window"
-msgstr "פתח חלונות נפתחים ב&לשונית חדשה במקום חלון חדש"
+msgstr "לפתוח חלונות &קופצים בלשוניות חדשות במקום בחלונות חדשים"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
 #: tabs/tabsoptions.ui:119
@@ -2385,6 +2400,9 @@ msgid ""
 "\">shift</span> when opening a new tab to reverse this behavior</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>פעולה זו תפתח לשונית חדשה ברקע במקום בחזית.</p><p>יש "
+"ללחוץ על <span style=\" font-family:'Fira Code';\">shift</span> בעת פתיחת "
+"לשונית חדשה כדי להפוך את ההתנהגות הזאת</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
@@ -2547,6 +2565,9 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>זיהוי הדפדפן לשימוש כאשר זיהוי ברירת המחדל מושבת.</"
+"p><p>אפשר למלא אותו ידנית או להתחיל מאחד מהרשימה ולערוך אותו בהתאם לצרכים.</"
+"p></body></html>"
 
 #~ msgid ""
 #~ "This will open a new tab in the background, instead of in the foreground."
