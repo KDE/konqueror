@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-11 00:37+0000\n"
-"PO-Revision-Date: 2024-03-18 12:45+0200\n"
+"PO-Revision-Date: 2024-03-19 08:42+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -502,6 +502,12 @@ msgid ""
 "unbrowsable.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"<p>הפעלת תמיכה בעוגיות. בדרך כלל התמיכה בעוגיות צריכה לפעול ולהיות תואמת כדי "
+"לענות על צורכי הפרטיות שלך.</p><p>\n"
+"נא לשים לב שהשבתת תמיכה בעוגיות יכולה לגרום לאתרים רבים לפעול בצורה מעוותת "
+"עד בלתי ניתנת לגלישה.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
@@ -601,15 +607,7 @@ msgstr "לד&חות את כל העוגיות"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can set specific Java policies for any particular host or "
-#| "domain. To add a new policy, simply click the <i>New...</i> button and "
-#| "supply the necessary information requested by the dialog box. To change "
-#| "an existing policy, click on the <i>Change...</i> button and choose the "
-#| "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#| "button will remove the selected policy, causing the default policy "
-#| "setting to be used for that domain."
+#, kde-format
 msgid ""
 "<qt>\n"
 "To add a new policy, simply click on the <b>Add...</b> button and supply the "
@@ -620,12 +618,13 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
-"כאן באפשרותך להגדיר מדיניויות Java ספציפיות לכל מארח או תחום שהוא. כדי "
-"להוסיף מדיניות חדשה, פשוט לחץ על הכפתור <i>הוספה...</i> וספק את המידע המבוקש "
-"בתיבת הדו־שיח. כדי לשנות מדיניות קיימת, לחץ על הכפתור <i>שינוי...</i> ובחר "
-"את המדיניות החדשה מתוך דו־שיח המדיניות. לחיצה על הכפתור <i>מחק</i> תסיר את "
-"המדיניות הנבחרת, מה שיביא לכך שייעשה שימוש בהגדרת ברירת המחדל של המדיניות "
-"לתחום זה."
+"<qt>\n"
+"כדי להגדיר מדיניות חדשה, צריך פשוט ללחוץ על הכפתור <b>הוספה…</b> ולספק את "
+"הפרטים הנחוצים. כדי לשנות מדיניות קיימת, יש להשתמש בכפתור <b>החלפה…</b> "
+"ולבחור את המדיניות החדשה מהחלונית. לחיצה על כפתור <b>מחיקה</b> תסיר את "
+"המדיניות הנבחרת ותגרום לשימוש במדיניות ברירת המחדל לשם התחום הזה, בעוד "
+"<b>מחיקה של הכול</b> תסיר את כל המדיניויות הנקודתיות לאתר.\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
@@ -728,6 +727,16 @@ msgid ""
 "</ul>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"נא לבחור את המדיניות הרצויה:\n"
+"<ul>\n"
+"<li><b>קבלה</b> - לאפשר לאתר להגדיר עוגיות</li>\n"
+"<li><b>קבלה עד סוף הביקור</b> - לאפשר לאתר הזה להגדיר עוגיות שתפוגנה עד סוף "
+"הביקור באתר הזה.</li>\n"
+"<li><b>דחייה</b> - סירוב לכל העוגיות שנשלחות מהאתר הזה</li>\n"
+"<li><b>בקשה</b> - לבקש מהמשתמש לאשר כשעוגיות מתקבלות מהאתר הזה</li>\n"
+"</ul>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
@@ -1273,12 +1282,12 @@ msgstr "השתמש בהגדרות גלובליות"
 #: filteropts.cpp:48
 #, kde-format
 msgid "Enable filters"
-msgstr "אפשר מסננים"
+msgstr "הפעלת מסננים"
 
 #: filteropts.cpp:51
 #, kde-format
 msgid "Hide filtered images"
-msgstr "הסתר תמונות מסוננות"
+msgstr "הסתרת תמונות מסוננות"
 
 #: filteropts.cpp:58
 #, kde-format
@@ -1288,7 +1297,7 @@ msgstr "מסנן ידני"
 #: filteropts.cpp:76
 #, kde-format
 msgid "Search:"
-msgstr "חפש:"
+msgstr "חיפוש:"
 
 #: filteropts.cpp:84
 #, kde-format
@@ -1296,7 +1305,7 @@ msgid ""
 "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
 "\"filterhelp\">more information</a>):"
 msgstr ""
-"‏<qt>ביטויי פילטור (לדוגמא: <tt>http://www.example.com/ad/*</tt>, <a href="
+"‏<qt>ביטוי סינון (למשל: <tt>http://www.example.com/ad/*‎</tt>, <a href="
 "\"filterhelp\">מידע נוסף</a>):"
 
 #: filteropts.cpp:100
@@ -1321,7 +1330,7 @@ msgstr[3] " ימים"
 #: filteropts.cpp:124
 #, kde-format
 msgid "Insert"
-msgstr "הוסף"
+msgstr "הוספה"
 
 #: filteropts.cpp:127
 #, kde-format
