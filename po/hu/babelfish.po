@@ -2,30 +2,31 @@
 # Tamas Szanto <tszanto@mol.hu>, 2001.
 # Kiszel Kristóf <ulysses@kubuntu.org>, 2010, 2017.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011.
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2017-12-11 13:17-0500\n"
-"Last-Translator: Kiszel Kristóf <kiszel.kristof@gmail.com>\n"
+"PO-Revision-Date: 2024-03-20 15:11+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Szántó Tamás,Kiszel Kristóf"
+msgstr "Kiszel Kristóf"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tszanto@mol.hu,kiszel.kristof@gmail.com"
+msgstr "ulysses@fsf.hu"
 
 #. i18n: ectx: Menu (tools)
 #: babelfishplugin.rc:4
@@ -42,12 +43,12 @@ msgstr "Extra eszköztár"
 #: plugin_babelfish.cpp:38
 #, kde-format
 msgid "Translate Web Page"
-msgstr "A weboldal lefordítása"
+msgstr "Weboldal lefordítása"
 
 #: plugin_babelfish.cpp:46
 #, kde-format
 msgid "Translate Web &Page"
-msgstr "A weboldal &lefordítása"
+msgstr "Weboldal &lefordítása"
 
 #: plugin_babelfish.cpp:83
 #, kde-format
@@ -191,15 +192,10 @@ msgstr "Hibás URL"
 #: plugin_babelfish.cpp:263
 #, kde-format
 msgid "The URL you entered is not valid, please correct it and try again."
-msgstr "A megadott URL érvénytelen, kérem javítsa ki és próbálkozzon újra."
+msgstr "A megadott URL érvénytelen, kérem, javítsa ki és próbálkozzon újra."
 
 #: plugin_babelfish.cpp:273
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "You are viewing this page over a secure connection.<nl/><nl/>The URL of "
-#| "the page will sent to the online translation service, which may fetch the "
-#| "insecure version of the page."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "You are viewing this page over a secure connection.<nl/><nl/>The URL of the "
@@ -207,7 +203,7 @@ msgid ""
 "insecure version of the page."
 msgstr ""
 "Ezt az oldalt biztonságos kapcsolaton keresztül éri el.<nl/><nl/>Az oldal "
-"URL-címét elküldjük az online fordítószolgáltatásnak, ami letöltheti az "
+"URL-címét elküldjük az online fordítószolgáltatásnak,<nl/>ami letöltheti az "
 "oldal nem biztonságos verzióját."
 
 #: plugin_babelfish.cpp:277
