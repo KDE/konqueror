@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-11 00:37+0000\n"
-"PO-Revision-Date: 2024-03-19 08:42+0200\n"
+"PO-Revision-Date: 2024-03-23 13:56+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -528,6 +528,12 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"דחיית אכל העוגיות שמגיעות מאתרים למעט מהאתר המבוקש. לדוגמה, ביקור ב־<b>www."
+"foobar.com</b> עם אפשרות זו פעילה, רק עוגיות שמגיעות מ־www.foobar.com "
+"תעובדנה בהתאם להגדרות שלך. כל שאר העוגיות תידחנהאוטומטית. מצב זה מפחית "
+"למפעילי אתרים את הסיכוי לגבש פרופיל לגבי הרגלי הגלישה היומיומיים שלך.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
@@ -547,6 +553,15 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
+"‏<p>\n"
+"יש לבחור באפשרות זו כדי לקבל עוגיות זמניות שתוקפן נועד לפוג בתום ההפעלה "
+"הנוכחיתאוטומטית. עוגיות כאלה לא תאוחסנה בכונן הקשיח או בהתקן האחסון של המחשב "
+"שלך. במקום זאת, הן תימחקנה עם סגירת כל היישומים שמשתמשים בהן (לדוגמה, הדפדפן "
+"שלך).</p><p>\n"
+"‏<u>לתשומת ליבך:</u> בחירה באפשרות זו ביחד עם האפשרות הבאה תביא לעקיפה של "
+"מדיניות ברירת המחדל לעוגיות שלך, וכמו כן מדיניות העוגיות הנקודתיות לאתרים. "
+"עם זאת, בחירה באפשרות הזאת תביא גם להגברת הפרטיות שלך, מאחר שכל העוגיות "
+"תוסרנה בתום ההפעלה הנוכחית.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
@@ -574,6 +589,18 @@ msgid ""
 "precedence over the default policy.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"החלטה על אופן הטיפול בעוגיות שהגיעו ממכונות מרוחקות: \n"
+"<ul>\n"
+"<li><b>לבקש</b> יגרום ל־KDE לבקש את אישורך בכל פעם ששרת רוצה להגדיר עוגייה.</"
+"li>\n"
+"<li><b>לקבל</b> יגרום לכך שהעוגיות תתקבלנה ללא כל פעולה מצידך.</li>\n"
+"<li><b>לקבל עד לסגירה</b> העוגיות תתקבלנה אך הן תפוגנה עם סיום ההפעלה.</li>\n"
+"<li><b>לדחות</b> יסרב לקבל אורחות חדשות שמגיעות להתארח בצנצנת העוגיות.</li>\n"
+"</ul><p>\n"
+"<u>לתשומת ליבך:</u> מדיניויות נקודתיות לשם תחום, שניתן להגדיר להלן, תמיד "
+"זוכות לעדיפות גבוהה ממדיניות ברירת המחדל.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
@@ -591,7 +618,7 @@ msgstr "לקבל את &כל העוגיות"
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr "לקבל &עד סוף ההפעלה"
+msgstr "לקבל &עד לסגירה"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
@@ -730,11 +757,11 @@ msgstr ""
 "<qt>\n"
 "נא לבחור את המדיניות הרצויה:\n"
 "<ul>\n"
-"<li><b>קבלה</b> - לאפשר לאתר להגדיר עוגיות</li>\n"
-"<li><b>קבלה עד סוף הביקור</b> - לאפשר לאתר הזה להגדיר עוגיות שתפוגנה עד סוף "
+"<li><b>לקבל</b> - לאפשר לאתר להגדיר עוגיות</li>\n"
+"<li><b>לקבל עד הסגירה</b> - לאפשר לאתר הזה להגדיר עוגיות שתפוגנה בסיום "
 "הביקור באתר הזה.</li>\n"
-"<li><b>דחייה</b> - סירוב לכל העוגיות שנשלחות מהאתר הזה</li>\n"
-"<li><b>בקשה</b> - לבקש מהמשתמש לאשר כשעוגיות מתקבלות מהאתר הזה</li>\n"
+"<li><b>לדחות</b> - סירוב לכל העוגיות שנשלחות מהאתר הזה</li>\n"
+"<li><b>לשאול</b> - לבקש מהמשתמש לאשר כשעוגיות מתקבלות מהאתר הזה</li>\n"
 "</ul>\n"
 "</qt>"
 
@@ -755,7 +782,7 @@ msgstr "קבל"
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr "קבלה עד סוף ההפעלה"
+msgstr "לקבל עד הסגירה"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
