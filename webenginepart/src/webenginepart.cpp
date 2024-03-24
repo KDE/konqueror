@@ -33,6 +33,7 @@
 #include "webenginepartdownloadmanager.h"
 #include "webenginepartcontrols.h"
 #include "profile.h"
+#include "actondownloadedfilebar.h"
 
 #include "ui/searchbar.h"
 #include "ui/passwordbar.h"
@@ -76,6 +77,8 @@
 #if QT_VERSION_MAJOR > 5
 #include <QWebEngineFindTextResult>
 #endif
+#include <QMimeDatabase>
+#include <QTimer>
 
 #include "utils.h"
 #include <kio_version.h>
@@ -1120,4 +1123,26 @@ KParts::NavigationExtension* WebEnginePart::navigationExtension() const
 BrowserExtension *WebEnginePart::browserExtension() const
 {
     return findChild<BrowserExtension *>();
+}
+
+void WebEnginePart::displayActOnDownloadedFileBar(KonqInterfaces::DownloaderJob* job)
+{
+    if (job->error() != 0) {
+        return;
+    }
+    if (m_actOnDownloadedFileWidget) {
+        widget()->layout()->removeWidget(m_actOnDownloadedFileWidget);
+        m_actOnDownloadedFileWidget->hide();
+        m_actOnDownloadedFileWidget->deleteLater();
+        m_actOnDownloadedFileWidget = nullptr;
+    }
+    m_actOnDownloadedFileWidget = new ActOnDownloadedFileBar(job->url(), QUrl::fromLocalFile(job->downloadPath()), this);
+    auto deleteWidget = [this] {
+        if (!m_actOnDownloadedFileWidget) {
+            return;
+        }
+        m_actOnDownloadedFileWidget->deleteLater();
+    };
+    connect(m_actOnDownloadedFileWidget, &ActOnDownloadedFileBar::hideAnimationFinished, this, [deleteWidget]{deleteWidget();});
+    widget()->layout()->addWidget(m_actOnDownloadedFileWidget);
 }

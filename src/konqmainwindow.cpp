@@ -591,7 +591,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
 
     KonqView *view = _view;
 
-    UrlLoader *loader = new UrlLoader(this, view, url, mimeType, req, trustedSource, false);
+    UrlLoader *loader = new UrlLoader(this, view, url, mimeType, req, trustedSource);
     connect(loader, &UrlLoader::finished, this, &KonqMainWindow::urlLoaderFinished);
 
     loader->start();

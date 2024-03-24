@@ -104,6 +104,7 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
      * This is ignored if #letPartPerformDownload is `false`.
      */
     qint32 downloadId = -1;
+    bool forceOpen = false; ///< Whether the URL should be opened in an external application, regardless of settings
 
     static KonqOpenURLRequest null;
 };

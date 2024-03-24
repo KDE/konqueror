@@ -47,6 +47,7 @@ set(kwebenginepartlib_LIB_SRCS
     schemehandlers/execschemehandler.cpp
     schemehandlers/errorschemehandler.cpp
     schemehandlers/kiohandler.cpp
+    actondownloadedfilebar.cpp
 )
 
 if (DontUseKCookieJar)

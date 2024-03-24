@@ -77,9 +77,8 @@ public:
      * @param mimeType the mimetype of the URL or an empty string if not known
      * @param req the object containing information about the URL loading request
      * @param trustedSource whether the source of the URL is trusted
-     * @param forceOpen tells never to embed the URL
      */
-    UrlLoader(KonqMainWindow* mainWindow, KonqView* view, const QUrl& url, const QString& mimeType, const KonqOpenURLRequest& req, bool trustedSource, bool dontEmbed = false);
+    UrlLoader(KonqMainWindow* mainWindow, KonqView* view, const QUrl& url, const QString& mimeType, const KonqOpenURLRequest& req, bool trustedSource);
     ~UrlLoader();
 
 
@@ -177,6 +176,24 @@ private slots:
     void downloadForEmbeddingOrOpeningDone(KonqInterfaces::DownloaderJob *job, const QUrl &url);
 
 private:
+
+    /**
+     * @brief Sets the list of allowed options depending on the arguments passed to the constructor
+     *
+     * Currently, the algorithm works as follows:
+     * - if @p req has the \link KonqOpenURLRequest::forceAutoEmbed forceAutoEmbed\endlink flag set to `true`
+     *  then the only allowed action is Embed
+     * - if the \link KonqOpenURLRequest::args args\endlink field in @p req has a `action` meta data entry, then
+     *  only that action will be allowed
+     *
+     * @param req the object containing the request
+     * @param dontEmbed whether embedding should be forbidden
+     * @note This function changes the value of #m_allowedActions
+     *
+     * @note If the \link KonqOpenURLRequest::forceAutoEmbed forceAutoEmbed\endlink flag of @p req is `true` and
+     *  an action is specified in the metadata, the flag will have precedence
+     */
+    void initAllowedActions(const KonqOpenURLRequest &req);
 
     void embed();
     void open();
@@ -326,6 +343,33 @@ private:
     OpenSaveAnswer askSaveOrOpen(OpenEmbedMode mode) const;
     OpenUrlAction decideExecute() const;
 
+    /**
+     * @brief Attempts to change the action
+     *
+     * If the given action is not allowed, it set the action to #DoNothing, instead
+     * @param action the new value of the action
+     * @return `true` if the action was set correctly and `false` if @p action wasn't
+     * allowed and the action was set to #DoNothing
+     */
+    bool setAction(OpenUrlAction action);
+
+    /**
+     * @brief Whether we are forced to perform the given action
+     *
+     * Being forced to perform an action means that it's the only action in #m_allowedActions
+     * @param action the action to check
+     * @return `true` if @p action is the only entry in #m_allowedActions and `false` otherwise
+     * @note this function also returns `false` if #m_allowedActions doesn't contain @p action
+     */
+    bool isForced(OpenUrlAction action) const;
+
+    /**
+     * @brief Whether we are allowed to perform the given action
+     * @param action the action to check
+     * @return `true` if #m_allowedActions contains @p action and `false` otherwise
+     */
+    bool can(OpenUrlAction action) const;
+
 private:
     QPointer<KonqMainWindow> m_mainWindow;
     QUrl m_url;
@@ -343,7 +387,7 @@ private:
     KonqOpenURLRequest m_request;
     KonqView *m_view;
     bool m_trustedSource;
-    bool m_dontEmbed;
+    QList<OpenUrlAction> m_allowedActions = {OpenUrlAction::Open, OpenUrlAction::Embed, OpenUrlAction::Save, OpenUrlAction::Execute};
     bool m_ready = false;
     bool m_isAsync = false;
     OpenUrlAction m_action = OpenUrlAction::UnknwonAction;
@@ -371,7 +415,7 @@ private:
      * @todo Remove this after a better way to allow the user to quickly display a file after downloading it has been implemented. See comment
      * for WebEnginePage::saveUrlToDiskAndDisplay
      */
-    bool m_embedOrNothing = false;
+    // bool m_embedOrNothing = false;
 
     /**
      * @brief The URL that the UrlLoader has been asked to open, in case the requesting parts wants to download it itself

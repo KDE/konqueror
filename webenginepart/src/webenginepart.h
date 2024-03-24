@@ -13,6 +13,7 @@
 #include "kwebenginepartlib_export.h"
 
 #include "browserextension.h"
+#include "actondownloadedfilebar.h"
 
 #include <QWebEnginePage>
 
@@ -20,6 +21,9 @@
 #include <KParts/ReadOnlyPart>
 #include <QUrl>
 #include <QWebEngineScript>
+#include <QPointer>
+
+#include <KMessageWidget>
 
 namespace KParts {
 //TODO KF6: when removing compatibility with KF5, uncomment the line below
@@ -40,6 +44,14 @@ class WebEngineWallet;
 class KPluginMetaData;
 class WebEnginePartControls;
 class WebEngineDownloaderExtension;
+
+namespace KonqInterfaces {
+    class DownloaderJob;
+}
+
+namespace WebEngine {
+    class ActOnDownloadedFileBar;
+}
 
 /**
  * A KPart wrapper for the QtWebEngine's browser rendering engine.
@@ -143,6 +155,11 @@ public Q_SLOTS:
     void exitFullScreen();
     void setInspectedPart(KParts::ReadOnlyPart *part);
 
+    /**
+     * @brief Displays a widget which the user can use to display or open a file he has just finished downloading
+     */
+    void displayActOnDownloadedFileBar(KonqInterfaces::DownloaderJob *job);
+
 protected:
     /**
      * Re-implemented for internal reasons. API remains unaffected.
@@ -228,6 +245,9 @@ private:
     WebEngineView* m_webView;
     WebEngineWallet* m_wallet;
     WebEngineDownloaderExtension* m_downloader;
+
+    QPointer<WebEngine::ActOnDownloadedFileBar> m_actOnDownloadedFileWidget = nullptr; //!< Widget allowing the user to open a file which was downloaded right now
 };
+
 
 #endif // WEBENGINEPART_H

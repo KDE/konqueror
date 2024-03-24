@@ -223,8 +223,7 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
     args.metaData().insert(QStringLiteral("SuggestedFileName"), item->suggestedFileName());
 
     if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveOnly) {
-        args.metaData().insert(QStringLiteral("EmbedOrNothing"), {});
-        bArgs.setForcesNewWindow(true);
+        args.metaData().insert("action", "save");
         saveUrlToDiskAndDisplay(item, args, bArgs);
         return;
     } else if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveAs) {
@@ -283,6 +282,7 @@ void WebEnginePage::saveUrlToDiskAndDisplay(QWebEngineDownloadRequest* req, cons
         emit m_part->browserExtension()->browserOpenUrlRequest(url, args, bArgs);
     #endif
     };
+    connect(job, &DownloaderJob::downloadResult, m_part, &WebEnginePart::displayActOnDownloadedFileBar);
     job->startDownload(downloadPath, window, this, lambda);
 }
 
