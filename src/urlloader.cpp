@@ -502,10 +502,9 @@ void UrlLoader::downloadForEmbeddingOrOpeningDone(KonqInterfaces::DownloaderJob 
 void UrlLoader::checkDownloadedMimetype()
 {
     QMimeDatabase db;
-    QMimeType typeByContent = db.mimeTypeForFile(m_url.path(), QMimeDatabase::MatchContent);
-    QMimeType typeByName = db.mimeTypeForFile(m_url.path(), QMimeDatabase::MatchExtension);
-    QString type = (typeByName.inherits(typeByContent.name()) ? typeByName : typeByContent).name();
-    if (type == m_mimeType) {
+    QString type = db.mimeTypeForFile(m_url.path()).name();
+    //Don't override the mimetype with the default one
+    if (type == m_mimeType || type == "application/octet-stream") {
         return;
     }
     m_mimeType = type;

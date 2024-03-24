@@ -149,12 +149,6 @@ public:
     bool hasError() const {return m_jobErrorCode;}
     void setNewTab(bool newTab);
 
-    // /**
-    //  * @brief whether a given mimetype refers to an executable program instead of a data file
-    //  * @param mimeTypeName the mimetype to test
-    //  * @return `true` if @p mimeTypeName refers to an executable and `false` otherwise
-    //  */
-    // static bool isExecutable(const QString &mimeTypeName);
     QString suggestedFileName() const {return m_request.suggestedFileName;}
 
     /**
