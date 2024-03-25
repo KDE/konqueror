@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-09 00:37+0000\n"
+"POT-Creation-Date: 2024-03-25 00:37+0000\n"
 "PO-Revision-Date: 2022-10-05 09:27+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -314,6 +314,66 @@ msgstr "Установлено"
 #, kde-format
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>Тип MIME</td><td>Описание</td><td>Суффиксы</td><td>Модуль</td>"
+
+#: src/actondownloadedfilebar.cpp:20
+#, kde-format
+msgctxt "@label location where a remote URL was downloaded"
+msgid "%1 was saved in %2"
+msgstr ""
+
+#: src/actondownloadedfilebar.cpp:24
+#, kde-format
+msgid "Show file in this tab"
+msgstr ""
+
+#: src/actondownloadedfilebar.cpp:25
+#, kde-format
+msgid "Show file in a new tab in Konqueror"
+msgstr ""
+
+#: src/actondownloadedfilebar.cpp:59
+#, kde-format
+msgid "Open in external application"
+msgstr ""
+
+#: src/actondownloadedfilebar.cpp:64
+#, fuzzy, kde-format
+#| msgctxt "open selected url"
+#| msgid "Open '%1'"
+msgid "Open in %1"
+msgstr "Открыть «%1»"
+
+#: src/actondownloadedfilebar.cpp:73 src/actondownloadedfilebar.cpp:113
+#, fuzzy, kde-format
+#| msgctxt "open selected url"
+#| msgid "Open '%1'"
+msgctxt "@action:inmenu"
+msgid "Open &with %1"
+msgstr "Открыть «%1»"
+
+#: src/actondownloadedfilebar.cpp:100
+#, kde-format
+msgctxt "@action:button"
+msgid "Show in new tab"
+msgstr ""
+
+#: src/actondownloadedfilebar.cpp:100
+#, kde-format
+msgctxt "@action:button"
+msgid "Show here"
+msgstr ""
+
+#: src/actondownloadedfilebar.cpp:104
+#, kde-format
+msgctxt "@action:button"
+msgid "Show in new tab using %1"
+msgstr ""
+
+#: src/actondownloadedfilebar.cpp:104
+#, kde-format
+msgctxt "@action:button"
+msgid "Show here using %1"
+msgstr ""
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -974,62 +1034,62 @@ msgstr "Разрешить"
 msgid "Do Not Allow"
 msgstr "Запретить"
 
-#: src/webenginepart.cpp:215
+#: src/webenginepart.cpp:218
 #, fuzzy, kde-format
 #| msgid "Save Image As..."
 msgid "Save Full HTML Page As..."
 msgstr "Сохранить изображение как..."
 
-#: src/webenginepart.cpp:219
+#: src/webenginepart.cpp:222
 #, kde-format
 msgid "Print Preview"
 msgstr "Предварительный просмотр"
 
-#: src/webenginepart.cpp:223
+#: src/webenginepart.cpp:226
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Увеличить масштаб"
 
-#: src/webenginepart.cpp:228
+#: src/webenginepart.cpp:231
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Уменьшить масштаб"
 
-#: src/webenginepart.cpp:233
+#: src/webenginepart.cpp:236
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Сбросить масштаб"
 
-#: src/webenginepart.cpp:238
+#: src/webenginepart.cpp:241
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Масштабировать только текст"
 
-#: src/webenginepart.cpp:246
+#: src/webenginepart.cpp:249
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Масштаб по DPI"
 
-#: src/webenginepart.cpp:259
+#: src/webenginepart.cpp:262
 #, kde-format
 msgid "Set &Encoding"
 msgstr "&Кодировка..."
 
-#: src/webenginepart.cpp:262
+#: src/webenginepart.cpp:265
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Просмотреть &исходный код документа"
 
-#: src/webenginepart.cpp:267 src/webenginepart.cpp:556
+#: src/webenginepart.cpp:270 src/webenginepart.cpp:559
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:273
+#: src/webenginepart.cpp:276
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1037,12 +1097,12 @@ msgid ""
 "displayed page."
 msgstr "<h3>Найти текст</h3>Диалог поиска текста на текущей странице."
 
-#: src/webenginepart.cpp:554
+#: src/webenginepart.cpp:557
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "Похоже, что сведения SSL для это сайта неверны."
 
-#: src/webenginepart.cpp:635
+#: src/webenginepart.cpp:638
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1050,7 +1110,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "Получатель:"
 
-#: src/webenginepart.cpp:664
+#: src/webenginepart.cpp:667
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1058,7 +1118,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - Копия: "
 
-#: src/webenginepart.cpp:666
+#: src/webenginepart.cpp:669
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1066,7 +1126,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - Скрытая копия: "
 
-#: src/webenginepart.cpp:668
+#: src/webenginepart.cpp:671
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1074,85 +1134,85 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Тема: "
 
-#: src/webenginepart.cpp:672 src/webenginepart.cpp:683
+#: src/webenginepart.cpp:675 src/webenginepart.cpp:686
 #, kde-format
 msgid " (In new window)"
 msgstr " (В новом окне)"
 
-#: src/webenginepart.cpp:681
+#: src/webenginepart.cpp:684
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (в этом фрейме)"
 
-#: src/webenginepart.cpp:751
+#: src/webenginepart.cpp:754
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Выполнить поиск <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:752
+#: src/webenginepart.cpp:755
 #, kde-format
 msgid "Internet Search"
 msgstr "Поиск в Интернет"
 
-#: src/webenginepart.cpp:752
+#: src/webenginepart.cpp:755
 #, kde-format
 msgid "&Search"
 msgstr "&Поиск"
 
-#: src/webenginepart.cpp:863
+#: src/webenginepart.cpp:866
 #, kde-format
 msgid "Close window?"
 msgstr "Закрыть окно?"
 
-#: src/webenginepart.cpp:863
+#: src/webenginepart.cpp:866
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Закрытие окна"
 
-#: src/webenginepart.cpp:937
+#: src/webenginepart.cpp:940
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 "<html>Позволить %1 запомнить имя пользователя и пароль для <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1008
+#: src/webenginepart.cpp:1011
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr "&Заполнить формы"
 
-#: src/webenginepart.cpp:1013
+#: src/webenginepart.cpp:1016
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr "&Запомнить пароли на этой странице"
 
-#: src/webenginepart.cpp:1017
+#: src/webenginepart.cpp:1020
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr "&Настроить поля для запоминания на этой странице..."
 
-#: src/webenginepart.cpp:1021
+#: src/webenginepart.cpp:1024
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr "Удалить настроенные параметры запоминания для этой страницы"
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1028
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "&Разрешить сохранять пароли для этого сайта"
 
-#: src/webenginepart.cpp:1029
+#: src/webenginepart.cpp:1032
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "Удалить все сохранённые пароли для этого сайта"
 
-#: src/webenginepart.cpp:1033
+#: src/webenginepart.cpp:1036
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Запустить управление бумажниками"
 
-#: src/webenginepart.cpp:1037
+#: src/webenginepart.cpp:1040
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Закрыть бумажник"
