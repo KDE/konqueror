@@ -1,0 +1,196 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Slovenian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="konq-general-behavior">
+<title
+>Splošno  &konqueror; obnašanje</title>
+<articleinfo>
+
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Jan</firstname
+><surname
+>Napast</surname
+><affiliation
+><address
+><email
+>jan.napast153@gmail.com</email
+></address
+></affiliation
+><contrib
+>Prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>08.11.2016</date>
+<releaseinfo
+>Aplikacije 16.12</releaseinfo>
+
+</articleinfo>
+<para
+>Na tej strani najdete nastavitve za domačo in začetno stran ter vedenje brskanja z zavihki za upravitelja datotek &konqueror; in način brskalnika.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Ko se Konqueror zažene</guilabel
+></term>
+<listitem>
+<para
+>Ta možnost določa, katera stran je prikazana, ko &konqueror; začetek, uvodna stran, vaša domača stran, prazna stran ali stran z zaznamki. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Domača stran</guilabel
+></term>
+<listitem
+><para
+>To je &URL; (&eg; mapa ali spletna stran), kjer &konqueror; v načinu brskalnika skoči na, ko pritisnete gumb <guibutton
+>Domača stran</guibutton
+> v orodni vrstici. Pot, ki je vaša <guilabel
+>domača stran</guilabel
+>, lahko nastavite tako, da vnesete v besedilno polje ali uporabite ikono <guiicon
+>prebrskaj</guiicon
+>, da izberete lokalno mapo. &konqueror; je treba znova zagnati, da spremembe začnejo veljati.</para>
+<para
+>Ko se &konqueror; uporablja v načinu upravitelja datotek, je gumb <guilabel
+>Domača stran</guilabel
+> v orodni vrstici nadomeščen z gumbom <guilabel
+>Domača mapa</guilabel
+>, zaradi česar skoči v vašo lokalno domačo mapo.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Odpri povezave v novem zavihku namesto v novem oknu</guilabel
+></term>
+<listitem
+><para
+>&konqueror; privzeto ima eno okno na stran, vendar ima možnost odpreti več <firstterm
+>zavihkov</firstterm
+> v enem oknu. &konqueror; privzeto ima tudi &MMB; bližnjico za odpiranje katere koli povezave v novem oknu. Če omogočite <guilabel
+>Odpri povezave v novem zavihku namesto v novem oknu</guilabel
+>, lahko &MMB; kliknite na povezavo, da se odpre v novem zavihku.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Odpri pojavna okna v novem zavihku namesto v novem oknu</guilabel
+></term>
+<listitem
+><para
+>Ali se bodo pojavna okna JavaScript, če so dovoljena, odprla v novem zavihku ali v novem oknu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Odpri kot zavihek v obstoječem Konquerorju, ko je URL poklican zunaj</guilabel
+></term>
+<listitem
+><para
+>Ko kliknete &URL; v drugem &kde; ali pokličite kfmclient, da odprete &URL;, bo na trenutnem namizju preiskan neminimiziran &konqueror; in, če je najden, &URL; se odpre kot nov zavihek v njej. V nasprotnem primeru bo novi &konqueror; Odprlo se bo okno z zahtevanim &URL;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Odpiranje novih zavihkov v ozadju</guilabel
+></term>
+<listitem
+><para
+>Če uporabljate brskanje z zavihki, lahko izberete, ali na novo odprt zavihek postane aktiven (<quote
+>sprednji</quote
+>) zavihek ali gre na zadnjo stran. Pri počasni internetni povezavi ali med brskanjem po strani, ki ima seznam naslovov ali drugih povezav na seznamu, boste morda želeli, da se novi zavihki nalagajo v ozadju, medtem ko nadaljujete z branjem. V tem primeru omogočite to nastavitev. Če želite iti naravnost na novo stran in pustiti staro v ozadju, da se nanjo vrnete pozneje, jo onemogočite.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Odpri nov zavihek za trenutnim zavihkom</guilabel
+></term>
+<listitem
+><para
+>To bo odprlo nov zavihek, odprt na strani za trenutnim zavihkom, namesto za zadnjim zavihkom.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Skrij vrstico z zavihki, ko je odprt samo en zavihek</guilabel
+></term>
+<listitem
+><para
+>To bo prikazalo vrstico z zavihki le, če sta dva ali več zavihkov. V nasprotnem primeru bo vedno prikazan.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Prikaži gumb za zapiranje na zavihkih</guilabel
+></term>
+<listitem
+><para
+>To bo namesto ikon spletnih mest prikazalo gumbe za zapiranje znotraj vsakega zavihka.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Srednji klik na zavihek, da ga zaprete</guilabel
+></term>
+<listitem
+><para
+>Ko kliknete zavihek s srednjim gumbom miške ali miškinim kolescem, se ta zavihek zapre. &konqueror; je treba znova zagnati, da spremembe začnejo veljati.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Potrdi pri zapiranju oken z več zavihki</guilabel
+></term>
+<listitem
+><para
+>Če zaprete okno v &konqueror; ki ima odprtih več zavihkov, &konqueror; vas bo vprašal, ali ste prepričani, da ste ga želeli zapreti. To vedenje lahko vklopite in izklopite s tem potrditvenim poljem.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Aktiviraj prej uporabljen zavihek, ko zapreš trenutni zavihek</guilabel
+></term>
+<listitem
+><para
+>Če to potrdite, se bo prejšnji uporabljeni ali odprti zavihek aktiviral, ko zaprete trenutni aktivni zavihek namesto tistega desno od trenutnega zavihka.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</article>

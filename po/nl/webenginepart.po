@@ -2,27 +2,27 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2009, 2023 Freek de Kruijf <f.de.kruijf@hetnet.nl>
+# SPDX-FileCopyrightText: 2009, 2023, 2024 Freek de Kruijf <f.de.kruijf@hetnet.nl>
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010, 2011, 2012, 2013, 2016, 2017, 2018, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-25 00:37+0000\n"
-"PO-Revision-Date: 2023-11-29 17:37+0100\n"
+"PO-Revision-Date: 2024-03-25 12:07+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 24.02.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf - t/m 2023"
+msgstr "Freek de Kruijf - t/m 2024"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -312,61 +312,57 @@ msgstr ""
 #, kde-format
 msgctxt "@label location where a remote URL was downloaded"
 msgid "%1 was saved in %2"
-msgstr ""
+msgstr "%1 is opgeslagen in %2"
 
 #: src/actondownloadedfilebar.cpp:24
 #, kde-format
 msgid "Show file in this tab"
-msgstr ""
+msgstr "Bestand in dit tabblad tonen"
 
 #: src/actondownloadedfilebar.cpp:25
 #, kde-format
 msgid "Show file in a new tab in Konqueror"
-msgstr ""
+msgstr "Bestand in een nieuw tabblad in Konqueror tonen"
 
 #: src/actondownloadedfilebar.cpp:59
 #, kde-format
 msgid "Open in external application"
-msgstr ""
+msgstr "In externe toepassing openen"
 
 #: src/actondownloadedfilebar.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgid "Open in %1"
-msgstr "'%1' openen"
+msgstr "In %1 openen"
 
 #: src/actondownloadedfilebar.cpp:73 src/actondownloadedfilebar.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "'%1' openen"
+msgstr "&Met %1 openen"
 
 #: src/actondownloadedfilebar.cpp:100
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
-msgstr ""
+msgstr "In nieuw tabblad tonen"
 
 #: src/actondownloadedfilebar.cpp:100
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here"
-msgstr ""
+msgstr "Hier tonen"
 
 #: src/actondownloadedfilebar.cpp:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab using %1"
-msgstr ""
+msgstr "In nieuw tabblad tonen met %1"
 
 #: src/actondownloadedfilebar.cpp:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here using %1"
-msgstr ""
+msgstr "Hier met %1 tonen"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format

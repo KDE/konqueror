@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2016, 2017, 2018, 2020, 2021, 2022, 2023.
+# Yuri Chornoivan <yurchor@ukr.net>, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-25 00:37+0000\n"
-"PO-Revision-Date: 2023-11-29 09:52+0200\n"
+"PO-Revision-Date: 2024-03-25 17:54+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -308,61 +308,57 @@ msgstr "<td>Тип MIME</td><td>Опис</td><td>Суфікси</td><td>Дода
 #, kde-format
 msgctxt "@label location where a remote URL was downloaded"
 msgid "%1 was saved in %2"
-msgstr ""
+msgstr "%1 було збережено до %2"
 
 #: src/actondownloadedfilebar.cpp:24
 #, kde-format
 msgid "Show file in this tab"
-msgstr ""
+msgstr "Показати файл на цій вкладці"
 
 #: src/actondownloadedfilebar.cpp:25
 #, kde-format
 msgid "Show file in a new tab in Konqueror"
-msgstr ""
+msgstr "Показати файл на новій вкладці у Konqueror"
 
 #: src/actondownloadedfilebar.cpp:59
 #, kde-format
 msgid "Open in external application"
-msgstr ""
+msgstr "Відкрити у зовнішній програмі"
 
 #: src/actondownloadedfilebar.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgid "Open in %1"
-msgstr "Відкрити «%1»"
+msgstr "Відкрити у %1"
 
 #: src/actondownloadedfilebar.cpp:73 src/actondownloadedfilebar.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Відкрити «%1»"
+msgstr "Ві&дкрити за допомогою %1"
 
 #: src/actondownloadedfilebar.cpp:100
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
-msgstr ""
+msgstr "Показати на новій вкладці"
 
 #: src/actondownloadedfilebar.cpp:100
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here"
-msgstr ""
+msgstr "Показати тут"
 
 #: src/actondownloadedfilebar.cpp:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab using %1"
-msgstr ""
+msgstr "Показати на новій вкладці за допомогою %1"
 
 #: src/actondownloadedfilebar.cpp:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here using %1"
-msgstr ""
+msgstr "Показати тут за допомогою %1"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format

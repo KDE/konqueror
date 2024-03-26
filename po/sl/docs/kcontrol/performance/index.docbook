@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Slovenian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>Zmogljivost</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Gregor</firstname
+><surname
+>Rakar</surname
+><affiliation
+><address
+><email
+>gregor.rakar@kiss.si</email
+></address
+></affiliation
+><contrib
+>Prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>08.11.2016</date>
+<releaseinfo
+>Prijave 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Sistemske nastavitve</keyword>
+<keyword
+>zmogljivost</keyword>
+<keyword
+>prednaloži</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>Nastavitve delovanja</title>
+
+<para
+>&konqueror;, se uporablja na najrazličnejših računalnikih s strani najrazličnejših uporabnikov. Pod kategorijo zmogljivosti to pogovorno okno omogoča vsakemu uporabniku, da prilagodi možnosti, zaradi katerih lahko računalnik kjer je &konqueror; nameščen na občutek bolj odziven. </para>
+
+<sect2
+><title
+>Prednalaganje</title>
+<para
+>Pododdelek z oznako <guilabel
+>Prednalaganje</guilabel
+> naredi kompromis med pomnilnikom in zmogljivostjo.</para>
+
+<para
+><emphasis
+>Prednalaganje</emphasis
+> se nanaša na nalaganje primerka &konqueror; v pomnilnik, preden uporabnik zahteva zagon &konqueror;. Pozitivni učinek tega je, da ko uporabnik zahteva nalaganje &konqueror; okno se prikaže takoj, ker je večina aplikacije vnaprej naložena. Negativni učinek je, da ta primerek &konqueror; uporablja pomnilnik, ki bi ga lahko uporabljali drugi programi. Privzeto, ko uporabnik zapre &konqueror;, primerek ni zaprt. To pomeni, da naslednjič, ko uporabnik želi &konqueror; naložen, je spet skoraj v trenutku.</para>
+
+<para
+>Zadnje potrditveno polje z oznako <guilabel
+>Vedno poskušaj imeti vsaj en prednaložen primerek</guilabel
+> pomeni, da vedno želiš imeti en prednaložen, a neuporabljen primerek &konqueror; na voljo. Ta možnost bo dejansko zmanjšala zmogljivost nekaterih strojev (zlasti tistih z omejenim fizičnim pomnilnikom).</para>
+</sect2>
+</sect1>
+
+</article>

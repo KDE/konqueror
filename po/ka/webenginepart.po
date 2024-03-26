@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-25 00:37+0000\n"
-"PO-Revision-Date: 2023-11-29 05:32+0100\n"
+"PO-Revision-Date: 2024-03-25 04:56+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -309,61 +309,57 @@ msgstr "<td>Mime ტიპი</td><td>აღწერა</td><td>სუფიქ
 #, kde-format
 msgctxt "@label location where a remote URL was downloaded"
 msgid "%1 was saved in %2"
-msgstr ""
+msgstr "%1 შენახულია %2-ში"
 
 #: src/actondownloadedfilebar.cpp:24
 #, kde-format
 msgid "Show file in this tab"
-msgstr ""
+msgstr "ფაილის ჩვენება ამ ჩანართში"
 
 #: src/actondownloadedfilebar.cpp:25
 #, kde-format
 msgid "Show file in a new tab in Konqueror"
-msgstr ""
+msgstr "ფაილის ჩვენება Konqueror-ის ახალ ჩანართში"
 
 #: src/actondownloadedfilebar.cpp:59
 #, kde-format
 msgid "Open in external application"
-msgstr ""
+msgstr "გახსნა გარე აპლიკაციაში"
 
 #: src/actondownloadedfilebar.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgid "Open in %1"
-msgstr "გახსნა - '%1'"
+msgstr "%1-ში გახსნა"
 
 #: src/actondownloadedfilebar.cpp:73 src/actondownloadedfilebar.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "გახსნა - '%1'"
+msgstr "%1-ით &გახსნა"
 
 #: src/actondownloadedfilebar.cpp:100
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
-msgstr ""
+msgstr "ჩვენება ახალ ჩანართში"
 
 #: src/actondownloadedfilebar.cpp:100
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here"
-msgstr ""
+msgstr "ჩვენება აქ"
 
 #: src/actondownloadedfilebar.cpp:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab using %1"
-msgstr ""
+msgstr "ჩვენება %1-ის ახალ ჩანართში"
 
 #: src/actondownloadedfilebar.cpp:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here using %1"
-msgstr ""
+msgstr "ჩვენება აქ %1-ში"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
