@@ -5,7 +5,7 @@
 # Joëlle Cornavin <j.cornavin@sfr.fr>, 2009.
 # Guillaume Pujol <guill.p@gmail.com>, 2010.
 # Geoffray Levasseur <geoffray.levasseurbrandin@numericable.fr>, 2010, 2011, 2012, 2013.
-# SPDX-FileCopyrightText: 2012, 2013, 2020, 2021, 2022, 2023 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2012, 2013, 2020, 2021, 2022, 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
 # Vincent Pinon <vpinon@kde.org>, 2017.
 # Simon Depiets <sdepiets@gmail.com>, 2018, 2019, 2020.
 # Xavier Besnard <xavier.besnard@kde.org>, 2023.
@@ -15,17 +15,17 @@ msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-25 00:37+0000\n"
-"PO-Revision-Date: 2023-11-30 09:16+0100\n"
+"PO-Revision-Date: 2024-03-26 09:03+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.3\n"
-"X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
+"X-Environment: kde\n"
+"X-Generator: Lokalize 23.08.5\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -330,61 +330,57 @@ msgstr ""
 #, kde-format
 msgctxt "@label location where a remote URL was downloaded"
 msgid "%1 was saved in %2"
-msgstr ""
+msgstr "%1 a été enregistrée dans %2"
 
 #: src/actondownloadedfilebar.cpp:24
 #, kde-format
 msgid "Show file in this tab"
-msgstr ""
+msgstr "Afficher le fichier dans cet onglet"
 
 #: src/actondownloadedfilebar.cpp:25
 #, kde-format
 msgid "Show file in a new tab in Konqueror"
-msgstr ""
+msgstr "Afficher le fichier dans un nouvel onglet dans Konqueror"
 
 #: src/actondownloadedfilebar.cpp:59
 #, kde-format
 msgid "Open in external application"
-msgstr ""
+msgstr "Ouvrir dans une application externe"
 
 #: src/actondownloadedfilebar.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgid "Open in %1"
-msgstr "Ouvrir « %1 »"
+msgstr "Ouvrir dans %1"
 
 #: src/actondownloadedfilebar.cpp:73 src/actondownloadedfilebar.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Ouvrir « %1 »"
+msgstr "Ouvrir a&vec %1"
 
 #: src/actondownloadedfilebar.cpp:100
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
-msgstr ""
+msgstr "Afficher dans un nouvel onglet"
 
 #: src/actondownloadedfilebar.cpp:100
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here"
-msgstr ""
+msgstr "Afficher ici"
 
 #: src/actondownloadedfilebar.cpp:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab using %1"
-msgstr ""
+msgstr "Afficher dans un nouvel onglet en utilisant %1"
 
 #: src/actondownloadedfilebar.cpp:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here using %1"
-msgstr ""
+msgstr "Afficher ici en utilisant %1"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
