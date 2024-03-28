@@ -1,50 +1,50 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# SPDX-FileCopyrightText: 2024 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-25 00:37+0000\n"
-"PO-Revision-Date: 2024-03-27 19:45\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-27 23:49+0100\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/konqueror/webenginepart.pot\n"
-"X-Crowdin-File-ID: 48596\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ni Hui, Tyson Tan, Wang Jiajun"
+msgstr "Softastur"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "shuizhuyuanluo@126.com, tds00@qq.com, amesists@gmail.com"
+msgstr "alministradores@softastur.org"
 
 #: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:74
 #: src/about/konq_aboutpage.cpp:197 src/about/konq_aboutpage.cpp:199
 #, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
-msgstr "为自由而生！"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:73 src/about/konq_aboutpage.cpp:132
 #: src/about/konq_aboutpage.cpp:198
 #, kde-format
 msgid "Konqueror"
-msgstr "Konqueror"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:75 src/about/konq_aboutpage.cpp:134
 #: src/about/konq_aboutpage.cpp:200
 #, kde-format
 msgid "Konqueror is a web browser, file manager and universal document viewer."
-msgstr "Konqueror 是一款 web 浏览器、文件管理器和通用文档查看器。"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:76 src/about/konq_aboutpage.cpp:135
 #: src/about/konq_aboutpage.cpp:201
@@ -53,75 +53,75 @@ msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
 "Points contains links to Home, Network Folders, Trash, etc."
 msgid "Starting Points"
-msgstr "起点"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:77 src/about/konq_aboutpage.cpp:136
 #: src/about/konq_aboutpage.cpp:202
 #, kde-format
 msgid "Introduction"
-msgstr "简介"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:78 src/about/konq_aboutpage.cpp:137
 #: src/about/konq_aboutpage.cpp:203
 #, kde-format
 msgid "Tips"
-msgstr "小提示"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:83
 #, kde-format
 msgid "Home Folder"
-msgstr "主文件夹"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:84
 #, kde-format
 msgid "Your personal files"
-msgstr "您的个人文件"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:87
 #, kde-format
 msgid "Trash"
-msgstr "回收站"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:88
 #, kde-format
 msgid "Browse and restore the trash"
-msgstr "浏览并恢复回收站"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:91
 #, kde-format
 msgid "Network Folders"
-msgstr "网络文件夹"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:92
 #, kde-format
 msgid "Shared files and folders"
-msgstr "共享文件和文件夹"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:95
 #, kde-format
 msgid "Bookmarks"
-msgstr "书签"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:96
 #, kde-format
 msgid "Quick access to your bookmarks"
-msgstr "快速访问您的书签"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:99
 #, kde-format
 msgid "Next: An Introduction to Konqueror"
-msgstr "下一步：Konqueror 简介"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:101
 #, kde-format
 msgid "Search the Web"
-msgstr "搜索 Web"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:131 src/about/konq_aboutpage.cpp:133
 #, kde-format
 msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
 msgid "Be free."
-msgstr "为自由而生！"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:138
 #, kde-format
@@ -130,8 +130,6 @@ msgid ""
 "both local and networked folders while enjoying advanced features such as "
 "the powerful sidebar and file previews."
 msgstr ""
-"Konqueror 使您处理和管理文件变得容易。 您可以浏览本地文件夹和网络文件夹，同时"
-"享受高级功能，例如强大的侧边栏和文件预览。"
 
 #: src/about/konq_aboutpage.cpp:142
 #, kde-format
@@ -141,9 +139,6 @@ msgid ""
 "kde.org\">http://www.kde.org</a>) of a web page you would like to visit in "
 "the location bar and press Enter, or choose an entry from the Bookmarks menu."
 msgstr ""
-"Konqueror 还是一个全功能而易用的 Web 浏览器。有它的日子，网上冲浪不再是一件枯"
-"燥的事情。只需在位置栏输入您要浏览的地址(例如 <a href=\"http://www.kde.org"
-"\">http://www.kde.org</a>) 并按 Enter，或者选择书签菜单中的任何一项。"
 
 #: src/about/konq_aboutpage.cpp:147
 #, kde-format
@@ -151,8 +146,6 @@ msgid ""
 "To return to the previous location, press the back button <img width='16' "
 "height='16' src=\"%1\"></img> in the toolbar. "
 msgstr ""
-"如果您要返回到上一个位置，请按工具栏中的后退按钮 <img width='16' height='16' "
-"src=\"%1\"></img>。"
 
 #: src/about/konq_aboutpage.cpp:150
 #, kde-format
@@ -160,24 +153,22 @@ msgid ""
 "To quickly go to your Home folder press the home button <img width='16' "
 "height='16' src=\"%1\"></img>."
 msgstr ""
-"要快速返回到您的主文件夹，只需单击工具栏中的主文件夹按钮 <img width='16' "
-"height='16' src=\"%1\"></img>。"
 
 #: src/about/konq_aboutpage.cpp:152
 #, kde-format
 msgid ""
 "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
-msgstr "如果需要有关 Konqueror 更详细的文档，请点击<a href=\"%1\">此处</a>。"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:155
 #, kde-format
 msgid "Next: Tips & Tricks"
-msgstr "下一页：提示和技巧"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:204
 #, kde-format
 msgid "Tips & Tricks"
-msgstr "提示和技巧"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:205
 #, kde-format
@@ -188,9 +179,6 @@ msgid ""
 "encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-"
 "Shortcuts."
 msgstr ""
-"请使用 Web 快捷方式：通过键入“gg: KDE”，可以使用 Google 在 Internet 上搜"
-"索“KDE”这个关键词。有很多预定义的快捷方式使搜索软件或在百科全书中查找某些词变"
-"得轻而易举。您甚至可以<a href=\"%1\">创建您自己的</a> Web 快捷方式。"
 
 #: src/about/konq_aboutpage.cpp:210
 #, kde-format
@@ -199,8 +187,6 @@ msgid ""
 "want to clear the current entry by pressing the black arrow with the white "
 "cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
 msgstr ""
-"当您希望在位置工具栏中粘贴新地址时，您也许希望用工具栏中的白十字黑箭头 <img "
-"width='16' height='16' src=\"%1\"></img> 来清除当前的地址。"
 
 #: src/about/konq_aboutpage.cpp:214
 #, kde-format
@@ -209,8 +195,6 @@ msgid ""
 "the icon (favicon) that is to the left of the Location toolbar, drop it on "
 "to the desktop, and choose \"Icon\"."
 msgstr ""
-"如果要在桌面上创建指向当前页面的链接，只需将位置工具栏左侧的图标(网站图标)拖"
-"放到桌面上，并选择“图标”。"
 
 #: src/about/konq_aboutpage.cpp:217
 #, kde-format
@@ -219,8 +203,6 @@ msgid ""
 "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
 "sessions."
 msgstr ""
-"您也可以在窗口菜单中找到 <img width='16' height='16' src=\"%1\" /> “全屏幕模"
-"式”。该特性对“Talk”会话非常有用。"
 
 #: src/about/konq_aboutpage.cpp:220
 #, kde-format
@@ -229,9 +211,6 @@ msgid ""
 "two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> Split "
 "View Left/Right) you can make Konqueror appear the way you like."
 msgstr ""
-"分而治之 - 通过将一个窗口分为两个部分(例如，窗口 - > <img width='16' "
-"height='16' src=\"%1\"> 将视图左右分开</img>)， 您可以使 Konqueror 象您希望的"
-"那样。"
 
 #: src/about/konq_aboutpage.cpp:223
 #, kde-format
@@ -240,8 +219,6 @@ msgid ""
 "visiting asks you to use a different browser (and do not forget to send a "
 "complaint to the webmaster!)"
 msgstr ""
-"如果您正在访问的网站要求您使用另外的浏览器，您可以使用<a href=\"%1\">用户代理"
-"</a>特性 (并且不要忘记向网站管理者抱怨！)"
 
 #: src/about/konq_aboutpage.cpp:226
 #, kde-format
@@ -249,8 +226,6 @@ msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
 "ensures that you can keep track of the pages you have visited recently."
 msgstr ""
-"侧边栏中的历史功能 <img width='16' height='16' src=\"%1\"></img> 使您能够跟踪"
-"您最近访问的页面。"
 
 #: src/about/konq_aboutpage.cpp:228
 #, kde-format
@@ -259,8 +234,6 @@ msgid ""
 "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
 "Terminal Emulator)."
 msgstr ""
-"高级用户会喜欢 Konsole，您可以将它嵌入 Konqueror(设置 -> <img width='16' "
-"height='16' src=\"%1\"></img> 显示终端仿真器)。"
 
 #: src/about/konq_aboutpage.cpp:232
 #, kde-format
@@ -268,83 +241,83 @@ msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
 "Points contains links to Home, Network Folders, Trash, etc."
 msgid "<a href=\"%1\">Return to Starting Points</a>"
-msgstr "<a href=\"%1\">返回到起点</a>"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:246
 #, kde-format
 msgid "Installed Plugins"
-msgstr "已安装的插件"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:247
 #, kde-format
 msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
-msgstr "<td>插件</td><td>描述</td><td>文件</td><td>类型</td>"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:248
 #, kde-format
 msgid "Installed"
-msgstr "已安装"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:249
 #, kde-format
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
-msgstr "<td>MIME 类型</td><td>描述</td><td>后缀</td><td>插件</td>"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:20
 #, kde-format
 msgctxt "@label location where a remote URL was downloaded"
 msgid "%1 was saved in %2"
-msgstr "%1 已保存到 %2"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:24
 #, kde-format
 msgid "Show file in this tab"
-msgstr "在此标签页中显示文件"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:25
 #, kde-format
 msgid "Show file in a new tab in Konqueror"
-msgstr "在 Konqueror 的一个新标签页中显示文件"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:59
 #, kde-format
 msgid "Open in external application"
-msgstr "用外部程序打开"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:64
 #, kde-format
 msgid "Open in %1"
-msgstr "用 %1 打开"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:73 src/actondownloadedfilebar.cpp:113
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "使用 %1 打开(&W)"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:100
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
-msgstr "在新标签页中显示"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:100
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here"
-msgstr "在此显示"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab using %1"
-msgstr "在新标签页中用 %1 显示"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here using %1"
-msgstr "在此用 %1 显示"
+msgstr ""
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -352,8 +325,6 @@ msgid ""
 "The page will be saved as a single HTML file. Only the text of the page will "
 "be saved. External resources such as images won't be saved"
 msgstr ""
-"页面将被保存为一个 HTML 文件。只有页面中的文字会被保存。图像等外部资源将不会"
-"被保存。"
 
 #: src/choosepagesaveformatdlg.cpp:40
 #, kde-format
@@ -361,8 +332,6 @@ msgid ""
 "The page will be saved as an HTML file. Any external resources the page "
 "requires, such as images, will be saved inside an apposite directory"
 msgstr ""
-"页面将被保存为一个 HTML 文件。页面所需的所有外部资源，例如图像等，将被保存在"
-"对应的目录中。"
 
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
@@ -372,58 +341,55 @@ msgid ""
 "<br><strong>Note</strong>: not all browsers are able to display this kind of "
 "files"
 msgstr ""
-"页面将被保存为一个 MHTML 文件，这种文件可以同时内嵌页面的文字和页面所需的所有"
-"外部资源，例如图像等。<br><strong>请注意</strong>：某些浏览器不能正常显示这种"
-"文件"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
 #, kde-format
 msgid "Choose Save Format"
-msgstr "选择保存格式"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:20
 #, kde-format
 msgid "How would you like to save the page?"
-msgstr "您想要如何保存此页面？"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As an HTML file &without external resources"
-msgstr "保存为 HTML 文件，不包含外部资源(&W)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
 #, kde-format
 msgid "As a &complete HTML page"
-msgstr "保存为 HTML 页面，包含完整内容(&C)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As a &MHTML file"
-msgstr "保存为 &MHTML 文件"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:57 src/webenginepartcertificateerrordlg.ui:23
 #, kde-format
 msgid "TextLabel"
-msgstr "文字标签"
+msgstr ""
 
 #: src/cookies/cookiealertdlg.cpp:22
 #, kde-format
 msgctxt "@label the cookie expires when the browser session ends"
 msgid "End of Session"
-msgstr "当次会话"
+msgstr ""
 
 #: src/cookies/cookiealertdlg.cpp:29
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by https servers"
 msgid "Secure servers only"
-msgstr "HTTPS 服务器"
+msgstr ""
 
 #: src/cookies/cookiealertdlg.cpp:31
 #, kde-format
@@ -431,13 +397,13 @@ msgctxt ""
 "@label exposure string - the cookie may be used by https servers AND client-"
 "side javascripts"
 msgid "Secure servers, page scripts"
-msgstr "HTTPS 服务器、页面脚本"
+msgstr ""
 
 #: src/cookies/cookiealertdlg.cpp:35
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by http servers"
 msgid "Servers"
-msgstr "HTTP 服务器"
+msgstr ""
 
 #: src/cookies/cookiealertdlg.cpp:37
 #, kde-format
@@ -445,31 +411,31 @@ msgctxt ""
 "@label exposure string - the cookie may be used by http servers AND client-"
 "side javascripts"
 msgid "Servers, page scripts"
-msgstr "HTTP 服务器、页面脚本"
+msgstr ""
 
 #: src/cookies/cookiealertdlg.cpp:41
 #, kde-format
 msgctxt "@label accept cookie"
 msgid "Accept"
-msgstr "接受"
+msgstr ""
 
 #: src/cookies/cookiealertdlg.cpp:42
 #, kde-format
 msgctxt "@label accept cookie for this session only"
 msgid "Accept for this session"
-msgstr "接受 (当次会话) (&S)"
+msgstr ""
 
 #: src/cookies/cookiealertdlg.cpp:45
 #, kde-format
 msgctxt "@label reject cookie"
 msgid "Reject"
-msgstr "拒绝"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CookieAlertDlg)
 #: src/cookies/cookiealertdlg.ui:14
 #, kde-format
 msgid "CookieAlertDlg"
-msgstr "Cookie 警告对话框"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, header)
 #: src/cookies/cookiealertdlg.ui:20
@@ -478,74 +444,72 @@ msgid ""
 "<html><head/><body><p>You received a cookie from %1</p><p>Do you want to "
 "accept or reject this cookie?</p></body></html>"
 msgstr ""
-"<html><head/><body><p>您接收到了一个来自 %1 的 Cookie</p><p>您想要接受还是拒"
-"绝这个 cookie？</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/cookies/cookiealertdlg.ui:30
 #, kde-format
 msgid "Cookie details"
-msgstr "Cookie 详情"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/cookies/cookiealertdlg.ui:36
 #, kde-format
 msgid "Name"
-msgstr "名称"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: src/cookies/cookiealertdlg.ui:50
 #, kde-format
 msgid "Value"
-msgstr "值"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: src/cookies/cookiealertdlg.ui:64
 #, kde-format
 msgid "Expires"
-msgstr "过期"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: src/cookies/cookiealertdlg.ui:78
 #, kde-format
 msgid "Path"
-msgstr "路径"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: src/cookies/cookiealertdlg.ui:99
 #, kde-format
 msgid "Exposure"
-msgstr "暴露"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: src/cookies/cookiealertdlg.ui:113
 #, kde-format
 msgid "Domain"
-msgstr "域名"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: src/cookies/cookiealertdlg.ui:123
 #, kde-format
 msgid "Apply choice to"
-msgstr "应用此选择到"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToThis)
 #: src/cookies/cookiealertdlg.ui:129
 #, kde-format
 msgid "Only this cookie"
-msgstr "仅这个 Cookie"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToDomain)
 #: src/cookies/cookiealertdlg.ui:136
 #, kde-format
 msgid "All cookies from this domain"
-msgstr "所有来自此域名的 Cookie"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToAll)
 #: src/cookies/cookiealertdlg.ui:143
 #, kde-format
 msgid "All cookies"
-msgstr "所有 Cookie"
+msgstr ""
 
 #: src/schemehandlers/errorschemehandler.cpp:97
 #, kde-format
@@ -553,297 +517,295 @@ msgid ""
 "<html><body><h3>Unable to display error message</h3><p>The error template "
 "file <em>error.html</em> could not be found.</p></body></html>"
 msgstr ""
-"<html><body><h3>无法显示错误消息</h3><p>无法找到错误模板文件 <em>error.html</"
-"em>。</p></body></html>"
 
 #: src/schemehandlers/errorschemehandler.cpp:106
 #, kde-format
 msgid "The requested operation could not be completed"
-msgstr "请求的操作无法完成"
+msgstr ""
 
 #: src/schemehandlers/errorschemehandler.cpp:113
 #, kde-format
 msgid "Technical Reason: %1"
-msgstr "技术原因：%1"
+msgstr ""
 
 #: src/schemehandlers/errorschemehandler.cpp:118
 #, kde-format
 msgid "Details of the Request:"
-msgstr "请求的细节："
+msgstr ""
 
 #. i18n, and once for HTML.
 #: src/schemehandlers/errorschemehandler.cpp:121
 #, kde-format
 msgid "URL: %1"
-msgstr "URL：%1"
+msgstr ""
 
 #. i18n, and once for HTML.
 #: src/schemehandlers/errorschemehandler.cpp:127
 #, kde-format
 msgid "Protocol: %1"
-msgstr "协议：%1"
+msgstr ""
 
 #: src/schemehandlers/errorschemehandler.cpp:131
 #, kde-format
 msgid "Date and Time: %1"
-msgstr "日期和时间：%1"
+msgstr ""
 
 #. i18n, and once for HTML.
 #: src/schemehandlers/errorschemehandler.cpp:135
 #, kde-format
 msgid "Additional Information: %1"
-msgstr "额外信息：%1"
+msgstr ""
 
 #: src/schemehandlers/errorschemehandler.cpp:137
 #, kde-format
 msgid "Description:"
-msgstr "描述："
+msgstr ""
 
 #: src/schemehandlers/errorschemehandler.cpp:144
 #, kde-format
 msgid "Possible Causes:"
-msgstr "可能的原因："
+msgstr ""
 
 #: src/schemehandlers/errorschemehandler.cpp:152
 #, kde-format
 msgid "Possible Solutions:"
-msgstr "可能的解决方法："
+msgstr ""
 
 #: src/schemehandlers/errorschemehandler.cpp:158
 #, kde-format
 msgid "Error: %1"
-msgstr "错误：%1"
+msgstr ""
 
 #: src/settings/webenginesettings.cpp:914
 #, kde-format
 msgid "Filter error"
-msgstr "过滤器错误"
+msgstr ""
 
 #: src/spellcheckermanager.cpp:98
 #, kde-format
 msgid "Spelling"
-msgstr "拼写检查"
+msgstr ""
 
 #: src/spellcheckermanager.cpp:102
 #, kde-format
 msgid "Spell Checking Enabled"
-msgstr "已启用拼写检查"
+msgstr ""
 
 #: src/spellcheckermanager.cpp:120
 #, kde-format
 msgid "&Languages"
-msgstr "语言(&L)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/ui/credentialsdetailswidget.ui:34
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
 #, kde-format
 msgid "&Show passwords"
-msgstr "显示密码(&S)"
+msgstr ""
 
 #: src/ui/featurepermissionbar.cpp:22
 #, kde-format
 msgctxt "@action:deny permission"
 msgid "&Deny permission"
-msgstr "拒绝(&D)"
+msgstr ""
 
 #: src/ui/featurepermissionbar.cpp:26
 #, kde-format
 msgctxt "@action:grant permission"
 msgid "&Grant permission"
-msgstr "授权(&G)"
+msgstr ""
 
 #: src/ui/featurepermissionbar.cpp:57
 #, kde-format
 msgid "<html><b>%1</b> would like to send you notifications"
-msgstr "<html><b>%1</b> 想给您发送通知"
+msgstr ""
 
 #: src/ui/featurepermissionbar.cpp:59
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access information about your current physical "
 "location"
-msgstr "<html><b>%1</b> 想获取您的物理位置信息"
+msgstr ""
 
 #: src/ui/featurepermissionbar.cpp:61
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your microphone and other audio capture "
 "devices"
-msgstr "<html><b>%1</b> 想使用您的麦克风及其他音频采集设备"
+msgstr ""
 
 #: src/ui/featurepermissionbar.cpp:63
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your camera and other video capture "
 "devices"
-msgstr "<html><b>%1</b> 想使用您的摄像头及其他视频采集设备"
+msgstr ""
 
 #: src/ui/featurepermissionbar.cpp:65
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access to your microphone, camera and other "
 "audio and video capture devices"
-msgstr "<html><b>%1</b> 想使用您的麦克风、摄像头及其他音频与视频采集设备"
+msgstr ""
 
 #: src/ui/featurepermissionbar.cpp:67
 #, kde-format
 msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
-msgstr "<html><b>%1</b> 想将您的光标锁在网页中"
+msgstr ""
 
 #: src/ui/featurepermissionbar.cpp:69
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen"
-msgstr "<html><b>%1</b> 想录制您的屏幕"
+msgstr ""
 
 #: src/ui/featurepermissionbar.cpp:71
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen and your audio"
-msgstr "<html><b>%1</b> 想录制您的屏幕和音频"
+msgstr ""
 
 #: src/ui/passwordbar.cpp:29
 #, kde-format
 msgctxt "@action:remember password"
 msgid "&Remember"
-msgstr "记住(&R)"
+msgstr ""
 
 #: src/ui/passwordbar.cpp:33
 #, kde-format
 msgctxt "@action:never for this site"
 msgid "Ne&ver for this site"
-msgstr "对此网站不记住密码(&V)"
+msgstr ""
 
 #: src/ui/passwordbar.cpp:37
 #, kde-format
 msgctxt "@action:not now"
 msgid "N&ot now"
-msgstr "暂不记住(&N)"
+msgstr ""
 
 #: src/ui/passwordbar.cpp:41 src/ui/passwordbar.cpp:125
 #, kde-format
 msgctxt "@action:display details about credentials to store"
 msgid "&Show details"
-msgstr "显示详情(&S)"
+msgstr ""
 
 #: src/ui/passwordbar.cpp:123
 #, kde-format
 msgctxt "@action:hide details about credentials to store"
 msgid "&Hide details"
-msgstr "隐藏详情(&H)"
+msgstr ""
 
 #: src/ui/searchbar.cpp:38
 #, kde-format
 msgid "Find..."
-msgstr "查找..."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, closeButton)
 #: src/ui/searchbar.ui:23
 #, kde-format
 msgid "Close the search bar"
-msgstr "关闭搜索栏"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, nextButton)
 #: src/ui/searchbar.ui:49
 #, kde-format
 msgid "Find the next match for the current search phrase"
-msgstr "查找下一个和搜索字串匹配的文本"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QToolButton, nextButton)
 #: src/ui/searchbar.ui:52
 #, kde-format
 msgid "&Next"
-msgstr "下一个(&N)"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, previousButton)
 #. i18n: ectx: property (toolTip), widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:68 src/ui/searchbar.ui:84
 #, kde-format
 msgid "Find the previous match for the current search phrase"
-msgstr "查找上一个和搜索字串匹配的文本"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QToolButton, previousButton)
 #: src/ui/searchbar.ui:71
 #, kde-format
 msgid "&Previous"
-msgstr "上一个(&P)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:87
 #, kde-format
 msgid "&Options"
-msgstr "选项(&O)"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:116
 #, kde-format
 msgid "&Match Case"
-msgstr "区分大小写(&M)"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:127
 #, kde-format
 msgid "&Search As You Type"
-msgstr "即输即搜(&S)"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:135
 #, kde-format
 msgid "&Highlight All Matches"
-msgstr "突出显示全部匹配(&H)"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), item, widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:138
 #, kde-format
 msgid "Highlight Matches"
-msgstr "突出显示匹配文本"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
 #, kde-format
 msgid "Choose fields to remember"
-msgstr "选择要记住的字段"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
 #, kde-format
 msgid "Switch between displaying passwords or placeholders"
-msgstr "在显示密码和显示占位符之间进行切换"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
 #, kde-format
 msgid "Show advanced information about the fields"
-msgstr "显示该字段相关的高级信息"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
 #: src/webenginepartcertificateerrordlg.ui:30
 #, kde-format
 msgid "&Show details"
-msgstr "显示详情(&S)"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
 #, kde-format
 msgid "Available &fields"
-msgstr "可用字段(&F)"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:101
 #, kde-format
 msgid "Store form data in KWallet when closing the dialog"
-msgstr "关闭对话框后，将表单中的数据储存到 KWallet 中"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
 #, kde-format
 msgid "&Immediately memorize form data"
-msgstr "立刻记住表单数据(&I)"
+msgstr ""
 
 #: src/webenginepage.cpp:159 src/webenginepage.cpp:183
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
-msgstr "无法在您的安装路径中找到下载管理器 (%1)。"
+msgstr ""
 
 #: src/webenginepage.cpp:160 src/webenginepage.cpp:184
 #, kde-format
@@ -852,9 +814,6 @@ msgid ""
 "\n"
 "The integration will be disabled."
 msgstr ""
-"请尝试重新安装以确保它于搜索路径 $PATH 中可用。\n"
-"\n"
-"集成特性将被禁用。"
 
 #: src/webenginepage.cpp:456
 #, kde-format
@@ -864,14 +823,11 @@ msgid ""
 "and made a purchase, click the Cancel button to prevent a duplicate purchase."
 "Otherwise, click the Continue button to display the webpage again.</p>"
 msgstr ""
-"<qt><p>为了再次显示请求的页面，浏览器需要重新发送您之前提交的信息。</p><p>如"
-"果您正在网上购物，请点击取消按钮以免产生重复的交易。否则，请点击继续以再次显"
-"示网页。</p>"
 
 #: src/webenginepage.cpp:463
 #, kde-format
 msgid "Resubmit Information"
-msgstr "重新提交信息"
+msgstr ""
 
 #: src/webenginepage.cpp:665
 #, kde-format
@@ -879,19 +835,17 @@ msgid ""
 "This site is attempting to access information about your physical location.\n"
 "Do you want to allow it access?"
 msgstr ""
-"该站点试图访问您的物理位置信息。\n"
-"您想允许它访问吗？"
 
 #: src/webenginepage.cpp:669 src/webenginepage.cpp:747
 #: src/webenginepage.cpp:758
 #, kde-format
 msgid "Network Transmission"
-msgstr "网络传送"
+msgstr ""
 
 #: src/webenginepage.cpp:670
 #, kde-format
 msgid "Allow access"
-msgstr "允许访问"
+msgstr ""
 
 #: src/webenginepage.cpp:740
 #, kde-format
@@ -901,14 +855,11 @@ msgid ""
 "A third party may be able to intercept and view this information.\n"
 "Are you sure you want to send the data unencrypted?"
 msgstr ""
-"警告：这是一个加密的表格，但是它正试图把您的数据明文发送回来。\n"
-"第三方可能可以截获并查看该信息。\n"
-"您确定要发送未加密的数据吗？"
 
 #: src/webenginepage.cpp:748
 #, kde-format
 msgid "&Send Unencrypted"
-msgstr "不加密发送(&S)"
+msgstr ""
 
 #: src/webenginepage.cpp:755
 #, kde-format
@@ -916,35 +867,33 @@ msgid ""
 "This site is attempting to submit form data via email.\n"
 "Do you want to continue?"
 msgstr ""
-"该站点试图通过电子邮件来提交表格数据。\n"
-"您想继续吗？"
 
 #: src/webenginepage.cpp:759
 #, kde-format
 msgid "&Send Email"
-msgstr "发送电子邮件(&S)"
+msgstr ""
 
 #: src/webenginepage.cpp:808
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
-msgstr "<qt>您想要允许此站点附加以下文件到电子邮件信件中吗？</qt>"
+msgstr ""
 
 #: src/webenginepage.cpp:810
 #, kde-format
 msgid "Email Attachment Confirmation"
-msgstr "电子邮件附件确认"
+msgstr ""
 
 #: src/webenginepage.cpp:811
 #, kde-format
 msgid "&Allow attachments"
-msgstr "允许附件(&A)"
+msgstr ""
 
 #: src/webenginepage.cpp:812
 #, kde-format
 msgid "&Ignore attachments"
-msgstr "忽略附件(&I)"
+msgstr ""
 
 #: src/webenginepage.cpp:826
 #, kde-format
@@ -952,13 +901,11 @@ msgid ""
 "This site attempted to attach a file from your computer in the form "
 "submission. The attachment was removed for your protection."
 msgstr ""
-"该网站在提交表格时试图从您的计算机中附加文件。为了保护您的隐私，附件已被删"
-"除。"
 
 #: src/webenginepage.cpp:829
 #, kde-format
 msgid "Attachment Removed"
-msgstr "附件已删除"
+msgstr ""
 
 #: src/webenginepage.cpp:943
 #, kde-format
@@ -966,84 +913,82 @@ msgid ""
 "This site is requesting to open a new popup window.\n"
 "Do you want to allow this?"
 msgstr ""
-"该站点试图打开一个新的弹出窗口。\n"
-"您想继续吗？"
 
 #: src/webenginepage.cpp:945
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
 "want to allow this?</qt>"
-msgstr "<qt>该站点试图在一个新的弹出窗口中打开 <p>%1</p><br/>您想继续吗？</qt>"
+msgstr ""
 
 #: src/webenginepage.cpp:948
 #, kde-format
 msgid "Javascript Popup Confirmation"
-msgstr "Javascript 弹出确认"
+msgstr ""
 
 #: src/webenginepage.cpp:949
 #, kde-format
 msgid "Allow"
-msgstr "允许"
+msgstr ""
 
 #: src/webenginepage.cpp:949
 #, kde-format
 msgid "Do Not Allow"
-msgstr "不允许"
+msgstr ""
 
 #: src/webenginepart.cpp:218
 #, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "保存完整的 HTML 页面为..."
+msgstr ""
 
 #: src/webenginepart.cpp:222
 #, kde-format
 msgid "Print Preview"
-msgstr "打印预览"
+msgstr ""
 
 #: src/webenginepart.cpp:226
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
-msgstr "放大"
+msgstr ""
 
 #: src/webenginepart.cpp:231
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
-msgstr "缩小"
+msgstr ""
 
 #: src/webenginepart.cpp:236
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
-msgstr "实际大小"
+msgstr ""
 
 #: src/webenginepart.cpp:241
 #, kde-format
 msgid "Zoom Text Only"
-msgstr "只缩放文本"
+msgstr ""
 
 #: src/webenginepart.cpp:249
 #, kde-format
 msgid "Zoom To DPI"
-msgstr "缩放至 DPI"
+msgstr ""
 
 #: src/webenginepart.cpp:262
 #, kde-format
 msgid "Set &Encoding"
-msgstr "设置编码(&E)"
+msgstr ""
 
 #: src/webenginepart.cpp:265
 #, kde-format
 msgid "View Do&cument Source"
-msgstr "查看文档源文件(&C)"
+msgstr ""
 
 #: src/webenginepart.cpp:270 src/webenginepart.cpp:559
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
-msgstr "SSL"
+msgstr ""
 
 #: src/webenginepart.cpp:276
 #, kde-format
@@ -1051,12 +996,12 @@ msgctxt "find action \"whats this\" text"
 msgid ""
 "<h3>Find text</h3>Shows a dialog that allows you to find text on the "
 "displayed page."
-msgstr "<h3>查找文本</h3>显示一个对话框，让您可以在所显示的页面中查找文本。"
+msgstr ""
 
 #: src/webenginepart.cpp:557
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
-msgstr "此站点的 SSL 信息似乎已损坏。"
+msgstr ""
 
 #: src/webenginepart.cpp:638
 #, kde-format
@@ -1064,7 +1009,7 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid "Email: "
-msgstr "电子邮件："
+msgstr ""
 
 #: src/webenginepart.cpp:667
 #, kde-format
@@ -1072,7 +1017,7 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid " - CC: "
-msgstr " - 抄送："
+msgstr ""
 
 #: src/webenginepart.cpp:669
 #, kde-format
@@ -1080,7 +1025,7 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid " - BCC: "
-msgstr " - 密送："
+msgstr ""
 
 #: src/webenginepart.cpp:671
 #, kde-format
@@ -1088,152 +1033,152 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid " - Subject: "
-msgstr " - 主题："
+msgstr ""
 
 #: src/webenginepart.cpp:675 src/webenginepart.cpp:686
 #, kde-format
 msgid " (In new window)"
-msgstr " (在新窗口中)"
+msgstr ""
 
 #: src/webenginepart.cpp:684
 #, kde-format
 msgid " (In parent frame)"
-msgstr " (在父框架中)"
+msgstr ""
 
 #: src/webenginepart.cpp:754
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
-msgstr "<qt>您想要搜索 <b>%1</b> 吗？</qt>"
+msgstr ""
 
 #: src/webenginepart.cpp:755
 #, kde-format
 msgid "Internet Search"
-msgstr "互联网搜索"
+msgstr ""
 
 #: src/webenginepart.cpp:755
 #, kde-format
 msgid "&Search"
-msgstr "搜索(&S)"
+msgstr ""
 
 #: src/webenginepart.cpp:866
 #, kde-format
 msgid "Close window?"
-msgstr "关闭窗口吗？"
+msgstr ""
 
 #: src/webenginepart.cpp:866
 #, kde-format
 msgid "Confirmation Required"
-msgstr "需要确认"
+msgstr ""
 
 #: src/webenginepart.cpp:940
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
-msgstr "<html>您想要让 %1 记住 <b>%2</b> 的登录信息吗？</html>"
+msgstr ""
 
 #: src/webenginepart.cpp:1011
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
-msgstr "立刻填充表格(&F)"
+msgstr ""
 
 #: src/webenginepart.cpp:1016
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
-msgstr "立刻记住此页内的密码(&M)"
+msgstr ""
 
 #: src/webenginepart.cpp:1020
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
-msgstr "自定义此页内需记住的字段(&C)..."
+msgstr ""
 
 #: src/webenginepart.cpp:1024
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
-msgstr "删除此页的自定义记住设置"
+msgstr ""
 
 #: src/webenginepart.cpp:1028
 #, kde-format
 msgid "&Allow Password Caching for This Site"
-msgstr "允许缓存此网站的密码(&A)"
+msgstr ""
 
 #: src/webenginepart.cpp:1032
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
-msgstr "删除此网站所有已记住的密码"
+msgstr ""
 
 #: src/webenginepart.cpp:1036
 #, kde-format
 msgid "&Launch Wallet Manager"
-msgstr "启动密码库管理器(&L)"
+msgstr ""
 
 #: src/webenginepart.cpp:1040
 #, kde-format
 msgid "&Close Wallet"
-msgstr "关闭密码库(&C)"
+msgstr ""
 
 #. i18n: ectx: Menu (file)
 #: src/webenginepart.rc:5
 #, kde-format
 msgid "&File"
-msgstr "文件(&F)"
+msgstr ""
 
 #. i18n: ectx: Menu (edit)
 #: src/webenginepart.rc:12
 #, kde-format
 msgid "&Edit"
-msgstr "编辑(&E)"
+msgstr ""
 
 #. i18n: ectx: Menu (view)
 #: src/webenginepart.rc:18
 #, kde-format
 msgid "&View"
-msgstr "视图(&V)"
+msgstr ""
 
 #. i18n: ectx: Menu (tools)
 #: src/webenginepart.rc:30
 #, kde-format
 msgid "&Tools"
-msgstr "工具(&T)"
+msgstr ""
 
 #. i18n: ectx: Menu (wallet)
 #: src/webenginepart.rc:32
 #, kde-format
 msgid "&Credential management"
-msgstr "登录信息管理(&C)"
+msgstr ""
 
 #. i18n: ectx: ToolBar (htmlToolBar)
 #: src/webenginepart.rc:47
 #, kde-format
 msgid "HTML Toolbar"
-msgstr "HTML 工具栏"
+msgstr ""
 
 #: src/webenginepart_ext.cpp:279
 #, kde-format
 msgid "Print Document"
-msgstr "打印文档"
+msgstr ""
 
 #: src/webenginepart_ext.cpp:504
 #, kde-format
 msgid "Add URL to Filter"
-msgstr "将 URL 添加到过滤器"
+msgstr ""
 
 #: src/webenginepart_ext.cpp:505
 #, kde-format
 msgid "Enter the URL:"
-msgstr "输入 URL："
+msgstr ""
 
 #: src/webenginepartcertificateerrordlg.cpp:44
 #, kde-format
 msgctxt "Ignore the certificate error for this URL only for now"
 msgid "Yes, &once"
-msgstr "是，一次(&O)"
+msgstr ""
 
 #: src/webenginepartcertificateerrordlg.cpp:45
 #, kde-format
 msgctxt "Ignore the certificate error for this URL now and in the future"
 msgid "Yes, &forever"
-msgstr "是，总是(&F)"
+msgstr ""
 
 #: src/webenginepartcertificateerrordlg.cpp:54
 #, kde-format
@@ -1241,297 +1186,295 @@ msgid ""
 "<p>The server <tt>%1</tt> failed the authenticity check. The error is:</"
 "p><p><tt>%2</tt></p>Do you want to ignore this error?"
 msgstr ""
-"<p>服务器 <tt>%1</tt> 未能通过真实性检查。错误是：</p><p><tt>%2</tt></p>您想"
-"要忽略这个错误吗？"
 
 #: src/webenginepartcertificateerrordlg.cpp:60
 #, kde-format
 msgctxt "title of a dialog asking what to do about a SSL certificate error"
 msgid "Certificate error"
-msgstr "证书错误"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEnginePartCertificateErrorDlg)
 #: src/webenginepartcertificateerrordlg.ui:14
 #, kde-format
 msgid "Dialog"
-msgstr "对话框"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, details)
 #: src/webenginepartcertificateerrordlg.ui:50
 #, kde-format
 msgid "Certificate details"
-msgstr "证书详情"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, subjectTab)
 #: src/webenginepartcertificateerrordlg.ui:63
 #, kde-format
 msgid "&Subject"
-msgstr "主体(&S)"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, issuerTab)
 #: src/webenginepartcertificateerrordlg.ui:73
 #, kde-format
 msgid "&Issuer"
-msgstr "发行方(&S)"
+msgstr ""
 
 #: src/webenginepartcontrols.cpp:287
 #, kde-format
 msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
 "default style sheet will be used"
-msgstr "无法打开包含用户样式表的文件 <tt>%1</tt>。将使用默认样式表"
+msgstr ""
 
 #: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgid "An error occurred while saving the file: %1"
-msgstr "保存文件时出错：%1"
+msgstr ""
 
 #: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
-msgstr "正在下载"
+msgstr ""
 
 #: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
-msgstr "源文件"
+msgstr ""
 
 #: src/webenginepartdownloadmanager.cpp:318
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
-msgstr "目标文件"
+msgstr ""
 
 #: src/webenginepartdownloadmanager.cpp:349
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
-msgstr "已保存 %1 为 %2"
+msgstr ""
 
 #: src/webengineview.cpp:363
 #, kde-format
 msgid "Save Image As..."
-msgstr "图像另存为..."
+msgstr ""
 
 #: src/webengineview.cpp:368
 #, kde-format
 msgid "Send Image..."
-msgstr "发送图像..."
+msgstr ""
 
 #: src/webengineview.cpp:373
 #, kde-format
 msgid "Copy Image URL"
-msgstr "复制图像 URL"
+msgstr ""
 
 #: src/webengineview.cpp:379
 #, kde-format
 msgid "Copy Image"
-msgstr "复制图像"
+msgstr ""
 
 #: src/webengineview.cpp:386
 #, kde-format
 msgid "View Image (%1)"
-msgstr "查看图像(%1)"
+msgstr ""
 
 #: src/webengineview.cpp:392
 #, kde-format
 msgid "Block Image..."
-msgstr "屏蔽图像..."
+msgstr ""
 
 #: src/webengineview.cpp:400
 #, kde-format
 msgid "Block Images From %1"
-msgstr "屏蔽来自 %1 的图像"
+msgstr ""
 
 #: src/webengineview.cpp:430 src/webengineview.cpp:467
 #, kde-format
 msgid "&Copy Text"
-msgstr "复制文本(&C)"
+msgstr ""
 
 #: src/webengineview.cpp:440
 #, kde-format
 msgctxt "open selected url"
 msgid "Open '%1'"
-msgstr "打开“%1”"
+msgstr ""
 
 #: src/webengineview.cpp:473
 #, kde-format
 msgid "&Copy Email Address"
-msgstr "复制电子邮件地址(&C)"
+msgstr ""
 
 #: src/webengineview.cpp:479
 #, kde-format
 msgid "Copy Link &Text"
-msgstr "复制链接文本(&T)"
+msgstr ""
 
 #: src/webengineview.cpp:485
 #, kde-format
 msgid "Copy Link &URL"
-msgstr "复制链接 &URL"
+msgstr ""
 
 #: src/webengineview.cpp:490
 #, kde-format
 msgid "&Save Link As..."
-msgstr "链接另存为(&S)..."
+msgstr ""
 
 #: src/webengineview.cpp:510
 #, kde-format
 msgid "&Play/Pause"
-msgstr "播放/暂停(&P)"
+msgstr ""
 
 #: src/webengineview.cpp:515
 #, kde-format
 msgid "Un&mute/&Mute"
-msgstr "取消静音/静音(&M)"
+msgstr ""
 
 #: src/webengineview.cpp:520
 #, kde-format
 msgid "Toggle &Loop"
-msgstr "切换循环(&L)"
+msgstr ""
 
 #: src/webengineview.cpp:525
 #, kde-format
 msgid "Toggle &Controls"
-msgstr "切换控制(&C)"
+msgstr ""
 
 #: src/webengineview.cpp:536
 #, kde-format
 msgid "Sa&ve Video As..."
-msgstr "视频另存为(&V)..."
+msgstr ""
 
 #: src/webengineview.cpp:537
 #, kde-format
 msgid "C&opy Video URL"
-msgstr "复制视频 URL(&O)"
+msgstr ""
 
 #: src/webengineview.cpp:539
 #, kde-format
 msgid "Sa&ve Audio As..."
-msgstr "音频另存为(&V)..."
+msgstr ""
 
 #: src/webengineview.cpp:540
 #, kde-format
 msgid "C&opy Audio URL"
-msgstr "复制音频 URL(&O)"
+msgstr ""
 
 #: src/webengineview.cpp:542
 #, kde-format
 msgid "Sa&ve Media As..."
-msgstr "媒体另存为(&V)..."
+msgstr ""
 
 #: src/webengineview.cpp:543
 #, kde-format
 msgid "C&opy Media URL"
-msgstr "复制媒体 URL(&O)"
+msgstr ""
 
 #: src/webengineview.cpp:596
 #, kde-format
 msgctxt "Search \"search provider\" for \"text\""
 msgid "Search %1 for '%2'"
-msgstr "用 %1 搜索“%2”"
+msgstr ""
 
 #: src/webengineview.cpp:607
 #, kde-format
 msgctxt "Search for \"text\" with"
 msgid "Search for '%1' with"
-msgstr "搜索“%1”于"
+msgstr ""
 
 #: src/webengineview.cpp:620
 #, kde-format
 msgid "Configure Web Shortcuts..."
-msgstr "配置网页快捷方式..."
+msgstr ""
 
 #: src/webenginewallet.cpp:91
 #, kde-format
 msgctxt "Web field with type 'text'"
 msgid "text"
-msgstr "文本"
+msgstr ""
 
 #: src/webenginewallet.cpp:92
 #, kde-format
 msgctxt "Web field with type 'password'"
 msgid "password"
-msgstr "密码"
+msgstr ""
 
 #: src/webenginewallet.cpp:93
 #, kde-format
 msgctxt "Web field with type 'e-mail'"
 msgid "e-mail"
-msgstr "电子邮箱"
+msgstr ""
 
 #: src/webenginewallet.cpp:94
 #, kde-format
 msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
 msgid "other"
-msgstr "其他"
+msgstr ""
 
 #: src/webfieldsdataview.cpp:61
 #, kde-format
 msgctxt "Label of a web field"
 msgid "Field name"
-msgstr "字段名称"
+msgstr ""
 
 #: src/webfieldsdataview.cpp:62
 #, kde-format
 msgctxt "Value of a web field"
 msgid "Field value"
-msgstr "字段值"
+msgstr ""
 
 #: src/webfieldsdataview.cpp:63
 #, kde-format
 msgctxt "Name attribute of a web field"
 msgid "Internal field name"
-msgstr "内部字段名称"
+msgstr ""
 
 #: src/webfieldsdataview.cpp:64
 #, kde-format
 msgctxt "Type of a web field"
 msgid "Field type"
-msgstr "字段类型"
+msgstr ""
 
 #: src/webfieldsdataview.cpp:65
 #, kde-format
 msgctxt "The id of a web field"
 msgid "Field id"
-msgstr "字段 ID"
+msgstr ""
 
 #: src/webfieldsdataview.cpp:66
 #, kde-format
 msgctxt "Other details about a web field"
 msgid "Details"
-msgstr "详情"
+msgstr ""
 
 #: src/webfieldsdataview.cpp:125
 #, kde-format
 msgctxt "web field has the readonly attribute"
 msgid "read only"
-msgstr "只读"
+msgstr ""
 
 #: src/webfieldsdataview.cpp:128
 #, kde-format
 msgctxt "web field has the autocomplete attribute set to off"
 msgid "auto-completion off"
-msgstr "自动补全已关闭"
+msgstr ""
 
 #: src/webfieldsdataview.cpp:131
 #, kde-format
 msgctxt "web field is disabled"
 msgid "disabled"
-msgstr "已禁用"
+msgstr ""
 
 #: src/webfieldsdataview.cpp:159
 #, kde-format
 msgctxt "A statement about a field is true"
 msgid "yes"
-msgstr "是"
+msgstr ""
 
 #: src/webfieldsdataview.cpp:160
 #, kde-format
 msgctxt "A statement about a field is false"
 msgid "no"
-msgstr "否"
+msgstr ""
 
 #: src/webfieldsdataview.cpp:163
 #, kde-format
@@ -1541,6 +1484,3 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
-"<ul><li><b>字段内部名称：</b>%1</li><li><b>字段类型：</b>%2</li><li><b>字段 "
-"ID：</b>%3</li><li><b>字段是否为只读：</b>%4</li><li><b>字段是否已启用：</b>"
-"%5</li><li><b>是否开启自动补全：</b>%6</li></ul>"

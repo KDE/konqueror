@@ -1,124 +1,124 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# SPDX-FileCopyrightText: 2024 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2024-03-27 19:45\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-27 23:13+0100\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/konqueror/imgalleryplugin.pot\n"
-"X-Crowdin-File-ID: 48632\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #: imgallerydialog.cpp:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Image Gallery"
-msgstr "创建图库"
+msgstr ""
 
 #: imgallerydialog.cpp:38
 #, kde-format
 msgid "Create"
-msgstr "创建"
+msgstr ""
 
 #: imgallerydialog.cpp:48 imgallerydialog.cpp:84
 #, kde-format
 msgid "Image Gallery for %1"
-msgstr "%1 的图库"
+msgstr ""
 
 #: imgallerydialog.cpp:76
 #, kde-format
 msgid "Look"
-msgstr "外观"
+msgstr ""
 
 #: imgallerydialog.cpp:77
 #, kde-format
 msgid "Page Look"
-msgstr "页面外观"
+msgstr ""
 
 #: imgallerydialog.cpp:85
 #, kde-format
 msgid "&Page title:"
-msgstr "页面标题(&P)："
+msgstr ""
 
 #: imgallerydialog.cpp:93
 #, kde-format
 msgid "I&mages per row:"
-msgstr "每行图片数(&M)："
+msgstr ""
 
 #: imgallerydialog.cpp:95
 #, kde-format
 msgid "Show image file &name"
-msgstr "显示图片文件名称(&N)"
+msgstr ""
 
 #: imgallerydialog.cpp:99
 #, kde-format
 msgid "Show image file &size"
-msgstr "显示图片文件大小(&S)"
+msgstr ""
 
 #: imgallerydialog.cpp:103
 #, kde-format
 msgid "Show image &dimensions"
-msgstr "显示图片尺寸(&D)"
+msgstr ""
 
 #: imgallerydialog.cpp:114
 #, kde-format
 msgid "Fon&t name:"
-msgstr "字体名(&T)："
+msgstr ""
 
 #: imgallerydialog.cpp:122
 #, kde-format
 msgid "Font si&ze:"
-msgstr "字体大小(&Z)："
+msgstr ""
 
 #: imgallerydialog.cpp:126
 #, kde-format
 msgid "&Foreground color:"
-msgstr "前景色(&F)："
+msgstr ""
 
 #: imgallerydialog.cpp:130
 #, kde-format
 msgid "&Background color:"
-msgstr "背景色(&B)："
+msgstr ""
 
 #: imgallerydialog.cpp:136 imgallerydialog.cpp:137
 #, kde-format
 msgid "Folders"
-msgstr "文件夹"
+msgstr ""
 
 #: imgallerydialog.cpp:145
 #, kde-format
 msgid "&Save to HTML file:"
-msgstr "保存到 HTML 文件(&S)："
+msgstr ""
 
 #: imgallerydialog.cpp:147
 #, kde-format
 msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
-msgstr "<p>用于保存这个图库的 HTML 文件名。</p>"
+msgstr ""
 
 #: imgallerydialog.cpp:150
 #, kde-format
 msgid "&Recurse subfolders"
-msgstr "包含所有子目录(&R)"
+msgstr ""
 
 #: imgallerydialog.cpp:152
 #, kde-format
 msgid ""
 "<p>Whether subfolders should be included for the image gallery creation or "
 "not.</p>"
-msgstr "<p>在创建图库时是否包含所有子文件夹。</p>"
+msgstr ""
 
 #: imgallerydialog.cpp:163
 #, kde-format
 msgid "Endless"
-msgstr "无限制"
+msgstr ""
 
 #: imgallerydialog.cpp:165
 #, kde-format
@@ -126,17 +126,16 @@ msgid ""
 "<p>You can limit the number of folders the image gallery creator will "
 "traverse to by setting an upper bound for the recursion depth.</p>"
 msgstr ""
-"<p>您可以设置递归包含子文件夹的深度，限制创建图库时搜索的文件夹数目。</p>"
 
 #: imgallerydialog.cpp:168
 #, kde-format
 msgid "Rec&ursion depth:"
-msgstr "递归深度(&U)："
+msgstr ""
 
 #: imgallerydialog.cpp:172
 #, kde-format
 msgid "Copy or&iginal files"
-msgstr "复制原文件(&I)"
+msgstr ""
 
 #: imgallerydialog.cpp:174
 #, kde-format
@@ -144,12 +143,11 @@ msgid ""
 "<p>This makes a copy of all images and the gallery will refer to these "
 "copies instead of the original images.</p>"
 msgstr ""
-"<p>将所有图片复制一份副本，图库只引用这些副本，而不是原始图片文件。</p>"
 
 #: imgallerydialog.cpp:179
 #, kde-format
 msgid "Use &comment file"
-msgstr "使用注释文件(&C)"
+msgstr ""
 
 #: imgallerydialog.cpp:181
 #, kde-format
@@ -158,8 +156,6 @@ msgid ""
 "used for generating subtitles for the images.</p><p>For details about the "
 "file format please see the \"What's This?\" help below.</p>"
 msgstr ""
-"<p>如果您启用此选项，您可以指定一个用于生成图片的小标题的文件。</p><p>详细信"
-"息请参阅下面的“这是什么？”帮助。</p>"
 
 #: imgallerydialog.cpp:190
 #, kde-format
@@ -169,78 +165,76 @@ msgid ""
 "p><p>FILENAME1:<br />Description<br /><br />FILENAME2:<br />Description<br /"
 "><br />and so on</p>"
 msgstr ""
-"<p>您可以在此指定注释文件名。注释文件含有图片的小标题，它的格式是：</p><p>文"
-"件名1:<br />说明<br /><br />文件名2:<br />说明<br /><br />等等</p>"
 
 #: imgallerydialog.cpp:200
 #, kde-format
 msgid "Comments &file:"
-msgstr "注释文件(&F)："
+msgstr ""
 
 #: imgallerydialog.cpp:210 imgallerydialog.cpp:211
 #, kde-format
 msgid "Thumbnails"
-msgstr "缩略图"
+msgstr ""
 
 #: imgallerydialog.cpp:224
 #, kde-format
 msgid "Image f&ormat:"
-msgstr "图像格式(&O)："
+msgstr ""
 
 #: imgallerydialog.cpp:232
 #, kde-format
 msgid "Thumbnail size:"
-msgstr "缩略图大小："
+msgstr ""
 
 #: imgallerydialog.cpp:235
 #, kde-format
 msgid "&Set different color depth:"
-msgstr "设置不同的色彩深度(&S)："
+msgstr ""
 
 #: imgallerydialog.cpp:246
 #, kde-format
 msgid "Color depth:"
-msgstr "色彩深度："
+msgstr ""
 
 #: imgalleryplugin.cpp:54
 #, kde-format
 msgid "&Create Image Gallery..."
-msgstr "创建图库(&C)..."
+msgstr ""
 
 #: imgalleryplugin.cpp:64
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
-msgstr "无法创建插件，请报告错误。"
+msgstr ""
 
 #: imgalleryplugin.cpp:70
 #, kde-format
 msgid "Creating an image gallery works only on local folders."
-msgstr "创建只能在本地文件夹中使用的图库。"
+msgstr ""
 
 #: imgalleryplugin.cpp:90
 #, kde-format
 msgid "Creating thumbnails"
-msgstr "正在创建缩略图"
+msgstr ""
 
 #: imgalleryplugin.cpp:113 imgalleryplugin.cpp:284
 #, kde-format
 msgid "Could not create folder: %1"
-msgstr "无法创建文件夹：%1"
+msgstr ""
 
 #: imgalleryplugin.cpp:182
 #, kde-format
 msgid "<i>Number of images</i>: %1"
-msgstr "<i>图片数</i>：%1"
+msgstr ""
 
 #: imgalleryplugin.cpp:183
 #, kde-format
 msgid "<i>Created on</i>: %1"
-msgstr "<i>创建于</i>：%1"
+msgstr ""
 
 #: imgalleryplugin.cpp:188
 #, kde-format
 msgid "<i>Subfolders</i>:"
-msgstr "<i>子文件夹</i>："
+msgstr ""
 
 #: imgalleryplugin.cpp:221
 #, kde-format
@@ -248,8 +242,6 @@ msgid ""
 "Created thumbnail for: \n"
 "%1"
 msgstr ""
-"创建了 %1\n"
-"的缩略图"
 
 #: imgalleryplugin.cpp:224
 #, kde-format
@@ -258,22 +250,19 @@ msgid ""
 "%1\n"
 " failed"
 msgstr ""
-"创建\n"
-"%1\n"
-"的缩略图失败"
 
 #: imgalleryplugin.cpp:239
 #, kde-format
 msgid "KiB"
-msgstr "KB"
+msgstr ""
 
 #: imgalleryplugin.cpp:357 imgalleryplugin.cpp:457
 #, kde-format
 msgid "Could not open file: %1"
-msgstr "无法打开文件：%1"
+msgstr ""
 
 #. i18n: ectx: Menu (tools)
 #: kimgallery.rc:4
 #, kde-format
 msgid "&Tools"
-msgstr "工具(&T)"
+msgstr ""

@@ -1,50 +1,50 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# SPDX-FileCopyrightText: 2024 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-11 00:37+0000\n"
-"PO-Revision-Date: 2024-03-27 19:45\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-27 23:15+0100\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/konqueror/kcmkonqhtml.pot\n"
-"X-Crowdin-File-ID: 48620\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #: appearance.cpp:39
 #, kde-format
 msgctxt "@title:tab"
 msgid "General"
-msgstr "常规"
+msgstr "Xeneral"
 
 #: appearance.cpp:40
 #, kde-format
 msgctxt "@title:tab"
 msgid "Fonts"
-msgstr "字体"
+msgstr ""
 
 #: appearance.cpp:41
 #, kde-format
 msgctxt "@title:tab"
 msgid "Stylesheets"
-msgstr "样式表"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
 #: appearance.cpp:52 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
-msgstr "图像"
+msgstr ""
 
 #: appearance.cpp:56
 #, kde-format
 msgid "A&utomatically load images"
-msgstr "自动加载图像(&U)"
+msgstr ""
 
 #: appearance.cpp:57
 #, kde-format
@@ -55,14 +55,11 @@ msgid ""
 "image button.<br />Unless you have a very slow network connection, you will "
 "probably want to check this box to enhance your browsing experience.</html>"
 msgstr ""
-"<html>如果选中此框，Konqueror 将会自动加载网页中嵌入的任何图像。否则，将在图"
-"像的位置显示占位符。您可以单击图像按钮手动加载图像。<br />除非您的网络连接速"
-"度非常慢，否则您可能想要选中此框来增强您的浏览体验。</html>"
 
 #: appearance.cpp:67
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
-msgstr "在尚未完全加载的图像周围绘制边框(&W)"
+msgstr ""
 
 #: appearance.cpp:68
 #, kde-format
@@ -72,26 +69,23 @@ msgid ""
 "will probably want to check this box to enhance your browsing experience, "
 "especially if have a slow network connection.</html>"
 msgstr ""
-"<html>如果选中此框，Konqueror 将会在尚未完全加载的网页嵌入图像周围显示外框作"
-"为占位符。<br />除非您的网络连接速度非常慢，否则您可能想要选中此框来增强您的"
-"浏览体验。</html>"
 
 #: appearance.cpp:78
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
-msgstr "启用"
+msgstr ""
 
 #: appearance.cpp:79
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
-msgstr "禁用"
+msgstr ""
 
 #: appearance.cpp:80
 #, kde-format
 msgid "Show Only Once"
-msgstr "只显示一次"
+msgstr ""
 
 #: appearance.cpp:81
 #, kde-format
@@ -101,42 +95,39 @@ msgid ""
 "animations, show the starting image only.</li><li><b>Show only once</b>: "
 "Show all animations completely but do not repeat them.</li></ul></html>"
 msgstr ""
-"<html>控制 Konqueror 如何显示动画图像：<br /><ul><li><b>启用</b>：完整显示所"
-"有动画。</li><li><b>禁用</b>：从不显示动画，只显示起始图像。</li><li><b>只显"
-"示一次</b>：完整显示所有动画，但并不重复。</li></ul></html>"
 
 #: appearance.cpp:86
 #, kde-format
 msgid "A&nimations:"
-msgstr "动画(&N)："
+msgstr ""
 
 #: appearance.cpp:89 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
-msgstr "杂项"
+msgstr ""
 
 #: appearance.cpp:94
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
-msgstr "启用"
+msgstr ""
 
 #: appearance.cpp:95
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
-msgstr "禁用"
+msgstr ""
 
 #: appearance.cpp:96
 #, kde-format
 msgid "Only on Hover"
-msgstr "悬停"
+msgstr ""
 
 #: appearance.cpp:97
 #, kde-format
 msgid "Und&erline links:"
-msgstr "链接带下划线(&E)："
+msgstr ""
 
 #: appearance.cpp:100
 #, kde-format
@@ -147,32 +138,28 @@ msgid ""
 "is moved over the link</li></ul><br /><i>Note: The site's CSS definitions "
 "can override this value.</i></html>"
 msgstr ""
-"<html>控制 Konqueror 如何处理超级链接的下划线：<br /><ul><li><b>启用</b>：总"
-"是对链接加下划线</li><li><b>禁用</b>：总是不对链接加下划线</li><li><b>悬停</"
-"b>：仅当鼠标指向链接时才加下划线</li></ul><br /><i>请注意：网站的 CSS 定义可"
-"以覆盖此设置。</i></html>"
 
 #: appearance.cpp:109
 #, kde-format
 msgid "When Efficient"
-msgstr "必要时"
+msgstr ""
 
 #: appearance.cpp:110
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
-msgstr "总是"
+msgstr ""
 
 #: appearance.cpp:111
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
-msgstr "从不"
+msgstr ""
 
 #: appearance.cpp:112
 #, kde-format
 msgid "S&mooth scrolling:"
-msgstr "平滑滚动(&M)："
+msgstr ""
 
 #: appearance.cpp:114
 #, kde-format
@@ -184,114 +171,110 @@ msgid ""
 "scrolling on pages where it can be achieved with moderate usage of system "
 "resources.</li></ul></html>"
 msgstr ""
-"<html>决定 Konqueror 是否使用平滑网页滚动模式：<br /><ul><li><b>总是</b>：总"
-"是使用平滑滚动。</li><li><b>从不</b>：不使用平滑滚动，则每次滚动时都会整页翻"
-"进。</li><li><b>必要时</b>：只当系统资源满足页面需要时才使用平滑滚动。</li></"
-"ul></html>"
 
 #: appearance.cpp:132
 #, kde-format
 msgid "Font Si&ze"
-msgstr "字体大小(&Z)"
+msgstr ""
 
 #: appearance.cpp:135 appearance.cpp:153
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
-msgstr "这是 Konqueror 用于显示网站的相对字体大小。"
+msgstr ""
 
 #: appearance.cpp:139
 #, kde-format
 msgid "M&inimum font size:"
-msgstr "最小字体大小(&I)："
+msgstr ""
 
 #: appearance.cpp:143
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
 "any other settings."
-msgstr "不管网站的设置如何，<br />Konqueror 将不显示小于此大小的文字。"
+msgstr ""
 
 #: appearance.cpp:148
 #, kde-format
 msgid "&Medium font size:"
-msgstr "中等字体大小(&M)："
+msgstr ""
 
 #: appearance.cpp:161
 #, kde-format
 msgid "S&tandard font:"
-msgstr "标准字体(&T)："
+msgstr ""
 
 #: appearance.cpp:162
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
-msgstr "这是用来显示网页中普通文字的字体。"
+msgstr ""
 
 #: appearance.cpp:166
 #, kde-format
 msgid "&Fixed font:"
-msgstr "等宽字体(&F)："
+msgstr ""
 
 #: appearance.cpp:167
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
-msgstr "这个字体用来显示等宽(非比例)文字。"
+msgstr ""
 
 #: appearance.cpp:171
 #, kde-format
 msgid "S&erif font:"
-msgstr "有衬线字体(&E)："
+msgstr ""
 
 #: appearance.cpp:172
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
-msgstr "这个字体用来显示标为有衬线字体的文字。"
+msgstr ""
 
 #: appearance.cpp:176
 #, kde-format
 msgid "Sa&ns serif font:"
-msgstr "无衬线字体(&N)："
+msgstr ""
 
 #: appearance.cpp:177
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
-msgstr "该字体用于显示标为无衬线字体的文字。"
+msgstr ""
 
 #: appearance.cpp:181
 #, kde-format
 msgid "C&ursive font:"
-msgstr "手写体字体(&U)："
+msgstr ""
 
 #: appearance.cpp:182
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
-msgstr "该字体用于显示标为斜体的文字。"
+msgstr ""
 
 #: appearance.cpp:186
 #, kde-format
 msgid "Fantas&y font:"
-msgstr "绚丽字体(&Y)："
+msgstr ""
 
 #: appearance.cpp:187
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
-msgstr "该字体用于显示标为绚丽字体的文字。"
+msgstr ""
 
 #: appearance.cpp:196
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
-msgstr "该编码的字体大小调整(&S)："
+msgstr ""
 
 #: appearance.cpp:204 appearance.cpp:405
 #, kde-format
 msgid "Use Language Encoding"
-msgstr "使用语言编码"
+msgstr ""
 
 #: appearance.cpp:206
 #, kde-format
 msgid "Default encoding:"
-msgstr "默认编码："
+msgstr ""
 
 #: appearance.cpp:208
 #, kde-format
@@ -299,14 +282,12 @@ msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
 "language encoding' and should not have to change this."
 msgstr ""
-"选择要使用的默认编码；通常情况下，“使用语言编码”就已经足够了，也没有必要做出"
-"更改。"
 
 #. i18n: ectx: property (title), widget (QGroupBox, cacheEnabled)
 #: cache/cache.ui:17
 #, kde-format
 msgid "&Enable cache"
-msgstr "启用缓存(&E)"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:29
@@ -316,20 +297,18 @@ msgid ""
 "p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
-"<html><head/><body><p>不在磁盘上存储缓存，只在内存中存储缓存。</p><p>启用此选"
-"项意味着每次退出 Konqueror 后缓存都将被清除。</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:32
 #, kde-format
 msgid "Keep cache in &memory"
-msgstr "缓存只存储在内存(&M)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: cache/cache.ui:41
 #, kde-format
 msgid "&Cache size"
-msgstr "缓存大小(&C)"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:51
@@ -338,136 +317,134 @@ msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
-"缓存可以使用的最大磁盘空间或者内存空间。当缓存大小达到此阈值时，旧的页面将被"
-"移除，以便写入新的页面。"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:54
 #, kde-format
 msgid "Auto"
-msgstr "自动"
+msgstr ""
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:57
 #, kde-format
 msgid " MB"
-msgstr " MB"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr "使用自定义目录存储缓存"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:88
 #, kde-format
 msgid "&Custom cache directory"
-msgstr "自定义缓存目录(&C)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, customCachePathLabel)
 #: cache/cache.ui:100
 #, kde-format
 msgid "Cache &Directory"
-msgstr "缓存目录(&D)"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
 #: cache/cache.ui:113
 #, kde-format
 msgid "The custom directory to store cache"
-msgstr "用于存储缓存的自定义目录"
+msgstr ""
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
 #, kde-format
 msgid "Search"
-msgstr "搜索"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:27
 #, kde-format
 msgid "Search interactively for domains and hosts"
-msgstr "搜索域名和主机 (交互式)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:43
 #, kde-format
 msgid "Site"
-msgstr "网站"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:48
 #, kde-format
 msgid "Cookie Name"
-msgstr "Cookie 名称"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDelete)
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
 #, kde-format
 msgid "D&elete"
-msgstr "删除(&E)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
 #: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
 #, kde-format
 msgid "Delete A&ll"
-msgstr "删除所有(&L)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, configPolicyButton)
 #: cookies/kcookiesmanagement.ui:70
 #, kde-format
 msgid "Configure &Policy..."
-msgstr "配置策略(&P)..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, reloadButton)
 #: cookies/kcookiesmanagement.ui:77
 #, kde-format
 msgid "&Reload List"
-msgstr "刷新列表(&R)"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, detailsGroupBox)
 #: cookies/kcookiesmanagement.ui:97
 #, kde-format
 msgid "Details"
-msgstr "详细信息"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
 #: cookies/kcookiesmanagement.ui:106
 #, kde-format
 msgid "Name:"
-msgstr "名称："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, valueLabel)
 #: cookies/kcookiesmanagement.ui:129
 #, kde-format
 msgid "Value:"
-msgstr "值："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, domainLabel)
 #: cookies/kcookiesmanagement.ui:152
 #, kde-format
 msgid "Domain:"
-msgstr "域名："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, patchLabel)
 #: cookies/kcookiesmanagement.ui:175
 #, kde-format
 msgid "Path:"
-msgstr "路径："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, expiresLabel)
 #: cookies/kcookiesmanagement.ui:198
 #, kde-format
 msgid "Expires:"
-msgstr "过期："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, secureLabel)
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
-msgstr "安全："
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -480,17 +457,12 @@ msgid ""
 "unbrowsable.</p>\n"
 "</qt>"
 msgstr ""
-"<qt>\n"
-"<p>启用 Cookie 支持。在正常情况下您可以启用 Cookie 支持，并按照您对隐私的要求"
-"来自定义相关策略。</p><p>\n"
-"请注意，禁用 Cookie 支持可能会导致很多网站无法浏览。</p>\n"
-"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
 #, kde-format
 msgid "Enable coo&kies"
-msgstr "启用 Coo&kie"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -505,18 +477,12 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
-"<qt>\n"
-"拒绝第三方 Cookies。第三方 Cookies 来自您当前浏览网站之外的网站。例如：您在勾"
-"选此项后访问了 <b>www.foobar.com</b>，那么按照此选项的设置，只有来自 www."
-"foobar.com 网站的 Cookies 才会被接受。来自其他网站的所有 Cookies 会被自动拒"
-"绝。此功能可以妨碍网站对您的日常浏览习惯进行收集和汇总。\n"
-"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
 #, kde-format
 msgid "Only acce&pt cookies from originating server"
-msgstr "仅接受始发服务器的 Cookie(&P)"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:46
@@ -530,17 +496,12 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
-"<p>\n"
-"自动接受在本次会话结束时自动过期的临时 Cookies。这种 Cookies 不会长期保存在电"
-"脑的硬盘或者其他存储设备里。在您关闭所有使用它们的程序 (例如网页浏览器) 后，"
-"它们就会被删除。</p><p><u>注意：</u>勾选此项后，它的设置将覆盖您的默认 "
-"Cookies 策略和指定网站的当次会话 Cookies 策略。</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
 #, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr "自动接受单次会话 Cookie(&Y)"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -562,47 +523,36 @@ msgid ""
 "precedence over the default policy.</p>\n"
 "</qt>"
 msgstr ""
-"<qt>\n"
-"指定从远程机器收到 Cookies 时的处理方式：\n"
-"<ul>\n"
-"<li><b>询问：</b>每当服务器请求建立 Cookies 时，KDE 都会征求您的同意。</li>\n"
-"<li><b>接受：</b> 接受 Cookiess，不提示。</li>\n"
-"<li><b>接受 (当次会话)：</b> 接受 Cookies，但在当次会话结束后过期。</li>\n"
-"<li><b>拒绝：</b>cookiejar 程序将拒绝所有收到的 Cookies。</li>\n"
-"</ul><p>\n"
-"<u>请注意：</u>您可以在下方为每个域名指定独立的策略，它们的优先权高于默认策"
-"略。</p>\n"
-"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
 #, kde-format
 msgid "Default Policy"
-msgstr "默认策略"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
 #, kde-format
 msgid "Accep&t all cookies"
-msgstr "接受所有 Cookie(&T)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr "接受 (当次会话) (&U)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
 #, kde-format
 msgid "Ask &for confirmation"
-msgstr "请求确认(&F)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
 #: cookies/kcookiespolicies.ui:98
 #, kde-format
 msgid "Re&ject all cookies"
-msgstr "拒绝所有 Cookie(&J)"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
@@ -617,30 +567,24 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
-"<qt>\n"
-"要添加新策略，请点击<b>添加...</b>按钮并提供所需信息。要更改已有策略，请点击"
-"<b>更改...</b>按钮并在策略对话框中选择新的策略。点击<b>删除</b>按钮将移除选中"
-"的策略，该域名将在此后使用默认策略；点击<b>删除所有</b>按钮将移除所有的域名特"
-"定策略。\n"
-"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
 #, kde-format
 msgid "Site Policy"
-msgstr "网站策略"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr "搜索域名 (交互式)"
+msgstr ""
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
 #, kde-format
 msgid "Search..."
-msgstr "搜索..."
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -651,22 +595,18 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
-"<qt>\n"
-"已指定了域名特定 Cookies 策略的网站列表。这些网站将使用指定给它们的策略设置覆"
-"盖默认策略。\n"
-"</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
 #, kde-format
 msgid "Domain"
-msgstr "域名"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
 #, kde-format
 msgid "Policy"
-msgstr "策略"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
@@ -674,13 +614,13 @@ msgstr "策略"
 #: useragent/useragent.ui:84
 #, kde-format
 msgid "&New..."
-msgstr "新建(&N)..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pbChange)
 #: cookies/kcookiespolicies.ui:183 domainlistview.cpp:49
 #, kde-format
 msgid "Chan&ge..."
-msgstr "更改(&G)..."
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:22
@@ -691,22 +631,18 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
-"<qt>\n"
-"输入要应用此策略的主机或者域名，例如 <b>www.kde.org</b> 或者 <b>.kde.org</"
-"b>。\n"
-"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
 #, kde-format
 msgid "Site name:"
-msgstr "网站名称："
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:38
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
-msgstr "输入要应用此策略的主机或者域名，例如 .kde.org。"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -725,48 +661,38 @@ msgid ""
 "</ul>\n"
 "</qt>"
 msgstr ""
-"<qt>\n"
-"选择想要使用的策略：\n"
-"<ul>\n"
-"<li><b>接受</b> - 允许此网站建立 Cookies</li>\n"
-"<li><b>接受 (当次会话)</b> - 允许此网站建立 Cookies，但在本次会话结束之后过期"
-"</li>\n"
-"<li><b>拒绝</b> - 拒绝此网站的所有 Cookies</li>\n"
-"<li><b>询问</b> - 收到此网站的 Cookies 时询问用户如何处理。</li>\n"
-"</ul>\n"
-"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
 #, kde-format
 msgid "Policy:"
-msgstr "策略："
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
 #: policydlg.cpp:63
 #, kde-format
 msgid "Accept"
-msgstr "接受"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr "接受 (当次会话)"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
 #: policydlg.cpp:63
 #, kde-format
 msgid "Reject"
-msgstr "拒绝"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:153
 #, kde-format
 msgid "Ask"
-msgstr "询问"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
@@ -776,8 +702,6 @@ msgid ""
 "<b>Stylesheets</b><p>See http://www.w3.org/Style/CSS for further information "
 "on cascading style sheets.</p>"
 msgstr ""
-"<b>样式表</b><p>参见 http://www.w3.org/Style/CSS 以获取层次化样式表的更多信"
-"息。</p>"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, ButtonGroup1)
 #: css/cssconfig.ui:17
@@ -785,13 +709,13 @@ msgstr ""
 msgid ""
 "<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
 "render style sheets.</p>"
-msgstr "<b>样式表</b><p>使用该组选框决定 Konqueror 如何呈现样式表。</p>"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
 #: css/cssconfig.ui:20
 #, kde-format
 msgid "Stylesheets"
-msgstr "样式表"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
 #: css/cssconfig.ui:26
@@ -799,13 +723,13 @@ msgstr "样式表"
 msgid ""
 "<b>Use default stylesheet</b><p>Select this option to use the default "
 "stylesheet.</p>"
-msgstr "<b>使用默认的样式表</b><p>选中该选项使用默认的样式表。</p>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, useDefault)
 #: css/cssconfig.ui:29
 #, kde-format
 msgid "Us&e default stylesheet"
-msgstr "使用默认样式表(&E)"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
 #: css/cssconfig.ui:39
@@ -818,16 +742,12 @@ msgid ""
 "sheet (see http://www.w3.org/Style/CSS for further information on cascading "
 "style sheets).</p>"
 msgstr ""
-"<b>使用用户定义的样式表</b><p>如果该选项被选中，konqueror 将试图加载下列位置"
-"中用户定义的样式表。这个样式表允许您完全覆盖您的浏览器呈现网页的方法。指定的"
-"文件必须包含有效的样式(参见http://www.w3.org/Style/CSS 以获取样式表的更多信"
-"息。</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useUser)
 #: css/cssconfig.ui:42
 #, kde-format
 msgid "Use &user-defined stylesheet"
-msgstr "使用用户定义的样式表(&U)"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useAccess)
 #: css/cssconfig.ui:94
@@ -838,20 +758,18 @@ msgid ""
 "of the mouse. Simply wander over to the Customize... dialog and pick out "
 "your desired options.</p>"
 msgstr ""
-"<b>使用辅助性样式表</b><p>选择该选项将允许您通过简单的鼠标点击来定义默认的字"
-"体、字体大小和字体颜色。只需简单地在自定义标签页中选取您想要的选项。</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useAccess)
 #: css/cssconfig.ui:97
 #, kde-format
 msgid "U&se accessibility stylesheet"
-msgstr "使用辅助性样式表(&S)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, customize)
 #: css/cssconfig.ui:137
 #, kde-format
 msgid "Custom&ize..."
-msgstr "自定义(&I)..."
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
@@ -861,26 +779,24 @@ msgid ""
 "another, with family members that are e.g. bold, italic, or any number of "
 "the above.</p>"
 msgstr ""
-"<b>字体系列</b><p>字体系列是一组相互类似字体，系统成员包括粗体、斜体或上面的"
-"任意个数。</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:24
 #, kde-format
 msgid "Font Family"
-msgstr "字体系列"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, txtBaseFontFamily)
 #: css/csscustom.ui:30
 #, kde-format
 msgid "Base family:"
-msgstr "基准系列："
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QFontComboBox, fontFamily)
 #: css/csscustom.ui:37
 #, kde-format
 msgid "<p>This is the currently selected font family</p>"
-msgstr "<p>这是当前选中的字体系列</p>"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
 #: css/csscustom.ui:44
@@ -889,103 +805,102 @@ msgid ""
 "<b>Use same family for all text</b><p>Select this option to override custom "
 "fonts everywhere in favor of the base font.</p>"
 msgstr ""
-"<b>所有文本使用相同的字体系列</b><p>选中该选项覆盖其他地方设置的字体。</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
 #: css/csscustom.ui:47
 #, kde-format
 msgid "Use same family for all text"
-msgstr "所有文本使用相同的字体系列"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
 #: css/csscustom.ui:57
 #, kde-format
 msgid "Font Size"
-msgstr "字体大小"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, txtFontsize)
 #: css/csscustom.ui:63
 #, kde-format
 msgid "Base font si&ze:"
-msgstr "基础字体大小(&Z)："
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:80
 #, kde-format
 msgid "7"
-msgstr "7"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:85
 #, kde-format
 msgid "8"
-msgstr "8"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:90
 #, kde-format
 msgid "9"
-msgstr "9"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:95
 #, kde-format
 msgid "10"
-msgstr "10"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:100
 #, kde-format
 msgid "11"
-msgstr "11"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:105
 #, kde-format
 msgid "12"
-msgstr "12"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:110
 #, kde-format
 msgid "14"
-msgstr "14"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:115
 #, kde-format
 msgid "16"
-msgstr "16"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:120
 #, kde-format
 msgid "20"
-msgstr "20"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:125
 #, kde-format
 msgid "24"
-msgstr "24"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:130
 #, kde-format
 msgid "32"
-msgstr "32"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:135
 #, kde-format
 msgid "48"
-msgstr "48"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:140
 #, kde-format
 msgid "64"
-msgstr "64"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScale)
 #: css/csscustom.ui:148
@@ -995,44 +910,42 @@ msgid ""
 "custom font sizes in favor of the base font size. All fonts will be "
 "displayed in the same size.</p>"
 msgstr ""
-"<b>对所有元素使用相同大小</b><p>选中该选项将使用基准字体大小，取代自定义的字"
-"体大小。所有字体将显示为同样大小。</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, dontScale)
 #: css/csscustom.ui:151
 #, kde-format
 msgid "&Use same size for all elements"
-msgstr "对所有元素使用相同大小(&U)"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
 #: css/csscustom.ui:161
 #, kde-format
 msgid "Colors"
-msgstr "颜色"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, blackOnWhite)
 #: css/csscustom.ui:183
 #, kde-format
 msgid "<b>Black on White</b><p>This is what you normally see.</p>"
-msgstr "<b>白底黑字</b><p>这是您常见的样式。</p>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, blackOnWhite)
 #: css/csscustom.ui:186
 #, kde-format
 msgid "&Black on white"
-msgstr "白底黑字(&B)"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, whiteOnBlack)
 #: css/csscustom.ui:196
 #, kde-format
 msgid "<b>White on Black</b><p>This is your classic inverse color scheme.</p>"
-msgstr "<b>黑底白字</b><p>这是您经典的反色模式。</p>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, whiteOnBlack)
 #: css/csscustom.ui:199
 #, kde-format
 msgid "&White on black"
-msgstr "黑底白字(&W)"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, customColor)
 #: css/csscustom.ui:206
@@ -1040,13 +953,13 @@ msgstr "黑底白字(&W)"
 msgid ""
 "<b>Custom</b><p>Select this option to define a custom color for the default "
 "font.</p>"
-msgstr "<b>自定义</b><p>选中该选项为默认字体定义颜色。</p>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, customColor)
 #: css/csscustom.ui:209
 #, kde-format
 msgid "Cus&tom"
-msgstr "自定义(&T)"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, txtBackground)
 #: css/csscustom.ui:219
@@ -1055,13 +968,12 @@ msgid ""
 "<b>Background</b><p>This background color is the one displayed behind the "
 "text by default. A background image will override this.</p>"
 msgstr ""
-"<b>背景色</b><p>背景色是默认显示在文字后面的颜色。背景图片覆盖该选项。</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, txtBackground)
 #: css/csscustom.ui:222
 #, kde-format
 msgid "Bac&kground:"
-msgstr "背景色(&K)："
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (KColorButton, backgroundColorButton)
 #: css/csscustom.ui:238
@@ -1069,7 +981,7 @@ msgstr "背景色(&K)："
 msgid ""
 "<b>Background</b><p>Behind this door lays the ability to choose a custom "
 "default background.</p>"
-msgstr "<b>背景色</b><p>此处为默认的背景选择颜色。</p>"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
 #: css/csscustom.ui:248
@@ -1079,14 +991,12 @@ msgid ""
 "color to the default font as well as any custom fonts as specified in a "
 "stylesheet.</p>"
 msgstr ""
-"<b>所有文字使用相同颜色</b><p>选择该选项将您选定的颜色应用到样式表中指定的默"
-"认字体和任何自定义的字体</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameColor)
 #: css/csscustom.ui:251
 #, kde-format
 msgid "Use same color for all text"
-msgstr "所有文字使用相同颜色"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, txtForeground)
 #. i18n: ectx: property (whatsThis), widget (KColorButton, foregroundColorButton)
@@ -1095,19 +1005,19 @@ msgstr "所有文字使用相同颜色"
 msgid ""
 "<b>Foreground color</b><p>The foreground color is the color that the text is "
 "drawn in.</p>"
-msgstr "<b>前景色</b><p>前景色是描绘文字的颜色。</p>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, txtForeground)
 #: css/csscustom.ui:264
 #, kde-format
 msgid "&Foreground:"
-msgstr "前景色(&F)："
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox3_2)
 #: css/csscustom.ui:293
 #, kde-format
 msgid "<b>Images</b>"
-msgstr "<b>图像</b>"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, hideImages)
 #: css/csscustom.ui:302
@@ -1115,13 +1025,13 @@ msgstr "<b>图像</b>"
 msgid ""
 "<b>Suppress images</b><p>Selecting this will prevent Konqueror from loading "
 "images.</p>"
-msgstr "<b>禁止图片</b><p>选中该选项将阻止 Konqueror 加载图像。</p>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, hideImages)
 #: css/csscustom.ui:305
 #, kde-format
 msgid "&Suppress images"
-msgstr "禁止图片(&S)"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, hideBackground)
 #: css/csscustom.ui:312
@@ -1129,19 +1039,19 @@ msgstr "禁止图片(&S)"
 msgid ""
 "<b>Suppress background images</b><p>Selecting this option will prevent "
 "Konqueror from loading background images.</p>"
-msgstr "<b>禁止背景图片</b><p>选中该选项将阻止 Konqueror 加载背景图片。</p>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, hideBackground)
 #: css/csscustom.ui:315
 #, kde-format
 msgid "Suppress background images"
-msgstr "禁止背景图片"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, previewBox)
 #: css/csscustom.ui:347
 #, kde-format
 msgid "Preview"
-msgstr "预览"
+msgstr ""
 
 #: css/kcmcss.cpp:51
 #, kde-format
@@ -1154,10 +1064,6 @@ msgid ""
 "visually impaired people or for web pages that are unreadable due to bad "
 "design."
 msgstr ""
-"<h1>Konqueror 样式表</h1> 本模块允许您使用样式表(CSS)将自己的颜色和字体设置应"
-"用到 konqueror。您可以指定选项或应用您自己写的样式表(指定它的位置)。<br />注"
-"意这些选项总是优先于网站作者的设置。这对视觉受损的人或由于糟糕的设计而很难读"
-"的网页很有用。"
 
 #: css/kcmcss.cpp:336
 #, kde-format
@@ -1182,98 +1088,80 @@ msgid ""
 "</body>\n"
 "</html>\n"
 msgstr ""
-"<html>\n"
-"<head>\n"
-"<style>\n"
-"<!--\n"
-"%1\n"
-"-->\n"
-"</style>\n"
-"</head>\n"
-"<body>\n"
-"<h1>标题 1</h1>\n"
-"<h2>标题  2</h2>\n"
-"<h3>标题  3</h3>\n"
-"\n"
-"<p>用户定义的样式表\n"
-"可以帮助有视觉障碍的人。</p>\n"
-"\n"
-"</body>\n"
-"</html>\n"
 
 #: domainlistview.cpp:37
 #, kde-format
 msgid "Host/Domain"
-msgstr "主机/域名"
+msgstr ""
 
 #: domainlistview.cpp:53
 #, kde-format
 msgid "De&lete"
-msgstr "删除(&L)"
+msgstr ""
 
 #: domainlistview.cpp:57
 #, kde-format
 msgid "&Import..."
-msgstr "导入(&I)..."
+msgstr ""
 
 #: domainlistview.cpp:63
 #, kde-format
 msgid "&Export..."
-msgstr "导出(&E)..."
+msgstr ""
 
 #: domainlistview.cpp:71
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
-msgstr "单击此按钮手动添加一个主机或域名特定策略。"
+msgstr ""
 
 #: domainlistview.cpp:73
 #, kde-format
 msgid ""
 "Click on this button to change the policy for the host or domain selected in "
 "the list box."
-msgstr "单击此按钮更改对列表框中所选主机或域名所应用的策略。"
+msgstr ""
 
 #: domainlistview.cpp:75
 #, kde-format
 msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
 "the list box."
-msgstr "单击此按钮删除对列表框中所选主机或域名所应用的策略。"
+msgstr ""
 
 #: domainlistview.cpp:122
 #, kde-format
 msgid "You must first select a policy to be changed."
-msgstr "您必须先选择一个要修改的策略。"
+msgstr ""
 
 #: domainlistview.cpp:149
 #, kde-format
 msgid "You must first select a policy to delete."
-msgstr "您必须先选择一个要删除的策略。"
+msgstr ""
 
 #: domainlistview.cpp:187 policydlg.cpp:63
 #, kde-format
 msgid "Use Global"
-msgstr "使用全局"
+msgstr ""
 
 #: filteropts.cpp:48
 #, kde-format
 msgid "Enable filters"
-msgstr "启用过滤器"
+msgstr ""
 
 #: filteropts.cpp:51
 #, kde-format
 msgid "Hide filtered images"
-msgstr "隐藏过滤的图像"
+msgstr ""
 
 #: filteropts.cpp:58
 #, kde-format
 msgid "Manual Filter"
-msgstr "手动过滤"
+msgstr ""
 
 #: filteropts.cpp:76
 #, kde-format
 msgid "Search:"
-msgstr "搜索："
+msgstr ""
 
 #: filteropts.cpp:84
 #, kde-format
@@ -1281,49 +1169,48 @@ msgid ""
 "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
 "\"filterhelp\">more information</a>):"
 msgstr ""
-"<qt>过滤表达式(如 <tt>http://www.example.com/ad/*</tt>，<a href=\"filterhelp"
-"\">更多信息</a>)："
 
 #: filteropts.cpp:100
 #, kde-format
 msgid "Automatic Filter"
-msgstr "自动过滤"
+msgstr ""
 
 #: filteropts.cpp:109
 #, kde-format
 msgid "Automatic update interval:"
-msgstr "自动更新间隔："
+msgstr ""
 
 #: filteropts.cpp:114
 #, kde-format
 msgid " day"
 msgid_plural " days"
-msgstr[0] " 天"
+msgstr[0] ""
+msgstr[1] ""
 
 #: filteropts.cpp:124
 #, kde-format
 msgid "Insert"
-msgstr "插入"
+msgstr ""
 
 #: filteropts.cpp:127
 #, kde-format
 msgid "Update"
-msgstr "更新"
+msgstr ""
 
 #: filteropts.cpp:130
 #, kde-format
 msgid "Remove"
-msgstr "删除"
+msgstr ""
 
 #: filteropts.cpp:134
 #, kde-format
 msgid "Import..."
-msgstr "导入..."
+msgstr ""
 
 #: filteropts.cpp:137
 #, kde-format
 msgid "Export..."
-msgstr "导出..."
+msgstr ""
 
 #: filteropts.cpp:144
 #, kde-format
@@ -1331,8 +1218,6 @@ msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
 "\"exporthelp\">export format</a>"
 msgstr ""
-"<qt>关于<a href=\"importhelp\">导入格式</a>、<a href=\"exporthelp\">导出格式"
-"</a>的更多信息"
 
 #: filteropts.cpp:158
 #, kde-format
@@ -1340,22 +1225,20 @@ msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
 "should be defined in the filter list for blocking to take effect."
 msgstr ""
-"启用或禁用 AdBlocK 过滤器。启用时，应该在过滤器列表中定义一组要屏蔽的表达式，"
-"此时屏蔽才真正生效。"
 
 #: filteropts.cpp:160
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
 "otherwise a placeholder 'blocked' image will be used."
-msgstr "启用时，屏蔽的图像将会完全从页面中删除，否则将使用一幅通用的占位图像。"
+msgstr ""
 
 #: filteropts.cpp:167
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
 "and media objects."
-msgstr "此列表列出了应用到嵌入的图像和媒体对象的 URL 过滤器。"
+msgstr ""
 
 #: filteropts.cpp:171
 #, kde-format
@@ -1368,11 +1251,6 @@ msgid ""
 "(allow) any matching URL, which takes priority over any blacklist (blocking) "
 "filter."
 msgstr ""
-"<qt><p>输入过滤表达式。它可以像这样定义：<ul><li>shell 风格的通配符，如："
-"<tt>http://www.example.com/ads*</tt>，其中的 <tt>*?[]</tt> 就是通配符</"
-"li><li>由“<tt>/</tt>”符号包起来的完整正则表达式，如：<tt>/\\/(ad|banner)\\./"
-"</tt></li></ul><p>任何以 “<tt>@@</tt>” 开头的过滤字符串都表示白名单里的 URL，"
-"其优先级要高于黑名单。"
 
 #: filteropts.cpp:187
 #, kde-format
@@ -1381,9 +1259,6 @@ msgid ""
 "lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
 "ignored. Any other line is added as a filter expression."
 msgstr ""
-"<qt><p>过滤器的导入格式应该是一个纯文本文件，其中由空行、以“<tt>!</tt>”开头的"
-"注释行，以及标头是 <tt>[AdBlock]</tt> 的行会被忽略。此外的行都会被添加为过滤"
-"表达式。"
 
 #: filteropts.cpp:192
 #, kde-format
@@ -1392,29 +1267,27 @@ msgid ""
 "header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
 "separate line."
 msgstr ""
-"<qt><p>过滤器的导出格式应该是一个纯文本文件。除了以 <tt>[AdBlock]</tt> 为标头"
-"的行以外，其他表达式会一行一条地导出。"
 
 #: filteropts.cpp:260
 #, kde-format
 msgid "Import Filters"
-msgstr "导入过滤器"
+msgstr ""
 
 #: filteropts.cpp:304
 #, kde-format
 msgid "Export Filters"
-msgstr "导出过滤器"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: filteropts.cpp:563 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
-msgstr "名称"
+msgstr ""
 
 #: filteropts.cpp:564
 #, kde-format
 msgid "URL"
-msgstr "地址"
+msgstr ""
 
 #: generalopts.cpp:56
 #, kde-format
@@ -1422,101 +1295,101 @@ msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
 "empty"
 msgid "Please, insert the custom start page"
-msgstr "请插入自定义起始页"
+msgstr ""
 
 #: generalopts.cpp:62
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
-msgstr "创建新标签页时(&T)"
+msgstr ""
 
 #: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
-msgstr "显示介绍页面"
+msgstr ""
 
 #: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
-msgstr "显示我的起始页"
+msgstr ""
 
 #: generalopts.cpp:73
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
-msgstr "显示空页面"
+msgstr ""
 
 #: generalopts.cpp:74
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
-msgstr "显示书签"
+msgstr ""
 
 #: generalopts.cpp:80
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
-msgstr "选择起始页"
+msgstr ""
 
 #: generalopts.cpp:85
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
-msgstr "这是 Konqueror 启动时将会显示的网页的链接。"
+msgstr ""
 
 #: generalopts.cpp:96
 #, kde-format
 msgid "Home page:"
-msgstr "主页："
+msgstr ""
 
 #: generalopts.cpp:99
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
-msgstr "选择主页"
+msgstr ""
 
 #: generalopts.cpp:104
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
 "\" button is pressed."
-msgstr "这是按下“主页”按钮时，Konqueror 将会跳转到的网页的链接。"
+msgstr ""
 
 #: generalopts.cpp:112
 #, kde-format
 msgid "Default web browser engine:"
-msgstr "默认网页浏览器引擎："
+msgstr ""
 
 #: generalopts.cpp:121
 #, kde-format
 msgid "When splitting a view"
-msgstr "在分割视图时"
+msgstr ""
 
 #: generalopts.cpp:125
 #, kde-format
 msgid "Always duplicate current view"
-msgstr "总是复制当前视图"
+msgstr ""
 
 #: generalopts.cpp:126
 #, kde-format
 msgid "Duplicate current view only for local files"
-msgstr "仅为本地文件复制当前视图"
+msgstr ""
 
 #: generalopts.cpp:132
 #, kde-format
 msgid "When starting up, restore state from last time"
-msgstr "启动时恢复上次状态"
+msgstr ""
 
 #: htmlopts.cpp:35
 #, kde-format
 msgid "Boo&kmarks"
-msgstr "书签(&K)"
+msgstr ""
 
 #: htmlopts.cpp:38
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
-msgstr "添加书签时询问名称和文件夹"
+msgstr ""
 
 #: htmlopts.cpp:41
 #, kde-format
@@ -1525,13 +1398,11 @@ msgid ""
 "bookmark and choose a folder in which to store it when you add a new "
 "bookmark."
 msgstr ""
-"若选中了此框，Konqueror 将会允许您添加新书签时更改书签的标题并选择书签所在的"
-"文件夹。"
 
 #: htmlopts.cpp:47
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
-msgstr "只在书签工具栏中显示打标记的书签"
+msgstr ""
 
 #: htmlopts.cpp:49
 #, kde-format
@@ -1539,13 +1410,11 @@ msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
 "bookmark toolbar which you have marked to do so in the bookmark editor."
 msgstr ""
-"若选中了此框，Konqueror 将只会书签工具栏中显示您在书签编辑器中打了标记的那些"
-"书签。"
 
 #: htmlopts.cpp:56
 #, kde-format
 msgid "Form Com&pletion"
-msgstr "表单补全(&P)"
+msgstr ""
 
 #: htmlopts.cpp:60
 #, kde-format
@@ -1553,29 +1422,27 @@ msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
 "forms and suggest it in similar fields for all forms."
 msgstr ""
-"如果启用该选项，Konqueror 将记住您在表单中输入的数据，在以后的表单中的同样的"
-"字段中将提示这些数据。"
 
 #: htmlopts.cpp:66
 #, kde-format
 msgid "&Maximum completions:"
-msgstr "最多补全(&M)："
+msgstr ""
 
 #: htmlopts.cpp:68
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
-msgstr "您可以选择 Konqueror 为一个表单字段记住多少个值。"
+msgstr ""
 
 #: htmlopts.cpp:75
 #, kde-format
 msgid "Mouse Beha&vior"
-msgstr "鼠标行为(&V)"
+msgstr ""
 
 #: htmlopts.cpp:78
 #, kde-format
 msgid "Chan&ge cursor over links"
-msgstr "悬停链接时更改光标形状(&G)"
+msgstr ""
 
 #: htmlopts.cpp:80
 #, kde-format
@@ -1583,25 +1450,23 @@ msgid ""
 "If this option is set, the shape of the cursor will change (usually to a "
 "hand) if it is moved over a hyperlink."
 msgstr ""
-"如果设置了这个选项，当鼠标移动到超级链接上时，指针将会改变形状(通常会是一个手"
-"的形状)"
 
 #: htmlopts.cpp:84
 #, kde-format
 msgid "M&iddle click opens URL in selection"
-msgstr "中键单击打开选中的 URL(&I)"
+msgstr ""
 
 #: htmlopts.cpp:87
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
 "clicking on a Konqueror view."
-msgstr "如果选中了此框，您就可以在 Konqueror 视图中单击中键来打开选中的 URL。"
+msgstr ""
 
 #: htmlopts.cpp:91
 #, kde-format
 msgid "Right click goes &back in history"
-msgstr "右键单击在历史中后退(&B)"
+msgstr ""
 
 #: htmlopts.cpp:94
 #, kde-format
@@ -1610,13 +1475,11 @@ msgid ""
 "Konqueror view. To access the context menu, press the right mouse button and "
 "move."
 msgstr ""
-"如果选中此框，只需在 Konqueror 视图中单击鼠标右键即可在历史中后退。如果想要访"
-"问快捷菜单，请按鼠标右键并移动。"
 
 #: htmlopts.cpp:104
 #, kde-format
 msgid "Allow automatic delayed &reloading/redirecting"
-msgstr "允许自动延迟重新加载/重定向(&R)"
+msgstr ""
 
 #: htmlopts.cpp:105
 #, kde-format
@@ -1624,13 +1487,11 @@ msgid ""
 "Some web pages request an automatic reload or redirection after a certain "
 "period of time. By unchecking this box Konqueror will ignore these requests."
 msgstr ""
-"某些网页会请求在经过一段时间后自动重新加载或重定向。取消此框将使得 Konqueror "
-"忽略这些请求。"
 
 #: htmlopts.cpp:111
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
-msgstr "用 Ctrl 键激活访问键(&Y)"
+msgstr ""
 
 #: htmlopts.cpp:112
 #, kde-format
@@ -1639,82 +1500,81 @@ msgid ""
 "Unchecking this box will disable this accessibility feature. (Konqueror "
 "needs to be restarted for this change to take effect.)"
 msgstr ""
-"在查看网页时按下 Ctrl 键将激活 KDE 的访问键。如果未选中此选项，将会禁用此辅助"
-"特性(需要重新启动 Konqueror 才能让更改生效)。"
 
 #: htmlopts.cpp:116
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
-msgstr "发送 DNT 头来告诉网站您不想被跟踪"
+msgstr ""
 
 #: htmlopts.cpp:117
 #, kde-format
 msgid ""
 "Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked."
-msgstr "如果您希望通知网站您不想您的网页浏览行为被记录，请选中此项。"
+msgstr ""
 
 #: htmlopts.cpp:121
 #, kde-format
 msgid "Offer to save website passwords"
-msgstr "询问保存网站密码"
+msgstr ""
 
 #: htmlopts.cpp:122
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
-msgstr "取消勾选此选项可避免询问保存网站密码"
+msgstr ""
 
 #: htmlopts.cpp:126
 #, kde-format
 msgid "Display online PDF files using WebEngine"
-msgstr "使用 WebEngine 显示在线 PDF 文件"
+msgstr ""
 
 #: htmlopts.cpp:127
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
-msgstr "取消勾选此框后将调用系统设置的应用程序显示在线 PDF 文件"
+msgstr ""
 
 #: javaopts.cpp:78
 #, kde-format
 msgid "Enable Ja&va globally"
-msgstr "全局启用 Ja&va"
+msgstr ""
 
 #: javaopts.cpp:93
 #, kde-format
 msgid "Java Runtime Settings"
-msgstr "Java 运行时刻设置"
+msgstr ""
 
 #: javaopts.cpp:97
 #, kde-format
 msgid "&Use security manager"
-msgstr "使用安全管理器(&U)"
+msgstr ""
 
 #: javaopts.cpp:101
 #, kde-format
 msgid "Use &KIO"
-msgstr "使用 &KIO"
+msgstr ""
 
 #: javaopts.cpp:105
 #, kde-format
 msgid "Shu&tdown applet server when inactive for more than"
-msgstr "关闭小程序服务器前的空闲等待时间(&T)"
+msgstr ""
 
 #: javaopts.cpp:117
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
-msgstr[0] " 秒"
+msgstr[0] ""
+msgstr[1] ""
 
 #: javaopts.cpp:123
 #, kde-format
 msgid "&Path to Java executable, or 'java':"
-msgstr "Java 执行程序的路径，或“java”(&P)："
+msgstr ""
 
 #: javaopts.cpp:127
 #, kde-format
 msgid "Additional Java a&rguments:"
-msgstr "其他的 Java 参数(&R)："
+msgstr ""
 
 #: javaopts.cpp:132
 #, kde-format
@@ -1723,8 +1583,6 @@ msgid ""
 "HTML pages. Note that, as with any browser, enabling active contents can be "
 "a security problem."
 msgstr ""
-"允许执行 HTML 页面中包含的用 Java 写成的脚本。请注意，和其他浏览器一样，允许"
-"活动的内容可能会带来安全问题。"
 
 #: javaopts.cpp:135
 #, kde-format
@@ -1734,9 +1592,6 @@ msgid ""
 "enabling or disabling Java applets on pages sent by these domains or hosts.</"
 "p><p>Select a policy and use the controls on the right to modify it.</p>"
 msgstr ""
-"<p>此框中包含了您设置特定的 Java 策略的域名和主机。对于这些域名或主机发送的页"
-"面，将会应用此策略而不是默认策略的启用或禁用。</p><p>请选择一个策略并使用右边"
-"的按钮进行修改。</p>"
 
 #: javaopts.cpp:142
 #, kde-format
@@ -1745,8 +1600,6 @@ msgid ""
 "policies will be merged with the existing ones. Duplicate entries are "
 "ignored."
 msgstr ""
-"单击此按钮选择包含 Java 策略的文件。这些策略将与已有策略合并。重复的将被忽"
-"略。"
 
 #: javaopts.cpp:145
 #, kde-format
@@ -1754,8 +1607,6 @@ msgid ""
 "Click this button to save the Java policy to a zipped file. The file, named "
 "<b>java_policy.tgz</b>, will be saved to a location of your choice."
 msgstr ""
-"单击此按钮将 Java 策略保存为压缩文件 <b>java_policy.tgz</b>，它将保存在您指定"
-"的位置。"
 
 #: javaopts.cpp:149
 #, kde-format
@@ -1768,10 +1619,6 @@ msgid ""
 "selected policy, causing the default policy setting to be used for that "
 "domain."
 msgstr ""
-"您可以在这里为特定的主机或域名设置 Java 策略。要添加新的策略，请单击<i>新"
-"建...</i>按钮并在对话框中提供必要的信息。要更改已有的策略，请单击<i>更改...</"
-"i>按钮并从策略对话框中选择新的策略。单击<i>删除</i>按钮将删除选中策略，这将使"
-"得对该域名应用默认的策略设置。"
 
 #: javaopts.cpp:162
 #, kde-format
@@ -1783,15 +1630,11 @@ msgid ""
 "risk. You can modify your $HOME/.java.policy file with the Java policytool "
 "utility to give code downloaded from certain sites more permissions."
 msgstr ""
-"启用安全管理器将使得 Java 虚拟机载安全管理器的位置运行。这能够保证小程序无法"
-"读写您的文件系统，创建专用的 sockets，以及其他可能危及系统安全的操作。禁用此"
-"选项可能带来风险。您可以用 Java 策略工具修改您的 $HOME/.java 策略文件，以便给"
-"从特定网站下载的代码更多的许可。"
 
 #: javaopts.cpp:170
 #, kde-format
 msgid "Enabling this will cause the jvm to use KIO for network transport "
-msgstr "启用此选项将导致 jvm 使用 KIO 进行网络传送"
+msgstr ""
 
 #: javaopts.cpp:172
 #, kde-format
@@ -1801,16 +1644,13 @@ msgid ""
 "the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
 "the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
 msgstr ""
-"输入 Java 可执行文件的路径。如果您想要使用路径中的 Java 运行环境，只需保"
-"留“Java”。如果您需要不同的 Java 运行环境，请输入 Java 可执行文件的路径(如 /"
-"usr/lib/jdk/bin/java)，或者包含“bin/java”的目录路径(如 /opt/IBMJava2-13)。"
 
 #: javaopts.cpp:177
 #, kde-format
 msgid ""
 "If you want special arguments to be passed to the virtual machine, enter "
 "them here."
-msgstr "如果您需要传一些特殊的参数给虚拟机，请在这里输入。"
+msgstr ""
 
 #: javaopts.cpp:179
 #, kde-format
@@ -1822,43 +1662,39 @@ msgid ""
 "whole time that the konqueror process is, leave the Shutdown Applet Server "
 "checkbox unchecked."
 msgstr ""
-"如果所有的小程序都已被销毁，那么小程序服务器就应该关闭。然而，启动 Java 虚拟"
-"机很费时间。如果您想要在您浏览的时候仍然保留 Java 进程，您可以将超时的值设置"
-"为您希望的值。要在 Konqueror 进程全程保留 Java 进程，请不要选中关闭小程序服务"
-"器。"
 
 #: javaopts.cpp:291
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
-msgstr "特定域(&I)"
+msgstr ""
 
 #: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
-msgstr "新建 Java 策略"
+msgstr ""
 
 #: javaopts.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
-msgstr "修改 Java 策略"
+msgstr ""
 
 #: javaopts.cpp:333
 #, kde-format
 msgid "&Java policy:"
-msgstr "&Java 策略："
+msgstr ""
 
 #: javaopts.cpp:334
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
-msgstr "为以上主机或域选择 Java 策略。"
+msgstr ""
 
 #: jsopts.cpp:50
 #, kde-format
 msgid "Ena&ble JavaScript globally"
-msgstr "全局启用 JavaScript(&B)"
+msgstr ""
 
 #: jsopts.cpp:51
 #, kde-format
@@ -1867,34 +1703,32 @@ msgid ""
 "JavaScript) that can be contained in HTML pages. Note that, as with any "
 "browser, enabling scripting languages can be a security problem."
 msgstr ""
-"允许执行 HTML 页面中包含的用 ECMA-脚本(也称 JavaScript)写成的脚本。请注意，和"
-"其他浏览器一样，允许脚本语言可能会带来安全问题。"
 
 #: jsopts.cpp:59
 #, kde-format
 msgid "Debugging"
-msgstr "调试"
+msgstr ""
 
 #: jsopts.cpp:63
 #, kde-format
 msgid "Enable debu&gger"
-msgstr "启用调试器(&G)"
+msgstr ""
 
 #: jsopts.cpp:64
 #, kde-format
 msgid "Enables builtin JavaScript debugger."
-msgstr "启用内置 JavaScript 调试器。"
+msgstr ""
 
 #: jsopts.cpp:68
 #, kde-format
 msgid "Report &errors"
-msgstr "报告错误(&E)"
+msgstr ""
 
 #: jsopts.cpp:69
 #, kde-format
 msgid ""
 "Enables the reporting of errors that occur when JavaScript code is executed."
-msgstr "启用 JavaScript 代码执行时所发生错误的报告。"
+msgstr ""
 
 #: jsopts.cpp:83
 #, kde-format
@@ -1909,11 +1743,6 @@ msgid ""
 "share your policies with other people by allowing you to save and retrieve "
 "them from a zipped file."
 msgstr ""
-"您可以在这里为特定的主机或域名设置 JavaScript 策略。要添加新的策略，请单击<i>"
-"新建...</i>按钮并在对话框中提供必要的信息。要更改已有的策略，请单击<i>更改..."
-"</i>按钮并从策略对话框中选择新的策略。单击<i>删除</i>按钮将删除选中策略，这将"
-"使得对该域名应用默认的策略设置。<i>导入</i>和<i>导出</i>按钮让您能用压缩的文"
-"件保存和加载策略，从而轻松地和别人共享您的策略。"
 
 #: jsopts.cpp:93
 #, kde-format
@@ -1924,9 +1753,6 @@ msgid ""
 "or hosts.</p><p>Select a policy and use the controls on the right to modify "
 "it.</p>"
 msgstr ""
-"<p>此框中包含了您设置特定的 JavaScript 策略的域名和主机。对于这些域名或主机发"
-"送的页面，将会应用此策略而不是默认策略的启用或禁用。</p><p>请选择一个策略并使"
-"用右边的按钮进行修改。</p>"
 
 #: jsopts.cpp:100
 #, kde-format
@@ -1935,8 +1761,6 @@ msgid ""
 "These policies will be merged with the existing ones. Duplicate entries are "
 "ignored."
 msgstr ""
-"单击此按钮选择包含 JavaScript 策略的文件。这些策略将与已有策略合并。重复的将"
-"被忽略。"
 
 #: jsopts.cpp:103
 #, kde-format
@@ -1945,101 +1769,99 @@ msgid ""
 "named <b>javascript_policy.tgz</b>, will be saved to a location of your "
 "choice."
 msgstr ""
-"单击此按钮将 JavaScript 策略保存为压缩文件 <b>javascript_policy.tgz</b>，它将"
-"保存在您指定的位置。"
 
 #: jsopts.cpp:109
 #, kde-format
 msgid "Global JavaScript Policies"
-msgstr "全局 JavaScript 策略"
+msgstr ""
 
 #: jsopts.cpp:183
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
-msgstr "特定域(&M)"
+msgstr ""
 
 #: jsopts.cpp:222
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
-msgstr "新建 JavaScript 策略"
+msgstr ""
 
 #: jsopts.cpp:225
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
-msgstr "更改 JavaScript 策略"
+msgstr ""
 
 #: jsopts.cpp:229
 #, kde-format
 msgid "JavaScript policy:"
-msgstr "JavaScript 策略："
+msgstr ""
 
 #: jsopts.cpp:230
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
-msgstr "为以上主机或域选择 JavaScript 策略。"
+msgstr ""
 
 #: jsopts.cpp:232
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
-msgstr "特定域的 JavaScript 策略"
+msgstr ""
 
 #: jspolicies.cpp:132
 #, kde-format
 msgid "Open new windows:"
-msgstr "打开新的窗口："
+msgstr ""
 
 #: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
 #: jspolicies.cpp:308
 #, kde-format
 msgid "Use global"
-msgstr "使用全局策略"
+msgstr ""
 
 #: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
 #: jspolicies.cpp:309
 #, kde-format
 msgid "Use setting from global policy."
-msgstr "使用全局策略的设置。"
+msgstr ""
 
 #: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
 #: jspolicies.cpp:315
 #, kde-format
 msgid "Allow"
-msgstr "允许"
+msgstr ""
 
 #: jspolicies.cpp:148
 #, kde-format
 msgid "Accept all popup window requests."
-msgstr "接受所有弹出窗口请求。"
+msgstr ""
 
 #: jspolicies.cpp:154
 #, kde-format
 msgid "Prompt every time a popup window is requested."
-msgstr "每次弹出窗口请求时都提示。"
+msgstr ""
 
 #: jspolicies.cpp:159
 #, kde-format
 msgid "Deny"
-msgstr "拒绝"
+msgstr ""
 
 #: jspolicies.cpp:160
 #, kde-format
 msgid "Reject all popup window requests."
-msgstr "拒绝所有弹出窗口请求。"
+msgstr ""
 
 #: jspolicies.cpp:165
 #, kde-format
 msgid "Smart"
-msgstr "智能"
+msgstr ""
 
 #: jspolicies.cpp:166
 #, kde-format
 msgid ""
 "Accept popup window requests only when links are activated through an "
 "explicit mouse click or keyboard operation."
-msgstr "仅当通过显式的鼠标单击或键盘操作激活链接时才接受弹出窗口。"
+msgstr ""
 
 #: jspolicies.cpp:173
 #, kde-format
@@ -2050,25 +1872,21 @@ msgid ""
 "Disabling this option might also break certain sites that require <i>window."
 "open()</i> for proper operation. Use this feature carefully."
 msgstr ""
-"如果您禁用此选项，Konqueror 将会停止解释 <i>window.open()</i> JavaScript 命"
-"令。如果您经常访问的网站过多的使用了弹出窗口广告条的话，这将非常有用。<br /"
-"><br /><b>注意：</b>禁用此选项也有可能使某些需要用 <i>window.open()</i> 进行"
-"正常操作的站点。请谨慎使用该选项。"
 
 #: jspolicies.cpp:187
 #, kde-format
 msgid "Resize window:"
-msgstr "改变窗口大小："
+msgstr ""
 
 #: jspolicies.cpp:202
 #, kde-format
 msgid "Allow scripts to change the window size."
-msgstr "允许脚本改变窗口大小。"
+msgstr ""
 
 #: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
 #, kde-format
 msgid "Ignore"
-msgstr "忽略"
+msgstr ""
 
 #: jspolicies.cpp:208
 #, kde-format
@@ -2076,8 +1894,6 @@ msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
 "<i>think</i> it changed the size but the actual window is not affected."
 msgstr ""
-"忽略改变窗口大小的脚本行为。该网页将<i>认为</i>它已经改变了窗口大小，但实际的"
-"窗口大小并不会受影响。"
 
 #: jspolicies.cpp:215
 #, kde-format
@@ -2086,18 +1902,16 @@ msgid ""
 "resizeBy()</i> or <i>window.resizeTo()</i>. This option specifies the "
 "treatment of such attempts."
 msgstr ""
-"有些网页用 <i>window.resizeBy()</i> 或 <i>window.resizeTo()</i> 自作主张地改"
-"变窗口大小。此选项指定对这样的行为如何处理。"
 
 #: jspolicies.cpp:224
 #, kde-format
 msgid "Move window:"
-msgstr "移动窗口位置："
+msgstr ""
 
 #: jspolicies.cpp:239
 #, kde-format
 msgid "Allow scripts to change the window position."
-msgstr "允许脚本改变窗口位置。"
+msgstr ""
 
 #: jspolicies.cpp:245
 #, kde-format
@@ -2105,8 +1919,6 @@ msgid ""
 "Ignore attempts of scripts to change the window position. The web page will "
 "<i>think</i> it moved the window but the actual position is not affected."
 msgstr ""
-"忽略改变窗口位置的脚本行为。该网页将<i>认为</i>它已经移动了窗口，但实际的窗口"
-"位置并不会受影响。"
 
 #: jspolicies.cpp:252
 #, kde-format
@@ -2115,18 +1927,16 @@ msgid ""
 "moveBy()</i> or <i>window.moveTo()</i>. This option specifies the treatment "
 "of such attempts."
 msgstr ""
-"有些网站用 <i>window.moveBy()</i> 或 <i>window.moveTo()</i> 自作主张地改变窗"
-"口的位置。此选项指定对这种行为如何处理。"
 
 #: jspolicies.cpp:261
 #, kde-format
 msgid "Focus window:"
-msgstr "改变窗口焦点："
+msgstr ""
 
 #: jspolicies.cpp:276
 #, kde-format
 msgid "Allow scripts to focus the window."
-msgstr "允许脚本改变窗口焦点。"
+msgstr ""
 
 #: jspolicies.cpp:282
 #, kde-format
@@ -2135,8 +1945,6 @@ msgid ""
 "i> it brought the focus to the window but the actual focus will remain "
 "unchanged."
 msgstr ""
-"忽略改变窗口焦点的脚本行为。该网页将<i>认为</i>它已将焦点移到显示它的窗口上，"
-"但实际的焦点将保持不变。"
 
 #: jspolicies.cpp:290
 #, kde-format
@@ -2146,19 +1954,16 @@ msgid ""
 "front interrupting whatever action the user was dedicated to at that time. "
 "This option specifies the treatment of such attempts."
 msgstr ""
-"有些网站使用 <i>window.focus()</i> 将输入焦点自作主张地移到它们的浏览窗口上，"
-"这通常会导致该窗口被移动到最前面，干扰用户当时正在专心处理的工作。此选项指定"
-"了如何处理这样的行为。"
 
 #: jspolicies.cpp:301
 #, kde-format
 msgid "Modify status bar text:"
-msgstr "改变状态栏文本："
+msgstr ""
 
 #: jspolicies.cpp:316
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
-msgstr "允许脚本改变状态栏的文本。"
+msgstr ""
 
 #: jspolicies.cpp:322
 #, kde-format
@@ -2166,8 +1971,6 @@ msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
 "<i>think</i> it changed the text but the actual text will remain unchanged."
 msgstr ""
-"忽略试图改变状态栏文本的脚本行为。该网页将<i>认为</i>它改变了状态栏，但实际的"
-"状态栏文本将保持不变。"
 
 #: jspolicies.cpp:330
 #, kde-format
@@ -2176,54 +1979,51 @@ msgid ""
 "<i>window.defaultStatus</i>, thus sometimes preventing displaying the real "
 "URLs of hyperlinks. This option specifies the treatment of such attempts."
 msgstr ""
-"有些网站用设置 <i>window.status</i> 或 <i>window.defaultStatus</i> 的方法改变"
-"状态栏文本，从而有时会妨碍真正的超联接 URL 的显示。此选项指定对这种行为如何处"
-"理。"
 
 #: main.cpp:49
 #, kde-format
 msgid "&Java"
-msgstr "&Java"
+msgstr ""
 
 #: main.cpp:57
 #, kde-format
 msgid "Java&Script"
-msgstr "Java&Script"
+msgstr ""
 
 #: policydlg.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Domain-Specific Policies"
-msgstr "特定域的策略"
+msgstr ""
 
 #: policydlg.cpp:47
 #, kde-format
 msgid "&Host or domain name:"
-msgstr "主机或域名(&H)："
+msgstr ""
 
 #: policydlg.cpp:55
 #, kde-format
 msgid ""
 "Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
 "(like .kde.org or .org)"
-msgstr "输入主机名(如 www.kde.org)或以点起始的域名(如.kde.org 或.org)"
+msgstr ""
 
 #: policydlg.cpp:139
 #, kde-format
 msgid "You must first enter a domain name."
-msgstr "您必须先输入域名。"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
 #, kde-format
 msgid "Tabs Behavior"
-msgstr "标签页行为"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr "宽高比"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2232,55 +2032,54 @@ msgid ""
 "This will display the tab bar only if there are two or more tabs. Otherwise "
 "it will always be displayed."
 msgstr ""
-"仅当打开了两个或更多标签页时才显示标签页栏。否则，将会总是显示标签页栏。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:29
 #, kde-format
 msgid "Hide the tab bar when only one tab is open"
-msgstr "仅打开一个标签页时隐藏标签页栏"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: tabs/tabsoptions.ui:38
 #, kde-format
 msgid "Tab bar position"
-msgstr "标签页栏位置"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr "选择标签页栏显示的位置"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr "在内容上方"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr "在内容下方"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr "在内容左侧"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr "在内容右侧"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr "使用方式"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2289,14 +2088,12 @@ msgid ""
 "This will open a new tab instead of a new window in various situations, such "
 "as choosing a link or a folder with the middle mouse button."
 msgstr ""
-"这将在各种情况下在新标签页而不是新窗口中打开，如用鼠标中键选择链接或者文件"
-"夹。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:102
 #, kde-format
 msgid "Open &links in new tab instead of in new window"
-msgstr "在新的标签页而不是在新窗口中打开链接(&L)"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
 #: tabs/tabsoptions.ui:109
@@ -2304,13 +2101,13 @@ msgstr "在新的标签页而不是在新窗口中打开链接(&L)"
 msgid ""
 "Whether or not JavaScript popups if allowed shall open in a new tab or in a "
 "new window."
-msgstr "允许的 JavaScript 弹出窗口是应该在新标签页还是在新窗口中打开。"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
 #: tabs/tabsoptions.ui:112
 #, kde-format
 msgid "Open pop&ups in new tab instead of in new window"
-msgstr "在新的标签页而不是在新窗口中打开弹出窗口(&U)"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
 #: tabs/tabsoptions.ui:119
@@ -2321,21 +2118,18 @@ msgid ""
 "found, the URL opened as a new tab within it. Otherwise a new Konqueror "
 "window will be opened with the required URL."
 msgstr ""
-"当您在其他 KDE 程序中点击 URL 或调用 kfmclient 打开 URL 时，系统将会搜索当前"
-"桌面，看有没有非最小化的 Konqueror。如果有的话，该 URL 将会打开为其中的一个新"
-"标签页。否则，将会为所请求的 URL 打开一个新的 Konqueror 窗口。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
 #: tabs/tabsoptions.ui:122
 #, kde-format
 msgid "Open as tab in existing Konqueror when URL is called externally"
-msgstr "从外部调用 URL 时，在已有 Konqueror 中打开相应的标签页"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
 #, kde-format
 msgid "New Tab Behavior"
-msgstr "新建标签页行为"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2346,15 +2140,12 @@ msgid ""
 "\">shift</span> when opening a new tab to reverse this behavior</p></body></"
 "html>"
 msgstr ""
-"<html><head/><body><p>这将在后台打开一个新标签页，而不是在前台打开。</p><p>按"
-"住 <span style=\" font-family:'Fira Code';\">Shift</span> 键打开新标签页时将"
-"采取与此设定相反的行为</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
 #, kde-format
 msgid "O&pen new tabs in the background"
-msgstr "在后台打开新标签页(&P)"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
 #: tabs/tabsoptions.ui:148
@@ -2362,31 +2153,31 @@ msgstr "在后台打开新标签页(&P)"
 msgid ""
 "This will open a new tab opened from a page after the current tab, instead "
 "of after the last tab."
-msgstr "这将在当前标签页之后打开新标签页，否则将在最后一个标签页之后打开。"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
 #: tabs/tabsoptions.ui:151
 #, kde-format
 msgid "Open &new tab after current tab"
-msgstr "在当前标签页之后打开新标签页(&N)"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Closing"
-msgstr "关闭"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167
 #, kde-format
 msgid "This will display close buttons inside each tab."
-msgstr "这将在每个标签页上显示关闭按钮。"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:170
 #, kde-format
 msgid "&Show close button on tabs"
-msgstr "在标签页上显示关闭按钮(&S)"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
 #: tabs/tabsoptions.ui:177
@@ -2394,13 +2185,13 @@ msgstr "在标签页上显示关闭按钮(&S)"
 msgid ""
 "When you click on a tab using the middle mouse button or mouse wheel, it "
 "will close that tab."
-msgstr "当您使用鼠标中键或滚轮点击一个标签页时，此标签页将会关闭。"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
 #: tabs/tabsoptions.ui:180
 #, kde-format
 msgid "Middle-click on a tab to close it"
-msgstr "中键点击可关闭标签页"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
 #: tabs/tabsoptions.ui:187
@@ -2408,13 +2199,13 @@ msgstr "中键点击可关闭标签页"
 msgid ""
 "This will ask you whether you are sure you want to close a window when it "
 "has multiple tabs opened in it."
-msgstr "在您将要关闭多页的窗口时询问您是否确定。"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
 #: tabs/tabsoptions.ui:190
 #, kde-format
 msgid "Confirm &when closing windows with multiple tabs"
-msgstr "关闭含有多页的窗口时确认(&W)"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
 #: tabs/tabsoptions.ui:197
@@ -2423,26 +2214,24 @@ msgid ""
 "When checking this the previous used or opened tab will be activated when "
 "you close the current active tab instead of the one right to the current tab."
 msgstr ""
-"选中此项时，当您关闭当前激活的标签页时将会打开先前使用或打开的标签页，而不是"
-"当前标签右侧的标签页。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
 #: tabs/tabsoptions.ui:200
 #, kde-format
 msgid "Activate previously used tab when closing the current tab"
-msgstr "关闭当前标签页时激活先前使用的标签页"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, UserAgent)
 #: useragent/useragent.ui:14
 #, kde-format
 msgid "Form"
-msgstr "表单"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:23
 #, kde-format
 msgid "Existing identifications"
-msgstr "已有标识"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
@@ -2452,55 +2241,55 @@ msgstr "已有标识"
 #: useragent/useragent.ui:150 useragent/useragent.ui:163
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: useragent/useragent.ui:66
 #, kde-format
 msgid "Content"
-msgstr "内容"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
 #: useragent/useragent.ui:97
 #, kde-format
 msgid "&Edit..."
-msgstr "编辑(&E)..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:110
 #, kde-format
 msgid "&Rename..."
-msgstr "重命名(&R)..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
 #: useragent/useragent.ui:123
 #, kde-format
 msgid "Du&plicate..."
-msgstr "复制为副本(&P)..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:136
 #, kde-format
 msgid "&Delete"
-msgstr "删除(&D)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, useTemplateBtn)
 #: useragent/useragent.ui:153
 #, kde-format
 msgid "Choose &selected identification"
-msgstr "选择已选中的标识(&S)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
 msgid "Use &default identification"
-msgstr "使用默认标识(&D)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:181
 #, kde-format
 msgid "&Custom identification"
-msgstr "自定义标识(&C)"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
 #: useragent/useragent.ui:191
@@ -2511,6 +2300,3 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
-"<html><head/><body><p>默认标识被禁用时要使用的浏览器标识。</p><p>您可以手动输"
-"入一个浏览器标识，或者从下面的列表中选择一个，然后按照自己的需要进行修改。</"
-"p></body></html>"

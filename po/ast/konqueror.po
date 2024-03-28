@@ -1,31 +1,31 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# SPDX-FileCopyrightText: 2024 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-25 00:37+0000\n"
-"PO-Revision-Date: 2024-03-27 19:45\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-27 23:40+0100\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/konqueror/konqueror.pot\n"
-"X-Crowdin-File-ID: 48628\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "KDE 中国"
+msgstr "Softastur"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kde-china@kde.org"
+msgstr "alministradores@softastur.org"
 
 #: src/konqapplication.cpp:129
 #, kde-format
@@ -33,100 +33,98 @@ msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
-"<p>您正在以 root 权限运行 Konqueror。此操作要求在浏览器组件中启用一个非常不安"
-"全的模式。</p><p>您想要怎么做？</p>"
 
 #: src/konqapplication.cpp:172
 #, kde-format
 msgid "Konqueror"
-msgstr "Konqueror"
+msgstr ""
 
 #: src/konqapplication.cpp:173
 #, kde-format
 msgid "Web browser, file manager and document viewer."
-msgstr "Web 浏览器、文件管理器和文档查看器。"
+msgstr ""
 
 #: src/konqapplication.cpp:175
 #, kde-format
 msgid "(C) 1999-2023, The Konqueror developers"
-msgstr "(C) 1999-2023, The Konqueror developers"
+msgstr ""
 
 #: src/konqapplication.cpp:178
 #, kde-format
 msgid "Stefano Crocco"
-msgstr "Stefano Crocco"
+msgstr ""
 
 #: src/konqapplication.cpp:178
 #, kde-format
 msgid "Current maintainer"
-msgstr "当前维护者"
+msgstr ""
 
 #: src/konqapplication.cpp:179
 #, kde-format
 msgid "David Faure"
-msgstr "David Faure"
+msgstr ""
 
 #: src/konqapplication.cpp:179
 #, kde-format
 msgid ""
 "Developer (framework, parts, JavaScript, I/O library) and former maintainer"
-msgstr "开发者 (框架、组件、JavaScript、I/O 库) 和前维护者"
+msgstr ""
 
 #: src/konqapplication.cpp:180
 #, kde-format
 msgid "Simon Hausmann"
-msgstr "Simon Hausmann"
+msgstr ""
 
 #: src/konqapplication.cpp:180
 #, kde-format
 msgid "Developer (framework, parts)"
-msgstr "开发者(框架、组件)"
+msgstr ""
 
 #: src/konqapplication.cpp:181
 #, kde-format
 msgid "Michael Reiher"
-msgstr "Michael Reiher"
+msgstr ""
 
 #: src/konqapplication.cpp:181 src/konqapplication.cpp:209
 #: src/konqapplication.cpp:215
 #, kde-format
 msgid "Developer (framework)"
-msgstr "开发者(框架)"
+msgstr ""
 
 #: src/konqapplication.cpp:182
 #, kde-format
 msgid "Matthias Welk"
-msgstr "Matthias Welk"
+msgstr ""
 
 #: src/konqapplication.cpp:182
 #, kde-format
 msgid "Developer"
-msgstr "开发者"
+msgstr ""
 
 #: src/konqapplication.cpp:183
 #, kde-format
 msgid "Alexander Neundorf"
-msgstr "Alexander Neundorf"
+msgstr ""
 
 #: src/konqapplication.cpp:183
 #, kde-format
 msgid "Developer (List views)"
-msgstr "开发者(列表视图)"
+msgstr ""
 
 #: src/konqapplication.cpp:184
 #, kde-format
 msgid "Michael Brade"
-msgstr "Michael Brade"
+msgstr ""
 
 #: src/konqapplication.cpp:184
 #, kde-format
 msgid "Developer (List views, I/O library)"
-msgstr "开发者(列表视图、I/O 库)"
+msgstr ""
 
 #: src/konqapplication.cpp:185
 #, kde-format
 msgid "Lars Knoll"
-msgstr "Lars Knoll"
+msgstr ""
 
 #: src/konqapplication.cpp:185 src/konqapplication.cpp:186
 #: src/konqapplication.cpp:187 src/konqapplication.cpp:189
@@ -135,143 +133,143 @@ msgstr "Lars Knoll"
 #: src/konqapplication.cpp:195 src/konqapplication.cpp:197
 #, kde-format
 msgid "Developer (HTML rendering engine)"
-msgstr "开发者(HTML 绘制引擎)"
+msgstr ""
 
 #: src/konqapplication.cpp:186
 #, kde-format
 msgid "Dirk Mueller"
-msgstr "Dirk Mueller"
+msgstr ""
 
 #: src/konqapplication.cpp:187
 #, kde-format
 msgid "Peter Kelly"
-msgstr "Peter Kelly"
+msgstr ""
 
 #: src/konqapplication.cpp:188
 #, kde-format
 msgid "Waldo Bastian"
-msgstr "Waldo Bastian"
+msgstr ""
 
 #: src/konqapplication.cpp:188
 #, kde-format
 msgid "Developer (HTML rendering engine, I/O library)"
-msgstr "开发者(HTML 绘制引擎、I/O 库)"
+msgstr ""
 
 #: src/konqapplication.cpp:189
 #, kde-format
 msgid "Germain Garand"
-msgstr "Germain Garand"
+msgstr ""
 
 #: src/konqapplication.cpp:190 src/konqapplication.cpp:218
 #, kde-format
 msgid "Leo Savernik"
-msgstr "Leo Savernik"
+msgstr ""
 
 #: src/konqapplication.cpp:191
 #, kde-format
 msgid "Stephan Kulow"
-msgstr "Stephan Kulow"
+msgstr ""
 
 #: src/konqapplication.cpp:191
 #, kde-format
 msgid ""
 "Developer (HTML rendering engine, I/O library, regression test framework)"
-msgstr "开发者(HTML 绘制引擎、I/O 库、回归测试框架)"
+msgstr ""
 
 #: src/konqapplication.cpp:192
 #, kde-format
 msgid "Antti Koivisto"
-msgstr "Antti Koivisto"
+msgstr ""
 
 #: src/konqapplication.cpp:193
 #, kde-format
 msgid "Zack Rusin"
-msgstr "Zack Rusin"
+msgstr ""
 
 #: src/konqapplication.cpp:194
 #, kde-format
 msgid "Tobias Anton"
-msgstr "Tobias Anton"
+msgstr ""
 
 #: src/konqapplication.cpp:195
 #, kde-format
 msgid "Lubos Lunak"
-msgstr "Lubos Lunak"
+msgstr ""
 
 #: src/konqapplication.cpp:196
 #, kde-format
 msgid "Maks Orlovich"
-msgstr "Maks Orlovich"
+msgstr ""
 
 #: src/konqapplication.cpp:196 src/konqapplication.cpp:198
 #, kde-format
 msgid "Developer (HTML rendering engine, JavaScript)"
-msgstr "开发者(HTML 绘制引擎、JavaScript)"
+msgstr ""
 
 #: src/konqapplication.cpp:197
 #, kde-format
 msgid "Allan Sandfeld Jensen"
-msgstr "Allan Sandfeld Jensen"
+msgstr ""
 
 #: src/konqapplication.cpp:198
 #, kde-format
 msgid "Apple Safari Developers"
-msgstr "Apple Safari 开发者"
+msgstr ""
 
 #: src/konqapplication.cpp:199
 #, kde-format
 msgid "Harri Porten"
-msgstr "Harri Porten"
+msgstr ""
 
 #: src/konqapplication.cpp:199
 #, kde-format
 msgid "Developer (JavaScript)"
-msgstr "开发者(JavaScript)"
+msgstr ""
 
 #: src/konqapplication.cpp:200
 #, kde-format
 msgid "Koos Vriezen"
-msgstr "Koos Vriezen"
+msgstr ""
 
 #: src/konqapplication.cpp:200
 #, kde-format
 msgid "Developer (Java applets and other embedded objects)"
-msgstr "开发者 (Java 小程序支持和其他嵌入对象)"
+msgstr ""
 
 #: src/konqapplication.cpp:201
 #, kde-format
 msgid "Matt Koss"
-msgstr "Matt Koss"
+msgstr ""
 
 #: src/konqapplication.cpp:201 src/konqapplication.cpp:202
 #, kde-format
 msgid "Developer (I/O library)"
-msgstr "开发者(I/O 库)"
+msgstr ""
 
 #: src/konqapplication.cpp:202
 #, kde-format
 msgid "Alex Zepeda"
-msgstr "Alex Zepeda"
+msgstr ""
 
 #: src/konqapplication.cpp:203
 #, kde-format
 msgid "Richard Moore"
-msgstr "Richard Moore"
+msgstr ""
 
 #: src/konqapplication.cpp:203 src/konqapplication.cpp:204
 #, kde-format
 msgid "Developer (Java applet support)"
-msgstr "开发者 (Java 小程序支持)"
+msgstr ""
 
 #: src/konqapplication.cpp:204
 #, kde-format
 msgid "Dima Rogozin"
-msgstr "Dima Rogozin"
+msgstr ""
 
 #: src/konqapplication.cpp:205
 #, kde-format
 msgid "Wynn Wilkes"
-msgstr "Wynn Wilkes"
+msgstr ""
 
 #: src/konqapplication.cpp:205
 #, kde-format
@@ -279,108 +277,106 @@ msgid ""
 "Developer (Java 2 security manager support,\n"
 " and other major improvements to applet support)"
 msgstr ""
-"开发者 (Java 2 安全管理器支持\n"
-"和其他对小程序支持的重要改进)"
 
 #: src/konqapplication.cpp:206
 #, kde-format
 msgid "Stefan Schimanski"
-msgstr "Stefan Schimanski"
+msgstr ""
 
 #: src/konqapplication.cpp:206
 #, kde-format
 msgid "Developer (Netscape plugin support)"
-msgstr "开发者(Netscape 插件支持)"
+msgstr ""
 
 #: src/konqapplication.cpp:207
 #, kde-format
 msgid "George Staikos"
-msgstr "George Staikos"
+msgstr ""
 
 #: src/konqapplication.cpp:207
 #, kde-format
 msgid "Developer (SSL, Netscape plugins)"
-msgstr "开发者(SSL、Netscape 插件支持)"
+msgstr ""
 
 #: src/konqapplication.cpp:208
 #, kde-format
 msgid "Dawit Alemayehu"
-msgstr "Dawit Alemayehu"
+msgstr ""
 
 #: src/konqapplication.cpp:208
 #, kde-format
 msgid "Developer (I/O library, Authentication support)"
-msgstr "开发者(I/O 库、验证支持)"
+msgstr ""
 
 #: src/konqapplication.cpp:209
 #, kde-format
 msgid "Carsten Pfeiffer"
-msgstr "Carsten Pfeiffer"
+msgstr ""
 
 #: src/konqapplication.cpp:210
 #, kde-format
 msgid "Torsten Rahn"
-msgstr "Torsten Rahn"
+msgstr ""
 
 #: src/konqapplication.cpp:210
 #, kde-format
 msgid "Graphics/icons"
-msgstr "图像/图标"
+msgstr ""
 
 #: src/konqapplication.cpp:211
 #, kde-format
 msgid "Torben Weis"
-msgstr "Torben Weis"
+msgstr ""
 
 #: src/konqapplication.cpp:211
 #, kde-format
 msgid "KFM author"
-msgstr "KFM 作者"
+msgstr ""
 
 #: src/konqapplication.cpp:212
 #, kde-format
 msgid "Joseph Wenninger"
-msgstr "Joseph Wenninger"
+msgstr ""
 
 #: src/konqapplication.cpp:212
 #, kde-format
 msgid "Developer (navigation panel framework)"
-msgstr "开发者(导航面板框架)"
+msgstr ""
 
 #: src/konqapplication.cpp:213
 #, kde-format
 msgid "Stephan Binner"
-msgstr "Stephan Binner"
+msgstr ""
 
 #: src/konqapplication.cpp:213
 #, kde-format
 msgid "Developer (misc stuff)"
-msgstr "开发者(杂项)"
+msgstr ""
 
 #: src/konqapplication.cpp:214
 #, kde-format
 msgid "Ivor Hewitt"
-msgstr "Ivor Hewitt"
+msgstr ""
 
 #: src/konqapplication.cpp:214
 #, kde-format
 msgid "Developer (AdBlock filter)"
-msgstr "开发者(广告过滤)"
+msgstr ""
 
 #: src/konqapplication.cpp:215
 #, kde-format
 msgid "Eduardo Robles Elvira"
-msgstr "Eduardo Robles Elvira"
+msgstr ""
 
 #: src/konqapplication.cpp:216
 #, kde-format
 msgid "Matthias Kalle Dalheimer"
-msgstr "Matthias Kalle Dalheimer"
+msgstr ""
 
 #: src/konqapplication.cpp:217
 #, kde-format
 msgid "Daniel Molkentin"
-msgstr "Daniel Molkentin"
+msgstr ""
 
 #: src/konqapplication.cpp:218
 #, kde-format
@@ -388,76 +384,74 @@ msgid ""
 "JavaScript access controls\n"
 "Per-domain policies extensions"
 msgstr ""
-"JavaScript 访问控制\n"
-"按域指定策略扩展"
 
 #: src/konqapplication.cpp:229
 #, kde-format
 msgid "Start without a default window, when called without URLs"
-msgstr "如果没有指定要打开的 URL，则启动时无默认窗口"
+msgstr ""
 
 #: src/konqapplication.cpp:230
 #, kde-format
 msgid ""
 "Preload for later use. This mode does not support URLs on the command line"
-msgstr "预加载实例以备用。此模式不支持在命令行模式下打开 URL"
+msgstr ""
 
 #: src/konqapplication.cpp:231
 #, kde-format
 msgid "Profile to open (DEPRECATED, IGNORED)"
-msgstr "要打开的配置 (已废弃，忽略)"
+msgstr ""
 
 #: src/konqapplication.cpp:231
 #, kde-format
 msgid "profile"
-msgstr "配置"
+msgstr ""
 
 #: src/konqapplication.cpp:232
 #, kde-format
 msgid "List available sessions"
-msgstr "列出可用的会话"
+msgstr ""
 
 #: src/konqapplication.cpp:233
 #, kde-format
 msgid "Session to open"
-msgstr "要打开的会话"
+msgstr ""
 
 #: src/konqapplication.cpp:233
 #, kde-format
 msgid "session"
-msgstr "会话"
+msgstr ""
 
 #: src/konqapplication.cpp:234
 #, kde-format
 msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
-msgstr "此 URL 的 MIME 类型(例如，text/html 或 inode/directory)"
+msgstr ""
 
 #: src/konqapplication.cpp:234
 #, kde-format
 msgid "mimetype"
-msgstr "MIME 类型"
+msgstr ""
 
 #: src/konqapplication.cpp:235
 #, kde-format
 msgid "Part to use (e.g. khtml or kwebkitpart)"
-msgstr "要使用的组件(即 khtml 或 kwebkitpart)"
+msgstr ""
 
 #: src/konqapplication.cpp:235
 #, kde-format
 msgid "service"
-msgstr "服务"
+msgstr ""
 
 #: src/konqapplication.cpp:236
 #, kde-format
 msgid ""
 "For URLs that point to files, opens the directory and selects the file, "
 "instead of opening the actual file"
-msgstr "对于指向文件的 URLs，打开目录并选择文件，而不是打开实际的文件"
+msgstr ""
 
 #: src/konqapplication.cpp:237
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
-msgstr "由此程序打开的文件/URL 将会在使用后删除"
+msgstr ""
 
 #: src/konqapplication.cpp:239
 #, kde-format
@@ -465,48 +459,46 @@ msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
 "only when developing Konqueror itself"
 msgstr ""
-"创建一个新的 Konqueror 进程，即使当前已存在另一个 Konqueror 进程。此功能只应"
-"在 Konqueror 开发时使用"
 
 #: src/konqapplication.cpp:241
 #, kde-format
 msgid "TEST"
-msgstr "测试"
+msgstr ""
 
 #: src/konqapplication.cpp:242
 #, kde-format
 msgid "Location to open"
-msgstr "要打开的位置"
+msgstr ""
 
 #: src/konqapplication.cpp:351
 #, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "无法打开会话 %1"
+msgstr ""
 
 #: src/konqapplication.cpp:476
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
-msgstr "您不能在使用 --preload 参数时传递 URL。该 URL 将被忽略\n"
+msgstr ""
 
 #: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4847
 #: src/konqmainwindow.cpp:4893
 #, kde-format
 msgid "no name"
-msgstr "未命名"
+msgstr ""
 
 #: src/konqextensionmanager.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Extensions"
-msgstr "配置扩展"
+msgstr ""
 
 #: src/konqextensionmanager.cpp:69
 #, kde-format
 msgid "Extensions"
-msgstr "扩展"
+msgstr ""
 
 #: src/konqfactory.cpp:66
 #, kde-format
@@ -515,9 +507,6 @@ msgid ""
 "The diagnostics is:\n"
 "%2"
 msgstr ""
-"加载模块 %1 时发生错误。\n"
-"诊断信息是：\n"
-"%2"
 
 #: src/konqframestatusbar.cpp:108
 #, kde-format
@@ -528,52 +517,49 @@ msgid ""
 "useful with different types of views, such as a directory tree with an icon "
 "view or detailed view, and possibly a terminal emulator window."
 msgstr ""
-"在至少两个视图中选中此选项将设置这些视图为“被链接的”。然后，当您在一个视图中"
-"更改目录时，其他与它链接的视图将自动更新并显示当前目录。这在多个不同类型的视"
-"图中非常有用，例如图标视图、详情视图的目录树，或者终端模拟窗口等。"
 
 #: src/konqframestatusbar.cpp:119
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr "%p%"
+msgstr ""
 
 #: src/konqframestatusbar.cpp:155
 #, kde-format
 msgid "Close View"
-msgstr "关闭视图"
+msgstr ""
 
 #: src/konqframestatusbar.cpp:233
 #, kde-format
 msgid "%1/s"
-msgstr "%1/s"
+msgstr ""
 
 #: src/konqframestatusbar.cpp:235
 #, kde-format
 msgid "Stalled"
-msgstr "暂停"
+msgstr ""
 
 #: src/konqguiclients.cpp:52
 #, kde-format
 msgid "Preview &in %1"
-msgstr "在 %1 里预览(&I)"
+msgstr ""
 
 #: src/konqguiclients.cpp:122
 #, kde-format
 msgid "Show %1"
-msgstr "显示 %1"
+msgstr ""
 
 #: src/konqhistorydialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "History"
-msgstr "历史"
+msgstr ""
 
 #: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:142
 #, kde-format
 msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
 msgid "Sort"
-msgstr "排序"
+msgstr ""
 
 #: src/konqhistorymodel.cpp:119
 #, kde-format
@@ -581,100 +567,98 @@ msgid ""
 "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
 "%3<br />Number of times visited: %4</qt>"
 msgstr ""
-"<qt><center><b>%1</b></center><hr />上次访问：%2<br />首次访问：%3<br />访问"
-"次数：%4</qt>"
 
 #: src/konqhistorymodel.cpp:213
 #, kde-format
 msgid "Local"
-msgstr "本地"
+msgstr ""
 
 #: src/konqhistorymodel.cpp:216
 #, kde-format
 msgid "Miscellaneous"
-msgstr "杂项"
+msgstr ""
 
 #: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4363
 #, kde-format
 msgid "Open in New &Window"
-msgstr "在新窗口中打开(&W)"
+msgstr ""
 
 #: src/konqhistoryview.cpp:60
 #, kde-format
 msgid "Open in New Tab"
-msgstr "在新标签页中打开"
+msgstr ""
 
 #: src/konqhistoryview.cpp:65
 #, kde-format
 msgid "Open in Current Tab"
-msgstr "在当前标签页中打开"
+msgstr ""
 
 #: src/konqhistoryview.cpp:69
 #, kde-format
 msgid "&Copy Link Address"
-msgstr "复制链接地址(&C)"
+msgstr ""
 
 #: src/konqhistoryview.cpp:74
 #, kde-format
 msgid "&Remove Entry"
-msgstr "删除项目(&R)"
+msgstr ""
 
 #: src/konqhistoryview.cpp:81
 #, kde-format
 msgid "C&lear History"
-msgstr "清除历史(&L)"
+msgstr ""
 
 #: src/konqhistoryview.cpp:86
 #, kde-format
 msgid "&Preferences..."
-msgstr "首选项(&P)..."
+msgstr ""
 
 #: src/konqhistoryview.cpp:93
 #, kde-format
 msgid "By &Name"
-msgstr "按名称(&N)"
+msgstr ""
 
 #: src/konqhistoryview.cpp:99
 #, kde-format
 msgid "By &Date"
-msgstr "按日期(&D)"
+msgstr ""
 
 #: src/konqhistoryview.cpp:109
 #, kde-format
 msgid "Search in history"
-msgstr "搜索历史"
+msgstr ""
 
 #: src/konqhistoryview.cpp:170
 #, kde-format
 msgid "Do you really want to clear the entire history?"
-msgstr "您确定要清空整个历史吗？"
+msgstr ""
 
 #: src/konqhistoryview.cpp:171
 #, kde-format
 msgctxt "@title:window"
 msgid "Clear History?"
-msgstr "清除历史?"
+msgstr ""
 
 #: src/konqmainwindow.cpp:698
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
-msgstr "正在加载..."
+msgstr ""
 
 #: src/konqmainwindow.cpp:730
 #, kde-format
 msgid "Access denied"
-msgstr "拒绝访问"
+msgstr ""
 
 #: src/konqmainwindow.cpp:1507
 #, kde-format
 msgid "Open File"
-msgstr "打开文件"
+msgstr ""
 
 #: src/konqmainwindow.cpp:1571
 #, kde-format
 msgid "Canceled."
-msgstr "已取消。"
+msgstr ""
 
 #: src/konqmainwindow.cpp:1607
 #, kde-format
@@ -682,8 +666,6 @@ msgid ""
 "This page contains changes that have not been submitted.\n"
 "Reloading the page will discard these changes."
 msgstr ""
-"此页面包含尚未提交的更改。\n"
-"重新加载页面将会丢弃这些更改。"
 
 #: src/konqmainwindow.cpp:1608 src/konqmainwindow.cpp:2250
 #: src/konqmainwindow.cpp:2339 src/konqmainwindow.cpp:2371
@@ -692,7 +674,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
-msgstr "丢弃更改？"
+msgstr ""
 
 #: src/konqmainwindow.cpp:1608 src/konqmainwindow.cpp:2250
 #: src/konqmainwindow.cpp:2339 src/konqmainwindow.cpp:2371
@@ -700,38 +682,38 @@ msgstr "丢弃更改？"
 #: src/konqmainwindow.cpp:4812
 #, kde-format
 msgid "&Discard Changes"
-msgstr "丢弃更改(&D)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:1926 src/konqmainwindow.cpp:1932
 #, kde-format
 msgid "Home Folder"
-msgstr "主文件夹"
+msgstr ""
 
 #: src/konqmainwindow.cpp:1927 src/konqmainwindow.cpp:3349
 #, kde-format
 msgid "Home"
-msgstr "主文件夹"
+msgstr ""
 
 #: src/konqmainwindow.cpp:1933
 #, kde-format
 msgid "Navigate to your 'Home Folder'"
-msgstr "前往您的“主文件夹”"
+msgstr ""
 
 #: src/konqmainwindow.cpp:1934
 #, kde-format
 msgid "Navigate to your local 'Home Folder'"
-msgstr "前往您的本地“主文件夹”"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (UserSettings)
 #: src/konqmainwindow.cpp:1937 src/konqueror.kcfg:16
 #, kde-format
 msgid "Home Page"
-msgstr "主页"
+msgstr ""
 
 #: src/konqmainwindow.cpp:1939
 #, kde-format
 msgid "Navigate to your 'Home Page'"
-msgstr "前往您的“主页”"
+msgstr ""
 
 #: src/konqmainwindow.cpp:1940
 #, kde-format
@@ -740,8 +722,6 @@ msgid ""
 "where this button takes you under <b>Settings -> Configure Konqueror -> "
 "General</b>.</html>"
 msgstr ""
-"<html>前往您的“主页”<br /><br />您可以在<b>设置 -> 配置 Konqueror -> 常规</b>"
-"中配置此按钮将带您前往的位置。</html>"
 
 #: src/konqmainwindow.cpp:2249
 #, kde-format
@@ -749,8 +729,6 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Detaching the tab will discard these changes."
 msgstr ""
-"此标签页包含尚未提交的更改。\n"
-"分离标签页将会丢弃这些更改。"
 
 #: src/konqmainwindow.cpp:2338
 #, kde-format
@@ -758,8 +736,6 @@ msgid ""
 "This view contains changes that have not been submitted.\n"
 "Closing the view will discard these changes."
 msgstr ""
-"此视图包含尚未提交的更改。\n"
-"关闭视图将会丢弃这些更改。"
 
 #: src/konqmainwindow.cpp:2370
 #, kde-format
@@ -767,24 +743,22 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the tab will discard these changes."
 msgstr ""
-"此标签页包含尚未提交的更改。\n"
-"关闭标签页将会丢弃这些更改。"
 
 #: src/konqmainwindow.cpp:2396
 #, kde-format
 msgid "Do you really want to close all other tabs?"
-msgstr "您确定要关闭全部其他标签页吗？"
+msgstr ""
 
 #: src/konqmainwindow.cpp:2397 src/konqmainwindow.cpp:3429 src/konqtabs.cpp:335
 #, kde-format
 msgid "Close &Other Tabs"
-msgstr "关闭其他标签页(&O)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:2397
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
-msgstr "关闭其他标签页确认"
+msgstr ""
 
 #: src/konqmainwindow.cpp:2413
 #, kde-format
@@ -792,8 +766,6 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing other tabs will discard these changes."
 msgstr ""
-"此标签页包含尚未提交的更改。\n"
-"关闭其他标签页将会丢弃这些更改。"
 
 #: src/konqmainwindow.cpp:2435
 #, kde-format
@@ -801,274 +773,272 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Reloading all tabs will discard these changes."
 msgstr ""
-"此标签页包含尚未提交的更改。\n"
-"重新加载全部标签页将会丢弃这些更改。"
 
 #: src/konqmainwindow.cpp:2492
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Target"
-msgstr "进入目标"
+msgstr ""
 
 #: src/konqmainwindow.cpp:2499
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
-msgstr "<qt><b>%1</b> 是无效的</qt>"
+msgstr ""
 
 #: src/konqmainwindow.cpp:2509
 #, kde-format
 msgid "Copy selected files from %1 to:"
-msgstr "将选中文件从 %1 复制到："
+msgstr ""
 
 #: src/konqmainwindow.cpp:2522
 #, kde-format
 msgid "Move selected files from %1 to:"
-msgstr "将选中文件从 %1 移动到："
+msgstr ""
 
 #: src/konqmainwindow.cpp:2690
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
-msgstr "清空已关闭项目历史"
+msgstr ""
 
 #: src/konqmainwindow.cpp:2712
 #, kde-format
 msgid "Save As..."
-msgstr "另存为..."
+msgstr ""
 
 #: src/konqmainwindow.cpp:2714
 #, kde-format
 msgid "Manage..."
-msgstr "管理..."
+msgstr ""
 
 #: src/konqmainwindow.cpp:3258
 #, kde-format
 msgid "New &Window"
-msgstr "新建窗口(&W)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3263
 #, kde-format
 msgid "&Duplicate Window"
-msgstr "复制窗口(&D)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3268
 #, kde-format
 msgid "Send &Link Address..."
-msgstr "发送链接地址(&L)..."
+msgstr ""
 
 #: src/konqmainwindow.cpp:3272
 #, kde-format
 msgid "S&end File..."
-msgstr "发送文件(&E)..."
+msgstr ""
 
 #: src/konqmainwindow.cpp:3276
 #, kde-format
 msgid "&Open Location"
-msgstr "打开位置(&O)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3282
 #, kde-format
 msgid "&Open File..."
-msgstr "打开文件(&O)..."
+msgstr ""
 
 #: src/konqmainwindow.cpp:3287
 #, kde-format
 msgid "&Find File..."
-msgstr "查找文件(&F)..."
+msgstr ""
 
 #: src/konqmainwindow.cpp:3296
 #, kde-format
 msgid "Lock to Current Location"
-msgstr "锁定到当前位置"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3299
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
-msgstr "链接视图(&K)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3304
 #, kde-format
 msgid "&Up"
-msgstr "向上(&U)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3314
 #, kde-format
 msgid "Closed Items"
-msgstr "已关闭项目"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3327
 #, kde-format
 msgid "Sessions"
-msgstr "会话"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3354
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
-msgstr "最经常访问的"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3358
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
-msgstr "最近访问的"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3367
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
-msgstr "显示历史"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3379
 #, kde-format
 msgid "Configure Extensions..."
-msgstr "配置扩展..."
+msgstr ""
 
 #: src/konqmainwindow.cpp:3383
 #, kde-format
 msgid "Configure Spell Checking..."
-msgstr "配置拼写检查..."
+msgstr ""
 
 #: src/konqmainwindow.cpp:3389
 #, kde-format
 msgid "Split View &Left/Right"
-msgstr "左右拆分视图(&L)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3394
 #, kde-format
 msgid "Split View &Top/Bottom"
-msgstr "上下拆分视图(&T)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3399 src/konqtabs.cpp:456
 #, kde-format
 msgid "&New Tab"
-msgstr "新建标签页(&N)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3408
 #, kde-format
 msgid "&Duplicate Current Tab"
-msgstr "复制当前标签页(&D)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3413
 #, kde-format
 msgid "Detach Current Tab"
-msgstr "分离当前标签页"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3418
 #, kde-format
 msgid "&Close Active View"
-msgstr "关闭活动视图(&C)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3423
 #, kde-format
 msgid "Close Current Tab"
-msgstr "关闭当前标签页"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3433
 #, kde-format
 msgid "Activate Next Tab"
-msgstr "激活下一标签页"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3437
 #, kde-format
 msgid "Activate Previous Tab"
-msgstr "激活上一标签页"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3444
 #, kde-format
 msgid "Activate Tab %1"
-msgstr "激活第 %1 个标签页"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3449
 #, kde-format
 msgid "Move Tab Left"
-msgstr "左移标签页"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3454
 #, kde-format
 msgid "Move Tab Right"
-msgstr "右移标签页"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3462
 #, kde-format
 msgid "Dump Debug Info"
-msgstr "转存调试信息"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3480
 #, kde-format
 msgid "&Reload"
-msgstr "重新加载(&R)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3485 src/konqtabs.cpp:313
 #, kde-format
 msgid "&Reload All Tabs"
-msgstr "重新加载全部标签页(&R)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3493
 #, kde-format
 msgid "&Force Reload"
-msgstr "强制重新加载(&F)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3518
 #, kde-format
 msgid "&Stop"
-msgstr "停止(&S)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3527
 #, kde-format
 msgid "Throbber"
-msgstr "Throbber"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3531 src/konqmainwindow.cpp:3534
 #, kde-format
 msgid "L&ocation: "
-msgstr "位置(&O)："
+msgstr ""
 
 #: src/konqmainwindow.cpp:3541
 #, kde-format
 msgid "Location Bar"
-msgstr "位置栏"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3547
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
-msgstr "<html>位置栏<br /><br />输入网页地址或者搜索词条。</html>"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3551
 #, kde-format
 msgid "Clear Location Bar"
-msgstr "清除位置栏"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3554
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
 "</html>"
-msgstr "<html>清除位置栏<br /><br />清除位置栏中的内容。</html>"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3559
 #, kde-format
 msgid "&Bookmarks"
-msgstr "书签(&B)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3587
 #, kde-format
 msgid "Kon&queror Introduction"
-msgstr "Kon&queror 介绍"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3592
 #, kde-format
 msgid "Go"
-msgstr "转到"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3594
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
 "bar.</html>"
-msgstr "<html>转到<br /><br />转到在位置栏中输入的位置所指定的页面。</html>"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3602
 #, kde-format
@@ -1077,28 +1047,26 @@ msgid ""
 "location is file:/home/%1 clicking this button will take you to file:/home.</"
 "html>"
 msgstr ""
-"<html>进入上级文件夹<br /><br />例如，如果当前位置是 file:/home/%1，点击此按"
-"钮将进入 file:/home。</html>"
 
 #: src/konqmainwindow.cpp:3605
 #, kde-format
 msgid "Enter the parent folder"
-msgstr "进入上级文件夹"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3607 src/konqmainwindow.cpp:3608
 #, kde-format
 msgid "Move backwards one step in the browsing history"
-msgstr "在浏览历史中向后退一步"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3610 src/konqmainwindow.cpp:3611
 #, kde-format
 msgid "Move forward one step in the browsing history"
-msgstr "在浏览历史中向后退一步"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3613 src/konqmainwindow.cpp:3614
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
-msgstr "在已关闭标签页历史中向后退一步"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3616
 #, kde-format
@@ -1107,13 +1075,11 @@ msgid ""
 "example, be needed to refresh web pages that have been modified since they "
 "were loaded, in order to make the changes visible.</html>"
 msgstr ""
-"<html>重新加载当前显示的文档<br /><br />例如，此功能可用于刷新自上次加载后修"
-"改过的网页，以便反映最新的变化。</html>"
 
 #: src/konqmainwindow.cpp:3619
 #, kde-format
 msgid "Reload the currently displayed document"
-msgstr "重新加载当前显示的文档"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3621
 #, kde-format
@@ -1122,13 +1088,11 @@ msgid ""
 "for example, be needed to refresh web pages that have been modified since "
 "they were loaded, in order to make the changes visible.</html>"
 msgstr ""
-"<html>重新加载当前显示的文档<br /><br />例如，此功能可用于刷新自上次加载后修"
-"改过的网页，以便反映最新的变化。</html>"
 
 #: src/konqmainwindow.cpp:3624
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
-msgstr "重新加载当前在所有标签页中显示的文档"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3626
 #, kde-format
@@ -1137,8 +1101,6 @@ msgid ""
 "stopped and Konqueror will display the content that has been received so far."
 "</html>"
 msgstr ""
-"<html>停止加载文档<br /><br />所有网络传输都会停止，Konqueror 将显示已经接受"
-"到的文档内容。</html>"
 
 #: src/konqmainwindow.cpp:3630
 #, kde-format
@@ -1148,20 +1110,17 @@ msgid ""
 "were loaded, in order to make the changes visible. Any images on the page "
 "are downloaded again, even if cached copies exist.</html>"
 msgstr ""
-"<html>重新加载当前显示的文档<br /><br />例如，此功能可用于刷新自上次加载后修"
-"改过的网页，以便反映最新的变化。页面上的所有图像即使存在缓存过的副本，也都会"
-"被重新下载。</html>"
 
 #: src/konqmainwindow.cpp:3634
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
-msgstr "强制重新加载当前显示的文档及其包含的图像"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3636
 #, kde-format
 msgid "Stop loading the document"
-msgstr "停止加载文档"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3638
 #, kde-format
@@ -1170,13 +1129,11 @@ msgid ""
 "clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
 "Konqueror and other KDE applications.</html>"
 msgstr ""
-"<html>将当前选中的文字或项目剪切并移动到系统剪贴板中<br /><br />这使得您可以"
-"在 Konqueror 和其他 KDE 应用程序中使用<b>粘贴</b>命令。</html>"
 
 #: src/konqmainwindow.cpp:3642
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
-msgstr "将选中的文字或项目移动到剪贴板"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3644
 #, kde-format
@@ -1185,13 +1142,11 @@ msgid ""
 "clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
 "Konqueror and other KDE applications.</html>"
 msgstr ""
-"<html>将当前选中的文字或项目复制到系统剪贴板中<br /><br />这使得您可以在 "
-"Konqueror 和其他 KDE 应用程序中使用<b>粘贴</b>命令。</html>"
 
 #: src/konqmainwindow.cpp:3648
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
-msgstr "将选中的文字或项目复制到剪贴板"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3650
 #, kde-format
@@ -1199,13 +1154,11 @@ msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
 "also works for text copied or cut from other KDE applications.</html>"
 msgstr ""
-"<html>粘贴先前剪切或复制的剪贴板内容<br /><br />这也适用于从其他 KDE 应用程序"
-"中复制或剪切的文字。</html>"
 
 #: src/konqmainwindow.cpp:3653
 #, kde-format
 msgid "Paste the clipboard contents"
-msgstr "粘贴剪贴板内容"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3655
 #, kde-format
@@ -1216,14 +1169,11 @@ msgid ""
 "also provides access to special KDE printing services such as creating a PDF "
 "file from the current document.</html>"
 msgstr ""
-"<html>打印当前显示的文档<br /><br />选择此功能后将出现一个对话框，其中您可以"
-"设置各种选项，如打印副本的数量和要使用的打印机。<br /><br />此对话框也可访问"
-"特殊的 KDE 打印服务，如从当前文档创建 PDF 文件。</html>"
 
 #: src/konqmainwindow.cpp:3661
 #, kde-format
 msgid "Print the current document"
-msgstr "打印当前文档"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3663
 #, kde-format
@@ -1231,8 +1181,6 @@ msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
 "explore many files from one folder"
 msgstr ""
-"一个锁定的视图不能更改文件夹。请和“链接视图”一起使用来从一个文件夹中查看多个"
-"文件"
 
 #: src/konqmainwindow.cpp:3664
 #, kde-format
@@ -1240,13 +1188,11 @@ msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
 "other linked views."
 msgstr ""
-"设置视图为“被链接的”。一个被链接的视图随其他被链接的视图中文件夹的修改而更"
-"改。"
 
 #: src/konqmainwindow.cpp:3668
 #, kde-format
 msgid "&Inspect Current Page"
-msgstr "审查当前页面(&I)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3669
 #, kde-format
@@ -1254,23 +1200,21 @@ msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
-"<html>显示当前页面的开发者工具<br/><br/>当前视图会被一分为二，下半部分将显示"
-"开发者工具"
 
 #: src/konqmainwindow.cpp:3670
 #, kde-format
 msgid "Shows the developer tools for the current page"
-msgstr "显示当前页面的开发者工具"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3832
 #, kde-format
 msgid "Copy &Files..."
-msgstr "复制文件(&F)..."
+msgstr ""
 
 #: src/konqmainwindow.cpp:3836
 #, kde-format
 msgid "M&ove Files..."
-msgstr "移动文件(&O)..."
+msgstr ""
 
 #: src/konqmainwindow.cpp:4178
 #, kde-format
@@ -1278,77 +1222,76 @@ msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
 "while. Continue?"
 msgstr ""
-"您请求了以标签页方式打开 20 个以上的书签，此操作可能会花费一点时间。继续吗？"
 
 #: src/konqmainwindow.cpp:4180
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
-msgstr "在新标签页中打开书签文件夹"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4181
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "打开"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4356
 #, kde-format
 msgid "Open in T&his Window"
-msgstr "在此窗口中打开(&H)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4357
 #, kde-format
 msgid "Open the document in current window"
-msgstr "在当前窗口中打开文档"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4364
 #, kde-format
 msgid "Open the document in a new window"
-msgstr "在新窗口中打开文档"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4370
 #, kde-format
 msgid "Open in &New Tab"
-msgstr "在新建标签页中打开(&N)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4372
 #, kde-format
 msgid "Open the document in a new tab"
-msgstr "在新标签页中打开文档"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4595
 #, kde-format
 msgid "&Open With"
-msgstr "打开方式(&O)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4608
 #, kde-format
 msgid "Open with %1"
-msgstr "用 %1 打开"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4655
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
-msgstr "视图模式(&V)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4776
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
-msgstr "此窗口中打开了多个标签页，您确定要退出吗？"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4778
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
-msgstr "确认"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4780
 #, kde-format
 msgid "C&lose Current Tab"
-msgstr "关闭当前标签页(&L)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4808
 #, kde-format
@@ -1356,8 +1299,6 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
-"此标签页包含尚未提交的更改。\n"
-"关闭窗口将会丢弃这些更改。"
 
 #: src/konqmainwindow.cpp:4809
 #, kde-format
@@ -1365,35 +1306,33 @@ msgid ""
 "This page contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
-"此页面包含尚未提交的更改。\n"
-"关闭窗口将会丢弃这些更改。"
 
 #: src/konqmainwindow.cpp:4969
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
-msgstr "您的侧边栏没有功能或不可用。新的项目无法被添加。"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4969 src/konqmainwindow.cpp:4976
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
-msgstr "Web 侧边栏"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4974
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
-msgstr "要给您的侧边栏添加新的 Web 扩展“%1”吗？"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4976
 #, kde-format
 msgid "Add"
-msgstr "添加"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4976
 #, kde-format
 msgid "Do Not Add"
-msgstr "不添加"
+msgstr ""
 
 #: src/konqmainwindow.cpp:5324
 #, kde-format
@@ -1401,7 +1340,6 @@ msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
 "with %1, but it cannot handle this file type."
 msgstr ""
-"看起来有配置错误。您将 Konqueror 和 %1 相关联，但它无法处理该文件类型。"
 
 #: src/konqmainwindow.cpp:5409
 #, kde-format
@@ -1415,26 +1353,21 @@ msgid ""
 "proxy URL manually in the settings dialog. Do you want to change proxy "
 "settings now?"
 msgstr ""
-"QtWebEngine HTML 引擎无法使用您的代理配置，将不使用任何代理\n"
-"\n"
-" QtWebEngine 只能支持混合代理，故无法使用代理自动配置 (PAC) 和网络代理自动发"
-"现协议。如果您需要使用代理，请选择系统代理配置，或在设置对话框中手动指定代理 "
-"URL。您确定要立刻更改代理设置吗？"
 
 #: src/konqmainwindow.cpp:5414
 #, kde-format
 msgid "Unsupported proxy configuration"
-msgstr "不支持的代理配置"
+msgstr ""
 
 #: src/konqmainwindow.cpp:5414
 #, kde-format
 msgid "Don't use a proxy"
-msgstr "不使用代理"
+msgstr ""
 
 #: src/konqmainwindow.cpp:5415 src/konqmainwindow.cpp:5459
 #, kde-format
 msgid "Show proxy configuration dialog"
-msgstr "显示代理配置对话框"
+msgstr ""
 
 #: src/konqmainwindow.cpp:5455
 #, kde-format
@@ -1444,24 +1377,21 @@ msgid ""
 "protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
-"QtWebEngine HTML 引擎无法使用您的代理配置，因为它不支持除 HTTP 协议和 HTTPS "
-"协议以外的代理。当前的设置为：<p><b>HTTP 代理：</b><tt>%1</tt></"
-"p><p><b>HTTPS 代理：</b><tt>%2</tt></p>接下来怎么做？"
 
 #: src/konqmainwindow.cpp:5458
 #, kde-format
 msgid "Conflicting proxy configuration"
-msgstr "代理配置冲突"
+msgstr ""
 
 #: src/konqmainwindow.cpp:5459
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
-msgstr "使用 HTTP 代理 (仅限本次)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:5459
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
-msgstr "使用 HTTPS 代理 (仅限本次)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:5475
 #, kde-format
@@ -1470,161 +1400,159 @@ msgid ""
 "hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
 "Mode (%1)"
 msgstr ""
-"您已进入完全全屏模式 (用户界面已被完全隐藏)。您可通过键盘快捷键来退出全屏模"
-"式 (%1)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
 #, kde-format
 msgid "Save open &tabs and windows for easy retrieval"
-msgstr "保存打开的标签页和窗口，以便恢复(&T)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_pAllWindows)
 #: src/konqnewsessiondlg_base.ui:34
 #, kde-format
 msgid "A&ll open windows"
-msgstr "全部打开窗口(&L)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_pCurrentWindow)
 #: src/konqnewsessiondlg_base.ui:44
 #, kde-format
 msgid "Onl&y current window"
-msgstr "在当前窗口中打开标签(&Y)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, lblSessionName)
 #: src/konqnewsessiondlg_base.ui:56
 #, kde-format
 msgid "Session n&ame:"
-msgstr "会话名称(&A)："
+msgstr ""
 
 #: src/konqsessiondlg.cpp:60
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Sessions"
-msgstr "管理会话"
+msgstr ""
 
 #: src/konqsessiondlg.cpp:168
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Session"
-msgstr "重命名会话"
+msgstr ""
 
 #: src/konqsessiondlg.cpp:215
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Session"
-msgstr "保存会话"
+msgstr ""
 
 #: src/konqsessiondlg.cpp:251
 #, kde-format
 msgid ""
 "A session with the name '%1' already exists, do you want to overwrite it?"
-msgstr "和“%1”同名的会话已存在，您想要覆盖它吗？"
+msgstr ""
 
 #: src/konqsessiondlg.cpp:252
 #, kde-format
 msgctxt "@title:window"
 msgid "Session exists. Overwrite?"
-msgstr "会话已存在，覆盖吗？"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pNewButton)
 #: src/konqsessiondlg_base.ui:26
 #, kde-format
 msgctxt "@action:button New session"
 msgid "New..."
-msgstr "新建..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
 #: src/konqsessiondlg_base.ui:33
 #, kde-format
 msgctxt "@action:button Save current session"
 msgid "Save Current..."
-msgstr "保存当前..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
 #: src/konqsessiondlg_base.ui:40
 #, kde-format
 msgctxt "@action:button Rename session"
 msgid "Rename..."
-msgstr "重命名..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
 #: src/konqsessiondlg_base.ui:47
 #, kde-format
 msgctxt "@action:button Delete session"
 msgid "Delete"
-msgstr "删除"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
 #. i18n: ectx: label, entry, group (Trash)
 #: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
 #, kde-format
 msgid "Open tabs inside current window"
-msgstr "在当前窗口中打开标签页"
+msgstr ""
 
 #: src/konqsessionmanager.cpp:101
 #, kde-format
 msgctxt "@title:window"
 msgid "Restore Session?"
-msgstr "恢复会话吗？"
+msgstr ""
 
 #: src/konqsessionmanager.cpp:122
 #, kde-format
 msgid ""
 "Konqueror did not close correctly. Would you like to restore these previous "
 "sessions?"
-msgstr "Konqueror 上一次没有正确关闭，您想要恢复之前的会话吗？"
+msgstr ""
 
 #: src/konqsessionmanager.cpp:134
 #, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions you do not want to be restored"
-msgstr "取消选中您不想恢复的会话"
+msgstr ""
 
 #: src/konqsessionmanager.cpp:167
 #, kde-format
 msgctxt "@item:treewidget"
 msgid "Window %1"
-msgstr "窗口 %1"
+msgstr ""
 
 #: src/konqsessionmanager.cpp:205
 #, kde-format
 msgid "Do not ask again"
-msgstr "不再询问"
+msgstr ""
 
 #: src/konqsessionmanager.cpp:219
 #, kde-format
 msgctxt "@action:button yes"
 msgid "Restore Session"
-msgstr "恢复会话"
+msgstr ""
 
 #: src/konqsessionmanager.cpp:220
 #, kde-format
 msgctxt "@action:button no"
 msgid "Do Not Restore"
-msgstr "不恢复"
+msgstr ""
 
 #: src/konqsessionmanager.cpp:221
 #, kde-format
 msgctxt "@action:button ask later"
 msgid "Ask Me Later"
-msgstr "稍后询问"
+msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid "Close"
-msgstr "关闭"
+msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:68
 #, kde-format
 msgid "Close"
-msgstr "关闭"
+msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:147
 #, kde-format
 msgid "Error: %1"
-msgstr "错误：%1"
+msgstr ""
 
 #: src/konqtabs.cpp:51
 #, kde-format
@@ -1635,56 +1563,53 @@ msgid ""
 "over the tab to see the full title, in case it has been shortened to fit the "
 "tab width."
 msgstr ""
-"此栏包含目前打开的标签页列表。单击标签可激活该标签页。您还可以使用键盘快捷键"
-"在标签页间导航。标签页上的文字是当前打开页面的标题；如果标题太长以致被截短到"
-"标签页宽度的话，将您的鼠标指向标签页即可查看完整标题。"
 
 #: src/konqtabs.cpp:85
 #, kde-format
 msgid "Open a new tab"
-msgstr "打开新标签页"
+msgstr ""
 
 #: src/konqtabs.cpp:94
 #, kde-format
 msgid "Close the current tab"
-msgstr "关闭当前标签页"
+msgstr ""
 
 #: src/konqtabs.cpp:461
 #, kde-format
 msgid "&Duplicate Tab"
-msgstr "复制标签页(&D)"
+msgstr ""
 
 #: src/konqtabs.cpp:466
 #, kde-format
 msgid "&Reload Tab"
-msgstr "重新加载标签页(&R)"
+msgstr ""
 
 #: src/konqtabs.cpp:473
 #, kde-format
 msgid "Other Tabs"
-msgstr "其他标签页"
+msgstr ""
 
 #: src/konqtabs.cpp:478
 #, kde-format
 msgid "D&etach Tab"
-msgstr "分离标签页(&E)"
+msgstr ""
 
 #: src/konqtabs.cpp:484
 #, kde-format
 msgid "&Close Tab"
-msgstr "关闭标签页(&C)"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (UserSettings)
 #: src/konqueror.kcfg:11
 #, kde-format
 msgid "Start Page"
-msgstr "起始页面"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (UserSettings)
 #: src/konqueror.kcfg:12
 #, kde-format
 msgid "This is the URL of the web page where Konqueror will start from."
-msgstr "这是 Konqueror 启动时将会跳转到的地址。"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (UserSettings)
 #: src/konqueror.kcfg:17
@@ -1692,13 +1617,13 @@ msgstr "这是 Konqueror 启动时将会跳转到的地址。"
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \\"
 "\"Home\\\" button is pressed."
-msgstr "这是当您按下在 Konqueror 的“主页”键时将会跳转到的地址。"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (UndoManagerSettings)
 #: src/konqueror.kcfg:26
 #, kde-format
 msgid "Maximum number of Closed Items"
-msgstr "已关闭项目的最大记忆数量"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
 #: src/konqueror.kcfg:27
@@ -1706,13 +1631,13 @@ msgstr "已关闭项目的最大记忆数量"
 msgid ""
 "This sets the maximum number of closed items that will be stored in memory. "
 "This limit will not be surpassed."
-msgstr "在此设定保存在内存中的已关闭项目的最大数量，此限制不会被超出。"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #: src/konqueror.kcfg:36
 #, kde-format
 msgid "Open folders in separate windows"
-msgstr "在独立窗口中打开文件夹"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:37
@@ -1721,14 +1646,12 @@ msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
 "folder, rather than showing that folder's contents in the current window."
 msgstr ""
-"如果选中此项，Konqueror 会在新窗口中打开文件夹，而非在当前窗口下显示文件夹里"
-"的内容。"
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #: src/konqueror.kcfg:42
 #, kde-format
 msgid "Show file tips"
-msgstr "显示文件提示"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:43
@@ -1737,14 +1660,12 @@ msgid ""
 "Here you can control if, when moving the mouse over a file, you want to see "
 "a small popup window with additional information about that file"
 msgstr ""
-"您可以在这里控制是否当鼠标悬停在一个文件上时，要弹出一个小窗口供您查看文件的"
-"额外信息"
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #: src/konqueror.kcfg:54
 #, kde-format
 msgid "Show previews in file tips"
-msgstr "在文件提示中显示预览"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:55
@@ -1752,13 +1673,13 @@ msgstr "在文件提示中显示预览"
 msgid ""
 "Here you can control if you want the popup window to contain a larger "
 "preview for the file, when moving the mouse over it"
-msgstr "您可以在这里控制文件的悬停提示窗口里是否要包含其预览。"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #: src/konqueror.kcfg:60
 #, kde-format
 msgid "Show 'Delete' menu entries which bypass the trashcan"
-msgstr "在菜单中显示绕过回收站的“删除”项"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:61
@@ -1768,45 +1689,43 @@ msgid ""
 "and in the file manager's menus and context menus. You can always delete "
 "files when hidden by holding the Shift key while calling 'Move to Trash'."
 msgstr ""
-"如果您希望“删除”命令显示在桌面和文件夹管理器菜单里，请选中此项。当然您总是可"
-"以在调用“移动到回收站”菜单功能时，按住 Shift 键来直接删除文件。"
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:149
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr "选择标签页栏显示的位置"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:153 src/konqueror.kcfg:154
 #, kde-format
 msgid "Number of Open With items in the File menu"
-msgstr "文件菜单下的“打开方式”条目数"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (HTML Settings)
 #: src/konqueror.kcfg:163
 #, kde-format
 msgid "Standard font"
-msgstr "标准字体"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (HTML Settings)
 #: src/konqueror.kcfg:164
 #, kde-format
 msgid "This is the font used to display text in Konqueror windows."
-msgstr "用于在 Konqueror 窗口里显示文字的字体。"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (HistorySettings)
 #: src/konqueror.kcfg:314
 #, kde-format
 msgid "Maximum number of history items per view"
-msgstr "预览项的最大历史数量"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (Trash)
 #: src/konqueror.kcfg:504
 #, kde-format
 msgid "Ask confirmation for deleting a file."
-msgstr "删除文件前请求确认。"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: src/konqueror.kcfg:505
@@ -1816,14 +1735,12 @@ msgid ""
 "delete a file without using the trash folder. Warning, deleted files can not "
 "be recovered, so it is recommended to leave this confirmation enabled."
 msgstr ""
-"此选项会告知 Konqueror 在不经过回收站直接删除文件前先请求用户确认。警告：被删"
-"除的文件无法恢复，建议您保留此选项为启用状态。"
 
 #. i18n: ectx: label, entry, group (Trash)
 #: src/konqueror.kcfg:510
 #, kde-format
 msgid "Ask confirmation for move to trash"
-msgstr "移动到回收站前请求确认"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: src/konqueror.kcfg:511
@@ -1832,8 +1749,6 @@ msgid ""
 "This option tells Konqueror whether to ask for a confirmation when you move "
 "the file to your trash folder, from where it can be recovered very easily."
 msgstr ""
-"此选项会告知 Konqueror 在将文件移至回收站前先请求用户确认，移动到回收站的文件"
-"可以非常简单地恢复。"
 
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: src/konqueror.kcfg:518
@@ -1842,96 +1757,94 @@ msgid ""
 "If true, when opening a session from within the sessions dialog the tabs "
 "will be opened inside current window."
 msgstr ""
-"如果选中此项，当您在一个会话对话框中再打开一个会话时，将在当前窗口里新建标签"
-"页。"
 
 #. i18n: ectx: Menu (file)
 #: src/konqueror.rc:5
 #, kde-format
 msgid "&File"
-msgstr "文件(&F)"
+msgstr ""
 
 #. i18n: ectx: Menu (edit)
 #: src/konqueror.rc:24
 #, kde-format
 msgid "&Edit"
-msgstr "编辑(&E)"
+msgstr ""
 
 #. i18n: ectx: Menu (view)
 #: src/konqueror.rc:33
 #, kde-format
 msgid "&View"
-msgstr "视图(&V)"
+msgstr ""
 
 #. i18n: ectx: Menu (go)
 #: src/konqueror.rc:44
 #, kde-format
 msgid "&Go"
-msgstr "转到(&G)"
+msgstr ""
 
 #. i18n: ectx: Menu (tools)
 #: src/konqueror.rc:54
 #, kde-format
 msgid "&Tools"
-msgstr "工具(&T)"
+msgstr ""
 
 #. i18n: ectx: Menu (settings)
 #: src/konqueror.rc:59
 #, kde-format
 msgid "&Settings"
-msgstr "设置(&S)"
+msgstr ""
 
 #. i18n: ectx: Menu (window)
 #: src/konqueror.rc:78
 #, kde-format
 msgid "&Window"
-msgstr "窗口(&W)"
+msgstr ""
 
 #. i18n: ectx: Menu (help)
 #: src/konqueror.rc:94
 #, kde-format
 msgid "&Help"
-msgstr "帮助(&H)"
+msgstr ""
 
 #. i18n: ectx: ToolBar (mainToolBar)
 #: src/konqueror.rc:99
 #, kde-format
 msgid "Main Toolbar"
-msgstr "主工具栏"
+msgstr ""
 
 #. i18n: ectx: ToolBar (extraToolBar)
 #: src/konqueror.rc:110
 #, kde-format
 msgid "Extra Toolbar"
-msgstr "额外工具栏"
+msgstr ""
 
 #. i18n: ectx: ToolBar (locationToolBar)
 #: src/konqueror.rc:117
 #, kde-format
 msgid "Location Toolbar"
-msgstr "位置工具栏"
+msgstr ""
 
 #. i18n: ectx: ToolBar (bookmarkToolBar)
 #: src/konqueror.rc:123
 #, kde-format
 msgid "Bookmark Toolbar"
-msgstr "书签工具栏"
+msgstr ""
 
 #: src/konqundomanager.cpp:91 src/konqundomanager.cpp:253
 #, kde-format
 msgid "Und&o: Closed Tab"
-msgstr "撤销：已关闭的标签页(&O)"
+msgstr ""
 
 #: src/konqundomanager.cpp:93 src/konqundomanager.cpp:104
 #: src/konqundomanager.cpp:148
 #, kde-format
 msgid "Und&o: Closed Window"
-msgstr "撤销：已关闭窗口(&O)"
+msgstr ""
 
 #: src/konqundomanager.cpp:106
 #, kde-format
 msgid "Und&o"
-msgstr "撤销(&O)"
+msgstr ""
 
 #: src/konqview.cpp:1370
 #, kde-format
@@ -1940,31 +1853,29 @@ msgid ""
 "resend the data, any action the form carried out (such as search or online "
 "purchase) will be repeated. "
 msgstr ""
-"您试图查看的页面是表单数据提交的结果。如果您重新发送数据，此表单执行的任何操"
-"作(如搜索或在线购买)都将被重复。"
 
 #: src/konqview.cpp:1372
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
-msgstr "警告"
+msgstr ""
 
 #: src/konqview.cpp:1372
 #, kde-format
 msgid "Resend"
-msgstr "重新发送"
+msgstr ""
 
 #: src/urlloader.cpp:453
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
-msgstr "执行"
+msgstr ""
 
 #: src/urlloader.cpp:455
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
-msgstr "显示"
+msgstr ""
 
 #: src/urlloader.cpp:462
 #, kde-kuit-format
@@ -1974,16 +1885,16 @@ msgctxt ""
 msgid ""
 "<filename>%1</filename> can be executed. Do you want to execute it or to "
 "display it?"
-msgstr "<filename>%1</filename> 是可执行文件。你想要执行它，还是显示它的内容？"
+msgstr ""
 
 #: src/urlloader.cpp:468
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
-msgstr "<filename>%1</filename> 是可执行文件。你想要执行它吗？"
+msgstr ""
 
 #: src/urlloader.cpp:799
 #, kde-format
 msgid "Save As"
-msgstr "另存为"
+msgstr ""

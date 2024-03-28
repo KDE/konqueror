@@ -1,103 +1,103 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# SPDX-FileCopyrightText: 2024 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2024-03-27 19:45\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-27 23:38+0100\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/konqueror/khtmlsettingsplugin.pot\n"
-"X-Crowdin-File-ID: 48582\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #. i18n: ectx: Menu (tools)
 #: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
-msgstr "工具(&T)"
+msgstr "&Ferramientes"
 
 #. i18n: ectx: ToolBar (extraToolBar)
 #: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
-msgstr "额外工具栏"
+msgstr ""
 
 #: settingsplugin.cpp:43
 #, kde-format
 msgid "HTML Settings"
-msgstr "HTML 设置"
+msgstr ""
 
 #: settingsplugin.cpp:48
 #, kde-format
 msgid "Java&Script"
-msgstr "Java&Script"
+msgstr ""
 
 #: settingsplugin.cpp:53
 #, kde-format
 msgid "&Java"
-msgstr "&Java"
+msgstr ""
 
 #: settingsplugin.cpp:58
 #, kde-format
 msgid "&Cookies"
-msgstr "&Cookie"
+msgstr ""
 
 #: settingsplugin.cpp:63
 #, kde-format
 msgid "&Plugins"
-msgstr "插件(&P)"
+msgstr ""
 
 #: settingsplugin.cpp:68
 #, kde-format
 msgid "Autoload &Images"
-msgstr "自动加载图像(&I)"
+msgstr ""
 
 #: settingsplugin.cpp:75
 #, kde-format
 msgid "Enable Pro&xy"
-msgstr "启用代理服务器(&X)"
+msgstr ""
 
 #: settingsplugin.cpp:80
 #, kde-format
 msgid "Enable Cac&he"
-msgstr "启用缓存(&H)"
+msgstr ""
 
 #: settingsplugin.cpp:85
 #, kde-format
 msgid "Cache Po&licy"
-msgstr "缓存策略(&L)"
+msgstr ""
 
 #: settingsplugin.cpp:87
 #, kde-format
 msgid "&Keep Cache in Sync"
-msgstr "保持缓存同步(&K)"
+msgstr ""
 
 #: settingsplugin.cpp:88
 #, kde-format
 msgid "&Use Cache if Possible"
-msgstr "尽可能使用缓存(&U)"
+msgstr ""
 
 #: settingsplugin.cpp:89
 #, kde-format
 msgid "&Offline Browsing Mode"
-msgstr "离线浏览模式(&O)"
+msgstr ""
 
 #: settingsplugin.cpp:193
 #, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
 "be contacted."
-msgstr "Cookie 设置无法修改，因为无法与 Cookie 守护进程联系。"
+msgstr ""
 
 #: settingsplugin.cpp:195
 #, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"
-msgstr "Cookie 设置不可用"
+msgstr ""

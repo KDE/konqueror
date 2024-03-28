@@ -1,94 +1,93 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# SPDX-FileCopyrightText: 2024 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:45+0000\n"
-"PO-Revision-Date: 2024-03-27 19:45\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-27 23:46+0100\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/konqueror/webarchiver.pot\n"
-"X-Crowdin-File-ID: 48606\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "KDE 中国, Guo Yunhe, Tyson Tan, magsom, ArchFeh, Wordless Echo"
+msgstr "Softastur"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
-"kde-china@kde.org, i@guoyunhe.me, tds00@qq.com, magsom@kde.org, archfeh@kde."
-"org, wordless@echo.moe"
+msgstr "alministradores@softastur.org"
 
 #: app/archivedialog.cpp:82
 #, kde-format
 msgid "Create Archive"
-msgstr "创建存档"
+msgstr ""
 
 #: app/archivedialog.cpp:98
 #, kde-format
 msgid "The URL of the page that is to be archived"
-msgstr "要归档的页面 URL"
+msgstr ""
 
 #: app/archivedialog.cpp:101
 #, kde-format
 msgid "Source &URL:"
-msgstr "源 &URL："
+msgstr ""
 
 #: app/archivedialog.cpp:110
 #, kde-format
 msgid "Web archive (*.war)"
-msgstr "网页存档 (*.war)"
+msgstr ""
 
 #: app/archivedialog.cpp:111
 #, kde-format
 msgid "Tar archive (*.tar)"
-msgstr "Tar 压缩文件 (*.tar)"
+msgstr ""
 
 #: app/archivedialog.cpp:112
 #, kde-format
 msgid "Zip archive (*.zip)"
-msgstr "Zip 压缩文件 (*.zip)"
+msgstr ""
 
 #: app/archivedialog.cpp:113
 #, kde-format
 msgid "Directory"
-msgstr "目录"
+msgstr ""
 
 #: app/archivedialog.cpp:118
 #, kde-format
 msgid "The file or directory where the archived page will be saved"
-msgstr "网页存档的保存位置"
+msgstr ""
 
 #: app/archivedialog.cpp:119
 #, kde-format
 msgid "&Save to:"
-msgstr "保存到(&S)："
+msgstr ""
 
 #: app/archivedialog.cpp:121
 #, kde-format
 msgid "Options"
-msgstr "选项"
+msgstr ""
 
 #: app/archivedialog.cpp:131
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
-msgstr[0] " 秒"
+msgstr[0] ""
+msgstr[1] ""
 
 #: app/archivedialog.cpp:132
 #, kde-format
 msgid "None"
-msgstr "无"
+msgstr ""
 
 #: app/archivedialog.cpp:219
 #, kde-kuit-format
@@ -96,25 +95,25 @@ msgctxt "@info"
 msgid ""
 "The web archive download cannot use the current proxy settings. No proxy "
 "will be used."
-msgstr "网页存档下载程序无法使用当前的代理设置。不使用任何代理。"
+msgstr ""
 
 #: app/archivedialog.cpp:358
 #, kde-format
 msgctxt "@info"
 msgid "The save location is not valid."
-msgstr "保存位置无效。"
+msgstr ""
 
 #: app/archivedialog.cpp:378
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
-msgstr "无法找到 wget(1) 命令，<nl/>详见 <link>%1</link>。"
+msgstr ""
 
 #: app/archivedialog.cpp:404
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
-msgstr "无法验证目标<nl/><filename>%1</filename><nl/>%2"
+msgstr ""
 
 #: app/archivedialog.cpp:421
 #, kde-kuit-format
@@ -122,13 +121,13 @@ msgctxt "@info"
 msgid ""
 "The archive directory<nl/><filename>%1</filename><nl/>already exists as a "
 "file."
-msgstr "网页存档的目录名<nl/><filename>%1</filename><nl/>已被已有文件使用。"
+msgstr ""
 
 #: app/archivedialog.cpp:422
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
-msgstr "网页存档目录<nl/><filename>%1</filename><nl/>已存在。"
+msgstr ""
 
 #: app/archivedialog.cpp:426
 #, kde-kuit-format
@@ -136,42 +135,42 @@ msgctxt "@info"
 msgid ""
 "The archive file<nl/><filename>%1</filename><nl/>already exists as a "
 "directory."
-msgstr "压缩文件<nl/><filename>%1</filename><nl/>为已存在的目录。"
+msgstr ""
 
 #: app/archivedialog.cpp:427
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
-msgstr "压缩文件<nl/><filename>%1</filename><nl/>已存在。"
+msgstr ""
 
 #: app/archivedialog.cpp:431
 #, kde-format
 msgid "Archive Already Exists"
-msgstr "网页存档已存在"
+msgstr ""
 
 #: app/archivedialog.cpp:461
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
-msgstr "无法删除原始网页存档<nl/><filename>%1</filename><nl/>%2"
+msgstr ""
 
 #: app/archivedialog.cpp:478
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
-msgstr "无法创建临时目录<nl/><filename>%1</filename><nl/>"
+msgstr ""
 
 #: app/archivedialog.cpp:550
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot start the archiver process <filename>%1</filename>"
-msgstr "无法启动压缩器进程 <filename>%1</filename>"
+msgstr ""
 
 #: app/archivedialog.cpp:566
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The download process was interrupted."
-msgstr "下载进程已被中断。"
+msgstr ""
 
 #: app/archivedialog.cpp:567
 #, kde-kuit-format
@@ -179,7 +178,7 @@ msgctxt "@info"
 msgid ""
 "<para>The download process <filename>%1</filename> failed with signal %2.</"
 "para>"
-msgstr "<para>下载进程 <filename>%1</filename> 出错，退出代码为 %2。</para>"
+msgstr ""
 
 #: app/archivedialog.cpp:572
 #, kde-kuit-format
@@ -187,7 +186,7 @@ msgctxt "@info"
 msgid ""
 "<para>The download process <filename>%1</filename> failed with status %2.</"
 "para>"
-msgstr "<para>下载进程 <filename>%1</filename> 出错，状态为 %2。</para>"
+msgstr ""
 
 #: app/archivedialog.cpp:576
 #, kde-kuit-format
@@ -195,124 +194,124 @@ msgctxt "@info"
 msgid ""
 "<para>This may simply indicate a 404 error for some of the page elements.</"
 "para>"
-msgstr "<para>可能只是表示页面上的部分元素出现了 404 错误。</para>"
+msgstr ""
 
 #: app/archivedialog.cpp:582
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
-msgstr "<para>保留不完整的网页存档吗？</para>"
+msgstr ""
 
 #: app/archivedialog.cpp:583
 #, kde-format
 msgid "Retain Archive?"
-msgstr "是否保留网页存档？"
+msgstr ""
 
 #: app/archivedialog.cpp:584
 #, kde-format
 msgid "Retain"
-msgstr "保留"
+msgstr ""
 
 #: app/archivedialog.cpp:588
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."
-msgstr "网页存档创建失败。"
+msgstr ""
 
 #: app/archivedialog.cpp:731
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
-msgstr "无法复制网页存档到<nl/><filename>%1</filename><nl/>%2"
+msgstr ""
 
 #: app/archivedialog.cpp:761
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
-msgstr "无法设置<nl/><filename>%1</filename><nl/>的权限%2"
+msgstr ""
 
 #: app/archivedialog.cpp:769
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"
-msgstr "网页存档已被保存为<nl/><filename><link>%1</link></filename>"
+msgstr ""
 
 #: app/main.cpp:26
 #, kde-format
 msgid "Web Archiver"
-msgstr "网页压缩器"
+msgstr ""
 
 #: app/main.cpp:27
 #, kde-format
 msgid "0.0.1"
-msgstr "0.0.1"
+msgstr ""
 
 #: app/main.cpp:28
 #, kde-format
 msgid "Archive a web page"
-msgstr "压缩网页"
+msgstr ""
 
 #: app/main.cpp:30
 #, kde-format
 msgid "Copyright (c) 2020 Jonathan Marten"
-msgstr "Copyright (c) 2020 Jonathan Marten"
+msgstr ""
 
 #: app/main.cpp:31
 #, kde-format
 msgid "Jonathan Marten"
-msgstr "Jonathan Marten"
+msgstr ""
 
 #: app/main.cpp:43
 #, kde-format
 msgid "URL of the web page to archive"
-msgstr "要压缩的网页 URL"
+msgstr ""
 
 #: app/main.cpp:43
 #, kde-format
 msgid "url"
-msgstr "URL"
+msgstr ""
 
 #. i18n: ectx: label, entry (WaitTime), group (Options)
 #: app/settings.kcfg:10
 #, kde-format
 msgid "Wait time:"
-msgstr "等待时间："
+msgstr ""
 
 #. i18n: ectx: tooltip, entry (WaitTime), group (Options)
 #: app/settings.kcfg:11
 #, kde-format
 msgid "The wait time between item requests, to reduce web server load"
-msgstr "项目请求之间的等待时间，可降低网页服务器的负载"
+msgstr ""
 
 #. i18n: ectx: label, entry (NoProxy), group (Options)
 #: app/settings.kcfg:18
 #, kde-format
 msgid "Do not use proxy"
-msgstr "不使用代理"
+msgstr ""
 
 #. i18n: ectx: tooltip, entry (NoProxy), group (Options)
 #: app/settings.kcfg:19
 #, kde-format
 msgid "Do not use the system proxy settings to fetch the web page"
-msgstr "获取网页时不使用系统代理设置"
+msgstr ""
 
 #. i18n: ectx: label, entry (RandomWait), group (Options)
 #: app/settings.kcfg:24
 #, kde-format
 msgid "Randomise wait time"
-msgstr "随机等待时间"
+msgstr ""
 
 #. i18n: ectx: tooltip, entry (RandomWait), group (Options)
 #: app/settings.kcfg:25
 #, kde-format
 msgid "Vary the wait time between requests, to confuse server log analysis"
-msgstr "使请求间的等待时间各不相同，用以混淆服务器日志分析器"
+msgstr ""
 
 #. i18n: ectx: label, entry (FixExtensions), group (Options)
 #: app/settings.kcfg:30
 #, kde-format
 msgid "Save in standard web archive format"
-msgstr "保存为标准网页存档格式"
+msgstr ""
 
 #. i18n: ectx: tooltip, entry (FixExtensions), group (Options)
 #: app/settings.kcfg:37
@@ -334,22 +333,12 @@ msgid ""
 "original URL refers to a directory but does not end with a slash.</p>\n"
 "      "
 msgstr ""
-"<p>将所有下载的文件保存在同一个目录下，并让文件名、扩展名更适合本地浏览。\n"
-"                        例如：主 HTML 页面文件名总为“index.html”，远程 .php "
-"页面会被保存为标准 .html 扩展名。</p>\n"
-"               <p>保持启用此项可生成标准网页存档 (.war) 文件。</p>\n"
-"               <p>禁用此项后，文件会保存为下载时的状态。\n"
-"                        也就是说，这些文件会根据原网站的结构被存储在各个子文"
-"件夹中，且其扩展名不作更改。\n"
-"                        请注意，原 URL 指向目录但并未以斜杠结尾时，下载可能会"
-"无法正常工作。</p>\n"
-"      "
 
 #. i18n: ectx: label, entry (RunInTerminal), group (Options)
 #: app/settings.kcfg:42
 #, kde-format
 msgid "Run in terminal"
-msgstr "在终端中运行"
+msgstr ""
 
 #. i18n: ectx: tooltip, entry (RunInTerminal), group (Options)
 #: app/settings.kcfg:45
@@ -362,39 +351,35 @@ msgid ""
 "p>\n"
 "      "
 msgstr ""
-"<p>在终端窗口中运行下载进程，下载完成后关闭终端窗口。</p>\n"
-"               <p>禁用此项后，下载会在后台运行。下载进程的输出会出现在会话日"
-"志文件中。</p>\n"
-"      "
 
 #. i18n: ectx: label, entry (CloseWhenFinished), group (Options)
 #: app/settings.kcfg:50
 #, kde-format
 msgid "Close when finished"
-msgstr "完成后关闭"
+msgstr ""
 
 #. i18n: ectx: tooltip, entry (CloseWhenFinished), group (Options)
 #: app/settings.kcfg:51
 #, kde-format
 msgid "Close this window when the download has finished successfully"
-msgstr "下载成功完成后关闭此窗口"
+msgstr ""
 
 #. i18n: ectx: label, entry (ArchiveType), group (Options)
 #: app/settings.kcfg:56
 #, kde-format
 msgid "Archive &type:"
-msgstr "网页存档类型(&T)："
+msgstr ""
 
 #. i18n: ectx: tooltip, entry (ArchiveType), group (Options)
 #: app/settings.kcfg:57
 #, kde-format
 msgid "The type of web archive to save"
-msgstr "网页存档的保存类型"
+msgstr ""
 
 #: plugin_webarchiver.cpp:31
 #, kde-format
 msgid "Archive Web Page..."
-msgstr "压缩网页..."
+msgstr ""
 
 #: plugin_webarchiver.cpp:49
 #, kde-kuit-format
@@ -403,22 +388,20 @@ msgid ""
 "Cannot find the <command>kcreatewebarchive</command> executable,<nl/>check "
 "the plugin and helper installation."
 msgstr ""
-"无法找到 <command>kcreatewebarchive</command> 的可执行文件，<nl/>请检查插件和"
-"辅助程序的安装。"
 
 #: plugin_webarchiver.cpp:50
 #, kde-format
 msgid "Cannot Create Web Archive"
-msgstr "无法创建网页存档"
+msgstr ""
 
 #. i18n: ectx: Menu (tools)
 #: webarchiverplugin.rc:4
 #, kde-format
 msgid "&Tools"
-msgstr "工具(&T)"
+msgstr ""
 
 #. i18n: ectx: ToolBar (extraToolBar)
 #: webarchiverplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
-msgstr "附加工具栏"
+msgstr ""

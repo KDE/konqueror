@@ -1,143 +1,145 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# SPDX-FileCopyrightText: 2024 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2024-03-27 19:45\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-27 22:50+0100\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/konqueror/fsview.pot\n"
-"X-Crowdin-File-ID: 48610\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "KDE 中国"
+msgstr "Softastur"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kde-china@kde.org"
+msgstr "alministradores@softastur.org"
 
 #: fsview.cpp:35 fsview.cpp:413
 #, kde-format
 msgid "Name"
-msgstr "名称"
+msgstr ""
 
 #: fsview.cpp:36
 #, kde-format
 msgid "Size"
-msgstr "大小"
+msgstr ""
 
 #: fsview.cpp:37
 #, kde-format
 msgid "File Count"
-msgstr "文件数量"
+msgstr ""
 
 #: fsview.cpp:38
 #, kde-format
 msgid "Directory Count"
-msgstr "目录数量"
+msgstr ""
 
 #: fsview.cpp:39
 #, kde-format
 msgid "Last Modified"
-msgstr "最后更新"
+msgstr ""
 
 #: fsview.cpp:40 fsview.cpp:414
 #, kde-format
 msgid "Owner"
-msgstr "所有者"
+msgstr ""
 
 #: fsview.cpp:41 fsview.cpp:415
 #, kde-format
 msgid "Group"
-msgstr "用户组"
+msgstr ""
 
 #: fsview.cpp:42 fsview.cpp:416
 #, kde-format
 msgid "Mime Type"
-msgstr "MIME类型"
+msgstr ""
 
 #: fsview.cpp:283
 #, kde-format
 msgid "Go To"
-msgstr "转到"
+msgstr ""
 
 #: fsview.cpp:284 fsview_part.cpp:119
 #, kde-format
 msgid "Stop at Depth"
-msgstr "停止深度"
+msgstr ""
 
 #: fsview.cpp:285 fsview_part.cpp:116
 #, kde-format
 msgid "Stop at Area"
-msgstr "停在区域"
+msgstr ""
 
 #: fsview.cpp:286
 #, kde-format
 msgid "Stop at Name"
-msgstr "停止名称"
+msgstr ""
 
 #: fsview.cpp:292
 #, kde-format
 msgid "Go Up"
-msgstr "上一级"
+msgstr ""
 
 #: fsview.cpp:294
 #, kde-format
 msgid "Stop Refresh"
-msgstr "停止刷新"
+msgstr ""
 
 #: fsview.cpp:296
 #, kde-format
 msgid "Refresh"
-msgstr "刷新"
+msgstr ""
 
 #: fsview.cpp:301
 #, kde-format
 msgid "Refresh '%1'"
-msgstr "刷新“%1”"
+msgstr ""
 
 #: fsview.cpp:313 fsview_part.cpp:126
 #, kde-format
 msgid "Color Mode"
-msgstr "颜色模式"
+msgstr ""
 
 #: fsview.cpp:316 fsview_part.cpp:122
 #, kde-format
 msgid "Visualization"
-msgstr "可视化"
+msgstr ""
 
 #: fsview.cpp:411
 #, kde-format
 msgid "None"
-msgstr "无"
+msgstr ""
 
 #: fsview.cpp:412
 #, kde-format
 msgid "Depth"
-msgstr "深度"
+msgstr ""
 
 #: fsview_part.cpp:70
 #, kde-format
 msgid "Read 1 folder, in %2"
 msgid_plural "Read %1 folders, in %2"
-msgstr[0] "于 %2 读取了 %1 个文件夹"
+msgstr[0] ""
+msgstr[1] ""
 
 #: fsview_part.cpp:74
 #, kde-format
 msgid "1 folder"
 msgid_plural "%1 folders"
-msgstr[0] "%1 个文件夹"
+msgstr[0] ""
+msgstr[1] ""
 
 #: fsview_part.cpp:100
 #, kde-format
@@ -148,48 +150,45 @@ msgid ""
 "b> done.</p><p>For details on usage and options available, see the online "
 "help under menu 'Help/FSView Manual'.</p>"
 msgstr ""
-"<p>这是FSView插件，它以树状视图的表现方式显示文件系统使用状况。</p><p>注意在"
-"此模式中，当文件系统被改变时，特意<b>不</b>自动更新显示。</p><p>有关用法和可"
-"以使用的选项的，详情可以查看在线帮助“帮助/FSView 手册”。</p> "
 
 #: fsview_part.cpp:132
 #, kde-format
 msgid "&FSView Manual"
-msgstr "FSView 手册(&F)"
+msgstr ""
 
 #: fsview_part.cpp:134
 #, kde-format
 msgid "Show FSView manual"
-msgstr "显示 FSView 手册"
+msgstr ""
 
 #: fsview_part.cpp:135
 #, kde-format
 msgid "Opens the help browser with the FSView documentation"
-msgstr "打开 FSView 的文档"
+msgstr ""
 
 #: fsview_part.cpp:167
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Move to Trash"
-msgstr "移入回收站"
+msgstr ""
 
 #: fsview_part.cpp:174
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Delete"
-msgstr "删除"
+msgstr ""
 
 #: fsview_part.cpp:179
 #, kde-format
 msgctxt "@action:inmenu Edit"
 msgid "&Edit File Type..."
-msgstr "编辑文件类型(&E)..."
+msgstr ""
 
 #: fsview_part.cpp:183
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Properties"
-msgstr "属性"
+msgstr ""
 
 #: fsview_part.cpp:216
 #, kde-format
@@ -199,219 +198,218 @@ msgid ""
 "outside.\n"
 "For details, see the 'Help/FSView Manual'."
 msgstr ""
-"FSView 有意不支持在文件或目录被外部程序改变时自动刷新显示。\n"
-"详情请查看“帮助/FSView 手册”。"
 
 #. i18n: ectx: Menu (edit)
 #: fsview_part.rc:4
 #, kde-format
 msgid "&Edit"
-msgstr "编辑(&E)"
+msgstr ""
 
 #. i18n: ectx: Menu (view)
 #: fsview_part.rc:13
 #, kde-format
 msgid "&View"
-msgstr "视图(&V)"
+msgstr ""
 
 #. i18n: ectx: Menu (help)
 #: fsview_part.rc:20
 #, kde-format
 msgid "&Help"
-msgstr "帮助(&H)"
+msgstr ""
 
 #: main.cpp:23
 #, kde-format
 msgid "FSView"
-msgstr "FSView"
+msgstr ""
 
 #: main.cpp:24
 #, kde-format
 msgid "Filesystem Viewer"
-msgstr "文件系统浏览器"
+msgstr ""
 
 #: main.cpp:26
 #, kde-format
 msgid "(c) 2002, Josef Weidendorfer"
-msgstr "(c) 2002, Josef Weidendorfer"
+msgstr ""
 
 #: main.cpp:33
 #, kde-format
 msgid "View filesystem starting from this folder"
-msgstr "从此文件夹开始查看文件系统"
+msgstr ""
 
 #: treemap.cpp:1435
 #, kde-format
 msgid "Text %1"
-msgstr "文本 %1"
+msgstr ""
 
 #: treemap.cpp:3162
 #, kde-format
 msgid "Recursive Bisection"
-msgstr "递归对分"
+msgstr ""
 
 #: treemap.cpp:3164
 #, kde-format
 msgid "Columns"
-msgstr "列数"
+msgstr ""
 
 #: treemap.cpp:3166
 #, kde-format
 msgid "Rows"
-msgstr "行数"
+msgstr ""
 
 #: treemap.cpp:3168
 #, kde-format
 msgid "Always Best"
-msgstr "总是最佳"
+msgstr ""
 
 #: treemap.cpp:3170
 #, kde-format
 msgid "Best"
-msgstr "最佳"
+msgstr ""
 
 #: treemap.cpp:3172
 #, kde-format
 msgid "Alternate (V)"
-msgstr "可选的 (V)"
+msgstr ""
 
 #: treemap.cpp:3174
 #, kde-format
 msgid "Alternate (H)"
-msgstr "可选的 (H)"
+msgstr ""
 
 #: treemap.cpp:3176
 #, kde-format
 msgid "Horizontal"
-msgstr "水平"
+msgstr ""
 
 #: treemap.cpp:3178
 #, kde-format
 msgid "Vertical"
-msgstr "垂直"
+msgstr ""
 
 #: treemap.cpp:3230
 #, kde-format
 msgid "Nesting"
-msgstr "嵌套"
+msgstr ""
 
 #: treemap.cpp:3234
 #, kde-format
 msgid "Border"
-msgstr "边界"
+msgstr ""
 
 #: treemap.cpp:3237
 #, kde-format
 msgid "Correct Borders Only"
-msgstr "只更正边界"
+msgstr ""
 
 #: treemap.cpp:3240
 #, kde-format
 msgid "Width %1"
-msgstr "宽度 %1"
+msgstr ""
 
 #: treemap.cpp:3243
 #, kde-format
 msgid "Allow Rotation"
-msgstr "允许旋转"
+msgstr ""
 
 #: treemap.cpp:3244
 #, kde-format
 msgid "Shading"
-msgstr "阴影"
+msgstr ""
 
 #: treemap.cpp:3255
 #, kde-format
 msgid "Visible"
-msgstr "可见"
+msgstr ""
 
 #: treemap.cpp:3256
 #, kde-format
 msgid "Take Space From Children"
-msgstr "从子窗口获取空间"
+msgstr ""
 
 #: treemap.cpp:3260
 #, kde-format
 msgid "Top Left"
-msgstr "正上"
+msgstr ""
 
 #: treemap.cpp:3263
 #, kde-format
 msgid "Top Center"
-msgstr "顶上"
+msgstr ""
 
 #: treemap.cpp:3266
 #, kde-format
 msgid "Top Right"
-msgstr "右上"
+msgstr ""
 
 #: treemap.cpp:3269
 #, kde-format
 msgid "Bottom Left"
-msgstr "左下"
+msgstr ""
 
 #: treemap.cpp:3272
 #, kde-format
 msgid "Bottom Center"
-msgstr "正下"
+msgstr ""
 
 #: treemap.cpp:3275
 #, kde-format
 msgid "Bottom Right"
-msgstr "右下"
+msgstr ""
 
 #: treemap.cpp:3342
 #, kde-format
 msgid "No %1 Limit"
-msgstr "无 %1 限制"
+msgstr ""
 
 #: treemap.cpp:3401
 #, kde-format
 msgid "No Area Limit"
-msgstr "无面积限制"
+msgstr ""
 
 #: treemap.cpp:3407
 #, kde-format
 msgid "Area of '%1' (%2)"
-msgstr "“%1”(%2)的面积"
+msgstr ""
 
 #: treemap.cpp:3419 treemap.cpp:3432
 #, kde-format
 msgid "1 Pixel"
 msgid_plural "%1 Pixels"
-msgstr[0] "%1 个像素"
+msgstr[0] ""
+msgstr[1] ""
 
 #: treemap.cpp:3436
 #, kde-format
 msgid "Double Area Limit (to %1)"
-msgstr "面积限制加倍(到 %1)"
+msgstr ""
 
 #: treemap.cpp:3438
 #, kde-format
 msgid "Halve Area Limit (to %1)"
-msgstr "面积限制减半(到 %1)"
+msgstr ""
 
 #: treemap.cpp:3474
 #, kde-format
 msgid "No Depth Limit"
-msgstr "无深度限制"
+msgstr ""
 
 #: treemap.cpp:3480
 #, kde-format
 msgid "Depth of '%1' (%2)"
-msgstr "“%1”(%2)的深度"
+msgstr ""
 
 #: treemap.cpp:3492 treemap.cpp:3505
 #, kde-format
 msgid "Depth %1"
-msgstr "深度 %1"
+msgstr ""
 
 #: treemap.cpp:3509
 #, kde-format
 msgid "Decrement (to %1)"
-msgstr "减小(到 %1)"
+msgstr ""
 
 #: treemap.cpp:3511
 #, kde-format
 msgid "Increment (to %1)"
-msgstr "增加(到 %1)"
+msgstr ""

@@ -1,21 +1,21 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# SPDX-FileCopyrightText: 2024 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2024-03-27 19:45\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-27 23:23+0100\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/konqueror/kcmperformance.pot\n"
-"X-Crowdin-File-ID: 48614\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #: kcmperformance.cpp:36
 #, kde-format
@@ -25,7 +25,7 @@ msgstr "Konqueror"
 #: kcmperformance.cpp:43
 #, kde-format
 msgid "System"
-msgstr "系统"
+msgstr ""
 
 #: konqueror.cpp:24
 #, kde-format
@@ -36,9 +36,6 @@ msgid ""
 "be able to work while it is loading, so you may not even notice that it is "
 "taking longer).</p>"
 msgstr ""
-"<p>如果启用，Konqueror 实例将会在 Plasma 启动完成之后预加载。</p><p>这将会使"
-"第一个 Konqueror 窗口快速打开，但代价是 Plasma 启动会变慢(但是在加载的时候，"
-"您已经可以使用了，因此您不会感觉到启动时间增加了)。</p>"
 
 #: konqueror.cpp:30
 #, kde-format
@@ -49,27 +46,24 @@ msgid ""
 "In some cases, it is actually possible that this will reduce perceived "
 "performance.</p>"
 msgstr ""
-"<p>如果启用，Konqueror 将会总是试图预加载一个实例；只要没有实例就总是在后台预"
-"加载一个新的实例，这样可以使窗口快速打开。</p><p><b>警告：</b>在某些情况下，"
-"这样做可能会使性能有所下降。</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
 #: konqueror_ui.ui:17
 #, kde-format
 msgid "Preloading"
-msgstr "预加载"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
 #: konqueror_ui.ui:23
 #, kde-format
 msgid "Preload an instance after desktop startup"
-msgstr "在桌面启动之后预加载实例"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
 #: konqueror_ui.ui:30
 #, kde-format
 msgid "Always try to have one preloaded instance"
-msgstr "总是尝试保持一个预加载的实例"
+msgstr ""
 
 #: system.cpp:22
 #, kde-format
@@ -88,26 +82,18 @@ msgid ""
 "recommended to turn this option temporarily off while (un)installing "
 "applications.</p>"
 msgstr ""
-"<p>启动时，KDE 需要检查一系列系统配置(MIME 类型、所安装的应用程序，等等)，以"
-"防系统自上次之后发生了变化，此时就需要更新系统配置缓存(KSyCoCa)。</p><p>此选"
-"项将把检查推后，这将使得 KDE 在启动时不扫描那些包含有描述系统的文件所在的目"
-"录。直观的效果就是 KDE 启动加快。但是，在极少数情况，如果系统配置自上次启动后"
-"发生了更改，而这些更改需要在此延迟之前发生，此选项可能会导致各种问题(K 菜单中"
-"缺少应用程序、应用程序会报告缺少必需的 MIME 类型，等等)。</p><p>对系统配置的"
-"更改通常是由安装或卸载应用程序造成。因此，建议您在安装或卸载应用程序的时候临"
-"时关闭此选项。</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gb_)
 #: system_ui.ui:8
 #, kde-format
 msgid "System Configuration"
-msgstr "系统配置"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
 #: system_ui.ui:14
 #, kde-format
 msgid "Disable &system configuration startup check"
-msgstr "禁用系统配置启动检查(&S)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
 #: system_ui.ui:21
@@ -116,4 +102,3 @@ msgid ""
 "This option may in rare cases lead to various problems. Consult the What's "
 "This (Shift+F1) help for details."
 msgstr ""
-"此选项可能在极少数情况下导致各种问题。详情请查看“这是什么”帮助(Shift+F1)。"
