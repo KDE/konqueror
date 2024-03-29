@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-11 00:37+0000\n"
-"PO-Revision-Date: 2024-03-17 05:34+0100\n"
+"PO-Revision-Date: 2024-03-28 10:37+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -594,7 +594,7 @@ msgstr ""
 "<li><b>Demandi</b> igos KDE peti vian konfirmon kiam ajn servilo volas "
 "agordi kuketon .</li>\n"
 "<li><b>Akcepti</b> akceptos kuketojn sen peti vin.</li>\n"
-"<li><b>Akceptu ĝis fino de la kunsido</b> faros kaŭzos ke kuketoj estu "
+"<li><b>Akceptu ĝis fino de la seanco</b> faros kaŭzos ke kuketoj estu "
 "akceptitaj sed ili eksvalidiĝos ĉe la fino de la seanco.</li>\n"
 "<li><b>Malakcepto</b> igos la kuketon rifuzos ĉiujn kuketojn kiujn ĝi "
 "ricevas.</li>\n"
@@ -793,7 +793,7 @@ msgstr "Akcepti"
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr "Akcepti ĝis fino de la kunsido"
+msgstr "Akcepti ĝis fino de la seanco"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
@@ -954,7 +954,7 @@ msgstr "Tiparogrando"
 #: css/csscustom.ui:63
 #, kde-format
 msgid "Base font si&ze:"
-msgstr "Baza tiparogrando:"
+msgstr "Baza tiparogrande&co:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:80
