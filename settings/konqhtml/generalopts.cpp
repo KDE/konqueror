@@ -252,7 +252,7 @@ void KKonqGeneralOptions::save()
 
         KSharedConfig::Ptr profile = KSharedConfig::openConfig(QStringLiteral("mimeapps.list"), KConfig::NoGlobals, QStandardPaths::ConfigLocation);
         KConfigGroup addedServices(profile, "Added KDE Service Associations");
-        for (const QString &mimeType: QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
+        for (const QString &mimeType: QStringList{"text/html", "application/xhtml+xml", "application/xml"}) {
             QStringList services = addedServices.readXdgListEntry(mimeType);
             services.removeAll(preferredWebEngine);
             services.prepend(preferredWebEngine); // make it the preferred one
