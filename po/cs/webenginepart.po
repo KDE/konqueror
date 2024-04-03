@@ -329,19 +329,15 @@ msgid "Open in external application"
 msgstr ""
 
 #: src/actondownloadedfilebar.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgid "Open in %1"
-msgstr "Otevřít '%1'"
+msgstr "Otevřít v %1"
 
 #: src/actondownloadedfilebar.cpp:73 src/actondownloadedfilebar.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Otevřít '%1'"
+msgstr "&Otevřít pomocí %1"
 
 #: src/actondownloadedfilebar.cpp:100
 #, kde-format
