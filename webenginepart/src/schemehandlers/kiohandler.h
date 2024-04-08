@@ -301,6 +301,13 @@ private:
      */ 
     QMimeType m_mimeType;
     
+    /**
+     * @brief The redirect URL produced by KIO for the current request, if any.
+     *
+     * This is valid only after the call to kioJobFinished()
+     */
+    QUrl m_redirectUrl;
+
 };
 }
 

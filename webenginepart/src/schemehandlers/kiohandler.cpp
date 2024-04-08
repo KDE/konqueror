@@ -31,12 +31,16 @@ void KIOHandler::sendReply()
 {
     if (m_currentRequest) {
         if (isSuccessful()) {
-            QBuffer *buf = new QBuffer;
-            buf->open(QBuffer::ReadWrite);
-            buf->write(m_data);
-            buf->seek(0);
-            connect(buf, &QIODevice::aboutToClose, buf, &QObject::deleteLater); 
-            m_currentRequest->reply(m_mimeType.name().toUtf8(), buf);
+            if (m_redirectUrl.isValid()) {
+                m_currentRequest->redirect(m_redirectUrl);
+            } else {
+                QBuffer *buf = new QBuffer;
+                buf->open(QBuffer::ReadWrite);
+                buf->write(m_data);
+                buf->seek(0);
+                connect(buf, &QIODevice::aboutToClose, buf, &QObject::deleteLater);
+                m_currentRequest->reply(m_mimeType.name().toUtf8(), buf);
+            }
         } else {
             m_currentRequest->fail(m_error);
         }
@@ -59,6 +63,8 @@ void KIOHandler::processNextRequest()
         return;
     }
     KIO::StoredTransferJob *job =  KIO::storedGet(m_currentRequest ->requestUrl(), KIO::NoReload, KIO::HideProgressInfo);
+    // QWebEngineUrlRequestJob seems to not support redirect & content at the same time
+    job->setRedirectionHandlingEnabled(false);
     connect(job, &KIO::StoredTransferJob::result, this, [this, job](){kioJobFinished(job);});
 }
 
@@ -93,10 +99,12 @@ void KIOHandler::kioJobFinished(KIO::StoredTransferJob* job)
         m_error = QWebEngineUrlRequestJob::NoError;
         m_mimeType = db.mimeTypeForName(job->mimetype());
         m_data = job->data();
+        m_redirectUrl = job->redirectUrl();
     } else {
         createDataFromErrorString(job);
         m_mimeType = db.mimeTypeForName("text/html");
         m_error = m_data.isEmpty() ? QWebEngineUrlRequestJob::RequestFailed : QWebEngineUrlRequestJob::NoError;
+        m_redirectUrl.clear();
     }
     processSlaveOutput();
 }
