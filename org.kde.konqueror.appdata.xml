@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component type="desktop">
+<component type="desktop-application">
   <id>org.kde.konqueror.desktop</id>
   <launchable type="desktop-id">konqbrowser.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
+  <developer id="org.kde">
+    <name translate="no">KDE</name>
+  </developer>
   <name>Konqueror</name>
   <name xml:lang="ast">Konqueror</name>
   <name xml:lang="bg">Konqueror</name>
