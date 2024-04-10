@@ -4,19 +4,20 @@
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
 # Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011.
 # Einars Sprugis <einars8@gmail.com>, 2012.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2012-01-04 19:56+0200\n"
-"Last-Translator: Einars Sprugis <einars8@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-04-05 17:21+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
@@ -34,7 +35,7 @@ msgstr "Izveidot"
 #: imgallerydialog.cpp:48 imgallerydialog.cpp:84
 #, kde-format
 msgid "Image Gallery for %1"
-msgstr "Attēlu galerija priekš %1"
+msgstr "„%1“ attēlu galerija"
 
 #: imgallerydialog.cpp:76
 #, kde-format
@@ -54,17 +55,17 @@ msgstr "&Lapas virsraksts:"
 #: imgallerydialog.cpp:93
 #, kde-format
 msgid "I&mages per row:"
-msgstr "&Attēli vienā rindā:"
+msgstr "&Attēli rindā:"
 
 #: imgallerydialog.cpp:95
 #, kde-format
 msgid "Show image file &name"
-msgstr "Rādīt attēla faila &nosaukumu"
+msgstr "Rādīt attēla datnes &nosaukumu"
 
 #: imgallerydialog.cpp:99
 #, kde-format
 msgid "Show image file &size"
-msgstr "Rādīt attēla faila &izmēru"
+msgstr "Rādīt attēla datnes &izmēru"
 
 #: imgallerydialog.cpp:103
 #, kde-format
@@ -99,12 +100,12 @@ msgstr "Mapes"
 #: imgallerydialog.cpp:145
 #, kde-format
 msgid "&Save to HTML file:"
-msgstr "&Saglabāt HTML failā:"
+msgstr "&Saglabāt HTML datnē:"
 
 #: imgallerydialog.cpp:147
 #, kde-format
 msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
-msgstr "<p>HTML faila nosaukums, kurā saglabāt šo galeriju.</p>"
+msgstr "<p>HTML datnes nosaukums, kurā saglabāt šo galeriju.</p>"
 
 #: imgallerydialog.cpp:150
 #, kde-format
@@ -131,8 +132,8 @@ msgid ""
 "<p>You can limit the number of folders the image gallery creator will "
 "traverse to by setting an upper bound for the recursion depth.</p>"
 msgstr ""
-"<p>Jūs varat ierobežot cik dziļi apakšmapēs attēlu galerijas veidotājs "
-"dosies, norādot rekursijas dziļuma augšējo robežu.</p>"
+"<p>Varat ierobežot, cik dziļi apakšmapēs attēlu galerijas veidotājs dosies, "
+"norādot rekursijas dziļuma augšējo robežu.</p>"
 
 #: imgallerydialog.cpp:168
 #, kde-format
@@ -142,7 +143,7 @@ msgstr "Rek&ursijas dziļums:"
 #: imgallerydialog.cpp:172
 #, kde-format
 msgid "Copy or&iginal files"
-msgstr "Kopēt &oriģinālos failus"
+msgstr "Kopēt &oriģinālās datnes"
 
 #: imgallerydialog.cpp:174
 #, kde-format
@@ -150,13 +151,13 @@ msgid ""
 "<p>This makes a copy of all images and the gallery will refer to these "
 "copies instead of the original images.</p>"
 msgstr ""
-"<p>Šis izveido orģinālo attēlu kopijas un izveidotā galerija atsauksies uz "
-"šīm kopijām, nevis uz orģinālajiem attēliem.</p>"
+"<p>Šis izveido oriģinālo attēlu kopijas un izveidotā galerija atsauksies uz "
+"šīm kopijām, bet ne uz oriģinālajiem attēliem.</p>"
 
 #: imgallerydialog.cpp:179
 #, kde-format
 msgid "Use &comment file"
-msgstr "Izmantot &komentāru failu"
+msgstr "Izmantot &komentāru datni"
 
 #: imgallerydialog.cpp:181
 #, kde-format
@@ -165,9 +166,9 @@ msgid ""
 "used for generating subtitles for the images.</p><p>For details about the "
 "file format please see the \"What's This?\" help below.</p>"
 msgstr ""
-"<p>Ieslēdzot šo iespēju, jūs varat norādīt komentāru failu, ko izmantot "
-"attēlu aprakstu ģenerēšanai.</p><p>Vairāk informācijas par komentāru faila "
-"formātu var atrast \"Kas tas?\" palīdzībā.</p>"
+"<p>Ieslēdzot šo iespēju, varēsiet norādīt komentāru datni, ko izmantot "
+"attēlu aprakstu ģenerēšanai.</p><p>Vairāk informācijas par komentāru datnes "
+"formātu var atrast „Kas tas?“ palīdzībā.</p>"
 
 #: imgallerydialog.cpp:190
 #, kde-format
@@ -177,14 +178,15 @@ msgid ""
 "p><p>FILENAME1:<br />Description<br /><br />FILENAME2:<br />Description<br /"
 "><br />and so on</p>"
 msgstr ""
-"<p>Šeit var norādīt komentāru failu. Komentāru fails satur attēlu aprakstus. "
-"Faila formāts ir šāds:</p><p> FAILA_NOSAUKUMS1:<br />Apraksts<br /><br /> "
-"FAILA_NOSAUKUMS2:<br />Apraksts<br /><br />un tā tālāk</p>"
+"<p>Šeit varat norādīt komentāru datni. Komentāru datne satur attēlu "
+"aprakstus. Datnes formāts ir šāds:</p><p> DATNES_NOSAUKUMS1:<br /"
+">Apraksts<br /><br /> DATNES_NOSAUKUMS2:<br />Apraksts<br /><br />un tā "
+"tālāk</p>"
 
 #: imgallerydialog.cpp:200
 #, kde-format
 msgid "Comments &file:"
-msgstr "Komentāru &fails:"
+msgstr "Komentāru &datne:"
 
 #: imgallerydialog.cpp:210 imgallerydialog.cpp:211
 #, kde-format
@@ -194,7 +196,7 @@ msgstr "Sīktēli"
 #: imgallerydialog.cpp:224
 #, kde-format
 msgid "Image f&ormat:"
-msgstr ""
+msgstr "Attēlu f&ormāts:"
 
 #: imgallerydialog.cpp:232
 #, kde-format
@@ -209,7 +211,7 @@ msgstr "&Lietot citu krāsu dziļumu:"
 #: imgallerydialog.cpp:246
 #, kde-format
 msgid "Color depth:"
-msgstr ""
+msgstr "Krāsu dziļums"
 
 #: imgalleryplugin.cpp:54
 #, kde-format
@@ -219,7 +221,7 @@ msgstr "&Veidot attēlu galeriju..."
 #: imgalleryplugin.cpp:64
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
-msgstr "Neizdevās izveidot šo spraudni, lūdzu ziņojiet par kļūdu."
+msgstr "Neizdevās izveidot šo spraudni. Lūdzu, ziņojiet par kļūdu."
 
 #: imgalleryplugin.cpp:70
 #, kde-format
@@ -278,7 +280,7 @@ msgstr "KiB"
 #: imgalleryplugin.cpp:357 imgalleryplugin.cpp:457
 #, kde-format
 msgid "Could not open file: %1"
-msgstr "Neizdevās atvērt failu: %1"
+msgstr "Neizdevās atvērt datni: %1"
 
 #. i18n: ectx: Menu (tools)
 #: kimgallery.rc:4

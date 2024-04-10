@@ -4,19 +4,20 @@
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
 # Maris Nartiss <maris.kde@gmail.com>, 2008.
 # Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2011-07-08 12:57+0300\n"
-"Last-Translator: Rūdofls Mazurs <rudolfs.mazurs@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-04-06 14:38+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
@@ -30,7 +31,7 @@ msgstr "&Rīki"
 #: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
-msgstr "Papildus rīkjosla"
+msgstr "Papildu rīkjosla"
 
 #: settingsplugin.cpp:43
 #, kde-format
@@ -40,7 +41,7 @@ msgstr "HTML iestatījumi"
 #: settingsplugin.cpp:48
 #, kde-format
 msgid "Java&Script"
-msgstr "Java&skripts"
+msgstr "Java&Script"
 
 #: settingsplugin.cpp:53
 #, kde-format
@@ -60,7 +61,7 @@ msgstr "S&praudņi"
 #: settingsplugin.cpp:68
 #, kde-format
 msgid "Autoload &Images"
-msgstr "&Autoielādēt attēlus"
+msgstr "&Automātiski ielādēt attēlus"
 
 #: settingsplugin.cpp:75
 #, kde-format
@@ -70,45 +71,40 @@ msgstr "Ieslēgt s&tarpniekserveri"
 #: settingsplugin.cpp:80
 #, kde-format
 msgid "Enable Cac&he"
-msgstr "Ieslēgt k&ešu"
+msgstr "Ieslēgt k&ešatmiņu"
 
 #: settingsplugin.cpp:85
 #, kde-format
 msgid "Cache Po&licy"
-msgstr "Keša no&teikumi"
+msgstr "Kešatmiņas no&teikumi"
 
 #: settingsplugin.cpp:87
 #, kde-format
 msgid "&Keep Cache in Sync"
-msgstr "Turēt &kešu sinhronizētu"
+msgstr "Turēt &kešatmiņu sinhronizētu"
 
 #: settingsplugin.cpp:88
 #, kde-format
 msgid "&Use Cache if Possible"
-msgstr "&Lietot kešu kad vien iespējams"
+msgstr "&Lietot kešatmiņu, ja iespējams"
 
 #: settingsplugin.cpp:89
 #, kde-format
 msgid "&Offline Browsing Mode"
-msgstr "&Atslēgtais pārlūkošanas režīms"
+msgstr "&Nesaistes pārlūkošanas režīms"
 
 #: settingsplugin.cpp:193
-#, fuzzy, kde-format
-#| msgid ""
-#| "Cookies could not be enabled, because the cookie daemon could not be "
-#| "started."
+#, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
 "be contacted."
-msgstr "Neizdevās aktivēt sīkdatnes, jo neizdevās palaist sīkdatņu dēmonu."
+msgstr "Sīkdatni nevar mainīt, jo nevar nodibināt kontaktu ar sīkdatņu dēmonu."
 
 #: settingsplugin.cpp:195
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Cookies Disabled"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"
-msgstr "Sīkdatnes deaktivētas"
+msgstr "Sīkdatņu iestatījumi nav pieejami"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

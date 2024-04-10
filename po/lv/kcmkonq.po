@@ -6,19 +6,20 @@
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2007, 2008.
 # Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
 # Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2011-07-08 11:49+0300\n"
-"Last-Translator: Rūdofls Mazurs <rudolfs.mazurs@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-04-05 17:27+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
@@ -38,13 +39,13 @@ msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
 "folder, rather than showing that folder's contents in the current window."
 msgstr ""
-"Ja šī opcija ir iezīmēta, Konqueror atvērs mapi jaunā logā, nevis parādīs "
+"Ja šī opcija ir ieslēgta, „Konqueror“ atvērs mapi jaunā logā, nevis parādīs "
 "mapes saturu pašreizējā logā."
 
 #: behaviour.cpp:71
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
-msgstr "Rādīt \"Dzēst\" izvēl&nes ierakstu, kas apiet miskasti"
+msgstr "Izvēl&nē rādīt „Dzēst“ ierakstu, kas apiet atkritni"
 
 #: behaviour.cpp:75
 #, kde-format
@@ -53,10 +54,10 @@ msgid ""
 "and in the file manager's menus and context menus. You can always delete "
 "files by holding the Shift key while calling 'Move to Trash'."
 msgstr ""
-"Atzīmējiet šo, ja vēlaties, lai \"Dzēst\" komanda būtu pieejama uz "
-"darbvirsmas un failu pārvaldnieka izvēlnē un konteksta izvēlnēs. Jūs vienmēr "
-"varat izdzēst failus, turot nospiestu Shift taustiņu un dodot komandu "
-"\"Pārvietot uz miskasti\"."
+"Atzīmējiet šo, ja vēlaties, lai „Dzēst“ komanda būtu pieejama uz darbvirsmas "
+"un datņu pārvaldnieka pamata un konteksta izvēlnē. Jūs vienmēr varat izdzēst "
+"datnes, turot nospiestu „Shift“ taustiņu, kad dodat komandu „Pārvietot uz "
+"atkritni“."
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

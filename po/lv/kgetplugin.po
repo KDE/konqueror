@@ -5,21 +5,22 @@
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008, 2010.
 # Viesturs Zariņš <viesturs.zarins@algorego.com>, 2008.
 # Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kget\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2010-01-09 18:49+0200\n"
-"Last-Translator: Viesturs Zarins <viesturs.zarins@mii.lu.lv>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-04-06 14:36+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: kget_plugin.cpp:57
 #, kde-format
@@ -39,13 +40,12 @@ msgstr "Rādīt visas saites"
 #: kget_plugin.cpp:75
 #, kde-format
 msgid "List Selected Links"
-msgstr "Rādīt izvēlētās saites"
+msgstr "Rādīt atlasītās saites"
 
 #: kget_plugin.cpp:224
-#, fuzzy, kde-format
-#| msgid "Download failed, no working URLs were found."
+#, kde-format
 msgid "No downloadable links were found."
-msgstr "Lejupielāde neveiksmīga, netika atrasts neviens strādājošs URLs."
+msgstr "Nav atrastas lejupielādējamas saites."
 
 #: kget_plugin.cpp:224
 #, kde-format

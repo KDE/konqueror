@@ -6,26 +6,27 @@
 # Maris Nartiss <maris.kde@gmail.com>, 2007.
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
 # Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: khtmlkttsd\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:32+0000\n"
-"PO-Revision-Date: 2011-07-07 22:57+0300\n"
-"Last-Translator: Rūdofls Mazurs <rudolfs.mazurs@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-04-06 14:36+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
 #: khtmltts.cpp:33
 #, kde-format
 msgid "&Speak Text"
-msgstr "Izrunāt tek&stu"
+msgstr "&Izrunāt tekstu"
 
 #. i18n: ectx: Menu (tools)
 #: khtmlttsplugin.rc:5
@@ -37,7 +38,7 @@ msgstr "&Rīki"
 #: khtmlttsplugin.rc:10
 #, kde-format
 msgid "Speech Toolbar"
-msgstr "Runas rīkjosla"
+msgstr "Izrunāšanas rīkjosla"
 
 #~ msgctxt "@title:window"
 #~ msgid "Starting Jovie Text-to-Speech Service Failed"

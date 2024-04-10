@@ -1,7 +1,8 @@
 # translation of kcmkonqhtml.po to Latvian
 # Copyright (C) 2007, 2008, 2010 Free Software Foundation, Inc.
 #
-# Maris Nartiss <maris.kde@gmail.com>, 2007, 2008, 2010.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+# Maris Nartiss <maris.kde@gmail.com>, 2007, 2008, 2010, 2024.
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2007, 2008.
 # Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
 # Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011.
@@ -11,14 +12,14 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-11 00:37+0000\n"
-"PO-Revision-Date: 2012-01-06 15:06+0200\n"
-"Last-Translator: Einars Sprugis <einars8@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-04-09 08:48+0300\n"
+"Last-Translator: Māris Nartišs <maris.kde@gmail.com>\n"
+"Language-Team: \n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
@@ -49,7 +50,7 @@ msgstr "Attēli"
 #: appearance.cpp:56
 #, kde-format
 msgid "A&utomatically load images"
-msgstr "A&utomātiski ielādē attēlus"
+msgstr "A&utomātiski ielādēt attēlus"
 
 #: appearance.cpp:57
 #, kde-format
@@ -60,11 +61,11 @@ msgid ""
 "image button.<br />Unless you have a very slow network connection, you will "
 "probably want to check this box to enhance your browsing experience.</html>"
 msgstr ""
-"<html>Ja šī opcija ir ieslēgta, Konqueror automātiski ielādēs visus tīmekļa "
-"lapā esošos attēlus. Citādi, tas rādīs attēlu vietturus, kas ļaus jums "
-"manuāli ielādēt attēlus, noklikšķinot uz attēla pogas.<br />Ja vien jums nav "
-"ļoti lēns tīkla savienojums, jūs, visticamāk, vēlēsieties ieslēgt šo opciju, "
-"lai uzlabotu pārlūkošanas efektivitāti.</html>"
+"<html>Ja šī opcija ir ieslēgta, „Konqueror“ automātiski ielādēs visus "
+"tīmekļa lapā esošos attēlus. Citādi, tas rādīs attēlu vietturus, kas ļaus "
+"jums manuāli ielādēt attēlus, noklikšķinot uz attēla pogas.<br />Ja vien "
+"jums nav ļoti lēns tīkla savienojums, jūs, visticamāk, vēlēsieties ieslēgt "
+"šo opciju, lai uzlabotu pārlūkošanas ērtību.</html>"
 
 #: appearance.cpp:67
 #, kde-format
@@ -79,9 +80,9 @@ msgid ""
 "will probably want to check this box to enhance your browsing experience, "
 "especially if have a slow network connection.</html>"
 msgstr ""
-"<html>Ja šī opcija ir ieslēgta, Konqueror attēlu vietas apvilks ar rāmīti, "
-"kamēr attēli nav pilnībā ielādēti.<br />Šī opcija ir īpaši noderīga, ja jums "
-"ir lēns tīkla savienojums.</html>"
+"<html>Ja šī opcija ir ieslēgta, „Konqueror“ attēlu vietas apvilks ar rāmīti "
+"līdz attēli pilnībā ielādēsies.<br />Šī opcija ir īpaši noderīga, ja jums ir "
+"lēns tīkla savienojums.</html>"
 
 #: appearance.cpp:78
 #, kde-format
@@ -108,11 +109,11 @@ msgid ""
 "animations, show the starting image only.</li><li><b>Show only once</b>: "
 "Show all animations completely but do not repeat them.</li></ul></html>"
 msgstr ""
-"<html>Kontrolē, kā Konqueror rāda animētus attēlus:<br /"
-"><ul><li><b>Ieslēgtas</b>: Pilnībā rāda visas animācijas.</"
-"li><li><b>Izslēgtas</b>: Nekad nerāda animācijas, rāda tikai sākuma kadru.</"
-"li><li><b>Rādīt tikai vienreiz</b>: Rāda visas animācijas pilnībā, bet "
-"neatkārto tās.</li></ul></html>"
+"<html>Kontrolē, kā Konqueror rāda kustīgus attēlus:<br /"
+"><ul><li><b>Ieslēgtas</b>: pilnībā rāda visas animācijas.</"
+"li><li><b>Izslēgtas</b>: nekad nerāda animācijas, rāda tikai sākuma kadru.</"
+"li><li><b>Rādīt tikai vienreiz</b>: Rāda visas animācijas pilnībā, bet tās "
+"neatkārto.</li></ul></html>"
 
 #: appearance.cpp:86
 #, kde-format
@@ -156,9 +157,9 @@ msgid ""
 "is moved over the link</li></ul><br /><i>Note: The site's CSS definitions "
 "can override this value.</i></html>"
 msgstr ""
-"<html>Kontrolē, kā Konqueror apstrādā hipersaišu pasvītrošanu:<br /"
-"><ul><li><b>Ieslēgts</b>: Vienmēr pasvītro saites</li><li><b>Izslēgts</b>: "
-"Nekad nepasvītro saites</li><li><b>Tikai zem kursora</b>: Pasvītro kad "
+"<html>Kontrolē, kā „Konqueror“ apstrādā hipersaišu pasvītrošanu:<br /"
+"><ul><li><b>Ieslēgts</b>: vienmēr pasvītro saites</li><li><b>Izslēgts</b>: "
+"nekad nepasvītro saites</li><li><b>Tikai zem kursora</b>: pasvītro kad "
 "kursors atrodas virs saites</li></ul><br /><i>Ievērojiet: tīmekļa lapā "
 "esošais CSS var pārdefinēt šo vērtību!</i></html>"
 
@@ -182,7 +183,7 @@ msgstr "Nekad"
 #: appearance.cpp:112
 #, kde-format
 msgid "S&mooth scrolling:"
-msgstr "&Gluda ritināšana:"
+msgstr "&Gludā ritināšana:"
 
 #: appearance.cpp:114
 #, kde-format
@@ -194,22 +195,22 @@ msgid ""
 "scrolling on pages where it can be achieved with moderate usage of system "
 "resources.</li></ul></html>"
 msgstr ""
-"<html>Nosaka vai Konqueror izmantot animētu HTML lapu ritināšanu, vai "
-"ritināt uzreiz visu:<br /><ul><li><b>Vienmēr</b>: Vienmēr izmantot gludu "
-"ritināšanu.</li><li><b>Nekad</b>: Nekad neizmantot gludu ritināšanu, uzreiz "
-"pārlēkt uz jauno vietu.</li><li><b>Kad efektīva</b>: Izmantot gludu "
+"<html>Nosaka vai „Konqueror“ izmantot animētu HTML lapu ritināšanu, vai arī "
+"ritināt uzreiz visu:<br /><ul><li><b>Vienmēr</b>: vienmēr izmantot gludo "
+"ritināšanu.</li><li><b>Nekad</b>: nekad neizmantot gludo ritināšanu, bet "
+"uzreiz pārlēkt uz jauno vietu.</li><li><b>Kad efektīva</b>: izmantot gludo "
 "ritināšanu tikai lapām, kurām tas patērē saprātīgus sistēmas resursus.</li></"
 "ul></html>"
 
 #: appearance.cpp:132
 #, kde-format
 msgid "Font Si&ze"
-msgstr "Fonta I&zmērs"
+msgstr "Fonta i&zmērs"
 
 #: appearance.cpp:135 appearance.cpp:153
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
-msgstr "Šo relatīvo fonta izmēru Konqueror izmanto tīmekļa lapu parādīšanai."
+msgstr "Šo relatīvo fonta izmēru „Konqueror“ izmanto tīmekļa lapu parādīšanai."
 
 #: appearance.cpp:139
 #, kde-format
@@ -222,7 +223,7 @@ msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
 "any other settings."
 msgstr ""
-"Konqueror nekad nerādīs tekstu mazāku par šo izmēru,<br/> neņemot vērā "
+"„Konqueror“ nekad nerādīs tekstu mazāku par šo izmēru,<br/> neņemot vērā "
 "jebkurus citus iestatījumus."
 
 #: appearance.cpp:148
@@ -250,7 +251,7 @@ msgstr "&Fiksēts fonts:"
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr ""
-"Šis fonts tiek izmantots fiksēta platuma (t.i. neproporcionāla) teksta "
+"Šis fonts tiek izmantots fiksēta platuma (jeb neproporcionāla) teksta "
 "parādīšanai."
 
 #: appearance.cpp:171
@@ -272,8 +273,8 @@ msgstr "Bezserif&a fonts:"
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr ""
-"Šis fonts tiek izmantots teksta parādīšanai, kas jārāda bez serifa (sans-"
-"serif)."
+"Šis fonts tiek izmantots teksta parādīšanai, kas jārāda bez serifa („sans-"
+"serif“)."
 
 #: appearance.cpp:181
 #, kde-format
@@ -283,19 +284,19 @@ msgstr "K&ursīva fonts:"
 #: appearance.cpp:182
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
-msgstr "Šo fontu izmanto, ja ir jāparāda teksts kursīvā (slīps, italic)."
+msgstr "Šo fontu izmanto, ja ir jāparāda teksts slīprakstā."
 
 #: appearance.cpp:186
 #, kde-format
 msgid "Fantas&y font:"
-msgstr "Fantas&y fonts:"
+msgstr "„Fantas&y“ fonts:"
 
 #: appearance.cpp:187
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr ""
-"Šis fonts tiek izmantots teksta parādīšanai, kam jāizmanto fantasy fonts."
+"Šis fonts tiek izmantots teksta parādīšanai, kam jāizmanto „fantasy“ fonts."
 
 #: appearance.cpp:196
 #, kde-format
@@ -318,14 +319,14 @@ msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
 "language encoding' and should not have to change this."
 msgstr ""
-"Izvēlieties noklusēto izmantojamo kodējumu. Parasti ar 'Lietot valodas "
-"kodējumu' viss ir kārtībā un nav nepieciešams to mainīt."
+"Izvēlieties noklusēto izmantojamo kodējumu. Parasti ar „Lietot valodas "
+"kodējumu“ viss ir kārtībā un nav nepieciešams to mainīt."
 
 #. i18n: ectx: property (title), widget (QGroupBox, cacheEnabled)
 #: cache/cache.ui:17
 #, kde-format
 msgid "&Enable cache"
-msgstr ""
+msgstr "&Ieslēgt kešatmiņu"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:29
@@ -335,18 +336,21 @@ msgid ""
 "p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Kešatmiņu neglabāt diskā, bet tikai atmiņā.</p><p>Šī "
+"ieslēgšana nozīmē, ka pēc iziešanas no „Konqueror“ kešatmiņa tiks iztīrīta</"
+"p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:32
 #, kde-format
 msgid "Keep cache in &memory"
-msgstr ""
+msgstr "Turēt kešatmiņu &atmiņā"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: cache/cache.ui:41
 #, kde-format
 msgid "&Cache size"
-msgstr ""
+msgstr "&Kešatmiņas izmērs"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:51
@@ -355,140 +359,136 @@ msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
+"Maksimālā vieta diskā vai atmiņā, ko var izmantot kešatmiņa. Kad ir "
+"sasniegts šis slieksnis, vecās lapas tiks noņemtas, lai dotu vietu jaunām."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:54
 #, kde-format
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:57
 #, kde-format
 msgid " MB"
-msgstr ""
+msgstr " MB"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr ""
+msgstr "Kešatmiņai izmantot pielāgotu mapi"
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:88
 #, kde-format
 msgid "&Custom cache directory"
-msgstr ""
+msgstr "&Pielāgota kešatmiņas mape"
 
 #. i18n: ectx: property (text), widget (QLabel, customCachePathLabel)
 #: cache/cache.ui:100
 #, kde-format
 msgid "Cache &Directory"
-msgstr ""
+msgstr "Kešatmiņas &mape"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
 #: cache/cache.ui:113
 #, kde-format
 msgid "The custom directory to store cache"
-msgstr ""
+msgstr "Pielāgotā mape kešatmiņas glabāšanai"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search"
-msgstr "Meklēt:"
+msgstr "Meklēt"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:27
 #, kde-format
 msgid "Search interactively for domains and hosts"
-msgstr ""
+msgstr "Interaktīvā domēnu un resursdatoru meklēšana"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:43
 #, kde-format
 msgid "Site"
-msgstr ""
+msgstr "Vieta"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:48
 #, kde-format
 msgid "Cookie Name"
-msgstr ""
+msgstr "Sīkdatnes nosaukums"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDelete)
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "D&elete"
-msgstr "Dzēs&t"
+msgstr "&Dzēst"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
 #: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "Delete A&ll"
-msgstr "Dzēs&t"
+msgstr "Dzēst &visu"
 
 #. i18n: ectx: property (text), widget (QPushButton, configPolicyButton)
 #: cookies/kcookiesmanagement.ui:70
 #, kde-format
 msgid "Configure &Policy..."
-msgstr ""
+msgstr "Konfigurēt &politiku..."
 
 #. i18n: ectx: property (text), widget (QPushButton, reloadButton)
 #: cookies/kcookiesmanagement.ui:77
 #, kde-format
 msgid "&Reload List"
-msgstr ""
+msgstr "&Pārlādēt sarakstu"
 
 #. i18n: ectx: property (title), widget (QGroupBox, detailsGroupBox)
 #: cookies/kcookiesmanagement.ui:97
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Informācija"
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
 #: cookies/kcookiesmanagement.ui:106
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "Nosaukums"
+msgstr "Nosaukums:"
 
 #. i18n: ectx: property (text), widget (QLabel, valueLabel)
 #: cookies/kcookiesmanagement.ui:129
-#, fuzzy, kde-format
-#| msgid "Value"
+#, kde-format
 msgid "Value:"
-msgstr "Vērtība"
+msgstr "Vērtība:"
 
 #. i18n: ectx: property (text), widget (QLabel, domainLabel)
 #: cookies/kcookiesmanagement.ui:152
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain:"
-msgstr "Dators/Domēns"
+msgstr "Domēns:"
 
 #. i18n: ectx: property (text), widget (QLabel, patchLabel)
 #: cookies/kcookiesmanagement.ui:175
 #, kde-format
 msgid "Path:"
-msgstr ""
+msgstr "Ceļš:"
 
 #. i18n: ectx: property (text), widget (QLabel, expiresLabel)
 #: cookies/kcookiesmanagement.ui:198
 #, kde-format
 msgid "Expires:"
-msgstr ""
+msgstr "Beidzas:"
 
 #. i18n: ectx: property (text), widget (QLabel, secureLabel)
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
-msgstr ""
+msgstr "Drošs:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -501,13 +501,18 @@ msgid ""
 "unbrowsable.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"<p>Ieslēgt sīkdatņu atbalstu. Parasti varat gribēt ieslēgt sīkdatņu atbalstu "
+"un to pielāgot atbilstoši savām privātuma vajadzībām.</p><p>\n"
+"Ievērojiet, ka sīkdatņu atbalsta izslēgšana daudzas vietnes var padarīt "
+"neaplūkojamas.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
-#, fuzzy, kde-format
-#| msgid "Enable filters"
+#, kde-format
 msgid "Enable coo&kies"
-msgstr "Ieslēgt filtrus"
+msgstr "Ieslēgt sī&kdatnes"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -522,12 +527,20 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Noraidīt tā sauktās trešo pušu sīkdatnes. Šo sīkdatņu avots nav lapa, kuru "
+"attiecīgajā brīdī aplūkojat. Piemēram, ja apmeklējat vietni <b>www.foobar."
+"com</b>, kad ir ieslēgta šī opcija, pārlūks apstrādās tikai sīkdatnes no "
+"vietnes „www.foobar.com“. Sīkdatnes no citā vietnēm tiks noraidītas. Tas "
+"samazina iespēju vietņu pārvaldniekiem izveidot profilu par jūsu ikdienas "
+"interneta lietošanas paradumiem.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
 #, kde-format
 msgid "Only acce&pt cookies from originating server"
-msgstr ""
+msgstr "&Pieņemt sīkdatnes tikai no sākotnējā servera"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:46
@@ -541,13 +554,19 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
+"<p>\n"
+"Automātiski pieņemt pagaidu sīkdatnes, kuras izbeidzas pēc pašreizējās "
+"sesijas. Šādas sīkdatnes netiks glabātas datora cietajā diskā vai citā "
+"krātuvē, bet tā vietā dzēstas, aizverot visas programmas (piemēram, "
+"pārlūkprogrammu), kas tās lieto.</p><p><u>IEVĒRĪBAI:</u> šīs opcijas "
+"atzīmēšana pārraksta jūsu noklusējuma, kā arī specifisku vietņu sīkdatņu "
+"politiku attiecībā uz sesijas sīkdatnēm.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
-#, fuzzy, kde-format
-#| msgid "A&utomatically load images"
+#, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr "A&utomātiski ielādē attēlus"
+msgstr "&Automātiski pieņemt sesijas sīkdatnes"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -569,50 +588,54 @@ msgid ""
 "precedence over the default policy.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Nosaka, kas notiks ar sīkdatnē, kas saņemtas no servera: \n"
+"<ul>\n"
+"<li><b>Jautāt</b> liks KDE jautāt apstiprinājumu ikreiz, kad serveris "
+"piedāvās jūsu datorā saglabāt sīkdatni.</li>\n"
+"<li><b>Pieņemt</b> novedīs pie sīkdatņu pieņemšanas bez jautāšanas.</li>\n"
+"<li><b>Pieņemt līdz sesijas beigām</b> izraisīs sīkdatņu pieņemšanu, bet tās "
+"beigsies sesijas beigās.</li>\n"
+"<li><b>Noraidīt</b> novedīs pie tā, ka visas nosūtītās sīkdatnes tiks "
+"noraidītas.</li>\n"
+"</ul><p>\n"
+"<u>IEVĒRĪBAI:</u> domēna specifiska politika, kas ir norādāma zemāk, vienmēr "
+"ņem priekšroku pār noklusējuma politiku.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
-#, fuzzy, kde-format
-#| msgid "Default encoding:"
+#, kde-format
 msgid "Default Policy"
-msgstr "Noklusētais kodējums:"
+msgstr "Noklusējuma politika"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
 #, kde-format
 msgid "Accep&t all cookies"
-msgstr ""
+msgstr "Pieņem&t visas sīkdatnes"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr ""
+msgstr "Pieņemt &līdz sesijas beigām"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
-#, fuzzy, kde-format
-#| msgid "A&nimations:"
+#, kde-format
 msgid "Ask &for confirmation"
-msgstr "A&nimācijas:"
+msgstr "&Jautāt apstiprinājumu"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
 #: cookies/kcookiespolicies.ui:98
 #, kde-format
 msgid "Re&ject all cookies"
-msgstr ""
+msgstr "&Noraidīt visas sīkdatnes"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can set specific Java policies for any particular host or "
-#| "domain. To add a new policy, simply click the <i>New...</i> button and "
-#| "supply the necessary information requested by the dialog box. To change "
-#| "an existing policy, click on the <i>Change...</i> button and choose the "
-#| "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#| "button will remove the selected policy, causing the default policy "
-#| "setting to be used for that domain."
+#, kde-format
 msgid ""
 "<qt>\n"
 "To add a new policy, simply click on the <b>Add...</b> button and supply the "
@@ -623,35 +646,32 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
-"Šeit jūs varat uzstādīt specifisku Java politiku jebkuram resursdatoram vai "
-"domēnam. Lai pievienotu jaunu politiku, vienkārši noklikšķiniet <i>Jauna...</"
-"i> pogu un sniedziet dialoga logā pieprasīto informāciju. Lai mainītu esošu "
-"politiku, noklikšķiniet uz <i>Mainīt...</i> pogas un izvēlieties jaunu "
-"politiku no politikas dialogloga. Noklikšķinot uz <i>Dzēst</i> pogas "
-"izvēlētā politika tiks noņemta un tās vietā šim domēnam tiks piemēroti "
-"noklusētie noteikumi. <i>Importēt...</i> un <i>Eksportēt...</i> pogas ļauj "
-"jums viegli dalīties ar jūsu politiku ar citiem cilvēkiem, atļaujot jums "
-"saglabāt un nolasīt to no faila."
+"<qt>\n"
+"Lai pievienotu jaunu politiku, vienkārši noklikšķiniet <i>Jauna...</i> pogu "
+"un sniedziet lodziņā pieprasīto informāciju. Lai mainītu esošu politiku, "
+"noklikšķiniet uz <i>Mainīt...</i> pogas un izvēlieties jaunu politiku tās "
+"lodziņā. Noklikšķinot uz <i>Dzēst</i> pogas, izvēlētā politika tiks noņemta "
+"un tās vietā šim domēnam tiks piemēroti noklusējuma noteikumi. <i>Importēt..."
+"</i> un <i>Eksportēt...</i> pogas ļauj jums viegli dalīties ar jūsu politiku "
+"ar citiem cilvēkiem, atļaujot jums saglabāt un nolasīt to no datnes."
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Site Policy"
-msgstr "Politika"
+msgstr "Vietnes politika"
 
 #. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr ""
+msgstr "Interaktīvi meklēt domēnus"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search..."
-msgstr "Meklēt:"
+msgstr "Meklēt..."
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -662,13 +682,16 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Uzskaita visas vietnes, kurām iestatījāt specifisku sīkdatņu politiku. "
+"Vietnei specifiskai politikai ir priekšroka pār noklusējuma politiku.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain"
-msgstr "Dators/Domēns"
+msgstr "Domēns"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
@@ -699,18 +722,24 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Ievadiet resursdatoru vai domēnu, uz kuru šī politika attiecas, piemēram, "
+"<b>www.kde.org</b> vai <b>.kde.org</b>.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
 #, kde-format
 msgid "Site name:"
-msgstr ""
+msgstr "Vietnes nosaukums:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:38
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
 msgstr ""
+"Ierakstīt resursdatora vai domēna nosaukumu, piemēram, „.kde.org“, uz kuru "
+"šī politika attieksies"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -729,13 +758,23 @@ msgid ""
 "</ul>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Atlasiet vēlamo politiku:\n"
+"<ul>\n"
+"<li><b>Pieņemt</b> — ļauj vietnēm saglabāt sīkdatnes</li>\n"
+"<li><b>Pieņemt līdz sesijas beigām</b> — ļauj vietnei saglabāt sīkdatnes, "
+"bet to derīguma termiņš beigsies līdz ar sesijas aizvēršanu.</li>\n"
+"<li><b>Noraidīt</b> — noraidīt visas sīkdatnes, kas ir nosūtītas no šīs "
+"vietnes</li>\n"
+"<li><b>Jautāt</b> — jautāt, kad vietne piedāvā sīkdatnes</li>\n"
+"</ul>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Policy:"
-msgstr "Politika"
+msgstr "Politika:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
@@ -748,7 +787,7 @@ msgstr "Pieņemt"
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr ""
+msgstr "Pieņemt līdz sesijas beigām"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
@@ -771,8 +810,8 @@ msgid ""
 "<b>Stylesheets</b><p>See http://www.w3.org/Style/CSS for further information "
 "on cascading style sheets.</p>"
 msgstr ""
-"<b>Stilu lapas</b><p>Vairāk infomācijas par kaskadējošām stilu lapās skat. "
-"http://www.w3.org/Style/CSS.</p>"
+"<b>Stilu lapas</b><p>Vairāk informācijas par kaskadējošajām stilu lapām "
+"lasiet http://www.w3.org/Style/CSS.</p>"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, ButtonGroup1)
 #: css/cssconfig.ui:17
@@ -781,7 +820,7 @@ msgid ""
 "<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
 "render style sheets.</p>"
 msgstr ""
-"<b>Stilu lapas</b><p>Lietojiet šo grupu, lai regulētu kā Konqueror izmanto "
+"<b>Stilu lapas</b><p>Lietojiet šo grupu, lai regulētu kā „Konqueror“ izmanto "
 "stilu lapas.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
@@ -817,11 +856,11 @@ msgid ""
 "sheet (see http://www.w3.org/Style/CSS for further information on cascading "
 "style sheets).</p>"
 msgstr ""
-"<b>Lietot lietotāja definētu stilu lapu</b><p>Ja šis ir ieslēgts, Konqueror "
-"mēģinās ielādēt lietotāja definētu stilu lapu no zemāk norādītās vietas."
-"Stilu lapa ļauj jums pilnībā izmainīt tīmekļa lapu izskatu. Failam ir "
+"<b>Lietot lietotāja definētu stilu lapu</b><p>Ja šis ir ieslēgts, "
+"„Konqueror“ mēģinās ielādēt lietotāja definētu stilu lapu no zemāk norādītās "
+"vietas.Stilu lapa ļauj jums pilnībā izmainīt tīmekļa lapu izskatu. Datnei ir "
 "jāsatur derīga stilu lapa (vairāk informācijas par kaskadējošām stilu lapām "
-"skat. http://www.w3.org/Style/CSS).</p>"
+"skatiet http://www.w3.org/Style/CSS).</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useUser)
 #: css/cssconfig.ui:42
@@ -839,8 +878,8 @@ msgid ""
 "your desired options.</p>"
 msgstr ""
 "<b>Lietot pieejamības stilu lapu</b><p>Izvēloties šo, jūs varēsiet ar dažiem "
-"peles klikšķiem definēt noklusēto fontu, izmēru un krāsu. Vienkārši atveriem "
-"'Pielāgot...'  logu un izvēlieties vēlamos iestatījumus.</p>"
+"peles klikšķiem definēt noklusēto fontu, izmēru un krāsu. Atveriet "
+"„Pielāgot...“  logu un izvēlieties vēlamos iestatījumus.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useAccess)
 #: css/cssconfig.ui:97
@@ -863,8 +902,8 @@ msgid ""
 "the above.</p>"
 msgstr ""
 "<b>Fontu saime</b><p>Fontu saime ir fontu grupa, kas papildina viena otru, "
-"ar saimes locekļiem, kas ir, piem., treknraksts, slīpraksts vai jebkurš cits "
-"no augstāk minētajiem.</p>"
+"ar saimes locekļiem, kas ir, piemēram, treknraksts, slīpraksts vai jebkurš "
+"cits no minētajiem.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:24
@@ -876,7 +915,7 @@ msgstr "Fontu saime"
 #: css/csscustom.ui:30
 #, kde-format
 msgid "Base family:"
-msgstr "Bāzes saime:"
+msgstr "Pamata saime:"
 
 #. i18n: ectx: property (whatsThis), widget (QFontComboBox, fontFamily)
 #: css/csscustom.ui:37
@@ -892,7 +931,7 @@ msgid ""
 "fonts everywhere in favor of the base font.</p>"
 msgstr ""
 "<b>Lietot vienu saimi visam tekstam</b><p>Izvēlieties šo iespēju, lai "
-"aizstātu visus pielāgotos fontus ar bāzes fontu.</p>"
+"aizstātu visus pielāgotos fontus ar pamata fontu.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
 #: css/csscustom.ui:47
@@ -910,7 +949,7 @@ msgstr "Fonta izmērs"
 #: css/csscustom.ui:63
 #, kde-format
 msgid "Base font si&ze:"
-msgstr "Bāzes fonta iz&mērs:"
+msgstr "Pamata fonta iz&mērs:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:80
@@ -999,7 +1038,7 @@ msgid ""
 "displayed in the same size.</p>"
 msgstr ""
 "<b>Lietot vienu izmēru visiem elementiem</b><p>Izvēlieties šo iespēju, lai "
-"aizstātu pielāgotus fontu izmērus ar bāzes izmēru. Visi fonti tiks rādīti "
+"aizstātu pielāgotus fontu izmērus ar pamata izmēru. Visi fonti tiks rādīti "
 "vienādā izmērā.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, dontScale)
@@ -1018,7 +1057,7 @@ msgstr "Krāsas"
 #: css/csscustom.ui:183
 #, kde-format
 msgid "<b>Black on White</b><p>This is what you normally see.</p>"
-msgstr "<b>Melns uz balta</b><p>Tas ir ierakstais izskats.</p>"
+msgstr "<b>Melns uz balta</b><p>Šis ir ierastais izskats.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, blackOnWhite)
 #: css/csscustom.ui:186
@@ -1061,8 +1100,8 @@ msgid ""
 "<b>Background</b><p>This background color is the one displayed behind the "
 "text by default. A background image will override this.</p>"
 msgstr ""
-"<b>Fons</b><p>Šī fona krāsa būs noklusētais teksta fons. Fona attēls aizstās "
-"to.</p>"
+"<b>Fons</b><p>Šī fona krāsa būs noklusētais teksta fons. Fona attēls to "
+"aizstās.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, txtBackground)
 #: css/csscustom.ui:222
@@ -1077,7 +1116,7 @@ msgid ""
 "<b>Background</b><p>Behind this door lays the ability to choose a custom "
 "default background.</p>"
 msgstr ""
-"<b>Fons</b><p>Aiz šīs pogas slēpas iespēja izvēlēties pielāgotu noklusēto "
+"<b>Fons</b><p>Aiz šīs pogas slēpjas iespēja izvēlēties pielāgotu noklusēto "
 "fonu.</p>"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
@@ -1127,7 +1166,7 @@ msgid ""
 "<b>Suppress images</b><p>Selecting this will prevent Konqueror from loading "
 "images.</p>"
 msgstr ""
-"<b>Nerādīt attēlus</b><p>Ieslēdzot, Konqueror nerādīs nevienu attēlu.</p>"
+"<b>Nerādīt attēlus</b><p>Ieslēdzot, „Konqueror“ nerādīs nevienu attēlu.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, hideImages)
 #: css/csscustom.ui:305
@@ -1142,7 +1181,8 @@ msgid ""
 "<b>Suppress background images</b><p>Selecting this option will prevent "
 "Konqueror from loading background images.</p>"
 msgstr ""
-"<b>Nerādīt fona attēlus</b><p>Ieslēdzot, Konqueror nerādīs fona attēlus.</p>"
+"<b>Nerādīt fona attēlus</b><p>Ieslēdzot, „Konqueror“ nerādīs fona attēlus.</"
+"p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, hideBackground)
 #: css/csscustom.ui:315
@@ -1167,28 +1207,16 @@ msgid ""
 "visually impaired people or for web pages that are unreadable due to bad "
 "design."
 msgstr ""
-"<h1>Konqueror stilu lapas</h1> Šis modulis ļauj jums piemērot savus krāsu un "
-"fontu iestatījumus Konqueror izmantojot stilu lapas (CSS). Jūs varat vai nu "
-"norādīt opcijas vai piemērot paša rakstītu stilu lapu, norādot tās atrašanās "
-"vietu.<br /> Atcerieties, ka šiem iestatījumiem vienmēr ir priekšroka pār "
-"citiem vietas autora veidotiem iestatījumiem. Tas var būt noderīgi cilvēkiem "
-"ar redzes traucējumiem, vai tīmekļa lapām, kas nav lasāmas to sliktā dizaina "
-"dēļ."
+"<h1>„Konqueror“ stilu lapas</h1> Šis modulis ļauj jums piemērot savus krāsu "
+"un fontu iestatījumus „Konqueror“, izmantojot stilu lapas (CSS). Jūs varat "
+"vai nu norādīt opcijas, vai arī izmantot savu izveidotu stilu lapu, norādot "
+"tās atrašanās vietu.<br /> Atcerieties, ka šiem iestatījumiem vienmēr ir "
+"priekšroka pār citiem vietas autora veidotiem iestatījumiem. Tas var būt "
+"noderīgi cilvēkiem ar redzes traucējumiem, vai tīmekļa lapām, kas nav "
+"lasāmas to sliktā dizaina dēļ."
 
 #: css/kcmcss.cpp:336
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>\n"
-#| "\n"
-#| "<h1>Heading 1</h1>\n"
-#| "<h2>Heading 2</h2>\n"
-#| "<h3>Heading 3</h3>\n"
-#| "\n"
-#| "<p>User defined stylesheets allow increased\n"
-#| "accessibility for visually handicapped\n"
-#| "people.</p>\n"
-#| "\n"
-#| "</html>\n"
+#, kde-format
 msgid ""
 "<html>\n"
 "<head>\n"
@@ -1211,21 +1239,29 @@ msgid ""
 "</html>\n"
 msgstr ""
 "<html>\n"
-"\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
 "<h1>Virsraksts 1</h1>\n"
 "<h2>Virsraksts 2</h2>\n"
 "<h3>Virsraksts 3</h3>\n"
 "\n"
-"<p>Lietotāja definētas stilu lapas dod\n"
-"labāku lasāmību cilvēkiem ar redzes\n"
-"problēmām.</p>\n"
+"<p>Lietotāja definētas stila lapas\n"
+"nodrošina papildu pieejamību personām\n"
+"ar redzes traucējumiem.</p>\n"
 "\n"
+"</body>\n"
 "</html>\n"
 
 #: domainlistview.cpp:37
 #, kde-format
 msgid "Host/Domain"
-msgstr "Dators/Domēns"
+msgstr "Dators/domēns"
 
 #: domainlistview.cpp:53
 #, kde-format
@@ -1255,7 +1291,7 @@ msgid ""
 "Click on this button to change the policy for the host or domain selected in "
 "the list box."
 msgstr ""
-"Noklikšķiniet šo pogu, lai nomainītu politiku sarakstā iezīmētajam datoram "
+"Noklikšķiniet šo pogu, lai nomainītu politiku sarakstā atlasītajam datoram "
 "vai domēnam."
 
 #: domainlistview.cpp:75
@@ -1264,18 +1300,18 @@ msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
 "the list box."
 msgstr ""
-"Noklikšķiniet šo pogu, lai izdzēstu sarakstā iezīmētā hosta vai domēna "
+"Noklikšķiniet šo pogu, lai izdzēstu sarakstā atlasītā datora vai domēna "
 "politiku."
 
 #: domainlistview.cpp:122
 #, kde-format
 msgid "You must first select a policy to be changed."
-msgstr "Jums vispirms jāizvēlas politika, kuru mainīt."
+msgstr "Jums vispirms jāizvēlas politika, ko mainīt."
 
 #: domainlistview.cpp:149
 #, kde-format
 msgid "You must first select a policy to delete."
-msgstr "Jums vispirms jāizvēlas politika, kuru dzēst."
+msgstr "Jums vispirms jāizvēlas politika, ko dzēst."
 
 #: domainlistview.cpp:187 policydlg.cpp:63
 #, kde-format
@@ -1308,8 +1344,8 @@ msgid ""
 "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
 "\"filterhelp\">more information</a>):"
 msgstr ""
-"<qt>Filtra izteiksme(piem.. <tt>http://www.piemers.com/ad/*</tt>, <a href="
-"\"filterhelp\">vairāk informācijas</a>):"
+"<qt>Filtra izteiksme (piemēram, <tt>http://www.piemers.lv/reklama/*</tt>, <a "
+"href=\"filterhelp\">vairāk informācijas</a>):"
 
 #: filteropts.cpp:100
 #, kde-format
@@ -1332,17 +1368,17 @@ msgstr[2] " dienas"
 #: filteropts.cpp:124
 #, kde-format
 msgid "Insert"
-msgstr "Pielikt"
+msgstr "Ievietot"
 
 #: filteropts.cpp:127
 #, kde-format
 msgid "Update"
-msgstr "Aktualizēt"
+msgstr "Atjaunināt"
 
 #: filteropts.cpp:130
 #, kde-format
 msgid "Remove"
-msgstr "Izmest"
+msgstr "Noņemt"
 
 #: filteropts.cpp:134
 #, kde-format
@@ -1369,8 +1405,8 @@ msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
 "should be defined in the filter list for blocking to take effect."
 msgstr ""
-"Ieslēdz vai izslēdz AdBloK filtrus. Ja ieslēgts, būtu jānodefinē bloķējamo "
-"URL izteiksmju kopa, lai bloķēšana darbotos."
+"Ieslēdz vai izslēdz „AdBlocK“ filtrus. Ja ieslēgts, lai bloķēšana darbotos, "
+"jādefinē bloķējamo URL izteiksmju kopa."
 
 #: filteropts.cpp:160
 #, kde-format
@@ -1379,7 +1415,7 @@ msgid ""
 "otherwise a placeholder 'blocked' image will be used."
 msgstr ""
 "Ja ieslēgts, tad bloķētie attēli tiks pilnībā izņemti no lapas, citādi tiks "
-"izmantots attēla vietturis 'bloķēts'."
+"izmantots attēla vietturis „bloķēts“."
 
 #: filteropts.cpp:167
 #, kde-format
@@ -1402,12 +1438,13 @@ msgid ""
 "filter."
 msgstr ""
 "<qt><p>Ievadiet filtra izteiksmi. Filtra izteiksmes var būt kā:"
-"<ul><li>čaulas stila aizstājējzīmes, piem. <tt>http://www.example.com/ads*</"
-"tt>, var tikt izmantotas sekojošas aizstājējzīmes: <tt>*?[]</tt></"
-"li><li>pilnvērtīga regulārā izteiksme, kas jāliek '<tt>/</tt>', piem. <tt>/"
-"\\/(ad|banner)\\./</tt></li></ul><p>Jebkuram filtram priekšā var likt "
-"'<tt>@@</tt>', lai to padarītu par \"labo\" (atļautu) adresi (URL). \"Labajām"
-"\" adresēm tiek dota priekšroka salīdzinot ar \"sliktajām\" adresēm."
+"<ul><li>čaulas stila aizstājējzīmes, piemēram, <tt>http://www.paraugs.lv/"
+"reklamas*</tt>, var tikt izmantotas sekojošas aizstājējzīmes: <tt>*?[]</tt></"
+"li><li>pilnvērtīga regulārā izteiksme, kas jāliek „<tt>/</tt>“, piemēram, "
+"<tt>/\\/(reklama|ad|banner)\\./</tt></li></ul><p>Jebkuram filtram priekšā "
+"var rakstīt „<tt>@@</tt>“, lai to padarītu par „labo“ (atļautu) adresi "
+"(URL). „Labajām“ adresēm tiek dota priekšroka, salīdzinot ar „sliktajām“ "
+"adresēm."
 
 #: filteropts.cpp:187
 #, kde-format
@@ -1416,9 +1453,9 @@ msgid ""
 "lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
 "ignored. Any other line is added as a filter expression."
 msgstr ""
-"<qt><p>Filtra importa formāts ir vienkāršs teksta fails. Tukšas rindas un "
-"tādas kas sākas ar  '<tt>!</tt>'  un galvenes rinda <tt>[AdBlock]</tt>  tiek "
-"ignorētas. Visas citas tiek pievienotas kā filtra izteismes."
+"<qt><p>Filtra importa formāts ir vienkārša teksta datne. Tukšas rindas un "
+"tādas kas sākas ar „<tt>!</tt>“ un galvenes rinda <tt>[AdBlock]</tt> tiek "
+"ignorētas. Visas citas tiek pievienotas kā filtra izteiksmes."
 
 #: filteropts.cpp:192
 #, kde-format
@@ -1427,20 +1464,18 @@ msgid ""
 "header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
 "separate line."
 msgstr ""
-"<qt><p>Filtra eksporta formāts ir vienkāršs teksta fails. Fails sākas ar "
-"galvenes rindu<tt>[AdBlock]</tt>, tai seko visi filtri, katrs savā rindā."
+"<qt><p>Filtra eksporta formāts ir vienkārša teksta datne. Šī datne sākas ar "
+"galvenes rindu <tt>[AdBlock]</tt>, tai seko visi filtri — katrs savā rindā."
 
 #: filteropts.cpp:260
-#, fuzzy, kde-format
-#| msgid "Automatic Filter"
+#, kde-format
 msgid "Import Filters"
-msgstr "Automātisks filtrs"
+msgstr "Importa filtrs"
 
 #: filteropts.cpp:304
-#, fuzzy, kde-format
-#| msgid "URL Expressions to Filter"
+#, kde-format
 msgid "Export Filters"
-msgstr "Filtrējamās URL izteiksmes"
+msgstr "Eksporta filtrs"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: filteropts.cpp:563 useragent/useragent.ui:61
@@ -1459,13 +1494,13 @@ msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
 "empty"
 msgid "Please, insert the custom start page"
-msgstr ""
+msgstr "Ierakstiet pielāgotu sākuma lapu"
 
 #: generalopts.cpp:62
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
-msgstr ""
+msgstr "Kad ir izveidota jauna &cilne"
 
 #: generalopts.cpp:71
 #, kde-format
@@ -1474,9 +1509,7 @@ msgid "Show Introduction Page"
 msgstr "Rādīt ievada lapu"
 
 #: generalopts.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox"
-#| msgid "Show My Home Page"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "Rādīt manu mājas lapu"
@@ -1494,9 +1527,7 @@ msgid "Show My Bookmarks"
 msgstr "Rādīt manas grāmatzīmes"
 
 #: generalopts.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Home Page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "Izvēlieties mājas lapu"
@@ -1504,7 +1535,7 @@ msgstr "Izvēlieties mājas lapu"
 #: generalopts.cpp:85
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
-msgstr ""
+msgstr "Šīs ir vietnes adrese, kuru „Konqueror“ ieslēdzoties atvērs."
 
 #: generalopts.cpp:96
 #, kde-format
@@ -1518,44 +1549,38 @@ msgid "Select Home Page"
 msgstr "Izvēlieties mājas lapu"
 
 #: generalopts.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "This is the URL of the web page where Konqueror (as web browser) will "
-#| "jump to when the \"Home\" button is pressed. When Konqueror is started as "
-#| "a file manager, that button makes it jump to your local home folder "
-#| "instead."
+#, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
 "\" button is pressed."
 msgstr ""
-"Šis ir tīmekļa lapas URL, uz kuru pāriet Konqueror, nospiežot \"Mājas\" "
-"pogu. Ja Konqueror ir palaists failu pārvaldnieka režīmā, tas pāries uz jūsu "
-"lokālo mājas mapi."
+"Šī ir vietnes adrese, uz kuru „Konqueror“ aizies, kad būs nospiesta „Māju“ "
+"poga."
 
 #: generalopts.cpp:112
 #, kde-format
 msgid "Default web browser engine:"
-msgstr "Noklusētais tīmekļa pārlūks dzinis:"
+msgstr "Noklusētais tīmekļa pārlūka dzinis:"
 
 #: generalopts.cpp:121
 #, kde-format
 msgid "When splitting a view"
-msgstr ""
+msgstr "Sadalot skatu"
 
 #: generalopts.cpp:125
 #, kde-format
 msgid "Always duplicate current view"
-msgstr ""
+msgstr "Vienmēr dublēt pašreizējo skatu"
 
 #: generalopts.cpp:126
 #, kde-format
 msgid "Duplicate current view only for local files"
-msgstr ""
+msgstr "Dublēt pašreizējo skatu tikai lokālām datnēm"
 
 #: generalopts.cpp:132
 #, kde-format
 msgid "When starting up, restore state from last time"
-msgstr ""
+msgstr "Ieslēdzoties atjaunot pagājušās reizes pēdējo stāvokli"
 
 #: htmlopts.cpp:35
 #, kde-format
@@ -1565,7 +1590,7 @@ msgstr "&Grāmatzīmes"
 #: htmlopts.cpp:38
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
-msgstr "Prasīt ievadīt nosaukumu un mapi, pievienojot grāmatzīmes"
+msgstr "Pievienojot grāmatzīmes, prasīt ievadīt nosaukumu un mapi"
 
 #: htmlopts.cpp:41
 #, kde-format
@@ -1574,13 +1599,13 @@ msgid ""
 "bookmark and choose a folder in which to store it when you add a new "
 "bookmark."
 msgstr ""
-"Ja ieslēgta šī opcija, tad Knquerors ļaus izmainīt grāmatzīmes nosaukumu un "
-"izvēlēties, kurā mapē to saglabāt, kad pievienojat jaunu grāmatzīmi."
+"Ja šī opcija ir ieslēgta, tad „Koqueror“ ļaus izmainīt grāmatzīmes nosaukumu "
+"un izvēlēties, kurā mapē to saglabāt, kad pievienojat jaunu grāmatzīmi."
 
 #: htmlopts.cpp:47
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
-msgstr "Rādīt tikai atzīmētās grāmatzīmes grāmatzīmju joslā"
+msgstr "Grāmatzīmju joslā rādīt tikai atzīmētās grāmatzīmes"
 
 #: htmlopts.cpp:49
 #, kde-format
@@ -1588,7 +1613,7 @@ msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
 "bookmark toolbar which you have marked to do so in the bookmark editor."
 msgstr ""
-"Ja ieslēgta šī opcija, Konqueror grāmatzīmju joslā rādīs tikai tās "
+"Ja šī opcija ir ieslēgta, „Konqueror“ grāmatzīmju joslā rādīs tikai tās "
 "grāmatzīmes, kurām atzīmēts, ka tās jārāda, grāmatzīmju redaktorā."
 
 #: htmlopts.cpp:56
@@ -1602,8 +1627,8 @@ msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
 "forms and suggest it in similar fields for all forms."
 msgstr ""
-"Ja ir ieslēgta šī opcija, Konqueror atcerēsies jūsu tīmekļa formās ievadītos "
-"datus un piedāvās tos līdzīgos laukos visās formās."
+"Ja šī opcija ir ieslēgta, „Konqueror“ atcerēsies jūsu tīmekļa formās "
+"ievadītos datus un piedāvās tos līdzīgos laukos visās formās."
 
 #: htmlopts.cpp:66
 #, kde-format
@@ -1615,7 +1640,7 @@ msgstr "&Maksimums pabeigšanu:"
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
 msgstr ""
-"Šeit jūs varat izvēlēties cik daudz vērtības formu laukiem Konqueror "
+"Šeit jūs varat izvēlēties cik daudz vērtības formu laukiem „Konqueror“ "
 "atcerēsies."
 
 #: htmlopts.cpp:75
@@ -1634,13 +1659,13 @@ msgid ""
 "If this option is set, the shape of the cursor will change (usually to a "
 "hand) if it is moved over a hyperlink."
 msgstr ""
-"Ja ieslēgta šī iespēja, kursora bultiņa nomainās (parasti uz roku) kad tā ir "
-"novietota virs hipersaites."
+"Ja šī opcija ir ieslēgta, kursora bultiņa nomainās (parasti uz roku), kad tā "
+"ir novietota virs hipersaites."
 
 #: htmlopts.cpp:84
 #, kde-format
 msgid "M&iddle click opens URL in selection"
-msgstr "V&idējais klikšķis atver iezīmēto kā URL"
+msgstr "V&idējais klikšķis atver atlasīto kā URL"
 
 #: htmlopts.cpp:87
 #, kde-format
@@ -1648,8 +1673,8 @@ msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
 "clicking on a Konqueror view."
 msgstr ""
-"Ja ieslēgta šī opcija, tad, noklikšķinot uz iezīmētā teksta ar vidējo pogu "
-"(ritentiņu), tas atvērsies Konquerorā."
+"Ja šī opcija ir ieslēgta, tad, noklikšķinot uz atlasītā teksta ar peles "
+"vidējo pogu (ritentiņu), saite atvērsies „Konqueror“."
 
 #: htmlopts.cpp:91
 #, kde-format
@@ -1663,14 +1688,14 @@ msgid ""
 "Konqueror view. To access the context menu, press the right mouse button and "
 "move."
 msgstr ""
-"Ja ieslēgta šī opcija, jūs varat atgriezties vēsturē izdarot labo klikšķi uz "
-"Konqueror skata. Lai piekļūtu konteksta izvēlnei, nospiediet labo peles pogu "
-"un pārvietojiet."
+"Ja šī opcija ir ieslēgta, varat atgriezties vēsturē ar peles labo klikšķi "
+"„Konqueror“ skatā. Lai piekļūtu konteksta izvēlnei, nospiediet peles labo "
+"pogu un pārvietojiet."
 
 #: htmlopts.cpp:104
 #, kde-format
 msgid "Allow automatic delayed &reloading/redirecting"
-msgstr "Atļaut automātisku aizturētu pā&rlādi/pārsūtīšanu"
+msgstr "Atļaut automātisku aizturētu pā&rlādi/pāradresāciju"
 
 #: htmlopts.cpp:105
 #, kde-format
@@ -1678,13 +1703,14 @@ msgid ""
 "Some web pages request an automatic reload or redirection after a certain "
 "period of time. By unchecking this box Konqueror will ignore these requests."
 msgstr ""
-"Dažas tīkla lapas pieprasa automātisku pārlādi vai pāradresāciju pēc kāda "
-"laika perioda. Neatzīmejot šo opciju, Konqueror ignorēs šos pieprasījumus."
+"Dažas interneta lapas pieprasa automātisku pārlādi vai pāradresāciju pēc "
+"kāda laika perioda. Neatzīmējot šo opciju, „Konqueror“ ignorēs šos "
+"pieprasījumus."
 
 #: htmlopts.cpp:111
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
-msgstr "Ieslēgt pieejas &taustiņu aktivizēšanu ar Ctrl taustiņu"
+msgstr "Ieslēgt pieejas &taustiņu aktivizēšanu ar „Ctrl“ taustiņu"
 
 #: htmlopts.cpp:112
 #, kde-format
@@ -1693,15 +1719,15 @@ msgid ""
 "Unchecking this box will disable this accessibility feature. (Konqueror "
 "needs to be restarted for this change to take effect.)"
 msgstr ""
-"Ctrl taustiņa nospiešana, kad aplūkojat tīmekļa lapas, aktivizē piekļuves "
+"„Ctrl“ taustiņa nospiešana, kad aplūkojat tīmekļa lapas, aktivizē piekļuves "
 "taustiņus. Atslēdzot šo opciju, jūs atslēgsiet pieejamības iespējas. "
-"(Konqueror ir jāpārstartē, lai izmaiņas stātos spēkā.)"
+"(„Konqueror“ ir jāpārstartē, lai izmaiņas stātos spēkā.)"
 
 #: htmlopts.cpp:116
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr ""
-"Nosūtīt DNT galveni, lai pateiktu tīmekļa vietnēm, ka nevēlies, lai tevi "
+"Nosūtīt DNT galveni, lai pateiktu tīmekļa vietnēm, ka nevēlaties, lai jūs "
 "izseko"
 
 #: htmlopts.cpp:117
@@ -1710,39 +1736,43 @@ msgid ""
 "Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked."
 msgstr ""
-"Atzīmējiet šo rūtiņu, ja vēlaties informēt tīmekļa vietni, ka nevēlaties, ka "
-"tā izseko jūsu tīmekļa pārlūkošanas ieradumus."
+"Atzīmējiet šo opciju, ja vēlaties informēt tīmekļa vietni, ka nevēlaties, "
+"lai  tā izsekotu jūsu tīmekļa pārlūkošanas ieradumiem."
 
 #: htmlopts.cpp:121
 #, kde-format
 msgid "Offer to save website passwords"
-msgstr ""
+msgstr "Piedāvāt saglabāt tīmekļa vietņu paroles"
 
 #: htmlopts.cpp:122
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr ""
+"Noņemiet šo atzīmi, lai novērstu jautājumus, vai saglabāt ievadīto vietnes "
+"paroli"
 
 #: htmlopts.cpp:126
 #, kde-format
 msgid "Display online PDF files using WebEngine"
-msgstr ""
+msgstr "Parādīt tiešsaistes PDF datnes, izmantojot „WebEngine“"
 
 #: htmlopts.cpp:127
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
 msgstr ""
+"Noņemiet šo atzīmi, lai parādīti tiešsaistes PDF datnes tā, kā tas ir "
+"konfigurēts sistēmas iestatījumos"
 
 #: javaopts.cpp:78
 #, kde-format
 msgid "Enable Ja&va globally"
-msgstr "Atļaut Ja&vu globāli"
+msgstr "Ieslēgt „Ja&va“ globāli"
 
 #: javaopts.cpp:93
 #, kde-format
 msgid "Java Runtime Settings"
-msgstr "Java Runtime iestatījumi"
+msgstr "„Java“ izpildlaika iestatījumi"
 
 #: javaopts.cpp:97
 #, kde-format
@@ -1757,25 +1787,25 @@ msgstr "Lietot &KIO"
 #: javaopts.cpp:105
 #, kde-format
 msgid "Shu&tdown applet server when inactive for more than"
-msgstr "Izslēg&t sīklietotņu (appletu) serveri, kad neaktīvs vairāk nekā"
+msgstr "Izslēg&t sīklietotņu serveri, kad neaktīvs vairāk nekā"
 
 #: javaopts.cpp:117
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
-msgstr[0] " sekunde"
+msgstr[0] " sekundi"
 msgstr[1] " sekundes"
-msgstr[2] " sekundes"
+msgstr[2] " sekunžu"
 
 #: javaopts.cpp:123
 #, kde-format
 msgid "&Path to Java executable, or 'java':"
-msgstr "Ceļš uz Java iz&pildfailu vai 'java': "
+msgstr "&Ceļš uz „Java“ izpilddatni vai „java“: "
 
 #: javaopts.cpp:127
 #, kde-format
 msgid "Additional Java a&rguments:"
-msgstr "Papildus Javas a&rgumenti:"
+msgstr "&Papildu „Java“ parametri:"
 
 #: javaopts.cpp:132
 #, kde-format
@@ -1784,9 +1814,9 @@ msgid ""
 "HTML pages. Note that, as with any browser, enabling active contents can be "
 "a security problem."
 msgstr ""
-"Atļauj Javā rakstītu skriptu izpildīšanu, kas var atrasties HTML lapās.  "
-"Atcerieties, ka ar jebkurā pārlūkā aktīvā satura atļaušana var izsaukt "
-"drošības problēmas."
+"Atļauj „Java“ valodā rakstītu skriptu izpildīšanu, kas var atrasties HTML "
+"lapās.  Atcerieties, ka, kā tas ir jebkurā pārlūkā, aktīvā satura atļaušana "
+"var izsaukt drošības problēmas."
 
 #: javaopts.cpp:135
 #, kde-format
@@ -1797,10 +1827,10 @@ msgid ""
 "p><p>Select a policy and use the controls on the right to modify it.</p>"
 msgstr ""
 "<p>Šis saraksts satur domēnus un resursdatorus, kuriem ir uzstādīta "
-"specifiska Javas politika. Šī politika tiks izmantota noklusētās politikas "
-"vietā, atļaujot vai aizliedzot Java apletus no šiem domēniem vai "
-"resursdatoriem sūtītajās lapās.</p><p>Izvēlieties politiku un izmantojiet pa "
-"labi esošos rīkus, lai to rediģētu.</p>"
+"specifiska „Java“ politika. Šī politika tiks izmantota noklusētās politikas "
+"vietā, atļaujot vai aizliedzot „Java“ sīklietotnes no šiem domēniem vai "
+"resursdatoriem sūtītajās lapās.</p><p>Izvēlieties politiku un izmantojiet "
+"labajā pusē esošos rīkus, lai to rediģētu.</p>"
 
 #: javaopts.cpp:142
 #, kde-format
@@ -1809,8 +1839,8 @@ msgid ""
 "policies will be merged with the existing ones. Duplicate entries are "
 "ignored."
 msgstr ""
-"Noklikšķiniet šo pogu, lai izvēlētos failu, kas satur Javas politiku. Šī "
-"politika tiks apvienota ar esošo. Dubultie ieraksti tiek ignorēti."
+"Noklikšķiniet uz šīs pogas, lai izvēlētos datni, kas satur „Java“ politiku. "
+"Šī politika tiks apvienota ar esošo. Dubultie ieraksti tiks ignorēti."
 
 #: javaopts.cpp:145
 #, kde-format
@@ -1818,8 +1848,9 @@ msgid ""
 "Click this button to save the Java policy to a zipped file. The file, named "
 "<b>java_policy.tgz</b>, will be saved to a location of your choice."
 msgstr ""
-"Noklikšķiniet šo pogu, lai saglabātu Java noteikumus zipotā failā. Fails, "
-"saukts <b>java_policy.tgz</b>, tiks saglabāts jūsu izvēlētajā vietā."
+"Noklikšķiniet šo pogu, lai saglabātu „Java“ noteikumus saspiestā datnē. Šīs "
+"datnes, sauktas <b>java_policy.tgz</b>, saglabāšanas vietu varēsiet "
+"izvēlēties."
 
 #: javaopts.cpp:149
 #, kde-format
@@ -1832,15 +1863,15 @@ msgid ""
 "selected policy, causing the default policy setting to be used for that "
 "domain."
 msgstr ""
-"Šeit jūs varat uzstādīt specifisku Java politiku jebkuram resursdatoram vai "
+"Šeit varat uzstādīt specifisku „Java“ politiku jebkuram resursdatoram vai "
 "domēnam. Lai pievienotu jaunu politiku, vienkārši noklikšķiniet <i>Jauna...</"
-"i> pogu un sniedziet dialoga logā pieprasīto informāciju. Lai mainītu esošu "
+"i> pogu un sniedziet lodziņā pieprasīto informāciju. Lai mainītu esošu "
 "politiku, noklikšķiniet uz <i>Mainīt...</i> pogas un izvēlieties jaunu "
-"politiku no politikas dialogloga. Noklikšķinot uz <i>Dzēst</i> pogas "
-"izvēlētā politika tiks noņemta un tās vietā šim domēnam tiks piemēroti "
-"noklusētie noteikumi. <i>Importēt...</i> un <i>Eksportēt...</i> pogas ļauj "
-"jums viegli dalīties ar jūsu politiku ar citiem cilvēkiem, atļaujot jums "
-"saglabāt un nolasīt to no faila."
+"politiku no politikas lodziņa. Noklikšķinot uz <i>Dzēst</i> pogas izvēlētā "
+"politika tiks noņemta un tās vietā šim domēnam tiks piemēroti noklusētie "
+"noteikumi. <i>Importēt...</i> un <i>Eksportēt...</i> pogas ļauj jums viegli "
+"dalīties ar jūsu politiku ar citiem cilvēkiem, atļaujot jums saglabāt un "
+"nolasīt to no datnes."
 
 #: javaopts.cpp:162
 #, kde-format
@@ -1852,19 +1883,20 @@ msgid ""
 "risk. You can modify your $HOME/.java.policy file with the Java policytool "
 "utility to give code downloaded from certain sites more permissions."
 msgstr ""
-"Drošības pārvaldnieka aktivizēšana liks jvm darboties kopā ar Drošības "
-"Pārvaldnieku. Tas atturēs apletus no iespējas lasīt un rakstīt jūsu failu "
-"sistēmā, izveidot patvaļīgas ligzdas, un citas darbības, ko var izmantot,lai "
-"ielauztos jūsu sistēmā. Izslēdziet šo iespēju jūs pats atbildat par sekām. "
-"Jūs varat rediģēt jūsu $HOME/.java.policy failu ar Java policytool rīku, lai "
-"sniegtu no dažām vietām lejuplādētajam kodam lielākas tiesības."
+"Drošības pārvaldnieka aktivizēšana liks „jvm“ darboties kopā ar Drošības "
+"pārvaldnieku. Tas atturēs sīklietotnes no iespējas lasīt un rakstīt jūsu "
+"datņu sistēmā, izveidot patvaļīgas ligzdas, un citas darbības, ko var "
+"izmantot, lai ielauztos jūsu sistēmā. Izslēdzot šo iespēju, jūs atbildat par "
+"sekām. Varat rediģēt ierīces „$HOME/.java.policy“ datni ar „Java policytool“ "
+"rīku, lai no atsevišķām vietnēm lejuplādētajam kodam sniegtu lielākas "
+"tiesības."
 
 #: javaopts.cpp:170
 #, kde-format
 msgid "Enabling this will cause the jvm to use KIO for network transport "
 msgstr ""
-"Šīs opcijas ieslēgšanas rezultātā jvm (Java Virtual Machine) izmantos KIO "
-"(KDE Input/Output - KDE ievadizvade) datu pārraidei."
+"Šīs opcijas ieslēgšanas rezultātā „jvm“ datu pārraidei („Java Virtual "
+"Machine“) izmantos KIO („KDE Input/Output“ — KDE ievadizvade)."
 
 #: javaopts.cpp:172
 #, kde-format
@@ -1874,10 +1906,10 @@ msgid ""
 "the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
 "the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
 msgstr ""
-"Ievadiet ceļu uz Java izpildfailu. Ja vēlaties izmantot jre jūsu ceļā, "
-"vienkārši atstājiet to kā 'java'. Ja nepieciešams izmantot citu jre, "
-"ievadiet ceļu uz java izpildfailu (piemēram, /usr/lib/jdk/bin/java), vai "
-"ceļu uz direktoriju, kas satur 'bin/java' (piemērām, /opt/IBMJava2-13)."
+"Ievadiet ceļu uz „Java“ izpilddatni. Ja ceļā vēlaties izmantot „jre“, "
+"vienkārši atstājiet to kā „java“. Ja nepieciešams izmantot citu „jre“, "
+"ievadiet ceļu uz „java“ izpilddatni (piemēram, „/usr/lib/jdk/bin/java“), vai "
+"ceļu uz mapi, kas satur „bin/java“ (piemēram, „/opt/IBMJava2-13“)."
 
 #: javaopts.cpp:177
 #, kde-format
@@ -1885,7 +1917,7 @@ msgid ""
 "If you want special arguments to be passed to the virtual machine, enter "
 "them here."
 msgstr ""
-"Ja vēlaties speciālus argumentus nosūtīt uz virtuālo mašīnu, ievadiet tos "
+"Ja vēlaties uz virtuālo mašīnu nosūtīt speciālus parametrus, ievadiet tos "
 "šeit."
 
 #: javaopts.cpp:179
@@ -1898,45 +1930,46 @@ msgid ""
 "whole time that the konqueror process is, leave the Shutdown Applet Server "
 "checkbox unchecked."
 msgstr ""
-"Kad visas sīklietotnes (applet) ir iznīcinātas, sīklietotņu serverim ir "
-"jāizslēdzas. Tomēr, sakarā ar to, ka JVM (Java Virtual Machine) palaišana "
-"aizņem daudz laika, ja vēlaties paturēt strādājošu Java procesu pārlūkošanas "
-"laikā, jūs varat uzstādīt vēlamo noildzes vērtību. Lai paturētu Java "
-"strādājošu visu laiku, kamēr atvērts Konqueror, atstājiet opciju \"Izslēgt "
-"sīklietotņu serveri\" neatzīmētu."
+"Kad visas sīklietotnes ir iznīcinātas, sīklietotņu serverim ir jāizslēdzas. "
+"Tomēr, saistībā ar to, ka JVM („Java Virtual Machine“) palaišana aizņem "
+"daudz laika, ja vēlaties paturēt strādājošu „Java“ procesu pārlūkošanas "
+"laikā, varat uzstādīt vēlamo noildzes vērtību. Lai paturētu „Java“ "
+"strādājošu visu laiku, kamēr ir atvērts „Konqueror“, atstājiet opciju "
+"„Izslēgt sīklietotņu serveri“ neatzīmētu."
 
 #: javaopts.cpp:291
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
-msgstr "Domēn-spec&ifiski"
+msgstr "Domēnam spec&ifiski"
 
 #: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
-msgstr "Jauna Java politika"
+msgstr "Jauna „Java“ politika"
 
 #: javaopts.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
-msgstr "Mainīt Java politiku"
+msgstr "Mainīt „Java“ politiku"
 
 #: javaopts.cpp:333
 #, kde-format
 msgid "&Java policy:"
-msgstr "&Java politika:"
+msgstr "„&Java“ politika:"
 
 #: javaopts.cpp:334
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
-msgstr "Izvēlieties Javas politiku augstāk norādītajam datoram vai domēnam."
+msgstr ""
+"Atlasiet „Java“ politiku augstāk norādītajam resursdatoram vai domēnam."
 
 #: jsopts.cpp:50
 #, kde-format
 msgid "Ena&ble JavaScript globally"
-msgstr "Atļaut JavaScript glo&bāli"
+msgstr "Atļaut „JavaScript“ glo&bāli"
 
 #: jsopts.cpp:51
 #, kde-format
@@ -1945,8 +1978,8 @@ msgid ""
 "JavaScript) that can be contained in HTML pages. Note that, as with any "
 "browser, enabling scripting languages can be a security problem."
 msgstr ""
-"Atļauj skriptu izpildīšanu, kas uzrakstīti ECMA-Skriptā (arī zināmā kā "
-"JavaScript), kuru var saturēt HTML lapas. Atcerieties, ka jebkurā pārlūkā "
+"Atļauj skriptu izpildīšanu, kas uzrakstīti „ECMA-Script“ (arī zināmā kā "
+"„JavaScript“), kuru var saturēt HTML lapas. Atcerieties, ka jebkurā pārlūkā "
 "skriptēšanas valodu atļaušana var radīt drošības problēmas."
 
 #: jsopts.cpp:59
@@ -1962,7 +1995,7 @@ msgstr "Ieslēgt at&kļūdotāju"
 #: jsopts.cpp:64
 #, kde-format
 msgid "Enables builtin JavaScript debugger."
-msgstr "Ieslēdz iebūvēto JavaScript atkļūdotāju."
+msgstr "Ieslēdz iebūvēto „JavaScript“ atkļūdotāju."
 
 #: jsopts.cpp:68
 #, kde-format
@@ -1973,7 +2006,7 @@ msgstr "&Ziņot par kļūdām"
 #, kde-format
 msgid ""
 "Enables the reporting of errors that occur when JavaScript code is executed."
-msgstr "Atļauj ziņot par kļūdām, ja tādas rodas, izpildot JavaScript kodu."
+msgstr "Atļauj ziņot par kļūdām, kas rodas „JavaScript“ koda izpildes laikā."
 
 #: jsopts.cpp:83
 #, kde-format
@@ -1988,15 +2021,15 @@ msgid ""
 "share your policies with other people by allowing you to save and retrieve "
 "them from a zipped file."
 msgstr ""
-"Šeit jūs varat uzstādīt specifisku JavaScript politiku jebkuram datoram vai "
+"Šeit varat uzstādīt specifisku „JavaScript politiku jebkuram datoram vai "
 "domēnam. Lai pievienotu jaunu politiku, vienkārši noklikšķiniet <i>Jauna...</"
-"i> pogu un sniedziet dialoga logā pieprasīto informāciju. Lai mainītu esošu "
+"i> pogu un sniedziet lodziņā pieprasīto informāciju. Lai mainītu esošu "
 "politiku, noklikšķiniet uz <i>Mainīt...</i> pogas un izvēlieties jaunu "
-"politiku no politikas dialogloga.  Noklikšķinot uz <i>Dzēst</i> pogas, "
-"izvēlētā politika tiks izdzēsta un tās vietā šim domēnam tiks piemērota "
-"noklusētā politika. <i>Importēt...</i> un <i>Eksportēt...</i> pogas ļauj "
-"jums viegli dalīties ar jūsu politikām ar citiem cilvēkiem, atļaujot jums "
-"saglabāt un nolasīt tos no faila."
+"politiku no politikas lodziņa. Noklikšķinot uz <i>Dzēst</i> pogas, izvēlētā "
+"politika tiks izdzēsta, bet tās vietā šim domēnam tiks piemērota noklusētā "
+"politika. <i>Importēt...</i> un <i>Eksportēt...</i> pogas ļauj viegli "
+"dalīties ar jūsu izveidotajām politikām ar citiem cilvēkiem, atļaujot jums "
+"saglabāt un nolasīt tās no saspiestas datnes."
 
 #: jsopts.cpp:93
 #, kde-format
@@ -2008,10 +2041,10 @@ msgid ""
 "it.</p>"
 msgstr ""
 "<p>Šis saraksts satur domēnus un datorus, kuriem ir uzstādīta specifiska "
-"JavaScript politika. Šī politika tiks izmantota noklusētās politikas vietā, "
-"atļaujot vai aizliedzot JavaScript šo domēnu vai resursdatoru nosūtītajās "
-"lapās.</p><p>Izvēlieties politiku un izmantojiet pa labi esošos rīkus, lai "
-"to rediģētu.</p>"
+"„JavaScript“ politika. Šī politika tiks izmantota noklusētās politikas "
+"vietā, atļaujot vai aizliedzot „JavaScript“ šo domēnu vai resursdatoru "
+"nosūtītajās lapās.</p><p>Izvēlieties politiku un izmantojiet labajā pusē "
+"esošos rīkus, lai to rediģētu.</p>"
 
 #: jsopts.cpp:100
 #, kde-format
@@ -2020,9 +2053,9 @@ msgid ""
 "These policies will be merged with the existing ones. Duplicate entries are "
 "ignored."
 msgstr ""
-"Noklikšķiniet šo pogu, lai izvēlētos failu, kas satur JavaSkript noteikumus. "
-"Šie noteikumi tiks apvienoti ar jau esošajiem. Dublikāti ieraksti tiek "
-"ignorēti."
+"Noklikšķiniet uz šis pogas, lai atlasītu datni, kas satur „JavaScript“ "
+"noteikumus. Šie noteikumi tiks apvienoti ar jau esošajiem. Dublējošies "
+"ieraksti tiks ignorēti."
 
 #: jsopts.cpp:103
 #, kde-format
@@ -2031,53 +2064,54 @@ msgid ""
 "named <b>javascript_policy.tgz</b>, will be saved to a location of your "
 "choice."
 msgstr ""
-"Noklikšķiniet šo pogu, lai saglabātu JavaSkript noteikumus zipotā failā. "
-"Fails, saukts <b>javascript_policy.tgz</b>, tiks saglabāts jūsu izvēlētajā "
-"vietā."
+"Noklikšķiniet šo pogu, lai saglabātu „JavaScript“ noteikumus saspiestā "
+"datnē. Šīs datnes, sauktas par <b>javascript_policy.tgz</b>, saglabāšanas "
+"vietu varēsiet izvēlēties."
 
 #: jsopts.cpp:109
 #, kde-format
 msgid "Global JavaScript Policies"
-msgstr "Gobālā JavaScript politika"
+msgstr "Globālā „JavaScript“ politika"
 
 #: jsopts.cpp:183
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
-msgstr "Do&mēn-specifiski"
+msgstr "Do&mēnam specifiski"
 
 #: jsopts.cpp:222
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
-msgstr "Jauna JavaScript politika"
+msgstr "Jauna „JavaScript“ politika"
 
 #: jsopts.cpp:225
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
-msgstr "Mainīt JavaScript politiku"
+msgstr "Mainīt „JavaScript“ politiku"
 
 #: jsopts.cpp:229
 #, kde-format
 msgid "JavaScript policy:"
-msgstr "JavaSkript politika:"
+msgstr "„JavaScript“ politika:"
 
 #: jsopts.cpp:230
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr ""
-"Izvēlieties JavaSkriptu politiku augstāk norādītajam datoram vai domēnam."
+"Izvēlieties „JavaScript“ politiku augstāk norādītajam resursdatoram vai "
+"domēnam."
 
 #: jsopts.cpp:232
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
-msgstr "Domēnspecifiskās JavaScript politikas"
+msgstr "Domēnam specifiskā „JavaScript“ politika"
 
 #: jspolicies.cpp:132
 #, kde-format
 msgid "Open new windows:"
-msgstr "Jaunu logu atvēršana:"
+msgstr "Jaunus logus atvērt:"
 
 #: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
 #: jspolicies.cpp:308
@@ -2115,12 +2149,12 @@ msgstr "Liegt"
 #: jspolicies.cpp:160
 #, kde-format
 msgid "Reject all popup window requests."
-msgstr "Noraidīt visus izlēcošā loga pieprasījumus."
+msgstr "Noraidīt visus izlecošā loga pieprasījumus."
 
 #: jspolicies.cpp:165
 #, kde-format
 msgid "Smart"
-msgstr "Viltīgais"
+msgstr "Viedi"
 
 #: jspolicies.cpp:166
 #, kde-format
@@ -2140,12 +2174,12 @@ msgid ""
 "Disabling this option might also break certain sites that require <i>window."
 "open()</i> for proper operation. Use this feature carefully."
 msgstr ""
-"Ja šī opcija atslēgta, tad Konqueror beigs uzmanīt <i>window.open()</i> "
-"JavaScript funkcijas izsaukumu. Opcija noderīga, ja jūs regulāri apmeklējat "
-"vietas, kas aktīvi izmanto šo funkciju uzlēcošiem reklāmas baneriem. <br/"
-"><br/><b>Atcerieties:</b> Aizliedzot šo opciju, var arī tikt traucēta "
+"Ja šī opcija ir izslēgta, tad „Konqueror“ beigs uzmanīt „JavaScript“ "
+"funkcijas <i>window.open()</i> izsaukumu. To darīt ir noderīgi, ja regulāri "
+"apmeklējat vietas, kas aktīvi izmanto šo funkciju izlecošiem reklāmas "
+"logiem. <br/><br/><b>Ievērojiet:</b> Aizliedzot šo opciju, var tikt traucēta "
 "tīmekļa lapu darbība, kam nepieciešama <i>window.open()</i> funkcija "
-"korektai darbībai. Izmantojiet šo opciju uzmanīgi!"
+"korektai darbībai. Izmantojiet šo opciju piesardzīgi!"
 
 #: jspolicies.cpp:187
 #, kde-format
@@ -2178,9 +2212,9 @@ msgid ""
 "resizeBy()</i> or <i>window.resizeTo()</i>. This option specifies the "
 "treatment of such attempts."
 msgstr ""
-"Dažas tīmekļa lapas mēģina patstāvīgi izmainīt loga izmērus, izmantojot "
-"<i>window.resizeBy()</i> vai <i>window.resizeTo()</i>. Šī opcija ļauj "
-"norādīt, kā rīkoties šādos gadījumos."
+"Dažas tīmekļa lapas mēģina izmainīt loga izmērus, izmantojot <i>window."
+"resizeBy()</i> vai <i>window.resizeTo()</i>. Šī opcija ļauj norādīt, kā "
+"rīkoties šādos gadījumos."
 
 #: jspolicies.cpp:224
 #, kde-format
@@ -2208,9 +2242,9 @@ msgid ""
 "moveBy()</i> or <i>window.moveTo()</i>. This option specifies the treatment "
 "of such attempts."
 msgstr ""
-"Dažas tīmekļalapas mēģina patstāvīgi pārvietot logu, izmantojot <i>window."
-"moveBy()</i> vai <i>window.moveTo()</i>. Šī opcija ļauj norādīt, kā rīkoties "
-"šādos gadījumos."
+"Dažas tīmekļa lapas mēģina pārvietot logu, izmantojot <i>window.moveBy()</i> "
+"vai <i>window.moveTo()</i>. Šī opcija ļauj norādīt, kā rīkoties šādos "
+"gadījumos."
 
 #: jspolicies.cpp:261
 #, kde-format
@@ -2248,12 +2282,12 @@ msgstr ""
 #: jspolicies.cpp:301
 #, kde-format
 msgid "Modify status bar text:"
-msgstr "Statusjoslas teksta mainīšana:"
+msgstr "Statusa joslas teksta mainīšana:"
 
 #: jspolicies.cpp:316
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
-msgstr "Ļaut skriptiem mainīt statusjoslas tekstu."
+msgstr "Ļaut skriptiem mainīt statusa joslas tekstu."
 
 #: jspolicies.cpp:322
 #, kde-format
@@ -2261,9 +2295,9 @@ msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
 "<i>think</i> it changed the text but the actual text will remain unchanged."
 msgstr ""
-"Ignorēt skriptu mēģinājumus mainīt statusjoslas tekstu. Tīmekļa lapai "
-"<i>liksies</i>, ka tā ir izmainījusi statusjoslas tekstu, bet patiesībā "
-"statusjoslas teksts mainīts netiks."
+"Ignorēt skriptu mēģinājumus mainīt statusa joslas tekstu. Tīmekļa lapai "
+"<i>liksies</i>, ka tā ir izmainījusi statusa joslas tekstu, bet patiesībā "
+"statusa joslas teksts mainīts netiks."
 
 #: jspolicies.cpp:330
 #, kde-format
@@ -2272,9 +2306,9 @@ msgid ""
 "<i>window.defaultStatus</i>, thus sometimes preventing displaying the real "
 "URLs of hyperlinks. This option specifies the treatment of such attempts."
 msgstr ""
-"Dažas tīmekļa lapas mēģina patstāvīgi mainīt statusjoslas tekstu, "
+"Dažas tīmekļa lapas mēģina patstāvīgi mainīt statusa joslas tekstu, "
 "izmantojot<i>window.status</i> or <i>window.defaultStatus</i>, tādā veidā "
-"dažreiz traucējot parādīt reālos URL vai hipersaites. Šī opcija ļauj "
+"dažreiz traucējot parādīt reālās adreses vai hipersaites. Šī opcija ļauj "
 "norādīt, kā rīkoties šādos gadījumos."
 
 #: main.cpp:49
@@ -2291,12 +2325,12 @@ msgstr "Java&Script"
 #, kde-format
 msgctxt "@title:window"
 msgid "Domain-Specific Policies"
-msgstr "Domēnspecifiskās politikas"
+msgstr "Domēniem specifiskā politika"
 
 #: policydlg.cpp:47
 #, kde-format
 msgid "&Host or domain name:"
-msgstr "&Resursdatora vai domēna vārds:"
+msgstr "&Resursdatora vai domēna nosaukums:"
 
 #: policydlg.cpp:55
 #, kde-format
@@ -2304,26 +2338,25 @@ msgid ""
 "Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
 "(like .kde.org or .org)"
 msgstr ""
-"Ievadiet resursdatora (kā www.kde.org) vai domēna vārdu, sākot ar punktu "
-"(kā .kde.org vai.org)"
+"Ievadiet resursdatora (piemēram, „www.kde.org“) vai domēna vārdu, sākot ar "
+"punktu (piemēram, „.kde.org“ vai „.org“)"
 
 #: policydlg.cpp:139
 #, kde-format
 msgid "You must first enter a domain name."
-msgstr "Jums vispirms jāievada domēna vārds."
+msgstr "Jums vispirms jāievada domēna nosaukums."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
-msgstr "Peles uz&vedība"
+msgstr "Peles uzvedība"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr ""
+msgstr "Proporcijas"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2332,56 +2365,56 @@ msgid ""
 "This will display the tab bar only if there are two or more tabs. Otherwise "
 "it will always be displayed."
 msgstr ""
-"Ja ieslēgts, tad cilne tiks rādīta tikai gadījumā, kad ir vismaz divas "
-"cilnes, pretējā gadījumā cilne tiks rādīta vienmēr."
+"Ja ieslēgts, tad ciļņu josla tiks rādīta tikai gadījumā, kad ir vismaz divas "
+"cilnes. Ja izslēgts — ciļņu josla tiks rādīta vienmēr."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:29
 #, kde-format
 msgid "Hide the tab bar when only one tab is open"
-msgstr "Slēpt ciļņu joslu, kad atvērta ir tikai viena cilne"
+msgstr "Slēpt ciļņu joslu, kad ir atvērta tikai viena cilne"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: tabs/tabsoptions.ui:38
 #, kde-format
 msgid "Tab bar position"
-msgstr ""
+msgstr "Ciļņu joslas novietojums"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "Izvēlieties, kur parādīt ciļņu joslu"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "Virs satura"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "Zem satura"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "Pa kreisi no satura"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "Pa labi no satura"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr ""
+msgstr "Lietojums"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2390,14 +2423,14 @@ msgid ""
 "This will open a new tab instead of a new window in various situations, such "
 "as choosing a link or a folder with the middle mouse button."
 msgstr ""
-"Šī opcija atvērs jaunu cilni jauna loga vietā dažos gadījumos, tādos kā "
-"noklikšķinot mapi vai norādi ar vidējo peles pogu."
+"Šī opcija noteiktos gadījumos atvērs jaunu cilni jauna loga vietā, piemēram, "
+"noklikšķinot uz mapes vai saites ar peles vidējo pogu."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:102
 #, kde-format
 msgid "Open &links in new tab instead of in new window"
-msgstr "Atvērt norādes jaunā ci&lnē nevis jaunā logā"
+msgstr "&Atvērt saites jaunā cilnē nevis jaunā logā"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
 #: tabs/tabsoptions.ui:109
@@ -2406,14 +2439,14 @@ msgid ""
 "Whether or not JavaScript popups if allowed shall open in a new tab or in a "
 "new window."
 msgstr ""
-"Kontrolē to, vai, ja vispār atļauti, JavaScript izlecošie logi tiks atvērti "
+"Kontrolē, vai, ja vispār atļauti, „JavaScript“ izlecošie logi tiks atvērti "
 "jaunā cilnē vai jaunā logā."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
 #: tabs/tabsoptions.ui:112
 #, kde-format
 msgid "Open pop&ups in new tab instead of in new window"
-msgstr "Atvērt izlecošos log&us jaunā cilnē, nevis jaunā logā"
+msgstr "Atvērt izlecošos log&us jaunā cilnē nevis jaunā logā"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
 #: tabs/tabsoptions.ui:119
@@ -2424,23 +2457,24 @@ msgid ""
 "found, the URL opened as a new tab within it. Otherwise a new Konqueror "
 "window will be opened with the required URL."
 msgstr ""
-"Ja ieslēgta šī opcija, tad URL atvēršanas pieprasījums, kas radies citā KDE "
-"programmā vai kfmclient moduļa izsaukumā, tiks atvērts jaunā cilnē esošā "
-"Konqueror logā (ja kāds neminimizēts ir atrodams pašreizējā darbvirsmā). "
-"Pretējā gadījumā tiks atvērts jauns Konqueror logs ar pieprasīto URL."
+"Ja šī opcija ir ieslēgta, tad tīmekļa vietnes adreses atvēršanas "
+"pieprasījums, kas radies citā KDE programmā vai „kfmclient“ moduļa "
+"izsaukumā, atvērsies jaunā cilnē esošā „Konqueror“ logā (ja kāds nav "
+"minimizēts un ir atrodams pašreizējā darbvirsmā). Pretējā gadījumā šī saite "
+"atvērsies jaunā „Konqueror“ logā ar pieprasīto adresi."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
 #: tabs/tabsoptions.ui:122
 #, kde-format
 msgid "Open as tab in existing Konqueror when URL is called externally"
-msgstr "Atvērt kā cilni esošā Konqueror logā, ja URL izsaukts no ārienes"
+msgstr ""
+"Atvērt kā cilni esošā „Konqueror“ logā, ja cita programma izsauc adresi"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
-msgstr "Peles uz&vedība"
+msgstr "Jaunas cilnes uzvedība"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2451,12 +2485,16 @@ msgid ""
 "\">shift</span> when opening a new tab to reverse this behavior</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>Šī opcija liks jaunām cilnēm atvērties fonā, bet ne "
+"priekšplānā.</p><p>Spiediet <span style=\" font-family:'Fira Code';\">shift</"
+"span> taustiņu, atverot jaunu cilni, lai atvērtu priekšplānā.</p></body></"
+"html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
 #, kde-format
 msgid "O&pen new tabs in the background"
-msgstr "A&tvērt jaunas cilnes fonā"
+msgstr "&Jaunas cilnes atvērt fonā"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
 #: tabs/tabsoptions.ui:148
@@ -2466,7 +2504,7 @@ msgid ""
 "of after the last tab."
 msgstr ""
 "Šīs opcijas rezultātā jaunā cilne tiks novietota tieši aiz tās lapas cilnes, "
-"no kuras tā atvērta. Bez šīs opcijas cilne tiks novietota ciļņu saraksta "
+"no kuras tā ir atvērta. Pretējā gadījumā cilne atvērsies ciļņu saraksta "
 "beigās."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
@@ -2479,24 +2517,19 @@ msgstr "Novietot jau&no cilni pēc pašreizējās cilnes"
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Closing"
-msgstr ""
+msgstr "Aizvēršana"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167
-#, fuzzy, kde-format
-#| msgid ""
-#| "This will display close buttons inside each tab (Konqueror needs to be "
-#| "restarted for changes to take effect)."
+#, kde-format
 msgid "This will display close buttons inside each tab."
-msgstr ""
-"Šīs opcijas rezultātā katrā cilnē tiks parādīta aizvēršanas poga (lai "
-"izmaiņas stātos spēkā, jāpārstartē Konqueror)."
+msgstr "Katrā cilnē būs aizvēršanas poga."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:170
 #, kde-format
 msgid "&Show close button on tabs"
-msgstr "&Rādīt cilnēs aizvēršanas pogu"
+msgstr "&Cilnē rādīt aizvēršanas pogu"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
 #: tabs/tabsoptions.ui:177
@@ -2520,14 +2553,14 @@ msgid ""
 "This will ask you whether you are sure you want to close a window when it "
 "has multiple tabs opened in it."
 msgstr ""
-"Šīs opcijas rezultātā, jums būs jāapstiprina loga aizvēršana, ja tajā ir "
-"atvērtas vairākas cilnes."
+"Jums būs jāapstiprina programmas loga aizvēršana, ja tajā ir atvērtas "
+"vairākas cilnes."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
 #: tabs/tabsoptions.ui:190
 #, kde-format
 msgid "Confirm &when closing windows with multiple tabs"
-msgstr "P&rasīt apstiprinājumu aizverot logu ar vairākām cilnēm"
+msgstr "P&rasīt apstiprinājumu, aizverot logu ar vairākām cilnēm"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
 #: tabs/tabsoptions.ui:197
@@ -2536,9 +2569,9 @@ msgid ""
 "When checking this the previous used or opened tab will be activated when "
 "you close the current active tab instead of the one right to the current tab."
 msgstr ""
-"Ja ieslēgta šī opcija, tad pēc cilnes aizvēršanas tiks aktivizēts iepriekš "
-"lietotā vai atvērtā cilne, nevis cilne, kas atrodas pa labi no aizveramās "
-"cilnes."
+"Ja šī opcija ir ieslēgta, tad pēc cilnes aizvēršanas tiks aktivizēts "
+"iepriekš lietotā vai atvērtā cilne, bet ne cilne, kas atrodas pa labi no "
+"aizvērtās cilnes."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
 #: tabs/tabsoptions.ui:200
@@ -2550,13 +2583,13 @@ msgstr "Aktivizēt iepriekš lietoto cilni, kad aizver pašreizējo cilni"
 #: useragent/useragent.ui:14
 #, kde-format
 msgid "Form"
-msgstr ""
+msgstr "Veidlapa"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:23
 #, kde-format
 msgid "Existing identifications"
-msgstr ""
+msgstr "Pastāvošās identifikācijas"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
@@ -2566,57 +2599,55 @@ msgstr ""
 #: useragent/useragent.ui:150 useragent/useragent.ui:163
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: useragent/useragent.ui:66
 #, kde-format
 msgid "Content"
-msgstr ""
+msgstr "Saturs"
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
 #: useragent/useragent.ui:97
-#, fuzzy, kde-format
-#| msgid "&Export..."
+#, kde-format
 msgid "&Edit..."
-msgstr "&Eksportēt..."
+msgstr "&Rediģēt..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:110
 #, kde-format
 msgid "&Rename..."
-msgstr ""
+msgstr "&Pārdēvēt..."
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
 #: useragent/useragent.ui:123
 #, kde-format
 msgid "Du&plicate..."
-msgstr ""
+msgstr "Du&blēt..."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:136
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "&Delete"
-msgstr "Dzēs&t"
+msgstr "&Dzēst"
 
 #. i18n: ectx: property (text), widget (QPushButton, useTemplateBtn)
 #: useragent/useragent.ui:153
 #, kde-format
 msgid "Choose &selected identification"
-msgstr ""
+msgstr "Izvēlēties &atlasīto identifikāciju"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
 msgid "Use &default identification"
-msgstr ""
+msgstr "Izmantot &noklusējuma identifikāciju"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:181
 #, kde-format
 msgid "&Custom identification"
-msgstr ""
+msgstr "&Pielāgota identifikācija"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
 #: useragent/useragent.ui:191
@@ -2627,6 +2658,9 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>Pārlūkprogrammas identifikācija, ko lietot, kad ir "
+"izslēgta noklusējuma identifikācija.</p><p>Varat to ievadīt manuāli vai sākt "
+"ar kādu sarakstā un mainīt pēc vajadzības.</p></body></html>"
 
 #~ msgid ""
 #~ "This will open a new tab in the background, instead of in the foreground."

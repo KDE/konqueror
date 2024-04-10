@@ -6,19 +6,20 @@
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
 # Einars Sprugis <einars8@gmail.com>, 2010.
 # Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: searchbarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-09 00:37+0000\n"
-"PO-Revision-Date: 2011-07-08 12:55+0300\n"
-"Last-Translator: Rūdofls Mazurs <rudolfs.mazurs@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-04-07 21:38+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
@@ -29,7 +30,7 @@ msgid ""
 "provider.</p>"
 msgstr ""
 "Meklēšanas josla<p>Ievadiet meklējamo terminu. Noklikšķiniet uz ikonas, lai "
-"mainītu meklēšanas režīmu vai meklēšanas dzinēju.</p>"
+"mainītu meklēšanas režīmu vai meklētāju.</p>"
 
 #: searchbar.cpp:73
 #, kde-format
@@ -42,10 +43,9 @@ msgid "Focus Searchbar"
 msgstr "Fokusēt meklēšanas joslu"
 
 #: searchbar.cpp:279
-#, fuzzy, kde-format
-#| msgid "Find in This Page"
+#, kde-format
 msgid "Find in Page..."
-msgstr "Meklēt šajā lapā"
+msgstr "Meklēt lapā..."
 
 #: searchbar.cpp:299
 #, kde-format
@@ -55,12 +55,12 @@ msgstr "Meklēt šajā lapā"
 #: searchbar.cpp:311
 #, kde-format
 msgid "Select Search Engines..."
-msgstr "Izvēlēties meklēšanas dzinējus..."
+msgstr "Atlasiet meklēšanas dziņus..."
 
 #: searchbar.cpp:330
 #, kde-format
 msgid "Add %1..."
-msgstr "Pievienot %1..."
+msgstr "Pievienot „%1“..."
 
 #. i18n: ectx: ToolBar (locationToolBar)
 #: searchbarplugin.rc:3
@@ -71,17 +71,17 @@ msgstr "Meklēšanas rīkjosla"
 #: WebShortcutWidget.cpp:33
 #, kde-format
 msgid "Set Uri Shortcuts"
-msgstr "Iestatīt Uri īsceļus"
+msgstr "Iestatīt URI saīsnes"
 
 #: WebShortcutWidget.cpp:47
 #, kde-format
 msgid "Name:"
-msgstr "Vārds:"
+msgstr "Nosaukums:"
 
 #: WebShortcutWidget.cpp:51
 #, kde-format
 msgid "Shortcuts:"
-msgstr "Īsceļi:"
+msgstr "Saīsnes:"
 
 #~ msgid "Enable Suggestion"
 #~ msgstr "Ieslēgt ieteikumus"

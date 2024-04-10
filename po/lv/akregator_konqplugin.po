@@ -5,78 +5,75 @@
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
 # Einars Sprugis <einars8@gmail.com>, 2010.
 # Peteris Krisjanis <pecisk@gmail.com>, 2011.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: akregator_konqplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2011-07-13 22:48+0300\n"
-"Last-Translator: Peteris Krisjanis <pecisk@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-04-07 21:40+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
 #: akregatorplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Add Feed to Akregator"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Add Feed to Akregator"
-msgstr "Pievienot barotni Akregator"
+msgstr "Ziņu plūsmu pievienot „Akregator“"
 
 #: konqfeedicon.cpp:138
-#, fuzzy, kde-format
-#| msgid "Add Feed to Akregator"
+#, kde-format
 msgid "Add feed to Akregator"
-msgstr "Pievienot barotni Akregator"
+msgstr "Ziņu plūsmu pievienot „Akregator“"
 
 #: konqfeedicon.cpp:139
 #, kde-format
 msgid "Copy feed URL to clipboard"
-msgstr ""
+msgstr "Kopēt plūsmas URL starpliktuvē"
 
 #: konqfeedicon.cpp:140
 #, kde-format
 msgid "Open feed URL"
-msgstr ""
+msgstr "Atvērt plūsmas URL"
 
 #: konqfeedicon.cpp:151
 #, kde-format
 msgctxt "@title:menu title for the feeds menu"
 msgid "Feeds"
-msgstr ""
+msgstr "Ziņu plūsmas"
 
 #: konqfeedicon.cpp:157
 #, kde-format
 msgid "Add All Found Feeds to Akregator"
-msgstr "Pievienot Akregator visas atrastās barotnes"
+msgstr "Pievienot „Akregator“ visas atrastās ziņu plūsmas"
 
 #: konqfeedicon.cpp:248
 #, kde-format
 msgid "Subscribe to site updates (using news feed)"
-msgstr "Parakstīties uz vietnes izmaiņām (izmantojot jaunumu barotni)"
+msgstr "Abonēt vietnes izmaiņas (izmantojot ziņu plūsmu)"
 
 #: pluginutil.cpp:35 pluginutil.cpp:45
 #, kde-format
 msgid "Imported Feeds"
-msgstr "Importētās barotnes"
+msgstr "Importētās ziņu plūsmas"
 
 #: pluginutil.cpp:37
 #, kde-format
 msgid "Unable to contact Akregator via D-Bus"
-msgstr ""
+msgstr "Neizdodas savienoties ar „Akregator“, izmantojot „D-Bus“ sistēmu"
 
 #: pluginutil.cpp:38
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "The DBus call addFeedToGroup failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "D-Bus call failed"
-msgstr "DBus izsaukums addFeedToGroup neizdevās"
+msgstr "„D-Bus“ izsaukums neizdevās"
 
 #~ msgid "Add Feeds to Akregator"
 #~ msgstr "Pievienot barotnes Akregator"

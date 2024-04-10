@@ -7,19 +7,20 @@
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2007, 2008, 2009.
 # Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
 # Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:32+0000\n"
-"PO-Revision-Date: 2011-07-08 11:53+0300\n"
-"Last-Translator: Rūdofls Mazurs <rudolfs.mazurs@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-04-06 14:43+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
@@ -44,19 +45,19 @@ msgstr "&Izpildīt čaulas komandu..."
 msgid ""
 "KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
 msgstr ""
-"KShellCmdPlugin::slotExecuteShellCommand: Programmas kļūda. Lūdzu ziņojiet "
+"„KShellCmdPlugin::slotExecuteShellCommand:“ Programmas kļūda. Lūdzu ziņojiet "
 "par to."
 
 #: kshellcmdplugin.cpp:51
 #, kde-format
 msgid "Executing shell commands works only on local directories."
-msgstr "Čaulas komandu izpildīšana darbojas tikai uz lokālajām direktorijām."
+msgstr "Čaulas komandu izpildīšana darbojas tikai ar lokālajām mapēm."
 
 #: kshellcmdplugin.cpp:73
 #, kde-format
 msgctxt "@title:window"
 msgid "Execute Shell Command"
-msgstr "Izpilda čaulas komandu"
+msgstr "Izpildīt čaulas komandu"
 
 #: kshellcmdplugin.cpp:74
 #, kde-format
@@ -66,7 +67,7 @@ msgstr "Izpildīt čaulas komandu pašreizējā mapē:"
 #: kshellcmdplugin.cpp:85
 #, kde-format
 msgid "Output from command: \"%1\""
-msgstr "Izvade no komandas: \"%1\""
+msgstr "Izvade no komandas: „%1“"
 
 #~ msgid "no name"
 #~ msgstr "bez nosaukuma"

@@ -4,19 +4,20 @@
 #
 # Maris Nartiss <maris.kde@gmail.com>, 2007.
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2008-06-28 20:35+0300\n"
-"Last-Translator: Viesturs Zarins <viesturs.zarins@mii.lu.lv>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-04-06 14:29+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
@@ -31,13 +32,7 @@ msgid "System"
 msgstr "Sistēma"
 
 #: konqueror.cpp:24
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If enabled, an instance of Konqueror will be preloaded after the "
-#| "ordinary KDE startup sequence.</p><p>This will make the first Konqueror "
-#| "window open faster, but at the expense of longer KDE startup times (but "
-#| "you will be able to work while it is loading, so you may not even notice "
-#| "that it is taking longer).</p>"
+#, kde-format
 msgid ""
 "<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
 "Plasma startup sequence.</p><p>This will make the first Konqueror window "
@@ -45,20 +40,14 @@ msgid ""
 "be able to work while it is loading, so you may not even notice that it is "
 "taking longer).</p>"
 msgstr ""
-"<p>Ja ieslēgts, tad Konqueror instance tiks priekšielādēta pēc parastās KDE "
-"palaišanas secības.</p><p>Tas padarīs pirmā Konqueror loga atvēršanos "
-"ātrāku, taču tas būs uz ilgākas KDE palaišanas rēķina (bet jūs varēsiet sākt "
-"darbu jau tad, kad vēl notiek priekšielāde, tādēļ, iespējams, nemaz "
-"nepamanīsiet, ka tas prasa ilgāku laiku).</p>"
+"<p>Ja ieslēgts, tad „Konqueror“ instance tiks priekšielādēta pēc parastās "
+"„Plasma“ palaišanas secības.</p><p>Tas padarīs pirmā „Konqueror“ loga "
+"atvēršanos ātrāku, taču tas būs uz ilgākas „Plasma“ palaišanas rēķina (bet "
+"jūs varēsiet sākt darbu jau tad, kad vēl notiek priekšielāde, tādēļ, "
+"iespējams, nemaz nepamanīsiet, ka tas prasa ilgāku laiku).</p>"
 
 #: konqueror.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If enabled, KDE will always try to have one preloaded Konqueror "
-#| "instance ready; preloading a new instance in the background whenever "
-#| "there is not one available, so that windows will always open quickly.</"
-#| "p><p><b>Warning:</b> In some cases, it is actually possible that this "
-#| "will reduce perceived performance.</p>"
+#, kde-format
 msgid ""
 "<p>If enabled, Konqueror will always try to have one preloaded instance "
 "ready; preloading a new instance in the background whenever there is not one "
@@ -66,31 +55,28 @@ msgid ""
 "In some cases, it is actually possible that this will reduce perceived "
 "performance.</p>"
 msgstr ""
-"<p>Ja ieslēgts, tad KDE vienmēr mēģinās, lai būtu pieejama viena "
-"pirmsielādēta Konqueror instance, pirmsielādējot jaunu instanci fonā, kad "
-"vien nav vismaz viena brīva pieejama, lai logi vērtos ātrāk.</"
-"p><p><b>Uzmanību:</b> Dažos gadījumos pastāv iespēja, ka tas tieši samazinās "
+"<p>Ja ieslēgts, tad „Konqueror“ vienmēr mēģinās turēt priekšielādētu vienu "
+"savu instanci instance, kas ļaus jauniem logiem atvērties ātrāk.</"
+"p><p><b>Uzmanību:</b> dažos gadījumos pastāv iespēja, ka tas tieši samazinās "
 "uzskatāmo veiktspēju.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
 #: konqueror_ui.ui:17
 #, kde-format
 msgid "Preloading"
-msgstr "Pirmsielādēšana"
+msgstr "Priekšielādēšana"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
 #: konqueror_ui.ui:23
-#, fuzzy, kde-format
-#| msgid "Preload an instance after KDE startup"
+#, kde-format
 msgid "Preload an instance after desktop startup"
-msgstr "Pirmsielādēt instanci pēc KDE palaišanas"
+msgstr "Priekšielādēt instanci, palaižot darbvirsmu"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
 #: konqueror_ui.ui:30
-#, fuzzy, kde-format
-#| msgid "Always try to have at least one preloaded instance"
+#, kde-format
 msgid "Always try to have one preloaded instance"
-msgstr "Vienmēr censties, lai būtu vismaz viena pirmsielādēta instance"
+msgstr "Vienmēr turēt vienu instanci priekšielādētu"
 
 #: system.cpp:22
 #, kde-format
@@ -109,20 +95,19 @@ msgid ""
 "recommended to turn this option temporarily off while (un)installing "
 "applications.</p>"
 msgstr ""
-"<p>Startēšanās laikā KDE nepieciešams veikt sistēmas konfigurācijas pārbaudi "
-"(mime tipus, instalētās lietojumprogrammas utt.), un gadījumā, ja ir "
-"notikušas izmaiņas konfigurācijā kopš pēdējās pārbaudes, ir jāaktualizē "
-"sistēmas konfigurācijas kešatmiņa (KSyCoCa).</p><p>Šī opcija aiztur "
-"pārbaudi, kā rezultātā novērš visu mapju, kas satur aprakstus par sistēmu "
-"KDE startēšanai skenēšanu, tādā veidā padarot KDE startēšanos ātrāku. Tomēr "
-"retos gadījumos, kad sistēmas konfigurācija var būt izmainīta kopš pēdējās "
-"pārbaudes, un šī izmaiņa ir vajadzīga vēl pirms notiek aizturētā pārbaude, "
-"šī opcija var izraisīt dažādas problēmas (iztrūkstošas lietojumprogrammas K "
-"Izvēlnē <i>K Menu</i>, paziņojumus no lietojumprogrammām par neatrastiem "
-"nepieciešamiem mime tipiem utt.).</p><p>Sistēmas konfigurācijas izmaiņas "
-"pārsvarā notiek lietojumprogrammu (at)instalēšanas rezultātā. Tādēļ ir "
-"ieteicams atslēgt šo opciju uz laiku, kad tiek veikta lietojumprogrammu "
-"(at)instalācija.</p>"
+"<p>Startēšanās laikā KDE veic sistēmas konfigurācijas pārbaudi (MIME tipus, "
+"instalētās lietojumprogrammas utt.), bet gadījumā, ja ir notikušas izmaiņas "
+"konfigurācijā kopš pēdējās pārbaudes, ir jāaktualizē sistēmas konfigurācijas "
+"kešatmiņa („KSyCoCa“).</p><p>Šī opcija aiztur pārbaudi, kā rezultātā novērš "
+"visu mapju, kas satur aprakstus par sistēmu KDE startēšanai, skenēšanu, tādā "
+"veidā padarot KDE startēšanos ātrāku. Tomēr retos gadījumos, kad sistēmas "
+"konfigurācija var būt izmainīta kopš pēdējās pārbaudes, bet šī izmaiņa ir "
+"vajadzīga vēl pirms notiek aizturētā pārbaude, šī opcija var izraisīt "
+"dažādas problēmas (iztrūkstošas lietojumprogrammas „K“ izvēlnē <i>„K Menu“</"
+"i>, paziņojumus no lietojumprogrammām par neatrastiem nepieciešamiem MIME "
+"tipiem utt.).</p><p>Sistēmas konfigurācijas izmaiņas pārsvarā notiek "
+"lietojumprogrammu (at)instalēšanas rezultātā. Tādēļ ir ieteicams izslēgt šo "
+"opciju uz laiku, kad tiek veikta lietojumprogrammu (at)instalācija.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gb_)
 #: system_ui.ui:8
@@ -134,7 +119,7 @@ msgstr "Sistēmas konfigurācija"
 #: system_ui.ui:14
 #, kde-format
 msgid "Disable &system configuration startup check"
-msgstr "Atslēgt &sistēmas konfigurācijas pārbaudi pie palaišanas"
+msgstr "Izslēgt &sistēmas konfigurācijas pārbaudi pie palaišanas"
 
 #. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
 #: system_ui.ui:21
@@ -143,8 +128,8 @@ msgid ""
 "This option may in rare cases lead to various problems. Consult the What's "
 "This (Shift+F1) help for details."
 msgstr ""
-"Šī opcija var pa retam izraisīt dažādas problēmas. Detalizētāku informāciju "
-"meklē Kas tas ir (Shift+F1) palīdzībā."
+"Šī opcija retos gadījumos var izraisīt dažādas problēmas. Sīkāku informāciju "
+"meklējiet „Kas tas ir?“ („Shift“+F1) palīdzībā."
 
 #~ msgid ""
 #~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "

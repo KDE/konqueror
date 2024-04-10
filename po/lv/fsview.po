@@ -3,7 +3,8 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Maris Nartiss <maris.kde@gmail.com>, 2007.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+# Maris Nartiss <maris.kde@gmail.com>, 2007, 2024.
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2007, 2008.
 # Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011.
 msgid ""
@@ -11,26 +12,28 @@ msgstr ""
 "Project-Id-Version: fsview\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2011-07-07 23:26+0300\n"
-"Last-Translator: Rūdofls Mazurs <rudolfs.mazurs@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-04-09 08:46+0300\n"
+"Last-Translator: Māris Nartišs <maris.kde@gmail.com>\n"
+"Language-Team: \n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Rūdolfs Mazurs, Māris Nartišs, Viesturs Zariņš"
+msgstr "Rūdolfs Mazurs, Māris Nartišs, Viesturs Zariņš, Toms Trasūns"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "rudolfs.mazurs@gmail.com,maris.kde@gmail.com, viesturs.zarins@mi.lu.lv"
+msgstr ""
+"rudolfs.mazurs@gmail.com,maris.kde@gmail.com, viesturs.zarins@mi.lu.lv, toms."
+"trasuns@posteo.net"
 
 #: fsview.cpp:35 fsview.cpp:413
 #, kde-format
@@ -45,7 +48,7 @@ msgstr "Izmērs"
 #: fsview.cpp:37
 #, kde-format
 msgid "File Count"
-msgstr "Failu skaits"
+msgstr "Datņu skaits"
 
 #: fsview.cpp:38
 #, kde-format
@@ -55,7 +58,7 @@ msgstr "Mapju skaits"
 #: fsview.cpp:39
 #, kde-format
 msgid "Last Modified"
-msgstr "Pedējo reizi mainīts"
+msgstr "Pēdējo reizi mainīts"
 
 #: fsview.cpp:40 fsview.cpp:414
 #, kde-format
@@ -70,7 +73,7 @@ msgstr "Grupa"
 #: fsview.cpp:42 fsview.cpp:416
 #, kde-format
 msgid "Mime Type"
-msgstr "Mime tips"
+msgstr "MIME tips"
 
 #: fsview.cpp:283
 #, kde-format
@@ -110,7 +113,7 @@ msgstr "Pārlādēt"
 #: fsview.cpp:301
 #, kde-format
 msgid "Refresh '%1'"
-msgstr "Pārlādēt '%1'"
+msgstr "Pārlādēt „%1“"
 
 #: fsview.cpp:313 fsview_part.cpp:126
 #, kde-format
@@ -157,32 +160,33 @@ msgid ""
 "b> done.</p><p>For details on usage and options available, see the online "
 "help under menu 'Help/FSView Manual'.</p>"
 msgstr ""
-"<p>Šis ir FSView spraudnis, grafisks failu sistēmas pārlūkošanas režīms, kas "
-"parāda aizņemtās vietas sadalījumu.</p><p>Ņemiet vērtā ka šajā režīmā "
-"speciāli <b>netiek</b> veikta attēla atjaunošana, ja failu sistēmā notiek "
-"izmaiņas.</p><p>Vairāk informācijas par lietošanu un pieejamajām iespējām "
-"skatiet tīmekļa palīdzību  izvēlnē 'Palīdzība/FSView rokasgrāmata'.</p>"
+"<p>Šis ir „FSView“ spraudnis jeb grafisks datņu sistēmas pārlūkošanas "
+"režīms, kas parāda aizņemtās vietas sadalījumu.</p><p>Ņemiet vērtā ka šajā "
+"režīmā speciāli <b>netiek</b> veikta attēla pārlādēšana, ja datņu sistēmā "
+"notiek izmaiņas.</p><p>Vairāk informācijas par lietošanu un pieejamajām "
+"iespējām skatiet tīmekļa palīdzību izvēlnē „Palīdzība/„FSView“ rokasgrāmata“."
+"</p>"
 
 #: fsview_part.cpp:132
 #, kde-format
 msgid "&FSView Manual"
-msgstr "&FSView rokasgrāmata"
+msgstr "„&FSView“ rokasgrāmata"
 
 #: fsview_part.cpp:134
 #, kde-format
 msgid "Show FSView manual"
-msgstr "Parāda FSView rokasgrāmatu"
+msgstr "Parāda „FSView“ rokasgrāmatu"
 
 #: fsview_part.cpp:135
 #, kde-format
 msgid "Opens the help browser with the FSView documentation"
-msgstr "Atver FSView dokumentāciju palīdzības pārlūkā"
+msgstr "Atver „FSView“ dokumentāciju palīdzības pārlūkā"
 
 #: fsview_part.cpp:167
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Move to Trash"
-msgstr "Pārvietot uz miskasti"
+msgstr "Pārvietot uz atkritni"
 
 #: fsview_part.cpp:174
 #, kde-format
@@ -194,7 +198,7 @@ msgstr "Dzēst"
 #, kde-format
 msgctxt "@action:inmenu Edit"
 msgid "&Edit File Type..."
-msgstr "R&ediģēt failu tipu..."
+msgstr "R&ediģēt datnes tipu..."
 
 #: fsview_part.cpp:183
 #, kde-format
@@ -210,9 +214,9 @@ msgid ""
 "outside.\n"
 "For details, see the 'Help/FSView Manual'."
 msgstr ""
-"FSView neatbalsta automātisku atjaunināšanu, ja attēlojamajās mapēs vai "
-"failos tiek veiktas izmaiņas no ārpuses.\n"
-"Vairāk informācijas var atrast 'Palīdzība/FSView rokasgrāmata'."
+"„FSView“ neatbalsta automātisku pārlādēšanu, ja attēlojamajās mapēs vai "
+"datnēs notiek izmaiņas no ārpuses.\n"
+"Vairāk informācijas var atrast „Palīdzība/„FSView“ rokasgrāmata“."
 
 #. i18n: ectx: Menu (edit)
 #: fsview_part.rc:4
@@ -240,7 +244,7 @@ msgstr "FSView"
 #: main.cpp:24
 #, kde-format
 msgid "Filesystem Viewer"
-msgstr "Failsistēmas skatītājs"
+msgstr "Datņu sistēmas skatītājs"
 
 #: main.cpp:26
 #, kde-format
@@ -250,7 +254,7 @@ msgstr "(c) 2002, Josef Weidendorfer"
 #: main.cpp:33
 #, kde-format
 msgid "View filesystem starting from this folder"
-msgstr "Apskatīt failsistēmu sākot no šīs mapes"
+msgstr "Apskatīt datņu sistēmu, sākot no šīs mapes"
 
 #: treemap.cpp:1435
 #, kde-format
@@ -265,7 +269,7 @@ msgstr "Rekursīva dalīšana uz pusēm"
 #: treemap.cpp:3164
 #, kde-format
 msgid "Columns"
-msgstr "Kolonas"
+msgstr "Kolonnas"
 
 #: treemap.cpp:3166
 #, kde-format
@@ -340,7 +344,7 @@ msgstr "Redzams"
 #: treemap.cpp:3256
 #, kde-format
 msgid "Take Space From Children"
-msgstr "Paņemt telpu no bērniem"
+msgstr "Paņemt telpu no bērnobjektiem"
 
 #: treemap.cpp:3260
 #, kde-format
@@ -365,7 +369,7 @@ msgstr "Apakšējais kreisais"
 #: treemap.cpp:3272
 #, kde-format
 msgid "Bottom Center"
-msgstr "Apakšējais centra"
+msgstr "Apakšējais vidējais"
 
 #: treemap.cpp:3275
 #, kde-format
@@ -375,7 +379,7 @@ msgstr "Apakšējais labais"
 #: treemap.cpp:3342
 #, kde-format
 msgid "No %1 Limit"
-msgstr "Nav %1 ierobežojuma"
+msgstr "Nav „%1“ ierobežojuma"
 
 #: treemap.cpp:3401
 #, kde-format
@@ -385,7 +389,7 @@ msgstr "Nav platības ierobežojuma"
 #: treemap.cpp:3407
 #, kde-format
 msgid "Area of '%1' (%2)"
-msgstr "Izmērā '%1' (%2)"
+msgstr "„%1“ izmērs (%2)"
 
 #: treemap.cpp:3419 treemap.cpp:3432
 #, kde-format
@@ -403,7 +407,7 @@ msgstr "Dubultot platības ierobežojumu (uz %1)"
 #: treemap.cpp:3438
 #, kde-format
 msgid "Halve Area Limit (to %1)"
-msgstr "Divreiz mazāku platības ierobežojumu (uz %1)"
+msgstr "Uz pusi samazināt platības ierobežojumu (uz %1)"
 
 #: treemap.cpp:3474
 #, kde-format
@@ -413,7 +417,7 @@ msgstr "Nav dziļuma ierobežojuma"
 #: treemap.cpp:3480
 #, kde-format
 msgid "Depth of '%1' (%2)"
-msgstr "Dziļumā '%1' (%2)"
+msgstr "„%1“ dziļums (%2)"
 
 #: treemap.cpp:3492 treemap.cpp:3505
 #, kde-format
