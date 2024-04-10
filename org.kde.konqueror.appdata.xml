@@ -30,6 +30,7 @@
   <name xml:lang="it">Konqueror</name>
   <name xml:lang="ka">Konqueror</name>
   <name xml:lang="ko">Konqueror</name>
+  <name xml:lang="lv">Konqueror</name>
   <name xml:lang="my">ကွန်ကွာရာ</name>
   <name xml:lang="nb">Konqueror</name>
   <name xml:lang="nds">Konqueror</name>
@@ -76,6 +77,7 @@
   <summary xml:lang="it">Gestore dei file e browser web di KDE</summary>
   <summary xml:lang="ka">KDE-ის ფაილების მმართველი &amp; ბრაუზერი</summary>
   <summary xml:lang="ko">KDE 파일 관리자 및 웹 브라우저</summary>
+  <summary xml:lang="lv">KDE datņu pārvaldnieks un tīmekļa pārlūkprogramma</summary>
   <summary xml:lang="nb">KDE filbehandler og nettleser</summary>
   <summary xml:lang="nds">KDE sien Dateipleger un Nettkieker</summary>
   <summary xml:lang="nl">KDE's bestandsbeheerder &amp; webbrowser</summary>
@@ -121,6 +123,7 @@
     <p xml:lang="it">Konqueror è un browser web di KDE e un coltellino svizzero per qualsiasi tipo di gestione e anteprima dei file.</p>
     <p xml:lang="ka">Konqueror KDE-ის ბრაუზერი და შვეიცარული დანაა ყველანაირი ტიპის ფაილების მართვის თუ ნახვისთვის.</p>
     <p xml:lang="ko">Konqueror는 KDE의 웹 브라우저이자 만능 파일 관리 및 미리 보기 도구입니다.</p>
+    <p xml:lang="lv">„Konqueror“ ir KDE tīmekļa pārlūks un universāls rīks visa veida datņu pārlūkošanai un apskatīšanai.</p>
     <p xml:lang="nb">Konqueror er KDEs nettleser og multiverktøy for all slags filbehandling og forhåndsvisning.</p>
     <p xml:lang="nds">Konqueror is KDE sien Nettkieker un dat swiezer Offiziersmetz för all Problemen bi de Dateipleeg un för Vöransichten.</p>
     <p xml:lang="nl">Konqueror is de webbrowser van KDE en Zwitsers mes voor elk soort van bestandsbeheer en bekijken van bestanden.</p>
@@ -164,6 +167,7 @@
     <p xml:lang="it">Funzionalità</p>
     <p xml:lang="ka">თვისებები:</p>
     <p xml:lang="ko">기능:</p>
+    <p xml:lang="lv">Iespējas:</p>
     <p xml:lang="nb">Egenskaper:</p>
     <p xml:lang="nds">Markmalen:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
@@ -209,6 +213,7 @@
       <li xml:lang="it">Navigazione web utilizzando KHTML o KDEWebKit come motori di resa</li>
       <li xml:lang="ka">ბრაუზინგი KHTML და KDEWebKit -ის, როგორც რენდერერის, გამოყენებით</li>
       <li xml:lang="ko">KHTML 및 KDEWebKit 엔진 기반 웹 브라우징</li>
+      <li xml:lang="lv">Tīmekļa pārlūkošana, atveidošanai izmantojot KHTML vai „KDEWebKit“ dzini</li>
       <li xml:lang="nb">Nettlesing med KHTML eller KDEWebkit som opptegningsmotorer</li>
       <li xml:lang="nds">Nettkieken mit KHTML oder KDEWebKit as Dorstellkarns</li>
       <li xml:lang="nl">Webbrowsing met KHTML of KDEWebKit als engines voor weergave</li>
@@ -251,6 +256,7 @@
       <li xml:lang="it">Gestione dei file utilizzando la maggior parte delle funzionalità di Dolphin (incluse il controllo di versione, i menu di servizio e l'interfaccia di base)</li>
       <li xml:lang="ka">ფაილების მართვა Dolphin-ის თვისებების გამოყენებით (ვერსიის კონტროლის, სერვისის მენიუების და ძირითადი ინტერფეისის ჩათვლით)</li>
       <li xml:lang="ko">Dolphin의 기능을 사용하는 파일 관리(버전 관리, 서비스 메뉴, 기본 UI 포함)</li>
+      <li xml:lang="lv">Datņu pārvaldīšana, izmantojot lielāko daļu „Dolphin“ iespēju (tostarp versiju kontrole, darbību izvēlnes un pamata saskarni)</li>
       <li xml:lang="nb">Filbehandling som buker de fleste av Dolphins muligheter (bl.a. versjonsstyring, tjenestemenyer og den grunnleggende brukerflaten)</li>
       <li xml:lang="nds">Dateipleeg mit de mehrsten vun Dolphin sien Funkschonen (ok Verschoonkuntrull, Deenstmenüs un de Brukerböversiet)</li>
       <li xml:lang="nl">Bestandsbeheer met gebruik van de meeste functies van Dolphin (inclusief beheer van versies, service-menu's en de basis UI)</li>
@@ -293,6 +299,7 @@
       <li xml:lang="it">Gestione dei file su server ftp e sftp</li>
       <li xml:lang="ka">ფაილების მართვა FTP და SFTP სერვერებზე</li>
       <li xml:lang="ko">FTP 및 SFTP 서버 파일 관리</li>
+      <li xml:lang="lv">Datņu pārvaldība FTP un SFTP serveros</li>
       <li xml:lang="nb">Filbehandling på ftp- og sftp-tjenere</li>
       <li xml:lang="nds">Dateipleeg op FTP- un SFTP-Sersvers</li>
       <li xml:lang="nl">Bestandsbeheer op ftp- en sftp-servers</li>
@@ -335,6 +342,7 @@
       <li xml:lang="it">Client FTP completo di tutte le funzionalità (è possibile dividere la vista per visualizzare le cartelle locali e remote e le anteprime nelle stessa finestra)</li>
       <li xml:lang="ka">სრულად ფუნქციონალური FTP კლიენტი (შეგიძლიათ გაყოთ ხედები, რათა ორივე, ლოკალური და დაშორებული საქაღალდეები, ერთ ფანჯარაში დაინახოთ)</li>
       <li xml:lang="ko">완전한 FTP 클라이언트(같은 창에서 로컬 및 원격 폴더를 나눠서 볼 수 있음)</li>
+      <li xml:lang="lv">Pilnīgs FTP klients (varat sadalīt skatus, lai vienā logā redzētu lokālās un attālinātās mapes un priekšskatījumus)</li>
       <li xml:lang="nb">Fullt utstyrt FTP-klient (du kan dele vinduer slik at mapper på tjeneren og lokale mapper kan vises i samme vindu, sammen med forhåndsvisninger)</li>
       <li xml:lang="nds">FTP-Client mit all nödig Funkschonen (deelt Ansicht för lokaal un feern Ornern un Vöransichten binnen dat sülve Finster)</li>
       <li xml:lang="nl">FTP-client met alle functies (u kunt weergaven splitsen om lokale mappen en die op afstand te tonen en voorbeelden in hetzelfde venster)</li>
@@ -377,6 +385,7 @@
       <li xml:lang="it">Applicazioni integrate per l'anteprima dei file (ad es. Okular e Calligra per i documenti, Gwenview per le immagini, KTextEditor per i file di testo)</li>
       <li xml:lang="ka">ჩაშენებული აპლიკაციები ფაილების მინიატურებისთვის (მაგ: Okular და Caligra დოკუმენტებისთვის, Gvenview სურათებისთვის, KTextEditor ტექსტური ფაილებისთვის)</li>
       <li xml:lang="ko">파일을 미리 볼 수 있는 내장형 앱(예: 문서용 Okular, Calligra, 그림용 Gwenview, 텍스트용 KTextEditor)</li>
+      <li xml:lang="lv">Iegultas programmas datņu priekšskatīšanai (piemēram, „Okular“ un „Calligra“ dokumentiem, „Gewnview“ attēliem un „KTextEditor“ teksta datnēm)</li>
       <li xml:lang="nb">Innebygde programmer som kan forhåndsvise filer (f.eks. Okular og Calligra for dokumenter, Gwenview for bilder, KTextEditor for tekstfiler)</li>
       <li xml:lang="nl">Ingebedde toepassingen om bestanden te bekijken (bijv. Okular en Calligra voor documenten, Gwenview voor afbeeldingen, KTextEditor voor tekstbestanden)</li>
       <li xml:lang="nn">Innebygde program som kan førehandsvisa filer (for eksempel Okular og Calligra for dokument, Gwenview for bilete og KTextEditor for tekstfiler)</li>
@@ -418,6 +427,7 @@
       <li xml:lang="it">Diversi tipi di estensioni: menu di servizio, KPart (applicazioni integrate), KIO (accesso ai file utilizzando protocolli specifici come http o ftp) e estensioni KPart (come AdBlocker...)</li>
       <li xml:lang="ka">სხვადასხვა ტიპის დამატებები: სერვისული მენიუები, KParts (ჩაშენებული აპლიკაციები), KIO (ფაილებთან http/ftp-ის მსგავსი პროტოკოლებით წვდომა) და KPart-ის დამატებები (მაგ: AdBlocker…)</li>
       <li xml:lang="ko">다양한 플러그인: 서비스 메뉴, KParts(내장형 앱), KIO(HTTP, FTP 등 프로토콜을 사용한 파일 접근), KPart 플러그인(광고 차단 등)</li>
+      <li xml:lang="lv">Dažādi spraudņi: servisa izvēlnes, „KParts“ (iebūvētās programmas), KIO (datņu piekļuve ar speciāliem protokoliem, piemēram, HTTP vai FTP) un „KPart“ spraudņi (piemēram, „AdBlocker“ u.c.s)</li>
       <li xml:lang="nb">Diverse tilleggsmoduler: Tjenestemenyer, KParts (innebygde programmer), KIO (tilgang til filer ved bruk av spesielle protokoller som http elle ftp) og KPart-moduler (slik som AdBlocker osv.)</li>
       <li xml:lang="nds">Verscheden Moduul-Oorden: Deenstmenüs, KParts (inbett Programmen), KIO-In-/Utgaavmodulen (Togriep op Dateien över besünner Protokollen as HTTP oder FTP) un KPart-Modulen (as AdBlocker ...)</li>
       <li xml:lang="nl">Verschillende soorten plug-ins: Service-menu's, KParts (ingebedde toepassing), KIO (toegang tot bestanden met speciale protocollen zoals http of ftp) en KPart-plug-ins (zoals AdBlocker...)</li>
