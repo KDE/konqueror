@@ -17,7 +17,7 @@
 using namespace WebEngine;
 
 ActOnDownloadedFileBar::ActOnDownloadedFileBar(const QUrl &url, const QUrl& downloadUrl, WebEnginePart *part) :
-    KMessageWidget(i18nc("@label location where a remote URL was downloaded", "%1 was saved in %2", url.toDisplayString()), part->widget()),
+    KMessageWidget(i18nc("@label location where a remote URL was downloaded", "%1 was saved in %2", url.toDisplayString(), downloadUrl.toDisplayString()), part->widget()),
     m_part{part},
     m_downloadUrl{downloadUrl},
     m_openAction{new QAction(this)},
