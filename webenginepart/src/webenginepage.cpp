@@ -29,6 +29,7 @@
 #include <QWebEngineProfile>
 #include <KDialogJobUiDelegate>
 #include <QWebEngineView>
+#include <QStyleHints>
 
 #include <KMessageBox>
 #include <KLocalizedString>
@@ -111,6 +112,9 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     };
     connect(this, &QWebEnginePage::loadFinished, this, unsetInspectedPageIfNeeded);
 
+    updateBackgroundColor();
+    connect(WebEnginePartControls::self(), &WebEnginePartControls::updatePageBackground, this, &WebEnginePage::updateBackgroundColor);
+
     WebEnginePartControls::self()->navigationRecorder()->registerPage(this);
     m_part->downloadManager()->addPage(this);
 
@@ -120,6 +124,11 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
 WebEnginePage::~WebEnginePage()
 {
 //qCDebug(WEBENGINEPART_LOG) << this;
+}
+
+void WebEnginePage::updateBackgroundColor()
+{
+    setBackgroundColor(qApp->palette().color(QPalette::Window));
 }
 
 const WebSslInfo& WebEnginePage::sslInfo() const

@@ -69,6 +69,8 @@ signals:
      */
     void updateStyleSheet(const QString &script);
 
+    void updatePageBackground();
+
 private:
 
     WebEnginePartControls();
@@ -152,6 +154,14 @@ private:
     NavigationRecorder *m_navigationRecorder;
     QString m_defaultUserAgent;
     static constexpr const char* s_userStyleSheetScriptName{"apply konqueror user stylesheet"};
+};
+
+class DefaultPaletteChangedHandler : public QObject {
+    Q_OBJECT;
+    public:
+        DefaultPaletteChangedHandler(QObject *parent);
+        ~DefaultPaletteChangedHandler() override;
+        bool eventFilter(QObject *obj, QEvent *e) override;
 };
 
 #endif // WEBENGINEPARTCONTROLS_H
