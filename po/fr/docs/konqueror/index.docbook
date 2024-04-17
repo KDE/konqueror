@@ -60,7 +60,7 @@
 <keyword
 >Konqueror</keyword>
 <keyword
->Kdebase</keyword>
+>kdebase</keyword>
 <keyword
 >Gestionnaire de fichiers</keyword>
 <keyword
@@ -102,7 +102,7 @@
 ><emphasis
 >&konqueror;</emphasis
 > est un <link linkend="browser"
->navigateur web</link
+>navigateur Internet</link
 > conforme au <acronym
 >HTML</acronym
 > 4.01 avec gestion intégrée du JavaScript (ECMA-262), des &CSS; (Cascading Style Sheets, <quote
@@ -249,7 +249,7 @@
 ></keycombo
 > dans le nom en tant que raccourci clavier, &pex; <keycombo action="simul"
 >&Alt;<keycap
->É</keycap
+>E</keycap
 ></keycombo
 > pour afficher le menu <guimenu
 >Édition</guimenu
@@ -487,7 +487,7 @@ Sidebar</link
 >, <guibutton
 >Dossier parent</guibutton
 >, <guibutton
->Précedent</guibutton
+>Précédent</guibutton
 > et <guibutton
 >Suivant</guibutton
 > dans un nouvel onglet ou une nouvelle fenêtre.</para>
@@ -554,7 +554,7 @@ Sidebar</link
 >Un clic <mousebutton
 >droit</mousebutton
 > dans la zone de saisie des &URL; permet d'exécuter des opérations de Couper, Copier, Coller ou Effacer dans cette zone, ou de changer les fonctions <link linkend="path-complete"
->d'autocomplètement de texte</link
+>d'auto-complètement de texte</link
 >.</para
 ></listitem
 > 
@@ -623,7 +623,7 @@ Sidebar</link
 <para
 >Pour afficher une page d'aide de &kde;, saisissez <userinput
 >help:/<replaceable
->nom_de_l'application</replaceable
+>nom-application</replaceable
 ></userinput
 > (par exemple, <userinput
 >help:/kmail</userinput
@@ -1040,7 +1040,7 @@ Sidebar</link
 >Pour descendre dans un sous-dossier, cliquez avec le &BGS; sur son nom ou son icône ou, si vous l'avez <quote
 >sélectionné</quote
 > (voir ci-après), appuyez simplement sur <keysym
->&Entree;</keysym
+>Entrée</keysym
 >.</para
 ></listitem
 > 
@@ -1195,8 +1195,8 @@ find your way around the file system.</para>
 
 <para
 >Une autre raison explique que &konqueror; peut ne pas afficher le fichier ou le dossier que vous cherchez : lorsque vous avez activé le module <link linkend="konq-plugin"
-><guisubmenu
->Afficher la barre de filtre</guisubmenu
+><guilabel
+>Afficher la barre de filtre</guilabel
 ></link
 >, seuls certains types de fichiers sont affichés.</para>
 </note>
@@ -1469,9 +1469,7 @@ find your way around the file system.</para>
 
 <sect2 id="dnd">
 <title
->Utilisation du glisser-déposer (<quote
->Drag'n Drop</quote
->)</title>
+>Utilisation du glisser-déposer</title>
 
 <para
 >&konqueror; prend également en charge le glisser-déposer lors de la copie et du déplacement des fichiers et des dossiers.</para>
@@ -1697,7 +1695,7 @@ find your way around the file system.</para>
 
 <listitem
 ><para
->Sélectionnez un fichier ou un dossier en saisissant les premières lettres de son nom, et le premier élément correspondant sera sélectionné. Pour effacer la sélection et annuler la recherche au clavier, appuyez sur &Echap; ou attendez plus d'une seconde. </para
+>Sélectionnez un fichier ou un dossier en saisissant les premières lettres de son nom, et le premier élément correspondant sera sélectionné. Pour effacer la sélection et annuler la recherche au clavier, appuyez sur Échap; ou attendez plus d'une seconde. </para
 ></listitem>
 </itemizedlist>
 <!--FIXME end copy from dolphin docbook 16.04-->
@@ -1754,14 +1752,14 @@ find your way around the file system.</para>
 ><para
 ><userinput
 ><filename
->memo?.txt</filename
+>note?.txt</filename
 ></userinput
 > choisit <filename
->memo1.txt</filename
+>note1.txt</filename
 > et <filename
->memo9.txt</filename
+>note9.txt</filename
 > mais pas <filename
->memo99.txt</filename
+>note99.txt</filename
 >.</para
 ></listitem>
 </itemizedlist>
@@ -2156,7 +2154,7 @@ find your way around the file system.</para>
 >Une fois connecté à Internet, vous pouvez vous servir de &konqueror; pour explorer le Web aussi facilement que lorsque vous l'utilisez pour manipuler vos fichiers locaux. Saisissez simplement une &URL; dans la fenêtre de la barre d'<guilabel
 >&URL;</guilabel
 >, appuyez sur <keysym
->&Entree;</keysym
+>Entrée</keysym
 >, et vous y voilà !</para>
 
 <itemizedlist>
@@ -2186,7 +2184,7 @@ find your way around the file system.</para>
 
 <listitem
 ><para
->Si vous avez la chance de disposer d'une connexion haut débit par câble, votre fournisseur d'accès vous fournira certainement un modem-câble externe nécessitant une connexion ethernet à votre machine. Malheureusement, les détails sur la manière d'établir la connexion dépendent du fournisseur d'accès et dans une certaine mesure de la distribution Linux / &UNIX; que vous utilisez. Certains fournisseurs d'accès à internet connectent leurs clients à l'Internet via un serveur mandataire (proxy), auquel cas vous devrez configurer &konqueror; pour l'utiliser. Vous l'apprécierez peut-être pour trouver de l'aide dans les archives de la liste de diffusion des groupes d'utilisateurs de votre distribution.</para>
+>Si vous avez la chance de disposer d'une connexion haut débit par câble, votre fournisseur d'accès vous fournira certainement un modem-câble externe nécessitant une connexion Ethernet à votre machine. Malheureusement, les détails sur la manière d'établir la connexion dépendent du fournisseur d'accès et dans une certaine mesure de la distribution Linux / &UNIX; que vous utilisez. Certains fournisseurs d'accès à internet connectent leurs clients à l'Internet via un serveur mandataire (proxy), auquel cas vous devrez configurer &konqueror; pour l'utiliser. Vous l'apprécierez peut-être pour trouver de l'aide dans les archives de la liste de diffusion des groupes d'utilisateurs de votre distribution.</para>
 </listitem>
 </itemizedlist>
 
@@ -2218,7 +2216,7 @@ find your way around the file system.</para>
 > <guibutton
 >Aller</guibutton
 > située à l'extrémité droite de la barre d'emplacement pour que &konqueror; télécharge et affiche cette page. Si vous avez visité la page auparavant, la fonctionnalité <link linkend="path-complete"
->Autocomplètement de texte</link
+>Auto-complètement de texte</link
 > de &konqueror; vous aidera à saisir l'&URL; une seconde fois. Si vous désirez utiliser un des moteurs de recherche du web, la fonctionnalité <link linkend="enhanced-browsing"
 >Raccourcis web</link
 > de &konqueror; peut vous faciliter la tâche.</para>
@@ -2314,7 +2312,7 @@ find your way around the file system.</para>
 >KHTML</guimenuitem
 >. </para>
 <para
->Si vous voulez arrêter un téléchargement pour une raison quelconque, utilisez la touche &Echap;, le bouton de barre d'outils <guibutton
+>Si vous voulez arrêter un téléchargement pour une raison quelconque, utilisez la touche Échap;, le bouton de barre d'outils <guibutton
 >Arrêter</guibutton
 > ou l'élément de menu <menuchoice
 ><guimenu
@@ -2346,7 +2344,7 @@ find your way around the file system.</para>
 <title
 >Navigation par onglets</title>
 <para
->En utilisant cette caractéristique, &konqueror; peut charger plusieurs pages web dans la même fenêtre, et vous pouvez basculer de l'une à l'autre en utilisant les onglets. De cette façon, pous pouvez précharger une page <quote
+>En utilisant cette caractéristique, &konqueror; peut charger plusieurs pages web dans la même fenêtre, et vous pouvez basculer de l'une à l'autre en utilisant les onglets. De cette façon, vous pouvez précharger une page <quote
 >en tâche de fond</quote
 > tandis que vous en regardez une autre.</para>
 
@@ -2366,12 +2364,12 @@ find your way around the file system.</para>
 > de la souris alors que le pointeur de la souris se trouve sur un onglet (en supposant bien sûr que votre souris en ait une). Un double-clic sur un espace vide de la barre d'onglet ouvrira un nouvel onglet.</para>
 
 <para
->En utilisant l'option <guimenuitem
->Ouvrir les nouveaux onglets en arrière-plan</guimenuitem
+>En utilisant l'option <guilabel
+>Ouvrir les nouveaux onglets en arrière-plan</guilabel
 > dans la page <guilabel
 >Général</guilabel
-> de la boîte de dialogue de <guilabel
->Configuration</guilabel
+> de la boîte de dialogue de <guimenu
+>Configuration</guimenu
 >, lorsque vous cliquez sur un lien, la page est téléchargée, et un nouvel est ouvert pour cette dernière, mais la nouvelle page ne sera pas affichée tant que vous ne cliquez pas sur son onglet avec le &BGS;.</para>
 
 <para
@@ -2478,7 +2476,7 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Detacher l'onglet</guimenuitem
+>Détacher l'onglet</guimenuitem
 > (<keycombo action="simul"
 >&Ctrl;&Maj;<keycap
 >B</keycap
@@ -2525,7 +2523,7 @@ find your way around the file system.</para>
 >Pour voir quels raccourcis Web sont disponibles et pourquoi pas ajouter le vôtre, ouvrez le module <ulink url="help:/kcontrol/webshortcuts/"
 >Raccourcis web</ulink
 > dans la catégorie <guilabel
->Workspace</guilabel
+>Espace de travail</guilabel
 > de la &configurationDuSysteme;.</para>
 
 </sect1>
@@ -2548,7 +2546,7 @@ find your way around the file system.</para>
 <para
 >Pour activer les touches d'accès dans &konqueror;, appuyez et relâchez la touche &Ctrl;. Une fois qu'elle est pressée, si un lien particulier du site web a l'attribut <sgmltag class="attribute"
 >accesskey</sgmltag
-> dans le lien en question, alors le ou les caractères devraient apparaître au-dessus du lien, identifiant ce qui doit être pressé. Ansuite, vous pouvez saisir le ou les caractères associés au lien comme alternative au clic de souris. Pour désactiver les touches d'accès une fois activées, appuyez de nouveau sur &Ctrl;.</para>
+> dans le lien en question, alors le ou les caractères devraient apparaître au-dessus du lien, identifiant ce qui doit être pressé. Ensuite, vous pouvez saisir le ou les caractères associés au lien comme alternative au clic de souris. Pour désactiver les touches d'accès une fois activées, appuyez de nouveau sur &Ctrl;.</para>
 
 <note
 ><para
@@ -2755,7 +2753,7 @@ strings.</para
 >Si vous spécifiez un numéro de port dans votre &URL;, comme par exemple dans <userinput
 >http://intranet.corp.com:1080</userinput
 >, vous devriez obtenir le message d'erreur <quote
->Accès au port restreint dans POST refusé</quote
+>Accès au port restreint dans « POST » refusé</quote
 >. Ceci tient à des raisons de sécurité. Si vous devez néanmoins accéder à un serveur situé sur ce port, ajoutez simplement une ligne à la main <screen
 ><userinput>
 OverridenPorts=CommaSeparatedListOfAllowedPorts
@@ -2795,14 +2793,14 @@ OverridenPorts=CommaSeparatedListOfAllowedPorts
 
 
 <title
->Autocomplètement de texte</title
+>Auto-complètement de texte</title
 > 
 
 <para
 >&konqueror; peut vous aider à saisir un emplacement ou une &URL; dans la barre d'emplacement en activant une des fonctions d'<guimenuitem
->autocomplètement</guimenuitem
+>auto-complètement</guimenuitem
 >. Pour choisir la manière dont &konqueror; s'en chargera, cliquez avec le &BDS; sur une zone vide de la zone de saisie de la barre d'emplacement et choisissez <guisubmenu
->Autocomplètement du texte</guisubmenu
+>Auto-complètement du texte</guisubmenu
 >. Vous avez ainsi le choix parmi les possibilités suivantes :</para>
 
 <variablelist>
@@ -3806,7 +3804,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 >Rafraîchissement automatique (Affichage KHTML uniquement)</term>
 <listitem
 ><para
->Ceci fonctionne sur tout élément en lecture seule (mais actuellement uniquement dans le module khtmlpart). Il permet à &konqueror; de rafraîchir une page automatiquement après une durée spécifique. Ceci est utile pour les nouvelles pages et bien pratique pour ceux qui utilisent le mode Kiosk. </para
+>Ceci fonctionne sur tout élément en lecture seule (mais actuellement uniquement dans le module « khtmlpart »). Il permet à &konqueror; de rafraîchir une page automatiquement après une durée spécifique. Ceci est utile pour les nouvelles pages et bien pratique pour ceux qui utilisent le mode Kiosk. </para
 ></listitem>
 </varlistentry>
 
@@ -4054,10 +4052,10 @@ The following menu items show a list of popular browsers such as <guimenuitem
 >Le format de ce fichier est : </para>
 <programlisting
 ># ceci est un commentaire, les lignes commençant par « # » sont ignorées
-NOMDEFICHIER1:
+NOM-DE-FICHIER1:
 Description
 
-NOMDEFICHIER2:
+NOM-DE-FICHIER2:
 Description
 </programlisting>
 </listitem>
@@ -4230,12 +4228,12 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 >Introduction</title>
 
 <para
->Le module &fsview; pour &konqueror; est un autre mode d'affichage pour les objets dont le type MIME est <literal
->inode/directory</literal
->, pour des fichiers stockés localement. Il peut être considéré comme une alternative aux différentes vues par icônes ou listes pour parcourir le contenu du système de fichiers local.</para>
+>Le module &fsview; pour &konqueror; est un autre mode d'affichage pour les objets dont le type « MIME » est <literal
+>inode / directory</literal
+>, pour des fichiers enregistrés localement. Il peut être considéré comme une alternative aux différentes vues par icônes ou listes pour parcourir le contenu du système de fichiers local.</para>
 
 <para
->La propriété unique de &fsview; est sa capacité à afficher toute une hierarchie de dossiers à l'aide de ce qu'on appelle une vue en arbres pour la représentation graphique. La vue en arbres permet d'afficher la métrique des objets dans une structure imbriquée : chaque objet est représenté par un rectangle dont l'aire est proportionnelle à sa métrique. La somme des métriques des enfants d'un objet est égale ou inférieure à la métrique de cet objet.</para>
+>La propriété unique de &fsview; est sa capacité à afficher toute une hiérarchie de dossiers à l'aide de ce qu'on appelle une vue en arbres pour la représentation graphique. La vue en arbres permet d'afficher la métrique des objets dans une structure imbriquée : chaque objet est représenté par un rectangle dont l'aire est proportionnelle à sa métrique. La somme des métriques des enfants d'un objet est égale ou inférieure à la métrique de cet objet.</para>
 
 <para
 >Pour &fsview;, les tailles des fichiers et dossiers sont choisies comme métriques, sachant que la taille d'un d'un dossier est défini comme la somme de ses sous-éléments. De cette façon, les fichiers importants même situé profondément dans la hiérarchie des dossiers peuvent facilement être repérés en recherchant des grands rectangles. Donc &fsview; peut être vu comme une version graphique et interactive de la commande &UNIX; <command
@@ -4427,7 +4425,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 <listitem
 ><para
 ><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-navigation"
->Navigationt</ulink
+>Navigation</ulink
 > : configure la navigation dans le gestionnaire de fichiers.</para
 ></listitem>
 <listitem
@@ -4476,7 +4474,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><para
 ><ulink url="help:/kcontrol/khtml-adblock/index.html"
 >Filtres AdBlock</ulink
-> : configure les filtres AlBlocK de Konqueror.</para
+> : configure les filtres « AdBlock » de Konqueror.</para
 ></listitem>
 <listitem
 ><para
@@ -4690,7 +4688,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Fichier</guimenu
 ><guimenuitem
->Ouvir un fichier…</guimenuitem
+>Ouvrir un fichier…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -5046,7 +5044,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > (mode gestionnaire de fichiers)</term>
 <listitem
 ><para
->Crée un nouvel objet (comme un dossion ou un fichier texte) dans le dossier actuel. Consultez la section <link linkend="making"
+>Crée un nouvel objet (comme un dossier ou un fichier texte) dans le dossier actuel. Consultez la section <link linkend="making"
 >Nouveau...</link
 > pour plus de détails.</para
 ></listitem>
@@ -5522,7 +5520,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > (mode navigateur)</term>
 <listitem
 ><para
->Affiche le source du document en tant que cadre (frame)</para>
+>Affiche le texte source en tant que cadre</para>
 <para
 >Ne s'applique que si vous visionnez un site web utilisant des cadres. Semblable à <guimenuitem
 >Afficher le source du document</guimenuitem
@@ -6596,7 +6594,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 
 <listitem
 ><para
->Votre historique, tel qu'il est utilisé pour l'autocomplètement, se trouve dans <filename
+>Votre historique, tel qu'il est utilisé pour l'auto-complètement, se trouve dans <filename
 >konq_history</filename
 > in the folder <filename class="directory"
 >qtpaths --paths GenericConfigLocation</filename
@@ -6651,7 +6649,7 @@ in the folder <filename class="directory"
 <itemizedlist>
 <listitem
 ><para
->L'un sert à l'autocomplètement de texte dans la zone de saisie de la barre d'emplacement. La réinitialisation s'effectue par un clic <mousebutton
+>L'un sert à l'auto-complètement de texte dans la zone de saisie de la barre d'emplacement. La réinitialisation s'effectue par un clic <mousebutton
 >droit</mousebutton
 > sur la zone de saisie du texte et en choisissant <guimenuitem
 >Effacer l'historique</guimenuitem
@@ -6674,7 +6672,7 @@ in the folder <filename class="directory"
 </itemizedlist>
 <note
 ><para
->Vous pouvez également utiliser l'application &sweeper; du module kdeutils, qui vous permet de nettoyer les cookies, les favicons, l'historique web et le cache, les éléments d'autocomplètement des formulaires et les politiques de cache des sites visités.</para
+>Vous pouvez également utiliser l'application &sweeper; du module « kdeutils », qui vous permet de nettoyer les cookies, les émoticônes, l'historique et le cache Internet, les éléments d'auto-complètement des formulaires et les politiques de cache des sites visités.</para
 ></note>
 </answer>
 </qandaentry>
@@ -6783,7 +6781,7 @@ in the folder <filename class="directory"
 >.</para>
 <para
 >Vous pouvez trouver d'autres informations dans le <ulink url="http://forum.kde.org/"
->forum de la communauté KDE</ulink
+>forum de la communauté de KDE</ulink
 > ou sur la <ulink url="http://userbase.kde.org/Konqueror"
 >page KDE Userbase de Konqueror</ulink
 >.</para>
@@ -7049,7 +7047,7 @@ in the folder <filename class="directory"
 ></term>
 <listitem
 ><para
->auteur de kfm</para
+>Auteur de kfm</para
 ></listitem>
 </varlistentry>
 
