@@ -39,12 +39,8 @@ KonqSidebarBookmarkModule::KonqSidebarBookmarkModule(KonqSidebarTree *parentTree
       m_topLevelItem(0L), m_ignoreOpenChange(true)
 {
     if (!s_bookmarkManager) {
-#if QT_VERSION_MAJOR < 6
-        s_bookmarkManager = KBookmarkManager::userBookmarksManager();
-#else
         const QString bookmarksFile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/konqueror/bookmarks.xml");
-        s_manager = KBookmarkManager::managerForFile(bookmarksFile);
-#endif
+        s_bookmarkManager = KBookmarkManager::managerForFile(bookmarksFile);
     }
 
     // formats handled by K3BookmarkDrag:
@@ -100,13 +96,8 @@ KonqSidebarBookmarkModule::KonqSidebarBookmarkModule(KonqSidebarTree *parentTree
                             KStandardAction::editBookmarks(s_bookmarkManager,
                                     SLOT(slotEditBookmarks()), this));
 
-#if QT_VERSION_MAJOR < 6
-    connect(s_bookmarkManager, SIGNAL(changed(QString,QString)),
-            SLOT(slotBookmarksChanged(QString)));
-#else
     connect(s_bookmarkManager, SIGNAL(changed(QString)),
             SLOT(slotBookmarksChanged(QString)));
-#endif
 }
 
 KonqSidebarBookmarkModule::~KonqSidebarBookmarkModule()
@@ -554,11 +545,7 @@ KonqSidebarBookmarkItem *KonqSidebarBookmarkModule::findByAddress(const QString 
 {
     Q3ListViewItem *item = m_topLevelItem;
     // The address is something like /5/10/2
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    const QStringList addresses = address.split('/', QString::SkipEmptyParts);
-#else
     const QStringList addresses = address.split('/', Qt::SkipEmptyParts);
-#endif
     for (QStringList::const_iterator it = addresses.constBegin(); it != addresses.constEnd(); ++it) {
         uint number = (*it).toUInt();
         item = item->firstChild();

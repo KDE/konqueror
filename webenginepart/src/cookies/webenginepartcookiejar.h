@@ -10,7 +10,6 @@
 #define WEBENGINEPARTCOOKIEJAR_H
 
 #include "interfaces/cookiejar.h"
-#include "qtwebengine6compat.h"
 
 #include <QObject>
 #include <QNetworkCookie>
@@ -35,7 +34,7 @@ class QDBusPendingCallWatcher;
  *
  * @note All functions which access the cookie store are asynchronous
  */
-class KWEBENGINEPARTLIB_EXPORT WebEnginePartCookieJar6 : public KonqInterfaces::CookieJar
+class KWEBENGINEPARTLIB_EXPORT WebEnginePartCookieJar : public KonqInterfaces::CookieJar
 {
     Q_OBJECT
 
@@ -47,12 +46,12 @@ public:
     * @param [in,out] prof the profile containing the store to synchronize with
     * @param parent the parent object
     */
-    WebEnginePartCookieJar6(QWebEngineProfile* prof, QObject* parent = nullptr);
+    WebEnginePartCookieJar(QWebEngineProfile* prof, QObject* parent = nullptr);
 
     /**
      * @brief Destructor
      */
-    ~WebEnginePartCookieJar6() override;
+    ~WebEnginePartCookieJar() override;
 
     /**
      * @brief A set with all cookies in the cookie store
@@ -233,8 +232,8 @@ private:
     void writeConfig();
     
     friend QDebug operator<<(QDebug, const CookieIdentifier &);
-    friend QDataStream& operator>>(QDataStream &ds, WebEnginePartCookieJar6::CookieIdentifier &id);
-    friend QDataStream& operator<<(QDataStream &ds, const WebEnginePartCookieJar6::CookieIdentifier &id);
+    friend QDataStream& operator>>(QDataStream &ds, WebEnginePartCookieJar::CookieIdentifier &id);
+    friend QDataStream& operator<<(QDataStream &ds, const WebEnginePartCookieJar::CookieIdentifier &id);
 
     using CookieIdentifierList = QList<CookieIdentifier>;
 
@@ -270,7 +269,7 @@ private:
     * @param seed: the seed
     * @return The hash value of the identifier
     */
-    friend qHashReturnType qHash(const CookieIdentifier &id, uint seed){return qHash(QStringList{id.name, id.domain, id.path}, seed);};
+    friend size_t qHash(const CookieIdentifier &id, uint seed){return qHash(QStringList{id.name, id.domain, id.path}, seed);};
     
     /**
      * @brief The cookies stored in #m_cookieStore
@@ -312,7 +311,7 @@ private:
 * @param seed: the seed
 * @return The hash value of the cookie
 */
-qHashReturnType qHash(const QNetworkCookie &cookie, uint seed);
+size_t qHash(const QNetworkCookie &cookie, uint seed);
 
 /**
 * @brief Overload of operator `<<` to allow a WebEnginePartCookieJar6::CookieIdentifier to be written to a `QDebug`
@@ -321,7 +320,7 @@ qHashReturnType qHash(const QNetworkCookie &cookie, uint seed);
 * @param id the identifier to write
 * @return the debug object
 */
-QDebug operator<<(QDebug deb, const WebEnginePartCookieJar6::CookieIdentifier &id);
+QDebug operator<<(QDebug deb, const WebEnginePartCookieJar::CookieIdentifier &id);
 
 /**
  * @brief override of operator `>>` allowing to read a CookieIdentifier from a `QDataStream`
@@ -329,7 +328,7 @@ QDebug operator<<(QDebug deb, const WebEnginePartCookieJar6::CookieIdentifier &i
  * @param id the CookieIdentifier to read to @p ds
  * @return @p ds
  */
-QDataStream& operator>>( QDataStream &ds, WebEnginePartCookieJar6::CookieIdentifier &id);
+QDataStream& operator>>( QDataStream &ds, WebEnginePartCookieJar::CookieIdentifier &id);
 
 /**
  * @brief override of operator `<<` allowing to write a CookieIdentifier to a `QDataStream`
@@ -337,7 +336,7 @@ QDataStream& operator>>( QDataStream &ds, WebEnginePartCookieJar6::CookieIdentif
  * @param id the CookieIdentifier to write to @p ds
  * @return @p ds
  */
-QDataStream& operator<< (QDataStream &ds, const WebEnginePartCookieJar6::CookieIdentifier &id);
+QDataStream& operator<< (QDataStream &ds, const WebEnginePartCookieJar::CookieIdentifier &id);
 
 QDataStream& operator<< (QDataStream &ds, const QNetworkCookie &cookie);
 QDataStream& operator>> (QDataStream &ds, QNetworkCookie &cookie);

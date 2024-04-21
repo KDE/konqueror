@@ -25,7 +25,7 @@
 #include <kactioncollection.h>
 #include <KConfigGroup>
 #include <KConfig>
-#include "kf5compat.h" //For NavigationExtension
+#include <KParts/NavigationExtension>
 
 
 Q_GLOBAL_STATIC(SessionManager, globalSessionManager)
@@ -215,11 +215,7 @@ DirFilterPlugin::DirFilterPlugin(QObject *parent, const QVariantList &)
     if (m_part) {
         //Can't use modern connect syntax because aboutToOpenURL is specific to Dolphin part
         connect(m_part, SIGNAL(aboutToOpenURL()), this, SLOT(slotOpenURL()));
-#if QT_VERSION_MAJOR < 6
-        connect(m_part, QOverload<>::of(&KParts::ReadOnlyPart::completed), this, &DirFilterPlugin::slotOpenURLCompleted);
-#else
         connect(m_part, &KParts::ReadOnlyPart::completed, this, &DirFilterPlugin::slotOpenURLCompleted);
-#endif
     }
 
     KParts::ListingNotificationExtension *notifyExt = KParts::ListingNotificationExtension::childObject(m_part);

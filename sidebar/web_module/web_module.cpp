@@ -16,7 +16,7 @@
 #include <kglobal.h>
 #include <KLocalizedString>
 #include <kpluginfactory.h>
-#include "kf5compat.h" //For NavigationExtension
+#include <KParts/NavigationExtension>
 #include <knameandurlinputdialog.h>
 
 #include <QHBoxLayout>

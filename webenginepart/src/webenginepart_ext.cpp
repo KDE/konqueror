@@ -87,9 +87,7 @@ WebEngineNavigationExtension::WebEngineNavigationExtension(WebEnginePart *parent
     emit enableAction("paste", false);
     emit enableAction("print", true);
 
-#if QT_VERSION_MAJOR >= 6
     connect(view(), &QWebEngineView::printFinished, this, &WebEngineNavigationExtension::slotHandlePagePrinted);
-#endif
 
     if (cachedHistoryData.isEmpty()) {
         return;
@@ -283,11 +281,7 @@ void WebEngineNavigationExtension::print()
             return;
         }
         delete dialog;
-#if QT_VERSION_MAJOR < 6
-        view()->page()->print(mCurrentPrinter, invoke(this, &WebEngineNavigationExtension::slotHandlePagePrinted));
-#else
         view()->print(mCurrentPrinter);
-#endif
     }
 }
 
@@ -338,11 +332,7 @@ void WebEngineNavigationExtension::searchProvider()
 
     BrowserArguments bargs;
     bargs.frameName = QL1S("_blank");
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    emit openUrlRequest(url, KParts::OpenUrlArguments(), bargs);
-#else
     emit browserOpenUrlRequest(url, KParts::OpenUrlArguments(), bargs);
-#endif
 }
 
 void WebEngineNavigationExtension::reparseConfiguration()
@@ -853,12 +843,8 @@ void WebEngineNavigationExtension::slotPrintPreview()
     auto printPreview = [this](QPrinter *p){
         QEventLoop loop;
         auto preview = [&](bool) {loop.quit();};
-#if QT_VERSION_MAJOR < 6
-        m_view->page()->print(p, preview);
-#else
         m_view->print(p);
         connect(m_view, &QWebEngineView::printFinished, &loop, preview);
-#endif
         loop.exec();
     };
     connect(&dlg, &QPrintPreviewDialog::paintRequested, this, printPreview);
@@ -871,11 +857,7 @@ void WebEngineNavigationExtension::slotOpenSelection()
     if (action) {
         BrowserArguments browserArgs;
         browserArgs.frameName = QStringLiteral("_blank");
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        emit openUrlRequest(QUrl(action->data().toUrl()), KParts::OpenUrlArguments(), browserArgs);
-#else
         emit browserOpenUrlRequest(QUrl(action->data().toUrl()), KParts::OpenUrlArguments(), browserArgs);
-#endif
     }
 }
 
@@ -893,11 +875,7 @@ void WebEngineNavigationExtension::slotLinkInTop()
 
     const QUrl url(view()->contextMenuResult()->linkUrl());
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    emit openUrlRequest(url, uargs, bargs);
-#else
     emit browserOpenUrlRequest(url, uargs, bargs);
-#endif
 }
 
 ////

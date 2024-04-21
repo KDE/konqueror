@@ -23,19 +23,11 @@
 
 #include <QFile>
 
-#if QT_VERSION_MAJOR < 6
-#include <QX11Info>
-#else
 #include <QtGui/private/qtx11extras_p.h>
-#endif
 
 #ifdef KActivities_FOUND
-#if QT_VERSION_MAJOR < 6
-#include <KActivities/Consumer>
-#else //QT_VERSION_MAJOR
 #include <PlasmaActivities/Consumer>
-#endif //QT_VERSION_MAJOR
-#endif //KActivities_FOUND
+#endif
 
 // these DBus calls come from outside, so any windows created by these
 // calls would have old user timestamps (for KWin's no-focus-stealing),

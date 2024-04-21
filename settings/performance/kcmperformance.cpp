@@ -28,18 +28,10 @@ Config::Config(QObject *parent, const KPluginMetaData &md, const QVariantList &)
     QVBoxLayout *topLayout = new QVBoxLayout(widget());
     QTabWidget *tabs = new QTabWidget(widget());
     konqueror_widget = new Konqueror;
-#if QT_VERSION_MAJOR < 6
-    connect(konqueror_widget, &Konqueror::changed, this, &Config::markAsChanged);
-#else
     connect(konqueror_widget, &Konqueror::changed, this, [this](){setNeedsSave(true);});
-#endif
     tabs->addTab(konqueror_widget, i18n("Konqueror"));
     system_widget = new SystemWidget;
-#if QT_VERSION_MAJOR < 6
-    connect(system_widget, &SystemWidget::changed, this, &Config::markAsChanged);
-#else
     connect(system_widget, &SystemWidget::changed, this, [this](){setNeedsSave(true);});
-#endif
     tabs->addTab(system_widget, i18n("System"));
     topLayout->addWidget(tabs);
 }
@@ -62,9 +54,7 @@ void Config::defaults()
 {
     konqueror_widget->defaults();
     system_widget->defaults();
-#if QT_VERSION_MAJOR > 5
     setRepresentsDefaults(true);
-#endif
 }
 
 KonquerorConfig::KonquerorConfig(QObject *parent, const KPluginMetaData &md, const QVariantList &)
@@ -73,11 +63,7 @@ KonquerorConfig::KonquerorConfig(QObject *parent, const KPluginMetaData &md, con
     QVBoxLayout *topLayout = new QVBoxLayout(widget());
     topLayout->setContentsMargins(0, 0, 0, 0);
     m_widget = new Konqueror(widget());
-#if QT_VERSION_MAJOR < 6
-    connect(m_widget, &Konqueror::changed, this, &KonquerorConfig::markAsChanged);
-#else
     connect(m_widget, &Konqueror::changed, this, [this](){setNeedsSave(true);});
-#endif
     topLayout->addWidget(m_widget);
 }
 
@@ -96,9 +82,7 @@ void KonquerorConfig::save()
 void KonquerorConfig::defaults()
 {
     m_widget->defaults();
-#if QT_VERSION_MAJOR > 5
     setRepresentsDefaults(true);
-#endif
 }
 
 } // namespace

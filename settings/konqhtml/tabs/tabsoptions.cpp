@@ -43,10 +43,7 @@ void TabsOptions::defaults()
     m_config->setReadDefaults(true);
     load();
     m_config->setReadDefaults(old);
-
-#if QT_VERSION_MAJOR > 5
     setRepresentsDefaults(true);
-#endif
 }
 
 void TabsOptions::load()

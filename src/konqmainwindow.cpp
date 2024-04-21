@@ -85,11 +85,7 @@
 #include <QFileInfo>
 #include <QEvent>
 
-#if QT_VERSION_MAJOR < 6
-#include <QX11Info>
-#else
 #include <QtGui/private/qtx11extras_p.h>
-#endif
 
 #include <QKeyEvent>
 #include <QPixmap>
@@ -250,11 +246,6 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     // init history-manager, load history, get completion object
     if (!s_pCompletion) {
         s_bookmarkManager = Konq::userBookmarksManager();
-
-#if QT_VERSION_MAJOR < 6
-        // let the KBookmarkManager know that we are a browser, equals to "keditbookmarks --browser"
-        s_bookmarkManager->setEditorOptions(QStringLiteral("konqueror"), true);
-#endif
 
         KonqHistoryManager *mgr = new KonqHistoryManager(s_bookmarkManager);
         s_pCompletion = mgr->completionObject();
@@ -475,11 +466,7 @@ QString KonqMainWindow::detectNameFilter(QUrl &url)
                     nameFilter = fileName;
                 }
             } else { // not a local file
-#if QT_VERSION_MAJOR < 6
-                KIO::StatJob *job = KIO::statDetails(url, KIO::StatJob::DestinationSide, KIO::StatBasic, KIO::HideProgressInfo);
-#else
                 KIO::StatJob *job = KIO::stat(url, KIO::StatJob::DestinationSide, KIO::StatBasic, KIO::HideProgressInfo);
-#endif
                 // if there's an error stat'ing url, then assume it doesn't exist
                 nameFilter = !job->exec() ? fileName : QString();
             }
@@ -517,7 +504,7 @@ void KonqMainWindow::openFilteredUrl(const QString &url, const KonqOpenURLReques
     // If it is changed, then it's done in KonqViewManager::doSetActivePart
     if (m_currentView) {
         m_currentView->setFocus();
-#if QT_VERSION_MAJOR >= 6
+#if QT_VERSION < QT_VERSION_CHECK(6,6,3)
         //See KonqView::forceWebEnginePartFocus for an explanation of this code and the Qt bug
         //it works around
         KParts::ReadOnlyPart *part = m_currentView->part();
@@ -917,13 +904,9 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
             childView->part()->setArguments(req.args);
         }
         if (childView->browserExtension()) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-            childView->browserExtension()->setBrowserArguments(req.browserArgs);
-#else
             if (auto browserExt = qobject_cast<BrowserExtension *>(childView->browserExtension())) {
                 browserExt->setBrowserArguments(req.browserArgs);
             }
-#endif
         }
 
         // see dolphinpart
@@ -1246,11 +1229,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
 
     // WORKAROUND: Clear the window state information set by KMainWindow::restoreWindowSize
     // so that the size and location settings we set below always take effect.
-#if QT_VERSION_MAJOR < 6
-    KWindowSystem::clearState(mainWindow->winId(), NET::Max);
-#else
     KX11Extras::clearState(mainWindow->winId(), NET::Max);
-#endif
 
     // process the window args
     const int xPos = ((windowArgs.x() == -1) ?  mainWindow->x() : windowArgs.x());
@@ -1883,11 +1862,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
         qCDebug(KONQUEROR_LOG) << "No Browser Extension for the new part";
         // Disable all browser-extension actions
 
-#if QT_VERSION_MAJOR < 6
-        KParts::NavigationExtension::ActionSlotMap *actionSlotMap = KParts::NavigationExtension::actionSlotMapPtr();
-#else
         KParts::NavigationExtension::ActionSlotMap *actionSlotMap = KParts::NavigationExtension::actionSlotMap();
-#endif
         KParts::NavigationExtension::ActionSlotMap::ConstIterator it = actionSlotMap->constBegin();
         const KParts::NavigationExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->constEnd();
         for (; it != itEnd; ++it) {
@@ -3882,11 +3857,7 @@ QString KonqMainWindow::findIndexFile(const QString &dir)
 
 void KonqMainWindow::connectExtension(KParts::NavigationExtension *ext)
 {
-#if QT_VERSION_MAJOR < 6
-    KParts::NavigationExtension::ActionSlotMap *actionSlotMap = KParts::NavigationExtension::actionSlotMapPtr();
-#else
     KParts::NavigationExtension::ActionSlotMap *actionSlotMap = KParts::NavigationExtension::actionSlotMap();
-#endif
     KParts::NavigationExtension::ActionSlotMap::ConstIterator it = actionSlotMap->constBegin();
     KParts::NavigationExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->constEnd();
 
@@ -3897,11 +3868,7 @@ void KonqMainWindow::connectExtension(KParts::NavigationExtension *ext)
             // Does the extension have a slot with the name of this action ?
             if (ext->metaObject()->indexOfSlot(QByteArray(it.key() + "()").constData()) != -1) {
                 //Can't use modern connect syntax as the slot name is stored inside the map
-#if QT_VERSION_MAJOR < 6
                 connect(act, SIGNAL(triggered()), ext, it.value().constData() /* SLOT(slot name) */);
-#else
-                connect(act, SIGNAL(triggered()), ext, it.value().constData() /* SLOT(slot name) */);
-#endif
                 act->setEnabled(ext->isActionEnabled(it.key().constData()));
                 const QString text = ext->actionText(it.key().constData());
                 if (!text.isEmpty()) {
@@ -3922,11 +3889,7 @@ void KonqMainWindow::connectExtension(KParts::NavigationExtension *ext)
 
 void KonqMainWindow::disconnectExtension(KParts::NavigationExtension *ext)
 {
-#if QT_VERSION_MAJOR < 6
-    KParts::NavigationExtension::ActionSlotMap *actionSlotMap = KParts::NavigationExtension::actionSlotMapPtr();
-#else
     KParts::NavigationExtension::ActionSlotMap *actionSlotMap = KParts::NavigationExtension::actionSlotMap();
-#endif
     KParts::NavigationExtension::ActionSlotMap::ConstIterator it = actionSlotMap->constBegin();
     KParts::NavigationExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->constEnd();
 
@@ -3978,11 +3941,7 @@ void KonqMainWindow::setActionText(const char *name, const QString &text)
 void KonqMainWindow::enableAllActions(bool enable)
 {
     //qCDebug(KONQUEROR_LOG) << enable;
-#if QT_VERSION_MAJOR < 6
-    KParts::NavigationExtension::ActionSlotMap *actionSlotMap = KParts::NavigationExtension::actionSlotMapPtr();
-#else
     KParts::NavigationExtension::ActionSlotMap *actionSlotMap = KParts::NavigationExtension::actionSlotMap();
-#endif
 
     const QList<QAction *> actions = actionCollection()->actions();
     QList<QAction *>::ConstIterator it = actions.constBegin();
@@ -4222,34 +4181,21 @@ static KonqPopupMenu::ActionGroupMap convertActionGroups(const KParts::Navigatio
     return agm;
 }
 
-void KonqMainWindow::slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags flags, const KParts::NavigationExtension::ActionGroupMap &actionGroups
-#if QT_VERSION_MAJOR < 6
-                     )
-#else
-, KonqView *currentView)
-#endif
+void KonqMainWindow::slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args,
+                                   const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags flags,
+                                   const KParts::NavigationExtension::ActionGroupMap &actionGroups, KonqView *currentView)
 {
     KFileItem item(url, args.mimeType(), mode);
     KFileItemList items;
     items.append(item);
-#if QT_VERSION_MAJOR < 6
-    slotPopupMenu(global, items, args, browserArgs, flags, actionGroups);
-#else
     slotPopupMenu(global, items, args, browserArgs, flags, actionGroups, currentView);
-#endif
 }
 
-void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags itemFlags, const KParts::NavigationExtension::ActionGroupMap &actionGroups
-#if QT_VERSION_MAJOR < 6
-                     )
-#else
-, KonqView *currentView)
-#endif
+void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args,
+                                   const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags itemFlags,
+                                   const KParts::NavigationExtension::ActionGroupMap &actionGroups, KonqView *currentView)
 {
     KonqView *m_oldView = m_currentView;
-#if QT_VERSION_MAJOR < 6
-    KonqView *currentView = childView(static_cast<KParts::ReadOnlyPart *>(sender()->parent()));
-#endif
 
     //qCDebug(KONQUEROR_LOG) << "m_oldView=" << m_oldView << "new currentView=" << currentView << "passive:" << currentView->isPassiveMode();
 
@@ -5423,21 +5369,6 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
     bool proxyConfigurationSupported = false;
     QNetworkProxy httpProxy;
     QNetworkProxy httpsProxy;
-#if QT_VERSION_MAJOR < 6
-    QString httpProxyHost = KProtocolManager::proxyFor(QStringLiteral("http"));
-    QString httpsProxyHost = KProtocolManager::proxyFor(QStringLiteral("https"));
-    proxyConfigurationSupported = httpsProxyHost == httpProxyHost;
-    if ((httpProxyHost.isEmpty() && httpsProxyHost.isEmpty()) || (httpProxyHost == "DIRECT" && httpsProxyHost == "DIRECT")) {
-        QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
-        return;
-    }
-    if (!httpProxyHost.isEmpty() && httpProxyHost != QStringLiteral("DIRECT")) {
-        httpProxy = {QNetworkProxy::HttpProxy, httpProxyHost};
-    }
-    if (!httpsProxyHost.isEmpty() && httpsProxyHost != QStringLiteral("DIRECT")) {
-        httpsProxy = {QNetworkProxy::HttpProxy, httpsProxyHost};
-    }
-#else
     QList<QNetworkProxy> httpProxies = QNetworkProxyFactory::proxyForQuery(QNetworkProxyQuery{QUrl("http:")});
     QList<QNetworkProxy> httpsProxies = QNetworkProxyFactory::proxyForQuery(QNetworkProxyQuery{QUrl("https:")});
     if (!httpProxies.isEmpty()) {
@@ -5447,7 +5378,6 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
         httpsProxy = httpsProxies.first();
     }
     proxyConfigurationSupported = httpProxy == httpsProxy;
-#endif
 
     QNetworkProxy proxy = httpsProxy;
 

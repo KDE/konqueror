@@ -10,8 +10,6 @@
 
 #include <QRect>
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-
 class WindowArgsPrivate : public QSharedData
 {
 public:
@@ -217,5 +215,3 @@ bool WindowArgs::scrollBarsVisible() const
 {
     return d->scrollBarsVisible;
 }
-
-#endif

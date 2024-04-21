@@ -12,17 +12,8 @@
 
 #include <kparts/part.h>
 
-//We don't use kf5compat.h to avoid linking with libkonq
-//TODO KF6: when removing compatibility with KF5, remove #if
 #include <QtGlobal>
-#if QT_VERSION_MAJOR < 6
-#include <KParts/BrowserExtension>
-namespace KParts {
-  typedef BrowserExtension NavigationExtension;
-}
-#else
 #include <KParts/NavigationExtension>
-#endif
 #include <kio/job.h>
 #include <kfileitem.h>
 

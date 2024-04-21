@@ -239,10 +239,7 @@ void KJavaOptions::defaults()
     serverTimeoutSB->setValue(60);
     toggleJavaControls();
     setNeedsSave(true);
-
-#if QT_VERSION_MAJOR > 5
     setRepresentsDefaults(true);
-#endif
 }
 
 void KJavaOptions::save()

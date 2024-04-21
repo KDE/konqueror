@@ -14,13 +14,7 @@
 
 #include <kwebenginepartlib_export.h>
 
-#ifdef MANAGE_COOKIES_INTERNALLY
-#include "cookies/webenginepartcookiejar6.h"
-typedef WebEnginePartCookieJar6 WebEnginePartCookieJar;
-#else
-#include "cookies/webenginepartcookiejar_kio.h"
-typedef WebEnginePartCookieJarKIO WebEnginePartCookieJar;
-#endif
+#include "cookies/webenginepartcookiejar.h"
 
 class QWebEngineProfile;
 class QWebEngineScript;
@@ -32,11 +26,7 @@ class NavigationRecorder;
 
 namespace KonqWebEnginePart {
     class CertificateErrorDialogManager;
-#if QT_VERSION_MAJOR == 6
     class Profile;
-#else
-    typedef QWebEngineProfile Profile;
-#endif
 }
 
 class KWEBENGINEPARTLIB_EXPORT WebEnginePartControls : public QObject

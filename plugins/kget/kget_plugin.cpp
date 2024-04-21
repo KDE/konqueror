@@ -104,51 +104,21 @@ static bool hasDropTarget()
 
 KGetPlugin::SelectorInterface::SelectorInterface(HtmlExtension* ext)
 {
-#if QT_VERSION_MAJOR < 6
-    KParts::SelectorInterface *syncIface = qobject_cast<KParts::SelectorInterface*>(ext);
-    if (syncIface) {
-        interfaceType = SelectorInterfaceType::Sync;
-        syncInterface = syncIface;
-    } else {
-#endif
-        AsyncSelectorInterface *asyncIface = qobject_cast<AsyncSelectorInterface*>(ext);
-        if (asyncIface) {
-            interfaceType = SelectorInterfaceType::Async;
-            asyncInterface = asyncIface;
-        }
-#if QT_VERSION_MAJOR < 6
+    AsyncSelectorInterface *asyncIface = qobject_cast<AsyncSelectorInterface*>(ext);
+    if (asyncIface) {
+        interfaceType = SelectorInterfaceType::Async;
+        asyncInterface = asyncIface;
     }
-#endif
 }
 
 bool KGetPlugin::SelectorInterface::hasInterface() const
 {
-#if QT_VERSION_MAJOR < 6
-    return ((interfaceType == SelectorInterfaceType::Sync && syncInterface) || (interfaceType == SelectorInterfaceType::Async && asyncInterface));
-#else
     return interfaceType == SelectorInterfaceType::Async && asyncInterface;
-#endif
 }
 
 AsyncSelectorInterface::QueryMethods KGetPlugin::SelectorInterface::supportedMethods() const
 {
-#if QT_VERSION_MAJOR < 6
-    if (interfaceType == SelectorInterfaceType::Sync) {
-        auto methods = syncInterface->supportedQueryMethods();
-        AsyncSelectorInterface::QueryMethods res;
-        if (methods & KParts::SelectorInterface::SelectedContent) {
-            res |= AsyncSelectorInterface::SelectedContent;
-        }
-        if (methods & KParts::SelectorInterface::EntireContent) {
-            res |= AsyncSelectorInterface::EntireContent;
-        }
-        return res;
-    } else {
-        return asyncInterface->supportedAsyncQueryMethods();
-    }
-#else
     return asyncInterface->supportedAsyncQueryMethods();
-#endif
 }
 
 void KGetPlugin::showPopup()
@@ -264,12 +234,7 @@ void KGetPlugin::getLinks(bool selectedOnly)
             const QUrl baseUrl = htmlExtn->baseUrl();
             const QString query = QL1S("a[href], img[src], audio[src], video[src], embed[src], object[data]");
             const AsyncSelectorInterface::QueryMethod method = (selectedOnly ? AsyncSelectorInterface::SelectedContent : AsyncSelectorInterface::EntireContent);
-            if (iface.interfaceType == SelectorInterfaceType::Sync) {
-#if QT_VERSION_MAJOR < 6
-                const QList<AsyncSelectorInterface::Element> elements = iface.syncInterface->querySelectorAll(query, static_cast<KParts::SelectorInterface::QueryMethod>(method));
-                fillLinkListFromHtml(baseUrl, elements);
-#endif
-            } else if (iface.interfaceType == SelectorInterfaceType::Async) {
+            if (iface.interfaceType == SelectorInterfaceType::Async) {
                 auto callback = [this, baseUrl](const QList<AsyncSelectorInterface::Element>& elements){
                     fillLinkListFromHtml(baseUrl, elements);
                 };

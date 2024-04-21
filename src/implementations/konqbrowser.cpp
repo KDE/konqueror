@@ -18,11 +18,7 @@
 
 using namespace KonqInterfaces;
 
-#if QT_VERSION_MAJOR == 6
 #define CHROME_VERSION "108.0.5359.220"
-#else
-#define CHROME_VERSION "87.0.4280.144"
-#endif
 
 QString KonqBrowser::konquerorUserAgent() {
     QString s_konqUserAgent{QStringLiteral("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/%1 Chrome/%2 Safari/537.36 Konqueror (WebEngine)").arg(qVersion()).arg(CHROME_VERSION)};

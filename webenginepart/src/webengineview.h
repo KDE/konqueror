@@ -12,11 +12,12 @@
 #define WEBENGINEVIEW_H
 
 #include <QPointer>
-#include "kf5compat.h" //For NavigationExtension
-#include "qtwebengine6compat.h" //For QWebEngineContextMenuRequest
+#include <KParts/NavigationExtension>
+
 #include "browserarguments.h"
 
 #include <QWebEngineView>
+#include <QWebEngineContextMenuRequest>
 
 class QUrl;
 class WebEnginePart;
@@ -53,10 +54,7 @@ protected:
     /**
      * @brief Improve drag and drop functionality provided by `QWebEngineView`
      *
-     * Before Qt 5.15.5, `QWebEngineView` didn't allow to open remote URLs by drag and drop. This function, together with
-     * dragEnterEvent(), dragMoveEvent() and m_dragAndDropHandledBySuperclass allow that.
-     *
-     * In Qt 5.15.5, `QWebEngineView` allows opening remote URLs by drag and drop, but forces doing so in a new tab.
+     * `QWebEngineView` allows opening remote URLs by drag and drop, but forces doing so in a new tab.
      * This reimplemented method, instead, opens it in the current view.
      *
      * @note Implementing this function with the behavior of `QWebEngineView` from Qt 5.15.5 is impossible without resorting
@@ -75,12 +73,6 @@ protected:
      * @see WebEnginePage::setDropOperationStarted():
      */
     void dropEvent(QDropEvent *e) override;
-
-#ifdef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
-    void dragEnterEvent(QDragEnterEvent *e) override;
-
-    void dragMoveEvent(QDragMoveEvent *e) override;
-#endif
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
@@ -139,11 +131,8 @@ private:
     const QWebEngineContextMenuRequest* result() const;
 
     KActionCollection* m_actionCollection;
-#if QT_VERSION_MAJOR < 6
-    QWebEngineContextMenuRequest m_result;
-#else
     QPointer<QWebEngineContextMenuRequest> m_result = nullptr;
-#endif
+
     QPointer<WebEnginePart> m_part;
 
     qint32 m_autoScrollTimerId;

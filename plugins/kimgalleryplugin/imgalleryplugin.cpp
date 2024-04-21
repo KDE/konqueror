@@ -13,9 +13,6 @@
 #include <QDateTime>
 #include <QPixmap>
 #include <QImage>
-#if QT_VERSION_MAJOR < 6
-#include <QTextCodec>
-#endif
 #include <QApplication>
 #include <QDesktopServices>
 #include <QImageReader>
@@ -35,13 +32,6 @@
 #include "imgallery_debug.h"
 
 K_PLUGIN_CLASS_WITH_JSON(KImGalleryPlugin, "kimgalleryplugin.json")
-
-// Eliminate lots of deprecation warnings with Qt 5.15.
-// Using a macro to redefine well known symbols is not good practice, but
-// the alternative is lots of QT_VERSION_CHECK conditionals everywhere.
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-#define endl Qt::endl
-#endif
 
 static QString directory(const QUrl &url) {
     return url.adjusted(QUrl::StripTrailingSlash).adjusted(QUrl::RemoveFilename).toLocalFile();
@@ -126,21 +116,17 @@ void KImGalleryPlugin::createHead(QTextStream &stream)
     const QString chsetName =
 //TODO KF6: in Qt6, QTextCodec doesn't exist anymore and its "replacement", QStringConverter, only supports a
 //small number of encodigs. For the time being, use the default (UTF-8).
-#if QT_VERSION_MAJOR < 6
-    QTextCodec::codecForLocale()->name();
-#else
     QStringLiteral("UTF-8");
-#endif
 
-    stream << "<?xml version=\"1.0\" encoding=\"" +  chsetName + "\" ?>" << endl;
-    stream << "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">" << endl;
-    stream << "<html xmlns=\"http://www.w3.org/1999/xhtml\">" << endl;
-    stream << "<head>" << endl;
-    stream << "<title>" << m_configDlg->getTitle().toHtmlEscaped() << "</title>" << endl;
-    stream << "<meta http-equiv=\"content-type\" content=\"text/html; charset=" << chsetName << "\"/>" << endl;
-    stream << "<meta name=\"GENERATOR\" content=\"KDE Konqueror KImgallery plugin version " KDE_VERSION_STRING "\"/>" << endl;
+    stream << "<?xml version=\"1.0\" encoding=\"" +  chsetName + "\" ?>" << Qt::endl;
+    stream << "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">" << Qt::endl;
+    stream << "<html xmlns=\"http://www.w3.org/1999/xhtml\">" << Qt::endl;
+    stream << "<head>" << Qt::endl;
+    stream << "<title>" << m_configDlg->getTitle().toHtmlEscaped() << "</title>" << Qt::endl;
+    stream << "<meta http-equiv=\"content-type\" content=\"text/html; charset=" << chsetName << "\"/>" << Qt::endl;
+    stream << "<meta name=\"GENERATOR\" content=\"KDE Konqueror KImgallery plugin version " KDE_VERSION_STRING "\"/>" << Qt::endl;
     createCSSSection(stream);
-    stream << "</head>" << endl;
+    stream << "</head>" << Qt::endl;
 }
 
 void KImGalleryPlugin::createCSSSection(QTextStream &stream)
@@ -149,14 +135,14 @@ void KImGalleryPlugin::createCSSSection(QTextStream &stream)
     const QString foregroundColor = m_configDlg->getForegroundColor().name();
     //adding a touch of style
     stream << "<style type='text/css'>\n";
-    stream << "BODY {color: " << foregroundColor << "; background: " << backgroundColor << ";" << endl;
-    stream << "          font-family: " << m_configDlg->getFontName() << ", sans-serif;" << endl;
-    stream << "          font-size: " << m_configDlg->getFontSize() << "pt; margin: 8%; }" << endl;
-    stream << "H1       {color: " << foregroundColor << ";}" << endl;
-    stream << "TABLE    {text-align: center; margin-left: auto; margin-right: auto;}" << endl;
-    stream << "TD       { color: " << foregroundColor << "; padding: 1em}" << endl;
-    stream << "IMG      { border: 1px solid " << foregroundColor << "; }" << endl;
-    stream << "</style>" << endl;
+    stream << "BODY {color: " << foregroundColor << "; background: " << backgroundColor << ";" << Qt::endl;
+    stream << "          font-family: " << m_configDlg->getFontName() << ", sans-serif;" << Qt::endl;
+    stream << "          font-size: " << m_configDlg->getFontSize() << "pt; margin: 8%; }" << Qt::endl;
+    stream << "H1       {color: " << foregroundColor << ";}" << Qt::endl;
+    stream << "TABLE    {text-align: center; margin-left: auto; margin-right: auto;}" << Qt::endl;
+    stream << "TD       { color: " << foregroundColor << "; padding: 1em}" << Qt::endl;
+    stream << "IMG      { border: 1px solid " << foregroundColor << "; }" << Qt::endl;
+    stream << "</style>" << Qt::endl;
 }
 
 QString KImGalleryPlugin::extension(const QString &imageFormat)
@@ -178,32 +164,32 @@ void KImGalleryPlugin::createBody(QTextStream &stream, const QString &sourceDirN
     const QString imgGalleryDir = directory(url);
     const QString today(QLocale().toString(QDate::currentDate()));
 
-    stream << "<body>\n<h1>" << m_configDlg->getTitle().toHtmlEscaped() << "</h1><p>" << endl;
-    stream << i18n("<i>Number of images</i>: %1", numOfImages) << "<br/>" << endl;
-    stream << i18n("<i>Created on</i>: %1", today) << "</p>" << endl;
+    stream << "<body>\n<h1>" << m_configDlg->getTitle().toHtmlEscaped() << "</h1><p>" << Qt::endl;
+    stream << i18n("<i>Number of images</i>: %1", numOfImages) << "<br/>" << Qt::endl;
+    stream << i18n("<i>Created on</i>: %1", today) << "</p>" << Qt::endl;
 
-    stream << "<hr/>" << endl;
+    stream << "<hr/>" << Qt::endl;
 
     if (m_recurseSubDirectories && subDirList.count() > 2) { //subDirList.count() is always >= 2 because of the "." and ".." directories
-        stream << i18n("<i>Subfolders</i>:") << "<br>" << endl;
+        stream << i18n("<i>Subfolders</i>:") << "<br>" << Qt::endl;
         for (QStringList::ConstIterator it = subDirList.constBegin(); it != subDirList.constEnd(); it++) {
             if (*it == QLatin1String(".") || *it == QLatin1String("..")) {
                 continue;    //disregard the "." and ".." directories
             }
             stream << "<a href=\"" << *it << "/" << url.fileName()
-                   << "\">" << *it << "</a><br>" << endl;
+                   << "\">" << *it << "</a><br>" << Qt::endl;
         }
-        stream << "<hr/>" << endl;
+        stream << "<hr/>" << Qt::endl;
     }
 
-    stream << "<table>" << endl;
+    stream << "<table>" << Qt::endl;
 
     //table with images
     int imgIndex;
     QFileInfo imginfo;
     QPixmap  imgProp;
     for (imgIndex = 0; !m_cancelled && (imgIndex < numOfImages);) {
-        stream << "<tr>" << endl;
+        stream << "<tr>" << Qt::endl;
 
         for (int col = 0; !m_cancelled && (col < m_imagesPerRow) && (imgIndex < numOfImages); col++) {
             const QString imgName = imageDir[imgIndex];
@@ -223,37 +209,37 @@ void KImGalleryPlugin::createBody(QTextStream &stream, const QString &sourceDirN
                 qCDebug(IMAGEGALLERY_LOG) << "Creating thumbnail for " << imgName << " failed";
                 m_progressDlg->setLabelText(i18n("Creating thumbnail for: \n%1\n failed", imgName));
             }
-            stream << "</a>" << endl;
+            stream << "</a>" << Qt::endl;
 
             if (m_configDlg->printImageName()) {
-                stream << "<div>" << imgName << "</div>" << endl;
+                stream << "<div>" << imgName << "</div>" << Qt::endl;
             }
 
             if (m_configDlg->printImageProperty()) {
                 imgProp.load(imageDir.absoluteFilePath(imgName));
-                stream << "<div>" << imgProp.width() << " x " << imgProp.height() << "</div>" << endl;
+                stream << "<div>" << imgProp.width() << " x " << imgProp.height() << "</div>" << Qt::endl;
             }
 
             if (m_configDlg->printImageSize()) {
                 imginfo.setFile(imageDir, imgName);
-                stream << "<div>(" << (imginfo.size() / 1024) << " " <<  i18n("KiB") << ")" << "</div>" << endl;
+                stream << "<div>(" << (imginfo.size() / 1024) << " " <<  i18n("KiB") << ")" << "</div>" << Qt::endl;
             }
 
             if (m_useCommentFile) {
                 QString imgComment = (*m_commentMap)[imgName];
-                stream << "<div>" << imgComment.toHtmlEscaped() << "</div>" << endl;
+                stream << "<div>" << imgComment.toHtmlEscaped() << "</div>" << Qt::endl;
             }
-            stream << "</td>" << endl;
+            stream << "</td>" << Qt::endl;
 
             m_progressDlg->setMaximum(numOfImages);
             m_progressDlg->setValue(imgIndex);
             qApp->processEvents();
             imgIndex++;
         }
-        stream << "</tr>" << endl;
+        stream << "</tr>" << Qt::endl;
     }
     //close the HTML
-    stream << "</table>\n</body>\n</html>" << endl;
+    stream << "</table>\n</body>\n</html>" << Qt::endl;
 }
 
 bool KImGalleryPlugin::createHtml(const QUrl &url, const QString &sourceDirName, int recursionLevel, const QString &imageFormat)
@@ -338,9 +324,9 @@ bool KImGalleryPlugin::createHtml(const QUrl &url, const QString &sourceDirName,
         QTextStream stream(&file);
 //TODO KF6: in Qt6, QTextCodec doesn't exist anymore and its "replacement", QStringConverter, only supports a
 //small number of encodigs. For the time being, use the default (UTF-8).
-#if QT_VERSION_MAJOR < 6
-        stream.setCodec(QTextCodec::codecForLocale());
-#endif
+// #if QT_VERSION_MAJOR < 6
+//         stream.setCodec(QTextCodec::codecForLocale());
+// #endif
 
         createHead(stream);
         createBody(stream, sourceDirName, subDirList, imageDir, url, imageFormat); //ugly
@@ -417,9 +403,9 @@ void KImGalleryPlugin::loadCommentFile()
 
 //TODO KF6: in Qt6, QTextCodec doesn't exist anymore and its "replacement", QStringConverter, only supports a
 //small number of encodigs. For the time being, use the default (UTF-8).
-#if QT_VERSION_MAJOR < 6
-        m_textStream->setCodec(QTextCodec::codecForLocale());
-#endif
+// #if QT_VERSION_MAJOR < 6
+//         m_textStream->setCodec(QTextCodec::codecForLocale());
+// #endif
 
         delete m_commentMap;
         m_commentMap = new CommentMap;

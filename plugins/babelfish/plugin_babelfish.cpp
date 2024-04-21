@@ -16,7 +16,7 @@
 #include "plugin_babelfish.h"
 
 #include <kparts/part.h>
-#include "kf5compat.h" //For NavigationExtension
+#include <KParts/NavigationExtension>
 
 #include <kwidgetsaddons_version.h>
 #include <kactioncollection.h>
@@ -52,11 +52,7 @@ PluginBabelFish::PluginBabelFish(QObject *parent,
     KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(parent);
     if (part) {
         connect(part, &KParts::ReadOnlyPart::started, this, &PluginBabelFish::slotEnableMenu);
-#if QT_VERSION_MAJOR < 6
-        connect(part, QOverload<>::of(&KParts::ReadOnlyPart::completed), this, &PluginBabelFish::slotEnableMenu);
-#else
         connect(part, &KParts::ReadOnlyPart::completed, this, &PluginBabelFish::slotEnableMenu);
-#endif
         connect(part, &KParts::ReadOnlyPart::completedWithPendingAction, this, &PluginBabelFish::slotEnableMenu);
     }
 }

@@ -14,10 +14,9 @@
 #include <QTemporaryDir>
 #include <QDateTime>
 #include <QSet>
+#include <QWebEngineDownloadRequest>
 #include <KJob>
 #include <QPointer>
-
-#include "qtwebengine6compat.h"
 
 #include "browseropenorsavequestion.h"
 #include "interfaces/downloaderextension.h"
@@ -95,17 +94,6 @@ private:
     DownloadObjective fetchDownloadObjective(const QUrl &url, WebEnginePage *page);
 
     /**
-     * @brief Checks whether a download request for the given URL by the given page should be treated as a forced download or not
-     *
-     * @warning This function @b should only be called @b once for each download, because it removes information about the download from the internal
-     * state (this is for performance reasons).
-     * @param req the download request
-     * @param page the page which requested the download
-     * @return `true` if the page should be downloaded by the download manager and `false` if it should be processed as usual
-     */
-    // bool checkForceDownload(QWebEngineDownloadRequest *req, WebEnginePage *page);
-
-    /**
      * @brief Saves a full HTML page, after asking the user which formats he wants to use
      *
      * The available formats are described in `QWebEngineDownloadRequest::SavePageFormat`
@@ -164,12 +152,7 @@ protected:
     bool doSuspend() override;
 
 private slots:
-#if QT_VERSION_MAJOR < 6
-    void downloadProgressed(qint64 received, qint64 total);
-#else
     void downloadProgressed();
-#endif
-
     void stateChanged(QWebEngineDownloadRequest::DownloadState state);
     void startDownloading();
     void downloadFinished();

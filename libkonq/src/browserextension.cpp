@@ -11,8 +11,6 @@
 #include <QTimer>
 #include <QDebug>
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-
 struct DelayedRequest {
     QUrl m_delayedURL;
     KParts::OpenUrlArguments m_delayedArgs;
@@ -75,7 +73,5 @@ void BrowserExtension::slotEmitOpenUrlRequestDelayed()
     m_requests.pop_front();
     Q_EMIT browserOpenUrlRequestDelayed(req.m_delayedURL, req.m_delayedArgs, req.m_delayedBrowserArgs);
 }
-
-#endif
 
 #include "moc_browserextension.cpp"

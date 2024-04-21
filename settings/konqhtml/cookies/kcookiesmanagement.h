@@ -66,14 +66,6 @@ public:
     void save() override;
     void defaults() override;
 
-#if QT_VERSION_MAJOR < 6
-    void setNeedsSave(bool needs) {
-        m_needsSave = needs;
-        emit changed(needs);
-    }
-    bool needsSave() const {return m_needsSave;}
-#endif
-
 private Q_SLOTS:
     void deleteCurrent();
     void deleteAll();
@@ -97,9 +89,6 @@ private:
     QStringList mDeletedDomains;
     typedef QList<CookieProp *> CookiePropList;
     QHash<QString, CookiePropList> mDeletedCookies;
-#if QT_VERSION_MAJOR < 6
-    bool m_needsSave = false;
-#endif
 };
 
 #endif // KCOOKIESMANAGEMENT_H

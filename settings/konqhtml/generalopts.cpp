@@ -226,9 +226,7 @@ void KKonqGeneralOptions::defaults()
     m_pConfig->setReadDefaults(true);
     load();
     m_pConfig->setReadDefaults(old);
-#if QT_VERSION_MAJOR > 5
     setRepresentsDefaults(true);
-#endif
 }
 
 void KKonqGeneralOptions::save()

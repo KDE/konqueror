@@ -9,7 +9,7 @@
 #define KONQ_SIDEBARTREE_H
 
 #include <k3listview.h>
-#include "kf5compat.h" //For NavigationExtension
+#include <KParts/NavigationExtension>
 #include "konq_sidebartreetoplevelitem.h"
 #include <QMap>
 #include <QPoint>

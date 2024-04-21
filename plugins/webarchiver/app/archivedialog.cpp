@@ -191,14 +191,6 @@ ArchiveDialog::ArchiveDialog(const QUrl &url, QWidget *parent)
     // that the settings cannot be used.
     enum ProxySettings {NoProxy, EnvVarProxy, SpecialProxy};
     ProxySettings proxyType = NoProxy;
-#if QT_VERSION_MAJOR < 6
-    const KProtocolManager::ProxyType proxyTypeFromProtocolManager = KProtocolManager::proxyType();
-    if (proxyTypeFromProtocolManager == KProtocolManager::EnvVarProxy) {
-        proxyType = EnvVarProxy;
-    } else if (proxyTypeFromProtocolManager != KProtocolManager::NoProxy) {
-        proxyType = SpecialProxy;
-    }
-#else
     int proxyTypeAsInt = KSharedConfig::openConfig(QStringLiteral("kioslaverc"), KConfig::NoGlobals)->group("Proxy Settings").readEntry("ProxyType", 0);
     //According to kio-extras/kcms/ksaveioconfig.h, 0 means "No proxy" and 4 means "proxy from environment variable"
     if (proxyTypeAsInt == 4) {
@@ -206,7 +198,6 @@ ArchiveDialog::ArchiveDialog(const QUrl &url, QWidget *parent)
     } else if (proxyTypeAsInt != 0) {
         proxyType = SpecialProxy;
     }
-#endif
     if (proxyType == NoProxy)		// no proxy configured.
     {							// we cannot use one either
         m_noProxyCheck->setChecked(true);
@@ -383,11 +374,7 @@ void ArchiveDialog::slotCreateButtonClicked()
     }
 
     // Check whether the destination file or directory exists
-#if QT_VERSION_MAJOR < 6
-    KIO::StatJob *statJob = KIO::statDetails(m_saveUrl, KIO::StatJob::DestinationSide, KIO::StatBasic);
-#else
     KIO::StatJob *statJob = KIO::stat(m_saveUrl, KIO::StatJob::DestinationSide, KIO::StatBasic);
-#endif
     connect(statJob, &KJob::result, this, &ArchiveDialog::slotCheckedDestination);
 }
 

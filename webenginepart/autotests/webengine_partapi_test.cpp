@@ -8,7 +8,7 @@
 #include "webengine_testutils.h"
 
 #include <KIO/Job>
-#include "kf5compat.h" //For NavigationExtension
+#include <KParts/NavigationExtension>
 #include <KPluginMetaData>
 
 #include <QTest>

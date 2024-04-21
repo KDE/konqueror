@@ -242,20 +242,14 @@ template<typename Functor>
 void KonqInterfaces::DownloaderJob::startDownload(const QString& destPath, QWidget* widget, QObject* context, Functor functor)
 {
     prepareDownloadJob(widget, destPath);
-//With KF5, this call doesn't compile
-#if QT_VERSION_MAJOR > 5
     connect(this, &DownloaderJob::downloadResult, context, functor);
-#endif
     start();
 }
 template<typename Functor>
 void KonqInterfaces::DownloaderJob::startDownload(QWidget* widget, QObject* context, Functor functor)
 {
     prepareDownloadJob(widget, {});
-//With KF5, this call doesn't compile
-#if QT_VERSION_MAJOR > 5
     connect(this, &DownloaderJob::downloadResult, context, functor);
-#endif
     start();
 }
 

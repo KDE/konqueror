@@ -14,11 +14,3 @@ endmacro(webenginepart_unit_tests)
 webenginepart_unit_tests(
   webengine_partapi_test
 )
-
-if (NOT(DontUseKCookieJar))
-  webenginepart_unit_tests(
-    webenginepartcookiejarkio_test
-  )
-  target_link_libraries(webenginepartcookiejarkio_test Qt${KF_MAJOR_VERSION}::DBus)
-endif()
-

@@ -47,19 +47,11 @@ KJSParts::KJSParts(QObject *parent, const KPluginMetaData &md, const QVariantLis
     // ### the groupname is duplicated in KJSParts::save
     java = new KJavaOptions(mConfig, QStringLiteral("Java/JavaScript Settings"), widget());
     tab->addTab(java->widget(), i18n("&Java"));
-#if QT_VERSION_MAJOR < 6
-    connect(java, QOverload<bool>::of(&KJavaOptions::changed), this, &KJSParts::markAsChanged);
-#else
     connect(java, &KJavaOptions::needsSaveChanged, this, &KJSParts::needsSaveChanged);
-#endif
 
     javascript = new KJavaScriptOptions(mConfig, QStringLiteral("Java/JavaScript Settings"), widget());
     tab->addTab(javascript->widget(), i18n("Java&Script"));
-#if QT_VERSION_MAJOR < 6
-    connect(javascript, QOverload<bool>::of(&KJavaScriptOptions::changed), this, &KJSParts::markAsChanged);
-#else
     connect(javascript, &KJavaScriptOptions::needsSaveChanged, this, &KJSParts::needsSaveChanged);
-#endif
 }
 
 void KJSParts::load()
@@ -96,8 +88,5 @@ void KJSParts::defaults()
 {
     javascript->defaults();
     java->defaults();
-
-#if QT_VERSION_MAJOR > 5
     setRepresentsDefaults(true);
-#endif
 }

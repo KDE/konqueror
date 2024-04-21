@@ -23,12 +23,12 @@
 #include <kparts/mainwindow.h>
 #include <KParts/PartActivateEvent>
 #include <kservice.h>
+#include <KParts/NavigationExtension>
 
 #include "konqcombo.h"
 #include "konqframe.h"
 #include "konqframecontainer.h"
 #include "konqopenurlrequest.h"
-#include "kf5compat.h" //For NavigationExtension
 #include "configdialog.h"
 #include "windowargs.h"
 
@@ -390,13 +390,8 @@ public Q_SLOTS:
 
     void slotCtrlTabPressed();
 
-#if QT_VERSION_MAJOR < 6
-    void slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags flags, const KParts::NavigationExtension::ActionGroupMap &);
-    void slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags f, const KParts::NavigationExtension::ActionGroupMap &);
-#else
     void slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags flags, const KParts::NavigationExtension::ActionGroupMap &, KonqView*);
     void slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, KParts::NavigationExtension::PopupFlags f, const KParts::NavigationExtension::ActionGroupMap &, KonqView*);
-#endif
 
     void slotOpenURLRequest(const QUrl &url, KonqOpenURLRequest &req);
 

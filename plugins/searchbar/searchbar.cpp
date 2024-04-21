@@ -20,7 +20,7 @@
 #include <KIO/CommandLauncherJob>
 #include <KMainWindow>
 #include <KParts/Part>
-#include "kf5compat.h" //For NavigationExtension
+#include <KParts/NavigationExtension>
 #include <KParts/PartActivateEvent>
 #include <KLocalizedString>
 #include <KIO/Job>
@@ -59,11 +59,7 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
 {
     m_searchCombo = new SearchBarCombo(nullptr);
     m_searchCombo->lineEdit()->installEventFilter(this);
-#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
-    connect(m_searchCombo, QOverload<int>::of(&QComboBox::activated), this, [this](int n){startSearch(m_searchCombo->itemText(n));});
-#else
     connect(m_searchCombo, &QComboBox::textActivated, this, &SearchBarPlugin::startSearch);
-#endif
     connect(m_searchCombo, &SearchBarCombo::iconClicked, this, &SearchBarPlugin::showSelectionMenu);
     m_searchCombo->setWhatsThis(i18n("Search Bar<p>"
                                      "Enter a search term. Click on the icon to change search mode or provider.</p>"));
@@ -218,16 +214,11 @@ void SearchBarPlugin::startSearch(const QString &search)
             BrowserArguments browserArguments;
             browserArguments.setNewTab(true);
             if (ext) {
-
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-                emit ext->createNewWindow(data.uri());
-#else
                 if (auto browserExtension = qobject_cast<BrowserExtension *>(ext)) {
                      emit browserExtension->browserCreateNewWindow(data.uri(), arguments, browserArguments);
                 } else {
                      emit ext->createNewWindow(data.uri());
                 }
-#endif
             }
         } else {
             if (ext) {
@@ -461,25 +452,13 @@ void SearchBarPlugin::HTMLDocLoaded()
     //NOTE: the link below seems to be dead
     // Testcase for this code: http://search.iwsearch.net
     HtmlExtension *ext = HtmlExtension::childObject(m_part);
-    AsyncSelectorInterface *asyncIface = qobject_cast<AsyncSelectorInterface*>(ext);
+    AsyncSelectorInterface *selectorIface = qobject_cast<AsyncSelectorInterface*>(ext);
     const QString query(QStringLiteral("head > link[rel=\"search\"][type=\"application/opensearchdescription+xml\"]"));
-#if QT_VERSION_MAJOR < 6
-    KParts::SelectorInterface *selectorInterface = qobject_cast<KParts::SelectorInterface *>(ext);
-
-    if (selectorInterface) {
-        //if (headElelement.getAttribute("profile") != "http://a9.com/-/spec/opensearch/1.1/") {
-        //    kWarning() << "Warning: there is no profile attribute or wrong profile attribute in <head>, as specified by open search specification 1.1";
-        //}
-        const QList<KParts::SelectorInterface::Element> linkNodes = selectorInterface->querySelectorAll(query, KParts::SelectorInterface::EntireContent);
-        insertOpenSearchEntries(linkNodes);
-    } else if (asyncIface) {
-#else
-    if (asyncIface) {
-#endif
+    if (selectorIface) {
         auto callback = [this](const QList<AsyncSelectorInterface::Element>& elements) {
             insertOpenSearchEntries(elements);
         };
-        asyncIface->querySelectorAllAsync(query, AsyncSelectorInterface::EntireContent, callback);
+        selectorIface->querySelectorAllAsync(query, AsyncSelectorInterface::EntireContent, callback);
     }
 }
 

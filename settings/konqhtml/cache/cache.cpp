@@ -42,10 +42,7 @@ void Cache::defaults()
     m_ui->useCustomCacheDir->setChecked(false);
     m_ui->customCacheDir->setUrl(QUrl());
     setNeedsSave(true);
-
-#if QT_VERSION_MAJOR > 5
     setRepresentsDefaults(true);
-#endif
 }
 
 void Cache::load()

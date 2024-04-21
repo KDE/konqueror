@@ -40,11 +40,7 @@ KAppearanceOptions::KAppearanceOptions(QObject *parent, const KPluginMetaData &m
     tabWidget->addTab(fontsTab, i18nc("@title:tab", "Fonts"));
     tabWidget->addTab(cssConfig, i18nc("@title:tab", "Stylesheets"));
 
-#if QT_VERSION_MAJOR < 6
-    connect(cssConfig, &CSSConfig::changed, this, &KAppearanceOptions::markAsChanged);
-#else
     connect(cssConfig, &CSSConfig::changed, this, [this](){setNeedsSave(true);});
-#endif
 
     l = new QVBoxLayout(mainTab);
 
@@ -207,13 +203,8 @@ KAppearanceOptions::KAppearanceOptions(QObject *parent, const KPluginMetaData &m
 
     m_pEncoding->setToolTip(i18n("Select the default encoding to be used; normally, you will be fine with 'Use language encoding' "
                                  "and should not have to change this."));
-#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
-    connect(m_pEncoding, QOverload<int>::of(&QComboBox::activated), this, [this](int n){slotEncoding(m_pEncoding->itemText(n));});
-    connect(m_pEncoding, QOverload<int>::of(&QComboBox::activated), this, &KAppearanceOptions::markAsChanged);
-#else
     connect(m_pEncoding, &QComboBox::textActivated, this, &KAppearanceOptions::slotEncoding);
     connect(m_pEncoding, &QComboBox::textActivated, this, &KAppearanceOptions::markAsChanged);
-#endif
 
     lay->addStretch(5);
 }
@@ -359,9 +350,7 @@ void KAppearanceOptions::defaults()
 
     cssConfig->defaults();
     setNeedsSave(true);
-#if QT_VERSION_MAJOR > 5
     setRepresentsDefaults(true);
-#endif
 }
 
 void KAppearanceOptions::updateGUI()

@@ -83,10 +83,6 @@ protected Q_SLOTS:
 
     void spinBoxChanged(int);
 
-#if QT_VERSION_MAJOR < 6
-    void setNeedsSave(bool needs) {emit changed(needs);}
-#endif
-
 private:
     QListWidget *mListBox;
     KListWidgetSearchLine *mSearchLine;

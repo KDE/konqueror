@@ -74,10 +74,7 @@ void UserAgent::defaults()
     m_ui->useDefaultUA->setChecked(true);
     m_ui->userAgentString->setText(QString());
     setNeedsSave(true);
-
-#if QT_VERSION_MAJOR > 5
     setRepresentsDefaults(true);
-#endif
 }
 
 void UserAgent::load()

@@ -74,9 +74,7 @@
 #include <QStatusBar>
 #include <QWebEngineScriptCollection>
 #include <QDir>
-#if QT_VERSION_MAJOR > 5
 #include <QWebEngineFindTextResult>
-#endif
 #include <QMimeDatabase>
 #include <QTimer>
 
@@ -88,11 +86,7 @@ using namespace WebEngine;
 WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
                          const KPluginMetaData& metaData,
                          const QByteArray& cachedHistory, const QStringList& /*args*/)
-#if QT_VERSION_MAJOR < 6
-            :KParts::ReadOnlyPart(parent),
-#else
             :KParts::ReadOnlyPart(parent, metaData),
-#endif
              m_emitOpenUrlNotify(true),
              m_walletData{false, false, false},
              m_doLoadFinishedActions(false),
@@ -108,20 +102,6 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
 
     connect(WebEnginePartControls::self(), &WebEnginePartControls::userAgentChanged, this, &WebEnginePart::reloadAfterUAChange);
 
-#if QT_VERSION_MAJOR < 6
-    setMetaData(metaData);
-#endif
-
-#if 0
-    // NOTE: If the application does not set its version number, we automatically
-    // set it to KDE's version number so that the default user-agent string contains
-    // proper application version number information. See QWebEnginePage::userAgentForUrl...
-    if (QCoreApplication::applicationVersion().isEmpty())
-        QCoreApplication::setApplicationVersion(QString("%1.%2.%3")
-                                                .arg(KDE::versionMajor())
-                                                .arg(KDE::versionMinor())
-                                                .arg(KDE::versionRelease()));
-#endif
     setXMLFile(QL1S("webenginepart.rc"));
 
     // Create this KPart's widget
@@ -706,11 +686,7 @@ void WebEnginePart::slotSearchForText(const QString &text, bool backward)
         flags |= QWebEnginePage::FindCaseSensitively;
     }
 
-#if QT_VERSION_MAJOR < 6
-    auto callback = [this](bool found){m_searchBar->setFoundMatch(found);};
-#else
     auto callback = [this](const QWebEngineFindTextResult &res){m_searchBar->setFoundMatch(res.numberOfMatches() > 0);};
-#endif
     //qCDebug(WEBENGINEPART_LOG) << "search for text:" << text << ", backward ?" << backward;
     //TODO KF6: when dropping compatibility with KF5, see whether it's better to connect to the
     //QWebEnginePage::findTextFinished signal rather than using the callback
@@ -1112,13 +1088,6 @@ void WebEnginePart::reloadAfterUAChange(const QString &)
         m_webView->triggerPageAction(QWebEnginePage::Reload);
     }
 }
-
-#if QT_VERSION_MAJOR < 6
-KParts::NavigationExtension* WebEnginePart::navigationExtension() const
-{
-    return browserExtension();
-}
-#endif
 
 BrowserExtension *WebEnginePart::browserExtension() const
 {

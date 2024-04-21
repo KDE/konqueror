@@ -7,8 +7,7 @@
 #ifndef CHOOSEPAGESAVEFORMATDLG_H
 #define CHOOSEPAGESAVEFORMATDLG_H
 
-#include "qtwebengine6compat.h"
-
+#include <QWebEngineDownloadRequest>
 #include <QDialog>
 #include <QScopedPointer>
 

@@ -114,11 +114,7 @@ KCMFilter::KCMFilter(QObject *parent, const KPluginMetaData &md, const QVariantL
     mRefreshFreqSpinBox->setSuffix(ki18np(" day", " days"));
 
     /** connect signals and slots */
-#if QT_VERSION_MAJOR < 6
-    connect(&mAutomaticFilterModel, &AutomaticFilterModel::changed, this, QOverload<bool>::of(&KCModule::changed));
-#else
     connect(&mAutomaticFilterModel, &AutomaticFilterModel::changed, this, [this](bool changed){setNeedsSave(changed);});
-#endif
     connect(mRefreshFreqSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this, &KCMFilter::spinBoxChanged);
 
     mInsertButton = new QPushButton(QIcon::fromTheme(QStringLiteral("list-add")), i18n("Insert"), buttonBox);
@@ -307,9 +303,6 @@ void KCMFilter::exportFilters()
         QFile f(outFile);
         if (f.open(QIODevice::WriteOnly)) {
             QTextStream ts(&f);
-#if QT_VERSION_MAJOR < 6
-            ts.setCodec("UTF-8");
-#endif
             ts << "[AdBlock]" << Qt::endl;
 
             int nbLine =  mListBox->count();
@@ -331,10 +324,7 @@ void KCMFilter::defaults()
     mKillCheck->setChecked(false);
     mString->clear();
     updateButton();
-
-#if QT_VERSION_MAJOR > 5
     setRepresentsDefaults(true);
-#endif
 }
 
 void KCMFilter::save()

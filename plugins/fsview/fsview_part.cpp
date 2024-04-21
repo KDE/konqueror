@@ -75,27 +75,14 @@ void FSJob::progressSlot(int percent, int dirs, const QString &cDir)
     }
 }
 
-#if QT_VERSION_MAJOR < 6
-void FSJob::slotInfoMessage(KJob* job, const QString& plain, const QString& rich)
-{
-    KCompositeJob::slotInfoMessage(job, plain, rich);
-}
-#endif
-
 // FSViewPart
 
 FSViewPart::FSViewPart(QWidget *parentWidget,
                        QObject *parent,
                        const KPluginMetaData& metaData,
                        const QList<QVariant> & /* args */)
-#if QT_VERSION_MAJOR < 6
-    : KParts::ReadOnlyPart(parent)
-{
-    setMetaData(metaData);
-#else
     : KParts::ReadOnlyPart(parent, metaData)
 {
-#endif
     _view = new FSView(new Inode(), parentWidget);
     _view->setWhatsThis(i18n("<p>This is the FSView plugin, a graphical "
                              "browsing mode showing filesystem utilization "
@@ -428,19 +415,11 @@ void FSViewPart::contextMenu(TreeMapItem * /*item*/, const QPoint &p)
 
     const KFileItemList items = selectedFileItems();
     if (items.count() > 0) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        emit _ext->popupMenu(_view->mapToGlobal(p), items,
-                             KParts::OpenUrlArguments(),
-                             BrowserArguments(),
-                             flags,
-                             actionGroups);
-#else
         emit _ext->browserPopupMenuFromFiles(_view->mapToGlobal(p), items,
                              KParts::OpenUrlArguments(),
                              BrowserArguments(),
                              flags,
                              actionGroups);
-#endif
     }
 }
 

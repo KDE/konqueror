@@ -164,9 +164,7 @@ void WebEnginePartControls::setup(KonqWebEnginePart::Profile* profile)
     Browser *browser = Browser::browser(qApp);
     if (browser) {
         m_profile->setHttpUserAgent(browser->userAgent());
-#ifdef MANAGE_COOKIES_INTERNALLY
         browser->setCookieJar(m_cookieJar);
-#endif
     }
     m_spellCheckerManager = new SpellCheckerManager(profile, this);
     m_downloadManager= new WebEnginePartDownloadManager(profile, this);
@@ -254,11 +252,7 @@ void WebEnginePartControls::reparseConfiguration()
 
 void WebEnginePartControls::updateUserStyleSheetScript()
 {
-#if QT_VERSION_MAJOR < 6
-    QList<QWebEngineScript> oldScripts = m_profile->scripts()->findScripts(s_userStyleSheetScriptName);
-#else
     QList<QWebEngineScript> oldScripts = m_profile->scripts()->find(s_userStyleSheetScriptName);
-#endif
     bool hadUserStyleSheet = !oldScripts.isEmpty();
     //Remove old style sheets. Note that oldScripts should either be empty or contain only one element
     //In theory, we could reuse the previous script, if it turns out to be the same as the new one, but

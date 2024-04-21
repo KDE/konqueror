@@ -22,21 +22,11 @@ set(kcm_konqhtml_PART_SRCS
    cache/cache.cpp
    useragent/useragent.cpp
    tabs/tabsoptions.cpp
+   cookies/kcookiesmain.cpp
+   cookies/kcookiesmanagement.cpp
+   cookies/kcookiespolicies.cpp
+   cookies/kcookiespolicyselectiondlg.cpp
    )
-
-if (DontUseKCookieJar)
-    list(APPEND kcm_konqhtml_PART_SRCS
-        cookies/kcookiesmain.cpp
-        cookies/kcookiesmanagement.cpp
-        cookies/kcookiespolicies.cpp
-        cookies/kcookiespolicyselectiondlg.cpp
-        )
-    ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
-        cookies/kcookiesmanagement.ui
-        cookies/kcookiespolicies.ui
-        cookies/kcookiespolicyselectiondlg.ui
-        )
-endif()
 
 ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
     tabs/tabsoptions.ui
@@ -44,6 +34,9 @@ ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
     css/cssconfig.ui
     cache/cache.ui
     useragent/useragent.ui
+    cookies/kcookiesmanagement.ui
+    cookies/kcookiespolicies.ui
+    cookies/kcookiespolicyselectiondlg.ui
     )
 
 add_library(kcm_konqhtml_static STATIC ${kcm_konqhtml_PART_SRCS})
@@ -83,10 +76,8 @@ target_link_libraries(khtml_cache kcm_konqhtml_static)
 kcoreaddons_add_plugin(khtml_useragent SOURCES plugins/khtml_useragent.cpp INSTALL_NAMESPACE konqueror_kcms)
 target_link_libraries(khtml_useragent kcm_konqhtml_static)
 
-if (DontUseKCookieJar)
-    kcoreaddons_add_plugin(khtml_cookies SOURCES plugins/khtml_cookies.cpp INSTALL_NAMESPACE konqueror_kcms)
-    target_link_libraries(khtml_cookies kcm_konqhtml_static)
-endif()
+kcoreaddons_add_plugin(khtml_cookies SOURCES plugins/khtml_cookies.cpp INSTALL_NAMESPACE konqueror_kcms)
+target_link_libraries(khtml_cookies kcm_konqhtml_static)
 
 install( FILES css/template.css  DESTINATION  ${KDE_INSTALL_DATADIR}/kcmcss )
 install(FILES useragent/useragenttemplatesrc DESTINATION ${KDE_INSTALL_CONFDIR})

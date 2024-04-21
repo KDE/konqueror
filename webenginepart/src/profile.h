@@ -11,8 +11,6 @@
 
 namespace KonqWebEnginePart
 {
-#if QT_VERSION_MAJOR == 6
-
 /**
  * @brief Profile for pages created by Konqueror
  * @note If the profile is not off-the-record, according to the documentation, it
@@ -42,9 +40,6 @@ public:
      */
     static Profile* defaultProfile();
 };
-#else
-typedef QWebEngineProfile Profile;
-#endif
 
 }
 

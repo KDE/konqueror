@@ -10,8 +10,8 @@ set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE
 
 project(Konqueror VERSION ${RELEASE_SERVICE_VERSION})
 
-set(QT_MIN_VERSION "5.15.2")
-set(KF5_MIN_VERSION "5.101.0")
+set(QT_MIN_VERSION "6.4.0")
+set(KF5_MIN_VERSION "5.240.0")
 
 
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_MODULE_PATH})
@@ -28,11 +28,7 @@ include(CMakePackageConfigHelpers)
 include(GenerateExportHeader)
 
 
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(KF_MAJOR_VERSION "6")
-else()
-    set(KF_MAJOR_VERSION "5")
-endif()
+set(KF_MAJOR_VERSION "6")
 include(KDECompilerSettings NO_POLICY_SCOPE)
 remove_definitions(-DQT_NO_KEYWORDS)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
@@ -44,33 +40,15 @@ set(KONQUEROR_VERSION "${KONQUEROR_LIB_VERSION}")
 
 find_package(Qt${KF_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets WebEngineWidgets)
 find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Parts KCMUtils Archive Crash WindowSystem IconThemes DBusAddons GuiAddons I18n Sonnet TextWidgets Codecs)
-if (KF_MAJOR_VERSION STRLESS "6")
-    find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Init)
-endif()
 
 find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} COMPONENTS DocTools) # Optional
-if (KF_MAJOR_VERSION STRLESS "6")
-    find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} COMPONENTS Activities DocTools) # Optional
-    set(KActivities_FOUND ${KF5Activities_FOUND})
-else()
-    find_package(PlasmaActivities ${KF_MIN_VERSION}) # Optional
-    set(KActivities_FOUND ${PlasmaActivities_FOUND})
-endif()
-
-if (QT_MAJOR_VERSION STRLESS 6)
-    find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS X11Extras)
-endif()
+find_package(PlasmaActivities ${KF_MIN_VERSION}) # Optional
+set(KActivities_FOUND ${PlasmaActivities_FOUND})
 
 add_definitions(
     -DQT_USE_QSTRINGBUILDER
 )
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
-
-cmake_dependent_option(DontUseKCookieJar "Don't use KCookieJar to manage cookies" FALSE "QT_MAJOR_VERSION STREQUAL 5" TRUE)
-if(DontUseKCookieJar)
-add_compile_definitions(MANAGE_COOKIES_INTERNALLY)
-else()
-endif()
 
 include (CheckSymbolExists)
 check_symbol_exists(mallinfo        "malloc.h"                 KDE_MALLINFO_MALLOC)
@@ -116,9 +94,10 @@ install(FILES org.kde.konqueror.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODI
 # This is why konqueror.desktop is installed into services.
 #TODO KF6: check whether the above comment is still relevant (remove Konqueror from the K menu and check
 #whether kfmclient works correctly. If it doesn't, find out how to make it work in KF6
-if (KF_MAJOR_VERSION STRLESS "6")
-    install( FILES org.kde.konqueror.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
-endif()
+# if (KF_MAJOR_VERSION STRLESS "6")
+#     install( FILES org.kde.konqueror.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
+# endif()
+
 # On Wayland the icon to use for the main window is read from the desktop file, which needs
 # to be in the applications directory, so it needs to be installed there, too (bug #452149)
 install( FILES org.kde.konqueror.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )

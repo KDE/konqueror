@@ -18,16 +18,8 @@
 K_PLUGIN_CLASS_WITH_JSON(KonqSidebarPart, "konq_sidebartng.json")
 
 KonqSidebarPart::KonqSidebarPart(QWidget *parentWidget, QObject *parent, const KPluginMetaData& metaData, const QVariantList &)
-#if QT_VERSION_MAJOR < 6
-    : KParts::ReadOnlyPart(parent)
-#else
     : KParts::ReadOnlyPart(parent, metaData)
-#endif
 {
-#if QT_VERSION_MAJOR < 6
-    setMetaData(metaData);
-#endif
-
     QString currentProfile = parentWidget->window()->property("currentProfile").toString();
     if (currentProfile.isEmpty()) {
         currentProfile = "default";

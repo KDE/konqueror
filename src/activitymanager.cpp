@@ -12,12 +12,7 @@
 
 #include <QStandardPaths>
 
-#if QT_VERSION_MAJOR < 6
-#include <KActivities/Consumer>
-#else //QT_VERSION_MAJOR
 #include <PlasmaActivities/Consumer>
-#endif //QT_VERSION_MAJOR
-
 #include <KX11Extras>
 #include <KWindowInfo>
 #include <KSharedConfig>

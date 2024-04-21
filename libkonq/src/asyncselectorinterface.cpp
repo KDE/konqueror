@@ -1,8 +1,8 @@
-// /* This file is part of the KDE project
-//     SPDX-FileCopyrightText: 2023 Stefano Crocco <stefano.crocco@alice.it>
+//  This file is part of the KDE project
+//   SPDX-FileCopyrightText: 2023 Stefano Crocco <stefano.crocco@alice.it>
 // 
-//     SPDX-License-Identifier: LGPL-2.0-or-later
-// */
+//   SPDX-License-Identifier: LGPL-2.0-or-later
+//
 
 #include "asyncselectorinterface.h"
 
@@ -14,8 +14,6 @@ AsyncSelectorInterface::QueryMethods AsyncSelectorInterface::supportedAsyncQuery
 {
     return None;
 }
-
-#if QT_VERSION_MAJOR > 5
 
 //Code for this class copied from kparts/selectorinterface.cpp (KF 5.110) written by David Faure <faure@kde.org>
 class Q_DECL_HIDDEN AsyncSelectorInterface::ElementPrivate : public QSharedData
@@ -73,5 +71,3 @@ bool AsyncSelectorInterface::Element::hasAttribute(const QString &name) const
 {
     return d->attributes.contains(name);
 }
-
-#endif

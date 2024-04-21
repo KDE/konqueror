@@ -23,12 +23,6 @@
 #include <kbookmarkmanager.h>
 
 #include "konqbookmarkmenu.h"
-
-#if QT_VERSION_MAJOR < 6
-#include "kbookmarkimporter.h"
-#include "kbookmarkdombuilder.h"
-#endif
-
 #include "kbookmarkaction.h"
 #include "konqpixmapprovider.h"
 
@@ -67,16 +61,8 @@ KBookmarkBar::KBookmarkBar(KBookmarkManager *mgr,
         connect(m_toolBar, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contextMenu(QPoint)));
     }
 
-#if QT_VERSION_MAJOR < 6
-    connect(mgr, SIGNAL(changed(QString,QString)),
-            SLOT(slotBookmarksChanged(QString)));
-    connect(mgr, SIGNAL(configChanged()),
-            SLOT(slotConfigChanged()));
-#else
     connect(mgr, SIGNAL(changed(QString)),
             SLOT(slotBookmarksChanged(QString)));
-#endif
-
 
     KBookmarkGroup toolbar = getToolbar();
     fillBookmarkBar(toolbar);

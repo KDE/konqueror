@@ -69,11 +69,6 @@ public:
 public slots:
     void progressSlot(int percent, int dirs, const QString &lastDir);
 
-#if QT_VERSION_MAJOR < 6
-protected slots:
-    void slotInfoMessage(KJob * job, const QString & plain, const QString & rich=QString()) override;
-#endif
-
 private:
     FSView *_view;
 };

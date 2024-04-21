@@ -8,7 +8,7 @@
 
 #include <kparts_version.h>
 #include <kparts/part.h>
-#include "kf5compat.h" //For NavigationExtension
+#include <KParts/NavigationExtension>
 #include <QPointer>
 #include "sidebar_widget.h"
 

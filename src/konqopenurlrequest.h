@@ -11,7 +11,8 @@
 
 #include <QStringList>
 
-#include "kf5compat.h" //For NavigationExtension
+#include <KParts/NavigationExtension>
+
 #include "browserarguments.h"
 
 namespace KParts {

@@ -6,7 +6,7 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#include "webenginepartcookiejar6.h"
+#include "webenginepartcookiejar.h"
 #include "settings/webenginesettings.h"
 #include <webenginepart_debug.h>
 #include "cookiealertdlg.h"
@@ -33,28 +33,28 @@
 
 #include <QTimer>
 
-WebEnginePartCookieJar6::CookieIdentifier::CookieIdentifier(const QNetworkCookie& cookie):
+WebEnginePartCookieJar::CookieIdentifier::CookieIdentifier(const QNetworkCookie& cookie):
     name(cookie.name()), domain(cookie.domain()), path(cookie.path())
 {
 }
 
-WebEnginePartCookieJar6::CookieIdentifier::CookieIdentifier(const QString& n, const QString& d, const QString& p):
+WebEnginePartCookieJar::CookieIdentifier::CookieIdentifier(const QString& n, const QString& d, const QString& p):
     name(n), domain(d), path(p)
 {
 }
 
-WebEnginePartCookieJar6::WebEnginePartCookieJar6(QWebEngineProfile *prof, QObject *parent):
+WebEnginePartCookieJar::WebEnginePartCookieJar(QWebEngineProfile *prof, QObject *parent):
     CookieJar(parent), m_cookieStore(prof->cookieStore())
 {
     auto filter = [this](const QWebEngineCookieStore::FilterRequest &req){return filterCookie(req);};
     m_cookieStore->setCookieFilter(filter);
 
-    connect(m_cookieStore, &QWebEngineCookieStore::cookieAdded, this, &WebEnginePartCookieJar6::handleCookieAdditionToStore);
-    connect(m_cookieStore, &QWebEngineCookieStore::cookieRemoved, this, &WebEnginePartCookieJar6::removeCookieFromSet);
-    connect(qApp, &QApplication::lastWindowClosed, this, &WebEnginePartCookieJar6::saveCookieAdvice);
+    connect(m_cookieStore, &QWebEngineCookieStore::cookieAdded, this, &WebEnginePartCookieJar::handleCookieAdditionToStore);
+    connect(m_cookieStore, &QWebEngineCookieStore::cookieRemoved, this, &WebEnginePartCookieJar::removeCookieFromSet);
+    connect(qApp, &QApplication::lastWindowClosed, this, &WebEnginePartCookieJar::saveCookieAdvice);
     KonqInterfaces::Browser *br = KonqInterfaces::Browser::browser(qApp);
     if (br) {
-        connect(br, &KonqInterfaces::Browser::configurationChanged, this, &WebEnginePartCookieJar6::applyConfiguration);
+        connect(br, &KonqInterfaces::Browser::configurationChanged, this, &WebEnginePartCookieJar::applyConfiguration);
     }
 
     //WARNING: call this *before* applyConfiguration(), otherwise, if the default policy is Ask, the user will be asked again for all cookies
@@ -65,33 +65,24 @@ WebEnginePartCookieJar6::WebEnginePartCookieJar6(QWebEngineProfile *prof, QObjec
     applyConfiguration();
 }
 
-WebEnginePartCookieJar6::~WebEnginePartCookieJar6()
+WebEnginePartCookieJar::~WebEnginePartCookieJar()
 {
     QFile f(cookieDataPath());
     if (!f.open(QFile::WriteOnly)) {
         return;
     }
-#if QT_VERSION_MAJOR > 5
     m_cookies.removeIf([](const QNetworkCookie &c){return !c.expirationDate().isValid();});
-#else
-    const QSet<QNetworkCookie> orig (m_cookies);
-    for (const QNetworkCookie &c : orig) {
-        if (!c.expirationDate().isValid()) {
-            m_cookies.remove(c);
-        }
-    }
-#endif
     QDataStream ds(&f);
     ds << m_cookies;
     f.close();
 }
 
-QSet<QNetworkCookie> WebEnginePartCookieJar6::cookies() const
+QSet<QNetworkCookie> WebEnginePartCookieJar::cookies() const
 {
     return m_cookies;
 }
 
-void WebEnginePartCookieJar6::writeConfig()
+void WebEnginePartCookieJar::writeConfig()
 {
     KSharedConfig::Ptr cfg = KSharedConfig::openConfig();
     KConfigGroup grp = cfg->group("Cookie Policy");
@@ -104,7 +95,7 @@ void WebEnginePartCookieJar6::writeConfig()
     cfg->sync();
 }
 
-void WebEnginePartCookieJar6::applyConfiguration()
+void WebEnginePartCookieJar::applyConfiguration()
 {
     KConfigGroup grp = KSharedConfig::openConfig()->group("Cookie Policy");
     m_policy.cookiesEnabled = grp.readEntry("Cookies", true);
@@ -121,14 +112,14 @@ void WebEnginePartCookieJar6::applyConfiguration()
     }
 }
 
-void WebEnginePartCookieJar6::removeAllCookies()
+void WebEnginePartCookieJar::removeAllCookies()
 {
     m_cookieStore->deleteAllCookies();
     m_cookies.clear();
     QFile::remove(cookieAdvicePath());
 }
 
-void WebEnginePartCookieJar6::removeCookiesWithDomain(const QString& domain)
+void WebEnginePartCookieJar::removeCookiesWithDomain(const QString& domain)
 {
     QStringList possibleDomains{domain};
     if (domain.startsWith('.')) {
@@ -152,7 +143,7 @@ void WebEnginePartCookieJar6::removeCookiesWithDomain(const QString& domain)
     }
 }
 
-void WebEnginePartCookieJar6::removeCookies(const QVector<QNetworkCookie>& cookies)
+void WebEnginePartCookieJar::removeCookies(const QVector<QNetworkCookie>& cookies)
 {
     bool exceptionsRemoved = false;
     for (const QNetworkCookie &c : cookies) {
@@ -166,7 +157,7 @@ void WebEnginePartCookieJar6::removeCookies(const QVector<QNetworkCookie>& cooki
     }
 }
 
-void WebEnginePartCookieJar6::removeCookie(const QNetworkCookie& cookie, const QUrl &origin)
+void WebEnginePartCookieJar::removeCookie(const QNetworkCookie& cookie, const QUrl &origin)
 {
     m_cookieStore->deleteCookie(cookie, origin);
     if (m_policy.cookieExceptions.remove(CookieIdentifier{cookie}) > 0) {
@@ -174,7 +165,7 @@ void WebEnginePartCookieJar6::removeCookie(const QNetworkCookie& cookie, const Q
     }
 }
 
-bool WebEnginePartCookieJar6::filterCookie(const QWebEngineCookieStore::FilterRequest& req)
+bool WebEnginePartCookieJar::filterCookie(const QWebEngineCookieStore::FilterRequest& req)
 {
     if (!m_policy.cookiesEnabled) {
         return false;
@@ -185,7 +176,7 @@ bool WebEnginePartCookieJar6::filterCookie(const QWebEngineCookieStore::FilterRe
     return true;
 }
 
-void WebEnginePartCookieJar6::removeSessionCookies()
+void WebEnginePartCookieJar::removeSessionCookies()
 {
     for (const QNetworkCookie &c : m_cookies) {
         if (!c.expirationDate().isValid()) {
@@ -194,7 +185,7 @@ void WebEnginePartCookieJar6::removeSessionCookies()
     }
 }
 
-WebEnginePartCookieJar6::CookieAdvice WebEnginePartCookieJar6::decideCookieAction(const QNetworkCookie cookie)
+WebEnginePartCookieJar::CookieAdvice WebEnginePartCookieJar::decideCookieAction(const QNetworkCookie cookie)
 {
     CookieAdvice option = CookieAdvice::Unknown;
     auto cookiesExIt = m_policy.cookieExceptions.constFind(CookieIdentifier{cookie.name(), cookie.domain(), cookie.path()});
@@ -222,7 +213,7 @@ WebEnginePartCookieJar6::CookieAdvice WebEnginePartCookieJar6::decideCookieActio
     return option;
 }
 
-WebEnginePartCookieJar6::CookieAdvice WebEnginePartCookieJar6::askCookieQuestion(const QNetworkCookie cookie)
+WebEnginePartCookieJar::CookieAdvice WebEnginePartCookieJar::askCookieQuestion(const QNetworkCookie cookie)
 {
     CookieAlertDlg dlg(cookie, qApp->activeWindow());
     dlg.exec();
@@ -242,7 +233,7 @@ WebEnginePartCookieJar6::CookieAdvice WebEnginePartCookieJar6::askCookieQuestion
     return option;
 }
 
-void WebEnginePartCookieJar6::handleCookieAdditionToStore(const QNetworkCookie& cookie)
+void WebEnginePartCookieJar::handleCookieAdditionToStore(const QNetworkCookie& cookie)
 {   
     CookieAdvice action = decideCookieAction(cookie);
     if (action == CookieAdvice::Reject)  {
@@ -258,7 +249,7 @@ void WebEnginePartCookieJar6::handleCookieAdditionToStore(const QNetworkCookie& 
     m_cookies.insert(cookie);
 }
 
-QString WebEnginePartCookieJar6::cookieAdvicePath()
+QString WebEnginePartCookieJar::cookieAdvicePath()
 {
     QString s_cookieAdvicePath;
     if (s_cookieAdvicePath.isEmpty()) {
@@ -269,7 +260,7 @@ QString WebEnginePartCookieJar6::cookieAdvicePath()
     return s_cookieAdvicePath;
 }
 
-QString WebEnginePartCookieJar6::cookieDataPath()
+QString WebEnginePartCookieJar::cookieDataPath()
 {
     QString s_cookieDataPath;
     if (s_cookieDataPath.isEmpty()) {
@@ -279,7 +270,7 @@ QString WebEnginePartCookieJar6::cookieDataPath()
     }
     return s_cookieDataPath;
 }
-void WebEnginePartCookieJar6::saveCookieAdvice()
+void WebEnginePartCookieJar::saveCookieAdvice()
 {
     QFile f(cookieAdvicePath());
     if (!f.open(QFile::WriteOnly)) {
@@ -289,7 +280,7 @@ void WebEnginePartCookieJar6::saveCookieAdvice()
     ds << m_policy.cookieExceptions;
 }
 
-void WebEnginePartCookieJar6::readCookieAdvice()
+void WebEnginePartCookieJar::readCookieAdvice()
 {
     QFile f(cookieAdvicePath());
     if (!f.open(QFile::ReadOnly)) {
@@ -299,12 +290,12 @@ void WebEnginePartCookieJar6::readCookieAdvice()
     ds >> m_policy.cookieExceptions;
 }
 
-void WebEnginePartCookieJar6::removeCookieFromSet(const QNetworkCookie& cookie)
+void WebEnginePartCookieJar::removeCookieFromSet(const QNetworkCookie& cookie)
 {
     m_cookies.remove(cookie);
 }
 
-void WebEnginePartCookieJar6::loadCookies()
+void WebEnginePartCookieJar::loadCookies()
 {
     QFile f(cookieDataPath());
     if (!f.open(QFile::ReadOnly)) {
@@ -315,25 +306,25 @@ void WebEnginePartCookieJar6::loadCookies()
     f.close();
 }
 
-QDebug operator<<(QDebug deb, const WebEnginePartCookieJar6::CookieIdentifier& id)
+QDebug operator<<(QDebug deb, const WebEnginePartCookieJar::CookieIdentifier& id)
 {
     QDebugStateSaver saver(deb);
     deb << "(" << id.name << "," << id.domain << "," << id.path << ")";
     return deb;
 }
 
-qHashReturnType qHash(const QNetworkCookie& cookie, uint seed)
+size_t qHash(const QNetworkCookie& cookie, uint seed)
 {
     return qHash(QStringList{cookie.name(), cookie.domain(), cookie.path()}, seed);
 }
 
-QDataStream& operator>>(QDataStream& ds, WebEnginePartCookieJar6::CookieIdentifier& id)
+QDataStream& operator>>(QDataStream& ds, WebEnginePartCookieJar::CookieIdentifier& id)
 {
     ds >> id.name >> id.domain >> id.path;
     return ds;
 }
 
-QDataStream& operator<<(QDataStream& ds, const WebEnginePartCookieJar6::CookieIdentifier& id)
+QDataStream& operator<<(QDataStream& ds, const WebEnginePartCookieJar::CookieIdentifier& id)
 {
     ds << id.name << id.domain << id.path;
     return ds;

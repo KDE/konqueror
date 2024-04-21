@@ -36,13 +36,8 @@ KCookiesMain::KCookiesMain(QObject *parent, const KPluginMetaData &md, const QVa
     management = new KCookiesManagement(widget(), md);
     tab->addTab(management->widget(), i18n("&Management"));
 
-#if QT_VERSION_MAJOR < 6
-    connect(policies, QOverload<bool>::of(&KCModule::changed), this, QOverload<bool>::of(&KCModule::changed));
-    connect(management, QOverload<bool>::of(&KCModule::changed), this, QOverload<bool>::of(&KCModule::changed));
-#else
     connect(policies, &KCModule::needsSaveChanged, this, &KCookiesMain::updateNeedsSave);
     connect(management, &KCModule::needsSaveChanged, this, &KCookiesMain::updateNeedsSave);
-#endif
 }
 
 KCookiesMain::~KCookiesMain()
@@ -79,8 +74,5 @@ void KCookiesMain::defaults()
     } else if (management) {
         management->defaults();
     }
-
-#if QT_VERSION_MAJOR > 5
     setRepresentsDefaults(true);
-#endif
 }

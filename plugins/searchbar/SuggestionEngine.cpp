@@ -18,11 +18,7 @@ SuggestionEngine::SuggestionEngine(const QString &engineName, QObject *parent)
     KService::Ptr service = KService::serviceByDesktopPath(QStringLiteral("searchproviders/%1.desktop").arg(m_engineName));
 
     if (service) {
-#if QT_VERSION_MAJOR < 6
-        const QString suggestionURL = service->property(QStringLiteral("Suggest")).toString();
-#else
         const QString suggestionURL = service->property<QString>(QStringLiteral("Suggest"));
-#endif
         if (!suggestionURL.isNull() && !suggestionURL.isEmpty()) {
             m_requestURL = suggestionURL;
         } else {

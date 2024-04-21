@@ -14,8 +14,6 @@
 
 class QVariant;
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-
 /**
  * @class BrowserInterface browserinterface.h
  *
@@ -55,10 +53,5 @@ public:
      */
     void callMethod(const char *name, const QVariant &argument);
 };
-
-#else
-#include <KParts/BrowserInterface>
-using BrowserInterface = KParts::BrowserInterface;
-#endif
 
 #endif

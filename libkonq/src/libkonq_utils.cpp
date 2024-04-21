@@ -15,13 +15,9 @@ using namespace Konq;
 
 KBookmarkManager * Konq::userBookmarksManager()
 {
-#if QT_VERSION_MAJOR < 6
-    return KBookmarkManager::userBookmarksManager();
-#else
     static const QString bookmarksFile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/konqueror/bookmarks.xml");
     static KBookmarkManager s_manager(bookmarksFile);
     return &s_manager;
-#endif
 }
 
 //Code copied from kparts/browserrun.cpp (KF5.109) written by David Faure <faure@kde.org>

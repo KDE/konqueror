@@ -17,10 +17,6 @@
 
 #include <QPointer>
 
-#if QT_VERSION_MAJOR < 6
-#include <KParts/SelectorInterface>
-#endif
-
 class KToggleAction;
 class HtmlExtension;
 
@@ -42,6 +38,8 @@ private:
     void getLinks(bool selectedOnly = false);
     void fillLinkListFromHtml(const QUrl &baseUrl, const QList<AsyncSelectorInterface::Element> &elements);
 
+    //TODO KF6: since the async interface doesn't exist anymore in KF6, the SelectorInterfaceType and SelectionInterface
+    //could be removed/simplified
     /**
      * @brief The kind of html selector interface to use
      */
@@ -76,13 +74,7 @@ private:
          * @brief The type of selector interface provided by the HTML extension
          */
         SelectorInterfaceType interfaceType = SelectorInterfaceType::None;
-        /**
-         * @brief A pointer to the KParts::SelectorInterface or `nullptr` if he HTML extension doesn't provide the
-         * KParts::SelectorInterface interface
-         **/
-#if QT_VERSION_MAJOR < 6
-        KParts::SelectorInterface *syncInterface = nullptr;
-#endif
+
         /**
          * @brief A pointer to the AsyncSelectorInterface or `nullptr` if he HTML extension doesn't provide the
          * AsyncSelectorInterface interface

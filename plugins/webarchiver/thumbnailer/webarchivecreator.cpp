@@ -260,12 +260,8 @@ KIO::ThumbnailResult WebArchiveCreator::create(const KIO::ThumbnailRequest& requ
 #ifdef THUMBNAIL_USE_WEBKIT
     page->setVisibilityState(QWebPage::VisibilityStateHidden);
 #else // THUMBNAIL_USE_WEBKIT
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
     page->setLifecycleState(QWebEnginePage::LifecycleState::Discarded);
-#endif // QT_VERSION
 #endif // THUMBNAIL_USE_WEBKIT
-
     return KIO::ThumbnailResult::pass(pix.toImage());
 }
 

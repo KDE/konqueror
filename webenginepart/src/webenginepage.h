@@ -13,7 +13,6 @@
 
 #include "websslinfo.h"
 #include "kwebenginepartlib_export.h"
-#include "qtwebengine6compat.h"
 #include "browserextension.h"
 #include "webenginepartdownloadmanager.h"
 
@@ -24,6 +23,7 @@
 #include <QPointer>
 #include <QScopedPointer>
 #include <QWebEngineFullScreenRequest>
+#include <QWebEngineDownloadRequest>
 
 class QAuthenticator;
 class WebSslInfo;
@@ -63,7 +63,6 @@ public:
      */
     void setPart(WebEnginePart *part);
 
-#ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
     /**
      * @brief Informs the page that a drop operation has been started
      *
@@ -81,11 +80,8 @@ public:
      * @see WebEngineView::dropEvent
      */
     void setDropOperationStarted();
-#endif
 
-#if QT_VERSION_MAJOR == 6
     QWidget* view() const;
-#endif
 
 Q_SIGNALS:
     /**
@@ -124,30 +120,6 @@ protected:
      */
     bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame) override;
 
-#if QT_VERSION_MAJOR < 6
-    /**
-    * @brief Override of `QWebEnginePage::certificateError`
-    *
-    * If the error is overridable, it first checks whether the user has already choosen to permanently ignore the error, in which case it returns `true`.
-    * If the user hasn't made such a choice, the error is deferred and a WebEnginePartCertificateErrorDlg is shown. The result is handled by handleCertificateError.
-    *
-    * @internal
-    * A problem arises if the certificate error happens while loading a page opened from a part which is not a WebEnginePart (this also includes the case when the
-    * URL is entered in the location bar when the part is active). In this case, the URL is first loaded by KIO, then by WebEnginePart. If there's a certificate error,
-    * it will be reported twice: by KIO and by the WebEnginePart. The old trick of using `m_urlLoadedByPart` doesn't work anymore, because if the current part is
-    * a WebEnginePart, WebEnginePart::openUrl will be called, but everything will be handled by WebEnginePart.
-    *
-    * @param _ce the certificate error
-    * @return @b false if the error is not overridable and @true in all other cases. Note that if @b _ce is deferred, according to the documentation for `QWebEngineCertificateError
-    * the return value is ignored.
-    */
-    bool certificateError(const QWebEngineCertificateError &_ce) override;
-#else
-signals:
-protected Q_SLOTS:
-    void handleCertificateError(const QWebEngineCertificateError &ce);
-#endif
-
 protected Q_SLOTS:
     void slotLoadFinished(bool ok);
     virtual void slotGeometryChangeRequested(const QRect& rect);
@@ -155,6 +127,14 @@ protected Q_SLOTS:
     void slotAuthenticationRequired(const QUrl &requestUrl, QAuthenticator *auth);
     void changeFullScreenMode(QWebEngineFullScreenRequest req);
     void changeLifecycleState(QWebEnginePage::LifecycleState recommendedState);
+
+    /**
+    * @brief Handles a certificate error
+    * @see CertificateErrorDialogManager::handleCertificateError
+    *
+    * @param _ce the certificate error
+    */
+    void handleCertificateError(const QWebEngineCertificateError &ce);
 
     /**
      * @brief Updates the stylesheet applied to the page
@@ -229,7 +209,6 @@ private:
 
     QScopedPointer<KPasswdServerClient> m_passwdServerClient;
 
-#ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
     /**
      * @brief Timer used to decide whether a drop operation is happening
      *
@@ -237,7 +216,6 @@ private:
      * @see setDropOperationStarted for more details
      */
     QTimer *m_dropOperationTimer;
-#endif
 
     QMultiHash<QUrl, QWebEngineDownloadRequest*> m_downloadItems;
 };

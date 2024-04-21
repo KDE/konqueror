@@ -18,7 +18,7 @@
 #include <kparts/part.h>
 #include <kparts/statusbarextension.h>
 #include <KParts/ReadOnlyPart>
-#include "kf5compat.h" //For NavigationExtension
+#include <KParts/NavigationExtension>
 #include <kio/job.h>
 #include <kurllabel.h>
 #include <kprotocolinfo.h>
@@ -69,19 +69,10 @@ KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &args)
     KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(parent);
     if (part) {
         HtmlExtension *ext = HtmlExtension::childObject(part);
-#if QT_VERSION_MAJOR < 6
-        KParts::SelectorInterface *syncSelectorInterface = qobject_cast<KParts::SelectorInterface *>(ext);
-#else
-        AsyncSelectorInterface *syncSelectorInterface = nullptr;
-#endif
-        AsyncSelectorInterface *asyncSelectorInterface = qobject_cast<AsyncSelectorInterface*>(ext);
-        if (syncSelectorInterface || asyncSelectorInterface) {
+        AsyncSelectorInterface *selectorInterface = qobject_cast<AsyncSelectorInterface*>(ext);
+        if (selectorInterface) {
             m_part = part;
-#if QT_VERSION_MAJOR < 6
-            auto slot = syncSelectorInterface ? &KonqFeedIcon::updateFeedIcon : &KonqFeedIcon::updateFeedIconAsync;
-#else
             auto slot = &KonqFeedIcon::updateFeedIconAsync;
-#endif
             connect(m_part, QOverload<>::of(&KParts::ReadOnlyPart::completed), this, slot);
             connect(m_part, &KParts::ReadOnlyPart::completedWithPendingAction, this, slot);
             connect(m_part, &KParts::ReadOnlyPart::started, this, &KonqFeedIcon::removeFeedIcon);
@@ -178,24 +169,6 @@ void Akregator::KonqFeedIcon::updateFeedIconAsync()
     };
     asyncIface->querySelectorAllAsync(query(), AsyncSelectorInterface::EntireContent, callback);
 }
-
-#if QT_VERSION_MAJOR < 6
-void KonqFeedIcon::updateFeedIcon()
-{
-    if (!isUrlUsable() || m_feedIcon) {
-        return;
-    }
-
-    HtmlExtension *ext = HtmlExtension::childObject(m_part);
-    KParts::SelectorInterface *syncInterface = qobject_cast<KParts::SelectorInterface *>(ext);
-    QList<KParts::SelectorInterface::Element> linkNodes = syncInterface->querySelectorAll(query(), KParts::SelectorInterface::EntireContent);
-    fillFeedList(linkNodes);
-    if (m_feedList.isEmpty()) {
-        return;
-    }
-    addFeedIcon();
-}
-#endif
 
 void Akregator::KonqFeedIcon::fillFeedList(const QList<Element> &linkNodes)
 {
@@ -295,15 +268,11 @@ void Akregator::KonqFeedIcon::openFeedUrl(const QString& url, const QString &mim
     BrowserArguments bargs;
     bargs.setNewTab(true);
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    emit ext->openUrlRequest(QUrl(url), args, bargs);
-#else
     if (auto browserExtension = qobject_cast<BrowserExtension *>(ext)) {
         emit browserExtension->browserOpenUrlRequest(QUrl(url), args, bargs);
     } else {
         emit ext->openUrlRequest(QUrl(url));
     }
-#endif
 
 }
 

@@ -26,7 +26,7 @@
 #include <KIO/JobTracker>
 #include <KMessageBox>
 #include <KParts/ReadOnlyPart>
-#include "kf5compat.h" //For NavigationExtension
+#include <KParts/NavigationExtension>
 #include <KParts/PartLoader>
 #include <KJobWidgets>
 #include <KProtocolManager>
@@ -544,10 +544,6 @@ void UrlLoader::downloadForEmbeddingOrOpening()
         return;
     }
     connect(m_partDownloaderJob, &DownloaderJob::downloadResult, this, &UrlLoader::jobFinished);
-#if QT_VERSION_MAJOR < 6
-    //In KF5, DownloaderJob::startDownload doesn't connect to the signal
-    connect(m_partDownloaderJob, &DownloaderJob::downloadResult, this, &UrlLoader::downloadForEmbeddingOrOpeningDone);
-#endif
     m_partDownloaderJob->startDownload(m_mainWindow, this, &UrlLoader::downloadForEmbeddingOrOpeningDone);
 }
 
@@ -816,10 +812,6 @@ void UrlLoader::performSave(const QUrl& orig, const QUrl& dest)
     if (m_letRequestingPartDownloadUrl) {
         getDownloaderJobFromPart();
         if (m_partDownloaderJob) {
-#if QT_VERSION_MAJOR < 6
-            //In KF5, DownloaderJob::startDownload doesn't connect to the signal
-            connect(m_partDownloaderJob, &DownloaderJob::downloadResult, this, [this](DownloaderJob *j){done(j);});
-#endif
             m_partDownloaderJob->startDownload(dest.path(), m_mainWindow, this, [this](DownloaderJob *j){done(j);});
             return;
         }

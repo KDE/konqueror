@@ -59,10 +59,6 @@ public:
      */
     void save() override;
 
-#if QT_VERSION_MAJOR < 6
-    void setNeedsSave(bool needs) {emit changed(needs);}
-#endif
-
 private slots:
 
     /**

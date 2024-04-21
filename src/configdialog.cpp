@@ -24,9 +24,6 @@ Konq::ConfigDialog::ConfigDialog(QWidget* parent) : KCMultiDialog(parent)
         {BookmarksModule, "konqueror_kcms/kcm_bookmarks"},
         {KonqModule, "konqueror_kcms/kcm_konq"},
         {DolphinGeneralModule, "dolphin/kcms/kcm_dolphingeneral"},
-#if QT_VERSION_MAJOR < 6
-        {DolphinNavigationModule, "dolphin/kcms/kcm_dolphinnavigation"},
-#endif
         {DolphinViewModesModule, "dolphin/kcms/kcm_dolphinviewmodes"},
         {TrashModule, "kcm_trash"},
         {FileTypesModule, "plasma/kcms/systemsettings_qwidgets/kcm_filetypes"},
@@ -34,13 +31,8 @@ Konq::ConfigDialog::ConfigDialog(QWidget* parent) : KCMultiDialog(parent)
         {HtmlAppearanceModule, "konqueror_kcms/khtml_appearance"},
         {AdBlockModule, "konqueror_kcms/khtml_filter"},
         {HtmlCacheModule, "konqueror_kcms/khtml_cache"},
-#if QT_VERSION_MAJOR < 6
-        {WebShortcutsModule, "kcm_webshortcuts"},
-        {ProxyModule, "kcm_proxy"},
-#else
         {WebShortcutsModule, "plasma/kcms/systemsettings_qwidgets/kcm_webshortcuts"},
         {ProxyModule, "plasma/kcms/systemsettings_qwidgets/kcm_proxy"},
-#endif
         {HistoryModule, "konqueror_kcms/kcm_history"},
         {CookiesModule, "konqueror_kcms/khtml_cookies"},
         {JavaModule, "konqueror_kcms/khtml_java_js"},

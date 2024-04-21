@@ -20,7 +20,6 @@
 #include "navigationrecorder.h"
 #include "profile.h"
 #include "webenginepart_ext.h"
-#include "qtwebengine6compat.h"
 
 #include "libkonq_utils.h"
 #include "interfaces/browser.h"
@@ -62,6 +61,7 @@
 #include <QWebEngineHistory>
 #include <QWebEngineHistoryItem>
 #include <QUrlQuery>
+#include <QWebEngineDownloadRequest>
 #include <KConfigGroup>
 #include <KToggleFullScreenAction>
 //#include <QWebSecurityOrigin>
@@ -75,10 +75,8 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
         m_kioErrorCode(0),
         m_ignoreError(false),
         m_part(part),
-        m_passwdServerClient(new KPasswdServerClient)
-#ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
-        , m_dropOperationTimer(new QTimer(this))
-#endif
+        m_passwdServerClient(new KPasswdServerClient),
+        m_dropOperationTimer(new QTimer(this))
 {
     if (view()) {
         WebEngineSettings::self()->computeFontSizes(view()->logicalDpiY());
@@ -99,14 +97,10 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     connect(this, &QWebEnginePage::fullScreenRequested, this, &WebEnginePage::changeFullScreenMode);
     connect(this, &QWebEnginePage::recommendedStateChanged, this, &WebEnginePage::changeLifecycleState);
 
-#ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
     connect(this, &QWebEnginePage::loadStarted, this, [this](){m_dropOperationTimer->stop();});
     m_dropOperationTimer->setSingleShot(true);
-#endif
 
-#if QT_VERSION_MAJOR == 6
     connect(this, &QWebEnginePage::certificateError, this, &WebEnginePage::handleCertificateError);
-#endif
 
 //If this part is displaying the developer tools for another part, inform the other page it's not displaying the developer tools anymore.
 //I'm not sure this is needed, but I think it's better to do it, just to be on the safe side
@@ -133,12 +127,10 @@ const WebSslInfo& WebEnginePage::sslInfo() const
     return m_sslInfo;
 }
 
-#if QT_VERSION_MAJOR > 5
 QWidget *WebEnginePage::view() const
 {
     return QWebEngineView::forPage(this);
 }
-#endif
 
 void WebEnginePage::setSslInfo (const WebSslInfo& info)
 {
@@ -229,32 +221,12 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
     } else if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveAs) {
         saveAs(item);
     } else {
-    //TODO KF6: this lamba only exists to reduce code duplication in the two #ifdef
-    //branches below. When KF5 compatibility will be removed, cookies will always
-    //be managed internally, so remove the #ifdef and the lambda and move its body
-    //inside the `if (downloader)`
-        auto requestDownloadAndOpen = [&]() {
-            args.metaData().insert(QStringLiteral("TempFile"), QString());
-            emit downloader->downloadAndOpenUrl(url, item->id(), args, bArgs, true);
-            if (item->state() == QWebEngineDownloadRequest::DownloadRequested) {
-                qCDebug(WEBENGINEPART_LOG()) << "Automatically accepting download for" << item->url() << "This shouldn't happen";
-                item->accept();
-            }
-        };
-
-//TODO KF6: remove #ifdef and the #else block when dropping compatibility with KF5
-#ifdef MANAGE_COOKIES_INTERNALLY
-        requestDownloadAndOpen();
-#else //This can only happen in KF5, as MANAGE_COOKIES_INTERNALLY is always defined in KF6
-        // blob URLs can't be downloaded by KIO, so use the part to download them even when using KCookieJar
-        if (item->url().scheme() == QStringLiteral("blob") && downloader) {
-            requestDownloadAndOpen();
-        } else {
-            emit m_part->browserExtension()->openUrlRequest(url, args, bArgs);
-            item->cancel();
-            item->deleteLater();
+        args.metaData().insert(QStringLiteral("TempFile"), QString());
+        emit downloader->downloadAndOpenUrl(url, item->id(), args, bArgs, true);
+        if (item->state() == QWebEngineDownloadRequest::DownloadRequested) {
+            qCDebug(WEBENGINEPART_LOG()) << "Automatically accepting download for" << item->url() << "This shouldn't happen";
+            item->accept();
         }
-#endif
     }
 }
 
@@ -276,11 +248,7 @@ void WebEnginePage::saveUrlToDiskAndDisplay(QWebEngineDownloadRequest* req, cons
     }
 
     auto lambda = [this, args, bArgs](DownloaderJob *, const QUrl &url) {
-    #if QT_VERSION_MAJOR < 6
-        emit m_part->browserExtension()->openUrlRequest(url, args, bArgs);
-    #else
         emit m_part->browserExtension()->browserOpenUrlRequest(url, args, bArgs);
-    #endif
     };
     connect(job, &DownloaderJob::downloadResult, m_part, &WebEnginePart::displayActOnDownloadedFileBar);
     job->startDownload(downloadPath, window, this, lambda);
@@ -310,31 +278,22 @@ void WebEnginePage::saveAs(QWebEngineDownloadRequest* req)
         }
         BrowserArguments bArgs;
         bArgs.setForcesNewWindow(true);
-#if QT_VERSION_MAJOR < 6
-        emit m_part->browserExtension()->openUrlRequest(url, {}, bArgs);
-#else
         emit m_part->browserExtension()->browserOpenUrlRequest(url, {}, bArgs);
-#endif
     };
     job->startDownload(downloadPath, window, this, lambda);
 }
 
-# ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
 void WebEnginePage::setDropOperationStarted()
 {
     m_dropOperationTimer->start(100);
 }
-#endif
-
 
 QWebEnginePage *WebEnginePage::createWindow(WebWindowType type)
 {
-#ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
     if (m_dropOperationTimer->isActive()) {
         m_dropOperationTimer->stop();
         return this;
     }
-#endif
 
     //qCDebug(WEBENGINEPART_LOG) << "window type:" << type;
     // Crete an instance of NewWindowPage class to capture all the
@@ -350,16 +309,8 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
     if (u1.scheme() != u2.scheme())
         return false;
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    QStringList u1List = u1.host().split(QL1C('.'), QString::SkipEmptyParts);
-#else
     QStringList u1List = u1.host().split(QL1C('.'), Qt::SkipEmptyParts);
-#endif
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    QStringList u2List = u2.host().split(QL1C('.'), QString::SkipEmptyParts);
-#else
     QStringList u2List = u2.host().split(QL1C('.'), Qt::SkipEmptyParts);
-#endif
 
     if (qMin(u1List.count(), u2List.count()) < 2)
         return false;  // better safe than sorry...
@@ -378,11 +329,7 @@ bool WebEnginePage::askBrowserToOpenUrl(const QUrl& url, const QString& mimetype
     KParts::OpenUrlArguments args(_args);
     args.setMimeType(mimetype);
     args.metaData().insert("DontSendToDefaultHTMLPart", "");
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    emit m_part->browserExtension()->openUrlRequest(url, args, bargs);
-#else
     emit m_part->browserExtension()->browserOpenUrlRequest(url, args, bargs);
-#endif
     return false;
 }
 
@@ -549,17 +496,9 @@ static int errorCodeFromReply(QNetworkReply* reply)
 }
 #endif
 
-#if QT_VERSION_MAJOR < 6
-bool WebEnginePage::certificateError(const QWebEngineCertificateError& ce)
-{
-    return WebEnginePartControls::self()->handleCertificateError(ce, this);
-}
-#else
 void WebEnginePage::handleCertificateError(const QWebEngineCertificateError &ce) {
     WebEnginePartControls::self()->handleCertificateError(ce, this);
 }
-#endif
-
 
 WebEnginePart* WebEnginePage::part() const
 {
@@ -990,11 +929,7 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
     WindowArgs wargs (m_windowArgs);
 
     KParts::ReadOnlyPart* newWindowPart = nullptr;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    emit part()->browserExtension()->createNewWindow(url, uargs, bargs, wargs, &newWindowPart);
-#else
     emit part()->browserExtension()->browserCreateNewWindow(url, uargs, bargs, wargs, &newWindowPart);
-#endif
     qCDebug(WEBENGINEPART_LOG) << "Created new window" << newWindowPart;
 
     if (newWindowPart && newWindowPart->widget()->topLevelWidget() != part()->widget()->topLevelWidget()) {
@@ -1066,11 +1001,7 @@ void NewWindowPage::slotLoadFinished(bool ok)
 
     KParts::ReadOnlyPart* newWindowPart =nullptr;
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    emit part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
-#else
     emit part()->browserExtension()->browserCreateNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
-#endif
 
     qCDebug(WEBENGINEPART_LOG) << "Created new window or tab" << newWindowPart;
 

@@ -36,6 +36,7 @@ if(UNIX)
    add_subdirectory( shellcmdplugin )
 endif(UNIX)
 
+#TODO KF6 port imagerotation to KF6 or delete it
 # TODO add_subdirectory( imagerotation )
 add_subdirectory( autorefresh )
 if(UNIX)

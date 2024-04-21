@@ -12,14 +12,11 @@
 #include "kwebenginepartlib_export.h"
 
 #include "interfaces/downloaderextension.h"
-#include "qtwebengine6compat.h"
 
 #include <QPointer>
+#include <QWebEngineDownloadRequest>
 
-#include "kf5compat.h" //For NavigationExtension
-#if QT_VERSION_MAJOR < 6
-#include <KParts/SelectorInterface>
-#endif
+#include <KParts/NavigationExtension>
 
 #include <asyncselectorinterface.h>
 #include <htmlextension.h>

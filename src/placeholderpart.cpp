@@ -20,17 +20,10 @@ KPluginMetaData Konq::PlaceholderPart::defaultMetadata()
 }
 
 Konq::PlaceholderPart::PlaceholderPart(QWidget *parentWidget, QObject* parent) :
-#if QT_VERSION_MAJOR < 6
-KParts::ReadOnlyPart(parent),
-#else
 KParts::ReadOnlyPart(parent, defaultMetadata()),
-#endif
 m_widget(new QWidget(parentWidget))
 {
     setWidget(m_widget);
-#if QT_VERSION_MAJOR < 6
-    setMetaData(defaultMetadata());
-#endif
 }
 
 Konq::PlaceholderPart::~PlaceholderPart() noexcept

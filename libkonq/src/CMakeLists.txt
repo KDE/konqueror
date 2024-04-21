@@ -52,9 +52,7 @@ target_link_libraries(KF${KF_MAJOR_VERSION}Konq
     ${ZLIB_LIBRARY}
 )
 
-if (KF_MAJOR_VERSION STRGREATER "5")
-    target_link_libraries(KF${KF_MAJOR_VERSION}Konq PRIVATE KF${KF_MAJOR_VERSION}::BookmarksWidgets)
-endif()
+target_link_libraries(KF${KF_MAJOR_VERSION}Konq PRIVATE KF${KF_MAJOR_VERSION}::BookmarksWidgets)
 
 # For crc32 in konq_historyloader.cpp
 target_include_directories(KF${KF_MAJOR_VERSION}Konq PRIVATE ${ZLIB_INCLUDE_DIR})

@@ -53,9 +53,6 @@ public:
         BookmarksModule, //!< The bookmarks module
         KonqModule, //!< The Konqueror behavior module
         DolphinGeneralModule, //!< The Dolphin general module
-#if QT_VERSION_MAJOR < 6
-        DolphinNavigationModule, //!< The Dolphin navigation module
-#endif
         DolphinViewModesModule, //!< The Dolphin views module
         TrashModule, //!< The trash module
         FileTypesModule, //!< The file types module

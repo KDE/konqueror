@@ -37,10 +37,6 @@ public:
     void save() override;
     void defaults() override;
 
-#if QT_VERSION_MAJOR < 6
-    void setNeedSave(bool needs){emit changed(needs);}
-#endif
-
 private Q_SLOTS:
     void configChanged();
 

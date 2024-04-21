@@ -15,12 +15,7 @@
 #include <QList>
 #include <QtGlobal>
 
-#if QT_VERSION_MAJOR < 6
-#include <kparts/event.h>
-#else
 #include <QEvent>
-#endif
-
 
 namespace KParts
 {
@@ -28,11 +23,7 @@ class ReadOnlyPart;
 }
 
 
-#if QT_VERSION_MAJOR < 6
-class LIBKONQ_EXPORT KonqFileSelectionEvent : public KParts::Event
-#else 
 class LIBKONQ_EXPORT KonqFileSelectionEvent : public QEvent
-#endif
 {
 public:
     KonqFileSelectionEvent(const KFileItemList &selection, KParts::ReadOnlyPart *part);
@@ -51,20 +42,12 @@ public:
     static bool test(const QEvent *event);
 
 private:
-#if QT_VERSION_MAJOR < 6
-    Q_DISABLE_COPY(KonqFileSelectionEvent)
-    static const char *const s_fileItemSelectionEventName;
-#endif
 
     KFileItemList m_selection;
     KParts::ReadOnlyPart *m_part;
 };
 
-#if QT_VERSION_MAJOR < 6
-class LIBKONQ_EXPORT KonqFileMouseOverEvent : public KParts::Event
-#else
 class LIBKONQ_EXPORT KonqFileMouseOverEvent : public QEvent
-#endif
 {
 public:
     KonqFileMouseOverEvent(const KFileItem &item, KParts::ReadOnlyPart *part);
@@ -82,11 +65,6 @@ public:
     static bool test(const QEvent *event);
 
 private:
-#if QT_VERSION_MAJOR < 6
-    Q_DISABLE_COPY(KonqFileMouseOverEvent)
-    static const char *const s_fileItemMouseOverEventName;
-#endif
-
     KFileItem m_item;
     KParts::ReadOnlyPart *m_part;
 };

@@ -109,14 +109,6 @@ public:
     // Meta refresh/redirect (http-equiv)
     bool isAutoDelayedActionsEnabled () const;
 
-#ifndef MANAGE_COOKIES_INTERNALLY
-    // CookieJar...
-    bool isCookieJarEnabled() const;
-    
-    // Cross domain cookies
-    bool acceptCrossDomainCookies() const;
-#endif
-
     // Password storage...
     bool isNonPasswordStorableSite(const QString &host) const;
     void addNonPasswordStorableSite(const QString &host);

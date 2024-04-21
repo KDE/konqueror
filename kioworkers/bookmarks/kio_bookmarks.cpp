@@ -38,12 +38,9 @@ class KIOPluginForMetaData : public QObject
 BookmarksProtocol::BookmarksProtocol( const QByteArray &pool, const QByteArray &app )
     : WorkerBase( "bookmarks", pool, app )
 {
-#if QT_VERSION_MAJOR < 6
-    manager = KBookmarkManager::userBookmarksManager();
-#else
     const QString bookmarksFile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/konqueror/bookmarks.xml");
     manager = new KBookmarkManager(bookmarksFile);
-#endif
+
     cfg = new KConfig( "kiobookmarksrc" );
     config = cfg->group("General");
     cache = new KImageCache("kio_bookmarks", config.readEntry("CacheSize", 5 * 1024) * 1024);
@@ -70,9 +67,6 @@ void BookmarksProtocol::parseTree()
     if (columns < 1)
         columns = 1;
 
-#if QT_VERSION_MAJOR < 6
-    manager->notifyCompleteChange("kio_bookmarks");
-#endif
     tree = manager->root();
 
     if(tree.first().isNull())

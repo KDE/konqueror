@@ -184,10 +184,7 @@ void KMiscHTMLOptions::defaults()
     m_pOfferToSaveWebsitePassword->setChecked(true);
 
     m_pdfViewer->setChecked(false);
-
-#if QT_VERSION_MAJOR > 5
     setRepresentsDefaults(true);
-#endif
 }
 
 void KMiscHTMLOptions::save()

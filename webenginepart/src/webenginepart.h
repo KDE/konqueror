@@ -123,10 +123,6 @@ public:
 
     WebEngineWallet* wallet() const;
 
-#if QT_VERSION_MAJOR < 6
-    KParts::NavigationExtension* navigationExtension() const;
-#endif
-
     /**
      * @brief Changes the page object associated with the part
      *

@@ -35,11 +35,7 @@ target_link_libraries(konquerorprivate
 
 set_target_properties(konquerorprivate PROPERTIES VERSION ${KONQUEROR_LIB_VERSION} SOVERSION "${KF_MAJOR_VERSION}" )
 
-if (QT_MAJOR_VERSION STRLESS "6")
-   target_link_libraries(konquerorprivate Qt5::X11Extras)
-else()
-   target_link_libraries(konquerorprivate Qt${KF_MAJOR_VERSION}::GuiPrivate)
-endif()
+target_link_libraries(konquerorprivate Qt${KF_MAJOR_VERSION}::GuiPrivate)
 
 set_target_properties(konquerorprivate PROPERTIES VERSION ${KONQUEROR_LIB_VERSION} SOVERSION "5" )
 
@@ -118,17 +114,11 @@ file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../pics/*-apps-konqueror.png")
 ecm_add_app_icon(konqueror_KDEINIT_SRCS ICONS ${ICONS_SRCS})
 
 #TODO KF6: when removing compatibility with KF5, remove konqueror_internal_lib_target and use konqueror_internal_lib
-if (KF_MAJOR_VERSION STRLESS "6")
-   kf5_add_kdeinit_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
-   add_library(konqueror_internal_lib ALIAS kdeinit_konqueror)
-   set(konqueror_internal_lib_target kdeinit_konqueror)
-else()
 #We need a library because some tests link to it
-   add_library(konqueror_internal_lib STATIC ${konqueror_KDEINIT_SRCS})
-   add_executable(konqueror konqmain.cpp)
-   target_link_libraries(konqueror konqueror_internal_lib)
-   set(konqueror_internal_lib_target konqueror_internal_lib)
-endif()
+add_library(konqueror_internal_lib STATIC ${konqueror_KDEINIT_SRCS})
+add_executable(konqueror konqmain.cpp)
+target_link_libraries(konqueror konqueror_internal_lib)
+set(konqueror_internal_lib_target konqueror_internal_lib)
 target_link_libraries(${konqueror_internal_lib_target}
    konquerorprivate
    KF${KF_MAJOR_VERSION}::Archive
@@ -140,24 +130,14 @@ target_link_libraries(${konqueror_internal_lib_target}
    KF${KF_MAJOR_VERSION}::WindowSystem
    KF${KF_MAJOR_VERSION}::SonnetUi
    KF${KF_MAJOR_VERSION}::Bookmarks
+   KF${KF_MAJOR_VERSION}::BookmarksWidgets
 )
 
-if (KF_MAJOR_VERSION STRGREATER "5")
-    target_link_libraries(${konqueror_internal_lib_target} KF${KF_MAJOR_VERSION}::BookmarksWidgets)
-endif()
-
 if (KActivities_FOUND)
-   if (KF_MAJOR_VERSION STRGREATER "5")
-      target_link_libraries(${konqueror_internal_lib_target} Plasma::Activities)
-   else()
-      target_link_libraries(${konqueror_internal_lib_target} KF${KF_MAJOR_VERSION}::Activities)
-   endif()
+   target_link_libraries(${konqueror_internal_lib_target} Plasma::Activities)
   target_compile_definitions(${konqueror_internal_lib_target} PUBLIC KActivities_FOUND)
 endif ()
 
-if (NOT WIN32 AND (QT_MAJOR_VERSION STRLESS 6))
-    install(TARGETS kdeinit_konqueror  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
-endif ()
 install(TARGETS konqueror ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############

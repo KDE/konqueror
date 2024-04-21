@@ -15,12 +15,8 @@
 
 #ifdef KActivities_FOUND
 #include "activitymanager.h"
-#if QT_VERSION_MAJOR < 6
-#include <KActivities/Consumer>
-#else //QT_VERSION_MAJOR
 #include <PlasmaActivities/Consumer>
-#endif //QT_VERSION_MAJOR
-#endif //KActivities_FOUND
+#endif
 
 #include "konqdebug.h"
 #include <kio/deletejob.h>

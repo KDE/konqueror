@@ -16,10 +16,6 @@
 
 #include "asyncselectorinterface.h"
 
-#if QT_VERSION_MAJOR < 6
-#include <KParts/SelectorInterface>
-#endif
-
 /**
 @author Teemu Rytilahti
 */
@@ -174,15 +170,6 @@ private slots:
      * @brief Displays the context menu
      */
     void contextMenu();
-
-#if QT_VERSION_MAJOR < 6
-    /**
-     * @brief Looks for feed links in the page using the _synchronous_ interface and adds the feed widget to the status bar if needed
-     * @note This function is _synchronous_
-     * @warning This should only be called after making sure the part supports the `KParts::SelectorInterface` interface
-     */
-    void updateFeedIcon();
-#endif
 
     /**
      * @brief Looks for feed links in the page using the _asynchronous_ interface and adds the feed widget to the status bar if needed

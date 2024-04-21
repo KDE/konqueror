@@ -146,12 +146,7 @@ KonqCombo::KonqCombo(QWidget *parent)
     // The overload resolution is still needed until QComboBox::highlight(QString)
     // is either removed or hidden.
     connect(this, QOverload<int>::of(&QComboBox::highlighted), this, &KonqCombo::slotSetIcon);
-
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
     connect(this, &QComboBox::textActivated, this, &KonqCombo::slotActivated);
-#else
-    connect(this, SIGNAL(activated(QString)), this, SLOT(slotActivated(QString)));
-#endif
     connect(this, &KComboBox::completionModeChanged, this, &KonqCombo::slotCompletionModeChanged);
 }
 

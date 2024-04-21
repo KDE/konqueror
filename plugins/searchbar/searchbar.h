@@ -12,11 +12,6 @@
 #include <KUriFilter>
 
 #include "asyncselectorinterface.h"
-
-#if QT_VERSION_MAJOR < 6
-#include <KParts/SelectorInterface>
-#endif
-
 #include <konq_kpart_plugin.h>
 
 #include <QStringList>

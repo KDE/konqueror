@@ -117,17 +117,13 @@ void SettingsPlugin::showPopup()
     KProtocolManager::reparseConfiguration();
     const bool cookies = cookiesEnabled(part->url().url());
     actionCollection()->action(QStringLiteral("cookies"))->setChecked(cookies);
-#if QT_VERSION_MAJOR < 6
-    actionCollection()->action(QStringLiteral("useproxy"))->setChecked(KProtocolManager::useProxy());
-#else
     actionCollection()->action(QStringLiteral("useproxy"))->setChecked(QNetworkProxy::applicationProxy().type() != QNetworkProxy::NoProxy);
-#endif
 
 // TODO KF6: check whether there's a way to implement cache settings directly using QtWebEngine settings. Also, check whether
 // these settings are actually applied to WebEnginePart
-#if QT_VERSION_MAJOR < 6
-    actionCollection()->action(QStringLiteral("usecache"))->setChecked(KProtocolManager::useCache());
-#endif
+// #if QT_VERSION_MAJOR < 6
+//     actionCollection()->action(QStringLiteral("usecache"))->setChecked(KProtocolManager::useCache());
+// #endif
 
     HtmlSettingsInterface *settings = settingsInterfaceFor(part);
     if (settings) {
@@ -136,25 +132,6 @@ void SettingsPlugin::showPopup()
         actionCollection()->action(QStringLiteral("plugins"))->setChecked(settings->htmlSettingsProperty(HtmlSettingsInterface::PluginsEnabled).toBool());
         actionCollection()->action(QStringLiteral("imageloading"))->setChecked(settings->htmlSettingsProperty(HtmlSettingsInterface::AutoLoadImages).toBool());
     }
-
-#if QT_VERSION_MAJOR < 6
-    KIO::CacheControl cc = KProtocolManager::cacheControl();
-    switch (cc) {
-    case KIO::CC_Verify:
-        static_cast<KSelectAction *>(actionCollection()->action(QStringLiteral("cachepolicy")))->setCurrentItem(0);
-        break;
-    case KIO::CC_CacheOnly:
-        static_cast<KSelectAction *>(actionCollection()->action(QStringLiteral("cachepolicy")))->setCurrentItem(2);
-        break;
-    case KIO::CC_Cache:
-        static_cast<KSelectAction *>(actionCollection()->action(QStringLiteral("cachepolicy")))->setCurrentItem(1);
-        break;
-    case KIO::CC_Reload: // nothing for now
-    case KIO::CC_Refresh:
-    default:
-        break;
-    }
-#endif
 }
 
 void SettingsPlugin::toggleJava(bool checked)
@@ -307,11 +284,7 @@ void SettingsPlugin::updateIOSlaves()
 
 int SettingsPlugin::proxyType()
 {
-#if QT_VERSION_MAJOR < 6
-    return KProtocolManager::proxyType();
-#else
     return KConfig(QStringLiteral("kioslaverc"), KConfig::NoGlobals).group("Proxy Settings").readEntry("ProxyType", 0);
-#endif
 }
 
 #include "settingsplugin.moc"

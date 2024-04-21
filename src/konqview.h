@@ -12,10 +12,10 @@
 #include "konqfactory.h"
 #include "konqframe.h"
 #include "konqutils.h"
-#include "kf5compat.h" //For NavigationExtension
 #include "browserarguments.h"
 
 #include <kservice.h>
+#include <KParts/NavigationExtension>
 #include <QMimeType>
 
 #include <QList>
@@ -35,15 +35,6 @@ namespace KParts
 //class NavigationExtension;
 class StatusBarExtension;
 }
-
-#if QT_VERSION_MAJOR < 6
-#ifdef KActivities_FOUND
-namespace KActivities
-{
-class ResourceInstance;
-}
-#endif
-#endif
 
 namespace Konq {
     class PlaceholderPart;
@@ -637,9 +628,9 @@ public Q_SLOTS:
     // but also to UrlLoader's job
     void slotInfoMessage(KJob *, const QString &msg);
 
-#if QT_VERSION_MAJOR >= 6
+#if QT_VERSION < QT_VERSION_CHECK(6,6,3)
     /**
-     * @brief Works around an isssue in QWebEngineView in Qt6
+     * @brief Works around an isssue in QWebEngineView in Qt6 up to 6.6.2
      *
      * Calling QWebEngineView::setFocus after calling QWebEngineView::load (or similar) twice
      * causes the view not begin given focus (see https://bugreports.qt.io/browse/QTBUG-122153).
@@ -665,14 +656,12 @@ private Q_SLOTS:
     //and one taing a QUrl.
     //
     //Since these slots need to be disconnected, we can't just use a lambda
-#if QT_VERSION_MAJOR > 5
     void slotBrowserPopupMenuFiles(const QPoint &global,
         const KFileItemList &items, const KParts::OpenUrlArguments &args, const BrowserArguments &bargs,
         KParts::NavigationExtension::PopupFlags flags, const KParts::NavigationExtension::ActionGroupMap &actionGroups);
     void slotBrowserPopupMenuUrl(const QPoint &global,
         const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &arguments, const BrowserArguments &bargs,
         KParts::NavigationExtension::PopupFlags flags, const KParts::NavigationExtension::ActionGroupMap &actionGroups);
-#endif
     void slotPopupMenuFiles(const QPoint &global,
         const KFileItemList &items, const KParts::OpenUrlArguments &args, KParts::NavigationExtension::PopupFlags flags,
         const KParts::NavigationExtension::ActionGroupMap &actionGroups);
@@ -801,12 +790,6 @@ private:
     QString m_tempFile;
     QString m_dbusObjectPath;
     QUrl m_requestedUrl;
-
-#if QT_VERSION_MAJOR < 6
-#ifdef KActivities_FOUND
-    KActivities::ResourceInstance *m_activityResourceInstance;
-#endif
-#endif
 };
 
 #endif

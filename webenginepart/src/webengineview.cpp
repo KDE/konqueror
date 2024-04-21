@@ -131,11 +131,7 @@ static void extractMimeTypeFor(const QUrl& url, QString& mimeType)
 
 void WebEngineView::contextMenuEvent(QContextMenuEvent* e)
 {
-#if QT_VERSION_MAJOR < 6
-    m_result = page()->contextMenuData();
-#else
     m_result = lastContextMenuRequest();
-#endif
 
     // Clear the previous collection entries first...
     m_actionCollection->clear();
@@ -187,11 +183,7 @@ void WebEngineView::contextMenuEvent(QContextMenuEvent* e)
         args.setMimeType(mimeType);
         bargs.setForcesNewWindow(forcesNewWindow);
         e->accept();
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        emit m_part->browserExtension()->popupMenu(e->globalPos(), emitUrl, static_cast<mode_t>(-1), args, bargs, flags, mapAction);
-#else
         emit m_part->browserExtension()->browserPopupMenuFromUrl(e->globalPos(), emitUrl, static_cast<mode_t>(-1), args, bargs, flags, mapAction);
-#endif
         return;
     }
 
@@ -338,11 +330,7 @@ void WebEngineView::editableContentActionPopupMenu(KParts::NavigationExtension::
     editableContentActions.append(pageAction(QWebEnginePage::InspectElement));
 
 
-#if QT_VERSION_MAJOR < 6
-    const QWebEngineContextMenuRequest *req = &page()->contextMenuData();
-#else
     QWebEngineContextMenuRequest *req = lastContextMenuRequest();
-#endif
     SpellCheckerManager *manager = m_part->spellCheckerManager();
     m_spellCheckMenu = manager->spellCheckingMenu(req->spellCheckerSuggestions(), m_actionCollection, dynamic_cast<WebEnginePage*>(page()));
     if (m_spellCheckMenu) {
@@ -628,7 +616,6 @@ void WebEngineView::addSearchActions(QList<QAction*>& selectActions, QWebEngineV
     }
 }
 
-#ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
 void WebEngineView::dropEvent(QDropEvent* e)
 {
     WebEnginePage *pg = qobject_cast<WebEnginePage*>(page());
@@ -638,57 +625,12 @@ void WebEngineView::dropEvent(QDropEvent* e)
     QWebEngineView::dropEvent(e);
 }
 
-#else
-void WebEngineView::dropEvent(QDropEvent* e)
-{
-    QWebEngineView::dropEvent(e);
-    //Unlike in acceptProposedDragEventIfPossible, we don't check !e->isAccepted because it seems that it's always true
-    //(if the move event was accepted, this is accepted automatically; if the move event was rejected, this function
-    //isn't called at all)
-    if (!m_dragAndDropHandledBySuperclass && e->mimeData()->hasUrls()) {
-        m_dragAndDropHandledBySuperclass = true;
-        emit m_part->navigationExtension()->openUrlRequest(e->mimeData()->urls().first());
-        e->acceptProposedAction();
-    }
-}
-
-void WebEngineView::acceptDragMoveEventIfPossible(QDragMoveEvent* e)
-{
-    if (!e->isAccepted() && e->mimeData()->hasUrls()) {
-        e->acceptProposedAction();
-        m_dragAndDropHandledBySuperclass = false;
-    } else {
-        m_dragAndDropHandledBySuperclass = true;
-    }
-}
-
-void WebEngineView::dragEnterEvent(QDragEnterEvent* e)
-{
-    QWebEngineView::dragEnterEvent(e);
-    acceptDragMoveEventIfPossible(e);
-}
-
-void WebEngineView::dragMoveEvent(QDragMoveEvent* e)
-{
-    QWebEngineView::dragMoveEvent(e);
-    acceptDragMoveEventIfPossible(e);
-}
-#endif
-
 QWebEngineContextMenuRequest* WebEngineView::result()
 {
-#if QT_VERSION_MAJOR < 6
-    return &m_result;
-#else
     return m_result;
-#endif
 }
 
 const QWebEngineContextMenuRequest* WebEngineView::result() const
 {
-#if QT_VERSION_MAJOR < 6
-    return &m_result;
-#else
     return m_result;
-#endif
 }

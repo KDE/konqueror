@@ -19,10 +19,11 @@
 #include <QAction>
 #include <qplatformdefs.h> //mode_t
 
+#include <KParts/NavigationExtension>
+
 #include "browserarguments.h"
 #include "windowargs.h"
 #include "browserinterface.h"
-#include "kf5compat.h"
 
 template<class Key, class T>
 class QMap;
@@ -33,8 +34,6 @@ class KFileItem;
 class KFileItemList;
 class QPoint;
 struct DelayedRequest;
-
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 
 class LIBKONQ_EXPORT BrowserExtension : public KParts::NavigationExtension
 {
@@ -153,9 +152,5 @@ private:
     QList<DelayedRequest> m_requests;
     BrowserInterface *m_browserInterface = nullptr;
 };
-
-#else
-    using BrowserExtension = KParts::BrowserExtension;
-#endif
 
 #endif

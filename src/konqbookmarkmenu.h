@@ -38,9 +38,7 @@ public:
         : KBookmarkMenu(mgr, owner, parentMenu->menu())
     {
         m_actionCollection = collec;
-#if QT_VERSION_MAJOR >= 6
         setBrowserMode(true);
-#endif
     }
     ~KonqBookmarkMenu() override
     {}
@@ -50,11 +48,7 @@ public:
      * Only used internally and for bookmark toolbar.
      */
     KonqBookmarkMenu(KBookmarkManager *mgr, KBookmarkOwner *owner, KBookmarkActionMenu *parentMenu, QString parentAddress, KActionCollection *collec)
-#if QT_VERSION_MAJOR < 6
-        : KBookmarkMenu(mgr, owner, parentMenu->menu(), parentAddress)
-#else
         : KBookmarkMenu(mgr, owner, parentMenu->menu(), parentAddress), m_actionCollection(collec)
-#endif
     {
     }
 
@@ -62,9 +56,7 @@ protected:
     void refill() override;
     QAction *actionForBookmark(const KBookmark &bm) override;
     QMenu *contextMenu(QAction *action) override;
-#if QT_VERSION_MAJOR > 5
-        KActionCollection *m_actionCollection = nullptr;
-#endif
+    KActionCollection *m_actionCollection = nullptr;
 };
 
 class KonqBookmarkContextMenu : public KBookmarkContextMenu

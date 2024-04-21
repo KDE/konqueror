@@ -47,12 +47,8 @@
 #include <config-konqueror.h>
 
 #ifdef KActivities_FOUND
-#if QT_VERSION_MAJOR < 6
-#include <KActivities/ResourceInstance>
-#else //QT_VERSION_MAJOR
 #include <PlasmaActivities/ResourceInstance>
-#endif //QT_VERSION_MAJOR
-#endif //KActivities_FOUND
+#endif
 
 #include <kparts_version.h>
 
@@ -89,11 +85,6 @@ KonqView::KonqView(KonqFrame *viewFrame, KonqMainWindow *mainWindow) :
     m_bURLDropHandling{false},
     m_bDisableScrolling{false},
     m_bErrorURL{false}
-#if QT_VERSION_MAJOR < 6
-#ifdef KActivities_FOUND
-    , m_activityResourceInstance{new KActivities::ResourceInstance(mainWindow->winId(), this)}
-#endif
-#endif
 {
     m_pKonqFrame->setView(this);
     KonqViewFactory factory;
@@ -141,12 +132,6 @@ KonqView::KonqView(KonqViewFactory &viewFactory,
     m_bBuiltinView = false;
     m_bURLDropHandling = false;
     m_bErrorURL = false;
-
-#if QT_VERSION_MAJOR < 6
-#ifdef KActivities_FOUND
-    m_activityResourceInstance = new KActivities::ResourceInstance(mainWindow->winId(), this);
-#endif
-#endif
 
     switchView(viewFactory);
 }
@@ -276,15 +261,7 @@ void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
 #endif
 
 #ifdef KActivities_FOUND
-#if QT_VERSION_MAJOR < 6
-    m_activityResourceInstance->setUri(url);
-
-    if (m_pPart->widget()->hasFocus()) {
-        m_activityResourceInstance->notifyFocusedIn();
-    }
-#else
     KActivities::ResourceInstance::notifyAccessed(url);
-#endif
 #endif
 }
 
@@ -455,17 +432,6 @@ void KonqView::connectPart()
     KParts::NavigationExtension *ext = browserExtension();
     if (ext) {
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        KonqBrowserWindowInterface *bi = new KonqBrowserWindowInterface(mainWindow(), m_pPart);
-        ext->setBrowserInterface(bi);
-
-        connect(ext, &KParts::NavigationExtension::openUrlRequestDelayed, ext,
-                [ext, this](const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs){
-                    KonqOpenURLRequest req(args, bargs, qobject_cast<KParts::ReadOnlyPart*>(ext->parent()));
-                    m_pMainWindow->slotOpenURLRequest(url, req);
-                });
-#else
-        
         if (auto browserExtension = qobject_cast<BrowserExtension *>(ext)) {
             connect(browserExtension, &BrowserExtension::browserOpenUrlRequestDelayed, m_pMainWindow, [ext, this](const QUrl &url, const KParts::OpenUrlArguments &arguments, const BrowserArguments &browserArguments){
                 KonqOpenURLRequest req(arguments, browserArguments, qobject_cast<KParts::ReadOnlyPart*>(ext->parent()));
@@ -480,8 +446,6 @@ void KonqView::connectPart()
                     m_pMainWindow->slotOpenURLRequest(url, req);
                 });
         }
-#endif
-
 
         if (m_bPopupMenuEnabled) {
             m_bPopupMenuEnabled = false; // force
@@ -497,13 +461,6 @@ void KonqView::connectPart()
         connect(ext, SIGNAL(setPageSecurity(int)),
                 this, SLOT(setPageSecurity(int)));
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        connect(ext, &KParts::NavigationExtension::createNewWindow, ext,
-                [ext, this] (const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs, const KParts::WindowArgs &wargs ,KParts::ReadOnlyPart** part) {
-                    KonqOpenURLRequest req(args, bargs, qobject_cast<KParts::ReadOnlyPart*>(ext->parent()));
-                    m_pMainWindow->slotCreateNewWindow(url, req, wargs, part);
-                });
-#else
         if (auto browserExtension = qobject_cast<BrowserExtension *>(ext)) {
             connect(browserExtension, &BrowserExtension::browserCreateNewWindow, ext,
                     [ext, this] (const QUrl &url, const KParts::OpenUrlArguments &args, const BrowserArguments &bargs, const WindowArgs &wargs ,KParts::ReadOnlyPart** part) {
@@ -517,7 +474,6 @@ void KonqView::connectPart()
                         m_pMainWindow->slotCreateNewWindow(url, req);
                     });
         }
-#endif
 
         connect(ext, SIGNAL(loadingProgress(int)),
                 m_pKonqFrame->statusbar(), SLOT(slotLoadingProgress(int)));
@@ -1184,27 +1140,6 @@ void KonqView::enablePopupMenu(bool b)
         return;
     }
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    //Store signal and slot overloads in variable so that they can be reused in both branches
-    using namespace KParts;
-    auto sigOverloadFileItem = QOverload<const QPoint&, const KFileItemList&, const OpenUrlArguments &, const BrowserArguments&,
-        NavigationExtension::PopupFlags, const NavigationExtension::ActionGroupMap&>::of(&NavigationExtension::popupMenu);
-    auto slotOverloadFileItem = QOverload<const QPoint&, const KFileItemList&, const OpenUrlArguments &, const BrowserArguments&,
-        NavigationExtension::PopupFlags, const NavigationExtension::ActionGroupMap&>::of(&KonqMainWindow::slotPopupMenu);
-    auto sigOverloadUrl = QOverload<const QPoint&, const QUrl&, mode_t, const OpenUrlArguments& , const BrowserArguments& ,
-        NavigationExtension::PopupFlags, const NavigationExtension::ActionGroupMap&>::of(&NavigationExtension::popupMenu);
-    auto slotOverloadUrl = QOverload<const QPoint&, const QUrl&, mode_t, const OpenUrlArguments& , const BrowserArguments& ,
-        NavigationExtension::PopupFlags, const NavigationExtension::ActionGroupMap&>::of(&KonqMainWindow::slotPopupMenu);
-    if (b) { // enable context popup
-        m_bPopupMenuEnabled = true;
-        connect(ext,sigOverloadFileItem, m_pMainWindow, slotOverloadFileItem);
-        connect(ext, sigOverloadUrl, m_pMainWindow, slotOverloadUrl);
-    } else { // disable context popup
-        m_bPopupMenuEnabled = false;
-        disconnect(ext,sigOverloadFileItem, m_pMainWindow, slotOverloadFileItem);
-        disconnect(ext, sigOverloadUrl, m_pMainWindow, slotOverloadUrl);
-    }
-#else
     if (auto browserExtension = qobject_cast<BrowserExtension *>(ext)) {
         if (b) {
             m_bPopupMenuEnabled = true;
@@ -1232,10 +1167,8 @@ void KonqView::enablePopupMenu(bool b)
             disconnect(ext, sigOverloadUrl, this, &KonqView::slotPopupMenuUrl);
         }
     }
-#endif
 }
 
-#if QT_VERSION_MAJOR > 5
 void KonqView::slotBrowserPopupMenuFiles(const QPoint& global, const KFileItemList& items,
                                          const KParts::OpenUrlArguments& args, const BrowserArguments& bargs,
                                          KParts::NavigationExtension::PopupFlags flags,
@@ -1251,28 +1184,19 @@ void KonqView::slotBrowserPopupMenuUrl(const QPoint& global, const QUrl& url, mo
 {
     m_pMainWindow->slotPopupMenu(global, url, mode, args, bargs, flags, actionGroups, this);
 }
-#endif
 
 void KonqView::slotPopupMenuFiles(const QPoint &global, const KFileItemList &items,
                                   const KParts::OpenUrlArguments &args, KParts::NavigationExtension::PopupFlags flags,
                                   const KParts::NavigationExtension::ActionGroupMap &actionGroups)
 {
-#if QT_VERSION_MAJOR < 6
-    m_pMainWindow->slotPopupMenu(global, items, args, {}, flags, actionGroups);
-#else
     m_pMainWindow->slotPopupMenu(global, items, args, {}, flags, actionGroups, this);
-#endif
 }
 
 void KonqView::slotPopupMenuUrl(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &arguments,
                                 KParts::NavigationExtension::PopupFlags flags,
                                 const KParts::NavigationExtension::ActionGroupMap &actionGroups)
 {
-#if QT_VERSION_MAJOR < 6
-    m_pMainWindow->slotPopupMenu(global, url, mode, arguments, {}, flags, actionGroups);
-#else
     m_pMainWindow->slotPopupMenu(global, url, mode, arguments, {}, flags, actionGroups, this);
-#endif
 }
 
 void KonqView::reparseConfiguration()
@@ -1341,19 +1265,6 @@ bool KonqView::eventFilter(QObject *obj, QEvent *e)
             emit ext->openUrlRequest(lstDragURLs.first());    // this will call m_pMainWindow::slotOpenURLRequest delayed
         }
     }
-
-#if QT_VERSION_MAJOR < 6
-#ifdef KActivities_FOUND
-    if (e->type() == QEvent::FocusIn) {
-        m_activityResourceInstance->notifyFocusedIn();
-    }
-
-    if (e->type() == QEvent::FocusOut) {
-        m_activityResourceInstance->notifyFocusedOut();
-    }
-#endif
-#endif
-
     return false;
 }
 
@@ -1711,7 +1622,7 @@ void KonqView::duplicateView(KonqView* otherView)
     connect(j, &KJob::result, this, doOpening);
 }
 
-#if QT_VERSION_MAJOR >= 6
+#if QT_VERSION < QT_VERSION_CHECK(6,6,3)
 void KonqView::forceWebEnginePartFocus()
 {
     setFocus();

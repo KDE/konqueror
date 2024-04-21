@@ -87,11 +87,7 @@ QMenu* WebEngine::ActOnDownloadedFileBar::createOpenWithMenu(const KService::Lis
 
 void WebEngine::ActOnDownloadedFileBar::setupEmbedAction(QAction* embedAction)
 {
-#if QT_VERSION_MAJOR < 6
-    QList<KPluginMetaData> parts = KParts::PartLoader::partsForMimeType(m_mimeType).toList();
-#else
     QList<KPluginMetaData> parts = KParts::PartLoader::partsForMimeType(m_mimeType);
-#endif
     QMenu *menu = createEmbedWithMenu(parts);
     bool newTab = embedAction == m_embedActionNewTab;
     connect(menu, &QMenu::triggered, this, [this, newTab](QAction *action){actOnChoice(Embed, newTab, action ? action->data() : QVariant());});
@@ -154,11 +150,7 @@ void WebEngine::ActOnDownloadedFileBar::actOnChoice(Choice choice, bool newTab, 
     BrowserArguments bargs;
     bargs.setForcesNewWindow(newTab);
     bargs.setNewTab(newTab);
-#if QT_VERSION_MAJOR < 6
-    m_part->browserExtension()->openUrlRequest(m_downloadUrl, args, bargs);
-#else
     m_part->browserExtension()->browserOpenUrlRequest(m_downloadUrl, args, bargs);
-#endif
     animatedHide();
     deleteLater();
 }

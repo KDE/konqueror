@@ -10,12 +10,6 @@ if(BUILD_TESTING)
   add_definitions(-DBUILD_TESTING)
 endif(BUILD_TESTING)
 
-#Before Qt 5.15.5 QtWebEngineView didn't allow opening a remote URL by dropping it
-#on the view itself, so WebEngineView needed to handle that itself.
-if(KF_MAJOR_VERSION STRLESS "6" AND QtWebEngineWidgets_VERSION VERSION_LESS "5.15.5")
-  add_definitions(-DREMOTE_DND_NOT_HANDLED_BY_WEBENGINE)
-endif()
-
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
 set(kwebenginepartlib_LIB_SRCS
@@ -43,33 +37,22 @@ set(kwebenginepartlib_LIB_SRCS
     certificateerrordialogmanager.cpp
     navigationrecorder.cpp
     choosepagesaveformatdlg.cpp
-    qtwebengine6compat.h
     schemehandlers/execschemehandler.cpp
     schemehandlers/errorschemehandler.cpp
     schemehandlers/kiohandler.cpp
     actondownloadedfilebar.cpp
-)
-
-if (DontUseKCookieJar)
-  list(APPEND kwebenginepartlib_LIB_SRCS
-    cookies/webenginepartcookiejar6.cpp
+    cookies/webenginepartcookiejar.cpp
     cookies/cookiealertdlg.cpp
+    profile.cpp
     )
-  ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS cookies/cookiealertdlg.ui)
-else()
-  list(APPEND kwebenginepartlib_LIB_SRCS cookies/webenginepartcookiejar_kio.cpp)
-endif()
 
 ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS
   webenginecustomizecacheablefieldsdlg.ui
   ui/credentialsdetailswidget.ui
   webenginepartcertificateerrordlg.ui
   choosepagesaveformatdlg.ui
+  cookies/cookiealertdlg.ui
   )
-
-if (QT_MAJOR_VERSION STREQUAL 6)
-list(APPEND kwebenginepartlib_LIB_SRCS profile.cpp)
-endif()
 
 qt_add_resources(kwebenginepartlib_LIB_SRCS webenginepart.qrc)
 
@@ -130,11 +113,7 @@ if((NOT USE_SYSTEM_DICTIONARIES) AND Hunspell_FOUND)
   set(WEBENGINEPART_OWN_DICTIONARY_DIR ${CMAKE_INSTALL_PREFIX}/share/konqueror/webengine_dictionaries CACHE PATH "The directory where dictionary files built for WebEnginePart will be installed")
   add_compile_definitions(WEBENGINEPART_OWN_DICTIONARY_DIR="${WEBENGINEPART_OWN_DICTIONARY_DIR}")
   
-  if (KF_MAJOR_VERSION STRLESS "6")
-    set(konqueror_internal_lib_target kdeinit_konqueror)
-  else()
-    set(konqueror_internal_lib_target konqueror_internal_lib)
-  endif()
+  set(konqueror_internal_lib_target konqueror_internal_lib)
   target_compile_definitions(${konqueror_internal_lib_target} PUBLIC WEBENGINEPART_OWN_DICTIONARY_DIR="${WEBENGINEPART_OWN_DICTIONARY_DIR}")
 
   find_package(WebEngineDictConverter)

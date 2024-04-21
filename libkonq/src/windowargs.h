@@ -17,7 +17,6 @@ class QRect;
 
 class WindowArgsPrivate;
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 /**
  * @class WindowArgs windowargs.h
  *
@@ -71,10 +70,5 @@ public:
 private:
     QSharedDataPointer<WindowArgsPrivate> d;
 };
-#else
-#include <KParts/WindowArgs>
-using WindowArgs = KParts::WindowArgs;
-#endif
-
 
 #endif

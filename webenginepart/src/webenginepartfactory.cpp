@@ -20,11 +20,7 @@ WebEngineFactory::~WebEngineFactory()
     // qCDebug(WEBENGINEPART_LOG) << this;
 }
 
-#if QT_VERSION_MAJOR < 6
-QObject *WebEngineFactory::create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList &args, const QString&)
-#else
 QObject *WebEngineFactory::create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList &args)
-#endif
 {
     Q_UNUSED(iface);
     Q_UNUSED(args);

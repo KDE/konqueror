@@ -12,10 +12,6 @@
 #include <QString>
 #include <QtPlugin>
 
-#if QT_VERSION_MAJOR < 6
-#include <KParts/SelectorInterface>
-#endif
-
 #include <libkonq_export.h>
 
 #include <functional>
@@ -34,14 +30,9 @@ public:
      */
     virtual ~AsyncSelectorInterface();
 
-#if QT_VERSION_MAJOR < 6
-    typedef KParts::SelectorInterface::Element Element;
-    // typedef KParts::SelectorInterface::QueryMethod QueryMethod;
-    // typedef KParts::SelectorInterface::QueryMethods QueryMethods;
-#else
     class Element;
     class ElementPrivate;
-#endif
+
     enum QueryMethod {
         None = 0x00, /*!< Querying is not possible. */
         EntireContent = 0x01, /*!< Query or can query the entire content. */
@@ -97,7 +88,6 @@ public:
      * @param callback the function to call with the found elements
      */
     virtual void querySelectorAllAsync(const QString &query, QueryMethod method, MultipleElementSelectorCallback& callback) = 0;
-#if QT_VERSION_MAJOR > 5
 
     //Code for this class copied from kparts/selectorinterface.h (KF 5.110) written by David Faure <faure@kde.org>
     class LIBKONQ_EXPORT Element
@@ -179,17 +169,14 @@ public:
     private:
         QSharedDataPointer<ElementPrivate> d;
     };
-#endif
 };
 
-#if QT_VERSION_MAJOR > 5
 inline void qSwap(AsyncSelectorInterface::Element &lhs, AsyncSelectorInterface::Element &rhs)
 {
     lhs.swap(rhs);
 }
 
 Q_DECLARE_TYPEINFO(AsyncSelectorInterface::Element, Q_MOVABLE_TYPE);
-#endif
 
 Q_DECLARE_INTERFACE(AsyncSelectorInterface, "org.kde.libkonq.AsyncSelectorInterface")
 

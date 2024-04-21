@@ -73,11 +73,7 @@ KJavaScriptOptions::KJavaScriptOptions(KSharedConfig::Ptr config, const QString 
 
     // the domain-specific listview
     domainSpecific = new JSDomainListView(m_pConfig, m_groupname, this, widget());
-#if QT_VERSION_MAJOR < 6
-    connect(domainSpecific, &DomainListView::changed, this, &KJavaScriptOptions::markAsChanged);
-#else
     connect(domainSpecific, &DomainListView::changed, this, [this](bool changed){setNeedsSave(changed);});
-#endif
     toplevel->addWidget(domainSpecific, 2);
 
     domainSpecific->setToolTip(i18n("Here you can set specific JavaScript policies for any particular "
@@ -108,11 +104,7 @@ KJavaScriptOptions::KJavaScriptOptions(KSharedConfig::Ptr config, const QString 
     js_policies_frame = new JSPoliciesFrame(&js_global_policies,
                                             i18n("Global JavaScript Policies"), widget());
     toplevel->addWidget(js_policies_frame);
-#if QT_VERSION_MAJOR < 6
-    connect(js_policies_frame, &JSPoliciesFrame::changed, this, &KJavaScriptOptions::markAsChanged);
-#else
     connect(js_policies_frame, &JSPoliciesFrame::changed, this, [this](){setNeedsSave(true);});
-#endif
 
 }
 
@@ -148,10 +140,7 @@ void KJavaScriptOptions::defaults()
     reportErrorsCB->setChecked(false);
     jsDebugWindow->setChecked(false);
     setNeedsSave(true);
-
-#if QT_VERSION_MAJOR > 5
     setRepresentsDefaults(true);
-#endif
 }
 
 void KJavaScriptOptions::save()

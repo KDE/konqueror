@@ -32,11 +32,7 @@ KonqMainWindow * FullScreenManager::mainWindow() const
 
 QAction* FullScreenManager::action(const QString &name)
 {
-#if QT_VERSION_MAJOR < 6
-    return mainWindow()->actionCollection()->action(name);
-#else
     return mainWindow() ->action(name);
-#endif
 }
 
 void FullScreenManager::init()

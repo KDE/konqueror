@@ -34,11 +34,7 @@
 #include <QDirIterator>
 #include <QTextStream>
 
-#if QT_VERSION_MAJOR < 6
-#include <QX11Info>
-#else
 #include <QtGui/private/qtx11extras_p.h>
-#endif
 
 #include <KCrash>
 #include <KLocalizedString>
@@ -52,12 +48,8 @@
 
 #ifdef KActivities_FOUND
 #include "activitymanager.h"
-#if QT_VERSION_MAJOR < 6
-#include <KActivities/Consumer>
-#else //QT_VERSION_MAJOR
 #include <PlasmaActivities/Consumer>
-#endif //QT_VERSION_MAJOR
-#endif //KActivities_FOUND
+#endif
 
 #include <iostream>
 #include <unistd.h>

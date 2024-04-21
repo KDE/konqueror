@@ -14,8 +14,6 @@
 #include <QByteArray>
 #include <QStringList>
 
-# if QT_VERSION_MAJOR == 6
-
 struct BrowserArgumentsPrivate;
 
 /**
@@ -151,10 +149,5 @@ struct LIBKONQ_EXPORT BrowserArguments {
 private:
     BrowserArgumentsPrivate *d;
 };
-
-#else
-#include <KParts/BrowserArguments>
-using BrowserArguments = KParts::BrowserArguments;
-#endif
 
 #endif

@@ -8,8 +8,6 @@
 
 #include "browserarguments.h"
 
-# if QT_VERSION_MAJOR == 6
-
 struct BrowserArgumentsPrivate {
     QString contentType; // for POST
     bool doPost = false;
@@ -137,5 +135,3 @@ bool BrowserArguments::forcesNewWindow() const
 {
     return d ? d->forcesNewWindow : false;
 }
-
-#endif
