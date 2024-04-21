@@ -146,6 +146,18 @@ struct LIBKONQ_EXPORT BrowserArguments {
      */
     bool forcesNewWindow() const;
 
+    /**
+     * @brief The suggested name to use when downloading the URL
+     * @return The suggested name
+     */
+    QString suggestedDownloadName() const;
+
+    /**
+     * @brief Changes the suggested name to use when downloading the URL
+     * @param name the suggested name
+     */
+    void setSuggestedDownloadName(const QString &name);
+
 private:
     BrowserArgumentsPrivate *d;
 };

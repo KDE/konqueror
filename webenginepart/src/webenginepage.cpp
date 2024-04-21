@@ -204,6 +204,7 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
 
     BrowserArguments bArgs;
     bArgs.setForcesNewWindow(newWindow);
+    bArgs.setSuggestedDownloadName(item->suggestedFileName());
     KParts::OpenUrlArguments args;
 
     QMimeDatabase db;
@@ -214,7 +215,6 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
     args.setMimeType(mime.name());
 
     args.metaData().insert(QStringLiteral("DontSendToDefaultHTMLPart"), QString());
-    args.metaData().insert(QStringLiteral("SuggestedFileName"), item->suggestedFileName());
 
     if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveOnly) {
         args.metaData().insert("action", "save");

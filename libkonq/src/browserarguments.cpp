@@ -15,6 +15,7 @@ struct BrowserArgumentsPrivate {
     bool lockHistory = false;
     bool newTab = false;
     bool forcesNewWindow = false;
+    QString suggestedDownloadName;
 };
 
 BrowserArguments::BrowserArguments()
@@ -134,4 +135,17 @@ void BrowserArguments::setForcesNewWindow(bool forcesNewWindow)
 bool BrowserArguments::forcesNewWindow() const
 {
     return d ? d->forcesNewWindow : false;
+}
+
+void BrowserArguments::setSuggestedDownloadName(const QString& name)
+{
+    if (!d) {
+        d = new BrowserArgumentsPrivate;
+    }
+    d->suggestedDownloadName = name;
+}
+
+QString BrowserArguments::suggestedDownloadName() const
+{
+    return d ? d->suggestedDownloadName : QString();
 }

@@ -79,9 +79,7 @@ UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url
     m_protocolAllowsReading(KProtocolManager::supportsReading(m_url) || !KProtocolInfo::isKnownProtocol(m_url)), // If the protocol is unknown, assume it allows reading
     m_letRequestingPartDownloadUrl(req.letPartPerformDownload)
 {
-    //TODO KF6: currently there's no way to pass the suggested file name. When dropping compatibility with KF5, have a field for this
-    //in BrowserArguments
-    m_request.suggestedFileName = m_request.args.metaData().value(QStringLiteral("SuggestedFileName"));
+    m_request.suggestedFileName = m_request.browserArgs.suggestedDownloadName();
 
     //TODO KF6: when dropping compatibility with KF5, stop using metadata and add appropriate fields to BrowserArguments
     QString requestedEmbeddingPart = m_request.args.metaData().value(QStringLiteral("embed-with"));
