@@ -487,8 +487,7 @@ void KonqView::connectPart()
         connect(ext, SIGNAL(mouseOverInfo(KFileItem)),
                 this, SLOT(slotMouseOverInfo(KFileItem)));
 
-        connect(ext, SIGNAL(openUrlNotify()),
-                this, SLOT(slotOpenURLNotify()));
+        connect(ext, &KParts::NavigationExtension::openUrlNotify, this, &KonqView::slotOpenURLNotify);
 
         connect(ext, SIGNAL(enableAction(const char*,bool)),
                 this, SLOT(slotEnableAction(const char*,bool)));

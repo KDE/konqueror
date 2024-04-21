@@ -42,9 +42,35 @@ public:
 
     int xOffset() override;
     int yOffset() override;
+
+    /**
+     * @brief Override of BrowserExtension::saveState
+     *
+     * If #m_historyWorkaround is `true`, it doesn't save the state corresponding to the
+     * current history item but the previous one. This is because #m_historyWorkaround should
+     * be `true` only when this is called in response to a `openUrlNotify()` emitted from
+     * WebEnginePart::slotUrlChanged rather than from WebEnginePart::slotLoadStarted. Since
+     * when WebEnginePart::slotUrlChanged is called, the history already contains the new URL,
+     * but we want to save the old URL, we need to save the previous item.
+     *
+     * @see WebEnginePart::slotUrlChanged
+     */
     void saveState(QDataStream &) override;
     void restoreState(QDataStream &) override;
     void saveHistory();
+
+    /**
+     * @brief Calls a function with the history workaround enabled
+     *
+     * It sets #m_historyWorkaround to `true`, calls @p func, then sets `m_historyWorkaround`
+     * to `false`. This ensures that #m_historyWorkaround is always `false` except
+     * inside @p func.
+     *
+     * @p func the function to call. It should take no arguments have no return value
+     *
+     * @warning This should only be called from WebEnginePart::slotUrlChanged
+     */
+    void withHistoryWorkaround(std::function<void()> func);
 
 Q_SIGNALS:
     void saveUrl(const QUrl &);
@@ -117,6 +143,7 @@ private:
     quint32 m_spellTextSelectionEnd;
     QByteArray m_historyData;
     QPrinter *mCurrentPrinter;
+    bool m_historyWorkaround = false; //!< Whether saveState() should apply the history workaround or not
 };
 
 /**

@@ -149,12 +149,29 @@ int WebEngineNavigationExtension::yOffset()
     return KParts::NavigationExtension::yOffset();
 }
 
+void WebEngineNavigationExtension::withHistoryWorkaround(std::function<void ()> func)
+{
+    m_historyWorkaround = true;
+    func();
+    m_historyWorkaround = false;
+}
+
 void WebEngineNavigationExtension::saveState(QDataStream &stream)
 {
     // TODO: Save information such as form data from the current page.
     QWebEngineHistory* history = (view() ? view()->history() : nullptr);
-    const int historyIndex = (history ? history->currentItemIndex() : -1);
-    const QUrl historyUrl = (history && historyIndex > -1) ? QUrl(history->currentItem().url()) : m_part->url();
+    int historyIndex = -1;
+    QUrl historyUrl = m_part->url();
+
+    if (history) {
+        historyIndex = history->currentItemIndex();
+        if (m_historyWorkaround) {
+            historyIndex--;
+        }
+        if (historyIndex > -1) {
+            historyUrl = history->itemAt(historyIndex).url();
+        }
+    }
 
     stream << historyUrl
            << static_cast<qint32>(xOffset())

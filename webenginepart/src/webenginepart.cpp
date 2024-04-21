@@ -285,6 +285,7 @@ void WebEnginePart::connectWebEnginePageSignals(WebEnginePage* page)
 
     connect(page, &QWebEnginePage::loadStarted, this, &WebEnginePart::slotLoadStarted);
     connect(page, &WebEnginePage::loadAborted, this, &WebEnginePart::slotLoadAborted);
+    connect(page, &WebEnginePage::mainFrameNavigationRequested, this, &WebEnginePart::recordNavigationAccepted);
     connect(page, &QWebEnginePage::linkHovered, this, &WebEnginePart::slotLinkHovered);
     connect(page, &QWebEnginePage::windowCloseRequested, this, &WebEnginePart::slotWindowCloseRequested);
     connect(page, &QWebEnginePage::loadProgress, m_browserExtension, &KParts::NavigationExtension::loadingProgress);
@@ -454,10 +455,18 @@ void WebEnginePart::slotLoadStarted()
     m_emitOpenUrlNotify = true;
 }
 
+void WebEnginePart::recordNavigationAccepted(WebEnginePage* page, const QUrl& url)
+{
+    Q_UNUSED(page);
+    m_lastRequestedUrl = url;
+}
+
 void WebEnginePart::slotLoadFinished (bool ok)
 {
-    if (!ok || !m_doLoadFinishedActions)
+    if (!ok || !m_doLoadFinishedActions) {
+        m_lastRequestedUrl.clear();
         return;
+    }
 
     resetWallet();
     m_doLoadFinishedActions = false;
@@ -475,6 +484,10 @@ void WebEnginePart::slotLoadFinished (bool ok)
         // documents...
         slotUrlChanged(url);
     }
+
+    //WARNING: only call this after the if block above, otherwise in case slotUrlChanged is
+    //called, it'll call slotLoadStarted even if it shouldn't
+    m_lastRequestedUrl.clear();
 
     if (m_wallet) {
         m_wallet->detectAndFillPageForms(page());
@@ -503,6 +516,12 @@ void WebEnginePart::slotLoadAborted(const QUrl & url)
 
 void WebEnginePart::slotUrlChanged(const QUrl& url)
 {
+    //Don't call slotLoadStarted if only the fragments are different
+    if (!m_lastRequestedUrl.matches(url, QUrl::RemoveFragment)) {
+        m_browserExtension->withHistoryWorkaround([this]{slotLoadStarted();});
+    }
+    m_lastRequestedUrl.clear();
+
     // Ignore if empty
     if (url.isEmpty())
         return;

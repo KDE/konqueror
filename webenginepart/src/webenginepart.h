@@ -185,7 +185,26 @@ private Q_SLOTS:
     void slotLinkMiddleOrCtrlClicked(const QUrl&);
     void slotSelectionClipboardUrlPasted(const QUrl&, const QString&);
 
-    void slotUrlChanged(const QUrl &);
+    /**
+     * @brief Slot called in response to WebEnginePage::urlChanged signal
+     *
+     * It main task is to call setUrl and emit the setLocationBar signal. However, due to the fact that
+     * WebEnginePage::loadStarted isn't always emitted (in particular, it isn't emitted when the history API
+     * is used, see https://bugreports.qt.io/browse/QTBUG-115589) it will sometimes also call slotLoadStarted.
+     *
+     * @private
+     * In particular, what this does is:
+     * - check whether @p url is the URL for which WebEnignePage::acceptNavigationRequest was called, which
+     *   is stored in #m_lastRequestedUrl
+     * - if the two URLs are equal, it means that the WebEnginePage::loadStarted signal was emitted (it is always emitted
+     *   when WebEngePage::acceptNavigationRequest is called), then it doesn't need to call slotLoadStarted
+     * - if the two URLs are different, it means that WebEnginePage::loadStarted signal was not emitted, so it needs to
+     *   call slotLoadStarted
+     *
+     * @param url the new URL
+     * @see WebEngineNavigationExtension::saveState
+     */
+    void slotUrlChanged(const QUrl &url);
     void resetWallet();
     void slotShowWalletMenu();
     void slotLaunchWalletManager();
@@ -206,6 +225,13 @@ private Q_SLOTS:
     void walletFinishedFormDetection(const QUrl &url, bool found, bool autoFillableFound);
     void updateWalletActions();
     void reloadAfterUAChange(const QString &);
+
+    /**
+     * @brief Records the URL for which WebEnginePart::acceptNavigationRequest() was last called
+     * @param page the page which emitted the signal (unused)
+     * @param url the URL for which acceptNavigationRequest was called
+     */
+    void recordNavigationAccepted(WebEnginePage *page, const QUrl &url);
 
 private:
     static void initWebEngineUrlSchemes();
@@ -243,6 +269,13 @@ private:
     WebEngineDownloaderExtension* m_downloader;
 
     QPointer<WebEngine::ActOnDownloadedFileBar> m_actOnDownloadedFileWidget = nullptr; //!< Widget allowing the user to open a file which was downloaded right now
+
+    /**
+     * @brief The URL for which WebEnginePart::acceptNavigationRequest was last called
+     *
+     * This is used by slotUrlChanged to decide whether it needs to call slotLoadStarted or not
+     */
+    QUrl m_lastRequestedUrl;
 };
 
 
