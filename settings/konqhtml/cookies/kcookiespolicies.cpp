@@ -333,6 +333,7 @@ void KCookiesPolicies::load()
     if (enableCookies) {
         updateButtons();
     }
+    KCModule::load();
 }
 
 void KCookiesPolicies::save()
