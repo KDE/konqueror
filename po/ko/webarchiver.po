@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:45+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2021-05-16 22:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -88,7 +88,7 @@ msgstr[0] " 초"
 msgid "None"
 msgstr "없음"
 
-#: app/archivedialog.cpp:219
+#: app/archivedialog.cpp:210
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -98,25 +98,25 @@ msgstr ""
 "웹 압축 파일 다운로드에서 현재 프록시 설정을 사용할 수 없습니다. 프록시를 사"
 "용하지 않습니다."
 
-#: app/archivedialog.cpp:358
+#: app/archivedialog.cpp:349
 #, kde-format
 msgctxt "@info"
 msgid "The save location is not valid."
 msgstr "저장 위치가 잘못되었습니다."
 
-#: app/archivedialog.cpp:378
+#: app/archivedialog.cpp:369
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
 msgstr "wget(1) 명령을 찾을 수 없습니다.<nl/>참조: <link>%1</link>."
 
-#: app/archivedialog.cpp:404
+#: app/archivedialog.cpp:391
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
 msgstr "대상을 확인할 수 없습니다:<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:421
+#: app/archivedialog.cpp:408
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -125,13 +125,13 @@ msgid ""
 msgstr ""
 "압축 디렉터리<nl/><filename>%1</filename>이(가)<nl/>이미 파일로 존재합니다."
 
-#: app/archivedialog.cpp:422
+#: app/archivedialog.cpp:409
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
 msgstr "압축 디렉터리<nl/><filename>%1</filename>이(가)<nl/>이미 존재합니다."
 
-#: app/archivedialog.cpp:426
+#: app/archivedialog.cpp:413
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -140,42 +140,42 @@ msgid ""
 msgstr ""
 "압축 파일<nl/><filename>%1</filename>이(가)<nl/>이미 디렉터리로 존재합니다."
 
-#: app/archivedialog.cpp:427
+#: app/archivedialog.cpp:414
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
 msgstr "압축 파일<nl/><filename>%1</filename>이(가)<nl/>이미 존재합니다."
 
-#: app/archivedialog.cpp:431
+#: app/archivedialog.cpp:418
 #, kde-format
 msgid "Archive Already Exists"
 msgstr "압축 파일이 이미 존재함"
 
-#: app/archivedialog.cpp:461
+#: app/archivedialog.cpp:448
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
 msgstr "원본 압축 파일을 삭제할 수 없음<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:478
+#: app/archivedialog.cpp:465
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
 msgstr "임시 디렉터리를 생성할 수 없음<nl/><filename>%1</filename><nl/>"
 
-#: app/archivedialog.cpp:550
+#: app/archivedialog.cpp:537
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot start the archiver process <filename>%1</filename>"
 msgstr "압축기 프로세스 <filename>%1</filename>을(를) 시작할 수 없음"
 
-#: app/archivedialog.cpp:566
+#: app/archivedialog.cpp:553
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The download process was interrupted."
 msgstr "다운로드 프로세스가 중단되었습니다."
 
-#: app/archivedialog.cpp:567
+#: app/archivedialog.cpp:554
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -185,7 +185,7 @@ msgstr ""
 "<para>다운로드 프로세스 <filename>%1</filename>이(가) 실패하면서 시그널 %2을"
 "(를) 반환했습니다.</para>"
 
-#: app/archivedialog.cpp:572
+#: app/archivedialog.cpp:559
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -195,7 +195,7 @@ msgstr ""
 "<para>다운로드 프로세스 <filename>%1</filename>이(가) 실패하면서 상태 코드 %2"
 "을(를) 반환했습니다.</para>"
 
-#: app/archivedialog.cpp:576
+#: app/archivedialog.cpp:563
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -204,41 +204,41 @@ msgid ""
 msgstr ""
 "<para>일부 페이지 구성 요소에서 404 오류가 발생했을 수도 있습니다.</para>"
 
-#: app/archivedialog.cpp:582
+#: app/archivedialog.cpp:569
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
 msgstr "<para>부분적 웹 압축 파일을 유지하시겠습니까?</para>"
 
-#: app/archivedialog.cpp:583
+#: app/archivedialog.cpp:570
 #, kde-format
 msgid "Retain Archive?"
 msgstr "압축 파일을 유지하시겠습니까?"
 
-#: app/archivedialog.cpp:584
+#: app/archivedialog.cpp:571
 #, kde-format
 msgid "Retain"
 msgstr "유지"
 
-#: app/archivedialog.cpp:588
+#: app/archivedialog.cpp:575
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."
 msgstr "웹 압축 파일을 만들 수 없습니다."
 
-#: app/archivedialog.cpp:731
+#: app/archivedialog.cpp:718
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
 msgstr "압축 파일을<nl/><filename>%1</filename>으로 복사할 수 없음<nl/>%2"
 
-#: app/archivedialog.cpp:761
+#: app/archivedialog.cpp:748
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
 msgstr "다음 파일의 권한을 설정할 수 없음<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:769
+#: app/archivedialog.cpp:756
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2022-09-07 19:11+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -77,12 +77,12 @@ msgstr "Tipus MIME"
 msgid "Go To"
 msgstr "Ves a"
 
-#: fsview.cpp:284 fsview_part.cpp:119
+#: fsview.cpp:284 fsview_part.cpp:106
 #, kde-format
 msgid "Stop at Depth"
 msgstr "Atura a la profunditat"
 
-#: fsview.cpp:285 fsview_part.cpp:116
+#: fsview.cpp:285 fsview_part.cpp:103
 #, kde-format
 msgid "Stop at Area"
 msgstr "Atura a l'àrea"
@@ -112,12 +112,12 @@ msgstr "Actualitza"
 msgid "Refresh '%1'"
 msgstr "Actualitza «%1»"
 
-#: fsview.cpp:313 fsview_part.cpp:126
+#: fsview.cpp:313 fsview_part.cpp:113
 #, kde-format
 msgid "Color Mode"
 msgstr "Mode de color"
 
-#: fsview.cpp:316 fsview_part.cpp:122
+#: fsview.cpp:316 fsview_part.cpp:109
 #, kde-format
 msgid "Visualization"
 msgstr "Visualització"
@@ -146,7 +146,7 @@ msgid_plural "%1 folders"
 msgstr[0] "1 carpeta"
 msgstr[1] "%1 carpetes"
 
-#: fsview_part.cpp:100
+#: fsview_part.cpp:87
 #, kde-format
 msgid ""
 "<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
@@ -162,46 +162,46 @@ msgstr ""
 "seu ús i les opcions disponibles, consultar l'ajuda en línia sota el menú "
 "«Ajuda -> Manual de FSView».</p>"
 
-#: fsview_part.cpp:132
+#: fsview_part.cpp:119
 #, kde-format
 msgid "&FSView Manual"
 msgstr "Manual del &FSView"
 
-#: fsview_part.cpp:134
+#: fsview_part.cpp:121
 #, kde-format
 msgid "Show FSView manual"
 msgstr "Mostra el manual del FSView"
 
-#: fsview_part.cpp:135
+#: fsview_part.cpp:122
 #, kde-format
 msgid "Opens the help browser with the FSView documentation"
 msgstr "Obre el navegador de l'ajuda amb la documentació de FSView"
 
-#: fsview_part.cpp:167
+#: fsview_part.cpp:154
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Move to Trash"
 msgstr "Mou a la paperera"
 
-#: fsview_part.cpp:174
+#: fsview_part.cpp:161
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Delete"
 msgstr "Suprimeix"
 
-#: fsview_part.cpp:179
+#: fsview_part.cpp:166
 #, kde-format
 msgctxt "@action:inmenu Edit"
 msgid "&Edit File Type..."
 msgstr "&Edita el tipus de fitxer..."
 
-#: fsview_part.cpp:183
+#: fsview_part.cpp:170
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Properties"
 msgstr "Propietats"
 
-#: fsview_part.cpp:216
+#: fsview_part.cpp:203
 #, kde-format
 msgid ""
 "FSView intentionally does not support automatic updates when changes are "

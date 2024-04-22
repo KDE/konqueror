@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 00:37+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2024-01-07 16:26+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -45,17 +45,17 @@ msgid "Stylesheets"
 msgstr "Foi de stil"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:52 css/csscustom.ui:296
+#: appearance.cpp:48 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "Imagini"
 
-#: appearance.cpp:56
+#: appearance.cpp:52
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "Încarcă &automat imaginile"
 
-#: appearance.cpp:57
+#: appearance.cpp:53
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -72,12 +72,12 @@ msgstr ""
 "selectată această opțiune pentru a beneficia de o experiență de navigare "
 "plăcută.</html>"
 
-#: appearance.cpp:67
+#: appearance.cpp:63
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "&Desenează cadrul în jurul imaginilor încărcate incomplet "
 
-#: appearance.cpp:68
+#: appearance.cpp:64
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -91,24 +91,24 @@ msgstr ""
 "lăsați selectată această opțiune pentru a beneficia de o navigare plăcută.</"
 "html>"
 
-#: appearance.cpp:78
+#: appearance.cpp:74
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "Activate"
 
-#: appearance.cpp:79
+#: appearance.cpp:75
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "Dezactivate"
 
-#: appearance.cpp:80
+#: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
 msgstr "Afișează numai o dată"
 
-#: appearance.cpp:81
+#: appearance.cpp:77
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -122,40 +122,40 @@ msgstr ""
 "început.</li><li><b>Afișează numai odată</b>: Afișează toate animațiile "
 "complet, dar nu le repetă.</li></ul></html>"
 
-#: appearance.cpp:86
+#: appearance.cpp:82
 #, kde-format
 msgid "A&nimations:"
 msgstr "&Animații:"
 
-#: appearance.cpp:89 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "Diverse"
 
-#: appearance.cpp:94
+#: appearance.cpp:90
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "Activată"
 
-#: appearance.cpp:95
+#: appearance.cpp:91
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "Dezactivată"
 
-#: appearance.cpp:96
+#: appearance.cpp:92
 #, kde-format
 msgid "Only on Hover"
 msgstr "Numai la planare"
 
-#: appearance.cpp:97
+#: appearance.cpp:93
 #, kde-format
 msgid "Und&erline links:"
 msgstr "&Subliniere hiperlegături:"
 
-#: appearance.cpp:100
+#: appearance.cpp:96
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -171,29 +171,29 @@ msgstr ""
 "deasupra unei legături</li></ul> <br /><i>Observație: Definițiile CSS "
 "globale pot modifica această configurare.</i></html>"
 
-#: appearance.cpp:109
+#: appearance.cpp:105
 #, kde-format
 msgid "When Efficient"
 msgstr "Când este eficientă"
 
-#: appearance.cpp:110
+#: appearance.cpp:106
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "Întotdeauna"
 
-#: appearance.cpp:111
+#: appearance.cpp:107
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "Niciodată"
 
-#: appearance.cpp:112
+#: appearance.cpp:108
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "Derulare li&nă:"
 
-#: appearance.cpp:114
+#: appearance.cpp:110
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -211,24 +211,24 @@ msgstr ""
 "care aceasta poate fi obținută cu un consum moderat de resurse ale "
 "sistemului.</li></ul></html>"
 
-#: appearance.cpp:132
+#: appearance.cpp:128
 #, kde-format
 msgid "Font Si&ze"
 msgstr "Dimen&siune font"
 
-#: appearance.cpp:135 appearance.cpp:153
+#: appearance.cpp:131 appearance.cpp:149
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr ""
 "Aceasta este mărimea de font relativă pe care o utilizează Konqueror la "
 "afișarea saiturilor de web."
 
-#: appearance.cpp:139
+#: appearance.cpp:135
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "Mărimea m&inimă a fontului:"
 
-#: appearance.cpp:143
+#: appearance.cpp:139
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
@@ -237,29 +237,29 @@ msgstr ""
 "Konqueror nu va afișa niciodată texte mai mici decît această mărime,<br /"
 ">indiferent de setările siturilor de web."
 
-#: appearance.cpp:148
+#: appearance.cpp:144
 #, kde-format
 msgid "&Medium font size:"
 msgstr "Mărimea &medie a fontului:"
 
-#: appearance.cpp:161
+#: appearance.cpp:157
 #, kde-format
 msgid "S&tandard font:"
 msgstr "Fontul &standard:"
 
-#: appearance.cpp:162
+#: appearance.cpp:158
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr ""
 "Acesta este fontul utilizat la afișarea textului normal dintr-o pagină de "
 "web."
 
-#: appearance.cpp:166
+#: appearance.cpp:162
 #, kde-format
 msgid "&Fixed font:"
 msgstr "Fontul fi&x:"
 
-#: appearance.cpp:167
+#: appearance.cpp:163
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
@@ -267,66 +267,66 @@ msgstr ""
 "Acesta este fontul utilizat la afișarea textului de lățime fixă (adică "
 "neproporțional) dintr-o pagină de web."
 
-#: appearance.cpp:171
+#: appearance.cpp:167
 #, kde-format
 msgid "S&erif font:"
 msgstr "Fontul &serif:"
 
-#: appearance.cpp:172
+#: appearance.cpp:168
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr "Acesta este fontul utilizat la afișarea textelor marcate ca serif."
 
-#: appearance.cpp:176
+#: appearance.cpp:172
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "Fontul s&ans serif:"
 
-#: appearance.cpp:177
+#: appearance.cpp:173
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr ""
 "Acesta este fontul utilizat la afișarea textelor marcate ca sans-serif."
 
-#: appearance.cpp:181
+#: appearance.cpp:177
 #, kde-format
 msgid "C&ursive font:"
 msgstr "Fontul c&ursiv:"
 
-#: appearance.cpp:182
+#: appearance.cpp:178
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr ""
 "Acesta este fontul utilizat la afișarea textelor marcate ca fiind cursive."
 
-#: appearance.cpp:186
+#: appearance.cpp:182
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "Fontul &fantasy:"
 
-#: appearance.cpp:187
+#: appearance.cpp:183
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr ""
 "Acesta este fontul utilizat la afișarea textelor marcate cu font fantasy."
 
-#: appearance.cpp:196
+#: appearance.cpp:192
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "Ajustarea &mărimii de font pentru această codare:"
 
-#: appearance.cpp:204 appearance.cpp:405
+#: appearance.cpp:200 appearance.cpp:394
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "Utilizează codarea limbii"
 
-#: appearance.cpp:206
+#: appearance.cpp:202
 #, kde-format
 msgid "Default encoding:"
 msgstr "Codarea implicită:"
 
-#: appearance.cpp:208
+#: appearance.cpp:204
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1346,32 +1346,32 @@ msgstr[0] " zi"
 msgstr[1] " zile"
 msgstr[2] " de zile"
 
-#: filteropts.cpp:124
+#: filteropts.cpp:120
 #, kde-format
 msgid "Insert"
 msgstr "Inserează"
 
-#: filteropts.cpp:127
+#: filteropts.cpp:123
 #, kde-format
 msgid "Update"
 msgstr "Actualizează"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:126
 #, kde-format
 msgid "Remove"
 msgstr "Elimină"
 
-#: filteropts.cpp:134
+#: filteropts.cpp:130
 #, kde-format
 msgid "Import..."
 msgstr "Importă..."
 
-#: filteropts.cpp:137
+#: filteropts.cpp:133
 #, kde-format
 msgid "Export..."
 msgstr "Exportă..."
 
-#: filteropts.cpp:144
+#: filteropts.cpp:140
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
@@ -1380,7 +1380,7 @@ msgstr ""
 "<qt>Informații suplimentare despre <a href=\"importhelp\">formatul de "
 "import</a>, <a href=\"exporthelp\">formatul de export</a>"
 
-#: filteropts.cpp:158
+#: filteropts.cpp:154
 #, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
@@ -1390,7 +1390,7 @@ msgstr ""
 "definite un set de expresii URL în lista filtrelor pentru ca blocarea să "
 "aibă efect."
 
-#: filteropts.cpp:160
+#: filteropts.cpp:156
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
@@ -1399,7 +1399,7 @@ msgstr ""
 "Cînd este activat, imaginile blocate vor fi eliminate complet din pagină, "
 "altfel în locul lor se va pune imaginea „blocat”."
 
-#: filteropts.cpp:167
+#: filteropts.cpp:163
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
@@ -1408,7 +1408,7 @@ msgstr ""
 "Aceasta este lista filtrelor URL ce vor fi aplicate la toate imaginile și "
 "obiectele multimedia încorporate."
 
-#: filteropts.cpp:171
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1428,7 +1428,7 @@ msgstr ""
 "orice URL care se potrivește și care au prioritate fața de oricare filtru "
 "din lista neagră (blocate)."
 
-#: filteropts.cpp:187
+#: filteropts.cpp:183
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1440,7 +1440,7 @@ msgstr ""
 "<tt>[AdBlock]</tt> sînt ignorate. Orice altă linie este adăugată ca o "
 "expresie de filtrare."
 
-#: filteropts.cpp:192
+#: filteropts.cpp:188
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1451,25 +1451,25 @@ msgstr ""
 "are la început  linia antet <tt>[AdBlock]</tt>, apoi urmează toate filtrele, "
 "fiecare pe o linie separată."
 
-#: filteropts.cpp:260
+#: filteropts.cpp:256
 #, fuzzy, kde-format
 #| msgid "Automatic Filter"
 msgid "Import Filters"
 msgstr "Filtrare automată"
 
-#: filteropts.cpp:304
+#: filteropts.cpp:300
 #, fuzzy, kde-format
 #| msgid "URL Expressions to Filter"
 msgid "Export Filters"
 msgstr "Expresii URL de filtrat"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:563 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "Nume"
 
-#: filteropts.cpp:564
+#: filteropts.cpp:554
 #, kde-format
 msgid "URL"
 msgstr "URL"
@@ -1935,30 +1935,30 @@ msgstr ""
 "java tot timpul cît Konqueror este activ, deselectați căsuța de opțiune "
 "\"Oprește serverul de miniaplicații cînd este inactiv\"."
 
-#: javaopts.cpp:291
+#: javaopts.cpp:288
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "Specific &domeniului"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:323
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "Politică Java nouă"
 
-#: javaopts.cpp:329
+#: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "Modifică politica Java"
 
-#: javaopts.cpp:333
+#: javaopts.cpp:330
 #, kde-format
 msgid "&Java policy:"
 msgstr "Politică &Java:"
 
-#: javaopts.cpp:334
+#: javaopts.cpp:331
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "Selectați o politică Java pentru domeniul sau gazda de mai sus."
@@ -2007,7 +2007,7 @@ msgid ""
 msgstr ""
 "Activează raportarea erorilor care apar cînd este executat codul JavaScript."
 
-#: jsopts.cpp:83
+#: jsopts.cpp:79
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2031,7 +2031,7 @@ msgstr ""
 "persoane, permițîndu-vă să le salvați și să le încărcați dintr-un fișier "
 "comprimat."
 
-#: jsopts.cpp:93
+#: jsopts.cpp:89
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2046,7 +2046,7 @@ msgstr ""
 "domenii sau gazde.</p><p>Selectați o politică și utilizați butoanele din "
 "dreapta pentru a o modifica.</p>"
 
-#: jsopts.cpp:100
+#: jsopts.cpp:96
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2057,7 +2057,7 @@ msgstr ""
 "JavaScript. Aceste politici vor fi combinate cu cele existente. "
 "Înregistrările duplicate sînt ignorate."
 
-#: jsopts.cpp:103
+#: jsopts.cpp:99
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2068,40 +2068,40 @@ msgstr ""
 "comprimat. Fișierul cu numele <b>javascript_policy.tgz</b> va fi salvat într-"
 "o locație aleasă de dumneavoastră."
 
-#: jsopts.cpp:109
+#: jsopts.cpp:105
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "Politici JavaScript globale"
 
-#: jsopts.cpp:183
+#: jsopts.cpp:172
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "Specific &domeniului"
 
-#: jsopts.cpp:222
+#: jsopts.cpp:211
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "Politică JavaScript nouă"
 
-#: jsopts.cpp:225
+#: jsopts.cpp:214
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "Modifică politica JavaScript"
 
-#: jsopts.cpp:229
+#: jsopts.cpp:218
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "Politică JavaScript:"
 
-#: jsopts.cpp:230
+#: jsopts.cpp:219
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "Selectați o politică JavaScript pentru domeniul sau gazda de mai sus."
 
-#: jsopts.cpp:232
+#: jsopts.cpp:221
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "Politici JavaScript specifice domeniului"
@@ -2319,7 +2319,7 @@ msgstr ""
 msgid "&Java"
 msgstr "&Java"
 
-#: main.cpp:57
+#: main.cpp:53
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2008-08-21 09:02+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <en@li.org>\n"
@@ -204,47 +204,47 @@ msgstr "កំណត់​ជម្រៅ​ពណ៌​ខុសៗគ្នា
 msgid "Color depth:"
 msgstr ""
 
-#: imgalleryplugin.cpp:54
+#: imgalleryplugin.cpp:44
 #, kde-format
 msgid "&Create Image Gallery..."
 msgstr "បង្កើត​វិចិត្រសាល​រូបភាព..."
 
-#: imgalleryplugin.cpp:64
+#: imgalleryplugin.cpp:54
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
 msgstr "មិន​អាច​បង្កើត​កម្មវិធី​ជំនួយ​បានទេ សូម​រាយការណ៍​កំហុស​ ។"
 
-#: imgalleryplugin.cpp:70
+#: imgalleryplugin.cpp:60
 #, kde-format
 msgid "Creating an image gallery works only on local folders."
 msgstr "ការ​បង្កើត​វិចិត្រ​សាល​​រូបភាព​មួយ​​​ធ្វើការ​តែ​នៅ​លើ​ថត​មូលដ្ឋាន​ប៉ុណ្ណោះ ។"
 
-#: imgalleryplugin.cpp:90
+#: imgalleryplugin.cpp:80
 #, kde-format
 msgid "Creating thumbnails"
 msgstr "ការ​បង្កើត​រូបភាព​តូចៗ"
 
-#: imgalleryplugin.cpp:113 imgalleryplugin.cpp:284
+#: imgalleryplugin.cpp:103 imgalleryplugin.cpp:270
 #, kde-format
 msgid "Could not create folder: %1"
 msgstr "មិន​អាច​បង្កើត​ថត ៖ %1 បាន​ទេ"
 
-#: imgalleryplugin.cpp:182
+#: imgalleryplugin.cpp:168
 #, kde-format
 msgid "<i>Number of images</i>: %1"
 msgstr "<i>ចំនួន​រូបភាព</i> ៖ %1"
 
-#: imgalleryplugin.cpp:183
+#: imgalleryplugin.cpp:169
 #, kde-format
 msgid "<i>Created on</i>: %1"
 msgstr "<i>បាន​បង្កើត​នៅ</i> ៖ %1"
 
-#: imgalleryplugin.cpp:188
+#: imgalleryplugin.cpp:174
 #, kde-format
 msgid "<i>Subfolders</i>:"
 msgstr "<i>ថត​រង</i> ៖"
 
-#: imgalleryplugin.cpp:221
+#: imgalleryplugin.cpp:207
 #, kde-format
 msgid ""
 "Created thumbnail for: \n"
@@ -253,7 +253,7 @@ msgstr ""
 "បាន​បង្កើត​រូបភាព​តូចៗ​សម្រាប់ ៖ \n"
 "%1"
 
-#: imgalleryplugin.cpp:224
+#: imgalleryplugin.cpp:210
 #, kde-format
 msgid ""
 "Creating thumbnail for: \n"
@@ -264,12 +264,12 @@ msgstr ""
 "%1\n"
 " បាន​បរាជ័យ"
 
-#: imgalleryplugin.cpp:239
+#: imgalleryplugin.cpp:225
 #, kde-format
 msgid "KiB"
 msgstr "KiB"
 
-#: imgalleryplugin.cpp:357 imgalleryplugin.cpp:457
+#: imgalleryplugin.cpp:343 imgalleryplugin.cpp:443
 #, kde-format
 msgid "Could not open file: %1"
 msgstr "មិន​អាច​បើក​ឯកសារ ៖ %1"

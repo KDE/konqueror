@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messages/kdeaddons/imgalleryplugin.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2004-09-20 15:44+0200\n"
 "Last-Translator: Thierry Vignaud <tvignaud@mandriva.com>\n"
 "Language-Team: br <LL@li.org>\n"
@@ -194,49 +194,49 @@ msgstr ""
 msgid "Color depth:"
 msgstr ""
 
-#: imgalleryplugin.cpp:54
+#: imgalleryplugin.cpp:44
 #, kde-format
 msgid "&Create Image Gallery..."
 msgstr "&Krouiñ garidell ar skeudennoù ..."
 
-#: imgalleryplugin.cpp:64
+#: imgalleryplugin.cpp:54
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
 msgstr ""
 "Ne m'eus ket gallet krouiñ al lugent. Mar plij kemennit an drein kavet."
 
-#: imgalleryplugin.cpp:70
+#: imgalleryplugin.cpp:60
 #, kde-format
 msgid "Creating an image gallery works only on local folders."
 msgstr ""
 
-#: imgalleryplugin.cpp:90
+#: imgalleryplugin.cpp:80
 #, kde-format
 msgid "Creating thumbnails"
 msgstr "Emaon o krouiñ ar skeudennigoù"
 
-#: imgalleryplugin.cpp:113 imgalleryplugin.cpp:284
+#: imgalleryplugin.cpp:103 imgalleryplugin.cpp:270
 #, fuzzy, kde-format
 #| msgid "Couldn't create folder: %1"
 msgid "Could not create folder: %1"
 msgstr "N'hellan ket krouiñ ar renkell : %1"
 
-#: imgalleryplugin.cpp:182
+#: imgalleryplugin.cpp:168
 #, kde-format
 msgid "<i>Number of images</i>: %1"
 msgstr "<i>Niver a skeudennoù</i> : %1"
 
-#: imgalleryplugin.cpp:183
+#: imgalleryplugin.cpp:169
 #, kde-format
 msgid "<i>Created on</i>: %1"
 msgstr "<i>Krouet d'ar</i>: %1"
 
-#: imgalleryplugin.cpp:188
+#: imgalleryplugin.cpp:174
 #, kde-format
 msgid "<i>Subfolders</i>:"
 msgstr "<i>Is-renkelloù</i> :"
 
-#: imgalleryplugin.cpp:221
+#: imgalleryplugin.cpp:207
 #, kde-format
 msgid ""
 "Created thumbnail for: \n"
@@ -245,7 +245,7 @@ msgstr ""
 "Krouet eo ar skeudennig evit : \n"
 "%1"
 
-#: imgalleryplugin.cpp:224
+#: imgalleryplugin.cpp:210
 #, kde-format
 msgid ""
 "Creating thumbnail for: \n"
@@ -253,13 +253,13 @@ msgid ""
 " failed"
 msgstr ""
 
-#: imgalleryplugin.cpp:239
+#: imgalleryplugin.cpp:225
 #, fuzzy, kde-format
 #| msgid "KB"
 msgid "KiB"
 msgstr "KO"
 
-#: imgalleryplugin.cpp:357 imgalleryplugin.cpp:457
+#: imgalleryplugin.cpp:343 imgalleryplugin.cpp:443
 #, fuzzy, kde-format
 #| msgid "Couldn't open file: %1"
 msgid "Could not open file: %1"

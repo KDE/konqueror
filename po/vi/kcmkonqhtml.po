@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 00:37+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2020-12-17 20:30+0100\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -38,17 +38,17 @@ msgid "Stylesheets"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:52 css/csscustom.ui:296
+#: appearance.cpp:48 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "Ảnh"
 
-#: appearance.cpp:56
+#: appearance.cpp:52
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "T&ự động tải ảnh"
 
-#: appearance.cpp:57
+#: appearance.cpp:53
 #, fuzzy, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -62,12 +62,12 @@ msgstr ""
 "cái nút ảnh.<br>Nếu bạn không có kết nối mạng nhanh, khuyên bạn bật tuỳ chọn "
 "này để tăng cường kinh nghiệm duyệt Mạng."
 
-#: appearance.cpp:67
+#: appearance.cpp:63
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "&Vẽ khung chung quanh ảnh nào chưa tải hoàn toàn"
 
-#: appearance.cpp:68
+#: appearance.cpp:64
 #, fuzzy, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -80,24 +80,24 @@ msgstr ""
 "rất có thể là bạn sẽ muốn bật tuỳ chọn này để làm cho trang Mạng tải nhanh "
 "hơn."
 
-#: appearance.cpp:78
+#: appearance.cpp:74
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "Bật"
 
-#: appearance.cpp:79
+#: appearance.cpp:75
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "Tắt"
 
-#: appearance.cpp:80
+#: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
 msgstr "HIện một lần"
 
-#: appearance.cpp:81
+#: appearance.cpp:77
 #, fuzzy, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -110,40 +110,40 @@ msgstr ""
 "không bao giờ hiển thị hoạt ảnh, chỉ hiển thị ảnh đầu.</li><li><b>Hiện một "
 "lần</b>: hiển thị mỗi hoạt ảnh hoàn toàn, nhưng không phát lại.</li></ul>"
 
-#: appearance.cpp:86
+#: appearance.cpp:82
 #, kde-format
 msgid "A&nimations:"
 msgstr "H&oạt ảnh:"
 
-#: appearance.cpp:89 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr ""
 
-#: appearance.cpp:94
+#: appearance.cpp:90
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "Bật"
 
-#: appearance.cpp:95
+#: appearance.cpp:91
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "Tắt"
 
-#: appearance.cpp:96
+#: appearance.cpp:92
 #, kde-format
 msgid "Only on Hover"
 msgstr "Chỉ khi di chuyển ở trên"
 
-#: appearance.cpp:97
+#: appearance.cpp:93
 #, kde-format
 msgid "Und&erline links:"
 msgstr "Li&ên kết gạch chân:"
 
-#: appearance.cpp:100
+#: appearance.cpp:96
 #, fuzzy, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -159,29 +159,29 @@ msgstr ""
 "ul><br><i>Ghi chú : các lời định nghĩa CSS của nơi Mạng đó có thể có quyền "
 "cao hơn giá trị này.</i>"
 
-#: appearance.cpp:109
+#: appearance.cpp:105
 #, kde-format
 msgid "When Efficient"
 msgstr ""
 
-#: appearance.cpp:110
+#: appearance.cpp:106
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr ""
 
-#: appearance.cpp:111
+#: appearance.cpp:107
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr ""
 
-#: appearance.cpp:112
+#: appearance.cpp:108
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr ""
 
-#: appearance.cpp:114
+#: appearance.cpp:110
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -192,24 +192,24 @@ msgid ""
 "resources.</li></ul></html>"
 msgstr ""
 
-#: appearance.cpp:132
+#: appearance.cpp:128
 #, kde-format
 msgid "Font Si&ze"
 msgstr "Cỡ &phông chữ"
 
-#: appearance.cpp:135 appearance.cpp:153
+#: appearance.cpp:131 appearance.cpp:149
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr ""
 "Giá trị này là kích cỡ phông chữ tương đối bị Konqueror dùng để hiển thị "
 "trang Mạng."
 
-#: appearance.cpp:139
+#: appearance.cpp:135
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "Cỡ phông chữ tối th&iểu :"
 
-#: appearance.cpp:143
+#: appearance.cpp:139
 #, fuzzy, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
@@ -218,69 +218,69 @@ msgstr ""
 "Konqueror sẽ không bao giờ hiển thị chữ nhỏ hơn kích cỡ này,<br>mà có quyền "
 "cao hơn các thiết lập kích cỡ phông chữ khác."
 
-#: appearance.cpp:148
+#: appearance.cpp:144
 #, kde-format
 msgid "&Medium font size:"
 msgstr "Cỡ phông chữ &vừa :"
 
-#: appearance.cpp:161
+#: appearance.cpp:157
 #, kde-format
 msgid "S&tandard font:"
 msgstr "Phông chữ &chuẩn:"
 
-#: appearance.cpp:162
+#: appearance.cpp:158
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr "Đây là phông chữ được dùng để hiển thị các chữ chuẩn trên trang Mạng."
 
-#: appearance.cpp:166
+#: appearance.cpp:162
 #, kde-format
 msgid "&Fixed font:"
 msgstr "Phông chữ cố &định:"
 
-#: appearance.cpp:167
+#: appearance.cpp:163
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr ""
 "Đây là phông chữ được dùng để hiển thị chữ có độ rộng cố định (không tỉ lệ)."
 
-#: appearance.cpp:171
+#: appearance.cpp:167
 #, kde-format
 msgid "S&erif font:"
 msgstr "Phông chữ ch&ân:"
 
-#: appearance.cpp:172
+#: appearance.cpp:168
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr "Đây là phông chữ được dùng để hiển thị chữ có đường gạch chân."
 
-#: appearance.cpp:176
+#: appearance.cpp:172
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "Chữ _không chân:"
 
-#: appearance.cpp:177
+#: appearance.cpp:173
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr "Đây là phông chữ được dùng để hiển thị chữ không có đường gạch chân."
 
-#: appearance.cpp:181
+#: appearance.cpp:177
 #, kde-format
 msgid "C&ursive font:"
 msgstr "Phông chữ &thảo :"
 
-#: appearance.cpp:182
+#: appearance.cpp:178
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr "Đây là phông chữ được dùng để hiển thị chữ có định dạng in nghiêng."
 
-#: appearance.cpp:186
+#: appearance.cpp:182
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "Phông chữ kiểu cũ :"
 
-#: appearance.cpp:187
+#: appearance.cpp:183
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
@@ -288,22 +288,22 @@ msgstr ""
 "Đây là phông chữ được dùng để hiển thị chữ có kiểu cũ, dùng để trang trí "
 "trang."
 
-#: appearance.cpp:196
+#: appearance.cpp:192
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "Điều chỉnh kích cỡ &phông chữ cho bộ kí tự này:"
 
-#: appearance.cpp:204 appearance.cpp:405
+#: appearance.cpp:200 appearance.cpp:394
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "Dùng bộ kí tự của ngôn ngữ"
 
-#: appearance.cpp:206
+#: appearance.cpp:202
 #, kde-format
 msgid "Default encoding:"
 msgstr "Bộ kí tự mặc định:"
 
-#: appearance.cpp:208
+#: appearance.cpp:204
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1295,39 +1295,39 @@ msgid " day"
 msgid_plural " days"
 msgstr[0] ""
 
-#: filteropts.cpp:124
+#: filteropts.cpp:120
 #, kde-format
 msgid "Insert"
 msgstr "Chèn"
 
-#: filteropts.cpp:127
+#: filteropts.cpp:123
 #, kde-format
 msgid "Update"
 msgstr "Cập nhật"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:126
 #, kde-format
 msgid "Remove"
 msgstr "Xoá"
 
-#: filteropts.cpp:134
+#: filteropts.cpp:130
 #, kde-format
 msgid "Import..."
 msgstr "Nhập..."
 
-#: filteropts.cpp:137
+#: filteropts.cpp:133
 #, kde-format
 msgid "Export..."
 msgstr "Xuất..."
 
-#: filteropts.cpp:144
+#: filteropts.cpp:140
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
 "\"exporthelp\">export format</a>"
 msgstr ""
 
-#: filteropts.cpp:158
+#: filteropts.cpp:154
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enable or disable AdBlocK filters. When enabled a set of expressions to "
@@ -1341,7 +1341,7 @@ msgstr ""
 "danh sách lọc một tập biểu thức cần chặn, để làm cho khả năng chặn quảng cáo "
 "có kết quả."
 
-#: filteropts.cpp:160
+#: filteropts.cpp:156
 #, fuzzy, kde-format
 #| msgid ""
 #| "When enabled blocked images will be removed from the page completely "
@@ -1353,7 +1353,7 @@ msgstr ""
 "Khi bật, các ảnh bị chặn sẽ bị gỡ bỏ hoàn toàn ra trang, hoặc ảnh « bị chặn "
 "» giữ chỗ sẻ được hiển thị thay thế."
 
-#: filteropts.cpp:167
+#: filteropts.cpp:163
 #, fuzzy, kde-format
 #| msgid ""
 #| "This is the list of URL filters that will be applied to all linked images "
@@ -1367,7 +1367,7 @@ msgstr ""
 "khung đã liên kết. Có xử lí những bộ lọc theo thứ tự, vậy bạn nên định vị "
 "những bộ lọc giống loài hơn gần đầu danh sách."
 
-#: filteropts.cpp:171
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1379,7 +1379,7 @@ msgid ""
 "filter."
 msgstr ""
 
-#: filteropts.cpp:187
+#: filteropts.cpp:183
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1387,7 +1387,7 @@ msgid ""
 "ignored. Any other line is added as a filter expression."
 msgstr ""
 
-#: filteropts.cpp:192
+#: filteropts.cpp:188
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1395,24 +1395,24 @@ msgid ""
 "separate line."
 msgstr ""
 
-#: filteropts.cpp:260
+#: filteropts.cpp:256
 #, kde-format
 msgid "Import Filters"
 msgstr ""
 
-#: filteropts.cpp:304
+#: filteropts.cpp:300
 #, fuzzy, kde-format
 #| msgid "URL Expressions to Filter"
 msgid "Export Filters"
 msgstr "Biểu thức địa chỉ Mạng cần lọc"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:563 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr ""
 
-#: filteropts.cpp:564
+#: filteropts.cpp:554
 #, kde-format
 msgid "URL"
 msgstr ""
@@ -1846,32 +1846,32 @@ msgstr ""
 "muốn. Để cứ chạy tiến trình Java trong toàn bộ thời gian chạy Konqueror, hãy "
 "bỏ chọn mục « Tắt trình phục vụ tiểu dụng »."
 
-#: javaopts.cpp:291
+#: javaopts.cpp:288
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "Đặc điểm &miền"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:323
 #, fuzzy, kde-format
 #| msgid "New Java Policy"
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "Chính sách Java mới"
 
-#: javaopts.cpp:329
+#: javaopts.cpp:326
 #, fuzzy, kde-format
 #| msgid "Change Java Policy"
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "Đổi chính sách Java"
 
-#: javaopts.cpp:333
+#: javaopts.cpp:330
 #, kde-format
 msgid "&Java policy:"
 msgstr "Chính sách &Java:"
 
-#: javaopts.cpp:334
+#: javaopts.cpp:331
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "Chọn một chính sách Java cho máy hay miền bên trên."
@@ -1919,7 +1919,7 @@ msgid ""
 "Enables the reporting of errors that occur when JavaScript code is executed."
 msgstr "HIệu lực thông báo lỗi mà xảy ra khi thực hiện mã JavaScript."
 
-#: jsopts.cpp:83
+#: jsopts.cpp:79
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -1941,7 +1941,7 @@ msgstr ""
 "cho bạn khả năng chia sẻ dễ dàng các chính sách với người khác, bằng cách "
 "cho phép bạn lưu vào và lấy chúng từ tệp đã nén bằng zip."
 
-#: jsopts.cpp:93
+#: jsopts.cpp:89
 #, fuzzy, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -1955,7 +1955,7 @@ msgstr ""
 "tắt JavaScript trên trang được gởi bởi miền hay máy đó.<p>Hãy chọn một chính "
 "sách và sửa đổi nó bằng những công cụ bên phải."
 
-#: jsopts.cpp:100
+#: jsopts.cpp:96
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -1966,7 +1966,7 @@ msgstr ""
 "chính sách này sẽ được hoà trộn với những điều đã có. Mục nhập trùng nào bị "
 "bỏ qua."
 
-#: jsopts.cpp:103
+#: jsopts.cpp:99
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -1977,42 +1977,42 @@ msgstr ""
 "zip. Tệp này, tên <b>javascript_policy.tgz</b>, sẽ được lưu vào địa điểm bạn "
 "chọn."
 
-#: jsopts.cpp:109
+#: jsopts.cpp:105
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "Chính sách Javascript toàn cục"
 
-#: jsopts.cpp:183
+#: jsopts.cpp:172
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "Đặc điểm m&iền"
 
-#: jsopts.cpp:222
+#: jsopts.cpp:211
 #, fuzzy, kde-format
 #| msgid "New JavaScript Policy"
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "Chính sách Javascript mới"
 
-#: jsopts.cpp:225
+#: jsopts.cpp:214
 #, fuzzy, kde-format
 #| msgid "Change JavaScript Policy"
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "Đổi chính sách Javascript"
 
-#: jsopts.cpp:229
+#: jsopts.cpp:218
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "Chính sách Javascript:"
 
-#: jsopts.cpp:230
+#: jsopts.cpp:219
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "Hãy chọn một chính sách Javascript cho máy hay miền bên trên."
 
-#: jsopts.cpp:232
+#: jsopts.cpp:221
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "Chính sách Javascript đặc điểm miền"
@@ -2227,7 +2227,7 @@ msgstr ""
 msgid "&Java"
 msgstr "&Java"
 
-#: main.cpp:57
+#: main.cpp:53
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2024-04-05 17:21+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -213,47 +213,47 @@ msgstr "&Lietot citu krāsu dziļumu:"
 msgid "Color depth:"
 msgstr "Krāsu dziļums"
 
-#: imgalleryplugin.cpp:54
+#: imgalleryplugin.cpp:44
 #, kde-format
 msgid "&Create Image Gallery..."
 msgstr "&Veidot attēlu galeriju..."
 
-#: imgalleryplugin.cpp:64
+#: imgalleryplugin.cpp:54
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
 msgstr "Neizdevās izveidot šo spraudni. Lūdzu, ziņojiet par kļūdu."
 
-#: imgalleryplugin.cpp:70
+#: imgalleryplugin.cpp:60
 #, kde-format
 msgid "Creating an image gallery works only on local folders."
 msgstr "Attēlu galerijas veidošana strādā tikai lokālās mapēs."
 
-#: imgalleryplugin.cpp:90
+#: imgalleryplugin.cpp:80
 #, kde-format
 msgid "Creating thumbnails"
 msgstr "Veido sīktēlus"
 
-#: imgalleryplugin.cpp:113 imgalleryplugin.cpp:284
+#: imgalleryplugin.cpp:103 imgalleryplugin.cpp:270
 #, kde-format
 msgid "Could not create folder: %1"
 msgstr "Neizdevās izveidot mapi: %1"
 
-#: imgalleryplugin.cpp:182
+#: imgalleryplugin.cpp:168
 #, kde-format
 msgid "<i>Number of images</i>: %1"
 msgstr "<i> Attēlu skaits</i>: %1"
 
-#: imgalleryplugin.cpp:183
+#: imgalleryplugin.cpp:169
 #, kde-format
 msgid "<i>Created on</i>: %1"
 msgstr "<i>Izveidots</i>: %1"
 
-#: imgalleryplugin.cpp:188
+#: imgalleryplugin.cpp:174
 #, kde-format
 msgid "<i>Subfolders</i>:"
 msgstr "<i>Apakšmapes</i>:"
 
-#: imgalleryplugin.cpp:221
+#: imgalleryplugin.cpp:207
 #, kde-format
 msgid ""
 "Created thumbnail for: \n"
@@ -262,7 +262,7 @@ msgstr ""
 "Izveidots sīktēls attēlam: \n"
 "%1"
 
-#: imgalleryplugin.cpp:224
+#: imgalleryplugin.cpp:210
 #, kde-format
 msgid ""
 "Creating thumbnail for: \n"
@@ -272,12 +272,12 @@ msgstr ""
 "Kļūda sīktēla veidošanā attēlam: \n"
 "%1"
 
-#: imgalleryplugin.cpp:239
+#: imgalleryplugin.cpp:225
 #, kde-format
 msgid "KiB"
 msgstr "KiB"
 
-#: imgalleryplugin.cpp:357 imgalleryplugin.cpp:457
+#: imgalleryplugin.cpp:343 imgalleryplugin.cpp:443
 #, kde-format
 msgid "Could not open file: %1"
 msgstr "Neizdevās atvērt datni: %1"

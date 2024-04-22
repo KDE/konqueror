@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2012-07-06 15:24+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -217,47 +217,47 @@ msgstr "&Različita dubina boja:"
 msgid "Color depth:"
 msgstr ""
 
-#: imgalleryplugin.cpp:54
+#: imgalleryplugin.cpp:44
 #, kde-format
 msgid "&Create Image Gallery..."
 msgstr "&Napravi galeriju slika..."
 
-#: imgalleryplugin.cpp:64
+#: imgalleryplugin.cpp:54
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
 msgstr "Ne mogu da napravim priključak, prijavite ovo kao grešku."
 
-#: imgalleryplugin.cpp:70
+#: imgalleryplugin.cpp:60
 #, kde-format
 msgid "Creating an image gallery works only on local folders."
 msgstr "Stvaranje galerije slika radi samo nad lokalnim fasciklama."
 
-#: imgalleryplugin.cpp:90
+#: imgalleryplugin.cpp:80
 #, kde-format
 msgid "Creating thumbnails"
 msgstr "Pravim sličice..."
 
-#: imgalleryplugin.cpp:113 imgalleryplugin.cpp:284
+#: imgalleryplugin.cpp:103 imgalleryplugin.cpp:270
 #, kde-format
 msgid "Could not create folder: %1"
 msgstr "Ne mogu da napravim fasciklu: %1"
 
-#: imgalleryplugin.cpp:182
+#: imgalleryplugin.cpp:168
 #, kde-format
 msgid "<i>Number of images</i>: %1"
 msgstr "<i>Broj slika</i>: %1"
 
-#: imgalleryplugin.cpp:183
+#: imgalleryplugin.cpp:169
 #, kde-format
 msgid "<i>Created on</i>: %1"
 msgstr "<i>Napravljeno</i>: %1|/|<i>Napravljeno</i>: $[na-reč %1 gen]"
 
-#: imgalleryplugin.cpp:188
+#: imgalleryplugin.cpp:174
 #, kde-format
 msgid "<i>Subfolders</i>:"
 msgstr "<i>Potfascikle</i>:"
 
-#: imgalleryplugin.cpp:221
+#: imgalleryplugin.cpp:207
 #, kde-format
 msgid ""
 "Created thumbnail for: \n"
@@ -266,7 +266,7 @@ msgstr ""
 "Sličica napravljena za:\n"
 "%1"
 
-#: imgalleryplugin.cpp:224
+#: imgalleryplugin.cpp:210
 #, kde-format
 msgid ""
 "Creating thumbnail for: \n"
@@ -277,12 +277,12 @@ msgstr ""
 "%1\n"
 "nije uspelo."
 
-#: imgalleryplugin.cpp:239
+#: imgalleryplugin.cpp:225
 #, kde-format
 msgid "KiB"
 msgstr "KiB"
 
-#: imgalleryplugin.cpp:357 imgalleryplugin.cpp:457
+#: imgalleryplugin.cpp:343 imgalleryplugin.cpp:443
 #, kde-format
 msgid "Could not open file: %1"
 msgstr "Ne mogu da otvorim fajl: %1"

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2024-02-03 23:28+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -100,7 +100,7 @@ msgstr "לה&שתמש במטמון אם ניתן"
 msgid "&Offline Browsing Mode"
 msgstr "&מצב גלישה לא מקוונת"
 
-#: settingsplugin.cpp:193
+#: settingsplugin.cpp:170
 #, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
@@ -109,7 +109,7 @@ msgstr ""
 "אי אפשר להפעיל את התמיכה בעוגיות מכיוון שאי אפשר להפעיל את תהליך הרקע של "
 "העוגיות."
 
-#: settingsplugin.cpp:195
+#: settingsplugin.cpp:172
 #, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"

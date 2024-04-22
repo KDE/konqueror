@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 00:37+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2024-02-09 23:52+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -41,17 +41,17 @@ msgid "Stylesheets"
 msgstr "스타일시트"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:52 css/csscustom.ui:296
+#: appearance.cpp:48 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "그림"
 
-#: appearance.cpp:56
+#: appearance.cpp:52
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "자동으로 그림 불러오기(&U)"
 
-#: appearance.cpp:57
+#: appearance.cpp:53
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -65,12 +65,12 @@ msgstr ""
 "을 때 수동으로 불러옵니다.<br />매우 느린 네트워크 연결을 사용하지 않는 한, "
 "이 옵션을 사용하여 브라우저 성능 향상을 추천합니다.</html>"
 
-#: appearance.cpp:67
+#: appearance.cpp:63
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "완전히 불러오지 않은 이미지에 외곽선 표시(&W)"
 
-#: appearance.cpp:68
+#: appearance.cpp:64
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -82,24 +82,24 @@ msgstr ""
 "을 그립니다.<br />네트워크 연결이 느릴 경우 이 설정을 사용하면 브라우징 성능"
 "을 향상시킬 수 있습니다.</html>"
 
-#: appearance.cpp:78
+#: appearance.cpp:74
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "사용함"
 
-#: appearance.cpp:79
+#: appearance.cpp:75
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "사용 안 함"
 
-#: appearance.cpp:80
+#: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
 msgstr "한 번만 보기"
 
-#: appearance.cpp:81
+#: appearance.cpp:77
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -112,40 +112,40 @@ msgstr ""
 "함</b>: 움직이는 그림의 첫 장면만 보여 줍니다.</li><li><b>한 번만 보기</b>: "
 "모든 움직이는 그림을 한 번만 보여줍니다.</li></ul></html>"
 
-#: appearance.cpp:86
+#: appearance.cpp:82
 #, kde-format
 msgid "A&nimations:"
 msgstr "애니메이션(&N):"
 
-#: appearance.cpp:89 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "기타"
 
-#: appearance.cpp:94
+#: appearance.cpp:90
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "사용함"
 
-#: appearance.cpp:95
+#: appearance.cpp:91
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "사용 안 함"
 
-#: appearance.cpp:96
+#: appearance.cpp:92
 #, kde-format
 msgid "Only on Hover"
 msgstr "마우스가 위에 있을 때만"
 
-#: appearance.cpp:97
+#: appearance.cpp:93
 #, kde-format
 msgid "Und&erline links:"
 msgstr "링크에 밑줄 표시하기(&E):"
 
-#: appearance.cpp:100
+#: appearance.cpp:96
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -160,29 +160,29 @@ msgstr ""
 "에 있을 때에만 링크에 밑줄을 표시합니다</li></ul><br /><i>주의: 사이트의 CSS "
 "정의는 이 값을 수정할 수 있습니다</i></html>"
 
-#: appearance.cpp:109
+#: appearance.cpp:105
 #, kde-format
 msgid "When Efficient"
 msgstr "효율적일 때"
 
-#: appearance.cpp:110
+#: appearance.cpp:106
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "항상"
 
-#: appearance.cpp:111
+#: appearance.cpp:107
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "하지 않음"
 
-#: appearance.cpp:112
+#: appearance.cpp:108
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "부드러운 스크롤(&M):"
 
-#: appearance.cpp:114
+#: appearance.cpp:110
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -198,22 +198,22 @@ msgstr ""
 "자원을 많이 사용하지 않아도 될 때 부드러운 스크롤을 사용합니다.</li></ul></"
 "html>"
 
-#: appearance.cpp:132
+#: appearance.cpp:128
 #, kde-format
 msgid "Font Si&ze"
 msgstr "글꼴 크기(&Z)"
 
-#: appearance.cpp:135 appearance.cpp:153
+#: appearance.cpp:131 appearance.cpp:149
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr "Konqueror가 웹사이트를 출력할 때 사용하는 상대적인 글꼴 크기입니다."
 
-#: appearance.cpp:139
+#: appearance.cpp:135
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "최소 글꼴 크기(&I):"
 
-#: appearance.cpp:143
+#: appearance.cpp:139
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
@@ -222,89 +222,89 @@ msgstr ""
 "Konqueror는 어떤 설정과도 관계 없이 텍스트를 이 크기보다<br />작게 표시하지 "
 "않습니다."
 
-#: appearance.cpp:148
+#: appearance.cpp:144
 #, kde-format
 msgid "&Medium font size:"
 msgstr "중간 글꼴 크기(&M):"
 
-#: appearance.cpp:161
+#: appearance.cpp:157
 #, kde-format
 msgid "S&tandard font:"
 msgstr "표준 글꼴(&T):"
 
-#: appearance.cpp:162
+#: appearance.cpp:158
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr "웹 페이지에서 일반 텍스트를 나타내는 데 사용하는 글꼴입니다."
 
-#: appearance.cpp:166
+#: appearance.cpp:162
 #, kde-format
 msgid "&Fixed font:"
 msgstr "고정폭 글꼴(&F):"
 
-#: appearance.cpp:167
+#: appearance.cpp:163
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr "고정폭 텍스트를 나타내는 데 사용하는 글꼴입니다."
 
-#: appearance.cpp:171
+#: appearance.cpp:167
 #, kde-format
 msgid "S&erif font:"
 msgstr "세리프 글꼴(&E):"
 
-#: appearance.cpp:172
+#: appearance.cpp:168
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr "세리프로 표시된 텍스트를 나타내는 데 사용하는 글꼴입니다."
 
-#: appearance.cpp:176
+#: appearance.cpp:172
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "산세리프 글꼴(&N):"
 
-#: appearance.cpp:177
+#: appearance.cpp:173
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr "산세리프로 표시된 텍스트를 나타내는 데 사용하는 글꼴입니다."
 
-#: appearance.cpp:181
+#: appearance.cpp:177
 #, kde-format
 msgid "C&ursive font:"
 msgstr "필기체 글꼴(&U):"
 
-#: appearance.cpp:182
+#: appearance.cpp:178
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr "이탤릭체로 표시된 텍스트를 나타내는 데 사용하는 글꼴입니다."
 
-#: appearance.cpp:186
+#: appearance.cpp:182
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "판타지 글꼴(&Y):"
 
-#: appearance.cpp:187
+#: appearance.cpp:183
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr "판타지로 표시된 텍스트를 나타내는 데 사용하는 글꼴입니다."
 
-#: appearance.cpp:196
+#: appearance.cpp:192
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "이 인코딩의 글꼴 크기 조정(&S):"
 
-#: appearance.cpp:204 appearance.cpp:405
+#: appearance.cpp:200 appearance.cpp:394
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "언어 인코딩 사용"
 
-#: appearance.cpp:206
+#: appearance.cpp:202
 #, kde-format
 msgid "Default encoding:"
 msgstr "기본 인코딩:"
 
-#: appearance.cpp:208
+#: appearance.cpp:204
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1339,32 +1339,32 @@ msgid " day"
 msgid_plural " days"
 msgstr[0] "일"
 
-#: filteropts.cpp:124
+#: filteropts.cpp:120
 #, kde-format
 msgid "Insert"
 msgstr "삽입"
 
-#: filteropts.cpp:127
+#: filteropts.cpp:123
 #, kde-format
 msgid "Update"
 msgstr "업데이트"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:126
 #, kde-format
 msgid "Remove"
 msgstr "삭제"
 
-#: filteropts.cpp:134
+#: filteropts.cpp:130
 #, kde-format
 msgid "Import..."
 msgstr "가져오기..."
 
-#: filteropts.cpp:137
+#: filteropts.cpp:133
 #, kde-format
 msgid "Export..."
 msgstr "내보내기..."
 
-#: filteropts.cpp:144
+#: filteropts.cpp:140
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
@@ -1373,7 +1373,7 @@ msgstr ""
 "<qt><a href=\"importhelp\">포맷 가져오기</a>와 <a href=\"exporthelp\">포맷 내"
 "보내기</a>에 대한 정보 보기"
 
-#: filteropts.cpp:158
+#: filteropts.cpp:154
 #, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
@@ -1381,7 +1381,7 @@ msgid ""
 msgstr ""
 "AdBlocK 필터를 켜거나 끕니다. 필터 목록에 차단할 표현을 정의해 두어야 합니다."
 
-#: filteropts.cpp:160
+#: filteropts.cpp:156
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
@@ -1390,14 +1390,14 @@ msgstr ""
 "이 설정을 사용하면 차단된 이미지를 완전히 페이지에서 숨깁니다. 그렇지 않으면 "
 "'차단됨' 그림을 대신 사용합니다."
 
-#: filteropts.cpp:167
+#: filteropts.cpp:163
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
 "and media objects."
 msgstr "모든 첨부된 그림과 미디어 개체에 적용할 URL 필터 목록입니다."
 
-#: filteropts.cpp:171
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1415,7 +1415,7 @@ msgstr ""
 "li></ul><p>허용 목록에 필터를 추가하려면 '<tt>@@</tt>'를 맨 앞에 붙이면 됩니"
 "다. 차단 목록보다 더 높은 우선 순위로 처리됩니다."
 
-#: filteropts.cpp:187
+#: filteropts.cpp:183
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1426,7 +1426,7 @@ msgstr ""
 "는 주석 줄과 <tt>[AdBlock]</tt> 헤더는 무시됩니다. 다른 모든 줄을 필터 표현식"
 "으로 추가합니다."
 
-#: filteropts.cpp:192
+#: filteropts.cpp:188
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1436,23 +1436,23 @@ msgstr ""
 "<qt><p>필터 내보내기 형식은 일반 텍스트입니다. <tt>[AdBlock]</tt> 헤더가 파"
 "일 맨 앞에 추가되며, 각각 필터가 줄마다 표시됩니다."
 
-#: filteropts.cpp:260
+#: filteropts.cpp:256
 #, kde-format
 msgid "Import Filters"
 msgstr "필터 가져오기"
 
-#: filteropts.cpp:304
+#: filteropts.cpp:300
 #, kde-format
 msgid "Export Filters"
 msgstr "필터 내보내기"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:563 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "이름"
 
-#: filteropts.cpp:564
+#: filteropts.cpp:554
 #, kde-format
 msgid "URL"
 msgstr "URL"
@@ -1884,30 +1884,30 @@ msgstr ""
 "는 동안 프로세스를 계속 실행하려면, 애플릿 서버 종료 체크 상자를 선택하지 마"
 "십시오."
 
-#: javaopts.cpp:291
+#: javaopts.cpp:288
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "도메인 지정(&I)"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:323
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "새 자바 정책"
 
-#: javaopts.cpp:329
+#: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "자바 정책 변경"
 
-#: javaopts.cpp:333
+#: javaopts.cpp:330
 #, kde-format
 msgid "&Java policy:"
 msgstr "자바 정책(&J):"
 
-#: javaopts.cpp:334
+#: javaopts.cpp:331
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "위 호스트나 도메인에 대한 자바 정책을 선택하십시오."
@@ -1954,7 +1954,7 @@ msgid ""
 "Enables the reporting of errors that occur when JavaScript code is executed."
 msgstr "자바스크립트 코드에서 발생하는 오류를 알려 줍니다."
 
-#: jsopts.cpp:83
+#: jsopts.cpp:79
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -1974,7 +1974,7 @@ msgstr ""
 "을 사용합니다. <i>가져오기</i>와 <i>내보내기</i> 단추를 클릭하면 다른 사람과 "
 "정책을 쉽게 공유할 수 있습니다."
 
-#: jsopts.cpp:93
+#: jsopts.cpp:89
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -1988,7 +1988,7 @@ msgstr ""
 "기본 정책 대신 사용합니다.</p><p>정책을 선택하고 오른쪽에 있는 단추를 사용해"
 "서 수정하십시오.</p>"
 
-#: jsopts.cpp:100
+#: jsopts.cpp:96
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -1998,7 +1998,7 @@ msgstr ""
 "이 단추를 클릭한 다음 자바스크립트 정책이 들어 있는 파일을 선택하십시오. 선택"
 "한 정책은 기존 정책에 합쳐집니다. 중복된 항목은 무시됩니다."
 
-#: jsopts.cpp:103
+#: jsopts.cpp:99
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2008,40 +2008,40 @@ msgstr ""
 "자바스크립트 정책을 압축 파일로 저장하려면 이 단추를 클릭하십시오. 지정한 경"
 "로에 <b>javascript_policy.tgz</b>라는 파일로 저장합니다."
 
-#: jsopts.cpp:109
+#: jsopts.cpp:105
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "전역 자바스크립트 정책"
 
-#: jsopts.cpp:183
+#: jsopts.cpp:172
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "도메인 지정(&M)"
 
-#: jsopts.cpp:222
+#: jsopts.cpp:211
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "새 자바스크립트 정책"
 
-#: jsopts.cpp:225
+#: jsopts.cpp:214
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "자바스크립트 정책 변경"
 
-#: jsopts.cpp:229
+#: jsopts.cpp:218
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "자바스크립트 정책:"
 
-#: jsopts.cpp:230
+#: jsopts.cpp:219
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "위 호스트나 도메인에 대한 자바스크립트 정책을 선택하십시오."
 
-#: jsopts.cpp:232
+#: jsopts.cpp:221
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "도메인 지정 자바스크립트 정책"
@@ -2248,7 +2248,7 @@ msgstr ""
 msgid "&Java"
 msgstr "자바(&J)"
 
-#: main.cpp:57
+#: main.cpp:53
 #, kde-format
 msgid "Java&Script"
 msgstr "자바스크립트(&S)"

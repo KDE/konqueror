@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2016-09-28 17:44+0200\n"
 "Last-Translator: Pino Toscano <toscano.pino@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -91,7 +91,7 @@ msgstr "&Usa la cache se possibile"
 msgid "&Offline Browsing Mode"
 msgstr "M&odalità di navigazione non in linea"
 
-#: settingsplugin.cpp:193
+#: settingsplugin.cpp:170
 #, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
@@ -100,7 +100,7 @@ msgstr ""
 "Non è possibile modificare le impostazioni dei cookie, perché non è stato "
 "possibile contattare il demone dei cookie."
 
-#: settingsplugin.cpp:195
+#: settingsplugin.cpp:172
 #, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"

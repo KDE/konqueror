@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 00:37+0000\n"
-"PO-Revision-Date: 2024-04-20 19:41\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"PO-Revision-Date: 2024-04-21 04:47\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -36,17 +36,17 @@ msgid "Stylesheets"
 msgstr "样式表"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:52 css/csscustom.ui:296
+#: appearance.cpp:48 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "图像"
 
-#: appearance.cpp:56
+#: appearance.cpp:52
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "自动加载图像(&U)"
 
-#: appearance.cpp:57
+#: appearance.cpp:53
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -59,12 +59,12 @@ msgstr ""
 "像的位置显示占位符。您可以单击图像按钮手动加载图像。<br />除非您的网络连接速"
 "度非常慢，否则您可能想要选中此框来增强您的浏览体验。</html>"
 
-#: appearance.cpp:67
+#: appearance.cpp:63
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "在尚未完全加载的图像周围绘制边框(&W)"
 
-#: appearance.cpp:68
+#: appearance.cpp:64
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -76,24 +76,24 @@ msgstr ""
 "为占位符。<br />除非您的网络连接速度非常慢，否则您可能想要选中此框来增强您的"
 "浏览体验。</html>"
 
-#: appearance.cpp:78
+#: appearance.cpp:74
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "启用"
 
-#: appearance.cpp:79
+#: appearance.cpp:75
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "禁用"
 
-#: appearance.cpp:80
+#: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
 msgstr "只显示一次"
 
-#: appearance.cpp:81
+#: appearance.cpp:77
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -105,40 +105,40 @@ msgstr ""
 "有动画。</li><li><b>禁用</b>：从不显示动画，只显示起始图像。</li><li><b>只显"
 "示一次</b>：完整显示所有动画，但并不重复。</li></ul></html>"
 
-#: appearance.cpp:86
+#: appearance.cpp:82
 #, kde-format
 msgid "A&nimations:"
 msgstr "动画(&N)："
 
-#: appearance.cpp:89 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "杂项"
 
-#: appearance.cpp:94
+#: appearance.cpp:90
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "启用"
 
-#: appearance.cpp:95
+#: appearance.cpp:91
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "禁用"
 
-#: appearance.cpp:96
+#: appearance.cpp:92
 #, kde-format
 msgid "Only on Hover"
 msgstr "悬停"
 
-#: appearance.cpp:97
+#: appearance.cpp:93
 #, kde-format
 msgid "Und&erline links:"
 msgstr "链接带下划线(&E)："
 
-#: appearance.cpp:100
+#: appearance.cpp:96
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -152,29 +152,29 @@ msgstr ""
 "b>：仅当鼠标指向链接时才加下划线</li></ul><br /><i>请注意：网站的 CSS 定义可"
 "以覆盖此设置。</i></html>"
 
-#: appearance.cpp:109
+#: appearance.cpp:105
 #, kde-format
 msgid "When Efficient"
 msgstr "必要时"
 
-#: appearance.cpp:110
+#: appearance.cpp:106
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "总是"
 
-#: appearance.cpp:111
+#: appearance.cpp:107
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "从不"
 
-#: appearance.cpp:112
+#: appearance.cpp:108
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "平滑滚动(&M)："
 
-#: appearance.cpp:114
+#: appearance.cpp:110
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -189,111 +189,111 @@ msgstr ""
 "进。</li><li><b>必要时</b>：只当系统资源满足页面需要时才使用平滑滚动。</li></"
 "ul></html>"
 
-#: appearance.cpp:132
+#: appearance.cpp:128
 #, kde-format
 msgid "Font Si&ze"
 msgstr "字体大小(&Z)"
 
-#: appearance.cpp:135 appearance.cpp:153
+#: appearance.cpp:131 appearance.cpp:149
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr "这是 Konqueror 用于显示网站的相对字体大小。"
 
-#: appearance.cpp:139
+#: appearance.cpp:135
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "最小字体大小(&I)："
 
-#: appearance.cpp:143
+#: appearance.cpp:139
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
 "any other settings."
 msgstr "不管网站的设置如何，<br />Konqueror 将不显示小于此大小的文字。"
 
-#: appearance.cpp:148
+#: appearance.cpp:144
 #, kde-format
 msgid "&Medium font size:"
 msgstr "中等字体大小(&M)："
 
-#: appearance.cpp:161
+#: appearance.cpp:157
 #, kde-format
 msgid "S&tandard font:"
 msgstr "标准字体(&T)："
 
-#: appearance.cpp:162
+#: appearance.cpp:158
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr "这是用来显示网页中普通文字的字体。"
 
-#: appearance.cpp:166
+#: appearance.cpp:162
 #, kde-format
 msgid "&Fixed font:"
 msgstr "等宽字体(&F)："
 
-#: appearance.cpp:167
+#: appearance.cpp:163
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr "这个字体用来显示等宽(非比例)文字。"
 
-#: appearance.cpp:171
+#: appearance.cpp:167
 #, kde-format
 msgid "S&erif font:"
 msgstr "有衬线字体(&E)："
 
-#: appearance.cpp:172
+#: appearance.cpp:168
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr "这个字体用来显示标为有衬线字体的文字。"
 
-#: appearance.cpp:176
+#: appearance.cpp:172
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "无衬线字体(&N)："
 
-#: appearance.cpp:177
+#: appearance.cpp:173
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr "该字体用于显示标为无衬线字体的文字。"
 
-#: appearance.cpp:181
+#: appearance.cpp:177
 #, kde-format
 msgid "C&ursive font:"
 msgstr "手写体字体(&U)："
 
-#: appearance.cpp:182
+#: appearance.cpp:178
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr "该字体用于显示标为斜体的文字。"
 
-#: appearance.cpp:186
+#: appearance.cpp:182
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "绚丽字体(&Y)："
 
-#: appearance.cpp:187
+#: appearance.cpp:183
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr "该字体用于显示标为绚丽字体的文字。"
 
-#: appearance.cpp:196
+#: appearance.cpp:192
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "该编码的字体大小调整(&S)："
 
-#: appearance.cpp:204 appearance.cpp:405
+#: appearance.cpp:200 appearance.cpp:394
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "使用语言编码"
 
-#: appearance.cpp:206
+#: appearance.cpp:202
 #, kde-format
 msgid "Default encoding:"
 msgstr "默认编码："
 
-#: appearance.cpp:208
+#: appearance.cpp:204
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1300,32 +1300,32 @@ msgid " day"
 msgid_plural " days"
 msgstr[0] " 天"
 
-#: filteropts.cpp:124
+#: filteropts.cpp:120
 #, kde-format
 msgid "Insert"
 msgstr "插入"
 
-#: filteropts.cpp:127
+#: filteropts.cpp:123
 #, kde-format
 msgid "Update"
 msgstr "更新"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:126
 #, kde-format
 msgid "Remove"
 msgstr "删除"
 
-#: filteropts.cpp:134
+#: filteropts.cpp:130
 #, kde-format
 msgid "Import..."
 msgstr "导入..."
 
-#: filteropts.cpp:137
+#: filteropts.cpp:133
 #, kde-format
 msgid "Export..."
 msgstr "导出..."
 
-#: filteropts.cpp:144
+#: filteropts.cpp:140
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
@@ -1334,7 +1334,7 @@ msgstr ""
 "<qt>关于<a href=\"importhelp\">导入格式</a>、<a href=\"exporthelp\">导出格式"
 "</a>的更多信息"
 
-#: filteropts.cpp:158
+#: filteropts.cpp:154
 #, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
@@ -1343,21 +1343,21 @@ msgstr ""
 "启用或禁用 AdBlocK 过滤器。启用时，应该在过滤器列表中定义一组要屏蔽的表达式，"
 "此时屏蔽才真正生效。"
 
-#: filteropts.cpp:160
+#: filteropts.cpp:156
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
 "otherwise a placeholder 'blocked' image will be used."
 msgstr "启用时，屏蔽的图像将会完全从页面中删除，否则将使用一幅通用的占位图像。"
 
-#: filteropts.cpp:167
+#: filteropts.cpp:163
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
 "and media objects."
 msgstr "此列表列出了应用到嵌入的图像和媒体对象的 URL 过滤器。"
 
-#: filteropts.cpp:171
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1374,7 +1374,7 @@ msgstr ""
 "</tt></li></ul><p>任何以 “<tt>@@</tt>” 开头的过滤字符串都表示白名单里的 URL，"
 "其优先级要高于黑名单。"
 
-#: filteropts.cpp:187
+#: filteropts.cpp:183
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1385,7 +1385,7 @@ msgstr ""
 "注释行，以及标头是 <tt>[AdBlock]</tt> 的行会被忽略。此外的行都会被添加为过滤"
 "表达式。"
 
-#: filteropts.cpp:192
+#: filteropts.cpp:188
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1395,23 +1395,23 @@ msgstr ""
 "<qt><p>过滤器的导出格式应该是一个纯文本文件。除了以 <tt>[AdBlock]</tt> 为标头"
 "的行以外，其他表达式会一行一条地导出。"
 
-#: filteropts.cpp:260
+#: filteropts.cpp:256
 #, kde-format
 msgid "Import Filters"
 msgstr "导入过滤器"
 
-#: filteropts.cpp:304
+#: filteropts.cpp:300
 #, kde-format
 msgid "Export Filters"
 msgstr "导出过滤器"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:563 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "名称"
 
-#: filteropts.cpp:564
+#: filteropts.cpp:554
 #, kde-format
 msgid "URL"
 msgstr "地址"
@@ -1827,30 +1827,30 @@ msgstr ""
 "为您希望的值。要在 Konqueror 进程全程保留 Java 进程，请不要选中关闭小程序服务"
 "器。"
 
-#: javaopts.cpp:291
+#: javaopts.cpp:288
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "特定域(&I)"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:323
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "新建 Java 策略"
 
-#: javaopts.cpp:329
+#: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "修改 Java 策略"
 
-#: javaopts.cpp:333
+#: javaopts.cpp:330
 #, kde-format
 msgid "&Java policy:"
 msgstr "&Java 策略："
 
-#: javaopts.cpp:334
+#: javaopts.cpp:331
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "为以上主机或域选择 Java 策略。"
@@ -1896,7 +1896,7 @@ msgid ""
 "Enables the reporting of errors that occur when JavaScript code is executed."
 msgstr "启用 JavaScript 代码执行时所发生错误的报告。"
 
-#: jsopts.cpp:83
+#: jsopts.cpp:79
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -1915,7 +1915,7 @@ msgstr ""
 "使得对该域名应用默认的策略设置。<i>导入</i>和<i>导出</i>按钮让您能用压缩的文"
 "件保存和加载策略，从而轻松地和别人共享您的策略。"
 
-#: jsopts.cpp:93
+#: jsopts.cpp:89
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -1928,7 +1928,7 @@ msgstr ""
 "送的页面，将会应用此策略而不是默认策略的启用或禁用。</p><p>请选择一个策略并使"
 "用右边的按钮进行修改。</p>"
 
-#: jsopts.cpp:100
+#: jsopts.cpp:96
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -1938,7 +1938,7 @@ msgstr ""
 "单击此按钮选择包含 JavaScript 策略的文件。这些策略将与已有策略合并。重复的将"
 "被忽略。"
 
-#: jsopts.cpp:103
+#: jsopts.cpp:99
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -1948,40 +1948,40 @@ msgstr ""
 "单击此按钮将 JavaScript 策略保存为压缩文件 <b>javascript_policy.tgz</b>，它将"
 "保存在您指定的位置。"
 
-#: jsopts.cpp:109
+#: jsopts.cpp:105
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "全局 JavaScript 策略"
 
-#: jsopts.cpp:183
+#: jsopts.cpp:172
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "特定域(&M)"
 
-#: jsopts.cpp:222
+#: jsopts.cpp:211
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "新建 JavaScript 策略"
 
-#: jsopts.cpp:225
+#: jsopts.cpp:214
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "更改 JavaScript 策略"
 
-#: jsopts.cpp:229
+#: jsopts.cpp:218
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "JavaScript 策略："
 
-#: jsopts.cpp:230
+#: jsopts.cpp:219
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "为以上主机或域选择 JavaScript 策略。"
 
-#: jsopts.cpp:232
+#: jsopts.cpp:221
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "特定域的 JavaScript 策略"
@@ -2185,7 +2185,7 @@ msgstr ""
 msgid "&Java"
 msgstr "&Java"
 
-#: main.cpp:57
+#: main.cpp:53
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"

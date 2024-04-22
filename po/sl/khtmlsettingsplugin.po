@@ -1,7 +1,7 @@
 # Translation of khtmlsettingsplugin.po to Slovenian
 # SLOVENIAN TRANSLATION OF KHTMLSETTINGSPLUGIN.
 # Copyright (C) 2001, 2003, 2004 Free Software Foundation, Inc.
-# $Id: khtmlsettingsplugin.po 1665461 2023-11-20 02:24:03Z scripty $
+# $Id: khtmlsettingsplugin.po 1678443 2024-04-22 01:08:38Z scripty $
 # $Source$
 #
 # Gregor Rakar <gregor.rakar@kiss.uni-lj.si>, 2001.
@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2020-09-01 16:29+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -96,7 +96,7 @@ msgstr "&Uporabi predpomnilnik, če je mogoče"
 msgid "&Offline Browsing Mode"
 msgstr "Način brskanja brez povezave"
 
-#: settingsplugin.cpp:193
+#: settingsplugin.cpp:170
 #, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
@@ -105,7 +105,7 @@ msgstr ""
 "Nastavitev piškotkov ni bilo mogoče spremeniti, ker ni bilo mogoče stopiti v "
 "stik z ozadnjim programom za piškotke."
 
-#: settingsplugin.cpp:195
+#: settingsplugin.cpp:172
 #, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"

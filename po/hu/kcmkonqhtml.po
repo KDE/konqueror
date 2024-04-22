@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 00:37+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2017-03-01 17:41+0100\n"
 "Last-Translator: Kiszel Kristóf <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -36,17 +36,17 @@ msgid "Stylesheets"
 msgstr "Stíluslapok"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:52 css/csscustom.ui:296
+#: appearance.cpp:48 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "Képek"
 
-#: appearance.cpp:56
+#: appearance.cpp:52
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "A képek a&utomatikus betöltése"
 
-#: appearance.cpp:57
+#: appearance.cpp:53
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -61,12 +61,12 @@ msgstr ""
 "kapcsolattal rendelkezik, akkor célszerű bejelölve hagyni a kényelmes "
 "böngészés érdekében.</html>"
 
-#: appearance.cpp:67
+#: appearance.cpp:63
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "Keret &rajzolása a még nem teljesen letöltött képek helyén"
 
-#: appearance.cpp:68
+#: appearance.cpp:64
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -79,24 +79,24 @@ msgstr ""
 "internetkapcsolattal rendelkezik, akkor célszerű bejelölve hagyni a "
 "kényelmes böngészés érdekében.</html>"
 
-#: appearance.cpp:78
+#: appearance.cpp:74
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "igen"
 
-#: appearance.cpp:79
+#: appearance.cpp:75
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "nem"
 
-#: appearance.cpp:80
+#: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
 msgstr "csak egyszer"
 
-#: appearance.cpp:81
+#: appearance.cpp:77
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -109,40 +109,40 @@ msgstr ""
 "b>: animációk nem jelenhetnek meg, csak statikus képek.</li><li><b>Csak "
 "egyszer</b>: az animációk megjelennek, de ismétlődés nélkül.</li></ul></html>"
 
-#: appearance.cpp:86
+#: appearance.cpp:82
 #, kde-format
 msgid "A&nimations:"
 msgstr "&Animációk:"
 
-#: appearance.cpp:89 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "Egyéb"
 
-#: appearance.cpp:94
+#: appearance.cpp:90
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "igen"
 
-#: appearance.cpp:95
+#: appearance.cpp:91
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "nem"
 
-#: appearance.cpp:96
+#: appearance.cpp:92
 #, kde-format
 msgid "Only on Hover"
 msgstr "csak az egérmutató alatt"
 
-#: appearance.cpp:97
+#: appearance.cpp:93
 #, kde-format
 msgid "Und&erline links:"
 msgstr "A linkek alá&húzása:"
 
-#: appearance.cpp:100
+#: appearance.cpp:96
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -158,29 +158,29 @@ msgstr ""
 "föléjük kerül</li></ul><br /><i>Megjegyzés: a weboldalak CSS-beli "
 "beállításai felülbírálhatják az itt megadott értéket</i></html>"
 
-#: appearance.cpp:109
+#: appearance.cpp:105
 #, kde-format
 msgid "When Efficient"
 msgstr "Ha nem okoz nagy leterhelést"
 
-#: appearance.cpp:110
+#: appearance.cpp:106
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "Mindig"
 
-#: appearance.cpp:111
+#: appearance.cpp:107
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "Soha"
 
-#: appearance.cpp:112
+#: appearance.cpp:108
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "Sima &görgetés:"
 
-#: appearance.cpp:114
+#: appearance.cpp:110
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -196,23 +196,23 @@ msgstr ""
 "li><li><b>Ha nem okoz nagy leterhelést</b>: csak olyan oldalaknál történik "
 "sima görgetés, ahol ez nem okoz túlzott mértékű terhelést.</li></ul></html>"
 
-#: appearance.cpp:132
+#: appearance.cpp:128
 #, kde-format
 msgid "Font Si&ze"
 msgstr "&Betűméret"
 
-#: appearance.cpp:135 appearance.cpp:153
+#: appearance.cpp:131 appearance.cpp:149
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr ""
 "Ez az a relatív betűméret, amit a Konqueror a lapok megjelenítéséhez használ."
 
-#: appearance.cpp:139
+#: appearance.cpp:135
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "&Minimális betűméret:"
 
-#: appearance.cpp:143
+#: appearance.cpp:139
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
@@ -221,27 +221,27 @@ msgstr ""
 "A Konqueror nem fog ennél kisebb betűméretet használni,<br />még akkor sem, "
 "ha egy weboldal kisebbet ír elő."
 
-#: appearance.cpp:148
+#: appearance.cpp:144
 #, kde-format
 msgid "&Medium font size:"
 msgstr "Kö&zepes betűméret:"
 
-#: appearance.cpp:161
+#: appearance.cpp:157
 #, kde-format
 msgid "S&tandard font:"
 msgstr "&Alap betűtípus:"
 
-#: appearance.cpp:162
+#: appearance.cpp:158
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr "Ezzel a betűtípussal jelenik meg a normál szöveg a böngészőben."
 
-#: appearance.cpp:166
+#: appearance.cpp:162
 #, kde-format
 msgid "&Fixed font:"
 msgstr "Fi&x betűtípus:"
 
-#: appearance.cpp:167
+#: appearance.cpp:163
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
@@ -249,47 +249,47 @@ msgstr ""
 "Ezzel a betűtípussal jelennek meg a rögzített szélességű betűkből álló "
 "szövegek."
 
-#: appearance.cpp:171
+#: appearance.cpp:167
 #, kde-format
 msgid "S&erif font:"
 msgstr "Serif betűtíp&us:"
 
-#: appearance.cpp:172
+#: appearance.cpp:168
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr ""
 "Ezzel a betűtípussal jelennek meg a serif típusúnak jelölt szövegek a "
 "böngészőben."
 
-#: appearance.cpp:176
+#: appearance.cpp:172
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "Sans ser&if betűtípus:"
 
-#: appearance.cpp:177
+#: appearance.cpp:173
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr ""
 "Ezzel a betűtípussal jelennek meg a sans serif típusúnak jelölt szövegek a "
 "böngészőben."
 
-#: appearance.cpp:181
+#: appearance.cpp:177
 #, kde-format
 msgid "C&ursive font:"
 msgstr "&Dőlt betűtípus:"
 
-#: appearance.cpp:182
+#: appearance.cpp:178
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr ""
 "Ezzel a betűtípussal jelenik meg a dőltnek jelölt szöveg a böngészőben."
 
-#: appearance.cpp:186
+#: appearance.cpp:182
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "Fantas&y betűtípus:"
 
-#: appearance.cpp:187
+#: appearance.cpp:183
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
@@ -297,22 +297,22 @@ msgstr ""
 "Ezzel a betűtípussal jelennek meg a fantasy típusúnak jelölt szövegek a "
 "böngészőben."
 
-#: appearance.cpp:196
+#: appearance.cpp:192
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "A betűméret i&gazítása ennél a kódolásnál:"
 
-#: appearance.cpp:204 appearance.cpp:405
+#: appearance.cpp:200 appearance.cpp:394
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "a weboldalon megadott kódolás"
 
-#: appearance.cpp:206
+#: appearance.cpp:202
 #, kde-format
 msgid "Default encoding:"
 msgstr "Az alapértelmezett kódolás:"
 
-#: appearance.cpp:208
+#: appearance.cpp:204
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1324,32 +1324,32 @@ msgid_plural " days"
 msgstr[0] " nap"
 msgstr[1] " nap"
 
-#: filteropts.cpp:124
+#: filteropts.cpp:120
 #, kde-format
 msgid "Insert"
 msgstr "Beszúrás"
 
-#: filteropts.cpp:127
+#: filteropts.cpp:123
 #, kde-format
 msgid "Update"
 msgstr "Frissítés"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:126
 #, kde-format
 msgid "Remove"
 msgstr "Eltávolítás"
 
-#: filteropts.cpp:134
+#: filteropts.cpp:130
 #, kde-format
 msgid "Import..."
 msgstr "Importálás..."
 
-#: filteropts.cpp:137
+#: filteropts.cpp:133
 #, kde-format
 msgid "Export..."
 msgstr "Exportálás..."
 
-#: filteropts.cpp:144
+#: filteropts.cpp:140
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
@@ -1358,7 +1358,7 @@ msgstr ""
 "<qt>További információk az <a href=\"importhelp\">importálási formátumokról</"
 "a> és az <a href=\"exporthelp\">exportálási formátumokról</a>"
 
-#: filteropts.cpp:158
+#: filteropts.cpp:154
 #, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
@@ -1368,7 +1368,7 @@ msgstr ""
 "szűrőlistán meg kell adni URL-kifejezések egy halmazát a blokkolás életbe "
 "lépéséhez."
 
-#: filteropts.cpp:160
+#: filteropts.cpp:156
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
@@ -1377,7 +1377,7 @@ msgstr ""
 "Ha be van kapcsolva, a blokkolt képek teljesen el lesznek távolítva az "
 "oldalból, különben egy helykitöltő „blokkolt” kép jelenik meg."
 
-#: filteropts.cpp:167
+#: filteropts.cpp:163
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
@@ -1386,7 +1386,7 @@ msgstr ""
 "Ezek az URL-szűrők lesznek alkalmazva a beágyazott képekre és "
 "médiaobjektumokra."
 
-#: filteropts.cpp:171
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1405,7 +1405,7 @@ msgstr ""
 "„<tt>@@</tt>” karakterekkel a kitételnek megfelelő hivatkozások minden "
 "tiltást felülbíráló prioritásos engedélyezéséhez."
 
-#: filteropts.cpp:187
+#: filteropts.cpp:183
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1417,7 +1417,7 @@ msgstr ""
 "figyelmen kívül lesz hagyva, minden más sor hozzáadásra kerül mint "
 "szűrőkifejezés."
 
-#: filteropts.cpp:192
+#: filteropts.cpp:188
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1428,25 +1428,25 @@ msgstr ""
 "<tt>[AdBlock]</tt> fejlécsorral kezdődik, majd soronként egy szűrőkifejezés "
 "követi."
 
-#: filteropts.cpp:260
+#: filteropts.cpp:256
 #, fuzzy, kde-format
 #| msgid "Automatic Filter"
 msgid "Import Filters"
 msgstr "Automatikus szűrő"
 
-#: filteropts.cpp:304
+#: filteropts.cpp:300
 #, fuzzy, kde-format
 #| msgid "URL Expressions to Filter"
 msgid "Export Filters"
 msgstr "Szűrési URL"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:563 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "Név"
 
-#: filteropts.cpp:564
+#: filteropts.cpp:554
 #, kde-format
 msgid "URL"
 msgstr "URL"
@@ -1893,30 +1893,30 @@ msgstr ""
 "nem akarja bezárni a Javát, amíg a Konqueror fut, akkor ne jelölje be A "
 "kisalkalmazás-kiszolgáló bezárása opciót."
 
-#: javaopts.cpp:291
+#: javaopts.cpp:288
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "Tart&ományspecifikus"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:323
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "Új Java-házirend"
 
-#: javaopts.cpp:329
+#: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "A Java-házirend módosítása"
 
-#: javaopts.cpp:333
+#: javaopts.cpp:330
 #, kde-format
 msgid "&Java policy:"
 msgstr "Java-&házirend:"
 
-#: javaopts.cpp:334
+#: javaopts.cpp:331
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "Válasszon egy Java-házirendet a fenti géphez vagy tartományhoz."
@@ -1963,7 +1963,7 @@ msgid ""
 "Enables the reporting of errors that occur when JavaScript code is executed."
 msgstr "Bekapcsolja a JavaScript-kód futása közben előforduló hibák jelzését."
 
-#: jsopts.cpp:83
+#: jsopts.cpp:79
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -1986,7 +1986,7 @@ msgstr ""
 "másoktól kapott házirendek betölthetők ill. a helyi házirendek kimenthetők "
 "(zip formátumban)."
 
-#: jsopts.cpp:93
+#: jsopts.cpp:89
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2002,7 +2002,7 @@ msgstr ""
 "használja a jobb oldalon látható vezérlőelemeket a házirend módosításához.</"
 "p>"
 
-#: jsopts.cpp:100
+#: jsopts.cpp:96
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2013,7 +2013,7 @@ msgstr ""
 "kijelöléséhez. Ezek a házirendek hozzáadódnak a már létezőkhöz. A duplikált "
 "bejegyzések figyelmen kívül lesznek hagyva."
 
-#: jsopts.cpp:103
+#: jsopts.cpp:99
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2024,40 +2024,40 @@ msgstr ""
 "fájl, melynek neve <b>javascript_policy.tgz</b> lesz, az Ön által megadott "
 "könyvtárba lesz elmentve."
 
-#: jsopts.cpp:109
+#: jsopts.cpp:105
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "JavaScript-házirendek"
 
-#: jsopts.cpp:183
+#: jsopts.cpp:172
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "Tartományra &vonatkozó"
 
-#: jsopts.cpp:222
+#: jsopts.cpp:211
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "Új JavaScript-házirend"
 
-#: jsopts.cpp:225
+#: jsopts.cpp:214
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "A JavaScript-házirend módosítása"
 
-#: jsopts.cpp:229
+#: jsopts.cpp:218
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "JavaScript-házirend:"
 
-#: jsopts.cpp:230
+#: jsopts.cpp:219
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "Válasszon egy JavaScript-házirendet a fenti géphez vagy tartományhoz."
 
-#: jsopts.cpp:232
+#: jsopts.cpp:221
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "Tartományra vonatkozó JavaScript-házirendek"
@@ -2271,7 +2271,7 @@ msgstr ""
 msgid "&Java"
 msgstr "&Java"
 
-#: main.cpp:57
+#: main.cpp:53
 #, kde-format
 msgid "Java&Script"
 msgstr "JavaS&cript"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 00:37+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2024-03-12 18:58+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -42,17 +42,17 @@ msgid "Stylesheets"
 msgstr "Estilo-orriak"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:52 css/csscustom.ui:296
+#: appearance.cpp:48 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "Irudiak"
 
-#: appearance.cpp:56
+#: appearance.cpp:52
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "Kargat&u irudiak automatikoki"
 
-#: appearance.cpp:57
+#: appearance.cpp:53
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -68,12 +68,12 @@ msgstr ""
 "izango duzu kontrol hau aktibatzea zure arakatze-lana atseginagoa izan dadin."
 "</html>"
 
-#: appearance.cpp:67
+#: appearance.cpp:63
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "&Marraztu markoa guztiz kargatu ez diren irudien inguruan"
 
-#: appearance.cpp:68
+#: appearance.cpp:64
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -86,24 +86,24 @@ msgstr ""
 "sare-konexioa oso geldoa ez bada, nahiago izango duzu koadro hau aktibatzea "
 "zure arakatze-lana atseginagoa izan dadin.</html>"
 
-#: appearance.cpp:78
+#: appearance.cpp:74
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "Gaituta"
 
-#: appearance.cpp:79
+#: appearance.cpp:75
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "Desgaituta"
 
-#: appearance.cpp:80
+#: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
 msgstr "Erakutsi behin bakarrik"
 
-#: appearance.cpp:81
+#: appearance.cpp:77
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -117,40 +117,40 @@ msgstr ""
 "li><li><b>Erakutsi behin bakarrik</b>: erakutsi animazio guztiak osorik, "
 "baina ez errepikatu.</li></ul></html>"
 
-#: appearance.cpp:86
+#: appearance.cpp:82
 #, kde-format
 msgid "A&nimations:"
 msgstr "&Animazioak:"
 
-#: appearance.cpp:89 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "Hainbat"
 
-#: appearance.cpp:94
+#: appearance.cpp:90
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "Gaituta"
 
-#: appearance.cpp:95
+#: appearance.cpp:91
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "Desgaituta"
 
-#: appearance.cpp:96
+#: appearance.cpp:92
 #, kde-format
 msgid "Only on Hover"
 msgstr "Gainetik pasatzean soilik"
 
-#: appearance.cpp:97
+#: appearance.cpp:93
 #, kde-format
 msgid "Und&erline links:"
 msgstr "A&zpimarratu estekak:"
 
-#: appearance.cpp:100
+#: appearance.cpp:96
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -165,29 +165,29 @@ msgstr ""
 "estekaren gainetik pasatzean azpimarratu bakarrik</li></ul><br /><i>Oharra: "
 "gunearen CSSko zehaztapenek jokabide hori gainidatz dezakete</i></html>"
 
-#: appearance.cpp:109
+#: appearance.cpp:105
 #, kde-format
 msgid "When Efficient"
 msgstr "Eraginkorra denean"
 
-#: appearance.cpp:110
+#: appearance.cpp:106
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "Beti"
 
-#: appearance.cpp:111
+#: appearance.cpp:107
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "Inoiz ez"
 
-#: appearance.cpp:112
+#: appearance.cpp:108
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "&Korritze leuna:"
 
-#: appearance.cpp:114
+#: appearance.cpp:110
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -204,24 +204,24 @@ msgstr ""
 "erabili urrats leunak orrietan korritzeko bakarrik sistemaren baliabideen "
 "erabilera mugatu batekin lor daitekeenean.</li></ul></html>"
 
-#: appearance.cpp:132
+#: appearance.cpp:128
 #, kde-format
 msgid "Font Si&ze"
 msgstr "Letra-&tamaina"
 
-#: appearance.cpp:135 appearance.cpp:153
+#: appearance.cpp:131 appearance.cpp:149
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr ""
 "Konqueror-ek webguneak erakusteko erabiltzen duen letra-tipoaren tamaina "
 "erlatiboa da."
 
-#: appearance.cpp:139
+#: appearance.cpp:135
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "G&utxieneko letra-tamaina:"
 
-#: appearance.cpp:143
+#: appearance.cpp:139
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
@@ -230,27 +230,27 @@ msgstr ""
 "Konqueror-ek ez du sekula erakutsiko testua hau baino tamaina txikiagoan "
 "<br /> beste edozein ezarpeni jaramonik egingo ez diolarik."
 
-#: appearance.cpp:148
+#: appearance.cpp:144
 #, kde-format
 msgid "&Medium font size:"
 msgstr "Letra-tamaina &ertaina:"
 
-#: appearance.cpp:161
+#: appearance.cpp:157
 #, kde-format
 msgid "S&tandard font:"
 msgstr "Letra-tipo &arrunta:"
 
-#: appearance.cpp:162
+#: appearance.cpp:158
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr "Letra-tipo hau web orrietan testu arrunta erakusteko erabiltzen da."
 
-#: appearance.cpp:166
+#: appearance.cpp:162
 #, kde-format
 msgid "&Fixed font:"
 msgstr "Letra-tipo &finkoa:"
 
-#: appearance.cpp:167
+#: appearance.cpp:163
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
@@ -258,67 +258,67 @@ msgstr ""
 "Letra-tipo hau zabalera finkoko testua (ez-proportzionala) erakusteko "
 "erabiliko da."
 
-#: appearance.cpp:171
+#: appearance.cpp:167
 #, kde-format
 msgid "S&erif font:"
 msgstr "S&erif letra-tipoa:"
 
-#: appearance.cpp:172
+#: appearance.cpp:168
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr ""
 "Letra-tipo hau 'serif' gisa markatutako testua erakusteko erabiltzen da."
 
-#: appearance.cpp:176
+#: appearance.cpp:172
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "Sa&ns serif letra-tipoa:"
 
-#: appearance.cpp:177
+#: appearance.cpp:173
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr ""
 "Letra-tipo hau 'sans-serif' gisa markatutako testua erakusteko erabiltzen da."
 
-#: appearance.cpp:181
+#: appearance.cpp:177
 #, kde-format
 msgid "C&ursive font:"
 msgstr "Letra-tipo e&tzana:"
 
-#: appearance.cpp:182
+#: appearance.cpp:178
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr ""
 "Letra-tipo hau 'etzana' gisa markatutako testua erakusteko erabiltzen da."
 
-#: appearance.cpp:186
+#: appearance.cpp:182
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "&Fantasia letra-tipoa:"
 
-#: appearance.cpp:187
+#: appearance.cpp:183
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr ""
 "Letra-tipo hau 'Fantasia' gisa markatutako testua erakusteko erabiltzen da."
 
-#: appearance.cpp:196
+#: appearance.cpp:192
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "Egokitu letra-&tamaina kodifikazio honetarako:"
 
-#: appearance.cpp:204 appearance.cpp:405
+#: appearance.cpp:200 appearance.cpp:394
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "Erabili hizkuntzaren kodifikazioa"
 
-#: appearance.cpp:206
+#: appearance.cpp:202
 #, kde-format
 msgid "Default encoding:"
 msgstr "Kodifikazio lehenetsia:"
 
-#: appearance.cpp:208
+#: appearance.cpp:204
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1384,32 +1384,32 @@ msgid_plural " days"
 msgstr[0] "egun "
 msgstr[1] " egun"
 
-#: filteropts.cpp:124
+#: filteropts.cpp:120
 #, kde-format
 msgid "Insert"
 msgstr "Txertatu"
 
-#: filteropts.cpp:127
+#: filteropts.cpp:123
 #, kde-format
 msgid "Update"
 msgstr "Eguneratu"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:126
 #, kde-format
 msgid "Remove"
 msgstr "Ezabatu"
 
-#: filteropts.cpp:134
+#: filteropts.cpp:130
 #, kde-format
 msgid "Import..."
 msgstr "Inportatu..."
 
-#: filteropts.cpp:137
+#: filteropts.cpp:133
 #, kde-format
 msgid "Export..."
 msgstr "Esportatu..."
 
-#: filteropts.cpp:144
+#: filteropts.cpp:140
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
@@ -1418,7 +1418,7 @@ msgstr ""
 "<qt>Informazio gehiago: <a href=\"importhelp\">inportatzeko formatua</a>, <a "
 "href=\"exporthelp\">esportatzeko formatua</a>"
 
-#: filteropts.cpp:158
+#: filteropts.cpp:154
 #, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
@@ -1428,7 +1428,7 @@ msgstr ""
 "zerrendan URL adierazpen multzo bat definitu beharko litzateke blokeatzea "
 "gauzatu dadin."
 
-#: filteropts.cpp:160
+#: filteropts.cpp:156
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
@@ -1437,7 +1437,7 @@ msgstr ""
 "Gaituta dagoenean blokeatutako irudiak orrialdetik erabat ezabatuko dira, "
 "bestela kokapena adierazteko 'blokeatuta' irudia erabiliko da."
 
-#: filteropts.cpp:167
+#: filteropts.cpp:163
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
@@ -1446,7 +1446,7 @@ msgstr ""
 "Txertatutako irudi eta multimediako objektuei aplikatuko zaizkien URL "
 "iragazki zerrenda da."
 
-#: filteropts.cpp:171
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1466,7 +1466,7 @@ msgstr ""
 "(onartu), zerrenda beltzeko (ukatu) edozein iragazkirekiko lehentasuna "
 "hartzen du."
 
-#: filteropts.cpp:187
+#: filteropts.cpp:183
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1478,7 +1478,7 @@ msgstr ""
 "tt> goiburu lerroa ez dira aintzakotzat hartzen. Beste edozein lerro "
 "iragazki adierazpen bezala eransten da."
 
-#: filteropts.cpp:192
+#: filteropts.cpp:188
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1489,23 +1489,23 @@ msgstr ""
 "Fitxategia <tt>[AdBlock]</tt> goiburu lerro batekin hasten da, ondoren "
 "iragazki guztiak bata bestearen atzetik bere lerroan."
 
-#: filteropts.cpp:260
+#: filteropts.cpp:256
 #, kde-format
 msgid "Import Filters"
 msgstr "Inportatu iragazkiak"
 
-#: filteropts.cpp:304
+#: filteropts.cpp:300
 #, kde-format
 msgid "Export Filters"
 msgstr "Esportatu iragazkiak"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:563 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "Izena"
 
-#: filteropts.cpp:564
+#: filteropts.cpp:554
 #, kde-format
 msgid "URL"
 msgstr "URLa"
@@ -1958,30 +1958,30 @@ msgstr ""
 "konqueror abiatuta dagoen denbora osoan zehar exekutatzen eduki nahi baduzu, "
 "utz ezazu miniaplikazioen zerbitzaria itzaltzeko koadroa desaktibatuta."
 
-#: javaopts.cpp:291
+#: javaopts.cpp:288
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "Dome&inuaren-berariazkoa"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:323
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "Javarekiko politika berria"
 
-#: javaopts.cpp:329
+#: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "Aldatu Javarekiko politika"
 
-#: javaopts.cpp:333
+#: javaopts.cpp:330
 #, kde-format
 msgid "&Java policy:"
 msgstr "&Javarekiko politika:"
 
-#: javaopts.cpp:334
+#: javaopts.cpp:331
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "Hauta ezazu Javarekiko politika goiko ostalari edo domeinuarentzat."
@@ -2030,7 +2030,7 @@ msgid ""
 msgstr ""
 "JavaScript-eko kodea exekutatzean gertatutako erroreak bidaltzea gaitzen du."
 
-#: jsopts.cpp:83
+#: jsopts.cpp:79
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2053,7 +2053,7 @@ msgstr ""
 "<i>Inportatu</i> eta <i>Esportatu</i> botoiak zure politikak besteekin erraz "
 "partekatzen utziko dizu konprimitutako fitxategian gorde eta berreskuratuz."
 
-#: jsopts.cpp:93
+#: jsopts.cpp:89
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2068,7 +2068,7 @@ msgstr ""
 "erabiliko da.</p><p>Hautatu politika bat eta erabili eskuineko botoiak "
 "aldaketak egiteko.</p>"
 
-#: jsopts.cpp:100
+#: jsopts.cpp:96
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2079,7 +2079,7 @@ msgstr ""
 "aukeratzeko. Politika hauek aurretik daudenekin batuko dira. Bikoiztutako "
 "sarrerei ez ikusi egingo zaie."
 
-#: jsopts.cpp:103
+#: jsopts.cpp:99
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2090,40 +2090,40 @@ msgstr ""
 "gordetzeko. Fitxategia zuk aukeratutako lekuan gordeko da "
 "<b>javascript_policy.tgz</b> izenarekin."
 
-#: jsopts.cpp:109
+#: jsopts.cpp:105
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "JavaScript politika orokorrak"
 
-#: jsopts.cpp:183
+#: jsopts.cpp:172
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "Domeinuaren &berariazkoa"
 
-#: jsopts.cpp:222
+#: jsopts.cpp:211
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "JavaScript-en politika berria"
 
-#: jsopts.cpp:225
+#: jsopts.cpp:214
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "Aldatu JavaScript-en politika"
 
-#: jsopts.cpp:229
+#: jsopts.cpp:218
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "JavaScript politika:"
 
-#: jsopts.cpp:230
+#: jsopts.cpp:219
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "Hautatu JavaScript politika goiko ostalari edo domeinuetarako."
 
-#: jsopts.cpp:232
+#: jsopts.cpp:221
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "Domeinuaren JavaScript politika berariazkoak"
@@ -2339,7 +2339,7 @@ msgstr ""
 msgid "&Java"
 msgstr "&Java"
 
-#: main.cpp:57
+#: main.cpp:53
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"

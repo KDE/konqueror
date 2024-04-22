@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2019-02-10 09:27-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -207,47 +207,47 @@ msgstr "ਵੱਖਰੀ ਰੰਗ ਡੂੰਘਾਈ ਸੈੱਟ ਕਰੋ(&S):
 msgid "Color depth:"
 msgstr ""
 
-#: imgalleryplugin.cpp:54
+#: imgalleryplugin.cpp:44
 #, kde-format
 msgid "&Create Image Gallery..."
 msgstr "ਚਿੱਤਰ ਗੈਲਰੀ ਬਣਾਓ(&C)..."
 
-#: imgalleryplugin.cpp:64
+#: imgalleryplugin.cpp:54
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
 msgstr "ਪਲੱਗਇਨ ਬਣਾਈ ਨਹੀਂ ਜਾ ਸਕੀ ਹੈ, ਬੱਗ ਬਾਰੇ ਜਾਣਕਾਰੀ ਦਿਓ ਜੀ।"
 
-#: imgalleryplugin.cpp:70
+#: imgalleryplugin.cpp:60
 #, kde-format
 msgid "Creating an image gallery works only on local folders."
 msgstr "ਚਿੱਤਰ ਗੈਲਰੀ ਬਣਾਉਣਾ ਸਿਰਫ਼ ਲੋਕਲ ਫੋਲਡਰਾਂ ਲਈ ਹੀ ਕੰਮ ਕਰਦਾ ਹੈ।"
 
-#: imgalleryplugin.cpp:90
+#: imgalleryplugin.cpp:80
 #, kde-format
 msgid "Creating thumbnails"
 msgstr "ਥੰਮਨੇਲ ਬਣਾਏ ਜਾ ਰਹੇ ਹਨ"
 
-#: imgalleryplugin.cpp:113 imgalleryplugin.cpp:284
+#: imgalleryplugin.cpp:103 imgalleryplugin.cpp:270
 #, kde-format
 msgid "Could not create folder: %1"
 msgstr "ਫੋਲਡਰ ਬਣ ਨਹੀਂ ਸਕਿਆ: %1"
 
-#: imgalleryplugin.cpp:182
+#: imgalleryplugin.cpp:168
 #, kde-format
 msgid "<i>Number of images</i>: %1"
 msgstr "<i>ਚਿੱਤਰਾਂ ਦੀ ਗਿਣਤੀ</i>: %1"
 
-#: imgalleryplugin.cpp:183
+#: imgalleryplugin.cpp:169
 #, kde-format
 msgid "<i>Created on</i>: %1"
 msgstr "<i>ਬਣਾਇਆ</i>: %1"
 
-#: imgalleryplugin.cpp:188
+#: imgalleryplugin.cpp:174
 #, kde-format
 msgid "<i>Subfolders</i>:"
 msgstr "<i>ਸਬ-ਫੋਲਡਰ</i>:"
 
-#: imgalleryplugin.cpp:221
+#: imgalleryplugin.cpp:207
 #, kde-format
 msgid ""
 "Created thumbnail for: \n"
@@ -256,7 +256,7 @@ msgstr ""
 "ਥੰਮਨੇਲ ਬਣਾਓ: \n"
 "%1"
 
-#: imgalleryplugin.cpp:224
+#: imgalleryplugin.cpp:210
 #, kde-format
 msgid ""
 "Creating thumbnail for: \n"
@@ -267,12 +267,12 @@ msgstr ""
 "ਥੰਮਨੇਲ ਬਣਾਉਣ ਲਈ\n"
 " ਅਸਫ਼ਲ"
 
-#: imgalleryplugin.cpp:239
+#: imgalleryplugin.cpp:225
 #, kde-format
 msgid "KiB"
 msgstr "KiB"
 
-#: imgalleryplugin.cpp:357 imgalleryplugin.cpp:457
+#: imgalleryplugin.cpp:343 imgalleryplugin.cpp:443
 #, kde-format
 msgid "Could not open file: %1"
 msgstr "ਫਾਇਲ ਖੋਲ੍ਹੀ ਨਹੀਂ ਜਾ ਸਕੀ: %1"

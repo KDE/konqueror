@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2016-08-31 22:35+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -90,7 +90,7 @@ msgstr "&Použiť vyrovnávaciu pamäť, ak je to možné"
 msgid "&Offline Browsing Mode"
 msgstr "Mód prehliadania o&ff-line"
 
-#: settingsplugin.cpp:193
+#: settingsplugin.cpp:170
 #, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
@@ -98,7 +98,7 @@ msgid ""
 msgstr ""
 "Nastavenie cookies sa nedá zmeniť, pretože cookie démon sa nedá kontaktovať."
 
-#: settingsplugin.cpp:195
+#: settingsplugin.cpp:172
 #, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 00:37+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2023-01-07 10:15+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -45,17 +45,17 @@ msgid "Stylesheets"
 msgstr "Φύλλα στυλ"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:52 css/csscustom.ui:296
+#: appearance.cpp:48 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "Εικόνες"
 
-#: appearance.cpp:56
+#: appearance.cpp:52
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "Α&υτόματη φόρτωση εικόνων"
 
-#: appearance.cpp:57
+#: appearance.cpp:53
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -71,12 +71,12 @@ msgstr ""
 "σύνδεση στο δίκτυο, μάλλον θα θέλετε να ενεργοποιήσετε αυτήν την επιλογή για "
 "να χαίρεστε πιο πολύ την περιήγησή σας.</html>"
 
-#: appearance.cpp:67
+#: appearance.cpp:63
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "Εμ&φάνιση πλαισίου γύρω από εικόνες που δεν έχουν φορτωθεί πλήρως"
 
-#: appearance.cpp:68
+#: appearance.cpp:64
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -89,24 +89,24 @@ msgstr ""
 "δίκτυο, θα πρέπει να ενεργοποιήσετε αυτό το πλαίσιο για να βελτιώσετε την "
 "ποιότητα της περιήγησής σας.</html>"
 
-#: appearance.cpp:78
+#: appearance.cpp:74
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "Ενεργοποιημένες"
 
-#: appearance.cpp:79
+#: appearance.cpp:75
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "Απενεργοποιημένες"
 
-#: appearance.cpp:80
+#: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
 msgstr "Εμφάνιση μόνο μία φορά"
 
-#: appearance.cpp:81
+#: appearance.cpp:77
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -120,40 +120,40 @@ msgstr ""
 "εμφάνιση της πρώτης εικόνας.</li><li><b>Εμφάνιση μόνο μία φορά</b>: Εμφάνιση "
 "όλων των εφέ κίνησης αλλά επανάληψη τους μόνο μία φορά.</li></ul></html>"
 
-#: appearance.cpp:86
+#: appearance.cpp:82
 #, kde-format
 msgid "A&nimations:"
 msgstr "&Εφέ κίνησης:"
 
-#: appearance.cpp:89 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "Διάφορα"
 
-#: appearance.cpp:94
+#: appearance.cpp:90
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "Ενεργοποιημένη"
 
-#: appearance.cpp:95
+#: appearance.cpp:91
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "Απενεργοποιημένη"
 
-#: appearance.cpp:96
+#: appearance.cpp:92
 #, kde-format
 msgid "Only on Hover"
 msgstr "Μόνο κάτω από το ποντίκι"
 
-#: appearance.cpp:97
+#: appearance.cpp:93
 #, kde-format
 msgid "Und&erline links:"
 msgstr "&Υπογράμμιση δεσμών:"
 
-#: appearance.cpp:100
+#: appearance.cpp:96
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -169,29 +169,29 @@ msgstr ""
 "μετακινείται πάνω από το δεσμό</li></ul><br /><i>Σημείωση: Οι ορισμοί CSS "
 "της ιστοσελίδας μπορεί να υπερκαλύψουν αυτή τη ρύθμιση.</i></html>"
 
-#: appearance.cpp:109
+#: appearance.cpp:105
 #, kde-format
 msgid "When Efficient"
 msgstr "Αν είναι εφικτό"
 
-#: appearance.cpp:110
+#: appearance.cpp:106
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "Πάντα"
 
-#: appearance.cpp:111
+#: appearance.cpp:107
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "Ποτέ"
 
-#: appearance.cpp:112
+#: appearance.cpp:108
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "Ο&μαλή κύλιση:"
 
-#: appearance.cpp:114
+#: appearance.cpp:110
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -208,24 +208,24 @@ msgstr ""
 "ομαλής κύλισης σε σελίδες όπου μπορεί αυτό να επιτευχθεί με μέση χρήση των "
 "πόρων του συστήματος.</li></ul></html>"
 
-#: appearance.cpp:132
+#: appearance.cpp:128
 #, kde-format
 msgid "Font Si&ze"
 msgstr "&Μέγεθος γραμματοσειράς"
 
-#: appearance.cpp:135 appearance.cpp:153
+#: appearance.cpp:131 appearance.cpp:149
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr ""
 "Αυτό είναι το σχετικό μέγεθος γραμματοσειράς που χρησιμοποιεί ο Konqueror "
 "για την εμφάνιση των ιστοσελίδων."
 
-#: appearance.cpp:139
+#: appearance.cpp:135
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "&Ελάχιστο μέγεθος γραμματοσειράς:"
 
-#: appearance.cpp:143
+#: appearance.cpp:139
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
@@ -234,29 +234,29 @@ msgstr ""
 "Ο Konqueror δε θα εμφανίσει ποτέ κείμενο μικρότερο από αυτό το μέγεθος, <br /"
 "> αγνοώντας οποιεσδήποτε άλλες ρυθμίσεις."
 
-#: appearance.cpp:148
+#: appearance.cpp:144
 #, kde-format
 msgid "&Medium font size:"
 msgstr "&Μεσαίο μέγεθος γραμματοσειράς:"
 
-#: appearance.cpp:161
+#: appearance.cpp:157
 #, kde-format
 msgid "S&tandard font:"
 msgstr "&Τυπική γραμματοσειρά:"
 
-#: appearance.cpp:162
+#: appearance.cpp:158
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr ""
 "Αυτή είναι η γραμματοσειρά που χρησιμοποιείται για την εμφάνιση του "
 "κανονικού κειμένου σε μια ιστοσελίδα."
 
-#: appearance.cpp:166
+#: appearance.cpp:162
 #, kde-format
 msgid "&Fixed font:"
 msgstr "&Γραμματοσειρά σταθερού πλάτους:"
 
-#: appearance.cpp:167
+#: appearance.cpp:163
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
@@ -264,48 +264,48 @@ msgstr ""
 "Αυτή είναι η γραμματοσειρά που χρησιμοποιείται για την εμφάνιση κειμένου με "
 "σταθερό πλάτος."
 
-#: appearance.cpp:171
+#: appearance.cpp:167
 #, kde-format
 msgid "S&erif font:"
 msgstr "Γραμματοσειρά S&erif:"
 
-#: appearance.cpp:172
+#: appearance.cpp:168
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr ""
 "Αυτή είναι η γραμματοσειρά που χρησιμοποιείται για την εμφάνιση του κειμένου "
 "που είναι σημειωμένο σαν serif."
 
-#: appearance.cpp:176
+#: appearance.cpp:172
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "Γραμματοσειρά Sa&ns serif:"
 
-#: appearance.cpp:177
+#: appearance.cpp:173
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr ""
 "Αυτή είναι η γραμματοσειρά που χρησιμοποιείται για την εμφάνιση του κειμένου "
 "που είναι σημειωμένο σαν sans-serif."
 
-#: appearance.cpp:181
+#: appearance.cpp:177
 #, kde-format
 msgid "C&ursive font:"
 msgstr "Γραμματοσειρά C&ursive:"
 
-#: appearance.cpp:182
+#: appearance.cpp:178
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr ""
 "Αυτή είναι η γραμματοσειρά που χρησιμοποιείται για την εμφάνιση του κειμένου "
 "που είναι σημειωμένο σαν πλάγιο."
 
-#: appearance.cpp:186
+#: appearance.cpp:182
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "Γραμματοσειρά Fantas&y:"
 
-#: appearance.cpp:187
+#: appearance.cpp:183
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
@@ -313,22 +313,22 @@ msgstr ""
 "Αυτή είναι η γραμματοσειρά που χρησιμοποιείται για την εμφάνιση του κειμένου "
 "που είναι σημειωμένο σαν fantasy."
 
-#: appearance.cpp:196
+#: appearance.cpp:192
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "Προσαρμογή &μεγέθους γραμματοσειράς γι' αυτή την κωδικοποίηση:"
 
-#: appearance.cpp:204 appearance.cpp:405
+#: appearance.cpp:200 appearance.cpp:394
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "Χρήση κωδικοποίησης γλώσσας"
 
-#: appearance.cpp:206
+#: appearance.cpp:202
 #, kde-format
 msgid "Default encoding:"
 msgstr "Προκαθορισμένη κωδικοποίηση:"
 
-#: appearance.cpp:208
+#: appearance.cpp:204
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1353,32 +1353,32 @@ msgid_plural " days"
 msgstr[0] " ημέρα"
 msgstr[1] " ημέρες"
 
-#: filteropts.cpp:124
+#: filteropts.cpp:120
 #, kde-format
 msgid "Insert"
 msgstr "Εισαγωγή"
 
-#: filteropts.cpp:127
+#: filteropts.cpp:123
 #, kde-format
 msgid "Update"
 msgstr "Ενημέρωση"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:126
 #, kde-format
 msgid "Remove"
 msgstr "Αφαίρεση"
 
-#: filteropts.cpp:134
+#: filteropts.cpp:130
 #, kde-format
 msgid "Import..."
 msgstr "Εισαγωγή..."
 
-#: filteropts.cpp:137
+#: filteropts.cpp:133
 #, kde-format
 msgid "Export..."
 msgstr "Εξαγωγή..."
 
-#: filteropts.cpp:144
+#: filteropts.cpp:140
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
@@ -1387,7 +1387,7 @@ msgstr ""
 "<qt>Περισσότερες πληροφορίες για <a href=\"importhelp\">μορφή εισαγωγής</a>, "
 "<a href=\"exporthelp\">μορφή εξαγωγής</a>"
 
-#: filteropts.cpp:158
+#: filteropts.cpp:154
 #, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
@@ -1397,7 +1397,7 @@ msgstr ""
 "πρέπει να οριστεί, στη λίστα των φίλτρων, ένα σύνολο διευθύνσεων ώστε να "
 "αρχίσει να λειτουργεί το μπλοκάρισμα."
 
-#: filteropts.cpp:160
+#: filteropts.cpp:156
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
@@ -1407,7 +1407,7 @@ msgstr ""
 "σελίδα αλλιώς θα χρησιμοποιηθεί ένα πλαίσιο ένδειξης θέσης με τη σήμανση "
 "'μπλοκαρισμένη' εικόνα."
 
-#: filteropts.cpp:167
+#: filteropts.cpp:163
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
@@ -1416,7 +1416,7 @@ msgstr ""
 "Αυτή είναι η λίστα των φίλτρων διευθύνσεων που θα εφαρμοστούν σε όλες τις "
 "ενσωματωμένες εικόνες και όλα τα αντικείμενα των μέσων."
 
-#: filteropts.cpp:171
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1436,7 +1436,7 @@ msgstr ""
 "tt>» όλα τα URL που ταιριάζουν προστίθενται στη λευκή λίστα (επιτρεπόμενα), "
 "η οποία είναι σε προτεραιότητα σε σχέση με τα φίλτρα στη μαύρη λίστα (φραγή)."
 
-#: filteropts.cpp:187
+#: filteropts.cpp:183
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1448,7 +1448,7 @@ msgstr ""
 "<tt>[AdBlock]</tt> αγνοούνται. Οποιαδήποτε άλλη γραμμή προστίθεται ως "
 "έκφραση του φίλτρου."
 
-#: filteropts.cpp:192
+#: filteropts.cpp:188
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1459,23 +1459,23 @@ msgstr ""
 "με  την κεφαλίδα  <tt>[AdBlock]</tt>, και μετά ακολουθούν όλα τα φίλτρα σε "
 "ξεχωριστές γραμμές."
 
-#: filteropts.cpp:260
+#: filteropts.cpp:256
 #, kde-format
 msgid "Import Filters"
 msgstr "Φίλτρα εισαγωγής"
 
-#: filteropts.cpp:304
+#: filteropts.cpp:300
 #, kde-format
 msgid "Export Filters"
 msgstr "Φίλτρα εξαγωγής"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:563 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "Όνομα"
 
-#: filteropts.cpp:564
+#: filteropts.cpp:554
 #, kde-format
 msgid "URL"
 msgstr "URL"
@@ -1936,30 +1936,30 @@ msgstr ""
 "αφήστε αυτό το πλαίσιο επιλογής, Τερματισμός εξυπηρετητή μικροεφαρμογών, "
 "κενό."
 
-#: javaopts.cpp:291
+#: javaopts.cpp:288
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "Ανάλογα με τον &τομέα"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:323
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "Νέα πολιτική Java"
 
-#: javaopts.cpp:329
+#: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "Αλλαγή πολιτικής Java"
 
-#: javaopts.cpp:333
+#: javaopts.cpp:330
 #, kde-format
 msgid "&Java policy:"
 msgstr "Πολιτική &Java:"
 
-#: javaopts.cpp:334
+#: javaopts.cpp:331
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "Επιλέξτε μια πολιτική Java για τον παραπάνω υπολογιστή ή τομέα."
@@ -2009,7 +2009,7 @@ msgstr ""
 "Ενεργοποιεί την αναφορά των σφαλμάτων που συμβαίνουν κατά την εκτέλεση "
 "κώδικα JavaScript."
 
-#: jsopts.cpp:83
+#: jsopts.cpp:79
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2033,7 +2033,7 @@ msgstr ""
 "να μοιραστείτε εύκολα τις πολιτικές σας με άλλους, επιτρέποντάς σας να τις "
 "αποθηκεύσετε και να τις ανακτήσετε από ένα συμπιεσμένο αρχείο."
 
-#: jsopts.cpp:93
+#: jsopts.cpp:89
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2049,7 +2049,7 @@ msgstr ""
 "τομείς ή τους υπολογιστές. </p><p>Επιλέξτε μια πολιτική και χρησιμοποιήστε "
 "τα χειριστήρια στα δεξιά για να την τροποποιήσετε.</p>"
 
-#: jsopts.cpp:100
+#: jsopts.cpp:96
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2060,7 +2060,7 @@ msgstr ""
 "JavaScript. Αυτές οι πολιτικές θα συγχωνευτούν με τις ήδη υπάρχουσες. Διπλές "
 "εισαγωγές αγνοούνται."
 
-#: jsopts.cpp:103
+#: jsopts.cpp:99
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2071,40 +2071,40 @@ msgstr ""
 "συμπιεσμένο αρχείο. Το αρχείο, με όνομα <b>javascript_policy.tgz</b>, θα "
 "αποθηκευτεί σε μια τοποθεσία της επιλογής σας."
 
-#: jsopts.cpp:109
+#: jsopts.cpp:105
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "Καθολικές πολιτικές JavaScript"
 
-#: jsopts.cpp:183
+#: jsopts.cpp:172
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "Ανάλογα με τον &τομέα"
 
-#: jsopts.cpp:222
+#: jsopts.cpp:211
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "Νέα πολιτική JavaScript"
 
-#: jsopts.cpp:225
+#: jsopts.cpp:214
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "Αλλαγή πολιτικής JavaScript"
 
-#: jsopts.cpp:229
+#: jsopts.cpp:218
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "Πολιτική JavaScript:"
 
-#: jsopts.cpp:230
+#: jsopts.cpp:219
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "Επιλέξτε μια πολιτική JavaScript για τον παραπάνω υπολογιστή ή τομέα."
 
-#: jsopts.cpp:232
+#: jsopts.cpp:221
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "Πολιτικές JavaScript ανάλογα με τον τομέα"
@@ -2324,7 +2324,7 @@ msgstr ""
 msgid "&Java"
 msgstr "&Java"
 
-#: main.cpp:57
+#: main.cpp:53
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"

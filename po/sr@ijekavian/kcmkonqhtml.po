@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 00:37+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2017-09-28 17:56+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -41,17 +41,17 @@ msgid "Stylesheets"
 msgstr "Описи стилова"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:52 css/csscustom.ui:296
+#: appearance.cpp:48 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "Слике"
 
-#: appearance.cpp:56
+#: appearance.cpp:52
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "&Аутоматски учитај слике"
 
-#: appearance.cpp:57
+#: appearance.cpp:53
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -66,12 +66,12 @@ msgstr ""
 "том месту.</p><p>Вјероватно ћете жељети да укључите ово, осим ако вам је "
 "веза са мрежом врло спора.</p></html>"
 
-#: appearance.cpp:67
+#: appearance.cpp:63
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "&Оквир око непотпуно учитаних слика"
 
-#: appearance.cpp:68
+#: appearance.cpp:64
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -84,24 +84,24 @@ msgstr ""
 "p><p>Вјероватно ћете жељети да укључите ово, а посебно ако вам је веза са "
 "мрежом спора.</p></html>"
 
-#: appearance.cpp:78
+#: appearance.cpp:74
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "укључене"
 
-#: appearance.cpp:79
+#: appearance.cpp:75
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "искључене"
 
-#: appearance.cpp:80
+#: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
 msgstr "пусти само једном"
 
-#: appearance.cpp:81
+#: appearance.cpp:77
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -115,40 +115,40 @@ msgstr ""
 "само једном</b>: анимације се пуштају, али се не понављају послије првог "
 "пута</li></ul></html>"
 
-#: appearance.cpp:86
+#: appearance.cpp:82
 #, kde-format
 msgid "A&nimations:"
 msgstr "&Анимације:"
 
-#: appearance.cpp:89 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "Разно"
 
-#: appearance.cpp:94
+#: appearance.cpp:90
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "укључено"
 
-#: appearance.cpp:95
+#: appearance.cpp:91
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "искључено"
 
-#: appearance.cpp:96
+#: appearance.cpp:92
 #, kde-format
 msgid "Only on Hover"
 msgstr "само при лебдјењу"
 
-#: appearance.cpp:97
+#: appearance.cpp:93
 #, kde-format
 msgid "Und&erline links:"
 msgstr "&Подвучене везе:"
 
-#: appearance.cpp:100
+#: appearance.cpp:96
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -164,31 +164,31 @@ msgstr ""
 "сајту могу потиснути ову поставку.</p></html>"
 
 # >> @item:inlistbox Smooth scrolling
-#: appearance.cpp:109
+#: appearance.cpp:105
 #, kde-format
 msgid "When Efficient"
 msgstr "када је ефикасно"
 
 # >> @item:inlistbox Smooth scrolling
-#: appearance.cpp:110
+#: appearance.cpp:106
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "Увијек"
 
 # >> @item:inlistbox Smooth scrolling
-#: appearance.cpp:111
+#: appearance.cpp:107
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "никад"
 
-#: appearance.cpp:112
+#: appearance.cpp:108
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "&Глатко клизање:"
 
-#: appearance.cpp:114
+#: appearance.cpp:110
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -204,23 +204,23 @@ msgstr ""
 "li><li><b>када је ефикасно</b>: глатко клизање само оних страница са којима "
 "се то може постићи уз скромну употребу системских ресурса.</li></ul></html>"
 
-#: appearance.cpp:132
+#: appearance.cpp:128
 #, kde-format
 msgid "Font Si&ze"
 msgstr "&Величина фонта"
 
-#: appearance.cpp:135 appearance.cpp:153
+#: appearance.cpp:131 appearance.cpp:149
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr ""
 "Ово је релативна величина фонта коју К‑освајач користи за приказ веб сајтова."
 
-#: appearance.cpp:139
+#: appearance.cpp:135
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "Нај&мања величина фонта:"
 
-#: appearance.cpp:143
+#: appearance.cpp:139
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
@@ -229,91 +229,91 @@ msgstr ""
 "К‑освајач никада неће приказивати текст у величини мањој од ове, без обзира "
 "на било коју другу поставку."
 
-#: appearance.cpp:148
+#: appearance.cpp:144
 #, kde-format
 msgid "&Medium font size:"
 msgstr "Сре&дња величина фонта:"
 
-#: appearance.cpp:161
+#: appearance.cpp:157
 #, kde-format
 msgid "S&tandard font:"
 msgstr "&Стандардни фонт:"
 
-#: appearance.cpp:162
+#: appearance.cpp:158
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr "Ово је фонт који се користи за приказ обичног текста на веб страници."
 
-#: appearance.cpp:166
+#: appearance.cpp:162
 #, kde-format
 msgid "&Fixed font:"
 msgstr "&Фиксни фонт:"
 
-#: appearance.cpp:167
+#: appearance.cpp:163
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr ""
 "Ово је фонт који се користи за приказ фиксног (тј. непропорционалног) текста."
 
-#: appearance.cpp:171
+#: appearance.cpp:167
 #, kde-format
 msgid "S&erif font:"
 msgstr "С&ерифни фонт:"
 
-#: appearance.cpp:172
+#: appearance.cpp:168
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr "Ово је фонт који се користи за приказ текста обиљеженог као серифни."
 
-#: appearance.cpp:176
+#: appearance.cpp:172
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "Бесерифни фонт:"
 
-#: appearance.cpp:177
+#: appearance.cpp:173
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr "Ово је фонт који се користи за приказ текста обиљеженог као бесерифни."
 
-#: appearance.cpp:181
+#: appearance.cpp:177
 #, kde-format
 msgid "C&ursive font:"
 msgstr "&Курзивни фонт:"
 
-#: appearance.cpp:182
+#: appearance.cpp:178
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr "Ово је фонт који се користи за приказ текста обиљеженог као курзивни."
 
-#: appearance.cpp:186
+#: appearance.cpp:182
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "Фанта&зијски фонт:"
 
-#: appearance.cpp:187
+#: appearance.cpp:183
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr ""
 "Ово је фонт који се користи за приказ текста обиљеженог као фантазијски."
 
-#: appearance.cpp:196
+#: appearance.cpp:192
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "&Корекција величине фонта за ово кодирање:"
 
-#: appearance.cpp:204 appearance.cpp:405
+#: appearance.cpp:200 appearance.cpp:394
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "кодирање језика"
 
-#: appearance.cpp:206
+#: appearance.cpp:202
 #, kde-format
 msgid "Default encoding:"
 msgstr "Подразумијевано кодирање:"
 
-#: appearance.cpp:208
+#: appearance.cpp:204
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1331,32 +1331,32 @@ msgstr[1] " дана"
 msgstr[2] " дана"
 msgstr[3] " дан"
 
-#: filteropts.cpp:124
+#: filteropts.cpp:120
 #, kde-format
 msgid "Insert"
 msgstr "Уметни"
 
-#: filteropts.cpp:127
+#: filteropts.cpp:123
 #, kde-format
 msgid "Update"
 msgstr "Ажурирај"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:126
 #, kde-format
 msgid "Remove"
 msgstr "Уклони"
 
-#: filteropts.cpp:134
+#: filteropts.cpp:130
 #, kde-format
 msgid "Import..."
 msgstr "Увези..."
 
-#: filteropts.cpp:137
+#: filteropts.cpp:133
 #, kde-format
 msgid "Export..."
 msgstr "Извези..."
 
-#: filteropts.cpp:144
+#: filteropts.cpp:140
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
@@ -1365,7 +1365,7 @@ msgstr ""
 "<qt>Више детаља о <a href=\"importhelp\">увозном</a> и <a href=\"exporthelp"
 "\">извозном</a> формату.</qt>"
 
-#: filteropts.cpp:158
+#: filteropts.cpp:154
 #, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
@@ -1374,7 +1374,7 @@ msgstr ""
 "Укључите или искључите Адблокове филтере. Када је укључено, да би блокирање "
 "радило у списку филтера треба да буде дефинисан скуп израза над УРЛ‑овима."
 
-#: filteropts.cpp:160
+#: filteropts.cpp:156
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
@@ -1383,7 +1383,7 @@ msgstr ""
 "Када је укључено, блокиране слике ће бити потпуно уклоњене са странице, у "
 "супротном ће на мјесту блокиране слике стајати натпис „блокирано“."
 
-#: filteropts.cpp:167
+#: filteropts.cpp:163
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
@@ -1392,7 +1392,7 @@ msgstr ""
 "Ово је списак филтера над УРЛ‑овима који ће бити примијењени на све "
 "угнијежђене слике и друге медијуме."
 
-#: filteropts.cpp:171
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1411,7 +1411,7 @@ msgstr ""
 "поклопљеног УРЛ‑а на бијелу листу (дозвољено). Ово има приоритет над свим "
 "филтерима за црну листу (блокирање).</p></qt>"
 
-#: filteropts.cpp:187
+#: filteropts.cpp:183
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1423,7 +1423,7 @@ msgstr ""
 "<tt>[AdBlock]</tt>. Сви остали редови се додају као филтерски изрази.</p></"
 "qt>"
 
-#: filteropts.cpp:192
+#: filteropts.cpp:188
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1435,14 +1435,14 @@ msgstr ""
 "p></qt>"
 
 # >> @title:tab
-#: filteropts.cpp:260
+#: filteropts.cpp:256
 #, fuzzy, kde-format
 #| msgid "Automatic Filter"
 msgid "Import Filters"
 msgstr "Аутоматско филтрирање"
 
 # >> @title:tab
-#: filteropts.cpp:304
+#: filteropts.cpp:300
 #, fuzzy, kde-format
 #| msgid "Automatic Filter"
 msgid "Export Filters"
@@ -1450,13 +1450,13 @@ msgstr "Аутоматско филтрирање"
 
 # >> @title:column
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:563 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "име"
 
 # >> @title:column
-#: filteropts.cpp:564
+#: filteropts.cpp:554
 #, kde-format
 msgid "URL"
 msgstr "УРЛ"
@@ -1908,30 +1908,30 @@ msgstr ""
 "Да би јава‑машина била у погону док је год и процес К‑освајача, испразните "
 "кућицу <i>Искључи сервер аплета када није активан дуже од</i>."
 
-#: javaopts.cpp:291
+#: javaopts.cpp:288
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "Посеб&но за домен"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:323
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "Нова смјерница јаве"
 
-#: javaopts.cpp:329
+#: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "Измјена смјернице јаве"
 
-#: javaopts.cpp:333
+#: javaopts.cpp:330
 #, kde-format
 msgid "&Java policy:"
 msgstr "&Смјерница јаве:"
 
-#: javaopts.cpp:334
+#: javaopts.cpp:331
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "Изаберите смјерницу јаве за горњи домаћин или домен."
@@ -1981,7 +1981,7 @@ msgstr ""
 "јаваскриптног кôда."
 
 # rewrite-msgid: /default policy setting/default policy/
-#: jsopts.cpp:83
+#: jsopts.cpp:79
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2003,7 +2003,7 @@ msgstr ""
 "<i>Извези...</i> можете лако дијелити своје смјернице са другима, тако што "
 "ћете их уписивати и добављати из фајла архиве."
 
-#: jsopts.cpp:93
+#: jsopts.cpp:89
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2018,7 +2018,7 @@ msgstr ""
 "страницама које ови домени или домаћини шаљу.</p><p>Изаберите смјерницу и "
 "употријебите контроле десно да је измијените.</p>"
 
-#: jsopts.cpp:100
+#: jsopts.cpp:96
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2029,7 +2029,7 @@ msgstr ""
 "Учитане смјернице ће бити стопљене са постојећима. У случају да иста "
 "смјерница већ постоји, нова ће бити игнорисана."
 
-#: jsopts.cpp:103
+#: jsopts.cpp:99
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2039,40 +2039,40 @@ msgstr ""
 "Кликните овдје да сачувате смјерницу за јаваскрипт као компресован фајл, по "
 "имену <b>javascript_policy.tgz</b>, и смјештен на локацији по вашем избору."
 
-#: jsopts.cpp:109
+#: jsopts.cpp:105
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "Глобалне смјернице јаваскрипта"
 
-#: jsopts.cpp:183
+#: jsopts.cpp:172
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "Посе&бно за домен"
 
-#: jsopts.cpp:222
+#: jsopts.cpp:211
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "Нова смјерница јаваскрипта"
 
-#: jsopts.cpp:225
+#: jsopts.cpp:214
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "Измјена смјернице јаваскрипта"
 
-#: jsopts.cpp:229
+#: jsopts.cpp:218
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "Смјерница јаваскрипта:"
 
-#: jsopts.cpp:230
+#: jsopts.cpp:219
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "Изаберите смјерницу за горњи домаћин или домен."
 
-#: jsopts.cpp:232
+#: jsopts.cpp:221
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "смјернице јаваскрипта посебне за домен"
@@ -2289,7 +2289,7 @@ msgstr ""
 msgid "&Java"
 msgstr "&Јава"
 
-#: main.cpp:57
+#: main.cpp:53
 #, kde-format
 msgid "Java&Script"
 msgstr "&Јаваскрипт"

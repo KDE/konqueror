@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:45+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2023-11-22 06:38+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -90,7 +90,7 @@ msgstr[1] " sekundoj"
 msgid "None"
 msgstr "Neniu"
 
-#: app/archivedialog.cpp:219
+#: app/archivedialog.cpp:210
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -100,25 +100,25 @@ msgstr ""
 "La retarkiva elŝuto ne povas uzi la nunajn prokurajn agordojn. Neniu "
 "prokurilo estos uzata."
 
-#: app/archivedialog.cpp:358
+#: app/archivedialog.cpp:349
 #, kde-format
 msgctxt "@info"
 msgid "The save location is not valid."
 msgstr "La konserva loko ne validas."
 
-#: app/archivedialog.cpp:378
+#: app/archivedialog.cpp:369
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
 msgstr "Ne povas trovi la komandon wget(1),<nl/>vidu <link>%1</link>."
 
-#: app/archivedialog.cpp:404
+#: app/archivedialog.cpp:391
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
 msgstr "Ne povas kontroli celon<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:421
+#: app/archivedialog.cpp:408
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -128,13 +128,13 @@ msgstr ""
 "La arkiva dosierujo<nl/><filename>%1</filename><nl/>jam ekzistas kiel "
 "dosiero."
 
-#: app/archivedialog.cpp:422
+#: app/archivedialog.cpp:409
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
 msgstr "La arkiva dosierujo<nl/><filename>%1</filename><nl/>jam ekzistas."
 
-#: app/archivedialog.cpp:426
+#: app/archivedialog.cpp:413
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -144,42 +144,42 @@ msgstr ""
 "La arkiva dosiero<nl/><filename>%1</filename><nl/>jam ekzistas kiel "
 "dosierujo."
 
-#: app/archivedialog.cpp:427
+#: app/archivedialog.cpp:414
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
 msgstr "La arkiva dosiero <nl/><filename>%1</filename><nl/>jam ekzistas."
 
-#: app/archivedialog.cpp:431
+#: app/archivedialog.cpp:418
 #, kde-format
 msgid "Archive Already Exists"
 msgstr "Arkivo Jam Ekzistas"
 
-#: app/archivedialog.cpp:461
+#: app/archivedialog.cpp:448
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
 msgstr "Ne povas forigi originan arkivon<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:478
+#: app/archivedialog.cpp:465
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
 msgstr "Ne povas krei provizoran dosierujon<nl/><filename>%1</filename><nl/>"
 
-#: app/archivedialog.cpp:550
+#: app/archivedialog.cpp:537
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot start the archiver process <filename>%1</filename>"
 msgstr "Ne povas komenci la arkivan procezon <filename>%1</filename>"
 
-#: app/archivedialog.cpp:566
+#: app/archivedialog.cpp:553
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The download process was interrupted."
 msgstr "La elŝuta procezo estis interrompita."
 
-#: app/archivedialog.cpp:567
+#: app/archivedialog.cpp:554
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -189,7 +189,7 @@ msgstr ""
 "<para>La elŝuta procezo <filename>%1</filename> malsukcesis kun signalo %2.</"
 "para>"
 
-#: app/archivedialog.cpp:572
+#: app/archivedialog.cpp:559
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -199,7 +199,7 @@ msgstr ""
 "<para>La elŝuta procezo <filename>%1</filename> malsukcesis kun stato %2.</"
 "para>"
 
-#: app/archivedialog.cpp:576
+#: app/archivedialog.cpp:563
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -209,41 +209,41 @@ msgstr ""
 "<para>Ĉi tio povas simple indiki 404-eraron por kelkaj el la paĝaj elementoj."
 "</para>"
 
-#: app/archivedialog.cpp:582
+#: app/archivedialog.cpp:569
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
 msgstr "<para>Ĉu konservi la partan TTT-arkivon?</para>"
 
-#: app/archivedialog.cpp:583
+#: app/archivedialog.cpp:570
 #, kde-format
 msgid "Retain Archive?"
 msgstr "Ĉu konservi arkivon?"
 
-#: app/archivedialog.cpp:584
+#: app/archivedialog.cpp:571
 #, kde-format
 msgid "Retain"
 msgstr "Reteni"
 
-#: app/archivedialog.cpp:588
+#: app/archivedialog.cpp:575
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."
 msgstr "Kreado de la TTT-arkivo malsukcesis."
 
-#: app/archivedialog.cpp:731
+#: app/archivedialog.cpp:718
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
 msgstr "Ne povas kopii arkivon al <nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:761
+#: app/archivedialog.cpp:748
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
 msgstr "Ne povas agordi permesojn sur<nl/><filename>%1</filename><nl/>%2"
 
-#: app/archivedialog.cpp:769
+#: app/archivedialog.cpp:756
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"

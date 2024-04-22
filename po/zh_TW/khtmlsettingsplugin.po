@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2016-10-28 12:30+0800\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
@@ -92,14 +92,14 @@ msgstr "可能的話使用快取(&U)"
 msgid "&Offline Browsing Mode"
 msgstr "離線瀏覽模式(&O)"
 
-#: settingsplugin.cpp:193
+#: settingsplugin.cpp:170
 #, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
 "be contacted."
 msgstr "因為無法連上 cookie 守護程式，所以 cookie 設定無法變更。"
 
-#: settingsplugin.cpp:195
+#: settingsplugin.cpp:172
 #, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"

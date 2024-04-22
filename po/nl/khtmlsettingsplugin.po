@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
 "PO-Revision-Date: 2016-08-08 16:52+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -94,7 +94,7 @@ msgstr "Cache gebr&uiken, indien mogelijk"
 msgid "&Offline Browsing Mode"
 msgstr "&Offline browsingmodus"
 
-#: settingsplugin.cpp:193
+#: settingsplugin.cpp:170
 #, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
@@ -103,7 +103,7 @@ msgstr ""
 "De instelling van cookies kon niet worden gewijzigd omdat er geen contact "
 "gemaakt kon worden met de cookie-daemon."
 
-#: settingsplugin.cpp:195
+#: settingsplugin.cpp:172
 #, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"
