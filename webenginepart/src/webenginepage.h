@@ -146,11 +146,6 @@ protected Q_SLOTS:
      */
     void updateUserStyleSheet(const QString &script);
 
-    /**
-     * @brief Changes the background according to the default palette
-     */
-    void updateBackgroundColor();
-
 private:
     bool checkFormData(const QUrl& url) const;
     bool handleMailToUrl (const QUrl& , NavigationType type) const;

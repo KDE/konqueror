@@ -41,7 +41,6 @@
 #include <QMimeDatabase>
 #include <QMenu>
 #include <QActionGroup>
-#include <QPalette>
 
 #define QL1S(x)   QLatin1String(x)
 #define QL1C(x)   QLatin1Char(x)
