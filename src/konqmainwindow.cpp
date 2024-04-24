@@ -3535,19 +3535,12 @@ void KonqMainWindow::initActions()
     actionCollection()->addAction(QStringLiteral("bookmarks"), m_pamBookmarks);
     m_pamBookmarks->setPopupMode(QToolButton::InstantPopup);
 
-    // The actual menu needs a different action collection, so that the bookmarks
-    // don't appear in kedittoolbar
-    m_bookmarksActionCollection = new KActionCollection(static_cast<QWidget *>(this));
+    m_pBookmarkMenu = new Konqueror::KonqBookmarkMenu(s_bookmarkManager, m_pBookmarksOwner, m_pamBookmarks);
 
-    m_pBookmarkMenu = new Konqueror::KonqBookmarkMenu(s_bookmarkManager, m_pBookmarksOwner, m_pamBookmarks, m_bookmarksActionCollection);
-
-    QAction *addBookmark = m_bookmarksActionCollection->action(QStringLiteral("add_bookmark"));
+    QAction *addBookmark = m_pBookmarkMenu->addBookmarkAction();
     if (addBookmark) {
         // Keep the "Add bookmark" action visible though (#153835)
-        // -> We should think of a way to mark actions as "not configurable in toolbars" and
-        // "should not appear in shortcut dialog (!= isShortcutConfigurable)" instead, and use
-        // a single actionCollection.
-        actionCollection()->addAction(QStringLiteral("add_bookmark"), m_bookmarksActionCollection->takeAction(addBookmark));
+        actionCollection()->addAction(QStringLiteral("add_bookmark"), addBookmark);
     } else {
         qCDebug(KONQUEROR_LOG) << "Action add_bookmark not found!";
     }

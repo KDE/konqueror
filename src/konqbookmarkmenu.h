@@ -32,12 +32,10 @@ public:
      * Note: If you pass a null KBookmarkOwner to the constructor, the
      * URLs are openend by QDesktopServices::openUrl and "Add Bookmark" is disabled.
      * @param parentMenu menu to be filled
-     * @param collec parent collection for the KActions.
      */
-    KonqBookmarkMenu(KBookmarkManager *mgr, KBookmarkOwner *owner, KBookmarkActionMenu *parentMenu, KActionCollection *collec)
+    KonqBookmarkMenu(KBookmarkManager *mgr, KBookmarkOwner *owner, KBookmarkActionMenu *parentMenu)
         : KBookmarkMenu(mgr, owner, parentMenu->menu())
     {
-        m_actionCollection = collec;
         setBrowserMode(true);
     }
     ~KonqBookmarkMenu() override
@@ -47,8 +45,8 @@ public:
      * Creates a bookmark submenu.
      * Only used internally and for bookmark toolbar.
      */
-    KonqBookmarkMenu(KBookmarkManager *mgr, KBookmarkOwner *owner, KBookmarkActionMenu *parentMenu, QString parentAddress, KActionCollection *collec)
-        : KBookmarkMenu(mgr, owner, parentMenu->menu(), parentAddress), m_actionCollection(collec)
+    KonqBookmarkMenu(KBookmarkManager *mgr, KBookmarkOwner *owner, KBookmarkActionMenu *parentMenu, QString parentAddress)
+        : KBookmarkMenu(mgr, owner, parentMenu->menu(), parentAddress)
     {
     }
 
@@ -56,7 +54,6 @@ protected:
     void refill() override;
     QAction *actionForBookmark(const KBookmark &bm) override;
     QMenu *contextMenu(QAction *action) override;
-    KActionCollection *m_actionCollection = nullptr;
 };
 
 class KonqBookmarkContextMenu : public KBookmarkContextMenu

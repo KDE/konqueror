@@ -755,7 +755,6 @@ private: // members
 
     KBookmarkMenu *m_pBookmarkMenu;
     KonqExtendedBookmarkOwner *m_pBookmarksOwner;
-    KActionCollection *m_bookmarksActionCollection;
     bool m_bookmarkBarInitialized;
 
     KonqViewManager *m_pViewManager;

@@ -102,10 +102,9 @@ QAction *KonqBookmarkMenu::actionForBookmark(const KBookmark &_bm)
     if (bm.isGroup()) {
         // qCDebug(KBOOKMARKS_LOG) << "Creating Konq bookmark submenu named " << bm.text();
         KBookmarkActionMenu *actionMenu = new KBookmarkActionMenu(bm, this);
-        m_actionCollection->addAction(QStringLiteral("kbookmarkmenu"), actionMenu);
         m_actions.append(actionMenu);
 
-        KBookmarkMenu *subMenu = new KonqBookmarkMenu(manager(), owner(), actionMenu, bm.address(), m_actionCollection);
+        KBookmarkMenu *subMenu = new KonqBookmarkMenu(manager(), owner(), actionMenu, bm.address());
 
         m_lstSubMenus.append(subMenu);
         return actionMenu;
@@ -120,7 +119,6 @@ QAction *KonqBookmarkMenu::actionForBookmark(const KBookmark &_bm)
                 action->setIcon(KonqPixmapProvider::self()->iconForUrl(host));
             });
         KonqPixmapProvider::self()->downloadHostIcon(host);
-        m_actionCollection->addAction(action->objectName(), action);
         m_actions.append(action);
         return action;
     }

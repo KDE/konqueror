@@ -66,7 +66,6 @@ private:
 
     KBookmarkOwner *m_pOwner;
     QPointer<KToolBar> m_toolBar;
-    KActionCollection *m_actionCollection;
     KBookmarkManager *m_pManager;
     QList<KBookmarkMenu *> m_lstSubMenus;
     QAction *m_toolBarSeparator;
