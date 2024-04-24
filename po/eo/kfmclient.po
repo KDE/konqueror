@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:35+0000\n"
+"POT-Creation-Date: 2024-04-24 02:56+0000\n"
 "PO-Revision-Date: 2023-08-20 21:04+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -31,27 +31,27 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wolfram@steloj.de,cfmckee@gmail.com,okellogg@users.sourceforge.net"
 
-#: kfmclient.cpp:61
+#: kfmclient.cpp:57
 #, kde-format
 msgid "kfmclient"
 msgstr "kfmclient"
 
-#: kfmclient.cpp:62
+#: kfmclient.cpp:58
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "KDE-programo por malfermi URLojn de la komandlinio"
 
-#: kfmclient.cpp:70
+#: kfmclient.cpp:66
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr "Neinteraga uzo: neniuj mesaĝaj dialogujoj"
 
-#: kfmclient.cpp:72
+#: kfmclient.cpp:68
 #, kde-format
 msgid "Show available commands"
 msgstr "Montras uzeblajn komandojn"
 
-#: kfmclient.cpp:81
+#: kfmclient.cpp:77
 #, kde-format
 msgid ""
 "The mimetype of the URL. Allows Konqueror to determine in advance which "
@@ -60,28 +60,28 @@ msgstr ""
 "La mime-speco de la URL. Permesas al Konqueror anticipe determini kiun "
 "komponanton uzi, igante ĝin komenci pli rapide."
 
-#: kfmclient.cpp:82
+#: kfmclient.cpp:78
 #, kde-format
 msgctxt "the name for a the value of an option on the command line help"
 msgid "type"
 msgstr "tipo"
 
-#: kfmclient.cpp:84
+#: kfmclient.cpp:80
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "Komando (vd. --commands)"
 
-#: kfmclient.cpp:86
+#: kfmclient.cpp:82
 #, kde-format
 msgid "Arguments for command"
 msgstr "Argumentoj por komando"
 
-#: kfmclient.cpp:88
+#: kfmclient.cpp:84
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr "La dosieroj/URL malfermitaj de la aplikaĵo estos forigitaj post uzo"
 
-#: kfmclient.cpp:97
+#: kfmclient.cpp:93
 #, kde-format
 msgid ""
 "\n"
@@ -90,7 +90,7 @@ msgstr ""
 "\n"
 "Sintakso:\n"
 
-#: kfmclient.cpp:98
+#: kfmclient.cpp:94
 #, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
@@ -107,7 +107,7 @@ msgstr ""
 "            #  Se 'url' estas forlasata, la komenca paĝo estas montrata.\n"
 "\n"
 
-#: kfmclient.cpp:103
+#: kfmclient.cpp:99
 #, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
@@ -126,7 +126,7 @@ msgstr ""
 "            #   Bonvolu uzi la opcion --mimetype\n"
 "\n"
 
-#: kfmclient.cpp:108
+#: kfmclient.cpp:104
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -141,17 +141,17 @@ msgstr ""
 "            #   Konkeranto sur la aktiva labortablo, se tio estas ebla.\n"
 "\n"
 
-#: kfmclient.cpp:284
+#: kfmclient.cpp:280
 #, kde-format
 msgid "Syntax error, not enough arguments\n"
 msgstr "Sintaksa eraro, ne sufiĉas argumentoj\n"
 
-#: kfmclient.cpp:288
+#: kfmclient.cpp:284
 #, kde-format
 msgid "Syntax error, too many arguments\n"
 msgstr "Sintaksa eraro, tro da argumentoj\n"
 
-#: kfmclient.cpp:343
+#: kfmclient.cpp:339
 #, kde-format
 msgid "Syntax error, unknown command '%1'\n"
 msgstr "Sintaks-eraro, nekonata komando '%1'\n"

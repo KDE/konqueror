@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 00:37+0000\n"
+"POT-Creation-Date: 2024-04-24 02:56+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -37,17 +37,17 @@ msgid "Stylesheets"
 msgstr "Stílbhileoga"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:52 css/csscustom.ui:296
+#: appearance.cpp:48 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "Íomhánna"
 
-#: appearance.cpp:56
+#: appearance.cpp:52
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "L&uchtaigh íomhánna go huathoibríoch"
 
-#: appearance.cpp:57
+#: appearance.cpp:53
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -63,12 +63,12 @@ msgstr ""
 "bhfuil ceangal an-mhall leis an Idirlíon, ba chóir duit tic a chur sa bhosca "
 "seo chun feabhas a chur ar do chuairt ar líne.</html>"
 
-#: appearance.cpp:67
+#: appearance.cpp:63
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "&Dear fráma timpeall íomhánna nach luchtaithe"
 
-#: appearance.cpp:68
+#: appearance.cpp:64
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -82,24 +82,24 @@ msgstr ""
 "do chuairt ar líne, go háirithe má tá ceangal mall leis an Idirlíon agat.</"
 "html>"
 
-#: appearance.cpp:78
+#: appearance.cpp:74
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "Cumasaithe"
 
-#: appearance.cpp:79
+#: appearance.cpp:75
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "Díchumasaithe"
 
-#: appearance.cpp:80
+#: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
 msgstr "Ná taispeáin ach uair amháin"
 
-#: appearance.cpp:81
+#: appearance.cpp:77
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -113,40 +113,40 @@ msgstr ""
 "íomhá thosaigh.</li><li><b>Ná taispeáin ach uair amháin</b>: Taispeáin gach "
 "beochan go hiomlán ach ná taispeáin iad arís is arís eile.</li></ul></html>"
 
-#: appearance.cpp:86
+#: appearance.cpp:82
 #, kde-format
 msgid "A&nimations:"
 msgstr "Íomhá&nna Beo:"
 
-#: appearance.cpp:89 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "Rudaí éagsúla"
 
-#: appearance.cpp:94
+#: appearance.cpp:90
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "Cumasaithe"
 
-#: appearance.cpp:95
+#: appearance.cpp:91
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "Díchumasaithe"
 
-#: appearance.cpp:96
+#: appearance.cpp:92
 #, kde-format
 msgid "Only on Hover"
 msgstr "Ar Ainliú Amháin"
 
-#: appearance.cpp:97
+#: appearance.cpp:93
 #, kde-format
 msgid "Und&erline links:"
 msgstr "Cuir lín&e faoi naisc:"
 
-#: appearance.cpp:100
+#: appearance.cpp:96
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -162,29 +162,29 @@ msgstr ""
 "chionn</li></ul><br /><i>Nóta: seans go sáróidh sainroghanna CSS an tsuímh "
 "an luach seo.</i></html>"
 
-#: appearance.cpp:109
+#: appearance.cpp:105
 #, kde-format
 msgid "When Efficient"
 msgstr "Nuair a bheadh sé éifeachtach"
 
-#: appearance.cpp:110
+#: appearance.cpp:106
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "I gcónaí"
 
-#: appearance.cpp:111
+#: appearance.cpp:107
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "Riamh"
 
-#: appearance.cpp:112
+#: appearance.cpp:108
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "&Mínscrollú:"
 
-#: appearance.cpp:114
+#: appearance.cpp:110
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -201,24 +201,24 @@ msgstr ""
 "li><li><b>Nuair a bheadh sé éifeachtach</b>: Ná húsáid mínscrollú ach nuair "
 "is féidir é a dhéanamh gan luas a bhaint den chóras.</li></ul></html>"
 
-#: appearance.cpp:132
+#: appearance.cpp:128
 #, kde-format
 msgid "Font Si&ze"
 msgstr "C&lómhéid"
 
-#: appearance.cpp:135 appearance.cpp:153
+#: appearance.cpp:131 appearance.cpp:149
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr ""
 "Seo é an chlómhéid choibhneasta a úsáideann Konqueror chun suímh Ghréasáin a "
 "thaispeáint."
 
-#: appearance.cpp:139
+#: appearance.cpp:135
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "C&lómhéid is lú:"
 
-#: appearance.cpp:143
+#: appearance.cpp:139
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
@@ -227,92 +227,92 @@ msgstr ""
 "Ní thaispeánfaidh Konqueror téacs níos lú ná é seo riamh,<br />ag sárú aon "
 "socruithe eile."
 
-#: appearance.cpp:148
+#: appearance.cpp:144
 #, kde-format
 msgid "&Medium font size:"
 msgstr "Clómhéid &measartha:"
 
-#: appearance.cpp:161
+#: appearance.cpp:157
 #, kde-format
 msgid "S&tandard font:"
 msgstr "Cló &caighdeánach:"
 
-#: appearance.cpp:162
+#: appearance.cpp:158
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr ""
 "Seo é an cló a úsáidtear chun gnáth-théacs a thaispeáint ar leathanach "
 "Gréasáin."
 
-#: appearance.cpp:166
+#: appearance.cpp:162
 #, kde-format
 msgid "&Fixed font:"
 msgstr "Cló &aonleithid:"
 
-#: appearance.cpp:167
+#: appearance.cpp:163
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr "Seo é an cló a úsáidtear chun téacs aonleithid a thaispeáint."
 
-#: appearance.cpp:171
+#: appearance.cpp:167
 #, kde-format
 msgid "S&erif font:"
 msgstr "Cló S&erif:"
 
-#: appearance.cpp:172
+#: appearance.cpp:168
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr "Seo é an cló a úsáidtear chun téacs serif a thaispeáint."
 
-#: appearance.cpp:176
+#: appearance.cpp:172
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "Cló Sa&ns serif:"
 
-#: appearance.cpp:177
+#: appearance.cpp:173
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr "Seo é an cló a úsáidtear chun téacs sans-serif a thaispeáint."
 
-#: appearance.cpp:181
+#: appearance.cpp:177
 #, kde-format
 msgid "C&ursive font:"
 msgstr "Cló &scríbhneoireachta reatha:"
 
-#: appearance.cpp:182
+#: appearance.cpp:178
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr "Seo é an cló a úsáidtear chun téacs iodálach a thaispeáint."
 
-#: appearance.cpp:186
+#: appearance.cpp:182
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "Cló &Ornáidíocht:"
 
-#: appearance.cpp:187
+#: appearance.cpp:183
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr ""
 "Seo é an cló a úsáidtear chun téacs marcáilte mar 'fantasy' a thaispeáint."
 
-#: appearance.cpp:196
+#: appearance.cpp:192
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "Coigeartú na clómhéide don ionchódú &seo:"
 
-#: appearance.cpp:204 appearance.cpp:405
+#: appearance.cpp:200 appearance.cpp:394
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "Úsáid Ionchódú Teanga"
 
-#: appearance.cpp:206
+#: appearance.cpp:202
 #, kde-format
 msgid "Default encoding:"
 msgstr "Ionchódú réamhshocraithe:"
 
-#: appearance.cpp:208
+#: appearance.cpp:204
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1328,32 +1328,32 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: filteropts.cpp:124
+#: filteropts.cpp:120
 #, kde-format
 msgid "Insert"
 msgstr "Ionsáigh"
 
-#: filteropts.cpp:127
+#: filteropts.cpp:123
 #, kde-format
 msgid "Update"
 msgstr "Nuashonraigh"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:126
 #, kde-format
 msgid "Remove"
 msgstr "Bain"
 
-#: filteropts.cpp:134
+#: filteropts.cpp:130
 #, kde-format
 msgid "Import..."
 msgstr "Iompórtáil..."
 
-#: filteropts.cpp:137
+#: filteropts.cpp:133
 #, kde-format
 msgid "Export..."
 msgstr "Easpórtáil..."
 
-#: filteropts.cpp:144
+#: filteropts.cpp:140
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
@@ -1362,7 +1362,7 @@ msgstr ""
 "<qt>Tuilleadh eolais faoi <a href=\"importhelp\">formáid iompórtála</a>, <a "
 "href=\"exporthelp\">formáid easpórtála</a>"
 
-#: filteropts.cpp:158
+#: filteropts.cpp:154
 #, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
@@ -1372,7 +1372,7 @@ msgstr ""
 "chóir duit sloinn a gcuirfear cosc orthu a thabhairt sa liosta scagairí chun "
 "scagadh a chur i bhfeidhm."
 
-#: filteropts.cpp:160
+#: filteropts.cpp:156
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
@@ -1381,7 +1381,7 @@ msgstr ""
 "Leis an rogha seo, bainfear íomhánna a cuireadh cosc orthu ón leathanach go "
 "hiomlán; is é seo nó úsáidfear íomhá ionadchoinneálaí."
 
-#: filteropts.cpp:167
+#: filteropts.cpp:163
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
@@ -1390,7 +1390,7 @@ msgstr ""
 "Seo é an liosta de scagairí URL a chuirfear i bhfeidhm ar gach íomhá agus "
 "meán leabaithe."
 
-#: filteropts.cpp:171
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1409,7 +1409,7 @@ msgstr ""
 "chur roimh aon scagaire chun URLanna comhoiriúnacha a cheadú, rud a "
 "sháraíonn aon scagaire a chuireann bac ar an URL."
 
-#: filteropts.cpp:187
+#: filteropts.cpp:183
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1421,7 +1421,7 @@ msgstr ""
 "den líne cheanntáisc <tt>[AdBlock]</tt>.  Bainfear úsáid as gach líne eile "
 "mar scagaire."
 
-#: filteropts.cpp:192
+#: filteropts.cpp:188
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1432,25 +1432,25 @@ msgstr ""
 "comhad le líne cheanntáisc <tt>[AdBlock]</tt>, ansin na scagairí, gach ceann "
 "ar líne ar leith."
 
-#: filteropts.cpp:260
+#: filteropts.cpp:256
 #, fuzzy, kde-format
 #| msgid "Automatic Filter"
 msgid "Import Filters"
 msgstr "Scagaire Uathoibríoch"
 
-#: filteropts.cpp:304
+#: filteropts.cpp:300
 #, fuzzy, kde-format
 #| msgid "URL Expressions to Filter"
 msgid "Export Filters"
 msgstr "Sloinn URL le Scagadh"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:563 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "Ainm"
 
-#: filteropts.cpp:564
+#: filteropts.cpp:554
 #, kde-format
 msgid "URL"
 msgstr "URL"
@@ -1912,30 +1912,30 @@ msgstr ""
 "chomh fada is go bhfuil an próiseas konqueror ag rith, ná cuir tic sa bhosca "
 "'Múch an Freastalaí Feidhmchláirín'."
 
-#: javaopts.cpp:291
+#: javaopts.cpp:288
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "Sainiúi&l don Fhearann"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:323
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "Polasaí Nua Java"
 
-#: javaopts.cpp:329
+#: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "Athraigh an Polasaí Java"
 
-#: javaopts.cpp:333
+#: javaopts.cpp:330
 #, kde-format
 msgid "&Java policy:"
 msgstr "Polasaí &Java:"
 
-#: javaopts.cpp:334
+#: javaopts.cpp:331
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "Roghnaigh polasaí Java le haghaidh an óstríomhaire nó fearainn thuas."
@@ -1985,7 +1985,7 @@ msgstr ""
 "Leis an rogha seo déanfar tuairisc ar earráidí a tharlaíonn nuair a ritear "
 "cód JavaScript."
 
-#: jsopts.cpp:83
+#: jsopts.cpp:79
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2008,7 +2008,7 @@ msgstr ""
 "<i>Iompórtáil</i> agus <i>Easpórtáil</i> is féidir leat do chuid polasaithe "
 "a roinnt le daoine eile go héasca trí chomhad zip a iompórtáil/easpórtáil."
 
-#: jsopts.cpp:93
+#: jsopts.cpp:89
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2023,7 +2023,7 @@ msgstr ""
 "sheolfaidh na fearainn nó na hóstríomhairí seo.</p><p>Roghnaigh polasaí agus "
 "bain úsáid as na rialtáin ar dheis chun é a mhionathrú.</p>"
 
-#: jsopts.cpp:100
+#: jsopts.cpp:96
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2034,7 +2034,7 @@ msgstr ""
 "a roghnú. Cumascfar na polasaithe seo leis na cinn atá ann faoi láthair. "
 "Déanfar neamhaird d'iontrálacha dúblacha."
 
-#: jsopts.cpp:103
+#: jsopts.cpp:99
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2045,41 +2045,41 @@ msgstr ""
 "Sábhálfar an comhad, darb ainm <b>javascript_policy.tgz</b>, sa suíomh a "
 "roghnóidh tú."
 
-#: jsopts.cpp:109
+#: jsopts.cpp:105
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "Polasaithe Comhchoiteanna JavaScript"
 
-#: jsopts.cpp:183
+#: jsopts.cpp:172
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "Sai&niúil don Fhearann"
 
-#: jsopts.cpp:222
+#: jsopts.cpp:211
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "Polasaí Nua JavaScript"
 
-#: jsopts.cpp:225
+#: jsopts.cpp:214
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "Athraigh an Polasaí JavaScript"
 
-#: jsopts.cpp:229
+#: jsopts.cpp:218
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "Polasaí JavaScript:"
 
-#: jsopts.cpp:230
+#: jsopts.cpp:219
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr ""
 "Roghnaigh polasaí JavaScript le haghaidh an óstríomhaire nó fearainn thuas."
 
-#: jsopts.cpp:232
+#: jsopts.cpp:221
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "Polasaithe JavaScript Sainiúil don Fhearann"
@@ -2296,7 +2296,7 @@ msgstr ""
 msgid "&Java"
 msgstr "&Java"
 
-#: main.cpp:57
+#: main.cpp:53
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"

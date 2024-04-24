@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: searchbarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-09 00:37+0000\n"
+"POT-Creation-Date: 2024-04-24 02:56+0000\n"
 "PO-Revision-Date: 2022-08-07 06:56+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: searchbar.cpp:68
+#: searchbar.cpp:64
 #, kde-format
 msgid ""
 "Search Bar<p>Enter a search term. Click on the icon to change search mode or "
@@ -27,32 +27,32 @@ msgstr ""
 "Pasek wyszukiwania<p>Podaj wyszukiwaną frazę. Kliknij na ikonie, aby zmienić "
 "tryb wyszukiwania lub wyszukiwarkę.</p>"
 
-#: searchbar.cpp:73
+#: searchbar.cpp:69
 #, kde-format
 msgid "Search Bar"
 msgstr "Pasek wyszukiwania"
 
-#: searchbar.cpp:78
+#: searchbar.cpp:74
 #, kde-format
 msgid "Focus Searchbar"
 msgstr "Uaktywnij pasek wyszukiwania"
 
-#: searchbar.cpp:279
+#: searchbar.cpp:270
 #, kde-format
 msgid "Find in Page..."
 msgstr "Znajdź na stronie..."
 
-#: searchbar.cpp:299
+#: searchbar.cpp:290
 #, kde-format
 msgid "Find in This Page"
 msgstr "Znajdź na tej stronie"
 
-#: searchbar.cpp:311
+#: searchbar.cpp:302
 #, kde-format
 msgid "Select Search Engines..."
 msgstr "Wybierz wyszukiwarki..."
 
-#: searchbar.cpp:330
+#: searchbar.cpp:321
 #, kde-format
 msgid "Add %1..."
 msgstr "Dodaj %1..."

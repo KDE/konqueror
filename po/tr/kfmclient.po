@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:35+0000\n"
+"POT-Creation-Date: 2024-04-24 02:56+0000\n"
 "PO-Revision-Date: 2023-08-14 14:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -34,27 +34,27 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kaanozdincer@gmail.com"
 
-#: kfmclient.cpp:61
+#: kfmclient.cpp:57
 #, kde-format
 msgid "kfmclient"
 msgstr "kfmclient"
 
-#: kfmclient.cpp:62
+#: kfmclient.cpp:58
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "Komut satırından URL açmak için KDE aracı"
 
-#: kfmclient.cpp:70
+#: kfmclient.cpp:66
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr "Etkileşimsiz kullan: İleti kutusu yok"
 
-#: kfmclient.cpp:72
+#: kfmclient.cpp:68
 #, kde-format
 msgid "Show available commands"
 msgstr "Kullanılabilir komutları göster"
 
-#: kfmclient.cpp:81
+#: kfmclient.cpp:77
 #, kde-format
 msgid ""
 "The mimetype of the URL. Allows Konqueror to determine in advance which "
@@ -63,29 +63,29 @@ msgstr ""
 "URL'nin MIME türü. Konqueror'un hangi bileşeni kullanacağını önceden "
 "belirleyerek daha hızlı başlamasını sağlar."
 
-#: kfmclient.cpp:82
+#: kfmclient.cpp:78
 #, kde-format
 msgctxt "the name for a the value of an option on the command line help"
 msgid "type"
 msgstr "tür"
 
-#: kfmclient.cpp:84
+#: kfmclient.cpp:80
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "Komut (bkz. --commands)"
 
-#: kfmclient.cpp:86
+#: kfmclient.cpp:82
 #, kde-format
 msgid "Arguments for command"
 msgstr "Komut argümanları"
 
-#: kfmclient.cpp:88
+#: kfmclient.cpp:84
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr ""
 "Uygulama tarafından açılan URL ve dosyalar, kullanıldıktan sonra silinecektir"
 
-#: kfmclient.cpp:97
+#: kfmclient.cpp:93
 #, kde-format
 msgid ""
 "\n"
@@ -94,7 +94,7 @@ msgstr ""
 "\n"
 "Sözdizim:\n"
 
-#: kfmclient.cpp:98
+#: kfmclient.cpp:94
 #, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
@@ -111,7 +111,7 @@ msgstr ""
 "            #   'url' boş bırakılmışsa başlangıç sayfası gösterilir.\n"
 "\n"
 
-#: kfmclient.cpp:103
+#: kfmclient.cpp:99
 #, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
@@ -131,7 +131,7 @@ msgstr ""
 "            #   Lütfen --mimetype seçeneğini kullanın\n"
 "\n"
 
-#: kfmclient.cpp:108
+#: kfmclient.cpp:104
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -146,17 +146,17 @@ msgstr ""
 "            #penceresinde yeni bir sekmede 'URL'yi' açar.\n"
 "\n"
 
-#: kfmclient.cpp:284
+#: kfmclient.cpp:280
 #, kde-format
 msgid "Syntax error, not enough arguments\n"
 msgstr "Sözdizim hatası, yeterli argüman yok\n"
 
-#: kfmclient.cpp:288
+#: kfmclient.cpp:284
 #, kde-format
 msgid "Syntax error, too many arguments\n"
 msgstr "Sözdizim hatası, çok fazla argüman\n"
 
-#: kfmclient.cpp:343
+#: kfmclient.cpp:339
 #, kde-format
 msgid "Syntax error, unknown command '%1'\n"
 msgstr "Sözdizim hatası, bilinmeyen komut '%1'\n"

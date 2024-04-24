@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:35+0000\n"
+"POT-Creation-Date: 2024-04-24 02:56+0000\n"
 "PO-Revision-Date: 2023-12-24 06:23+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -29,27 +29,27 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "franklin@goodhorse.idv.tw, s8321414@gmail.com"
 
-#: kfmclient.cpp:61
+#: kfmclient.cpp:57
 #, kde-format
 msgid "kfmclient"
 msgstr "kfmclient"
 
-#: kfmclient.cpp:62
+#: kfmclient.cpp:58
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "從命令行開啟 URLs 的 KDE 工具"
 
-#: kfmclient.cpp:70
+#: kfmclient.cpp:66
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr "無交互使用：沒有訊息方塊"
 
-#: kfmclient.cpp:72
+#: kfmclient.cpp:68
 #, kde-format
 msgid "Show available commands"
 msgstr "顯示可用的命令"
 
-#: kfmclient.cpp:81
+#: kfmclient.cpp:77
 #, kde-format
 msgid ""
 "The mimetype of the URL. Allows Konqueror to determine in advance which "
@@ -57,28 +57,28 @@ msgid ""
 msgstr ""
 "網址的 MIME 類型。讓 Konqueror 能夠先行決定要使用哪個元件，讓它啟動的快一點。"
 
-#: kfmclient.cpp:82
+#: kfmclient.cpp:78
 #, kde-format
 msgctxt "the name for a the value of an option on the command line help"
 msgid "type"
 msgstr "類型"
 
-#: kfmclient.cpp:84
+#: kfmclient.cpp:80
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "命令 (參照 --commands)"
 
-#: kfmclient.cpp:86
+#: kfmclient.cpp:82
 #, kde-format
 msgid "Arguments for command"
 msgstr "給命令的引數"
 
-#: kfmclient.cpp:88
+#: kfmclient.cpp:84
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr "應用程式開啟的檔案/URL在使用後會被刪除"
 
-#: kfmclient.cpp:97
+#: kfmclient.cpp:93
 #, kde-format
 msgid ""
 "\n"
@@ -87,7 +87,7 @@ msgstr ""
 "\n"
 "語法:\n"
 
-#: kfmclient.cpp:98
+#: kfmclient.cpp:94
 #, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
@@ -104,7 +104,7 @@ msgstr ""
 "            #   如果省略 'url'，會顯示起始頁面。\n"
 "\n"
 
-#: kfmclient.cpp:103
+#: kfmclient.cpp:99
 #, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
@@ -122,7 +122,7 @@ msgstr ""
 "            #   請改用 --mimetype 選項\n"
 "\n"
 
-#: kfmclient.cpp:108
+#: kfmclient.cpp:104
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -136,17 +136,17 @@ msgstr ""
 "            #   既存的 Konqueror 中以 'url' 開啟新分頁。\n"
 "\n"
 
-#: kfmclient.cpp:284
+#: kfmclient.cpp:280
 #, kde-format
 msgid "Syntax error, not enough arguments\n"
 msgstr "語法錯誤，沒有足夠的參數\n"
 
-#: kfmclient.cpp:288
+#: kfmclient.cpp:284
 #, kde-format
 msgid "Syntax error, too many arguments\n"
 msgstr "語法錯誤，參數過多\n"
 
-#: kfmclient.cpp:343
+#: kfmclient.cpp:339
 #, kde-format
 msgid "Syntax error, unknown command '%1'\n"
 msgstr "語法錯誤，未知的指令「%1」\n"

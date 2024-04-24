@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 00:37+0000\n"
+"POT-Creation-Date: 2024-04-24 02:56+0000\n"
 "PO-Revision-Date: 2014-09-10 20:31+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -43,17 +43,17 @@ msgid "Stylesheets"
 msgstr "أوراق الأنماط"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:52 css/csscustom.ui:296
+#: appearance.cpp:48 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "الصور"
 
-#: appearance.cpp:56
+#: appearance.cpp:52
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "&حمّل الصور آليًا"
 
-#: appearance.cpp:57
+#: appearance.cpp:53
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -67,12 +67,12 @@ msgstr ""
 "كان لديك اتّصال شبكة بطيء للغاية، فقد تحتاج غالبًا إلى تعليم هذا المربّع لتحسين "
 "تجربة التصفّح.</html>"
 
-#: appearance.cpp:67
+#: appearance.cpp:63
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "ا&رسم إطارًا حول الصور غير مكتملة التحميل"
 
-#: appearance.cpp:68
+#: appearance.cpp:64
 #, fuzzy, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -84,24 +84,24 @@ msgstr ""
 "صفحات الوب التي لم يكتمل تحميلها.<br /> من المرجح أنك تريد أن تعلم على هذا "
 "المربع لتحسّن من تجربة تصفحك وخصوصا إذا كنت تملك اتصالًا ضعيفًا بالشبكة.</html>"
 
-#: appearance.cpp:78
+#: appearance.cpp:74
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "مُمكَّنة"
 
-#: appearance.cpp:79
+#: appearance.cpp:75
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "مُعطَّلة"
 
-#: appearance.cpp:80
+#: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
 msgstr "أظهرها مرّة واحدة فقط"
 
-#: appearance.cpp:81
+#: appearance.cpp:77
 #, fuzzy, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -114,40 +114,40 @@ msgstr ""
 "اعرض صورة البدء فقط.</li><li><b>أظهرها مرة واحدة فقط</b>: أظهر كل الصور "
 "المتحركة بشكل كامل ولكن لا تكررها.</li></ul></html>"
 
-#: appearance.cpp:86
+#: appearance.cpp:82
 #, kde-format
 msgid "A&nimations:"
 msgstr "ال&حركات:"
 
-#: appearance.cpp:89 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "متنوّع"
 
-#: appearance.cpp:94
+#: appearance.cpp:90
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "مُمكَّن"
 
-#: appearance.cpp:95
+#: appearance.cpp:91
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "مُعطَّل"
 
-#: appearance.cpp:96
+#: appearance.cpp:92
 #, kde-format
 msgid "Only on Hover"
 msgstr "فقط عند التحويم"
 
-#: appearance.cpp:97
+#: appearance.cpp:93
 #, kde-format
 msgid "Und&erline links:"
 msgstr "ت&سطير الوصلات:"
 
-#: appearance.cpp:100
+#: appearance.cpp:96
 #, fuzzy, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -162,29 +162,29 @@ msgstr ""
 "مؤشر الفأرة</li></ul><br /><i>ملاحظة: ملف تعريف CSS للموقع يستطيع أن يتجاوز "
 "هذه القيمة.</i></html>"
 
-#: appearance.cpp:109
+#: appearance.cpp:105
 #, kde-format
 msgid "When Efficient"
 msgstr "عندما يكون ذلك مناسبًا"
 
-#: appearance.cpp:110
+#: appearance.cpp:106
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "دائما"
 
-#: appearance.cpp:111
+#: appearance.cpp:107
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "أبدًا"
 
-#: appearance.cpp:112
+#: appearance.cpp:108
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "التمرير الناعم:"
 
-#: appearance.cpp:114
+#: appearance.cpp:110
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -201,22 +201,22 @@ msgstr ""
 "في الصفحات عندما تستطيع أن تحقق ذلك باستهلاك معقول لموارد النظام فقط.</li></"
 "ul></html>"
 
-#: appearance.cpp:132
+#: appearance.cpp:128
 #, kde-format
 msgid "Font Si&ze"
 msgstr "م&قاس الخط"
 
-#: appearance.cpp:135 appearance.cpp:153
+#: appearance.cpp:131 appearance.cpp:149
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr "هذا هو مقاس الخط النسبي الذي يستخدمه كنكرر لعرض مواقع الوب."
 
-#: appearance.cpp:139
+#: appearance.cpp:135
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "الحد الأ&دنى لمقاس الخط:"
 
-#: appearance.cpp:143
+#: appearance.cpp:139
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
@@ -224,27 +224,27 @@ msgid ""
 msgstr ""
 "لن يعرض كنكرر نصوصًا بأصغر من هذا المقاس،<br />مهما كانت الإعدادات الأخرى"
 
-#: appearance.cpp:148
+#: appearance.cpp:144
 #, kde-format
 msgid "&Medium font size:"
 msgstr "مقاس الخط المتوس&ط:"
 
-#: appearance.cpp:161
+#: appearance.cpp:157
 #, kde-format
 msgid "S&tandard font:"
 msgstr "الخط الق&ياسي:"
 
-#: appearance.cpp:162
+#: appearance.cpp:158
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr "هذا هو الخط المستخدم لعرض النصوص العادية في صفحات الوب."
 
-#: appearance.cpp:166
+#: appearance.cpp:162
 #, kde-format
 msgid "&Fixed font:"
 msgstr "الخط ال&ثابت:"
 
-#: appearance.cpp:167
+#: appearance.cpp:163
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
@@ -252,63 +252,63 @@ msgstr ""
 "هذا هو الخط المستخدم لعرض النصوص ذات العرض الثابت (أو بمعنى آخر غير "
 "المتناسبة)."
 
-#: appearance.cpp:171
+#: appearance.cpp:167
 #, kde-format
 msgid "S&erif font:"
 msgstr "خ&ط Serif:"
 
-#: appearance.cpp:172
+#: appearance.cpp:168
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr "هذا هو الخط المستخدم لعرض النصوص المُعلّمة بserif."
 
-#: appearance.cpp:176
+#: appearance.cpp:172
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "خ&ط Sans serif:"
 
-#: appearance.cpp:177
+#: appearance.cpp:173
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr "هذا هو الخط المستخدم لعرض النصوص المُعلّمة بsans-serif."
 
-#: appearance.cpp:181
+#: appearance.cpp:177
 #, kde-format
 msgid "C&ursive font:"
 msgstr "الخط الم&رتبط:"
 
-#: appearance.cpp:182
+#: appearance.cpp:178
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr "هذا هو الخط المستخدم لعرض النصوص المُعلّمة بالميلان."
 
-#: appearance.cpp:186
+#: appearance.cpp:182
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "الخط المز&خرف:"
 
-#: appearance.cpp:187
+#: appearance.cpp:183
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr "هذا هو الخط المستخدم لعرض النصوص المُعلّمة بخط مزخرفة."
 
-#: appearance.cpp:196
+#: appearance.cpp:192
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "ع&دّل حجم الخط لهذا الترميز:"
 
-#: appearance.cpp:204 appearance.cpp:405
+#: appearance.cpp:200 appearance.cpp:394
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "استخدم ترميز اللغة"
 
-#: appearance.cpp:206
+#: appearance.cpp:202
 #, kde-format
 msgid "Default encoding:"
 msgstr "الترميز الافتراضي:"
 
-#: appearance.cpp:208
+#: appearance.cpp:204
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1299,39 +1299,39 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: filteropts.cpp:124
+#: filteropts.cpp:120
 #, kde-format
 msgid "Insert"
 msgstr "أدرج"
 
-#: filteropts.cpp:127
+#: filteropts.cpp:123
 #, kde-format
 msgid "Update"
 msgstr "حدّث"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:126
 #, kde-format
 msgid "Remove"
 msgstr "أزل"
 
-#: filteropts.cpp:134
+#: filteropts.cpp:130
 #, kde-format
 msgid "Import..."
 msgstr "استورد..."
 
-#: filteropts.cpp:137
+#: filteropts.cpp:133
 #, kde-format
 msgid "Export..."
 msgstr "صدِر..."
 
-#: filteropts.cpp:144
+#: filteropts.cpp:140
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
 "\"exporthelp\">export format</a>"
 msgstr ""
 
-#: filteropts.cpp:158
+#: filteropts.cpp:154
 #, fuzzy, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
@@ -1340,7 +1340,7 @@ msgstr ""
 "تمكين أو تعطيل مرشح الإعلانات AdBlocK . يجب تعريف مجموعة التعابير التي يراد "
 "منعها في قائمة المنع للمرشح حتى تفعل."
 
-#: filteropts.cpp:160
+#: filteropts.cpp:156
 #, fuzzy, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
@@ -1349,7 +1349,7 @@ msgstr ""
 "عند تفعيل منع الصور ؛ فإنها سوف تزال من الصفحة بشكل كامل وإلا فإن علامة "
 "'ممنوع' سوف تظهر محلها."
 
-#: filteropts.cpp:167
+#: filteropts.cpp:163
 #, fuzzy, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
@@ -1358,7 +1358,7 @@ msgstr ""
 "هذه قائمة بعناوين المرشحات التي ستطبق على جميع وصلات الصور والإطارات. وسوف "
 "تنفذ المرشحات حسب الترتيب ، لذا ضع المرشحات العامة في أعلى القائمة."
 
-#: filteropts.cpp:171
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1370,7 +1370,7 @@ msgid ""
 "filter."
 msgstr ""
 
-#: filteropts.cpp:187
+#: filteropts.cpp:183
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1378,7 +1378,7 @@ msgid ""
 "ignored. Any other line is added as a filter expression."
 msgstr ""
 
-#: filteropts.cpp:192
+#: filteropts.cpp:188
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1386,24 +1386,24 @@ msgid ""
 "separate line."
 msgstr ""
 
-#: filteropts.cpp:260
+#: filteropts.cpp:256
 #, kde-format
 msgid "Import Filters"
 msgstr ""
 
-#: filteropts.cpp:304
+#: filteropts.cpp:300
 #, fuzzy, kde-format
 #| msgid "URL Expressions to Filter"
 msgid "Export Filters"
 msgstr "تعابير الموقع المرشحة"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:563 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr ""
 
-#: filteropts.cpp:564
+#: filteropts.cpp:554
 #, kde-format
 msgid "URL"
 msgstr ""
@@ -1843,30 +1843,30 @@ msgstr ""
 "التصفح، يمكنك اختيار المهلة التي تطفأ بعدها. لإبقاء عملية جافا جارية طوال "
 "فترة استخدام كنكرر، لا تختر صندوق التأشير أطفئ خادم البريجمات."
 
-#: javaopts.cpp:291
+#: javaopts.cpp:288
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "خاص بم&جالات"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:323
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "سياسة جافا جديدة"
 
-#: javaopts.cpp:329
+#: javaopts.cpp:326
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "غيّر سياسة جافا"
 
-#: javaopts.cpp:333
+#: javaopts.cpp:330
 #, kde-format
 msgid "&Java policy:"
 msgstr "سياسة &جافا:"
 
-#: javaopts.cpp:334
+#: javaopts.cpp:331
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "اختر سياسة جافا للنطاق أو المضيف الذي في الأعلى."
@@ -1913,7 +1913,7 @@ msgid ""
 "Enables the reporting of errors that occur when JavaScript code is executed."
 msgstr "يمكّن التبليغ عن أخطاء التي تحدث أثناء تنفيذ كود جافاسكربت"
 
-#: jsopts.cpp:83
+#: jsopts.cpp:79
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -1934,7 +1934,7 @@ msgstr ""
 "<i>صدِر</i> بمشاركة أناس آخرين سياساتك بسهولة عن طريق السماح لك بحفظ واستعادة "
 "السياسات من ملفات مضغوطة."
 
-#: jsopts.cpp:93
+#: jsopts.cpp:89
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -1948,7 +1948,7 @@ msgstr ""
 "صفحات جافاسكربت التي ترسلها هذه النطاقات والمضيفون.</p><p>اختر سياسة واستحدم "
 "المتحكمات في اليسار لتعديلها.</p>"
 
-#: jsopts.cpp:100
+#: jsopts.cpp:96
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -1958,7 +1958,7 @@ msgstr ""
 "انقر هذا الزر لاختيار الملف الذي يحتوي على سياسات جافاسكربت. هذه السياسات "
 "سوف تدمج مع السياسات الموجودة. السياسات المكررة سيتم تجاهلها."
 
-#: jsopts.cpp:103
+#: jsopts.cpp:99
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -1968,40 +1968,40 @@ msgstr ""
 "انقر على هذا الزر لحفظ سياسة جافاسكربت في ملف مضغوط. سوف يُسمى الملف "
 "<b>javascript_policy.tgz</b> وسوف يحفظ في موقع تختاره."
 
-#: jsopts.cpp:109
+#: jsopts.cpp:105
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "سياسات جافاسكربت العامة"
 
-#: jsopts.cpp:183
+#: jsopts.cpp:172
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "محدودة النطاق"
 
-#: jsopts.cpp:222
+#: jsopts.cpp:211
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "سياسة جافاسكربت جديدة"
 
-#: jsopts.cpp:225
+#: jsopts.cpp:214
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "غيّر سياسة جافاسكربت"
 
-#: jsopts.cpp:229
+#: jsopts.cpp:218
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "سياسة جافاسكربت:"
 
-#: jsopts.cpp:230
+#: jsopts.cpp:219
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "اختر سياسة جافاسكربت للنطاق أو المضيف الذي في الأعلى."
 
-#: jsopts.cpp:232
+#: jsopts.cpp:221
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "سياسات جافاسكربت محدودة النطاق"
@@ -2207,7 +2207,7 @@ msgstr ""
 msgid "&Java"
 msgstr "&جافا"
 
-#: main.cpp:57
+#: main.cpp:53
 #, kde-format
 msgid "Java&Script"
 msgstr "جافا&سكريبت"

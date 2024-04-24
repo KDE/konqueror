@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 00:37+0000\n"
+"POT-Creation-Date: 2024-04-24 02:56+0000\n"
 "PO-Revision-Date: 2012-05-17 22:16+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -39,17 +39,17 @@ msgid "Stylesheets"
 msgstr "ਸਟਾਈਲ-ਸ਼ੀਟਾਂ"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:52 css/csscustom.ui:296
+#: appearance.cpp:48 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "ਚਿੱਤਰ"
 
-#: appearance.cpp:56
+#: appearance.cpp:52
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "ਆਟੋਮੈਟਿਕ ਹੀ ਚਿੱਤਰ ਲੋਡ(&u)"
 
-#: appearance.cpp:57
+#: appearance.cpp:53
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -59,12 +59,12 @@ msgid ""
 "probably want to check this box to enhance your browsing experience.</html>"
 msgstr ""
 
-#: appearance.cpp:67
+#: appearance.cpp:63
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "ਪੂਰੇ ਲੋਡ ਨਾ ਕੀਤੇ ਗਏ ਚਿੱਤਰਾਂ ਦੁਆਲੇ ਫਰੇਮ ਬਣਾਓ(&w)"
 
-#: appearance.cpp:68
+#: appearance.cpp:64
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -73,24 +73,24 @@ msgid ""
 "especially if have a slow network connection.</html>"
 msgstr ""
 
-#: appearance.cpp:78
+#: appearance.cpp:74
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "ਯੋਗ"
 
-#: appearance.cpp:79
+#: appearance.cpp:75
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "ਅਯੋਗ"
 
-#: appearance.cpp:80
+#: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
 msgstr "ਇੱਕ ਵਾਰ ਹੀ ਵੇਖੋ"
 
-#: appearance.cpp:81
+#: appearance.cpp:77
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -99,40 +99,40 @@ msgid ""
 "Show all animations completely but do not repeat them.</li></ul></html>"
 msgstr ""
 
-#: appearance.cpp:86
+#: appearance.cpp:82
 #, kde-format
 msgid "A&nimations:"
 msgstr "ਐਨੀਮੇਸ਼ਨ(&n):"
 
-#: appearance.cpp:89 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "ਫੁਟਕਲ"
 
-#: appearance.cpp:94
+#: appearance.cpp:90
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "ਯੋਗ"
 
-#: appearance.cpp:95
+#: appearance.cpp:91
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "ਅਯੋਗ"
 
-#: appearance.cpp:96
+#: appearance.cpp:92
 #, kde-format
 msgid "Only on Hover"
 msgstr "ਹੋਵੀਰ ਤੇ ਹੀ"
 
-#: appearance.cpp:97
+#: appearance.cpp:93
 #, kde-format
 msgid "Und&erline links:"
 msgstr "ਲਿੰਕਾਂ ਹੇਠ ਲਾਈਨ(&e):"
 
-#: appearance.cpp:100
+#: appearance.cpp:96
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -142,29 +142,29 @@ msgid ""
 "can override this value.</i></html>"
 msgstr ""
 
-#: appearance.cpp:109
+#: appearance.cpp:105
 #, kde-format
 msgid "When Efficient"
 msgstr "ਜਦੋਂ ਵੀ ਢੁੱਕਵਾਂ ਹੋਵੇ"
 
-#: appearance.cpp:110
+#: appearance.cpp:106
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "ਹਮੇਸ਼ਾ"
 
-#: appearance.cpp:111
+#: appearance.cpp:107
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "ਕਦੇ ਵੀ ਨਹੀਂ"
 
-#: appearance.cpp:112
+#: appearance.cpp:108
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "ਸਮੂਥ ਸਕਰੋਲਿੰਗ(&m):"
 
-#: appearance.cpp:114
+#: appearance.cpp:110
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -175,22 +175,22 @@ msgid ""
 "resources.</li></ul></html>"
 msgstr ""
 
-#: appearance.cpp:132
+#: appearance.cpp:128
 #, kde-format
 msgid "Font Si&ze"
 msgstr "ਫੋਂਟ ਸਾਇਜ਼(&z)"
 
-#: appearance.cpp:135 appearance.cpp:153
+#: appearance.cpp:131 appearance.cpp:149
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr "ਇਹ ਅਨੁਸਾਰੀ ਫੋਂਟ ਸਾਇਜ਼ ਹੈ, ਜੋ ਕਿ ਕੋਨਕਿਉਰੋਰ ਵੈੱਬ ਸਾਇਟਾਂ ਵੇਖਾਉਣ ਲਈ ਵਰਤੇਗਾ।"
 
-#: appearance.cpp:139
+#: appearance.cpp:135
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "ਨਿਊਨਤਮ ਫੋਂਟ ਸਾਇਜ਼(&i):"
 
-#: appearance.cpp:143
+#: appearance.cpp:139
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
@@ -199,89 +199,89 @@ msgstr ""
 "ਕੋਨਕਿਉਰੋਰ ਇਸ ਤੋਂ ਛੋਟੇ ਸਾਇਜ਼ ਦਾ ਟੈਕਸਟ ਕਦੇ ਨਹੀਂ ਵੇਖਾਏਗਾ, <br />ਹੋਰ ਕੋਈ ਵੀ ਸੈਟਿੰਗ ਨੂੰ ਅਣਡਿੱਠਾ ਕਰ "
 "ਦਿੱਤਾ ਜਾਵੇਗਾ।"
 
-#: appearance.cpp:148
+#: appearance.cpp:144
 #, kde-format
 msgid "&Medium font size:"
 msgstr "ਮੱਧਮ ਫੋਂਟ ਸਾਇਜ਼(&M):"
 
-#: appearance.cpp:161
+#: appearance.cpp:157
 #, kde-format
 msgid "S&tandard font:"
 msgstr "ਸਟੈਂਡਰਡ ਫੋਂਟ(&t):"
 
-#: appearance.cpp:162
+#: appearance.cpp:158
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr "ਇਹ ਵੈੱਬ ਸਫੇ ਵਿੱਚ ਆਮ ਪਾਠ ਵੇਖਾਉਣ ਲਈ ਫੋਂਟ ਸਾਇਜ਼ ਹੈ।"
 
-#: appearance.cpp:166
+#: appearance.cpp:162
 #, kde-format
 msgid "&Fixed font:"
 msgstr "ਨਿਸ਼ਚਿਤ ਫੋਂਟ(&F)"
 
-#: appearance.cpp:167
+#: appearance.cpp:163
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr "ਇਹ ਫੋਂਟ ਸਥਿਰ-ਚੌੜਾਈ ਟੈਕਸਟ (ਜਿਵੇਂ ਗ਼ੈਰ-ਅਨੁਪਾਤੀ) ਨੂੰ ਵੇਖਾਉਣ ਲਈ ਵਰਤੇ ਜਾਣਗੇ।"
 
-#: appearance.cpp:171
+#: appearance.cpp:167
 #, kde-format
 msgid "S&erif font:"
 msgstr "S&erif ਫੋਂਟ:"
 
-#: appearance.cpp:172
+#: appearance.cpp:168
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr "ਇਹ ਸਰੀਫ ਨਿਸ਼ਾਨਬੱਧ ਪਾਠ ਵੇਖਾਉਣ ਲਈ ਫੋਂਟ ਹੈ।"
 
-#: appearance.cpp:176
+#: appearance.cpp:172
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "Sa&ns serif ਫੋਂਟ:"
 
-#: appearance.cpp:177
+#: appearance.cpp:173
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr "ਇਹ ਸੰਨਸ਼-ਸਰੀਫ ਨਿਸ਼ਾਨਬੱਧ ਪਾਠ ਵੇਖਾਉਣ ਲਈ ਫੋਂਟ ਹੈ"
 
-#: appearance.cpp:181
+#: appearance.cpp:177
 #, kde-format
 msgid "C&ursive font:"
 msgstr "ਕਰਸੀਵ ਫੋਂਟ(&u):"
 
-#: appearance.cpp:182
+#: appearance.cpp:178
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr "ਇਹ ਫੋਂਟ ਦਿੱਸਣ ਵਾਲੇ ਪਾਠ ਦੇ ਸਾਰੇ ਤਿਰਛੇ ਅੱਖਰਾਂ ਨੂੰ ਵੇਖਾਉਣਗੇ।"
 
-#: appearance.cpp:186
+#: appearance.cpp:182
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "ਖਿਆਲੀ ਫੋਂਟ(&y):"
 
-#: appearance.cpp:187
+#: appearance.cpp:183
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr "ਇਹ ਫੋਂਟ ਪਾਠ ਵਿੱਚ ਦਿਸਣ ਵਾਲੇ ਸਾਰ ਖਿਆਲੀ ਫੋਂਟਾਂ ਨੂੰ ਵੇਖਾਉਣ ਲਈ ਕੰਮ ਆਉਣਗੇ"
 
-#: appearance.cpp:196
+#: appearance.cpp:192
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "ਇਸ ਇਕੋਡਿੰਗ ਲਈ ਫੋਟ ਸਾਇਜ਼ ਅਡਜੱਸਟ(&s):"
 
-#: appearance.cpp:204 appearance.cpp:405
+#: appearance.cpp:200 appearance.cpp:394
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "ਭਾਸ਼ਾ ਇਕੋਡਿੰਗ ਵਰਤੋਂ"
 
-#: appearance.cpp:206
+#: appearance.cpp:202
 #, kde-format
 msgid "Default encoding:"
 msgstr "ਡਿਫਾਲਟ ਇੰਕੋਡਿੰਗ:"
 
-#: appearance.cpp:208
+#: appearance.cpp:204
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1256,32 +1256,32 @@ msgid_plural " days"
 msgstr[0] " ਦਿਨ"
 msgstr[1] " ਦਿਨ"
 
-#: filteropts.cpp:124
+#: filteropts.cpp:120
 #, kde-format
 msgid "Insert"
 msgstr "ਸ਼ਾਮਲ"
 
-#: filteropts.cpp:127
+#: filteropts.cpp:123
 #, kde-format
 msgid "Update"
 msgstr "ਅੱਪਡੇਟ"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:126
 #, kde-format
 msgid "Remove"
 msgstr "ਹਟਾਓ"
 
-#: filteropts.cpp:134
+#: filteropts.cpp:130
 #, kde-format
 msgid "Import..."
 msgstr "ਇੰਪੋਰਟ..."
 
-#: filteropts.cpp:137
+#: filteropts.cpp:133
 #, kde-format
 msgid "Export..."
 msgstr "ਐਕਸਪੋਰਟ..."
 
-#: filteropts.cpp:144
+#: filteropts.cpp:140
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
@@ -1290,28 +1290,28 @@ msgstr ""
 "<qt><a href=\"importhelp\">ਇੰਪੋਰਟ ਫਾਰਮੈਟ</a>, <a href=\"exporthelp\">ਐਕਸਪੋਰਟ "
 "ਫਾਰਮੈਟ</a> ਬਾਰੇ ਹੋਰ ਜਾਣਕਾਰੀ"
 
-#: filteropts.cpp:158
+#: filteropts.cpp:154
 #, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
 "should be defined in the filter list for blocking to take effect."
 msgstr ""
 
-#: filteropts.cpp:160
+#: filteropts.cpp:156
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
 "otherwise a placeholder 'blocked' image will be used."
 msgstr ""
 
-#: filteropts.cpp:167
+#: filteropts.cpp:163
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
 "and media objects."
 msgstr ""
 
-#: filteropts.cpp:171
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1323,7 +1323,7 @@ msgid ""
 "filter."
 msgstr ""
 
-#: filteropts.cpp:187
+#: filteropts.cpp:183
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1331,7 +1331,7 @@ msgid ""
 "ignored. Any other line is added as a filter expression."
 msgstr ""
 
-#: filteropts.cpp:192
+#: filteropts.cpp:188
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1339,25 +1339,25 @@ msgid ""
 "separate line."
 msgstr ""
 
-#: filteropts.cpp:260
+#: filteropts.cpp:256
 #, fuzzy, kde-format
 #| msgid "Automatic Filter"
 msgid "Import Filters"
 msgstr "ਆਟੋਮੈਟਿਕ ਫਿਲਟਰ"
 
-#: filteropts.cpp:304
+#: filteropts.cpp:300
 #, fuzzy, kde-format
 #| msgid "URL Expressions to Filter"
 msgid "Export Filters"
 msgstr "ਫਿਲਟਰ ਕਰਨ ਲਈ URL ਸਮੀਕਰਨ"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:563 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "ਨਾਂ"
 
-#: filteropts.cpp:564
+#: filteropts.cpp:554
 #, kde-format
 msgid "URL"
 msgstr "URL"
@@ -1758,30 +1758,30 @@ msgid ""
 "checkbox unchecked."
 msgstr ""
 
-#: javaopts.cpp:291
+#: javaopts.cpp:288
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "ਡੋਮੇਨ ਖਾਸ(&i)"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:323
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "ਨਵੀਂ ਜਾਵਾ ਪਾਲਸੀ"
 
-#: javaopts.cpp:329
+#: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "ਜਾਵਾ ਪਾਲਸੀ ਬਦਲੋ"
 
-#: javaopts.cpp:333
+#: javaopts.cpp:330
 #, kde-format
 msgid "&Java policy:"
 msgstr "ਜਾਵਾ ਪਾਲਸੀ(&J):"
 
-#: javaopts.cpp:334
+#: javaopts.cpp:331
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "ਉਪਰਲੇ ਹੋਸਟ ਜਾਂ ਡੋਮੇਨ ਲਈ ਜਾਵਾ ਪਾਲਸੀ ਚੁਣੋ"
@@ -1825,7 +1825,7 @@ msgid ""
 "Enables the reporting of errors that occur when JavaScript code is executed."
 msgstr "ਜਾਵਾ-ਸਕ੍ਰਿਪਟ ਦੇ ਚੱਲਣ ਦੌਰਾਨ ਆਉਣ ਵਾਲੀਆਂ ਗਲਤੀ ਦੀ ਜਾਣਕਾਰੀ ਯੋਗ"
 
-#: jsopts.cpp:83
+#: jsopts.cpp:79
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -1839,7 +1839,7 @@ msgid ""
 "them from a zipped file."
 msgstr ""
 
-#: jsopts.cpp:93
+#: jsopts.cpp:89
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -1849,7 +1849,7 @@ msgid ""
 "it.</p>"
 msgstr ""
 
-#: jsopts.cpp:100
+#: jsopts.cpp:96
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -1857,7 +1857,7 @@ msgid ""
 "ignored."
 msgstr ""
 
-#: jsopts.cpp:103
+#: jsopts.cpp:99
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -1865,40 +1865,40 @@ msgid ""
 "choice."
 msgstr ""
 
-#: jsopts.cpp:109
+#: jsopts.cpp:105
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "ਗਲੋਬਲ ਜਾਵਾ ਸਕ੍ਰਿਪਟ ਪਾਲਸੀ"
 
-#: jsopts.cpp:183
+#: jsopts.cpp:172
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "ਡੋਮੇਨ ਖਾਸ(&m)"
 
-#: jsopts.cpp:222
+#: jsopts.cpp:211
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "ਨਵੀਂ ਜਾਵਾ ਸਕ੍ਰਿਪਟ ਪਾਲਸੀ"
 
-#: jsopts.cpp:225
+#: jsopts.cpp:214
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "ਜਾਵਾ ਸਕ੍ਰਿਪਟ ਪਾਲਸੀ ਬਦਲੋ"
 
-#: jsopts.cpp:229
+#: jsopts.cpp:218
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "ਜਾਵਾ ਸਕ੍ਰਿਪਟ ਪਾਲਸੀ:"
 
-#: jsopts.cpp:230
+#: jsopts.cpp:219
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "ਇੱਕ ਜਾਵਾ ਸਕ੍ਰਿਪਟ ਪਾਲਸੀ ਡੋਮੇਨ ਜਾਂ ਹੋਸਟ ਲਈ ਚੁਣੋ"
 
-#: jsopts.cpp:232
+#: jsopts.cpp:221
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "ਡੋਮੇਨ ਖਾਸ ਜਾਵਾ ਸਕ੍ਰਿਪਟ ਪਾਲਸੀ"
@@ -2084,7 +2084,7 @@ msgstr ""
 msgid "&Java"
 msgstr "&Java"
 
-#: main.cpp:57
+#: main.cpp:53
 #, kde-format
 msgid "Java&Script"
 msgstr "ਜਾਵਾ ਸਕ੍ਰਿਪਟ(&S)"

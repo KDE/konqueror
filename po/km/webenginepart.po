@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-25 00:37+0000\n"
+"POT-Creation-Date: 2024-04-24 02:56+0000\n"
 "PO-Revision-Date: 2012-07-09 11:08+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -294,7 +294,7 @@ msgstr ""
 msgid "Open in %1"
 msgstr "បើក '%1'"
 
-#: src/actondownloadedfilebar.cpp:73 src/actondownloadedfilebar.cpp:113
+#: src/actondownloadedfilebar.cpp:73 src/actondownloadedfilebar.cpp:109
 #, fuzzy, kde-format
 #| msgctxt "open selected url"
 #| msgid "Open '%1'"
@@ -302,25 +302,25 @@ msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "បើក '%1'"
 
-#: src/actondownloadedfilebar.cpp:100
+#: src/actondownloadedfilebar.cpp:96
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:100
+#: src/actondownloadedfilebar.cpp:96
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:104
+#: src/actondownloadedfilebar.cpp:100
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab using %1"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:104
+#: src/actondownloadedfilebar.cpp:100
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here using %1"
@@ -589,7 +589,7 @@ msgstr "គុណភាព​បង្ហាញ​ដែល​អាច​ប្
 msgid "Error: %1"
 msgstr "កំហុស ៖ %1"
 
-#: src/settings/webenginesettings.cpp:914
+#: src/settings/webenginesettings.cpp:911
 #, kde-format
 msgid "Filter error"
 msgstr "កំហុស​តម្រង"
@@ -846,12 +846,12 @@ msgstr ""
 msgid "&Immediately memorize form data"
 msgstr ""
 
-#: src/webenginepage.cpp:159 src/webenginepage.cpp:183
+#: src/webenginepage.cpp:160 src/webenginepage.cpp:184
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "រក​មិន​ឃើញ​​កម្មវិធី​គ្រប់គ្រង​ការ​ទាញ​យក (%1) នៅ​ក្នុង​ការ​ដំឡើង​របស់​អ្នក​ទេ ។"
 
-#: src/webenginepage.cpp:160 src/webenginepage.cpp:184
+#: src/webenginepage.cpp:161 src/webenginepage.cpp:185
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -862,7 +862,7 @@ msgstr ""
 "\n"
 "ការ​រួម​បញ្ចូល​នឹង​ត្រូវ​បានបិទ ។"
 
-#: src/webenginepage.cpp:456
+#: src/webenginepage.cpp:412
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -871,13 +871,13 @@ msgid ""
 "Otherwise, click the Continue button to display the webpage again.</p>"
 msgstr ""
 
-#: src/webenginepage.cpp:463
+#: src/webenginepage.cpp:419
 #, fuzzy, kde-format
 #| msgid "Additional Information: %1"
 msgid "Resubmit Information"
 msgstr "ព័ត៌មាន​បន្ថែម ៖ %1"
 
-#: src/webenginepage.cpp:665
+#: src/webenginepage.cpp:613
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is attempting to submit form data via email.\n"
@@ -889,19 +889,19 @@ msgstr ""
 "តំបន់បណ្ដាញ​​កំពុង​ប៉ុនប៉ង​ដាក់​ស្នើ​ពី​ទិន្នន័យ​តាម​រយៈ​អ៊ីមែល ។\n"
 "តើ​អ្នក​ចង់​បន្ត​ដែរ​ឬទេ ?"
 
-#: src/webenginepage.cpp:669 src/webenginepage.cpp:747
-#: src/webenginepage.cpp:758
+#: src/webenginepage.cpp:617 src/webenginepage.cpp:695
+#: src/webenginepage.cpp:706
 #, kde-format
 msgid "Network Transmission"
 msgstr "ការ​បញ្ជូន​បណ្ដាញ"
 
-#: src/webenginepage.cpp:670
+#: src/webenginepage.cpp:618
 #, fuzzy, kde-format
 #| msgid "&Allow attachments"
 msgid "Allow access"
 msgstr "អនុញ្ញាត​ឲ្យ​មាន​ឯកសារ​ភ្ជាប់"
 
-#: src/webenginepage.cpp:740
+#: src/webenginepage.cpp:688
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -913,12 +913,12 @@ msgstr ""
 "ភាគី​ទីបី អាច​ទប់​ស្កាត់​ និង​មើល​ព័ត៌មាន​នេះ ។\n"
 "តើ​អ្នក​ប្រាកដ​ជា​ចង់​ផ្ញើ​ទិន្នន័យ​ដែល​មិន​បាន​អ៊ិនគ្រីប​ដែរ​ឬទេ ?"
 
-#: src/webenginepage.cpp:748
+#: src/webenginepage.cpp:696
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "ផ្ញើ​អ្វី​ដែល​មិនបាន​អ៊ិនគ្រីប"
 
-#: src/webenginepage.cpp:755
+#: src/webenginepage.cpp:703
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -927,12 +927,12 @@ msgstr ""
 "តំបន់បណ្ដាញ​​កំពុង​ប៉ុនប៉ង​ដាក់​ស្នើ​ពី​ទិន្នន័យ​តាម​រយៈ​អ៊ីមែល ។\n"
 "តើ​អ្នក​ចង់​បន្ត​ដែរ​ឬទេ ?"
 
-#: src/webenginepage.cpp:759
+#: src/webenginepage.cpp:707
 #, kde-format
 msgid "&Send Email"
 msgstr "ផ្ញើ​អ៊ីមែល"
 
-#: src/webenginepage.cpp:808
+#: src/webenginepage.cpp:756
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -940,22 +940,22 @@ msgid ""
 msgstr ""
 "<qt>តើ​អ្នក​ចង់​អនុញ្ញាត​ឲ្យ​តំបន់​បណ្ដាញ​នេះ​ភ្ជាប់​ឯកសារ​ដូច​ខាងក្រោម​ទៅ​កាន់​សារ​អ៊ីមែល​ដែរឬទេ ?</qt>"
 
-#: src/webenginepage.cpp:810
+#: src/webenginepage.cpp:758
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "ការ​អះអាង​ឯកសារ​ភ្ជាប់​តាម​អ៊ីមែល"
 
-#: src/webenginepage.cpp:811
+#: src/webenginepage.cpp:759
 #, kde-format
 msgid "&Allow attachments"
 msgstr "អនុញ្ញាត​ឲ្យ​មាន​ឯកសារ​ភ្ជាប់"
 
-#: src/webenginepage.cpp:812
+#: src/webenginepage.cpp:760
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "មិន​អើពើ​នឹង​ឯកសារ​ភ្ជាប់"
 
-#: src/webenginepage.cpp:826
+#: src/webenginepage.cpp:774
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -964,12 +964,12 @@ msgstr ""
 "តំបន់បណ្ដាញ​បាន​ប៉ុនប៉ង​ភ្ជាប់​ឯកសារ​ពី​កុំព្យូទ័រ​របស់​អ្នក​នៅ​ក្នុង​ការ​ដាក់​ស្នើ​សំណុំ​បែបបទ ។ ឯកសារ​ភ្ជាប់​ត្រូវ​​បាន​យក​"
 "ចេញ​​ដើម្បី​ជា​ការ​ការពារ​របស់​អ្នក ។"
 
-#: src/webenginepage.cpp:829
+#: src/webenginepage.cpp:777
 #, kde-format
 msgid "Attachment Removed"
 msgstr "បាន​យក​ឯកសារ​ភ្ជាប់​ចេញ"
 
-#: src/webenginepage.cpp:943
+#: src/webenginepage.cpp:891
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is requesting to open up a popup window.\n"
@@ -981,7 +981,7 @@ msgstr ""
 "តំបន់បណ្ដាញ​​កំពុង​ស្នើ​ឲ្យ​បើក​បង្អួច​លេចឡើង ។\n"
 "តើ​អ្នក​អនុញ្ញាត​ដែរ​ឬទេ ?"
 
-#: src/webenginepage.cpp:945
+#: src/webenginepage.cpp:893
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -989,79 +989,79 @@ msgid ""
 msgstr ""
 "<qt>តំបន់បណ្ដាញ​​កំពុង​ស្នើ​ឲ្យ​បើក​បង្អួច​លេចឡើង​ទៅកាន់<p>%1</p><br/>តើ​អ្នក​អនុញ្ញាត​ដែរ​ឬទេ ?</qt>"
 
-#: src/webenginepage.cpp:948
+#: src/webenginepage.cpp:896
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "ការ​អះអាង​ការ​លេចឡើង​របស់ Javascript"
 
-#: src/webenginepage.cpp:949
+#: src/webenginepage.cpp:897
 #, kde-format
 msgid "Allow"
 msgstr "អនុញ្ញាត"
 
-#: src/webenginepage.cpp:949
+#: src/webenginepage.cpp:897
 #, kde-format
 msgid "Do Not Allow"
 msgstr "កុំ​អនុញ្ញាត"
 
-#: src/webenginepart.cpp:218
+#: src/webenginepart.cpp:198
 #, fuzzy, kde-format
 #| msgid "Save Image As..."
 msgid "Save Full HTML Page As..."
 msgstr "រក្សាទុក​រូបភាព​ជា..."
 
-#: src/webenginepart.cpp:222
+#: src/webenginepart.cpp:202
 #, kde-format
 msgid "Print Preview"
 msgstr "មើល​មុន​បោះពុម្ព"
 
-#: src/webenginepart.cpp:226
+#: src/webenginepart.cpp:206
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "ពង្រីក"
 
-#: src/webenginepart.cpp:231
+#: src/webenginepart.cpp:211
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "បង្រួម"
 
-#: src/webenginepart.cpp:236
+#: src/webenginepart.cpp:216
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "ទំហំ​ពិតប្រាកដ"
 
-#: src/webenginepart.cpp:241
+#: src/webenginepart.cpp:221
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "ពង្រីក​តែ​អត្ថបទ"
 
-#: src/webenginepart.cpp:249
+#: src/webenginepart.cpp:229
 #, fuzzy, kde-format
 #| msgctxt "zoom in action"
 #| msgid "Zoom In"
 msgid "Zoom To DPI"
 msgstr "ពង្រីក"
 
-#: src/webenginepart.cpp:262
+#: src/webenginepart.cpp:242
 #, kde-format
 msgid "Set &Encoding"
 msgstr "កំណត់​ការ​អ៊ិនកូដ​"
 
-#: src/webenginepart.cpp:265
+#: src/webenginepart.cpp:245
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "មើល​ប្រភព​ឯកសារ"
 
-#: src/webenginepart.cpp:270 src/webenginepart.cpp:559
+#: src/webenginepart.cpp:250 src/webenginepart.cpp:558
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:276
+#: src/webenginepart.cpp:256
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1069,12 +1069,12 @@ msgid ""
 "displayed page."
 msgstr "<h3>រក​អត្ថបទ</h3>​បង្ហាញ​ប្រអប់ ដែល​អនុញ្ញាត​ឲ្យ​អ្នក​រក​អត្ថបទ​នៅ​ក្នុង​ទំព័រ​ដែល​បានបង្ហាញ ។"
 
-#: src/webenginepart.cpp:557
+#: src/webenginepart.cpp:556
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "ព័ត៌មាន SSL សម្រាប់​តំបន់​បណ្ដាញ​នេះ​បង្ហាញ​ថា​ខូច​ហើយ ។"
 
-#: src/webenginepart.cpp:638
+#: src/webenginepart.cpp:637
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1082,7 +1082,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "អ៊ីមែល ៖"
 
-#: src/webenginepart.cpp:667
+#: src/webenginepart.cpp:666
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1090,7 +1090,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - ចម្លង​ជូន ៖"
 
-#: src/webenginepart.cpp:669
+#: src/webenginepart.cpp:668
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1098,7 +1098,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - ចម្លង​ជា​សម្ងាត់​ជូន ៖"
 
-#: src/webenginepart.cpp:671
+#: src/webenginepart.cpp:670
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1106,87 +1106,87 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - ប្រធាន​បទ ៖"
 
-#: src/webenginepart.cpp:675 src/webenginepart.cpp:686
+#: src/webenginepart.cpp:674 src/webenginepart.cpp:685
 #, kde-format
 msgid " (In new window)"
 msgstr " (ក្នុង​បង្អួច​ថ្មី)"
 
-#: src/webenginepart.cpp:684
+#: src/webenginepart.cpp:683
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (នៅ​ក្នុង​ស៊ុម​មេ)"
 
-#: src/webenginepart.cpp:754
+#: src/webenginepart.cpp:749
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>តើ​អ្នក​ចង​ស្វែងរក <b>%1</b>ដែរ​ឬ​ទេ​​ ?</qt>"
 
-#: src/webenginepart.cpp:755
+#: src/webenginepart.cpp:750
 #, kde-format
 msgid "Internet Search"
 msgstr "ស្វែង​រក​អ៊ីនធឺណិត​"
 
-#: src/webenginepart.cpp:755
+#: src/webenginepart.cpp:750
 #, kde-format
 msgid "&Search"
 msgstr "ស្វែង​រក​"
 
-#: src/webenginepart.cpp:866
+#: src/webenginepart.cpp:861
 #, kde-format
 msgid "Close window?"
 msgstr "បិទ​បង្អួច ?"
 
-#: src/webenginepart.cpp:866
+#: src/webenginepart.cpp:861
 #, kde-format
 msgid "Confirmation Required"
 msgstr "ទាមទារ​ការ​អះអាង"
 
-#: src/webenginepart.cpp:940
+#: src/webenginepart.cpp:935
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>តើ​អ្នក​ពិត​ជា​ចង់ឲ្យ %1 ចងចាំ​ព័ត៌មាន​ចូល​សម្រាប់ <b>%2</b>ឬ ?</html>"
 
-#: src/webenginepart.cpp:1011
+#: src/webenginepart.cpp:1006
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr ""
 
-#: src/webenginepart.cpp:1016
+#: src/webenginepart.cpp:1011
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "&Memorize Passwords in This Page Now"
 msgstr "យក​ពាក្យ​សម្ងាត់​ដែលបាន​ដាក់​ជា​ឃ្លាំងស​ម្ងាត់​ចេញ​ទាំងអស់​សម្រាប់​តំបន់បណ្ដាញ​នេះ"
 
-#: src/webenginepart.cpp:1020
+#: src/webenginepart.cpp:1015
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1024
+#: src/webenginepart.cpp:1019
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1028
+#: src/webenginepart.cpp:1023
 #, fuzzy, kde-format
 #| msgid "&Allow password caching for this site"
 msgid "&Allow Password Caching for This Site"
 msgstr "អនុញ្ញាត​ឲ្យ​ដាក់​​​សម្ងាត់​ជា​​ឃ្លាំង​សម្ងាត់​សម្រាប់​តំបន់បណ្ដាញ​នេះ"
 
-#: src/webenginepart.cpp:1032
+#: src/webenginepart.cpp:1027
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "យក​ពាក្យ​សម្ងាត់​ដែលបាន​ដាក់​ជា​ឃ្លាំងស​ម្ងាត់​ចេញ​ទាំងអស់​សម្រាប់​តំបន់បណ្ដាញ​នេះ"
 
-#: src/webenginepart.cpp:1036
+#: src/webenginepart.cpp:1031
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1040
+#: src/webenginepart.cpp:1035
 #, kde-format
 msgid "&Close Wallet"
 msgstr "បិទ​កាបូប"
@@ -1227,17 +1227,17 @@ msgstr ""
 msgid "HTML Toolbar"
 msgstr "របារ​ឧបករណ៍ HTML"
 
-#: src/webenginepart_ext.cpp:279
+#: src/webenginepart_ext.cpp:294
 #, kde-format
 msgid "Print Document"
 msgstr ""
 
-#: src/webenginepart_ext.cpp:504
+#: src/webenginepart_ext.cpp:511
 #, kde-format
 msgid "Add URL to Filter"
 msgstr "បន្ថែម​ URL ដើម្បី​ត្រង"
 
-#: src/webenginepart_ext.cpp:505
+#: src/webenginepart_ext.cpp:512
 #, kde-format
 msgid "Enter the URL:"
 msgstr "បញ្ចូល URL ៖"
@@ -1254,14 +1254,14 @@ msgctxt "Ignore the certificate error for this URL now and in the future"
 msgid "Yes, &forever"
 msgstr ""
 
-#: src/webenginepartcertificateerrordlg.cpp:54
+#: src/webenginepartcertificateerrordlg.cpp:50
 #, kde-format
 msgid ""
 "<p>The server <tt>%1</tt> failed the authenticity check. The error is:</"
 "p><p><tt>%2</tt></p>Do you want to ignore this error?"
 msgstr ""
 
-#: src/webenginepartcertificateerrordlg.cpp:60
+#: src/webenginepartcertificateerrordlg.cpp:56
 #, fuzzy, kde-format
 #| msgid "Filter error"
 msgctxt "title of a dialog asking what to do about a SSL certificate error"
@@ -1296,175 +1296,175 @@ msgstr " - ប្រធាន​បទ ៖"
 msgid "&Issuer"
 msgstr ""
 
-#: src/webenginepartcontrols.cpp:287
+#: src/webenginepartcontrols.cpp:282
 #, kde-format
 msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
 "default style sheet will be used"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:305
+#: src/webenginepartdownloadmanager.cpp:298
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:316
+#: src/webenginepartdownloadmanager.cpp:309
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:317
+#: src/webenginepartdownloadmanager.cpp:310
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:318
+#: src/webenginepartdownloadmanager.cpp:311
 #, fuzzy, kde-format
 #| msgid "Description:"
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "សេចក្ដីពិពណ៌នា ៖"
 
-#: src/webenginepartdownloadmanager.cpp:349
+#: src/webenginepartdownloadmanager.cpp:333
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
 msgstr ""
 
-#: src/webengineview.cpp:363
+#: src/webengineview.cpp:352
 #, kde-format
 msgid "Save Image As..."
 msgstr "រក្សាទុក​រូបភាព​ជា..."
 
-#: src/webengineview.cpp:368
+#: src/webengineview.cpp:357
 #, kde-format
 msgid "Send Image..."
 msgstr "ផ្ញើ​រូបភាព..."
 
-#: src/webengineview.cpp:373
+#: src/webengineview.cpp:362
 #, kde-format
 msgid "Copy Image URL"
 msgstr "ចម្លង​រូបភាព​ URL"
 
-#: src/webengineview.cpp:379
+#: src/webengineview.cpp:368
 #, kde-format
 msgid "Copy Image"
 msgstr "ចម្លង​រូបភាព"
 
-#: src/webengineview.cpp:386
+#: src/webengineview.cpp:375
 #, kde-format
 msgid "View Image (%1)"
 msgstr "មើល​រូបភាព​នេះ (%1)"
 
-#: src/webengineview.cpp:392
+#: src/webengineview.cpp:381
 #, kde-format
 msgid "Block Image..."
 msgstr "ទប់ស្កាត់​រូបភាព..."
 
-#: src/webengineview.cpp:400
+#: src/webengineview.cpp:389
 #, kde-format
 msgid "Block Images From %1"
 msgstr "ទប់ស្កាត់​រូបភាព​ពី %1"
 
-#: src/webengineview.cpp:430 src/webengineview.cpp:467
+#: src/webengineview.cpp:419 src/webengineview.cpp:456
 #, kde-format
 msgid "&Copy Text"
 msgstr "ចម្លង​អត្ថបទ​"
 
-#: src/webengineview.cpp:440
+#: src/webengineview.cpp:429
 #, kde-format
 msgctxt "open selected url"
 msgid "Open '%1'"
 msgstr "បើក '%1'"
 
-#: src/webengineview.cpp:473
+#: src/webengineview.cpp:462
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "ចម្លង​អាសយដ្ឋាន​អ៊ីមែល"
 
-#: src/webengineview.cpp:479
+#: src/webengineview.cpp:468
 #, kde-format
 msgid "Copy Link &Text"
 msgstr "ចម្លង​តំណ​អត្ថបទ"
 
-#: src/webengineview.cpp:485
+#: src/webengineview.cpp:474
 #, kde-format
 msgid "Copy Link &URL"
 msgstr "ចម្លង​តំណ​ URL"
 
-#: src/webengineview.cpp:490
+#: src/webengineview.cpp:479
 #, kde-format
 msgid "&Save Link As..."
 msgstr "រក្សាទុក​តំណ​ជា​..."
 
-#: src/webengineview.cpp:510
+#: src/webengineview.cpp:499
 #, fuzzy, kde-format
 #| msgid "&Pause"
 msgid "&Play/Pause"
 msgstr "ផ្អាក​"
 
-#: src/webengineview.cpp:515
+#: src/webengineview.cpp:504
 #, fuzzy, kde-format
 #| msgid "Un&mute"
 msgid "Un&mute/&Mute"
 msgstr "មាន​សំឡេង​"
 
-#: src/webengineview.cpp:520
+#: src/webengineview.cpp:509
 #, kde-format
 msgid "Toggle &Loop"
 msgstr ""
 
-#: src/webengineview.cpp:525
+#: src/webengineview.cpp:514
 #, fuzzy, kde-format
 #| msgid "Show &Controls"
 msgid "Toggle &Controls"
 msgstr "បង្ហាញ​​វត្ថុ​បញ្ជា​​"
 
-#: src/webengineview.cpp:536
+#: src/webengineview.cpp:525
 #, kde-format
 msgid "Sa&ve Video As..."
 msgstr "រក្សាទុក​វីដេអូ​ជា​..."
 
-#: src/webengineview.cpp:537
+#: src/webengineview.cpp:526
 #, kde-format
 msgid "C&opy Video URL"
 msgstr "ចម្លង​វីដេអូ​ URL"
 
-#: src/webengineview.cpp:539
+#: src/webengineview.cpp:528
 #, kde-format
 msgid "Sa&ve Audio As..."
 msgstr "រក្សាទុក​អូឌីយ៉ូ​ជា​..."
 
-#: src/webengineview.cpp:540
+#: src/webengineview.cpp:529
 #, kde-format
 msgid "C&opy Audio URL"
 msgstr "ចម្លង​អូឌីយ៉ូ​​ URL"
 
-#: src/webengineview.cpp:542
+#: src/webengineview.cpp:531
 #, kde-format
 msgid "Sa&ve Media As..."
 msgstr "រក្សាទុក​មេឌៀ​ជា​​..."
 
-#: src/webengineview.cpp:543
+#: src/webengineview.cpp:532
 #, kde-format
 msgid "C&opy Media URL"
 msgstr "ចម្លង​មេឌៀ​ជា​​ URL"
 
-#: src/webengineview.cpp:596
+#: src/webengineview.cpp:585
 #, kde-format
 msgctxt "Search \"search provider\" for \"text\""
 msgid "Search %1 for '%2'"
 msgstr "ស្វែង​រក​ %1 សម្រាប់​​ '%2'"
 
-#: src/webengineview.cpp:607
+#: src/webengineview.cpp:596
 #, kde-format
 msgctxt "Search for \"text\" with"
 msgid "Search for '%1' with"
 msgstr "ស្វែងរក​ '%1' ដោយ​ប្រើ"
 
-#: src/webengineview.cpp:620
+#: src/webengineview.cpp:609
 #, kde-format
 msgid "Configure Web Shortcuts..."
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 00:37+0000\n"
+"POT-Creation-Date: 2024-04-24 02:56+0000\n"
 "PO-Revision-Date: 2024-02-02 22:46+0200\n"
 "Last-Translator: Liudas Alisauskas <liudas@akmc.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -39,17 +39,17 @@ msgid "Stylesheets"
 msgstr "Stiliaus lentelės"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
-#: appearance.cpp:52 css/csscustom.ui:296
+#: appearance.cpp:48 css/csscustom.ui:296
 #, kde-format
 msgid "Images"
 msgstr "Paveikslėliai"
 
-#: appearance.cpp:56
+#: appearance.cpp:52
 #, kde-format
 msgid "A&utomatically load images"
 msgstr "A&utomatiškai įkelti paveikslėlius"
 
-#: appearance.cpp:57
+#: appearance.cpp:53
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will automatically load any images "
@@ -64,12 +64,12 @@ msgstr ""
 "<br /> Tikriausiai norėsite pažymėti šį langelį ir tuo pagerinti savo "
 "naršymą, nebent Jūsų prisijungimas prie tinklo yra labai lėtas.</html>"
 
-#: appearance.cpp:67
+#: appearance.cpp:63
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
 msgstr "Pieš&ti rėmelius apie iki galo neįkeltus paveikslėlius"
 
-#: appearance.cpp:68
+#: appearance.cpp:64
 #, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
@@ -83,24 +83,24 @@ msgstr ""
 "<br /> Tikriausiai norėsite pažymėti šį langelį ir tuo pagerinti savo "
 "naršymą, nebent Jūsų prisijungimas prie tinklo yra labai lėtas.</html>"
 
-#: appearance.cpp:78
+#: appearance.cpp:74
 #, kde-format
 msgctxt "animations"
 msgid "Enabled"
 msgstr "Pilnai"
 
-#: appearance.cpp:79
+#: appearance.cpp:75
 #, kde-format
 msgctxt "animations"
 msgid "Disabled"
 msgstr "Niekada"
 
-#: appearance.cpp:80
+#: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
 msgstr "Tik vieną kartą"
 
-#: appearance.cpp:81
+#: appearance.cpp:77
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
@@ -113,40 +113,40 @@ msgstr ""
 "b>: Niekada nerodyti animacijų, tik pirminį paveikslėlį </li><li><b>Tik "
 "vieną kartą</b>: Rodyti animacijas, bet nekartoti jų.</li></ul></html>"
 
-#: appearance.cpp:86
+#: appearance.cpp:82
 #, kde-format
 msgid "A&nimations:"
 msgstr "A&nimacijų rodymas:"
 
-#: appearance.cpp:89 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
 msgstr "Įvairūs"
 
-#: appearance.cpp:94
+#: appearance.cpp:90
 #, kde-format
 msgctxt "underline"
 msgid "Enabled"
 msgstr "Įjungtas"
 
-#: appearance.cpp:95
+#: appearance.cpp:91
 #, kde-format
 msgctxt "underline"
 msgid "Disabled"
 msgstr "Išjungtas"
 
-#: appearance.cpp:96
+#: appearance.cpp:92
 #, kde-format
 msgid "Only on Hover"
 msgstr "Tik po pelės žymekliu"
 
-#: appearance.cpp:97
+#: appearance.cpp:93
 #, kde-format
 msgid "Und&erline links:"
 msgstr "Pa&braukti jungtis:"
 
-#: appearance.cpp:100
+#: appearance.cpp:96
 #, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
@@ -161,29 +161,29 @@ msgstr ""
 "jungties</li></ul><br /> <i>Pastaba: srities CSS apibėžimai turi pirmenybę "
 "prieš šią reikšmę</i></html>"
 
-#: appearance.cpp:109
+#: appearance.cpp:105
 #, kde-format
 msgid "When Efficient"
 msgstr "Kai tai efektyvu"
 
-#: appearance.cpp:110
+#: appearance.cpp:106
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
 msgstr "Visada"
 
-#: appearance.cpp:111
+#: appearance.cpp:107
 #, kde-format
 msgctxt "soft scrolling"
 msgid "Never"
 msgstr "Niekada"
 
-#: appearance.cpp:112
+#: appearance.cpp:108
 #, kde-format
 msgid "S&mooth scrolling:"
 msgstr "&Tolygus slinkimas:"
 
-#: appearance.cpp:114
+#: appearance.cpp:110
 #, kde-format
 msgid ""
 "<html>Determines whether Konqueror should use smooth steps to scroll HTML "
@@ -200,24 +200,24 @@ msgstr ""
 "naudoti tik tada, kai to galima pasiekti pernelyg neapkraunant sistemos.</"
 "li></ul></html>"
 
-#: appearance.cpp:132
+#: appearance.cpp:128
 #, kde-format
 msgid "Font Si&ze"
 msgstr "&Šrifto dydis"
 
-#: appearance.cpp:135 appearance.cpp:153
+#: appearance.cpp:131 appearance.cpp:149
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr ""
 "Tai reliatyvus Konqueror naudojamas šrifto dydis žiniatinklio puslapiams "
 "rodyti."
 
-#: appearance.cpp:139
+#: appearance.cpp:135
 #, kde-format
 msgid "M&inimum font size:"
 msgstr "Minima&lus šrifto dydis:"
 
-#: appearance.cpp:143
+#: appearance.cpp:139
 #, kde-format
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
@@ -226,28 +226,28 @@ msgstr ""
 "Konqueror niekada nerodys teksto mažesniu negu šis dydžiu,<br /> "
 "nepriklausomai nuo jokių kitų nustatymų"
 
-#: appearance.cpp:148
+#: appearance.cpp:144
 #, kde-format
 msgid "&Medium font size:"
 msgstr "&Vidutinis šrifto dydis:"
 
-#: appearance.cpp:161
+#: appearance.cpp:157
 #, kde-format
 msgid "S&tandard font:"
 msgstr "S&tandartinis šriftas:"
 
-#: appearance.cpp:162
+#: appearance.cpp:158
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
 msgstr ""
 "Tai šriftas, naudojamas rodyti normaliam žiniatinklio puslapio tekstui."
 
-#: appearance.cpp:166
+#: appearance.cpp:162
 #, kde-format
 msgid "&Fixed font:"
 msgstr "Past&ovaus pločio:"
 
-#: appearance.cpp:167
+#: appearance.cpp:163
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
@@ -255,66 +255,66 @@ msgstr ""
 "Tai šriftas, naudojamas parodyti pastovaus simbolio pločio (t.y. "
 "neproporciniam) tekstui."
 
-#: appearance.cpp:171
+#: appearance.cpp:167
 #, kde-format
 msgid "S&erif font:"
 msgstr "S&erifinis šriftas:"
 
-#: appearance.cpp:172
+#: appearance.cpp:168
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr ""
 "Šis šriftas naudojamas parodyti tekstui, pažymėtam serif (su uodegytėm)."
 
-#: appearance.cpp:176
+#: appearance.cpp:172
 #, kde-format
 msgid "Sa&ns serif font:"
 msgstr "&Ne serifinis šriftas:"
 
-#: appearance.cpp:177
+#: appearance.cpp:173
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr ""
 "Šis šriftas naudojamas parodyti tekstui, pažymėtam sans-serif (be uodegyčių)."
 
-#: appearance.cpp:181
+#: appearance.cpp:177
 #, kde-format
 msgid "C&ursive font:"
 msgstr "&Kursyvinis šriftas:"
 
-#: appearance.cpp:182
+#: appearance.cpp:178
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr "Šis šriftas naudojamas parodyti tekstui, pažymėtam kursyvu."
 
-#: appearance.cpp:186
+#: appearance.cpp:182
 #, kde-format
 msgid "Fantas&y font:"
 msgstr "I&šmoningas šriftas:"
 
-#: appearance.cpp:187
+#: appearance.cpp:183
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr ""
 "Šis šriftas naudojamas parodyti tekstui, pažymėtam išmoningu (fantasy)."
 
-#: appearance.cpp:196
+#: appearance.cpp:192
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
 msgstr "Šrifto dydžio &pataisa šiai koduotei:"
 
-#: appearance.cpp:204 appearance.cpp:405
+#: appearance.cpp:200 appearance.cpp:394
 #, kde-format
 msgid "Use Language Encoding"
 msgstr "Naudoti nurodytą kalbai koduotę"
 
-#: appearance.cpp:206
+#: appearance.cpp:202
 #, kde-format
 msgid "Default encoding:"
 msgstr "Koduotė, naudojama kitaip nenurodžius:"
 
-#: appearance.cpp:208
+#: appearance.cpp:204
 #, kde-format
 msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
@@ -1330,32 +1330,32 @@ msgstr[1] " dienos"
 msgstr[2] " dienų"
 msgstr[3] " diena"
 
-#: filteropts.cpp:124
+#: filteropts.cpp:120
 #, kde-format
 msgid "Insert"
 msgstr "Įterpti"
 
-#: filteropts.cpp:127
+#: filteropts.cpp:123
 #, kde-format
 msgid "Update"
 msgstr "Atnaujinti"
 
-#: filteropts.cpp:130
+#: filteropts.cpp:126
 #, kde-format
 msgid "Remove"
 msgstr "Pašalinti"
 
-#: filteropts.cpp:134
+#: filteropts.cpp:130
 #, kde-format
 msgid "Import..."
 msgstr "Importuoti..."
 
-#: filteropts.cpp:137
+#: filteropts.cpp:133
 #, kde-format
 msgid "Export..."
 msgstr "Eksportuoti..."
 
-#: filteropts.cpp:144
+#: filteropts.cpp:140
 #, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
@@ -1364,7 +1364,7 @@ msgstr ""
 "<qt>Daugiau informacijos apie <a href=\"importhelp\">importo formatą</a>, <a "
 "href=\"exporthelp\">eksporto formatą</a>"
 
-#: filteropts.cpp:158
+#: filteropts.cpp:154
 #, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
@@ -1373,7 +1373,7 @@ msgstr ""
 "Įgalinti arba išjungti AdBlocK filtrus. Įgalinus filtrus būtina nurodyti "
 "išraiškas, pagal kurias apibūdinti filtrai blokuos paveikslėlius ar kadrus."
 
-#: filteropts.cpp:160
+#: filteropts.cpp:156
 #, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
@@ -1382,7 +1382,7 @@ msgstr ""
 "Įgalinus, blokuojami paveikslėliai bus arba visiškai pašalinami iš puslapio, "
 "priešingu atveju bus įdėtas imituojantis paveikslėlis „blokuojamas“."
 
-#: filteropts.cpp:167
+#: filteropts.cpp:163
 #, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
@@ -1391,7 +1391,7 @@ msgstr ""
 "Tai yra sąrašas URL filtrų, kurie bus pritaikomi visiems susietiems "
 "paveikslėliams ir objektams."
 
-#: filteropts.cpp:171
+#: filteropts.cpp:167
 #, kde-format
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
@@ -1410,7 +1410,7 @@ msgstr ""
 "'<tt>@@</tt>', norite leisti rodyti atitinkantį URL ir tai yra aukštesnio "
 "prioriteto nurodymas nei draudimas."
 
-#: filteropts.cpp:187
+#: filteropts.cpp:183
 #, kde-format
 msgid ""
 "<qt><p>The filter import format is a plain text file. Blank lines, comment "
@@ -1422,7 +1422,7 @@ msgstr ""
 "'<tt>!</tt>' bei viršutinė eilutė <tt>[AdBlock]</tt>. Visos kitos eilutės "
 "pridedamos kaip filtrai."
 
-#: filteropts.cpp:192
+#: filteropts.cpp:188
 #, kde-format
 msgid ""
 "<qt><p>The filter export format is a plain text file. The file begins with a "
@@ -1433,25 +1433,25 @@ msgstr ""
 "prasideda eilute <tt>[AdBlock]</tt>, tada į atskiras eilutes surašomi visi "
 "filtrai."
 
-#: filteropts.cpp:260
+#: filteropts.cpp:256
 #, fuzzy, kde-format
 #| msgid "Automatic Filter"
 msgid "Import Filters"
 msgstr "Automatinis filtras"
 
-#: filteropts.cpp:304
+#: filteropts.cpp:300
 #, fuzzy, kde-format
 #| msgid "Automatic Filter"
 msgid "Export Filters"
 msgstr "Automatinis filtras"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:563 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:61
 #, kde-format
 msgid "Name"
 msgstr "Pavadinimas"
 
-#: filteropts.cpp:564
+#: filteropts.cpp:554
 #, kde-format
 msgid "URL"
 msgstr "URL"
@@ -1905,30 +1905,30 @@ msgstr ""
 "reikšmę.  Norėdami palikti java procesą veikiantį visą konqueror darbo "
 "laiką, nepažymėkite langelio „Išjungti programėlių serverį“."
 
-#: javaopts.cpp:291
+#: javaopts.cpp:288
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
 msgstr "Nuo domeno &priklausančios"
 
-#: javaopts.cpp:326
+#: javaopts.cpp:323
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "Nauja Java taisyklė"
 
-#: javaopts.cpp:329
+#: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
 msgstr "Keisti Java taisyklę"
 
-#: javaopts.cpp:333
+#: javaopts.cpp:330
 #, kde-format
 msgid "&Java policy:"
 msgstr "&Java taisyklė:"
 
-#: javaopts.cpp:334
+#: javaopts.cpp:331
 #, kde-format
 msgid "Select a Java policy for the above host or domain."
 msgstr "Nurodykite Java taisyklę esamam mazgui arba domenui."
@@ -1975,7 +1975,7 @@ msgid ""
 "Enables the reporting of errors that occur when JavaScript code is executed."
 msgstr "Įjungia klaidų, kurios įvyksta vykdant JavaScript kodą, pranešimus."
 
-#: jsopts.cpp:83
+#: jsopts.cpp:79
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -1998,7 +1998,7 @@ msgstr ""
 "<i>Eksportuoti</i> leis nesunkiai pasidalinti taisyklėmis su kitais - "
 "išsaugoti jas archyvuotame faile, ar pasiimi iš tokio."
 
-#: jsopts.cpp:93
+#: jsopts.cpp:89
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2013,7 +2013,7 @@ msgstr ""
 "puslapių JavaScript scenarijus. </p><p>Pažymėkite taisyklę, ir, norėdami ją "
 "modifikuoti, naudokite dešinėje esančius mygtukus.</p>"
 
-#: jsopts.cpp:100
+#: jsopts.cpp:96
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2024,7 +2024,7 @@ msgstr ""
 "Šios taisyklės bus sujungtos su jau esančiomis.  Sutampantys įrašai bus "
 "ignoruojami."
 
-#: jsopts.cpp:103
+#: jsopts.cpp:99
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2035,40 +2035,40 @@ msgstr ""
 "Failas, pavadintas <b>javascript_policy.tgz</b>, bus išsaugotas Jūsų "
 "pasirinktoje vietoje."
 
-#: jsopts.cpp:109
+#: jsopts.cpp:105
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "Globalios JavaScript taisyklės"
 
-#: jsopts.cpp:183
+#: jsopts.cpp:172
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
 msgstr "&Nuo domeno priklausančios"
 
-#: jsopts.cpp:222
+#: jsopts.cpp:211
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "Nauja JavaScript taisyklė"
 
-#: jsopts.cpp:225
+#: jsopts.cpp:214
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "Keisti JavaScript taisyklę"
 
-#: jsopts.cpp:229
+#: jsopts.cpp:218
 #, kde-format
 msgid "JavaScript policy:"
 msgstr "JavaScript taisyklė:"
 
-#: jsopts.cpp:230
+#: jsopts.cpp:219
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr "Nurodykite JavaScript taisyklę duotam mazgui arba domenui."
 
-#: jsopts.cpp:232
+#: jsopts.cpp:221
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
 msgstr "Nuo domeno priklausančios JavaScript taisyklės"
@@ -2282,7 +2282,7 @@ msgstr ""
 msgid "&Java"
 msgstr "&Java"
 
-#: main.cpp:57
+#: main.cpp:53
 #, kde-format
 msgid "Java&Script"
 msgstr "Java&Script"

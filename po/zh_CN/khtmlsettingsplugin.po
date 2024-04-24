@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2024-03-30 19:37\n"
+"POT-Creation-Date: 2024-04-24 02:56+0000\n"
+"PO-Revision-Date: 2024-04-22 16:00\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/konqueror/khtmlsettingsplugin.pot\n"
-"X-Crowdin-File-ID: 48582\n"
+"X-Crowdin-File: /kf6-stable/messages/konqueror/khtmlsettingsplugin.pot\n"
+"X-Crowdin-File-ID: 53064\n"
 
 #. i18n: ectx: Menu (tools)
 #: khtmlsettingsplugin.rc:4
@@ -89,14 +89,14 @@ msgstr "尽可能使用缓存(&U)"
 msgid "&Offline Browsing Mode"
 msgstr "离线浏览模式(&O)"
 
-#: settingsplugin.cpp:193
+#: settingsplugin.cpp:170
 #, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
 "be contacted."
 msgstr "Cookie 设置无法修改，因为无法与 Cookie 守护进程联系。"
 
-#: settingsplugin.cpp:195
+#: settingsplugin.cpp:172
 #, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:45+0000\n"
+"POT-Creation-Date: 2024-04-24 02:56+0000\n"
 "PO-Revision-Date: 2021-09-19 13:48+0630\n"
 "Last-Translator: \n"
 "Language-Team: Burmese <kde-i18n-doc@kde.org>\n"
@@ -89,7 +89,7 @@ msgstr[0] ""
 msgid "None"
 msgstr "မသတ်မှတ်ထား"
 
-#: app/archivedialog.cpp:219
+#: app/archivedialog.cpp:210
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -97,25 +97,25 @@ msgid ""
 "will be used."
 msgstr ""
 
-#: app/archivedialog.cpp:358
+#: app/archivedialog.cpp:349
 #, kde-format
 msgctxt "@info"
 msgid "The save location is not valid."
 msgstr ""
 
-#: app/archivedialog.cpp:378
+#: app/archivedialog.cpp:369
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
 msgstr ""
 
-#: app/archivedialog.cpp:404
+#: app/archivedialog.cpp:391
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
 msgstr ""
 
-#: app/archivedialog.cpp:421
+#: app/archivedialog.cpp:408
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -123,13 +123,13 @@ msgid ""
 "file."
 msgstr ""
 
-#: app/archivedialog.cpp:422
+#: app/archivedialog.cpp:409
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
 msgstr ""
 
-#: app/archivedialog.cpp:426
+#: app/archivedialog.cpp:413
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -137,42 +137,42 @@ msgid ""
 "directory."
 msgstr ""
 
-#: app/archivedialog.cpp:427
+#: app/archivedialog.cpp:414
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
 msgstr ""
 
-#: app/archivedialog.cpp:431
+#: app/archivedialog.cpp:418
 #, kde-format
 msgid "Archive Already Exists"
 msgstr ""
 
-#: app/archivedialog.cpp:461
+#: app/archivedialog.cpp:448
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
 msgstr ""
 
-#: app/archivedialog.cpp:478
+#: app/archivedialog.cpp:465
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
 msgstr ""
 
-#: app/archivedialog.cpp:550
+#: app/archivedialog.cpp:537
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot start the archiver process <filename>%1</filename>"
 msgstr ""
 
-#: app/archivedialog.cpp:566
+#: app/archivedialog.cpp:553
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The download process was interrupted."
 msgstr ""
 
-#: app/archivedialog.cpp:567
+#: app/archivedialog.cpp:554
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -180,7 +180,7 @@ msgid ""
 "para>"
 msgstr ""
 
-#: app/archivedialog.cpp:572
+#: app/archivedialog.cpp:559
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -188,7 +188,7 @@ msgid ""
 "para>"
 msgstr ""
 
-#: app/archivedialog.cpp:576
+#: app/archivedialog.cpp:563
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -196,41 +196,41 @@ msgid ""
 "para>"
 msgstr ""
 
-#: app/archivedialog.cpp:582
+#: app/archivedialog.cpp:569
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
 msgstr ""
 
-#: app/archivedialog.cpp:583
+#: app/archivedialog.cpp:570
 #, kde-format
 msgid "Retain Archive?"
 msgstr ""
 
-#: app/archivedialog.cpp:584
+#: app/archivedialog.cpp:571
 #, kde-format
 msgid "Retain"
 msgstr ""
 
-#: app/archivedialog.cpp:588
+#: app/archivedialog.cpp:575
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."
 msgstr ""
 
-#: app/archivedialog.cpp:731
+#: app/archivedialog.cpp:718
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
 msgstr ""
 
-#: app/archivedialog.cpp:761
+#: app/archivedialog.cpp:748
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
 msgstr ""
 
-#: app/archivedialog.cpp:769
+#: app/archivedialog.cpp:756
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"

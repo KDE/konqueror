@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: searchbarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-09 00:37+0000\n"
+"POT-Creation-Date: 2024-04-24 02:56+0000\n"
 "PO-Revision-Date: 2013-04-19 18:09+0300\n"
 "Last-Translator: Liudas Alisauskas <liudas@akmc.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: searchbar.cpp:68
+#: searchbar.cpp:64
 #, kde-format
 msgid ""
 "Search Bar<p>Enter a search term. Click on the icon to change search mode or "
@@ -29,33 +29,33 @@ msgstr ""
 "Paieškos juosta<p>Įveskite paieškos kriterijų. Spauskite ženkliuką, jei "
 "norite pakeisti paieškos režimą ar tiekėją.</p>"
 
-#: searchbar.cpp:73
+#: searchbar.cpp:69
 #, kde-format
 msgid "Search Bar"
 msgstr "Paieškos juosta"
 
-#: searchbar.cpp:78
+#: searchbar.cpp:74
 #, kde-format
 msgid "Focus Searchbar"
 msgstr "Fokuso paieškos juosta"
 
-#: searchbar.cpp:279
+#: searchbar.cpp:270
 #, fuzzy, kde-format
 #| msgid "Find in This Page"
 msgid "Find in Page..."
 msgstr "Rasti šiame puslapyje"
 
-#: searchbar.cpp:299
+#: searchbar.cpp:290
 #, kde-format
 msgid "Find in This Page"
 msgstr "Rasti šiame puslapyje"
 
-#: searchbar.cpp:311
+#: searchbar.cpp:302
 #, kde-format
 msgid "Select Search Engines..."
 msgstr "Pasirinkti paieškos varikliukus..."
 
-#: searchbar.cpp:330
+#: searchbar.cpp:321
 #, kde-format
 msgid "Add %1..."
 msgstr "Pridėti %1..."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:35+0000\n"
+"POT-Creation-Date: 2024-04-24 02:56+0000\n"
 "PO-Revision-Date: 2010-03-27 23:10+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -28,55 +28,55 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: kfmclient.cpp:61
+#: kfmclient.cpp:57
 #, kde-format
 msgid "kfmclient"
 msgstr "kfmclient"
 
-#: kfmclient.cpp:62
+#: kfmclient.cpp:58
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "เครื่องมือเปิดที่อยู่ URL จากบรรทัดคำสั่งของ KDE"
 
-#: kfmclient.cpp:70
+#: kfmclient.cpp:66
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr "ไม่ใช่การใช้แบบโต้ตอบ: ไม่มีกล่องข้อความ"
 
-#: kfmclient.cpp:72
+#: kfmclient.cpp:68
 #, kde-format
 msgid "Show available commands"
 msgstr "แสดงคำสั่งที่ใช้ได้"
 
-#: kfmclient.cpp:81
+#: kfmclient.cpp:77
 #, kde-format
 msgid ""
 "The mimetype of the URL. Allows Konqueror to determine in advance which "
 "component to use, making it start faster."
 msgstr ""
 
-#: kfmclient.cpp:82
+#: kfmclient.cpp:78
 #, kde-format
 msgctxt "the name for a the value of an option on the command line help"
 msgid "type"
 msgstr ""
 
-#: kfmclient.cpp:84
+#: kfmclient.cpp:80
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "คำสั่ง (ดู --commands)"
 
-#: kfmclient.cpp:86
+#: kfmclient.cpp:82
 #, kde-format
 msgid "Arguments for command"
 msgstr "อาร์กิวเมนต์สำหรับคำสั่ง"
 
-#: kfmclient.cpp:88
+#: kfmclient.cpp:84
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr ""
 
-#: kfmclient.cpp:97
+#: kfmclient.cpp:93
 #, kde-format
 msgid ""
 "\n"
@@ -85,7 +85,7 @@ msgstr ""
 "\n"
 "ไวยากรณ์:\n"
 
-#: kfmclient.cpp:98
+#: kfmclient.cpp:94
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kfmclient openURL 'url' ['mimetype']\n"
@@ -109,7 +109,7 @@ msgstr ""
 "            #   ถ้าไม่ใส่ 'url' จะใช้ที่อยู่ตามตัวแปร $HOME แทน\n"
 "\n"
 
-#: kfmclient.cpp:103
+#: kfmclient.cpp:99
 #, fuzzy, kde-format
 #| msgid ""
 #| "            # If 'mimetype' is specified, it will be used to determine "
@@ -132,7 +132,7 @@ msgstr ""
 "            #   text/html สำหรับหน้าเว็บ เพื่อให้มันปรากฎอย่างรวดเร็ว\n"
 "\n"
 
-#: kfmclient.cpp:108
+#: kfmclient.cpp:104
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -146,19 +146,19 @@ msgstr ""
 "            #   บนหน้าต่างบนพื้นที่ทำงานที่อยู่(หากมี) และเรียกไปที่ที่อยู่ url \n"
 "\n"
 
-#: kfmclient.cpp:284
+#: kfmclient.cpp:280
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Not enough arguments\n"
 msgid "Syntax error, not enough arguments\n"
 msgstr "ไวยากรณ์ผิดพลาด: ใส่อาร์กิวเมนต์ไม่ครบ\n"
 
-#: kfmclient.cpp:288
+#: kfmclient.cpp:284
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Too many arguments\n"
 msgid "Syntax error, too many arguments\n"
 msgstr "ไวยากรณ์ผิดพลาด: มีอาร์กิวเมนต์หลายตัวเกินไป\n"
 
-#: kfmclient.cpp:343
+#: kfmclient.cpp:339
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Unknown command '%1'\n"
 msgid "Syntax error, unknown command '%1'\n"
