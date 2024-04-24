@@ -65,7 +65,6 @@ WebEnginePartControls::WebEnginePartControls(): QObject(),
     execScheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);
     QWebEngineUrlScheme::registerScheme(execScheme);
 
-    qApp->installEventFilter(new DefaultPaletteChangedHandler(qApp));
     Browser *browser = Browser::browser(qApp);
     if (browser) {
         connect(browser, &Browser::configurationChanged, this, &WebEnginePartControls::reparseConfiguration);
@@ -330,21 +329,4 @@ void WebEnginePartControls::setHttpUserAgent(const QString& uaString)
 QString WebEnginePartControls::defaultHttpUserAgent() const
 {
     return m_defaultUserAgent;
-}
-
-DefaultPaletteChangedHandler::DefaultPaletteChangedHandler(QObject* parent) : QObject(parent)
-{
-}
-
-DefaultPaletteChangedHandler::~DefaultPaletteChangedHandler() noexcept
-{
-}
-
-bool DefaultPaletteChangedHandler::eventFilter(QObject *obj, QEvent* e)
-{
-    Q_UNUSED(obj);
-    if(e->type() == QEvent::ApplicationPaletteChange) {
-        emit WebEnginePartControls::self()->updatePageBackground();
-    }
-    return false;
 }
