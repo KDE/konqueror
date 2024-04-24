@@ -101,6 +101,8 @@ public:
 
     QString settingsToCSS() const;
     QString userStyleSheet() const;
+    QColor customBackgroundColor() const;
+    bool addCustomBackgroundColorToStyleSheet() const;
 
     // Form completion
     bool isFormCompletionEnabled() const;

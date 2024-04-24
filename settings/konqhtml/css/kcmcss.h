@@ -15,6 +15,8 @@
 
 class QDialog;
 class CSSConfigWidget;
+class QButtonGroup;
+class QAbstractButton;
 
 class CSSCustomDialog: public QWidget, public Ui::CSSCustomDialog
 {
@@ -49,12 +51,17 @@ public Q_SLOTS:
 
     void slotCustomize();
 
+private Q_SLOTS:
+    void stylesheetChoiceChanged(QAbstractButton *btn, bool checked);
+    void useCustomBackgroundToggled(bool on);
+
 Q_SIGNALS:
     void changed();//connected to KCModule slot
 
 private:
 
     CSSConfigWidget *configWidget;
+    QButtonGroup *stylesheetChoicesGroup;
     QDialog *customDialogBase;
     CSSCustomDialog *customDialog;
 };

@@ -1,71 +1,80 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>CSSConfigWidget</class>
- <widget class="QWidget" name="CSSConfigWidget" >
-  <property name="whatsThis" >
-   <string>&lt;b>Stylesheets&lt;/b>&lt;p>See http://www.w3.org/Style/CSS for further information on cascading style sheets.&lt;/p></string>
+ <widget class="QWidget" name="CSSConfigWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>467</width>
+    <height>355</height>
+   </rect>
   </property>
-  <layout class="QVBoxLayout" >
+  <property name="whatsThis">
+   <string>&lt;b&gt;Stylesheets&lt;/b&gt;&lt;p&gt;See http://www.w3.org/Style/CSS for further information on cascading style sheets.&lt;/p&gt;</string>
+  </property>
+  <layout class="QVBoxLayout">
    <item>
-    <widget class="QGroupBox" name="ButtonGroup1" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Preferred" hsizetype="MinimumExpanding" >
+    <widget class="QGroupBox" name="ButtonGroup1">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="whatsThis" >
-      <string>&lt;b>Stylesheets&lt;/b>&lt;p>Use this groupbox to determine how Konqueror will render style sheets.&lt;/p></string>
+     <property name="whatsThis">
+      <string>&lt;b&gt;Stylesheets&lt;/b&gt;&lt;p&gt;Use this groupbox to determine how Konqueror will render style sheets.&lt;/p&gt;</string>
      </property>
-     <property name="title" >
+     <property name="title">
       <string>Stylesheets</string>
      </property>
-     <layout class="QVBoxLayout" >
+     <layout class="QVBoxLayout">
       <item>
-       <widget class="QRadioButton" name="useDefault" >
-        <property name="whatsThis" >
-         <string>&lt;b>Use default stylesheet&lt;/b>&lt;p>Select this option to use the default stylesheet.&lt;/p></string>
+       <widget class="QRadioButton" name="useDefault">
+        <property name="whatsThis">
+         <string>&lt;b&gt;Use default stylesheet&lt;/b&gt;&lt;p&gt;Select this option to use the default stylesheet.&lt;/p&gt;</string>
         </property>
-        <property name="text" >
+        <property name="text">
          <string>Us&amp;e default stylesheet</string>
         </property>
-        <property name="checked" >
+        <property name="checked">
          <bool>true</bool>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="useUser" >
-        <property name="whatsThis" >
-         <string>&lt;b>Use user-defined stylesheet&lt;/b>&lt;p>If this box is checked, Konqueror will try to load a user-defined style sheet as specified in the location below. The style sheet allows you to completely override the way web pages are rendered in your browser. The file specified should contain a valid style sheet (see http://www.w3.org/Style/CSS for further information on cascading style sheets).&lt;/p></string>
+       <widget class="QRadioButton" name="useUser">
+        <property name="whatsThis">
+         <string>&lt;b&gt;Use user-defined stylesheet&lt;/b&gt;&lt;p&gt;If this box is checked, Konqueror will try to load a user-defined style sheet as specified in the location below. The style sheet allows you to completely override the way web pages are rendered in your browser. The file specified should contain a valid style sheet (see http://www.w3.org/Style/CSS for further information on cascading style sheets).&lt;/p&gt;</string>
         </property>
-        <property name="text" >
+        <property name="text">
          <string>Use &amp;user-defined stylesheet</string>
         </property>
        </widget>
       </item>
       <item>
-       <layout class="QHBoxLayout" >
-        <property name="leftMargin" >
+       <layout class="QHBoxLayout">
+        <property name="leftMargin">
          <number>0</number>
         </property>
-        <property name="topMargin" >
+        <property name="topMargin">
          <number>0</number>
         </property>
-        <property name="rightMargin" >
+        <property name="rightMargin">
          <number>0</number>
         </property>
-        <property name="bottomMargin" >
+        <property name="bottomMargin">
          <number>0</number>
         </property>
         <item>
          <spacer>
-          <property name="orientation" >
+          <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
-          <property name="sizeType" >
+          <property name="sizeType">
            <enum>QSizePolicy::Fixed</enum>
           </property>
-          <property name="sizeHint" >
+          <property name="sizeHint" stdset="0">
            <size>
             <width>14</width>
             <height>20</height>
@@ -74,8 +83,8 @@
          </spacer>
         </item>
         <item>
-         <widget class="KUrlRequester" name="urlRequester" >
-          <property name="enabled" >
+         <widget class="KUrlRequester" name="urlRequester">
+          <property name="enabled">
            <bool>false</bool>
           </property>
          </widget>
@@ -83,44 +92,44 @@
        </layout>
       </item>
       <item>
-       <widget class="QRadioButton" name="useAccess" >
-        <property name="sizePolicy" >
-         <sizepolicy vsizetype="Fixed" hsizetype="MinimumExpanding" >
+       <widget class="QRadioButton" name="useAccess">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="whatsThis" >
-         <string>&lt;b>Use accessibility stylesheet&lt;/b>&lt;p>Selecting this option will allow you to define a default font, font size, and font color with a few simple clicks of the mouse. Simply wander over to the Customize... dialog and pick out your desired options.&lt;/p></string>
+        <property name="whatsThis">
+         <string>&lt;b&gt;Use accessibility stylesheet&lt;/b&gt;&lt;p&gt;Selecting this option will allow you to define a default font, font size, and font color with a few simple clicks of the mouse. Simply wander over to the Customize... dialog and pick out your desired options.&lt;/p&gt;</string>
         </property>
-        <property name="text" >
+        <property name="text">
          <string>U&amp;se accessibility stylesheet</string>
         </property>
        </widget>
       </item>
       <item>
-       <layout class="QHBoxLayout" >
-        <property name="leftMargin" >
+       <layout class="QHBoxLayout">
+        <property name="leftMargin">
          <number>0</number>
         </property>
-        <property name="topMargin" >
+        <property name="topMargin">
          <number>0</number>
         </property>
-        <property name="rightMargin" >
+        <property name="rightMargin">
          <number>0</number>
         </property>
-        <property name="bottomMargin" >
+        <property name="bottomMargin">
          <number>0</number>
         </property>
         <item>
          <spacer>
-          <property name="orientation" >
+          <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
-          <property name="sizeType" >
+          <property name="sizeType">
            <enum>QSizePolicy::Fixed</enum>
           </property>
-          <property name="sizeHint" >
+          <property name="sizeHint" stdset="0">
            <size>
             <width>14</width>
             <height>20</height>
@@ -129,24 +138,24 @@
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="customize" >
-          <property name="enabled" >
+         <widget class="QPushButton" name="customize">
+          <property name="enabled">
            <bool>false</bool>
           </property>
-          <property name="text" >
+          <property name="text">
            <string>Custom&amp;ize...</string>
           </property>
          </widget>
         </item>
         <item>
          <spacer>
-          <property name="orientation" >
+          <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
-          <property name="sizeType" >
+          <property name="sizeType">
            <enum>QSizePolicy::Expanding</enum>
           </property>
-          <property name="sizeHint" >
+          <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
             <height>20</height>
@@ -160,14 +169,59 @@
     </widget>
    </item>
    <item>
+    <widget class="QGroupBox" name="customPageBackgroundBox">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="title">
+      <string>Custom Page Background</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QCheckBox" name="useCustomBackgroundColor">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;Use a custom background color for web pages. This color is used:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;when the background color isn't explicitly set by the page or by a custom stylesheet&lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;before a web page is loaded&lt;/li&gt;&lt;/ul&gt;&lt;p align=&quot;justify&quot;&gt;Setting a custom background color is mostly useful if you use a custom stylesheet which sets a background color for the page (especially a dark color), to avoid a white flash before the page is loaded&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Use custom &amp;background color</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="KColorButton" name="customBackgroundColor">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The custom background color to use for web pages&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="addCustomBackgroundToStyleSheet">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;Add to your custom stylesheet (including the accessibility stylesheet) a rule to set all background colors to the custom color you chose above. This avoids the need of setting the background color both in the stylesheet and in the configuration dialog.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Notes:&lt;/span&gt;&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;the rule will be overridden by other rules for background colors in your custom stylesheet following the usual CSS rules&lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;the rule isn't actually added to the file containing your custom stylesheet; it's only inserted in the copy Konqueror keeps in memory. This means that if you use the stylesheet in other browsers, you'll need to manually add the rule to it.&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Add custom background color to stylesheet</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
     <spacer>
-     <property name="orientation" >
+     <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeType" >
+     <property name="sizeType">
       <enum>QSizePolicy::Expanding</enum>
      </property>
-     <property name="sizeHint" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
        <height>50</height>
@@ -180,13 +234,18 @@
  <customwidgets>
   <customwidget>
    <class>KUrlRequester</class>
-   <extends>QFrame</extends>
+   <extends>QWidget</extends>
    <header>kurlrequester.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KColorButton</class>
+   <extends>QPushButton</extends>
+   <header>kcolorbutton.h</header>
   </customwidget>
  </customwidgets>
  <includes>
-  <include location="local" >kurlrequester.h</include>
-  <include location="local" >klineedit.h</include>
+  <include location="local">kurlrequester.h</include>
+  <include location="local">klineedit.h</include>
  </includes>
  <resources/>
  <connections>
@@ -196,11 +255,11 @@
    <receiver>customize</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>20</x>
      <y>20</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>20</x>
      <y>20</y>
     </hint>
@@ -212,11 +271,11 @@
    <receiver>urlRequester</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>20</x>
      <y>20</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>20</x>
      <y>20</y>
     </hint>
