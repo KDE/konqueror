@@ -183,7 +183,7 @@ void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup &parent)
                 m_toolBar->addAction(action);
             }
             d->m_actions.append(action);
-            KBookmarkMenu *menu = new Konqueror::KonqBookmarkMenu(m_pManager, m_pOwner, action, bm.address(), m_actionCollection);
+            KBookmarkMenu *menu = new Konqueror::KonqBookmarkMenu(m_pManager, m_pOwner, action, bm.address());
             m_lstSubMenus.append(menu);
         }
     }
