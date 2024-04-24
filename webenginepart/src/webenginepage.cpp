@@ -114,6 +114,8 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     WebEnginePartControls::self()->navigationRecorder()->registerPage(this);
     m_part->downloadManager()->addPage(this);
 
+    setBackgroundColor(WebEngineSettings::self()->customBackgroundColor());
+    connect(WebEnginePartControls::self(), &WebEnginePartControls::updateBackgroundColor, this, [this](const QColor &color){setBackgroundColor(color);});
     connect(WebEnginePartControls::self(), &WebEnginePartControls::updateStyleSheet, this, &WebEnginePage::updateUserStyleSheet);
 }
 

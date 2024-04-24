@@ -68,6 +68,7 @@ signals:
      * @param script the source of the javascript script to run to update the stylesheet
      */
     void updateStyleSheet(const QString &script);
+    void updateBackgroundColor(const QColor &color);
 
 private:
 

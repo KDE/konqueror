@@ -7,6 +7,7 @@
 #include <QDialogButtonBox>
 #include <QUrl>
 #include <QStandardPaths>
+#include <QButtonGroup>
 
 // KDE
 #include <KColorButton>
@@ -34,6 +35,7 @@ public:
 CSSConfig::CSSConfig(QWidget *parent, const QVariantList &)
     : QWidget(parent)
     , configWidget(new CSSConfigWidget(this))
+    , stylesheetChoicesGroup(new QButtonGroup(this))
     , customDialogBase(new QDialog(this))
     , customDialog(new CSSCustomDialog(customDialogBase))
 {
@@ -42,6 +44,10 @@ CSSConfig::CSSConfig(QWidget *parent, const QVariantList &)
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, customDialogBase);
     buttonBox->button(QDialogButtonBox::Close)->setDefault(true);
     connect(buttonBox, &QDialogButtonBox::rejected, customDialogBase, &QDialog::reject);
+
+    stylesheetChoicesGroup->addButton(configWidget->useDefault);
+    stylesheetChoicesGroup->addButton(configWidget->useUser);
+    stylesheetChoicesGroup->addButton(configWidget->useAccess);
 
     QVBoxLayout *vLayout = new QVBoxLayout(customDialogBase);
     vLayout->addWidget(customDialog);
@@ -64,6 +70,10 @@ CSSConfig::CSSConfig(QWidget *parent, const QVariantList &)
     connect(configWidget->useUser,       &QAbstractButton::clicked,    this, &CSSConfig::changed);
     connect(configWidget->urlRequester,  &KUrlRequester::textChanged,  this, &CSSConfig::changed);
     connect(configWidget->customize,     &QAbstractButton::clicked,    this, &CSSConfig::slotCustomize);
+    connect(configWidget->useCustomBackgroundColor, &QCheckBox::toggled, this, &CSSConfig::useCustomBackgroundToggled);
+    connect(configWidget->customBackgroundColor, &KColorButton::changed, this, &CSSConfig::changed);
+    connect(configWidget->addCustomBackgroundToStyleSheet, &QCheckBox::toggled, this, &CSSConfig::useCustomBackgroundToggled);
+    connect(stylesheetChoicesGroup, &QButtonGroup::buttonToggled, this, &CSSConfig::stylesheetChoiceChanged);
     connect(customDialog,                &CSSCustomDialog::changed,    this, &CSSConfig::changed);
 
     QVBoxLayout *vbox = new QVBoxLayout(this);
@@ -82,6 +92,7 @@ void CSSConfig::load()
     configWidget->useUser->setChecked(u == QLatin1String("user"));
     configWidget->useAccess->setChecked(u == QLatin1String("access"));
     configWidget->urlRequester->setUrl(QUrl::fromUserInput(group.readEntry("SheetName")));
+
 
     group = c->group("Font");
     customDialog->basefontsize->setEditText(QString::number(group.readEntry("BaseSize", 12)));
@@ -115,6 +126,21 @@ void CSSConfig::load()
     customDialog->hideBackground->setChecked(group.readEntry("HideBackground", true));
 
     delete c;
+
+    c = new KConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals);
+    group = c->group("HTML Settings");
+    bool useCustomBackground = group.readEntry("UseCustomBackground", false);
+    configWidget->useCustomBackgroundColor->setChecked(useCustomBackground);
+    QColor backgroundColor = useCustomBackground ? group.readEntry("CustomBackgrundColor", QColor()) : QColor();
+    QCheckBox *checkBox = configWidget->addCustomBackgroundToStyleSheet;
+    configWidget->customBackgroundColor->setColor(backgroundColor);
+    if (u == QLatin1String("default")) {
+        checkBox->setEnabled(false);
+        checkBox->setChecked(false);
+    } else {
+        checkBox->setEnabled(true);
+        checkBox->setChecked(group.readEntry("AddCustomBackgroundToStyleSheet", false));
+    }
 }
 
 void CSSConfig::save()
@@ -183,6 +209,12 @@ void CSSConfig::save()
         group.writeEntry("UserStyleSheet", dest);
     }
 
+    group.writeEntry("UseCustomBackground", configWidget->useCustomBackgroundColor->isChecked());
+    if (configWidget->useCustomBackgroundColor->isChecked()) {
+        group.writeEntry("CustomBackgrundColor", configWidget->customBackgroundColor->color());
+        QCheckBox *checkBox = configWidget->addCustomBackgroundToStyleSheet;
+        group.writeEntry("AddCustomBackgroundToStyleSheet", checkBox->isEnabled() && checkBox->isChecked());
+    }
     c->sync();
     delete c;
 }
@@ -193,6 +225,10 @@ void CSSConfig::defaults()
     configWidget->useUser->setChecked(false);
     configWidget->useAccess->setChecked(false);
     configWidget->urlRequester->setUrl(QUrl());
+    configWidget->useCustomBackgroundColor->setChecked(false);
+    configWidget->customBackgroundColor->setColor(QColor());
+    configWidget->addCustomBackgroundToStyleSheet->setEnabled(false);
+    configWidget->addCustomBackgroundToStyleSheet->setChecked(false);
 
     customDialog->basefontsize->setEditText(QString::number(12));
     customDialog->dontScale->setChecked(false);
@@ -215,6 +251,20 @@ void CSSConfig::defaults()
 
     customDialog->hideImages->setChecked(false);
     customDialog->hideBackground->setChecked(true);
+}
+
+void CSSConfig::stylesheetChoiceChanged(QAbstractButton* btn, bool checked)
+{
+    if (!checked) {
+        return;
+    }
+    configWidget->addCustomBackgroundToStyleSheet->setEnabled(btn != configWidget->useDefault);
+}
+
+void CSSConfig::useCustomBackgroundToggled(bool on)
+{
+    configWidget->customBackgroundColor->setEnabled(on);
+    changed();
 }
 
 static QString px(int i, double scale)

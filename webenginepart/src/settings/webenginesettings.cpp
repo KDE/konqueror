@@ -120,6 +120,8 @@ public:
 
     QString m_encoding;
     QString m_userSheet;
+    QColor m_customBackgroundColor;
+    bool m_addCustomBackgroundColorToStyleSheet;
 
     QColor m_textColor;
     QColor m_baseColor;
@@ -497,6 +499,14 @@ void WebEngineSettings::init( KConfig * config, bool reset )
         d->m_userSheet.clear();
     }
 
+    if (reset || !cgHtml.readEntry("UseCustomBackground", false)) {
+        d->m_customBackgroundColor = QColor(Qt::white);
+        d->m_addCustomBackgroundColorToStyleSheet = false;
+    } else {
+        d->m_customBackgroundColor = cgHtml.readEntry("CustomBackgrundColor", QColor(Qt::white));
+        d->m_addCustomBackgroundColorToStyleSheet = cgHtml.readEntry("AddCustomBackgroundToStyleSheet", false);
+    }
+
     if (reset || cgHtml.hasKey("InternalPdfViewer")) {
         d->m_internalPdfViewer = cgHtml.readEntry("InternalPdfViewer", false);
     }
@@ -732,6 +742,15 @@ void WebEngineSettings::init( KConfig * config, bool reset )
 
 }
 
+QColor WebEngineSettings::customBackgroundColor() const
+{
+    return d->m_customBackgroundColor;
+}
+
+bool WebEngineSettings::addCustomBackgroundColorToStyleSheet() const
+{
+    return d->m_addCustomBackgroundColorToStyleSheet;
+}
 
 void WebEngineSettings::computeFontSizes( int logicalDpi )
 {

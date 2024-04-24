@@ -247,6 +247,7 @@ void WebEnginePartControls::reparseConfiguration()
         m_profile->setHttpCacheType(QWebEngineProfile::NoCache);
     }
 
+    emit updateBackgroundColor(WebEngineSettings::self()->customBackgroundColor());
     updateUserStyleSheetScript();
 }
 
@@ -262,7 +263,7 @@ void WebEnginePartControls::updateUserStyleSheetScript()
     }
     QUrl userStyleSheetUrl(WebEngineSettings::self()->userStyleSheet());
     bool userStyleSheetEnabled = !userStyleSheetUrl.isEmpty();
-    //If the user stylesheet is disable and it was already disabled, there's nothing to do; if there was a custom stylesheet in use,
+    //If the user stylesheet is disabled and it was already disabled, there's nothing to do; if there was a custom stylesheet in use,
     //we'll have to remove it, so we can't return
     if (!userStyleSheetEnabled && !hadUserStyleSheet) {
         return;
@@ -285,6 +286,12 @@ void WebEnginePartControls::updateUserStyleSheetScript()
                 return;
             }
             userStyleSheetEnabled = false;
+        }
+
+        if (WebEngineSettings::self()->addCustomBackgroundColorToStyleSheet()) {
+            QColor color = WebEngineSettings::self()->customBackgroundColor();
+            QString backgroundRule = QString("* {background-color: rgb(%1, %2, %3);}\n").arg(color.red()).arg(color.green()).arg(color.blue());
+            css.prepend(backgroundRule);
         }
     }
 
