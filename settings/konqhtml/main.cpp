@@ -47,11 +47,11 @@ KJSParts::KJSParts(QObject *parent, const KPluginMetaData &md, const QVariantLis
     // ### the groupname is duplicated in KJSParts::save
     java = new KJavaOptions(mConfig, QStringLiteral("Java/JavaScript Settings"), widget());
     tab->addTab(java->widget(), i18n("&Java"));
-    connect(java, &KJavaOptions::needsSaveChanged, this, &KJSParts::needsSaveChanged);
+    connect(java, &KJavaOptions::needsSaveChanged, this, &KJSParts::updateNeedsSave);
 
     javascript = new KJavaScriptOptions(mConfig, QStringLiteral("Java/JavaScript Settings"), widget());
     tab->addTab(javascript->widget(), i18n("Java&Script"));
-    connect(javascript, &KJavaScriptOptions::needsSaveChanged, this, &KJSParts::needsSaveChanged);
+    connect(javascript, &KJavaScriptOptions::needsSaveChanged, this, &KJSParts::updateNeedsSave);
 }
 
 void KJSParts::load()
@@ -89,4 +89,9 @@ void KJSParts::defaults()
     javascript->defaults();
     java->defaults();
     setRepresentsDefaults(true);
+}
+
+void KJSParts::updateNeedsSave()
+{
+    setNeedsSave(javascript->needsSave() || java->needsSave());
 }

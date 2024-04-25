@@ -34,6 +34,9 @@ public:
     void save() override;
     void defaults() override;
 
+private Q_SLOTS:
+    void updateNeedsSave();
+
 private:
     QTabWidget   *tab;
 
