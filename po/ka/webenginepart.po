@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2024-04-25 00:38+0000\n"
 "PO-Revision-Date: 2024-03-25 04:56+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -862,12 +862,12 @@ msgstr "ფანჯრის დახურვისას ფორმის 
 msgid "&Immediately memorize form data"
 msgstr "&ფორმის მონაცემების დაუყოვნებლივი დამახსოვრება"
 
-#: src/webenginepage.cpp:160 src/webenginepage.cpp:184
+#: src/webenginepage.cpp:151 src/webenginepage.cpp:175
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "გადმოწერების მმართველი (%1) თქვენს დაყენებულ პროგრამებში ვერ ვიპოვე."
 
-#: src/webenginepage.cpp:161 src/webenginepage.cpp:185
+#: src/webenginepage.cpp:152 src/webenginepage.cpp:176
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -878,7 +878,7 @@ msgstr ""
 "\n"
 "ინტეგრაცია გაითიშება."
 
-#: src/webenginepage.cpp:412
+#: src/webenginepage.cpp:403
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -892,12 +892,12 @@ msgstr ""
 "თავიდან აიცილოთ. სხვა შემთხვევაში დააჭირეთ გაგრძელების ღილაკს და ვებგვერდი "
 "თავიდან ჩაიტვირთება.</p>"
 
-#: src/webenginepage.cpp:419
+#: src/webenginepage.cpp:410
 #, kde-format
 msgid "Resubmit Information"
 msgstr "ინფორმაციის თავიდან გადაცემა"
 
-#: src/webenginepage.cpp:613
+#: src/webenginepage.cpp:604
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -907,18 +907,18 @@ msgstr ""
 "შესახებ.\n"
 "გნებავთ, მისცეთ მას ეს წვდომა?"
 
-#: src/webenginepage.cpp:617 src/webenginepage.cpp:695
-#: src/webenginepage.cpp:706
+#: src/webenginepage.cpp:608 src/webenginepage.cpp:686
+#: src/webenginepage.cpp:697
 #, kde-format
 msgid "Network Transmission"
 msgstr "ქელით გადაცემა"
 
-#: src/webenginepage.cpp:618
+#: src/webenginepage.cpp:609
 #, kde-format
 msgid "Allow access"
 msgstr "წვდომის დაშვება"
 
-#: src/webenginepage.cpp:688
+#: src/webenginepage.cpp:679
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -931,12 +931,12 @@ msgstr ""
 "მესამე მხარეს ამ მონაცემთა გადაჭერა და ნახვა შეუძლია.\n"
 "დარწმუნებული ბრძანდებით, რომ გნებავთ, ეს მონაცემები დაუშიფრავად გააგზავნოთ?"
 
-#: src/webenginepage.cpp:696
+#: src/webenginepage.cpp:687
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "და&უშიფრავად გაგზავნა"
 
-#: src/webenginepage.cpp:703
+#: src/webenginepage.cpp:694
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -945,12 +945,12 @@ msgstr ""
 "საიტი ცდილობს ფორმის მონაცემების ელფოსტით გაგზავნას.\n"
 "გსურთ გაგრძელება?"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:698
 #, kde-format
 msgid "&Send Email"
 msgstr "&ელფოსტის გაგზავნა"
 
-#: src/webenginepage.cpp:756
+#: src/webenginepage.cpp:747
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -958,22 +958,22 @@ msgid ""
 msgstr ""
 "<qt>გნებავთ, მისცეთ ამ ვებგვერდს უფლება, ელფოსტებს ფაილები მიამაგროს?</qt>"
 
-#: src/webenginepage.cpp:758
+#: src/webenginepage.cpp:749
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "ელფოსტაზე მიმაგრების დადასტურება"
 
-#: src/webenginepage.cpp:759
+#: src/webenginepage.cpp:750
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&მიმაგრებული ფაილების დაშვება"
 
-#: src/webenginepage.cpp:760
+#: src/webenginepage.cpp:751
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&მიმაგრებული ფაილების იგნორი"
 
-#: src/webenginepage.cpp:774
+#: src/webenginepage.cpp:765
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -982,12 +982,12 @@ msgstr ""
 "საიტი ცდილობს თქვენი კომპიუტერის ფაილის გასაგზავნ ფორმაში ჩართვას. "
 "უსაფრთხოების მიზნით დანართი ფაილი ამოიშლება."
 
-#: src/webenginepage.cpp:777
+#: src/webenginepage.cpp:768
 #, kde-format
 msgid "Attachment Removed"
 msgstr "მიმაგრებული ფაილი წაშლილია"
 
-#: src/webenginepage.cpp:891
+#: src/webenginepage.cpp:882
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -996,7 +996,7 @@ msgstr ""
 "ეს საიტი ახალი მხტუნარა ფანჯრის გახსნას ცდილობს.\n"
 "დავუშვათ ეს?"
 
-#: src/webenginepage.cpp:893
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1005,17 +1005,17 @@ msgstr ""
 "<qt>ეს ვებგვერდი ითხოვს მხტუნარა ფანჯრის გახსნას <p>%1</p><br/>დავუშვათ ეს?</"
 "qt>"
 
-#: src/webenginepage.cpp:896
+#: src/webenginepage.cpp:887
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript -ის მხტუნარის დადასტურება"
 
-#: src/webenginepage.cpp:897
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Allow"
 msgstr "დაშვება"
 
-#: src/webenginepage.cpp:897
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Do Not Allow"
 msgstr "აკრძალვა"
@@ -1307,7 +1307,7 @@ msgstr "&სათაური"
 msgid "&Issuer"
 msgstr "&გამომცემელი"
 
-#: src/webenginepartcontrols.cpp:282
+#: src/webenginepartcontrols.cpp:281
 #, kde-format
 msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
@@ -1343,135 +1343,135 @@ msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
 msgstr "%1 შევინახე, როგორც %2"
 
-#: src/webengineview.cpp:352
+#: src/webengineview.cpp:351
 #, kde-format
 msgid "Save Image As..."
 msgstr "ნახატის შენახვა როგორც..."
 
-#: src/webengineview.cpp:357
+#: src/webengineview.cpp:356
 #, kde-format
 msgid "Send Image..."
 msgstr "ნახატის გაგზავნა..."
 
-#: src/webengineview.cpp:362
+#: src/webengineview.cpp:361
 #, kde-format
 msgid "Copy Image URL"
 msgstr "სურათის URL-ის კოპირება"
 
-#: src/webengineview.cpp:368
+#: src/webengineview.cpp:367
 #, kde-format
 msgid "Copy Image"
 msgstr "ნახატის კოპირება"
 
-#: src/webengineview.cpp:375
+#: src/webengineview.cpp:374
 #, kde-format
 msgid "View Image (%1)"
 msgstr "ნახატის ჩვენება (%1)"
 
-#: src/webengineview.cpp:381
+#: src/webengineview.cpp:380
 #, kde-format
 msgid "Block Image..."
 msgstr "ბლოკის ნახატი..."
 
-#: src/webengineview.cpp:389
+#: src/webengineview.cpp:388
 #, kde-format
 msgid "Block Images From %1"
 msgstr "ბლოკის ნახატები %1-დან"
 
-#: src/webengineview.cpp:419 src/webengineview.cpp:456
+#: src/webengineview.cpp:418 src/webengineview.cpp:455
 #, kde-format
 msgid "&Copy Text"
 msgstr "ტექსტის &კოპირება"
 
-#: src/webengineview.cpp:429
+#: src/webengineview.cpp:428
 #, kde-format
 msgctxt "open selected url"
 msgid "Open '%1'"
 msgstr "გახსნა - '%1'"
 
-#: src/webengineview.cpp:462
+#: src/webengineview.cpp:461
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "ელფოსტის მისამართის &კოპირება"
 
-#: src/webengineview.cpp:468
+#: src/webengineview.cpp:467
 #, kde-format
 msgid "Copy Link &Text"
 msgstr "ბმულის &ტექსტის კოპირება"
 
-#: src/webengineview.cpp:474
+#: src/webengineview.cpp:473
 #, kde-format
 msgid "Copy Link &URL"
 msgstr "ბმულის URL-ის კოპირება"
 
-#: src/webengineview.cpp:479
+#: src/webengineview.cpp:478
 #, kde-format
 msgid "&Save Link As..."
 msgstr "ბმის &შენახვა როგორც..."
 
-#: src/webengineview.cpp:499
+#: src/webengineview.cpp:498
 #, kde-format
 msgid "&Play/Pause"
 msgstr "&დაკვრა/პაუზა"
 
-#: src/webengineview.cpp:504
+#: src/webengineview.cpp:503
 #, kde-format
 msgid "Un&mute/&Mute"
 msgstr "&დადუმება/დადუმების მოხსნა"
 
-#: src/webengineview.cpp:509
+#: src/webengineview.cpp:508
 #, kde-format
 msgid "Toggle &Loop"
 msgstr "მარყუჟის &გადართვა"
 
-#: src/webengineview.cpp:514
+#: src/webengineview.cpp:513
 #, kde-format
 msgid "Toggle &Controls"
 msgstr "საკონტროლო &ღილაკების გადართვა"
 
-#: src/webengineview.cpp:525
+#: src/webengineview.cpp:524
 #, kde-format
 msgid "Sa&ve Video As..."
 msgstr "&ვიდეოს შენახვა, როგორც..."
 
-#: src/webengineview.cpp:526
+#: src/webengineview.cpp:525
 #, kde-format
 msgid "C&opy Video URL"
 msgstr "&ვიდეოს ბმულის კოპირება"
 
-#: src/webengineview.cpp:528
+#: src/webengineview.cpp:527
 #, kde-format
 msgid "Sa&ve Audio As..."
 msgstr "&აუდიოს შენახვა, როგორც..."
 
-#: src/webengineview.cpp:529
+#: src/webengineview.cpp:528
 #, kde-format
 msgid "C&opy Audio URL"
 msgstr "აუდიოს ბმულის &კოპირება"
 
-#: src/webengineview.cpp:531
+#: src/webengineview.cpp:530
 #, kde-format
 msgid "Sa&ve Media As..."
 msgstr "მედიის შენახვა, როგორც..."
 
-#: src/webengineview.cpp:532
+#: src/webengineview.cpp:531
 #, kde-format
 msgid "C&opy Media URL"
 msgstr "მედიის ბმულის &კოპირება"
 
-#: src/webengineview.cpp:585
+#: src/webengineview.cpp:584
 #, kde-format
 msgctxt "Search \"search provider\" for \"text\""
 msgid "Search %1 for '%2'"
 msgstr "%1-ში %2-ის მოძებნა"
 
-#: src/webengineview.cpp:596
+#: src/webengineview.cpp:595
 #, kde-format
 msgctxt "Search for \"text\" with"
 msgid "Search for '%1' with"
 msgstr "'%1'-ის მოძებნა მოხდება"
 
-#: src/webengineview.cpp:609
+#: src/webengineview.cpp:608
 #, kde-format
 msgid "Configure Web Shortcuts..."
 msgstr "ვებ მალსახმობების მორგება..."
