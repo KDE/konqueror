@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-24 02:56+0000\n"
+"POT-Creation-Date: 2024-04-25 02:26+0000\n"
 "PO-Revision-Date: 2019-11-05 18:25+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
@@ -508,8 +508,8 @@ msgid ""
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4793
-#: src/konqmainwindow.cpp:4839
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4786
+#: src/konqmainwindow.cpp:4832
 #, kde-format
 msgid "no name"
 msgstr "no name"
@@ -614,7 +614,7 @@ msgstr "Staðvært"
 msgid "Miscellaneous"
 msgstr "Ýmislegt"
 
-#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4309
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4302
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Opna í nýjum &glugga"
@@ -709,7 +709,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2225
 #: src/konqmainwindow.cpp:2314 src/konqmainwindow.cpp:2346
 #: src/konqmainwindow.cpp:2389 src/konqmainwindow.cpp:2411
-#: src/konqmainwindow.cpp:4758
+#: src/konqmainwindow.cpp:4751
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -718,7 +718,7 @@ msgstr "Henda breytingunum?"
 #: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2225
 #: src/konqmainwindow.cpp:2314 src/konqmainwindow.cpp:2346
 #: src/konqmainwindow.cpp:2389 src/konqmainwindow.cpp:2412
-#: src/konqmainwindow.cpp:4758
+#: src/konqmainwindow.cpp:4751
 #, kde-format
 msgid "&Discard Changes"
 msgstr "H&enda breytingunum"
@@ -1077,17 +1077,17 @@ msgstr ""
 msgid "&Bookmarks"
 msgstr "&Bókamerki"
 
-#: src/konqmainwindow.cpp:3562
+#: src/konqmainwindow.cpp:3555
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "Inngangur að Kon&queror"
 
-#: src/konqmainwindow.cpp:3567
+#: src/konqmainwindow.cpp:3560
 #, kde-format
 msgid "Go"
 msgstr "Fara"
 
-#: src/konqmainwindow.cpp:3569
+#: src/konqmainwindow.cpp:3562
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
@@ -1096,7 +1096,7 @@ msgstr ""
 "<html>Fara<br /><br />Fara á síðuna sem slegin hefur verið inn í "
 "staðsetningarslána.</html>"
 
-#: src/konqmainwindow.cpp:3577
+#: src/konqmainwindow.cpp:3570
 #, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
@@ -1106,27 +1106,27 @@ msgstr ""
 "<html>Fara í yfirmöppu <br /><br />T.d. ef núverandi staða er file:/home/%1 "
 "og þú smellir á þennan hnapp, þá ferðu á file:/home.</html>"
 
-#: src/konqmainwindow.cpp:3580
+#: src/konqmainwindow.cpp:3573
 #, kde-format
 msgid "Enter the parent folder"
 msgstr "Fara á yfirmöppu"
 
-#: src/konqmainwindow.cpp:3582 src/konqmainwindow.cpp:3583
+#: src/konqmainwindow.cpp:3575 src/konqmainwindow.cpp:3576
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "Fara aftur eitt skref í vafurferli"
 
-#: src/konqmainwindow.cpp:3585 src/konqmainwindow.cpp:3586
+#: src/konqmainwindow.cpp:3578 src/konqmainwindow.cpp:3579
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "Fara fram eitt skref í vafurferli"
 
-#: src/konqmainwindow.cpp:3588 src/konqmainwindow.cpp:3589
+#: src/konqmainwindow.cpp:3581 src/konqmainwindow.cpp:3582
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
 msgstr "Fara aftur eitt skref í sögu lokaðra flipa"
 
-#: src/konqmainwindow.cpp:3591
+#: src/konqmainwindow.cpp:3584
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1137,12 +1137,12 @@ msgstr ""
 "nauðsynlegt til að endurnýja vefsíður sem gætu hafa breyst síðan þær voru "
 "sóttar síðast, til að gera breytingar sýnilegar.</html>"
 
-#: src/konqmainwindow.cpp:3594
+#: src/konqmainwindow.cpp:3587
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "Endurlesa núvarandi skjal"
 
-#: src/konqmainwindow.cpp:3596
+#: src/konqmainwindow.cpp:3589
 #, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1153,12 +1153,12 @@ msgstr ""
 "verið nauðsynlegt til að endurnýja vefsíður sem hafa breyst síðan þær voru "
 "sóttar síðast, til að gera breytingar sýnilegar.</html>"
 
-#: src/konqmainwindow.cpp:3599
+#: src/konqmainwindow.cpp:3592
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr "Endurlesa öll skjöl sem nú eru birt í flipunum"
 
-#: src/konqmainwindow.cpp:3601
+#: src/konqmainwindow.cpp:3594
 #, kde-format
 msgid ""
 "<html>Stop loading the document<br /><br />All network transfers will be "
@@ -1168,7 +1168,7 @@ msgstr ""
 "<html>Stöðva hleðslu skjals<br /><br />Öll móttaka gagna verður stöðvuð og "
 "Konqueror mun sýna innihald skjalsins eins og komið var.</html>"
 
-#: src/konqmainwindow.cpp:3605
+#: src/konqmainwindow.cpp:3598
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1181,19 +1181,19 @@ msgstr ""
 "sóttar síðast, til að gera breytingar sýnilegar. Allar myndir á síðunni eru "
 "endurnýjaðar, jafnvel þót þær séu til í diskminni.</html>"
 
-#: src/konqmainwindow.cpp:3609
+#: src/konqmainwindow.cpp:3602
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr ""
 "Þvinga endurlestur skjalsins hér er birt og allra mynda sem því tilheyra"
 
-#: src/konqmainwindow.cpp:3611
+#: src/konqmainwindow.cpp:3604
 #, kde-format
 msgid "Stop loading the document"
 msgstr "Stöðva hleðslu skjalsins"
 
-#: src/konqmainwindow.cpp:3613
+#: src/konqmainwindow.cpp:3606
 #, kde-format
 msgid ""
 "<html>Cut the currently selected text or item(s) and move it to the system "
@@ -1204,12 +1204,12 @@ msgstr ""
 "flytja á klippiborð kerfisins<br /><br />Þannig verður það aðgengilegt "
 "<b>Líma</b> skipuninni í Konqueror og öðrum KDE forritum.</html>"
 
-#: src/konqmainwindow.cpp:3617
+#: src/konqmainwindow.cpp:3610
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr "Flytur valinn texta eða hluti á klippiborðið"
 
-#: src/konqmainwindow.cpp:3619
+#: src/konqmainwindow.cpp:3612
 #, kde-format
 msgid ""
 "<html>Copy the currently selected text or item(s) to the system "
@@ -1220,12 +1220,12 @@ msgstr ""
 "á klippiborð kerfisins<br /><br />Þannig verður það aðgengilegt <b>Líma</b> "
 "skipuninni í Konqueror og öðrum KDE forritum.</html>"
 
-#: src/konqmainwindow.cpp:3623
+#: src/konqmainwindow.cpp:3616
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr "Afritar valinn texta eða hluti á klippiborðið"
 
-#: src/konqmainwindow.cpp:3625
+#: src/konqmainwindow.cpp:3618
 #, kde-format
 msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
@@ -1235,12 +1235,12 @@ msgstr ""
 "afritaðir á klippiborðið<br /><br />Þetta virkar einnig fyrir texta sem "
 "klipptur hefur verið eða afritaður úr öðrum KDE forritum.</html>"
 
-#: src/konqmainwindow.cpp:3628
+#: src/konqmainwindow.cpp:3621
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "Límir innihald klippiborðsins"
 
-#: src/konqmainwindow.cpp:3630
+#: src/konqmainwindow.cpp:3623
 #, kde-format
 msgid ""
 "<html>Print the currently displayed document<br /><br />You will be "
@@ -1254,12 +1254,12 @@ msgstr ""
 "nota. <br /><br /> Þessi valskjár gefur einnig aðgengi að serstökum "
 "prentþjónustum KDE eins og að búa til PDF skjal úr núverandi skjali.</html>"
 
-#: src/konqmainwindow.cpp:3636
+#: src/konqmainwindow.cpp:3629
 #, kde-format
 msgid "Print the current document"
 msgstr "Prenta núverandi skjal"
 
-#: src/konqmainwindow.cpp:3638
+#: src/konqmainwindow.cpp:3631
 #, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
@@ -1268,7 +1268,7 @@ msgstr ""
 "Læst sýn getur ekki breytt möppum. Notist ásamt 'tenglasýn' til að skoða "
 "margar skrár í einni möppu"
 
-#: src/konqmainwindow.cpp:3639
+#: src/konqmainwindow.cpp:3632
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
@@ -1277,35 +1277,35 @@ msgstr ""
 "Gerir sýnina 'tengda'. Tengd sýn eltir möppubreytingar sem aðrir tengdir "
 "gluggar framkvæma."
 
-#: src/konqmainwindow.cpp:3643
+#: src/konqmainwindow.cpp:3636
 #, fuzzy, kde-format
 #| msgid "C&lose Current Tab"
 msgid "&Inspect Current Page"
 msgstr "Loka núverandi f&lipa"
 
-#: src/konqmainwindow.cpp:3644
+#: src/konqmainwindow.cpp:3637
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3645
+#: src/konqmainwindow.cpp:3638
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3807
+#: src/konqmainwindow.cpp:3800
 #, kde-format
 msgid "Copy &Files..."
 msgstr "A&frita skrár..."
 
-#: src/konqmainwindow.cpp:3811
+#: src/konqmainwindow.cpp:3804
 #, kde-format
 msgid "M&ove Files..."
 msgstr "Fæ&ra skrár..."
 
-#: src/konqmainwindow.cpp:4137
+#: src/konqmainwindow.cpp:4130
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
@@ -1314,79 +1314,79 @@ msgstr ""
 "Þú hefur beðið um að opna í flipum fleiri en 20 bókamerki í einu. Þetta gæti "
 "tekið nokkurn tíma. Viltu halda áfram?"
 
-#: src/konqmainwindow.cpp:4139
+#: src/konqmainwindow.cpp:4132
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "Opna bókamerkjamöppu í nýjum flipum"
 
-#: src/konqmainwindow.cpp:4140
+#: src/konqmainwindow.cpp:4133
 #, fuzzy, kde-format
 #| msgid "&Open"
 msgctxt "@action:button"
 msgid "Open"
 msgstr "&Opna"
 
-#: src/konqmainwindow.cpp:4302
+#: src/konqmainwindow.cpp:4295
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "Opna í &þessum glugga"
 
-#: src/konqmainwindow.cpp:4303
+#: src/konqmainwindow.cpp:4296
 #, kde-format
 msgid "Open the document in current window"
 msgstr "Opna skjalið í núverandi glugga"
 
-#: src/konqmainwindow.cpp:4310
+#: src/konqmainwindow.cpp:4303
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "Opna skjalið í nýjum glugga"
 
-#: src/konqmainwindow.cpp:4316
+#: src/konqmainwindow.cpp:4309
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Opna í &nýjum flipa"
 
-#: src/konqmainwindow.cpp:4318
+#: src/konqmainwindow.cpp:4311
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "Opna skjalið í nýjum flipa"
 
-#: src/konqmainwindow.cpp:4541
+#: src/konqmainwindow.cpp:4534
 #, kde-format
 msgid "&Open With"
 msgstr "&Opna með"
 
-#: src/konqmainwindow.cpp:4554
+#: src/konqmainwindow.cpp:4547
 #, kde-format
 msgid "Open with %1"
 msgstr "Opna með %1"
 
-#: src/konqmainwindow.cpp:4601
+#: src/konqmainwindow.cpp:4594
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "&Skoðunarhamur"
 
-#: src/konqmainwindow.cpp:4722
+#: src/konqmainwindow.cpp:4715
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr ""
 "Þú hefur marga flipa opna í þessum glugga. Ertu viss um að þú viljir hætta?"
 
-#: src/konqmainwindow.cpp:4724
+#: src/konqmainwindow.cpp:4717
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Staðfesting"
 
-#: src/konqmainwindow.cpp:4726
+#: src/konqmainwindow.cpp:4719
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "Loka núverandi f&lipa"
 
-#: src/konqmainwindow.cpp:4754
+#: src/konqmainwindow.cpp:4747
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1395,7 +1395,7 @@ msgstr ""
 "Þessi flipi inniheldur breytingar sem er ekki búið að senda.\n"
 "Að loka glugganum mun eyða þeim breytingum."
 
-#: src/konqmainwindow.cpp:4755
+#: src/konqmainwindow.cpp:4748
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1404,7 +1404,7 @@ msgstr ""
 "Þessi síða inniheldur breytingar sem er ekki búið að senda.\n"
 "Að loka glugganum mun eyða þeim breytingum."
 
-#: src/konqmainwindow.cpp:4915
+#: src/konqmainwindow.cpp:4908
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1412,28 +1412,28 @@ msgstr ""
 "Hliðarsláin þín virkar ekki eða er ekki tiltæk.  Get ekki bætt við nýrri "
 "færslu."
 
-#: src/konqmainwindow.cpp:4915 src/konqmainwindow.cpp:4922
+#: src/konqmainwindow.cpp:4908 src/konqmainwindow.cpp:4915
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Vefhliðarslá"
 
-#: src/konqmainwindow.cpp:4920
+#: src/konqmainwindow.cpp:4913
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Bæta vefviðbótinni \"%1\" í hliðarslánna?"
 
-#: src/konqmainwindow.cpp:4922
+#: src/konqmainwindow.cpp:4915
 #, kde-format
 msgid "Add"
 msgstr "Bæta við"
 
-#: src/konqmainwindow.cpp:4922
+#: src/konqmainwindow.cpp:4915
 #, kde-format
 msgid "Do Not Add"
 msgstr "Ekki bæta við"
 
-#: src/konqmainwindow.cpp:5270
+#: src/konqmainwindow.cpp:5263
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1442,7 +1442,7 @@ msgstr ""
 "Það virðist eitthvað vera bogið við uppsetninguna. Konqueror er látinn "
 "höndla %1, en hann kann ekkert á þannig skrár."
 
-#: src/konqmainwindow.cpp:5355
+#: src/konqmainwindow.cpp:5348
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1455,23 +1455,23 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5360
+#: src/konqmainwindow.cpp:5353
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5360
+#: src/konqmainwindow.cpp:5353
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5361 src/konqmainwindow.cpp:5389
+#: src/konqmainwindow.cpp:5354 src/konqmainwindow.cpp:5382
 #, fuzzy, kde-format
 #| msgid "Show Configuration Button"
 msgid "Show proxy configuration dialog"
 msgstr "Sýna stillingahnapp"
 
-#: src/konqmainwindow.cpp:5385
+#: src/konqmainwindow.cpp:5378
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1480,22 +1480,22 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5388
+#: src/konqmainwindow.cpp:5381
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5389
+#: src/konqmainwindow.cpp:5382
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5389
+#: src/konqmainwindow.cpp:5382
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5405
+#: src/konqmainwindow.cpp:5398
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "

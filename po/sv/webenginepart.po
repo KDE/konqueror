@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-24 02:56+0000\n"
+"POT-Creation-Date: 2024-04-25 02:26+0000\n"
 "PO-Revision-Date: 2023-09-04 20:33+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -866,12 +866,12 @@ msgstr "Lagra formulärdata i plånboken när dialogrutan stängs"
 msgid "&Immediately memorize form data"
 msgstr "&Lagra omedelbart formulärdata"
 
-#: src/webenginepage.cpp:160 src/webenginepage.cpp:184
+#: src/webenginepage.cpp:151 src/webenginepage.cpp:175
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Nerladdningshanteraren (%1) hittades inte i din installation."
 
-#: src/webenginepage.cpp:161 src/webenginepage.cpp:185
+#: src/webenginepage.cpp:152 src/webenginepage.cpp:176
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -883,7 +883,7 @@ msgstr ""
 "\n"
 "Integrering kommer att inaktiveras."
 
-#: src/webenginepage.cpp:412
+#: src/webenginepage.cpp:403
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -896,12 +896,12 @@ msgstr ""
 "gjorde ett köp, klicka på knappen Avbryt för att förhindra ett duplicerat "
 "inköp. Klicka annars på knappen Fortsätt för att visa webbsidan igen.</p>"
 
-#: src/webenginepage.cpp:419
+#: src/webenginepage.cpp:410
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Skicka in information igen"
 
-#: src/webenginepage.cpp:613
+#: src/webenginepage.cpp:604
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -910,18 +910,18 @@ msgstr ""
 "Den här platsen försöker komma åt information om din fysiska plats.\n"
 "Vill du ge den tillåtelse?"
 
-#: src/webenginepage.cpp:617 src/webenginepage.cpp:695
-#: src/webenginepage.cpp:706
+#: src/webenginepage.cpp:608 src/webenginepage.cpp:686
+#: src/webenginepage.cpp:697
 #, kde-format
 msgid "Network Transmission"
 msgstr "Nätverksöverföring"
 
-#: src/webenginepage.cpp:618
+#: src/webenginepage.cpp:609
 #, kde-format
 msgid "Allow access"
 msgstr "Tillåt åtkomst"
 
-#: src/webenginepage.cpp:688
+#: src/webenginepage.cpp:679
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -934,12 +934,12 @@ msgstr ""
 "En tredje part kan fånga upp och visa den här informationen.\n"
 "Är du säker på att du vill skicka data okrypterad?"
 
-#: src/webenginepage.cpp:696
+#: src/webenginepage.cpp:687
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Skicka okrypterat"
 
-#: src/webenginepage.cpp:703
+#: src/webenginepage.cpp:694
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -948,12 +948,12 @@ msgstr ""
 "Den här platsen försöker skicka formulärdata via e-post.\n"
 "Vill du fortsätta?"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:698
 #, kde-format
 msgid "&Send Email"
 msgstr "&Skicka e-post"
 
-#: src/webenginepage.cpp:756
+#: src/webenginepage.cpp:747
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -961,22 +961,22 @@ msgid ""
 msgstr ""
 "<qt>Vill du tillåta att den här platsen bifogar följande filer i brevet?</qt>"
 
-#: src/webenginepage.cpp:758
+#: src/webenginepage.cpp:749
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Bekräftelse av bilaga till brev"
 
-#: src/webenginepage.cpp:759
+#: src/webenginepage.cpp:750
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Tillåt bil&agor"
 
-#: src/webenginepage.cpp:760
+#: src/webenginepage.cpp:751
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignorera bilagor"
 
-#: src/webenginepage.cpp:774
+#: src/webenginepage.cpp:765
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -985,12 +985,12 @@ msgstr ""
 "Den här platsen försöker lägga till en fil från datorn i formuläret som "
 "skickas. Bilagan togs bort för att skydda dig."
 
-#: src/webenginepage.cpp:777
+#: src/webenginepage.cpp:768
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Bilaga borttagen"
 
-#: src/webenginepage.cpp:891
+#: src/webenginepage.cpp:882
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -999,7 +999,7 @@ msgstr ""
 "Den här platsen försöker öppna ett meddelandefönster.\n"
 "Vill du tillåta det?"
 
-#: src/webenginepage.cpp:893
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1008,17 +1008,17 @@ msgstr ""
 "<qt>Den här platsen försöker öppna ett meddelandefönster till<p>%1</p><br/"
 ">Vill du tillåta det?</qt>"
 
-#: src/webenginepage.cpp:896
+#: src/webenginepage.cpp:887
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Bekräftelse för Javascript-fönster"
 
-#: src/webenginepage.cpp:897
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Allow"
 msgstr "Tillåt"
 
-#: src/webenginepage.cpp:897
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Tillåt inte"
@@ -1310,7 +1310,7 @@ msgstr "&Rubrik"
 msgid "&Issuer"
 msgstr "&Utfärdare"
 
-#: src/webenginepartcontrols.cpp:282
+#: src/webenginepartcontrols.cpp:281
 #, kde-format
 msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
@@ -1346,135 +1346,135 @@ msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
 msgstr "Sparade %1 som %2"
 
-#: src/webengineview.cpp:352
+#: src/webengineview.cpp:351
 #, kde-format
 msgid "Save Image As..."
 msgstr "Spara bild som..."
 
-#: src/webengineview.cpp:357
+#: src/webengineview.cpp:356
 #, kde-format
 msgid "Send Image..."
 msgstr "Skicka bild..."
 
-#: src/webengineview.cpp:362
+#: src/webengineview.cpp:361
 #, kde-format
 msgid "Copy Image URL"
 msgstr "Kopiera bildwebbadress"
 
-#: src/webengineview.cpp:368
+#: src/webengineview.cpp:367
 #, kde-format
 msgid "Copy Image"
 msgstr "Kopiera bild"
 
-#: src/webengineview.cpp:375
+#: src/webengineview.cpp:374
 #, kde-format
 msgid "View Image (%1)"
 msgstr "Visa bild (%1)"
 
-#: src/webengineview.cpp:381
+#: src/webengineview.cpp:380
 #, kde-format
 msgid "Block Image..."
 msgstr "Blockera bild..."
 
-#: src/webengineview.cpp:389
+#: src/webengineview.cpp:388
 #, kde-format
 msgid "Block Images From %1"
 msgstr "Blockera bilder från %1"
 
-#: src/webengineview.cpp:419 src/webengineview.cpp:456
+#: src/webengineview.cpp:418 src/webengineview.cpp:455
 #, kde-format
 msgid "&Copy Text"
 msgstr "K&opiera text"
 
-#: src/webengineview.cpp:429
+#: src/webengineview.cpp:428
 #, kde-format
 msgctxt "open selected url"
 msgid "Open '%1'"
 msgstr "Öppna '%1'"
 
-#: src/webengineview.cpp:462
+#: src/webengineview.cpp:461
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "&Kopiera e-postadress"
 
-#: src/webengineview.cpp:468
+#: src/webengineview.cpp:467
 #, kde-format
 msgid "Copy Link &Text"
 msgstr "Kopiera länk&text"
 
-#: src/webengineview.cpp:474
+#: src/webengineview.cpp:473
 #, kde-format
 msgid "Copy Link &URL"
 msgstr "Kopiera länk&webbadress"
 
-#: src/webengineview.cpp:479
+#: src/webengineview.cpp:478
 #, kde-format
 msgid "&Save Link As..."
 msgstr "&Spara länk som..."
 
-#: src/webengineview.cpp:499
+#: src/webengineview.cpp:498
 #, kde-format
 msgid "&Play/Pause"
 msgstr "S&pela/Paus"
 
-#: src/webengineview.cpp:504
+#: src/webengineview.cpp:503
 #, kde-format
 msgid "Un&mute/&Mute"
 msgstr "Ej &tyst/Tyst"
 
-#: src/webengineview.cpp:509
+#: src/webengineview.cpp:508
 #, kde-format
 msgid "Toggle &Loop"
 msgstr "Växla &upprepning"
 
-#: src/webengineview.cpp:514
+#: src/webengineview.cpp:513
 #, kde-format
 msgid "Toggle &Controls"
 msgstr "Växla &kontroller"
 
-#: src/webengineview.cpp:525
+#: src/webengineview.cpp:524
 #, kde-format
 msgid "Sa&ve Video As..."
 msgstr "Spara &video som..."
 
-#: src/webengineview.cpp:526
+#: src/webengineview.cpp:525
 #, kde-format
 msgid "C&opy Video URL"
 msgstr "K&opiera videowebbadress"
 
-#: src/webengineview.cpp:528
+#: src/webengineview.cpp:527
 #, kde-format
 msgid "Sa&ve Audio As..."
 msgstr "Spara lj&ud som..."
 
-#: src/webengineview.cpp:529
+#: src/webengineview.cpp:528
 #, kde-format
 msgid "C&opy Audio URL"
 msgstr "K&opiera ljudwebbadress"
 
-#: src/webengineview.cpp:531
+#: src/webengineview.cpp:530
 #, kde-format
 msgid "Sa&ve Media As..."
 msgstr "S&para media som..."
 
-#: src/webengineview.cpp:532
+#: src/webengineview.cpp:531
 #, kde-format
 msgid "C&opy Media URL"
 msgstr "K&opiera mediawebbadress"
 
-#: src/webengineview.cpp:585
+#: src/webengineview.cpp:584
 #, kde-format
 msgctxt "Search \"search provider\" for \"text\""
 msgid "Search %1 for '%2'"
 msgstr "&Sök på %1 efter '%2'"
 
-#: src/webengineview.cpp:596
+#: src/webengineview.cpp:595
 #, kde-format
 msgctxt "Search for \"text\" with"
 msgid "Search for '%1' with"
 msgstr "Sök efter '%1' med"
 
-#: src/webengineview.cpp:609
+#: src/webengineview.cpp:608
 #, kde-format
 msgid "Configure Web Shortcuts..."
 msgstr "Anpassa webbgenvägar..."
