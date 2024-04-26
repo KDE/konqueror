@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2024-04-26 00:38+0000\n"
 "PO-Revision-Date: 2020-02-13 19:40+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -766,7 +766,7 @@ msgstr "Spørg"
 
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
-#: css/cssconfig.ui:5 css/csscustom.ui:13
+#: css/cssconfig.ui:14 css/csscustom.ui:13
 #, kde-format
 msgid ""
 "<b>Stylesheets</b><p>See http://www.w3.org/Style/CSS for further information "
@@ -775,7 +775,7 @@ msgstr ""
 "Se http://www.w3.org/Style/CSS for yderligere information om kaskade-stilark."
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, ButtonGroup1)
-#: css/cssconfig.ui:17
+#: css/cssconfig.ui:26
 #, kde-format
 msgid ""
 "<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
@@ -784,13 +784,13 @@ msgstr ""
 "Brug dette gruppefelt til at afgøre hvordan Konqueror skal gengive stilark."
 
 #. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
-#: css/cssconfig.ui:20
+#: css/cssconfig.ui:29
 #, kde-format
 msgid "Stylesheets"
 msgstr "Stilark"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
-#: css/cssconfig.ui:26
+#: css/cssconfig.ui:35
 #, kde-format
 msgid ""
 "<b>Use default stylesheet</b><p>Select this option to use the default "
@@ -798,13 +798,13 @@ msgid ""
 msgstr "Dette valg giver dig et standard-stilark."
 
 #. i18n: ectx: property (text), widget (QRadioButton, useDefault)
-#: css/cssconfig.ui:29
+#: css/cssconfig.ui:38
 #, kde-format
 msgid "Us&e default stylesheet"
 msgstr "Brug &standard-stilark"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
-#: css/cssconfig.ui:39
+#: css/cssconfig.ui:48
 #, kde-format
 msgid ""
 "<b>Use user-defined stylesheet</b><p>If this box is checked, Konqueror will "
@@ -821,13 +821,13 @@ msgstr ""
 "yderligere information om kaskade-stilark)."
 
 #. i18n: ectx: property (text), widget (QRadioButton, useUser)
-#: css/cssconfig.ui:42
+#: css/cssconfig.ui:51
 #, kde-format
 msgid "Use &user-defined stylesheet"
 msgstr "Anvend &brugerdefineret stilark"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useAccess)
-#: css/cssconfig.ui:94
+#: css/cssconfig.ui:103
 #, kde-format
 msgid ""
 "<b>Use accessibility stylesheet</b><p>Selecting this option will allow you "
@@ -841,16 +841,82 @@ msgstr ""
 "ønskede valg.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useAccess)
-#: css/cssconfig.ui:97
+#: css/cssconfig.ui:106
 #, kde-format
 msgid "U&se accessibility stylesheet"
 msgstr "Brug &tilgængeligheds-stilark"
 
 #. i18n: ectx: property (text), widget (QPushButton, customize)
-#: css/cssconfig.ui:137
+#: css/cssconfig.ui:146
 #, kde-format
 msgid "Custom&ize..."
 msgstr "&Brugerindstil..."
+
+#. i18n: ectx: property (title), widget (QGroupBox, customPageBackgroundBox)
+#: css/cssconfig.ui:177
+#, kde-format
+msgid "Custom Page Background"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
+#: css/cssconfig.ui:183
+#, kde-format
+msgid ""
+"<html><head/><body><p align=\"justify\">Use a custom background color for "
+"web pages. This color is used:</p><ul style=\"margin-top: 0px; margin-"
+"bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li "
+"align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">when the "
+"background color isn't explicitly set by the page or by a custom stylesheet</"
+"li><li align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">before a "
+"web page is loaded</li></ul><p align=\"justify\">Setting a custom background "
+"color is mostly useful if you use a custom stylesheet which sets a "
+"background color for the page (especially a dark color), to avoid a white "
+"flash before the page is loaded</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
+#: css/cssconfig.ui:186
+#, kde-format
+msgid "Use custom &background color"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
+#: css/cssconfig.ui:196
+#, kde-format
+msgid ""
+"<html><head/><body><p>The custom background color to use for web pages</p></"
+"body></html>"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
+#: css/cssconfig.ui:206
+#, kde-format
+msgid ""
+"<html><head/><body><p align=\"justify\">Add to your custom stylesheet "
+"(including the accessibility stylesheet) a rule to set all background colors "
+"to the custom color you chose above. This avoids the need of setting the "
+"background color both in the stylesheet and in the configuration dialog.</"
+"p><p align=\"justify\"><span style=\" font-weight:600;\">Notes:</span></"
+"p><ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-"
+"right: 0px; -qt-list-indent: 1;\"><li align=\"justify\" style=\" margin-"
+"top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\">the rule will be overridden by other rules for "
+"background colors in your custom stylesheet following the usual CSS rules</"
+"li><li align=\"justify\" style=\" margin-top:0px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">the rule "
+"isn't actually added to the file containing your custom stylesheet; it's "
+"only inserted in the copy Konqueror keeps in memory. This means that if you "
+"use the stylesheet in other browsers, you'll need to manually add the rule "
+"to it.</li></ul></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
+#: css/cssconfig.ui:209
+#, kde-format
+msgid "Add custom background color to stylesheet"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
@@ -1149,7 +1215,7 @@ msgstr "Undertryk baggrundsbilleder"
 msgid "Preview"
 msgstr "Forhåndsvisning"
 
-#: css/kcmcss.cpp:51
+#: css/kcmcss.cpp:57
 #, kde-format
 msgid ""
 "<h1>Konqueror Stylesheets</h1> This module allows you to apply your own "
@@ -1168,7 +1234,7 @@ msgstr ""
 "med nedsat syn eller for netsider der er ulæselige på grund af dårligt "
 "design."
 
-#: css/kcmcss.cpp:336
+#: css/kcmcss.cpp:386
 #, kde-format
 msgid ""
 "<html>\n"
