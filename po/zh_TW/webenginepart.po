@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-25 02:26+0000\n"
+"POT-Creation-Date: 2024-04-26 02:23+0000\n"
 "PO-Revision-Date: 2024-04-16 18:38+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -617,7 +617,7 @@ msgstr "可能的解決方法："
 msgid "Error: %1"
 msgstr "錯誤：%1"
 
-#: src/settings/webenginesettings.cpp:911
+#: src/settings/webenginesettings.cpp:930
 #, kde-format
 msgid "Filter error"
 msgstr "過濾器錯誤"
@@ -843,12 +843,12 @@ msgstr "關閉對話框時將表單資料儲存於 KWallet"
 msgid "&Immediately memorize form data"
 msgstr "馬上記住表單資料(&I)"
 
-#: src/webenginepage.cpp:151 src/webenginepage.cpp:175
+#: src/webenginepage.cpp:153 src/webenginepage.cpp:177
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "找不到下載管理程式 (%1)。"
 
-#: src/webenginepage.cpp:152 src/webenginepage.cpp:176
+#: src/webenginepage.cpp:154 src/webenginepage.cpp:178
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -859,7 +859,7 @@ msgstr ""
 "\n"
 "Konqueror 整合將被關閉。"
 
-#: src/webenginepage.cpp:403
+#: src/webenginepage.cpp:405
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -871,12 +871,12 @@ msgstr ""
 "網路商店購物，並且正在交易，請點擊「取消」避免您付了兩次款。否則，請按「繼"
 "續」來再次顯示網頁。</p>"
 
-#: src/webenginepage.cpp:410
+#: src/webenginepage.cpp:412
 #, kde-format
 msgid "Resubmit Information"
 msgstr "重新提交資訊"
 
-#: src/webenginepage.cpp:604
+#: src/webenginepage.cpp:606
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -885,18 +885,18 @@ msgstr ""
 "此網站正試圖存取關於您所在位置的資料。\n"
 "您允許此行為嗎？"
 
-#: src/webenginepage.cpp:608 src/webenginepage.cpp:686
-#: src/webenginepage.cpp:697
+#: src/webenginepage.cpp:610 src/webenginepage.cpp:688
+#: src/webenginepage.cpp:699
 #, kde-format
 msgid "Network Transmission"
 msgstr "網絡傳輸"
 
-#: src/webenginepage.cpp:609
+#: src/webenginepage.cpp:611
 #, kde-format
 msgid "Allow access"
 msgstr "允取存取"
 
-#: src/webenginepage.cpp:679
+#: src/webenginepage.cpp:681
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -908,12 +908,12 @@ msgstr ""
 "能可以截獲並檢視這些資料。\n"
 "您確定要送出這些未加密的資料嗎？"
 
-#: src/webenginepage.cpp:687
+#: src/webenginepage.cpp:689
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "傳送未加密資料(&S)"
 
-#: src/webenginepage.cpp:694
+#: src/webenginepage.cpp:696
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -922,34 +922,34 @@ msgstr ""
 "此網站正試圖使用 e-mail 的方式送回資料。\n"
 "您允許此行為嗎？"
 
-#: src/webenginepage.cpp:698
+#: src/webenginepage.cpp:700
 #, kde-format
 msgid "&Send Email"
 msgstr "傳送 Email"
 
-#: src/webenginepage.cpp:747
+#: src/webenginepage.cpp:749
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 msgstr "<qt>您允許此站台附加這些檔案在信件中嗎？</qt>"
 
-#: src/webenginepage.cpp:749
+#: src/webenginepage.cpp:751
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "電子郵件附檔確認"
 
-#: src/webenginepage.cpp:750
+#: src/webenginepage.cpp:752
 #, kde-format
 msgid "&Allow attachments"
 msgstr "允許附檔(&A)"
 
-#: src/webenginepage.cpp:751
+#: src/webenginepage.cpp:753
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "忽略附檔(&I)"
 
-#: src/webenginepage.cpp:765
+#: src/webenginepage.cpp:767
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -958,12 +958,12 @@ msgstr ""
 "這個網站的表格提交時試圖在您的電腦附加一個檔案。為了保護您，這個附件已經被移"
 "除。"
 
-#: src/webenginepage.cpp:768
+#: src/webenginepage.cpp:770
 #, kde-format
 msgid "Attachment Removed"
 msgstr "附檔已移除"
 
-#: src/webenginepage.cpp:882
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -972,7 +972,7 @@ msgstr ""
 "此網站正請求開啟一個彈出式視窗。\n"
 "您允許此行為嗎？"
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:886
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -980,17 +980,17 @@ msgid ""
 msgstr ""
 "<qt>此網站正試圖開啟一個彈出式視窗到 <p>%1</p><br/>您允許此行為嗎？</qt>"
 
-#: src/webenginepage.cpp:887
+#: src/webenginepage.cpp:889
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript 彈出視窗確認"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:890
 #, kde-format
 msgid "Allow"
 msgstr "允許"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:890
 #, kde-format
 msgid "Do Not Allow"
 msgstr "不允許"
@@ -1278,7 +1278,7 @@ msgstr "主旨(&S)"
 msgid "&Issuer"
 msgstr "配發者(&I)"
 
-#: src/webenginepartcontrols.cpp:281
+#: src/webenginepartcontrols.cpp:282
 #, kde-format
 msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "

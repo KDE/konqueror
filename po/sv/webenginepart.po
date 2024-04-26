@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-25 02:26+0000\n"
+"POT-Creation-Date: 2024-04-26 02:23+0000\n"
 "PO-Revision-Date: 2023-09-04 20:33+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -632,7 +632,7 @@ msgstr "Möjliga lösningar:"
 msgid "Error: %1"
 msgstr "Fel: %1"
 
-#: src/settings/webenginesettings.cpp:911
+#: src/settings/webenginesettings.cpp:930
 #, kde-format
 msgid "Filter error"
 msgstr "Filtreringsfel"
@@ -866,12 +866,12 @@ msgstr "Lagra formulärdata i plånboken när dialogrutan stängs"
 msgid "&Immediately memorize form data"
 msgstr "&Lagra omedelbart formulärdata"
 
-#: src/webenginepage.cpp:151 src/webenginepage.cpp:175
+#: src/webenginepage.cpp:153 src/webenginepage.cpp:177
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Nerladdningshanteraren (%1) hittades inte i din installation."
 
-#: src/webenginepage.cpp:152 src/webenginepage.cpp:176
+#: src/webenginepage.cpp:154 src/webenginepage.cpp:178
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -883,7 +883,7 @@ msgstr ""
 "\n"
 "Integrering kommer att inaktiveras."
 
-#: src/webenginepage.cpp:403
+#: src/webenginepage.cpp:405
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -896,12 +896,12 @@ msgstr ""
 "gjorde ett köp, klicka på knappen Avbryt för att förhindra ett duplicerat "
 "inköp. Klicka annars på knappen Fortsätt för att visa webbsidan igen.</p>"
 
-#: src/webenginepage.cpp:410
+#: src/webenginepage.cpp:412
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Skicka in information igen"
 
-#: src/webenginepage.cpp:604
+#: src/webenginepage.cpp:606
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -910,18 +910,18 @@ msgstr ""
 "Den här platsen försöker komma åt information om din fysiska plats.\n"
 "Vill du ge den tillåtelse?"
 
-#: src/webenginepage.cpp:608 src/webenginepage.cpp:686
-#: src/webenginepage.cpp:697
+#: src/webenginepage.cpp:610 src/webenginepage.cpp:688
+#: src/webenginepage.cpp:699
 #, kde-format
 msgid "Network Transmission"
 msgstr "Nätverksöverföring"
 
-#: src/webenginepage.cpp:609
+#: src/webenginepage.cpp:611
 #, kde-format
 msgid "Allow access"
 msgstr "Tillåt åtkomst"
 
-#: src/webenginepage.cpp:679
+#: src/webenginepage.cpp:681
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -934,12 +934,12 @@ msgstr ""
 "En tredje part kan fånga upp och visa den här informationen.\n"
 "Är du säker på att du vill skicka data okrypterad?"
 
-#: src/webenginepage.cpp:687
+#: src/webenginepage.cpp:689
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Skicka okrypterat"
 
-#: src/webenginepage.cpp:694
+#: src/webenginepage.cpp:696
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -948,12 +948,12 @@ msgstr ""
 "Den här platsen försöker skicka formulärdata via e-post.\n"
 "Vill du fortsätta?"
 
-#: src/webenginepage.cpp:698
+#: src/webenginepage.cpp:700
 #, kde-format
 msgid "&Send Email"
 msgstr "&Skicka e-post"
 
-#: src/webenginepage.cpp:747
+#: src/webenginepage.cpp:749
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -961,22 +961,22 @@ msgid ""
 msgstr ""
 "<qt>Vill du tillåta att den här platsen bifogar följande filer i brevet?</qt>"
 
-#: src/webenginepage.cpp:749
+#: src/webenginepage.cpp:751
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Bekräftelse av bilaga till brev"
 
-#: src/webenginepage.cpp:750
+#: src/webenginepage.cpp:752
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Tillåt bil&agor"
 
-#: src/webenginepage.cpp:751
+#: src/webenginepage.cpp:753
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignorera bilagor"
 
-#: src/webenginepage.cpp:765
+#: src/webenginepage.cpp:767
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -985,12 +985,12 @@ msgstr ""
 "Den här platsen försöker lägga till en fil från datorn i formuläret som "
 "skickas. Bilagan togs bort för att skydda dig."
 
-#: src/webenginepage.cpp:768
+#: src/webenginepage.cpp:770
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Bilaga borttagen"
 
-#: src/webenginepage.cpp:882
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -999,7 +999,7 @@ msgstr ""
 "Den här platsen försöker öppna ett meddelandefönster.\n"
 "Vill du tillåta det?"
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:886
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1008,17 +1008,17 @@ msgstr ""
 "<qt>Den här platsen försöker öppna ett meddelandefönster till<p>%1</p><br/"
 ">Vill du tillåta det?</qt>"
 
-#: src/webenginepage.cpp:887
+#: src/webenginepage.cpp:889
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Bekräftelse för Javascript-fönster"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:890
 #, kde-format
 msgid "Allow"
 msgstr "Tillåt"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:890
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Tillåt inte"
@@ -1310,7 +1310,7 @@ msgstr "&Rubrik"
 msgid "&Issuer"
 msgstr "&Utfärdare"
 
-#: src/webenginepartcontrols.cpp:281
+#: src/webenginepartcontrols.cpp:282
 #, kde-format
 msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "

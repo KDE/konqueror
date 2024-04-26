@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-25 02:26+0000\n"
+"POT-Creation-Date: 2024-04-26 02:23+0000\n"
 "PO-Revision-Date: 2022-09-27 18:12+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -632,7 +632,7 @@ msgstr "Solusi:"
 msgid "Error: %1"
 msgstr "Galat: %1"
 
-#: src/settings/webenginesettings.cpp:911
+#: src/settings/webenginesettings.cpp:930
 #, kde-format
 msgid "Filter error"
 msgstr "Galat filter"
@@ -864,12 +864,12 @@ msgstr "Simpan data di KWallet ketika menutup dialog"
 msgid "&Immediately memorize form data"
 msgstr "&Seketika memorikan dari data"
 
-#: src/webenginepage.cpp:151 src/webenginepage.cpp:175
+#: src/webenginepage.cpp:153 src/webenginepage.cpp:177
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Pengelola unduhan (%1) tidak dapat ditemukan pada sistem Anda."
 
-#: src/webenginepage.cpp:152 src/webenginepage.cpp:176
+#: src/webenginepage.cpp:154 src/webenginepage.cpp:178
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -880,7 +880,7 @@ msgstr ""
 "\n"
 "Integrasi akan dinonfungsikan."
 
-#: src/webenginepage.cpp:403
+#: src/webenginepage.cpp:405
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -894,12 +894,12 @@ msgstr ""
 "mencegah pembelian rangkap. Jika tidak, klik tombol Lanjut untuk menampilkan "
 "halaman web kembali.</p>"
 
-#: src/webenginepage.cpp:410
+#: src/webenginepage.cpp:412
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Ajukan Ulang Informasi"
 
-#: src/webenginepage.cpp:604
+#: src/webenginepage.cpp:606
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -908,18 +908,18 @@ msgstr ""
 "Situs ini mencoba mengakses informasi tentang lokasi fisik Anda.\n"
 "Apakah Anda mengizinkannya?"
 
-#: src/webenginepage.cpp:608 src/webenginepage.cpp:686
-#: src/webenginepage.cpp:697
+#: src/webenginepage.cpp:610 src/webenginepage.cpp:688
+#: src/webenginepage.cpp:699
 #, kde-format
 msgid "Network Transmission"
 msgstr "Transmisi Jaringan"
 
-#: src/webenginepage.cpp:609
+#: src/webenginepage.cpp:611
 #, kde-format
 msgid "Allow access"
 msgstr "Izinkan akses"
 
-#: src/webenginepage.cpp:679
+#: src/webenginepage.cpp:681
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -932,12 +932,12 @@ msgstr ""
 "Pihak ketiga mungkin bisa mencegat dan melihat informasi ini.\n"
 "Apakah Anda yakin ingin mengirim data yang tidak terenkripsi?"
 
-#: src/webenginepage.cpp:687
+#: src/webenginepage.cpp:689
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Kirim Tanpa Enkripsi"
 
-#: src/webenginepage.cpp:694
+#: src/webenginepage.cpp:696
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -946,12 +946,12 @@ msgstr ""
 "Situs ini mencoba mengajukan data formulir via surel.\n"
 "Apakah Anda ingin melanjutkan?"
 
-#: src/webenginepage.cpp:698
+#: src/webenginepage.cpp:700
 #, kde-format
 msgid "&Send Email"
 msgstr "&Kirim Surel"
 
-#: src/webenginepage.cpp:747
+#: src/webenginepage.cpp:749
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -960,22 +960,22 @@ msgstr ""
 "<qt>Apakah Anda mengizinkan situs ini untuk menampirkan file berikut ke "
 "pesan surel?</qt>"
 
-#: src/webenginepage.cpp:749
+#: src/webenginepage.cpp:751
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Konfirmasi Pelampiran Surel"
 
-#: src/webenginepage.cpp:750
+#: src/webenginepage.cpp:752
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Izinkan lampiran"
 
-#: src/webenginepage.cpp:751
+#: src/webenginepage.cpp:753
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Abaikan lampiran"
 
-#: src/webenginepage.cpp:765
+#: src/webenginepage.cpp:767
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -984,12 +984,12 @@ msgstr ""
 "Situs ini mencoba melampirkan file dari komputer Anda dalam bentuk "
 "pengajuan. Lampiran telah dihapus untuk proteksi Anda."
 
-#: src/webenginepage.cpp:768
+#: src/webenginepage.cpp:770
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Lampiran Dihapus"
 
-#: src/webenginepage.cpp:882
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -998,7 +998,7 @@ msgstr ""
 "Situs ini meminta untuk membuka jendela munculan baru.\n"
 "Apakah Anda mengizinkannya?"
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:886
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1007,17 +1007,17 @@ msgstr ""
 "<qt>Situs ini meminta untuk membuka jendela munculan ke<p>%1</p><br/>Apakah "
 "Anda mengizinkannya?</qt>"
 
-#: src/webenginepage.cpp:887
+#: src/webenginepage.cpp:889
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Konfirmasi Munculan Javascript"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:890
 #, kde-format
 msgid "Allow"
 msgstr "Izinkan"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:890
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Jangan Izinkan"
@@ -1309,7 +1309,7 @@ msgstr "&Subjek"
 msgid "&Issuer"
 msgstr "&Penerbit"
 
-#: src/webenginepartcontrols.cpp:281
+#: src/webenginepartcontrols.cpp:282
 #, kde-format
 msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "

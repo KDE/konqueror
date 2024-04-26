@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-25 02:26+0000\n"
+"POT-Creation-Date: 2024-04-26 02:23+0000\n"
 "PO-Revision-Date: 2024-04-01 08:19+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -633,7 +633,7 @@ msgstr "Możliwe rozwiązania:"
 msgid "Error: %1"
 msgstr "Błąd: %1"
 
-#: src/settings/webenginesettings.cpp:911
+#: src/settings/webenginesettings.cpp:930
 #, kde-format
 msgid "Filter error"
 msgstr "Błąd filtra"
@@ -869,12 +869,12 @@ msgstr "Zachowaj dane formularzy w Portfelu, po zamknięciu okna dialogowego"
 msgid "&Immediately memorize form data"
 msgstr "Natychm&iastowo zapamiętuj dane formularzy"
 
-#: src/webenginepage.cpp:151 src/webenginepage.cpp:175
+#: src/webenginepage.cpp:153 src/webenginepage.cpp:177
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Menadżer pobierania (%1) nie został znaleziony w systemie."
 
-#: src/webenginepage.cpp:152 src/webenginepage.cpp:176
+#: src/webenginepage.cpp:154 src/webenginepage.cpp:178
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -886,7 +886,7 @@ msgstr ""
 "\n"
 "Integracja zostanie wyłączona."
 
-#: src/webenginepage.cpp:403
+#: src/webenginepage.cpp:405
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -900,12 +900,12 @@ msgstr ""
 "powielonemu zakupowi. W przeciwnym przypadku, kliknij na Kontynuuj, aby "
 "ponownie wyświetlić stronę sieciową.</p>"
 
-#: src/webenginepage.cpp:410
+#: src/webenginepage.cpp:412
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Ponownie wyślij informacje"
 
-#: src/webenginepage.cpp:604
+#: src/webenginepage.cpp:606
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -915,18 +915,18 @@ msgstr ""
 "położeniu.\n"
 "Czy chcesz jej zezwolić na dostęp?"
 
-#: src/webenginepage.cpp:608 src/webenginepage.cpp:686
-#: src/webenginepage.cpp:697
+#: src/webenginepage.cpp:610 src/webenginepage.cpp:688
+#: src/webenginepage.cpp:699
 #, kde-format
 msgid "Network Transmission"
 msgstr "Przesył sieciowy"
 
-#: src/webenginepage.cpp:609
+#: src/webenginepage.cpp:611
 #, kde-format
 msgid "Allow access"
 msgstr "Zezwól na dostęp"
 
-#: src/webenginepage.cpp:679
+#: src/webenginepage.cpp:681
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -939,12 +939,12 @@ msgstr ""
 "Osoba trzecia może być w stanie przechwycić i wyświetlić te informacje.\n"
 "Czy na pewno chcesz wysłać dane postaci niezaszyfrowanej?"
 
-#: src/webenginepage.cpp:687
+#: src/webenginepage.cpp:689
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Wyślij nieszyfrowane"
 
-#: src/webenginepage.cpp:694
+#: src/webenginepage.cpp:696
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -953,12 +953,12 @@ msgstr ""
 "Ta strona próbuje wysłać formularz poprzez e-mail.\n"
 "Czy chcesz kontynuować?"
 
-#: src/webenginepage.cpp:698
+#: src/webenginepage.cpp:700
 #, kde-format
 msgid "&Send Email"
 msgstr "&Wyślij e-mail"
 
-#: src/webenginepage.cpp:747
+#: src/webenginepage.cpp:749
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -967,22 +967,22 @@ msgstr ""
 "<qt>Czy chcesz zezwolić tej stronie na dołączenie następujących plików do "
 "wiadomości email?</qt>"
 
-#: src/webenginepage.cpp:749
+#: src/webenginepage.cpp:751
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Potwierdzenie załącznika e-maila"
 
-#: src/webenginepage.cpp:750
+#: src/webenginepage.cpp:752
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Zezwól na załączniki"
 
-#: src/webenginepage.cpp:751
+#: src/webenginepage.cpp:753
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignoruj załączniki"
 
-#: src/webenginepage.cpp:765
+#: src/webenginepage.cpp:767
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -991,12 +991,12 @@ msgstr ""
 "Witryna próbowała dołączyć plik z Twojego komputera do danych z formularza. "
 "Załącznik został usunięty dla celów bezpieczeństwa."
 
-#: src/webenginepage.cpp:768
+#: src/webenginepage.cpp:770
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Załącznik usunięty"
 
-#: src/webenginepage.cpp:882
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1005,7 +1005,7 @@ msgstr ""
 "Ta strona żąda otwarcia nowego okna wyskakującego.\n"
 "Czy chcesz na to zezwolić?"
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:886
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1014,17 +1014,17 @@ msgstr ""
 "<qt>Ta strona żąda otwarcia okna wyskakującego dla<p>%1</p><br/> Czy chcesz "
 "na to zezwolić?</qt>"
 
-#: src/webenginepage.cpp:887
+#: src/webenginepage.cpp:889
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Potwierdzenie okna wyskakującego Javascript"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:890
 #, kde-format
 msgid "Allow"
 msgstr "Zezwól"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:890
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Nie zezwalaj"
@@ -1315,7 +1315,7 @@ msgstr "&Przedmiot"
 msgid "&Issuer"
 msgstr "&Wydawca"
 
-#: src/webenginepartcontrols.cpp:281
+#: src/webenginepartcontrols.cpp:282
 #, kde-format
 msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
