@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 00:38+0000\n"
-"PO-Revision-Date: 2024-03-11 14:53+0300\n"
+"PO-Revision-Date: 2024-04-26 13:57+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -909,7 +909,7 @@ msgstr "Ö&zelleştir…"
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Özel Sayfa Arka Planı"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -928,21 +928,35 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Web sayfaları için özel bir arka "
+"plan kullanın. Kullanılan renkler:</p><ul style=\"margin-top: 0px; margin-"
+"bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li "
+"align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Arka plan "
+"rengi web sayfası veya biçem sayfası tarafından açıkça belirtilmediğinde</"
+"li><li align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Bir web "
+"sayfası yüklenmeden önce</li></ul><p align=\"justify\">Özel bir arka plan "
+"rengi ayarlamak, sayfa yüklenmeden önce beyaz bir flaştan kaçınmak için "
+"sayfa için bir arka plan rengi ayarlayan özel bir biçem sayfası "
+"kullanıyorsanız (özellikle koyu renk) çoğunlukla kullanışlıdır.</p></body></"
+"html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Özel a&rka plan rengi kullan"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>Web sayfaları için kullanılacak özel arka plan rengi</"
+"p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -965,12 +979,29 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Özel biçem sayfanıza "
+"(erişilebilirlik biçem sayfası da içerilecek biçimde) tüm arka plan "
+"renklerini yukarıda seçtiğiniz özel renge ayarlamak için bir kural ekleyin. "
+"Bu, hem biçem sayfasında hem de yapılandırma iletişim kutusunda arka plan "
+"rengini ayarlama gereksinimini önler.</p><p align=\"justify\"><span style=\" "
+"font-weight:600;\">Notlar:</span></p><ul style=\"margin-top: 0px; margin-"
+"bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li "
+"align=\"justify\" style=\" margin-top:12px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Kural, "
+"her zamanki CSS kurallarını izleyerek özel biçem sayfanızdaki arka plan "
+"renkleri için diğer kurallar tarafından geçersiz kılınacaktır</li><li align="
+"\"justify\" style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Kural aslında özel "
+"biçem sayfanızı içeren dosyaya eklenmez; yalnızca Konqueror'un bellekte "
+"tuttuğu kopyaya yerleştirilir. Bu, biçem sayfasını diğer tarayıcılarda "
+"kullanırsanız kuralı elle eklemeniz gerektiği anlamına gelir.</li></ul></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Özel arka plan rengini biçem sayfasına ekle"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21

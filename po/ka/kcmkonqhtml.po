@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 00:38+0000\n"
-"PO-Revision-Date: 2024-03-11 05:34+0100\n"
+"PO-Revision-Date: 2024-04-26 07:18+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -894,7 +894,7 @@ msgstr "&მორგება..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "გვერდის ფონის მორგება"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -913,21 +913,32 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">ვებგვერდების ფონად ამ ფერის "
+"გამოყენება:</p><ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: "
+"0px; margin-right: 0px; -qt-list-indent: 1;\"><li align=\"justify\" style=\" "
+"margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-"
+"block-indent:0; text-indent:0px;\">როცა ფონის ფერი გვერდის ან მომხმარებლის "
+"სტილების ცხრლის მიერ პირდაპირ არაა მითითებული</li><li align=\"justify\" "
+"style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">before a web page is "
+"loaded</li></ul><p align=\"justify\">ფონის ფერის ხელით მითითება მაშინაა "
+"გამოსადეგი, როცა იყენებთ თქვენს სტილების ცხრილს, რომელიც აყენებს ფონის ფერს "
+"(განსაკუთრებით, მუქ ფერს), რომ თავიდან აიცილოთ თეთრი ნათება, სანამ გვერდი "
+"ჩაიტვირთება</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "&ფონის ფერის მითითება"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr "<html><head/><body><p>ფონის ფერი ვებგვერდებისთვის</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -950,12 +961,26 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">დაამატეთ თქვენს სტილების ცხრილს "
+"(წვდომადობის სტილების რცხილის ჩათვლით) წეი, რომელიც ყველა ფონის ფერს "
+"თქვენთვის სასურველ ფერზე დააყენებს ორივე, სტილების ცხრილში და კონფიგურაციის "
+"დიალოგში.</p><p align=\"justify\"><span style=\" font-weight:600;"
+"\">შენიშვნები:</span></p><ul style=\"margin-top: 0px; margin-bottom: 0px; "
+"margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li align="
+"\"justify\" style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">წესი გადაიფარება "
+"სხვა წესების მიერ ფონის ფერებისთვის თქვენს სტილების რცხილში ჩვეულებრივი CSS "
+"წესებით</li><li align=\"justify\" style=\" margin-top:0px; margin-"
+"bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\">წესი ფაილს არ დაემატება. ის მხოლოდ ჩაისმება ასლში, რომელიც "
+"Konqueror-ს მეხსიერებაში აქვს. ეს ნიშნავს, რომ თუ თქვენ ყენებთ სტილების "
+"რცხილს სხვა ბრაუზერებში, წესი ხელით უნდა დაამატოთ.</li></ul></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "სტილების ცხრილისთვის მომხმარებლის ფონის ფერის დამატება"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21

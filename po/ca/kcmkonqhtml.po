@@ -4,13 +4,13 @@
 # Sebastià Pla i Sanz <sps@sastia.com>, 1999, 2000, 2001, 2002, 2004, 2005, 2006.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2003, 2012, 2013, 2016, 2019, 2020, 2022.
 # Albert Astals Cid <aacid@kde.org>, 2005.
-# Josep M. Ferrer <txemaq@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024.
+# SPDX-FileCopyrightText: 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 00:38+0000\n"
-"PO-Revision-Date: 2024-03-11 12:44+0100\n"
+"PO-Revision-Date: 2024-04-26 11:38+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.02.2\n"
 "X-Accelerator-Marker: &\n"
 
 #: appearance.cpp:39
@@ -908,7 +908,7 @@ msgstr "P&ersonalitza..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Fons de pàgina personlaitzat"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -927,21 +927,35 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Usa un clor de fons personalitzat "
+"que es farà servir a les pàgines web. Es fa servir aquest color:</p><ul "
+"style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: "
+"0px; -qt-list-indent: 1;\"><li align=\"justify\" style=\" margin-top:0px; "
+"margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">quan el color de fons no està definit explícitament a la "
+"pàgina o a un full d'estil personalitzat</li><li align=\"justify\" style=\" "
+"margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-"
+"block-indent:0; text-indent:0px;\">abans de carregar una pàgina web</li></"
+"ul><p align=\"justify\">Definir un color de fons personalitzat és força útil "
+"si utilitzeu un full d'estil personalitzat que defineixi un color color de "
+"fons per a la pàgina (especialment un color fosc), per a evitar un flaix "
+"blanc abnas que es carregui la pàgina</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Usa un color de &fons personalitzat"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>El color de fons personalitzat que es farà servir a "
+"les pàgines web</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -964,12 +978,29 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Afegiu al full d'estil personalitzat "
+"(inclòs el full d'estil d'accessibilitat) una regla per a definir tots els "
+"colors de fons al color personalitzat que heu triat anteriorment. Això evita "
+"la necessitat d'establir el color de fons tant en el full d'estil com en el "
+"diàleg de configuració.</p><p align=\"justify\"><span style=\" font-"
+"weight:600;\">Notes:</span></p><ul style=\"margin-top: 0px; margin-bottom: "
+"0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li align="
+"\"justify\" style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">la regla quedarà "
+"anul·lada per altres regles de colors de fons en el full d'estil "
+"personalitzat seguint les regles CSS habituals</li><li align=\"justify\" "
+"style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">la regla no s'afegeix "
+"realment al fitxer que conté el full d'estil personalitzat; només s'insereix "
+"a la còpia que el Konqueror manté a la memòria. Això significa que si "
+"utilitzeu el full d'estil en altres navegadors, haureu d'afegir manualment "
+"la regla.</li></ul></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Afegeix un color de fons personalitzat al full d'estil"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21

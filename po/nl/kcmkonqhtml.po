@@ -18,14 +18,14 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 00:38+0000\n"
-"PO-Revision-Date: 2024-03-11 11:20+0100\n"
+"PO-Revision-Date: 2024-04-26 11:35+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: appearance.cpp:39
@@ -920,7 +920,7 @@ msgstr "&Aanpassen..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Achtergrondkleur van aangepaste pagina"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -939,21 +939,35 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Een aangepaste achtergrondkleur voor "
+"webpagina's gebruiken. Deze kleur wordt gebruikt:</p><ul style=\"margin-top: "
+"0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-"
+"indent: 1;\"><li align=\"justify\" style=\" margin-top:0px; margin-"
+"bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\">wanneer de achtergrondkleur niet expliciet is ingesteld door "
+"de pagina of door een aangepast stijlblad</li><li align=\"justify\" style=\" "
+"margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-"
+"block-indent:0; text-indent:0px;\">voordat een webpagina wordt geladen</li></"
+"ul><p align=\"justify\">Een aangepaste achtergrondkleur instellen is meestal "
+"nuttig als u een aangepast stijlblad gebruikt die een achtergrondkleur "
+"instelt voor de pagina (speciaal een donkere kleur), om een witte flits te "
+"vermijden alvorens de pagina wordt geladen</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Aangepaste achtergrondkleur gebruiken"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>De te gebruiken aangepaste achtergrondkleur voor "
+"webpagina's</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -976,12 +990,30 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Voeg aan uw aangepaste stijlblad "
+"(inclusief het stijlblad voor toegankelijkheid) een regel toe om alle "
+"achtergrondkleuren in te stellen naar de aangepaste kleur die u boven koos. "
+"Dit vermijdt de noodzaak voor het instellen van de achtergrondkleur zowel in "
+"het stijlblad als in de configuratiedialoog.</p><p align=\"justify\"><span "
+"style=\" font-weight:600;\">Opmerkingen:</span></p><ul style=\"margin-top: "
+"0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-"
+"indent: 1;\"><li align=\"justify\" style=\" margin-top:12px; margin-"
+"bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\">de regel zal overschreven worden door andere regels voor "
+"achtergrondkleuren in uw aangepaste stijlblad die de gebruikelijke CSS "
+"regels gebruiken</li><li align=\"justify\" style=\" margin-top:0px; margin-"
+"bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\">de regel wordt niet echt toegevoegd aan het bestand dat uw "
+"aangepaste stijlblad toegevoegd; het wordt slechts ingevoegd in de kopie die "
+"Konqueror in geheugen houdt. Dit betekent dat als u het stijlblad in andere "
+"browsers gebruikt, u de regel er handmatig aan moet toevoegen.</li></ul></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Aangepaste achtergrondkleur toevoegen aan stijlblad"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
