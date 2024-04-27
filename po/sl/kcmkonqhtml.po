@@ -1,7 +1,7 @@
 # translation of kcmkonqhtml.po to
 # Translation of kcmkonqhtml.po to Slovenian
 # SLOVENIAN TRANSLATION OF KCMKONQHTML.
-# $Id: kcmkonqhtml.po 1678718 2024-04-26 02:47:50Z scripty $
+# $Id: kcmkonqhtml.po 1678760 2024-04-27 02:45:37Z scripty $
 # $Source$
 #
 # Copyright (C) 2002, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
@@ -12,13 +12,13 @@
 # Andrej Vernekar <andrej.vernekar@moj.net>, 2007.
 # Jure Repinc <jlp@holodeck1.com>, 2007, 2008, 2009, 2010, 2011, 2012.
 # Andrej Mernik <andrejm@ubuntu.si>, 2013, 2014, 2016.
-# Matjaž Jeran <matjaz.jeran@amis.net>, 2020, 2022, 2023.
+# SPDX-FileCopyrightText: 2020, 2022, 2023, 2024 Matjaž Jeran <matjaz.jeran@amis.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 02:23+0000\n"
-"PO-Revision-Date: 2024-03-11 09:02+0100\n"
+"PO-Revision-Date: 2024-04-26 07:15+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -909,7 +909,7 @@ msgstr "Prilagodi ..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Ozadje strani po meri"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -928,21 +928,34 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Uporabite barvo ozadja po meri za "
+"spletne strani. Ta barva se uporablja:</p><ul style=\"margin-top: 0px; "
+"margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"
+"\"><li align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">ko barva "
+"ozadja ni izrecno nastavljena s stranjo ali s slogovno tabelo po meri</"
+"li><li align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">pred "
+"nalaganjem spletne strani</li></ul><p align=\"justify\">Nastavitev barve "
+"ozadja po meri večinoma uporabno, če uporabljate slogovno tabelo po meri, ki "
+"nastavi barvo ozadja za stran (zlasti temno barvo), da se izognete belemu "
+"utripu, preden se stran naloži</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Uporabi barvo ozadja po meri"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>Barva ozadja po meri za uporabo na spletnih straneh</"
+"p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -965,12 +978,28 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Dodajte svoji tabeli slogov po meri "
+"(vključno s tabelo slogov dostopnosti) pravilo za nastavitev vseh barv "
+"ozadja na barvo po meri, ki ste jo izbrali zgoraj. S tem se izognete potrebi "
+"po nastavljanju barve ozadja tako v slogovni tabeli kot v konfiguracijskem "
+"pogovornem oknu.</p><p align=\"justify\"><span style=\" font-weight:600;"
+"\">Opombe:</span></p><ul style=\"margin-top: 0px; margin-bottom: 0px; margin-"
+"left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li align=\"justify\" "
+"style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">pravilo bo preglašeno z "
+"drugimi pravili za barve ozadja v vaši tabeli slogov po meri po običajnih "
+"pravilih CSS</li><li align=\"justify\" style=\" margin-top:0px; margin-"
+"bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\">pravilo dejansko ni dodano v datoteko, ki vsebuje vašo tabelo "
+"slogov po meri; vstavi se samo v kopijo, ki jo Konqueror hrani v pomnilniku. "
+"To pomeni, da če uporabljate slogovno datoteko v drugih brskalnikih, ji "
+"boste morali dodati pravilo ročno.</li></ul></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Dodaj barvo ozadja po meri v tabelo slogov"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
