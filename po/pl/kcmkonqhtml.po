@@ -1,5 +1,5 @@
 # translation of kcmkonqhtml.po to Polish
-# Version: $Revision: 1678718 $
+# Version: $Revision: 1678819 $
 # translation of kcmkonqhtml.po to
 # Polskie napisy do konfiguratora przeglądarki Konquerora.
 # Copyright (C) 2000,2002,2003, 2004, 2005, 2006, 2008, 2009 Free Software Foundation, Inc.
@@ -17,14 +17,14 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 02:23+0000\n"
-"PO-Revision-Date: 2024-03-17 11:19+0100\n"
+"PO-Revision-Date: 2024-04-27 11:01+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -896,7 +896,7 @@ msgstr "&Dostosuj..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Tło własnej strony"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -915,21 +915,33 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Użyj własnej barwy tła dla stron z "
+"sieci. Użyta zostanie następująca barwa:</p><ul style=\"margin-top: 0px; "
+"margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"
+"\"><li align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">gdy barwa "
+"tła nie jest jednoznacznie ustawiona przez stronę lub własny arkusz stylów</"
+"li><li align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">prze "
+"wczytaniem strony z sieci</li></ul><p align=\"justify\">Ustawienie własnej "
+"barwy tła jest najczęściej użyteczne wtedy, gdy używasz własnego arkusza "
+"stylów, który ustawia barwę tła dla strony (szczególni ciemną barwę), aby "
+"uniknąć oślepienia białym przy wczytywaniu strony</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Użyj własnej &barwy tła"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>Własna barwa tła dla stron z sieci</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -952,12 +964,28 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Dodaj do swojego własnego arkusza "
+"stylów (uwzględniając arkusz stylów dla osób z trudnościami) zasadę "
+"ustawiania wszystkich barw tła na własną barwę wybraną powyżej. Zapobiega to "
+"potrzebie ustawiania barwy tła zarówno w arkuszu stylów jak i oknie ustawień."
+"</p><p align=\"justify\"><span style=\" font-weight:600;\">Uwagi:</span></"
+"p><ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-"
+"right: 0px; -qt-list-indent: 1;\"><li align=\"justify\" style=\" margin-"
+"top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\">zasada zostanie zastąpiona innymi zasadami dla "
+"barwy tła w twoim własnym arkuszu stylów wg zwyczajowych zasad CSS</li><li "
+"align=\"justify\" style=\" margin-top:0px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">zasada "
+"nie jest właściwie dodawana do pliku, zawierającego twój własny arkusz "
+"stylów; jest wstawiana tylko w kopii, którą Konqueror przechowuje w pamięci. "
+"Oznacza to, że jeśli używasz arkuszy stylów w innych przeglądarkach, to "
+"będziesz musiał dodać do nich tę zasadę ręcznie.</li></ul></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Dodaj własną barwę tła do arkusza stylów"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
