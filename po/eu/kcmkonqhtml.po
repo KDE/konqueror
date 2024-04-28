@@ -13,14 +13,14 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 00:38+0000\n"
-"PO-Revision-Date: 2024-03-12 18:58+0100\n"
+"PO-Revision-Date: 2024-04-27 22:36+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: appearance.cpp:39
@@ -912,7 +912,7 @@ msgstr "&Pertsonalizatu..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Neurrira ipiniatako orriaren atzeko planoa"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -931,21 +931,35 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Web-orrietarako neurrira ipinitako "
+"hondoko kolore bat erabili. Kolore hau erabiltzen da:</p><ul style=\"margin-"
+"top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-"
+"indent: 1;\"><li align=\"justify\" style=\" margin-top:0px; margin-"
+"bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\">Orriak edo neurrira ipinitako estilo-orri batek hondoko "
+"kolorea esplizituki ezartzen ez duenean</li><li align=\"justify\" style=\" "
+"margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-"
+"block-indent:0; text-indent:0px;\">web-orribat zamatu aurretik</li></ul><p "
+"align=\"justify\">Atzeko planoko kolore bat neurrira ipintzea erabilgarria "
+"da, gehien bat, orria zamatu aurreko flash zuriak saihesteko, orriaren "
+"hondoko kolorea (bereziki kolore ilun bat) ezartzen duen neurrira ipinitako "
+"estilo-orri bat erabiltzen baduzu</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Erabili neurrira ipinitako &hondoko kolorea"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>Web-orrietarako erabili beharreko neurrira ipinitako "
+"hondoko kolorea</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -968,12 +982,29 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Gehitu arau bat neurrira ipinitako "
+"zure estilo-orrian (irisgarritasun estilo-orria barne) hondoko kolore "
+"guztiak goran neurrira hautatu duzun kolorera ezartzeko. Horrek hondoko "
+"kolorea estilo-orrian eta konfiguratzeko elkarrizketa-koadroan, bietan, "
+"ezarri beharra saihesten du.</p><p align=\"justify\"><span style=\" font-"
+"weight:600;\">Oharrak:</span></p><ul style=\"margin-top: 0px; margin-bottom: "
+"0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li align="
+"\"justify\" style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">araua, neurrira "
+"ipinitako zure estilo-orriko hondoko kolorerako beste arau batzuek "
+"gainezarriko dute ohiko CSS arauak jarraituz</li><li align=\"justify\" style="
+"\" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -"
+"qt-block-indent:0; text-indent:0px;\">araua ez da neurrira ipinitako zure "
+"estilo-orrian gehitzen; «Konqueror»rek memorian mantentzen duen kopian "
+"gehitzen da bakarrik. Horrek esan nahi du, estilo-orria beste arakatzaile "
+"batzuetan erabiltzen baduzu, araua eskuz gehitu beharko diozula.</li></ul></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Gehitu neurrira ipinitako hondoko kolorea estilo-orrian"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21

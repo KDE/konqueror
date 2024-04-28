@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 00:38+0000\n"
-"PO-Revision-Date: 2024-03-11 17:28+0100\n"
+"PO-Revision-Date: 2024-04-28 00:57+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "com>\n"
 "First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: appearance.cpp:39
@@ -861,14 +861,14 @@ msgid ""
 "<b>Use default stylesheet</b><p>Select this option to use the default "
 "stylesheet.</p>"
 msgstr ""
-"<b>Usar la hoja de estilo predeterminada</b><p>Seleccione esta opción para "
-"utilizar la hoja de estilo predeterminada.</p>"
+"<b>Usar la hoja de estilos predeterminada</b><p>Seleccione esta opción para "
+"utilizar la hoja de estilos predeterminada.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useDefault)
 #: css/cssconfig.ui:38
 #, kde-format
 msgid "Us&e default stylesheet"
-msgstr "Utilizar hoja de estilo &predeterminada"
+msgstr "Usar la hoja de estilos &predeterminada"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
 #: css/cssconfig.ui:48
@@ -881,19 +881,19 @@ msgid ""
 "sheet (see http://www.w3.org/Style/CSS for further information on cascading "
 "style sheets).</p>"
 msgstr ""
-"<b>Usar hojas de estilo definidas por el usuario</b><p>Si selecciona esta "
-"opción, konqueror tratará de cargar una hoja de estilo definida por el "
-"usuario como se especifica en la dirección de abajo. La hoja de estilos le "
-"permite obviar completamente el modo en el que se le muestran las páginas "
-"web en su navegador. El archivo especificado debería contener una hoja de "
-"estilos válida (consulte http://www.w3.org/Style/CSS para más información "
-"sobre las hojas de estilo en cascada).</p>"
+"<b>Usar la hoja de estilos definida por el usuario</b><p>Si selecciona esta "
+"opción, Konqueror tratará de cargar una hoja de estilos definida por el "
+"usuario como se indica en la siguiente dirección. La hoja de estilos le "
+"permite obviar completamente el modo en el que se muestran las páginas web "
+"en el navegador. El archivo indicado debería contener una hoja de estilos "
+"válida (consulte http://www.w3.org/Style/CSS para más información sobre las "
+"hojas de estilos en cascada).</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useUser)
 #: css/cssconfig.ui:51
 #, kde-format
 msgid "Use &user-defined stylesheet"
-msgstr "Utilizar hoja de estilo definida por el &usuario"
+msgstr "Usar la hoja de estilos definida por el &usuario"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useAccess)
 #: css/cssconfig.ui:103
@@ -913,7 +913,7 @@ msgstr ""
 #: css/cssconfig.ui:106
 #, kde-format
 msgid "U&se accessibility stylesheet"
-msgstr "Utilizar hoja de estilo de acce&sibilidad"
+msgstr "Usar la hoja de estilo de acce&sibilidad"
 
 #. i18n: ectx: property (text), widget (QPushButton, customize)
 #: css/cssconfig.ui:146
@@ -925,7 +925,7 @@ msgstr "&Personalizar..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Fondo de página personalizado"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -944,21 +944,35 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Usar un color de fondo personalizado "
+"para las páginas web. Este color se usa:</p><ul style=\"margin-top: 0px; "
+"margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"
+"\"><li align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">cuando el "
+"color del fondo no se indica explícitamente en la página ni en una hoja de "
+"estilo personalizada</li><li align=\"justify\" style=\" margin-top:0px; "
+"margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">antes de cargar una página web</li></ul><p align=\"justify"
+"\">El uso de un color de fondo personalizado suele ser más útil cuando se "
+"usa una hoja de estilo personalizada que define un color de fondo para la "
+"página (especialmente un color oscuro), para evitar un parpadeo en blanco "
+"antes de cargar la página.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Usar un color de &fondo personalizado"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>El color de fondo personalizado que se usará en las "
+"páginas web</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -981,12 +995,31 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Añada a su hoja de estilos "
+"personalizada (incluyendo la hoja de estilos de accesibilidad) una regla "
+"para definir todos los colores de fondo al color personalizado que haya "
+"escogido. Esto evita la necesidad de definir el color de fondo tanto en la "
+"hoja de estilos como en el diálogo de configuración.</p><p align=\"justify"
+"\"><span style=\" font-weight:600;\">Notas:</span></p><ul style=\"margin-"
+"top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-"
+"indent: 1;\"><li align=\"justify\" style=\" margin-top:12px; margin-"
+"bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\">la regla tendrá menos peso que que otras reglas para los "
+"colores de fondo de la hoja de estilos personalizada que sigan las típicas "
+"reglas de CSS</li><li align=\"justify\" style=\" margin-top:0px; margin-"
+"bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\">la regla no se añade al archivo que contiene la hoja de "
+"estilos personalizada, sino que solo se inserta en la copia del archivo que "
+"contiene la hoja de estilos personalizada; solo se inserta en la copia que "
+"Konqueror mantiene en memoria. Esto significa que si usa la hoja de estilos "
+"en otros navegadores, tendrá que añadirla de forma manual a ella.</li></ul></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Añadir el color de fondo personalizado a la hoja de estilos"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
@@ -997,8 +1030,8 @@ msgid ""
 "the above.</p>"
 msgstr ""
 "<b>Familia del tipo de letra</b><p>Una familia de tipos de letra es un grupo "
-"de tipos de letra que se parecen entre sí, con diferentes miembros p.ej. "
-"negrita, cursiva o cualquier número de más arriba.</p>"
+"de tipos de letra que se parecen entre sí, con diferentes miembros (por "
+"ejemplo, negrita, cursiva) o cualquier número de los anteriores.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:24
@@ -1033,7 +1066,7 @@ msgstr ""
 #: css/csscustom.ui:47
 #, kde-format
 msgid "Use same family for all text"
-msgstr "Utilizar la misma familia para todos los textos"
+msgstr "Usar la misma familia para todos los textos"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
 #: css/csscustom.ui:57
@@ -1133,7 +1166,7 @@ msgid ""
 "custom font sizes in favor of the base font size. All fonts will be "
 "displayed in the same size.</p>"
 msgstr ""
-"<b>Utilizar el mismo tamaño para todos los elementos</b><p>Seleccione esta "
+"<b>Usar el mismo tamaño para todos los elementos</b><p>Seleccione esta "
 "opción para modificar los tamaños personalizados en favor del tamaño base de "
 "las letras. Todos los tipos de letra se mostrarán con el mismo tamaño.</p>"
 
@@ -1141,7 +1174,7 @@ msgstr ""
 #: css/csscustom.ui:151
 #, kde-format
 msgid "&Use same size for all elements"
-msgstr "&Utilizar el mismo tamaño para todos los elementos"
+msgstr "&Usar el mismo tamaño para todos los elementos"
 
 #. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
 #: css/csscustom.ui:161
@@ -1233,7 +1266,7 @@ msgstr ""
 #: css/csscustom.ui:251
 #, kde-format
 msgid "Use same color for all text"
-msgstr "Utilizar el mismo color para todos los textos"
+msgstr "Usar el mismo color para todos los textos"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, txtForeground)
 #. i18n: ectx: property (whatsThis), widget (KColorButton, foregroundColorButton)
@@ -1883,12 +1916,12 @@ msgstr "Preferencias de tiempo de ejecución Java."
 #: javaopts.cpp:97
 #, kde-format
 msgid "&Use security manager"
-msgstr "&Utilizar el gestor de seguridad"
+msgstr "&Usar el gestor de seguridad"
 
 #: javaopts.cpp:101
 #, kde-format
 msgid "Use &KIO"
-msgstr "Utilizar &KIO"
+msgstr "Usar &KIO"
 
 #: javaopts.cpp:105
 #, kde-format
@@ -1988,10 +2021,10 @@ msgid ""
 "risk. You can modify your $HOME/.java.policy file with the Java policytool "
 "utility to give code downloaded from certain sites more permissions."
 msgstr ""
-"Si se habilita el gestor de seguridad se ejecutará el jvm con un gestor de "
+"Si se activa el gestor de seguridad se ejecutará el jvm con un gestor de "
 "seguridad. Esto evitará que las miniaplicaciones pueden ser leídas o "
 "escritas de/en su sistema de archivos, creando sockets arbitrarios, y otras "
-"acciones que podrían utilizarse para atacar su sistema. Inhabilite esta "
+"acciones que se podrían utilizar para atacar a su sistema. Desactive esta "
 "opción bajo su responsabilidad. Puede modificar el archivo $HOME/.java."
 "policy con la utilidad Java de herramienta de políticas para permitir "
 "mayores privilegios al código descargado de ciertos sitios."
@@ -1999,7 +2032,7 @@ msgstr ""
 #: javaopts.cpp:170
 #, kde-format
 msgid "Enabling this will cause the jvm to use KIO for network transport "
-msgstr "Si activa esta opción, jvm utilizará KIO para el transporte de red "
+msgstr "Si activa esta opción, jvm usará KIO para el transporte de red "
 
 #: javaopts.cpp:172
 #, kde-format
@@ -2009,11 +2042,10 @@ msgid ""
 "the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
 "the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
 msgstr ""
-"Introduzca la ruta para el ejecutable java. Si desea utilizar el jre en su "
-"ruta, simplemente, déjelo como «java». Si necesita utilizar un jre "
-"diferente, introduzca la ruta al ejecutable java (p.ej., /usr/lib/jdk/bin/"
-"java), o la ruta al directorio que contiene «/bin/java» (p.ej., /opt/"
-"IBMJava2-13)."
+"Introduzca la ruta para el ejecutable java. Si desea usar el jre en su ruta, "
+"déjelo como «java». Si necesita usar un jre diferente, introduzca la ruta al "
+"ejecutable java (por ejemplo, /usr/lib/jdk/bin/java), o la ruta al "
+"directorio que contiene «/bin/java» (por ejemplo, /opt/IBMJava2-13)."
 
 #: javaopts.cpp:177
 #, kde-format

@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 00:38+0000\n"
-"PO-Revision-Date: 2024-03-11 09:24+0100\n"
+"PO-Revision-Date: 2024-04-27 10:46+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -912,7 +912,7 @@ msgstr "&Personalizar…"
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Fondo de páxina personalizado"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -931,21 +931,35 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Usar unha cor de fondo personalizada "
+"para as páxinas web. Úsase esta cor:</p><ul style=\"margin-top: 0px; margin-"
+"bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li "
+"align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">cando nin "
+"a páxina nin unha folla de estilos definen explicitamente a cor de fondo, e</"
+"li><li align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">antes de "
+"cargar unha páxina web.</li></ul><p align=\"justify\">Definir unha cor de "
+"fondo predeterminada é útil principalmente se usa unha folla de estilos "
+"personalizada que define unha cor de fondo para a páxina (especialmente unha "
+"cor escura), para evitar ese instante de fondo branco previo a que se cargue "
+"a páxina.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Usar unha cor de &fondo personalizada."
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>A cor de fondo personalizada para usar para páxinas "
+"web.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -968,12 +982,29 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Engadir á súa folla de estilo "
+"personalizada (incluída a folla de estilo de accesibilidade) unha regra para "
+"definir todas as cores de fondo á cor personalizada escollida enriba. Isto "
+"evita a necesidade de definir a cor de fondo tanto na folla de estilo como "
+"no diálogo de configuración.</p><p align=\"justify\"><span style=\" font-"
+"weight:600;\">Notas:</span></p><ul style=\"margin-top: 0px; margin-bottom: "
+"0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li align="
+"\"justify\" style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">outras regras de "
+"cor de fondo da súa folla de estilo personalizada sobredefinirán a regra, en "
+"liña coas regras de CSS habituais,</li><li align=\"justify\" style=\" margin-"
+"top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\">en realidade a regra non se engade ao ficheiro "
+"que contén a folla de estilo personalizada; só se insire na copia que "
+"Konqueror mantén en memoria. Isto significa que se usa a folla de estilo "
+"noutros navegadores, terá que engadirlle manualmente a regra.</li></ul></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Engadir unha cor de fondo personalizada á folla de estilo."
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
