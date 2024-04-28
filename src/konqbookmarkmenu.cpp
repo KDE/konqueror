@@ -93,6 +93,35 @@ void KonqBookmarkMenu::refill()
     if (!isRoot()) {
         addActions();
     }
+    startFillingFavicons();
+}
+
+void Konqueror::KonqBookmarkMenu::startFillingFavicons()
+{
+    QList<QUrl> urls;
+    for (auto a : m_actions) {
+        if (!a->isSeparator() && !a->menu()) {
+            urls.append(a->data().toUrl());
+        }
+    }
+    connect(KonqPixmapProvider::self(), &KonqPixmapProvider::changed, this, &Konqueror::KonqBookmarkMenu::fillFavicons);
+    KonqPixmapProvider::self()->downloadHostIcons(urls);
+}
+
+void Konqueror::KonqBookmarkMenu::fillFavicons()
+{
+    disconnect(KonqPixmapProvider::self(), &KonqPixmapProvider::changed, this, &Konqueror::KonqBookmarkMenu::fillFavicons);
+    for (auto a : m_actions) {
+        if (!a->isSeparator() && !a->menu()) {
+            QUrl u = a->data().toUrl();
+            a->data().clear(); //Don't waste memory, as we won't need the URLs any longer
+            QString host = u.host();
+            a->setIcon(KonqPixmapProvider::self()->iconForUrl(host));
+            connect(KonqPixmapProvider::self(), &KonqPixmapProvider::changed, a, [host, a]() {
+                a->setIcon(KonqPixmapProvider::self()->iconForUrl(host));
+            });
+        }
+    }
 }
 
 QAction *KonqBookmarkMenu::actionForBookmark(const KBookmark &_bm)
@@ -115,10 +144,7 @@ QAction *KonqBookmarkMenu::actionForBookmark(const KBookmark &_bm)
         QUrl host = bm.url().adjusted(QUrl::RemovePath | QUrl::RemoveQuery);
             bm.setIcon(KonqPixmapProvider::self()->iconNameFor(host));
         KBookmarkAction *action = new KBookmarkAction(bm, owner(), this);
-            connect(KonqPixmapProvider::self(), &KonqPixmapProvider::changed, action, [host, action]() {
-                action->setIcon(KonqPixmapProvider::self()->iconForUrl(host));
-            });
-        KonqPixmapProvider::self()->downloadHostIcon(host);
+        action->setData(bm.url());
         m_actions.append(action);
         return action;
     }

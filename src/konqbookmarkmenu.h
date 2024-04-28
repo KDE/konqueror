@@ -15,6 +15,8 @@
 #include <KActionCollection>
 #include <kbookmarks_version.h>
 
+#include <QPointer>
+
 namespace Konqueror { // to avoid clashing with KF5::Bookmarks which had a KonqBookmarkMenu class. Remove once using KF6.
 
 class KonqBookmarkMenu : public KBookmarkMenu
@@ -50,8 +52,12 @@ public:
     {
     }
 
+protected Q_SLOTS:
+    void fillFavicons();
+
 protected:
     void refill() override;
+    void startFillingFavicons();
     QAction *actionForBookmark(const KBookmark &bm) override;
     QMenu *contextMenu(QAction *action) override;
 };

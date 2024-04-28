@@ -1,6 +1,6 @@
 /* This file is part of the KDE project
     SPDX-FileCopyrightText: 2000 Carsten Pfeiffer <pfeiffer@kde.org>
-
+                            2024 Stefano Crocco <stefano.crocco@alice.it>
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
@@ -17,6 +17,8 @@
 #include <kconfiggroup.h>
 #include <KIconLoader>
 
+#include <QApplication>
+
 class KonqPixmapProviderSingleton
 {
 public:
@@ -32,63 +34,145 @@ KonqPixmapProvider *KonqPixmapProvider::self()
 KonqPixmapProvider::KonqPixmapProvider()
     : QObject()
 {
+    connect(qApp, &QApplication::lastWindowClosed, this, &KonqPixmapProvider::cleanupDownloadsQueue);
 }
 
 KonqPixmapProvider::~KonqPixmapProvider()
 {
 }
 
-void KonqPixmapProvider::downloadHostIcon(const QUrl &hostUrl)
+//Only attempt to download icon for http(s) URLs
+static bool canDownloadFavIconForScheme(const QUrl &url) {
+    return url.scheme().startsWith(QLatin1String("http"));
+}
+
+void KonqPixmapProvider::downloadHostIcons(const QList<QUrl>& urls)
 {
-    //Only attempt to download icon for http(s) URLs
-    if (!hostUrl.scheme().startsWith(QLatin1String("http"))) {
+    //We use a dynamic property rather than an instance variable since it's only used here
+    setProperty("modified", false);
+    auto proc = [this](KIO::FavIconRequestJob *job){
+        bool res = updateIcons(job);
+        if (res) {
+            setProperty("modified", true);
+        }
+        if (m_pendingRequests.isEmpty()) {
+            if (property("modified").toBool()) {
+                emit changed();
+            }
+            setProperty("modified", {});
+        }
+    };
+    QList<QUrl> filteredUrls;
+    std::copy_if(urls.constBegin(), urls.constEnd(), std::back_inserter(filteredUrls), &canDownloadFavIconForScheme);
+    for (const QUrl &url : filteredUrls) {
+        startFavIconJob(url, proc);
+    };
+}
+
+void KonqPixmapProvider::startFavIconJob(const FavIconRequestData& data)
+{
+    startFavIconJob(data.hostUrl, data.callback, data.iconUrl);
+}
+
+void KonqPixmapProvider::startFavIconJob(const QUrl& hostUrl, FavIconRequestCallback proc, const QUrl &iconUrl)
+{
+    if (m_jobs.count() >= s_maxJobs) {
+        m_pendingRequests.append({hostUrl, proc, {}});
         return;
     }
     KIO::FavIconRequestJob *job = new KIO::FavIconRequestJob(hostUrl);
-    connect(job, &KIO::FavIconRequestJob::result, this, [job, this](KJob *) {
-        bool modified = false;
-        const QUrl _hostUrl = job->hostUrl();
-        QMap<QUrl, QString>::iterator itEnd = iconMap.end();
-        for (QMap<QUrl, QString>::iterator it = iconMap.begin(); it != itEnd; ++it) {
-            const QUrl url(it.key());
-            if (url.host() == _hostUrl.host()) {
-                // For host default-icons still query the favicon manager to get
-                // the correct icon for pages that have an own one.
-                const QString icon = KIO::favIconForUrl(url);
-                if (!icon.isEmpty() && *it != icon) {
-                    *it = icon;
+    m_jobs.append(job);
+    connect(job, &QObject::destroyed, this, [this](QObject *o){m_jobs.removeOne(o);});
+    if (iconUrl.isValid()) {
+        job->setIconUrl(iconUrl);
+    }
+    connect(job, &KIO::FavIconRequestJob::result, this, [job, proc, this](KJob *){
+        proc(job);
+        m_jobs.removeOne(job);
+        downloadNextFavIcon();
+    });
+}
+
+bool KonqPixmapProvider::updateIcons(KIO::FavIconRequestJob* job, UpdateMode mode)
+{
+    bool modified = false;
+    const QUrl _hostUrl = job->hostUrl();
+    QMap<QUrl, QString>::iterator itEnd = iconMap.end();
+    for (QMap<QUrl, QString>::iterator it = iconMap.begin(); it != itEnd; ++it) {
+        const QUrl url(it.key());
+        QString icon;
+        switch (mode) {
+            case UpdateMode::Host:
+                if (url.host() == _hostUrl.host()) {
+                    // For host default-icons still query the favicon manager to get
+                    // the correct icon for pages that have an own one.
+                    icon = KIO::favIconForUrl(url);
                     modified = true;
                 }
-            }
+                break;
+            case UpdateMode::Page:
+                if (url.host() == _hostUrl.host() && url.path() == _hostUrl.path()) {
+                    icon = job->iconFile();
+                    modified = true;
+                }
+                break;
         }
-        if (modified) {
+        if (modified && !icon.isEmpty() && *it != icon) {
+            *it = icon;
+        }
+    }
+    return modified;
+}
+
+void KonqPixmapProvider::downloadNextFavIcon()
+{
+    if (m_pendingRequests.isEmpty()) {
+        return;
+    }
+    if (m_jobs.count() >= s_maxJobs) {
+        return;
+    }
+    auto data = m_pendingRequests.takeFirst();
+    startFavIconJob(data);
+}
+
+void KonqPixmapProvider::downloadHostIcon(const QUrl &hostUrl)
+{
+    if (!canDownloadFavIconForScheme(hostUrl)) {
+        return;
+    }
+
+    auto proc = [this](KIO::FavIconRequestJob *job) {
+        if (updateIcons(job)) {
             emit changed();
         }
-    });
+    };
+    startFavIconJob(hostUrl, proc);
+}
+
+void KonqPixmapProvider::cleanupDownloadsQueue()
+{
+    m_pendingRequests.clear();
+    QList<KIO::FavIconRequestJob*> jobs = findChildren<KIO::FavIconRequestJob*>();
+    for (auto o : m_jobs) {
+        auto j = qobject_cast<KIO::FavIconRequestJob*>(o);
+        if (o) {
+            j->kill(KJob::Quietly);
+            //Calling this seems to be necessary to allow the application to close
+            //successfully
+            j->deleteLater();
+        }
+    }
 }
 
 void KonqPixmapProvider::setIconForUrl(const QUrl &hostUrl, const QUrl &iconUrl)
 {
-    KIO::FavIconRequestJob *job = new KIO::FavIconRequestJob(hostUrl);
-    job->setIconUrl(iconUrl);
-    connect(job, &KIO::FavIconRequestJob::result, this, [job, this](KJob *) {
-        bool modified = false;
-        const QUrl _hostUrl = job->hostUrl();
-        QMap<QUrl, QString>::iterator itEnd = iconMap.end();
-        for (QMap<QUrl, QString>::iterator it = iconMap.begin(); it != itEnd; ++it) {
-            const QUrl url(it.key());
-            if (url.host() == _hostUrl.host() && url.path() == _hostUrl.path()) {
-                const QString icon = job->iconFile();
-                if (!icon.isEmpty() && *it != icon) {
-                    *it = icon;
-                    modified = true;
-                }
-            }
-        }
-        if (modified) {
+    auto callback = [this] (KIO::FavIconRequestJob *job) {
+        if (updateIcons(job, UpdateMode::Page)) {
             emit changed();
         }
-    });
+    };
+    startFavIconJob(hostUrl, callback, iconUrl);
 }
 
 // at first, tries to find the iconname in the cache
