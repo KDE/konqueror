@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 02:23+0000\n"
-"PO-Revision-Date: 2024-03-28 10:37+0100\n"
+"PO-Revision-Date: 2024-04-28 06:29+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -36,7 +36,7 @@ msgstr "Tiparoj"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Stylesheets"
-msgstr "Stildifinoj"
+msgstr "Stilfolioj"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
 #: appearance.cpp:48 css/csscustom.ui:296
@@ -903,7 +903,7 @@ msgstr "Propr&igi..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Propra Paĝfono"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -922,21 +922,34 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Uzi propran fonkoloron por retpaĝoj. "
+"Ĉi koloro estas uzata:</p><ul style=\"margin-top: 0px; margin-bottom: 0px; "
+"margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li align="
+"\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">kiam la fonkoloro "
+"ne estas eksplicite metata per la paĝo aŭ per propra stilfolio</li><li align="
+"\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">antaŭ ol retpaĝo "
+"estas ŝargita</li></ul><p align=\"justify\">Agordo de propra fonkoloro estas "
+"plej utila se vi uzas propran stilfolion kiu metas fonan koloron por la paĝo "
+"(precipe malhela koloro), por eviti blankan fulmon antaŭ ol la paĝo estas "
+"ŝargita</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Uzi propran &paĝfonan koloron"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>La propra paĝfona koloro uzenda por TTT-paĝoj<br/></"
+"p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -964,7 +977,7 @@ msgstr ""
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Aldoni propran paĝfonan koloron al stilfolio"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
@@ -2716,8 +2729,3 @@ msgstr ""
 "<html><head/><body><p>La retumila identigo uzenda kiam la defaŭlta identigo "
 "estas malŝaltita.</p><p>Vi povas enigi ĝin permane aŭ komenci de unu en la "
 "suba listo kaj ŝanĝi ĝin laŭ viaj bezonoj.</p></body></html>"
-
-#~ msgid ""
-#~ "This will open a new tab in the background, instead of in the foreground."
-#~ msgstr ""
-#~ "Tio malfermas novan langeton en la fono, anstataŭ en la ĉefa pozicio."

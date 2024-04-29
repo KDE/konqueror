@@ -4,13 +4,13 @@
 # Sebastià Pla i Sanz <sps@sastia.com>, 1999, 2000, 2001, 2002, 2004, 2005, 2006.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2003, 2012, 2013, 2016, 2019, 2020, 2022.
 # Albert Astals Cid <aacid@kde.org>, 2005.
-# Josep M. Ferrer <txemaq@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024.
+# SPDX-FileCopyrightText: 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 02:23+0000\n"
-"PO-Revision-Date: 2024-03-11 12:44+0100\n"
+"PO-Revision-Date: 2024-04-26 11:38+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.02.2\n"
 "X-Accelerator-Marker: &\n"
 
 #: appearance.cpp:39
@@ -59,11 +59,11 @@ msgid ""
 "image button.<br />Unless you have a very slow network connection, you will "
 "probably want to check this box to enhance your browsing experience.</html>"
 msgstr ""
-"<html>Si se selecciona, Konqueror carregarà automàticament qualsevol imatge "
+"<html>Si està marcada, Konqueror carregarà automàticament qualsevol imatge "
 "incrustada a una pàgina web. D'altra manera, mostrarà l'espai de les imatges "
 "i llavors podreu carregar-les manualment clicant en el botó d'imatge. <br /"
 ">Si no és que teniu una connexió de xarxa molt lenta, segurament voldreu "
-"seleccionar esta casella per a millorar la vostra navegació.</html>"
+"marcar esta casella per a millorar la vostra navegació.</html>"
 
 #: appearance.cpp:63
 #, kde-format
@@ -78,10 +78,10 @@ msgid ""
 "will probably want to check this box to enhance your browsing experience, "
 "especially if have a slow network connection.</html>"
 msgstr ""
-"<html>Si se selecciona, Konqueror dibuixarà un marc contenidor al voltant de "
+"<html>Si està marcada, Konqueror dibuixarà un marc contenidor al voltant de "
 "les imatges incrustades d'una pàgina web encara a mig carregar. <br /"
 ">Especialment si teniu una connexió de xarxa molt lenta, segurament voldreu "
-"seleccionar esta casella per a millorar la navegació.</html>"
+"marcar esta casella per a millorar la navegació.</html>"
 
 #: appearance.cpp:74
 #, kde-format
@@ -565,7 +565,7 @@ msgstr ""
 "sessió actual. Estes galetes no es guardaran en el disc dur o dispositiu "
 "d'emmagatzematge. En comptes d'açò, se suprimiran quan tanqueu totes les "
 "aplicacions que les utilitzen (p. ex., el navegador).</p><p><u>NOTA:</u> Si "
-"seleccioneu esta opció, s'anul·laran les polítiques de galetes de sessió "
+"marqueu esta opció, s'anul·laran les polítiques de galetes de sessió "
 "predeterminades i específiques de lloc.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
@@ -865,7 +865,7 @@ msgid ""
 "sheet (see http://www.w3.org/Style/CSS for further information on cascading "
 "style sheets).</p>"
 msgstr ""
-"<b>Fulls d'estil definits per l'usuari</b> <p>Si seleccioneu esta casella, "
+"<b>Fulls d'estil definits per l'usuari</b> <p>Si marqueu esta casella, "
 "Konqueror provarà de carregar un full d'estil definit per l'usuari tal com "
 "s'especifica en la ubicació inferior. Els fulls d'estil vos permeten "
 "modificar completament el mode com es mostren les pàgines web al vostre "
@@ -909,7 +909,7 @@ msgstr "Personal&itza..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Fons de pàgina personlaitzat"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -928,21 +928,36 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Utilitza un clor de fons "
+"personalitzat que es farà servir a les pàgines web. S'utilitza este color:</"
+"p><ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-"
+"right: 0px; -qt-list-indent: 1;\"><li align=\"justify\" style=\" margin-"
+"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\">quan el color de fons no està definit "
+"explícitament a la pàgina o a un full d'estil personalitzat</li><li align="
+"\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">abans de carregar "
+"una pàgina web</li></ul><p align=\"justify\">Definir un color de fons "
+"personalitzat és força útil si utilitzeu un full d'estil personalitzat que "
+"definisca un color color de fons per a la pàgina (especialment un color "
+"fosc), per a evitar un flaix blanc abnas que es carregue la pàgina</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Utilitza un color de &fons personalitzat"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>El color de fons personalitzat que es farà servir a "
+"les pàgines web</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -965,12 +980,29 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Afegiu al full d'estil personalitzat "
+"(inclòs el full d'estil d'accessibilitat) una regla per a definir tots els "
+"colors de fons al color personalitzat que heu triat anteriorment. Açò evita "
+"la necessitat d'establir el color de fons tant en el full d'estil com en el "
+"diàleg de configuració.</p><p align=\"justify\"><span style=\" font-"
+"weight:600;\">Notes:</span></p><ul style=\"margin-top: 0px; margin-bottom: "
+"0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li align="
+"\"justify\" style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">la regla quedarà "
+"anul·lada per altres regles de colors de fons en el full d'estil "
+"personalitzat seguint les regles CSS habituals</li><li align=\"justify\" "
+"style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">la regla no s'afig "
+"realment al fitxer que conté el full d'estil personalitzat; només s'inserix "
+"a la còpia que Konqueror manté en la memòria. Açò significa que si utilitzeu "
+"el full d'estil en altres navegadors, haureu d'afegir manualment la regla.</"
+"li></ul></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Afig un color de fons personalitzat al full d'estil"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
@@ -1686,7 +1718,7 @@ msgid ""
 "bookmark and choose a folder in which to store it when you add a new "
 "bookmark."
 msgstr ""
-"Si se selecciona, Konqueror us permetrà canviar el títol de l'adreça "
+"Si està marcada, Konqueror us permetrà canviar el títol de l'adreça "
 "d'interés i triar una carpeta on guardar-la quan afegiu una adreça d'interés "
 "nova."
 
@@ -1702,7 +1734,7 @@ msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
 "bookmark toolbar which you have marked to do so in the bookmark editor."
 msgstr ""
-"Si se selecciona, Konqueror mostrarà en la barra d'eines d'adreces d'interés "
+"Si està marcada, Konqueror mostrarà en la barra d'eines d'adreces d'interés "
 "només aquelles adreces d'interés que heu marcat per a ser mostrats en "
 "l'editor d'adreces d'interés."
 
@@ -1749,7 +1781,7 @@ msgid ""
 "If this option is set, the shape of the cursor will change (usually to a "
 "hand) if it is moved over a hyperlink."
 msgstr ""
-"Si esta opció està establida, la forma del cursor canviarà (normalment a una "
+"Si s'ha establit esta opció, la forma del cursor canviarà (normalment a una "
 "mà) si es mou damunt d'un enllaç."
 
 #: htmlopts.cpp:84
@@ -1763,7 +1795,7 @@ msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
 "clicking on a Konqueror view."
 msgstr ""
-"Si se selecciona, podreu obrir l'URL de la selecció clicant amb el botó del "
+"Si està marcada, podreu obrir l'URL de la selecció clicant amb el botó del "
 "mig a una vista de Konqueror."
 
 #: htmlopts.cpp:91
@@ -1778,7 +1810,7 @@ msgid ""
 "Konqueror view. To access the context menu, press the right mouse button and "
 "move."
 msgstr ""
-"Si se selecciona, podreu retrocedir en l'historial fent clic dret en una "
+"Si està marcada, podreu retrocedir en l'historial fent clic dret en una "
 "vista de Konqueror. Per a accedir al menú contextual, premeu el botó dret "
 "del ratolí i moveu-lo."
 
@@ -1828,8 +1860,8 @@ msgid ""
 "Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked."
 msgstr ""
-"Seleccioneu esta casella si voleu informar a un lloc web que no voleu que "
-"els vostres hàbits de navegació se seguisquen."
+"Marqueu esta casella si voleu informar a un lloc web que no voleu que els "
+"vostres hàbits de navegació se seguisquen."
 
 #: htmlopts.cpp:121
 #, kde-format
@@ -1840,7 +1872,7 @@ msgstr "Permet guardar les contrasenyes dels llocs web"
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr ""
-"Desseleccioneu esta casella per a evitar que se vos sol·licite guardar les "
+"Desmarqueu esta casella per a evitar que se vos sol·licite guardar les "
 "contrasenyes web"
 
 #: htmlopts.cpp:126
@@ -1977,7 +2009,7 @@ msgstr ""
 "Seguretat inclòs. Açò farà que les miniaplicacions no puguen llegir i "
 "escriure el vostre sistema de fitxers, crear sòcols arbitraris i altres "
 "accions que podrien utilitzar-se per a comprometre el vostre sistema. "
-"Desseleccioneu esta opció al vostre risc. Podeu modificar el vostre fitxer "
+"Desmarqueu esta opció al vostre risc. Podeu modificar el vostre fitxer "
 "$HOME/.java.policy amb la utilitat Java policytool per a donar més permisos "
 "al codi descarregat de certs llocs."
 
@@ -2025,8 +2057,8 @@ msgstr ""
 "temps. Si vos agradaria mantindre en execució el procés java mentre esteu "
 "navegant, podeu establir el temps d'expiració al valor que vulgueu. Per a "
 "mantindre el procés java executant-se durant el mateix temps que el procés "
-"konqueror, deixeu sense seleccionar la casella de selecció Parada del "
-"servidor de miniaplicacions."
+"konqueror, deixeu sense marcar la casella de selecció Parada del servidor de "
+"miniaplicacions."
 
 #: javaopts.cpp:288
 #, kde-format
@@ -2267,12 +2299,12 @@ msgid ""
 "Disabling this option might also break certain sites that require <i>window."
 "open()</i> for proper operation. Use this feature carefully."
 msgstr ""
-"Si desseleccioneu esta opció, Konqueror no interpretarà l'ordre de "
-"JavaScript <i>window.open()</i>. Açò és útil si soleu visitar llocs que fan "
-"ús extensiu d'esta ordre per a mostrar finestres emergents de publicitat."
-"<br /><br /><b>Nota:</b> En desseleccionar esta opció potser també fareu "
-"malbé alguns llocs que requerixen <i>window.open()</i> per a funcionar "
-"correctament. Utilitzeu esta característica amb compte."
+"Si desmarqueu esta opció, Konqueror no interpretarà l'ordre de JavaScript "
+"<i>window.open()</i>. Açò és útil si soleu visitar llocs que fan ús extensiu "
+"d'esta ordre per a mostrar finestres emergents de publicitat.<br /><br /"
+"><b>Nota:</b> En desmarcar esta opció potser també fareu malbé alguns llocs "
+"que requerixen <i>window.open()</i> per a funcionar correctament. Utilitzeu "
+"esta característica amb compte."
 
 #: jspolicies.cpp:187
 #, kde-format
