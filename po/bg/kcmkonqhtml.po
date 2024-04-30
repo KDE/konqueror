@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 02:23+0000\n"
-"PO-Revision-Date: 2024-03-20 10:37+0100\n"
+"PO-Revision-Date: 2024-04-29 08:21+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: appearance.cpp:39
@@ -893,7 +893,7 @@ msgstr "Настро&йване..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Потребителски цвят на фона на страниците"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -912,21 +912,35 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Използвайте персонализиран цвят на "
+"фона за интернет страниците. Този цвят се използва:</p><ul style=\"margin-"
+"top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-"
+"indent: 1;\"><li align=\"justify\" style=\" margin-top:0px; margin-"
+"bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\">когато цветът на фона не е изрично зададен от страницата или "
+"от персонализиран лист със стилове</li><li align=\"justify\" style=\" margin-"
+"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\">преди да се зареди уеб страница</li></ul><p "
+"align=\"justify\">Задаването на персонализиран цвят на фона е най-вече "
+"полезно, ако използвате персонализиран лист със стилове, който задава цвят "
+"на фона на страницата (особено тъмен цвят), за да избегнете бяло примигване, "
+"преди страницата да бъде заредена</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Използване на &персонализиран цвят на фона"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>Потребителски цвят на фона, използван за интернет "
+"страниците</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -949,12 +963,30 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Добавете правило към вашия "
+"персонализиран лист със стилове (включително стиловия лист за улеснен "
+"достъп), за да зададете на всички фонови цветове персонализирания цвят, "
+"който сте избрали по-горе. Това избягва необходимостта от задаване на цвета "
+"на фона както в листа със стилове, така и в диалоговия прозорец за "
+"конфигуриране.</p><p align=\"justify\"><span style=\" font-weight:600;"
+"\">Забележки:</span></p><ul style=\"margin-top: 0px; margin-bottom: 0px; "
+"margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li align="
+"\"justify\" style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">правилото ще бъде "
+"заменено от други правила за фонови цветове във вашия персонализиран лист "
+"със стилове, следвайки обичайните CSS правила</li><li align=\"justify\" "
+"style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">правилото всъщност не се "
+"добавя към файла, съдържащ вашия персонализиран лист със стилове; той се "
+"вмъква само в копието, което Konqueror съхранява в паметта. Това означава, "
+"че ако използвате листа със стилове в други браузъри, ще трябва ръчно да "
+"добавите правилото към него.</li></ul></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Добавяне на потребителски цвят на фона към листа със стилове"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
