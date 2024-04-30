@@ -123,15 +123,28 @@ bool KonqClientRequest::openUrl()
             args << QStringLiteral("--mimetype") << d->mimeType;
         }
         if (d->tempFile) {
-            args << QStringLiteral("-tempfile");
+            args << QStringLiteral("--tempfile");
         }
         args << d->url.toEncoded();
         qint64 pid;
+
+        // There is no kinit (therefore no 'kshell5' wrapper) in KF6.
+        // TODO: what to do therefore with the startup ID?
+        const QByteArray sessionVersion = qgetenv("KDE_SESSION_VERSION");
+        if (sessionVersion.toInt()<=5)			// KF5 or below, or not set
+        {
 #ifdef Q_OS_WIN
-        const bool ok = QProcess::startDetached(QStringLiteral("kwrapper5"), args, QString(), &pid);
+            QString wrapper = QStringLiteral("kwrapper")+sessionVersion;
 #else
-        const bool ok = QProcess::startDetached(QStringLiteral("kshell5"), args, QString(), &pid);
+            QString wrapper = QStringLiteral("kshell")+sessionVersion;
 #endif
+            // Only use the wrapper if it actually exists.
+            wrapper = QStandardPaths::findExecutable(wrapper);
+            if (!wrapper.isEmpty()) args.prepend(wrapper);
+        }
+
+        const QString cmd = args.takeFirst();
+        const bool ok = QProcess::startDetached(cmd, args, QString(), &pid);
         KStartupInfo::resetStartupEnv();
         if (ok) {
             qCDebug(KFMCLIENT_LOG) << "Konqueror started, pid=" << pid;
