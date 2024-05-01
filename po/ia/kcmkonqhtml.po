@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 02:23+0000\n"
-"PO-Revision-Date: 2024-03-11 12:07+0100\n"
+"PO-Revision-Date: 2024-04-30 11:57+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -902,7 +902,7 @@ msgstr "Personal&isa..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Fundo de pagina personalisate"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -921,21 +921,35 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Usa un color de fundo personalisate "
+"per paginase web.  Iste color es usate:</p><ul style=\"margin-top: 0px; "
+"margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"
+"\"><li align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">quando le "
+"color de fundo non es explicitemente assignate per le pagina o per un folio "
+"de stilo personalisate</li><li align=\"justify\" style=\" margin-top:0px; "
+"margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">ante que un pagina web es cargate</li></ul><p align="
+"\"justify\">Assignar un color de fundo personalisate es principalmente utile "
+"si tu usa un folio de stilo personalisate que assigna un color de fundo per "
+"la pagina (specialmente un color obscur), per evitar un fulgure blanc ante "
+"que la pagina es cargate </p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Usa color de fu&ndo personalisate:"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>Le color de fundo personalisate a usar per paginas "
+"web</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -958,12 +972,29 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Adde a tu folio de stilo "
+"personalisate (includente le folio de stilo de accessibiliate) un regula per "
+"assignar omne colores de fundo al color personalisate que ru seligeva de "
+"supra. Isto evita le necessitate de assignar le color de fundo in ambe le "
+"folio de stilo e le dialogo de configuration .</p><p align=\"justify\"><span "
+"style=\" font-weight:600;\">Notas:</span></p><ul style=\"margin-top: 0px; "
+"margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"
+"\"><li align=\"justify\" style=\" margin-top:12px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">le regula "
+"essera superscribite per altere regulas per colores de fundo in tu folio de "
+"stilo personalisate sequente le usual regulas de CSS </li><li align=\"justify"
+"\" style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">le regula non es in "
+"realitate addite al file continente tu folio de stilo personalisate; illo es "
+"solmente insertate in le copai que Konqueror mantene in memoria. Isto "
+"significa que si tu usa le folio de stilo  in altere navigatores, tu debera "
+"adder manualmente le regula a illo.</li></ul></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Adde color de fundo personalisate a folio de stylo (stylesheet)"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
