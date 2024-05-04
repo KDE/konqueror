@@ -7,7 +7,7 @@
 # Matthieu Robin <kde@macolu.org>, 2004, 2005.
 # aminesay <aminesay@yahoo.fr>, 2007.
 # Sébastien Renard <Sebastien.Renard@digitalfox.org>, 2008.
-# Xavier Besnard <xavier.besnard@kde.org>, 2013.
+# SPDX-FileCopyrightText: 2013, 2024 Xavier Besnard <xavier.besnard@kde.org>
 # Vincent Pinon <vpinon@kde.org>, 2017.
 #
 msgid ""
@@ -15,15 +15,15 @@ msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 02:56+0000\n"
-"PO-Revision-Date: 2017-06-30 10:16+0100\n"
-"Last-Translator: Vincent Pinon <vpinon@kde.org>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"PO-Revision-Date: 2024-04-26 11:02+0200\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
+"Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 23.08.5\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -106,7 +106,7 @@ msgid ""
 msgstr ""
 "<p>Lors du démarrage, KDE doit effectuer un test sur sa configuration "
 "système (types MIME, applications installées, etc.). Si celle-ci a été "
-"modifiée, le cache de la configuration système (KsyCoCa) doit être mis à "
+"modifiée, le cache de la configuration système (KSycoca) doit être mis à "
 "jour. </p><p> Cette option retarde cette vérification, ce qui évite de "
 "scanner tous les dossiers décrivant le système durant le démarrage de KDE et "
 "accélère donc celui-ci. Cependant, dans de rares cas, lorsque la "
