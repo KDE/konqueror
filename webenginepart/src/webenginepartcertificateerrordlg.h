@@ -53,7 +53,7 @@ namespace KonqWebEnginePart {
         * @param error the certificate error the dialog is about
         * @param parent the parent widget
         */
-        WebEnginePartCertificateErrorDlg(const QWebEngineCertificateError& error, WebEnginePage* page, QWidget* parent);
+        WebEnginePartCertificateErrorDlg(const QWebEngineCertificateError& error, QWidget* parent);
 
         /**
         * @brief Destructor

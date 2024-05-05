@@ -86,7 +86,7 @@ void CertificateErrorDialogManager::displayDialog(const CertificateErrorDialogMa
     }
     Q_ASSERT(!m_dialogs.contains(window));
 
-    WebEnginePartCertificateErrorDlg *dlg = new WebEnginePartCertificateErrorDlg(data.error, data.page, window);
+    WebEnginePartCertificateErrorDlg *dlg = new WebEnginePartCertificateErrorDlg(data.error, window);
     connect(dlg, &WebEnginePartCertificateErrorDlg::finished, this, [this, dlg](int){
         applyUserChoice(dlg);});
     connect(dlg, &WebEnginePartCertificateErrorDlg::destroyed, this, &CertificateErrorDialogManager::removeDestroyedDialog);

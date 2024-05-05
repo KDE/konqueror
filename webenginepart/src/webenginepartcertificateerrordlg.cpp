@@ -31,7 +31,7 @@
 
 using namespace KonqWebEnginePart;
 
-WebEnginePartCertificateErrorDlg::WebEnginePartCertificateErrorDlg(const QWebEngineCertificateError &error, WebEnginePage *page, QWidget* parent):
+WebEnginePartCertificateErrorDlg::WebEnginePartCertificateErrorDlg(const QWebEngineCertificateError &error, QWidget* parent):
     QDialog(parent),
     m_ui(new Ui::WebEnginePartCertificateErrorDlg), m_error(error), m_choice(UserChoice::DontIgnoreError)
 {
