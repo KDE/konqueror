@@ -53,7 +53,7 @@ WebEnginePartControls::WebEnginePartControls(): QObject(),
             localSchemes.append(QByteArray(prot.toLatin1()));
         }
     }
-    for (const QByteArray &name : qAsConst(localSchemes)){
+    for (const QByteArray &name : std::as_const(localSchemes)){
         QWebEngineUrlScheme scheme(name);
         scheme.setFlags(QWebEngineUrlScheme::LocalScheme|QWebEngineUrlScheme::LocalAccessAllowed);
         scheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);

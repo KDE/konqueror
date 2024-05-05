@@ -27,6 +27,7 @@ K_PLUGIN_CLASS_WITH_JSON(PluginWebArchiver, "plugin_webarchiver.json")
 PluginWebArchiver::PluginWebArchiver(QObject *parent, const QVariantList &args)
     : KonqParts::Plugin(parent)
 {
+    Q_UNUSED(args);
     QAction *a = actionCollection()->addAction(QStringLiteral("archivepage"));
     a->setText(i18n("Archive Web Page..."));
     a->setIcon(QIcon::fromTheme(QStringLiteral("webarchiver")));

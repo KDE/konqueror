@@ -81,6 +81,7 @@ WebArchiveCreator::~WebArchiveCreator()
 #ifndef THUMBNAIL_USE_WEBKIT
 static bool disallowWebEngineCookies(const QWebEngineCookieStore::FilterRequest &req)
 {
+    Q_UNUSED(req);
     return (false);
 }
 #endif // THUMBNAIL_USE_WEBKIT

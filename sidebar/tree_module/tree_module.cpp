@@ -159,6 +159,9 @@ void KonqSideBarTreeModule::setSelectionIndex(const QModelIndex &index)
 
 void KonqSideBarTreeModule::slotSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected) 
 {
+    Q_UNUSED(selected);
+    Q_UNUSED(deselected);
+
     QModelIndex index = treeView->selectionModel()->currentIndex();
 
     QUrl urlFromIndex = getUrlFromIndex(index);

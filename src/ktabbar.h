@@ -89,6 +89,7 @@ private Q_SLOTS:
 
 private:
     int selectTab(const QPoint &pos) const;
+    int selectTab(const QPointF &pos) const;
 
 private:
     class Private;

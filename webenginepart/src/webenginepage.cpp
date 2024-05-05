@@ -139,12 +139,12 @@ void WebEnginePage::setSslInfo (const WebSslInfo& info)
     m_sslInfo = info;
 }
 
-static QString checkForDownloadManager(QWidget* widget)
+static std::optional<QString> checkForDownloadManager(QWidget* widget)
 {
     KConfigGroup cfg (KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals), "HTML Settings");
     const QString fileName (cfg.readPathEntry("DownloadManager", QString()));
     if (fileName.isEmpty()) {
-        return QString();
+        return std::nullopt;
     }
 
     const QString exeName = QStandardPaths::findExecutable(fileName);
@@ -154,7 +154,7 @@ static QString checkForDownloadManager(QWidget* widget)
                                     i18n("Try to reinstall it and make sure that it is available in $PATH. \n\nThe integration will be disabled."));
         cfg.writePathEntry("DownloadManager", QString());
         cfg.sync();
-        return QString();
+        return std::nullopt;
     }
     return exeName;
 }
@@ -165,24 +165,14 @@ bool WebEnginePage::downloadWithExternalDonwloadManager(const QUrl &url)
         return false;
     }
 
-    KConfigGroup cfg (KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals), "HTML Settings");
-    const QString fileName (cfg.readPathEntry("DownloadManager", QString()));
-    if (fileName.isEmpty()) {
+    auto useDlManager = checkForDownloadManager(view());
+    if (!useDlManager) {
         return false;
     }
-
-    const QString managerExe = QStandardPaths::findExecutable(fileName);
-    if (managerExe.isEmpty()) {
-        KMessageBox::detailedError(view(),
-                                    i18n("The download manager (%1) could not be found in your installation.", fileName),
-                                    i18n("Try to reinstall it and make sure that it is available in $PATH. \n\nThe integration will be disabled."));
-        cfg.writePathEntry("DownloadManager", QString());
-        cfg.sync();
-        return false;
-    }
+    QString downloadManagerExe = useDlManager.value();
 
     //qCDebug(WEBENGINEPART_LOG) << "Calling command" << cmd;
-    KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(managerExe, {url.toString()});
+    KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(downloadManagerExe, {url.toString()});
     job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, view()));
     job->start();
     return true;
@@ -303,27 +293,6 @@ QWebEnginePage *WebEnginePage::createWindow(WebWindowType type)
     // the class for more information...
     NewWindowPage* page = new NewWindowPage(type, part());
     return page;
-}
-
-// Returns true if the scheme and domain of the two urls match...
-static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
-{
-    if (u1.scheme() != u2.scheme())
-        return false;
-
-    QStringList u1List = u1.host().split(QL1C('.'), Qt::SkipEmptyParts);
-    QStringList u2List = u2.host().split(QL1C('.'), Qt::SkipEmptyParts);
-
-    if (qMin(u1List.count(), u2List.count()) < 2)
-        return false;  // better safe than sorry...
-
-    while (u1List.count() > 2)
-        u1List.removeFirst();
-
-    while (u2List.count() > 2)
-        u2List.removeFirst();
-
-    return (u1List == u2List);
 }
 
 bool WebEnginePage::askBrowserToOpenUrl(const QUrl& url, const QString& mimetype, const KParts::OpenUrlArguments &_args, const BrowserArguments &bargs)

@@ -563,7 +563,9 @@ void FSView::doUpdate()
                                           << ", Progress " << _progress
                                           << "/" << _progressSize;
             }
-
+            //TODO remove compiler warnings: is the fallthrough really wanted?
+            //investigate this algorithm deeper
+            [[fallthrough]];
         default:
             _sm.scan(-1);
             break;

@@ -141,7 +141,7 @@ void WebSslInfo::restoreFrom(const QVariant& value, const QUrl& url, bool reset)
       *this = WebSslInfo();
   }
 
-  if (value.isValid() && value.type() == QVariant::Map) {
+  if (value.isValid() && value.metaType().id() == QMetaType::QVariantMap) {
     QMap<QString,QVariant> metaData = value.toMap();
     if (metaData.value(QStringLiteral("ssl_in_use"), false).toBool()) {
         setCertificateChain(metaData.value(QStringLiteral("ssl_peer_chain")).toByteArray());

@@ -14,7 +14,6 @@
 
 #include <QSet>
 #include <QHash>
-#include <QScopedPointer>
 #include <QWebEngineScript>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -71,7 +70,7 @@ public:
 
     WId wid;
     WebEngineWallet *q;
-    QScopedPointer<KWallet::Wallet> wallet;
+    std::unique_ptr<KWallet::Wallet> wallet;
     WebEngineWallet::WebFormList pendingRemoveRequests;
     QHash<QUrl, FormsData> pendingFillRequests;
     QHash<QString, WebFormList> pendingSaveRequests;
@@ -299,20 +298,20 @@ bool WebEngineWallet::WebEngineWalletPrivate::saveDataToCache(const QString &key
 
 void WebEngineWallet::WebEngineWalletPrivate::openWallet()
 {
-    if (!wallet.isNull()) {
+    if (wallet) {
         return;
     }
 
     wallet.reset(KWallet::Wallet::openWallet(KWallet::Wallet::NetworkWallet(),
                  wid, KWallet::Wallet::Asynchronous));
 
-    if (wallet.isNull()) {
+    if (!wallet) {
         return;
     }
 
     // FIXME: See if possible to use new Qt5 connect syntax
-    connect(wallet.data(), SIGNAL(walletOpened(bool)), q, SLOT(_k_openWalletDone(bool)));
-    connect(wallet.data(), SIGNAL(walletClosed()), q, SLOT(_k_walletClosed()));
+    connect(wallet.get(), SIGNAL(walletOpened(bool)), q, SLOT(_k_openWalletDone(bool)));
+    connect(wallet.get(), SIGNAL(walletClosed()), q, SLOT(_k_walletClosed()));
 }
 
 void WebEngineWallet::WebEngineWalletPrivate::removeDataFromCache(const WebFormList &formList)
@@ -373,14 +372,15 @@ void WebEngineWallet::WebEngineWalletPrivate::_k_openWalletDone(bool ok)
     } else {
         // Delete the wallet if opening the wallet failed or we were unable
         // to change to the folder we wanted to change to.
-        delete wallet.take();
+        wallet.reset();
     }
 }
 
 void WebEngineWallet::WebEngineWalletPrivate::_k_walletClosed()
 {
     if (wallet) {
-        wallet.take()->deleteLater();
+        KWallet::Wallet *w = wallet.release();
+        w->deleteLater();
     }
 
     emit q->walletClosed();

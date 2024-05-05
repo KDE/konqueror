@@ -507,6 +507,11 @@ public:
     TreeMapItem *item(int x, int y) const;
 
     /**
+     * @overload
+     */
+    TreeMapItem *item(const QPointF &pt) const;
+
+    /**
      * Returns the nearest item with a visible area; this
      * can be the given item itself.
      */

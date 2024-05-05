@@ -422,7 +422,7 @@ void SearchBarPlugin::updateComboVisibility()
     // NOTE: We hide the search combobox if the embedded kpart is ReadWrite
     // because web browsers by their very nature are ReadOnly kparts...
     m_searchComboAction->setVisible(!m_part->inherits("ReadWritePart") &&
-                                    !m_searchComboAction->associatedWidgets().isEmpty());
+                                    !m_searchComboAction->associatedObjects().isEmpty());
     m_openSearchDescs.clear();
 }
 
@@ -598,7 +598,6 @@ bool SearchBarCombo::overIcon(int x)
     const int x0 = QStyle::visualRect(layoutDirection(), style()->subControlRect(QStyle::CC_ComboBox, &opt, QStyle::SC_ComboBoxEditField, this), rect()).x();
     return (x > x0 + 2 && x < lineEdit()->x());
 }
-
 void SearchBarCombo::contextMenuEvent(QContextMenuEvent *e)
 {
     if (overIcon(e->x())) {
@@ -614,7 +613,7 @@ void SearchBarCombo::contextMenuEvent(QContextMenuEvent *e)
 
 void SearchBarCombo::mousePressEvent(QMouseEvent *e)
 {
-    if (overIcon(e->x())) {
+    if (overIcon(e->position().toPoint().x())) {
         emit iconClicked();
         e->accept();
     } else {

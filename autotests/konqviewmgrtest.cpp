@@ -492,6 +492,8 @@ void ViewMgrTest::testPopupNewTab() // RMB, "Open in new tab"
 
 static void checkSecondWindowHasOneTab(bool fromPopup) // and delete it.
 {
+    //TODO remove compiler warnings: check whether this is correct. If it is, remove from the parameter list
+    Q_UNUSED(fromPopup);
     QTRY_COMPARE(KMainWindow::memberList().count(), 2);
     QScopedPointer<KonqMainWindow> newWindow(qobject_cast<KonqMainWindow *>(KMainWindow::memberList().last()));
     QVERIFY(newWindow.data());

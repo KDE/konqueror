@@ -1699,6 +1699,12 @@ QString TreeMapWidget::tipString(TreeMapItem *i) const
     return tip;
 }
 
+TreeMapItem * TreeMapWidget::item(const QPointF& pt) const
+{
+    QPoint temp = pt.toPoint();
+    return item(temp.x(), temp.y());
+}
+
 TreeMapItem *TreeMapWidget::item(int x, int y) const
 {
 
@@ -2063,7 +2069,7 @@ void TreeMapWidget::mousePressEvent(QMouseEvent *e)
 
     _oldCurrent = _current;
 
-    TreeMapItem *i = item(e->x(), e->y());
+    TreeMapItem *i = item(e->position());
 
     _pressed = i;
 
@@ -2135,7 +2141,7 @@ void TreeMapWidget::mouseMoveEvent(QMouseEvent *e)
     if (!_pressed) {
         return;
     }
-    TreeMapItem *over = item(e->x(), e->y());
+    TreeMapItem *over = item(e->position());
     if (_lastOver == over) {
         return;
     }
@@ -2211,7 +2217,7 @@ void TreeMapWidget::mouseReleaseEvent(QMouseEvent *)
 
 void TreeMapWidget::mouseDoubleClickEvent(QMouseEvent *e)
 {
-    TreeMapItem *over = item(e->x(), e->y());
+    TreeMapItem *over = item(e->position());
 
     emit doubleClicked(over);
 }

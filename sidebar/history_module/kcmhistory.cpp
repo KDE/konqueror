@@ -36,6 +36,7 @@ K_PLUGIN_CLASS_WITH_JSON(HistorySidebarConfig, "kcmhistory.json")
 HistorySidebarConfig::HistorySidebarConfig(QObject *parent, const KPluginMetaData& md, const QVariantList &list)
     : KCModule(parent, md)
 {
+    Q_UNUSED(list);
     m_settings = KonqHistorySettings::self();
 
     if (!HistoryProvider::exists()) {

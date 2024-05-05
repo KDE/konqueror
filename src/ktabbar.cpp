@@ -55,7 +55,7 @@ void KTabBar::mouseDoubleClickEvent(QMouseEvent *event)
         return;
     }
 
-    int tab = selectTab(event->pos());
+    int tab = selectTab(event->position());
 
     if (tab == -1) {
         emit newTabRequest();
@@ -71,7 +71,7 @@ void KTabBar::mousePressEvent(QMouseEvent *event)
     if (event->button() == Qt::LeftButton) {
         d->mDragStart = event->pos();
     } else if (event->button() == Qt::RightButton) {
-        int tab = selectTab(event->pos());
+        int tab = selectTab(event->position());
         if (tab != -1) {
             emit contextMenu(tab, mapToGlobal(event->pos()));
         } else {
@@ -86,7 +86,7 @@ void KTabBar::mousePressEvent(QMouseEvent *event)
 void KTabBar::mouseMoveEvent(QMouseEvent *event)
 {
     if (event->buttons() == Qt::LeftButton && !isMovable()) {
-        int tab = selectTab(event->pos());
+        int tab = selectTab(event->position());
         if (d->mDragSwitchTab && tab != d->mDragSwitchTab) {
             d->mActivateDragSwitchTabTimer->stop();
             d->mDragSwitchTab = 0;
@@ -118,7 +118,7 @@ void KTabBar::activateDragSwitchTab()
 
 void KTabBar::dragEnterEvent(QDragEnterEvent *event)
 {
-    int tab = selectTab(event->pos());
+    int tab = selectTab(event->position());
     if (tab != -1) {
         bool accept = false;
         // The receivers of the testCanDecode() signal has to adjust
@@ -138,7 +138,7 @@ void KTabBar::dragEnterEvent(QDragEnterEvent *event)
 
 void KTabBar::dragMoveEvent(QDragMoveEvent *event)
 {
-    int tab = selectTab(event->pos());
+    int tab = selectTab(event->position());
     if (tab != -1) {
         bool accept = false;
         // The receivers of the testCanDecode() signal has to adjust
@@ -158,7 +158,7 @@ void KTabBar::dragMoveEvent(QDragMoveEvent *event)
 
 void KTabBar::dropEvent(QDropEvent *event)
 {
-    int tab = selectTab(event->pos());
+    int tab = selectTab(event->position());
     if (tab != -1) {
         d->mActivateDragSwitchTabTimer->stop();
         d->mDragSwitchTab = 0;
@@ -216,3 +216,13 @@ int KTabBar::selectTab(const QPoint &pos) const
     return -1;
 }
 
+int KTabBar::selectTab(const QPointF &pos) const
+{
+    const int tabCount = count();
+    for (int i = 0; i < tabCount; ++i)
+        if (tabRect(i).contains(pos.toPoint())) {
+            return i;
+        }
+
+    return -1;
+}

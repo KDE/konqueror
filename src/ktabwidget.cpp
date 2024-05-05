@@ -61,7 +61,7 @@ public:
     //know about is the shortened name
     QStringList m_tabNames;
 
-    bool isEmptyTabbarSpace(const QPoint &)  const;
+    bool isEmptyTabbarSpace(const QPointF &)  const;
     void resizeTabs(int changedTabIndex = -1);
     void updateTab(int index);
     void removeTab(int index);
@@ -69,7 +69,7 @@ public:
     void slotTabMoved(int from, int to);
 };
 
-bool KTabWidget::Private::isEmptyTabbarSpace(const QPoint &point) const
+bool KTabWidget::Private::isEmptyTabbarSpace(const QPointF &point) const
 {
     if (m_parent->count() == 0) {
         return true;
@@ -96,7 +96,7 @@ bool KTabWidget::Private::isEmptyTabbarSpace(const QPoint &point) const
         }
 
         for (int i = 0; i < m_parent->count(); ++i)
-            if (m_parent->tabBar()->tabRect(i).contains(m_parent->tabBar()->mapFromParent(point))) {
+            if (m_parent->tabBar()->tabRect(i).contains(m_parent->tabBar()->mapFromParent(point.toPoint()))) {
                 return false;
             }
 
@@ -330,7 +330,7 @@ void KTabWidget::setTabText(int index, const QString &text)
 
 void KTabWidget::dragEnterEvent(QDragEnterEvent *event)
 {
-    if (d->isEmptyTabbarSpace(event->pos())) {
+    if (d->isEmptyTabbarSpace(event->position())) {
         bool accept = false;
         // The receivers of the testCanDecode() signal has to adjust
         // 'accept' accordingly.
@@ -345,7 +345,7 @@ void KTabWidget::dragEnterEvent(QDragEnterEvent *event)
 
 void KTabWidget::dragMoveEvent(QDragMoveEvent *event)
 {
-    if (d->isEmptyTabbarSpace(event->pos())) {
+    if (d->isEmptyTabbarSpace(event->position())) {
         bool accept = false;
         // The receivers of the testCanDecode() signal has to adjust
         // 'accept' accordingly.
@@ -360,7 +360,7 @@ void KTabWidget::dragMoveEvent(QDragMoveEvent *event)
 
 void KTabWidget::dropEvent(QDropEvent *event)
 {
-    if (d->isEmptyTabbarSpace(event->pos())) {
+    if (d->isEmptyTabbarSpace(event->position())) {
         emit(receivedDropEvent(event));
         return;
     }

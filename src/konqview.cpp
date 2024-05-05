@@ -524,7 +524,7 @@ void KonqView::connectPart()
     //  a) either the property says "ok"
     //  or
     //  b) the part is a plain krop (no BE)
-    m_bURLDropHandling = (urlDropHandling.type() == QVariant::Bool &&
+    m_bURLDropHandling = (urlDropHandling.typeId() == QMetaType::Bool &&
                           urlDropHandling.toBool());
     if (m_bURLDropHandling) {
         m_pPart->widget()->setAcceptDrops(true);

@@ -48,7 +48,8 @@ private Q_SLOTS:
         bool needsUpdate = false;
         KSharedConfig::Ptr profile = KSharedConfig::openConfig(QStringLiteral("mimeapps.list"), KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
         KConfigGroup addedServices(profile, "Added KDE Service Associations");
-        for (const QString &mimeType: {"text/html", "application/xhtml+xml", "application/xml"}) {
+        QStringList mimetypes = {"text/html", "application/xhtml+xml", "application/xml"};
+        for (const QString &mimeType: mimetypes) {
             QStringList services = addedServices.readXdgListEntry(mimeType);
             const QString wanted = QStringLiteral("webenginepart.desktop");
             if (services.isEmpty() || services.at(0) != wanted) {

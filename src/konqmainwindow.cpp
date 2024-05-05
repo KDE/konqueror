@@ -2050,7 +2050,7 @@ KonqView *KonqMainWindow::childView(KParts::ReadOnlyPart *callingPart, const QSt
         }
     }
 
-    for (KonqView *view : qAsConst(views)) {
+    for (KonqView *view : std::as_const(views)) {
         QString viewName = view->viewName();
         //qCDebug(KONQUEROR_LOG) << "       - viewName=" << viewName
         //          << "frame names:" << view->frameNames();
@@ -4577,8 +4577,11 @@ void KonqMainWindow::updateViewModeActions()
 {
     unplugViewModeActions();
     for (QAction *action : m_viewModesGroup->actions()) {
-        for (QWidget *w : action->associatedWidgets()) {
-            w->removeAction(action);
+        for (QObject *o : action->associatedObjects()) {
+            QWidget *w = qobject_cast<QWidget*>(o);
+            if (w) {
+                w->removeAction(action);
+            }
         }
         delete action;
     }

@@ -150,6 +150,7 @@ protected slots:
 
     void toggleZoomTextOnly(bool b)
     {
+        Q_UNUSED(b);
 //        view->view()->page()->settings()->setAttribute(QWebEngineSettings::ZoomTextOnly, b);
     }
 

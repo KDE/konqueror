@@ -49,6 +49,9 @@ QWidget *KonqSideBarBookmarksModule::getWidget()
 
 void KonqSideBarBookmarksModule::slotSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected) 
 {
+    Q_UNUSED(selected);
+    Q_UNUSED(deselected)
+
     QModelIndex index = treeView->selectionModel()->currentIndex();
     QUrl urlFromIndex = model->itemFromIndex(index)->data().toUrl();
 

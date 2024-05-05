@@ -12,6 +12,8 @@ const int KonqFileSelectionEventType = QEvent::registerEventType();
 KonqFileSelectionEvent::KonqFileSelectionEvent(const KFileItemList &selection, KParts::ReadOnlyPart *part)
     : QEvent(static_cast<QEvent::Type>(KonqFileSelectionEventType))
 {
+    Q_UNUSED(selection);
+    Q_UNUSED(part);
 }
 
 KonqFileSelectionEvent::~KonqFileSelectionEvent()
@@ -28,6 +30,8 @@ const int KonqFileMouseOverEventType = QEvent::registerEventType();
 KonqFileMouseOverEvent::KonqFileMouseOverEvent(const KFileItem &item, KParts::ReadOnlyPart *part)
     : QEvent(static_cast<QEvent::Type>(KonqFileMouseOverEventType))
 {
+    Q_UNUSED(item);
+    Q_UNUSED(part);
 }
 
 KonqFileMouseOverEvent::~KonqFileMouseOverEvent()

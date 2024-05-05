@@ -50,20 +50,6 @@ QString tolerantFromAce(const QByteArray &_domain)
     return ret;
 }
 
-static QByteArray tolerantToAce(const QString &_domain)
-{
-    QString domain(_domain);
-    const bool hasDot = domain.startsWith(QLatin1Char('.'));
-    if (hasDot) {
-        domain.remove(0, 1);
-    }
-    QByteArray ret = QUrl::toAce(domain);
-    if (hasDot) {
-        ret.prepend('.');
-    }
-    return ret;
-}
-
 KCookiesPolicies::KCookiesPolicies(QObject *parent, const KPluginMetaData &md, const QVariantList &)
     : KCModule(parent, md)
     , mSelectedItemsCount(0)

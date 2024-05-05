@@ -211,7 +211,7 @@ bool KBookmarkBar::handleToolbarDragMoveEvent(const QPoint &p, const QList<QActi
         return false;
     }
     int pos = m_toolBar->orientation() == Qt::Horizontal ? p.x() : p.y();
-    Q_ASSERT(actions.isEmpty() || (m_toolBar == qobject_cast<KToolBar *>(actions.first()->associatedWidgets().value(0))));
+    Q_ASSERT(actions.isEmpty() || (m_toolBar == qobject_cast<KToolBar *>(actions.first()->associatedObjects().value(0))));
     m_toolBar->setUpdatesEnabled(false);
     removeTempSep();
 
@@ -277,7 +277,7 @@ void KBookmarkBar::contextMenu(const QPoint &pos)
         //Show default (ktoolbar) menu
         m_toolBar->setContextMenuPolicy(Qt::DefaultContextMenu);
         //Recreate event with the same position
-        QContextMenuEvent evt(QContextMenuEvent::Other, pos);
+        QContextMenuEvent evt(QContextMenuEvent::Other, pos, QCursor::pos());
         QCoreApplication::sendEvent(m_toolBar, &evt);
         //Reassign custom context menu
         m_toolBar->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -363,7 +363,7 @@ bool KBookmarkBar::eventFilter(QObject *, QEvent *e)
                 }
         }
 
-        bool accept = handleToolbarDragMoveEvent(dme->pos(), d->m_actions, d->tempLabel);
+        bool accept = handleToolbarDragMoveEvent(dme->position().toPoint(), d->m_actions, d->tempLabel);
         if (accept) {
             dme->accept();
             return true; //Really?
