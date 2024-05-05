@@ -1,11 +1,11 @@
-// /* This file is part of the KDE project
-//     SPDX-FileCopyrightText: 2023 Stefano Crocco <stefano.crocco@alice.it>
+// This file is part of the KDE project
+// SPDX-FileCopyrightText: 2023 Stefano Crocco <stefano.crocco@alice.it>
 // 
-//     SPDX-License-Identifier: LGPL-2.0-or-later
-// */
+// SPDX-License-Identifier: LGPL-2.0-or-later
+//
 
-#ifndef ASYNCSELECTORINTERFACE_H
-#define ASYNCSELECTORINTERFACE_H
+#ifndef SELECTORINTERFACE_H
+#define SELECTORINTERFACE_H
 
 #include <QtGlobal>
 #include <QSharedDataPointer>
@@ -16,19 +16,22 @@
 
 #include <functional>
 
+namespace KonqInterfaces {
 /**
- * @brief Alternative to KParts::SelectorInterface which provides an asynchronous API
+ * @brief Replacement for KParts::SelectorInterface from KF5 which provides an asynchronous API
  *
  * This interface closely mimics the API of KParts::SelectorInterface
  */
-class LIBKONQ_EXPORT AsyncSelectorInterface
+class LIBKONQ_EXPORT SelectorInterface
 {
 public:
 
     /**
      * @brief Destructor
      */
-    virtual ~AsyncSelectorInterface();
+    virtual ~SelectorInterface();
+
+    static SelectorInterface *selectorInterface(QObject *obj);
 
     class Element;
     class ElementPrivate;
@@ -50,10 +53,10 @@ public:
      *
      * @see QueryMethod
      */
-    virtual QueryMethods supportedAsyncQueryMethods() const;
+    virtual QueryMethods supportedQueryMethods() const;
 
     /**
-     * @brief A function taking a single KParts::SelectorInterface::Element as argument and without return value
+     * @brief A function taking a single Element as argument and without return value
      */
     typedef const std::function<void (const Element &)> SingleElementSelectorCallback;
 
@@ -68,26 +71,24 @@ public:
      *
      * If no element satisfying the given query is found, including the case where the requested query method is not supported,
      * the callback must be called with an invalid element.
-     * @see KParts::SelectorInterface::querySelector()
      * @note This function is _asynchronous_
      * @param query the query containing the string
      * @param method the method to use for the query
      * @param callback the function to call with the found element
      */
-    virtual void querySelectorAsync(const QString &query, QueryMethod method, SingleElementSelectorCallback& callback) = 0;
+    virtual void querySelector(const QString &query, QueryMethod method, SingleElementSelectorCallback& callback) = 0;
 
     /**
      * @brief Passes to the given callback all the elements in this fragment matching the given CSS selector and querying method
      *
      * If no element satisfying the given query is found, including the case where the requested query method is not supported,
      * the callback must be called with an empty list.
-     * @see KParts::SelectorInterface::querySelector()
      * @note This function is _asynchronous_
      * @param query the query containing the string
      * @param method the method to use for the query
      * @param callback the function to call with the found elements
      */
-    virtual void querySelectorAllAsync(const QString &query, QueryMethod method, MultipleElementSelectorCallback& callback) = 0;
+    virtual void querySelectorAll(const QString &query, QueryMethod method, MultipleElementSelectorCallback& callback) = 0;
 
     //Code for this class copied from kparts/selectorinterface.h (KF 5.110) written by David Faure <faure@kde.org>
     class LIBKONQ_EXPORT Element
@@ -170,14 +171,15 @@ public:
         QSharedDataPointer<ElementPrivate> d;
     };
 };
+};
 
-inline void qSwap(AsyncSelectorInterface::Element &lhs, AsyncSelectorInterface::Element &rhs)
+inline void qSwap(KonqInterfaces::SelectorInterface::Element &lhs, KonqInterfaces::SelectorInterface::Element &rhs)
 {
     lhs.swap(rhs);
 }
 
-Q_DECLARE_TYPEINFO(AsyncSelectorInterface::Element, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(KonqInterfaces::SelectorInterface::Element, Q_MOVABLE_TYPE);
 
-Q_DECLARE_INTERFACE(AsyncSelectorInterface, "org.kde.libkonq.AsyncSelectorInterface")
+Q_DECLARE_INTERFACE(KonqInterfaces::SelectorInterface, "org.kde.libkonq.SelectorInterface")
 
-#endif // ASYNCSELECTORINTERFACE_H
+#endif // SELECTORINTERFACE_H

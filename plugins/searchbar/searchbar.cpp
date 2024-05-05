@@ -40,13 +40,15 @@
 #include <QStandardPaths>
 
 #include "searchbar_debug.h"
-#include <asyncselectorinterface.h>
+#include <interfaces/selectorinterface.h>
 #include <htmlextension.h>
 #include <textextension.h>
 #include <browserarguments.h>
 #include <browserextension.h>
 
 K_PLUGIN_CLASS_WITH_JSON(SearchBarPlugin, "searchbar.json")
+
+using namespace KonqInterfaces;
 
 SearchBarPlugin::SearchBarPlugin(QObject *parent,
                                  const QVariantList &) :
@@ -452,19 +454,19 @@ void SearchBarPlugin::HTMLDocLoaded()
     //NOTE: the link below seems to be dead
     // Testcase for this code: http://search.iwsearch.net
     HtmlExtension *ext = HtmlExtension::childObject(m_part);
-    AsyncSelectorInterface *selectorIface = qobject_cast<AsyncSelectorInterface*>(ext);
+    SelectorInterface *selectorIface = qobject_cast<SelectorInterface*>(ext);
     const QString query(QStringLiteral("head > link[rel=\"search\"][type=\"application/opensearchdescription+xml\"]"));
     if (selectorIface) {
-        auto callback = [this](const QList<AsyncSelectorInterface::Element>& elements) {
+        auto callback = [this](const QList<SelectorInterface::Element>& elements) {
             insertOpenSearchEntries(elements);
         };
-        selectorIface->querySelectorAllAsync(query, AsyncSelectorInterface::EntireContent, callback);
+        selectorIface->querySelectorAll(query, SelectorInterface::EntireContent, callback);
     }
 }
 
-void SearchBarPlugin::insertOpenSearchEntries(const QList<AsyncSelectorInterface::Element>& elements)
+void SearchBarPlugin::insertOpenSearchEntries(const QList<SelectorInterface::Element>& elements)
 {
-    for (const AsyncSelectorInterface::Element &link : elements) {
+    for (const SelectorInterface::Element &link : elements) {
         const QString title = link.attribute(QStringLiteral("title"));
         const QString href = link.attribute(QStringLiteral("href"));
         //qCDebug(SEARCHBAR_LOG) << "Found opensearch" << title << href;

@@ -38,12 +38,14 @@
 #include <KToggleAction>
 
 #include <konq_kpart_plugin.h>
-#include <asyncselectorinterface.h>
+#include <interfaces/selectorinterface.h>
 #include <htmlextension.h>
 
 #define QL1S(x) QLatin1String(x)
 
 K_PLUGIN_CLASS_WITH_JSON(KGetPlugin, "kget_plugin.json")
+
+using namespace KonqInterfaces;
 
 static QWidget *partWidget(QObject *obj)
 {
@@ -102,38 +104,20 @@ static bool hasDropTarget()
     return found;
 }
 
-KGetPlugin::SelectorInterface::SelectorInterface(HtmlExtension* ext)
-{
-    AsyncSelectorInterface *asyncIface = qobject_cast<AsyncSelectorInterface*>(ext);
-    if (asyncIface) {
-        interfaceType = SelectorInterfaceType::Async;
-        asyncInterface = asyncIface;
-    }
-}
-
-bool KGetPlugin::SelectorInterface::hasInterface() const
-{
-    return interfaceType == SelectorInterfaceType::Async && asyncInterface;
-}
-
-AsyncSelectorInterface::QueryMethods KGetPlugin::SelectorInterface::supportedMethods() const
-{
-    return asyncInterface->supportedAsyncQueryMethods();
-}
-
 void KGetPlugin::showPopup()
 {
     // Check for HtmlExtension support...
     HtmlExtension *htmlExtn = HtmlExtension::childObject(parent());
-    if (htmlExtn) {
-        SelectorInterface iface(htmlExtn);
-        AsyncSelectorInterface::QueryMethods methods = iface.supportedMethods();
+    SelectorInterface *iface = qobject_cast<SelectorInterface*>(htmlExtn);
+    //If htmlExtn == nullptr, iface will also be nullptr
+    if (iface) {
+        SelectorInterface::QueryMethods methods = iface->supportedQueryMethods();
         m_dropTargetAction->setChecked(hasDropTarget());
 
-        bool enable = (methods & AsyncSelectorInterface::EntireContent);
+        bool enable = (methods & SelectorInterface::EntireContent);
         actionCollection()->action(QL1S("show_links"))->setEnabled(enable);
 
-        enable = (htmlExtn->hasSelection() && (methods & AsyncSelectorInterface::SelectedContent));
+        enable = (htmlExtn->hasSelection() && (methods & SelectorInterface::SelectedContent));
         actionCollection()->action(QL1S("show_selected_links"))->setEnabled(enable);
 
         enable = (actionCollection()->action(QL1S("show_links"))->isEnabled() || actionCollection()->action(QL1S("show_selected_links"))->isEnabled());
@@ -202,10 +186,10 @@ void KGetPlugin::slotImportLinks()
     kgetInterface.importLinks(m_linkList);
 }
 
-void KGetPlugin::fillLinkListFromHtml(const QUrl& baseUrl, const QList<AsyncSelectorInterface::Element >& elements)
+void KGetPlugin::fillLinkListFromHtml(const QUrl& baseUrl, const QList<SelectorInterface::Element >& elements)
 {
     QString attr;
-    for (const AsyncSelectorInterface::Element &element : elements) {
+    for (const SelectorInterface::Element &element : elements) {
         if (element.hasAttribute(QL1S("href")))
             attr = QL1S("href");
         else if (element.hasAttribute(QL1S("src")))
@@ -227,20 +211,17 @@ void KGetPlugin::fillLinkListFromHtml(const QUrl& baseUrl, const QList<AsyncSele
 void KGetPlugin::getLinks(bool selectedOnly)
 {
     HtmlExtension *htmlExtn = HtmlExtension::childObject(parent());
-    if (htmlExtn) {
-        SelectorInterface iface(htmlExtn);
-        if (iface.hasInterface()) {
-            m_linkList.clear();
-            const QUrl baseUrl = htmlExtn->baseUrl();
-            const QString query = QL1S("a[href], img[src], audio[src], video[src], embed[src], object[data]");
-            const AsyncSelectorInterface::QueryMethod method = (selectedOnly ? AsyncSelectorInterface::SelectedContent : AsyncSelectorInterface::EntireContent);
-            if (iface.interfaceType == SelectorInterfaceType::Async) {
-                auto callback = [this, baseUrl](const QList<AsyncSelectorInterface::Element>& elements){
-                    fillLinkListFromHtml(baseUrl, elements);
-                };
-                iface.asyncInterface->querySelectorAllAsync(query, method, callback);
-            }
-        }
+    SelectorInterface *iface = qobject_cast<SelectorInterface*>(htmlExtn);
+    //If htmlExtn == nullptr, iface will always be false
+    if (iface) {
+        m_linkList.clear();
+        const QUrl baseUrl = htmlExtn->baseUrl();
+        const QString query = QL1S("a[href], img[src], audio[src], video[src], embed[src], object[data]");
+        const SelectorInterface::QueryMethod method = (selectedOnly ? SelectorInterface::SelectedContent : SelectorInterface::EntireContent);
+        auto callback = [this, baseUrl](const QList<SelectorInterface::Element>& elements){
+            fillLinkListFromHtml(baseUrl, elements);
+        };
+        iface->querySelectorAll(query, method, callback);
     }
 
     KParts::FileInfoExtension *fileinfoExtn = KParts::FileInfoExtension::childObject(parent());

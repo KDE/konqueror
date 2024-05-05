@@ -11,7 +11,7 @@
 #include <KHistoryComboBox>
 #include <KUriFilter>
 
-#include "asyncselectorinterface.h"
+#include "interfaces/selectorinterface.h"
 #include <konq_kpart_plugin.h>
 
 #include <QStringList>
@@ -179,7 +179,7 @@ private Q_SLOTS:
 
     void HTMLDocLoaded();
 
-    void insertOpenSearchEntries(const QList<AsyncSelectorInterface::Element> &elements);
+    void insertOpenSearchEntries(const QList<KonqInterfaces::SelectorInterface::Element> &elements);
 
     void openSearchEngineAdded(const QString &name, const QString &searchUrl, const QString &fileName);
 

@@ -10,7 +10,7 @@ set(konq_LIB_SRCS
    konq_historyprovider.cpp   # konqueror and konqueror/sidebar
    konq_spellcheckingconfigurationdispatcher.cpp #konqueror and webenginepart
    konq_kpart_plugin.cpp
-   asyncselectorinterface.cpp
+   interfaces/selectorinterface.cpp
    browseropenorsavequestion.cpp
    historyprovider.cpp
    htmlextension.cpp
@@ -76,7 +76,7 @@ install(FILES
     konq_popupmenu.h
     konq_kpart_plugin.h
     ${LibKonq_BINARY_DIR}/src/libkonq_export.h
-    asyncselectorinterface.h
+    interfaces/selectorinterface.h
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}
     COMPONENT Devel

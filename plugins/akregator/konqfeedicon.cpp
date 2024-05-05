@@ -36,6 +36,7 @@
 #include <browserextension.h>
 
 using namespace Akregator;
+using namespace KonqInterfaces;
 
 K_PLUGIN_CLASS_WITH_JSON(KonqFeedIcon, "akregator_konqfeedicon.json")
 
@@ -69,10 +70,10 @@ KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &args)
     KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(parent);
     if (part) {
         HtmlExtension *ext = HtmlExtension::childObject(part);
-        AsyncSelectorInterface *selectorInterface = qobject_cast<AsyncSelectorInterface*>(ext);
+        SelectorInterface *selectorInterface = qobject_cast<SelectorInterface*>(ext);
         if (selectorInterface) {
             m_part = part;
-            auto slot = &KonqFeedIcon::updateFeedIconAsync;
+            auto slot = &KonqFeedIcon::updateFeedIcon;
             connect(m_part, QOverload<>::of(&KParts::ReadOnlyPart::completed), this, slot);
             connect(m_part, &KParts::ReadOnlyPart::completedWithPendingAction, this, slot);
             connect(m_part, &KParts::ReadOnlyPart::started, this, &KonqFeedIcon::removeFeedIcon);
@@ -150,13 +151,13 @@ void KonqFeedIcon::contextMenu()
     m_menu->popup(QCursor::pos());
 }
 
-void Akregator::KonqFeedIcon::updateFeedIconAsync()
+void Akregator::KonqFeedIcon::updateFeedIcon()
 {
     if (!isUrlUsable() || m_feedIcon) {
         return;
     }
 
-    AsyncSelectorInterface *asyncIface = qobject_cast<AsyncSelectorInterface*>(HtmlExtension::childObject(m_part));
+    SelectorInterface *asyncIface = qobject_cast<SelectorInterface*>(HtmlExtension::childObject(m_part));
     if (!asyncIface) {
         return;
     }
@@ -167,7 +168,7 @@ void Akregator::KonqFeedIcon::updateFeedIconAsync()
             addFeedIcon();
         }
     };
-    asyncIface->querySelectorAllAsync(query(), AsyncSelectorInterface::EntireContent, callback);
+    asyncIface->querySelectorAll(query(), SelectorInterface::EntireContent, callback);
 }
 
 void Akregator::KonqFeedIcon::fillFeedList(const QList<Element> &linkNodes)

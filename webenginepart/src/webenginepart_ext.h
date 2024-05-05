@@ -18,7 +18,7 @@
 
 #include <KParts/NavigationExtension>
 
-#include <asyncselectorinterface.h>
+#include <interfaces/selectorinterface.h>
 #include <htmlextension.h>
 #include <htmlsettingsinterface.h>
 #include <textextension.h>
@@ -169,11 +169,11 @@ private:
  * Implements the HtmlExtension interface
  */
 class WebEngineHtmlExtension : public HtmlExtension,
-                             public AsyncSelectorInterface,
+                             public KonqInterfaces::SelectorInterface,
                              public HtmlSettingsInterface
 {
     Q_OBJECT
-    Q_INTERFACES(AsyncSelectorInterface)
+    Q_INTERFACES(KonqInterfaces::SelectorInterface)
     Q_INTERFACES(HtmlSettingsInterface)
 
 public:
@@ -183,14 +183,14 @@ public:
     QUrl baseUrl() const override;
     bool hasSelection() const override;
 
-    // AsyncSelectorInterface
+    // SelectorInterface
     /**
      * @brief The async query methods supported by the part
-     * @return A list containing only AsyncSelectorInterface::EntireContent
+     * @return A list containing only SelectorInterface::EntireContent
      */
-    AsyncSelectorInterface::QueryMethods supportedAsyncQueryMethods() const override;
-    void querySelectorAsync(const QString& query, AsyncSelectorInterface::QueryMethod method, SingleElementSelectorCallback& callback) override;
-    void querySelectorAllAsync(const QString & query, AsyncSelectorInterface::QueryMethod method, MultipleElementSelectorCallback & callback) override;
+    KonqInterfaces::SelectorInterface::QueryMethods supportedQueryMethods() const override;
+    void querySelector(const QString& query, KonqInterfaces::SelectorInterface::QueryMethod method, SingleElementSelectorCallback& callback) override;
+    void querySelectorAll(const QString & query, KonqInterfaces::SelectorInterface::QueryMethod method, MultipleElementSelectorCallback & callback) override;
 
     // HtmlSettingsInterface
     QVariant htmlSettingsProperty(HtmlSettingsType type) const override;
@@ -204,20 +204,20 @@ private:
      * @param json A QVariant containing the JSON representation of the object returned by the javascript function `querySelectorAllToList()`
      * @return all the elements contained in @p json represented as KParts::SelectorInterface::Element
      */
-    static QList<AsyncSelectorInterface::Element> jsonToElementList(const QVariant &json);
+    static QList<SelectorInterface::Element> jsonToElementList(const QVariant &json);
 
     /**
      * @brief Converts the JSON object returned by the javascript function `querySelectorToObject()` in a KParts::SelectorInterface::Element
      * @param json a QVariant containing the JSON representation of the object returned by the javascript function `querySelectorToObject()`
      * @return the element in @p json represented as KParts::SelectorInterface::Element
      */
-    static AsyncSelectorInterface::Element jsonToElement(const QVariant &json);
+    static SelectorInterface::Element jsonToElement(const QVariant &json);
 
     /**
      * @overload
      * @param obj the JSON object representing the element as returned by the javascript function `querySelectorToObject()`
      */
-    static AsyncSelectorInterface::Element jsonToElement(const QJsonObject &obj);
+    static SelectorInterface::Element jsonToElement(const QJsonObject &obj);
 };
 
 class WebEngineDownloaderExtension : public KonqInterfaces::DownloaderExtension

@@ -56,7 +56,9 @@
 #define QL1S(x)     QLatin1String(x)
 #define QL1C(x)     QLatin1Char(x)
 
-using Element = AsyncSelectorInterface::Element;
+using namespace KonqInterfaces;
+
+using Element = SelectorInterface::Element;
 
 using namespace KonqInterfaces;
 
@@ -965,14 +967,14 @@ bool WebEngineHtmlExtension::hasSelection() const
     return part()->view()->hasSelection();
 }
 
-AsyncSelectorInterface::QueryMethods WebEngineHtmlExtension::supportedAsyncQueryMethods() const
+SelectorInterface::QueryMethods WebEngineHtmlExtension::supportedQueryMethods() const
 {
-    return AsyncSelectorInterface::EntireContent;
+    return SelectorInterface::EntireContent;
 }
 
-QList<AsyncSelectorInterface::Element> WebEngineHtmlExtension::jsonToElementList(const QVariant& json)
+QList<SelectorInterface::Element> WebEngineHtmlExtension::jsonToElementList(const QVariant& json)
 {
-    QList<AsyncSelectorInterface::Element> res;
+    QList<SelectorInterface::Element> res;
     QJsonDocument doc = QJsonDocument::fromVariant(json);
     if (!doc.isArray()) {
         return res;
@@ -983,19 +985,19 @@ QList<AsyncSelectorInterface::Element> WebEngineHtmlExtension::jsonToElementList
     return res;
 }
 
-AsyncSelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const QVariant& json)
+SelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const QVariant& json)
 {
     QJsonDocument doc = QJsonDocument::fromVariant(json);
     if (!doc.isObject()) {
-        return AsyncSelectorInterface::Element();
+        return SelectorInterface::Element();
     }
     QJsonObject obj = doc.object();
     return jsonToElement(obj);
 }
 
-AsyncSelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const QJsonObject& obj)
+SelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const QJsonObject& obj)
 {
-    AsyncSelectorInterface::Element res;
+    SelectorInterface::Element res;
     QJsonValue nameVal = obj.value(QLatin1String("tag"));
     if (nameVal.isUndefined()) {
         return res;
@@ -1008,10 +1010,10 @@ AsyncSelectorInterface::Element WebEngineHtmlExtension::jsonToElement(const QJso
     return res;
 }
 
-void WebEngineHtmlExtension::querySelectorAllAsync(const QString& query, AsyncSelectorInterface::QueryMethod method, MultipleElementSelectorCallback& callback)
+void WebEngineHtmlExtension::querySelectorAll(const QString& query, SelectorInterface::QueryMethod method, MultipleElementSelectorCallback& callback)
 {
     QList<Element> result;
-    if (method == None || !part() || !part()->page() || !(supportedAsyncQueryMethods() & method)) {
+    if (method == None || !part() || !part()->page() || !(supportedQueryMethods() & method)) {
         callback(result);
         return;
     }
@@ -1029,10 +1031,10 @@ void WebEngineHtmlExtension::querySelectorAllAsync(const QString& query, AsyncSe
     part()->page()->runJavaScript(fullQuery, QWebEngineScript::ApplicationWorld, internalCallback);
 }
 
-void WebEngineHtmlExtension::querySelectorAsync(const QString& query, AsyncSelectorInterface::QueryMethod method, SingleElementSelectorCallback& callback)
+void WebEngineHtmlExtension::querySelector(const QString& query, SelectorInterface::QueryMethod method, SingleElementSelectorCallback& callback)
 {
     Element result;
-    if (method == AsyncSelectorInterface::None || !part() || !part()->page() || !(supportedAsyncQueryMethods() & method)) {
+    if (method == SelectorInterface::None || !part() || !part()->page() || !(supportedQueryMethods() & method)) {
         callback(result);
         return;
     }

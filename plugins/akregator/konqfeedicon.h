@@ -14,7 +14,7 @@
 #include <konq_kpart_plugin.h>
 #include <QMenu>
 
-#include "asyncselectorinterface.h"
+#include "interfaces/selectorinterface.h"
 
 /**
 @author Teemu Rytilahti
@@ -85,14 +85,6 @@ namespace Akregator
 
 /**
  * @brief Class handling detection of feeds in a page and displaying of the feeds icon in the statusbar.
- *
- * Currently, this class needs to support two different APIs for the part:
- * - the old, _synchronous_, KParts::SelectorInterface interface implemented by KHtmlPart and KWebkitPart
- * - the new, _asynchronous_ AsyncSelectorInterface interface implemented by WebEnginePart
- * The only difference in the two cases is in the slot called to update the feeds icon after a page finished
- * loading:
- * - updateFeedIcon() is used for the _synchronous_ API
- * - updateFeedIconAsync() is used for the _asynchronous_ API.
  */
 class KonqFeedIcon : public KonqParts::Plugin
 {
@@ -130,7 +122,7 @@ private:
 
     static QAction* actionTitleForFeed(const QString &title, QWidget *parent);
 
-    typedef AsyncSelectorInterface::Element Element;
+    typedef KonqInterfaces::SelectorInterface::Element Element;
     /**
      * @brief Fills the feeds list from the list of `link` elements found in a page
      * @param linkNodes the list of link nodes contained in the page
@@ -176,7 +168,7 @@ private slots:
      * @note This function is _asynchronous_
      * @warning This should only be called after making sure the part supports the AsyncSelectorInterface interface
      */
-    void updateFeedIconAsync();
+    void updateFeedIcon();
 
     /**
      * @brief Removes the feed widget from the status bar
