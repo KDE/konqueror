@@ -25,7 +25,6 @@
 #include "webengineview.h"
 #include "webenginepage.h"
 #include "websslinfo.h"
-#include "webhistoryinterface.h"
 #include "webenginewallet.h"
 #include "schemehandlers/errorschemehandler.h"
 #include "webengineurlrequestinterceptor.h"

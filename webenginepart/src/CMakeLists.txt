@@ -18,7 +18,6 @@ set(kwebenginepartlib_LIB_SRCS
     webengineview.cpp
     webenginepage.cpp
     websslinfo.cpp
-    webhistoryinterface.cpp
     webenginepartdownloadmanager.cpp
     webenginewallet.cpp
     settings/webenginesettings.cpp
