@@ -1,7 +1,7 @@
 # translation of kget.po to
 # Translation of kget.po to Slovenian
 # Copyright (C) 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
-# $Id: kgetplugin.po 1678443 2024-04-22 01:08:38Z scripty $
+# $Id: kgetplugin.po 1679341 2024-05-06 01:10:01Z scripty $
 # $Source$
 #
 # Andrej Vernekar <andrej.vernekar@moj.net>, 2002,2003, 2005, 2007.
@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kget\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-06 00:38+0000\n"
 "PO-Revision-Date: 2013-11-29 17:23+0100\n"
 "Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -25,32 +25,32 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 
-#: kget_plugin.cpp:57
+#: kget_plugin.cpp:59
 #, kde-format
 msgid "Download Manager"
 msgstr "Upravljalnik prejemov"
 
-#: kget_plugin.cpp:63
+#: kget_plugin.cpp:65
 #, kde-format
 msgid "Show Drop Target"
 msgstr "Pokaži spustni cilj"
 
-#: kget_plugin.cpp:70
+#: kget_plugin.cpp:72
 #, kde-format
 msgid "List All Links"
 msgstr "Prikaži vse povezave"
 
-#: kget_plugin.cpp:75
+#: kget_plugin.cpp:77
 #, kde-format
 msgid "List Selected Links"
 msgstr "Prikaži izbrane povezave"
 
-#: kget_plugin.cpp:194
+#: kget_plugin.cpp:178
 #, kde-format
 msgid "No downloadable links were found."
 msgstr "Najdene ni bilo nobene povezave, ki jo je mogoče prejeti."
 
-#: kget_plugin.cpp:194
+#: kget_plugin.cpp:178
 #, kde-format
 msgid "No Links"
 msgstr "Ni povezav"
