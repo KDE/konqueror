@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 00:38+0000\n"
-"PO-Revision-Date: 2024-05-01 12:20+0300\n"
+"PO-Revision-Date: 2024-05-05 12:00+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1939,10 +1939,10 @@ msgid ""
 "the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
 "the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
 msgstr ""
-"הזן את הנתיב אל תוכנית ה־Java. אם ברצונך להשתמש ב־jre הנמצא בנתיב שלך, השאר "
-"את הערך בתור \"java\". אם אתה צריך להשתמש ב־jre אחר, הזן את הנתיב אל תוכנית "
-"ה־Java (לדוגמה usr/lib/jdk/bin/java/), או את הנתיב אל הספרייה המכילה את "
-"\"bin/java\" (לדוגמה ‎/opt/IBMJava2-13)."
+"נא למלא את הנתיב לתוכנית ה־Java. כדי להשתמש ב־jre הנמצא בנתיב (PATH) שלך, יש "
+"להשאיר את הערך ‚java’. כדי להשתמש ב־jre אחר, נא למלא את הנתיב המלא לתוכנית ה־"
+"Java (לדוגמה usr/lib/jdk/bin/java/), או את הנתיב לתיקייה המכילה את ‚bin/"
+"java’ (למשל ‎‎/opt/IBMJava2-13)."
 
 #: javaopts.cpp:177
 #, kde-format
@@ -1963,16 +1963,15 @@ msgid ""
 "checkbox unchecked."
 msgstr ""
 "לאחר שכל היישומונים חוסלו אמור שרת היישומונים להיסגר, אולם ההפעלה של jvm "
-"אורכת זמן רב. לפיכך, אם ברצונך לשמור את תהליך ה־Java פועל בזמן שאתה גולש, "
-"באפשרותך להגדיר את ערך הזמן המוקצב לפי ראות עיניך. כדי להשאיר את תהליך ה־"
-"Java פועל לאורך כל זמן ההפעלה של Konqueror, פשוט אל תבחר באפשרות כבה את שרת "
-"היישומונים."
+"אורכת זמן רב. לפיכך, כדי לשמור על תהליך ה־Java פועל בזמן הגלישה, אפשר להגדיר "
+"את ערך הזמן המוקצב לבחירתך. כדי להשאיר את תהליך ה־Java פועל לאורך כל זמן "
+"ההפעלה של Konqueror, פשוט לא לבחור באפשרות כיבוי שרת היישומונים."
 
 #: javaopts.cpp:288
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
-msgstr "&ספציפית למתחם"
+msgstr "&נקודתית לשם תחום"
 
 #: javaopts.cpp:323
 #, kde-format

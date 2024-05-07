@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: kcmbookmarks\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2024-04-08 18:52+0300\n"
+"PO-Revision-Date: 2024-05-05 12:51+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -44,14 +44,14 @@ msgid ""
 "a folder) are not displayed.\n"
 "If checked, they are gathered in a \"root\" folder."
 msgstr ""
-"אם אפשרות זאת אינה מסומנת, סימניות בענף השורש (שאינם תיקיות) לא יוצגו.\n"
-"אם אפשרות זאת מסומנת, הם נאספות בתיקיית \"root\"."
+"אם אפשרות זאת אינה מסומנת, סימניות בענף השורש (שאינן תיקיות) לא תוצגנה.\n"
+"אם אפשרות זאת מסומנת, הן נאספות בתיקיית „root”."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
 #: bookmarks.ui:26
 #, kde-format
 msgid "&Show bookmarks without folder"
-msgstr "&הצג סימניות ללא תיקיה"
+msgstr "ה&צגת סימניות ללא תיקייה"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
 #: bookmarks.ui:37
@@ -62,10 +62,9 @@ msgid ""
 "It looks less nice but it may help if you have a very big folder you want to "
 "spread in two columns."
 msgstr ""
-"תיקיות משנה מוצגות בתוך תיקיות האב שלהם כברירת מחדל. אם אתה מפעיל אפשרות "
-"זאת, תיקיות משנה יוצגו בנפרד.\n"
-"זה נראה פחות טוב, אבל זה יכול לסייע אם יש לך תיקייה גדולה שאתה רוצה לחלק "
-"לשתי עמודות."
+"תיקיות משנה מוצגות בתוך תיקיות האב שלהם כברירת מחדל. הפעלת האפשרות זאת, תציג "
+"את תיקיות המשנה בנפרד.\n"
+"זה נראה פחות טוב, אבל זה יכול לסייע אם יש לך תיקייה גדולה לחלק לשתי עמודות."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
 #: bookmarks.ui:40
@@ -80,14 +79,14 @@ msgid ""
 "Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
 "as a file manager."
 msgstr ""
-"הצג תיבה עם מיקומי KDE (ספריית בית, רשת,...). שימושי עם אתה משתמש ב־"
-"konqueror כמנהל קבצים."
+"הצגת תיבה עם מקומות ב־KDE (ספריית בית, רשת, …). שימושי בעת שימוש ב־konqueror "
+"כמנהל קבצים."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
 #: bookmarks.ui:50
 #, kde-format
 msgid "Show system &places"
-msgstr "הצג &מיקומי מערכת"
+msgstr "הצגת &מקומות במערכת"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: bookmarks.ui:63
@@ -103,8 +102,8 @@ msgid ""
 "of columns depends on the width of the konqueror window and the number of "
 "bookmarks you have."
 msgstr ""
-"תיקיות מחולקות באופן אוטומטי למספר עמודות. מספר העמודות האופטימלי תלוי במידת "
-"רוחבו של חלון ה־konqueror, ובמספר הסימניות שיש לך."
+"תיקיות מחולקות באופן אוטומטי למספר עמודות. מספר העמודות המיטבי תלוי ברוחבו "
+"של חלון ה־konqueror, ובמספר הסימניות שיש לך."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: bookmarks.ui:74
@@ -116,19 +115,19 @@ msgstr "מספר העמודות להצגה:"
 #: bookmarks.ui:109
 #, kde-format
 msgid "Disable it on slow system to disable background images."
-msgstr "בטל זאת במערכות אטיות כדי לבטל הצגת רקעים."
+msgstr "כדאי לכבות זאת במערכות אטיות כדי להשבית תמונות רקע."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
 #: bookmarks.ui:112
 #, kde-format
 msgid "Show folder &backgrounds"
-msgstr "הצג תיקייה &ורקעים"
+msgstr "הצגת &רקעי תיקייה"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
 #: bookmarks.ui:138
 #, kde-format
 msgid "How much disk space is used to cache the pixmaps"
-msgstr "כמה שטח בדיסק הקשיח יוקצה כמטמון למפת הפיקסלים."
+msgstr "כמה שטח בכונן הקשיח יוקצה כמטמון למפת הפיקסלים."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: bookmarks.ui:141
@@ -140,7 +139,7 @@ msgstr "מטמון מפת פיקסלים."
 #: bookmarks.ui:150
 #, kde-format
 msgid "Disk cache size:"
-msgstr "גודל המטמון על גבי הדיסק:"
+msgstr "גודל המטמון על גבי הכונן:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
 #: bookmarks.ui:163
@@ -152,13 +151,13 @@ msgstr " ק״ב"
 #: bookmarks.ui:173
 #, kde-format
 msgid "Clear the pixmap cache"
-msgstr "נקה את מטמון מפת הפיקסלים"
+msgstr "ניקוי מטמון מפת הפיקסלים"
 
 #. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
 #: bookmarks.ui:176
 #, kde-format
 msgid "&Clear Cache"
-msgstr "&נקה מטמון"
+msgstr "&ניקוי מטמון"
 
 #~ msgid ""
 #~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
