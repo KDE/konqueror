@@ -857,7 +857,7 @@ msgstr "自定义(&I)..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "自定义页面背景色"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -876,21 +876,31 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">网页使用自定义背景色。默认颜色是：</"
+"p><ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-"
+"right: 0px; -qt-list-indent: 1;\"><li align=\"justify\" style=\" margin-"
+"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\">当网页没有明确设置背景色，或者没有通过自定义样式"
+"表指定背景色时将使用默认颜色</li><li align=\"justify\" style=\" margin-"
+"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\">背景色将在网页加载之前显示</li></ul><p align="
+"\"justify\">设置自定义背景色的最典型用途是在使用自定义样式表时，如果样式表指"
+"定了背景色 (尤其是深色背景色) 时，通过设置合适的背景色可以防止页面在加载时闪"
+"回到白色</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "使用自定义背景色(&B)"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr "<html><head/><body><p>网页的自定义背景色</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -913,12 +923,25 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">添加一条规则到您的自定义样式表 (包括"
+"无障碍辅助样式表) 以将所有背景色设置为您在上面选择的自定义颜色。这将避免需要"
+"在样式表和配置对话框两处同时设置背景色。</p><p align=\"justify\"><span style="
+"\" font-weight:600;\">Notes:</span></p><ul style=\"margin-top: 0px; margin-"
+"bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li "
+"align=\"justify\" style=\" margin-top:12px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">该规则将按"
+"照 CSS 的一般规则被您的自定义样式表中的其他背景色规则覆盖</li><li align="
+"\"justify\" style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">该规则不会被加入到您"
+"的自定义样式表所在的实际文件。它只会被插入到 Konqueror 保存在内存中的该文件的"
+"临时副本中。这意味着如果您在其他浏览器中使用该样式表，您将需要手动添加该规"
+"则。</li></ul></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "添加自定义背景色到样式表"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
