@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 00:38+0000\n"
-"PO-Revision-Date: 2024-04-29 14:27+0200\n"
+"PO-Revision-Date: 2024-05-06 16:22+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -29,9 +29,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
-"X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
+"X-Environment: kde\n"
+"X-Generator: Lokalize 23.08.5\n"
 "X-Text-Markup: kde4\n"
 
 #: appearance.cpp:39
@@ -931,7 +931,7 @@ msgstr "Personnal&iser..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Arrière-plan personnalisé de page "
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -950,21 +950,36 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Utilisez une couleur personnalisée "
+"d'arrière-plan pour pages Internet. Cette couleur est utilisée :</p><ul "
+"style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: "
+"0px; -qt-list-indent: 1;\"><li align=\"justify\" style=\" margin-top:0px; "
+"margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">lorsque la couleur d'arrière-plan n'est pas explicitement "
+"définie par la page ou par une feuille de style</li><li align=\"justify\" "
+"style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">avant qu'une page Internet "
+"ne soit chargée</li></ul><p align=\"justify\">La définition d'une couleur "
+"personnalisée d'arrière-plan est surtout utile si vous utilisez une feuille "
+"personnalisée de style, définissant une couleur d'arrière-plan pour la page "
+"(Surtout une couleur foncée). Cela permet d'éviter un éclair blanc avant que "
+"la page ne soit chargée</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Utiliser une couleur &personnalisée d'arrière-plan"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>La couleur personnalisée d'arrière-plan à utiliser "
+"pour les pages Internet.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -987,12 +1002,31 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Ajoutez à votre feuille "
+"personnalisée (Y compris la feuille de style d'accessibilité) une règle pour "
+"définir toutes les couleurs d'arrière-plan à la couleur personnalisée que "
+"vous avez choisie ci-dessus. Cela évite le besoin de définir lacouleur de "
+"fond à la fois dans la feuille de style et dans la boîte de dialogue de "
+"configuration.</p><p align=\"justify\"><span style=\" font-weight:600;"
+"\">Remarques :</span></p><ul style=\"margin-top: 0px; margin-bottom: 0px; "
+"margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li align="
+"\"justify\" style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">la règle sera "
+"écrasée par d'autres règles pour les couleurs d'arrière-plan dans votre "
+"feuille de style personnalisée, suivant les règles habituelles « CSS ».</"
+"li><li align=\"justify\" style=\" margin-top:0px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">La règle "
+"n'est pas réellement ajoutée au fichier contenant votre feuille "
+"personnalisée de style. Elle est seulement insérée dans la copie que "
+"Konqueror conserve en mémoire. Cela signifie que si vous utilisez la feuille "
+"de style dans d'autres navigateurs, vous devrez y ajouter manuellement la "
+"règle.</li></ul></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Ajouter une couleur personnalisée d'arrière-plan à la feuille de style"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
