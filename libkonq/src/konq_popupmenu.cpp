@@ -38,6 +38,7 @@
 #include <KJobUiDelegate>
 #include <KMimeTypeEditor>
 #include <KPluginMetaData>
+#include <KStandardGuiItem>
 #include <KIO/JobUiDelegateFactory>
 #include <ki18n_version.h>
 
@@ -429,7 +430,14 @@ void KonqPopupMenuPrivate::populate()
         act = new QAction(m_parentWidget);
         m_ownActions.append(act);
         act->setObjectName(QStringLiteral("properties"));   // for unittest
-        act->setText(i18n("&Properties"));
+        KGuiItem props = KStandardGuiItem::properties();
+        act->setText(props.text());
+        act->setIcon(props.icon());
+        // There is no need to set a shortcut for this action, because
+        // Alt+Return will be propagated up to the parent application
+        // and activate its standard action.  Hardwiring Alt+Return here
+        // will force that shortcut for this context menu action even if
+        // the user has changed the standard one.
         QObject::connect(act, &QAction::triggered, [this]() {
             slotPopupProperties();
         });
