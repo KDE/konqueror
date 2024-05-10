@@ -2,7 +2,7 @@
 # Translation of libkonq.po to Slovenian
 # SLOVENIAN TRANSLATION OF LIBKONQ.
 # Copyright (C) 2001, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
-# $Id: libkonq.po 1675153 2024-03-09 01:07:43Z scripty $
+# $Id: libkonq.po 1679662 2024-05-10 01:10:11Z scripty $
 # $Source$
 #
 # Roman Maurer <roman.maurer@hermes.si>, 2000.
@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-09 00:37+0000\n"
+"POT-Creation-Date: 2024-05-10 00:38+0000\n"
 "PO-Revision-Date: 2023-08-01 10:31+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -95,80 +95,78 @@ msgstr "Sprejmi"
 msgid "Reject"
 msgstr "Zavrni"
 
-#: src/konq_popupmenu.cpp:220
+#: src/konq_popupmenu.cpp:221
 #, kde-format
 msgid "&Open"
 msgstr "&Odpri"
 
-#: src/konq_popupmenu.cpp:243
+#: src/konq_popupmenu.cpp:244
 #, kde-format
 msgid "Create &Folder..."
 msgstr "Ustvari mapo..."
 
-#: src/konq_popupmenu.cpp:254
+#: src/konq_popupmenu.cpp:255
 #, kde-format
 msgid "&Restore"
 msgstr "Obnovi"
 
-#: src/konq_popupmenu.cpp:266
+#: src/konq_popupmenu.cpp:267
 #, kde-format
 msgid "Show Original Directory"
 msgstr "Prikaži izvorno mapo"
 
-#: src/konq_popupmenu.cpp:266
+#: src/konq_popupmenu.cpp:267
 #, kde-format
 msgid "Show Original File"
 msgstr "Prikaži izvorno datoteko"
 
-#: src/konq_popupmenu.cpp:301
+#: src/konq_popupmenu.cpp:302
 #, kde-format
 msgid "&Empty Trash Bin"
 msgstr "Izprazni Smeti"
 
-#: src/konq_popupmenu.cpp:313
+#: src/konq_popupmenu.cpp:314
 #, kde-format
 msgid "&Configure Trash Bin"
 msgstr "Nastavi Smeti"
 
-#: src/konq_popupmenu.cpp:337
+#: src/konq_popupmenu.cpp:338
 #, kde-format
 msgid "&Bookmark This Page"
 msgstr "Zaznamuj to stran"
 
-#: src/konq_popupmenu.cpp:339
+#: src/konq_popupmenu.cpp:340
 #, kde-format
 msgid "&Bookmark This Location"
 msgstr "Zaznamuj to mesto"
 
-#: src/konq_popupmenu.cpp:342
+#: src/konq_popupmenu.cpp:343
 #, kde-format
 msgid "&Bookmark This Folder"
 msgstr "Zaznamuj to mapo"
 
-#: src/konq_popupmenu.cpp:344
+#: src/konq_popupmenu.cpp:345
 #, kde-format
 msgid "&Bookmark This Link"
 msgstr "Zaznamuj to povezavo"
 
-#: src/konq_popupmenu.cpp:346
+#: src/konq_popupmenu.cpp:347
 #, kde-format
 msgid "&Bookmark This File"
 msgstr "Zaznamuj to datoteko"
 
-#: src/konq_popupmenu.cpp:385
+#: src/konq_popupmenu.cpp:386
 #, kde-format
 msgid "Preview In"
 msgstr "Predogled v"
 
-#: src/konq_popupmenu.cpp:396
+#: src/konq_popupmenu.cpp:397
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Odpri terminal tukaj"
 
-#: src/konq_popupmenu.cpp:432
-#, kde-format
-msgid "&Properties"
-msgstr "Lastnosti"
+#~ msgid "&Properties"
+#~ msgstr "Lastnosti"
 
 #~ msgctxt "@title:menu"
 #~ msgid "Copy To"

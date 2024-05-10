@@ -5,23 +5,23 @@
 # Isam Bayazidi <bayazidi@arabeyes.org>, 2002.
 # محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# zayed <zayed.alsaidi@gmail.com>, 2008, 2012.
+# SPDX-FileCopyrightText: 2008, 2012, 2024 zayed <zayed.alsaidi@gmail.com>
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-22 00:38+0000\n"
-"PO-Revision-Date: 2014-07-20 02:35+0300\n"
-"Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"PO-Revision-Date: 2024-05-09 09:36+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #. i18n: ectx: Menu (tools)
 #: khtmlsettingsplugin.rc:4
@@ -96,22 +96,17 @@ msgid "&Offline Browsing Mode"
 msgstr "وضع التصفّح دون &اتصال"
 
 #: settingsplugin.cpp:170
-#, fuzzy, kde-format
-#| msgid ""
-#| "Cookies could not be enabled, because the cookie daemon could not be "
-#| "started."
+#, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
 "be contacted."
-msgstr "تعذّر تمكين الكعكات، بسب تعذّر بدا عفريت الكعكات."
+msgstr "لا يمكن تغيير إعداد الكعكات، لأنه لا يمكن الاتصال ببرنامج الكعكات."
 
 #: settingsplugin.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Cookies Disabled"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"
-msgstr "الكعكات معطّلة"
+msgstr "إعدادات الكعكات غير متوفرة"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"
