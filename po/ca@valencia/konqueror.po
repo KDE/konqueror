@@ -551,9 +551,9 @@ msgid ""
 "useful with different types of views, such as a directory tree with an icon "
 "view or detailed view, and possibly a terminal emulator window."
 msgstr ""
-"Quan se selecciona esta casella a dues vistes com a mínim, fa que estes "
-"vistes estiguen «lligades». Llavors, quan canvieu de directori a una vista, "
-"les altres vistes lligades s'actualitzaran automàticament per a mostrar el "
+"Quan es marca esta casella a dues vistes com a mínim, fa que estes vistes "
+"estiguen «lligades». Llavors, quan canvieu de directori a una vista, les "
+"altres vistes lligades s'actualitzaran automàticament per a mostrar el "
 "directori actual. Açò és especialment útil amb diferents tipus de vistes, "
 "com ara la vista de directori amb vista d'icona o vista detallada, i "
 "possiblement la finestra d'emulació de terminal."
@@ -653,7 +653,7 @@ msgstr "&Neteja l'historial"
 #: src/konqhistoryview.cpp:86
 #, kde-format
 msgid "&Preferences..."
-msgstr "&Preferències..."
+msgstr "&Preferències…"
 
 #: src/konqhistoryview.cpp:93
 #, kde-format
@@ -685,7 +685,7 @@ msgstr "Neteja de l'historial?"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
-msgstr "S'està carregant..."
+msgstr "S'està carregant…"
 
 #: src/konqmainwindow.cpp:717
 #, kde-format
@@ -811,7 +811,7 @@ msgstr "Tanca &altres pestanyes"
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
-msgstr "Confirmació de tancament de les altres pestanyes"
+msgstr "Confirmeu el tancament de les altres pestanyes"
 
 #: src/konqmainwindow.cpp:2388
 #, kde-format
@@ -861,12 +861,12 @@ msgstr "Buida l'historial dels elements tancats"
 #: src/konqmainwindow.cpp:2687
 #, kde-format
 msgid "Save As..."
-msgstr "Anomena i guarda..."
+msgstr "Anomena i guarda…"
 
 #: src/konqmainwindow.cpp:2689
 #, kde-format
 msgid "Manage..."
-msgstr "Gestiona..."
+msgstr "Gestiona…"
 
 #: src/konqmainwindow.cpp:3233
 #, kde-format
@@ -881,12 +881,12 @@ msgstr "&Duplica la finestra"
 #: src/konqmainwindow.cpp:3243
 #, kde-format
 msgid "Send &Link Address..."
-msgstr "Envia l'adreça de l'en&llaç..."
+msgstr "Envia l'adreça de l'en&llaç…"
 
 #: src/konqmainwindow.cpp:3247
 #, kde-format
 msgid "S&end File..."
-msgstr "&Envia el fitxer..."
+msgstr "&Envia el fitxer…"
 
 #: src/konqmainwindow.cpp:3251
 #, kde-format
@@ -896,12 +896,12 @@ msgstr "O&bri la ubicació"
 #: src/konqmainwindow.cpp:3257
 #, kde-format
 msgid "&Open File..."
-msgstr "O&bri el fitxer..."
+msgstr "O&bri el fitxer…"
 
 #: src/konqmainwindow.cpp:3262
 #, kde-format
 msgid "&Find File..."
-msgstr "Bu&sca fitxers..."
+msgstr "Bu&sca fitxers…"
 
 #: src/konqmainwindow.cpp:3271
 #, kde-format
@@ -950,12 +950,12 @@ msgstr "Mostra l'historial"
 #: src/konqmainwindow.cpp:3354
 #, kde-format
 msgid "Configure Extensions..."
-msgstr "Configura les extensions..."
+msgstr "Configura les extensions…"
 
 #: src/konqmainwindow.cpp:3358
 #, kde-format
 msgid "Configure Spell Checking..."
-msgstr "Configura el corrector ortogràfic..."
+msgstr "Configura el corrector ortogràfic…"
 
 #: src/konqmainwindow.cpp:3364
 #, kde-format
@@ -1314,12 +1314,12 @@ msgstr "Mostra les eines de desenvolupador per a la pàgina actual"
 #: src/konqmainwindow.cpp:3800
 #, kde-format
 msgid "Copy &Files..."
-msgstr "Copia fi&txers..."
+msgstr "Copia fi&txers…"
 
 #: src/konqmainwindow.cpp:3804
 #, kde-format
 msgid "M&ove Files..."
-msgstr "M&ou fitxers..."
+msgstr "M&ou fitxers…"
 
 #: src/konqmainwindow.cpp:4130
 #, kde-format
@@ -1394,7 +1394,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
-msgstr "Confirmació"
+msgstr "Confirmeu"
 
 #: src/konqmainwindow.cpp:4719
 #, kde-format
@@ -1595,21 +1595,21 @@ msgstr "La sessió existix. Se sobreescriu?"
 #, kde-format
 msgctxt "@action:button New session"
 msgid "New..."
-msgstr "Nou..."
+msgstr "Nou…"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
 #: src/konqsessiondlg_base.ui:33
 #, kde-format
 msgctxt "@action:button Save current session"
 msgid "Save Current..."
-msgstr "Guarda l'actual..."
+msgstr "Guarda l'actual…"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
 #: src/konqsessiondlg_base.ui:40
 #, kde-format
 msgctxt "@action:button Rename session"
 msgid "Rename..."
-msgstr "Canvia el nom..."
+msgstr "Canvia el nom…"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
 #: src/konqsessiondlg_base.ui:47
@@ -1792,8 +1792,8 @@ msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
 "folder, rather than showing that folder's contents in the current window."
 msgstr ""
-"Si se selecciona esta opció, Konqueror obrirà una finestra nova quan obriu "
-"una carpeta, en comptes de mostrar el contingut de la carpeta en la finestra "
+"Si es marca esta opció, Konqueror obrirà una finestra nova quan obriu una "
+"carpeta, en comptes de mostrar el contingut de la carpeta en la finestra "
 "actual."
 
 #. i18n: ectx: label, entry, group (FMSettings)
@@ -1842,11 +1842,10 @@ msgid ""
 "and in the file manager's menus and context menus. You can always delete "
 "files when hidden by holding the Shift key while calling 'Move to Trash'."
 msgstr ""
-"Seleccioneu-la si voleu mostrar les ordres de menú «Suprimix» en "
-"l'escriptori i en els menús del gestor de fitxers i en els menús "
-"contextuals. Quan estiguen ocultes, sempre podreu suprimir els fitxers "
-"prement la tecla de majúscules mentre se selecciona «Mou cap a dins de la "
-"paperera»."
+"Activeu açò si voleu mostrar les ordres de menú «Suprimix» en l'escriptori i "
+"en els menús del gestor de fitxers i en els menús contextuals. Quan estiguen "
+"ocultes, sempre podreu suprimir els fitxers prement la tecla de majúscules "
+"mentre se selecciona «Mou cap a dins de la paperera»."
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:149

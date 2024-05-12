@@ -35,9 +35,9 @@ msgid ""
 "a folder) are not displayed.\n"
 "If checked, they are gathered in a \"root\" folder."
 msgstr ""
-"Si no se selecciona, no es visualitzaran les adreces d'interés a l'arrel de "
-"la jerarquia (en cap carpeta).\n"
-"Si se selecciona, s'agruparan en una carpeta «arrel»."
+"Si no es marca esta opció, les adreces d'interés fins a l'arrel de la "
+"jerarquia (en cap carpeta) no es visualitzen.\n"
+"Si està marcada, s'agrupen en una carpeta «arrel»."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
 #: bookmarks.ui:26
@@ -54,8 +54,8 @@ msgid ""
 "It looks less nice but it may help if you have a very big folder you want to "
 "spread in two columns."
 msgstr ""
-"Les subcarpetes es mostren dins el seu pare predeterminat. Si seleccioneu "
-"esta opció, les subcarpetes es mostren soles.\n"
+"Les subcarpetes es mostren dins el seu pare predeterminat. Si marqueu esta "
+"opció, les subcarpetes es mostren soles.\n"
 "Pareix menys agradable, però pot ajudar si teniu una carpeta molt gran que "
 "voleu expandir-la en dues columnes."
 
@@ -72,8 +72,8 @@ msgid ""
 "Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
 "as a file manager."
 msgstr ""
-"Mostra un quadro amb els llocs de KDE (Inici, Xarxa...). És útil si "
-"utilitzeu Konqueror com a gestor de fitxers."
+"Mostra un quadro amb els llocs de KDE (Inici, Xarxa…). És útil si utilitzeu "
+"Konqueror com a gestor de fitxers."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
 #: bookmarks.ui:50
@@ -128,7 +128,7 @@ msgstr ""
 #: bookmarks.ui:141
 #, kde-format
 msgid "Pixmap Cache"
-msgstr "Memòria cau dels mapes de píxels"
+msgstr "Memòria cau per als mapes de píxels"
 
 #. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
 #: bookmarks.ui:150
@@ -153,13 +153,3 @@ msgstr "Neteja la memòria cau dels mapes de píxels"
 #, kde-format
 msgid "&Clear Cache"
 msgstr "&Neteja la memòria cau"
-
-#~ msgid ""
-#~ "<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
-#~ "page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
-#~ "\">bookmarks:/</a>.</p>"
-#~ msgstr ""
-#~ "<h1>Les meues adreces d'interés</h1><p>Este mòdul permet configurar la "
-#~ "pàgina inicial de les adreces d'interés.</p><p>La pàgina inicial de les "
-#~ "adreces d'interés és accessible a <a href=\"bookmarks:/\">bookmarks:/</a>."
-#~ "</p>"
