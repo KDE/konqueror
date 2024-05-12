@@ -361,10 +361,10 @@ msgstr ""
 "                        Per exemple, la pàgina HTML principal sempre "
 "s'anomenarà «index.html» i una pàgina «.php» remota es guardarà amb "
 "l'extensió estàndard «.html».</p>\n"
-"               <p>Deixeu esta opció seleccionada per a produir un fitxer "
-"d'arxiu web estàndard (.war).</p>\n"
-"               <p>Si esta opció està desseleccionada, els fitxers es "
-"guardaran exactament com s'han baixat.\n"
+"               <p>Deixeu esta opció activada per a produir un fitxer d'arxiu "
+"web estàndard (.war).</p>\n"
+"               <p>Si es desmarca esta opció, els fitxers es guardaran "
+"exactament com s'han baixat.\n"
 "                        Açò vol dir que poden estar en subdirectoris "
 "reflectint l'estructura del lloc web original, i no s'ajustaran les "
 "extensions.\n"
@@ -392,9 +392,9 @@ msgid ""
 msgstr ""
 "<p>Executa el procés de baixada en una finestra del terminal. Tanca la "
 "finestra del terminal en finalitzar la baixada.</p>\n"
-"               <p>Si esta opció està desseleccionada, la baixada s'executarà "
-"en segon pla. L'eixida del procés hauria d'aparéixer en el fitxer de "
-"registre de la sessió.</p>\n"
+"               <p>Si es desmarca esta opció, la baixada s'executarà en segon "
+"pla. L'eixida del procés hauria d'aparéixer en el fitxer de registre de la "
+"sessió.</p>\n"
 "      "
 
 #. i18n: ectx: label, entry (CloseWhenFinished), group (Options)
@@ -424,7 +424,7 @@ msgstr "El tipus d'arxiu web que s'ha de guardar"
 #: plugin_webarchiver.cpp:31
 #, kde-format
 msgid "Archive Web Page..."
-msgstr "Arxiva una pàgina web..."
+msgstr "Arxiva una pàgina web…"
 
 #: plugin_webarchiver.cpp:49
 #, kde-kuit-format
