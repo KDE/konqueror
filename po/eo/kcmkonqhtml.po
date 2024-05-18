@@ -3,15 +3,15 @@
 # Copyright (C) 1999, 2007 Free Software Foundation, Inc.
 # Wolfram Diestel <wolfram@steloj.de>, 1999.
 # Cindy McKee <cfmckee@gmail.com>, 2007.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 02:23+0000\n"
-"PO-Revision-Date: 2024-04-28 06:29+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"PO-Revision-Date: 2024-04-28 17:30+0100\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -972,6 +972,22 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Aldonu al via propra stilfolio "
+"(inkluzive de la alirebla stilfolio) regulo por agordi ĉiujn fonkolorojn al "
+"la propra koloro, kiun vi elektis supre. Ĉi tio evitas la bezonon agordi la "
+"fonkoloro kaj en la stilfolio kaj en la agorda dialogo.</p><p align=\"justify"
+"\"><span style=\" font-weight:600;\">Notoj:</span></p><ul style=\"margin-"
+"top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-"
+"indent: 1;\"><li align=\"pravigi\" style=\" margin-top:12px; margin-"
+"bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\">la regulo estos anstataŭita de aliaj reguloj por fonkoloroj en "
+"via propra stilfolio laŭ la kutimaj CSS-reguloj</li><li align=\"pravigi\" "
+"style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">la regulo ne estas fakte "
+"aldonita al la dosiero enhavanta vian propran stilfolion; ĝi estas nur "
+"enmetita en la kopion kiun Konqueror konservas en memoro. Tio signifas, ke "
+"se vi uzas la stilfolion en aliaj retumiloj, vi devos mane aldoni la regulon "
+"al ĝi.</li></ul></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
