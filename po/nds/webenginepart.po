@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:38+0000\n"
+"POT-Creation-Date: 2024-05-20 00:38+0000\n"
 "PO-Revision-Date: 2014-07-02 23:14+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1026,62 +1026,62 @@ msgstr "Verlöven"
 msgid "Do Not Allow"
 msgstr "Nich verlöven"
 
-#: src/webenginepart.cpp:198
+#: src/webenginepart.cpp:197
 #, fuzzy, kde-format
 #| msgid "Save Image As..."
 msgid "Save Full HTML Page As..."
 msgstr "Bild sekern as..."
 
-#: src/webenginepart.cpp:202
+#: src/webenginepart.cpp:201
 #, kde-format
 msgid "Print Preview"
 msgstr "Druckvöransicht"
 
-#: src/webenginepart.cpp:206
+#: src/webenginepart.cpp:205
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Grötter"
 
-#: src/webenginepart.cpp:211
+#: src/webenginepart.cpp:210
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Lütter"
 
-#: src/webenginepart.cpp:216
+#: src/webenginepart.cpp:215
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Redig Grött"
 
-#: src/webenginepart.cpp:221
+#: src/webenginepart.cpp:220
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Bloots Text grötter maken"
 
-#: src/webenginepart.cpp:229
+#: src/webenginepart.cpp:228
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Grött  topassen op DPI"
 
-#: src/webenginepart.cpp:242
+#: src/webenginepart.cpp:241
 #, kde-format
 msgid "Set &Encoding"
 msgstr "&Koderen instellen"
 
-#: src/webenginepart.cpp:245
+#: src/webenginepart.cpp:244
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Do&kmentborn ankieken"
 
-#: src/webenginepart.cpp:250 src/webenginepart.cpp:558
+#: src/webenginepart.cpp:249 src/webenginepart.cpp:557
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:256
+#: src/webenginepart.cpp:255
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1091,12 +1091,12 @@ msgstr ""
 "<h3>Text söken</h3>Wiest en Dialoog, mit den Du Text op disse Siet söken "
 "kannst."
 
-#: src/webenginepart.cpp:556
+#: src/webenginepart.cpp:555
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "As't lett sünd de SSL-Informatschonen för disse Siet leeg."
 
-#: src/webenginepart.cpp:637
+#: src/webenginepart.cpp:636
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1104,7 +1104,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "Nettpost: "
 
-#: src/webenginepart.cpp:666
+#: src/webenginepart.cpp:665
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1112,7 +1112,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - Kopie (CC): "
 
-#: src/webenginepart.cpp:668
+#: src/webenginepart.cpp:667
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1120,7 +1120,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - Blindkopie: "
 
-#: src/webenginepart.cpp:670
+#: src/webenginepart.cpp:669
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1128,87 +1128,87 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Bedröppt: "
 
-#: src/webenginepart.cpp:674 src/webenginepart.cpp:685
+#: src/webenginepart.cpp:673 src/webenginepart.cpp:684
 #, kde-format
 msgid " (In new window)"
 msgstr " (In'n nieg Finster)"
 
-#: src/webenginepart.cpp:683
+#: src/webenginepart.cpp:682
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (In'n överornt Rahmen)"
 
-#: src/webenginepart.cpp:749
+#: src/webenginepart.cpp:748
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Wullt Du na <b>%1</b> söken?</qt>"
 
-#: src/webenginepart.cpp:750
+#: src/webenginepart.cpp:749
 #, kde-format
 msgid "Internet Search"
 msgstr "In't Internet söken"
 
-#: src/webenginepart.cpp:750
+#: src/webenginepart.cpp:749
 #, kde-format
 msgid "&Search"
 msgstr "&Söken"
 
-#: src/webenginepart.cpp:861
+#: src/webenginepart.cpp:860
 #, kde-format
 msgid "Close window?"
 msgstr "Finster tomaken?"
 
-#: src/webenginepart.cpp:861
+#: src/webenginepart.cpp:860
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Beglööfnis nödig"
 
-#: src/webenginepart.cpp:935
+#: src/webenginepart.cpp:934
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>Schall %1 de Anmellinformatschonen för <b>%2</b> wohren?</html>"
 
-#: src/webenginepart.cpp:1006
+#: src/webenginepart.cpp:1005
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr ""
 
-#: src/webenginepart.cpp:1011
+#: src/webenginepart.cpp:1010
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "&Memorize Passwords in This Page Now"
 msgstr "All twischenspiekert Passwöör för disse Siet wegmaken"
 
-#: src/webenginepart.cpp:1015
+#: src/webenginepart.cpp:1014
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1019
+#: src/webenginepart.cpp:1018
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1023
+#: src/webenginepart.cpp:1022
 #, fuzzy, kde-format
 #| msgid "&Allow password caching for this site"
 msgid "&Allow Password Caching for This Site"
 msgstr "Passwoort-Twischenspiekern för disse Siet &tolaten"
 
-#: src/webenginepart.cpp:1027
+#: src/webenginepart.cpp:1026
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "All twischenspiekert Passwöör för disse Siet wegmaken"
 
-#: src/webenginepart.cpp:1031
+#: src/webenginepart.cpp:1030
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1035
+#: src/webenginepart.cpp:1034
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Knipp tomaken"
