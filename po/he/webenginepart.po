@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-20 00:38+0000\n"
-"PO-Revision-Date: 2024-05-21 16:29+0300\n"
+"PO-Revision-Date: 2024-05-22 15:53+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -405,7 +405,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by http servers"
 msgid "Servers"
-msgstr ""
+msgstr "שרתים"
 
 #: src/cookies/cookiealertdlg.cpp:37
 #, kde-format
@@ -451,43 +451,43 @@ msgstr ""
 #: src/cookies/cookiealertdlg.ui:30
 #, kde-format
 msgid "Cookie details"
-msgstr ""
+msgstr "פרטי העוגייה"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/cookies/cookiealertdlg.ui:36
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "שם"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: src/cookies/cookiealertdlg.ui:50
 #, kde-format
 msgid "Value"
-msgstr ""
+msgstr "ערך"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: src/cookies/cookiealertdlg.ui:64
 #, kde-format
 msgid "Expires"
-msgstr ""
+msgstr "תום תוקף"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: src/cookies/cookiealertdlg.ui:78
 #, kde-format
 msgid "Path"
-msgstr ""
+msgstr "נתיב"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: src/cookies/cookiealertdlg.ui:99
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "חשיפה"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: src/cookies/cookiealertdlg.ui:113
 #, kde-format
 msgid "Domain"
-msgstr ""
+msgstr "שם תחום"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: src/cookies/cookiealertdlg.ui:123
@@ -499,19 +499,19 @@ msgstr ""
 #: src/cookies/cookiealertdlg.ui:129
 #, kde-format
 msgid "Only this cookie"
-msgstr ""
+msgstr "עוגייה זו בלבד"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToDomain)
 #: src/cookies/cookiealertdlg.ui:136
 #, kde-format
 msgid "All cookies from this domain"
-msgstr ""
+msgstr "כל העוגיות משם תחום זה"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToAll)
 #: src/cookies/cookiealertdlg.ui:143
 #, kde-format
 msgid "All cookies"
-msgstr ""
+msgstr "כל העוגיות"
 
 #: src/schemehandlers/errorschemehandler.cpp:97
 #, kde-format
@@ -523,99 +523,99 @@ msgstr ""
 #: src/schemehandlers/errorschemehandler.cpp:106
 #, kde-format
 msgid "The requested operation could not be completed"
-msgstr ""
+msgstr "לא ניתן להשלים את הבקשה המבוקשת"
 
 #: src/schemehandlers/errorschemehandler.cpp:113
 #, kde-format
 msgid "Technical Reason: %1"
-msgstr ""
+msgstr "הסיבה הטכנית: %1"
 
 #: src/schemehandlers/errorschemehandler.cpp:118
 #, kde-format
 msgid "Details of the Request:"
-msgstr ""
+msgstr "פרטי הבקשה:"
 
 #. i18n, and once for HTML.
 #: src/schemehandlers/errorschemehandler.cpp:121
 #, kde-format
 msgid "URL: %1"
-msgstr ""
+msgstr "כתובת: %1"
 
 #. i18n, and once for HTML.
 #: src/schemehandlers/errorschemehandler.cpp:127
 #, kde-format
 msgid "Protocol: %1"
-msgstr ""
+msgstr "פרוטוקול: %1"
 
 #: src/schemehandlers/errorschemehandler.cpp:131
 #, kde-format
 msgid "Date and Time: %1"
-msgstr ""
+msgstr "תאריך ושעה: %1"
 
 #. i18n, and once for HTML.
 #: src/schemehandlers/errorschemehandler.cpp:135
 #, kde-format
 msgid "Additional Information: %1"
-msgstr ""
+msgstr "פרטים נוספים: %1"
 
 #: src/schemehandlers/errorschemehandler.cpp:137
 #, kde-format
 msgid "Description:"
-msgstr ""
+msgstr "תיאור:"
 
 #: src/schemehandlers/errorschemehandler.cpp:144
 #, kde-format
 msgid "Possible Causes:"
-msgstr ""
+msgstr "סיבות הגיוניות:"
 
 #: src/schemehandlers/errorschemehandler.cpp:152
 #, kde-format
 msgid "Possible Solutions:"
-msgstr ""
+msgstr "פתרונות אפשריים:"
 
 #: src/schemehandlers/errorschemehandler.cpp:158
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "שגיאה: %1"
 
 #: src/settings/webenginesettings.cpp:930
 #, kde-format
 msgid "Filter error"
-msgstr ""
+msgstr "שגיאת מסנן"
 
 #: src/spellcheckermanager.cpp:98
 #, kde-format
 msgid "Spelling"
-msgstr ""
+msgstr "איות"
 
 #: src/spellcheckermanager.cpp:102
 #, kde-format
 msgid "Spell Checking Enabled"
-msgstr ""
+msgstr "בדיקת איות פעילה"
 
 #: src/spellcheckermanager.cpp:120
 #, kde-format
 msgid "&Languages"
-msgstr ""
+msgstr "&שפות"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/ui/credentialsdetailswidget.ui:34
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
 #, kde-format
 msgid "&Show passwords"
-msgstr ""
+msgstr "ה&צגת סיסמאות"
 
 #: src/ui/featurepermissionbar.cpp:22
 #, kde-format
 msgctxt "@action:deny permission"
 msgid "&Deny permission"
-msgstr ""
+msgstr "&דחיית הרשאה"
 
 #: src/ui/featurepermissionbar.cpp:26
 #, kde-format
 msgctxt "@action:grant permission"
 msgid "&Grant permission"
-msgstr ""
+msgstr "ה&ענקת הרשאה"
 
 #: src/ui/featurepermissionbar.cpp:57
 #, kde-format
@@ -681,116 +681,116 @@ msgstr ""
 #, kde-format
 msgctxt "@action:not now"
 msgid "N&ot now"
-msgstr ""
+msgstr "לא &עכשיו"
 
 #: src/ui/passwordbar.cpp:41 src/ui/passwordbar.cpp:125
 #, kde-format
 msgctxt "@action:display details about credentials to store"
 msgid "&Show details"
-msgstr ""
+msgstr "הצגת &פרטים"
 
 #: src/ui/passwordbar.cpp:123
 #, kde-format
 msgctxt "@action:hide details about credentials to store"
 msgid "&Hide details"
-msgstr ""
+msgstr "ה&סתרת פרטים"
 
 #: src/ui/searchbar.cpp:38
 #, kde-format
 msgid "Find..."
-msgstr ""
+msgstr "איתור…"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, closeButton)
 #: src/ui/searchbar.ui:23
 #, kde-format
 msgid "Close the search bar"
-msgstr ""
+msgstr "סגירת סרגל החיפוש"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, nextButton)
 #: src/ui/searchbar.ui:49
 #, kde-format
 msgid "Find the next match for the current search phrase"
-msgstr ""
+msgstr "איתור התוצאה הבאה לביטוי החיפוש הנוכחי"
 
 #. i18n: ectx: property (text), widget (QToolButton, nextButton)
 #: src/ui/searchbar.ui:52
 #, kde-format
 msgid "&Next"
-msgstr ""
+msgstr "ה&בא"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, previousButton)
 #. i18n: ectx: property (toolTip), widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:68 src/ui/searchbar.ui:84
 #, kde-format
 msgid "Find the previous match for the current search phrase"
-msgstr ""
+msgstr "איתור התוצאה הקודמת לביטוי החיפוש הנוכחי"
 
 #. i18n: ectx: property (text), widget (QToolButton, previousButton)
 #: src/ui/searchbar.ui:71
 #, kde-format
 msgid "&Previous"
-msgstr ""
+msgstr "ה&קודם"
 
 #. i18n: ectx: property (text), widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:87
 #, kde-format
 msgid "&Options"
-msgstr ""
+msgstr "&אפשרויות"
 
 #. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:116
 #, kde-format
 msgid "&Match Case"
-msgstr ""
+msgstr "התאמת &רישיות"
 
 #. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:127
 #, kde-format
 msgid "&Search As You Type"
-msgstr ""
+msgstr "&חיפוש תוך כדי הקלדה"
 
 #. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:135
 #, kde-format
 msgid "&Highlight All Matches"
-msgstr ""
+msgstr "ה&דגשת כל התוצאות"
 
 #. i18n: ectx: property (toolTip), item, widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:138
 #, kde-format
 msgid "Highlight Matches"
-msgstr ""
+msgstr "הדגשת תוצאות"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
 #, kde-format
 msgid "Choose fields to remember"
-msgstr ""
+msgstr "בחירת שדות לשמירה"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
 #, kde-format
 msgid "Switch between displaying passwords or placeholders"
-msgstr ""
+msgstr "להחליף בין הצגת סיסמאות לממלאי מקום"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
 #, kde-format
 msgid "Show advanced information about the fields"
-msgstr ""
+msgstr "הצגת פרטים מתקדמים על השדות"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
 #: src/webenginepartcertificateerrordlg.ui:30
 #, kde-format
 msgid "&Show details"
-msgstr ""
+msgstr "הצגת &פרטים"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
 #, kde-format
 msgid "Available &fields"
-msgstr ""
+msgstr "שדות &זמינים"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:101
@@ -842,7 +842,7 @@ msgstr ""
 #: src/webenginepage.cpp:699
 #, kde-format
 msgid "Network Transmission"
-msgstr ""
+msgstr "תעבורת רשת"
 
 #: src/webenginepage.cpp:611
 #, kde-format
@@ -873,7 +873,7 @@ msgstr ""
 #: src/webenginepage.cpp:700
 #, kde-format
 msgid "&Send Email"
-msgstr ""
+msgstr "&שליחת דוא״ל"
 
 #: src/webenginepage.cpp:749
 #, kde-format
@@ -907,7 +907,7 @@ msgstr ""
 #: src/webenginepage.cpp:770
 #, kde-format
 msgid "Attachment Removed"
-msgstr ""
+msgstr "הקובץ המצורף הוסר"
 
 #: src/webenginepage.cpp:884
 #, kde-format
@@ -915,6 +915,8 @@ msgid ""
 "This site is requesting to open a new popup window.\n"
 "Do you want to allow this?"
 msgstr ""
+"האתר הזה מבקש לפתוח חלון קופץ חדש.\n"
+"לאפשר את זה?"
 
 #: src/webenginepage.cpp:886
 #, kde-format
@@ -931,45 +933,45 @@ msgstr ""
 #: src/webenginepage.cpp:890
 #, kde-format
 msgid "Allow"
-msgstr ""
+msgstr "לאפשר"
 
 #: src/webenginepage.cpp:890
 #, kde-format
 msgid "Do Not Allow"
-msgstr ""
+msgstr "לא לאפשר"
 
 #: src/webenginepart.cpp:197
 #, kde-format
 msgid "Save Full HTML Page As..."
-msgstr ""
+msgstr "שמירת עמוד ה־HTML המלא בתור…"
 
 #: src/webenginepart.cpp:201
 #, kde-format
 msgid "Print Preview"
-msgstr ""
+msgstr "הצגה מקדימה להדפסה"
 
 #: src/webenginepart.cpp:205
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
-msgstr ""
+msgstr "התקרבות"
 
 #: src/webenginepart.cpp:210
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
-msgstr ""
+msgstr "התרחקות"
 
 #: src/webenginepart.cpp:215
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
-msgstr ""
+msgstr "גודל מקורי"
 
 #: src/webenginepart.cpp:220
 #, kde-format
 msgid "Zoom Text Only"
-msgstr ""
+msgstr "התמקדות על הכיתוב בלבד"
 
 #: src/webenginepart.cpp:228
 #, kde-format
@@ -984,13 +986,13 @@ msgstr ""
 #: src/webenginepart.cpp:244
 #, kde-format
 msgid "View Do&cument Source"
-msgstr ""
+msgstr "הצגת מ&קור המסמך"
 
 #: src/webenginepart.cpp:249 src/webenginepart.cpp:557
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
-msgstr ""
+msgstr "SSL"
 
 #: src/webenginepart.cpp:255
 #, kde-format
@@ -1011,7 +1013,7 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid "Email: "
-msgstr ""
+msgstr "דוא״ל: "
 
 #: src/webenginepart.cpp:665
 #, kde-format
@@ -1019,7 +1021,7 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid " - CC: "
-msgstr ""
+msgstr " - עותק: "
 
 #: src/webenginepart.cpp:667
 #, kde-format
@@ -1027,7 +1029,7 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid " - BCC: "
-msgstr ""
+msgstr " - עותק סמוי: "
 
 #: src/webenginepart.cpp:669
 #, kde-format
@@ -1035,42 +1037,42 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid " - Subject: "
-msgstr ""
+msgstr " - נושא: "
 
 #: src/webenginepart.cpp:673 src/webenginepart.cpp:684
 #, kde-format
 msgid " (In new window)"
-msgstr ""
+msgstr " (בחלון חדש)"
 
 #: src/webenginepart.cpp:682
 #, kde-format
 msgid " (In parent frame)"
-msgstr ""
+msgstr " (במסגרת ההורה)"
 
 #: src/webenginepart.cpp:748
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
-msgstr ""
+msgstr "<qt>לחפש אחר <b>%1</b>?</qt>"
 
 #: src/webenginepart.cpp:749
 #, kde-format
 msgid "Internet Search"
-msgstr ""
+msgstr "חיפוש באינטרנט"
 
 #: src/webenginepart.cpp:749
 #, kde-format
 msgid "&Search"
-msgstr ""
+msgstr "&חיפוש"
 
 #: src/webenginepart.cpp:860
 #, kde-format
 msgid "Close window?"
-msgstr ""
+msgstr "לסגור את החלון?"
 
 #: src/webenginepart.cpp:860
 #, kde-format
 msgid "Confirmation Required"
-msgstr ""
+msgstr "נדרש אישור"
 
 #: src/webenginepart.cpp:934
 #, kde-format
@@ -1107,80 +1109,80 @@ msgstr ""
 #: src/webenginepart.cpp:1026
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
-msgstr ""
+msgstr "הסרת כל הסיסמאות השמורות לאתר הזה"
 
 #: src/webenginepart.cpp:1030
 #, kde-format
 msgid "&Launch Wallet Manager"
-msgstr ""
+msgstr "ה&פעלת מנהל הארנקים"
 
 #: src/webenginepart.cpp:1034
 #, kde-format
 msgid "&Close Wallet"
-msgstr ""
+msgstr "&סגירת הארנק"
 
 #. i18n: ectx: Menu (file)
 #: src/webenginepart.rc:5
 #, kde-format
 msgid "&File"
-msgstr ""
+msgstr "&קובץ"
 
 #. i18n: ectx: Menu (edit)
 #: src/webenginepart.rc:12
 #, kde-format
 msgid "&Edit"
-msgstr ""
+msgstr "&עריכה"
 
 #. i18n: ectx: Menu (view)
 #: src/webenginepart.rc:18
 #, kde-format
 msgid "&View"
-msgstr ""
+msgstr "ת&צוגה"
 
 #. i18n: ectx: Menu (tools)
 #: src/webenginepart.rc:30
 #, kde-format
 msgid "&Tools"
-msgstr ""
+msgstr "&כלים"
 
 #. i18n: ectx: Menu (wallet)
 #: src/webenginepart.rc:32
 #, kde-format
 msgid "&Credential management"
-msgstr ""
+msgstr "ניהול פרטי &גישה"
 
 #. i18n: ectx: ToolBar (htmlToolBar)
 #: src/webenginepart.rc:47
 #, kde-format
 msgid "HTML Toolbar"
-msgstr ""
+msgstr "סרגל כלי HTML"
 
 #: src/webenginepart_ext.cpp:296
 #, kde-format
 msgid "Print Document"
-msgstr ""
+msgstr "הדפסת מסמך"
 
 #: src/webenginepart_ext.cpp:513
 #, kde-format
 msgid "Add URL to Filter"
-msgstr ""
+msgstr "הוספת כתובת למסנן"
 
 #: src/webenginepart_ext.cpp:514
 #, kde-format
 msgid "Enter the URL:"
-msgstr ""
+msgstr "נא למלא את הכתובת:"
 
 #: src/webenginepartcertificateerrordlg.cpp:44
 #, kde-format
 msgctxt "Ignore the certificate error for this URL only for now"
 msgid "Yes, &once"
-msgstr ""
+msgstr "כן, &חד־פעמית"
 
 #: src/webenginepartcertificateerrordlg.cpp:45
 #, kde-format
 msgctxt "Ignore the certificate error for this URL now and in the future"
 msgid "Yes, &forever"
-msgstr ""
+msgstr "כן, &תמיד"
 
 #: src/webenginepartcertificateerrordlg.cpp:50
 #, kde-format
@@ -1193,31 +1195,31 @@ msgstr ""
 #, kde-format
 msgctxt "title of a dialog asking what to do about a SSL certificate error"
 msgid "Certificate error"
-msgstr ""
+msgstr "שגיאת אישור"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEnginePartCertificateErrorDlg)
 #: src/webenginepartcertificateerrordlg.ui:14
 #, kde-format
 msgid "Dialog"
-msgstr ""
+msgstr "חלונית"
 
 #. i18n: ectx: property (title), widget (QGroupBox, details)
 #: src/webenginepartcertificateerrordlg.ui:50
 #, kde-format
 msgid "Certificate details"
-msgstr ""
+msgstr "פרטי אישור"
 
 #. i18n: ectx: attribute (title), widget (QWidget, subjectTab)
 #: src/webenginepartcertificateerrordlg.ui:63
 #, kde-format
 msgid "&Subject"
-msgstr ""
+msgstr "&נושא"
 
 #. i18n: ectx: attribute (title), widget (QWidget, issuerTab)
 #: src/webenginepartcertificateerrordlg.ui:73
 #, kde-format
 msgid "&Issuer"
-msgstr ""
+msgstr "מנ&פיק"
 
 #: src/webenginepartcontrols.cpp:282
 #, kde-format
@@ -1229,66 +1231,66 @@ msgstr ""
 #: src/webenginepartdownloadmanager.cpp:298
 #, kde-format
 msgid "An error occurred while saving the file: %1"
-msgstr ""
+msgstr "אירעה שגיאה בשמירת הקובץ: %1"
 
 #: src/webenginepartdownloadmanager.cpp:309
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
-msgstr ""
+msgstr "הורדה"
 
 #: src/webenginepartdownloadmanager.cpp:310
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
-msgstr ""
+msgstr "מקור"
 
 #: src/webenginepartdownloadmanager.cpp:311
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
-msgstr ""
+msgstr "יעד"
 
 #: src/webenginepartdownloadmanager.cpp:333
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
-msgstr ""
+msgstr "%1 נשמר בתור %2"
 
 #: src/webengineview.cpp:351
 #, kde-format
 msgid "Save Image As..."
-msgstr ""
+msgstr "שמירת תמונה בשם…"
 
 #: src/webengineview.cpp:356
 #, kde-format
 msgid "Send Image..."
-msgstr ""
+msgstr "שליחת תמונה…"
 
 #: src/webengineview.cpp:361
 #, kde-format
 msgid "Copy Image URL"
-msgstr ""
+msgstr "העתקת כתובת תמונה"
 
 #: src/webengineview.cpp:367
 #, kde-format
 msgid "Copy Image"
-msgstr ""
+msgstr "העתקת תמונה"
 
 #: src/webengineview.cpp:374
 #, kde-format
 msgid "View Image (%1)"
-msgstr ""
+msgstr "הצגת תמונה (%1)"
 
 #: src/webengineview.cpp:380
 #, kde-format
 msgid "Block Image..."
-msgstr ""
+msgstr "חסימת תמונה…"
 
 #: src/webengineview.cpp:388
 #, kde-format
 msgid "Block Images From %1"
-msgstr ""
+msgstr "חסימות תמונות מ־%1"
 
 #: src/webengineview.cpp:418 src/webengineview.cpp:455
 #, kde-format
@@ -1334,48 +1336,48 @@ msgstr "&ביטול השתקה/ה&שתקה"
 #: src/webengineview.cpp:508
 #, kde-format
 msgid "Toggle &Loop"
-msgstr ""
+msgstr "שינוי מ&צב לולאה"
 
 #: src/webengineview.cpp:513
 #, kde-format
 msgid "Toggle &Controls"
-msgstr ""
+msgstr "הצגת/הסתרת פקדים"
 
 #: src/webengineview.cpp:524
 #, kde-format
 msgid "Sa&ve Video As..."
-msgstr ""
+msgstr "שמירת סרטון ב&שם…"
 
 #: src/webengineview.cpp:525
 #, kde-format
 msgid "C&opy Video URL"
-msgstr ""
+msgstr "העתקת כתובת &סרטון"
 
 #: src/webengineview.cpp:527
 #, kde-format
 msgid "Sa&ve Audio As..."
-msgstr ""
+msgstr "שמירת שמ&ע בשם…"
 
 #: src/webengineview.cpp:528
 #, kde-format
 msgid "C&opy Audio URL"
-msgstr ""
+msgstr "העתקת כתובת &שמע…"
 
 #: src/webengineview.cpp:530
 #, kde-format
 msgid "Sa&ve Media As..."
-msgstr ""
+msgstr "שמירת מדיה &בשם…"
 
 #: src/webengineview.cpp:531
 #, kde-format
 msgid "C&opy Media URL"
-msgstr ""
+msgstr "העתקת כתובת מ&דיה"
 
 #: src/webengineview.cpp:584
 #, kde-format
 msgctxt "Search \"search provider\" for \"text\""
 msgid "Search %1 for '%2'"
-msgstr ""
+msgstr "חיפוש בתוך %1 אחר ‚%2’"
 
 #: src/webengineview.cpp:595
 #, kde-format
