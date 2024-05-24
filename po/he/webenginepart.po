@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-20 00:38+0000\n"
-"PO-Revision-Date: 2024-05-22 15:53+0300\n"
+"PO-Revision-Date: 2024-05-23 08:39+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -620,28 +620,28 @@ msgstr "ה&ענקת הרשאה"
 #: src/ui/featurepermissionbar.cpp:57
 #, kde-format
 msgid "<html><b>%1</b> would like to send you notifications"
-msgstr ""
+msgstr "<html><b>%1</b> רוצה לשלוח לך התראות"
 
 #: src/ui/featurepermissionbar.cpp:59
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access information about your current physical "
 "location"
-msgstr ""
+msgstr "<html><b>%1</b> רוצה לגשת למידע על המקום הפיזי הנוכחי שלך"
 
 #: src/ui/featurepermissionbar.cpp:61
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your microphone and other audio capture "
 "devices"
-msgstr ""
+msgstr "<html><b>%1</b> רוצה לגשת למיקרופון ולהתקני הקלטה נוספים שלך"
 
 #: src/ui/featurepermissionbar.cpp:63
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your camera and other video capture "
 "devices"
-msgstr ""
+msgstr "<html><b>%1</b> רוצה לגשת למצלמה ולהתקני צילום נוספים שלך"
 
 #: src/ui/featurepermissionbar.cpp:65
 #, kde-format
@@ -649,33 +649,34 @@ msgid ""
 "<html><b>%1</b> would like to access to your microphone, camera and other "
 "audio and video capture devices"
 msgstr ""
+"<html><b>%1</b> רוצה לגשת למיקרופון, למצלמה ולהתקני הקלטה וצילום נוספים שלך"
 
 #: src/ui/featurepermissionbar.cpp:67
 #, kde-format
 msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
-msgstr ""
+msgstr "<html><b>%1</b> רוצה לנעול את העכבר שלך בתור עמוד האתר"
 
 #: src/ui/featurepermissionbar.cpp:69
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen"
-msgstr ""
+msgstr "<html><b>%1</b> רוצה להקליט את המסך שלך"
 
 #: src/ui/featurepermissionbar.cpp:71
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen and your audio"
-msgstr ""
+msgstr "<html><b>%1</b> רוצה להקליט את המסך והשמע שלך"
 
 #: src/ui/passwordbar.cpp:29
 #, kde-format
 msgctxt "@action:remember password"
 msgid "&Remember"
-msgstr ""
+msgstr "ל&זכור"
 
 #: src/ui/passwordbar.cpp:33
 #, kde-format
 msgctxt "@action:never for this site"
 msgid "Ne&ver for this site"
-msgstr ""
+msgstr "&אף פעם לא באתר הזה"
 
 #: src/ui/passwordbar.cpp:37
 #, kde-format
@@ -796,18 +797,18 @@ msgstr "שדות &זמינים"
 #: src/webenginecustomizecacheablefieldsdlg.ui:101
 #, kde-format
 msgid "Store form data in KWallet when closing the dialog"
-msgstr ""
+msgstr "לאחסן את פרטי הטופס ב־KWallet עם סגירת החלונית"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
 #, kde-format
 msgid "&Immediately memorize form data"
-msgstr ""
+msgstr "לזכור את נתוני ה&טופס מיידית"
 
 #: src/webenginepage.cpp:153 src/webenginepage.cpp:177
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
-msgstr ""
+msgstr "אי אפשר למצוא את מנהל ההורדות (%1) כחלק מההתקנה שלך."
 
 #: src/webenginepage.cpp:154 src/webenginepage.cpp:178
 #, kde-format
@@ -816,6 +817,9 @@ msgid ""
 "\n"
 "The integration will be disabled."
 msgstr ""
+"לנסות להתקין מחדש ולוודא שהוא זמין כחלק מ־‎$PATH.\n"
+"\n"
+"השילוב יושבת."
 
 #: src/webenginepage.cpp:405
 #, kde-format
@@ -829,7 +833,7 @@ msgstr ""
 #: src/webenginepage.cpp:412
 #, kde-format
 msgid "Resubmit Information"
-msgstr ""
+msgstr "הגשת הפרטים מחדש"
 
 #: src/webenginepage.cpp:606
 #, kde-format
@@ -837,6 +841,8 @@ msgid ""
 "This site is attempting to access information about your physical location.\n"
 "Do you want to allow it access?"
 msgstr ""
+"האתר הזה מנסה לגשת לפרטים על המקום הפיזי שלך.\n"
+"לאפשר לו לגשת?"
 
 #: src/webenginepage.cpp:610 src/webenginepage.cpp:688
 #: src/webenginepage.cpp:699
@@ -847,7 +853,7 @@ msgstr "תעבורת רשת"
 #: src/webenginepage.cpp:611
 #, kde-format
 msgid "Allow access"
-msgstr ""
+msgstr "לאפשר גישה"
 
 #: src/webenginepage.cpp:681
 #, kde-format
@@ -857,11 +863,14 @@ msgid ""
 "A third party may be able to intercept and view this information.\n"
 "Are you sure you want to send the data unencrypted?"
 msgstr ""
+"אזהרה: זה טופס מאובטח אבל הוא מנסה לשלוח את הנתונים שלך בחזרה ללא הצפנה.\n"
+"גורמי צד־שלישי יכולים ליירט את הנתונים ולצפות בהם.\n"
+"לשלוח את הנתונים ללא הצפנה?"
 
 #: src/webenginepage.cpp:689
 #, kde-format
 msgid "&Send Unencrypted"
-msgstr ""
+msgstr "לשלוח ל&לא הצפנה"
 
 #: src/webenginepage.cpp:696
 #, kde-format
@@ -869,33 +878,35 @@ msgid ""
 "This site is attempting to submit form data via email.\n"
 "Do you want to continue?"
 msgstr ""
+"האתר הזה מנסה לשלוח נתוני טפסים דרך דוא״ל.\n"
+"להמשיך?"
 
 #: src/webenginepage.cpp:700
 #, kde-format
 msgid "&Send Email"
-msgstr "&שליחת דוא״ל"
+msgstr "ל&שלוח דוא״ל"
 
 #: src/webenginepage.cpp:749
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
-msgstr ""
+msgstr "<qt>לאפשר לאתר הזה לצרף את הקבצים הבאים להודעת הדוא״ל?</qt>"
 
 #: src/webenginepage.cpp:751
 #, kde-format
 msgid "Email Attachment Confirmation"
-msgstr ""
+msgstr "אישור צירוף לדוא״ל"
 
 #: src/webenginepage.cpp:752
 #, kde-format
 msgid "&Allow attachments"
-msgstr ""
+msgstr "ל&אפשר קבצים מצורפים"
 
 #: src/webenginepage.cpp:753
 #, kde-format
 msgid "&Ignore attachments"
-msgstr ""
+msgstr "הת&עלמות מקבצים מצורפים"
 
 #: src/webenginepage.cpp:767
 #, kde-format
@@ -903,6 +914,8 @@ msgid ""
 "This site attempted to attach a file from your computer in the form "
 "submission. The attachment was removed for your protection."
 msgstr ""
+"האתר הזה ניסה לצרף קובץ מהמחשב שלך לטופס הנשלח. הקובץ המצורף הוסר מטעמי "
+"אבטחה."
 
 #: src/webenginepage.cpp:770
 #, kde-format
@@ -924,11 +937,12 @@ msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
 "want to allow this?</qt>"
 msgstr ""
+"<qt>האתר הזה מבקש לפתוח חלון קופץ חדש אל<p>%1</p><br/>לאפשר את זה?</qt>"
 
 #: src/webenginepage.cpp:889
 #, kde-format
 msgid "Javascript Popup Confirmation"
-msgstr ""
+msgstr "אישור חלון קופץ עם JavaScript"
 
 #: src/webenginepage.cpp:890
 #, kde-format
@@ -976,12 +990,12 @@ msgstr "התמקדות על הכיתוב בלבד"
 #: src/webenginepart.cpp:228
 #, kde-format
 msgid "Zoom To DPI"
-msgstr ""
+msgstr "התמקדות ל־DPI (נק׳ לאינטש)"
 
 #: src/webenginepart.cpp:241
 #, kde-format
 msgid "Set &Encoding"
-msgstr ""
+msgstr "הגדרת &קידוד"
 
 #: src/webenginepart.cpp:244
 #, kde-format
@@ -1000,12 +1014,12 @@ msgctxt "find action \"whats this\" text"
 msgid ""
 "<h3>Find text</h3>Shows a dialog that allows you to find text on the "
 "displayed page."
-msgstr ""
+msgstr "<h3>איתור הבא</h3>מציג חלונית שמאפשר לך למצוא את הטקסט בעמוד המוצג."
 
 #: src/webenginepart.cpp:555
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
-msgstr ""
+msgstr "פרטי ה־SSL לאתר הזה נראים פגומים."
 
 #: src/webenginepart.cpp:636
 #, kde-format
@@ -1078,13 +1092,13 @@ msgstr "נדרש אישור"
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
-msgstr ""
+msgstr "<html>לאפשר לאתר %1 לזכור את פרטי הכניסה אל <b>%2</b>?</html>"
 
 #: src/webenginepart.cpp:1005
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
-msgstr ""
+msgstr "למ&לא את הטפסים כעת"
 
 #: src/webenginepart.cpp:1010
 #, kde-format
@@ -1227,6 +1241,8 @@ msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
 "default style sheet will be used"
 msgstr ""
+"לא ניתן לפתוח את הקובץ <tt>%1</tt> שמכיל את גיליון הסגנון של המשתמש. ייעשה "
+"שימוש בגיליון הסגנון כברירת המחדל"
 
 #: src/webenginepartdownloadmanager.cpp:298
 #, kde-format
@@ -1488,3 +1504,6 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
+"<ul><li><b>שם פנימי לשדה: </b>%1</li><li><b>סוג השדה: </b>%2</li><li><b>מזהה "
+"השדה: </b>%3</li><li><b>השדה לקריאה בלבד: </b>%4</li><li><b>השדה פעיל: </b>"
+"%5</li><li><b>השלמה אוטומטית פעילה: </b>%6</li></ul>"
