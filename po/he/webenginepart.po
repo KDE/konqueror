@@ -7,14 +7,15 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-20 00:38+0000\n"
-"PO-Revision-Date: 2024-05-23 08:39+0300\n"
+"PO-Revision-Date: 2024-05-24 09:52+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
@@ -130,6 +131,8 @@ msgid ""
 "both local and networked folders while enjoying advanced features such as "
 "the powerful sidebar and file previews."
 msgstr ""
+"Konqueror מקל על העבודה עם הקבצים שלך. אפשר לדפדף בתיקיות מקומיות ומרוחקות "
+"תוך ניצול תכונות מתקדמות כגון סרגל הצד עתיר היכולות ותצוגות מקדימות של קבצים."
 
 #: src/about/konq_aboutpage.cpp:142
 #, kde-format
@@ -139,6 +142,10 @@ msgid ""
 "kde.org\">http://www.kde.org</a>) of a web page you would like to visit in "
 "the location bar and press Enter, or choose an entry from the Bookmarks menu."
 msgstr ""
+"Konqueror הוא דפדפן עתיר יכולות וקל לשימוש שאפשר להשתמש בו כדי לגלוש "
+"באינטרנט. יש למלא את הכתובת (למשל: <a href=\"http://www.kde.org\">http://www."
+"kde.org</a>) של אתר כלשהו לביקור בסרגל הכתובות וללחוץ על Enter או לבחור "
+"רשומה מתפריט הסימניות."
 
 #: src/about/konq_aboutpage.cpp:147
 #, kde-format
@@ -155,6 +162,8 @@ msgid ""
 "To quickly go to your Home folder press the home button <img width='16' "
 "height='16' src=\"%1\"></img>."
 msgstr ""
+"כדי לקפוץ בזריזות לתיקיית הבית שלך יש ללחוץ על כפתור הבית <img width='16' "
+"height='16' src=\"%1\"></img>."
 
 #: src/about/konq_aboutpage.cpp:152
 #, kde-format
@@ -181,6 +190,10 @@ msgid ""
 "encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-"
 "Shortcuts."
 msgstr ""
+"שימוש בקיצורי אינטרנט: על ידי הקלדת „gg:KDE” אפשר לחפש באינטרנט, דרך Google "
+"את הביטוי „KDE”. יש מגוון קיצורי אינטרנט שהוגדרו מראש כדי להקל על חיפוש אחר "
+"תוכנה או מילים מסוימות באנציקלופדיה. אפשר גם <a href=\"%1\">ליצור קיצורי "
+"אינטרנט משלך</a>."
 
 #: src/about/konq_aboutpage.cpp:210
 #, kde-format
@@ -334,6 +347,8 @@ msgid ""
 "The page will be saved as an HTML file. Any external resources the page "
 "requires, such as images, will be saved inside an apposite directory"
 msgstr ""
+"העמוד הזה יישמר כקובץ HTML. משאבים חיצוניים שנחוצים לעמוד הזה כגון תמונות, "
+"יישמרו בתיקייה מתאימה"
 
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
@@ -343,55 +358,58 @@ msgid ""
 "<br><strong>Note</strong>: not all browsers are able to display this kind of "
 "files"
 msgstr ""
+"העמוד הזה יישמר כקובץ MHTML שמכיל גם את תוכן הטקסט של העמוד לצד משאבים "
+"חיצוניים שנחוצים לו, כגון תמונות. <br><strong>לתשומת ליבך</strong>: לא כל "
+"הדפדפנים יכולים להציג קבצים מהסוג הזה"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
 #, kde-format
 msgid "Choose Save Format"
-msgstr ""
+msgstr "בחירת תבנית שמירה"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:20
 #, kde-format
 msgid "How would you like to save the page?"
-msgstr ""
+msgstr "איך לשמור את העמוד?"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As an HTML file &without external resources"
-msgstr ""
+msgstr "כקובץ HTML בלי מקורות &חיצוניים"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
 #, kde-format
 msgid "As a &complete HTML page"
-msgstr ""
+msgstr "כעמוד HTML מ&לא"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As a &MHTML file"
-msgstr ""
+msgstr "&כקובץ MHTML"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:57 src/webenginepartcertificateerrordlg.ui:23
 #, kde-format
 msgid "TextLabel"
-msgstr ""
+msgstr "תווית טקסט"
 
 #: src/cookies/cookiealertdlg.cpp:22
 #, kde-format
 msgctxt "@label the cookie expires when the browser session ends"
 msgid "End of Session"
-msgstr ""
+msgstr "סוף המפגש"
 
 #: src/cookies/cookiealertdlg.cpp:29
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by https servers"
 msgid "Secure servers only"
-msgstr ""
+msgstr "שרתים מאובטחים בלבד"
 
 #: src/cookies/cookiealertdlg.cpp:31
 #, kde-format
@@ -399,7 +417,7 @@ msgctxt ""
 "@label exposure string - the cookie may be used by https servers AND client-"
 "side javascripts"
 msgid "Secure servers, page scripts"
-msgstr ""
+msgstr "שרתים מאובטחים, סקריפטים בעמוד"
 
 #: src/cookies/cookiealertdlg.cpp:35
 #, kde-format
@@ -413,25 +431,25 @@ msgctxt ""
 "@label exposure string - the cookie may be used by http servers AND client-"
 "side javascripts"
 msgid "Servers, page scripts"
-msgstr ""
+msgstr "שרתים, סקריפטים בעמוד"
 
 #: src/cookies/cookiealertdlg.cpp:41
 #, kde-format
 msgctxt "@label accept cookie"
 msgid "Accept"
-msgstr ""
+msgstr "קבלה"
 
 #: src/cookies/cookiealertdlg.cpp:42
 #, kde-format
 msgctxt "@label accept cookie for this session only"
 msgid "Accept for this session"
-msgstr ""
+msgstr "קבלת המפגש הזה"
 
 #: src/cookies/cookiealertdlg.cpp:45
 #, kde-format
 msgctxt "@label reject cookie"
 msgid "Reject"
-msgstr ""
+msgstr "דחייה"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CookieAlertDlg)
 #: src/cookies/cookiealertdlg.ui:14
@@ -446,6 +464,8 @@ msgid ""
 "<html><head/><body><p>You received a cookie from %1</p><p>Do you want to "
 "accept or reject this cookie?</p></body></html>"
 msgstr ""
+"<html><head/><body><p>קיבלת עוגיה מהאתר %1</p><p>לקבל או לדחות את העוגייה "
+"הזאת?</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/cookies/cookiealertdlg.ui:30
@@ -493,7 +513,7 @@ msgstr "שם תחום"
 #: src/cookies/cookiealertdlg.ui:123
 #, kde-format
 msgid "Apply choice to"
-msgstr ""
+msgstr "החלת הבחירה על"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToThis)
 #: src/cookies/cookiealertdlg.ui:129
@@ -519,6 +539,8 @@ msgid ""
 "<html><body><h3>Unable to display error message</h3><p>The error template "
 "file <em>error.html</em> could not be found.</p></body></html>"
 msgstr ""
+"<html><body><h3>לא ניתן להציג הודעת שגיאה</h3><p>קובץ תבנית השגיאה <em>error."
+"html</em> לא נמצא.</p></body></html>"
 
 #: src/schemehandlers/errorschemehandler.cpp:106
 #, kde-format
