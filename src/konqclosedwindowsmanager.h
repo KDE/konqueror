@@ -11,10 +11,10 @@
 #include "konqprivate_export.h"
 #include <QList>
 #include <QObject>
-class KonqClosedRemoteWindowItem;
+#include <QTemporaryFile>
+
 class KonqUndoManager;
 class KConfig;
-class QDBusMessage;
 class KonqClosedWindowItem;
 class QString;
 class KonqClosedWindowsManagerPrivate;
@@ -48,9 +48,7 @@ public:
     void addClosedWindowItem(KonqUndoManager *real_sender, KonqClosedWindowItem
                              *closedWindowItem, bool propagate = true);
 
-    void removeClosedWindowItem(KonqUndoManager *real_sender, const
-
-                                KonqClosedWindowItem *closedWindowItem, bool propagate = true);
+    void removeClosedWindowItem(KonqUndoManager *real_sender, const KonqClosedWindowItem *closedWindowItem);
 
     /**
      * Returns an anonymous config (which exists only in memory). Only used by
@@ -94,10 +92,7 @@ Q_SIGNALS:
                                       KonqClosedWindowItem *closedWindowItem);
 private:
 
-    KonqClosedRemoteWindowItem *findClosedRemoteWindowItem(const QString &configFileName,
-            const QString &configGroup);
-
-    KonqClosedWindowItem *findClosedLocalWindowItem(const QString &configFileName,
+    KonqClosedWindowItem *findClosedWindowItem(const QString &configFileName,
             const QString &configGroup);
 
     /**
@@ -118,37 +113,9 @@ private:
      * being dealt with inside KonqUndoManager::populate().
      */
     bool m_blockClosedItems;
-Q_SIGNALS: // DBUS signals
-    /**
-     * Every konqueror instance broadcasts new closed windows to other
-     * konqueror instances.
-     */
-    void notifyClosedWindowItem(const QString &title, const int &numTabs,
-                                const QString &configFileName, const QString &configGroup);
-
-    /**
-     * Every konqueror instance broadcasts removed closed windows to other
-     * konqueror instances.
-     */
-    void notifyRemove(const QString &configFileName,
-                      const QString &configGroup);
-
-private Q_SLOTS:// connected to DBUS signals
-    void slotNotifyClosedWindowItem(const QString &title, int numTabs,
-                                    const QString &configFileName, const QString &configGroup,
-                                    const QString &service);
-
-    void slotNotifyClosedWindowItem(const QString &title, int numTabs,
-                                    const QString &configFileName, const QString &configGroup,
-                                    const QDBusMessage &msg);
-
-    void slotNotifyRemove(const QString &configFileName,
-                          const QString &configGroup, const QDBusMessage &msg);
 
 private:
-    void emitNotifyClosedWindowItem(const KonqClosedWindowItem *closedWindowItem);
-
-    void emitNotifyRemove(const KonqClosedWindowItem *closedWindowItem);
+    QTemporaryFile m_memoryStoreBackend;
 };
 
 #endif /* KONQCLOSEDWINDOWSMANAGER_H */

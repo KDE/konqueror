@@ -189,15 +189,10 @@ void KonqUndoManager::undoClosedItem(int index)
 
     const KonqClosedTabItem *closedTabItem =
         dynamic_cast<const KonqClosedTabItem *>(closedItem);
-    KonqClosedRemoteWindowItem *closedRemoteWindowItem =
-        dynamic_cast<KonqClosedRemoteWindowItem *>(closedItem);
     KonqClosedWindowItem *closedWindowItem =
         dynamic_cast<KonqClosedWindowItem *>(closedItem);
     if (closedTabItem) {
         emit openClosedTab(*closedTabItem);
-    } else if (closedRemoteWindowItem) {
-        m_cwManager->removeClosedWindowItem(this, closedRemoteWindowItem);
-        emit openClosedWindow(*closedRemoteWindowItem);
     } else if (closedWindowItem) {
         m_cwManager->removeClosedWindowItem(this, closedWindowItem);
         emit openClosedWindow(*closedWindowItem);
@@ -275,7 +270,7 @@ void KonqUndoManager::clearClosedItemsList(bool onlyInthisWindow)
         if (closedTabItem) {
             delete closedTabItem;
         } else if (closedWindowItem && !onlyInthisWindow) {
-            m_cwManager->removeClosedWindowItem(this, closedWindowItem, true);
+            m_cwManager->removeClosedWindowItem(this, closedWindowItem);
             delete closedWindowItem;
         }
     }

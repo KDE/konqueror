@@ -84,40 +84,5 @@ protected:
     int m_numTabs;
 };
 
-class KONQ_TESTS_EXPORT KonqClosedRemoteWindowItem : public KonqClosedWindowItem
-{
-public:
-    KonqClosedRemoteWindowItem(const QString &title, KConfig *config, const QString &groupName, const QString &configFileName, quint64 serialNumber, int numTabs, const QString &dbusService);
-    ~KonqClosedRemoteWindowItem() override;
-    KConfigGroup &configGroup() override;
-    const KConfigGroup &configGroup() const override;
-    bool equalsTo(const QString &groupName, const QString &configFileName) const;
-    QString dbusService() const
-    {
-        return m_dbusService;
-    }
-    const QString &remoteGroupName() const
-    {
-        return m_remoteGroupName;
-    }
-    const QString &remoteConfigFileName() const
-    {
-        return m_remoteConfigFileName;
-    }
-protected:
-    /**
-     * Actually reads the config file. Call to this function before calling to
-     * configGroup(). This function is const so that it can be called by
-     * configGroup() const. It's used to get delayed initialization so that
-     * we don't load the config file unless it's needed.
-     */
-    void readConfig() const;
-    QString m_remoteGroupName;
-    QString m_remoteConfigFileName;
-    QString m_dbusService;
-    mutable KConfigGroup *m_remoteConfigGroup;
-    mutable KConfig *m_remoteConfig;
-};
-
 #endif /* KONQCLOSEDITEM_H */
 
