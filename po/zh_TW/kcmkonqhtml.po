@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 02:23+0000\n"
-"PO-Revision-Date: 2024-05-07 16:29+0900\n"
+"PO-Revision-Date: 2024-05-26 23:24+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -826,16 +826,16 @@ msgid ""
 "sheet (see http://www.w3.org/Style/CSS for further information on cascading "
 "style sheets).</p>"
 msgstr ""
-"<b>使用者自定樣式表</b><p>如果選了這個選項， konqueror 瀏覽器會試著載入下面位"
-"置中指定使用者自定的樣式表。樣式表讓您可以完全蓋過網頁在瀏覽器的顯示狀況。這"
-"個檔案必需包含了一個完整且正確的樣式表(請連線至 http://www.w3.org/Style/CSS "
-"來了解更多有關於樣式表題的訊息)。</p>"
+"<b>使用者自訂樣式表</b><p>如果選了這個選項， konqueror 瀏覽器會試著載入下面位"
+"置中指定使用者自訂的樣式表。樣式表讓您可以完全蓋過網頁在瀏覽器的顯示狀況。這"
+"個檔案必須包含了一個完整且正確的樣式表（請見 http://www.w3.org/Style/CSS 來了"
+"解更多有關於樣式表的資訊)。</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useUser)
 #: css/cssconfig.ui:51
 #, kde-format
 msgid "Use &user-defined stylesheet"
-msgstr "使用者自定樣式表(&U)"
+msgstr "使用者自訂樣式表(&U)"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useAccess)
 #: css/cssconfig.ui:103
