@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:38+0000\n"
+"POT-Creation-Date: 2024-05-27 00:38+0000\n"
 "PO-Revision-Date: 2024-01-05 04:35+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -508,7 +508,7 @@ msgid ""
 "ignored\n"
 msgstr "使用 --preload 選項時不能傳遞 URL。提供的 URL 會被忽略\n"
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4786
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4786
 #: src/konqmainwindow.cpp:4832
 #, kde-format
 msgid "no name"
@@ -1916,7 +1916,7 @@ msgstr "位置工具列"
 msgid "Bookmark Toolbar"
 msgstr "書籤工具列"
 
-#: src/konqundomanager.cpp:91 src/konqundomanager.cpp:253
+#: src/konqundomanager.cpp:91 src/konqundomanager.cpp:248
 #, kde-format
 msgid "Und&o: Closed Tab"
 msgstr "復原：關閉分頁(&O)"

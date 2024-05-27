@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:38+0000\n"
+"POT-Creation-Date: 2024-05-27 00:38+0000\n"
 "PO-Revision-Date: 2024-01-01 11:51+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -520,7 +520,7 @@ msgstr ""
 "U kunt geen URL's doorgeven bij gebruik van de switch --preload. De URL's "
 "zullen genegeerd worden\n"
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4786
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4786
 #: src/konqmainwindow.cpp:4832
 #, kde-format
 msgid "no name"
@@ -2000,7 +2000,7 @@ msgstr "Locatiebalk"
 msgid "Bookmark Toolbar"
 msgstr "Werkbalk met bladwijzers"
 
-#: src/konqundomanager.cpp:91 src/konqundomanager.cpp:253
+#: src/konqundomanager.cpp:91 src/konqundomanager.cpp:248
 #, kde-format
 msgid "Und&o: Closed Tab"
 msgstr "&Ongedaan maken: gesloten tabblad"

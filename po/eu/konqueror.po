@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:38+0000\n"
+"POT-Creation-Date: 2024-05-27 00:38+0000\n"
 "PO-Revision-Date: 2024-01-01 09:47+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -515,7 +515,7 @@ msgstr ""
 "Ezin duzu URLrik pasatu «--preload» aldarazlea erabiltzean. URLa ezikusi "
 "egingo da\n"
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4786
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4786
 #: src/konqmainwindow.cpp:4832
 #, kde-format
 msgid "no name"
@@ -1988,7 +1988,7 @@ msgstr "Helbide-barra"
 msgid "Bookmark Toolbar"
 msgstr "Liburu-marken tresna-barra"
 
-#: src/konqundomanager.cpp:91 src/konqundomanager.cpp:253
+#: src/konqundomanager.cpp:91 src/konqundomanager.cpp:248
 #, kde-format
 msgid "Und&o: Closed Tab"
 msgstr "&Desegin: itxi fitxa"

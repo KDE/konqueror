@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:38+0000\n"
+"POT-Creation-Date: 2024-05-27 00:38+0000\n"
 "PO-Revision-Date: 2024-02-02 12:52+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -524,7 +524,7 @@ msgstr ""
 "Verkko-osoitteita ei voi välittää käytettäessä --preload-valitsinta. Verkko-"
 "osoitteet sivuutetaan\n"
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4786
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4786
 #: src/konqmainwindow.cpp:4832
 #, kde-format
 msgid "no name"
@@ -1984,7 +1984,7 @@ msgstr "Sijaintirivi"
 msgid "Bookmark Toolbar"
 msgstr "Kirjanmerkkityökalurivi"
 
-#: src/konqundomanager.cpp:91 src/konqundomanager.cpp:253
+#: src/konqundomanager.cpp:91 src/konqundomanager.cpp:248
 #, kde-format
 msgid "Und&o: Closed Tab"
 msgstr "&Kumoa välilehden sulkeminen"

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:38+0000\n"
+"POT-Creation-Date: 2024-05-27 00:38+0000\n"
 "PO-Revision-Date: 2024-01-02 12:24+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -506,7 +506,7 @@ msgstr ""
 "Vi ne povas pasi URL-ojn kiam vi uzas la --preload-ŝaltilon. La URL-oj estos "
 "ignoritaj\n"
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4786
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4786
 #: src/konqmainwindow.cpp:4832
 #, kde-format
 msgid "no name"
@@ -1970,7 +1970,7 @@ msgstr "Lokobreto"
 msgid "Bookmark Toolbar"
 msgstr "Legosigna ilobreto"
 
-#: src/konqundomanager.cpp:91 src/konqundomanager.cpp:253
+#: src/konqundomanager.cpp:91 src/konqundomanager.cpp:248
 #, kde-format
 msgid "Und&o: Closed Tab"
 msgstr "Malfari: Fermis f&olion"
