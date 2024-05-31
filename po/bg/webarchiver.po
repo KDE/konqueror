@@ -1,22 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the konqueror package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# SPDX-FileCopyrightText: 2024 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-22 00:38+0000\n"
-"PO-Revision-Date: 2022-01-17 16:58+0100\n"
-"Last-Translator: mkkDr2010 <mkondarev@yahoo.de>\n"
+"PO-Revision-Date: 2024-05-30 20:42+0200\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -361,17 +360,17 @@ msgstr ""
 "на файл, подходящи за локално сърфиране.\n"
 "                         Например, основната HTML страница винаги ще се "
 "нарича \"index.html\" и страницата за отдалечена .php ще бъде запазена със "
-"стандартното .html разширение. </p>\n"
-"                <p> Оставете тази опция включена, за да създадете стандартен "
-"файл с уеб архив (.war). </p>\n"
-"                <p> Ако тази опция е изключена, файловете ще бъдат запазени "
+"стандартното .html разширение.</p>\n"
+"               <p>Оставете тази опция включена, за да създадете стандартен "
+"файл с уеб архив (.war).</p>\n"
+"               <p>Ако тази опция е изключена, файловете ще бъдат запазени "
 "точно както са изтеглени.\n"
 "                         Това означава, че те могат да бъдат в "
 "поддиректории, отразяващи структурата на оригиналния уеб сайт, а "
 "разширенията няма да бъдат коригирани.\n"
 "                         Обърнете внимание, че изтеглянето може да не работи "
 "правилно, ако оригиналният URL адрес се отнася до директория, но не завършва "
-"с наклонена черта. </p>"
+"с наклонена черта.</p>"
 
 #. i18n: ectx: label, entry (RunInTerminal), group (Options)
 #: app/settings.kcfg:42
@@ -391,10 +390,9 @@ msgid ""
 "      "
 msgstr ""
 "<p> Изпълнете процеса на изтегляне в терминален прозорец. Затворете "
-"прозореца на терминала, когато изтеглянето приключи. </p>\n"
-"                <p> Ако тази опция е изключена, изтеглянето ще работи на "
-"заден план. Резултатът за напредък трябва да се появи в дневника на сесията. "
-"</p>"
+"прозореца на терминала, когато изтеглянето приключи.</p>\n"
+"               <p>Ако тази опция е изключена, изтеглянето ще работи на заден "
+"план. Резултатът за напредък трябва да се появи в дневника на сесията. </p>"
 
 #. i18n: ectx: label, entry (CloseWhenFinished), group (Options)
 #: app/settings.kcfg:50

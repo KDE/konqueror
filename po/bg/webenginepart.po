@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-20 00:38+0000\n"
-"PO-Revision-Date: 2024-03-26 23:22+0100\n"
+"PO-Revision-Date: 2024-05-30 20:46+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -721,7 +721,7 @@ msgstr "<html><b>%1</b> иска да заключи курсора на миш�
 #: src/ui/featurepermissionbar.cpp:69
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen"
-msgstr "<html> <b>%1</b> иска да записва екрана ви"
+msgstr "<html><b>%1</b> иска да записва екрана ви"
 
 #: src/ui/featurepermissionbar.cpp:71
 #, kde-format
@@ -894,10 +894,10 @@ msgid ""
 "Otherwise, click the Continue button to display the webpage again.</p>"
 msgstr ""
 "<qt><p> За да се покаже отново заявената уеб страница, браузърът трябва да "
-"изпрати отново информация, която сте изпратили по-рано. </p><p> Ако сте "
+"изпрати отново информация, която сте изпратили по-рано.</p><p> Ако сте "
 "пазарували онлайн и направихте покупка, щракнете върху бутона Отказ, за ​​да "
 "предотвратите дублиране на покупка.В противен случай щракнете върху бутона "
-"Продължи, за да се покаже отново уеб страницата. </p>"
+"Продължи, за да се покаже отново уеб страницата.</p>"
 
 #: src/webenginepage.cpp:412
 #, kde-format
@@ -1010,8 +1010,8 @@ msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
 "want to allow this?</qt>"
 msgstr ""
-"<qt> Този сайт иска да отвори изскачащ прозорец в <p>%1</p> <br/> Наистина "
-"ли искате да разрешите това? </qt>"
+"<qt>Този сайт иска да отвори изскачащ прозорец в <p>%1</p><br/> Наистина ли "
+"искате да разрешите това?</qt>"
 
 #: src/webenginepage.cpp:889
 #, kde-format
@@ -1282,7 +1282,7 @@ msgid ""
 "p><p><tt>%2</tt></p>Do you want to ignore this error?"
 msgstr ""
 "<p> Сървърът <tt>%1</tt> не успя да извърши проверка на автентичността. "
-"Грешката е: </p><p><tt>%2 </tt></p> Искате ли да игнорирате тази грешка?"
+"Грешката е:</p><p><tt>%2 </tt></p>Искате ли да игнорирате тази грешка?"
 
 #: src/webenginepartcertificateerrordlg.cpp:56
 #, kde-format
