@@ -4,13 +4,13 @@
 # Malcolm Hunter <malcolm.hunter@gmx.co.uk>, 2002,2003, 2004, 2005, 2008.
 # Jonathan Riddell <kde-en-gb@jriddell.org>, 2003.
 # Andrew Coles <andrew_coles@yahoo.co.uk>, 2004, 2005, 2009, 2010, 2011.
-# Steve Allewell <steve.allewell@gmail.com>, 2014, 2016, 2017, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2014, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-25 02:26+0000\n"
-"PO-Revision-Date: 2023-04-29 12:29+0100\n"
+"PO-Revision-Date: 2024-05-30 19:38+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -52,10 +52,9 @@ msgid "Web browser, file manager and document viewer."
 msgstr "Web browser, file manager and document viewer."
 
 #: src/konqapplication.cpp:167
-#, fuzzy, kde-format
-#| msgid "(C) 1999-2016, The Konqueror developers"
+#, kde-format
 msgid "(C) 1999-2023, The Konqueror developers"
-msgstr "(C) 1999-2016, The Konqueror developers"
+msgstr "(C) 1999-2023, The Konqueror developers"
 
 #: src/konqapplication.cpp:170
 #, kde-format
@@ -383,12 +382,12 @@ msgstr "Eduardo Robles Elvira"
 #: src/konqapplication.cpp:208
 #, kde-format
 msgid "Matthias Kalle Dalheimer"
-msgstr ""
+msgstr "Matthias Kalle Dalheimer"
 
 #: src/konqapplication.cpp:209
 #, kde-format
 msgid "Daniel Molkentin"
-msgstr ""
+msgstr "Daniel Molkentin"
 
 #: src/konqapplication.cpp:210
 #, kde-format
@@ -396,6 +395,8 @@ msgid ""
 "JavaScript access controls\n"
 "Per-domain policies extensions"
 msgstr ""
+"JavaScript access controls\n"
+"Per-domain policies extensions"
 
 #: src/konqapplication.cpp:221
 #, kde-format
@@ -480,7 +481,7 @@ msgstr ""
 #: src/konqapplication.cpp:233
 #, kde-format
 msgid "TEST"
-msgstr ""
+msgstr "TEST"
 
 #: src/konqapplication.cpp:234
 #, kde-format
@@ -549,7 +550,7 @@ msgstr ""
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: src/konqframestatusbar.cpp:155
 #, kde-format
@@ -1825,7 +1826,7 @@ msgstr ""
 #: src/konqueror.kcfg:149
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "Choose where to display the tabs bar"
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #. i18n: ectx: whatsthis, entry, group (FMSettings)

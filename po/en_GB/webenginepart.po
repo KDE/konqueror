@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Andrew Coles <andrew_coles@yahoo.co.uk>, 2009, 2010, 2011.
-# Steve Allewell <steve.allewell@gmail.com>, 2014, 2016, 2017, 2018, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2014, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 02:23+0000\n"
-"PO-Revision-Date: 2023-06-17 12:14+0100\n"
+"PO-Revision-Date: 2024-05-30 19:24+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -30,9 +30,7 @@ msgstr "andrew_coles@yahoo.co.uk, steve.allewell@gmail.com"
 
 #: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:74
 #: src/about/konq_aboutpage.cpp:197 src/about/konq_aboutpage.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
-#| msgid "Be free."
+#, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
 msgstr "Be free."
@@ -308,61 +306,57 @@ msgstr "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 #, kde-format
 msgctxt "@label location where a remote URL was downloaded"
 msgid "%1 was saved in %2"
-msgstr ""
+msgstr "%1 was saved in %2"
 
 #: src/actondownloadedfilebar.cpp:24
 #, kde-format
 msgid "Show file in this tab"
-msgstr ""
+msgstr "Show file in this tab"
 
 #: src/actondownloadedfilebar.cpp:25
 #, kde-format
 msgid "Show file in a new tab in Konqueror"
-msgstr ""
+msgstr "Show file in a new tab in Konqueror"
 
 #: src/actondownloadedfilebar.cpp:59
 #, kde-format
 msgid "Open in external application"
-msgstr ""
+msgstr "Open in external application"
 
 #: src/actondownloadedfilebar.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgid "Open in %1"
-msgstr "Open '%1'"
+msgstr "Open in %1"
 
 #: src/actondownloadedfilebar.cpp:73 src/actondownloadedfilebar.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Open '%1'"
+msgstr "Open &with %1"
 
 #: src/actondownloadedfilebar.cpp:96
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
-msgstr ""
+msgstr "Show in new tab"
 
 #: src/actondownloadedfilebar.cpp:96
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here"
-msgstr ""
+msgstr "Show here"
 
 #: src/actondownloadedfilebar.cpp:100
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab using %1"
-msgstr ""
+msgstr "Show in new tab using %1"
 
 #: src/actondownloadedfilebar.cpp:100
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here using %1"
-msgstr ""
+msgstr "Show here using %1"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -436,13 +430,13 @@ msgstr "TextLabel"
 #, kde-format
 msgctxt "@label the cookie expires when the browser session ends"
 msgid "End of Session"
-msgstr ""
+msgstr "End of Session"
 
 #: src/cookies/cookiealertdlg.cpp:29
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by https servers"
 msgid "Secure servers only"
-msgstr ""
+msgstr "Secure servers only"
 
 #: src/cookies/cookiealertdlg.cpp:31
 #, kde-format
@@ -450,13 +444,13 @@ msgctxt ""
 "@label exposure string - the cookie may be used by https servers AND client-"
 "side javascripts"
 msgid "Secure servers, page scripts"
-msgstr ""
+msgstr "Secure servers, page scripts"
 
 #: src/cookies/cookiealertdlg.cpp:35
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by http servers"
 msgid "Servers"
-msgstr ""
+msgstr "Servers"
 
 #: src/cookies/cookiealertdlg.cpp:37
 #, kde-format
@@ -464,26 +458,22 @@ msgctxt ""
 "@label exposure string - the cookie may be used by http servers AND client-"
 "side javascripts"
 msgid "Servers, page scripts"
-msgstr ""
+msgstr "Servers, page scripts"
 
 #: src/cookies/cookiealertdlg.cpp:41
-#, fuzzy, kde-format
-#| msgid "Accept"
+#, kde-format
 msgctxt "@label accept cookie"
 msgid "Accept"
 msgstr "Accept"
 
 #: src/cookies/cookiealertdlg.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@action:never for this site"
-#| msgid "Ne&ver for this site"
+#, kde-format
 msgctxt "@label accept cookie for this session only"
 msgid "Accept for this session"
-msgstr "Ne&ver for this site"
+msgstr "Accept for this session"
 
 #: src/cookies/cookiealertdlg.cpp:45
-#, fuzzy, kde-format
-#| msgid "Reject"
+#, kde-format
 msgctxt "@label reject cookie"
 msgid "Reject"
 msgstr "Reject"
@@ -492,7 +482,7 @@ msgstr "Reject"
 #: src/cookies/cookiealertdlg.ui:14
 #, kde-format
 msgid "CookieAlertDlg"
-msgstr ""
+msgstr "CookieAlertDlg"
 
 #. i18n: ectx: property (text), widget (QLabel, header)
 #: src/cookies/cookiealertdlg.ui:20
@@ -501,74 +491,74 @@ msgid ""
 "<html><head/><body><p>You received a cookie from %1</p><p>Do you want to "
 "accept or reject this cookie?</p></body></html>"
 msgstr ""
+"<html><head/><body><p>You received a cookie from %1</p><p>Do you want to "
+"accept or reject this cookie?</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/cookies/cookiealertdlg.ui:30
-#, fuzzy, kde-format
-#| msgctxt "@action:hide details about credentials to store"
-#| msgid "&Hide details"
+#, kde-format
 msgid "Cookie details"
-msgstr "&Hide details"
+msgstr "Cookie details"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/cookies/cookiealertdlg.ui:36
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: src/cookies/cookiealertdlg.ui:50
 #, kde-format
 msgid "Value"
-msgstr ""
+msgstr "Value"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: src/cookies/cookiealertdlg.ui:64
 #, kde-format
 msgid "Expires"
-msgstr ""
+msgstr "Expires"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: src/cookies/cookiealertdlg.ui:78
 #, kde-format
 msgid "Path"
-msgstr ""
+msgstr "Path"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: src/cookies/cookiealertdlg.ui:99
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "Exposure"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: src/cookies/cookiealertdlg.ui:113
 #, kde-format
 msgid "Domain"
-msgstr ""
+msgstr "Domain"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: src/cookies/cookiealertdlg.ui:123
 #, kde-format
 msgid "Apply choice to"
-msgstr ""
+msgstr "Apply choice to"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToThis)
 #: src/cookies/cookiealertdlg.ui:129
 #, kde-format
 msgid "Only this cookie"
-msgstr ""
+msgstr "Only this cookie"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToDomain)
 #: src/cookies/cookiealertdlg.ui:136
 #, kde-format
 msgid "All cookies from this domain"
-msgstr ""
+msgstr "All cookies from this domain"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToAll)
 #: src/cookies/cookiealertdlg.ui:143
 #, kde-format
 msgid "All cookies"
-msgstr ""
+msgstr "All cookies"
 
 #: src/schemehandlers/errorschemehandler.cpp:97
 #, kde-format
@@ -1320,6 +1310,8 @@ msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
 "default style sheet will be used"
 msgstr ""
+"Could not open the file <tt>%1</tt> containing the user style sheet. The "
+"default style sheet will be used"
 
 #: src/webenginepartdownloadmanager.cpp:298
 #, kde-format
@@ -1348,7 +1340,7 @@ msgstr "Destination"
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
-msgstr ""
+msgstr "Saved %1 as %2"
 
 #: src/webengineview.cpp:351
 #, kde-format
