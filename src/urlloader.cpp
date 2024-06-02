@@ -295,29 +295,43 @@ KPluginMetaData UrlLoader::findEmbeddingPart(bool forceServiceName) const
 {
     const QLatin1String webEngineName("webenginepart");
 
-    //Use WebEnginePart for konq: URLs even if it's not the default html engine
+    // Use WebEnginePart for konq: URLs even if it's not the default HTML engine
     if (KonqUrl::hasKonqScheme(m_url)) {
         return findPartById(webEngineName);
     }
 
     KPluginMetaData part;
 
-    //Check whether the view can display the mimetype, but only if the URL hasn't been explicitly
-    //typed by the user: in this case, use the preferred service. This is needed to avoid the situation
-    //where m_view is a Kate part, the user enters the URL of a web page and the page is opened within
-    //the Kate part because it can handle html files.
-    if (m_view && m_request.typedUrl.isEmpty() && m_view->supportsMimeType(m_mimeType)) {
-        part = m_view->service();
-    } else if (!m_request.serviceName.isEmpty()) {
-        // If the service name has been set by the "--part" command line argument
-        // (detected in handleCommandLine() in konqmain.cpp), then use it as is.
+    // If the service name has been set by the "--part" command line
+    // argument via KonquerorApplication::createWindowsForUrlArguments(),
+    // then use it as is.  It will only be set for the first call with
+    // that command invocation.
+    //
+    // This test must be performed before the 'existing view' test below,
+    // because at this point the view showing the "konq:blank" page already
+    // exists.
+    if (!m_request.serviceName.isEmpty()) {
         part = findPartById(m_request.serviceName);
-        if (!forceServiceName && !part.supportsMimeType(m_mimeType)) {
-            part = KPluginMetaData();
-        }
+    }
+
+    // Check whether the current view can display the MIME type, but only if
+    // the URL hasn't been explicitly typed by the user: in this case, use the
+    // preferred service. This is needed to avoid the situation where m_view
+    // is a Kate part, the user enters the URL of a web page, and the page is
+    // opened within the Kate part because it can handle HTML files.
+    if (!part.isValid() && m_view && m_request.typedUrl.isEmpty() && m_view->supportsMimeType(m_mimeType)) {
+        part = m_view->service();
+    }
+
+    // If the part does not support the required MIME type, then it cannot be
+    // used. The only exception is when we are forced to use the given service.
+    if (part.isValid() && !forceServiceName && !part.supportsMimeType(m_mimeType)) {
+        part = KPluginMetaData();
     }
 
     if (!part.isValid()) {
+        // Now, if no part has yet been resolved, then use the preferred part
+        // for the MIME type.
         part = preferredPart(m_mimeType);
     }
 
