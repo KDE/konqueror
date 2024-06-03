@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2024-06-03 00:38+0000\n"
 "PO-Revision-Date: 2021-05-16 22:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -402,12 +402,12 @@ msgstr "압축 파일 형식(&T):"
 msgid "The type of web archive to save"
 msgstr "저장할 웹 압축 파일 형식"
 
-#: plugin_webarchiver.cpp:31
+#: plugin_webarchiver.cpp:32
 #, kde-format
 msgid "Archive Web Page..."
 msgstr "웹 페이지 압축..."
 
-#: plugin_webarchiver.cpp:49
+#: plugin_webarchiver.cpp:50
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -417,7 +417,7 @@ msgstr ""
 "<command>kcreatewebarchive</command> 실행 파일을 찾을 수 없습니다.<nl/>플러그"
 "인과 도우미 설치 상태를 확인하십시오."
 
-#: plugin_webarchiver.cpp:50
+#: plugin_webarchiver.cpp:51
 #, kde-format
 msgid "Cannot Create Web Archive"
 msgstr "웹 압축 파일을 만들 수 없음"

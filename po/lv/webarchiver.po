@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2024-06-03 00:38+0000\n"
 "PO-Revision-Date: 2024-04-08 15:38+0300\n"
 "Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -408,12 +408,12 @@ msgstr "Arhīvs &tips:"
 msgid "The type of web archive to save"
 msgstr "Saglabājamā tīmekļa arhīva tips"
 
-#: plugin_webarchiver.cpp:31
+#: plugin_webarchiver.cpp:32
 #, kde-format
 msgid "Archive Web Page..."
 msgstr "Arhivēt tīmekļa lapu..."
 
-#: plugin_webarchiver.cpp:49
+#: plugin_webarchiver.cpp:50
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -423,7 +423,7 @@ msgstr ""
 "Nevar atrast <command>kcreatewebarchive</command> izpilddatni,<nl/"
 ">pārbaudiet spraudņa un palīga instalāciju."
 
-#: plugin_webarchiver.cpp:50
+#: plugin_webarchiver.cpp:51
 #, kde-format
 msgid "Cannot Create Web Archive"
 msgstr "Nevar izveidot tīmekļa arhīvu"

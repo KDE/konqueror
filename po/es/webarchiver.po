@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webarchiver\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2024-06-03 00:38+0000\n"
 "PO-Revision-Date: 2020-09-25 18:26+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -420,12 +420,12 @@ msgstr "&Tipo de archivo:"
 msgid "The type of web archive to save"
 msgstr "El tipo de archivo web donde guardar"
 
-#: plugin_webarchiver.cpp:31
+#: plugin_webarchiver.cpp:32
 #, kde-format
 msgid "Archive Web Page..."
 msgstr "Archivar página web..."
 
-#: plugin_webarchiver.cpp:49
+#: plugin_webarchiver.cpp:50
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -435,7 +435,7 @@ msgstr ""
 "No se ha podido encontrar el ejecutable <command>kcreatewebarchive</command>."
 "<nl/>Compruebe la instalación del complemento y de la aplicación auxiliar."
 
-#: plugin_webarchiver.cpp:50
+#: plugin_webarchiver.cpp:51
 #, kde-format
 msgid "Cannot Create Web Archive"
 msgstr "No se ha podido crear el archivo web"

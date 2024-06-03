@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-20 00:38+0000\n"
+"POT-Creation-Date: 2024-06-03 00:38+0000\n"
 "PO-Revision-Date: 2010-09-08 12:33+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -813,12 +813,12 @@ msgstr ""
 msgid "&Immediately memorize form data"
 msgstr ""
 
-#: src/webenginepage.cpp:153 src/webenginepage.cpp:177
+#: src/webenginepage.cpp:153
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr ""
 
-#: src/webenginepage.cpp:154 src/webenginepage.cpp:178
+#: src/webenginepage.cpp:154
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -826,7 +826,7 @@ msgid ""
 "The integration will be disabled."
 msgstr ""
 
-#: src/webenginepage.cpp:405
+#: src/webenginepage.cpp:374
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -835,13 +835,13 @@ msgid ""
 "Otherwise, click the Continue button to display the webpage again.</p>"
 msgstr ""
 
-#: src/webenginepage.cpp:412
+#: src/webenginepage.cpp:381
 #, fuzzy, kde-format
 #| msgid "Additional Information: %1"
 msgid "Resubmit Information"
 msgstr "बाइली जानकारीः %1"
 
-#: src/webenginepage.cpp:606
+#: src/webenginepage.cpp:575
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is attempting to submit form data via email.\n"
@@ -853,18 +853,18 @@ msgstr ""
 "ई साइट, इमेल केर द्वारा फ़ॉर्म डाटा पेश करबाक कोसिसमे अछि.\n"
 "की अहाँ एकरा जारी रखनाइ चाहैत छी?"
 
-#: src/webenginepage.cpp:610 src/webenginepage.cpp:688
-#: src/webenginepage.cpp:699
+#: src/webenginepage.cpp:579 src/webenginepage.cpp:657
+#: src/webenginepage.cpp:668
 #, kde-format
 msgid "Network Transmission"
 msgstr "नेटवर्क ट्रांसमिशन"
 
-#: src/webenginepage.cpp:611
+#: src/webenginepage.cpp:580
 #, kde-format
 msgid "Allow access"
 msgstr ""
 
-#: src/webenginepage.cpp:681
+#: src/webenginepage.cpp:650
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -873,12 +873,12 @@ msgid ""
 "Are you sure you want to send the data unencrypted?"
 msgstr ""
 
-#: src/webenginepage.cpp:689
+#: src/webenginepage.cpp:658
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "अनएनक्रिप्टेड भेजू (&S)"
 
-#: src/webenginepage.cpp:696
+#: src/webenginepage.cpp:665
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -887,46 +887,46 @@ msgstr ""
 "ई साइट, इमेल केर द्वारा फ़ॉर्म डाटा पेश करबाक कोसिसमे अछि.\n"
 "की अहाँ एकरा जारी रखनाइ चाहैत छी?"
 
-#: src/webenginepage.cpp:700
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "&Send Email"
 msgstr "इमेल भेजू (&S)"
 
-#: src/webenginepage.cpp:749
+#: src/webenginepage.cpp:718
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 msgstr ""
 
-#: src/webenginepage.cpp:751
+#: src/webenginepage.cpp:720
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr ""
 
-#: src/webenginepage.cpp:752
+#: src/webenginepage.cpp:721
 #, kde-format
 msgid "&Allow attachments"
 msgstr ""
 
-#: src/webenginepage.cpp:753
+#: src/webenginepage.cpp:722
 #, kde-format
 msgid "&Ignore attachments"
 msgstr ""
 
-#: src/webenginepage.cpp:767
+#: src/webenginepage.cpp:736
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
 "submission. The attachment was removed for your protection."
 msgstr ""
 
-#: src/webenginepage.cpp:770
+#: src/webenginepage.cpp:739
 #, kde-format
 msgid "Attachment Removed"
 msgstr ""
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:853
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is attempting to submit form data via email.\n"
@@ -938,26 +938,26 @@ msgstr ""
 "ई साइट, इमेल केर द्वारा फ़ॉर्म डाटा पेश करबाक कोसिसमे अछि.\n"
 "की अहाँ एकरा जारी रखनाइ चाहैत छी?"
 
-#: src/webenginepage.cpp:886
+#: src/webenginepage.cpp:855
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
 "want to allow this?</qt>"
 msgstr ""
 
-#: src/webenginepage.cpp:889
+#: src/webenginepage.cpp:858
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr ""
 
-#: src/webenginepage.cpp:890
+#: src/webenginepage.cpp:859
 #, fuzzy, kde-format
 #| msgctxt "follow link despite of security warning"
 #| msgid "Follow"
 msgid "Allow"
 msgstr "अनुसरण करू"
 
-#: src/webenginepage.cpp:890
+#: src/webenginepage.cpp:859
 #, kde-format
 msgid "Do Not Allow"
 msgstr ""

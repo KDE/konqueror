@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2024-06-03 00:38+0000\n"
 "PO-Revision-Date: 2021-01-30 11:18+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -417,12 +417,12 @@ msgstr "&Rodzaj archiwum:"
 msgid "The type of web archive to save"
 msgstr "Rodzaj archiwum sieciowego do zapisania"
 
-#: plugin_webarchiver.cpp:31
+#: plugin_webarchiver.cpp:32
 #, kde-format
 msgid "Archive Web Page..."
 msgstr "Zarchiwizuj stronę sieciową..."
 
-#: plugin_webarchiver.cpp:49
+#: plugin_webarchiver.cpp:50
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -432,7 +432,7 @@ msgstr ""
 "Nie można znaleźć pliku wykonywalnego <command>kcreatewebarchive</command>, "
 "<nl/>sprawdź czy wgrana jest wtyczka i pomocnik."
 
-#: plugin_webarchiver.cpp:50
+#: plugin_webarchiver.cpp:51
 #, kde-format
 msgid "Cannot Create Web Archive"
 msgstr "Nie można utworzyć archiwum sieciowego"

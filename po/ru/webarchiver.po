@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2024-06-03 00:38+0000\n"
 "PO-Revision-Date: 2022-10-05 10:24+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -417,12 +417,12 @@ msgstr "&Тип архива:"
 msgid "The type of web archive to save"
 msgstr "Тип веб-архива, в который следует сохранить данные"
 
-#: plugin_webarchiver.cpp:31
+#: plugin_webarchiver.cpp:32
 #, kde-format
 msgid "Archive Web Page..."
 msgstr "Архивировать веб-страницу..."
 
-#: plugin_webarchiver.cpp:49
+#: plugin_webarchiver.cpp:50
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -432,7 +432,7 @@ msgstr ""
 "Не удалось найти исполняемый файл <command>kcreatewebarchive</command>,<nl/"
 ">проверьте установку модуля и вспомогательной программы."
 
-#: plugin_webarchiver.cpp:50
+#: plugin_webarchiver.cpp:51
 #, kde-format
 msgid "Cannot Create Web Archive"
 msgstr "Не удалось создать веб-архив"

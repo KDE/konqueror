@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-20 00:38+0000\n"
+"POT-Creation-Date: 2024-06-03 00:38+0000\n"
 "PO-Revision-Date: 2017-06-25 15:05+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -869,12 +869,12 @@ msgstr ""
 msgid "&Immediately memorize form data"
 msgstr ""
 
-#: src/webenginepage.cpp:153 src/webenginepage.cpp:177
+#: src/webenginepage.cpp:153
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Atsisiuntimo tvarkyklė (%1) nerasta Jūsų įrenginyje."
 
-#: src/webenginepage.cpp:154 src/webenginepage.cpp:178
+#: src/webenginepage.cpp:154
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -886,7 +886,7 @@ msgstr ""
 "\n"
 "Integracija bus išjungta."
 
-#: src/webenginepage.cpp:405
+#: src/webenginepage.cpp:374
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -899,12 +899,12 @@ msgstr ""
 "ir apsipirkote, spauskite „Atšaukti“ mygtuką, kad išvengti dubliuoto pirkimo."
 "Jei ne, spauskite „Tęsti“ mygtuką, kad parodyti tinklapį vėl.</p>"
 
-#: src/webenginepage.cpp:412
+#: src/webenginepage.cpp:381
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Dar kartą pateikti informaciją"
 
-#: src/webenginepage.cpp:606
+#: src/webenginepage.cpp:575
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -913,18 +913,18 @@ msgstr ""
 "Ši svetainė bando pasiekti informaciją apie Jūsų fizinę buvimo vietą.\n"
 "Ar norite jai leisti pasiekti?"
 
-#: src/webenginepage.cpp:610 src/webenginepage.cpp:688
-#: src/webenginepage.cpp:699
+#: src/webenginepage.cpp:579 src/webenginepage.cpp:657
+#: src/webenginepage.cpp:668
 #, kde-format
 msgid "Network Transmission"
 msgstr "Tinklo perdavimas"
 
-#: src/webenginepage.cpp:611
+#: src/webenginepage.cpp:580
 #, kde-format
 msgid "Allow access"
 msgstr "Leisti prieiti"
 
-#: src/webenginepage.cpp:681
+#: src/webenginepage.cpp:650
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -937,12 +937,12 @@ msgstr ""
 "Treti asmenys gali juos perimti ir peržiūrėti šią informaciją.\n"
 "Ar Jūs tikrai norite tęsti?"
 
-#: src/webenginepage.cpp:689
+#: src/webenginepage.cpp:658
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Siųsti neužšifravus"
 
-#: src/webenginepage.cpp:696
+#: src/webenginepage.cpp:665
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -951,12 +951,12 @@ msgstr ""
 "Ši sritis bando siųsti formos duomenis naudodama el. paštą.\n"
 "Ar norite tęsti?"
 
-#: src/webenginepage.cpp:700
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "&Send Email"
 msgstr "&Siųsti el. laišką"
 
-#: src/webenginepage.cpp:749
+#: src/webenginepage.cpp:718
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -965,22 +965,22 @@ msgstr ""
 "<qt>Ar norite leisti šiai svetainei pridėti sekančius failus prie  el. "
 "laiško?</qt>"
 
-#: src/webenginepage.cpp:751
+#: src/webenginepage.cpp:720
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "El. pašto priedo patvirtinimas"
 
-#: src/webenginepage.cpp:752
+#: src/webenginepage.cpp:721
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Leisti priedus"
 
-#: src/webenginepage.cpp:753
+#: src/webenginepage.cpp:722
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignoruoti priedus"
 
-#: src/webenginepage.cpp:767
+#: src/webenginepage.cpp:736
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -989,12 +989,12 @@ msgstr ""
 "Ši sritis bandė prisegti failą iš Jūsų kompiuterio formos siuntimo metu.  "
 "Prisegtas failas buvo pašalintas dėl jūsų saugumo."
 
-#: src/webenginepage.cpp:770
+#: src/webenginepage.cpp:739
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Priedas pašalintas"
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:853
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1003,7 +1003,7 @@ msgstr ""
 "Ši svetainė prašo atverti naują iššokantį langą.\n"
 "Ar norite leisti?"
 
-#: src/webenginepage.cpp:886
+#: src/webenginepage.cpp:855
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1012,17 +1012,17 @@ msgstr ""
 "<qt>Ši svetainė prašo atverti naują iššokantį langą į<br /><b>%1</b>.<br /"
 ">Ar norite leisti tai?</qt>"
 
-#: src/webenginepage.cpp:889
+#: src/webenginepage.cpp:858
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript iškylantis patvirtinimas"
 
-#: src/webenginepage.cpp:890
+#: src/webenginepage.cpp:859
 #, kde-format
 msgid "Allow"
 msgstr "Leisti"
 
-#: src/webenginepage.cpp:890
+#: src/webenginepage.cpp:859
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Neleisti"

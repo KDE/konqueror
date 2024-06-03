@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-27 00:38+0000\n"
+"POT-Creation-Date: 2024-06-03 00:38+0000\n"
 "PO-Revision-Date: 2024-02-09 23:52+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: src/konqapplication.cpp:121
+#: src/konqapplication.cpp:118
 #, kde-format
 msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
@@ -38,245 +38,245 @@ msgstr ""
 "<p>Konqueror를 루트로 실행하고 있습니다. 브라우저 구성 요소의 보안을 해칠 수 "
 "있습니다.</p><p>무엇을 하시겠습니까?</p>"
 
-#: src/konqapplication.cpp:164
+#: src/konqapplication.cpp:161
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: src/konqapplication.cpp:165
+#: src/konqapplication.cpp:162
 #, kde-format
 msgid "Web browser, file manager and document viewer."
 msgstr "웹 브라우저, 파일 관리자, 문서 뷰어."
 
-#: src/konqapplication.cpp:167
+#: src/konqapplication.cpp:164
 #, kde-format
 msgid "(C) 1999-2023, The Konqueror developers"
 msgstr "(C) 1999-2023, The Konqueror developers"
 
-#: src/konqapplication.cpp:170
+#: src/konqapplication.cpp:167
 #, kde-format
 msgid "Stefano Crocco"
 msgstr "Stefano Crocco"
 
-#: src/konqapplication.cpp:170
+#: src/konqapplication.cpp:167
 #, kde-format
 msgid "Current maintainer"
 msgstr "현재 관리자"
 
-#: src/konqapplication.cpp:171
+#: src/konqapplication.cpp:168
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: src/konqapplication.cpp:171
+#: src/konqapplication.cpp:168
 #, kde-format
 msgid ""
 "Developer (framework, parts, JavaScript, I/O library) and former maintainer"
 msgstr ""
 "개발자 (프레임워크, 부분, 자바스크립트, 입출력 라이브러리), 이전 관리자"
 
-#: src/konqapplication.cpp:172
+#: src/konqapplication.cpp:169
 #, kde-format
 msgid "Simon Hausmann"
 msgstr "Simon Hausmann"
 
-#: src/konqapplication.cpp:172
+#: src/konqapplication.cpp:169
 #, kde-format
 msgid "Developer (framework, parts)"
 msgstr "개발자 (프레임워크, 부분)"
 
-#: src/konqapplication.cpp:173
+#: src/konqapplication.cpp:170
 #, kde-format
 msgid "Michael Reiher"
 msgstr "Michael Reiher"
 
-#: src/konqapplication.cpp:173 src/konqapplication.cpp:201
-#: src/konqapplication.cpp:207
+#: src/konqapplication.cpp:170 src/konqapplication.cpp:198
+#: src/konqapplication.cpp:204
 #, kde-format
 msgid "Developer (framework)"
 msgstr "개발자 (프레임워크)"
 
-#: src/konqapplication.cpp:174
+#: src/konqapplication.cpp:171
 #, kde-format
 msgid "Matthias Welk"
 msgstr "Matthias Welk"
 
-#: src/konqapplication.cpp:174
+#: src/konqapplication.cpp:171
 #, kde-format
 msgid "Developer"
 msgstr "개발자"
 
-#: src/konqapplication.cpp:175
+#: src/konqapplication.cpp:172
 #, kde-format
 msgid "Alexander Neundorf"
 msgstr "Alexander Neundorf"
 
-#: src/konqapplication.cpp:175
+#: src/konqapplication.cpp:172
 #, kde-format
 msgid "Developer (List views)"
 msgstr "개발자 (목록 보기)"
 
-#: src/konqapplication.cpp:176
+#: src/konqapplication.cpp:173
 #, kde-format
 msgid "Michael Brade"
 msgstr "Michael Brade"
 
-#: src/konqapplication.cpp:176
+#: src/konqapplication.cpp:173
 #, kde-format
 msgid "Developer (List views, I/O library)"
 msgstr "개발자 (목록 보기, 입출력 라이브러리)"
 
-#: src/konqapplication.cpp:177
+#: src/konqapplication.cpp:174
 #, kde-format
 msgid "Lars Knoll"
 msgstr "Lars Knoll"
 
-#: src/konqapplication.cpp:177 src/konqapplication.cpp:178
+#: src/konqapplication.cpp:174 src/konqapplication.cpp:175
+#: src/konqapplication.cpp:176 src/konqapplication.cpp:178
 #: src/konqapplication.cpp:179 src/konqapplication.cpp:181
-#: src/konqapplication.cpp:182 src/konqapplication.cpp:184
-#: src/konqapplication.cpp:185 src/konqapplication.cpp:186
-#: src/konqapplication.cpp:187 src/konqapplication.cpp:189
+#: src/konqapplication.cpp:182 src/konqapplication.cpp:183
+#: src/konqapplication.cpp:184 src/konqapplication.cpp:186
 #, kde-format
 msgid "Developer (HTML rendering engine)"
 msgstr "개발자 (HTML 렌더링 엔진)"
 
-#: src/konqapplication.cpp:178
+#: src/konqapplication.cpp:175
 #, kde-format
 msgid "Dirk Mueller"
 msgstr "Dirk Mueller"
 
-#: src/konqapplication.cpp:179
+#: src/konqapplication.cpp:176
 #, kde-format
 msgid "Peter Kelly"
 msgstr "Peter Kelly"
 
-#: src/konqapplication.cpp:180
+#: src/konqapplication.cpp:177
 #, kde-format
 msgid "Waldo Bastian"
 msgstr "Waldo Bastian"
 
-#: src/konqapplication.cpp:180
+#: src/konqapplication.cpp:177
 #, kde-format
 msgid "Developer (HTML rendering engine, I/O library)"
 msgstr "개발자 (HTML 렌더링 엔진, 입출력 라이브러리)"
 
-#: src/konqapplication.cpp:181
+#: src/konqapplication.cpp:178
 #, kde-format
 msgid "Germain Garand"
 msgstr "Germain Garand"
 
-#: src/konqapplication.cpp:182 src/konqapplication.cpp:210
+#: src/konqapplication.cpp:179 src/konqapplication.cpp:207
 #, kde-format
 msgid "Leo Savernik"
 msgstr "Leo Savernik"
 
-#: src/konqapplication.cpp:183
+#: src/konqapplication.cpp:180
 #, kde-format
 msgid "Stephan Kulow"
 msgstr "Stephan Kulow"
 
-#: src/konqapplication.cpp:183
+#: src/konqapplication.cpp:180
 #, kde-format
 msgid ""
 "Developer (HTML rendering engine, I/O library, regression test framework)"
 msgstr "개발자 (HTML 렌더링 엔진, 입출력 라이브러리, 재귀 테스트 프레임워크)"
 
-#: src/konqapplication.cpp:184
+#: src/konqapplication.cpp:181
 #, kde-format
 msgid "Antti Koivisto"
 msgstr "Antti Koivisto"
 
-#: src/konqapplication.cpp:185
+#: src/konqapplication.cpp:182
 #, kde-format
 msgid "Zack Rusin"
 msgstr "Zack Rusin"
 
-#: src/konqapplication.cpp:186
+#: src/konqapplication.cpp:183
 #, kde-format
 msgid "Tobias Anton"
 msgstr "Tobias Anton"
 
-#: src/konqapplication.cpp:187
+#: src/konqapplication.cpp:184
 #, kde-format
 msgid "Lubos Lunak"
 msgstr "Lubos Lunak"
 
-#: src/konqapplication.cpp:188
+#: src/konqapplication.cpp:185
 #, kde-format
 msgid "Maks Orlovich"
 msgstr "Maks Orlovich"
 
-#: src/konqapplication.cpp:188 src/konqapplication.cpp:190
+#: src/konqapplication.cpp:185 src/konqapplication.cpp:187
 #, kde-format
 msgid "Developer (HTML rendering engine, JavaScript)"
 msgstr "개발자 (HTML 렌더링 엔진, 자바스크립트)"
 
-#: src/konqapplication.cpp:189
+#: src/konqapplication.cpp:186
 #, kde-format
 msgid "Allan Sandfeld Jensen"
 msgstr "Allan Sandfeld Jensen"
 
-#: src/konqapplication.cpp:190
+#: src/konqapplication.cpp:187
 #, kde-format
 msgid "Apple Safari Developers"
 msgstr "애플 사파리 개발자"
 
-#: src/konqapplication.cpp:191
+#: src/konqapplication.cpp:188
 #, kde-format
 msgid "Harri Porten"
 msgstr "Harri Porten"
 
-#: src/konqapplication.cpp:191
+#: src/konqapplication.cpp:188
 #, kde-format
 msgid "Developer (JavaScript)"
 msgstr "개발자 (자바스크립트)"
 
-#: src/konqapplication.cpp:192
+#: src/konqapplication.cpp:189
 #, kde-format
 msgid "Koos Vriezen"
 msgstr "Koos Vriezen"
 
-#: src/konqapplication.cpp:192
+#: src/konqapplication.cpp:189
 #, kde-format
 msgid "Developer (Java applets and other embedded objects)"
 msgstr "개발자 (자바 애플릿, 기타 첨부 가능한 개체)"
 
-#: src/konqapplication.cpp:193
+#: src/konqapplication.cpp:190
 #, kde-format
 msgid "Matt Koss"
 msgstr "Matt Koss"
 
-#: src/konqapplication.cpp:193 src/konqapplication.cpp:194
+#: src/konqapplication.cpp:190 src/konqapplication.cpp:191
 #, kde-format
 msgid "Developer (I/O library)"
 msgstr "개발자 (입출력 라이브러리)"
 
-#: src/konqapplication.cpp:194
+#: src/konqapplication.cpp:191
 #, kde-format
 msgid "Alex Zepeda"
 msgstr "Alex Zepeda"
 
-#: src/konqapplication.cpp:195
+#: src/konqapplication.cpp:192
 #, kde-format
 msgid "Richard Moore"
 msgstr "Richard Moore"
 
-#: src/konqapplication.cpp:195 src/konqapplication.cpp:196
+#: src/konqapplication.cpp:192 src/konqapplication.cpp:193
 #, kde-format
 msgid "Developer (Java applet support)"
 msgstr "개발자 (자바 애플릿 지원)"
 
-#: src/konqapplication.cpp:196
+#: src/konqapplication.cpp:193
 #, kde-format
 msgid "Dima Rogozin"
 msgstr "Dima Rogozin"
 
-#: src/konqapplication.cpp:197
+#: src/konqapplication.cpp:194
 #, kde-format
 msgid "Wynn Wilkes"
 msgstr "Wynn Wilkes"
 
-#: src/konqapplication.cpp:197
+#: src/konqapplication.cpp:194
 #, kde-format
 msgid ""
 "Developer (Java 2 security manager support,\n"
@@ -285,107 +285,107 @@ msgstr ""
 "개발자 (자바 2 보안 관리자 지원,\n"
 " 애플릿 지원 개선)"
 
-#: src/konqapplication.cpp:198
+#: src/konqapplication.cpp:195
 #, kde-format
 msgid "Stefan Schimanski"
 msgstr "Stefan Schimanski"
 
-#: src/konqapplication.cpp:198
+#: src/konqapplication.cpp:195
 #, kde-format
 msgid "Developer (Netscape plugin support)"
 msgstr "개발자 (넷스케이프 플러그인 지원)"
 
-#: src/konqapplication.cpp:199
+#: src/konqapplication.cpp:196
 #, kde-format
 msgid "George Staikos"
 msgstr "George Staikos"
 
-#: src/konqapplication.cpp:199
+#: src/konqapplication.cpp:196
 #, kde-format
 msgid "Developer (SSL, Netscape plugins)"
 msgstr "개발자 (SSL, 넷스케이프 플러그인)"
 
-#: src/konqapplication.cpp:200
+#: src/konqapplication.cpp:197
 #, kde-format
 msgid "Dawit Alemayehu"
 msgstr "Dawit Alemayehu"
 
-#: src/konqapplication.cpp:200
+#: src/konqapplication.cpp:197
 #, kde-format
 msgid "Developer (I/O library, Authentication support)"
 msgstr "개발자 (입출력 라이브러리, 인증 지원)"
 
-#: src/konqapplication.cpp:201
+#: src/konqapplication.cpp:198
 #, kde-format
 msgid "Carsten Pfeiffer"
 msgstr "Carsten Pfeiffer"
 
-#: src/konqapplication.cpp:202
+#: src/konqapplication.cpp:199
 #, kde-format
 msgid "Torsten Rahn"
 msgstr "Torsten Rahn"
 
-#: src/konqapplication.cpp:202
+#: src/konqapplication.cpp:199
 #, kde-format
 msgid "Graphics/icons"
 msgstr "그림과 아이콘"
 
-#: src/konqapplication.cpp:203
+#: src/konqapplication.cpp:200
 #, kde-format
 msgid "Torben Weis"
 msgstr "Torben Weis"
 
-#: src/konqapplication.cpp:203
+#: src/konqapplication.cpp:200
 #, kde-format
 msgid "KFM author"
 msgstr "KFM 작성자"
 
-#: src/konqapplication.cpp:204
+#: src/konqapplication.cpp:201
 #, kde-format
 msgid "Joseph Wenninger"
 msgstr "Joseph Wenninger"
 
-#: src/konqapplication.cpp:204
+#: src/konqapplication.cpp:201
 #, kde-format
 msgid "Developer (navigation panel framework)"
 msgstr "개발자 (탐색 패널 프레임워크)"
 
-#: src/konqapplication.cpp:205
+#: src/konqapplication.cpp:202
 #, kde-format
 msgid "Stephan Binner"
 msgstr "Stephan Binner"
 
-#: src/konqapplication.cpp:205
+#: src/konqapplication.cpp:202
 #, kde-format
 msgid "Developer (misc stuff)"
 msgstr "개발자 (잡다한 것)"
 
-#: src/konqapplication.cpp:206
+#: src/konqapplication.cpp:203
 #, kde-format
 msgid "Ivor Hewitt"
 msgstr "Ivor Hewitt"
 
-#: src/konqapplication.cpp:206
+#: src/konqapplication.cpp:203
 #, kde-format
 msgid "Developer (AdBlock filter)"
 msgstr "개발자 (AdBlock 필터)"
 
-#: src/konqapplication.cpp:207
+#: src/konqapplication.cpp:204
 #, kde-format
 msgid "Eduardo Robles Elvira"
 msgstr "Eduardo Robles Elvira"
 
-#: src/konqapplication.cpp:208
+#: src/konqapplication.cpp:205
 #, kde-format
 msgid "Matthias Kalle Dalheimer"
 msgstr "Matthias Kalle Dalheimer"
 
-#: src/konqapplication.cpp:209
+#: src/konqapplication.cpp:206
 #, kde-format
 msgid "Daniel Molkentin"
 msgstr "Daniel Molkentin"
 
-#: src/konqapplication.cpp:210
+#: src/konqapplication.cpp:207
 #, kde-format
 msgid ""
 "JavaScript access controls\n"
@@ -394,12 +394,12 @@ msgstr ""
 "자바스크립트 접근 제어\n"
 "도메인별 정책 확장 기능"
 
-#: src/konqapplication.cpp:221
+#: src/konqapplication.cpp:218
 #, kde-format
 msgid "Start without a default window, when called without URLs"
 msgstr "URL 없이 실행되었을 때 기본 창 없이 시작하기"
 
-#: src/konqapplication.cpp:222
+#: src/konqapplication.cpp:219
 #, kde-format
 msgid ""
 "Preload for later use. This mode does not support URLs on the command line"
@@ -407,52 +407,52 @@ msgstr ""
 "나중에 사용할 수 있도록 미리 불러오기. 이 모드에서는 명령행에서 입력한 URL을 "
 "무시합니다"
 
-#: src/konqapplication.cpp:223
+#: src/konqapplication.cpp:220
 #, kde-format
 msgid "Profile to open (DEPRECATED, IGNORED)"
 msgstr "열 프로필(폐기됨, 무시함)"
 
-#: src/konqapplication.cpp:223
+#: src/konqapplication.cpp:220
 #, kde-format
 msgid "profile"
 msgstr "프로필"
 
-#: src/konqapplication.cpp:224
+#: src/konqapplication.cpp:221
 #, kde-format
 msgid "List available sessions"
 msgstr "사용 가능한 세션 목록"
 
-#: src/konqapplication.cpp:225
+#: src/konqapplication.cpp:222
 #, kde-format
 msgid "Session to open"
 msgstr "열려는 세션"
 
-#: src/konqapplication.cpp:225
+#: src/konqapplication.cpp:222
 #, kde-format
 msgid "session"
 msgstr "세션"
 
-#: src/konqapplication.cpp:226
+#: src/konqapplication.cpp:223
 #, kde-format
 msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
 msgstr "이 URL에 사용할 MIME 형식 (예: text/html 또는 inode/directory)"
 
-#: src/konqapplication.cpp:226
+#: src/konqapplication.cpp:223
 #, kde-format
 msgid "mimetype"
 msgstr "MIME 형식"
 
-#: src/konqapplication.cpp:227
+#: src/konqapplication.cpp:224
 #, kde-format
 msgid "Part to use (e.g. khtml or kwebkitpart)"
 msgstr "사용할 부분 (khtml/kwebkitpart)"
 
-#: src/konqapplication.cpp:227
+#: src/konqapplication.cpp:224
 #, kde-format
 msgid "service"
 msgstr "서비스"
 
-#: src/konqapplication.cpp:228
+#: src/konqapplication.cpp:225
 #, kde-format
 msgid ""
 "For URLs that point to files, opens the directory and selects the file, "
@@ -461,12 +461,12 @@ msgstr ""
 "파일을 가리키는 URL에 대해서 파일을 여는 대신 디렉터리를 열고 파일을 선택합니"
 "다."
 
-#: src/konqapplication.cpp:229
+#: src/konqapplication.cpp:226
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr "앱에서 연 파일/URL을 사용한 후 삭제합니다"
 
-#: src/konqapplication.cpp:231
+#: src/konqapplication.cpp:228
 #, kde-format
 msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
@@ -475,31 +475,31 @@ msgstr ""
 "기존 Konqueror 프로세스가 있어도 새 Konqueror 프로세스를 생성합니다. "
 "Konqueror를 개발할 때 사용하는 옵션입니다"
 
-#: src/konqapplication.cpp:233
+#: src/konqapplication.cpp:230
 #, kde-format
 msgid "TEST"
 msgstr "TEST"
 
-#: src/konqapplication.cpp:234
+#: src/konqapplication.cpp:231
 #, kde-format
 msgid "Location to open"
 msgstr "열려는 위치."
 
-#: src/konqapplication.cpp:343
+#: src/konqapplication.cpp:340
 #, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
 msgstr "%1 세션을 열 수 없음"
 
-#: src/konqapplication.cpp:468
+#: src/konqapplication.cpp:465
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr "--preload 스위치에는 URL을 지정할 수 없습니다. URL을 무시합니다\n"
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4786
-#: src/konqmainwindow.cpp:4832
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4789
+#: src/konqmainwindow.cpp:4835
 #, kde-format
 msgid "no name"
 msgstr "이름 없음"
@@ -696,7 +696,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2225
 #: src/konqmainwindow.cpp:2314 src/konqmainwindow.cpp:2346
 #: src/konqmainwindow.cpp:2389 src/konqmainwindow.cpp:2411
-#: src/konqmainwindow.cpp:4751
+#: src/konqmainwindow.cpp:4754
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -705,7 +705,7 @@ msgstr "변경 사항을 취소하시겠습니까?"
 #: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2225
 #: src/konqmainwindow.cpp:2314 src/konqmainwindow.cpp:2346
 #: src/konqmainwindow.cpp:2389 src/konqmainwindow.cpp:2412
-#: src/konqmainwindow.cpp:4751
+#: src/konqmainwindow.cpp:4754
 #, kde-format
 msgid "&Discard Changes"
 msgstr "변경 사항 취소(&D)"
@@ -1339,30 +1339,30 @@ msgstr "다음으로 열기(&O)"
 msgid "Open with %1"
 msgstr "%1(으)로 열기|/|%1$[으 %1]로 열기"
 
-#: src/konqmainwindow.cpp:4594
+#: src/konqmainwindow.cpp:4597
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "보기 모드(&V)"
 
-#: src/konqmainwindow.cpp:4715
+#: src/konqmainwindow.cpp:4718
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr "현재 창에 여러 탭이 열려 있습니다. 종료하시겠습니까?"
 
-#: src/konqmainwindow.cpp:4717
+#: src/konqmainwindow.cpp:4720
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "확인"
 
-#: src/konqmainwindow.cpp:4719
+#: src/konqmainwindow.cpp:4722
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "현재 탭 닫기(&L)"
 
-#: src/konqmainwindow.cpp:4747
+#: src/konqmainwindow.cpp:4750
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1371,7 +1371,7 @@ msgstr ""
 "이 탭에는 저장되지 않은 변경 사항이 들어 있습니다.\n"
 "다른 탭을 닫으면 변경된 부분은 버려집니다."
 
-#: src/konqmainwindow.cpp:4748
+#: src/konqmainwindow.cpp:4751
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1380,35 +1380,35 @@ msgstr ""
 "이 페이지에는 저장되지 않은 변경 사항이 들어 있습니다.\n"
 "다른 탭을 닫으면 변경된 부분은 버려집니다."
 
-#: src/konqmainwindow.cpp:4908
+#: src/konqmainwindow.cpp:4911
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr ""
 "사이드바가 동작하지 않거나 사용할 수 없습니다. 새 항목을 추가할 수 없습니다."
 
-#: src/konqmainwindow.cpp:4908 src/konqmainwindow.cpp:4915
+#: src/konqmainwindow.cpp:4911 src/konqmainwindow.cpp:4918
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "웹 사이드바"
 
-#: src/konqmainwindow.cpp:4913
+#: src/konqmainwindow.cpp:4916
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "새 웹 확장 기능 \"%1\"을(를) 사이드바에 추가하시겠습니까?"
 
-#: src/konqmainwindow.cpp:4915
+#: src/konqmainwindow.cpp:4918
 #, kde-format
 msgid "Add"
 msgstr "추가"
 
-#: src/konqmainwindow.cpp:4915
+#: src/konqmainwindow.cpp:4918
 #, kde-format
 msgid "Do Not Add"
 msgstr "추가하지 않기"
 
-#: src/konqmainwindow.cpp:5263
+#: src/konqmainwindow.cpp:5266
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1417,7 +1417,7 @@ msgstr ""
 "설정 오류가 있는 것 같습니다. Konqueror에게 %1 형식의 파일을 처리하라고 했지"
 "만, 이 파일 형식은 처리할 수 없습니다."
 
-#: src/konqmainwindow.cpp:5348
+#: src/konqmainwindow.cpp:5351
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1437,22 +1437,22 @@ msgstr ""
 "시스템 프록시 설정을 선택하거나 설정 대화 상자에서 프록시 URL을 직접 지정하십"
 "시오. 지금 프록시 설정을 변경하시겠습니까?"
 
-#: src/konqmainwindow.cpp:5353
+#: src/konqmainwindow.cpp:5356
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "지원하지 않는 프록시 설정"
 
-#: src/konqmainwindow.cpp:5353
+#: src/konqmainwindow.cpp:5356
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "프록시 사용하지 않음"
 
-#: src/konqmainwindow.cpp:5354 src/konqmainwindow.cpp:5382
+#: src/konqmainwindow.cpp:5357 src/konqmainwindow.cpp:5385
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "프록시 설정 대화 상자 표시"
 
-#: src/konqmainwindow.cpp:5378
+#: src/konqmainwindow.cpp:5381
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1465,22 +1465,22 @@ msgstr ""
 "<p><b>HTTP 프록시:</b> <tt>%1</tt></p><p><b>HTTPS 프록시: </b><tt>%2</tt></p>"
 "무엇을 하시겠습니까?"
 
-#: src/konqmainwindow.cpp:5381
+#: src/konqmainwindow.cpp:5384
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "프록시 설정 충돌"
 
-#: src/konqmainwindow.cpp:5382
+#: src/konqmainwindow.cpp:5385
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "HTTP 프록시 사용(이번만)"
 
-#: src/konqmainwindow.cpp:5382
+#: src/konqmainwindow.cpp:5385
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "HTTPS 프록시 사용(이번만)"
 
-#: src/konqmainwindow.cpp:5398
+#: src/konqmainwindow.cpp:5401
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1974,19 +1974,19 @@ msgstr "경고"
 msgid "Resend"
 msgstr "다시 보내기"
 
-#: src/urlloader.cpp:451
+#: src/urlloader.cpp:465
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "실행"
 
-#: src/urlloader.cpp:453
+#: src/urlloader.cpp:467
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
 msgstr "표시"
 
-#: src/urlloader.cpp:460
+#: src/urlloader.cpp:474
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -1998,14 +1998,14 @@ msgstr ""
 "<filename>%1</filename>을(를) 실행할 수 있습니다. 실행하거나 표시하시겠습니"
 "까?"
 
-#: src/urlloader.cpp:466
+#: src/urlloader.cpp:480
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename>을(를) 실행할 수 있습니다. 실행하시겠습니까?"
 
-#: src/urlloader.cpp:793
+#: src/urlloader.cpp:807
 #, kde-format
 msgid "Save As"
 msgstr "다른 이름으로 저장"
