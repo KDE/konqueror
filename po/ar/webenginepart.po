@@ -15,7 +15,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 1.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -877,20 +876,24 @@ msgid ""
 "and made a purchase, click the Cancel button to prevent a duplicate purchase."
 "Otherwise, click the Continue button to display the webpage again.</p>"
 msgstr ""
+"<qt> <p> لعرض صفحة الويب المطلوبة مرة أخرى ، يحتاج المتصفح إلى إعادة إرسال "
+"المعلومات التي قدمتها مسبقًا. </p> <p> إذا كنت تتسوق عبر الإنترنت وأجريت "
+"عملية شراء ، فانقر فوق الزر \"إلغاء\" لمنع التكرار شراء.وإلا ، فانقر فوق "
+"الزر \"متابعة\" لعرض صفحة الويب مرة أخرى. </ p>"
 
 #: src/webenginepage.cpp:381
-#, fuzzy, kde-format
+#, kde-format
 msgid "Resubmit Information"
-msgstr "معلومات إضافية: %1"
+msgstr "إعادة تسلم المعلومات"
 
 #: src/webenginepage.cpp:575
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
 "Do you want to allow it access?"
 msgstr ""
-"هذا الموقع يحاول إرسال بيانات النموذج عبر البريد الإلكتروني.\n"
-"هل تريد المتابعة؟"
+"يحاول هذا الموقع الوصول إلى معلومات حول موقعك الفعلي. \n"
+"هل تريد السماح لها بالوصول؟"
 
 #: src/webenginepage.cpp:579 src/webenginepage.cpp:657
 #: src/webenginepage.cpp:668
@@ -899,9 +902,9 @@ msgid "Network Transmission"
 msgstr "نقل عبر الشبكة"
 
 #: src/webenginepage.cpp:580
-#, fuzzy, kde-format
+#, kde-format
 msgid "Allow access"
-msgstr "ا&سمح بالمرفقات"
+msgstr "اسمح بالوصول"
 
 #: src/webenginepage.cpp:650
 #, kde-format
@@ -973,12 +976,12 @@ msgid "Attachment Removed"
 msgstr "تمت إزالة المرفقات"
 
 #: src/webenginepage.cpp:853
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
 "Do you want to allow this?"
 msgstr ""
-"يطلب هذا الموقع أن يفتح نافذة منبثقة.\n"
+"يطلب هذا الموقع أن يفتح نافذة منبثقة جديدة.\n"
 "هل تريد السماح بذلك؟"
 
 #: src/webenginepage.cpp:855
@@ -1014,7 +1017,7 @@ msgstr "احفظ الصورة باسم..."
 #: src/webenginepart.cpp:201
 #, kde-format
 msgid "Print Preview"
-msgstr ""
+msgstr "معاينة الطباعة"
 
 #: src/webenginepart.cpp:205
 #, kde-format
@@ -1040,9 +1043,9 @@ msgid "Zoom Text Only"
 msgstr "كبر النص فقط"
 
 #: src/webenginepart.cpp:228
-#, fuzzy, kde-format
+#, kde-format
 msgid "Zoom To DPI"
-msgstr "كبّر"
+msgstr "كبّر إلى DPI"
 
 #: src/webenginepart.cpp:241
 #, kde-format
@@ -1385,12 +1388,12 @@ msgid "&Copy Email Address"
 msgstr "ا&نسخ عنوان البريد الإلكتروني"
 
 #: src/webengineview.cpp:467
-#, fuzzy, kde-format
+#, kde-format
 msgid "Copy Link &Text"
-msgstr "ا&نسخ النص"
+msgstr "ا&نسخ نص الوصلة"
 
 #: src/webengineview.cpp:473
-#, fuzzy, kde-format
+#, kde-format
 msgid "Copy Link &URL"
 msgstr "انسخ عنوان ال&وصلة"
 
