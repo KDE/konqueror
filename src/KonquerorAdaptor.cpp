@@ -12,8 +12,8 @@
 #include "konqmainwindowfactory.h"
 #include "konqviewmanager.h"
 #include "konqview.h"
-#include "konqsettingsxt.h"
 #include "konqsettings.h"
+#include "konqembedsettings.h"
 #include "konqapplication.h"
 
 #include "konqdebug.h"

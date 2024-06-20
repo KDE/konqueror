@@ -9,7 +9,7 @@
 #include "konqframe.h"
 #include "konqview.h"
 #include "konqmainwindow.h"
-#include "konqsettingsxt.h"
+#include "konqsettings.h"
 
 #include <QApplication>
 #include <QMouseEvent>
@@ -116,5 +116,5 @@ bool KonqMouseEventFilter::eventFilter(QObject *obj, QEvent *e)
 
 void KonqMouseEventFilter::reparseConfiguration()
 {
-    m_bBackRightClick = KonqSettings::backRightClick();
+    m_bBackRightClick = Konq::Settings::backRightClick();
 }

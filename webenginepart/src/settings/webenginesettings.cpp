@@ -10,6 +10,7 @@
 #include <webenginepart_debug.h>
 #include "../../src/htmldefaults.h"
 #include "profile.h"
+#include "konqsettings.h"
 
 #include <KConfig>
 #include <KSharedConfig>
@@ -108,6 +109,7 @@ public:
     bool m_zoomToDPI:1;
     bool m_allowActiveMixedContent:1;
     bool m_allowMixedContentDisplay:1;
+    bool m_doNotTrack = false;
 
     // the virtual global "domain"
     KPerDomainSettings global;
@@ -325,6 +327,7 @@ void WebEngineSettings::init()
 
   initNSPluginSettings();
   initCookieJarSettings();
+  initKIOSlaveSettings();
 }
 
 void WebEngineSettings::init( KConfig * config, bool reset )
@@ -1302,6 +1305,10 @@ bool WebEngineSettings::alowActiveMixedContent() const
     return d->m_allowActiveMixedContent;
 }
 
+bool WebEngineSettings::doNotTrack() const
+{
+    return d->m_doNotTrack;
+}
 
 void WebEngineSettings::initWebEngineSettings()
 {
@@ -1323,7 +1330,7 @@ void WebEngineSettings::initCookieJarSettings()
 {
     KSharedConfig::Ptr cookieCfgPtr = KSharedConfig::openConfig(QStringLiteral("kcookiejarrc"), KConfig::NoGlobals);
     KConfigGroup cookieCfg ( cookieCfgPtr, "Cookie Policy");
-    d->m_useCookieJar = cookieCfg.readEntry("Cookies", false);
+    d->m_useCookieJar = Konq::Settings::cookiesEnabled();
 }
 
 void WebEngineSettings::initNSPluginSettings()
@@ -1333,6 +1340,11 @@ void WebEngineSettings::initNSPluginSettings()
     d->m_loadPluginsOnDemand = cookieCfg.readEntry("demandLoad", false);
 }
 
+void WebEngineSettings::initKIOSlaveSettings()
+{
+    KConfigGroup grp(KSharedConfig::openConfig(QStringLiteral("kioslaverc")), {});
+    d->m_doNotTrack = grp.readEntry("DoNotTrack", false);
+}
 
 WebEngineSettings* WebEngineSettings::self()
 {

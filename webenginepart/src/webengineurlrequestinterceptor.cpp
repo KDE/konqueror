@@ -28,4 +28,8 @@ void WebEngineUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &
     if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeMainFrame) {
         WebEnginePartControls::self()->navigationRecorder()->recordRequestDetails(info);
     }
+
+    if (WebEngineSettings::self()->doNotTrack()) {
+        info.setHttpHeader(QByteArrayLiteral("DNT"), QByteArrayLiteral("1"));
+    }
 }

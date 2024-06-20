@@ -7,7 +7,7 @@
 */
 
 #include "urlloader.h"
-#include "konqsettings.h"
+#include "konqembedsettings.h"
 #include "konqmainwindow.h"
 #include "konqview.h"
 #include "konqurl.h"

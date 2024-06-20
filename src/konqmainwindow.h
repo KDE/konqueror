@@ -360,12 +360,12 @@ public:
     QList<QAction*> toggleViewActions() const;
 
     /**
-     * @brief Utility function which adjusts the KonqSettings::newTabInFront setting according to whether the user is pressing the `shift` key
+     * @brief Utility function which adjusts the Konq::Settings::newTabInFront setting according to whether the user is pressing the `shift` key
      *
-     * Since the `shift` key reverses the value of the KonqSettings::newTabInFront, when `shift` is pressed, this function returns the opposite
+     * Since the `shift` key reverses the value of the Konq::Settings::newTabInFront, when `shift` is pressed, this function returns the opposite
      * of the option.
      *
-     * @return `KonqSettings::newTabInFront()` if the user isn't pressing the `shift` key and `!KonqSettings::newTabInFront()` otherwise
+     * @return `Konq::Settings::newTabInFront()` if the user isn't pressing the `shift` key and `!Konq::Settings::newTabInFront()` otherwise
      */
     static bool newTabInFront(Qt::KeyboardModifiers mods);
 

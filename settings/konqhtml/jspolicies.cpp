@@ -24,84 +24,113 @@
 
 JSPolicies::JSPolicies(KSharedConfig::Ptr config, const QString &group,
                        bool global, const QString &domain) :
-    Policies(config, group, global, domain, QStringLiteral("javascript."), QStringLiteral("EnableJavaScript"))
+    is_global(global), config(config), groupname(group),
+    prefix(QStringLiteral("javascript.")), feature_key(QStringLiteral("EnableJavaScript"))
+{
+    if (is_global) {
+        this->prefix.clear();   // global keys have no prefix
+    }/*end if*/
+    setDomain(domain);
+}
+
+JSPolicies::~JSPolicies() noexcept
 {
 }
 
+void JSPolicies::setDomain(const QString &domain)
+{
+    if (is_global) {
+        return;
+    }
+    this->domain = domain.toLower();
+    groupname = this->domain; // group is domain in this case
+}
+
+
 void JSPolicies::load()
 {
-    Policies::load();
 
     KConfigGroup cg(config, groupname);
-    QString key;
 
-//  enableJavaScriptDebugCB->setChecked( m_pConfig->readEntry("EnableJavaScriptDebug", QVariant(false)).toBool());
-//  enableDebugOutputCB->setChecked( m_pConfig->readEntry("EnableJSDebugOutput", QVariant(false)).toBool() );
+    QString key = prefix + feature_key;
+    if (cg.hasKey(key)) {
+        feature_enabled = cg.readEntry(key, false);
+    } else {
+        feature_enabled = is_global ? true : inherit_policy;
+    }
+
+    //Explicitly cast enum to uint to avoid a compiler warning
     key = prefix + "WindowOpenPolicy";
-    window_open = cg.readEntry(key, (is_global ? HtmlSettingsInterface::JSWindowOpenSmart : INHERIT_POLICY));
+    window_open = cg.readEntry(key, (is_global ? static_cast<uint>(HtmlSettingsInterface::JSWindowOpenSmart) : inherit_policy));
 
     key = prefix + "WindowResizePolicy";
-    window_resize = cg.readEntry(key, (is_global ? HtmlSettingsInterface::JSWindowResizeAllow : INHERIT_POLICY));
+    window_resize = cg.readEntry(key, (is_global ? static_cast<uint>(HtmlSettingsInterface::JSWindowResizeAllow) : inherit_policy));
 
     key = prefix + "WindowMovePolicy";
-    window_move = cg.readEntry(key, (is_global ? HtmlSettingsInterface::JSWindowMoveAllow : INHERIT_POLICY));
+    window_move = cg.readEntry(key, (is_global ? static_cast<uint>(HtmlSettingsInterface::JSWindowMoveAllow) : inherit_policy));
 
     key = prefix + "WindowFocusPolicy";
-    window_focus = cg.readEntry(key, (is_global ? HtmlSettingsInterface::JSWindowFocusAllow : INHERIT_POLICY));
+    window_focus = cg.readEntry(key, (is_global ? static_cast<uint>(HtmlSettingsInterface::JSWindowFocusAllow) : inherit_policy));
 
     key = prefix + "WindowStatusPolicy";
-    window_status = cg.readEntry(key, (is_global ? HtmlSettingsInterface::JSWindowStatusAllow : INHERIT_POLICY));
+    window_status = cg.readEntry(key, (is_global ? static_cast<uint>(HtmlSettingsInterface::JSWindowStatusAllow) : inherit_policy));
 }
 
 void JSPolicies::defaults()
 {
-    Policies::defaults();
-//  enableJavaScriptGloballyCB->setChecked( true );
-//  enableJavaScriptDebugCB->setChecked( false );
-//  js_popup->setButton(0);
-// enableDebugOutputCB->setChecked( false );
-    window_open = (is_global ? HtmlSettingsInterface::JSWindowOpenSmart : INHERIT_POLICY);
-    window_resize = (is_global ? HtmlSettingsInterface::JSWindowResizeAllow : INHERIT_POLICY);
-    window_move = (is_global ? HtmlSettingsInterface::JSWindowMoveAllow : INHERIT_POLICY);
-    window_focus = (is_global ? HtmlSettingsInterface::JSWindowFocusAllow : INHERIT_POLICY);
-    window_status = (is_global ? HtmlSettingsInterface::JSWindowStatusAllow : INHERIT_POLICY);
+
+    feature_enabled = is_global ? true : inherit_policy;
+
+    //Explicitly cast enum to uint to avoid a compiler warning
+    window_open = (is_global ? static_cast<uint>(HtmlSettingsInterface::JSWindowOpenSmart) : inherit_policy);
+    window_resize = (is_global ? static_cast<uint>(HtmlSettingsInterface::JSWindowResizeAllow) : inherit_policy);
+    window_move = (is_global ? static_cast<uint>(HtmlSettingsInterface::JSWindowMoveAllow) : inherit_policy);
+    window_focus = (is_global ? static_cast<uint>(HtmlSettingsInterface::JSWindowFocusAllow) : inherit_policy);
+    window_status = (is_global ? static_cast<uint>(HtmlSettingsInterface::JSWindowStatusAllow) : inherit_policy);
 }
 
 void JSPolicies::save()
 {
-    Policies::save();
 
-    QString key;
+    KConfigGroup cg(config, groupname);
+
+    QString key = prefix + feature_key;
+    if (feature_enabled != inherit_policy) {
+        cg.writeEntry(key, (bool)feature_enabled);
+    } else {
+        cg.deleteEntry(key);
+    }
+
     key = prefix + "WindowOpenPolicy";
-    if (window_open != INHERIT_POLICY) {
+    if (window_open != inherit_policy) {
         config->group(groupname).writeEntry(key, window_open);
     } else {
         config->group(groupname).deleteEntry(key);
     }
 
     key = prefix + "WindowResizePolicy";
-    if (window_resize != INHERIT_POLICY) {
+    if (window_resize != inherit_policy) {
         config->group(groupname).writeEntry(key, window_resize);
     } else {
         config->group(groupname).deleteEntry(key);
     }
 
     key = prefix + "WindowMovePolicy";
-    if (window_move != INHERIT_POLICY) {
+    if (window_move != inherit_policy) {
         config->group(groupname).writeEntry(key, window_move);
     } else {
         config->group(groupname).deleteEntry(key);
     }
 
     key = prefix + "WindowFocusPolicy";
-    if (window_focus != INHERIT_POLICY) {
+    if (window_focus != inherit_policy) {
         config->group(groupname).writeEntry(key, window_focus);
     } else {
         config->group(groupname).deleteEntry(key);
     }
 
     key = prefix + "WindowStatusPolicy";
-    if (window_status != INHERIT_POLICY) {
+    if (window_status != inherit_policy) {
         config->group(groupname).writeEntry(key, window_status);
     } else {
         config->group(groupname).deleteEntry(key);
@@ -139,7 +168,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
     if (is_per_domain) {
         policy_btn = new QRadioButton(i18n("Use global"), this);
         policy_btn->setToolTip(i18n("Use setting from global policy."));
-        js_popup->addButton(policy_btn, INHERIT_POLICY);
+        js_popup->addButton(policy_btn, JSPolicies::inherit_policy);
         this_layout->addWidget(policy_btn, 0, colIdx++);
         this_layout->addItem(new QSpacerItem(10, 0), 0, colIdx++);
     }/*end if*/
@@ -193,7 +222,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
     if (is_per_domain) {
         policy_btn = new QRadioButton(i18n("Use global"), this);
         policy_btn->setToolTip(i18n("Use setting from global policy."));
-        js_resize->addButton(policy_btn, INHERIT_POLICY);
+        js_resize->addButton(policy_btn, JSPolicies::inherit_policy);
         this_layout->addWidget(policy_btn, 1, colIdx++);
         this_layout->addItem(new QSpacerItem(10, 0), 0, colIdx++);
     }/*end if*/
@@ -230,7 +259,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
     if (is_per_domain) {
         policy_btn = new QRadioButton(i18n("Use global"), this);
         policy_btn->setToolTip(i18n("Use setting from global policy."));
-        js_move->addButton(policy_btn, INHERIT_POLICY);
+        js_move->addButton(policy_btn, JSPolicies::inherit_policy);
         this_layout->addWidget(policy_btn, 2, colIdx++);
         this_layout->addItem(new QSpacerItem(10, 0), 0, colIdx++);
     }/*end if*/
@@ -267,7 +296,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
     if (is_per_domain) {
         policy_btn = new QRadioButton(i18n("Use global"), this);
         policy_btn->setToolTip(i18n("Use setting from global policy."));
-        js_focus->addButton(policy_btn, INHERIT_POLICY);
+        js_focus->addButton(policy_btn, JSPolicies::inherit_policy);
         this_layout->addWidget(policy_btn, 3, colIdx++);
         this_layout->addItem(new QSpacerItem(10, 0), 0, colIdx++);
     }/*end if*/
@@ -307,7 +336,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
     if (is_per_domain) {
         policy_btn = new QRadioButton(i18n("Use global"), this);
         policy_btn->setToolTip(i18n("Use setting from global policy."));
-        js_statusbar->addButton(policy_btn, INHERIT_POLICY);
+        js_statusbar->addButton(policy_btn, JSPolicies::inherit_policy);
         this_layout->addWidget(policy_btn, 4, colIdx++);
         this_layout->addItem(new QSpacerItem(10, 0), 0, colIdx++);
     }/*end if*/

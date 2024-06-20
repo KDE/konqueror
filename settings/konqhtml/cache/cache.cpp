@@ -9,16 +9,14 @@
 #include "cache.h"
 #include "ui_cache.h"
 
-#include <KConfigGroup>
+#include "konqsettings.h"
 
 #include <QDBusMessage>
 #include <QDBusConnection>
 
 int constexpr conversionFactor = 1000000;
 
-Cache::Cache(QObject *parent, const KPluginMetaData &md, const QVariantList &): KCModule(parent, md),
-    m_ui(new Ui::Cache),
-    m_config(KSharedConfig::openConfig(QString(), KConfig::NoGlobals))
+Cache::Cache(QObject *parent, const KPluginMetaData &md, const QVariantList &): KCModule(parent, md), m_ui(new Ui::Cache)
 {
     m_ui->setupUi(widget());
     connect(m_ui->memoryCache, &QCheckBox::toggled, this, &Cache::toggleMemoryCache);
@@ -36,25 +34,21 @@ Cache::~Cache()
 
 void Cache::defaults()
 {
-    m_ui->cacheEnabled->setChecked(true);
-    m_ui->memoryCache->setChecked(false);
-    m_ui->cacheSize->setValue(0);
-    m_ui->useCustomCacheDir->setChecked(false);
-    m_ui->customCacheDir->setUrl(QUrl());
+    Konq::Settings::self()->withDefaults([this]{load();});
     setNeedsSave(true);
     setRepresentsDefaults(true);
+    KCModule::defaults();
 }
 
 void Cache::load()
 {
-    KConfigGroup grp = m_config->group("Cache");
-    m_ui->cacheEnabled->setChecked(grp.readEntry("CacheEnabled", true));
-    m_ui->memoryCache->setChecked(grp.readEntry("MemoryCache", false));
-    int maxSizeInBytes = grp.readEntry("MaximumCacheSize", 0);
+    m_ui->cacheEnabled->setChecked(Konq::Settings::cacheEnabled());
+    m_ui->memoryCache->setChecked(Konq::Settings::keepCacheInMemory());
+    int maxSizeInBytes = Konq::Settings::maximumCacheSize();
     //Ensure that maxSizeInMB is greater than 0 if maxSizeInBytes is not 0
     int maxSizeInMB = maxSizeInBytes == 0 ? 0 : std::max(1, maxSizeInBytes / conversionFactor);
     m_ui->cacheSize->setValue(maxSizeInMB);
-    QString path = grp.readEntry("CustomCacheDir", QString());
+    QString path = Konq::Settings::customCacheDir();
     m_ui->useCustomCacheDir->setChecked(!path.isEmpty());
     m_ui->customCacheDir->setUrl(QUrl::fromLocalFile(path));
     KCModule::load();
@@ -62,15 +56,14 @@ void Cache::load()
 
 void Cache::save()
 {
-    KConfigGroup grp = m_config->group("Cache");
     bool cacheEnabled = m_ui->cacheEnabled->isChecked();
-    grp.writeEntry("CacheEnabled", cacheEnabled);
-    grp.writeEntry("MemoryCache", m_ui->memoryCache->isChecked());
+    Konq::Settings::setCacheEnabled(cacheEnabled);
+    Konq::Settings::setKeepCacheInMemory(m_ui->memoryCache->isChecked());
     //We store the size in bytes, not in MB
-    grp.writeEntry("MaximumCacheSize", m_ui->cacheSize->value()*conversionFactor);
+    Konq::Settings::setMaximumCacheSize(m_ui->cacheSize->value()*conversionFactor);
     QString path = m_ui->customCacheDir->isEnabled() ? m_ui->customCacheDir->url().path() : QString();
-    grp.writeEntry("CustomCacheDir", path);
-    m_config->sync();
+    Konq::Settings::setCustomCacheDir(path);
+    Konq::Settings::self()->save();
 
     QDBusMessage message =
         QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));

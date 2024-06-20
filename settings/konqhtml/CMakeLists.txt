@@ -9,12 +9,9 @@ set(kcm_konqhtml_PART_SRCS
    generalopts.cpp
    htmlopts.cpp 
    jsopts.cpp 
-   javaopts.cpp 
    appearance.cpp 
    policydlg.cpp 
-   main.cpp 
    jspolicies.cpp 
-   policies.cpp 
    domainlistview.cpp 
    filteropts.cpp
    css/template.cpp
@@ -61,7 +58,7 @@ target_link_libraries(khtml_tabs kcm_konqhtml_static)
 kcoreaddons_add_plugin(khtml_behavior SOURCES plugins/khtml_behavior.cpp INSTALL_NAMESPACE konqueror_kcms)
 target_link_libraries(khtml_behavior kcm_konqhtml_static)
 
-kcoreaddons_add_plugin(khtml_java_js SOURCES plugins/khtml_java_js.cpp INSTALL_NAMESPACE konqueror_kcms)
+kcoreaddons_add_plugin(khtml_java_js SOURCES plugins/khtml_js.cpp INSTALL_NAMESPACE konqueror_kcms)
 target_link_libraries(khtml_java_js kcm_konqhtml_static)
 
 kcoreaddons_add_plugin(khtml_appearance SOURCES plugins/khtml_appearance.cpp INSTALL_NAMESPACE konqueror_kcms)

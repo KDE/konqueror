@@ -19,9 +19,9 @@
 #include <kmessagebox.h>
 
 // Local
-#include "policies.h"
+#include "jspolicies.h"
 
-PolicyDialog::PolicyDialog(Policies *policies, QWidget *parent, const char *name)
+PolicyDialog::PolicyDialog(JSPolicies *policies, QWidget *parent, const char *name)
     : QDialog(parent),
       policies(policies)
 {

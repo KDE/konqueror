@@ -7,7 +7,7 @@
 #include "konqmainwindowfactory.h"
 #include "konqmainwindow.h"
 #include "konqview.h"
-#include "konqsettingsxt.h"
+#include "konqsettings.h"
 #include "konqdebug.h"
 #include "konqurl.h"
 #include "konqmisc.h"
@@ -39,7 +39,7 @@ static void abortFullScreenMode()
 // Prepare another preloaded window for next time
 static void ensurePreloadedWindow()
 {
-    if (KonqSettings::alwaysHavePreloaded()) {
+    if (Konq::Settings::alwaysHavePreloaded()) {
         QTimer::singleShot(500, nullptr, []() {return KonqMainWindowFactory::createPreloadWindow();});
     }
 }
@@ -85,7 +85,7 @@ KonqMainWindow *KonqMainWindowFactory::createNewWindow(const QUrl &url,
         mainWindow->openUrl(nullptr, url, QString(), req);
         mainWindow->setInitialFrameName(req.browserArgs.frameName);
     } else {
-        mainWindow->openUrl(nullptr, KonqMisc::konqFilteredURL(mainWindow, KonqSettings::startURL()));
+        mainWindow->openUrl(nullptr, KonqMisc::konqFilteredURL(mainWindow, Konq::Settings::startURL()));
         mainWindow->focusLocationBar();
     }
     return mainWindow;

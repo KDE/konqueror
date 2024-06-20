@@ -15,7 +15,6 @@
 #define KCOOKIESPOLICIES_H
 
 #include <KCModule>
-#include <QMap>
 
 #include "kcookiespolicyselectiondlg.h"
 #include "ui_kcookiespolicies.h"
@@ -52,14 +51,13 @@ protected Q_SLOTS:
     void addPressed(const QString &, bool state = true);
 
 private:
-    void updateDomainList(const QStringList &list);
-    bool handleDuplicate(const QString &domain, KonqInterfaces::CookieJar::CookieAdvice advice);
-    void splitDomainAdvice(const QString &configStr, QString &domain, KonqInterfaces::CookieJar::CookieAdvice &advice);
+    void updateDomainList(const QHash<QString, Konq::Settings::CookieAdvice> &data);
+    bool handleDuplicate(const QString &domain, Konq::Settings::CookieAdvice advice);
 
 private:
     quint64 mSelectedItemsCount;
     Ui::KCookiePoliciesUI mUi;
-    QMap<QString, KonqInterfaces::CookieJar::CookieAdvice> mDomainPolicyMap;
+    QHash<QString, Konq::Settings::CookieAdvice> mDomainPolicyMap;
 };
 
 #endif // KCOOKIESPOLICIES_H

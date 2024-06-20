@@ -10,7 +10,8 @@
 #include "ui_useragent.h"
 #include "interfaces/browser.h"
 
-#include <KConfigGroup>
+#include "konqsettings.h"
+
 #include <KMessageWidget>
 
 #include <QDBusMessage>
@@ -19,14 +20,13 @@
 #include <QWebEngineProfile>
 #include <QDir>
 
+using namespace Konq;
 
 UserAgent::UserAgent(QObject *parent, const KPluginMetaData &md, const QVariantList &): KCModule(parent, md),
     m_ui(new Ui::UserAgent),
-    m_config(KSharedConfig::openConfig(QString(), KConfig::NoGlobals)),
     m_templatesConfig(KSharedConfig::openConfig("useragenttemplatesrc"))
 {
     m_ui->setupUi(widget());
-    fillTemplateWidget(m_templatesConfig->group("Templates").entryMap());
     connect(m_ui->useTemplateBtn, &QPushButton::clicked, this, &UserAgent::useSelectedTemplate);
     connect(m_ui->templates, &QTreeWidget::itemDoubleClicked, this, &UserAgent::useDblClickedTemplate);
     connect(m_ui->templates, &QTreeWidget::itemSelectionChanged, this, &UserAgent::templateSelectionChanged);
@@ -62,26 +62,31 @@ void UserAgent::fillTemplateWidget(const UserAgent::TemplateMap& templates)
 
 void UserAgent::defaults()
 {
-    //Find the default templates. As far as I know, KConfig doesn't provide a way to only open the global config
-    //so we use QStandardPaths::locateAll to find all useragenttemplatesrc files. We assume that, as for QStandardPaths::standardLocations
-    //the files are sorted from highest to lowest priority, so we use the last one.
-    QStringList files = QStandardPaths::locateAll(QStandardPaths::ConfigLocation, "useragenttemplatesrc");
-    if (!files.isEmpty()) {
-        KConfigGroup grp = KSharedConfig::openConfig(files.constLast(), KConfig::SimpleConfig)->group("Templates");
-        fillTemplateWidget(grp.entryMap());
-    }
-
-    m_ui->useDefaultUA->setChecked(true);
-    m_ui->userAgentString->setText(QString());
+    Settings::self()->withDefaults([this]{load();});
     setNeedsSave(true);
     setRepresentsDefaults(true);
+    KCModule::defaults();
 }
 
 void UserAgent::load()
 {
-    KConfigGroup grp = m_config->group("UserAgent");
-    m_ui->userAgentString->setText(grp.readEntry("CustomUserAgent", QString()));
-    m_ui->useDefaultUA->setChecked(grp.readEntry("UseDefaultUserAgent", true));
+    KSharedConfig::Ptr templatesConfig;
+    TemplateMap templates;
+    if (!Settings::self()->isUsingDefaults()) {
+        templatesConfig = m_templatesConfig;
+    } else {
+        //Find the default templates. As far as I know, KConfig doesn't provide a way to only open the global config
+        //so we use QStandardPaths::locateAll to find all useragenttemplatesrc files. We assume that, as for QStandardPaths::standardLocations
+        //the files are sorted from highest to lowest priority, so we use the last one.
+        QStringList files = QStandardPaths::locateAll(QStandardPaths::ConfigLocation, "useragenttemplatesrc");
+        if (!files.isEmpty()) {
+            templatesConfig = KSharedConfig::openConfig(files.constLast(), KConfig::SimpleConfig);
+        }
+    }
+    fillTemplateWidget(templatesConfig->group("Templates").entryMap());
+
+    m_ui->userAgentString->setText(Settings::customUserAgent());
+    m_ui->useDefaultUA->setChecked(Settings::useDefaultUserAgent());
     toggleCustomUA(useCustomUserAgent());
     m_ui->invalidTemplateNameWidget->hide(); //There can't be problems when loading
     KCModule::load();
@@ -89,10 +94,9 @@ void UserAgent::load()
 
 void UserAgent::save()
 {
-    KConfigGroup grp = m_config->group("UserAgent");
-    grp.writeEntry("CustomUserAgent", m_ui->userAgentString->text());
-    grp.writeEntry("UseDefaultUserAgent", m_ui->useDefaultUA->isChecked());
-    grp.sync();
+    Settings::setCustomUserAgent(m_ui->userAgentString->text());
+    Settings::setUseDefaultUserAgent(m_ui->useDefaultUA->isChecked());
+    Settings::self()->save();
     saveTemplates();
     QDBusMessage message = QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"),
                                                       QStringLiteral("reparseConfiguration"));

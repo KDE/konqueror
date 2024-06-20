@@ -3,6 +3,9 @@
     Derived from jsopts.h and javaopts.h, code copied from there is
     copyrighted to its respective owners.
 
+    SPDX-FileCopyrightText: 2024 Stefano Crocco <stefano.crocco@alice.it>
+    Merged JSDomainListView (previously in jsopts.h) and DomainListView
+
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
@@ -20,8 +23,9 @@ class QPushButton;
 
 class QTreeWidget;
 
-class Policies;
+class JSPolicies;
 class PolicyDialog;
+class KJavaScriptOptions;
 
 /**
  * @short Provides a list view of domains which policies are attached to.
@@ -56,7 +60,7 @@ public:
      * @param parent parent widget
      * @param name internal name for debugging
      */
-    DomainListView(KSharedConfig::Ptr config, const QString &title, QWidget *parent);
+    DomainListView(KSharedConfig::Ptr config, const QString &group, KJavaScriptOptions *options, QWidget *parent);
 
     ~DomainListView() override;
 
@@ -155,7 +159,7 @@ protected:
      * }
      * </pre>
      */
-    virtual Policies *createPolicies() = 0;
+    JSPolicies *createPolicies();
 
     /**
      * factory method for copying a policies object.
@@ -171,7 +175,7 @@ protected:
      * </pre>
      * @param pol policies object to be copied
      */
-    virtual Policies *copyPolicies(Policies *pol) = 0;
+    JSPolicies *copyPolicies(JSPolicies *pol);
 
     /**
      * allows derived classes to customize the policy dialog.
@@ -183,8 +187,7 @@ protected:
      *    classes can safely cast the @p copy object to the same type they
      *    returned in their createPolicies implementation.
      */
-    virtual void setupPolicyDlg(PushButton trigger, PolicyDialog &pDlg,
-                                Policies *copy);
+    void setupPolicyDlg(PushButton trigger, PolicyDialog& pDlg, JSPolicies* pol);
 
 private Q_SLOTS:
     void addPressed();
@@ -197,6 +200,7 @@ private Q_SLOTS:
 protected:
 
     KSharedConfig::Ptr config;
+    QString group;
 
     QTreeWidget *domainSpecificLV;
 
@@ -206,7 +210,9 @@ protected:
     QPushButton *importDomainPB;
     QPushButton *exportDomainPB;
 
-    typedef QMap<QTreeWidgetItem *, Policies *> DomainPolicyMap;
+    KJavaScriptOptions *options;
+
+    typedef QMap<QTreeWidgetItem *, JSPolicies *> DomainPolicyMap;
     DomainPolicyMap domainPolicies;
 };
 

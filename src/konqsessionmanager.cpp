@@ -11,7 +11,7 @@
 #include "konqsessionmanager_interface.h"
 #include "konqsessionmanageradaptor.h"
 #include "konqviewmanager.h"
-#include "konqsettingsxt.h"
+#include "konqsettings.h"
 
 #ifdef KActivities_FOUND
 #include "activitymanager.h"
@@ -374,7 +374,7 @@ KonqSessionManager::KonqSessionManager()
     dbus.connect(QString(), dbusPath, dbusInterface, QStringLiteral("saveCurrentSession"), this, SLOT(slotSaveCurrentSession(QString)));
 
     // Initialize the timer
-    const int interval = KonqSettings::autoSaveInterval();
+    const int interval = Konq::Settings::autoSaveInterval();
     if (interval > 0) {
         m_autoSaveTimer.setInterval(interval * 1000);
         connect(&m_autoSaveTimer, &QTimer::timeout, this, &KonqSessionManager::autoSaveSession);
@@ -562,7 +562,7 @@ void KonqSessionManager::saveSessionAtExit()
     if (qApp->isSavingSession()) {
         return;
     }
-    bool saveSessions = KSharedConfig::openConfig()->group(QStringLiteral("UserSettings")).readEntry(QStringLiteral("RestoreLastState"), false);
+    bool saveSessions = Konq::Settings::restoreLastState();
     if (!saveSessions) {
         return;
     }
@@ -671,8 +671,7 @@ void KonqSessionManager::restoreSession(const QString &sessionFilePath, bool
 
 bool KonqSessionManager::restoreSessionSavedAtExit()
 {
-    KConfigGroup grp = KSharedConfig::openConfig()->group(QStringLiteral("UserSettings"));
-    if (!grp.readEntry(QStringLiteral("RestoreLastState"), false)) {
+    if (!Konq::Settings::restoreLastState()) {
         return false;
     }
 

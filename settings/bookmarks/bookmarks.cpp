@@ -61,6 +61,7 @@ void BookmarksConfigModule::load()
     setNeedsSave(false);
 }
 
+// TODO: move from kiobookmarksrc to konquerorrc since it's only used by Konqueror (I think)
 void BookmarksConfigModule::save()
 {
     KConfig *c = new KConfig(QStringLiteral("kiobookmarksrc"));

@@ -26,7 +26,7 @@
 #include "konqframestatusbar.h"
 #include "konqtabs.h"
 #include "konqactions.h"
-#include "konqsettingsxt.h"
+#include "konqsettings.h"
 #include "konqextensionmanager.h"
 #include "konqueror_interface.h"
 #include "delayedinitializer.h"
@@ -48,10 +48,12 @@
 
 #include <konq_events.h>
 #include <konqpixmapprovider.h>
-#include <konqsettings.h>
+#include <konqembedsettings.h>
 #include <konq_spellcheckingconfigurationdispatcher.h>
 #include <kcmutils_version.h>
 #include "libkonq_utils.h"
+
+#include "konqsettings.h"
 
 #include <kwidgetsaddons_version.h>
 #include <kxmlgui_version.h>
@@ -104,7 +106,7 @@
 #include <kmessagebox.h>
 #include <knewfilemenu.h>
 #include <konq_popupmenu.h>
-#include "konqsettings.h"
+#include "konqembedsettings.h"
 #include "konqanimatedlogo_p.h"
 #include <kprotocolinfo.h>
 #include <kprotocolmanager.h>
@@ -252,7 +254,7 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
 
         // setup the completion object before createGUI(), so that the combo
         // picks up the correct mode from the HistoryManager (in slotComboPlugged)
-        int mode = KonqSettings::settingsCompletionMode();
+        int mode = Konq::Settings::settingsCompletionMode();
         s_pCompletion->setCompletionMode(static_cast<KCompletion::CompletionMode>(mode));
     }
     connect(HistoryProvider::self(), &HistoryProvider::cleared, this, &KonqMainWindow::slotClearComboHistory);
@@ -1137,9 +1139,9 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
     bool createTab = req.browserArgs.newTab();
     if (!createTab && !req.browserArgs.forcesNewWindow() /* explicit "Open in New Window" action, e.g. on frame or history item */) {
         if (req.args.actionRequestedByUser()) { // MMB or some RMB popupmenu action
-            createTab = KonqSettings::mmbOpensTab();
+            createTab = Konq::Settings::mmbOpensTab();
         } else { // Javascript popup
-            createTab = KonqSettings::popupsWithinTabs() &&
+            createTab = Konq::Settings::popupsWithinTabs() &&
                         !isPopupWindow(windowArgs);
         }
     }
@@ -1148,7 +1150,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
     if (createTab && !m_isPopupWithProxyWindow) {
 
         bool newtabsinfront = newTabInFront(QApplication::keyboardModifiers());
-        const bool aftercurrentpage = KonqSettings::openAfterCurrentPage();
+        const bool aftercurrentpage = Konq::Settings::openAfterCurrentPage();
 
         // Can we use the standard way (openUrl), or do we need the part pointer immediately?
         if (!part) {
@@ -1243,8 +1245,6 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
     // Make the window open properties configurable. This is equivalent to
     // Firefox's "dom.disable_window_open_feature.*" properties. For now
     // only LocationBar visibility is configurable.
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup cfg(config, "DisableWindowOpenFeatures");
 
     if (!windowArgs.isMenuBarVisible()) {
         mainWindow->menuBar()->hide();
@@ -1256,7 +1256,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
         // user can override the default setup by adding a config option
         // "LocationBar=false" to the [DisableWindowOpenFeatures] section of
         // konquerorrc.
-        const bool showLocationBar = cfg.readEntry("LocationBar", true);
+        const bool showLocationBar = Konq::Settings::locationBarInJsWindows();
         KToolBar *locationToolBar = mainWindow->toolBar(QStringLiteral("locationToolBar"));
 
         for (KToolBar *bar: mainWindow->findChildren<KToolBar *>()) {
@@ -1633,7 +1633,7 @@ void KonqMainWindow::slotHome()
     if (modifiers & Qt::ControlModifier) { // Ctrl Left/MMB
         openFilteredUrl(homeURL, req);
     } else if (buttons & Qt::MiddleButton) {
-        if (KonqSettings::mmbOpensTab()) {
+        if (Konq::Settings::mmbOpensTab()) {
             openFilteredUrl(homeURL, req);
         } else {
             const QUrl finalURL = KonqMisc::konqFilteredURL(this, homeURL);
@@ -1770,7 +1770,7 @@ void KonqMainWindow::slotPartChanged(KonqView *childView, KParts::ReadOnlyPart *
 
 void KonqMainWindow::applyKonqMainWindowSettings()
 {
-    const QStringList toggableViewsShown = KonqSettings::toggableViewsShown();
+    const QStringList toggableViewsShown = Konq::Settings::toggableViewsShown();
     QStringList::ConstIterator togIt = toggableViewsShown.begin();
     QStringList::ConstIterator togEnd = toggableViewsShown.end();
     for (; togIt != togEnd; ++togIt) {
@@ -1915,7 +1915,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
         actHomePage->setWhatsThis(i18n("<html>Navigate to your 'Home Page'<br /><br />"
                                        "You can configure the location where this button takes you "
                                        "under <b>Settings -> Configure Konqueror -> General</b>.</html>"));
-        actHomePage->setData(KonqSettings::homeURL());
+        actHomePage->setData(Konq::Settings::homeURL());
 
         m_paHome->setIcon(viewShowsDir ? actHomeFolder->icon() : actHomePage->icon());
         m_paHome->setText(viewShowsDir ? actHomeFolder->text() : actHomePage->text());
@@ -2134,14 +2134,13 @@ void KonqMainWindow::splitCurrentView(Qt::Orientation orientation)
 
     QString mime = oldView->serviceType();
     QUrl url = oldView->url();
-    KSharedConfig::Ptr cfg = KSharedConfig::openConfig("konquerorrc");
-    const bool alwaysDuplicateView = cfg->group("UserSettings").readEntry("AlwaysDuplicatePageWhenSplittingView", true);
+    const bool alwaysDuplicateView = Konq::Settings::alwaysDuplicatePageWhenSplittingView();
     //TODO KF6: check whether this works correctly
     if (alwaysDuplicateView || url.isLocalFile()) {
         newView->duplicateView(oldView);
         return;
     }
-    url = QUrl(KonqSettings::startURL());
+    url = QUrl(Konq::Settings::startURL());
     openView(QStringLiteral("text/html"), url, newView, req);
 }
 
@@ -2161,7 +2160,7 @@ void KonqMainWindow::slotAddTab()
     KonqView *newView = m_pViewManager->addTab(QStringLiteral("text/html"),
                         QString(),
                         false,
-                        KonqSettings::openAfterCurrentPage());
+                        Konq::Settings::openAfterCurrentPage());
     if (!newView) {
         return;
     }
@@ -2190,12 +2189,12 @@ void KonqMainWindow::slotAddTab()
 
 void KonqMainWindow::slotDuplicateTab()
 {
-    m_pViewManager->duplicateTab(m_pViewManager->tabContainer()->currentIndex(), KonqSettings::openAfterCurrentPage());
+    m_pViewManager->duplicateTab(m_pViewManager->tabContainer()->currentIndex(), Konq::Settings::openAfterCurrentPage());
 }
 
 void KonqMainWindow::slotDuplicateTabPopup()
 {
-    m_pViewManager->duplicateTab(m_workingTab, KonqSettings::openAfterCurrentPage());
+    m_pViewManager->duplicateTab(m_workingTab, Konq::Settings::openAfterCurrentPage());
 }
 
 void KonqMainWindow::slotBreakOffTab()
@@ -2256,7 +2255,7 @@ void KonqMainWindow::slotPopupNewTab()
         slotPopupNewWindow();
         return;
     }
-    bool openAfterCurrentPage = KonqSettings::openAfterCurrentPage();
+    bool openAfterCurrentPage = Konq::Settings::openAfterCurrentPage();
     bool newTabsInFront = newTabInFront(QApplication::keyboardModifiers());
 
     popupNewTab(newTabsInFront, openAfterCurrentPage);
@@ -2574,14 +2573,14 @@ void KonqMainWindow::slotUp()
     req.browserArgs.setNewTab(true);
     req.forceAutoEmbed = true;
 
-    req.openAfterCurrentPage = KonqSettings::openAfterCurrentPage();
+    req.openAfterCurrentPage = Konq::Settings::openAfterCurrentPage();
     req.newTabInFront = newTabInFront(goKeyboardState);
 
     const QUrl &url = m_currentView->upUrl();
     if (goKeyboardState & Qt::ControlModifier) {
         openFilteredUrl(url.url(), req);
     } else if (goMouseState & Qt::MiddleButton) {
-        if (KonqSettings::mmbOpensTab()) {
+        if (Konq::Settings::mmbOpensTab()) {
             openFilteredUrl(url.url(), req);
         } else {
             KonqMainWindow *mw = KonqMainWindowFactory::createNewWindow(url);
@@ -2614,8 +2613,8 @@ void KonqMainWindow::slotGoHistoryDelayed()
         return;
     }
 
-    bool openAfterCurrentPage = KonqSettings::openAfterCurrentPage();
-    bool mmbOpensTab = KonqSettings::mmbOpensTab();
+    bool openAfterCurrentPage = Konq::Settings::openAfterCurrentPage();
+    bool mmbOpensTab = Konq::Settings::mmbOpensTab();
     bool inFront = newTabInFront(m_goKeyboardState);
 
     if (m_goKeyboardState & Qt::ControlModifier) {
@@ -2820,8 +2819,8 @@ void KonqMainWindow::slotCompletionModeChanged(KCompletion::CompletionMode m)
 {
     s_pCompletion->setCompletionMode(m);
 
-    KonqSettings::setSettingsCompletionMode(int(m_combo->completionMode()));
-    KonqSettings::self()->save();
+    Konq::Settings::setSettingsCompletionMode(int(m_combo->completionMode()));
+    Konq::Settings::self()->save();
 
     // tell the other windows too (only this instance currently)
     for (KonqMainWindow *window: *s_lstMainWindows) {
@@ -3652,7 +3651,7 @@ void KonqExtendedBookmarkOwner::openBookmark(const KBookmark &bm, Qt::MouseButto
     if (km & Qt::ControlModifier) {  // Ctrl Left/MMB
         m_pKonqMainWindow->openFilteredUrl(url, req);
     } else if (mb & Qt::MiddleButton) {
-        if (KonqSettings::mmbOpensTab()) {
+        if (Konq::Settings::mmbOpensTab()) {
             m_pKonqMainWindow->openFilteredUrl(url, req);
         } else {
             const QUrl finalURL = KonqMisc::konqFilteredURL(m_pKonqMainWindow, url);
@@ -4453,7 +4452,7 @@ void KonqMainWindow::reparseConfiguration()
 {
     qCDebug(KONQUEROR_LOG);
 
-    KonqSettings::self()->load();
+    Konq::Settings::self()->load();
     m_pViewManager->applyConfiguration();
     KonqMouseEventFilter::self()->reparseConfiguration();
     m_pViewManager->reparseConfiguration();
@@ -4537,7 +4536,7 @@ void KonqMainWindow::updateOpenWithActions()
     KService::List::ConstIterator it = services.constBegin();
     const KService::List::ConstIterator end = services.constEnd();
 
-    const int baseOpenWithItems = qMax(KonqSettings::openWithItems(), 0);
+    const int baseOpenWithItems = qMax(Konq::Settings::openWithItems(), 0);
 
     int idxService = 0;
     for (; it != end; ++it, ++idxService) {
@@ -4711,6 +4710,8 @@ void KonqMainWindow::closeEvent(QCloseEvent *e)
             KSharedConfig::Ptr config = KSharedConfig::openConfig();
             KConfigGroup cs(config, QStringLiteral("Notification Messages"));
 
+            //TODO is the if necessary? KMessageBox should automatically detect the presence of the setting
+            //and return the result without showing the dialog if it exists
             if (!cs.hasKey("MultipleTabConfirm")) {
                 switch (
                     KMessageBox::warningTwoActionsCancel(
@@ -5469,6 +5470,6 @@ QList<QAction *> KonqMainWindow::toggleViewActions() const
 
 bool KonqMainWindow::newTabInFront(Qt::KeyboardModifiers mods)
 {
-    bool front = KonqSettings::newTabsInFront();
+    bool front = Konq::Settings::newTabsInFront();
     return mods & Qt::ShiftModifier ? !front : front;
 }

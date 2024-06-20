@@ -6,7 +6,7 @@
 */
 
 #include "konqclosedwindowsmanager.h"
-#include "konqsettingsxt.h"
+#include "konqsettings.h"
 #include "konqmisc.h"
 #include "konqcloseditem.h"
 #include "konqclosedwindowsmanageradaptor.h"
@@ -80,7 +80,7 @@ void KonqClosedWindowsManager::addClosedWindowItem(KonqUndoManager
     readConfig();
     // If we are off the limit, remove the last closed window item
     if (m_closedWindowItemList.size() >=
-            KonqSettings::maxNumClosedItems()) {
+            Konq::Settings::maxNumClosedItems()) {
         KonqClosedWindowItem *last = m_closedWindowItemList.last();
 
         emit removeWindowInOtherInstances(nullptr, last);

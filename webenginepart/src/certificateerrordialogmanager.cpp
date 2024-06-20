@@ -11,6 +11,8 @@
 #include "webenginepartcertificateerrordlg.h"
 #include "webengineview.h"
 
+#include "konqsettings.h"
+
 #include <algorithm>
 
 
@@ -52,9 +54,7 @@ bool CertificateErrorDialogManager::userAlreadyChoseToIgnoreError(const QWebEngi
 {
     int error = static_cast<int>(ce.type());
     QString url = ce.url().url();
-    KConfigGroup grp(KSharedConfig::openConfig(), "CertificateExceptions");
-    QList<int> exceptionsForUrl = grp.readEntry(url, QList<int>{});
-    return (exceptionsForUrl.contains(error));
+    return Konq::Settings::self()->certificateExceptions(url).contains(error);
 }
 
 QWidget* CertificateErrorDialogManager::windowForPage(WebEnginePage* page)
@@ -151,9 +151,9 @@ void CertificateErrorDialogManager::removeDestroyedWindow(QObject *window)
 
 void CertificateErrorDialogManager::recordIgnoreForeverChoice(const QWebEngineCertificateError& ce)
 {
-    KConfigGroup grp(KSharedConfig::openConfig(), "CertificateExceptions");
     QString url = ce.url().url();
     int error = ce.type();
+    KConfigGroup grp(KSharedConfig::openConfig(), "CertificateExceptions");
     QList<int> exceptionsForUrl = grp.readEntry(url, QList<int>{});
     exceptionsForUrl.append(error);
     grp.writeEntry(url, exceptionsForUrl);

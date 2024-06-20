@@ -1,11 +1,13 @@
-//-----------------------------------------------------------------------------
-//
-// HTML Options
-//
-// (c) Martin R. Jones 1996
-//
-// Port to KControl
-// (c) Torben Weis 1998
+/*
+    SPDX-FileCopyrightText: 1996 Martin R. Jones
+
+    SPDX-FileCopyrightText: 1998 Torben Weis
+    KControl port & modifications
+
+    SPDX-FileCopyrightText: 2024 Stefano Crocco
+    Use this as toplevel javascript KCM
+*/
+
 
 #ifndef JSOPTS_H
 #define JSOPTS_H
@@ -19,38 +21,11 @@ class QCheckBox;
 
 class PolicyDialog;
 
-class KJavaScriptOptions;
-
-/** JavaScript-specific enhancements to the domain list view
-  */
-class JSDomainListView : public DomainListView
-{
-    Q_OBJECT
-public:
-    JSDomainListView(KSharedConfig::Ptr config, const QString &group, KJavaScriptOptions *opt,
-                     QWidget *parent);
-    ~JSDomainListView() override;
-
-    /** remnant for importing pre KDE 3.2 settings
-      */
-    void updateDomainListLegacy(const QStringList &domainConfig);
-
-protected:
-    JSPolicies *createPolicies() override;
-    JSPolicies *copyPolicies(Policies *pol) override;
-    void setupPolicyDlg(PushButton trigger, PolicyDialog &pDlg,
-                                Policies *copy) override;
-
-private:
-    QString group;
-    KJavaScriptOptions *options;
-};
-
 class KJavaScriptOptions : public KCModule
 {
     Q_OBJECT
 public:
-    KJavaScriptOptions(KSharedConfig::Ptr config, const QString &group, QWidget *parent);
+    KJavaScriptOptions(QObject *parent, const KPluginMetaData &md={});
 
     void load() override;
     void save() override;
@@ -64,17 +39,14 @@ private Q_SLOTS:
 private:
 
     KSharedConfig::Ptr m_pConfig;
-    QString m_groupname;
+    const QString m_groupname = QStringLiteral("Java/JavaScript Settings");
     JSPolicies js_global_policies;
     QCheckBox *enableJavaScriptGloballyCB;
-    QCheckBox *reportErrorsCB;
-    QCheckBox *jsDebugWindow;
     JSPoliciesFrame *js_policies_frame;
-    bool _removeECMADomainSettings;
 
-    JSDomainListView *domainSpecific;
+    DomainListView *domainSpecific;
 
-    friend class JSDomainListView;
+    friend class DomainListView;
 };
 
 #endif      // JSOPTS_H

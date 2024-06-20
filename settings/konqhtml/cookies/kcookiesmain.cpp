@@ -22,11 +22,9 @@
 #include <KLocalizedString>
 #include <KPluginFactory>
 
-KCookiesMain::KCookiesMain(QObject *parent, const KPluginMetaData &md, const QVariantList &)
+KCookiesMain::KCookiesMain(QObject *parent, const KPluginMetaData &md)
     : KCModule(parent, md)
 {
-    management = nullptr;
-
     QVBoxLayout *layout = new QVBoxLayout(widget());
     tab = new QTabWidget(widget());
     layout->addWidget(tab);
@@ -42,6 +40,15 @@ KCookiesMain::KCookiesMain(QObject *parent, const KPluginMetaData &md, const QVa
 
 KCookiesMain::~KCookiesMain()
 {
+}
+
+KCookiesMain::KCModule* KCookiesMain::currentModule() const
+{
+    if (tab->currentWidget() == policies->widget()) {
+        return policies;
+    } else {
+        return management;
+    }
 }
 
 void KCookiesMain::updateNeedsSave()
@@ -69,10 +76,7 @@ void KCookiesMain::load()
 
 void KCookiesMain::defaults()
 {
-    if (tab->currentWidget() == policies->widget()) {
-        policies->defaults();
-    } else if (management) {
-        management->defaults();
-    }
+    currentModule()->defaults();
     setRepresentsDefaults(true);
+    KCModule::defaults();
 }

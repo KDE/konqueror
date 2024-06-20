@@ -20,8 +20,7 @@ class KCookiesMain : public KCModule
 {
     Q_OBJECT
 public:
-    //TODO KF6: when dropping compatibility with KF5, remove QVariantList argument
-    KCookiesMain(QObject *parent, const KPluginMetaData &md={}, const QVariantList &args={});
+    KCookiesMain(QObject *parent, const KPluginMetaData &md={});
     ~KCookiesMain() override;
 
     KCookiesPolicies *policyDlg()
@@ -38,6 +37,12 @@ private:
      * @brief Calls setNeedsSave according to the status of the two submodules
      */
     void updateNeedsSave();
+
+    /**
+     * @brief The currently visible KCM
+     * @return #policies if the policy module is the active one and #management otherwise
+     */
+    KCModule *currentModule() const;
 
 private:
     QTabWidget *tab;

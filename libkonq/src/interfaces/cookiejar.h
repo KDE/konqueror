@@ -9,6 +9,8 @@
 
 #include "libkonq_export.h"
 
+#include "konqsettings.h"
+
 #include <QObject>
 #include <QSet>
 #include <QUrl>
@@ -43,44 +45,7 @@ public:
      */
     virtual QSet<QNetworkCookie> cookies() const = 0;
 
-    /**
-     * @brief The possible ways to deal with a cookie
-     * @internal
-     * It's important that Unknown has value 0.
-     *
-     * @warning If the last enum value is changed, intToAdvice() needs to be changed accordingly
-     * @endinternal
-     */
-    enum class CookieAdvice {
-        Unknown=0, ///< No action has been decided
-        Accept, ///< Accept the cookie
-        AcceptForSession, ///< Accept the cookie, but discard it when the application is closed
-        Reject, ///<Reject the cookie
-        Ask ///< Ask the user what to do
-    };
-
-    /**
-     * @brief Helper function to convert a CookieAdvice to an `int`
-     *
-     * It's a shortcut for `static_cast<int>(advice)`
-     * @param advice the advice to convert
-     * @return an int with the same value as the advice
-     */
-    static int adviceToInt(CookieAdvice advice){return static_cast<int>(advice);};
-
-    /**
-     * @brief Helper function to convert an `int` to a CookieAdvice
-     *
-     * This function checks whether the number is in the range of values acceptable
-     * for a CookieAdvice, returning a default value otherwise.
-     * @param num the number to convert
-     * @param defaultVal the default value to return if @p num isn't a valid value for a CookieAdvice
-     * @return the CookieAdvice with the same value as @p num or @p defaultVal if there isn't a CookieAdvice with the same value as @p num
-     * @internal
-     * @warning Make sure to change this function if the last value of CookieAdvice changes
-     * @endinternal
-     */
-    static CookieAdvice intToAdvice(int num, CookieAdvice defaultVal = CookieAdvice::Accept);
+    using CookieAdvice = Konq::Settings::CookieAdvice;
 
     /**
      * @brief Helper function to write a `KConfig` entry from a CookieAdvice
@@ -94,17 +59,6 @@ public:
      * @param advice the value to write
      */
     static void writeAdviceConfigEntry(KConfigGroup &grp, const char* key, CookieAdvice advice);
-
-    /**
-     * @brief Helper function to read a `KConfig` int entry and converting it to a CookieAdvice
-     *
-     * This function checks whether the number read from `KConfig` is in the range of values acceptable
-     * for a CookieAdvice, returning a default value otherwise.
-     * @param grp the group the entry should be read from
-     * @param key the key of the entry
-     * @param defaultVal the value to use if the entry doesn't exist or isn't a valid value for a CookieAdvice
-     */
-    static CookieAdvice readAdviceConfigEntry(const KConfigGroup &grp, const char* key, CookieAdvice defaultVal=CookieAdvice::Accept);
 
 public slots:
     /**

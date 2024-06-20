@@ -80,6 +80,7 @@ target_link_libraries(kwebenginepartlib
         KF${KF_MAJOR_VERSION}::KIOWidgets
         KF${KF_MAJOR_VERSION}::TextWidgets
         KF${KF_MAJOR_VERSION}::Konq
+        KF${KF_MAJOR_VERSION}::KonqSettings
     PRIVATE
         KF${KF_MAJOR_VERSION}::I18n
         Qt${KF_MAJOR_VERSION}::PrintSupport

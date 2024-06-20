@@ -97,7 +97,7 @@ public:
     int tabIndexContaining(KonqFrameBase *frame) const;
 
     /**
-     * Implemented to catch MMB click when KonqSettings::mouseMiddleClickClosesTab()
+     * Implemented to catch MMB click when Konq::Settings::mouseMiddleClickClosesTab()
      * returns true so that the tab can be properly closed without being activated
      * first.
      */

@@ -5,7 +5,7 @@
 */
 
 #include <konqmainwindowfactory.h>
-#include "../src/konqsettingsxt.h"
+#include "konqsettings.h"
 #include <KLocalizedString>
 
 #include <konqmainwindow.h>
@@ -30,6 +30,8 @@
 #include <QSignalSpy>
 #include <QObject>
 #include <QStandardPaths>
+
+using namespace Konq;
 
 class KonqHtmlTest : public QObject
 {
@@ -130,8 +132,8 @@ private Q_SLOTS:
         // Simple test for window.open in a onmousedown handler.
 
         // Want a window, not a tab (historical test)
-        KonqSettings::setMmbOpensTab(false);
-        KonqSettings::setAlwaysHavePreloaded(false);
+        Settings::self()->setMmbOpensTab(false);
+        Konq::Settings::setAlwaysHavePreloaded(false);
 
         // We have to use the same protocol for both the orig and dest urls.
         // KAuthorized would forbid a data: URL to redirect to a file: URL for instance.

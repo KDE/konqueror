@@ -9,7 +9,7 @@
 #include "konqfactory.h"
 #include <konq_kpart_plugin.h>
 #include "konqdebug.h"
-#include "konqsettings.h"
+#include "konqembedsettings.h"
 #include "konqmainwindow.h"
 #include "konqutils.h"
 

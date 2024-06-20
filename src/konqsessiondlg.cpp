@@ -5,7 +5,7 @@
 */
 
 #include "konqsessiondlg.h"
-#include "konqsettingsxt.h"
+#include "konqsettings.h"
 #include "konqviewmanager.h"
 #include "konqsessionmanager.h"
 #include "konqmainwindow.h"
@@ -83,7 +83,7 @@ KonqSessionDlg::KonqSessionDlg(KonqViewManager *manager, QWidget *parent)
                 slotSelectionChanged()));
 
     d->m_pOpenTabsInsideCurrentWindow->setChecked(
-        KonqSettings::openTabsInsideCurrentWindow());
+        Konq::Settings::openTabsInsideCurrentWindow());
 
     connect(d->m_pNewButton, &QPushButton::clicked, this, &KonqSessionDlg::slotNew);
     connect(d->m_pSaveCurrentButton, &QPushButton::clicked, this, &KonqSessionDlg::slotSave);
@@ -104,7 +104,7 @@ KonqSessionDlg::KonqSessionDlg(KonqViewManager *manager, QWidget *parent)
 
 KonqSessionDlg::~KonqSessionDlg()
 {
-    KonqSettings::setOpenTabsInsideCurrentWindow(
+    Konq::Settings::setOpenTabsInsideCurrentWindow(
         d->m_pOpenTabsInsideCurrentWindow->isChecked());
 }
 

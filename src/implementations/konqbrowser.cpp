@@ -9,6 +9,7 @@
 #include "konqapplication.h"
 #include "konqmainwindow.h"
 #include "konqview.h"
+#include "konqsettings.h"
 
 #include <konqdebug.h>
 
@@ -62,11 +63,10 @@ QString KonqBrowser::userAgent() const
 void KonqBrowser::readDefaultUserAgent()
 {
     const QString oldUA = m_userAgent.currentUserAgent();
-    KConfigGroup grp = KSharedConfig::openConfig()->group("UserAgent");
-    if (grp.readEntry("UseDefaultUserAgent", true)) {
+    if (Konq::Settings::useDefaultUserAgent()) {
         m_userAgent.defaultUA = konquerorUserAgent();
     } else {
-        m_userAgent.defaultUA = grp.readEntry("CustomUserAgent", konquerorUserAgent());
+        m_userAgent.defaultUA = Konq::Settings::customUserAgent();
     }
     if (m_userAgent.usingDefaultUA && m_userAgent.defaultUA != oldUA) {
         emit userAgentChanged(m_userAgent.defaultUA);

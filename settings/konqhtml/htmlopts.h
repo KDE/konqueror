@@ -29,27 +29,41 @@ class KMiscHTMLOptions : public KCModule
 
 public:
     //TODO KF6: when dropping compatibility with KF5, remove QVariantList argument
-    KMiscHTMLOptions(QObject *parent, const KPluginMetaData &md={}, const QVariantList &args={});
+    KMiscHTMLOptions(QObject *parent, const KPluginMetaData &md={});
     ~KMiscHTMLOptions() override;
     void load() override;
     void save() override;
     void defaults() override;
 
 private:
+    /**
+     * @brief Loads only the settings from konquerorrc
+     *
+     * This allows sharing code between lod() and defaults(), using the same code to load settings
+     * from konquerorrc and different code for settings from other configuration files
+     */
+    void loadFromKonquerorrc();
+
+private:
     KSharedConfig::Ptr m_pConfig;
     QString  m_groupname;
 
-    QCheckBox *m_cbCursor;
-    QCheckBox *m_pAutoRedirectCheckBox;
-    QCheckBox *m_pOpenMiddleClick;
-    QCheckBox *m_pBackRightClick;
-    QGroupBox *m_pFormCompletionCheckBox;
+    //TODO Settings: uncomment if the corresponding settings can be implemented in WebEnginePart and
+    //remove them if they can't
+    // QCheckBox *m_pOpenMiddleClick;
+    // QCheckBox *m_pBackRightClick;
+
+    //TODO Settings: uncomment when form completion is enabled with WebEnginePart
+    //QGroupBox *m_pFormCompletionCheckBox;
     QCheckBox *m_pAdvancedAddBookmarkCheckBox;
     QCheckBox *m_pOnlyMarkedBookmarksCheckBox;
-    QCheckBox *m_pAccessKeys;
+    //TODO Settings: uncomment if the corresponding settings can be implemented in WebEnginePart and
+    //remove them if they can't
+    // QCheckBox *m_pAccessKeys;
     QCheckBox *m_pDoNotTrack;
     QCheckBox *m_pOfferToSaveWebsitePassword;
-    QSpinBox *m_pMaxFormCompletionItems;
+    //TODO Settings: uncomment when form completion is enabled with WebEnginePart
+    // QSpinBox *m_pMaxFormCompletionItems;
     QCheckBox *m_pdfViewer;
 };
 

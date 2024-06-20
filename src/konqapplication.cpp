@@ -7,13 +7,13 @@
 #include <QtGlobal>
 
 #include "konqapplication.h"
-#include "konqsettings.h"
+#include "konqembedsettings.h"
 #include <konqueror-version.h>
 #include "konqmainwindow.h"
 #include "KonquerorAdaptor.h"
 #include "konqviewmanager.h"
 #include "konqurl.h"
-#include "konqsettingsxt.h"
+#include "konqsettings.h"
 #include "konqsessionmanager.h"
 #include "konqclosedwindowsmanager.h"
 #include "konqdebug.h"
@@ -231,11 +231,11 @@ void KonquerorApplication::setupParser()
 }
 
 static void fixOldStartUrl() {
-    QUrl startUrl(KonqSettings::startURL());
+    QUrl startUrl(Konq::Settings::startURL());
     if (startUrl.scheme() == "about") {
         startUrl.setScheme(KonqUrl::scheme());
-        KonqSettings::setStartURL(startUrl.url());
-        KonqSettings::self()->save();
+        Konq::Settings::setStartURL(startUrl.url());
+        Konq::Settings::self()->save();
     }
 }
 
@@ -260,7 +260,7 @@ int KonquerorApplication::startFirstInstance()
     const int ret = exec();
 
     //Don't preload if Konqueror is run as root
-    bool alwaysPreload = m_runningAsRootBehavior == NotRoot && KonqSettings::alwaysHavePreloaded();
+    bool alwaysPreload = m_runningAsRootBehavior == NotRoot && Konq::Settings::alwaysHavePreloaded();
 
     // Delete all KonqMainWindows, so that we don't have
     // any parts loaded when KLibLoader::cleanUp is called.

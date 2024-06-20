@@ -166,6 +166,7 @@ void KCookiesManagement::defaults()
 {
     reset();
     reload();
+    setRepresentsDefaults(true);
 }
 
 void KCookiesManagement::reset(bool deleteAll)
