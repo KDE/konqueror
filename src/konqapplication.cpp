@@ -344,10 +344,11 @@ int KonquerorApplication::performStart(const QString& workingDirectory, bool fir
             KMessageBox::error(nullptr, i18nc("The session asked by the user doesn't exist or can't be opened",
                                               "Session %1 couldn't be opened", sessionName));
         }
-        //If there was an error opening the session and this is the first instance, don't return immediately
-        //as this would lead to the application being run but with no windows open. Instead, open an empty
+        //Return except when this is the first instance and there was an error loading the session,
+        //since in this case, returning would lead to the application being run with no windows. Instead
+        //go on with the function so an empty window will be created
         //window
-        if (result != 0 && firstInstance) {
+        if (result == 0 || !firstInstance) {
             return result;
         }
     }
