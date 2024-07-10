@@ -218,7 +218,7 @@ void KonquerorApplication::setupParser()
     m_parser.addOption(QCommandLineOption(QStringList{QStringLiteral("silent")}, i18n("Start without a default window, when called without URLs")));
     m_parser.addOption(QCommandLineOption(QStringList{QStringLiteral("preload")}, i18n("Preload for later use. This mode does not support URLs on the command line")));
     m_parser.addOption(QCommandLineOption(QStringList{QStringLiteral("profile")}, i18n("Profile to open (DEPRECATED, IGNORED)"), i18n("profile")));
-    m_parser.addOption(QCommandLineOption(QStringList{QStringLiteral("sessions")}, i18n("List available sessions")));
+    m_parser.addOption(QCommandLineOption(QStringList{QStringLiteral("sessions")}, i18n("List available sessions and exit")));
     m_parser.addOption(QCommandLineOption(QStringList{QStringLiteral("open-session")}, i18n("Session to open"), i18n("session")));
     m_parser.addOption(QCommandLineOption(QStringList{QStringLiteral("mimetype")}, i18n("Mimetype to use for this URL (e.g. text/html or inode/directory)"), i18n("mimetype")));
     m_parser.addOption(QCommandLineOption(QStringList{QStringLiteral("part")}, i18n("Part to use (e.g. khtml or kwebkitpart)"), i18n("service")));
@@ -227,7 +227,6 @@ void KonquerorApplication::setupParser()
 #ifdef DEVELOPER_MODE
     m_parser.addOption(QCommandLineOption({QStringLiteral("force-new-process")}, i18n("Create a new Konqueror process, even if one already exists. Meant to be used only when developing Konqueror itself")));
 #endif
-    m_parser.addOption(QCommandLineOption({QStringLiteral("test-restore")}, i18n("TEST")));
     m_parser.addPositionalArgument(QStringLiteral("[URL]"), i18n("Location to open"));
 }
 
@@ -298,6 +297,14 @@ int KonquerorApplication::start()
     m_parser.process(*this);
     m_aboutData.processCommandLine(&m_parser);
 
+    //This can't be done in performStart, because it must be done before creating the
+    //DBus service. Otherwise, the list of session will be printed in the standard output
+    //of the first instance rather than where the command was entered
+    if (m_parser.isSet("sessions")) {
+        listSessions();
+        return 0;
+    }
+
 #ifdef DEVELOPER_MODE
     bool forceNewProcess = m_runningAsRootBehavior != NotRoot || m_parser.isSet(QStringLiteral("force-new-process"));
 #else
@@ -328,10 +335,8 @@ int KonquerorApplication::performStart(const QString& workingDirectory, bool fir
 {
     const QStringList args = m_parser.positionalArguments();
 
-    if (m_parser.isSet("sessions")) {
-        listSessions();
-        return 0;
-    } else if (m_parser.isSet("open-session")) {
+    //NOTE: we don't check for the "session" option because it has already been handled in start()
+    if (m_parser.isSet("open-session")) {
         //If the given session can't be opened for any reason, inform the user
         QString sessionName = m_parser.value("open-session");
         int result = openSession(sessionName);
@@ -516,7 +521,7 @@ void KonquerorApplication::listSessions()
     QTextStream ts(stdout, QIODevice::WriteOnly);
     while (it.hasNext()) {
         QFileInfo fileInfo(it.next());
-        ts << fileInfo.baseName();
+        ts << fileInfo.baseName() << '\n';
     }
 }
 
