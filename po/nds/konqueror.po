@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2014-03-18 00:16+0100\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -420,8 +420,9 @@ msgid "profile"
 msgstr ""
 
 #: src/konqapplication.cpp:221
-#, kde-format
-msgid "List available sessions"
+#, fuzzy, kde-format
+#| msgid "List available sessions"
+msgid "List available sessions and exit"
 msgstr "Verföögbor Törns oplisten"
 
 #: src/konqapplication.cpp:222
@@ -480,22 +481,17 @@ msgstr ""
 
 #: src/konqapplication.cpp:230
 #, kde-format
-msgid "TEST"
-msgstr ""
-
-#: src/konqapplication.cpp:231
-#, kde-format
 msgid "Location to open"
 msgstr "Adress för't Opmaken"
 
-#: src/konqapplication.cpp:340
+#: src/konqapplication.cpp:345
 #, fuzzy, kde-format
 #| msgid "Session to open"
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
 msgstr "Törn, den Du opmaken wullt"
 
-#: src/konqapplication.cpp:465
+#: src/konqapplication.cpp:470
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "

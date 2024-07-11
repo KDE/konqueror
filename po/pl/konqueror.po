@@ -1,6 +1,6 @@
 # translation of konqueror.po to Polish
 # translation of konqueror.po to
-# Version: $Revision: 1681465 $
+# Version: $Revision: 1684455 $
 # Tłumaczenie autorstwa Artura Skury, marzec 2000
 # SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 # Aktualne tłumaczenie Norbert Popiołek <norbert@kde.com.pl>, czerwiec 2001
@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2024-01-07 11:58+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -428,8 +428,9 @@ msgid "profile"
 msgstr "profil"
 
 #: src/konqapplication.cpp:221
-#, kde-format
-msgid "List available sessions"
+#, fuzzy, kde-format
+#| msgid "List available sessions"
+msgid "List available sessions and exit"
 msgstr "Pokaż dostępne posiedzenia"
 
 #: src/konqapplication.cpp:222
@@ -487,21 +488,16 @@ msgstr ""
 
 #: src/konqapplication.cpp:230
 #, kde-format
-msgid "TEST"
-msgstr "PRÓBA"
-
-#: src/konqapplication.cpp:231
-#, kde-format
 msgid "Location to open"
 msgstr "Adres do otwarcia"
 
-#: src/konqapplication.cpp:340
+#: src/konqapplication.cpp:345
 #, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
 msgstr "Nie udało się otworzyć posiedzenia %1"
 
-#: src/konqapplication.cpp:465
+#: src/konqapplication.cpp:470
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
@@ -2046,6 +2042,9 @@ msgstr "<filename>%1</filename> może zostać wykonany. Czy wyświetlić go?"
 #, kde-format
 msgid "Save As"
 msgstr "Zapisz jako"
+
+#~ msgid "TEST"
+#~ msgstr "PRÓBA"
 
 #~ msgid ""
 #~ "Malformed URL\n"

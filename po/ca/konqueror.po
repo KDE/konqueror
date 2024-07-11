@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2024-01-01 09:24+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -429,8 +429,9 @@ msgid "profile"
 msgstr "perfil"
 
 #: src/konqapplication.cpp:221
-#, kde-format
-msgid "List available sessions"
+#, fuzzy, kde-format
+#| msgid "List available sessions"
+msgid "List available sessions and exit"
 msgstr "Llista les sessions disponibles"
 
 #: src/konqapplication.cpp:222
@@ -490,21 +491,16 @@ msgstr ""
 
 #: src/konqapplication.cpp:230
 #, kde-format
-msgid "TEST"
-msgstr "Prova"
-
-#: src/konqapplication.cpp:231
-#, kde-format
 msgid "Location to open"
 msgstr "Localització a obrir"
 
-#: src/konqapplication.cpp:340
+#: src/konqapplication.cpp:345
 #, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
 msgstr "No s'ha pogut obrir la sessió %1"
 
-#: src/konqapplication.cpp:465
+#: src/konqapplication.cpp:470
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
@@ -2068,3 +2064,6 @@ msgstr "<filename>%1</filename> es pot executar. El voleu executar?"
 #, kde-format
 msgid "Save As"
 msgstr "Desa com a"
+
+#~ msgid "TEST"
+#~ msgstr "Prova"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2021-06-19 19:45+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -419,7 +419,7 @@ msgstr ""
 #: src/konqapplication.cpp:221
 #, fuzzy, kde-format
 #| msgid "List available profiles"
-msgid "List available sessions"
+msgid "List available sessions and exit"
 msgstr "கிடைக்கக்கூடிய பண்புகளை விவரிக்க"
 
 #: src/konqapplication.cpp:222
@@ -477,22 +477,17 @@ msgstr ""
 
 #: src/konqapplication.cpp:230
 #, kde-format
-msgid "TEST"
-msgstr ""
-
-#: src/konqapplication.cpp:231
-#, kde-format
 msgid "Location to open"
 msgstr "திறக்கவேண்டிய இடம்"
 
-#: src/konqapplication.cpp:340
+#: src/konqapplication.cpp:345
 #, fuzzy, kde-format
 #| msgid "Location to open"
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
 msgstr "திறக்கவேண்டிய இடம்"
 
-#: src/konqapplication.cpp:465
+#: src/konqapplication.cpp:470
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "

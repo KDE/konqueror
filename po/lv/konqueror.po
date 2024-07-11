@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2024-04-08 18:46+0300\n"
 "Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -428,8 +428,9 @@ msgid "profile"
 msgstr "profils"
 
 #: src/konqapplication.cpp:221
-#, kde-format
-msgid "List available sessions"
+#, fuzzy, kde-format
+#| msgid "List available sessions"
+msgid "List available sessions and exit"
 msgstr "Parādīt pieejamās sesijas"
 
 #: src/konqapplication.cpp:222
@@ -489,21 +490,16 @@ msgstr ""
 
 #: src/konqapplication.cpp:230
 #, kde-format
-msgid "TEST"
-msgstr "PĀRBAUDĪT"
-
-#: src/konqapplication.cpp:231
-#, kde-format
 msgid "Location to open"
 msgstr "Atveramā vieta"
 
-#: src/konqapplication.cpp:340
+#: src/konqapplication.cpp:345
 #, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
 msgstr "Sesiju „%1“ neizdevāš atvērt"
 
-#: src/konqapplication.cpp:465
+#: src/konqapplication.cpp:470
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
@@ -2039,6 +2035,9 @@ msgstr "<filename>%1</filename> var izpildīt. Vai vēlaties to izpildīt?"
 #, kde-format
 msgid "Save As"
 msgstr "Saglabāt kā"
+
+#~ msgid "TEST"
+#~ msgstr "PĀRBAUDĪT"
 
 #~ msgid ""
 #~ "Malformed URL\n"
