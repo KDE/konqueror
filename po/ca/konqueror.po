@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-01-01 09:24+0200\n"
+"PO-Revision-Date: 2024-07-11 08:44+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -429,10 +429,9 @@ msgid "profile"
 msgstr "perfil"
 
 #: src/konqapplication.cpp:221
-#, fuzzy, kde-format
-#| msgid "List available sessions"
+#, kde-format
 msgid "List available sessions and exit"
-msgstr "Llista les sessions disponibles"
+msgstr "Llista les sessions disponibles i surt"
 
 #: src/konqapplication.cpp:222
 #, kde-format
