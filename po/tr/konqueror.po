@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-25 02:26+0000\n"
-"PO-Revision-Date: 2024-03-22 01:10+0300\n"
+"PO-Revision-Date: 2024-07-11 14:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -47,7 +47,7 @@ msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
-"<p>Konqueror'ı yönetici olarak çalıştırıyorsunuz. Bu, tarayıcı bileşeninde "
+"<p>Konqueror’ı yönetici olarak çalıştırıyorsunuz. Bu, tarayıcı bileşeninde "
 "yüksek düzeyde güvenli olmayan bir kipi etkinleştirmeyi gerektirir.</p><p>Ne "
 "yapmak istiyorsunuz?</p>"
 
@@ -64,7 +64,7 @@ msgstr "Web tarayıcısı, dosya yöneticisi ve belge görüntüleyicisi."
 #: src/konqapplication.cpp:167
 #, kde-format
 msgid "(C) 1999-2023, The Konqueror developers"
-msgstr "(C) 1999-2023, Konqueror geliştiricileri"
+msgstr "© 1999–2023, Konqueror geliştiricileri"
 
 #: src/konqapplication.cpp:170
 #, kde-format
@@ -137,7 +137,7 @@ msgstr "Michael Brade"
 #: src/konqapplication.cpp:176
 #, kde-format
 msgid "Developer (List views, I/O library)"
-msgstr "Geliştirici (Liste görünümleri, G-Ç kitaplığı)"
+msgstr "Geliştirici (Liste görünümleri, G–Ç kitaplığı)"
 
 #: src/konqapplication.cpp:177
 #, kde-format
@@ -171,7 +171,7 @@ msgstr "Waldo Bastian"
 #: src/konqapplication.cpp:180
 #, kde-format
 msgid "Developer (HTML rendering engine, I/O library)"
-msgstr "Geliştirici (HTML sunum işletkesi, G-Ç kitaplığı)"
+msgstr "Geliştirici (HTML sunum işletkesi, G–Ç kitaplığı)"
 
 #: src/konqapplication.cpp:181
 #, kde-format
@@ -192,7 +192,7 @@ msgstr "Stephan Kulow"
 #, kde-format
 msgid ""
 "Developer (HTML rendering engine, I/O library, regression test framework)"
-msgstr "Geliştirici (HTML sunum işletkesi, G-Ç kitaplığı, sınama çatısı)"
+msgstr "Geliştirici (HTML sunum işletkesi, G–Ç kitaplığı, sınama çatısı)"
 
 #: src/konqapplication.cpp:184
 #, kde-format
@@ -262,7 +262,7 @@ msgstr "Matt Koss"
 #: src/konqapplication.cpp:193 src/konqapplication.cpp:194
 #, kde-format
 msgid "Developer (I/O library)"
-msgstr "Geliştirici (G-Ç kitaplığı)"
+msgstr "Geliştirici (G–Ç kitaplığı)"
 
 #: src/konqapplication.cpp:194
 #, kde-format
@@ -326,7 +326,7 @@ msgstr "Dawit Alemayehu"
 #: src/konqapplication.cpp:200
 #, kde-format
 msgid "Developer (I/O library, Authentication support)"
-msgstr "Geliştirici (G-Ç kitaplığı, Kimlik doğrulama desteği)"
+msgstr "Geliştirici (G–Ç kitaplığı, Kimlik doğrulama desteği)"
 
 #: src/konqapplication.cpp:201
 #, kde-format
@@ -418,7 +418,7 @@ msgid ""
 "Preload for later use. This mode does not support URLs on the command line"
 msgstr ""
 "Sonradan kullanım için önden yükle. Bu kip, komut satırından verilen "
-"URL'leri desteklemez"
+"URL’leri desteklemez"
 
 #: src/konqapplication.cpp:223
 #, kde-format
@@ -472,14 +472,14 @@ msgid ""
 "For URLs that point to files, opens the directory and selects the file, "
 "instead of opening the actual file"
 msgstr ""
-"Dosyaları işaret eden URL'ler için, dosyayı açmak yerine dizini açar ve "
+"Dosyalara işaret eden URL’ler için dosyayı açmak yerine dizini açar ve "
 "dosyayı seçer"
 
 #: src/konqapplication.cpp:229
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr ""
-"Uygulama tarafından açılan dosya veya URL'ler, kullanımdan sonra silinecektir"
+"Uygulama tarafından açılan dosya veya URL’ler kullanımdan sonra silinecektir"
 
 #: src/konqapplication.cpp:231
 #, kde-format
@@ -512,7 +512,7 @@ msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr ""
-"--preload anahtarını kullanırken URL'ler geçiremezsiniz. URL'ler yok "
+"--preload anahtarını kullanırken URL’ler geçiremezsiniz. URL’ler yok "
 "sayılacaktır.\n"
 
 #: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4786
@@ -553,10 +553,10 @@ msgid ""
 "view or detailed view, and possibly a terminal emulator window."
 msgstr ""
 "En azından iki görünümde bu kutuyu işaretlerseniz söz konusu görünümler "
-"birbirine 'bağlanır'. Böylece bir görünümde dizin değiştirdiğinizde ona "
-"bağlı olan diğer görünümler de otomatik olarak o dizini göstermek üzere "
+"birbirine “bağlanır”. Böylece bir görünümde dizin değiştirdiğinizde ona "
+"bağlı olan diğer görünümler de kendiliğinden o dizini göstermek üzere "
 "güncellenir. Bu seçenek, özellikle farklı görünüm türleri, örneğin simge "
-"görünümlü bir dizin ağacı ya da ayrıntılı görünüm kullanırken yararlı olur."
+"görünümlü bir dizin ağacı veya ayrıntılı görünüm kullanırken yararlı olur."
 
 #: src/konqframestatusbar.cpp:119
 #, kde-format
@@ -653,7 +653,7 @@ msgstr "&Geçmişi Temizle"
 #: src/konqhistoryview.cpp:86
 #, kde-format
 msgid "&Preferences..."
-msgstr "&Tercihler..."
+msgstr "&Tercihler…"
 
 #: src/konqhistoryview.cpp:93
 #, kde-format
@@ -685,7 +685,7 @@ msgstr "Geçmişi Sil?"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
-msgstr "Yükleniyor..."
+msgstr "Yükleniyor…"
 
 #: src/konqmainwindow.cpp:717
 #, kde-format
@@ -741,12 +741,12 @@ msgstr "Ana Klasör"
 #: src/konqmainwindow.cpp:1908
 #, kde-format
 msgid "Navigate to your 'Home Folder'"
-msgstr "Ana Klasör'ünüze Gidin"
+msgstr "Ana Klasör’e Git"
 
 #: src/konqmainwindow.cpp:1909
 #, kde-format
 msgid "Navigate to your local 'Home Folder'"
-msgstr "Yerel 'Ana Klasör'ünüze Gidin"
+msgstr "Yerel “Ana Klasör”e Git"
 
 #. i18n: ectx: label, entry, group (UserSettings)
 #: src/konqmainwindow.cpp:1912 src/konqueror.kcfg:16
@@ -757,7 +757,7 @@ msgstr "Ana Sayfa"
 #: src/konqmainwindow.cpp:1914
 #, kde-format
 msgid "Navigate to your 'Home Page'"
-msgstr "'Ana Sayfa'nıza Gidin"
+msgstr "“Ana Sayfa”ya Git"
 
 #: src/konqmainwindow.cpp:1915
 #, kde-format
@@ -766,9 +766,9 @@ msgid ""
 "where this button takes you under <b>Settings -> Configure Konqueror -> "
 "General</b>.</html>"
 msgstr ""
-"<html>'Ana Sayfa'nıza Gidin<br /><br />Bu konumu yapılandırabilirsiniz; bu "
-"düğme sizi <b>Ayarlar → Konqueror Uygulamasını Yapılandır → Genel</b> "
-"konumuna götürecektir.</html>"
+"<html>“Ana Sayfa”ya Git<br /><br />Bu konumu yapılandırabilirsiniz; bu düğme "
+"sizi <b>Ayarlar → Konqueror Uygulamasını Yapılandır → Genel</b> konumuna "
+"götürecektir.</html>"
 
 #: src/konqmainwindow.cpp:2224
 #, kde-format
@@ -861,12 +861,12 @@ msgstr "Kapatılmış Ögeler Geçmişini Temizle"
 #: src/konqmainwindow.cpp:2687
 #, kde-format
 msgid "Save As..."
-msgstr "Farklı Kaydet..."
+msgstr "Farklı Kaydet…"
 
 #: src/konqmainwindow.cpp:2689
 #, kde-format
 msgid "Manage..."
-msgstr "Yönet..."
+msgstr "Yönet…"
 
 #: src/konqmainwindow.cpp:3233
 #, kde-format
@@ -881,12 +881,12 @@ msgstr "&Pencereyi Çoğalt"
 #: src/konqmainwindow.cpp:3243
 #, kde-format
 msgid "Send &Link Address..."
-msgstr "&Bağlantı Adresini Gönder..."
+msgstr "&Bağlantı Adresini Gönder…"
 
 #: src/konqmainwindow.cpp:3247
 #, kde-format
 msgid "S&end File..."
-msgstr "D&osya Gönder..."
+msgstr "D&osya Gönder…"
 
 #: src/konqmainwindow.cpp:3251
 #, kde-format
@@ -896,12 +896,12 @@ msgstr "&Konum Aç"
 #: src/konqmainwindow.cpp:3257
 #, kde-format
 msgid "&Open File..."
-msgstr "D&osya Aç..."
+msgstr "D&osya Aç…"
 
 #: src/konqmainwindow.cpp:3262
 #, kde-format
 msgid "&Find File..."
-msgstr "Dosya &Bul..."
+msgstr "Dosya &Bul…"
 
 #: src/konqmainwindow.cpp:3271
 #, kde-format
@@ -950,12 +950,12 @@ msgstr "Geçmişi Göster"
 #: src/konqmainwindow.cpp:3354
 #, kde-format
 msgid "Configure Extensions..."
-msgstr "Eklentileri Yapılandır..."
+msgstr "Eklentileri Yapılandır…"
 
 #: src/konqmainwindow.cpp:3358
 #, kde-format
 msgid "Configure Spell Checking..."
-msgstr "Yazım Denetimini Yapılandır..."
+msgstr "Yazım Denetimini Yapılandır…"
 
 #: src/konqmainwindow.cpp:3364
 #, kde-format
@@ -1087,7 +1087,7 @@ msgstr "Y&er İmleri"
 #: src/konqmainwindow.cpp:3555
 #, kde-format
 msgid "Kon&queror Introduction"
-msgstr "&Konqueror'a Giriş"
+msgstr "&Konqueror’a Giriş"
 
 #: src/konqmainwindow.cpp:3560
 #, kde-format
@@ -1272,7 +1272,7 @@ msgid ""
 "explore many files from one folder"
 msgstr ""
 "Kilitlenmiş görünüm dizinleri değiştiremez. Bir dizinde çok sayıda dosyayı "
-"görüntülemek için 'bağlantı görünümü' ile birlikte kullanın"
+"görüntülemek için “bağlantı görünümü” ile birlikte kullanın"
 
 #: src/konqmainwindow.cpp:3632
 #, kde-format
@@ -1280,7 +1280,7 @@ msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
 "other linked views."
 msgstr ""
-"Görünümü 'bağlanmış' olarak ayarlar. Bağlanmış görünüm diğer bağlanmış "
+"Görünümü “bağlanmış” olarak ayarlar. Bağlanmış görünüm diğer bağlanmış "
 "görünümlerdeki klasör değişikliklerini izler."
 
 #: src/konqmainwindow.cpp:3636
@@ -1305,12 +1305,12 @@ msgstr "Geçerli sayfa için geliştirici araçlarını gösterir"
 #: src/konqmainwindow.cpp:3800
 #, kde-format
 msgid "Copy &Files..."
-msgstr "Do&syaları Kopyala..."
+msgstr "Do&syaları Kopyala…"
 
 #: src/konqmainwindow.cpp:3804
 #, kde-format
 msgid "M&ove Files..."
-msgstr "D&osyaları Taşı..."
+msgstr "D&osyaları Taşı…"
 
 #: src/konqmainwindow.cpp:4130
 #, kde-format
@@ -1425,7 +1425,7 @@ msgstr "Web Kenar Çubuğu"
 #: src/konqmainwindow.cpp:4913
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
-msgstr "\"%1\" web uzantısı kenar çubuğuna eklensin mi?"
+msgstr "“%1” web uzantısı kenar çubuğuna eklensin mi?"
 
 #: src/konqmainwindow.cpp:4915
 #, kde-format
@@ -1443,7 +1443,7 @@ msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
 "with %1, but it cannot handle this file type."
 msgstr ""
-"Bir yapılandırma hatası var gibi görünüyor. Konqueror'u %1 türündeki "
+"Bir yapılandırma hatası var gibi görünüyor. Konqueror’u %1 türündeki "
 "dosyalar ile ilişkilendirmişsiniz; ancak Konqueror bu tür dosyaları açamıyor."
 
 #: src/konqmainwindow.cpp:5348
@@ -1464,7 +1464,7 @@ msgstr ""
 "QtWebEngine, yalnızca sabit bir vekil destekler, bu nedenle otomatik "
 "yapılandırma ve Web Proxy Otomatik Keşif protokolu QtWebEngine ile birlikte "
 "kullanılamaz. Bir vekile gereksiniminiz varsa lütfen sistem vekil "
-"yapılandırmasını seçin veya ayarlar penceresinde elle bir vekil URL'si "
+"yapılandırmasını seçin veya ayarlar penceresinde elle bir vekil URL’si "
 "tanımlayın. Vekil ayarlarını şimdi değiştirmek istiyor musunuz?"
 
 #: src/konqmainwindow.cpp:5353
@@ -1517,7 +1517,7 @@ msgid ""
 "hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
 "Mode (%1)"
 msgstr ""
-"Tam Ekran Kipi'ne girdiniz (kullanıcı arayüzü tümüyle gizlendi). Çıkmak için "
+"Tam Ekran Kipi’ne girdiniz (kullanıcı arayüzü tümüyle gizlendi). Çıkmak için "
 "Tam Ekran Kipi klavye kısayolunu kullanın (%1)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -1566,7 +1566,7 @@ msgstr "Oturumu Kaydet"
 #, kde-format
 msgid ""
 "A session with the name '%1' already exists, do you want to overwrite it?"
-msgstr "'%1' adlı bir oturum zaten var. Üzerine yazmak istiyor musunuz?"
+msgstr "“%1” adlı bir oturum zaten var. Üzerine yazmak istiyor musunuz?"
 
 #: src/konqsessiondlg.cpp:252
 #, kde-format
@@ -1579,21 +1579,21 @@ msgstr "Oturum var. Üzerine yazılsın mı?"
 #, kde-format
 msgctxt "@action:button New session"
 msgid "New..."
-msgstr "Yeni..."
+msgstr "Yeni…"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
 #: src/konqsessiondlg_base.ui:33
 #, kde-format
 msgctxt "@action:button Save current session"
 msgid "Save Current..."
-msgstr "Geçerliyi Kaydet..."
+msgstr "Geçerliyi Kaydet…"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
 #: src/konqsessiondlg_base.ui:40
 #, kde-format
 msgctxt "@action:button Rename session"
 msgid "Rename..."
-msgstr "Yeniden Adlandır..."
+msgstr "Yeniden Adlandır…"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
 #: src/konqsessiondlg_base.ui:47
@@ -1734,7 +1734,7 @@ msgstr "Başlangıç Sayfası"
 #: src/konqueror.kcfg:12
 #, kde-format
 msgid "This is the URL of the web page where Konqueror will start from."
-msgstr "Bu, Konqueror'un başlayacağı web sayfasının URL'idir."
+msgstr "Bu, Konqueror’un başlayacağı web sayfasının URL’sidir."
 
 #. i18n: ectx: whatsthis, entry, group (UserSettings)
 #: src/konqueror.kcfg:17
@@ -1743,8 +1743,8 @@ msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \\"
 "\"Home\\\" button is pressed."
 msgstr ""
-"Bu Konqueror'un \\\"Ev\\\" düğmesine basıldığında gideceği web sayfasının "
-"URL'idir."
+"Bu, Konqueror’un “Ana Sayfa” düğmesine basıldığında gideceği web sayfasının "
+"URL’sidir."
 
 #. i18n: ectx: label, entry, group (UndoManagerSettings)
 #: src/konqueror.kcfg:26
@@ -1815,7 +1815,7 @@ msgstr ""
 #: src/konqueror.kcfg:60
 #, kde-format
 msgid "Show 'Delete' menu entries which bypass the trashcan"
-msgstr "Çöp kutusuna göndermeden silmek için 'Sil' menü girdilerini göster"
+msgstr "Çöp kutusuna göndermeden silmek için “Sil” menü girdilerini göster"
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:61
@@ -1825,9 +1825,9 @@ msgid ""
 "and in the file manager's menus and context menus. You can always delete "
 "files when hidden by holding the Shift key while calling 'Move to Trash'."
 msgstr ""
-"Dosya yöneticisi menülerinde, masaüstünde ve diğer menülerde 'Sil' "
+"Dosya yöneticisi menülerinde, masaüstünde ve diğer menülerde “Sil” "
 "girdisinin görünmesini istemiyorsanız bu seçeneği kapatabilirsiniz. Menü "
-"girdisi görünmese bile 'Çöp Kutusuna Taşı' işlemi yaparken Üst Karakter "
+"girdisi görünmese bile “Çöp Kutusuna Taşı” işlemi yaparken Üst Karakter "
 "düğmesine basılı tutarak silme işlemi yapabilirsiniz."
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
@@ -1877,7 +1877,7 @@ msgid ""
 "delete a file without using the trash folder. Warning, deleted files can not "
 "be recovered, so it is recommended to leave this confirmation enabled."
 msgstr ""
-"Çöp kullanmadan dosyaları silerken Konqueror'un onay sormasını bu seçenek "
+"Çöp kullanmadan dosyaları silerken Konqueror’un onay sormasını bu seçenek "
 "ile ayarlayabilirsiniz. Dikkat; silinen dosyalar geri getirilemez, bu "
 "nedenle bu seçeneğin açık olması önerilir."
 
@@ -1894,7 +1894,7 @@ msgid ""
 "This option tells Konqueror whether to ask for a confirmation when you move "
 "the file to your trash folder, from where it can be recovered very easily."
 msgstr ""
-"Çöp kutusuna taşıma işlemi için Konqueror'un onay istemesi bu seçenek ile "
+"Çöp kutusuna taşıma işlemi için Konqueror’un onay istemesi bu seçenek ile "
 "ayarlanır. Çöp kutusuna taşınmış dosyalar kolaylıkla geri getirilebilir."
 
 #. i18n: ectx: whatsthis, entry, group (Trash)
