@@ -20,7 +20,7 @@ class KonqUrlSchemeHandler : public QWebEngineUrlSchemeHandler
 {
     Q_OBJECT
 public:
-    KonqUrlSchemeHandler(QObject *parent=Q_NULLPTR);
+    KonqUrlSchemeHandler(QObject *parent=nullptr);
     ~KonqUrlSchemeHandler() Q_DECL_OVERRIDE;
     
     void requestStarted(QWebEngineUrlRequestJob *req) Q_DECL_OVERRIDE;
