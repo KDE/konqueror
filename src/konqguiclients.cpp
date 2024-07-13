@@ -93,7 +93,7 @@ ToggleViewGUIClient::ToggleViewGUIClient(KonqMainWindow *mainWindow)
     m_mainWindow = mainWindow;
 
     auto filter = [](const KPluginMetaData &md) {
-        if (!Konq::serviceTypes(md).contains(QStringLiteral("Browser/View"))) {
+        if (!(Konq::partCapabilities(md) & KParts::PartCapability::BrowserView)) {
             return false;
         }
         bool toggable = md.value(QStringLiteral("X-KDE-BrowserView-Toggable"), false);
@@ -167,7 +167,7 @@ void ToggleViewGUIClient::slotToggleView(bool toggle)
         }
         KonqView *childView = viewManager->splitMainContainer(m_mainWindow->currentView(),
                               horizontal ? Qt::Vertical : Qt::Horizontal,
-                              QStringLiteral("Browser/View"),
+                              {KParts::PartCapability::BrowserView},
                               serviceName,
                               !horizontal /* vertical = make it first */);
 

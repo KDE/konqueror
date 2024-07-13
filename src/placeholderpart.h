@@ -5,6 +5,8 @@
 #ifndef KONQ_PLACEHOLDERPART_H
 #define KONQ_PLACEHOLDERPART_H
 
+#include "konqutils.h"
+
 #include <KParts/ReadOnlyPart>
 
 namespace Konq {
@@ -44,7 +46,7 @@ public:
      * @note History information isn't included here because it's stored in the view itself
      */
     struct DelayedLoadingData {
-        QString mimeType; //!< The mimetype of the URL
+        ViewType type; //!< The type of the view. Currently, it should be a real mimetype
         QString serviceName; //!< serviceName the part plugin id
         bool openUrl; //!< Whether to open an URL after creating the part
         QUrl url; //!< The URL to load after creating the part

@@ -71,14 +71,14 @@ public:
      */
     KonqView *splitMainContainer(KonqView *currentView,
                                  Qt::Orientation orientation,
-                                 const QString &serviceType = QString(),
+                                 const Konq::ViewType &type = QString(),
                                  const QString &serviceName = QString(),
                                  bool newOneFirst = false);
 
     /**
      * Adds a tab to m_tabContainer
      */
-    KonqView *addTab(const QString &serviceType,
+    KonqView *addTab(const Konq::ViewType &type,
                      const QString &serviceName = QString(),
                      bool passiveMode = false, bool openAfterCurrentPage = false, int pos = -1);
 
@@ -352,7 +352,7 @@ private:
      * it clones the current view.
      * Returns the newly created view.
      */
-    KonqViewFactory createView(const QString &serviceType,  /* can be servicetype or mimetype */
+    KonqViewFactory createView(const Konq::ViewType &type,
                                const QString &serviceName,
                                KPluginMetaData &service,
                                QVector<KPluginMetaData> &partServiceOffers,
@@ -368,7 +368,7 @@ private:
                         const KPluginMetaData &service,
                         const QVector<KPluginMetaData> &partServiceOffers,
                         const KService::List &appServiceOffers,
-                        const QString &serviceType,
+                        const Konq::ViewType &type,
                         bool passiveMode, bool openAfterCurrentPage = false, int pos = -1);
 
     KonqView* setupView(KonqFrameContainerBase *parentContainer, bool passiveMode, bool openAfterCurrentPage = false, int pos = -1);
@@ -421,9 +421,9 @@ private:
      * @param cfg the configuration group to read history from
      * @param prefix the prefix to append to keys to read entries in @p cfg
      * @param defaultURL a default URL to use
-     * @param serviceType the service type to display
+     * @param type the type of the view to display
      */
-    void restoreViewOutsideTabContainer(KonqView *view, const KConfigGroup &cfg, const QString &prefix, const QUrl &defaultURL, const QString &serviceType);
+    void restoreViewOutsideTabContainer(KonqView *view, const KConfigGroup &cfg, const QString &prefix, const QUrl &defaultURL, const Konq::ViewType &type);
 
 #ifndef NDEBUG
     //just for debugging

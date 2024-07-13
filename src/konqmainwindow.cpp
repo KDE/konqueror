@@ -165,6 +165,10 @@
 
 #include <KCModule>
 
+#include "konqutils.h"
+
+using namespace Konq;
+
 template class QList<QPixmap *>;
 template class QList<KToggleAction *>;
 
@@ -711,7 +715,7 @@ static QString preferredService(KonqView *currentView, const QString &mimeType)
 }
 
 //TODO After removing KonqRun: some of this becomes redundant, at least when called via UrlLoader. Can this be avoided?
-bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *childView, const KonqOpenURLRequest &req, QUrl requestedUrl)
+bool KonqMainWindow::openView(ViewType type, const QUrl &_url, KonqView *childView, const KonqOpenURLRequest &req, QUrl requestedUrl)
 {
     // Second argument is referring URL
     if (!KUrlAuthorized::authorizeUrlAction(QStringLiteral("open"), childView ? childView->url() : QUrl(), _url)) {
@@ -734,7 +738,7 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
     // Contract: the caller of this method should ensure the view is stopped first.
 
 #ifndef NDEBUG
-    qCDebug(KONQUEROR_LOG) << mimeType << _url << "childView=" << childView << "req:" << req.debug();
+    qCDebug(KONQUEROR_LOG) << type << _url << "childView=" << childView << "req:" << req.debug();
 #endif
     bool bOthersFollowed = false;
 
@@ -752,10 +756,10 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
                 newreq.followMode = true;
                 newreq.args = req.args;
                 newreq.browserArgs = req.browserArgs;
-                bOthersFollowed = openView(mimeType, _url, m_currentView, newreq);
+                bOthersFollowed = openView(type, _url, m_currentView, newreq);
             }
             // "link views" feature, and "sidebar follows active view" feature
-            bOthersFollowed = makeViewsFollow(_url, req.args, req.browserArgs, mimeType, childView) || bOthersFollowed;
+            bOthersFollowed = makeViewsFollow(_url, req.args, req.browserArgs, type, childView) || bOthersFollowed;
         }
         if (childView->isLockedLocation() && !req.args.reload() /* allow to reload a locked view*/) {
             return bOthersFollowed;
@@ -787,7 +791,7 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
 
     const QString urlStr = url.url();
     if (KonqUrl::isValidNotBlank(urlStr)) {
-        mimeType = QStringLiteral("text/html");
+        type = {QStringLiteral("text/html")};
         originalURL = req.typedUrl.isEmpty() ? QString() : req.typedUrl;
     } else if (KonqUrl::isKonqBlank(urlStr) && req.typedUrl.isEmpty()) {
         originalURL.clear();
@@ -801,16 +805,16 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
         forceAutoEmbed = true;
     }
     // Related to KonqFactory::createView
-    if (!forceAutoEmbed && !KonqFMSettings::settings()->shouldEmbed(mimeType)) {
-        qCDebug(KONQUEROR_LOG) << "KonqFMSettings says: don't embed this servicetype";
+    if (!forceAutoEmbed && !KonqFMSettings::settings()->shouldEmbed(type.toString())) {
+        qCDebug(KONQUEROR_LOG) << "KonqFMSettings says: don't embed this mimetype";
         return false;
     }
     // Do we even have a part to embed? Otherwise don't ask, since we'd ask twice.
     if (!forceAutoEmbed) {
         QVector<KPluginMetaData> partServiceOffers;
-        KonqFactory::getOffers(mimeType, &partServiceOffers);
+        KonqFactory::getOffers(type, &partServiceOffers);
         if (partServiceOffers.isEmpty()) {
-            qCDebug(KONQUEROR_LOG) << "No part available for" << mimeType;
+            qCDebug(KONQUEROR_LOG) << "No part available for" << type;
             return false;
         }
     }
@@ -841,11 +845,12 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
     // }
 
     bool ok = true;
+    QString mimeType = type.isMimetype() ? type.mimetype().value() : QString();
     if (!childView) {
         if (req.browserArgs.newTab()) {
             KonqFrameTabs *tabContainer = m_pViewManager->tabContainer();
             int index = tabContainer->currentIndex();
-            childView = m_pViewManager->addTab(mimeType, serviceName, false, req.openAfterCurrentPage);
+            childView = m_pViewManager->addTab(type, serviceName, false, req.openAfterCurrentPage);
 
             if (req.newTabInFront && childView) {
                 if (req.openAfterCurrentPage) {
@@ -861,6 +866,9 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
             // createFirstView always uses force auto-embed even if user setting is "separate viewer",
             // since this window has no view yet - we don't want to keep an empty mainwindow.
             // This can happen with e.g. application/pdf from a target="_blank" link, or window.open.
+            if (mimeType.isEmpty()) {
+                return false;
+            }
             childView = m_pViewManager->createFirstView(mimeType, serviceName);
 
             if (childView) {
@@ -888,7 +896,7 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
                     if (childView->isLoading()) { // Stop the view first, #282641.
                         childView->stop();
                     }
-                    ok = childView->changePart(mimeType, serviceName, forceAutoEmbed);
+                    ok = childView->changePart(type, serviceName, forceAutoEmbed);
                 } else {
                     ok = childView->ensureViewSupports(mimeType, forceAutoEmbed);
                 }
@@ -1011,14 +1019,14 @@ QObject *KonqMainWindow::lastFrame(KonqView *view)
 bool KonqMainWindow::makeViewsFollow(const QUrl &url,
                                      const KParts::OpenUrlArguments &args,
                                      const BrowserArguments &browserArgs,
-                                     const QString &serviceType, KonqView *senderView)
+                                     const ViewType &type, KonqView *senderView)
 {
     if (!senderView->isLinkedView() && senderView != m_currentView) {
         return false;    // none of those features apply -> return
     }
 
     bool res = false;
-    //qCDebug(KONQUEROR_LOG) << senderView->metaObject()->className() << "url=" << url << "serviceType=" << serviceType;
+    //qCDebug(KONQUEROR_LOG) << senderView->metaObject()->className() << "url=" << url << "type =" << type;
     KonqOpenURLRequest req;
     req.forceAutoEmbed = true;
     req.followMode = true;
@@ -1054,11 +1062,11 @@ bool KonqMainWindow::makeViewsFollow(const QUrl &url,
                 view->stop();
             }
 
-            followed = openView(serviceType, url, view, req);
+            followed = openView(type, url, view, req);
         } else {
             // Make the sidebar follow the URLs opened in the active view
             if (view->isFollowActive() && senderView == m_currentView) {
-                followed = openView(serviceType, url, view, req);
+                followed = openView(type, url, view, req);
             }
         }
 
@@ -1594,7 +1602,8 @@ void KonqMainWindow::slotReload(KonqView *reloadView)
     if (reloadView->prepareReload(req.args, req.browserArgs)) {
         reloadView->lockHistory();
         // Reuse current servicetype for local files, but not for remote files (it could have changed, e.g. over HTTP)
-        QString serviceType = reloadView->url().isLocalFile() ? reloadView->serviceType() : QString();
+        //WARNING: Assuming this is a real mimetype, not KParts::Capability::BrowserView
+        QString serviceType = reloadView->url().isLocalFile() ? reloadView->type().mimetype().value() : QString();
         // By using locationBarURL instead of url, we preserve name filters (#54687)
         QUrl reloadUrl = QUrl::fromUserInput(reloadView->locationBarURL(), QString(), QUrl::AssumeLocalFile);
         if (reloadUrl.isEmpty()) { // e.g. initial screen
@@ -2131,7 +2140,8 @@ void KonqMainWindow::splitCurrentView(Qt::Orientation orientation)
     KonqOpenURLRequest req;
     req.forceAutoEmbed = true;
 
-    QString mime = oldView->serviceType();
+    //Toggable views can't be split, so assume oldView has a mimetype and not KParts::Capability::BrowserView
+    QString mime = oldView->type().isMimetype() ? oldView->type().mimetype().value() : QString();
     QUrl url = oldView->url();
     const bool alwaysDuplicateView = Konq::Settings::alwaysDuplicatePageWhenSplittingView();
     //TODO KF6: check whether this works correctly
@@ -2635,7 +2645,7 @@ void KonqMainWindow::slotGoHistoryDelayed()
         makeViewsFollow(m_currentView->url(),
                         KParts::OpenUrlArguments(),
                         BrowserArguments(),
-                        m_currentView->serviceType(),
+                        m_currentView->type(),
                         m_currentView);
     }
 
@@ -4428,7 +4438,7 @@ void KonqMainWindow::slotOpenEmbedded(const KPluginMetaData &part)
     m_currentView->stop();
     m_currentView->setLocationBarURL(m_popupUrl);
     m_currentView->setTypedURL(QString());
-    if (m_currentView->changePart(m_popupMimeType,
+    if (m_currentView->changePart({m_popupMimeType},
                                   part.pluginId(), true)) {
         m_currentView->openUrl(m_popupUrl, m_popupUrl.toDisplayString(QUrl::PreferLocalFile));
     }
@@ -5424,7 +5434,7 @@ void KonqMainWindow::inspectCurrentPage()
     KonqOpenURLRequest req;
     req.forceAutoEmbed = true;
 
-    openView("text/html", QUrl(), devToolsView, req);
+    openView(QStringLiteral("text/html"), QUrl(), devToolsView, req);
     QMetaObject::invokeMethod(devToolsView->part(), "setInspectedPart", Qt::DirectConnection, Q_ARG(KParts::ReadOnlyPart*, partToInspect));
 }
 

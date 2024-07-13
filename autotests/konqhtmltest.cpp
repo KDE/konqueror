@@ -82,7 +82,7 @@ private Q_SLOTS:
         QVERIFY(view->part());
         QSignalSpy spyCompleted(view, &KonqView::viewCompleted);
         QVERIFY(spyCompleted.wait(20000));
-        QCOMPARE(view->serviceType(), QString("text/html"));
+        QCOMPARE(view->type().mimetype().value(), QString("text/html"));
         WebEnginePart* part = qobject_cast<WebEnginePart *>(view->part());
         QVERIFY(part);
     }
@@ -99,7 +99,7 @@ private Q_SLOTS:
         if (view->aborted()) {
             qDebug() << "Waiting for second completed signal";
             QVERIFY(spyCompleted.wait(20000));        // which then opens the right part
-            QCOMPARE(view->serviceType(), QString("inode/directory"));
+            QCOMPARE(view->type().mimetype().value(), QString("inode/directory"));
         } else {
             // WebEngine can actually list directories, no error.
             // To test this: konqueror --mimetype text/html $HOME
@@ -203,7 +203,7 @@ private Q_SLOTS:
         QVERIFY(view->part());
         QSignalSpy spyCompleted(view, &KonqView::viewCompleted);
         QVERIFY(spyCompleted.wait(20000));
-        QCOMPARE(view->serviceType(), QString("text/html"));
+        QCOMPARE(view->type().mimetype().value(), QString("text/html"));
         delete view->part();
         QTRY_VERIFY(!mainWindow); // the window gets deleted
     }

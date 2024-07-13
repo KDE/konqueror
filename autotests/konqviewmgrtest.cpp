@@ -417,7 +417,7 @@ static void openHtmlWithLink(KonqMainWindow &mainWindow)
     QVERIFY(view);
     QSignalSpy spyCompleted(view, &KonqView::viewCompleted);
     QVERIFY(spyCompleted.wait(20000));
-    QCOMPARE(view->serviceType(), QString("text/html"));
+    QCOMPARE(view->type().mimetype().value(), QString("text/html"));
 }
 
 void ViewMgrTest::testLinkedViews()
@@ -432,7 +432,7 @@ void ViewMgrTest::testLinkedViews()
     mainWindow.slotSplitViewHorizontal();
     KonqView *view2 = mainWindow.currentView();
     QVERIFY(view2);
-    QCOMPARE(view2->serviceType(), QString("text/html"));
+    QCOMPARE(view2->type().mimetype().value(), QString("text/html"));
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)]."));   // mainWindow, tab widget, one splitter, two frames
     QSignalSpy spyCompleted(view2, &KonqView::viewCompleted);
     QVERIFY(spyCompleted.wait(20000));

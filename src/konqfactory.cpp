@@ -70,7 +70,7 @@ static KonqViewFactory tryLoadingService(const KPluginMetaData &data)
 }
 
 //TODO port away from query: check whether this output type arguments can be replaced by something else
-KonqViewFactory KonqFactory::createView(const QString &serviceType,
+KonqViewFactory KonqFactory::createView(const Konq::ViewType &type,
                                         const QString &serviceName,
                                         KPluginMetaData *serviceImpl,
                                         QVector<KPluginMetaData> *partServiceOffers,
@@ -78,14 +78,14 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
                                         bool forceAutoEmbed)
 {
     //TODO port away from query: check whether service name can be empty
-    qCDebug(KONQUEROR_LOG) << "Trying to create view for" << serviceType << serviceName;
+    qCDebug(KONQUEROR_LOG) << "Trying to create view for" << type << serviceName;
 
     // We need to get those in any case
     QVector<KPluginMetaData> offers;
     KService::List appOffers;
 
     // Query the plugins
-    getOffers(serviceType, &offers, &appOffers);
+    getOffers(type, &offers, &appOffers);
 
     if (partServiceOffers) {
         (*partServiceOffers) = offers;
@@ -94,6 +94,8 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
         (*appServiceOffers) = appOffers;
     }
 
+    const QString mimetype = type.isMimetype() ? type.mimetype().value() : QString();
+
     // We ask ourselves whether to do it or not only if no service was specified.
     // If it was (from the View menu or from RMB + Embedding service), just do it.
     forceAutoEmbed = forceAutoEmbed || !serviceName.isEmpty();
@@ -101,11 +103,11 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
     forceAutoEmbed = forceAutoEmbed || (appOffers.isEmpty() && !offers.isEmpty());
     // Or if the associated app is konqueror itself, then embed.
     if (!appOffers.isEmpty()) {
-        forceAutoEmbed = forceAutoEmbed || KonqMainWindow::isMimeTypeAssociatedWithSelf(serviceType, appOffers.first());
+        forceAutoEmbed = forceAutoEmbed || KonqMainWindow::isMimeTypeAssociatedWithSelf(mimetype, appOffers.first());
     }
 
     if (! forceAutoEmbed) {
-        if (! KonqFMSettings::settings()->shouldEmbed(serviceType)) {
+        if (! KonqFMSettings::settings()->shouldEmbed(mimetype)) {
             qCDebug(KONQUEROR_LOG) << "KonqFMSettings says: don't embed this servicetype";
             return KonqViewFactory();
         }
@@ -150,7 +152,7 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
 
     if (viewFactory.isNull()) {
         if (offers.isEmpty()) {
-            qCWarning(KONQUEROR_LOG) << "no part was associated with" << serviceType;
+            qCWarning(KONQUEROR_LOG) << "no part was associated with" << type;
         } else {
             qCWarning(KONQUEROR_LOG) << "no part could be loaded";    // full error was shown to user already
         }
@@ -162,7 +164,7 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
         args << QVariant(str);
     }
 
-    if (Konq::serviceTypes(service).contains(QStringLiteral("Browser/View"))) {
+    if (Konq::partCapabilities(service) & KParts::PartCapability::BrowserView) {
         args << QLatin1String("Browser/View");
     }
 
@@ -170,23 +172,22 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
     return viewFactory;
 }
 
-void KonqFactory::getOffers(const QString &serviceType, QVector<KPluginMetaData> *partServiceOffers, KService::List *appServiceOffers)
+void KonqFactory::getOffers(const Konq::ViewType &type, QVector<KPluginMetaData> *partServiceOffers, KService::List *appServiceOffers)
 {
-#ifdef __GNUC__
-#warning Temporary hack -- must separate mimetypes and servicetypes better
-#endif
-    if (partServiceOffers && serviceType.length() > 0 && serviceType[0].isUpper()) {
-        //TODO port away from query: check whether it's still necessary to exclude kfmclient* from this vector (they aren't parts, so I think they shouldn't be included here)
-        auto filter = [serviceType](const KPluginMetaData &md){return Konq::serviceTypes(md).contains(serviceType);};
-        *partServiceOffers = findParts(filter);
-        //Some parts, in particular konsolepart (at least version 22.12.3), aren't installed if kf5/parts but in the plugins directory, so we need to look for them separately
-        //TODO: remove this line when (if) all parts are installed in kf5/parts
-        partServiceOffers->append(KPluginMetaData::findPlugins(QString(), filter));
+    if (type.isCapability()) {
+        if (partServiceOffers) {
+            //TODO port away from query: check whether it's still necessary to exclude kfmclient* from this vector (they aren't parts, so I think they shouldn't be included here)
+            auto filter = [type](const KPluginMetaData &md){return Konq::partCapabilities(md) & type.capability().value();};
+            *partServiceOffers = findParts(filter);
+            //Some parts, in particular konsolepart (at least version 22.12.3), aren't installed if kf5/parts but in the plugins directory, so we need to look for them separately
+            //TODO: remove this line when (if) all parts are installed in kf5/parts
+            partServiceOffers->append(KPluginMetaData::findPlugins(QString(), filter));
+        }
         return;
     }
 
-    if (partServiceOffers) {
-        const QVector<KPluginMetaData> offers = KParts::PartLoader::partsForMimeType(serviceType);
+    if (partServiceOffers ) {
+        const QVector<KPluginMetaData> offers = KParts::PartLoader::partsForMimeType(type.mimetype().value());
 
         //If a part has both JSON metadata and a .desktop file, partsForMimeType return the plugin twice. To avoid this, we remove the duplicate entries
         //We can't use std::unique because it requires the vector to be sorted but we can't do that because the entries are sorted according to user
@@ -204,6 +205,6 @@ void KonqFactory::getOffers(const QString &serviceType, QVector<KPluginMetaData>
         *partServiceOffers = uniqueOffers;
     }
     if (appServiceOffers) {
-        *appServiceOffers = KApplicationTrader::queryByMimeType(serviceType, [](const KService::Ptr &s){return !s->desktopEntryName().startsWith("kfmclient");});
+        *appServiceOffers = KApplicationTrader::queryByMimeType(type.mimetype().value(), [](const KService::Ptr &s){return !s->desktopEntryName().startsWith("kfmclient");});
     }
 }

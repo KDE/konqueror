@@ -25,7 +25,7 @@ void KonqViewAdaptor::openUrl(const QString &url, const QString &locationBarURL,
 bool KonqViewAdaptor::changeViewMode(const QString &mimeType,
                                      const QString &serviceName)
 {
-    return m_pView->changePart(mimeType, serviceName);
+    return m_pView->changePart({mimeType}, serviceName);
 }
 
 void KonqViewAdaptor::lockHistory()
@@ -49,14 +49,25 @@ QString KonqViewAdaptor::locationBarURL()
     return m_pView->locationBarURL();
 }
 
-QString KonqViewAdaptor::serviceType()
+QString KonqViewAdaptor::type()
 {
-    return m_pView->serviceType();
+    return m_pView->type().toString();
 }
 
 QStringList KonqViewAdaptor::serviceTypes()
 {
-    return m_pView->serviceTypes();
+    KParts::PartCapabilities capabilities = m_pView->partCapabilities();
+    QStringList serviceTypes;
+    if (capabilities & KParts::PartCapability::ReadOnly) {
+        serviceTypes << QLatin1String("KParts/ReadOnlyPart");
+    }
+    if (capabilities & KParts::PartCapability::ReadWrite) {
+        serviceTypes <<  QStringLiteral("KParts/ReadWritePart");
+    }
+    if (capabilities & KParts::PartCapability::BrowserView) {
+        serviceTypes << QStringLiteral("Browser/View");
+    }
+    return serviceTypes;
 }
 
 QDBusObjectPath KonqViewAdaptor::part()

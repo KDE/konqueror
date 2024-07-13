@@ -62,6 +62,8 @@
 
 //#define DEBUG_HISTORY
 
+using namespace Konq;
+
 KonqView::KonqView(KonqFrame *viewFrame, KonqMainWindow *mainWindow) :
     m_pPart{nullptr},
     m_pageSecurity{KonqMainWindow::NotCrypted},
@@ -97,7 +99,7 @@ KonqView::KonqView(KonqViewFactory &viewFactory,
                    const KPluginMetaData &service,
                    const QVector<KPluginMetaData> &partServiceOffers,
                    const KService::List &appServiceOffers,
-                   const QString &serviceType,
+                   const ViewType &serviceType,
                    bool passiveMode
                   )
 {
@@ -115,7 +117,7 @@ KonqView::KonqView(KonqViewFactory &viewFactory,
     m_service = service;
     m_partServiceOffers = partServiceOffers;
     m_appServiceOffers = appServiceOffers;
-    m_serviceType = serviceType;
+    m_type = serviceType;
 
     m_lstHistoryIndex = -1;
     m_bLoading = false;
@@ -276,7 +278,7 @@ void KonqView::switchViewMode(const QString& newPluginId, const QString& newInte
         const QUrl origUrl = realUrl();
         const QString locationBarURL = m_sLocationBarURL;
         bool tempFile = !m_tempFile.isEmpty();
-        changePart(serviceType(), newPluginId);
+        changePart(type(), newPluginId);
         openUrl(origUrl, locationBarURL, {}, tempFile, url());
     }
     if (changeViewMode){
@@ -341,16 +343,17 @@ void KonqView::switchView(KonqViewFactory &viewFactory, bool allowPlaceholder)
 bool KonqView::ensureViewSupports(const QString &mimeType,
                                   bool forceAutoEmbed)
 {
+    ViewType type{mimeType};
     if (supportsMimeType(mimeType)) {
         // could be more specific, let's store it so that OpenUrlArguments::mimeType is correct
         // testcase: http://acid3.acidtests.org/svg.xml should be opened as image/svg+xml
-        m_serviceType = mimeType;
+        m_type = type;
         return true;
     }
-    return changePart(mimeType, QString(), forceAutoEmbed);
+    return changePart(type, QString(), forceAutoEmbed);
 }
 
-bool KonqView::changePart(const QString &mimeType,
+bool KonqView::changePart(const ViewType &type,
                           const QString &serviceName,
                           bool forceAutoEmbed)
 {
@@ -362,7 +365,7 @@ bool KonqView::changePart(const QString &mimeType,
     //             << "current service name=" << m_service->desktopEntryName();
 
     if (serviceName == m_service.pluginId()) {
-        m_serviceType = mimeType;
+        m_type = type;
         return true;
     }
 
@@ -375,20 +378,20 @@ bool KonqView::changePart(const QString &mimeType,
     KService::List appServiceOffers;
     KPluginMetaData service;
     KonqFactory konqFactory;
-    KonqViewFactory viewFactory = konqFactory.createView(mimeType, serviceName, &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed);
+    KonqViewFactory viewFactory = konqFactory.createView(type, serviceName, &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed);
 
     if (viewFactory.isNull()) {
         return false;
     }
 
-    m_serviceType = mimeType;
+    m_type = type;
     m_partServiceOffers = partServiceOffers;
     m_appServiceOffers = appServiceOffers;
 
     // Check if that's already the kind of part we have -> no need to recreate it
     // Note: we should have an operator== for KService...
     if (m_service.isValid() && m_service.pluginId() == service.pluginId()) {
-        qCDebug(KONQUEROR_LOG) << "Reusing service. Service type set to" << m_serviceType;
+        qCDebug(KONQUEROR_LOG) << "Reusing service. Service type set to" << m_type;
         if (m_pMainWindow->currentView() == this) {
             m_pMainWindow->updateViewModeActions();
         }
@@ -847,7 +850,7 @@ void KonqView::updateHistoryEntry(bool needsReload)
     qCDebug(KONQUEROR_LOG) << "Saving title:" << m_caption << "in history position" << historyIndex();
 #endif
     current->title = m_caption;
-    current->strServiceType = m_serviceType;
+    current->strViewType = m_type.toString();
     current->strServiceName = m_service.pluginId();
 
     current->doPost = m_doPost;
@@ -901,8 +904,8 @@ void KonqView::restoreHistory()
     setPageSecurity(h.pageSecurity);
     m_sTypedURL.clear();
 
-    if (!changePart(h.strServiceType, h.strServiceName)) {
-        qCWarning(KONQUEROR_LOG) << "Couldn't change view mode to" << h.strServiceType << h.strServiceName;
+    if (!changePart(ViewType::fromString(h.strViewType), h.strServiceName)) {
+        qCWarning(KONQUEROR_LOG) << "Couldn't change view mode to" << h.strViewType << h.strServiceName;
         return /*false*/;
     }
 
@@ -1079,7 +1082,7 @@ void KonqView::aboutToOpenURL(const QUrl &url, const KParts::OpenUrlArguments &a
 void KonqView::setPartMimeType()
 {
     KParts::OpenUrlArguments args(m_pPart->arguments());
-    args.setMimeType(m_serviceType);
+    args.setMimeType(m_type.isMimetype() ? m_type.mimetype().value() : QString());
     m_pPart->setArguments(args);
 }
 
@@ -1303,8 +1306,11 @@ KParts::StatusBarExtension *KonqView::statusBarExtension() const
 
 QMimeType KonqView::mimeType() const
 {
+    if (m_type.isCapability()) {
+        return {};
+    }
     QMimeDatabase db;
-    return db.mimeTypeForName(serviceType());
+    return db.mimeTypeForName(type().mimetype().value());
 }
 
 bool KonqView::supportsMimeType(const QString &mimeType) const
@@ -1335,7 +1341,7 @@ void HistoryEntry::saveConfig(KConfigGroup &config, const QString &prefix, const
         config.writeEntry(QStringLiteral("Url").prepend(prefix), url.url());
         config.writeEntry(QStringLiteral("LocationBarURL").prepend(prefix), locationBarURL);
         config.writeEntry(QStringLiteral("Title").prepend(prefix), title);
-        config.writeEntry(QStringLiteral("StrServiceType").prepend(prefix), strServiceType);
+        config.writeEntry(QStringLiteral("StrServiceType").prepend(prefix), strViewType);
         config.writeEntry(QStringLiteral("StrServiceName").prepend(prefix), strServiceName);
     } else if (options & KonqFrameBase::SaveHistoryItems) {
         config.writeEntry(QStringLiteral("Url").prepend(prefix), url.url());
@@ -1343,7 +1349,7 @@ void HistoryEntry::saveConfig(KConfigGroup &config, const QString &prefix, const
         config.writeEntry(QStringLiteral("LocationBarURL").prepend(prefix), locationBarURL);
         config.writeEntry(QStringLiteral("Title").prepend(prefix), title);
         config.writeEntry(QStringLiteral("Buffer").prepend(prefix), buffer);
-        config.writeEntry(QStringLiteral("StrServiceType").prepend(prefix), strServiceType);
+        config.writeEntry(QStringLiteral("StrServiceType").prepend(prefix), strViewType);
         config.writeEntry(QStringLiteral("StrServiceName").prepend(prefix), strServiceName);
         config.writeEntry(QStringLiteral("PostData").prepend(prefix), postData);
         config.writeEntry(QStringLiteral("PostContentType").prepend(prefix), postContentType);
@@ -1360,7 +1366,7 @@ HistoryEntry* HistoryEntry::fromDelayedLoadingData(const KConfigGroup& config, c
         entry->url = QUrl(config.readEntry(QStringLiteral("Url").prepend(prefix), ""));
         entry->locationBarURL = config.readEntry(QStringLiteral("LocationBarURL").prepend(prefix), "");
         entry->title = config.readEntry(QStringLiteral("Title").prepend(prefix), "");
-        entry->strServiceType = config.readEntry(QStringLiteral("StrServiceType").prepend(prefix), "");
+        entry->strViewType = config.readEntry(QStringLiteral("StrServiceType").prepend(prefix), "");
         entry->strServiceName = config.readEntry(QStringLiteral("StrServiceName").prepend(prefix), "");
     }
     if (options & KonqFrameBase::SaveUrls) {
@@ -1389,11 +1395,11 @@ void KonqView::saveConfig(KConfigGroup &config, const QString &prefix, const Kon
     //This can happen when loading a session with several tabs, then saving it again without activating all the
     //tabs
     Konq::PlaceholderPart *plPart = placeholderPart();
-    QString mimeType = plPart ? plPart->delayedLoadingData().mimeType : serviceType();
+    QString viewType = (plPart ? plPart->delayedLoadingData().type : type()).toString();
     QString serviceName = plPart ? plPart->delayedLoadingData().serviceName : service().pluginId();
     bool locked = plPart ? plPart->delayedLoadingData().lockedLocation : isLockedLocation();
 
-    config.writeEntry(QStringLiteral("ServiceType").prepend(prefix), mimeType);
+    config.writeEntry(QStringLiteral("ServiceType").prepend(prefix), viewType);
     config.writeEntry(QStringLiteral("ServiceName").prepend(prefix), serviceName);
     config.writeEntry(QStringLiteral("PassiveMode").prepend(prefix), isPassiveMode());
     config.writeEntry(QStringLiteral("LinkedView").prepend(prefix), isLinkedView());
@@ -1422,13 +1428,13 @@ void KonqView::saveConfig(KConfigGroup &config, const QString &prefix, const Kon
     }
 }
 
-void KonqView::storeDelayedLoadingData(const QString& mimeType, const QString& serviceName, bool openUrl, const QUrl& url, bool lockedLocation, const KConfigGroup& grp, const QString& prefix)
+void KonqView::storeDelayedLoadingData(const ViewType& type, const QString& serviceName, bool openUrl, const QUrl& url, bool lockedLocation, const KConfigGroup& grp, const QString& prefix)
 {
     Konq::PlaceholderPart *plPart = placeholderPart();
     if (!plPart) {
         return;
     }
-    plPart->setDelayedLoadingData({mimeType, serviceName, openUrl, url, lockedLocation});
+    plPart->setDelayedLoadingData({type, serviceName, openUrl, url, lockedLocation});
 
     const QString keyHistoryItems = QStringLiteral("NumberOfHistoryItems").prepend(prefix);
 
@@ -1462,7 +1468,7 @@ void KonqView::loadDelayed()
     }
 
     Konq::PlaceholderPart::DelayedLoadingData data = plPart->delayedLoadingData();
-    changePart(data.mimeType, data.serviceName, true);
+    changePart({data.type}, data.serviceName, true);
 
     if (data.openUrl) {
         if (m_lstHistory.isEmpty()) {
@@ -1471,7 +1477,7 @@ void KonqView::loadDelayed()
             if (!KonqUrl::hasKonqScheme(url)) {
                 req.typedUrl = url.toDisplayString();
             }
-            m_pMainWindow->openView(data.mimeType, url, this, req);
+            m_pMainWindow->openView(data.type, url, this, req);
         } else {
             restoreHistory();
         }

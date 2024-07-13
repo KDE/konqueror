@@ -46,6 +46,7 @@ public slots:
      * @param mimeType the mime type we want to show
      * @param serviceName allows to enforce a particular service to be chosen,
      *        @see KonqFactory.
+     * @note This assumes mimeType is a real mimetype, not `"Browser/View"`
      */
     bool changeViewMode(const QString &mimeType,
                         const QString &serviceName);
@@ -75,7 +76,7 @@ public slots:
     /**
      * @return the servicetype this view is currently displaying
      */
-    QString serviceType();
+    QString type();
 
     /**
      * @return the servicetypes this view is capable to display

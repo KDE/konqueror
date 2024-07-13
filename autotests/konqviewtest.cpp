@@ -33,7 +33,7 @@ private Q_SLOTS:
         QVERIFY(view->part());
         QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
         QVERIFY(spyCompleted.wait(10000));
-        QCOMPARE(view->serviceType(), QString("text/plain"));
+        QCOMPARE(view->type().mimetype().value(), QString("text/plain"));
         const QString firstService = view->service().pluginId();
         qDebug() << firstService;
         QVERIFY(view->supportsMimeType("text/html")); // it does, since that's a mimetype subclass

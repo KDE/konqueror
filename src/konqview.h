@@ -38,6 +38,7 @@ class StatusBarExtension;
 
 namespace Konq {
     class PlaceholderPart;
+    class ViewType;
 }
 
 // TODO: make the history-handling code reuseable (e.g. in kparts) for people who want to use a
@@ -50,7 +51,7 @@ struct HistoryEntry {
     QString locationBarURL; // can be different from url when showing a index.html
     QString title;
     QByteArray buffer;
-    QString strServiceType;
+    QString strViewType;
     QString strServiceName;
     QByteArray postData;
     QString postContentType;
@@ -85,7 +86,7 @@ public:
      * @param service the service implementing the part
      * @param partServiceOffers list of part offers found by the factory
      * @param appServiceOffers list of app offers found by the factory
-     * @param serviceType the serviceType implemented by the part
+     * @param type the part capability or mimetype
      * @param passiveMode whether to initially make the view passive
      */
     KonqView(KonqViewFactory &viewFactory,
@@ -94,7 +95,7 @@ public:
              const KPluginMetaData &service,
              const QVector<KPluginMetaData> &partServiceOffers,
              const KService::List &appServiceOffers,
-             const QString &serviceType,
+             const Konq::ViewType &type,
              bool passiveMode);
 
     ~KonqView() override;
@@ -121,13 +122,13 @@ public:
      * Change the part inside this view if necessary.
      * Contract: the caller should call stop() first.
      *
-     * @param mimeType the mime type we want to show
+     * @param type the type we want to show
      * @param serviceName allows to enforce a particular service to be chosen,
      *        @see KonqFactory.
      * @param forceAutoEmbed
      * @param dontDeleteTemporaryFile
      */
-    bool changePart(const QString &mimeType,
+    bool changePart(const Konq::ViewType &type,
                     const QString &serviceName = QString(),
                     bool forceAutoEmbed = false);
 
@@ -342,27 +343,33 @@ public:
     }
 
     /**
-     * @return the servicetype this view is currently displaying
-     * This is usually a mimetype, but it can be "Browser/View"
+     * @return the view type this view is currently displaying
+     * This is usually a mimetype, but it could also be the part
+     * capability `KParts::BrowserView`
      * for toggle views like the sidebar or the embedded konsole.
+     * It should never be `KParts::ReadOnlyPart`, because all parts have this capability,
+     * or `KParts::ReadWritePart`
      */
-    QString serviceType() const
+    Konq::ViewType type() const
     {
-        return m_serviceType;
+        return m_type;
     }
 
     /**
      * The mimetype this view is currently displaying.
-     * Can be invalid, if serviceType() is not a mimetype.
+     * Can be invalid, if type() is a part capability
      */
     QMimeType mimeType() const;
 
     /**
      * @return the servicetypes this view is capable to display
      */
-    QStringList serviceTypes() const
-    {
-        return Konq::serviceTypes(m_service);
+    // QStringList serviceTypes() const
+    // {
+    //     return Konq::serviceTypes(m_service);
+    // }
+    KParts::PartCapabilities partCapabilities() const {
+        return Konq::partCapabilities(m_service);
     }
 
     /**
@@ -574,7 +581,9 @@ public:
      * while the part-specific information is stored in #m_delayedLoadingData.
      *
      * This function allows to load the content of the view only when it actually becomes visible
-     * @param mimeType the mimetype of the URL
+     * @param type the view type. It most likely be the mimetype of the URL, but in theory
+     * it could also be `KParts::PartCapability::BrowserView`. Currently, this shouldn't happen
+     * as toggable views can't be delayed (currently, at least)
      * @param serviceName the id of the part to use
      * @param openUrl whether an URL should be loaded when the part will be created
      * @param url the URL to load when the part will be created
@@ -582,7 +591,7 @@ public:
      * @param grp the object to read configuration options from
      * @param prexfix the prefix to add to configuration options names when reading from @p grp
      */
-    void storeDelayedLoadingData(const QString &mimeType, const QString &serviceName, bool openUrl, const QUrl &url,
+    void storeDelayedLoadingData(const Konq::ViewType &type, const QString &serviceName, bool openUrl, const QUrl &url,
                                  bool lockedLocation, const KConfigGroup &grp, const QString &prefix);
 
     /**
@@ -786,7 +795,7 @@ private:
     QVector<KPluginMetaData> m_partServiceOffers;
     KService::List m_appServiceOffers;
     KPluginMetaData m_service;
-    QString m_serviceType;
+    Konq::ViewType m_type;
     QString m_caption;
     QString m_tempFile;
     QString m_dbusObjectPath;

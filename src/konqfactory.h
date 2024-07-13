@@ -11,6 +11,7 @@
 
 #include "konqprivate_export.h"
 #include "pluginmetadatautils.h"
+#include "konqutils.h"
 
 #include <KService>
 #include <KPluginMetaData>
@@ -64,14 +65,14 @@ public:
      * Not a static method so that we can define an abstract base class
      * with another implementation, for unit tests, if wanted.
      */
-    KonqViewFactory createView(const QString &serviceType,
+    KonqViewFactory createView(const Konq::ViewType &type,
                                const QString &serviceName = QString(),
                                KPluginMetaData *serviceImpl = nullptr,
                                QVector<KPluginMetaData> *partServiceOffers = nullptr,
                                KService::List *appServiceOffers = nullptr,
                                bool forceAutoEmbed = false);
 
-    static void getOffers(const QString& serviceType, QVector<KPluginMetaData> *partServiceOffers = nullptr, KService::List* appServiceOffers = nullptr);
+    static void getOffers(const Konq::ViewType &type, QVector<KPluginMetaData> *partServiceOffers = nullptr, KService::List* appServiceOffers = nullptr);
 };
 
 #endif

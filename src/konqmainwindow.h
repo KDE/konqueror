@@ -74,6 +74,10 @@ class ReadOnlyPart;
 class OpenUrlArguments;
 }
 
+namespace Konq {
+    class ViewType;
+}
+
 class KonqExtendedBookmarkOwner;
 
 class KONQ_TESTS_EXPORT KonqMainWindow : public KParts::MainWindow, public KonqFrameContainerBase
@@ -125,14 +129,13 @@ public Q_SLOTS:
 
 public:
     /**
-     * Called by openUrl when it knows the mime type (either directly,
-     * or using KonqRun).
-     * \param mimeType the mimetype of the URL to open. Always set.
+     * Called by openUrl when it knows the mime type
+     * \param type the type of the URL to open. Always set.
      * \param url the URL to open.
      * \param childView the view in which to open the URL. Can be 0, in which
      * case a new tab (or the very first view) will be created.
      */
-    bool openView(QString mimeType, const QUrl &url, KonqView *childView,
+    bool openView(Konq::ViewType type, const QUrl &url, KonqView *childView,
                   const KonqOpenURLRequest &req = KonqOpenURLRequest::null, QUrl requestedUrl={});
 
 //     bool openView(const QString &mimetype, const QUrl &url, KService::Ptr service);
@@ -565,8 +568,8 @@ protected:
 
     bool makeViewsFollow(const QUrl &url,
                          const KParts::OpenUrlArguments &args,
-                         const BrowserArguments &browserArgs, const QString &serviceType,
-                         KonqView *senderView);
+                         const BrowserArguments &browserArgs,
+                         const Konq::ViewType &type, KonqView *senderView);
 
     void applyKonqMainWindowSettings();
 

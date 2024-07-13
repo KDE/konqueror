@@ -44,6 +44,8 @@
 
 //#define DEBUG_VIEWMGR
 
+using namespace Konq;
+
 KonqViewManager::KonqViewManager(KonqMainWindow *mainWindow)
     : KParts::PartManager(mainWindow)
 {
@@ -72,13 +74,13 @@ KonqView *KonqViewManager::createFirstView(const QString &mimeType, const QStrin
     KPluginMetaData service;
     QVector<KPluginMetaData> partServiceOffers;
     KService::List appServiceOffers;
-    KonqViewFactory newViewFactory = createView(mimeType, serviceName, service, partServiceOffers, appServiceOffers, true /*forceAutoEmbed*/);
+    KonqViewFactory newViewFactory = createView({mimeType}, serviceName, service, partServiceOffers, appServiceOffers, true /*forceAutoEmbed*/);
     if (newViewFactory.isNull()) {
         qCDebug(KONQUEROR_LOG) << "No suitable factory found.";
         return nullptr;
     }
 
-    KonqView *childView = setupView(tabContainer(), newViewFactory, service, partServiceOffers, appServiceOffers, mimeType, false);
+    KonqView *childView = setupView(tabContainer(), newViewFactory, service, partServiceOffers, appServiceOffers, {mimeType}, false);
 
     setActivePart(childView->part());
 
@@ -102,13 +104,13 @@ KonqView *KonqViewManager::splitView(KonqView *currentView,
 #endif
 
     KonqFrame *splitFrame = currentView->frame();
-    const QString serviceType = currentView->serviceType();
+    const ViewType type = currentView->type();
 
     KPluginMetaData service;
     QVector<KPluginMetaData> partServiceOffers;
     KService::List appServiceOffers;
 
-    KonqViewFactory newViewFactory = createView(serviceType, currentView->service().pluginId(), service, partServiceOffers, appServiceOffers, forceAutoEmbed);
+    KonqViewFactory newViewFactory = createView(type, currentView->service().pluginId(), service, partServiceOffers, appServiceOffers, forceAutoEmbed);
 
     if (newViewFactory.isNull()) {
         return nullptr;    //do not split at all if we can't create the new view
@@ -130,7 +132,7 @@ KonqView *KonqViewManager::splitView(KonqView *currentView,
     KonqFrameContainer *newContainer = parentContainer->splitChildFrame(splitFrame, orientation);
 
     //qCDebug(KONQUEROR_LOG) << "Create new child";
-    KonqView *newView = setupView(newContainer, newViewFactory, service, partServiceOffers, appServiceOffers, serviceType, false);
+    KonqView *newView = setupView(newContainer, newViewFactory, service, partServiceOffers, appServiceOffers, type, false);
 
 #ifndef DEBUG
     //printSizeInfo( splitFrame, parentContainer, "after child insert" );
@@ -169,7 +171,7 @@ KonqView *KonqViewManager::splitView(KonqView *currentView,
 
 KonqView *KonqViewManager::splitMainContainer(KonqView *currentView,
         Qt::Orientation orientation,
-        const QString &serviceType, // This can be Browser/View, not necessarily a mimetype
+        const ViewType &type,
         const QString &serviceName,
         bool newOneFirst)
 {
@@ -179,7 +181,7 @@ KonqView *KonqViewManager::splitMainContainer(KonqView *currentView,
     QVector<KPluginMetaData> partServiceOffers;
     KService::List appServiceOffers;
 
-    KonqViewFactory newViewFactory = createView(serviceType, serviceName, service, partServiceOffers, appServiceOffers);
+    KonqViewFactory newViewFactory = createView(type, serviceName, service, partServiceOffers, appServiceOffers);
 
     if (newViewFactory.isNull()) {
         return nullptr;    //do not split at all if we can't create the new view
@@ -191,7 +193,7 @@ KonqView *KonqViewManager::splitMainContainer(KonqView *currentView,
 
     KonqFrameContainer *newContainer = m_pMainWindow->splitChildFrame(mainFrame, orientation);
 
-    KonqView *childView = setupView(newContainer, newViewFactory, service, partServiceOffers, appServiceOffers, serviceType, true);
+    KonqView *childView = setupView(newContainer, newViewFactory, service, partServiceOffers, appServiceOffers, type, true);
 
     newContainer->insertWidget(newOneFirst ? 0 : 1, childView->frame());
     if (newOneFirst) {
@@ -213,7 +215,7 @@ KonqView *KonqViewManager::splitMainContainer(KonqView *currentView,
     return childView;
 }
 
-KonqView *KonqViewManager::addTab(const QString &serviceType, const QString &serviceName, bool passiveMode, bool openAfterCurrentPage, int pos)
+KonqView *KonqViewManager::addTab(const ViewType &type, const QString &serviceName, bool passiveMode, bool openAfterCurrentPage, int pos)
 {
 #ifdef DEBUG_VIEWMGR
     qCDebug(KONQUEROR_LOG) << "------------- KonqViewManager::addTab starting -------------";
@@ -225,7 +227,7 @@ KonqView *KonqViewManager::addTab(const QString &serviceType, const QString &ser
     QVector<KPluginMetaData> partServiceOffers;
     KService::List appServiceOffers;
 
-    Q_ASSERT(!serviceType.isEmpty());
+    Q_ASSERT(!type.toString().isEmpty());
 
     QString actualServiceName = serviceName;
     if (actualServiceName.isEmpty()) {
@@ -234,22 +236,22 @@ KonqView *KonqViewManager::addTab(const QString &serviceType, const QString &ser
         // MMB-opens-tab, window.open (createNewWindow), and more.
         KonqView *currentView = m_pMainWindow->currentView();
         // Don't use supportsMimeType("text/html"), it's true for katepart too.
-        // (Testcase: view text file, ctrl+shift+n, was showing about page in katepart)
+        // (Testcase: view text file, ctrl+shift+n, open local html page)
         if (currentView) {
             QMimeType mime = currentView->mimeType();
-            if (mime.isValid() && mime.inherits(serviceType)) {
+            if (mime.isValid() && type.isMimetype() && mime.inherits(type.mimetype().value())) {
                 actualServiceName = currentView->service().pluginId();
             }
         }
     }
 
-    KonqViewFactory newViewFactory = createView(serviceType, actualServiceName, service, partServiceOffers, appServiceOffers, true /*forceAutoEmbed*/);
+    KonqViewFactory newViewFactory = createView(type, actualServiceName, service, partServiceOffers, appServiceOffers, true /*forceAutoEmbed*/);
 
     if (newViewFactory.isNull()) {
         return nullptr;    //do not split at all if we can't create the new view
     }
 
-    KonqView *childView = setupView(tabContainer(), newViewFactory, service, partServiceOffers, appServiceOffers, serviceType, passiveMode, openAfterCurrentPage, pos);
+    KonqView *childView = setupView(tabContainer(), newViewFactory, service, partServiceOffers, appServiceOffers, type, passiveMode, openAfterCurrentPage, pos);
 
 #ifdef DEBUG_VIEWMGR
     m_pMainWindow->dumpViewList();
@@ -271,7 +273,7 @@ KonqView *KonqViewManager::addTabFromHistory(KonqView *currentView, int steps, b
     }
 
     KonqView *newView = nullptr;
-    newView  = addTab(he->strServiceType, he->strServiceName, false, openAfterCurrentPage);
+    newView  = addTab(ViewType::fromString(he->strViewType), he->strServiceName, false, openAfterCurrentPage);
 
     if (!newView) {
         return nullptr;
@@ -803,7 +805,7 @@ KonqView *KonqViewManager::chooseNextView(KonqView *view)
     return nullptr; // no next view found
 }
 
-KonqViewFactory KonqViewManager::createView(const QString &serviceType,
+KonqViewFactory KonqViewManager::createView(const Konq::ViewType &type,
         const QString &serviceName,
         KPluginMetaData &service,
         QVector<KPluginMetaData> &partServiceOffers,
@@ -812,23 +814,24 @@ KonqViewFactory KonqViewManager::createView(const QString &serviceType,
 {
     KonqViewFactory viewFactory;
 
-    QString _serviceType(serviceType);
+    Konq::ViewType _type(type);
     QString _serviceName(serviceName);
+    QString mimetype = type.isMimetype() ? type.mimetype().value() : QString();
 
-    if (serviceType.isEmpty() && m_pMainWindow->currentView()) {
+    if (type.isEmpty() && m_pMainWindow->currentView()) {
         //clone current view
         KonqView *cv = m_pMainWindow->currentView();
         if (cv->service().pluginId() == QLatin1String("konq_sidebartng")) {
-            _serviceType = QStringLiteral("text/html");
+            _type.setMimetype(QStringLiteral("text/html"));
             _serviceName.clear();
         } else {
-            _serviceType = cv->serviceType();
+            _type = cv->type();
             _serviceName = cv->service().pluginId();
         }
     }
 
     KonqFactory konqFactory;
-    viewFactory = konqFactory.createView(_serviceType, _serviceName, &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed);
+    viewFactory = konqFactory.createView(_type, _serviceName, &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed);
 
     return viewFactory;
 }
@@ -844,17 +847,17 @@ KonqView *KonqViewManager::setupView(KonqFrameContainerBase *parentContainer,
                                      const KPluginMetaData &service,
                                      const QVector<KPluginMetaData> &partServiceOffers,
                                      const KService::List &appServiceOffers,
-                                     const QString &serviceType,
+                                     const ViewType &type,
                                      bool passiveMode,
                                      bool openAfterCurrentPage,
                                      int pos)
 {
     //qCDebug(KONQUEROR_LOG) << "passiveMode=" << passiveMode;
 
-    QString sType = serviceType;
+    ViewType sType = type;
 
     if (sType.isEmpty() && m_pMainWindow->currentView()) { // TODO remove this -- after checking all callers; splitMainContainer seems to need this logic
-        sType = m_pMainWindow->currentView()->serviceType();
+        sType = m_pMainWindow->currentView()->type();
     }
 
     //qCDebug(KONQUEROR_LOG) << "creating KonqFrame with parent=" << parentContainer;
@@ -1274,21 +1277,21 @@ void KonqViewManager::loadViewItem(const KConfigGroup& cfg, const QString &prefi
 {
     // load view config
 
-    QString serviceType;
+    ViewType type;
     QString serviceName;
     if (name == QLatin1String("empty")) {
         // An empty profile is an empty KHTML part. Makes all KHTML actions available, avoids crashes,
         // makes it easy to DND a URL onto it, and makes it fast to load a website from there.
-        serviceType = QStringLiteral("text/html");
+        type = QStringLiteral("text/html");
         serviceName = data.forcedService; // coming e.g. from the cmdline, otherwise empty
     } else {
-        serviceType = cfg.readEntry(QStringLiteral("ServiceType").prepend(prefix), QStringLiteral("inode/directory"));
+        type = ViewType::fromString(cfg.readEntry(QStringLiteral("ServiceType").prepend(prefix), QStringLiteral("inode/directory")));
         serviceName = cfg.readEntry(QStringLiteral("ServiceName").prepend(prefix), QString());
         if (serviceName == QLatin1String("konq_aboutpage")) {
             if ((!data.forcedUrl.isEmpty() && !KonqUrl::hasKonqScheme(data.forcedUrl)) ||
                     (data.forcedUrl.isEmpty() && data.openUrl == false)) { // e.g. window.open
                 // No point in loading the about page if we're going to replace it with a KHTML part right away
-                serviceType = QStringLiteral("text/html");
+                type = QStringLiteral("text/html");
                 serviceName = data.forcedService; // coming e.g. from the cmdline, otherwise empty
             }
         }
@@ -1325,21 +1328,21 @@ void KonqViewManager::loadViewItem(const KConfigGroup& cfg, const QString &prefi
     //work, as the delayed loading would never trigger). See BUG 478255
     if (hasTabAncestor(parent)) {
         childView = setupView(parent, passiveMode, openAfterCurrentPage, pos);
-        childView->storeDelayedLoadingData(serviceType, serviceName, data.openUrl, url, lockedLocation, cfg, prefix);
+        childView->storeDelayedLoadingData(type, serviceName, data.openUrl, url, lockedLocation, cfg, prefix);
     }
     else {
         KPluginMetaData service;
         QVector<KPluginMetaData> partServiceOffers;
         KService::List appServiceOffers;
         KonqFactory konqFactory;
-        KonqViewFactory viewFactory = konqFactory.createView(serviceType, serviceName, &service, &partServiceOffers, &appServiceOffers, true /*forceAutoEmbed*/);
+        KonqViewFactory viewFactory = konqFactory.createView(type, serviceName, &service, &partServiceOffers, &appServiceOffers, true /*forceAutoEmbed*/);
         if (viewFactory.isNull()) {
             qCWarning(KONQUEROR_LOG) << "Profile Loading Error: View creation failed";
             return; //ugh..
         }
-        childView = setupView(parent, viewFactory, service, partServiceOffers, appServiceOffers, serviceType, passiveMode, openAfterCurrentPage, pos);
+        childView = setupView(parent, viewFactory, service, partServiceOffers, appServiceOffers, type, passiveMode, openAfterCurrentPage, pos);
         if (data.openUrl) {
-            restoreViewOutsideTabContainer(childView, cfg, prefix, data.defaultUrl, serviceType);
+            restoreViewOutsideTabContainer(childView, cfg, prefix, data.defaultUrl, type);
         }
     }
 
@@ -1357,7 +1360,7 @@ void KonqViewManager::loadViewItem(const KConfigGroup& cfg, const QString &prefi
     }
 }
 
-void KonqViewManager::restoreViewOutsideTabContainer(KonqView* view, const KConfigGroup& cfg, const QString &prefix, const QUrl &defaultURL, const QString &serviceType)
+void KonqViewManager::restoreViewOutsideTabContainer(KonqView* view, const KConfigGroup& cfg, const QString &prefix, const QUrl &defaultURL, const ViewType &type)
 {
     const QString keyHistoryItems = QStringLiteral("NumberOfHistoryItems").prepend(prefix);
     if (cfg.hasKey(keyHistoryItems)) {
@@ -1383,7 +1386,7 @@ void KonqViewManager::restoreViewOutsideTabContainer(KonqView* view, const KConf
             if (!KonqUrl::hasKonqScheme(url)) {
                 req.typedUrl = url.toDisplayString();
             }
-            m_pMainWindow->openView(serviceType, url, view, req);
+            m_pMainWindow->openView(type, url, view, req);
         }
         //else qCDebug(KONQUEROR_LOG) << "url is empty";
     }
