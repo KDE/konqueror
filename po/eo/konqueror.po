@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-01-02 12:24+0100\n"
+"PO-Revision-Date: 2024-07-12 22:08+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -33,7 +33,7 @@ msgstr "Pierre-Marie Pédrot,Cindy McKee,Oliver Kellogg"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "pedrotpmx@wanadoo.fr,cfmckee@gmail.com,okellogg@users.sf.net"
+msgstr "pedrotpmx@wanadoo.fr,cfmckee@gmail.com,olivermkellogg@gmail.com"
 
 #: src/konqapplication.cpp:118
 #, kde-format
@@ -424,10 +424,9 @@ msgid "profile"
 msgstr "Profilo"
 
 #: src/konqapplication.cpp:221
-#, fuzzy, kde-format
-#| msgid "List available sessions"
+#, kde-format
 msgid "List available sessions and exit"
-msgstr "Listigi disponeblajn seancojn"
+msgstr "Listigi disponeblajn seancojn kaj eliri"
 
 #: src/konqapplication.cpp:222
 #, kde-format
@@ -2039,6 +2038,3 @@ msgstr "<filename>%1</filename> povas esti efektivigita. Ĉu vi volas ruli ĝin?
 #, kde-format
 msgid "Save As"
 msgstr "Konservi kiel"
-
-#~ msgid "TEST"
-#~ msgstr "TESTO"
