@@ -413,10 +413,9 @@ msgid "profile"
 msgstr "配置"
 
 #: src/konqapplication.cpp:221
-#, fuzzy, kde-format
-#| msgid "List available sessions"
+#, kde-format
 msgid "List available sessions and exit"
-msgstr "列出可用的会话"
+msgstr "列出可用会话并退出。"
 
 #: src/konqapplication.cpp:222
 #, kde-format
@@ -1983,6 +1982,3 @@ msgstr "<filename>%1</filename> 是可执行文件。你想要执行它吗？"
 #, kde-format
 msgid "Save As"
 msgstr "另存为"
-
-#~ msgid "TEST"
-#~ msgstr "测试"
