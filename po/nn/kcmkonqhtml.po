@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 02:23+0000\n"
-"PO-Revision-Date: 2024-07-08 22:08+0200\n"
+"PO-Revision-Date: 2024-07-17 17:49+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.07.70\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
@@ -408,7 +408,7 @@ msgstr "Søk"
 #: cookies/kcookiesmanagement.ui:27
 #, kde-format
 msgid "Search interactively for domains and hosts"
-msgstr ""
+msgstr "Søk interaktivt etter domene og vertar"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:43
@@ -476,7 +476,7 @@ msgstr "Domene:"
 #: cookies/kcookiesmanagement.ui:175
 #, kde-format
 msgid "Path:"
-msgstr ""
+msgstr "Adresse:"
 
 #. i18n: ectx: property (text), widget (QLabel, expiresLabel)
 #: cookies/kcookiesmanagement.ui:198
@@ -501,6 +501,12 @@ msgid ""
 "unbrowsable.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"<p>Slår på støtte for infokapslar. Vanlegvis vil du ha denne støtta på og "
+"tilpassa ho slik du ønskjer.</p><p>\n"
+"Merk at nokre nettsider kan verta ubrukelege dersom du vel å slå av støtta "
+"for infokapslar.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
@@ -521,6 +527,12 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
+"<qt>Avvis infokapslar frå tredjepartar. Dette er infokapslar som kjem frå "
+"andre nettstadar enn dei du vitjar. Dersom du for eksempel går til "
+"<b>eksempel.no</b> når denne funksjonen er på, vil berre infokapslar frå "
+"eksempel.no verta lagra, og alle andre infokapslar vert automatisk avviste. "
+"Slik kan du minska sjansen for at nettstadar byggjer opp informasjon om "
+"Internett-vanane dine.</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
@@ -545,7 +557,7 @@ msgstr ""
 #: cookies/kcookiespolicies.ui:49
 #, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr ""
+msgstr "Godta a&utomatisk økt-kapslar"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -572,31 +584,31 @@ msgstr ""
 #: cookies/kcookiespolicies.ui:71
 #, kde-format
 msgid "Default Policy"
-msgstr ""
+msgstr "Standardåtferd"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
 #, kde-format
 msgid "Accep&t all cookies"
-msgstr ""
+msgstr "&Godta alle infokapslar"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr ""
+msgstr "Godta &til økta er slutt"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
 #, kde-format
 msgid "Ask &for confirmation"
-msgstr ""
+msgstr "Spø&r om stadfesting"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
 #: cookies/kcookiespolicies.ui:98
 #, kde-format
 msgid "Re&ject all cookies"
-msgstr ""
+msgstr "A&vvis alle infokapslar"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
@@ -616,19 +628,19 @@ msgstr ""
 #: cookies/kcookiespolicies.ui:126
 #, kde-format
 msgid "Site Policy"
-msgstr ""
+msgstr "Nettstadreglar"
 
 #. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr ""
+msgstr "Søk interaktivt etter domene"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "Søk …"
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -644,7 +656,7 @@ msgstr ""
 #: cookies/kcookiespolicies.ui:163
 #, kde-format
 msgid "Domain"
-msgstr ""
+msgstr "Domene"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
@@ -710,7 +722,7 @@ msgstr ""
 #: cookies/kcookiespolicyselectiondlg.ui:56
 #, kde-format
 msgid "Policy:"
-msgstr ""
+msgstr "Regel:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
@@ -833,7 +845,7 @@ msgstr "&Tilpass …"
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Sjølvvald sidebakgrunn"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -2329,10 +2341,9 @@ msgstr "Du må først skriva inn eit domenenamn."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
-msgstr "&Museåtferd"
+msgstr "Faneåtferd"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
@@ -2370,31 +2381,31 @@ msgstr ""
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "Over innhaldet"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "Under innhaldet"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "Til venstre for innhaldet"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "Til høgre for innhaldet"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr ""
+msgstr "Bruk"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2452,10 +2463,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
-msgstr "&Museåtferd"
+msgstr "Åtferd for nye faner"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2493,7 +2503,7 @@ msgstr "Opna &ny fane etter gjeldande fane"
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Closing"
-msgstr ""
+msgstr "Lukkar"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167
