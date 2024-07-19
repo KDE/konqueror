@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 02:23+0000\n"
-"PO-Revision-Date: 2024-07-17 17:49+0200\n"
+"PO-Revision-Date: 2024-07-18 12:04+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
@@ -552,6 +552,12 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
+"<p>\n"
+"Godta automatisk mellombelse infokapslar som utgår når økta er ferdig. Desse "
+"infokapslane vert ikkje lagra på datamaskina, men sletta så snart du lukkar "
+"alle programma (for eksempel nettlesaren) som brukar dei.</p><p><u>Merk:</u> "
+"Viss du kryssar av her, overstyrer du både standard­innstillingane og dei "
+"nettstad­spesifikke innstillingane for infokapslar.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
@@ -579,6 +585,19 @@ msgid ""
 "precedence over the default policy.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Vel korleis infokapslar frå ein nettstad skal handterast:\n"
+"<ul>\n"
+"<li><b>Spør</b>: Spør deg om godkjenning kvar gong ein nettstad vil lagra "
+"ein infokapsel</li>\n"
+"<li><b>Godta</b>: Godtek automatisk alle infokapslar</li>\n"
+"<li><b>Godta til slutten av økta</b>: Godtek alle infokapslar, men dei vil "
+"forsvinna når du avsluttar økta.</li>\n"
+"<li><b>Avvis</b>: Avviser automatisk alle infokapslar</li>\n"
+"</ul><p>\n"
+"<u>Merk:</u> Nedanfor kan du velja reglar som overstyrer desse generelle "
+"reglane for enkeltdomene.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
@@ -623,6 +642,14 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Her kan du laga eigneinfokapselreglar for særskilde domene. For å leggja til "
+"ein ny regel trykkjer du <b>Legg til</b> og oppgjev informasjonen som "
+"trengst. For å endra ein gammal regel trykkjer du <b>Endra</b> og vel den "
+"nye regelen. Om du trykkjer <b>Slett</b>, vert den valde regelen fjerna, "
+"slik at standard­innstillingane vert brukte for det domenet. Med <b>Slett "
+"alle</b> kan du fjerna alle nettstadreglane.\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
@@ -651,6 +678,10 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Ei liste over nettstadar som du har valt særskilde reglar for. Desse reglane "
+"overstyrer standardreglane for dei nettstadene dei omfattar.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
@@ -687,6 +718,10 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Oppgje namnet på verten eller domenet regelen skal brukast for, for eksempel "
+"<b>www.kde.org</b> eller <b>.kde.org</b>.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
@@ -699,6 +734,8 @@ msgstr "Namn på nettstad:"
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
 msgstr ""
+"Skriv inn verts-/domenenamnet regelen skal gjelda for, for eksempel «.kde."
+"org» (utan hermeteikna)."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -869,16 +906,17 @@ msgstr ""
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Bruk tilpassa &bakgrunnsfarge"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>Tilpassa bakgrunnsfarge å bruka for nettsider.</p></"
+"body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -906,7 +944,7 @@ msgstr ""
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Legg tilpassa bakgrunnsfarge til stilsettet"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
@@ -2369,13 +2407,13 @@ msgstr "Gøym fanelinja når berre éi fane er open"
 #: tabs/tabsoptions.ui:38
 #, kde-format
 msgid "Tab bar position"
-msgstr ""
+msgstr "Plassering av fanelinja"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "Vel kor fanelinja skal visast"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
@@ -2476,6 +2514,9 @@ msgid ""
 "\">shift</span> when opening a new tab to reverse this behavior</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>Vel om nye faner skal opnast i bakgrunnen i staden for "
+"fremst.</p><p>Hald inne <span style=\" font-family:'Fira Code';\">Shift</"
+"span> for å omgå funksjonen.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
