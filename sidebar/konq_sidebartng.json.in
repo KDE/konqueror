@@ -67,6 +67,12 @@
         ],
         "Version": "@konq_sidebar_VERSION@"
     },
+    "KParts": {
+        "Capabilities": [
+          "ReadOnly",
+          "BrowserView"
+        ]
+    },
     "MimeType": "inode/directory;",
     "X-KDE-BrowserView-AllowAsDefault": false,
     "X-KDE-BrowserView-Built-Into": "konqueror",
