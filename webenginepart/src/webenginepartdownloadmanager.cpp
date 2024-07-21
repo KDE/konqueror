@@ -170,11 +170,7 @@ QString WebEnginePartDownloadManager::generateDownloadTempFileName(const QString
     if (QFileInfo(baseName).completeSuffix().isEmpty() && !ext.isEmpty()) {
         baseName.append("."+ext);
     }
-    QString completeName = QDir(tempDownloadDir().path()).filePath(baseName);
-    if (QFileInfo::exists(completeName)) {
-        completeName = KFileUtils::suggestName(QUrl::fromLocalFile(tempDownloadDir().path()), baseName);
-    }
-    return completeName;
+    return Konq::generateUniqueFileName(baseName, tempDownloadDir().path());
 }
 
 void WebEnginePartDownloadManager::saveHtmlPage(QWebEngineDownloadRequest* it, WebEnginePage *page)

@@ -6,10 +6,11 @@
 
 #include "libkonq_utils.h"
 
-#include <KBookmarkManager>
 #include <QStandardPaths>
 
 #include <QFileDialog>
+#include <KFileUtils>
+#include <KBookmarkManager>
 
 using namespace Konq;
 
@@ -54,4 +55,13 @@ QString Konq::askDownloadLocation(const QString& suggestedFileName, QWidget* par
         return QString();
     }
     return dlg.selectedUrls().first().path();
+}
+
+QString Konq::generateUniqueFileName(const QString& baseName, const QString& dir)
+{
+    QString completeName = QDir(dir).filePath(baseName);
+    if (QFileInfo::exists(completeName)) {
+        completeName = KFileUtils::suggestName(QUrl::fromLocalFile(dir), baseName);
+    }
+    return completeName;
 }

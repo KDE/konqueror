@@ -418,6 +418,7 @@ void UrlLoader::decideOpenOrSave()
     //or emptied.
     if (m_letRequestingPartDownloadUrl && m_action == OpenUrlAction::Open && m_partDownloaderJob) {
         QString fileName = QFileInfo(m_partDownloaderJob->downloadPath()).fileName();
+        fileName = Konq::generateUniqueFileName(fileName, QDir::temp().path());
         m_partDownloaderJob->setDownloadPath(QDir::temp().filePath(fileName));
     }
     if (!m_service) {

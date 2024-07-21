@@ -34,6 +34,19 @@ namespace Konq {
      * @return a string with the download path chosen by the user or an empty string if the user cancels the dialog
      */
     LIBKONQ_EXPORT QString askDownloadLocation(const QString &suggestedFileName, QWidget *parent = nullptr, const QString &startingDir = {});
+
+    /**
+     * @brief Returns an unique file name for a file in a given directory based on a given name
+     *
+     * This function works almost as KFileUtils::suggestName but returns @p baseName if it is already unique in @p dir
+     * (KFileUtils::suggestName always appends an index at the end instead).
+     *
+     * @param baseName the base name of the file
+     * @param dir the directory where the file name should be unique
+     * @return @p baseName if no file called @p baseName exists in @p dir or an unique file name in @p dir as described in
+     * KFileUtils::suggestName
+     */
+    LIBKONQ_EXPORT QString generateUniqueFileName(const QString &baseName, const QString &dir);
 }
 #endif //LIBKONQ_UTILS_H
 
