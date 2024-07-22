@@ -1,4 +1,10 @@
 {
+    "KParts": {
+        "Capabilities": [
+            "ReadOnly",
+            "BrowserView"
+        ]
+    },
     "KPlugin": {
         "Authors": [
             {
@@ -66,12 +72,6 @@
             "Browser/View"
         ],
         "Version": "@konq_sidebar_VERSION@"
-    },
-    "KParts": {
-        "Capabilities": [
-          "ReadOnly",
-          "BrowserView"
-        ]
     },
     "MimeType": "inode/directory;",
     "X-KDE-BrowserView-AllowAsDefault": false,
