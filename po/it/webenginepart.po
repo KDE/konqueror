@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 00:38+0000\n"
+"POT-Creation-Date: 2024-07-22 02:36+0000\n"
 "PO-Revision-Date: 2024-03-27 21:01+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1327,30 +1327,30 @@ msgstr ""
 "Impossibile aprire il file <tt>%1</tt> che contiene il foglio di stile "
 "personalizzato. Sarà utilizzato il foglio di stile predefinito"
 
-#: src/webenginepartdownloadmanager.cpp:298
+#: src/webenginepartdownloadmanager.cpp:294
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Si è verificato un errore durante il salvataggio del file: %1"
 
-#: src/webenginepartdownloadmanager.cpp:309
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Scaricamento in corso"
 
-#: src/webenginepartdownloadmanager.cpp:310
+#: src/webenginepartdownloadmanager.cpp:306
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Fonte"
 
-#: src/webenginepartdownloadmanager.cpp:311
+#: src/webenginepartdownloadmanager.cpp:307
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Destinazione"
 
-#: src/webenginepartdownloadmanager.cpp:333
+#: src/webenginepartdownloadmanager.cpp:329
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

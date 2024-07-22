@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 00:38+0000\n"
+"POT-Creation-Date: 2024-07-22 02:36+0000\n"
 "PO-Revision-Date: 2024-03-25 17:54+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -1321,30 +1321,30 @@ msgstr ""
 "Не вдалося відкрити файл <tt>%1</tt>, що містить таблицю стилів користувача. "
 "Буде використано типову таблицю стилів"
 
-#: src/webenginepartdownloadmanager.cpp:298
+#: src/webenginepartdownloadmanager.cpp:294
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Під час спроби зберегти файл сталася помилка: %1"
 
-#: src/webenginepartdownloadmanager.cpp:309
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Отримання"
 
-#: src/webenginepartdownloadmanager.cpp:310
+#: src/webenginepartdownloadmanager.cpp:306
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Джерело"
 
-#: src/webenginepartdownloadmanager.cpp:311
+#: src/webenginepartdownloadmanager.cpp:307
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Призначення"
 
-#: src/webenginepartdownloadmanager.cpp:333
+#: src/webenginepartdownloadmanager.cpp:329
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 00:38+0000\n"
+"POT-Creation-Date: 2024-07-22 02:36+0000\n"
 "PO-Revision-Date: 2024-03-25 12:05+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1325,30 +1325,30 @@ msgstr ""
 "Non poteva aperir le file <tt>%1</tt> continente le folio de stilo del "
 "usator. Le folio de stilo predefinite essera usate"
 
-#: src/webenginepartdownloadmanager.cpp:298
+#: src/webenginepartdownloadmanager.cpp:294
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Un error occurreva durante que on salveguardava le file: %1"
 
-#: src/webenginepartdownloadmanager.cpp:309
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Discargante"
 
-#: src/webenginepartdownloadmanager.cpp:310
+#: src/webenginepartdownloadmanager.cpp:306
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Fonte"
 
-#: src/webenginepartdownloadmanager.cpp:311
+#: src/webenginepartdownloadmanager.cpp:307
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Destination"
 
-#: src/webenginepartdownloadmanager.cpp:333
+#: src/webenginepartdownloadmanager.cpp:329
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

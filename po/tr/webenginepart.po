@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-base-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 00:38+0000\n"
+"POT-Creation-Date: 2024-07-22 02:36+0000\n"
 "PO-Revision-Date: 2024-03-25 13:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1320,30 +1320,30 @@ msgstr ""
 "Kullanıcı biçem sayfasını içeren <tt>%1</tt> dosyası açılamadı. Öntanımlı "
 "biçem sayfası kullanılacak"
 
-#: src/webenginepartdownloadmanager.cpp:298
+#: src/webenginepartdownloadmanager.cpp:294
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Dosyayı kaydederken bir hata oluştu: %1"
 
-#: src/webenginepartdownloadmanager.cpp:309
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "İndiriliyor"
 
-#: src/webenginepartdownloadmanager.cpp:310
+#: src/webenginepartdownloadmanager.cpp:306
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Kaynak"
 
-#: src/webenginepartdownloadmanager.cpp:311
+#: src/webenginepartdownloadmanager.cpp:307
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Hedef"
 
-#: src/webenginepartdownloadmanager.cpp:333
+#: src/webenginepartdownloadmanager.cpp:329
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

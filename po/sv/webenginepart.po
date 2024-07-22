@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 00:38+0000\n"
+"POT-Creation-Date: 2024-07-22 02:36+0000\n"
 "PO-Revision-Date: 2024-06-19 22:12+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1313,30 +1313,30 @@ msgstr ""
 "Kunde inte öppna filen <tt>%1</tt> som innehåller användarens stilmall. "
 "Förvald stilmall kommer att användas."
 
-#: src/webenginepartdownloadmanager.cpp:298
+#: src/webenginepartdownloadmanager.cpp:294
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Ett fel uppstod när filen sparades: %1"
 
-#: src/webenginepartdownloadmanager.cpp:309
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Laddar ner"
 
-#: src/webenginepartdownloadmanager.cpp:310
+#: src/webenginepartdownloadmanager.cpp:306
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Källa"
 
-#: src/webenginepartdownloadmanager.cpp:311
+#: src/webenginepartdownloadmanager.cpp:307
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Mål"
 
-#: src/webenginepartdownloadmanager.cpp:333
+#: src/webenginepartdownloadmanager.cpp:329
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
