@@ -195,6 +195,9 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
     BrowserArguments bArgs;
     bArgs.setForcesNewWindow(newWindow);
     bArgs.setSuggestedDownloadName(item->suggestedFileName());
+    if (Konq::Settings::alwaysEmbedInNewTab()) {
+        bArgs.setNewTab(true);
+    }
     KParts::OpenUrlArguments args;
 
     QMimeDatabase db;
