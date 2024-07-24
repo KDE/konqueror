@@ -9,6 +9,8 @@
 // Own
 #include "behaviour.h"
 
+#include "konqsettings.h"
+
 // Qt
 #include <QDBusConnection>
 #include <QDBusMessage>
@@ -22,16 +24,12 @@
 
 #include <KPluginFactory>
 #include <kurlrequester.h>
-#include <kconfiggroup.h>
 #include <QStandardPaths>
-#include <KSharedConfig>
 
 K_PLUGIN_CLASS_WITH_JSON(KBehaviourOptions, "filebehavior.json")
 
 KBehaviourOptions::KBehaviourOptions(QObject *parent, const KPluginMetaData &md, const QVariantList &)
     : KCModule(parent, md)
-    , g_pConfig(KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::IncludeGlobals))
-    , groupname(QStringLiteral("FMSettings"))
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(widget());
 
@@ -86,8 +84,7 @@ KBehaviourOptions::~KBehaviourOptions()
 
 void KBehaviourOptions::load()
 {
-    KConfigGroup cg(g_pConfig, groupname);
-    cbNewWin->setChecked(cg.readEntry("AlwaysNewWin", false));
+    cbNewWin->setChecked(Konq::Settings::alwaysNewWin());
     updateWinPixmap(cbNewWin->isChecked());
 
     KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig(QStringLiteral("kdeglobals"), KConfig::NoGlobals);
@@ -104,9 +101,8 @@ void KBehaviourOptions::defaults()
 
 void KBehaviourOptions::save()
 {
-    KConfigGroup cg(g_pConfig, groupname);
-
-    cg.writeEntry("AlwaysNewWin", cbNewWin->isChecked());
+    Konq::Settings::setAlwaysNewWin(cbNewWin->isChecked());
+    Konq::Settings::self()->save();
 
     KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig(QStringLiteral("kdeglobals"), KConfig::NoGlobals);
     KConfigGroup cg2(globalconfig, "KDE");

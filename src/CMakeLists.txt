@@ -29,6 +29,7 @@ target_link_libraries(konquerorprivate
    KF${KF_MAJOR_VERSION}::I18n
    KF${KF_MAJOR_VERSION}::IconThemes
    KF${KF_MAJOR_VERSION}::Konq
+   KF${KF_MAJOR_VERSION}::KonqSettings
    KF${KF_MAJOR_VERSION}::Parts
    KF${KF_MAJOR_VERSION}::KIOGui
 )
@@ -85,7 +86,7 @@ set(konqueror_KDEINIT_SRCS
    konqstatusbarmessagelabel.cpp
    konqurl.cpp
    urlloader.cpp
-   konqsettings.cpp
+   konqembedsettings.cpp
    pluginmetadatautils.cpp
    implementations/konqbrowserwindowinterface.cpp
    konqutils.cpp
@@ -99,7 +100,6 @@ if (${KActivities_FOUND})
    list(APPEND konqueror_KDEINIT_SRCS activitymanager.cpp)
 endif()
 
-kconfig_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
 ki18n_wrap_ui(konqueror_KDEINIT_SRCS konqsessiondlg_base.ui)
 ki18n_wrap_ui(konqueror_KDEINIT_SRCS konqnewsessiondlg_base.ui)
 qt_add_resources(konqueror_KDEINIT_SRCS konqueror.qrc)
@@ -124,6 +124,7 @@ target_link_libraries(${konqueror_internal_lib_target}
    KF${KF_MAJOR_VERSION}::Archive
    KF${KF_MAJOR_VERSION}::KCMUtils
    KF${KF_MAJOR_VERSION}::Konq
+   KF${KF_MAJOR_VERSION}::KonqSettings
    KF${KF_MAJOR_VERSION}::Parts
    KF${KF_MAJOR_VERSION}::DBusAddons
    KF${KF_MAJOR_VERSION}::Crash
@@ -141,5 +142,5 @@ endif ()
 install(TARGETS konqueror ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
-install( FILES konqueror.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR} )
+# install( FILES konqueror.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR} )
 install( FILES org.kde.Konqueror.Main.xml org.kde.Konqueror.MainWindow.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR} )

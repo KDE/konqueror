@@ -18,7 +18,7 @@ class QString;
 class QVBoxLayout;
 class QPushButton;
 
-class Policies;
+class JSPolicies;
 
 /**
  * A dialog for editing domain-specific policies.
@@ -49,7 +49,7 @@ public:
      * @param parent parent widget this belongs to
      * @param name internal name
      */
-    explicit PolicyDialog(Policies *policies, QWidget *parent = nullptr, const char *name = nullptr);
+    explicit PolicyDialog(JSPolicies *policies, QWidget *parent = nullptr, const char *name = nullptr);
 
     ~PolicyDialog() override {}
 
@@ -121,7 +121,7 @@ protected Q_SLOTS:
     void slotTextChanged(const QString &text);
 
 private:
-    Policies *policies;
+    JSPolicies *policies;
     QVBoxLayout *topl;
     int insertIdx;
     QLineEdit *le_domain;

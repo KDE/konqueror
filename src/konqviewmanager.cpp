@@ -13,7 +13,7 @@
 #include "konqview.h"
 #include "konqframestatusbar.h"
 #include "konqtabs.h"
-#include "konqsettingsxt.h"
+#include "konqsettings.h"
 #include "konqframevisitor.h"
 #include <konq_events.h>
 #include "konqurl.h"
@@ -960,7 +960,7 @@ void KonqViewManager::loadViewConfigFromGroup(const KConfigGroup &profileGroup, 
 
     if (openUrl && !forcedUrl.isEmpty()) {
         KonqOpenURLRequest _req(req);
-        _req.openAfterCurrentPage = KonqSettings::openAfterCurrentPage();
+        _req.openAfterCurrentPage = Konq::Settings::openAfterCurrentPage();
         _req.forceAutoEmbed = true; // it's a new window, let's use it
 
         m_pMainWindow->openUrl(nextChildView /* can be 0 for an empty profile */,
@@ -1524,8 +1524,8 @@ void KonqViewManager::createTabContainer(QWidget *parent, KonqFrameContainerBase
 
 void KonqViewManager::applyConfiguration()
 {
-    tabContainer()->setAlwaysTabbedMode(KonqSettings::alwaysTabbedMode());
-    tabContainer()->setTabsClosable(KonqSettings::permanentCloseButton());
+    tabContainer()->setAlwaysTabbedMode(Konq::Settings::alwaysTabbedMode());
+    tabContainer()->setTabsClosable(Konq::Settings::permanentCloseButton());
 }
 
 KonqMainWindow *KonqViewManager::duplicateWindow()

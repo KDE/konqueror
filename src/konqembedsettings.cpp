@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "konqsettings.h"
+#include "konqembedsettings.h"
 #include <kprotocolmanager.h>
 
 #include <kdesktopfile.h>

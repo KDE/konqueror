@@ -10,7 +10,6 @@
 #define CACHE_H
 
 #include <KCModule>
-#include <KSharedConfig>
 
 #include <QDialog>
 #include <QScopedPointer>
@@ -74,11 +73,6 @@ private:
      * @brief The UI object
      */
     QScopedPointer<Ui::Cache> m_ui;
-
-    /**
-     * @brief The main config object
-     */
-    KSharedConfig::Ptr m_config;
 };
 
 #endif // CACHE_H

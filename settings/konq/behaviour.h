@@ -29,9 +29,6 @@ protected Q_SLOTS:
     void updateWinPixmap(bool);
 
 private:
-    KSharedConfig::Ptr g_pConfig;
-    QString groupname;
-
     QCheckBox *cbNewWin;
 
     QLabel *winPixmap;

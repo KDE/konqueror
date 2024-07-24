@@ -11,8 +11,7 @@
 
 #include <QCheckBox>
 
-#include <kcmodule.h>
-#include <ksharedconfig.h>
+#include <KCModule>
 
 class QComboBox;
 class QLineEdit;
@@ -38,8 +37,6 @@ private Q_SLOTS:
 
 private:
     void addHomeUrlWidgets(QVBoxLayout *);
-
-    KSharedConfig::Ptr m_pConfig;
 
     QComboBox *m_startCombo;
     QLineEdit *homeURL;

@@ -13,6 +13,8 @@
 #include <KCModule>
 #include "ui_history_dlg.h"
 
+//TODO Settings: see whether this can be moved in the settings directory, since it isn't only used by the sidebar
+
 class KonqHistoryManager;
 class KonqHistorySettings;
 

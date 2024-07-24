@@ -17,15 +17,22 @@
     SPDX-FileCopyrightText: 2002-2003 Leo Savernik
     Big changes to accommodate per-domain settings
 
+    SPDX-FileCopyrightText: 2024 Stefano Crocco
+    Use this as toplevel javascript KCM
 */
 
 // Own
 #include "jsopts.h"
 
+#include "konqsettings.h"
+
 // Qt
 #include <QTreeWidget>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QDBusConnection>
+#include <QDBusMessage>
+
 // KDE
 #include <kconfig.h>
 #include <kconfiggroup.h>
@@ -37,13 +44,13 @@
 #include "policydlg.h"
 #include <htmlextension.h>
 
+using namespace Konq;
+
 // == class KJavaScriptOptions =====
-KJavaScriptOptions::KJavaScriptOptions(KSharedConfig::Ptr config, const QString &group, QWidget *parent) :
-    KCModule(parent),
-    _removeJavaScriptDomainAdvice(false),
-    m_pConfig(config), m_groupname(group),
-    js_global_policies(config, group, true, QString()),
-    _removeECMADomainSettings(false)
+KJavaScriptOptions::KJavaScriptOptions(QObject *parent, const KPluginMetaData &md) :
+    KCModule(parent, md),
+    m_pConfig(KSharedConfig::openConfig()),
+    js_global_policies(m_pConfig, m_groupname, true, QString())
 {
     QVBoxLayout *toplevel = new QVBoxLayout(widget());
 
@@ -55,24 +62,8 @@ KJavaScriptOptions::KJavaScriptOptions(KSharedConfig::Ptr config, const QString 
     connect(enableJavaScriptGloballyCB, &QAbstractButton::clicked, this, &KJavaScriptOptions::slotChangeJSEnabled);
     toplevel->addWidget(enableJavaScriptGloballyCB);
 
-    // the global checkbox
-    QGroupBox *globalGB = new QGroupBox(i18n("Debugging"));
-    QHBoxLayout *hbox = new QHBoxLayout(globalGB);
-    toplevel->addWidget(globalGB);
-
-    jsDebugWindow = new QCheckBox(i18n("Enable debu&gger"));
-    jsDebugWindow->setToolTip(i18n("Enables builtin JavaScript debugger."));
-    connect(jsDebugWindow, &QAbstractButton::clicked, this, &KJavaScriptOptions::markAsChanged);
-    hbox->addWidget(jsDebugWindow);
-
-    reportErrorsCB = new QCheckBox(i18n("Report &errors"));
-    reportErrorsCB->setToolTip(i18n("Enables the reporting of errors that occur when JavaScript "
-                                      "code is executed."));
-    connect(reportErrorsCB, &QAbstractButton::clicked, this, &KJavaScriptOptions::markAsChanged);
-    hbox->addWidget(reportErrorsCB);
-
     // the domain-specific listview
-    domainSpecific = new JSDomainListView(m_pConfig, m_groupname, this, widget());
+    domainSpecific = new DomainListView(m_pConfig, m_groupname, this, widget());
     connect(domainSpecific, &DomainListView::changed, this, [this](bool changed){setNeedsSave(changed);});
     toplevel->addWidget(domainSpecific, 2);
 
@@ -112,51 +103,38 @@ void KJavaScriptOptions::load()
 {
     // *** load ***
     KConfigGroup cg(m_pConfig, m_groupname);
-    if (cg.hasKey("ECMADomains")) {
-        domainSpecific->initialize(cg.readEntry("ECMADomains", QStringList()));
-    } else if (cg.hasKey("ECMADomainSettings")) {
-        domainSpecific->updateDomainListLegacy(cg.readEntry("ECMADomainSettings", QStringList()));
-        _removeECMADomainSettings = true;
-    } else {
-        domainSpecific->updateDomainListLegacy(cg.readEntry("JavaScriptDomainAdvice", QStringList()));
-        _removeJavaScriptDomainAdvice = true;
-    }
+    domainSpecific->initialize(Settings::ecmaDomains());
 
+    //TODO Settings: currently, the settings for each domain are stored in a separate group, which makes it
+    //impossible to use KConfigXT to manage them. See whether it's possible to store the settings in a Json document
     // *** apply to GUI ***
     js_policies_frame->load();
-    enableJavaScriptGloballyCB->setChecked(
-        js_global_policies.isFeatureEnabled());
-    reportErrorsCB->setChecked(cg.readEntry("ReportJavaScriptErrors", false));
-    jsDebugWindow->setChecked(cg.readEntry("EnableJavaScriptDebug", false));
-//    js_popup->setButton( m_pConfig->readUnsignedNumEntry("WindowOpenPolicy", 0) );
+    enableJavaScriptGloballyCB->setChecked(js_global_policies.isFeatureEnabled());
     KCModule::load();
 }
 
 void KJavaScriptOptions::defaults()
 {
     js_policies_frame->defaults();
-    enableJavaScriptGloballyCB->setChecked(
-        js_global_policies.isFeatureEnabled());
-    reportErrorsCB->setChecked(false);
-    jsDebugWindow->setChecked(false);
+    enableJavaScriptGloballyCB->setChecked(js_global_policies.isFeatureEnabled());
     setNeedsSave(true);
     setRepresentsDefaults(true);
+    KCModule::defaults();
 }
 
 void KJavaScriptOptions::save()
 {
     KConfigGroup cg(m_pConfig, m_groupname);
-    cg.writeEntry("ReportJavaScriptErrors", reportErrorsCB->isChecked());
-    cg.writeEntry("EnableJavaScriptDebug", jsDebugWindow->isChecked());
 
     domainSpecific->save(m_groupname, QStringLiteral("ECMADomains"));
     js_policies_frame->save();
 
-    if (_removeECMADomainSettings) {
-        cg.deleteEntry("ECMADomainSettings");
-        _removeECMADomainSettings = false;
-    }
 
+    // Send signal to konqueror
+    // Warning. In case something is added/changed here, keep kfmclient in sync
+    QDBusMessage message =
+        QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
+    QDBusConnection::sessionBus().send(message);
     KCModule::save();
 }
 
@@ -164,74 +142,3 @@ void KJavaScriptOptions::slotChangeJSEnabled()
 {
     js_global_policies.setFeatureEnabled(enableJavaScriptGloballyCB->isChecked());
 }
-
-// == class JSDomainListView =====
-
-JSDomainListView::JSDomainListView(KSharedConfig::Ptr config, const QString &group,
-                                   KJavaScriptOptions *options, QWidget *parent)
-    : DomainListView(config, i18nc("@title:group", "Do&main-Specific"), parent),
-      group(group), options(options)
-{
-}
-
-JSDomainListView::~JSDomainListView()
-{
-}
-
-void JSDomainListView::updateDomainListLegacy(const QStringList &domainConfig)
-{
-    domainSpecificLV->clear();
-    JSPolicies pol(config, group, false);
-    pol.defaults();
-    for (QStringList::ConstIterator it = domainConfig.begin();
-            it != domainConfig.end(); ++it) {
-        QString domain;
-        HtmlSettingsInterface::JavaScriptAdvice javaAdvice;
-        HtmlSettingsInterface::JavaScriptAdvice javaScriptAdvice;
-        HtmlSettingsInterface::splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
-        if (javaScriptAdvice != HtmlSettingsInterface::JavaScriptDunno) {
-            QTreeWidgetItem *index =
-                new QTreeWidgetItem(domainSpecificLV, QStringList() << domain <<
-                                    i18n(HtmlSettingsInterface::javascriptAdviceToText(javaScriptAdvice)));
-
-            pol.setDomain(domain);
-            pol.setFeatureEnabled(javaScriptAdvice != HtmlSettingsInterface::JavaScriptReject);
-            domainPolicies[index] = new JSPolicies(pol);
-        }
-    }
-}
-
-void JSDomainListView::setupPolicyDlg(PushButton trigger, PolicyDialog &pDlg,
-                                      Policies *pol)
-{
-    JSPolicies *jspol = static_cast<JSPolicies *>(pol);
-    QString caption;
-    switch (trigger) {
-    case AddButton:
-        caption = i18nc("@title:window", "New JavaScript Policy");
-        jspol->setFeatureEnabled(!options->enableJavaScriptGloballyCB->isChecked());
-        break;
-    case ChangeButton: caption = i18nc("@title:window", "Change JavaScript Policy"); break;
-    default:; // inhibit gcc warning
-    }/*end switch*/
-    pDlg.setWindowTitle(caption);
-    pDlg.setFeatureEnabledLabel(i18n("JavaScript policy:"));
-    pDlg.setFeatureEnabledWhatsThis(i18n("Select a JavaScript policy for "
-                                         "the above host or domain."));
-    JSPoliciesFrame *panel = new JSPoliciesFrame(jspol, i18n("Domain-Specific "
-            "JavaScript Policies"), &pDlg);
-    panel->refresh();
-    pDlg.addPolicyPanel(panel);
-    pDlg.refresh();
-}
-
-JSPolicies *JSDomainListView::createPolicies()
-{
-    return new JSPolicies(config, group, false);
-}
-
-JSPolicies *JSDomainListView::copyPolicies(Policies *pol)
-{
-    return new JSPolicies(*static_cast<JSPolicies *>(pol));
-}
-

@@ -46,6 +46,7 @@ target_link_libraries(KF${KF_MAJOR_VERSION}Konq
     KF${KF_MAJOR_VERSION}::Parts
     Qt${KF_MAJOR_VERSION}::WebEngineWidgets
     KF${KF_MAJOR_VERSION}::TextWidgets
+    KF${KF_MAJOR_VERSION}::KonqSettings
     PRIVATE
     KF${KF_MAJOR_VERSION}::Bookmarks
     KF${KF_MAJOR_VERSION}::I18n

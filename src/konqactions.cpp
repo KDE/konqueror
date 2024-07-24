@@ -7,7 +7,7 @@
 #include "konqactions.h"
 
 #include "konqview.h"
-#include "konqsettingsxt.h"
+#include "konqsettings.h"
 #include "konqpixmapprovider.h"
 
 #include "konqdebug.h"
@@ -88,7 +88,7 @@ KonqMostOftenURLSAction::~KonqMostOftenURLSAction()
 
 void KonqMostOftenURLSAction::init()
 {
-    s_maxEntries = KonqSettings::numberofmostvisitedURLs();
+    s_maxEntries = Konq::Settings::numberofmostvisitedURLs();
 
     KonqHistoryManager *mgr = KonqHistoryManager::kself();
     setEnabled(!mgr->entries().isEmpty() && s_maxEntries > 0);
@@ -220,7 +220,7 @@ void KonqHistoryAction::slotFillMenu()
     menu()->clear();
 
     // Use the same configuration as the "most visited urls" action
-    s_maxEntries = KonqSettings::numberofmostvisitedURLs();
+    s_maxEntries = Konq::Settings::numberofmostvisitedURLs();
 
     KonqHistoryManager *mgr = KonqHistoryManager::kself();
     const KonqHistoryList mgrEntries = mgr->entries();

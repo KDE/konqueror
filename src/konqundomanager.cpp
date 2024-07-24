@@ -6,7 +6,7 @@
 */
 
 #include "konqundomanager.h"
-#include "konqsettingsxt.h"
+#include "konqsettings.h"
 #include "konqcloseditem.h"
 #include "konqclosedwindowsmanager.h"
 #include <QAction>
@@ -132,7 +132,7 @@ void KonqUndoManager::slotAddClosedWindowItem(KonqUndoManager *real_sender, Konq
 
     populate();
 
-    if (m_closedItemList.size() >= KonqSettings::maxNumClosedItems()) {
+    if (m_closedItemList.size() >= Konq::Settings::maxNumClosedItems()) {
         const KonqClosedItem *last = m_closedItemList.last();
         const KonqClosedTabItem *lastTab =
             dynamic_cast<const KonqClosedTabItem *>(last);
@@ -232,7 +232,7 @@ void KonqUndoManager::addClosedTabItem(KonqClosedTabItem *closedTabItem)
 {
     populate();
 
-    if (m_closedItemList.size() >= KonqSettings::maxNumClosedItems()) {
+    if (m_closedItemList.size() >= Konq::Settings::maxNumClosedItems()) {
         const KonqClosedItem *last = m_closedItemList.last();
         const KonqClosedTabItem *lastTab =
             dynamic_cast<const KonqClosedTabItem *>(last);

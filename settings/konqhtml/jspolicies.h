@@ -3,6 +3,9 @@
     Derived from jsopt.h, code copied from there is copyrighted to its
     respective owners.
 
+    SPDX-FileCopyrightText: 2024 Stefano Crocco <stefano.crocco@alice.it>
+    Merge JSPolicies with obsolete Policies class
+
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
@@ -14,12 +17,8 @@
 #include <htmlextension.h>
 #include <htmlsettingsinterface.h>
 #include <KSharedConfig>
-#include "policies.h"
 
 class QButtonGroup;
-
-// special value for inheriting a global policy
-#define INHERIT_POLICY      32767
 
 /**
  * @short Contains all the JavaScript policies and methods for their manipulation.
@@ -27,8 +26,9 @@ class QButtonGroup;
  * This class provides access to the JavaScript policies.
  *
  * @author Leo Savernik
+ * @author Stefano Crocco
  */
-class JSPolicies : public Policies
+class JSPolicies
 {
 public:
     /**
@@ -52,15 +52,63 @@ public:
      */
     JSPolicies();
 
-    ~JSPolicies() override = default;
+    ~JSPolicies();
+
+    /**
+     * Returns true if this is the global policies object
+     */
+    bool isGlobal() const
+    {
+        return is_global;
+    }
+
+    /** sets a new domain for this policy
+     * @param domain domain name, will be converted to lowercase
+     */
+    void setDomain(const QString &domain);
+
+    /**
+     * Returns whether the "feature enabled" policy is inherited.
+     */
+    bool isFeatureEnabledPolicyInherited() const
+    {
+        return feature_enabled == inherit_policy;
+    }
+
+    /** inherits "feature enabled" policy */
+    void inheritFeatureEnabledPolicy()
+    {
+        feature_enabled = inherit_policy;
+    }
+
+    /**
+     * Returns whether this feature is enabled.
+     *
+     * This will return an illegal value if isFeatureEnabledPolicyInherited
+     * is true.
+     */
+    bool isFeatureEnabled() const
+    {
+        return (bool)feature_enabled;
+    }
+
+    /**
+     * Enables/disables this feature
+     * @param on true will enable it, false disable it
+     */
+    void setFeatureEnabled(int on)
+    {
+        feature_enabled = on;
+    }
 
     /**
      * Returns whether the WindowOpen policy is inherited.
      */
     bool isWindowOpenPolicyInherited() const
     {
-        return window_open == INHERIT_POLICY;
+        return window_open == inherit_policy;
     }
+
     /**
      * Returns the current value of the WindowOpen policy.
      *
@@ -77,7 +125,7 @@ public:
      */
     bool isWindowResizePolicyInherited() const
     {
-        return window_resize == INHERIT_POLICY;
+        return window_resize == inherit_policy;
     }
     /**
      * Returns the current value of the WindowResize policy.
@@ -95,7 +143,7 @@ public:
      */
     bool isWindowMovePolicyInherited() const
     {
-        return window_move == INHERIT_POLICY;
+        return window_move == inherit_policy;
     }
     /**
      * Returns the current value of the WindowMove policy.
@@ -113,7 +161,7 @@ public:
      */
     bool isWindowFocusPolicyInherited() const
     {
-        return window_focus == INHERIT_POLICY;
+        return window_focus == inherit_policy;
     }
     /**
      * Returns the current value of the WindowFocus policy.
@@ -131,7 +179,7 @@ public:
      */
     bool isWindowStatusPolicyInherited() const
     {
-        return window_status == INHERIT_POLICY;
+        return window_status == inherit_policy;
     }
     /**
      * Returns the current value of the WindowStatus policy.
@@ -147,27 +195,38 @@ public:
     /**
      * (re)loads settings from configuration file given in the constructor.
      */
-    void load() override;
+    void load();
     /**
      * saves current settings to the configuration file given in the constructor
      */
-    void save() override;
+    void save();
     /**
      * restores the default settings
      */
-    void defaults() override;
+    void defaults();
 
 private:
-    // one of HtmlSettingsInterface::JSWindowOpenPolicy or INHERIT_POLICY
+    // one of HtmlSettingsInterface::JSWindowOpenPolicy or inherit_policy
     unsigned int window_open;
-    // one of HtmlSettingsInterface::JSWindowResizePolicy or INHERIT_POLICY
+    // one of HtmlSettingsInterface::JSWindowResizePolicy or inherit_policy
     unsigned int window_resize;
-    // one of HtmlSettingsInterface::JSWindowMovePolicy or INHERIT_POLICY
+    // one of HtmlSettingsInterface::JSWindowMovePolicy or inherit_policy
     unsigned int window_move;
-    // one of HtmlSettingsInterface::JSWindowFocusPolicy or INHERIT_POLICY
+    // one of HtmlSettingsInterface::JSWindowFocusPolicy or inherit_policy
     unsigned int window_focus;
-    // one of HtmlSettingsInterface::JSWindowStatusPolicy or INHERIT_POLICY
+    // one of HtmlSettingsInterface::JSWindowStatusPolicy or inherit_policy
     unsigned int window_status;
+
+    static constexpr uint inherit_policy = 32767;
+    // true or false or inherit_policy
+    unsigned int feature_enabled;
+
+    bool is_global;
+    KSharedConfig::Ptr config;
+    QString groupname;
+    QString domain;
+    QString prefix;
+    QString feature_key;
 
     friend class JSPoliciesFrame; // for changing policies
 };
@@ -209,6 +268,7 @@ public:
      * JSPolicies object.
      */
     void refresh();
+
     /**
      * (re)loads settings from configuration file given in the constructor.
      */
@@ -217,6 +277,7 @@ public:
         policies->load();
         refresh();
     }
+
     /**
      * saves current settings to the configuration file given in the constructor
      */
@@ -224,6 +285,7 @@ public:
     {
         policies->save();
     }
+
     /**
      * restores the default settings
      */

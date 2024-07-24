@@ -16,7 +16,7 @@
 
 // Local
 #include "konqview.h"
-#include "konqsettingsxt.h"
+#include "konqsettings.h"
 #include "konqframe.h"
 #include "konqframevisitor.h"
 #include "konqframestatusbar.h"
@@ -228,7 +228,7 @@ void ToggleViewGUIClient::saveConfig(bool add, const QString &serviceName)
     // the K menu only contains calls to kfmclient......
     // Well, it could be useful again in the future.
     // Currently, the profiles save this info.
-    QStringList toggableViewsShown = KonqSettings::toggableViewsShown();
+    QStringList toggableViewsShown = Konq::Settings::toggableViewsShown();
     if (add) {
         if (!toggableViewsShown.contains(serviceName)) {
             toggableViewsShown.append(serviceName);
@@ -236,7 +236,7 @@ void ToggleViewGUIClient::saveConfig(bool add, const QString &serviceName)
     } else {
         toggableViewsShown.removeAll(serviceName);
     }
-    KonqSettings::setToggableViewsShown(toggableViewsShown);
+    Konq::Settings::setToggableViewsShown(toggableViewsShown);
 }
 
 void ToggleViewGUIClient::slotViewAdded(KonqView *view)

@@ -237,11 +237,6 @@ private:
     QScopedPointer<Ui::UserAgent> m_ui;
 
     /**
-     * @brief The main config object
-     */
-    KSharedConfig::Ptr m_config;
-
-    /**
      * @brief The config object where templates are saved
      */
     KSharedConfig::Ptr m_templatesConfig;

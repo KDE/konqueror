@@ -24,15 +24,9 @@
 #include <QJsonObject>
 
 // KDE
-#include <KConfig>
-#include <KConfigGroup>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QUrl>
-#include <KSharedConfig>
-
-using namespace KonqInterfaces;
-
 
 // QUrl::fromAce/toAce don't accept a domain that starts with a '.', like we do here.
 // So we use these wrappers.
@@ -146,7 +140,7 @@ void KCookiesPolicies::changePressed(QTreeWidgetItem *item, bool state)
 
     if (pdlg.exec() && !pdlg.domain().isEmpty()) {
         const QString newDomain = tolerantFromAce(pdlg.domain().toLatin1());
-        CookieJar::CookieAdvice advice = pdlg.advice();
+        Konq::Settings::CookieAdvice advice = pdlg.advice();
         if (newDomain == oldDomain || !handleDuplicate(newDomain, advice)) {
             mDomainPolicyMap[newDomain] = advice;
             item->setText(0, newDomain);
@@ -163,14 +157,14 @@ void KCookiesPolicies::addPressed(const QString &domain, bool state)
     pdlg.setEnableHostEdit(state, domain);
 
     if (mUi.rbPolicyAccept->isChecked()) {
-        pdlg.setPolicy(CookieJar::CookieAdvice::Reject);
+        pdlg.setPolicy(Konq::Settings::CookieAdvice::Reject);
     } else {
-        pdlg.setPolicy(CookieJar::CookieAdvice::Accept);
+        pdlg.setPolicy(Konq::Settings::CookieAdvice::Accept);
     }
 
     if (pdlg.exec() && !pdlg.domain().isEmpty()) {
         const QString domain = tolerantFromAce(pdlg.domain().toLatin1());
-        CookieJar::CookieAdvice advice = pdlg.advice();
+        Konq::Settings::CookieAdvice advice = pdlg.advice();
 
         if (!handleDuplicate(domain, advice)) {
             const char *strAdvice = KCookieAdvice::adviceToStr(advice);
@@ -186,7 +180,7 @@ void KCookiesPolicies::addPressed(const QString &domain, bool state)
     }
 }
 
-bool KCookiesPolicies::handleDuplicate(const QString &domain, CookieJar::CookieAdvice advice)
+bool KCookiesPolicies::handleDuplicate(const QString &domain, Konq::Settings::CookieAdvice advice)
 {
     QTreeWidgetItem *item = mUi.policyTreeWidget->topLevelItem(0);
     while (item != nullptr) {
@@ -253,23 +247,22 @@ void KCookiesPolicies::updateButtons()
     mUi.pbDeleteAll->setEnabled(hasItems);
 }
 
-void KCookiesPolicies::updateDomainList(const QStringList &domainConfig)
+void KCookiesPolicies::updateDomainList(const QHash<QString, Konq::Settings::CookieAdvice>& data)
 {
     mUi.policyTreeWidget->clear();
 
-    QStringList::ConstIterator it = domainConfig.begin();
-    for (; it != domainConfig.end(); ++it) {
-        QString domain;
-        CookieJar::CookieAdvice advice = CookieJar::CookieAdvice::Unknown;
-        splitDomainAdvice(*it, domain, advice);
-        if (!domain.isEmpty()) {
-            const QStringList items{
-                tolerantFromAce(domain.toLatin1()),
-                i18n(KCookieAdvice::adviceToStr(advice)),
-            };
-            QTreeWidgetItem *item = new QTreeWidgetItem(mUi.policyTreeWidget, items);
-            mDomainPolicyMap[item->text(0)] = advice;
+    for (auto it = data.constBegin(); it != data.constEnd(); ++it) {
+        QString domain = it.key();
+        Konq::Settings::CookieAdvice advice = it.value();
+        if (domain.isEmpty()) {
+            continue;
         }
+        const QStringList items{
+            tolerantFromAce(domain.toLatin1()),
+            i18n(KCookieAdvice::adviceToStr(advice)),
+        };
+        QTreeWidgetItem *item = new QTreeWidgetItem(mUi.policyTreeWidget, items);
+        mDomainPolicyMap[item->text(0)] = advice;
     }
 
     mUi.policyTreeWidget->sortItems(0, Qt::AscendingOrder);
@@ -288,33 +281,33 @@ void KCookiesPolicies::load()
     KSharedConfig::Ptr cfg = KSharedConfig::openConfig();
     KConfigGroup group = cfg->group("Cookie Policy");
 
-    bool enableCookies = group.readEntry("Cookies", true);
+    bool enableCookies = Konq::Settings::cookiesEnabled();
     mUi.cbEnableCookies->setChecked(enableCookies);
     cookiesEnabled(enableCookies);
 
-    CookieJar::CookieAdvice advice = CookieJar::readAdviceConfigEntry(group, "CookieGlobalAdvice");
+    Konq::Settings::CookieAdvice advice = Konq::Settings::self()->cookieGlobalAdvice();
     switch (advice) {
-    case CookieJar::CookieAdvice::Accept:
+    case Konq::Settings::CookieAdvice::Accept:
         mUi.rbPolicyAccept->setChecked(true);
         break;
-    case CookieJar::CookieAdvice::AcceptForSession:
+    case Konq::Settings::CookieAdvice::AcceptForSession:
         mUi.rbPolicyAcceptForSession->setChecked(true);
         break;
-    case CookieJar::CookieAdvice::Reject:
+    case Konq::Settings::CookieAdvice::Reject:
         mUi.rbPolicyReject->setChecked(true);
         break;
-    case CookieJar::CookieAdvice::Ask:
-    case CookieJar::CookieAdvice::Unknown:
+    case Konq::Settings::CookieAdvice::Ask:
+    case Konq::Settings::CookieAdvice::Unknown:
     default:
         mUi.rbPolicyAsk->setChecked(true);
     }
 
-    bool enable = group.readEntry("RejectCrossDomainCookies", true);
+    bool enable = Konq::Settings::rejectCrossDomainCookies();
     mUi.cbRejectCrossDomainCookies->setChecked(enable);
 
-    bool sessionCookies = group.readEntry("AcceptSessionCookies", true);
+    bool sessionCookies = Konq::Settings::acceptSessionCookies();
     mUi.cbAutoAcceptSessionCookies->setChecked(sessionCookies);
-    updateDomainList(group.readEntry("CookieDomainAdvice", QStringList()));
+    updateDomainList(Konq::Settings::self()->cookieDomainAdvice());
 
     if (enableCookies) {
         updateButtons();
@@ -327,34 +320,29 @@ void KCookiesPolicies::save()
     KSharedConfig::Ptr cfg = KSharedConfig::openConfig();
     KConfigGroup group = cfg->group("Cookie Policy");
 
-    bool state = mUi.cbEnableCookies->isChecked();
-    group.writeEntry("Cookies", state);
-    state = mUi.cbRejectCrossDomainCookies->isChecked();
-    group.writeEntry("RejectCrossDomainCookies", state);
-    state = mUi.cbAutoAcceptSessionCookies->isChecked();
-    group.writeEntry("AcceptSessionCookies", state);
+    Konq::Settings::setCookiesEnabled(mUi.cbEnableCookies->isChecked());
+    Konq::Settings::setRejectCrossDomainCookies(mUi.cbRejectCrossDomainCookies->isChecked());
+    Konq::Settings::setAcceptSessionCookies(mUi.cbAutoAcceptSessionCookies->isChecked());
 
-    CookieJar::CookieAdvice advice;
+    Konq::Settings::CookieAdvice advice;
     if (mUi.rbPolicyAccept->isChecked()) {
-        advice = CookieJar::CookieAdvice::Accept;
+        advice = Konq::Settings::CookieAdvice::Accept;
     } else if (mUi.rbPolicyAcceptForSession->isChecked()) {
-        advice = CookieJar::CookieAdvice::AcceptForSession;
+        advice = Konq::Settings::CookieAdvice::AcceptForSession;
     } else if (mUi.rbPolicyReject->isChecked()) {
-        advice = CookieJar::CookieAdvice::Reject;
+        advice = Konq::Settings::CookieAdvice::Reject;
     } else {
-        advice = CookieJar::CookieAdvice::Ask;
+        advice = Konq::Settings::CookieAdvice::Ask;
     }
-
-    CookieJar::writeAdviceConfigEntry(group, "CookieGlobalAdvice", advice);
+    Konq::Settings::self()->setCookieGlobalAdvice(advice);
 
     QStringList domainConfig;
     QJsonObject obj;
     for (auto it = mDomainPolicyMap.constBegin(); it != mDomainPolicyMap.constEnd(); ++it) {
-        obj.insert(it.key(), CookieJar::adviceToInt(it.value()));
+        obj.insert(it.key(), static_cast<int>(it.value()));
     }
-    group.writeEntry("CookieDomainAdvice", QJsonDocument(obj).toJson());
-
-    group.sync();
+    Konq::Settings::self()->setCookieDomainAdvice(mDomainPolicyMap);
+    Konq::Settings::self()->save();
 
     QDBusMessage message =
         QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
@@ -376,17 +364,5 @@ void KCookiesPolicies::defaults()
 
     cookiesEnabled(mUi.cbEnableCookies->isChecked());
     updateButtons();
-}
-
-void KCookiesPolicies::splitDomainAdvice(const QString &cfg, QString &domain, CookieJar::CookieAdvice &advice)
-{
-    int sepPos = cfg.lastIndexOf(QLatin1Char(':'));
-
-    // Ignore any policy that does not contain a domain...
-    if (sepPos <= 0) {
-        return;
-    }
-
-    domain = cfg.left(sepPos);
-    advice = KCookieAdvice::strToAdvice(cfg.mid(sepPos + 1));
+    setRepresentsDefaults(true);
 }

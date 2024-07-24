@@ -17,8 +17,6 @@
 #include <QLineEdit>
 #include <QVBoxLayout>
 
-using namespace KonqInterfaces;
-
 class DomainNameValidator : public QValidator
 {
     Q_OBJECT
@@ -83,10 +81,10 @@ void KCookiesPolicySelectionDlg::setEnableHostEdit(bool state, const QString &ho
     mUi.leDomain->setEnabled(state);
 }
 
-void KCookiesPolicySelectionDlg::setPolicy(KonqInterfaces::CookieJar::CookieAdvice policy)
+void KCookiesPolicySelectionDlg::setPolicy(Konq::Settings::CookieAdvice policy)
 {
     const bool blocked = mUi.cbPolicy->blockSignals(true);
-    mUi.cbPolicy->setCurrentIndex(CookieJar::adviceToInt(policy) - 1);
+    mUi.cbPolicy->setCurrentIndex(static_cast<int>(policy) - 1);
     mUi.cbPolicy->blockSignals(blocked);
     mOldPolicy = policy;
 
@@ -95,9 +93,9 @@ void KCookiesPolicySelectionDlg::setPolicy(KonqInterfaces::CookieJar::CookieAdvi
     }
 }
 
-CookieJar::CookieAdvice KCookiesPolicySelectionDlg::advice() const
+Konq::Settings::CookieAdvice KCookiesPolicySelectionDlg::advice() const
 {
-    return CookieJar::intToAdvice(mUi.cbPolicy->currentIndex() + 1, CookieJar::CookieAdvice::Accept);
+    return Konq::Settings::intToAdvice(mUi.cbPolicy->currentIndex() + 1, Konq::Settings::CookieAdvice::Accept);
 }
 
 QString KCookiesPolicySelectionDlg::domain() const
@@ -112,7 +110,7 @@ void KCookiesPolicySelectionDlg::slotTextChanged(const QString &text)
 
 void KCookiesPolicySelectionDlg::slotPolicyChanged(const QString &policyText)
 {
-    CookieJar::CookieAdvice policy = KCookieAdvice::strToAdvice(policyText);
+    Konq::Settings::CookieAdvice policy = KCookieAdvice::strToAdvice(policyText);
     if (!mUi.leDomain->isEnabled()) {
         mButtonBox->button(QDialogButtonBox::Ok)->setEnabled(policy != mOldPolicy);
     } else {

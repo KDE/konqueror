@@ -129,6 +129,9 @@ public:
     //Internal PDF viewer
     bool internalPdfViewer() const;
 
+    //Send the DoNotTrack header
+    bool doNotTrack() const;
+
     // Global config object stuff.
     static WebEngineSettings* self();
 
@@ -211,6 +214,7 @@ private:
     void initWebEngineSettings();
     void initCookieJarSettings();
     void initNSPluginSettings();
+    void initKIOSlaveSettings();
 
     /**
      * @internal Constructor

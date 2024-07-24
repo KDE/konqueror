@@ -16,6 +16,12 @@
       <label>Home Page</label>
       <whatsthis>This is the URL of the web page where Konqueror will jump to when the \"Home\" button is pressed.</whatsthis>
     </entry>
+    <entry key="AlwaysDuplicatePageWhenSplittingView" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry key="RestoreLastState" type="Bool">
+      <default>false</default>
+    </entry>
   </group>
 
 <!-- konqundomanager.cpp -->
@@ -32,6 +38,7 @@
   <group name="FMSettings">
 <!-- behaviour.cpp -->
     <entry key="AlwaysNewWin" type="Bool"> <!--TODO dolphinpart-->
+<!-- TODO Settings: still used? Dolphin doesn't seem to have a setting to do this -->
       <default>false</default>
       <label>Open folders in separate windows</label>
       <whatsthis>If this option is checked, Konqueror will open a new window when you open a folder, rather than showing that folder's contents in the current window.</whatsthis>
@@ -61,21 +68,22 @@
       <whatsthis>Check this if you want 'Delete' menu commands to be displayed on the desktop and in the file manager's menus and context menus. You can always delete files when hidden by holding the Shift key while calling 'Move to Trash'.</whatsthis>
       <!-- checked -->
     </entry>
-<!-- konqmainwindow.cpp, gui in generalopts.cpp -->
+<!-- TODO: move these settings to a Tabs group -->
+<!-- konqmainwindow.cpp, gui in tabsoptions.cpp -->
     <entry name="MmbOpensTab" key="MMBOpensTab" type="Bool">
       <default>true</default>
       <label></label>
       <whatsthis></whatsthis>
       <!-- checked -->
     </entry>
-<!-- konqviewmanager.cpp, gui in generalopts.cpp -->
+<!-- konqviewmanager.cpp, gui in tabsoptions.cpp -->
     <entry key="AlwaysTabbedMode" type="Bool">
       <default>false</default>
       <label></label>
       <whatsthis></whatsthis>
       <!-- checked -->
     </entry>
-<!-- konqtabs.cpp, gui in generalopts.cpp (advancedTabOptions.ui) -->
+<!-- konqtabs.cpp, gui in tabsoptions.cpp -->
     <entry key="NewTabsInFront" type="Bool">
       <default>false</default>
       <label></label>
@@ -188,12 +196,7 @@
       <!-- checked -->
     </entry>
 <!-- htmlopts.cpp -->
-    <entry key="ChangeCursor" type="Bool"> <!--KHTML-->
-      <default>true</default>
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
+    <!-- TODO Settings most likely remove this since I don't think it can be applied to QtWebEngine -->
     <entry name="HtmlUnderlineLinks" key="UnderlineLinks" type="Bool"> <!--KHTML-->
       <default>true</default>
       <label></label>
@@ -217,23 +220,23 @@
       <whatsthis></whatsthis>
       <!-- checked -->
     </entry>
-    <entry key="AutoDelayedActions" type="Bool"> <!--KHTML-->
-      <default>true</default>
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
     <entry key="FormCompletion" type="Bool"> <!--KHTML-->
+    <!-- TODO Settings: can't be applied to WebEnginePart without a lot of work. Decide what to do. At least hide widgets until implemented -->
       <default>true</default>
       <label></label>
       <whatsthis></whatsthis>
       <!-- checked -->
     </entry>
+    <!-- TODO Settings: can't be applied to WebEnginePart without a lot of work. Decide what to do. At least hide widgets until implemented -->
     <entry key="MaxFormCompletionItems" type="Int"> <!--KHTML-->
+    <!-- TODO Settings: as FormCompletion-->
       <default>10</default>
       <label></label>
       <whatsthis></whatsthis>
       <!-- checked -->
+    </entry>
+    <entry key="InternalPdfViewer" name="useInternalPDFViewer" type="Bool">
+      <default>false</default>
     </entry>
 <!-- konqview.cpp -->
     <entry key="EnableFavicon" type="Bool">
@@ -283,17 +286,22 @@
 
   <group name="MainView Settings" >
 <!-- htmlopts.cpp -->
+    <!-- TODO Settings: can't be applied to WebEnginePart without a lot of work. Decide what to do. At least hide widgets until implemented -->
     <entry key="OpenMiddleClick" type="Bool"> <!--KHTML-->
       <default>true</default>
       <label></label>
       <whatsthis></whatsthis>
       <!-- checked -->
     </entry>
+    <!-- TODO Settings: can't be applied to WebEnginePart without a lot of work. Decide what to do. At least hide widgets until implemented -->
     <entry key="BackRightClick" type="Bool"> <!--konqmouseeventfilter.cpp but also in KHTML !?-->
       <default>false</default>
       <label></label>
       <whatsthis></whatsthis>
       <!-- checked -->
+    </entry>
+    <entry key="OfferToSaveWebsitePassword" type="Bool">
+      <default>true</default>
     </entry>
 <!-- konqguiclients.cpp -->
     <entry key="ToggableViewsShown" type="StringList">
@@ -304,6 +312,7 @@
   </group>
 
   <group name="HistorySettings" >
+    <!-- TODO Settings: see whether it is possible to remove the KonqHistorySettings class in konqhistorysettings.{cpp,h} and use this class instead -->
 <!-- history_module.cpp -->
     <entry key="OpenGroups" type="String">
       <label></label>
@@ -315,92 +324,25 @@
       <default>50</default>
       <whatsthis></whatsthis>
     </entry>
+    <entry key="Default Action" name="defaultAction" type="Int">
+      <!-- TODO Settings: see whether it's possible to replace this with an enum -->
+      <default>0</default>
+    </entry>
+    <entry key="Maximum age of History entries" name="maximumHistoryEntryAge" type="Int">
+      <default>90</default>
+    </entry>
+    <!-- TODO Settings: add other settings after removing the KonqHistorySettings class -->
   </group>
 
+<!-- TODO Settings: change group name to JavaScript Settings -->
   <group name="Java/JavaScript Settings" >
-<!-- javaopts.cpp -->
-    <entry key="ShowJavaConsole" type="Bool">
-      <default>false</default>
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
-    <entry key="UseSecurityManager" type="Bool">
-      <default>true</default>
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
-    <entry key="UseKio" type="Bool">
-      <default>false</default>
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
-    <entry key="ShutdownAppletServer" type="Bool">
-      <default>true</default>
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
-    <entry key="AppletServerTimeout" type="Int">
-      <default>60</default>
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
-    <entry key="JavaPath" type="Path">
-      <default code="true">
-#if defined(PATH_JAVA)
-PATH_JAVA
-#else
-"java"
-#endif
-      </default>
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
-    <entry key="JavaDomains" type="StringList"> <!--KHTML-->
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
-    <entry key="JavaDomainSettings" type="StringList">
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
-    <entry key="JavaScriptDomainAdvice" type="StringList">
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
-    <entry key="JavaArgs" type="String">
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
 <!-- jsopts.cpp -->
-    <entry key="ECMADomains" type="StringList"> <!--KHTML-->
-      <default>true</default>
+    <entry key="ECMADomains" name="ecmaDomains" type="StringList"> <!--KHTML-->
       <label></label>
       <whatsthis></whatsthis>
       <!-- checked -->
     </entry>
     <entry key="ECMADomainSettings" type="StringList"> <!--KHTML-->
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
-    <entry key="ReportJavaScriptErrors" type="Bool"> <!--KHTML-->
-      <default>false</default>
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
-    <entry key="EnableJavaScriptDebug" type="Bool"> <!--KHTML-->
-      <default>false</default>
       <label></label>
       <whatsthis></whatsthis>
       <!-- checked -->
@@ -444,6 +386,8 @@ PATH_JAVA
 
   <group name="Notification Messages" >
 <!-- advancedTabDialog.cpp konqmainwindow.cpp -->
+<!-- TODO Settings: this isn't used anywhere, as this option is managed by KMessageBox itself     -->
+<!-- and in the configuration dialog what matters is the existence of the key, not the value     -->
     <entry key="MultipleTabConfirm" type="Bool">
       <default>false</default>
       <label></label>
@@ -525,6 +469,53 @@ PATH_JAVA
       <default>10</default>
       <label></label>
       <whatsthis></whatsthis>
+    </entry>
+  </group>
+
+  <group name="Cache">
+    <entry key="CacheEnabled" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry key="MemoryCache" name="KeepCacheInMemory" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry key="MaximumCacheSize" type="Int">
+      <default>0</default>
+    </entry>
+    <entry key="CustomCacheDir" type="Path">
+    </entry>
+  </group>
+
+  <group name="UserAgent">
+    <entry key="UseDefaultUserAgent" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry key="CustomUserAgent" type="String">
+    </entry>
+  </group>
+
+  <group name="Cookie Policy">
+    <entry key="Cookies" name="cookiesEnabled" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry key="RejectCrossDomainCookies" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry key="AcceptSessionCookies" type="Bool">
+      <default>true</default>
+    </entry>
+<!-- TODO: Port to Enum after UseEnumType has been enabled -->
+    <entry key="CookieGlobalAdvice" name="CookieGlobalAdviceRaw" type="Int">
+      <default>0</default>
+    </entry>
+    <entry key="CookieDomainAdvice" name="CookieDomainAdviceRaw" type="String">
+    </entry>
+  </group>
+
+<!--TODO Settings: is this worth keeping? it's an hidden option with limited usefulness -->
+  <group name="DisableWindowOpenFeatures">
+    <entry key="LocationBar" name="locationBarInJsWindows" type="Bool">
+      <default>true</default>
     </entry>
   </group>
 

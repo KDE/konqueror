@@ -11,6 +11,7 @@
 #include <webenginepart_debug.h>
 #include "cookiealertdlg.h"
 #include "interfaces/browser.h"
+#include "konqsettings.h"
 
 #include <QWebEngineProfile>
 #include <QStringList>
@@ -84,28 +85,18 @@ QSet<QNetworkCookie> WebEnginePartCookieJar::cookies() const
 
 void WebEnginePartCookieJar::writeConfig()
 {
-    KSharedConfig::Ptr cfg = KSharedConfig::openConfig();
-    KConfigGroup grp = cfg->group("Cookie Policy");
-    writeAdviceConfigEntry(grp, "CookieGlobalAdvice", m_policy.defaultPolicy);
-    QJsonObject obj;
-    for (auto it = m_policy.domainExceptions.constBegin(); it != m_policy.domainExceptions.constEnd(); ++it) {
-        obj.insert(it.key(), adviceToInt(it.value()));
-    }
-    grp.writeEntry("CookieDomainAdvice", QJsonDocument(obj).toJson());
-    cfg->sync();
+    Konq::Settings::self()->setCookieGlobalAdvice(m_policy.defaultPolicy);
+    Konq::Settings::self()->setCookieDomainAdvice(m_policy.domainExceptions);
+    Konq::Settings::self()->save();
 }
 
 void WebEnginePartCookieJar::applyConfiguration()
 {
-    KConfigGroup grp = KSharedConfig::openConfig()->group("Cookie Policy");
-    m_policy.cookiesEnabled = grp.readEntry("Cookies", true);
-    m_policy.rejectThirdPartyCookies = grp.readEntry("RejectCrossDomainCookies", true);
-    m_policy.acceptSessionCookies = grp.readEntry("AcceptSessionCookies", true);
-    m_policy.defaultPolicy = readAdviceConfigEntry(grp, "CookieGlobalAdvice", CookieAdvice::Accept);
-    QJsonObject obj = QJsonDocument::fromJson(grp.readEntry("CookieDomainAdvice", QByteArray())).object();
-    for (auto it = obj.constBegin(); it != obj.constEnd(); ++it) {
-        m_policy.domainExceptions.insert(it.key(), intToAdvice(it.value().toInt(0), CookieAdvice::Unknown));
-    }
+    m_policy.cookiesEnabled = Konq::Settings::cookiesEnabled();
+    m_policy.rejectThirdPartyCookies = Konq::Settings::rejectCrossDomainCookies();
+    m_policy.acceptSessionCookies = Konq::Settings::acceptSessionCookies();
+    m_policy.defaultPolicy = Konq::Settings::self()->cookieGlobalAdvice();
+    m_policy.domainExceptions = Konq::Settings::self()->cookieDomainAdvice();
     if (!m_policy.cookiesEnabled) {
         m_cookieStore->setCookieFilter([](const QWebEngineCookieStore::FilterRequest &){return false;});
         m_cookieStore->deleteAllCookies();

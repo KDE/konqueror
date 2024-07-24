@@ -11,6 +11,7 @@
 #include <ksharedconfig.h>
 #include "konq_historyloader_p.h"
 #include <KSharedConfig>
+#include "konqsettings.h"
 
 #include <QDBusConnection>
 #include <QDBusContext>
@@ -113,7 +114,7 @@ KonqHistoryProviderPrivate::KonqHistoryProviderPrivate(KonqHistoryProvider *qq)
     KConfigGroup cs(konqConfig(), "HistorySettings");
     m_maxCount = cs.readEntry("Maximum of History entries", 500);
     m_maxCount = qMax(1, m_maxCount);
-    m_maxAgeDays = cs.readEntry("Maximum age of History entries", 90);
+    m_maxAgeDays = Konq::Settings::maximumHistoryEntryAge();
 
     const QString dbusPath = QStringLiteral("/KonqHistoryManager");
     const QString dbusInterface = QStringLiteral("org.kde.Konqueror.HistoryManager");

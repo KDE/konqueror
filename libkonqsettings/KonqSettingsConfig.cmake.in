@@ -1,0 +1,6 @@
+@PACKAGE_INIT@
+
+​include(CMakeFindDependencyMacro)
+find_dependency(KF${KF_MAJOR_VERSION}Config)
+
+include("${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}KonqSettingsTargets.cmake")

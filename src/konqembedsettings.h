@@ -4,8 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef __konq_settings_h__
-#define __konq_settings_h__
+#ifndef KONQEMBEDSETTINGS
+#define KONQEMBEDSETTINGS
 
 #include <ksharedconfig.h>
 #include <QMap>
@@ -14,10 +14,8 @@
 
 #include <libkonq_export.h>
 
-// TODO rename this file to konqfmsettings.h, or rename the class to KonqEmbedSettings in a konqembedsettings.h header
-
 /**
- * Konqueror settings coming from KControl modules.
+ * Konqueror settings regarding embedding mimetypes coming from KCM modules.
  *
  * (konquerorrc, group "FMSettings")
  */
@@ -66,4 +64,4 @@ private:
     friend class KonqEmbedSettingsSingleton;
 };
 
-#endif
+#endif //KONQEMBEDSETTINGS

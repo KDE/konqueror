@@ -1,0 +1,10 @@
+File=konqueror.kcfg
+NameSpace=Konq
+ClassName=Settings
+Inherits=Konq::SettingsBase
+IncludeFiles=konqsettingsbase.h,libkonqsettings_export.h
+Singleton=true
+Mutators=true
+; TODO: set UseEnumType=true. Currently, this clases with several settings
+Visibility=LIBKONQSETTINGS_EXPORT
+SourceIncludeFiles=kcompletion.h

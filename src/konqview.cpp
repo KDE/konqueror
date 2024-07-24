@@ -8,7 +8,7 @@
 #include "konqview.h"
 
 #include "KonqViewAdaptor.h"
-#include "konqsettingsxt.h"
+#include "konqsettings.h"
 #include "konqframestatusbar.h"
 #include "urlloader.h"
 #include <konq_events.h>
@@ -652,7 +652,7 @@ void KonqView::slotCompleted(bool hasPending)
     setLoading(false, hasPending);
 
     if (!m_bGotIconURL && !m_bAborted) {
-        if (KonqSettings::enableFavicon() == true) {
+        if (Konq::Settings::enableFavicon() == true) {
             // Try to get /favicon.ico. KonqPixmapProvider::downloadHostIcon does nothing if the URL is not http(s)
             if (supportsMimeType(QStringLiteral("text/html"))) {
                 KonqPixmapProvider::self()->downloadHostIcon(url());
@@ -709,7 +709,7 @@ void KonqView::setIconURL(const QUrl &iconURL)
 // thus it is responsible for the icon in the taskbar.
 // It does not set the tab's favIcon.
 {
-    if (KonqSettings::enableFavicon()) {
+    if (Konq::Settings::enableFavicon()) {
         KonqPixmapProvider::self()->setIconForUrl(QUrl(m_sLocationBarURL), iconURL);
         m_bGotIconURL = true;
     }
@@ -800,7 +800,7 @@ void KonqView::createHistoryEntry()
 void KonqView::appendHistoryEntry(HistoryEntry *historyEntry)
 {
     // If there are too many HistoryEntries remove old ones
-    while (m_lstHistory.count() > 0 && m_lstHistory.count() >= KonqSettings::maximumHistoryEntriesPerView()) {
+    while (m_lstHistory.count() > 0 && m_lstHistory.count() >= Konq::Settings::maximumHistoryEntriesPerView()) {
         delete m_lstHistory.takeFirst();
     }
 

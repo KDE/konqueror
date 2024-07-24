@@ -64,6 +64,7 @@ configure_file (konqueror-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/konqueror-
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_subdirectory( libkonq )
+add_subdirectory(libkonqsettings)
 add_subdirectory( src )
 add_subdirectory( client )
 if(BUILD_TESTING)

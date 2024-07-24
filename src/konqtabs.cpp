@@ -25,7 +25,7 @@
 #include "konqview.h"
 #include "konqviewmanager.h"
 #include "konqmisc.h"
-#include "konqsettingsxt.h"
+#include "konqsettings.h"
 #include "konqframevisitor.h"
 
 #include <kacceleratormanager.h>
@@ -59,12 +59,12 @@ KonqFrameTabs::KonqFrameTabs(QWidget *parent, KonqFrameContainerBase *parentCont
     m_pActiveChild = nullptr;
     m_pViewManager = viewManager;
 
-    m_permanentCloseButtons = KonqSettings::permanentCloseButton();
+    m_permanentCloseButtons = Konq::Settings::permanentCloseButton();
     if (m_permanentCloseButtons) {
         setTabsClosable(true);
     }
     tabBar()->setSelectionBehaviorOnRemove(
-        KonqSettings::tabCloseActivatePrevious() ? QTabBar::SelectPreviousTab : QTabBar::SelectRightTab);
+        Konq::Settings::tabCloseActivatePrevious() ? QTabBar::SelectPreviousTab : QTabBar::SelectRightTab);
 
     applyTabBarPositionOption();
 
@@ -72,7 +72,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget *parent, KonqFrameContainerBase *parentCont
     connect(this, SIGNAL(removeTabPopup()),
             m_pViewManager->mainWindow(), SLOT(slotRemoveTabPopup()));
 
-    if (KonqSettings::addTabButton()) {
+    if (Konq::Settings::addTabButton()) {
         m_leftWidget = new NewTabToolButton(this);
         connect(m_leftWidget, SIGNAL(clicked()),
                 m_pViewManager->mainWindow(), SLOT(slotAddTab()));
@@ -85,7 +85,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget *parent, KonqFrameContainerBase *parentCont
         m_leftWidget->setToolTip(i18n("Open a new tab"));
         setCornerWidget(m_leftWidget, Qt::TopLeftCorner);
     }
-    if (KonqSettings::closeTabButton()) {
+    if (Konq::Settings::closeTabButton()) {
         m_rightWidget = new QToolButton(this);
         connect(m_rightWidget, SIGNAL(clicked()),
                 m_pViewManager->mainWindow(), SLOT(slotRemoveTab()));
@@ -602,7 +602,7 @@ KonqFrameBase *KonqFrameTabs::currentTab() const
 
 bool KonqFrameTabs::eventFilter(QObject *watched, QEvent *event)
 {
-    if (KonqSettings::mouseMiddleClickClosesTab()) {
+    if (Konq::Settings::mouseMiddleClickClosesTab()) {
         QTabBar *bar = tabBar();
         if (watched == bar &&
                 (event->type() == QEvent::MouseButtonPress ||
@@ -628,7 +628,7 @@ void KonqFrameTabs::reparseConfiguration()
 
 void KonqFrameTabs::applyTabBarPositionOption()
 {
-    int tabBarPosition = KonqSettings::tabBarPosition();
+    int tabBarPosition = Konq::Settings::tabBarPosition();
     if (tabBarPosition < North || tabBarPosition > East) {
         tabBarPosition = 0;
     }

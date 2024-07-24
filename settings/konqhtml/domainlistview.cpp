@@ -8,12 +8,15 @@
 
 // Own
 #include "domainlistview.h"
+#include "jspolicies.h"
+#include "jsopts.h"
 
 // Qt
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QTreeWidget>
+#include <QCheckBox>
 
 // KDE
 #include <KLocalizedString>
@@ -22,12 +25,12 @@
 #include <kconfiggroup.h>
 
 // Local
-#include "policies.h"
+#include "jspolicies.h"
 #include "policydlg.h"
 
-DomainListView::DomainListView(KSharedConfig::Ptr config, const QString &title,
+DomainListView::DomainListView(KSharedConfig::Ptr config, const QString &group, KJavaScriptOptions *options,
                                QWidget *parent) :
-    QGroupBox(title, parent), config(config)
+    QGroupBox(i18nc("@title:group", "Do&main-Specific"), parent), config(config), group(group), options(options)
 {
     QHBoxLayout *thisLayout = new QHBoxLayout(this);
 
@@ -98,7 +101,7 @@ void DomainListView::updateButton()
 void DomainListView::addPressed()
 {
 //    JavaPolicies pol_copy(m_pConfig,m_groupname,false);
-    Policies *pol = createPolicies();
+    JSPolicies *pol = createPolicies();
     pol->defaults();
     PolicyDialog pDlg(pol, this);
     setupPolicyDlg(AddButton, pDlg, pol);
@@ -123,10 +126,10 @@ void DomainListView::changePressed()
         return;
     }
 
-    Policies *pol = domainPolicies[index];
+    JSPolicies *pol = domainPolicies[index];
     // This must be copied because the policy dialog is allowed to change
     // the data even if the changes are rejected in the end.
-    Policies *pol_copy = copyPolicies(pol);
+    JSPolicies *pol_copy = copyPolicies(pol);
 
     PolicyDialog pDlg(pol_copy, this);
     pDlg.setDisableEdit(true, index->text(0));
@@ -178,7 +181,7 @@ void DomainListView::initialize(const QStringList &domainList)
     for (QStringList::ConstIterator it = domainList.begin();
             it != domainList.end(); ++it) {
         QString domain = *it;
-        Policies *pol = createPolicies();
+        JSPolicies *pol = createPolicies();
         pol->setDomain(domain);
         pol->load();
 
@@ -203,16 +206,43 @@ void DomainListView::save(const QString &group, const QString &domainListKey)
     DomainPolicyMap::Iterator it = domainPolicies.begin();
     for (; it != domainPolicies.end(); ++it) {
         QTreeWidgetItem *current = it.key();
-        Policies *pol = it.value();
+        JSPolicies *pol = it.value();
         pol->save();
         domainList.append(current->text(0));
     }
     config->group(group).writeEntry(domainListKey, domainList);
 }
 
-void DomainListView::setupPolicyDlg(PushButton /*trigger*/,
-                                    PolicyDialog &/*pDlg*/, Policies * /*copy*/)
+JSPolicies* DomainListView::createPolicies()
 {
-    // do nothing
+    return new JSPolicies(config, group, false);
+}
+
+JSPolicies * DomainListView::copyPolicies(JSPolicies* pol)
+{
+    return new JSPolicies(*static_cast<JSPolicies *>(pol));
+}
+
+void DomainListView::setupPolicyDlg(PushButton trigger, PolicyDialog &pDlg, JSPolicies *pol)
+{
+    JSPolicies *jspol = static_cast<JSPolicies *>(pol);
+    QString caption;
+    switch (trigger) {
+    case AddButton:
+        caption = i18nc("@title:window", "New JavaScript Policy");
+        jspol->setFeatureEnabled(!options->enableJavaScriptGloballyCB->isChecked());
+        break;
+    case ChangeButton: caption = i18nc("@title:window", "Change JavaScript Policy"); break;
+    default:; // inhibit gcc warning
+    }/*end switch*/
+    pDlg.setWindowTitle(caption);
+    pDlg.setFeatureEnabledLabel(i18n("JavaScript policy:"));
+    pDlg.setFeatureEnabledWhatsThis(i18n("Select a JavaScript policy for "
+                                         "the above host or domain."));
+    JSPoliciesFrame *panel = new JSPoliciesFrame(jspol, i18n("Domain-Specific "
+            "JavaScript Policies"), &pDlg);
+    panel->refresh();
+    pDlg.addPolicyPanel(panel);
+    pDlg.refresh();
 }
 

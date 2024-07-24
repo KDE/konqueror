@@ -4,7 +4,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "konqmisc.h"
-#include "konqsettingsxt.h"
+#include "konqsettings.h"
 #include "konqmainwindow.h"
 #include "konqviewmanager.h"
 #include "konqview.h"

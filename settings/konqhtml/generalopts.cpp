@@ -10,6 +10,8 @@
 // Own
 #include "generalopts.h"
 
+#include "konqsettings.h"
+
 // Qt
 #include <QDBusConnection>
 #include <QDBusMessage>
@@ -23,15 +25,12 @@
 
 // KDE
 #include <kbuildsycocaprogressdialog.h>
-#include <KConfigGroup>
-#include <KSharedConfig>
 #include <KMessageWidget>
 #include <KParts/PartLoader>
 #include <KLocalizedString>
 
-// Keep in sync with konqueror.kcfg
-static const char DEFAULT_STARTPAGE[] = "konq:konqueror";
-static const char DEFAULT_HOMEPAGE[] = "https://www.kde.org/";
+using namespace Konq;
+
 // Keep in sync with the order in the combo
 enum StartPage { ShowAboutPage, ShowStartUrlPage, ShowBlankPage, ShowBookmarksPage };
 
@@ -40,7 +39,6 @@ enum StartPage { ShowAboutPage, ShowStartUrlPage, ShowBlankPage, ShowBookmarksPa
 KKonqGeneralOptions::KKonqGeneralOptions(QObject *parent, const KPluginMetaData &md, const QVariantList &)
     : KCModule(parent, md), m_emptyStartUrlWarning(new KMessageWidget(widget()))
 {
-    m_pConfig = KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals);
     QVBoxLayout *lay = new QVBoxLayout(widget());
     lay->setContentsMargins(0, 0, 0, 0);
 
@@ -178,9 +176,8 @@ static QString startPageEnumToUrl(StartPage startPage)
 
 void KKonqGeneralOptions::load()
 {
-    KConfigGroup userSettings(m_pConfig, "UserSettings");
-    const QUrl homeUrl(QUrl(userSettings.readEntry("HomeURL", DEFAULT_HOMEPAGE)));
-    const QUrl startUrl(QUrl(userSettings.readEntry("StartURL", DEFAULT_STARTPAGE)));
+    const QUrl homeUrl(Settings::homeURL());
+    const QUrl startUrl(Settings::startURL());
     homeURL->setText(homeUrl.toString());
     startURL->setText(startUrl.toString());
     const StartPage startPage = urlToStartPageEnum(startUrl.toString());
@@ -188,10 +185,10 @@ void KKonqGeneralOptions::load()
     Q_ASSERT(startComboIndex != -1);
     m_startCombo->setCurrentIndex(startComboIndex);
 
-    const bool alwaysDuplicateWhenSplitting = userSettings.readEntry("AlwaysDuplicatePageWhenSplittingView", true);
+    const bool alwaysDuplicateWhenSplitting = Settings::alwaysDuplicatePageWhenSplittingView();
     m_splitBehaviour->setCurrentIndex(alwaysDuplicateWhenSplitting ? 0 : 1);
 
-    const bool restoreLastState = userSettings.readEntry(QStringLiteral("RestoreLastState"), false);
+    const bool restoreLastState = Settings::restoreLastState();
     m_restoreLastState->setChecked(restoreLastState);
 
     m_webEngineCombo->clear();
@@ -217,31 +214,24 @@ void KKonqGeneralOptions::load()
 
 void KKonqGeneralOptions::defaults()
 {
-    homeURL->setText(QUrl(DEFAULT_HOMEPAGE).toString());
-    startURL->setText(QUrl(DEFAULT_STARTPAGE).toString());
-    m_splitBehaviour->setCurrentIndex(0);
-    m_restoreLastState->setChecked(false);
-
-    bool old = m_pConfig->readDefaults();
-    m_pConfig->setReadDefaults(true);
-    load();
-    m_pConfig->setReadDefaults(old);
+    Settings::self()->withDefaults([this]{load();});
     setRepresentsDefaults(true);
+    setNeedsSave(true);
+    KCModule::defaults();
 }
 
 void KKonqGeneralOptions::save()
 {
-    KConfigGroup userSettings(m_pConfig, "UserSettings");
     const int startComboIndex = m_startCombo->currentIndex();
     const StartPage choice = static_cast<StartPage>(m_startCombo->itemData(startComboIndex).toInt());
     QString startUrl(startPageEnumToUrl(static_cast<StartPage>(choice)));
     if (startUrl.isEmpty()) {
         startUrl = startURL->text();
     }
-    userSettings.writeEntry("StartURL", startUrl);
-    userSettings.writeEntry("HomeURL", homeURL->text());
-    userSettings.writeEntry("AlwaysDuplicatePageWhenSplittingView", m_splitBehaviour->currentIndex() == 0);
-    userSettings.writeEntry("RestoreLastState", m_restoreLastState->isChecked());
+    Settings::setStartURL(startUrl);
+    Settings::setHomeURL(homeURL->text());
+    Settings::setAlwaysDuplicatePageWhenSplittingView(m_splitBehaviour->currentIndex() == 0);
+    Settings::setRestoreLastState(m_restoreLastState->isChecked());
 
     if (m_webEngineCombo->currentIndex() > 0) {
         // The user changed the preferred web engine, save into mimeapps.list.
@@ -261,7 +251,7 @@ void KKonqGeneralOptions::save()
         // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
         KBuildSycocaProgressDialog::rebuildKSycoca(widget());
     }
-    m_pConfig->sync();
+    Settings::self()->save();
 
     // Send signal to all konqueror instances
     QDBusMessage message =

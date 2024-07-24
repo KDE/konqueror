@@ -23,6 +23,8 @@
 #include "interfaces/browser.h"
 #include "schemehandlers/execschemehandler.h"
 
+#include "konqsettings.h"
+
 #include <KProtocolInfo>
 #include <KSharedConfig>
 #include <KConfigGroup>
@@ -233,16 +235,13 @@ void WebEnginePartControls::reparseConfiguration()
     if (!m_profile) {
         return;
     }
-    KSharedConfig::Ptr cfg = KSharedConfig::openConfig();
-    KConfigGroup grp = cfg->group(QStringLiteral("Cache"));
-    if (grp.readEntry(QStringLiteral("CacheEnabled"), true)) {
-        QWebEngineProfile::HttpCacheType type = grp.readEntry(QStringLiteral("MemoryCache"), false) ? QWebEngineProfile::MemoryHttpCache : QWebEngineProfile::DiskHttpCache;
+    if (Konq::Settings::cacheEnabled()) {
+        QWebEngineProfile::HttpCacheType type = Konq::Settings::keepCacheInMemory() ? QWebEngineProfile::MemoryHttpCache : QWebEngineProfile::DiskHttpCache;
         m_profile->setHttpCacheType(type);
-        m_profile->setHttpCacheMaximumSize(grp.readEntry(QStringLiteral("MaximumCacheSize"), 0));
+        m_profile->setHttpCacheMaximumSize(Konq::Settings::maximumCacheSize());
         //NOTE: According to the documentation, setCachePath resets the cache path to its default value if the argument is a null QString
         //it doesn't specify what it does if the string is empty but not null. Experimenting, it seems the behavior is the same
-        m_profile->setCachePath(grp.readEntry(QStringLiteral("CustomCacheDir"), QString()));
-
+        m_profile->setCachePath(Konq::Settings::customCacheDir());
     } else {
         m_profile->setHttpCacheType(QWebEngineProfile::NoCache);
     }

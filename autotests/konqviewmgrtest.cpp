@@ -6,7 +6,7 @@
 
 #include "konqviewmgrtest.h"
 #include <konqmainwindowfactory.h>
-#include "../src/konqsettingsxt.h"
+#include "konqsettings.h"
 #include <QToolBar>
 #include <QProcess>
 #include <QScrollArea>
@@ -185,9 +185,9 @@ void ViewMgrTest::initTestCase()
     QDir(configLocationDir).remove("konquerorrc");
 
     KonqSessionManager::self()->disableAutosave();
-    QCOMPARE(KonqSettings::mmbOpensTab(), true);
-    QCOMPARE(KonqSettings::popupsWithinTabs(), false);
-    KonqSettings::setAlwaysHavePreloaded(false); // it would confuse the mainwindow counting
+    QCOMPARE(Konq::Settings::mmbOpensTab(), true);
+    QCOMPARE(Konq::Settings::popupsWithinTabs(), false);
+    Konq::Settings::setAlwaysHavePreloaded(false); // it would confuse the mainwindow counting
 
     // Ensure the tests use webenginepart (not khtml or webkit)
     // This code is inspired by settings/konqhtml/generalopts.cpp
@@ -485,7 +485,7 @@ void ViewMgrTest::testPopupNewTab() // RMB, "Open in new tab"
     QCOMPARE(KMainWindow::memberList().count(), 1);
     QCOMPARE(mainWindow.linkableViewsCount(), 1);
 
-    if (KonqSettings::newTabsInFront()) {
+    if (Konq::Settings::newTabsInFront()) {
         QCOMPARE(tabs->currentIndex(), 1);
     }
 }
@@ -533,10 +533,10 @@ void ViewMgrTest::testCtrlClickOnLink()
     //  new tab, if mmbOpensTab
     //  new window, if !mmbOpensTab
     //  (this code is called for both cases)
-    if (KonqSettings::mmbOpensTab()) {
+    if (Konq::Settings::mmbOpensTab()) {
         QCOMPARE(KMainWindow::memberList().count(), 1);
         QTRY_COMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
-        if (KonqSettings::newTabsInFront()) { // when called by sameTestsWithNewTabsInFront
+        if (Konq::Settings::newTabsInFront()) { // when called by sameTestsWithNewTabsInFront
             QCOMPARE(tabs->currentIndex(), 1);
             QVERIFY(mainWindow.currentView() != view);
             QVERIFY(mainWindow.viewManager()->activePart() != view->part());
@@ -560,22 +560,22 @@ void ViewMgrTest::sameTestsWithNewTabsInFront()
 {
     // Redo testCtrlClickOnLink,
     // but with the option "NewTabsInFront" set to true.
-    QVERIFY(!KonqSettings::newTabsInFront()); // default setting = false
-    KonqSettings::setNewTabsInFront(true);
+    QVERIFY(!Konq::Settings::newTabsInFront()); // default setting = false
+    Konq::Settings::setNewTabsInFront(true);
     testPopupNewTab();
     testCtrlClickOnLink();
-    KonqSettings::setNewTabsInFront(false);
+    Konq::Settings::setNewTabsInFront(false);
 }
 
 void ViewMgrTest::sameTestsWithMmbOpenTabsFalse()
 {
     // Redo testPopupNewTab, testPopupNewWindow and testCtrlClickOnLink,
     // but as if the user (e.g. Pino) had disabled the setting "Open links in new tabs".
-    KonqSettings::setMmbOpensTab(false);
+    Konq::Settings::setMmbOpensTab(false);
     testPopupNewTab();
     testPopupNewWindow();
     testCtrlClickOnLink();
-    KonqSettings::setMmbOpensTab(true);
+    Konq::Settings::setMmbOpensTab(true);
 }
 
 static void openTabWithTitle(KonqMainWindow &mainWindow, const QString &title, KonqView *&view)
