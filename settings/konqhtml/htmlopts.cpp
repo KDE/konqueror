@@ -133,6 +133,11 @@ KMiscHTMLOptions::KMiscHTMLOptions(QObject *parent, const KPluginMetaData &md)
     fl->addRow(m_pdfViewer);
     connect(m_pdfViewer, &QCheckBox::toggled, this, &KMiscHTMLOptions::markAsChanged);
 
+    m_embedDownloadedNewTab = new QCheckBox(i18n("Always display files from web pages in a new tab"));
+    m_embedDownloadedNewTab->setToolTip(i18n("<p>When showing in Konqueror files from links in web pages, always use a new tab"));
+    fl->addRow(m_embedDownloadedNewTab);
+    connect(m_embedDownloadedNewTab, &QCheckBox::toggled, this, &KMiscHTMLOptions::markAsChanged);
+
     lay->addWidget(bgMisc);
     lay->addStretch(5);
 
@@ -156,8 +161,8 @@ void KMiscHTMLOptions::loadFromKonquerorrc()
     // m_pMaxFormCompletionItems->setEnabled(m_pFormCompletionCheckBox->isChecked());
 
     m_pOfferToSaveWebsitePassword->setChecked(Settings::offerToSaveWebsitePassword());
-
     m_pdfViewer->setChecked(Settings::useInternalPDFViewer());
+    m_embedDownloadedNewTab->setChecked(Settings::alwaysEmbedInNewTab());
 }
 
 void KMiscHTMLOptions::load()
@@ -207,6 +212,7 @@ void KMiscHTMLOptions::save()
 
     Settings::setOfferToSaveWebsitePassword(m_pOfferToSaveWebsitePassword->isChecked());
     Settings::setUseInternalPDFViewer(m_pdfViewer->isChecked());
+    Settings::setAlwaysEmbedInNewTab(m_embedDownloadedNewTab->isChecked());
 
     Settings::self()->save();
 

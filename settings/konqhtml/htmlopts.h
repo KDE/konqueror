@@ -65,6 +65,7 @@ private:
     //TODO Settings: uncomment when form completion is enabled with WebEnginePart
     // QSpinBox *m_pMaxFormCompletionItems;
     QCheckBox *m_pdfViewer;
+    QCheckBox *m_embedDownloadedNewTab;
 };
 
 #endif // HTMLOPTS_H
