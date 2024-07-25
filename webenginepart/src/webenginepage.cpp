@@ -422,6 +422,9 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
     settings()->setAttribute(QWebEngineSettings::PluginsEnabled, WebEngineSettings::self()->isPluginsEnabled(reqUrl.host()));
 
     if (isMainFrame) {
+        //Setting the javascript policy after the page has been loaded can be too late
+        //(see bug #490321), so we also do it here
+        setPageJScriptPolicy(url);
         emit mainFrameNavigationRequested(this, url);
     }
     return QWebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
