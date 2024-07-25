@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 02:36+0000\n"
+"POT-Creation-Date: 2024-07-25 02:29+0000\n"
 "PO-Revision-Date: 2023-01-07 10:28+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -497,8 +497,8 @@ msgstr ""
 "Δεν περνούν τα URL αν γίνεται χρήση του διακόπτη --preload. Τα URL θα "
 "αγνοηθούν\n"
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4789
-#: src/konqmainwindow.cpp:4835
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4790
+#: src/konqmainwindow.cpp:4836
 #, kde-format
 msgid "no name"
 msgstr "χωρίς όνομα"
@@ -603,7 +603,7 @@ msgstr "Τοπικό"
 msgid "Miscellaneous"
 msgstr "Διάφορα"
 
-#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4302
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4301
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Άνοιγμα σε νέο &παράθυρο"
@@ -664,13 +664,13 @@ msgctxt "@title:window"
 msgid "Clear History?"
 msgstr "Καθαρισμός ιστορικού;"
 
-#: src/konqmainwindow.cpp:685
+#: src/konqmainwindow.cpp:687
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
 msgstr "Φόρτωση..."
 
-#: src/konqmainwindow.cpp:717
+#: src/konqmainwindow.cpp:719
 #, kde-format
 msgid "Access denied"
 msgstr "Άρνηση πρόσβασης"
@@ -694,19 +694,19 @@ msgstr ""
 "Αυτή η σελίδα περιέχει αλλαγές που δεν έχουν υποβληθεί.\n"
 "Η επαναφόρτωση της σελίδας θα οδηγήσει σε απόρριψη αυτών των αλλαγών."
 
-#: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2225
-#: src/konqmainwindow.cpp:2314 src/konqmainwindow.cpp:2346
-#: src/konqmainwindow.cpp:2389 src/konqmainwindow.cpp:2411
-#: src/konqmainwindow.cpp:4754
+#: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2224
+#: src/konqmainwindow.cpp:2313 src/konqmainwindow.cpp:2345
+#: src/konqmainwindow.cpp:2388 src/konqmainwindow.cpp:2410
+#: src/konqmainwindow.cpp:4755
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
 msgstr "Απόρριψη αλλαγών;"
 
-#: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2225
-#: src/konqmainwindow.cpp:2314 src/konqmainwindow.cpp:2346
-#: src/konqmainwindow.cpp:2389 src/konqmainwindow.cpp:2412
-#: src/konqmainwindow.cpp:4754
+#: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2224
+#: src/konqmainwindow.cpp:2313 src/konqmainwindow.cpp:2345
+#: src/konqmainwindow.cpp:2388 src/konqmainwindow.cpp:2411
+#: src/konqmainwindow.cpp:4755
 #, kde-format
 msgid "&Discard Changes"
 msgstr "&Απόρριψη αλλαγών"
@@ -716,7 +716,7 @@ msgstr "&Απόρριψη αλλαγών"
 msgid "Home Folder"
 msgstr "Προσωπικός φάκελος"
 
-#: src/konqmainwindow.cpp:1902 src/konqmainwindow.cpp:3324
+#: src/konqmainwindow.cpp:1902 src/konqmainwindow.cpp:3323
 #, kde-format
 msgid "Home"
 msgstr "Αρχική"
@@ -731,8 +731,7 @@ msgstr "Μετάβαση στον 'Προσωπικό φάκελό' σας"
 msgid "Navigate to your local 'Home Folder'"
 msgstr "Μετάβαση στον τοπικό 'Προσωπικό φάκελό' σας"
 
-#. i18n: ectx: label, entry, group (UserSettings)
-#: src/konqmainwindow.cpp:1912 src/konqueror.kcfg:16
+#: src/konqmainwindow.cpp:1912
 #, kde-format
 msgid "Home Page"
 msgstr "Αρχική σελίδα"
@@ -753,7 +752,7 @@ msgstr ""
 "διαμορφώσετε  την τοποθεσία που αυτό το κουμπί σας πηγαίνει στο <b>Ρυθμίσεις -> Διαμόρφωση "
 "Konqueror -> Γενικά</b>.</html>"
 
-#: src/konqmainwindow.cpp:2224
+#: src/konqmainwindow.cpp:2223
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -762,7 +761,7 @@ msgstr ""
 "Αυτή η καρτέλα περιέχει αλλαγές που δεν έχουν υποβληθεί.\n"
 "Η αποσύνδεση της καρτέλας θα οδηγήσει σε απόρριψη αυτών των αλλαγών."
 
-#: src/konqmainwindow.cpp:2313
+#: src/konqmainwindow.cpp:2312
 #, kde-format
 msgid ""
 "This view contains changes that have not been submitted.\n"
@@ -771,7 +770,7 @@ msgstr ""
 "Αυτή η προβολή περιέχει αλλαγές που δεν έχουν υποβληθεί.\n"
 "Το κλείσιμο της προβολής θα οδηγήσει σε απόρριψη αυτών των αλλαγών."
 
-#: src/konqmainwindow.cpp:2345
+#: src/konqmainwindow.cpp:2344
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -780,23 +779,23 @@ msgstr ""
 "Αυτή η καρτέλα περιέχει αλλαγές που δεν έχουν υποβληθεί.\n"
 "Το κλείσιμο της καρτέλας θα οδηγήσει σε απόρριψη αυτών των αλλαγών."
 
-#: src/konqmainwindow.cpp:2371
+#: src/konqmainwindow.cpp:2370
 #, kde-format
 msgid "Do you really want to close all other tabs?"
 msgstr "Θέλετε πραγματικά να κλείσετε όλες τις άλλες καρτέλες;"
 
-#: src/konqmainwindow.cpp:2372 src/konqmainwindow.cpp:3404 src/konqtabs.cpp:335
+#: src/konqmainwindow.cpp:2371 src/konqmainwindow.cpp:3403 src/konqtabs.cpp:335
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr "Κλείσιμο των ά&λλων καρτελών"
 
-#: src/konqmainwindow.cpp:2372
+#: src/konqmainwindow.cpp:2371
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
 msgstr "Επιβεβαίωση για κλείσιμο καρτελών"
 
-#: src/konqmainwindow.cpp:2388
+#: src/konqmainwindow.cpp:2387
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -805,7 +804,7 @@ msgstr ""
 "Αυτή η καρτέλα περιέχει αλλαγές που δεν έχουν υποβληθεί.\n"
 "Το κλείσιμο άλλων καρτελών θα οδηγήσει σε απόρριψη αυτών των αλλαγών."
 
-#: src/konqmainwindow.cpp:2410
+#: src/konqmainwindow.cpp:2409
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -814,233 +813,233 @@ msgstr ""
 "Αυτή η καρτέλα περιέχει αλλαγές που δεν έχουν υποβληθεί.\n"
 "Η επαναφόρτωση άλλων καρτελών θα οδηγήσει σε απόρριψη αυτών των αλλαγών."
 
-#: src/konqmainwindow.cpp:2467
+#: src/konqmainwindow.cpp:2466
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Target"
 msgstr "Εισαγωγή προορισμού"
 
-#: src/konqmainwindow.cpp:2474
+#: src/konqmainwindow.cpp:2473
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
 msgstr "<qt><b>Το %1</b> δεν είναι έγκυρο</qt>"
 
-#: src/konqmainwindow.cpp:2484
+#: src/konqmainwindow.cpp:2483
 #, kde-format
 msgid "Copy selected files from %1 to:"
 msgstr "Αντιγραφή επιλεγμένων αρχείων από %1 σε:"
 
-#: src/konqmainwindow.cpp:2497
+#: src/konqmainwindow.cpp:2496
 #, kde-format
 msgid "Move selected files from %1 to:"
 msgstr "Μετακίνηση επιλεγμένων αρχείων από %1 σε:"
 
-#: src/konqmainwindow.cpp:2665
+#: src/konqmainwindow.cpp:2664
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
 msgstr "Καθάρισμα ιστορικού κλεισμένων αντικειμένων"
 
-#: src/konqmainwindow.cpp:2687
+#: src/konqmainwindow.cpp:2686
 #, kde-format
 msgid "Save As..."
 msgstr "Αποθήκευση ως..."
 
-#: src/konqmainwindow.cpp:2689
+#: src/konqmainwindow.cpp:2688
 #, kde-format
 msgid "Manage..."
 msgstr "Διαχείριση..."
 
-#: src/konqmainwindow.cpp:3233
+#: src/konqmainwindow.cpp:3232
 #, kde-format
 msgid "New &Window"
 msgstr "Νέο &παράθυρο"
 
-#: src/konqmainwindow.cpp:3238
+#: src/konqmainwindow.cpp:3237
 #, kde-format
 msgid "&Duplicate Window"
 msgstr "&Αντίγραφο παραθύρου"
 
-#: src/konqmainwindow.cpp:3243
+#: src/konqmainwindow.cpp:3242
 #, kde-format
 msgid "Send &Link Address..."
 msgstr "Αποστολή &δεσμού..."
 
-#: src/konqmainwindow.cpp:3247
+#: src/konqmainwindow.cpp:3246
 #, kde-format
 msgid "S&end File..."
 msgstr "&Αποστολή αρχείου..."
 
-#: src/konqmainwindow.cpp:3251
+#: src/konqmainwindow.cpp:3250
 #, kde-format
 msgid "&Open Location"
 msgstr "Άνοιγμα &τοποθεσίας"
 
-#: src/konqmainwindow.cpp:3257
+#: src/konqmainwindow.cpp:3256
 #, kde-format
 msgid "&Open File..."
 msgstr "Ά&νοιγμα αρχείου..."
 
-#: src/konqmainwindow.cpp:3262
+#: src/konqmainwindow.cpp:3261
 #, kde-format
 msgid "&Find File..."
 msgstr "&Αναζήτηση αρχείου..."
 
-#: src/konqmainwindow.cpp:3271
+#: src/konqmainwindow.cpp:3270
 #, kde-format
 msgid "Lock to Current Location"
 msgstr "Κλείδωμα στην τρέχουσα τοποθεσία"
 
-#: src/konqmainwindow.cpp:3274
+#: src/konqmainwindow.cpp:3273
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr "&Σύνδεση προβολής"
 
-#: src/konqmainwindow.cpp:3279
+#: src/konqmainwindow.cpp:3278
 #, kde-format
 msgid "&Up"
 msgstr "&Πάνω"
 
-#: src/konqmainwindow.cpp:3289
+#: src/konqmainwindow.cpp:3288
 #, kde-format
 msgid "Closed Items"
 msgstr "Κλειστά αντικείμενα"
 
-#: src/konqmainwindow.cpp:3302
+#: src/konqmainwindow.cpp:3301
 #, kde-format
 msgid "Sessions"
 msgstr "Συνεδρίες"
 
-#: src/konqmainwindow.cpp:3329
+#: src/konqmainwindow.cpp:3328
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr "Πιο συχνές επισκέψεις"
 
-#: src/konqmainwindow.cpp:3333
+#: src/konqmainwindow.cpp:3332
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr "Πρόσφατες επισκέψεις"
 
-#: src/konqmainwindow.cpp:3342
+#: src/konqmainwindow.cpp:3341
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr "Εμφάνιση ιστορικού"
 
-#: src/konqmainwindow.cpp:3354
+#: src/konqmainwindow.cpp:3353
 #, kde-format
 msgid "Configure Extensions..."
 msgstr "Διαμόρφωση πρόσθετων..."
 
-#: src/konqmainwindow.cpp:3358
+#: src/konqmainwindow.cpp:3357
 #, kde-format
 msgid "Configure Spell Checking..."
 msgstr "Διαμόρφωση του ορθογραφικού ελέγχου..."
 
-#: src/konqmainwindow.cpp:3364
+#: src/konqmainwindow.cpp:3363
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr "Διαίρεση προβολής σε αρ&ιστερό/δεξί"
 
-#: src/konqmainwindow.cpp:3369
+#: src/konqmainwindow.cpp:3368
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr "Διαίρεση προβολής σε πάν&ω/κάτω"
 
-#: src/konqmainwindow.cpp:3374 src/konqtabs.cpp:456
+#: src/konqmainwindow.cpp:3373 src/konqtabs.cpp:456
 #, kde-format
 msgid "&New Tab"
 msgstr "&Νέα καρτέλα"
 
-#: src/konqmainwindow.cpp:3383
+#: src/konqmainwindow.cpp:3382
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr "&Αντίγραφο τρέχουσας καρτέλας"
 
-#: src/konqmainwindow.cpp:3388
+#: src/konqmainwindow.cpp:3387
 #, kde-format
 msgid "Detach Current Tab"
 msgstr "Αποσύνδεση τρέχουσας καρτέλας"
 
-#: src/konqmainwindow.cpp:3393
+#: src/konqmainwindow.cpp:3392
 #, kde-format
 msgid "&Close Active View"
 msgstr "Α&φαίρεση ενεργού προβολής"
 
-#: src/konqmainwindow.cpp:3398
+#: src/konqmainwindow.cpp:3397
 #, kde-format
 msgid "Close Current Tab"
 msgstr "Κλείσιμο τρέχουσας καρτέλας"
 
-#: src/konqmainwindow.cpp:3408
+#: src/konqmainwindow.cpp:3407
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "Ενεργοποίηση της επόμενης καρτέλας"
 
-#: src/konqmainwindow.cpp:3412
+#: src/konqmainwindow.cpp:3411
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "Ενεργοποίηση προηγούμενης καρτέλας"
 
-#: src/konqmainwindow.cpp:3419
+#: src/konqmainwindow.cpp:3418
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "Ενεργοποίηση της καρτέλας %1"
 
-#: src/konqmainwindow.cpp:3424
+#: src/konqmainwindow.cpp:3423
 #, kde-format
 msgid "Move Tab Left"
 msgstr "Μετακίνηση καρτέλας αριστερά"
 
-#: src/konqmainwindow.cpp:3429
+#: src/konqmainwindow.cpp:3428
 #, kde-format
 msgid "Move Tab Right"
 msgstr "Μετακίνηση καρτέλας δεξιά"
 
-#: src/konqmainwindow.cpp:3437
+#: src/konqmainwindow.cpp:3436
 #, kde-format
 msgid "Dump Debug Info"
 msgstr "Αποτύπωση πληροφοριών αποσφαλμάτωσης"
 
-#: src/konqmainwindow.cpp:3455
+#: src/konqmainwindow.cpp:3454
 #, kde-format
 msgid "&Reload"
 msgstr "&Επαναφόρτωση"
 
-#: src/konqmainwindow.cpp:3460 src/konqtabs.cpp:313
+#: src/konqmainwindow.cpp:3459 src/konqtabs.cpp:313
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr "&Επαναφόρτωση όλων των καρτελών"
 
-#: src/konqmainwindow.cpp:3468
+#: src/konqmainwindow.cpp:3467
 #, kde-format
 msgid "&Force Reload"
 msgstr "&Εξαναγκασμός επαναφόρτωσης"
 
-#: src/konqmainwindow.cpp:3493
+#: src/konqmainwindow.cpp:3492
 #, kde-format
 msgid "&Stop"
 msgstr "&Διακοπή"
 
-#: src/konqmainwindow.cpp:3502
+#: src/konqmainwindow.cpp:3501
 #, kde-format
 msgid "Throbber"
 msgstr "Εικονίδιο ένδειξης δραστηριότητας"
 
-#: src/konqmainwindow.cpp:3506 src/konqmainwindow.cpp:3509
+#: src/konqmainwindow.cpp:3505 src/konqmainwindow.cpp:3508
 #, kde-format
 msgid "L&ocation: "
 msgstr "Τ&οποθεσία: "
 
-#: src/konqmainwindow.cpp:3516
+#: src/konqmainwindow.cpp:3515
 #, kde-format
 msgid "Location Bar"
 msgstr "Γραμμή τοποθεσίας"
 
-#: src/konqmainwindow.cpp:3522
+#: src/konqmainwindow.cpp:3521
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
@@ -1048,12 +1047,12 @@ msgstr ""
 "<html>Γραμμή τοποθεσίας<br /><br />Εισάγετε μια διεύθυνση ιστοσελίδας ή έναν "
 "όρο αναζήτησης.</html>"
 
-#: src/konqmainwindow.cpp:3526
+#: src/konqmainwindow.cpp:3525
 #, kde-format
 msgid "Clear Location Bar"
 msgstr "Καθαρισμός γραμμής τοποθεσίας"
 
-#: src/konqmainwindow.cpp:3529
+#: src/konqmainwindow.cpp:3528
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
@@ -1062,22 +1061,22 @@ msgstr ""
 "<html>Καθαρισμός γραμμής τοποθεσίας<br /><br />Καθαρίζει τα περιεχόμενα της "
 "γραμμής τοποθεσίας.</html>"
 
-#: src/konqmainwindow.cpp:3534
+#: src/konqmainwindow.cpp:3533
 #, kde-format
 msgid "&Bookmarks"
 msgstr "&Σελιδοδείκτες"
 
-#: src/konqmainwindow.cpp:3555
+#: src/konqmainwindow.cpp:3554
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "Ει&σαγωγή στον Konqueror"
 
-#: src/konqmainwindow.cpp:3560
+#: src/konqmainwindow.cpp:3559
 #, kde-format
 msgid "Go"
 msgstr "Μετάβαση"
 
-#: src/konqmainwindow.cpp:3562
+#: src/konqmainwindow.cpp:3561
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
@@ -1086,7 +1085,7 @@ msgstr ""
 "<html>Μετάβαση<br /><br />Πηγαίνει στη σελίδα που δόθηκε στη γραμμή "
 "τοποθεσίας.</html>"
 
-#: src/konqmainwindow.cpp:3570
+#: src/konqmainwindow.cpp:3569
 #, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
@@ -1097,27 +1096,27 @@ msgstr ""
 "τοποθεσία είναι file:/home/%1 κάνοντας κλικ σε αυτό το κουμπί θα πάτε στο "
 "file:/home.</html>"
 
-#: src/konqmainwindow.cpp:3573
+#: src/konqmainwindow.cpp:3572
 #, kde-format
 msgid "Enter the parent folder"
 msgstr "Είσοδος στο γονικό φάκελο"
 
-#: src/konqmainwindow.cpp:3575 src/konqmainwindow.cpp:3576
+#: src/konqmainwindow.cpp:3574 src/konqmainwindow.cpp:3575
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "Μετακίνηση ένα βήμα πίσω, στην περιήγηση ιστορικού"
 
-#: src/konqmainwindow.cpp:3578 src/konqmainwindow.cpp:3579
+#: src/konqmainwindow.cpp:3577 src/konqmainwindow.cpp:3578
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "Μετακίνηση ένα βήμα μπροστά, στην περιήγηση ιστορικού"
 
-#: src/konqmainwindow.cpp:3581 src/konqmainwindow.cpp:3582
+#: src/konqmainwindow.cpp:3580 src/konqmainwindow.cpp:3581
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
 msgstr "Μετακίνηση ένα βήμα πίσω, στο ιστορικό κλεισμένων καρτελών"
 
-#: src/konqmainwindow.cpp:3584
+#: src/konqmainwindow.cpp:3583
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1129,12 +1128,12 @@ msgstr ""
 "ιστοσελίδες των οποίων το περιεχόμενο έχει αλλάξει από τότε που φορτώθηκαν, "
 "ώστε να εμφανιστούν οι αλλαγές αυτές.</html>"
 
-#: src/konqmainwindow.cpp:3587
+#: src/konqmainwindow.cpp:3586
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "Επαναφόρτωση του τρέχοντος προβαλλομένου εγγράφου"
 
-#: src/konqmainwindow.cpp:3589
+#: src/konqmainwindow.cpp:3588
 #, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1146,12 +1145,12 @@ msgstr ""
 "ανανεωθούν ιστοσελίδες των οποίων το περιεχόμενο έχει αλλάξει από τότε που "
 "φορτώθηκαν, ώστε να εμφανιστούν οι αλλαγές αυτές.</html>"
 
-#: src/konqmainwindow.cpp:3592
+#: src/konqmainwindow.cpp:3591
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr "Επαναφόρτωση όλων των εμφανιζόμενων εγγράφων στις καρτέλες"
 
-#: src/konqmainwindow.cpp:3594
+#: src/konqmainwindow.cpp:3593
 #, kde-format
 msgid ""
 "<html>Stop loading the document<br /><br />All network transfers will be "
@@ -1162,7 +1161,7 @@ msgstr ""
 "συναλλαγές θα σταματήσουν και ο Konqueror θα εμφανίσει το περιεχόμενο το "
 "οποίο λήφθηκε μέχρι τώρα.</html>"
 
-#: src/konqmainwindow.cpp:3598
+#: src/konqmainwindow.cpp:3597
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1175,7 +1174,7 @@ msgstr ""
 "των οποίων το περιεχόμενο έχει αλλάξει από τότε που φορτώθηκαν, ώστε οι "
 "αλλαγές να γίνουν ορατές. Κάθε εικόνα της σελίδας θα ληφθεί ξανά, ακόμη και  αν υπάρχουν αντίγραφά της στη λανθάνουσα μνήμη.</html>"
 
-#: src/konqmainwindow.cpp:3602
+#: src/konqmainwindow.cpp:3601
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
@@ -1183,12 +1182,12 @@ msgstr ""
 "Εξαναγκασμός επαναφόρτωσης του εμφανιζόμενου εγγράφου και κάθε εικόνα που "
 "περιέχει"
 
-#: src/konqmainwindow.cpp:3604
+#: src/konqmainwindow.cpp:3603
 #, kde-format
 msgid "Stop loading the document"
 msgstr "Σταμάτημα φόρτωσης του εγγράφου"
 
-#: src/konqmainwindow.cpp:3606
+#: src/konqmainwindow.cpp:3605
 #, kde-format
 msgid ""
 "<html>Cut the currently selected text or item(s) and move it to the system "
@@ -1200,12 +1199,12 @@ msgstr ""
 "διαθέσιμο στην εντολή <b>Επικόλληση</b> στον Konqueror και σε άλλες "
 "εφαρμογές του KDE.</html>"
 
-#: src/konqmainwindow.cpp:3610
+#: src/konqmainwindow.cpp:3609
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr "Μετακίνηση του επιλεγμένου κειμένου ή αντικειμένου(ων) στο πρόχειρο"
 
-#: src/konqmainwindow.cpp:3612
+#: src/konqmainwindow.cpp:3611
 #, kde-format
 msgid ""
 "<html>Copy the currently selected text or item(s) to the system "
@@ -1216,12 +1215,12 @@ msgstr ""
 "πρόχειρο του συστήματος <br /><br />Αυτό το κάνει διαθέσιμο στην εντολή "
 "<b>Επικόλληση</b> στον Konqueror και σε άλλες εφαρμογές του KDE.</html>"
 
-#: src/konqmainwindow.cpp:3616
+#: src/konqmainwindow.cpp:3615
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr "Αντιγραφή του επιλεγμένου κείμενου ή αντικείμενου(ων) στο πρόχειρο"
 
-#: src/konqmainwindow.cpp:3618
+#: src/konqmainwindow.cpp:3617
 #, kde-format
 msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
@@ -1231,12 +1230,12 @@ msgstr ""
 "αντιγράφηκαν προηγουμένως<br /><br />Αυτό λειτουργεί επίσης για κείμενο που "
 "αντιγράφτηκε ή αποκόπηκε από άλλες εφαρμογές του KDE.</html>"
 
-#: src/konqmainwindow.cpp:3621
+#: src/konqmainwindow.cpp:3620
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "Επικόλληση των περιεχόμενων του πρόχειρου"
 
-#: src/konqmainwindow.cpp:3623
+#: src/konqmainwindow.cpp:3622
 #, kde-format
 msgid ""
 "<html>Print the currently displayed document<br /><br />You will be "
@@ -1251,12 +1250,12 @@ msgstr ""
 ">Αυτός ο διάλογος προσφέρει επίσης πρόσβαση στις ειδικές υπηρεσίες εκτύπωσης "
 "του KDE όπως στη δημιουργία ενός αρχείου PDF από το τρέχον έγγραφο.</html>"
 
-#: src/konqmainwindow.cpp:3629
+#: src/konqmainwindow.cpp:3628
 #, kde-format
 msgid "Print the current document"
 msgstr "Εκτύπωση τρέχοντος εγγράφου"
 
-#: src/konqmainwindow.cpp:3631
+#: src/konqmainwindow.cpp:3630
 #, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
@@ -1266,7 +1265,7 @@ msgstr ""
 "σε συνδυασμό με τη 'Σύνδεση προβολής' για να εξερευνήσετε πολλά αρχεία από "
 "ένα φάκελο"
 
-#: src/konqmainwindow.cpp:3632
+#: src/konqmainwindow.cpp:3631
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
@@ -1275,12 +1274,12 @@ msgstr ""
 "Κάνει μια προβολή 'συνδεδεμένη'. Μια συνδεδεμένη προβολή ακολουθεί τις "
 "αλλαγές φακέλου που γίνονται σε άλλες συνδεδεμένες προβολές."
 
-#: src/konqmainwindow.cpp:3636
+#: src/konqmainwindow.cpp:3635
 #, kde-format
 msgid "&Inspect Current Page"
 msgstr "Επ&ιθεώρηση τρέχουσας σελίδας"
 
-#: src/konqmainwindow.cpp:3637
+#: src/konqmainwindow.cpp:3636
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
@@ -1290,22 +1289,22 @@ msgstr ""
 "><br/>Η τρέχουσα προβολή έχει χωριστεί στα δύο και τα εργαλεία του "
 "προγραμματιστή παρουσιάζονται στο δεύτερο μισό"
 
-#: src/konqmainwindow.cpp:3638
+#: src/konqmainwindow.cpp:3637
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr "Εμφανίζει τα εργαλεία του προγραμματιστή για την τρέχουσα σελίδα"
 
-#: src/konqmainwindow.cpp:3800
+#: src/konqmainwindow.cpp:3799
 #, kde-format
 msgid "Copy &Files..."
 msgstr "Αντιγραφή &αρχείων..."
 
-#: src/konqmainwindow.cpp:3804
+#: src/konqmainwindow.cpp:3803
 #, kde-format
 msgid "M&ove Files..."
 msgstr "&Μετακίνηση αρχείων..."
 
-#: src/konqmainwindow.cpp:4130
+#: src/konqmainwindow.cpp:4129
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
@@ -1314,60 +1313,60 @@ msgstr ""
 "Ζητήσατε το άνοιγμα περισσότερων από 20 σελιδοδεικτών σε καρτέλες. Αυτό "
 "μπορεί να διαρκέσει λίγο. Συνέχεια;"
 
-#: src/konqmainwindow.cpp:4132
+#: src/konqmainwindow.cpp:4131
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "Άνοιγμα του φακέλου σελιδοδεικτών σε νέες καρτέλες"
 
-#: src/konqmainwindow.cpp:4133
+#: src/konqmainwindow.cpp:4132
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr "Άνοιγμα"
 
-#: src/konqmainwindow.cpp:4295
+#: src/konqmainwindow.cpp:4294
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "Άνοιγμα σε αυτό το &παράθυρο"
 
-#: src/konqmainwindow.cpp:4296
+#: src/konqmainwindow.cpp:4295
 #, kde-format
 msgid "Open the document in current window"
 msgstr "Άνοιγμα του εγγράφου στο τρέχον παράθυρο"
 
-#: src/konqmainwindow.cpp:4303
+#: src/konqmainwindow.cpp:4302
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "Άνοιγμα του εγγράφου σε ένα νέο παράθυρο"
 
-#: src/konqmainwindow.cpp:4309
+#: src/konqmainwindow.cpp:4308
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Άνοιγμα σε &νέα καρτέλα"
 
-#: src/konqmainwindow.cpp:4311
+#: src/konqmainwindow.cpp:4310
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "Άνοιγμα του εγγράφου σε μια νέα καρτέλα"
 
-#: src/konqmainwindow.cpp:4534
+#: src/konqmainwindow.cpp:4533
 #, kde-format
 msgid "&Open With"
 msgstr "Άνοιγμα &με"
 
-#: src/konqmainwindow.cpp:4547
+#: src/konqmainwindow.cpp:4546
 #, kde-format
 msgid "Open with %1"
 msgstr "Άνοιγμα με %1"
 
-#: src/konqmainwindow.cpp:4597
+#: src/konqmainwindow.cpp:4596
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "Κατάσταση &προβολής"
 
-#: src/konqmainwindow.cpp:4718
+#: src/konqmainwindow.cpp:4719
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
@@ -1375,18 +1374,18 @@ msgstr ""
 "Έχετε πολλαπλές καρτέλες ανοικτές σε αυτό το παράθυρο, σίγουρα θέλετε να το "
 "κλείσετε;"
 
-#: src/konqmainwindow.cpp:4720
+#: src/konqmainwindow.cpp:4721
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Επιβεβαίωση"
 
-#: src/konqmainwindow.cpp:4722
+#: src/konqmainwindow.cpp:4723
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "&Κλείσιμο τρέχουσας καρτέλας"
 
-#: src/konqmainwindow.cpp:4750
+#: src/konqmainwindow.cpp:4751
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1395,7 +1394,7 @@ msgstr ""
 "Αυτή η καρτέλα περιέχει αλλαγές που δεν έχουν υποβληθεί.\n"
 "Το κλείσιμο του παραθύρου θα οδηγήσει σε απόρριψη αυτών των αλλαγών."
 
-#: src/konqmainwindow.cpp:4751
+#: src/konqmainwindow.cpp:4752
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1404,7 +1403,7 @@ msgstr ""
 "Αυτή η σελίδα περιέχει τροποποιήσεις που δεν έχουν υποβληθεί.\n"
 " Το κλείσιμο του παραθύρου θα οδηγήσει σε απόρριψη αυτών των αλλαγών."
 
-#: src/konqmainwindow.cpp:4911
+#: src/konqmainwindow.cpp:4912
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1412,28 +1411,28 @@ msgstr ""
 "Η πλευρική μπάρα σας δεν λειτουργεί ή δεν είναι διαθέσιμη. Μια νέα "
 "καταχώρηση είναι αδύνατο να προστεθεί."
 
-#: src/konqmainwindow.cpp:4911 src/konqmainwindow.cpp:4918
+#: src/konqmainwindow.cpp:4912 src/konqmainwindow.cpp:4919
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Πλευρική μπάρα ιστού"
 
-#: src/konqmainwindow.cpp:4916
+#: src/konqmainwindow.cpp:4917
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Προσθήκη νέας επέκτασης ιστοσελίδων \"%1\" στην πλευρική σας μπάρα;"
 
-#: src/konqmainwindow.cpp:4918
+#: src/konqmainwindow.cpp:4919
 #, kde-format
 msgid "Add"
 msgstr "Προσθήκη"
 
-#: src/konqmainwindow.cpp:4918
+#: src/konqmainwindow.cpp:4919
 #, kde-format
 msgid "Do Not Add"
 msgstr "Να μην προστεθεί"
 
-#: src/konqmainwindow.cpp:5266
+#: src/konqmainwindow.cpp:5267
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1442,7 +1441,7 @@ msgstr ""
 "Φαίνεται πως υπάρχει σφάλμα διαμόρφωσης. Έχετε συσχετίσει τον Konqueror με "
 "το %1, αλλά δεν μπορεί να χειριστεί αυτόν τον τύπο αρχείων."
 
-#: src/konqmainwindow.cpp:5351
+#: src/konqmainwindow.cpp:5352
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1464,22 +1463,22 @@ msgstr ""
 "καθορίστε χειροκίνητα ένα URL διαμεσολάβησης στο διάλογο ρυθμίσεων. Θέλετε "
 "να αλλάξετε τις ρυθμίσεις διαμεσολάβησης τώρα;"
 
-#: src/konqmainwindow.cpp:5356
+#: src/konqmainwindow.cpp:5357
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "Μη υποστηριζόμενη διαμόρφωση διαμεσολαβητή"
 
-#: src/konqmainwindow.cpp:5356
+#: src/konqmainwindow.cpp:5357
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "Να μη γίνει χρήση διαμεσολαβητή"
 
-#: src/konqmainwindow.cpp:5357 src/konqmainwindow.cpp:5385
+#: src/konqmainwindow.cpp:5358 src/konqmainwindow.cpp:5386
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "Εμφάνιση διαλόγου διαμόρφωσης διαμεσολαβητή"
 
-#: src/konqmainwindow.cpp:5381
+#: src/konqmainwindow.cpp:5382
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1493,22 +1492,22 @@ msgstr ""
 "διαμεσολαβητής:</b> <tt>%1</tt></p><p><b>HTTPS διαμεσολαβητής: </b><tt>%2</"
 "tt></p>Τι θέλετε να κάνετε;"
 
-#: src/konqmainwindow.cpp:5384
+#: src/konqmainwindow.cpp:5385
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "Αντικρουόμενη διαμόρφωση διαμεσολαβητή"
 
-#: src/konqmainwindow.cpp:5385
+#: src/konqmainwindow.cpp:5386
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "Να γίνει χρήση HTTP διαμεσολαβητή (μόνο αυτήν τη φορά)"
 
-#: src/konqmainwindow.cpp:5385
+#: src/konqmainwindow.cpp:5386
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "Να γίνει χρήση HTTPS διαμεσολαβητή (μόνο αυτήν τη φορά)"
 
-#: src/konqmainwindow.cpp:5401
+#: src/konqmainwindow.cpp:5402
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1603,8 +1602,7 @@ msgid "Delete"
 msgstr "Διαγραφή"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
-#. i18n: ectx: label, entry, group (Trash)
-#: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
+#: src/konqsessiondlg_base.ui:73
 #, kde-format
 msgid "Open tabs inside current window"
 msgstr "Άνοιγμα καρτελών στο τρέχον παράθυρο"
@@ -1725,195 +1723,6 @@ msgstr "&Αποσύνδεση καρτέλας"
 #, kde-format
 msgid "&Close Tab"
 msgstr "&Κλείσιμο καρτέλας"
-
-#. i18n: ectx: label, entry, group (UserSettings)
-#: src/konqueror.kcfg:11
-#, kde-format
-msgid "Start Page"
-msgstr "Σελίδα εκκίνησης"
-
-#. i18n: ectx: whatsthis, entry, group (UserSettings)
-#: src/konqueror.kcfg:12
-#, kde-format
-msgid "This is the URL of the web page where Konqueror will start from."
-msgstr ""
-"Αυτό είναι το URL της ιστοσελίδας με το οποίο θα εκκινήσει ο Konqueror."
-
-#. i18n: ectx: whatsthis, entry, group (UserSettings)
-#: src/konqueror.kcfg:17
-#, kde-format
-msgid ""
-"This is the URL of the web page where Konqueror will jump to when the \\"
-"\"Home\\\" button is pressed."
-msgstr ""
-"Αυτό είναι το URL της ιστοσελίδας όπου ο Konqueror θα μεταβεί όταν πατήσετε "
-"το κουμπί \"Αρχική\"."
-
-#. i18n: ectx: label, entry, group (UndoManagerSettings)
-#: src/konqueror.kcfg:26
-#, kde-format
-msgid "Maximum number of Closed Items"
-msgstr "Μέγιστος αριθμός κλειστών αντικειμένων"
-
-#. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
-#: src/konqueror.kcfg:27
-#, kde-format
-msgid ""
-"This sets the maximum number of closed items that will be stored in memory. "
-"This limit will not be surpassed."
-msgstr ""
-"Ορισμός του μέγιστου αριθμού των κλειστών αντικειμένων που θα αποθηκεύονται "
-"στη μνήμη. Αυτό το όριο δεν θα ξεπεραστεί σε καμία περίπτωση."
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#: src/konqueror.kcfg:36
-#, kde-format
-msgid "Open folders in separate windows"
-msgstr "Άνοιγμα φακέλων σε ξεχωριστά παράθυρα"
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:37
-#, kde-format
-msgid ""
-"If this option is checked, Konqueror will open a new window when you open a "
-"folder, rather than showing that folder's contents in the current window."
-msgstr ""
-"Αν αυτή η επιλογή είναι ενεργοποιημένη, ο Konqueror θα ανοίγει ένα νέο "
-"παράθυρο όταν ανοίγετε ένα φάκελο, αντί να δείχνει τα περιεχόμενα του "
-"φακέλου στο τρέχον παράθυρο."
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#: src/konqueror.kcfg:42
-#, kde-format
-msgid "Show file tips"
-msgstr "Εμφάνιση συμβουλών αρχείων"
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:43
-#, kde-format
-msgid ""
-"Here you can control if, when moving the mouse over a file, you want to see "
-"a small popup window with additional information about that file"
-msgstr ""
-"Εδώ μπορείτε να ελέγξετε αν με την κίνησή σας πάνω σε ένα αρχείο, θα "
-"εμφανίζεται ένα μικρό αναδυόμενο παράθυρο με επιπλέον πληροφορίες σχετικά με "
-"το αρχείο"
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#: src/konqueror.kcfg:54
-#, kde-format
-msgid "Show previews in file tips"
-msgstr "Εμφάνιση προεπισκόπησης στις συμβουλές αρχείων"
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:55
-#, kde-format
-msgid ""
-"Here you can control if you want the popup window to contain a larger "
-"preview for the file, when moving the mouse over it"
-msgstr ""
-"Εδώ μπορείτε να ελέγξετε αν επιθυμείτε το αναδυόμενο παράθυρο συμβουλής "
-"αρχείων θα εμφανίζει προεπισκόπηση του αρχείου με την κίνησή σας πάνω σε "
-"αυτό με το ποντίκι"
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#: src/konqueror.kcfg:60
-#, kde-format
-msgid "Show 'Delete' menu entries which bypass the trashcan"
-msgstr ""
-"Εμφάνιση καταχωρήσεων 'Διαγραφή' που παρακάμπτουν τον κάδο απορριμμάτων"
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:61
-#, kde-format
-msgid ""
-"Check this if you want 'Delete' menu commands to be displayed on the desktop "
-"and in the file manager's menus and context menus. You can always delete "
-"files when hidden by holding the Shift key while calling 'Move to Trash'."
-msgstr ""
-"Επιλέξτε αυτό αν θέλετε να εμφανίζονται οι εντολές μενού 'Διαγραφή' στο "
-"σχετικό μενού στην επιφάνεια εργασίας και στο διαχειριστή αρχείων. Μπορείτε "
-"πάντα να διαγράφετε αρχεία, όταν η εντολή είναι σε απόκρυψη, κρατώντας "
-"πατημένο το πλήκτρο Shift καθώς καλείτε την 'Μετακίνηση στον κάδο "
-"απορριμμάτων'."
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:149
-#, kde-format
-msgid "Choose where to display the tabs bar"
-msgstr ""
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:153 src/konqueror.kcfg:154
-#, kde-format
-msgid "Number of Open With items in the File menu"
-msgstr "Πλήθος αντικειμένων ανοίγματος στο μενού αρχείο"
-
-#. i18n: ectx: label, entry, group (HTML Settings)
-#: src/konqueror.kcfg:163
-#, kde-format
-msgid "Standard font"
-msgstr "Τυπική γραμματοσειρά"
-
-#. i18n: ectx: whatsthis, entry, group (HTML Settings)
-#: src/konqueror.kcfg:164
-#, kde-format
-msgid "This is the font used to display text in Konqueror windows."
-msgstr ""
-"Αυτή είναι η γραμματοσειρά εμφάνισης κειμένου στα παράθυρα του Konqueror."
-
-#. i18n: ectx: label, entry, group (HistorySettings)
-#: src/konqueror.kcfg:314
-#, kde-format
-msgid "Maximum number of history items per view"
-msgstr "Μέγιστος αριθμός αντικειμένων ιστορικού ανά προβολή"
-
-#. i18n: ectx: label, entry, group (Trash)
-#: src/konqueror.kcfg:504
-#, kde-format
-msgid "Ask confirmation for deleting a file."
-msgstr "Ερώτηση επιβεβαίωσης διαγραφής αρχείων."
-
-#. i18n: ectx: whatsthis, entry, group (Trash)
-#: src/konqueror.kcfg:505
-#, kde-format
-msgid ""
-"This option tells Konqueror whether to ask for a confirmation when you "
-"delete a file without using the trash folder. Warning, deleted files can not "
-"be recovered, so it is recommended to leave this confirmation enabled."
-msgstr ""
-"Αυτή η επιλογή ορίζει αν ο Konqueror θα ζητά επιβεβαίωση όταν διαγράφετε ένα "
-"αρχείο χωρίς τη χρήση του κάδου απορριμμάτων. Προσοχή, καθώς τα διαγραμμένα "
-"αρχεία δεν μπορούν να επανέλθουν, γι' αυτό προτείνεται να αφήσετε την "
-"επιβεβαίωση ενεργή."
-
-#. i18n: ectx: label, entry, group (Trash)
-#: src/konqueror.kcfg:510
-#, kde-format
-msgid "Ask confirmation for move to trash"
-msgstr "Επιβεβαίωση για μετακίνηση στα απορρίμματα"
-
-#. i18n: ectx: whatsthis, entry, group (Trash)
-#: src/konqueror.kcfg:511
-#, kde-format
-msgid ""
-"This option tells Konqueror whether to ask for a confirmation when you move "
-"the file to your trash folder, from where it can be recovered very easily."
-msgstr ""
-"Αυτή η επιλογή ορίζει αν ο Konqueror θα ζητά επιβεβαίωση όταν μετακινείτε "
-"ένα αρχείο στον κάδο απορριμμάτων σας, από όπου μπορεί το αρχείο να "
-"επανέλθει εύκολα."
-
-#. i18n: ectx: whatsthis, entry, group (Trash)
-#: src/konqueror.kcfg:518
-#, kde-format
-msgid ""
-"If true, when opening a session from within the sessions dialog the tabs "
-"will be opened inside current window."
-msgstr ""
-"Αν είναι ενεργό, κατά το άνοιγμα μιας συνεδρίας από το διάλογο συνεδριών, οι "
-"καρτέλες θα ανοιχτούν μέσα στο τρέχον παράθυρο."
 
 #. i18n: ectx: Menu (file)
 #: src/konqueror.rc:5
@@ -2070,6 +1879,126 @@ msgstr "Το <tt>%1</tt> μπορεί να εκτελεστεί. Θα το εκ�
 #, kde-format
 msgid "Save As"
 msgstr "Αποθήκευση ως"
+
+#~ msgid "Start Page"
+#~ msgstr "Σελίδα εκκίνησης"
+
+#~ msgid "This is the URL of the web page where Konqueror will start from."
+#~ msgstr ""
+#~ "Αυτό είναι το URL της ιστοσελίδας με το οποίο θα εκκινήσει ο Konqueror."
+
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror will jump to when the \\"
+#~ "\"Home\\\" button is pressed."
+#~ msgstr ""
+#~ "Αυτό είναι το URL της ιστοσελίδας όπου ο Konqueror θα μεταβεί όταν "
+#~ "πατήσετε το κουμπί \"Αρχική\"."
+
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "Μέγιστος αριθμός κλειστών αντικειμένων"
+
+#~ msgid ""
+#~ "This sets the maximum number of closed items that will be stored in "
+#~ "memory. This limit will not be surpassed."
+#~ msgstr ""
+#~ "Ορισμός του μέγιστου αριθμού των κλειστών αντικειμένων που θα "
+#~ "αποθηκεύονται στη μνήμη. Αυτό το όριο δεν θα ξεπεραστεί σε καμία "
+#~ "περίπτωση."
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Άνοιγμα φακέλων σε ξεχωριστά παράθυρα"
+
+#~ msgid ""
+#~ "If this option is checked, Konqueror will open a new window when you open "
+#~ "a folder, rather than showing that folder's contents in the current "
+#~ "window."
+#~ msgstr ""
+#~ "Αν αυτή η επιλογή είναι ενεργοποιημένη, ο Konqueror θα ανοίγει ένα νέο "
+#~ "παράθυρο όταν ανοίγετε ένα φάκελο, αντί να δείχνει τα περιεχόμενα του "
+#~ "φακέλου στο τρέχον παράθυρο."
+
+#~ msgid "Show file tips"
+#~ msgstr "Εμφάνιση συμβουλών αρχείων"
+
+#~ msgid ""
+#~ "Here you can control if, when moving the mouse over a file, you want to "
+#~ "see a small popup window with additional information about that file"
+#~ msgstr ""
+#~ "Εδώ μπορείτε να ελέγξετε αν με την κίνησή σας πάνω σε ένα αρχείο, θα "
+#~ "εμφανίζεται ένα μικρό αναδυόμενο παράθυρο με επιπλέον πληροφορίες σχετικά "
+#~ "με το αρχείο"
+
+#~ msgid "Show previews in file tips"
+#~ msgstr "Εμφάνιση προεπισκόπησης στις συμβουλές αρχείων"
+
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it"
+#~ msgstr ""
+#~ "Εδώ μπορείτε να ελέγξετε αν επιθυμείτε το αναδυόμενο παράθυρο συμβουλής "
+#~ "αρχείων θα εμφανίζει προεπισκόπηση του αρχείου με την κίνησή σας πάνω σε "
+#~ "αυτό με το ποντίκι"
+
+#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
+#~ msgstr ""
+#~ "Εμφάνιση καταχωρήσεων 'Διαγραφή' που παρακάμπτουν τον κάδο απορριμμάτων"
+
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's menus and context menus. You can always "
+#~ "delete files when hidden by holding the Shift key while calling 'Move to "
+#~ "Trash'."
+#~ msgstr ""
+#~ "Επιλέξτε αυτό αν θέλετε να εμφανίζονται οι εντολές μενού 'Διαγραφή' στο "
+#~ "σχετικό μενού στην επιφάνεια εργασίας και στο διαχειριστή αρχείων. "
+#~ "Μπορείτε πάντα να διαγράφετε αρχεία, όταν η εντολή είναι σε απόκρυψη, "
+#~ "κρατώντας πατημένο το πλήκτρο Shift καθώς καλείτε την 'Μετακίνηση στον "
+#~ "κάδο απορριμμάτων'."
+
+#~ msgid "Number of Open With items in the File menu"
+#~ msgstr "Πλήθος αντικειμένων ανοίγματος στο μενού αρχείο"
+
+#~ msgid "Standard font"
+#~ msgstr "Τυπική γραμματοσειρά"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr ""
+#~ "Αυτή είναι η γραμματοσειρά εμφάνισης κειμένου στα παράθυρα του Konqueror."
+
+#~ msgid "Maximum number of history items per view"
+#~ msgstr "Μέγιστος αριθμός αντικειμένων ιστορικού ανά προβολή"
+
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Ερώτηση επιβεβαίωσης διαγραφής αρχείων."
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "delete a file without using the trash folder. Warning, deleted files can "
+#~ "not be recovered, so it is recommended to leave this confirmation enabled."
+#~ msgstr ""
+#~ "Αυτή η επιλογή ορίζει αν ο Konqueror θα ζητά επιβεβαίωση όταν διαγράφετε "
+#~ "ένα αρχείο χωρίς τη χρήση του κάδου απορριμμάτων. Προσοχή, καθώς τα "
+#~ "διαγραμμένα αρχεία δεν μπορούν να επανέλθουν, γι' αυτό προτείνεται να "
+#~ "αφήσετε την επιβεβαίωση ενεργή."
+
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Επιβεβαίωση για μετακίνηση στα απορρίμματα"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "move the file to your trash folder, from where it can be recovered very "
+#~ "easily."
+#~ msgstr ""
+#~ "Αυτή η επιλογή ορίζει αν ο Konqueror θα ζητά επιβεβαίωση όταν μετακινείτε "
+#~ "ένα αρχείο στον κάδο απορριμμάτων σας, από όπου μπορεί το αρχείο να "
+#~ "επανέλθει εύκολα."
+
+#~ msgid ""
+#~ "If true, when opening a session from within the sessions dialog the tabs "
+#~ "will be opened inside current window."
+#~ msgstr ""
+#~ "Αν είναι ενεργό, κατά το άνοιγμα μιας συνεδρίας από το διάλογο συνεδριών, "
+#~ "οι καρτέλες θα ανοιχτούν μέσα στο τρέχον παράθυρο."
 
 #~ msgid ""
 #~ "Malformed URL\n"

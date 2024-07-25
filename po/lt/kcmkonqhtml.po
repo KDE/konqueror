@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:38+0000\n"
+"POT-Creation-Date: 2024-07-25 02:29+0000\n"
 "PO-Revision-Date: 2024-02-02 22:46+0200\n"
 "Last-Translator: Liudas Alisauskas <liudas@akmc.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -118,7 +118,7 @@ msgstr ""
 msgid "A&nimations:"
 msgstr "A&nimacijų rodymas:"
 
-#: appearance.cpp:85 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:108
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
@@ -671,21 +671,21 @@ msgid "Domain"
 msgstr "Mazgas/Domenas"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
-#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
+#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
 #, kde-format
 msgid "Policy"
 msgstr "Taisyklė"
 
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
-#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:45
+#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
 #: useragent/useragent.ui:84
 #, kde-format
 msgid "&New..."
 msgstr "&Nauja..."
 
 #. i18n: ectx: property (text), widget (QPushButton, pbChange)
-#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:49
+#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:52
 #, kde-format
 msgid "Chan&ge..."
 msgstr "&Keisti..."
@@ -738,7 +738,7 @@ msgid "Policy:"
 msgstr "Taisyklė"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
+#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:192
 #: policydlg.cpp:63
 #, kde-format
 msgid "Accept"
@@ -751,14 +751,14 @@ msgid "Accept until end of session"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
+#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:194
 #: policydlg.cpp:63
 #, kde-format
 msgid "Reject"
 msgstr "Neleisti"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:153
+#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:182
 #, kde-format
 msgid "Ask"
 msgstr "Klausti"
@@ -1288,34 +1288,40 @@ msgstr ""
 "</body>\n"
 "</html>\n"
 
-#: domainlistview.cpp:37
+#: domainlistview.cpp:33
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "&Nuo domeno priklausančios"
+
+#: domainlistview.cpp:40
 #, kde-format
 msgid "Host/Domain"
 msgstr "Mazgas/Domenas"
 
-#: domainlistview.cpp:53
+#: domainlistview.cpp:56
 #, kde-format
 msgid "De&lete"
 msgstr "&Ištrinti"
 
-#: domainlistview.cpp:57
+#: domainlistview.cpp:60
 #, kde-format
 msgid "&Import..."
 msgstr "&Importuoti..."
 
-#: domainlistview.cpp:63
+#: domainlistview.cpp:66
 #, kde-format
 msgid "&Export..."
 msgstr "&Eksportuoti..."
 
-#: domainlistview.cpp:71
+#: domainlistview.cpp:74
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr ""
 "Spauskite šitą mygtuką norėdami rankomis pridėti mazgui arba domenui "
 "specifinę taisyklę."
 
-#: domainlistview.cpp:73
+#: domainlistview.cpp:76
 #, kde-format
 msgid ""
 "Click on this button to change the policy for the host or domain selected in "
@@ -1324,7 +1330,7 @@ msgstr ""
 "Paspauskite šitą mygtuką norėdami pakeisti mazgo ar domeno taisyklę, "
 "pažymėtą sąrašo lange."
 
-#: domainlistview.cpp:75
+#: domainlistview.cpp:78
 #, kde-format
 msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
@@ -1333,20 +1339,47 @@ msgstr ""
 "Paspauskite šitą mygtuką norėdami ištrinti mazgo ar domeno taisyklę, "
 "pažymėtą sąrašo lange."
 
-#: domainlistview.cpp:122
+#: domainlistview.cpp:125
 #, kde-format
 msgid "You must first select a policy to be changed."
 msgstr "Pirmiau reikia pažymėti keičiamą taisyklę."
 
-#: domainlistview.cpp:149
+#: domainlistview.cpp:152
 #, kde-format
 msgid "You must first select a policy to delete."
 msgstr "Pirmiau reikia pažymėti pašalinamą taisyklę."
 
-#: domainlistview.cpp:187 policydlg.cpp:63
+#: domainlistview.cpp:190 policydlg.cpp:63
 #, kde-format
 msgid "Use Global"
 msgstr "Naudoti globalius nustatymus"
+
+#: domainlistview.cpp:232
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "Nauja JavaScript taisyklė"
+
+#: domainlistview.cpp:235
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "Keisti JavaScript taisyklę"
+
+#: domainlistview.cpp:239
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "JavaScript taisyklė:"
+
+#: domainlistview.cpp:240
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "Nurodykite JavaScript taisyklę duotam mazgui arba domenui."
+
+#: domainlistview.cpp:242
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "Nuo domeno priklausančios JavaScript taisyklės"
 
 #: filteropts.cpp:48
 #, kde-format
@@ -1522,7 +1555,7 @@ msgstr "Pavadinimas"
 msgid "URL"
 msgstr "URL"
 
-#: generalopts.cpp:56
+#: generalopts.cpp:54
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1530,19 +1563,19 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr ""
 
-#: generalopts.cpp:62
+#: generalopts.cpp:60
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr ""
 
-#: generalopts.cpp:71
+#: generalopts.cpp:69
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "Rodyti įvadinį puslapį"
 
-#: generalopts.cpp:72
+#: generalopts.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "@item:inlistbox"
 #| msgid "Show My Home Page"
@@ -1550,19 +1583,19 @@ msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "Rodyti namų puslapį"
 
-#: generalopts.cpp:73
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "Rodyti tuščią puslapį"
 
-#: generalopts.cpp:74
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "Rodyti žymeles"
 
-#: generalopts.cpp:80
+#: generalopts.cpp:78
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Home Page"
@@ -1570,23 +1603,23 @@ msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "Pasirinkite namų puslapį"
 
-#: generalopts.cpp:85
+#: generalopts.cpp:83
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr ""
 
-#: generalopts.cpp:96
+#: generalopts.cpp:94
 #, kde-format
 msgid "Home page:"
 msgstr "Namų puslapis:"
 
-#: generalopts.cpp:99
+#: generalopts.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "Pasirinkite namų puslapį"
 
-#: generalopts.cpp:104
+#: generalopts.cpp:102
 #, fuzzy, kde-format
 #| msgid ""
 #| "This is the URL of the web page where Konqueror (as web browser) will "
@@ -1601,42 +1634,42 @@ msgstr ""
 "naršyklė) pereis paspaudus mygtuką „Namai“. Jei Konqueror paleistas kaip "
 "failų tvarkytuvė, šio mygtuko paspaudimas ves į namų aplanką."
 
-#: generalopts.cpp:112
+#: generalopts.cpp:110
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "Numatytas naršyklės varikliukas:"
 
-#: generalopts.cpp:121
+#: generalopts.cpp:119
 #, kde-format
 msgid "When splitting a view"
 msgstr ""
 
-#: generalopts.cpp:125
+#: generalopts.cpp:123
 #, kde-format
 msgid "Always duplicate current view"
 msgstr ""
 
-#: generalopts.cpp:126
+#: generalopts.cpp:124
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr ""
 
-#: generalopts.cpp:132
+#: generalopts.cpp:130
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr ""
 
-#: htmlopts.cpp:35
+#: htmlopts.cpp:39
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "Žy&melės"
 
-#: htmlopts.cpp:38
+#: htmlopts.cpp:42
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "Klausti vardo ir aplanko pridedant žymeles"
 
-#: htmlopts.cpp:41
+#: htmlopts.cpp:45
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1646,12 +1679,12 @@ msgstr ""
 "Jei šis laukas pažymėtas, pridedant naują žymelę Konqueror leis pakeisti "
 "žymelės pavadinimą ir pasirinkti aplanką, kuriame ją išsaugoti."
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:51
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "Rodyti tik pažymėtas žymeles žymelių įrankinėje"
 
-#: htmlopts.cpp:49
+#: htmlopts.cpp:53
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1660,12 +1693,10 @@ msgstr ""
 "Jei šis laukas pažymėtas, Konqueror rodys tik tas žymeles žymelių "
 "įrankinėje, kurias pažymėjimu išrinkote žymelių redaktoriuje."
 
-#: htmlopts.cpp:56
-#, kde-format
-msgid "Form Com&pletion"
-msgstr "F&ormos užbaigimas"
-
-#: htmlopts.cpp:60
+#. i18n("Form Com&pletion"), widget());
+#. m_pFormCompletionCheckBox->setCheckable(true);
+#. QFormLayout *laygroup2 = new QFormLayout(m_pFormCompletionCheckBox);
+#: htmlopts.cpp:67
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1674,42 +1705,28 @@ msgstr ""
 "Esant pažymėtam langeliui, Konqueror įsimins Jūsų įrašomus žiniatinklio "
 "formose duomenis ir juos pasiūlys panašiuose visų formų laukeliuose."
 
-#: htmlopts.cpp:66
+#: htmlopts.cpp:74
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "&Daugiausia užbaigimų:"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:76
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
 msgstr "Čia galite nurodyti kiek reikšmių formos laukui Konqueror įsimins."
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:87
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "Pelės elge&sys"
 
-#: htmlopts.cpp:78
-#, kde-format
-msgid "Chan&ge cursor over links"
-msgstr "&Keisti žymeklį virš nuorodų"
-
-#: htmlopts.cpp:80
-#, kde-format
-msgid ""
-"If this option is set, the shape of the cursor will change (usually to a "
-"hand) if it is moved over a hyperlink."
-msgstr ""
-"Jeigu nustatyta šita parinktis, žymeklio forma pasikeis (dažniausiai į "
-"ranką), kai jis atsidurs virš nuorodos."
-
-#: htmlopts.cpp:84
+#: htmlopts.cpp:90
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "Spragtelėji&mas viduriniuoju klavišu atveria pažymėtą URL"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:93
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
@@ -1718,12 +1735,12 @@ msgstr ""
 "Jei šis laukelis pažymėtas, galėsite atverti URL pažymėtame plote spausdami "
 "viduriniuoju pelės klavišu Konqueror vaizde."
 
-#: htmlopts.cpp:91
+#: htmlopts.cpp:97
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "Dešinys spragtelėjimas veda &atgal žurnalo įrašuose"
 
-#: htmlopts.cpp:94
+#: htmlopts.cpp:100
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1734,27 +1751,12 @@ msgstr ""
 "klavišą ties Konqueror vaizdu.  Norėdami pasiekti konteksto meniu, "
 "paspauskite dešinį pelės klavišą ir pajudinkite pelę."
 
-#: htmlopts.cpp:104
-#, kde-format
-msgid "Allow automatic delayed &reloading/redirecting"
-msgstr "Leisti automatinį uždelstą &perkrovimą / nukreipimą"
-
-#: htmlopts.cpp:105
-#, kde-format
-msgid ""
-"Some web pages request an automatic reload or redirection after a certain "
-"period of time. By unchecking this box Konqueror will ignore these requests."
-msgstr ""
-"Kai kurie žiniatinklio puslapiai paprašo automatinio perkrovimo ar "
-"nukreipimo po tam tikro laiko tarpo.  Nepažymėjus šios parinkties Konqueror "
-"ignoruos tokius paklausimus."
-
-#: htmlopts.cpp:111
+#: htmlopts.cpp:115
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "Įgalinti Prieigos kla&višo aktyvavimą su Vald(Ctrl) klavišu"
 
-#: htmlopts.cpp:112
+#: htmlopts.cpp:116
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1765,246 +1767,65 @@ msgstr ""
 "KDE prieigos klavišai. Panaikinus pažymėjimą ši pritaikymo neįgaliesiems "
 "galimybė bus išjungta. (Pakeitimas įsigalios paleidus Konqueror iš naujo)."
 
-#: htmlopts.cpp:116
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr ""
 "Siųsti DNT antraštę, kad svetainės žinotų, jog jūs nenorite būti sekamas"
 
-#: htmlopts.cpp:117
-#, kde-format
+#: htmlopts.cpp:122
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check this box if you want to inform a web site that you do not want your "
+#| "web browsing habits tracked."
 msgid ""
-"Check this box if you want to inform a web site that you do not want your "
-"web browsing habits tracked."
+"<p>Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
+"considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
 "Įjunkite šią parinktį, jei norite pranešti svetainėms, kad nenorite, jog "
 "jūsų naršymo įpročiai būtų sekami."
 
-#: htmlopts.cpp:121
+#: htmlopts.cpp:126
 #, kde-format
 msgid "Offer to save website passwords"
 msgstr "Siūlyti išsaugoti svetainių slaptažodžius"
 
-#: htmlopts.cpp:122
+#: htmlopts.cpp:127
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr ""
 "Nuimkite varnelę, kad neleisti siūlyti išsaugoti svetainių slaptažodžius"
 
-#: htmlopts.cpp:126
+#: htmlopts.cpp:131
 #, kde-format
 msgid "Display online PDF files using WebEngine"
 msgstr ""
 
-#: htmlopts.cpp:127
+#: htmlopts.cpp:132
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
 msgstr ""
 
-#: javaopts.cpp:78
+#: htmlopts.cpp:136
 #, kde-format
-msgid "Enable Ja&va globally"
-msgstr "Globaliai leidžiama &Java"
+msgid "Always display files from web pages in a new tab"
+msgstr ""
 
-#: javaopts.cpp:93
-#, kde-format
-msgid "Java Runtime Settings"
-msgstr "Java vykdymo nuostatos"
-
-#: javaopts.cpp:97
-#, kde-format
-msgid "&Use security manager"
-msgstr "N&audoti saugumo tvarkyklę"
-
-#: javaopts.cpp:101
-#, kde-format
-msgid "Use &KIO"
-msgstr "Naudoti &KIO"
-
-#: javaopts.cpp:105
-#, kde-format
-msgid "Shu&tdown applet server when inactive for more than"
-msgstr "Iš&jungti programėlių serverį neesant aktyvumo daugiau nei"
-
-#: javaopts.cpp:117
-#, kde-format
-msgid " second"
-msgid_plural " seconds"
-msgstr[0] " sekundė"
-msgstr[1] " sekundės"
-msgstr[2] " sekundžių"
-msgstr[3] " sekundė"
-
-#: javaopts.cpp:123
-#, kde-format
-msgid "&Path to Java executable, or 'java':"
-msgstr "&Java vykdomojo failo, arba „java“, kelias:"
-
-#: javaopts.cpp:127
-#, kde-format
-msgid "Additional Java a&rguments:"
-msgstr "Papildomi Java a&rgumentai:"
-
-#: javaopts.cpp:132
+#: htmlopts.cpp:137
 #, kde-format
 msgid ""
-"Enables the execution of scripts written in Java that can be contained in "
-"HTML pages. Note that, as with any browser, enabling active contents can be "
-"a security problem."
+"<p>When showing in Konqueror files from links in web pages, always use a new "
+"tab"
 msgstr ""
-"Leis paleisti Java kalba parašytus scenarijus, kurie gali būti HTML "
-"puslapiuose. Atminkite, kad, kaip ir kiekvienoje naršyklėje, aktyvių "
-"komponentų leidimas gali sukelti saugumo problemų."
 
-#: javaopts.cpp:135
-#, kde-format
-msgid ""
-"<p>This box contains the domains and hosts you have set a specific Java "
-"policy for. This policy will be used instead of the default policy for "
-"enabling or disabling Java applets on pages sent by these domains or hosts.</"
-"p><p>Select a policy and use the controls on the right to modify it.</p>"
-msgstr ""
-"<p>Šiame langelyje yra domenai ir mazgai, kuriems esate nustatę specifines "
-"Java taisykles. Šios taisyklės bus naudojamos vietoje pagrindinių taisyklių, "
-"leidžiant arba uždraudžiant šių domenų arba mazgų puslapių siunčiamas Java "
-"programėles.</p><p>Pažymėkite taisyklę ir, norėdami ją modifikuoti, "
-"naudokite dešinėje esančius mygtukus.</p>"
-
-#: javaopts.cpp:142
-#, kde-format
-msgid ""
-"Click this button to choose the file that contains the Java policies. These "
-"policies will be merged with the existing ones. Duplicate entries are "
-"ignored."
-msgstr ""
-"Paspauskite šį mygtuką norėdami pasirinkti failą, turintį Java taisykles. "
-"Šios taisyklės bus sujungtos su jau esančiomis.  Sutampantys įrašai bus "
-"ignoruojami."
-
-#: javaopts.cpp:145
-#, kde-format
-msgid ""
-"Click this button to save the Java policy to a zipped file. The file, named "
-"<b>java_policy.tgz</b>, will be saved to a location of your choice."
-msgstr ""
-"Paspauskite šitą mygtuką norėdami išsaugoti Java taisyklę supakuotame faile. "
-"Failas, pavadintas <b>java_policy.tgz</b>, bus išsaugota Jūsų pasirinktoje "
-"vietoje."
-
-#: javaopts.cpp:149
-#, kde-format
-msgid ""
-"Here you can set specific Java policies for any particular host or domain. "
-"To add a new policy, simply click the <i>New...</i> button and supply the "
-"necessary information requested by the dialog box. To change an existing "
-"policy, click on the <i>Change...</i> button and choose the new policy from "
-"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
-"selected policy, causing the default policy setting to be used for that "
-"domain."
-msgstr ""
-"Čia galite nustatyti specifines Java taisykles bet kuriam mazgui ar domenui. "
-"Norėdami įdėti naują taisyklę, paprasčiausiai paspauskite <i>Pridėti...</i> "
-"mygtuką ir įrašykite reikalingą informaciją į dialogo langą.  Norėdami "
-"pakeisti jau esančią taisyklę, spauskite <i>Keisti...</i> mygtuką ir "
-"pasirinkite pageidaujamą taisyklę iš taisyklių dialogo lango.  Paspaudus "
-"mygtuką <i>Pašalinti</i>, pažymėta taisyklė bus pašalinta, ir tam domenui "
-"bus naudojamos bendrosios taisyklės."
-
-#: javaopts.cpp:162
-#, kde-format
-msgid ""
-"Enabling the security manager will cause the jvm to run with a Security "
-"Manager in place. This will keep applets from being able to read and write "
-"to your file system, creating arbitrary sockets, and other actions which "
-"could be used to compromise your system. Disable this option at your own "
-"risk. You can modify your $HOME/.java.policy file with the Java policytool "
-"utility to give code downloaded from certain sites more permissions."
-msgstr ""
-"Saugumo tvarkyklės įjungimas privers jvm veikti kartu su Saugumo Tvarkykle. "
-"Tai neleis programėlėms skaityti ir rašyti į Jūsų failų sistemą, kurti bet "
-"kokius socket'us, ir vykdyti kitus veiksmus, galinčius pakenkti Jūsų "
-"sistemos saugumui.  Išjunkite šią parinktį savo rizika.  Jūs galite pakeist "
-"HOME/.java.policy failą su Java policytool pagalbine programa jei norite "
-"suteikti daugiau leidimų kodui, atsisiųstam iš tam tikrų sričių."
-
-#: javaopts.cpp:170
-#, kde-format
-msgid "Enabling this will cause the jvm to use KIO for network transport "
-msgstr "Čia galima nustatyti, kad jvm naudotų KIO tinklo transportui"
-
-#: javaopts.cpp:172
-#, kde-format
-msgid ""
-"Enter the path to the java executable. If you want to use the jre in your "
-"path, simply leave it as 'java'. If you need to use a different jre, enter "
-"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
-"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
-msgstr ""
-"Įrašykite java vykdomojo failo kelią. Jeigu pageidaujate naudoti jre savo "
-"kelyje, paprasčiausiai palikite jį „java“.  Jeigu norite naudoti kitą jre, "
-"įrašykite vykdomojo failo kelią (pavyzdžiui, /usr/lib/jdk/bin/java), arba "
-"aplanko kelią, kur yra „bin/java“ (pavyzdžiui, /opt/IBMJava2-13)."
-
-#: javaopts.cpp:177
-#, kde-format
-msgid ""
-"If you want special arguments to be passed to the virtual machine, enter "
-"them here."
-msgstr ""
-"Jeigu norite pateikti specialius argumentus virtualiai mašinai, įrašykite "
-"juos čia."
-
-#: javaopts.cpp:179
-#, kde-format
-msgid ""
-"When all the applets have been destroyed, the applet server should shut "
-"down. However, starting the jvm takes a lot of time. If you would like to "
-"keep the java process running while you are browsing, you can set the "
-"timeout value to whatever you like. To keep the java process running for the "
-"whole time that the konqueror process is, leave the Shutdown Applet Server "
-"checkbox unchecked."
-msgstr ""
-"Kai visos programėlės būna sunaikintos, programėlių serveris išsijungia. "
-"Vienok, jvm paleidimas užima šiek tiek laiko. Jeigu savo naršymo metu norite "
-"palikti java procesą veikiantį, galite nustatyti jums reikalingą laiko "
-"reikšmę.  Norėdami palikti java procesą veikiantį visą konqueror darbo "
-"laiką, nepažymėkite langelio „Išjungti programėlių serverį“."
-
-#: javaopts.cpp:288
-#, kde-format
-msgctxt "@title:group"
-msgid "Doma&in-Specific"
-msgstr "Nuo domeno &priklausančios"
-
-#: javaopts.cpp:323
-#, kde-format
-msgctxt "@title:window"
-msgid "New Java Policy"
-msgstr "Nauja Java taisyklė"
-
-#: javaopts.cpp:326
-#, kde-format
-msgctxt "@title:window"
-msgid "Change Java Policy"
-msgstr "Keisti Java taisyklę"
-
-#: javaopts.cpp:330
-#, kde-format
-msgid "&Java policy:"
-msgstr "&Java taisyklė:"
-
-#: javaopts.cpp:331
-#, kde-format
-msgid "Select a Java policy for the above host or domain."
-msgstr "Nurodykite Java taisyklę esamam mazgui arba domenui."
-
-#: jsopts.cpp:50
+#: jsopts.cpp:57
 #, kde-format
 msgid "Ena&ble JavaScript globally"
 msgstr "Globaliai leidžiamas Java&Script "
 
-#: jsopts.cpp:51
+#: jsopts.cpp:58
 #, kde-format
 msgid ""
 "Enables the execution of scripts written in ECMA-Script (also known as "
@@ -2015,33 +1836,7 @@ msgstr ""
 "JavaScript), kuriuos gali turėti HTML puslapiai. Atminkite, kad kaip ir "
 "kiekvienoje naršyklėje, scenarijų leidimas gali sukelti saugumo problemų."
 
-#: jsopts.cpp:59
-#, kde-format
-msgid "Debugging"
-msgstr "Išriktavimas"
-
-#: jsopts.cpp:63
-#, kde-format
-msgid "Enable debu&gger"
-msgstr "Įjungti išri&ktuotoją"
-
-#: jsopts.cpp:64
-#, kde-format
-msgid "Enables builtin JavaScript debugger."
-msgstr "Įgalina JavaScript išriktuotoją."
-
-#: jsopts.cpp:68
-#, kde-format
-msgid "Report &errors"
-msgstr "Pranešti &klaidas"
-
-#: jsopts.cpp:69
-#, kde-format
-msgid ""
-"Enables the reporting of errors that occur when JavaScript code is executed."
-msgstr "Įjungia klaidų, kurios įvyksta vykdant JavaScript kodą, pranešimus."
-
-#: jsopts.cpp:79
+#: jsopts.cpp:70
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2064,7 +1859,7 @@ msgstr ""
 "<i>Eksportuoti</i> leis nesunkiai pasidalinti taisyklėmis su kitais - "
 "išsaugoti jas archyvuotame faile, ar pasiimi iš tokio."
 
-#: jsopts.cpp:89
+#: jsopts.cpp:80
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2079,7 +1874,7 @@ msgstr ""
 "puslapių JavaScript scenarijus. </p><p>Pažymėkite taisyklę, ir, norėdami ją "
 "modifikuoti, naudokite dešinėje esančius mygtukus.</p>"
 
-#: jsopts.cpp:96
+#: jsopts.cpp:87
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2090,7 +1885,7 @@ msgstr ""
 "Šios taisyklės bus sujungtos su jau esančiomis.  Sutampantys įrašai bus "
 "ignoruojami."
 
-#: jsopts.cpp:99
+#: jsopts.cpp:90
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2101,93 +1896,60 @@ msgstr ""
 "Failas, pavadintas <b>javascript_policy.tgz</b>, bus išsaugotas Jūsų "
 "pasirinktoje vietoje."
 
-#: jsopts.cpp:105
+#: jsopts.cpp:96
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "Globalios JavaScript taisyklės"
 
-#: jsopts.cpp:172
-#, kde-format
-msgctxt "@title:group"
-msgid "Do&main-Specific"
-msgstr "&Nuo domeno priklausančios"
-
-#: jsopts.cpp:211
-#, kde-format
-msgctxt "@title:window"
-msgid "New JavaScript Policy"
-msgstr "Nauja JavaScript taisyklė"
-
-#: jsopts.cpp:214
-#, kde-format
-msgctxt "@title:window"
-msgid "Change JavaScript Policy"
-msgstr "Keisti JavaScript taisyklę"
-
-#: jsopts.cpp:218
-#, kde-format
-msgid "JavaScript policy:"
-msgstr "JavaScript taisyklė:"
-
-#: jsopts.cpp:219
-#, kde-format
-msgid "Select a JavaScript policy for the above host or domain."
-msgstr "Nurodykite JavaScript taisyklę duotam mazgui arba domenui."
-
-#: jsopts.cpp:221
-#, kde-format
-msgid "Domain-Specific JavaScript Policies"
-msgstr "Nuo domeno priklausančios JavaScript taisyklės"
-
-#: jspolicies.cpp:132
+#: jspolicies.cpp:161
 #, kde-format
 msgid "Open new windows:"
 msgstr "Atverti naujus langus:"
 
-#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
-#: jspolicies.cpp:308
+#: jspolicies.cpp:169 jspolicies.cpp:223 jspolicies.cpp:260 jspolicies.cpp:297
+#: jspolicies.cpp:337
 #, kde-format
 msgid "Use global"
 msgstr "Naudoti bendruosius nustatymus"
 
-#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
-#: jspolicies.cpp:309
+#: jspolicies.cpp:170 jspolicies.cpp:224 jspolicies.cpp:261 jspolicies.cpp:298
+#: jspolicies.cpp:338
 #, kde-format
 msgid "Use setting from global policy."
 msgstr "Naudoti nustatymus iš bendrosios taisyklės."
 
-#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
-#: jspolicies.cpp:315
+#: jspolicies.cpp:176 jspolicies.cpp:230 jspolicies.cpp:267 jspolicies.cpp:304
+#: jspolicies.cpp:344
 #, kde-format
 msgid "Allow"
 msgstr "Leisti"
 
-#: jspolicies.cpp:148
+#: jspolicies.cpp:177
 #, kde-format
 msgid "Accept all popup window requests."
 msgstr "Priimti visus pasirodančių langų kūrimo paklausimus."
 
-#: jspolicies.cpp:154
+#: jspolicies.cpp:183
 #, kde-format
 msgid "Prompt every time a popup window is requested."
 msgstr "Klausti kas kart, kai paprašoma sukurti pasirodantį langą."
 
-#: jspolicies.cpp:159
+#: jspolicies.cpp:188
 #, kde-format
 msgid "Deny"
 msgstr "Neleisti"
 
-#: jspolicies.cpp:160
+#: jspolicies.cpp:189
 #, kde-format
 msgid "Reject all popup window requests."
 msgstr "Atmesti visus pasirodančių langų paklausimus."
 
-#: jspolicies.cpp:165
+#: jspolicies.cpp:194
 #, kde-format
 msgid "Smart"
 msgstr "Tik po veiksmo"
 
-#: jspolicies.cpp:166
+#: jspolicies.cpp:195
 #, kde-format
 msgid ""
 "Accept popup window requests only when links are activated through an "
@@ -2196,7 +1958,7 @@ msgstr ""
 "Pasirodantys langai bus kuriami tik tada, kai langas atidaromas spragtelėjus "
 "pele ar su klaviatūra."
 
-#: jspolicies.cpp:173
+#: jspolicies.cpp:202
 #, kde-format
 msgid ""
 "If you disable this, Konqueror will stop interpreting the <i>window.open()</"
@@ -2212,22 +1974,22 @@ msgstr ""
 "sritis, kurioms būtinas <i>window.open()</i> normaliam funkcionalumui. "
 "Naudokite šitą savybę atsargiai!"
 
-#: jspolicies.cpp:187
+#: jspolicies.cpp:216
 #, kde-format
 msgid "Resize window:"
 msgstr "Keisti lango dydį:"
 
-#: jspolicies.cpp:202
+#: jspolicies.cpp:231
 #, kde-format
 msgid "Allow scripts to change the window size."
 msgstr "Leisti scenarijams keisti lango dydį."
 
-#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#: jspolicies.cpp:236 jspolicies.cpp:273 jspolicies.cpp:310 jspolicies.cpp:350
 #, kde-format
 msgid "Ignore"
 msgstr "Ignoruoti"
 
-#: jspolicies.cpp:208
+#: jspolicies.cpp:237
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
@@ -2236,7 +1998,7 @@ msgstr ""
 "Ignoruoti scenarijų bandymus keisti lango dydį. Interneto puslapis "
 "<i>galvos</i> kad pakeitė dydį, tačiau iš tiesų niekaip jo neįtakos. "
 
-#: jspolicies.cpp:215
+#: jspolicies.cpp:244
 #, kde-format
 msgid ""
 "Some websites change the window size on their own by using <i>window."
@@ -2247,17 +2009,17 @@ msgstr ""
 "<i>window.resizeBy()</i> ar <i>window.resizeTo()</i> komandas. Ši parinktis "
 "nurodo, kaip bus reaguojama į tokius bandymus. "
 
-#: jspolicies.cpp:224
+#: jspolicies.cpp:253
 #, kde-format
 msgid "Move window:"
 msgstr "Perkelti langą:"
 
-#: jspolicies.cpp:239
+#: jspolicies.cpp:268
 #, kde-format
 msgid "Allow scripts to change the window position."
 msgstr "Leisti scenarijams keisti lango vietą."
 
-#: jspolicies.cpp:245
+#: jspolicies.cpp:274
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window position. The web page will "
@@ -2266,7 +2028,7 @@ msgstr ""
 "Ignoruoti scenarijų bandymus keisti lango vietą. Interneto puslapis "
 "<i>galvos</i> kad perkėlė langą, tačiau iš tiesų niekaip jo neįtakos. "
 
-#: jspolicies.cpp:252
+#: jspolicies.cpp:281
 #, kde-format
 msgid ""
 "Some websites change the window position on their own by using <i>window."
@@ -2277,17 +2039,17 @@ msgstr ""
 "<i>window.moveBy()</i> ar <i>window.moveTo()</i> komandas. Ši parinktis "
 "nurodo, kaip bus reaguojama į tokius bandymus. "
 
-#: jspolicies.cpp:261
+#: jspolicies.cpp:290
 #, kde-format
 msgid "Focus window:"
 msgstr "Iškelti langą:"
 
-#: jspolicies.cpp:276
+#: jspolicies.cpp:305
 #, kde-format
 msgid "Allow scripts to focus the window."
 msgstr "Leisti scenarijams iškelti langą į pirmąjį planą."
 
-#: jspolicies.cpp:282
+#: jspolicies.cpp:311
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to focus the window. The web page will <i>think</"
@@ -2298,7 +2060,7 @@ msgstr ""
 "puslapis <i>galvos</i> kad iškėlė langą į pirmąjį planą, tačiau iš tiesų "
 "niekaip jo neįtakos. "
 
-#: jspolicies.cpp:290
+#: jspolicies.cpp:319
 #, kde-format
 msgid ""
 "Some websites set the focus to their browser window on their own by using "
@@ -2311,17 +2073,17 @@ msgstr ""
 "pirmąjį planą nutraukdamas tai, ką naudotojas tuo metu daro. Ši parinktis "
 "nurodo, kaip bus reaguojama į tokius bandymus. "
 
-#: jspolicies.cpp:301
+#: jspolicies.cpp:330
 #, kde-format
 msgid "Modify status bar text:"
 msgstr "Pakeisti būsenos juostos tekstą:"
 
-#: jspolicies.cpp:316
+#: jspolicies.cpp:345
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
 msgstr "Leisti scenarijams pakeisti būsenos juostos tekstą."
 
-#: jspolicies.cpp:322
+#: jspolicies.cpp:351
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
@@ -2331,7 +2093,7 @@ msgstr ""
 "puslapis <i>galvos</i> kad pakeitė tekstą, tačiau iš tiesų niekaip jo "
 "neįtakos. "
 
-#: jspolicies.cpp:330
+#: jspolicies.cpp:359
 #, kde-format
 msgid ""
 "Some websites change the status bar text by setting <i>window.status</i> or "
@@ -2342,16 +2104,6 @@ msgstr ""
 "naudodamos <i>window.status</i> ar <i>window.status</i> komandas, tokiu būdu "
 "kartais paslėpdamos tikruosius hipernuorodų URL adresus. Ši parinktis "
 "nurodo, kaip bus reaguojama į tokius bandymus. "
-
-#: main.cpp:49
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
-
-#: main.cpp:53
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
 
 #: policydlg.cpp:30
 #, kde-format
@@ -2621,9 +2373,8 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150 useragent/useragent.ui:163
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr ""
@@ -2666,6 +2417,14 @@ msgstr "&Ištrinti"
 msgid "Choose &selected identification"
 msgstr ""
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:163
+#, kde-format
+msgid ""
+"<html><head/><body><p>If checked, disable choosing a custom identification "
+"and use the default one</p></body></html>"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
@@ -2687,6 +2446,209 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+
+#~ msgid "Form Com&pletion"
+#~ msgstr "F&ormos užbaigimas"
+
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "&Keisti žymeklį virš nuorodų"
+
+#~ msgid ""
+#~ "If this option is set, the shape of the cursor will change (usually to a "
+#~ "hand) if it is moved over a hyperlink."
+#~ msgstr ""
+#~ "Jeigu nustatyta šita parinktis, žymeklio forma pasikeis (dažniausiai į "
+#~ "ranką), kai jis atsidurs virš nuorodos."
+
+#~ msgid "Allow automatic delayed &reloading/redirecting"
+#~ msgstr "Leisti automatinį uždelstą &perkrovimą / nukreipimą"
+
+#~ msgid ""
+#~ "Some web pages request an automatic reload or redirection after a certain "
+#~ "period of time. By unchecking this box Konqueror will ignore these "
+#~ "requests."
+#~ msgstr ""
+#~ "Kai kurie žiniatinklio puslapiai paprašo automatinio perkrovimo ar "
+#~ "nukreipimo po tam tikro laiko tarpo.  Nepažymėjus šios parinkties "
+#~ "Konqueror ignoruos tokius paklausimus."
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "Globaliai leidžiama &Java"
+
+#~ msgid "Java Runtime Settings"
+#~ msgstr "Java vykdymo nuostatos"
+
+#~ msgid "&Use security manager"
+#~ msgstr "N&audoti saugumo tvarkyklę"
+
+#~ msgid "Use &KIO"
+#~ msgstr "Naudoti &KIO"
+
+#~ msgid "Shu&tdown applet server when inactive for more than"
+#~ msgstr "Iš&jungti programėlių serverį neesant aktyvumo daugiau nei"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " sekundė"
+#~ msgstr[1] " sekundės"
+#~ msgstr[2] " sekundžių"
+#~ msgstr[3] " sekundė"
+
+#~ msgid "&Path to Java executable, or 'java':"
+#~ msgstr "&Java vykdomojo failo, arba „java“, kelias:"
+
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "Papildomi Java a&rgumentai:"
+
+#~ msgid ""
+#~ "Enables the execution of scripts written in Java that can be contained in "
+#~ "HTML pages. Note that, as with any browser, enabling active contents can "
+#~ "be a security problem."
+#~ msgstr ""
+#~ "Leis paleisti Java kalba parašytus scenarijus, kurie gali būti HTML "
+#~ "puslapiuose. Atminkite, kad, kaip ir kiekvienoje naršyklėje, aktyvių "
+#~ "komponentų leidimas gali sukelti saugumo problemų."
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific Java "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling Java applets on pages sent by these domains or "
+#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
+#~ "it.</p>"
+#~ msgstr ""
+#~ "<p>Šiame langelyje yra domenai ir mazgai, kuriems esate nustatę "
+#~ "specifines Java taisykles. Šios taisyklės bus naudojamos vietoje "
+#~ "pagrindinių taisyklių, leidžiant arba uždraudžiant šių domenų arba mazgų "
+#~ "puslapių siunčiamas Java programėles.</p><p>Pažymėkite taisyklę ir, "
+#~ "norėdami ją modifikuoti, naudokite dešinėje esančius mygtukus.</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the Java policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "Paspauskite šį mygtuką norėdami pasirinkti failą, turintį Java taisykles. "
+#~ "Šios taisyklės bus sujungtos su jau esančiomis.  Sutampantys įrašai bus "
+#~ "ignoruojami."
+
+#~ msgid ""
+#~ "Click this button to save the Java policy to a zipped file. The file, "
+#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
+#~ msgstr ""
+#~ "Paspauskite šitą mygtuką norėdami išsaugoti Java taisyklę supakuotame "
+#~ "faile. Failas, pavadintas <b>java_policy.tgz</b>, bus išsaugota Jūsų "
+#~ "pasirinktoje vietoje."
+
+#~ msgid ""
+#~ "Here you can set specific Java policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy, causing the default policy "
+#~ "setting to be used for that domain."
+#~ msgstr ""
+#~ "Čia galite nustatyti specifines Java taisykles bet kuriam mazgui ar "
+#~ "domenui. Norėdami įdėti naują taisyklę, paprasčiausiai paspauskite "
+#~ "<i>Pridėti...</i> mygtuką ir įrašykite reikalingą informaciją į dialogo "
+#~ "langą.  Norėdami pakeisti jau esančią taisyklę, spauskite <i>Keisti...</"
+#~ "i> mygtuką ir pasirinkite pageidaujamą taisyklę iš taisyklių dialogo "
+#~ "lango.  Paspaudus mygtuką <i>Pašalinti</i>, pažymėta taisyklė bus "
+#~ "pašalinta, ir tam domenui bus naudojamos bendrosios taisyklės."
+
+#~ msgid ""
+#~ "Enabling the security manager will cause the jvm to run with a Security "
+#~ "Manager in place. This will keep applets from being able to read and "
+#~ "write to your file system, creating arbitrary sockets, and other actions "
+#~ "which could be used to compromise your system. Disable this option at "
+#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
+#~ "policytool utility to give code downloaded from certain sites more "
+#~ "permissions."
+#~ msgstr ""
+#~ "Saugumo tvarkyklės įjungimas privers jvm veikti kartu su Saugumo "
+#~ "Tvarkykle. Tai neleis programėlėms skaityti ir rašyti į Jūsų failų "
+#~ "sistemą, kurti bet kokius socket'us, ir vykdyti kitus veiksmus, galinčius "
+#~ "pakenkti Jūsų sistemos saugumui.  Išjunkite šią parinktį savo rizika.  "
+#~ "Jūs galite pakeist HOME/.java.policy failą su Java policytool pagalbine "
+#~ "programa jei norite suteikti daugiau leidimų kodui, atsisiųstam iš tam "
+#~ "tikrų sričių."
+
+#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
+#~ msgstr "Čia galima nustatyti, kad jvm naudotų KIO tinklo transportui"
+
+#~ msgid ""
+#~ "Enter the path to the java executable. If you want to use the jre in your "
+#~ "path, simply leave it as 'java'. If you need to use a different jre, "
+#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
+#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
+#~ "IBMJava2-13)."
+#~ msgstr ""
+#~ "Įrašykite java vykdomojo failo kelią. Jeigu pageidaujate naudoti jre savo "
+#~ "kelyje, paprasčiausiai palikite jį „java“.  Jeigu norite naudoti kitą "
+#~ "jre, įrašykite vykdomojo failo kelią (pavyzdžiui, /usr/lib/jdk/bin/java), "
+#~ "arba aplanko kelią, kur yra „bin/java“ (pavyzdžiui, /opt/IBMJava2-13)."
+
+#~ msgid ""
+#~ "If you want special arguments to be passed to the virtual machine, enter "
+#~ "them here."
+#~ msgstr ""
+#~ "Jeigu norite pateikti specialius argumentus virtualiai mašinai, įrašykite "
+#~ "juos čia."
+
+#~ msgid ""
+#~ "When all the applets have been destroyed, the applet server should shut "
+#~ "down. However, starting the jvm takes a lot of time. If you would like to "
+#~ "keep the java process running while you are browsing, you can set the "
+#~ "timeout value to whatever you like. To keep the java process running for "
+#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
+#~ "Server checkbox unchecked."
+#~ msgstr ""
+#~ "Kai visos programėlės būna sunaikintos, programėlių serveris išsijungia. "
+#~ "Vienok, jvm paleidimas užima šiek tiek laiko. Jeigu savo naršymo metu "
+#~ "norite palikti java procesą veikiantį, galite nustatyti jums reikalingą "
+#~ "laiko reikšmę.  Norėdami palikti java procesą veikiantį visą konqueror "
+#~ "darbo laiką, nepažymėkite langelio „Išjungti programėlių serverį“."
+
+#~ msgctxt "@title:group"
+#~ msgid "Doma&in-Specific"
+#~ msgstr "Nuo domeno &priklausančios"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Java Policy"
+#~ msgstr "Nauja Java taisyklė"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Java Policy"
+#~ msgstr "Keisti Java taisyklę"
+
+#~ msgid "&Java policy:"
+#~ msgstr "&Java taisyklė:"
+
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr "Nurodykite Java taisyklę esamam mazgui arba domenui."
+
+#~ msgid "Debugging"
+#~ msgstr "Išriktavimas"
+
+#~ msgid "Enable debu&gger"
+#~ msgstr "Įjungti išri&ktuotoją"
+
+#~ msgid "Enables builtin JavaScript debugger."
+#~ msgstr "Įgalina JavaScript išriktuotoją."
+
+#~ msgid "Report &errors"
+#~ msgstr "Pranešti &klaidas"
+
+#~ msgid ""
+#~ "Enables the reporting of errors that occur when JavaScript code is "
+#~ "executed."
+#~ msgstr "Įjungia klaidų, kurios įvyksta vykdant JavaScript kodą, pranešimus."
+
+#~ msgid "&Java"
+#~ msgstr "&Java"
+
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
 #~ msgid ""
 #~ "This will open a new tab in the background, instead of in the foreground."

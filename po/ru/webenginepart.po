@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 02:36+0000\n"
+"POT-Creation-Date: 2024-07-25 02:29+0000\n"
 "PO-Revision-Date: 2022-10-05 09:27+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -642,7 +642,7 @@ msgstr "Возможные решения:"
 msgid "Error: %1"
 msgstr "Ошибка: %1"
 
-#: src/settings/webenginesettings.cpp:930
+#: src/settings/webenginesettings.cpp:933
 #, kde-format
 msgid "Filter error"
 msgstr "Ошибка фильтра"
@@ -893,7 +893,7 @@ msgstr ""
 "\n"
 "Интеграция будет выключена."
 
-#: src/webenginepage.cpp:374
+#: src/webenginepage.cpp:377
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -907,12 +907,12 @@ msgstr ""
 "чтобы не повторить эту покупку. Иначе, нажмите кнопку «Продолжить», чтобы "
 "показать страницу снова.</p>"
 
-#: src/webenginepage.cpp:381
+#: src/webenginepage.cpp:384
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Переслать информацию ещё раз"
 
-#: src/webenginepage.cpp:575
+#: src/webenginepage.cpp:578
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -921,18 +921,18 @@ msgstr ""
 "Сайт пытается узнать ваше физическое местоположение.\n"
 "Разрешить ему доступ к этой информации?"
 
-#: src/webenginepage.cpp:579 src/webenginepage.cpp:657
-#: src/webenginepage.cpp:668
+#: src/webenginepage.cpp:582 src/webenginepage.cpp:660
+#: src/webenginepage.cpp:671
 #, kde-format
 msgid "Network Transmission"
 msgstr "Передача по сети"
 
-#: src/webenginepage.cpp:580
+#: src/webenginepage.cpp:583
 #, kde-format
 msgid "Allow access"
 msgstr "Разрешить доступ"
 
-#: src/webenginepage.cpp:650
+#: src/webenginepage.cpp:653
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -945,12 +945,12 @@ msgstr ""
 "Третья сторона может перехватить и просмотреть эту информацию.\n"
 "Продолжить?"
 
-#: src/webenginepage.cpp:658
+#: src/webenginepage.cpp:661
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Отправить незашифрованным"
 
-#: src/webenginepage.cpp:665
+#: src/webenginepage.cpp:668
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -959,34 +959,34 @@ msgstr ""
 "Попытка передачи данных формы на сайт по электронной почте.\n"
 "Продолжить?"
 
-#: src/webenginepage.cpp:669
+#: src/webenginepage.cpp:672
 #, kde-format
 msgid "&Send Email"
 msgstr "&Отправить по почте"
 
-#: src/webenginepage.cpp:718
+#: src/webenginepage.cpp:721
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 msgstr "<qt>Разрешить сайту вложить следующие файлы в письмо?</qt>"
 
-#: src/webenginepage.cpp:720
+#: src/webenginepage.cpp:723
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Подтверждение вложения в письмо"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:724
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Разрешить вложения"
 
-#: src/webenginepage.cpp:722
+#: src/webenginepage.cpp:725
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Убрать вложения"
 
-#: src/webenginepage.cpp:736
+#: src/webenginepage.cpp:739
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -995,12 +995,12 @@ msgstr ""
 "Попытка присоединения локального файла к данным формы для отправки на сайт. "
 "Для вашей безопасности приложенный файл был удалён."
 
-#: src/webenginepage.cpp:739
+#: src/webenginepage.cpp:742
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Вложение удалено"
 
-#: src/webenginepage.cpp:853
+#: src/webenginepage.cpp:856
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1010,7 +1010,7 @@ msgstr ""
 "Разрешить?"
 
 # Что такое здесь %1?
-#: src/webenginepage.cpp:855
+#: src/webenginepage.cpp:858
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1019,17 +1019,17 @@ msgstr ""
 "<qt>Сайт пытается открыть новое всплывающее окно <p>%1</p><br/>Разрешить?</"
 "qt>"
 
-#: src/webenginepage.cpp:858
+#: src/webenginepage.cpp:861
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Подтверждение открытия всплывающего окна"
 
-#: src/webenginepage.cpp:859
+#: src/webenginepage.cpp:862
 #, kde-format
 msgid "Allow"
 msgstr "Разрешить"
 
-#: src/webenginepage.cpp:859
+#: src/webenginepage.cpp:862
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Запретить"
@@ -1319,7 +1319,7 @@ msgstr "&Тема"
 msgid "&Issuer"
 msgstr "&Издатель"
 
-#: src/webenginepartcontrols.cpp:282
+#: src/webenginepartcontrols.cpp:281
 #, kde-format
 msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "

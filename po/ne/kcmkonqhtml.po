@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:38+0000\n"
+"POT-Creation-Date: 2024-07-25 02:29+0000\n"
 "PO-Revision-Date: 2007-11-04 18:18+0545\n"
 "Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -114,7 +114,7 @@ msgstr ""
 msgid "A&nimations:"
 msgstr "एनिमेसन:"
 
-#: appearance.cpp:85 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:108
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
@@ -649,21 +649,21 @@ msgid "Domain"
 msgstr "होस्ट/डोमेन"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
-#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
+#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
 #, kde-format
 msgid "Policy"
 msgstr "नीति"
 
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
-#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:45
+#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
 #: useragent/useragent.ui:84
 #, kde-format
 msgid "&New..."
 msgstr "नयाँ..."
 
 #. i18n: ectx: property (text), widget (QPushButton, pbChange)
-#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:49
+#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:52
 #, kde-format
 msgid "Chan&ge..."
 msgstr "परिवर्तन गर्नुहोस्..."
@@ -716,7 +716,7 @@ msgid "Policy:"
 msgstr "नीति"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
+#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:192
 #: policydlg.cpp:63
 #, kde-format
 msgid "Accept"
@@ -729,14 +729,14 @@ msgid "Accept until end of session"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
+#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:194
 #: policydlg.cpp:63
 #, kde-format
 msgid "Reject"
 msgstr "अस्वीकार गर्नुहोस्"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:153
+#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:182
 #, kde-format
 msgid "Ask"
 msgstr "सोध्नुहोस्"
@@ -1251,32 +1251,38 @@ msgstr ""
 "\n"
 "</qt>"
 
-#: domainlistview.cpp:37
+#: domainlistview.cpp:33
+#, fuzzy, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "डोमेन-निर्दिष्ट"
+
+#: domainlistview.cpp:40
 #, kde-format
 msgid "Host/Domain"
 msgstr "होस्ट/डोमेन"
 
-#: domainlistview.cpp:53
+#: domainlistview.cpp:56
 #, kde-format
 msgid "De&lete"
 msgstr "मेट्नुहोस्"
 
-#: domainlistview.cpp:57
+#: domainlistview.cpp:60
 #, kde-format
 msgid "&Import..."
 msgstr "आयात गर्नुहोस्..."
 
-#: domainlistview.cpp:63
+#: domainlistview.cpp:66
 #, kde-format
 msgid "&Export..."
 msgstr "निर्यात गर्नुहोस्..."
 
-#: domainlistview.cpp:71
+#: domainlistview.cpp:74
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr "होस्ट वा डोमेन निर्दिष्ट नीति म्यानुअल तरिकाले थप्न यो बटनमा क्लिक गर्नुहोस् ।"
 
-#: domainlistview.cpp:73
+#: domainlistview.cpp:76
 #, kde-format
 msgid ""
 "Click on this button to change the policy for the host or domain selected in "
@@ -1285,27 +1291,56 @@ msgstr ""
 "सूची बाकसमा चयन गरिएका होस्ट वा डोमेनका लागि नीति परिवर्तन गर्न यो बटनमा क्लिक "
 "गर्नुहोस् ।"
 
-#: domainlistview.cpp:75
+#: domainlistview.cpp:78
 #, kde-format
 msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
 "the list box."
 msgstr "सूची बाकसमा चयन गरिएका होस्ट वा डोमेनका नीति मेट्न यो बटन क्लिक गर्नुहोस् ।"
 
-#: domainlistview.cpp:122
+#: domainlistview.cpp:125
 #, kde-format
 msgid "You must first select a policy to be changed."
 msgstr "तपाईँले परिवर्तन गर्ने नीति पहिला चयन गर्नुपर्छ ।"
 
-#: domainlistview.cpp:149
+#: domainlistview.cpp:152
 #, kde-format
 msgid "You must first select a policy to delete."
 msgstr "तपाईँले मेट्ने नीति पहिला चयन गर्नुपर्छ ।"
 
-#: domainlistview.cpp:187 policydlg.cpp:63
+#: domainlistview.cpp:190 policydlg.cpp:63
 #, kde-format
 msgid "Use Global"
 msgstr "विश्वव्यापी प्रयोग"
+
+#: domainlistview.cpp:232
+#, fuzzy, kde-format
+#| msgid "New JavaScript Policy"
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "नयाँ जाभा स्क्रिप्ट नीति"
+
+#: domainlistview.cpp:235
+#, fuzzy, kde-format
+#| msgid "Change JavaScript Policy"
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "जाभा स्क्रिप्ट नीति परिवर्तन गर्नुहोस्"
+
+#: domainlistview.cpp:239
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "जाभा स्क्रिप्ट नीति:"
+
+#: domainlistview.cpp:240
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "माथिको होस्ट र डोमेनका लागि जाभा स्क्रिप्ट नीति चयन गर्नुहोस् ।"
+
+#: domainlistview.cpp:242
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "डोमेन-निर्दिष्ट जाभा स्क्रिप्ट नीति"
 
 #: filteropts.cpp:48
 #, kde-format
@@ -1472,7 +1507,7 @@ msgstr ""
 msgid "URL"
 msgstr ""
 
-#: generalopts.cpp:56
+#: generalopts.cpp:54
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1480,59 +1515,59 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr ""
 
-#: generalopts.cpp:62
+#: generalopts.cpp:60
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr ""
 
-#: generalopts.cpp:71
+#: generalopts.cpp:69
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr ""
 
-#: generalopts.cpp:72
+#: generalopts.cpp:70
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "गृह यूआरएल:"
 
-#: generalopts.cpp:73
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr ""
 
-#: generalopts.cpp:74
+#: generalopts.cpp:72
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "पुस्तकचिनो"
 
-#: generalopts.cpp:80
+#: generalopts.cpp:78
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "गृह फोल्डर चयन गर्नुहोस्"
 
-#: generalopts.cpp:85
+#: generalopts.cpp:83
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr ""
 
-#: generalopts.cpp:96
+#: generalopts.cpp:94
 #, fuzzy, kde-format
 msgid "Home page:"
 msgstr "गृह यूआरएल:"
 
-#: generalopts.cpp:99
+#: generalopts.cpp:97
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "गृह फोल्डर चयन गर्नुहोस्"
 
-#: generalopts.cpp:104
+#: generalopts.cpp:102
 #, fuzzy, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
@@ -1541,42 +1576,42 @@ msgstr ""
 "यो यूआरएल हो (जस्तै फोल्डर वा वेब पृष्ठ) जहाँ \"गृह\" बटन थिच्दा कन्क्वेरर फड्कनेछ । यो "
 "प्रायजसो तपाईँको गृह फोल्डर 'tilde' (~) द्वारा संकेत गर्दा हुन्छ ।"
 
-#: generalopts.cpp:112
+#: generalopts.cpp:110
 #, kde-format
 msgid "Default web browser engine:"
 msgstr ""
 
-#: generalopts.cpp:121
+#: generalopts.cpp:119
 #, kde-format
 msgid "When splitting a view"
 msgstr ""
 
-#: generalopts.cpp:125
+#: generalopts.cpp:123
 #, kde-format
 msgid "Always duplicate current view"
 msgstr ""
 
-#: generalopts.cpp:126
+#: generalopts.cpp:124
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr ""
 
-#: generalopts.cpp:132
+#: generalopts.cpp:130
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr ""
 
-#: htmlopts.cpp:35
+#: htmlopts.cpp:39
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "पुस्तकचिनो"
 
-#: htmlopts.cpp:38
+#: htmlopts.cpp:42
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "पुस्तकचिनो थप्दा नाम र फोल्डर माग्नुहोस्"
 
-#: htmlopts.cpp:41
+#: htmlopts.cpp:45
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1586,12 +1621,12 @@ msgstr ""
 "यदि यो बाकस जाँच गरिएमा, कन्क्वेररले तपाईँलाई पुस्तक चिनोको शीर्षक परिवर्तन गर्न अनुमति "
 "दिन्छ र तपाईँले नयाँ पुस्तकचिनो थप्दा यसलाई भण्डारण गर्न एउटा फोल्डर रोज्छ ।"
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:51
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "पुस्तकचिनो उपकरणपट्टीमा चिनो लगाइएको पुस्तकचिनो मात्र देखाउनुहोस्"
 
-#: htmlopts.cpp:49
+#: htmlopts.cpp:53
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1600,12 +1635,10 @@ msgstr ""
 "यो बाकस जाँच गरिएमा, कन्क्वेररले पुस्तकचिनो उपकरणपट्टीमा तपाईँले त्यस्तो गर्न पुस्तकचिनो "
 "सम्पादकमा चिनो लगाइएको पुस्तकचिनो मात्र देखाउछ ।"
 
-#: htmlopts.cpp:56
-#, kde-format
-msgid "Form Com&pletion"
-msgstr "फारम समाप्ति"
-
-#: htmlopts.cpp:60
+#. i18n("Form Com&pletion"), widget());
+#. m_pFormCompletionCheckBox->setCheckable(true);
+#. QFormLayout *laygroup2 = new QFormLayout(m_pFormCompletionCheckBox);
+#: htmlopts.cpp:67
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1614,42 +1647,28 @@ msgstr ""
 "यो बाकस जाँच गरिएमा, कन्क्वेररले तपाईँले वेब फारममा प्रविष्ट गरेका डाटा याद गर्नेछ र "
 "यसलाई सबै फारमका समान फाँट भित्र सुझाव दिन्छ ।"
 
-#: htmlopts.cpp:66
+#: htmlopts.cpp:74
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "अधिकतम समाप्ति:"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:76
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
 msgstr "तपाईँले यहाँ कन्क्वेररले फारम फाँटका लागि सम्झने मान चयन गर्न सक्नुहुन्छ ।"
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:87
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "माउस व्यवहार"
 
-#: htmlopts.cpp:78
-#, kde-format
-msgid "Chan&ge cursor over links"
-msgstr "लिङ्कमाथिको कर्सर परिवर्तन गर्नुहोस्"
-
-#: htmlopts.cpp:80
-#, kde-format
-msgid ""
-"If this option is set, the shape of the cursor will change (usually to a "
-"hand) if it is moved over a hyperlink."
-msgstr ""
-"यदि यो विकल्प सेट छ भने, माउसलाई हाइपरलिङ्क माथि सार्दा कर्सरको आकार परिवर्तन "
-"(प्रायजसो हातमा) हुनेछ ।"
-
-#: htmlopts.cpp:84
+#: htmlopts.cpp:90
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "चयनमा बीचको क्लिकले यूआरएल खोल्छ"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:93
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
@@ -1658,12 +1677,12 @@ msgstr ""
 "यो बाकस जाँच गरिएमा, तपाईँले कन्क्वेरर दृश्यमा बीचको क्लिकद्वारा चयनमा यूआरएल खोल्न "
 "सक्नुहुन्छ ।"
 
-#: htmlopts.cpp:91
+#: htmlopts.cpp:97
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "दायाँ क्लिकले पछाडि इतिहासमा जान्छ"
 
-#: htmlopts.cpp:94
+#: htmlopts.cpp:100
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1673,27 +1692,13 @@ msgstr ""
 "यदि यो बाकस जाँच गरिएमा, तपाईँ कन्क्वेरर दृश्यमा दायाँ क्लिकद्वारा पछाडि इतिहासमा जान "
 "सक्नुहुन्छ । प्रसङ्ग मेनुमा पहुँच प्राप्त गर्न दायाँ माउस बटन क्लिक गर्नुहोस् र सार्नुहोस् ।"
 
-#: htmlopts.cpp:104
-#, kde-format
-msgid "Allow automatic delayed &reloading/redirecting"
-msgstr "स्वचालित विलम्ब गरिएको रिलोडिङ/रिडाइरेक्टिङ अनुमति दिनुहोस्"
-
-#: htmlopts.cpp:105
-#, kde-format
-msgid ""
-"Some web pages request an automatic reload or redirection after a certain "
-"period of time. By unchecking this box Konqueror will ignore these requests."
-msgstr ""
-"निश्चित समयको अन्तराल पछि केही वेब पृष्ठले स्वचालित पुन: लोड र पुन: निर्देशन अनुरोध गर्छन् "
-"। यो बाकस चिनो हटाइएमा कन्क्वेररले यि अनुरोध बेवास्ता गर्नेछ ।"
-
-#: htmlopts.cpp:111
+#: htmlopts.cpp:115
 #, fuzzy, kde-format
 #| msgid "Enable/disable Access Ke&y activation with Ctrl key"
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "ctrl कुञ्जीसँग पहुँच कुञ्जी सक्रियता सक्षम/अक्षम पार्नुहोस्"
 
-#: htmlopts.cpp:112
+#: htmlopts.cpp:116
 #, fuzzy, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1704,236 +1709,58 @@ msgstr ""
 "यो पहुँचयोग्य विशेषता अक्षम गर्नेछ । (यसको प्रभाव लिन परिवर्तनहरूका लागि कन्क्वेरर पुन: "
 "सुरूआत हुन आवश्यक छ)"
 
-#: htmlopts.cpp:116
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr ""
 
-#: htmlopts.cpp:117
-#, kde-format
-msgid ""
-"Check this box if you want to inform a web site that you do not want your "
-"web browsing habits tracked."
-msgstr ""
-
-#: htmlopts.cpp:121
-#, kde-format
-msgid "Offer to save website passwords"
-msgstr ""
-
 #: htmlopts.cpp:122
 #, kde-format
-msgid "Uncheck this box to prevent being prompted to save website passwords"
+msgid ""
+"<p>Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
+"considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
 
 #: htmlopts.cpp:126
 #, kde-format
-msgid "Display online PDF files using WebEngine"
+msgid "Offer to save website passwords"
 msgstr ""
 
 #: htmlopts.cpp:127
+#, kde-format
+msgid "Uncheck this box to prevent being prompted to save website passwords"
+msgstr ""
+
+#: htmlopts.cpp:131
+#, kde-format
+msgid "Display online PDF files using WebEngine"
+msgstr ""
+
+#: htmlopts.cpp:132
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
 msgstr ""
 
-#: javaopts.cpp:78
+#: htmlopts.cpp:136
 #, kde-format
-msgid "Enable Ja&va globally"
-msgstr "जाभा विश्वव्यापी रुपमा सक्षम पार्नुहोस्"
+msgid "Always display files from web pages in a new tab"
+msgstr ""
 
-#: javaopts.cpp:93
-#, kde-format
-msgid "Java Runtime Settings"
-msgstr "जाभा रनटाइम सेटिङ"
-
-#: javaopts.cpp:97
-#, kde-format
-msgid "&Use security manager"
-msgstr "सुरक्षा प्रबन्धक प्रयोग गर्नुहोस्"
-
-#: javaopts.cpp:101
-#, kde-format
-msgid "Use &KIO"
-msgstr "KIO प्रयोग गर्नुहोस्"
-
-#: javaopts.cpp:105
-#, fuzzy, kde-format
-msgid "Shu&tdown applet server when inactive for more than"
-msgstr "निस्क्रिय हुँदा एप्लेट सर्भर बन्द गर्नुहोस्"
-
-#: javaopts.cpp:117
-#, fuzzy, kde-format
-#| msgid " sec"
-msgid " second"
-msgid_plural " seconds"
-msgstr[0] " सेकेन्ड"
-msgstr[1] " सेकेन्ड"
-
-#: javaopts.cpp:123
-#, kde-format
-msgid "&Path to Java executable, or 'java':"
-msgstr "कार्यान्वयन योग्य जाभा, वा 'जाभा' लाई मार्ग:"
-
-#: javaopts.cpp:127
-#, kde-format
-msgid "Additional Java a&rguments:"
-msgstr "थप जाभा तर्क:"
-
-#: javaopts.cpp:132
+#: htmlopts.cpp:137
 #, kde-format
 msgid ""
-"Enables the execution of scripts written in Java that can be contained in "
-"HTML pages. Note that, as with any browser, enabling active contents can be "
-"a security problem."
+"<p>When showing in Konqueror files from links in web pages, always use a new "
+"tab"
 msgstr ""
-"एचटीएमएल पृष्ठमा समावेश गर्न सकिने जाभा भित्र लेखिने स्क्रिप्टको कार्यान्वयन सक्षम पार्छ । "
-"याद गर्नुहोस्, कुनै पनि ब्राउजरसँग, सक्षम पार्दा सक्रिय सामाग्रीमा सुरक्षा समस्या हुन सक्छ ।"
 
-#: javaopts.cpp:135
-#, kde-format
-msgid ""
-"<p>This box contains the domains and hosts you have set a specific Java "
-"policy for. This policy will be used instead of the default policy for "
-"enabling or disabling Java applets on pages sent by these domains or hosts.</"
-"p><p>Select a policy and use the controls on the right to modify it.</p>"
-msgstr ""
-"<p>तपाईँले निर्दिष्ट जाभा नीतिका लागि सेट गरेको डोमेन र होस्ट यो बाकसले समावेश गर्छ । "
-"यो नीति डमेन र होस्टले पठाएका पृष्ठमा सक्षम वा अक्षम पार्नका लागि पूर्वनिर्धारित नीतिको "
-"साटोमा प्रयोग हुनेछ । </p><p>एउटा नीति चयन गर्नुहोस् र यसलाई परिमार्जन गर्नका लागि "
-"दायाँ तिरको नियन्त्रण प्रयोग गर्नुहोस् ।</p>"
-
-#: javaopts.cpp:142
-#, kde-format
-msgid ""
-"Click this button to choose the file that contains the Java policies. These "
-"policies will be merged with the existing ones. Duplicate entries are "
-"ignored."
-msgstr ""
-"जाभा नीति समावेश गर्ने फाइल रोज्न यो बटन क्लिक गर्नुहोस् । यी नीति अवस्थित एकसँग गाभिने "
-"छन् । नक्कल प्रविष्टि उपेक्षित हुन्छन् ।"
-
-#: javaopts.cpp:145
-#, kde-format
-msgid ""
-"Click this button to save the Java policy to a zipped file. The file, named "
-"<b>java_policy.tgz</b>, will be saved to a location of your choice."
-msgstr ""
-"जिप गरिएका फाइलमा जाभा नीति बचत गर्न यो बटन क्लिक गर्नुहोस् । फाइल, "
-"<b>java_policy.tgz</b> नाम गरिएको, फाइल, तपाईँको छनौटको स्थानमा बचत गरिने छ ।"
-
-#: javaopts.cpp:149
-#, kde-format
-msgid ""
-"Here you can set specific Java policies for any particular host or domain. "
-"To add a new policy, simply click the <i>New...</i> button and supply the "
-"necessary information requested by the dialog box. To change an existing "
-"policy, click on the <i>Change...</i> button and choose the new policy from "
-"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
-"selected policy, causing the default policy setting to be used for that "
-"domain."
-msgstr ""
-"तपाईँले यहाँ कुनै पनि विशिष्ट होस्ट वा डोमेनका लागि निर्दिष्ट जाभा नीति सेट गर्न सक्नुहुन्छ "
-"। नयाँ नीति थप्नका लागि, केवल <i>नयाँ...</i> बटनमा थिच्नुहोस् र संवाद बाकसद्वारा "
-"अनुरोध गरिएका आवश्यक सूचना वितरण गर्नुहोस् । अवस्थित नीति परिवर्तन गर्न, <i>परिवर्तन..."
-"</i> बटनमा क्लिक गर्नुहोस् र नीति संवाद बाकसबाट नयाँ नीति रोज्नुहोस् । <i>मट्नुहोस्</i> "
-"बटनमा क्लिक गर्दा डोमेनका लागि प्रयोग हुने पूर्वनिर्धारित नीति सेटिङका कारणले चयन "
-"गरिएको नीति हट्नेछ ।"
-
-#: javaopts.cpp:162
-#, kde-format
-msgid ""
-"Enabling the security manager will cause the jvm to run with a Security "
-"Manager in place. This will keep applets from being able to read and write "
-"to your file system, creating arbitrary sockets, and other actions which "
-"could be used to compromise your system. Disable this option at your own "
-"risk. You can modify your $HOME/.java.policy file with the Java policytool "
-"utility to give code downloaded from certain sites more permissions."
-msgstr ""
-"सुरक्षा प्रबन्धक सक्षम पार्दा स्थान भित्र सुरक्षा प्रबन्धकसँग jvm चल्ने हुन्छ । यसले तपाईँको "
-"फाइल प्रणालीमा पढ्न र लेख्न सक्ने गरी, स्वेच्छित सकेट सिर्जना गरेर, र तपाईँको फाइल "
-"प्रणालीमा मिलाउन प्रयोग गर्न सकिने अन्य कार्य एप्लेट राख्छ । तपाईँको आफ्नै जोखिममा यो "
-"विकल्प अक्षम पार्नुहोस् । तपाईँले नीश्चित साइटबाट डाउनलोड गरिएका बढी अनुमतिको कोड दिन "
-"$HOME/.java.policy फाइल जाभा policytool utility मा परिमार्जन गर्न सक्नुहुन्छ ।"
-
-#: javaopts.cpp:170
-#, kde-format
-msgid "Enabling this will cause the jvm to use KIO for network transport "
-msgstr "सञ्जाल यातायतका लागि यसलाई सक्षम पार्दा jvm ले KIO प्रयोग गर्न सक्छ"
-
-#: javaopts.cpp:172
-#, kde-format
-msgid ""
-"Enter the path to the java executable. If you want to use the jre in your "
-"path, simply leave it as 'java'. If you need to use a different jre, enter "
-"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
-"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
-msgstr ""
-"कार्यान्वयन योग्य जाभामा मार्ग प्रविष्ट गर्नुहोस् । यदि तपाईँको मार्गमा jre प्रयोग गर्न "
-"चाहनुहुन्छ भने, केवल यसलाई 'जाभाको' रुपमा छोड्नुहोस् । तपाईँलाई फरक jre प्रयोग गर्नु "
-"परेमा, कार्यान्वयन योग्य जाभामा मार्ग (जस्तै: /usr/lib/jdk/bin/java), वा 'bin/java' "
-"समावेश गर्ने डाइरेक्टरीमा मार्ग (जस्तै: /opt/IBMJava2-13) प्रविष्ट गर्नुहोस् ।"
-
-#: javaopts.cpp:177
-#, kde-format
-msgid ""
-"If you want special arguments to be passed to the virtual machine, enter "
-"them here."
-msgstr ""
-"यदि तपाईँ अवास्तविक मेसिनमा पास हुने विशेष तर्क चाहनुहुन्छ भने, विषयवस्तु यहाँ प्रविष्ट "
-"गर्नुहोस् ।"
-
-#: javaopts.cpp:179
-#, kde-format
-msgid ""
-"When all the applets have been destroyed, the applet server should shut "
-"down. However, starting the jvm takes a lot of time. If you would like to "
-"keep the java process running while you are browsing, you can set the "
-"timeout value to whatever you like. To keep the java process running for the "
-"whole time that the konqueror process is, leave the Shutdown Applet Server "
-"checkbox unchecked."
-msgstr ""
-"सबै एप्लेट नष्ट गरेको बेलामा, एप्लेट सर्भर बन्द भएको हुनेछ । तापनि, jvm सुरुआत गर्दा प्रशस्त "
-"समय लिन्छ । तपाईँले ब्राउजिङ गर्दा जाभा प्रक्रिया चलाई राख्न चहानुहुन्छ भने, चाहेको "
-"समयसमाप्ति मान सेट गर्न सक्नुहुन्छ । कन्क्वेररको प्रक्रिया हुँदासम्मका लागि जाभा चलाइ राख्न, "
-"बन्द गर्ने एप्लेट सर्भर चिनोबाकसलाई चिनो नगरिकन छोड्नुहोस् ।"
-
-#: javaopts.cpp:288
-#, fuzzy, kde-format
-msgctxt "@title:group"
-msgid "Doma&in-Specific"
-msgstr "डोमेन-निर्दिष्ट"
-
-#: javaopts.cpp:323
-#, fuzzy, kde-format
-#| msgid "New Java Policy"
-msgctxt "@title:window"
-msgid "New Java Policy"
-msgstr "नयाँ जाभा नीति"
-
-#: javaopts.cpp:326
-#, fuzzy, kde-format
-#| msgid "Change Java Policy"
-msgctxt "@title:window"
-msgid "Change Java Policy"
-msgstr "जाभा नीति परिवर्तन गर्नुहोस्"
-
-#: javaopts.cpp:330
-#, kde-format
-msgid "&Java policy:"
-msgstr "जाभा नीति:"
-
-#: javaopts.cpp:331
-#, kde-format
-msgid "Select a Java policy for the above host or domain."
-msgstr "माथिको होस्ट वा डोमेनका लागि जाभा नीति चयन गर्नुहोस् ।"
-
-#: jsopts.cpp:50
+#: jsopts.cpp:57
 #, kde-format
 msgid "Ena&ble JavaScript globally"
 msgstr "विश्वव्यापी जाभा स्क्रिप्ट सक्षम पार्नुहोस्"
 
-#: jsopts.cpp:51
+#: jsopts.cpp:58
 #, kde-format
 msgid ""
 "Enables the execution of scripts written in ECMA-Script (also known as "
@@ -1944,33 +1771,7 @@ msgstr ""
 "लेखिने स्क्रिप्टको कार्यान्वयन सक्षम पार्नुहोस् । याद गर्नुहोस्, कुनै पनि ब्राउजरसँग, स्क्रिप्ट "
 "गर्ने भाषा सक्षम पार्दा सुरक्षा समस्या हुन सक्छ ।"
 
-#: jsopts.cpp:59
-#, kde-format
-msgid "Debugging"
-msgstr ""
-
-#: jsopts.cpp:63
-#, kde-format
-msgid "Enable debu&gger"
-msgstr "त्रुटि मोचक सक्षम पार्नुहोस्"
-
-#: jsopts.cpp:64
-#, kde-format
-msgid "Enables builtin JavaScript debugger."
-msgstr "builtin जाभा स्क्रिप्ट त्रुटि सच्याउने सक्षम पार्छ ।"
-
-#: jsopts.cpp:68
-#, kde-format
-msgid "Report &errors"
-msgstr "त्रुटि प्रतिवेदन गर्नुहोस्"
-
-#: jsopts.cpp:69
-#, kde-format
-msgid ""
-"Enables the reporting of errors that occur when JavaScript code is executed."
-msgstr "जाभास्क्रिप्ट कोड कार्यान्वयन हुदाँ उत्पन्न हुने त्रुटिको प्रतिवेदन सक्षम पार्छ ।"
-
-#: jsopts.cpp:79
+#: jsopts.cpp:70
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -1992,7 +1793,7 @@ msgstr ""
 "जिप गिएको फाइलमा बचत गर्न र पुन: प्राप्त गर्न दिदैँ तीनिहरूलाई अन्य मानिसमा सजिलै "
 "बाँडफाड गर्न अनुमति दिन्छ ।"
 
-#: jsopts.cpp:89
+#: jsopts.cpp:80
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2006,7 +1807,7 @@ msgstr ""
 "पूर्वनिर्धारित नीतिको साटोमा प्रयोग गरिने छ । </p><p>एउटा नीति चयन गर्नुहोस् र यसलाई "
 "परिमार्जन गर्न दायाँ तिरको नियन्त्रण प्रयोग गर्नुहोस् ।</p>"
 
-#: jsopts.cpp:96
+#: jsopts.cpp:87
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2016,7 +1817,7 @@ msgstr ""
 "जाभा स्क्रिप्ट नीति समावेश गर्ने फाइल रोज्न यो बटन क्लिक गर्नुहोस् । यी नीति अवस्थित "
 "एकमा गाभिने छन् । नक्कल प्रविष्टि उपेक्षा गरिन्छ ।"
 
-#: jsopts.cpp:99
+#: jsopts.cpp:90
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2026,95 +1827,60 @@ msgstr ""
 "जिप गरिएको फाइलमा जाभा स्क्रिप्ट नीति बचत गर्न यो बटन क्लिक गर्नुहोस् । "
 "<b>javascript_policy.tgz</b> नामको, फाइल, तपाईँको रोजाइको स्थानमा बचत गरिने छन् ।"
 
-#: jsopts.cpp:105
+#: jsopts.cpp:96
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "विश्वव्यापी जाभा स्क्रिप्ट नीति"
 
-#: jsopts.cpp:172
-#, fuzzy, kde-format
-msgctxt "@title:group"
-msgid "Do&main-Specific"
-msgstr "डोमेन-निर्दिष्ट"
-
-#: jsopts.cpp:211
-#, fuzzy, kde-format
-#| msgid "New JavaScript Policy"
-msgctxt "@title:window"
-msgid "New JavaScript Policy"
-msgstr "नयाँ जाभा स्क्रिप्ट नीति"
-
-#: jsopts.cpp:214
-#, fuzzy, kde-format
-#| msgid "Change JavaScript Policy"
-msgctxt "@title:window"
-msgid "Change JavaScript Policy"
-msgstr "जाभा स्क्रिप्ट नीति परिवर्तन गर्नुहोस्"
-
-#: jsopts.cpp:218
-#, kde-format
-msgid "JavaScript policy:"
-msgstr "जाभा स्क्रिप्ट नीति:"
-
-#: jsopts.cpp:219
-#, kde-format
-msgid "Select a JavaScript policy for the above host or domain."
-msgstr "माथिको होस्ट र डोमेनका लागि जाभा स्क्रिप्ट नीति चयन गर्नुहोस् ।"
-
-#: jsopts.cpp:221
-#, kde-format
-msgid "Domain-Specific JavaScript Policies"
-msgstr "डोमेन-निर्दिष्ट जाभा स्क्रिप्ट नीति"
-
-#: jspolicies.cpp:132
+#: jspolicies.cpp:161
 #, kde-format
 msgid "Open new windows:"
 msgstr "नयाँ सञ्झ्याल खोल्नुहोस्:"
 
-#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
-#: jspolicies.cpp:308
+#: jspolicies.cpp:169 jspolicies.cpp:223 jspolicies.cpp:260 jspolicies.cpp:297
+#: jspolicies.cpp:337
 #, kde-format
 msgid "Use global"
 msgstr "विश्वव्यापी प्रयोग गर्नुहोस्"
 
-#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
-#: jspolicies.cpp:309
+#: jspolicies.cpp:170 jspolicies.cpp:224 jspolicies.cpp:261 jspolicies.cpp:298
+#: jspolicies.cpp:338
 #, kde-format
 msgid "Use setting from global policy."
 msgstr "विश्वव्यापी नीतिबाट सेटिङ प्रयोग गर्नुहोस् ।"
 
-#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
-#: jspolicies.cpp:315
+#: jspolicies.cpp:176 jspolicies.cpp:230 jspolicies.cpp:267 jspolicies.cpp:304
+#: jspolicies.cpp:344
 #, kde-format
 msgid "Allow"
 msgstr "अनुमति दिनुहोस्"
 
-#: jspolicies.cpp:148
+#: jspolicies.cpp:177
 #, kde-format
 msgid "Accept all popup window requests."
 msgstr "सबै पपअप सञ्झ्याल अनुरोध स्वीकार गर्नुहोस् ।"
 
-#: jspolicies.cpp:154
+#: jspolicies.cpp:183
 #, kde-format
 msgid "Prompt every time a popup window is requested."
 msgstr "अनुरोध गरिएको पपअप सञ्झ्याल प्रत्येक समय प्रोम्ट गर्नुहोस् ।"
 
-#: jspolicies.cpp:159
+#: jspolicies.cpp:188
 #, kde-format
 msgid "Deny"
 msgstr "अस्वीकार गर्नुहोस्"
 
-#: jspolicies.cpp:160
+#: jspolicies.cpp:189
 #, kde-format
 msgid "Reject all popup window requests."
 msgstr "सबै पपअप सञ्झ्याल अनुरोध अस्वीकार गर्नुहोस् ।"
 
-#: jspolicies.cpp:165
+#: jspolicies.cpp:194
 #, kde-format
 msgid "Smart"
 msgstr "छरितो"
 
-#: jspolicies.cpp:166
+#: jspolicies.cpp:195
 #, kde-format
 msgid ""
 "Accept popup window requests only when links are activated through an "
@@ -2123,7 +1889,7 @@ msgstr ""
 "स्पष्ट माउस क्लिक वा कुञ्जीपाटी सञ्चालनबाट लिङ्क सक्रिय पारिको बेलामा मात्र पपअप "
 "सञ्झ्याल अनुरोध स्वीकार गर्नुहोस् ।"
 
-#: jspolicies.cpp:173
+#: jspolicies.cpp:202
 #, kde-format
 msgid ""
 "If you disable this, Konqueror will stop interpreting the <i>window.open()</"
@@ -2138,22 +1904,22 @@ msgstr ""
 "पार्दा उचित सञ्चालनका लागि आवश्यक हुने निश्चित साइट <i>window.open()</i> विच्छेदन हुन "
 "पनि सक्छ । यो आकृति सावधान भई प्रयोग गर्नुहोस् ।"
 
-#: jspolicies.cpp:187
+#: jspolicies.cpp:216
 #, kde-format
 msgid "Resize window:"
 msgstr "सञ्झ्याल रिसाइज:"
 
-#: jspolicies.cpp:202
+#: jspolicies.cpp:231
 #, kde-format
 msgid "Allow scripts to change the window size."
 msgstr "सझ्याल साइज परिवर्तन गर्न स्क्रिप्टलाई अनुमति दिनुहोस् ।"
 
-#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#: jspolicies.cpp:236 jspolicies.cpp:273 jspolicies.cpp:310 jspolicies.cpp:350
 #, kde-format
 msgid "Ignore"
 msgstr "उपेक्षा गर्नुहोस्"
 
-#: jspolicies.cpp:208
+#: jspolicies.cpp:237
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
@@ -2162,7 +1928,7 @@ msgstr ""
 "सञ्झ्याल साइज परिवर्तन गर्न स्क्रिप्टका प्रयास उपेक्षा गर्नुहोस् । वेब पृष्ठले यसले साइज "
 "परिवर्तन गरेको <i>सोच्नेछ</i> तर वास्तविक सञ्झ्याल प्रभावित हुदैँन ।"
 
-#: jspolicies.cpp:215
+#: jspolicies.cpp:244
 #, kde-format
 msgid ""
 "Some websites change the window size on their own by using <i>window."
@@ -2173,17 +1939,17 @@ msgstr ""
 "प्रयोगबाट सञ्झ्याल साइज परिवर्तन गर्छन् । यो विकल्पले त्यस्ता प्रयासको प्रयोगको बारेमा "
 "निर्दिष्ट गर्छ ।"
 
-#: jspolicies.cpp:224
+#: jspolicies.cpp:253
 #, kde-format
 msgid "Move window:"
 msgstr "सञ्झ्याल सार्नुहोस्:"
 
-#: jspolicies.cpp:239
+#: jspolicies.cpp:268
 #, kde-format
 msgid "Allow scripts to change the window position."
 msgstr "सञ्झ्याल स्थिति परिवर्तन गर्न स्क्रिप्टलाई अनुमति दिनुहोस् ।"
 
-#: jspolicies.cpp:245
+#: jspolicies.cpp:274
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window position. The web page will "
@@ -2192,7 +1958,7 @@ msgstr ""
 "सञ्झ्याल स्थिति परिवर्तन गर्ने स्क्रिप्टको प्रयास उपेक्षा गर्नुहोस् । वेब पृष्ठले यसले सञ्झ्याल "
 "सारेको <i>सोच्दछ</i> तर वास्तविक स्थिति प्रभावित भएको हुदैँन ।"
 
-#: jspolicies.cpp:252
+#: jspolicies.cpp:281
 #, kde-format
 msgid ""
 "Some websites change the window position on their own by using <i>window."
@@ -2203,17 +1969,17 @@ msgstr ""
 "प्रयोग गरेर सञ्झ्याल स्थिति परिवर्तन गर्छन् । यो विकल्पले त्यस्ता प्रयासको प्रयोगको बारेमा "
 "निर्दिष्ट गर्छ ।"
 
-#: jspolicies.cpp:261
+#: jspolicies.cpp:290
 #, kde-format
 msgid "Focus window:"
 msgstr "सञ्झ्याल फोकस:"
 
-#: jspolicies.cpp:276
+#: jspolicies.cpp:305
 #, kde-format
 msgid "Allow scripts to focus the window."
 msgstr "सञ्झ्याल फोकस गर्न स्क्रिप्टलाई अनुमति दिनुहोस् ।"
 
-#: jspolicies.cpp:282
+#: jspolicies.cpp:311
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to focus the window. The web page will <i>think</"
@@ -2223,7 +1989,7 @@ msgstr ""
 "सञ्झ्याल फोकस गर्न स्क्रिप्टको प्रयास उपेक्षा गर्नुहोस् । वेब पृष्ठले सञ्झ्यालमा फोकस ल्याएको "
 "<i>सोच्नेछ</i> तर वास्तविक फोकस परिवर्तन भएको हुने छैन ।"
 
-#: jspolicies.cpp:290
+#: jspolicies.cpp:319
 #, kde-format
 msgid ""
 "Some websites set the focus to their browser window on their own by using "
@@ -2235,17 +2001,17 @@ msgstr ""
 "फोकस सेट गर्छन् । यसले सधैँ त्यो समयमा प्रयोगकर्ताले समर्पण गरेको कुनै पनि कार्य अगाडि सरेर "
 "रोकि सञ्झ्यालमा नेतृत्व गर्छ । यो विकल्पले त्यस्ता प्रयासको आचरण निर्दिष्ट गर्छ ।"
 
-#: jspolicies.cpp:301
+#: jspolicies.cpp:330
 #, kde-format
 msgid "Modify status bar text:"
 msgstr "स्थितिपट्टी पाठ परिमार्जन गर्नुहोस्:"
 
-#: jspolicies.cpp:316
+#: jspolicies.cpp:345
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
 msgstr "स्थितिपट्टीको पाठ परिवर्तन गर्न स्क्रिप्टलाई अनुमति दिनुहोस् ।"
 
-#: jspolicies.cpp:322
+#: jspolicies.cpp:351
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
@@ -2254,7 +2020,7 @@ msgstr ""
 "स्थितिपट्टी पाठ परिवर्तन गर्न स्क्रिप्टको प्रयास उपेक्षा गर्नुहोस् । वेब पृष्ठले पाठ परिवर्तन "
 "गरेको <i>सोच्नेछ</i> तर वास्तविक पाठ परिवर्तन भएको हुने छैन ।"
 
-#: jspolicies.cpp:330
+#: jspolicies.cpp:359
 #, kde-format
 msgid ""
 "Some websites change the status bar text by setting <i>window.status</i> or "
@@ -2264,16 +2030,6 @@ msgstr ""
 "केही वेब साइटले <i>window.status</i> वा <i>window.defaultStatus</i> सेट गरेर "
 "स्थितिपट्टी पाठ परिवर्तन गर्छन्, त्यसैले कहिलेकाहीँ हाइपरलिङ्कको वास्तविक URLs प्रदर्शन "
 "गर्न रोक्छ । यो विकल्पले त्यस्ता प्रयासको प्रयोगको बारेमा निर्दिष्ट गर्छ ।"
-
-#: main.cpp:49
-#, kde-format
-msgid "&Java"
-msgstr "जाभा"
-
-#: main.cpp:53
-#, kde-format
-msgid "Java&Script"
-msgstr "जाभा स्क्रिप्ट"
 
 #: policydlg.cpp:30
 #, fuzzy, kde-format
@@ -2544,9 +2300,8 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150 useragent/useragent.ui:163
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr ""
@@ -2589,6 +2344,14 @@ msgstr "मेट्नुहोस्"
 msgid "Choose &selected identification"
 msgstr ""
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:163
+#, kde-format
+msgid ""
+"<html><head/><body><p>If checked, disable choosing a custom identification "
+"and use the default one</p></body></html>"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
@@ -2610,6 +2373,206 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+
+#~ msgid "Form Com&pletion"
+#~ msgstr "फारम समाप्ति"
+
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "लिङ्कमाथिको कर्सर परिवर्तन गर्नुहोस्"
+
+#~ msgid ""
+#~ "If this option is set, the shape of the cursor will change (usually to a "
+#~ "hand) if it is moved over a hyperlink."
+#~ msgstr ""
+#~ "यदि यो विकल्प सेट छ भने, माउसलाई हाइपरलिङ्क माथि सार्दा कर्सरको आकार परिवर्तन "
+#~ "(प्रायजसो हातमा) हुनेछ ।"
+
+#~ msgid "Allow automatic delayed &reloading/redirecting"
+#~ msgstr "स्वचालित विलम्ब गरिएको रिलोडिङ/रिडाइरेक्टिङ अनुमति दिनुहोस्"
+
+#~ msgid ""
+#~ "Some web pages request an automatic reload or redirection after a certain "
+#~ "period of time. By unchecking this box Konqueror will ignore these "
+#~ "requests."
+#~ msgstr ""
+#~ "निश्चित समयको अन्तराल पछि केही वेब पृष्ठले स्वचालित पुन: लोड र पुन: निर्देशन अनुरोध "
+#~ "गर्छन् । यो बाकस चिनो हटाइएमा कन्क्वेररले यि अनुरोध बेवास्ता गर्नेछ ।"
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "जाभा विश्वव्यापी रुपमा सक्षम पार्नुहोस्"
+
+#~ msgid "Java Runtime Settings"
+#~ msgstr "जाभा रनटाइम सेटिङ"
+
+#~ msgid "&Use security manager"
+#~ msgstr "सुरक्षा प्रबन्धक प्रयोग गर्नुहोस्"
+
+#~ msgid "Use &KIO"
+#~ msgstr "KIO प्रयोग गर्नुहोस्"
+
+#, fuzzy
+#~ msgid "Shu&tdown applet server when inactive for more than"
+#~ msgstr "निस्क्रिय हुँदा एप्लेट सर्भर बन्द गर्नुहोस्"
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " सेकेन्ड"
+#~ msgstr[1] " सेकेन्ड"
+
+#~ msgid "&Path to Java executable, or 'java':"
+#~ msgstr "कार्यान्वयन योग्य जाभा, वा 'जाभा' लाई मार्ग:"
+
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "थप जाभा तर्क:"
+
+#~ msgid ""
+#~ "Enables the execution of scripts written in Java that can be contained in "
+#~ "HTML pages. Note that, as with any browser, enabling active contents can "
+#~ "be a security problem."
+#~ msgstr ""
+#~ "एचटीएमएल पृष्ठमा समावेश गर्न सकिने जाभा भित्र लेखिने स्क्रिप्टको कार्यान्वयन सक्षम पार्छ "
+#~ "। याद गर्नुहोस्, कुनै पनि ब्राउजरसँग, सक्षम पार्दा सक्रिय सामाग्रीमा सुरक्षा समस्या हुन "
+#~ "सक्छ ।"
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific Java "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling Java applets on pages sent by these domains or "
+#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
+#~ "it.</p>"
+#~ msgstr ""
+#~ "<p>तपाईँले निर्दिष्ट जाभा नीतिका लागि सेट गरेको डोमेन र होस्ट यो बाकसले समावेश गर्छ "
+#~ "। यो नीति डमेन र होस्टले पठाएका पृष्ठमा सक्षम वा अक्षम पार्नका लागि पूर्वनिर्धारित "
+#~ "नीतिको साटोमा प्रयोग हुनेछ । </p><p>एउटा नीति चयन गर्नुहोस् र यसलाई परिमार्जन "
+#~ "गर्नका लागि दायाँ तिरको नियन्त्रण प्रयोग गर्नुहोस् ।</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the Java policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "जाभा नीति समावेश गर्ने फाइल रोज्न यो बटन क्लिक गर्नुहोस् । यी नीति अवस्थित एकसँग "
+#~ "गाभिने छन् । नक्कल प्रविष्टि उपेक्षित हुन्छन् ।"
+
+#~ msgid ""
+#~ "Click this button to save the Java policy to a zipped file. The file, "
+#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
+#~ msgstr ""
+#~ "जिप गरिएका फाइलमा जाभा नीति बचत गर्न यो बटन क्लिक गर्नुहोस् । फाइल, "
+#~ "<b>java_policy.tgz</b> नाम गरिएको, फाइल, तपाईँको छनौटको स्थानमा बचत गरिने छ ।"
+
+#~ msgid ""
+#~ "Here you can set specific Java policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy, causing the default policy "
+#~ "setting to be used for that domain."
+#~ msgstr ""
+#~ "तपाईँले यहाँ कुनै पनि विशिष्ट होस्ट वा डोमेनका लागि निर्दिष्ट जाभा नीति सेट गर्न "
+#~ "सक्नुहुन्छ । नयाँ नीति थप्नका लागि, केवल <i>नयाँ...</i> बटनमा थिच्नुहोस् र संवाद "
+#~ "बाकसद्वारा अनुरोध गरिएका आवश्यक सूचना वितरण गर्नुहोस् । अवस्थित नीति परिवर्तन गर्न, "
+#~ "<i>परिवर्तन...</i> बटनमा क्लिक गर्नुहोस् र नीति संवाद बाकसबाट नयाँ नीति रोज्नुहोस् "
+#~ "। <i>मट्नुहोस्</i> बटनमा क्लिक गर्दा डोमेनका लागि प्रयोग हुने पूर्वनिर्धारित नीति "
+#~ "सेटिङका कारणले चयन गरिएको नीति हट्नेछ ।"
+
+#~ msgid ""
+#~ "Enabling the security manager will cause the jvm to run with a Security "
+#~ "Manager in place. This will keep applets from being able to read and "
+#~ "write to your file system, creating arbitrary sockets, and other actions "
+#~ "which could be used to compromise your system. Disable this option at "
+#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
+#~ "policytool utility to give code downloaded from certain sites more "
+#~ "permissions."
+#~ msgstr ""
+#~ "सुरक्षा प्रबन्धक सक्षम पार्दा स्थान भित्र सुरक्षा प्रबन्धकसँग jvm चल्ने हुन्छ । यसले तपाईँको "
+#~ "फाइल प्रणालीमा पढ्न र लेख्न सक्ने गरी, स्वेच्छित सकेट सिर्जना गरेर, र तपाईँको फाइल "
+#~ "प्रणालीमा मिलाउन प्रयोग गर्न सकिने अन्य कार्य एप्लेट राख्छ । तपाईँको आफ्नै जोखिममा यो "
+#~ "विकल्प अक्षम पार्नुहोस् । तपाईँले नीश्चित साइटबाट डाउनलोड गरिएका बढी अनुमतिको कोड "
+#~ "दिन $HOME/.java.policy फाइल जाभा policytool utility मा परिमार्जन गर्न "
+#~ "सक्नुहुन्छ ।"
+
+#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
+#~ msgstr "सञ्जाल यातायतका लागि यसलाई सक्षम पार्दा jvm ले KIO प्रयोग गर्न सक्छ"
+
+#~ msgid ""
+#~ "Enter the path to the java executable. If you want to use the jre in your "
+#~ "path, simply leave it as 'java'. If you need to use a different jre, "
+#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
+#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
+#~ "IBMJava2-13)."
+#~ msgstr ""
+#~ "कार्यान्वयन योग्य जाभामा मार्ग प्रविष्ट गर्नुहोस् । यदि तपाईँको मार्गमा jre प्रयोग "
+#~ "गर्न चाहनुहुन्छ भने, केवल यसलाई 'जाभाको' रुपमा छोड्नुहोस् । तपाईँलाई फरक jre प्रयोग "
+#~ "गर्नु परेमा, कार्यान्वयन योग्य जाभामा मार्ग (जस्तै: /usr/lib/jdk/bin/java), वा "
+#~ "'bin/java' समावेश गर्ने डाइरेक्टरीमा मार्ग (जस्तै: /opt/IBMJava2-13) प्रविष्ट "
+#~ "गर्नुहोस् ।"
+
+#~ msgid ""
+#~ "If you want special arguments to be passed to the virtual machine, enter "
+#~ "them here."
+#~ msgstr ""
+#~ "यदि तपाईँ अवास्तविक मेसिनमा पास हुने विशेष तर्क चाहनुहुन्छ भने, विषयवस्तु यहाँ प्रविष्ट "
+#~ "गर्नुहोस् ।"
+
+#~ msgid ""
+#~ "When all the applets have been destroyed, the applet server should shut "
+#~ "down. However, starting the jvm takes a lot of time. If you would like to "
+#~ "keep the java process running while you are browsing, you can set the "
+#~ "timeout value to whatever you like. To keep the java process running for "
+#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
+#~ "Server checkbox unchecked."
+#~ msgstr ""
+#~ "सबै एप्लेट नष्ट गरेको बेलामा, एप्लेट सर्भर बन्द भएको हुनेछ । तापनि, jvm सुरुआत गर्दा "
+#~ "प्रशस्त समय लिन्छ । तपाईँले ब्राउजिङ गर्दा जाभा प्रक्रिया चलाई राख्न चहानुहुन्छ भने, "
+#~ "चाहेको समयसमाप्ति मान सेट गर्न सक्नुहुन्छ । कन्क्वेररको प्रक्रिया हुँदासम्मका लागि जाभा "
+#~ "चलाइ राख्न, बन्द गर्ने एप्लेट सर्भर चिनोबाकसलाई चिनो नगरिकन छोड्नुहोस् ।"
+
+#, fuzzy
+#~ msgctxt "@title:group"
+#~ msgid "Doma&in-Specific"
+#~ msgstr "डोमेन-निर्दिष्ट"
+
+#, fuzzy
+#~| msgid "New Java Policy"
+#~ msgctxt "@title:window"
+#~ msgid "New Java Policy"
+#~ msgstr "नयाँ जाभा नीति"
+
+#, fuzzy
+#~| msgid "Change Java Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Change Java Policy"
+#~ msgstr "जाभा नीति परिवर्तन गर्नुहोस्"
+
+#~ msgid "&Java policy:"
+#~ msgstr "जाभा नीति:"
+
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr "माथिको होस्ट वा डोमेनका लागि जाभा नीति चयन गर्नुहोस् ।"
+
+#~ msgid "Enable debu&gger"
+#~ msgstr "त्रुटि मोचक सक्षम पार्नुहोस्"
+
+#~ msgid "Enables builtin JavaScript debugger."
+#~ msgstr "builtin जाभा स्क्रिप्ट त्रुटि सच्याउने सक्षम पार्छ ।"
+
+#~ msgid "Report &errors"
+#~ msgstr "त्रुटि प्रतिवेदन गर्नुहोस्"
+
+#~ msgid ""
+#~ "Enables the reporting of errors that occur when JavaScript code is "
+#~ "executed."
+#~ msgstr "जाभास्क्रिप्ट कोड कार्यान्वयन हुदाँ उत्पन्न हुने त्रुटिको प्रतिवेदन सक्षम पार्छ ।"
+
+#~ msgid "&Java"
+#~ msgstr "जाभा"
+
+#~ msgid "Java&Script"
+#~ msgstr "जाभा स्क्रिप्ट"
 
 #~ msgid ""
 #~ "This will open a new tab in the background, instead of in the foreground."

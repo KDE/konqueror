@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:38+0000\n"
+"POT-Creation-Date: 2024-07-25 02:29+0000\n"
 "PO-Revision-Date: 2024-04-26 07:18+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -116,7 +116,7 @@ msgstr ""
 msgid "A&nimations:"
 msgstr "&ანიმაციები:"
 
-#: appearance.cpp:85 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:108
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
@@ -688,21 +688,21 @@ msgid "Domain"
 msgstr "დომენი"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
-#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
+#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
 #, kde-format
 msgid "Policy"
 msgstr "წესები"
 
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
-#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:45
+#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
 #: useragent/useragent.ui:84
 #, kde-format
 msgid "&New..."
 msgstr "&ახალი..."
 
 #. i18n: ectx: property (text), widget (QPushButton, pbChange)
-#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:49
+#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:52
 #, kde-format
 msgid "Chan&ge..."
 msgstr "&შეცვლა..."
@@ -772,7 +772,7 @@ msgid "Policy:"
 msgstr "პოლიტიკა:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
+#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:192
 #: policydlg.cpp:63
 #, kde-format
 msgid "Accept"
@@ -785,14 +785,14 @@ msgid "Accept until end of session"
 msgstr "ყველა ქუქის მიღება ამ სესიის ბოლომდე"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
+#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:194
 #: policydlg.cpp:63
 #, kde-format
 msgid "Reject"
 msgstr "უარყოფა"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:153
+#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:182
 #, kde-format
 msgid "Ask"
 msgstr "კითხვა"
@@ -1349,33 +1349,39 @@ msgstr ""
 "</body>\n"
 "</html>\n"
 
-#: domainlistview.cpp:37
+#: domainlistview.cpp:33
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "&დომენის"
+
+#: domainlistview.cpp:40
 #, kde-format
 msgid "Host/Domain"
 msgstr "ჰოსტი/დომენი"
 
-#: domainlistview.cpp:53
+#: domainlistview.cpp:56
 #, kde-format
 msgid "De&lete"
 msgstr "წა&შლა"
 
-#: domainlistview.cpp:57
+#: domainlistview.cpp:60
 #, kde-format
 msgid "&Import..."
 msgstr "&შემოტანა..."
 
-#: domainlistview.cpp:63
+#: domainlistview.cpp:66
 #, kde-format
 msgid "&Export..."
 msgstr "&გატანა..."
 
-#: domainlistview.cpp:71
+#: domainlistview.cpp:74
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr ""
 "დააწკაპუნეთ ამ ღილაკზე, რათა ჰოსტის ან დომენის პოლიტიკა ხელით დაამატოთ."
 
-#: domainlistview.cpp:73
+#: domainlistview.cpp:76
 #, kde-format
 msgid ""
 "Click on this button to change the policy for the host or domain selected in "
@@ -1384,7 +1390,7 @@ msgstr ""
 "დააწკაპუნეთ ამ ღილაკზე, რომ შეცვალოთ პოლიტიკა ჰოსტისთვის ან დომენისთვის, "
 "რომელიც ჩამონათვალში აირჩიეთ."
 
-#: domainlistview.cpp:75
+#: domainlistview.cpp:78
 #, kde-format
 msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
@@ -1393,20 +1399,47 @@ msgstr ""
 "დააწკაპუნეთ ამ ღილაკზე, რომ წაშალოთ პოლიტიკა ჰოსტისთვის ან დომენისთვის, "
 "რომელიც ჩამონათვალში აირჩიეთ."
 
-#: domainlistview.cpp:122
+#: domainlistview.cpp:125
 #, kde-format
 msgid "You must first select a policy to be changed."
 msgstr "შესაცვლელად ჯერ პოლიტიკა უნდა აირჩიოთ."
 
-#: domainlistview.cpp:149
+#: domainlistview.cpp:152
 #, kde-format
 msgid "You must first select a policy to delete."
 msgstr "წასაშლელად ჯერ საჭიროა, აირჩიოთ პოლიტიკა."
 
-#: domainlistview.cpp:187 policydlg.cpp:63
+#: domainlistview.cpp:190 policydlg.cpp:63
 #, kde-format
 msgid "Use Global"
 msgstr "გლობალურის გამოყენება"
+
+#: domainlistview.cpp:232
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "JavaScript -ის ახალი პოლიტიკა"
+
+#: domainlistview.cpp:235
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "JavaScript -ის პოლიტიკის შეცვლა"
+
+#: domainlistview.cpp:239
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "JavaScript -ის პოლიტიკა:"
+
+#: domainlistview.cpp:240
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "აირჩიეთ JavaScript-ის პოლიტიკა ზედა ჰოსტის ან დომენისთვის."
+
+#: domainlistview.cpp:242
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "JavaScript-ის დომენისთვის სპეციფიკური პოლიტიკები"
 
 #: filteropts.cpp:48
 #, kde-format
@@ -1579,7 +1612,7 @@ msgstr "სახელი"
 msgid "URL"
 msgstr "URL"
 
-#: generalopts.cpp:56
+#: generalopts.cpp:54
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1587,59 +1620,59 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr "შეიყვანეთ სასურველი საწყისი გვერდი"
 
-#: generalopts.cpp:62
+#: generalopts.cpp:60
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr "როცა &ახალი ჩანართი შეიქმნა"
 
-#: generalopts.cpp:71
+#: generalopts.cpp:69
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "საწყისი გვერდის ჩვენება"
 
-#: generalopts.cpp:72
+#: generalopts.cpp:70
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "ჩემი საწყისი გვერდის ჩვენება"
 
-#: generalopts.cpp:73
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "სუფთა გვერდის ჩვენება"
 
-#: generalopts.cpp:74
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "ჩემი სანიშნების ჩვენება"
 
-#: generalopts.cpp:80
+#: generalopts.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "აირჩიეთ საწყისი გვერდი"
 
-#: generalopts.cpp:85
+#: generalopts.cpp:83
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr "ეს იმ ვებგვერდის ბმულია, რომელსაც Konqueror გაშვებისას გაჩვენებთ."
 
-#: generalopts.cpp:96
+#: generalopts.cpp:94
 #, kde-format
 msgid "Home page:"
 msgstr "პირადი ვებგვერდი:"
 
-#: generalopts.cpp:99
+#: generalopts.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "აირჩიეთ  საწყისი გვერდი"
 
-#: generalopts.cpp:104
+#: generalopts.cpp:102
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
@@ -1648,42 +1681,42 @@ msgstr ""
 "ეს იმ ვებგვერდის ბმულია, სადაც Konqueror გადავა, როცა \"საწყისი გვერდის\" "
 "ღილაკს დააწვებით."
 
-#: generalopts.cpp:112
+#: generalopts.cpp:110
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "ვებ ბრაუზერის ნაგულისხმები ძრავა:"
 
-#: generalopts.cpp:121
+#: generalopts.cpp:119
 #, kde-format
 msgid "When splitting a view"
 msgstr "ხედის გაყოფისას"
 
-#: generalopts.cpp:125
+#: generalopts.cpp:123
 #, kde-format
 msgid "Always duplicate current view"
 msgstr "მიმდინარე ხედი ყოველთვის დადაუბლირდება"
 
-#: generalopts.cpp:126
+#: generalopts.cpp:124
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "მიმდინარე ხედი ყოველთვის დადუბლირდება მხოლოდ ლოკალური ფაილებისთვის"
 
-#: generalopts.cpp:132
+#: generalopts.cpp:130
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr "გაშვებისას, ბოლო მდგომარეობის აღდგენა"
 
-#: htmlopts.cpp:35
+#: htmlopts.cpp:39
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "&სანიშნები"
 
-#: htmlopts.cpp:38
+#: htmlopts.cpp:42
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "სანიშნის დამატებისას სახელისა და საქაღალდის კითხვა"
 
-#: htmlopts.cpp:41
+#: htmlopts.cpp:45
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1693,12 +1726,12 @@ msgstr ""
 "თუ ეს ჩართულია, Konqueror, სანიშნის დამატებისას, უფლებას მოგცემთ, შეცვალოთ "
 "სანიშნეს სათაური და აირჩიოთ საქაღალდე, სადაც ის შეინახება."
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:51
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "სანიშნების პანელზე მხოლოდ დანიშნული სანიშნების ჩვენება"
 
-#: htmlopts.cpp:49
+#: htmlopts.cpp:53
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1707,12 +1740,10 @@ msgstr ""
 "თუ ეს ჩართულია, Konqueror, მხოლოდ, იმ სანიშნეებს გაჩვენებთ, რომლებსაც "
 "სანიშნეების რედაქტორში შესაბამისი ჭდე დაუსვით."
 
-#: htmlopts.cpp:56
-#, kde-format
-msgid "Form Com&pletion"
-msgstr "ფორმის &დასრულება"
-
-#: htmlopts.cpp:60
+#. i18n("Form Com&pletion"), widget());
+#. m_pFormCompletionCheckBox->setCheckable(true);
+#. QFormLayout *laygroup2 = new QFormLayout(m_pFormCompletionCheckBox);
+#: htmlopts.cpp:67
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1721,12 +1752,12 @@ msgstr ""
 "თუ ეს ჩართულია, Konqueror დაიმახსოვრებს მონაცემებს, რომელსაც ვებფორმებში "
 "შეიყვანთ და მათ ყველა ფორმის შესაბამის ველებში შემოგთავაზებთ."
 
-#: htmlopts.cpp:66
+#: htmlopts.cpp:74
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "&მაქსიმალური დასრულება:"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:76
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
@@ -1734,31 +1765,17 @@ msgstr ""
 "აქ შეგიძლიათ აირჩიოთ, რამდენი მნიშვნელობა დაიმახსოვროს Konquer-მა ფორმის "
 "ველისთვის."
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:87
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "თაგუნას &ქცევა"
 
-#: htmlopts.cpp:78
-#, kde-format
-msgid "Chan&ge cursor over links"
-msgstr "ბმულზე გადატარებისას &კურსორის ცვლილება"
-
-#: htmlopts.cpp:80
-#, kde-format
-msgid ""
-"If this option is set, the shape of the cursor will change (usually to a "
-"hand) if it is moved over a hyperlink."
-msgstr ""
-"თუ ეს პარამეტრი დაყენებულია, კურსორის ფორმა შეიცვლება (ჩვეულებრივ, ხელზე), "
-"თუ მას ჰიპერბმულს გადაატარებთ."
-
-#: htmlopts.cpp:84
+#: htmlopts.cpp:90
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "&შუა წკაპი მონიშნულში ბმულს გახსნის"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:93
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
@@ -1767,12 +1784,12 @@ msgstr ""
 "თუ ეს ჩართულია, Konqueror-ის ხედში, მონიშნულში, ბმულების გახსნა, თაგუნას შუა "
 "ღილაკით ზედ დაწკაპუნებით შეგიძლიათ."
 
-#: htmlopts.cpp:91
+#: htmlopts.cpp:97
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "მარჯვენა &წკაპი ისტორიაში უკან გადადის"
 
-#: htmlopts.cpp:94
+#: htmlopts.cpp:100
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1783,26 +1800,12 @@ msgstr ""
 "ღილაკზე დაწკაპუნებით შეგიძლიათ. კონტექსტური მენიუს გამოსაძახებლად დააჭირეთ "
 "თაგუნას მარჯვენა ღილაკს და გადაიტანეთ ის."
 
-#: htmlopts.cpp:104
-#, kde-format
-msgid "Allow automatic delayed &reloading/redirecting"
-msgstr "ავტომატური დაყოვნებული &გადატვირთვა/გადამისამართების დაშვება"
-
-#: htmlopts.cpp:105
-#, kde-format
-msgid ""
-"Some web pages request an automatic reload or redirection after a certain "
-"period of time. By unchecking this box Konqueror will ignore these requests."
-msgstr ""
-"ზოგიერთი ვებგვერდი ავტომატურ გადატვირთვას ან გადამისამართებას ითხოვენ რაღაც "
-"პერიოდის შემდეგ. ამის გამორთვით Konqueror ამნაირ მოთხოვნებს გათიშავს."
-
-#: htmlopts.cpp:111
+#: htmlopts.cpp:115
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "წვდომის ღილაკის Ctri ღილაკით &აქტივაციის ჩართვა"
 
-#: htmlopts.cpp:112
+#: htmlopts.cpp:116
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1813,38 +1816,42 @@ msgstr ""
 "ამის გამორთვა ამ წვდომადობის ფუნქციას გათიშავს. (ამ ცვლილების ძალაში "
 "შესასვლელად აუცილებელია გადატვირთოთ Konqueror.)"
 
-#: htmlopts.cpp:116
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr ""
 "DNT თავსართის გაგზავნა, რომ ვებგვერდებს უთხრათ, რომ არ გნებავთ, ტრეკინგი "
 "განახორციელონ"
 
-#: htmlopts.cpp:117
-#, kde-format
+#: htmlopts.cpp:122
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check this box if you want to inform a web site that you do not want your "
+#| "web browsing habits tracked."
 msgid ""
-"Check this box if you want to inform a web site that you do not want your "
-"web browsing habits tracked."
+"<p>Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
+"considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
 "ჩართეთ, თუ გნებავთ გააფრთხილოთ ვებგვერდი, რომ არ გნებავთ, თქვენი ტრეკინგი "
 "მოხდეს."
 
-#: htmlopts.cpp:121
+#: htmlopts.cpp:126
 #, kde-format
 msgid "Offer to save website passwords"
 msgstr "ვებგვერდის პაროლის დამახსოვრების შეთავაზება"
 
-#: htmlopts.cpp:122
+#: htmlopts.cpp:127
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr "გამორთეთ ეს თოლია, რათა ვებგვერდების პაროლის შენახვა აღარ მოგთხოვოთ"
 
-#: htmlopts.cpp:126
+#: htmlopts.cpp:131
 #, kde-format
 msgid "Display online PDF files using WebEngine"
 msgstr "ონლაინ PDF ფაილების WebEngine-ით გახსნა"
 
-#: htmlopts.cpp:127
+#: htmlopts.cpp:132
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
@@ -1852,208 +1859,24 @@ msgstr ""
 "გამორთეთ ეს, რომ ინტერნეტიდან გახსნილი PDF ფაილები სისტემური პარამეტრების "
 "მიხედვით გაიხსნას"
 
-#: javaopts.cpp:78
+#: htmlopts.cpp:136
 #, kde-format
-msgid "Enable Ja&va globally"
-msgstr "&Java-ის გლობალურად ჩართვა"
+msgid "Always display files from web pages in a new tab"
+msgstr ""
 
-#: javaopts.cpp:93
-#, kde-format
-msgid "Java Runtime Settings"
-msgstr "Java-ის მორგება"
-
-#: javaopts.cpp:97
-#, kde-format
-msgid "&Use security manager"
-msgstr "&უსაფრთხოების მმართველის გამოყენება"
-
-#: javaopts.cpp:101
-#, kde-format
-msgid "Use &KIO"
-msgstr "&KIO -ის გამოყენება"
-
-#: javaopts.cpp:105
-#, kde-format
-msgid "Shu&tdown applet server when inactive for more than"
-msgstr "&აპლეტის სერვერის გამორთვა, როცა ის უქმეა მეტი, ვიდრე"
-
-#: javaopts.cpp:117
-#, kde-format
-msgid " second"
-msgid_plural " seconds"
-msgstr[0] " წამი"
-msgstr[1] " წამი"
-
-#: javaopts.cpp:123
-#, kde-format
-msgid "&Path to Java executable, or 'java':"
-msgstr "ბილიკი Java-ის გამშვებ ფაილამდე ('java'):"
-
-#: javaopts.cpp:127
-#, kde-format
-msgid "Additional Java a&rguments:"
-msgstr "Java-ის დამატებითი &არგუმენტები:"
-
-#: javaopts.cpp:132
+#: htmlopts.cpp:137
 #, kde-format
 msgid ""
-"Enables the execution of scripts written in Java that can be contained in "
-"HTML pages. Note that, as with any browser, enabling active contents can be "
-"a security problem."
+"<p>When showing in Konqueror files from links in web pages, always use a new "
+"tab"
 msgstr ""
-"ჩართავს Java-ზე დაწერილი იმ სკრიპტების შესრულებას, რომლებსაც HTML გვერდები "
-"შეიცავენ. დაიმახსოვრეთ, რომ აქტიური შემცველობის ჩართვა ნებისმიერ ბრაუზერში "
-"სარისკოა."
 
-#: javaopts.cpp:135
-#, kde-format
-msgid ""
-"<p>This box contains the domains and hosts you have set a specific Java "
-"policy for. This policy will be used instead of the default policy for "
-"enabling or disabling Java applets on pages sent by these domains or hosts.</"
-"p><p>Select a policy and use the controls on the right to modify it.</p>"
-msgstr ""
-"<p>ეს ყუთი შეიცავს დომენებს და ჰოსტებს, რომლებისთვისაც ცალკე Java-ის "
-"პოლიტიკა დააყენეთ. ეს პოლიტიკა ნაგულისხმევის მაგიერ იქნება გამოყენებული Java "
-"აპლეტების ჩასართავად ან გამოსართავად გვერდებზე, რომლებიც ამ დომენებმა ან "
-"ჰოსტებმა გამოაგზავნეს.</p><p>აირჩიეთ პოლიტიკა და გამოიყენეთ კონტროლები რომ "
-"დააყენოთ ის ზუსტად ან შეცვალოთ ის.</p>"
-
-#: javaopts.cpp:142
-#, kde-format
-msgid ""
-"Click this button to choose the file that contains the Java policies. These "
-"policies will be merged with the existing ones. Duplicate entries are "
-"ignored."
-msgstr ""
-"დააწკაპუნეთ ამ ღილაკზე, რომ აირჩიოთ ფაილი, რომელიც Java-ის პოლიტიკებს "
-"შეიცავს. ეს პოლიტიკები არსებულს შეუერთდება. დუბლიკატები გამოტოვებულია."
-
-#: javaopts.cpp:145
-#, kde-format
-msgid ""
-"Click this button to save the Java policy to a zipped file. The file, named "
-"<b>java_policy.tgz</b>, will be saved to a location of your choice."
-msgstr ""
-"დააწკაპუნეთ ამ ღილაკზე, რომ Java-ის პოლიტიკა zip-ით შეკუმშულ ფაილში, სახელად "
-"<b>java_policy.tgz</b> შეინახოთ. მდებარეობას თქვენ მიუთითებთ."
-
-#: javaopts.cpp:149
-#, kde-format
-msgid ""
-"Here you can set specific Java policies for any particular host or domain. "
-"To add a new policy, simply click the <i>New...</i> button and supply the "
-"necessary information requested by the dialog box. To change an existing "
-"policy, click on the <i>Change...</i> button and choose the new policy from "
-"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
-"selected policy, causing the default policy setting to be used for that "
-"domain."
-msgstr ""
-"აქ შეგძლიათ, თითოეული დომენის თუ ჰოსტისთვის საკუთარი Java პოლიტიკები "
-"დააყენოთ. პოლიტიკის დასამატებლად, უბრალოდ დააკწაპუნეთ ღილაკზე <i>ახალი...</"
-"i> და შეიყვანეთ საჭირო ინფორმაცია, რომელსაც დიალოგი მოგთხოვთ. არსებული "
-"პოლიტიკის შესაცვლელად დააწკაპუნეთ ღილაკზე <i>შეცვლა...</i> და აირჩიეთ ახალი "
-"პოლიტიკა გამოტანილი დიალოგიდან. თუ დააწკაპუნებთ ღილაკზე <i>წაშლა</i>, "
-"მონიშნულ პოლიტიკა წაიშლება, რაც ამ დომენზე ნაგულისხმევი პოლიტიკის "
-"გამოყენებას გამოიწვევს."
-
-#: javaopts.cpp:162
-#, kde-format
-msgid ""
-"Enabling the security manager will cause the jvm to run with a Security "
-"Manager in place. This will keep applets from being able to read and write "
-"to your file system, creating arbitrary sockets, and other actions which "
-"could be used to compromise your system. Disable this option at your own "
-"risk. You can modify your $HOME/.java.policy file with the Java policytool "
-"utility to give code downloaded from certain sites more permissions."
-msgstr ""
-"უსაფრთხოების მმართველის ჩართვა JVM-ს უსაფრთხოების მმართველით გაუშვებს. ეს "
-"აპლეტებს თქვენს ფაილურ სისტემაში ჩაწერას და წაკითხვას, სოკეტების შექმნას და "
-"სხვა ქმედებებს აუკრძალავს, რომლებსაც, თქვენი უსაფრთხოების დარღვევა შეუძლია. "
-"გამორთეთ ეს პარამეტრი საკუთარი რისკით. შეგიძლიათ, შეცვალოთ თქვენი ფაილი "
-"$HOME/.java.policy Java-ის პოლიტიკის მართვის პროგრამით, რათა ზოგიერთი "
-"საიტიდან გადმოწერილ კოდს მეტი უფლებები მიეცეს."
-
-#: javaopts.cpp:170
-#, kde-format
-msgid "Enabling this will cause the jvm to use KIO for network transport "
-msgstr ""
-"ამის ჩართვა გამოიწვევს JVM-ის მიერ KIO-ის გამოყენებას ქსელის ტრანსპორტისთვის "
-
-#: javaopts.cpp:172
-#, kde-format
-msgid ""
-"Enter the path to the java executable. If you want to use the jre in your "
-"path, simply leave it as 'java'. If you need to use a different jre, enter "
-"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
-"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
-msgstr ""
-"შეიყვანეთ ბილიკი გამშვებ ფაილამდე java. თუ გნებავთ გამოიყენოთ jre, რომელიც "
-"თქვენს PATH გარემოს ცვლადშია, უბრალოდ დატოვეთ, როგორც 'java'. თ გნებავთ, "
-"სხვა jre გამოიყენოთ, შეიყვანეთ ბილიკი გამშვებ ფაილამდე სახელად java (მაგ: /"
-"usr/lib/jdk/bin/java) ან ბილიკი, რომელიც შეიცავს ფაილს 'bin/java' (მაგ: /opt/"
-"IBMJava2-13)."
-
-#: javaopts.cpp:177
-#, kde-format
-msgid ""
-"If you want special arguments to be passed to the virtual machine, enter "
-"them here."
-msgstr ""
-"თუ გნებავთ, ვირტუალურ მანქანას სპეციალური არგუმენტები გადასცეთ, ისინი აქ "
-"უნდა შეიყვანოთ."
-
-#: javaopts.cpp:179
-#, kde-format
-msgid ""
-"When all the applets have been destroyed, the applet server should shut "
-"down. However, starting the jvm takes a lot of time. If you would like to "
-"keep the java process running while you are browsing, you can set the "
-"timeout value to whatever you like. To keep the java process running for the "
-"whole time that the konqueror process is, leave the Shutdown Applet Server "
-"checkbox unchecked."
-msgstr ""
-"როცა ყველა აპლეტები განადგურდება, აპლეტის სერვერი უნდა გაითიშოს. მაგრამ JVM-"
-"ის გაშვებას კარგა ხანი სჭირდება. თუ გნებავთ, java-ის პროცესი გაშვებული "
-"დატოვოთ იმ დროისთვის, სანამ ბრაუზერში მუშაობთ, შეგიძლიათ, ამ მოლოდინის ვადა "
-"ნებისმიერ რიცხვზე დააყენოთ. თუ გნებავთ, java-ის პროცესი მთელი იმ დროის "
-"განმავლობაში იყოს მეხსიერებაში, სანამ Konqueror გაშვებულია, დატოვეთ აპლეტის "
-"სერვერის ჩასართავი ჩაურთავად."
-
-#: javaopts.cpp:288
-#, kde-format
-msgctxt "@title:group"
-msgid "Doma&in-Specific"
-msgstr "მხოლოდ მითითებულ &დომენზე"
-
-#: javaopts.cpp:323
-#, kde-format
-msgctxt "@title:window"
-msgid "New Java Policy"
-msgstr "Java-ის ახალი პოლიტიკა"
-
-#: javaopts.cpp:326
-#, kde-format
-msgctxt "@title:window"
-msgid "Change Java Policy"
-msgstr "Java-ის პოლიტიკის შეცვლა"
-
-#: javaopts.cpp:330
-#, kde-format
-msgid "&Java policy:"
-msgstr "&Java-ის პოლიტიკა:"
-
-#: javaopts.cpp:331
-#, kde-format
-msgid "Select a Java policy for the above host or domain."
-msgstr "აირჩიეთ Java-ის პოლიტიკა ზედა ჰოსტის ან დომენისთვის."
-
-#: jsopts.cpp:50
+#: jsopts.cpp:57
 #, kde-format
 msgid "Ena&ble JavaScript globally"
 msgstr "JavaScript -ის გლობალურად &ჩართვა"
 
-#: jsopts.cpp:51
+#: jsopts.cpp:58
 #, kde-format
 msgid ""
 "Enables the execution of scripts written in ECMA-Script (also known as "
@@ -2064,33 +1887,7 @@ msgstr ""
 "სკრიპტების, რომლებსაც შეიძლება, HTML გვერდები შეიცავდეს, გაშვების დაშვება. "
 "დაიმახსოვრეთ, რომ სკრიპტინგის ენების ჩართვა შეიძლება რისკებს შეიცავდეს."
 
-#: jsopts.cpp:59
-#, kde-format
-msgid "Debugging"
-msgstr "შეცდომები"
-
-#: jsopts.cpp:63
-#, kde-format
-msgid "Enable debu&gger"
-msgstr "&გამმართავის ჩართვა"
-
-#: jsopts.cpp:64
-#, kde-format
-msgid "Enables builtin JavaScript debugger."
-msgstr "JavaScript-ის ჩაშენებული გამმართველის ჩართვა."
-
-#: jsopts.cpp:68
-#, kde-format
-msgid "Report &errors"
-msgstr "&შეცდომების გადაცემა"
-
-#: jsopts.cpp:69
-#, kde-format
-msgid ""
-"Enables the reporting of errors that occur when JavaScript code is executed."
-msgstr "ჩართავს JavaScript-ის კოდის შესრულებისას მომხდარი შეცდომების ჩვენებას."
-
-#: jsopts.cpp:79
+#: jsopts.cpp:70
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2113,7 +1910,7 @@ msgstr ""
 "ღილაკები საშუალებას გაძლევთ, პოლიტიკები სხვებსაც გაუზიაროთ, მათი .zip ფაილის "
 "სახით გატანის და შემოტანის საშუალებით."
 
-#: jsopts.cpp:89
+#: jsopts.cpp:80
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2128,7 +1925,7 @@ msgstr ""
 "ჰოსტებმა გამოაგზავნეს.</p><p>აირჩიეთ პოლიტიკა და გამოიყენეთ კონტროლები რომ "
 "დააყენოთ ის ზუსტად ან შეცვალოთ ის.</p>"
 
-#: jsopts.cpp:96
+#: jsopts.cpp:87
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2138,7 +1935,7 @@ msgstr ""
 "დააწკაპუნეთ ამ ღილაკზე, რომ აირჩიოთ ფაილი, რომელიც JavaScript-ის პოლიტიკებს "
 "შეიცავს. ეს პოლიტიკები არსებულს შეუერთდება. დუბლიკატები გამოტოვებულია."
 
-#: jsopts.cpp:99
+#: jsopts.cpp:90
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2148,93 +1945,60 @@ msgstr ""
 "დააწკაპუნეთ ამ ღილაკზე, რომ JavaScript-ის პოლიტიკა zip-ით შეკუმშულ ფაილში, "
 "სახელად <b>javascript_policy.tgz</b> შეინახოთ. მდებარეობას თქვენ მიუთითებთ."
 
-#: jsopts.cpp:105
+#: jsopts.cpp:96
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "JavaScript-ის გლობალური პოლიტიკა"
 
-#: jsopts.cpp:172
-#, kde-format
-msgctxt "@title:group"
-msgid "Do&main-Specific"
-msgstr "&დომენის"
-
-#: jsopts.cpp:211
-#, kde-format
-msgctxt "@title:window"
-msgid "New JavaScript Policy"
-msgstr "JavaScript -ის ახალი პოლიტიკა"
-
-#: jsopts.cpp:214
-#, kde-format
-msgctxt "@title:window"
-msgid "Change JavaScript Policy"
-msgstr "JavaScript -ის პოლიტიკის შეცვლა"
-
-#: jsopts.cpp:218
-#, kde-format
-msgid "JavaScript policy:"
-msgstr "JavaScript -ის პოლიტიკა:"
-
-#: jsopts.cpp:219
-#, kde-format
-msgid "Select a JavaScript policy for the above host or domain."
-msgstr "აირჩიეთ JavaScript-ის პოლიტიკა ზედა ჰოსტის ან დომენისთვის."
-
-#: jsopts.cpp:221
-#, kde-format
-msgid "Domain-Specific JavaScript Policies"
-msgstr "JavaScript-ის დომენისთვის სპეციფიკური პოლიტიკები"
-
-#: jspolicies.cpp:132
+#: jspolicies.cpp:161
 #, kde-format
 msgid "Open new windows:"
 msgstr "ახალი ფანჯრების გახსნა:"
 
-#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
-#: jspolicies.cpp:308
+#: jspolicies.cpp:169 jspolicies.cpp:223 jspolicies.cpp:260 jspolicies.cpp:297
+#: jspolicies.cpp:337
 #, kde-format
 msgid "Use global"
 msgstr "გლობალურის გამოყენება"
 
-#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
-#: jspolicies.cpp:309
+#: jspolicies.cpp:170 jspolicies.cpp:224 jspolicies.cpp:261 jspolicies.cpp:298
+#: jspolicies.cpp:338
 #, kde-format
 msgid "Use setting from global policy."
 msgstr "პარამეტრის გლობალური პოლიტიკიდან აღება."
 
-#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
-#: jspolicies.cpp:315
+#: jspolicies.cpp:176 jspolicies.cpp:230 jspolicies.cpp:267 jspolicies.cpp:304
+#: jspolicies.cpp:344
 #, kde-format
 msgid "Allow"
 msgstr "დაშვება"
 
-#: jspolicies.cpp:148
+#: jspolicies.cpp:177
 #, kde-format
 msgid "Accept all popup window requests."
 msgstr "ყველა მხტუნარა ფანჯრის მოთხოვნის მიღება."
 
-#: jspolicies.cpp:154
+#: jspolicies.cpp:183
 #, kde-format
 msgid "Prompt every time a popup window is requested."
 msgstr "კითხვა იმდენჯერ, რამდენჯერაც მხტუნარა ფანჯარაა მოთხოვნილი."
 
-#: jspolicies.cpp:159
+#: jspolicies.cpp:188
 #, kde-format
 msgid "Deny"
 msgstr "უარყოფა"
 
-#: jspolicies.cpp:160
+#: jspolicies.cpp:189
 #, kde-format
 msgid "Reject all popup window requests."
 msgstr "ყველა მხტუნარა ფანჯრის მოთხოვნის უარყოფა."
 
-#: jspolicies.cpp:165
+#: jspolicies.cpp:194
 #, kde-format
 msgid "Smart"
 msgstr "ჭკვიანი"
 
-#: jspolicies.cpp:166
+#: jspolicies.cpp:195
 #, kde-format
 msgid ""
 "Accept popup window requests only when links are activated through an "
@@ -2243,7 +2007,7 @@ msgstr ""
 "მხტუნარა ფანჯრის მოთხოვნების, მხოლოდ, მაშინ მიღება, როცა ბმული თაგუნას "
 "აშკარა წკაპით, ან კლავიატურის ოპერაციით გააქტიურდება."
 
-#: jspolicies.cpp:173
+#: jspolicies.cpp:202
 #, kde-format
 msgid ""
 "If you disable this, Konqueror will stop interpreting the <i>window.open()</"
@@ -2259,22 +2023,22 @@ msgstr ""
 "საიტს, რომელიც <i>window.open()</i>-ს სწორი მიზნებისთვის იყენებს. ფრთხილად "
 "იყავით ამ პარამეტრთან."
 
-#: jspolicies.cpp:187
+#: jspolicies.cpp:216
 #, kde-format
 msgid "Resize window:"
 msgstr "ფანჯრის ზომის შეცვლა:"
 
-#: jspolicies.cpp:202
+#: jspolicies.cpp:231
 #, kde-format
 msgid "Allow scripts to change the window size."
 msgstr "სკრიპტებისთვის ფანჯრის ზომის შეცვლის ნების დართვა."
 
-#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#: jspolicies.cpp:236 jspolicies.cpp:273 jspolicies.cpp:310 jspolicies.cpp:350
 #, kde-format
 msgid "Ignore"
 msgstr "იგნორი"
 
-#: jspolicies.cpp:208
+#: jspolicies.cpp:237
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
@@ -2283,7 +2047,7 @@ msgstr ""
 "სკრიპტების მიერ ფანჯრის ზომის შეცვლის მცდელობის გამოტოვება. ვებგვერდი "
 "<i>იფიქრებს</i>, რომ მან ზომა შეცვალა, მაგრამ ფანჯარა არ შეიცვლება."
 
-#: jspolicies.cpp:215
+#: jspolicies.cpp:244
 #, kde-format
 msgid ""
 "Some websites change the window size on their own by using <i>window."
@@ -2294,17 +2058,17 @@ msgstr ""
 "i> ან <i>window.resizeTo()</i> ფუნქციებით. ეს პარამეტრი მიუთითებს, როგორ "
 "ვუწამლოთ ამნაირებს."
 
-#: jspolicies.cpp:224
+#: jspolicies.cpp:253
 #, kde-format
 msgid "Move window:"
 msgstr "ფანჯრის გადაადგილება:"
 
-#: jspolicies.cpp:239
+#: jspolicies.cpp:268
 #, kde-format
 msgid "Allow scripts to change the window position."
 msgstr "სკრიპტებისთვის ფანჯრის მდებარეობის შეცვლის ნების დართვა."
 
-#: jspolicies.cpp:245
+#: jspolicies.cpp:274
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window position. The web page will "
@@ -2314,7 +2078,7 @@ msgstr ""
 "ვებგვერდი <i>იფიქრებს</i>, რომ მანდ გადაადგილა ფანჯარა, მაგრამ ის არ "
 "შეიცვლება."
 
-#: jspolicies.cpp:252
+#: jspolicies.cpp:281
 #, kde-format
 msgid ""
 "Some websites change the window position on their own by using <i>window."
@@ -2325,17 +2089,17 @@ msgstr ""
 "ან <i>window.moveTo()</i> ფუნქციებით ცვლის. ეს პარამეტრი წყვეტს, როგორ "
 "უწამლოს ამნაირებს."
 
-#: jspolicies.cpp:261
+#: jspolicies.cpp:290
 #, kde-format
 msgid "Focus window:"
 msgstr "ფანჯრის ფოკუსი:"
 
-#: jspolicies.cpp:276
+#: jspolicies.cpp:305
 #, kde-format
 msgid "Allow scripts to focus the window."
 msgstr "სკრიპტებისთვის ფანჯრის ფოკუსის ნების დართვა."
 
-#: jspolicies.cpp:282
+#: jspolicies.cpp:311
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to focus the window. The web page will <i>think</"
@@ -2345,7 +2109,7 @@ msgstr ""
 "ფანჯრის მიერ ფოკუსის აღების მცდელობების გამოტოვება. ვებგვერდი <i>იფიქრებს</"
 "i>, რომ მან მიიღო ფოკუსი იმ დროს, როცა ის არ შეიცვლება."
 
-#: jspolicies.cpp:290
+#: jspolicies.cpp:319
 #, kde-format
 msgid ""
 "Some websites set the focus to their browser window on their own by using "
@@ -2358,17 +2122,17 @@ msgstr ""
 "თქვენს სამუშაოს გაგაწყვეტინებთ. ეს პარამეტრი ამნაირებისთვის წამლობის ხერს "
 "მიუთითებს."
 
-#: jspolicies.cpp:301
+#: jspolicies.cpp:330
 #, kde-format
 msgid "Modify status bar text:"
 msgstr "მდგომარეობის ზოლის ტექსტის შეცვლა:"
 
-#: jspolicies.cpp:316
+#: jspolicies.cpp:345
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
 msgstr "სკრიპტებისთვის სტატუსის ზოლის ტექსტის შეცვლის უფლების მიცემა."
 
-#: jspolicies.cpp:322
+#: jspolicies.cpp:351
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
@@ -2377,7 +2141,7 @@ msgstr ""
 "სკრიპტების მცდელობის გამოტოვება, სტატუსის ზოლის ტექსტი შეცვალოს. ვებგვერდი "
 "<i>იფიქრებს</i>, რომ მან შეცვალა ტექსტი მაშინ, როცა ის არ შეიცვლება."
 
-#: jspolicies.cpp:330
+#: jspolicies.cpp:359
 #, kde-format
 msgid ""
 "Some websites change the status bar text by setting <i>window.status</i> or "
@@ -2387,16 +2151,6 @@ msgstr ""
 "ზოგიერთი ვებგვერდი სტატუსის ზოლის ტექსტს ცვლის, <i>window.status</i> ან "
 "<i>window.defaultStatus</i> ფუნქციებით, რითიც ხელს უშლის რეალური ბმულის "
 "გამოტანას. ეს ფუნქცია ამნაირების წამლობის ხერხზე მიუთითებს."
-
-#: main.cpp:49
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
-
-#: main.cpp:53
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
 
 #: policydlg.cpp:30
 #, kde-format
@@ -2671,9 +2425,8 @@ msgstr "არსებული იდენტიფიკაციები"
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150 useragent/useragent.ui:163
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr "<html><head/><body><p><br/></p></body></html>"
@@ -2714,6 +2467,17 @@ msgstr "&წაშლა"
 msgid "Choose &selected identification"
 msgstr "&მონიშნული იდენტიფიკაციის არჩევა"
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:163
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><head/><body><p>The custom background color to use for web pages</"
+#| "p></body></html>"
+msgid ""
+"<html><head/><body><p>If checked, disable choosing a custom identification "
+"and use the default one</p></body></html>"
+msgstr "<html><head/><body><p>ფონის ფერი ვებგვერდებისთვის</p></body></html>"
+
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
@@ -2739,6 +2503,209 @@ msgstr ""
 "ნაგულისხმევი გამორთულია.</p><p>ის შეგიძლიათ, ხელით შეიყვანოთ ან აირჩიოთ "
 "ქვემოთ მოყვანილი სიიდან და შეცვალოთ ისე, როგორც თქვენ გნებავთ.</p></body></"
 "html>"
+
+#~ msgid "Form Com&pletion"
+#~ msgstr "ფორმის &დასრულება"
+
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "ბმულზე გადატარებისას &კურსორის ცვლილება"
+
+#~ msgid ""
+#~ "If this option is set, the shape of the cursor will change (usually to a "
+#~ "hand) if it is moved over a hyperlink."
+#~ msgstr ""
+#~ "თუ ეს პარამეტრი დაყენებულია, კურსორის ფორმა შეიცვლება (ჩვეულებრივ, "
+#~ "ხელზე), თუ მას ჰიპერბმულს გადაატარებთ."
+
+#~ msgid "Allow automatic delayed &reloading/redirecting"
+#~ msgstr "ავტომატური დაყოვნებული &გადატვირთვა/გადამისამართების დაშვება"
+
+#~ msgid ""
+#~ "Some web pages request an automatic reload or redirection after a certain "
+#~ "period of time. By unchecking this box Konqueror will ignore these "
+#~ "requests."
+#~ msgstr ""
+#~ "ზოგიერთი ვებგვერდი ავტომატურ გადატვირთვას ან გადამისამართებას ითხოვენ "
+#~ "რაღაც პერიოდის შემდეგ. ამის გამორთვით Konqueror ამნაირ მოთხოვნებს "
+#~ "გათიშავს."
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "&Java-ის გლობალურად ჩართვა"
+
+#~ msgid "Java Runtime Settings"
+#~ msgstr "Java-ის მორგება"
+
+#~ msgid "&Use security manager"
+#~ msgstr "&უსაფრთხოების მმართველის გამოყენება"
+
+#~ msgid "Use &KIO"
+#~ msgstr "&KIO -ის გამოყენება"
+
+#~ msgid "Shu&tdown applet server when inactive for more than"
+#~ msgstr "&აპლეტის სერვერის გამორთვა, როცა ის უქმეა მეტი, ვიდრე"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " წამი"
+#~ msgstr[1] " წამი"
+
+#~ msgid "&Path to Java executable, or 'java':"
+#~ msgstr "ბილიკი Java-ის გამშვებ ფაილამდე ('java'):"
+
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "Java-ის დამატებითი &არგუმენტები:"
+
+#~ msgid ""
+#~ "Enables the execution of scripts written in Java that can be contained in "
+#~ "HTML pages. Note that, as with any browser, enabling active contents can "
+#~ "be a security problem."
+#~ msgstr ""
+#~ "ჩართავს Java-ზე დაწერილი იმ სკრიპტების შესრულებას, რომლებსაც HTML "
+#~ "გვერდები შეიცავენ. დაიმახსოვრეთ, რომ აქტიური შემცველობის ჩართვა ნებისმიერ "
+#~ "ბრაუზერში სარისკოა."
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific Java "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling Java applets on pages sent by these domains or "
+#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
+#~ "it.</p>"
+#~ msgstr ""
+#~ "<p>ეს ყუთი შეიცავს დომენებს და ჰოსტებს, რომლებისთვისაც ცალკე Java-ის "
+#~ "პოლიტიკა დააყენეთ. ეს პოლიტიკა ნაგულისხმევის მაგიერ იქნება გამოყენებული "
+#~ "Java აპლეტების ჩასართავად ან გამოსართავად გვერდებზე, რომლებიც ამ "
+#~ "დომენებმა ან ჰოსტებმა გამოაგზავნეს.</p><p>აირჩიეთ პოლიტიკა და გამოიყენეთ "
+#~ "კონტროლები რომ დააყენოთ ის ზუსტად ან შეცვალოთ ის.</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the Java policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "დააწკაპუნეთ ამ ღილაკზე, რომ აირჩიოთ ფაილი, რომელიც Java-ის პოლიტიკებს "
+#~ "შეიცავს. ეს პოლიტიკები არსებულს შეუერთდება. დუბლიკატები გამოტოვებულია."
+
+#~ msgid ""
+#~ "Click this button to save the Java policy to a zipped file. The file, "
+#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
+#~ msgstr ""
+#~ "დააწკაპუნეთ ამ ღილაკზე, რომ Java-ის პოლიტიკა zip-ით შეკუმშულ ფაილში, "
+#~ "სახელად <b>java_policy.tgz</b> შეინახოთ. მდებარეობას თქვენ მიუთითებთ."
+
+#~ msgid ""
+#~ "Here you can set specific Java policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy, causing the default policy "
+#~ "setting to be used for that domain."
+#~ msgstr ""
+#~ "აქ შეგძლიათ, თითოეული დომენის თუ ჰოსტისთვის საკუთარი Java პოლიტიკები "
+#~ "დააყენოთ. პოლიტიკის დასამატებლად, უბრალოდ დააკწაპუნეთ ღილაკზე <i>ახალი..."
+#~ "</i> და შეიყვანეთ საჭირო ინფორმაცია, რომელსაც დიალოგი მოგთხოვთ. არსებული "
+#~ "პოლიტიკის შესაცვლელად დააწკაპუნეთ ღილაკზე <i>შეცვლა...</i> და აირჩიეთ "
+#~ "ახალი პოლიტიკა გამოტანილი დიალოგიდან. თუ დააწკაპუნებთ ღილაკზე <i>წაშლა</"
+#~ "i>, მონიშნულ პოლიტიკა წაიშლება, რაც ამ დომენზე ნაგულისხმევი პოლიტიკის "
+#~ "გამოყენებას გამოიწვევს."
+
+#~ msgid ""
+#~ "Enabling the security manager will cause the jvm to run with a Security "
+#~ "Manager in place. This will keep applets from being able to read and "
+#~ "write to your file system, creating arbitrary sockets, and other actions "
+#~ "which could be used to compromise your system. Disable this option at "
+#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
+#~ "policytool utility to give code downloaded from certain sites more "
+#~ "permissions."
+#~ msgstr ""
+#~ "უსაფრთხოების მმართველის ჩართვა JVM-ს უსაფრთხოების მმართველით გაუშვებს. ეს "
+#~ "აპლეტებს თქვენს ფაილურ სისტემაში ჩაწერას და წაკითხვას, სოკეტების შექმნას "
+#~ "და სხვა ქმედებებს აუკრძალავს, რომლებსაც, თქვენი უსაფრთხოების დარღვევა "
+#~ "შეუძლია. გამორთეთ ეს პარამეტრი საკუთარი რისკით. შეგიძლიათ, შეცვალოთ "
+#~ "თქვენი ფაილი $HOME/.java.policy Java-ის პოლიტიკის მართვის პროგრამით, რათა "
+#~ "ზოგიერთი საიტიდან გადმოწერილ კოდს მეტი უფლებები მიეცეს."
+
+#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
+#~ msgstr ""
+#~ "ამის ჩართვა გამოიწვევს JVM-ის მიერ KIO-ის გამოყენებას ქსელის "
+#~ "ტრანსპორტისთვის "
+
+#~ msgid ""
+#~ "Enter the path to the java executable. If you want to use the jre in your "
+#~ "path, simply leave it as 'java'. If you need to use a different jre, "
+#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
+#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
+#~ "IBMJava2-13)."
+#~ msgstr ""
+#~ "შეიყვანეთ ბილიკი გამშვებ ფაილამდე java. თუ გნებავთ გამოიყენოთ jre, "
+#~ "რომელიც თქვენს PATH გარემოს ცვლადშია, უბრალოდ დატოვეთ, როგორც 'java'. თ "
+#~ "გნებავთ, სხვა jre გამოიყენოთ, შეიყვანეთ ბილიკი გამშვებ ფაილამდე სახელად "
+#~ "java (მაგ: /usr/lib/jdk/bin/java) ან ბილიკი, რომელიც შეიცავს ფაილს 'bin/"
+#~ "java' (მაგ: /opt/IBMJava2-13)."
+
+#~ msgid ""
+#~ "If you want special arguments to be passed to the virtual machine, enter "
+#~ "them here."
+#~ msgstr ""
+#~ "თუ გნებავთ, ვირტუალურ მანქანას სპეციალური არგუმენტები გადასცეთ, ისინი აქ "
+#~ "უნდა შეიყვანოთ."
+
+#~ msgid ""
+#~ "When all the applets have been destroyed, the applet server should shut "
+#~ "down. However, starting the jvm takes a lot of time. If you would like to "
+#~ "keep the java process running while you are browsing, you can set the "
+#~ "timeout value to whatever you like. To keep the java process running for "
+#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
+#~ "Server checkbox unchecked."
+#~ msgstr ""
+#~ "როცა ყველა აპლეტები განადგურდება, აპლეტის სერვერი უნდა გაითიშოს. მაგრამ "
+#~ "JVM-ის გაშვებას კარგა ხანი სჭირდება. თუ გნებავთ, java-ის პროცესი "
+#~ "გაშვებული დატოვოთ იმ დროისთვის, სანამ ბრაუზერში მუშაობთ, შეგიძლიათ, ამ "
+#~ "მოლოდინის ვადა ნებისმიერ რიცხვზე დააყენოთ. თუ გნებავთ, java-ის პროცესი "
+#~ "მთელი იმ დროის განმავლობაში იყოს მეხსიერებაში, სანამ Konqueror "
+#~ "გაშვებულია, დატოვეთ აპლეტის სერვერის ჩასართავი ჩაურთავად."
+
+#~ msgctxt "@title:group"
+#~ msgid "Doma&in-Specific"
+#~ msgstr "მხოლოდ მითითებულ &დომენზე"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Java Policy"
+#~ msgstr "Java-ის ახალი პოლიტიკა"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Java Policy"
+#~ msgstr "Java-ის პოლიტიკის შეცვლა"
+
+#~ msgid "&Java policy:"
+#~ msgstr "&Java-ის პოლიტიკა:"
+
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr "აირჩიეთ Java-ის პოლიტიკა ზედა ჰოსტის ან დომენისთვის."
+
+#~ msgid "Debugging"
+#~ msgstr "შეცდომები"
+
+#~ msgid "Enable debu&gger"
+#~ msgstr "&გამმართავის ჩართვა"
+
+#~ msgid "Enables builtin JavaScript debugger."
+#~ msgstr "JavaScript-ის ჩაშენებული გამმართველის ჩართვა."
+
+#~ msgid "Report &errors"
+#~ msgstr "&შეცდომების გადაცემა"
+
+#~ msgid ""
+#~ "Enables the reporting of errors that occur when JavaScript code is "
+#~ "executed."
+#~ msgstr ""
+#~ "ჩართავს JavaScript-ის კოდის შესრულებისას მომხდარი შეცდომების ჩვენებას."
+
+#~ msgid "&Java"
+#~ msgstr "&Java"
+
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
 #~ msgid ""
 #~ "This will open a new tab in the background, instead of in the foreground."

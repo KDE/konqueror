@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:38+0000\n"
+"POT-Creation-Date: 2024-07-25 02:29+0000\n"
 "PO-Revision-Date: 2023-12-11 15:33+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -129,7 +129,7 @@ msgstr ""
 msgid "A&nimations:"
 msgstr "&Animaatiot:"
 
-#: appearance.cpp:85 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:108
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
@@ -703,21 +703,21 @@ msgid "Domain"
 msgstr "Toimialue"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
-#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
+#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
 #, kde-format
 msgid "Policy"
 msgstr "Käytäntö"
 
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
-#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:45
+#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
 #: useragent/useragent.ui:84
 #, kde-format
 msgid "&New..."
 msgstr "&Uusi…"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbChange)
-#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:49
+#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:52
 #, kde-format
 msgid "Chan&ge..."
 msgstr "&Muokkaa…"
@@ -784,7 +784,7 @@ msgid "Policy:"
 msgstr "Käytäntö:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
+#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:192
 #: policydlg.cpp:63
 #, kde-format
 msgid "Accept"
@@ -797,14 +797,14 @@ msgid "Accept until end of session"
 msgstr "Hyväksy istunnon loppuun"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
+#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:194
 #: policydlg.cpp:63
 #, kde-format
 msgid "Reject"
 msgstr "Hylkää"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:153
+#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:182
 #, kde-format
 msgid "Ask"
 msgstr "Kysy"
@@ -1330,34 +1330,40 @@ msgstr ""
 "</body>\n"
 "</html>\n"
 
-#: domainlistview.cpp:37
+#: domainlistview.cpp:33
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "&Verkkoaluekohtainen"
+
+#: domainlistview.cpp:40
 #, kde-format
 msgid "Host/Domain"
 msgstr "Kone/Verkkoalue"
 
-#: domainlistview.cpp:53
+#: domainlistview.cpp:56
 #, kde-format
 msgid "De&lete"
 msgstr "Po&ista"
 
-#: domainlistview.cpp:57
+#: domainlistview.cpp:60
 #, kde-format
 msgid "&Import..."
 msgstr "&Tuo…"
 
-#: domainlistview.cpp:63
+#: domainlistview.cpp:66
 #, kde-format
 msgid "&Export..."
 msgstr "&Vie…"
 
-#: domainlistview.cpp:71
+#: domainlistview.cpp:74
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr ""
 "Napsauta tätä painiketta lisätäksesi palvelin- tai verkkoaluekohtaisen "
 "käytännön."
 
-#: domainlistview.cpp:73
+#: domainlistview.cpp:76
 #, kde-format
 msgid ""
 "Click on this button to change the policy for the host or domain selected in "
@@ -1366,7 +1372,7 @@ msgstr ""
 "Napsauta tästä muokataksesi palvelin- tai verkkoaluekohtaista käytäntöä "
 "luettelossa."
 
-#: domainlistview.cpp:75
+#: domainlistview.cpp:78
 #, kde-format
 msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
@@ -1375,20 +1381,48 @@ msgstr ""
 "Napsauta tätä painiketta poistaaksesi valitun isännän tai verkkoalueen "
 "käytännön."
 
-#: domainlistview.cpp:122
+#: domainlistview.cpp:125
 #, kde-format
 msgid "You must first select a policy to be changed."
 msgstr "Valitse ensin muokattava käytäntö."
 
-#: domainlistview.cpp:149
+#: domainlistview.cpp:152
 #, kde-format
 msgid "You must first select a policy to delete."
 msgstr "Valitse ensin poistettava käytäntö."
 
-#: domainlistview.cpp:187 policydlg.cpp:63
+#: domainlistview.cpp:190 policydlg.cpp:63
 #, kde-format
 msgid "Use Global"
 msgstr "Käytä yleisiä asetuksia"
+
+#: domainlistview.cpp:232
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "Uusi JavaScript-käytäntö"
+
+#: domainlistview.cpp:235
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "Vaihda Javascript-käytäntöä"
+
+#: domainlistview.cpp:239
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "JavaScript-käytäntö:"
+
+#: domainlistview.cpp:240
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr ""
+"Valitse JavaScript-käytäntö yllä olevalle palvelimelle tai verkkoalueelle."
+
+#: domainlistview.cpp:242
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "Verkkoaluekohtaiset JavaScript-käytännöt"
 
 #: filteropts.cpp:48
 #, kde-format
@@ -1561,7 +1595,7 @@ msgstr "Nimi"
 msgid "URL"
 msgstr "Osoite"
 
-#: generalopts.cpp:56
+#: generalopts.cpp:54
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1569,60 +1603,60 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr "Lisää mukautettu aloitussivu"
 
-#: generalopts.cpp:62
+#: generalopts.cpp:60
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr "Luotaessa uusi &välilehti"
 
-#: generalopts.cpp:71
+#: generalopts.cpp:69
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "Näytä esittelysivu"
 
-#: generalopts.cpp:72
+#: generalopts.cpp:70
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "Näytä aloitussivu"
 
-#: generalopts.cpp:73
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "Näytä tyhjä sivu"
 
-#: generalopts.cpp:74
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "Näytä kirjanmerkit"
 
-#: generalopts.cpp:80
+#: generalopts.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "Valitse aloitussivu"
 
-#: generalopts.cpp:85
+#: generalopts.cpp:83
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr ""
 "Tämä on sen verkkosivun osoite, jonka Konqueror näyttää käynnistyttyään."
 
-#: generalopts.cpp:96
+#: generalopts.cpp:94
 #, kde-format
 msgid "Home page:"
 msgstr "Kotiosoite:"
 
-#: generalopts.cpp:99
+#: generalopts.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "Valitse kotiosoite"
 
-#: generalopts.cpp:104
+#: generalopts.cpp:102
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
@@ -1631,42 +1665,42 @@ msgstr ""
 "Tämä on sen verkkosivun osoite, johon Konqueror siirtyy Koti-painiketta "
 "napsautettaessa."
 
-#: generalopts.cpp:112
+#: generalopts.cpp:110
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "Verkkoselaimen oletusmoottori:"
 
-#: generalopts.cpp:121
+#: generalopts.cpp:119
 #, kde-format
 msgid "When splitting a view"
 msgstr "Jaettaessa näkymää"
 
-#: generalopts.cpp:125
+#: generalopts.cpp:123
 #, kde-format
 msgid "Always duplicate current view"
 msgstr "Monista aina nykyinen näkymä"
 
-#: generalopts.cpp:126
+#: generalopts.cpp:124
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "Monista nykyinen näkymä vain paikallisille tiedostoille"
 
-#: generalopts.cpp:132
+#: generalopts.cpp:130
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr "Palauta käynnistettäessä viime kerran tila"
 
-#: htmlopts.cpp:35
+#: htmlopts.cpp:39
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "Kirjan&merkit"
 
-#: htmlopts.cpp:38
+#: htmlopts.cpp:42
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "Kysy nimeä ja kansiota kirjanmerkkiä lisättäessä"
 
-#: htmlopts.cpp:41
+#: htmlopts.cpp:45
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1676,12 +1710,12 @@ msgstr ""
 "Jos tämä asetus on valittu, voit muuttaa kirjanmerkin otsikkoa ja valita "
 "kansion, johon kirjamerkki lisätään."
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:51
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "Näytä vain merkityt kirjanmerkit kirjanmerkkirivillä"
 
-#: htmlopts.cpp:49
+#: htmlopts.cpp:53
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1690,12 +1724,10 @@ msgstr ""
 "Jos tämä asetus on valittu, Konqueror näyttää vain ne kirjanmerkit, jotka "
 "olet valinnut näytettäväksi."
 
-#: htmlopts.cpp:56
-#, kde-format
-msgid "Form Com&pletion"
-msgstr "Lomakkeen &täydentäminen"
-
-#: htmlopts.cpp:60
+#. i18n("Form Com&pletion"), widget());
+#. m_pFormCompletionCheckBox->setCheckable(true);
+#. QFormLayout *laygroup2 = new QFormLayout(m_pFormCompletionCheckBox);
+#: htmlopts.cpp:67
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1704,12 +1736,12 @@ msgstr ""
 "Jos tämä asetus on valittu, Konqueror muistaa verkkosivujen lomakekenttiin "
 "kirjoitetut tiedot ja ehdottaa niitä täyttäessäsi lomakkeita myöhemmin."
 
-#: htmlopts.cpp:66
+#: htmlopts.cpp:74
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "Täydennysten &määrä"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:76
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
@@ -1717,31 +1749,17 @@ msgstr ""
 "Tässä kohdassa voit valita, montako viimeksi kirjoitettua tekstiä Konqueror "
 "muistaa ja ehdottaa verkkolomaketta täyttäessäsi."
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:87
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "&Hiiren käyttäytyminen"
 
-#: htmlopts.cpp:78
-#, kde-format
-msgid "Chan&ge cursor over links"
-msgstr "&Muuta osoitinta linkkien kohdalla"
-
-#: htmlopts.cpp:80
-#, kde-format
-msgid ""
-"If this option is set, the shape of the cursor will change (usually to a "
-"hand) if it is moved over a hyperlink."
-msgstr ""
-"Jos tämä asetus on valittu, hiiren osoitin muuttuu (yleensä käden "
-"muotoiseksi) siirrettäessä osoitin linkin kohdalle."
-
-#: htmlopts.cpp:84
+#: htmlopts.cpp:90
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "&Keskimmäinen painike avaa valitun osoitteen"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:93
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
@@ -1750,12 +1768,12 @@ msgstr ""
 "Jos tämä asetus on valittu, voit avata osoitteen valitsemalla sen ja "
 "napsauttamalla hiiren keskipainiketta."
 
-#: htmlopts.cpp:91
+#: htmlopts.cpp:97
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "Hiiren oikea painike siirtää &edelliselle sivulle"
 
-#: htmlopts.cpp:94
+#: htmlopts.cpp:100
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1766,29 +1784,14 @@ msgstr ""
 "hiiren oikeaa painiketta Konquerorin ikkunassa. Kontekstivalikkoon pääset "
 "painamalla hiiren oikean painikkeen pohjaan ja siirtämällä osoitinta."
 
-#: htmlopts.cpp:104
-#, kde-format
-msgid "Allow automatic delayed &reloading/redirecting"
-msgstr "Salli automaattinen viivästetty &uudelleenlataus tai -ohjaus"
-
-#: htmlopts.cpp:105
-#, kde-format
-msgid ""
-"Some web pages request an automatic reload or redirection after a certain "
-"period of time. By unchecking this box Konqueror will ignore these requests."
-msgstr ""
-"Jotkin verkkosivut lataavat automaattisesti toisen verkkosivun tai itsensä "
-"uudelleen. Jos poistat tämän asetuksen valinnan, Konqueror ohittaa nämä "
-"pyynnöt."
-
-#: htmlopts.cpp:111
+#: htmlopts.cpp:115
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr ""
 "Ota käyttöön tai poista kä&ytöstä linkkien valinta näppäimistöllä Ctrl-"
 "näppäintä painamalla"
 
-#: htmlopts.cpp:112
+#: htmlopts.cpp:116
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1800,37 +1803,41 @@ msgstr ""
 "näppäimistöltä. Tällä valinnalla voit poistaa tämän käytettävyysominaisuuden "
 "käytöstä. (Konqueror täytyy käynnistää uudestaan.)"
 
-#: htmlopts.cpp:116
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr ""
 "Lähetä DNT-otsake kertoaksesi sivustoille, ettet halua sinua seurattavan"
 
-#: htmlopts.cpp:117
-#, kde-format
+#: htmlopts.cpp:122
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check this box if you want to inform a web site that you do not want your "
+#| "web browsing habits tracked."
 msgid ""
-"Check this box if you want to inform a web site that you do not want your "
-"web browsing habits tracked."
+"<p>Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
+"considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
 "Valitse tämä, jos haluat ilmoittaa sivustoille, ettet halua verkkoselailuasi "
 "ja selailutapojasi seurattavan"
 
-#: htmlopts.cpp:121
+#: htmlopts.cpp:126
 #, kde-format
 msgid "Offer to save website passwords"
 msgstr "Ehdota verkkosivujen salasanojen tallentamista"
 
-#: htmlopts.cpp:122
+#: htmlopts.cpp:127
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr "Poista tämä valinta estääksesi kyselyn salasanan tallentamisesta"
 
-#: htmlopts.cpp:126
+#: htmlopts.cpp:131
 #, kde-format
 msgid "Display online PDF files using WebEngine"
 msgstr "Näytä verkko-PDF:t WebEnginellä"
 
-#: htmlopts.cpp:127
+#: htmlopts.cpp:132
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
@@ -1838,207 +1845,24 @@ msgstr ""
 "Poista tästä valinta, niin verkko-PDF:t näytetään järjestelmäasetusten "
 "mukaisesti"
 
-#: javaopts.cpp:78
+#: htmlopts.cpp:136
 #, kde-format
-msgid "Enable Ja&va globally"
-msgstr "Salli &Java kaikkialla"
+msgid "Always display files from web pages in a new tab"
+msgstr ""
 
-#: javaopts.cpp:93
-#, kde-format
-msgid "Java Runtime Settings"
-msgstr "Java-asetukset"
-
-#: javaopts.cpp:97
-#, kde-format
-msgid "&Use security manager"
-msgstr "&Käytä turvallisuushallintaa"
-
-#: javaopts.cpp:101
-#, kde-format
-msgid "Use &KIO"
-msgstr "Käytä &KIO-palvelua"
-
-#: javaopts.cpp:105
-#, kde-format
-msgid "Shu&tdown applet server when inactive for more than"
-msgstr "S&ulje sovelmapalvelin, kun se ei ole käytössä"
-
-#: javaopts.cpp:117
-#, kde-format
-msgid " second"
-msgid_plural " seconds"
-msgstr[0] " sekunti"
-msgstr[1] " sekuntia"
-
-#: javaopts.cpp:123
-#, kde-format
-msgid "&Path to Java executable, or 'java':"
-msgstr "&Polku suoritettavaan Java-tiedostoon tai 'java'"
-
-#: javaopts.cpp:127
-#, kde-format
-msgid "Additional Java a&rguments:"
-msgstr "&Javan lisäparametrit:"
-
-#: javaopts.cpp:132
+#: htmlopts.cpp:137
 #, kde-format
 msgid ""
-"Enables the execution of scripts written in Java that can be contained in "
-"HTML pages. Note that, as with any browser, enabling active contents can be "
-"a security problem."
+"<p>When showing in Konqueror files from links in web pages, always use a new "
+"tab"
 msgstr ""
-"Ottaa HTML-sivuilla käytettävän Javan käyttöön. Java-tuki ei ole vielä "
-"täydellinen. Aktiivisen sisällön käyttäminen voi olla turvallisuusriski."
 
-#: javaopts.cpp:135
-#, kde-format
-msgid ""
-"<p>This box contains the domains and hosts you have set a specific Java "
-"policy for. This policy will be used instead of the default policy for "
-"enabling or disabling Java applets on pages sent by these domains or hosts.</"
-"p><p>Select a policy and use the controls on the right to modify it.</p>"
-msgstr ""
-"<p>Tässä luettelossa näet verkkoalueet ja palvelimet, joille olet "
-"määritellyt erityisen Java-käytännön. Tätä käytäntöä käytetään eikä "
-"verkkoalueen tai palvelimen lähettämillä sivuilla määriteltyä "
-"oletuskäytäntöä Java-sovelmien ottamisesta käyttöön tai pois käytöstä.</"
-"p><p>Valitse käytäntö ja muuta sitä napsauttamalla oikealla olevia "
-"painikkeita.</p>"
-
-#: javaopts.cpp:142
-#, kde-format
-msgid ""
-"Click this button to choose the file that contains the Java policies. These "
-"policies will be merged with the existing ones. Duplicate entries are "
-"ignored."
-msgstr ""
-"Valitse Java-käytännöt sisältävä tiedosto napsauttamalla tästä. Kyseiset "
-"käytännöt lisätään olemassa oleviin käytäntöihin, mutta olemassa olevia "
-"asetuksia ei korvata."
-
-#: javaopts.cpp:145
-#, kde-format
-msgid ""
-"Click this button to save the Java policy to a zipped file. The file, named "
-"<b>java_policy.tgz</b>, will be saved to a location of your choice."
-msgstr ""
-"Napsauta tästä painikkeesta tallentaaksesi Java-käytännöt zip-tiedostoon. "
-"Tiedosto <b>java_policy.tgz</b> tallennetaan haluamaasi paikkaan."
-
-#: javaopts.cpp:149
-#, kde-format
-msgid ""
-"Here you can set specific Java policies for any particular host or domain. "
-"To add a new policy, simply click the <i>New...</i> button and supply the "
-"necessary information requested by the dialog box. To change an existing "
-"policy, click on the <i>Change...</i> button and choose the new policy from "
-"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
-"selected policy, causing the default policy setting to be used for that "
-"domain."
-msgstr ""
-"Tässä kohdassa voit määrittää verkkoalueiden ja palvelinten Java-käytäntöjä. "
-"Lisää käytäntö napsauttamalla <i>Lisää…</i> ja kirjoittamalla tarvittavat "
-"tiedot. Jos haluat muuttaa olemassa olevaa käytäntöä, napsauta <i>Muokkaa…</"
-"i> ja valitse uusi käytäntö luettelosta. Jos haluat poistaa palvelin- tai "
-"verkkoaluekäytännön, napsauta <i>Poista</i>."
-
-#: javaopts.cpp:162
-#, kde-format
-msgid ""
-"Enabling the security manager will cause the jvm to run with a Security "
-"Manager in place. This will keep applets from being able to read and write "
-"to your file system, creating arbitrary sockets, and other actions which "
-"could be used to compromise your system. Disable this option at your own "
-"risk. You can modify your $HOME/.java.policy file with the Java policytool "
-"utility to give code downloaded from certain sites more permissions."
-msgstr ""
-"Turvallisuushallinta estää Java-sovelmia lukemasta ja kirjoittamasta tietoja "
-"tietokoneellasi. Sovelmat eivät voi myöskään luoda pistokkeita tai muita "
-"toimintoja, jotka voivat olla turvallisuusriski. Jos haluat ottaa nämä "
-"ominaisuudet käyttöön jossakin verkkopalvelussa, voit muuttaa "
-"kotihakemistossasi olevaa ”.java.policy”-tiedostoa Java policytool -"
-"ohjelmalla."
-
-#: javaopts.cpp:170
-#, kde-format
-msgid "Enabling this will cause the jvm to use KIO for network transport "
-msgstr ""
-"Jos valitset tämän kohdan, Java-virtuaalikone käyttää verkkoliikenteessään "
-"KIO-palvelua "
-
-#: javaopts.cpp:172
-#, kde-format
-msgid ""
-"Enter the path to the java executable. If you want to use the jre in your "
-"path, simply leave it as 'java'. If you need to use a different jre, enter "
-"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
-"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
-msgstr ""
-"Anna Java-ohjelmatiedoston sijainti. Jos haluat käyttää hakupolun varrella "
-"olevaa Java-ajoympäristöä, kirjoita pelkästään ”java”. Jos haluat käyttää "
-"muuta Java-ympäristöä, kirjoita ohjelman koko polku (esim. ”/usr/lib/jdk/bin/"
-"java”) tai polku hakemistoon, josta löytyy bin/java (esim. ”/opt/"
-"IBMJava2-13”)."
-
-#: javaopts.cpp:177
-#, kde-format
-msgid ""
-"If you want special arguments to be passed to the virtual machine, enter "
-"them here."
-msgstr ""
-"Jos haluat lähettää Java-virtuaalikoneelle lisäparametreja, anna ne tähän."
-
-#: javaopts.cpp:179
-#, kde-format
-msgid ""
-"When all the applets have been destroyed, the applet server should shut "
-"down. However, starting the jvm takes a lot of time. If you would like to "
-"keep the java process running while you are browsing, you can set the "
-"timeout value to whatever you like. To keep the java process running for the "
-"whole time that the konqueror process is, leave the Shutdown Applet Server "
-"checkbox unchecked."
-msgstr ""
-"Sovelma suljettaessa suljetaan yleensä myös sovelmapalvelin. Javan jvm-"
-"palvelimen käynnistäminen kestää usein kauan, joten jos haluat säilyttää "
-"Java-prosessin käynnissä selaillessasi, voit määrittää aikakatkaisun, jonka "
-"jälkeen jvm suljetaan. Jos haluat, että jvm on käynnissä niin kauan kuin "
-"Konqueror on avoinna, jätä asetus ”Sulje sovelmapalvelin, kun se ei ole "
-"käytössä” valitsematta."
-
-#: javaopts.cpp:288
-#, kde-format
-msgctxt "@title:group"
-msgid "Doma&in-Specific"
-msgstr "Verkkoaluekohta&inen"
-
-#: javaopts.cpp:323
-#, kde-format
-msgctxt "@title:window"
-msgid "New Java Policy"
-msgstr "Uusi Java-käytäntö"
-
-#: javaopts.cpp:326
-#, kde-format
-msgctxt "@title:window"
-msgid "Change Java Policy"
-msgstr "Muokkaa Java-käytäntöä"
-
-#: javaopts.cpp:330
-#, kde-format
-msgid "&Java policy:"
-msgstr "&Java-käytäntö:"
-
-#: javaopts.cpp:331
-#, kde-format
-msgid "Select a Java policy for the above host or domain."
-msgstr "Valitse yllä olevan koneen tai verkkoalueen Java-käytäntö."
-
-#: jsopts.cpp:50
+#: jsopts.cpp:57
 #, kde-format
 msgid "Ena&ble JavaScript globally"
 msgstr "Käytä Java&Scriptiä kaikkialla"
 
-#: jsopts.cpp:51
+#: jsopts.cpp:58
 #, kde-format
 msgid ""
 "Enables the execution of scripts written in ECMA-Script (also known as "
@@ -2049,33 +1873,7 @@ msgstr ""
 "skriptien tuen käyttöön. Skriptikielten käyttäminen voi olla "
 "turvallisuusriski."
 
-#: jsopts.cpp:59
-#, kde-format
-msgid "Debugging"
-msgstr "Virheenpaikannus"
-
-#: jsopts.cpp:63
-#, kde-format
-msgid "Enable debu&gger"
-msgstr "Käytä &virheenpaikanninta"
-
-#: jsopts.cpp:64
-#, kde-format
-msgid "Enables builtin JavaScript debugger."
-msgstr "Ottaa käyttöön sisäänrakennetun JavaScript-virheenpaikantimen."
-
-#: jsopts.cpp:68
-#, kde-format
-msgid "Report &errors"
-msgstr "Ilmoita &vioista"
-
-#: jsopts.cpp:69
-#, kde-format
-msgid ""
-"Enables the reporting of errors that occur when JavaScript code is executed."
-msgstr "Ilmoita vioista, joita JavaScript-koodin suorittamisessa tapahtuu."
-
-#: jsopts.cpp:79
+#: jsopts.cpp:70
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2097,7 +1895,7 @@ msgstr ""
 "kanssa tallentamalla tiedot zip-pakattuun tiedostoon tai noutamalla ne zip-"
 "paketista."
 
-#: jsopts.cpp:89
+#: jsopts.cpp:80
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2111,7 +1909,7 @@ msgstr ""
 "oletuskäytännön sijaan.</p><p>Valitse käytäntö ja muuta sitä oikealla "
 "olevilla painikkeilla.</p>"
 
-#: jsopts.cpp:96
+#: jsopts.cpp:87
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2122,7 +1920,7 @@ msgstr ""
 "on tallennettu. Nämä käytännöt lisätään olemassa oleviin, mutta olemassa "
 "olevia tietoja ei korvata, mikäli tiedostossa on päällekkäinen tieto."
 
-#: jsopts.cpp:99
+#: jsopts.cpp:90
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2133,94 +1931,60 @@ msgstr ""
 "tiedostoon. Tiedosto <b>javascript_policy.tgz</b> tallennetaan haluamaasi "
 "paikkaan."
 
-#: jsopts.cpp:105
+#: jsopts.cpp:96
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "JavaScript-yleiskäytännöt"
 
-#: jsopts.cpp:172
-#, kde-format
-msgctxt "@title:group"
-msgid "Do&main-Specific"
-msgstr "&Verkkoaluekohtainen"
-
-#: jsopts.cpp:211
-#, kde-format
-msgctxt "@title:window"
-msgid "New JavaScript Policy"
-msgstr "Uusi JavaScript-käytäntö"
-
-#: jsopts.cpp:214
-#, kde-format
-msgctxt "@title:window"
-msgid "Change JavaScript Policy"
-msgstr "Vaihda Javascript-käytäntöä"
-
-#: jsopts.cpp:218
-#, kde-format
-msgid "JavaScript policy:"
-msgstr "JavaScript-käytäntö:"
-
-#: jsopts.cpp:219
-#, kde-format
-msgid "Select a JavaScript policy for the above host or domain."
-msgstr ""
-"Valitse JavaScript-käytäntö yllä olevalle palvelimelle tai verkkoalueelle."
-
-#: jsopts.cpp:221
-#, kde-format
-msgid "Domain-Specific JavaScript Policies"
-msgstr "Verkkoaluekohtaiset JavaScript-käytännöt"
-
-#: jspolicies.cpp:132
+#: jspolicies.cpp:161
 #, kde-format
 msgid "Open new windows:"
 msgstr "Uusien ikkunoiden avaaminen:"
 
-#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
-#: jspolicies.cpp:308
+#: jspolicies.cpp:169 jspolicies.cpp:223 jspolicies.cpp:260 jspolicies.cpp:297
+#: jspolicies.cpp:337
 #, kde-format
 msgid "Use global"
 msgstr "Käytä yleisiä asetuksia"
 
-#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
-#: jspolicies.cpp:309
+#: jspolicies.cpp:170 jspolicies.cpp:224 jspolicies.cpp:261 jspolicies.cpp:298
+#: jspolicies.cpp:338
 #, kde-format
 msgid "Use setting from global policy."
 msgstr "Käytä yleisiä käytäntöasetuksia."
 
-#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
-#: jspolicies.cpp:315
+#: jspolicies.cpp:176 jspolicies.cpp:230 jspolicies.cpp:267 jspolicies.cpp:304
+#: jspolicies.cpp:344
 #, kde-format
 msgid "Allow"
 msgstr "Salli"
 
-#: jspolicies.cpp:148
+#: jspolicies.cpp:177
 #, kde-format
 msgid "Accept all popup window requests."
 msgstr "Hyväksy kaikki ponnahdusikkunapyynnöt."
 
-#: jspolicies.cpp:154
+#: jspolicies.cpp:183
 #, kde-format
 msgid "Prompt every time a popup window is requested."
 msgstr "Pyydä vahvistusta kaikille ponnahdusikkunoiden pyynnöille."
 
-#: jspolicies.cpp:159
+#: jspolicies.cpp:188
 #, kde-format
 msgid "Deny"
 msgstr "Estä"
 
-#: jspolicies.cpp:160
+#: jspolicies.cpp:189
 #, kde-format
 msgid "Reject all popup window requests."
 msgstr "Estä kaikki ponnahdusikkunoiden pyynnöt."
 
-#: jspolicies.cpp:165
+#: jspolicies.cpp:194
 #, kde-format
 msgid "Smart"
 msgstr "Älykäs"
 
-#: jspolicies.cpp:166
+#: jspolicies.cpp:195
 #, kde-format
 msgid ""
 "Accept popup window requests only when links are activated through an "
@@ -2229,7 +1993,7 @@ msgstr ""
 "Hyväksy ponnahdusikkunapyynnöt vain kun linkit on aktivoitu suoralla hiiren "
 "painikkeen napsautuksella tai näppäimistön painalluksella."
 
-#: jspolicies.cpp:173
+#: jspolicies.cpp:202
 #, kde-format
 msgid ""
 "If you disable this, Konqueror will stop interpreting the <i>window.open()</"
@@ -2244,22 +2008,22 @@ msgstr ""
 "asetuksen pois, kaikki sivustot eivät välttämättä toimi oikein. Käytä "
 "ominaisuutta varoen."
 
-#: jspolicies.cpp:187
+#: jspolicies.cpp:216
 #, kde-format
 msgid "Resize window:"
 msgstr "Ikkunan koon muuttaminen:"
 
-#: jspolicies.cpp:202
+#: jspolicies.cpp:231
 #, kde-format
 msgid "Allow scripts to change the window size."
 msgstr "Salli skriptien vaihtaa ikkunan kokoa."
 
-#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#: jspolicies.cpp:236 jspolicies.cpp:273 jspolicies.cpp:310 jspolicies.cpp:350
 #, kde-format
 msgid "Ignore"
 msgstr "Ohita"
 
-#: jspolicies.cpp:208
+#: jspolicies.cpp:237
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
@@ -2268,7 +2032,7 @@ msgstr ""
 "Ohita skriptien yritykset muuttaa ikkunan kokoa. Sivu <i>luulee</i>, että "
 "kokoa muutettiin, mutta koko säilytetään ennallaan."
 
-#: jspolicies.cpp:215
+#: jspolicies.cpp:244
 #, kde-format
 msgid ""
 "Some websites change the window size on their own by using <i>window."
@@ -2279,17 +2043,17 @@ msgstr ""
 "i>- tai <i>window.resizeTo()</i> -funktiota. Tämä kohta määrittelee, miten "
 "yrityksiin suhtaudutaan."
 
-#: jspolicies.cpp:224
+#: jspolicies.cpp:253
 #, kde-format
 msgid "Move window:"
 msgstr "Ikkunan siirtäminen:"
 
-#: jspolicies.cpp:239
+#: jspolicies.cpp:268
 #, kde-format
 msgid "Allow scripts to change the window position."
 msgstr "Salli skriptien muuttaa ikkunan sijaintia."
 
-#: jspolicies.cpp:245
+#: jspolicies.cpp:274
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window position. The web page will "
@@ -2298,7 +2062,7 @@ msgstr ""
 "Ohita skriptien yritykset siirtää ikkunoita. Verkkosivu <i>luulee</i>, että "
 "ikkunaa siirrettiin, mutta ikkuna pidetään paikallaan."
 
-#: jspolicies.cpp:252
+#: jspolicies.cpp:281
 #, kde-format
 msgid ""
 "Some websites change the window position on their own by using <i>window."
@@ -2309,17 +2073,17 @@ msgstr ""
 "moveTo()</i> -funktioiden avulla. Tämä asetus määrittelee, miten yrityksiin "
 "suhtaudutaan."
 
-#: jspolicies.cpp:261
+#: jspolicies.cpp:290
 #, kde-format
 msgid "Focus window:"
 msgstr "Kohdistuksen siirtäminen ikkunaan:"
 
-#: jspolicies.cpp:276
+#: jspolicies.cpp:305
 #, kde-format
 msgid "Allow scripts to focus the window."
 msgstr "Salli skriptien kohdistaa ikkunoita."
 
-#: jspolicies.cpp:282
+#: jspolicies.cpp:311
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to focus the window. The web page will <i>think</"
@@ -2329,7 +2093,7 @@ msgstr ""
 "Ohita skriptien yritykset kohdistaa ikkunaan. Verkkosivu <i>luulee</i>, että "
 "kohdistus siirrettiin ikkunaan, mutta ikkunaa ei vaihdeta."
 
-#: jspolicies.cpp:290
+#: jspolicies.cpp:319
 #, kde-format
 msgid ""
 "Some websites set the focus to their browser window on their own by using "
@@ -2342,17 +2106,17 @@ msgstr ""
 "käyttäjän verkkosivujen selaamisen. Tämä asetus määrittelee, miten "
 "yrityksiin suhtaudutaan."
 
-#: jspolicies.cpp:301
+#: jspolicies.cpp:330
 #, kde-format
 msgid "Modify status bar text:"
 msgstr "Tilarivin tekstin muuttaminen:"
 
-#: jspolicies.cpp:316
+#: jspolicies.cpp:345
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
 msgstr "Salli skriptien vaihtaa tilarivin tekstiä."
 
-#: jspolicies.cpp:322
+#: jspolicies.cpp:351
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
@@ -2361,7 +2125,7 @@ msgstr ""
 "Ohita skriptien yritykset muuttaa tilarivin viestejä. Verkkosivu <i>luulee</"
 "i>, että tilarivin tekstiä muutettiin, mutta tilarivi säilytetään ennallaan."
 
-#: jspolicies.cpp:330
+#: jspolicies.cpp:359
 #, kde-format
 msgid ""
 "Some websites change the status bar text by setting <i>window.status</i> or "
@@ -2372,16 +2136,6 @@ msgstr ""
 "tai <i>window.defaultStatus</i> -ominaisuuden kautta. Tämä estää toisinaan "
 "näkemästä todellisia hyperlinkkien osoitteita. Tämä asetus määrittelee, "
 "miten yrityksiin suhtaudutaan."
-
-#: main.cpp:49
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
-
-#: main.cpp:53
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
 
 #: policydlg.cpp:30
 #, kde-format
@@ -2649,9 +2403,8 @@ msgstr "Olemassa olevat identiteetit"
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150 useragent/useragent.ui:163
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr "<html><head/><body><p><br/></p></body></html>"
@@ -2692,6 +2445,15 @@ msgstr "&Poista"
 msgid "Choose &selected identification"
 msgstr "&Valitse tämä identiteetti"
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:163
+#, fuzzy, kde-format
+#| msgid "<html><head/><body><p><br/></p></body></html>"
+msgid ""
+"<html><head/><body><p>If checked, disable choosing a custom identification "
+"and use the default one</p></body></html>"
+msgstr "<html><head/><body><p><br/></p></body></html>"
+
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
@@ -2716,6 +2478,206 @@ msgstr ""
 "<html><head/><body><p>Selaimen käyttämä identiteetti, kun oletusidentiteetin "
 "käyttö on estynyt.</p><p>Sen voi syöttää käsin tai valita alla olevasta "
 "luettelosta ja muuttaa tarpeiden mukaan.</p>"
+
+#~ msgid "Form Com&pletion"
+#~ msgstr "Lomakkeen &täydentäminen"
+
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "&Muuta osoitinta linkkien kohdalla"
+
+#~ msgid ""
+#~ "If this option is set, the shape of the cursor will change (usually to a "
+#~ "hand) if it is moved over a hyperlink."
+#~ msgstr ""
+#~ "Jos tämä asetus on valittu, hiiren osoitin muuttuu (yleensä käden "
+#~ "muotoiseksi) siirrettäessä osoitin linkin kohdalle."
+
+#~ msgid "Allow automatic delayed &reloading/redirecting"
+#~ msgstr "Salli automaattinen viivästetty &uudelleenlataus tai -ohjaus"
+
+#~ msgid ""
+#~ "Some web pages request an automatic reload or redirection after a certain "
+#~ "period of time. By unchecking this box Konqueror will ignore these "
+#~ "requests."
+#~ msgstr ""
+#~ "Jotkin verkkosivut lataavat automaattisesti toisen verkkosivun tai "
+#~ "itsensä uudelleen. Jos poistat tämän asetuksen valinnan, Konqueror "
+#~ "ohittaa nämä pyynnöt."
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "Salli &Java kaikkialla"
+
+#~ msgid "Java Runtime Settings"
+#~ msgstr "Java-asetukset"
+
+#~ msgid "&Use security manager"
+#~ msgstr "&Käytä turvallisuushallintaa"
+
+#~ msgid "Use &KIO"
+#~ msgstr "Käytä &KIO-palvelua"
+
+#~ msgid "Shu&tdown applet server when inactive for more than"
+#~ msgstr "S&ulje sovelmapalvelin, kun se ei ole käytössä"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " sekunti"
+#~ msgstr[1] " sekuntia"
+
+#~ msgid "&Path to Java executable, or 'java':"
+#~ msgstr "&Polku suoritettavaan Java-tiedostoon tai 'java'"
+
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "&Javan lisäparametrit:"
+
+#~ msgid ""
+#~ "Enables the execution of scripts written in Java that can be contained in "
+#~ "HTML pages. Note that, as with any browser, enabling active contents can "
+#~ "be a security problem."
+#~ msgstr ""
+#~ "Ottaa HTML-sivuilla käytettävän Javan käyttöön. Java-tuki ei ole vielä "
+#~ "täydellinen. Aktiivisen sisällön käyttäminen voi olla turvallisuusriski."
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific Java "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling Java applets on pages sent by these domains or "
+#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
+#~ "it.</p>"
+#~ msgstr ""
+#~ "<p>Tässä luettelossa näet verkkoalueet ja palvelimet, joille olet "
+#~ "määritellyt erityisen Java-käytännön. Tätä käytäntöä käytetään eikä "
+#~ "verkkoalueen tai palvelimen lähettämillä sivuilla määriteltyä "
+#~ "oletuskäytäntöä Java-sovelmien ottamisesta käyttöön tai pois käytöstä.</"
+#~ "p><p>Valitse käytäntö ja muuta sitä napsauttamalla oikealla olevia "
+#~ "painikkeita.</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the Java policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "Valitse Java-käytännöt sisältävä tiedosto napsauttamalla tästä. Kyseiset "
+#~ "käytännöt lisätään olemassa oleviin käytäntöihin, mutta olemassa olevia "
+#~ "asetuksia ei korvata."
+
+#~ msgid ""
+#~ "Click this button to save the Java policy to a zipped file. The file, "
+#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
+#~ msgstr ""
+#~ "Napsauta tästä painikkeesta tallentaaksesi Java-käytännöt zip-tiedostoon. "
+#~ "Tiedosto <b>java_policy.tgz</b> tallennetaan haluamaasi paikkaan."
+
+#~ msgid ""
+#~ "Here you can set specific Java policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy, causing the default policy "
+#~ "setting to be used for that domain."
+#~ msgstr ""
+#~ "Tässä kohdassa voit määrittää verkkoalueiden ja palvelinten Java-"
+#~ "käytäntöjä. Lisää käytäntö napsauttamalla <i>Lisää…</i> ja kirjoittamalla "
+#~ "tarvittavat tiedot. Jos haluat muuttaa olemassa olevaa käytäntöä, "
+#~ "napsauta <i>Muokkaa…</i> ja valitse uusi käytäntö luettelosta. Jos haluat "
+#~ "poistaa palvelin- tai verkkoaluekäytännön, napsauta <i>Poista</i>."
+
+#~ msgid ""
+#~ "Enabling the security manager will cause the jvm to run with a Security "
+#~ "Manager in place. This will keep applets from being able to read and "
+#~ "write to your file system, creating arbitrary sockets, and other actions "
+#~ "which could be used to compromise your system. Disable this option at "
+#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
+#~ "policytool utility to give code downloaded from certain sites more "
+#~ "permissions."
+#~ msgstr ""
+#~ "Turvallisuushallinta estää Java-sovelmia lukemasta ja kirjoittamasta "
+#~ "tietoja tietokoneellasi. Sovelmat eivät voi myöskään luoda pistokkeita "
+#~ "tai muita toimintoja, jotka voivat olla turvallisuusriski. Jos haluat "
+#~ "ottaa nämä ominaisuudet käyttöön jossakin verkkopalvelussa, voit muuttaa "
+#~ "kotihakemistossasi olevaa ”.java.policy”-tiedostoa Java policytool -"
+#~ "ohjelmalla."
+
+#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
+#~ msgstr ""
+#~ "Jos valitset tämän kohdan, Java-virtuaalikone käyttää "
+#~ "verkkoliikenteessään KIO-palvelua "
+
+#~ msgid ""
+#~ "Enter the path to the java executable. If you want to use the jre in your "
+#~ "path, simply leave it as 'java'. If you need to use a different jre, "
+#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
+#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
+#~ "IBMJava2-13)."
+#~ msgstr ""
+#~ "Anna Java-ohjelmatiedoston sijainti. Jos haluat käyttää hakupolun "
+#~ "varrella olevaa Java-ajoympäristöä, kirjoita pelkästään ”java”. Jos "
+#~ "haluat käyttää muuta Java-ympäristöä, kirjoita ohjelman koko polku (esim. "
+#~ "”/usr/lib/jdk/bin/java”) tai polku hakemistoon, josta löytyy bin/java "
+#~ "(esim. ”/opt/IBMJava2-13”)."
+
+#~ msgid ""
+#~ "If you want special arguments to be passed to the virtual machine, enter "
+#~ "them here."
+#~ msgstr ""
+#~ "Jos haluat lähettää Java-virtuaalikoneelle lisäparametreja, anna ne tähän."
+
+#~ msgid ""
+#~ "When all the applets have been destroyed, the applet server should shut "
+#~ "down. However, starting the jvm takes a lot of time. If you would like to "
+#~ "keep the java process running while you are browsing, you can set the "
+#~ "timeout value to whatever you like. To keep the java process running for "
+#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
+#~ "Server checkbox unchecked."
+#~ msgstr ""
+#~ "Sovelma suljettaessa suljetaan yleensä myös sovelmapalvelin. Javan jvm-"
+#~ "palvelimen käynnistäminen kestää usein kauan, joten jos haluat säilyttää "
+#~ "Java-prosessin käynnissä selaillessasi, voit määrittää aikakatkaisun, "
+#~ "jonka jälkeen jvm suljetaan. Jos haluat, että jvm on käynnissä niin kauan "
+#~ "kuin Konqueror on avoinna, jätä asetus ”Sulje sovelmapalvelin, kun se ei "
+#~ "ole käytössä” valitsematta."
+
+#~ msgctxt "@title:group"
+#~ msgid "Doma&in-Specific"
+#~ msgstr "Verkkoaluekohta&inen"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Java Policy"
+#~ msgstr "Uusi Java-käytäntö"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Java Policy"
+#~ msgstr "Muokkaa Java-käytäntöä"
+
+#~ msgid "&Java policy:"
+#~ msgstr "&Java-käytäntö:"
+
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr "Valitse yllä olevan koneen tai verkkoalueen Java-käytäntö."
+
+#~ msgid "Debugging"
+#~ msgstr "Virheenpaikannus"
+
+#~ msgid "Enable debu&gger"
+#~ msgstr "Käytä &virheenpaikanninta"
+
+#~ msgid "Enables builtin JavaScript debugger."
+#~ msgstr "Ottaa käyttöön sisäänrakennetun JavaScript-virheenpaikantimen."
+
+#~ msgid "Report &errors"
+#~ msgstr "Ilmoita &vioista"
+
+#~ msgid ""
+#~ "Enables the reporting of errors that occur when JavaScript code is "
+#~ "executed."
+#~ msgstr "Ilmoita vioista, joita JavaScript-koodin suorittamisessa tapahtuu."
+
+#~ msgid "&Java"
+#~ msgstr "&Java"
+
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
 #~ msgid ""
 #~ "This will open a new tab in the background, instead of in the foreground."

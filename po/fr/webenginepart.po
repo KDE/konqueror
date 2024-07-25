@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 02:36+0000\n"
+"POT-Creation-Date: 2024-07-25 02:29+0000\n"
 "PO-Revision-Date: 2024-05-06 16:23+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -653,7 +653,7 @@ msgstr "Solutions possibles :"
 msgid "Error: %1"
 msgstr "Erreur : %1"
 
-#: src/settings/webenginesettings.cpp:930
+#: src/settings/webenginesettings.cpp:933
 #, kde-format
 msgid "Filter error"
 msgstr "Erreur de filtre"
@@ -914,7 +914,7 @@ msgstr ""
 "\n"
 "L'intégration sera désactivée."
 
-#: src/webenginepage.cpp:374
+#: src/webenginepage.cpp:377
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -928,12 +928,12 @@ msgstr ""
 "le bouton « Annuler » afin d'éviter un achat doublé. Sinon, cliquez sur le "
 "bouton « Continuer » pour ré-afficher la page.</p>"
 
-#: src/webenginepage.cpp:381
+#: src/webenginepage.cpp:384
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Renvoyer les informations"
 
-#: src/webenginepage.cpp:575
+#: src/webenginepage.cpp:578
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -943,18 +943,18 @@ msgstr ""
 "emplacement physique.\n"
 "Voulez-vous autoriser cet accès ?"
 
-#: src/webenginepage.cpp:579 src/webenginepage.cpp:657
-#: src/webenginepage.cpp:668
+#: src/webenginepage.cpp:582 src/webenginepage.cpp:660
+#: src/webenginepage.cpp:671
 #, kde-format
 msgid "Network Transmission"
 msgstr "Transmission réseau"
 
-#: src/webenginepage.cpp:580
+#: src/webenginepage.cpp:583
 #, kde-format
 msgid "Allow access"
 msgstr "Autoriser l'accès"
 
-#: src/webenginepage.cpp:650
+#: src/webenginepage.cpp:653
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -968,12 +968,12 @@ msgstr ""
 "informations.\n"
 "Voulez-vous vraiment continuer à envoyer les données de façon non chiffrée ?"
 
-#: src/webenginepage.cpp:658
+#: src/webenginepage.cpp:661
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Envoyer non chiffré"
 
-#: src/webenginepage.cpp:665
+#: src/webenginepage.cpp:668
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -983,12 +983,12 @@ msgstr ""
 "courrier électronique.\n"
 "Voulez-vous continuer ?"
 
-#: src/webenginepage.cpp:669
+#: src/webenginepage.cpp:672
 #, kde-format
 msgid "&Send Email"
 msgstr "&Envoyer par courrier électronique"
 
-#: src/webenginepage.cpp:718
+#: src/webenginepage.cpp:721
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -997,22 +997,22 @@ msgstr ""
 "<qt>Voulez-vous autoriser ce site à joindre les fichiers suivants au "
 "courrier électronique ?</qt>"
 
-#: src/webenginepage.cpp:720
+#: src/webenginepage.cpp:723
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Confirmation de la pièce jointe au courrier électronique"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:724
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Autoriser des pièces jointes"
 
-#: src/webenginepage.cpp:722
+#: src/webenginepage.cpp:725
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignorer les pièces jointes"
 
-#: src/webenginepage.cpp:736
+#: src/webenginepage.cpp:739
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1021,12 +1021,12 @@ msgstr ""
 "Ce site a tenté de joindre un fichier provenant de votre ordinateur lors de "
 "l'envoi du formulaire. La pièce jointe a été supprimée pour votre protection."
 
-#: src/webenginepage.cpp:739
+#: src/webenginepage.cpp:742
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Pièce jointe supprimée"
 
-#: src/webenginepage.cpp:853
+#: src/webenginepage.cpp:856
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1035,7 +1035,7 @@ msgstr ""
 "Ce site demande l'ouverture d'une fenêtre de menu contextuel.\n"
 "Voulez-vous l'autoriser ?"
 
-#: src/webenginepage.cpp:855
+#: src/webenginepage.cpp:858
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1044,17 +1044,17 @@ msgstr ""
 "<qt>Ce site demande l'ouverture d'une fenêtre de menu contextuel dans <p>%1</"
 "p><br/>Voulez-vous l'autoriser ?</qt>"
 
-#: src/webenginepage.cpp:858
+#: src/webenginepage.cpp:861
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Confirmation d'ouverture Javascript"
 
-#: src/webenginepage.cpp:859
+#: src/webenginepage.cpp:862
 #, kde-format
 msgid "Allow"
 msgstr "Autoriser"
 
-#: src/webenginepage.cpp:859
+#: src/webenginepage.cpp:862
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Ne pas autoriser"
@@ -1347,7 +1347,7 @@ msgstr "Ob&jet"
 msgid "&Issuer"
 msgstr "Ém&etteur"
 
-#: src/webenginepartcontrols.cpp:282
+#: src/webenginepartcontrols.cpp:281
 #, kde-format
 msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "

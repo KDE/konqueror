@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 02:36+0000\n"
+"POT-Creation-Date: 2024-07-25 02:29+0000\n"
 "PO-Revision-Date: 2021-01-16 15:28+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -495,8 +495,8 @@ msgid ""
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4789
-#: src/konqmainwindow.cpp:4835
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4790
+#: src/konqmainwindow.cpp:4836
 #, kde-format
 msgid "no name"
 msgstr "Gaute Hvoslef Kvalnes, Håvard Korsvoll"
@@ -600,7 +600,7 @@ msgstr "Lokal"
 msgid "Miscellaneous"
 msgstr "Ymse"
 
-#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4302
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4301
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Opna i nytt &vindauge"
@@ -661,13 +661,13 @@ msgctxt "@title:window"
 msgid "Clear History?"
 msgstr "Tøm loggen?"
 
-#: src/konqmainwindow.cpp:685
+#: src/konqmainwindow.cpp:687
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
 msgstr "Lastar …"
 
-#: src/konqmainwindow.cpp:717
+#: src/konqmainwindow.cpp:719
 #, kde-format
 msgid "Access denied"
 msgstr "Nekta tilgang"
@@ -691,19 +691,19 @@ msgstr ""
 "Denne sida inneheld endringar som ikkje er leverte.\n"
 "Viss du lastar sida på nytt, mistar du desse endringane."
 
-#: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2225
-#: src/konqmainwindow.cpp:2314 src/konqmainwindow.cpp:2346
-#: src/konqmainwindow.cpp:2389 src/konqmainwindow.cpp:2411
-#: src/konqmainwindow.cpp:4754
+#: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2224
+#: src/konqmainwindow.cpp:2313 src/konqmainwindow.cpp:2345
+#: src/konqmainwindow.cpp:2388 src/konqmainwindow.cpp:2410
+#: src/konqmainwindow.cpp:4755
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
 msgstr "Forkast endringar?"
 
-#: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2225
-#: src/konqmainwindow.cpp:2314 src/konqmainwindow.cpp:2346
-#: src/konqmainwindow.cpp:2389 src/konqmainwindow.cpp:2412
-#: src/konqmainwindow.cpp:4754
+#: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2224
+#: src/konqmainwindow.cpp:2313 src/konqmainwindow.cpp:2345
+#: src/konqmainwindow.cpp:2388 src/konqmainwindow.cpp:2411
+#: src/konqmainwindow.cpp:4755
 #, kde-format
 msgid "&Discard Changes"
 msgstr "&Forkast endringar"
@@ -713,7 +713,7 @@ msgstr "&Forkast endringar"
 msgid "Home Folder"
 msgstr "Heimemappe"
 
-#: src/konqmainwindow.cpp:1902 src/konqmainwindow.cpp:3324
+#: src/konqmainwindow.cpp:1902 src/konqmainwindow.cpp:3323
 #, kde-format
 msgid "Home"
 msgstr "Heim"
@@ -728,8 +728,7 @@ msgstr "Gå til heimemappa"
 msgid "Navigate to your local 'Home Folder'"
 msgstr "Gå til lokal heimemappe"
 
-#. i18n: ectx: label, entry, group (UserSettings)
-#: src/konqmainwindow.cpp:1912 src/konqueror.kcfg:16
+#: src/konqmainwindow.cpp:1912
 #, kde-format
 msgid "Home Page"
 msgstr "Heimeside"
@@ -750,7 +749,7 @@ msgstr ""
 "med denne knappen under <b>Innstillingar → Set opp Konqueror → Generelt</b>."
 "</html>"
 
-#: src/konqmainwindow.cpp:2224
+#: src/konqmainwindow.cpp:2223
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -759,7 +758,7 @@ msgstr ""
 "Denne fana inneheld endringar som ikkje er leverte.\n"
 "Viss du koplar frå fana, mistar du desse endringane."
 
-#: src/konqmainwindow.cpp:2313
+#: src/konqmainwindow.cpp:2312
 #, kde-format
 msgid ""
 "This view contains changes that have not been submitted.\n"
@@ -768,7 +767,7 @@ msgstr ""
 "Denne ruta inneheld endringar som ikkje er leverte.\n"
 "Viss du lukkar ruta, mistar du desse endringane."
 
-#: src/konqmainwindow.cpp:2345
+#: src/konqmainwindow.cpp:2344
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -777,23 +776,23 @@ msgstr ""
 "Denne fana inneheld endringar som ikkje er leverte.\n"
 "Viss du lukkar fana, mistar du desse endringane."
 
-#: src/konqmainwindow.cpp:2371
+#: src/konqmainwindow.cpp:2370
 #, kde-format
 msgid "Do you really want to close all other tabs?"
 msgstr "Vil du verkeleg lukka alle dei andre fanene?"
 
-#: src/konqmainwindow.cpp:2372 src/konqmainwindow.cpp:3404 src/konqtabs.cpp:335
+#: src/konqmainwindow.cpp:2371 src/konqmainwindow.cpp:3403 src/konqtabs.cpp:335
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr "Lukk &andre faner"
 
-#: src/konqmainwindow.cpp:2372
+#: src/konqmainwindow.cpp:2371
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
 msgstr "Stadfest lukking av andre faner"
 
-#: src/konqmainwindow.cpp:2388
+#: src/konqmainwindow.cpp:2387
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -802,7 +801,7 @@ msgstr ""
 "Denne fana inneheld endringar som ikkje er leverte.\n"
 "Viss du lukkar andre faner, mistar du desse endringane."
 
-#: src/konqmainwindow.cpp:2410
+#: src/konqmainwindow.cpp:2409
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -811,234 +810,234 @@ msgstr ""
 "Denne fana inneheld endringar som ikkje er leverte.\n"
 "Viss du lastar alle fanene på nytt, mistar du desse endringane."
 
-#: src/konqmainwindow.cpp:2467
+#: src/konqmainwindow.cpp:2466
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Target"
 msgstr "Oppgje mål"
 
-#: src/konqmainwindow.cpp:2474
+#: src/konqmainwindow.cpp:2473
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
 msgstr "<qt><b>%1</b> er ikkje gyldig</qt>"
 
-#: src/konqmainwindow.cpp:2484
+#: src/konqmainwindow.cpp:2483
 #, kde-format
 msgid "Copy selected files from %1 to:"
 msgstr "Kopier dei valte filene frå «%1» til:"
 
-#: src/konqmainwindow.cpp:2497
+#: src/konqmainwindow.cpp:2496
 #, kde-format
 msgid "Move selected files from %1 to:"
 msgstr "Flytt dei valte filene frå «%1» til:"
 
-#: src/konqmainwindow.cpp:2665
+#: src/konqmainwindow.cpp:2664
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
 msgstr "Tøm historikk over lukka element"
 
-#: src/konqmainwindow.cpp:2687
+#: src/konqmainwindow.cpp:2686
 #, kde-format
 msgid "Save As..."
 msgstr "Lagra som …"
 
-#: src/konqmainwindow.cpp:2689
+#: src/konqmainwindow.cpp:2688
 #, kde-format
 msgid "Manage..."
 msgstr "Handsam …"
 
-#: src/konqmainwindow.cpp:3233
+#: src/konqmainwindow.cpp:3232
 #, kde-format
 msgid "New &Window"
 msgstr "Nytt &vindauge"
 
-#: src/konqmainwindow.cpp:3238
+#: src/konqmainwindow.cpp:3237
 #, kde-format
 msgid "&Duplicate Window"
 msgstr "&Dupliser vindauge"
 
-#: src/konqmainwindow.cpp:3243
+#: src/konqmainwindow.cpp:3242
 #, kde-format
 msgid "Send &Link Address..."
 msgstr "Send &lenkjeadresse …"
 
-#: src/konqmainwindow.cpp:3247
+#: src/konqmainwindow.cpp:3246
 #, kde-format
 msgid "S&end File..."
 msgstr "S&end fil …"
 
-#: src/konqmainwindow.cpp:3251
+#: src/konqmainwindow.cpp:3250
 #, kde-format
 msgid "&Open Location"
 msgstr "Opna &adresse"
 
-#: src/konqmainwindow.cpp:3257
+#: src/konqmainwindow.cpp:3256
 #, kde-format
 msgid "&Open File..."
 msgstr "O&pna fil …"
 
-#: src/konqmainwindow.cpp:3262
+#: src/konqmainwindow.cpp:3261
 #, kde-format
 msgid "&Find File..."
 msgstr "&Finn fil …"
 
-#: src/konqmainwindow.cpp:3271
+#: src/konqmainwindow.cpp:3270
 #, kde-format
 msgid "Lock to Current Location"
 msgstr "Lås i denne posisjonen"
 
 # unreviewed-context
-#: src/konqmainwindow.cpp:3274
+#: src/konqmainwindow.cpp:3273
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr "&Knyt saman rute"
 
-#: src/konqmainwindow.cpp:3279
+#: src/konqmainwindow.cpp:3278
 #, kde-format
 msgid "&Up"
 msgstr "&Opp"
 
-#: src/konqmainwindow.cpp:3289
+#: src/konqmainwindow.cpp:3288
 #, kde-format
 msgid "Closed Items"
 msgstr "Lukka faner"
 
-#: src/konqmainwindow.cpp:3302
+#: src/konqmainwindow.cpp:3301
 #, kde-format
 msgid "Sessions"
 msgstr "Økter"
 
-#: src/konqmainwindow.cpp:3329
+#: src/konqmainwindow.cpp:3328
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr "Oftast vitja"
 
-#: src/konqmainwindow.cpp:3333
+#: src/konqmainwindow.cpp:3332
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr "Nyleg vitja"
 
-#: src/konqmainwindow.cpp:3342
+#: src/konqmainwindow.cpp:3341
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr "Vis historikk"
 
-#: src/konqmainwindow.cpp:3354
+#: src/konqmainwindow.cpp:3353
 #, kde-format
 msgid "Configure Extensions..."
 msgstr "Set opp programtillegg …"
 
-#: src/konqmainwindow.cpp:3358
+#: src/konqmainwindow.cpp:3357
 #, kde-format
 msgid "Configure Spell Checking..."
 msgstr "Set opp stavekontroll …"
 
-#: src/konqmainwindow.cpp:3364
+#: src/konqmainwindow.cpp:3363
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr "Del ruta &venstre/høgre"
 
-#: src/konqmainwindow.cpp:3369
+#: src/konqmainwindow.cpp:3368
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr "Del ruta &topp/botn"
 
-#: src/konqmainwindow.cpp:3374 src/konqtabs.cpp:456
+#: src/konqmainwindow.cpp:3373 src/konqtabs.cpp:456
 #, kde-format
 msgid "&New Tab"
 msgstr "&Ny fane"
 
-#: src/konqmainwindow.cpp:3383
+#: src/konqmainwindow.cpp:3382
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr "&Dupliser fana"
 
-#: src/konqmainwindow.cpp:3388
+#: src/konqmainwindow.cpp:3387
 #, kde-format
 msgid "Detach Current Tab"
 msgstr "Kopla frå fana"
 
-#: src/konqmainwindow.cpp:3393
+#: src/konqmainwindow.cpp:3392
 #, kde-format
 msgid "&Close Active View"
 msgstr "&Lukk aktiv rute"
 
-#: src/konqmainwindow.cpp:3398
+#: src/konqmainwindow.cpp:3397
 #, kde-format
 msgid "Close Current Tab"
 msgstr "Lukk fana"
 
-#: src/konqmainwindow.cpp:3408
+#: src/konqmainwindow.cpp:3407
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "Gå til neste fane"
 
-#: src/konqmainwindow.cpp:3412
+#: src/konqmainwindow.cpp:3411
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "Gå til førre fane"
 
-#: src/konqmainwindow.cpp:3419
+#: src/konqmainwindow.cpp:3418
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "Gå til fane %1"
 
-#: src/konqmainwindow.cpp:3424
+#: src/konqmainwindow.cpp:3423
 #, kde-format
 msgid "Move Tab Left"
 msgstr "Flytt fane til venstre"
 
-#: src/konqmainwindow.cpp:3429
+#: src/konqmainwindow.cpp:3428
 #, kde-format
 msgid "Move Tab Right"
 msgstr "Flytt fane til høgre"
 
-#: src/konqmainwindow.cpp:3437
+#: src/konqmainwindow.cpp:3436
 #, kde-format
 msgid "Dump Debug Info"
 msgstr "Dump avlusingsinfo"
 
-#: src/konqmainwindow.cpp:3455
+#: src/konqmainwindow.cpp:3454
 #, kde-format
 msgid "&Reload"
 msgstr "Last om a&tt"
 
-#: src/konqmainwindow.cpp:3460 src/konqtabs.cpp:313
+#: src/konqmainwindow.cpp:3459 src/konqtabs.cpp:313
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr "&Last alle faner på nytt"
 
-#: src/konqmainwindow.cpp:3468
+#: src/konqmainwindow.cpp:3467
 #, kde-format
 msgid "&Force Reload"
 msgstr "&Tving oppdatering"
 
-#: src/konqmainwindow.cpp:3493
+#: src/konqmainwindow.cpp:3492
 #, kde-format
 msgid "&Stop"
 msgstr "&Stopp"
 
-#: src/konqmainwindow.cpp:3502
+#: src/konqmainwindow.cpp:3501
 #, kde-format
 msgid "Throbber"
 msgstr "Puls-ikon"
 
-#: src/konqmainwindow.cpp:3506 src/konqmainwindow.cpp:3509
+#: src/konqmainwindow.cpp:3505 src/konqmainwindow.cpp:3508
 #, kde-format
 msgid "L&ocation: "
 msgstr "&Adresse: "
 
-#: src/konqmainwindow.cpp:3516
+#: src/konqmainwindow.cpp:3515
 #, kde-format
 msgid "Location Bar"
 msgstr "Adresselinje"
 
-#: src/konqmainwindow.cpp:3522
+#: src/konqmainwindow.cpp:3521
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
@@ -1046,12 +1045,12 @@ msgstr ""
 "<html>Adresselinje<br /><br />Skriv inn ei nettadresse eller noko du vil "
 "søkja etter.</html>"
 
-#: src/konqmainwindow.cpp:3526
+#: src/konqmainwindow.cpp:3525
 #, kde-format
 msgid "Clear Location Bar"
 msgstr "Tøm adresselinja"
 
-#: src/konqmainwindow.cpp:3529
+#: src/konqmainwindow.cpp:3528
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
@@ -1059,22 +1058,22 @@ msgid ""
 msgstr ""
 "<html>Tøm adresselinja<br /><br />Tømmer innhaldet i adresselinja.</html>"
 
-#: src/konqmainwindow.cpp:3534
+#: src/konqmainwindow.cpp:3533
 #, kde-format
 msgid "&Bookmarks"
 msgstr "&Bokmerke"
 
-#: src/konqmainwindow.cpp:3555
+#: src/konqmainwindow.cpp:3554
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "Kon&queror-introduksjon"
 
-#: src/konqmainwindow.cpp:3560
+#: src/konqmainwindow.cpp:3559
 #, kde-format
 msgid "Go"
 msgstr "Gå til"
 
-#: src/konqmainwindow.cpp:3562
+#: src/konqmainwindow.cpp:3561
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
@@ -1083,7 +1082,7 @@ msgstr ""
 "<html>Gå til<br /><br />Går til den adressa som er skriven inn i "
 "adresselinja.</html>"
 
-#: src/konqmainwindow.cpp:3570
+#: src/konqmainwindow.cpp:3569
 #, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
@@ -1093,27 +1092,27 @@ msgstr ""
 "<html>Gå til foreldremappa<br /><br />Viss du no for eksempel er i file:/"
 "home/%1, vil denne knappen bringa deg til file:/home.</html>"
 
-#: src/konqmainwindow.cpp:3573
+#: src/konqmainwindow.cpp:3572
 #, kde-format
 msgid "Enter the parent folder"
 msgstr "Gå til foreldremappa"
 
-#: src/konqmainwindow.cpp:3575 src/konqmainwindow.cpp:3576
+#: src/konqmainwindow.cpp:3574 src/konqmainwindow.cpp:3575
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "Gå tilbake eitt steg i nettlesarhistoria"
 
-#: src/konqmainwindow.cpp:3578 src/konqmainwindow.cpp:3579
+#: src/konqmainwindow.cpp:3577 src/konqmainwindow.cpp:3578
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "Gå fram eitt steg i nettlesarhistoria"
 
-#: src/konqmainwindow.cpp:3581 src/konqmainwindow.cpp:3582
+#: src/konqmainwindow.cpp:3580 src/konqmainwindow.cpp:3581
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
 msgstr "Gå tilbake eitt steg i nettlesarhistoria for lukka faner"
 
-#: src/konqmainwindow.cpp:3584
+#: src/konqmainwindow.cpp:3583
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1124,12 +1123,12 @@ msgstr ""
 "du bruka for å friske opp nettsider som har endra seg sidan du lasta dei ned."
 "</html>"
 
-#: src/konqmainwindow.cpp:3587
+#: src/konqmainwindow.cpp:3586
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "Last dokumentet om att"
 
-#: src/konqmainwindow.cpp:3589
+#: src/konqmainwindow.cpp:3588
 #, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1140,12 +1139,12 @@ msgstr ""
 "du bruka for å friske opp nettsider som har endra seg sidan du lasta dei ned "
 "i alle fanene.</html>"
 
-#: src/konqmainwindow.cpp:3592
+#: src/konqmainwindow.cpp:3591
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr "Last dokumenta på alle fanene om att"
 
-#: src/konqmainwindow.cpp:3594
+#: src/konqmainwindow.cpp:3593
 #, kde-format
 msgid ""
 "<html>Stop loading the document<br /><br />All network transfers will be "
@@ -1155,7 +1154,7 @@ msgstr ""
 "<html>Stopp lastinga av dokumentet<br /><br />All nettverkstrafikken vert "
 "stoppa og Konqueror viser det som er lasta ned til no.</html>"
 
-#: src/konqmainwindow.cpp:3598
+#: src/konqmainwindow.cpp:3597
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1168,18 +1167,18 @@ msgstr ""
 "ned. Bileta på sida vert også lasta ned på nytt, sjølv om det finst lokale "
 "kopiar av dei.</html>"
 
-#: src/konqmainwindow.cpp:3602
+#: src/konqmainwindow.cpp:3601
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr "Tving oppdatering av det gjeldande dokumentet og eventuelle bilete"
 
-#: src/konqmainwindow.cpp:3604
+#: src/konqmainwindow.cpp:3603
 #, kde-format
 msgid "Stop loading the document"
 msgstr "Stopp lastinga av dokumentet"
 
-#: src/konqmainwindow.cpp:3606
+#: src/konqmainwindow.cpp:3605
 #, kde-format
 msgid ""
 "<html>Cut the currently selected text or item(s) and move it to the system "
@@ -1190,12 +1189,12 @@ msgstr ""
 "utklippstavla.<br /><br />Du kan seinare lima dette inn i Konqueror eller "
 "andre KDE-program.</html>"
 
-#: src/konqmainwindow.cpp:3610
+#: src/konqmainwindow.cpp:3609
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr "Flyttar merkt tekst eller element til utklippstavla"
 
-#: src/konqmainwindow.cpp:3612
+#: src/konqmainwindow.cpp:3611
 #, kde-format
 msgid ""
 "<html>Copy the currently selected text or item(s) to the system "
@@ -1206,12 +1205,12 @@ msgstr ""
 "utklippstavla.<br /><br />Du kan seinare lima det inn i Konqueror eller "
 "andre KDE-program.</html>"
 
-#: src/konqmainwindow.cpp:3616
+#: src/konqmainwindow.cpp:3615
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr "Kopierer merkt tekst eller element til utklippstavla"
 
-#: src/konqmainwindow.cpp:3618
+#: src/konqmainwindow.cpp:3617
 #, kde-format
 msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
@@ -1221,12 +1220,12 @@ msgstr ""
 "utklippstavla.<br /><br />Du kan lima inn det som er klipt ut frå alle andre "
 "KDE-program.</html>"
 
-#: src/konqmainwindow.cpp:3621
+#: src/konqmainwindow.cpp:3620
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "Lim inn frå utklippstavla"
 
-#: src/konqmainwindow.cpp:3623
+#: src/konqmainwindow.cpp:3622
 #, kde-format
 msgid ""
 "<html>Print the currently displayed document<br /><br />You will be "
@@ -1241,12 +1240,12 @@ msgstr ""
 "spesielle utskriftstenester i KDE, som for eksempel å laga ei PDF-fil av "
 "utskrifta.</html>"
 
-#: src/konqmainwindow.cpp:3629
+#: src/konqmainwindow.cpp:3628
 #, kde-format
 msgid "Print the current document"
 msgstr "Skriv ut dokumentet"
 
-#: src/konqmainwindow.cpp:3631
+#: src/konqmainwindow.cpp:3630
 #, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
@@ -1255,7 +1254,7 @@ msgstr ""
 "Ei låst rute kan ikkje endra mappe. Bruk funksjonen i samband med «knyt "
 "saman rute» for å utforska mange filer frå ei mappe."
 
-#: src/konqmainwindow.cpp:3632
+#: src/konqmainwindow.cpp:3631
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
@@ -1264,34 +1263,34 @@ msgstr ""
 "Knyter ruta saman med andre, slik at ho følgjer mappeendringar i andre "
 "samanknytte ruter."
 
-#: src/konqmainwindow.cpp:3636
+#: src/konqmainwindow.cpp:3635
 #, kde-format
 msgid "&Inspect Current Page"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3637
+#: src/konqmainwindow.cpp:3636
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3638
+#: src/konqmainwindow.cpp:3637
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3800
+#: src/konqmainwindow.cpp:3799
 #, kde-format
 msgid "Copy &Files..."
 msgstr "Kopier &filer …"
 
-#: src/konqmainwindow.cpp:3804
+#: src/konqmainwindow.cpp:3803
 #, kde-format
 msgid "M&ove Files..."
 msgstr "Fl&ytt filer …"
 
-#: src/konqmainwindow.cpp:4130
+#: src/konqmainwindow.cpp:4129
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
@@ -1300,60 +1299,60 @@ msgstr ""
 "Du har bedt om at meir enn 20 bokmerke skal opnast i faner. Dette kan ta "
 "litt tid. Vil du halda fram?"
 
-#: src/konqmainwindow.cpp:4132
+#: src/konqmainwindow.cpp:4131
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "Opna bokmerkemappe i nye faner"
 
-#: src/konqmainwindow.cpp:4133
+#: src/konqmainwindow.cpp:4132
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4295
+#: src/konqmainwindow.cpp:4294
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "Opna i dette &vindauget"
 
-#: src/konqmainwindow.cpp:4296
+#: src/konqmainwindow.cpp:4295
 #, kde-format
 msgid "Open the document in current window"
 msgstr "Opna dokumentet i dette vindauget"
 
-#: src/konqmainwindow.cpp:4303
+#: src/konqmainwindow.cpp:4302
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "Opna dokumentet i eit nytt vindauge"
 
-#: src/konqmainwindow.cpp:4309
+#: src/konqmainwindow.cpp:4308
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Opna i &ny fane"
 
-#: src/konqmainwindow.cpp:4311
+#: src/konqmainwindow.cpp:4310
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "Opna dokumentet i ein ny fane"
 
-#: src/konqmainwindow.cpp:4534
+#: src/konqmainwindow.cpp:4533
 #, kde-format
 msgid "&Open With"
 msgstr "&Opna med"
 
-#: src/konqmainwindow.cpp:4547
+#: src/konqmainwindow.cpp:4546
 #, kde-format
 msgid "Open with %1"
 msgstr "Opna med %1"
 
-#: src/konqmainwindow.cpp:4597
+#: src/konqmainwindow.cpp:4596
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "&Visingsmodus"
 
-#: src/konqmainwindow.cpp:4718
+#: src/konqmainwindow.cpp:4719
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
@@ -1361,18 +1360,18 @@ msgstr ""
 "Du har fleire faner opne i dette vindauget. Er du sikker på at du vil lukka "
 "det?"
 
-#: src/konqmainwindow.cpp:4720
+#: src/konqmainwindow.cpp:4721
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Stadfesting"
 
-#: src/konqmainwindow.cpp:4722
+#: src/konqmainwindow.cpp:4723
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "&Lukk fana"
 
-#: src/konqmainwindow.cpp:4750
+#: src/konqmainwindow.cpp:4751
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1381,7 +1380,7 @@ msgstr ""
 "Denne fana inneheld endringar som ikkje er leverte.\n"
 "Viss du lukkar vindauget, mistar du desse endringane."
 
-#: src/konqmainwindow.cpp:4751
+#: src/konqmainwindow.cpp:4752
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1390,7 +1389,7 @@ msgstr ""
 "Denne sida inneheld endringar som ikkje er leverte.\n"
 "Viss du lukkar vindauget, mistar du desse endringane."
 
-#: src/konqmainwindow.cpp:4911
+#: src/konqmainwindow.cpp:4912
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1398,28 +1397,28 @@ msgstr ""
 "Sidestolpen fungerer ikkje eller er utilgjengeleg. Du kan ikkje leggja til "
 "ei ny oppføring."
 
-#: src/konqmainwindow.cpp:4911 src/konqmainwindow.cpp:4918
+#: src/konqmainwindow.cpp:4912 src/konqmainwindow.cpp:4919
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Vevsidestolpe"
 
-#: src/konqmainwindow.cpp:4916
+#: src/konqmainwindow.cpp:4917
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Vil du leggja det nye vevtillegget «%1» til sidestolpen?"
 
-#: src/konqmainwindow.cpp:4918
+#: src/konqmainwindow.cpp:4919
 #, kde-format
 msgid "Add"
 msgstr "Legg til"
 
-#: src/konqmainwindow.cpp:4918
+#: src/konqmainwindow.cpp:4919
 #, kde-format
 msgid "Do Not Add"
 msgstr "Ikkje legg til"
 
-#: src/konqmainwindow.cpp:5266
+#: src/konqmainwindow.cpp:5267
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1428,7 +1427,7 @@ msgstr ""
 "Det ser ut til å vera ein feil i oppsettet. Konqueror er sett opp til å "
 "handtera %1, men kan ikkje handtera denne filtypen likevel."
 
-#: src/konqmainwindow.cpp:5351
+#: src/konqmainwindow.cpp:5352
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1449,22 +1448,22 @@ msgstr ""
 "for mellomtenar eller definer adressa til mellomtenaren manuelt. Ønskjer du "
 "å endra mellomtenar­innstillingane no?"
 
-#: src/konqmainwindow.cpp:5356
+#: src/konqmainwindow.cpp:5357
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "Ikkje-støtta mellomtenar-oppsett"
 
-#: src/konqmainwindow.cpp:5356
+#: src/konqmainwindow.cpp:5357
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "Ikkje bruk mellomtenar"
 
-#: src/konqmainwindow.cpp:5357 src/konqmainwindow.cpp:5385
+#: src/konqmainwindow.cpp:5358 src/konqmainwindow.cpp:5386
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "Vis oppsett for mellomtenar"
 
-#: src/konqmainwindow.cpp:5381
+#: src/konqmainwindow.cpp:5382
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1477,22 +1476,22 @@ msgstr ""
 "innstillingar er:<p><b>HTTP-mellomtenar:</b> <tt>%1</tt></p><p><b>HTTPS-"
 "mellomtenar: </b><tt>%2</tt></p>Kva ønskjer du å gjera?"
 
-#: src/konqmainwindow.cpp:5384
+#: src/konqmainwindow.cpp:5385
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "Konflikt i mellomtenar­innstillingar"
 
-#: src/konqmainwindow.cpp:5385
+#: src/konqmainwindow.cpp:5386
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "Bruk HTTP-mellomtenar (berre denne gongen)"
 
-#: src/konqmainwindow.cpp:5385
+#: src/konqmainwindow.cpp:5386
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "Bruk HTTPS-mellomtenar (berre denne gongen)"
 
-#: src/konqmainwindow.cpp:5401
+#: src/konqmainwindow.cpp:5402
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1585,8 +1584,7 @@ msgid "Delete"
 msgstr "Slett"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
-#. i18n: ectx: label, entry, group (Trash)
-#: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
+#: src/konqsessiondlg_base.ui:73
 #, kde-format
 msgid "Open tabs inside current window"
 msgstr "Opna faner i dette vindauget"
@@ -1704,186 +1702,6 @@ msgstr "&Kopla frå fana"
 #, kde-format
 msgid "&Close Tab"
 msgstr "&Lukk fana"
-
-#. i18n: ectx: label, entry, group (UserSettings)
-#: src/konqueror.kcfg:11
-#, kde-format
-msgid "Start Page"
-msgstr "Startside"
-
-#. i18n: ectx: whatsthis, entry, group (UserSettings)
-#: src/konqueror.kcfg:12
-#, kde-format
-msgid "This is the URL of the web page where Konqueror will start from."
-msgstr "Dette er adressa til nettsida som Konqueror vil starta frå."
-
-#. i18n: ectx: whatsthis, entry, group (UserSettings)
-#: src/konqueror.kcfg:17
-#, kde-format
-msgid ""
-"This is the URL of the web page where Konqueror will jump to when the \\"
-"\"Home\\\" button is pressed."
-msgstr ""
-"Dette er adressa til nettsida Konqueror (som nettlesar) går til når det vert "
-"trykt på «Heim»."
-
-#. i18n: ectx: label, entry, group (UndoManagerSettings)
-#: src/konqueror.kcfg:26
-#, kde-format
-msgid "Maximum number of Closed Items"
-msgstr "Høgste tal på lukka ellement"
-
-#. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
-#: src/konqueror.kcfg:27
-#, kde-format
-msgid ""
-"This sets the maximum number of closed items that will be stored in memory. "
-"This limit will not be surpassed."
-msgstr ""
-"Her vel du kor mange lukka element som skal lagrast i minnet. Denne grensa "
-"vert ikkje overskriden."
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#: src/konqueror.kcfg:36
-#, kde-format
-msgid "Open folders in separate windows"
-msgstr "Opna fanene i kvar sine vindauge"
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:37
-#, kde-format
-msgid ""
-"If this option is checked, Konqueror will open a new window when you open a "
-"folder, rather than showing that folder's contents in the current window."
-msgstr ""
-"Viss dette er valt, vil Konqueror opna eit nytt vindauge når du opnar ei "
-"mappe, i staden for å visa innhaldet i mappa i det gjeldande vindauget."
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#: src/konqueror.kcfg:42
-#, kde-format
-msgid "Show file tips"
-msgstr "Vis filinformasjon"
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:43
-#, kde-format
-msgid ""
-"Here you can control if, when moving the mouse over a file, you want to see "
-"a small popup window with additional information about that file"
-msgstr ""
-"Viss dette er valt, dukkar det opp eit sprettoppvindauge med meir "
-"informasjon om filer når musa vert halden over dei"
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#: src/konqueror.kcfg:54
-#, kde-format
-msgid "Show previews in file tips"
-msgstr "Vis førehandsvisingar i filinformasjonen"
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:55
-#, kde-format
-msgid ""
-"Here you can control if you want the popup window to contain a larger "
-"preview for the file, when moving the mouse over it"
-msgstr ""
-"Viss dette er valt, dukkar det opp ei større førehandsvising i "
-"sprettoppvindauget når musa vert halden over filer"
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#: src/konqueror.kcfg:60
-#, kde-format
-msgid "Show 'Delete' menu entries which bypass the trashcan"
-msgstr "Vis «Slett»-menyoppføringar som omgår papirkorga"
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:61
-#, kde-format
-msgid ""
-"Check this if you want 'Delete' menu commands to be displayed on the desktop "
-"and in the file manager's menus and context menus. You can always delete "
-"files when hidden by holding the Shift key while calling 'Move to Trash'."
-msgstr ""
-"Kryss av her viss du vil at slettefunkjonar skal visast i menyane og "
-"sprettoppmenyane i filhandsamaren og på skrivebordet. Merk at òg kan sletta "
-"filer direkte sjølv om det ikkje er kryssa av her, ved å halda inne «Shift» "
-"mens du vel «Flytt til papirkorga»."
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:149
-#, kde-format
-msgid "Choose where to display the tabs bar"
-msgstr ""
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:153 src/konqueror.kcfg:154
-#, kde-format
-msgid "Number of Open With items in the File menu"
-msgstr "Tal på «Opna med»-element i filmenyen"
-
-#. i18n: ectx: label, entry, group (HTML Settings)
-#: src/konqueror.kcfg:163
-#, kde-format
-msgid "Standard font"
-msgstr "Standardskrift"
-
-#. i18n: ectx: whatsthis, entry, group (HTML Settings)
-#: src/konqueror.kcfg:164
-#, kde-format
-msgid "This is the font used to display text in Konqueror windows."
-msgstr "Dette er skrifta som vert brukt til å visa tekst i Konqueror-vindauge."
-
-#. i18n: ectx: label, entry, group (HistorySettings)
-#: src/konqueror.kcfg:314
-#, kde-format
-msgid "Maximum number of history items per view"
-msgstr "Høgste tal på historikkelement per vising"
-
-#. i18n: ectx: label, entry, group (Trash)
-#: src/konqueror.kcfg:504
-#, kde-format
-msgid "Ask confirmation for deleting a file."
-msgstr "Spør før filer vert sletta."
-
-#. i18n: ectx: whatsthis, entry, group (Trash)
-#: src/konqueror.kcfg:505
-#, kde-format
-msgid ""
-"This option tells Konqueror whether to ask for a confirmation when you "
-"delete a file without using the trash folder. Warning, deleted files can not "
-"be recovered, so it is recommended to leave this confirmation enabled."
-msgstr ""
-"Her vel du om Konqueror skal spørja om stadfesting før filer skal slettast "
-"heilt. Merk at sletta filer ikkje kan hentast fram att, så det er tilrådd å "
-"ha dette valet på."
-
-#. i18n: ectx: label, entry, group (Trash)
-#: src/konqueror.kcfg:510
-#, kde-format
-msgid "Ask confirmation for move to trash"
-msgstr "Spør før filer vert flytte til papirkorga"
-
-#. i18n: ectx: whatsthis, entry, group (Trash)
-#: src/konqueror.kcfg:511
-#, kde-format
-msgid ""
-"This option tells Konqueror whether to ask for a confirmation when you move "
-"the file to your trash folder, from where it can be recovered very easily."
-msgstr ""
-"Her vel du om Konqueror skal spørja om stadfesting før filer vert flytta til "
-"papirkorga. Filer kan enkelt hentast fram att frå papirkorga."
-
-#. i18n: ectx: whatsthis, entry, group (Trash)
-#: src/konqueror.kcfg:518
-#, kde-format
-msgid ""
-"If true, when opening a session from within the sessions dialog the tabs "
-"will be opened inside current window."
-msgstr ""
-"Viss dette er valt, vert fanene opna i det gjeldande vindauget når det vert "
-"opna ei økt frå øktvindauget."
 
 #. i18n: ectx: Menu (file)
 #: src/konqueror.rc:5
@@ -2028,3 +1846,114 @@ msgstr ""
 #, kde-format
 msgid "Save As"
 msgstr ""
+
+#~ msgid "Start Page"
+#~ msgstr "Startside"
+
+#~ msgid "This is the URL of the web page where Konqueror will start from."
+#~ msgstr "Dette er adressa til nettsida som Konqueror vil starta frå."
+
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror will jump to when the \\"
+#~ "\"Home\\\" button is pressed."
+#~ msgstr ""
+#~ "Dette er adressa til nettsida Konqueror (som nettlesar) går til når det "
+#~ "vert trykt på «Heim»."
+
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "Høgste tal på lukka ellement"
+
+#~ msgid ""
+#~ "This sets the maximum number of closed items that will be stored in "
+#~ "memory. This limit will not be surpassed."
+#~ msgstr ""
+#~ "Her vel du kor mange lukka element som skal lagrast i minnet. Denne "
+#~ "grensa vert ikkje overskriden."
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Opna fanene i kvar sine vindauge"
+
+#~ msgid ""
+#~ "If this option is checked, Konqueror will open a new window when you open "
+#~ "a folder, rather than showing that folder's contents in the current "
+#~ "window."
+#~ msgstr ""
+#~ "Viss dette er valt, vil Konqueror opna eit nytt vindauge når du opnar ei "
+#~ "mappe, i staden for å visa innhaldet i mappa i det gjeldande vindauget."
+
+#~ msgid "Show file tips"
+#~ msgstr "Vis filinformasjon"
+
+#~ msgid ""
+#~ "Here you can control if, when moving the mouse over a file, you want to "
+#~ "see a small popup window with additional information about that file"
+#~ msgstr ""
+#~ "Viss dette er valt, dukkar det opp eit sprettoppvindauge med meir "
+#~ "informasjon om filer når musa vert halden over dei"
+
+#~ msgid "Show previews in file tips"
+#~ msgstr "Vis førehandsvisingar i filinformasjonen"
+
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it"
+#~ msgstr ""
+#~ "Viss dette er valt, dukkar det opp ei større førehandsvising i "
+#~ "sprettoppvindauget når musa vert halden over filer"
+
+#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
+#~ msgstr "Vis «Slett»-menyoppføringar som omgår papirkorga"
+
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's menus and context menus. You can always "
+#~ "delete files when hidden by holding the Shift key while calling 'Move to "
+#~ "Trash'."
+#~ msgstr ""
+#~ "Kryss av her viss du vil at slettefunkjonar skal visast i menyane og "
+#~ "sprettoppmenyane i filhandsamaren og på skrivebordet. Merk at òg kan "
+#~ "sletta filer direkte sjølv om det ikkje er kryssa av her, ved å halda "
+#~ "inne «Shift» mens du vel «Flytt til papirkorga»."
+
+#~ msgid "Number of Open With items in the File menu"
+#~ msgstr "Tal på «Opna med»-element i filmenyen"
+
+#~ msgid "Standard font"
+#~ msgstr "Standardskrift"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr ""
+#~ "Dette er skrifta som vert brukt til å visa tekst i Konqueror-vindauge."
+
+#~ msgid "Maximum number of history items per view"
+#~ msgstr "Høgste tal på historikkelement per vising"
+
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Spør før filer vert sletta."
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "delete a file without using the trash folder. Warning, deleted files can "
+#~ "not be recovered, so it is recommended to leave this confirmation enabled."
+#~ msgstr ""
+#~ "Her vel du om Konqueror skal spørja om stadfesting før filer skal "
+#~ "slettast heilt. Merk at sletta filer ikkje kan hentast fram att, så det "
+#~ "er tilrådd å ha dette valet på."
+
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Spør før filer vert flytte til papirkorga"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "move the file to your trash folder, from where it can be recovered very "
+#~ "easily."
+#~ msgstr ""
+#~ "Her vel du om Konqueror skal spørja om stadfesting før filer vert flytta "
+#~ "til papirkorga. Filer kan enkelt hentast fram att frå papirkorga."
+
+#~ msgid ""
+#~ "If true, when opening a session from within the sessions dialog the tabs "
+#~ "will be opened inside current window."
+#~ msgstr ""
+#~ "Viss dette er valt, vert fanene opna i det gjeldande vindauget når det "
+#~ "vert opna ei økt frå øktvindauget."

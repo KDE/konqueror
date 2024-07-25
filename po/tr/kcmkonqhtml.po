@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:38+0000\n"
+"POT-Creation-Date: 2024-07-25 02:29+0000\n"
 "PO-Revision-Date: 2024-04-26 13:57+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -126,7 +126,7 @@ msgstr ""
 msgid "A&nimations:"
 msgstr "&Canlandırmalar:"
 
-#: appearance.cpp:85 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:108
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
@@ -706,21 +706,21 @@ msgid "Domain"
 msgstr "Alan Adı"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
-#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
+#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
 #, kde-format
 msgid "Policy"
 msgstr "Davranış"
 
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
-#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:45
+#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
 #: useragent/useragent.ui:84
 #, kde-format
 msgid "&New..."
 msgstr "&Yeni…"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbChange)
-#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:49
+#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:52
 #, kde-format
 msgid "Chan&ge..."
 msgstr "&Değiştir…"
@@ -788,7 +788,7 @@ msgid "Policy:"
 msgstr "Politika:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
+#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:192
 #: policydlg.cpp:63
 #, kde-format
 msgid "Accept"
@@ -801,14 +801,14 @@ msgid "Accept until end of session"
 msgstr "Oturumun sonuna dek kabul et"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
+#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:194
 #: policydlg.cpp:63
 #, kde-format
 msgid "Reject"
 msgstr "Reddet"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:153
+#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:182
 #, kde-format
 msgid "Ask"
 msgstr "Sor"
@@ -1364,34 +1364,40 @@ msgstr ""
 "</body>\n"
 "</html>\n"
 
-#: domainlistview.cpp:37
+#: domainlistview.cpp:33
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "Ala&n Adına Özel"
+
+#: domainlistview.cpp:40
 #, kde-format
 msgid "Host/Domain"
 msgstr "Makine/Alan Adı"
 
-#: domainlistview.cpp:53
+#: domainlistview.cpp:56
 #, kde-format
 msgid "De&lete"
 msgstr "&Sil"
 
-#: domainlistview.cpp:57
+#: domainlistview.cpp:60
 #, kde-format
 msgid "&Import..."
 msgstr "&İçe Aktar…"
 
-#: domainlistview.cpp:63
+#: domainlistview.cpp:66
 #, kde-format
 msgid "&Export..."
 msgstr "&Dışa Aktar…"
 
-#: domainlistview.cpp:71
+#: domainlistview.cpp:74
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr ""
 "El ile, makineye veya alan adına özel politika eklemek için bu düğmeye "
 "tıklayın."
 
-#: domainlistview.cpp:73
+#: domainlistview.cpp:76
 #, kde-format
 msgid ""
 "Click on this button to change the policy for the host or domain selected in "
@@ -1400,7 +1406,7 @@ msgstr ""
 "Liste kutusundaki seçili makine veya alan adı için politikayı değiştirmek "
 "üzere bu düğmeye tıklayın."
 
-#: domainlistview.cpp:75
+#: domainlistview.cpp:78
 #, kde-format
 msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
@@ -1409,20 +1415,47 @@ msgstr ""
 "Liste kutusunda seçilen makine veya alan adı için politikayı silmek üzere bu "
 "düğmeye tıklayın."
 
-#: domainlistview.cpp:122
+#: domainlistview.cpp:125
 #, kde-format
 msgid "You must first select a policy to be changed."
 msgstr "Önce değiştirmek için bir politika seçmelisiniz."
 
-#: domainlistview.cpp:149
+#: domainlistview.cpp:152
 #, kde-format
 msgid "You must first select a policy to delete."
 msgstr "Önce silmek için bir politika seçmelisiniz."
 
-#: domainlistview.cpp:187 policydlg.cpp:63
+#: domainlistview.cpp:190 policydlg.cpp:63
 #, kde-format
 msgid "Use Global"
 msgstr "Genel Ayarları Kullan"
+
+#: domainlistview.cpp:232
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "Yeni JavaScript Politikası"
+
+#: domainlistview.cpp:235
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "JavaScript Politikasını Değiştir"
+
+#: domainlistview.cpp:239
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "JavaScript politikası:"
+
+#: domainlistview.cpp:240
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "Yukarıdaki makine veya alan adı için bir JavaScript politikası seçin."
+
+#: domainlistview.cpp:242
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "Alan Adına Özel JavaScript Politikaları"
 
 #: filteropts.cpp:48
 #, kde-format
@@ -1592,7 +1625,7 @@ msgstr "Ad"
 msgid "URL"
 msgstr "Adres"
 
-#: generalopts.cpp:56
+#: generalopts.cpp:54
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1600,59 +1633,59 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr "Lütfen özel başlangıç sayfasını ekleyin"
 
-#: generalopts.cpp:62
+#: generalopts.cpp:60
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr "Yeni bir &sekme oluşturulduğunda"
 
-#: generalopts.cpp:71
+#: generalopts.cpp:69
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "Giriş Sayfasını Göster"
 
-#: generalopts.cpp:72
+#: generalopts.cpp:70
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "Giriş Sayfamı Göster"
 
-#: generalopts.cpp:73
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "Boş Sayfa Göster"
 
-#: generalopts.cpp:74
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "Yer İmlerimi Göster"
 
-#: generalopts.cpp:80
+#: generalopts.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "Giriş Sayfasını Seç"
 
-#: generalopts.cpp:85
+#: generalopts.cpp:83
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr "Konqueror açılırken bu URLdeki web sayfasını gösterecek."
 
-#: generalopts.cpp:96
+#: generalopts.cpp:94
 #, kde-format
 msgid "Home page:"
 msgstr "Giriş sayfası:"
 
-#: generalopts.cpp:99
+#: generalopts.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "Giriş Sayfasını Seç"
 
-#: generalopts.cpp:104
+#: generalopts.cpp:102
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
@@ -1661,42 +1694,42 @@ msgstr ""
 "Konqueror’un Ana Sayfa’ düğmesine basıldığında gideceği web sayfasının "
 "URL’idir."
 
-#: generalopts.cpp:112
+#: generalopts.cpp:110
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "Öntanımlı web tarayıcısı işletkesi:"
 
-#: generalopts.cpp:121
+#: generalopts.cpp:119
 #, kde-format
 msgid "When splitting a view"
 msgstr "Bir görünüm bölünürken"
 
-#: generalopts.cpp:125
+#: generalopts.cpp:123
 #, kde-format
 msgid "Always duplicate current view"
 msgstr "Geçerli görünümü her zaman çoğalt"
 
-#: generalopts.cpp:126
+#: generalopts.cpp:124
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "Geçerli görünümü yalnızca yerel dosyalar için çoğalt"
 
-#: generalopts.cpp:132
+#: generalopts.cpp:130
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr "Başlarken, son durumu geri yükle"
 
-#: htmlopts.cpp:35
+#: htmlopts.cpp:39
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "Yer &imleri"
 
-#: htmlopts.cpp:38
+#: htmlopts.cpp:42
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "Yer imi eklerken ad ve klasör sor"
 
-#: htmlopts.cpp:41
+#: htmlopts.cpp:45
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1706,12 +1739,12 @@ msgstr ""
 "Bu kutu işaretli ise Konqueror yer imlerinin başlıklarını değiştirmenize ve "
 "yeni bir yer imi eklediğinizde nerede saklanacağını belirtmenize izin verir."
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:51
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "Yer imleri araç çubuğunda yalnızca işaretli olanları göster"
 
-#: htmlopts.cpp:49
+#: htmlopts.cpp:53
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1720,12 +1753,10 @@ msgstr ""
 "Bu kutu işaretli ise Konqueror yalnızca işaretlediğiniz yer imlerini yer imi "
 "düzenleyici ve yer imi araç çubuğunda gösterir."
 
-#: htmlopts.cpp:56
-#, kde-format
-msgid "Form Com&pletion"
-msgstr "Form &Tamamlama"
-
-#: htmlopts.cpp:60
+#. i18n("Form Com&pletion"), widget());
+#. m_pFormCompletionCheckBox->setCheckable(true);
+#. QFormLayout *laygroup2 = new QFormLayout(m_pFormCompletionCheckBox);
+#: htmlopts.cpp:67
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1734,12 +1765,12 @@ msgstr ""
 "Bu kutu seçilirse Konqueror web formlarına girdiğiniz verileri anımsayacak "
 "ve diğer benzer kutularda öneride bulunacaktır."
 
-#: htmlopts.cpp:66
+#: htmlopts.cpp:74
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "&Azami tamamlama:"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:76
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
@@ -1747,31 +1778,17 @@ msgstr ""
 "Buradan Konqueror’un form alanının kaç değeri anımsayacağını "
 "belirleyebilirsiniz."
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:87
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "Fare &Davranışı"
 
-#: htmlopts.cpp:78
-#, kde-format
-msgid "Chan&ge cursor over links"
-msgstr "&Bağlantı üzerinde imleci değiştir"
-
-#: htmlopts.cpp:80
-#, kde-format
-msgid ""
-"If this option is set, the shape of the cursor will change (usually to a "
-"hand) if it is moved over a hyperlink."
-msgstr ""
-"Eğer bu seçenek seçilirse imlecin şekli (genelde bir el) bir köprü "
-"üzerindeyken değişecektir."
-
-#: htmlopts.cpp:84
+#: htmlopts.cpp:90
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "&Orta düğme seçilen adrese gider"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:93
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
@@ -1780,12 +1797,12 @@ msgstr ""
 "Eğer bu kutu seçilmiş ise Konqueror penceresinde bir bağlantıya farenin orta "
 "düğmesiyle basılması halinde o adrese gidilir."
 
-#: htmlopts.cpp:91
+#: htmlopts.cpp:97
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "Sağ tıklama &önceki sayfaya gider"
 
-#: htmlopts.cpp:94
+#: htmlopts.cpp:100
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1795,27 +1812,12 @@ msgstr ""
 "Eğer bu kutuyu işaretlerseniz sağ düğmeye tıklayarak Geçmiş’e "
 "gidebilirsiniz. Menü için sağ fare düğmesine basın ve hareket edin."
 
-#: htmlopts.cpp:104
-#, kde-format
-msgid "Allow automatic delayed &reloading/redirecting"
-msgstr "&Beklemeli otomatik yenileme ve yönlendirmelere izin ver"
-
-#: htmlopts.cpp:105
-#, kde-format
-msgid ""
-"Some web pages request an automatic reload or redirection after a certain "
-"period of time. By unchecking this box Konqueror will ignore these requests."
-msgstr ""
-"Bazı web sayfaları belirli bir süreden sonra sayfaların otomatik olarak "
-"yeniden yüklenmesini talep edebilir. Bu düğmenin tıklanmaması halinde "
-"halinde Konqueror bu tür talepleri yok sayacaktır."
-
-#: htmlopts.cpp:111
+#: htmlopts.cpp:115
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "Erişim &Düğmesi etkinleştirmesini Kontrol düğmesi ile etkinleştir"
 
-#: htmlopts.cpp:112
+#: htmlopts.cpp:116
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1827,38 +1829,42 @@ msgstr ""
 "özelliğini pasifleştirir. (Değişikliğin etkinleştirilebilmesi için "
 "Konqueror’un yeniden başlatılması gerekir.)"
 
-#: htmlopts.cpp:116
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr "İzlenmeyi engellemek için web sayfalarına DNT başlığı gönder"
 
-#: htmlopts.cpp:117
-#, kde-format
+#: htmlopts.cpp:122
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check this box if you want to inform a web site that you do not want your "
+#| "web browsing habits tracked."
 msgid ""
-"Check this box if you want to inform a web site that you do not want your "
-"web browsing habits tracked."
+"<p>Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
+"considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
 "Gezinme alışkanlıklarınızın izlenmesini istemediğinizi bir web sayfasına "
 "bildirmek için bu kutuyu işaretleyin."
 
-#: htmlopts.cpp:121
+#: htmlopts.cpp:126
 #, kde-format
 msgid "Offer to save website passwords"
 msgstr "Web site parolalarını kaydetmeyi öner"
 
-#: htmlopts.cpp:122
+#: htmlopts.cpp:127
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr ""
 "Web site parolalarını kaydetmeyi önerilerini engellemek için bu kutucuğun "
 "işaretini kaldırın"
 
-#: htmlopts.cpp:126
+#: htmlopts.cpp:131
 #, kde-format
 msgid "Display online PDF files using WebEngine"
 msgstr "Çevrimiçi PDF dosyalarını WebEngine kullanarak görüntüle"
 
-#: htmlopts.cpp:127
+#: htmlopts.cpp:132
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
@@ -1866,206 +1872,24 @@ msgstr ""
 "Çevrimiçi PDF dosyalarını Sistem Ayarları’nda belirtildiği gibi görüntülemek "
 "için bu kutunun işaretini kaldırın"
 
-#: javaopts.cpp:78
+#: htmlopts.cpp:136
 #, kde-format
-msgid "Enable Ja&va globally"
-msgstr "&Java’yı global olarak etkinleştir"
+msgid "Always display files from web pages in a new tab"
+msgstr ""
 
-#: javaopts.cpp:93
-#, kde-format
-msgid "Java Runtime Settings"
-msgstr "Java Çalıştırma Ayarları"
-
-#: javaopts.cpp:97
-#, kde-format
-msgid "&Use security manager"
-msgstr "&Güvenlik yöneticisi kullan"
-
-#: javaopts.cpp:101
-#, kde-format
-msgid "Use &KIO"
-msgstr "&KIO Kullan"
-
-#: javaopts.cpp:105
-#, kde-format
-msgid "Shu&tdown applet server when inactive for more than"
-msgstr "&Bu süreden daha fazla etkin olmadığında uygulamacık sunucusunu kapat"
-
-#: javaopts.cpp:117
-#, kde-format
-msgid " second"
-msgid_plural " seconds"
-msgstr[0] " saniye"
-msgstr[1] " saniye"
-
-#: javaopts.cpp:123
-#, kde-format
-msgid "&Path to Java executable, or 'java':"
-msgstr "Java yürütülebilirinin &yolu veya ‘java’:"
-
-#: javaopts.cpp:127
-#, kde-format
-msgid "Additional Java a&rguments:"
-msgstr "Ek Java &parametreleri:"
-
-#: javaopts.cpp:132
+#: htmlopts.cpp:137
 #, kde-format
 msgid ""
-"Enables the execution of scripts written in Java that can be contained in "
-"HTML pages. Note that, as with any browser, enabling active contents can be "
-"a security problem."
+"<p>When showing in Konqueror files from links in web pages, always use a new "
+"tab"
 msgstr ""
-"HTML sayfalarında yer alması olası Java’da yazılmış betiklerin "
-"yürütülebilmesini sağlar. Unutmayın, her tarayıcıda olduğu gibi, betik "
-"dillerinin etkin kılınması güvenlik sorununa yol açabilir."
 
-#: javaopts.cpp:135
-#, kde-format
-msgid ""
-"<p>This box contains the domains and hosts you have set a specific Java "
-"policy for. This policy will be used instead of the default policy for "
-"enabling or disabling Java applets on pages sent by these domains or hosts.</"
-"p><p>Select a policy and use the controls on the right to modify it.</p>"
-msgstr ""
-"<p>Bu kutu Java politikası belirlediğiniz etki alanlarını ve makineleri "
-"içerir. Bu politika bu alan adı ve makinelerden gönderilen sayfalardaki "
-"Javaları çalıştırıp çalıştırmamada öntanımlı politika yerine kullanılacaktır."
-"</p><p>Bir politika seçin ve sağdaki denetimleri kullanarak düzenleyin.</p>"
-
-#: javaopts.cpp:142
-#, kde-format
-msgid ""
-"Click this button to choose the file that contains the Java policies. These "
-"policies will be merged with the existing ones. Duplicate entries are "
-"ignored."
-msgstr ""
-"Java politikalarını içeren dosyayı seçmek için bu düğmeye tıklayın. Bu "
-"politikalar var olanlar ile birleştirilecektir. Yinelenen girdiler yok "
-"sayılacaktır."
-
-#: javaopts.cpp:145
-#, kde-format
-msgid ""
-"Click this button to save the Java policy to a zipped file. The file, named "
-"<b>java_policy.tgz</b>, will be saved to a location of your choice."
-msgstr ""
-"Java politikasını ziplenmiş bir dosyaya kaydetmek için bu düğmeye tıklayın. "
-"<b>java_policy.tgz</b> adındaki dosya seçtiğiniz konuma kaydedilecektir."
-
-#: javaopts.cpp:149
-#, kde-format
-msgid ""
-"Here you can set specific Java policies for any particular host or domain. "
-"To add a new policy, simply click the <i>New...</i> button and supply the "
-"necessary information requested by the dialog box. To change an existing "
-"policy, click on the <i>Change...</i> button and choose the new policy from "
-"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
-"selected policy, causing the default policy setting to be used for that "
-"domain."
-msgstr ""
-"Buradan belirli makineler veya alan adları için özel Java politikaları "
-"tanımlayabilirsiniz. Yeni bir politika eklemek için, <i>Ekle…</i> düğmesine "
-"basıp gerekli bilgileri çıkan iletişim kutusuna girin. Var olan bir "
-"politikayı değiştirmek için <i>Değiştir…</i> düğmesine basın ve iletişim "
-"kutusundan kutusundan yeni politikayı seçin. <i>Sil</i> düğmesine basmak "
-"seçili politikanın silinmesini ve o alan adı için öntanımlı politikanın "
-"kullanılmasını sağlar."
-
-#: javaopts.cpp:162
-#, kde-format
-msgid ""
-"Enabling the security manager will cause the jvm to run with a Security "
-"Manager in place. This will keep applets from being able to read and write "
-"to your file system, creating arbitrary sockets, and other actions which "
-"could be used to compromise your system. Disable this option at your own "
-"risk. You can modify your $HOME/.java.policy file with the Java policytool "
-"utility to give code downloaded from certain sites more permissions."
-msgstr ""
-"Güvenlik yöneticisinin etkinleştirilmesi, jvm programının Güvenlik "
-"Yöneticisi ile birlikte çalışmasına imkan verir. Bu işlem, programcıkların "
-"sistemdeki dosyalara yazması ve bu dosyaları okumasını engeller. Bu seçeneği "
-"kapatmadan önce iki kez düşünmenizi öneririz. Ayrıca $HOME/.java.policy "
-"dosyasını Java policytool aracı kullanarak düzenleyebilir ve bazı sitelere "
-"daha fazla izin verilmesini sağlayabilirsiniz."
-
-#: javaopts.cpp:170
-#, kde-format
-msgid "Enabling this will cause the jvm to use KIO for network transport "
-msgstr "Etkinleştirmek, jvm’nin ağ trafiğinde KIO’yu kullanmasına neden olur "
-
-#: javaopts.cpp:172
-#, kde-format
-msgid ""
-"Enter the path to the java executable. If you want to use the jre in your "
-"path, simply leave it as 'java'. If you need to use a different jre, enter "
-"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
-"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
-msgstr ""
-"Buraya Java yürütülebilirinin yolunu girin. Eğer klasik JRE kullanacaksanız "
-"buraya yalnızca ‘java’ yazın. Eğer farklı bir JRE kullanacaksanız Java "
-"çalıştırıcısının tam yolunu (örn, ‘/usr/lib/jdk/bin/java’) veya ‘bin/"
-"java’nın bulunduğu dizine ait tam yolunu (örn. ‘/opt/IBMJava2-13’) girin."
-
-#: javaopts.cpp:177
-#, kde-format
-msgid ""
-"If you want special arguments to be passed to the virtual machine, enter "
-"them here."
-msgstr ""
-"Eğer sanal makineye geçirmek istediğinizi fazladan parametreleriniz varsa "
-"onları buraya girin."
-
-#: javaopts.cpp:179
-#, kde-format
-msgid ""
-"When all the applets have been destroyed, the applet server should shut "
-"down. However, starting the jvm takes a lot of time. If you would like to "
-"keep the java process running while you are browsing, you can set the "
-"timeout value to whatever you like. To keep the java process running for the "
-"whole time that the konqueror process is, leave the Shutdown Applet Server "
-"checkbox unchecked."
-msgstr ""
-"Tüm Java programcıkları yok olduklarında, programcık sunucusu kapanacaktır. "
-"Ancak, jvm’nin yeniden başlatılması belli bir süre ister. Eğer İnternet’te "
-"gezinirken çalışan Java programlarını korumak isterseniz gecikme süresini "
-"istediğiniz bir değere ayarlayabilirsiniz. Eğer Konqueror’un o anki çalışan "
-"süreçleri sonlandırmamasını istiyorsanız etkin değilken Uygulamacık "
-"Sunucusunu Kapat seçeneğini işaretsiz bırakın."
-
-#: javaopts.cpp:288
-#, kde-format
-msgctxt "@title:group"
-msgid "Doma&in-Specific"
-msgstr "&Alan Adına Özel"
-
-#: javaopts.cpp:323
-#, kde-format
-msgctxt "@title:window"
-msgid "New Java Policy"
-msgstr "Yeni Java Politikası"
-
-#: javaopts.cpp:326
-#, kde-format
-msgctxt "@title:window"
-msgid "Change Java Policy"
-msgstr "Java Politikasını Değiştir"
-
-#: javaopts.cpp:330
-#, kde-format
-msgid "&Java policy:"
-msgstr "&Java politikası:"
-
-#: javaopts.cpp:331
-#, kde-format
-msgid "Select a Java policy for the above host or domain."
-msgstr "Yukarıdaki makine veya alan adı için bir Java politikası seçin."
-
-#: jsopts.cpp:50
+#: jsopts.cpp:57
 #, kde-format
 msgid "Ena&ble JavaScript globally"
 msgstr "Java&Script’i global olarak etkinleştir"
 
-#: jsopts.cpp:51
+#: jsopts.cpp:58
 #, kde-format
 msgid ""
 "Enables the execution of scripts written in ECMA-Script (also known as "
@@ -2077,35 +1901,7 @@ msgstr ""
 "Unutmayın, her tarayıcıda olduğu gibi, betik dillerinin etkin kılınması "
 "güvenlik sorununa yol açabilir."
 
-#: jsopts.cpp:59
-#, kde-format
-msgid "Debugging"
-msgstr "Hata Ayıklama"
-
-#: jsopts.cpp:63
-#, kde-format
-msgid "Enable debu&gger"
-msgstr "&Hata ayıklayıcısını etkinleştir"
-
-#: jsopts.cpp:64
-#, kde-format
-msgid "Enables builtin JavaScript debugger."
-msgstr "JavaScript hata ayıklayıcı programını etkinleştirir."
-
-#: jsopts.cpp:68
-#, kde-format
-msgid "Report &errors"
-msgstr "&Hataları raporla"
-
-#: jsopts.cpp:69
-#, kde-format
-msgid ""
-"Enables the reporting of errors that occur when JavaScript code is executed."
-msgstr ""
-"JavaScript kodu yürütüldüğünde meydana gelen hataları raporlamayı "
-"etkinleştirir."
-
-#: jsopts.cpp:79
+#: jsopts.cpp:70
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2128,7 +1924,7 @@ msgstr ""
 "yardımıyla sıkıştırılmış dosyalarda saklayarak ve alarak diğer kişiler ile "
 "paylaşmanızı sağlar."
 
-#: jsopts.cpp:89
+#: jsopts.cpp:80
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2143,7 +1939,7 @@ msgstr ""
 "yerine kullanılacaktır.</p><p>Bir politika seçin ve sağdaki denetimleri "
 "kullanarak onu düzenleyin.</p>"
 
-#: jsopts.cpp:96
+#: jsopts.cpp:87
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2154,7 +1950,7 @@ msgstr ""
 "politikalar var olanlar ile birleştirilecektir. Yinelenen girdiler yok "
 "sayılacaktır."
 
-#: jsopts.cpp:99
+#: jsopts.cpp:90
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2165,93 +1961,60 @@ msgstr ""
 "tıklayın. <b>javascript_policy.tgz</b> adındaki dosya seçtiğiniz konuma "
 "kaydedilecektir."
 
-#: jsopts.cpp:105
+#: jsopts.cpp:96
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "Genel JavaScript Politikaları"
 
-#: jsopts.cpp:172
-#, kde-format
-msgctxt "@title:group"
-msgid "Do&main-Specific"
-msgstr "Ala&n Adına Özel"
-
-#: jsopts.cpp:211
-#, kde-format
-msgctxt "@title:window"
-msgid "New JavaScript Policy"
-msgstr "Yeni JavaScript Politikası"
-
-#: jsopts.cpp:214
-#, kde-format
-msgctxt "@title:window"
-msgid "Change JavaScript Policy"
-msgstr "JavaScript Politikasını Değiştir"
-
-#: jsopts.cpp:218
-#, kde-format
-msgid "JavaScript policy:"
-msgstr "JavaScript politikası:"
-
-#: jsopts.cpp:219
-#, kde-format
-msgid "Select a JavaScript policy for the above host or domain."
-msgstr "Yukarıdaki makine veya alan adı için bir JavaScript politikası seçin."
-
-#: jsopts.cpp:221
-#, kde-format
-msgid "Domain-Specific JavaScript Policies"
-msgstr "Alan Adına Özel JavaScript Politikaları"
-
-#: jspolicies.cpp:132
+#: jspolicies.cpp:161
 #, kde-format
 msgid "Open new windows:"
 msgstr "Yeni pencereleri aç:"
 
-#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
-#: jspolicies.cpp:308
+#: jspolicies.cpp:169 jspolicies.cpp:223 jspolicies.cpp:260 jspolicies.cpp:297
+#: jspolicies.cpp:337
 #, kde-format
 msgid "Use global"
 msgstr "Genel kullan"
 
-#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
-#: jspolicies.cpp:309
+#: jspolicies.cpp:170 jspolicies.cpp:224 jspolicies.cpp:261 jspolicies.cpp:298
+#: jspolicies.cpp:338
 #, kde-format
 msgid "Use setting from global policy."
 msgstr "Genel politikalarda bulunan ayarları kullan."
 
-#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
-#: jspolicies.cpp:315
+#: jspolicies.cpp:176 jspolicies.cpp:230 jspolicies.cpp:267 jspolicies.cpp:304
+#: jspolicies.cpp:344
 #, kde-format
 msgid "Allow"
 msgstr "İzin ver"
 
-#: jspolicies.cpp:148
+#: jspolicies.cpp:177
 #, kde-format
 msgid "Accept all popup window requests."
 msgstr "Tüm popup pencere isteklerini kabul et."
 
-#: jspolicies.cpp:154
+#: jspolicies.cpp:183
 #, kde-format
 msgid "Prompt every time a popup window is requested."
 msgstr "Açılan her pencere için onay iste."
 
-#: jspolicies.cpp:159
+#: jspolicies.cpp:188
 #, kde-format
 msgid "Deny"
 msgstr "Yasakla"
 
-#: jspolicies.cpp:160
+#: jspolicies.cpp:189
 #, kde-format
 msgid "Reject all popup window requests."
 msgstr "Tüm açılan pencere isteklerini reddet."
 
-#: jspolicies.cpp:165
+#: jspolicies.cpp:194
 #, kde-format
 msgid "Smart"
 msgstr "Akıllı"
 
-#: jspolicies.cpp:166
+#: jspolicies.cpp:195
 #, kde-format
 msgid ""
 "Accept popup window requests only when links are activated through an "
@@ -2260,7 +2023,7 @@ msgstr ""
 "Yalnızca fare tarafından tıklandığında veya klavye işlemi yapıldığında "
 "açılan popup pencerelerine izin ver."
 
-#: jspolicies.cpp:173
+#: jspolicies.cpp:202
 #, kde-format
 msgid ""
 "If you disable this, Konqueror will stop interpreting the <i>window.open()</"
@@ -2276,22 +2039,22 @@ msgstr ""
 "bazen de normal amaçlar için <i>window.open()</i> komutu kullanılan "
 "sitelerde sorunlara neden olur. Bu nedenle kullanırken dikkatli olunmalıdır."
 
-#: jspolicies.cpp:187
+#: jspolicies.cpp:216
 #, kde-format
 msgid "Resize window:"
 msgstr "Pencereyi yeniden boyutlandır:"
 
-#: jspolicies.cpp:202
+#: jspolicies.cpp:231
 #, kde-format
 msgid "Allow scripts to change the window size."
 msgstr "Betiklerin pencere boyutunu düzenlemesine izin ver."
 
-#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#: jspolicies.cpp:236 jspolicies.cpp:273 jspolicies.cpp:310 jspolicies.cpp:350
 #, kde-format
 msgid "Ignore"
 msgstr "Yok Say"
 
-#: jspolicies.cpp:208
+#: jspolicies.cpp:237
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
@@ -2301,7 +2064,7 @@ msgstr ""
 "tarayıcının penceresinin değiştiğini düşünecek, ama aslında "
 "değiştiremeyecektir."
 
-#: jspolicies.cpp:215
+#: jspolicies.cpp:244
 #, kde-format
 msgid ""
 "Some websites change the window size on their own by using <i>window."
@@ -2312,17 +2075,17 @@ msgstr ""
 "resizeBy()</i> veya <i>window.resizeTo()</i> komutlarını kullanarak "
 "değiştirirler. Bu seçenek bu tür durumlarda nasıl davranılacağını belirler."
 
-#: jspolicies.cpp:224
+#: jspolicies.cpp:253
 #, kde-format
 msgid "Move window:"
 msgstr "Pencereyi taşı:"
 
-#: jspolicies.cpp:239
+#: jspolicies.cpp:268
 #, kde-format
 msgid "Allow scripts to change the window position."
 msgstr "Betiklerin pencere konumunu değiştirmesine izin ver."
 
-#: jspolicies.cpp:245
+#: jspolicies.cpp:274
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window position. The web page will "
@@ -2331,7 +2094,7 @@ msgstr ""
 "Pencere yerini değiştirmeye çalışan kodları yok say. Ağ sayfası pencerenin "
 "yerinin değiştiğini <i>düşünür</i>; ancak yeri değişmez."
 
-#: jspolicies.cpp:252
+#: jspolicies.cpp:281
 #, kde-format
 msgid ""
 "Some websites change the window position on their own by using <i>window."
@@ -2342,17 +2105,17 @@ msgstr ""
 "veya <i>window.moveTo()</i> komutlarını kullanarak değiştirirler. Bu seçenek "
 "bu tür durumlarda nasıl davranılacağını belirler."
 
-#: jspolicies.cpp:261
+#: jspolicies.cpp:290
 #, kde-format
 msgid "Focus window:"
 msgstr "Pencereyi odakla:"
 
-#: jspolicies.cpp:276
+#: jspolicies.cpp:305
 #, kde-format
 msgid "Allow scripts to focus the window."
 msgstr "Betiklerin pencereyi odaklamasına izin verir."
 
-#: jspolicies.cpp:282
+#: jspolicies.cpp:311
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to focus the window. The web page will <i>think</"
@@ -2363,7 +2126,7 @@ msgstr ""
 "pencerenin etkinleştiğini <i>düşünür</i>; ancak gerçekte pencere durumu "
 "değişmez."
 
-#: jspolicies.cpp:290
+#: jspolicies.cpp:319
 #, kde-format
 msgid ""
 "Some websites set the focus to their browser window on their own by using "
@@ -2376,17 +2139,17 @@ msgstr ""
 "Bu kullanıcı ne yapıyor olursa olsun pencerenin en öne gelmesine neden olur. "
 "Bu seçenek bu tür durumlarda nasıl davranılacağını belirler."
 
-#: jspolicies.cpp:301
+#: jspolicies.cpp:330
 #, kde-format
 msgid "Modify status bar text:"
 msgstr "Durum çubuğu metnini düzenle:"
 
-#: jspolicies.cpp:316
+#: jspolicies.cpp:345
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
 msgstr "Betiklerin durum çubuğundaki metni değiştirmesine izin ver."
 
-#: jspolicies.cpp:322
+#: jspolicies.cpp:351
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
@@ -2395,7 +2158,7 @@ msgstr ""
 "Durum çubuğu metnini değiştirmek isteyen kodları yok say. Ağ sayfası metnin "
 "değiştiğini <i>düşünür</i>; ancak gerçekte metin değişmez."
 
-#: jspolicies.cpp:330
+#: jspolicies.cpp:359
 #, kde-format
 msgid ""
 "Some websites change the status bar text by setting <i>window.status</i> or "
@@ -2406,16 +2169,6 @@ msgstr ""
 "defaultStatus</i> kodları ile değiştirirler, bu bazı durumlarda gerçek köprü "
 "veya URL’lerin görüntülenmesine engel olur. Bu seçenek bu tür durumlarda "
 "nasıl davranılacağını belirler."
-
-#: main.cpp:49
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
-
-#: main.cpp:53
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
 
 #: policydlg.cpp:30
 #, kde-format
@@ -2689,9 +2442,8 @@ msgstr "Var olan tanımlamalar"
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150 useragent/useragent.ui:163
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr "<html><head/><body><p><br/></p></body></html>"
@@ -2732,6 +2484,19 @@ msgstr "&Sil"
 msgid "Choose &selected identification"
 msgstr "&Seçili tanımlamayı seç"
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:163
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><head/><body><p>The custom background color to use for web pages</"
+#| "p></body></html>"
+msgid ""
+"<html><head/><body><p>If checked, disable choosing a custom identification "
+"and use the default one</p></body></html>"
+msgstr ""
+"<html><head/><body><p>Web sayfaları için kullanılacak özel arka plan rengi</"
+"p></body></html>"
+
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
@@ -2756,6 +2521,213 @@ msgstr ""
 "<html><head/><body><p>Öntanımlı tanımlama devre dışıyken kullanılacak "
 "tarayıcı tanımlaması.</p><p>Bunu elle girebilirsiniz veya aşağıdaki listeden "
 "başlayıp gereksinimlerinize göre değiştirebilirsiniz.</p></body></html>"
+
+#~ msgid "Form Com&pletion"
+#~ msgstr "Form &Tamamlama"
+
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "&Bağlantı üzerinde imleci değiştir"
+
+#~ msgid ""
+#~ "If this option is set, the shape of the cursor will change (usually to a "
+#~ "hand) if it is moved over a hyperlink."
+#~ msgstr ""
+#~ "Eğer bu seçenek seçilirse imlecin şekli (genelde bir el) bir köprü "
+#~ "üzerindeyken değişecektir."
+
+#~ msgid "Allow automatic delayed &reloading/redirecting"
+#~ msgstr "&Beklemeli otomatik yenileme ve yönlendirmelere izin ver"
+
+#~ msgid ""
+#~ "Some web pages request an automatic reload or redirection after a certain "
+#~ "period of time. By unchecking this box Konqueror will ignore these "
+#~ "requests."
+#~ msgstr ""
+#~ "Bazı web sayfaları belirli bir süreden sonra sayfaların otomatik olarak "
+#~ "yeniden yüklenmesini talep edebilir. Bu düğmenin tıklanmaması halinde "
+#~ "halinde Konqueror bu tür talepleri yok sayacaktır."
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "&Java’yı global olarak etkinleştir"
+
+#~ msgid "Java Runtime Settings"
+#~ msgstr "Java Çalıştırma Ayarları"
+
+#~ msgid "&Use security manager"
+#~ msgstr "&Güvenlik yöneticisi kullan"
+
+#~ msgid "Use &KIO"
+#~ msgstr "&KIO Kullan"
+
+#~ msgid "Shu&tdown applet server when inactive for more than"
+#~ msgstr ""
+#~ "&Bu süreden daha fazla etkin olmadığında uygulamacık sunucusunu kapat"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " saniye"
+#~ msgstr[1] " saniye"
+
+#~ msgid "&Path to Java executable, or 'java':"
+#~ msgstr "Java yürütülebilirinin &yolu veya ‘java’:"
+
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "Ek Java &parametreleri:"
+
+#~ msgid ""
+#~ "Enables the execution of scripts written in Java that can be contained in "
+#~ "HTML pages. Note that, as with any browser, enabling active contents can "
+#~ "be a security problem."
+#~ msgstr ""
+#~ "HTML sayfalarında yer alması olası Java’da yazılmış betiklerin "
+#~ "yürütülebilmesini sağlar. Unutmayın, her tarayıcıda olduğu gibi, betik "
+#~ "dillerinin etkin kılınması güvenlik sorununa yol açabilir."
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific Java "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling Java applets on pages sent by these domains or "
+#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
+#~ "it.</p>"
+#~ msgstr ""
+#~ "<p>Bu kutu Java politikası belirlediğiniz etki alanlarını ve makineleri "
+#~ "içerir. Bu politika bu alan adı ve makinelerden gönderilen sayfalardaki "
+#~ "Javaları çalıştırıp çalıştırmamada öntanımlı politika yerine "
+#~ "kullanılacaktır.</p><p>Bir politika seçin ve sağdaki denetimleri "
+#~ "kullanarak düzenleyin.</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the Java policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "Java politikalarını içeren dosyayı seçmek için bu düğmeye tıklayın. Bu "
+#~ "politikalar var olanlar ile birleştirilecektir. Yinelenen girdiler yok "
+#~ "sayılacaktır."
+
+#~ msgid ""
+#~ "Click this button to save the Java policy to a zipped file. The file, "
+#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
+#~ msgstr ""
+#~ "Java politikasını ziplenmiş bir dosyaya kaydetmek için bu düğmeye "
+#~ "tıklayın. <b>java_policy.tgz</b> adındaki dosya seçtiğiniz konuma "
+#~ "kaydedilecektir."
+
+#~ msgid ""
+#~ "Here you can set specific Java policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy, causing the default policy "
+#~ "setting to be used for that domain."
+#~ msgstr ""
+#~ "Buradan belirli makineler veya alan adları için özel Java politikaları "
+#~ "tanımlayabilirsiniz. Yeni bir politika eklemek için, <i>Ekle…</i> "
+#~ "düğmesine basıp gerekli bilgileri çıkan iletişim kutusuna girin. Var olan "
+#~ "bir politikayı değiştirmek için <i>Değiştir…</i> düğmesine basın ve "
+#~ "iletişim kutusundan kutusundan yeni politikayı seçin. <i>Sil</i> "
+#~ "düğmesine basmak seçili politikanın silinmesini ve o alan adı için "
+#~ "öntanımlı politikanın kullanılmasını sağlar."
+
+#~ msgid ""
+#~ "Enabling the security manager will cause the jvm to run with a Security "
+#~ "Manager in place. This will keep applets from being able to read and "
+#~ "write to your file system, creating arbitrary sockets, and other actions "
+#~ "which could be used to compromise your system. Disable this option at "
+#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
+#~ "policytool utility to give code downloaded from certain sites more "
+#~ "permissions."
+#~ msgstr ""
+#~ "Güvenlik yöneticisinin etkinleştirilmesi, jvm programının Güvenlik "
+#~ "Yöneticisi ile birlikte çalışmasına imkan verir. Bu işlem, "
+#~ "programcıkların sistemdeki dosyalara yazması ve bu dosyaları okumasını "
+#~ "engeller. Bu seçeneği kapatmadan önce iki kez düşünmenizi öneririz. "
+#~ "Ayrıca $HOME/.java.policy dosyasını Java policytool aracı kullanarak "
+#~ "düzenleyebilir ve bazı sitelere daha fazla izin verilmesini "
+#~ "sağlayabilirsiniz."
+
+#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
+#~ msgstr ""
+#~ "Etkinleştirmek, jvm’nin ağ trafiğinde KIO’yu kullanmasına neden olur "
+
+#~ msgid ""
+#~ "Enter the path to the java executable. If you want to use the jre in your "
+#~ "path, simply leave it as 'java'. If you need to use a different jre, "
+#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
+#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
+#~ "IBMJava2-13)."
+#~ msgstr ""
+#~ "Buraya Java yürütülebilirinin yolunu girin. Eğer klasik JRE "
+#~ "kullanacaksanız buraya yalnızca ‘java’ yazın. Eğer farklı bir JRE "
+#~ "kullanacaksanız Java çalıştırıcısının tam yolunu (örn, ‘/usr/lib/jdk/bin/"
+#~ "java’) veya ‘bin/java’nın bulunduğu dizine ait tam yolunu (örn. ‘/opt/"
+#~ "IBMJava2-13’) girin."
+
+#~ msgid ""
+#~ "If you want special arguments to be passed to the virtual machine, enter "
+#~ "them here."
+#~ msgstr ""
+#~ "Eğer sanal makineye geçirmek istediğinizi fazladan parametreleriniz varsa "
+#~ "onları buraya girin."
+
+#~ msgid ""
+#~ "When all the applets have been destroyed, the applet server should shut "
+#~ "down. However, starting the jvm takes a lot of time. If you would like to "
+#~ "keep the java process running while you are browsing, you can set the "
+#~ "timeout value to whatever you like. To keep the java process running for "
+#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
+#~ "Server checkbox unchecked."
+#~ msgstr ""
+#~ "Tüm Java programcıkları yok olduklarında, programcık sunucusu "
+#~ "kapanacaktır. Ancak, jvm’nin yeniden başlatılması belli bir süre ister. "
+#~ "Eğer İnternet’te gezinirken çalışan Java programlarını korumak isterseniz "
+#~ "gecikme süresini istediğiniz bir değere ayarlayabilirsiniz. Eğer "
+#~ "Konqueror’un o anki çalışan süreçleri sonlandırmamasını istiyorsanız "
+#~ "etkin değilken Uygulamacık Sunucusunu Kapat seçeneğini işaretsiz bırakın."
+
+#~ msgctxt "@title:group"
+#~ msgid "Doma&in-Specific"
+#~ msgstr "&Alan Adına Özel"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Java Policy"
+#~ msgstr "Yeni Java Politikası"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Java Policy"
+#~ msgstr "Java Politikasını Değiştir"
+
+#~ msgid "&Java policy:"
+#~ msgstr "&Java politikası:"
+
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr "Yukarıdaki makine veya alan adı için bir Java politikası seçin."
+
+#~ msgid "Debugging"
+#~ msgstr "Hata Ayıklama"
+
+#~ msgid "Enable debu&gger"
+#~ msgstr "&Hata ayıklayıcısını etkinleştir"
+
+#~ msgid "Enables builtin JavaScript debugger."
+#~ msgstr "JavaScript hata ayıklayıcı programını etkinleştirir."
+
+#~ msgid "Report &errors"
+#~ msgstr "&Hataları raporla"
+
+#~ msgid ""
+#~ "Enables the reporting of errors that occur when JavaScript code is "
+#~ "executed."
+#~ msgstr ""
+#~ "JavaScript kodu yürütüldüğünde meydana gelen hataları raporlamayı "
+#~ "etkinleştirir."
+
+#~ msgid "&Java"
+#~ msgstr "&Java"
+
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
 #~ msgid ""
 #~ "This will open a new tab in the background, instead of in the foreground."
