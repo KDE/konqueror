@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:38+0000\n"
+"POT-Creation-Date: 2024-07-25 00:39+0000\n"
 "PO-Revision-Date: 2024-04-26 16:45+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -123,7 +123,7 @@ msgstr ""
 msgid "A&nimations:"
 msgstr "А&німації:"
 
-#: appearance.cpp:85 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:108
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
@@ -705,21 +705,21 @@ msgid "Domain"
 msgstr "Домен"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
-#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
+#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
 #, kde-format
 msgid "Policy"
 msgstr "Правило"
 
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
-#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:45
+#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
 #: useragent/useragent.ui:84
 #, kde-format
 msgid "&New..."
 msgstr "С&творити..."
 
 #. i18n: ectx: property (text), widget (QPushButton, pbChange)
-#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:49
+#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:52
 #, kde-format
 msgid "Chan&ge..."
 msgstr "Зм&інити..."
@@ -787,7 +787,7 @@ msgid "Policy:"
 msgstr "Правила:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
+#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:192
 #: policydlg.cpp:63
 #, kde-format
 msgid "Accept"
@@ -800,14 +800,14 @@ msgid "Accept until end of session"
 msgstr "Приймати до завершення сеансу"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
+#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:194
 #: policydlg.cpp:63
 #, kde-format
 msgid "Reject"
 msgstr "Відкинути"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:153
+#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:182
 #, kde-format
 msgid "Ask"
 msgstr "Запитувати"
@@ -1368,33 +1368,39 @@ msgstr ""
 "</body>\n"
 "</html>\n"
 
-#: domainlistview.cpp:37
+#: domainlistview.cpp:33
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "За&лежно від домену"
+
+#: domainlistview.cpp:40
 #, kde-format
 msgid "Host/Domain"
 msgstr "Вузол/домен"
 
-#: domainlistview.cpp:53
+#: domainlistview.cpp:56
 #, kde-format
 msgid "De&lete"
 msgstr "Ви&лучити"
 
-#: domainlistview.cpp:57
+#: domainlistview.cpp:60
 #, kde-format
 msgid "&Import..."
 msgstr "&Імпортувати..."
 
-#: domainlistview.cpp:63
+#: domainlistview.cpp:66
 #, kde-format
 msgid "&Export..."
 msgstr "&Експортувати..."
 
-#: domainlistview.cpp:71
+#: domainlistview.cpp:74
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr ""
 "Натисніть цю кнопку, щоб додати правило для певного домену або вузла вручну."
 
-#: domainlistview.cpp:73
+#: domainlistview.cpp:76
 #, kde-format
 msgid ""
 "Click on this button to change the policy for the host or domain selected in "
@@ -1403,7 +1409,7 @@ msgstr ""
 "Натисніть цю кнопку, щоб змінити правило для домену або вузла, позначеного у "
 "списку."
 
-#: domainlistview.cpp:75
+#: domainlistview.cpp:78
 #, kde-format
 msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
@@ -1412,20 +1418,48 @@ msgstr ""
 "Натисніть цю кнопку, щоб вилучити правило для домену або вузла, позначеного "
 "у списку."
 
-#: domainlistview.cpp:122
+#: domainlistview.cpp:125
 #, kde-format
 msgid "You must first select a policy to be changed."
 msgstr "Спочатку виберіть правило, яке слід змінити."
 
-#: domainlistview.cpp:149
+#: domainlistview.cpp:152
 #, kde-format
 msgid "You must first select a policy to delete."
 msgstr "Спочатку виберіть правило, яке слід вилучити."
 
-#: domainlistview.cpp:187 policydlg.cpp:63
+#: domainlistview.cpp:190 policydlg.cpp:63
 #, kde-format
 msgid "Use Global"
 msgstr "Використовувати на загальному рівні"
+
+#: domainlistview.cpp:232
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "Нове правило для JavaScript"
+
+#: domainlistview.cpp:235
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "Зміна правила для JavaScript"
+
+#: domainlistview.cpp:239
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "Правило для JavaScript:"
+
+#: domainlistview.cpp:240
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr ""
+"Виберіть правило для JavaScript для вузла або домену, який наведено вище."
+
+#: domainlistview.cpp:242
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "Правила JavaScript для доменів"
 
 #: filteropts.cpp:48
 #, kde-format
@@ -1600,7 +1634,7 @@ msgstr "Назва"
 msgid "URL"
 msgstr "Адреса"
 
-#: generalopts.cpp:56
+#: generalopts.cpp:54
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1608,59 +1642,59 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr "Будь ласка, вкажіть нетипову початкову сторінку"
 
-#: generalopts.cpp:62
+#: generalopts.cpp:60
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr "При створенні в&кладки"
 
-#: generalopts.cpp:71
+#: generalopts.cpp:69
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "Показувати вступну сторінку"
 
-#: generalopts.cpp:72
+#: generalopts.cpp:70
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "Показувати початкову сторінку"
 
-#: generalopts.cpp:73
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "Показувати порожню сторінку"
 
-#: generalopts.cpp:74
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "Показувати мої закладки"
 
-#: generalopts.cpp:80
+#: generalopts.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "Вибір початкової сторінки"
 
-#: generalopts.cpp:85
+#: generalopts.cpp:83
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr "Це адреса сторінки, яку Konqueror показуватиме одразу після запуску."
 
-#: generalopts.cpp:96
+#: generalopts.cpp:94
 #, kde-format
 msgid "Home page:"
 msgstr "Домашня сторінка:"
 
-#: generalopts.cpp:99
+#: generalopts.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "Вибір домашньої сторінки"
 
-#: generalopts.cpp:104
+#: generalopts.cpp:102
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
@@ -1669,42 +1703,42 @@ msgstr ""
 "Це адреса URL сторінки мережі, до якої перейде Konqueror, якщо ви натиснете "
 "кнопку «Домівка»."
 
-#: generalopts.cpp:112
+#: generalopts.cpp:110
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "Типовий рушій перегляду інтернету:"
 
-#: generalopts.cpp:121
+#: generalopts.cpp:119
 #, kde-format
 msgid "When splitting a view"
 msgstr "При поділі панелі перегляду"
 
-#: generalopts.cpp:125
+#: generalopts.cpp:123
 #, kde-format
 msgid "Always duplicate current view"
 msgstr "Завжди дублювати поточну панель перегляду"
 
-#: generalopts.cpp:126
+#: generalopts.cpp:124
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "Дублювати поточну панель перегляду лише для локальних файлів"
 
-#: generalopts.cpp:132
+#: generalopts.cpp:130
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr "При запуску відновлювати стан останнього запуску"
 
-#: htmlopts.cpp:35
+#: htmlopts.cpp:39
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "&Закладки"
 
-#: htmlopts.cpp:38
+#: htmlopts.cpp:42
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "Питати назву та теку при додаванні закладок"
 
-#: htmlopts.cpp:41
+#: htmlopts.cpp:45
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1714,12 +1748,12 @@ msgstr ""
 "Якщо буде позначено, при додаванні закладки Konqueror надасть вам змогу "
 "змінити заголовок закладки та вибрати теку, у якій закладку буде збережено."
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:51
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "Показувати тільки позначені закладки в пеналі закладок"
 
-#: htmlopts.cpp:49
+#: htmlopts.cpp:53
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1728,12 +1762,10 @@ msgstr ""
 "Якщо буде позначено, на панелі закладок Konqueror буде показувати тільки ті "
 "закладки, які було позначено в редакторі закладок для показу на панелі."
 
-#: htmlopts.cpp:56
-#, kde-format
-msgid "Form Com&pletion"
-msgstr "З&аповнення бланків"
-
-#: htmlopts.cpp:60
+#. i18n("Form Com&pletion"), widget());
+#. m_pFormCompletionCheckBox->setCheckable(true);
+#. QFormLayout *laygroup2 = new QFormLayout(m_pFormCompletionCheckBox);
+#: htmlopts.cpp:67
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1743,12 +1775,12 @@ msgstr ""
 "вводите у бланках інтернету, та пропонувати їх вам у схожих полях інших "
 "бланків."
 
-#: htmlopts.cpp:66
+#: htmlopts.cpp:74
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "&Максимальне заповнення:"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:76
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
@@ -1756,31 +1788,17 @@ msgstr ""
 "Тут ви можете вибрати, скільки значень Konqueror буде запам'ятовувати для "
 "полів бланків."
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:87
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "Поведінка &мишки"
 
-#: htmlopts.cpp:78
-#, kde-format
-msgid "Chan&ge cursor over links"
-msgstr "Зм&інювати курсор над посиланнями"
-
-#: htmlopts.cpp:80
-#, kde-format
-msgid ""
-"If this option is set, the shape of the cursor will change (usually to a "
-"hand) if it is moved over a hyperlink."
-msgstr ""
-"Якщо позначено цей пункт, форма курсора буде змінюватися (зазвичай, на форму "
-"руки), коли вказівник миші проходитиме над гіперпосиланням."
-
-#: htmlopts.cpp:84
+#: htmlopts.cpp:90
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "Клацання &середньою кнопкою відкриває адресу, що у виборі"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:93
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
@@ -1789,12 +1807,12 @@ msgstr ""
 "Якщо буде позначено, можна буде відкрити адресу, що у виборі, клацанням "
 "середньої кнопки мишки на панелі перегляду Konqueror."
 
-#: htmlopts.cpp:91
+#: htmlopts.cpp:97
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "Клацання правою кнопкою &повертає до попередньої"
 
-#: htmlopts.cpp:94
+#: htmlopts.cpp:100
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1805,27 +1823,12 @@ msgstr ""
 "клацанням правою кнопкою миші на перегляді Konqueror. Щоб отримати доступ до "
 "контекстного меню, натисніть праву кнопку та пересуньте мишку."
 
-#: htmlopts.cpp:104
-#, kde-format
-msgid "Allow automatic delayed &reloading/redirecting"
-msgstr "Ввімкнути автоматичне &перезавантаження/переспрямовування"
-
-#: htmlopts.cpp:105
-#, kde-format
-msgid ""
-"Some web pages request an automatic reload or redirection after a certain "
-"period of time. By unchecking this box Konqueror will ignore these requests."
-msgstr ""
-"Деякі сторінки інтернету регулярно надсилають запити щодо автоматичного "
-"перезавантаження або переспрямовування. Якщо цей пункт не буде позначено, "
-"Konqueror буде ігноруватиме ці запити."
-
-#: htmlopts.cpp:111
+#: htmlopts.cpp:115
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "Увімкнути активацію клаві&ш доступності при натисканні Ctrl"
 
-#: htmlopts.cpp:112
+#: htmlopts.cpp:116
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1836,40 +1839,44 @@ msgstr ""
 "доступності. Вимикання цього параметра вимкне цю функціональність "
 "доступності. (Щоб зміни набули чинності, потрібно перезапустити Konqueror.)"
 
-#: htmlopts.cpp:116
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr ""
 "Повідомляти вебсайтам (за допомогою DNT), що ви не бажаєте, щоб за вами "
 "стежили"
 
-#: htmlopts.cpp:117
-#, kde-format
+#: htmlopts.cpp:122
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check this box if you want to inform a web site that you do not want your "
+#| "web browsing habits tracked."
 msgid ""
-"Check this box if you want to inform a web site that you do not want your "
-"web browsing habits tracked."
+"<p>Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
+"considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
 "Позначте цей пункт, якщо ви не бажаєте інформувати вебсайт про інші "
 "сторінки, які ви переглядали."
 
-#: htmlopts.cpp:121
+#: htmlopts.cpp:126
 #, kde-format
 msgid "Offer to save website passwords"
 msgstr "Пропонувати зберігати паролі до сайтів"
 
-#: htmlopts.cpp:122
+#: htmlopts.cpp:127
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr ""
 "Зніміть позначку з цього пункту, щоб програма не питала вас про те, чи слід "
 "зберігати паролі до сайтів"
 
-#: htmlopts.cpp:126
+#: htmlopts.cpp:131
 #, kde-format
 msgid "Display online PDF files using WebEngine"
 msgstr "Показувати файли PDF з інтернету за допомогою WebEngine"
 
-#: htmlopts.cpp:127
+#: htmlopts.cpp:132
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
@@ -1877,211 +1884,24 @@ msgstr ""
 "Зніміть позначку з цього пункту, якщо файли PDF з інтернету слід показувати "
 "за допомогою програми, яку визначено у Системних параметрах"
 
-#: javaopts.cpp:78
+#: htmlopts.cpp:136
 #, kde-format
-msgid "Enable Ja&va globally"
-msgstr "Д&озволити Java всюди"
+msgid "Always display files from web pages in a new tab"
+msgstr ""
 
-#: javaopts.cpp:93
-#, kde-format
-msgid "Java Runtime Settings"
-msgstr "Параметри виконання Java"
-
-#: javaopts.cpp:97
-#, kde-format
-msgid "&Use security manager"
-msgstr "&Використовувати менеджер безпеки"
-
-#: javaopts.cpp:101
-#, kde-format
-msgid "Use &KIO"
-msgstr "Використовувати &KIO"
-
-#: javaopts.cpp:105
-#, kde-format
-msgid "Shu&tdown applet server when inactive for more than"
-msgstr "Ви&микати сервер аплетів за відсутності запитів понад"
-
-#: javaopts.cpp:117
-#, kde-format
-msgid " second"
-msgid_plural " seconds"
-msgstr[0] " секунда"
-msgstr[1] " секунди"
-msgstr[2] " секунд"
-msgstr[3] " секунда"
-
-#: javaopts.cpp:123
-#, kde-format
-msgid "&Path to Java executable, or 'java':"
-msgstr "&Шлях до програми віртуальної машини java, або «java»:"
-
-#: javaopts.cpp:127
-#, kde-format
-msgid "Additional Java a&rguments:"
-msgstr "Додаткові а&ргументи для Java:"
-
-#: javaopts.cpp:132
+#: htmlopts.cpp:137
 #, kde-format
 msgid ""
-"Enables the execution of scripts written in Java that can be contained in "
-"HTML pages. Note that, as with any browser, enabling active contents can be "
-"a security problem."
+"<p>When showing in Konqueror files from links in web pages, always use a new "
+"tab"
 msgstr ""
-"Дозволяє виконання аплетів написаних мовою Java, що можуть міститися в "
-"сторінках HTML. Зауважте, що підтримку Java ще не повністю завершено. Також "
-"зауважте, що як і з будь-яким іншим навігатором сторінок Тенет, це може бути "
-"джерелом небезпеки."
 
-#: javaopts.cpp:135
-#, kde-format
-msgid ""
-"<p>This box contains the domains and hosts you have set a specific Java "
-"policy for. This policy will be used instead of the default policy for "
-"enabling or disabling Java applets on pages sent by these domains or hosts.</"
-"p><p>Select a policy and use the controls on the right to modify it.</p>"
-msgstr ""
-"<p>Цей список містить домени та вузли, для яких ви встановили правила Java. "
-"Це правило буде використано для визначення дозволу на виконання аплетів Java "
-"зі сторінок з цих доменів або вузлів. </p><p>Виберіть правило і "
-"використовуйте кнопки праворуч, щоб її змінити.</p>"
-
-#: javaopts.cpp:142
-#, kde-format
-msgid ""
-"Click this button to choose the file that contains the Java policies. These "
-"policies will be merged with the existing ones. Duplicate entries are "
-"ignored."
-msgstr ""
-"Натисніть цю кнопку, щоб вибрати файл, який містить правила для Java. Ці "
-"правила будуть об'єднані з існуючими. Подвійні записи ігноруються."
-
-#: javaopts.cpp:145
-#, kde-format
-msgid ""
-"Click this button to save the Java policy to a zipped file. The file, named "
-"<b>java_policy.tgz</b>, will be saved to a location of your choice."
-msgstr ""
-"Натисніть цю кнопку, щоб зберегти правила для Java у стиснутому файлі. Файл, "
-"за назвою <b>java_policy.tgz</b>, буде збережено до вказаної адреси."
-
-#: javaopts.cpp:149
-#, kde-format
-msgid ""
-"Here you can set specific Java policies for any particular host or domain. "
-"To add a new policy, simply click the <i>New...</i> button and supply the "
-"necessary information requested by the dialog box. To change an existing "
-"policy, click on the <i>Change...</i> button and choose the new policy from "
-"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
-"selected policy, causing the default policy setting to be used for that "
-"domain."
-msgstr ""
-"Тут ви можете встановити окремі правила Java для окремих машин та доменів. "
-"Щоб додати нове правило, просто натисніть кнопку <i>Створити...</i> та "
-"надайте потрібну інформацію за допомогою діалогового вікна. Щоб змінити "
-"існуюче правило, натисніть кнопку <i>Змінити...</i> та виберіть нове правило "
-"за допомогою діалогового вікна поведінки. Натискання кнопки <i>Вилучити</i> "
-"призведе до вилучення позначеного запису правила, після цього для домену "
-"буде встановлено типове правило."
-
-#: javaopts.cpp:162
-#, kde-format
-msgid ""
-"Enabling the security manager will cause the jvm to run with a Security "
-"Manager in place. This will keep applets from being able to read and write "
-"to your file system, creating arbitrary sockets, and other actions which "
-"could be used to compromise your system. Disable this option at your own "
-"risk. You can modify your $HOME/.java.policy file with the Java policytool "
-"utility to give code downloaded from certain sites more permissions."
-msgstr ""
-"Якщо ввімкнути керування безпекою, jvm буде працювати з цим керуванням. "
-"Керування безпекою запобігає запису та зчитуванню даних з вашої файлової "
-"системи аплетами, створенню довільних сокетів та іншим діям, які можуть "
-"завдати шкоди вашій системі. Ви можете зняти позначку з цього пункту, якщо "
-"вважаєте небезпеку мінімальною. Ви можете змінити також файл $HOME/.java."
-"policy за допомогою утиліти, щоб надати коду з окремих сайтів більше "
-"дозволів."
-
-#: javaopts.cpp:170
-#, kde-format
-msgid "Enabling this will cause the jvm to use KIO for network transport "
-msgstr ""
-"Позначення цього пункту змусить віртуальну java-машину використовувати "
-"підлеглі В/В для обміну даними мережею."
-
-#: javaopts.cpp:172
-#, kde-format
-msgid ""
-"Enter the path to the java executable. If you want to use the jre in your "
-"path, simply leave it as 'java'. If you need to use a different jre, enter "
-"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
-"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
-msgstr ""
-"Введіть шлях до програми java. Якщо ви хочете використовувати середовище "
-"jre, яке знаходиться у PATH, просто залиште «java». Якщо вам потрібне інше "
-"середовище jre, введіть або шлях до програми Java (наприклад /usr/lib/jdk/"
-"bin/java), або шлях до каталогу, які містить «bin/java» (наприклад /opt/"
-"IBMJava2-13)."
-
-#: javaopts.cpp:177
-#, kde-format
-msgid ""
-"If you want special arguments to be passed to the virtual machine, enter "
-"them here."
-msgstr ""
-"Якщо ви хочете, щоб віртуальній машині передавались якісь особливі "
-"параметри, введіть їх тут."
-
-#: javaopts.cpp:179
-#, kde-format
-msgid ""
-"When all the applets have been destroyed, the applet server should shut "
-"down. However, starting the jvm takes a lot of time. If you would like to "
-"keep the java process running while you are browsing, you can set the "
-"timeout value to whatever you like. To keep the java process running for the "
-"whole time that the konqueror process is, leave the Shutdown Applet Server "
-"checkbox unchecked."
-msgstr ""
-"Після закриття всіх аплетів сервер аплетів має завершити роботу. Однак, "
-"запуск jvm потребує багато часу. Якщо ви хочете залишити процес java "
-"працювати під час навігації інтернетом, ви можете встановити потрібне "
-"значення часу очікування. Щоб залишити процес java працювати протягом всього "
-"часу роботи konqueror, зніміть позначку з пункту «Вимикати сервер аплетів»."
-
-#: javaopts.cpp:288
-#, kde-format
-msgctxt "@title:group"
-msgid "Doma&in-Specific"
-msgstr "За&лежно від домену"
-
-#: javaopts.cpp:323
-#, kde-format
-msgctxt "@title:window"
-msgid "New Java Policy"
-msgstr "Нове правило для Java"
-
-#: javaopts.cpp:326
-#, kde-format
-msgctxt "@title:window"
-msgid "Change Java Policy"
-msgstr "Зміна правила для Java"
-
-#: javaopts.cpp:330
-#, kde-format
-msgid "&Java policy:"
-msgstr "&Правила для Java:"
-
-#: javaopts.cpp:331
-#, kde-format
-msgid "Select a Java policy for the above host or domain."
-msgstr "Виберіть правила Java для наведеної вище назви вузла або домену."
-
-#: jsopts.cpp:50
+#: jsopts.cpp:57
 #, kde-format
 msgid "Ena&ble JavaScript globally"
 msgstr "Дозволити Java&Script всюди"
 
-#: jsopts.cpp:51
+#: jsopts.cpp:58
 #, kde-format
 msgid ""
 "Enables the execution of scripts written in ECMA-Script (also known as "
@@ -2093,33 +1913,7 @@ msgstr ""
 "у випадку з будь-яким іншим навігатором інтернетом, вмикання JavaScript може "
 "призвести до проблем з безпекою."
 
-#: jsopts.cpp:59
-#, kde-format
-msgid "Debugging"
-msgstr "Налагоджування"
-
-#: jsopts.cpp:63
-#, kde-format
-msgid "Enable debu&gger"
-msgstr "Увімкнути знева&дник"
-
-#: jsopts.cpp:64
-#, kde-format
-msgid "Enables builtin JavaScript debugger."
-msgstr "Вмикає вбудований зневадник JavaScript."
-
-#: jsopts.cpp:68
-#, kde-format
-msgid "Report &errors"
-msgstr "Показувати &помилки"
-
-#: jsopts.cpp:69
-#, kde-format
-msgid ""
-"Enables the reporting of errors that occur when JavaScript code is executed."
-msgstr "Вмикає звітування про помилки у JavaScript коді при його виконанні."
-
-#: jsopts.cpp:79
+#: jsopts.cpp:70
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2142,7 +1936,7 @@ msgstr ""
 "спростять вам обмін правилами з іншими користувачами за допомогою стиснутих "
 "файлів."
 
-#: jsopts.cpp:89
+#: jsopts.cpp:80
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2156,7 +1950,7 @@ msgstr ""
 "виконання JavaScript зі сторінок присланих тими доменами або вузлами. </"
 "p><p>Виберіть правило і використовуйте кнопки праворуч, щоб його змінити.</p>"
 
-#: jsopts.cpp:96
+#: jsopts.cpp:87
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2166,7 +1960,7 @@ msgstr ""
 "Натисніть цю кнопку, щоб вибрати файл, який містить правила для JavaScript. "
 "Ці правила буде об'єднано з існуючими. Подвійні записи ігноруються."
 
-#: jsopts.cpp:99
+#: jsopts.cpp:90
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2177,94 +1971,60 @@ msgstr ""
 "Файл за назвою <b>javascript_policy.tgz</b> буде збережено за вказаною вами "
 "адресою."
 
-#: jsopts.cpp:105
+#: jsopts.cpp:96
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "Загальні правила для JavaScript"
 
-#: jsopts.cpp:172
-#, kde-format
-msgctxt "@title:group"
-msgid "Do&main-Specific"
-msgstr "За&лежно від домену"
-
-#: jsopts.cpp:211
-#, kde-format
-msgctxt "@title:window"
-msgid "New JavaScript Policy"
-msgstr "Нове правило для JavaScript"
-
-#: jsopts.cpp:214
-#, kde-format
-msgctxt "@title:window"
-msgid "Change JavaScript Policy"
-msgstr "Зміна правила для JavaScript"
-
-#: jsopts.cpp:218
-#, kde-format
-msgid "JavaScript policy:"
-msgstr "Правило для JavaScript:"
-
-#: jsopts.cpp:219
-#, kde-format
-msgid "Select a JavaScript policy for the above host or domain."
-msgstr ""
-"Виберіть правило для JavaScript для вузла або домену, який наведено вище."
-
-#: jsopts.cpp:221
-#, kde-format
-msgid "Domain-Specific JavaScript Policies"
-msgstr "Правила JavaScript для доменів"
-
-#: jspolicies.cpp:132
+#: jspolicies.cpp:161
 #, kde-format
 msgid "Open new windows:"
 msgstr "Відкриття нових вікон:"
 
-#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
-#: jspolicies.cpp:308
+#: jspolicies.cpp:169 jspolicies.cpp:223 jspolicies.cpp:260 jspolicies.cpp:297
+#: jspolicies.cpp:337
 #, kde-format
 msgid "Use global"
 msgstr "Використовувати загальні"
 
-#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
-#: jspolicies.cpp:309
+#: jspolicies.cpp:170 jspolicies.cpp:224 jspolicies.cpp:261 jspolicies.cpp:298
+#: jspolicies.cpp:338
 #, kde-format
 msgid "Use setting from global policy."
 msgstr "Використовувати параметри з загальних правил."
 
-#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
-#: jspolicies.cpp:315
+#: jspolicies.cpp:176 jspolicies.cpp:230 jspolicies.cpp:267 jspolicies.cpp:304
+#: jspolicies.cpp:344
 #, kde-format
 msgid "Allow"
 msgstr "Дозволити"
 
-#: jspolicies.cpp:148
+#: jspolicies.cpp:177
 #, kde-format
 msgid "Accept all popup window requests."
 msgstr "Дозволити всі запити на створення вигулькних вікон."
 
-#: jspolicies.cpp:154
+#: jspolicies.cpp:183
 #, kde-format
 msgid "Prompt every time a popup window is requested."
 msgstr "Запитувати перед показом кожного вигулькного вікна."
 
-#: jspolicies.cpp:159
+#: jspolicies.cpp:188
 #, kde-format
 msgid "Deny"
 msgstr "Відмовити"
 
-#: jspolicies.cpp:160
+#: jspolicies.cpp:189
 #, kde-format
 msgid "Reject all popup window requests."
 msgstr "Відмовити всім запитам на створення вигулькних вікон."
 
-#: jspolicies.cpp:165
+#: jspolicies.cpp:194
 #, kde-format
 msgid "Smart"
 msgstr "Кмітливо"
 
-#: jspolicies.cpp:166
+#: jspolicies.cpp:195
 #, kde-format
 msgid ""
 "Accept popup window requests only when links are activated through an "
@@ -2273,7 +2033,7 @@ msgstr ""
 "Створення вигулькних вікон буде дозволено, тільки якщо його викликано "
 "клацанням миші або клавіатури."
 
-#: jspolicies.cpp:173
+#: jspolicies.cpp:202
 #, kde-format
 msgid ""
 "If you disable this, Konqueror will stop interpreting the <i>window.open()</"
@@ -2289,22 +2049,22 @@ msgstr ""
 "поламати роботу деяких сайтів, які потребують <i>window.open()</i> для "
 "нормальної роботи. Використовуйте обережно."
 
-#: jspolicies.cpp:187
+#: jspolicies.cpp:216
 #, kde-format
 msgid "Resize window:"
 msgstr "Зміна розміру вікна:"
 
-#: jspolicies.cpp:202
+#: jspolicies.cpp:231
 #, kde-format
 msgid "Allow scripts to change the window size."
 msgstr "Дозволяти скриптам змінювати розмір вікна."
 
-#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#: jspolicies.cpp:236 jspolicies.cpp:273 jspolicies.cpp:310 jspolicies.cpp:350
 #, kde-format
 msgid "Ignore"
 msgstr "Ігнорувати"
 
-#: jspolicies.cpp:208
+#: jspolicies.cpp:237
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
@@ -2313,7 +2073,7 @@ msgstr ""
 "Ігнорувати спроби скриптів змінити розмір вікна. Програмі буде <i>здаватися</"
 "i>, що вона змінила розмір вікна, але само вікно не буде змінено."
 
-#: jspolicies.cpp:215
+#: jspolicies.cpp:244
 #, kde-format
 msgid ""
 "Some websites change the window size on their own by using <i>window."
@@ -2324,17 +2084,17 @@ msgstr ""
 "допомогою <i>window.resizeBy()</i> або <i>window.resizeTo()</i>. Цей "
 "параметр вказує, як обробляти такі спроби."
 
-#: jspolicies.cpp:224
+#: jspolicies.cpp:253
 #, kde-format
 msgid "Move window:"
 msgstr "Пересування вікна:"
 
-#: jspolicies.cpp:239
+#: jspolicies.cpp:268
 #, kde-format
 msgid "Allow scripts to change the window position."
 msgstr "Дозволяти скриптам змінювати позицію вікна."
 
-#: jspolicies.cpp:245
+#: jspolicies.cpp:274
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window position. The web page will "
@@ -2344,7 +2104,7 @@ msgstr ""
 "<i>здаватися</i>, що вона пересунула вікно, але розташування самого вікна не "
 "буде змінено."
 
-#: jspolicies.cpp:252
+#: jspolicies.cpp:281
 #, kde-format
 msgid ""
 "Some websites change the window position on their own by using <i>window."
@@ -2355,17 +2115,17 @@ msgstr ""
 "за допомогою <i>window.moveBy()</i> або <i>window.moveTo()</i>. Цей параметр "
 "вказує, як обробляти такі спроби."
 
-#: jspolicies.cpp:261
+#: jspolicies.cpp:290
 #, kde-format
 msgid "Focus window:"
 msgstr "Фокус вікна:"
 
-#: jspolicies.cpp:276
+#: jspolicies.cpp:305
 #, kde-format
 msgid "Allow scripts to focus the window."
 msgstr "Дозволяти скриптам змінювати фокус вікна."
 
-#: jspolicies.cpp:282
+#: jspolicies.cpp:311
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to focus the window. The web page will <i>think</"
@@ -2376,7 +2136,7 @@ msgstr ""
 "<i>здаватися</i>, що вона зробила вікно активним, але фокус самого вікна не "
 "буде змінено."
 
-#: jspolicies.cpp:290
+#: jspolicies.cpp:319
 #, kde-format
 msgid ""
 "Some websites set the focus to their browser window on their own by using "
@@ -2389,17 +2149,17 @@ msgstr ""
 "активним і припиняє виконання дії, яку користувач робив у цей час. Цей "
 "параметр вказує, як обробляти такі спроби."
 
-#: jspolicies.cpp:301
+#: jspolicies.cpp:330
 #, kde-format
 msgid "Modify status bar text:"
 msgstr "Зміна тексту смужки стану:"
 
-#: jspolicies.cpp:316
+#: jspolicies.cpp:345
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
 msgstr "Дозволяти скриптам змінювати текст смужки стану."
 
-#: jspolicies.cpp:322
+#: jspolicies.cpp:351
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
@@ -2409,7 +2169,7 @@ msgstr ""
 "<i>здаватися</i>, що вона змінили текст, але текст смужки стану не буде "
 "змінено."
 
-#: jspolicies.cpp:330
+#: jspolicies.cpp:359
 #, kde-format
 msgid ""
 "Some websites change the status bar text by setting <i>window.status</i> or "
@@ -2420,16 +2180,6 @@ msgstr ""
 "<i>window.status</i> або <i>window.defaultStatus</i>, це іноді перешкоджає "
 "показу справжніх адрес (URL) гіперпосилань. Цей параметр вказує, як "
 "обробляти такі спроби."
-
-#: main.cpp:49
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
-
-#: main.cpp:53
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
 
 #: policydlg.cpp:30
 #, kde-format
@@ -2705,9 +2455,8 @@ msgstr "Наявні ідентифікації"
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150 useragent/useragent.ui:163
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr "<html><head/><body><p><br/></p></body></html>"
@@ -2748,6 +2497,19 @@ msgstr "Ви&лучити"
 msgid "Choose &selected identification"
 msgstr "Вибрати &позначену ідентифікацію"
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:163
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><head/><body><p>The custom background color to use for web pages</"
+#| "p></body></html>"
+msgid ""
+"<html><head/><body><p>If checked, disable choosing a custom identification "
+"and use the default one</p></body></html>"
+msgstr ""
+"<html><head/><body><p>Нетиповий колір тла, яким слід скористатися для "
+"вебсторінок</p></body></html>"
+
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
@@ -2772,6 +2534,211 @@ msgstr ""
 "<html><head/><body><p>Ідентифікація навігатора, якщо типову ідентифікацію "
 "вимкнено.</p><p>Ви можете вказати її вручну або розпочати з якоїсь у списку "
 "і змінити її відповідно до ваших потреб.</p></body></html>"
+
+#~ msgid "Form Com&pletion"
+#~ msgstr "З&аповнення бланків"
+
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "Зм&інювати курсор над посиланнями"
+
+#~ msgid ""
+#~ "If this option is set, the shape of the cursor will change (usually to a "
+#~ "hand) if it is moved over a hyperlink."
+#~ msgstr ""
+#~ "Якщо позначено цей пункт, форма курсора буде змінюватися (зазвичай, на "
+#~ "форму руки), коли вказівник миші проходитиме над гіперпосиланням."
+
+#~ msgid "Allow automatic delayed &reloading/redirecting"
+#~ msgstr "Ввімкнути автоматичне &перезавантаження/переспрямовування"
+
+#~ msgid ""
+#~ "Some web pages request an automatic reload or redirection after a certain "
+#~ "period of time. By unchecking this box Konqueror will ignore these "
+#~ "requests."
+#~ msgstr ""
+#~ "Деякі сторінки інтернету регулярно надсилають запити щодо автоматичного "
+#~ "перезавантаження або переспрямовування. Якщо цей пункт не буде позначено, "
+#~ "Konqueror буде ігноруватиме ці запити."
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "Д&озволити Java всюди"
+
+#~ msgid "Java Runtime Settings"
+#~ msgstr "Параметри виконання Java"
+
+#~ msgid "&Use security manager"
+#~ msgstr "&Використовувати менеджер безпеки"
+
+#~ msgid "Use &KIO"
+#~ msgstr "Використовувати &KIO"
+
+#~ msgid "Shu&tdown applet server when inactive for more than"
+#~ msgstr "Ви&микати сервер аплетів за відсутності запитів понад"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " секунда"
+#~ msgstr[1] " секунди"
+#~ msgstr[2] " секунд"
+#~ msgstr[3] " секунда"
+
+#~ msgid "&Path to Java executable, or 'java':"
+#~ msgstr "&Шлях до програми віртуальної машини java, або «java»:"
+
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "Додаткові а&ргументи для Java:"
+
+#~ msgid ""
+#~ "Enables the execution of scripts written in Java that can be contained in "
+#~ "HTML pages. Note that, as with any browser, enabling active contents can "
+#~ "be a security problem."
+#~ msgstr ""
+#~ "Дозволяє виконання аплетів написаних мовою Java, що можуть міститися в "
+#~ "сторінках HTML. Зауважте, що підтримку Java ще не повністю завершено. "
+#~ "Також зауважте, що як і з будь-яким іншим навігатором сторінок Тенет, це "
+#~ "може бути джерелом небезпеки."
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific Java "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling Java applets on pages sent by these domains or "
+#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
+#~ "it.</p>"
+#~ msgstr ""
+#~ "<p>Цей список містить домени та вузли, для яких ви встановили правила "
+#~ "Java. Це правило буде використано для визначення дозволу на виконання "
+#~ "аплетів Java зі сторінок з цих доменів або вузлів. </p><p>Виберіть "
+#~ "правило і використовуйте кнопки праворуч, щоб її змінити.</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the Java policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "Натисніть цю кнопку, щоб вибрати файл, який містить правила для Java. Ці "
+#~ "правила будуть об'єднані з існуючими. Подвійні записи ігноруються."
+
+#~ msgid ""
+#~ "Click this button to save the Java policy to a zipped file. The file, "
+#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
+#~ msgstr ""
+#~ "Натисніть цю кнопку, щоб зберегти правила для Java у стиснутому файлі. "
+#~ "Файл, за назвою <b>java_policy.tgz</b>, буде збережено до вказаної адреси."
+
+#~ msgid ""
+#~ "Here you can set specific Java policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy, causing the default policy "
+#~ "setting to be used for that domain."
+#~ msgstr ""
+#~ "Тут ви можете встановити окремі правила Java для окремих машин та "
+#~ "доменів. Щоб додати нове правило, просто натисніть кнопку <i>Створити...</"
+#~ "i> та надайте потрібну інформацію за допомогою діалогового вікна. Щоб "
+#~ "змінити існуюче правило, натисніть кнопку <i>Змінити...</i> та виберіть "
+#~ "нове правило за допомогою діалогового вікна поведінки. Натискання кнопки "
+#~ "<i>Вилучити</i> призведе до вилучення позначеного запису правила, після "
+#~ "цього для домену буде встановлено типове правило."
+
+#~ msgid ""
+#~ "Enabling the security manager will cause the jvm to run with a Security "
+#~ "Manager in place. This will keep applets from being able to read and "
+#~ "write to your file system, creating arbitrary sockets, and other actions "
+#~ "which could be used to compromise your system. Disable this option at "
+#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
+#~ "policytool utility to give code downloaded from certain sites more "
+#~ "permissions."
+#~ msgstr ""
+#~ "Якщо ввімкнути керування безпекою, jvm буде працювати з цим керуванням. "
+#~ "Керування безпекою запобігає запису та зчитуванню даних з вашої файлової "
+#~ "системи аплетами, створенню довільних сокетів та іншим діям, які можуть "
+#~ "завдати шкоди вашій системі. Ви можете зняти позначку з цього пункту, "
+#~ "якщо вважаєте небезпеку мінімальною. Ви можете змінити також файл $HOME/."
+#~ "java.policy за допомогою утиліти, щоб надати коду з окремих сайтів більше "
+#~ "дозволів."
+
+#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
+#~ msgstr ""
+#~ "Позначення цього пункту змусить віртуальну java-машину використовувати "
+#~ "підлеглі В/В для обміну даними мережею."
+
+#~ msgid ""
+#~ "Enter the path to the java executable. If you want to use the jre in your "
+#~ "path, simply leave it as 'java'. If you need to use a different jre, "
+#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
+#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
+#~ "IBMJava2-13)."
+#~ msgstr ""
+#~ "Введіть шлях до програми java. Якщо ви хочете використовувати середовище "
+#~ "jre, яке знаходиться у PATH, просто залиште «java». Якщо вам потрібне "
+#~ "інше середовище jre, введіть або шлях до програми Java (наприклад /usr/"
+#~ "lib/jdk/bin/java), або шлях до каталогу, які містить «bin/"
+#~ "java» (наприклад /opt/IBMJava2-13)."
+
+#~ msgid ""
+#~ "If you want special arguments to be passed to the virtual machine, enter "
+#~ "them here."
+#~ msgstr ""
+#~ "Якщо ви хочете, щоб віртуальній машині передавались якісь особливі "
+#~ "параметри, введіть їх тут."
+
+#~ msgid ""
+#~ "When all the applets have been destroyed, the applet server should shut "
+#~ "down. However, starting the jvm takes a lot of time. If you would like to "
+#~ "keep the java process running while you are browsing, you can set the "
+#~ "timeout value to whatever you like. To keep the java process running for "
+#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
+#~ "Server checkbox unchecked."
+#~ msgstr ""
+#~ "Після закриття всіх аплетів сервер аплетів має завершити роботу. Однак, "
+#~ "запуск jvm потребує багато часу. Якщо ви хочете залишити процес java "
+#~ "працювати під час навігації інтернетом, ви можете встановити потрібне "
+#~ "значення часу очікування. Щоб залишити процес java працювати протягом "
+#~ "всього часу роботи konqueror, зніміть позначку з пункту «Вимикати сервер "
+#~ "аплетів»."
+
+#~ msgctxt "@title:group"
+#~ msgid "Doma&in-Specific"
+#~ msgstr "За&лежно від домену"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Java Policy"
+#~ msgstr "Нове правило для Java"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Java Policy"
+#~ msgstr "Зміна правила для Java"
+
+#~ msgid "&Java policy:"
+#~ msgstr "&Правила для Java:"
+
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr "Виберіть правила Java для наведеної вище назви вузла або домену."
+
+#~ msgid "Debugging"
+#~ msgstr "Налагоджування"
+
+#~ msgid "Enable debu&gger"
+#~ msgstr "Увімкнути знева&дник"
+
+#~ msgid "Enables builtin JavaScript debugger."
+#~ msgstr "Вмикає вбудований зневадник JavaScript."
+
+#~ msgid "Report &errors"
+#~ msgstr "Показувати &помилки"
+
+#~ msgid ""
+#~ "Enables the reporting of errors that occur when JavaScript code is "
+#~ "executed."
+#~ msgstr "Вмикає звітування про помилки у JavaScript коді при його виконанні."
+
+#~ msgid "&Java"
+#~ msgstr "&Java"
+
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
 #~ msgid ""
 #~ "This will open a new tab in the background, instead of in the foreground."

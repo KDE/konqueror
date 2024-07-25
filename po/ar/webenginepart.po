@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 00:39+0000\n"
+"POT-Creation-Date: 2024-07-25 00:39+0000\n"
 "PO-Revision-Date: 2012-01-19 13:25+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: Arabic <kde-i18n-doc@kde.org>\n"
@@ -589,7 +589,7 @@ msgstr "الحلول المحتملة:"
 msgid "Error: %1"
 msgstr "الخطأ: %1"
 
-#: src/settings/webenginesettings.cpp:930
+#: src/settings/webenginesettings.cpp:933
 #, kde-format
 msgid "Filter error"
 msgstr "خطأ مرشح"
@@ -868,7 +868,7 @@ msgstr ""
 "\n"
 "سيتم تعطيل التكامل."
 
-#: src/webenginepage.cpp:374
+#: src/webenginepage.cpp:377
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -881,12 +881,12 @@ msgstr ""
 "عملية شراء ، فانقر فوق الزر \"إلغاء\" لمنع التكرار شراء.وإلا ، فانقر فوق "
 "الزر \"متابعة\" لعرض صفحة الويب مرة أخرى. </ p>"
 
-#: src/webenginepage.cpp:381
+#: src/webenginepage.cpp:384
 #, kde-format
 msgid "Resubmit Information"
 msgstr "إعادة تسلم المعلومات"
 
-#: src/webenginepage.cpp:575
+#: src/webenginepage.cpp:578
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -895,18 +895,18 @@ msgstr ""
 "يحاول هذا الموقع الوصول إلى معلومات حول موقعك الفعلي. \n"
 "هل تريد السماح لها بالوصول؟"
 
-#: src/webenginepage.cpp:579 src/webenginepage.cpp:657
-#: src/webenginepage.cpp:668
+#: src/webenginepage.cpp:582 src/webenginepage.cpp:660
+#: src/webenginepage.cpp:671
 #, kde-format
 msgid "Network Transmission"
 msgstr "نقل عبر الشبكة"
 
-#: src/webenginepage.cpp:580
+#: src/webenginepage.cpp:583
 #, kde-format
 msgid "Allow access"
 msgstr "اسمح بالوصول"
 
-#: src/webenginepage.cpp:650
+#: src/webenginepage.cpp:653
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -918,12 +918,12 @@ msgstr ""
 "من الممكن أن يقوم طرف ثالث باعتراض الإرسال، و رؤية هذه المعلومات.\n"
 "هل أنت متأكد أنك تريد إرسال البيانات بدون تشفير؟"
 
-#: src/webenginepage.cpp:658
+#: src/webenginepage.cpp:661
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "ا&رسل غير مشفّرة"
 
-#: src/webenginepage.cpp:665
+#: src/webenginepage.cpp:668
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -932,12 +932,12 @@ msgstr ""
 "هذا الموقع يحاول إرسال بيانات النموذج عبر البريد الإلكتروني.\n"
 "هل تريد المتابعة؟"
 
-#: src/webenginepage.cpp:669
+#: src/webenginepage.cpp:672
 #, kde-format
 msgid "&Send Email"
 msgstr "ارسل &بريد إلكتروني"
 
-#: src/webenginepage.cpp:718
+#: src/webenginepage.cpp:721
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -946,22 +946,22 @@ msgstr ""
 "<qt>هل تريد أن تسمح لهذا الموقع أن يرفق الملفات التالية بالبريد الإلكتروني؟</"
 "qt>"
 
-#: src/webenginepage.cpp:720
+#: src/webenginepage.cpp:723
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "تأكيد مرفقات البريد الإلكتروني"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:724
 #, kde-format
 msgid "&Allow attachments"
 msgstr "ا&سمح بالمرفقات"
 
-#: src/webenginepage.cpp:722
+#: src/webenginepage.cpp:725
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&تجاهل المرفقات"
 
-#: src/webenginepage.cpp:736
+#: src/webenginepage.cpp:739
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -970,12 +970,12 @@ msgstr ""
 "هذا الموقع يريد ارفاق ملف من جهازك في النموذج المرسل. تم إزالة الملف المرفق "
 "لحمايتك."
 
-#: src/webenginepage.cpp:739
+#: src/webenginepage.cpp:742
 #, kde-format
 msgid "Attachment Removed"
 msgstr "تمت إزالة المرفقات"
 
-#: src/webenginepage.cpp:853
+#: src/webenginepage.cpp:856
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -984,7 +984,7 @@ msgstr ""
 "يطلب هذا الموقع أن يفتح نافذة منبثقة جديدة.\n"
 "هل تريد السماح بذلك؟"
 
-#: src/webenginepage.cpp:855
+#: src/webenginepage.cpp:858
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -993,17 +993,17 @@ msgstr ""
 "<qt> لـ<p>%1</p><br/> يطلب هذا الموقع أن يفتح نافذة منبثقة\n"
 "هل تريد السماح بذلك؟</qt>"
 
-#: src/webenginepage.cpp:858
+#: src/webenginepage.cpp:861
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "تأكيد نافذة منبثقة من نوع جافاسكربت"
 
-#: src/webenginepage.cpp:859
+#: src/webenginepage.cpp:862
 #, kde-format
 msgid "Allow"
 msgstr "اسمح"
 
-#: src/webenginepage.cpp:859
+#: src/webenginepage.cpp:862
 #, kde-format
 msgid "Do Not Allow"
 msgstr "لا تسمح"
@@ -1299,7 +1299,7 @@ msgstr " - الموضوع: "
 msgid "&Issuer"
 msgstr ""
 
-#: src/webenginepartcontrols.cpp:282
+#: src/webenginepartcontrols.cpp:281
 #, kde-format
 msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "

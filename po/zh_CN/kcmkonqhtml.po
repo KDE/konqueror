@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:38+0000\n"
+"POT-Creation-Date: 2024-07-25 00:39+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -110,7 +110,7 @@ msgstr ""
 msgid "A&nimations:"
 msgstr "动画(&N)："
 
-#: appearance.cpp:85 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:108
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
@@ -663,21 +663,21 @@ msgid "Domain"
 msgstr "域名"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
-#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
+#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
 #, kde-format
 msgid "Policy"
 msgstr "策略"
 
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
-#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:45
+#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
 #: useragent/useragent.ui:84
 #, kde-format
 msgid "&New..."
 msgstr "新建(&N)..."
 
 #. i18n: ectx: property (text), widget (QPushButton, pbChange)
-#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:49
+#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:52
 #, kde-format
 msgid "Chan&ge..."
 msgstr "更改(&G)..."
@@ -743,7 +743,7 @@ msgid "Policy:"
 msgstr "策略："
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
+#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:192
 #: policydlg.cpp:63
 #, kde-format
 msgid "Accept"
@@ -756,14 +756,14 @@ msgid "Accept until end of session"
 msgstr "接受 (当次会话)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
+#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:194
 #: policydlg.cpp:63
 #, kde-format
 msgid "Reject"
 msgstr "拒绝"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:153
+#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:182
 #, kde-format
 msgid "Ask"
 msgstr "询问"
@@ -1291,59 +1291,92 @@ msgstr ""
 "</body>\n"
 "</html>\n"
 
-#: domainlistview.cpp:37
+#: domainlistview.cpp:33
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "特定域(&M)"
+
+#: domainlistview.cpp:40
 #, kde-format
 msgid "Host/Domain"
 msgstr "主机/域名"
 
-#: domainlistview.cpp:53
+#: domainlistview.cpp:56
 #, kde-format
 msgid "De&lete"
 msgstr "删除(&L)"
 
-#: domainlistview.cpp:57
+#: domainlistview.cpp:60
 #, kde-format
 msgid "&Import..."
 msgstr "导入(&I)..."
 
-#: domainlistview.cpp:63
+#: domainlistview.cpp:66
 #, kde-format
 msgid "&Export..."
 msgstr "导出(&E)..."
 
-#: domainlistview.cpp:71
+#: domainlistview.cpp:74
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr "单击此按钮手动添加一个主机或域名特定策略。"
 
-#: domainlistview.cpp:73
+#: domainlistview.cpp:76
 #, kde-format
 msgid ""
 "Click on this button to change the policy for the host or domain selected in "
 "the list box."
 msgstr "单击此按钮更改对列表框中所选主机或域名所应用的策略。"
 
-#: domainlistview.cpp:75
+#: domainlistview.cpp:78
 #, kde-format
 msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
 "the list box."
 msgstr "单击此按钮删除对列表框中所选主机或域名所应用的策略。"
 
-#: domainlistview.cpp:122
+#: domainlistview.cpp:125
 #, kde-format
 msgid "You must first select a policy to be changed."
 msgstr "您必须先选择一个要修改的策略。"
 
-#: domainlistview.cpp:149
+#: domainlistview.cpp:152
 #, kde-format
 msgid "You must first select a policy to delete."
 msgstr "您必须先选择一个要删除的策略。"
 
-#: domainlistview.cpp:187 policydlg.cpp:63
+#: domainlistview.cpp:190 policydlg.cpp:63
 #, kde-format
 msgid "Use Global"
 msgstr "使用全局"
+
+#: domainlistview.cpp:232
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "新建 JavaScript 策略"
+
+#: domainlistview.cpp:235
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "更改 JavaScript 策略"
+
+#: domainlistview.cpp:239
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "JavaScript 策略："
+
+#: domainlistview.cpp:240
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "为以上主机或域选择 JavaScript 策略。"
+
+#: domainlistview.cpp:242
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "特定域的 JavaScript 策略"
 
 #: filteropts.cpp:48
 #, kde-format
@@ -1506,7 +1539,7 @@ msgstr "名称"
 msgid "URL"
 msgstr "地址"
 
-#: generalopts.cpp:56
+#: generalopts.cpp:54
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1514,101 +1547,101 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr "请插入自定义起始页"
 
-#: generalopts.cpp:62
+#: generalopts.cpp:60
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr "创建新标签页时(&T)"
 
-#: generalopts.cpp:71
+#: generalopts.cpp:69
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "显示介绍页面"
 
-#: generalopts.cpp:72
+#: generalopts.cpp:70
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "显示我的起始页"
 
-#: generalopts.cpp:73
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "显示空页面"
 
-#: generalopts.cpp:74
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "显示书签"
 
-#: generalopts.cpp:80
+#: generalopts.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "选择起始页"
 
-#: generalopts.cpp:85
+#: generalopts.cpp:83
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr "这是 Konqueror 启动时将会显示的网页的链接。"
 
-#: generalopts.cpp:96
+#: generalopts.cpp:94
 #, kde-format
 msgid "Home page:"
 msgstr "主页："
 
-#: generalopts.cpp:99
+#: generalopts.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "选择主页"
 
-#: generalopts.cpp:104
+#: generalopts.cpp:102
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
 "\" button is pressed."
 msgstr "这是按下“主页”按钮时，Konqueror 将会跳转到的网页的链接。"
 
-#: generalopts.cpp:112
+#: generalopts.cpp:110
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "默认网页浏览器引擎："
 
-#: generalopts.cpp:121
+#: generalopts.cpp:119
 #, kde-format
 msgid "When splitting a view"
 msgstr "在分割视图时"
 
-#: generalopts.cpp:125
+#: generalopts.cpp:123
 #, kde-format
 msgid "Always duplicate current view"
 msgstr "总是复制当前视图"
 
-#: generalopts.cpp:126
+#: generalopts.cpp:124
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "仅为本地文件复制当前视图"
 
-#: generalopts.cpp:132
+#: generalopts.cpp:130
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr "启动时恢复上次状态"
 
-#: htmlopts.cpp:35
+#: htmlopts.cpp:39
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "书签(&K)"
 
-#: htmlopts.cpp:38
+#: htmlopts.cpp:42
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "添加书签时询问名称和文件夹"
 
-#: htmlopts.cpp:41
+#: htmlopts.cpp:45
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1618,12 +1651,12 @@ msgstr ""
 "若选中了此框，Konqueror 将会允许您添加新书签时更改书签的标题并选择书签所在的"
 "文件夹。"
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:51
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "只在书签工具栏中显示打标记的书签"
 
-#: htmlopts.cpp:49
+#: htmlopts.cpp:53
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1632,12 +1665,10 @@ msgstr ""
 "若选中了此框，Konqueror 将只会书签工具栏中显示您在书签编辑器中打了标记的那些"
 "书签。"
 
-#: htmlopts.cpp:56
-#, kde-format
-msgid "Form Com&pletion"
-msgstr "表单补全(&P)"
-
-#: htmlopts.cpp:60
+#. i18n("Form Com&pletion"), widget());
+#. m_pFormCompletionCheckBox->setCheckable(true);
+#. QFormLayout *laygroup2 = new QFormLayout(m_pFormCompletionCheckBox);
+#: htmlopts.cpp:67
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1646,54 +1677,40 @@ msgstr ""
 "如果启用该选项，Konqueror 将记住您在表单中输入的数据，在以后的表单中的同样的"
 "字段中将提示这些数据。"
 
-#: htmlopts.cpp:66
+#: htmlopts.cpp:74
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "最多补全(&M)："
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:76
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
 msgstr "您可以选择 Konqueror 为一个表单字段记住多少个值。"
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:87
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "鼠标行为(&V)"
 
-#: htmlopts.cpp:78
-#, kde-format
-msgid "Chan&ge cursor over links"
-msgstr "悬停链接时更改光标形状(&G)"
-
-#: htmlopts.cpp:80
-#, kde-format
-msgid ""
-"If this option is set, the shape of the cursor will change (usually to a "
-"hand) if it is moved over a hyperlink."
-msgstr ""
-"如果设置了这个选项，当鼠标移动到超级链接上时，指针将会改变形状(通常会是一个手"
-"的形状)"
-
-#: htmlopts.cpp:84
+#: htmlopts.cpp:90
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "中键单击打开选中的 URL(&I)"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:93
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
 "clicking on a Konqueror view."
 msgstr "如果选中了此框，您就可以在 Konqueror 视图中单击中键来打开选中的 URL。"
 
-#: htmlopts.cpp:91
+#: htmlopts.cpp:97
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "右键单击在历史中后退(&B)"
 
-#: htmlopts.cpp:94
+#: htmlopts.cpp:100
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1703,26 +1720,12 @@ msgstr ""
 "如果选中此框，只需在 Konqueror 视图中单击鼠标右键即可在历史中后退。如果想要访"
 "问快捷菜单，请按鼠标右键并移动。"
 
-#: htmlopts.cpp:104
-#, kde-format
-msgid "Allow automatic delayed &reloading/redirecting"
-msgstr "允许自动延迟重新加载/重定向(&R)"
-
-#: htmlopts.cpp:105
-#, kde-format
-msgid ""
-"Some web pages request an automatic reload or redirection after a certain "
-"period of time. By unchecking this box Konqueror will ignore these requests."
-msgstr ""
-"某些网页会请求在经过一段时间后自动重新加载或重定向。取消此框将使得 Konqueror "
-"忽略这些请求。"
-
-#: htmlopts.cpp:111
+#: htmlopts.cpp:115
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "用 Ctrl 键激活访问键(&Y)"
 
-#: htmlopts.cpp:112
+#: htmlopts.cpp:116
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1732,225 +1735,61 @@ msgstr ""
 "在查看网页时按下 Ctrl 键将激活 KDE 的访问键。如果未选中此选项，将会禁用此辅助"
 "特性(需要重新启动 Konqueror 才能让更改生效)。"
 
-#: htmlopts.cpp:116
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr "发送 DNT 头来告诉网站您不想被跟踪"
 
-#: htmlopts.cpp:117
-#, kde-format
+#: htmlopts.cpp:122
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check this box if you want to inform a web site that you do not want your "
+#| "web browsing habits tracked."
 msgid ""
-"Check this box if you want to inform a web site that you do not want your "
-"web browsing habits tracked."
+"<p>Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
+"considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr "如果您希望通知网站您不想您的网页浏览行为被记录，请选中此项。"
 
-#: htmlopts.cpp:121
+#: htmlopts.cpp:126
 #, kde-format
 msgid "Offer to save website passwords"
 msgstr "询问保存网站密码"
 
-#: htmlopts.cpp:122
+#: htmlopts.cpp:127
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr "取消勾选此选项可避免询问保存网站密码"
 
-#: htmlopts.cpp:126
+#: htmlopts.cpp:131
 #, kde-format
 msgid "Display online PDF files using WebEngine"
 msgstr "使用 WebEngine 显示在线 PDF 文件"
 
-#: htmlopts.cpp:127
+#: htmlopts.cpp:132
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
 msgstr "取消勾选此框后将调用系统设置的应用程序显示在线 PDF 文件"
 
-#: javaopts.cpp:78
+#: htmlopts.cpp:136
 #, kde-format
-msgid "Enable Ja&va globally"
-msgstr "全局启用 Ja&va"
-
-#: javaopts.cpp:93
-#, kde-format
-msgid "Java Runtime Settings"
-msgstr "Java 运行时刻设置"
-
-#: javaopts.cpp:97
-#, kde-format
-msgid "&Use security manager"
-msgstr "使用安全管理器(&U)"
-
-#: javaopts.cpp:101
-#, kde-format
-msgid "Use &KIO"
-msgstr "使用 &KIO"
-
-#: javaopts.cpp:105
-#, kde-format
-msgid "Shu&tdown applet server when inactive for more than"
-msgstr "关闭小程序服务器前的空闲等待时间(&T)"
-
-#: javaopts.cpp:117
-#, kde-format
-msgid " second"
-msgid_plural " seconds"
-msgstr[0] " 秒"
-
-#: javaopts.cpp:123
-#, kde-format
-msgid "&Path to Java executable, or 'java':"
-msgstr "Java 执行程序的路径，或“java”(&P)："
-
-#: javaopts.cpp:127
-#, kde-format
-msgid "Additional Java a&rguments:"
-msgstr "其他的 Java 参数(&R)："
-
-#: javaopts.cpp:132
-#, kde-format
-msgid ""
-"Enables the execution of scripts written in Java that can be contained in "
-"HTML pages. Note that, as with any browser, enabling active contents can be "
-"a security problem."
+msgid "Always display files from web pages in a new tab"
 msgstr ""
-"允许执行 HTML 页面中包含的用 Java 写成的脚本。请注意，和其他浏览器一样，允许"
-"活动的内容可能会带来安全问题。"
 
-#: javaopts.cpp:135
+#: htmlopts.cpp:137
 #, kde-format
 msgid ""
-"<p>This box contains the domains and hosts you have set a specific Java "
-"policy for. This policy will be used instead of the default policy for "
-"enabling or disabling Java applets on pages sent by these domains or hosts.</"
-"p><p>Select a policy and use the controls on the right to modify it.</p>"
+"<p>When showing in Konqueror files from links in web pages, always use a new "
+"tab"
 msgstr ""
-"<p>此框中包含了您设置特定的 Java 策略的域名和主机。对于这些域名或主机发送的页"
-"面，将会应用此策略而不是默认策略的启用或禁用。</p><p>请选择一个策略并使用右边"
-"的按钮进行修改。</p>"
 
-#: javaopts.cpp:142
-#, kde-format
-msgid ""
-"Click this button to choose the file that contains the Java policies. These "
-"policies will be merged with the existing ones. Duplicate entries are "
-"ignored."
-msgstr ""
-"单击此按钮选择包含 Java 策略的文件。这些策略将与已有策略合并。重复的将被忽"
-"略。"
-
-#: javaopts.cpp:145
-#, kde-format
-msgid ""
-"Click this button to save the Java policy to a zipped file. The file, named "
-"<b>java_policy.tgz</b>, will be saved to a location of your choice."
-msgstr ""
-"单击此按钮将 Java 策略保存为压缩文件 <b>java_policy.tgz</b>，它将保存在您指定"
-"的位置。"
-
-#: javaopts.cpp:149
-#, kde-format
-msgid ""
-"Here you can set specific Java policies for any particular host or domain. "
-"To add a new policy, simply click the <i>New...</i> button and supply the "
-"necessary information requested by the dialog box. To change an existing "
-"policy, click on the <i>Change...</i> button and choose the new policy from "
-"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
-"selected policy, causing the default policy setting to be used for that "
-"domain."
-msgstr ""
-"您可以在这里为特定的主机或域名设置 Java 策略。要添加新的策略，请单击<i>新"
-"建...</i>按钮并在对话框中提供必要的信息。要更改已有的策略，请单击<i>更改...</"
-"i>按钮并从策略对话框中选择新的策略。单击<i>删除</i>按钮将删除选中策略，这将使"
-"得对该域名应用默认的策略设置。"
-
-#: javaopts.cpp:162
-#, kde-format
-msgid ""
-"Enabling the security manager will cause the jvm to run with a Security "
-"Manager in place. This will keep applets from being able to read and write "
-"to your file system, creating arbitrary sockets, and other actions which "
-"could be used to compromise your system. Disable this option at your own "
-"risk. You can modify your $HOME/.java.policy file with the Java policytool "
-"utility to give code downloaded from certain sites more permissions."
-msgstr ""
-"启用安全管理器将使得 Java 虚拟机载安全管理器的位置运行。这能够保证小程序无法"
-"读写您的文件系统，创建专用的 sockets，以及其他可能危及系统安全的操作。禁用此"
-"选项可能带来风险。您可以用 Java 策略工具修改您的 $HOME/.java 策略文件，以便给"
-"从特定网站下载的代码更多的许可。"
-
-#: javaopts.cpp:170
-#, kde-format
-msgid "Enabling this will cause the jvm to use KIO for network transport "
-msgstr "启用此选项将导致 jvm 使用 KIO 进行网络传送"
-
-#: javaopts.cpp:172
-#, kde-format
-msgid ""
-"Enter the path to the java executable. If you want to use the jre in your "
-"path, simply leave it as 'java'. If you need to use a different jre, enter "
-"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
-"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
-msgstr ""
-"输入 Java 可执行文件的路径。如果您想要使用路径中的 Java 运行环境，只需保"
-"留“Java”。如果您需要不同的 Java 运行环境，请输入 Java 可执行文件的路径(如 /"
-"usr/lib/jdk/bin/java)，或者包含“bin/java”的目录路径(如 /opt/IBMJava2-13)。"
-
-#: javaopts.cpp:177
-#, kde-format
-msgid ""
-"If you want special arguments to be passed to the virtual machine, enter "
-"them here."
-msgstr "如果您需要传一些特殊的参数给虚拟机，请在这里输入。"
-
-#: javaopts.cpp:179
-#, kde-format
-msgid ""
-"When all the applets have been destroyed, the applet server should shut "
-"down. However, starting the jvm takes a lot of time. If you would like to "
-"keep the java process running while you are browsing, you can set the "
-"timeout value to whatever you like. To keep the java process running for the "
-"whole time that the konqueror process is, leave the Shutdown Applet Server "
-"checkbox unchecked."
-msgstr ""
-"如果所有的小程序都已被销毁，那么小程序服务器就应该关闭。然而，启动 Java 虚拟"
-"机很费时间。如果您想要在您浏览的时候仍然保留 Java 进程，您可以将超时的值设置"
-"为您希望的值。要在 Konqueror 进程全程保留 Java 进程，请不要选中关闭小程序服务"
-"器。"
-
-#: javaopts.cpp:288
-#, kde-format
-msgctxt "@title:group"
-msgid "Doma&in-Specific"
-msgstr "特定域(&I)"
-
-#: javaopts.cpp:323
-#, kde-format
-msgctxt "@title:window"
-msgid "New Java Policy"
-msgstr "新建 Java 策略"
-
-#: javaopts.cpp:326
-#, kde-format
-msgctxt "@title:window"
-msgid "Change Java Policy"
-msgstr "修改 Java 策略"
-
-#: javaopts.cpp:330
-#, kde-format
-msgid "&Java policy:"
-msgstr "&Java 策略："
-
-#: javaopts.cpp:331
-#, kde-format
-msgid "Select a Java policy for the above host or domain."
-msgstr "为以上主机或域选择 Java 策略。"
-
-#: jsopts.cpp:50
+#: jsopts.cpp:57
 #, kde-format
 msgid "Ena&ble JavaScript globally"
 msgstr "全局启用 JavaScript(&B)"
 
-#: jsopts.cpp:51
+#: jsopts.cpp:58
 #, kde-format
 msgid ""
 "Enables the execution of scripts written in ECMA-Script (also known as "
@@ -1960,33 +1799,7 @@ msgstr ""
 "允许执行 HTML 页面中包含的用 ECMA-脚本(也称 JavaScript)写成的脚本。请注意，和"
 "其他浏览器一样，允许脚本语言可能会带来安全问题。"
 
-#: jsopts.cpp:59
-#, kde-format
-msgid "Debugging"
-msgstr "调试"
-
-#: jsopts.cpp:63
-#, kde-format
-msgid "Enable debu&gger"
-msgstr "启用调试器(&G)"
-
-#: jsopts.cpp:64
-#, kde-format
-msgid "Enables builtin JavaScript debugger."
-msgstr "启用内置 JavaScript 调试器。"
-
-#: jsopts.cpp:68
-#, kde-format
-msgid "Report &errors"
-msgstr "报告错误(&E)"
-
-#: jsopts.cpp:69
-#, kde-format
-msgid ""
-"Enables the reporting of errors that occur when JavaScript code is executed."
-msgstr "启用 JavaScript 代码执行时所发生错误的报告。"
-
-#: jsopts.cpp:79
+#: jsopts.cpp:70
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2005,7 +1818,7 @@ msgstr ""
 "使得对该域名应用默认的策略设置。<i>导入</i>和<i>导出</i>按钮让您能用压缩的文"
 "件保存和加载策略，从而轻松地和别人共享您的策略。"
 
-#: jsopts.cpp:89
+#: jsopts.cpp:80
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2018,7 +1831,7 @@ msgstr ""
 "送的页面，将会应用此策略而不是默认策略的启用或禁用。</p><p>请选择一个策略并使"
 "用右边的按钮进行修改。</p>"
 
-#: jsopts.cpp:96
+#: jsopts.cpp:87
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2028,7 +1841,7 @@ msgstr ""
 "单击此按钮选择包含 JavaScript 策略的文件。这些策略将与已有策略合并。重复的将"
 "被忽略。"
 
-#: jsopts.cpp:99
+#: jsopts.cpp:90
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2038,100 +1851,67 @@ msgstr ""
 "单击此按钮将 JavaScript 策略保存为压缩文件 <b>javascript_policy.tgz</b>，它将"
 "保存在您指定的位置。"
 
-#: jsopts.cpp:105
+#: jsopts.cpp:96
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "全局 JavaScript 策略"
 
-#: jsopts.cpp:172
-#, kde-format
-msgctxt "@title:group"
-msgid "Do&main-Specific"
-msgstr "特定域(&M)"
-
-#: jsopts.cpp:211
-#, kde-format
-msgctxt "@title:window"
-msgid "New JavaScript Policy"
-msgstr "新建 JavaScript 策略"
-
-#: jsopts.cpp:214
-#, kde-format
-msgctxt "@title:window"
-msgid "Change JavaScript Policy"
-msgstr "更改 JavaScript 策略"
-
-#: jsopts.cpp:218
-#, kde-format
-msgid "JavaScript policy:"
-msgstr "JavaScript 策略："
-
-#: jsopts.cpp:219
-#, kde-format
-msgid "Select a JavaScript policy for the above host or domain."
-msgstr "为以上主机或域选择 JavaScript 策略。"
-
-#: jsopts.cpp:221
-#, kde-format
-msgid "Domain-Specific JavaScript Policies"
-msgstr "特定域的 JavaScript 策略"
-
-#: jspolicies.cpp:132
+#: jspolicies.cpp:161
 #, kde-format
 msgid "Open new windows:"
 msgstr "打开新的窗口："
 
-#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
-#: jspolicies.cpp:308
+#: jspolicies.cpp:169 jspolicies.cpp:223 jspolicies.cpp:260 jspolicies.cpp:297
+#: jspolicies.cpp:337
 #, kde-format
 msgid "Use global"
 msgstr "使用全局策略"
 
-#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
-#: jspolicies.cpp:309
+#: jspolicies.cpp:170 jspolicies.cpp:224 jspolicies.cpp:261 jspolicies.cpp:298
+#: jspolicies.cpp:338
 #, kde-format
 msgid "Use setting from global policy."
 msgstr "使用全局策略的设置。"
 
-#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
-#: jspolicies.cpp:315
+#: jspolicies.cpp:176 jspolicies.cpp:230 jspolicies.cpp:267 jspolicies.cpp:304
+#: jspolicies.cpp:344
 #, kde-format
 msgid "Allow"
 msgstr "允许"
 
-#: jspolicies.cpp:148
+#: jspolicies.cpp:177
 #, kde-format
 msgid "Accept all popup window requests."
 msgstr "接受所有弹出窗口请求。"
 
-#: jspolicies.cpp:154
+#: jspolicies.cpp:183
 #, kde-format
 msgid "Prompt every time a popup window is requested."
 msgstr "每次弹出窗口请求时都提示。"
 
-#: jspolicies.cpp:159
+#: jspolicies.cpp:188
 #, kde-format
 msgid "Deny"
 msgstr "拒绝"
 
-#: jspolicies.cpp:160
+#: jspolicies.cpp:189
 #, kde-format
 msgid "Reject all popup window requests."
 msgstr "拒绝所有弹出窗口请求。"
 
-#: jspolicies.cpp:165
+#: jspolicies.cpp:194
 #, kde-format
 msgid "Smart"
 msgstr "智能"
 
-#: jspolicies.cpp:166
+#: jspolicies.cpp:195
 #, kde-format
 msgid ""
 "Accept popup window requests only when links are activated through an "
 "explicit mouse click or keyboard operation."
 msgstr "仅当通过显式的鼠标单击或键盘操作激活链接时才接受弹出窗口。"
 
-#: jspolicies.cpp:173
+#: jspolicies.cpp:202
 #, kde-format
 msgid ""
 "If you disable this, Konqueror will stop interpreting the <i>window.open()</"
@@ -2145,22 +1925,22 @@ msgstr ""
 "><br /><b>注意：</b>禁用此选项也有可能使某些需要用 <i>window.open()</i> 进行"
 "正常操作的站点。请谨慎使用该选项。"
 
-#: jspolicies.cpp:187
+#: jspolicies.cpp:216
 #, kde-format
 msgid "Resize window:"
 msgstr "改变窗口大小："
 
-#: jspolicies.cpp:202
+#: jspolicies.cpp:231
 #, kde-format
 msgid "Allow scripts to change the window size."
 msgstr "允许脚本改变窗口大小。"
 
-#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#: jspolicies.cpp:236 jspolicies.cpp:273 jspolicies.cpp:310 jspolicies.cpp:350
 #, kde-format
 msgid "Ignore"
 msgstr "忽略"
 
-#: jspolicies.cpp:208
+#: jspolicies.cpp:237
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
@@ -2169,7 +1949,7 @@ msgstr ""
 "忽略改变窗口大小的脚本行为。该网页将<i>认为</i>它已经改变了窗口大小，但实际的"
 "窗口大小并不会受影响。"
 
-#: jspolicies.cpp:215
+#: jspolicies.cpp:244
 #, kde-format
 msgid ""
 "Some websites change the window size on their own by using <i>window."
@@ -2179,17 +1959,17 @@ msgstr ""
 "有些网页用 <i>window.resizeBy()</i> 或 <i>window.resizeTo()</i> 自作主张地改"
 "变窗口大小。此选项指定对这样的行为如何处理。"
 
-#: jspolicies.cpp:224
+#: jspolicies.cpp:253
 #, kde-format
 msgid "Move window:"
 msgstr "移动窗口位置："
 
-#: jspolicies.cpp:239
+#: jspolicies.cpp:268
 #, kde-format
 msgid "Allow scripts to change the window position."
 msgstr "允许脚本改变窗口位置。"
 
-#: jspolicies.cpp:245
+#: jspolicies.cpp:274
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window position. The web page will "
@@ -2198,7 +1978,7 @@ msgstr ""
 "忽略改变窗口位置的脚本行为。该网页将<i>认为</i>它已经移动了窗口，但实际的窗口"
 "位置并不会受影响。"
 
-#: jspolicies.cpp:252
+#: jspolicies.cpp:281
 #, kde-format
 msgid ""
 "Some websites change the window position on their own by using <i>window."
@@ -2208,17 +1988,17 @@ msgstr ""
 "有些网站用 <i>window.moveBy()</i> 或 <i>window.moveTo()</i> 自作主张地改变窗"
 "口的位置。此选项指定对这种行为如何处理。"
 
-#: jspolicies.cpp:261
+#: jspolicies.cpp:290
 #, kde-format
 msgid "Focus window:"
 msgstr "改变窗口焦点："
 
-#: jspolicies.cpp:276
+#: jspolicies.cpp:305
 #, kde-format
 msgid "Allow scripts to focus the window."
 msgstr "允许脚本改变窗口焦点。"
 
-#: jspolicies.cpp:282
+#: jspolicies.cpp:311
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to focus the window. The web page will <i>think</"
@@ -2228,7 +2008,7 @@ msgstr ""
 "忽略改变窗口焦点的脚本行为。该网页将<i>认为</i>它已将焦点移到显示它的窗口上，"
 "但实际的焦点将保持不变。"
 
-#: jspolicies.cpp:290
+#: jspolicies.cpp:319
 #, kde-format
 msgid ""
 "Some websites set the focus to their browser window on their own by using "
@@ -2240,17 +2020,17 @@ msgstr ""
 "这通常会导致该窗口被移动到最前面，干扰用户当时正在专心处理的工作。此选项指定"
 "了如何处理这样的行为。"
 
-#: jspolicies.cpp:301
+#: jspolicies.cpp:330
 #, kde-format
 msgid "Modify status bar text:"
 msgstr "改变状态栏文本："
 
-#: jspolicies.cpp:316
+#: jspolicies.cpp:345
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
 msgstr "允许脚本改变状态栏的文本。"
 
-#: jspolicies.cpp:322
+#: jspolicies.cpp:351
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
@@ -2259,7 +2039,7 @@ msgstr ""
 "忽略试图改变状态栏文本的脚本行为。该网页将<i>认为</i>它改变了状态栏，但实际的"
 "状态栏文本将保持不变。"
 
-#: jspolicies.cpp:330
+#: jspolicies.cpp:359
 #, kde-format
 msgid ""
 "Some websites change the status bar text by setting <i>window.status</i> or "
@@ -2269,16 +2049,6 @@ msgstr ""
 "有些网站用设置 <i>window.status</i> 或 <i>window.defaultStatus</i> 的方法改变"
 "状态栏文本，从而有时会妨碍真正的超联接 URL 的显示。此选项指定对这种行为如何处"
 "理。"
-
-#: main.cpp:49
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
-
-#: main.cpp:53
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
 
 #: policydlg.cpp:30
 #, kde-format
@@ -2537,9 +2307,8 @@ msgstr "已有标识"
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150 useragent/useragent.ui:163
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr "<html><head/><body><p><br/></p></body></html>"
@@ -2580,6 +2349,17 @@ msgstr "删除(&D)"
 msgid "Choose &selected identification"
 msgstr "选择已选中的标识(&S)"
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:163
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><head/><body><p>The custom background color to use for web pages</"
+#| "p></body></html>"
+msgid ""
+"<html><head/><body><p>If checked, disable choosing a custom identification "
+"and use the default one</p></body></html>"
+msgstr "<html><head/><body><p>网页的自定义背景色</p></body></html>"
+
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
@@ -2604,3 +2384,188 @@ msgstr ""
 "<html><head/><body><p>默认标识被禁用时要使用的浏览器标识。</p><p>您可以手动输"
 "入一个浏览器标识，或者从下面的列表中选择一个，然后按照自己的需要进行修改。</"
 "p></body></html>"
+
+#~ msgid "Form Com&pletion"
+#~ msgstr "表单补全(&P)"
+
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "悬停链接时更改光标形状(&G)"
+
+#~ msgid ""
+#~ "If this option is set, the shape of the cursor will change (usually to a "
+#~ "hand) if it is moved over a hyperlink."
+#~ msgstr ""
+#~ "如果设置了这个选项，当鼠标移动到超级链接上时，指针将会改变形状(通常会是一"
+#~ "个手的形状)"
+
+#~ msgid "Allow automatic delayed &reloading/redirecting"
+#~ msgstr "允许自动延迟重新加载/重定向(&R)"
+
+#~ msgid ""
+#~ "Some web pages request an automatic reload or redirection after a certain "
+#~ "period of time. By unchecking this box Konqueror will ignore these "
+#~ "requests."
+#~ msgstr ""
+#~ "某些网页会请求在经过一段时间后自动重新加载或重定向。取消此框将使得 "
+#~ "Konqueror 忽略这些请求。"
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "全局启用 Ja&va"
+
+#~ msgid "Java Runtime Settings"
+#~ msgstr "Java 运行时刻设置"
+
+#~ msgid "&Use security manager"
+#~ msgstr "使用安全管理器(&U)"
+
+#~ msgid "Use &KIO"
+#~ msgstr "使用 &KIO"
+
+#~ msgid "Shu&tdown applet server when inactive for more than"
+#~ msgstr "关闭小程序服务器前的空闲等待时间(&T)"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " 秒"
+
+#~ msgid "&Path to Java executable, or 'java':"
+#~ msgstr "Java 执行程序的路径，或“java”(&P)："
+
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "其他的 Java 参数(&R)："
+
+#~ msgid ""
+#~ "Enables the execution of scripts written in Java that can be contained in "
+#~ "HTML pages. Note that, as with any browser, enabling active contents can "
+#~ "be a security problem."
+#~ msgstr ""
+#~ "允许执行 HTML 页面中包含的用 Java 写成的脚本。请注意，和其他浏览器一样，允"
+#~ "许活动的内容可能会带来安全问题。"
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific Java "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling Java applets on pages sent by these domains or "
+#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
+#~ "it.</p>"
+#~ msgstr ""
+#~ "<p>此框中包含了您设置特定的 Java 策略的域名和主机。对于这些域名或主机发送"
+#~ "的页面，将会应用此策略而不是默认策略的启用或禁用。</p><p>请选择一个策略并"
+#~ "使用右边的按钮进行修改。</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the Java policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "单击此按钮选择包含 Java 策略的文件。这些策略将与已有策略合并。重复的将被忽"
+#~ "略。"
+
+#~ msgid ""
+#~ "Click this button to save the Java policy to a zipped file. The file, "
+#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
+#~ msgstr ""
+#~ "单击此按钮将 Java 策略保存为压缩文件 <b>java_policy.tgz</b>，它将保存在您"
+#~ "指定的位置。"
+
+#~ msgid ""
+#~ "Here you can set specific Java policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy, causing the default policy "
+#~ "setting to be used for that domain."
+#~ msgstr ""
+#~ "您可以在这里为特定的主机或域名设置 Java 策略。要添加新的策略，请单击<i>新"
+#~ "建...</i>按钮并在对话框中提供必要的信息。要更改已有的策略，请单击<i>更"
+#~ "改...</i>按钮并从策略对话框中选择新的策略。单击<i>删除</i>按钮将删除选中策"
+#~ "略，这将使得对该域名应用默认的策略设置。"
+
+#~ msgid ""
+#~ "Enabling the security manager will cause the jvm to run with a Security "
+#~ "Manager in place. This will keep applets from being able to read and "
+#~ "write to your file system, creating arbitrary sockets, and other actions "
+#~ "which could be used to compromise your system. Disable this option at "
+#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
+#~ "policytool utility to give code downloaded from certain sites more "
+#~ "permissions."
+#~ msgstr ""
+#~ "启用安全管理器将使得 Java 虚拟机载安全管理器的位置运行。这能够保证小程序无"
+#~ "法读写您的文件系统，创建专用的 sockets，以及其他可能危及系统安全的操作。禁"
+#~ "用此选项可能带来风险。您可以用 Java 策略工具修改您的 $HOME/.java 策略文"
+#~ "件，以便给从特定网站下载的代码更多的许可。"
+
+#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
+#~ msgstr "启用此选项将导致 jvm 使用 KIO 进行网络传送"
+
+#~ msgid ""
+#~ "Enter the path to the java executable. If you want to use the jre in your "
+#~ "path, simply leave it as 'java'. If you need to use a different jre, "
+#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
+#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
+#~ "IBMJava2-13)."
+#~ msgstr ""
+#~ "输入 Java 可执行文件的路径。如果您想要使用路径中的 Java 运行环境，只需保"
+#~ "留“Java”。如果您需要不同的 Java 运行环境，请输入 Java 可执行文件的路径"
+#~ "(如 /usr/lib/jdk/bin/java)，或者包含“bin/java”的目录路径(如 /opt/"
+#~ "IBMJava2-13)。"
+
+#~ msgid ""
+#~ "If you want special arguments to be passed to the virtual machine, enter "
+#~ "them here."
+#~ msgstr "如果您需要传一些特殊的参数给虚拟机，请在这里输入。"
+
+#~ msgid ""
+#~ "When all the applets have been destroyed, the applet server should shut "
+#~ "down. However, starting the jvm takes a lot of time. If you would like to "
+#~ "keep the java process running while you are browsing, you can set the "
+#~ "timeout value to whatever you like. To keep the java process running for "
+#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
+#~ "Server checkbox unchecked."
+#~ msgstr ""
+#~ "如果所有的小程序都已被销毁，那么小程序服务器就应该关闭。然而，启动 Java 虚"
+#~ "拟机很费时间。如果您想要在您浏览的时候仍然保留 Java 进程，您可以将超时的值"
+#~ "设置为您希望的值。要在 Konqueror 进程全程保留 Java 进程，请不要选中关闭小"
+#~ "程序服务器。"
+
+#~ msgctxt "@title:group"
+#~ msgid "Doma&in-Specific"
+#~ msgstr "特定域(&I)"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Java Policy"
+#~ msgstr "新建 Java 策略"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Java Policy"
+#~ msgstr "修改 Java 策略"
+
+#~ msgid "&Java policy:"
+#~ msgstr "&Java 策略："
+
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr "为以上主机或域选择 Java 策略。"
+
+#~ msgid "Debugging"
+#~ msgstr "调试"
+
+#~ msgid "Enable debu&gger"
+#~ msgstr "启用调试器(&G)"
+
+#~ msgid "Enables builtin JavaScript debugger."
+#~ msgstr "启用内置 JavaScript 调试器。"
+
+#~ msgid "Report &errors"
+#~ msgstr "报告错误(&E)"
+
+#~ msgid ""
+#~ "Enables the reporting of errors that occur when JavaScript code is "
+#~ "executed."
+#~ msgstr "启用 JavaScript 代码执行时所发生错误的报告。"
+
+#~ msgid "&Java"
+#~ msgstr "&Java"
+
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"

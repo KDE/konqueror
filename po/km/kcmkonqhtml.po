@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:38+0000\n"
+"POT-Creation-Date: 2024-07-25 00:39+0000\n"
 "PO-Revision-Date: 2012-06-11 09:39+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -114,7 +114,7 @@ msgstr ""
 msgid "A&nimations:"
 msgstr "ចលនា ៖"
 
-#: appearance.cpp:85 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:108
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
@@ -654,21 +654,21 @@ msgid "Domain"
 msgstr "ម៉ាស៊ីន/ដែន"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
-#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
+#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
 #, kde-format
 msgid "Policy"
 msgstr "គោលការណ៍"
 
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
-#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:45
+#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
 #: useragent/useragent.ui:84
 #, kde-format
 msgid "&New..."
 msgstr "ថ្មី..."
 
 #. i18n: ectx: property (text), widget (QPushButton, pbChange)
-#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:49
+#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:52
 #, kde-format
 msgid "Chan&ge..."
 msgstr "ផ្លាស់ប្តូរ..."
@@ -721,7 +721,7 @@ msgid "Policy:"
 msgstr "គោលការណ៍"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
+#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:192
 #: policydlg.cpp:63
 #, kde-format
 msgid "Accept"
@@ -734,14 +734,14 @@ msgid "Accept until end of session"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
+#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:194
 #: policydlg.cpp:63
 #, kde-format
 msgid "Reject"
 msgstr "ច្រាន​ចោល"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:153
+#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:182
 #, kde-format
 msgid "Ask"
 msgstr "សួរ"
@@ -1309,59 +1309,92 @@ msgstr ""
 "</body>\n"
 "</html>\n"
 
-#: domainlistview.cpp:37
+#: domainlistview.cpp:33
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "ដែន​ជាក់លាក់"
+
+#: domainlistview.cpp:40
 #, kde-format
 msgid "Host/Domain"
 msgstr "ម៉ាស៊ីន/ដែន"
 
-#: domainlistview.cpp:53
+#: domainlistview.cpp:56
 #, kde-format
 msgid "De&lete"
 msgstr "លុប"
 
-#: domainlistview.cpp:57
+#: domainlistview.cpp:60
 #, kde-format
 msgid "&Import..."
 msgstr "នាំចូល..."
 
-#: domainlistview.cpp:63
+#: domainlistview.cpp:66
 #, kde-format
 msgid "&Export..."
 msgstr "នាំចេញ..."
 
-#: domainlistview.cpp:71
+#: domainlistview.cpp:74
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr "ចុច​លើ​ប៊ូតុង​នេះ ដើម្បី​បន្ថែម​ម៉ាស៊ីន ឬ​ដែន​តាម​គោលការណ៍​ជាក់​លាក់​ដោយ​ដៃ ។"
 
-#: domainlistview.cpp:73
+#: domainlistview.cpp:76
 #, kde-format
 msgid ""
 "Click on this button to change the policy for the host or domain selected in "
 "the list box."
 msgstr "ចុច​ប៊ូតុង​នេះ ដើម្បី​ផ្លាស់ប្ដូរ​គោលការណ៍​សម្រាប់​ម៉ាស៊ីន ឬ​ដែន​ដែល​បាន​ជ្រើស​ក្នុង​ប្រអប់​បញ្ជី ។"
 
-#: domainlistview.cpp:75
+#: domainlistview.cpp:78
 #, kde-format
 msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
 "the list box."
 msgstr "ចុច​ប៊ូតុង​នេះ ដើម្បី​លុប​គោលការណ៍​សម្រាប់​ម៉ាស៊ីន ឬ​ដែន​ដែល​បាន​ជ្រើស​ក្នុង​ប្រអប់​បញ្ជី ។"
 
-#: domainlistview.cpp:122
+#: domainlistview.cpp:125
 #, kde-format
 msgid "You must first select a policy to be changed."
 msgstr "អ្នក​ត្រូវ​ជ្រើស​គោលការណ៍​ដែល​ត្រូវ​ផ្លាស់ប្ដូរ​ជាមុន​សិន ។"
 
-#: domainlistview.cpp:149
+#: domainlistview.cpp:152
 #, kde-format
 msgid "You must first select a policy to delete."
 msgstr "អ្នក​ត្រូវ​ជ្រើស​គោលការណ៍​ដែល​ត្រូវ​លុប​ជាមុន​សិន ។"
 
-#: domainlistview.cpp:187 policydlg.cpp:63
+#: domainlistview.cpp:190 policydlg.cpp:63
 #, kde-format
 msgid "Use Global"
 msgstr "ប្រើ​ជា​សកល"
+
+#: domainlistview.cpp:232
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "គោលការណ៍ JavaScript ថ្មី"
+
+#: domainlistview.cpp:235
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "ផ្លាស់ប្តូរ​គោលការណ៍ JavaScript"
+
+#: domainlistview.cpp:239
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "គោលការណ៍ JavaScript ៖"
+
+#: domainlistview.cpp:240
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "ជ្រើស​គោលការណ៍ JavaScript មួយ សម្រាប់​ដែន ឬ​ម៉ាស៊ីន​ខាង​លើ ។"
+
+#: domainlistview.cpp:242
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "គោលការណ៍ JavaScript ដែន​ជាក់លាក់"
 
 #: filteropts.cpp:48
 #, kde-format
@@ -1528,7 +1561,7 @@ msgstr "ឈ្មោះ"
 msgid "URL"
 msgstr "URL"
 
-#: generalopts.cpp:56
+#: generalopts.cpp:54
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1536,19 +1569,19 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr ""
 
-#: generalopts.cpp:62
+#: generalopts.cpp:60
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr ""
 
-#: generalopts.cpp:71
+#: generalopts.cpp:69
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "បង្ហាញ​ទំព័រ​ណែនាំ"
 
-#: generalopts.cpp:72
+#: generalopts.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "@item:inlistbox"
 #| msgid "Show My Home Page"
@@ -1556,19 +1589,19 @@ msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "បង្ហាញ​គេហទំព័រ​របស់​ខ្ញុំ"
 
-#: generalopts.cpp:73
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "បង្ហាញ​ទំព័រ​ទទេ"
 
-#: generalopts.cpp:74
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "បង្ហាញ​ចំណាំ​របស់​ខ្ញុំ"
 
-#: generalopts.cpp:80
+#: generalopts.cpp:78
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Home Page"
@@ -1576,23 +1609,23 @@ msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "ជ្រើស​គេហទំព័រ"
 
-#: generalopts.cpp:85
+#: generalopts.cpp:83
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr ""
 
-#: generalopts.cpp:96
+#: generalopts.cpp:94
 #, kde-format
 msgid "Home page:"
 msgstr "គេហទំព័រ ៖"
 
-#: generalopts.cpp:99
+#: generalopts.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "ជ្រើស​គេហទំព័រ"
 
-#: generalopts.cpp:104
+#: generalopts.cpp:102
 #, fuzzy, kde-format
 #| msgid ""
 #| "This is the URL of the web page where Konqueror (as web browser) will "
@@ -1607,42 +1640,42 @@ msgstr ""
 "\"ដើម\" ។ នៅពេល​ដែល Konqueror ចាប់ផ្ដើម​ជា​កម្មវិធី​គ្រប់គ្រង​ឯកសារ ដែល​ប៊ូតុង​នោះ​ធ្វើ​ឲ្យ​វា​លោត​ទៅ​"
 "ថត​ផ្ទះ​មូលដ្ឋាន​​ជំនួស​វិញ ។"
 
-#: generalopts.cpp:112
+#: generalopts.cpp:110
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "ម៉ាស៊ីន​កម្មវិធី​រុករក​បណ្ដាញ​លំនាំដើម ៖"
 
-#: generalopts.cpp:121
+#: generalopts.cpp:119
 #, kde-format
 msgid "When splitting a view"
 msgstr ""
 
-#: generalopts.cpp:125
+#: generalopts.cpp:123
 #, kde-format
 msgid "Always duplicate current view"
 msgstr ""
 
-#: generalopts.cpp:126
+#: generalopts.cpp:124
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr ""
 
-#: generalopts.cpp:132
+#: generalopts.cpp:130
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr ""
 
-#: htmlopts.cpp:35
+#: htmlopts.cpp:39
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "ចំណាំ"
 
-#: htmlopts.cpp:38
+#: htmlopts.cpp:42
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "ស្នើ​សុំ​ឈ្មោះ និង​ថត ពេល​កំពុង​បន្ថែម​​ចំណាំ"
 
-#: htmlopts.cpp:41
+#: htmlopts.cpp:45
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1652,12 +1685,12 @@ msgstr ""
 "ប្រសិនបើ​​ធីក​ប្រអប់​នេះ នោះ Konqueror នឹង​អនុញ្ញាត​ឲ្យ​អ្នក​ផ្លាស់ប្ដូរ​ចំណង​ជើង​ចំណាំ ហើយ​ជ្រើស​ថត​មួយ សម្រាប់​"
 "ឲ្យ​អ្នក​ផ្ទុក​វា​ពេល​បន្ថែម​ចំណាំ​ថ្មី​មួយ ។"
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:51
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "បង្ហាញ​តែ​ចំណាំ​ណា​​ដែល​បាន​សម្គាល់ ក្នុង​របារ​ឧបករណ៍​ចំណាំ​តែ​ប៉ុណ្ណោះ"
 
-#: htmlopts.cpp:49
+#: htmlopts.cpp:53
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1666,12 +1699,10 @@ msgstr ""
 "បើ​ប្រអប់​នេះ​ត្រូវ​បាន​ធីក នោះ Konqueror នឹង​បង្ហាញ​តែ​ចំណាំ​ទាំងឡាយ​មាន​ក្នុង​របារ​ឧបករណ៍​ចំណាំ ដែល​អ្នក​"
 "បាន​សម្គាល់​នៅ​ក្នុង​កម្មវិធី​​កែសម្រួល​ចំណាំ ។"
 
-#: htmlopts.cpp:56
-#, kde-format
-msgid "Form Com&pletion"
-msgstr "ការ​បំពេញ​សំណុំ​បែបបទ"
-
-#: htmlopts.cpp:60
+#. i18n("Form Com&pletion"), widget());
+#. m_pFormCompletionCheckBox->setCheckable(true);
+#. QFormLayout *laygroup2 = new QFormLayout(m_pFormCompletionCheckBox);
+#: htmlopts.cpp:67
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1680,42 +1711,28 @@ msgstr ""
 "បើ​ប្រអប់​នេះ​ត្រូវ​បាន​ធីក​នោះ Konqueror នឹង​ចង​ចាំ​តែ​ទិន្នន័យ​ដែល​អ្នក​បាន​បញ្ចូល​ក្នុង​សំណុំ​បែប​បទ​របស់​បណ្ដាញ "
 "ហើយ​ស្នើ​ឲ្យ​បញ្ចូល​វា​ក្នុង​វាល​ស្រដៀង សម្រាប់​សំណុំ​បែបបទ​ទាំងអស់ ។"
 
-#: htmlopts.cpp:66
+#: htmlopts.cpp:74
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "ការ​បំពេញ​អតិបរមា ៖"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:76
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
 msgstr "នៅ​ទីនេះ អ្នក​អាច​ជ្រើស​ចំនួន​របស់​តម្លៃ​ដែល Konqueror នឹង​ចងចាំ​សម្រាប់​វាល​សំណុំ​បែបបទ ។"
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:87
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "ឥរិយាបថ​របស់​កណ្ដុរ"
 
-#: htmlopts.cpp:78
-#, kde-format
-msgid "Chan&ge cursor over links"
-msgstr "ផ្លាស់ប្តូរ​ទស្សន៍​ទ្រនិច​ពី​លើ​តំណ"
-
-#: htmlopts.cpp:80
-#, kde-format
-msgid ""
-"If this option is set, the shape of the cursor will change (usually to a "
-"hand) if it is moved over a hyperlink."
-msgstr ""
-"បើ​ជម្រើស​នេះ​ត្រូវ​បាន​កំណត់ នោះ​រាង​ទស្សន៍ទ្រនិច​នឹង​ផ្លាស់ប្ដូរ (ជា​ទូទៅ​រាង​ជា​ដៃ) ប្រសិនបើ​វាត្រូវ​បាន​ផ្លាស់​"
-"ទី​លើ​តំណ​ខ្ពស់​មួយ ។"
-
-#: htmlopts.cpp:84
+#: htmlopts.cpp:90
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "ចុច​កណ្ដុរ​​កណ្ដាល​បើក​ URL ក្នុង​ជម្រើស"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:93
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
@@ -1723,12 +1740,12 @@ msgid ""
 msgstr ""
 "បើ​ធីក​ប្រអប់​នេះ នោះ​អ្នក​អាច​បើក URL ក្នុង​ជម្រើស ​ដោយ​ចុច​កណ្ដុរ​កណ្ដាល​លើ​​ទិដ្ឋភាព Konqueror ។"
 
-#: htmlopts.cpp:91
+#: htmlopts.cpp:97
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "ចុច​កណ្ដុរ​ស្ដាំ​ត្រឡប់​ទៅ​ក្នុង​ប្រវត្តិ"
 
-#: htmlopts.cpp:94
+#: htmlopts.cpp:100
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1738,26 +1755,12 @@ msgstr ""
 "ប្រសិនបើ​​ធីក​ប្រអប់​នេះ នោះ​អ្នក​អាច​ត្រឡប់​ទៅ​ក្នុង​ប្រវត្តិ​ដោយ​ចុច​កណ្ដុរ​ស្ដាំ​លើ​ទិដ្ឋភាព Konqueror ។ ដើម្បី​"
 "ចូល​​ដំណើរការ​ម៉ឺនុយ​បរិបទ ចុច​​កណ្ដុរ​ស្ដាំ ហើយ​ផ្លាស់ទី ។"
 
-#: htmlopts.cpp:104
-#, kde-format
-msgid "Allow automatic delayed &reloading/redirecting"
-msgstr "អនុញ្ញាត​ឲ្យ​ពន្យារពេល ផ្ទុក​ឡើង​វិញ និង​ប្ដូរ​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
-
-#: htmlopts.cpp:105
-#, kde-format
-msgid ""
-"Some web pages request an automatic reload or redirection after a certain "
-"period of time. By unchecking this box Konqueror will ignore these requests."
-msgstr ""
-"ទំព័រ​បណ្ដាញ​មួយ​ចំនួន​​ស្នើ​សុំ​ការ​ផ្ទុក​ឡើង​វិញ ឬ​ការ​​ប្ដូរ​​ទិស​ដោយ​ស្វ័យ​ប្រវត្តិ បន្ទាប់​ពី​កំណត់​រយៈ​ពេល​ជាក់លាក់​មួយ ។ "
-"ដោយ​ដោះ​ធីក​ប្រអប់​នេះ Konqueror នឹង​មិន​អើពើ​សំណើ​ទាំង​នេះ​ឡើយ ។"
-
-#: htmlopts.cpp:111
+#: htmlopts.cpp:115
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "បើក​​ការ​ធ្វើ​ឲ្យ​គ្រាប់​ចុច​ចូល​ដំណើរការ​សកម្ម​ដោយ​ប្រើ​គ្រាប់​ចុច​បញ្ជា (Ctrl)"
 
-#: htmlopts.cpp:112
+#: htmlopts.cpp:116
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1768,228 +1771,62 @@ msgstr ""
 "ធីក​ប្រអប់​នេះ នឹង​បិទ​លក្ខណៈ​ពិសេស​មធ្យោបាយ​ងាយស្រួល​នេះ ។ (Konqueror ត្រូវ​តែ​ចាប់​ផ្តើម​ឡើង​វិញ​ ដើម្បី​"
 "មាន​ប្រសិទ្ធភាព )"
 
-#: htmlopts.cpp:116
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr "ផ្ញើ​បឋមកថា​ DNT ​ដើម្បី​ប្រាប់​តំបន់​បណ្ដាញ​ដែល​អ្នក​មិន​ចង់​តាមដាន "
 
-#: htmlopts.cpp:117
-#, kde-format
+#: htmlopts.cpp:122
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check this box if you want to inform a web site that you do not want your "
+#| "web browsing habits tracked."
 msgid ""
-"Check this box if you want to inform a web site that you do not want your "
-"web browsing habits tracked."
+"<p>Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
+"considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
 "ធីក​ប្រអប់​ បើ​អ្នក​មិន​ចង់​ឲ្យ​តំបន់​បណ្ដាញ​ដែល​អ្នក​មិន​ចង់​ឲ្យ​តំបន់​បណ្ដាញ​របស់​អ្នក​ដោយ​រក​មើល​បាន​តាមដាន​​​ជាទំលាប់ ។"
 
-#: htmlopts.cpp:121
+#: htmlopts.cpp:126
 #, kde-format
 msgid "Offer to save website passwords"
 msgstr "ផ្ដល់​​ពាក្យ​សម្ងាត់​​តំបន់​បណ្ដាញ​ដែល​បាន​រក្សាទុក"
 
-#: htmlopts.cpp:122
+#: htmlopts.cpp:127
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr "ដោះ​ធីក​ប្រអប់​នេះ​ ដើម្បី​រារាំង​ដាក់​ប្រអប់​បញ្ចូល ដើម្បី​រក្សាទុក​ពាក្យ​សម្ងាត់​តំបន់​បណ្ដាញ"
 
-#: htmlopts.cpp:126
+#: htmlopts.cpp:131
 #, kde-format
 msgid "Display online PDF files using WebEngine"
 msgstr ""
 
-#: htmlopts.cpp:127
+#: htmlopts.cpp:132
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
 msgstr ""
 
-#: javaopts.cpp:78
+#: htmlopts.cpp:136
 #, kde-format
-msgid "Enable Ja&va globally"
-msgstr "អនុញ្ញាត Java សកល"
-
-#: javaopts.cpp:93
-#, kde-format
-msgid "Java Runtime Settings"
-msgstr "ការ​កំណត់ Java Runtime"
-
-#: javaopts.cpp:97
-#, kde-format
-msgid "&Use security manager"
-msgstr "ប្រើ​កម្មវិធី​គ្រប់គ្រង​សុវត្ថិភាព"
-
-#: javaopts.cpp:101
-#, kde-format
-msgid "Use &KIO"
-msgstr "ប្រើ KIO"
-
-#: javaopts.cpp:105
-#, kde-format
-msgid "Shu&tdown applet server when inactive for more than"
-msgstr "បិទ​ម៉ាស៊ីន​បម្រើ​អាប់ភ្លេត​នៅពេល​អកម្ម​​ច្រើនជាង"
-
-#: javaopts.cpp:117
-#, kde-format
-msgid " second"
-msgid_plural " seconds"
-msgstr[0] "វិនាទី"
-
-#: javaopts.cpp:123
-#, kde-format
-msgid "&Path to Java executable, or 'java':"
-msgstr "ផ្លូវ​ទៅ​កាន់ Java ដែល​អាច​ប្រតិបត្តិ​បាន ឬ 'java' ៖"
-
-#: javaopts.cpp:127
-#, kde-format
-msgid "Additional Java a&rguments:"
-msgstr "អាគុយម៉ង់ Java បន្ថែម​ទៀត ៖"
-
-#: javaopts.cpp:132
-#, kde-format
-msgid ""
-"Enables the execution of scripts written in Java that can be contained in "
-"HTML pages. Note that, as with any browser, enabling active contents can be "
-"a security problem."
+msgid "Always display files from web pages in a new tab"
 msgstr ""
-"អនុញ្ញាត​ឲ្យ​មាន​ការ​ប្រតិបត្តិ​ស្គ្រីប Java ដែល​បាន​ផ្ទុក​​ក្នុង​ទំព័រ HTML ។ សូម​ចំណាំ​ថា វា​ដូច​ទៅ​នឹង​​កម្មវិធី​"
-"រុករក​ផ្សេង​ដែរ ការ​ធ្វើ​ឲ្យ​មាតិកា​សកម្ម​អាច​ជា​បញ្ហា​សុវត្ថិភាព ។"
 
-#: javaopts.cpp:135
+#: htmlopts.cpp:137
 #, kde-format
 msgid ""
-"<p>This box contains the domains and hosts you have set a specific Java "
-"policy for. This policy will be used instead of the default policy for "
-"enabling or disabling Java applets on pages sent by these domains or hosts.</"
-"p><p>Select a policy and use the controls on the right to modify it.</p>"
+"<p>When showing in Konqueror files from links in web pages, always use a new "
+"tab"
 msgstr ""
-"<p>ប្រអប់​នេះ​មាន​ដែន និង​ម៉ាស៊ីន​ដែល​អ្នក​បាន​កំណត់​គោលការណ៍ Java ជាក់​លាក់​មួយ ។ គោលការណ៍​នេះ នឹង​ត្រូវ​"
-"បាន​ប្រើ​ជំនួស​ឲ្យ​គោលការណ៍​លំនាំ​ដើម ដើម្បី​អនុញ្ញាត​ ឬ​មិន​អនុញ្ញាត​ឲ្យ​អាប់ភ្លេត​ Java នៅ​លើ​ទំព័រ​ផ្ញើ​តាម​ដែន "
-"ឬ​ម៉ាស៊ីន​ទាំងនេះ​ ។</p><p>ជ្រើស​គោលការណ៍​មួយ ហើយ​ប្រើ​វត្ថុ​បញ្ជា​នៅ​ខាង​ស្តាំ ដើម្បី​កែ​សម្រួល​វា ។</p>"
 
-#: javaopts.cpp:142
-#, kde-format
-msgid ""
-"Click this button to choose the file that contains the Java policies. These "
-"policies will be merged with the existing ones. Duplicate entries are "
-"ignored."
-msgstr ""
-"ចុច​ប៊ូតុង​នេះ ដើម្បី​ជ្រើស​ឯកសារ​ដែល​មាន​គោលការណ៍ Java ។ គោលការណ៍​ទាំងនេះ នឹង​ត្រូវ​បាន​បញ្ចូល​ជាមួយ​"
-"គោលការណ៍​ដែល​មាន​ស្រាប់ ។ ធាតុ​ស្ទួន​មិន​ត្រូវ​បាន​អើពើ​ឡើយ ។"
-
-#: javaopts.cpp:145
-#, kde-format
-msgid ""
-"Click this button to save the Java policy to a zipped file. The file, named "
-"<b>java_policy.tgz</b>, will be saved to a location of your choice."
-msgstr ""
-"ចុច​ប៊ូតុង​នេះ ដើម្បី​រក្សា​ទុក​គោលការណ៍ Java ទៅ​កាន់​ឯកសារ​ដែល​បាន​បង្ហាប់ ។ ឯកសារ​ឈ្មោះ "
-"<b>java_policy.tgz</b> នឹង​ត្រូវ​បាន​រក្សា​ទុក​ក្នុង​ទីតាំង​នៃ​ជម្រើស​របស់​អ្នក ។"
-
-#: javaopts.cpp:149
-#, kde-format
-msgid ""
-"Here you can set specific Java policies for any particular host or domain. "
-"To add a new policy, simply click the <i>New...</i> button and supply the "
-"necessary information requested by the dialog box. To change an existing "
-"policy, click on the <i>Change...</i> button and choose the new policy from "
-"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
-"selected policy, causing the default policy setting to be used for that "
-"domain."
-msgstr ""
-"នៅ​ទីនេះ អ្នក​អាច​កំណត់​គោលការណ៍ Java សម្រាប់​ម៉ាស៊ីន ឬ ដែន​ជាក់លាក់​ណា​មួយ ។ ដើម្បី​បន្ថែម​គោលការណ៍​ថ្មី​"
-"មួយ ដោយ​គ្រាន់​តែ​ចុច​ប៊ូតុង <i>ថ្មី...</i> ហើយ​​ផ្ដល់​នូវ​ព័ត៌មាន​ចាំបាច់​ដែល ប្រអប់​ស្នើ​សុំ​ជា​ការ​ស្រេច ។ ដើម្បី​"
-"ប្តូរ​គោលការណ៍​ដែល​មាន​ស្រាប់ ចុច​ប៊ូតុង <i>ប្តូរ...</i> ហើយ​ជ្រើស​គោលការណ៍​ថ្មី​ពី​ប្រអប់​គោលការណ៍​ ។ ចុច​"
-"ប៊ូតុង <i>លុប</i> ហើយ​​យក​គោលការណ៍​ដែល​បាន​ជ្រើស​ចេញ វា​នឹង​ធ្វើ​ឲ្យ​ការ​កំណត់​គោលការណ៍​លំនាំ​ដើម​អាច​ប្រើ​បាន​"
-"ជាមួយ​ដែន​នោះ​តែម្តង ។"
-
-#: javaopts.cpp:162
-#, kde-format
-msgid ""
-"Enabling the security manager will cause the jvm to run with a Security "
-"Manager in place. This will keep applets from being able to read and write "
-"to your file system, creating arbitrary sockets, and other actions which "
-"could be used to compromise your system. Disable this option at your own "
-"risk. You can modify your $HOME/.java.policy file with the Java policytool "
-"utility to give code downloaded from certain sites more permissions."
-msgstr ""
-"បើក​កម្មវិធី​គ្រប់គ្រង​សុវត្ថិភាព ធ្វើ​ឲ្យ jvm រត់​ជាមួយ​នឹង​កម្មវិធី​គ្រប់គ្រង​សុវត្ថិភាព ។ ការ​នេះ​នឹង​រក្សា​"
-"អាប់ភ្លេត​ពី​ការ​អាន និង​សរសេរ​ទៅ​ប្រព័ន្ធ​ឯកសារ​របស់​អ្នក ពី​ការ​បង្កើត arbitrary sockets និង​អំពើ​"
-"ផ្សេងៗ​ដែល​អាច​ត្រូវ​បាន​ប្រើ ​ដើម្បី​សម្រប​សម្រួល​ប្រព័ន្ធ​របស់​អ្នក ។ មិន​អនុញ្ញាត​ឲ្យ​ជម្រើស ទៅ​តាម​ការ​ប្រថុយ​"
-"ប្រថាន​ផ្ទាល់​របស់​អ្នកឡើយ ។ អ្នក​អាច​កែ​ប្រែ​ឯកសារ $HOME/.java.policy ដោយ​ប្រើ​កម្មវិធី Java "
-"policytoo ដើម្បី​ផ្ដល់​សេចក្ដី​អនុញ្ញាត​បន្ថែម​ទៅ​កូដ​ដែល​បាន​ទាញ​យក​ពី​បណ្ដាញ​ជាក់លាក់ ។"
-
-#: javaopts.cpp:170
-#, kde-format
-msgid "Enabling this will cause the jvm to use KIO for network transport "
-msgstr "អនុញ្ញាត​ជម្រើស​នេះ​នឹង​បណ្ដាល​ឲ្យ jvm ប្រើ KIO សម្រាប់​ការ​ដឹក​ជញ្ជូន​លើ​បណ្ដាញ"
-
-#: javaopts.cpp:172
-#, kde-format
-msgid ""
-"Enter the path to the java executable. If you want to use the jre in your "
-"path, simply leave it as 'java'. If you need to use a different jre, enter "
-"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
-"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
-msgstr ""
-"បញ្ចូល​ផ្លូវ​ទៅ​កាន់ java ដែល​អាច​ប្រតិបត្តិ​បាន ។ បើ​អ្នក​ចង់​ប្រើ jre ក្នុង​ផ្លូវ​របស់​អ្នក គ្រាន់​តែ​ទុក​វា​ជា "
-"'java' ។ បើ​អ្នក​ត្រូវ​ប្រើ jre ផ្សេង សូម​បញ្ចូល​ផ្លូវ​ទៅ​កាន់ java ដែល​អាច​ប្រតិបត្តិ​បាន (ឧទាហរណ៍ /"
-"usr/lib/jdk/bin/java) ឬ​ផ្លូវ​ទៅ​កាន់​ថត​ដែល​មាន 'bin/java' (ឧ. /opt/IBMJava2-13) ។"
-
-#: javaopts.cpp:177
-#, kde-format
-msgid ""
-"If you want special arguments to be passed to the virtual machine, enter "
-"them here."
-msgstr "ប្រសិនបើ​អ្នក​ចង់​ឲ្យ​អាគុយម៉ង់​ពិសេស​ត្រូវ​បាន​ផ្ដល់​​ទៅ​ឲ្យ​ម៉ាស៊ីន​និម្មិត សូម​បញ្ចូល​ពួកវា​ទីនេះ ។"
-
-#: javaopts.cpp:179
-#, kde-format
-msgid ""
-"When all the applets have been destroyed, the applet server should shut "
-"down. However, starting the jvm takes a lot of time. If you would like to "
-"keep the java process running while you are browsing, you can set the "
-"timeout value to whatever you like. To keep the java process running for the "
-"whole time that the konqueror process is, leave the Shutdown Applet Server "
-"checkbox unchecked."
-msgstr ""
-"ពេល​ដែល​អាប់ភ្លេត​ទាំងអស់​ត្រូវ​បាន​បំផ្លាញ ម៉ាស៊ីន​បម្រើ​អាប់ភ្លេត​គួរ​តែ​បិទ ។ ទោះ​បី​យ៉ាង​​ណា ក៏​ដោយ​ការ​"
-"ចាប់ផ្តើម jv​m នឹង​ប្រើ​រយៈ​ពេល​យូរ បើ​អ្នក​ចង់​ទុក​ឲ្យ​ដំណើរការ​របស់ jav ​រត់​ខណៈពេល​អ្នក​កំពុង​រុករក អ្នក​អាច​"
-"កំណត់​ពេល​វេលា​​ទៅ​តម្លៃ​ណា​មួយ​ដែល​អ្នក​ចង់​បាន ។ ដើម្បី​ទុក​ឲ្យ​ការ​រត់​ដំណើរការ java រហូត​ដែល​ដំណើរការ​ដោយ "
-"konqueror សូម​កុំ​ធីក​ប្រអប់​ធីក​បិទ​ម៉ាស៊ីន​បម្រើ​​អាប់ភ្លេត ។"
-
-#: javaopts.cpp:288
-#, kde-format
-msgctxt "@title:group"
-msgid "Doma&in-Specific"
-msgstr "ដែន​ជាក់លាក់"
-
-#: javaopts.cpp:323
-#, kde-format
-msgctxt "@title:window"
-msgid "New Java Policy"
-msgstr "គោលការណ៍ Java ថ្មី"
-
-#: javaopts.cpp:326
-#, kde-format
-msgctxt "@title:window"
-msgid "Change Java Policy"
-msgstr "ផ្លាស់ប្តូរ​គោលការណ៍ Java"
-
-#: javaopts.cpp:330
-#, kde-format
-msgid "&Java policy:"
-msgstr "គោលការណ៍ Java ៖"
-
-#: javaopts.cpp:331
-#, kde-format
-msgid "Select a Java policy for the above host or domain."
-msgstr "ជ្រើស​គោលការណ៍ Java មួយ សម្រាប់​ម៉ាស៊ីន ឬ​ដែន​ខាង​លើ ។"
-
-#: jsopts.cpp:50
+#: jsopts.cpp:57
 #, kde-format
 msgid "Ena&ble JavaScript globally"
 msgstr "អនុញ្ញាត JavaScript ជា​សកល"
 
-#: jsopts.cpp:51
+#: jsopts.cpp:58
 #, kde-format
 msgid ""
 "Enables the execution of scripts written in ECMA-Script (also known as "
@@ -1999,33 +1836,7 @@ msgstr ""
 "អនុញ្ញាត​ឲ្យ​មាន​ការ​ប្រតិបត្តិ​ស្គ្រីប ECMA (ស្គាល់​ជា JavaScript) ​ដែល​អាច​មាន​ក្នុង​ទំព័រ HTML ។ ចំណាំ​"
 "ថា វា​ដូចជា​​កម្មវិធី​រុករក​ផ្សេង​ទៀត​ដែរ ការ​ធ្វើ​ឲ្យ​មាតិកា​សកម្ម​អាច​ជា​បញ្ហា​សុវត្ថិភាព ។​"
 
-#: jsopts.cpp:59
-#, kde-format
-msgid "Debugging"
-msgstr "ការ​បំបាត់​កំហុស"
-
-#: jsopts.cpp:63
-#, kde-format
-msgid "Enable debu&gger"
-msgstr "អនុញ្ញាត​កម្មវិធី​បំបាត់​កំហុស"
-
-#: jsopts.cpp:64
-#, kde-format
-msgid "Enables builtin JavaScript debugger."
-msgstr "អនុញ្ញាត​កម្មវិធី​បំបាត់​កំហុស JavaScript ដែល​ភ្ជាប់​មក​ជាមួយ ។"
-
-#: jsopts.cpp:68
-#, kde-format
-msgid "Report &errors"
-msgstr "រាយការណ៍​កំហុស"
-
-#: jsopts.cpp:69
-#, kde-format
-msgid ""
-"Enables the reporting of errors that occur when JavaScript code is executed."
-msgstr "អនុញ្ញាត​ការ​រាយការណ៍​កំហុស​ដែល​កើត​ឡើង ពេល​ប្រតិបត្តិ​កូដ JavaScript ។"
-
-#: jsopts.cpp:79
+#: jsopts.cpp:70
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2045,7 +1856,7 @@ msgstr ""
 "បាន​សម្រាប់​ដែន​នោះ ។ ប៊ូតុង<i>នាំ​ចូល</i> និង<i>នាំ​ចេញ</i> អនុញ្ញាត​ឲ្យ​អ្នក​ចែក​រំលែក​គោលការណ៍​របស់​"
 "អ្នក ជា​មួយ​អ្នក​ដទៃ​បាន​​ងាយ​ស្រួល ដោយ​អនុញ្ញាត​ឲ្យ​អ្នក​រក្សា​ទុក និង​យក​ពួក​វា​ពី​ឯកសារ​ដែល​បាន​បង្ហាប់ ។"
 
-#: jsopts.cpp:89
+#: jsopts.cpp:80
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2058,7 +1869,7 @@ msgstr ""
 "ជំនួស​ឲ្យ​គោលការណ៍​លំនាំ​ដើម សម្រាប់​ធ្វើ​ឲ្យ JavaScript លើ​ទំព័រ​ដែល​ត្រូវ​បាន​បញ្ចូន​ដោយ​ដែន ឬ​ម៉ាស៊ីន​ទាំងនេះ​"
 "អាច​ប្រើ​បាន ឬ​មិន​បាន ។</p><p>ជ្រើស​គោលការណ៍​ហើយ​ប្រើ​បញ្ជា​នៅ​ខាង​ស្តាំ ដើម្បី​កែ​សម្រួល​វា ។</p>"
 
-#: jsopts.cpp:96
+#: jsopts.cpp:87
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2068,7 +1879,7 @@ msgstr ""
 "ចុច​ប៊ូតុង​នេះ ដើម្បី​ជ្រើស​ឯកសារ​ដែល​មាន​គោលការណ៍ Java ។ គោលការណ៍​ទាំងនេះ នឹង​ត្រូវ​បានដាក់​បញ្ចូល​គ្នា​"
 "ជាមួយ​នឹង​គោលការណ៍​ដែល​មាន​ស្រាប់ ។ ធាតុ​ស្ទួន​មិន​ត្រូវ​បាន​អើពើ ។"
 
-#: jsopts.cpp:99
+#: jsopts.cpp:90
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2078,93 +1889,60 @@ msgstr ""
 "ចុច​ប៊ូតុង​នេះ ដើម្បី​រក្សា​ទុក​គោលការណ៍ JavaScript ទៅ​កាន់​ឯកសារ​ដែល​បាន​បង្ហាប់ ។ ឯកសារ​ឈ្មោះ "
 "<b>javascript_policy.tgz</b> នឹង​ត្រូវ​បាន​រក្សា​ទុក​ជា​ទីតាំង​នៃ​ជម្រើស​របស់​អ្នក ។"
 
-#: jsopts.cpp:105
+#: jsopts.cpp:96
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "គោលការណ៍ JavaScript សកល"
 
-#: jsopts.cpp:172
-#, kde-format
-msgctxt "@title:group"
-msgid "Do&main-Specific"
-msgstr "ដែន​ជាក់លាក់"
-
-#: jsopts.cpp:211
-#, kde-format
-msgctxt "@title:window"
-msgid "New JavaScript Policy"
-msgstr "គោលការណ៍ JavaScript ថ្មី"
-
-#: jsopts.cpp:214
-#, kde-format
-msgctxt "@title:window"
-msgid "Change JavaScript Policy"
-msgstr "ផ្លាស់ប្តូរ​គោលការណ៍ JavaScript"
-
-#: jsopts.cpp:218
-#, kde-format
-msgid "JavaScript policy:"
-msgstr "គោលការណ៍ JavaScript ៖"
-
-#: jsopts.cpp:219
-#, kde-format
-msgid "Select a JavaScript policy for the above host or domain."
-msgstr "ជ្រើស​គោលការណ៍ JavaScript មួយ សម្រាប់​ដែន ឬ​ម៉ាស៊ីន​ខាង​លើ ។"
-
-#: jsopts.cpp:221
-#, kde-format
-msgid "Domain-Specific JavaScript Policies"
-msgstr "គោលការណ៍ JavaScript ដែន​ជាក់លាក់"
-
-#: jspolicies.cpp:132
+#: jspolicies.cpp:161
 #, kde-format
 msgid "Open new windows:"
 msgstr "បើក​បង្អួច​ថ្មី ៖"
 
-#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
-#: jspolicies.cpp:308
+#: jspolicies.cpp:169 jspolicies.cpp:223 jspolicies.cpp:260 jspolicies.cpp:297
+#: jspolicies.cpp:337
 #, kde-format
 msgid "Use global"
 msgstr "ប្រើ​សាកល ៖"
 
-#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
-#: jspolicies.cpp:309
+#: jspolicies.cpp:170 jspolicies.cpp:224 jspolicies.cpp:261 jspolicies.cpp:298
+#: jspolicies.cpp:338
 #, kde-format
 msgid "Use setting from global policy."
 msgstr "ប្រើ​ការ​កំណត់​ពី​គោលការណ៍​សកល ។"
 
-#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
-#: jspolicies.cpp:315
+#: jspolicies.cpp:176 jspolicies.cpp:230 jspolicies.cpp:267 jspolicies.cpp:304
+#: jspolicies.cpp:344
 #, kde-format
 msgid "Allow"
 msgstr "អនុញ្ញាត"
 
-#: jspolicies.cpp:148
+#: jspolicies.cpp:177
 #, kde-format
 msgid "Accept all popup window requests."
 msgstr "ព្រម​ទទួល​សំណើ​បង្អួច​លេច​ឡើង​ទាំងអស់ ។"
 
-#: jspolicies.cpp:154
+#: jspolicies.cpp:183
 #, kde-format
 msgid "Prompt every time a popup window is requested."
 msgstr "បង្អួច​ប្រអប់​បញ្ចូល​លេច​ឡើង​រាល់​ពេល​ត្រូវ​បាន​ស្នើ​សុំ ។"
 
-#: jspolicies.cpp:159
+#: jspolicies.cpp:188
 #, kde-format
 msgid "Deny"
 msgstr "បដិសេធ"
 
-#: jspolicies.cpp:160
+#: jspolicies.cpp:189
 #, kde-format
 msgid "Reject all popup window requests."
 msgstr "ច្រានចោល​រាល់​សំណើ​បង្អួច​លេច​ឡើង"
 
-#: jspolicies.cpp:165
+#: jspolicies.cpp:194
 #, kde-format
 msgid "Smart"
 msgstr "ឆ្លាត"
 
-#: jspolicies.cpp:166
+#: jspolicies.cpp:195
 #, kde-format
 msgid ""
 "Accept popup window requests only when links are activated through an "
@@ -2172,7 +1950,7 @@ msgid ""
 msgstr ""
 "ព្រមទទួល​សំណើ​បង្អួច​លេច​ឡើង តែ​ពេល​តំណ​ត្រូវ​បាន​ធ្វើ​ឲ្យ​សកម្ម​តាម​រយៈ​ការ​ចុច​កណ្ដុរ ឬ ប្រតិបត្តិការ​ក្ដារចុច ។"
 
-#: jspolicies.cpp:173
+#: jspolicies.cpp:202
 #, kde-format
 msgid ""
 "If you disable this, Konqueror will stop interpreting the <i>window.open()</"
@@ -2187,22 +1965,22 @@ msgstr ""
 "បណ្តាញ​ជាក់លាក់​ដែល​ទាមទា​ប្រតិបត្តិការ <i>window.open()</i> ឲ្យ​បាន​ត្រឹមត្រូវ ។ ប្រើ​លក្ខណៈ​ពិសេស​"
 "នេះ​ដោយ​ប្រុង​ប្រយ័ត្ន ។"
 
-#: jspolicies.cpp:187
+#: jspolicies.cpp:216
 #, kde-format
 msgid "Resize window:"
 msgstr "ប្តូរ​ទំហំ​បង្អួច ៖"
 
-#: jspolicies.cpp:202
+#: jspolicies.cpp:231
 #, kde-format
 msgid "Allow scripts to change the window size."
 msgstr "អនុញ្ញាត​ឲ្យ​ស្គ្រីប​ផ្លាស់ប្តូរ​ទំហំ​បង្អួច ។"
 
-#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#: jspolicies.cpp:236 jspolicies.cpp:273 jspolicies.cpp:310 jspolicies.cpp:350
 #, kde-format
 msgid "Ignore"
 msgstr "មិន​អើពើ"
 
-#: jspolicies.cpp:208
+#: jspolicies.cpp:237
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
@@ -2211,7 +1989,7 @@ msgstr ""
 "មិន​អើពើ​ការ​ប៉ុនប៉ង​របស់​ស្គ្រីប ដើម្បី​ផ្លាស់​ប្តូរ​ទំហំ​បង្អួច ។ ទំព័រ​បណ្ដាញ​នឹង <i>គិត​ថា</i> វា​បាន​ប្តូរ​ទំហំ "
 "ប៉ុន្តែ​បង្អួច​ពិត​ប្រាកដ​មិន​ត្រូវ​បាន​ប៉ះពាល់​ឡើយ ។"
 
-#: jspolicies.cpp:215
+#: jspolicies.cpp:244
 #, kde-format
 msgid ""
 "Some websites change the window size on their own by using <i>window."
@@ -2221,17 +1999,17 @@ msgstr ""
 "តំបន់​បណ្ដាញ​មួយ​ចំនួន ផ្លាស់ប្ដូរ​ទំហំ​បង្អួច​ដោយ​ខ្លួន​វា​ផ្ទាល់ ដោយ​ប្រើ<i>window.resizeBy()</i> ឬ "
 "<i>window.resizeTo()</i> ។ ជម្រើស​នេះ​បញ្ជាក់​ពីអំពើ​នៃ​ការ​ប៉ុនប៉ង​ដូចនោះ ។"
 
-#: jspolicies.cpp:224
+#: jspolicies.cpp:253
 #, kde-format
 msgid "Move window:"
 msgstr "ផ្លាស់ទី​បង្អួច ៖"
 
-#: jspolicies.cpp:239
+#: jspolicies.cpp:268
 #, kde-format
 msgid "Allow scripts to change the window position."
 msgstr "អនុញ្ញាត​ឲ្យ​ស្គ្រីប​ផ្លាស់ប្តូរ​ទីតាំង​បង្អួច ។"
 
-#: jspolicies.cpp:245
+#: jspolicies.cpp:274
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window position. The web page will "
@@ -2240,7 +2018,7 @@ msgstr ""
 "មិន​អើពើ​ការ​ប៉ុនប៉ង​របស់​ស្គ្រីប ដើម្បី​ផ្លាស់​ប្តូរ​ទីតាំង​របស់​បង្អួច ។ ទំព័រ​បណ្ដាញ​នឹង <i>គិត​ថា</i> វា​បាន​"
 "ផ្លាស់ទី​បង្អួច ប៉ុន្តែ​ទីតាំង​ពិត​ប្រាកដ​មិន​ត្រូវ​បាន​ប៉ះពាល់​ឡើយ ។"
 
-#: jspolicies.cpp:252
+#: jspolicies.cpp:281
 #, kde-format
 msgid ""
 "Some websites change the window position on their own by using <i>window."
@@ -2250,17 +2028,17 @@ msgstr ""
 "តំបន់​បណ្ដាញ​មួយ​ចំនួន​ផ្លាស់​ប្ដូរ​ទីតាំង​របស់​បង្អួច​ដោយ​ខ្លួន​វា​ផ្ទាល់ ដោយ​ប្រើ<i>window.moveBy()</i> ឬ "
 "<i>window.moveTo()</i> ។ ជម្រើស​នេះ​បញ្ជាក់​ពីអំពើ​នៃ​ការ​ប៉ុនប៉ង​ដូចនោះ ។"
 
-#: jspolicies.cpp:261
+#: jspolicies.cpp:290
 #, kde-format
 msgid "Focus window:"
 msgstr "ផ្តោត​លើ​បង្អួច ៖"
 
-#: jspolicies.cpp:276
+#: jspolicies.cpp:305
 #, kde-format
 msgid "Allow scripts to focus the window."
 msgstr "អនុញ្ញាត​ឲ្យ​ស្គ្រីប​ផ្ដោត​លើ​បង្អួច ។"
 
-#: jspolicies.cpp:282
+#: jspolicies.cpp:311
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to focus the window. The web page will <i>think</"
@@ -2270,7 +2048,7 @@ msgstr ""
 "មិន​អើពើ​ការ​ប៉ុនប៉ង​ស្គ្រីប ដើម្បី​ផ្ដោត​លើ​​បង្អួច ។ ទំព័រ​បណ្ដាញ​នឹង <i>គិត​ថា</i> វា​បាន​នាំ​ការ​ផ្ដោត​ទៅ​"
 "បង្អួច ប៉ុន្តែ​ការ​ផ្ដោត​ពិត​ប្រាកដ​នឹង​នៅ​ដដែល ។"
 
-#: jspolicies.cpp:290
+#: jspolicies.cpp:319
 #, kde-format
 msgid ""
 "Some websites set the focus to their browser window on their own by using "
@@ -2282,17 +2060,17 @@ msgstr ""
 "<i>window.focus()</i> ។ ជា​ទូទៅ វា​ធ្វើ​ឲ្យ​បង្អួច​ផ្លាស់ទី​ទៅ​មុខ និង​​បង្អាក់​អំពើ​ដែល​អ្នក​ប្រើ​កំពុង​ធ្វើ​"
 "ក្នុង​ពេល​នោះ ។ ជម្រើស​នេះ​បញ្ជាក់​ពី​អំពើ​នៃ​ការ​ប៉ុនប៉ង​ដូចនោះ ។"
 
-#: jspolicies.cpp:301
+#: jspolicies.cpp:330
 #, kde-format
 msgid "Modify status bar text:"
 msgstr "កែ​សម្រួល​អត្ថបទ​របស់​របារ​ស្ថានភាព ៖"
 
-#: jspolicies.cpp:316
+#: jspolicies.cpp:345
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
 msgstr "អនុញ្ញាត​ឲ្យ​ស្គ្រីប​ប្តូរ​អត្ថបទ​របស់​របារ​ស្ថានភាព ។"
 
-#: jspolicies.cpp:322
+#: jspolicies.cpp:351
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
@@ -2301,7 +2079,7 @@ msgstr ""
 "មិន​អើពើ​ការ​ប៉ុនប៉ង​នៃ​ស្គ្រីប ដើម្បី​ផ្លាស់​ប្ដូរ​អត្ថបទ​របស់​របារ​ស្ថានភាព ។ ទំព័រ​បណ្ដាញ​នឹង <i>គិត​ថា</i> "
 "វា​បាន​ប្ដូរ​អត្ថបទ ប៉ុន្តែ​អត្ថបទ​ពិត​ប្រាកដ​នឹង​នៅ​ដដែល ។"
 
-#: jspolicies.cpp:330
+#: jspolicies.cpp:359
 #, kde-format
 msgid ""
 "Some websites change the status bar text by setting <i>window.status</i> or "
@@ -2311,16 +2089,6 @@ msgstr ""
 "តំបន់​បណ្ដាញ​មួយ​ចំនួន​ផ្លាស់ប្ដូរ​អត្ថបទ​របស់​របារ​ស្ថានភាព​ដោយ​កំណត់<i>window.status</i> ឬ "
 "<i>window.defaultStatus</i> ដូច្នេះ​ពេល​ខ្លះ​ការពារ​ការ​បង្ហាញ​តំណ​ខ្ពស់​របស់ URL ពិត ។ ជម្រើស​"
 "នេះ​បញ្ជាក់​ពី​អំពើ​នៃ​ការ​ប៉ុនប៉ង​ដូចនោះ ។"
-
-#: main.cpp:49
-#, kde-format
-msgid "&Java"
-msgstr "Java"
-
-#: main.cpp:53
-#, kde-format
-msgid "Java&Script"
-msgstr "JavaScript"
 
 #: policydlg.cpp:30
 #, kde-format
@@ -2594,9 +2362,8 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150 useragent/useragent.ui:163
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr ""
@@ -2639,6 +2406,14 @@ msgstr "លុប"
 msgid "Choose &selected identification"
 msgstr ""
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:163
+#, kde-format
+msgid ""
+"<html><head/><body><p>If checked, disable choosing a custom identification "
+"and use the default one</p></body></html>"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
@@ -2660,6 +2435,194 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+
+#~ msgid "Form Com&pletion"
+#~ msgstr "ការ​បំពេញ​សំណុំ​បែបបទ"
+
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "ផ្លាស់ប្តូរ​ទស្សន៍​ទ្រនិច​ពី​លើ​តំណ"
+
+#~ msgid ""
+#~ "If this option is set, the shape of the cursor will change (usually to a "
+#~ "hand) if it is moved over a hyperlink."
+#~ msgstr ""
+#~ "បើ​ជម្រើស​នេះ​ត្រូវ​បាន​កំណត់ នោះ​រាង​ទស្សន៍ទ្រនិច​នឹង​ផ្លាស់ប្ដូរ (ជា​ទូទៅ​រាង​ជា​ដៃ) ប្រសិនបើ​វាត្រូវ​បាន​"
+#~ "ផ្លាស់​ទី​លើ​តំណ​ខ្ពស់​មួយ ។"
+
+#~ msgid "Allow automatic delayed &reloading/redirecting"
+#~ msgstr "អនុញ្ញាត​ឲ្យ​ពន្យារពេល ផ្ទុក​ឡើង​វិញ និង​ប្ដូរ​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
+
+#~ msgid ""
+#~ "Some web pages request an automatic reload or redirection after a certain "
+#~ "period of time. By unchecking this box Konqueror will ignore these "
+#~ "requests."
+#~ msgstr ""
+#~ "ទំព័រ​បណ្ដាញ​មួយ​ចំនួន​​ស្នើ​សុំ​ការ​ផ្ទុក​ឡើង​វិញ ឬ​ការ​​ប្ដូរ​​ទិស​ដោយ​ស្វ័យ​ប្រវត្តិ បន្ទាប់​ពី​កំណត់​រយៈ​ពេល​ជាក់លាក់​មួយ "
+#~ "។ ដោយ​ដោះ​ធីក​ប្រអប់​នេះ Konqueror នឹង​មិន​អើពើ​សំណើ​ទាំង​នេះ​ឡើយ ។"
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "អនុញ្ញាត Java សកល"
+
+#~ msgid "Java Runtime Settings"
+#~ msgstr "ការ​កំណត់ Java Runtime"
+
+#~ msgid "&Use security manager"
+#~ msgstr "ប្រើ​កម្មវិធី​គ្រប់គ្រង​សុវត្ថិភាព"
+
+#~ msgid "Use &KIO"
+#~ msgstr "ប្រើ KIO"
+
+#~ msgid "Shu&tdown applet server when inactive for more than"
+#~ msgstr "បិទ​ម៉ាស៊ីន​បម្រើ​អាប់ភ្លេត​នៅពេល​អកម្ម​​ច្រើនជាង"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] "វិនាទី"
+
+#~ msgid "&Path to Java executable, or 'java':"
+#~ msgstr "ផ្លូវ​ទៅ​កាន់ Java ដែល​អាច​ប្រតិបត្តិ​បាន ឬ 'java' ៖"
+
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "អាគុយម៉ង់ Java បន្ថែម​ទៀត ៖"
+
+#~ msgid ""
+#~ "Enables the execution of scripts written in Java that can be contained in "
+#~ "HTML pages. Note that, as with any browser, enabling active contents can "
+#~ "be a security problem."
+#~ msgstr ""
+#~ "អនុញ្ញាត​ឲ្យ​មាន​ការ​ប្រតិបត្តិ​ស្គ្រីប Java ដែល​បាន​ផ្ទុក​​ក្នុង​ទំព័រ HTML ។ សូម​ចំណាំ​ថា វា​ដូច​ទៅ​នឹង​​កម្មវិធី​"
+#~ "រុករក​ផ្សេង​ដែរ ការ​ធ្វើ​ឲ្យ​មាតិកា​សកម្ម​អាច​ជា​បញ្ហា​សុវត្ថិភាព ។"
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific Java "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling Java applets on pages sent by these domains or "
+#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
+#~ "it.</p>"
+#~ msgstr ""
+#~ "<p>ប្រអប់​នេះ​មាន​ដែន និង​ម៉ាស៊ីន​ដែល​អ្នក​បាន​កំណត់​គោលការណ៍ Java ជាក់​លាក់​មួយ ។ គោលការណ៍​នេះ នឹង​"
+#~ "ត្រូវ​បាន​ប្រើ​ជំនួស​ឲ្យ​គោលការណ៍​លំនាំ​ដើម ដើម្បី​អនុញ្ញាត​ ឬ​មិន​អនុញ្ញាត​ឲ្យ​អាប់ភ្លេត​ Java នៅ​លើ​ទំព័រ​ផ្ញើ​"
+#~ "តាម​ដែន ឬ​ម៉ាស៊ីន​ទាំងនេះ​ ។</p><p>ជ្រើស​គោលការណ៍​មួយ ហើយ​ប្រើ​វត្ថុ​បញ្ជា​នៅ​ខាង​ស្តាំ ដើម្បី​កែ​សម្រួល​"
+#~ "វា ។</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the Java policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "ចុច​ប៊ូតុង​នេះ ដើម្បី​ជ្រើស​ឯកសារ​ដែល​មាន​គោលការណ៍ Java ។ គោលការណ៍​ទាំងនេះ នឹង​ត្រូវ​បាន​បញ្ចូល​ជាមួយ​"
+#~ "គោលការណ៍​ដែល​មាន​ស្រាប់ ។ ធាតុ​ស្ទួន​មិន​ត្រូវ​បាន​អើពើ​ឡើយ ។"
+
+#~ msgid ""
+#~ "Click this button to save the Java policy to a zipped file. The file, "
+#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
+#~ msgstr ""
+#~ "ចុច​ប៊ូតុង​នេះ ដើម្បី​រក្សា​ទុក​គោលការណ៍ Java ទៅ​កាន់​ឯកសារ​ដែល​បាន​បង្ហាប់ ។ ឯកសារ​ឈ្មោះ "
+#~ "<b>java_policy.tgz</b> នឹង​ត្រូវ​បាន​រក្សា​ទុក​ក្នុង​ទីតាំង​នៃ​ជម្រើស​របស់​អ្នក ។"
+
+#~ msgid ""
+#~ "Here you can set specific Java policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy, causing the default policy "
+#~ "setting to be used for that domain."
+#~ msgstr ""
+#~ "នៅ​ទីនេះ អ្នក​អាច​កំណត់​គោលការណ៍ Java សម្រាប់​ម៉ាស៊ីន ឬ ដែន​ជាក់លាក់​ណា​មួយ ។ ដើម្បី​បន្ថែម​គោលការណ៍​"
+#~ "ថ្មី​មួយ ដោយ​គ្រាន់​តែ​ចុច​ប៊ូតុង <i>ថ្មី...</i> ហើយ​​ផ្ដល់​នូវ​ព័ត៌មាន​ចាំបាច់​ដែល ប្រអប់​ស្នើ​សុំ​ជា​ការ​"
+#~ "ស្រេច ។ ដើម្បី​ប្តូរ​គោលការណ៍​ដែល​មាន​ស្រាប់ ចុច​ប៊ូតុង <i>ប្តូរ...</i> ហើយ​ជ្រើស​គោលការណ៍​ថ្មី​ពី​ប្រអប់​"
+#~ "គោលការណ៍​ ។ ចុច​ប៊ូតុង <i>លុប</i> ហើយ​​យក​គោលការណ៍​ដែល​បាន​ជ្រើស​ចេញ វា​នឹង​ធ្វើ​ឲ្យ​ការ​កំណត់​គោលការណ៍​"
+#~ "លំនាំ​ដើម​អាច​ប្រើ​បាន​ជាមួយ​ដែន​នោះ​តែម្តង ។"
+
+#~ msgid ""
+#~ "Enabling the security manager will cause the jvm to run with a Security "
+#~ "Manager in place. This will keep applets from being able to read and "
+#~ "write to your file system, creating arbitrary sockets, and other actions "
+#~ "which could be used to compromise your system. Disable this option at "
+#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
+#~ "policytool utility to give code downloaded from certain sites more "
+#~ "permissions."
+#~ msgstr ""
+#~ "បើក​កម្មវិធី​គ្រប់គ្រង​សុវត្ថិភាព ធ្វើ​ឲ្យ jvm រត់​ជាមួយ​នឹង​កម្មវិធី​គ្រប់គ្រង​សុវត្ថិភាព ។ ការ​នេះ​នឹង​រក្សា​"
+#~ "អាប់ភ្លេត​ពី​ការ​អាន និង​សរសេរ​ទៅ​ប្រព័ន្ធ​ឯកសារ​របស់​អ្នក ពី​ការ​បង្កើត arbitrary sockets និង​អំពើ​"
+#~ "ផ្សេងៗ​ដែល​អាច​ត្រូវ​បាន​ប្រើ ​ដើម្បី​សម្រប​សម្រួល​ប្រព័ន្ធ​របស់​អ្នក ។ មិន​អនុញ្ញាត​ឲ្យ​ជម្រើស ទៅ​តាម​ការ​"
+#~ "ប្រថុយ​ប្រថាន​ផ្ទាល់​របស់​អ្នកឡើយ ។ អ្នក​អាច​កែ​ប្រែ​ឯកសារ $HOME/.java.policy ដោយ​ប្រើ​កម្មវិធី "
+#~ "Java policytoo ដើម្បី​ផ្ដល់​សេចក្ដី​អនុញ្ញាត​បន្ថែម​ទៅ​កូដ​ដែល​បាន​ទាញ​យក​ពី​បណ្ដាញ​ជាក់លាក់ ។"
+
+#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
+#~ msgstr "អនុញ្ញាត​ជម្រើស​នេះ​នឹង​បណ្ដាល​ឲ្យ jvm ប្រើ KIO សម្រាប់​ការ​ដឹក​ជញ្ជូន​លើ​បណ្ដាញ"
+
+#~ msgid ""
+#~ "Enter the path to the java executable. If you want to use the jre in your "
+#~ "path, simply leave it as 'java'. If you need to use a different jre, "
+#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
+#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
+#~ "IBMJava2-13)."
+#~ msgstr ""
+#~ "បញ្ចូល​ផ្លូវ​ទៅ​កាន់ java ដែល​អាច​ប្រតិបត្តិ​បាន ។ បើ​អ្នក​ចង់​ប្រើ jre ក្នុង​ផ្លូវ​របស់​អ្នក គ្រាន់​តែ​ទុក​វា​"
+#~ "ជា 'java' ។ បើ​អ្នក​ត្រូវ​ប្រើ jre ផ្សេង សូម​បញ្ចូល​ផ្លូវ​ទៅ​កាន់ java ដែល​អាច​ប្រតិបត្តិ​បាន "
+#~ "(ឧទាហរណ៍ /usr/lib/jdk/bin/java) ឬ​ផ្លូវ​ទៅ​កាន់​ថត​ដែល​មាន 'bin/java' (ឧ. /opt/"
+#~ "IBMJava2-13) ។"
+
+#~ msgid ""
+#~ "If you want special arguments to be passed to the virtual machine, enter "
+#~ "them here."
+#~ msgstr "ប្រសិនបើ​អ្នក​ចង់​ឲ្យ​អាគុយម៉ង់​ពិសេស​ត្រូវ​បាន​ផ្ដល់​​ទៅ​ឲ្យ​ម៉ាស៊ីន​និម្មិត សូម​បញ្ចូល​ពួកវា​ទីនេះ ។"
+
+#~ msgid ""
+#~ "When all the applets have been destroyed, the applet server should shut "
+#~ "down. However, starting the jvm takes a lot of time. If you would like to "
+#~ "keep the java process running while you are browsing, you can set the "
+#~ "timeout value to whatever you like. To keep the java process running for "
+#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
+#~ "Server checkbox unchecked."
+#~ msgstr ""
+#~ "ពេល​ដែល​អាប់ភ្លេត​ទាំងអស់​ត្រូវ​បាន​បំផ្លាញ ម៉ាស៊ីន​បម្រើ​អាប់ភ្លេត​គួរ​តែ​បិទ ។ ទោះ​បី​យ៉ាង​​ណា ក៏​ដោយ​ការ​"
+#~ "ចាប់ផ្តើម jv​m នឹង​ប្រើ​រយៈ​ពេល​យូរ បើ​អ្នក​ចង់​ទុក​ឲ្យ​ដំណើរការ​របស់ jav ​រត់​ខណៈពេល​អ្នក​កំពុង​រុករក អ្នក​"
+#~ "អាច​កំណត់​ពេល​វេលា​​ទៅ​តម្លៃ​ណា​មួយ​ដែល​អ្នក​ចង់​បាន ។ ដើម្បី​ទុក​ឲ្យ​ការ​រត់​ដំណើរការ java រហូត​ដែល​"
+#~ "ដំណើរការ​ដោយ konqueror សូម​កុំ​ធីក​ប្រអប់​ធីក​បិទ​ម៉ាស៊ីន​បម្រើ​​អាប់ភ្លេត ។"
+
+#~ msgctxt "@title:group"
+#~ msgid "Doma&in-Specific"
+#~ msgstr "ដែន​ជាក់លាក់"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Java Policy"
+#~ msgstr "គោលការណ៍ Java ថ្មី"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Java Policy"
+#~ msgstr "ផ្លាស់ប្តូរ​គោលការណ៍ Java"
+
+#~ msgid "&Java policy:"
+#~ msgstr "គោលការណ៍ Java ៖"
+
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr "ជ្រើស​គោលការណ៍ Java មួយ សម្រាប់​ម៉ាស៊ីន ឬ​ដែន​ខាង​លើ ។"
+
+#~ msgid "Debugging"
+#~ msgstr "ការ​បំបាត់​កំហុស"
+
+#~ msgid "Enable debu&gger"
+#~ msgstr "អនុញ្ញាត​កម្មវិធី​បំបាត់​កំហុស"
+
+#~ msgid "Enables builtin JavaScript debugger."
+#~ msgstr "អនុញ្ញាត​កម្មវិធី​បំបាត់​កំហុស JavaScript ដែល​ភ្ជាប់​មក​ជាមួយ ។"
+
+#~ msgid "Report &errors"
+#~ msgstr "រាយការណ៍​កំហុស"
+
+#~ msgid ""
+#~ "Enables the reporting of errors that occur when JavaScript code is "
+#~ "executed."
+#~ msgstr "អនុញ្ញាត​ការ​រាយការណ៍​កំហុស​ដែល​កើត​ឡើង ពេល​ប្រតិបត្តិ​កូដ JavaScript ។"
+
+#~ msgid "&Java"
+#~ msgstr "Java"
+
+#~ msgid "Java&Script"
+#~ msgstr "JavaScript"
 
 #  i18n: file advancedTabOptions.ui line 60
 #~ msgid ""

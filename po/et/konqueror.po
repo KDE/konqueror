@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 00:39+0000\n"
+"POT-Creation-Date: 2024-07-25 00:39+0000\n"
 "PO-Revision-Date: 2019-11-08 00:49+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -494,8 +494,8 @@ msgid ""
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4789
-#: src/konqmainwindow.cpp:4835
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4790
+#: src/konqmainwindow.cpp:4836
 #, kde-format
 msgid "no name"
 msgstr "nimetu"
@@ -600,7 +600,7 @@ msgstr "Kohalik"
 msgid "Miscellaneous"
 msgstr "Muud"
 
-#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4302
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4301
 #, kde-format
 msgid "Open in New &Window"
 msgstr "&Ava uues aknas"
@@ -662,13 +662,13 @@ msgctxt "@title:window"
 msgid "Clear History?"
 msgstr "Kas kustutada ajalugu?"
 
-#: src/konqmainwindow.cpp:685
+#: src/konqmainwindow.cpp:687
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
 msgstr "Laadimine..."
 
-#: src/konqmainwindow.cpp:717
+#: src/konqmainwindow.cpp:719
 #, kde-format
 msgid "Access denied"
 msgstr "Juurdepääs keelatud"
@@ -692,19 +692,19 @@ msgstr ""
 "Sellel leheküljel on veel saatmata muudatusi.\n"
 "Lehekülje taaslaadimine tühistab muudatused."
 
-#: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2225
-#: src/konqmainwindow.cpp:2314 src/konqmainwindow.cpp:2346
-#: src/konqmainwindow.cpp:2389 src/konqmainwindow.cpp:2411
-#: src/konqmainwindow.cpp:4754
+#: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2224
+#: src/konqmainwindow.cpp:2313 src/konqmainwindow.cpp:2345
+#: src/konqmainwindow.cpp:2388 src/konqmainwindow.cpp:2410
+#: src/konqmainwindow.cpp:4755
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
 msgstr "Kas unustada muudatused?"
 
-#: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2225
-#: src/konqmainwindow.cpp:2314 src/konqmainwindow.cpp:2346
-#: src/konqmainwindow.cpp:2389 src/konqmainwindow.cpp:2412
-#: src/konqmainwindow.cpp:4754
+#: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2224
+#: src/konqmainwindow.cpp:2313 src/konqmainwindow.cpp:2345
+#: src/konqmainwindow.cpp:2388 src/konqmainwindow.cpp:2411
+#: src/konqmainwindow.cpp:4755
 #, kde-format
 msgid "&Discard Changes"
 msgstr "&Unusta muudatused"
@@ -714,7 +714,7 @@ msgstr "&Unusta muudatused"
 msgid "Home Folder"
 msgstr "Kodukataloog"
 
-#: src/konqmainwindow.cpp:1902 src/konqmainwindow.cpp:3324
+#: src/konqmainwindow.cpp:1902 src/konqmainwindow.cpp:3323
 #, kde-format
 msgid "Home"
 msgstr "Kodu"
@@ -729,8 +729,7 @@ msgstr "Liikumine \"kodukataloogi\""
 msgid "Navigate to your local 'Home Folder'"
 msgstr "Liikumine kohalikku \"kodukataloogi\""
 
-#. i18n: ectx: label, entry, group (UserSettings)
-#: src/konqmainwindow.cpp:1912 src/konqueror.kcfg:16
+#: src/konqmainwindow.cpp:1912
 #, kde-format
 msgid "Home Page"
 msgstr "Kodulehekülg"
@@ -751,7 +750,7 @@ msgstr ""
 "avab, on võimalik muuta menüükäsuga <b>Seadistused -> Konqeurori "
 "seadistamine -> Üldine</b>.</html>"
 
-#: src/konqmainwindow.cpp:2224
+#: src/konqmainwindow.cpp:2223
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -760,7 +759,7 @@ msgstr ""
 "Sellel kaardil on veel saatmata muudatusi.\n"
 "Kaardi lahtihaakimine tühistab muudatused."
 
-#: src/konqmainwindow.cpp:2313
+#: src/konqmainwindow.cpp:2312
 #, kde-format
 msgid ""
 "This view contains changes that have not been submitted.\n"
@@ -769,7 +768,7 @@ msgstr ""
 "Selles vaates on veel saatmata muudatusi.\n"
 "Vaate sulgemine tühistab muudatused."
 
-#: src/konqmainwindow.cpp:2345
+#: src/konqmainwindow.cpp:2344
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -778,23 +777,23 @@ msgstr ""
 "Sellel kaardil on veel saatmata muudatusi.\n"
 "Kaardi sulgemine tühistab muudatused."
 
-#: src/konqmainwindow.cpp:2371
+#: src/konqmainwindow.cpp:2370
 #, kde-format
 msgid "Do you really want to close all other tabs?"
 msgstr "Kas tõesti sulgeda kõik ülejäänud kaardid?"
 
-#: src/konqmainwindow.cpp:2372 src/konqmainwindow.cpp:3404 src/konqtabs.cpp:335
+#: src/konqmainwindow.cpp:2371 src/konqmainwindow.cpp:3403 src/konqtabs.cpp:335
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr "S&ulge teised kaardid"
 
-#: src/konqmainwindow.cpp:2372
+#: src/konqmainwindow.cpp:2371
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
 msgstr "Ülejäänud kaartide sulgemise kinnitus"
 
-#: src/konqmainwindow.cpp:2388
+#: src/konqmainwindow.cpp:2387
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -803,7 +802,7 @@ msgstr ""
 "Sellel kaardil on veel saatmata muudatusi.\n"
 "Teiste kaartide sulgemine tühistab muudatused."
 
-#: src/konqmainwindow.cpp:2410
+#: src/konqmainwindow.cpp:2409
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -812,267 +811,267 @@ msgstr ""
 "Sellel kaardil on veel saatmata muudatusi.\n"
 "Kõigi kaartide taaslaadimine tühistab muudatused."
 
-#: src/konqmainwindow.cpp:2467
+#: src/konqmainwindow.cpp:2466
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Target"
 msgstr "Sihtkoha sisestamine"
 
-#: src/konqmainwindow.cpp:2474
+#: src/konqmainwindow.cpp:2473
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
 msgstr "<qt><b>%1</b> ei ole kehtiv</qt>"
 
-#: src/konqmainwindow.cpp:2484
+#: src/konqmainwindow.cpp:2483
 #, kde-format
 msgid "Copy selected files from %1 to:"
 msgstr "Kopeeri valitud failid asukohast %1 asukohta:"
 
-#: src/konqmainwindow.cpp:2497
+#: src/konqmainwindow.cpp:2496
 #, kde-format
 msgid "Move selected files from %1 to:"
 msgstr "Liiguta valitud failid asukohast %1 asukohta:"
 
-#: src/konqmainwindow.cpp:2665
+#: src/konqmainwindow.cpp:2664
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
 msgstr "Tühjenda suletud kaartide ajalugu"
 
-#: src/konqmainwindow.cpp:2687
+#: src/konqmainwindow.cpp:2686
 #, kde-format
 msgid "Save As..."
 msgstr "Salvesta kui..."
 
-#: src/konqmainwindow.cpp:2689
+#: src/konqmainwindow.cpp:2688
 #, kde-format
 msgid "Manage..."
 msgstr "Halda..."
 
-#: src/konqmainwindow.cpp:3233
+#: src/konqmainwindow.cpp:3232
 #, kde-format
 msgid "New &Window"
 msgstr "Uus ak&en"
 
-#: src/konqmainwindow.cpp:3238
+#: src/konqmainwindow.cpp:3237
 #, kde-format
 msgid "&Duplicate Window"
 msgstr "&Klooni aken"
 
-#: src/konqmainwindow.cpp:3243
+#: src/konqmainwindow.cpp:3242
 #, kde-format
 msgid "Send &Link Address..."
 msgstr "Saada &viida aadress..."
 
-#: src/konqmainwindow.cpp:3247
+#: src/konqmainwindow.cpp:3246
 #, kde-format
 msgid "S&end File..."
 msgstr "S&aada fail..."
 
-#: src/konqmainwindow.cpp:3251
+#: src/konqmainwindow.cpp:3250
 #, kde-format
 msgid "&Open Location"
 msgstr "&Ava asukoht"
 
-#: src/konqmainwindow.cpp:3257
+#: src/konqmainwindow.cpp:3256
 #, kde-format
 msgid "&Open File..."
 msgstr "&Ava fail..."
 
-#: src/konqmainwindow.cpp:3262
+#: src/konqmainwindow.cpp:3261
 #, kde-format
 msgid "&Find File..."
 msgstr "&Otsi faili ..."
 
-#: src/konqmainwindow.cpp:3271
+#: src/konqmainwindow.cpp:3270
 #, kde-format
 msgid "Lock to Current Location"
 msgstr "Lukusta praegusele asukohale"
 
-#: src/konqmainwindow.cpp:3274
+#: src/konqmainwindow.cpp:3273
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr "Lin&gi vaade"
 
-#: src/konqmainwindow.cpp:3279
+#: src/konqmainwindow.cpp:3278
 #, kde-format
 msgid "&Up"
 msgstr "Ü&les"
 
-#: src/konqmainwindow.cpp:3289
+#: src/konqmainwindow.cpp:3288
 #, kde-format
 msgid "Closed Items"
 msgstr "Suletud elemendid"
 
-#: src/konqmainwindow.cpp:3302
+#: src/konqmainwindow.cpp:3301
 #, kde-format
 msgid "Sessions"
 msgstr "Seansid"
 
-#: src/konqmainwindow.cpp:3329
+#: src/konqmainwindow.cpp:3328
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr "Tihedamini külastatud"
 
-#: src/konqmainwindow.cpp:3333
+#: src/konqmainwindow.cpp:3332
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr "Viimati külastatud"
 
-#: src/konqmainwindow.cpp:3342
+#: src/konqmainwindow.cpp:3341
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr "Näita ajalugu"
 
-#: src/konqmainwindow.cpp:3354
+#: src/konqmainwindow.cpp:3353
 #, kde-format
 msgid "Configure Extensions..."
 msgstr "Laiendite seadistamine..."
 
-#: src/konqmainwindow.cpp:3358
+#: src/konqmainwindow.cpp:3357
 #, kde-format
 msgid "Configure Spell Checking..."
 msgstr "Õigekirja kontrollimise seadistamine..."
 
-#: src/konqmainwindow.cpp:3364
+#: src/konqmainwindow.cpp:3363
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr "Poolita vaade &vertikaalselt"
 
-#: src/konqmainwindow.cpp:3369
+#: src/konqmainwindow.cpp:3368
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr "Poolita vaade horison&taalselt"
 
-#: src/konqmainwindow.cpp:3374 src/konqtabs.cpp:456
+#: src/konqmainwindow.cpp:3373 src/konqtabs.cpp:456
 #, kde-format
 msgid "&New Tab"
 msgstr "&Uus kaart"
 
-#: src/konqmainwindow.cpp:3383
+#: src/konqmainwindow.cpp:3382
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr "&Dubleeri aktiivne kaart"
 
-#: src/konqmainwindow.cpp:3388
+#: src/konqmainwindow.cpp:3387
 #, kde-format
 msgid "Detach Current Tab"
 msgstr "Haagi aktiivne kaart lahti"
 
-#: src/konqmainwindow.cpp:3393
+#: src/konqmainwindow.cpp:3392
 #, kde-format
 msgid "&Close Active View"
 msgstr "Sul&ge aktiivne vaade"
 
-#: src/konqmainwindow.cpp:3398
+#: src/konqmainwindow.cpp:3397
 #, kde-format
 msgid "Close Current Tab"
 msgstr "Sulge aktiivne kaart"
 
-#: src/konqmainwindow.cpp:3408
+#: src/konqmainwindow.cpp:3407
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "Aktiveeri järgmine kaart"
 
-#: src/konqmainwindow.cpp:3412
+#: src/konqmainwindow.cpp:3411
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "Aktiveeri eelmine kaart"
 
-#: src/konqmainwindow.cpp:3419
+#: src/konqmainwindow.cpp:3418
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "Aktiveeri kaart %1"
 
-#: src/konqmainwindow.cpp:3424
+#: src/konqmainwindow.cpp:3423
 #, kde-format
 msgid "Move Tab Left"
 msgstr "Liiguta kaart vasakule"
 
-#: src/konqmainwindow.cpp:3429
+#: src/konqmainwindow.cpp:3428
 #, kde-format
 msgid "Move Tab Right"
 msgstr "Liiguta kaart paremale"
 
-#: src/konqmainwindow.cpp:3437
+#: src/konqmainwindow.cpp:3436
 #, kde-format
 msgid "Dump Debug Info"
 msgstr "Väljasta silumisinfo"
 
-#: src/konqmainwindow.cpp:3455
+#: src/konqmainwindow.cpp:3454
 #, kde-format
 msgid "&Reload"
 msgstr "Laadi &uuesti"
 
-#: src/konqmainwindow.cpp:3460 src/konqtabs.cpp:313
+#: src/konqmainwindow.cpp:3459 src/konqtabs.cpp:313
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr "Laadi kõik kaa&rdid uuesti"
 
-#: src/konqmainwindow.cpp:3468
+#: src/konqmainwindow.cpp:3467
 #, kde-format
 msgid "&Force Reload"
 msgstr "Su&nni uuesti laadima"
 
-#: src/konqmainwindow.cpp:3493
+#: src/konqmainwindow.cpp:3492
 #, kde-format
 msgid "&Stop"
 msgstr "&Stopp"
 
-#: src/konqmainwindow.cpp:3502
+#: src/konqmainwindow.cpp:3501
 #, kde-format
 msgid "Throbber"
 msgstr "Animeeritud ikoon"
 
-#: src/konqmainwindow.cpp:3506 src/konqmainwindow.cpp:3509
+#: src/konqmainwindow.cpp:3505 src/konqmainwindow.cpp:3508
 #, kde-format
 msgid "L&ocation: "
 msgstr "Asuk&oht: "
 
-#: src/konqmainwindow.cpp:3516
+#: src/konqmainwindow.cpp:3515
 #, kde-format
 msgid "Location Bar"
 msgstr "Asukohariba"
 
-#: src/konqmainwindow.cpp:3522
+#: src/konqmainwindow.cpp:3521
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
 msgstr ""
 "<html>Asukohariba<br /><br />Sisesta veebiaadress või otsingusõna.</html>"
 
-#: src/konqmainwindow.cpp:3526
+#: src/konqmainwindow.cpp:3525
 #, kde-format
 msgid "Clear Location Bar"
 msgstr "Puhasta asukohariba"
 
-#: src/konqmainwindow.cpp:3529
+#: src/konqmainwindow.cpp:3528
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
 "</html>"
 msgstr "<html>Puhasta asukohariba<br /><br />Puhastab asukohariba sisu.</html>"
 
-#: src/konqmainwindow.cpp:3534
+#: src/konqmainwindow.cpp:3533
 #, kde-format
 msgid "&Bookmarks"
 msgstr "&Järjehoidjad"
 
-#: src/konqmainwindow.cpp:3555
+#: src/konqmainwindow.cpp:3554
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "Kon&querori sissejuhatus"
 
-#: src/konqmainwindow.cpp:3560
+#: src/konqmainwindow.cpp:3559
 #, kde-format
 msgid "Go"
 msgstr "Mine"
 
-#: src/konqmainwindow.cpp:3562
+#: src/konqmainwindow.cpp:3561
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
@@ -1080,7 +1079,7 @@ msgid ""
 msgstr ""
 "<html>Mine<br /><br />Läheb asukoharibal sisestatud leheküljele.</html>"
 
-#: src/konqmainwindow.cpp:3570
+#: src/konqmainwindow.cpp:3569
 #, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
@@ -1091,27 +1090,27 @@ msgstr ""
 "on file:/home/%1, siis sellel nupul klõpsamine viib sind kataloogi file:/"
 "home.</html>"
 
-#: src/konqmainwindow.cpp:3573
+#: src/konqmainwindow.cpp:3572
 #, kde-format
 msgid "Enter the parent folder"
 msgstr "Sisene ülemkataloogi"
 
-#: src/konqmainwindow.cpp:3575 src/konqmainwindow.cpp:3576
+#: src/konqmainwindow.cpp:3574 src/konqmainwindow.cpp:3575
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "Liikumine lehitsemise ajaloos ühe sammu võrra tagasi"
 
-#: src/konqmainwindow.cpp:3578 src/konqmainwindow.cpp:3579
+#: src/konqmainwindow.cpp:3577 src/konqmainwindow.cpp:3578
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "Liikumine lehitsemise ajaloos ühe sammu võrra edasi"
 
-#: src/konqmainwindow.cpp:3581 src/konqmainwindow.cpp:3582
+#: src/konqmainwindow.cpp:3580 src/konqmainwindow.cpp:3581
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
 msgstr "Liikumine suletud kaartide ajaloos ühe sammu võrra tagasi"
 
-#: src/konqmainwindow.cpp:3584
+#: src/konqmainwindow.cpp:3583
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1122,12 +1121,12 @@ msgstr ""
 "näiteks siis, kui veebileht on muutunud pärast viimast laadimist, et teha "
 "muudatused ka nähtavaks.</html>"
 
-#: src/konqmainwindow.cpp:3587
+#: src/konqmainwindow.cpp:3586
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "Aktiivse dokumendi uuestilaadimine"
 
-#: src/konqmainwindow.cpp:3589
+#: src/konqmainwindow.cpp:3588
 #, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1138,12 +1137,12 @@ msgstr ""
 "võib olla vajalik näiteks siis, kui veebilehed on muutunud pärast viimast "
 "laadimist, et teha muudatused ka nähtavaks.</html>"
 
-#: src/konqmainwindow.cpp:3592
+#: src/konqmainwindow.cpp:3591
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr "Kõigi kaartide aktiivsete dokumentide uuestilaadimine"
 
-#: src/konqmainwindow.cpp:3594
+#: src/konqmainwindow.cpp:3593
 #, kde-format
 msgid ""
 "<html>Stop loading the document<br /><br />All network transfers will be "
@@ -1153,7 +1152,7 @@ msgstr ""
 "<html>Peata dokumendi laadimine<br /><br />Kõik laadimised seisatakse ja "
 "Konqueror näitab seda, mis selle hetkeni kätte saadud on.</html>"
 
-#: src/konqmainwindow.cpp:3598
+#: src/konqmainwindow.cpp:3597
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1166,19 +1165,19 @@ msgstr ""
 "muudatused ka nähtavaks. Kõik lehekülje pildid laaditakse uuesti alla ka "
 "siis, kui nad on juba puhvris olemas.</html>"
 
-#: src/konqmainwindow.cpp:3602
+#: src/konqmainwindow.cpp:3601
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr ""
 "Aktiivse dokumendi ja kõigi selles leiduvate piltide sundimine uuesti laadima"
 
-#: src/konqmainwindow.cpp:3604
+#: src/konqmainwindow.cpp:3603
 #, kde-format
 msgid "Stop loading the document"
 msgstr "Peata dokumendi laadimine"
 
-#: src/konqmainwindow.cpp:3606
+#: src/konqmainwindow.cpp:3605
 #, kde-format
 msgid ""
 "<html>Cut the currently selected text or item(s) and move it to the system "
@@ -1189,12 +1188,12 @@ msgstr ""
 "süsteemi lõikepuhvrisse<br /><br />See teeb võimalikuks <b>asetamise</b> "
 "Konquerori või mõnda muusse KDE rakendusse.</html>"
 
-#: src/konqmainwindow.cpp:3610
+#: src/konqmainwindow.cpp:3609
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr "Valitud teksti või elementide liigutamine lõikepuhvrisse"
 
-#: src/konqmainwindow.cpp:3612
+#: src/konqmainwindow.cpp:3611
 #, kde-format
 msgid ""
 "<html>Copy the currently selected text or item(s) to the system "
@@ -1205,12 +1204,12 @@ msgstr ""
 ">See teeb võimalikuks <b>asetamise</b> Konquerori või mõnda muusse KDE "
 "rakendusse.</html>"
 
-#: src/konqmainwindow.cpp:3616
+#: src/konqmainwindow.cpp:3615
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr "Valitud teksti/elementide kopeerimine lõikepuhvrisse"
 
-#: src/konqmainwindow.cpp:3618
+#: src/konqmainwindow.cpp:3617
 #, kde-format
 msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
@@ -1220,12 +1219,12 @@ msgstr ""
 ">See toimib ka muudest KDE rakendustest kopeeritud või lõigatud tekstiga.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3621
+#: src/konqmainwindow.cpp:3620
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "Lõikepuhvri sisu asetamine"
 
-#: src/konqmainwindow.cpp:3623
+#: src/konqmainwindow.cpp:3622
 #, kde-format
 msgid ""
 "<html>Print the currently displayed document<br /><br />You will be "
@@ -1239,12 +1238,12 @@ msgstr ""
 "<br /><br />Dialoogi abil saad kasutada ka spetsiaalseid KDE "
 "trükkimisteenuseid, näiteks luua näidatavast dokumendist PDF- faili.</html>"
 
-#: src/konqmainwindow.cpp:3629
+#: src/konqmainwindow.cpp:3628
 #, kde-format
 msgid "Print the current document"
 msgstr "Aktiivse dokumendi trükkimine"
 
-#: src/konqmainwindow.cpp:3631
+#: src/konqmainwindow.cpp:3630
 #, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
@@ -1253,7 +1252,7 @@ msgstr ""
 "Lukustatud vaate korral ei saa kataloogipuus liikuda. Kasuta koos 'lingitud "
 "vaatega', et vaadata paljusid faile ühest kataloogist."
 
-#: src/konqmainwindow.cpp:3632
+#: src/konqmainwindow.cpp:3631
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
@@ -1262,35 +1261,35 @@ msgstr ""
 "Seab vaate 'lingituks'. Lingitud vaade jälgib teistes lingitud vaadetes "
 "tehtud liikumisi kataloogipuus."
 
-#: src/konqmainwindow.cpp:3636
+#: src/konqmainwindow.cpp:3635
 #, fuzzy, kde-format
 #| msgid "C&lose Current Tab"
 msgid "&Inspect Current Page"
 msgstr "&Sulge aktiivne kaart"
 
-#: src/konqmainwindow.cpp:3637
+#: src/konqmainwindow.cpp:3636
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3638
+#: src/konqmainwindow.cpp:3637
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3800
+#: src/konqmainwindow.cpp:3799
 #, kde-format
 msgid "Copy &Files..."
 msgstr "Kopeeri &failid..."
 
-#: src/konqmainwindow.cpp:3804
+#: src/konqmainwindow.cpp:3803
 #, kde-format
 msgid "M&ove Files..."
 msgstr "Liig&uta failid..."
 
-#: src/konqmainwindow.cpp:4130
+#: src/konqmainwindow.cpp:4129
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
@@ -1299,61 +1298,61 @@ msgstr ""
 "Soovid kaartidel avada üle 20 järjehoidja. See võib võtta omajagu aega. Kas "
 "jätkata?"
 
-#: src/konqmainwindow.cpp:4132
+#: src/konqmainwindow.cpp:4131
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "Järjehoidjate kataloogi avamine uutel kaartidel"
 
-#: src/konqmainwindow.cpp:4133
+#: src/konqmainwindow.cpp:4132
 #, fuzzy, kde-format
 #| msgid "&Open"
 msgctxt "@action:button"
 msgid "Open"
 msgstr "&Ava"
 
-#: src/konqmainwindow.cpp:4295
+#: src/konqmainwindow.cpp:4294
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "A&va selles aknas"
 
-#: src/konqmainwindow.cpp:4296
+#: src/konqmainwindow.cpp:4295
 #, kde-format
 msgid "Open the document in current window"
 msgstr "Avab dokumendi käesolevas aknas"
 
-#: src/konqmainwindow.cpp:4303
+#: src/konqmainwindow.cpp:4302
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "Avab dokumendi uues aknas"
 
-#: src/konqmainwindow.cpp:4309
+#: src/konqmainwindow.cpp:4308
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Ava uue&l kaardil"
 
-#: src/konqmainwindow.cpp:4311
+#: src/konqmainwindow.cpp:4310
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "Avab dokumendi uuel kaardil"
 
-#: src/konqmainwindow.cpp:4534
+#: src/konqmainwindow.cpp:4533
 #, kde-format
 msgid "&Open With"
 msgstr "&Ava rakendusega"
 
-#: src/konqmainwindow.cpp:4547
+#: src/konqmainwindow.cpp:4546
 #, kde-format
 msgid "Open with %1"
 msgstr "Ava rakendusega %1"
 
-#: src/konqmainwindow.cpp:4597
+#: src/konqmainwindow.cpp:4596
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "&Vaate režiim"
 
-#: src/konqmainwindow.cpp:4718
+#: src/konqmainwindow.cpp:4719
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
@@ -1361,18 +1360,18 @@ msgstr ""
 "Praegu on selles aknas rohkem kui üks kaart avatud. Kas oled kindel, et "
 "soovid selle sulgeda?"
 
-#: src/konqmainwindow.cpp:4720
+#: src/konqmainwindow.cpp:4721
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Kinnitus"
 
-#: src/konqmainwindow.cpp:4722
+#: src/konqmainwindow.cpp:4723
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "&Sulge aktiivne kaart"
 
-#: src/konqmainwindow.cpp:4750
+#: src/konqmainwindow.cpp:4751
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1381,7 +1380,7 @@ msgstr ""
 "Sellel kaardil on veel saatmata muudatusi.\n"
 "Akna sulgemine tühistab muudatused."
 
-#: src/konqmainwindow.cpp:4751
+#: src/konqmainwindow.cpp:4752
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1390,34 +1389,34 @@ msgstr ""
 "Sellel leheküljel on veel saatmata muudatusi.\n"
 "Akna sulgemine tühistab muudatused."
 
-#: src/konqmainwindow.cpp:4911
+#: src/konqmainwindow.cpp:4912
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr "Külgriba ei toimi või ei ole kättesaadav. Uut kirjet ei saa lisada."
 
-#: src/konqmainwindow.cpp:4911 src/konqmainwindow.cpp:4918
+#: src/konqmainwindow.cpp:4912 src/konqmainwindow.cpp:4919
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Veebikülgriba"
 
-#: src/konqmainwindow.cpp:4916
+#: src/konqmainwindow.cpp:4917
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Kas lisada uus veebilaiendus \"%1\" külgribale?"
 
-#: src/konqmainwindow.cpp:4918
+#: src/konqmainwindow.cpp:4919
 #, kde-format
 msgid "Add"
 msgstr "Lisa"
 
-#: src/konqmainwindow.cpp:4918
+#: src/konqmainwindow.cpp:4919
 #, kde-format
 msgid "Do Not Add"
 msgstr "Ära lisa"
 
-#: src/konqmainwindow.cpp:5266
+#: src/konqmainwindow.cpp:5267
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1426,7 +1425,7 @@ msgstr ""
 "Siin on nüüd mingi arusaamatus. Sa oled seostanud Konquerori failitüübiga "
 "%1, kuid Konqueror ei oska selle failitüübiga midagi peale hakata."
 
-#: src/konqmainwindow.cpp:5351
+#: src/konqmainwindow.cpp:5352
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1439,24 +1438,24 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5356
+#: src/konqmainwindow.cpp:5357
 #, fuzzy, kde-format
 #| msgid "Manual Proxy Configuration"
 msgid "Unsupported proxy configuration"
 msgstr "Puhverserveri käsitsi seadistamine"
 
-#: src/konqmainwindow.cpp:5356
+#: src/konqmainwindow.cpp:5357
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5357 src/konqmainwindow.cpp:5385
+#: src/konqmainwindow.cpp:5358 src/konqmainwindow.cpp:5386
 #, fuzzy, kde-format
 #| msgid "Show Configuration Button"
 msgid "Show proxy configuration dialog"
 msgstr "Näita seadistamise nuppu"
 
-#: src/konqmainwindow.cpp:5381
+#: src/konqmainwindow.cpp:5382
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1465,23 +1464,23 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5384
+#: src/konqmainwindow.cpp:5385
 #, fuzzy, kde-format
 #| msgid "Manual Proxy Configuration"
 msgid "Conflicting proxy configuration"
 msgstr "Puhverserveri käsitsi seadistamine"
 
-#: src/konqmainwindow.cpp:5385
+#: src/konqmainwindow.cpp:5386
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5385
+#: src/konqmainwindow.cpp:5386
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5401
+#: src/konqmainwindow.cpp:5402
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1572,8 +1571,7 @@ msgid "Delete"
 msgstr "Kustuta"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
-#. i18n: ectx: label, entry, group (Trash)
-#: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
+#: src/konqsessiondlg_base.ui:73
 #, kde-format
 msgid "Open tabs inside current window"
 msgstr "Kaartide avamine aktiivses aknas"
@@ -1692,185 +1690,6 @@ msgstr "&Haagi kaart lahti"
 #, kde-format
 msgid "&Close Tab"
 msgstr "S&ulge kaart"
-
-#. i18n: ectx: label, entry, group (UserSettings)
-#: src/konqueror.kcfg:11
-#, kde-format
-msgid "Start Page"
-msgstr "Avalehekülg"
-
-#. i18n: ectx: whatsthis, entry, group (UserSettings)
-#: src/konqueror.kcfg:12
-#, kde-format
-msgid "This is the URL of the web page where Konqueror will start from."
-msgstr "Veebilehekülje URL, millega Konqueror alustab."
-
-#. i18n: ectx: whatsthis, entry, group (UserSettings)
-#: src/konqueror.kcfg:17
-#, kde-format
-msgid ""
-"This is the URL of the web page where Konqueror will jump to when the \\"
-"\"Home\\\" button is pressed."
-msgstr ""
-"See on veebilehekülje URL, millele Konqueror suundub, kui klõpsatakse nuppu "
-"\\\"Kodu\\\"."
-
-#. i18n: ectx: label, entry, group (UndoManagerSettings)
-#: src/konqueror.kcfg:26
-#, kde-format
-msgid "Maximum number of Closed Items"
-msgstr "Suletud elementide maksimaalne arv"
-
-#. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
-#: src/konqueror.kcfg:27
-#, kde-format
-msgid ""
-"This sets the maximum number of closed items that will be stored in memory. "
-"This limit will not be surpassed."
-msgstr ""
-"Siin saab määrata, mitu suletud elementi peetakse meeles. Määratud väärtust "
-"ei saa ületada."
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#: src/konqueror.kcfg:36
-#, kde-format
-msgid "Open folders in separate windows"
-msgstr "Kataloogid avatakse eraldi aknas"
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:37
-#, kde-format
-msgid ""
-"If this option is checked, Konqueror will open a new window when you open a "
-"folder, rather than showing that folder's contents in the current window."
-msgstr ""
-"Kui see on sisse lülitatud, avab Konqueror kataloogi avamisel selle uues "
-"aknas, mitte ei näita selle sisu aktiivses aknas."
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#: src/konqueror.kcfg:42
-#, kde-format
-msgid "Show file tips"
-msgstr "Faili kohtspikrite näitamine"
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:43
-#, kde-format
-msgid ""
-"Here you can control if, when moving the mouse over a file, you want to see "
-"a small popup window with additional information about that file"
-msgstr ""
-"Siin saab sisse lülitada faili kohta lisainfot sisaldavate väikeste akende "
-"näitamise, kui hiir asub faili kohal."
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#: src/konqueror.kcfg:54
-#, kde-format
-msgid "Show previews in file tips"
-msgstr "Faili kohtspikrites eelvaatluse näitamine"
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:55
-#, kde-format
-msgid ""
-"Here you can control if you want the popup window to contain a larger "
-"preview for the file, when moving the mouse over it"
-msgstr ""
-"Siin saab määrata, kas hiire viimisel faili kohale näidatakse ilmuvas "
-"hüpikaknas ka antud faili eelvaatlust."
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#: src/konqueror.kcfg:60
-#, kde-format
-msgid "Show 'Delete' menu entries which bypass the trashcan"
-msgstr "Faile lõplikult kustutava käsu \"Kustuta\" näitamine menüüdes"
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:61
-#, kde-format
-msgid ""
-"Check this if you want 'Delete' menu commands to be displayed on the desktop "
-"and in the file manager's menus and context menus. You can always delete "
-"files when hidden by holding the Shift key while calling 'Move to Trash'."
-msgstr ""
-"Märkimisel näidatakse töölaua ja failihalduri menüüdes ja kontekstimenüüdes "
-"käsku \"Kustuta\". Kui seda pole näha, saab faile alati kustutada ka klahvi "
-"Shift vajutades ja samal ajal käsku \"Viska prügikasti\" valides."
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:149
-#, kde-format
-msgid "Choose where to display the tabs bar"
-msgstr ""
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:153 src/konqueror.kcfg:154
-#, kde-format
-msgid "Number of Open With items in the File menu"
-msgstr "Failimenüü kirje Ava rakendusega elementide arv"
-
-#. i18n: ectx: label, entry, group (HTML Settings)
-#: src/konqueror.kcfg:163
-#, kde-format
-msgid "Standard font"
-msgstr "Standardfont"
-
-#. i18n: ectx: whatsthis, entry, group (HTML Settings)
-#: src/konqueror.kcfg:164
-#, kde-format
-msgid "This is the font used to display text in Konqueror windows."
-msgstr "See on font, mida kasutatakse teksti näitamisel Konquerori akendes."
-
-#. i18n: ectx: label, entry, group (HistorySettings)
-#: src/konqueror.kcfg:314
-#, kde-format
-msgid "Maximum number of history items per view"
-msgstr "Ajalooelementide maksimaalne arv vaate kohta"
-
-#. i18n: ectx: label, entry, group (Trash)
-#: src/konqueror.kcfg:504
-#, kde-format
-msgid "Ask confirmation for deleting a file."
-msgstr "Kinnituse küsimine faili kustutamisel"
-
-#. i18n: ectx: whatsthis, entry, group (Trash)
-#: src/konqueror.kcfg:505
-#, kde-format
-msgid ""
-"This option tells Konqueror whether to ask for a confirmation when you "
-"delete a file without using the trash folder. Warning, deleted files can not "
-"be recovered, so it is recommended to leave this confirmation enabled."
-msgstr ""
-"Siin saab määrata, kas Konqueror küsib sinu käest kinnitust, kui kustutad "
-"faili prügikasti kasutamata. Hoiatus: kustutatud faile ei saa taastada, "
-"mistõttu on soovitatav lasta kinnitust küsida."
-
-#. i18n: ectx: label, entry, group (Trash)
-#: src/konqueror.kcfg:510
-#, kde-format
-msgid "Ask confirmation for move to trash"
-msgstr "Kinnituse küsimine faili viskamisel prügikasti"
-
-#. i18n: ectx: whatsthis, entry, group (Trash)
-#: src/konqueror.kcfg:511
-#, kde-format
-msgid ""
-"This option tells Konqueror whether to ask for a confirmation when you move "
-"the file to your trash folder, from where it can be recovered very easily."
-msgstr ""
-"Siin saab määrata, kas Konqueror küsib sinu käest kinnitust, kui viskad "
-"faili prügikasti (kust selle saab küll hõlpsasti taastada)."
-
-#. i18n: ectx: whatsthis, entry, group (Trash)
-#: src/konqueror.kcfg:518
-#, kde-format
-msgid ""
-"If true, when opening a session from within the sessions dialog the tabs "
-"will be opened inside current window."
-msgstr ""
-"Sisselülitamisel avatakse seansi avamisel seansidialoogist kaardid aktiivse "
-"akna sees."
 
 #. i18n: ectx: Menu (file)
 #: src/konqueror.rc:5
@@ -2016,6 +1835,116 @@ msgstr ""
 #| msgid "Save As..."
 msgid "Save As"
 msgstr "Salvesta kui..."
+
+#~ msgid "Start Page"
+#~ msgstr "Avalehekülg"
+
+#~ msgid "This is the URL of the web page where Konqueror will start from."
+#~ msgstr "Veebilehekülje URL, millega Konqueror alustab."
+
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror will jump to when the \\"
+#~ "\"Home\\\" button is pressed."
+#~ msgstr ""
+#~ "See on veebilehekülje URL, millele Konqueror suundub, kui klõpsatakse "
+#~ "nuppu \\\"Kodu\\\"."
+
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "Suletud elementide maksimaalne arv"
+
+#~ msgid ""
+#~ "This sets the maximum number of closed items that will be stored in "
+#~ "memory. This limit will not be surpassed."
+#~ msgstr ""
+#~ "Siin saab määrata, mitu suletud elementi peetakse meeles. Määratud "
+#~ "väärtust ei saa ületada."
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Kataloogid avatakse eraldi aknas"
+
+#~ msgid ""
+#~ "If this option is checked, Konqueror will open a new window when you open "
+#~ "a folder, rather than showing that folder's contents in the current "
+#~ "window."
+#~ msgstr ""
+#~ "Kui see on sisse lülitatud, avab Konqueror kataloogi avamisel selle uues "
+#~ "aknas, mitte ei näita selle sisu aktiivses aknas."
+
+#~ msgid "Show file tips"
+#~ msgstr "Faili kohtspikrite näitamine"
+
+#~ msgid ""
+#~ "Here you can control if, when moving the mouse over a file, you want to "
+#~ "see a small popup window with additional information about that file"
+#~ msgstr ""
+#~ "Siin saab sisse lülitada faili kohta lisainfot sisaldavate väikeste "
+#~ "akende näitamise, kui hiir asub faili kohal."
+
+#~ msgid "Show previews in file tips"
+#~ msgstr "Faili kohtspikrites eelvaatluse näitamine"
+
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it"
+#~ msgstr ""
+#~ "Siin saab määrata, kas hiire viimisel faili kohale näidatakse ilmuvas "
+#~ "hüpikaknas ka antud faili eelvaatlust."
+
+#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
+#~ msgstr "Faile lõplikult kustutava käsu \"Kustuta\" näitamine menüüdes"
+
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's menus and context menus. You can always "
+#~ "delete files when hidden by holding the Shift key while calling 'Move to "
+#~ "Trash'."
+#~ msgstr ""
+#~ "Märkimisel näidatakse töölaua ja failihalduri menüüdes ja "
+#~ "kontekstimenüüdes käsku \"Kustuta\". Kui seda pole näha, saab faile alati "
+#~ "kustutada ka klahvi Shift vajutades ja samal ajal käsku \"Viska prügikasti"
+#~ "\" valides."
+
+#~ msgid "Number of Open With items in the File menu"
+#~ msgstr "Failimenüü kirje Ava rakendusega elementide arv"
+
+#~ msgid "Standard font"
+#~ msgstr "Standardfont"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr "See on font, mida kasutatakse teksti näitamisel Konquerori akendes."
+
+#~ msgid "Maximum number of history items per view"
+#~ msgstr "Ajalooelementide maksimaalne arv vaate kohta"
+
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Kinnituse küsimine faili kustutamisel"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "delete a file without using the trash folder. Warning, deleted files can "
+#~ "not be recovered, so it is recommended to leave this confirmation enabled."
+#~ msgstr ""
+#~ "Siin saab määrata, kas Konqueror küsib sinu käest kinnitust, kui kustutad "
+#~ "faili prügikasti kasutamata. Hoiatus: kustutatud faile ei saa taastada, "
+#~ "mistõttu on soovitatav lasta kinnitust küsida."
+
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Kinnituse küsimine faili viskamisel prügikasti"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "move the file to your trash folder, from where it can be recovered very "
+#~ "easily."
+#~ msgstr ""
+#~ "Siin saab määrata, kas Konqueror küsib sinu käest kinnitust, kui viskad "
+#~ "faili prügikasti (kust selle saab küll hõlpsasti taastada)."
+
+#~ msgid ""
+#~ "If true, when opening a session from within the sessions dialog the tabs "
+#~ "will be opened inside current window."
+#~ msgstr ""
+#~ "Sisselülitamisel avatakse seansi avamisel seansidialoogist kaardid "
+#~ "aktiivse akna sees."
 
 #~ msgid ""
 #~ "Malformed URL\n"

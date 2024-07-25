@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 00:39+0000\n"
+"POT-Creation-Date: 2024-07-25 00:39+0000\n"
 "PO-Revision-Date: 2024-07-11 06:03+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -507,8 +507,8 @@ msgid ""
 "ignored\n"
 msgstr "Prenos URL ni mogoč pri stikalu --preload. Naslov URL bo prezrt\n"
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4789
-#: src/konqmainwindow.cpp:4835
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4790
+#: src/konqmainwindow.cpp:4836
 #, kde-format
 msgid "no name"
 msgstr "brez imena"
@@ -612,7 +612,7 @@ msgstr "Krajevno"
 msgid "Miscellaneous"
 msgstr "Razno"
 
-#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4302
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4301
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Odpri v novem oknu"
@@ -673,13 +673,13 @@ msgctxt "@title:window"
 msgid "Clear History?"
 msgstr "Počistim zgodovino?"
 
-#: src/konqmainwindow.cpp:685
+#: src/konqmainwindow.cpp:687
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
 msgstr "Nalaganje..."
 
-#: src/konqmainwindow.cpp:717
+#: src/konqmainwindow.cpp:719
 #, kde-format
 msgid "Access denied"
 msgstr "Dostop zavrnjen"
@@ -703,19 +703,19 @@ msgstr ""
 "Ta stran vsebuje spremembe, ki jih niste poslali.\n"
 "Ponovno nalaganje strani bo zavrglo te spremembe."
 
-#: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2225
-#: src/konqmainwindow.cpp:2314 src/konqmainwindow.cpp:2346
-#: src/konqmainwindow.cpp:2389 src/konqmainwindow.cpp:2411
-#: src/konqmainwindow.cpp:4754
+#: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2224
+#: src/konqmainwindow.cpp:2313 src/konqmainwindow.cpp:2345
+#: src/konqmainwindow.cpp:2388 src/konqmainwindow.cpp:2410
+#: src/konqmainwindow.cpp:4755
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
 msgstr "Zavržem spremembe?"
 
-#: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2225
-#: src/konqmainwindow.cpp:2314 src/konqmainwindow.cpp:2346
-#: src/konqmainwindow.cpp:2389 src/konqmainwindow.cpp:2412
-#: src/konqmainwindow.cpp:4754
+#: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2224
+#: src/konqmainwindow.cpp:2313 src/konqmainwindow.cpp:2345
+#: src/konqmainwindow.cpp:2388 src/konqmainwindow.cpp:2411
+#: src/konqmainwindow.cpp:4755
 #, kde-format
 msgid "&Discard Changes"
 msgstr "Zavrzi spremembe"
@@ -725,7 +725,7 @@ msgstr "Zavrzi spremembe"
 msgid "Home Folder"
 msgstr "Domača mapa"
 
-#: src/konqmainwindow.cpp:1902 src/konqmainwindow.cpp:3324
+#: src/konqmainwindow.cpp:1902 src/konqmainwindow.cpp:3323
 #, kde-format
 msgid "Home"
 msgstr "Dom"
@@ -740,8 +740,7 @@ msgstr "Pojdi v »Domačo mapo«"
 msgid "Navigate to your local 'Home Folder'"
 msgstr "Pojdi v krajevno »Domačo mapo«"
 
-#. i18n: ectx: label, entry, group (UserSettings)
-#: src/konqmainwindow.cpp:1912 src/konqueror.kcfg:16
+#: src/konqmainwindow.cpp:1912
 #, kde-format
 msgid "Home Page"
 msgstr "Domača stran"
@@ -762,7 +761,7 @@ msgstr ""
 "gumb, lahko nastavite v <b>Nastavitve → Nastavi Konqueror → Splošno</b>.</"
 "html>"
 
-#: src/konqmainwindow.cpp:2224
+#: src/konqmainwindow.cpp:2223
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -771,7 +770,7 @@ msgstr ""
 "Ta zavihek vsebuje spremembe, ki jih niste poslali.\n"
 "Če zavihek odpnete, bodo vse spremembe zavržene."
 
-#: src/konqmainwindow.cpp:2313
+#: src/konqmainwindow.cpp:2312
 #, kde-format
 msgid ""
 "This view contains changes that have not been submitted.\n"
@@ -780,7 +779,7 @@ msgstr ""
 "Ta prikaz vsebuje spremembe, ki jih niste poslali.\n"
 "Zapiranje prikaza bo zavrglo vse spremembe."
 
-#: src/konqmainwindow.cpp:2345
+#: src/konqmainwindow.cpp:2344
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -789,23 +788,23 @@ msgstr ""
 "Ta zavihek vsebuje spremembe, ki jih niste poslali.\n"
 "Zapiranje zavihka bo zavrglo vse spremembe."
 
-#: src/konqmainwindow.cpp:2371
+#: src/konqmainwindow.cpp:2370
 #, kde-format
 msgid "Do you really want to close all other tabs?"
 msgstr "Ali zares želite zapreti vse druge zavihke?"
 
-#: src/konqmainwindow.cpp:2372 src/konqmainwindow.cpp:3404 src/konqtabs.cpp:335
+#: src/konqmainwindow.cpp:2371 src/konqmainwindow.cpp:3403 src/konqtabs.cpp:335
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr "Zapri druge zavihke"
 
-#: src/konqmainwindow.cpp:2372
+#: src/konqmainwindow.cpp:2371
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
 msgstr "Potrditev zaprtja drugih zavihkov"
 
-#: src/konqmainwindow.cpp:2388
+#: src/konqmainwindow.cpp:2387
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -814,7 +813,7 @@ msgstr ""
 "Ta zavihek vsebuje spremembe, ki jih niste poslali.\n"
 "Zapiranje drugih zavihkov bo zavrglo vse spremembe."
 
-#: src/konqmainwindow.cpp:2410
+#: src/konqmainwindow.cpp:2409
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -823,233 +822,233 @@ msgstr ""
 "Ta zavihek vsebuje spremembe, ki jih niste poslali.\n"
 "Ponovno nalaganje vseh zavihkov bo zavrglo vse spremembe."
 
-#: src/konqmainwindow.cpp:2467
+#: src/konqmainwindow.cpp:2466
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Target"
 msgstr "Vnesite cilj"
 
-#: src/konqmainwindow.cpp:2474
+#: src/konqmainwindow.cpp:2473
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
 msgstr "<qt><b>%1</b> ni veljaven</qt>"
 
-#: src/konqmainwindow.cpp:2484
+#: src/konqmainwindow.cpp:2483
 #, kde-format
 msgid "Copy selected files from %1 to:"
 msgstr "Kopiraj izbrane datoteke iz %1 v:"
 
-#: src/konqmainwindow.cpp:2497
+#: src/konqmainwindow.cpp:2496
 #, kde-format
 msgid "Move selected files from %1 to:"
 msgstr "Premakni izbrane datoteke iz %1 v:"
 
-#: src/konqmainwindow.cpp:2665
+#: src/konqmainwindow.cpp:2664
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
 msgstr "Izprazni zgodovino zaprtih predmetov"
 
-#: src/konqmainwindow.cpp:2687
+#: src/konqmainwindow.cpp:2686
 #, kde-format
 msgid "Save As..."
 msgstr "Shrani kot ..."
 
-#: src/konqmainwindow.cpp:2689
+#: src/konqmainwindow.cpp:2688
 #, kde-format
 msgid "Manage..."
 msgstr "Upravljanje ..."
 
-#: src/konqmainwindow.cpp:3233
+#: src/konqmainwindow.cpp:3232
 #, kde-format
 msgid "New &Window"
 msgstr "Novo okno"
 
-#: src/konqmainwindow.cpp:3238
+#: src/konqmainwindow.cpp:3237
 #, kde-format
 msgid "&Duplicate Window"
 msgstr "Podvoji okno"
 
-#: src/konqmainwindow.cpp:3243
+#: src/konqmainwindow.cpp:3242
 #, kde-format
 msgid "Send &Link Address..."
 msgstr "Pošlji nas&lov povezave..."
 
-#: src/konqmainwindow.cpp:3247
+#: src/konqmainwindow.cpp:3246
 #, kde-format
 msgid "S&end File..."
 msgstr "Pošlji datot&eko..."
 
-#: src/konqmainwindow.cpp:3251
+#: src/konqmainwindow.cpp:3250
 #, kde-format
 msgid "&Open Location"
 msgstr "&Odpri mesto"
 
-#: src/konqmainwindow.cpp:3257
+#: src/konqmainwindow.cpp:3256
 #, kde-format
 msgid "&Open File..."
 msgstr "&Odpri datoteko..."
 
-#: src/konqmainwindow.cpp:3262
+#: src/konqmainwindow.cpp:3261
 #, kde-format
 msgid "&Find File..."
 msgstr "Najdi datoteko..."
 
-#: src/konqmainwindow.cpp:3271
+#: src/konqmainwindow.cpp:3270
 #, kde-format
 msgid "Lock to Current Location"
 msgstr "Zakleni na trenutno mesto"
 
-#: src/konqmainwindow.cpp:3274
+#: src/konqmainwindow.cpp:3273
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr "Poveži prikaz"
 
-#: src/konqmainwindow.cpp:3279
+#: src/konqmainwindow.cpp:3278
 #, kde-format
 msgid "&Up"
 msgstr "Gor"
 
-#: src/konqmainwindow.cpp:3289
+#: src/konqmainwindow.cpp:3288
 #, kde-format
 msgid "Closed Items"
 msgstr "Zaprti predmeti"
 
-#: src/konqmainwindow.cpp:3302
+#: src/konqmainwindow.cpp:3301
 #, kde-format
 msgid "Sessions"
 msgstr "Seje"
 
-#: src/konqmainwindow.cpp:3329
+#: src/konqmainwindow.cpp:3328
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr "Najpogosteje obiskano"
 
-#: src/konqmainwindow.cpp:3333
+#: src/konqmainwindow.cpp:3332
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr "Nedavno obiskano"
 
-#: src/konqmainwindow.cpp:3342
+#: src/konqmainwindow.cpp:3341
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr "Pokaži zgodovino"
 
-#: src/konqmainwindow.cpp:3354
+#: src/konqmainwindow.cpp:3353
 #, kde-format
 msgid "Configure Extensions..."
 msgstr "Nastavi razširitve ..."
 
-#: src/konqmainwindow.cpp:3358
+#: src/konqmainwindow.cpp:3357
 #, kde-format
 msgid "Configure Spell Checking..."
 msgstr "Nastavi preverjanje črkovanja ..."
 
-#: src/konqmainwindow.cpp:3364
+#: src/konqmainwindow.cpp:3363
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr "Razdeli prikaz &levo/desno"
 
-#: src/konqmainwindow.cpp:3369
+#: src/konqmainwindow.cpp:3368
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr "Razdeli prikaz vrh/dno"
 
-#: src/konqmainwindow.cpp:3374 src/konqtabs.cpp:456
+#: src/konqmainwindow.cpp:3373 src/konqtabs.cpp:456
 #, kde-format
 msgid "&New Tab"
 msgstr "&Nov zavihek"
 
-#: src/konqmainwindow.cpp:3383
+#: src/konqmainwindow.cpp:3382
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr "Po&dvoji trenuten zavihek"
 
-#: src/konqmainwindow.cpp:3388
+#: src/konqmainwindow.cpp:3387
 #, kde-format
 msgid "Detach Current Tab"
 msgstr "Odpni trenutni zavihek"
 
-#: src/konqmainwindow.cpp:3393
+#: src/konqmainwindow.cpp:3392
 #, kde-format
 msgid "&Close Active View"
 msgstr "Zapri dejavni prikaz"
 
-#: src/konqmainwindow.cpp:3398
+#: src/konqmainwindow.cpp:3397
 #, kde-format
 msgid "Close Current Tab"
 msgstr "Zapri trenutni zavihek"
 
-#: src/konqmainwindow.cpp:3408
+#: src/konqmainwindow.cpp:3407
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "Omogoči naslednji zavihek"
 
-#: src/konqmainwindow.cpp:3412
+#: src/konqmainwindow.cpp:3411
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "Omogoči predhodni zavihek"
 
-#: src/konqmainwindow.cpp:3419
+#: src/konqmainwindow.cpp:3418
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "Omogoči zavihek %1"
 
-#: src/konqmainwindow.cpp:3424
+#: src/konqmainwindow.cpp:3423
 #, kde-format
 msgid "Move Tab Left"
 msgstr "Premakni zavihek levo"
 
-#: src/konqmainwindow.cpp:3429
+#: src/konqmainwindow.cpp:3428
 #, kde-format
 msgid "Move Tab Right"
 msgstr "Premakni zavihek desno"
 
-#: src/konqmainwindow.cpp:3437
+#: src/konqmainwindow.cpp:3436
 #, kde-format
 msgid "Dump Debug Info"
 msgstr "Odloži razhroščevalne podatke"
 
-#: src/konqmainwindow.cpp:3455
+#: src/konqmainwindow.cpp:3454
 #, kde-format
 msgid "&Reload"
 msgstr "Znova naloži"
 
-#: src/konqmainwindow.cpp:3460 src/konqtabs.cpp:313
+#: src/konqmainwindow.cpp:3459 src/konqtabs.cpp:313
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr "Znova naloži vse zavihke"
 
-#: src/konqmainwindow.cpp:3468
+#: src/konqmainwindow.cpp:3467
 #, kde-format
 msgid "&Force Reload"
 msgstr "Vsili ponovno nalaganje"
 
-#: src/konqmainwindow.cpp:3493
+#: src/konqmainwindow.cpp:3492
 #, kde-format
 msgid "&Stop"
 msgstr "Zau&stavi"
 
-#: src/konqmainwindow.cpp:3502
+#: src/konqmainwindow.cpp:3501
 #, kde-format
 msgid "Throbber"
 msgstr "Pokazatelj dejavnosti"
 
-#: src/konqmainwindow.cpp:3506 src/konqmainwindow.cpp:3509
+#: src/konqmainwindow.cpp:3505 src/konqmainwindow.cpp:3508
 #, kde-format
 msgid "L&ocation: "
 msgstr "Mest&o: "
 
-#: src/konqmainwindow.cpp:3516
+#: src/konqmainwindow.cpp:3515
 #, kde-format
 msgid "Location Bar"
 msgstr "Naslovna vrstica"
 
-#: src/konqmainwindow.cpp:3522
+#: src/konqmainwindow.cpp:3521
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
@@ -1057,12 +1056,12 @@ msgstr ""
 "<html>Naslovna vrstica<br /><br />Vnesite spletni naslov ali iskani niz.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3526
+#: src/konqmainwindow.cpp:3525
 #, kde-format
 msgid "Clear Location Bar"
 msgstr "Počisti naslovno vrstico"
 
-#: src/konqmainwindow.cpp:3529
+#: src/konqmainwindow.cpp:3528
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
@@ -1071,22 +1070,22 @@ msgstr ""
 "<html>Počisti naslovno vrstico<br /><br />Počisti vsebino naslovne vrstice.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3534
+#: src/konqmainwindow.cpp:3533
 #, kde-format
 msgid "&Bookmarks"
 msgstr "Zaznamki"
 
-#: src/konqmainwindow.cpp:3555
+#: src/konqmainwindow.cpp:3554
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "Uvod v Kon&queror"
 
-#: src/konqmainwindow.cpp:3560
+#: src/konqmainwindow.cpp:3559
 #, kde-format
 msgid "Go"
 msgstr "Pojdi"
 
-#: src/konqmainwindow.cpp:3562
+#: src/konqmainwindow.cpp:3561
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
@@ -1095,7 +1094,7 @@ msgstr ""
 "<html>Pojdi<br /><br />Gre na stran, ki je bila vnesena v naslovno vrstico.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3570
+#: src/konqmainwindow.cpp:3569
 #, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
@@ -1106,27 +1105,27 @@ msgstr ""
 "mesto »file:/home/%1«, vas bo klik na ta gumb prestavil v »file:/home«.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3573
+#: src/konqmainwindow.cpp:3572
 #, kde-format
 msgid "Enter the parent folder"
 msgstr "Vstopi v nadrejeno mapo"
 
-#: src/konqmainwindow.cpp:3575 src/konqmainwindow.cpp:3576
+#: src/konqmainwindow.cpp:3574 src/konqmainwindow.cpp:3575
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "Premakni se en korak nazaj v zgodovini brskanja"
 
-#: src/konqmainwindow.cpp:3578 src/konqmainwindow.cpp:3579
+#: src/konqmainwindow.cpp:3577 src/konqmainwindow.cpp:3578
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "Premakni se en korak naprej v zgodovini brskanja"
 
-#: src/konqmainwindow.cpp:3581 src/konqmainwindow.cpp:3582
+#: src/konqmainwindow.cpp:3580 src/konqmainwindow.cpp:3581
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
 msgstr "Premakni se en korak nazaj v zgodovini zaprtih zavihkov"
 
-#: src/konqmainwindow.cpp:3584
+#: src/konqmainwindow.cpp:3583
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1137,12 +1136,12 @@ msgstr ""
 "potrebno, če se je spletna stran po tem, ko je bila naložena, spremenila in "
 "želite videti spremembe.</html>"
 
-#: src/konqmainwindow.cpp:3587
+#: src/konqmainwindow.cpp:3586
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "Znova naloži trenutno prikazan dokument"
 
-#: src/konqmainwindow.cpp:3589
+#: src/konqmainwindow.cpp:3588
 #, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1153,12 +1152,12 @@ msgstr ""
 ">To je lahko potrebno, če so se spletne strani po tem, ko so bile naložene, "
 "spremenile in želite videti spremembe.</html>"
 
-#: src/konqmainwindow.cpp:3592
+#: src/konqmainwindow.cpp:3591
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr "Znova naloži vse trenutno prikazane dokumente v zavihkih"
 
-#: src/konqmainwindow.cpp:3594
+#: src/konqmainwindow.cpp:3593
 #, kde-format
 msgid ""
 "<html>Stop loading the document<br /><br />All network transfers will be "
@@ -1169,7 +1168,7 @@ msgstr ""
 "zaustavljeni in Konqueror bo prikazal vsebino, ki je bila do sedaj prejeta.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3598
+#: src/konqmainwindow.cpp:3597
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1182,19 +1181,19 @@ msgstr ""
 "želite videti spremembe. Slike na strani so znova prejete, četudi so "
 "shranjene predpomnjene kopije.</html>"
 
-#: src/konqmainwindow.cpp:3602
+#: src/konqmainwindow.cpp:3601
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr ""
 "Vsili ponovno nalaganje trenutno prikazanega dokumenta in vseh slik v njem"
 
-#: src/konqmainwindow.cpp:3604
+#: src/konqmainwindow.cpp:3603
 #, kde-format
 msgid "Stop loading the document"
 msgstr "Zaustavi nalaganje dokumenta"
 
-#: src/konqmainwindow.cpp:3606
+#: src/konqmainwindow.cpp:3605
 #, kde-format
 msgid ""
 "<html>Cut the currently selected text or item(s) and move it to the system "
@@ -1205,12 +1204,12 @@ msgstr ""
 "sistemsko odložišče<br /><br /> To je potem na voljo za ukaz <b>Prilepi</b> "
 "v Konquerorju in drugih programih za KDE.</html>"
 
-#: src/konqmainwindow.cpp:3610
+#: src/konqmainwindow.cpp:3609
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr "Premakni izbrano besedilo/predmet(e) na odložišče"
 
-#: src/konqmainwindow.cpp:3612
+#: src/konqmainwindow.cpp:3611
 #, kde-format
 msgid ""
 "<html>Copy the currently selected text or item(s) to the system "
@@ -1221,12 +1220,12 @@ msgstr ""
 "odložišče<br /><br /> To je potem na voljo za ukaz <b>Prilepi</b> v "
 "Konquerorju in drugih programih za KDE.</html>"
 
-#: src/konqmainwindow.cpp:3616
+#: src/konqmainwindow.cpp:3615
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr "Kopiraj izbrano besedilo/predmet(e) na odložišče"
 
-#: src/konqmainwindow.cpp:3618
+#: src/konqmainwindow.cpp:3617
 #, kde-format
 msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
@@ -1236,12 +1235,12 @@ msgstr ""
 "deluje tudi za kopirano ali izrezano besedilo iz drugih programov za KDE.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3621
+#: src/konqmainwindow.cpp:3620
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "Prilepi vsebino odložišča"
 
-#: src/konqmainwindow.cpp:3623
+#: src/konqmainwindow.cpp:3622
 #, kde-format
 msgid ""
 "<html>Print the currently displayed document<br /><br />You will be "
@@ -1256,12 +1255,12 @@ msgstr ""
 "dostop do posebnih tiskalnih storitev, kot je ustvarjanje datoteke PDF iz "
 "trenutnega dokumenta.</html>"
 
-#: src/konqmainwindow.cpp:3629
+#: src/konqmainwindow.cpp:3628
 #, kde-format
 msgid "Print the current document"
 msgstr "Natisni trenutni dokument"
 
-#: src/konqmainwindow.cpp:3631
+#: src/konqmainwindow.cpp:3630
 #, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
@@ -1270,7 +1269,7 @@ msgstr ""
 "V zaklenjenem prikazu ne morete spreminjati map. Uporabite ga skupaj z "
 "možnostjo »poveži prikaz«, če želite raziskovati več datotek v eni mapi"
 
-#: src/konqmainwindow.cpp:3632
+#: src/konqmainwindow.cpp:3631
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
@@ -1279,12 +1278,12 @@ msgstr ""
 "Nastavi prikaz kot »povezan«. Povezan prikaz sledi spremembam mape, "
 "opravljenimi v drugih povezanih prikazih."
 
-#: src/konqmainwindow.cpp:3636
+#: src/konqmainwindow.cpp:3635
 #, kde-format
 msgid "&Inspect Current Page"
 msgstr "Preglej trenutno stran"
 
-#: src/konqmainwindow.cpp:3637
+#: src/konqmainwindow.cpp:3636
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
@@ -1293,22 +1292,22 @@ msgstr ""
 "<html>Prikaže razvojna orodja za trenutno stran<br/><br/>Trenutni pogled je "
 "razdeljen na dva dela in razvojna orodja so prikazana na drugem delu"
 
-#: src/konqmainwindow.cpp:3638
+#: src/konqmainwindow.cpp:3637
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr "Prikaže razvojna orodja za trenutno stran"
 
-#: src/konqmainwindow.cpp:3800
+#: src/konqmainwindow.cpp:3799
 #, kde-format
 msgid "Copy &Files..."
 msgstr "Kopiraj datoteke..."
 
-#: src/konqmainwindow.cpp:3804
+#: src/konqmainwindow.cpp:3803
 #, kde-format
 msgid "M&ove Files..."
 msgstr "Premakni datoteke..."
 
-#: src/konqmainwindow.cpp:4130
+#: src/konqmainwindow.cpp:4129
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
@@ -1317,77 +1316,77 @@ msgstr ""
 "Zahtevali ste odprtje več kot 20 zaznamkov v zavihkih. To lahko traja nekaj "
 "časa. Ali želite nadaljevati?"
 
-#: src/konqmainwindow.cpp:4132
+#: src/konqmainwindow.cpp:4131
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "Odpri mapo z zaznamki v novih zavihkih"
 
-#: src/konqmainwindow.cpp:4133
+#: src/konqmainwindow.cpp:4132
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr "Odpri"
 
-#: src/konqmainwindow.cpp:4295
+#: src/konqmainwindow.cpp:4294
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "Odpri v tem oknu"
 
-#: src/konqmainwindow.cpp:4296
+#: src/konqmainwindow.cpp:4295
 #, kde-format
 msgid "Open the document in current window"
 msgstr "Odpri dokument v trenutnem oknu"
 
-#: src/konqmainwindow.cpp:4303
+#: src/konqmainwindow.cpp:4302
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "Odpri dokument v novem oknu"
 
-#: src/konqmainwindow.cpp:4309
+#: src/konqmainwindow.cpp:4308
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Odpri v &novem zavihku"
 
-#: src/konqmainwindow.cpp:4311
+#: src/konqmainwindow.cpp:4310
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "Odpri dokument v novem zavihku"
 
-#: src/konqmainwindow.cpp:4534
+#: src/konqmainwindow.cpp:4533
 #, kde-format
 msgid "&Open With"
 msgstr "&Odpri z"
 
-#: src/konqmainwindow.cpp:4547
+#: src/konqmainwindow.cpp:4546
 #, kde-format
 msgid "Open with %1"
 msgstr "Odpri z %1"
 
-#: src/konqmainwindow.cpp:4597
+#: src/konqmainwindow.cpp:4596
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "Način prikaza"
 
-#: src/konqmainwindow.cpp:4718
+#: src/konqmainwindow.cpp:4719
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr "V tem oknu imate odprtih več zavihkov. Ali res želite končati?"
 
-#: src/konqmainwindow.cpp:4720
+#: src/konqmainwindow.cpp:4721
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Potrditev"
 
-#: src/konqmainwindow.cpp:4722
+#: src/konqmainwindow.cpp:4723
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "Zapri trenutni zavihek"
 
-#: src/konqmainwindow.cpp:4750
+#: src/konqmainwindow.cpp:4751
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1396,7 +1395,7 @@ msgstr ""
 "Ta zavihek vsebuje spremembe, ki niso bile poslane.\n"
 "Zaprtje okna bo zavrglo te spremembe."
 
-#: src/konqmainwindow.cpp:4751
+#: src/konqmainwindow.cpp:4752
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1405,7 +1404,7 @@ msgstr ""
 "Ta stran vsebuje spremembe, ki niso bile poslane.\n"
 "Zaprtje okna bo zavrglo te spremembe."
 
-#: src/konqmainwindow.cpp:4911
+#: src/konqmainwindow.cpp:4912
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1413,28 +1412,28 @@ msgstr ""
 "Vaša stranska vrstica ne deluje ali ni na voljo. Novega vnosa ni mogoče "
 "dodati."
 
-#: src/konqmainwindow.cpp:4911 src/konqmainwindow.cpp:4918
+#: src/konqmainwindow.cpp:4912 src/konqmainwindow.cpp:4919
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Spletna stranska vrstica"
 
-#: src/konqmainwindow.cpp:4916
+#: src/konqmainwindow.cpp:4917
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Ali naj se nova spletna razširitev »%1« doda v vašo stransko vrstico?"
 
-#: src/konqmainwindow.cpp:4918
+#: src/konqmainwindow.cpp:4919
 #, kde-format
 msgid "Add"
 msgstr "Dodaj"
 
-#: src/konqmainwindow.cpp:4918
+#: src/konqmainwindow.cpp:4919
 #, kde-format
 msgid "Do Not Add"
 msgstr "Ne dodaj"
 
-#: src/konqmainwindow.cpp:5266
+#: src/konqmainwindow.cpp:5267
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1443,7 +1442,7 @@ msgstr ""
 "Izgleda, da so obstaja napaka v nastavitvah. Konqueror ste povezali z %1, "
 "vendar ne more obravnavati te vrste datotek."
 
-#: src/konqmainwindow.cpp:5351
+#: src/konqmainwindow.cpp:5352
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1464,22 +1463,22 @@ msgstr ""
 "nastavitev sistemskega posrednika ali podajte naslov posrednega strežnika v "
 "pogovornem oknu z nastavitvami. Ali želite spremeniti nastavitve zdaj?"
 
-#: src/konqmainwindow.cpp:5356
+#: src/konqmainwindow.cpp:5357
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "Nepodprta nastavitev posrednika"
 
-#: src/konqmainwindow.cpp:5356
+#: src/konqmainwindow.cpp:5357
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "Ne uporabljajte posrednika"
 
-#: src/konqmainwindow.cpp:5357 src/konqmainwindow.cpp:5385
+#: src/konqmainwindow.cpp:5358 src/konqmainwindow.cpp:5386
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "Prikaži pogovorno okno za nastavitev posrednika"
 
-#: src/konqmainwindow.cpp:5381
+#: src/konqmainwindow.cpp:5382
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1492,22 +1491,22 @@ msgstr ""
 "so: <p><b>proxy HTTP:</b><tt>%1</tt></p><p><b> HTTPS proxy: </b><tt>%2</tt></"
 "p> Kaj želite storiti?"
 
-#: src/konqmainwindow.cpp:5384
+#: src/konqmainwindow.cpp:5385
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "Protislovne nastavitve posrednika"
 
-#: src/konqmainwindow.cpp:5385
+#: src/konqmainwindow.cpp:5386
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "Uporabi posrednika HTTP (samo tokrat)"
 
-#: src/konqmainwindow.cpp:5385
+#: src/konqmainwindow.cpp:5386
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "Uporabi posrednika HTTPS (samo tokrat)"
 
-#: src/konqmainwindow.cpp:5401
+#: src/konqmainwindow.cpp:5402
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1601,8 +1600,7 @@ msgid "Delete"
 msgstr "Izbriši"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
-#. i18n: ectx: label, entry, group (Trash)
-#: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
+#: src/konqsessiondlg_base.ui:73
 #, kde-format
 msgid "Open tabs inside current window"
 msgstr "Odpri zavihke v trenutnem oknu"
@@ -1720,188 +1718,6 @@ msgstr "Odpni zavihek"
 #, kde-format
 msgid "&Close Tab"
 msgstr "Zapri zavihek"
-
-#. i18n: ectx: label, entry, group (UserSettings)
-#: src/konqueror.kcfg:11
-#, kde-format
-msgid "Start Page"
-msgstr "Začetna stran"
-
-#. i18n: ectx: whatsthis, entry, group (UserSettings)
-#: src/konqueror.kcfg:12
-#, kde-format
-msgid "This is the URL of the web page where Konqueror will start from."
-msgstr ""
-"To je naslov URL spletne strani, ki jo bo ob zagonu prikazal Konqueror."
-
-#. i18n: ectx: whatsthis, entry, group (UserSettings)
-#: src/konqueror.kcfg:17
-#, kde-format
-msgid ""
-"This is the URL of the web page where Konqueror will jump to when the \\"
-"\"Home\\\" button is pressed."
-msgstr ""
-"To je naslov URL spletne strani, na katero bo skočil Konqueror, ko boste "
-"pritisnili na gumb »Domov«."
-
-#. i18n: ectx: label, entry, group (UndoManagerSettings)
-#: src/konqueror.kcfg:26
-#, kde-format
-msgid "Maximum number of Closed Items"
-msgstr "Največje število zaprtih predmetov"
-
-#. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
-#: src/konqueror.kcfg:27
-#, kde-format
-msgid ""
-"This sets the maximum number of closed items that will be stored in memory. "
-"This limit will not be surpassed."
-msgstr ""
-"To določa največje število zaprtih predmetov, ki bodo ohranjeni v "
-"pomnilniku. Omejitev ne bo prekoračena."
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#: src/konqueror.kcfg:36
-#, kde-format
-msgid "Open folders in separate windows"
-msgstr "Odpri mape v ločenih oknih"
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:37
-#, kde-format
-msgid ""
-"If this option is checked, Konqueror will open a new window when you open a "
-"folder, rather than showing that folder's contents in the current window."
-msgstr ""
-"Če je ta možnost izbrana, bo Konqueror mapo odprl v novem oknu namesto da bi "
-"prikazal vsebino te mape v trenutnem oknu."
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#: src/konqueror.kcfg:42
-#, kde-format
-msgid "Show file tips"
-msgstr "Prikaži namige za datoteke"
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:43
-#, kde-format
-msgid ""
-"Here you can control if, when moving the mouse over a file, you want to see "
-"a small popup window with additional information about that file"
-msgstr ""
-"Tu lahko nastavite, ali naj se ob premiku miške nad datoteko pojavi majhno "
-"pojavno okno z dodatnimi podrobnostmi o tej datoteki"
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#: src/konqueror.kcfg:54
-#, kde-format
-msgid "Show previews in file tips"
-msgstr "Prikaži predoglede v namigih za datoteke"
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:55
-#, kde-format
-msgid ""
-"Here you can control if you want the popup window to contain a larger "
-"preview for the file, when moving the mouse over it"
-msgstr ""
-"Tu lahko nastavite, ali naj se ob premiku miškine kazalke nad datoteko "
-"pokaže pojavno okno z večjim predogledom datoteke"
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#: src/konqueror.kcfg:60
-#, kde-format
-msgid "Show 'Delete' menu entries which bypass the trashcan"
-msgstr "Prikaži menijske vnose »Izbriši«, ki obidejo Smeti"
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:61
-#, kde-format
-msgid ""
-"Check this if you want 'Delete' menu commands to be displayed on the desktop "
-"and in the file manager's menus and context menus. You can always delete "
-"files when hidden by holding the Shift key while calling 'Move to Trash'."
-msgstr ""
-"Onemogočite to možnost, če ne želite imeti prikazanega menijskega ukaza "
-"»Izbriši« na namizju in v menijih ter vsebinskih menijih upravljalnika "
-"datotek. Ko je vnos skrit lahko datoteke še vedno izbrišete tako, da med "
-"izbiro ukaza »Premakni v Smeti« držite dvigalko (Shift)."
-
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:149
-#, kde-format
-msgid "Choose where to display the tabs bar"
-msgstr "Izberite, kje prikazati vrstico z zavihki"
-
-#. i18n: ectx: label, entry, group (FMSettings)
-#. i18n: ectx: whatsthis, entry, group (FMSettings)
-#: src/konqueror.kcfg:153 src/konqueror.kcfg:154
-#, kde-format
-msgid "Number of Open With items in the File menu"
-msgstr "Število predmetov »Odpri v« v meniju Datoteka"
-
-#. i18n: ectx: label, entry, group (HTML Settings)
-#: src/konqueror.kcfg:163
-#, kde-format
-msgid "Standard font"
-msgstr "Običajna pisava"
-
-#. i18n: ectx: whatsthis, entry, group (HTML Settings)
-#: src/konqueror.kcfg:164
-#, kde-format
-msgid "This is the font used to display text in Konqueror windows."
-msgstr "To je pisava za prikaz besedila v oknih Konquerorja."
-
-#. i18n: ectx: label, entry, group (HistorySettings)
-#: src/konqueror.kcfg:314
-#, kde-format
-msgid "Maximum number of history items per view"
-msgstr "Največje število predmetov v zgodovini za vsak prikaz"
-
-#. i18n: ectx: label, entry, group (Trash)
-#: src/konqueror.kcfg:504
-#, kde-format
-msgid "Ask confirmation for deleting a file."
-msgstr "Vprašaj za potrditev za izbris datoteke."
-
-#. i18n: ectx: whatsthis, entry, group (Trash)
-#: src/konqueror.kcfg:505
-#, kde-format
-msgid ""
-"This option tells Konqueror whether to ask for a confirmation when you "
-"delete a file without using the trash folder. Warning, deleted files can not "
-"be recovered, so it is recommended to leave this confirmation enabled."
-msgstr ""
-"Ta možnost določa, ali naj Konqueror vpraša za potrditev, ko nameravate "
-"izbrisati datoteko, ne da bi uporabili mapo Smeti. Pozor: izbrisanih datotek "
-"ni mogoče obnoviti, zato priporočamo, da to potrditev pustite omogočeno."
-
-#. i18n: ectx: label, entry, group (Trash)
-#: src/konqueror.kcfg:510
-#, kde-format
-msgid "Ask confirmation for move to trash"
-msgstr "Vprašaj za potrditev za premik v Smeti"
-
-#. i18n: ectx: whatsthis, entry, group (Trash)
-#: src/konqueror.kcfg:511
-#, kde-format
-msgid ""
-"This option tells Konqueror whether to ask for a confirmation when you move "
-"the file to your trash folder, from where it can be recovered very easily."
-msgstr ""
-"Ta možnost določa, ali naj Konqueror vpraša za potrditev, ko nameravate "
-"premakniti datoteko v mapo Smeti, od koder jo je zelo preprosto obnoviti na "
-"prvotno mesto."
-
-#. i18n: ectx: whatsthis, entry, group (Trash)
-#: src/konqueror.kcfg:518
-#, kde-format
-msgid ""
-"If true, when opening a session from within the sessions dialog the tabs "
-"will be opened inside current window."
-msgstr ""
-"Če je nastavljeno na pravilno (true), bodo pri odpiranju seje iz pogovornega "
-"okna za seje, zavihki odprti znotraj trenutnega okna."
 
 #. i18n: ectx: Menu (file)
 #: src/konqueror.rc:5
@@ -2047,6 +1863,122 @@ msgstr "<filename>%1</filename> lahko izvedemo. Ali želite to izvesti?"
 #, kde-format
 msgid "Save As"
 msgstr "Shrani kot"
+
+#~ msgid "Start Page"
+#~ msgstr "Začetna stran"
+
+#~ msgid "This is the URL of the web page where Konqueror will start from."
+#~ msgstr ""
+#~ "To je naslov URL spletne strani, ki jo bo ob zagonu prikazal Konqueror."
+
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror will jump to when the \\"
+#~ "\"Home\\\" button is pressed."
+#~ msgstr ""
+#~ "To je naslov URL spletne strani, na katero bo skočil Konqueror, ko boste "
+#~ "pritisnili na gumb »Domov«."
+
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "Največje število zaprtih predmetov"
+
+#~ msgid ""
+#~ "This sets the maximum number of closed items that will be stored in "
+#~ "memory. This limit will not be surpassed."
+#~ msgstr ""
+#~ "To določa največje število zaprtih predmetov, ki bodo ohranjeni v "
+#~ "pomnilniku. Omejitev ne bo prekoračena."
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Odpri mape v ločenih oknih"
+
+#~ msgid ""
+#~ "If this option is checked, Konqueror will open a new window when you open "
+#~ "a folder, rather than showing that folder's contents in the current "
+#~ "window."
+#~ msgstr ""
+#~ "Če je ta možnost izbrana, bo Konqueror mapo odprl v novem oknu namesto da "
+#~ "bi prikazal vsebino te mape v trenutnem oknu."
+
+#~ msgid "Show file tips"
+#~ msgstr "Prikaži namige za datoteke"
+
+#~ msgid ""
+#~ "Here you can control if, when moving the mouse over a file, you want to "
+#~ "see a small popup window with additional information about that file"
+#~ msgstr ""
+#~ "Tu lahko nastavite, ali naj se ob premiku miške nad datoteko pojavi "
+#~ "majhno pojavno okno z dodatnimi podrobnostmi o tej datoteki"
+
+#~ msgid "Show previews in file tips"
+#~ msgstr "Prikaži predoglede v namigih za datoteke"
+
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it"
+#~ msgstr ""
+#~ "Tu lahko nastavite, ali naj se ob premiku miškine kazalke nad datoteko "
+#~ "pokaže pojavno okno z večjim predogledom datoteke"
+
+#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
+#~ msgstr "Prikaži menijske vnose »Izbriši«, ki obidejo Smeti"
+
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's menus and context menus. You can always "
+#~ "delete files when hidden by holding the Shift key while calling 'Move to "
+#~ "Trash'."
+#~ msgstr ""
+#~ "Onemogočite to možnost, če ne želite imeti prikazanega menijskega ukaza "
+#~ "»Izbriši« na namizju in v menijih ter vsebinskih menijih upravljalnika "
+#~ "datotek. Ko je vnos skrit lahko datoteke še vedno izbrišete tako, da med "
+#~ "izbiro ukaza »Premakni v Smeti« držite dvigalko (Shift)."
+
+#~ msgid "Choose where to display the tabs bar"
+#~ msgstr "Izberite, kje prikazati vrstico z zavihki"
+
+#~ msgid "Number of Open With items in the File menu"
+#~ msgstr "Število predmetov »Odpri v« v meniju Datoteka"
+
+#~ msgid "Standard font"
+#~ msgstr "Običajna pisava"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr "To je pisava za prikaz besedila v oknih Konquerorja."
+
+#~ msgid "Maximum number of history items per view"
+#~ msgstr "Največje število predmetov v zgodovini za vsak prikaz"
+
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Vprašaj za potrditev za izbris datoteke."
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "delete a file without using the trash folder. Warning, deleted files can "
+#~ "not be recovered, so it is recommended to leave this confirmation enabled."
+#~ msgstr ""
+#~ "Ta možnost določa, ali naj Konqueror vpraša za potrditev, ko nameravate "
+#~ "izbrisati datoteko, ne da bi uporabili mapo Smeti. Pozor: izbrisanih "
+#~ "datotek ni mogoče obnoviti, zato priporočamo, da to potrditev pustite "
+#~ "omogočeno."
+
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Vprašaj za potrditev za premik v Smeti"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "move the file to your trash folder, from where it can be recovered very "
+#~ "easily."
+#~ msgstr ""
+#~ "Ta možnost določa, ali naj Konqueror vpraša za potrditev, ko nameravate "
+#~ "premakniti datoteko v mapo Smeti, od koder jo je zelo preprosto obnoviti "
+#~ "na prvotno mesto."
+
+#~ msgid ""
+#~ "If true, when opening a session from within the sessions dialog the tabs "
+#~ "will be opened inside current window."
+#~ msgstr ""
+#~ "Če je nastavljeno na pravilno (true), bodo pri odpiranju seje iz "
+#~ "pogovornega okna za seje, zavihki odprti znotraj trenutnega okna."
 
 #~ msgid "TEST"
 #~ msgstr "TEST"

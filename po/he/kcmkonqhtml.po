@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:38+0000\n"
+"POT-Creation-Date: 2024-07-25 00:39+0000\n"
 "PO-Revision-Date: 2024-05-15 08:07+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -128,7 +128,7 @@ msgstr ""
 msgid "A&nimations:"
 msgstr "ה&נפשות:"
 
-#: appearance.cpp:85 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:108
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
@@ -692,21 +692,21 @@ msgid "Domain"
 msgstr "שם תחום"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
-#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
+#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
 #, kde-format
 msgid "Policy"
 msgstr "מדיניות"
 
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
-#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:45
+#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
 #: useragent/useragent.ui:84
 #, kde-format
 msgid "&New..."
 msgstr "ח&דש..."
 
 #. i18n: ectx: property (text), widget (QPushButton, pbChange)
-#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:49
+#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:52
 #, kde-format
 msgid "Chan&ge..."
 msgstr "שי&נוי..."
@@ -772,7 +772,7 @@ msgid "Policy:"
 msgstr "מדיניות:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
+#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:192
 #: policydlg.cpp:63
 #, kde-format
 msgid "Accept"
@@ -785,14 +785,14 @@ msgid "Accept until end of session"
 msgstr "לקבל עד הסגירה"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
+#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:194
 #: policydlg.cpp:63
 #, kde-format
 msgid "Reject"
 msgstr "דחה"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:153
+#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:182
 #, kde-format
 msgid "Ask"
 msgstr "שאל"
@@ -1341,32 +1341,38 @@ msgstr ""
 "</body>\n"
 "</html>\n"
 
-#: domainlistview.cpp:37
+#: domainlistview.cpp:33
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "נקודתית לשם &תחום"
+
+#: domainlistview.cpp:40
 #, kde-format
 msgid "Host/Domain"
 msgstr "מארח\\מתחם"
 
-#: domainlistview.cpp:53
+#: domainlistview.cpp:56
 #, kde-format
 msgid "De&lete"
 msgstr "&מחיקה"
 
-#: domainlistview.cpp:57
+#: domainlistview.cpp:60
 #, kde-format
 msgid "&Import..."
 msgstr "&ייבוא..."
 
-#: domainlistview.cpp:63
+#: domainlistview.cpp:66
 #, kde-format
 msgid "&Export..."
 msgstr "יי&צוא..."
 
-#: domainlistview.cpp:71
+#: domainlistview.cpp:74
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr "לחץ על כפתור זה כדי להוסיף באופן ידני מדיניות ספציפית למארח או לתחום."
 
-#: domainlistview.cpp:73
+#: domainlistview.cpp:76
 #, kde-format
 msgid ""
 "Click on this button to change the policy for the host or domain selected in "
@@ -1374,7 +1380,7 @@ msgid ""
 msgstr ""
 "לחץ על כפתור זה כדי לשנות את המדיניות למארח או לתחום שנבחרו בתיבת הרשימה."
 
-#: domainlistview.cpp:75
+#: domainlistview.cpp:78
 #, kde-format
 msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
@@ -1382,20 +1388,47 @@ msgid ""
 msgstr ""
 "לחץ על כפתור זה כדי למחוק את המדיניות למארח או לתחום שנבחרו בתיבת הרשימה."
 
-#: domainlistview.cpp:122
+#: domainlistview.cpp:125
 #, kde-format
 msgid "You must first select a policy to be changed."
 msgstr "תחילה יש לבחור מדיניות לשינוי."
 
-#: domainlistview.cpp:149
+#: domainlistview.cpp:152
 #, kde-format
 msgid "You must first select a policy to delete."
 msgstr "תחילה יש לבחור מדיניות למחיקה."
 
-#: domainlistview.cpp:187 policydlg.cpp:63
+#: domainlistview.cpp:190 policydlg.cpp:63
 #, kde-format
 msgid "Use Global"
 msgstr "השתמש בהגדרות גלובליות"
+
+#: domainlistview.cpp:232
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "מדיניות JavaScript חדשה"
+
+#: domainlistview.cpp:235
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "שינוי מדיניות JavaScript"
+
+#: domainlistview.cpp:239
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "מדיניות JavaScript:"
+
+#: domainlistview.cpp:240
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "בחר מדיניות JavaScript למארח או למתחם הנ\"ל."
+
+#: domainlistview.cpp:242
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "שינוי מדיניות JavaScript ספציפיות עבור מתחם"
 
 #: filteropts.cpp:48
 #, kde-format
@@ -1564,7 +1597,7 @@ msgstr "שם"
 msgid "URL"
 msgstr "כתובת"
 
-#: generalopts.cpp:56
+#: generalopts.cpp:54
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1572,101 +1605,101 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr "נא לבחור עמוד פתיחה משלך"
 
-#: generalopts.cpp:62
+#: generalopts.cpp:60
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr "כאשר נוצרת &לשונית חדשה"
 
-#: generalopts.cpp:71
+#: generalopts.cpp:69
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "הצגת עמוד ההיכרות"
 
-#: generalopts.cpp:72
+#: generalopts.cpp:70
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "הצגת עמוד הפתיחה שלי"
 
-#: generalopts.cpp:73
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "הצגת עמוד ריק"
 
-#: generalopts.cpp:74
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "הצגת הסימניות שלי"
 
-#: generalopts.cpp:80
+#: generalopts.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "בחירת עמוד ההתחלה"
 
-#: generalopts.cpp:85
+#: generalopts.cpp:83
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr "זאת כתובת עמוד האתר שיציג Konqueror עם עלייתו."
 
-#: generalopts.cpp:96
+#: generalopts.cpp:94
 #, kde-format
 msgid "Home page:"
 msgstr "עמוד הבית:"
 
-#: generalopts.cpp:99
+#: generalopts.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "בחירת עמוד הבית"
 
-#: generalopts.cpp:104
+#: generalopts.cpp:102
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
 "\" button is pressed."
 msgstr "זאת כתובת עמוד האתר אליה יקפוץ Konqueror בלחיצה על כפתור „בית”."
 
-#: generalopts.cpp:112
+#: generalopts.cpp:110
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "מנוע דפדפן ברירת המחדל:"
 
-#: generalopts.cpp:121
+#: generalopts.cpp:119
 #, kde-format
 msgid "When splitting a view"
 msgstr "בעת פיצול תצוגה"
 
-#: generalopts.cpp:125
+#: generalopts.cpp:123
 #, kde-format
 msgid "Always duplicate current view"
 msgstr "תמיד לשכפל את התצוגה הנוכחית"
 
-#: generalopts.cpp:126
+#: generalopts.cpp:124
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "לשכפל את התצוגה הנוכחית רק לקבצים מקומיים"
 
-#: generalopts.cpp:132
+#: generalopts.cpp:130
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr "עם העלייה, לשחזר את המצב מהפעם הקודמת"
 
-#: htmlopts.cpp:35
+#: htmlopts.cpp:39
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "&סימניות"
 
-#: htmlopts.cpp:38
+#: htmlopts.cpp:42
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "לבקש שם ותיקייה בהוספת סימניות"
 
-#: htmlopts.cpp:41
+#: htmlopts.cpp:45
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1676,12 +1709,12 @@ msgstr ""
 "אם התיבה הזאת מסומנת, Konqueror יאפשר לשנות את כותרת הסימנייה ולבחור בתיקייה "
 "לאחסן אותה בעת הוספת סימנייה חדשה."
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:51
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "הצג רק סימניות מסומנות בסרגל הסימניות"
 
-#: htmlopts.cpp:49
+#: htmlopts.cpp:53
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1690,12 +1723,10 @@ msgstr ""
 "אם אפשרות זו מסומנת, Konqueror יציג רק את הסימניות בסרגל הסימניות שאתה סימנת "
 "בעורך הסימניות."
 
-#: htmlopts.cpp:56
-#, kde-format
-msgid "Form Com&pletion"
-msgstr "מיל&וי טפסים"
-
-#: htmlopts.cpp:60
+#. i18n("Form Com&pletion"), widget());
+#. m_pFormCompletionCheckBox->setCheckable(true);
+#. QFormLayout *laygroup2 = new QFormLayout(m_pFormCompletionCheckBox);
+#: htmlopts.cpp:67
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1704,42 +1735,28 @@ msgstr ""
 "אם אפשרות זו נבחרת, Konqueror יזכור את הנתונים המוזנים בטפסי אינטרנט ויציע "
 "אותם בשדות דומים בכל טופס אחר."
 
-#: htmlopts.cpp:66
+#: htmlopts.cpp:74
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "מ&ספר מרבי של השלמות:"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:76
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
 msgstr "כאן באפשרותך לבחור כמה ערכים יזכור Konqueror עבור שדה בטופס."
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:87
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "&התנהגות עכבר"
 
-#: htmlopts.cpp:78
-#, kde-format
-msgid "Chan&ge cursor over links"
-msgstr "שנה את המ&צביע מעל לקישורים"
-
-#: htmlopts.cpp:80
-#, kde-format
-msgid ""
-"If this option is set, the shape of the cursor will change (usually to a "
-"hand) if it is moved over a hyperlink."
-msgstr ""
-"אם אפשרות זו נבחרת, צורת המצביע תשתנה (בדרך כלל לצורת יד) אם הוא מוזז מעל "
-"לקישור."
-
-#: htmlopts.cpp:84
+#: htmlopts.cpp:90
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "&כפתור אמצעי פותח כתובת מסומנת"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:93
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
@@ -1748,12 +1765,12 @@ msgstr ""
 "אם אפשרות זו מסומנת, אפשר לפתוח את הכתובת בטקסט הנבחר על ידי לחיצה על הכפתור "
 "האמצעי בעכבר בתצוגה של Konqueror."
 
-#: htmlopts.cpp:91
+#: htmlopts.cpp:97
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "&לחיצה ימנית חוזרת אחורה בהיסטוריה"
 
-#: htmlopts.cpp:94
+#: htmlopts.cpp:100
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1764,26 +1781,12 @@ msgstr ""
 "בתוך תצוגה של Konqueror. במצב זה יש ללחוץ עם הלחצן הימני של העכבר ולהזיזו "
 "כדי לגשת לתפריט ההקשר."
 
-#: htmlopts.cpp:104
-#, kde-format
-msgid "Allow automatic delayed &reloading/redirecting"
-msgstr "אפשר טעינה\\הפניה מח&דש באופן אוטומטי לאחר השהיה"
-
-#: htmlopts.cpp:105
-#, kde-format
-msgid ""
-"Some web pages request an automatic reload or redirection after a certain "
-"period of time. By unchecking this box Konqueror will ignore these requests."
-msgstr ""
-"דפי אינטרנט מסוימים מבקשים טעינה או הפניה מחדש אוטומטית אחרי משך זמן מסוים. "
-"אם לא תבחר באפשרות זו, Konqueror יתעלם מבקשות אלה."
-
-#: htmlopts.cpp:111
+#: htmlopts.cpp:115
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "אפשר הפעלת אפשרויות נגישות באמצעות המ&קש Ctrl"
 
-#: htmlopts.cpp:112
+#: htmlopts.cpp:116
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1794,36 +1797,40 @@ msgstr ""
 "תיבה זו יבטל את תכונת הנגישות. (יש צורך להפעיל מחדש את Konqueror על מנת "
 "להחיל שינוי זה)"
 
-#: htmlopts.cpp:116
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr "לשלוח את כותרת DNT (לא לעקוב) כדי להודיע לאתרים על סירובך שיעקבו אחריך"
 
-#: htmlopts.cpp:117
-#, kde-format
+#: htmlopts.cpp:122
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check this box if you want to inform a web site that you do not want your "
+#| "web browsing habits tracked."
 msgid ""
-"Check this box if you want to inform a web site that you do not want your "
-"web browsing habits tracked."
+"<p>Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
+"considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
 "יש לסמן את התיבה הזאת כדי ליידע אתרים על סירובך לאפשר להם לעקוב אחר הרגלי "
 "הגלישה שלך."
 
-#: htmlopts.cpp:121
+#: htmlopts.cpp:126
 #, kde-format
 msgid "Offer to save website passwords"
 msgstr "להציג לשמור את סיסמאות האתרים"
 
-#: htmlopts.cpp:122
+#: htmlopts.cpp:127
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr "ביטול סימון תיבה זו ימנע מהצגת בקשות לשמירת סיסמאות האתרים"
 
-#: htmlopts.cpp:126
+#: htmlopts.cpp:131
 #, kde-format
 msgid "Display online PDF files using WebEngine"
 msgstr "להציג קובצי PDF מקוונים באמצעות מנוע האתרים (WebEngine)"
 
-#: htmlopts.cpp:127
+#: htmlopts.cpp:132
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
@@ -1831,201 +1838,24 @@ msgstr ""
 "יש לבטל את הסימון בתיבה הזאת כיד להציג קובצי PDF מקוונים כפי שהוגדר בהגדרות "
 "המערכת"
 
-#: javaopts.cpp:78
+#: htmlopts.cpp:136
 #, kde-format
-msgid "Enable Ja&va globally"
-msgstr "לאפשר Java באופן &כללי"
+msgid "Always display files from web pages in a new tab"
+msgstr ""
 
-#: javaopts.cpp:93
-#, kde-format
-msgid "Java Runtime Settings"
-msgstr "הגדרות הרצת Java"
-
-#: javaopts.cpp:97
-#, kde-format
-msgid "&Use security manager"
-msgstr "להשתמש במנהל אב&טחה"
-
-#: javaopts.cpp:101
-#, kde-format
-msgid "Use &KIO"
-msgstr "להשתמש ב־&KIO"
-
-#: javaopts.cpp:105
-#, kde-format
-msgid "Shu&tdown applet server when inactive for more than"
-msgstr "לכבות את שרת היישומוני&ם כשאין פעילות במשך"
-
-#: javaopts.cpp:117
-#, kde-format
-msgid " second"
-msgid_plural " seconds"
-msgstr[0] " שנייה"
-msgstr[1] " שניות"
-msgstr[2] " שניות"
-msgstr[3] " שניות"
-
-#: javaopts.cpp:123
-#, kde-format
-msgid "&Path to Java executable, or 'java':"
-msgstr "הנתיב לתו&כנית ה־Java, או ‚java’:"
-
-#: javaopts.cpp:127
-#, kde-format
-msgid "Additional Java a&rguments:"
-msgstr "ארגומנטים &נוספים ל־Java:"
-
-#: javaopts.cpp:132
+#: htmlopts.cpp:137
 #, kde-format
 msgid ""
-"Enables the execution of scripts written in Java that can be contained in "
-"HTML pages. Note that, as with any browser, enabling active contents can be "
-"a security problem."
+"<p>When showing in Konqueror files from links in web pages, always use a new "
+"tab"
 msgstr ""
-"מאפשר הרצה של סקריפטים שנכתבו ב־Java וניתן לכלול בדפי HTML. נא לשים לב שכמו "
-"בכל דפדפן, הפעלת תכנים פעילים עלולה להוות בעיית אבטחה."
 
-#: javaopts.cpp:135
-#, kde-format
-msgid ""
-"<p>This box contains the domains and hosts you have set a specific Java "
-"policy for. This policy will be used instead of the default policy for "
-"enabling or disabling Java applets on pages sent by these domains or hosts.</"
-"p><p>Select a policy and use the controls on the right to modify it.</p>"
-msgstr ""
-"<p>תיבה זו מכילה את התחומים והמארחים שעבורם הגדרת מדיניות Java ספציפית. "
-"במדיניות זו ייעשה שימוש במקום מדיניות ברירת המחדל לגבי אפשור או הפיכת Java "
-"ללא זמין בדפים הנשלחים על ידי התחומים או המארחים האלה. </p> <p> בחר מדיניות "
-"והשתמש באפשרויות שמשמאל כדי לשנותה. </p>"
-
-#: javaopts.cpp:142
-#, kde-format
-msgid ""
-"Click this button to choose the file that contains the Java policies. These "
-"policies will be merged with the existing ones. Duplicate entries are "
-"ignored."
-msgstr ""
-"לחץ על כפתור זה כדי לבחור את הקובץ המכיל את מדיניויות ה־Java. מדיניויות אלה "
-"ישולבו עם המדיניויות הקיימות, כאשר רשומות כפולות לא יהיו פעילות."
-
-#: javaopts.cpp:145
-#, kde-format
-msgid ""
-"Click this button to save the Java policy to a zipped file. The file, named "
-"<b>java_policy.tgz</b>, will be saved to a location of your choice."
-msgstr ""
-"לחץ על כפתור זה כדי לשמור את מדיניות ה־Java לקובץ דחוס על ידי Zip. הקובץ, "
-"שייקרא <b>java_policy.tgz</b>, יישמר למיקום שתבחר."
-
-#: javaopts.cpp:149
-#, kde-format
-msgid ""
-"Here you can set specific Java policies for any particular host or domain. "
-"To add a new policy, simply click the <i>New...</i> button and supply the "
-"necessary information requested by the dialog box. To change an existing "
-"policy, click on the <i>Change...</i> button and choose the new policy from "
-"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
-"selected policy, causing the default policy setting to be used for that "
-"domain."
-msgstr ""
-"כאן באפשרותך להגדיר מדיניויות Java ספציפיות לכל מארח או תחום שהוא. כדי "
-"להוסיף מדיניות חדשה, פשוט לחץ על הכפתור <i>הוספה...</i> וספק את המידע המבוקש "
-"בתיבת הדו־שיח. כדי לשנות מדיניות קיימת, לחץ על הכפתור <i>שינוי...</i> ובחר "
-"את המדיניות החדשה מתוך דו־שיח המדיניות. לחיצה על הכפתור <i>מחק</i> תסיר את "
-"המדיניות הנבחרת, מה שיביא לכך שייעשה שימוש בהגדרת ברירת המחדל של המדיניות "
-"לתחום זה."
-
-#: javaopts.cpp:162
-#, kde-format
-msgid ""
-"Enabling the security manager will cause the jvm to run with a Security "
-"Manager in place. This will keep applets from being able to read and write "
-"to your file system, creating arbitrary sockets, and other actions which "
-"could be used to compromise your system. Disable this option at your own "
-"risk. You can modify your $HOME/.java.policy file with the Java policytool "
-"utility to give code downloaded from certain sites more permissions."
-msgstr ""
-"הפעלת מנהל האבטחה תגרום למכונה הווירטואלית של Java לפעול עם מנהל אבטחה. דבר "
-"זה ימנע מיישומונים את האפשרות לקרוא ולכתוב למערכת הקבצים שלך, ליצור שקעים "
-"שרירותיים ולבצע פעולות אחרות שעלולות לסכן את המערכת שלך. ביטול אפשרות זו הוא "
-"באחריותך בלבד. באפשרותך לשנות את הקובץ $HOME/.java.policy שלך באמצעות הכלי "
-"של Java policytool, וזאת על מנת לתת לקוד המורד מאתרים מסוימים יותר הרשאות."
-
-#: javaopts.cpp:170
-#, kde-format
-msgid "Enabling this will cause the jvm to use KIO for network transport "
-msgstr "סימון אפשרות זו, תגרום ל־JVM להשתמש ב־KIO עבור תעבורה ברשת."
-
-#: javaopts.cpp:172
-#, kde-format
-msgid ""
-"Enter the path to the java executable. If you want to use the jre in your "
-"path, simply leave it as 'java'. If you need to use a different jre, enter "
-"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
-"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
-msgstr ""
-"נא למלא את הנתיב לתוכנית ה־Java. כדי להשתמש ב־jre הנמצא בנתיב (PATH) שלך, יש "
-"להשאיר את הערך ‚java’. כדי להשתמש ב־jre אחר, נא למלא את הנתיב המלא לתוכנית ה־"
-"Java (לדוגמה usr/lib/jdk/bin/java/), או את הנתיב לתיקייה המכילה את ‚bin/"
-"java’ (למשל ‎‎/opt/IBMJava2-13)."
-
-#: javaopts.cpp:177
-#, kde-format
-msgid ""
-"If you want special arguments to be passed to the virtual machine, enter "
-"them here."
-msgstr ""
-"אם אתה רוצה שארגומנטים מיוחדים יועברו אל המכונה הווירטואלית, הזן אותם כאן."
-
-#: javaopts.cpp:179
-#, kde-format
-msgid ""
-"When all the applets have been destroyed, the applet server should shut "
-"down. However, starting the jvm takes a lot of time. If you would like to "
-"keep the java process running while you are browsing, you can set the "
-"timeout value to whatever you like. To keep the java process running for the "
-"whole time that the konqueror process is, leave the Shutdown Applet Server "
-"checkbox unchecked."
-msgstr ""
-"לאחר שכל היישומונים חוסלו אמור שרת היישומונים להיסגר, אולם ההפעלה של jvm "
-"אורכת זמן רב. לפיכך, כדי לשמור על תהליך ה־Java פועל בזמן הגלישה, אפשר להגדיר "
-"את ערך הזמן המוקצב לבחירתך. כדי להשאיר את תהליך ה־Java פועל לאורך כל זמן "
-"ההפעלה של Konqueror, פשוט לא לבחור באפשרות כיבוי שרת היישומונים."
-
-#: javaopts.cpp:288
-#, kde-format
-msgctxt "@title:group"
-msgid "Doma&in-Specific"
-msgstr "&נקודתית לשם תחום"
-
-#: javaopts.cpp:323
-#, kde-format
-msgctxt "@title:window"
-msgid "New Java Policy"
-msgstr "מדיניות Java חדשה"
-
-#: javaopts.cpp:326
-#, kde-format
-msgctxt "@title:window"
-msgid "Change Java Policy"
-msgstr "שינוי מדיניות Java"
-
-#: javaopts.cpp:330
-#, kde-format
-msgid "&Java policy:"
-msgstr "&מדיניות Java:"
-
-#: javaopts.cpp:331
-#, kde-format
-msgid "Select a Java policy for the above host or domain."
-msgstr "בחר מדיניות Java למארח או למתחם הנ\"ל."
-
-#: jsopts.cpp:50
+#: jsopts.cpp:57
 #, kde-format
 msgid "Ena&ble JavaScript globally"
 msgstr "אפשר JavaScript באופן &גלובלי"
 
-#: jsopts.cpp:51
+#: jsopts.cpp:58
 #, kde-format
 msgid ""
 "Enables the execution of scripts written in ECMA-Script (also known as "
@@ -2036,34 +1866,7 @@ msgstr ""
 "לכלול בדפי HTML. נא לשים לב כמו בכל דפדפן, הפעלת שפות סקריפטים עלולה להוות "
 "בעיית אבטחה."
 
-#: jsopts.cpp:59
-#, kde-format
-msgid "Debugging"
-msgstr "ניפוי תקלות"
-
-#: jsopts.cpp:63
-#, kde-format
-msgid "Enable debu&gger"
-msgstr "לאפשר &מנפה תקלות"
-
-#: jsopts.cpp:64
-#, kde-format
-msgid "Enables builtin JavaScript debugger."
-msgstr "מפעיל את מנפה התקלות המובנה של JavaScript."
-
-#: jsopts.cpp:68
-#, kde-format
-msgid "Report &errors"
-msgstr "דיווח על &שגיאות"
-
-#: jsopts.cpp:69
-#, kde-format
-msgid ""
-"Enables the reporting of errors that occur when JavaScript code is executed."
-msgstr ""
-"אם תבחר באפשרות זו, במקרה של שגיאות בהרצה של קוד JavaScript יתקבל דיווח."
-
-#: jsopts.cpp:79
+#: jsopts.cpp:70
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2085,7 +1888,7 @@ msgstr ""
 "המדיניויות שלך עם אנשים אחרים, וזאת באמצעות שמירתם ואחזורם מקובץ דחוס על ידי "
 "ZIP."
 
-#: jsopts.cpp:89
+#: jsopts.cpp:80
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2099,7 +1902,7 @@ msgstr ""
 "הפיכת JavaScript ללא זמין בדפים הנשלחים על ידי התחומים או המארחים האלה. </p> "
 "<p> בחר מדיניות והשתמש באפשרויות שמשמאל כדי לשנותה. </p> "
 
-#: jsopts.cpp:96
+#: jsopts.cpp:87
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2109,7 +1912,7 @@ msgstr ""
 "לחץ על כפתור זה כדי לבחור את הקובץ המכיל את מדיניויות ה־JavaScript. "
 "מדיניויות אלה ישולבו ביחד עם המדיניויות הקיימות, כשמרשומות כפולות יתעלמו."
 
-#: jsopts.cpp:99
+#: jsopts.cpp:90
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2119,93 +1922,60 @@ msgstr ""
 "לחץ על כפתור זה כדי לשמור את מדיניות ה־JavaScript לקובץ דחוס על ידי Zip. "
 "הקובץ, שייקרא <b>javascript_policy.tgz</b>, יישמר למיקום שתבחר."
 
-#: jsopts.cpp:105
+#: jsopts.cpp:96
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "מדיניות JavaScript גלובליות"
 
-#: jsopts.cpp:172
-#, kde-format
-msgctxt "@title:group"
-msgid "Do&main-Specific"
-msgstr "נקודתית לשם &תחום"
-
-#: jsopts.cpp:211
-#, kde-format
-msgctxt "@title:window"
-msgid "New JavaScript Policy"
-msgstr "מדיניות JavaScript חדשה"
-
-#: jsopts.cpp:214
-#, kde-format
-msgctxt "@title:window"
-msgid "Change JavaScript Policy"
-msgstr "שינוי מדיניות JavaScript"
-
-#: jsopts.cpp:218
-#, kde-format
-msgid "JavaScript policy:"
-msgstr "מדיניות JavaScript:"
-
-#: jsopts.cpp:219
-#, kde-format
-msgid "Select a JavaScript policy for the above host or domain."
-msgstr "בחר מדיניות JavaScript למארח או למתחם הנ\"ל."
-
-#: jsopts.cpp:221
-#, kde-format
-msgid "Domain-Specific JavaScript Policies"
-msgstr "שינוי מדיניות JavaScript ספציפיות עבור מתחם"
-
-#: jspolicies.cpp:132
+#: jspolicies.cpp:161
 #, kde-format
 msgid "Open new windows:"
 msgstr "פתיחת חלונות חדשים:"
 
-#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
-#: jspolicies.cpp:308
+#: jspolicies.cpp:169 jspolicies.cpp:223 jspolicies.cpp:260 jspolicies.cpp:297
+#: jspolicies.cpp:337
 #, kde-format
 msgid "Use global"
 msgstr "להשתמש בכללית"
 
-#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
-#: jspolicies.cpp:309
+#: jspolicies.cpp:170 jspolicies.cpp:224 jspolicies.cpp:261 jspolicies.cpp:298
+#: jspolicies.cpp:338
 #, kde-format
 msgid "Use setting from global policy."
 msgstr "להשתמש בהגדרת המדיניות הכללית."
 
-#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
-#: jspolicies.cpp:315
+#: jspolicies.cpp:176 jspolicies.cpp:230 jspolicies.cpp:267 jspolicies.cpp:304
+#: jspolicies.cpp:344
 #, kde-format
 msgid "Allow"
 msgstr "לאפשר"
 
-#: jspolicies.cpp:148
+#: jspolicies.cpp:177
 #, kde-format
 msgid "Accept all popup window requests."
 msgstr "קבלת כל הבקשות לחלונות מוקפצים."
 
-#: jspolicies.cpp:154
+#: jspolicies.cpp:183
 #, kde-format
 msgid "Prompt every time a popup window is requested."
 msgstr "הצגת שאלה בכל פעם שמתבקש חלון מוקפץ."
 
-#: jspolicies.cpp:159
+#: jspolicies.cpp:188
 #, kde-format
 msgid "Deny"
 msgstr "לדחות"
 
-#: jspolicies.cpp:160
+#: jspolicies.cpp:189
 #, kde-format
 msgid "Reject all popup window requests."
 msgstr "דחיית כל הבקשות לחלונות מוקפצים."
 
-#: jspolicies.cpp:165
+#: jspolicies.cpp:194
 #, kde-format
 msgid "Smart"
 msgstr "חכם"
 
-#: jspolicies.cpp:166
+#: jspolicies.cpp:195
 #, kde-format
 msgid ""
 "Accept popup window requests only when links are activated through an "
@@ -2214,7 +1984,7 @@ msgstr ""
 "קבלת בקשות לחלונות מוקפצים רק כאשר מופעלים קישורים באמצעות לחיצה מפורשת של "
 "העכבר או פעולה של המקלדת."
 
-#: jspolicies.cpp:173
+#: jspolicies.cpp:202
 #, kde-format
 msgid ""
 "If you disable this, Konqueror will stop interpreting the <i>window.open()</"
@@ -2229,22 +1999,22 @@ msgstr ""
 "תאפשר עלולה גם לפגוע בתפקודם של אתרים מסוימים הזקוקים ל־<i>window.open()</i> "
 "לפעולתם התקינה. השתמש באפשרות זו בזהירות."
 
-#: jspolicies.cpp:187
+#: jspolicies.cpp:216
 #, kde-format
 msgid "Resize window:"
 msgstr "שינוי גודל החלון:"
 
-#: jspolicies.cpp:202
+#: jspolicies.cpp:231
 #, kde-format
 msgid "Allow scripts to change the window size."
 msgstr "לאפשר לסקריפטים לשנות את גודל החלון."
 
-#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#: jspolicies.cpp:236 jspolicies.cpp:273 jspolicies.cpp:310 jspolicies.cpp:350
 #, kde-format
 msgid "Ignore"
 msgstr "התעלם"
 
-#: jspolicies.cpp:208
+#: jspolicies.cpp:237
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
@@ -2253,7 +2023,7 @@ msgstr ""
 "התעלמות מניסיונות של הסקריפט לשנות את גודל החלון. הדף <i>יחשוב</i> שגודל "
 "החלון השתנה, אבל מעשית גודל החלון לא יושפע."
 
-#: jspolicies.cpp:215
+#: jspolicies.cpp:244
 #, kde-format
 msgid ""
 "Some websites change the window size on their own by using <i>window."
@@ -2263,17 +2033,17 @@ msgstr ""
 "ישנם אתרים המשנים את גודל החלון באמצעות שימוש ב-<i>window.resizeBy()</i> או "
 "ב-<i>window.resizeTo()</i>. אפשרות זאת מגדירה את ההתייחסות לניסיונות כאלו."
 
-#: jspolicies.cpp:224
+#: jspolicies.cpp:253
 #, kde-format
 msgid "Move window:"
 msgstr "הזז חלון:"
 
-#: jspolicies.cpp:239
+#: jspolicies.cpp:268
 #, kde-format
 msgid "Allow scripts to change the window position."
 msgstr "לאפשר לסקריפטים לשנות את מיקום החלון"
 
-#: jspolicies.cpp:245
+#: jspolicies.cpp:274
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window position. The web page will "
@@ -2282,7 +2052,7 @@ msgstr ""
 "התעלם מנסיונות של סקריפטים לשינוי מיקום החלון. האתר <i>יסיק</i> כי החלון "
 "הוזז, אף שמיקומו למעשה לא השתנה."
 
-#: jspolicies.cpp:252
+#: jspolicies.cpp:281
 #, kde-format
 msgid ""
 "Some websites change the window position on their own by using <i>window."
@@ -2292,17 +2062,17 @@ msgstr ""
 "ישנם אתרים המשנים את מיקום החלון באמצעות שימוש ב-<i>window.moveBy()</i> או ב-"
 "<i>window.moveTo()</i>. אפשרות זאת מגדירה את ההתייחסות לניסיונות כאלו."
 
-#: jspolicies.cpp:261
+#: jspolicies.cpp:290
 #, kde-format
 msgid "Focus window:"
 msgstr "מיקוד החלון:"
 
-#: jspolicies.cpp:276
+#: jspolicies.cpp:305
 #, kde-format
 msgid "Allow scripts to focus the window."
 msgstr "אפשר לסקריפטים להעביר את המיקוד לחלון."
 
-#: jspolicies.cpp:282
+#: jspolicies.cpp:311
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to focus the window. The web page will <i>think</"
@@ -2312,7 +2082,7 @@ msgstr ""
 "התעלם מנסיונות של סקריפטים להתמקדות בחלון. האתר <i>יסיק</i> כי החלון מוקד, "
 "אף שלמעשה לא השתנה דבר במיקוד."
 
-#: jspolicies.cpp:290
+#: jspolicies.cpp:319
 #, kde-format
 msgid ""
 "Some websites set the focus to their browser window on their own by using "
@@ -2324,17 +2094,17 @@ msgstr ""
 "focus()</i>. בדרך כלל זה מוביל לכך שהחלון מובא לקידמת המסך תוך הפרעה לפעולות "
 "המשתמש בינתיים. אפשרות זאת מגדירה את ההתייחסות לניסיונות כאלו."
 
-#: jspolicies.cpp:301
+#: jspolicies.cpp:330
 #, kde-format
 msgid "Modify status bar text:"
 msgstr "שינוי כיתוב בשורת המצב:"
 
-#: jspolicies.cpp:316
+#: jspolicies.cpp:345
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
 msgstr "לאפשר לסקריפטים לשנות את הכיתוב של שורת המצב."
 
-#: jspolicies.cpp:322
+#: jspolicies.cpp:351
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
@@ -2343,7 +2113,7 @@ msgstr ""
 "התעלם מניסיונות סקריפטים לשנות את הטקסט המוצג בשורת המצב. דף האינטרנט "
 "<i>יסיק</i> כי הטקסט השתנה, אף כי למעשה הטקסט לא השתנה."
 
-#: jspolicies.cpp:330
+#: jspolicies.cpp:359
 #, kde-format
 msgid ""
 "Some websites change the status bar text by setting <i>window.status</i> or "
@@ -2353,16 +2123,6 @@ msgstr ""
 "ישנם אתרי אינטרנט שמשנים את הטקסט בשורת המצב על ידי ההגדרה <i>window.status</"
 "i> או <i>window.defaultStatus</i>, דבר שמונע לעיתים את הצגת כתובת ה-URL של "
 "קישורים. אפשרות זאת מגדירה את ההתייחסות לנסיונות כאלו."
-
-#: main.cpp:49
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
-
-#: main.cpp:53
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
 
 #: policydlg.cpp:30
 #, kde-format
@@ -2627,9 +2387,8 @@ msgstr "זהויות קיימות"
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150 useragent/useragent.ui:163
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr "<html><head/><body><p><br/></p></body></html>"
@@ -2670,6 +2429,17 @@ msgstr "מ&חיקה"
 msgid "Choose &selected identification"
 msgstr "לבחור בזיהוי ה&נבחר"
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:163
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><head/><body><p>The custom background color to use for web pages</"
+#| "p></body></html>"
+msgid ""
+"<html><head/><body><p>If checked, disable choosing a custom identification "
+"and use the default one</p></body></html>"
+msgstr "<html><head/><body><p>צבע מותאם לשימוש בעמודי אתרים</p></body></html>"
+
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
@@ -2694,6 +2464,201 @@ msgstr ""
 "<html><head/><body><p>זיהוי הדפדפן לשימוש כאשר זיהוי ברירת המחדל מושבת.</"
 "p><p>אפשר למלא אותו ידנית או להתחיל מאחד מהרשימה ולערוך אותו בהתאם לצרכים.</"
 "p></body></html>"
+
+#~ msgid "Form Com&pletion"
+#~ msgstr "מיל&וי טפסים"
+
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "שנה את המ&צביע מעל לקישורים"
+
+#~ msgid ""
+#~ "If this option is set, the shape of the cursor will change (usually to a "
+#~ "hand) if it is moved over a hyperlink."
+#~ msgstr ""
+#~ "אם אפשרות זו נבחרת, צורת המצביע תשתנה (בדרך כלל לצורת יד) אם הוא מוזז מעל "
+#~ "לקישור."
+
+#~ msgid "Allow automatic delayed &reloading/redirecting"
+#~ msgstr "אפשר טעינה\\הפניה מח&דש באופן אוטומטי לאחר השהיה"
+
+#~ msgid ""
+#~ "Some web pages request an automatic reload or redirection after a certain "
+#~ "period of time. By unchecking this box Konqueror will ignore these "
+#~ "requests."
+#~ msgstr ""
+#~ "דפי אינטרנט מסוימים מבקשים טעינה או הפניה מחדש אוטומטית אחרי משך זמן "
+#~ "מסוים. אם לא תבחר באפשרות זו, Konqueror יתעלם מבקשות אלה."
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "לאפשר Java באופן &כללי"
+
+#~ msgid "Java Runtime Settings"
+#~ msgstr "הגדרות הרצת Java"
+
+#~ msgid "&Use security manager"
+#~ msgstr "להשתמש במנהל אב&טחה"
+
+#~ msgid "Use &KIO"
+#~ msgstr "להשתמש ב־&KIO"
+
+#~ msgid "Shu&tdown applet server when inactive for more than"
+#~ msgstr "לכבות את שרת היישומוני&ם כשאין פעילות במשך"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " שנייה"
+#~ msgstr[1] " שניות"
+#~ msgstr[2] " שניות"
+#~ msgstr[3] " שניות"
+
+#~ msgid "&Path to Java executable, or 'java':"
+#~ msgstr "הנתיב לתו&כנית ה־Java, או ‚java’:"
+
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "ארגומנטים &נוספים ל־Java:"
+
+#~ msgid ""
+#~ "Enables the execution of scripts written in Java that can be contained in "
+#~ "HTML pages. Note that, as with any browser, enabling active contents can "
+#~ "be a security problem."
+#~ msgstr ""
+#~ "מאפשר הרצה של סקריפטים שנכתבו ב־Java וניתן לכלול בדפי HTML. נא לשים לב "
+#~ "שכמו בכל דפדפן, הפעלת תכנים פעילים עלולה להוות בעיית אבטחה."
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific Java "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling Java applets on pages sent by these domains or "
+#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
+#~ "it.</p>"
+#~ msgstr ""
+#~ "<p>תיבה זו מכילה את התחומים והמארחים שעבורם הגדרת מדיניות Java ספציפית. "
+#~ "במדיניות זו ייעשה שימוש במקום מדיניות ברירת המחדל לגבי אפשור או הפיכת "
+#~ "Java ללא זמין בדפים הנשלחים על ידי התחומים או המארחים האלה. </p> <p> בחר "
+#~ "מדיניות והשתמש באפשרויות שמשמאל כדי לשנותה. </p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the Java policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "לחץ על כפתור זה כדי לבחור את הקובץ המכיל את מדיניויות ה־Java. מדיניויות "
+#~ "אלה ישולבו עם המדיניויות הקיימות, כאשר רשומות כפולות לא יהיו פעילות."
+
+#~ msgid ""
+#~ "Click this button to save the Java policy to a zipped file. The file, "
+#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
+#~ msgstr ""
+#~ "לחץ על כפתור זה כדי לשמור את מדיניות ה־Java לקובץ דחוס על ידי Zip. הקובץ, "
+#~ "שייקרא <b>java_policy.tgz</b>, יישמר למיקום שתבחר."
+
+#~ msgid ""
+#~ "Here you can set specific Java policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy, causing the default policy "
+#~ "setting to be used for that domain."
+#~ msgstr ""
+#~ "כאן באפשרותך להגדיר מדיניויות Java ספציפיות לכל מארח או תחום שהוא. כדי "
+#~ "להוסיף מדיניות חדשה, פשוט לחץ על הכפתור <i>הוספה...</i> וספק את המידע "
+#~ "המבוקש בתיבת הדו־שיח. כדי לשנות מדיניות קיימת, לחץ על הכפתור <i>שינוי...</"
+#~ "i> ובחר את המדיניות החדשה מתוך דו־שיח המדיניות. לחיצה על הכפתור <i>מחק</"
+#~ "i> תסיר את המדיניות הנבחרת, מה שיביא לכך שייעשה שימוש בהגדרת ברירת המחדל "
+#~ "של המדיניות לתחום זה."
+
+#~ msgid ""
+#~ "Enabling the security manager will cause the jvm to run with a Security "
+#~ "Manager in place. This will keep applets from being able to read and "
+#~ "write to your file system, creating arbitrary sockets, and other actions "
+#~ "which could be used to compromise your system. Disable this option at "
+#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
+#~ "policytool utility to give code downloaded from certain sites more "
+#~ "permissions."
+#~ msgstr ""
+#~ "הפעלת מנהל האבטחה תגרום למכונה הווירטואלית של Java לפעול עם מנהל אבטחה. "
+#~ "דבר זה ימנע מיישומונים את האפשרות לקרוא ולכתוב למערכת הקבצים שלך, ליצור "
+#~ "שקעים שרירותיים ולבצע פעולות אחרות שעלולות לסכן את המערכת שלך. ביטול "
+#~ "אפשרות זו הוא באחריותך בלבד. באפשרותך לשנות את הקובץ $HOME/.java.policy "
+#~ "שלך באמצעות הכלי של Java policytool, וזאת על מנת לתת לקוד המורד מאתרים "
+#~ "מסוימים יותר הרשאות."
+
+#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
+#~ msgstr "סימון אפשרות זו, תגרום ל־JVM להשתמש ב־KIO עבור תעבורה ברשת."
+
+#~ msgid ""
+#~ "Enter the path to the java executable. If you want to use the jre in your "
+#~ "path, simply leave it as 'java'. If you need to use a different jre, "
+#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
+#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
+#~ "IBMJava2-13)."
+#~ msgstr ""
+#~ "נא למלא את הנתיב לתוכנית ה־Java. כדי להשתמש ב־jre הנמצא בנתיב (PATH) שלך, "
+#~ "יש להשאיר את הערך ‚java’. כדי להשתמש ב־jre אחר, נא למלא את הנתיב המלא "
+#~ "לתוכנית ה־Java (לדוגמה usr/lib/jdk/bin/java/), או את הנתיב לתיקייה המכילה "
+#~ "את ‚bin/java’ (למשל ‎‎/opt/IBMJava2-13)."
+
+#~ msgid ""
+#~ "If you want special arguments to be passed to the virtual machine, enter "
+#~ "them here."
+#~ msgstr ""
+#~ "אם אתה רוצה שארגומנטים מיוחדים יועברו אל המכונה הווירטואלית, הזן אותם כאן."
+
+#~ msgid ""
+#~ "When all the applets have been destroyed, the applet server should shut "
+#~ "down. However, starting the jvm takes a lot of time. If you would like to "
+#~ "keep the java process running while you are browsing, you can set the "
+#~ "timeout value to whatever you like. To keep the java process running for "
+#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
+#~ "Server checkbox unchecked."
+#~ msgstr ""
+#~ "לאחר שכל היישומונים חוסלו אמור שרת היישומונים להיסגר, אולם ההפעלה של jvm "
+#~ "אורכת זמן רב. לפיכך, כדי לשמור על תהליך ה־Java פועל בזמן הגלישה, אפשר "
+#~ "להגדיר את ערך הזמן המוקצב לבחירתך. כדי להשאיר את תהליך ה־Java פועל לאורך "
+#~ "כל זמן ההפעלה של Konqueror, פשוט לא לבחור באפשרות כיבוי שרת היישומונים."
+
+#~ msgctxt "@title:group"
+#~ msgid "Doma&in-Specific"
+#~ msgstr "&נקודתית לשם תחום"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Java Policy"
+#~ msgstr "מדיניות Java חדשה"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Java Policy"
+#~ msgstr "שינוי מדיניות Java"
+
+#~ msgid "&Java policy:"
+#~ msgstr "&מדיניות Java:"
+
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr "בחר מדיניות Java למארח או למתחם הנ\"ל."
+
+#~ msgid "Debugging"
+#~ msgstr "ניפוי תקלות"
+
+#~ msgid "Enable debu&gger"
+#~ msgstr "לאפשר &מנפה תקלות"
+
+#~ msgid "Enables builtin JavaScript debugger."
+#~ msgstr "מפעיל את מנפה התקלות המובנה של JavaScript."
+
+#~ msgid "Report &errors"
+#~ msgstr "דיווח על &שגיאות"
+
+#~ msgid ""
+#~ "Enables the reporting of errors that occur when JavaScript code is "
+#~ "executed."
+#~ msgstr ""
+#~ "אם תבחר באפשרות זו, במקרה של שגיאות בהרצה של קוד JavaScript יתקבל דיווח."
+
+#~ msgid "&Java"
+#~ msgstr "&Java"
+
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
 #~ msgid ""
 #~ "This will open a new tab in the background, instead of in the foreground."

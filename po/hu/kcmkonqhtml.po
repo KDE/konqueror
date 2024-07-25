@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:38+0000\n"
+"POT-Creation-Date: 2024-07-25 00:39+0000\n"
 "PO-Revision-Date: 2017-03-01 17:41+0100\n"
 "Last-Translator: Kiszel Kristóf <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -114,7 +114,7 @@ msgstr ""
 msgid "A&nimations:"
 msgstr "&Animációk:"
 
-#: appearance.cpp:85 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:108
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
@@ -669,21 +669,21 @@ msgid "Domain"
 msgstr "Gép/tartomány"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
-#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
+#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
 #, kde-format
 msgid "Policy"
 msgstr "Házirend"
 
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
-#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:45
+#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
 #: useragent/useragent.ui:84
 #, kde-format
 msgid "&New..."
 msgstr "Ú&j..."
 
 #. i18n: ectx: property (text), widget (QPushButton, pbChange)
-#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:49
+#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:52
 #, kde-format
 msgid "Chan&ge..."
 msgstr "Mó&dosítás..."
@@ -736,7 +736,7 @@ msgid "Policy:"
 msgstr "Házirend"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
+#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:192
 #: policydlg.cpp:63
 #, kde-format
 msgid "Accept"
@@ -749,14 +749,14 @@ msgid "Accept until end of session"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
+#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:194
 #: policydlg.cpp:63
 #, kde-format
 msgid "Reject"
 msgstr "elutasítás"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:153
+#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:182
 #, kde-format
 msgid "Ask"
 msgstr "rákérdezés"
@@ -1284,34 +1284,40 @@ msgstr ""
 "</body>\n"
 "</html>\n"
 
-#: domainlistview.cpp:37
+#: domainlistview.cpp:33
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "Tartományra &vonatkozó"
+
+#: domainlistview.cpp:40
 #, kde-format
 msgid "Host/Domain"
 msgstr "Gép/tartomány"
 
-#: domainlistview.cpp:53
+#: domainlistview.cpp:56
 #, kde-format
 msgid "De&lete"
 msgstr "&Törlés"
 
-#: domainlistview.cpp:57
+#: domainlistview.cpp:60
 #, kde-format
 msgid "&Import..."
 msgstr "&Importálás..."
 
-#: domainlistview.cpp:63
+#: domainlistview.cpp:66
 #, kde-format
 msgid "&Export..."
 msgstr "&Exportálás..."
 
-#: domainlistview.cpp:71
+#: domainlistview.cpp:74
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr ""
 "Kattintson erre a gombra egy gép- vagy tartományspecifikus házirend "
 "hozzáadásához."
 
-#: domainlistview.cpp:73
+#: domainlistview.cpp:76
 #, kde-format
 msgid ""
 "Click on this button to change the policy for the host or domain selected in "
@@ -1320,7 +1326,7 @@ msgstr ""
 "Kattintson erre a gombra a listában kijelölt gép vagy tartomány "
 "házirendjének megváltoztatásához."
 
-#: domainlistview.cpp:75
+#: domainlistview.cpp:78
 #, kde-format
 msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
@@ -1329,20 +1335,47 @@ msgstr ""
 "Kattintson erre a gombra a listában kijelölt gép vagy tartomány "
 "házirendjének törléséhez."
 
-#: domainlistview.cpp:122
+#: domainlistview.cpp:125
 #, kde-format
 msgid "You must first select a policy to be changed."
 msgstr "Először válassza ki, melyik házirendet szeretné módosítani."
 
-#: domainlistview.cpp:149
+#: domainlistview.cpp:152
 #, kde-format
 msgid "You must first select a policy to delete."
 msgstr "Először válassza ki, melyik házirendet szeretné törölni."
 
-#: domainlistview.cpp:187 policydlg.cpp:63
+#: domainlistview.cpp:190 policydlg.cpp:63
 #, kde-format
 msgid "Use Global"
 msgstr "a globális beállítás"
+
+#: domainlistview.cpp:232
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "Új JavaScript-házirend"
+
+#: domainlistview.cpp:235
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "A JavaScript-házirend módosítása"
+
+#: domainlistview.cpp:239
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "JavaScript-házirend:"
+
+#: domainlistview.cpp:240
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "Válasszon egy JavaScript-házirendet a fenti géphez vagy tartományhoz."
+
+#: domainlistview.cpp:242
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "Tartományra vonatkozó JavaScript-házirendek"
 
 #: filteropts.cpp:48
 #, kde-format
@@ -1517,7 +1550,7 @@ msgstr "Név"
 msgid "URL"
 msgstr "URL"
 
-#: generalopts.cpp:56
+#: generalopts.cpp:54
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1525,101 +1558,101 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr ""
 
-#: generalopts.cpp:62
+#: generalopts.cpp:60
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr ""
 
-#: generalopts.cpp:71
+#: generalopts.cpp:69
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "Bemutatkozó oldal"
 
-#: generalopts.cpp:72
+#: generalopts.cpp:70
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "Saját kezdőlap megjelenítése"
 
-#: generalopts.cpp:73
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "Üres oldal"
 
-#: generalopts.cpp:74
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "Könyvjelzők"
 
-#: generalopts.cpp:80
+#: generalopts.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "Kezdőlap megadása"
 
-#: generalopts.cpp:85
+#: generalopts.cpp:83
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr "Ezt a honlapot jeleníti meg a Konqueror induláskor."
 
-#: generalopts.cpp:96
+#: generalopts.cpp:94
 #, kde-format
 msgid "Home page:"
 msgstr "Honlap:"
 
-#: generalopts.cpp:99
+#: generalopts.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "Kezdőlap megadása"
 
-#: generalopts.cpp:104
+#: generalopts.cpp:102
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
 "\" button is pressed."
 msgstr "Erre az URL-re lép a Konqueror a „Kezdőlap” gomb megnyomásakor."
 
-#: generalopts.cpp:112
+#: generalopts.cpp:110
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "Alapértelmezett böngészőmotor:png"
 
-#: generalopts.cpp:121
+#: generalopts.cpp:119
 #, kde-format
 msgid "When splitting a view"
 msgstr ""
 
-#: generalopts.cpp:125
+#: generalopts.cpp:123
 #, kde-format
 msgid "Always duplicate current view"
 msgstr ""
 
-#: generalopts.cpp:126
+#: generalopts.cpp:124
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr ""
 
-#: generalopts.cpp:132
+#: generalopts.cpp:130
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr ""
 
-#: htmlopts.cpp:35
+#: htmlopts.cpp:39
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "Könyv&jelzők"
 
-#: htmlopts.cpp:38
+#: htmlopts.cpp:42
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "Könyvjelző létrehozásakor a program kérje be a nevet és a mappát"
 
-#: htmlopts.cpp:41
+#: htmlopts.cpp:45
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1629,12 +1662,12 @@ msgstr ""
 "Ha ez az opció be van jelölve, a program lehetővé teszi a könyvjelző nevének "
 "és mappájának megadását új könyvjelző létrehozásakor."
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:51
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "Csak a kijelölt könyvjelzők jelenjenek meg a könyvjelző-eszköztárban"
 
-#: htmlopts.cpp:49
+#: htmlopts.cpp:53
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1644,12 +1677,10 @@ msgstr ""
 "megjeleníteni a könyvjelző-eszköztárban, amelyek ki lettek erre a célra "
 "jelölve a könyvjelző-szerkesztőben."
 
-#: htmlopts.cpp:56
-#, kde-format
-msgid "Form Com&pletion"
-msgstr "Automatikus űrla&pkitöltés"
-
-#: htmlopts.cpp:60
+#. i18n("Form Com&pletion"), widget());
+#. m_pFormCompletionCheckBox->setCheckable(true);
+#. QFormLayout *laygroup2 = new QFormLayout(m_pFormCompletionCheckBox);
+#: htmlopts.cpp:67
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1658,12 +1689,12 @@ msgstr ""
 "Ha bejelöli ezt az opciót, akkor a Konqueror az űrlapokban korábban bevitt "
 "adatok alapján javaslatot tud tenni egyes mezők értékére."
 
-#: htmlopts.cpp:66
+#: htmlopts.cpp:74
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "Az űrlapadatok ma&ximális száma:"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:76
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
@@ -1671,31 +1702,17 @@ msgstr ""
 "Itt lehet megadni, hogy a Konqueror hány értéket tárolhat el egy "
 "űrlapmezőhöz."
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:87
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "Az egér műkö&dése"
 
-#: htmlopts.cpp:78
-#, kde-format
-msgid "Chan&ge cursor over links"
-msgstr "&Linkek fölött változzon meg a kurzor"
-
-#: htmlopts.cpp:80
-#, kde-format
-msgid ""
-"If this option is set, the shape of the cursor will change (usually to a "
-"hand) if it is moved over a hyperlink."
-msgstr ""
-"Ha ez az opció be van állítva, a kurzor alakja megváltozik (általában kéz "
-"alakúra), ha link fölé ér."
-
-#: htmlopts.cpp:84
+#: htmlopts.cpp:90
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "A kö&zépső gombbal kattintva meg lehet nyitni a kijelölt URL-t"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:93
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
@@ -1704,12 +1721,12 @@ msgstr ""
 "Ha ez az opció be van jelölve, akkor a kijelölt URL megnyitásához elég "
 "egyszer kattintani valamelyik Konqueror-nézetben."
 
-#: htmlopts.cpp:91
+#: htmlopts.cpp:97
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "Jobb kattintással lehessen &visszafelé haladni a naplóban"
 
-#: htmlopts.cpp:94
+#: htmlopts.cpp:100
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1720,27 +1737,12 @@ msgstr ""
 "gombbal a napló előző bejegyzésére lehet lépni. A felbukkanó menü "
 "előhívásához kattintson a jobb gombbal és mozdítsa meg az egérmutatót."
 
-#: htmlopts.cpp:104
-#, kde-format
-msgid "Allow automatic delayed &reloading/redirecting"
-msgstr "Késleltetett automatikus új&ratöltések és átirányítások engedélyezése"
-
-#: htmlopts.cpp:105
-#, kde-format
-msgid ""
-"Some web pages request an automatic reload or redirection after a certain "
-"period of time. By unchecking this box Konqueror will ignore these requests."
-msgstr ""
-"A weboldalakban beállítható, hogy a böngésző egy bizonyos idő letelte után "
-"automatikusan újratöltse a tartalmukat vagy átirányítsa a címet. Ha nem "
-"jelöli be ezt az opciót, akkor ezek a lehetőségek le lesznek tiltva."
-
-#: htmlopts.cpp:111
+#: htmlopts.cpp:115
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "&Kezelést segítő gombok előhívhatók a Ctrl billentyűvel"
 
-#: htmlopts.cpp:112
+#: htmlopts.cpp:116
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1752,247 +1754,66 @@ msgstr ""
 "segítséget használni. (Változtatás esetén a Konquerort újra kell indítani, "
 "hogy az új beállítás legyen érvényes.)"
 
-#: htmlopts.cpp:116
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr ""
 "DNT fejléc küldése a weboldalaknak arról, hogy nem kívánja hogy kövessék"
 
-#: htmlopts.cpp:117
-#, kde-format
+#: htmlopts.cpp:122
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check this box if you want to inform a web site that you do not want your "
+#| "web browsing habits tracked."
 msgid ""
-"Check this box if you want to inform a web site that you do not want your "
-"web browsing habits tracked."
+"<p>Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
+"considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
 "Jelölje be ezt az opciót, ha nem szeretné hogy egy weboldal ne kövesse a "
 "böngészési szokásait."
 
-#: htmlopts.cpp:121
+#: htmlopts.cpp:126
 #, kde-format
 msgid "Offer to save website passwords"
 msgstr "Rákérdezés a jelszavak megjegyzésére"
 
-#: htmlopts.cpp:122
+#: htmlopts.cpp:127
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr ""
 "Szüntesse meg a jelölődoboz kijelölését, ha nem szeretné hogy a program "
 "rákérdezzen a jelszavak megjegyzésére"
 
-#: htmlopts.cpp:126
+#: htmlopts.cpp:131
 #, kde-format
 msgid "Display online PDF files using WebEngine"
 msgstr ""
 
-#: htmlopts.cpp:127
+#: htmlopts.cpp:132
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
 msgstr ""
 
-#: javaopts.cpp:78
+#: htmlopts.cpp:136
 #, kde-format
-msgid "Enable Ja&va globally"
-msgstr "A &Java engedélyezése"
+msgid "Always display files from web pages in a new tab"
+msgstr ""
 
-#: javaopts.cpp:93
-#, kde-format
-msgid "Java Runtime Settings"
-msgstr "A Java-értelmező beállításai"
-
-#: javaopts.cpp:97
-#, kde-format
-msgid "&Use security manager"
-msgstr "Az a&datbiztonság-kezelő használata"
-
-#: javaopts.cpp:101
-#, kde-format
-msgid "Use &KIO"
-msgstr "A KIO &használata"
-
-#: javaopts.cpp:105
-#, kde-format
-msgid "Shu&tdown applet server when inactive for more than"
-msgstr "A kisalkalmazás-kiszolgáló bezárása, ha ennyi ideig in&aktív"
-
-#: javaopts.cpp:117
-#, kde-format
-msgid " second"
-msgid_plural " seconds"
-msgstr[0] " s"
-msgstr[1] " s"
-
-#: javaopts.cpp:123
-#, kde-format
-msgid "&Path to Java executable, or 'java':"
-msgstr "A &Java program (\"java\") elérési útja:"
-
-#: javaopts.cpp:127
-#, kde-format
-msgid "Additional Java a&rguments:"
-msgstr "A programnak átadandó &paraméterek:"
-
-#: javaopts.cpp:132
+#: htmlopts.cpp:137
 #, kde-format
 msgid ""
-"Enables the execution of scripts written in Java that can be contained in "
-"HTML pages. Note that, as with any browser, enabling active contents can be "
-"a security problem."
+"<p>When showing in Konqueror files from links in web pages, always use a new "
+"tab"
 msgstr ""
-"Engedélyezi a HTML oldalakba beillesztett Javában írt szkriptek "
-"végrehajtását. Ne felejtse el, hogy az aktív webtartalom engedélyezése "
-"minden böngészőnél biztonsági kockázatot jelent ."
 
-#: javaopts.cpp:135
-#, kde-format
-msgid ""
-"<p>This box contains the domains and hosts you have set a specific Java "
-"policy for. This policy will be used instead of the default policy for "
-"enabling or disabling Java applets on pages sent by these domains or hosts.</"
-"p><p>Select a policy and use the controls on the right to modify it.</p>"
-msgstr ""
-"<p>Ez a lista tartalmazza azokat a tartomány- és gépneveket, amelyek számára "
-"Java-házirendet állított be. Ez a házirend felülbírálja az alapértelmezett "
-"házirendet a megadott helyekről érkező lapok Java kisalkalmazásainak "
-"engedélyezésénél. </p><p>Jelöljön ki egy házirendet, majd használja a jobb "
-"oldalon látható vezérlőelemeket a házirend módosításához.</p>"
-
-#: javaopts.cpp:142
-#, kde-format
-msgid ""
-"Click this button to choose the file that contains the Java policies. These "
-"policies will be merged with the existing ones. Duplicate entries are "
-"ignored."
-msgstr ""
-"Kattintson erre a gombra a Java-házirendeket tartalmazó fájl kijelöléséhez. "
-"Ezek a házirendek hozzáadódnak a már létezőkhöz. A duplikált bejegyzések ki "
-"lesznek hagyva."
-
-#: javaopts.cpp:145
-#, kde-format
-msgid ""
-"Click this button to save the Java policy to a zipped file. The file, named "
-"<b>java_policy.tgz</b>, will be saved to a location of your choice."
-msgstr ""
-"Kattintson erre a gombra a Java-házirend zip fájlba mentéséhez. A fájl, "
-"melynek neve <b>java_policy.tgz</b> lesz, az Ön által megadott könyvtárba "
-"fog kerülni."
-
-#: javaopts.cpp:149
-#, kde-format
-msgid ""
-"Here you can set specific Java policies for any particular host or domain. "
-"To add a new policy, simply click the <i>New...</i> button and supply the "
-"necessary information requested by the dialog box. To change an existing "
-"policy, click on the <i>Change...</i> button and choose the new policy from "
-"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
-"selected policy, causing the default policy setting to be used for that "
-"domain."
-msgstr ""
-"Itt lehet beállítani gépre vagy tartományra vonatkozó Java-házirendet. Új "
-"bejegyzés létrehozásához kattintson az <i>Új...</i> gombra és adja meg a "
-"párbeszédablakban a kért információkat. Egy már létező bejegyzés "
-"módosításához kattintson a <i>Módosítás...</i> gombra és válassza ki az új "
-"házirendet a párbeszédablakban. Ha a <i>Törlés</i> gombra kattint, a "
-"kijelölt bejegyzés törlődik, és újból az alapértelmezett szabály lesz "
-"érvényes az érintett tartományban."
-
-#: javaopts.cpp:162
-#, kde-format
-msgid ""
-"Enabling the security manager will cause the jvm to run with a Security "
-"Manager in place. This will keep applets from being able to read and write "
-"to your file system, creating arbitrary sockets, and other actions which "
-"could be used to compromise your system. Disable this option at your own "
-"risk. You can modify your $HOME/.java.policy file with the Java policytool "
-"utility to give code downloaded from certain sites more permissions."
-msgstr ""
-"Az adatbiztonság-kezelő engedélyezése esetén a jvm annak felügyelete alatt "
-"fog működni. Így megakadályozható, hogy a kisalkalmazások hozzáférjenek a "
-"helyi fájlrendszerhez, tetszőleges aljazatokat hozzanak létre vagy más, a "
-"rendszer biztonságát veszélyeztető műveleteket hajtsanak végre. Az opció "
-"kikapcsolása adatbiztonsági kockázatot jelent! Módosíthatja a $HOME/.java."
-"policy fájlt a Java biztonsági segédeszközeivel, ha bizonyos helyekről "
-"letöltött kisalkalmazásokhoz több jogosultságot szeretne rendelni."
-
-#: javaopts.cpp:170
-#, kde-format
-msgid "Enabling this will cause the jvm to use KIO for network transport "
-msgstr ""
-"Ha ez be van jelölve, akkor a Java-értelmező a KIO-t fogja használni "
-"hálózati adatátvitelhez"
-
-#: javaopts.cpp:172
-#, kde-format
-msgid ""
-"Enter the path to the java executable. If you want to use the jre in your "
-"path, simply leave it as 'java'. If you need to use a different jre, enter "
-"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
-"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
-msgstr ""
-"Adja meg a Java program elérési útját. Ha a program szerepel az elérési "
-"útban, akkor hagyja meg a 'java' értéket. Ha nem, akkor adja meg a Java "
-"program teljes elérési útját (például /usr/lib/jdk/bin/java), vagy azt a "
-"könyvtárt, amely a 'bin/java'-t tartalmazza (például /opt/IBMJava2-13)."
-
-#: javaopts.cpp:177
-#, kde-format
-msgid ""
-"If you want special arguments to be passed to the virtual machine, enter "
-"them here."
-msgstr "A Java virtuális gépnek átadandó paramétereket sorolhatja fel itt."
-
-#: javaopts.cpp:179
-#, kde-format
-msgid ""
-"When all the applets have been destroyed, the applet server should shut "
-"down. However, starting the jvm takes a lot of time. If you would like to "
-"keep the java process running while you are browsing, you can set the "
-"timeout value to whatever you like. To keep the java process running for the "
-"whole time that the konqueror process is, leave the Shutdown Applet Server "
-"checkbox unchecked."
-msgstr ""
-"Ha az összes kisalkalmazás futása befejeződött, akkor a kisalkalmazás-"
-"kiszolgáló általában bezáródik. Azonban a jvm újraindítása sok időt vehet "
-"igénybe. Ha a böngészés közben végig életben akarja tartani a Java "
-"folyamatot, akkor állítsa a várakozási idő értékét nagyra. Ha egészen addig "
-"nem akarja bezárni a Javát, amíg a Konqueror fut, akkor ne jelölje be A "
-"kisalkalmazás-kiszolgáló bezárása opciót."
-
-#: javaopts.cpp:288
-#, kde-format
-msgctxt "@title:group"
-msgid "Doma&in-Specific"
-msgstr "Tart&ományspecifikus"
-
-#: javaopts.cpp:323
-#, kde-format
-msgctxt "@title:window"
-msgid "New Java Policy"
-msgstr "Új Java-házirend"
-
-#: javaopts.cpp:326
-#, kde-format
-msgctxt "@title:window"
-msgid "Change Java Policy"
-msgstr "A Java-házirend módosítása"
-
-#: javaopts.cpp:330
-#, kde-format
-msgid "&Java policy:"
-msgstr "Java-&házirend:"
-
-#: javaopts.cpp:331
-#, kde-format
-msgid "Select a Java policy for the above host or domain."
-msgstr "Válasszon egy Java-házirendet a fenti géphez vagy tartományhoz."
-
-#: jsopts.cpp:50
+#: jsopts.cpp:57
 #, kde-format
 msgid "Ena&ble JavaScript globally"
 msgstr "A Java&Script engedélyezése"
 
-#: jsopts.cpp:51
+#: jsopts.cpp:58
 #, kde-format
 msgid ""
 "Enables the execution of scripts written in ECMA-Script (also known as "
@@ -2003,33 +1824,7 @@ msgstr ""
 "JavaScriptek) végrehajtását. Ne felejtse el, hogy a szkript-nyelvek "
 "engedélyezése minden böngészőben biztonsági kockázatot jelent."
 
-#: jsopts.cpp:59
-#, kde-format
-msgid "Debugging"
-msgstr "Nyomkövetés"
-
-#: jsopts.cpp:63
-#, kde-format
-msgid "Enable debu&gger"
-msgstr "A nyomkövető enge&délyezése"
-
-#: jsopts.cpp:64
-#, kde-format
-msgid "Enables builtin JavaScript debugger."
-msgstr "A beépített Java&Script-nyomkövető engedélyezése."
-
-#: jsopts.cpp:68
-#, kde-format
-msgid "Report &errors"
-msgstr "A szkripthibák &jelzése"
-
-#: jsopts.cpp:69
-#, kde-format
-msgid ""
-"Enables the reporting of errors that occur when JavaScript code is executed."
-msgstr "Bekapcsolja a JavaScript-kód futása közben előforduló hibák jelzését."
-
-#: jsopts.cpp:79
+#: jsopts.cpp:70
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2052,7 +1847,7 @@ msgstr ""
 "másoktól kapott házirendek betölthetők ill. a helyi házirendek kimenthetők "
 "(zip formátumban)."
 
-#: jsopts.cpp:89
+#: jsopts.cpp:80
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2068,7 +1863,7 @@ msgstr ""
 "használja a jobb oldalon látható vezérlőelemeket a házirend módosításához.</"
 "p>"
 
-#: jsopts.cpp:96
+#: jsopts.cpp:87
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2079,7 +1874,7 @@ msgstr ""
 "kijelöléséhez. Ezek a házirendek hozzáadódnak a már létezőkhöz. A duplikált "
 "bejegyzések figyelmen kívül lesznek hagyva."
 
-#: jsopts.cpp:99
+#: jsopts.cpp:90
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2090,93 +1885,60 @@ msgstr ""
 "fájl, melynek neve <b>javascript_policy.tgz</b> lesz, az Ön által megadott "
 "könyvtárba lesz elmentve."
 
-#: jsopts.cpp:105
+#: jsopts.cpp:96
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "JavaScript-házirendek"
 
-#: jsopts.cpp:172
-#, kde-format
-msgctxt "@title:group"
-msgid "Do&main-Specific"
-msgstr "Tartományra &vonatkozó"
-
-#: jsopts.cpp:211
-#, kde-format
-msgctxt "@title:window"
-msgid "New JavaScript Policy"
-msgstr "Új JavaScript-házirend"
-
-#: jsopts.cpp:214
-#, kde-format
-msgctxt "@title:window"
-msgid "Change JavaScript Policy"
-msgstr "A JavaScript-házirend módosítása"
-
-#: jsopts.cpp:218
-#, kde-format
-msgid "JavaScript policy:"
-msgstr "JavaScript-házirend:"
-
-#: jsopts.cpp:219
-#, kde-format
-msgid "Select a JavaScript policy for the above host or domain."
-msgstr "Válasszon egy JavaScript-házirendet a fenti géphez vagy tartományhoz."
-
-#: jsopts.cpp:221
-#, kde-format
-msgid "Domain-Specific JavaScript Policies"
-msgstr "Tartományra vonatkozó JavaScript-házirendek"
-
-#: jspolicies.cpp:132
+#: jspolicies.cpp:161
 #, kde-format
 msgid "Open new windows:"
 msgstr "Új ablakok megnyitási módja:"
 
-#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
-#: jspolicies.cpp:308
+#: jspolicies.cpp:169 jspolicies.cpp:223 jspolicies.cpp:260 jspolicies.cpp:297
+#: jspolicies.cpp:337
 #, kde-format
 msgid "Use global"
 msgstr "A globális használata"
 
-#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
-#: jspolicies.cpp:309
+#: jspolicies.cpp:170 jspolicies.cpp:224 jspolicies.cpp:261 jspolicies.cpp:298
+#: jspolicies.cpp:338
 #, kde-format
 msgid "Use setting from global policy."
 msgstr "A globális beállítás legyen érvényes."
 
-#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
-#: jspolicies.cpp:315
+#: jspolicies.cpp:176 jspolicies.cpp:230 jspolicies.cpp:267 jspolicies.cpp:304
+#: jspolicies.cpp:344
 #, kde-format
 msgid "Allow"
 msgstr "engedélyezés"
 
-#: jspolicies.cpp:148
+#: jspolicies.cpp:177
 #, kde-format
 msgid "Accept all popup window requests."
 msgstr "A felbukkanó JavaScript-ablakok mindig megjelenhetnek."
 
-#: jspolicies.cpp:154
+#: jspolicies.cpp:183
 #, kde-format
 msgid "Prompt every time a popup window is requested."
 msgstr "Minden felbukkanó JavaScript-ablak létrehozását meg kell erősíteni."
 
-#: jspolicies.cpp:159
+#: jspolicies.cpp:188
 #, kde-format
 msgid "Deny"
 msgstr "tiltás"
 
-#: jspolicies.cpp:160
+#: jspolicies.cpp:189
 #, kde-format
 msgid "Reject all popup window requests."
 msgstr "Minden JavaScript-ablak le lesz tiltva."
 
-#: jspolicies.cpp:165
+#: jspolicies.cpp:194
 #, kde-format
 msgid "Smart"
 msgstr "intelligens"
 
-#: jspolicies.cpp:166
+#: jspolicies.cpp:195
 #, kde-format
 msgid ""
 "Accept popup window requests only when links are activated through an "
@@ -2185,7 +1947,7 @@ msgstr ""
 "A felbukkanó JavaScript-ablakok csak akkor lesznek engedélyezve, ha "
 "egérkattintás vagy billentyűlenyomás hatására jöttek létre."
 
-#: jspolicies.cpp:173
+#: jspolicies.cpp:202
 #, kde-format
 msgid ""
 "If you disable this, Konqueror will stop interpreting the <i>window.open()</"
@@ -2201,22 +1963,22 @@ msgstr ""
 "ez az opció nem megfelelő működést okoz olyan oldalaknál, amelyek a "
 "<i>window.open()</i> hívást más célból használják."
 
-#: jspolicies.cpp:187
+#: jspolicies.cpp:216
 #, kde-format
 msgid "Resize window:"
 msgstr "Ablak átméretezése:"
 
-#: jspolicies.cpp:202
+#: jspolicies.cpp:231
 #, kde-format
 msgid "Allow scripts to change the window size."
 msgstr "A szkriptek megváltoztathatják az ablak méretét."
 
-#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#: jspolicies.cpp:236 jspolicies.cpp:273 jspolicies.cpp:310 jspolicies.cpp:350
 #, kde-format
 msgid "Ignore"
 msgstr "figyelmen kívül hagyás"
 
-#: jspolicies.cpp:208
+#: jspolicies.cpp:237
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
@@ -2225,7 +1987,7 @@ msgstr ""
 "Az ablakméretezési utasításoknak nem lesz hatása. Hibajelzés nem történik, "
 "de a méret valójában nem fog megváltozni."
 
-#: jspolicies.cpp:215
+#: jspolicies.cpp:244
 #, kde-format
 msgid ""
 "Some websites change the window size on their own by using <i>window."
@@ -2236,17 +1998,17 @@ msgstr ""
 "függvények meghívásával megpróbálják átállítani az ablak méretét. Ezzel az "
 "opcióval az ilyen hívások lekezelési módját lehet megadni."
 
-#: jspolicies.cpp:224
+#: jspolicies.cpp:253
 #, kde-format
 msgid "Move window:"
 msgstr "Ablak mozgatása:"
 
-#: jspolicies.cpp:239
+#: jspolicies.cpp:268
 #, kde-format
 msgid "Allow scripts to change the window position."
 msgstr "Szkriptből meg lehet változtatni az ablak pozícióját."
 
-#: jspolicies.cpp:245
+#: jspolicies.cpp:274
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window position. The web page will "
@@ -2255,7 +2017,7 @@ msgstr ""
 "Az ablakpozíciók megváltoztatása nem lesz lehetséges szkriptből. Hibajelzés "
 "nem történik, de a pozíció valójában nem fog megváltozni."
 
-#: jspolicies.cpp:252
+#: jspolicies.cpp:281
 #, kde-format
 msgid ""
 "Some websites change the window position on their own by using <i>window."
@@ -2266,17 +2028,17 @@ msgstr ""
 "függvények meghívásával megpróbálják átállítani az ablak pozícióját. Ezzel "
 "az opcióval az ilyen hívások lekezelési módját lehet megadni."
 
-#: jspolicies.cpp:261
+#: jspolicies.cpp:290
 #, kde-format
 msgid "Focus window:"
 msgstr "A fókusz áthelyezése:"
 
-#: jspolicies.cpp:276
+#: jspolicies.cpp:305
 #, kde-format
 msgid "Allow scripts to focus the window."
 msgstr "A szkriptek megváltoztathatják a fókuszt."
 
-#: jspolicies.cpp:282
+#: jspolicies.cpp:311
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to focus the window. The web page will <i>think</"
@@ -2286,7 +2048,7 @@ msgstr ""
 "A fókusz megváltoztatása nem lesz lehetséges szkriptből. Hibajelzés nem "
 "történik, de a fókusz valójában nem fog megváltozni."
 
-#: jspolicies.cpp:290
+#: jspolicies.cpp:319
 #, kde-format
 msgid ""
 "Some websites set the focus to their browser window on their own by using "
@@ -2300,17 +2062,17 @@ msgstr ""
 "felhasználó éppen végez. Ezzel az opcióval az ilyen hívások lekezelési "
 "módját lehet megadni."
 
-#: jspolicies.cpp:301
+#: jspolicies.cpp:330
 #, kde-format
 msgid "Modify status bar text:"
 msgstr "Az állapotsor szövegének megváltoztatása:"
 
-#: jspolicies.cpp:316
+#: jspolicies.cpp:345
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
 msgstr "A szkriptek megváltoztathatják az állapotsorban megjelenő szöveget."
 
-#: jspolicies.cpp:322
+#: jspolicies.cpp:351
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
@@ -2320,7 +2082,7 @@ msgstr ""
 "Hibajelzés nem történik, de az állapotsor szövege valójában nem fog "
 "megváltozni."
 
-#: jspolicies.cpp:330
+#: jspolicies.cpp:359
 #, kde-format
 msgid ""
 "Some websites change the status bar text by setting <i>window.status</i> or "
@@ -2331,16 +2093,6 @@ msgstr ""
 "i>függvény meghívásával megpróbálják megváltoztatni az állapotsor szövegét, "
 "meggátolva az aktuális URL kijelzését. Ezzel az opcióval az ilyen hívások "
 "lekezelési módját lehet megadni."
-
-#: main.cpp:49
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
-
-#: main.cpp:53
-#, kde-format
-msgid "Java&Script"
-msgstr "JavaS&cript"
 
 #: policydlg.cpp:30
 #, kde-format
@@ -2614,9 +2366,8 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150 useragent/useragent.ui:163
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr ""
@@ -2659,6 +2410,14 @@ msgstr "&Törlés"
 msgid "Choose &selected identification"
 msgstr ""
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:163
+#, kde-format
+msgid ""
+"<html><head/><body><p>If checked, disable choosing a custom identification "
+"and use the default one</p></body></html>"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
@@ -2680,6 +2439,212 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+
+#~ msgid "Form Com&pletion"
+#~ msgstr "Automatikus űrla&pkitöltés"
+
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "&Linkek fölött változzon meg a kurzor"
+
+#~ msgid ""
+#~ "If this option is set, the shape of the cursor will change (usually to a "
+#~ "hand) if it is moved over a hyperlink."
+#~ msgstr ""
+#~ "Ha ez az opció be van állítva, a kurzor alakja megváltozik (általában kéz "
+#~ "alakúra), ha link fölé ér."
+
+#~ msgid "Allow automatic delayed &reloading/redirecting"
+#~ msgstr ""
+#~ "Késleltetett automatikus új&ratöltések és átirányítások engedélyezése"
+
+#~ msgid ""
+#~ "Some web pages request an automatic reload or redirection after a certain "
+#~ "period of time. By unchecking this box Konqueror will ignore these "
+#~ "requests."
+#~ msgstr ""
+#~ "A weboldalakban beállítható, hogy a böngésző egy bizonyos idő letelte "
+#~ "után automatikusan újratöltse a tartalmukat vagy átirányítsa a címet. Ha "
+#~ "nem jelöli be ezt az opciót, akkor ezek a lehetőségek le lesznek tiltva."
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "A &Java engedélyezése"
+
+#~ msgid "Java Runtime Settings"
+#~ msgstr "A Java-értelmező beállításai"
+
+#~ msgid "&Use security manager"
+#~ msgstr "Az a&datbiztonság-kezelő használata"
+
+#~ msgid "Use &KIO"
+#~ msgstr "A KIO &használata"
+
+#~ msgid "Shu&tdown applet server when inactive for more than"
+#~ msgstr "A kisalkalmazás-kiszolgáló bezárása, ha ennyi ideig in&aktív"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " s"
+#~ msgstr[1] " s"
+
+#~ msgid "&Path to Java executable, or 'java':"
+#~ msgstr "A &Java program (\"java\") elérési útja:"
+
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "A programnak átadandó &paraméterek:"
+
+#~ msgid ""
+#~ "Enables the execution of scripts written in Java that can be contained in "
+#~ "HTML pages. Note that, as with any browser, enabling active contents can "
+#~ "be a security problem."
+#~ msgstr ""
+#~ "Engedélyezi a HTML oldalakba beillesztett Javában írt szkriptek "
+#~ "végrehajtását. Ne felejtse el, hogy az aktív webtartalom engedélyezése "
+#~ "minden böngészőnél biztonsági kockázatot jelent ."
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific Java "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling Java applets on pages sent by these domains or "
+#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
+#~ "it.</p>"
+#~ msgstr ""
+#~ "<p>Ez a lista tartalmazza azokat a tartomány- és gépneveket, amelyek "
+#~ "számára Java-házirendet állított be. Ez a házirend felülbírálja az "
+#~ "alapértelmezett házirendet a megadott helyekről érkező lapok Java "
+#~ "kisalkalmazásainak engedélyezésénél. </p><p>Jelöljön ki egy házirendet, "
+#~ "majd használja a jobb oldalon látható vezérlőelemeket a házirend "
+#~ "módosításához.</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the Java policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "Kattintson erre a gombra a Java-házirendeket tartalmazó fájl "
+#~ "kijelöléséhez. Ezek a házirendek hozzáadódnak a már létezőkhöz. A "
+#~ "duplikált bejegyzések ki lesznek hagyva."
+
+#~ msgid ""
+#~ "Click this button to save the Java policy to a zipped file. The file, "
+#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
+#~ msgstr ""
+#~ "Kattintson erre a gombra a Java-házirend zip fájlba mentéséhez. A fájl, "
+#~ "melynek neve <b>java_policy.tgz</b> lesz, az Ön által megadott könyvtárba "
+#~ "fog kerülni."
+
+#~ msgid ""
+#~ "Here you can set specific Java policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy, causing the default policy "
+#~ "setting to be used for that domain."
+#~ msgstr ""
+#~ "Itt lehet beállítani gépre vagy tartományra vonatkozó Java-házirendet. Új "
+#~ "bejegyzés létrehozásához kattintson az <i>Új...</i> gombra és adja meg a "
+#~ "párbeszédablakban a kért információkat. Egy már létező bejegyzés "
+#~ "módosításához kattintson a <i>Módosítás...</i> gombra és válassza ki az "
+#~ "új házirendet a párbeszédablakban. Ha a <i>Törlés</i> gombra kattint, a "
+#~ "kijelölt bejegyzés törlődik, és újból az alapértelmezett szabály lesz "
+#~ "érvényes az érintett tartományban."
+
+#~ msgid ""
+#~ "Enabling the security manager will cause the jvm to run with a Security "
+#~ "Manager in place. This will keep applets from being able to read and "
+#~ "write to your file system, creating arbitrary sockets, and other actions "
+#~ "which could be used to compromise your system. Disable this option at "
+#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
+#~ "policytool utility to give code downloaded from certain sites more "
+#~ "permissions."
+#~ msgstr ""
+#~ "Az adatbiztonság-kezelő engedélyezése esetén a jvm annak felügyelete "
+#~ "alatt fog működni. Így megakadályozható, hogy a kisalkalmazások "
+#~ "hozzáférjenek a helyi fájlrendszerhez, tetszőleges aljazatokat hozzanak "
+#~ "létre vagy más, a rendszer biztonságát veszélyeztető műveleteket "
+#~ "hajtsanak végre. Az opció kikapcsolása adatbiztonsági kockázatot jelent! "
+#~ "Módosíthatja a $HOME/.java.policy fájlt a Java biztonsági "
+#~ "segédeszközeivel, ha bizonyos helyekről letöltött kisalkalmazásokhoz több "
+#~ "jogosultságot szeretne rendelni."
+
+#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
+#~ msgstr ""
+#~ "Ha ez be van jelölve, akkor a Java-értelmező a KIO-t fogja használni "
+#~ "hálózati adatátvitelhez"
+
+#~ msgid ""
+#~ "Enter the path to the java executable. If you want to use the jre in your "
+#~ "path, simply leave it as 'java'. If you need to use a different jre, "
+#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
+#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
+#~ "IBMJava2-13)."
+#~ msgstr ""
+#~ "Adja meg a Java program elérési útját. Ha a program szerepel az elérési "
+#~ "útban, akkor hagyja meg a 'java' értéket. Ha nem, akkor adja meg a Java "
+#~ "program teljes elérési útját (például /usr/lib/jdk/bin/java), vagy azt a "
+#~ "könyvtárt, amely a 'bin/java'-t tartalmazza (például /opt/IBMJava2-13)."
+
+#~ msgid ""
+#~ "If you want special arguments to be passed to the virtual machine, enter "
+#~ "them here."
+#~ msgstr "A Java virtuális gépnek átadandó paramétereket sorolhatja fel itt."
+
+#~ msgid ""
+#~ "When all the applets have been destroyed, the applet server should shut "
+#~ "down. However, starting the jvm takes a lot of time. If you would like to "
+#~ "keep the java process running while you are browsing, you can set the "
+#~ "timeout value to whatever you like. To keep the java process running for "
+#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
+#~ "Server checkbox unchecked."
+#~ msgstr ""
+#~ "Ha az összes kisalkalmazás futása befejeződött, akkor a kisalkalmazás-"
+#~ "kiszolgáló általában bezáródik. Azonban a jvm újraindítása sok időt vehet "
+#~ "igénybe. Ha a böngészés közben végig életben akarja tartani a Java "
+#~ "folyamatot, akkor állítsa a várakozási idő értékét nagyra. Ha egészen "
+#~ "addig nem akarja bezárni a Javát, amíg a Konqueror fut, akkor ne jelölje "
+#~ "be A kisalkalmazás-kiszolgáló bezárása opciót."
+
+#~ msgctxt "@title:group"
+#~ msgid "Doma&in-Specific"
+#~ msgstr "Tart&ományspecifikus"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Java Policy"
+#~ msgstr "Új Java-házirend"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Java Policy"
+#~ msgstr "A Java-házirend módosítása"
+
+#~ msgid "&Java policy:"
+#~ msgstr "Java-&házirend:"
+
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr "Válasszon egy Java-házirendet a fenti géphez vagy tartományhoz."
+
+#~ msgid "Debugging"
+#~ msgstr "Nyomkövetés"
+
+#~ msgid "Enable debu&gger"
+#~ msgstr "A nyomkövető enge&délyezése"
+
+#~ msgid "Enables builtin JavaScript debugger."
+#~ msgstr "A beépített Java&Script-nyomkövető engedélyezése."
+
+#~ msgid "Report &errors"
+#~ msgstr "A szkripthibák &jelzése"
+
+#~ msgid ""
+#~ "Enables the reporting of errors that occur when JavaScript code is "
+#~ "executed."
+#~ msgstr ""
+#~ "Bekapcsolja a JavaScript-kód futása közben előforduló hibák jelzését."
+
+#~ msgid "&Java"
+#~ msgstr "&Java"
+
+#~ msgid "Java&Script"
+#~ msgstr "JavaS&cript"
 
 #~ msgid ""
 #~ "This will open a new tab in the background, instead of in the foreground."

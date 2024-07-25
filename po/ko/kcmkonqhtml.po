@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:38+0000\n"
+"POT-Creation-Date: 2024-07-25 00:39+0000\n"
 "PO-Revision-Date: 2024-02-09 23:52+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -117,7 +117,7 @@ msgstr ""
 msgid "A&nimations:"
 msgstr "애니메이션(&N):"
 
-#: appearance.cpp:85 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:108
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
@@ -679,21 +679,21 @@ msgid "Domain"
 msgstr "도메인"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
-#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
+#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
 #, kde-format
 msgid "Policy"
 msgstr "정책"
 
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
-#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:45
+#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
 #: useragent/useragent.ui:84
 #, kde-format
 msgid "&New..."
 msgstr "새로 만들기(&N)..."
 
 #. i18n: ectx: property (text), widget (QPushButton, pbChange)
-#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:49
+#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:52
 #, kde-format
 msgid "Chan&ge..."
 msgstr "변경(&G)..."
@@ -762,7 +762,7 @@ msgid "Policy:"
 msgstr "정책:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
+#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:192
 #: policydlg.cpp:63
 #, kde-format
 msgid "Accept"
@@ -775,14 +775,14 @@ msgid "Accept until end of session"
 msgstr "세션 종료 시까지 수락"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
+#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:194
 #: policydlg.cpp:63
 #, kde-format
 msgid "Reject"
 msgstr "거부"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:153
+#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:182
 #, kde-format
 msgid "Ask"
 msgstr "묻기"
@@ -1303,32 +1303,38 @@ msgstr ""
 "</body>\n"
 "</html>\n"
 
-#: domainlistview.cpp:37
+#: domainlistview.cpp:33
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "도메인 지정(&M)"
+
+#: domainlistview.cpp:40
 #, kde-format
 msgid "Host/Domain"
 msgstr "호스트/도메인"
 
-#: domainlistview.cpp:53
+#: domainlistview.cpp:56
 #, kde-format
 msgid "De&lete"
 msgstr "삭제(&L)"
 
-#: domainlistview.cpp:57
+#: domainlistview.cpp:60
 #, kde-format
 msgid "&Import..."
 msgstr "가져오기(&I)..."
 
-#: domainlistview.cpp:63
+#: domainlistview.cpp:66
 #, kde-format
 msgid "&Export..."
 msgstr "내보내기(&E)..."
 
-#: domainlistview.cpp:71
+#: domainlistview.cpp:74
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr "호스트나 도메인 지정 정책을 추가하려면 이 단추를 클릭하십시오."
 
-#: domainlistview.cpp:73
+#: domainlistview.cpp:76
 #, kde-format
 msgid ""
 "Click on this button to change the policy for the host or domain selected in "
@@ -1337,7 +1343,7 @@ msgstr ""
 "목록 상자에서 선택한 호스트나 도메인의 정책을 변경하려면 이 단추를 클릭하십시"
 "오."
 
-#: domainlistview.cpp:75
+#: domainlistview.cpp:78
 #, kde-format
 msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
@@ -1346,20 +1352,47 @@ msgstr ""
 "목록 상자에서 선택한 호스트나 도메인의 정책을 삭제하려면 이 단추를 클릭하십시"
 "오."
 
-#: domainlistview.cpp:122
+#: domainlistview.cpp:125
 #, kde-format
 msgid "You must first select a policy to be changed."
 msgstr "변경할 정책을 먼저 선택하십시오."
 
-#: domainlistview.cpp:149
+#: domainlistview.cpp:152
 #, kde-format
 msgid "You must first select a policy to delete."
 msgstr "삭제할 정책을 먼저 선택하십시오."
 
-#: domainlistview.cpp:187 policydlg.cpp:63
+#: domainlistview.cpp:190 policydlg.cpp:63
 #, kde-format
 msgid "Use Global"
 msgstr "전역적으로 사용"
+
+#: domainlistview.cpp:232
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "새 자바스크립트 정책"
+
+#: domainlistview.cpp:235
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "자바스크립트 정책 변경"
+
+#: domainlistview.cpp:239
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "자바스크립트 정책:"
+
+#: domainlistview.cpp:240
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "위 호스트나 도메인에 대한 자바스크립트 정책을 선택하십시오."
+
+#: domainlistview.cpp:242
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "도메인 지정 자바스크립트 정책"
 
 #: filteropts.cpp:48
 #, kde-format
@@ -1524,7 +1557,7 @@ msgstr "이름"
 msgid "URL"
 msgstr "URL"
 
-#: generalopts.cpp:56
+#: generalopts.cpp:54
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1532,59 +1565,59 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr "사용자 정의 페이지를 선택하십시오"
 
-#: generalopts.cpp:62
+#: generalopts.cpp:60
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr "새 탭을 생성할 때(&T)"
 
-#: generalopts.cpp:71
+#: generalopts.cpp:69
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "소개 페이지 표시"
 
-#: generalopts.cpp:72
+#: generalopts.cpp:70
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "내 시작 페이지 표시"
 
-#: generalopts.cpp:73
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "빈 페이지 표시"
 
-#: generalopts.cpp:74
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "내 책갈피 표시"
 
-#: generalopts.cpp:80
+#: generalopts.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "시작 페이지 선택"
 
-#: generalopts.cpp:85
+#: generalopts.cpp:83
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr "Konqueror를 시작할 때 표시할 웹 페이지 URL입니다."
 
-#: generalopts.cpp:96
+#: generalopts.cpp:94
 #, kde-format
 msgid "Home page:"
 msgstr "홈페이지:"
 
-#: generalopts.cpp:99
+#: generalopts.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "홈페이지 선택"
 
-#: generalopts.cpp:104
+#: generalopts.cpp:102
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
@@ -1592,42 +1625,42 @@ msgid ""
 msgstr ""
 "이것은 Konqueror에서 \"홈\" 단추를 눌렀을 때 표시할 웹 페이지 URL입니다."
 
-#: generalopts.cpp:112
+#: generalopts.cpp:110
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "기본 웹 브라우저 엔진:"
 
-#: generalopts.cpp:121
+#: generalopts.cpp:119
 #, kde-format
 msgid "When splitting a view"
 msgstr "보기를 나눌 때"
 
-#: generalopts.cpp:125
+#: generalopts.cpp:123
 #, kde-format
 msgid "Always duplicate current view"
 msgstr "항상 현재 보기 복제"
 
-#: generalopts.cpp:126
+#: generalopts.cpp:124
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "로컬 파일을 볼 때만 현재 보기 복제"
 
-#: generalopts.cpp:132
+#: generalopts.cpp:130
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr "시작할 때 마지막 상태 복원"
 
-#: htmlopts.cpp:35
+#: htmlopts.cpp:39
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "책갈피(&K)"
 
-#: htmlopts.cpp:38
+#: htmlopts.cpp:42
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "책갈피를 추가할 때 이름과 폴더 물어보기"
 
-#: htmlopts.cpp:41
+#: htmlopts.cpp:45
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1637,12 +1670,12 @@ msgstr ""
 "이 상자를 선택하면 Konqueror에 새 책갈피 항목을 추가할 때 이름과 저장할 폴더"
 "를 변경할 수 있도록 합니다."
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:51
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "책갈피 도구 모음에 선택한 책갈피만 표시"
 
-#: htmlopts.cpp:49
+#: htmlopts.cpp:53
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1651,12 +1684,10 @@ msgstr ""
 "이 상자를 선택하면 Konqueror에서는 책갈피 편집기에 표시한 책갈피만 도구 모음"
 "에 표시합니다."
 
-#: htmlopts.cpp:56
-#, kde-format
-msgid "Form Com&pletion"
-msgstr "폼 자동 완성(&P)"
-
-#: htmlopts.cpp:60
+#. i18n("Form Com&pletion"), widget());
+#. m_pFormCompletionCheckBox->setCheckable(true);
+#. QFormLayout *laygroup2 = new QFormLayout(m_pFormCompletionCheckBox);
+#: htmlopts.cpp:67
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1665,42 +1696,28 @@ msgstr ""
 "이 상자를 선택하면 Konqueror에서는 웹 폼에 입력한 데이터를 기억하고 있다가 모"
 "든 폼의 비슷한 필드에 자동으로 추천합니다."
 
-#: htmlopts.cpp:66
+#: htmlopts.cpp:74
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "최대 자동 완성 개수(&M):"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:76
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
 msgstr "Konqueror가 기억할 폼 필드의 최대 개수를 설정합니다."
 
-#: htmlopts.cpp:75
+#: htmlopts.cpp:87
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "마우스 작동 방식(&V)"
 
-#: htmlopts.cpp:78
-#, kde-format
-msgid "Chan&ge cursor over links"
-msgstr "링크 위에 있을 때 커서 모양 바꾸기(&G)"
-
-#: htmlopts.cpp:80
-#, kde-format
-msgid ""
-"If this option is set, the shape of the cursor will change (usually to a "
-"hand) if it is moved over a hyperlink."
-msgstr ""
-"이 설정을 사용하면 커서가 하이퍼링크 위에 있을 때 모양이 바뀝니다. 대부분 손"
-"모양입니다."
-
-#: htmlopts.cpp:84
+#: htmlopts.cpp:90
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "가운데 단추를 클릭하여 URL 열기(&I)"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:93
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
@@ -1709,12 +1726,12 @@ msgstr ""
 "이 설정을 사용하면 Konqueror에서 마우스 가운데 단추를 클릭했을 때 URL을 열 "
 "수 있습니다."
 
-#: htmlopts.cpp:91
+#: htmlopts.cpp:97
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "오른쪽 단추로 뒤로 돌아가기(&B)"
 
-#: htmlopts.cpp:94
+#: htmlopts.cpp:100
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1725,26 +1742,12 @@ msgstr ""
 "갈 수 있습니다. 상황에 맞는 메뉴에 접근하려면 오른쪽 마우스 단추를 누른 다음 "
 "움직이십시오."
 
-#: htmlopts.cpp:104
-#, kde-format
-msgid "Allow automatic delayed &reloading/redirecting"
-msgstr "자동 새로고침/넘겨주기 허용(&R)"
-
-#: htmlopts.cpp:105
-#, kde-format
-msgid ""
-"Some web pages request an automatic reload or redirection after a certain "
-"period of time. By unchecking this box Konqueror will ignore these requests."
-msgstr ""
-"일부 웹 페이지는 시간이 지나면 자동으로 새로 고치거나 다른 곳으로 넘겨줍니"
-"다. 이 상자의 선택을 해제하면 Konqueror에서 이 요청을 무시합니다."
-
-#: htmlopts.cpp:111
+#: htmlopts.cpp:115
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "Ctrl 키를 사용한 액세스 키 사용(&Y)"
 
-#: htmlopts.cpp:112
+#: htmlopts.cpp:116
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1755,36 +1758,40 @@ msgstr ""
 "지 않으면 이 접근성 기능을 끕니다. (설정을 적용하려면 Konqueror를 다시 시작해"
 "야 합니다."
 
-#: htmlopts.cpp:116
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr "추적하고 싶지 않은 웹사이트에 DNT 헤더를 보냅니다"
 
-#: htmlopts.cpp:117
-#, kde-format
+#: htmlopts.cpp:122
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check this box if you want to inform a web site that you do not want your "
+#| "web browsing habits tracked."
 msgid ""
-"Check this box if you want to inform a web site that you do not want your "
-"web browsing habits tracked."
+"<p>Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
+"considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
 "웹 브라우징을 추적하고 싶지 않다는 의사를 표시하고 싶으면 이 상자를 선택하십"
 "시오."
 
-#: htmlopts.cpp:121
+#: htmlopts.cpp:126
 #, kde-format
 msgid "Offer to save website passwords"
 msgstr "웹사이트 암호 저장 여부 묻기"
 
-#: htmlopts.cpp:122
+#: htmlopts.cpp:127
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr "웹사이트 암호 저장 여부를 묻지 않으려면 선택 해제하십시오"
 
-#: htmlopts.cpp:126
+#: htmlopts.cpp:131
 #, kde-format
 msgid "Display online PDF files using WebEngine"
 msgstr "WebEngine을 사용하여 온라인 PDF 파일 표시"
 
-#: htmlopts.cpp:127
+#: htmlopts.cpp:132
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
@@ -1792,199 +1799,24 @@ msgstr ""
 "이 설정을 사용하지 않으면 시스템 설정에서 지정한 방식으로 온라인에 있는 PDF "
 "파일을 표시합니다"
 
-#: javaopts.cpp:78
+#: htmlopts.cpp:136
 #, kde-format
-msgid "Enable Ja&va globally"
-msgstr "전역적으로 자바 사용(&V)"
+msgid "Always display files from web pages in a new tab"
+msgstr ""
 
-#: javaopts.cpp:93
-#, kde-format
-msgid "Java Runtime Settings"
-msgstr "자바 런타임 설정"
-
-#: javaopts.cpp:97
-#, kde-format
-msgid "&Use security manager"
-msgstr "보안 관리자 사용(&U)"
-
-#: javaopts.cpp:101
-#, kde-format
-msgid "Use &KIO"
-msgstr "KIO 사용(&K)"
-
-#: javaopts.cpp:105
-#, kde-format
-msgid "Shu&tdown applet server when inactive for more than"
-msgstr "다음 시간 이상 사용하지 않을 때 애플릿 서버 끄기(&T)"
-
-#: javaopts.cpp:117
-#, kde-format
-msgid " second"
-msgid_plural " seconds"
-msgstr[0] "초"
-
-#: javaopts.cpp:123
-#, kde-format
-msgid "&Path to Java executable, or 'java':"
-msgstr "자바 실행 파일의 경로 또는 'java'(&P):"
-
-#: javaopts.cpp:127
-#, kde-format
-msgid "Additional Java a&rguments:"
-msgstr "추가 자바 인자(&R):"
-
-#: javaopts.cpp:132
+#: htmlopts.cpp:137
 #, kde-format
 msgid ""
-"Enables the execution of scripts written in Java that can be contained in "
-"HTML pages. Note that, as with any browser, enabling active contents can be "
-"a security problem."
+"<p>When showing in Konqueror files from links in web pages, always use a new "
+"tab"
 msgstr ""
-"HTML 페이지에 포함된 자바로 작성된 스크립트를 실행합니다. 다른 브라우저와 마"
-"찬가지로 액티브 컨텐츠를 사용하면 보안 문제가 발생할 수 있으므로 주의하십시"
-"오."
 
-#: javaopts.cpp:135
-#, kde-format
-msgid ""
-"<p>This box contains the domains and hosts you have set a specific Java "
-"policy for. This policy will be used instead of the default policy for "
-"enabling or disabling Java applets on pages sent by these domains or hosts.</"
-"p><p>Select a policy and use the controls on the right to modify it.</p>"
-msgstr ""
-"<p>이 상자는 도메인이나 호스트 지정 자바 정책이 있는 도메인의 목록을 표시합니"
-"다. 이 도메인이나 호스트에 대해서는 여기에 있는 자바 정책을 기본 정책 대신 사"
-"용합니다.</p><p>정책을 선택하고 오른쪽에 있는 단추를 사용하여 수정하십시오.</"
-"p>"
-
-#: javaopts.cpp:142
-#, kde-format
-msgid ""
-"Click this button to choose the file that contains the Java policies. These "
-"policies will be merged with the existing ones. Duplicate entries are "
-"ignored."
-msgstr ""
-"이 단추를 클릭한 다음 자바 정책이 들어 있는 파일을 선택하십시오. 선택한 정책"
-"은 기존 정책에 합쳐집니다. 중복된 항목은 무시됩니다."
-
-#: javaopts.cpp:145
-#, kde-format
-msgid ""
-"Click this button to save the Java policy to a zipped file. The file, named "
-"<b>java_policy.tgz</b>, will be saved to a location of your choice."
-msgstr ""
-"자바 정책을 압축 파일로 저장하려면 이 단추를 클릭하십시오. 지정한 경로에 "
-"<b>java_policy.tgz</b>라는 파일로 저장됩니다."
-
-#: javaopts.cpp:149
-#, kde-format
-msgid ""
-"Here you can set specific Java policies for any particular host or domain. "
-"To add a new policy, simply click the <i>New...</i> button and supply the "
-"necessary information requested by the dialog box. To change an existing "
-"policy, click on the <i>Change...</i> button and choose the new policy from "
-"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
-"selected policy, causing the default policy setting to be used for that "
-"domain."
-msgstr ""
-"자주 방문하는 호스트나 도메인에 대한 자바 정책을 지정할 수 있습니다. 새로운 "
-"정책을 추가하려면 간단히 <i>새로 만들기...</i> 단추를 클릭한 다음 대화 상자"
-"에 필요한 정보를 입력하십시오. 기존 정책을 변경하려면 <i>변경...</i> 단추를 "
-"클릭한 다음 정책 대화 상자에 새로운 정책을 입력하십시오. <i>삭제</i> 단추를 "
-"클릭하면 선택한 정책을 삭제하고 기본 정책을 적용합니다."
-
-#: javaopts.cpp:162
-#, kde-format
-msgid ""
-"Enabling the security manager will cause the jvm to run with a Security "
-"Manager in place. This will keep applets from being able to read and write "
-"to your file system, creating arbitrary sockets, and other actions which "
-"could be used to compromise your system. Disable this option at your own "
-"risk. You can modify your $HOME/.java.policy file with the Java policytool "
-"utility to give code downloaded from certain sites more permissions."
-msgstr ""
-"보안 관리자를 이용하면 보안 관리자를 이용하여 jvm을 실행합니다. 이것은 애플릿"
-"에서 파일 시스템을 읽고 기록하거나, 임의의 소켓을 만들거나, 시스템을 손상시키"
-"는 동작을 할 수 없도록 합니다. 이 설정을 사용하지 않는 것은 여러분의 책임입니"
-"다. $HOME/.java.policy 파일을 자바 policytool 도구로 편집해서 특정한 사이트에"
-"서 내려받은 코드에 더 많은 권한을 부여할 수 있습니다."
-
-#: javaopts.cpp:170
-#, kde-format
-msgid "Enabling this will cause the jvm to use KIO for network transport "
-msgstr ""
-"이 설정을 사용하면 자바 가상 머신에서 KIO를 사용하여 네트워크 전송을 합니다"
-
-#: javaopts.cpp:172
-#, kde-format
-msgid ""
-"Enter the path to the java executable. If you want to use the jre in your "
-"path, simply leave it as 'java'. If you need to use a different jre, enter "
-"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
-"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
-msgstr ""
-"java 실행 파일의 경로를 입력하십시오. 경로에 지정되어 있는 JRE를 사용하려면 "
-"'java'라고 두십시오. 만약 다른 JRE를 사용해야 한다면 java 실행 파일의 경로를 "
-"입력하십시오. (예: /usr/lib/jdk/bin/java) 또는 'bin/java' 실행 파일이 들어 있"
-"는 디렉터리를 입력하십시오. (예: /opt/IBMJava2-13)"
-
-#: javaopts.cpp:177
-#, kde-format
-msgid ""
-"If you want special arguments to be passed to the virtual machine, enter "
-"them here."
-msgstr "가상 머신에 인자를 전달해야 한다면 여기에 입력하십시오."
-
-#: javaopts.cpp:179
-#, kde-format
-msgid ""
-"When all the applets have been destroyed, the applet server should shut "
-"down. However, starting the jvm takes a lot of time. If you would like to "
-"keep the java process running while you are browsing, you can set the "
-"timeout value to whatever you like. To keep the java process running for the "
-"whole time that the konqueror process is, leave the Shutdown Applet Server "
-"checkbox unchecked."
-msgstr ""
-"모든 애플릿이 파괴되었을 때 애플릿 서버는 중단됩니다. 하지만 자바 가상 머신"
-"을 시작하는 데는 오랜 시간이 걸립니다. 만약 탐색하는 중에 자바 프로세스가 실"
-"행되도록 하려면 시간 제한 값을 필요한 대로 설정하십시오. Konqueror가 실행되"
-"는 동안 프로세스를 계속 실행하려면, 애플릿 서버 종료 체크 상자를 선택하지 마"
-"십시오."
-
-#: javaopts.cpp:288
-#, kde-format
-msgctxt "@title:group"
-msgid "Doma&in-Specific"
-msgstr "도메인 지정(&I)"
-
-#: javaopts.cpp:323
-#, kde-format
-msgctxt "@title:window"
-msgid "New Java Policy"
-msgstr "새 자바 정책"
-
-#: javaopts.cpp:326
-#, kde-format
-msgctxt "@title:window"
-msgid "Change Java Policy"
-msgstr "자바 정책 변경"
-
-#: javaopts.cpp:330
-#, kde-format
-msgid "&Java policy:"
-msgstr "자바 정책(&J):"
-
-#: javaopts.cpp:331
-#, kde-format
-msgid "Select a Java policy for the above host or domain."
-msgstr "위 호스트나 도메인에 대한 자바 정책을 선택하십시오."
-
-#: jsopts.cpp:50
+#: jsopts.cpp:57
 #, kde-format
 msgid "Ena&ble JavaScript globally"
 msgstr "전역적으로 자바스크립트 사용하기(&B)"
 
-#: jsopts.cpp:51
+#: jsopts.cpp:58
 #, kde-format
 msgid ""
 "Enables the execution of scripts written in ECMA-Script (also known as "
@@ -1995,33 +1827,7 @@ msgstr ""
 "다. 어떠한 브라우저를 사용해도 스크립트 언어를 사용하면 보안 문제가 발생할 "
 "수 있으므로 주의하십시오."
 
-#: jsopts.cpp:59
-#, kde-format
-msgid "Debugging"
-msgstr "디버깅"
-
-#: jsopts.cpp:63
-#, kde-format
-msgid "Enable debu&gger"
-msgstr "디버거 사용하기(&G)"
-
-#: jsopts.cpp:64
-#, kde-format
-msgid "Enables builtin JavaScript debugger."
-msgstr "내장 자바스크립트 디버거를 사용합니다."
-
-#: jsopts.cpp:68
-#, kde-format
-msgid "Report &errors"
-msgstr "오류 알리기(&E)"
-
-#: jsopts.cpp:69
-#, kde-format
-msgid ""
-"Enables the reporting of errors that occur when JavaScript code is executed."
-msgstr "자바스크립트 코드에서 발생하는 오류를 알려 줍니다."
-
-#: jsopts.cpp:79
+#: jsopts.cpp:70
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2041,7 +1847,7 @@ msgstr ""
 "을 사용합니다. <i>가져오기</i>와 <i>내보내기</i> 단추를 클릭하면 다른 사람과 "
 "정책을 쉽게 공유할 수 있습니다."
 
-#: jsopts.cpp:89
+#: jsopts.cpp:80
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2055,7 +1861,7 @@ msgstr ""
 "기본 정책 대신 사용합니다.</p><p>정책을 선택하고 오른쪽에 있는 단추를 사용해"
 "서 수정하십시오.</p>"
 
-#: jsopts.cpp:96
+#: jsopts.cpp:87
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2065,7 +1871,7 @@ msgstr ""
 "이 단추를 클릭한 다음 자바스크립트 정책이 들어 있는 파일을 선택하십시오. 선택"
 "한 정책은 기존 정책에 합쳐집니다. 중복된 항목은 무시됩니다."
 
-#: jsopts.cpp:99
+#: jsopts.cpp:90
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2075,100 +1881,67 @@ msgstr ""
 "자바스크립트 정책을 압축 파일로 저장하려면 이 단추를 클릭하십시오. 지정한 경"
 "로에 <b>javascript_policy.tgz</b>라는 파일로 저장합니다."
 
-#: jsopts.cpp:105
+#: jsopts.cpp:96
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "전역 자바스크립트 정책"
 
-#: jsopts.cpp:172
-#, kde-format
-msgctxt "@title:group"
-msgid "Do&main-Specific"
-msgstr "도메인 지정(&M)"
-
-#: jsopts.cpp:211
-#, kde-format
-msgctxt "@title:window"
-msgid "New JavaScript Policy"
-msgstr "새 자바스크립트 정책"
-
-#: jsopts.cpp:214
-#, kde-format
-msgctxt "@title:window"
-msgid "Change JavaScript Policy"
-msgstr "자바스크립트 정책 변경"
-
-#: jsopts.cpp:218
-#, kde-format
-msgid "JavaScript policy:"
-msgstr "자바스크립트 정책:"
-
-#: jsopts.cpp:219
-#, kde-format
-msgid "Select a JavaScript policy for the above host or domain."
-msgstr "위 호스트나 도메인에 대한 자바스크립트 정책을 선택하십시오."
-
-#: jsopts.cpp:221
-#, kde-format
-msgid "Domain-Specific JavaScript Policies"
-msgstr "도메인 지정 자바스크립트 정책"
-
-#: jspolicies.cpp:132
+#: jspolicies.cpp:161
 #, kde-format
 msgid "Open new windows:"
 msgstr "새로운 창 열기:"
 
-#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
-#: jspolicies.cpp:308
+#: jspolicies.cpp:169 jspolicies.cpp:223 jspolicies.cpp:260 jspolicies.cpp:297
+#: jspolicies.cpp:337
 #, kde-format
 msgid "Use global"
 msgstr "전역 정책 사용"
 
-#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
-#: jspolicies.cpp:309
+#: jspolicies.cpp:170 jspolicies.cpp:224 jspolicies.cpp:261 jspolicies.cpp:298
+#: jspolicies.cpp:338
 #, kde-format
 msgid "Use setting from global policy."
 msgstr "전역 정책 설정을 사용합니다."
 
-#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
-#: jspolicies.cpp:315
+#: jspolicies.cpp:176 jspolicies.cpp:230 jspolicies.cpp:267 jspolicies.cpp:304
+#: jspolicies.cpp:344
 #, kde-format
 msgid "Allow"
 msgstr "허용"
 
-#: jspolicies.cpp:148
+#: jspolicies.cpp:177
 #, kde-format
 msgid "Accept all popup window requests."
 msgstr "모든 팝업 창을 열도록 허용합니다."
 
-#: jspolicies.cpp:154
+#: jspolicies.cpp:183
 #, kde-format
 msgid "Prompt every time a popup window is requested."
 msgstr "팝업 창이 열릴 때마다 물어 봅니다."
 
-#: jspolicies.cpp:159
+#: jspolicies.cpp:188
 #, kde-format
 msgid "Deny"
 msgstr "거부"
 
-#: jspolicies.cpp:160
+#: jspolicies.cpp:189
 #, kde-format
 msgid "Reject all popup window requests."
 msgstr "모든 팝업 창을 거부합니다."
 
-#: jspolicies.cpp:165
+#: jspolicies.cpp:194
 #, kde-format
 msgid "Smart"
 msgstr "스마트"
 
-#: jspolicies.cpp:166
+#: jspolicies.cpp:195
 #, kde-format
 msgid ""
 "Accept popup window requests only when links are activated through an "
 "explicit mouse click or keyboard operation."
 msgstr "마우스 클릭이나 키보드 작동으로 링크를 눌렀을 때만 팝업을 표시합니다."
 
-#: jspolicies.cpp:173
+#: jspolicies.cpp:202
 #, kde-format
 msgid ""
 "If you disable this, Konqueror will stop interpreting the <i>window.open()</"
@@ -2183,22 +1956,22 @@ msgstr ""
 "i>을 올바르게 작동하는 데 사용하는 사이트의 동작을 방해할 수 있습니다. 조심해"
 "서 사용하십시오."
 
-#: jspolicies.cpp:187
+#: jspolicies.cpp:216
 #, kde-format
 msgid "Resize window:"
 msgstr "창 크기 조절:"
 
-#: jspolicies.cpp:202
+#: jspolicies.cpp:231
 #, kde-format
 msgid "Allow scripts to change the window size."
 msgstr "창 크기를 조절하는 스크립트를 허용합니다."
 
-#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#: jspolicies.cpp:236 jspolicies.cpp:273 jspolicies.cpp:310 jspolicies.cpp:350
 #, kde-format
 msgid "Ignore"
 msgstr "무시"
 
-#: jspolicies.cpp:208
+#: jspolicies.cpp:237
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
@@ -2207,7 +1980,7 @@ msgstr ""
 "창 크기를 변경하는 스크립트를 무시합니다. 웹 페이지는 창 크기가 <i>바뀌었다고"
 "</i> 간주하지만 실제 크기는 그대로 있습니다."
 
-#: jspolicies.cpp:215
+#: jspolicies.cpp:244
 #, kde-format
 msgid ""
 "Some websites change the window size on their own by using <i>window."
@@ -2218,17 +1991,17 @@ msgstr ""
 "용해서 브라우저 창 크기를 바꿉니다. 이 설정은 이러한 시도를 어떻게 처리할지 "
 "설정합니다."
 
-#: jspolicies.cpp:224
+#: jspolicies.cpp:253
 #, kde-format
 msgid "Move window:"
 msgstr "창 이동:"
 
-#: jspolicies.cpp:239
+#: jspolicies.cpp:268
 #, kde-format
 msgid "Allow scripts to change the window position."
 msgstr "창의 위치를 변경하는 스크립트를 허용합니다."
 
-#: jspolicies.cpp:245
+#: jspolicies.cpp:274
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window position. The web page will "
@@ -2237,7 +2010,7 @@ msgstr ""
 "창을 이동시키는 스크립트를 무시합니다. 웹 페이지는 창이 <i>이동했다고</i> 간"
 "주하지만 실제 위치는 그대로 있습니다."
 
-#: jspolicies.cpp:252
+#: jspolicies.cpp:281
 #, kde-format
 msgid ""
 "Some websites change the window position on their own by using <i>window."
@@ -2248,17 +2021,17 @@ msgstr ""
 "서 브라우저 창을 이동시킵니다. 이 설정은 이러한 시도를 어떻게 처리할지 설정합"
 "니다."
 
-#: jspolicies.cpp:261
+#: jspolicies.cpp:290
 #, kde-format
 msgid "Focus window:"
 msgstr "창 포커스 맞추기:"
 
-#: jspolicies.cpp:276
+#: jspolicies.cpp:305
 #, kde-format
 msgid "Allow scripts to focus the window."
 msgstr "창에 포커스를 맞추는 스크립트를 허용합니다."
 
-#: jspolicies.cpp:282
+#: jspolicies.cpp:311
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to focus the window. The web page will <i>think</"
@@ -2268,7 +2041,7 @@ msgstr ""
 "창에 포커스를 맞추는 스크립트를 무시합니다. 웹 페이지는 창의 포커스가 <i>바뀌"
 "었다고</i> 간주하지만 실제 포커스는 바뀌지 않습니다."
 
-#: jspolicies.cpp:290
+#: jspolicies.cpp:319
 #, kde-format
 msgid ""
 "Some websites set the focus to their browser window on their own by using "
@@ -2280,17 +2053,17 @@ msgstr ""
 "변경합니다. 이것은 사용자가 원하지 않은 창이 화면의 앞쪽에 표시되도록 합니"
 "다. 이 설정을 사용하면 이러한 시도를 무력화시킵니다."
 
-#: jspolicies.cpp:301
+#: jspolicies.cpp:330
 #, kde-format
 msgid "Modify status bar text:"
 msgstr "상태 표시줄 텍스트 수정:"
 
-#: jspolicies.cpp:316
+#: jspolicies.cpp:345
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
 msgstr "상태 표시줄의 텍스트를 변경하는 스크립트를 허용합니다."
 
-#: jspolicies.cpp:322
+#: jspolicies.cpp:351
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
@@ -2299,7 +2072,7 @@ msgstr ""
 "상태 표시줄 텍스트를 변경하는 스크립트를 무시합니다. 웹 페이지는 상태 표시줄"
 "의 텍스트가 <i>바뀌었다고</i> 간주하지만 실제 텍스트는 바뀌지 않습니다."
 
-#: jspolicies.cpp:330
+#: jspolicies.cpp:359
 #, kde-format
 msgid ""
 "Some websites change the status bar text by setting <i>window.status</i> or "
@@ -2309,16 +2082,6 @@ msgstr ""
 "일부 웹사이트에서는 <i>window.status</i> 또는 <i>window.defaultStatus</i> 속"
 "성을 편집하여 상태 표시줄에 하이퍼링크의 실제 URL을 표시하지 못하게 합니다. "
 "이 설정을 사용하면 이러한 시도를 무력화시킵니다."
-
-#: main.cpp:49
-#, kde-format
-msgid "&Java"
-msgstr "자바(&J)"
-
-#: main.cpp:53
-#, kde-format
-msgid "Java&Script"
-msgstr "자바스크립트(&S)"
 
 #: policydlg.cpp:30
 #, kde-format
@@ -2580,9 +2343,8 @@ msgstr "기존 식별자"
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150 useragent/useragent.ui:163
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr "<html><head/><body><p><br/></p></body></html>"
@@ -2623,6 +2385,15 @@ msgstr "삭제(&D)"
 msgid "Choose &selected identification"
 msgstr "선택한 식별자 사용(&S)"
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:163
+#, fuzzy, kde-format
+#| msgid "<html><head/><body><p><br/></p></body></html>"
+msgid ""
+"<html><head/><body><p>If checked, disable choosing a custom identification "
+"and use the default one</p></body></html>"
+msgstr "<html><head/><body><p><br/></p></body></html>"
+
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
@@ -2647,6 +2418,198 @@ msgstr ""
 "<html><head/><body><p>기본 식별자가 비활성화되었을 때 사용할 브라우저 식별자"
 "입니다.</p><p>직접 입력하거나 아래 목록에 있는 항목을 선택한 후 필요에 따라 "
 "변경할 수 있습니다.</p></body></html>"
+
+#~ msgid "Form Com&pletion"
+#~ msgstr "폼 자동 완성(&P)"
+
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "링크 위에 있을 때 커서 모양 바꾸기(&G)"
+
+#~ msgid ""
+#~ "If this option is set, the shape of the cursor will change (usually to a "
+#~ "hand) if it is moved over a hyperlink."
+#~ msgstr ""
+#~ "이 설정을 사용하면 커서가 하이퍼링크 위에 있을 때 모양이 바뀝니다. 대부분 "
+#~ "손모양입니다."
+
+#~ msgid "Allow automatic delayed &reloading/redirecting"
+#~ msgstr "자동 새로고침/넘겨주기 허용(&R)"
+
+#~ msgid ""
+#~ "Some web pages request an automatic reload or redirection after a certain "
+#~ "period of time. By unchecking this box Konqueror will ignore these "
+#~ "requests."
+#~ msgstr ""
+#~ "일부 웹 페이지는 시간이 지나면 자동으로 새로 고치거나 다른 곳으로 넘겨줍니"
+#~ "다. 이 상자의 선택을 해제하면 Konqueror에서 이 요청을 무시합니다."
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "전역적으로 자바 사용(&V)"
+
+#~ msgid "Java Runtime Settings"
+#~ msgstr "자바 런타임 설정"
+
+#~ msgid "&Use security manager"
+#~ msgstr "보안 관리자 사용(&U)"
+
+#~ msgid "Use &KIO"
+#~ msgstr "KIO 사용(&K)"
+
+#~ msgid "Shu&tdown applet server when inactive for more than"
+#~ msgstr "다음 시간 이상 사용하지 않을 때 애플릿 서버 끄기(&T)"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] "초"
+
+#~ msgid "&Path to Java executable, or 'java':"
+#~ msgstr "자바 실행 파일의 경로 또는 'java'(&P):"
+
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "추가 자바 인자(&R):"
+
+#~ msgid ""
+#~ "Enables the execution of scripts written in Java that can be contained in "
+#~ "HTML pages. Note that, as with any browser, enabling active contents can "
+#~ "be a security problem."
+#~ msgstr ""
+#~ "HTML 페이지에 포함된 자바로 작성된 스크립트를 실행합니다. 다른 브라우저와 "
+#~ "마찬가지로 액티브 컨텐츠를 사용하면 보안 문제가 발생할 수 있으므로 주의하"
+#~ "십시오."
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific Java "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling Java applets on pages sent by these domains or "
+#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
+#~ "it.</p>"
+#~ msgstr ""
+#~ "<p>이 상자는 도메인이나 호스트 지정 자바 정책이 있는 도메인의 목록을 표시"
+#~ "합니다. 이 도메인이나 호스트에 대해서는 여기에 있는 자바 정책을 기본 정책 "
+#~ "대신 사용합니다.</p><p>정책을 선택하고 오른쪽에 있는 단추를 사용하여 수정"
+#~ "하십시오.</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the Java policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "이 단추를 클릭한 다음 자바 정책이 들어 있는 파일을 선택하십시오. 선택한 정"
+#~ "책은 기존 정책에 합쳐집니다. 중복된 항목은 무시됩니다."
+
+#~ msgid ""
+#~ "Click this button to save the Java policy to a zipped file. The file, "
+#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
+#~ msgstr ""
+#~ "자바 정책을 압축 파일로 저장하려면 이 단추를 클릭하십시오. 지정한 경로에 "
+#~ "<b>java_policy.tgz</b>라는 파일로 저장됩니다."
+
+#~ msgid ""
+#~ "Here you can set specific Java policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy, causing the default policy "
+#~ "setting to be used for that domain."
+#~ msgstr ""
+#~ "자주 방문하는 호스트나 도메인에 대한 자바 정책을 지정할 수 있습니다. 새로"
+#~ "운 정책을 추가하려면 간단히 <i>새로 만들기...</i> 단추를 클릭한 다음 대화 "
+#~ "상자에 필요한 정보를 입력하십시오. 기존 정책을 변경하려면 <i>변경...</i> "
+#~ "단추를 클릭한 다음 정책 대화 상자에 새로운 정책을 입력하십시오. <i>삭제</"
+#~ "i> 단추를 클릭하면 선택한 정책을 삭제하고 기본 정책을 적용합니다."
+
+#~ msgid ""
+#~ "Enabling the security manager will cause the jvm to run with a Security "
+#~ "Manager in place. This will keep applets from being able to read and "
+#~ "write to your file system, creating arbitrary sockets, and other actions "
+#~ "which could be used to compromise your system. Disable this option at "
+#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
+#~ "policytool utility to give code downloaded from certain sites more "
+#~ "permissions."
+#~ msgstr ""
+#~ "보안 관리자를 이용하면 보안 관리자를 이용하여 jvm을 실행합니다. 이것은 애"
+#~ "플릿에서 파일 시스템을 읽고 기록하거나, 임의의 소켓을 만들거나, 시스템을 "
+#~ "손상시키는 동작을 할 수 없도록 합니다. 이 설정을 사용하지 않는 것은 여러분"
+#~ "의 책임입니다. $HOME/.java.policy 파일을 자바 policytool 도구로 편집해서 "
+#~ "특정한 사이트에서 내려받은 코드에 더 많은 권한을 부여할 수 있습니다."
+
+#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
+#~ msgstr ""
+#~ "이 설정을 사용하면 자바 가상 머신에서 KIO를 사용하여 네트워크 전송을 합니"
+#~ "다"
+
+#~ msgid ""
+#~ "Enter the path to the java executable. If you want to use the jre in your "
+#~ "path, simply leave it as 'java'. If you need to use a different jre, "
+#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
+#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
+#~ "IBMJava2-13)."
+#~ msgstr ""
+#~ "java 실행 파일의 경로를 입력하십시오. 경로에 지정되어 있는 JRE를 사용하려"
+#~ "면 'java'라고 두십시오. 만약 다른 JRE를 사용해야 한다면 java 실행 파일의 "
+#~ "경로를 입력하십시오. (예: /usr/lib/jdk/bin/java) 또는 'bin/java' 실행 파일"
+#~ "이 들어 있는 디렉터리를 입력하십시오. (예: /opt/IBMJava2-13)"
+
+#~ msgid ""
+#~ "If you want special arguments to be passed to the virtual machine, enter "
+#~ "them here."
+#~ msgstr "가상 머신에 인자를 전달해야 한다면 여기에 입력하십시오."
+
+#~ msgid ""
+#~ "When all the applets have been destroyed, the applet server should shut "
+#~ "down. However, starting the jvm takes a lot of time. If you would like to "
+#~ "keep the java process running while you are browsing, you can set the "
+#~ "timeout value to whatever you like. To keep the java process running for "
+#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
+#~ "Server checkbox unchecked."
+#~ msgstr ""
+#~ "모든 애플릿이 파괴되었을 때 애플릿 서버는 중단됩니다. 하지만 자바 가상 머"
+#~ "신을 시작하는 데는 오랜 시간이 걸립니다. 만약 탐색하는 중에 자바 프로세스"
+#~ "가 실행되도록 하려면 시간 제한 값을 필요한 대로 설정하십시오. Konqueror가 "
+#~ "실행되는 동안 프로세스를 계속 실행하려면, 애플릿 서버 종료 체크 상자를 선"
+#~ "택하지 마십시오."
+
+#~ msgctxt "@title:group"
+#~ msgid "Doma&in-Specific"
+#~ msgstr "도메인 지정(&I)"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Java Policy"
+#~ msgstr "새 자바 정책"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Java Policy"
+#~ msgstr "자바 정책 변경"
+
+#~ msgid "&Java policy:"
+#~ msgstr "자바 정책(&J):"
+
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr "위 호스트나 도메인에 대한 자바 정책을 선택하십시오."
+
+#~ msgid "Debugging"
+#~ msgstr "디버깅"
+
+#~ msgid "Enable debu&gger"
+#~ msgstr "디버거 사용하기(&G)"
+
+#~ msgid "Enables builtin JavaScript debugger."
+#~ msgstr "내장 자바스크립트 디버거를 사용합니다."
+
+#~ msgid "Report &errors"
+#~ msgstr "오류 알리기(&E)"
+
+#~ msgid ""
+#~ "Enables the reporting of errors that occur when JavaScript code is "
+#~ "executed."
+#~ msgstr "자바스크립트 코드에서 발생하는 오류를 알려 줍니다."
+
+#~ msgid "&Java"
+#~ msgstr "자바(&J)"
+
+#~ msgid "Java&Script"
+#~ msgstr "자바스크립트(&S)"
 
 #~ msgid ""
 #~ "This will open a new tab in the background, instead of in the foreground."

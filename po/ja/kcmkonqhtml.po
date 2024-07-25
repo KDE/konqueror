@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:38+0000\n"
+"POT-Creation-Date: 2024-07-25 00:39+0000\n"
 "PO-Revision-Date: 2019-04-21 18:58-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -120,7 +120,7 @@ msgstr ""
 msgid "A&nimations:"
 msgstr "アニメーション(&N):"
 
-#: appearance.cpp:85 htmlopts.cpp:101
+#: appearance.cpp:85 htmlopts.cpp:108
 #, kde-format
 msgctxt "@title:group"
 msgid "Miscellaneous"
@@ -663,21 +663,21 @@ msgid "Domain"
 msgstr "ホスト/ドメイン"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
-#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:37
+#: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
 #, kde-format
 msgid "Policy"
 msgstr "ポリシー"
 
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
-#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:45
+#: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
 #: useragent/useragent.ui:84
 #, kde-format
 msgid "&New..."
 msgstr "新規(&N)..."
 
 #. i18n: ectx: property (text), widget (QPushButton, pbChange)
-#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:49
+#: cookies/kcookiespolicies.ui:183 domainlistview.cpp:52
 #, kde-format
 msgid "Chan&ge..."
 msgstr "変更(&G)..."
@@ -730,7 +730,7 @@ msgid "Policy:"
 msgstr "ポリシー"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:189
+#: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:192
 #: policydlg.cpp:63
 #, kde-format
 msgid "Accept"
@@ -743,14 +743,14 @@ msgid "Accept until end of session"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:191
+#: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:194
 #: policydlg.cpp:63
 #, kde-format
 msgid "Reject"
 msgstr "拒否する"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
-#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:153
+#: cookies/kcookiespolicyselectiondlg.ui:96 jspolicies.cpp:182
 #, kde-format
 msgid "Ask"
 msgstr "確認する"
@@ -1282,34 +1282,40 @@ msgstr ""
 "\n"
 "</html>\n"
 
-#: domainlistview.cpp:37
+#: domainlistview.cpp:33
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "ドメイン固有設定(&M)"
+
+#: domainlistview.cpp:40
 #, kde-format
 msgid "Host/Domain"
 msgstr "ホスト/ドメイン"
 
-#: domainlistview.cpp:53
+#: domainlistview.cpp:56
 #, kde-format
 msgid "De&lete"
 msgstr "削除(&L)"
 
-#: domainlistview.cpp:57
+#: domainlistview.cpp:60
 #, kde-format
 msgid "&Import..."
 msgstr "インポート(&I)..."
 
-#: domainlistview.cpp:63
+#: domainlistview.cpp:66
 #, kde-format
 msgid "&Export..."
 msgstr "エクスポート(&E)..."
 
-#: domainlistview.cpp:71
+#: domainlistview.cpp:74
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr ""
 "ホストまたはドメイン固有のポリシーを手動で追加するには、このボタンをクリック"
 "してください。"
 
-#: domainlistview.cpp:73
+#: domainlistview.cpp:76
 #, kde-format
 msgid ""
 "Click on this button to change the policy for the host or domain selected in "
@@ -1318,7 +1324,7 @@ msgstr ""
 "リストボックスで選択したホストまたはドメインのポリシーを変更するには、このボ"
 "タンをクリックしてください。"
 
-#: domainlistview.cpp:75
+#: domainlistview.cpp:78
 #, kde-format
 msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
@@ -1327,20 +1333,50 @@ msgstr ""
 "リストボックスで選択したホストまたはドメインのポリシーを削除するには、このボ"
 "タンをクリックしてください。"
 
-#: domainlistview.cpp:122
+#: domainlistview.cpp:125
 #, kde-format
 msgid "You must first select a policy to be changed."
 msgstr "先に変更するポリシーを選択してください。"
 
-#: domainlistview.cpp:149
+#: domainlistview.cpp:152
 #, kde-format
 msgid "You must first select a policy to delete."
 msgstr "先に削除するポリシーを選択してください。"
 
-#: domainlistview.cpp:187 policydlg.cpp:63
+#: domainlistview.cpp:190 policydlg.cpp:63
 #, kde-format
 msgid "Use Global"
 msgstr "全体設定を使う"
+
+#: domainlistview.cpp:232
+#, fuzzy, kde-format
+#| msgid "New JavaScript Policy"
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "新しい JavaScript ポリシー"
+
+#: domainlistview.cpp:235
+#, fuzzy, kde-format
+#| msgid "Change JavaScript Policy"
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "JavaScript ポリシーを変更"
+
+#: domainlistview.cpp:239
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "JavaScript ポリシー:"
+
+#: domainlistview.cpp:240
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr ""
+"上のホストまたはドメイン名に対する JavaScript ポリシーを選択してください。"
+
+#: domainlistview.cpp:242
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "ドメイン固有の JavaScript ポリシー"
 
 # ACCELERATOR added by translator
 #: filteropts.cpp:48
@@ -1497,7 +1533,7 @@ msgstr ""
 msgid "URL"
 msgstr ""
 
-#: generalopts.cpp:56
+#: generalopts.cpp:54
 #, kde-format
 msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
@@ -1505,19 +1541,19 @@ msgctxt ""
 msgid "Please, insert the custom start page"
 msgstr ""
 
-#: generalopts.cpp:62
+#: generalopts.cpp:60
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
 msgstr ""
 
-#: generalopts.cpp:71
+#: generalopts.cpp:69
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
 msgstr "Konqueror の開始ページ"
 
-#: generalopts.cpp:72
+#: generalopts.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "@item:inlistbox"
 #| msgid "Show My Home Page"
@@ -1525,43 +1561,43 @@ msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "自分のホームページ"
 
-#: generalopts.cpp:73
+#: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "空のページ"
 
-#: generalopts.cpp:74
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "ブックマーク"
 
-#: generalopts.cpp:80
+#: generalopts.cpp:78
 #, fuzzy, kde-format
 #| msgid "Select Home Page"
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "ホームページを選択"
 
-#: generalopts.cpp:85
+#: generalopts.cpp:83
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr ""
 
-#: generalopts.cpp:96
+#: generalopts.cpp:94
 #, kde-format
 msgid "Home page:"
 msgstr "ホームページ:"
 
-#: generalopts.cpp:99
+#: generalopts.cpp:97
 #, fuzzy, kde-format
 #| msgid "Select Home Page"
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "ホームページを選択"
 
-#: generalopts.cpp:104
+#: generalopts.cpp:102
 #, fuzzy, kde-format
 #| msgid ""
 #| "This is the URL of the web page where Konqueror (as web browser) will "
@@ -1576,44 +1612,44 @@ msgstr ""
 "の URL です。Konqueror をファイルマネージャとして起動した場合は、ローカルの"
 "ホームフォルダへ移動します。"
 
-#: generalopts.cpp:112
+#: generalopts.cpp:110
 #, kde-format
 msgid "Default web browser engine:"
 msgstr ""
 
-#: generalopts.cpp:121
+#: generalopts.cpp:119
 #, kde-format
 msgid "When splitting a view"
 msgstr ""
 
-#: generalopts.cpp:125
+#: generalopts.cpp:123
 #, kde-format
 msgid "Always duplicate current view"
 msgstr ""
 
-#: generalopts.cpp:126
+#: generalopts.cpp:124
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr ""
 
-#: generalopts.cpp:132
+#: generalopts.cpp:130
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr ""
 
 # ACCELERATOR removed by translator
-#: htmlopts.cpp:35
+#: htmlopts.cpp:39
 #, kde-format
 msgid "Boo&kmarks"
 msgstr "ブックマーク"
 
 # ACCELERATOR added by translator
-#: htmlopts.cpp:38
+#: htmlopts.cpp:42
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
 msgstr "ブックマークを追加するときに名前とフォルダを尋ねる(&K)"
 
-#: htmlopts.cpp:41
+#: htmlopts.cpp:45
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will allow you to change the title of the "
@@ -1625,12 +1661,12 @@ msgstr ""
 "す。"
 
 # ACCELERATOR added by translator
-#: htmlopts.cpp:47
+#: htmlopts.cpp:51
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
 msgstr "指定したブックマークのみをブックマークツールバーに表示する(&X)"
 
-#: htmlopts.cpp:49
+#: htmlopts.cpp:53
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will show only those bookmarks in the "
@@ -1639,13 +1675,10 @@ msgstr ""
 "このオプションを有効にすると、ブックマークエディタで「ツールバーに表示する」"
 "ように印を付けたブックマークのみがブックマークツールバーに表示されます。"
 
-# ACCELERATOR removed by translator
-#: htmlopts.cpp:56
-#, kde-format
-msgid "Form Com&pletion"
-msgstr "フォーム補完"
-
-#: htmlopts.cpp:60
+#. i18n("Form Com&pletion"), widget());
+#. m_pFormCompletionCheckBox->setCheckable(true);
+#. QFormLayout *laygroup2 = new QFormLayout(m_pFormCompletionCheckBox);
+#: htmlopts.cpp:67
 #, kde-format
 msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
@@ -1655,12 +1688,12 @@ msgstr ""
 "記憶し、すべてのフォームについて、同じような入力フィールドでそれを候補として"
 "提示します。"
 
-#: htmlopts.cpp:66
+#: htmlopts.cpp:74
 #, kde-format
 msgid "&Maximum completions:"
 msgstr "最大補完候補数(&M):"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:76
 #, kde-format
 msgid ""
 "Here you can select how many values Konqueror will remember for a form field."
@@ -1668,31 +1701,17 @@ msgstr ""
 "一つのフォームについて Konqueror に記憶させておくデータの数を設定します。"
 
 # ACCELERATOR removed by translator
-#: htmlopts.cpp:75
+#: htmlopts.cpp:87
 #, kde-format
 msgid "Mouse Beha&vior"
 msgstr "マウスの挙動"
 
-#: htmlopts.cpp:78
-#, kde-format
-msgid "Chan&ge cursor over links"
-msgstr "リンク上でカーソルを変更する(&G)"
-
-#: htmlopts.cpp:80
-#, kde-format
-msgid ""
-"If this option is set, the shape of the cursor will change (usually to a "
-"hand) if it is moved over a hyperlink."
-msgstr ""
-"このオプションを有効にすると、ハイパーリンクの上にマウスカーソルを移動したと"
-"きにカーソルの形が (通常は手の形に) 変わります。"
-
-#: htmlopts.cpp:84
+#: htmlopts.cpp:90
 #, kde-format
 msgid "M&iddle click opens URL in selection"
 msgstr "中クリックで選択した URL を開く(&I)"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:93
 #, kde-format
 msgid ""
 "If this box is checked, you can open the URL in the selection by middle "
@@ -1701,12 +1720,12 @@ msgstr ""
 "このオプションを有効にすると、マウスの中ボタンを押すことで、選択している URL "
 "を開くことができます。"
 
-#: htmlopts.cpp:91
+#: htmlopts.cpp:97
 #, kde-format
 msgid "Right click goes &back in history"
 msgstr "右クリックで前のページに戻る(&B)"
 
-#: htmlopts.cpp:94
+#: htmlopts.cpp:100
 #, kde-format
 msgid ""
 "If this box is checked, you can go back in history by right clicking on a "
@@ -1717,27 +1736,12 @@ msgstr ""
 "ことができます。コンテキストメニューを表示させるには、右ボタンを押しながらマ"
 "ウスを移動します。"
 
-#: htmlopts.cpp:104
-#, kde-format
-msgid "Allow automatic delayed &reloading/redirecting"
-msgstr "遅延された自動リロード/リダイレクトを許可する(&R)"
-
-#: htmlopts.cpp:105
-#, kde-format
-msgid ""
-"Some web pages request an automatic reload or redirection after a certain "
-"period of time. By unchecking this box Konqueror will ignore these requests."
-msgstr ""
-"ウェブページの中には一定時間が経過した後に自動的にリロードやリダイレクトを要"
-"求するものがあります。このオプションを無効にしておくと、Konqeuror はそうした"
-"要求を無視します。"
-
-#: htmlopts.cpp:111
+#: htmlopts.cpp:115
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "Ctrl キーでアクセスキーを有効にする(&Y)"
 
-#: htmlopts.cpp:112
+#: htmlopts.cpp:116
 #, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
@@ -1748,245 +1752,58 @@ msgstr ""
 "とができます。このボックスのチェックを外すと、このアクセシビリティ機能は利用"
 "できません。(この変更を適用するには Konqueror の再起動が必要です)"
 
-#: htmlopts.cpp:116
+#: htmlopts.cpp:121
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr ""
 
-#: htmlopts.cpp:117
-#, kde-format
-msgid ""
-"Check this box if you want to inform a web site that you do not want your "
-"web browsing habits tracked."
-msgstr ""
-
-#: htmlopts.cpp:121
-#, kde-format
-msgid "Offer to save website passwords"
-msgstr ""
-
 #: htmlopts.cpp:122
 #, kde-format
-msgid "Uncheck this box to prevent being prompted to save website passwords"
+msgid ""
+"<p>Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
+"considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
 
 #: htmlopts.cpp:126
 #, kde-format
-msgid "Display online PDF files using WebEngine"
+msgid "Offer to save website passwords"
 msgstr ""
 
 #: htmlopts.cpp:127
+#, kde-format
+msgid "Uncheck this box to prevent being prompted to save website passwords"
+msgstr ""
+
+#: htmlopts.cpp:131
+#, kde-format
+msgid "Display online PDF files using WebEngine"
+msgstr ""
+
+#: htmlopts.cpp:132
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
 msgstr ""
 
-#: javaopts.cpp:78
+#: htmlopts.cpp:136
 #, kde-format
-msgid "Enable Ja&va globally"
-msgstr "Java を全体で有効にする(&V)"
+msgid "Always display files from web pages in a new tab"
+msgstr ""
 
-#: javaopts.cpp:93
-#, kde-format
-msgid "Java Runtime Settings"
-msgstr "Java 実行環境設定"
-
-#: javaopts.cpp:97
-#, kde-format
-msgid "&Use security manager"
-msgstr "セキュリティマネージャを使う(&U)"
-
-#: javaopts.cpp:101
-#, kde-format
-msgid "Use &KIO"
-msgstr "KIO を使う(&K)"
-
-#: javaopts.cpp:105
-#, kde-format
-msgid "Shu&tdown applet server when inactive for more than"
-msgstr "次の時間非アクティブであればアプレットサーバを停止する(&T):"
-
-#: javaopts.cpp:117
-#, fuzzy, kde-format
-#| msgid " sec"
-msgid " second"
-msgid_plural " seconds"
-msgstr[0] " 秒"
-
-#: javaopts.cpp:123
-#, kde-format
-msgid "&Path to Java executable, or 'java':"
-msgstr "Java 実行ファイルまたは “java” へのパス(&P):"
-
-# ACCELERATOR changed by translator
-#: javaopts.cpp:127
-#, kde-format
-msgid "Additional Java a&rguments:"
-msgstr "追加 Java 引数(&M):"
-
-#: javaopts.cpp:132
+#: htmlopts.cpp:137
 #, kde-format
 msgid ""
-"Enables the execution of scripts written in Java that can be contained in "
-"HTML pages. Note that, as with any browser, enabling active contents can be "
-"a security problem."
+"<p>When showing in Konqueror files from links in web pages, always use a new "
+"tab"
 msgstr ""
-"HTML ページに含まれる Java で書かれたスクリプトの実行を許可します。他のブラウ"
-"ザと同様に、アクティブコンテンツの有効化はセキュリティホールとなりうることに"
-"注意してください。"
 
-#: javaopts.cpp:135
-#, kde-format
-msgid ""
-"<p>This box contains the domains and hosts you have set a specific Java "
-"policy for. This policy will be used instead of the default policy for "
-"enabling or disabling Java applets on pages sent by these domains or hosts.</"
-"p><p>Select a policy and use the controls on the right to modify it.</p>"
-msgstr ""
-"<p>ここにはドメイン固有の Java ポリシーを設定したホストまたはドメインが表示さ"
-"れます。これらのドメインやホストから送られて来たページの Java アプレットにつ"
-"いては、全体設定のポリシーではなく、それぞれのポリシーが実行を許可するかどう"
-"かを決定します。</p><p>変更するには、ポリシーを選択して右側のボタンを使ってく"
-"ださい。</p>"
-
-#: javaopts.cpp:142
-#, kde-format
-msgid ""
-"Click this button to choose the file that contains the Java policies. These "
-"policies will be merged with the existing ones. Duplicate entries are "
-"ignored."
-msgstr ""
-"Java ポリシーを含むファイルを選択するにはこのボタンをクリックしてください。"
-"ファイル内のポリシーは定義済みのものに統合されます。重複したエントリは無視さ"
-"れます。"
-
-#: javaopts.cpp:145
-#, kde-format
-msgid ""
-"Click this button to save the Java policy to a zipped file. The file, named "
-"<b>java_policy.tgz</b>, will be saved to a location of your choice."
-msgstr ""
-"Java ポリシーを zip ファイルに保存します。ファイルは <b>java_policy.tgz</b> "
-"というファイル名で、指定した場所に保存されます。"
-
-#: javaopts.cpp:149
-#, kde-format
-msgid ""
-"Here you can set specific Java policies for any particular host or domain. "
-"To add a new policy, simply click the <i>New...</i> button and supply the "
-"necessary information requested by the dialog box. To change an existing "
-"policy, click on the <i>Change...</i> button and choose the new policy from "
-"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
-"selected policy, causing the default policy setting to be used for that "
-"domain."
-msgstr ""
-"<qt>ここで特定のホストまたはドメインに対する Java ポリシーを設定できます。ポ"
-"リシーを追加するには「新規」ボタンをクリックして、ダイアログボックスに必要な"
-"情報を入力してください。既存のポリシーを変更するには「変更」ボタンをクリック"
-"し、ダイアログボックスで変更してください。「削除」ボタンをクリックすると、選"
-"択されたポリシーを削除します。削除した場合、そのドメインには全体設定のポリ"
-"シーが適用されます。</qt>"
-
-#: javaopts.cpp:162
-#, kde-format
-msgid ""
-"Enabling the security manager will cause the jvm to run with a Security "
-"Manager in place. This will keep applets from being able to read and write "
-"to your file system, creating arbitrary sockets, and other actions which "
-"could be used to compromise your system. Disable this option at your own "
-"risk. You can modify your $HOME/.java.policy file with the Java policytool "
-"utility to give code downloaded from certain sites more permissions."
-msgstr ""
-"セキュリティマネージャを有効にすると、JVM (Java 仮想マシン) はセキュリティマ"
-"ネージャと一緒に稼働するようになります。これによって Java アプレットがあなた"
-"のファイルシステムにアクセスして読み取りや書き込みを行ったり、勝手にソケット"
-"を作成するといったシステムを危険にさらすような動作を防ぐことができます。この"
-"オプションを無効にする場合は、自己責任で行ってください。\n"
-"$HOME/.java.policy ファイルを Java ポリシーツールユーティリティを使って編集し"
-"て、特定のサイトからダウンロードされたものに対して、さらに許可を割り当てるこ"
-"ともできます。"
-
-#: javaopts.cpp:170
-#, kde-format
-msgid "Enabling this will cause the jvm to use KIO for network transport "
-msgstr ""
-"このオプションを有効にすると、JVM はネットワーク上での送受信に KIO を使用しま"
-"す。"
-
-#: javaopts.cpp:172
-#, kde-format
-msgid ""
-"Enter the path to the java executable. If you want to use the jre in your "
-"path, simply leave it as 'java'. If you need to use a different jre, enter "
-"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
-"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
-msgstr ""
-"Java 実行ファイルへのパスを入力してください。PATH にある JRE を使用する場合"
-"は、Java 実行ファイルの名前を “java” のままにしておいてください。\n"
-"別の JRE を使用する場合は、Java 実行ファイルへのパス (例 ‘/usr/lib/jdk/bin/"
-"java’) または ‘bin/java’ を含むディレクトリへのパス (例 ‘/opt/IBMJava2-13’) "
-"を入力してください。"
-
-#: javaopts.cpp:177
-#, kde-format
-msgid ""
-"If you want special arguments to be passed to the virtual machine, enter "
-"them here."
-msgstr "仮想マシンに渡すべき特別な引数がある場合は、ここに入力してください。"
-
-#: javaopts.cpp:179
-#, kde-format
-msgid ""
-"When all the applets have been destroyed, the applet server should shut "
-"down. However, starting the jvm takes a lot of time. If you would like to "
-"keep the java process running while you are browsing, you can set the "
-"timeout value to whatever you like. To keep the java process running for the "
-"whole time that the konqueror process is, leave the Shutdown Applet Server "
-"checkbox unchecked."
-msgstr ""
-"アプレットがすべて解放されたらアプレットサーバも停止するべきです。しかし、"
-"JVM の起動には時間がかかります。ブラウズ中も Java プロセスを実行させておく場"
-"合は、アプレットサーバのタイムアウトの値を実行させておく任意の時間に設定して"
-"ください。\n"
-"konqueror を終了するまで Java プロセスを実行させておくには、「非アクティブ時"
-"にはアプレットサーバを停止する」のチェックを外してください。"
-
-#: javaopts.cpp:288
-#, kde-format
-msgctxt "@title:group"
-msgid "Doma&in-Specific"
-msgstr "ドメイン固有設定(&I)"
-
-#: javaopts.cpp:323
-#, fuzzy, kde-format
-#| msgid "New Java Policy"
-msgctxt "@title:window"
-msgid "New Java Policy"
-msgstr "新しい Java ポリシー"
-
-#: javaopts.cpp:326
-#, fuzzy, kde-format
-#| msgid "Change Java Policy"
-msgctxt "@title:window"
-msgid "Change Java Policy"
-msgstr "Java ポリシーを変更"
-
-#: javaopts.cpp:330
-#, kde-format
-msgid "&Java policy:"
-msgstr "&Java ポリシー:"
-
-#: javaopts.cpp:331
-#, kde-format
-msgid "Select a Java policy for the above host or domain."
-msgstr "上のホストまたはドメインに対する Java ポリシーを選択してください。"
-
-#: jsopts.cpp:50
+#: jsopts.cpp:57
 #, kde-format
 msgid "Ena&ble JavaScript globally"
 msgstr "JavaScript を全体で有効にする(&B)"
 
-#: jsopts.cpp:51
+#: jsopts.cpp:58
 #, kde-format
 msgid ""
 "Enables the execution of scripts written in ECMA-Script (also known as "
@@ -1997,34 +1814,7 @@ msgstr ""
 "す。他のブラウザと同様に、スクリプト言語の有効化はセキュリティホールとなりう"
 "ることに注意してください。"
 
-#: jsopts.cpp:59
-#, kde-format
-msgid "Debugging"
-msgstr "デバッグ"
-
-# ACCELERATOR changed by translator
-#: jsopts.cpp:63
-#, kde-format
-msgid "Enable debu&gger"
-msgstr "デバッガを有効にする(&U)"
-
-#: jsopts.cpp:64
-#, kde-format
-msgid "Enables builtin JavaScript debugger."
-msgstr "ビルトインの JavaScript デバッガを有効にします。"
-
-#: jsopts.cpp:68
-#, kde-format
-msgid "Report &errors"
-msgstr "エラーを報告する(&E)"
-
-#: jsopts.cpp:69
-#, kde-format
-msgid ""
-"Enables the reporting of errors that occur when JavaScript code is executed."
-msgstr "JavaScript の実行時にエラーが発生した場合に報告します。"
-
-#: jsopts.cpp:79
+#: jsopts.cpp:70
 #, kde-format
 msgid ""
 "Here you can set specific JavaScript policies for any particular host or "
@@ -2046,7 +1836,7 @@ msgstr ""
 "zip ファイルに保存したり、逆に zip ファイルから設定を読み込むときに使用しま"
 "す。これによって簡単に他の人と設定を共有できるようになります。</qt>"
 
-#: jsopts.cpp:89
+#: jsopts.cpp:80
 #, kde-format
 msgid ""
 "<p>This box contains the domains and hosts you have set a specific "
@@ -2061,7 +1851,7 @@ msgstr ""
 "うかを決定します。</p><p>変更するには、ポリシーを選択して右側のボタンを使って"
 "ください。</p>"
 
-#: jsopts.cpp:96
+#: jsopts.cpp:87
 #, kde-format
 msgid ""
 "Click this button to choose the file that contains the JavaScript policies. "
@@ -2072,7 +1862,7 @@ msgstr ""
 "さい。ファイル内のポリシーは定義済みのものに統合されます。重複したエントリは"
 "無視されます。"
 
-#: jsopts.cpp:99
+#: jsopts.cpp:90
 #, kde-format
 msgid ""
 "Click this button to save the JavaScript policy to a zipped file. The file, "
@@ -2082,96 +1872,60 @@ msgstr ""
 "JavaScript ポリシーを zip ファイルに保存します。ファイルは "
 "<b>javascript_policy.tgz</b> というファイル名で、指定した場所に保存されます。"
 
-#: jsopts.cpp:105
+#: jsopts.cpp:96
 #, kde-format
 msgid "Global JavaScript Policies"
 msgstr "全体の JavaScript ポリシー"
 
-#: jsopts.cpp:172
-#, kde-format
-msgctxt "@title:group"
-msgid "Do&main-Specific"
-msgstr "ドメイン固有設定(&M)"
-
-#: jsopts.cpp:211
-#, fuzzy, kde-format
-#| msgid "New JavaScript Policy"
-msgctxt "@title:window"
-msgid "New JavaScript Policy"
-msgstr "新しい JavaScript ポリシー"
-
-#: jsopts.cpp:214
-#, fuzzy, kde-format
-#| msgid "Change JavaScript Policy"
-msgctxt "@title:window"
-msgid "Change JavaScript Policy"
-msgstr "JavaScript ポリシーを変更"
-
-#: jsopts.cpp:218
-#, kde-format
-msgid "JavaScript policy:"
-msgstr "JavaScript ポリシー:"
-
-#: jsopts.cpp:219
-#, kde-format
-msgid "Select a JavaScript policy for the above host or domain."
-msgstr ""
-"上のホストまたはドメイン名に対する JavaScript ポリシーを選択してください。"
-
-#: jsopts.cpp:221
-#, kde-format
-msgid "Domain-Specific JavaScript Policies"
-msgstr "ドメイン固有の JavaScript ポリシー"
-
-#: jspolicies.cpp:132
+#: jspolicies.cpp:161
 #, kde-format
 msgid "Open new windows:"
 msgstr "新しいウィンドウを開く:"
 
-#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
-#: jspolicies.cpp:308
+#: jspolicies.cpp:169 jspolicies.cpp:223 jspolicies.cpp:260 jspolicies.cpp:297
+#: jspolicies.cpp:337
 #, kde-format
 msgid "Use global"
 msgstr "全体設定を使う"
 
-#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
-#: jspolicies.cpp:309
+#: jspolicies.cpp:170 jspolicies.cpp:224 jspolicies.cpp:261 jspolicies.cpp:298
+#: jspolicies.cpp:338
 #, kde-format
 msgid "Use setting from global policy."
 msgstr "全体設定のポリシーを使用します。"
 
-#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
-#: jspolicies.cpp:315
+#: jspolicies.cpp:176 jspolicies.cpp:230 jspolicies.cpp:267 jspolicies.cpp:304
+#: jspolicies.cpp:344
 #, kde-format
 msgid "Allow"
 msgstr "許可する"
 
-#: jspolicies.cpp:148
+#: jspolicies.cpp:177
 #, kde-format
 msgid "Accept all popup window requests."
 msgstr "すべてのポップアップウィンドウを許可します。"
 
-#: jspolicies.cpp:154
+#: jspolicies.cpp:183
 #, kde-format
 msgid "Prompt every time a popup window is requested."
 msgstr "ポップアップウィンドウが要求されるたびに確認を求めます。"
 
-#: jspolicies.cpp:159
+#: jspolicies.cpp:188
 #, kde-format
 msgid "Deny"
 msgstr "拒否する"
 
-#: jspolicies.cpp:160
+#: jspolicies.cpp:189
 #, kde-format
 msgid "Reject all popup window requests."
 msgstr "すべてのポップアップウィンドウを拒否します。"
 
-#: jspolicies.cpp:165
+#: jspolicies.cpp:194
 #, kde-format
 msgid "Smart"
 msgstr "スマート"
 
-#: jspolicies.cpp:166
+#: jspolicies.cpp:195
 #, kde-format
 msgid ""
 "Accept popup window requests only when links are activated through an "
@@ -2180,7 +1934,7 @@ msgstr ""
 "マウスクリックまたはキーボード操作によって明示的にリンクが選択された場合にの"
 "み、ポップアップウィンドウを許可します。"
 
-#: jspolicies.cpp:173
+#: jspolicies.cpp:202
 #, kde-format
 msgid ""
 "If you disable this, Konqueror will stop interpreting the <i>window.open()</"
@@ -2196,22 +1950,22 @@ msgstr ""
 "open()</tt> を必要としているサイトも正しく表示できなくなります。注意して使っ"
 "てください。</p></qt>"
 
-#: jspolicies.cpp:187
+#: jspolicies.cpp:216
 #, kde-format
 msgid "Resize window:"
 msgstr "ウィンドウをリサイズ:"
 
-#: jspolicies.cpp:202
+#: jspolicies.cpp:231
 #, kde-format
 msgid "Allow scripts to change the window size."
 msgstr "スクリプトによるウィンドウのサイズ変更を許可します。"
 
-#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#: jspolicies.cpp:236 jspolicies.cpp:273 jspolicies.cpp:310 jspolicies.cpp:350
 #, kde-format
 msgid "Ignore"
 msgstr "無視する"
 
-#: jspolicies.cpp:208
+#: jspolicies.cpp:237
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
@@ -2220,7 +1974,7 @@ msgstr ""
 "スクリプトによるウィンドウのサイズ変更要求を無視します。ウェブページはサイズ"
 "を変更したと「考えます」が、実際にはウィンドウのサイズは変わりません。"
 
-#: jspolicies.cpp:215
+#: jspolicies.cpp:244
 #, kde-format
 msgid ""
 "Some websites change the window size on their own by using <i>window."
@@ -2231,17 +1985,17 @@ msgstr ""
 "resizeTo()</tt> を使ってウィンドウのサイズを変更しようとするものがあります。"
 "このオプションはそのような要求をどう処理するかを決定します。</qt>"
 
-#: jspolicies.cpp:224
+#: jspolicies.cpp:253
 #, kde-format
 msgid "Move window:"
 msgstr "ウィンドウを移動:"
 
-#: jspolicies.cpp:239
+#: jspolicies.cpp:268
 #, kde-format
 msgid "Allow scripts to change the window position."
 msgstr "スクリプトによるウィンドウ位置の変更を許可します。"
 
-#: jspolicies.cpp:245
+#: jspolicies.cpp:274
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the window position. The web page will "
@@ -2250,7 +2004,7 @@ msgstr ""
 "スクリプトによるウィンドウ位置の変更要求を無視します。ウェブページはウィンド"
 "ウを移動したと「考えます」が、実際には位置は変わりません。"
 
-#: jspolicies.cpp:252
+#: jspolicies.cpp:281
 #, kde-format
 msgid ""
 "Some websites change the window position on their own by using <i>window."
@@ -2261,17 +2015,17 @@ msgstr ""
 "tt> を使ってウィンドウの位置を変更しようとするものがあります。このオプション"
 "はそのような要求をどう処理するかを決定します。</qt>"
 
-#: jspolicies.cpp:261
+#: jspolicies.cpp:290
 #, kde-format
 msgid "Focus window:"
 msgstr "ウィンドウをフォーカス:"
 
-#: jspolicies.cpp:276
+#: jspolicies.cpp:305
 #, kde-format
 msgid "Allow scripts to focus the window."
 msgstr "スクリプトがウィンドウにフォーカスを設定することを許可します。"
 
-#: jspolicies.cpp:282
+#: jspolicies.cpp:311
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to focus the window. The web page will <i>think</"
@@ -2282,7 +2036,7 @@ msgstr ""
 "ウィンドウにフォーカスを設定したと「考えます」が、実際にはフォーカスは移動し"
 "ません。"
 
-#: jspolicies.cpp:290
+#: jspolicies.cpp:319
 #, kde-format
 msgid ""
 "Some websites set the focus to their browser window on their own by using "
@@ -2295,17 +2049,17 @@ msgstr ""
 "作に割り込んで、読み込まれたウィンドウを前面に移動します。このオプションはそ"
 "のような要求をどう処理するかを決定します。</qt>"
 
-#: jspolicies.cpp:301
+#: jspolicies.cpp:330
 #, kde-format
 msgid "Modify status bar text:"
 msgstr "ステータスバーの文字列を変更:"
 
-#: jspolicies.cpp:316
+#: jspolicies.cpp:345
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
 msgstr "スクリプトによるステータスバーの文字列変更を許可します。"
 
-#: jspolicies.cpp:322
+#: jspolicies.cpp:351
 #, kde-format
 msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
@@ -2314,7 +2068,7 @@ msgstr ""
 "スクリプトによるステータスバーの文字列変更要求を無視します。ウェブページは文"
 "字列を変更したと「考えます」が、実際には文字列は変わりません。"
 
-#: jspolicies.cpp:330
+#: jspolicies.cpp:359
 #, kde-format
 msgid ""
 "Some websites change the status bar text by setting <i>window.status</i> or "
@@ -2325,16 +2079,6 @@ msgstr ""
 "tt> を使ってステータスバーの文字列を変更しようとするものがあります。これに"
 "よって、ハイパーリンクの本当の URL が表示されなくなります。このオプションはそ"
 "のような要求をどう処理するかを決定します。</qt>"
-
-#: main.cpp:49
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
-
-#: main.cpp:53
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
 
 #: policydlg.cpp:30
 #, fuzzy, kde-format
@@ -2618,9 +2362,8 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150 useragent/useragent.ui:163
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr ""
@@ -2663,6 +2406,14 @@ msgstr "削除(&L)"
 msgid "Choose &selected identification"
 msgstr ""
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:163
+#, kde-format
+msgid ""
+"<html><head/><body><p>If checked, disable choosing a custom identification "
+"and use the default one</p></body></html>"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
 #, kde-format
@@ -2684,6 +2435,217 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+
+# ACCELERATOR removed by translator
+#~ msgid "Form Com&pletion"
+#~ msgstr "フォーム補完"
+
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "リンク上でカーソルを変更する(&G)"
+
+#~ msgid ""
+#~ "If this option is set, the shape of the cursor will change (usually to a "
+#~ "hand) if it is moved over a hyperlink."
+#~ msgstr ""
+#~ "このオプションを有効にすると、ハイパーリンクの上にマウスカーソルを移動した"
+#~ "ときにカーソルの形が (通常は手の形に) 変わります。"
+
+#~ msgid "Allow automatic delayed &reloading/redirecting"
+#~ msgstr "遅延された自動リロード/リダイレクトを許可する(&R)"
+
+#~ msgid ""
+#~ "Some web pages request an automatic reload or redirection after a certain "
+#~ "period of time. By unchecking this box Konqueror will ignore these "
+#~ "requests."
+#~ msgstr ""
+#~ "ウェブページの中には一定時間が経過した後に自動的にリロードやリダイレクトを"
+#~ "要求するものがあります。このオプションを無効にしておくと、Konqeuror はそう"
+#~ "した要求を無視します。"
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "Java を全体で有効にする(&V)"
+
+#~ msgid "Java Runtime Settings"
+#~ msgstr "Java 実行環境設定"
+
+#~ msgid "&Use security manager"
+#~ msgstr "セキュリティマネージャを使う(&U)"
+
+#~ msgid "Use &KIO"
+#~ msgstr "KIO を使う(&K)"
+
+#~ msgid "Shu&tdown applet server when inactive for more than"
+#~ msgstr "次の時間非アクティブであればアプレットサーバを停止する(&T):"
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " 秒"
+
+#~ msgid "&Path to Java executable, or 'java':"
+#~ msgstr "Java 実行ファイルまたは “java” へのパス(&P):"
+
+# ACCELERATOR changed by translator
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "追加 Java 引数(&M):"
+
+#~ msgid ""
+#~ "Enables the execution of scripts written in Java that can be contained in "
+#~ "HTML pages. Note that, as with any browser, enabling active contents can "
+#~ "be a security problem."
+#~ msgstr ""
+#~ "HTML ページに含まれる Java で書かれたスクリプトの実行を許可します。他のブ"
+#~ "ラウザと同様に、アクティブコンテンツの有効化はセキュリティホールとなりうる"
+#~ "ことに注意してください。"
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific Java "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling Java applets on pages sent by these domains or "
+#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
+#~ "it.</p>"
+#~ msgstr ""
+#~ "<p>ここにはドメイン固有の Java ポリシーを設定したホストまたはドメインが表"
+#~ "示されます。これらのドメインやホストから送られて来たページの Java アプレッ"
+#~ "トについては、全体設定のポリシーではなく、それぞれのポリシーが実行を許可す"
+#~ "るかどうかを決定します。</p><p>変更するには、ポリシーを選択して右側のボタ"
+#~ "ンを使ってください。</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the Java policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "Java ポリシーを含むファイルを選択するにはこのボタンをクリックしてくださ"
+#~ "い。ファイル内のポリシーは定義済みのものに統合されます。重複したエントリは"
+#~ "無視されます。"
+
+#~ msgid ""
+#~ "Click this button to save the Java policy to a zipped file. The file, "
+#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
+#~ msgstr ""
+#~ "Java ポリシーを zip ファイルに保存します。ファイルは <b>java_policy.tgz</"
+#~ "b> というファイル名で、指定した場所に保存されます。"
+
+#~ msgid ""
+#~ "Here you can set specific Java policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy, causing the default policy "
+#~ "setting to be used for that domain."
+#~ msgstr ""
+#~ "<qt>ここで特定のホストまたはドメインに対する Java ポリシーを設定できます。"
+#~ "ポリシーを追加するには「新規」ボタンをクリックして、ダイアログボックスに必"
+#~ "要な情報を入力してください。既存のポリシーを変更するには「変更」ボタンをク"
+#~ "リックし、ダイアログボックスで変更してください。「削除」ボタンをクリックす"
+#~ "ると、選択されたポリシーを削除します。削除した場合、そのドメインには全体設"
+#~ "定のポリシーが適用されます。</qt>"
+
+#~ msgid ""
+#~ "Enabling the security manager will cause the jvm to run with a Security "
+#~ "Manager in place. This will keep applets from being able to read and "
+#~ "write to your file system, creating arbitrary sockets, and other actions "
+#~ "which could be used to compromise your system. Disable this option at "
+#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
+#~ "policytool utility to give code downloaded from certain sites more "
+#~ "permissions."
+#~ msgstr ""
+#~ "セキュリティマネージャを有効にすると、JVM (Java 仮想マシン) はセキュリティ"
+#~ "マネージャと一緒に稼働するようになります。これによって Java アプレットがあ"
+#~ "なたのファイルシステムにアクセスして読み取りや書き込みを行ったり、勝手にソ"
+#~ "ケットを作成するといったシステムを危険にさらすような動作を防ぐことができま"
+#~ "す。このオプションを無効にする場合は、自己責任で行ってください。\n"
+#~ "$HOME/.java.policy ファイルを Java ポリシーツールユーティリティを使って編"
+#~ "集して、特定のサイトからダウンロードされたものに対して、さらに許可を割り当"
+#~ "てることもできます。"
+
+#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
+#~ msgstr ""
+#~ "このオプションを有効にすると、JVM はネットワーク上での送受信に KIO を使用"
+#~ "します。"
+
+#~ msgid ""
+#~ "Enter the path to the java executable. If you want to use the jre in your "
+#~ "path, simply leave it as 'java'. If you need to use a different jre, "
+#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
+#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
+#~ "IBMJava2-13)."
+#~ msgstr ""
+#~ "Java 実行ファイルへのパスを入力してください。PATH にある JRE を使用する場"
+#~ "合は、Java 実行ファイルの名前を “java” のままにしておいてください。\n"
+#~ "別の JRE を使用する場合は、Java 実行ファイルへのパス (例 ‘/usr/lib/jdk/"
+#~ "bin/java’) または ‘bin/java’ を含むディレクトリへのパス (例 ‘/opt/"
+#~ "IBMJava2-13’) を入力してください。"
+
+#~ msgid ""
+#~ "If you want special arguments to be passed to the virtual machine, enter "
+#~ "them here."
+#~ msgstr ""
+#~ "仮想マシンに渡すべき特別な引数がある場合は、ここに入力してください。"
+
+#~ msgid ""
+#~ "When all the applets have been destroyed, the applet server should shut "
+#~ "down. However, starting the jvm takes a lot of time. If you would like to "
+#~ "keep the java process running while you are browsing, you can set the "
+#~ "timeout value to whatever you like. To keep the java process running for "
+#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
+#~ "Server checkbox unchecked."
+#~ msgstr ""
+#~ "アプレットがすべて解放されたらアプレットサーバも停止するべきです。しかし、"
+#~ "JVM の起動には時間がかかります。ブラウズ中も Java プロセスを実行させておく"
+#~ "場合は、アプレットサーバのタイムアウトの値を実行させておく任意の時間に設定"
+#~ "してください。\n"
+#~ "konqueror を終了するまで Java プロセスを実行させておくには、「非アクティブ"
+#~ "時にはアプレットサーバを停止する」のチェックを外してください。"
+
+#~ msgctxt "@title:group"
+#~ msgid "Doma&in-Specific"
+#~ msgstr "ドメイン固有設定(&I)"
+
+#, fuzzy
+#~| msgid "New Java Policy"
+#~ msgctxt "@title:window"
+#~ msgid "New Java Policy"
+#~ msgstr "新しい Java ポリシー"
+
+#, fuzzy
+#~| msgid "Change Java Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Change Java Policy"
+#~ msgstr "Java ポリシーを変更"
+
+#~ msgid "&Java policy:"
+#~ msgstr "&Java ポリシー:"
+
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr "上のホストまたはドメインに対する Java ポリシーを選択してください。"
+
+#~ msgid "Debugging"
+#~ msgstr "デバッグ"
+
+# ACCELERATOR changed by translator
+#~ msgid "Enable debu&gger"
+#~ msgstr "デバッガを有効にする(&U)"
+
+#~ msgid "Enables builtin JavaScript debugger."
+#~ msgstr "ビルトインの JavaScript デバッガを有効にします。"
+
+#~ msgid "Report &errors"
+#~ msgstr "エラーを報告する(&E)"
+
+#~ msgid ""
+#~ "Enables the reporting of errors that occur when JavaScript code is "
+#~ "executed."
+#~ msgstr "JavaScript の実行時にエラーが発生した場合に報告します。"
+
+#~ msgid "&Java"
+#~ msgstr "&Java"
+
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
 #~ msgid ""
 #~ "This will open a new tab in the background, instead of in the foreground."
