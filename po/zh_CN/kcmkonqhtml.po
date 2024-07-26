@@ -1741,15 +1741,12 @@ msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr "发送 DNT 头来告诉网站您不想被跟踪"
 
 #: htmlopts.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this box if you want to inform a web site that you do not want your "
-#| "web browsing habits tracked."
+#, kde-format
 msgid ""
 "<p>Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
 "considered obsolete, so it will likely be ignored by most web pages.</p>"
-msgstr "如果您希望通知网站您不想您的网页浏览行为被记录，请选中此项。"
+msgstr ""
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -2351,14 +2348,11 @@ msgstr "选择已选中的标识(&S)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>The custom background color to use for web pages</"
-#| "p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
-msgstr "<html><head/><body><p>网页的自定义背景色</p></body></html>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
@@ -2384,188 +2378,3 @@ msgstr ""
 "<html><head/><body><p>默认标识被禁用时要使用的浏览器标识。</p><p>您可以手动输"
 "入一个浏览器标识，或者从下面的列表中选择一个，然后按照自己的需要进行修改。</"
 "p></body></html>"
-
-#~ msgid "Form Com&pletion"
-#~ msgstr "表单补全(&P)"
-
-#~ msgid "Chan&ge cursor over links"
-#~ msgstr "悬停链接时更改光标形状(&G)"
-
-#~ msgid ""
-#~ "If this option is set, the shape of the cursor will change (usually to a "
-#~ "hand) if it is moved over a hyperlink."
-#~ msgstr ""
-#~ "如果设置了这个选项，当鼠标移动到超级链接上时，指针将会改变形状(通常会是一"
-#~ "个手的形状)"
-
-#~ msgid "Allow automatic delayed &reloading/redirecting"
-#~ msgstr "允许自动延迟重新加载/重定向(&R)"
-
-#~ msgid ""
-#~ "Some web pages request an automatic reload or redirection after a certain "
-#~ "period of time. By unchecking this box Konqueror will ignore these "
-#~ "requests."
-#~ msgstr ""
-#~ "某些网页会请求在经过一段时间后自动重新加载或重定向。取消此框将使得 "
-#~ "Konqueror 忽略这些请求。"
-
-#~ msgid "Enable Ja&va globally"
-#~ msgstr "全局启用 Ja&va"
-
-#~ msgid "Java Runtime Settings"
-#~ msgstr "Java 运行时刻设置"
-
-#~ msgid "&Use security manager"
-#~ msgstr "使用安全管理器(&U)"
-
-#~ msgid "Use &KIO"
-#~ msgstr "使用 &KIO"
-
-#~ msgid "Shu&tdown applet server when inactive for more than"
-#~ msgstr "关闭小程序服务器前的空闲等待时间(&T)"
-
-#~ msgid " second"
-#~ msgid_plural " seconds"
-#~ msgstr[0] " 秒"
-
-#~ msgid "&Path to Java executable, or 'java':"
-#~ msgstr "Java 执行程序的路径，或“java”(&P)："
-
-#~ msgid "Additional Java a&rguments:"
-#~ msgstr "其他的 Java 参数(&R)："
-
-#~ msgid ""
-#~ "Enables the execution of scripts written in Java that can be contained in "
-#~ "HTML pages. Note that, as with any browser, enabling active contents can "
-#~ "be a security problem."
-#~ msgstr ""
-#~ "允许执行 HTML 页面中包含的用 Java 写成的脚本。请注意，和其他浏览器一样，允"
-#~ "许活动的内容可能会带来安全问题。"
-
-#~ msgid ""
-#~ "<p>This box contains the domains and hosts you have set a specific Java "
-#~ "policy for. This policy will be used instead of the default policy for "
-#~ "enabling or disabling Java applets on pages sent by these domains or "
-#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
-#~ "it.</p>"
-#~ msgstr ""
-#~ "<p>此框中包含了您设置特定的 Java 策略的域名和主机。对于这些域名或主机发送"
-#~ "的页面，将会应用此策略而不是默认策略的启用或禁用。</p><p>请选择一个策略并"
-#~ "使用右边的按钮进行修改。</p>"
-
-#~ msgid ""
-#~ "Click this button to choose the file that contains the Java policies. "
-#~ "These policies will be merged with the existing ones. Duplicate entries "
-#~ "are ignored."
-#~ msgstr ""
-#~ "单击此按钮选择包含 Java 策略的文件。这些策略将与已有策略合并。重复的将被忽"
-#~ "略。"
-
-#~ msgid ""
-#~ "Click this button to save the Java policy to a zipped file. The file, "
-#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
-#~ msgstr ""
-#~ "单击此按钮将 Java 策略保存为压缩文件 <b>java_policy.tgz</b>，它将保存在您"
-#~ "指定的位置。"
-
-#~ msgid ""
-#~ "Here you can set specific Java policies for any particular host or "
-#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
-#~ "supply the necessary information requested by the dialog box. To change "
-#~ "an existing policy, click on the <i>Change...</i> button and choose the "
-#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#~ "button will remove the selected policy, causing the default policy "
-#~ "setting to be used for that domain."
-#~ msgstr ""
-#~ "您可以在这里为特定的主机或域名设置 Java 策略。要添加新的策略，请单击<i>新"
-#~ "建...</i>按钮并在对话框中提供必要的信息。要更改已有的策略，请单击<i>更"
-#~ "改...</i>按钮并从策略对话框中选择新的策略。单击<i>删除</i>按钮将删除选中策"
-#~ "略，这将使得对该域名应用默认的策略设置。"
-
-#~ msgid ""
-#~ "Enabling the security manager will cause the jvm to run with a Security "
-#~ "Manager in place. This will keep applets from being able to read and "
-#~ "write to your file system, creating arbitrary sockets, and other actions "
-#~ "which could be used to compromise your system. Disable this option at "
-#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
-#~ "policytool utility to give code downloaded from certain sites more "
-#~ "permissions."
-#~ msgstr ""
-#~ "启用安全管理器将使得 Java 虚拟机载安全管理器的位置运行。这能够保证小程序无"
-#~ "法读写您的文件系统，创建专用的 sockets，以及其他可能危及系统安全的操作。禁"
-#~ "用此选项可能带来风险。您可以用 Java 策略工具修改您的 $HOME/.java 策略文"
-#~ "件，以便给从特定网站下载的代码更多的许可。"
-
-#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
-#~ msgstr "启用此选项将导致 jvm 使用 KIO 进行网络传送"
-
-#~ msgid ""
-#~ "Enter the path to the java executable. If you want to use the jre in your "
-#~ "path, simply leave it as 'java'. If you need to use a different jre, "
-#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
-#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
-#~ "IBMJava2-13)."
-#~ msgstr ""
-#~ "输入 Java 可执行文件的路径。如果您想要使用路径中的 Java 运行环境，只需保"
-#~ "留“Java”。如果您需要不同的 Java 运行环境，请输入 Java 可执行文件的路径"
-#~ "(如 /usr/lib/jdk/bin/java)，或者包含“bin/java”的目录路径(如 /opt/"
-#~ "IBMJava2-13)。"
-
-#~ msgid ""
-#~ "If you want special arguments to be passed to the virtual machine, enter "
-#~ "them here."
-#~ msgstr "如果您需要传一些特殊的参数给虚拟机，请在这里输入。"
-
-#~ msgid ""
-#~ "When all the applets have been destroyed, the applet server should shut "
-#~ "down. However, starting the jvm takes a lot of time. If you would like to "
-#~ "keep the java process running while you are browsing, you can set the "
-#~ "timeout value to whatever you like. To keep the java process running for "
-#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
-#~ "Server checkbox unchecked."
-#~ msgstr ""
-#~ "如果所有的小程序都已被销毁，那么小程序服务器就应该关闭。然而，启动 Java 虚"
-#~ "拟机很费时间。如果您想要在您浏览的时候仍然保留 Java 进程，您可以将超时的值"
-#~ "设置为您希望的值。要在 Konqueror 进程全程保留 Java 进程，请不要选中关闭小"
-#~ "程序服务器。"
-
-#~ msgctxt "@title:group"
-#~ msgid "Doma&in-Specific"
-#~ msgstr "特定域(&I)"
-
-#~ msgctxt "@title:window"
-#~ msgid "New Java Policy"
-#~ msgstr "新建 Java 策略"
-
-#~ msgctxt "@title:window"
-#~ msgid "Change Java Policy"
-#~ msgstr "修改 Java 策略"
-
-#~ msgid "&Java policy:"
-#~ msgstr "&Java 策略："
-
-#~ msgid "Select a Java policy for the above host or domain."
-#~ msgstr "为以上主机或域选择 Java 策略。"
-
-#~ msgid "Debugging"
-#~ msgstr "调试"
-
-#~ msgid "Enable debu&gger"
-#~ msgstr "启用调试器(&G)"
-
-#~ msgid "Enables builtin JavaScript debugger."
-#~ msgstr "启用内置 JavaScript 调试器。"
-
-#~ msgid "Report &errors"
-#~ msgstr "报告错误(&E)"
-
-#~ msgid ""
-#~ "Enables the reporting of errors that occur when JavaScript code is "
-#~ "executed."
-#~ msgstr "启用 JavaScript 代码执行时所发生错误的报告。"
-
-#~ msgid "&Java"
-#~ msgstr "&Java"
-
-#~ msgid "Java&Script"
-#~ msgstr "Java&Script"

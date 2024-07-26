@@ -13,14 +13,14 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-25 02:29+0000\n"
-"PO-Revision-Date: 2024-04-27 22:36+0200\n"
+"PO-Revision-Date: 2024-07-25 17:29+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: appearance.cpp:39
@@ -1855,17 +1855,16 @@ msgstr ""
 "bildu ditzaten"
 
 #: htmlopts.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this box if you want to inform a web site that you do not want your "
-#| "web browsing habits tracked."
+#, kde-format
 msgid ""
 "<p>Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
 "considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
-"Markatu kontrol hau webgune bati jakinarazi nahi badiozu ez duzula zure web "
-"arakatze ohituren aztarnak bildu ditzaten nahi."
+"<p>Markatu lauki hau webgune bati jakinarazi nahi badiozu ez duzula zure web "
+"arakatze ohituren aztarnak bildu ditzaten nahi.</p><p><strong>Abisua:</"
+"strong> goiburu hau zaharkituta dagoela jotzen da, beraz, litekeena da web "
+"orri gehienek ezikusiarena egitea.</p>"
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -1894,7 +1893,7 @@ msgstr ""
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Always display files from web pages in a new tab"
-msgstr ""
+msgstr "Eraktsi beti web orrietako fitxategiak fitxa berri batean"
 
 #: htmlopts.cpp:137
 #, kde-format
@@ -1902,6 +1901,8 @@ msgid ""
 "<p>When showing in Konqueror files from links in web pages, always use a new "
 "tab"
 msgstr ""
+"<p>Konqueror-ren web orrietako esteketako fitxategiak erakustean, erabili "
+"beti fitxa berri bat"
 
 #: jsopts.cpp:57
 #, kde-format
@@ -2506,16 +2507,13 @@ msgstr "Hautatu &aukeratutako identifikazioa"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>The custom background color to use for web pages</"
-#| "p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Web-orrietarako erabili beharreko neurrira ipinitako "
-"hondoko kolorea</p></body></html>"
+"<html><head/><body><p>Markatuta badago, ezgaitu neurrira ipinitako "
+"identifikazio bat aukeratzea eta lehenetsitakoa erabili</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166

@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2010, 2011, 2012, 2017, 2019, 2020, 2021, 2022, 2023 g.sora <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2017, 2019, 2020, 2021, 2022, 2023, 2024 g.sora <g.sora@tiscali.it>
 # giovanni <g.sora@tiscali.it>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-25 02:29+0000\n"
-"PO-Revision-Date: 2024-04-30 11:46+0200\n"
+"PO-Revision-Date: 2024-07-25 14:55+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -1847,17 +1847,16 @@ msgstr ""
 "Invia le capite DNT pro dicer a sitos web que tu non vole esser traciate"
 
 #: htmlopts.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this box if you want to inform a web site that you do not want your "
-#| "web browsing habits tracked."
+#, kde-format
 msgid ""
 "<p>Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
 "considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
-"Marca iste quadrato si tu vole informar un sito web que tu non vole que tu "
-"habitos de navigation web es traciate."
+"<p>Marca iste cassa si tu voleinformar un sito web site que tu non vole que "
+"tu habitudes de navigar sea traciate.</p><p><strong>Aviso:</strong> iste "
+"capite es considerate obsolete, assi illo essera probabilemente ignorate per "
+"le majoritate delpaginas web.</p>"
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -1887,7 +1886,7 @@ msgstr ""
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Always display files from web pages in a new tab"
-msgstr ""
+msgstr "Monstra sempre files ab paginas web in un nove scheda"
 
 #: htmlopts.cpp:137
 #, kde-format
@@ -1895,6 +1894,8 @@ msgid ""
 "<p>When showing in Konqueror files from links in web pages, always use a new "
 "tab"
 msgstr ""
+"<p>Quando ilmonstra files in Konqueror ex ligamines in paginas web, usa "
+"sempre un nove scheda"
 
 #: jsopts.cpp:57
 #, kde-format
@@ -2504,16 +2505,13 @@ msgstr "Selige identification &selectionate"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>The custom background color to use for web pages</"
-#| "p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Le color de fundo personalisate a usar per paginas "
-"web</p></body></html>"
+"<html><head/><body><p>Si marcate, dishabilita deliger un identification "
+"personalisate e usa lo predefinite</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
