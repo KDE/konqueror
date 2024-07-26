@@ -1531,7 +1531,7 @@ void KonqMainWindow::slotViewModeTriggered(QAction *action)
     Q_ASSERT(modeName.endsWith("-viewmode"));
     modeName.chop(9);
     const QString internalViewMode = action->data().toString();
-    m_currentView->switchEmbeddingPart(modeName, internalViewMode);
+    m_currentView->switchViewMode(modeName, internalViewMode);
 }
 
 void KonqMainWindow::slotLockView()

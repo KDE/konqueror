@@ -556,15 +556,17 @@ public:
     void loadDelayed();
 
     /**
-     * @brief Changes the part used to display the current url
+     * @brief Changes the part and/or the internal view mode used to display the current url
      * @param newPluginId the plugin id of the new part to use
-     * @param newInternalViewMode the new view mode for the part, if any
+     * @param newInternalViewMode the new view mode for the part, if any. Ignored if empty
+     *
+     * If the new part is the same as the current part, only the view mode will be changed, if needed.
      *
      * If the current URL is a temporary file, according to #m_tempFile, it __won't be deleted__. This is because
      * we want to display the same URL, not navigate to another one. Deleting the temporary file would mean
      * the new part doesn't actually have a file to display.
      */
-    void switchEmbeddingPart(const QString &newPluginId, const QString &newInternalViewMode = {});
+    void switchViewMode(const QString &newPluginId, const QString &newInternalViewMode = {});
 
     /**
      * @brief Stores the information needed to restore the state of the view
