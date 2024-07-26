@@ -22,14 +22,14 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-25 00:39+0000\n"
-"PO-Revision-Date: 2024-05-15 08:07+0300\n"
+"PO-Revision-Date: 2024-07-25 07:30+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -1803,17 +1803,15 @@ msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr "לשלוח את כותרת DNT (לא לעקוב) כדי להודיע לאתרים על סירובך שיעקבו אחריך"
 
 #: htmlopts.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this box if you want to inform a web site that you do not want your "
-#| "web browsing habits tracked."
+#, kde-format
 msgid ""
 "<p>Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
 "considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
-"יש לסמן את התיבה הזאת כדי ליידע אתרים על סירובך לאפשר להם לעקוב אחר הרגלי "
-"הגלישה שלך."
+"<p>יש לסמן את התיבה הזאת כדי ליידע אתרים על סירובך לאפשר להם לעקוב אחר הרגלי "
+"הגלישה שלך.</p><p><strong>אזהרה:</strong> הכותרת הזאת יצאה מכלל שימוש, כך "
+"שכנראה שרוב האתרים יתעלמו ממנה.</p>"
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -1841,7 +1839,7 @@ msgstr ""
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Always display files from web pages in a new tab"
-msgstr ""
+msgstr "תמיד להצג קבצים מעמודי אתרים בלשונית חדשה"
 
 #: htmlopts.cpp:137
 #, kde-format
@@ -1849,6 +1847,7 @@ msgid ""
 "<p>When showing in Konqueror files from links in web pages, always use a new "
 "tab"
 msgstr ""
+"<p>בעת הצגת קבצים ב־Konqueror בקישורים מעמודי אתרים, תמיד להשתמש בלשונית חדשה"
 
 #: jsopts.cpp:57
 #, kde-format
@@ -2431,14 +2430,13 @@ msgstr "לבחור בזיהוי ה&נבחר"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>The custom background color to use for web pages</"
-#| "p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
-msgstr "<html><head/><body><p>צבע מותאם לשימוש בעמודי אתרים</p></body></html>"
+msgstr ""
+"<html><head/><body><p>אם האפשרות מסומנת, להשבית בחירה בזיהוי משלך ולהשתמש "
+"בברירת המחדל</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166

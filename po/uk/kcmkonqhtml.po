@@ -13,9 +13,9 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-25 00:39+0000\n"
-"PO-Revision-Date: 2024-04-26 16:45+0300\n"
+"PO-Revision-Date: 2024-07-25 08:47+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1847,17 +1847,16 @@ msgstr ""
 "стежили"
 
 #: htmlopts.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this box if you want to inform a web site that you do not want your "
-#| "web browsing habits tracked."
+#, kde-format
 msgid ""
 "<p>Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
 "considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
-"Позначте цей пункт, якщо ви не бажаєте інформувати вебсайт про інші "
-"сторінки, які ви переглядали."
+"<p>Позначте цей пункт, якщо ви не бажаєте інформувати вебсайт про інші "
+"сторінки, які ви переглядали.</p><p><strong>Увага!</strong> Цей заголовок "
+"вважається застарілим, тому його, ймовірно, буде проігноровано на більшості "
+"вебсторінок.</p>"
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -1887,7 +1886,7 @@ msgstr ""
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Always display files from web pages in a new tab"
-msgstr ""
+msgstr "Завжди показувати файли з вебсторінок у новій вкладці"
 
 #: htmlopts.cpp:137
 #, kde-format
@@ -1895,6 +1894,8 @@ msgid ""
 "<p>When showing in Konqueror files from links in web pages, always use a new "
 "tab"
 msgstr ""
+"<p>При показі у Konqueror файлів з посилань на вебсторінках завжди "
+"використовувати нову вкладку"
 
 #: jsopts.cpp:57
 #, kde-format
@@ -2499,16 +2500,13 @@ msgstr "Вибрати &позначену ідентифікацію"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>The custom background color to use for web pages</"
-#| "p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Нетиповий колір тла, яким слід скористатися для "
-"вебсторінок</p></body></html>"
+"<html><head/><body><p>Якщо позначено, вимкнути вибір нетипової ідентифікації "
+"і використовувати типову.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
