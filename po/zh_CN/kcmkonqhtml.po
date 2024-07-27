@@ -1747,6 +1747,8 @@ msgid ""
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
 "considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
+"<p>选择此项后将通知网站您不想让它跟踪您的浏览习惯。</p><p><strong>警告：</"
+"strong>此头信息被认为已经过时，大部分网页很可能会忽略它。</p>"
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -1772,7 +1774,7 @@ msgstr "取消勾选此框后将调用系统设置的应用程序显示在线 PD
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Always display files from web pages in a new tab"
-msgstr ""
+msgstr "总是在新标签页中显示来自网页的文件"
 
 #: htmlopts.cpp:137
 #, kde-format
@@ -1780,6 +1782,7 @@ msgid ""
 "<p>When showing in Konqueror files from links in web pages, always use a new "
 "tab"
 msgstr ""
+"<p>当在 Konqueror 中显示来自网页链接中的文件时，总是在一个新标签页中显示"
 
 #: jsopts.cpp:57
 #, kde-format
@@ -2353,6 +2356,8 @@ msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
 msgstr ""
+"<html><head/><body><p>如果选择此项，将禁用自定义标识的选择并使用默认标识</"
+"p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
