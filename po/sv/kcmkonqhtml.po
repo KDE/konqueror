@@ -12,14 +12,14 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-25 00:39+0000\n"
-"PO-Revision-Date: 2024-06-19 22:11+0200\n"
+"PO-Revision-Date: 2024-07-26 20:57+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: appearance.cpp:39
@@ -1838,17 +1838,15 @@ msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr "Skicka DNT-huvud för att säga till webbsidor att du inte vill spåras"
 
 #: htmlopts.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this box if you want to inform a web site that you do not want your "
-#| "web browsing habits tracked."
+#, kde-format
 msgid ""
 "<p>Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
 "considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
-"Kryssa för rutan om du inte vill att webbsidan ska spåra dina "
-"webbläsningsvanor."
+"<p>Kryssa för rutan om du inte vill att webbsidan ska spåra dina "
+"webbläsningsvanor.</p><p><strong>Varning:</strong> sidhuvudet anses "
+"föråldrat, så det ignoreras troligen av de flesta webbsidor.</p>"
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -1877,7 +1875,7 @@ msgstr ""
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Always display files from web pages in a new tab"
-msgstr ""
+msgstr "Visa alltid filer från webbsidor under en ny flik"
 
 #: htmlopts.cpp:137
 #, kde-format
@@ -1885,6 +1883,8 @@ msgid ""
 "<p>When showing in Konqueror files from links in web pages, always use a new "
 "tab"
 msgstr ""
+"<p>Använd alltid en ny flik när filer från länkar på webbsidor visas i "
+"Konqueror"
 
 #: jsopts.cpp:57
 #, kde-format
@@ -2484,16 +2484,13 @@ msgstr "&Välj identifikation"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>The custom background color to use for web pages</"
-#| "p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Den egna bakgrundsfärgen som ska användas för "
-"webbsidor</p></body></html>"
+"<html><head/><body><p>Om markerat, inaktivera val av egen identifikation och "
+"använd den förvalda</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166

@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2023 Vít Pelčák <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2023, 2024 Vít Pelčák <vit@pelcak.org>
 # Lukáš Tinkl <ltinkl@redhat.com>, 2010, 2011.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
 # SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-25 00:39+0000\n"
-"PO-Revision-Date: 2024-05-30 13:44+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2024-07-26 14:51+0200\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -1770,17 +1770,16 @@ msgstr ""
 "Odeslat hlavičku DNT pro sdělení stránkám, že si nepřejete být sledováni"
 
 #: htmlopts.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this box if you want to inform a web site that you do not want your "
-#| "web browsing habits tracked."
+#, kde-format
 msgid ""
 "<p>Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
 "considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
-"Zaškrtněte toto políčko pokud chcete informovat webové stránky, že nechcete "
-"aby sledovaly vaše chování na webu."
+"<p>Zaškrtněte toto políčko pokud chcete informovat webové stránky, že "
+"nechcete aby sledovaly vaše chování na webu.</p><p><strong>Varování:</"
+"strong> tato hlavička je považována za zastaralou, takže ji většina stránek "
+"bude nejspíše ignorovat.</p>"
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -1810,7 +1809,7 @@ msgstr ""
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Always display files from web pages in a new tab"
-msgstr ""
+msgstr "Vždy zobrazit soubory z webových stránek v nové kartě"
 
 #: htmlopts.cpp:137
 #, kde-format
@@ -2414,6 +2413,8 @@ msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Pokud zaškrtnuto, vypne výběr vlastní identifikace a "
+"použije výchozí</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
@@ -2436,207 +2437,3 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
-
-#~ msgid "Form Com&pletion"
-#~ msgstr "Do&plňování ve formulářích"
-
-#~ msgid "Chan&ge cursor over links"
-#~ msgstr "&Změnit kurzor nad odkazy"
-
-#~ msgid ""
-#~ "If this option is set, the shape of the cursor will change (usually to a "
-#~ "hand) if it is moved over a hyperlink."
-#~ msgstr ""
-#~ "Je-li nastavena tato volba, bude se měnit tvar kurzoru (obvykle na tvar "
-#~ "ruky) vždy, když je přesouván nad odkazem."
-
-#~ msgid "Allow automatic delayed &reloading/redirecting"
-#~ msgstr "Povolit automatické zpožděné obnovení / přesmě&rování"
-
-#~ msgid ""
-#~ "Some web pages request an automatic reload or redirection after a certain "
-#~ "period of time. By unchecking this box Konqueror will ignore these "
-#~ "requests."
-#~ msgstr ""
-#~ "Některé stránky si vyžádají automatické obnovení nebo přesměrování po "
-#~ "uplynutí určité doby. Pokud ponecháte tlačítko nezaškrtnuté, Konqueror "
-#~ "bude takové požadavky ignorovat."
-
-#~ msgid "Enable Ja&va globally"
-#~ msgstr "Povolit Ja&vu globálně"
-
-#~ msgid "Java Runtime Settings"
-#~ msgstr "Nastavení pro vykonávání Javy"
-
-#~ msgid "&Use security manager"
-#~ msgstr "Po&užívat správce bezpečnosti"
-
-#~ msgid "Use &KIO"
-#~ msgstr "Používat &KIO"
-
-#~ msgid "Shu&tdown applet server when inactive for more than"
-#~ msgstr "Ukonči&t Applet server, je-li neaktivní"
-
-#~ msgid " second"
-#~ msgid_plural " seconds"
-#~ msgstr[0] " sek"
-#~ msgstr[1] " sek"
-#~ msgstr[2] " sek"
-
-#~ msgid "&Path to Java executable, or 'java':"
-#~ msgstr "Cesta k &programu 'java', anebo pouze 'java':"
-
-#~ msgid "Additional Java a&rguments:"
-#~ msgstr "Přídavné pa&rametry Javy:"
-
-#~ msgid ""
-#~ "Enables the execution of scripts written in Java that can be contained in "
-#~ "HTML pages. Note that, as with any browser, enabling active contents can "
-#~ "be a security problem."
-#~ msgstr ""
-#~ "Povoluje vykonávání skriptů napsaných v jazyku Java, které se mohou "
-#~ "vyskytovat v HTML stránkách. Všimněte si, že jako i v jiných prohlížečích "
-#~ "může povolení aktivního obsahu způsobit bezpečnostní problémy."
-
-#~ msgid ""
-#~ "<p>This box contains the domains and hosts you have set a specific Java "
-#~ "policy for. This policy will be used instead of the default policy for "
-#~ "enabling or disabling Java applets on pages sent by these domains or "
-#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
-#~ "it.</p>"
-#~ msgstr ""
-#~ "<p>Tato část obsahuje domény a hostitele, pro které jste nastavili "
-#~ "specifické chování pro Javu. Toto chování bude použito místo standardního "
-#~ "chování pro zapnutí a vypnutí Javy na stránkách získaných z těchto domén "
-#~ "a hostitelů.</p><p>Vyberte chování a k jeho změně použijte ovládání "
-#~ "napravo.</p>"
-
-#~ msgid ""
-#~ "Click this button to choose the file that contains the Java policies. "
-#~ "These policies will be merged with the existing ones. Duplicate entries "
-#~ "are ignored."
-#~ msgstr ""
-#~ "Klikněte na toto tlačítko k výběru souboru, který obsahuje chování pro "
-#~ "Javu. Tato chování budou sloučena se stávajícími zásadami. Duplicitní "
-#~ "záznamy budou ignorovány."
-
-#~ msgid ""
-#~ "Click this button to save the Java policy to a zipped file. The file, "
-#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
-#~ msgstr ""
-#~ "Kliknutím na toto tlačítko uložíte zásadu chování pro Javu do "
-#~ "komprimovaného souboru pojmenovaného <b>java_policy.tgz</b>, který bude "
-#~ "uložen do umístění dle vašeho výběru."
-
-#~ msgid ""
-#~ "Here you can set specific Java policies for any particular host or "
-#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
-#~ "supply the necessary information requested by the dialog box. To change "
-#~ "an existing policy, click on the <i>Change...</i> button and choose the "
-#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#~ "button will remove the selected policy, causing the default policy "
-#~ "setting to be used for that domain."
-#~ msgstr ""
-#~ "Zde je možné nastavit zásadu chování pro Javu pro určité domény nebo "
-#~ "hostitele. Novou zásadu lze přidat jednoduše kliknutím na tlačítko "
-#~ "<i>Nový...</i> a poskytnutím požadovaných informací. Změnu již existující "
-#~ "zásady lze kliknutím na tlačítko <i>Změnit...</i> a výběrem nového "
-#~ "chování. Kliknutí na tlačítko <i>Smazat</i> odstraní zásadu chování a "
-#~ "způsobí použití standardního chování pro tuto doménu nebo hostitele."
-
-#~ msgid ""
-#~ "Enabling the security manager will cause the jvm to run with a Security "
-#~ "Manager in place. This will keep applets from being able to read and "
-#~ "write to your file system, creating arbitrary sockets, and other actions "
-#~ "which could be used to compromise your system. Disable this option at "
-#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
-#~ "policytool utility to give code downloaded from certain sites more "
-#~ "permissions."
-#~ msgstr ""
-#~ "Povolením správce zabezpečení donutíte běžet jvm spolu se správcem "
-#~ "zabezpečení. To zabrání appletem číst a zapisovat na váš systém soubory, "
-#~ "vytvářet sokety a jiné činnosti, které by mohli ohrozit bezpečnost vašeho "
-#~ "systému. Tuto volbu vypínejte jen na svoje vlastní riziko. Pomocí "
-#~ "nástroje Java policytool můžete změnit váš soubor $HOME/.java.policy pro "
-#~ "přiřazení zvláštních práv podle zdrojového serveru appletu."
-
-#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
-#~ msgstr ""
-#~ "Pokud toto povolíte, bude JVM používat pro síťové přenosy systém KIO."
-
-#~ msgid ""
-#~ "Enter the path to the java executable. If you want to use the jre in your "
-#~ "path, simply leave it as 'java'. If you need to use a different jre, "
-#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
-#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
-#~ "IBMJava2-13)."
-#~ msgstr ""
-#~ "Vložte cestu k programu java. Přejete-li si používat JRE ve své cestě, "
-#~ "pak zde ponechte pouze údaj 'java'. Potřebujete-li jiné JRE, pak vložte "
-#~ "celou cestu k programu java (např. /usr/lib/jdk/bin/java), nebo cestu, "
-#~ "která obsahuje 'bin/java'(např., /opt/IBMJava2-13)."
-
-#~ msgid ""
-#~ "If you want special arguments to be passed to the virtual machine, enter "
-#~ "them here."
-#~ msgstr ""
-#~ "Přejete-li si předávat virtuálnímu stroji speciální argumenty, tak je "
-#~ "vložte zde."
-
-#~ msgid ""
-#~ "When all the applets have been destroyed, the applet server should shut "
-#~ "down. However, starting the jvm takes a lot of time. If you would like to "
-#~ "keep the java process running while you are browsing, you can set the "
-#~ "timeout value to whatever you like. To keep the java process running for "
-#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
-#~ "Server checkbox unchecked."
-#~ msgstr ""
-#~ "Jsou-li zrušeny všechny applety, pak by měl být ukončen server appletů. "
-#~ "Avšak start JVM trvá určitou dobu. Přejete-li si ponechat java proces "
-#~ "běžící během prohlížení, tak můžete nastavit časový limit. Přejete-li si, "
-#~ "aby java proces běžel po celou dobu používání Konqueroru, pak "
-#~ "nezaškrtávejte volbu \"Ukončit Applet server, je-li neaktivní\"."
-
-#~ msgctxt "@title:group"
-#~ msgid "Doma&in-Specific"
-#~ msgstr "Spec&ifické pro doménu"
-
-#~ msgctxt "@title:window"
-#~ msgid "New Java Policy"
-#~ msgstr "Nové chování pro Javu"
-
-#~ msgctxt "@title:window"
-#~ msgid "Change Java Policy"
-#~ msgstr "Změnit chování Javy"
-
-#~ msgid "&Java policy:"
-#~ msgstr "Zásady pro &Javu:"
-
-#~ msgid "Select a Java policy for the above host or domain."
-#~ msgstr ""
-#~ "Vyberte chování pro jazyk Java pro výše uvedenou doménu nebo hostitele."
-
-#~ msgid "Debugging"
-#~ msgstr "Ladění"
-
-#~ msgid "Enable debu&gger"
-#~ msgstr "Povolit ladicí nástro&j"
-
-#~ msgid "Enables builtin JavaScript debugger."
-#~ msgstr "Povolí vestavěný ladicí nástroj pro JavaScript."
-
-#~ msgid "Report &errors"
-#~ msgstr "Nahlašovat ch&yby"
-
-#~ msgid ""
-#~ "Enables the reporting of errors that occur when JavaScript code is "
-#~ "executed."
-#~ msgstr ""
-#~ "Povoluje nahlašování chyb, které se vyskytnou při spouštění kódu v "
-#~ "JavaScriptu."
-
-#~ msgid "&Java"
-#~ msgstr "&Java"
-
-#~ msgid "Java&Script"
-#~ msgstr "Java&Script"
