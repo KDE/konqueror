@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-25 00:39+0000\n"
-"PO-Revision-Date: 2024-05-30 20:45+0200\n"
+"PO-Revision-Date: 2024-07-27 21:54+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.07.70\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: appearance.cpp:39
@@ -1829,17 +1829,16 @@ msgstr ""
 "да бъдете проследявани"
 
 #: htmlopts.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this box if you want to inform a web site that you do not want your "
-#| "web browsing habits tracked."
+#, kde-format
 msgid ""
 "<p>Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
 "considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
-"Изберете тази опция, ако искате да информирате уеб сайт, че не искате вашите "
-"навици за сърфиране да бъдат проследявани."
+"<p>Изберете тази опция, ако искате да информирате уеб сайт, че не искате "
+"вашите навици за сърфиране да бъдат проследявани.</"
+"p><p><strong>Предупреждение:</strong> тази заглавка се смята за остаряла, "
+"така че вероятно ще бъде игнориран от повечето уеб страници.</p>"
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -1869,7 +1868,7 @@ msgstr ""
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Always display files from web pages in a new tab"
-msgstr ""
+msgstr "Файлове от уеб страници винаги да се показват в нов раздел"
 
 #: htmlopts.cpp:137
 #, kde-format
@@ -1877,6 +1876,8 @@ msgid ""
 "<p>When showing in Konqueror files from links in web pages, always use a new "
 "tab"
 msgstr ""
+"<p>Когато показвате в Konqueror файлове от връзки в уеб страници, винаги да "
+"се използва нов раздел"
 
 #: jsopts.cpp:57
 #, kde-format
@@ -2473,16 +2474,14 @@ msgstr "Избиране на идентификация"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>The custom background color to use for web pages</"
-#| "p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Потребителски цвят на фона, използван за интернет "
-"страниците</p></body></html>"
+"<html><head/><body><p>Ако е отметнато, деактивирайте избора на "
+"персонализирана идентификация и използвайте този по подразбиране</p></body></"
+"html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
