@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-25 02:29+0000\n"
-"PO-Revision-Date: 2024-04-29 22:09+0200\n"
+"PO-Revision-Date: 2024-07-25 15:49+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1856,17 +1856,16 @@ msgstr ""
 "Imposta l'intestazione DNT per dire ai siti Web che non vuoi essere tracciato"
 
 #: htmlopts.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this box if you want to inform a web site that you do not want your "
-#| "web browsing habits tracked."
+#, kde-format
 msgid ""
 "<p>Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
 "considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
-"Spunta questa casella se vuoi informare i siti Web che non vuoi che le tue "
-"abitudini di navigazione siano registrate."
+"<p>Spunta questa casella se vuoi informare i siti Web che non vuoi che le "
+"tue abitudini di navigazione siano registrate.</p><p><strong>Attenzione:</"
+"strong> questa intestazione è considerata obsoleta, per cui sarà "
+"probabilmente ignorata dalla maggior parte delle pagine web.</p>"
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -1896,7 +1895,7 @@ msgstr ""
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Always display files from web pages in a new tab"
-msgstr ""
+msgstr "Mostra sempre i file delle pagine web in una nuova scheda"
 
 #: htmlopts.cpp:137
 #, kde-format
@@ -1904,6 +1903,8 @@ msgid ""
 "<p>When showing in Konqueror files from links in web pages, always use a new "
 "tab"
 msgstr ""
+"<p>Quando vengono mostrati file da collegamenti da pagine web in Konqueror, "
+"usa sempre una nuova scheda"
 
 #: jsopts.cpp:57
 #, kde-format
@@ -2520,16 +2521,13 @@ msgstr "Scegli l'identificazione &selezionata"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>The custom background color to use for web pages</"
-#| "p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Il colore di sfondo personalizzato da usare per le "
-"pagine web</p></body></html>"
+"<html><head/><body><p>Se selezionato, disabilita la possibilità di scegliere "
+"un identificativo manuale e usa quello predefinito</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
