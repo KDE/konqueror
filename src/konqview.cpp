@@ -265,20 +265,24 @@ void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
 #endif
 }
 
-void KonqView::switchEmbeddingPart(const QString& newPluginId, const QString& newInternalViewMode)
+void KonqView::switchViewMode(const QString& newPluginId, const QString& newInternalViewMode)
 {
-    if (service().pluginId() == newPluginId) {
+    bool changePlugin = service().pluginId() != newPluginId;
+    bool changeViewMode = !newInternalViewMode.isEmpty() && newInternalViewMode != internalViewMode();
+    if (!changePlugin && !changeViewMode) {
         return;
     }
+    if (changePlugin) {
     //We don't want to delete the temporary file, otherwise the new part won't have a file to display
-    stop(true);
-    lockHistory();
-    const QUrl origUrl = realUrl();
-    const QString locationBarURL = m_sLocationBarURL;
-    bool tempFile = !m_tempFile.isEmpty();
-    changePart(serviceType(), newPluginId);
-    openUrl(origUrl, locationBarURL, {}, tempFile, url());
-    if (!newInternalViewMode.isEmpty() && newInternalViewMode != internalViewMode()){
+        stop(true);
+        lockHistory();
+        const QUrl origUrl = realUrl();
+        const QString locationBarURL = m_sLocationBarURL;
+        bool tempFile = !m_tempFile.isEmpty();
+        changePart(serviceType(), newPluginId);
+        openUrl(origUrl, locationBarURL, {}, tempFile, url());
+    }
+    if (changeViewMode){
         setInternalViewMode(newInternalViewMode);
     }
 }
