@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 02:29+0000\n"
+"POT-Creation-Date: 2024-07-29 02:33+0000\n"
 "PO-Revision-Date: 2023-06-12 19:21+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -914,7 +914,7 @@ msgstr ""
 msgid "Resubmit Information"
 msgstr "Reenviar a Informação"
 
-#: src/webenginepage.cpp:578
+#: src/webenginepage.cpp:581
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -924,18 +924,18 @@ msgstr ""
 "física.\n"
 "Pretende dar-lhe acesso?"
 
-#: src/webenginepage.cpp:582 src/webenginepage.cpp:660
-#: src/webenginepage.cpp:671
+#: src/webenginepage.cpp:585 src/webenginepage.cpp:663
+#: src/webenginepage.cpp:674
 #, kde-format
 msgid "Network Transmission"
 msgstr "Transmissão na Rede"
 
-#: src/webenginepage.cpp:583
+#: src/webenginepage.cpp:586
 #, kde-format
 msgid "Allow access"
 msgstr "Permitir o acesso"
 
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:656
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -948,12 +948,12 @@ msgstr ""
 "Poderão existir terceiros a interceptar e a ver esta informação.\n"
 "Tem a certeza que deseja enviar os dados sem qualquer encriptação?"
 
-#: src/webenginepage.cpp:661
+#: src/webenginepage.cpp:664
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "Enviar &Sem Encriptar"
 
-#: src/webenginepage.cpp:668
+#: src/webenginepage.cpp:671
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -962,12 +962,12 @@ msgstr ""
 "Este 'site' está a tentar submeter dados do formulário por e-mail.\n"
 "Deseja continuar?"
 
-#: src/webenginepage.cpp:672
+#: src/webenginepage.cpp:675
 #, kde-format
 msgid "&Send Email"
 msgstr "&Enviar um E-mail"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:724
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -976,22 +976,22 @@ msgstr ""
 "<qt>Deseja permitir que esta página anexe os seguintes ficheiros à mensagem "
 "de e-mail?</qt>"
 
-#: src/webenginepage.cpp:723
+#: src/webenginepage.cpp:726
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Confirmação dos Anexos de E-Mail"
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:727
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Permitir os &anexos"
 
-#: src/webenginepage.cpp:725
+#: src/webenginepage.cpp:728
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignorar os anexos"
 
-#: src/webenginepage.cpp:739
+#: src/webenginepage.cpp:742
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1000,12 +1000,12 @@ msgstr ""
 "Esta página tentou anexar um ficheiro do seu computador no envio do "
 "formulário. O anexo foi removido para a sua protecção."
 
-#: src/webenginepage.cpp:742
+#: src/webenginepage.cpp:745
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Anexo Removido"
 
-#: src/webenginepage.cpp:856
+#: src/webenginepage.cpp:859
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1014,7 +1014,7 @@ msgstr ""
 "Esta página está a pedir para abrir uma nova janela instantânea.\n"
 "Deseja permitir isto?"
 
-#: src/webenginepage.cpp:858
+#: src/webenginepage.cpp:861
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1023,17 +1023,17 @@ msgstr ""
 "<qt>Esta página está a pedir para abrir uma janela instantânea para <p>%1</"
 "p><br/>Deseja permitir isto?</qt>"
 
-#: src/webenginepage.cpp:861
+#: src/webenginepage.cpp:864
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Confirmação da Janela de JavaScript"
 
-#: src/webenginepage.cpp:862
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid "Allow"
 msgstr "Permitir"
 
-#: src/webenginepage.cpp:862
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Não Permitir"

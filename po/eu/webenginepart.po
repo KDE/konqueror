@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 02:29+0000\n"
+"POT-Creation-Date: 2024-07-29 02:33+0000\n"
 "PO-Revision-Date: 2024-03-25 11:19+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -900,7 +900,7 @@ msgstr ""
 msgid "Resubmit Information"
 msgstr "Berbidali informazioa"
 
-#: src/webenginepage.cpp:578
+#: src/webenginepage.cpp:581
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -910,18 +910,18 @@ msgstr ""
 "dabil.\n"
 "Atzitzen utzi nahi diozu?"
 
-#: src/webenginepage.cpp:582 src/webenginepage.cpp:660
-#: src/webenginepage.cpp:671
+#: src/webenginepage.cpp:585 src/webenginepage.cpp:663
+#: src/webenginepage.cpp:674
 #, kde-format
 msgid "Network Transmission"
 msgstr "Sareko transmisioa"
 
-#: src/webenginepage.cpp:583
+#: src/webenginepage.cpp:586
 #, kde-format
 msgid "Allow access"
 msgstr "Atzitzen utzi"
 
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:656
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -934,12 +934,12 @@ msgstr ""
 "Hirugarrenek informazio hau harrapatu eta ikusi dezakete.\n"
 "Ziur zaude datuak zifratu gabe bidali nahi dituzula?"
 
-#: src/webenginepage.cpp:661
+#: src/webenginepage.cpp:664
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Bidali zifratu gabe"
 
-#: src/webenginepage.cpp:668
+#: src/webenginepage.cpp:671
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -948,12 +948,12 @@ msgstr ""
 "Leku hau formularioko datuak e-posta bitartez bidaltzen saiatzen ari da.\n"
 "Jarraitu nahi duzu?"
 
-#: src/webenginepage.cpp:672
+#: src/webenginepage.cpp:675
 #, kde-format
 msgid "&Send Email"
 msgstr "&Bidali e-posta"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:724
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -962,22 +962,22 @@ msgstr ""
 "<qt>Leku honek ondorengo fitxategiak e-posta mezuari eranstea baimendu nahi "
 "duzu?</qt>"
 
-#: src/webenginepage.cpp:723
+#: src/webenginepage.cpp:726
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "E-Posta eranskinen berrespena"
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:727
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Baimendu eranskinak"
 
-#: src/webenginepage.cpp:725
+#: src/webenginepage.cpp:728
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Jaramonik ez eranskinei"
 
-#: src/webenginepage.cpp:739
+#: src/webenginepage.cpp:742
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -986,12 +986,12 @@ msgstr ""
 "Gune hau zure konputagailuko fitxategi bat formularioaren bidalketan "
 "eransten saiatu da. Eranskina zure segurtasunerako kendu da."
 
-#: src/webenginepage.cpp:742
+#: src/webenginepage.cpp:745
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Eranskina kendu da"
 
-#: src/webenginepage.cpp:856
+#: src/webenginepage.cpp:859
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1000,7 +1000,7 @@ msgstr ""
 "Leku hau leiho-gainerakor berri bat irekitzea eskatzen ari da.\n"
 "Hori egiten utzi nahi duzu?"
 
-#: src/webenginepage.cpp:858
+#: src/webenginepage.cpp:861
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1009,17 +1009,17 @@ msgstr ""
 "<qt>Leku hau<p>%1</p>-(e)ra leiho-gainerakor bat irekitzea eskatzen ari da."
 "<br/>Hori egiten utzi nahi duzu?</qt>"
 
-#: src/webenginepage.cpp:861
+#: src/webenginepage.cpp:864
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript leiho-gainerakorren berrespena"
 
-#: src/webenginepage.cpp:862
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid "Allow"
 msgstr "Baimendu"
 
-#: src/webenginepage.cpp:862
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Ez baimendu"

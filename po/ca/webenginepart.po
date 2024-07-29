@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 02:29+0000\n"
+"POT-Creation-Date: 2024-07-29 02:33+0000\n"
 "PO-Revision-Date: 2024-03-25 10:36+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -907,7 +907,7 @@ msgstr ""
 msgid "Resubmit Information"
 msgstr "Torna a trametre la informació"
 
-#: src/webenginepage.cpp:578
+#: src/webenginepage.cpp:581
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -917,18 +917,18 @@ msgstr ""
 "ubicació física.\n"
 "Voleu permetre l'accés?"
 
-#: src/webenginepage.cpp:582 src/webenginepage.cpp:660
-#: src/webenginepage.cpp:671
+#: src/webenginepage.cpp:585 src/webenginepage.cpp:663
+#: src/webenginepage.cpp:674
 #, kde-format
 msgid "Network Transmission"
 msgstr "Transmissió de xarxa"
 
-#: src/webenginepage.cpp:583
+#: src/webenginepage.cpp:586
 #, kde-format
 msgid "Allow access"
 msgstr "Permet l'accés"
 
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:656
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -941,12 +941,12 @@ msgstr ""
 "Un tercer podria interceptar i veure aquesta informació.\n"
 "Esteu segur que voleu enviar les dades sense encriptar?"
 
-#: src/webenginepage.cpp:661
+#: src/webenginepage.cpp:664
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Envia sense encriptar"
 
-#: src/webenginepage.cpp:668
+#: src/webenginepage.cpp:671
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -955,12 +955,12 @@ msgstr ""
 "Aquest lloc està provant d'enviar dades de formulari via correu.\n"
 "Voleu continuar?"
 
-#: src/webenginepage.cpp:672
+#: src/webenginepage.cpp:675
 #, kde-format
 msgid "&Send Email"
 msgstr "&Envia correu"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:724
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -969,22 +969,22 @@ msgstr ""
 "<qt>Voleu permetre que aquest lloc adjunti els fitxers següents al missatge "
 "de correu electrònic?</qt>"
 
-#: src/webenginepage.cpp:723
+#: src/webenginepage.cpp:726
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Confirmació d'adjunt al correu"
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:727
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Permet els &adjunts"
 
-#: src/webenginepage.cpp:725
+#: src/webenginepage.cpp:728
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignora els adjunts"
 
-#: src/webenginepage.cpp:739
+#: src/webenginepage.cpp:742
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -993,12 +993,12 @@ msgstr ""
 "Aquest lloc ha provat d'adjuntar un fitxer des del vostre ordinador al "
 "formulari d'enviament. S'ha eliminat l'adjunt per a la vostra protecció."
 
-#: src/webenginepage.cpp:742
+#: src/webenginepage.cpp:745
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Eliminació d'adjunt"
 
-#: src/webenginepage.cpp:856
+#: src/webenginepage.cpp:859
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1007,7 +1007,7 @@ msgstr ""
 "Aquest lloc està sol·licitant obrir una finestra emergent nova.\n"
 "Voleu permetre-ho?"
 
-#: src/webenginepage.cpp:858
+#: src/webenginepage.cpp:861
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1016,17 +1016,17 @@ msgstr ""
 "<qt>Aquest lloc està demanant d'obrir una finestra emergent a <p>%1</p>. <br/"
 ">Voleu permetre-ho?</qt>"
 
-#: src/webenginepage.cpp:861
+#: src/webenginepage.cpp:864
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Confirmació de finestra emergent de JavaScript"
 
-#: src/webenginepage.cpp:862
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid "Allow"
 msgstr "Permet"
 
-#: src/webenginepage.cpp:862
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid "Do Not Allow"
 msgstr "No permetis"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 02:29+0000\n"
+"POT-Creation-Date: 2024-07-29 02:33+0000\n"
 "PO-Revision-Date: 2024-03-25 04:56+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -897,7 +897,7 @@ msgstr ""
 msgid "Resubmit Information"
 msgstr "ინფორმაციის თავიდან გადაცემა"
 
-#: src/webenginepage.cpp:578
+#: src/webenginepage.cpp:581
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -907,18 +907,18 @@ msgstr ""
 "შესახებ.\n"
 "გნებავთ, მისცეთ მას ეს წვდომა?"
 
-#: src/webenginepage.cpp:582 src/webenginepage.cpp:660
-#: src/webenginepage.cpp:671
+#: src/webenginepage.cpp:585 src/webenginepage.cpp:663
+#: src/webenginepage.cpp:674
 #, kde-format
 msgid "Network Transmission"
 msgstr "ქელით გადაცემა"
 
-#: src/webenginepage.cpp:583
+#: src/webenginepage.cpp:586
 #, kde-format
 msgid "Allow access"
 msgstr "წვდომის დაშვება"
 
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:656
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -931,12 +931,12 @@ msgstr ""
 "მესამე მხარეს ამ მონაცემთა გადაჭერა და ნახვა შეუძლია.\n"
 "დარწმუნებული ბრძანდებით, რომ გნებავთ, ეს მონაცემები დაუშიფრავად გააგზავნოთ?"
 
-#: src/webenginepage.cpp:661
+#: src/webenginepage.cpp:664
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "და&უშიფრავად გაგზავნა"
 
-#: src/webenginepage.cpp:668
+#: src/webenginepage.cpp:671
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -945,12 +945,12 @@ msgstr ""
 "საიტი ცდილობს ფორმის მონაცემების ელფოსტით გაგზავნას.\n"
 "გსურთ გაგრძელება?"
 
-#: src/webenginepage.cpp:672
+#: src/webenginepage.cpp:675
 #, kde-format
 msgid "&Send Email"
 msgstr "&ელფოსტის გაგზავნა"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:724
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -958,22 +958,22 @@ msgid ""
 msgstr ""
 "<qt>გნებავთ, მისცეთ ამ ვებგვერდს უფლება, ელფოსტებს ფაილები მიამაგროს?</qt>"
 
-#: src/webenginepage.cpp:723
+#: src/webenginepage.cpp:726
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "ელფოსტაზე მიმაგრების დადასტურება"
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:727
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&მიმაგრებული ფაილების დაშვება"
 
-#: src/webenginepage.cpp:725
+#: src/webenginepage.cpp:728
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&მიმაგრებული ფაილების იგნორი"
 
-#: src/webenginepage.cpp:739
+#: src/webenginepage.cpp:742
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -982,12 +982,12 @@ msgstr ""
 "საიტი ცდილობს თქვენი კომპიუტერის ფაილის გასაგზავნ ფორმაში ჩართვას. "
 "უსაფრთხოების მიზნით დანართი ფაილი ამოიშლება."
 
-#: src/webenginepage.cpp:742
+#: src/webenginepage.cpp:745
 #, kde-format
 msgid "Attachment Removed"
 msgstr "მიმაგრებული ფაილი წაშლილია"
 
-#: src/webenginepage.cpp:856
+#: src/webenginepage.cpp:859
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -996,7 +996,7 @@ msgstr ""
 "ეს საიტი ახალი მხტუნარა ფანჯრის გახსნას ცდილობს.\n"
 "დავუშვათ ეს?"
 
-#: src/webenginepage.cpp:858
+#: src/webenginepage.cpp:861
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1005,17 +1005,17 @@ msgstr ""
 "<qt>ეს ვებგვერდი ითხოვს მხტუნარა ფანჯრის გახსნას <p>%1</p><br/>დავუშვათ ეს?</"
 "qt>"
 
-#: src/webenginepage.cpp:861
+#: src/webenginepage.cpp:864
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript -ის მხტუნარის დადასტურება"
 
-#: src/webenginepage.cpp:862
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid "Allow"
 msgstr "დაშვება"
 
-#: src/webenginepage.cpp:862
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid "Do Not Allow"
 msgstr "აკრძალვა"

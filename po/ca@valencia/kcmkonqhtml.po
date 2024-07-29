@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-25 02:29+0000\n"
-"PO-Revision-Date: 2024-04-26 11:38+0200\n"
+"PO-Revision-Date: 2024-07-25 09:16+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 "X-Accelerator-Marker: &\n"
 
 #: appearance.cpp:39
@@ -1780,8 +1780,8 @@ msgid ""
 "If this box is checked, Konqueror will remember the data you enter in web "
 "forms and suggest it in similar fields for all forms."
 msgstr ""
-"Si esta casella és marcada, Konqueror recordarà les dades que introduïu als "
-"formularis web i els suggerirà en camps similars per a tots els formularis."
+"Si està marcada, Konqueror recordarà les dades que introduïu als formularis "
+"web i els suggerirà en camps similars per a tots els formularis."
 
 #: htmlopts.cpp:74
 #, kde-format
@@ -1857,17 +1857,16 @@ msgstr ""
 "seguits"
 
 #: htmlopts.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this box if you want to inform a web site that you do not want your "
-#| "web browsing habits tracked."
+#, kde-format
 msgid ""
 "<p>Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
 "considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
-"Marqueu esta casella si voleu informar a un lloc web que no voleu que els "
-"vostres hàbits de navegació se seguisquen."
+"<p>Marqueu esta casella si voleu informar a un lloc web que no voleu que els "
+"vostres hàbits de navegació se seguisquen.</p><p><strong>Avís:</strong> Esta "
+"capçalera es considera obsoleta, i per tant, segurament la majoria de les "
+"pàgines web la ignoraran.</p>"
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -1897,7 +1896,7 @@ msgstr ""
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Always display files from web pages in a new tab"
-msgstr ""
+msgstr "Mostra sempre els fitxers d'una pàgina web en una pestanya nova"
 
 #: htmlopts.cpp:137
 #, kde-format
@@ -1905,6 +1904,8 @@ msgid ""
 "<p>When showing in Konqueror files from links in web pages, always use a new "
 "tab"
 msgstr ""
+"<p>Quan es mostren en fitxers des d'enllaços cap a pàgines web a Konqueror, "
+"utilitza sempre una pestanya nova"
 
 #: jsopts.cpp:57
 #, kde-format
@@ -2516,16 +2517,13 @@ msgstr "Seleccioneu la identificació &seleccionada"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>The custom background color to use for web pages</"
-#| "p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
 msgstr ""
-"<html><head/><body><p>El color de fons personalitzat que es farà servir a "
-"les pàgines web</p></body></html>"
+"<html><head/><body><p>Si està marcada, desactiva la tria d'una identificació "
+"personalitzada i utilitza la predeterminada</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166
@@ -2552,212 +2550,3 @@ msgstr ""
 "identificació predeterminada estiga inhabilitada.</p><p>Podeu introduir-la "
 "manualment o començar amb una de la llista i canviar-la segons les vostres "
 "necessitats.</p></body></html>"
-
-#~ msgid "Form Com&pletion"
-#~ msgstr "Com&pleció de formularis"
-
-#~ msgid "Chan&ge cursor over links"
-#~ msgstr "&Canvia el cursor sobre els enllaços"
-
-#~ msgid ""
-#~ "If this option is set, the shape of the cursor will change (usually to a "
-#~ "hand) if it is moved over a hyperlink."
-#~ msgstr ""
-#~ "Si s'ha establit esta opció, la forma del cursor canviarà (normalment a "
-#~ "una mà) si es mou damunt d'un enllaç."
-
-#~ msgid "Allow automatic delayed &reloading/redirecting"
-#~ msgstr "Permet la recàrre&ga/redirecció retardada automàtica"
-
-#~ msgid ""
-#~ "Some web pages request an automatic reload or redirection after a certain "
-#~ "period of time. By unchecking this box Konqueror will ignore these "
-#~ "requests."
-#~ msgstr ""
-#~ "Algunes pàgines web sol·liciten una recàrrega o redirecció automàtica "
-#~ "després d'un cert període de temps. En desmarcar esta casella Konqueror "
-#~ "ignorarà estes peticions."
-
-#~ msgid "Enable Ja&va globally"
-#~ msgstr "&Habilita Java globalment"
-
-#~ msgid "Java Runtime Settings"
-#~ msgstr "Configureu l'execució Java"
-
-#~ msgid "&Use security manager"
-#~ msgstr "Utilit&za el gestor de seguretat"
-
-#~ msgid "Use &KIO"
-#~ msgstr "Utilitza &KIO"
-
-#~ msgid "Shu&tdown applet server when inactive for more than"
-#~ msgstr "At&ura el servidor de miniaplicacions quan estiga inactiu més de"
-
-#~ msgid " second"
-#~ msgid_plural " seconds"
-#~ msgstr[0] " segon"
-#~ msgstr[1] " segons"
-
-#~ msgid "&Path to Java executable, or 'java':"
-#~ msgstr "&Camí cap a l'executable Java, o «java»:"
-
-#~ msgid "Additional Java a&rguments:"
-#~ msgstr "Ar&guments Java addicionals:"
-
-#~ msgid ""
-#~ "Enables the execution of scripts written in Java that can be contained in "
-#~ "HTML pages. Note that, as with any browser, enabling active contents can "
-#~ "be a security problem."
-#~ msgstr ""
-#~ "Habilita l'execució de scripts escrits en Java que poden estar continguts "
-#~ "dins de les pàgines HTML. Cal tindre present, que, com amb qualsevol "
-#~ "navegador, l'habilitació de contingut actiu pot ser un problema de "
-#~ "seguretat."
-
-#~ msgid ""
-#~ "<p>This box contains the domains and hosts you have set a specific Java "
-#~ "policy for. This policy will be used instead of the default policy for "
-#~ "enabling or disabling Java applets on pages sent by these domains or "
-#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
-#~ "it.</p>"
-#~ msgstr ""
-#~ "<p>Esta casella conté els dominis i amfitrions per als quals heu establit "
-#~ "una política Java específica. Esta política s'utilitzarà en comptes de la "
-#~ "política predeterminada per tal d'habilitar o inhabilitar miniaplicacions "
-#~ "Java a les pàgines enviades per estos dominis o amfitrions.</"
-#~ "p><p>Seleccioneu una política i utilitzeu els controls a la dreta per a "
-#~ "modificar-la.</p>"
-
-#~ msgid ""
-#~ "Click this button to choose the file that contains the Java policies. "
-#~ "These policies will be merged with the existing ones. Duplicate entries "
-#~ "are ignored."
-#~ msgstr ""
-#~ "Cliqueu este botó per a triar el fitxer que conté les polítiques de Java. "
-#~ "Estes polítiques es barrejaran amb les ja existents. Les entrades "
-#~ "duplicades seran ignorades."
-
-#~ msgid ""
-#~ "Click this button to save the Java policy to a zipped file. The file, "
-#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
-#~ msgstr ""
-#~ "Cliqueu este botó per a guardar la política Java a un fitxer zip. El "
-#~ "fitxer, anomenat <b>java_policy.tgz</b>, es guardarà al lloc que trieu."
-
-#~ msgid ""
-#~ "Here you can set specific Java policies for any particular host or "
-#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
-#~ "supply the necessary information requested by the dialog box. To change "
-#~ "an existing policy, click on the <i>Change...</i> button and choose the "
-#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#~ "button will remove the selected policy, causing the default policy "
-#~ "setting to be used for that domain."
-#~ msgstr ""
-#~ "Ací podeu establir polítiques específiques de Java per a qualsevol "
-#~ "amfitrió o domini en particular. Per a afegir una política nova, "
-#~ "senzillament cliqueu en el botó <i>Nova…</i> i empleneu la informació que "
-#~ "vos demana el diàleg. Per a canviar una política existent, cliqueu en el "
-#~ "botó <i>Canvia…</i> i trieu una política nova del diàleg. Clicant en "
-#~ "<i>Elimina</i> s'eliminarà la política seleccionada, fent que s'utilitze "
-#~ "la configuració de política predeterminada per a este domini."
-
-#~ msgid ""
-#~ "Enabling the security manager will cause the jvm to run with a Security "
-#~ "Manager in place. This will keep applets from being able to read and "
-#~ "write to your file system, creating arbitrary sockets, and other actions "
-#~ "which could be used to compromise your system. Disable this option at "
-#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
-#~ "policytool utility to give code downloaded from certain sites more "
-#~ "permissions."
-#~ msgstr ""
-#~ "En habilitar el gestor de seguretat, jvm s'executarà amb un Gestor de "
-#~ "Seguretat inclòs. Açò farà que les miniaplicacions no puguen llegir i "
-#~ "escriure el vostre sistema de fitxers, crear sòcols arbitraris i altres "
-#~ "accions que podrien utilitzar-se per a comprometre el vostre sistema. "
-#~ "Desmarqueu esta opció al vostre risc. Podeu modificar el vostre fitxer "
-#~ "$HOME/.java.policy amb la utilitat Java policytool per a donar més "
-#~ "permisos al codi descarregat de certs llocs."
-
-#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
-#~ msgstr ""
-#~ "Habilitar açò causarà que el jvm utilitze KIO per al transport en la "
-#~ "xarxa "
-
-#~ msgid ""
-#~ "Enter the path to the java executable. If you want to use the jre in your "
-#~ "path, simply leave it as 'java'. If you need to use a different jre, "
-#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
-#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
-#~ "IBMJava2-13)."
-#~ msgstr ""
-#~ "Introduïu el camí cap a l'executable java. Si voleu utilitzar el jre en "
-#~ "la variable d'entorn PATH, deixeu-lo senzillament com a «java». Si us cal "
-#~ "utilitzar un jre diferent, introduïu el camí cap a l'executable Java (per "
-#~ "exemple, /usr/lib/jdk/bin/java), o el camí cap al directori que conté "
-#~ "«bin/java» (per exemple, /opt/IBMJava2-13)."
-
-#~ msgid ""
-#~ "If you want special arguments to be passed to the virtual machine, enter "
-#~ "them here."
-#~ msgstr ""
-#~ "Si voleu que es passen arguments especials a la màquina virtual, "
-#~ "introduïu-los ací."
-
-#~ msgid ""
-#~ "When all the applets have been destroyed, the applet server should shut "
-#~ "down. However, starting the jvm takes a lot of time. If you would like to "
-#~ "keep the java process running while you are browsing, you can set the "
-#~ "timeout value to whatever you like. To keep the java process running for "
-#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
-#~ "Server checkbox unchecked."
-#~ msgstr ""
-#~ "Quan s'han destruït totes les miniaplicacions, el servidor de "
-#~ "miniaplicacions s'hauria de parar. En canvi, iniciar el jvm costa força "
-#~ "temps. Si vos agradaria mantindre en execució el procés java mentre esteu "
-#~ "navegant, podeu establir el temps d'expiració al valor que vulgueu. Per a "
-#~ "mantindre el procés java executant-se durant el mateix temps que el "
-#~ "procés konqueror, deixeu sense marcar la casella de selecció Parada del "
-#~ "servidor de miniaplicacions."
-
-#~ msgctxt "@title:group"
-#~ msgid "Doma&in-Specific"
-#~ msgstr "&Específic de domini"
-
-#~ msgctxt "@title:window"
-#~ msgid "New Java Policy"
-#~ msgstr "Nova política Java"
-
-#~ msgctxt "@title:window"
-#~ msgid "Change Java Policy"
-#~ msgstr "Canvi de la política Java"
-
-#~ msgid "&Java policy:"
-#~ msgstr "Política &Java:"
-
-#~ msgid "Select a Java policy for the above host or domain."
-#~ msgstr "Tria una política Java per a l'amfitrió o domini d'amunt."
-
-#~ msgid "Debugging"
-#~ msgstr "Depuració"
-
-#~ msgid "Enable debu&gger"
-#~ msgstr "Habilita el de&purador"
-
-#~ msgid "Enables builtin JavaScript debugger."
-#~ msgstr "Habilita el depurador de JavaScript integrat."
-
-#~ msgid "Report &errors"
-#~ msgstr "Informa dels &errors"
-
-#~ msgid ""
-#~ "Enables the reporting of errors that occur when JavaScript code is "
-#~ "executed."
-#~ msgstr ""
-#~ "Habilita l'informe dels errors que ocorren quan s'executa codi en "
-#~ "JavaScript."
-
-#~ msgid "&Java"
-#~ msgstr "Ja&va"
-
-#~ msgid "Java&Script"
-#~ msgstr "JavaScrip&t"

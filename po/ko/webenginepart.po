@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 02:29+0000\n"
+"POT-Creation-Date: 2024-07-29 02:33+0000\n"
 "PO-Revision-Date: 2024-02-09 23:53+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -883,7 +883,7 @@ msgstr ""
 msgid "Resubmit Information"
 msgstr "정보 다시 제출"
 
-#: src/webenginepage.cpp:578
+#: src/webenginepage.cpp:581
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -892,18 +892,18 @@ msgstr ""
 "이 사이트에서 현재 물리적 위치에 접근하려고 합니다.\n"
 "접근을 허용하시겠습니까?"
 
-#: src/webenginepage.cpp:582 src/webenginepage.cpp:660
-#: src/webenginepage.cpp:671
+#: src/webenginepage.cpp:585 src/webenginepage.cpp:663
+#: src/webenginepage.cpp:674
 #, kde-format
 msgid "Network Transmission"
 msgstr "네트워크 전송"
 
-#: src/webenginepage.cpp:583
+#: src/webenginepage.cpp:586
 #, kde-format
 msgid "Allow access"
 msgstr "접근 허용"
 
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:656
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -916,12 +916,12 @@ msgstr ""
 "제 3자가 이 정보를 보고 가로챌 수도 있습니다.\n"
 "데이터를 암호화하지 안고 보내시겠습니까?"
 
-#: src/webenginepage.cpp:661
+#: src/webenginepage.cpp:664
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "암호화하지 않고 보냄(&S)"
 
-#: src/webenginepage.cpp:668
+#: src/webenginepage.cpp:671
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -930,12 +930,12 @@ msgstr ""
 "이 사이트는 폼 데이터를 이메일로 보내려고 하고 있습니다.\n"
 "계속 진행하시겠습니까?"
 
-#: src/webenginepage.cpp:672
+#: src/webenginepage.cpp:675
 #, kde-format
 msgid "&Send Email"
 msgstr "이메일 보내기(&S)"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:724
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -944,22 +944,22 @@ msgstr ""
 "<qt>이 사이트에서 이메일 메시지에 다음 파일을 첨부할 수 있도록 허용하시겠습니"
 "까?</qt>"
 
-#: src/webenginepage.cpp:723
+#: src/webenginepage.cpp:726
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "이메일 첨부 확인"
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:727
 #, kde-format
 msgid "&Allow attachments"
 msgstr "첨부 허용(&A)"
 
-#: src/webenginepage.cpp:725
+#: src/webenginepage.cpp:728
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "첨부 무시(&I)"
 
-#: src/webenginepage.cpp:739
+#: src/webenginepage.cpp:742
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -968,12 +968,12 @@ msgstr ""
 "이 사이트는 폼을 제출하는 과정에서 컴퓨터에 있는 파일을 첨부하려고 시도했습니"
 "다. 보안을 위해서 첨부 파일을 삭제했습니다."
 
-#: src/webenginepage.cpp:742
+#: src/webenginepage.cpp:745
 #, kde-format
 msgid "Attachment Removed"
 msgstr "첨부 삭제됨"
 
-#: src/webenginepage.cpp:856
+#: src/webenginepage.cpp:859
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -982,7 +982,7 @@ msgstr ""
 "이 사이트에서 새 창을 열려고 합니다.\n"
 "허용하시겠습니까?"
 
-#: src/webenginepage.cpp:858
+#: src/webenginepage.cpp:861
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -991,17 +991,17 @@ msgstr ""
 "<qt>이 사이트에서 팝업 창으로<p>%1</p><br/>을(를) 열려고 합니다. 허용하시겠습"
 "니까?</qt>"
 
-#: src/webenginepage.cpp:861
+#: src/webenginepage.cpp:864
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "자바스크립트 팝업 확인"
 
-#: src/webenginepage.cpp:862
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid "Allow"
 msgstr "허용"
 
-#: src/webenginepage.cpp:862
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid "Do Not Allow"
 msgstr "허용하지 않음"
