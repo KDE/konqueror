@@ -4491,13 +4491,6 @@ void KonqMainWindow::readProperties(const KConfigGroup &configGroup)
 
 void KonqMainWindow::applyMainWindowSettings(const KConfigGroup &config)
 {
-    //Don't save settings for preloaded windows to avoid override changes in size and position made by the user
-    //(since preloaded windows are invisible the user won't be able to interact with them, which means that they'll
-    //have old or default settings)
-    if (isPreloaded()) {
-        return;
-    }
-
     KParts::MainWindow::applyMainWindowSettings(config);
     if (m_currentView) {
         /// @Note status bar isn't direct child to main window
@@ -4509,6 +4502,13 @@ void KonqMainWindow::applyMainWindowSettings(const KConfigGroup &config)
 
 void KonqMainWindow::saveMainWindowSettings(KConfigGroup &config)
 {
+    //Don't save settings for preloaded windows to avoid override changes in size and position made by the user
+    //(since preloaded windows are invisible the user won't be able to interact with them, which means that they'll
+    //have old or default settings)
+    if (isPreloaded()) {
+        return;
+    }
+
     KParts::MainWindow::saveMainWindowSettings(config);
     if (m_currentView) {
         /// @Note status bar isn't direct child to main window
