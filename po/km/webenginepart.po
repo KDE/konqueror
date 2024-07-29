@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-29 00:39+0000\n"
 "PO-Revision-Date: 2012-07-09 11:08+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -877,7 +877,7 @@ msgstr ""
 msgid "Resubmit Information"
 msgstr "ព័ត៌មាន​បន្ថែម ៖ %1"
 
-#: src/webenginepage.cpp:578
+#: src/webenginepage.cpp:581
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is attempting to submit form data via email.\n"
@@ -889,19 +889,19 @@ msgstr ""
 "តំបន់បណ្ដាញ​​កំពុង​ប៉ុនប៉ង​ដាក់​ស្នើ​ពី​ទិន្នន័យ​តាម​រយៈ​អ៊ីមែល ។\n"
 "តើ​អ្នក​ចង់​បន្ត​ដែរ​ឬទេ ?"
 
-#: src/webenginepage.cpp:582 src/webenginepage.cpp:660
-#: src/webenginepage.cpp:671
+#: src/webenginepage.cpp:585 src/webenginepage.cpp:663
+#: src/webenginepage.cpp:674
 #, kde-format
 msgid "Network Transmission"
 msgstr "ការ​បញ្ជូន​បណ្ដាញ"
 
-#: src/webenginepage.cpp:583
+#: src/webenginepage.cpp:586
 #, fuzzy, kde-format
 #| msgid "&Allow attachments"
 msgid "Allow access"
 msgstr "អនុញ្ញាត​ឲ្យ​មាន​ឯកសារ​ភ្ជាប់"
 
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:656
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -913,12 +913,12 @@ msgstr ""
 "ភាគី​ទីបី អាច​ទប់​ស្កាត់​ និង​មើល​ព័ត៌មាន​នេះ ។\n"
 "តើ​អ្នក​ប្រាកដ​ជា​ចង់​ផ្ញើ​ទិន្នន័យ​ដែល​មិន​បាន​អ៊ិនគ្រីប​ដែរ​ឬទេ ?"
 
-#: src/webenginepage.cpp:661
+#: src/webenginepage.cpp:664
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "ផ្ញើ​អ្វី​ដែល​មិនបាន​អ៊ិនគ្រីប"
 
-#: src/webenginepage.cpp:668
+#: src/webenginepage.cpp:671
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -927,12 +927,12 @@ msgstr ""
 "តំបន់បណ្ដាញ​​កំពុង​ប៉ុនប៉ង​ដាក់​ស្នើ​ពី​ទិន្នន័យ​តាម​រយៈ​អ៊ីមែល ។\n"
 "តើ​អ្នក​ចង់​បន្ត​ដែរ​ឬទេ ?"
 
-#: src/webenginepage.cpp:672
+#: src/webenginepage.cpp:675
 #, kde-format
 msgid "&Send Email"
 msgstr "ផ្ញើ​អ៊ីមែល"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:724
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -940,22 +940,22 @@ msgid ""
 msgstr ""
 "<qt>តើ​អ្នក​ចង់​អនុញ្ញាត​ឲ្យ​តំបន់​បណ្ដាញ​នេះ​ភ្ជាប់​ឯកសារ​ដូច​ខាងក្រោម​ទៅ​កាន់​សារ​អ៊ីមែល​ដែរឬទេ ?</qt>"
 
-#: src/webenginepage.cpp:723
+#: src/webenginepage.cpp:726
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "ការ​អះអាង​ឯកសារ​ភ្ជាប់​តាម​អ៊ីមែល"
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:727
 #, kde-format
 msgid "&Allow attachments"
 msgstr "អនុញ្ញាត​ឲ្យ​មាន​ឯកសារ​ភ្ជាប់"
 
-#: src/webenginepage.cpp:725
+#: src/webenginepage.cpp:728
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "មិន​អើពើ​នឹង​ឯកសារ​ភ្ជាប់"
 
-#: src/webenginepage.cpp:739
+#: src/webenginepage.cpp:742
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -964,12 +964,12 @@ msgstr ""
 "តំបន់បណ្ដាញ​បាន​ប៉ុនប៉ង​ភ្ជាប់​ឯកសារ​ពី​កុំព្យូទ័រ​របស់​អ្នក​នៅ​ក្នុង​ការ​ដាក់​ស្នើ​សំណុំ​បែបបទ ។ ឯកសារ​ភ្ជាប់​ត្រូវ​​បាន​យក​"
 "ចេញ​​ដើម្បី​ជា​ការ​ការពារ​របស់​អ្នក ។"
 
-#: src/webenginepage.cpp:742
+#: src/webenginepage.cpp:745
 #, kde-format
 msgid "Attachment Removed"
 msgstr "បាន​យក​ឯកសារ​ភ្ជាប់​ចេញ"
 
-#: src/webenginepage.cpp:856
+#: src/webenginepage.cpp:859
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is requesting to open up a popup window.\n"
@@ -981,7 +981,7 @@ msgstr ""
 "តំបន់បណ្ដាញ​​កំពុង​ស្នើ​ឲ្យ​បើក​បង្អួច​លេចឡើង ។\n"
 "តើ​អ្នក​អនុញ្ញាត​ដែរ​ឬទេ ?"
 
-#: src/webenginepage.cpp:858
+#: src/webenginepage.cpp:861
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -989,17 +989,17 @@ msgid ""
 msgstr ""
 "<qt>តំបន់បណ្ដាញ​​កំពុង​ស្នើ​ឲ្យ​បើក​បង្អួច​លេចឡើង​ទៅកាន់<p>%1</p><br/>តើ​អ្នក​អនុញ្ញាត​ដែរ​ឬទេ ?</qt>"
 
-#: src/webenginepage.cpp:861
+#: src/webenginepage.cpp:864
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "ការ​អះអាង​ការ​លេចឡើង​របស់ Javascript"
 
-#: src/webenginepage.cpp:862
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid "Allow"
 msgstr "អនុញ្ញាត"
 
-#: src/webenginepage.cpp:862
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid "Do Not Allow"
 msgstr "កុំ​អនុញ្ញាត"

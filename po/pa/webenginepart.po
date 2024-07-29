@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-29 00:39+0000\n"
 "PO-Revision-Date: 2011-12-19 22:13+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -848,7 +848,7 @@ msgstr ""
 msgid "Resubmit Information"
 msgstr "ਹੋਰ ਜਾਣਕਾਰੀ: %1"
 
-#: src/webenginepage.cpp:578
+#: src/webenginepage.cpp:581
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is attempting to submit form data via email.\n"
@@ -860,19 +860,19 @@ msgstr ""
 "ਇਹ ਸਾਇਟ ਨੇ ਈਮੇਲ ਰਾਹੀਂ ਫਾਰਮ ਡਾਟਾ ਭੇਜਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕੀਤੀ ਹੈ।\n"
 "ਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: src/webenginepage.cpp:582 src/webenginepage.cpp:660
-#: src/webenginepage.cpp:671
+#: src/webenginepage.cpp:585 src/webenginepage.cpp:663
+#: src/webenginepage.cpp:674
 #, kde-format
 msgid "Network Transmission"
 msgstr "ਨੈੱਟਵਰਕ ਟਰਾਂਸਮਿਸ਼ਨ"
 
-#: src/webenginepage.cpp:583
+#: src/webenginepage.cpp:586
 #, fuzzy, kde-format
 #| msgid "&Allow attachments"
 msgid "Allow access"
 msgstr "ਅਟੈਚਮੈਂਟ ਮਨਜ਼ੂਰ(&A)"
 
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:656
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -881,12 +881,12 @@ msgid ""
 "Are you sure you want to send the data unencrypted?"
 msgstr ""
 
-#: src/webenginepage.cpp:661
+#: src/webenginepage.cpp:664
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "ਅਣ-ਇੰਕ੍ਰਿਪਟ ਭੇਜੋ(&S)"
 
-#: src/webenginepage.cpp:668
+#: src/webenginepage.cpp:671
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -895,34 +895,34 @@ msgstr ""
 "ਇਹ ਸਾਇਟ ਨੇ ਈਮੇਲ ਰਾਹੀਂ ਫਾਰਮ ਡਾਟਾ ਭੇਜਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕੀਤੀ ਹੈ।\n"
 "ਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: src/webenginepage.cpp:672
+#: src/webenginepage.cpp:675
 #, kde-format
 msgid "&Send Email"
 msgstr "ਈਮੇਲ ਭੇਜੋ(&S)"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:724
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 msgstr ""
 
-#: src/webenginepage.cpp:723
+#: src/webenginepage.cpp:726
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "ਈਮੇਲ ਅਟੈਚਮੈਂਟ ਪੁਸ਼ਟੀ"
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:727
 #, kde-format
 msgid "&Allow attachments"
 msgstr "ਅਟੈਚਮੈਂਟ ਮਨਜ਼ੂਰ(&A)"
 
-#: src/webenginepage.cpp:725
+#: src/webenginepage.cpp:728
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "ਅਟੈਚਮੈਂਟ ਅਣਡਿੱਠਾ(&I)"
 
-#: src/webenginepage.cpp:739
+#: src/webenginepage.cpp:742
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -931,12 +931,12 @@ msgstr ""
 "ਇਹ ਸਾਇਟ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਤੋਂ ਇੱਕ ਫਾਇਲ ਜੋੜਨ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਹੀ ਹੈ। ਇਸਤਰਾਂ ਕਰਨ ਨਾਲ ਇਹ ਤੁਹਾਡੀ "
 "ਸੁਰੱਖਿਆ ਤੋਂ ਬਾਹਰ ਚਲੀ ਜਾਏਗੀ।"
 
-#: src/webenginepage.cpp:742
+#: src/webenginepage.cpp:745
 #, kde-format
 msgid "Attachment Removed"
 msgstr "ਅਟੈਚਮੈਂਟ ਹਟਾਈ ਗਈ"
 
-#: src/webenginepage.cpp:856
+#: src/webenginepage.cpp:859
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is attempting to submit form data via email.\n"
@@ -948,7 +948,7 @@ msgstr ""
 "ਇਹ ਸਾਇਟ ਨੇ ਈਮੇਲ ਰਾਹੀਂ ਫਾਰਮ ਡਾਟਾ ਭੇਜਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕੀਤੀ ਹੈ।\n"
 "ਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: src/webenginepage.cpp:858
+#: src/webenginepage.cpp:861
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
@@ -960,19 +960,19 @@ msgstr ""
 "<qt>ਇਹ ਅਣ-ਟਰੱਸਟਡ ਸਫ਼ਾ ਲਿੰਕ <br/><b>%1</b><br/> ਹੈ। ਕੀ ਤੁਸੀਂ ਲਿੰਕ ਉੱਤੇ ਜਾਣਾ ਚਾਹੁੰਦੇ ਹੋ?</"
 "qt>"
 
-#: src/webenginepage.cpp:861
+#: src/webenginepage.cpp:864
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr ""
 
-#: src/webenginepage.cpp:862
+#: src/webenginepage.cpp:865
 #, fuzzy, kde-format
 #| msgctxt "follow link despite of security warning"
 #| msgid "Follow"
 msgid "Allow"
 msgstr "ਜਾਓ"
 
-#: src/webenginepage.cpp:862
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid "Do Not Allow"
 msgstr ""
