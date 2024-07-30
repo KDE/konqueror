@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-29 02:33+0000\n"
+"POT-Creation-Date: 2024-07-30 02:33+0000\n"
 "PO-Revision-Date: 2024-07-12 09:50+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -530,8 +530,8 @@ msgstr ""
 "Il est impossible de passer des paramètres d'URL lorsque l'option « --"
 "preload » est utilisée. Les URLs seront ignorées.\n"
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4790
-#: src/konqmainwindow.cpp:4836
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4797
+#: src/konqmainwindow.cpp:4843
 #, kde-format
 msgid "no name"
 msgstr "aucun nom"
@@ -731,7 +731,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2224
 #: src/konqmainwindow.cpp:2313 src/konqmainwindow.cpp:2345
 #: src/konqmainwindow.cpp:2388 src/konqmainwindow.cpp:2410
-#: src/konqmainwindow.cpp:4755
+#: src/konqmainwindow.cpp:4762
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -740,7 +740,7 @@ msgstr "Abandonner les modifications ?"
 #: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2224
 #: src/konqmainwindow.cpp:2313 src/konqmainwindow.cpp:2345
 #: src/konqmainwindow.cpp:2388 src/konqmainwindow.cpp:2411
-#: src/konqmainwindow.cpp:4755
+#: src/konqmainwindow.cpp:4762
 #, kde-format
 msgid "&Discard Changes"
 msgstr "Aban&donner les modifications"
@@ -1384,23 +1384,23 @@ msgstr "Ouvrir dans un &nouvel onglet"
 msgid "Open the document in a new tab"
 msgstr "Ouvrir le document dans un nouvel onglet"
 
-#: src/konqmainwindow.cpp:4533
+#: src/konqmainwindow.cpp:4540
 #, kde-format
 msgid "&Open With"
 msgstr "&Ouvrir avec"
 
-#: src/konqmainwindow.cpp:4546
+#: src/konqmainwindow.cpp:4553
 #, kde-format
 msgid "Open with %1"
 msgstr "Ouvrir avec « %1 »"
 
-#: src/konqmainwindow.cpp:4596
+#: src/konqmainwindow.cpp:4603
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "Mode d'afficha&ge"
 
-#: src/konqmainwindow.cpp:4719
+#: src/konqmainwindow.cpp:4726
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
@@ -1408,18 +1408,18 @@ msgstr ""
 "Vous avez plusieurs onglets ouverts dans cette fenêtre. Voulez-vous vraiment "
 "quitter ?"
 
-#: src/konqmainwindow.cpp:4721
+#: src/konqmainwindow.cpp:4728
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Confirmation"
 
-#: src/konqmainwindow.cpp:4723
+#: src/konqmainwindow.cpp:4730
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "Fermer &l'onglet courant"
 
-#: src/konqmainwindow.cpp:4751
+#: src/konqmainwindow.cpp:4758
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1428,7 +1428,7 @@ msgstr ""
 "Cet onglet contient des modifications qui n'ont pas été validées.\n"
 "La fermeture de la fenêtre entraînera la perte de ces modifications."
 
-#: src/konqmainwindow.cpp:4752
+#: src/konqmainwindow.cpp:4759
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1437,7 +1437,7 @@ msgstr ""
 "Cette page contient des modifications qui n'ont pas été validées.\n"
 "La fermeture de la fenêtre entraînera la perte de ces modifications."
 
-#: src/konqmainwindow.cpp:4912
+#: src/konqmainwindow.cpp:4919
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1445,28 +1445,28 @@ msgstr ""
 "Votre barre latérale n'est pas fonctionnelle ou disponible. Il est "
 "impossible d'y ajouter une entrée."
 
-#: src/konqmainwindow.cpp:4912 src/konqmainwindow.cpp:4919
+#: src/konqmainwindow.cpp:4919 src/konqmainwindow.cpp:4926
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Barre latérale Web"
 
-#: src/konqmainwindow.cpp:4917
+#: src/konqmainwindow.cpp:4924
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Ajouter une nouvelle extension Web « %1 » à votre barre latérale ?"
 
-#: src/konqmainwindow.cpp:4919
+#: src/konqmainwindow.cpp:4926
 #, kde-format
 msgid "Add"
 msgstr "Ajouter"
 
-#: src/konqmainwindow.cpp:4919
+#: src/konqmainwindow.cpp:4926
 #, kde-format
 msgid "Do Not Add"
 msgstr "Ne pas ajouter"
 
-#: src/konqmainwindow.cpp:5267
+#: src/konqmainwindow.cpp:5274
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1475,7 +1475,7 @@ msgstr ""
 "Cela ressemble à une erreur de configuration. Vous avez associé Konqueror "
 "avec « %1 » mais celui-ci ne sait pas gérer ce type de fichiers."
 
-#: src/konqmainwindow.cpp:5352
+#: src/konqmainwindow.cpp:5359
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1498,23 +1498,23 @@ msgstr ""
 "mandataire dans la boîte de dialogue de paramétrage. Voulez-vous vraiment "
 "modifier vos paramètres de serveur mandataire maintenant ?"
 
-#: src/konqmainwindow.cpp:5357
+#: src/konqmainwindow.cpp:5364
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "Configuration du serveur mandataire non prise en charge"
 
-#: src/konqmainwindow.cpp:5357
+#: src/konqmainwindow.cpp:5364
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "Ne pas utiliser de serveur mandataire"
 
-#: src/konqmainwindow.cpp:5358 src/konqmainwindow.cpp:5386
+#: src/konqmainwindow.cpp:5365 src/konqmainwindow.cpp:5393
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr ""
 "Afficher la boîte de dialogue pour la configuration du serveur mandataire"
 
-#: src/konqmainwindow.cpp:5382
+#: src/konqmainwindow.cpp:5389
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1529,22 +1529,22 @@ msgstr ""
 "tt></p><p><b>Serveur mandataire « HTTPS » : </b><tt>%2</tt></p>Que voulez-"
 "vous faire ?"
 
-#: src/konqmainwindow.cpp:5385
+#: src/konqmainwindow.cpp:5392
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "Conflit en cours dans la configuration du serveur mandataire"
 
-#: src/konqmainwindow.cpp:5386
+#: src/konqmainwindow.cpp:5393
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "Utiliser un serveur mandataire « HTTP » (seulement cet fois)"
 
-#: src/konqmainwindow.cpp:5386
+#: src/konqmainwindow.cpp:5393
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "Utiliser un serveur mandataire « HTTPS » (seulement cet fois)"
 
-#: src/konqmainwindow.cpp:5402
+#: src/konqmainwindow.cpp:5409
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
