@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-29 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:41+0000\n"
 "PO-Revision-Date: 2024-07-11 14:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -510,8 +510,8 @@ msgstr ""
 "--preload anahtarını kullanırken URL’ler geçiremezsiniz. URL’ler yok "
 "sayılacaktır.\n"
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4790
-#: src/konqmainwindow.cpp:4836
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4797
+#: src/konqmainwindow.cpp:4843
 #, kde-format
 msgid "no name"
 msgstr "adsız"
@@ -709,7 +709,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2224
 #: src/konqmainwindow.cpp:2313 src/konqmainwindow.cpp:2345
 #: src/konqmainwindow.cpp:2388 src/konqmainwindow.cpp:2410
-#: src/konqmainwindow.cpp:4755
+#: src/konqmainwindow.cpp:4762
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -718,7 +718,7 @@ msgstr "Değişiklikleri At?"
 #: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2224
 #: src/konqmainwindow.cpp:2313 src/konqmainwindow.cpp:2345
 #: src/konqmainwindow.cpp:2388 src/konqmainwindow.cpp:2411
-#: src/konqmainwindow.cpp:4755
+#: src/konqmainwindow.cpp:4762
 #, kde-format
 msgid "&Discard Changes"
 msgstr "&Değişiklikleri At"
@@ -1352,40 +1352,40 @@ msgstr "&Yeni Sekmede Aç"
 msgid "Open the document in a new tab"
 msgstr "Belgeyi yeni bir sekmede aç"
 
-#: src/konqmainwindow.cpp:4533
+#: src/konqmainwindow.cpp:4540
 #, kde-format
 msgid "&Open With"
 msgstr "&Birlikte Aç"
 
-#: src/konqmainwindow.cpp:4546
+#: src/konqmainwindow.cpp:4553
 #, kde-format
 msgid "Open with %1"
 msgstr "%1 ile Aç"
 
-#: src/konqmainwindow.cpp:4596
+#: src/konqmainwindow.cpp:4603
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "&Görünüm Kipi"
 
-#: src/konqmainwindow.cpp:4719
+#: src/konqmainwindow.cpp:4726
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr "Birden çok sekme açık, çıkmak istediğinizden emin misiniz?"
 
-#: src/konqmainwindow.cpp:4721
+#: src/konqmainwindow.cpp:4728
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Onay"
 
-#: src/konqmainwindow.cpp:4723
+#: src/konqmainwindow.cpp:4730
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "&Geçerli Sekmeyi Kapat"
 
-#: src/konqmainwindow.cpp:4751
+#: src/konqmainwindow.cpp:4758
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1394,7 +1394,7 @@ msgstr ""
 "Bu sekme gönderilmemiş değişiklikler içeriyor.\n"
 "Pencereyi kapatmak tüm değişiklikleri yok sayar."
 
-#: src/konqmainwindow.cpp:4752
+#: src/konqmainwindow.cpp:4759
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1403,35 +1403,35 @@ msgstr ""
 "Bu sayfa gönderilmemiş değişiklikler içeriyor.\n"
 "Pencereyi kapatmak tüm değişiklikleri yok sayar."
 
-#: src/konqmainwindow.cpp:4912
+#: src/konqmainwindow.cpp:4919
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr ""
 "Kenar çubuğunuz işlevsel değil veya ulaşılamıyor. Yeni girdi eklenemedi."
 
-#: src/konqmainwindow.cpp:4912 src/konqmainwindow.cpp:4919
+#: src/konqmainwindow.cpp:4919 src/konqmainwindow.cpp:4926
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Web Kenar Çubuğu"
 
-#: src/konqmainwindow.cpp:4917
+#: src/konqmainwindow.cpp:4924
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "“%1” web uzantısı kenar çubuğuna eklensin mi?"
 
-#: src/konqmainwindow.cpp:4919
+#: src/konqmainwindow.cpp:4926
 #, kde-format
 msgid "Add"
 msgstr "Ekle"
 
-#: src/konqmainwindow.cpp:4919
+#: src/konqmainwindow.cpp:4926
 #, kde-format
 msgid "Do Not Add"
 msgstr "Ekleme"
 
-#: src/konqmainwindow.cpp:5267
+#: src/konqmainwindow.cpp:5274
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1440,7 +1440,7 @@ msgstr ""
 "Bir yapılandırma hatası var gibi görünüyor. Konqueror’u %1 türündeki "
 "dosyalar ile ilişkilendirmişsiniz; ancak Konqueror bu tür dosyaları açamıyor."
 
-#: src/konqmainwindow.cpp:5352
+#: src/konqmainwindow.cpp:5359
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1461,22 +1461,22 @@ msgstr ""
 "yapılandırmasını seçin veya ayarlar penceresinde elle bir vekil URL’si "
 "tanımlayın. Vekil ayarlarını şimdi değiştirmek istiyor musunuz?"
 
-#: src/konqmainwindow.cpp:5357
+#: src/konqmainwindow.cpp:5364
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "Desteklenmeyen vekil yapılandırması"
 
-#: src/konqmainwindow.cpp:5357
+#: src/konqmainwindow.cpp:5364
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "Vekil kullanma"
 
-#: src/konqmainwindow.cpp:5358 src/konqmainwindow.cpp:5386
+#: src/konqmainwindow.cpp:5365 src/konqmainwindow.cpp:5393
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "Vekil yapılandırma iletişim kutusunu göster"
 
-#: src/konqmainwindow.cpp:5382
+#: src/konqmainwindow.cpp:5389
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1489,22 +1489,22 @@ msgstr ""
 "<p><b>HTTP vekili:</b> <tt>%1</tt></p><p><b>HTTPS vekili: </b><tt>%2</tt></"
 "p>Ne yapmak istiyorsunuz?"
 
-#: src/konqmainwindow.cpp:5385
+#: src/konqmainwindow.cpp:5392
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "Çakışan vekil yapılandırması"
 
-#: src/konqmainwindow.cpp:5386
+#: src/konqmainwindow.cpp:5393
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "HTTP vekilini kullan (yalnızca bu kez)"
 
-#: src/konqmainwindow.cpp:5386
+#: src/konqmainwindow.cpp:5393
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "HTTPS vekilini kullan (yalnızca bu kez)"
 
-#: src/konqmainwindow.cpp:5402
+#: src/konqmainwindow.cpp:5409
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "

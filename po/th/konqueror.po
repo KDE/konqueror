@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-29 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:41+0000\n"
 "PO-Revision-Date: 2010-12-17 20:03+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -490,8 +490,8 @@ msgid ""
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4790
-#: src/konqmainwindow.cpp:4836
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4797
+#: src/konqmainwindow.cpp:4843
 #, kde-format
 msgid "no name"
 msgstr "ไม่มีชื่อ"
@@ -693,7 +693,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2224
 #: src/konqmainwindow.cpp:2313 src/konqmainwindow.cpp:2345
 #: src/konqmainwindow.cpp:2388 src/konqmainwindow.cpp:2410
-#: src/konqmainwindow.cpp:4755
+#: src/konqmainwindow.cpp:4762
 #, fuzzy, kde-format
 #| msgid "Discard Changes?"
 msgctxt "@title:window"
@@ -703,7 +703,7 @@ msgstr "จะละทิ้งการเปลี่ยนแปลงหร
 #: src/konqmainwindow.cpp:1587 src/konqmainwindow.cpp:2224
 #: src/konqmainwindow.cpp:2313 src/konqmainwindow.cpp:2345
 #: src/konqmainwindow.cpp:2388 src/konqmainwindow.cpp:2411
-#: src/konqmainwindow.cpp:4755
+#: src/konqmainwindow.cpp:4762
 #, kde-format
 msgid "&Discard Changes"
 msgstr "ละ&ทิ้งการเปลี่ยนแปลง"
@@ -1337,23 +1337,23 @@ msgstr "เปิดในแ&ท็บใหม่"
 msgid "Open the document in a new tab"
 msgstr "เปิดเอกสารในแท็บใหม่"
 
-#: src/konqmainwindow.cpp:4533
+#: src/konqmainwindow.cpp:4540
 #, kde-format
 msgid "&Open With"
 msgstr "เปิดใช้&ด้วย"
 
-#: src/konqmainwindow.cpp:4546
+#: src/konqmainwindow.cpp:4553
 #, kde-format
 msgid "Open with %1"
 msgstr "เปิดใช้ด้วย %1"
 
-#: src/konqmainwindow.cpp:4596
+#: src/konqmainwindow.cpp:4603
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "แบบ&มุมมอง"
 
-#: src/konqmainwindow.cpp:4719
+#: src/konqmainwindow.cpp:4726
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
@@ -1361,19 +1361,19 @@ msgstr ""
 "คุณได้เปิดใช้งานแท็บในหน้าต่างนี้ไว้อยู่หลายแท็บ \n"
 "แน่ใจหรือว่าต้องการจะออกจากโปรแกรมจริง ๆ ?"
 
-#: src/konqmainwindow.cpp:4721
+#: src/konqmainwindow.cpp:4728
 #, fuzzy, kde-format
 #| msgid "Confirmation"
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "การยืนยัน"
 
-#: src/konqmainwindow.cpp:4723
+#: src/konqmainwindow.cpp:4730
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "ปิ&ดแท็บปัจจุบัน"
 
-#: src/konqmainwindow.cpp:4751
+#: src/konqmainwindow.cpp:4758
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1382,7 +1382,7 @@ msgstr ""
 "แท็บนี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
 "การปิดหน้าต่างนี้จะเป็นการทิ้งการเปลี่ยนแปลงเหล่านี้ไป"
 
-#: src/konqmainwindow.cpp:4752
+#: src/konqmainwindow.cpp:4759
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1391,35 +1391,35 @@ msgstr ""
 "หน้าเว็บนี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
 "การปิดหน้าต่างนี้จะเป็นการทิ้งการเปลี่ยนแปลงเหล่านี้ไป"
 
-#: src/konqmainwindow.cpp:4912
+#: src/konqmainwindow.cpp:4919
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr "แถบด้านข้างของคุณใช้งานไม่ได้หรือไม่มี ไม่สามารถเพิ่มรายการใหม่ได้"
 
-#: src/konqmainwindow.cpp:4912 src/konqmainwindow.cpp:4919
+#: src/konqmainwindow.cpp:4919 src/konqmainwindow.cpp:4926
 #, fuzzy, kde-format
 #| msgid "Web Sidebar"
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "แถบด้านข้างเว็บ"
 
-#: src/konqmainwindow.cpp:4917
+#: src/konqmainwindow.cpp:4924
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "เพิ่มส่วนเสริมเว็บ \"%1\" ไปยังแถบด้านข้างหรือไม่ ?"
 
-#: src/konqmainwindow.cpp:4919
+#: src/konqmainwindow.cpp:4926
 #, kde-format
 msgid "Add"
 msgstr "เพิ่ม"
 
-#: src/konqmainwindow.cpp:4919
+#: src/konqmainwindow.cpp:4926
 #, kde-format
 msgid "Do Not Add"
 msgstr "ไม่เพิ่ม"
 
-#: src/konqmainwindow.cpp:5267
+#: src/konqmainwindow.cpp:5274
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1428,7 +1428,7 @@ msgstr ""
 "การปรับแต่งค่ามีความผิดพลาด คุณได้กำหนดให้ใช้ Konqueror กับ %1 "
 "แต่มันไม่สามารถจัดการแฟ้มประเภทนี้ได้"
 
-#: src/konqmainwindow.cpp:5352
+#: src/konqmainwindow.cpp:5359
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1441,23 +1441,23 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5357
+#: src/konqmainwindow.cpp:5364
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5357
+#: src/konqmainwindow.cpp:5364
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5358 src/konqmainwindow.cpp:5386
+#: src/konqmainwindow.cpp:5365 src/konqmainwindow.cpp:5393
 #, fuzzy, kde-format
 #| msgid "Show Configuration Button"
 msgid "Show proxy configuration dialog"
 msgstr "แสดงปุ่มปรับแต่ง"
 
-#: src/konqmainwindow.cpp:5382
+#: src/konqmainwindow.cpp:5389
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1466,22 +1466,22 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5385
+#: src/konqmainwindow.cpp:5392
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5386
+#: src/konqmainwindow.cpp:5393
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5386
+#: src/konqmainwindow.cpp:5393
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5402
+#: src/konqmainwindow.cpp:5409
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
