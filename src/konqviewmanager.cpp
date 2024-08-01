@@ -40,6 +40,7 @@
 #include <QMimeDatabase>
 #include <QMimeType>
 #include <QScreen>
+#include <QTimer>
 
 //#define DEBUG_VIEWMGR
 
@@ -1122,13 +1123,21 @@ void KonqViewManager::loadRootItem(const KConfigGroup &cfg, KonqFrameContainerBa
     m_bLoadingProfile = false;
 
     //Actually perform delayed loading of the current tab
-    if (m_tabContainer) {
-        KonqFrameBase *frm = m_tabContainer->currentTab();
-        QList<KonqView*> views = KonqViewCollector::collect(frm);
-        for (KonqView *v : views) {
-            v->loadDelayed();
+    //This is a workaround for bug 487952, even if I'm not sure why it works.
+    //There's something in calling loadDelayed synchronously which makes the KConfigGroup
+    //in loadViewConfigFromGroup become corrupted and cause a crash. To avoid this,
+    //call loadDelayed asynchronously.
+    //TODO investigate the underlying cause of the crash
+    auto delayedLoadCurrentTab = [this] {
+        if (m_tabContainer) {
+            KonqFrameBase *frm = m_tabContainer->currentTab();
+            QList<KonqView*> views = KonqViewCollector::collect(frm);
+            for (KonqView *v : views) {
+                v->loadDelayed();
+            }
         }
-    }
+    };
+    QTimer::singleShot(0, delayedLoadCurrentTab);
 
     m_pMainWindow->enableAllActions(true);
 
