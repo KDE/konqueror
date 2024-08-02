@@ -82,12 +82,12 @@ void KonqHistoryManager::addToHistory(bool pending, const QUrl &_url,
         return;
     }
 
-    // http URLs without a path will get redirected immediately to url + '/'
-    if (_url.path().isEmpty() && _url.scheme().startsWith(QLatin1String("http"))) {
-        return;
+    QUrl url(_url);
+    // http URLs without a path will get redirected immediately to url + '/', so add the trailing /
+    if (url.path().isEmpty() && url.scheme().startsWith(QLatin1String("http"))) {
+        url.setPath(url.path().append('/'));
     }
 
-    QUrl url(_url);
     bool hasPass = !url.password().isEmpty();
     url.setPassword(QString()); // No password in the history, especially not in the completion!
     url.setHost(url.host().toLower());   // All host parts lower case
