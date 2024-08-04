@@ -1383,29 +1383,6 @@ HistoryEntry* HistoryEntry::fromDelayedLoadingData(const KConfigGroup& config, c
     return entry;
 }
 
-void HistoryEntry::loadItem(const KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options)
-{
-    if (options & (KonqFrameBase::SaveUrls|KonqFrameBase::SaveHistoryItems)) { // either one
-        url = QUrl(config.readEntry(QStringLiteral("Url").prepend(prefix), ""));
-        locationBarURL = config.readEntry(QStringLiteral("LocationBarURL").prepend(prefix), "");
-        title = config.readEntry(QStringLiteral("Title").prepend(prefix), "");
-        strServiceType = config.readEntry(QStringLiteral("StrServiceType").prepend(prefix), "");
-        strServiceName = config.readEntry(QStringLiteral("StrServiceName").prepend(prefix), "");
-    }
-    if (options & KonqFrameBase::SaveUrls) {
-        reload = true;
-    } else if (options & KonqFrameBase::SaveHistoryItems) {
-        buffer = config.readEntry(QStringLiteral("Buffer").prepend(prefix), QByteArray());
-        postData = config.readEntry(QStringLiteral("PostData").prepend(prefix), QByteArray());
-        postContentType = config.readEntry(QStringLiteral("PostContentType").prepend(prefix), "");
-        doPost = config.readEntry(QStringLiteral("DoPost").prepend(prefix), false);
-        pageReferrer = config.readEntry(QStringLiteral("PageReferrer").prepend(prefix), "");
-        pageSecurity = static_cast<KonqMainWindow::PageSecurity>(config.readEntry(
-                           QStringLiteral("PageSecurity").prepend(prefix), 0));
-        reload = false;
-    }
-}
-
 Konq::PlaceholderPart* KonqView::placeholderPart() const
 {
     return qobject_cast<Konq::PlaceholderPart*>(m_pPart);
