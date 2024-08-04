@@ -16,6 +16,7 @@
 #include <KParts/NavigationExtension>
 #include <kio/job.h>
 #include <kfileitem.h>
+#include <KFile>
 
 #include "browserarguments.h"
 #include "windowargs.h"
@@ -67,6 +68,11 @@ public:
                        const BrowserArguments &browserArgs = BrowserArguments(),
                        KParts::NavigationExtension::PopupFlags flags = KParts::NavigationExtension::DefaultPopupItems,
                        const KParts::NavigationExtension::ActionGroupMap &actionGroups = KParts::NavigationExtension::ActionGroupMap());
+
+    //Use the same values as the corresponding KFile::Mode enum values so that we can do a static cast
+    enum class UrlType {Directory=KFile::Directory, File=KFile::File};
+
+    virtual UrlType urlType() const {return UrlType::Directory;}
 
 protected:
     /**

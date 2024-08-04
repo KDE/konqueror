@@ -79,6 +79,7 @@ UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url
     m_protocolAllowsReading(KProtocolManager::supportsReading(m_url) || !KProtocolInfo::isKnownProtocol(m_url)), // If the protocol is unknown, assume it allows reading
     m_letRequestingPartDownloadUrl(req.browserArgs.downloadId().has_value())
 {
+    qDebug() << "URL LOADER FOR" << url;
     m_request.suggestedFileName = m_request.browserArgs.suggestedDownloadName();
 
     QString requestedEmbeddingPart = m_request.browserArgs.embedWith();

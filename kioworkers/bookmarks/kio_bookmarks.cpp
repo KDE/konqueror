@@ -16,6 +16,7 @@
 #include <Solid/Device>
 #include <Solid/DeviceInterface>
 #include <KIO/ApplicationLauncherJob>
+#include <KIO/CommandLauncherJob>
 
 #include <QDebug>
 #include <QGuiApplication>
@@ -36,11 +37,8 @@ class KIOPluginForMetaData : public QObject
 };
 
 BookmarksProtocol::BookmarksProtocol( const QByteArray &pool, const QByteArray &app )
-    : WorkerBase( "bookmarks", pool, app )
+    : WorkerBase( "bookmarks", pool, app ), manager(nullptr)
 {
-    const QString bookmarksFile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/konqueror/bookmarks.xml");
-    manager = new KBookmarkManager(bookmarksFile);
-
     cfg = new KConfig( "kiobookmarksrc" );
     config = cfg->group("General");
     cache = new KImageCache("kio_bookmarks", config.readEntry("CacheSize", 5 * 1024) * 1024);
@@ -170,23 +168,41 @@ int BookmarksProtocol::sizeOfGroup( const KBookmarkGroup &folder, bool real )
     return size;
 }
 
+KIO::WorkerResult BookmarksProtocol::mimetype(const QUrl& url)
+{
+    Q_UNUSED(url);
+    emit mimeType(QStringLiteral("text/html"));
+    return WorkerResult::pass();
+}
+
 KIO::WorkerResult BookmarksProtocol::get( const QUrl& url )
 {
+    emit mimeType(QStringLiteral("text/html"));
+
     QString path = url.path();
     const QRegularExpression regexp(QStringLiteral("^/(background|icon)/([\\S]+)"));
     QRegularExpressionMatch rmatch;
 
+    if (!manager) {
+        if (path == QLatin1String("bookmarksfile") && !url.fragment().isEmpty()) {
+            manager = new KBookmarkManager(url.fragment());
+            path = QLatin1String("/");
+        } else {
+            const QString bookmarksFile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/konqueror/bookmarks.xml");
+            manager = new KBookmarkManager(bookmarksFile);
+        }
+    }
+
     if (path.isEmpty() || path == "/") {
         echoIndex();
     } else if (path == "/config") {
-        // TODO: seems service bookmarks.desktop is gone?
-        const KService::Ptr bookmarksKCM = KService::serviceByDesktopName(QStringLiteral("bookmarks"));
-        if (bookmarksKCM) {
-            auto job = new KIO::ApplicationLauncherJob(bookmarksKCM);
+        QString kcmshell = QStandardPaths::findExecutable(QStringLiteral("kcmshell6"));
+        if (!kcmshell.isEmpty()) {
+            auto job = new KIO::CommandLauncherJob(kcmshell, {"konqueror_kcms/kcm_bookmarks"});
             job->start();
         }
         echoHead("bookmarks:/");
-        if (!bookmarksKCM) {
+        if (kcmshell.isEmpty()) {
             return KIO::WorkerResult::fail(KIO::ERR_WORKER_DEFINED, i18n("Could not find bookmarks config"));
         }
     } else if (path == "/editbookmarks") {

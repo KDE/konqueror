@@ -296,7 +296,9 @@ void Sidebar_Widget::slotSetName()
 void Sidebar_Widget::slotSetURL()
 {
     KUrlRequesterDialog dlg(currentButtonInfo().initURL, i18n("Enter a URL:"), this);
-    dlg.urlRequester()->setMode(KFile::Directory);
+    //KonqSidebarModule::UrlType has values corresponding to KFile::Mode, so doing a static cast is safe
+    KFile::Mode mode = static_cast<KFile::Mode>(currentButtonInfo().module->urlType());
+    dlg.urlRequester()->setMode(mode);
     if (dlg.exec()) {
         m_moduleManager.setModuleUrl(currentButtonInfo().file, dlg.selectedUrl());
         // TODO: update THAT button only.

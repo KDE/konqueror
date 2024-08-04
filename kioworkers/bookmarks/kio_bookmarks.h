@@ -19,6 +19,7 @@ public:
     ~BookmarksProtocol() override;
 
     KIO::WorkerResult get( const QUrl& url ) override;
+    KIO::WorkerResult mimetype(const QUrl & url) override;
 
 private:
     int columns;
