@@ -60,7 +60,7 @@ void KonqSidebarPart::customEvent(QEvent *ev)
 ////
 
 KonqSidebarNavigationExtension::KonqSidebarNavigationExtension(KonqSidebarPart *part, Sidebar_Widget *widget_)
-    : KParts::NavigationExtension(part), widget(widget_)
+    : BrowserExtension(part), widget(widget_)
 {
 }
 

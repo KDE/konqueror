@@ -14,7 +14,7 @@
 
 class KonqSidebarPart;
 
-class KonqSidebarNavigationExtension : public KParts::NavigationExtension
+class KonqSidebarNavigationExtension : public BrowserExtension
 {
     Q_OBJECT
 public:
