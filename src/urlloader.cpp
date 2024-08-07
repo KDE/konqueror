@@ -667,7 +667,7 @@ bool UrlLoader::shouldUseDefaultHttpMimeype() const
     if (m_ignoreDefaultHtmlPart || isMimeTypeKnown(m_mimeType)) {
         return false;
     }
-    const QVector<QString> webengineSchemes = {QStringLiteral("error"), QStringLiteral("konq")};
+    const QVector<QString> webengineSchemes = {QStringLiteral("error"), QStringLiteral("konq"), QStringLiteral("data")};
     return m_url.scheme().startsWith(QStringLiteral("http")) || webengineSchemes.contains(m_url.scheme());
 }
 

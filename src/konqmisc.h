@@ -15,6 +15,7 @@
 
 class KonqMainWindow;
 class KonqView;
+class KUriFilterData;
 
 namespace KonqMisc
 {
@@ -33,6 +34,16 @@ KonqMainWindow *newWindowFromHistory(KonqView *view, int steps);
  * @p currentDirectory the directory to use, in case the url is relative.
  */
 QUrl konqFilteredURL(KonqMainWindow *parent, const QString &url, const QUrl &currentDirectory = QUrl());
+
+/**
+ * @brief Helper function which returns an appropriate URL depending on the results of a call to KUriFilter::filterUri()
+ *
+ * @param filterSuccess the value returned by the call to KUriFilter::filterUri()
+ * @param data the data object passed to KUriFilter::filterUri()
+ * @return the URL returned by `data.uri()` if @p filterSuccess is `true` and the filtered URI is not an error and
+ * an appropriate `error` URL otherwise
+ */
+QUrl urlFromURIFilterResult(bool filterSuccess, const KUriFilterData &data);
 
 /**
 * These are some helper functions to encode/decode session filenames. The
