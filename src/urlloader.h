@@ -54,11 +54,11 @@ class KonqView;
  * and perform the action itself.
  *
  * @internal
- * For remote files, what happens after goOn depends on whether the metadata associated with the request to open the
- * URL (`m_request.args.metaData()`) contains the key DownloaderInterface::requestDownloadByPartKey():
- * - if the key doesn't exist, this class will determine the mimetype of the URL (if needed), then embed, open or save it
+ * For remote files, what happens after goOn depends on the return value returned by the @link BrowserArguments::downloadId downloadId@endlink
+ * method of the BrowserArguments object associated with the rewquest:
+ * - if it returns `std::nullopt`, this class will determine the mimetype of the URL (if needed), then embed, open or save it
  *   depending on the mimetype and the user's previous choices
- * - if the key exists, (after determining the mimetype of the URL, if not already known), this class will check whether
+ * - if it returns an `int`, (after determining the mimetype of the URL, if not already known), this class will check whether
  *   the requesting part implements the DownloaderInterface. If so, it'll let the job returned by DownloaderInterface::downloadJob()
  *   to download the URL, then it will update #m_url so that it contains the path of the downloaded file. It then proceeds as
  *   in the above case. If the file should be saved, it'll simply moved from the download location to the location chosen by the user
@@ -82,15 +82,7 @@ public:
     ~UrlLoader();
 
 
-    /** @brief Enum describing the possible actions to be taken*/
-    enum class OpenUrlAction{
-        UnknwonAction, /**< The action hasn't been decided yet */
-        DoNothing, /**< No action should be taken */
-        Save, /**< Save the URL */
-        Embed, /**< Display the URL in an embedded viewer */
-        Open, /**< Display the URL in a separate viewer*/
-        Execute /**< Execute the URL */
-    };
+    using OpenUrlAction = BrowserArguments::Action;
 
     /** @brief Enum describing the view to use to embed an URL*/
     enum class ViewToUse{
@@ -390,7 +382,7 @@ private:
     QList<OpenUrlAction> m_allowedActions = {OpenUrlAction::Open, OpenUrlAction::Embed, OpenUrlAction::Save, OpenUrlAction::Execute};
     bool m_ready = false;
     bool m_isAsync = false;
-    OpenUrlAction m_action = OpenUrlAction::UnknwonAction;
+    OpenUrlAction m_action = OpenUrlAction::UnknownAction;
     KPluginMetaData m_part;
     KService::Ptr m_service;
     QPointer<KIO::OpenUrlJob> m_openUrlJob;
@@ -399,7 +391,7 @@ private:
     QPointer<KonqInterfaces::DownloaderJob> m_partDownloaderJob;
     QString m_oldLocationBarUrl;
     int m_jobErrorCode = 0;
-    bool m_dontPassToWebEnginePart;
+    bool m_ignoreDefaultHtmlPart;
     bool m_protocolAllowsReading;
     bool m_letRequestingPartDownloadUrl = false; ///<Whether the URL should be downloaded by the part before opening/embedding/saving it
     /**
@@ -426,7 +418,5 @@ private:
      */
     QUrl m_originalUrl;
 };
-
-QDebug operator<<(QDebug dbg, UrlLoader::OpenUrlAction action);
 
 #endif // URLLLOADER_H

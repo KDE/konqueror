@@ -104,18 +104,17 @@ signals:
      * @brief Signal emitted by the extension to signal the application to open an URL after the part has finished
      * downloading the URL
      *
-     * It has the same role of `KParts::BrowserExtension::openUrlRequest`. The main difference (aside from the @p downloadId argument)
-     * is the fact that, unlike `KParts::BrowserExtension::openUrlRequest`, the handler for this signal is called synchronously.
+     * It has the same role of `KParts::BrowserExtension::openUrlRequest`. The main difference is the fact that
+     * unlike `KParts::BrowserExtension::openUrlRequest`, the handler for this signal is called synchronously.
      * This is important for the `WebEnginePart` implementation, where it allows to set the download path before having to accept the
      * download request.
      *
      * @param url the URL to download
-     * @param downloadId an unique identifier for the download
      * @param arguments information about how to open the URL
      * @param browserArguments other information about how to open the URL
      * @param temp whether the downloaded file, if opened or embedded, should be deleted after use. This will be ignored if the user chooses to save the URL
      */
-    void downloadAndOpenUrl(const QUrl &url, quint32 downloadId, const KParts::OpenUrlArguments &arguments = KParts::OpenUrlArguments(),
+    void downloadAndOpenUrl(const QUrl &url, const KParts::OpenUrlArguments &arguments = KParts::OpenUrlArguments(),
                             const BrowserArguments &browserArguments = BrowserArguments(), bool temp=true);
 };
 

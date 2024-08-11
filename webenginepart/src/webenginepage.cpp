@@ -207,17 +207,17 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
     }
     args.setMimeType(mime.name());
 
-    args.metaData().insert(QStringLiteral("DontSendToDefaultHTMLPart"), QString());
+    bArgs.setIgnoreDefaultHtmlPart(true);
 
     if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveOnly) {
-        args.metaData().insert("action", "save");
+        bArgs.setForcedAction(BrowserArguments::Action::Save);
         saveUrlToDiskAndDisplay(item, args, bArgs);
         return;
     } else if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveAs) {
         saveAs(item);
     } else {
-        args.metaData().insert(QStringLiteral("TempFile"), QString());
-        emit downloader->downloadAndOpenUrl(url, item->id(), args, bArgs, true);
+        bArgs.setDownloadId(item->id());
+        emit downloader->downloadAndOpenUrl(url, args, bArgs, true);
         if (item->state() == QWebEngineDownloadRequest::DownloadRequested) {
             qCDebug(WEBENGINEPART_LOG()) << "Automatically accepting download for" << item->url() << "This shouldn't happen";
             item->accept();
@@ -909,11 +909,6 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
     emit part()->browserExtension()->browserCreateNewWindow(url, uargs, bargs, wargs, &newWindowPart);
     qCDebug(WEBENGINEPART_LOG) << "Created new window" << newWindowPart;
 
-    if (newWindowPart && newWindowPart->widget()->topLevelWidget() != part()->widget()->topLevelWidget()) {
-        KParts::OpenUrlArguments args;
-        args.metaData().insert(QL1S("new-window"), QL1S("true"));
-        newWindowPart->setArguments(args);
-    }
     deleteLater();
     return false;
 }

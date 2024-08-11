@@ -414,7 +414,7 @@ public Q_SLOTS:
     void slotViewModeTriggered(QAction *action);
     void slotLockView();
     void slotLinkView();
-    void slotReload(KonqView *view = nullptr, bool softReload = true);
+    void slotReload(KonqView *view = nullptr);
     void slotForceReload();
     void slotStop();
 

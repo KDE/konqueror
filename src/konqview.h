@@ -524,7 +524,7 @@ public:
 
     // Called before reloading this view. Sets args.reload to true, and offers to repost form data.
     // Returns false in case the reload must be canceled.
-    bool prepareReload(KParts::OpenUrlArguments &args, BrowserArguments &browserArgs, bool softReload);
+    bool prepareReload(KParts::OpenUrlArguments &args, BrowserArguments &browserArgs);
 
     // overload for the QString version
     void setLocationBarURL(const QUrl &locationBarURL);

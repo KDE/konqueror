@@ -26,12 +26,10 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
     KonqOpenURLRequest(const QString &url) : typedUrl(url) {}
 
     KonqOpenURLRequest(const KParts::OpenUrlArguments &_args, const BrowserArguments &_browserArgs,
-                       KParts::ReadOnlyPart *_requestingPart, bool _letPartPerformDownload=false, quint32 _downloadId=-1) {
+                       KParts::ReadOnlyPart *_requestingPart) {
         args = _args;
         browserArgs = _browserArgs;
         requestingPart = _requestingPart;
-        letPartPerformDownload = _letPartPerformDownload;
-        downloadId = _downloadId;
     };
 
     QString debug() const
@@ -91,20 +89,6 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
     QList<QUrl> filesToSelect; ///< files to select in a konqdirpart
     QString suggestedFileName; ///< The suggested name when saving an URL
     KParts::ReadOnlyPart *requestingPart = nullptr; ///< The part which requested the download of an URL
-    /**
-     * @brief The download of the URL should be made by the part, not by Konqueror
-     *
-     * If this is `true`, #requestingPart should be a part having a KonqInterfaces::DownloaderExtension
-     */
-    bool letPartPerformDownload = false;
-    /**
-     * @brief A value to pass back to a part which wants to download the URL by itself
-     *
-     * The meaning of this value is part-specific.
-     *
-     * This is ignored if #letPartPerformDownload is `false`.
-     */
-    qint32 downloadId = -1;
     bool forceOpen = false; ///< Whether the URL should be opened in an external application, regardless of settings
 
     static KonqOpenURLRequest null;

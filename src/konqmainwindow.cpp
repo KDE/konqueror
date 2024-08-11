@@ -1571,7 +1571,7 @@ void KonqMainWindow::slotLinkView()
     }
 }
 
-void KonqMainWindow::slotReload(KonqView *reloadView, bool softReload)
+void KonqMainWindow::slotReload(KonqView *reloadView)
 {
     if (!reloadView) {
         reloadView = m_currentView;
@@ -1591,7 +1591,7 @@ void KonqMainWindow::slotReload(KonqView *reloadView, bool softReload)
 
     KonqOpenURLRequest req(reloadView->typedUrl());
     req.userRequestedReload = true;
-    if (reloadView->prepareReload(req.args, req.browserArgs, softReload)) {
+    if (reloadView->prepareReload(req.args, req.browserArgs)) {
         reloadView->lockHistory();
         // Reuse current servicetype for local files, but not for remote files (it could have changed, e.g. over HTTP)
         QString serviceType = reloadView->url().isLocalFile() ? reloadView->serviceType() : QString();
@@ -1606,8 +1606,7 @@ void KonqMainWindow::slotReload(KonqView *reloadView, bool softReload)
 
 void KonqMainWindow::slotForceReload()
 {
-    // A forced reload is simply a "hard" (i.e. - not soft!) reload.
-    slotReload(nullptr /* Current view */, false /* Not softReload*/);
+    slotReload(nullptr /* Current view */);
 }
 
 void KonqMainWindow::slotReloadPopup()

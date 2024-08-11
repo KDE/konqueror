@@ -6,6 +6,8 @@
 #ifndef WEBENGINE_ACTONDOWNLOADEDFILEBAR_H
 #define WEBENGINE_ACTONDOWNLOADEDFILEBAR_H
 
+#include "browserarguments.h"
+
 #include <KMessageWidget>
 #include <KService>
 #include <KPluginMetaData>
@@ -113,10 +115,10 @@ private:
     /**
      * @brief Enum which describes the choice made by the user
      */
-    enum Choice {
-        Open, //!< Open the file in an external application
-        Embed //!< Embed the file in Konqueror
-    };
+    // enum Choice {
+    //     Open, //!< Open the file in an external application
+    //     Embed //!< Embed the file in Konqueror
+    // };
 
 private Q_SLOTS:
     /**
@@ -127,7 +129,7 @@ private Q_SLOTS:
      * @param data the data describing the part or application to use, if the user chose one from the menu.
      *  If invalid, the default application or part is used.
      */
-    void actOnChoice(Choice choice, bool newTab, const QVariant &data);
+    void actOnChoice(BrowserArguments::Action choice, bool newTab, const QVariant &data);
 
 private:
     QPointer<WebEnginePart> m_part; //!< The part associated with this widget

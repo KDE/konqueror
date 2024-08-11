@@ -30,9 +30,9 @@ ActOnDownloadedFileBar::ActOnDownloadedFileBar(const QUrl &url, const QUrl& down
     addAction(m_openAction);
     addAction(m_embedActionNewTab);
     addAction(m_embedActionHere);
-    connect(m_openAction, &QAction::triggered, this, [this](){actOnChoice(Open, true, {});});
-    connect(m_embedActionNewTab, &QAction::triggered, this, [this](){actOnChoice(Embed, true, {});});
-    connect(m_embedActionHere, &QAction::triggered, this, [this](){actOnChoice(Embed, false, {});});
+    connect(m_openAction, &QAction::triggered, this, [this](){actOnChoice(BrowserArguments::Action::Open, true, {});});
+    connect(m_embedActionNewTab, &QAction::triggered, this, [this](){actOnChoice(BrowserArguments::Action::Embed, true, {});});
+    connect(m_embedActionHere, &QAction::triggered, this, [this](){actOnChoice(BrowserArguments::Action::Embed, false, {});});
 
     QMimeDatabase db;
     m_mimeType = db.mimeTypeForFile(downloadUrl.path()).name();
@@ -53,7 +53,9 @@ void WebEngine::ActOnDownloadedFileBar::setupOpenAction()
 {
     KService::List apps = KFileItemActions::associatedApplications(QStringList{m_mimeType});
     QMenu *menu = createOpenWithMenu(apps);
-    connect(menu, &QMenu::triggered, this, [this](QAction *action){actOnChoice(Open, true, action ? action->data() : QVariant());});
+    connect(menu, &QMenu::triggered, this, [this](QAction *action){
+        actOnChoice(BrowserArguments::Action::Open, true, action ? action->data() : QVariant());
+    });
     m_openAction->setMenu(menu);
     if (apps.isEmpty()) {
         m_openAction->setText(i18n("Open in external application"));
@@ -90,7 +92,9 @@ void WebEngine::ActOnDownloadedFileBar::setupEmbedAction(QAction* embedAction)
     QList<KPluginMetaData> parts = KParts::PartLoader::partsForMimeType(m_mimeType);
     QMenu *menu = createEmbedWithMenu(parts);
     bool newTab = embedAction == m_embedActionNewTab;
-    connect(menu, &QMenu::triggered, this, [this, newTab](QAction *action){actOnChoice(Embed, newTab, action ? action->data() : QVariant());});
+    connect(menu, &QMenu::triggered, this, [this, newTab](QAction *action){
+        actOnChoice(BrowserArguments::Action::Embed, newTab, action ? action->data() : QVariant());
+    });
     embedAction->setMenu(menu);
     if (parts.isEmpty()) {
         embedAction->setText(newTab ? i18nc("@action:button", "Show in new tab") : i18nc("@action:button", "Show here"));
@@ -116,7 +120,9 @@ QMenu* WebEngine::ActOnDownloadedFileBar::createEmbedWithMenu(const QList<KPlugi
     QList<QAction*> actions;
     std::transform(parts.constBegin(), parts.constEnd(), std::back_inserter(actions), createAction);
     QMenu *menu = createMenu(actions);
-    connect(menu, &QMenu::triggered, this, [this](QAction *action){actOnChoice(Embed, true, action ? action->data() : QVariant());});
+    connect(menu, &QMenu::triggered, this, [this](QAction *action){
+        actOnChoice(BrowserArguments::Action::Embed, true, action ? action->data() : QVariant());
+    });
     return menu;
 }
 
@@ -133,7 +139,7 @@ QMenu* WebEngine::ActOnDownloadedFileBar::createMenu(const QList<QAction*> &acti
     return menu;
 }
 
-void WebEngine::ActOnDownloadedFileBar::actOnChoice(Choice choice, bool newTab, const QVariant &data)
+void WebEngine::ActOnDownloadedFileBar::actOnChoice(BrowserArguments::Action choice, bool newTab, const QVariant &data)
 {
     if (!m_part) {
         return;
@@ -141,13 +147,14 @@ void WebEngine::ActOnDownloadedFileBar::actOnChoice(Choice choice, bool newTab, 
 
     KParts::OpenUrlArguments args;
     args.setMimeType(m_mimeType);
-    QString choiceName = choice == Embed ? QStringLiteral("embed") : QStringLiteral("open");
-    if (data.isValid()) {
-        QString key = choice == Embed ? QStringLiteral("embed-with") : QStringLiteral("open-with");
-        args.metaData().insert(key, data.toString());
-    }
-    args.metaData().insert(QStringLiteral("action"), choiceName);
     BrowserArguments bargs;
+    if (data.isValid()) {
+        if (choice == BrowserArguments::Action::Embed) {
+            bargs.setEmbedWith(data.toString());
+        } else {
+            bargs.setOpenWith(data.toString());
+        }
+    }
     bargs.setForcesNewWindow(newTab);
     bargs.setNewTab(newTab);
     m_part->browserExtension()->browserOpenUrlRequest(m_downloadUrl, args, bargs);

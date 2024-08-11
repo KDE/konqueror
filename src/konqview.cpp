@@ -186,7 +186,7 @@ void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
 
     // Typing "Enter" again after the URL of an aborted view, triggers a reload.
     if (m_bAborted && m_pPart && m_pPart->url() == url && !browserArgs.doPost()) {
-        if (!prepareReload(args, browserArgs, false /* not softReload */)) {
+        if (!prepareReload(args, browserArgs)) {
             return;
         }
         m_pPart->setArguments(args);
@@ -247,9 +247,6 @@ void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
     m_requestedUrl = !requestedUrl.isEmpty() ? requestedUrl : url;
     aboutToOpenURL(url, args);
 
-    if (args.metaData().contains("urlRequestedByApp") && isWebEngineView()) {
-        m_pPart->setProperty("urlRequestedByApp", url);
-    }
     m_pPart->openUrl(url);
 
     updateHistoryEntry(true);
@@ -425,8 +422,8 @@ void KonqView::connectPart()
     if (m_pPart) {
         KonqInterfaces::DownloaderExtension *dext = KonqInterfaces::DownloaderExtension::downloader(m_pPart);
         if (dext) {
-            connect(dext, &KonqInterfaces::DownloaderExtension::downloadAndOpenUrl, m_pMainWindow, [dext, this](const QUrl &url, int id, const KParts::OpenUrlArguments &args, const BrowserArguments &bargs, bool temp){
-                    KonqOpenURLRequest req(args, bargs, dext->part(), true, id);
+            connect(dext, &KonqInterfaces::DownloaderExtension::downloadAndOpenUrl, m_pMainWindow, [dext, this](const QUrl &url, const KParts::OpenUrlArguments &args, const BrowserArguments &bargs, bool temp){
+                    KonqOpenURLRequest req(args, bargs, dext->part());
                     req.tempFile = temp;
                     m_pMainWindow->slotOpenURLRequest(url, req);
                 });
@@ -1271,12 +1268,9 @@ bool KonqView::eventFilter(QObject *obj, QEvent *e)
     return false;
 }
 
-bool KonqView::prepareReload(KParts::OpenUrlArguments &args, BrowserArguments &browserArgs, bool softReload)
+bool KonqView::prepareReload(KParts::OpenUrlArguments &args, BrowserArguments &browserArgs)
 {
     args.setReload(true);
-    if (softReload) {
-        browserArgs.softReload = true;
-    }
 
     // Repost form data if this URL is the result of a POST HTML form.
     if (m_doPost && !browserArgs.redirectedRequest()) {

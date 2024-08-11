@@ -8,6 +8,8 @@
 
 #include "browserarguments.h"
 
+#include <QDebug>
+
 struct BrowserArgumentsPrivate {
     QString contentType; // for POST
     bool doPost = false;
@@ -16,11 +18,15 @@ struct BrowserArgumentsPrivate {
     bool newTab = false;
     bool forcesNewWindow = false;
     QString suggestedDownloadName;
+    BrowserArguments::MaybeInt downloadId = std::nullopt;
+    QString embedWith;
+    QString openWith;
+    bool ignoreDefaultHtmlPart = false;
+    BrowserArguments::Action forcedAction = BrowserArguments::Action::UnknownAction;
 };
 
 BrowserArguments::BrowserArguments()
 {
-    softReload = false;
     trustedSource = false;
     d = nullptr; // Let's build it on demand for now
 }
@@ -40,10 +46,8 @@ BrowserArguments &BrowserArguments::operator=(const BrowserArguments &args)
     delete d;
     d = nullptr;
 
-    softReload = args.softReload;
     postData = args.postData;
     frameName = args.frameName;
-    docState = args.docState;
     trustedSource = args.trustedSource;
 
     if (args.d) {
@@ -59,20 +63,23 @@ BrowserArguments::~BrowserArguments()
     d = nullptr;
 }
 
-void BrowserArguments::setContentType(const QString &contentType)
+BrowserArgumentsPrivate* BrowserArguments::ensureD()
 {
     if (!d) {
         d = new BrowserArgumentsPrivate;
     }
-    d->contentType = contentType;
+    return d;
+}
+
+
+void BrowserArguments::setContentType(const QString &contentType)
+{
+    ensureD()->contentType = contentType;
 }
 
 void BrowserArguments::setRedirectedRequest(bool redirected)
 {
-    if (!d) {
-        d = new BrowserArgumentsPrivate;
-    }
-    d->redirectedRequest = redirected;
+    ensureD()->redirectedRequest = redirected;
 }
 
 bool BrowserArguments::redirectedRequest() const
@@ -87,10 +94,7 @@ QString BrowserArguments::contentType() const
 
 void BrowserArguments::setDoPost(bool enable)
 {
-    if (!d) {
-        d = new BrowserArgumentsPrivate;
-    }
-    d->doPost = enable;
+    ensureD()->doPost = enable;
 }
 
 bool BrowserArguments::doPost() const
@@ -100,10 +104,7 @@ bool BrowserArguments::doPost() const
 
 void BrowserArguments::setLockHistory(bool lock)
 {
-    if (!d) {
-        d = new BrowserArgumentsPrivate;
-    }
-    d->lockHistory = lock;
+    ensureD()->lockHistory = lock;
 }
 
 bool BrowserArguments::lockHistory() const
@@ -113,10 +114,7 @@ bool BrowserArguments::lockHistory() const
 
 void BrowserArguments::setNewTab(bool newTab)
 {
-    if (!d) {
-        d = new BrowserArgumentsPrivate;
-    }
-    d->newTab = newTab;
+    ensureD()->newTab = newTab;
 }
 
 bool BrowserArguments::newTab() const
@@ -126,10 +124,7 @@ bool BrowserArguments::newTab() const
 
 void BrowserArguments::setForcesNewWindow(bool forcesNewWindow)
 {
-    if (!d) {
-        d = new BrowserArgumentsPrivate;
-    }
-    d->forcesNewWindow = forcesNewWindow;
+    ensureD()->forcesNewWindow = forcesNewWindow;
 }
 
 bool BrowserArguments::forcesNewWindow() const
@@ -139,13 +134,87 @@ bool BrowserArguments::forcesNewWindow() const
 
 void BrowserArguments::setSuggestedDownloadName(const QString& name)
 {
-    if (!d) {
-        d = new BrowserArgumentsPrivate;
-    }
-    d->suggestedDownloadName = name;
+    ensureD()->suggestedDownloadName = name;
 }
 
 QString BrowserArguments::suggestedDownloadName() const
 {
     return d ? d->suggestedDownloadName : QString();
+}
+
+BrowserArguments::MaybeInt BrowserArguments::downloadId() const
+{
+    return d ? d->downloadId : std::nullopt;
+}
+
+void BrowserArguments::setDownloadId(MaybeInt id)
+{
+    ensureD()->downloadId = id;
+}
+
+QString BrowserArguments::embedWith() const
+{
+    return d ? d->embedWith : QString();
+}
+
+void BrowserArguments::setEmbedWith(const QString& partId)
+{
+    ensureD()->embedWith = partId;
+}
+
+QString BrowserArguments::openWith() const
+{
+    return d ? d->openWith : QString();
+}
+
+void BrowserArguments::setOpenWith(const QString& app)
+{
+    ensureD()->openWith = app;
+}
+
+bool BrowserArguments::ignoreDefaultHtmlPart() const
+{
+    return d ? d->ignoreDefaultHtmlPart : false;
+}
+
+void BrowserArguments::setIgnoreDefaultHtmlPart(bool ignore)
+{
+    ensureD()->ignoreDefaultHtmlPart = ignore;
+}
+
+BrowserArguments::Action BrowserArguments::forcedAction() const
+{
+    return d ? d->forcedAction : Action::UnknownAction;
+}
+
+void BrowserArguments::setForcedAction(Action act)
+{
+    ensureD()->forcedAction = act;
+}
+
+QDebug operator<<(QDebug dbg, BrowserArguments::Action action)
+{
+    QDebugStateSaver saver(dbg);
+    dbg.resetFormat();
+    switch (action) {
+        case BrowserArguments::Action::UnknownAction:
+            dbg << "UnknownAction";
+            break;
+        case BrowserArguments::Action::DoNothing:
+            dbg << "DoNothing";
+            break;
+        case BrowserArguments::Action::Save:
+            dbg << "Save";
+            break;
+        case BrowserArguments::Action::Embed:
+            dbg << "Embed";
+            break;
+        case BrowserArguments::Action::Open:
+            dbg << "Open";
+            break;
+        case BrowserArguments::Action::Execute:
+            dbg << "Execute";
+            break;
+    }
+    return dbg;
 }
