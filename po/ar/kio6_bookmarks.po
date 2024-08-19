@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_bookmarks\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2024-08-19 00:39+0000\n"
 "PO-Revision-Date: 2021-07-14 22:38+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -18,27 +18,27 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: kio_bookmarks.cpp:81
+#: kio_bookmarks.cpp:79
 #, kde-format
 msgid "Root"
 msgstr "جذر"
 
-#: kio_bookmarks.cpp:114
+#: kio_bookmarks.cpp:112
 #, kde-format
 msgid "Places"
 msgstr "أماكن"
 
-#: kio_bookmarks.cpp:190
+#: kio_bookmarks.cpp:206
 #, kde-format
 msgid "Could not find bookmarks config"
 msgstr "لم يعثر على ضبط العلامات"
 
-#: kio_bookmarks.cpp:200
+#: kio_bookmarks.cpp:216
 #, kde-format
 msgid "Could not find bookmarks editor"
 msgstr "لم يعثر على محرر العلامات"
 
-#: kio_bookmarks.cpp:206
+#: kio_bookmarks.cpp:222
 #, kde-format
 msgid "Wrong request: %1"
 msgstr "طلب خاطئ: %1"

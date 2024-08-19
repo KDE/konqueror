@@ -1,6 +1,6 @@
 # translation of konqueror.po to Polish
 # translation of konqueror.po to
-# Version: $Revision: 1688010 $
+# Version: $Revision: 1688081 $
 # Tłumaczenie autorstwa Artura Skury, marzec 2000
 # SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 # Aktualne tłumaczenie Norbert Popiołek <norbert@kde.com.pl>, czerwiec 2001
@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-18 00:39+0000\n"
+"POT-Creation-Date: 2024-08-19 00:39+0000\n"
 "PO-Revision-Date: 2024-07-14 13:44+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1827,19 +1827,19 @@ msgstr "Ostrzeżenie"
 msgid "Resend"
 msgstr "Wyślij ponownie"
 
-#: src/urlloader.cpp:468
+#: src/urlloader.cpp:469
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "Wykonaj"
 
-#: src/urlloader.cpp:470
+#: src/urlloader.cpp:471
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
 msgstr "Wyświetlanie"
 
-#: src/urlloader.cpp:477
+#: src/urlloader.cpp:478
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -1850,14 +1850,14 @@ msgid ""
 msgstr ""
 "<filename>%1</filename> może zostać wykonany. Wykonać, czy wyświetlić go?"
 
-#: src/urlloader.cpp:483
+#: src/urlloader.cpp:484
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename> może zostać wykonany. Czy wyświetlić go?"
 
-#: src/urlloader.cpp:815
+#: src/urlloader.cpp:816
 #, kde-format
 msgid "Save As"
 msgstr "Zapisz jako"
