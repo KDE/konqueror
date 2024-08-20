@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-25 02:29+0000\n"
-"PO-Revision-Date: 2024-02-09 23:52+0100\n"
+"PO-Revision-Date: 2024-08-19 23:44+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -882,7 +882,7 @@ msgstr "사용자 정의(&I)..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "사용자 정의 페이지 배경"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -906,16 +906,16 @@ msgstr ""
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "사용자 정의 배경색 사용(&B)"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>웹 페이지에 사용할 사용자 정의 배경색</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -943,7 +943,7 @@ msgstr ""
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "스타일시트에 사용자 정의 배경색 추가"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
@@ -1764,17 +1764,15 @@ msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr "추적하고 싶지 않은 웹사이트에 DNT 헤더를 보냅니다"
 
 #: htmlopts.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this box if you want to inform a web site that you do not want your "
-#| "web browsing habits tracked."
+#, kde-format
 msgid ""
 "<p>Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
 "considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
-"웹 브라우징을 추적하고 싶지 않다는 의사를 표시하고 싶으면 이 상자를 선택하십"
-"시오."
+"<p>웹 브라우징을 추적하고 싶지 않다는 의사를 표시하고 싶으면 이 상자를 선택하"
+"십시오.</p><p><strong>경고:</strong> 이 헤더는 오래된 것으로 간주되며, 대부"
+"분 웹 페이지에서 무시될 가능성이 큽니다.</p>"
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -1802,14 +1800,14 @@ msgstr ""
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Always display files from web pages in a new tab"
-msgstr ""
+msgstr "항상 웹 페이지의 파일을 새 탭에 표시"
 
 #: htmlopts.cpp:137
 #, kde-format
 msgid ""
 "<p>When showing in Konqueror files from links in web pages, always use a new "
 "tab"
-msgstr ""
+msgstr "<p>Konqueror에서 웹 페이지 링크의 파일을 표시할 때 항상 새 탭 사용"
 
 #: jsopts.cpp:57
 #, kde-format
@@ -2245,6 +2243,9 @@ msgid ""
 "\">shift</span> when opening a new tab to reverse this behavior</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>전경 대신 배경으로 새 탭을 엽니다.</p><p>새 탭을 열 때 "
+"<span style=\" font-family:'Fira Code';\">Shift</span> 키를 누르면 이 동작을 "
+"반전합니다</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
@@ -2387,12 +2388,13 @@ msgstr "선택한 식별자 사용(&S)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:163
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>이 옵션을 사용하면 사용자 정의 식별자 전송을 비활성화하"
+"고 기본 식별자를 사용합니다</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166

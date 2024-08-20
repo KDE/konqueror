@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 02:33+0000\n"
-"PO-Revision-Date: 2024-02-09 23:52+0100\n"
+"PO-Revision-Date: 2024-08-19 23:45+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -418,10 +418,9 @@ msgid "profile"
 msgstr "프로필"
 
 #: src/konqapplication.cpp:221
-#, fuzzy, kde-format
-#| msgid "List available sessions"
+#, kde-format
 msgid "List available sessions and exit"
-msgstr "사용 가능한 세션 목록"
+msgstr "사용 가능한 세션 목록을 표시하고 끝내기"
 
 #: src/konqapplication.cpp:222
 #, kde-format
