@@ -69,6 +69,8 @@ WebArchiveCreator::WebArchiveCreator(QObject *parent, const QVariantList &va)
     : KIO::ThumbnailCreator(parent, va)
 {
     m_tempDir = nullptr;
+
+    qputenv("QTWEBENGINE_CHROMIUM_FLAGS", "--disable-gpu");
 }
 
 
