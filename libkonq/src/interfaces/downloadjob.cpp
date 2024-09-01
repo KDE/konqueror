@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "downloaderextension.h"
+#include "downloadjob.h"
 #include "common.h"
 
 #include <KIO/JobUiDelegateFactory>
@@ -14,24 +14,11 @@
 
 using namespace KonqInterfaces;
 
-DownloaderExtension::DownloaderExtension(QObject* parent) : QObject(parent)
+DownloadJob::DownloadJob(QObject* parent) : KJob(parent)
 {
 }
 
-DownloaderExtension::~DownloaderExtension()
-{
-}
-
-DownloaderExtension * DownloaderExtension::downloader(QObject* obj)
-{
-    return as<DownloaderExtension>(obj);
-}
-
-DownloaderJob::DownloaderJob(QObject* parent) : KJob(parent)
-{
-}
-
-void KonqInterfaces::DownloaderJob::prepareDownloadJob(QWidget* widget, const QString& destPath)
+void KonqInterfaces::DownloadJob::prepareDownloadJob(QWidget* widget, const QString& destPath)
 {
     if (!destPath.isEmpty()) {
         setDownloadPath(destPath);

@@ -92,8 +92,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
              m_statusBarWalletLabel(nullptr),
              m_searchBar(nullptr),
              m_passwordBar(nullptr),
-             m_wallet(nullptr),
-             m_downloader(new WebEngineDownloaderExtension(this))
+             m_wallet(nullptr)
 {
     if (!WebEnginePartControls::self()->isReady()) {
         WebEnginePartControls::self()->setup(KonqWebEnginePart::Profile::defaultProfile());
@@ -1112,11 +1111,19 @@ BrowserExtension *WebEnginePart::browserExtension() const
     return findChild<BrowserExtension *>();
 }
 
-void WebEnginePart::displayActOnDownloadedFileBar(KonqInterfaces::DownloaderJob* job)
+void WebEnginePart::displayActOnDownloadedFileBar(KonqInterfaces::DownloadJob* job)
 {
-    if (job->error() != 0) {
+    if (job->error() != 0 || job->intent() != KonqInterfaces::DownloadJob::Save) {
         return;
     }
+
+    //If called in response to the "Save As..." menu entry, the file will be automatically
+    //displayed, so there's no need to show the bar
+    WebEngineDownloadJob *webEngineJob = qobject_cast<WebEngineDownloadJob*>(job);
+    if (webEngineJob && webEngineJob->calledForSaveAs()) {
+        return;
+    }
+
     if (m_actOnDownloadedFileWidget) {
         widget()->layout()->removeWidget(m_actOnDownloadedFileWidget);
         m_actOnDownloadedFileWidget->hide();

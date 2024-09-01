@@ -214,7 +214,7 @@ void WebEnginePartDownloadManager::saveHtmlPage(QWebEngineDownloadRequest* it, W
     job->start();
 }
 
-WebEngineDownloadJob::WebEngineDownloadJob(QWebEngineDownloadRequest* it, QObject* parent) : DownloaderJob(parent), m_downloadItem(it)
+WebEngineDownloadJob::WebEngineDownloadJob(QWebEngineDownloadRequest* it, QObject* parent) : DownloadJob(parent), m_downloadItem(it)
 {
     setCapabilities(KJob::Killable|KJob::Suspendable);
     connect(this, &KJob::result, this, &WebEngineDownloadJob::emitDownloadResult);
@@ -368,3 +368,24 @@ void WebEngineDownloadJob::emitDownloadResult(KJob* job)
     QUrl resultUrl = error() == 0 ? QUrl::fromLocalFile(downloadPath()) : Konq::makeErrorUrl(error(), errorText(), url());
     emit downloadResult(this, resultUrl);
 }
+
+WebEngineDownloadJob::Intent WebEngineDownloadJob::intent() const
+{
+    return m_intent;
+}
+
+void WebEngineDownloadJob::setIntent(Intent intent)
+{
+    m_intent = intent;
+}
+
+bool WebEngineDownloadJob::calledForSaveAs() const
+{
+    return m_calledForSaveAs;
+}
+
+void WebEngineDownloadJob::setCalledForSaveAs(bool saveAs)
+{
+    m_calledForSaveAs = saveAs;
+}
+

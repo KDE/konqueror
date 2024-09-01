@@ -170,34 +170,6 @@ private:
      */
     bool shouldOpenUrl(const QUrl &url) const;
 
-    /**
-     * @brief Saves the given remote URL to disk and asks the browser to display it
-     *
-     * This is used in response to the "Save URL as" entry in the context menu
-     *
-     * The URL is saved using the \link KonqInterfaces::DownloaderInterface DownloaderInterface\endlink.
-     * The browser is asked to display the downloaded URL in a new tab and only if it
-     * can be embedded. This is to minimize disturbance for the user (which has already
-     * had to choose the download destination).
-     *
-     * @param req the object describing the download request
-     * @param args the `KParts::OpenUrlArguments` to pass when asking the browser to display the downloaded URL
-     * @param bArgs the `BrowserArguments` arguments to pass when asking the browser to display the downloaded URL
-     * @todo Instead of asking the browser to display the downloaded URL, show a message widget at the bottom with
-     * a button allowing the user to display the file and which disappears automatically after a time. It's similar
-     * to the way Chrome allows to quickly open a file after downloading it, but it is only done when the user
-     * explicitly asks to save the URL.
-     */
-     void saveUrlToDiskAndDisplay(QWebEngineDownloadRequest *req, const KParts::OpenUrlArguments &args, const BrowserArguments &bArgs);
-
-     /**
-      * @brief Saves the page currently displayed and opens the local copy
-      *
-      * This is used in response to the "Save as" menu entry
-      * @param req the object describing the download request
-      */
-     void saveAs(QWebEngineDownloadRequest *req);
-
 private:
     enum WebEnginePageSecurity { PageUnencrypted, PageEncrypted, PageMixed };
 

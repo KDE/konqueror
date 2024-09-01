@@ -14,6 +14,10 @@
 #include <QByteArray>
 #include <QStringList>
 
+namespace KonqInterfaces {
+    class DownloadJob;
+}
+
 class QDebug;
 
 struct BrowserArgumentsPrivate;
@@ -155,22 +159,24 @@ struct LIBKONQ_EXPORT BrowserArguments {
      */
     void setSuggestedDownloadName(const QString &name);
 
-    using MaybeInt = std::optional<int>;
+    /**
+     * @brief The KonqInterfaces::DownloadJob to use to download the URL
+     * @return The KonqInterfaces::DownloadJob to use to download the URL or `nullptr`
+     *  if the URL shouldn't be downloaded using a \link KonqInterfaces::DownloadJob DownloadJob\endlink
+     * @note This returns `nullptr` unless setDownloadJob() has been called
+     */
+    KonqInterfaces::DownloadJob* downloadJob() const;
 
     /**
-     * @brief The download id, if any
-     * @return The identifier for a download to be performed by the requesting part or `std::nullopt`
-     * if the request doesn't represent a download or the download should be performed by the
-     * part which will display the URL
-     */
-    MaybeInt downloadId() const;
-    /**
-     * @brief Sets the download id
+     * @brief Sets the KonqInterfaces::DownloadJob to use to download the URL
      *
-     * By default, the download id is `std::nullopt`.
-     * @param id the new download id. It can be an `int` or `std::nullopt`
+     * By default, no \link KonqInterfaces::DownloadJob DownloadJob\endlink download job
+     * should be used.
+     *
+     * @param job the KonqInterfaces::DownloadJob to use to download the URL. If this is
+     * `nullptr`, the URL won't be downloaded using a \link KonqInterfaces::DownloadJob DownloadJob\endlink
      */
-    void setDownloadId(MaybeInt id);
+    void setDownloadJob(KonqInterfaces::DownloadJob *job);
 
     /**
      * @brief The part to use when embedding the requested URL

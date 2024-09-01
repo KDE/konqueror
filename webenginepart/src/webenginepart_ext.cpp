@@ -1143,36 +1143,3 @@ WebEnginePart* WebEngineHtmlExtension::part() const
 {
     return static_cast<WebEnginePart*>(parent());
 }
-
-WebEngineDownloaderExtension::WebEngineDownloaderExtension(WebEnginePart* parent) : DownloaderExtension(parent)
-{
-}
-
-WebEngineDownloaderExtension::~WebEngineDownloaderExtension()
-{
-}
-
-KParts::ReadOnlyPart* WebEngineDownloaderExtension::part() const
-{
-    return qobject_cast<WebEnginePart*>(parent());
-}
-
-void WebEngineDownloaderExtension::addDownloadRequest(QWebEngineDownloadRequest* req)
-{
-    QUrl url = req->url();
-    m_downloadRequests.insert(url, req);
-    auto removeRequest = [this, url] (QObject *obj) {m_downloadRequests.remove(url, dynamic_cast<QWebEngineDownloadRequest*>(obj));};
-    connect(req, &QWebEngineDownloadRequest::destroyed, this, removeRequest);
-}
-
-KonqInterfaces::DownloaderJob* WebEngineDownloaderExtension::downloadJob(const QUrl& url, quint32 id, QObject* parent)
-{
-    auto items = m_downloadRequests.values(url);
-    if (items.isEmpty()) {
-        return nullptr;
-    }
-    auto it = std::find_if(items.constBegin(), items.constEnd(), [id](QWebEngineDownloadRequest* it){return it->id() == id;});
-    //If no job with the given ID is found, return the last one, which is the first created
-    QWebEngineDownloadRequest *item = it != items.constEnd() ? *it : items.last();
-    return new WebEngineDownloadJob(item, parent);
-}

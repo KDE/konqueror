@@ -30,8 +30,7 @@ namespace KIO {
     class MimeTypeFinderJob;
 }
 namespace KonqInterfaces {
-    class DownloaderExtension;
-    class DownloaderJob;
+    class DownloadJob;
 }
 class KonqMainWindow;
 class KonqView;
@@ -54,14 +53,12 @@ class KonqView;
  * and perform the action itself.
  *
  * @internal
- * For remote files, what happens after goOn depends on the return value returned by the @link BrowserArguments::downloadId downloadId@endlink
- * method of the BrowserArguments object associated with the rewquest:
- * - if it returns `std::nullopt`, this class will determine the mimetype of the URL (if needed), then embed, open or save it
+ * For remote files, what happens after goOn depends on whether the BrowserArguments associated with the request
+ * provides a DownloadJob:
+ * - if it doesn't, this class will determine the mimetype of the URL (if needed), then embed, open or save it
  *   depending on the mimetype and the user's previous choices
- * - if it returns an `int`, (after determining the mimetype of the URL, if not already known), this class will check whether
- *   the requesting part implements the DownloaderInterface. If so, it'll let the job returned by DownloaderInterface::downloadJob()
- *   to download the URL, then it will update #m_url so that it contains the path of the downloaded file. It then proceeds as
- *   in the above case. If the file should be saved, it'll simply moved from the download location to the location chosen by the user
+ * - if it does, the job will be used to download the URL, then #m_url will be updated so that it contains the path
+ *   of the downloaded file, then it proceeds as above
  */
 class UrlLoader : public QObject
 {
@@ -162,9 +159,9 @@ private slots:
     /**
      * @brief Slot called when a part which has asked to download itself the URL has finished doing so
      *
-     * @param job the DownloaderJob used by the part to download the URL
+     * @param job the DownloadJob used by the part to download the URL
      */
-    void downloadForEmbeddingOrOpeningDone(KonqInterfaces::DownloaderJob *job, const QUrl &url);
+    void downloadForEmbeddingOrOpeningDone(KonqInterfaces::DownloadJob *job, const QUrl &url);
 
 private:
 
@@ -270,25 +267,10 @@ private:
     void determineStartingMimetype();
 
     /**
-     * @brief Casts the requesting part or one of its children to a DownloaderInterface*, if possible
-     * @note Since this uses DownloaderInterface::interface(), it's slower than a simple cast
-     * @return the requesting part or one of its children casted to a DownloaderInterface* or `nullptr` if
-     * the requesting part is `nullptr` or neither it nor its children implement DownloaderInterface
-     */
-    KonqInterfaces::DownloaderExtension* downloaderInterface() const;
-
-    /**
-     * @brief Retrieves from the requesting part a DownloaderJob to download the URL
+     * @brief Downloads the URL using the job provided by #m_request, if any
      *
-     * The retrieved job is stored in #m_partDownloaderJob. If downloaderInterface()
-     * returns `nullptr`, #m_partDownloaderJob is set to `nullptr`
-     */
-    void getDownloaderJobFromPart();
-
-    /**
-     * @brief Downloads the URL using the job provided by the requesting part, if any
-     *
-     * If #m_partDownloaderJob is `nullptr`, nothing is done
+     * If \link BrowserArguments::downloadJob m_request.browserArguments.downloadJob\endlink is `nullptr`,
+     * nothing is done
      */
     void downloadForEmbeddingOrOpening();
 
@@ -370,12 +352,13 @@ private:
     QPointer<KIO::OpenUrlJob> m_openUrlJob;
     QPointer<KIO::ApplicationLauncherJob> m_applicationLauncherJob;
     QPointer<KIO::MimeTypeFinderJob> m_mimeTypeFinderJob;
-    QPointer<KonqInterfaces::DownloaderJob> m_partDownloaderJob;
     QString m_oldLocationBarUrl;
     int m_jobErrorCode = 0;
     bool m_ignoreDefaultHtmlPart;
     bool m_protocolAllowsReading;
-    bool m_letRequestingPartDownloadUrl = false; ///<Whether the URL should be downloaded by the part before opening/embedding/saving it
+    bool m_useDownloadJob = false; ///<Whether the URL should be downloaded by the part before opening/embedding/saving it
+    QPointer<KonqInterfaces::DownloadJob> m_downloadJob; //!<The job to use to download the URL, if any
+
     /**
      * @brief Whether only the `embed` action is allowed
      *

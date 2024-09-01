@@ -73,12 +73,27 @@ Q_SIGNALS:
                         const BrowserArguments &browserArguments = BrowserArguments());
 
     /**
+     * @brief As browserOpenUrlRequest except that the browserOpenUrlRequestDelayed signal is emitted
+     * synchronously
+     *
+     * While emitting the browserOpenUrlRequest causes the browserOpenUrlRequestDelayed signal to be emitted
+     * after a 0-seconds signal, emitting this signal causes browserOpenUrlRequestDelayed to be emitted
+     * immediately, before browserOpenUrlRequestSync returns.
+     *
+     * @note This should only be called when there's a reason not to want the 0-seconds delay
+     *
+     * The arguments are the same as browserOpenUrlRequest
+     */
+    void browserOpenUrlRequestSync(const QUrl &url, const KParts::OpenUrlArguments &arguments, const BrowserArguments &browserArguments, bool temp);
+
+    /**
      * This signal is emitted when openUrlRequest() is called, after a 0-seconds timer.
      * This allows the caller to terminate what it's doing first, before (usually)
      * being destroyed. Parts should never use this signal, hosts should only connect
      * to this signal.
      */
-    void browserOpenUrlRequestDelayed(const QUrl &url, const KParts::OpenUrlArguments &arguments, const BrowserArguments &browserArguments);
+    void browserOpenUrlRequestDelayed(const QUrl &url, const KParts::OpenUrlArguments &arguments, const BrowserArguments &browserArguments, bool temp = false);
+
 
     /**
      * Asks the hosting browser to open a new window for the given @p url

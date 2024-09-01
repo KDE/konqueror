@@ -18,7 +18,7 @@
 #include <KJob>
 #include <QPointer>
 
-#include "interfaces/downloaderextension.h"
+#include "interfaces/downloadjob.h"
 
 class WebEnginePage;
 class QWebEngineProfile;
@@ -124,7 +124,7 @@ private:
     QMultiHash<QUrl, DownloadObjectiveWithPage> m_downloadObjectives;
 };
 
-class WebEngineDownloadJob : public KonqInterfaces::DownloaderJob
+class WebEngineDownloadJob : public KonqInterfaces::DownloadJob
 {
     Q_OBJECT
 
@@ -145,6 +145,27 @@ public:
 
     QWebEngineDownloadRequest* item() const;
 
+    Intent intent() const override;
+    void setIntent(Intent intent) override;
+
+    /**
+     * @brief Whether this job has been created while handling the "Save As..." menu entry
+     *
+     * This is used by WebEnginePart::displayActOnDownloadedFileBar. When the user chooses
+     * the "Save As..." menu entry, the newly saved file is always displayed in the current
+     * part, if possible, which means in this case we don't want to also display the action bar
+     * @return `true` if the job has been created in response to the "Save As..." menu entry and
+     * `false` otherwise.
+     */
+    bool calledForSaveAs() const;
+
+    /**
+     * @brief Sets whether this job has been created while handling the "Save As..." menu entry
+     * @param saveAs `true` if the job has been created while handling the "Save As..." menu entry
+     * and `false` (the default) otherwise
+     */
+    void setCalledForSaveAs(bool saveAs);
+
 protected:
     bool doKill() override;
     bool doResume() override;
@@ -158,7 +179,9 @@ private slots:
     void emitDownloadResult(KJob *job);
 
 private:
-    bool m_started = false; ///<! @brief Whether the job has been started or not
+    bool m_started = false; //!< Whether the job has been started or not
+    Intent m_intent = Unknown; //!< The intent of the download
+    bool m_calledForSaveAs = false; //!< Whether this job has been created while handling the "Save As..." menu entry
     QPointer<QWebEngineDownloadRequest> m_downloadItem;
     QDateTime m_startTime;
 };

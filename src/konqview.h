@@ -31,8 +31,6 @@ class UrlLoader;
 class KonqFrame;
 namespace KParts
 {
-//TODO KF6: when removing compatibility with KF5, uncomment the line below
-//class NavigationExtension;
 class StatusBarExtension;
 }
 
@@ -240,24 +238,24 @@ public:
      * @brief The URL the view was requested to display
      *
      * This will be the same as the part's URL except when the URL was downloaded using
-     * a part's \link KonqInterfaces::DownloaderExtension DownloaderExtension\endlink. In this case, this will be the URL the user originally
+     * a KonqInterfaces::DownloadJob. In this case, this will be the URL the user originally
      * requested, while realUrl() is the URL of the downloaded file.
      *
      * @return the URL the view was requested to display
      * @see realUrl()
-     * @see KonqInterfaces::DownloaderExtension
+     * @see KonqInterfaces::DownloadJob
      */
     QUrl url() const {return m_requestedUrl;};
 
     /**
      * @brief The real URL displayed in the view
      *
-     * If the URL represents a file which has been downloaded using a part's
-     * \link KonqInterfaces::DownloaderExtension DownloaderExtension\endlink before being displayed, then the real URL is the local
+     * If the URL represents a file which has been downloaded using a
+     * KonqInterfaces::DownloadJob before being displayed, then the real URL is the local
      * file the URL was downloaded to. In all other cases, this is the same as url().
-     * @return the URL of the local file where a file was downloaded by a part's \link KonqInterfaces::DownloaderExtension DownloaderExtension\endlink
-     * or url() if the URL wasn't downloaded using \link KonqInterfaces::DownloaderExtension DownloaderExtension\endlink
-     * @see KonqInterfaces::DownloaderExtension
+     * @return the URL of the local file where a file was downloaded by a KonqInterfaces::DownloadJob
+     * and url() otherwise
+     * @see KonqInterfaces::DownloadJob
      */
     QUrl realUrl() const;
 
@@ -330,7 +328,7 @@ public:
         return m_bAborted;
     }
 
-    KParts::NavigationExtension *browserExtension() const;
+    KParts::NavigationExtension *navigationExtension() const;
 
     KParts::StatusBarExtension *statusBarExtension() const;
 

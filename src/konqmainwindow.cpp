@@ -914,8 +914,8 @@ bool KonqMainWindow::openView(ViewType type, const QUrl &_url, KonqView *childVi
         if (childView->part()) {
             childView->part()->setArguments(req.args);
         }
-        if (childView->browserExtension()) {
-            if (auto browserExt = qobject_cast<BrowserExtension *>(childView->browserExtension())) {
+        if (childView->navigationExtension()) {
+            if (auto browserExt = qobject_cast<BrowserExtension *>(childView->navigationExtension())) {
                 browserExt->setBrowserArguments(req.browserArgs);
             }
         }
@@ -1841,7 +1841,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
     KParts::NavigationExtension *ext = nullptr;
 
     if (oldView) {
-        ext = oldView->browserExtension();
+        ext = oldView->navigationExtension();
         if (ext) {
             //qCDebug(KONQUEROR_LOG) << "Disconnecting extension for view" << oldView;
             disconnectExtension(ext);
@@ -1862,7 +1862,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
         return;
     }
 
-    ext = m_currentView->browserExtension();
+    ext = m_currentView->navigationExtension();
 
     if (ext) {
         connectExtension(ext);
@@ -2982,7 +2982,7 @@ bool KonqMainWindow::eventFilter(QObject *obj, QEvent *ev)
 
         KParts::NavigationExtension *ext = nullptr;
         if (m_currentView) {
-            ext = m_currentView->browserExtension();
+            ext = m_currentView->navigationExtension();
         }
 
         if (ev->type() == QEvent::FocusIn) {
@@ -4205,11 +4205,11 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
         // Make this view active only temporarily (because it's passive)
         m_currentView = currentView;
 
-        if (m_oldView && m_oldView->browserExtension()) {
-            disconnectExtension(m_oldView->browserExtension());
+        if (m_oldView && m_oldView->navigationExtension()) {
+            disconnectExtension(m_oldView->navigationExtension());
         }
-        if (m_currentView->browserExtension()) {
-            connectExtension(m_currentView->browserExtension());
+        if (m_currentView->navigationExtension()) {
+            connectExtension(m_currentView->navigationExtension());
         }
     }
     // Note that if m_oldView!=currentView and currentView isn't passive,
@@ -4385,12 +4385,12 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
     // Restore current view if current is passive
     if ((m_oldView != currentView) && (currentView == m_currentView) && currentView->isPassiveMode()) {
         //qCDebug(KONQUEROR_LOG) << "restoring active view" << m_oldView;
-        if (m_currentView->browserExtension()) {
-            disconnectExtension(m_currentView->browserExtension());
+        if (m_currentView->navigationExtension()) {
+            disconnectExtension(m_currentView->navigationExtension());
         }
         if (m_oldView) {
-            if (m_oldView->browserExtension()) {
-                connectExtension(m_oldView->browserExtension());
+            if (m_oldView->navigationExtension()) {
+                connectExtension(m_oldView->navigationExtension());
                 m_currentView = m_oldView;
             }
             // Special case: RMB + renaming in sidebar; setFocus would abort editing.
@@ -4948,7 +4948,7 @@ void KonqMainWindow::slotAddWebSideBar(const QUrl &url, const QString &name)
             if (view) {
                 KPluginMetaData svc = view->service();
                 if (svc.pluginId() == QLatin1String("konq_sidebartng")) {
-                    emit view->browserExtension()->addWebSideBar(url, name);
+                    emit view->navigationExtension()->addWebSideBar(url, name);
                     break;
                 }
             }

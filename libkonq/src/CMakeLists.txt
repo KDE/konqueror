@@ -18,7 +18,7 @@ set(konq_LIB_SRCS
    interfaces/browser.cpp
    interfaces/cookiejar.cpp
    interfaces/common.h
-   interfaces/downloaderextension.cpp
+   interfaces/downloadjob.cpp
    libkonq_utils.cpp
    browserarguments.cpp
    browserextension.cpp

@@ -187,14 +187,11 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
         return;
     }
 
-    WebEngineDownloaderExtension *downloader = m_part->downloader();
-    Q_ASSERT(downloader);
-
-    downloader->addDownloadRequest(item);
-
+    WebEngineDownloadJob *job = new WebEngineDownloadJob(item, nullptr);
     BrowserArguments bArgs;
     bArgs.setForcesNewWindow(newWindow);
     bArgs.setSuggestedDownloadName(item->suggestedFileName());
+    bArgs.setDownloadJob(job);
     if (Konq::Settings::alwaysEmbedInNewTab()) {
         bArgs.setNewTab(true);
     }
@@ -209,73 +206,33 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
 
     bArgs.setIgnoreDefaultHtmlPart(true);
 
-    if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveOnly) {
+    if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveOnly || objective == WebEnginePartDownloadManager::DownloadObjective::SaveAs) {
         bArgs.setForcedAction(BrowserArguments::Action::Save);
-        saveUrlToDiskAndDisplay(item, args, bArgs);
-        return;
-    } else if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveAs) {
-        saveAs(item);
-    } else {
-        bArgs.setDownloadId(item->id());
-        emit downloader->downloadAndOpenUrl(url, args, bArgs, true);
-        if (item->state() == QWebEngineDownloadRequest::DownloadRequested) {
-            qCDebug(WEBENGINEPART_LOG()) << "Automatically accepting download for" << item->url() << "This shouldn't happen";
-            item->accept();
-        }
-    }
-}
-
-void WebEnginePage::saveUrlToDiskAndDisplay(QWebEngineDownloadRequest* req, const KParts::OpenUrlArguments& args, const BrowserArguments& bArgs)
-{
-    QWidget *window = view() ? view()->window() : nullptr;
-
-    QString suggestedName = !req->suggestedFileName().isEmpty() ? req->suggestedFileName() : req->url().fileName();
-    QString downloadPath = Konq::askDownloadLocation(suggestedName, window);
-    if (downloadPath.isEmpty()) {
-        req->cancel();
-        return;
     }
 
-    WebEngineDownloaderExtension *downloader = m_part->downloader();
-    DownloaderJob *job = downloader->downloadJob(req->url(), req->id(), this);
-    if (!job) {
-        return;
-    }
-
-    auto lambda = [this, args, bArgs](DownloaderJob *, const QUrl &url) {
-        emit m_part->browserExtension()->browserOpenUrlRequest(url, args, bArgs);
-    };
-    connect(job, &DownloaderJob::downloadResult, m_part, &WebEnginePart::displayActOnDownloadedFileBar);
-    job->startDownload(downloadPath, window, this, lambda);
-}
-
-void WebEnginePage::saveAs(QWebEngineDownloadRequest* req)
-{
-    QWidget *window = view() ? view()->window() : nullptr;
-
-    QString suggestedName = !req->suggestedFileName().isEmpty() ? req->suggestedFileName() : req->url().fileName();
-    QString downloadPath = Konq::askDownloadLocation(suggestedName, window);
-    if (downloadPath.isEmpty()) {
-        req->cancel();
-        return;
-    }
-
-    WebEngineDownloaderExtension *downloader = m_part->downloader();
-    DownloaderJob *job = downloader->downloadJob(req->url(), req->id(), this);
-    if (!job) {
-        return;
-    }
-
-    auto lambda = [this](DownloaderJob *dj, const QUrl &url) {
-        if (dj->error() == 0) {
-            m_part->openUrl(url);
-            return;
-        }
-        BrowserArguments bArgs;
+    if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveAs) {
         bArgs.setForcesNewWindow(true);
-        emit m_part->browserExtension()->browserOpenUrlRequest(url, {}, bArgs);
-    };
-    job->startDownload(downloadPath, window, this, lambda);
+        job->setCalledForSaveAs(true);
+        auto displayLocalFile = [this](KonqInterfaces::DownloadJob *job, const QUrl &url){
+            if (job->error()) {
+                return;
+            }
+            disconnect(job, &DownloadJob::downloadResult, m_part, &WebEnginePart::displayActOnDownloadedFileBar);
+            BrowserArguments newBargs;
+            newBargs.setForcedAction(BrowserArguments::Action::Embed);
+            emit m_part->browserExtension()->browserOpenUrlRequest(url, {}, newBargs);
+        };
+        connect(job, &DownloadJob::downloadResult, m_part, displayLocalFile);
+    }
+
+    connect(job, &DownloadJob::downloadResult, m_part, &WebEnginePart::displayActOnDownloadedFileBar);
+    emit m_part->browserExtension()->browserOpenUrlRequestSync(url, args, bArgs, true);
+
+    if (item->state() == QWebEngineDownloadRequest::DownloadRequested) {
+        qCDebug(WEBENGINEPART_LOG()) << "Automatically accepting download for" << item->url() << "This shouldn't happen";
+        item->accept();
+    }
+
 }
 
 void WebEnginePage::setDropOperationStarted()

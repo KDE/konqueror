@@ -15,7 +15,7 @@
 
 #include "libkonq_utils.h"
 
-#include "interfaces/downloaderextension.h"
+#include "interfaces/downloadjob.h"
 
 #include <KIO/OpenUrlJob>
 #include <KIO/JobUiDelegate>
@@ -57,7 +57,8 @@ UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url
     m_view(view),
     m_trustedSource(trustedSource),
     m_protocolAllowsReading(KProtocolManager::supportsReading(m_url) || !KProtocolInfo::isKnownProtocol(m_url)), // If the protocol is unknown, assume it allows reading
-    m_letRequestingPartDownloadUrl(req.browserArgs.downloadId().has_value())
+    m_useDownloadJob(req.browserArgs.downloadJob()),
+    m_downloadJob(req.browserArgs.downloadJob())
 {
     m_request.suggestedFileName = m_request.browserArgs.suggestedDownloadName();
 
@@ -76,9 +77,9 @@ UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url
         m_service = KService::serviceByStorageId(openWith);
     }
 
-    getDownloaderJobFromPart();
-    if (m_letRequestingPartDownloadUrl) {
+    if (m_useDownloadJob) {
         m_originalUrl = m_url;
+        m_downloadJob->setParent(this);
     }
     determineStartingMimetype();
     m_ignoreDefaultHtmlPart = m_request.browserArgs.ignoreDefaultHtmlPart();
@@ -145,7 +146,7 @@ void UrlLoader::determineStartingMimetype()
 {
     QMimeDatabase db;
     if (!m_mimeType.isEmpty()) {
-        if (m_letRequestingPartDownloadUrl || !db.mimeTypeForName(m_mimeType).isDefault()) {
+        if (m_useDownloadJob || !db.mimeTypeForName(m_mimeType).isDefault()) {
             return;
         }
     }
@@ -153,7 +154,7 @@ void UrlLoader::determineStartingMimetype()
     m_mimeType = m_request.args.mimeType();
     //In theory, this should never happen, as parts requesting to download the URL
     //by themselves should already have set the mimetype. However, let's check, just in case
-    if (m_letRequestingPartDownloadUrl && m_mimeType.isEmpty()) {
+    if (m_useDownloadJob && m_mimeType.isEmpty()) {
         m_mimeType = QStringLiteral("application/octet-stream");
     } else if (db.mimeTypeForName(m_mimeType).isDefault()) {
         m_mimeType.clear();
@@ -203,7 +204,7 @@ void UrlLoader::start()
         }
     }
 
-    m_isAsync = m_protocolAllowsReading && (!isMimeTypeKnown(m_mimeType) || m_letRequestingPartDownloadUrl);
+    m_isAsync = m_protocolAllowsReading && (!isMimeTypeKnown(m_mimeType) || m_useDownloadJob);
 }
 
 bool UrlLoader::isViewLocked() const
@@ -257,7 +258,7 @@ void UrlLoader::goOn()
         launchMimeTypeFinderJob();
     } else {
         decideAction();
-        m_ready = !m_letRequestingPartDownloadUrl;
+        m_ready = !m_useDownloadJob;
         performAction();
     }
 }
@@ -364,20 +365,18 @@ void UrlLoader::decideEmbedOpenOrSave()
         askEmbedSaveOrOpen();
     }
 
-    if ( m_action == OpenUrlAction::Open && m_letRequestingPartDownloadUrl && m_partDownloaderJob) {
-        //If the URL should be opened in an external application and it should be downloaded by the requesting part,
-        //ensure it's not downloaded in Konqueror's temporary directory but in the global temporary directory,
-        //otherwise if the user closes Konqueror before closing the application, there could be issues because the
-        //external application wouldn't find the file anymore.
-        //Problem: if the application doesn't support the --tempfile switch, the file will remain even after both Konqueror
-        //and the external application are closed and will only be removed automatically if the temporary directory is deleted
-        //or emptied.
-        QString fileName = QFileInfo(m_partDownloaderJob->downloadPath()).fileName();
+    //If the URL should be opened in an external application and it should be downloaded by the requesting part,
+    //ensure it's not downloaded in Konqueror's temporary directory but in the global temporary directory,
+    //otherwise if the user closes Konqueror before closing the application, there could be issues because the
+    //external application wouldn't find the file anymore.
+    //Problem: if the application doesn't support the --tempfile switch, the file will remain even after both Konqueror
+    //and the external application are closed and will only be removed automatically if the temporary directory is deleted
+    //or emptied.
+    DownloadJob *job = m_request.browserArgs.downloadJob();
+    if (m_useDownloadJob && m_action == OpenUrlAction::Open && job) {
+        QString fileName = QFileInfo(job->downloadPath()).fileName();
         fileName = Konq::generateUniqueFileName(fileName, QDir::temp().path());
-        m_partDownloaderJob->setDownloadPath(QDir::temp().filePath(fileName));
-    } else if (m_action == OpenUrlAction::Embed) {
-        //Otherwise KonqMainWindow::openView may complain that the mimetype shouldn't be embedded and refuse to do it
-        m_request.forceAutoEmbed = true;
+        job->setDownloadPath(QDir::temp().filePath(fileName));
     }
 
     m_ready = m_action != OpenUrlAction::Embed || m_part.isValid();
@@ -503,45 +502,19 @@ void UrlLoader::performAction()
     }
 }
 
-void UrlLoader::getDownloaderJobFromPart()
-{
-    if (!m_letRequestingPartDownloadUrl) {
-        return;
-    }
-    DownloaderExtension *iface = downloaderInterface();
-    if (iface) {
-        if (m_request.browserArgs.downloadId().has_value()) {
-            m_partDownloaderJob = iface->downloadJob(m_url, m_request.browserArgs.downloadId().value(), this);
-        } else {
-            qCDebug(KONQUEROR_LOG) << "A part wants to download" << m_url << "itself but doesn't provide the download job id";
-        }
-
-    } else {
-        qCDebug(KONQUEROR_LOG) << "Wanting to let part download" << m_url << "but part doesn't implement the DownloaderInterface";
-    }
-
-    //If we can't get a job for whatever reason (it shouldn't happen, but let's be sure)
-    //try to open the URL in the usual way. Maybe it'll work (most likely, it will if
-    //there's no need to have special cookies set to access it)
-    if (!m_partDownloaderJob) {
-        qCDebug(KONQUEROR_LOG) << "Couldn't get DownloadJob for" << m_url << "from part" << m_part;
-        m_letRequestingPartDownloadUrl = false;
-        m_request.tempFile = false; //Opening a remote URL with tempFile will fail
-    }
-}
-
 void UrlLoader::downloadForEmbeddingOrOpening()
 {
     //This shouldn't happen
-    if (!m_partDownloaderJob) {
+    if (!m_downloadJob) {
         done();
         return;
     }
-    connect(m_partDownloaderJob, &DownloaderJob::downloadResult, this, &UrlLoader::jobFinished);
-    m_partDownloaderJob->startDownload(m_mainWindow, this, &UrlLoader::downloadForEmbeddingOrOpeningDone);
+    m_downloadJob->setIntent(m_action == BrowserArguments::Action::Embed ? DownloadJob::Embed : DownloadJob::Open);
+    connect(m_downloadJob, &DownloadJob::downloadResult, this, &UrlLoader::jobFinished);
+    m_downloadJob->startDownload(m_mainWindow, this, &UrlLoader::downloadForEmbeddingOrOpeningDone);
 }
 
-void UrlLoader::downloadForEmbeddingOrOpeningDone(KonqInterfaces::DownloaderJob *job, const QUrl &url)
+void UrlLoader::downloadForEmbeddingOrOpeningDone(KonqInterfaces::DownloadJob *job, const QUrl &url)
 {
     if (job && job->error() == 0) {
         m_url = url;
@@ -588,10 +561,10 @@ void UrlLoader::done(KJob *job)
         jobFinished(job);
     }
     emit finished(this);
-    //If we reach here and m_partDownloaderJob->finished() is false, it means the job hasn't been started in the first place,
+    //If we reach here and m_partDownloadJob->finished() is false, it means the job hasn't been started in the first place,
     //(because the user canceled the download), so kill it
-    if (m_partDownloaderJob && !m_partDownloaderJob->finished()) {
-        m_partDownloaderJob->kill();
+    if (m_downloadJob && !m_downloadJob->finished()) {
+        m_downloadJob->kill();
     }
     deleteLater();
 }
@@ -644,14 +617,6 @@ bool UrlLoader::shouldUseDefaultHttpMimeype() const
     return m_url.scheme().startsWith(QStringLiteral("http")) || webengineSchemes.contains(m_url.scheme());
 }
 
-DownloaderExtension* UrlLoader::downloaderInterface() const
-{
-    if (!m_request.requestingPart) {
-        return nullptr;
-    }
-    return DownloaderExtension::downloader(m_request.requestingPart);
-}
-
 void UrlLoader::detectSettingsForRemoteFiles()
 {
     if (m_url.isLocalFile()) {
@@ -659,13 +624,13 @@ void UrlLoader::detectSettingsForRemoteFiles()
     }
 
     if (m_url.scheme() == QLatin1String("error")) {
-        m_letRequestingPartDownloadUrl = false; //error URLs can never be downloaded
+        m_useDownloadJob = false; //error URLs can never be downloaded
         m_mimeType = QLatin1String("text/html");
         m_request.args.setMimeType(QStringLiteral("text/html"));
     }
     else if (shouldUseDefaultHttpMimeype()) {
         // If a part which supports html asked to download the URL, it means it's not html, so don't change its mimetype
-        if (m_letRequestingPartDownloadUrl && m_part.supportsMimeType(QStringLiteral("text/html"))) {
+        if (m_useDownloadJob && m_part.supportsMimeType(QStringLiteral("text/html"))) {
             return;
         }
         m_mimeType = QLatin1String("text/html");
@@ -731,7 +696,7 @@ void UrlLoader::detectSettingsForLocalFiles()
         return;
     }
 
-    m_letRequestingPartDownloadUrl = false; //If the file is local, there's no need to download it
+    m_useDownloadJob = false; //If the file is local, there's no need to download it
 
     m_jobErrorCode = checkAccessToLocalFile(m_url.path());
 
@@ -773,6 +738,7 @@ void UrlLoader::embed()
         m_mimeType = QStringLiteral("text/html");
         m_part = findPartById(QStringLiteral("webenginepart"));
     }
+    m_request.forceAutoEmbed = true;
     bool embedded = m_mainWindow->openView(m_mimeType, m_url, m_view, m_request, m_originalUrl);
     if (embedded) {
         done();
@@ -796,7 +762,7 @@ void UrlLoader::save()
     dlg.selectFile(suggestedName);
     dlg.setDirectory(QStandardPaths::writableLocation(QStandardPaths::DownloadLocation));
     //NOTE: we can't use QDialog::open() because the dialog needs to be synchronous so that we can call
-    //DownloaderJob::setDownloadPath()
+    //DownloadJob::setDownloadPath()
     if (dlg.exec() == QDialog::Rejected) {
         done();
         return;
@@ -806,15 +772,16 @@ void UrlLoader::save()
 
 void UrlLoader::performSave(const QUrl& orig, const QUrl& dest)
 {
-    KJob *job = nullptr;
-    if (m_letRequestingPartDownloadUrl) {
-        getDownloaderJobFromPart();
-        if (m_partDownloaderJob) {
-            m_partDownloaderJob->startDownload(dest.path(), m_mainWindow, this, [this](DownloaderJob *j){done(j);});
+    if (m_useDownloadJob) {
+        KonqInterfaces::DownloadJob *dj = m_request.browserArgs.downloadJob();
+        if (dj) {
+            dj->setIntent(DownloadJob::Save);
+            dj->startDownload(dest.path(), m_mainWindow, this, [this](DownloadJob *j){done(j);});
             return;
         }
     }
-    job = KIO::file_copy(orig, dest, -1, KIO::Overwrite);
+
+    KJob *job = KIO::file_copy(orig, dest, -1, KIO::Overwrite);
     if (!job) {
         done();
         return;

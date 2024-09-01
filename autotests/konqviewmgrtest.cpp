@@ -852,7 +852,7 @@ void ViewMgrTest::testBrowserArgumentsNewTab()
     BrowserArguments browserArgs;
     browserArgs.setNewTab(true);
     KonqView *view = mainWindow.currentView();
-    BrowserExtension *ext = qobject_cast<BrowserExtension *>(view->browserExtension());
+    BrowserExtension *ext = qobject_cast<BrowserExtension *>(view->navigationExtension());
     QVERIFY(ext);
     emit ext->browserOpenUrlRequest(QUrl(QStringLiteral("data:text/html, <p>Second tab test</p>")), urlArgs, browserArgs);
     QTest::qWait(5000);

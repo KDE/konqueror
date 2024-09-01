@@ -26,8 +26,7 @@
 #include <KMessageWidget>
 
 namespace KParts {
-//TODO KF6: when removing compatibility with KF5, uncomment the line below
-  // class NavigationExtension;
+  class NavigationExtension;
   class StatusBarExtension;
 }
 
@@ -43,10 +42,9 @@ class WebEngineNavigationExtension;
 class WebEngineWallet;
 class KPluginMetaData;
 class WebEnginePartControls;
-class WebEngineDownloaderExtension;
 
 namespace KonqInterfaces {
-    class DownloaderJob;
+    class DownloadJob;
 }
 
 namespace WebEngine {
@@ -145,8 +143,6 @@ public:
 
     Q_PROPERTY(bool isWebEnginePart READ isWebEnginePart)
 
-    WebEngineDownloaderExtension* downloader() const {return m_downloader;}
-
 public Q_SLOTS:
     void exitFullScreen();
     void setInspectedPart(KParts::ReadOnlyPart *part);
@@ -154,7 +150,7 @@ public Q_SLOTS:
     /**
      * @brief Displays a widget which the user can use to display or open a file he has just finished downloading
      */
-    void displayActOnDownloadedFileBar(KonqInterfaces::DownloaderJob *job);
+    void displayActOnDownloadedFileBar(KonqInterfaces::DownloadJob *job);
 
 protected:
     /**
@@ -266,7 +262,6 @@ private:
     KParts::StatusBarExtension* m_statusBarExtension;
     WebEngineView* m_webView;
     WebEngineWallet* m_wallet;
-    WebEngineDownloaderExtension* m_downloader;
 
     QPointer<WebEngine::ActOnDownloadedFileBar> m_actOnDownloadedFileWidget = nullptr; //!< Widget allowing the user to open a file which was downloaded right now
 

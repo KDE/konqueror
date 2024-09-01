@@ -11,7 +11,7 @@
 
 #include "kwebenginepartlib_export.h"
 
-#include "interfaces/downloaderextension.h"
+#include "interfaces/downloadjob.h"
 
 #include <QPointer>
 #include <QWebEngineDownloadRequest>
@@ -31,6 +31,8 @@ class WebEnginePage;
 class QPrinter;
 class QJsonObject;
 class QWebEngineScript;
+
+class WebEngineDownloadJob;
 
 class KWEBENGINEPARTLIB_EXPORT WebEngineNavigationExtension : public BrowserExtension
 {
@@ -218,20 +220,6 @@ private:
      * @param obj the JSON object representing the element as returned by the javascript function `querySelectorToObject()`
      */
     static SelectorInterface::Element jsonToElement(const QJsonObject &obj);
-};
-
-class WebEngineDownloaderExtension : public KonqInterfaces::DownloaderExtension
-{
-    Q_OBJECT
-public:
-    WebEngineDownloaderExtension(WebEnginePart *parent);
-    ~WebEngineDownloaderExtension();
-    KonqInterfaces::DownloaderJob* downloadJob(const QUrl &url, quint32 id, QObject *parent=nullptr) override;
-    void addDownloadRequest(QWebEngineDownloadRequest *req);
-    KParts::ReadOnlyPart* part() const override;
-
-private:
-    QMultiHash<QUrl, QWebEngineDownloadRequest*> m_downloadRequests;
 };
 
 #endif // WEBENGINEPART_EXT_H

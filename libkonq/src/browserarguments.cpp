@@ -8,7 +8,10 @@
 
 #include "browserarguments.h"
 
+#include "interfaces/downloadjob.h"
+
 #include <QDebug>
+#include <QPointer>
 
 struct BrowserArgumentsPrivate {
     QString contentType; // for POST
@@ -18,11 +21,11 @@ struct BrowserArgumentsPrivate {
     bool newTab = false;
     bool forcesNewWindow = false;
     QString suggestedDownloadName;
-    BrowserArguments::MaybeInt downloadId = std::nullopt;
     QString embedWith;
     QString openWith;
     bool ignoreDefaultHtmlPart = false;
     BrowserArguments::Action forcedAction = BrowserArguments::Action::UnknownAction;
+    QPointer<KonqInterfaces::DownloadJob> downloadJob;
 };
 
 BrowserArguments::BrowserArguments()
@@ -142,15 +145,26 @@ QString BrowserArguments::suggestedDownloadName() const
     return d ? d->suggestedDownloadName : QString();
 }
 
-BrowserArguments::MaybeInt BrowserArguments::downloadId() const
+KonqInterfaces::DownloadJob* BrowserArguments::downloadJob() const
 {
-    return d ? d->downloadId : std::nullopt;
+    return d ? d->downloadJob : nullptr;
 }
 
-void BrowserArguments::setDownloadId(MaybeInt id)
+void BrowserArguments::setDownloadJob(KonqInterfaces::DownloadJob* job)
 {
-    ensureD()->downloadId = id;
+    ensureD();
+    d->downloadJob = job;
 }
+
+// BrowserArguments::MaybeInt BrowserArguments::downloadId() const
+// {
+//     return d ? d->downloadId : std::nullopt;
+// }
+//
+// void BrowserArguments::setDownloadId(MaybeInt id)
+// {
+//     ensureD()->downloadId = id;
+// }
 
 QString BrowserArguments::embedWith() const
 {

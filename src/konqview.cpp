@@ -17,7 +17,7 @@
 #include "konqhistorymanager.h"
 #include "konqpixmapprovider.h"
 #include "implementations/konqbrowserwindowinterface.h"
-#include "interfaces/downloaderextension.h"
+#include "interfaces/downloadjob.h"
 #include "browserarguments.h"
 #include "browserextension.h"
 #include "placeholderpart.h"
@@ -180,7 +180,7 @@ void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
         args = m_pPart->arguments();
     }
 
-    KParts::NavigationExtension *ext = browserExtension();
+    KParts::NavigationExtension *ext = navigationExtension();
     BrowserArguments browserArgs;
     if (BrowserExtension *browserExtension = qobject_cast<BrowserExtension *>(ext)) {
         browserArgs = browserExtension->browserArguments();
@@ -422,29 +422,18 @@ void KonqView::connectPart()
                 m_pMainWindow, SLOT(slotInternalViewModeChanged()));
     }
 
-    if (m_pPart) {
-        KonqInterfaces::DownloaderExtension *dext = KonqInterfaces::DownloaderExtension::downloader(m_pPart);
-        if (dext) {
-            connect(dext, &KonqInterfaces::DownloaderExtension::downloadAndOpenUrl, m_pMainWindow, [dext, this](const QUrl &url, const KParts::OpenUrlArguments &args, const BrowserArguments &bargs, bool temp){
-                    KonqOpenURLRequest req(args, bargs, dext->part());
-                    req.tempFile = temp;
-                    m_pMainWindow->slotOpenURLRequest(url, req);
-                });
-        }
-    }
-
-    KParts::NavigationExtension *ext = browserExtension();
+    KParts::NavigationExtension *ext = navigationExtension();
     if (ext) {
-
         if (auto browserExtension = qobject_cast<BrowserExtension *>(ext)) {
-            connect(browserExtension, &BrowserExtension::browserOpenUrlRequestDelayed, m_pMainWindow, [ext, this](const QUrl &url, const KParts::OpenUrlArguments &arguments, const BrowserArguments &browserArguments){
+            connect(browserExtension, &BrowserExtension::browserOpenUrlRequestDelayed, m_pMainWindow, [ext, this](const QUrl &url, const KParts::OpenUrlArguments &arguments, const BrowserArguments &browserArguments, bool temp){
                 KonqOpenURLRequest req(arguments, browserArguments, qobject_cast<KParts::ReadOnlyPart*>(ext->parent()));
-                    m_pMainWindow->slotOpenURLRequest(url, req);
+                req.tempFile = temp;
+                m_pMainWindow->slotOpenURLRequest(url, req);
             });
             KonqBrowserWindowInterface *bi = new KonqBrowserWindowInterface(mainWindow(), m_pPart);
             browserExtension->setBrowserInterface(bi);
         } else {
-            connect(ext, &BrowserExtension::openUrlRequestDelayed, m_pMainWindow,
+            connect(ext, &KParts::NavigationExtension::openUrlRequestDelayed, m_pMainWindow,
                 [ext, this](const QUrl &url, const KParts::OpenUrlArguments &args){
                     KonqOpenURLRequest req(args, {}, qobject_cast<KParts::ReadOnlyPart*>(ext->parent()));
                     m_pMainWindow->slotOpenURLRequest(url, req);
@@ -827,11 +816,11 @@ void KonqView::updateHistoryEntry(bool needsReload)
 #endif
 
     current->reload = needsReload; // We have a state for it now.
-    if (!needsReload && browserExtension()) {
+    if (!needsReload && navigationExtension()) {
         current->buffer = QByteArray(); // Start with empty buffer.
         QDataStream stream(&current->buffer, QIODevice::WriteOnly);
 
-        browserExtension()->saveState(stream);
+        navigationExtension()->saveState(stream);
     }
 
 #ifdef DEBUG_HISTORY
@@ -914,11 +903,11 @@ void KonqView::restoreHistory()
     m_requestedUrl = h.url;
     aboutToOpenURL(h.url);
 
-    if (h.reload == false && browserExtension() && historyIndex() > 0) {
+    if (h.reload == false && navigationExtension() && historyIndex() > 0) {
         //qCDebug(KONQUEROR_LOG) << "Restoring view from stream";
         QDataStream stream(h.buffer);
 
-        browserExtension()->restoreState(stream);
+        navigationExtension()->restoreState(stream);
 
         m_doPost = h.doPost;
         m_postContentType = h.postContentType;
@@ -1133,7 +1122,7 @@ void KonqView::enablePopupMenu(bool b)
 {
     Q_ASSERT(m_pMainWindow);
 
-    KParts::NavigationExtension *ext = browserExtension();
+    KParts::NavigationExtension *ext = navigationExtension();
 
     if (!ext) {
         return;
@@ -1263,7 +1252,7 @@ bool KonqView::eventFilter(QObject *obj, QEvent *e)
         const QMimeData *mimeData = ev->mimeData();
 
         QList<QUrl> lstDragURLs = KUrlMimeData::urlsFromMimeData(mimeData);
-        KParts::NavigationExtension *ext = browserExtension();
+        KParts::NavigationExtension *ext = navigationExtension();
         if (!lstDragURLs.isEmpty() && ext && lstDragURLs.first().isValid()) {
             emit ext->openUrlRequest(lstDragURLs.first());    // this will call m_pMainWindow::slotOpenURLRequest delayed
         }
@@ -1294,7 +1283,7 @@ bool KonqView::prepareReload(KParts::OpenUrlArguments &args, BrowserArguments &b
     return true;
 }
 
-KParts::NavigationExtension *KonqView::browserExtension() const
+KParts::NavigationExtension *KonqView::navigationExtension() const
 {
     return m_pPart ? KParts::NavigationExtension::childObject(m_pPart) : nullptr;
 }
