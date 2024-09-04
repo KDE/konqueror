@@ -164,6 +164,16 @@ void KonquerorApplication::setupAboutData()
     m_aboutData.setCopyrightStatement(i18n("(C) 1999-2023, The Konqueror developers"));
     m_aboutData.setHomepage("https://apps.kde.org/konqueror");
 
+    // The window icon, retrieved in KAboutApplicationDialogPrivate::init(),
+    // may vary for this application depending on what is displayed.  Set the
+    // program logo explicitly for the "About Konqueror" dialogue.
+    m_aboutData.setProgramLogo(QIcon::fromTheme("konqueror"));
+
+    // However, the icon for the "About <application>" action, generated
+    // in KStandardAction::_k_createInternal(), uses the window icon directly.
+    // This may again change later, but set it here for the action.
+    QGuiApplication::setWindowIcon(QIcon::fromTheme("konqueror"));
+
     m_aboutData.addAuthor(i18n("Stefano Crocco"), i18n("Current maintainer"), "stefano.crocco@alice.it");
     m_aboutData.addAuthor(i18n("David Faure"), i18n("Developer (framework, parts, JavaScript, I/O library) and former maintainer"), "faure@kde.org");
     m_aboutData.addAuthor(i18n("Simon Hausmann"), i18n("Developer (framework, parts)"), "hausmann@kde.org");
