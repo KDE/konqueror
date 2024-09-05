@@ -48,26 +48,6 @@
 
 using namespace KonqInterfaces;
 
-bool UrlLoader::embedWithoutAskingToSave(const QString &mimeType)
-{
-    static QStringList s_mimeTypes;
-    if (s_mimeTypes.isEmpty()) {
-        QStringList names{QStringLiteral("kfmclient_html"), QStringLiteral("kfmclient_dir"), QStringLiteral("kfmclient_war")};
-        for (const QString &name : names) {
-            KService::Ptr s = KService::serviceByStorageId(name);
-            if (s) {
-                s_mimeTypes.append(s->mimeTypes());
-            } else {
-                qCDebug(KONQUEROR_LOG()) << "Couldn't find service" << name;
-            }
-        }
-        //The user may want to save xml files rather than embedding them
-        //TODO: is there a better way to do this?
-        s_mimeTypes.removeOne(QStringLiteral("application/xml"));
-    }
-    return s_mimeTypes.contains(mimeType);
-}
-
 UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url, const QString &mimeType, const KonqOpenURLRequest &req, bool trustedSource):
     QObject(mainWindow),
     m_mainWindow(mainWindow),
@@ -79,7 +59,6 @@ UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url
     m_protocolAllowsReading(KProtocolManager::supportsReading(m_url) || !KProtocolInfo::isKnownProtocol(m_url)), // If the protocol is unknown, assume it allows reading
     m_letRequestingPartDownloadUrl(req.browserArgs.downloadId().has_value())
 {
-    qDebug() << "URL LOADER FOR" << url;
     m_request.suggestedFileName = m_request.browserArgs.suggestedDownloadName();
 
     QString requestedEmbeddingPart = m_request.browserArgs.embedWith();
@@ -256,18 +235,7 @@ void UrlLoader::decideAction()
             m_ready = true;
             return;
         default:
-            if (!isMimeTypeKnown(m_mimeType) && !m_protocolAllowsReading) {
-                //If the protocol doesn't allow reading and we don't have a mimetype associated with it,
-                //use the Open action, as we most likely won't be able to find out the mimetype. This is
-                //what happens, for example, for mailto URLs
-                setAction(OpenUrlAction::Open);
-                return;
-            } else if (isViewLocked() || shouldEmbedThis()) {
-                if (decideEmbedOrSave()) {
-                    return;
-                }
-            }
-            decideOpenOrSave();
+            decideEmbedOpenOrSave();
     }
 }
 
@@ -363,72 +331,77 @@ KPluginMetaData UrlLoader::findEmbeddingPart(bool forceServiceName) const
     return part;
 }
 
-bool UrlLoader::decideEmbedOrSave()
+static UrlLoader::OpenUrlAction actionFromDialogResult(DownloadActionQuestion::Action res)
 {
-    m_part = findEmbeddingPart();
-
-    //If we can't find a part, return false, so that the caller can use decideOpenOrSave to allow the
-    //user the possibility of opening the file, since embedding wasn't possibile
-    if (!m_part.isValid()) {
-        return false;
+    switch (res) {
+        case DownloadActionQuestion::Action::Cancel:
+            return UrlLoader::OpenUrlAction::DoNothing;
+        case DownloadActionQuestion::Action::Save:
+            return UrlLoader::OpenUrlAction::Save;
+        case DownloadActionQuestion::Action::Embed:
+            return UrlLoader::OpenUrlAction::Embed;
+        case DownloadActionQuestion::Action::Open:
+            return UrlLoader::OpenUrlAction::Open;
     }
-
-    //Ask whether to save or embed, except in the following cases:
-    //- it's a web page: always embed
-    //- it's a local file: always embed
-    if (embedWithoutAskingToSave(m_mimeType) || m_url.isLocalFile() || isForced(OpenUrlAction::Embed) || !can(OpenUrlAction::Save)) {
-        setAction(OpenUrlAction::Embed);
-    } else {
-        setAction(askSaveOrOpen(OpenEmbedMode::Embed).first);
-    }
-
-    if (m_action == OpenUrlAction::Embed) {
-        m_request.serviceName = m_part.pluginId();
-    }
-
-    m_ready = m_part.isValid() || m_action != OpenUrlAction::Embed;
-    return true;
+    //We can't really reach this point, but it won't compile without this
+    return UrlLoader::OpenUrlAction::UnknownAction;
 }
 
-void UrlLoader::decideOpenOrSave()
+void UrlLoader::decideEmbedOpenOrSave()
 {
-    m_ready = true;
-    if (!can(OpenUrlAction::Save) && !can(OpenUrlAction::Open)) {
-        //decideOpenOrSave is the last option. If we can't neither open nor save, do nothing
-        setAction(OpenUrlAction::DoNothing);
-        return;
-    }
-    QString protClass = KProtocolInfo::protocolClass(m_url.scheme());
-    bool isLocal = m_url.isLocalFile();
-    bool alwaysOpen = isLocal || protClass == QLatin1String(":local") || KProtocolInfo::isHelperProtocol(m_url);
-    OpenSaveAnswer answerWithService;
-    if (alwaysOpen || isForced(OpenUrlAction::Open) || !can(OpenUrlAction::Save)) {
-        answerWithService = qMakePair(OpenUrlAction::Open, KApplicationTrader::preferredService(m_mimeType));
-    } else if (isForced(OpenUrlAction::Save) || !can(OpenUrlAction::Open)) {
-        answerWithService = qMakePair(OpenUrlAction::Save, nullptr);
-    } else {
-        answerWithService = askSaveOrOpen(OpenEmbedMode::Open);
+    //If a part has been explicitly requested or if the view is locked, assume
+    //we need to embed the URL
+    if (!m_request.serviceName.isEmpty() || isViewLocked()) {
+        m_part = !m_request.serviceName.isEmpty() ? findPartById(m_request.serviceName) : findEmbeddingPart(false);
+        if (m_part.isValid()) {
+            m_action = OpenUrlAction::Embed;
+        }
+    } else if (m_service) { //The same if a service has been specified
+        m_action = OpenUrlAction::Open;
     }
 
-    setAction(answerWithService.first);
+    if (m_action == OpenUrlAction::UnknownAction) {
+        askEmbedSaveOrOpen();
+    }
 
-    //If the URL should be opened in an external application and it should be downloaded by the requesting part,
-    //ensure it's not downloaded in Konqueror's temporary directory but in the global temporary directory,
-    //otherwise if the user closes Konqueror before closing the application, there could be issues because the
-    //external application wouldn't find the file anymore.
-    //Problem: if the application doesn't support the --tempfile switch, the file will remain even after both Konqueror
-    //and the external application are closed and will only be removed automatically if the temporary directory is deleted
-    //or emptied.
-    if (m_letRequestingPartDownloadUrl && m_action == OpenUrlAction::Open && m_partDownloaderJob) {
+    if ( m_action == OpenUrlAction::Open && m_letRequestingPartDownloadUrl && m_partDownloaderJob) {
+        //If the URL should be opened in an external application and it should be downloaded by the requesting part,
+        //ensure it's not downloaded in Konqueror's temporary directory but in the global temporary directory,
+        //otherwise if the user closes Konqueror before closing the application, there could be issues because the
+        //external application wouldn't find the file anymore.
+        //Problem: if the application doesn't support the --tempfile switch, the file will remain even after both Konqueror
+        //and the external application are closed and will only be removed automatically if the temporary directory is deleted
+        //or emptied.
         QString fileName = QFileInfo(m_partDownloaderJob->downloadPath()).fileName();
         fileName = Konq::generateUniqueFileName(fileName, QDir::temp().path());
         m_partDownloaderJob->setDownloadPath(QDir::temp().filePath(fileName));
+    } else if (m_action == OpenUrlAction::Embed) {
+        //Otherwise KonqMainWindow::openView may complain that the mimetype shouldn't be embedded and refuse to do it
+        m_request.forceAutoEmbed = true;
     }
-    if (!m_service) {
-        m_service = answerWithService.second;
-    }
+
+    m_ready = m_action != OpenUrlAction::Embed || m_part.isValid();
+
 }
 
+void UrlLoader::askEmbedSaveOrOpen()
+{
+    using Result = DownloadActionQuestion::Action;
+    DownloadActionQuestion dlg(m_mainWindow, m_url, m_mimeType, m_ignoreDefaultHtmlPart);
+    dlg.setSuggestedFileName(m_request.suggestedFileName);
+    Result saveMode = can(OpenUrlAction::Save) ? Result::Save : Result::Cancel;
+    Result openMode = can(OpenUrlAction::Open) ? Result::Open : Result::Cancel;
+    Result embedMode = can(OpenUrlAction::Embed) ? Result::Embed : Result::Cancel;
+
+    DownloadActionQuestion::Action ans = dlg.ask(saveMode|embedMode|openMode);
+    m_action = actionFromDialogResult(ans);
+    if (m_action == OpenUrlAction::Embed) {
+        m_part = dlg.selectedPart();
+        m_request.serviceName = m_part.pluginId();
+    } else if (m_action == OpenUrlAction::Open) {
+        m_service = dlg.selectedService();
+    }
+}
 
 bool UrlLoader::isUrlExecutable() const
 {
@@ -804,7 +777,11 @@ void UrlLoader::embed()
     if (embedded) {
         done();
     } else {
-        decideOpenOrSave();
+        m_allowedActions.removeOne(OpenUrlAction::Embed);
+        m_request.serviceName = {};
+        m_request.forceAutoEmbed = false;
+        m_part = {};
+        decideEmbedOpenOrSave();
         performAction();
     }
 }
@@ -892,29 +869,6 @@ void UrlLoader::execute()
 bool UrlLoader::isTextExecutable(const QString &mimeType)
 {
     return ( mimeType == QLatin1String("application/x-desktop") || mimeType == QLatin1String("application/x-shellscript"));
-}
-
-UrlLoader::OpenSaveAnswer UrlLoader::askSaveOrOpen(OpenEmbedMode mode) const
-{
-    BrowserOpenOrSaveQuestion dlg(m_mainWindow, m_url, m_mimeType);
-    dlg.setSuggestedFileName(m_request.suggestedFileName);
-    dlg.setFeatures(BrowserOpenOrSaveQuestion::ServiceSelection);
-    BrowserOpenOrSaveQuestion::Result ans = mode == OpenEmbedMode::Open ? dlg.askOpenOrSave() : dlg.askEmbedOrSave();
-    OpenUrlAction action;
-    switch (ans) {
-        case BrowserOpenOrSaveQuestion::Save:
-            action = OpenUrlAction::Save;
-            break;
-        case BrowserOpenOrSaveQuestion::Open:
-            action = OpenUrlAction::Open;
-            break;
-        case BrowserOpenOrSaveQuestion::Embed:
-            action = OpenUrlAction::Embed;
-            break;
-        default:
-            action = OpenUrlAction::DoNothing;
-    }
-    return qMakePair(action, dlg.selectedService());
 }
 
 QString UrlLoader::partForLocalFile(const QString& path)

@@ -94,6 +94,7 @@ set(konqueror_KDEINIT_SRCS
    configdialog.cpp
    placeholderpart.cpp
    fullscreenmanager.cpp
+   downloadactionquestion.cpp
 )
 
 if (${KActivities_FOUND})

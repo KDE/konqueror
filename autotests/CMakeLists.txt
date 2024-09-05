@@ -1,9 +1,11 @@
 if (NOT WIN32)
-
 find_package(Qt${KF_MAJOR_VERSION}Test ${QT_MIN_VERSION} CONFIG REQUIRED)
+
+add_compile_definitions(BUILD_TESTING)
 
 set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/..  )
+include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/downloadactionquestiontest/  )
 
 ########### konqviewmgrtest ###############
 
@@ -30,9 +32,12 @@ ecm_add_test(konqhtmltest.cpp
 ecm_add_test(konqviewtest.cpp
     LINK_LIBRARIES konqueror_internal_lib Qt${KF_MAJOR_VERSION}::Core Qt${KF_MAJOR_VERSION}::Test)
 
-########### openorsavequestion_unittest ###############
+########### downloadactionquestiontest ###############
 
-ecm_add_test(openorsavequestion_unittest.cpp
+ecm_add_test(downloadactionquestiontest/downloadactionquestiontest.cpp downloadactionquestiontest/downloadactionquestiontestjsonloader.cpp ../src/downloadactionquestion.cpp
+    TEST_NAME downloadactionquestiontest
     LINK_LIBRARIES konqueror_internal_lib Qt${KF_MAJOR_VERSION}::Core Qt${KF_MAJOR_VERSION}::Test KF${KF_MAJOR_VERSION}::Service)
+    add_compile_definitions(BUILD_DOWNLOAD_ACTION_QUESTION_TESTS TRANSLATION_DOMAIN=\"konqueror\")
+qt_add_resources(downloadactionquestiontest PREFIX "/" FILES ./downloadactionquestiontest/downloadactionquestion_testdata.json BASE ./downloadactionquestiontest)
 
 endif (NOT WIN32)

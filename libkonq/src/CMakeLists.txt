@@ -11,7 +11,6 @@ set(konq_LIB_SRCS
    konq_spellcheckingconfigurationdispatcher.cpp #konqueror and webenginepart
    konq_kpart_plugin.cpp
    interfaces/selectorinterface.cpp
-   browseropenorsavequestion.cpp
    historyprovider.cpp
    htmlextension.cpp
    htmlsettingsinterface.cpp

@@ -27,6 +27,8 @@ QVector<KPluginMetaData> findParts(std::function<bool(const KPluginMetaData &)> 
 
 QVector<KPluginMetaData> findParts(std::function<bool(const KPluginMetaData &)> filter={});
 
+QStringList pluginIds(const QList<KPluginMetaData> &mds);
+
 QDebug operator<<(QDebug debug, const KPluginMetaData &md);
 
 QDebug operator<<(QDebug debug, const QVector<KPluginMetaData> &vec);

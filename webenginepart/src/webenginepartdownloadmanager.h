@@ -18,7 +18,6 @@
 #include <KJob>
 #include <QPointer>
 
-#include "browseropenorsavequestion.h"
 #include "interfaces/downloaderextension.h"
 
 class WebEnginePage;

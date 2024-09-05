@@ -10,7 +10,7 @@
 #define URLLLOADER_H
 
 #include "konqopenurlrequest.h"
-#include "browseropenorsavequestion.h"
+#include "downloadactionquestion.h"
 
 #include <QObject>
 #include <QUrl>
@@ -136,7 +136,6 @@ public:
     void setView(KonqView *view);
     bool isAsync() const {return m_isAsync;}
     void setOldLocationBarUrl(const QString &old);
-    // QString oldLocationBarUrl() const {return m_oldLocationBarUrl;}
     bool hasError() const {return m_jobErrorCode;}
     void setNewTab(bool newTab);
 
@@ -203,9 +202,7 @@ private:
     void killOpenUrlJob();
     static bool serviceIsKonqueror(KService::Ptr service);
     static bool isMimeTypeKnown(const QString &mimeType);
-    bool decideEmbedOrSave();
-    void decideOpenOrSave();
-    bool embedWithoutAskingToSave(const QString &mimeType);
+    void decideEmbedOpenOrSave();
     bool shouldUseDefaultHttpMimeype() const;
     void decideAction();
     bool isViewLocked() const;
@@ -316,23 +313,8 @@ private:
 
     enum class OpenEmbedMode{Open, Embed};
 
-    /**
-     * @brief Asks the user whether he wants to save the url or open/embed it
-     *
-     * This will display the user a `KParts::BrowserOpenOrSaveQuestion` dialog, in open or embed mode depending on the argument.
-     * When displaying the dialog in "open" mode, it also allows to choose the application to use.
-     *
-     * @param mode tells the kind of dialog to show the user: and "Embed or save" dialog if this is OpenEmbedMode::Embed or an "Open
-     * or save" dialog if it is OpenEmbedMode::Open
-     * @return an object describing the user's choices. The first element is the action the user has chosen and can only be OpenUrlAction::Save,
-     * OpenUrlAction::Open, OpenUrlAction::Embed, OpenUrlAction::DoNothing. The second element is the service chosen by the user if @p mode is
-     * OpenEmbedMode::Open and `nullptr` otherwise.
-     * @note If @p mode is OpenEmbedMode::Open and the second element of the returned value is `nullptr`, it may mean that the user has chosen the
-     * "Open with..." entry from the menu displayed by the "Open with..." button. The caller shouldn't try to decide itself which service to use; it
-     * should instead pass `nullptr` as argument to the KIO::ApplicationLauncherJob constructor, which will take care to display the "Open with..."
-     * dialog to the user.
-     */
-    OpenSaveAnswer askSaveOrOpen(OpenEmbedMode mode) const;
+    void askEmbedSaveOrOpen();
+
     OpenUrlAction decideExecute() const;
 
     /**

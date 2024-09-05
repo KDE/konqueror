@@ -45,6 +45,13 @@ QVector<KPluginMetaData> findParts(std::function<bool (const KPluginMetaData &)>
     return plugins;
 }
 
+QStringList pluginIds(const QList<KPluginMetaData>& mds)
+{
+    QStringList res;
+    std::transform(mds.constBegin(), mds.constEnd(), std::back_inserter(res), [](const KPluginMetaData &md){return md.pluginId();});
+    return res;
+}
+
 QDebug operator<<(QDebug debug, const KPluginMetaData& md)
 {
     QDebugStateSaver saver(debug);

@@ -41,7 +41,7 @@
 #include "implementations/konqbrowserwindowinterface.h"
 #include "urlloader.h"
 #include "pluginmetadatautils.h"
-#include "browseropenorsavequestion.h"
+#include "downloadactionquestion.h"
 #include "configdialog.h"
 #include "browserextension.h"
 #include "fullscreenmanager.h"
@@ -553,6 +553,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
 #endif
     // We like modifying args in this method :)
     QUrl url(_url);
+
     QString mimeType(_mimeType);
     KonqOpenURLRequest req(_req);
 

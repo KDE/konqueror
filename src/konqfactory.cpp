@@ -117,10 +117,7 @@ KonqViewFactory KonqFactory::createView(const Konq::ViewType &type,
 
     // Look for this service
     if (!serviceName.isEmpty()) {
-        auto it = std::find_if(offers.constBegin(), offers.constEnd(), [serviceName](const KPluginMetaData &md){return md.pluginId() == serviceName;});
-        if (it != offers.constEnd()) {
-            service = *it;
-        }
+        service = findPartById(serviceName);
     }
 
     KonqViewFactory viewFactory;
