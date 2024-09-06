@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:38+0000\n"
+"POT-Creation-Date: 2024-09-06 00:39+0000\n"
 "PO-Revision-Date: 2010-12-17 21:13+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -18,72 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.1\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: src/browseropenorsavequestion.cpp:88
-#, kde-format
-msgctxt "@label Type of file"
-msgid "Type: %1"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:96
-#, kde-format
-msgctxt "@label:checkbox"
-msgid "Remember action for files of this type"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
-#, fuzzy, kde-format
-#| msgid "Open &with %1"
-msgctxt "@label:button"
-msgid "&Open with %1"
-msgstr "เปิดใช้&ด้วย %1"
-
-#: src/browseropenorsavequestion.cpp:212
-#, fuzzy, kde-format
-#| msgid "Open &with %1"
-msgctxt "@action:inmenu"
-msgid "Open &with %1"
-msgstr "เปิดใช้&ด้วย %1"
-
-#: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
-#, fuzzy, kde-format
-#| msgid "Open &with %1"
-msgctxt "@info"
-msgid "Open '%1'?"
-msgstr "เปิดใช้&ด้วย %1"
-
-#: src/browseropenorsavequestion.cpp:227
-#, fuzzy, kde-format
-#| msgid "&Open With..."
-msgctxt "@label:button"
-msgid "&Open with..."
-msgstr "เ&ปิดใช้ด้วย..."
-
-#: src/browseropenorsavequestion.cpp:245
-#, fuzzy, kde-format
-#| msgid "&Open With"
-msgctxt "@label:button"
-msgid "&Open with"
-msgstr "เ&ปิดใช้ด้วย"
-
-#: src/browseropenorsavequestion.cpp:314
-#, fuzzy, kde-format
-#| msgid "&Open"
-msgctxt "@label:button"
-msgid "&Open"
-msgstr "เ&ปิด"
-
-#: src/browseropenorsavequestion.cpp:338
-#, kde-format
-msgctxt "@label File name"
-msgid "Name: %1"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:340
-#, kde-format
-msgctxt "@info:whatsthis"
-msgid "This is the file name suggested by the server"
-msgstr ""
 
 #: src/htmlsettingsinterface.cpp:19
 msgid "Accept"
@@ -162,6 +96,42 @@ msgstr "แสดงตัวอย่างใน"
 #, kde-format
 msgid "Open Terminal Here"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Open &with %1"
+#~ msgctxt "@label:button"
+#~ msgid "&Open with %1"
+#~ msgstr "เปิดใช้&ด้วย %1"
+
+#, fuzzy
+#~| msgid "Open &with %1"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Open &with %1"
+#~ msgstr "เปิดใช้&ด้วย %1"
+
+#, fuzzy
+#~| msgid "Open &with %1"
+#~ msgctxt "@info"
+#~ msgid "Open '%1'?"
+#~ msgstr "เปิดใช้&ด้วย %1"
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@label:button"
+#~ msgid "&Open with..."
+#~ msgstr "เ&ปิดใช้ด้วย..."
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@label:button"
+#~ msgid "&Open with"
+#~ msgstr "เ&ปิดใช้ด้วย"
+
+#, fuzzy
+#~| msgid "&Open"
+#~ msgctxt "@label:button"
+#~ msgid "&Open"
+#~ msgstr "เ&ปิด"
 
 #~ msgid "&Properties"
 #~ msgstr "คุณ&สมบัติ"

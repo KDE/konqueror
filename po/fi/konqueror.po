@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-05 00:39+0000\n"
+"POT-Creation-Date: 2024-09-06 00:39+0000\n"
 "PO-Revision-Date: 2024-02-02 12:52+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -45,6 +45,123 @@ msgstr ""
 "kim.enkovaara@iki.fi, ikola@iki.fi, ilpo@iki.fi, eleknader@phnet.fi, lasse."
 "liehu@gmail.com, translator@legisign.org, piippo@cc.helsinki.fi, teemu."
 "rytilahti@kde-fi.org"
+
+#: src/downloadactionquestion.cpp:161
+#, kde-format
+msgctxt "@label Type of file"
+msgid "Type: %1"
+msgstr ""
+
+#: src/downloadactionquestion.cpp:169
+#, kde-format
+msgctxt "@label:checkbox"
+msgid "Remember action for files of this type"
+msgstr ""
+
+#: src/downloadactionquestion.cpp:285
+#, kde-format
+msgctxt "@info"
+msgid "Save '%1'?"
+msgstr ""
+
+#: src/downloadactionquestion.cpp:287
+#, fuzzy, kde-format
+#| msgid "Open with %1"
+msgctxt "@info"
+msgid "Open '%1'?"
+msgstr "Avaa ohjelmaan %1"
+
+#: src/downloadactionquestion.cpp:304
+#, fuzzy, kde-format
+#| msgid "&Open With"
+msgctxt "@label:button"
+msgid "&Open with..."
+msgstr "Avaa &ohjelmaan"
+
+#: src/downloadactionquestion.cpp:312 src/downloadactionquestion.cpp:465
+#, fuzzy, kde-format
+#| msgid "Open with %1"
+msgctxt "@label:button"
+msgid "&Open with %1"
+msgstr "Avaa ohjelmaan %1"
+
+#: src/downloadactionquestion.cpp:321
+#, fuzzy, kde-format
+#| msgid "&Open With"
+msgctxt "@label:button"
+msgid "&Open with"
+msgstr "Avaa &ohjelmaan"
+
+#: src/downloadactionquestion.cpp:337
+#, fuzzy, kde-format
+#| msgctxt "Display an executable file"
+#| msgid "Display"
+msgctxt "@label:button"
+msgid "&Display in %1"
+msgstr "Näytä"
+
+#: src/downloadactionquestion.cpp:349
+#, fuzzy, kde-format
+#| msgctxt "Display an executable file"
+#| msgid "Display"
+msgctxt "@label:button"
+msgid "&Display in"
+msgstr "Näytä"
+
+#: src/downloadactionquestion.cpp:371
+#, fuzzy, kde-format
+#| msgid "Open with %1"
+msgctxt "@action:inmenu"
+msgid "Open &with %1"
+msgstr "Avaa ohjelmaan %1"
+
+#: src/downloadactionquestion.cpp:403
+#, fuzzy, kde-format
+#| msgctxt "Display an executable file"
+#| msgid "Display"
+msgctxt "@action:inmenu"
+msgid "Display &in %1"
+msgstr "Näytä"
+
+#: src/downloadactionquestion.cpp:425
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Viewers not supporting this file"
+msgstr ""
+
+#: src/downloadactionquestion.cpp:429
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Viewers unlikely to display the file"
+msgstr ""
+
+#: src/downloadactionquestion.cpp:430
+#, kde-format
+msgctxt "The name of the file the user wants to open"
+msgid "this file"
+msgstr ""
+
+#: src/downloadactionquestion.cpp:431
+#, kde-format
+msgid ""
+"<p>Viewers which aren't supposed to be able to display %1. Using them will "
+"most likely fail.</p><p>These choices are provided in case the detected file "
+"type is incorrect or if a viewer can display %1 even if it doesn't "
+"officially support it.</p>"
+msgstr ""
+
+#: src/downloadactionquestion.cpp:452
+#, fuzzy, kde-format
+#| msgid "Name:"
+msgctxt "@label File name"
+msgid "Name: %1"
+msgstr "Nimi:"
+
+#: src/downloadactionquestion.cpp:454
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "This is the file name suggested by the server"
+msgstr ""
 
 #: src/konqapplication.cpp:118
 #, kde-format
@@ -520,8 +637,8 @@ msgstr ""
 "Verkko-osoitteita ei voi välittää käytettäessä --preload-valitsinta. Verkko-"
 "osoitteet sivuutetaan\n"
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4806
-#: src/konqmainwindow.cpp:4852
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4807
+#: src/konqmainwindow.cpp:4853
 #, kde-format
 msgid "no name"
 msgstr "ei nimeä"
@@ -625,7 +742,7 @@ msgstr "Paikallinen"
 msgid "Miscellaneous"
 msgstr "Sekalaiset"
 
-#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4310
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4311
 #, kde-format
 msgid "Open in New &Window"
 msgstr "&Avaa uuteen ikkunaan"
@@ -686,28 +803,28 @@ msgctxt "@title:window"
 msgid "Clear History?"
 msgstr "Tyhjennetäänkö historia?"
 
-#: src/konqmainwindow.cpp:691
+#: src/konqmainwindow.cpp:692
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
 msgstr "Ladataan…"
 
-#: src/konqmainwindow.cpp:723
+#: src/konqmainwindow.cpp:724
 #, kde-format
 msgid "Access denied"
 msgstr "Pääsy kielletty"
 
-#: src/konqmainwindow.cpp:1494
+#: src/konqmainwindow.cpp:1495
 #, kde-format
 msgid "Open File"
 msgstr "Avaa tiedosto"
 
-#: src/konqmainwindow.cpp:1558
+#: src/konqmainwindow.cpp:1559
 #, kde-format
 msgid "Canceled."
 msgstr "Peruttu."
 
-#: src/konqmainwindow.cpp:1594
+#: src/konqmainwindow.cpp:1595
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -716,54 +833,54 @@ msgstr ""
 "Tämä sivu sisältää muutoksia, joita ei ole lähetetty.\n"
 "Sivun lataaminen uudelleen hylkää nämä muutokset."
 
-#: src/konqmainwindow.cpp:1595 src/konqmainwindow.cpp:2233
-#: src/konqmainwindow.cpp:2322 src/konqmainwindow.cpp:2354
-#: src/konqmainwindow.cpp:2397 src/konqmainwindow.cpp:2419
-#: src/konqmainwindow.cpp:4771
+#: src/konqmainwindow.cpp:1596 src/konqmainwindow.cpp:2234
+#: src/konqmainwindow.cpp:2323 src/konqmainwindow.cpp:2355
+#: src/konqmainwindow.cpp:2398 src/konqmainwindow.cpp:2420
+#: src/konqmainwindow.cpp:4772
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
 msgstr "Hylätäänkö muutokset?"
 
-#: src/konqmainwindow.cpp:1595 src/konqmainwindow.cpp:2233
-#: src/konqmainwindow.cpp:2322 src/konqmainwindow.cpp:2354
-#: src/konqmainwindow.cpp:2397 src/konqmainwindow.cpp:2420
-#: src/konqmainwindow.cpp:4771
+#: src/konqmainwindow.cpp:1596 src/konqmainwindow.cpp:2234
+#: src/konqmainwindow.cpp:2323 src/konqmainwindow.cpp:2355
+#: src/konqmainwindow.cpp:2398 src/konqmainwindow.cpp:2421
+#: src/konqmainwindow.cpp:4772
 #, kde-format
 msgid "&Discard Changes"
 msgstr "&Hylkää muutokset"
 
-#: src/konqmainwindow.cpp:1909 src/konqmainwindow.cpp:1915
+#: src/konqmainwindow.cpp:1910 src/konqmainwindow.cpp:1916
 #, kde-format
 msgid "Home Folder"
 msgstr "Kotikansio"
 
-#: src/konqmainwindow.cpp:1910 src/konqmainwindow.cpp:3332
+#: src/konqmainwindow.cpp:1911 src/konqmainwindow.cpp:3333
 #, kde-format
 msgid "Home"
 msgstr "Koti"
 
-#: src/konqmainwindow.cpp:1916
+#: src/konqmainwindow.cpp:1917
 #, kde-format
 msgid "Navigate to your 'Home Folder'"
 msgstr "Siirry kotikansioon"
 
-#: src/konqmainwindow.cpp:1917
+#: src/konqmainwindow.cpp:1918
 #, kde-format
 msgid "Navigate to your local 'Home Folder'"
 msgstr "Siirry paikalliseen kotikansioosi"
 
-#: src/konqmainwindow.cpp:1920
+#: src/konqmainwindow.cpp:1921
 #, kde-format
 msgid "Home Page"
 msgstr "Kotisivu"
 
-#: src/konqmainwindow.cpp:1922
+#: src/konqmainwindow.cpp:1923
 #, kde-format
 msgid "Navigate to your 'Home Page'"
 msgstr "Siirry kotisivulle"
 
-#: src/konqmainwindow.cpp:1923
+#: src/konqmainwindow.cpp:1924
 #, kde-format
 msgid ""
 "<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
@@ -773,7 +890,7 @@ msgstr ""
 "<html>Siirry kotisivulle<br /><br />Voit asettaa, mihin tämä painike vie "
 "kohdassa <b>Asetukset → Konquerorin asetukset → Yleisasetukset</b>.</html>"
 
-#: src/konqmainwindow.cpp:2232
+#: src/konqmainwindow.cpp:2233
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -782,7 +899,7 @@ msgstr ""
 "Tämä välilehti sisältää muutoksia, joita ei ole lähetetty.\n"
 "Välilehden irrottaminen hylkää nämä muutokset."
 
-#: src/konqmainwindow.cpp:2321
+#: src/konqmainwindow.cpp:2322
 #, kde-format
 msgid ""
 "This view contains changes that have not been submitted.\n"
@@ -791,7 +908,7 @@ msgstr ""
 "Tämä näkymä sisältää muutoksia, joita ei ole lähetetty.\n"
 "Näkymän sulkeminen hylkää nämä muutokset."
 
-#: src/konqmainwindow.cpp:2353
+#: src/konqmainwindow.cpp:2354
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -800,23 +917,23 @@ msgstr ""
 "Tämä välilehti sisältää muutoksia, joita ei ole lähetetty.\n"
 "Välilehden sulkeminen hylkää nämä muutokset."
 
-#: src/konqmainwindow.cpp:2379
+#: src/konqmainwindow.cpp:2380
 #, kde-format
 msgid "Do you really want to close all other tabs?"
 msgstr "Haluatko varmasti sulkea kaikki muut välilehdet?"
 
-#: src/konqmainwindow.cpp:2380 src/konqmainwindow.cpp:3412 src/konqtabs.cpp:335
+#: src/konqmainwindow.cpp:2381 src/konqmainwindow.cpp:3413 src/konqtabs.cpp:335
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr "Sulje &muut välilehdet"
 
-#: src/konqmainwindow.cpp:2380
+#: src/konqmainwindow.cpp:2381
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
 msgstr "Sulje muut välilehdet -toiminnon varmistus"
 
-#: src/konqmainwindow.cpp:2396
+#: src/konqmainwindow.cpp:2397
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -825,7 +942,7 @@ msgstr ""
 "Tämä välilehti sisältää muutoksia, joita ei ole lähetetty.\n"
 "Muiden välilehtien sulkeminen hylkää nämä muutokset."
 
-#: src/konqmainwindow.cpp:2418
+#: src/konqmainwindow.cpp:2419
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -834,245 +951,245 @@ msgstr ""
 "Tämä välilehti sisältää muutoksia, joita ei ole lähetetty.\n"
 "Kaikkien välilehtien päivittäminen hylkää nämä muutokset."
 
-#: src/konqmainwindow.cpp:2475
+#: src/konqmainwindow.cpp:2476
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Target"
 msgstr "Kirjoita kohde"
 
-#: src/konqmainwindow.cpp:2482
+#: src/konqmainwindow.cpp:2483
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
 msgstr "<qt>Osoite <b>%1</b> ei ole oikeanmuotoinen</qt>"
 
-#: src/konqmainwindow.cpp:2492
+#: src/konqmainwindow.cpp:2493
 #, kde-format
 msgid "Copy selected files from %1 to:"
 msgstr "Kopioi valitut tiedostot kohteesta %1 kohteeseen:"
 
-#: src/konqmainwindow.cpp:2505
+#: src/konqmainwindow.cpp:2506
 #, kde-format
 msgid "Move selected files from %1 to:"
 msgstr "Siirrä valitut tiedostot kohteesta %1 kohteeseen:"
 
-#: src/konqmainwindow.cpp:2673
+#: src/konqmainwindow.cpp:2674
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
 msgstr "Tyhjennä suljettujen välilehtien historia"
 
-#: src/konqmainwindow.cpp:2695
+#: src/konqmainwindow.cpp:2696
 #, kde-format
 msgid "Save As..."
 msgstr "Tallenna nimellä…"
 
-#: src/konqmainwindow.cpp:2697
+#: src/konqmainwindow.cpp:2698
 #, kde-format
 msgid "Manage..."
 msgstr "Hallitse…"
 
-#: src/konqmainwindow.cpp:3241
+#: src/konqmainwindow.cpp:3242
 #, kde-format
 msgid "New &Window"
 msgstr "Uusi &ikkuna"
 
-#: src/konqmainwindow.cpp:3246
+#: src/konqmainwindow.cpp:3247
 #, kde-format
 msgid "&Duplicate Window"
 msgstr "&Monista ikkuna"
 
-#: src/konqmainwindow.cpp:3251
+#: src/konqmainwindow.cpp:3252
 #, kde-format
 msgid "Send &Link Address..."
 msgstr "Lähetä &linkin osoite…"
 
-#: src/konqmainwindow.cpp:3255
+#: src/konqmainwindow.cpp:3256
 #, kde-format
 msgid "S&end File..."
 msgstr "&Lähetä tiedosto…"
 
-#: src/konqmainwindow.cpp:3259
+#: src/konqmainwindow.cpp:3260
 #, kde-format
 msgid "&Open Location"
 msgstr "&Avaa kohde"
 
-#: src/konqmainwindow.cpp:3265
+#: src/konqmainwindow.cpp:3266
 #, kde-format
 msgid "&Open File..."
 msgstr "Avaa &tiedosto"
 
-#: src/konqmainwindow.cpp:3270
+#: src/konqmainwindow.cpp:3271
 #, kde-format
 msgid "&Find File..."
 msgstr "&Etsi tiedosto…"
 
-#: src/konqmainwindow.cpp:3279
+#: src/konqmainwindow.cpp:3280
 #, kde-format
 msgid "Lock to Current Location"
 msgstr "Lukitse nykyiseen sijaintiin"
 
-#: src/konqmainwindow.cpp:3282
+#: src/konqmainwindow.cpp:3283
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr "&Linkkinäkymä"
 
-#: src/konqmainwindow.cpp:3287
+#: src/konqmainwindow.cpp:3288
 #, kde-format
 msgid "&Up"
 msgstr "&Ylös"
 
-#: src/konqmainwindow.cpp:3297
+#: src/konqmainwindow.cpp:3298
 #, kde-format
 msgid "Closed Items"
 msgstr "Suljetut välilehdet"
 
-#: src/konqmainwindow.cpp:3310
+#: src/konqmainwindow.cpp:3311
 #, kde-format
 msgid "Sessions"
 msgstr "Istunnot"
 
-#: src/konqmainwindow.cpp:3337
+#: src/konqmainwindow.cpp:3338
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr "Useimmin käydyt"
 
-#: src/konqmainwindow.cpp:3341
+#: src/konqmainwindow.cpp:3342
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr "Viimeksi vieraillut"
 
-#: src/konqmainwindow.cpp:3350
+#: src/konqmainwindow.cpp:3351
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr "Näytä historia"
 
-#: src/konqmainwindow.cpp:3362
+#: src/konqmainwindow.cpp:3363
 #, kde-format
 msgid "Configure Extensions..."
 msgstr "Laajennusten asetukset…"
 
-#: src/konqmainwindow.cpp:3366
+#: src/konqmainwindow.cpp:3367
 #, kde-format
 msgid "Configure Spell Checking..."
 msgstr "Oikoluvun asetukset…"
 
-#: src/konqmainwindow.cpp:3372
+#: src/konqmainwindow.cpp:3373
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr "Jaa näkymä &pystysuunnassa"
 
-#: src/konqmainwindow.cpp:3377
+#: src/konqmainwindow.cpp:3378
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr "Jaa näkymä &vaakasuunnassa"
 
-#: src/konqmainwindow.cpp:3382 src/konqtabs.cpp:456
+#: src/konqmainwindow.cpp:3383 src/konqtabs.cpp:456
 #, kde-format
 msgid "&New Tab"
 msgstr "&Uusi välilehti"
 
-#: src/konqmainwindow.cpp:3391
+#: src/konqmainwindow.cpp:3392
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr "&Monista nykyinen välilehti"
 
-#: src/konqmainwindow.cpp:3396
+#: src/konqmainwindow.cpp:3397
 #, kde-format
 msgid "Detach Current Tab"
 msgstr "Irrota nykyinen välilehti"
 
-#: src/konqmainwindow.cpp:3401
+#: src/konqmainwindow.cpp:3402
 #, kde-format
 msgid "&Close Active View"
 msgstr "&Sulje aktiivinen näkymä"
 
-#: src/konqmainwindow.cpp:3406
+#: src/konqmainwindow.cpp:3407
 #, kde-format
 msgid "Close Current Tab"
 msgstr "Sulje nykyinen välilehti"
 
-#: src/konqmainwindow.cpp:3416
+#: src/konqmainwindow.cpp:3417
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "Näytä seuraava välilehti"
 
-#: src/konqmainwindow.cpp:3420
+#: src/konqmainwindow.cpp:3421
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "Näytä edellinen välilehti"
 
-#: src/konqmainwindow.cpp:3427
+#: src/konqmainwindow.cpp:3428
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "Näytä välilehti %1"
 
-#: src/konqmainwindow.cpp:3432
+#: src/konqmainwindow.cpp:3433
 #, kde-format
 msgid "Move Tab Left"
 msgstr "Siirrä välilehteä vasemmalle"
 
-#: src/konqmainwindow.cpp:3437
+#: src/konqmainwindow.cpp:3438
 #, kde-format
 msgid "Move Tab Right"
 msgstr "Siirrä välilehteä oikealle"
 
-#: src/konqmainwindow.cpp:3445
+#: src/konqmainwindow.cpp:3446
 #, kde-format
 msgid "Dump Debug Info"
 msgstr "Tulosta virheenpaikannustiedot"
 
-#: src/konqmainwindow.cpp:3463
+#: src/konqmainwindow.cpp:3464
 #, kde-format
 msgid "&Reload"
 msgstr "&Lataa uudelleen"
 
-#: src/konqmainwindow.cpp:3468 src/konqtabs.cpp:313
+#: src/konqmainwindow.cpp:3469 src/konqtabs.cpp:313
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr "&Päivitä kaikki välilehdet"
 
-#: src/konqmainwindow.cpp:3476
+#: src/konqmainwindow.cpp:3477
 #, kde-format
 msgid "&Force Reload"
 msgstr "&Pakota uudelleenlataus"
 
-#: src/konqmainwindow.cpp:3501
+#: src/konqmainwindow.cpp:3502
 #, kde-format
 msgid "&Stop"
 msgstr "P&ysäytä"
 
 # :D
-#: src/konqmainwindow.cpp:3510
+#: src/konqmainwindow.cpp:3511
 #, kde-format
 msgid "Throbber"
 msgstr "Tykytin"
 
-#: src/konqmainwindow.cpp:3514 src/konqmainwindow.cpp:3517
+#: src/konqmainwindow.cpp:3515 src/konqmainwindow.cpp:3518
 #, kde-format
 msgid "L&ocation: "
 msgstr "Si&jainti: "
 
-#: src/konqmainwindow.cpp:3524
+#: src/konqmainwindow.cpp:3525
 #, kde-format
 msgid "Location Bar"
 msgstr "Sijaintirivi"
 
-#: src/konqmainwindow.cpp:3530
+#: src/konqmainwindow.cpp:3531
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
 msgstr "<html>Sijaintirivi<br /><br />Syötä osoite tai haettava termi.</html>"
 
-#: src/konqmainwindow.cpp:3534
+#: src/konqmainwindow.cpp:3535
 #, kde-format
 msgid "Clear Location Bar"
 msgstr "Tyhjennä sijaintirivi"
 
-#: src/konqmainwindow.cpp:3537
+#: src/konqmainwindow.cpp:3538
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
@@ -1081,29 +1198,29 @@ msgstr ""
 "<html>Tyhjennä sijaintirivi<br /><br />Tyhjentää sijaintirivin sisällön. </"
 "html>"
 
-#: src/konqmainwindow.cpp:3542
+#: src/konqmainwindow.cpp:3543
 #, kde-format
 msgid "&Bookmarks"
 msgstr "&Kirjanmerkit"
 
-#: src/konqmainwindow.cpp:3563
+#: src/konqmainwindow.cpp:3564
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "&Johdatus Konqueroriin"
 
-#: src/konqmainwindow.cpp:3568
+#: src/konqmainwindow.cpp:3569
 #, kde-format
 msgid "Go"
 msgstr "Siirry"
 
-#: src/konqmainwindow.cpp:3570
+#: src/konqmainwindow.cpp:3571
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
 "bar.</html>"
 msgstr "<html>Siirry<br /><br />Siirtyy sijaintirivin kohteeseen.</html>"
 
-#: src/konqmainwindow.cpp:3578
+#: src/konqmainwindow.cpp:3579
 #, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
@@ -1113,27 +1230,27 @@ msgstr ""
 "<html>Siirry yläkansioon <br /><br />Jos olet esimerkiksi osoitteessa file:/"
 "home/%1, tätä napsauttamalla pääset osoitteeseen file:/home. </html>"
 
-#: src/konqmainwindow.cpp:3581
+#: src/konqmainwindow.cpp:3582
 #, kde-format
 msgid "Enter the parent folder"
 msgstr "Siirry yläkansioon"
 
-#: src/konqmainwindow.cpp:3583 src/konqmainwindow.cpp:3584
+#: src/konqmainwindow.cpp:3584 src/konqmainwindow.cpp:3585
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "Siirry askel taaksepäin selaushistoriassa"
 
-#: src/konqmainwindow.cpp:3586 src/konqmainwindow.cpp:3587
+#: src/konqmainwindow.cpp:3587 src/konqmainwindow.cpp:3588
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "Siirry askel eteenpäin selaushistoriassa"
 
-#: src/konqmainwindow.cpp:3589 src/konqmainwindow.cpp:3590
+#: src/konqmainwindow.cpp:3590 src/konqmainwindow.cpp:3591
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
 msgstr "Siirry askel taaksepäin suljettujen välilehtien historiassa"
 
-#: src/konqmainwindow.cpp:3592
+#: src/konqmainwindow.cpp:3593
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1144,12 +1261,12 @@ msgstr ""
 "esimerkiksi verkkosivujen päivittämiseen, joita on muutettu edellisen "
 "latauskerran jälkeen.</html>"
 
-#: src/konqmainwindow.cpp:3595
+#: src/konqmainwindow.cpp:3596
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "Päivitä nykyinen asiakirja"
 
-#: src/konqmainwindow.cpp:3597
+#: src/konqmainwindow.cpp:3598
 #, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1160,12 +1277,12 @@ msgstr ""
 "toimintoa voidaan käyttää esimerkiksi verkkosivujen päivittämiseen, joita on "
 "muutettu edellisen latauskerran jälkeen.</html>"
 
-#: src/konqmainwindow.cpp:3600
+#: src/konqmainwindow.cpp:3601
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr "Päivitä kaikki välilehdet"
 
-#: src/konqmainwindow.cpp:3602
+#: src/konqmainwindow.cpp:3603
 #, kde-format
 msgid ""
 "<html>Stop loading the document<br /><br />All network transfers will be "
@@ -1176,7 +1293,7 @@ msgstr ""
 "lopetetaan ja Konqueror näyttää siihen mennessä vastaanotetun sisällön.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3606
+#: src/konqmainwindow.cpp:3607
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1189,18 +1306,18 @@ msgstr ""
 "latauskerran jälkeen. Kaikki sivulla sijaitsevat kuvat ladataan uudestaan, "
 "vaikka ne löytyisivätkin välimuistista.</html>"
 
-#: src/konqmainwindow.cpp:3610
+#: src/konqmainwindow.cpp:3611
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr "Pakota nykyisen välilehden uudelleenlataus"
 
-#: src/konqmainwindow.cpp:3612
+#: src/konqmainwindow.cpp:3613
 #, kde-format
 msgid "Stop loading the document"
 msgstr "Pysäytä asiakirjan lataaminen"
 
-#: src/konqmainwindow.cpp:3614
+#: src/konqmainwindow.cpp:3615
 #, kde-format
 msgid ""
 "<html>Cut the currently selected text or item(s) and move it to the system "
@@ -1211,12 +1328,12 @@ msgstr ""
 "><br />Tämän jälkeen voit käyttää <b>Liitä</b>-komentoa Konquerorissa ja "
 "muissa KDE-sovelluksissa.</html>"
 
-#: src/konqmainwindow.cpp:3618
+#: src/konqmainwindow.cpp:3619
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr "Siirtää valitut tekstit tai tiedostot leikepöydälle"
 
-#: src/konqmainwindow.cpp:3620
+#: src/konqmainwindow.cpp:3621
 #, kde-format
 msgid ""
 "<html>Copy the currently selected text or item(s) to the system "
@@ -1227,12 +1344,12 @@ msgstr ""
 "><br />Tämän jälkeen voit käyttää <b>Liitä</b>-komentoa Konquerorissa ja "
 "muissa KDE-sovelluksissa.</html>"
 
-#: src/konqmainwindow.cpp:3624
+#: src/konqmainwindow.cpp:3625
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr "Kopioi valitut tekstit tai tiedostot leikepöydälle"
 
-#: src/konqmainwindow.cpp:3626
+#: src/konqmainwindow.cpp:3627
 #, kde-format
 msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
@@ -1242,12 +1359,12 @@ msgstr ""
 ">Liittäminen toimii myös muista KDE-sovelluksista kopioidulle tai leikatulle "
 "tekstille.</html>"
 
-#: src/konqmainwindow.cpp:3629
+#: src/konqmainwindow.cpp:3630
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "Liittää leikepöydän sisällön"
 
-#: src/konqmainwindow.cpp:3631
+#: src/konqmainwindow.cpp:3632
 #, kde-format
 msgid ""
 "<html>Print the currently displayed document<br /><br />You will be "
@@ -1262,12 +1379,12 @@ msgstr ""
 "tulostusvalintoihin kuten miten luoda nykyisestä asiakirjasta PDF-tiedosto.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3637
+#: src/konqmainwindow.cpp:3638
 #, kde-format
 msgid "Print the current document"
 msgstr "Tulosta asiakirja"
 
-#: src/konqmainwindow.cpp:3639
+#: src/konqmainwindow.cpp:3640
 #, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
@@ -1276,7 +1393,7 @@ msgstr ""
 "Lukitussa näkymässä kansioita ei voi vaihtaa. Käytä tätä linkkinäkymän "
 "kanssa tutkiaksesi saman kansion useita tiedostoja"
 
-#: src/konqmainwindow.cpp:3640
+#: src/konqmainwindow.cpp:3641
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
@@ -1285,12 +1402,12 @@ msgstr ""
 "Asettaa näkymän \"linkitetyksi\". Linkitetty näkymä seuraa kansiovaihtoja "
 "muissa linkitetyissä näkymissä."
 
-#: src/konqmainwindow.cpp:3644
+#: src/konqmainwindow.cpp:3645
 #, kde-format
 msgid "&Inspect Current Page"
 msgstr "T&utki nykyistä sivua"
 
-#: src/konqmainwindow.cpp:3645
+#: src/konqmainwindow.cpp:3646
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
@@ -1299,22 +1416,22 @@ msgstr ""
 "<html>Näyttää nykyiselle sivulle kehitystyökalut<br/><br/>Nykyinen näkymä "
 "jaetaan kahtia, ja kehitystyökalut näytetään toisessa puolikkaassa"
 
-#: src/konqmainwindow.cpp:3646
+#: src/konqmainwindow.cpp:3647
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr "Näyttää nykyiselle sivulle kehitystyökalut"
 
-#: src/konqmainwindow.cpp:3808
+#: src/konqmainwindow.cpp:3809
 #, kde-format
 msgid "Copy &Files..."
 msgstr "Kopioi ti&edostoja…"
 
-#: src/konqmainwindow.cpp:3812
+#: src/konqmainwindow.cpp:3813
 #, kde-format
 msgid "M&ove Files..."
 msgstr "&Siirrä tiedostoja…"
 
-#: src/konqmainwindow.cpp:4138
+#: src/konqmainwindow.cpp:4139
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
@@ -1323,78 +1440,78 @@ msgstr ""
 "Välilehtiin pyydettiin avaamaan yli 20 kirjanmerkkiä, mikä voi kestää jonkin "
 "aikaa. Jatketaanko?"
 
-#: src/konqmainwindow.cpp:4140
+#: src/konqmainwindow.cpp:4141
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "Avaa kirjanmerkkikansio välilehtiin"
 
-#: src/konqmainwindow.cpp:4141
+#: src/konqmainwindow.cpp:4142
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr "Avaa"
 
-#: src/konqmainwindow.cpp:4303
+#: src/konqmainwindow.cpp:4304
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "Avaa tä&hän ikkunaan"
 
-#: src/konqmainwindow.cpp:4304
+#: src/konqmainwindow.cpp:4305
 #, kde-format
 msgid "Open the document in current window"
 msgstr "Avaa asiakirjan tähän ikkunaan"
 
-#: src/konqmainwindow.cpp:4311
+#: src/konqmainwindow.cpp:4312
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "Avaa asiakirjan uuteen ikkunaan"
 
-#: src/konqmainwindow.cpp:4317
+#: src/konqmainwindow.cpp:4318
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Avaa &uuteen välilehteen"
 
-#: src/konqmainwindow.cpp:4319
+#: src/konqmainwindow.cpp:4320
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "Avaa asiakirjan uuteen välilehteen"
 
-#: src/konqmainwindow.cpp:4549
+#: src/konqmainwindow.cpp:4550
 #, kde-format
 msgid "&Open With"
 msgstr "Avaa &ohjelmaan"
 
-#: src/konqmainwindow.cpp:4562
+#: src/konqmainwindow.cpp:4563
 #, kde-format
 msgid "Open with %1"
 msgstr "Avaa ohjelmaan %1"
 
-#: src/konqmainwindow.cpp:4612
+#: src/konqmainwindow.cpp:4613
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "&Näkymä"
 
-#: src/konqmainwindow.cpp:4735
+#: src/konqmainwindow.cpp:4736
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr ""
 "Ikkunassa on avoinna useita välilehtiä. Haluatko varmasti sulkea ikkunan?"
 
-#: src/konqmainwindow.cpp:4737
+#: src/konqmainwindow.cpp:4738
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Vahvistus"
 
-#: src/konqmainwindow.cpp:4739
+#: src/konqmainwindow.cpp:4740
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "Sulje n&ykyinen välilehti"
 
-#: src/konqmainwindow.cpp:4767
+#: src/konqmainwindow.cpp:4768
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1403,7 +1520,7 @@ msgstr ""
 "Tämä välilehti sisältää muutoksia, joita ei ole lähetetty.\n"
 "Ikkunan sulkeminen hylkää nämä muutokset."
 
-#: src/konqmainwindow.cpp:4768
+#: src/konqmainwindow.cpp:4769
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1412,7 +1529,7 @@ msgstr ""
 "Tämä välilehti sisältää muutoksia, joita ei ole lähetetty.\n"
 "Ikkunan sulkeminen hylkää nämä muutokset."
 
-#: src/konqmainwindow.cpp:4928
+#: src/konqmainwindow.cpp:4929
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1420,28 +1537,28 @@ msgstr ""
 "Sivupalkki ei ole toiminnallinen tai saatavilla. Uutta tietuetta ei voida "
 "lisätä."
 
-#: src/konqmainwindow.cpp:4928 src/konqmainwindow.cpp:4935
+#: src/konqmainwindow.cpp:4929 src/konqmainwindow.cpp:4936
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Verkkosivupalkki"
 
-#: src/konqmainwindow.cpp:4933
+#: src/konqmainwindow.cpp:4934
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Lisätäänkö uusi verkkolaajennus ”%1” sivupalkkiin?"
 
-#: src/konqmainwindow.cpp:4935
+#: src/konqmainwindow.cpp:4936
 #, kde-format
 msgid "Add"
 msgstr "Lisää"
 
-#: src/konqmainwindow.cpp:4935
+#: src/konqmainwindow.cpp:4936
 #, kde-format
 msgid "Do Not Add"
 msgstr "Älä lisää"
 
-#: src/konqmainwindow.cpp:5283
+#: src/konqmainwindow.cpp:5284
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1450,7 +1567,7 @@ msgstr ""
 "Asetuksissa on virhe. %1 on määritelty tämän tiedostotyypin avaamiseen, "
 "mutta avaaminen ei onnistu."
 
-#: src/konqmainwindow.cpp:5368
+#: src/konqmainwindow.cpp:5369
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1471,22 +1588,22 @@ msgstr ""
 "määritä välityspalvelimen verkko-osoite itse asetusikkunassa. Haluatko nyt "
 "muuttaa välityspalvelinasetusta?"
 
-#: src/konqmainwindow.cpp:5373
+#: src/konqmainwindow.cpp:5374
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "Ei-tuettu välityspalvelinasetus"
 
-#: src/konqmainwindow.cpp:5373
+#: src/konqmainwindow.cpp:5374
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "Älä käytä välityspalvelinta"
 
-#: src/konqmainwindow.cpp:5374 src/konqmainwindow.cpp:5402
+#: src/konqmainwindow.cpp:5375 src/konqmainwindow.cpp:5403
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "Näytä välityspalvelimen asetusikkuna"
 
-#: src/konqmainwindow.cpp:5398
+#: src/konqmainwindow.cpp:5399
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1499,22 +1616,22 @@ msgstr ""
 "asetuksesi ovat:<p><b>HTTP-välityspalvelin:</b> <tt>%1</tt></p><p><b>HTTPS-"
 "välityspalvelin:</b> <tt>%2</tt></p>Miten toimitaan?"
 
-#: src/konqmainwindow.cpp:5401
+#: src/konqmainwindow.cpp:5402
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "Ristiriitainen välityspalvelinasetus"
 
-#: src/konqmainwindow.cpp:5402
+#: src/konqmainwindow.cpp:5403
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "Käytä HTTP-välityspalvelinta (vain tällä kertaa)"
 
-#: src/konqmainwindow.cpp:5402
+#: src/konqmainwindow.cpp:5403
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "Käytä HTTPS-välityspalvelinta (vain tällä kertaa)"
 
-#: src/konqmainwindow.cpp:5418
+#: src/konqmainwindow.cpp:5419
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1835,19 +1952,19 @@ msgstr "Varoitus"
 msgid "Resend"
 msgstr "Lähetä uudelleen"
 
-#: src/urlloader.cpp:469
+#: src/urlloader.cpp:442
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "Suorita"
 
-#: src/urlloader.cpp:471
+#: src/urlloader.cpp:444
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
 msgstr "Näytä"
 
-#: src/urlloader.cpp:478
+#: src/urlloader.cpp:451
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -1859,14 +1976,14 @@ msgstr ""
 "<filename>%1</filename> on suoritettavissa. Haluatko suorittaa vai näyttää "
 "sen?"
 
-#: src/urlloader.cpp:484
+#: src/urlloader.cpp:457
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename> on suoritettavissa. Haluatko suorittaa sen?"
 
-#: src/urlloader.cpp:816
+#: src/urlloader.cpp:793
 #, kde-format
 msgid "Save As"
 msgstr "Tallenna nimellä"
@@ -2571,9 +2688,6 @@ msgstr "Tallenna nimellä"
 
 #~ msgid "&Update"
 #~ msgstr "&Päivitä"
-
-#~ msgid "Name:"
-#~ msgstr "Nimi:"
 
 #~ msgid "Location:"
 #~ msgstr "Sijainti:"

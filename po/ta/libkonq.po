@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:38+0000\n"
+"POT-Creation-Date: 2024-09-06 00:39+0000\n"
 "PO-Revision-Date: 2024-05-12 15:25+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -23,66 +23,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.02.2\n"
-
-#: src/browseropenorsavequestion.cpp:88
-#, kde-format
-msgctxt "@label Type of file"
-msgid "Type: %1"
-msgstr "வகை: %1"
-
-#: src/browseropenorsavequestion.cpp:96
-#, kde-format
-msgctxt "@label:checkbox"
-msgid "Remember action for files of this type"
-msgstr "இவ்வகையான கோப்புகளுக்கு இந்த செயலை நினைவிலு கொள்"
-
-#: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with %1"
-msgstr "%1 கொண்டு &திற"
-
-#: src/browseropenorsavequestion.cpp:212
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Open &with %1"
-msgstr "%1 கொ&ண்டு திற"
-
-#: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
-#, kde-format
-msgctxt "@info"
-msgid "Open '%1'?"
-msgstr "'%1' தனை திறக்கலாமா?"
-
-#: src/browseropenorsavequestion.cpp:227
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with..."
-msgstr "&செயலியில் திற…"
-
-#: src/browseropenorsavequestion.cpp:245
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with"
-msgstr "&செயலியில் திற"
-
-#: src/browseropenorsavequestion.cpp:314
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open"
-msgstr "&திற"
-
-#: src/browseropenorsavequestion.cpp:338
-#, kde-format
-msgctxt "@label File name"
-msgid "Name: %1"
-msgstr "பெயர்: %1"
-
-#: src/browseropenorsavequestion.cpp:340
-#, kde-format
-msgctxt "@info:whatsthis"
-msgid "This is the file name suggested by the server"
-msgstr "வழங்கியால் பரிந்திரைக்கப்படும் கோப்பின் பெயரிது"
 
 #: src/htmlsettingsinterface.cpp:19
 msgid "Accept"
@@ -161,6 +101,46 @@ msgstr "செயலியில் முன்னோட்டங்காண�
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "முனையத்தை இங்கு திற"
+
+#~ msgctxt "@label Type of file"
+#~ msgid "Type: %1"
+#~ msgstr "வகை: %1"
+
+#~ msgctxt "@label:checkbox"
+#~ msgid "Remember action for files of this type"
+#~ msgstr "இவ்வகையான கோப்புகளுக்கு இந்த செயலை நினைவிலு கொள்"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with %1"
+#~ msgstr "%1 கொண்டு &திற"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Open &with %1"
+#~ msgstr "%1 கொ&ண்டு திற"
+
+#~ msgctxt "@info"
+#~ msgid "Open '%1'?"
+#~ msgstr "'%1' தனை திறக்கலாமா?"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with..."
+#~ msgstr "&செயலியில் திற…"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with"
+#~ msgstr "&செயலியில் திற"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open"
+#~ msgstr "&திற"
+
+#~ msgctxt "@label File name"
+#~ msgid "Name: %1"
+#~ msgstr "பெயர்: %1"
+
+#~ msgctxt "@info:whatsthis"
+#~ msgid "This is the file name suggested by the server"
+#~ msgstr "வழங்கியால் பரிந்திரைக்கப்படும் கோப்பின் பெயரிது"
 
 #~ msgid "&Properties"
 #~ msgstr "&பண்புகள்"

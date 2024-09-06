@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:38+0000\n"
+"POT-Creation-Date: 2024-09-06 00:39+0000\n"
 "PO-Revision-Date: 2006-04-07 18:03+0200\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -16,72 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.1\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: src/browseropenorsavequestion.cpp:88
-#, kde-format
-msgctxt "@label Type of file"
-msgid "Type: %1"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:96
-#, kde-format
-msgctxt "@label:checkbox"
-msgid "Remember action for files of this type"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
-#, fuzzy, kde-format
-#| msgid "Open with %1"
-msgctxt "@label:button"
-msgid "&Open with %1"
-msgstr "%1 bilan ochish"
-
-#: src/browseropenorsavequestion.cpp:212
-#, fuzzy, kde-format
-#| msgid "Open with %1"
-msgctxt "@action:inmenu"
-msgid "Open &with %1"
-msgstr "%1 bilan ochish"
-
-#: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
-#, fuzzy, kde-format
-#| msgid "Open with %1"
-msgctxt "@info"
-msgid "Open '%1'?"
-msgstr "%1 bilan ochish"
-
-#: src/browseropenorsavequestion.cpp:227
-#, fuzzy, kde-format
-#| msgid "&Open With..."
-msgctxt "@label:button"
-msgid "&Open with..."
-msgstr "...bilan &ochish"
-
-#: src/browseropenorsavequestion.cpp:245
-#, fuzzy, kde-format
-#| msgid "&Open With"
-msgctxt "@label:button"
-msgid "&Open with"
-msgstr "...bilan &ochish"
-
-#: src/browseropenorsavequestion.cpp:314
-#, fuzzy, kde-format
-#| msgid "&Open"
-msgctxt "@label:button"
-msgid "&Open"
-msgstr "&Ochish"
-
-#: src/browseropenorsavequestion.cpp:338
-#, kde-format
-msgctxt "@label File name"
-msgid "Name: %1"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:340
-#, kde-format
-msgctxt "@info:whatsthis"
-msgid "This is the file name suggested by the server"
-msgstr ""
 
 #: src/htmlsettingsinterface.cpp:19
 msgid "Accept"
@@ -162,6 +96,42 @@ msgstr "Koʻrib chiqish"
 #, kde-format
 msgid "Open Terminal Here"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Open with %1"
+#~ msgctxt "@label:button"
+#~ msgid "&Open with %1"
+#~ msgstr "%1 bilan ochish"
+
+#, fuzzy
+#~| msgid "Open with %1"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Open &with %1"
+#~ msgstr "%1 bilan ochish"
+
+#, fuzzy
+#~| msgid "Open with %1"
+#~ msgctxt "@info"
+#~ msgid "Open '%1'?"
+#~ msgstr "%1 bilan ochish"
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@label:button"
+#~ msgid "&Open with..."
+#~ msgstr "...bilan &ochish"
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@label:button"
+#~ msgid "&Open with"
+#~ msgstr "...bilan &ochish"
+
+#, fuzzy
+#~| msgid "&Open"
+#~ msgctxt "@label:button"
+#~ msgid "&Open"
+#~ msgstr "&Ochish"
 
 #~ msgid "&Properties"
 #~ msgstr "&Xossalari"

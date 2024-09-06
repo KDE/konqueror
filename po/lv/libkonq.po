@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:38+0000\n"
+"POT-Creation-Date: 2024-09-06 00:39+0000\n"
 "PO-Revision-Date: 2024-04-07 16:04+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -22,66 +22,6 @@ msgstr ""
 "X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-
-#: src/browseropenorsavequestion.cpp:88
-#, kde-format
-msgctxt "@label Type of file"
-msgid "Type: %1"
-msgstr "Tips: %1"
-
-#: src/browseropenorsavequestion.cpp:96
-#, kde-format
-msgctxt "@label:checkbox"
-msgid "Remember action for files of this type"
-msgstr "Atcerēties darbību šāda tipa datnēm"
-
-#: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with %1"
-msgstr "&Atvērt ar „%1“"
-
-#: src/browseropenorsavequestion.cpp:212
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Open &with %1"
-msgstr "A&tvērt ar „%1“"
-
-#: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
-#, kde-format
-msgctxt "@info"
-msgid "Open '%1'?"
-msgstr "Vai atvērt „%1“?"
-
-#: src/browseropenorsavequestion.cpp:227
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with..."
-msgstr "&Atvērt ar..."
-
-#: src/browseropenorsavequestion.cpp:245
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with"
-msgstr "&Atvērt ar"
-
-#: src/browseropenorsavequestion.cpp:314
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open"
-msgstr "&Atvērt"
-
-#: src/browseropenorsavequestion.cpp:338
-#, kde-format
-msgctxt "@label File name"
-msgid "Name: %1"
-msgstr "Nosaukums: %1"
-
-#: src/browseropenorsavequestion.cpp:340
-#, kde-format
-msgctxt "@info:whatsthis"
-msgid "This is the file name suggested by the server"
-msgstr "Šis ir servera ieteiktais datnes nosaukums"
 
 #: src/htmlsettingsinterface.cpp:19
 msgid "Accept"
@@ -160,6 +100,46 @@ msgstr "Priekšskatīt ar"
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Atvērt šeit termināli"
+
+#~ msgctxt "@label Type of file"
+#~ msgid "Type: %1"
+#~ msgstr "Tips: %1"
+
+#~ msgctxt "@label:checkbox"
+#~ msgid "Remember action for files of this type"
+#~ msgstr "Atcerēties darbību šāda tipa datnēm"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with %1"
+#~ msgstr "&Atvērt ar „%1“"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Open &with %1"
+#~ msgstr "A&tvērt ar „%1“"
+
+#~ msgctxt "@info"
+#~ msgid "Open '%1'?"
+#~ msgstr "Vai atvērt „%1“?"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with..."
+#~ msgstr "&Atvērt ar..."
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with"
+#~ msgstr "&Atvērt ar"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open"
+#~ msgstr "&Atvērt"
+
+#~ msgctxt "@label File name"
+#~ msgid "Name: %1"
+#~ msgstr "Nosaukums: %1"
+
+#~ msgctxt "@info:whatsthis"
+#~ msgid "This is the file name suggested by the server"
+#~ msgstr "Šis ir servera ieteiktais datnes nosaukums"
 
 #~ msgid "&Properties"
 #~ msgstr "Ī&pašības"

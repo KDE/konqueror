@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:38+0000\n"
+"POT-Creation-Date: 2024-09-06 00:39+0000\n"
 "PO-Revision-Date: 2023-08-01 12:18+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -23,66 +23,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 23.11.70\n"
-
-#: src/browseropenorsavequestion.cpp:88
-#, kde-format
-msgctxt "@label Type of file"
-msgid "Type: %1"
-msgstr "Tür: %1"
-
-#: src/browseropenorsavequestion.cpp:96
-#, kde-format
-msgctxt "@label:checkbox"
-msgid "Remember action for files of this type"
-msgstr "Bu dosya türü için eylemi anımsa"
-
-#: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with %1"
-msgstr "%1 ile &Aç"
-
-#: src/browseropenorsavequestion.cpp:212
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Open &with %1"
-msgstr "%1 ile &Aç"
-
-#: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
-#, kde-format
-msgctxt "@info"
-msgid "Open '%1'?"
-msgstr "Aç: '%1'?"
-
-#: src/browseropenorsavequestion.cpp:227
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with..."
-msgstr "Birlikte &Aç..."
-
-#: src/browseropenorsavequestion.cpp:245
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with"
-msgstr "Birlikte &Aç"
-
-#: src/browseropenorsavequestion.cpp:314
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open"
-msgstr "&Aç"
-
-#: src/browseropenorsavequestion.cpp:338
-#, kde-format
-msgctxt "@label File name"
-msgid "Name: %1"
-msgstr "Ad: %1"
-
-#: src/browseropenorsavequestion.cpp:340
-#, kde-format
-msgctxt "@info:whatsthis"
-msgid "This is the file name suggested by the server"
-msgstr "Bu, sunucu tarafından önerilen dosya adıdır"
 
 #: src/htmlsettingsinterface.cpp:19
 msgid "Accept"
@@ -161,6 +101,46 @@ msgstr "Burada Önizle"
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Burada Uçbirim Aç"
+
+#~ msgctxt "@label Type of file"
+#~ msgid "Type: %1"
+#~ msgstr "Tür: %1"
+
+#~ msgctxt "@label:checkbox"
+#~ msgid "Remember action for files of this type"
+#~ msgstr "Bu dosya türü için eylemi anımsa"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with %1"
+#~ msgstr "%1 ile &Aç"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Open &with %1"
+#~ msgstr "%1 ile &Aç"
+
+#~ msgctxt "@info"
+#~ msgid "Open '%1'?"
+#~ msgstr "Aç: '%1'?"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with..."
+#~ msgstr "Birlikte &Aç..."
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with"
+#~ msgstr "Birlikte &Aç"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open"
+#~ msgstr "&Aç"
+
+#~ msgctxt "@label File name"
+#~ msgid "Name: %1"
+#~ msgstr "Ad: %1"
+
+#~ msgctxt "@info:whatsthis"
+#~ msgid "This is the file name suggested by the server"
+#~ msgstr "Bu, sunucu tarafından önerilen dosya adıdır"
 
 #~ msgid "&Properties"
 #~ msgstr "Ö&zellikler"

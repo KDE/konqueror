@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:38+0000\n"
+"POT-Creation-Date: 2024-09-06 00:39+0000\n"
 "PO-Revision-Date: 2023-08-01 14:31+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -28,66 +28,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 23.04.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-
-#: src/browseropenorsavequestion.cpp:88
-#, kde-format
-msgctxt "@label Type of file"
-msgid "Type: %1"
-msgstr "Type: %1"
-
-#: src/browseropenorsavequestion.cpp:96
-#, kde-format
-msgctxt "@label:checkbox"
-msgid "Remember action for files of this type"
-msgstr "Actie voor bestanden van dit type onthouden"
-
-#: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with %1"
-msgstr "Met %1 &openen"
-
-#: src/browseropenorsavequestion.cpp:212
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Open &with %1"
-msgstr "&Met %1 openen"
-
-#: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
-#, kde-format
-msgctxt "@info"
-msgid "Open '%1'?"
-msgstr "'%1' openen?"
-
-#: src/browseropenorsavequestion.cpp:227
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with..."
-msgstr "&Openen met..."
-
-#: src/browseropenorsavequestion.cpp:245
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with"
-msgstr "&Openen met"
-
-#: src/browseropenorsavequestion.cpp:314
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open"
-msgstr "&Openen"
-
-#: src/browseropenorsavequestion.cpp:338
-#, kde-format
-msgctxt "@label File name"
-msgid "Name: %1"
-msgstr "Naam: %1"
-
-#: src/browseropenorsavequestion.cpp:340
-#, kde-format
-msgctxt "@info:whatsthis"
-msgid "This is the file name suggested by the server"
-msgstr "Dit is de door de server gesuggereerde bestandsnaam"
 
 #: src/htmlsettingsinterface.cpp:19
 msgid "Accept"
@@ -166,6 +106,46 @@ msgstr "Voorbeeld in"
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Terminal hier openen"
+
+#~ msgctxt "@label Type of file"
+#~ msgid "Type: %1"
+#~ msgstr "Type: %1"
+
+#~ msgctxt "@label:checkbox"
+#~ msgid "Remember action for files of this type"
+#~ msgstr "Actie voor bestanden van dit type onthouden"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with %1"
+#~ msgstr "Met %1 &openen"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Open &with %1"
+#~ msgstr "&Met %1 openen"
+
+#~ msgctxt "@info"
+#~ msgid "Open '%1'?"
+#~ msgstr "'%1' openen?"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with..."
+#~ msgstr "&Openen met..."
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with"
+#~ msgstr "&Openen met"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open"
+#~ msgstr "&Openen"
+
+#~ msgctxt "@label File name"
+#~ msgid "Name: %1"
+#~ msgstr "Naam: %1"
+
+#~ msgctxt "@info:whatsthis"
+#~ msgid "This is the file name suggested by the server"
+#~ msgstr "Dit is de door de server gesuggereerde bestandsnaam"
 
 #~ msgid "&Properties"
 #~ msgstr "&Eigenschappen"

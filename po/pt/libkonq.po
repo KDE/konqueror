@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:38+0000\n"
+"POT-Creation-Date: 2024-09-06 00:39+0000\n"
 "PO-Revision-Date: 2011-05-10 10:17+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -14,68 +14,6 @@ msgstr ""
 "X-POFile-SpellExtra: \n"
 "X-POFile-IgnoreConsistency: &Restore\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-
-#: src/browseropenorsavequestion.cpp:88
-#, kde-format
-msgctxt "@label Type of file"
-msgid "Type: %1"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:96
-#, kde-format
-msgctxt "@label:checkbox"
-msgid "Remember action for files of this type"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with %1"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:212
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Open &with %1"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
-#, kde-format
-msgctxt "@info"
-msgid "Open '%1'?"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:227
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with..."
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:245
-#, fuzzy, kde-format
-#| msgid "&Open"
-msgctxt "@label:button"
-msgid "&Open with"
-msgstr "&Abrir"
-
-#: src/browseropenorsavequestion.cpp:314
-#, fuzzy, kde-format
-#| msgid "&Open"
-msgctxt "@label:button"
-msgid "&Open"
-msgstr "&Abrir"
-
-#: src/browseropenorsavequestion.cpp:338
-#, kde-format
-msgctxt "@label File name"
-msgid "Name: %1"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:340
-#, kde-format
-msgctxt "@info:whatsthis"
-msgid "This is the file name suggested by the server"
-msgstr ""
 
 #: src/htmlsettingsinterface.cpp:19
 msgid "Accept"
@@ -154,6 +92,18 @@ msgstr "Antevisão Em"
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Abrir o Terminal Aqui"
+
+#, fuzzy
+#~| msgid "&Open"
+#~ msgctxt "@label:button"
+#~ msgid "&Open with"
+#~ msgstr "&Abrir"
+
+#, fuzzy
+#~| msgid "&Open"
+#~ msgctxt "@label:button"
+#~ msgid "&Open"
+#~ msgstr "&Abrir"
 
 #~ msgid "&Properties"
 #~ msgstr "&Propriedades"

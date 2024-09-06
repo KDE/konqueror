@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po_libkonq-ku\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:38+0000\n"
+"POT-Creation-Date: 2024-09-06 00:39+0000\n"
 "PO-Revision-Date: 2008-12-13 16:26+0100\n"
 "Last-Translator: Erdal Ronahi <erdal.ronahi@nospam.gmail.com>\n"
 "Language-Team: Kurdish <kde-i18n-doc@lists.kde.org>\n"
@@ -21,72 +21,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Launchpad-Export-Date: 2007-11-26 10:16+0000\n"
 "X-Generator: Lokalize 0.2\n"
-
-#: src/browseropenorsavequestion.cpp:88
-#, kde-format
-msgctxt "@label Type of file"
-msgid "Type: %1"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:96
-#, kde-format
-msgctxt "@label:checkbox"
-msgid "Remember action for files of this type"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
-#, fuzzy, kde-format
-#| msgid "Open &with %1"
-msgctxt "@label:button"
-msgid "&Open with %1"
-msgstr "&Bi %1 Veke"
-
-#: src/browseropenorsavequestion.cpp:212
-#, fuzzy, kde-format
-#| msgid "Open &with %1"
-msgctxt "@action:inmenu"
-msgid "Open &with %1"
-msgstr "&Bi %1 Veke"
-
-#: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
-#, fuzzy, kde-format
-#| msgid "Open &with %1"
-msgctxt "@info"
-msgid "Open '%1'?"
-msgstr "&Bi %1 Veke"
-
-#: src/browseropenorsavequestion.cpp:227
-#, fuzzy, kde-format
-#| msgid "&Open With..."
-msgctxt "@label:button"
-msgid "&Open with..."
-msgstr "&Pê Veke..."
-
-#: src/browseropenorsavequestion.cpp:245
-#, fuzzy, kde-format
-#| msgid "&Open With"
-msgctxt "@label:button"
-msgid "&Open with"
-msgstr "&Pê Veke"
-
-#: src/browseropenorsavequestion.cpp:314
-#, fuzzy, kde-format
-#| msgid "&Open"
-msgctxt "@label:button"
-msgid "&Open"
-msgstr "&Veke"
-
-#: src/browseropenorsavequestion.cpp:338
-#, kde-format
-msgctxt "@label File name"
-msgid "Name: %1"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:340
-#, kde-format
-msgctxt "@info:whatsthis"
-msgid "This is the file name suggested by the server"
-msgstr ""
 
 #: src/htmlsettingsinterface.cpp:19
 msgid "Accept"
@@ -166,6 +100,42 @@ msgstr "Pêşdîtin li"
 #, kde-format
 msgid "Open Terminal Here"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Open &with %1"
+#~ msgctxt "@label:button"
+#~ msgid "&Open with %1"
+#~ msgstr "&Bi %1 Veke"
+
+#, fuzzy
+#~| msgid "Open &with %1"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Open &with %1"
+#~ msgstr "&Bi %1 Veke"
+
+#, fuzzy
+#~| msgid "Open &with %1"
+#~ msgctxt "@info"
+#~ msgid "Open '%1'?"
+#~ msgstr "&Bi %1 Veke"
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@label:button"
+#~ msgid "&Open with..."
+#~ msgstr "&Pê Veke..."
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@label:button"
+#~ msgid "&Open with"
+#~ msgstr "&Pê Veke"
+
+#, fuzzy
+#~| msgid "&Open"
+#~ msgctxt "@label:button"
+#~ msgid "&Open"
+#~ msgstr "&Veke"
 
 #~ msgid "&Properties"
 #~ msgstr "&Taybetmendî"

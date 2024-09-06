@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:38+0000\n"
+"POT-Creation-Date: 2024-09-06 00:39+0000\n"
 "PO-Revision-Date: 2023-08-26 18:24+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -26,66 +26,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2012-12-01 22:22:04+0000\n"
 "X-Generator: Lokalize 22.12.3\n"
-
-#: src/browseropenorsavequestion.cpp:88
-#, kde-format
-msgctxt "@label Type of file"
-msgid "Type: %1"
-msgstr "Tyyppi: %1"
-
-#: src/browseropenorsavequestion.cpp:96
-#, kde-format
-msgctxt "@label:checkbox"
-msgid "Remember action for files of this type"
-msgstr "Muista toiminto tämän tyypin tiedostoille"
-
-#: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with %1"
-msgstr "A&vaa ohjelmalla %1"
-
-#: src/browseropenorsavequestion.cpp:212
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Open &with %1"
-msgstr "A&vaa ohjelmalla %1"
-
-#: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
-#, kde-format
-msgctxt "@info"
-msgid "Open '%1'?"
-msgstr "Avataanko ”%1”?"
-
-#: src/browseropenorsavequestion.cpp:227
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with..."
-msgstr "Avaa &ohjelmalla…"
-
-#: src/browseropenorsavequestion.cpp:245
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with"
-msgstr "Avaa &ohjelmalla"
-
-#: src/browseropenorsavequestion.cpp:314
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open"
-msgstr "&Avaa"
-
-#: src/browseropenorsavequestion.cpp:338
-#, kde-format
-msgctxt "@label File name"
-msgid "Name: %1"
-msgstr "Nimi: %1"
-
-#: src/browseropenorsavequestion.cpp:340
-#, kde-format
-msgctxt "@info:whatsthis"
-msgid "This is the file name suggested by the server"
-msgstr "Tämä on palvelimen ehdottama nimi"
 
 #: src/htmlsettingsinterface.cpp:19
 msgid "Accept"
@@ -164,6 +104,46 @@ msgstr "Esikatselu"
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Avaa pääte tähän"
+
+#~ msgctxt "@label Type of file"
+#~ msgid "Type: %1"
+#~ msgstr "Tyyppi: %1"
+
+#~ msgctxt "@label:checkbox"
+#~ msgid "Remember action for files of this type"
+#~ msgstr "Muista toiminto tämän tyypin tiedostoille"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with %1"
+#~ msgstr "A&vaa ohjelmalla %1"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Open &with %1"
+#~ msgstr "A&vaa ohjelmalla %1"
+
+#~ msgctxt "@info"
+#~ msgid "Open '%1'?"
+#~ msgstr "Avataanko ”%1”?"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with..."
+#~ msgstr "Avaa &ohjelmalla…"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with"
+#~ msgstr "Avaa &ohjelmalla"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open"
+#~ msgstr "&Avaa"
+
+#~ msgctxt "@label File name"
+#~ msgid "Name: %1"
+#~ msgstr "Nimi: %1"
+
+#~ msgctxt "@info:whatsthis"
+#~ msgid "This is the file name suggested by the server"
+#~ msgstr "Tämä on palvelimen ehdottama nimi"
 
 #~ msgid "&Properties"
 #~ msgstr "&Ominaisuudet"

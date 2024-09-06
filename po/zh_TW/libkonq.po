@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:38+0000\n"
+"POT-Creation-Date: 2024-09-06 00:39+0000\n"
 "PO-Revision-Date: 2023-12-24 06:24+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -25,66 +25,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: src/browseropenorsavequestion.cpp:88
-#, kde-format
-msgctxt "@label Type of file"
-msgid "Type: %1"
-msgstr "型態：%1"
-
-#: src/browseropenorsavequestion.cpp:96
-#, kde-format
-msgctxt "@label:checkbox"
-msgid "Remember action for files of this type"
-msgstr "記住對此檔案型態要做的動作"
-
-#: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with %1"
-msgstr "用 %1 開啟(&O)"
-
-#: src/browseropenorsavequestion.cpp:212
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Open &with %1"
-msgstr "用 %1 開啟(&W)"
-
-#: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
-#, kde-format
-msgctxt "@info"
-msgid "Open '%1'?"
-msgstr "要開啟 '%1' 嗎？"
-
-#: src/browseropenorsavequestion.cpp:227
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with..."
-msgstr "開啟方式(&O)..."
-
-#: src/browseropenorsavequestion.cpp:245
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open with"
-msgstr "開啟方式(&O)"
-
-#: src/browseropenorsavequestion.cpp:314
-#, kde-format
-msgctxt "@label:button"
-msgid "&Open"
-msgstr "開啟(&O)"
-
-#: src/browseropenorsavequestion.cpp:338
-#, kde-format
-msgctxt "@label File name"
-msgid "Name: %1"
-msgstr "名稱：%1"
-
-#: src/browseropenorsavequestion.cpp:340
-#, kde-format
-msgctxt "@info:whatsthis"
-msgid "This is the file name suggested by the server"
-msgstr "這是伺服器建議的檔案名稱"
 
 #: src/htmlsettingsinterface.cpp:19
 msgid "Accept"
@@ -163,6 +103,46 @@ msgstr "預覽於"
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "在此開啟終端機"
+
+#~ msgctxt "@label Type of file"
+#~ msgid "Type: %1"
+#~ msgstr "型態：%1"
+
+#~ msgctxt "@label:checkbox"
+#~ msgid "Remember action for files of this type"
+#~ msgstr "記住對此檔案型態要做的動作"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with %1"
+#~ msgstr "用 %1 開啟(&O)"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Open &with %1"
+#~ msgstr "用 %1 開啟(&W)"
+
+#~ msgctxt "@info"
+#~ msgid "Open '%1'?"
+#~ msgstr "要開啟 '%1' 嗎？"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with..."
+#~ msgstr "開啟方式(&O)..."
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open with"
+#~ msgstr "開啟方式(&O)"
+
+#~ msgctxt "@label:button"
+#~ msgid "&Open"
+#~ msgstr "開啟(&O)"
+
+#~ msgctxt "@label File name"
+#~ msgid "Name: %1"
+#~ msgstr "名稱：%1"
+
+#~ msgctxt "@info:whatsthis"
+#~ msgid "This is the file name suggested by the server"
+#~ msgstr "這是伺服器建議的檔案名稱"
 
 #~ msgid "&Properties"
 #~ msgstr "屬性(&P)"

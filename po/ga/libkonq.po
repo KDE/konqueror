@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase/libkonq.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:38+0000\n"
+"POT-Creation-Date: 2024-09-06 00:39+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -16,74 +16,6 @@ msgstr ""
 "X-Generator: KBabel 1.0beta1\n"
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
-
-#: src/browseropenorsavequestion.cpp:88
-#, kde-format
-msgctxt "@label Type of file"
-msgid "Type: %1"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:96
-#, kde-format
-msgctxt "@label:checkbox"
-msgid "Remember action for files of this type"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:148 src/browseropenorsavequestion.cpp:236
-#, fuzzy, kde-format
-#| msgid "Open &with %1"
-msgctxt "@label:button"
-msgid "&Open with %1"
-msgstr "Oscail &le %1"
-
-#: src/browseropenorsavequestion.cpp:212
-#, fuzzy, kde-format
-#| msgid "Open &with %1"
-msgctxt "@action:inmenu"
-msgid "Open &with %1"
-msgstr "Oscail &le %1"
-
-#: src/browseropenorsavequestion.cpp:223 src/browseropenorsavequestion.cpp:317
-#, fuzzy, kde-format
-#| msgid "Open &with %1"
-msgctxt "@info"
-msgid "Open '%1'?"
-msgstr "Oscail &le %1"
-
-#: src/browseropenorsavequestion.cpp:227
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "&Open With..."
-msgctxt "@label:button"
-msgid "&Open with..."
-msgstr "&Oscail Le..."
-
-#: src/browseropenorsavequestion.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "&Open With"
-msgctxt "@label:button"
-msgid "&Open with"
-msgstr "&Oscail Le"
-
-#: src/browseropenorsavequestion.cpp:314
-#, fuzzy, kde-format
-#| msgid "&Open"
-msgctxt "@label:button"
-msgid "&Open"
-msgstr "&Oscail"
-
-#: src/browseropenorsavequestion.cpp:338
-#, kde-format
-msgctxt "@label File name"
-msgid "Name: %1"
-msgstr ""
-
-#: src/browseropenorsavequestion.cpp:340
-#, kde-format
-msgctxt "@info:whatsthis"
-msgid "This is the file name suggested by the server"
-msgstr ""
 
 #: src/htmlsettingsinterface.cpp:19
 msgid "Accept"
@@ -162,6 +94,44 @@ msgstr "Réamhamharc Le"
 #, kde-format
 msgid "Open Terminal Here"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Open &with %1"
+#~ msgctxt "@label:button"
+#~ msgid "&Open with %1"
+#~ msgstr "Oscail &le %1"
+
+#, fuzzy
+#~| msgid "Open &with %1"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Open &with %1"
+#~ msgstr "Oscail &le %1"
+
+#, fuzzy
+#~| msgid "Open &with %1"
+#~ msgctxt "@info"
+#~ msgid "Open '%1'?"
+#~ msgstr "Oscail &le %1"
+
+#, fuzzy
+#~| msgctxt "@title:menu"
+#~| msgid "&Open With..."
+#~ msgctxt "@label:button"
+#~ msgid "&Open with..."
+#~ msgstr "&Oscail Le..."
+
+#, fuzzy
+#~| msgctxt "@title:menu"
+#~| msgid "&Open With"
+#~ msgctxt "@label:button"
+#~ msgid "&Open with"
+#~ msgstr "&Oscail Le"
+
+#, fuzzy
+#~| msgid "&Open"
+#~ msgctxt "@label:button"
+#~ msgid "&Open"
+#~ msgstr "&Oscail"
 
 #~ msgid "&Properties"
 #~ msgstr "&Airíonna"
