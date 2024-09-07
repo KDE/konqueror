@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-06 00:39+0000\n"
-"PO-Revision-Date: 2024-07-11 13:48+0200\n"
+"PO-Revision-Date: 2024-09-06 16:27+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -46,96 +46,85 @@ msgstr "jba@pobox.com, xabigf@gmx.net, mvillarino@users.sourceforge.net"
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "Tipo: %1"
 
 #: src/downloadactionquestion.cpp:169
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "Lembrar a acción para os ficheiros deste tipo."
 
 #: src/downloadactionquestion.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
-msgstr ""
+msgstr "Quere gardar «%1»?"
 
 #: src/downloadactionquestion.cpp:287
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr "Abrir con %1"
+msgstr "Quere abrir «%1»?"
 
 #: src/downloadactionquestion.cpp:304
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr "&Abrir con"
+msgstr "Abrir c&on…"
 
 #: src/downloadactionquestion.cpp:312 src/downloadactionquestion.cpp:465
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr "Abrir con %1"
+msgstr "Abrir c&on %1"
 
 #: src/downloadactionquestion.cpp:321
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
-msgstr "&Abrir con"
+msgstr "Abrir c&on"
 
 #: src/downloadactionquestion.cpp:337
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
-msgstr "Amosar"
+msgstr "&Amosar en %1"
 
 #: src/downloadactionquestion.cpp:349
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
-msgstr "Amosar"
+msgstr "&Amosar en"
 
 #: src/downloadactionquestion.cpp:371
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Abrir con %1"
+msgstr "&Abrir con %1"
 
 #: src/downloadactionquestion.cpp:403
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
-msgstr "Amosar"
+msgstr "&Amosar en %1"
 
 #: src/downloadactionquestion.cpp:425
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
-msgstr ""
+msgstr "Visores incompatíbeis con este ficheiro"
 
 #: src/downloadactionquestion.cpp:429
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
-msgstr ""
+msgstr "Visores que probabelmente non amosen o ficheiro"
 
 #: src/downloadactionquestion.cpp:430
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
-msgstr ""
+msgstr "o ficheiro"
 
 #: src/downloadactionquestion.cpp:431
 #, kde-format
@@ -145,19 +134,22 @@ msgid ""
 "type is incorrect or if a viewer can display %1 even if it doesn't "
 "officially support it.</p>"
 msgstr ""
+"<p>Visores que se supón que non poden amosar %1. Probablemente non podan "
+"amosalo.</p><p>Estas opcións fornécense por se o tipo de ficheiro detectado "
+"é incorrecto ou un visor pode amosar %1 aínda que non sexa compatíbel "
+"oficialmente.</p>"
 
 #: src/downloadactionquestion.cpp:452
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr "Nome:"
+msgstr "Nome: %1"
 
 #: src/downloadactionquestion.cpp:454
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "Este é o nome de ficheiro suxerido polo servidor."
 
 #: src/konqapplication.cpp:118
 #, kde-format

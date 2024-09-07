@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-06 00:39+0000\n"
-"PO-Revision-Date: 2024-07-11 15:15+0200\n"
+"PO-Revision-Date: 2024-09-06 03:53+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -31,7 +31,7 @@ msgstr ""
 "com>\n"
 "com>\n"
 "First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -52,96 +52,85 @@ msgstr ""
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "Tipo: %1"
 
 #: src/downloadactionquestion.cpp:169
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "Recordar acción para los archivos de este tipo"
 
 #: src/downloadactionquestion.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
-msgstr ""
+msgstr "¿Guardar «%1»?"
 
 #: src/downloadactionquestion.cpp:287
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr "Abrir con %1"
+msgstr "¿Abrir «%1»?"
 
 #: src/downloadactionquestion.cpp:304
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr "&Abrir con"
+msgstr "&Abrir con..."
 
 #: src/downloadactionquestion.cpp:312 src/downloadactionquestion.cpp:465
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr "Abrir con %1"
+msgstr "&Abrir con %1"
 
 #: src/downloadactionquestion.cpp:321
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "&Abrir con"
 
 #: src/downloadactionquestion.cpp:337
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
-msgstr "Mostrar"
+msgstr "&Mostrar en %1"
 
 #: src/downloadactionquestion.cpp:349
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
-msgstr "Mostrar"
+msgstr "&Mostrar en"
 
 #: src/downloadactionquestion.cpp:371
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Abrir con %1"
+msgstr "Abrir &con %1"
 
 #: src/downloadactionquestion.cpp:403
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
-msgstr "Mostrar"
+msgstr "Mostrar &en %1"
 
 #: src/downloadactionquestion.cpp:425
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
-msgstr ""
+msgstr "Los visores no son compatibles con este archivo"
 
 #: src/downloadactionquestion.cpp:429
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
-msgstr ""
+msgstr "Es poco probable que los visores muestren el archivo"
 
 #: src/downloadactionquestion.cpp:430
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
-msgstr ""
+msgstr "este archivo"
 
 #: src/downloadactionquestion.cpp:431
 #, kde-format
@@ -151,19 +140,22 @@ msgid ""
 "type is incorrect or if a viewer can display %1 even if it doesn't "
 "officially support it.</p>"
 msgstr ""
+"<p>Visores que se supone que no pueden mostrar %1. Es muy probable que su "
+"uso falle.</p><p>Estas opciones se proporcionan en caso de que el tipo de "
+"archivo detectado sea incorrecto o cuando un visor puede mostrar %1 incluso "
+"cuando no es compatible de forma oficial.</p>"
 
 #: src/downloadactionquestion.cpp:452
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr "Nombre:"
+msgstr "Nombre: %1"
 
 #: src/downloadactionquestion.cpp:454
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "Este es el nombre de archivo sugerido por el servidor"
 
 #: src/konqapplication.cpp:118
 #, kde-format

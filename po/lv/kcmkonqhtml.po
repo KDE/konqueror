@@ -12,14 +12,14 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-25 00:39+0000\n"
-"PO-Revision-Date: 2024-04-09 08:48+0300\n"
-"Last-Translator: Māris Nartišs <maris.kde@gmail.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2024-09-05 13:16+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
@@ -239,7 +239,7 @@ msgstr "S&tandarta fonts:"
 #: appearance.cpp:158
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
-msgstr "Šis fonts tiek izmantots normāla teksta parādīšanai tīmekļa lapā."
+msgstr "Šo fontu izmanto normāla teksta parādīšanai tīmekļa lapā."
 
 #: appearance.cpp:162
 #, kde-format
@@ -251,8 +251,7 @@ msgstr "&Fiksēts fonts:"
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr ""
-"Šis fonts tiek izmantots fiksēta platuma (jeb neproporcionāla) teksta "
-"parādīšanai."
+"Šo fontu izmanto fiksēta platuma (jeb neproporcionāla) teksta parādīšanai."
 
 #: appearance.cpp:167
 #, kde-format
@@ -262,7 +261,7 @@ msgstr "S&erifa fonts:"
 #: appearance.cpp:168
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
-msgstr "Šis fonts tiek izmantots teksta parādīšanai, kas jārāda serifā."
+msgstr "Šo fontu izmanto teksta parādīšanai, kas jārāda serifā."
 
 #: appearance.cpp:172
 #, kde-format
@@ -273,8 +272,7 @@ msgstr "Bezserif&a fonts:"
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr ""
-"Šis fonts tiek izmantots teksta parādīšanai, kas jārāda bez serifa („sans-"
-"serif“)."
+"Šo fontu izmanto teksta parādīšanai, kas jārāda bez serifa („sans-serif“)."
 
 #: appearance.cpp:177
 #, kde-format
@@ -295,8 +293,7 @@ msgstr "„Fantas&y“ fonts:"
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
-msgstr ""
-"Šis fonts tiek izmantots teksta parādīšanai, kam jāizmanto „fantasy“ fonts."
+msgstr "Šo fontu izmanto teksta parādīšanai, kam jāizmanto „fantasy“ fonts."
 
 #: appearance.cpp:192
 #, kde-format
@@ -647,13 +644,13 @@ msgid ""
 "</qt>"
 msgstr ""
 "<qt>\n"
-"Lai pievienotu jaunu politiku, vienkārši noklikšķiniet <i>Jauna...</i> pogu "
-"un sniedziet lodziņā pieprasīto informāciju. Lai mainītu esošu politiku, "
-"noklikšķiniet uz <i>Mainīt...</i> pogas un izvēlieties jaunu politiku tās "
-"lodziņā. Noklikšķinot uz <i>Dzēst</i> pogas, izvēlētā politika tiks noņemta "
-"un tās vietā šim domēnam tiks piemēroti noklusējuma noteikumi. <i>Importēt..."
-"</i> un <i>Eksportēt...</i> pogas ļauj jums viegli dalīties ar jūsu politiku "
-"ar citiem cilvēkiem, atļaujot jums saglabāt un nolasīt to no datnes."
+"Lai pievienotu jaunu politiku, vienkārši noklikšķiniet uz <b>Pievienot...</"
+"b> pogas un sniedziet lodziņā pieprasīto informāciju. Lai mainītu esošu "
+"politiku, noklikšķiniet uz <b>Mainīt...</b> pogas un izvēlieties jaunu "
+"politiku tās lodziņā. Noklikšķinot uz <b>Dzēst</b> pogas, izvēlētā politika "
+"tiks noņemta un tās vietā šim domēnam piemēros noklusējuma noteikumus. "
+"Savukārt <b>Dzēst visu</b> poga noņems visu ar vietni saistīto politiku.\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
@@ -738,7 +735,7 @@ msgstr "Vietnes nosaukums:"
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
 msgstr ""
-"Ierakstīt resursdatora vai domēna nosaukumu, piemēram, „.kde.org“, uz kuru "
+"Ierakstiet resursdatora vai domēna nosaukumu, piemēram, „.kde.org“, uz kuru "
 "šī politika attieksies"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
@@ -897,7 +894,7 @@ msgstr "P&ielāgot..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Pielāgots lapas fons"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -916,21 +913,33 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Izmantot pielāgotu tīmekļa vietņu "
+"fonu. Šo krāsu izmanto:</p><ul style=\"margin-top: 0px; margin-bottom: 0px; "
+"margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li align="
+"\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">kad lapa vai "
+"pielāgota stilu lapa īpaši nenosaka fona krāsu,</li><li align=\"justify\" "
+"style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">pirms tīmekļa vietnes "
+"ielādes.</li></ul><p align=\"justify\">Pielāgotas fona krāsas iestatīšana ir "
+"noderīga, kad izmantojat pielāgotu stilu lapu, kas nosaka lapu fona krāsu "
+"(īpaši, ja tā ir tumša krāsa), kas novērsīs pēkšņu gaišu uzzibsnīšanu lapas "
+"ielādes laikā.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Izmantot pielāgotu &fona krāsu"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>Pielāgotā fona krāsa tīmekļa vietnēm</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -953,12 +962,28 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Pievienojiet savai pielāgotajai "
+"stilu lapai (tostarp pieejamības stilu lapai) noteikumu, lai iestatītu visas "
+"fona krāsas uz pielāgotu krāsu pēc jūsu izvēles. Tas ļauj izvairīties no "
+"vajadzības iestatīt fona krāsu gan stilu lapā, gan konfigurācijas lodziņā.</"
+"p><p align=\"justify\"><span style=\" font-weight:600;\">Ievērojiet:</span></"
+"p><ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-"
+"right: 0px; -qt-list-indent: 1;\"><li align=\"justify\" style=\" margin-"
+"top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\">šo noteikumu pārrakstīs citi fona krāsas "
+"noteikumi jūsu pielāgotajā stilu lapā, ievērojot CSS noteikumus</li><li "
+"align=\"justify\" style=\" margin-top:0px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">šo "
+"noteikumu programma patiesībā nepievieno sistēmā esošajās stilu lapas "
+"datnei, bet ievieto tajā kopijā, kas ir ielādēta „Konqueror“ atmiņā. Tas "
+"nozīmē, ka šīs stilu lapas izmantošanai citās pārlūkprogrammās noteikums būs "
+"jāievieto manuāli.</li></ul></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Stilu lapai pievienot pielāgotu fonu"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
@@ -1211,8 +1236,7 @@ msgid ""
 "<b>Foreground color</b><p>The foreground color is the color that the text is "
 "drawn in.</p>"
 msgstr ""
-"<b>Priekšplāna krāsa</b><p>Priekšplāna krāsa ir tā ar ko tiek attēloti burti."
-"</p>"
+"<b>Priekšplāna krāsa</b><p>Priekšplāna krāsa ir tā ar ko attēlo burtus.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, txtForeground)
 #: css/csscustom.ui:264
@@ -1541,10 +1565,10 @@ msgid ""
 msgstr ""
 "<qt><p>Ievadiet filtra izteiksmi. Filtra izteiksmes var būt kā:"
 "<ul><li>čaulas stila aizstājējzīmes, piemēram, <tt>http://www.paraugs.lv/"
-"reklamas*</tt>, var tikt izmantotas sekojošas aizstājējzīmes: <tt>*?[]</tt></"
+"reklamas*</tt>, varat izmantot sekojošas aizstājējzīmes: <tt>*?[]</tt></"
 "li><li>pilnvērtīga regulārā izteiksme, kas jāliek „<tt>/</tt>“, piemēram, "
-"<tt>/\\/(reklama|ad|banner)\\./</tt></li></ul><p>Jebkuram filtram priekšā "
-"var rakstīt „<tt>@@</tt>“, lai to padarītu par „labo“ (atļautu) adresi "
+"<tt>/\\/(reklāma|ad|banner)\\./</tt></li></ul><p>Jebkuram filtram priekšā "
+"varat rakstīt „<tt>@@</tt>“, lai to padarītu par „labo“ (atļautu) adresi "
 "(URL). „Labajām“ adresēm tiek dota priekšroka, salīdzinot ar „sliktajām“ "
 "adresēm."
 
@@ -1556,8 +1580,8 @@ msgid ""
 "ignored. Any other line is added as a filter expression."
 msgstr ""
 "<qt><p>Filtra importa formāts ir vienkārša teksta datne. Tukšas rindas un "
-"tādas kas sākas ar „<tt>!</tt>“ un galvenes rinda <tt>[AdBlock]</tt> tiek "
-"ignorētas. Visas citas tiek pievienotas kā filtra izteiksmes."
+"tādas rindas, kas sākas ar „<tt>!</tt>“, un galvenes rindu <tt>[AdBlock]</"
+"tt> ignorē. Visas pārējās pievieno kā filtra izteiksmes."
 
 #: filteropts.cpp:188
 #, kde-format
@@ -1802,17 +1826,16 @@ msgstr ""
 "izseko"
 
 #: htmlopts.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this box if you want to inform a web site that you do not want your "
-#| "web browsing habits tracked."
+#, kde-format
 msgid ""
 "<p>Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
 "considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
-"Atzīmējiet šo opciju, ja vēlaties informēt tīmekļa vietni, ka nevēlaties, "
-"lai  tā izsekotu jūsu tīmekļa pārlūkošanas ieradumiem."
+"<p>Atzīmējiet šo lauciņu, ja vēlaties informēt tīmekļa vietni, ka "
+"nevēlaties, lai tā izsekotu jūsu tīmekļa pārlūkošanas ieradumiem.</"
+"p><p><strong>Uzmanību:</strong> mūsdienās šī galvene skaitās novecojusi un "
+"lielākā daļu tīmekļa vietņu to visdrīzāk ignorēs.</p>"
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -1842,7 +1865,7 @@ msgstr ""
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Always display files from web pages in a new tab"
-msgstr ""
+msgstr "Vienmēr datnes no tīmekļa vietnēm parādīt jaunā cilnē"
 
 #: htmlopts.cpp:137
 #, kde-format
@@ -1850,6 +1873,8 @@ msgid ""
 "<p>When showing in Konqueror files from links in web pages, always use a new "
 "tab"
 msgstr ""
+"<p>„Konqueror“ atverot datnes no tīmekļa vietņu saitēm, vienmēr izmantot "
+"jaunu cilni"
 
 #: jsopts.cpp:57
 #, kde-format
@@ -2452,12 +2477,13 @@ msgstr "Izvēlēties &atlasīto identifikāciju"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:163
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>Ja atzīmēts, izslēdz pielāgotas identifikācijas "
+"izvēli, bet izmanto noklusējuma</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:166

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-06 00:39+0000\n"
-"PO-Revision-Date: 2024-07-11 05:42+0200\n"
+"PO-Revision-Date: 2024-09-06 04:05+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -32,96 +32,85 @@ msgstr "Temuri.doghonadze@gmail.com"
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "ტიპი: %1"
 
 #: src/downloadactionquestion.cpp:169
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "ქმედების დამახსოვრება ამ ტიპის ფაილებისათვის"
 
 #: src/downloadactionquestion.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
-msgstr ""
+msgstr "შევინახო '%1'?"
 
 #: src/downloadactionquestion.cpp:287
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr "%1-ით გახსნა"
+msgstr "&გავხსნა \"%1\"?"
 
 #: src/downloadactionquestion.cpp:304
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr "&გამხსნელი პროგრამა"
+msgstr "&გამხსნელი პროგრამა..."
 
 #: src/downloadactionquestion.cpp:312 src/downloadactionquestion.cpp:465
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr "%1-ით გახსნა"
+msgstr "%1-ით &გახსნა"
 
 #: src/downloadactionquestion.cpp:321
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "&გამხსნელი პროგრამა"
 
 #: src/downloadactionquestion.cpp:337
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
-msgstr "ჩვენება"
+msgstr "ჩ&ვენება %1-ზე"
 
 #: src/downloadactionquestion.cpp:349
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
-msgstr "ჩვენება"
+msgstr "ჩ&ვენება სად"
 
 #: src/downloadactionquestion.cpp:371
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "%1-ით გახსნა"
+msgstr "%1-ით &გახსნა"
 
 #: src/downloadactionquestion.cpp:403
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
-msgstr "ჩვენება"
+msgstr "ჩვ&ენება %1-ზე"
 
 #: src/downloadactionquestion.cpp:425
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
-msgstr ""
+msgstr "დამთვალიერებლებს ამ ფაილის ხარდაჭერა არ აქვთ"
 
 #: src/downloadactionquestion.cpp:429
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
-msgstr ""
+msgstr "დამთვალიერებლები, ალბათ, ამ ფაილს ვერ გაჩვენებენ"
 
 #: src/downloadactionquestion.cpp:430
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
-msgstr ""
+msgstr "ეს ფაილი"
 
 #: src/downloadactionquestion.cpp:431
 #, kde-format
@@ -131,18 +120,22 @@ msgid ""
 "type is incorrect or if a viewer can display %1 even if it doesn't "
 "officially support it.</p>"
 msgstr ""
+"<p>პროგრამები, რომლებსაც %1-ის მხარდაჭერა არც უნდა ჰქონოდა. მათი გამოყენების "
+"მცდელობა დიდი შანსით ჩავარდება.</p><p>ეს არჩევანი მოწოდებულია იმ "
+"შემთხვევისთვის, თუ აღმოჩენილი ფაილის ტიპი არასწორია და გამხსნელ პროგრამას "
+"შეუძლია %1 გახსნას იმის მიუხედავად, რომ ის ოფიციალურად მხარდაჭერილი არაა.</p>"
 
 #: src/downloadactionquestion.cpp:452
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr ""
+msgstr "სახელი: %1"
 
 #: src/downloadactionquestion.cpp:454
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "ფაილის სახელი ნარჩევია სერვერის მიერ"
 
 #: src/konqapplication.cpp:118
 #, kde-format

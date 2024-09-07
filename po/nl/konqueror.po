@@ -22,14 +22,14 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-06 00:39+0000\n"
-"PO-Revision-Date: 2024-07-11 09:56+0200\n"
+"PO-Revision-Date: 2024-09-06 13:50+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -46,96 +46,85 @@ msgstr "rinsedevries@kde.nl,,,freekdekruijf@kde.nl"
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "Type: %1"
 
 #: src/downloadactionquestion.cpp:169
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "Actie voor bestanden van dit type onthouden"
 
 #: src/downloadactionquestion.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
-msgstr ""
+msgstr "'%1' opslaan?"
 
 #: src/downloadactionquestion.cpp:287
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr "Openen met %1"
+msgstr "'%1' openen?"
 
 #: src/downloadactionquestion.cpp:304
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr "&Openen met"
+msgstr "&Openen met..."
 
 #: src/downloadactionquestion.cpp:312 src/downloadactionquestion.cpp:465
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr "Openen met %1"
+msgstr "Met %1 &openen"
 
 #: src/downloadactionquestion.cpp:321
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "&Openen met"
 
 #: src/downloadactionquestion.cpp:337
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
-msgstr "Tonen"
+msgstr "&Tonen in %1"
 
 #: src/downloadactionquestion.cpp:349
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
-msgstr "Tonen"
+msgstr "&Tonen in"
 
 #: src/downloadactionquestion.cpp:371
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Openen met %1"
+msgstr "&Met %1 openen"
 
 #: src/downloadactionquestion.cpp:403
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
-msgstr "Tonen"
+msgstr "Tonen &in %1"
 
 #: src/downloadactionquestion.cpp:425
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
-msgstr ""
+msgstr "Dit bestand wordt in viewers niet ondersteund"
 
 #: src/downloadactionquestion.cpp:429
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
-msgstr ""
+msgstr "Onwaarschijnlijk dat viewers het bestand kunnen tonen"
 
 #: src/downloadactionquestion.cpp:430
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
-msgstr ""
+msgstr "dit bestand"
 
 #: src/downloadactionquestion.cpp:431
 #, kde-format
@@ -145,19 +134,22 @@ msgid ""
 "type is incorrect or if a viewer can display %1 even if it doesn't "
 "officially support it.</p>"
 msgstr ""
+"<p>Viewers die niet geacht worden om in staat te zijn %1 te tonen. Ze "
+"gebruiken zal hoogst waarschijnlijk falen.</p><p>Deze keuzes worden geleverd "
+"in geval het gedetecteerde bestandstype onjuist is of als een viewer %1 kan "
+"tonen zelfs als het het niet officieel ondersteunt.</p>"
 
 #: src/downloadactionquestion.cpp:452
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr "Naam:"
+msgstr "Naam: %1"
 
 #: src/downloadactionquestion.cpp:454
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "Dit is de door de server gesuggereerde bestandsnaam"
 
 #: src/konqapplication.cpp:118
 #, kde-format
