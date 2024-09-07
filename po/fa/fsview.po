@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: fsview\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-03 00:38+0000\n"
-"PO-Revision-Date: 2024-08-14 00:32+0330\n"
+"PO-Revision-Date: 2024-09-06 22:32+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
 "Language: fa\n"
@@ -153,26 +153,26 @@ msgid ""
 "b> done.</p><p>For details on usage and options available, see the online "
 "help under menu 'Help/FSView Manual'.</p>"
 msgstr ""
-"<p>این وصله نمای سیستم پرونده است، یک سودمندی سیستم پرونده نمایش‌ حالت مرورگر "
-"نگاره‌ای با استفاده از تجسم نگاشت درخت.</p><p>دقت کنید که در این حالت، "
-"به‌روزرسانی خودکار هنگامی‌که تغییرات سیستم پرونده ایجاد می‌شوند، عمداً انجام "
+"<p>این وصله نمای سامانه پرونده است، یک سودمندی سامانه پرونده نمایش‌ حالت "
+"مرورگر نگاره‌ای با استفاده از تجسم نگاشت درخت.</p><p>دقت کنید که در این حالت، "
+"به‌روزرسانی خودکار هنگامی‌که تغییرات سامانه پرونده ایجاد می‌شوند، عمداً انجام "
 "<b>نمی‌شود</b>. برای جزئیات درباره کاربرد و گزینه‌های موجود، کمک برخط را در "
-"زیر گزینگان »کمک/راهنمای نمای سیستم پرونده« ببینید. </p>"
+"زیر گزینگان »کمک/راهنمای نمای سامانه پرونده« ببینید. </p>"
 
 #: fsview_part.cpp:119
 #, kde-format
 msgid "&FSView Manual"
-msgstr "راهنمای &نمای سیستم پرونده‌"
+msgstr "راهنمای &نمای سامانه پرونده‌"
 
 #: fsview_part.cpp:121
 #, kde-format
 msgid "Show FSView manual"
-msgstr "نمایش راهنمای نمای سیستم پرونده"
+msgstr "نمایش راهنمای نمای سامانه پرونده"
 
 #: fsview_part.cpp:122
 #, kde-format
 msgid "Opens the help browser with the FSView documentation"
-msgstr "مرورگر کمک را توسط مستندات نمای سیستم پرونده باز می‌کند"
+msgstr "مرورگر کمک را توسط مستندات نمای سامانه پرونده باز می‌کند"
 
 #: fsview_part.cpp:154
 #, kde-format
@@ -206,9 +206,9 @@ msgid ""
 "outside.\n"
 "For details, see the 'Help/FSView Manual'."
 msgstr ""
-"نمای سیستم پرونده، هنگام ایجاد تغییرات در پرونده‌ها یا فهرستهای راهنما که "
+"نمای سامانه پرونده، هنگام ایجاد تغییرات در پرونده‌ها یا فهرستهای راهنما که "
 "اکنون از بیرون مرئی است، عمداً به‌روزرسانیهای خودکار را پشتیبانی نمی‌کند.\n"
-"برای جزئیات، »کمک/راهنمای نمای سیستم پرونده« را ببینید."
+"برای جزئیات، »کمک/راهنمای نمای سامانه پرونده« را ببینید."
 
 #. i18n: ectx: Menu (edit)
 #: fsview_part.rc:4
@@ -231,12 +231,12 @@ msgstr "&کمک‌"
 #: main.cpp:23
 #, kde-format
 msgid "FSView"
-msgstr "نمای سیستم پرونده"
+msgstr "نمای سامانه پرونده"
 
 #: main.cpp:24
 #, kde-format
 msgid "Filesystem Viewer"
-msgstr "مشاهده‌گر سیستم پرونده"
+msgstr "مشاهده‌گر سامانه پرونده"
 
 #: main.cpp:26
 #, kde-format
@@ -246,7 +246,7 @@ msgstr "(c) 2002, Josef Weidendorfer"
 #: main.cpp:33
 #, kde-format
 msgid "View filesystem starting from this folder"
-msgstr "نمای آغاز سیستم پرونده از این پوشه"
+msgstr "نمای آغاز سامانه پرونده از این پوشه"
 
 #: treemap.cpp:1435
 #, kde-format
