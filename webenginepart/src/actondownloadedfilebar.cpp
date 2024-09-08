@@ -13,12 +13,16 @@
 #include <QTimer>
 #include <QMimeDatabase>
 #include <QMenu>
+#include <QAbstractButton>
+#include <QResizeEvent>
+#include <QLayout>
 
 using namespace WebEngine;
 
 ActOnDownloadedFileBar::ActOnDownloadedFileBar(const QUrl &url, const QUrl& downloadUrl, WebEnginePart *part) :
-    KMessageWidget(i18nc("@label location where a remote URL was downloaded", "%1 was saved in %2", url.toDisplayString(), downloadUrl.toDisplayString()), part->widget()),
+    KMessageWidget({}, part->widget()),
     m_part{part},
+    m_url{url},
     m_downloadUrl{downloadUrl},
     m_openAction{new QAction(this)},
     m_embedActionHere{new QAction(i18n("Show file in this tab"), this)},
@@ -47,6 +51,34 @@ ActOnDownloadedFileBar::ActOnDownloadedFileBar(const QUrl &url, const QUrl& down
 
 ActOnDownloadedFileBar::~ActOnDownloadedFileBar() noexcept
 {
+}
+
+void WebEngine::ActOnDownloadedFileBar::resizeEvent(QResizeEvent* event)
+{
+    KMessageWidget::resizeEvent(event);
+    if (text().isEmpty()) {
+        setElidedText();
+    }
+}
+
+void WebEngine::ActOnDownloadedFileBar::setElidedText()
+{
+    int maxWidth = m_part->widget()->contentsRect().width();
+    QFontMetrics fm(font());
+    QMargins margins = layout()->contentsMargins();
+    maxWidth -= margins.left() + margins.right();
+    maxWidth -= layout()->spacing() * buttons().count();
+    QList<QAbstractButton*>btns = buttons();
+    maxWidth -= std::accumulate(btns.constBegin(), btns.constEnd(), 0, [](int res, auto *b){return res + b->width();});
+    QString text = i18nc("@label location where a remote URL was downloaded", "<tt>%1</tt> was saved as <tt>%2</tt>",
+                         m_url.toDisplayString(), m_downloadUrl.path());
+    QString elidedText = fm.elidedText(text, Qt::ElideMiddle, maxWidth);
+    setText(elidedText);
+}
+
+QList<QAbstractButton *> WebEngine::ActOnDownloadedFileBar::buttons() const
+{
+    return findChildren<QAbstractButton*>();
 }
 
 void WebEngine::ActOnDownloadedFileBar::setupOpenAction()

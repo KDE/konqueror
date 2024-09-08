@@ -19,6 +19,7 @@ class WebEnginePart;
 
 class QMenu;
 class QTimer;
+class QAbstractButton;
 
 namespace WebEngine {
 
@@ -42,6 +43,12 @@ namespace WebEngine {
  * If there are multiple applications able to open the file, the "Open" button also has a menu where
  * the user can choose which application to use. The same for the "Embed here" and "Embed in new tab"
  * buttons if there are multiple available parts.
+ *
+ * @warning Don't call `setText()` on this class. The widget text is determined internally from the parameters
+ * given in the constructor
+ *
+ * @note This class is meant to be used for a single download only, as can be seen from the fact that it doesn't
+ * provide ways to change the remote or local URLs.
  */
 class ActOnDownloadedFileBar : public KMessageWidget {
     Q_OBJECT
@@ -49,6 +56,11 @@ public:
 
     /**
      * @brief Constructor
+     *
+     * @note The constructor doesn't set the widget text because long URLs need to be elided to avoid
+     * increasing the window width. Since in the constructor the widget's width is still unknown, there's
+     * no way to do so. The text is set the in resizeEvent() in response to the first resize event the
+     * widget receives.
      * @param url the remote URL which was downloaded. It's only used to build the widget's label
      * @param downloadUrl the URL to the local file where @p url was downloaded
      * @param part the part this widget is displayed in
@@ -60,7 +72,24 @@ public:
      */
     ~ActOnDownloadedFileBar();
 
+protected:
+
+    /**
+     * @brief Overrides KMessageWidget::resizeEvent
+     *
+     * It takes care of creating the widget text so that it fits the widget width.
+     * It only does so the first time the widget is resized. After that it works as
+     * the base class implementation.
+     *
+     * This is needed because in the constructor we don't know how much space the
+     * widget has for text.
+     * @param event the resize event
+     */
+    void resizeEvent(QResizeEvent * event) override;
+
 private:
+
+    void setElidedText();
 
     /**
      * @brief Creates a menu containing a list of all applications which can be used to open the file
@@ -113,12 +142,13 @@ private:
     void setupEmbedAction(QAction *embedAction);
 
     /**
-     * @brief Enum which describes the choice made by the user
+     * @brief A list of all the buttons in the bar
+     *
+     * As `KMessageWidget` doesn't provide access to buttons, this uses `QObject::findChildren` with template
+     * argument `QAbstractButton*`
+     * @return a list of all `QAbstractButton` which are chilred of this object
      */
-    // enum Choice {
-    //     Open, //!< Open the file in an external application
-    //     Embed //!< Embed the file in Konqueror
-    // };
+    QList<QAbstractButton*> buttons() const;
 
 private Q_SLOTS:
     /**
@@ -133,6 +163,7 @@ private Q_SLOTS:
 
 private:
     QPointer<WebEnginePart> m_part; //!< The part associated with this widget
+    QUrl m_url; //!<The remote URL
     QUrl m_downloadUrl; //!< The URL of the local file the remote URL was downloaded in
     QAction *m_openAction = nullptr; //!< The action which opens the file in an external application
     QAction *m_embedActionHere = nullptr; //!< The action which embeds the file in the current view
