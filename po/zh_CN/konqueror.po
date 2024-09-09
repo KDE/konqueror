@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-06 00:39+0000\n"
+"POT-Creation-Date: 2024-09-09 00:38+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1860,7 +1860,7 @@ msgstr "撤销：已关闭窗口(&O)"
 msgid "Und&o"
 msgstr "撤销(&O)"
 
-#: src/konqview.cpp:1281
+#: src/konqview.cpp:1270
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1870,30 +1870,30 @@ msgstr ""
 "您试图查看的页面是表单数据提交的结果。如果您重新发送数据，此表单执行的任何操"
 "作(如搜索或在线购买)都将被重复。"
 
-#: src/konqview.cpp:1283
+#: src/konqview.cpp:1272
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "警告"
 
-#: src/konqview.cpp:1283
+#: src/konqview.cpp:1272
 #, kde-format
 msgid "Resend"
 msgstr "重新发送"
 
-#: src/urlloader.cpp:442
+#: src/urlloader.cpp:441
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "执行"
 
-#: src/urlloader.cpp:444
+#: src/urlloader.cpp:443
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
 msgstr "显示"
 
-#: src/urlloader.cpp:451
+#: src/urlloader.cpp:450
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -1903,14 +1903,14 @@ msgid ""
 "display it?"
 msgstr "<filename>%1</filename> 是可执行文件。你想要执行它，还是显示它的内容？"
 
-#: src/urlloader.cpp:457
+#: src/urlloader.cpp:456
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename> 是可执行文件。你想要执行它吗？"
 
-#: src/urlloader.cpp:793
+#: src/urlloader.cpp:759
 #, kde-format
 msgid "Save As"
 msgstr "另存为"

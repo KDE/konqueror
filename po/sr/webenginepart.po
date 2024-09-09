@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-18 00:39+0000\n"
+"POT-Creation-Date: 2024-09-09 00:39+0000\n"
 "PO-Revision-Date: 2017-12-03 22:53+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -269,35 +269,35 @@ msgstr ""
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:20
-#, kde-format
-msgctxt "@label location where a remote URL was downloaded"
-msgid "%1 was saved in %2"
-msgstr ""
-
-#: src/actondownloadedfilebar.cpp:24
+#: src/actondownloadedfilebar.cpp:28
 #, kde-format
 msgid "Show file in this tab"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:25
+#: src/actondownloadedfilebar.cpp:29
 #, kde-format
 msgid "Show file in a new tab in Konqueror"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:61
+#: src/actondownloadedfilebar.cpp:73
+#, kde-format
+msgctxt "@label location where a remote URL was downloaded"
+msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
+msgstr ""
+
+#: src/actondownloadedfilebar.cpp:93
 #, kde-format
 msgid "Open in external application"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:66
+#: src/actondownloadedfilebar.cpp:98
 #, fuzzy, kde-format
 #| msgctxt "open selected url"
 #| msgid "Open '%1'"
 msgid "Open in %1"
 msgstr "Отвори „%1“"
 
-#: src/actondownloadedfilebar.cpp:75 src/actondownloadedfilebar.cpp:113
+#: src/actondownloadedfilebar.cpp:107 src/actondownloadedfilebar.cpp:145
 #, fuzzy, kde-format
 #| msgctxt "open selected url"
 #| msgid "Open '%1'"
@@ -305,25 +305,25 @@ msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "Отвори „%1“"
 
-#: src/actondownloadedfilebar.cpp:100
+#: src/actondownloadedfilebar.cpp:132
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:100
+#: src/actondownloadedfilebar.cpp:132
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:104
+#: src/actondownloadedfilebar.cpp:136
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab using %1"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:104
+#: src/actondownloadedfilebar.cpp:136
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here using %1"
@@ -843,7 +843,7 @@ msgstr ""
 "\n"
 "Интеграција ће бити искључена."
 
-#: src/webenginepage.cpp:377
+#: src/webenginepage.cpp:334
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -858,12 +858,12 @@ msgstr ""
 "страницу.</p></qt>"
 
 # >> @title:window
-#: src/webenginepage.cpp:384
+#: src/webenginepage.cpp:341
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Поновна предаја података"
 
-#: src/webenginepage.cpp:581
+#: src/webenginepage.cpp:538
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -872,18 +872,18 @@ msgstr ""
 "Овај сајт покушава да приступи подацима о вашој физичкој локацији.\n"
 "Желите ли да му дозволите приступ?"
 
-#: src/webenginepage.cpp:585 src/webenginepage.cpp:663
-#: src/webenginepage.cpp:674
+#: src/webenginepage.cpp:542 src/webenginepage.cpp:620
+#: src/webenginepage.cpp:631
 #, kde-format
 msgid "Network Transmission"
 msgstr "Мрежни пренос"
 
-#: src/webenginepage.cpp:586
+#: src/webenginepage.cpp:543
 #, kde-format
 msgid "Allow access"
 msgstr "Дозволи приступ"
 
-#: src/webenginepage.cpp:656
+#: src/webenginepage.cpp:613
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -896,12 +896,12 @@ msgstr ""
 "Трећа страна би могла да пресретне и види ове податке.\n"
 "Желите ли заиста да ови подаци буду послати нешифровано?"
 
-#: src/webenginepage.cpp:664
+#: src/webenginepage.cpp:621
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "Пошаљи &нешифровано"
 
-#: src/webenginepage.cpp:671
+#: src/webenginepage.cpp:628
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -910,12 +910,12 @@ msgstr ""
 "Овај сајт покушава да пошаље податке из формулара е‑поштом.\n"
 "Желите ли да наставите?"
 
-#: src/webenginepage.cpp:675
+#: src/webenginepage.cpp:632
 #, kde-format
 msgid "&Send Email"
 msgstr "Пошаљи &е‑поштом"
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:681
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -924,22 +924,22 @@ msgstr ""
 "<qt>Желите ли да дозволите овом сајту да приложи следеће фајлове уз поруку "
 "е‑поште?</qt>"
 
-#: src/webenginepage.cpp:726
+#: src/webenginepage.cpp:683
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Потврда прилога е‑поште"
 
-#: src/webenginepage.cpp:727
+#: src/webenginepage.cpp:684
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Дозволи прилоге"
 
-#: src/webenginepage.cpp:728
+#: src/webenginepage.cpp:685
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Занемари прилоге"
 
-#: src/webenginepage.cpp:742
+#: src/webenginepage.cpp:699
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -948,12 +948,12 @@ msgstr ""
 "Овај сајт је покушао да приложи фајл са вашег рачунара при предаји "
 "формулара. Прилог уклоњен ради ваше заштите."
 
-#: src/webenginepage.cpp:745
+#: src/webenginepage.cpp:702
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Прилог уклоњен"
 
-#: src/webenginepage.cpp:859
+#: src/webenginepage.cpp:816
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -962,7 +962,7 @@ msgstr ""
 "Овај сајт тражи да отвори нови искачући прозор.\n"
 "Желите ли да дозволите ово?"
 
-#: src/webenginepage.cpp:861
+#: src/webenginepage.cpp:818
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -971,78 +971,78 @@ msgstr ""
 "<qt>Овај сајт тражи да отвори искачући прозор до<p>%1</p><br/>Желите ли да "
 "дозволите ово?</qt>"
 
-#: src/webenginepage.cpp:864
+#: src/webenginepage.cpp:821
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Потврда јаваскриптног искакања"
 
-#: src/webenginepage.cpp:865
+#: src/webenginepage.cpp:822
 #, kde-format
 msgid "Allow"
 msgstr "Дозволи"
 
 # rewrite-msgid: /Do Not Allow/Deny/
-#: src/webenginepage.cpp:865
+#: src/webenginepage.cpp:822
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Одбиј"
 
-#: src/webenginepart.cpp:197
+#: src/webenginepart.cpp:196
 #, fuzzy, kde-format
 #| msgid "Save Image As..."
 msgid "Save Full HTML Page As..."
 msgstr "Сачувај слику као..."
 
-#: src/webenginepart.cpp:201
+#: src/webenginepart.cpp:200
 #, kde-format
 msgid "Print Preview"
 msgstr "Преглед пред штампање"
 
-#: src/webenginepart.cpp:205
+#: src/webenginepart.cpp:204
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Увеличај"
 
-#: src/webenginepart.cpp:210
+#: src/webenginepart.cpp:209
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Умањи"
 
-#: src/webenginepart.cpp:215
+#: src/webenginepart.cpp:214
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Стварна величина"
 
-#: src/webenginepart.cpp:220
+#: src/webenginepart.cpp:219
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Увеличај само текст"
 
-#: src/webenginepart.cpp:228
+#: src/webenginepart.cpp:227
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Увеличај на тпи"
 
-#: src/webenginepart.cpp:241
+#: src/webenginepart.cpp:240
 #, kde-format
 msgid "Set &Encoding"
 msgstr "Постави &кодирање"
 
-#: src/webenginepart.cpp:244
+#: src/webenginepart.cpp:243
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Прикажи извор &документа"
 
-#: src/webenginepart.cpp:249 src/webenginepart.cpp:557
+#: src/webenginepart.cpp:248 src/webenginepart.cpp:556
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "ССЛ"
 
-#: src/webenginepart.cpp:255
+#: src/webenginepart.cpp:254
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1052,12 +1052,12 @@ msgstr ""
 "<h3>Нађи текст</h3>Приказује дијалог помоћу којег можете тражити текст на "
 "приказаној страници."
 
-#: src/webenginepart.cpp:555
+#: src/webenginepart.cpp:554
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "Подаци о ССЛ‑у за овај сајт делују искварено."
 
-#: src/webenginepart.cpp:636
+#: src/webenginepart.cpp:635
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1065,7 +1065,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "е‑пошта: "
 
-#: src/webenginepart.cpp:665
+#: src/webenginepart.cpp:664
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1073,7 +1073,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " — ЦЦ: "
 
-#: src/webenginepart.cpp:667
+#: src/webenginepart.cpp:666
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1081,7 +1081,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " — БЦЦ: "
 
-#: src/webenginepart.cpp:669
+#: src/webenginepart.cpp:668
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1089,88 +1089,88 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " — тема: "
 
-#: src/webenginepart.cpp:673 src/webenginepart.cpp:684
+#: src/webenginepart.cpp:672 src/webenginepart.cpp:683
 #, kde-format
 msgid " (In new window)"
 msgstr " (у новом прозору)"
 
-#: src/webenginepart.cpp:682
+#: src/webenginepart.cpp:681
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (у родитељском оквиру)"
 
-#: src/webenginepart.cpp:748
+#: src/webenginepart.cpp:747
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Желите ли да потражите <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:749
+#: src/webenginepart.cpp:748
 #, kde-format
 msgid "Internet Search"
 msgstr "Претрага Интернета"
 
-#: src/webenginepart.cpp:749
+#: src/webenginepart.cpp:748
 #, kde-format
 msgid "&Search"
 msgstr "&Тражи"
 
-#: src/webenginepart.cpp:860
+#: src/webenginepart.cpp:859
 #, kde-format
 msgid "Close window?"
 msgstr "Затворити прозор?"
 
-#: src/webenginepart.cpp:860
+#: src/webenginepart.cpp:859
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Потребна је потврда"
 
-#: src/webenginepart.cpp:934
+#: src/webenginepart.cpp:933
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>Желите ли да %1 упамти податке о пријави за <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1005
+#: src/webenginepart.cpp:1004
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr ""
 
-#: src/webenginepart.cpp:1010
+#: src/webenginepart.cpp:1009
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr ""
 
-#: src/webenginepart.cpp:1014
+#: src/webenginepart.cpp:1013
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1018
+#: src/webenginepart.cpp:1017
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 
 # rewrite-msgid: /caching/storing/
-#: src/webenginepart.cpp:1022
+#: src/webenginepart.cpp:1021
 #, fuzzy, kde-format
 #| msgid "&Allow password caching for this site"
 msgid "&Allow Password Caching for This Site"
 msgstr "&Дозволи складиштење лозинки за овај сајт"
 
 # rewrite-msgid: /cached/stored/
-#: src/webenginepart.cpp:1026
+#: src/webenginepart.cpp:1025
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "Уклони ускладиштене лозинке за овај сајт"
 
-#: src/webenginepart.cpp:1030
+#: src/webenginepart.cpp:1029
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1034
+#: src/webenginepart.cpp:1033
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Затвори новчаник"

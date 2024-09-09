@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-18 00:39+0000\n"
+"POT-Creation-Date: 2024-09-09 00:39+0000\n"
 "PO-Revision-Date: 2013-10-04 03:20+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -270,35 +270,35 @@ msgstr ""
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:20
-#, kde-format
-msgctxt "@label location where a remote URL was downloaded"
-msgid "%1 was saved in %2"
-msgstr ""
-
-#: src/actondownloadedfilebar.cpp:24
+#: src/actondownloadedfilebar.cpp:28
 #, kde-format
 msgid "Show file in this tab"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:25
+#: src/actondownloadedfilebar.cpp:29
 #, kde-format
 msgid "Show file in a new tab in Konqueror"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:61
+#: src/actondownloadedfilebar.cpp:73
+#, kde-format
+msgctxt "@label location where a remote URL was downloaded"
+msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
+msgstr ""
+
+#: src/actondownloadedfilebar.cpp:93
 #, kde-format
 msgid "Open in external application"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:66
+#: src/actondownloadedfilebar.cpp:98
 #, fuzzy, kde-format
 #| msgctxt "open selected url"
 #| msgid "Open '%1'"
 msgid "Open in %1"
 msgstr "'%1' дегенді ашу"
 
-#: src/actondownloadedfilebar.cpp:75 src/actondownloadedfilebar.cpp:113
+#: src/actondownloadedfilebar.cpp:107 src/actondownloadedfilebar.cpp:145
 #, fuzzy, kde-format
 #| msgctxt "open selected url"
 #| msgid "Open '%1'"
@@ -306,25 +306,25 @@ msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "'%1' дегенді ашу"
 
-#: src/actondownloadedfilebar.cpp:100
+#: src/actondownloadedfilebar.cpp:132
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:100
+#: src/actondownloadedfilebar.cpp:132
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:104
+#: src/actondownloadedfilebar.cpp:136
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab using %1"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:104
+#: src/actondownloadedfilebar.cpp:136
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here using %1"
@@ -882,7 +882,7 @@ msgstr ""
 "\n"
 "Әзірше енді онымен бірігіп істтеу бұғатталады."
 
-#: src/webenginepage.cpp:377
+#: src/webenginepage.cpp:334
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -895,12 +895,12 @@ msgstr ""
 "тағы бір рет сатып алмау үшін Қайту дегенді басыңыз. Әйтпесе, жәй жаңарту "
 "үшін Жалғастыру дегенді басыңыз."
 
-#: src/webenginepage.cpp:384
+#: src/webenginepage.cpp:341
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Ақпаратты қайта жіберу"
 
-#: src/webenginepage.cpp:581
+#: src/webenginepage.cpp:538
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -909,18 +909,18 @@ msgstr ""
 "Бұл сайт физикалық қай жердеңізді білуге әрекет жасап жатыр.\n"
 "Ол мәліметке қатынау рұқсат па?"
 
-#: src/webenginepage.cpp:585 src/webenginepage.cpp:663
-#: src/webenginepage.cpp:674
+#: src/webenginepage.cpp:542 src/webenginepage.cpp:620
+#: src/webenginepage.cpp:631
 #, kde-format
 msgid "Network Transmission"
 msgstr "Желі арқылы беру"
 
-#: src/webenginepage.cpp:586
+#: src/webenginepage.cpp:543
 #, kde-format
 msgid "Allow access"
 msgstr "Қатынауға рұқсат"
 
-#: src/webenginepage.cpp:656
+#: src/webenginepage.cpp:613
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -933,12 +933,12 @@ msgstr ""
 "Бөтендер бұл ашық ақпаратты сығалауы мүмкін.\n"
 "Бола берсін бе?"
 
-#: src/webenginepage.cpp:664
+#: src/webenginepage.cpp:621
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Шифрламай жіберу"
 
-#: src/webenginepage.cpp:671
+#: src/webenginepage.cpp:628
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -947,12 +947,12 @@ msgstr ""
 "Бұл сайт деректер пішінді эл.пошта арқылы жіберуге әрекет жасап жатыр.\n"
 "Бола берсін бе?"
 
-#: src/webenginepage.cpp:675
+#: src/webenginepage.cpp:632
 #, kde-format
 msgid "&Send Email"
 msgstr "&Эл.поштаны жіберу"
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:681
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -961,22 +961,22 @@ msgstr ""
 "<qt>Бұл сайтқа эл.пошта хатқа келесі файлдарды тіркемелеп жіберуге рұқсат "
 "бересіз бе?</qt>"
 
-#: src/webenginepage.cpp:726
+#: src/webenginepage.cpp:683
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Эл.пошта тіркемесі қылуды құптау"
 
-#: src/webenginepage.cpp:727
+#: src/webenginepage.cpp:684
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Тіркемелеуі рұқсат"
 
-#: src/webenginepage.cpp:728
+#: src/webenginepage.cpp:685
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Тіркемелеуге рұқсат жоқ"
 
-#: src/webenginepage.cpp:742
+#: src/webenginepage.cpp:699
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -985,12 +985,12 @@ msgstr ""
 "Сайтқа жіберу пішіміндегі деректерге жергілікті файлды тіркеу әрекеті. "
 "Қауіпсіздігіңіз үшін тіркелген файл жойылды."
 
-#: src/webenginepage.cpp:745
+#: src/webenginepage.cpp:702
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Тіркемесі өшірілді"
 
-#: src/webenginepage.cpp:859
+#: src/webenginepage.cpp:816
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -999,7 +999,7 @@ msgstr ""
 "Бұл сайт жаңа қалқымалы терезе ашу әрекетін жасауда.\n"
 "Бұны рұқсат етесіз бе?"
 
-#: src/webenginepage.cpp:861
+#: src/webenginepage.cpp:818
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1008,77 +1008,77 @@ msgstr ""
 "<qt>Бұл сайт <p>%1</p>дегенге қалқымалы терезе ашу әрекетін жасауда.<br/"
 ">Бұны рұқсат етесіз бе?</qt>"
 
-#: src/webenginepage.cpp:864
+#: src/webenginepage.cpp:821
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript қалқымалыны құптау"
 
-#: src/webenginepage.cpp:865
+#: src/webenginepage.cpp:822
 #, kde-format
 msgid "Allow"
 msgstr "Құп"
 
-#: src/webenginepage.cpp:865
+#: src/webenginepage.cpp:822
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Рұқсат жоқ"
 
-#: src/webenginepart.cpp:197
+#: src/webenginepart.cpp:196
 #, fuzzy, kde-format
 #| msgid "Save Image As..."
 msgid "Save Full HTML Page As..."
 msgstr "Кескінді былай сақтау..."
 
-#: src/webenginepart.cpp:201
+#: src/webenginepart.cpp:200
 #, kde-format
 msgid "Print Preview"
 msgstr "Басатынды қарап-шығу"
 
-#: src/webenginepart.cpp:205
+#: src/webenginepart.cpp:204
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Жақыңдау"
 
-#: src/webenginepart.cpp:210
+#: src/webenginepart.cpp:209
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Алыстау"
 
-#: src/webenginepart.cpp:215
+#: src/webenginepart.cpp:214
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Шын өлшемі"
 
-#: src/webenginepart.cpp:220
+#: src/webenginepart.cpp:219
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Жазуды ғана масштабтау"
 
-#: src/webenginepart.cpp:228
+#: src/webenginepart.cpp:227
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Нүкте/дюймге масштабтау"
 
-#: src/webenginepart.cpp:241
+#: src/webenginepart.cpp:240
 #, kde-format
 msgid "Set &Encoding"
 msgstr "&Кодтамасын орнату"
 
-#: src/webenginepart.cpp:244
+#: src/webenginepart.cpp:243
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "&Құжаттың бастапқы кодын қарау"
 
-#: src/webenginepart.cpp:249 src/webenginepart.cpp:557
+#: src/webenginepart.cpp:248 src/webenginepart.cpp:556
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:255
+#: src/webenginepart.cpp:254
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1086,12 +1086,12 @@ msgid ""
 "displayed page."
 msgstr "<h3>Мәтінді табу</h3>Көрсетілген беттегі мәтінді іздеу диалогы."
 
-#: src/webenginepart.cpp:555
+#: src/webenginepart.cpp:554
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "Бұл сайтың SSL мәліметі бүлінген сияқты."
 
-#: src/webenginepart.cpp:636
+#: src/webenginepart.cpp:635
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1099,7 +1099,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "Эл.пошта: "
 
-#: src/webenginepart.cpp:665
+#: src/webenginepart.cpp:664
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1107,7 +1107,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - Көшірмесі кімге: "
 
-#: src/webenginepart.cpp:667
+#: src/webenginepart.cpp:666
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1115,7 +1115,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - Жасырын кімге: "
 
-#: src/webenginepart.cpp:669
+#: src/webenginepart.cpp:668
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1123,88 +1123,88 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Тақырыбы: "
 
-#: src/webenginepart.cpp:673 src/webenginepart.cpp:684
+#: src/webenginepart.cpp:672 src/webenginepart.cpp:683
 #, kde-format
 msgid " (In new window)"
 msgstr " (Жаңа терезеде)"
 
-#: src/webenginepart.cpp:682
+#: src/webenginepart.cpp:681
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (Аталық фреймінде)"
 
-#: src/webenginepart.cpp:748
+#: src/webenginepart.cpp:747
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt><b>%1</b> дегенді іздеуді қалайсыз ба?</qt>"
 
-#: src/webenginepart.cpp:749
+#: src/webenginepart.cpp:748
 #, kde-format
 msgid "Internet Search"
 msgstr "Интернетте іздеу"
 
-#: src/webenginepart.cpp:749
+#: src/webenginepart.cpp:748
 #, kde-format
 msgid "&Search"
 msgstr "&Іздеу"
 
-#: src/webenginepart.cpp:860
+#: src/webenginepart.cpp:859
 #, kde-format
 msgid "Close window?"
 msgstr "Терезе жабылсын ба?"
 
-#: src/webenginepart.cpp:860
+#: src/webenginepart.cpp:859
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Құптау талап етілген"
 
-#: src/webenginepart.cpp:934
+#: src/webenginepart.cpp:933
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 "<html>%1 деген <b>%2</b> дегенге кіру мәліметін жаттап алсын ба?</html>"
 
-#: src/webenginepart.cpp:1005
+#: src/webenginepart.cpp:1004
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr ""
 
-#: src/webenginepart.cpp:1010
+#: src/webenginepart.cpp:1009
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "&Memorize Passwords in This Page Now"
 msgstr "Бұл сайттың бүкіл сақталған парольдері өшірілсін"
 
-#: src/webenginepart.cpp:1014
+#: src/webenginepart.cpp:1013
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1018
+#: src/webenginepart.cpp:1017
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1022
+#: src/webenginepart.cpp:1021
 #, fuzzy, kde-format
 #| msgid "&Allow password caching for this site"
 msgid "&Allow Password Caching for This Site"
 msgstr "Бұл сайт парольдерін сақтау &рұқсат етілсін"
 
-#: src/webenginepart.cpp:1026
+#: src/webenginepart.cpp:1025
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "Бұл сайттың бүкіл сақталған парольдері өшірілсін"
 
-#: src/webenginepart.cpp:1030
+#: src/webenginepart.cpp:1029
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1034
+#: src/webenginepart.cpp:1033
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Әмиянды жабу"

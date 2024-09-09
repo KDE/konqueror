@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-18 00:39+0000\n"
+"POT-Creation-Date: 2024-09-09 00:39+0000\n"
 "PO-Revision-Date: 2024-04-07 17:09+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -303,57 +303,57 @@ msgstr "Instalita"
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>Mima Tipo</td><td>Priskribo</td><td>Sufiksoj</td><td>Aldonaĵo</td>"
 
-#: src/actondownloadedfilebar.cpp:20
-#, kde-format
-msgctxt "@label location where a remote URL was downloaded"
-msgid "%1 was saved in %2"
-msgstr "%1 estis konservita en %2"
-
-#: src/actondownloadedfilebar.cpp:24
+#: src/actondownloadedfilebar.cpp:28
 #, kde-format
 msgid "Show file in this tab"
 msgstr "Montri dosieron en ĉi tiu langeto"
 
-#: src/actondownloadedfilebar.cpp:25
+#: src/actondownloadedfilebar.cpp:29
 #, kde-format
 msgid "Show file in a new tab in Konqueror"
 msgstr "Montri dosieron en nova langeto en Konqueror"
 
-#: src/actondownloadedfilebar.cpp:61
+#: src/actondownloadedfilebar.cpp:73
+#, kde-format
+msgctxt "@label location where a remote URL was downloaded"
+msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
+msgstr ""
+
+#: src/actondownloadedfilebar.cpp:93
 #, kde-format
 msgid "Open in external application"
 msgstr "Malfermi en ekstera aplikaĵo"
 
-#: src/actondownloadedfilebar.cpp:66
+#: src/actondownloadedfilebar.cpp:98
 #, kde-format
 msgid "Open in %1"
 msgstr "Malfermi en %1"
 
-#: src/actondownloadedfilebar.cpp:75 src/actondownloadedfilebar.cpp:113
+#: src/actondownloadedfilebar.cpp:107 src/actondownloadedfilebar.cpp:145
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "Malfermi &per %1"
 
-#: src/actondownloadedfilebar.cpp:100
+#: src/actondownloadedfilebar.cpp:132
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
 msgstr "Malfermi en nova langeto"
 
-#: src/actondownloadedfilebar.cpp:100
+#: src/actondownloadedfilebar.cpp:132
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here"
 msgstr "Malfermi tie ĉi"
 
-#: src/actondownloadedfilebar.cpp:104
+#: src/actondownloadedfilebar.cpp:136
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab using %1"
 msgstr "Montri en nova langeto uzante %1"
 
-#: src/actondownloadedfilebar.cpp:104
+#: src/actondownloadedfilebar.cpp:136
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here using %1"
@@ -874,7 +874,7 @@ msgstr ""
 "\n"
 "La integriĝo estos malŝaltita."
 
-#: src/webenginepage.cpp:377
+#: src/webenginepage.cpp:334
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -887,12 +887,12 @@ msgstr ""
 "aĉeton, alklaku la butonon Nuligi por malhelpi duplikaton. aĉeto.Alie, "
 "alklaku la butonon Daŭrigi por montri la retpaĝon denove.</p>"
 
-#: src/webenginepage.cpp:384
+#: src/webenginepage.cpp:341
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Resendi Informojn"
 
-#: src/webenginepage.cpp:581
+#: src/webenginepage.cpp:538
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -901,18 +901,18 @@ msgstr ""
 "Ĉi tiu retejo provas aliri informojn pri via fizika loko.\n"
 "Ĉu vi volas permesi al ĝi aliri?"
 
-#: src/webenginepage.cpp:585 src/webenginepage.cpp:663
-#: src/webenginepage.cpp:674
+#: src/webenginepage.cpp:542 src/webenginepage.cpp:620
+#: src/webenginepage.cpp:631
 #, kde-format
 msgid "Network Transmission"
 msgstr "Reta transsendo"
 
-#: src/webenginepage.cpp:586
+#: src/webenginepage.cpp:543
 #, kde-format
 msgid "Allow access"
 msgstr "Permesi aliron"
 
-#: src/webenginepage.cpp:656
+#: src/webenginepage.cpp:613
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -925,12 +925,12 @@ msgstr ""
 "Eble tria partio povos kapti kaj vidi ĉi tiun informon.\n"
 "Ĉu vi certas, ke vi volas sendi la datumojn neĉifrite?"
 
-#: src/webenginepage.cpp:664
+#: src/webenginepage.cpp:621
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Sendi neĉifrite"
 
-#: src/webenginepage.cpp:671
+#: src/webenginepage.cpp:628
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -939,12 +939,12 @@ msgstr ""
 "Tiu retejo provas elsendi formularajn datumojn per retpoŝto.\n"
 "Ĉu vi volas permesi tion?"
 
-#: src/webenginepage.cpp:675
+#: src/webenginepage.cpp:632
 #, kde-format
 msgid "&Send Email"
 msgstr "&Sendi retleteron"
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:681
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -953,22 +953,22 @@ msgstr ""
 "<qt>Ĉu vi volas permesi al ĉi tiu retejo kunsendi la jenajn dosierojn al la "
 "retmesaĝo?</qt>"
 
-#: src/webenginepage.cpp:726
+#: src/webenginepage.cpp:683
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Retpoŝta Aldonaĵo Konfirmo"
 
-#: src/webenginepage.cpp:727
+#: src/webenginepage.cpp:684
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Permesi aldonaĵojn"
 
-#: src/webenginepage.cpp:728
+#: src/webenginepage.cpp:685
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignori aldonaĵojn"
 
-#: src/webenginepage.cpp:742
+#: src/webenginepage.cpp:699
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -977,12 +977,12 @@ msgstr ""
 "Tiu retejo penis aldoni dosieron de via komputilo al la elsendotajn "
 "formulardatumojn. La aldonaĵo estas forigita pro via sekureco."
 
-#: src/webenginepage.cpp:745
+#: src/webenginepage.cpp:702
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Aldonaĵo Forigita"
 
-#: src/webenginepage.cpp:859
+#: src/webenginepage.cpp:816
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -990,7 +990,7 @@ msgid ""
 msgstr ""
 "Ĉi tiu retejo petas malfermi novan ŝprucfenestron.\\Ĉu vi volas permesi tion?"
 
-#: src/webenginepage.cpp:861
+#: src/webenginepage.cpp:818
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -999,76 +999,76 @@ msgstr ""
 "<qt>Ĉi tiu retejo petas malfermi ŝprucfenestron al<p>%1</p><br/>Ĉu vi volas "
 "permesi ĉi tion?</qt>"
 
-#: src/webenginepage.cpp:864
+#: src/webenginepage.cpp:821
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript Ŝprucfenestro-Konfirmo"
 
-#: src/webenginepage.cpp:865
+#: src/webenginepage.cpp:822
 #, kde-format
 msgid "Allow"
 msgstr "Permesi"
 
-#: src/webenginepage.cpp:865
+#: src/webenginepage.cpp:822
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Ne permesi"
 
-#: src/webenginepart.cpp:197
+#: src/webenginepart.cpp:196
 #, kde-format
 msgid "Save Full HTML Page As..."
 msgstr "Konservi Plenan HTML-Paĝon Kiel..."
 
-#: src/webenginepart.cpp:201
+#: src/webenginepart.cpp:200
 #, kde-format
 msgid "Print Preview"
 msgstr "Presa Antaŭrigardo"
 
-#: src/webenginepart.cpp:205
+#: src/webenginepart.cpp:204
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Enzomi"
 
-#: src/webenginepart.cpp:210
+#: src/webenginepart.cpp:209
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Elzomi"
 
-#: src/webenginepart.cpp:215
+#: src/webenginepart.cpp:214
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Reala Grandeco"
 
-#: src/webenginepart.cpp:220
+#: src/webenginepart.cpp:219
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Zomi Nur Tekston"
 
-#: src/webenginepart.cpp:228
+#: src/webenginepart.cpp:227
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Zomi al DPI"
 
-#: src/webenginepart.cpp:241
+#: src/webenginepart.cpp:240
 #, kde-format
 msgid "Set &Encoding"
 msgstr "Agordi Ko&digon"
 
-#: src/webenginepart.cpp:244
+#: src/webenginepart.cpp:243
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Montri do&kumentofonton"
 
-#: src/webenginepart.cpp:249 src/webenginepart.cpp:557
+#: src/webenginepart.cpp:248 src/webenginepart.cpp:556
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:255
+#: src/webenginepart.cpp:254
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1078,12 +1078,12 @@ msgstr ""
 "<h3>Trovi tekston</h3>Montras dialogon, kiu ebligas al vi trovi tekston sur "
 "la montrata paĝo."
 
-#: src/webenginepart.cpp:555
+#: src/webenginepart.cpp:554
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "La SSL-informo por ĉi tiu retejo ŝajnas esti korupta."
 
-#: src/webenginepart.cpp:636
+#: src/webenginepart.cpp:635
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1091,7 +1091,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "Retpoŝto: "
 
-#: src/webenginepart.cpp:665
+#: src/webenginepart.cpp:664
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1099,7 +1099,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr "- CC:"
 
-#: src/webenginepart.cpp:667
+#: src/webenginepart.cpp:666
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1107,7 +1107,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr "- BCC:"
 
-#: src/webenginepart.cpp:669
+#: src/webenginepart.cpp:668
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1115,85 +1115,85 @@ msgctxt ""
 msgid " - Subject: "
 msgstr "- Subjekto:"
 
-#: src/webenginepart.cpp:673 src/webenginepart.cpp:684
+#: src/webenginepart.cpp:672 src/webenginepart.cpp:683
 #, kde-format
 msgid " (In new window)"
 msgstr "(En nova fenestro)"
 
-#: src/webenginepart.cpp:682
+#: src/webenginepart.cpp:681
 #, kde-format
 msgid " (In parent frame)"
 msgstr "(En gepatra kadro)"
 
-#: src/webenginepart.cpp:748
+#: src/webenginepart.cpp:747
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Ĉu vi volas serĉi <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:749
+#: src/webenginepart.cpp:748
 #, kde-format
 msgid "Internet Search"
 msgstr "Interreta serĉo"
 
-#: src/webenginepart.cpp:749
+#: src/webenginepart.cpp:748
 #, kde-format
 msgid "&Search"
 msgstr "&Serĉi"
 
-#: src/webenginepart.cpp:860
+#: src/webenginepart.cpp:859
 #, kde-format
 msgid "Close window?"
 msgstr "Ĉu fermi la fenestron?"
 
-#: src/webenginepart.cpp:860
+#: src/webenginepart.cpp:859
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Bezonas konfirmon"
 
-#: src/webenginepart.cpp:934
+#: src/webenginepart.cpp:933
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 "<html>Ĉu vi volas, ke %1 memoru la salutinformojn por <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1005
+#: src/webenginepart.cpp:1004
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr "&Plenigi formularojn nun"
 
-#: src/webenginepart.cpp:1010
+#: src/webenginepart.cpp:1009
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr "&Memori Pasvortojn en Ĉi tiu Paĝo Nun"
 
-#: src/webenginepart.cpp:1014
+#: src/webenginepart.cpp:1013
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr "&Proprigi Kampojn Memorigendajn por Ĉi tiu Paĝo..."
 
-#: src/webenginepart.cpp:1018
+#: src/webenginepart.cpp:1017
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr "Forigi Proprigitajn Memor-Agordojn por Ĉi tiu Paĝo"
 
-#: src/webenginepart.cpp:1022
+#: src/webenginepart.cpp:1021
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "Permesi P&asvortan Kaŝmemoron por Ĉi tiu Retejo"
 
-#: src/webenginepart.cpp:1026
+#: src/webenginepart.cpp:1025
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "Forigi Ĉiujn Memoritajn Pasvortojn por Ĉi tiu Retejo"
 
-#: src/webenginepart.cpp:1030
+#: src/webenginepart.cpp:1029
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Lanĉi Monujo-Administranton"
 
-#: src/webenginepart.cpp:1034
+#: src/webenginepart.cpp:1033
 #, kde-format
 msgid "&Close Wallet"
 msgstr "F&ermi sekretejon"
@@ -1573,3 +1573,7 @@ msgstr ""
 "li><li><b>ID de kampo: </b>%3</li><li><b>Kampo estas nur-legebla: </b>%4</"
 "li><li><b>Kampo estas ebligita: </b>%5</li><li><b>Aŭtomata kompletigo estas "
 "ŝaltita: </b>%6</li></ul>"
+
+#~ msgctxt "@label location where a remote URL was downloaded"
+#~ msgid "%1 was saved in %2"
+#~ msgstr "%1 estis konservita en %2"
