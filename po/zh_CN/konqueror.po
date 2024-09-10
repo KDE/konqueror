@@ -31,85 +31,85 @@ msgstr "kde-china@kde.org"
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "类型：%1"
 
 #: src/downloadactionquestion.cpp:169
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "记住用于此类型文件的操作"
 
 #: src/downloadactionquestion.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
-msgstr ""
+msgstr "保存“%1”吗？"
 
 #: src/downloadactionquestion.cpp:287
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr ""
+msgstr "打开“%1”吗？"
 
 #: src/downloadactionquestion.cpp:304
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr ""
+msgstr "打开方式(&O)..."
 
 #: src/downloadactionquestion.cpp:312 src/downloadactionquestion.cpp:465
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr ""
+msgstr "用 %1 打开(&O)"
 
 #: src/downloadactionquestion.cpp:321
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
-msgstr ""
+msgstr "打开方式(&O)"
 
 #: src/downloadactionquestion.cpp:337
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
-msgstr ""
+msgstr "用 %1 显示(&D)"
 
 #: src/downloadactionquestion.cpp:349
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
-msgstr ""
+msgstr "显示方式(&D)"
 
 #: src/downloadactionquestion.cpp:371
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr ""
+msgstr "用 %1 打开(&W)"
 
 #: src/downloadactionquestion.cpp:403
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
-msgstr ""
+msgstr "用 %1 显示(&I)"
 
 #: src/downloadactionquestion.cpp:425
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
-msgstr ""
+msgstr "不支持此文件的查看器"
 
 #: src/downloadactionquestion.cpp:429
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
-msgstr ""
+msgstr "可能无法显示此文件的查看器"
 
 #: src/downloadactionquestion.cpp:430
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
-msgstr ""
+msgstr "此文件"
 
 #: src/downloadactionquestion.cpp:431
 #, kde-format
@@ -119,18 +119,21 @@ msgid ""
 "type is incorrect or if a viewer can display %1 even if it doesn't "
 "officially support it.</p>"
 msgstr ""
+"<p>理论上不支持显示 %1 的查看器。使用它们打开此文件很可能会失败</p><p>之所以"
+"提供这些查看器选项是为了应对文件类型检测有误的情况，或者某个特定的查看器的确"
+"能够显示 %1，尽管它并不官方支持此文件类型的情况。</p>"
 
 #: src/downloadactionquestion.cpp:452
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr ""
+msgstr "名称：%1"
 
 #: src/downloadactionquestion.cpp:454
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "这是服务器建议的文件名"
 
 #: src/konqapplication.cpp:118
 #, kde-format
