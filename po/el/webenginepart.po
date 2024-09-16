@@ -17,11 +17,11 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Greek\n"
-"X-Poedit-Country: GREECE\n"
-"X-Poedit-SourceCharset: utf-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 21.12.3\n"
+"X-Poedit-Country: GREECE\n"
+"X-Poedit-Language: Greek\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -35,9 +35,7 @@ msgstr "p_vidalis@hotmail.com, sstavra@gmail.com"
 
 #: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:74
 #: src/about/konq_aboutpage.cpp:197 src/about/konq_aboutpage.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
-#| msgid "Be free."
+#, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
 msgstr "Ελευθερωθείτε."
@@ -476,8 +474,7 @@ msgid "Servers, page scripts"
 msgstr ""
 
 #: src/cookies/cookiealertdlg.cpp:41
-#, fuzzy, kde-format
-#| msgid "Accept"
+#, kde-format
 msgctxt "@label accept cookie"
 msgid "Accept"
 msgstr "Αποδοχή"
@@ -491,8 +488,7 @@ msgid "Accept for this session"
 msgstr "Πο&τέ για αυτόν τον ιστότοπο"
 
 #: src/cookies/cookiealertdlg.cpp:45
-#, fuzzy, kde-format
-#| msgid "Reject"
+#, kde-format
 msgctxt "@label reject cookie"
 msgid "Reject"
 msgstr "Απόρριψη"

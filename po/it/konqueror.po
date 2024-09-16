@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-09 00:38+0000\n"
-"PO-Revision-Date: 2024-09-09 17:15+0200\n"
+"PO-Revision-Date: 2024-09-14 15:44+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -113,7 +113,7 @@ msgstr "I visori non supportano questo file"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
-msgstr ""
+msgstr "Visori improbabili per visualizzare il file"
 
 #: src/downloadactionquestion.cpp:430
 #, kde-format
@@ -129,6 +129,11 @@ msgid ""
 "type is incorrect or if a viewer can display %1 even if it doesn't "
 "officially support it.</p>"
 msgstr ""
+"<p>Visori che probabilmente non sono in grado di visualizzare %1; usandoli, "
+"quasi sicuramente non avranno successo.</p><p>Queste possibilità vengono "
+"fornite nel caso in cui il tipo di file rilevato non sia corretto, oppure se "
+"un visore riesce a visualizzare %1 anche se ufficialmente non lo supporto.</"
+"p>"
 
 #: src/downloadactionquestion.cpp:452
 #, kde-format

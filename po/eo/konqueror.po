@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-09 00:38+0000\n"
-"PO-Revision-Date: 2024-07-12 22:08+0200\n"
+"PO-Revision-Date: 2024-09-15 04:00+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -39,7 +39,7 @@ msgstr "pedrotpmx@wanadoo.fr,cfmckee@gmail.com,olivermkellogg@gmail.com"
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "Tipo: %1"
 
 #: src/downloadactionquestion.cpp:169
 #, kde-format
@@ -51,66 +51,55 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
-msgstr ""
+msgstr "Ĉu konservi '%1'?"
 
 #: src/downloadactionquestion.cpp:287
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr "Malfermi per %1"
+msgstr "Ĉu malfermi '%1'?"
 
 #: src/downloadactionquestion.cpp:304
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr "Mal&fermi per"
+msgstr "Mal&fermi per..."
 
 #: src/downloadactionquestion.cpp:312 src/downloadactionquestion.cpp:465
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr "Malfermi per %1"
+msgstr "Mal&fermi per %1"
 
 #: src/downloadactionquestion.cpp:321
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "Mal&fermi per"
 
 #: src/downloadactionquestion.cpp:337
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
-msgstr "Montri"
+msgstr "Montr&i en %1"
 
 #: src/downloadactionquestion.cpp:349
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
-msgstr "Montri"
+msgstr "Mon&tri en"
 
 #: src/downloadactionquestion.cpp:371
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Malfermi per %1"
+msgstr "Malfermi &per %1"
 
 #: src/downloadactionquestion.cpp:403
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
-msgstr "Montri"
+msgstr "Montr&i en %1"
 
 #: src/downloadactionquestion.cpp:425
 #, kde-format
@@ -128,7 +117,7 @@ msgstr ""
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
-msgstr ""
+msgstr "ĉi dosiero"
 
 #: src/downloadactionquestion.cpp:431
 #, kde-format
@@ -143,7 +132,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr ""
+msgstr "Nomo: %1"
 
 #: src/downloadactionquestion.cpp:454
 #, kde-format
@@ -1971,118 +1960,3 @@ msgstr "<filename>%1</filename> povas esti efektivigita. Ĉu vi volas ruli ĝin?
 #, kde-format
 msgid "Save As"
 msgstr "Konservi kiel"
-
-#~ msgid "Start Page"
-#~ msgstr "Komenca Paĝo"
-
-#~ msgid "This is the URL of the web page where Konqueror will start from."
-#~ msgstr "Ĉi tiu estas la URL de la retpaĝo de kie Konqueror komencos."
-
-#~ msgid ""
-#~ "This is the URL of the web page where Konqueror will jump to when the \\"
-#~ "\"Home\\\" button is pressed."
-#~ msgstr ""
-#~ "Ĉi tiu estas la URL de la retpaĝo al kiu Konqueror saltos kiam la butono "
-#~ "\\\"Hejmo\\\" estas premata."
-
-#~ msgid "Maximum number of Closed Items"
-#~ msgstr "Maksimuma nombro da Fermitaj Eroj"
-
-#~ msgid ""
-#~ "This sets the maximum number of closed items that will be stored in "
-#~ "memory. This limit will not be surpassed."
-#~ msgstr ""
-#~ "Ĉi tio fiksas la maksimuman nombron da fermitaj eroj, kiuj estos "
-#~ "konservitaj en memoro. Ĉi tiu limo ne estos superita."
-
-#~ msgid "Open folders in separate windows"
-#~ msgstr "Malfermi dosierujojn en apartaj fenestroj"
-
-#~ msgid ""
-#~ "If this option is checked, Konqueror will open a new window when you open "
-#~ "a folder, rather than showing that folder's contents in the current "
-#~ "window."
-#~ msgstr ""
-#~ "Se tiu opcio estas ebligita, Konkeranto malfermos novan fenestron kiam "
-#~ "ajn vi malfermas dosierujon, anstataŭ montri la dosierujon en la nuna "
-#~ "fenestro."
-
-#~ msgid "Show file tips"
-#~ msgstr "Montri dosierkonsiletojn"
-
-#~ msgid ""
-#~ "Here you can control if, when moving the mouse over a file, you want to "
-#~ "see a small popup window with additional information about that file"
-#~ msgstr ""
-#~ "Jen vi povas elekti ĉu vi volas ricevi ŝprucfenestron kiu enhavas kromajn "
-#~ "informojn pri la dosiero, kiam vi ŝvebas la muson super dosiero"
-
-#~ msgid "Show previews in file tips"
-#~ msgstr "Montri antaŭrigardojn en dosierkonsiloj"
-
-#~ msgid ""
-#~ "Here you can control if you want the popup window to contain a larger "
-#~ "preview for the file, when moving the mouse over it"
-#~ msgstr ""
-#~ "Ĉi tie vi povas regi ĉu vi volas, ke la ŝprucfenestro enhavu pli grandan "
-#~ "antaŭrigardon por la dosiero, kiam vi movas la muson super ĝi."
-
-#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
-#~ msgstr "Montri 'Forigi' menuajn enirojn, kiuj preteriras la rubujon"
-
-#~ msgid ""
-#~ "Check this if you want 'Delete' menu commands to be displayed on the "
-#~ "desktop and in the file manager's menus and context menus. You can always "
-#~ "delete files when hidden by holding the Shift key while calling 'Move to "
-#~ "Trash'."
-#~ msgstr ""
-#~ "Marku ĉi tion se vi volas ke la menukomandoj 'Forigi' estu montrataj sur "
-#~ "la labortablo kaj en la menuoj kaj kuntekstmenuoj de la "
-#~ "dosieradministranto. Vi ĉiam povas forigi dosierojn kiam ili estas "
-#~ "kaŝitaj tenante la Shift-klavon dum vokado \"Movi al Rubujo\"."
-
-#~ msgid "Choose where to display the tabs bar"
-#~ msgstr "Elektu kie montri la langetbreton"
-
-#~ msgid "Number of Open With items in the File menu"
-#~ msgstr "Nombro de Open With eroj en la Dosiero-menuo"
-
-#~ msgid "Standard font"
-#~ msgstr "Norma tiparo"
-
-#~ msgid "This is the font used to display text in Konqueror windows."
-#~ msgstr ""
-#~ "Ĉi tiu estas la tiparo uzata por montri tekston en Konqueror-fenestroj."
-
-#~ msgid "Maximum number of history items per view"
-#~ msgstr "Maksimuma nombro da historiaj eroj per vido"
-
-#~ msgid "Ask confirmation for deleting a file."
-#~ msgstr "Peti konfirmon por forigi dosieron."
-
-#~ msgid ""
-#~ "This option tells Konqueror whether to ask for a confirmation when you "
-#~ "delete a file without using the trash folder. Warning, deleted files can "
-#~ "not be recovered, so it is recommended to leave this confirmation enabled."
-#~ msgstr ""
-#~ "Ĉi tiu opcio diras al Konqueror ĉu peti konfirmon kiam vi forigas "
-#~ "dosieron sen uzi la rubujon. Averto, forigitaj dosieroj ne povas esti "
-#~ "reakiritaj, do rekomendas lasi ĉi tiun konfirmon ebligita."
-
-#~ msgid "Ask confirmation for move to trash"
-#~ msgstr "Peti konfirmon pri movo al rubujo"
-
-#~ msgid ""
-#~ "This option tells Konqueror whether to ask for a confirmation when you "
-#~ "move the file to your trash folder, from where it can be recovered very "
-#~ "easily."
-#~ msgstr ""
-#~ "Ĉi tiu opcio diras al Konqueror ĉu peti konfirmon kiam vi movas la "
-#~ "dosieron al via rubujo, de kie ĝi povas esti reakirita tre facile."
-
-#~ msgid ""
-#~ "If true, when opening a session from within the sessions dialog the tabs "
-#~ "will be opened inside current window."
-#~ msgstr ""
-#~ "Se vera, kiam oni malfermas seancon el la dialogo de seancoj, la langetoj "
-#~ "estos malfermitaj en la nuna fenestro."
