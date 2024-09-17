@@ -34,13 +34,13 @@ msgstr "lukas@kde.org"
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "Typ: %1"
 
 #: src/downloadactionquestion.cpp:169
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "Zapamatovat si činnost pro soubory tohoto typu"
 
 #: src/downloadactionquestion.cpp:285
 #, kde-format
@@ -49,63 +49,52 @@ msgid "Save '%1'?"
 msgstr ""
 
 #: src/downloadactionquestion.cpp:287
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr "Otevřít pomocí %1"
+msgstr "Otevřít '%1'?"
 
 #: src/downloadactionquestion.cpp:304
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr "&Otevřít pomocí"
+msgstr "&Otevřít pomocí..."
 
 #: src/downloadactionquestion.cpp:312 src/downloadactionquestion.cpp:465
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr "Otevřít pomocí %1"
+msgstr "&Otevřít pomocí %1"
 
 #: src/downloadactionquestion.cpp:321
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "&Otevřít pomocí"
 
 #: src/downloadactionquestion.cpp:337
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
-msgstr "Zobrazení"
+msgstr ""
 
 #: src/downloadactionquestion.cpp:349
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
-msgstr "Zobrazení"
+msgstr ""
 
 #: src/downloadactionquestion.cpp:371
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Otevřít pomocí %1"
+msgstr "&Otevřít pomocí %1"
 
 #: src/downloadactionquestion.cpp:403
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
-msgstr "Zobrazení"
+msgstr ""
 
 #: src/downloadactionquestion.cpp:425
 #, kde-format
@@ -138,13 +127,13 @@ msgstr ""
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr ""
+msgstr "Název: %1"
 
 #: src/downloadactionquestion.cpp:454
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "Toto je název souboru navržený serverem"
 
 #: src/konqapplication.cpp:118
 #, kde-format
