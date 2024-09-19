@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-09 00:38+0000\n"
-"PO-Revision-Date: 2024-07-12 11:36+0200\n"
+"PO-Revision-Date: 2024-09-18 09:38+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -46,7 +46,7 @@ msgstr "Zapamatovat si činnost pro soubory tohoto typu"
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
-msgstr ""
+msgstr "Uložit '%1'?"
 
 #: src/downloadactionquestion.cpp:287
 #, kde-format
@@ -76,13 +76,13 @@ msgstr "&Otevřít pomocí"
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
-msgstr ""
+msgstr "&Zobrazit v %1"
 
 #: src/downloadactionquestion.cpp:349
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
-msgstr ""
+msgstr "&Zobrazit v"
 
 #: src/downloadactionquestion.cpp:371
 #, kde-format
@@ -94,25 +94,25 @@ msgstr "&Otevřít pomocí %1"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
-msgstr ""
+msgstr "Zobrazit &v %1"
 
 #: src/downloadactionquestion.cpp:425
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
-msgstr ""
+msgstr "Prohlížeče nepodporující tento soubor"
 
 #: src/downloadactionquestion.cpp:429
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
-msgstr ""
+msgstr "Prohlížeče pravděpodobně neschopné zobrazit tento soubor"
 
 #: src/downloadactionquestion.cpp:430
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
-msgstr ""
+msgstr "tento soubor"
 
 #: src/downloadactionquestion.cpp:431
 #, kde-format
