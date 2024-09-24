@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Slovenian "INCLUDE"
+> <!-- change language only here -->
+]>
+<!-- extragear has another adblock ? -->
+<article lang="&language;" id="khtml-adblock">
+<articleinfo>
+<title
+>Filtri AdBlocK</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Matej</firstname
+><surname
+>Badalič</surname
+><affiliation
+><address
+><email
+>matej_badalic@slo.net</email
+></address
+></affiliation
+><contrib
+>Prevod:</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>08.11.2016</date>
+<releaseinfo
+>Aplikacije 16.12</releaseinfo>
+</articleinfo>
+
+<para
+>&konqueror; AdBlocK je mogoče konfigurirati tako, da zamenja ali odstrani slike ali okvirje s spletnih strani, ki se ujemajo z vrsto filtrov.</para>
+
+<para
+>Nastavitev <guilabel
+>Omogoči filtre</guilabel
+> omogoči ali onemogoči uporabo seznama filtrov URL.</para>
+<para
+>Če je možnost <guilabel
+>Skrij filtrirane slike</guilabel
+> omogočena, so blokirane slike v celoti odstranjene s strani in prostor, ki so ga zasedle, je ponovno pridobljen. Če je možnost onemogočena, se namesto filtriranih slik uporabi nadomestna slika.</para>
+
+<variablelist>
+<varlistentry id="khtml-adblock-manual">
+<term
+><guilabel
+>Ročni filter</guilabel
+></term>
+<listitem>
+<para
+>Glavni del tega zavihka je seznam URL-jev, ki bodo primerjani z imeni slik in okvirjev, da se odločijo za dejanja filtriranja. Nadomestne znake lahko podate kot regularne izraze v slogu imena datoteke.</para>
+
+<para
+>Vsak filter je lahko izražen kot niz nadomestnih znakov v slogu datoteke (npr. http://www.site.com/ads/*) ali kot polni regularni izraz, tako da filter obdate s poševnicami (npr. //(ads|dclk) \./).</para>
+
+<para
+>Pred katerim koli filtrirnim nizom je lahko <literal
+>@@</literal
+>, da na beli seznam (omogoči) vsak ujemajoči se &URL;, ki ima prednost pred katerim koli filtrom na črnem seznamu (blokirnih).</para>
+
+<para
+><guilabel
+>Uvoz</guilabel
+> in <guilabel
+>Izvoz</guilabel
+> bosta shranila ali prebrala trenutni seznam filtrov v datoteko z navadnim besedilom. Datoteka se začne z naslovno vrstico <userinput
+>[AdBlock]</userinput
+>, nato pa vsi filtri sledijo vsakemu v ločeni vrstici. Vrstice s predpono klicaja (<userinput
+>!</userinput
+>) in naslovna vrstica se obravnavajo kot komentarji in jih je mogoče uporabiti za pojasnitev ali označevanje niza filtrov.</para>
+
+<para
+>Označite vnos s seznama, da ga spremenite v polju za urejanje ali odstranite ta element. Tukaj vnesite nov filtrski niz in ga dodajte na seznam z gumbom <guibutton
+> Vstavi</guibutton
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="khtml-adblock-automatic">
+<term
+><guilabel
+>Samodejni filter</guilabel
+></term>
+<listitem>
+<para
+>Ta zavihek prikazuje seznam imen in &URL; z vnaprej določenimi vnosi filtra AdBlock. Če želite omogočiti vnos, označite potrditveno polje poleg imena filtra in prilagodite <guilabel
+>Interval samodejnega posodabljanja</guilabel
+> (privzeto 7 dni). </para>
+</listitem>
+</varlistentry>
+  
+</variablelist>
+
+<para
+>Če so filtri AdBlock omogočeni, je na desni strani vrstice stanja prikazana ikona. Uporabite &RMB; kliknite na to ikono, da odprete kontekstni meni z dejanji za prikaz vseh blokiranih elementov na spletni strani, odprite to &systemsettings; modul in začasno onemogočite blokiranje spletnega mesta ali strani.</para>
+
+<para
+>Klik z &LMB; prikaže tudi pogovorno okno z vsemi blokiranimi elementi na odprti spletni strani. V tem pogovornem oknu lahko neposredno dodate nove filtre, ne da bi odprli ta &systemsettings; modul.</para>
+
+</article>
