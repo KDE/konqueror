@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2024-09-24 00:38+0000\n"
 "PO-Revision-Date: 2024-09-05 13:16+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -699,7 +699,7 @@ msgstr "Politika"
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
 #: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
-#: useragent/useragent.ui:84
+#: useragent/useragent.ui:81
 #, kde-format
 msgid "&New..."
 msgstr "Jau&na..."
@@ -1604,7 +1604,7 @@ msgid "Export Filters"
 msgstr "Eksporta filtrs"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:553 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:58
 #, kde-format
 msgid "Name"
 msgstr "Nosaukums"
@@ -2418,14 +2418,8 @@ msgstr ""
 msgid "Activate previously used tab when closing the current tab"
 msgstr "Aktivizēt iepriekš lietoto cilni, kad aizver pašreizējo cilni"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, UserAgent)
-#: useragent/useragent.ui:14
-#, kde-format
-msgid "Form"
-msgstr "Veidlapa"
-
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
-#: useragent/useragent.ui:23
+#: useragent/useragent.ui:20
 #, kde-format
 msgid "Existing identifications"
 msgstr "Pastāvošās identifikācijas"
@@ -2433,50 +2427,50 @@ msgstr "Pastāvošās identifikācijas"
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150
+#: useragent/useragent.ui:33 useragent/useragent.ui:78
+#: useragent/useragent.ui:147
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: useragent/useragent.ui:66
+#: useragent/useragent.ui:63
 #, kde-format
 msgid "Content"
 msgstr "Saturs"
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
-#: useragent/useragent.ui:97
+#: useragent/useragent.ui:94
 #, kde-format
 msgid "&Edit..."
 msgstr "&Rediģēt..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
-#: useragent/useragent.ui:110
+#: useragent/useragent.ui:107
 #, kde-format
 msgid "&Rename..."
 msgstr "&Pārdēvēt..."
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
-#: useragent/useragent.ui:123
+#: useragent/useragent.ui:120
 #, kde-format
 msgid "Du&plicate..."
 msgstr "Du&blēt..."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
-#: useragent/useragent.ui:136
+#: useragent/useragent.ui:133
 #, kde-format
 msgid "&Delete"
 msgstr "&Dzēst"
 
 #. i18n: ectx: property (text), widget (QPushButton, useTemplateBtn)
-#: useragent/useragent.ui:153
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "Choose &selected identification"
 msgstr "Izvēlēties &atlasīto identifikāciju"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
-#: useragent/useragent.ui:163
+#: useragent/useragent.ui:160
 #, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
@@ -2486,19 +2480,19 @@ msgstr ""
 "izvēli, bet izmanto noklusējuma</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
-#: useragent/useragent.ui:166
+#: useragent/useragent.ui:163
 #, kde-format
 msgid "Use &default identification"
 msgstr "Izmantot &noklusējuma identifikāciju"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: useragent/useragent.ui:181
+#: useragent/useragent.ui:178
 #, kde-format
 msgid "&Custom identification"
 msgstr "&Pielāgota identifikācija"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
-#: useragent/useragent.ui:191
+#: useragent/useragent.ui:188
 #, kde-format
 msgid ""
 "<html><head/><body><p>The browser identification to use when the default "
@@ -2509,6 +2503,9 @@ msgstr ""
 "<html><head/><body><p>Pārlūkprogrammas identifikācija, ko lietot, kad ir "
 "izslēgta noklusējuma identifikācija.</p><p>Varat to ievadīt manuāli vai sākt "
 "ar kādu sarakstā un mainīt pēc vajadzības.</p></body></html>"
+
+#~ msgid "Form"
+#~ msgstr "Veidlapa"
 
 #~ msgid "Form Com&pletion"
 #~ msgstr "Veidlapu &pabeigšana"

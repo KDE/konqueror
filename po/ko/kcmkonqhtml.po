@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2024-09-24 00:38+0000\n"
 "PO-Revision-Date: 2024-08-19 23:44+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -687,7 +687,7 @@ msgstr "정책"
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
 #: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
-#: useragent/useragent.ui:84
+#: useragent/useragent.ui:81
 #, kde-format
 msgid "&New..."
 msgstr "새로 만들기(&N)..."
@@ -1547,7 +1547,7 @@ msgid "Export Filters"
 msgstr "필터 내보내기"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:553 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:58
 #, kde-format
 msgid "Name"
 msgstr "이름"
@@ -2329,14 +2329,8 @@ msgstr ""
 msgid "Activate previously used tab when closing the current tab"
 msgstr "현재 탭을 닫을 때 전에 사용했던 탭 활성화"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, UserAgent)
-#: useragent/useragent.ui:14
-#, kde-format
-msgid "Form"
-msgstr "폼"
-
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
-#: useragent/useragent.ui:23
+#: useragent/useragent.ui:20
 #, kde-format
 msgid "Existing identifications"
 msgstr "기존 식별자"
@@ -2344,50 +2338,50 @@ msgstr "기존 식별자"
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150
+#: useragent/useragent.ui:33 useragent/useragent.ui:78
+#: useragent/useragent.ui:147
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: useragent/useragent.ui:66
+#: useragent/useragent.ui:63
 #, kde-format
 msgid "Content"
 msgstr "내용"
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
-#: useragent/useragent.ui:97
+#: useragent/useragent.ui:94
 #, kde-format
 msgid "&Edit..."
 msgstr "편집(&E)..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
-#: useragent/useragent.ui:110
+#: useragent/useragent.ui:107
 #, kde-format
 msgid "&Rename..."
 msgstr "이름 바꾸기(&R)..."
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
-#: useragent/useragent.ui:123
+#: useragent/useragent.ui:120
 #, kde-format
 msgid "Du&plicate..."
 msgstr "복제(&P)..."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
-#: useragent/useragent.ui:136
+#: useragent/useragent.ui:133
 #, kde-format
 msgid "&Delete"
 msgstr "삭제(&D)"
 
 #. i18n: ectx: property (text), widget (QPushButton, useTemplateBtn)
-#: useragent/useragent.ui:153
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "Choose &selected identification"
 msgstr "선택한 식별자 사용(&S)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
-#: useragent/useragent.ui:163
+#: useragent/useragent.ui:160
 #, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
@@ -2397,19 +2391,19 @@ msgstr ""
 "고 기본 식별자를 사용합니다</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
-#: useragent/useragent.ui:166
+#: useragent/useragent.ui:163
 #, kde-format
 msgid "Use &default identification"
 msgstr "기본 식별자 사용(&D)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: useragent/useragent.ui:181
+#: useragent/useragent.ui:178
 #, kde-format
 msgid "&Custom identification"
 msgstr "사용자 정의 식별자(&C)"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
-#: useragent/useragent.ui:191
+#: useragent/useragent.ui:188
 #, kde-format
 msgid ""
 "<html><head/><body><p>The browser identification to use when the default "
@@ -2420,6 +2414,9 @@ msgstr ""
 "<html><head/><body><p>기본 식별자가 비활성화되었을 때 사용할 브라우저 식별자"
 "입니다.</p><p>직접 입력하거나 아래 목록에 있는 항목을 선택한 후 필요에 따라 "
 "변경할 수 있습니다.</p></body></html>"
+
+#~ msgid "Form"
+#~ msgstr "폼"
 
 #~ msgid "Form Com&pletion"
 #~ msgstr "폼 자동 완성(&P)"

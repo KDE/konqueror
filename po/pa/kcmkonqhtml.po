@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2024-09-24 00:38+0000\n"
 "PO-Revision-Date: 2012-05-17 22:16+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -631,7 +631,7 @@ msgstr "ਪਾਲਸੀ"
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
 #: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
-#: useragent/useragent.ui:84
+#: useragent/useragent.ui:81
 #, kde-format
 msgid "&New..."
 msgstr "ਨਵਾਂ(&N)..."
@@ -1451,7 +1451,7 @@ msgid "Export Filters"
 msgstr "ਫਿਲਟਰ ਕਰਨ ਲਈ URL ਸਮੀਕਰਨ"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:553 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:58
 #, kde-format
 msgid "Name"
 msgstr "ਨਾਂ"
@@ -2177,14 +2177,8 @@ msgstr ""
 msgid "Activate previously used tab when closing the current tab"
 msgstr "ਮੌਜੂਦਾ ਟੈਬ ਬੰਦ ਕਰਨ ਉੱਤੇ ਪਿਛਲੀ ਵਰਤੀ ਟੈਬ ਨੂੰ ਸਰਗਰਮ ਕਰੋ"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, UserAgent)
-#: useragent/useragent.ui:14
-#, kde-format
-msgid "Form"
-msgstr ""
-
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
-#: useragent/useragent.ui:23
+#: useragent/useragent.ui:20
 #, kde-format
 msgid "Existing identifications"
 msgstr ""
@@ -2192,52 +2186,52 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150
+#: useragent/useragent.ui:33 useragent/useragent.ui:78
+#: useragent/useragent.ui:147
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: useragent/useragent.ui:66
+#: useragent/useragent.ui:63
 #, kde-format
 msgid "Content"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
-#: useragent/useragent.ui:97
+#: useragent/useragent.ui:94
 #, fuzzy, kde-format
 #| msgid "&Export..."
 msgid "&Edit..."
 msgstr "ਐਕਸਪੋਰਟ(&E)..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
-#: useragent/useragent.ui:110
+#: useragent/useragent.ui:107
 #, kde-format
 msgid "&Rename..."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
-#: useragent/useragent.ui:123
+#: useragent/useragent.ui:120
 #, kde-format
 msgid "Du&plicate..."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
-#: useragent/useragent.ui:136
+#: useragent/useragent.ui:133
 #, fuzzy, kde-format
 #| msgid "De&lete"
 msgid "&Delete"
 msgstr "ਹਟਾਓ(&l)"
 
 #. i18n: ectx: property (text), widget (QPushButton, useTemplateBtn)
-#: useragent/useragent.ui:153
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "Choose &selected identification"
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
-#: useragent/useragent.ui:163
+#: useragent/useragent.ui:160
 #, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
@@ -2245,19 +2239,19 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
-#: useragent/useragent.ui:166
+#: useragent/useragent.ui:163
 #, kde-format
 msgid "Use &default identification"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: useragent/useragent.ui:181
+#: useragent/useragent.ui:178
 #, kde-format
 msgid "&Custom identification"
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
-#: useragent/useragent.ui:191
+#: useragent/useragent.ui:188
 #, kde-format
 msgid ""
 "<html><head/><body><p>The browser identification to use when the default "

@@ -1,5 +1,5 @@
 # translation of kcmkonqhtml.po to Polish
-# Version: $Revision: 1685634 $
+# Version: $Revision: 1691242 $
 # translation of kcmkonqhtml.po to
 # Polskie napisy do konfiguratora przeglądarki Konquerora.
 # Copyright (C) 2000,2002,2003, 2004, 2005, 2006, 2008, 2009 Free Software Foundation, Inc.
@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2024-09-24 00:38+0000\n"
 "PO-Revision-Date: 2024-07-27 09:00+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -700,7 +700,7 @@ msgstr "Polityka"
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
 #: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
-#: useragent/useragent.ui:84
+#: useragent/useragent.ui:81
 #, kde-format
 msgid "&New..."
 msgstr "&Nowa..."
@@ -1604,7 +1604,7 @@ msgid "Export Filters"
 msgstr "Wyeksportuj filtry"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:553 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:58
 #, kde-format
 msgid "Name"
 msgstr "Nazwa"
@@ -2415,14 +2415,8 @@ msgstr ""
 msgid "Activate previously used tab when closing the current tab"
 msgstr "Uaktywnij poprzednią kartę po zamknięciu bieżącej"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, UserAgent)
-#: useragent/useragent.ui:14
-#, kde-format
-msgid "Form"
-msgstr "Formularz"
-
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
-#: useragent/useragent.ui:23
+#: useragent/useragent.ui:20
 #, kde-format
 msgid "Existing identifications"
 msgstr "Istniejące identyfikacje"
@@ -2430,50 +2424,50 @@ msgstr "Istniejące identyfikacje"
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150
+#: useragent/useragent.ui:33 useragent/useragent.ui:78
+#: useragent/useragent.ui:147
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: useragent/useragent.ui:66
+#: useragent/useragent.ui:63
 #, kde-format
 msgid "Content"
 msgstr "Zawartość"
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
-#: useragent/useragent.ui:97
+#: useragent/useragent.ui:94
 #, kde-format
 msgid "&Edit..."
 msgstr "&Edytuj..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
-#: useragent/useragent.ui:110
+#: useragent/useragent.ui:107
 #, kde-format
 msgid "&Rename..."
 msgstr "P&rzemianuj..."
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
-#: useragent/useragent.ui:123
+#: useragent/useragent.ui:120
 #, kde-format
 msgid "Du&plicate..."
 msgstr "&Powiel..."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
-#: useragent/useragent.ui:136
+#: useragent/useragent.ui:133
 #, kde-format
 msgid "&Delete"
 msgstr "&Usuń"
 
 #. i18n: ectx: property (text), widget (QPushButton, useTemplateBtn)
-#: useragent/useragent.ui:153
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "Choose &selected identification"
 msgstr "&Wybierz zaznaczoną identyfikację"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
-#: useragent/useragent.ui:163
+#: useragent/useragent.ui:160
 #, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
@@ -2483,19 +2477,19 @@ msgstr ""
 "identyfikacji i użyj domyślnej</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
-#: useragent/useragent.ui:166
+#: useragent/useragent.ui:163
 #, kde-format
 msgid "Use &default identification"
 msgstr "Użyj &domyślnej identyfikacji"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: useragent/useragent.ui:181
+#: useragent/useragent.ui:178
 #, kde-format
 msgid "&Custom identification"
 msgstr "Własne identyfikac&je"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
-#: useragent/useragent.ui:191
+#: useragent/useragent.ui:188
 #, kde-format
 msgid ""
 "<html><head/><body><p>The browser identification to use when the default "
@@ -2506,6 +2500,9 @@ msgstr ""
 "<html><head/><body><p>Identyfikacja przeglądarki używana, gdy wyłączono tę "
 "domyślną.</p><p>Możesz ja wpisać ręcznie lub zacząć od jednej z wykazu i "
 "dostosować ją pod swoje potrzeby.</p></body></html>"
+
+#~ msgid "Form"
+#~ msgstr "Formularz"
 
 #~ msgid "Form Com&pletion"
 #~ msgstr "Dopełnianie &formularzy"

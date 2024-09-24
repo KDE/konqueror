@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2024-09-24 00:38+0000\n"
 "PO-Revision-Date: 2024-07-25 04:57+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -696,7 +696,7 @@ msgstr "წესები"
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
 #: cookies/kcookiespolicies.ui:176 domainlistview.cpp:48
-#: useragent/useragent.ui:84
+#: useragent/useragent.ui:81
 #, kde-format
 msgid "&New..."
 msgstr "&ახალი..."
@@ -1602,7 +1602,7 @@ msgid "Export Filters"
 msgstr "ფილტრების გატანა"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:553 useragent/useragent.ui:61
+#: filteropts.cpp:553 useragent/useragent.ui:58
 #, kde-format
 msgid "Name"
 msgstr "სახელი"
@@ -2410,14 +2410,8 @@ msgstr ""
 msgid "Activate previously used tab when closing the current tab"
 msgstr "მიმდინარე ჩანართის დახურვისას წინა გამოყენებულ ჩანართზე გადართვა"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, UserAgent)
-#: useragent/useragent.ui:14
-#, kde-format
-msgid "Form"
-msgstr "ფორმა"
-
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
-#: useragent/useragent.ui:23
+#: useragent/useragent.ui:20
 #, kde-format
 msgid "Existing identifications"
 msgstr "არსებული იდენტიფიკაციები"
@@ -2425,50 +2419,50 @@ msgstr "არსებული იდენტიფიკაციები"
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (toolTip), widget (QPushButton, useTemplateBtn)
-#: useragent/useragent.ui:36 useragent/useragent.ui:81
-#: useragent/useragent.ui:150
+#: useragent/useragent.ui:33 useragent/useragent.ui:78
+#: useragent/useragent.ui:147
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: useragent/useragent.ui:66
+#: useragent/useragent.ui:63
 #, kde-format
 msgid "Content"
 msgstr "შემცველობა"
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
-#: useragent/useragent.ui:97
+#: useragent/useragent.ui:94
 #, kde-format
 msgid "&Edit..."
 msgstr "&ჩასწორება..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
-#: useragent/useragent.ui:110
+#: useragent/useragent.ui:107
 #, kde-format
 msgid "&Rename..."
 msgstr "&სახელის გადარქმევა..."
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
-#: useragent/useragent.ui:123
+#: useragent/useragent.ui:120
 #, kde-format
 msgid "Du&plicate..."
 msgstr "&დუბლირება..."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
-#: useragent/useragent.ui:136
+#: useragent/useragent.ui:133
 #, kde-format
 msgid "&Delete"
 msgstr "&წაშლა"
 
 #. i18n: ectx: property (text), widget (QPushButton, useTemplateBtn)
-#: useragent/useragent.ui:153
+#: useragent/useragent.ui:150
 #, kde-format
 msgid "Choose &selected identification"
 msgstr "&მონიშნული იდენტიფიკაციის არჩევა"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
-#: useragent/useragent.ui:163
+#: useragent/useragent.ui:160
 #, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
@@ -2478,19 +2472,19 @@ msgstr ""
 "ნაგულისხმევის გამოყენება</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
-#: useragent/useragent.ui:166
+#: useragent/useragent.ui:163
 #, kde-format
 msgid "Use &default identification"
 msgstr "ნაგულისხმები იდენტიფიკაციის &გამოყენება"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: useragent/useragent.ui:181
+#: useragent/useragent.ui:178
 #, kde-format
 msgid "&Custom identification"
 msgstr "მომხმარებლის &იდენტიფიკაცია"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
-#: useragent/useragent.ui:191
+#: useragent/useragent.ui:188
 #, kde-format
 msgid ""
 "<html><head/><body><p>The browser identification to use when the default "
@@ -2502,6 +2496,9 @@ msgstr ""
 "ნაგულისხმევი გამორთულია.</p><p>ის შეგიძლიათ, ხელით შეიყვანოთ ან აირჩიოთ "
 "ქვემოთ მოყვანილი სიიდან და შეცვალოთ ისე, როგორც თქვენ გნებავთ.</p></body></"
 "html>"
+
+#~ msgid "Form"
+#~ msgstr "ფორმა"
 
 #~ msgid "Form Com&pletion"
 #~ msgstr "ფორმის &დასრულება"
