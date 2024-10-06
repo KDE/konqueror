@@ -11,7 +11,7 @@
 
 #include <QDialog>
 
-#include "webenginewallet.h"
+#include "wallet/webenginewallet.h"
 
 class WebFieldsDataModel;
 

@@ -14,7 +14,7 @@
 #include "spellcheckermanager.h"
 #include "webenginepartdownloadmanager.h"
 #include "certificateerrordialogmanager.h"
-#include "webenginewallet.h"
+#include "wallet/webenginewallet.h"
 #include "webenginepart.h"
 #include "webenginepage.h"
 #include "navigationrecorder.h"

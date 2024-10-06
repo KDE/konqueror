@@ -74,6 +74,7 @@ public:
     WebEngineWallet::WebFormList pendingRemoveRequests;
     QHash<QUrl, FormsData> pendingFillRequests;
     QHash<QString, WebFormList> pendingSaveRequests;
+
     QSet<QUrl> confirmSaveRequestOverwrites;
 
     ///@brief A list of field names which the user is unlikely to want stored (such as search fields)
@@ -85,18 +86,6 @@ const char* WebEngineWallet::WebEngineWalletPrivate::s_fieldNamesToIgnore[] = {
     "search", "search_bar", //Other possible names for a search field
     "amount" //A field corresponding to a quantity
 };
-
-/**
- * Creates key used to store and retrieve form data.
- *
- */
-static QString walletKey(const WebEngineWallet::WebForm &form)
-{
-    QString key = form.url.toString(QUrl::RemoveQuery | QUrl::RemoveFragment);
-    key += QL1C('#');
-    key += form.name;
-    return key;
-}
 
 static QUrl urlForFrame(const QUrl &frameUrl, const QUrl &pageUrl)
 {
@@ -181,11 +170,9 @@ WebEngineWallet::WebFormList WebEngineWallet::WebEngineWalletPrivate::formsToFil
 {
     WebEngineWallet::WebFormList list;
     for (const WebEngineWallet::WebForm &form : allForms) {
-        if (q->hasCachedFormData(form)) {
-            WebEngineWallet::WebForm f(form.withAutoFillableFieldsOnly());
-            if (!f.fields.isEmpty()) {
-                list.append(f);
-            }
+        WebEngineWallet::WebForm f(form.withAutoFillableFieldsOnly());
+        if (!f.fields.isEmpty()) {
+            list.append(f);
         }
     }
     return list;
@@ -203,7 +190,6 @@ bool WebEngineWallet::WebEngineWalletPrivate::hasAutoFillableFields(const WebEng
     return std::any_of(forms.constBegin(), forms.constEnd(), [](const WebForm &f){return f.hasAutoFillableFields();});
 }
 
-
 void WebEngineWallet::WebEngineWalletPrivate::fillDataFromCache(WebEngineWallet::WebFormList &formList, bool custom)
 {
     if (!wallet) {
@@ -217,7 +203,7 @@ void WebEngineWallet::WebEngineWalletPrivate::fillDataFromCache(WebEngineWallet:
 
     while (formIt.hasNext()) {
         WebEngineWallet::WebForm &form = formIt.next();
-        const QString key(walletKey(form));
+        const QString key(form.walletKey());
         if (key != lastKey && wallet->readMap(key, cachedValues) != 0) {
             qCWarning(WEBENGINEPART_LOG) << "Unable to read form data for key:" << key;
             continue;
@@ -249,19 +235,21 @@ bool WebEngineWallet::WebEngineWalletPrivate::saveDataToCache(const QString &key
     int count = 0;
     const WebEngineWallet::WebFormList list = pendingSaveRequests.value(key);
     const QUrl url = list.first().url;
+    QMap <QString, QString> values, storedValues;
+
     QVectorIterator<WebEngineWallet::WebForm> formIt(list);
 
     while (formIt.hasNext()) {
         QMap<QString, QString> values, storedValues;
         WebEngineWallet::WebForm form = formIt.next();
-        const QString accessKey = walletKey(form);
+        const QString accessKey = form.walletKey();
         const int status = wallet->readMap(accessKey, storedValues);
         if (status == 0 && !storedValues.isEmpty()) {
             if (confirmSaveRequestOverwrites.contains(url)) {
                 confirmSaveRequestOverwrites.remove(url);
                 if (!storedValues.isEmpty()) {
                     auto fieldChanged = [&storedValues](const WebForm::WebField field){
-                        return storedValues.contains(field.name) && storedValues.value(field.name) != field.value;
+                        return !storedValues.contains(field.name) || storedValues.value(field.name) != field.value;
                     };
                     if (std::any_of(form.fields.constBegin(), form.fields.constEnd(), fieldChanged)) {
                         emit q->saveFormDataRequested(key, url);
@@ -323,7 +311,7 @@ void WebEngineWallet::WebEngineWalletPrivate::removeDataFromCache(const WebFormL
 
     QVectorIterator<WebForm> formIt(formList);
     while (formIt.hasNext()) {
-        wallet->removeEntry(walletKey(formIt.next()));
+        wallet->removeEntry(formIt.next().walletKey());
     }
 }
 

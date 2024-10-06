@@ -13,7 +13,7 @@
 #include <QStandardItemModel>
 #include <QStyledItemDelegate>
 
-#include "webenginewallet.h"
+#include "wallet/webenginewallet.h"
 
 /**
  * @brief Helper class to display passwords in WebFieldsDataWidget

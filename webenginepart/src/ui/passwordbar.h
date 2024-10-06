@@ -14,7 +14,7 @@
 #include <QUrl>
 #include <QPointer>
 
-#include "webenginewallet.h"
+#include "wallet/webenginewallet.h"
 #include "credentialsdetailswidget.h"
 
 class PasswordBar : public KMessageWidget
