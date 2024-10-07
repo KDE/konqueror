@@ -7,7 +7,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "webenginewallet.h"
+#include "wallet/webenginewallet.h"
+#include "walletkeymigrator.h"
 #include "webenginepage.h"
 #include "utils.h"
 #include "webenginecustomizecacheablefieldsdlg.h"
@@ -30,12 +31,17 @@
 #define QL1S(x)   QLatin1String(x)
 #define QL1C(x)   QLatin1Char(x)
 
+QStringList WebEngineWallet::WebForm::fieldNames() const
+{
+    QStringList names;
+    names.reserve(fields.size());
+    std::transform(fields.constBegin(), fields.constEnd(), std::back_inserter(names), [](const WebForm::WebField &f){return f.name;});
+    return names;
+}
+
 WebEngineSettings::WebFormInfo WebEngineWallet::WebForm::toSettingsInfo() const
 {
-    QStringList fieldNames;
-    fieldNames.reserve(fields.size());
-    std::transform(fields.constBegin(), fields.constEnd(), std::back_inserter(fieldNames), [](const WebForm::WebField &f){return f.name;});
-    return WebEngineSettings::WebFormInfo{name, framePath, fieldNames};
+    return WebEngineSettings::WebFormInfo{name, framePath, fieldNames()};
 }
 
 QString WebEngineWallet::customFormsKey(const QUrl& url)
@@ -75,6 +81,14 @@ bool WebEngineWallet::WebForm::hasFieldsWithWrittenValues() const
     return std::any_of(fields.constBegin(), fields.constEnd(), [](const WebField &f){return !f.readOnly && !f.value.isEmpty();});
 }
 
+bool WebEngineWallet::WebForm::hasFields(const QStringList& fieldNames) const
+{
+    auto filter = [this] (const QString &name) {
+        return std::any_of(fields.constBegin(), fields.constEnd(), [name](const WebField &f){return f.name == name;});
+    };
+    return std::all_of(fieldNames.constBegin(), fieldNames.constEnd(), filter);
+}
+
 WebEngineWallet::WebForm::WebFieldType WebEngineWallet::WebForm::fieldTypeFromTypeName(const QString& name)
 {
         static QMap<QString, WebFieldType> s_typeNameMap{
@@ -97,6 +111,15 @@ QString WebEngineWallet::WebForm::fieldNameFromType(WebEngineWallet::WebForm::We
     return QString();
 }
 
+QString WebEngineWallet::WebForm::walletKey() const
+{
+    QString key = url.toString(QUrl::RemoveQuery | QUrl::RemoveFragment);
+    key += QL1C('#');
+    key += name;
+    key += "-" + index;
+    return key;
+}
+
 WebEngineWallet::WebEngineWallet(WebEnginePart *parent, WId wid)
     : QObject(parent), d(new WebEngineWalletPrivate(this))
 {
@@ -108,13 +131,35 @@ WebEngineWallet::~WebEngineWallet()
     delete d;
 }
 
+WebEnginePart* WebEngineWallet::part() const
+{
+    return qobject_cast<WebEnginePart*>(parent());
+}
+
 bool WebEngineWallet::isOpen() const
 {
     return d->wallet && d->wallet->isOpen();
 }
 
+void WebEngineWallet::openWallet()
+{
+    d->openWallet();
+}
+
+
+KWallet::Wallet* WebEngineWallet::wallet() const
+{
+    return isOpen() ? d->wallet.get() : nullptr;
+}
+
+
+
 void WebEngineWallet::detectAndFillPageForms(WebEnginePage *page)
 {
+    if (!page) {
+        page = part()->page();
+    }
+
     QUrl url = page->url();
 
     //There are no forms in konq: URLs, so don't waste time looking for them
@@ -124,8 +169,13 @@ void WebEngineWallet::detectAndFillPageForms(WebEnginePage *page)
 
     auto callback = [this, url, page](const WebFormList &forms) {
         emit formDetectionDone(url, !forms.isEmpty(), d->hasAutoFillableFields(forms));
-        if (!WebEngineSettings::self()->isNonPasswordStorableSite(url.host())) {
-            fillFormData(page, cacheableForms(url, forms, CacheOperation::Fill));
+        KeyMigrator migrator(this, url, forms);
+        if (!migrator.keyMigrationRequired()) {
+            if (!WebEngineSettings::self()->isNonPasswordStorableSite(url.host())) {
+                fillFormData(page, cacheableForms(url, migrator.cachedForms(), CacheOperation::Fill));
+            }
+        } else {
+            migrator.performKeyMigration();
         }
     };
     WebEngineWalletPrivate::detectFormsInPage(page, callback);
@@ -154,7 +204,7 @@ void WebEngineWallet::fillFormData(WebEnginePage *page, const WebFormList &allFo
     }
 }
 
-WebEngineWallet::WebFormList WebEngineWallet::cacheableForms(const QUrl& url, const WebEngineWallet::WebFormList& allForms, WebEngineWallet::CacheOperation op) const
+WebEngineWallet::WebFormList WebEngineWallet::cacheableForms(const QUrl& url, const WebFormList& allForms, CacheOperation op) const
 {
     WebEngineSettings::WebFormInfoList customForms = WebEngineSettings::self()->customizedCacheableFieldsForPage(customFormsKey(url));
     if (customForms.isEmpty()) {
@@ -283,20 +333,20 @@ void WebEngineWallet::fillWebForm(const QUrl &url, const WebEngineWallet::WebFor
             QString value = field.value;
             value.replace(QL1C('\\'), QL1S("\\\\"));
             if (!field.value.isEmpty()) {
-                script+= QString("fillFormElement(%1, '%2', '%3', '%4');")
+                script+= QString("fillFormElement(%1, '%2', '%3', '%4', '%5');")
                         .arg(form.framePath.isEmpty() ? "''" : form.framePath)
-                        .arg((form.name.isEmpty() ? form.index : form.name))
+                        .arg(form.name).arg(form.index)
                         .arg(field.name).arg(value);
             }
         }
     }
+
     if (!script.isEmpty()) {
         wasFilled = true;
-        auto callback = [wasFilled, this](const QVariant &res){
-            if (!res.isValid()) {
-                return;
+        auto callback = [wasFilled, this](const QVariant &res) {
+            if (res.isValid()) {
+                emit fillFormRequestCompleted(wasFilled);
             }
-            emit fillFormRequestCompleted(wasFilled);
         };
         page.data()->runJavaScript(script, QWebEngineScript::ApplicationWorld, callback);
     }
@@ -307,11 +357,11 @@ WebEngineWallet::WebFormList WebEngineWallet::formsToFill(const QUrl &url) const
     return d->pendingFillRequests.value(url).forms;
 }
 
-bool WebEngineWallet::hasCachedFormData(const WebForm &form) const
+bool WebEngineWallet::hasCachedFormData(const WebForm &form, const QString &key) const
 {
     return !KWallet::Wallet::keyDoesNotExist(KWallet::Wallet::NetworkWallet(),
             KWallet::Wallet::FormDataFolder(),
-            walletKey(form));
+            key.isEmpty() ? form.walletKey() : key);
 }
 
 void WebEngineWallet::fillFormDataFromCache(const QList<QUrl> &urlList)

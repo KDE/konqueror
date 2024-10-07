@@ -25,7 +25,7 @@
 #include "webengineview.h"
 #include "webenginepage.h"
 #include "websslinfo.h"
-#include "webenginewallet.h"
+#include "wallet/webenginewallet.h"
 #include "schemehandlers/errorschemehandler.h"
 #include "webengineurlrequestinterceptor.h"
 #include "spellcheckermanager.h"
@@ -903,14 +903,17 @@ void WebEnginePart::deleteFeaturePermissionBar(FeaturePermissionBar *bar)
 
 void WebEnginePart::slotSaveFormDataRequested (const QString& key, const QUrl& url)
 {
-    if (WebEngineSettings::self()->isNonPasswordStorableSite(url.host()))
+    if (WebEngineSettings::self()->isNonPasswordStorableSite(url.host())) {
         return;
+    }
 
-    if (!WebEngineSettings::self()->askToSaveSitePassword())
+    if (!WebEngineSettings::self()->askToSaveSitePassword()) {
         return;
+    }
 
-    if (m_passwordBar && m_passwordBar->isVisible())
+    if (m_passwordBar && m_passwordBar->isVisible()) {
         return;
+    }
 
     if (!m_passwordBar) {
         m_passwordBar = new PasswordBar(widget());

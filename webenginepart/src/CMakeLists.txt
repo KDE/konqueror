@@ -19,7 +19,8 @@ set(kwebenginepartlib_LIB_SRCS
     webenginepage.cpp
     websslinfo.cpp
     webenginepartdownloadmanager.cpp
-    webenginewallet.cpp
+    wallet/webenginewallet.cpp
+    wallet/walletkeymigrator.cpp
     settings/webenginesettings.cpp
     settings/webengine_filter.cpp
     ui/searchbar.cpp

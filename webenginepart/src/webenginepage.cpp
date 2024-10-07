@@ -14,7 +14,7 @@
 #include "webengineview.h"
 #include "settings/webenginesettings.h"
 #include "webenginepartdownloadmanager.h"
-#include "webenginewallet.h"
+#include "wallet/webenginewallet.h"
 #include <webenginepart_debug.h>
 #include "webenginepartcontrols.h"
 #include "navigationrecorder.h"

@@ -13,7 +13,7 @@
 #include <QScopedPointer>
 
 #include "ui_credentialsdetailswidget.h"
-#include "webenginewallet.h"
+#include "wallet/webenginewallet.h"
 
 class WebFieldsDataModel;
 

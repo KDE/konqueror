@@ -26,6 +26,10 @@ class WebEnginePage;
 class WebEnginePart;
 class QWebEngineScript;
 
+namespace KWallet {
+    class Wallet;
+}
+
 /**
  * @brief Class which allows WebEnginePart to cache form data in `KWallet`
  *
@@ -139,6 +143,8 @@ public:
          */
         WebEngineSettings::WebFormInfo toSettingsInfo() const;
 
+        bool hasFields(const QStringList &fieldNames) const;
+
         /// @brief The URL the form was found at.
         QUrl url;
 
@@ -156,6 +162,20 @@ public:
 
         /// @brief The name and value attributes of each input element in the form.
         QVector<WebField> fields;
+
+        /**
+         * @brief A list of the names of the fields in the form
+         * @return A list of the names of the fields in the form
+         * @note A new list is created every time this is called
+         */
+        QStringList fieldNames() const;
+
+        /**
+         * @brief The key to use to store data about this form in the wallet
+         *
+         * @return The key to use to store data about this form in the wallet
+         */
+        QString walletKey() const;
     };
 
     /**
@@ -187,6 +207,10 @@ public:
      * @return @b true if the wallet is open and @b false otherwise
      */
     bool isOpen() const;
+
+    void openWallet();
+
+    KWallet::Wallet* wallet() const;
 
     /**
      * @brief Attempts to save the form data from @p page and its children frames.
@@ -278,7 +302,7 @@ public Q_SLOTS:
      *
      * @param page the WebEnginePage whose forms should be filled
      */
-    void detectAndFillPageForms(WebEnginePage *page);
+    void detectAndFillPageForms(WebEnginePage *page = nullptr);
 
     /**
      * @brief Caches the contents of the fields
@@ -401,10 +425,12 @@ protected:
     /**
      * @brief Whether or not there's data associate with @p form in the persistent storage
      *
+     * @param form the form to look for data
+     * @param key the key to use. If empty, the key will be determined automatically
      * @return @b true when there is data associated with @p form in the
      * persistent storage and @b false otherwise.
      */
-    bool hasCachedFormData(const WebForm &form) const;
+    bool hasCachedFormData(const WebForm& form, const QString& key = {}) const;
 
     /**
      * @return Fills the web forms in frame that point to @p url with data from @p forms.
@@ -469,7 +495,12 @@ protected:
      * @param op whether the function should return the forms to fill or those to save
      * @return a list of all cacheable forms in the page according to the user's settings
      */
-    WebFormList cacheableForms(const QUrl &url, const WebFormList &allForms, CacheOperation op) const;
+    WebFormList cacheableForms(const QUrl& url, const WebFormList& allForms, CacheOperation op) const;
+
+    WebEnginePart *part() const;
+
+public:
+    class KeyMigrator; //Needed because KeyMigrator is a nested class
 
 private:
     class WebEngineWalletPrivate;
