@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-09 00:39+0000\n"
+"POT-Creation-Date: 2024-10-07 00:39+0000\n"
 "PO-Revision-Date: 2021-09-15 20:37+0630\n"
 "Last-Translator: \n"
 "Language-Team: Burmese <kde-i18n-doc@kde.org>\n"
@@ -762,6 +762,41 @@ msgstr "မီးမောင်းထိုးပြရန်"
 msgid "Highlight Matches"
 msgstr "မီးမောင်းထိုးပြရန်"
 
+#: src/wallet/webenginewallet.cpp:105
+#, fuzzy, kde-format
+msgctxt "Web field with type 'text'"
+msgid "text"
+msgstr "စာသား"
+
+#: src/wallet/webenginewallet.cpp:106
+#, fuzzy, kde-format
+msgctxt "Web field with type 'password'"
+msgid "password"
+msgstr "စကားဝှက် -"
+
+#: src/wallet/webenginewallet.cpp:107
+#, fuzzy, kde-format
+msgctxt "Web field with type 'e-mail'"
+msgid "e-mail"
+msgstr ""
+"<qt><p>ဤစာရင်းသည် သင်၏အပ္ပလီကေးရှင်း ကိုင်တွယ်နိုင်သော ဖိုင်လ်အမျိုးအစားများကို ပြသင့်သည်။ ယင်းကို "
+"<u>အမ်အိုင်အမ်အီးတိုက်</u> ဖြင့် စုစည်းစီစဥ်ထားသည်။</p>\n"
+"<p> အမ်အိုင်အမ်အီး (MIME)၊ Multipurpose Internet (e)Mail Extensionသည် "
+"ဖိုင်လ်အမည်နောက်တွဲများနှင့် ယင်းတို့၏သက်ဆိုင်ရာ <u>အမ်အိုင်အမ်အီးတိုက်</u>များကို အခြေခံ၍ ဒေတာအမျိုးအစားကို "
+"ခွဲခြားသတ်မှတ်သော စံလုပ်ရိုးလုပ်ထုံးဖြစ်သည်။ သာဓက။ ။ ပန်း.bmp တွင် '.'နောက်မှလာသော ဖိုင်လ်အမည်နောက်တွဲ "
+"\"bmp\" က ယင်းဖိုင်လ်သည် <u>image/x-bmp</u> ပုံရိပ်အမျိုးအစားဖြစ်ကြောင့်ပြသနေသည်။ ဘယ်ဖိုင်လ်ကို "
+"ဘယ်အပ္ပလီကေးရှင်းနှင့် ဖွင့်ရမည်ဆိုသည်ကို သိရှိရန် စစ်စတမ်ကို အပ္ပလီကေးရှင်းတစ်ခုချင်းစီ၏ ဖိုင်လ်အမည်နောက်တွဲနှင့် "
+"အမ်အိုင်အမ်အီးတိုက်များကို ကိုင်တွယ်နိုင်စွမ်းအကြောင်းအား အသိပေးထားရမည်။</p>\n"
+"<p>ဤအပ္ပလီကေးရှင်းကို စာရင်းတွင်မပါသော အမ်အိုင်အမ်အီးတိုက်များနှင့် ပတ်သက်စေလိုပါက အောက်ပါ <b>ထည့်မည်</b> "
+"ခလုတ်ကို နှိပ်ပါ။ ၎င်း မကိုင်တွယ်နိုင်သော အမ်အိုင်အမ်အီးတိုက်များ စာရင်းတွင်ပါပါက ထုတ်ပစ်ရန် <b>ဖယ်မည်</b> "
+"ခလုတ်ကိုနှိပ်ပါ။</p></qt>"
+
+#: src/wallet/webenginewallet.cpp:108
+#, fuzzy, kde-format
+msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
+msgid "other"
+msgstr "အခြား"
+
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
 #, fuzzy, kde-format
@@ -1076,49 +1111,49 @@ msgstr "ဝင်းဒိုး ပိတ်ရန်"
 msgid "Confirmation Required"
 msgstr "အတည်ပြုချက်"
 
-#: src/webenginepart.cpp:933
+#: src/webenginepart.cpp:936
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 
-#: src/webenginepart.cpp:1004
+#: src/webenginepart.cpp:1007
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr ""
 
-#: src/webenginepart.cpp:1009
+#: src/webenginepart.cpp:1012
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr ""
 
-#: src/webenginepart.cpp:1013
+#: src/webenginepart.cpp:1016
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1017
+#: src/webenginepart.cpp:1020
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1021
+#: src/webenginepart.cpp:1024
 #, fuzzy, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "စကားဝှက် ယာယီ ကတ်ချ်သွင်းထားသည်"
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1028
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr ""
 
-#: src/webenginepart.cpp:1029
+#: src/webenginepart.cpp:1032
 #, fuzzy, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "ပလပ်ဂင် မန်နေဂျာ"
 
-#: src/webenginepart.cpp:1033
+#: src/webenginepart.cpp:1036
 #, fuzzy, kde-format
 msgid "&Close Wallet"
 msgstr "_Cပိတ်"
@@ -1391,41 +1426,6 @@ msgstr "ဖြင့် '%1'ကို ရှာမည်"
 #, kde-format
 msgid "Configure Web Shortcuts..."
 msgstr "ဝက်ဘ်ဆိုင်ရာဖြတ်လမ်းများ ပြင်ဆင်မည်..."
-
-#: src/webenginewallet.cpp:91
-#, fuzzy, kde-format
-msgctxt "Web field with type 'text'"
-msgid "text"
-msgstr "စာသား"
-
-#: src/webenginewallet.cpp:92
-#, fuzzy, kde-format
-msgctxt "Web field with type 'password'"
-msgid "password"
-msgstr "စကားဝှက် -"
-
-#: src/webenginewallet.cpp:93
-#, fuzzy, kde-format
-msgctxt "Web field with type 'e-mail'"
-msgid "e-mail"
-msgstr ""
-"<qt><p>ဤစာရင်းသည် သင်၏အပ္ပလီကေးရှင်း ကိုင်တွယ်နိုင်သော ဖိုင်လ်အမျိုးအစားများကို ပြသင့်သည်။ ယင်းကို "
-"<u>အမ်အိုင်အမ်အီးတိုက်</u> ဖြင့် စုစည်းစီစဥ်ထားသည်။</p>\n"
-"<p> အမ်အိုင်အမ်အီး (MIME)၊ Multipurpose Internet (e)Mail Extensionသည် "
-"ဖိုင်လ်အမည်နောက်တွဲများနှင့် ယင်းတို့၏သက်ဆိုင်ရာ <u>အမ်အိုင်အမ်အီးတိုက်</u>များကို အခြေခံ၍ ဒေတာအမျိုးအစားကို "
-"ခွဲခြားသတ်မှတ်သော စံလုပ်ရိုးလုပ်ထုံးဖြစ်သည်။ သာဓက။ ။ ပန်း.bmp တွင် '.'နောက်မှလာသော ဖိုင်လ်အမည်နောက်တွဲ "
-"\"bmp\" က ယင်းဖိုင်လ်သည် <u>image/x-bmp</u> ပုံရိပ်အမျိုးအစားဖြစ်ကြောင့်ပြသနေသည်။ ဘယ်ဖိုင်လ်ကို "
-"ဘယ်အပ္ပလီကေးရှင်းနှင့် ဖွင့်ရမည်ဆိုသည်ကို သိရှိရန် စစ်စတမ်ကို အပ္ပလီကေးရှင်းတစ်ခုချင်းစီ၏ ဖိုင်လ်အမည်နောက်တွဲနှင့် "
-"အမ်အိုင်အမ်အီးတိုက်များကို ကိုင်တွယ်နိုင်စွမ်းအကြောင်းအား အသိပေးထားရမည်။</p>\n"
-"<p>ဤအပ္ပလီကေးရှင်းကို စာရင်းတွင်မပါသော အမ်အိုင်အမ်အီးတိုက်များနှင့် ပတ်သက်စေလိုပါက အောက်ပါ <b>ထည့်မည်</b> "
-"ခလုတ်ကို နှိပ်ပါ။ ၎င်း မကိုင်တွယ်နိုင်သော အမ်အိုင်အမ်အီးတိုက်များ စာရင်းတွင်ပါပါက ထုတ်ပစ်ရန် <b>ဖယ်မည်</b> "
-"ခလုတ်ကိုနှိပ်ပါ။</p></qt>"
-
-#: src/webenginewallet.cpp:94
-#, fuzzy, kde-format
-msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
-msgid "other"
-msgstr "အခြား"
 
 #: src/webfieldsdataview.cpp:61
 #, fuzzy, kde-format

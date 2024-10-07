@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-09 00:39+0000\n"
+"POT-Creation-Date: 2024-10-07 00:39+0000\n"
 "PO-Revision-Date: 2024-09-09 10:06+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -828,6 +828,30 @@ msgstr "&Ressalta totes les coincidències"
 msgid "Highlight Matches"
 msgstr "Ressaltat de les coincidències"
 
+#: src/wallet/webenginewallet.cpp:105
+#, kde-format
+msgctxt "Web field with type 'text'"
+msgid "text"
+msgstr "text"
+
+#: src/wallet/webenginewallet.cpp:106
+#, kde-format
+msgctxt "Web field with type 'password'"
+msgid "password"
+msgstr "contrasenya"
+
+#: src/wallet/webenginewallet.cpp:107
+#, kde-format
+msgctxt "Web field with type 'e-mail'"
+msgid "e-mail"
+msgstr "correu electrònic"
+
+#: src/wallet/webenginewallet.cpp:108
+#, kde-format
+msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
+msgid "other"
+msgstr "altres"
+
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
 #, kde-format
@@ -1167,51 +1191,51 @@ msgstr "Tanco la finestra?"
 msgid "Confirmation Required"
 msgstr "Es requereix confirmació"
 
-#: src/webenginepart.cpp:933
+#: src/webenginepart.cpp:936
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 "<html>Voleu que %1 recordi la informació de connexió per a <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1004
+#: src/webenginepart.cpp:1007
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr "Omple ara els &formularis"
 
-#: src/webenginepart.cpp:1009
+#: src/webenginepart.cpp:1012
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr "&Memoritza ara les contrasenyes d'aquesta pàgina"
 
-#: src/webenginepart.cpp:1013
+#: src/webenginepart.cpp:1016
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr "&Personalitza els camps a memoritzar d'aquesta pàgina..."
 
-#: src/webenginepart.cpp:1017
+#: src/webenginepart.cpp:1020
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 "Elimina la configuració memoritzada de personalització d'aquesta pàgina"
 
-#: src/webenginepart.cpp:1021
+#: src/webenginepart.cpp:1024
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "Permet l'ús de la memòria c&au de contrasenyes per a aquest lloc"
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1028
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "Elimina totes les contrasenyes memoritzades d'aquest lloc"
 
-#: src/webenginepart.cpp:1029
+#: src/webenginepart.cpp:1032
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Llança el gestor de carteres"
 
-#: src/webenginepart.cpp:1033
+#: src/webenginepart.cpp:1036
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Tanca la cartera"
@@ -1488,30 +1512,6 @@ msgstr "Cerca «%1» amb"
 #, kde-format
 msgid "Configure Web Shortcuts..."
 msgstr "Configura les dreceres web..."
-
-#: src/webenginewallet.cpp:91
-#, kde-format
-msgctxt "Web field with type 'text'"
-msgid "text"
-msgstr "text"
-
-#: src/webenginewallet.cpp:92
-#, kde-format
-msgctxt "Web field with type 'password'"
-msgid "password"
-msgstr "contrasenya"
-
-#: src/webenginewallet.cpp:93
-#, kde-format
-msgctxt "Web field with type 'e-mail'"
-msgid "e-mail"
-msgstr "correu electrònic"
-
-#: src/webenginewallet.cpp:94
-#, kde-format
-msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
-msgid "other"
-msgstr "altres"
 
 #: src/webfieldsdataview.cpp:61
 #, kde-format

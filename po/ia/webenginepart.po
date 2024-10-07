@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-09 00:39+0000\n"
+"POT-Creation-Date: 2024-10-07 00:39+0000\n"
 "PO-Revision-Date: 2024-09-10 09:25+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -826,6 +826,30 @@ msgstr "&Evidentia omne coincidentias"
 msgid "Highlight Matches"
 msgstr "Evidentia coincidentias"
 
+#: src/wallet/webenginewallet.cpp:105
+#, kde-format
+msgctxt "Web field with type 'text'"
+msgid "text"
+msgstr "texto"
+
+#: src/wallet/webenginewallet.cpp:106
+#, kde-format
+msgctxt "Web field with type 'password'"
+msgid "password"
+msgstr "contrasigno"
+
+#: src/wallet/webenginewallet.cpp:107
+#, kde-format
+msgctxt "Web field with type 'e-mail'"
+msgid "e-mail"
+msgstr "e-posta"
+
+#: src/wallet/webenginewallet.cpp:108
+#, kde-format
+msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
+msgid "other"
+msgstr "altere"
+
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
 #, kde-format
@@ -1166,50 +1190,50 @@ msgstr "Claude le fenestra?"
 msgid "Confirmation Required"
 msgstr "Confirmation Requirite"
 
-#: src/webenginepart.cpp:933
+#: src/webenginepart.cpp:936
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 "<html>Tu vole %1 memora le information de accesso  per <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1004
+#: src/webenginepart.cpp:1007
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr "Reimple &formularios nunc"
 
-#: src/webenginepart.cpp:1009
+#: src/webenginepart.cpp:1012
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr "&Memoriza contrasignos in iste pagina nunc"
 
-#: src/webenginepart.cpp:1013
+#: src/webenginepart.cpp:1016
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr "Personalisa &Campos per memorisar iste pagina..."
 
-#: src/webenginepart.cpp:1017
+#: src/webenginepart.cpp:1020
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr "Remove preferentias de memorisation personalisate per iste pagina"
 
-#: src/webenginepart.cpp:1021
+#: src/webenginepart.cpp:1024
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "&Permitte caching de contrasigno per iste sito"
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1028
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "Remove omne contrasignos memorisate per iste sito"
 
-#: src/webenginepart.cpp:1029
+#: src/webenginepart.cpp:1032
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Lancea gerente de portafolio"
 
-#: src/webenginepart.cpp:1033
+#: src/webenginepart.cpp:1036
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Claude le portafolio"
@@ -1486,30 +1510,6 @@ msgstr "Cerca de '%1' con"
 #, kde-format
 msgid "Configure Web Shortcuts..."
 msgstr "Configura vias breve de Web..."
-
-#: src/webenginewallet.cpp:91
-#, kde-format
-msgctxt "Web field with type 'text'"
-msgid "text"
-msgstr "texto"
-
-#: src/webenginewallet.cpp:92
-#, kde-format
-msgctxt "Web field with type 'password'"
-msgid "password"
-msgstr "contrasigno"
-
-#: src/webenginewallet.cpp:93
-#, kde-format
-msgctxt "Web field with type 'e-mail'"
-msgid "e-mail"
-msgstr "e-posta"
-
-#: src/webenginewallet.cpp:94
-#, kde-format
-msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
-msgid "other"
-msgstr "altere"
 
 #: src/webfieldsdataview.cpp:61
 #, kde-format

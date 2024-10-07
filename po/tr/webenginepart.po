@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-base-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-09 00:39+0000\n"
+"POT-Creation-Date: 2024-10-07 00:39+0000\n"
 "PO-Revision-Date: 2024-09-09 13:47+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -822,6 +822,30 @@ msgstr "&Tüm Eşleşenleri Vurgula"
 msgid "Highlight Matches"
 msgstr "Eşleşenler Vurgula"
 
+#: src/wallet/webenginewallet.cpp:105
+#, kde-format
+msgctxt "Web field with type 'text'"
+msgid "text"
+msgstr "metin"
+
+#: src/wallet/webenginewallet.cpp:106
+#, kde-format
+msgctxt "Web field with type 'password'"
+msgid "password"
+msgstr "parola"
+
+#: src/wallet/webenginewallet.cpp:107
+#, kde-format
+msgctxt "Web field with type 'e-mail'"
+msgid "e-mail"
+msgstr "e-posta"
+
+#: src/wallet/webenginewallet.cpp:108
+#, kde-format
+msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
+msgid "other"
+msgstr "diğer"
+
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
 #, kde-format
@@ -1160,7 +1184,7 @@ msgstr "Pencere kapatılsın mı?"
 msgid "Confirmation Required"
 msgstr "Onay Gerekiyor"
 
-#: src/webenginepart.cpp:933
+#: src/webenginepart.cpp:936
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
@@ -1168,43 +1192,43 @@ msgstr ""
 "<html>%1 uygulamasının <b>%2</b> için olan oturum açma bilgisini saklamasını "
 "istiyor musunuz?</html>"
 
-#: src/webenginepart.cpp:1004
+#: src/webenginepart.cpp:1007
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr "F&ormları Şimdi Doldur"
 
-#: src/webenginepart.cpp:1009
+#: src/webenginepart.cpp:1012
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr "&Bu Sitedeki Parolaları Anımsa"
 
-#: src/webenginepart.cpp:1013
+#: src/webenginepart.cpp:1016
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr "Bu &Sayfa için Bellenecek Alanları Özelleştir..."
 
-#: src/webenginepart.cpp:1017
+#: src/webenginepart.cpp:1020
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr "Bu Sayfa için Bellenecek Alanlar Ayarlarını Kaldır"
 
-#: src/webenginepart.cpp:1021
+#: src/webenginepart.cpp:1024
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "B&u Site için Parola Tutmaya İzin Ver"
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1028
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "Bu Site için Anımsanan Tüm Parolaları Kaldır"
 
-#: src/webenginepart.cpp:1029
+#: src/webenginepart.cpp:1032
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Cüzdan Yöneticisini Başlat"
 
-#: src/webenginepart.cpp:1033
+#: src/webenginepart.cpp:1036
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Cüzdanı Kapat"
@@ -1481,30 +1505,6 @@ msgstr "'%1' İfadesini Şununla Ara"
 #, kde-format
 msgid "Configure Web Shortcuts..."
 msgstr "Web Kısayollarını Yapılandır..."
-
-#: src/webenginewallet.cpp:91
-#, kde-format
-msgctxt "Web field with type 'text'"
-msgid "text"
-msgstr "metin"
-
-#: src/webenginewallet.cpp:92
-#, kde-format
-msgctxt "Web field with type 'password'"
-msgid "password"
-msgstr "parola"
-
-#: src/webenginewallet.cpp:93
-#, kde-format
-msgctxt "Web field with type 'e-mail'"
-msgid "e-mail"
-msgstr "e-posta"
-
-#: src/webenginewallet.cpp:94
-#, kde-format
-msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
-msgid "other"
-msgstr "diğer"
 
 #: src/webfieldsdataview.cpp:61
 #, kde-format

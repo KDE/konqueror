@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-09 00:39+0000\n"
+"POT-Creation-Date: 2024-10-07 00:39+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -812,6 +812,34 @@ msgstr "ماس كەلگەن تۈرنى يورۇت(&H)"
 msgid "Highlight Matches"
 msgstr "ماسلىقنى يورۇتۇش"
 
+#: src/wallet/webenginewallet.cpp:105
+#, kde-format
+msgctxt "Web field with type 'text'"
+msgid "text"
+msgstr ""
+
+#: src/wallet/webenginewallet.cpp:106
+#, kde-format
+msgctxt "Web field with type 'password'"
+msgid "password"
+msgstr ""
+
+#: src/wallet/webenginewallet.cpp:107
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
+#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
+#| msgid "Email: "
+msgctxt "Web field with type 'e-mail'"
+msgid "e-mail"
+msgstr "ئېلخەت: "
+
+#: src/wallet/webenginewallet.cpp:108
+#, kde-format
+msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
+msgid "other"
+msgstr ""
+
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
 #, fuzzy, kde-format
@@ -1140,7 +1168,7 @@ msgstr "كۆزنەكنى تاقىسۇنمۇ؟"
 msgid "Confirmation Required"
 msgstr "جەزملەش زۆرۈر"
 
-#: src/webenginepart.cpp:933
+#: src/webenginepart.cpp:936
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
@@ -1148,46 +1176,46 @@ msgstr ""
 "<html>سىز %1 نىڭ <b>%2</b> غا كىرىشتە ئىشلىتىدىغان ئۇچۇرلارنى ئەستە "
 "ساقلىشىنى خالامسىز؟</html>"
 
-#: src/webenginepart.cpp:1004
+#: src/webenginepart.cpp:1007
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr ""
 
-#: src/webenginepart.cpp:1009
+#: src/webenginepart.cpp:1012
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "&Memorize Passwords in This Page Now"
 msgstr "بۇ تورتۇرانىڭ غەملەنگەن بارلىق ئىملىرىنى ئۆچۈر"
 
-#: src/webenginepart.cpp:1013
+#: src/webenginepart.cpp:1016
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1017
+#: src/webenginepart.cpp:1020
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1021
+#: src/webenginepart.cpp:1024
 #, fuzzy, kde-format
 #| msgid "&Allow password caching for this site"
 msgid "&Allow Password Caching for This Site"
 msgstr "بۇ تورتۇرانىڭ ئىمىنى غەملەشكە ئىجازەت قىل(&A)"
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1028
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "بۇ تورتۇرانىڭ غەملەنگەن بارلىق ئىملىرىنى ئۆچۈر"
 
-#: src/webenginepart.cpp:1029
+#: src/webenginepart.cpp:1032
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1033
+#: src/webenginepart.cpp:1036
 #, kde-format
 msgid "&Close Wallet"
 msgstr "ھەمياننى ياپ(&C)"
@@ -1468,34 +1496,6 @@ msgstr "'%1' نى ئىزدەش ئۇسۇلى"
 #: src/webengineview.cpp:608
 #, kde-format
 msgid "Configure Web Shortcuts..."
-msgstr ""
-
-#: src/webenginewallet.cpp:91
-#, kde-format
-msgctxt "Web field with type 'text'"
-msgid "text"
-msgstr ""
-
-#: src/webenginewallet.cpp:92
-#, kde-format
-msgctxt "Web field with type 'password'"
-msgid "password"
-msgstr ""
-
-#: src/webenginewallet.cpp:93
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
-#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
-#| msgid "Email: "
-msgctxt "Web field with type 'e-mail'"
-msgid "e-mail"
-msgstr "ئېلخەت: "
-
-#: src/webenginewallet.cpp:94
-#, kde-format
-msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
-msgid "other"
 msgstr ""
 
 #: src/webfieldsdataview.cpp:61

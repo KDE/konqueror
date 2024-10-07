@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-09 00:39+0000\n"
+"POT-Creation-Date: 2024-10-07 00:39+0000\n"
 "PO-Revision-Date: 2024-09-09 04:50+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -819,6 +819,30 @@ msgstr "ყველა დამთხვევის &გამოკვეთ
 msgid "Highlight Matches"
 msgstr "დამთხვევების გამოკვეთა"
 
+#: src/wallet/webenginewallet.cpp:105
+#, kde-format
+msgctxt "Web field with type 'text'"
+msgid "text"
+msgstr "ტექსტი"
+
+#: src/wallet/webenginewallet.cpp:106
+#, kde-format
+msgctxt "Web field with type 'password'"
+msgid "password"
+msgstr "password"
+
+#: src/wallet/webenginewallet.cpp:107
+#, kde-format
+msgctxt "Web field with type 'e-mail'"
+msgid "e-mail"
+msgstr "ელფოსტა"
+
+#: src/wallet/webenginewallet.cpp:108
+#, kde-format
+msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
+msgid "other"
+msgstr "სხვა"
+
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
 #, kde-format
@@ -1156,7 +1180,7 @@ msgstr "დავხურო ფანჯარა?"
 msgid "Confirmation Required"
 msgstr "საჭიროა თანხმობა"
 
-#: src/webenginepart.cpp:933
+#: src/webenginepart.cpp:936
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
@@ -1164,43 +1188,43 @@ msgstr ""
 "<html>გნებავთ, %1 -მა დაიმახსოვროს თქვენი ავტორიზაციის დეტალები <b>%2</b>-"
 "სთვის?</html>"
 
-#: src/webenginepart.cpp:1004
+#: src/webenginepart.cpp:1007
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr "&ფორმების ახლავე შევსება"
 
-#: src/webenginepart.cpp:1009
+#: src/webenginepart.cpp:1012
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr "&ამ გვერდისთვის პაროლების ახლავე დამახსოვრება"
 
-#: src/webenginepart.cpp:1013
+#: src/webenginepart.cpp:1016
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr "&ამ გვერდისთვის დასამახსოვრებელი ველების მორგება..."
 
-#: src/webenginepart.cpp:1017
+#: src/webenginepart.cpp:1020
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr "ამ გვერდისთვის მორგებული დამახსოვრების პარამეტრების წაშლა"
 
-#: src/webenginepart.cpp:1021
+#: src/webenginepart.cpp:1024
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "&ამ საიტისთვის პაროლების დამახსოვრების დაშვება"
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1028
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "ამ საიტისთვის ყველა დამახსოვრებული პაროლის წაშლა"
 
-#: src/webenginepart.cpp:1029
+#: src/webenginepart.cpp:1032
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&საფულეების მმართველის გაშვება"
 
-#: src/webenginepart.cpp:1033
+#: src/webenginepart.cpp:1036
 #, kde-format
 msgid "&Close Wallet"
 msgstr "ქისის &დახურვა"
@@ -1475,30 +1499,6 @@ msgstr "'%1'-ის მოძებნა მოხდება"
 #, kde-format
 msgid "Configure Web Shortcuts..."
 msgstr "ვებ მალსახმობების მორგება..."
-
-#: src/webenginewallet.cpp:91
-#, kde-format
-msgctxt "Web field with type 'text'"
-msgid "text"
-msgstr "ტექსტი"
-
-#: src/webenginewallet.cpp:92
-#, kde-format
-msgctxt "Web field with type 'password'"
-msgid "password"
-msgstr "password"
-
-#: src/webenginewallet.cpp:93
-#, kde-format
-msgctxt "Web field with type 'e-mail'"
-msgid "e-mail"
-msgstr "ელფოსტა"
-
-#: src/webenginewallet.cpp:94
-#, kde-format
-msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
-msgid "other"
-msgstr "სხვა"
 
 #: src/webfieldsdataview.cpp:61
 #, kde-format
