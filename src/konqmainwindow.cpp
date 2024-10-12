@@ -1890,7 +1890,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
         }
     }
 
-    m_paShowDeveloperTools->setEnabled(m_currentView && m_currentView->isWebEngineView());
+    m_paShowDeveloperTools->setEnabled(m_currentView && m_currentView->isDevtoolsAvailable());
 
     createGUI(part);
 
@@ -5424,7 +5424,7 @@ void KonqMainWindow::toggleCompleteFullScreen(bool on)
 
 void KonqMainWindow::inspectCurrentPage()
 {
-    if (!m_currentView || !m_currentView->isWebEngineView()) {
+    if (!m_currentView || !m_currentView->isDevtoolsAvailable()) {
         return;
     }
     KParts::ReadOnlyPart *partToInspect = m_currentView->part();

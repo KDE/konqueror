@@ -98,7 +98,15 @@ public:
 
     ~KonqView() override;
 
-    bool isWebEngineView() const;
+    /**
+     * Returns whether devtools (inspect element, etc.) is available for this view.
+     *
+     * This is determined by checking whether the part for this view
+     * has a method `setInspectedPart(KParts::ReadOnlyPart *)`.
+     *
+     * @return @b true if devtools is available for this view, @b false otherwise.
+     */
+    bool isDevtoolsAvailable() const;
 
     /**
      * Displays another URL, but without changing the view mode (caller has to
@@ -375,19 +383,6 @@ public:
      * @p mimeType too. WARNING: this often leads to showing HTML in katepart...
      */
     bool supportsMimeType(const QString &mimeType) const;
-
-    //TODO: it seems to be unused. Check and remove it
-    /**
-     * Whether the view in this part is suitable for web browsing.
-     *
-     * @return @b true if the part is suitable for browsing and @b false otherwise
-     *
-     * @warning Unfortunately, as far as I know, there's no way to detect whether a part is
-     * suitable for browsing. This function works by hardcoding the component names of such
-     * parts (currently only khtml, kwebkitpart and webenginepart). If other browsing parts
-     * will be added, the list should be changed or another way must be found.
-     **/
-    bool isWebBrowsingPart() const;
 
     // True if showing a directory
     bool showsDirectory() const;
