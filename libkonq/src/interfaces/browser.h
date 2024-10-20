@@ -13,7 +13,10 @@
 
 namespace KParts {
     class ReadOnlyPart;
+    class OpenUrlArguments;
 };
+
+class BrowserArguments;
 
 namespace KonqInterfaces {
 
@@ -109,6 +112,26 @@ public:
      * @return `true` if @p part can navigate to @p url and `false` otherwise.
      */
     virtual bool canNavigateTo(KParts::ReadOnlyPart *part, const QUrl &url) const = 0;
+
+    /**
+     * @brief Asks Konqueror to open the given URL
+     *
+     * This is similar to using the BrowserExtension::browserOpenUrlRequest() except that:
+     * - it doesn't specify the part requesting to open the URL
+     * - it doesn't use a signal
+     * - it synchronous
+     *
+     * This function should mostly be used when wanting to open an URL without having a part to use for emitting
+     * the BrowserExtension::browserOpenUrlRequest() signal.
+     * @param url the URL to open
+     * @param args arguments describing how to open the URL
+     * @param bargs Konqueror-specific arguments describing how to open the URL
+     * @param window the window to open the URL in. Even if this is declared as a `QWidget`, it is assumed to be either
+     * `nullptr` or an instance of Konqueror main window. If this is `nullptr` or not an instance of Konqueror main window,
+     * Konqueror itself will decide in which window to open the URL, creating a new window if needed
+     * @return `true` if a suitable window was found or created and `false` otherwise (this should usually never happen)
+     */
+    virtual bool openUrl(const QUrl &url, KParts::OpenUrlArguments &args, const BrowserArguments &bargs, QWidget *window = nullptr) = 0;
 
 signals:
     void configurationChanged(); ///< Signal emitted after the configuration has changed

@@ -96,6 +96,8 @@ public:
     explicit KonqMainWindow(const QUrl &initialURL = QUrl());
     ~KonqMainWindow() override;
 
+    static KonqMainWindow* mostSuitableWindow();
+
     /**
      * Filters the URL and calls the main openUrl method.
      */

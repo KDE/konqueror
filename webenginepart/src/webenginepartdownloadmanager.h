@@ -103,6 +103,15 @@ private:
 
     static QTemporaryDir& tempDownloadDir();
 
+    /**
+     * @brief Asks Konqueror to download the given URL using KonqInterfaces::Browser::openUrl()
+     *
+     * This should only be called when there's no part associated with a download request
+     * @param url the URL to download
+     * @param mimeType the mimetype of the URL
+     */
+    bool downloadWithoutPart(const QUrl &url, const QString &mimeType);
+
 public Q_SLOTS:
     void addPage(WebEnginePage *page);
     void removePage(QObject *page);

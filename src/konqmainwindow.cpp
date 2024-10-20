@@ -379,6 +379,48 @@ KonqMainWindow::~KonqMainWindow()
     //qCDebug(KONQUEROR_LOG) << this << "deleted";
 }
 
+KonqMainWindow* KonqMainWindow::mostSuitableWindow()
+{
+    QList<KonqMainWindow *> windows = mainWindows();
+    if (windows.isEmpty()) {
+        return nullptr;
+    }
+
+    //Accept only windows which are on the current desktop and in the current activity
+    //(if activities are enabled)
+    QString currentActivity = KonquerorApplication::currentActivity();
+    auto filter = [currentActivity](KonqMainWindow *mw) {
+        KWindowInfo winfo(mw->winId(), NET::WMDesktop, NET::WM2Activities);
+        bool isInCurrentActivity = true;
+        //if currentActivity is empty, it means that the activity service status is not running or that activity support is disabled,
+        //so it's useless to check which activity the window is on
+        if (!currentActivity.isEmpty()) {
+            QStringList windowActivities = winfo.activities();
+            //WARNING: a window is in the current activity either when windowActivities contains the current activity
+            //or when windowActivities is empty, since KWindowInfo::activities() returns an empty list when the
+            //window is on all activities
+            isInCurrentActivity = windowActivities.isEmpty() || windowActivities.contains(currentActivity);
+        }
+        return winfo.isOnCurrentDesktop() && isInCurrentActivity;
+    };
+    QList<KonqMainWindow*> visibleWindows;
+    std::copy_if(windows.constBegin(), windows.constEnd(), std::back_inserter(visibleWindows), filter);
+
+    //Sort the windows according to the last deactivation order, so that windows deactivated last come first
+    //(if a window is active, it'll come before the others)
+    auto sortFunction = [](KonqMainWindow *w1, KonqMainWindow *w2) {
+        if (w1->isActiveWindow()) {
+            return true;
+        } else if (w2->isActiveWindow()) {
+            return false;
+        } else {
+            return w2->lastDeactivationTime() < w1->lastDeactivationTime();
+        }
+    };
+    std::sort(visibleWindows.begin(), visibleWindows.end(), sortFunction);
+    return visibleWindows.isEmpty() ? nullptr : visibleWindows.first();
+}
+
 QWidget *KonqMainWindow::createContainer(QWidget *parent, int index, const QDomElement &element, QAction *&containerAction)
 {
     QWidget *res = KParts::MainWindow::createContainer(parent, index, element, containerAction);

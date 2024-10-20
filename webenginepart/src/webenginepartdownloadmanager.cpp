@@ -15,6 +15,7 @@
 #include "choosepagesaveformatdlg.h"
 
 #include "libkonq_utils.h"
+#include "interfaces/browser.h"
 
 #include <QWebEngineView>
 #include <QWebEngineProfile>
@@ -125,14 +126,12 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadRequest* it
         return;
     }
     bool forceNew = false;
-    //According to the documentation, QWebEngineDownloadRequest::page() can return nullptr "if the download was not triggered by content in a page"
-    if (!page && !m_pages.isEmpty()) {
-        qCDebug(WEBENGINEPART_LOG) << "downloading" << url << "in new window or tab";
-        page = m_pages.first();
-        forceNew = true;
-    } else if (!page) {
-        qCDebug(WEBENGINEPART_LOG) << "Couldn't find a part wanting to download" << url;
+    if (!page) {
         it->cancel();
+        bool res = downloadWithoutPart(url, it->mimeType());
+        if (!res) {
+            qCDebug(WEBENGINEPART_LOG) << "Couldn't find a part to download" << url;
+        }
         return;
     }
 
@@ -159,6 +158,20 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadRequest* it
     it->setDownloadFileName(fileName);
 
     page->requestDownload(it, forceNew, objective);
+}
+
+bool WebEnginePartDownloadManager::downloadWithoutPart(const QUrl& url, const QString& mimeType)
+{
+    KonqInterfaces::Browser *browser = KonqInterfaces::Browser::browser(qApp);
+    if (!browser) {
+        return false;
+    }
+    KParts::OpenUrlArguments args;
+    args.setMimeType(mimeType);
+    BrowserArguments bargs;
+    bargs.setForcesNewWindow(true);
+    bargs.setNewTab(true);
+    return browser->openUrl(url, args, bargs);
 }
 
 QString WebEnginePartDownloadManager::generateDownloadTempFileName(const QString& suggestedName, const QString& ext)

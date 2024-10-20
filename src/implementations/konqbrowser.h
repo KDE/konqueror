@@ -16,6 +16,8 @@ namespace KonqInterfaces
     class CookieJar;
 }
 
+class KonquerorApplication;
+
 /**
  * @brief Implementation of KonqInterfaces::Browser
  */
@@ -60,6 +62,12 @@ public:
      */
     bool canNavigateTo(KParts::ReadOnlyPart *part, const QUrl &url) const override;
 
+    /**
+     * @brief Implementation of KonqInterfaces::Browser::openUrl()
+     * @see KonqInterfaces::Browser::openUrl()
+     */
+    bool openUrl(const QUrl & url, KParts::OpenUrlArguments & args, const BrowserArguments & bargs, QWidget * window = nullptr) override;
+
 private:
 
     /**
@@ -83,6 +91,11 @@ private:
      * This method also emits the userAgentChanged() signal, if needed
      */
     void readDefaultUserAgent();
+
+    /**
+     * @brief Helper function returning `qApp` cast to a KonquerorApplication
+     */
+    KonquerorApplication* app() const;
 
     UserAgentData m_userAgent; ///< The user agent data
 
