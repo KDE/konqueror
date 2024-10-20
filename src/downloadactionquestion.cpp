@@ -64,6 +64,7 @@ public:
     PartList parts;
     PartList otherParts;
     KService::List apps;
+    bool shown = false;
 
     //Currently, the two std::optional arguments are only used by tests
     void setup(Actions actions);
@@ -288,6 +289,7 @@ DownloadActionQuestion::Action DownloadActionQuestionPrivate::ask(Actions action
     }
 
     Action res = static_cast<DownloadActionQuestion::Action>(exec());
+    shown = true;
     setChosenAction(res);
     return res;
 }
@@ -722,6 +724,11 @@ void DownloadActionQuestion::setSuggestedFileName(const QString &suggestedFileNa
     if (!suggestedFileName.isEmpty()) {
         d->setSuggestedFileName(suggestedFileName);
     }
+}
+
+bool DownloadActionQuestion::dialogShown() const
+{
+    return d->shown;
 }
 
 QDebug operator<<(QDebug dbg, DownloadActionQuestion::Action action)

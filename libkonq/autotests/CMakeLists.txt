@@ -13,4 +13,8 @@ ecm_add_tests(
    LINK_LIBRARIES KF${KF_MAJOR_VERSION}::Konq Qt${KF_MAJOR_VERSION}::Test
 )
 
+ecm_add_tests(
+   allowedurlactionstest.cpp
+   LINK_LIBRARIES KF${KF_MAJOR_VERSION}::Konq Qt${KF_MAJOR_VERSION}::Test
+)
 ############################################

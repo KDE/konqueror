@@ -207,7 +207,7 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
     bArgs.setIgnoreDefaultHtmlPart(true);
 
     if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveOnly || objective == WebEnginePartDownloadManager::DownloadObjective::SaveAs) {
-        bArgs.setForcedAction(BrowserArguments::Action::Save);
+        bArgs.setAllowedUrlActions(Konq::AllowedUrlActions{Konq::UrlAction::Save});
     }
 
     if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveAs) {
@@ -219,7 +219,7 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
             }
             disconnect(job, &DownloadJob::downloadResult, m_part, &WebEnginePart::displayActOnDownloadedFileBar);
             BrowserArguments newBargs;
-            newBargs.setForcedAction(BrowserArguments::Action::Embed);
+            newBargs.setAllowedUrlActions(Konq::AllowedUrlActions{Konq::UrlAction::Embed});
             emit m_part->browserExtension()->browserOpenUrlRequest(url, {}, newBargs);
         };
         connect(job, &DownloadJob::downloadResult, m_part, displayLocalFile);

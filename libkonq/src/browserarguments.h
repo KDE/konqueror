@@ -10,6 +10,7 @@
 #define BROWSERARGUMENTS_H
 
 #include <libkonq_export.h>
+#include "konq_urlactions.h"
 
 #include <QByteArray>
 #include <QStringList>
@@ -17,8 +18,6 @@
 namespace KonqInterfaces {
     class DownloadJob;
 }
-
-class QDebug;
 
 struct BrowserArgumentsPrivate;
 
@@ -236,31 +235,14 @@ struct LIBKONQ_EXPORT BrowserArguments {
     void setIgnoreDefaultHtmlPart(bool ignore);
 
     /**
-     * @brief Enum describing actions which can be performed with an URL
+     * @brief An object describing which actions are allowed when opening the URL
+     * @return An object describing which actions are allowed when opening the URL
      */
-    enum class Action {
-        UnknownAction, //!< A default value to use, for example, when no action has been determined
-        DoNothing, //!< Take no action
-        Save, //!< Save the URL to disk
-        Embed, //!< Embed the URL in Konqueror
-        Open, //!< Open the URL in an external application
-        Execute //!< Execute the URL
-    };
+    Konq::AllowedUrlActions urlActions() const;
 
-    /**
-     * @brief Which action should be performed on the URL
-     * @return The action to be performed on the URL. A value of Action::Unknown
-     * means that Konqueror is free to decide what to do
-     */
-    Action forcedAction() const;
-    /**
-     * @brief Sets the action to perform on the URL
-     *
-     * If this is not called, Konqueror forcedAction() will return Action::Unknown
-     * @param act the action to perform on the URL. Pass Action::Unknown if
-     * Konqueror should be free to decide what to do
-     */
-    void setForcedAction(Action act);
+    void setAllowedUrlActions(const Konq::AllowedUrlActions &actions);
+
+    // Konq::AllowedUrlActions& urlActionsRef();
 
 private:
     /**
@@ -271,7 +253,5 @@ private:
     BrowserArgumentsPrivate* ensureD();
     BrowserArgumentsPrivate *d;
 };
-
-QDebug LIBKONQ_EXPORT operator<<(QDebug dbg, BrowserArguments::Action action);
 
 #endif

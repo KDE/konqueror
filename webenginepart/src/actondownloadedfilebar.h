@@ -159,7 +159,7 @@ private Q_SLOTS:
      * @param data the data describing the part or application to use, if the user chose one from the menu.
      *  If invalid, the default application or part is used.
      */
-    void actOnChoice(BrowserArguments::Action choice, bool newTab, const QVariant &data);
+    void actOnChoice(Konq::UrlAction choice, bool newTab, const QVariant &data);
 
 private:
     QPointer<WebEnginePart> m_part; //!< The part associated with this widget

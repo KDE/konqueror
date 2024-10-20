@@ -47,6 +47,7 @@
 #include <QLoggingCategory>
 
 using namespace KonqInterfaces;
+using namespace Konq;
 
 UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url, const QString &mimeType, const KonqOpenURLRequest &req, bool trustedSource):
     QObject(mainWindow),
@@ -58,23 +59,14 @@ UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url
     m_trustedSource(trustedSource),
     m_protocolAllowsReading(KProtocolManager::supportsReading(m_url) || !KProtocolInfo::isKnownProtocol(m_url)), // If the protocol is unknown, assume it allows reading
     m_useDownloadJob(req.browserArgs.downloadJob()),
-    m_downloadJob(req.browserArgs.downloadJob())
+    m_downloadJob(req.browserArgs.downloadJob()),
+    m_allowedActions{m_request.urlActions()}
 {
     m_request.suggestedFileName = m_request.browserArgs.suggestedDownloadName();
 
     QString requestedEmbeddingPart = m_request.browserArgs.embedWith();
     if (!requestedEmbeddingPart.isEmpty()) {
         m_request.serviceName = requestedEmbeddingPart;
-    }
-
-    QString openWith = m_request.browserArgs.openWith();
-    m_request.forceOpen = !openWith.isEmpty();
-    initAllowedActions(m_request);
-
-    //If we're asked to use a specific application to open the URL, assume the user
-    //has already decided to open the URL
-    if (!openWith.isEmpty()) {
-        m_service = KService::serviceByStorageId(openWith);
     }
 
     if (m_useDownloadJob) {
@@ -89,57 +81,31 @@ UrlLoader::~UrlLoader()
 {
 }
 
-void UrlLoader::initAllowedActions(const KonqOpenURLRequest &req)
+void UrlLoader::updateAllowedActions()
 {
-    //We have two conflicting requests: do nothing (of course, this should never happen)
-    if (req.forceAutoEmbed && req.forceOpen) {
-        m_allowedActions.clear();
-        m_action = OpenUrlAction::DoNothing;
-        return;
+    if (m_allowedActions.isAllowed(UrlAction::Execute) && !isUrlExecutable()) {
+        m_allowedActions.allow(UrlAction::Execute, false);
     }
 
-    if (req.forceAutoEmbed) {
-        m_allowedActions = {OpenUrlAction::Embed};
-    } else if (req.forceOpen) {
-        m_allowedActions = {OpenUrlAction::Open};
-    } else {
-        switch (req.browserArgs.forcedAction()) {
-            case BrowserArguments::Action::DoNothing:
-                m_allowedActions.clear();
-                break;
-            case BrowserArguments::Action::UnknownAction:
-                break;
-            case BrowserArguments::Action::Save:
-                m_allowedActions = {OpenUrlAction::Save};
-                break;
-            case BrowserArguments::Action::Embed:
-                m_allowedActions = {OpenUrlAction::Embed};
-                break;
-            case BrowserArguments::Action::Open:
-                m_allowedActions = {OpenUrlAction::Open};
-                break;
-            case BrowserArguments::Action::Execute:
-                m_allowedActions = {OpenUrlAction::Execute};
-                break;
+    if (m_allowedActions.isAllowed(UrlAction::Embed)) {
+        if (!m_part.isValid()) {
+            m_allowedActions.allow(UrlAction::Embed, false);
+        } else if (isViewLocked()) {
+        //If the view is locked, assume, we need to embed the URL. Ideally, this should
+        //be done
+            m_request.forceEmbed();
         }
     }
-}
 
-bool UrlLoader::isForced(OpenUrlAction action) const
-{
-    switch (action) {
-        case OpenUrlAction::UnknownAction: return false;
-        case OpenUrlAction::DoNothing: return m_allowedActions.isEmpty();
-        default: return m_allowedActions.length() == 1 && m_allowedActions.value(0) == action;
+    if (serviceIsKonqueror(m_service)) {
+        m_allowedActions.allow(UrlAction::Open, false);
     }
+
 }
 
 bool UrlLoader::can(OpenUrlAction action) const
 {
-    if (action == OpenUrlAction::DoNothing || action == OpenUrlAction::UnknownAction) {
-        return true;
-    }
-    return m_allowedActions.contains(action);
+    return m_allowedActions.isAllowed(action);
 }
 
 void UrlLoader::determineStartingMimetype()
@@ -186,6 +152,22 @@ void UrlLoader::setNewTab(bool newTab)
     m_request.browserArgs.setNewTab(newTab);
 }
 
+
+void UrlLoader::findService()
+{
+    if (!can(UrlAction::Open)) {
+        m_service = nullptr;
+        return;
+    }
+    QString openWith = m_request.browserArgs.openWith();
+    if (!openWith.isEmpty()) {
+        m_service = KService::serviceByStorageId(openWith);
+    }
+    if (!m_service) {
+        m_service = KApplicationTrader::preferredService(m_mimeType);
+    }
+}
+
 void UrlLoader::start()
 {
     if (m_url.isLocalFile()) {
@@ -197,12 +179,6 @@ void UrlLoader::start()
     if (hasError()) {
         m_mimeType = QStringLiteral("text/html");
     }
-    if (isMimeTypeKnown(m_mimeType)) {
-        KService::Ptr preferredService = KApplicationTrader::preferredService(m_mimeType);
-        if (serviceIsKonqueror(preferredService)) {
-            m_request.forceAutoEmbed = true;
-        }
-    }
 
     m_isAsync = m_protocolAllowsReading && (!isMimeTypeKnown(m_mimeType) || m_useDownloadJob);
 }
@@ -212,23 +188,21 @@ bool UrlLoader::isViewLocked() const
     return m_view && m_view->isLockedLocation();
 }
 
-bool UrlLoader::setAction(OpenUrlAction action)
-{
-    if (!m_allowedActions.contains(action)) {
-        return false;
-    }
-    m_action = action;
-    return true;
-}
-
 void UrlLoader::decideAction()
 {
     if (hasError()) {
-        setAction(OpenUrlAction::Embed);
+        m_request.forceEmbed();
         return;
     }
-    m_action = decideExecute();
-    switch (m_action) {
+
+    if (isMimeTypeKnown(m_mimeType)) {
+        m_part = findEmbeddingPart();
+        findService();
+        updateAllowedActions();
+    }
+
+    decideExecute();
+    switch (m_request.chosenAction) {
         case OpenUrlAction::Execute:
             m_ready = true;
             break;
@@ -344,28 +318,18 @@ static UrlLoader::OpenUrlAction actionFromDialogResult(DownloadActionQuestion::A
         case DownloadActionQuestion::Action::Open:
             return UrlLoader::OpenUrlAction::Open;
     }
-    //We can't really reach this point, but it won't compile without this
+    //We can't really reach this point, but it's needed to avoid a compiler warning
     return UrlLoader::OpenUrlAction::UnknownAction;
 }
 
 void UrlLoader::decideEmbedOpenOrSave()
 {
-    //If a part has been explicitly requested or if the view is locked, assume
-    //we need to embed the URL
-    if (!m_request.serviceName.isEmpty() || isViewLocked()) {
-        m_part = !m_request.serviceName.isEmpty() ? findPartById(m_request.serviceName) : findEmbeddingPart(false);
-        if (m_part.isValid()) {
-            m_action = OpenUrlAction::Embed;
-        }
-    } else if (m_service) { //The same if a service has been specified
-        m_action = OpenUrlAction::Open;
-    }
-
-    if (m_action == OpenUrlAction::UnknownAction) {
+    m_request.chosenAction = m_allowedActions.forcedAction();
+    if (m_request.chosenAction == OpenUrlAction::UnknownAction) {
         askEmbedSaveOrOpen();
     }
 
-    //If the URL should be opened in an external application and it should be downloaded by the requesting part,
+    //If the URL should be opened in an external application and it should be downloaded using a download job
     //ensure it's not downloaded in Konqueror's temporary directory but in the global temporary directory,
     //otherwise if the user closes Konqueror before closing the application, there could be issues because the
     //external application wouldn't find the file anymore.
@@ -373,14 +337,13 @@ void UrlLoader::decideEmbedOpenOrSave()
     //and the external application are closed and will only be removed automatically if the temporary directory is deleted
     //or emptied.
     DownloadJob *job = m_request.browserArgs.downloadJob();
-    if (m_useDownloadJob && m_action == OpenUrlAction::Open && job) {
+    if (m_useDownloadJob && m_request.chosenAction == OpenUrlAction::Open && job) {
         QString fileName = QFileInfo(job->downloadPath()).fileName();
-        fileName = Konq::generateUniqueFileName(fileName, QDir::temp().path());
+        fileName = generateUniqueFileName(fileName, QDir::temp().path());
         job->setDownloadPath(QDir::temp().filePath(fileName));
     }
 
-    m_ready = m_action != OpenUrlAction::Embed || m_part.isValid();
-
+    m_ready = m_request.chosenAction != OpenUrlAction::Embed || m_part.isValid();
 }
 
 void UrlLoader::askEmbedSaveOrOpen()
@@ -393,11 +356,14 @@ void UrlLoader::askEmbedSaveOrOpen()
     Result embedMode = can(OpenUrlAction::Embed) ? Result::Embed : Result::Cancel;
 
     DownloadActionQuestion::Action ans = dlg.ask(saveMode|embedMode|openMode);
-    m_action = actionFromDialogResult(ans);
-    if (m_action == OpenUrlAction::Embed) {
+
+    m_request.chosenAction = actionFromDialogResult(ans);
+    if (m_request.chosenAction == OpenUrlAction::Embed && (m_request.browserArgs.embedWith().isEmpty() || dlg.dialogShown())) {
+        //Override the part in browserArgs only if the user was shown a dialog (meaning he explicitly chose a part)
         m_part = dlg.selectedPart();
         m_request.serviceName = m_part.pluginId();
-    } else if (m_action == OpenUrlAction::Open) {
+    } else if (m_request.chosenAction == OpenUrlAction::Open && (!m_request.browserArgs.openWith().isEmpty() || dlg.dialogShown())) {
+        //Override the service in browserArgs only if the user was shown a dialog (meaning he explicitly chose a service)
         m_service = dlg.selectedService();
     }
 }
@@ -428,23 +394,37 @@ bool UrlLoader::isUrlExecutable() const
 }
 
 
-UrlLoader::OpenUrlAction UrlLoader::decideExecute() const {
-    //We don't want to execute files which aren't local, files which aren't executable (obviously)
-    //and we don't want to execute when we are reloading (the file is visible in the current part,
-    //so we know the user wanted to display it. We also don't want to execute when we aren't allowed to do so
-    if (!can(OpenUrlAction::Execute) || !isUrlExecutable() || m_request.args.reload()) {
-        return OpenUrlAction::UnknownAction;
+void UrlLoader::decideExecute()
+{
+    if (!can(UrlAction::Execute)) {
+        return;
     }
-    bool canDisplay = !KParts::PartLoader::partsForMimeType(m_mimeType).isEmpty();
+
+    //We don't want to execute when we are reloading the file is visible in the current part
+    //(the file is visible in the current part, so we know the user wanted to display it) unless
+    //for, some reasons, we're forced to do so.
+    if (m_request.args.reload() && !m_allowedActions.isForced(UrlAction::Execute)) {
+        return;
+    }
+
+    UrlAction alternativeAction;
+    if (can(UrlAction::Embed)) {
+        alternativeAction = UrlAction::Embed;
+    } else if (can(UrlAction::Open)) {
+        alternativeAction = UrlAction::Open;
+    } else {
+        alternativeAction = UrlAction::DoNothing;
+    }
 
     KMessageBox::ButtonCode code;
     KGuiItem executeGuiItem(i18nc("Execute an executable file", "Execute"),
                             QIcon::fromTheme(QStringLiteral("system-run")));
-    KGuiItem displayGuiItem(i18nc("Display an executable file", "Display"),
-                            QIcon::fromTheme(QStringLiteral("document-preview")));
+    QString displayIconName = alternativeAction == UrlAction::Embed ? QStringLiteral("document-preview") : QStringLiteral("document-open");
+    KGuiItem displayGuiItem(i18nc("Display an executable file inside Konqueror", "Display"),
+                            QIcon::fromTheme(displayIconName));
     QString dontShowAgainId(QLatin1String("AskExecuting")+m_mimeType);
 
-    if (canDisplay) {
+    if (alternativeAction != UrlAction::DoNothing) {
         code = KMessageBox::questionTwoActionsCancel(m_mainWindow,
                                                      xi18nc("@info The user has to decide whether to execute an executable file or display it",
                                                             "<filename>%1</filename> can be executed. Do you want to execute it or to display it?", m_url.path()),
@@ -458,31 +438,32 @@ UrlLoader::OpenUrlAction UrlLoader::decideExecute() const {
                                                dontShowAgainId, KMessageBox::Dangerous);}
     switch (code) {
         case KMessageBox::PrimaryAction:
-            return OpenUrlAction::Execute;
+            m_request.chosenAction = OpenUrlAction::Execute;
+            break;
         case KMessageBox::Cancel:
-            return OpenUrlAction::DoNothing;
+            m_request.chosenAction = OpenUrlAction::DoNothing;
+            break;
         case KMessageBox::SecondaryAction:
             //The "No" button actually corresponds to the "Cancel" action if the file can't be displayed
-            return canDisplay ? OpenUrlAction::UnknownAction : OpenUrlAction::DoNothing;
-        default: //This is here only to avoid a compiler warning
-            return OpenUrlAction::UnknownAction;
+            m_request.chosenAction = alternativeAction;
+        default: //This point can't be reached. This is here only to avoid a compiler warning
+            return;
     }
 }
 
 void UrlLoader::performAction()
 {
-    //If we still aren't ready, it means that the part wants to download the URL
-    //by itself. Do this only when opening or embedding, however, since when
+    //If we still aren't ready, it means that we need to use a download job.
+    //Do this only when opening or embedding, however, since when
     //saving we first need to ask the user where to save. save() will launch the
     //job itself.
-    //When the part has finished downloading the URL, the slot connected with the
-    //job's result() signal will call again this function, after setting m_ready
-    //to true
-    if (!m_ready && (m_action == OpenUrlAction::Embed || m_action == OpenUrlAction::Open)) {
+    //When the job has finished downloading the URL, the slot connected with its
+    //result() signal will set m_redy to true, then call this function again
+    if (!m_ready && (m_request.chosenAction == OpenUrlAction::Embed || m_request.chosenAction == OpenUrlAction::Open)) {
         downloadForEmbeddingOrOpening();
         return;
     }
-    switch (m_action) {
+    switch (m_request.chosenAction) {
         case OpenUrlAction::Embed:
             embed();
             break;
@@ -509,7 +490,7 @@ void UrlLoader::downloadForEmbeddingOrOpening()
         done();
         return;
     }
-    m_downloadJob->setIntent(m_action == BrowserArguments::Action::Embed ? DownloadJob::Embed : DownloadJob::Open);
+    m_downloadJob->setIntent(m_request.chosenAction == UrlAction::Embed ? DownloadJob::Embed : DownloadJob::Open);
     connect(m_downloadJob, &DownloadJob::downloadResult, this, &UrlLoader::jobFinished);
     m_downloadJob->startDownload(m_mainWindow, this, &UrlLoader::downloadForEmbeddingOrOpeningDone);
 }
@@ -521,7 +502,7 @@ void UrlLoader::downloadForEmbeddingOrOpeningDone(KonqInterfaces::DownloadJob *j
         m_ready = true;
         m_request.tempFile = true;
     } else if (!job || job->error() == KIO::ERR_USER_CANCELED) {
-        m_action = OpenUrlAction::DoNothing;
+        m_request.chosenAction = OpenUrlAction::DoNothing;
         m_ready = true;
     }
     checkDownloadedMimetype();
@@ -531,22 +512,23 @@ void UrlLoader::downloadForEmbeddingOrOpeningDone(KonqInterfaces::DownloadJob *j
 void UrlLoader::checkDownloadedMimetype()
 {
     QMimeDatabase db;
-    QString type = db.mimeTypeForFile(m_url.path()).name();
+    QMimeType type = db.mimeTypeForFile(m_url.path());
+    QString typeName = type.name();
     //Don't override the mimetype with the default one
-    if (type == m_mimeType || type == "application/octet-stream") {
+    if (type.isDefault() || typeName == m_mimeType) {
         return;
     }
-    m_mimeType = type;
+    m_mimeType = typeName;
     //The URL is a local file now, so there are no problems in opening it with WebEnginePart
     m_ignoreDefaultHtmlPart = false;
     if (shouldEmbedThis()) {
         m_part = findEmbeddingPart(false);
         if (m_part.isValid()) {
-            m_action = OpenUrlAction::Embed;
+            m_request.chosenAction = OpenUrlAction::Embed;
             return;
         }
     }
-    m_action = OpenUrlAction::Open;
+    m_request.chosenAction = OpenUrlAction::Open;
     if (m_service && m_service->hasMimeType(m_mimeType)) {
         return;
     }
@@ -557,6 +539,10 @@ void UrlLoader::done(KJob *job)
 {
     //Ensure that m_mimeType and m_request.args.mimeType are equal, since it's not clear what will be used
     m_request.args.setMimeType(m_mimeType);
+
+    //Update the allowed actions
+    m_request.browserArgs.setAllowedUrlActions(m_allowedActions);
+
     if (job) {
         jobFinished(job);
     }
@@ -587,9 +573,9 @@ void UrlLoader::mimetypeDeterminedByJob()
 {
     if (m_mimeTypeFinderJob->error()) {
         m_jobErrorCode = m_mimeTypeFinderJob->error();
-        m_url = Konq::makeErrorUrl(m_jobErrorCode, m_mimeTypeFinderJob->errorString(), m_url);
+        m_url = makeErrorUrl(m_jobErrorCode, m_mimeTypeFinderJob->errorString(), m_url);
         m_mimeType = QStringLiteral("text/html");
-        m_action = OpenUrlAction::Embed;
+        m_request.chosenAction = OpenUrlAction::Embed;
         performAction();
         return;
     }
@@ -723,10 +709,10 @@ void UrlLoader::detectSettingsForLocalFiles()
 
 bool UrlLoader::shouldEmbedThis() const
 {
-    if (!m_allowedActions.contains(OpenUrlAction::Embed)) {
+    if (!can(OpenUrlAction::Embed)) {
         return false;
     } else {
-        return  isForced(OpenUrlAction::Embed) || KonqFMSettings::settings()->shouldEmbed(m_mimeType);
+        return  m_allowedActions.isForced(OpenUrlAction::Embed) || KonqFMSettings::settings()->shouldEmbed(m_mimeType);
     }
 }
 
@@ -734,18 +720,19 @@ void UrlLoader::embed()
 {
     if (m_jobErrorCode) {
         QUrl url = m_url;
-        m_url = Konq::makeErrorUrl(m_jobErrorCode, m_url.scheme(), m_url);
+        m_url = makeErrorUrl(m_jobErrorCode, m_url.scheme(), m_url);
         m_mimeType = QStringLiteral("text/html");
         m_part = findPartById(QStringLiteral("webenginepart"));
     }
-    m_request.forceAutoEmbed = true;
     bool embedded = m_mainWindow->openView(m_mimeType, m_url, m_view, m_request, m_originalUrl);
     if (embedded) {
         done();
     } else {
-        m_allowedActions.removeOne(OpenUrlAction::Embed);
+        m_allowedActions.allow(UrlAction::Embed, false);
         m_request.serviceName = {};
-        m_request.forceAutoEmbed = false;
+        //This is an unexpected situation, so enable open and save action even if they hadn't been originally requested
+        m_allowedActions.allow(Konq::UrlAction::Open, true);
+        m_allowedActions.allow(Konq::UrlAction::Save, true);
         m_part = {};
         decideEmbedOpenOrSave();
         performAction();

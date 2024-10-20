@@ -965,7 +965,7 @@ void KonqViewManager::loadViewConfigFromGroup(const KConfigGroup &profileGroup, 
     if (openUrl && !forcedUrl.isEmpty()) {
         KonqOpenURLRequest _req(req);
         _req.openAfterCurrentPage = Konq::Settings::openAfterCurrentPage();
-        _req.forceAutoEmbed = true; // it's a new window, let's use it
+        _req.forceEmbed(); // it's a new window, let's use it
 
         m_pMainWindow->openUrl(nextChildView /* can be 0 for an empty profile */,
                                forcedUrl, _req.args.mimeType(), _req, _req.browserArgs.trustedSource);

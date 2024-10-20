@@ -34,9 +34,9 @@ ActOnDownloadedFileBar::ActOnDownloadedFileBar(const QUrl &url, const QUrl& down
     addAction(m_openAction);
     addAction(m_embedActionNewTab);
     addAction(m_embedActionHere);
-    connect(m_openAction, &QAction::triggered, this, [this](){actOnChoice(BrowserArguments::Action::Open, true, {});});
-    connect(m_embedActionNewTab, &QAction::triggered, this, [this](){actOnChoice(BrowserArguments::Action::Embed, true, {});});
-    connect(m_embedActionHere, &QAction::triggered, this, [this](){actOnChoice(BrowserArguments::Action::Embed, false, {});});
+    connect(m_openAction, &QAction::triggered, this, [this](){actOnChoice(Konq::UrlAction::Open, true, {});});
+    connect(m_embedActionNewTab, &QAction::triggered, this, [this](){actOnChoice(Konq::UrlAction::Embed, true, {});});
+    connect(m_embedActionHere, &QAction::triggered, this, [this](){actOnChoice(Konq::UrlAction::Embed, false, {});});
 
     QMimeDatabase db;
     m_mimeType = db.mimeTypeForFile(downloadUrl.path()).name();
@@ -86,7 +86,7 @@ void WebEngine::ActOnDownloadedFileBar::setupOpenAction()
     KService::List apps = KFileItemActions::associatedApplications(QStringList{m_mimeType});
     QMenu *menu = createOpenWithMenu(apps);
     connect(menu, &QMenu::triggered, this, [this](QAction *action){
-        actOnChoice(BrowserArguments::Action::Open, true, action ? action->data() : QVariant());
+        actOnChoice(Konq::UrlAction::Open, true, action ? action->data() : QVariant());
     });
     m_openAction->setMenu(menu);
     if (apps.isEmpty()) {
@@ -125,7 +125,7 @@ void WebEngine::ActOnDownloadedFileBar::setupEmbedAction(QAction* embedAction)
     QMenu *menu = createEmbedWithMenu(parts);
     bool newTab = embedAction == m_embedActionNewTab;
     connect(menu, &QMenu::triggered, this, [this, newTab](QAction *action){
-        actOnChoice(BrowserArguments::Action::Embed, newTab, action ? action->data() : QVariant());
+        actOnChoice(Konq::UrlAction::Embed, newTab, action ? action->data() : QVariant());
     });
     embedAction->setMenu(menu);
     if (parts.isEmpty()) {
@@ -153,7 +153,7 @@ QMenu* WebEngine::ActOnDownloadedFileBar::createEmbedWithMenu(const QList<KPlugi
     std::transform(parts.constBegin(), parts.constEnd(), std::back_inserter(actions), createAction);
     QMenu *menu = createMenu(actions);
     connect(menu, &QMenu::triggered, this, [this](QAction *action){
-        actOnChoice(BrowserArguments::Action::Embed, true, action ? action->data() : QVariant());
+        actOnChoice(Konq::UrlAction::Embed, true, action ? action->data() : QVariant());
     });
     return menu;
 }
@@ -171,7 +171,7 @@ QMenu* WebEngine::ActOnDownloadedFileBar::createMenu(const QList<QAction*> &acti
     return menu;
 }
 
-void WebEngine::ActOnDownloadedFileBar::actOnChoice(BrowserArguments::Action choice, bool newTab, const QVariant &data)
+void WebEngine::ActOnDownloadedFileBar::actOnChoice(Konq::UrlAction choice, bool newTab, const QVariant &data)
 {
     if (!m_part) {
         return;
@@ -181,7 +181,7 @@ void WebEngine::ActOnDownloadedFileBar::actOnChoice(BrowserArguments::Action cho
     args.setMimeType(m_mimeType);
     BrowserArguments bargs;
     if (data.isValid()) {
-        if (choice == BrowserArguments::Action::Embed) {
+        if (choice == Konq::UrlAction::Embed) {
             bargs.setEmbedWith(data.toString());
         } else {
             bargs.setOpenWith(data.toString());
