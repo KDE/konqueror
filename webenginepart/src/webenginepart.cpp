@@ -778,9 +778,11 @@ void WebEnginePart::slotShowWalletMenu()
             menu->addAction(a);
         }
     };
+    addAction("walletRescan");
+    menu->addSeparator();
+
     addAction("walletFillFormsNow");
     addAction("walletCacheFormsNow");
-
     addAction("walletCustomizeFields");
     addAction("walletRemoveCustomization");
     menu->addSeparator();
@@ -1009,6 +1011,10 @@ void WebEnginePart::createWalletActions()
     actionCollection()->setDefaultShortcut(a, QKeySequence("Ctrl+Shift+V"));
     connect(a, &QAction::triggered, this, [this]{if(page() && m_wallet){m_wallet->detectAndFillPageForms(page());}});
 
+    a = new QAction(i18nc("Scans again the page to detect forms to fill", "Look Again for Forms"), this);
+    actionCollection()->addAction("walletRescan", a);
+    connect(a, &QAction::triggered, this, [this]{if(page() && m_wallet){m_wallet->detectAndFillPageForms(page());}});
+
     a = new QAction(i18n("&Memorize Passwords in This Page Now"), this);
     actionCollection()->addAction("walletCacheFormsNow", a);
     connect(a, &QAction::triggered, this, [this]{if (page() && m_wallet){m_wallet->savePageDataNow(page());}});
@@ -1045,6 +1051,7 @@ void WebEnginePart::updateWalletActions()
     bool enableCaching = m_webView && !WebEngineSettings::self()->isNonPasswordStorableSite(m_webView->url().host());
     bool hasCustomForms = m_wallet && m_wallet->hasCustomizedCacheableForms(url());
     actionCollection()->action("walletFillFormsNow")->setEnabled(enableCaching && m_wallet && m_walletData.hasCachedData);
+    actionCollection()->action("walletRescan")->setEnabled(enableCaching && m_wallet && m_walletData.hasCachedData);
     actionCollection()->action("walletCacheFormsNow")->setEnabled(enableCaching && m_wallet && (m_walletData.hasAutoFillableForms || hasCustomForms));
     actionCollection()->action("walletCustomizeFields")->setEnabled(enableCaching && m_walletData.hasForms);
     actionCollection()->action("walletRemoveCustomization")->setEnabled(hasCustomForms);
