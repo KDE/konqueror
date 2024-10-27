@@ -119,7 +119,6 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
     new WebEngineTextExtension(this);
     new WebEngineHtmlExtension(this);
 
-
     // Layout the GUI...
     QVBoxLayout* l = new QVBoxLayout(mainWidget);
     l->setContentsMargins(0, 0, 0, 0);
@@ -1140,6 +1139,7 @@ void WebEnginePart::displayActOnDownloadedFileBar(KonqInterfaces::DownloadJob* j
         m_actOnDownloadedFileWidget->deleteLater();
         m_actOnDownloadedFileWidget = nullptr;
     }
+
     m_actOnDownloadedFileWidget = new ActOnDownloadedFileBar(job->url(), QUrl::fromLocalFile(job->downloadPath()), this);
     auto deleteWidget = [this] {
         if (!m_actOnDownloadedFileWidget) {
