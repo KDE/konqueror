@@ -145,9 +145,11 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadRequest* it
     DownloadObjective objective = fetchDownloadObjective(it->url(), page);
     //If the mimetype is supported and the objective is OpenInApplication, it means that, for whatever reason,
     //QtWebEngine decided it doesn't want to display the URL: most likely, this means that it should be saved
-    //(for example, because of "attachment" Content-Disposition header)
+    //(for example, because of "attachment" Content-Disposition header). To be more flexible, however, instead
+    //we ask the user how to proceed and, in any case, force opening the file in a new window or tab
     if (objective == DownloadObjective::OpenInApplication && supportedMimetypes().contains(it->mimeType())) {
-        objective = DownloadObjective::SaveOnly;
+        objective = DownloadObjective::AskUser;
+        forceNew = true;
     }
 
     it->setDownloadDirectory(tempDownloadDir().path());

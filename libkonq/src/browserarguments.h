@@ -242,7 +242,21 @@ struct LIBKONQ_EXPORT BrowserArguments {
 
     void setAllowedUrlActions(const Konq::AllowedUrlActions &actions);
 
-    // Konq::AllowedUrlActions& urlActionsRef();
+    /**
+     * @brief Toggles whether or not to display a dialog asking what to do with the URL instead of using the default action
+     *
+     * By default, the dialog is only displayed if the action couldn't be determined automatically
+     *
+     * @param force whether to force displaying the dialog or not
+     */
+    void setForceShowActionDialog(bool force = true);
+
+    /**
+     * @brief Whether or not always show a dialog asking the user what to do with the URL
+     * @return `true` if the dialog should always be shown and `false` if it should only be shown
+     * when the action couldn't be determined automatically
+     */
+    bool forceShowActionDialog() const;
 
 private:
     /**

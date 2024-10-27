@@ -36,18 +36,21 @@ public:
     /**
      * @brief Enum which describes what the user wants to do with a URL once it has been downloaded
      *
-     * Currently there are three possibilities:
+     * Currently there are the following possibilities:
      * - the user wants to open the URL in the application embedding the part (for example, when
-     *  clicking on a link). This is the default download objective
+     *  clicking on a link). This is the default download objective)
      * - the user wants to save locally the file represented by the URL (for example, when using
-     *  the "save link as..." context menu entry
+     *  the "save link as..." context menu entry)
      * - the user wants to save the currently displayed page locally (for example, when using the "Save as"
-     *  menu entry
+     *  menu entry)
+     * - we need to ask the user what to do (for example because of "attachment" Content-Disposition header:
+     *  in this case, asking the user is more flexible than just forcing saving)
      */
     enum class DownloadObjective {
         OpenInApplication, //!< A URL is to be downloaded to be opened in the application
-        SaveAs, //!< The current page is to saved locally
-        SaveOnly //!< A URL is to be saved locally
+        SavePageAs, //!< The current page is to saved locally
+        SaveUrl, //!< A URL is to be saved locally
+        AskUser //!< Ask the user what to do
     };
 
     /**

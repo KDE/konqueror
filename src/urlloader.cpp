@@ -355,7 +355,8 @@ void UrlLoader::askEmbedSaveOrOpen()
     Result openMode = can(OpenUrlAction::Open) ? Result::Open : Result::Cancel;
     Result embedMode = can(OpenUrlAction::Embed) ? Result::Embed : Result::Cancel;
 
-    DownloadActionQuestion::Action ans = dlg.ask(saveMode|embedMode|openMode);
+    DownloadActionQuestion::EmbedFlags flag = m_request.browserArgs.forceShowActionDialog() ? DownloadActionQuestion::ForceDialog : DownloadActionQuestion::InlineDisposition;
+    DownloadActionQuestion::Action ans = dlg.ask(saveMode|embedMode|openMode, flag);
 
     m_request.chosenAction = actionFromDialogResult(ans);
     if (m_request.chosenAction == OpenUrlAction::Embed && (m_request.browserArgs.embedWith().isEmpty() || dlg.dialogShown())) {

@@ -206,11 +206,13 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
 
     bArgs.setIgnoreDefaultHtmlPart(true);
 
-    if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveOnly || objective == WebEnginePartDownloadManager::DownloadObjective::SaveAs) {
+    if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveUrl || objective == WebEnginePartDownloadManager::DownloadObjective::SavePageAs) {
         bArgs.setAllowedUrlActions(Konq::AllowedUrlActions{Konq::UrlAction::Save});
+    } else if (objective == WebEnginePartDownloadManager::DownloadObjective::AskUser) {
+        bArgs.setForceShowActionDialog(true);
     }
 
-    if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveAs) {
+    if (objective == WebEnginePartDownloadManager::DownloadObjective::SavePageAs) {
         bArgs.setForcesNewWindow(true);
         job->setCalledForSaveAs(true);
         auto displayLocalFile = [this](KonqInterfaces::DownloadJob *job, const QUrl &url){

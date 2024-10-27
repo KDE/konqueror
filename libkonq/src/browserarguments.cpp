@@ -28,6 +28,7 @@ struct BrowserArgumentsPrivate {
     bool ignoreDefaultHtmlPart = false;
     QPointer<KonqInterfaces::DownloadJob> downloadJob;
     AllowedUrlActions allowedActions;
+    bool forceShowActionDialog = false;
 };
 
 BrowserArguments::BrowserArguments()
@@ -196,4 +197,14 @@ Konq::AllowedUrlActions BrowserArguments::urlActions() const
 void BrowserArguments::setAllowedUrlActions(const AllowedUrlActions &actions)
 {
     ensureD()->allowedActions = actions;
+}
+
+void BrowserArguments::setForceShowActionDialog(bool force)
+{
+    ensureD()->forceShowActionDialog = force;
+}
+
+bool BrowserArguments::forceShowActionDialog() const
+{
+    return d ? d->forceShowActionDialog : false;
 }
