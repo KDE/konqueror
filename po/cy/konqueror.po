@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-21 00:39+0000\n"
+"POT-Creation-Date: 2024-10-28 00:40+0000\n"
 "PO-Revision-Date: 2003-12-27 14:40+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -619,8 +619,8 @@ msgid ""
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4796
-#: src/konqmainwindow.cpp:4842
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4838
+#: src/konqmainwindow.cpp:4884
 #, fuzzy, kde-format
 #| msgctxt "NAME OF TRANSLATORS"
 #| msgid "Your names"
@@ -731,7 +731,7 @@ msgstr "Ffeil Lleol"
 msgid "Miscellaneous"
 msgstr ""
 
-#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4300
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4342
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Agor mewn Ffenestr &Newydd"
@@ -796,87 +796,87 @@ msgctxt "@title:window"
 msgid "Clear History?"
 msgstr "Clirio'r Hanes?"
 
-#: src/konqmainwindow.cpp:692
+#: src/konqmainwindow.cpp:734
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
 msgstr ""
 
-#: src/konqmainwindow.cpp:724
+#: src/konqmainwindow.cpp:766
 #, fuzzy, kde-format
 #| msgid "Accessed"
 msgid "Access denied"
 msgstr "Hygyrchwyd"
 
-#: src/konqmainwindow.cpp:1484
+#: src/konqmainwindow.cpp:1526
 #, fuzzy, kde-format
 #| msgid "S&end File..."
 msgid "Open File"
 msgstr "A&nfon Ffeil"
 
-#: src/konqmainwindow.cpp:1548
+#: src/konqmainwindow.cpp:1590
 #, kde-format
 msgid "Canceled."
 msgstr "Wedi'i ddiddymu"
 
-#: src/konqmainwindow.cpp:1584
+#: src/konqmainwindow.cpp:1626
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
 "Reloading the page will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2223
-#: src/konqmainwindow.cpp:2312 src/konqmainwindow.cpp:2344
-#: src/konqmainwindow.cpp:2387 src/konqmainwindow.cpp:2409
-#: src/konqmainwindow.cpp:4761
+#: src/konqmainwindow.cpp:1627 src/konqmainwindow.cpp:2265
+#: src/konqmainwindow.cpp:2354 src/konqmainwindow.cpp:2386
+#: src/konqmainwindow.cpp:2429 src/konqmainwindow.cpp:2451
+#: src/konqmainwindow.cpp:4803
 #, fuzzy, kde-format
 #| msgid "Discard Changes?"
 msgctxt "@title:window"
 msgid "Discard Changes?"
 msgstr "Taflu Newidiadau?"
 
-#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2223
-#: src/konqmainwindow.cpp:2312 src/konqmainwindow.cpp:2344
-#: src/konqmainwindow.cpp:2387 src/konqmainwindow.cpp:2410
-#: src/konqmainwindow.cpp:4761
+#: src/konqmainwindow.cpp:1627 src/konqmainwindow.cpp:2265
+#: src/konqmainwindow.cpp:2354 src/konqmainwindow.cpp:2386
+#: src/konqmainwindow.cpp:2429 src/konqmainwindow.cpp:2452
+#: src/konqmainwindow.cpp:4803
 #, kde-format
 msgid "&Discard Changes"
 msgstr "&Taflu Newidiadau"
 
-#: src/konqmainwindow.cpp:1899 src/konqmainwindow.cpp:1905
+#: src/konqmainwindow.cpp:1941 src/konqmainwindow.cpp:1947
 #, kde-format
 msgid "Home Folder"
 msgstr "Plygell Cartref"
 
-#: src/konqmainwindow.cpp:1900 src/konqmainwindow.cpp:3322
+#: src/konqmainwindow.cpp:1942 src/konqmainwindow.cpp:3364
 #, fuzzy, kde-format
 #| msgid "Home"
 msgid "Home"
 msgstr "Cartref"
 
-#: src/konqmainwindow.cpp:1906
+#: src/konqmainwindow.cpp:1948
 #, fuzzy, kde-format
 msgid "Navigate to your 'Home Folder'"
 msgstr "Llywio i'ch 'URL gartref' neu hafan"
 
-#: src/konqmainwindow.cpp:1907
+#: src/konqmainwindow.cpp:1949
 #, fuzzy, kde-format
 msgid "Navigate to your local 'Home Folder'"
 msgstr "Llywio i'ch 'URL gartref' neu hafan"
 
-#: src/konqmainwindow.cpp:1910
+#: src/konqmainwindow.cpp:1952
 #, fuzzy, kde-format
 #| msgid "Home"
 msgid "Home Page"
 msgstr "Cartref"
 
-#: src/konqmainwindow.cpp:1912
+#: src/konqmainwindow.cpp:1954
 #, fuzzy, kde-format
 msgid "Navigate to your 'Home Page'"
 msgstr "Llywio i'ch 'URL gartref' neu hafan"
 
-#: src/konqmainwindow.cpp:1913
+#: src/konqmainwindow.cpp:1955
 #, fuzzy, kde-format
 msgid ""
 "<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
@@ -887,305 +887,305 @@ msgstr ""
 "â'r botwm yma a chi yn y <b>Ganolfan Reolaeth KDE</b>, o dan <b>Trefnydd "
 "Ffeiliau</b>/<b>Ymddygiad</b>."
 
-#: src/konqmainwindow.cpp:2222
+#: src/konqmainwindow.cpp:2264
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Detaching the tab will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2311
+#: src/konqmainwindow.cpp:2353
 #, kde-format
 msgid ""
 "This view contains changes that have not been submitted.\n"
 "Closing the view will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2343
+#: src/konqmainwindow.cpp:2385
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the tab will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2369
+#: src/konqmainwindow.cpp:2411
 #, fuzzy, kde-format
 msgid "Do you really want to close all other tabs?"
 msgstr "Ydych wir am glirio'r hanes gyfan?"
 
-#: src/konqmainwindow.cpp:2370 src/konqmainwindow.cpp:3402 src/konqtabs.cpp:335
+#: src/konqmainwindow.cpp:2412 src/konqmainwindow.cpp:3444 src/konqtabs.cpp:335
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr "Cau Tabiau &Eraill"
 
-#: src/konqmainwindow.cpp:2370
+#: src/konqmainwindow.cpp:2412
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
 msgstr "Cau Tabiau &Eraill"
 
-#: src/konqmainwindow.cpp:2386
+#: src/konqmainwindow.cpp:2428
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing other tabs will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2408
+#: src/konqmainwindow.cpp:2450
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Reloading all tabs will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2465
+#: src/konqmainwindow.cpp:2507
 #, fuzzy, kde-format
 #| msgid "Enter Target"
 msgctxt "@title:window"
 msgid "Enter Target"
 msgstr "Mewnosodwch Targed"
 
-#: src/konqmainwindow.cpp:2472
+#: src/konqmainwindow.cpp:2514
 #, fuzzy, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
 msgstr "<qt>Nid yw <b>%1</b> yn ddilys<qt>"
 
-#: src/konqmainwindow.cpp:2482
+#: src/konqmainwindow.cpp:2524
 #, fuzzy, kde-format
 msgid "Copy selected files from %1 to:"
 msgstr "Copio ffeiliau dewisiedig o"
 
-#: src/konqmainwindow.cpp:2495
+#: src/konqmainwindow.cpp:2537
 #, fuzzy, kde-format
 msgid "Move selected files from %1 to:"
 msgstr "Symud ffeiliau dewisiedig o"
 
-#: src/konqmainwindow.cpp:2663
+#: src/konqmainwindow.cpp:2705
 #, fuzzy, kde-format
 #| msgid "Clear History"
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
 msgstr "Gwaredu Hanes"
 
-#: src/konqmainwindow.cpp:2685
+#: src/konqmainwindow.cpp:2727
 #, fuzzy, kde-format
 msgid "Save As..."
 msgstr "Gosod URL..."
 
-#: src/konqmainwindow.cpp:2687
+#: src/konqmainwindow.cpp:2729
 #, fuzzy, kde-format
 msgid "Manage..."
 msgstr "Ne&wid Eicon..."
 
-#: src/konqmainwindow.cpp:3231
+#: src/konqmainwindow.cpp:3273
 #, kde-format
 msgid "New &Window"
 msgstr "&Ffenestr Newydd"
 
-#: src/konqmainwindow.cpp:3236
+#: src/konqmainwindow.cpp:3278
 #, kde-format
 msgid "&Duplicate Window"
 msgstr "&Dyblygu Ffenestr"
 
-#: src/konqmainwindow.cpp:3241
+#: src/konqmainwindow.cpp:3283
 #, fuzzy, kde-format
 msgid "Send &Link Address..."
 msgstr "Anfon &Cyswllt"
 
-#: src/konqmainwindow.cpp:3245
+#: src/konqmainwindow.cpp:3287
 #, kde-format
 msgid "S&end File..."
 msgstr "A&nfon Ffeil"
 
-#: src/konqmainwindow.cpp:3249
+#: src/konqmainwindow.cpp:3291
 #, fuzzy, kde-format
 #| msgid "Open Location"
 msgid "&Open Location"
 msgstr "Agor Lleoliad"
 
-#: src/konqmainwindow.cpp:3255
+#: src/konqmainwindow.cpp:3297
 #, fuzzy, kde-format
 #| msgid "S&end File..."
 msgid "&Open File..."
 msgstr "A&nfon Ffeil"
 
-#: src/konqmainwindow.cpp:3260
+#: src/konqmainwindow.cpp:3302
 #, kde-format
 msgid "&Find File..."
 msgstr "&Canfod Ffeil..."
 
-#: src/konqmainwindow.cpp:3269
+#: src/konqmainwindow.cpp:3311
 #, kde-format
 msgid "Lock to Current Location"
 msgstr "Cloi i'r Lleoliad Cyfredol"
 
-#: src/konqmainwindow.cpp:3272
+#: src/konqmainwindow.cpp:3314
 #, fuzzy, kde-format
 #| msgid "Lin&k View"
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr "Cysyll&tu Golwg"
 
-#: src/konqmainwindow.cpp:3277
+#: src/konqmainwindow.cpp:3319
 #, kde-format
 msgid "&Up"
 msgstr "I &Fyny"
 
-#: src/konqmainwindow.cpp:3287
+#: src/konqmainwindow.cpp:3329
 #, fuzzy, kde-format
 #| msgid "Copy Items"
 msgid "Closed Items"
 msgstr "Copïo Eitemau"
 
-#: src/konqmainwindow.cpp:3300
+#: src/konqmainwindow.cpp:3342
 #, fuzzy, kde-format
 #| msgid "Permissions"
 msgid "Sessions"
 msgstr "Caniatadau"
 
-#: src/konqmainwindow.cpp:3327
+#: src/konqmainwindow.cpp:3369
 #, fuzzy, kde-format
 #| msgid "Most Often Visited"
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr "Wedi'i Ymweld yr Amlaf"
 
-#: src/konqmainwindow.cpp:3331
+#: src/konqmainwindow.cpp:3373
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3340
+#: src/konqmainwindow.cpp:3382
 #, fuzzy, kde-format
 #| msgid "History"
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr "Hanes"
 
-#: src/konqmainwindow.cpp:3352
+#: src/konqmainwindow.cpp:3394
 #, fuzzy, kde-format
 msgid "Configure Extensions..."
 msgstr "Ffurfweddu Gwirio Sillafu..."
 
-#: src/konqmainwindow.cpp:3356
+#: src/konqmainwindow.cpp:3398
 #, kde-format
 msgid "Configure Spell Checking..."
 msgstr "Ffurfweddu Gwirio Sillafu..."
 
-#: src/konqmainwindow.cpp:3362
+#: src/konqmainwindow.cpp:3404
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr "Hollti Golwg &Chwith/Dde"
 
-#: src/konqmainwindow.cpp:3367
+#: src/konqmainwindow.cpp:3409
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr "Hollti Golwg &Pen/Gwaelod"
 
-#: src/konqmainwindow.cpp:3372 src/konqtabs.cpp:456
+#: src/konqmainwindow.cpp:3414 src/konqtabs.cpp:456
 #, kde-format
 msgid "&New Tab"
 msgstr "Tab &Newydd"
 
-#: src/konqmainwindow.cpp:3381
+#: src/konqmainwindow.cpp:3423
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr "&Dyblygu'r Tab Cyfredol"
 
-#: src/konqmainwindow.cpp:3386
+#: src/konqmainwindow.cpp:3428
 #, kde-format
 msgid "Detach Current Tab"
 msgstr "Datglymu'r Tab Cyfredol"
 
-#: src/konqmainwindow.cpp:3391
+#: src/konqmainwindow.cpp:3433
 #, fuzzy, kde-format
 msgid "&Close Active View"
 msgstr "&Gwaredu'r Olwg Weithredol"
 
-#: src/konqmainwindow.cpp:3396
+#: src/konqmainwindow.cpp:3438
 #, kde-format
 msgid "Close Current Tab"
 msgstr "Cau'r Tab Cyfredol"
 
-#: src/konqmainwindow.cpp:3406
+#: src/konqmainwindow.cpp:3448
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "Gweithredu'r Tab Nesaf"
 
-#: src/konqmainwindow.cpp:3410
+#: src/konqmainwindow.cpp:3452
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "Gweithredu'r Tab Cynt"
 
-#: src/konqmainwindow.cpp:3417
+#: src/konqmainwindow.cpp:3459
 #, fuzzy, kde-format
 msgid "Activate Tab %1"
 msgstr "Gweithredu'r Tab Nesaf"
 
-#: src/konqmainwindow.cpp:3422
+#: src/konqmainwindow.cpp:3464
 #, kde-format
 msgid "Move Tab Left"
 msgstr "Symud Tab i'r Chwith"
 
-#: src/konqmainwindow.cpp:3427
+#: src/konqmainwindow.cpp:3469
 #, kde-format
 msgid "Move Tab Right"
 msgstr "Symud Tab i'r Dde"
 
-#: src/konqmainwindow.cpp:3435
+#: src/konqmainwindow.cpp:3477
 #, kde-format
 msgid "Dump Debug Info"
 msgstr "Tomenu Gwybodaeth Dadnamu"
 
-#: src/konqmainwindow.cpp:3453
+#: src/konqmainwindow.cpp:3495
 #, fuzzy, kde-format
 msgid "&Reload"
 msgstr "&Ail-lwytho bob tab"
 
-#: src/konqmainwindow.cpp:3458 src/konqtabs.cpp:313
+#: src/konqmainwindow.cpp:3500 src/konqtabs.cpp:313
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr "&Ail-lwytho bob tab"
 
-#: src/konqmainwindow.cpp:3466
+#: src/konqmainwindow.cpp:3508
 #, fuzzy, kde-format
 msgid "&Force Reload"
 msgstr "&Ail-lwytho bob tab"
 
-#: src/konqmainwindow.cpp:3491
+#: src/konqmainwindow.cpp:3533
 #, kde-format
 msgid "&Stop"
 msgstr "&Atal"
 
-#: src/konqmainwindow.cpp:3500
+#: src/konqmainwindow.cpp:3542
 #, kde-format
 msgid "Throbber"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3504 src/konqmainwindow.cpp:3507
+#: src/konqmainwindow.cpp:3546 src/konqmainwindow.cpp:3549
 #, kde-format
 msgid "L&ocation: "
 msgstr "Ll&eoliad:"
 
-#: src/konqmainwindow.cpp:3514
+#: src/konqmainwindow.cpp:3556
 #, kde-format
 msgid "Location Bar"
 msgstr "Bar Lleoliad"
 
-#: src/konqmainwindow.cpp:3520
+#: src/konqmainwindow.cpp:3562
 #, fuzzy, kde-format
 #| msgid "Location Bar<p>Enter a web address or search term."
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
 msgstr "Bar Lleoliad<p>Rhowch cyfeiriad gwê neu derm chwilio."
 
-#: src/konqmainwindow.cpp:3524
+#: src/konqmainwindow.cpp:3566
 #, kde-format
 msgid "Clear Location Bar"
 msgstr "Clirio'r Bar Lleoliad"
 
-#: src/konqmainwindow.cpp:3527
+#: src/konqmainwindow.cpp:3569
 #, fuzzy, kde-format
 #| msgid "Clear Location bar<p>Clears the content of the location bar."
 msgid ""
@@ -1193,22 +1193,22 @@ msgid ""
 "</html>"
 msgstr "Clirio'r Bar Lleoliad<p>Cliria gynnwys y bar lleoliad."
 
-#: src/konqmainwindow.cpp:3532
+#: src/konqmainwindow.cpp:3574
 #, fuzzy, kde-format
 msgid "&Bookmarks"
 msgstr "&Tudnod"
 
-#: src/konqmainwindow.cpp:3553
+#: src/konqmainwindow.cpp:3595
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "Cyflwyniad Kon&queror"
 
-#: src/konqmainwindow.cpp:3558
+#: src/konqmainwindow.cpp:3600
 #, kde-format
 msgid "Go"
 msgstr "Ewch"
 
-#: src/konqmainwindow.cpp:3560
+#: src/konqmainwindow.cpp:3602
 #, fuzzy, kde-format
 #| msgid "Go<p>Goes to the page that has been entered into the location bar."
 msgid ""
@@ -1216,7 +1216,7 @@ msgid ""
 "bar.</html>"
 msgstr "Ewch<p>Â i'r dudalen a roddir yn y bar lleoliad."
 
-#: src/konqmainwindow.cpp:3568
+#: src/konqmainwindow.cpp:3610
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the parent folder<p>For instance, if the current location is file:/"
@@ -1229,28 +1229,28 @@ msgstr ""
 "Mynd i'r blygell riant<p>Er enghraifft, os file:/home/%1 yw'r lleoliad "
 "cyfredol, â'r botwm yma â chi i file:/home"
 
-#: src/konqmainwindow.cpp:3571
+#: src/konqmainwindow.cpp:3613
 #, kde-format
 msgid "Enter the parent folder"
 msgstr "Mynd i mewn i'r blygell riant"
 
-#: src/konqmainwindow.cpp:3573 src/konqmainwindow.cpp:3574
+#: src/konqmainwindow.cpp:3615 src/konqmainwindow.cpp:3616
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "Symud yn ôl un cam drwy'r hanes pori"
 
-#: src/konqmainwindow.cpp:3576 src/konqmainwindow.cpp:3577
+#: src/konqmainwindow.cpp:3618 src/konqmainwindow.cpp:3619
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "Symud ymlaen un cam drwy'r hanes pori"
 
-#: src/konqmainwindow.cpp:3579 src/konqmainwindow.cpp:3580
+#: src/konqmainwindow.cpp:3621 src/konqmainwindow.cpp:3622
 #, fuzzy, kde-format
 #| msgid "Move backwards one step in the browsing history"
 msgid "Move backwards one step in the closed tabs history"
 msgstr "Symud yn ôl un cam drwy'r hanes pori"
 
-#: src/konqmainwindow.cpp:3582
+#: src/konqmainwindow.cpp:3624
 #, fuzzy, kde-format
 #| msgid ""
 #| "Reload the currently displayed document<p>This may, for example, be "
@@ -1265,12 +1265,12 @@ msgstr ""
 "tudalennau gwê, er enghraifft rhai sydd wedi eu addasu ers eu llwytho, er "
 "mwyn dangos y newidiadau."
 
-#: src/konqmainwindow.cpp:3585
+#: src/konqmainwindow.cpp:3627
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "Ail-lwytho'r ddogfen arddangosedig cyfredol"
 
-#: src/konqmainwindow.cpp:3587
+#: src/konqmainwindow.cpp:3629
 #, fuzzy, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1281,12 +1281,12 @@ msgstr ""
 "tudalennau gwê, er enghraifft rhai sydd wedi eu addasu ers eu llwytho, er "
 "mwyn dangos y newidiadau."
 
-#: src/konqmainwindow.cpp:3590
+#: src/konqmainwindow.cpp:3632
 #, fuzzy, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr "Ail-lwytho'r ddogfen arddangosedig cyfredol"
 
-#: src/konqmainwindow.cpp:3592
+#: src/konqmainwindow.cpp:3634
 #, fuzzy, kde-format
 #| msgid ""
 #| "Stop loading the document<p>All network transfers will be stopped and "
@@ -1299,7 +1299,7 @@ msgstr ""
 "Atal llwytho'r ddogfen<p>Terfynir pob drosglwyddiad rhwydwaith, a dengys "
 "Konqueror y cynnwys a dderbyniwyd hyd hynny."
 
-#: src/konqmainwindow.cpp:3596
+#: src/konqmainwindow.cpp:3638
 #, fuzzy, kde-format
 #| msgid ""
 #| "Reload the currently displayed document<p>This may, for example, be "
@@ -1315,18 +1315,18 @@ msgstr ""
 "tudalennau gwê, er enghraifft rhai sydd wedi eu addasu ers eu llwytho, er "
 "mwyn dangos y newidiadau."
 
-#: src/konqmainwindow.cpp:3600
+#: src/konqmainwindow.cpp:3642
 #, fuzzy, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr "Ail-lwytho'r ddogfen arddangosedig cyfredol"
 
-#: src/konqmainwindow.cpp:3602
+#: src/konqmainwindow.cpp:3644
 #, kde-format
 msgid "Stop loading the document"
 msgstr "Atal llwytho'r ddogfen"
 
-#: src/konqmainwindow.cpp:3604
+#: src/konqmainwindow.cpp:3646
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cut the currently selected text or item(s) and move it to the system "
@@ -1341,12 +1341,12 @@ msgstr ""
 "gludfwrdd<p> Mae hyn yn ei wneud ar gael i'r gorchymyn <b>Gludo</b> yn "
 "Konqueror a chymhwysiadau eraill KDE."
 
-#: src/konqmainwindow.cpp:3608
+#: src/konqmainwindow.cpp:3650
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr "Symud y testun neu eitem(au) dewisiedig i'r gludfwrdd"
 
-#: src/konqmainwindow.cpp:3610
+#: src/konqmainwindow.cpp:3652
 #, fuzzy, kde-format
 #| msgid ""
 #| "Copy the currently selected text or item(s) to the system "
@@ -1361,12 +1361,12 @@ msgstr ""
 "ei wneud ar gael i'r gorchymyn <b>Gludo</b> yn Konqueror a chymhwysiadau "
 "eraill KDE."
 
-#: src/konqmainwindow.cpp:3614
+#: src/konqmainwindow.cpp:3656
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr "Copïo'r testun neu eitem(au) dewisiedig cyfredol i'r clipfwrdd"
 
-#: src/konqmainwindow.cpp:3616
+#: src/konqmainwindow.cpp:3658
 #, fuzzy, kde-format
 #| msgid ""
 #| "Paste the previously cut or copied clipboard contents<p>This also works "
@@ -1378,12 +1378,12 @@ msgstr ""
 "Gludo cynnwys y gludfwrdd a dorwyd neu gopïwyd gynt<p>Gweithia hyn hefyd "
 "gyda testun wedi ei gopïo neu'i dorri o gymhwysiadau eraill KDE."
 
-#: src/konqmainwindow.cpp:3619
+#: src/konqmainwindow.cpp:3661
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "Gludo cynnwys y gludfwrdd"
 
-#: src/konqmainwindow.cpp:3621
+#: src/konqmainwindow.cpp:3663
 #, fuzzy, kde-format
 #| msgid ""
 #| "Print the currently displayed document<p>You will be presented with a "
@@ -1403,12 +1403,12 @@ msgstr ""
 "argraffydd i'w ddefnyddio.<p>Darpara'r ymgom yma hefyd hygyrchedd i "
 "wasanaethau argraffu arbennig KDE, megis creu ffeil PDF o'r ddogfen cyfredol."
 
-#: src/konqmainwindow.cpp:3627
+#: src/konqmainwindow.cpp:3669
 #, kde-format
 msgid "Print the current document"
 msgstr "Argraffu'r ddogfen cyfredol"
 
-#: src/konqmainwindow.cpp:3629
+#: src/konqmainwindow.cpp:3671
 #, fuzzy, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
@@ -1417,7 +1417,7 @@ msgstr ""
 "Ni all golwg wedi'i gloi newid plygyll.  Defnyddiwch ynghyd â 'golwg "
 "gyswllt' i archwilio sawl ffeil o un blygell"
 
-#: src/konqmainwindow.cpp:3630
+#: src/konqmainwindow.cpp:3672
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
@@ -1426,99 +1426,99 @@ msgstr ""
 "Gosoda'r golwg yn 'olwg gyswllt'. Dilyna golygion cyswllt newidion plygell a "
 "wnaed mewn golygon cyswllt eraill."
 
-#: src/konqmainwindow.cpp:3634
+#: src/konqmainwindow.cpp:3676
 #, fuzzy, kde-format
 #| msgid "C&lose Current Tab"
 msgid "&Inspect Current Page"
 msgstr "C&au'r Tab Cyfredol"
 
-#: src/konqmainwindow.cpp:3635
+#: src/konqmainwindow.cpp:3677
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3636
+#: src/konqmainwindow.cpp:3678
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3798
+#: src/konqmainwindow.cpp:3840
 #, kde-format
 msgid "Copy &Files..."
 msgstr "Copïo &Ffeiliau..."
 
-#: src/konqmainwindow.cpp:3802
+#: src/konqmainwindow.cpp:3844
 #, kde-format
 msgid "M&ove Files..."
 msgstr "S&ymud Ffeiliau..."
 
-#: src/konqmainwindow.cpp:4128
+#: src/konqmainwindow.cpp:4170
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
 "while. Continue?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4130
+#: src/konqmainwindow.cpp:4172
 #, fuzzy, kde-format
 #| msgid "Open Folder in Tabs"
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "Agor Plygell mewn Tabiau"
 
-#: src/konqmainwindow.cpp:4131
+#: src/konqmainwindow.cpp:4173
 #, fuzzy, kde-format
 #| msgid "&Open Link"
 msgctxt "@action:button"
 msgid "Open"
 msgstr "&Agor Cyswllt"
 
-#: src/konqmainwindow.cpp:4293
+#: src/konqmainwindow.cpp:4335
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "Agor yn y Ffenest &Hon"
 
-#: src/konqmainwindow.cpp:4294
+#: src/konqmainwindow.cpp:4336
 #, fuzzy, kde-format
 msgid "Open the document in current window"
 msgstr "Agor y ddogfen mewn ffenestr newydd"
 
-#: src/konqmainwindow.cpp:4301
+#: src/konqmainwindow.cpp:4343
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "Agor y ddogfen mewn ffenestr newydd"
 
-#: src/konqmainwindow.cpp:4307
+#: src/konqmainwindow.cpp:4349
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Agor mewn Tab &Newydd"
 
-#: src/konqmainwindow.cpp:4309
+#: src/konqmainwindow.cpp:4351
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "Agor y ddogfen mewn tab newydd"
 
-#: src/konqmainwindow.cpp:4539
+#: src/konqmainwindow.cpp:4581
 #, fuzzy, kde-format
 #| msgid "Open with %1"
 msgid "&Open With"
 msgstr "Agor gyda %1"
 
-#: src/konqmainwindow.cpp:4552
+#: src/konqmainwindow.cpp:4594
 #, kde-format
 msgid "Open with %1"
 msgstr "Agor gyda %1"
 
-#: src/konqmainwindow.cpp:4602
+#: src/konqmainwindow.cpp:4644
 #, fuzzy, kde-format
 #| msgid "&View Mode"
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "Modd &Golwg"
 
-#: src/konqmainwindow.cpp:4725
+#: src/konqmainwindow.cpp:4767
 #, fuzzy, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
@@ -1526,33 +1526,33 @@ msgstr ""
 "Mae gennych amryw dabiau ar agor yn y ffenestr hon; a ydych yn sicr eich bod "
 "am ei chau?"
 
-#: src/konqmainwindow.cpp:4727
+#: src/konqmainwindow.cpp:4769
 #, fuzzy, kde-format
 #| msgid "Confirmation"
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Cadarnhâd"
 
-#: src/konqmainwindow.cpp:4729
+#: src/konqmainwindow.cpp:4771
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "C&au'r Tab Cyfredol"
 
-#: src/konqmainwindow.cpp:4757
+#: src/konqmainwindow.cpp:4799
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:4758
+#: src/konqmainwindow.cpp:4800
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:4918
+#: src/konqmainwindow.cpp:4960
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1560,29 +1560,29 @@ msgstr ""
 "Nid yw'ch bar ochr yn gweithio, neu nid yw ar gael. Nid oes modd ychwanegu "
 "cofnod newydd."
 
-#: src/konqmainwindow.cpp:4918 src/konqmainwindow.cpp:4925
+#: src/konqmainwindow.cpp:4960 src/konqmainwindow.cpp:4967
 #, fuzzy, kde-format
 #| msgid "Web Sidebar"
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Bar Ochr Gwê"
 
-#: src/konqmainwindow.cpp:4923
+#: src/konqmainwindow.cpp:4965
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Ychwanegu estyniad gwê newydd \"%1\" i'ch bar ochr?"
 
-#: src/konqmainwindow.cpp:4925
+#: src/konqmainwindow.cpp:4967
 #, fuzzy, kde-format
 msgid "Add"
 msgstr "Cyfeiriad"
 
-#: src/konqmainwindow.cpp:4925
+#: src/konqmainwindow.cpp:4967
 #, kde-format
 msgid "Do Not Add"
 msgstr "Na Ychwaneger"
 
-#: src/konqmainwindow.cpp:5273
+#: src/konqmainwindow.cpp:5315
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1591,7 +1591,7 @@ msgstr ""
 "Ymddengys bod gwall ffurfweddu.  Rydych wedi cysylltu Konqueror efo %1, ond "
 "ni all drin y math yma o ffeil."
 
-#: src/konqmainwindow.cpp:5358
+#: src/konqmainwindow.cpp:5400
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1604,23 +1604,23 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5363
+#: src/konqmainwindow.cpp:5405
 #, fuzzy, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "Dangos Botwm Ffurfweddu"
 
-#: src/konqmainwindow.cpp:5363
+#: src/konqmainwindow.cpp:5405
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5364 src/konqmainwindow.cpp:5392
+#: src/konqmainwindow.cpp:5406 src/konqmainwindow.cpp:5434
 #, fuzzy, kde-format
 #| msgid "Show Configuration Button"
 msgid "Show proxy configuration dialog"
 msgstr "Dangos Botwm Ffurfweddu"
 
-#: src/konqmainwindow.cpp:5388
+#: src/konqmainwindow.cpp:5430
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1629,22 +1629,22 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5391
+#: src/konqmainwindow.cpp:5433
 #, fuzzy, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "Dangos Botwm Ffurfweddu"
 
-#: src/konqmainwindow.cpp:5392
+#: src/konqmainwindow.cpp:5434
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5392
+#: src/konqmainwindow.cpp:5434
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5408
+#: src/konqmainwindow.cpp:5450
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "

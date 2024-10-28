@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-07 00:39+0000\n"
+"POT-Creation-Date: 2024-10-28 00:40+0000\n"
 "PO-Revision-Date: 2024-08-19 23:45+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -293,61 +293,60 @@ msgstr "설치됨"
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>MIME 형식</td><td>설명</td><td>접미사</td><td>플러그인</td>"
 
-#: src/actondownloadedfilebar.cpp:28
-#, kde-format
-msgid "Show file in this tab"
-msgstr "파일을 이 탭에 표시"
+#: src/actondownloadedfilebar.cpp:88
+#, fuzzy, kde-format
+#| msgctxt "@label location where a remote URL was downloaded"
+#| msgid "%1 was saved in %2"
+msgctxt "@label:part of the text: 'url' was saved as 'file'"
+msgid "was saved as"
+msgstr "%1이(가) %2에 저장됨"
 
-#: src/actondownloadedfilebar.cpp:29
-#, kde-format
-msgid "Show file in a new tab in Konqueror"
-msgstr "파일을 Konqueror의 새 탭에 표시"
-
-#: src/actondownloadedfilebar.cpp:73
+#: src/actondownloadedfilebar.cpp:120
 #, kde-format
 msgctxt "@label location where a remote URL was downloaded"
 msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:93
-#, kde-format
-msgid "Open in external application"
-msgstr "외부 앱으로 열기"
+#: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Open &with %1"
+msgctxt "@action:inmenu Open downloaded file choosing application"
+msgid "Open With..."
+msgstr "%1(으)로 열기(&W)"
 
-#: src/actondownloadedfilebar.cpp:98
-#, kde-format
-msgid "Open in %1"
-msgstr "%1에서 열기"
+#: src/actondownloadedfilebar.cpp:146
+#, fuzzy, kde-format
+#| msgid "OpenSSL"
+msgctxt "@action:inmenu Open downloaded file"
+msgid "Open"
+msgstr "OpenSSL"
 
-#: src/actondownloadedfilebar.cpp:107 src/actondownloadedfilebar.cpp:145
+#: src/actondownloadedfilebar.cpp:155
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "%1(으)로 열기(&W)"
 
-#: src/actondownloadedfilebar.cpp:132
+#: src/actondownloadedfilebar.cpp:184
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
 msgstr "새 탭에 표시"
 
-#: src/actondownloadedfilebar.cpp:132
+#: src/actondownloadedfilebar.cpp:184
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here"
 msgstr "여기에 표시"
 
-#: src/actondownloadedfilebar.cpp:136
-#, kde-format
-msgctxt "@action:button"
-msgid "Show in new tab using %1"
-msgstr "%1을(를) 사용하여 새 탭에 표시"
-
-#: src/actondownloadedfilebar.cpp:136
-#, kde-format
-msgctxt "@action:button"
-msgid "Show here using %1"
-msgstr "%1을(를) 사용하여 여기에 표시"
+#: src/actondownloadedfilebar.cpp:198
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Open &with %1"
+msgctxt "@action:inmenu"
+msgid "Show &with %1"
+msgstr "%1(으)로 열기(&W)"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1026,61 +1025,61 @@ msgstr "허용"
 msgid "Do Not Allow"
 msgstr "허용하지 않음"
 
-#: src/webenginepart.cpp:196
+#: src/webenginepart.cpp:195
 #, kde-format
 msgid "Save Full HTML Page As..."
 msgstr "다른 이름으로 전체 HTML 페이지 저장..."
 
-#: src/webenginepart.cpp:200
+#: src/webenginepart.cpp:199
 #, kde-format
 msgid "Print Preview"
 msgstr "인쇄 미리 보기"
 
-#: src/webenginepart.cpp:204
+#: src/webenginepart.cpp:203
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "확대"
 
-#: src/webenginepart.cpp:209
+#: src/webenginepart.cpp:208
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "축소"
 
-#: src/webenginepart.cpp:214
+#: src/webenginepart.cpp:213
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "원래 크기로"
 
-#: src/webenginepart.cpp:219
+#: src/webenginepart.cpp:218
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "텍스트만 확대/축소"
 
-#: src/webenginepart.cpp:227
+#: src/webenginepart.cpp:226
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "DPI로 크기 조절"
 
-#: src/webenginepart.cpp:240
+#: src/webenginepart.cpp:239
 #, kde-format
 msgid "Set &Encoding"
 msgstr "인코딩 설정(&E)"
 
-#: src/webenginepart.cpp:243
+#: src/webenginepart.cpp:242
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "문서 원본 보기(&C)"
 
-#: src/webenginepart.cpp:248 src/webenginepart.cpp:556
+#: src/webenginepart.cpp:247 src/webenginepart.cpp:555
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:254
+#: src/webenginepart.cpp:253
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1090,12 +1089,12 @@ msgstr ""
 "<h3>텍스트 찾기</h3>현재 페이지의 텍스트를 찾을 수 있는 대화 상자를 표시합니"
 "다."
 
-#: src/webenginepart.cpp:554
+#: src/webenginepart.cpp:553
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "이 사이트의 SSL 정보가 잘못된 것 같습니다."
 
-#: src/webenginepart.cpp:635
+#: src/webenginepart.cpp:634
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1103,7 +1102,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "전자 우편: "
 
-#: src/webenginepart.cpp:664
+#: src/webenginepart.cpp:663
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1111,7 +1110,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - 참조: "
 
-#: src/webenginepart.cpp:666
+#: src/webenginepart.cpp:665
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1119,7 +1118,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - 숨은 참조: "
 
-#: src/webenginepart.cpp:668
+#: src/webenginepart.cpp:667
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1127,84 +1126,90 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - 제목: "
 
-#: src/webenginepart.cpp:672 src/webenginepart.cpp:683
+#: src/webenginepart.cpp:671 src/webenginepart.cpp:682
 #, kde-format
 msgid " (In new window)"
 msgstr " (새 창에서)"
 
-#: src/webenginepart.cpp:681
+#: src/webenginepart.cpp:680
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (부모 프레임에서)"
 
-#: src/webenginepart.cpp:747
+#: src/webenginepart.cpp:746
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt><b>%1</b>(으)로 검색하시겠습니까?</qt>"
 
-#: src/webenginepart.cpp:748
+#: src/webenginepart.cpp:747
 #, kde-format
 msgid "Internet Search"
 msgstr "인터넷 검색"
 
-#: src/webenginepart.cpp:748
+#: src/webenginepart.cpp:747
 #, kde-format
 msgid "&Search"
 msgstr "찾기(&S)"
 
-#: src/webenginepart.cpp:859
+#: src/webenginepart.cpp:860
 #, kde-format
 msgid "Close window?"
 msgstr "창을 닫으시겠습니까?"
 
-#: src/webenginepart.cpp:859
+#: src/webenginepart.cpp:860
 #, kde-format
 msgid "Confirmation Required"
 msgstr "확인 필요"
 
-#: src/webenginepart.cpp:936
+#: src/webenginepart.cpp:937
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>%1에서 <b>%2</b>의 로그인 정보를 기억하도록 하시겠습니까?</html>"
 
-#: src/webenginepart.cpp:1007
+#: src/webenginepart.cpp:1008
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr "지금 양식 채우기(&F)"
 
-#: src/webenginepart.cpp:1012
+#: src/webenginepart.cpp:1013
+#, kde-format
+msgctxt "Scans again the page to detect forms to fill"
+msgid "Look Again for Forms"
+msgstr ""
+
+#: src/webenginepart.cpp:1017
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr "지금 이 페이지의 암호 기억(&M)"
 
-#: src/webenginepart.cpp:1016
+#: src/webenginepart.cpp:1021
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr "이 페이지에서 기억할 필드 사용자 정의(&C)..."
 
-#: src/webenginepart.cpp:1020
+#: src/webenginepart.cpp:1025
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr "이 페이지의 사용자 정의 기억 설정 삭제"
 
-#: src/webenginepart.cpp:1024
+#: src/webenginepart.cpp:1029
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "이 사이트에 암호 저장 허용(&A)"
 
-#: src/webenginepart.cpp:1028
+#: src/webenginepart.cpp:1033
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "이 사이트의 모든 저장된 암호 삭제"
 
-#: src/webenginepart.cpp:1032
+#: src/webenginepart.cpp:1037
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "지갑 관리자 실행하기(&L)"
 
-#: src/webenginepart.cpp:1036
+#: src/webenginepart.cpp:1041
 #, kde-format
 msgid "&Close Wallet"
 msgstr "지갑 닫기(&C)"
@@ -1320,30 +1325,30 @@ msgstr ""
 "사용자 스타일시트 파일 <tt>%1</tt>을(를) 열 수 없습니다. 기본 스타일시트를 사"
 "용합니다"
 
-#: src/webenginepartdownloadmanager.cpp:294
+#: src/webenginepartdownloadmanager.cpp:307
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "파일을 저장하는 중 오류 발생: %1"
 
-#: src/webenginepartdownloadmanager.cpp:305
+#: src/webenginepartdownloadmanager.cpp:318
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "다운로드"
 
-#: src/webenginepartdownloadmanager.cpp:306
+#: src/webenginepartdownloadmanager.cpp:319
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "원본"
 
-#: src/webenginepartdownloadmanager.cpp:307
+#: src/webenginepartdownloadmanager.cpp:320
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "대상"
 
-#: src/webenginepartdownloadmanager.cpp:329
+#: src/webenginepartdownloadmanager.cpp:342
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
@@ -1560,9 +1565,25 @@ msgstr ""
 "드 ID: </b>%3</li><li><b>필드 읽기 전용 여부: </b>%4</li><li><b>필드 활성화 "
 "여부: </b>%5</li><li><b>자동 완성 활성화 여부: </b>%6</li></ul>"
 
-#~ msgctxt "@label location where a remote URL was downloaded"
-#~ msgid "%1 was saved in %2"
-#~ msgstr "%1이(가) %2에 저장됨"
+#~ msgid "Show file in this tab"
+#~ msgstr "파일을 이 탭에 표시"
+
+#~ msgid "Show file in a new tab in Konqueror"
+#~ msgstr "파일을 Konqueror의 새 탭에 표시"
+
+#~ msgid "Open in external application"
+#~ msgstr "외부 앱으로 열기"
+
+#~ msgid "Open in %1"
+#~ msgstr "%1에서 열기"
+
+#~ msgctxt "@action:button"
+#~ msgid "Show in new tab using %1"
+#~ msgstr "%1을(를) 사용하여 새 탭에 표시"
+
+#~ msgctxt "@action:button"
+#~ msgid "Show here using %1"
+#~ msgstr "%1을(를) 사용하여 여기에 표시"
 
 #~ msgid "Specifications"
 #~ msgstr "자세히"
@@ -1645,9 +1666,6 @@ msgstr ""
 
 #~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
 #~ msgstr "안전한 통신에 사용할 최고 168비트까지의 TLS/SSL v2/3"
-
-#~ msgid "OpenSSL"
-#~ msgstr "OpenSSL"
 
 #~ msgid "Bidirectional 16bit unicode support"
 #~ msgstr "양방향 16비트 유니코드 지원"
