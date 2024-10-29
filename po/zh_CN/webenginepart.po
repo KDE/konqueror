@@ -303,20 +303,16 @@ msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
 msgstr "<tt>%1</tt> 已保存为 <tt>%2</tt>"
 
 #: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "使用 %1 打开(&W)"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "打开“%1”"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:155
 #, kde-format
@@ -337,12 +333,10 @@ msgid "Show here"
 msgstr "在此显示"
 
 #: src/actondownloadedfilebar.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "使用 %1 打开(&W)"
+msgstr ""
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1548,23 +1542,3 @@ msgstr ""
 "<ul><li><b>字段内部名称：</b>%1</li><li><b>字段类型：</b>%2</li><li><b>字段 "
 "ID：</b>%3</li><li><b>字段是否为只读：</b>%4</li><li><b>字段是否已启用：</b>"
 "%5</li><li><b>是否开启自动补全：</b>%6</li></ul>"
-
-#~ msgid "Show file in this tab"
-#~ msgstr "在此标签页中显示文件"
-
-#~ msgid "Show file in a new tab in Konqueror"
-#~ msgstr "在 Konqueror 的一个新标签页中显示文件"
-
-#~ msgid "Open in external application"
-#~ msgstr "用外部程序打开"
-
-#~ msgid "Open in %1"
-#~ msgstr "用 %1 打开"
-
-#~ msgctxt "@action:button"
-#~ msgid "Show in new tab using %1"
-#~ msgstr "在新标签页中用 %1 显示"
-
-#~ msgctxt "@action:button"
-#~ msgid "Show here using %1"
-#~ msgstr "在此用 %1 显示"

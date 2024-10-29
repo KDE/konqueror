@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-28 00:40+0000\n"
-"PO-Revision-Date: 2024-09-09 21:03+0200\n"
+"PO-Revision-Date: 2024-10-28 18:46+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -307,12 +307,10 @@ msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>Mime mota</td><td>Azalpena</td><td>Atzizkiak</td><td>Plugina</td>"
 
 #: src/actondownloadedfilebar.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@label location where a remote URL was downloaded"
-#| msgid "%1 was saved in %2"
+#, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
-msgstr "%1 %2(e)an gorde da"
+msgstr "honela gorde zen"
 
 #: src/actondownloadedfilebar.cpp:120
 #, kde-format
@@ -321,19 +319,16 @@ msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
 msgstr "<tt>%1</tt> <tt>%2</tt> gisa gorde da"
 
 #: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "Ireki '%1'&rekin"
+msgstr "Ireki honekin..."
 
 #: src/actondownloadedfilebar.cpp:146
-#, fuzzy, kde-format
-#| msgid "OpenSSL"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "OpenSSL"
+msgstr "Ireki"
 
 #: src/actondownloadedfilebar.cpp:155
 #, kde-format
@@ -354,12 +349,10 @@ msgid "Show here"
 msgstr "Erakutsi hemen"
 
 #: src/actondownloadedfilebar.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "Ireki '%1'&rekin"
+msgstr "Erakutsi %1(e)&kin"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1192,8 +1185,8 @@ msgstr "Berrespena behar da"
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
-"<html>Nahi duzu %1-(e)k <b>%2</b>(r)en saio hasteko informazioa gordetzea?</"
-"html>"
+"<html>%1(e)k saioan sartzeko <b>%2</b>(r)en informazioa gordetzea nahi duzu?"
+"</html>"
 
 #: src/webenginepart.cpp:1008
 #, kde-format
@@ -1205,7 +1198,7 @@ msgstr "&Bete inprimakiak orain"
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "Look Again for Forms"
-msgstr ""
+msgstr "Inprimakiak berriz bilatu"
 
 #: src/webenginepart.cpp:1017
 #, kde-format

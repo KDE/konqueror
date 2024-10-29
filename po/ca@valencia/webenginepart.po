@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-28 00:40+0000\n"
-"PO-Revision-Date: 2024-09-09 10:06+0200\n"
+"PO-Revision-Date: 2024-10-28 10:33+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -313,7 +313,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
-msgstr ""
+msgstr "s'ha guardat com"
 
 #: src/actondownloadedfilebar.cpp:120
 #, kde-format
@@ -322,20 +322,16 @@ msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
 msgstr "<tt>%1</tt> s'ha guardat com <tt>%2</tt>"
 
 #: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "Obri a&mb %1"
+msgstr "Obri amb…"
 
 #: src/actondownloadedfilebar.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "Obri «%1»"
+msgstr "Obri"
 
 #: src/actondownloadedfilebar.cpp:155
 #, kde-format
@@ -356,12 +352,10 @@ msgid "Show here"
 msgstr "Mostra ací"
 
 #: src/actondownloadedfilebar.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "Obri a&mb %1"
+msgstr "Mostra a&mb %1"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1205,7 +1199,7 @@ msgstr "Emplena ara els &formularis"
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "Look Again for Forms"
-msgstr ""
+msgstr "Torna a buscar formularis"
 
 #: src/webenginepart.cpp:1017
 #, kde-format
@@ -1593,23 +1587,3 @@ msgstr ""
 "li><li><b>ID del camp: </b>%3</li><li><b>El camp és de només lectura: </b>"
 "%4</li><li><b>El camp està habilitat: </b>%5</li><li><b>La compleció "
 "automàtica està habilitada: </b>%6</li></ul>"
-
-#~ msgid "Show file in this tab"
-#~ msgstr "Mostra el fitxer en esta pestanya"
-
-#~ msgid "Show file in a new tab in Konqueror"
-#~ msgstr "Mostra el fitxer en una pestanya nova en Konqueror"
-
-#~ msgid "Open in external application"
-#~ msgstr "Obri en una aplicació externa"
-
-#~ msgid "Open in %1"
-#~ msgstr "Obri en %1"
-
-#~ msgctxt "@action:button"
-#~ msgid "Show in new tab using %1"
-#~ msgstr "Mostra en una pestanya nova fent servir %1"
-
-#~ msgctxt "@action:button"
-#~ msgid "Show here using %1"
-#~ msgstr "Mostra ací fent servir %1"

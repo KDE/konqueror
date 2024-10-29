@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: extragear-base-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-28 00:40+0000\n"
-"PO-Revision-Date: 2024-09-09 13:47+0300\n"
+"PO-Revision-Date: 2024-10-28 13:27+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -311,12 +311,10 @@ msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>MIME Türü</td><td>Açıklama</td><td>Sonekler</td><td>Eklenti</td>"
 
 #: src/actondownloadedfilebar.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@label location where a remote URL was downloaded"
-#| msgid "%1 was saved in %2"
+#, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
-msgstr "%1, %2 konumuna kaydedildi"
+msgstr "şöyle kaydedildi:"
 
 #: src/actondownloadedfilebar.cpp:120
 #, kde-format
@@ -325,19 +323,16 @@ msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
 msgstr "<tt>%1</tt>, <tt>%2</tt> olarak kaydedildi"
 
 #: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "%1 &ile Aç"
+msgstr "Birlikte Aç…"
 
 #: src/actondownloadedfilebar.cpp:146
-#, fuzzy, kde-format
-#| msgid "OpenSSL"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "OpenSSL"
+msgstr "Aç"
 
 #: src/actondownloadedfilebar.cpp:155
 #, kde-format
@@ -358,12 +353,10 @@ msgid "Show here"
 msgstr "Burada Göster"
 
 #: src/actondownloadedfilebar.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "%1 &ile Aç"
+msgstr "%1 &ile Göster"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1201,7 +1194,7 @@ msgstr "F&ormları Şimdi Doldur"
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "Look Again for Forms"
-msgstr ""
+msgstr "Formlara Yeniden Bak"
 
 #: src/webenginepart.cpp:1017
 #, kde-format

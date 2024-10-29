@@ -1,21 +1,20 @@
-# translation of webkitkde.po to Spanish
 # Translation of webkitkde.po to Spanish
 # Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the konqueror package.
 #
-# Enrique Matias Sanchez <cronopios@gmail.com>, 2009.
-# Cristina Yenyxe Gonzalez Garcia <the.blue.valkyrie@gmail.com>, 2009.
+# SPDX-FileCopyrightText: 2009 Enrique Matias Sanchez <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2009 Cristina Yenyxe Gonzalez Garcia <the.blue.valkyrie@gmail.com>
 # SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
-# Ricardo Varas Santana <ricardoivaras@gmail.com>, 2009.
-# Jaime Robles <jaime@kde.org>, 2009.
-# Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>, 2010, 2011.
-# Rocio Gallego <traducciones@rociogallego.com>, 2013, 2017.
+# SPDX-FileCopyrightText: 2009 Ricardo Varas Santana <ricardoivaras@gmail.com>
+# SPDX-FileCopyrightText: 2009 Jaime Robles <jaime@kde.org>
+# SPDX-FileCopyrightText: 2010, 2011 Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>
+# SPDX-FileCopyrightText: 2013, 2017 Rocio Gallego <traducciones@rociogallego.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: webkitkde\n"
+"Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-28 00:40+0000\n"
-"PO-Revision-Date: 2024-09-10 01:32+0200\n"
+"PO-Revision-Date: 2024-10-28 11:10+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -23,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "com>\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -319,12 +318,10 @@ msgstr ""
 "<td>Tipo MIME</td><td>Descripción</td><td>Sufijos</td><td>Complemento</td>"
 
 #: src/actondownloadedfilebar.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@label location where a remote URL was downloaded"
-#| msgid "%1 was saved in %2"
+#, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
-msgstr "%1 se ha guardado en %2"
+msgstr "se ha guardado como"
 
 #: src/actondownloadedfilebar.cpp:120
 #, kde-format
@@ -333,19 +330,16 @@ msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
 msgstr "<tt>%1</tt> se ha guardado como <tt>%2</tt>"
 
 #: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "A&brir con %1"
+msgstr "Abrir con..."
 
 #: src/actondownloadedfilebar.cpp:146
-#, fuzzy, kde-format
-#| msgid "OpenSSL"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "OpenSSL"
+msgstr "Abrir"
 
 #: src/actondownloadedfilebar.cpp:155
 #, kde-format
@@ -366,12 +360,10 @@ msgid "Show here"
 msgstr "Mostrar aquí"
 
 #: src/actondownloadedfilebar.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "A&brir con %1"
+msgstr "&Mostrar con %1"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1213,7 +1205,7 @@ msgstr "&Rellenar formularios ahora"
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "Look Again for Forms"
-msgstr ""
+msgstr "Volver a buscar formularios"
 
 #: src/webenginepart.cpp:1017
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-28 00:40+0000\n"
-"PO-Revision-Date: 2024-09-13 21:04+0200\n"
+"PO-Revision-Date: 2024-10-28 22:00+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -310,7 +310,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
-msgstr ""
+msgstr "запазено като"
 
 #: src/actondownloadedfilebar.cpp:120
 #, kde-format
@@ -319,26 +319,22 @@ msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
 msgstr "<tt>%1</tt> е запазено като <tt>%2</tt>"
 
 #: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "Отваряне &с \"%1\""
+msgstr "Отваряне с..."
 
 #: src/actondownloadedfilebar.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "Отваряне на \"%1\""
+msgstr "Отваряне"
 
 #: src/actondownloadedfilebar.cpp:155
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Отваряне &с \"%1\""
+msgstr "Отваряне &с %1"
 
 #: src/actondownloadedfilebar.cpp:184
 #, kde-format
@@ -353,12 +349,10 @@ msgid "Show here"
 msgstr "Показване тук"
 
 #: src/actondownloadedfilebar.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "Отваряне &с \"%1\""
+msgstr "Показване &с %1"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1202,7 +1196,7 @@ msgstr "&Попълване на формуляри сега"
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "Look Again for Forms"
-msgstr ""
+msgstr "Повторно претърсване за формуляри"
 
 #: src/webenginepart.cpp:1017
 #, kde-format
