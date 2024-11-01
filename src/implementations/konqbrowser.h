@@ -68,6 +68,8 @@ public:
      */
     bool openUrl(const QUrl & url, KParts::OpenUrlArguments & args, const BrowserArguments & bargs, QWidget * window = nullptr) override;
 
+    KonqInterfaces::Window* window(QWidget* widget) override;
+
 private:
 
     /**

@@ -313,6 +313,10 @@ signals:
 // "tab" are going to be lost for good.
     void aboutToRemoveTab(KonqFrameBase *tab);
 
+    void tabContainerChanged(KonqFrameTabs *container);
+
+    void viewCreated(KonqView *newView);
+
 private:
 
     /**

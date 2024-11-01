@@ -78,6 +78,10 @@ namespace Konq {
     class ViewType;
 }
 
+namespace KonqImplementations {
+    class KonqWindow;
+};
+
 class KonqExtendedBookmarkOwner;
 
 class KONQ_TESTS_EXPORT KonqMainWindow : public KParts::MainWindow, public KonqFrameContainerBase
@@ -346,6 +350,8 @@ public:
      */
     int tabsCount() const;
 
+    KonqFrameBase *tab(int idx) const;
+
     // Public for unit tests
     void prepareForPopupMenu(const KFileItemList &items, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs);
 
@@ -460,6 +466,8 @@ public Q_SLOTS:
     void slotSplitViewVertical();
     void slotRemoveOtherTabs();
     void slotRemoveTabPopup();
+    void slotReloadAllTabs();
+    void slotRemoveOtherTabsPopup();
 
     /**
      * @brief Saves the main window settings if suitable for the window
@@ -469,6 +477,11 @@ public Q_SLOTS:
      */
     void forceSaveMainWindowSettings();
 
+    void slotDuplicateTabPopup();
+
+    void slotReloadPopup();
+
+    void slotBreakOffTabPopup();
 private Q_SLOTS:
     void slotViewCompleted(KonqView *view);
 
@@ -477,10 +490,8 @@ private Q_SLOTS:
     void slotLocationLabelActivated();
 
     void slotDuplicateTab();
-    void slotDuplicateTabPopup();
 
     void slotBreakOffTab();
-    void slotBreakOffTabPopup();
     void breakOffTab(int);
 
     void slotPopupNewWindow();
@@ -489,10 +500,6 @@ private Q_SLOTS:
     void slotPopupPasteTo();
     void slotRemoveView();
 
-    void slotRemoveOtherTabsPopup();
-
-    void slotReloadPopup();
-    void slotReloadAllTabs();
     void slotRemoveTab();
     void removeTab(int tabIndex);
     void removeOtherTabs(int tabIndex);
@@ -582,8 +589,6 @@ protected:
     void closeEvent(QCloseEvent *) override;
 
     bool askForTarget(const KLocalizedString &text, QUrl &url);
-    
-private:
     
 private Q_SLOTS:
     void slotUndoTextChanged(const QString &newText);
@@ -678,6 +683,10 @@ private:
     void showBehindThis(KonqMainWindow *window);
     
 private: // members
+
+    //Interfaces
+    KonqImplementations::KonqWindow *m_windowInterface;
+
     KonqUndoManager *m_pUndoManager;
 
     KNewFileMenu *m_pMenuNew;

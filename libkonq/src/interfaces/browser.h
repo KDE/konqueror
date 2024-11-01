@@ -21,6 +21,7 @@ class BrowserArguments;
 namespace KonqInterfaces {
 
 class CookieJar;
+class Window;
 
 /**
  * @brief Abstract class representing the Konqueror browser
@@ -132,6 +133,8 @@ public:
      * @return `true` if a suitable window was found or created and `false` otherwise (this should usually never happen)
      */
     virtual bool openUrl(const QUrl &url, KParts::OpenUrlArguments &args, const BrowserArguments &bargs, QWidget *window = nullptr) = 0;
+
+    virtual Window* window(QWidget *widget) = 0;
 
 signals:
     void configurationChanged(); ///< Signal emitted after the configuration has changed

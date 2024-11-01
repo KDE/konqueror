@@ -750,6 +750,7 @@ void KonqViewManager::clear()
     delete frame;
     // tab container was deleted by the above
     m_tabContainer = nullptr;
+    emit tabContainerChanged(nullptr);
     m_pMainWindow->viewCountChanged();
 }
 
@@ -865,7 +866,6 @@ KonqView *KonqViewManager::setupView(KonqFrameContainerBase *parentContainer,
     newViewFrame->setGeometry(0, 0, m_pMainWindow->width(), m_pMainWindow->height());
 
     //qCDebug(KONQUEROR_LOG) << "Creating KonqView";
-    // KonqView *v = new KonqView(newViewFrame, m_pMainWindow);
     KonqView *v = nullptr;
     if (!viewFactory.isNull()) {
         v = new KonqView(viewFactory, newViewFrame, m_pMainWindow, service, partServiceOffers, appServiceOffers, sType, passiveMode);
@@ -875,8 +875,6 @@ KonqView *KonqViewManager::setupView(KonqFrameContainerBase *parentContainer,
     //qCDebug(KONQUEROR_LOG) << "KonqView created - v=" << v << "v->part()=" << v->part();
 
     connect(v, &KonqView::sigPartChanged, m_pMainWindow, &KonqMainWindow::slotPartChanged);
-//     QObject::connect(v, SIGNAL(sigPartChanged(KonqView*,KParts::ReadOnlyPart*,KParts::ReadOnlyPart*)),
-//                      m_pMainWindow, SLOT(slotPartChanged(KonqView*,KParts::ReadOnlyPart*,KParts::ReadOnlyPart*)));
 
     m_pMainWindow->insertChildView(v);
 
@@ -904,6 +902,8 @@ KonqView *KonqViewManager::setupView(KonqFrameContainerBase *parentContainer,
     if (!m_bLoadingProfile) {
         m_pMainWindow->viewCountChanged();
     }
+
+    emit viewCreated(v);
 
     //qCDebug(KONQUEROR_LOG) << "done";
     return v;
@@ -1532,6 +1532,7 @@ void KonqViewManager::createTabContainer(QWidget *parent, KonqFrameContainerBase
     Q_ASSERT(ok);
     Q_UNUSED(ok);
     applyConfiguration();
+    emit tabContainerChanged(m_tabContainer);
 }
 
 void KonqViewManager::applyConfiguration()

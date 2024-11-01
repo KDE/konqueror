@@ -11,6 +11,7 @@ add_subdirectory( trees )
 endif()
 
 add_subdirectory( bookmarks_module )
+add_subdirectory( vertical_tabbar )
 add_subdirectory( tree_module )
 #TODO KF6: check what to do with this: either port it to WebEnginePart or remove it
 # add_subdirectory( web_module ) # requires refactoring away from KHtml

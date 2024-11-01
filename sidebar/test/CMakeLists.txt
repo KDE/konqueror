@@ -26,3 +26,15 @@ ecm_add_test(
 )
 target_include_directories(sidebar-modulemanagertest PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/..)
 
+ecm_add_test(
+    vertical_tabbar/verticaltabbarmodeltest.cpp
+    vertical_tabbar/fakewindow.cpp
+    ../vertical_tabbar/verticaltabbarmodel.cpp
+    LINK_LIBRARIES
+        Qt${KF_MAJOR_VERSION}::Core
+        Qt${KF_MAJOR_VERSION}::Test
+        KF${KF_MAJOR_VERSION}::Konq
+    TEST_NAME sidebar-verticaltabbarmodeltest
+)
+target_include_directories(sidebar-verticaltabbarmodeltest PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/../vertical_tabbar/)
+target_compile_definitions(sidebar-verticaltabbarmodeltest PRIVATE -DBUILD_TABMODELTEST)

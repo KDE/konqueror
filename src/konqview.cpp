@@ -418,6 +418,7 @@ void KonqView::connectPart()
             this, SLOT(slotCanceled(QString)));
     connect(m_pPart, SIGNAL(setWindowCaption(QString)),
             this, SLOT(setCaption(QString)));
+    connect(m_pPart, &KParts::ReadOnlyPart::urlChanged, this, &KonqView::urlChanged);
     if (!internalViewMode().isEmpty()) {
         // Update checked action in "View Mode" menu when switching view mode in dolphin
         connect(m_pPart, SIGNAL(viewModeChanged()),
@@ -753,6 +754,7 @@ void KonqView::setCaption(const QString &caption)
     m_caption = adjustedCaption;
     if (!m_bPassiveMode) {
         frame()->setTitle(adjustedCaption, nullptr);
+        emit captionChanged(adjustedCaption);
     }
 }
 

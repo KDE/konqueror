@@ -39,6 +39,7 @@
 #include <kstringhandler.h>
 #include "konqurl.h"
 #include "implementations/konqbrowserwindowinterface.h"
+#include "implementations/konqwindow.h"
 #include "urlloader.h"
 #include "pluginmetadatautils.h"
 #include "downloadactionquestion.h"
@@ -201,6 +202,7 @@ KonqExtendedBookmarkOwner::KonqExtendedBookmarkOwner(KonqMainWindow *w)
 
 KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     : KParts::MainWindow()
+    , m_windowInterface(nullptr)
     , m_paClosedItems(nullptr)
     , m_fullyConstructed(false)
     , m_bLocationBarConnected(false)
@@ -239,6 +241,8 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     setComponentName(applicationData.componentName(), applicationData.displayName());
 
     m_pViewManager = new KonqViewManager(this);
+    m_windowInterface = new KonqImplementations::KonqWindow(this, m_pViewManager);
+
     m_viewModeMenu = nullptr;
     m_openWithMenu = nullptr;
     m_paCopyFiles = nullptr;
@@ -5546,4 +5550,9 @@ bool KonqMainWindow::newTabInFront(Qt::KeyboardModifiers mods)
 {
     bool front = Settings::newTabsInFront();
     return mods & Qt::ShiftModifier ? !front : front;
+}
+
+KonqFrameBase* KonqMainWindow::tab(int idx) const
+{
+    return m_pViewManager->tabContainer()->tabAt(idx);
 }

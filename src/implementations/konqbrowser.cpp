@@ -5,7 +5,9 @@
 */
 
 #include "implementations/konqbrowser.h"
+
 #include "interfaces/cookiejar.h"
+#include "interfaces/window.h"
 #include "konqapplication.h"
 #include "konqmainwindow.h"
 #include "konqview.h"
@@ -134,4 +136,10 @@ bool KonqBrowser::openUrl(const QUrl& url, KParts::OpenUrlArguments& args, const
     KonqOpenURLRequest req(args, bargs, nullptr);
     mainWindow->slotOpenURLRequest(url, req);
     return true;
+}
+
+Window* KonqBrowser::window(QWidget* widget)
+{
+    QWidget *mainWindow = widget->window();
+    return KonqInterfaces::Window::window(mainWindow);
 }

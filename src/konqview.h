@@ -609,6 +609,10 @@ Q_SIGNALS:
      */
     void viewCompleted(KonqView *view);
 
+    void urlChanged(const QUrl &url);
+
+    void captionChanged(const QString &caption);
+
 public Q_SLOTS:
     /**
      * Store location-bar URL in the child view
