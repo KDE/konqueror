@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-28 00:40+0000\n"
-"PO-Revision-Date: 2024-09-15 10:36+0100\n"
+"PO-Revision-Date: 2024-11-01 14:01+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -303,12 +303,10 @@ msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 
 #: src/actondownloadedfilebar.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@label location where a remote URL was downloaded"
-#| msgid "%1 was saved in %2"
+#, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
-msgstr "%1 was saved in %2"
+msgstr "was saved as"
 
 #: src/actondownloadedfilebar.cpp:120
 #, kde-format
@@ -317,19 +315,16 @@ msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
 msgstr "<tt>%1</tt> was saved as <tt>%2</tt>"
 
 #: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "Open &with %1"
+msgstr "Open With..."
 
 #: src/actondownloadedfilebar.cpp:146
-#, fuzzy, kde-format
-#| msgid "OpenSSL"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "OpenSSL"
+msgstr "Open"
 
 #: src/actondownloadedfilebar.cpp:155
 #, kde-format
@@ -350,12 +345,10 @@ msgid "Show here"
 msgstr "Show here"
 
 #: src/actondownloadedfilebar.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "Open &with %1"
+msgstr "Show &with %1"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1194,7 +1187,7 @@ msgstr "&Fill forms now"
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "Look Again for Forms"
-msgstr ""
+msgstr "Look Again for Forms"
 
 #: src/webenginepart.cpp:1017
 #, kde-format
