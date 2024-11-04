@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"POT-Creation-Date: 2024-11-04 00:39+0000\n"
 "PO-Revision-Date: 2011-12-19 22:13+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -321,6 +321,45 @@ msgstr ""
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
 msgstr "'%1' ਖੋਲ੍ਹੋ"
+
+#: src/capturesourcechooserdlg.cpp:29
+#, kde-format
+msgid ""
+"Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
+msgstr ""
+
+#: src/capturesourcechooserdlg.cpp:31
+#, kde-format
+msgid "Choose window or screen to capture"
+msgstr ""
+
+#: src/capturesourcechooserdlg.cpp:38
+#, fuzzy, kde-format
+#| msgctxt "follow link despite of security warning"
+#| msgid "Follow"
+msgctxt "Allow a web page to capture the screen"
+msgid "Allow"
+msgstr "ਜਾਓ"
+
+#: src/capturesourcechooserdlg.cpp:39
+#, kde-format
+msgctxt "Block a web page from capturing the screen"
+msgid "Block"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
+#: src/capturesourcechooserdlg.ui:14
+#, fuzzy, kde-format
+#| msgctxt "input dialog text for selecting html elements"
+#| msgid "Choose elements"
+msgid "Choose Capture Source"
+msgstr "ਐਲੀਮੈਂਟ ਚੁਣੋ"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: src/capturesourcechooserdlg.ui:20
+#, kde-format
+msgid "Do you want to allow this page to capture the contents of your screen?"
+msgstr ""
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -841,12 +880,12 @@ msgstr ""
 msgid "&Immediately memorize form data"
 msgstr ""
 
-#: src/webenginepage.cpp:153
+#: src/webenginepage.cpp:159
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "ਡਾਊਨਲੋਡ ਮੈਨੇਜਰ (%1) ਤੁਹਾਡੀ ਇੰਸਟਾਲੇਸ਼ਨ ਵਿੱਚ ਨਹੀਂ ਲੱਭਿਆ ਜਾ ਸਕਿਆ।"
 
-#: src/webenginepage.cpp:154
+#: src/webenginepage.cpp:160
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -857,7 +896,7 @@ msgstr ""
 "\n"
 "ਐਂਟੀਗਰੇਸ਼ਨ ਨੂੰ ਬੰਦ ਕੀਤਾ ਜਾਵੇਗਾ।"
 
-#: src/webenginepage.cpp:334
+#: src/webenginepage.cpp:342
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -866,13 +905,13 @@ msgid ""
 "Otherwise, click the Continue button to display the webpage again.</p>"
 msgstr ""
 
-#: src/webenginepage.cpp:341
+#: src/webenginepage.cpp:349
 #, fuzzy, kde-format
 #| msgid "Additional Information: %1"
 msgid "Resubmit Information"
 msgstr "ਹੋਰ ਜਾਣਕਾਰੀ: %1"
 
-#: src/webenginepage.cpp:538
+#: src/webenginepage.cpp:546
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is attempting to submit form data via email.\n"
@@ -884,19 +923,19 @@ msgstr ""
 "ਇਹ ਸਾਇਟ ਨੇ ਈਮੇਲ ਰਾਹੀਂ ਫਾਰਮ ਡਾਟਾ ਭੇਜਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕੀਤੀ ਹੈ।\n"
 "ਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: src/webenginepage.cpp:542 src/webenginepage.cpp:620
-#: src/webenginepage.cpp:631
+#: src/webenginepage.cpp:550 src/webenginepage.cpp:628
+#: src/webenginepage.cpp:639
 #, kde-format
 msgid "Network Transmission"
 msgstr "ਨੈੱਟਵਰਕ ਟਰਾਂਸਮਿਸ਼ਨ"
 
-#: src/webenginepage.cpp:543
+#: src/webenginepage.cpp:551
 #, fuzzy, kde-format
 #| msgid "&Allow attachments"
 msgid "Allow access"
 msgstr "ਅਟੈਚਮੈਂਟ ਮਨਜ਼ੂਰ(&A)"
 
-#: src/webenginepage.cpp:613
+#: src/webenginepage.cpp:621
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -905,12 +944,12 @@ msgid ""
 "Are you sure you want to send the data unencrypted?"
 msgstr ""
 
-#: src/webenginepage.cpp:621
+#: src/webenginepage.cpp:629
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "ਅਣ-ਇੰਕ੍ਰਿਪਟ ਭੇਜੋ(&S)"
 
-#: src/webenginepage.cpp:628
+#: src/webenginepage.cpp:636
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -919,34 +958,34 @@ msgstr ""
 "ਇਹ ਸਾਇਟ ਨੇ ਈਮੇਲ ਰਾਹੀਂ ਫਾਰਮ ਡਾਟਾ ਭੇਜਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕੀਤੀ ਹੈ।\n"
 "ਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: src/webenginepage.cpp:632
+#: src/webenginepage.cpp:640
 #, kde-format
 msgid "&Send Email"
 msgstr "ਈਮੇਲ ਭੇਜੋ(&S)"
 
-#: src/webenginepage.cpp:681
+#: src/webenginepage.cpp:689
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 msgstr ""
 
-#: src/webenginepage.cpp:683
+#: src/webenginepage.cpp:691
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "ਈਮੇਲ ਅਟੈਚਮੈਂਟ ਪੁਸ਼ਟੀ"
 
-#: src/webenginepage.cpp:684
+#: src/webenginepage.cpp:692
 #, kde-format
 msgid "&Allow attachments"
 msgstr "ਅਟੈਚਮੈਂਟ ਮਨਜ਼ੂਰ(&A)"
 
-#: src/webenginepage.cpp:685
+#: src/webenginepage.cpp:693
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "ਅਟੈਚਮੈਂਟ ਅਣਡਿੱਠਾ(&I)"
 
-#: src/webenginepage.cpp:699
+#: src/webenginepage.cpp:707
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -955,12 +994,12 @@ msgstr ""
 "ਇਹ ਸਾਇਟ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਤੋਂ ਇੱਕ ਫਾਇਲ ਜੋੜਨ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਹੀ ਹੈ। ਇਸਤਰਾਂ ਕਰਨ ਨਾਲ ਇਹ ਤੁਹਾਡੀ "
 "ਸੁਰੱਖਿਆ ਤੋਂ ਬਾਹਰ ਚਲੀ ਜਾਏਗੀ।"
 
-#: src/webenginepage.cpp:702
+#: src/webenginepage.cpp:710
 #, kde-format
 msgid "Attachment Removed"
 msgstr "ਅਟੈਚਮੈਂਟ ਹਟਾਈ ਗਈ"
 
-#: src/webenginepage.cpp:816
+#: src/webenginepage.cpp:841
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is attempting to submit form data via email.\n"
@@ -972,7 +1011,7 @@ msgstr ""
 "ਇਹ ਸਾਇਟ ਨੇ ਈਮੇਲ ਰਾਹੀਂ ਫਾਰਮ ਡਾਟਾ ਭੇਜਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕੀਤੀ ਹੈ।\n"
 "ਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: src/webenginepage.cpp:818
+#: src/webenginepage.cpp:843
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
@@ -984,19 +1023,19 @@ msgstr ""
 "<qt>ਇਹ ਅਣ-ਟਰੱਸਟਡ ਸਫ਼ਾ ਲਿੰਕ <br/><b>%1</b><br/> ਹੈ। ਕੀ ਤੁਸੀਂ ਲਿੰਕ ਉੱਤੇ ਜਾਣਾ ਚਾਹੁੰਦੇ ਹੋ?</"
 "qt>"
 
-#: src/webenginepage.cpp:821
+#: src/webenginepage.cpp:846
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr ""
 
-#: src/webenginepage.cpp:822
+#: src/webenginepage.cpp:847
 #, fuzzy, kde-format
 #| msgctxt "follow link despite of security warning"
 #| msgid "Follow"
 msgid "Allow"
 msgstr "ਜਾਓ"
 
-#: src/webenginepage.cpp:822
+#: src/webenginepage.cpp:847
 #, kde-format
 msgid "Do Not Allow"
 msgstr ""
@@ -1306,31 +1345,31 @@ msgid ""
 "default style sheet will be used"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:307
+#: src/webenginepartdownloadmanager.cpp:309
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:318
+#: src/webenginepartdownloadmanager.cpp:320
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:319
+#: src/webenginepartdownloadmanager.cpp:321
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:320
+#: src/webenginepartdownloadmanager.cpp:322
 #, fuzzy, kde-format
 #| msgid "Description:"
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "ਵੇਰਵਾ:"
 
-#: src/webenginepartdownloadmanager.cpp:342
+#: src/webenginepartdownloadmanager.cpp:344
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

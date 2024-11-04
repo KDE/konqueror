@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"POT-Creation-Date: 2024-11-04 00:39+0000\n"
 "PO-Revision-Date: 2022-10-05 09:27+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1961,7 +1961,7 @@ msgstr "Предупреждение"
 msgid "Resend"
 msgstr "Переслать"
 
-#: src/urlloader.cpp:420
+#: src/urlloader.cpp:421
 #, fuzzy, kde-format
 #| msgctxt "Execute an executable file"
 #| msgid "Execute it"
@@ -1969,7 +1969,7 @@ msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "Выполнить"
 
-#: src/urlloader.cpp:423
+#: src/urlloader.cpp:424
 #, fuzzy, kde-format
 #| msgctxt "Display an executable file"
 #| msgid "Display it"
@@ -1977,7 +1977,7 @@ msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
 msgstr "Отобразить"
 
-#: src/urlloader.cpp:430
+#: src/urlloader.cpp:431
 #, fuzzy, kde-kuit-format
 #| msgctxt ""
 #| "The user has to decide whether to execute an executable file or display it"
@@ -1993,7 +1993,7 @@ msgstr ""
 "<tt>%1</tt> возможно выполнить. Что следует сделать, выполнить или "
 "отобразить?"
 
-#: src/urlloader.cpp:436
+#: src/urlloader.cpp:437
 #, fuzzy, kde-kuit-format
 #| msgctxt ""
 #| "The user has to decide whether to execute an executable file or not"
@@ -2003,7 +2003,7 @@ msgctxt ""
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<tt>%1</tt> возможно выполнить. Сделать это?"
 
-#: src/urlloader.cpp:746
+#: src/urlloader.cpp:747
 #, kde-format
 msgid "Save As"
 msgstr "Сохранить как"

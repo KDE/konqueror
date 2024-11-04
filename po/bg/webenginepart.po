@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"POT-Creation-Date: 2024-11-04 00:39+0000\n"
 "PO-Revision-Date: 2024-10-28 22:00+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -353,6 +353,48 @@ msgstr "Показване тук"
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
 msgstr "Показване &с %1"
+
+#: src/capturesourcechooserdlg.cpp:29
+#, kde-format
+msgid ""
+"Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
+msgstr ""
+
+#: src/capturesourcechooserdlg.cpp:31
+#, kde-format
+msgid "Choose window or screen to capture"
+msgstr ""
+
+#: src/capturesourcechooserdlg.cpp:38
+#, fuzzy, kde-format
+#| msgid "Allow"
+msgctxt "Allow a web page to capture the screen"
+msgid "Allow"
+msgstr "Разрешаване"
+
+#: src/capturesourcechooserdlg.cpp:39
+#, kde-format
+msgctxt "Block a web page from capturing the screen"
+msgid "Block"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
+#: src/capturesourcechooserdlg.ui:14
+#, fuzzy, kde-format
+#| msgid "Choose Save Format"
+msgid "Choose Capture Source"
+msgstr "Избиране на формат за запазване"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: src/capturesourcechooserdlg.ui:20
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Do you want to allow this site to attach the following files to the "
+#| "email message?</qt>"
+msgid "Do you want to allow this page to capture the contents of your screen?"
+msgstr ""
+"<qt>Да се разреши ли на този сайт да прикрепи следните файлове към писмото?</"
+"qt>"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -885,12 +927,12 @@ msgstr ""
 msgid "&Immediately memorize form data"
 msgstr "&Незабавно запомняне на данните от формуляра"
 
-#: src/webenginepage.cpp:153
+#: src/webenginepage.cpp:159
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Програмата за изтегляния (%1) не е открита в инсталацията ви."
 
-#: src/webenginepage.cpp:154
+#: src/webenginepage.cpp:160
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -901,7 +943,7 @@ msgstr ""
 "\n"
 "Интеграцията ще бъде изключена."
 
-#: src/webenginepage.cpp:334
+#: src/webenginepage.cpp:342
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -915,12 +957,12 @@ msgstr ""
 "предотвратите дублиране на покупка.В противен случай щракнете върху бутона "
 "Продължи, за да се покаже отново уеб страницата.</p>"
 
-#: src/webenginepage.cpp:341
+#: src/webenginepage.cpp:349
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Повторно изпращане на информация"
 
-#: src/webenginepage.cpp:538
+#: src/webenginepage.cpp:546
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -930,18 +972,18 @@ msgstr ""
 "местоположение.\n"
 "Искате ли да му разрешите достъп?"
 
-#: src/webenginepage.cpp:542 src/webenginepage.cpp:620
-#: src/webenginepage.cpp:631
+#: src/webenginepage.cpp:550 src/webenginepage.cpp:628
+#: src/webenginepage.cpp:639
 #, kde-format
 msgid "Network Transmission"
 msgstr "Предаване на данни по мрежата"
 
-#: src/webenginepage.cpp:543
+#: src/webenginepage.cpp:551
 #, kde-format
 msgid "Allow access"
 msgstr "Разрешаване на достъп"
 
-#: src/webenginepage.cpp:613
+#: src/webenginepage.cpp:621
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -954,12 +996,12 @@ msgstr ""
 "Трета страна може да прихване връзката и да види тези данни.\n"
 "Сигурни ли сте, че искате да изпратите данните нешифрирани?"
 
-#: src/webenginepage.cpp:621
+#: src/webenginepage.cpp:629
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "Изпращане не&шифрирано"
 
-#: src/webenginepage.cpp:628
+#: src/webenginepage.cpp:636
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -968,12 +1010,12 @@ msgstr ""
 "Тази страница се опитва да изпрати въведените данни по електронна поща.\n"
 "Сигурни ли сте, че искате да продължите?"
 
-#: src/webenginepage.cpp:632
+#: src/webenginepage.cpp:640
 #, kde-format
 msgid "&Send Email"
 msgstr "&Изпращане на поща"
 
-#: src/webenginepage.cpp:681
+#: src/webenginepage.cpp:689
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -982,22 +1024,22 @@ msgstr ""
 "<qt>Да се разреши ли на този сайт да прикрепи следните файлове към писмото?</"
 "qt>"
 
-#: src/webenginepage.cpp:683
+#: src/webenginepage.cpp:691
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Потвърждение за прикрепени файлове"
 
-#: src/webenginepage.cpp:684
+#: src/webenginepage.cpp:692
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Позволяване на прикрепените файлове"
 
-#: src/webenginepage.cpp:685
+#: src/webenginepage.cpp:693
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "Пре&небрегване на прикрепените файлове"
 
-#: src/webenginepage.cpp:699
+#: src/webenginepage.cpp:707
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1006,12 +1048,12 @@ msgstr ""
 "Този сайт се опита да прикачи файл от вашия компютър във формата за "
 "изпращане. Прикаченият файл беше премахнат за ваша безопасност."
 
-#: src/webenginepage.cpp:702
+#: src/webenginepage.cpp:710
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Прикрепеният файл е премахнат"
 
-#: src/webenginepage.cpp:816
+#: src/webenginepage.cpp:841
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1020,7 +1062,7 @@ msgstr ""
 "Този сайт иска да отвори нов изскачащ прозорец.\n"
 "Искате ли да разрешите това?"
 
-#: src/webenginepage.cpp:818
+#: src/webenginepage.cpp:843
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1029,17 +1071,17 @@ msgstr ""
 "<qt>Този сайт иска да отвори изскачащ прозорец в <p>%1</p><br/> Наистина ли "
 "искате да разрешите това?</qt>"
 
-#: src/webenginepage.cpp:821
+#: src/webenginepage.cpp:846
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Потвърждение за изскачащ прозорец на Javascript"
 
-#: src/webenginepage.cpp:822
+#: src/webenginepage.cpp:847
 #, kde-format
 msgid "Allow"
 msgstr "Разрешаване"
 
-#: src/webenginepage.cpp:822
+#: src/webenginepage.cpp:847
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Забраняване"
@@ -1345,30 +1387,30 @@ msgstr ""
 "Не можа да се отвори файлът <tt>%1</tt>, съдържащ потребителския лист със "
 "стилове. Ще бъде използван листът със стилове по подразбиране"
 
-#: src/webenginepartdownloadmanager.cpp:307
+#: src/webenginepartdownloadmanager.cpp:309
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Възникна грешка при запазване на файла: %1"
 
-#: src/webenginepartdownloadmanager.cpp:318
+#: src/webenginepartdownloadmanager.cpp:320
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Изтегляне"
 
-#: src/webenginepartdownloadmanager.cpp:319
+#: src/webenginepartdownloadmanager.cpp:321
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Източник"
 
-#: src/webenginepartdownloadmanager.cpp:320
+#: src/webenginepartdownloadmanager.cpp:322
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Назначение"
 
-#: src/webenginepartdownloadmanager.cpp:342
+#: src/webenginepartdownloadmanager.cpp:344
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

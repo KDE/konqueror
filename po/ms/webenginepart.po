@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"POT-Creation-Date: 2024-11-04 00:39+0000\n"
 "PO-Revision-Date: 2010-07-01 23:44+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -311,6 +311,41 @@ msgstr ""
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
 msgstr "Buka '%1'"
+
+#: src/capturesourcechooserdlg.cpp:29
+#, kde-format
+msgid ""
+"Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
+msgstr ""
+
+#: src/capturesourcechooserdlg.cpp:31
+#, kde-format
+msgid "Choose window or screen to capture"
+msgstr ""
+
+#: src/capturesourcechooserdlg.cpp:38
+#, fuzzy, kde-format
+msgctxt "Allow a web page to capture the screen"
+msgid "Allow"
+msgstr "Ikut "
+
+#: src/capturesourcechooserdlg.cpp:39
+#, kde-format
+msgctxt "Block a web page from capturing the screen"
+msgid "Block"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
+#: src/capturesourcechooserdlg.ui:14
+#, kde-format
+msgid "Choose Capture Source"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: src/capturesourcechooserdlg.ui:20
+#, kde-format
+msgid "Do you want to allow this page to capture the contents of your screen?"
+msgstr ""
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -819,12 +854,12 @@ msgstr ""
 msgid "&Immediately memorize form data"
 msgstr ""
 
-#: src/webenginepage.cpp:153
+#: src/webenginepage.cpp:159
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr ""
 
-#: src/webenginepage.cpp:154
+#: src/webenginepage.cpp:160
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -832,7 +867,7 @@ msgid ""
 "The integration will be disabled."
 msgstr ""
 
-#: src/webenginepage.cpp:334
+#: src/webenginepage.cpp:342
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -841,12 +876,12 @@ msgid ""
 "Otherwise, click the Continue button to display the webpage again.</p>"
 msgstr ""
 
-#: src/webenginepage.cpp:341
+#: src/webenginepage.cpp:349
 #, fuzzy, kde-format
 msgid "Resubmit Information"
 msgstr "Maklumat Tambahan: %1"
 
-#: src/webenginepage.cpp:538
+#: src/webenginepage.cpp:546
 #, fuzzy, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -855,18 +890,18 @@ msgstr ""
 "Tapak ini cuba menghantar borang data menerusi e-mel\n"
 "Anda mahu sambung?"
 
-#: src/webenginepage.cpp:542 src/webenginepage.cpp:620
-#: src/webenginepage.cpp:631
+#: src/webenginepage.cpp:550 src/webenginepage.cpp:628
+#: src/webenginepage.cpp:639
 #, fuzzy, kde-format
 msgid "Network Transmission"
 msgstr "Penghantaran Rangkaian"
 
-#: src/webenginepage.cpp:543
+#: src/webenginepage.cpp:551
 #, kde-format
 msgid "Allow access"
 msgstr ""
 
-#: src/webenginepage.cpp:613
+#: src/webenginepage.cpp:621
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -875,12 +910,12 @@ msgid ""
 "Are you sure you want to send the data unencrypted?"
 msgstr ""
 
-#: src/webenginepage.cpp:621
+#: src/webenginepage.cpp:629
 #, fuzzy, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Hantar Tanpa Disulitkan"
 
-#: src/webenginepage.cpp:628
+#: src/webenginepage.cpp:636
 #, fuzzy, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -889,34 +924,34 @@ msgstr ""
 "Tapak ini cuba menghantar borang data menerusi e-mel\n"
 "Anda mahu sambung?"
 
-#: src/webenginepage.cpp:632
+#: src/webenginepage.cpp:640
 #, fuzzy, kde-format
 msgid "&Send Email"
 msgstr "&Hantar E-mel"
 
-#: src/webenginepage.cpp:681
+#: src/webenginepage.cpp:689
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 msgstr ""
 
-#: src/webenginepage.cpp:683
+#: src/webenginepage.cpp:691
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr ""
 
-#: src/webenginepage.cpp:684
+#: src/webenginepage.cpp:692
 #, kde-format
 msgid "&Allow attachments"
 msgstr ""
 
-#: src/webenginepage.cpp:685
+#: src/webenginepage.cpp:693
 #, kde-format
 msgid "&Ignore attachments"
 msgstr ""
 
-#: src/webenginepage.cpp:699
+#: src/webenginepage.cpp:707
 #, fuzzy, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -925,12 +960,12 @@ msgstr ""
 "Laman ini cuba mengepil fail dari komputer anda di dalam borang. Kepilan "
 "telah ditanggalkan untuk keselamatan."
 
-#: src/webenginepage.cpp:702
+#: src/webenginepage.cpp:710
 #, kde-format
 msgid "Attachment Removed"
 msgstr ""
 
-#: src/webenginepage.cpp:816
+#: src/webenginepage.cpp:841
 #, fuzzy, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -939,24 +974,24 @@ msgstr ""
 "Tapak ini cuba menghantar borang data menerusi e-mel\n"
 "Anda mahu sambung?"
 
-#: src/webenginepage.cpp:818
+#: src/webenginepage.cpp:843
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
 "want to allow this?</qt>"
 msgstr ""
 
-#: src/webenginepage.cpp:821
+#: src/webenginepage.cpp:846
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr ""
 
-#: src/webenginepage.cpp:822
+#: src/webenginepage.cpp:847
 #, fuzzy, kde-format
 msgid "Allow"
 msgstr "Ikut "
 
-#: src/webenginepage.cpp:822
+#: src/webenginepage.cpp:847
 #, kde-format
 msgid "Do Not Allow"
 msgstr ""
@@ -1255,30 +1290,30 @@ msgid ""
 "default style sheet will be used"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:307
+#: src/webenginepartdownloadmanager.cpp:309
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:318
+#: src/webenginepartdownloadmanager.cpp:320
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:319
+#: src/webenginepartdownloadmanager.cpp:321
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:320
+#: src/webenginepartdownloadmanager.cpp:322
 #, fuzzy, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Huraian:"
 
-#: src/webenginepartdownloadmanager.cpp:342
+#: src/webenginepartdownloadmanager.cpp:344
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

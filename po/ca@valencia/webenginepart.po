@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"POT-Creation-Date: 2024-11-04 00:39+0000\n"
 "PO-Revision-Date: 2024-10-28 10:33+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -356,6 +356,48 @@ msgstr "Mostra ací"
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
 msgstr "Mostra a&mb %1"
+
+#: src/capturesourcechooserdlg.cpp:29
+#, kde-format
+msgid ""
+"Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
+msgstr ""
+
+#: src/capturesourcechooserdlg.cpp:31
+#, kde-format
+msgid "Choose window or screen to capture"
+msgstr ""
+
+#: src/capturesourcechooserdlg.cpp:38
+#, fuzzy, kde-format
+#| msgid "Allow"
+msgctxt "Allow a web page to capture the screen"
+msgid "Allow"
+msgstr "Permet"
+
+#: src/capturesourcechooserdlg.cpp:39
+#, kde-format
+msgctxt "Block a web page from capturing the screen"
+msgid "Block"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
+#: src/capturesourcechooserdlg.ui:14
+#, fuzzy, kde-format
+#| msgid "Choose Save Format"
+msgid "Choose Capture Source"
+msgstr "Seleccioneu el format de guardada"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: src/capturesourcechooserdlg.ui:20
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Do you want to allow this site to attach the following files to the "
+#| "email message?</qt>"
+msgid "Do you want to allow this page to capture the contents of your screen?"
+msgstr ""
+"<qt>Voleu permetre que este lloc adjunte els fitxers següents al missatge de "
+"correu electrònic?</qt>"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -886,13 +928,13 @@ msgstr "Emmagatzema les dades del formulari en KWallet en tancar el diàleg"
 msgid "&Immediately memorize form data"
 msgstr "Memoritza &immediatament les dades del formulari"
 
-#: src/webenginepage.cpp:153
+#: src/webenginepage.cpp:159
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr ""
 "El gestor de descàrrega (%1) no s'ha pogut trobar en esta instal·lació."
 
-#: src/webenginepage.cpp:154
+#: src/webenginepage.cpp:160
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -903,7 +945,7 @@ msgstr ""
 "\n"
 "S'inhabilitarà la integració."
 
-#: src/webenginepage.cpp:334
+#: src/webenginepage.cpp:342
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -917,12 +959,12 @@ msgstr ""
 "botó Cancel·la per a evitar duplicar la compra. En cas contrari, cliqueu en "
 "el botó Continua per a tornar a mostrar la pàgina web.</p>"
 
-#: src/webenginepage.cpp:341
+#: src/webenginepage.cpp:349
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Torna a trametre la informació"
 
-#: src/webenginepage.cpp:538
+#: src/webenginepage.cpp:546
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -932,18 +974,18 @@ msgstr ""
 "ubicació física.\n"
 "Voleu permetre l'accés?"
 
-#: src/webenginepage.cpp:542 src/webenginepage.cpp:620
-#: src/webenginepage.cpp:631
+#: src/webenginepage.cpp:550 src/webenginepage.cpp:628
+#: src/webenginepage.cpp:639
 #, kde-format
 msgid "Network Transmission"
 msgstr "Transmissió de xarxa"
 
-#: src/webenginepage.cpp:543
+#: src/webenginepage.cpp:551
 #, kde-format
 msgid "Allow access"
 msgstr "Permet l'accés"
 
-#: src/webenginepage.cpp:613
+#: src/webenginepage.cpp:621
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -956,12 +998,12 @@ msgstr ""
 "Un tercer podria interceptar i veure esta informació.\n"
 "Segur que voleu enviar les dades sense encriptar?"
 
-#: src/webenginepage.cpp:621
+#: src/webenginepage.cpp:629
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Envia sense encriptar"
 
-#: src/webenginepage.cpp:628
+#: src/webenginepage.cpp:636
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -970,12 +1012,12 @@ msgstr ""
 "Este lloc està provant d'enviar dades de formulari via correu.\n"
 "Voleu continuar?"
 
-#: src/webenginepage.cpp:632
+#: src/webenginepage.cpp:640
 #, kde-format
 msgid "&Send Email"
 msgstr "&Envia correu"
 
-#: src/webenginepage.cpp:681
+#: src/webenginepage.cpp:689
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -984,22 +1026,22 @@ msgstr ""
 "<qt>Voleu permetre que este lloc adjunte els fitxers següents al missatge de "
 "correu electrònic?</qt>"
 
-#: src/webenginepage.cpp:683
+#: src/webenginepage.cpp:691
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Confirmeu l'adjunt al correu"
 
-#: src/webenginepage.cpp:684
+#: src/webenginepage.cpp:692
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Permet els &adjunts"
 
-#: src/webenginepage.cpp:685
+#: src/webenginepage.cpp:693
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignora els adjunts"
 
-#: src/webenginepage.cpp:699
+#: src/webenginepage.cpp:707
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1008,12 +1050,12 @@ msgstr ""
 "Este lloc ha provat d'adjuntar un fitxer des del vostre ordinador al "
 "formulari d'enviament. S'ha eliminat l'adjunt per a la vostra protecció."
 
-#: src/webenginepage.cpp:702
+#: src/webenginepage.cpp:710
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Eliminació d'adjunt"
 
-#: src/webenginepage.cpp:816
+#: src/webenginepage.cpp:841
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1022,7 +1064,7 @@ msgstr ""
 "Este lloc està sol·licitant obrir una finestra emergent nova.\n"
 "Voleu permetre-ho?"
 
-#: src/webenginepage.cpp:818
+#: src/webenginepage.cpp:843
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1031,17 +1073,17 @@ msgstr ""
 "<qt>Este lloc està demanant d'obrir una finestra emergent a <p>%1</p>. <br/"
 ">Voleu permetre-ho?</qt>"
 
-#: src/webenginepage.cpp:821
+#: src/webenginepage.cpp:846
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Confirmeu la finestra emergent de JavaScript"
 
-#: src/webenginepage.cpp:822
+#: src/webenginepage.cpp:847
 #, kde-format
 msgid "Allow"
 msgstr "Permet"
 
-#: src/webenginepage.cpp:822
+#: src/webenginepage.cpp:847
 #, kde-format
 msgid "Do Not Allow"
 msgstr "No permetes"
@@ -1347,30 +1389,30 @@ msgstr ""
 "No s'ha pogut obrir el fitxer <tt>%1</tt> que conté el full d'estil "
 "d'usuari. S'utilitzarà el full d'estil predeterminat"
 
-#: src/webenginepartdownloadmanager.cpp:307
+#: src/webenginepartdownloadmanager.cpp:309
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "S'ha produït un error en guardar el fitxer: %1"
 
-#: src/webenginepartdownloadmanager.cpp:318
+#: src/webenginepartdownloadmanager.cpp:320
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "S'està baixant"
 
-#: src/webenginepartdownloadmanager.cpp:319
+#: src/webenginepartdownloadmanager.cpp:321
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Origen"
 
-#: src/webenginepartdownloadmanager.cpp:320
+#: src/webenginepartdownloadmanager.cpp:322
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Destinació"
 
-#: src/webenginepartdownloadmanager.cpp:342
+#: src/webenginepartdownloadmanager.cpp:344
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"POT-Creation-Date: 2024-11-04 00:39+0000\n"
 "PO-Revision-Date: 2024-08-19 23:45+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1911,13 +1911,13 @@ msgstr "경고"
 msgid "Resend"
 msgstr "다시 보내기"
 
-#: src/urlloader.cpp:420
+#: src/urlloader.cpp:421
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "실행"
 
-#: src/urlloader.cpp:423
+#: src/urlloader.cpp:424
 #, fuzzy, kde-format
 #| msgctxt "Display an executable file"
 #| msgid "Display"
@@ -1925,7 +1925,7 @@ msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
 msgstr "표시"
 
-#: src/urlloader.cpp:430
+#: src/urlloader.cpp:431
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -1937,14 +1937,14 @@ msgstr ""
 "<filename>%1</filename>을(를) 실행할 수 있습니다. 실행하거나 표시하시겠습니"
 "까?"
 
-#: src/urlloader.cpp:436
+#: src/urlloader.cpp:437
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename>을(를) 실행할 수 있습니다. 실행하시겠습니까?"
 
-#: src/urlloader.cpp:746
+#: src/urlloader.cpp:747
 #, kde-format
 msgid "Save As"
 msgstr "다른 이름으로 저장"
