@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-04 00:39+0000\n"
-"PO-Revision-Date: 2024-10-28 04:33+0100\n"
+"PO-Revision-Date: 2024-11-04 05:07+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -358,15 +358,16 @@ msgstr "%1-ით &ჩვენება"
 msgid ""
 "Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
 msgstr ""
+"მართლა გნებავთ, მისცეთ პროგრამას <tt>%1</tt> უფლება, თქვენი ეკრანის სურათი "
+"გადაიღოს?"
 
 #: src/capturesourcechooserdlg.cpp:31
 #, kde-format
 msgid "Choose window or screen to capture"
-msgstr ""
+msgstr "აირჩიეთ ფანჯარა ან ეკრანი გადასაღებად"
 
 #: src/capturesourcechooserdlg.cpp:38
-#, fuzzy, kde-format
-#| msgid "Allow"
+#, kde-format
 msgctxt "Allow a web page to capture the screen"
 msgid "Allow"
 msgstr "დაშვება"
@@ -375,24 +376,20 @@ msgstr "დაშვება"
 #, kde-format
 msgctxt "Block a web page from capturing the screen"
 msgid "Block"
-msgstr ""
+msgstr "დაბლოკვა"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "Choose Save Format"
+#, kde-format
 msgid "Choose Capture Source"
-msgstr "აირჩიეთ შენახვის ფორმატი"
+msgstr "აირჩიეთ გადაღების წყარო"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "Do you want to allow this page to capture the contents of your screen?"
 msgstr ""
-"<qt>გნებავთ, მისცეთ ამ ვებგვერდს უფლება, ელფოსტებს ფაილები მიამაგროს?</qt>"
+"მართლა გნებავთ, მისცეთ ამ გვერდს უფლება, თქვენი ეკრანის სურათი გადაიღოს?"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format

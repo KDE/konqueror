@@ -363,15 +363,16 @@ msgstr "%1 &ile Göster"
 msgid ""
 "Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
 msgstr ""
+"<tt>%1</tt> sayfasının, ekranınızın içeriğini yakalamasına izin vermek "
+"istiyor musunuz?"
 
 #: src/capturesourcechooserdlg.cpp:31
 #, kde-format
 msgid "Choose window or screen to capture"
-msgstr ""
+msgstr "Yakalanacak Pencere veya Ekran Seç"
 
 #: src/capturesourcechooserdlg.cpp:38
-#, fuzzy, kde-format
-#| msgid "Allow"
+#, kde-format
 msgctxt "Allow a web page to capture the screen"
 msgid "Allow"
 msgstr "İzin Ver"
@@ -380,25 +381,20 @@ msgstr "İzin Ver"
 #, kde-format
 msgctxt "Block a web page from capturing the screen"
 msgid "Block"
-msgstr ""
+msgstr "Engelle"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "Choose Save Format"
+#, kde-format
 msgid "Choose Capture Source"
-msgstr "Kaydetme Biçimi Seç"
+msgstr "Yakalama Kaynağı Seç"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "Do you want to allow this page to capture the contents of your screen?"
 msgstr ""
-"<qt>Bu sitenin aşağıdaki dosyaları e-posta iletisine iliştirmesine izin "
-"vermek istiyor musunuz?</qt>"
+"Bu sayfanın, ekranınızın içeriğini yakalamasına izin vermek istiyor musunuz?"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1622,218 +1618,4 @@ msgid ""
 msgstr ""
 "<ul><li><b>Alan iç adı: </b>%1</li><li><b>Alan türü: </b>%2</li><li><b>Alan "
 "kimliği: </b>%3</li><li><b>Alan saltokunur: </b>%4</li><li><b>Alan etkin: </"
-"b>%5</li><li><b>Otomatik tamamlama etkin: </b>%6</li></ul>"
-
-#~ msgid "Show file in this tab"
-#~ msgstr "Dosyayı Bu Sekmede Göster"
-
-#~ msgid "Show file in a new tab in Konqueror"
-#~ msgstr "Dosyayı Konqueror’da Yeni Sekmede Göster"
-
-#~ msgid "Open in external application"
-#~ msgstr "Dış Uygulamada Aç"
-
-#~ msgid "Open in %1"
-#~ msgstr "%1 İçinde Aç"
-
-#~ msgctxt "@action:button"
-#~ msgid "Show in new tab using %1"
-#~ msgstr "%1 Kullanarak Yeni Sekmede Göster"
-
-#~ msgctxt "@action:button"
-#~ msgid "Show here using %1"
-#~ msgstr "%1 Kullanarak Burada Göster"
-
-#~ msgid "Specifications"
-#~ msgstr "Belirtimler"
-
-#~ msgid ""
-#~ "Konqueror is designed to embrace and support Internet standards. The aim "
-#~ "is to fully implement the officially sanctioned standards from "
-#~ "organizations such as the W3 and OASIS, while also adding extra support "
-#~ "for other common usability features that arise as de facto standards "
-#~ "across the Internet. Along with this support, for such functions as "
-#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
-#~ "also implements:"
-#~ msgstr ""
-#~ "Konqueror, internet standartlarına uyması ve desteklemesi için "
-#~ "tasarlanmıştır. Amacımız, W3 veya OASIS gibi organizasyonların onay "
-#~ "verdiği tüm standartları tümüyle eklemektir. Bunun yanında, diğer yaygın "
-#~ "kullanılan standartlar için de destek eklenebilir. Bu desteğin yanında, "
-#~ "site küçük simgeleri, web kısayolları ve <A HREF=\"%1\">XBEL yer imleri</"
-#~ "A> gibi standartlar da Konqueror tarafından desteklenir. Ek desteklenen "
-#~ "özellikler:"
-
-#~ msgid "Web Browsing"
-#~ msgstr "Web Tarama"
-
-#~ msgid "Supported standards"
-#~ msgstr "Desteklenen standartlar"
-
-#~ msgid "Additional requirements*"
-#~ msgstr "Ek gereksinimler*"
-
-#~ msgid ""
-#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
-#~ "\"%2\">HTML 4.01</A>"
-#~ msgstr ""
-#~ "<A HREF=\"%1\">DOM</A> (Düzey 1, kısmi olarak Düzey 2) <A HREF="
-#~ "\"%2\">HTML 4.01</A> temelli"
-
-#~ msgid "built-in"
-#~ msgstr "yerleşik"
-
-#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
-#~ msgstr ""
-#~ "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, kısmi olarak CSS 2)"
-
-#~ msgid ""
-#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
-#~ msgstr ""
-#~ "<A HREF=\"%1\">ECMA-262</A> Edisyon 3 (JavaScript 1.5 ile eşdeğer gibi)"
-
-#~ msgid ""
-#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
-#~ msgstr ""
-#~ "JavaScript devre dışı (global olarak). JavaScript'i <A HREF="
-#~ "\"%1\">buradan</A> etkinleştirin."
-
-#~ msgid ""
-#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
-#~ "\">here</A>."
-#~ msgstr ""
-#~ "JavaScript etkin (global olarak). JavaScript'i <A HREF=\\\"%1\\"
-#~ "\">buradan</A> yapılandırın."
-
-#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
-#~ msgstr "Güvenli <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> desteği"
-
-#~ msgid ""
-#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
-#~ "\"%2\">Sun/Oracle</A>)"
-#~ msgstr ""
-#~ "JDK 1.2.0 (Java 2) uyumlu VM (<A HREF=\"%1\">OpenJDK</A> veya <A HREF="
-#~ "\"%2\">Sun/Oracle</A>)"
-
-#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
-#~ msgstr ""
-#~ "Java'yı buradan global olarak <A HREF=\"%1\">etkinleştirebilirsiniz</A>."
-
-#~ msgid ""
-#~ "NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF="
-#~ "\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)"
-#~ msgstr ""
-#~ "NPAPI <A HREF=\"%2\">eklentileri</A> (<A HREF=\"%1\">Flash<SUP>&reg;</"
-#~ "SUP></A> vb. görüntülemek için)"
-
-#~ msgid "Secure Sockets Layer"
-#~ msgstr "Secure Sockets Layer"
-
-#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
-#~ msgstr "168bit'e kadar güvenli iletişim için (TLS/SSL v2/3)"
-
-#~ msgid "Bidirectional 16bit unicode support"
-#~ msgstr "İki yönlü 16 bit Unicode desteği"
-
-#~ msgid "AutoCompletion for forms"
-#~ msgstr "Formlar için otomatik tamamlama"
-
-#~ msgctxt "Title of an html 'group box' explaining konqueror features"
-#~ msgid "General"
-#~ msgstr "Genel"
-
-#~ msgid "Feature"
-#~ msgstr "Özellik"
-
-#~ msgid "Details"
-#~ msgstr "Ayrıntılar"
-
-#~ msgid "Image formats"
-#~ msgstr "Görsel biçimleri"
-
-#~ msgid "PNG<br />JPG<br />GIF"
-#~ msgstr "PNG<br />JPG<br />GIF"
-
-#~ msgid "Transfer protocols"
-#~ msgstr "Aktarım protokolleri"
-
-#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
-#~ msgstr "HTTP 1.1 (gzip/bzip2 sıkıştırması dahil)"
-
-#~ msgid "FTP"
-#~ msgstr "FTP"
-
-#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
-#~ msgstr ""
-#~ "ve <A HREF=\"%1\">çok daha fazlası (K Yardım Merkezi'nde Kioslaves'e "
-#~ "bakın)...</A>"
-
-#~ msgctxt "A feature of Konqueror"
-#~ msgid "URL-Completion"
-#~ msgstr "URL Tamamlama"
-
-#~ msgid "Manual"
-#~ msgstr "Elle"
-
-#~ msgid "Popup"
-#~ msgstr "Açılır Pencere"
-
-#~ msgid "(Short-) Automatic"
-#~ msgstr "(Kısa) Otomatik"
-
-#~ msgid ""
-#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
-#~ "the HTML toolbar to increase the font size on your web page."
-#~ msgstr ""
-#~ "Web sayfanızdaki yazıtipi boyutunu artırmak için HTML araç çubuğundaki "
-#~ "büyüteç düğmesini <img width='16' height='16' src=\"%1\"></img> kullanın."
-
-#~ msgid ""
-#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
-#~ "connection."
-#~ msgstr ""
-#~ "İnternet bağlantınızı hızlandırmak için bir önbellek <a href="
-#~ "\"%1\">vekili</a> kullanın."
-
-#~ msgid "Next: Specifications"
-#~ msgstr "Sonrası: Belirtimler"
-
-#~ msgid ""
-#~ "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
-#~ "the link?</qt>"
-#~ msgstr ""
-#~ "<qt>Bu güvensiz sayfa,<br /><b>%1</b> sayfasına bağlantı içeriyor.<br /"
-#~ ">Bu bağlantıyı izlemek istiyor musunuz?</qt>"
-
-#~ msgid "Security Warning"
-#~ msgstr "Güvenlik Uyarısı"
-
-#~ msgctxt "follow link despite of security warning"
-#~ msgid "Follow"
-#~ msgstr "İzle"
-
-#~ msgid "Security Alert"
-#~ msgstr "Güvenlik Uyarısı"
-
-#~ msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
-#~ msgstr ""
-#~ "<qt>Güvenilmeyen bir sayfa olan<br /><b>%1</b><br /> sayfasına erişim "
-#~ "engellendi.</qt>"
-
-#~ msgctxt "Finished saving BLOB URL"
-#~ msgid "Finished saving %1 as %2"
-#~ msgstr "%1, %2 olarak kaydedildi"
-
-#~ msgid ""
-#~ "The complete contents of the page will be saved. Both the page and any "
-#~ "external resources it requires, such as images, will be saved in a single "
-#~ "MHTML file"
-#~ msgstr ""
-#~ "Sayfanın tüm içeriği kaydedilecek. Sayfa ve gereksinim duyduğu tüm "
-#~ "özkaynaklar (örneğin görseller), tek bir MHTML dosyasına kaydedilir."
-
-#~ msgid "As &directory"
-#~ msgstr "&Dizin olarak"
-
-#~ msgid "Save &Frame As..."
-#~ msgstr "Ç&erçeveyi Farklı Kaydet..."
+"b>%5</li><li><b>Kendiliğinden tamamlama etkin: </b>%6</li></ul>"
