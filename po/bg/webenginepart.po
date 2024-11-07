@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-29 02:33+0000\n"
-"PO-Revision-Date: 2024-05-30 20:46+0200\n"
+"PO-Revision-Date: 2024-11-06 23:59+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -156,7 +156,7 @@ msgid ""
 "height='16' src=\"%1\"></img> in the toolbar. "
 msgstr ""
 "За да се върнете на предишното място, натиснете бутона за връщане <img "
-"width='16' height='16' src=\"%1\"></img> в лентата с инструменти. "
+"width='16' height='16' src='%1'></img> в лентата с инструменти. "
 
 #: src/about/konq_aboutpage.cpp:150
 #, kde-format
@@ -165,14 +165,14 @@ msgid ""
 "height='16' src=\"%1\"></img>."
 msgstr ""
 "За да отидете бързо в домашната папка, натиснете бутона за начало <img "
-"width='16' height='16' src=\"%1\"></img>."
+"width='16' height='16' src='%1'></img>."
 
 #: src/about/konq_aboutpage.cpp:152
 #, kde-format
 msgid ""
 "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
 msgstr ""
-"За по-подробна документация за Konqueror щракнете <a href=\"%1\"> тук </a>."
+"За по-подробна документация за Konqueror щракнете <a href='%1'> тук </a>."
 
 #: src/about/konq_aboutpage.cpp:155
 #, kde-format
@@ -196,8 +196,8 @@ msgstr ""
 "Използвайте преки пътища в мрежата: като напишете \" gg: KDE\"човек може да "
 "търси в Интернет, като използва Google, за фразата за търсене \" KDE\". Има "
 "много преки пътища в мрежата, предварително дефинирани за търсене на софтуер "
-"или търсене на определени думи в енциклопедия бриз. Можете дори да <a href="
-"\"%1\"> да създадете свои собствени </a> Уеб-преки пътища."
+"или търсене на определени думи в енциклопедия бриз. Можете дори да <a "
+"href=„%1“> да създадете свои собствени </a> Уеб-преки пътища."
 
 #: src/about/konq_aboutpage.cpp:210
 #, kde-format
@@ -208,8 +208,8 @@ msgid ""
 msgstr ""
 "Когато искате да поставите нов адрес в лентата с инструменти за "
 "местоположение, може да поискате да се изчисти текущия запис. За целта "
-"натиснете черната стрелка с белия кръст <img width='16' height='16' src="
-"\"%1\"></img> в лентата с инструменти."
+"натиснете черната стрелка с белия кръст <img width='16' height='16' "
+"src=„%1“></img> в лентата с инструменти."
 
 #: src/about/konq_aboutpage.cpp:214
 #, kde-format
@@ -229,9 +229,9 @@ msgid ""
 "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
 "sessions."
 msgstr ""
-"Можете също така да намерите <img width='16' height='16' src=\"%1\"/> \" "
-"Режим на цял екран  \" в менюто Настройки. Тази функция е много полезна за "
-"\"Talk \" сесии."
+"Можете също така да намерите <img width='16' height='16' src=„%1“/> \" Режим "
+"на цял екран  \" в менюто Настройки. Тази функция е много полезна за \"Talk "
+"\" сесии."
 
 #: src/about/konq_aboutpage.cpp:220
 #, kde-format
@@ -241,7 +241,7 @@ msgid ""
 "View Left/Right) you can make Konqueror appear the way you like."
 msgstr ""
 "Divide et impera (лат. \" Разделяй и владей\") - чрез разделяне на прозорец "
-"надве части (напр. Прозорец -><img width='16' height='16' src=\"%1\"/> "
+"надве части (напр. Прозорец -><img width='16' height='16' src=„%1“/> "
 "Разделяне на изгледа наляво/надясно) можете да накарате Konqueror да "
 "изглежда така, както искате."
 
@@ -252,8 +252,8 @@ msgid ""
 "visiting asks you to use a different browser (and do not forget to send a "
 "complaint to the webmaster!)"
 msgstr ""
-"Използвайте функцията <a href=\"%1\"> user-agent </a>, ако уебсайтът, в "
-"който се намирате ви моли да използвате различен браузър (и не забравяйте да "
+"Използвайте функцията <a href='%1'> user-agent </a>, ако уебсайтът, в който "
+"се намирате ви моли да използвате различен браузър (и не забравяйте да "
 "изпратите жалба до уеб администратора!)"
 
 #: src/about/konq_aboutpage.cpp:226
@@ -262,8 +262,8 @@ msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
 "ensures that you can keep track of the pages you have visited recently."
 msgstr ""
-"Историята <img width='16' height='16' src=\"%1\"></img> в страничната ви "
-"лента гарантира, че можете да следите страниците, които сте посетили наскоро."
+"Историята <img width='16' height='16' src='%1'></img> в страничната ви лента "
+"гарантира, че можете да следите страниците, които сте посетили наскоро."
 
 #: src/about/konq_aboutpage.cpp:228
 #, kde-format
@@ -273,8 +273,8 @@ msgid ""
 "Terminal Emulator)."
 msgstr ""
 "Разширените потребители ще оценят Konsole, в който можете да вградите "
-"Konqueror (Настройки -><img width='16' height='16' SRC=\"%1\"></img> "
-"Показване на терминален емулатор)."
+"Konqueror (Настройки -><img width='16' height='16' SRC='%1'></img> Показване "
+"на терминален емулатор)."
 
 #: src/about/konq_aboutpage.cpp:232
 #, kde-format
@@ -282,7 +282,7 @@ msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
 "Points contains links to Home, Network Folders, Trash, etc."
 msgid "<a href=\"%1\">Return to Starting Points</a>"
-msgstr "<a href=\"%1\"> Връщане към начални точки </a>"
+msgstr "<a href='%1'> Връщане към начални точки </a>"
 
 #: src/about/konq_aboutpage.cpp:246
 #, kde-format
@@ -330,13 +330,13 @@ msgstr "Отваряне  във външно приложение"
 #: src/actondownloadedfilebar.cpp:64
 #, kde-format
 msgid "Open in %1"
-msgstr "Отваряне в \"%1\""
+msgstr "Отваряне в „%1“"
 
 #: src/actondownloadedfilebar.cpp:73 src/actondownloadedfilebar.cpp:109
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Отваряне &с \"%1\""
+msgstr "Отваряне &с „%1“"
 
 #: src/actondownloadedfilebar.cpp:96
 #, kde-format
@@ -1396,7 +1396,7 @@ msgstr "&Копиране на текст"
 #, kde-format
 msgctxt "open selected url"
 msgid "Open '%1'"
-msgstr "Отваряне на \"%1\""
+msgstr "Отваряне на „%1“"
 
 #: src/webengineview.cpp:461
 #, kde-format
@@ -1472,13 +1472,13 @@ msgstr "Ко&пиране адреса на медийния файл"
 #, kde-format
 msgctxt "Search \"search provider\" for \"text\""
 msgid "Search %1 for '%2'"
-msgstr "Търсене в \"%1\" за \"%2\""
+msgstr "Търсене в „%1“ за „%2“"
 
 #: src/webengineview.cpp:595
 #, kde-format
 msgctxt "Search for \"text\" with"
 msgid "Search for '%1' with"
-msgstr "Търсене за \"%1\" с"
+msgstr "Търсене за „%1“ с"
 
 #: src/webengineview.cpp:608
 #, kde-format
