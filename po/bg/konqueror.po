@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-04 00:39+0000\n"
-"PO-Revision-Date: 2024-10-26 19:03+0200\n"
+"PO-Revision-Date: 2024-11-09 20:04+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 24.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -45,7 +45,7 @@ msgstr "Запомняне на действието за този вид фай
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
-msgstr "Запазване на \"%1\"?"
+msgstr "Запазване на „%1“?"
 
 #: src/downloadactionquestion.cpp:288
 #, kde-format
@@ -1525,7 +1525,7 @@ msgstr "Страничен панел за уеб"
 #: src/konqmainwindow.cpp:4965
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
-msgstr "Добавяне на ново уеб разширение \"%1\" в страничния панел?"
+msgstr "Добавяне на ново уеб разширение „%1“ в страничния панел?"
 
 #: src/konqmainwindow.cpp:4967
 #, kde-format
@@ -1543,8 +1543,8 @@ msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
 "with %1, but it cannot handle this file type."
 msgstr ""
-"Има проблем с настройките. Вие асоциирахте браузъра Konqueror с \"%1\", но "
-"той не поддържа този тип файлове."
+"Има проблем с настройките. Вие асоциирахте браузъра Konqueror с „%1“, но той "
+"не поддържа този тип файлове."
 
 #: src/konqmainwindow.cpp:5400
 #, kde-format
@@ -1668,7 +1668,7 @@ msgstr "Запис на сесията"
 #, kde-format
 msgid ""
 "A session with the name '%1' already exists, do you want to overwrite it?"
-msgstr "Вече има сесия \"%1\". Искате ли да я презапишете?"
+msgstr "Вече има сесия „%1“. Искате ли да я презапишете?"
 
 #: src/konqsessiondlg.cpp:252
 #, kde-format
