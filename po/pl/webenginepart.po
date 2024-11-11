@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-04 00:39+0000\n"
-"PO-Revision-Date: 2024-09-29 09:07+0200\n"
+"PO-Revision-Date: 2024-11-10 15:31+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -308,12 +308,10 @@ msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>Typ mime</td><td>Opis</td><td>Przyrostki</td><td>Wtyczka</td>"
 
 #: src/actondownloadedfilebar.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@label location where a remote URL was downloaded"
-#| msgid "%1 was saved in %2"
+#, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
-msgstr "%1 został zapisany w %2"
+msgstr "został zapisany jako"
 
 #: src/actondownloadedfilebar.cpp:120
 #, kde-format
@@ -322,19 +320,16 @@ msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
 msgstr "<tt>%1</tt> został zapisany jako <tt>%2</tt>"
 
 #: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "Otwórz &w %1"
+msgstr "Otwórz w…"
 
 #: src/actondownloadedfilebar.cpp:146
-#, fuzzy, kde-format
-#| msgid "OpenSSL"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "OpenSSL"
+msgstr "Otwórz"
 
 #: src/actondownloadedfilebar.cpp:155
 #, kde-format
@@ -355,27 +350,24 @@ msgid "Show here"
 msgstr "Pokaż tutaj"
 
 #: src/actondownloadedfilebar.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "Otwórz &w %1"
+msgstr "Pokaż &w %1"
 
 #: src/capturesourcechooserdlg.cpp:29
 #, kde-format
 msgid ""
 "Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
-msgstr ""
+msgstr "Czy zezwolić <tt>%1</tt> na nagrywanie zawartości twojego ekranu?"
 
 #: src/capturesourcechooserdlg.cpp:31
 #, kde-format
 msgid "Choose window or screen to capture"
-msgstr ""
+msgstr "Wybierz okno lub ekran do nagrywania"
 
 #: src/capturesourcechooserdlg.cpp:38
-#, fuzzy, kde-format
-#| msgid "Allow"
+#, kde-format
 msgctxt "Allow a web page to capture the screen"
 msgid "Allow"
 msgstr "Zezwól"
@@ -384,25 +376,19 @@ msgstr "Zezwól"
 #, kde-format
 msgctxt "Block a web page from capturing the screen"
 msgid "Block"
-msgstr ""
+msgstr "Zablokuj"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "Choose Save Format"
+#, kde-format
 msgid "Choose Capture Source"
-msgstr "Wybierz sposób zapisu"
+msgstr "Wybierz źródło nagrywania"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "Do you want to allow this page to capture the contents of your screen?"
-msgstr ""
-"<qt>Czy chcesz zezwolić tej stronie na dołączenie następujących plików do "
-"wiadomości email?</qt>"
+msgstr "Czy zezwolić tej stronie na nagrywanie zawartości twojego ekranu?"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1247,7 +1233,7 @@ msgstr "Wypełnij &formularz w tej chwili"
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "Look Again for Forms"
-msgstr ""
+msgstr "Poszukaj ponownie za formularzami"
 
 #: src/webenginepart.cpp:1017
 #, kde-format
