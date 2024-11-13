@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-04 00:39+0000\n"
-"PO-Revision-Date: 2024-10-29 16:28+0100\n"
+"PO-Revision-Date: 2024-11-07 00:15+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -357,15 +357,15 @@ msgstr "Mostra &con %1"
 msgid ""
 "Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
 msgstr ""
+"Vuoi permettere a <tt>%1</tt> di catturare i contenuti del tuo schermo?"
 
 #: src/capturesourcechooserdlg.cpp:31
 #, kde-format
 msgid "Choose window or screen to capture"
-msgstr ""
+msgstr "Scegli la finestra o lo schermo da catturare"
 
 #: src/capturesourcechooserdlg.cpp:38
-#, fuzzy, kde-format
-#| msgid "Allow"
+#, kde-format
 msgctxt "Allow a web page to capture the screen"
 msgid "Allow"
 msgstr "Permetti"
@@ -374,25 +374,20 @@ msgstr "Permetti"
 #, kde-format
 msgctxt "Block a web page from capturing the screen"
 msgid "Block"
-msgstr ""
+msgstr "Blocca"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "Choose Save Format"
+#, kde-format
 msgid "Choose Capture Source"
-msgstr "Scegli il formato di salvataggio"
+msgstr "Scegli la sorgente di cattura"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "Do you want to allow this page to capture the contents of your screen?"
 msgstr ""
-"<qt>Permetti a questo sito di allegare i seguenti file al messaggio di posta "
-"elettronica?</qt>"
+"Vuoi permettere a questa pagina di catturare i contenuti del tuo schermo?"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
