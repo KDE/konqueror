@@ -78,6 +78,7 @@ parts:
       - libxcb-util-dev
       - libssl-dev
       - libcups2-dev
+      - libxkbcommon-dev
     stage-packages:
       - libxcb-util1
       - cups-client
