@@ -275,7 +275,7 @@ void WebEngineNavigationExtension::slotSaveDocument()
     WebEnginePage *pg = page();
     if (pg) {
         WebEnginePartControls::self()->downloadManager()->specifyDownloadObjective(pg->url(), pg,
-            WebEnginePartDownloadManager::DownloadObjective::SaveAs);
+            WebEnginePartDownloadManager::DownloadObjective::SavePageAs);
         pg->download(pg->url());
     }
 }
@@ -565,7 +565,7 @@ void WebEngineNavigationExtension::slotSaveLinkAs(const QUrl &url)
         WebEnginePage *pg = qobject_cast<WebEnginePage*>(view()->page());
         if (pg) {
             WebEnginePartControls::self()->downloadManager()->specifyDownloadObjective(url,
-                pg, WebEnginePartDownloadManager::DownloadObjective::SaveOnly);
+                pg, WebEnginePartDownloadManager::DownloadObjective::SaveUrl);
         }
     }
     view()->triggerPageAction(QWebEnginePage::DownloadLinkToDisk);
@@ -683,7 +683,7 @@ void WebEngineNavigationExtension::slotSaveMedia()
     if (pg) {
         if (data->mediaUrl().isValid()) {
             WebEnginePartControls::self()->downloadManager()->specifyDownloadObjective(data->mediaUrl(), pg,
-                WebEnginePartDownloadManager::DownloadObjective::SaveOnly);
+                WebEnginePartDownloadManager::DownloadObjective::SaveUrl);
         }
         pg->triggerAction(QWebEnginePage::DownloadMediaToDisk);
     }

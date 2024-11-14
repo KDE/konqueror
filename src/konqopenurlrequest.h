@@ -60,8 +60,28 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
         if (openAfterCurrentPage) {
             s << QStringLiteral("openAfterCurrentPage");
         }
-        if (forceAutoEmbed) {
-            s << QStringLiteral("forceAutoEmbed");
+        if (urlActions().isForced()) {
+            QString name;
+            switch (browserArgs.urlActions().forcedAction()) {
+                case Konq::UrlAction::DoNothing:
+                    name = QStringLiteral("do nothing");
+                    break;
+                case Konq::UrlAction::Save:
+                    name = QStringLiteral("save");
+                    break;
+                case Konq::UrlAction::Open:
+                    name = QStringLiteral("open");
+                    break;
+                case Konq::UrlAction::Embed:
+                    name = QStringLiteral("embed");
+                    break;
+                case Konq::UrlAction::Execute:
+                    name = QStringLiteral("execute");
+                    break;
+                case Konq::UrlAction::UnknownAction: //Avoid compiler error
+                    break;
+            }
+            s << name << QStringLiteral(" forced");
         }
         if (tempFile) {
             s << QStringLiteral("tempFile");
@@ -81,7 +101,6 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
     bool followMode = false; ///< `true` if following another view - avoids loops
     bool newTabInFront = false; ///< new tab in front or back (when browserArgs.newTab() == true)
     bool openAfterCurrentPage = false; ///< open the URL after the current tab
-    bool forceAutoEmbed = false; ///< if `true`, override the user's FMSettings for embedding
     bool tempFile = false; ///< if true, the URL should be deleted after use
     bool userRequestedReload = false; ///< `args.reload` because the user requested it, not a website
     KParts::OpenUrlArguments args;
@@ -89,7 +108,12 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
     QList<QUrl> filesToSelect; ///< files to select in a konqdirpart
     QString suggestedFileName; ///< The suggested name when saving an URL
     KParts::ReadOnlyPart *requestingPart = nullptr; ///< The part which requested the download of an URL
-    bool forceOpen = false; ///< Whether the URL should be opened in an external application, regardless of settings
+    Konq::AllowedUrlActions urlActions() const {return browserArgs.urlActions();}
+    void setAllowedUrlActions(const Konq::AllowedUrlActions &actions){browserArgs.setAllowedUrlActions(actions);}
+    void forceEmbed() {
+        browserArgs.setAllowedUrlActions({Konq::UrlAction::Embed});
+    }
+    Konq::UrlAction chosenAction = Konq::UrlAction::UnknownAction;
 
     static KonqOpenURLRequest null;
 };

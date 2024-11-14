@@ -79,7 +79,7 @@ public:
     ~UrlLoader();
 
 
-    using OpenUrlAction = BrowserArguments::Action;
+    using OpenUrlAction = Konq::UrlAction;
 
     /** @brief Enum describing the view to use to embed an URL*/
     enum class ViewToUse{
@@ -166,22 +166,11 @@ private slots:
 private:
 
     /**
-     * @brief Sets the list of allowed options depending on the arguments passed to the constructor
+     * @brief Remove actions which won't be available depending on the mimetype and URL
      *
-     * Currently, the algorithm works as follows:
-     * - if @p req has the \link KonqOpenURLRequest::forceAutoEmbed forceAutoEmbed\endlink flag set to `true`
-     *  then the only allowed action is Embed
-     * - if the \link KonqOpenURLRequest::args args\endlink field in @p req has a `action` meta data entry, then
-     *  only that action will be allowed
-     *
-     * @param req the object containing the request
-     * @param dontEmbed whether embedding should be forbidden
-     * @note This function changes the value of #m_allowedActions
-     *
-     * @note If the \link KonqOpenURLRequest::forceAutoEmbed forceAutoEmbed\endlink flag of @p req is `true` and
-     *  an action is specified in the metadata, the flag will have precedence
+     * This removes the
      */
-    void initAllowedActions(const KonqOpenURLRequest &req);
+    void updateAllowedActions();
 
     void embed();
     void open();
@@ -297,27 +286,11 @@ private:
 
     void askEmbedSaveOrOpen();
 
-    OpenUrlAction decideExecute() const;
+    void decideExecute();
 
-    /**
-     * @brief Attempts to change the action
-     *
-     * If the given action is not allowed, it set the action to #DoNothing, instead
-     * @param action the new value of the action
-     * @return `true` if the action was set correctly and `false` if @p action wasn't
-     * allowed and the action was set to #DoNothing
-     */
-    bool setAction(OpenUrlAction action);
+    void findAvailableParts();
 
-    /**
-     * @brief Whether we are forced to perform the given action
-     *
-     * Being forced to perform an action means that it's the only action in #m_allowedActions
-     * @param action the action to check
-     * @return `true` if @p action is the only entry in #m_allowedActions and `false` otherwise
-     * @note this function also returns `false` if #m_allowedActions doesn't contain @p action
-     */
-    bool isForced(OpenUrlAction action) const;
+    void findService();
 
     /**
      * @brief Whether we are allowed to perform the given action
@@ -343,10 +316,8 @@ private:
     KonqOpenURLRequest m_request;
     KonqView *m_view;
     bool m_trustedSource;
-    QList<OpenUrlAction> m_allowedActions = {OpenUrlAction::Open, OpenUrlAction::Embed, OpenUrlAction::Save, OpenUrlAction::Execute};
     bool m_ready = false;
     bool m_isAsync = false;
-    OpenUrlAction m_action = OpenUrlAction::UnknownAction;
     KPluginMetaData m_part;
     KService::Ptr m_service;
     QPointer<KIO::OpenUrlJob> m_openUrlJob;
@@ -358,6 +329,10 @@ private:
     bool m_protocolAllowsReading;
     bool m_useDownloadJob = false; ///<Whether the URL should be downloaded by the part before opening/embedding/saving it
     QPointer<KonqInterfaces::DownloadJob> m_downloadJob; //!<The job to use to download the URL, if any
+    /**
+     * @brief The allowed actions for the url
+     */
+    Konq::AllowedUrlActions m_allowedActions;
 
     /**
      * @brief Whether only the `embed` action is allowed

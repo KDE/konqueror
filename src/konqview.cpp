@@ -34,6 +34,7 @@
 #include <KUrlMimeData>
 #include <KIO/CopyJob>
 #include <KFileUtils>
+#include <KParts/ReadOnlyPart>
 
 #include <QApplication>
 #include <QArgument>
@@ -163,9 +164,10 @@ KonqView::~KonqView()
     //qCDebug(KONQUEROR_LOG) << this << "done";
 }
 
-bool KonqView::isWebEngineView() const
+bool KonqView::isDevtoolsAvailable() const
 {
-    return m_service.pluginId() == QLatin1String("webenginepart");
+    static const auto inspectMethod = QMetaObject::normalizedSignature("setInspectedPart(KParts::ReadOnlyPart *)");
+    return m_pPart->metaObject()->indexOfMethod(inspectMethod.data()) != -1;
 }
 
 void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
@@ -294,7 +296,7 @@ void KonqView::switchView(KonqViewFactory &viewFactory, bool allowPlaceholder)
     if (!part) {
         return;
     }
-    
+
     m_pPart = part;
 
     // Set the statusbar in the BE asap to avoid a KMainWindow statusbar being created.
@@ -1313,16 +1315,6 @@ bool KonqView::supportsMimeType(const QString &mimeType) const
     QStringList::const_iterator found = std::find_if(lst.constBegin(), lst.constEnd(), [mime](const QString &name){return mime.inherits(name);});
     return found != lst.constEnd();
 }
-
-bool KonqView::isWebBrowsingPart() const
-{
-    if (!m_pPart) {
-        return false;
-    }
-    const QString partName = m_pPart->componentName();
-    return partName == QLatin1String("webenginepart") || partName == QLatin1String("khtml") || partName == QLatin1String("kwebkitpart");
-}
-
 
 void HistoryEntry::saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options)
 {

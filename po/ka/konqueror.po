@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-09 00:38+0000\n"
-"PO-Revision-Date: 2024-09-06 04:05+0200\n"
+"POT-Creation-Date: 2024-11-04 00:39+0000\n"
+"PO-Revision-Date: 2024-10-21 05:44+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -28,91 +28,91 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: src/downloadactionquestion.cpp:161
+#: src/downloadactionquestion.cpp:162
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
 msgstr "ტიპი: %1"
 
-#: src/downloadactionquestion.cpp:169
+#: src/downloadactionquestion.cpp:170
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr "ქმედების დამახსოვრება ამ ტიპის ფაილებისათვის"
 
-#: src/downloadactionquestion.cpp:285
+#: src/downloadactionquestion.cpp:286
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
 msgstr "შევინახო '%1'?"
 
-#: src/downloadactionquestion.cpp:287
+#: src/downloadactionquestion.cpp:288
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
 msgstr "&გავხსნა \"%1\"?"
 
-#: src/downloadactionquestion.cpp:304
+#: src/downloadactionquestion.cpp:306
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "&გამხსნელი პროგრამა..."
 
-#: src/downloadactionquestion.cpp:312 src/downloadactionquestion.cpp:465
+#: src/downloadactionquestion.cpp:314 src/downloadactionquestion.cpp:467
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
 msgstr "%1-ით &გახსნა"
 
-#: src/downloadactionquestion.cpp:321
+#: src/downloadactionquestion.cpp:323
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "&გამხსნელი პროგრამა"
 
-#: src/downloadactionquestion.cpp:337
+#: src/downloadactionquestion.cpp:339
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
 msgstr "ჩ&ვენება %1-ზე"
 
-#: src/downloadactionquestion.cpp:349
+#: src/downloadactionquestion.cpp:351
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
 msgstr "ჩ&ვენება სად"
 
-#: src/downloadactionquestion.cpp:371
+#: src/downloadactionquestion.cpp:373
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "%1-ით &გახსნა"
 
-#: src/downloadactionquestion.cpp:403
+#: src/downloadactionquestion.cpp:405
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
 msgstr "ჩვ&ენება %1-ზე"
 
-#: src/downloadactionquestion.cpp:425
+#: src/downloadactionquestion.cpp:427
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
 msgstr "დამთვალიერებლებს ამ ფაილის ხარდაჭერა არ აქვთ"
 
-#: src/downloadactionquestion.cpp:429
+#: src/downloadactionquestion.cpp:431
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
 msgstr "დამთვალიერებლები, ალბათ, ამ ფაილს ვერ გაჩვენებენ"
 
-#: src/downloadactionquestion.cpp:430
+#: src/downloadactionquestion.cpp:432
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
 msgstr "ეს ფაილი"
 
-#: src/downloadactionquestion.cpp:431
+#: src/downloadactionquestion.cpp:433
 #, kde-format
 msgid ""
 "<p>Viewers which aren't supposed to be able to display %1. Using them will "
@@ -125,13 +125,13 @@ msgstr ""
 "შემთხვევისთვის, თუ აღმოჩენილი ფაილის ტიპი არასწორია და გამხსნელ პროგრამას "
 "შეუძლია %1 გახსნას იმის მიუხედავად, რომ ის ოფიციალურად მხარდაჭერილი არაა.</p>"
 
-#: src/downloadactionquestion.cpp:452
+#: src/downloadactionquestion.cpp:454
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr "სახელი: %1"
 
-#: src/downloadactionquestion.cpp:454
+#: src/downloadactionquestion.cpp:456
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
@@ -606,8 +606,8 @@ msgstr ""
 "--preload პარამეტრის გამოყენებისას ბმულებს ვერ გადასცემთ. ბმულები "
 "გამოტოვებულია\n"
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4807
-#: src/konqmainwindow.cpp:4853
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4838
+#: src/konqmainwindow.cpp:4884
 #, kde-format
 msgid "no name"
 msgstr "სახელის გარეშე"
@@ -711,7 +711,7 @@ msgstr "ლოკალური"
 msgid "Miscellaneous"
 msgstr "სხვადასხვა"
 
-#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4311
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4342
 #, kde-format
 msgid "Open in New &Window"
 msgstr "გახსნა ახალ &ფანჯარაში"
@@ -772,28 +772,28 @@ msgctxt "@title:window"
 msgid "Clear History?"
 msgstr "გავასუფავო ისტორია?"
 
-#: src/konqmainwindow.cpp:692
+#: src/konqmainwindow.cpp:734
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
 msgstr "ჩატვირთვა..."
 
-#: src/konqmainwindow.cpp:724
+#: src/konqmainwindow.cpp:766
 #, kde-format
 msgid "Access denied"
 msgstr "წვდომა აკრძალულია"
 
-#: src/konqmainwindow.cpp:1495
+#: src/konqmainwindow.cpp:1526
 #, kde-format
 msgid "Open File"
 msgstr "ფაილის გახსნა"
 
-#: src/konqmainwindow.cpp:1559
+#: src/konqmainwindow.cpp:1590
 #, kde-format
 msgid "Canceled."
 msgstr "გაუქმებულია."
 
-#: src/konqmainwindow.cpp:1595
+#: src/konqmainwindow.cpp:1626
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -802,54 +802,54 @@ msgstr ""
 "ეს გვერდი შეიცავს ცვლილებებს, რომლებიც ჯერ არ გადაცემულა.\n"
 "გვერდის თავიდან ჩატვირთვა ამ ცვლილებებს მოაცილებს."
 
-#: src/konqmainwindow.cpp:1596 src/konqmainwindow.cpp:2234
-#: src/konqmainwindow.cpp:2323 src/konqmainwindow.cpp:2355
-#: src/konqmainwindow.cpp:2398 src/konqmainwindow.cpp:2420
-#: src/konqmainwindow.cpp:4772
+#: src/konqmainwindow.cpp:1627 src/konqmainwindow.cpp:2265
+#: src/konqmainwindow.cpp:2354 src/konqmainwindow.cpp:2386
+#: src/konqmainwindow.cpp:2429 src/konqmainwindow.cpp:2451
+#: src/konqmainwindow.cpp:4803
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
 msgstr "გავაუქმო ცვლილებები?"
 
-#: src/konqmainwindow.cpp:1596 src/konqmainwindow.cpp:2234
-#: src/konqmainwindow.cpp:2323 src/konqmainwindow.cpp:2355
-#: src/konqmainwindow.cpp:2398 src/konqmainwindow.cpp:2421
-#: src/konqmainwindow.cpp:4772
+#: src/konqmainwindow.cpp:1627 src/konqmainwindow.cpp:2265
+#: src/konqmainwindow.cpp:2354 src/konqmainwindow.cpp:2386
+#: src/konqmainwindow.cpp:2429 src/konqmainwindow.cpp:2452
+#: src/konqmainwindow.cpp:4803
 #, kde-format
 msgid "&Discard Changes"
 msgstr "ცვლილებების &გაუქმება"
 
-#: src/konqmainwindow.cpp:1910 src/konqmainwindow.cpp:1916
+#: src/konqmainwindow.cpp:1941 src/konqmainwindow.cpp:1947
 #, kde-format
 msgid "Home Folder"
 msgstr "საწყისი საქაღალდე"
 
-#: src/konqmainwindow.cpp:1911 src/konqmainwindow.cpp:3333
+#: src/konqmainwindow.cpp:1942 src/konqmainwindow.cpp:3364
 #, kde-format
 msgid "Home"
 msgstr "სახლი"
 
-#: src/konqmainwindow.cpp:1917
+#: src/konqmainwindow.cpp:1948
 #, kde-format
 msgid "Navigate to your 'Home Folder'"
 msgstr "საწყის საქაღალდეზე გადასვლა"
 
-#: src/konqmainwindow.cpp:1918
+#: src/konqmainwindow.cpp:1949
 #, kde-format
 msgid "Navigate to your local 'Home Folder'"
 msgstr "ლოკალურ საწყის საქაღალდეზე გადასვლა"
 
-#: src/konqmainwindow.cpp:1921
+#: src/konqmainwindow.cpp:1952
 #, kde-format
 msgid "Home Page"
 msgstr "საწყისი გვერდი"
 
-#: src/konqmainwindow.cpp:1923
+#: src/konqmainwindow.cpp:1954
 #, kde-format
 msgid "Navigate to your 'Home Page'"
 msgstr "თქვენს 'საწყის გვერდზე' გადასვლა"
 
-#: src/konqmainwindow.cpp:1924
+#: src/konqmainwindow.cpp:1955
 #, kde-format
 msgid ""
 "<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
@@ -860,7 +860,7 @@ msgstr ""
 "გადაგიყვანთ, შეგიძლიათ მენიუში <b>მორგება -> Konqueror-ის მორგება -> ზოგადი</"
 "b>.</html>"
 
-#: src/konqmainwindow.cpp:2233
+#: src/konqmainwindow.cpp:2264
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -869,7 +869,7 @@ msgstr ""
 "ჩანართი შეიცავს ცვლილებებს, რომლებიც ჯერ არ გადაცემულა.\n"
 "ჩანართის მოხსნა ამ ცვლილებებს მოაცილებს."
 
-#: src/konqmainwindow.cpp:2322
+#: src/konqmainwindow.cpp:2353
 #, kde-format
 msgid ""
 "This view contains changes that have not been submitted.\n"
@@ -878,7 +878,7 @@ msgstr ""
 "ეს ხედი შეიცავს ცვლილებებს, რომლებიც ჯერ არ გადაცემულა.\n"
 "ამ ხედის დახურვა ცვლილებებს მოაცილებს."
 
-#: src/konqmainwindow.cpp:2354
+#: src/konqmainwindow.cpp:2385
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -887,23 +887,23 @@ msgstr ""
 "ეს ჩანართი შეიცავს ცვლილებებს, რომლებიც ჯერ არ გადაცემულა.\n"
 "ჩანართის მოხსნა ამ ცვლილებებს მოაცილებს."
 
-#: src/konqmainwindow.cpp:2380
+#: src/konqmainwindow.cpp:2411
 #, kde-format
 msgid "Do you really want to close all other tabs?"
 msgstr "მართლა გნებავთ, ყველა სხვა ჩანართი დახუროთ?"
 
-#: src/konqmainwindow.cpp:2381 src/konqmainwindow.cpp:3413 src/konqtabs.cpp:335
+#: src/konqmainwindow.cpp:2412 src/konqmainwindow.cpp:3444 src/konqtabs.cpp:335
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr "&სხვა ჩანართების დახურვა"
 
-#: src/konqmainwindow.cpp:2381
+#: src/konqmainwindow.cpp:2412
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
 msgstr "სხვა ჩანართების დახურვის დადასტურება"
 
-#: src/konqmainwindow.cpp:2397
+#: src/konqmainwindow.cpp:2428
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -912,7 +912,7 @@ msgstr ""
 "ეს ჩანართი შეიცავს ცვლილებებს, რომლებიც ჯერ არ გადაცემულა.\n"
 "ჩანართის დახურვა ამ ცვლილებებს მოაცილებს."
 
-#: src/konqmainwindow.cpp:2419
+#: src/konqmainwindow.cpp:2450
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -921,233 +921,233 @@ msgstr ""
 "ეს ჩანართი შეიცავს ცვლილებებს, რომლებიც ჯერ არ გადაცემულა.\n"
 "ყველა ჩანართის თავიდან ჩატვირთვა ამ ცვლილებებს მოაცილებს."
 
-#: src/konqmainwindow.cpp:2476
+#: src/konqmainwindow.cpp:2507
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Target"
 msgstr "შეიყვანეთ სამიზნე"
 
-#: src/konqmainwindow.cpp:2483
+#: src/konqmainwindow.cpp:2514
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
 msgstr "<qt><b>%1</b> არასწორია</qt>"
 
-#: src/konqmainwindow.cpp:2493
+#: src/konqmainwindow.cpp:2524
 #, kde-format
 msgid "Copy selected files from %1 to:"
 msgstr "მონიშნული ფაილების კოპირება %1-დან:"
 
-#: src/konqmainwindow.cpp:2506
+#: src/konqmainwindow.cpp:2537
 #, kde-format
 msgid "Move selected files from %1 to:"
 msgstr "მონიშნული ფაილების გადატანა %1-დან:"
 
-#: src/konqmainwindow.cpp:2674
+#: src/konqmainwindow.cpp:2705
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
 msgstr "დახურული ჩანაწერების ისტორიის გასუფთავება"
 
-#: src/konqmainwindow.cpp:2696
+#: src/konqmainwindow.cpp:2727
 #, kde-format
 msgid "Save As..."
 msgstr "შენახვა, როგორც..."
 
-#: src/konqmainwindow.cpp:2698
+#: src/konqmainwindow.cpp:2729
 #, kde-format
 msgid "Manage..."
 msgstr "მართვა…"
 
-#: src/konqmainwindow.cpp:3242
+#: src/konqmainwindow.cpp:3273
 #, kde-format
 msgid "New &Window"
 msgstr "&ახალი ფანჯარა"
 
-#: src/konqmainwindow.cpp:3247
+#: src/konqmainwindow.cpp:3278
 #, kde-format
 msgid "&Duplicate Window"
 msgstr "&ფანჯრების დუბლირება"
 
-#: src/konqmainwindow.cpp:3252
+#: src/konqmainwindow.cpp:3283
 #, kde-format
 msgid "Send &Link Address..."
 msgstr "&ბმულის მისამართის გაგზავნა..."
 
-#: src/konqmainwindow.cpp:3256
+#: src/konqmainwindow.cpp:3287
 #, kde-format
 msgid "S&end File..."
 msgstr "&ფაილის გაგზავნა..."
 
-#: src/konqmainwindow.cpp:3260
+#: src/konqmainwindow.cpp:3291
 #, kde-format
 msgid "&Open Location"
 msgstr "&მდებარეობის გახსნა"
 
-#: src/konqmainwindow.cpp:3266
+#: src/konqmainwindow.cpp:3297
 #, kde-format
 msgid "&Open File..."
 msgstr "&ფაილის გახსნა..."
 
-#: src/konqmainwindow.cpp:3271
+#: src/konqmainwindow.cpp:3302
 #, kde-format
 msgid "&Find File..."
 msgstr "&ფაილის ძებნა..."
 
-#: src/konqmainwindow.cpp:3280
+#: src/konqmainwindow.cpp:3311
 #, kde-format
 msgid "Lock to Current Location"
 msgstr "მიმდინარე ადგილას დამაგრება"
 
-#: src/konqmainwindow.cpp:3283
+#: src/konqmainwindow.cpp:3314
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr "&ბმულის ნახვა"
 
-#: src/konqmainwindow.cpp:3288
+#: src/konqmainwindow.cpp:3319
 #, kde-format
 msgid "&Up"
 msgstr "&მაღლა"
 
-#: src/konqmainwindow.cpp:3298
+#: src/konqmainwindow.cpp:3329
 #, kde-format
 msgid "Closed Items"
 msgstr "დახურული ჩანაწერები"
 
-#: src/konqmainwindow.cpp:3311
+#: src/konqmainwindow.cpp:3342
 #, kde-format
 msgid "Sessions"
 msgstr "სესიები"
 
-#: src/konqmainwindow.cpp:3338
+#: src/konqmainwindow.cpp:3369
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr "ყველაზე ხშირად ნანახი"
 
-#: src/konqmainwindow.cpp:3342
+#: src/konqmainwindow.cpp:3373
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr "ახლახანს ნანახი"
 
-#: src/konqmainwindow.cpp:3351
+#: src/konqmainwindow.cpp:3382
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr "ისტორიის ჩვენება"
 
-#: src/konqmainwindow.cpp:3363
+#: src/konqmainwindow.cpp:3394
 #, kde-format
 msgid "Configure Extensions..."
 msgstr "გაფართოებების მორგება..."
 
-#: src/konqmainwindow.cpp:3367
+#: src/konqmainwindow.cpp:3398
 #, kde-format
 msgid "Configure Spell Checking..."
 msgstr "მართლწერის შემოწმების მორგება..."
 
-#: src/konqmainwindow.cpp:3373
+#: src/konqmainwindow.cpp:3404
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr "ხედის &მარჯვენა/მარცხენაზე გაყოფა"
 
-#: src/konqmainwindow.cpp:3378
+#: src/konqmainwindow.cpp:3409
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr "ხედის &ზედა/ქვედაზე გაყოფა"
 
-#: src/konqmainwindow.cpp:3383 src/konqtabs.cpp:456
+#: src/konqmainwindow.cpp:3414 src/konqtabs.cpp:456
 #, kde-format
 msgid "&New Tab"
 msgstr "&ახალი ჩანართი"
 
-#: src/konqmainwindow.cpp:3392
+#: src/konqmainwindow.cpp:3423
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr "მიმდინარე ჩანართის &დუბლირება"
 
-#: src/konqmainwindow.cpp:3397
+#: src/konqmainwindow.cpp:3428
 #, kde-format
 msgid "Detach Current Tab"
 msgstr "მიმდინარე ჩანართის მოხსნა"
 
-#: src/konqmainwindow.cpp:3402
+#: src/konqmainwindow.cpp:3433
 #, kde-format
 msgid "&Close Active View"
 msgstr "&აქტიური ხედის დახურვა"
 
-#: src/konqmainwindow.cpp:3407
+#: src/konqmainwindow.cpp:3438
 #, kde-format
 msgid "Close Current Tab"
 msgstr "მიმდინარე ჩანართის დახურვა"
 
-#: src/konqmainwindow.cpp:3417
+#: src/konqmainwindow.cpp:3448
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "შემდეგი ჩანართის გააქტიურება"
 
-#: src/konqmainwindow.cpp:3421
+#: src/konqmainwindow.cpp:3452
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "წინა ჩანართის გააქტიურება"
 
-#: src/konqmainwindow.cpp:3428
+#: src/konqmainwindow.cpp:3459
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "%1-ე ჩანართის გააქტიურება"
 
-#: src/konqmainwindow.cpp:3433
+#: src/konqmainwindow.cpp:3464
 #, kde-format
 msgid "Move Tab Left"
 msgstr "ჩანართის მარცხნივ გადატანა"
 
-#: src/konqmainwindow.cpp:3438
+#: src/konqmainwindow.cpp:3469
 #, kde-format
 msgid "Move Tab Right"
 msgstr "ჩანართის მარჯვნივ გადატანა"
 
-#: src/konqmainwindow.cpp:3446
+#: src/konqmainwindow.cpp:3477
 #, kde-format
 msgid "Dump Debug Info"
 msgstr "გამართვის ინფორმაციის გამოტანა"
 
-#: src/konqmainwindow.cpp:3464
+#: src/konqmainwindow.cpp:3495
 #, kde-format
 msgid "&Reload"
 msgstr "თავიდან ჩატვირთვა"
 
-#: src/konqmainwindow.cpp:3469 src/konqtabs.cpp:313
+#: src/konqmainwindow.cpp:3500 src/konqtabs.cpp:313
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr "&ყველა ჩანართის თავიდან ჩატვირთვა"
 
-#: src/konqmainwindow.cpp:3477
+#: src/konqmainwindow.cpp:3508
 #, kde-format
 msgid "&Force Reload"
 msgstr "&ძალით გადატვირთვა"
 
-#: src/konqmainwindow.cpp:3502
+#: src/konqmainwindow.cpp:3533
 #, kde-format
 msgid "&Stop"
 msgstr "გაჩერება"
 
-#: src/konqmainwindow.cpp:3511
+#: src/konqmainwindow.cpp:3542
 #, kde-format
 msgid "Throbber"
 msgstr "მუშაობის ინდიკატორი"
 
-#: src/konqmainwindow.cpp:3515 src/konqmainwindow.cpp:3518
+#: src/konqmainwindow.cpp:3546 src/konqmainwindow.cpp:3549
 #, kde-format
 msgid "L&ocation: "
 msgstr "&მდებარეობა: "
 
-#: src/konqmainwindow.cpp:3525
+#: src/konqmainwindow.cpp:3556
 #, kde-format
 msgid "Location Bar"
 msgstr "მდებარეობის ზოლი"
 
-#: src/konqmainwindow.cpp:3531
+#: src/konqmainwindow.cpp:3562
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
@@ -1155,12 +1155,12 @@ msgstr ""
 "<html>მდებარეობის პანელი<br /><br />შეიყვანეთ ვებ-მისამართი ან ძებნის პირობა."
 "</html>"
 
-#: src/konqmainwindow.cpp:3535
+#: src/konqmainwindow.cpp:3566
 #, kde-format
 msgid "Clear Location Bar"
 msgstr "მდებარეობის ზოლის გასუფთავება"
 
-#: src/konqmainwindow.cpp:3538
+#: src/konqmainwindow.cpp:3569
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
@@ -1169,22 +1169,22 @@ msgstr ""
 "<html>მდებარეობის პანელის გასუფთავება<br /><br />ასუფთავებს მდებარეობის "
 "პანელის შემცველობას.</html>"
 
-#: src/konqmainwindow.cpp:3543
+#: src/konqmainwindow.cpp:3574
 #, kde-format
 msgid "&Bookmarks"
 msgstr "&სანიშნეები"
 
-#: src/konqmainwindow.cpp:3564
+#: src/konqmainwindow.cpp:3595
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "&Konqueror-ის შესავალი"
 
-#: src/konqmainwindow.cpp:3569
+#: src/konqmainwindow.cpp:3600
 #, kde-format
 msgid "Go"
 msgstr "Go"
 
-#: src/konqmainwindow.cpp:3571
+#: src/konqmainwindow.cpp:3602
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
@@ -1193,7 +1193,7 @@ msgstr ""
 "<html>გადასვლა<br /><br />გადავა გვერდზე, რომელიც მდებარეობის პანელში "
 "შეიყვანეთ.</html>"
 
-#: src/konqmainwindow.cpp:3579
+#: src/konqmainwindow.cpp:3610
 #, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
@@ -1204,27 +1204,27 @@ msgstr ""
 "მდებარეობაა file:/home/%1, ამ ღილაკზე დაჭერა file:/home-ზე გადაგიყვანთ.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3582
+#: src/konqmainwindow.cpp:3613
 #, kde-format
 msgid "Enter the parent folder"
 msgstr "მშობელ საქაღალდეში გადასვლა"
 
-#: src/konqmainwindow.cpp:3584 src/konqmainwindow.cpp:3585
+#: src/konqmainwindow.cpp:3615 src/konqmainwindow.cpp:3616
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "ბრაუზერის ისტორიაში ერთი ნაბიჯით უკან გადასვლა"
 
-#: src/konqmainwindow.cpp:3587 src/konqmainwindow.cpp:3588
+#: src/konqmainwindow.cpp:3618 src/konqmainwindow.cpp:3619
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "ბრაუზერის ისტორიაში ერთი ნაბიჯით წინ გადასვლა"
 
-#: src/konqmainwindow.cpp:3590 src/konqmainwindow.cpp:3591
+#: src/konqmainwindow.cpp:3621 src/konqmainwindow.cpp:3622
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
 msgstr "დახურული ჩანართების ისტორიაში ერთი ნაბიჯით უკან გადასვლა"
 
-#: src/konqmainwindow.cpp:3593
+#: src/konqmainwindow.cpp:3624
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1235,12 +1235,12 @@ msgstr ""
 "მაგალითად, შეიძლება დაგჭირდეთ, რომ განაახლოთ ვებგვერდები, რომლებიც შეიცვალა "
 "მას შემდეგ, რაც ისინი ჩატვირთეთ, იმისთვის, რომ ეს ცვლილებები დაინახოთ.</html>"
 
-#: src/konqmainwindow.cpp:3596
+#: src/konqmainwindow.cpp:3627
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "ამჟამად გამოტანილი დოკუმენტის თავიდან ჩატვირთვა"
 
-#: src/konqmainwindow.cpp:3598
+#: src/konqmainwindow.cpp:3629
 #, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1251,12 +1251,12 @@ msgstr ""
 "მაგალითად, შეიძლება დაგჭირდეთ, რომ ჩატვირთოთ გვერდები, რომლებიც მათი "
 "ჩატვირთვის შემდეგ შეიცვალა, რომ ცვლილებები დაინახოთ.</html>"
 
-#: src/konqmainwindow.cpp:3601
+#: src/konqmainwindow.cpp:3632
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr "ჩანართებში ნაჩვენები ყველა დოკუმენტის თავიდან ჩატვირთვა"
 
-#: src/konqmainwindow.cpp:3603
+#: src/konqmainwindow.cpp:3634
 #, kde-format
 msgid ""
 "<html>Stop loading the document<br /><br />All network transfers will be "
@@ -1266,7 +1266,7 @@ msgstr ""
 "<html>დოკუმენტის ჩატვირთვის გაჩერება<br /><br />ყველა ქსელური მიმოცვლა "
 "გაჩერდება და Konqueror იმას გაჩვენებთ, რისი გადმოწერაც მოასწრო.</html>"
 
-#: src/konqmainwindow.cpp:3607
+#: src/konqmainwindow.cpp:3638
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1280,7 +1280,7 @@ msgstr ""
 "არსებული ყველა გამოსახულება თავიდან ჩაიტვირთება იმის მიუხედავად, არსებობს თუ "
 "არა დაკეშილი ასლი.</html>"
 
-#: src/konqmainwindow.cpp:3611
+#: src/konqmainwindow.cpp:3642
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
@@ -1288,12 +1288,12 @@ msgstr ""
 "ამჟამად ნაჩვენები დოკუმენტისა და სურათების, რომლებსაც ის შეიცავს, ნაძალადევი "
 "თავიდან ჩატვირთვა"
 
-#: src/konqmainwindow.cpp:3613
+#: src/konqmainwindow.cpp:3644
 #, kde-format
 msgid "Stop loading the document"
 msgstr "დოკუმენტის ჩატვირთვის გაჩერება"
 
-#: src/konqmainwindow.cpp:3615
+#: src/konqmainwindow.cpp:3646
 #, kde-format
 msgid ""
 "<html>Cut the currently selected text or item(s) and move it to the system "
@@ -1304,12 +1304,12 @@ msgstr ""
 "><br />ეს მას ხელმისაწვდომს გახდის KDE-ის და Konqueror-ის <b>ჩასმის</b> "
 "ბრძანებისთვის.</html>"
 
-#: src/konqmainwindow.cpp:3619
+#: src/konqmainwindow.cpp:3650
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr "მონიშნული ტექსტის ან ელემენტების ბუფერში ამოჭრა"
 
-#: src/konqmainwindow.cpp:3621
+#: src/konqmainwindow.cpp:3652
 #, kde-format
 msgid ""
 "<html>Copy the currently selected text or item(s) to the system "
@@ -1320,12 +1320,12 @@ msgstr ""
 "გადატანა<br /><br />ეს მას ხელმისაწვდომს გახდის KDE-ის და Konqueror-ის "
 "<b>ჩასმის</b> ბრძანებისთვის.</html>"
 
-#: src/konqmainwindow.cpp:3625
+#: src/konqmainwindow.cpp:3656
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr "მონიშნული ტექსტის ან ელემენტების ბუფერში კოპირება"
 
-#: src/konqmainwindow.cpp:3627
+#: src/konqmainwindow.cpp:3658
 #, kde-format
 msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
@@ -1335,12 +1335,12 @@ msgstr ""
 "მუშაობს ტექსტზე, რომელიც სხვა KDE-ის აპლიკაციიდან დააკოპირეთ ან ამოჭერით.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3630
+#: src/konqmainwindow.cpp:3661
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "ბაფერის შემცველობის ჩასმა"
 
-#: src/konqmainwindow.cpp:3632
+#: src/konqmainwindow.cpp:3663
 #, kde-format
 msgid ""
 "<html>Print the currently displayed document<br /><br />You will be "
@@ -1355,12 +1355,12 @@ msgstr ""
 "სპეციალურ KDE-ის ბეჭდვის სერვისებთან, როგორიცაა მიმდინარე დოკუმენტიდან PDF "
 "ფაილის შექმნა.</html>"
 
-#: src/konqmainwindow.cpp:3638
+#: src/konqmainwindow.cpp:3669
 #, kde-format
 msgid "Print the current document"
 msgstr "მიმდინარე დოკუმენტის დაბეჭდვა"
 
-#: src/konqmainwindow.cpp:3640
+#: src/konqmainwindow.cpp:3671
 #, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
@@ -1369,7 +1369,7 @@ msgstr ""
 "დაბლოკილი ხედი საქაღალდეებს ვერ შეცვლის. გამოიყენეთ ბმულების ხედთან "
 "კომბინაციაში, რათა ერთ საქაღალდეში ბევრი ფაილი დაათვალიეროთ"
 
-#: src/konqmainwindow.cpp:3641
+#: src/konqmainwindow.cpp:3672
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
@@ -1378,12 +1378,12 @@ msgstr ""
 "მოირგებს ხედს, როგორც 'მიბმულს'. მიბმული ხედი მიჰყვება საქაღალდის "
 "ცვლილებებს, რომლებიც სხვა მიბმულ ხედებში მოხდება."
 
-#: src/konqmainwindow.cpp:3645
+#: src/konqmainwindow.cpp:3676
 #, kde-format
 msgid "&Inspect Current Page"
 msgstr "&მიმდინარე გვერდის ინსპექტირება"
 
-#: src/konqmainwindow.cpp:3646
+#: src/konqmainwindow.cpp:3677
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
@@ -1393,22 +1393,22 @@ msgstr ""
 ">მიმდინარე ხედი ორად გაიყოფა და მეორე ნაწილში პროგრამისტის ხელსაწყოები "
 "იქნება ნაჩვენები"
 
-#: src/konqmainwindow.cpp:3647
+#: src/konqmainwindow.cpp:3678
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr "პროგრამისტის ხელსაწყოების ჩვენება მიმდინარე გვერდისთვის"
 
-#: src/konqmainwindow.cpp:3809
+#: src/konqmainwindow.cpp:3840
 #, kde-format
 msgid "Copy &Files..."
 msgstr "&ფაილების კოპირება..."
 
-#: src/konqmainwindow.cpp:3813
+#: src/konqmainwindow.cpp:3844
 #, kde-format
 msgid "M&ove Files..."
 msgstr "ფაილების &გადატანა..."
 
-#: src/konqmainwindow.cpp:4139
+#: src/konqmainwindow.cpp:4170
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
@@ -1417,60 +1417,60 @@ msgstr ""
 "მოითხოვეთ ჩანართებში 20-ზე მეტი სანიშნეს გახსნა. ამას კარგა ხანი შეიძლება "
 "დასჭირდეს. გავაგრძელო?"
 
-#: src/konqmainwindow.cpp:4141
+#: src/konqmainwindow.cpp:4172
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "სანიშნების საქაღალდის ახალ ჩანართებში გახსნა"
 
-#: src/konqmainwindow.cpp:4142
+#: src/konqmainwindow.cpp:4173
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr "გახსნა"
 
-#: src/konqmainwindow.cpp:4304
+#: src/konqmainwindow.cpp:4335
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "&ამ ფანჯარაში გახსნა"
 
-#: src/konqmainwindow.cpp:4305
+#: src/konqmainwindow.cpp:4336
 #, kde-format
 msgid "Open the document in current window"
 msgstr "დოკუმენტის მიმდინარე ფანჯარაში გახსნა"
 
-#: src/konqmainwindow.cpp:4312
+#: src/konqmainwindow.cpp:4343
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "დოკუმენტის ახალ ფანჯარაში გახსნა"
 
-#: src/konqmainwindow.cpp:4318
+#: src/konqmainwindow.cpp:4349
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "&ახალ ჩანართში გახსნა"
 
-#: src/konqmainwindow.cpp:4320
+#: src/konqmainwindow.cpp:4351
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "დოკუმენტის ახალ ჩანართში გახსნა"
 
-#: src/konqmainwindow.cpp:4550
+#: src/konqmainwindow.cpp:4581
 #, kde-format
 msgid "&Open With"
 msgstr "&გამხსნელი პროგრამა"
 
-#: src/konqmainwindow.cpp:4563
+#: src/konqmainwindow.cpp:4594
 #, kde-format
 msgid "Open with %1"
 msgstr "%1-ით გახსნა"
 
-#: src/konqmainwindow.cpp:4613
+#: src/konqmainwindow.cpp:4644
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "&ხედის რეჟიმი"
 
-#: src/konqmainwindow.cpp:4736
+#: src/konqmainwindow.cpp:4767
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
@@ -1478,18 +1478,18 @@ msgstr ""
 "ამ ფანჯარაში ერთზე მეტი ჩანართია ღია. დარწმუნებული ბრძანდებით, რომ გნებავთ, "
 "გახვიდეთ?"
 
-#: src/konqmainwindow.cpp:4738
+#: src/konqmainwindow.cpp:4769
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "დასტური"
 
-#: src/konqmainwindow.cpp:4740
+#: src/konqmainwindow.cpp:4771
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "მიმდინარე ჩანართის &ახურვა"
 
-#: src/konqmainwindow.cpp:4768
+#: src/konqmainwindow.cpp:4799
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1498,7 +1498,7 @@ msgstr ""
 "ეს ჩანართი შეიცავს ცვლილებებს, რომლებიც ჯერ არ გადაცემულა.\n"
 "ფანჯრის მოხსნა ამ ცვლილებებს მოაცილებს."
 
-#: src/konqmainwindow.cpp:4769
+#: src/konqmainwindow.cpp:4800
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1507,7 +1507,7 @@ msgstr ""
 "ეს გვერედი შეიცავს ცვლილებებს, რომლებიც ჯერ არ გადაცემულა.\n"
 "ფანჯრის მოხსნა ამ ცვლილებებს მოაცილებს."
 
-#: src/konqmainwindow.cpp:4929
+#: src/konqmainwindow.cpp:4960
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1515,28 +1515,28 @@ msgstr ""
 "თქვენ გვერდითი პანელი არ მუშაობს ან ხელმიუწვდომელია. ახალ ელემენტს ვერ "
 "დაამატებთ."
 
-#: src/konqmainwindow.cpp:4929 src/konqmainwindow.cpp:4936
+#: src/konqmainwindow.cpp:4960 src/konqmainwindow.cpp:4967
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "ვების გვერდით პანელი"
 
-#: src/konqmainwindow.cpp:4934
+#: src/konqmainwindow.cpp:4965
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "დავამატო ახალი ვებ-გაფართოება \"%1\" თქვენს გვერდით პანელზე?"
 
-#: src/konqmainwindow.cpp:4936
+#: src/konqmainwindow.cpp:4967
 #, kde-format
 msgid "Add"
 msgstr "დამატება"
 
-#: src/konqmainwindow.cpp:4936
+#: src/konqmainwindow.cpp:4967
 #, kde-format
 msgid "Do Not Add"
 msgstr "არ დაამატოთ"
 
-#: src/konqmainwindow.cpp:5284
+#: src/konqmainwindow.cpp:5315
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1545,7 +1545,7 @@ msgstr ""
 "როგორც ჩანს, კონფიგურაციაში შეცდომაა. თქვენ %1-ის ასოცირება გააკეთეთ "
 "Konqueror-თან, მაგრამ, მას ამ ფაილის ტიპის დამუშავება არ შეუძლია."
 
-#: src/konqmainwindow.cpp:5369
+#: src/konqmainwindow.cpp:5400
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1566,22 +1566,22 @@ msgstr ""
 "კონფიგურაცია ან მიუთითეთ პროქსის ბმული ხელით კონფიგურაციის ფანჯარაში. "
 "გნებავთ, ახლავე შეცვალოთ პროქსის პარამეტრები?"
 
-#: src/konqmainwindow.cpp:5374
+#: src/konqmainwindow.cpp:5405
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "პროქსის მხარდაუჭერელი კონფიგურაცია"
 
-#: src/konqmainwindow.cpp:5374
+#: src/konqmainwindow.cpp:5405
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "არ გამოიყენო პროქსი"
 
-#: src/konqmainwindow.cpp:5375 src/konqmainwindow.cpp:5403
+#: src/konqmainwindow.cpp:5406 src/konqmainwindow.cpp:5434
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "პროქსის მორგების ფანჯრის ჩვენებ"
 
-#: src/konqmainwindow.cpp:5399
+#: src/konqmainwindow.cpp:5430
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1594,22 +1594,22 @@ msgstr ""
 "არ გააჩნია. თქვენი მიმდინარე პარამეტრებია:<p><b>HTTP პროქსი:</b> <tt>%1</"
 "tt></p><p><b>HTTPS პროქსი: </b><tt>%2</tt></p>რა გნებავთ, ქნათ?"
 
-#: src/konqmainwindow.cpp:5402
+#: src/konqmainwindow.cpp:5433
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "პროქსის კონფლიქტური კონფიგურაცია"
 
-#: src/konqmainwindow.cpp:5403
+#: src/konqmainwindow.cpp:5434
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "HTTP პროქსის გამოყენება (მხოლოდ ახლა)"
 
-#: src/konqmainwindow.cpp:5403
+#: src/konqmainwindow.cpp:5434
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "HTTPS პროქსის გამოყენება (მხოლოდ ახლა)"
 
-#: src/konqmainwindow.cpp:5419
+#: src/konqmainwindow.cpp:5450
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1910,7 +1910,7 @@ msgstr "&გაუქმება: დახურული ფანჯარ�
 msgid "Und&o"
 msgstr "&გაუქმება"
 
-#: src/konqview.cpp:1270
+#: src/konqview.cpp:1272
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1921,30 +1921,30 @@ msgstr ""
 "მონაცემებს თავიდან გადააგზავნით, ქმედებები, რომლებიც შესრულდა (ძებნა ან "
 "შეძენა ინტერნეტით), გამეორდება. "
 
-#: src/konqview.cpp:1272
+#: src/konqview.cpp:1274
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "ყურადღება"
 
-#: src/konqview.cpp:1272
+#: src/konqview.cpp:1274
 #, kde-format
 msgid "Resend"
 msgstr "თავიდან გაგზავნა"
 
-#: src/urlloader.cpp:441
+#: src/urlloader.cpp:421
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "შესრულება"
 
-#: src/urlloader.cpp:443
+#: src/urlloader.cpp:424
 #, kde-format
-msgctxt "Display an executable file"
+msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
 msgstr "ჩვენება"
 
-#: src/urlloader.cpp:450
+#: src/urlloader.cpp:431
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -1956,14 +1956,14 @@ msgstr ""
 "შესაძლებელია <filename>%1</filename>-ის გაშვება. გნებავთ, გაუშვათ ის თუ "
 "გაჩვენოთ მისი შემცველობა?"
 
-#: src/urlloader.cpp:456
+#: src/urlloader.cpp:437
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "შესაძლებელია <filename>%1</filename>-ის გაშვება. გნებავთ, გაუშვათ ის?"
 
-#: src/urlloader.cpp:759
+#: src/urlloader.cpp:747
 #, kde-format
 msgid "Save As"
 msgstr "შენახვა როგორც"

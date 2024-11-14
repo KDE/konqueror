@@ -89,6 +89,18 @@ protected:
 
 private:
 
+    /**
+     * @brief Sets the text of the widget
+     *
+     * The text is automatically determined from the remote URL of the file and the download path.
+     *
+     * @internal
+     * Care must be taken to ensure the text doesn't exceed the width of the window. If this happens
+     * the window will be enlarged and, especially if it was maximized, will end up beyond the screen
+     * edge. Unfortunately, there's no easy way to determine exactly the maximum length the text can
+     * have, so a heuristic algorithm is used. Its aims are to display as much information as possible
+     * while avoiding at all costs to exceed the width of the window.
+     */
     void setElidedText();
 
     /**
@@ -137,9 +149,9 @@ private:
 
     /**
      * @brief Fills the contents of the "Show" or "Show in new tab" actions and creates its menu
-     * @param embedAction the action to prepare
+     * @param newTab whether the "Show" or the "Show in new tab" should be created
      */
-    void setupEmbedAction(QAction *embedAction);
+    void setupEmbedAction(bool newTab);
 
     /**
      * @brief A list of all the buttons in the bar
@@ -159,7 +171,7 @@ private Q_SLOTS:
      * @param data the data describing the part or application to use, if the user chose one from the menu.
      *  If invalid, the default application or part is used.
      */
-    void actOnChoice(BrowserArguments::Action choice, bool newTab, const QVariant &data);
+    void actOnChoice(Konq::UrlAction choice, bool newTab, const QVariant &data);
 
 private:
     QPointer<WebEnginePart> m_part; //!< The part associated with this widget

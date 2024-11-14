@@ -10,6 +10,7 @@
 #include "konqmainwindow.h"
 #include "konqview.h"
 #include "konqsettings.h"
+#include "konqmainwindowfactory.h"
 
 #include <konqdebug.h>
 
@@ -111,4 +112,26 @@ bool KonqBrowser::canNavigateTo(KParts::ReadOnlyPart* part, const QUrl &url) con
     }
     KonqView *v = mw->childView(part);
     return v ? v->canNavigateTo(url) : true;
+}
+
+KonquerorApplication* KonqBrowser::app() const
+{
+    return qobject_cast<KonquerorApplication*>(qApp);
+}
+
+bool KonqBrowser::openUrl(const QUrl& url, KParts::OpenUrlArguments& args, const BrowserArguments& bargs, QWidget* window)
+{
+    KonqMainWindow *mainWindow = qobject_cast<KonqMainWindow*>(window);
+    if (!mainWindow) {
+        mainWindow = KonqMainWindow::mostSuitableWindow();
+    }
+    if (!mainWindow) {
+        mainWindow = KonqMainWindowFactory::createEmptyWindow();
+    }
+    if (!mainWindow) {
+        return false;
+    }
+    KonqOpenURLRequest req(args, bargs, nullptr);
+    mainWindow->slotOpenURLRequest(url, req);
+    return true;
 }

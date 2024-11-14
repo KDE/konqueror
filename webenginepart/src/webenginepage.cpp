@@ -20,6 +20,7 @@
 #include "navigationrecorder.h"
 #include "profile.h"
 #include "webenginepart_ext.h"
+#include "capturesourcechooserdlg.h"
 
 #include "libkonq_utils.h"
 #include "interfaces/browser.h"
@@ -29,6 +30,10 @@
 #include <QWebEngineProfile>
 #include <KDialogJobUiDelegate>
 #include <QWebEngineView>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6,7,0)
+#include <QWebEngineDesktopMediaRequest>
+#endif
 
 #include <KMessageBox>
 #include <KLocalizedString>
@@ -69,6 +74,7 @@
 #include "htmlextension.h"
 
 using namespace KonqInterfaces;
+using namespace WebEngine;
 
 WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     : QWebEnginePage(KonqWebEnginePart::Profile::defaultProfile(), parent),
@@ -82,12 +88,8 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
         WebEngineSettings::self()->computeFontSizes(view()->logicalDpiY());
     }
 
-    //setForwardUnsupportedContent(true);
-
     connect(this, &QWebEnginePage::geometryChangeRequested,
             this, &WebEnginePage::slotGeometryChangeRequested);
-    //    connect(this, SIGNAL(unsupportedContent(QNetworkReply*)),
-    //            this, SLOT(slotUnsupportedContent(QNetworkReply*)));
     connect(this, &QWebEnginePage::featurePermissionRequested,
             this, &WebEnginePage::slotFeaturePermissionRequested);
     connect(this, &QWebEnginePage::loadFinished,
@@ -96,6 +98,10 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
             this, &WebEnginePage::slotAuthenticationRequired);
     connect(this, &QWebEnginePage::fullScreenRequested, this, &WebEnginePage::changeFullScreenMode);
     connect(this, &QWebEnginePage::recommendedStateChanged, this, &WebEnginePage::changeLifecycleState);
+
+#ifdef MEDIAREQUEST_SUPPORTED
+    connect(this, &QWebEnginePage::desktopMediaRequested, this, &WebEnginePage::chooseDesktopMedia);
+#endif
 
     connect(this, &QWebEnginePage::loadStarted, this, [this](){m_dropOperationTimer->stop();});
     m_dropOperationTimer->setSingleShot(true);
@@ -206,11 +212,13 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
 
     bArgs.setIgnoreDefaultHtmlPart(true);
 
-    if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveOnly || objective == WebEnginePartDownloadManager::DownloadObjective::SaveAs) {
-        bArgs.setForcedAction(BrowserArguments::Action::Save);
+    if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveUrl || objective == WebEnginePartDownloadManager::DownloadObjective::SavePageAs) {
+        bArgs.setAllowedUrlActions(Konq::AllowedUrlActions{Konq::UrlAction::Save});
+    } else if (objective == WebEnginePartDownloadManager::DownloadObjective::AskUser) {
+        bArgs.setForceShowActionDialog(true);
     }
 
-    if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveAs) {
+    if (objective == WebEnginePartDownloadManager::DownloadObjective::SavePageAs) {
         bArgs.setForcesNewWindow(true);
         job->setCalledForSaveAs(true);
         auto displayLocalFile = [this](KonqInterfaces::DownloadJob *job, const QUrl &url){
@@ -219,7 +227,7 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
             }
             disconnect(job, &DownloadJob::downloadResult, m_part, &WebEnginePart::displayActOnDownloadedFileBar);
             BrowserArguments newBargs;
-            newBargs.setForcedAction(BrowserArguments::Action::Embed);
+            newBargs.setAllowedUrlActions(Konq::AllowedUrlActions{Konq::UrlAction::Embed});
             emit m_part->browserExtension()->browserOpenUrlRequest(url, {}, newBargs);
         };
         connect(job, &DownloadJob::downloadResult, m_part, displayLocalFile);
@@ -779,6 +787,23 @@ void WebEnginePage::updateUserStyleSheet(const QString& script)
 {
     runJavaScript(script, QWebEngineScript::ApplicationWorld);
 }
+
+#ifdef MEDIAREQUEST_SUPPORTED
+void WebEnginePage::chooseDesktopMedia(const QWebEngineDesktopMediaRequest& request)
+{
+    CaptureSourceChooserDlg chooser(url(), request.windowsModel(), request.screensModel(), view());
+    chooser.exec();
+    QModelIndex chosenIndex = chooser.choice();
+    if (chosenIndex.model() == request.windowsModel()) {
+        request.selectWindow(chosenIndex);
+    } else if (chosenIndex.model() == request.screensModel()) {
+        request.selectScreen(chosenIndex);
+    } else {
+        request.cancel();
+        return;
+    }
+}
+#endif
 
 /************************************* Begin NewWindowPage ******************************************/
 

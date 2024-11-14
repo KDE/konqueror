@@ -166,6 +166,13 @@ public:
      */
     KPluginMetaData selectedPart() const;
 
+    /**
+     * @brief Whether the user was shown a dialog to decide what to do
+     *
+     * @return `true` if the user was shown a dialog to decide what to do and `false` if the answer was determined automatically
+     */
+    bool dialogShown() const;
+
 private:
 
     /**

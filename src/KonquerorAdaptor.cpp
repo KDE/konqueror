@@ -125,50 +125,9 @@ QStringList KonquerorAdaptor::urls() const
 
 QDBusObjectPath KonquerorAdaptor::windowForTab()
 {
-    QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
-    if (!mainWindows) {
-        return QDBusObjectPath("/");
+    KonqMainWindow *window = KonqMainWindow::mostSuitableWindow();
+    if (window) {
+        Q_ASSERT(!window->dbusName().isEmpty());
     }
-    //Accept only windows which are on the current desktop and in the current activity
-    //(if activities are enabled)
-    auto filter = [](KonqMainWindow *mw) {
-        KWindowInfo winfo(mw->winId(), NET::WMDesktop, NET::WM2Activities);
-        QString currentActivity = KonquerorApplication::currentActivity();
-        bool isInCurrentActivity = true;
-        //if currentActivity is empty, it means that the activity service status is not running or that activity support is disabled,
-        //so it's useless to check which activity the window is on
-        if (!currentActivity.isEmpty()) {
-            QStringList windowActivities = winfo.activities();
-            //WARNING: a window is in the current activity either when windowActivities contains the current activity
-            //or when windowActivities is empty, since KWindowInfo::activities() returns an empty list when the
-            //window is on all activities
-            isInCurrentActivity = windowActivities.isEmpty() || windowActivities.contains(currentActivity);
-        }
-        if (winfo.isOnCurrentDesktop() && (isInCurrentActivity)) {
-            Q_ASSERT(!mw->dbusName().isEmpty());
-            return true;
-        } else {
-            return false;
-        }
-    };
-    QList<KonqMainWindow*> visibleWindows;
-    std::copy_if(mainWindows->constBegin(), mainWindows->constEnd(), std::back_inserter(visibleWindows), filter);
-
-    //Sort the windows according to the last deactivation order, so that windows deactivated last come first
-    //(if a window is active, it'll come before the others)
-    auto sorter = [](KonqMainWindow *w1, KonqMainWindow *w2) {
-        if (w1->isActiveWindow()) {
-            return true;
-        } else if (w2->isActiveWindow()) {
-            return false;
-        } else {
-            return w2->lastDeactivationTime() < w1->lastDeactivationTime();
-        }
-    };
-    std::sort(visibleWindows.begin(), visibleWindows.end(), sorter);
-    if (!visibleWindows.isEmpty()) {
-        return QDBusObjectPath(visibleWindows.first()->dbusName());
-    } else {
-        return QDBusObjectPath("/");
-    }
+    return QDBusObjectPath(window ? window->dbusName() : "/");
 }

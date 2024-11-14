@@ -44,6 +44,7 @@ set(kwebenginepartlib_LIB_SRCS
     cookies/webenginepartcookiejar.cpp
     cookies/cookiealertdlg.cpp
     profile.cpp
+    capturesourcechooserdlg.cpp
     )
 
 ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS
@@ -52,6 +53,7 @@ ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS
   webenginepartcertificateerrordlg.ui
   choosepagesaveformatdlg.ui
   cookies/cookiealertdlg.ui
+  capturesourcechooserdlg.ui
   )
 
 qt_add_resources(kwebenginepartlib_LIB_SRCS webenginepart.qrc)
@@ -67,6 +69,12 @@ ecm_qt_declare_logging_category(kwebenginepartlib_LIB_SRCS
 add_library(kwebenginepartlib ${kwebenginepartlib_LIB_SRCS})
 
 generate_export_header(kwebenginepartlib)
+
+#QWebEnginePage::desktopMediaRequested and QWebEngineDesktopMediaRequest only exist
+#starting from Qt 6.7
+if (Qt6WebEngineCore_VERSION VERSION_GREATER_EQUAL "6.7.0")
+  target_compile_definitions(kwebenginepartlib PRIVATE MEDIAREQUEST_SUPPORTED)
+endif()
 
 target_link_libraries(kwebenginepartlib
     PUBLIC

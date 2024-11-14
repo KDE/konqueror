@@ -10,6 +10,7 @@
 #define BROWSERARGUMENTS_H
 
 #include <libkonq_export.h>
+#include "konq_urlactions.h"
 
 #include <QByteArray>
 #include <QStringList>
@@ -17,8 +18,6 @@
 namespace KonqInterfaces {
     class DownloadJob;
 }
-
-class QDebug;
 
 struct BrowserArgumentsPrivate;
 
@@ -236,31 +235,28 @@ struct LIBKONQ_EXPORT BrowserArguments {
     void setIgnoreDefaultHtmlPart(bool ignore);
 
     /**
-     * @brief Enum describing actions which can be performed with an URL
+     * @brief An object describing which actions are allowed when opening the URL
+     * @return An object describing which actions are allowed when opening the URL
      */
-    enum class Action {
-        UnknownAction, //!< A default value to use, for example, when no action has been determined
-        DoNothing, //!< Take no action
-        Save, //!< Save the URL to disk
-        Embed, //!< Embed the URL in Konqueror
-        Open, //!< Open the URL in an external application
-        Execute //!< Execute the URL
-    };
+    Konq::AllowedUrlActions urlActions() const;
+
+    void setAllowedUrlActions(const Konq::AllowedUrlActions &actions);
 
     /**
-     * @brief Which action should be performed on the URL
-     * @return The action to be performed on the URL. A value of Action::Unknown
-     * means that Konqueror is free to decide what to do
-     */
-    Action forcedAction() const;
-    /**
-     * @brief Sets the action to perform on the URL
+     * @brief Toggles whether or not to display a dialog asking what to do with the URL instead of using the default action
      *
-     * If this is not called, Konqueror forcedAction() will return Action::Unknown
-     * @param act the action to perform on the URL. Pass Action::Unknown if
-     * Konqueror should be free to decide what to do
+     * By default, the dialog is only displayed if the action couldn't be determined automatically
+     *
+     * @param force whether to force displaying the dialog or not
      */
-    void setForcedAction(Action act);
+    void setForceShowActionDialog(bool force = true);
+
+    /**
+     * @brief Whether or not always show a dialog asking the user what to do with the URL
+     * @return `true` if the dialog should always be shown and `false` if it should only be shown
+     * when the action couldn't be determined automatically
+     */
+    bool forceShowActionDialog() const;
 
 private:
     /**
@@ -271,7 +267,5 @@ private:
     BrowserArgumentsPrivate* ensureD();
     BrowserArgumentsPrivate *d;
 };
-
-QDebug LIBKONQ_EXPORT operator<<(QDebug dbg, BrowserArguments::Action action);
 
 #endif

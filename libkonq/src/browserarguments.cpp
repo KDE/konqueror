@@ -13,6 +13,8 @@
 #include <QDebug>
 #include <QPointer>
 
+using namespace Konq;
+
 struct BrowserArgumentsPrivate {
     QString contentType; // for POST
     bool doPost = false;
@@ -24,8 +26,9 @@ struct BrowserArgumentsPrivate {
     QString embedWith;
     QString openWith;
     bool ignoreDefaultHtmlPart = false;
-    BrowserArguments::Action forcedAction = BrowserArguments::Action::UnknownAction;
     QPointer<KonqInterfaces::DownloadJob> downloadJob;
+    AllowedUrlActions allowedActions;
+    bool forceShowActionDialog = false;
 };
 
 BrowserArguments::BrowserArguments()
@@ -156,16 +159,6 @@ void BrowserArguments::setDownloadJob(KonqInterfaces::DownloadJob* job)
     d->downloadJob = job;
 }
 
-// BrowserArguments::MaybeInt BrowserArguments::downloadId() const
-// {
-//     return d ? d->downloadId : std::nullopt;
-// }
-//
-// void BrowserArguments::setDownloadId(MaybeInt id)
-// {
-//     ensureD()->downloadId = id;
-// }
-
 QString BrowserArguments::embedWith() const
 {
     return d ? d->embedWith : QString();
@@ -196,39 +189,22 @@ void BrowserArguments::setIgnoreDefaultHtmlPart(bool ignore)
     ensureD()->ignoreDefaultHtmlPart = ignore;
 }
 
-BrowserArguments::Action BrowserArguments::forcedAction() const
+Konq::AllowedUrlActions BrowserArguments::urlActions() const
 {
-    return d ? d->forcedAction : Action::UnknownAction;
+    return d ? d->allowedActions : AllowedUrlActions();
 }
 
-void BrowserArguments::setForcedAction(Action act)
+void BrowserArguments::setAllowedUrlActions(const AllowedUrlActions &actions)
 {
-    ensureD()->forcedAction = act;
+    ensureD()->allowedActions = actions;
 }
 
-QDebug operator<<(QDebug dbg, BrowserArguments::Action action)
+void BrowserArguments::setForceShowActionDialog(bool force)
 {
-    QDebugStateSaver saver(dbg);
-    dbg.resetFormat();
-    switch (action) {
-        case BrowserArguments::Action::UnknownAction:
-            dbg << "UnknownAction";
-            break;
-        case BrowserArguments::Action::DoNothing:
-            dbg << "DoNothing";
-            break;
-        case BrowserArguments::Action::Save:
-            dbg << "Save";
-            break;
-        case BrowserArguments::Action::Embed:
-            dbg << "Embed";
-            break;
-        case BrowserArguments::Action::Open:
-            dbg << "Open";
-            break;
-        case BrowserArguments::Action::Execute:
-            dbg << "Execute";
-            break;
-    }
-    return dbg;
+    ensureD()->forceShowActionDialog = force;
+}
+
+bool BrowserArguments::forceShowActionDialog() const
+{
+    return d ? d->forceShowActionDialog : false;
 }

@@ -26,7 +26,7 @@ private Q_SLOTS:
 
         KonqMainWindow mainWindow;
         // we specify the mimetype so that we don't have to wait for a KonqRun
-        KonqOpenURLRequest req; req.forceAutoEmbed = true;
+        KonqOpenURLRequest req; req.forceEmbed();
         mainWindow.openUrl(nullptr, QUrl(QStringLiteral("data:text/plain, Hello World")), QStringLiteral("text/plain"), req);
         KonqView *view = mainWindow.currentView();
         QVERIFY(view);

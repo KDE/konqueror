@@ -251,14 +251,14 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
 
     // init history-manager, load history, get completion object
     if (!s_pCompletion) {
-        s_bookmarkManager = Konq::userBookmarksManager();
+        s_bookmarkManager = userBookmarksManager();
 
         KonqHistoryManager *mgr = new KonqHistoryManager(s_bookmarkManager);
         s_pCompletion = mgr->completionObject();
 
         // setup the completion object before createGUI(), so that the combo
         // picks up the correct mode from the HistoryManager (in slotComboPlugged)
-        int mode = Konq::Settings::settingsCompletionMode();
+        int mode = Settings::settingsCompletionMode();
         s_pCompletion->setCompletionMode(static_cast<KCompletion::CompletionMode>(mode));
     }
     connect(HistoryProvider::self(), &HistoryProvider::cleared, this, &KonqMainWindow::slotClearComboHistory);
@@ -377,6 +377,48 @@ KonqMainWindow::~KonqMainWindow()
     delete m_pUndoManager;
 
     //qCDebug(KONQUEROR_LOG) << this << "deleted";
+}
+
+KonqMainWindow* KonqMainWindow::mostSuitableWindow()
+{
+    QList<KonqMainWindow *> windows = mainWindows();
+    if (windows.isEmpty()) {
+        return nullptr;
+    }
+
+    //Accept only windows which are on the current desktop and in the current activity
+    //(if activities are enabled)
+    QString currentActivity = KonquerorApplication::currentActivity();
+    auto filter = [currentActivity](KonqMainWindow *mw) {
+        KWindowInfo winfo(mw->winId(), NET::WMDesktop, NET::WM2Activities);
+        bool isInCurrentActivity = true;
+        //if currentActivity is empty, it means that the activity service status is not running or that activity support is disabled,
+        //so it's useless to check which activity the window is on
+        if (!currentActivity.isEmpty()) {
+            QStringList windowActivities = winfo.activities();
+            //WARNING: a window is in the current activity either when windowActivities contains the current activity
+            //or when windowActivities is empty, since KWindowInfo::activities() returns an empty list when the
+            //window is on all activities
+            isInCurrentActivity = windowActivities.isEmpty() || windowActivities.contains(currentActivity);
+        }
+        return winfo.isOnCurrentDesktop() && isInCurrentActivity;
+    };
+    QList<KonqMainWindow*> visibleWindows;
+    std::copy_if(windows.constBegin(), windows.constEnd(), std::back_inserter(visibleWindows), filter);
+
+    //Sort the windows according to the last deactivation order, so that windows deactivated last come first
+    //(if a window is active, it'll come before the others)
+    auto sortFunction = [](KonqMainWindow *w1, KonqMainWindow *w2) {
+        if (w1->isActiveWindow()) {
+            return true;
+        } else if (w2->isActiveWindow()) {
+            return false;
+        } else {
+            return w2->lastDeactivationTime() < w1->lastDeactivationTime();
+        }
+    };
+    std::sort(visibleWindows.begin(), visibleWindows.end(), sortFunction);
+    return visibleWindows.isEmpty() ? nullptr : visibleWindows.first();
 }
 
 QWidget *KonqMainWindow::createContainer(QWidget *parent, int index, const QDomElement &element, QAction *&containerAction)
@@ -567,9 +609,9 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
         // URL filtering catches this case before hand, and in cases without filtering
         // (e.g. HTML link), the url is empty here, not invalid.
         // But just to be safe, let's keep this code path
-        url = Konq::makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url(), url);
+        url = makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url(), url);
     } else if (!KProtocolInfo::isKnownProtocol(url) && !KonqUrl::hasKonqScheme(url) && !s_validProtocols.contains(url.scheme())) {
-        url = Konq::makeErrorUrl(KIO::ERR_UNSUPPORTED_PROTOCOL, url.scheme(), url);
+        url = makeErrorUrl(KIO::ERR_UNSUPPORTED_PROTOCOL, url.scheme(), url);
     }
 
     const QString nameFilter = detectNameFilter(url);
@@ -725,17 +767,6 @@ bool KonqMainWindow::openView(ViewType type, const QUrl &_url, KonqView *childVi
         return true; // Nothing else to do.
     }
 
-//TODO Remove KonqRun: the following lines prevent embedding script files. If the user chose, from UrlLoader, not to
-//execute a script but to open it, it should be embedded or opened in a separate viewer according to the user
-//preferences. With the check below, instead, it'll always been opened in the external application.
-//Are there situations when this check is needed? When this function is called by UrlLoader, it's not necessary
-//because UrlLoader only calls it if the user chose to embed the URL. The only other caller of this function
-//seems to be KonqViewManager::loadItem, which uses it when restoring or duplicating a view. Since a view can't
-//contain an executed program, I think we can assume that the file should be embedded.
-//     if (UrlLoader::isExecutable(mimeType)) {
-//         return false;    // execute, don't open
-//     }
-
     // Contract: the caller of this method should ensure the view is stopped first.
 
 #ifndef NDEBUG
@@ -753,7 +784,7 @@ bool KonqMainWindow::openView(ViewType type, const QUrl &_url, KonqView *childVi
                 abortLoading();
                 setLocationBarURL(_url);
                 KonqOpenURLRequest newreq;
-                newreq.forceAutoEmbed = true;
+                newreq.forceEmbed();
                 newreq.followMode = true;
                 newreq.args = req.args;
                 newreq.browserArgs = req.browserArgs;
@@ -798,7 +829,7 @@ bool KonqMainWindow::openView(ViewType type, const QUrl &_url, KonqView *childVi
         originalURL.clear();
     }
 
-    bool forceAutoEmbed = req.forceAutoEmbed || req.userRequestedReload;
+    bool forceAutoEmbed = req.urlActions().isForced(UrlAction::Embed) || req.userRequestedReload;
     if (!req.typedUrl.isEmpty()) { // the user _typed_ the URL, he wants it in Konq.
         forceAutoEmbed = true;
     }
@@ -1029,7 +1060,7 @@ bool KonqMainWindow::makeViewsFollow(const QUrl &url,
     bool res = false;
     //qCDebug(KONQUEROR_LOG) << senderView->metaObject()->className() << "url=" << url << "type =" << type;
     KonqOpenURLRequest req;
-    req.forceAutoEmbed = true;
+    req.forceEmbed();
     req.followMode = true;
     req.args = args;
     req.browserArgs = browserArgs;
@@ -1148,9 +1179,9 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
     bool createTab = req.browserArgs.newTab();
     if (!createTab && !req.browserArgs.forcesNewWindow() /* explicit "Open in New Window" action, e.g. on frame or history item */) {
         if (req.args.actionRequestedByUser()) { // MMB or some RMB popupmenu action
-            createTab = Konq::Settings::mmbOpensTab();
+            createTab = Settings::mmbOpensTab();
         } else { // Javascript popup
-            createTab = Konq::Settings::popupsWithinTabs() &&
+            createTab = Settings::popupsWithinTabs() &&
                         !isPopupWindow(windowArgs);
         }
     }
@@ -1159,12 +1190,12 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
     if (createTab && !m_isPopupWithProxyWindow) {
 
         bool newtabsinfront = newTabInFront(QApplication::keyboardModifiers());
-        const bool aftercurrentpage = Konq::Settings::openAfterCurrentPage();
+        const bool aftercurrentpage = Settings::openAfterCurrentPage();
 
         // Can we use the standard way (openUrl), or do we need the part pointer immediately?
         if (!part) {
             req.browserArgs.setNewTab(true);
-            req.forceAutoEmbed = true; // testcase: MMB on link-to-PDF, when pdf setting is "show file in external browser".
+            req.forceEmbed();
             req.newTabInFront = newtabsinfront;
             req.openAfterCurrentPage = aftercurrentpage;
             openUrl(nullptr, url, req.args.mimeType(), req);
@@ -1197,7 +1228,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
     }
 
     req.browserArgs.setNewTab(false); // we got a new window, no need for a new tab in that window
-    req.forceAutoEmbed = true;
+    req.forceEmbed();
     req.serviceName = preferredService(m_currentView, req.args.mimeType());
 
     mainWindow = KonqMainWindowFactory::createEmptyWindow();
@@ -1265,7 +1296,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
         // user can override the default setup by adding a config option
         // "LocationBar=false" to the [DisableWindowOpenFeatures] section of
         // konquerorrc.
-        const bool showLocationBar = Konq::Settings::locationBarInJsWindows();
+        const bool showLocationBar = Settings::locationBarInJsWindows();
         KToolBar *locationToolBar = mainWindow->toolBar(QStringLiteral("locationToolBar"));
 
         for (KToolBar *bar: mainWindow->findChildren<KToolBar *>()) {
@@ -1642,7 +1673,7 @@ void KonqMainWindow::slotHome()
     if (modifiers & Qt::ControlModifier) { // Ctrl Left/MMB
         openFilteredUrl(homeURL, req);
     } else if (buttons & Qt::MiddleButton) {
-        if (Konq::Settings::mmbOpensTab()) {
+        if (Settings::mmbOpensTab()) {
             openFilteredUrl(homeURL, req);
         } else {
             const QUrl finalURL = KonqMisc::konqFilteredURL(this, homeURL);
@@ -1680,13 +1711,13 @@ void KonqMainWindow::slotConfigure()
     emit aboutToConfigure();
 
     if (!m_configureDialog) {
-        m_configureDialog = new Konq::ConfigDialog(this);
+        m_configureDialog = new ConfigDialog(this);
     }
 
     m_configureDialog->show();
 }
 
-void KonqMainWindow::slotConfigure(Konq::ConfigDialog::Module module)
+void KonqMainWindow::slotConfigure(ConfigDialog::Module module)
 {
     slotConfigure();
     if (m_configureDialog) {
@@ -1779,7 +1810,7 @@ void KonqMainWindow::slotPartChanged(KonqView *childView, KParts::ReadOnlyPart *
 
 void KonqMainWindow::applyKonqMainWindowSettings()
 {
-    const QStringList toggableViewsShown = Konq::Settings::toggableViewsShown();
+    const QStringList toggableViewsShown = Settings::toggableViewsShown();
     QStringList::ConstIterator togIt = toggableViewsShown.begin();
     QStringList::ConstIterator togEnd = toggableViewsShown.end();
     for (; togIt != togEnd; ++togIt) {
@@ -1890,7 +1921,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
         }
     }
 
-    m_paShowDeveloperTools->setEnabled(m_currentView && m_currentView->isWebEngineView());
+    m_paShowDeveloperTools->setEnabled(m_currentView && m_currentView->isDevtoolsAvailable());
 
     createGUI(part);
 
@@ -1924,7 +1955,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
         actHomePage->setWhatsThis(i18n("<html>Navigate to your 'Home Page'<br /><br />"
                                        "You can configure the location where this button takes you "
                                        "under <b>Settings -> Configure Konqueror -> General</b>.</html>"));
-        actHomePage->setData(Konq::Settings::homeURL());
+        actHomePage->setData(Settings::homeURL());
 
         m_paHome->setIcon(viewShowsDir ? actHomeFolder->icon() : actHomePage->icon());
         m_paHome->setText(viewShowsDir ? actHomeFolder->text() : actHomePage->text());
@@ -2139,18 +2170,18 @@ void KonqMainWindow::splitCurrentView(Qt::Orientation orientation)
         return;
     }
     KonqOpenURLRequest req;
-    req.forceAutoEmbed = true;
+    req.forceEmbed();
 
     //Toggable views can't be split, so assume oldView has a mimetype and not KParts::Capability::BrowserView
     QString mime = oldView->type().isMimetype() ? oldView->type().mimetype().value() : QString();
     QUrl url = oldView->url();
-    const bool alwaysDuplicateView = Konq::Settings::alwaysDuplicatePageWhenSplittingView();
+    const bool alwaysDuplicateView = Settings::alwaysDuplicatePageWhenSplittingView();
     //TODO KF6: check whether this works correctly
     if (alwaysDuplicateView || url.isLocalFile()) {
         newView->duplicateView(oldView);
         return;
     }
-    url = QUrl(Konq::Settings::startURL());
+    url = QUrl(Settings::startURL());
     openView(QStringLiteral("text/html"), url, newView, req);
 }
 
@@ -2170,7 +2201,7 @@ void KonqMainWindow::slotAddTab()
     KonqView *newView = m_pViewManager->addTab(QStringLiteral("text/html"),
                         QString(),
                         false,
-                        Konq::Settings::openAfterCurrentPage());
+                        Settings::openAfterCurrentPage());
     if (!newView) {
         return;
     }
@@ -2199,12 +2230,12 @@ void KonqMainWindow::slotAddTab()
 
 void KonqMainWindow::slotDuplicateTab()
 {
-    m_pViewManager->duplicateTab(m_pViewManager->tabContainer()->currentIndex(), Konq::Settings::openAfterCurrentPage());
+    m_pViewManager->duplicateTab(m_pViewManager->tabContainer()->currentIndex(), Settings::openAfterCurrentPage());
 }
 
 void KonqMainWindow::slotDuplicateTabPopup()
 {
-    m_pViewManager->duplicateTab(m_workingTab, Konq::Settings::openAfterCurrentPage());
+    m_pViewManager->duplicateTab(m_workingTab, Settings::openAfterCurrentPage());
 }
 
 void KonqMainWindow::slotBreakOffTab()
@@ -2265,7 +2296,7 @@ void KonqMainWindow::slotPopupNewTab()
         slotPopupNewWindow();
         return;
     }
-    bool openAfterCurrentPage = Konq::Settings::openAfterCurrentPage();
+    bool openAfterCurrentPage = Settings::openAfterCurrentPage();
     bool newTabsInFront = newTabInFront(QApplication::keyboardModifiers());
 
     popupNewTab(newTabsInFront, openAfterCurrentPage);
@@ -2275,7 +2306,7 @@ void KonqMainWindow::popupNewTab(bool infront, bool openAfterCurrentPage)
 {
     KonqOpenURLRequest req;
     req.newTabInFront = false;
-    req.forceAutoEmbed = true;
+    req.forceEmbed();
     req.openAfterCurrentPage = openAfterCurrentPage;
     req.args = m_popupUrlArgs;
     req.browserArgs = m_popupUrlBrowserArgs;
@@ -2581,16 +2612,16 @@ void KonqMainWindow::slotUp()
 
     KonqOpenURLRequest req;
     req.browserArgs.setNewTab(true);
-    req.forceAutoEmbed = true;
+    req.forceEmbed();
 
-    req.openAfterCurrentPage = Konq::Settings::openAfterCurrentPage();
+    req.openAfterCurrentPage = Settings::openAfterCurrentPage();
     req.newTabInFront = newTabInFront(goKeyboardState);
 
     const QUrl &url = m_currentView->upUrl();
     if (goKeyboardState & Qt::ControlModifier) {
         openFilteredUrl(url.url(), req);
     } else if (goMouseState & Qt::MiddleButton) {
-        if (Konq::Settings::mmbOpensTab()) {
+        if (Settings::mmbOpensTab()) {
             openFilteredUrl(url.url(), req);
         } else {
             KonqMainWindow *mw = KonqMainWindowFactory::createNewWindow(url);
@@ -2623,8 +2654,8 @@ void KonqMainWindow::slotGoHistoryDelayed()
         return;
     }
 
-    bool openAfterCurrentPage = Konq::Settings::openAfterCurrentPage();
-    bool mmbOpensTab = Konq::Settings::mmbOpensTab();
+    bool openAfterCurrentPage = Settings::openAfterCurrentPage();
+    bool mmbOpensTab = Settings::mmbOpensTab();
     bool inFront = newTabInFront(m_goKeyboardState);
 
     if (m_goKeyboardState & Qt::ControlModifier) {
@@ -2829,8 +2860,8 @@ void KonqMainWindow::slotCompletionModeChanged(KCompletion::CompletionMode m)
 {
     s_pCompletion->setCompletionMode(m);
 
-    Konq::Settings::setSettingsCompletionMode(int(m_combo->completionMode()));
-    Konq::Settings::self()->save();
+    Settings::setSettingsCompletionMode(int(m_combo->completionMode()));
+    Settings::self()->save();
 
     // tell the other windows too (only this instance currently)
     for (KonqMainWindow *window: *s_lstMainWindows) {
@@ -3656,12 +3687,12 @@ void KonqExtendedBookmarkOwner::openBookmark(const KBookmark &bm, Qt::MouseButto
     KonqOpenURLRequest req;
     req.browserArgs.setNewTab(true);
     req.newTabInFront = KonqMainWindow::newTabInFront(km);
-    req.forceAutoEmbed = true;
+    req.forceEmbed();
 
     if (km & Qt::ControlModifier) {  // Ctrl Left/MMB
         m_pKonqMainWindow->openFilteredUrl(url, req);
     } else if (mb & Qt::MiddleButton) {
-        if (Konq::Settings::mmbOpensTab()) {
+        if (Settings::mmbOpensTab()) {
             m_pKonqMainWindow->openFilteredUrl(url, req);
         } else {
             const QUrl finalURL = KonqMisc::konqFilteredURL(m_pKonqMainWindow, url);
@@ -4115,7 +4146,7 @@ void KonqExtendedBookmarkOwner::openInNewTab(const KBookmark &bm)
     req.browserArgs.setNewTab(true);
     req.newTabInFront = newTabsInFront;
     req.openAfterCurrentPage = false;
-    req.forceAutoEmbed = true;
+    req.forceEmbed();
 
     m_pKonqMainWindow->openFilteredUrl(bm.url().url(), req);
 }
@@ -4127,7 +4158,7 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
     req.browserArgs.setNewTab(true);
     req.newTabInFront = false;
     req.openAfterCurrentPage = false;
-    req.forceAutoEmbed = true;
+    req.forceEmbed();
 
     const QList<QUrl> list = grp.groupUrlList();
     if (list.isEmpty()) {
@@ -4462,7 +4493,7 @@ void KonqMainWindow::reparseConfiguration()
 {
     qCDebug(KONQUEROR_LOG);
 
-    Konq::Settings::self()->load();
+    Settings::self()->load();
     m_pViewManager->applyConfiguration();
     KonqMouseEventFilter::self()->reparseConfiguration();
     m_pViewManager->reparseConfiguration();
@@ -4553,7 +4584,7 @@ void KonqMainWindow::updateOpenWithActions()
     KService::List::ConstIterator it = services.constBegin();
     const KService::List::ConstIterator end = services.constEnd();
 
-    const int baseOpenWithItems = qMax(Konq::Settings::openWithItems(), 0);
+    const int baseOpenWithItems = qMax(Settings::openWithItems(), 0);
 
     int idxService = 0;
     for (; it != end; ++it, ++idxService) {
@@ -5375,7 +5406,7 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
                                                                 KGuiItem(i18n("Show proxy configuration dialog")), "WebEngineUnsupportedProxyType");
         QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
         if (ans == KMessageBox::SecondaryAction) {
-            slotConfigure(Konq::ConfigDialog::ProxyModule);
+            slotConfigure(ConfigDialog::ProxyModule);
             return;
         }
     }
@@ -5404,7 +5435,7 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
         if (ans == KMessageBox::PrimaryAction) {
             proxy = httpProxy;
         } else if (ans == KMessageBox::Cancel) {
-            slotConfigure(Konq::ConfigDialog::ProxyModule);
+            slotConfigure(ConfigDialog::ProxyModule);
             return;
         }
     }
@@ -5424,7 +5455,7 @@ void KonqMainWindow::toggleCompleteFullScreen(bool on)
 
 void KonqMainWindow::inspectCurrentPage()
 {
-    if (!m_currentView || !m_currentView->isWebEngineView()) {
+    if (!m_currentView || !m_currentView->isDevtoolsAvailable()) {
         return;
     }
     KParts::ReadOnlyPart *partToInspect = m_currentView->part();
@@ -5433,7 +5464,7 @@ void KonqMainWindow::inspectCurrentPage()
         return;
     }
     KonqOpenURLRequest req;
-    req.forceAutoEmbed = true;
+    req.forceEmbed();
 
     openView(QStringLiteral("text/html"), QUrl(), devToolsView, req);
     QMetaObject::invokeMethod(devToolsView->part(), "setInspectedPart", Qt::DirectConnection, Q_ARG(KParts::ReadOnlyPart*, partToInspect));
@@ -5487,6 +5518,6 @@ QList<QAction *> KonqMainWindow::toggleViewActions() const
 
 bool KonqMainWindow::newTabInFront(Qt::KeyboardModifiers mods)
 {
-    bool front = Konq::Settings::newTabsInFront();
+    bool front = Settings::newTabsInFront();
     return mods & Qt::ShiftModifier ? !front : front;
 }

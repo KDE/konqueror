@@ -127,6 +127,9 @@ protected Q_SLOTS:
     void slotAuthenticationRequired(const QUrl &requestUrl, QAuthenticator *auth);
     void changeFullScreenMode(QWebEngineFullScreenRequest req);
     void changeLifecycleState(QWebEnginePage::LifecycleState recommendedState);
+#ifdef MEDIAREQUEST_SUPPORTED
+    void chooseDesktopMedia(const QWebEngineDesktopMediaRequest &request);
+#endif
 
     /**
     * @brief Handles a certificate error
