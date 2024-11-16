@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-04 00:39+0000\n"
-"PO-Revision-Date: 2024-04-08 18:57+0300\n"
+"PO-Revision-Date: 2024-11-12 21:05+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -304,34 +304,28 @@ msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>MIME tips</td><td>Apraksts</td><td>Sufiksi</td><td>Spraudnis</td>"
 
 #: src/actondownloadedfilebar.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@label location where a remote URL was downloaded"
-#| msgid "%1 was saved in %2"
+#, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
-msgstr "„%1“ saglabāts „%2“"
+msgstr "ir saglabāts kā"
 
 #: src/actondownloadedfilebar.cpp:120
 #, kde-format
 msgctxt "@label location where a remote URL was downloaded"
 msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
-msgstr ""
+msgstr "<tt>%1</tt> ir saglabāts kā <tt>%2</tt>"
 
 #: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "&Atvērt ar „%1“"
+msgstr "Atvērt ar..."
 
 #: src/actondownloadedfilebar.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "Atvērt „%1“"
+msgstr "Atvērt"
 
 #: src/actondownloadedfilebar.cpp:155
 #, kde-format
@@ -352,27 +346,24 @@ msgid "Show here"
 msgstr "Rādīt te"
 
 #: src/actondownloadedfilebar.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "&Atvērt ar „%1“"
+msgstr "&Parādīt ar „%1“"
 
 #: src/capturesourcechooserdlg.cpp:29
 #, kde-format
 msgid ""
 "Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
-msgstr ""
+msgstr "Vai vēlaties ļaut <tt>%1</tt> ierakstīt ekrāna saturu?"
 
 #: src/capturesourcechooserdlg.cpp:31
 #, kde-format
 msgid "Choose window or screen to capture"
-msgstr ""
+msgstr "Izvēlieties logu vai ekrānu, ko ierakstīt"
 
 #: src/capturesourcechooserdlg.cpp:38
-#, fuzzy, kde-format
-#| msgid "Allow"
+#, kde-format
 msgctxt "Allow a web page to capture the screen"
 msgid "Allow"
 msgstr "Atļaut"
@@ -381,24 +372,19 @@ msgstr "Atļaut"
 #, kde-format
 msgctxt "Block a web page from capturing the screen"
 msgid "Block"
-msgstr ""
+msgstr "Bloķēt"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "Choose Save Format"
+#, kde-format
 msgid "Choose Capture Source"
-msgstr "Izvēlieties saglabāšanas formātu"
+msgstr "Izvēlieties ierakstīšanas avotu"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "Do you want to allow this page to capture the contents of your screen?"
-msgstr ""
-"<qt>Vai vēlaties ļaut vietnei pievienot e-pasta vēstulei šīs datnes?</qt>"
+msgstr "Vai vēlaties ļaut šai lapai ierakstīt ierīces ekrāna saturu?"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1237,7 +1223,7 @@ msgstr "&Aizpildīt formas"
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "Look Again for Forms"
-msgstr ""
+msgstr "Vēlreiz meklēt formas"
 
 #: src/webenginepart.cpp:1017
 #, kde-format
