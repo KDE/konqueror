@@ -4534,7 +4534,7 @@ void KonqMainWindow::applyMainWindowSettings(const KConfigGroup &config)
 {
     KParts::MainWindow::applyMainWindowSettings(config);
     if (m_currentView) {
-        /// @Note status bar isn't direct child to main window
+        /// @note status bar isn't direct child to main window
         QString entry = config.readEntry("StatusBar", "Enabled");
         m_currentView->frame()->statusbar()->setVisible(entry != QLatin1String("Disabled"));
     }
@@ -4546,9 +4546,24 @@ void KonqMainWindow::applyMainWindowSettings(const KConfigGroup &config)
     //later). Not calling setOnActivities means the window will only be shown in the current activity,
     //which is exactly what we wanted from the default value
     const QString key = QStringLiteral("Activities");
-    if (config.hasKey(key)) {
-        //The default value won't actually be used since we checked that the entry exists
-        setOnActivities(config.readEntry(key, QStringList{}));
+    if (!config.hasKey(key)) {
+        return;
+    }
+    //The default value won't actually be used since we checked that the entry exists
+    QStringList activitiesToRestore = config.readEntry(key, QStringList{});
+    KonquerorApplication *app = qobject_cast<KonquerorApplication*>(qApp);
+    auto applyActivities = [this, activitiesToRestore] {
+        setOnActivities(activitiesToRestore);
+    };
+    if (app->isActivityServiceRunning()) {
+        setOnActivities(activitiesToRestore);
+    } else {
+        //We have to wait until the activities service is ready before changing the window's activities.
+        //Connecting to the KActivities::Consumer::serviceStatusChanged signal doesn't work:
+        //it seems that the activities service attempts to restore the activities the window is on after the signal
+        //is emitted. However, since the service isn't able to handle multiple windows for a single process,
+        //it does so incorrectly. To work around this issue, we use a timer
+        QTimer::singleShot(0, this, [this, activitiesToRestore]{setOnActivities(activitiesToRestore);});
     }
 }
 

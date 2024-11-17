@@ -39,8 +39,11 @@ public:
 
     static QString currentActivity();
 
+    bool isActivityServiceRunning() const;
+
 public slots:
     void slotReparseConfiguration();
+
 signals:
     void configurationChanged();
     void aboutToConfigure();
