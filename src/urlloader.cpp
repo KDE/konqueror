@@ -12,6 +12,7 @@
 #include "konqview.h"
 #include "konqurl.h"
 #include "konqdebug.h"
+#include "konqmainwindowfactory.h"
 
 #include "libkonq_utils.h"
 
@@ -786,9 +787,21 @@ void UrlLoader::performSave(const QUrl& orig, const QUrl& dest)
 
 void UrlLoader::open()
 {
-    // Prevention against user stupidity : if the associated app for this mimetype
-    // is konqueror/kfmclient, then we'll loop forever.
-    if (m_service && serviceIsKonqueror(m_service) && m_mainWindow->refuseExecutingKonqueror(m_mimeType)) {
+    //If the user chose to open the URL in Konqueror itself, check whether it can be
+    //embedded and, if so, create a new window and force embedding the URL there.
+    //This avoids an endless loop while ensuring that choosing Konqueror as external
+    //application for a supported type works correctly.
+    //TODO refactor this: there should be a way to tell the main window that the user chose to
+    //open the URL in another instance of Konqueror and let the main window handle it
+    if (m_service && serviceIsKonqueror(m_service) && m_mainWindow->activeViewsNotLockedCount() > 0) {
+        if (preferredPart(mimeType()).isValid()) {
+            m_request.forceEmbed();
+            KonqMainWindow *mw = KonqMainWindowFactory::createNewWindow(m_url, m_request);
+            mw->show();
+        } else {
+            KMessageBox::error(m_mainWindow, i18n("There appears to be a configuration error. You have associated Konqueror with %1, but it cannot handle this file type.", m_mimeType));
+        }
+        done();
         return;
     }
     if (m_jobErrorCode != 0) {
