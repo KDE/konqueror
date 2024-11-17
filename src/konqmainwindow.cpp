@@ -4538,7 +4538,18 @@ void KonqMainWindow::applyMainWindowSettings(const KConfigGroup &config)
         QString entry = config.readEntry("StatusBar", "Enabled");
         m_currentView->frame()->statusbar()->setVisible(entry != QLatin1String("Disabled"));
     }
-    setOnActivities(config.readEntry(QStringLiteral("Activities"), QStringList{KonquerorApplication::currentActivity()}));
+
+    //Only call setOnActivities if the config object actually contains the "Activities" key
+    //This is done because it's difficult to provide a reliable default value if the activity
+    //service isn't running (in that case, the only possible option would be an empty list,
+    //but that would mean showing the window in all activities if the service should start running
+    //later). Not calling setOnActivities means the window will only be shown in the current activity,
+    //which is exactly what we wanted from the default value
+    const QString key = QStringLiteral("Activities");
+    if (config.hasKey(key)) {
+        //The default value won't actually be used since we checked that the entry exists
+        setOnActivities(config.readEntry(key, QStringList{}));
+    }
 }
 
 void KonqMainWindow::saveMainWindowSettings(KConfigGroup &config)
