@@ -4203,7 +4203,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > d'&UNIX;.</para>
 
 <para
->La integració de &fsview; com a part del Konqueror permet usar les propietats estàndard com els menús contextuals dels fitxers i les accions sensibles als tipus MIME. Però no fou escollit per a implementar actualitzacions automàtiques dels canvis al sistema de fitxers de manera visual: si suprimiu un fitxer mostrat a l'eixida de &fsview; fora del &konqueror;, haureu d'actualitzar manualment, &pex;, prement <keycap
+>La integració de &fsview; com a part del Konqueror permet usar les propietats estàndard com els menús contextuals dels fitxers i les accions dependents dels tipus MIME. Però no fou escollit per a implementar actualitzacions automàtiques dels canvis al sistema de fitxers de manera visual: si suprimiu un fitxer mostrat a l'eixida de &fsview; fora del &konqueror;, haureu d'actualitzar manualment, &pex;, prement <keycap
 >F5</keycap
 >. El motiu d'aquesta decisió és l'enorme nombre potencial de fitxers que s'hauran de verificar per a veure si han canviat, generant d'aquesta manera una gran càrrega en els recursos del sistema per culpa d'una petita característica.</para>
 
