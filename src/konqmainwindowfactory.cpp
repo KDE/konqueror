@@ -11,6 +11,7 @@
 #include "konqdebug.h"
 #include "konqurl.h"
 #include "konqmisc.h"
+#include "konqapplication.h"
 
 #include <KWindowInfo>
 #include <KStartupInfo>
@@ -64,6 +65,7 @@ KonqMainWindow *KonqMainWindowFactory::createEmptyWindow()
         qCDebug(KONQUEROR_LOG) << "Reusing preloaded window" << win;
         QByteArray startupId = KWindowSystem::isPlatformX11() ? QX11Info::nextStartupId() : qEnvironmentVariable("XDG_ACTIVATION_TOKEN").toUtf8();
         KStartupInfo::setNewStartupId(win->windowHandle(), startupId);
+        win->setOnActivities({KonquerorApplication::currentActivity()});
     } else {
         win = new KonqMainWindow(KonqUrl::url(KonqUrl::Type::Blank));
     }
