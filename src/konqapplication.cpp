@@ -78,6 +78,7 @@ KonquerorApplication::KonquerorApplication(int &argc, char **argv)
     , m_activityConsumer(new KActivities::Consumer(this))
 #endif
 {
+
     new KonquerorAdaptor; // not really an adaptor
     const QString dbusInterface = QStringLiteral("org.kde.Konqueror.Main");
     QDBusConnection dbus = QDBusConnection::sessionBus();
@@ -105,10 +106,6 @@ KonquerorApplication::KonquerorApplication(int &argc, char **argv)
 
     qputenv("QTWEBENGINE_CHROMIUM_FLAGS", flags);
     KLocalizedString::setApplicationDomain("konqueror");
-
-#ifdef KActivities_FOUND
-    m_activityConsumer = new KActivities::Consumer(this);
-#endif
 }
 
 KonquerorApplication::KonquerorAsRootBehavior KonquerorApplication::checkRootBehavior()
@@ -558,4 +555,13 @@ int KonquerorApplication::openSession(const QString& session)
 void KonquerorApplication::restoreSession()
 {
     KonqSessionManager::self()->restoreSessionSavedAtLogout();
+}
+
+bool KonquerorApplication::isActivityServiceRunning() const
+{
+#ifdef KActivities_FOUND
+    return m_activityConsumer->serviceStatus() == KActivities::Consumer::Running;
+#else
+    return false
+#endif
 }
