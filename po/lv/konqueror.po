@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-04 00:39+0000\n"
+"POT-Creation-Date: 2024-11-24 00:40+0000\n"
 "PO-Revision-Date: 2024-11-12 21:03+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -145,7 +145,7 @@ msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
 msgstr "Šis ir datnes nosaukums, ko ir ieteicis serveris"
 
-#: src/konqapplication.cpp:118
+#: src/konqapplication.cpp:115
 #, kde-format
 msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
@@ -155,37 +155,37 @@ msgstr ""
 "nepieciešams ieslēgt ļoti nedrošu režīmu pārlūkprogrammas komponentē.</"
 "p><p>Ko vēlaties darīt?</p>"
 
-#: src/konqapplication.cpp:161
+#: src/konqapplication.cpp:158
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: src/konqapplication.cpp:162
+#: src/konqapplication.cpp:159
 #, kde-format
 msgid "Web browser, file manager and document viewer."
 msgstr "Tīmekļa pārlūks, datņu pārvaldnieks un dokumentu skatītājs."
 
-#: src/konqapplication.cpp:164
+#: src/konqapplication.cpp:161
 #, kde-format
 msgid "(C) 1999-2023, The Konqueror developers"
 msgstr "(C) 1999—2023, „Konqueror“ izstrādātāji"
 
-#: src/konqapplication.cpp:177
+#: src/konqapplication.cpp:174
 #, kde-format
 msgid "Stefano Crocco"
 msgstr "Stefano Crocco"
 
-#: src/konqapplication.cpp:177
+#: src/konqapplication.cpp:174
 #, kde-format
 msgid "Current maintainer"
 msgstr "Pašreizējais uzturētājs"
 
-#: src/konqapplication.cpp:178
+#: src/konqapplication.cpp:175
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: src/konqapplication.cpp:178
+#: src/konqapplication.cpp:175
 #, kde-format
 msgid ""
 "Developer (framework, parts, JavaScript, I/O library) and former maintainer"
@@ -193,107 +193,107 @@ msgstr ""
 "Izstrādātājs (satvars, daļas, „JavaScript“, ievadizvades bibliotēka) un "
 "agrākais uzturētājs"
 
-#: src/konqapplication.cpp:179
+#: src/konqapplication.cpp:176
 #, kde-format
 msgid "Simon Hausmann"
 msgstr "Simon Hausmann"
 
-#: src/konqapplication.cpp:179
+#: src/konqapplication.cpp:176
 #, kde-format
 msgid "Developer (framework, parts)"
 msgstr "Izstrādātājs (satvars, daļas)"
 
-#: src/konqapplication.cpp:180
+#: src/konqapplication.cpp:177
 #, kde-format
 msgid "Michael Reiher"
 msgstr "Michael Reiher"
 
-#: src/konqapplication.cpp:180 src/konqapplication.cpp:208
-#: src/konqapplication.cpp:214
+#: src/konqapplication.cpp:177 src/konqapplication.cpp:205
+#: src/konqapplication.cpp:211
 #, kde-format
 msgid "Developer (framework)"
 msgstr "Izstrādātājs (satvars)"
 
-#: src/konqapplication.cpp:181
+#: src/konqapplication.cpp:178
 #, kde-format
 msgid "Matthias Welk"
 msgstr "Matthias Welk"
 
-#: src/konqapplication.cpp:181
+#: src/konqapplication.cpp:178
 #, kde-format
 msgid "Developer"
 msgstr "Izstrādātājs"
 
-#: src/konqapplication.cpp:182
+#: src/konqapplication.cpp:179
 #, kde-format
 msgid "Alexander Neundorf"
 msgstr "Alexander Neundorf"
 
-#: src/konqapplication.cpp:182
+#: src/konqapplication.cpp:179
 #, kde-format
 msgid "Developer (List views)"
 msgstr "Izstrādātājs (sarakstu skati)"
 
-#: src/konqapplication.cpp:183
+#: src/konqapplication.cpp:180
 #, kde-format
 msgid "Michael Brade"
 msgstr "Michael Brade"
 
-#: src/konqapplication.cpp:183
+#: src/konqapplication.cpp:180
 #, kde-format
 msgid "Developer (List views, I/O library)"
 msgstr "Izstrādātājs (sarakstu skati, ievadizvades bibliotēka)"
 
-#: src/konqapplication.cpp:184
+#: src/konqapplication.cpp:181
 #, kde-format
 msgid "Lars Knoll"
 msgstr "Lars Knoll"
 
-#: src/konqapplication.cpp:184 src/konqapplication.cpp:185
+#: src/konqapplication.cpp:181 src/konqapplication.cpp:182
+#: src/konqapplication.cpp:183 src/konqapplication.cpp:185
 #: src/konqapplication.cpp:186 src/konqapplication.cpp:188
-#: src/konqapplication.cpp:189 src/konqapplication.cpp:191
-#: src/konqapplication.cpp:192 src/konqapplication.cpp:193
-#: src/konqapplication.cpp:194 src/konqapplication.cpp:196
+#: src/konqapplication.cpp:189 src/konqapplication.cpp:190
+#: src/konqapplication.cpp:191 src/konqapplication.cpp:193
 #, kde-format
 msgid "Developer (HTML rendering engine)"
 msgstr "Izstrādātājs (HTML attēlošanas dzinis)"
 
-#: src/konqapplication.cpp:185
+#: src/konqapplication.cpp:182
 #, kde-format
 msgid "Dirk Mueller"
 msgstr "Dirk Mueller"
 
-#: src/konqapplication.cpp:186
+#: src/konqapplication.cpp:183
 #, kde-format
 msgid "Peter Kelly"
 msgstr "Peter Kelly"
 
-#: src/konqapplication.cpp:187
+#: src/konqapplication.cpp:184
 #, kde-format
 msgid "Waldo Bastian"
 msgstr "Waldo Bastian"
 
-#: src/konqapplication.cpp:187
+#: src/konqapplication.cpp:184
 #, kde-format
 msgid "Developer (HTML rendering engine, I/O library)"
 msgstr "Izstrādātājs (HTML attēlošanas dzinis, ievadizvades bibliotēka)"
 
-#: src/konqapplication.cpp:188
+#: src/konqapplication.cpp:185
 #, kde-format
 msgid "Germain Garand"
 msgstr "Germain Garand"
 
-#: src/konqapplication.cpp:189 src/konqapplication.cpp:217
+#: src/konqapplication.cpp:186 src/konqapplication.cpp:214
 #, kde-format
 msgid "Leo Savernik"
 msgstr "Leo Savernik"
 
-#: src/konqapplication.cpp:190
+#: src/konqapplication.cpp:187
 #, kde-format
 msgid "Stephan Kulow"
 msgstr "Stephan Kulow"
 
-#: src/konqapplication.cpp:190
+#: src/konqapplication.cpp:187
 #, kde-format
 msgid ""
 "Developer (HTML rendering engine, I/O library, regression test framework)"
@@ -301,102 +301,102 @@ msgstr ""
 "Izstrādātājs (HTML attēlošanas dzinis, ievadizvades bibliotēka, regresijas "
 "testēšanas satvars)"
 
-#: src/konqapplication.cpp:191
+#: src/konqapplication.cpp:188
 #, kde-format
 msgid "Antti Koivisto"
 msgstr "Antti Koivisto"
 
-#: src/konqapplication.cpp:192
+#: src/konqapplication.cpp:189
 #, kde-format
 msgid "Zack Rusin"
 msgstr "Zack Rusin"
 
-#: src/konqapplication.cpp:193
+#: src/konqapplication.cpp:190
 #, kde-format
 msgid "Tobias Anton"
 msgstr "Tobias Anton"
 
-#: src/konqapplication.cpp:194
+#: src/konqapplication.cpp:191
 #, kde-format
 msgid "Lubos Lunak"
 msgstr "Lubos Lunak"
 
-#: src/konqapplication.cpp:195
+#: src/konqapplication.cpp:192
 #, kde-format
 msgid "Maks Orlovich"
 msgstr "Maks Orlovich"
 
-#: src/konqapplication.cpp:195 src/konqapplication.cpp:197
+#: src/konqapplication.cpp:192 src/konqapplication.cpp:194
 #, kde-format
 msgid "Developer (HTML rendering engine, JavaScript)"
 msgstr "Izstrādātājs (HTML attēlošanas dzinis, „JavaScript“)"
 
-#: src/konqapplication.cpp:196
+#: src/konqapplication.cpp:193
 #, kde-format
 msgid "Allan Sandfeld Jensen"
 msgstr "Allan Sandfeld Jensen"
 
-#: src/konqapplication.cpp:197
+#: src/konqapplication.cpp:194
 #, kde-format
 msgid "Apple Safari Developers"
 msgstr "„Apple Safari“ izstrādātāji"
 
-#: src/konqapplication.cpp:198
+#: src/konqapplication.cpp:195
 #, kde-format
 msgid "Harri Porten"
 msgstr "Harri Porten"
 
-#: src/konqapplication.cpp:198
+#: src/konqapplication.cpp:195
 #, kde-format
 msgid "Developer (JavaScript)"
 msgstr "Izstrādātājs („JavaScript“)"
 
-#: src/konqapplication.cpp:199
+#: src/konqapplication.cpp:196
 #, kde-format
 msgid "Koos Vriezen"
 msgstr "Koos Vriezen"
 
-#: src/konqapplication.cpp:199
+#: src/konqapplication.cpp:196
 #, kde-format
 msgid "Developer (Java applets and other embedded objects)"
 msgstr "Izstrādātājs („Java“ sīklietotņu un citu iegulto objektu atbalsts)"
 
-#: src/konqapplication.cpp:200
+#: src/konqapplication.cpp:197
 #, kde-format
 msgid "Matt Koss"
 msgstr "Matt Koss"
 
-#: src/konqapplication.cpp:200 src/konqapplication.cpp:201
+#: src/konqapplication.cpp:197 src/konqapplication.cpp:198
 #, kde-format
 msgid "Developer (I/O library)"
 msgstr "Izstrādātājs (ievadizvades bibliotēka)"
 
-#: src/konqapplication.cpp:201
+#: src/konqapplication.cpp:198
 #, kde-format
 msgid "Alex Zepeda"
 msgstr "Alex Zepeda"
 
-#: src/konqapplication.cpp:202
+#: src/konqapplication.cpp:199
 #, kde-format
 msgid "Richard Moore"
 msgstr "Richard Moore"
 
-#: src/konqapplication.cpp:202 src/konqapplication.cpp:203
+#: src/konqapplication.cpp:199 src/konqapplication.cpp:200
 #, kde-format
 msgid "Developer (Java applet support)"
 msgstr "Izstrādātājs („Java“ sīklietotņu atbalsts)"
 
-#: src/konqapplication.cpp:203
+#: src/konqapplication.cpp:200
 #, kde-format
 msgid "Dima Rogozin"
 msgstr "Dima Rogozin"
 
-#: src/konqapplication.cpp:204
+#: src/konqapplication.cpp:201
 #, kde-format
 msgid "Wynn Wilkes"
 msgstr "Wynn Wilkes"
 
-#: src/konqapplication.cpp:204
+#: src/konqapplication.cpp:201
 #, kde-format
 msgid ""
 "Developer (Java 2 security manager support,\n"
@@ -405,107 +405,107 @@ msgstr ""
 "Izstrādātājs („Java 2“ drošības pārvaldnieka atbalsts\n"
 " un citi svarīgi sīklietotņu atbalsta uzlabojumi)"
 
-#: src/konqapplication.cpp:205
+#: src/konqapplication.cpp:202
 #, kde-format
 msgid "Stefan Schimanski"
 msgstr "Stefan Schimanski"
 
-#: src/konqapplication.cpp:205
+#: src/konqapplication.cpp:202
 #, kde-format
 msgid "Developer (Netscape plugin support)"
 msgstr "Izstrādātājs („Netscape“ spraudņu uzturēšana)"
 
-#: src/konqapplication.cpp:206
+#: src/konqapplication.cpp:203
 #, kde-format
 msgid "George Staikos"
 msgstr "George Staikos"
 
-#: src/konqapplication.cpp:206
+#: src/konqapplication.cpp:203
 #, kde-format
 msgid "Developer (SSL, Netscape plugins)"
 msgstr "Izstrādātājs (SSL, „Netscape“ spraudņi)"
 
-#: src/konqapplication.cpp:207
+#: src/konqapplication.cpp:204
 #, kde-format
 msgid "Dawit Alemayehu"
 msgstr "Dawit Alemayehu"
 
-#: src/konqapplication.cpp:207
+#: src/konqapplication.cpp:204
 #, kde-format
 msgid "Developer (I/O library, Authentication support)"
 msgstr "Izstrādātājs (ievadizvades bibliotēka, autentifikācijas atbalsts)"
 
-#: src/konqapplication.cpp:208
+#: src/konqapplication.cpp:205
 #, kde-format
 msgid "Carsten Pfeiffer"
 msgstr "Carsten Pfeiffer"
 
-#: src/konqapplication.cpp:209
+#: src/konqapplication.cpp:206
 #, kde-format
 msgid "Torsten Rahn"
 msgstr "Torsten Rahn"
 
-#: src/konqapplication.cpp:209
+#: src/konqapplication.cpp:206
 #, kde-format
 msgid "Graphics/icons"
 msgstr "Grafika/ikonas"
 
-#: src/konqapplication.cpp:210
+#: src/konqapplication.cpp:207
 #, kde-format
 msgid "Torben Weis"
 msgstr "Torben Weis"
 
-#: src/konqapplication.cpp:210
+#: src/konqapplication.cpp:207
 #, kde-format
 msgid "KFM author"
 msgstr "KFM autors"
 
-#: src/konqapplication.cpp:211
+#: src/konqapplication.cpp:208
 #, kde-format
 msgid "Joseph Wenninger"
 msgstr "Joseph Wenninger"
 
-#: src/konqapplication.cpp:211
+#: src/konqapplication.cpp:208
 #, kde-format
 msgid "Developer (navigation panel framework)"
 msgstr "Izstrādātājs (navigācijas paneļa ietvars)"
 
-#: src/konqapplication.cpp:212
+#: src/konqapplication.cpp:209
 #, kde-format
 msgid "Stephan Binner"
 msgstr "Stephan Binner"
 
-#: src/konqapplication.cpp:212
+#: src/konqapplication.cpp:209
 #, kde-format
 msgid "Developer (misc stuff)"
 msgstr "Izstrādātājs (dažādas lietas)"
 
-#: src/konqapplication.cpp:213
+#: src/konqapplication.cpp:210
 #, kde-format
 msgid "Ivor Hewitt"
 msgstr "Ivor Hewitt"
 
-#: src/konqapplication.cpp:213
+#: src/konqapplication.cpp:210
 #, kde-format
 msgid "Developer (AdBlock filter)"
 msgstr "Izstrādātājs (reklāmu bloķētāja filtrs)"
 
-#: src/konqapplication.cpp:214
+#: src/konqapplication.cpp:211
 #, kde-format
 msgid "Eduardo Robles Elvira"
 msgstr "Eduardo Robles Elvira"
 
-#: src/konqapplication.cpp:215
+#: src/konqapplication.cpp:212
 #, kde-format
 msgid "Matthias Kalle Dalheimer"
 msgstr "Matthias Kalle Dalheimer"
 
-#: src/konqapplication.cpp:216
+#: src/konqapplication.cpp:213
 #, kde-format
 msgid "Daniel Molkentin"
 msgstr "Daniel Molkentin"
 
-#: src/konqapplication.cpp:217
+#: src/konqapplication.cpp:214
 #, kde-format
 msgid ""
 "JavaScript access controls\n"
@@ -514,66 +514,66 @@ msgstr ""
 "„JavaScript“ piekļuves kontroles\n"
 "Domēnu politikas pagarinājumi"
 
-#: src/konqapplication.cpp:228
+#: src/konqapplication.cpp:225
 #, kde-format
 msgid "Start without a default window, when called without URLs"
 msgstr "Palaist bez noklusētā loga, kad izsaukts bez URL"
 
-#: src/konqapplication.cpp:229
+#: src/konqapplication.cpp:226
 #, kde-format
 msgid ""
 "Preload for later use. This mode does not support URLs on the command line"
 msgstr ""
 "Priekšielādēt vēlākam lietojumam. Šis režīms neatbalsta URL no komandrindas"
 
-#: src/konqapplication.cpp:230
+#: src/konqapplication.cpp:227
 #, kde-format
 msgid "Profile to open (DEPRECATED, IGNORED)"
 msgstr "Atveramais profils (NOVECOJIS, IGNORĒJAMS)"
 
-#: src/konqapplication.cpp:230
+#: src/konqapplication.cpp:227
 #, kde-format
 msgid "profile"
 msgstr "profils"
 
-#: src/konqapplication.cpp:231
+#: src/konqapplication.cpp:228
 #, kde-format
 msgid "List available sessions and exit"
 msgstr "Uzskaitīt pieejamās sesijas un iziet"
 
-#: src/konqapplication.cpp:232
+#: src/konqapplication.cpp:229
 #, kde-format
 msgid "Session to open"
 msgstr "Atveramā sesija"
 
-#: src/konqapplication.cpp:232
+#: src/konqapplication.cpp:229
 #, kde-format
 msgid "session"
 msgstr "sesija"
 
-#: src/konqapplication.cpp:233
+#: src/konqapplication.cpp:230
 #, kde-format
 msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
 msgstr ""
 "Šim URL izmantojamais MIME tips, (piemēram, „text/html“ vai „inode/"
 "directory“)"
 
-#: src/konqapplication.cpp:233
+#: src/konqapplication.cpp:230
 #, kde-format
 msgid "mimetype"
 msgstr "MIME tips"
 
-#: src/konqapplication.cpp:234
+#: src/konqapplication.cpp:231
 #, kde-format
 msgid "Part to use (e.g. khtml or kwebkitpart)"
 msgstr "Izmantojamā daļa (piemēram, „khtml“ vai „kwebkitpart“)"
 
-#: src/konqapplication.cpp:234
+#: src/konqapplication.cpp:231
 #, kde-format
 msgid "service"
 msgstr "serviss"
 
-#: src/konqapplication.cpp:235
+#: src/konqapplication.cpp:232
 #, kde-format
 msgid ""
 "For URLs that point to files, opens the directory and selects the file, "
@@ -582,12 +582,12 @@ msgstr ""
 "Ja URL norāda uz datni, bet ne atvērt pašu datni, bet atvērt mapi un iezīmēt "
 "datni."
 
-#: src/konqapplication.cpp:236
+#: src/konqapplication.cpp:233
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr "Programmas atvērtās datnes/URL pēc lietošanas tiks dzēstas"
 
-#: src/konqapplication.cpp:238
+#: src/konqapplication.cpp:235
 #, kde-format
 msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
@@ -596,26 +596,26 @@ msgstr ""
 "Izveidot jaunu „Konqueror“ procesu pat tad, ja tāds jau eksistē. Paredzēts "
 "izmantošanai tikai „Konqueror“ izstrādes laikā"
 
-#: src/konqapplication.cpp:240
+#: src/konqapplication.cpp:237
 #, kde-format
 msgid "Location to open"
 msgstr "Atveramā vieta"
 
-#: src/konqapplication.cpp:355
+#: src/konqapplication.cpp:352
 #, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
 msgstr "Sesiju „%1“ neizdevāš atvērt"
 
-#: src/konqapplication.cpp:481
+#: src/konqapplication.cpp:478
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr "Izmantojot „--preload“ slēdzi, nevarat nodot URL. URL tiks ignorētas\n"
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4838
-#: src/konqmainwindow.cpp:4884
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4864
+#: src/konqmainwindow.cpp:4910
 #, kde-format
 msgid "no name"
 msgstr "bez nosaukuma"
@@ -813,7 +813,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1627 src/konqmainwindow.cpp:2265
 #: src/konqmainwindow.cpp:2354 src/konqmainwindow.cpp:2386
 #: src/konqmainwindow.cpp:2429 src/konqmainwindow.cpp:2451
-#: src/konqmainwindow.cpp:4803
+#: src/konqmainwindow.cpp:4829
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -822,7 +822,7 @@ msgstr "Vai atmest izmaiņas?"
 #: src/konqmainwindow.cpp:1627 src/konqmainwindow.cpp:2265
 #: src/konqmainwindow.cpp:2354 src/konqmainwindow.cpp:2386
 #: src/konqmainwindow.cpp:2429 src/konqmainwindow.cpp:2452
-#: src/konqmainwindow.cpp:4803
+#: src/konqmainwindow.cpp:4829
 #, kde-format
 msgid "&Discard Changes"
 msgstr "At&mest izmaiņas"
@@ -1452,40 +1452,40 @@ msgstr "Atvērt jaunā &cilnē"
 msgid "Open the document in a new tab"
 msgstr "Atvērt dokumentu jaunā cilnē"
 
-#: src/konqmainwindow.cpp:4581
+#: src/konqmainwindow.cpp:4607
 #, kde-format
 msgid "&Open With"
 msgstr "&Atvērt ar"
 
-#: src/konqmainwindow.cpp:4594
+#: src/konqmainwindow.cpp:4620
 #, kde-format
 msgid "Open with %1"
 msgstr "Atvērt ar „%1“"
 
-#: src/konqmainwindow.cpp:4644
+#: src/konqmainwindow.cpp:4670
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "&Skata režīms"
 
-#: src/konqmainwindow.cpp:4767
+#: src/konqmainwindow.cpp:4793
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr "Logā ir atvērtas vairākas cilnes. Vai tiešām vēlaties iziet?"
 
-#: src/konqmainwindow.cpp:4769
+#: src/konqmainwindow.cpp:4795
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Apstiprinājums"
 
-#: src/konqmainwindow.cpp:4771
+#: src/konqmainwindow.cpp:4797
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "Aizvērt šo ci&lni"
 
-#: src/konqmainwindow.cpp:4799
+#: src/konqmainwindow.cpp:4825
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1494,7 +1494,7 @@ msgstr ""
 "Šī cilne satur izmaiņas, kas vēl nav nosūtītas. \n"
 "Loga aizvēršana atmetīs šīs izmaiņas."
 
-#: src/konqmainwindow.cpp:4800
+#: src/konqmainwindow.cpp:4826
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1503,34 +1503,34 @@ msgstr ""
 "Šī lapa satur izmaiņas, kas vēl nav nosūtītas. \n"
 "Loga aizvēršana atmetīs šīs izmaiņas."
 
-#: src/konqmainwindow.cpp:4960
+#: src/konqmainwindow.cpp:4986
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr "Sānjosla nedarbojas vai nav pieejama. Jaunu ierakstu nevar pievienot."
 
-#: src/konqmainwindow.cpp:4960 src/konqmainwindow.cpp:4967
+#: src/konqmainwindow.cpp:4986 src/konqmainwindow.cpp:4993
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Tīmekļa sānjosla"
 
-#: src/konqmainwindow.cpp:4965
+#: src/konqmainwindow.cpp:4991
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Vai pievienot sānjoslai jaunu paplašinājumu „%1“?"
 
-#: src/konqmainwindow.cpp:4967
+#: src/konqmainwindow.cpp:4993
 #, kde-format
 msgid "Add"
 msgstr "Pievienot"
 
-#: src/konqmainwindow.cpp:4967
+#: src/konqmainwindow.cpp:4993
 #, kde-format
 msgid "Do Not Add"
 msgstr "Nepievienot"
 
-#: src/konqmainwindow.cpp:5315
+#: src/konqmainwindow.cpp:5341 src/urlloader.cpp:802
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1539,7 +1539,7 @@ msgstr ""
 "Šķiet, ka konfigurācijā ir kļūda. „Konqueror“ ir piesaistīts „%1“, bet tas "
 "nevar apstrādāt šo datnes tipu."
 
-#: src/konqmainwindow.cpp:5400
+#: src/konqmainwindow.cpp:5426
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1561,22 +1561,22 @@ msgstr ""
 "starpniekservera konfigurāciju un manuāli norādiet starpniekservera adresi. "
 "Vai vēlaties mainīt starpniekservera iestatījumus?"
 
-#: src/konqmainwindow.cpp:5405
+#: src/konqmainwindow.cpp:5431
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "Neatbalstīta starpniekservera konfigurācija"
 
-#: src/konqmainwindow.cpp:5405
+#: src/konqmainwindow.cpp:5431
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "Neizmantot starpniekserveri"
 
-#: src/konqmainwindow.cpp:5406 src/konqmainwindow.cpp:5434
+#: src/konqmainwindow.cpp:5432 src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "Rādīt starpniekservera konfigurācijas lodziņu"
 
-#: src/konqmainwindow.cpp:5430
+#: src/konqmainwindow.cpp:5456
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1589,22 +1589,22 @@ msgstr ""
 "pašreizējie iestatījumi ir:<p><b>HTTP starpniekserveris:</b> <tt>%1</tt></"
 "p><p><b>HTTPS starpniekserveris: </b><tt>%2</tt></p>Ko vēlaties darīt?"
 
-#: src/konqmainwindow.cpp:5433
+#: src/konqmainwindow.cpp:5459
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "Konfliktējoša starpniekserveru konfigurācija"
 
-#: src/konqmainwindow.cpp:5434
+#: src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "Izmantot HTTP starpniekserveri (tikai šoreiz)"
 
-#: src/konqmainwindow.cpp:5434
+#: src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "Izmantot HTTPS starpniekserveri (tikai šoreiz)"
 
-#: src/konqmainwindow.cpp:5450
+#: src/konqmainwindow.cpp:5476
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1928,19 +1928,19 @@ msgstr "Brīdinājums"
 msgid "Resend"
 msgstr "Sūtīt vēlreiz"
 
-#: src/urlloader.cpp:421
+#: src/urlloader.cpp:422
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "Izpildīt"
 
-#: src/urlloader.cpp:424
+#: src/urlloader.cpp:425
 #, kde-format
 msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
 msgstr "Parādīt"
 
-#: src/urlloader.cpp:431
+#: src/urlloader.cpp:432
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -1951,14 +1951,14 @@ msgid ""
 msgstr ""
 "<filename>%1</filename> var izpildīt. Vai vēlaties to izpildīt vai parādīt?"
 
-#: src/urlloader.cpp:437
+#: src/urlloader.cpp:438
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename> var izpildīt. Vai vēlaties to izpildīt?"
 
-#: src/urlloader.cpp:747
+#: src/urlloader.cpp:748
 #, kde-format
 msgid "Save As"
 msgstr "Saglabāt kā"
