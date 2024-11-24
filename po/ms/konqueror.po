@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-04 00:39+0000\n"
+"POT-Creation-Date: 2024-11-24 02:34+0000\n"
 "PO-Revision-Date: 2009-08-16 18:29+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -143,45 +143,45 @@ msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
 msgstr ""
 
-#: src/konqapplication.cpp:118
+#: src/konqapplication.cpp:115
 #, kde-format
 msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
 
-#: src/konqapplication.cpp:161
+#: src/konqapplication.cpp:158
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: src/konqapplication.cpp:162
+#: src/konqapplication.cpp:159
 #, kde-format
 msgid "Web browser, file manager and document viewer."
 msgstr "Pelayar Web, pengurus fail dan pelihat dokumen."
 
-#: src/konqapplication.cpp:164
+#: src/konqapplication.cpp:161
 #, fuzzy, kde-format
 #| msgid "(C) 1999-2008, The Konqueror developers"
 msgid "(C) 1999-2023, The Konqueror developers"
 msgstr "(c) 1999-2008, Pembangun Konqueror"
 
-#: src/konqapplication.cpp:177
+#: src/konqapplication.cpp:174
 #, kde-format
 msgid "Stefano Crocco"
 msgstr ""
 
-#: src/konqapplication.cpp:177
+#: src/konqapplication.cpp:174
 #, kde-format
 msgid "Current maintainer"
 msgstr ""
 
-#: src/konqapplication.cpp:178
+#: src/konqapplication.cpp:175
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: src/konqapplication.cpp:178
+#: src/konqapplication.cpp:175
 #, fuzzy, kde-format
 #| msgid "developer (framework, parts, JavaScript, I/O lib) and maintainer"
 msgid ""
@@ -189,114 +189,114 @@ msgid ""
 msgstr ""
 "pemaju (rangka kerja,bahagian,JavaScript, pustaka I/O) dan penyelenggara"
 
-#: src/konqapplication.cpp:179
+#: src/konqapplication.cpp:176
 #, fuzzy, kde-format
 msgid "Simon Hausmann"
 msgstr "Simon Hausmann"
 
-#: src/konqapplication.cpp:179
+#: src/konqapplication.cpp:176
 #, fuzzy, kde-format
 #| msgid "developer (framework, parts)"
 msgid "Developer (framework, parts)"
 msgstr "pemaju (rangka kerja, bahagian)"
 
-#: src/konqapplication.cpp:180
+#: src/konqapplication.cpp:177
 #, kde-format
 msgid "Michael Reiher"
 msgstr ""
 
-#: src/konqapplication.cpp:180 src/konqapplication.cpp:208
-#: src/konqapplication.cpp:214
+#: src/konqapplication.cpp:177 src/konqapplication.cpp:205
+#: src/konqapplication.cpp:211
 #, fuzzy, kde-format
 #| msgid "developer (framework)"
 msgid "Developer (framework)"
 msgstr "pemaju (rangka kerja) "
 
-#: src/konqapplication.cpp:181
+#: src/konqapplication.cpp:178
 #, kde-format
 msgid "Matthias Welk"
 msgstr ""
 
-#: src/konqapplication.cpp:181
+#: src/konqapplication.cpp:178
 #, fuzzy, kde-format
 #| msgid "developer"
 msgid "Developer"
 msgstr "Pemaju"
 
-#: src/konqapplication.cpp:182
+#: src/konqapplication.cpp:179
 #, fuzzy, kde-format
 msgid "Alexander Neundorf"
 msgstr "Alexander Neundorf"
 
-#: src/konqapplication.cpp:182
+#: src/konqapplication.cpp:179
 #, fuzzy, kde-format
 #| msgid "developer (List views)"
 msgid "Developer (List views)"
 msgstr "pemaju (Pelihat senarai)"
 
-#: src/konqapplication.cpp:183
+#: src/konqapplication.cpp:180
 #, kde-format
 msgid "Michael Brade"
 msgstr ""
 
-#: src/konqapplication.cpp:183
+#: src/konqapplication.cpp:180
 #, fuzzy, kde-format
 #| msgid "developer (List views, I/O lib)"
 msgid "Developer (List views, I/O library)"
 msgstr "pemaju (pelihat senarai , pustaka I/O)"
 
-#: src/konqapplication.cpp:184
+#: src/konqapplication.cpp:181
 #, fuzzy, kde-format
 msgid "Lars Knoll"
 msgstr "Lars Knoll"
 
-#: src/konqapplication.cpp:184 src/konqapplication.cpp:185
+#: src/konqapplication.cpp:181 src/konqapplication.cpp:182
+#: src/konqapplication.cpp:183 src/konqapplication.cpp:185
 #: src/konqapplication.cpp:186 src/konqapplication.cpp:188
-#: src/konqapplication.cpp:189 src/konqapplication.cpp:191
-#: src/konqapplication.cpp:192 src/konqapplication.cpp:193
-#: src/konqapplication.cpp:194 src/konqapplication.cpp:196
+#: src/konqapplication.cpp:189 src/konqapplication.cpp:190
+#: src/konqapplication.cpp:191 src/konqapplication.cpp:193
 #, fuzzy, kde-format
 #| msgid "developer (HTML rendering engine)"
 msgid "Developer (HTML rendering engine)"
 msgstr "pemaju (enjin penjana HTML)"
 
-#: src/konqapplication.cpp:185
+#: src/konqapplication.cpp:182
 #, fuzzy, kde-format
 msgid "Dirk Mueller"
 msgstr "Dirk Mueller"
 
-#: src/konqapplication.cpp:186
+#: src/konqapplication.cpp:183
 #, fuzzy, kde-format
 msgid "Peter Kelly"
 msgstr "Peter Kelly"
 
-#: src/konqapplication.cpp:187
+#: src/konqapplication.cpp:184
 #, fuzzy, kde-format
 msgid "Waldo Bastian"
 msgstr "Waldo Bastian"
 
-#: src/konqapplication.cpp:187
+#: src/konqapplication.cpp:184
 #, fuzzy, kde-format
 #| msgid "developer (HTML rendering engine, I/O lib)"
 msgid "Developer (HTML rendering engine, I/O library)"
 msgstr "pemaju (enjin penjana HTML, pustaka I/O)"
 
-#: src/konqapplication.cpp:188
+#: src/konqapplication.cpp:185
 #, kde-format
 msgid "Germain Garand"
 msgstr ""
 
-#: src/konqapplication.cpp:189 src/konqapplication.cpp:217
+#: src/konqapplication.cpp:186 src/konqapplication.cpp:214
 #, fuzzy, kde-format
 msgid "Leo Savernik"
 msgstr "Leo Savernik"
 
-#: src/konqapplication.cpp:190
+#: src/konqapplication.cpp:187
 #, fuzzy, kde-format
 msgid "Stephan Kulow"
 msgstr "Stephan Kulow"
 
-#: src/konqapplication.cpp:190
+#: src/konqapplication.cpp:187
 #, fuzzy, kde-format
 #| msgid ""
 #| "developer (HTML rendering engine, I/O lib, regression test framework)"
@@ -304,107 +304,107 @@ msgid ""
 "Developer (HTML rendering engine, I/O library, regression test framework)"
 msgstr "pemaju (enjin penjana HTML, pustaka I/O, uji regresi rangka kerja)"
 
-#: src/konqapplication.cpp:191
+#: src/konqapplication.cpp:188
 #, fuzzy, kde-format
 msgid "Antti Koivisto"
 msgstr "Antti Koivisto"
 
-#: src/konqapplication.cpp:192
+#: src/konqapplication.cpp:189
 #, kde-format
 msgid "Zack Rusin"
 msgstr ""
 
-#: src/konqapplication.cpp:193
+#: src/konqapplication.cpp:190
 #, fuzzy, kde-format
 msgid "Tobias Anton"
 msgstr "Tobias Anton"
 
-#: src/konqapplication.cpp:194
+#: src/konqapplication.cpp:191
 #, fuzzy, kde-format
 msgid "Lubos Lunak"
 msgstr "Lubos Lunak"
 
-#: src/konqapplication.cpp:195
+#: src/konqapplication.cpp:192
 #, kde-format
 msgid "Maks Orlovich"
 msgstr ""
 
-#: src/konqapplication.cpp:195 src/konqapplication.cpp:197
+#: src/konqapplication.cpp:192 src/konqapplication.cpp:194
 #, fuzzy, kde-format
 #| msgid "developer (HTML rendering engine, JavaScript)"
 msgid "Developer (HTML rendering engine, JavaScript)"
 msgstr "pemaju (enjin penjana HTML, JavaScript)"
 
-#: src/konqapplication.cpp:196
+#: src/konqapplication.cpp:193
 #, fuzzy, kde-format
 msgid "Allan Sandfeld Jensen"
 msgstr "Allan Sandfeld Jensen"
 
-#: src/konqapplication.cpp:197
+#: src/konqapplication.cpp:194
 #, kde-format
 msgid "Apple Safari Developers"
 msgstr ""
 
-#: src/konqapplication.cpp:198
+#: src/konqapplication.cpp:195
 #, fuzzy, kde-format
 msgid "Harri Porten"
 msgstr "Harri Porten"
 
-#: src/konqapplication.cpp:198
+#: src/konqapplication.cpp:195
 #, fuzzy, kde-format
 #| msgid "developer (JavaScript)"
 msgid "Developer (JavaScript)"
 msgstr "pemaju (JavaScript)"
 
-#: src/konqapplication.cpp:199
+#: src/konqapplication.cpp:196
 #, kde-format
 msgid "Koos Vriezen"
 msgstr ""
 
-#: src/konqapplication.cpp:199
+#: src/konqapplication.cpp:196
 #, fuzzy, kde-format
 #| msgid "developer (Java applets and other embedded objects)"
 msgid "Developer (Java applets and other embedded objects)"
 msgstr "pemaju (sokongan aplet Java dan objek terbenam)"
 
-#: src/konqapplication.cpp:200
+#: src/konqapplication.cpp:197
 #, kde-format
 msgid "Matt Koss"
 msgstr ""
 
-#: src/konqapplication.cpp:200 src/konqapplication.cpp:201
+#: src/konqapplication.cpp:197 src/konqapplication.cpp:198
 #, fuzzy, kde-format
 #| msgid "developer (I/O lib)"
 msgid "Developer (I/O library)"
 msgstr "pemaju (pustaka I/O)"
 
-#: src/konqapplication.cpp:201
+#: src/konqapplication.cpp:198
 #, fuzzy, kde-format
 msgid "Alex Zepeda"
 msgstr "Alex Zepeda"
 
-#: src/konqapplication.cpp:202
+#: src/konqapplication.cpp:199
 #, fuzzy, kde-format
 msgid "Richard Moore"
 msgstr "Richard Moore"
 
-#: src/konqapplication.cpp:202 src/konqapplication.cpp:203
+#: src/konqapplication.cpp:199 src/konqapplication.cpp:200
 #, fuzzy, kde-format
 #| msgid "developer (Java applet support)"
 msgid "Developer (Java applet support)"
 msgstr "pemaju (sokongan aplet Java)"
 
-#: src/konqapplication.cpp:203
+#: src/konqapplication.cpp:200
 #, fuzzy, kde-format
 msgid "Dima Rogozin"
 msgstr "Dima Rogozin"
 
-#: src/konqapplication.cpp:204
+#: src/konqapplication.cpp:201
 #, kde-format
 msgid "Wynn Wilkes"
 msgstr ""
 
-#: src/konqapplication.cpp:204
+#: src/konqapplication.cpp:201
 #, fuzzy, kde-format
 #| msgid ""
 #| "developer (Java 2 security manager support,\n"
@@ -416,183 +416,183 @@ msgstr ""
 "pemaju (sokongan pengurus sekuriti Java 2,\n"
 " dan perubahan besar kepada sokongan aplet)"
 
-#: src/konqapplication.cpp:205
+#: src/konqapplication.cpp:202
 #, kde-format
 msgid "Stefan Schimanski"
 msgstr ""
 
-#: src/konqapplication.cpp:205
+#: src/konqapplication.cpp:202
 #, fuzzy, kde-format
 #| msgid "developer (Netscape plugin support)"
 msgid "Developer (Netscape plugin support)"
 msgstr "pemaju (sokongan plug masuk Netscape)"
 
-#: src/konqapplication.cpp:206
+#: src/konqapplication.cpp:203
 #, fuzzy, kde-format
 msgid "George Staikos"
 msgstr "George Staikos"
 
-#: src/konqapplication.cpp:206
+#: src/konqapplication.cpp:203
 #, fuzzy, kde-format
 #| msgid "developer (SSL, Netscape plugins)"
 msgid "Developer (SSL, Netscape plugins)"
 msgstr "pemaju (SSL, plug masuk Netscape)"
 
-#: src/konqapplication.cpp:207
+#: src/konqapplication.cpp:204
 #, fuzzy, kde-format
 msgid "Dawit Alemayehu"
 msgstr "Dawit Alemayehu"
 
-#: src/konqapplication.cpp:207
+#: src/konqapplication.cpp:204
 #, fuzzy, kde-format
 #| msgid "developer (I/O lib, Authentication support)"
 msgid "Developer (I/O library, Authentication support)"
 msgstr "pemaju (pustaka I/O, sokongan Autentikasi)"
 
-#: src/konqapplication.cpp:208
+#: src/konqapplication.cpp:205
 #, fuzzy, kde-format
 msgid "Carsten Pfeiffer"
 msgstr "Carsten Pfeiffer"
 
-#: src/konqapplication.cpp:209
+#: src/konqapplication.cpp:206
 #, fuzzy, kde-format
 msgid "Torsten Rahn"
 msgstr "Torsten Rahn"
 
-#: src/konqapplication.cpp:209
+#: src/konqapplication.cpp:206
 #, fuzzy, kde-format
 #| msgid "graphics/icons"
 msgid "Graphics/icons"
 msgstr "grafik/ikon"
 
-#: src/konqapplication.cpp:210
+#: src/konqapplication.cpp:207
 #, fuzzy, kde-format
 msgid "Torben Weis"
 msgstr "Torben Weis"
 
-#: src/konqapplication.cpp:210
+#: src/konqapplication.cpp:207
 #, fuzzy, kde-format
 #| msgid "kfm author"
 msgid "KFM author"
 msgstr "pengarang kfm"
 
-#: src/konqapplication.cpp:211
+#: src/konqapplication.cpp:208
 #, fuzzy, kde-format
 msgid "Joseph Wenninger"
 msgstr "Joseph Wenninger"
 
-#: src/konqapplication.cpp:211
+#: src/konqapplication.cpp:208
 #, fuzzy, kde-format
 #| msgid "developer (navigation panel framework)"
 msgid "Developer (navigation panel framework)"
 msgstr "pemaju (kerangka panel navigasi)"
 
-#: src/konqapplication.cpp:212
+#: src/konqapplication.cpp:209
 #, kde-format
 msgid "Stephan Binner"
 msgstr ""
 
-#: src/konqapplication.cpp:212
+#: src/konqapplication.cpp:209
 #, fuzzy, kde-format
 #| msgid "developer (misc stuff)"
 msgid "Developer (misc stuff)"
 msgstr "pemaju (lain-lain perkara)"
 
-#: src/konqapplication.cpp:213
+#: src/konqapplication.cpp:210
 #, kde-format
 msgid "Ivor Hewitt"
 msgstr ""
 
-#: src/konqapplication.cpp:213
+#: src/konqapplication.cpp:210
 #, fuzzy, kde-format
 #| msgid "developer (AdBlock filter)"
 msgid "Developer (AdBlock filter)"
 msgstr "pembangun (penapis AdBlock)"
 
-#: src/konqapplication.cpp:214
+#: src/konqapplication.cpp:211
 #, kde-format
 msgid "Eduardo Robles Elvira"
 msgstr ""
 
-#: src/konqapplication.cpp:215
+#: src/konqapplication.cpp:212
 #, kde-format
 msgid "Matthias Kalle Dalheimer"
 msgstr ""
 
-#: src/konqapplication.cpp:216
+#: src/konqapplication.cpp:213
 #, kde-format
 msgid "Daniel Molkentin"
 msgstr ""
 
-#: src/konqapplication.cpp:217
+#: src/konqapplication.cpp:214
 #, kde-format
 msgid ""
 "JavaScript access controls\n"
 "Per-domain policies extensions"
 msgstr ""
 
-#: src/konqapplication.cpp:228
+#: src/konqapplication.cpp:225
 #, fuzzy, kde-format
 #| msgid "Start without a default window"
 msgid "Start without a default window, when called without URLs"
 msgstr "Mulakan tanpa tetingkap default"
 
-#: src/konqapplication.cpp:229
+#: src/konqapplication.cpp:226
 #, kde-format
 msgid ""
 "Preload for later use. This mode does not support URLs on the command line"
 msgstr ""
 
-#: src/konqapplication.cpp:230
+#: src/konqapplication.cpp:227
 #, kde-format
 msgid "Profile to open (DEPRECATED, IGNORED)"
 msgstr ""
 
-#: src/konqapplication.cpp:230
+#: src/konqapplication.cpp:227
 #, kde-format
 msgid "profile"
 msgstr ""
 
-#: src/konqapplication.cpp:231
+#: src/konqapplication.cpp:228
 #, fuzzy, kde-format
 #| msgid "List available profiles"
 msgid "List available sessions and exit"
 msgstr "Senarai profail yang ada"
 
-#: src/konqapplication.cpp:232
+#: src/konqapplication.cpp:229
 #, fuzzy, kde-format
 #| msgid "Location to open"
 msgid "Session to open"
 msgstr "Lokasi untuk dibuka"
 
-#: src/konqapplication.cpp:232
+#: src/konqapplication.cpp:229
 #, fuzzy, kde-format
 #| msgid "Permissions"
 msgid "session"
 msgstr "Sesi"
 
-#: src/konqapplication.cpp:233
+#: src/konqapplication.cpp:230
 #, kde-format
 msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
 msgstr ""
 "Jenis mime yang digunakan untuk URL ini (cth. teks/html atau inode/direktori)"
 
-#: src/konqapplication.cpp:233
+#: src/konqapplication.cpp:230
 #, kde-format
 msgid "mimetype"
 msgstr ""
 
-#: src/konqapplication.cpp:234
+#: src/konqapplication.cpp:231
 #, kde-format
 msgid "Part to use (e.g. khtml or kwebkitpart)"
 msgstr ""
 
-#: src/konqapplication.cpp:234
+#: src/konqapplication.cpp:231
 #, kde-format
 msgid "service"
 msgstr ""
 
-#: src/konqapplication.cpp:235
+#: src/konqapplication.cpp:232
 #, kde-format
 msgid ""
 "For URLs that point to files, opens the directory and selects the file, "
@@ -601,39 +601,39 @@ msgstr ""
 "Untuk URL yang ditunjuk kepada fail, buka direktori dan pilih fail "
 "berkenaan, dan bukannya membuka fail sebenar"
 
-#: src/konqapplication.cpp:236
+#: src/konqapplication.cpp:233
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr ""
 
-#: src/konqapplication.cpp:238
+#: src/konqapplication.cpp:235
 #, kde-format
 msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
 "only when developing Konqueror itself"
 msgstr ""
 
-#: src/konqapplication.cpp:240
+#: src/konqapplication.cpp:237
 #, kde-format
 msgid "Location to open"
 msgstr "Lokasi untuk dibuka"
 
-#: src/konqapplication.cpp:355
+#: src/konqapplication.cpp:352
 #, fuzzy, kde-format
 #| msgid "Location to open"
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
 msgstr "Lokasi untuk dibuka"
 
-#: src/konqapplication.cpp:481
+#: src/konqapplication.cpp:478
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4838
-#: src/konqmainwindow.cpp:4884
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4864
+#: src/konqmainwindow.cpp:4910
 #, fuzzy, kde-format
 #| msgctxt "NAME OF TRANSLATORS"
 #| msgid "Your names"
@@ -844,7 +844,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1627 src/konqmainwindow.cpp:2265
 #: src/konqmainwindow.cpp:2354 src/konqmainwindow.cpp:2386
 #: src/konqmainwindow.cpp:2429 src/konqmainwindow.cpp:2451
-#: src/konqmainwindow.cpp:4803
+#: src/konqmainwindow.cpp:4829
 #, fuzzy, kde-format
 #| msgid "Discard Changes?"
 msgctxt "@title:window"
@@ -854,7 +854,7 @@ msgstr "Abaikan Perubahan?"
 #: src/konqmainwindow.cpp:1627 src/konqmainwindow.cpp:2265
 #: src/konqmainwindow.cpp:2354 src/konqmainwindow.cpp:2386
 #: src/konqmainwindow.cpp:2429 src/konqmainwindow.cpp:2452
-#: src/konqmainwindow.cpp:4803
+#: src/konqmainwindow.cpp:4829
 #, kde-format
 msgid "&Discard Changes"
 msgstr "&Abaikan Perubahan"
@@ -1539,25 +1539,25 @@ msgstr "Buka di dalam Tab Baru"
 msgid "Open the document in a new tab"
 msgstr "Buka dokumen di dalam tetingkap baru"
 
-#: src/konqmainwindow.cpp:4581
+#: src/konqmainwindow.cpp:4607
 #, fuzzy, kde-format
 #| msgid "Open with %1"
 msgid "&Open With"
 msgstr "&Buka Dengan"
 
-#: src/konqmainwindow.cpp:4594
+#: src/konqmainwindow.cpp:4620
 #, kde-format
 msgid "Open with %1"
 msgstr "Buka dengan %1"
 
-#: src/konqmainwindow.cpp:4644
+#: src/konqmainwindow.cpp:4670
 #, fuzzy, kde-format
 #| msgid "&View Mode"
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "Mo&d Lihat"
 
-#: src/konqmainwindow.cpp:4767
+#: src/konqmainwindow.cpp:4793
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
@@ -1565,19 +1565,19 @@ msgstr ""
 "Anda mempunyai banyak tab yang dibuka pada tetingkap ini, anda pasti mahu "
 "keluar?"
 
-#: src/konqmainwindow.cpp:4769
+#: src/konqmainwindow.cpp:4795
 #, fuzzy, kde-format
 #| msgid "Confirmation"
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Kepastian"
 
-#: src/konqmainwindow.cpp:4771
+#: src/konqmainwindow.cpp:4797
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "Tutup Tab Semasa"
 
-#: src/konqmainwindow.cpp:4799
+#: src/konqmainwindow.cpp:4825
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1586,7 +1586,7 @@ msgstr ""
 "Kandungan tab ini mengandungi perubahan yang belum dihantar.\n"
 "Menutup tetingkap akan mengabaikan perubahan ini."
 
-#: src/konqmainwindow.cpp:4800
+#: src/konqmainwindow.cpp:4826
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1595,36 +1595,36 @@ msgstr ""
 "Kandungan laman ini mengandungi perubahan yang belum dihantar.\n"
 "Menutup tetingkap akan mengabaikan perubahan ini."
 
-#: src/konqmainwindow.cpp:4960
+#: src/konqmainwindow.cpp:4986
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr ""
 "Papan sisi anda tiada atau tidak berfungsi. Input baru tidak boleh ditambah."
 
-#: src/konqmainwindow.cpp:4960 src/konqmainwindow.cpp:4967
+#: src/konqmainwindow.cpp:4986 src/konqmainwindow.cpp:4993
 #, fuzzy, kde-format
 #| msgid "Web Sidebar"
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Papan Sisi Web"
 
-#: src/konqmainwindow.cpp:4965
+#: src/konqmainwindow.cpp:4991
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Tambah sambungan web baru \"%1\" kepada papan sisi anda?"
 
-#: src/konqmainwindow.cpp:4967
+#: src/konqmainwindow.cpp:4993
 #, fuzzy, kde-format
 msgid "Add"
 msgstr "Tambah"
 
-#: src/konqmainwindow.cpp:4967
+#: src/konqmainwindow.cpp:4993
 #, fuzzy, kde-format
 msgid "Do Not Add"
 msgstr "Jangan Tambah"
 
-#: src/konqmainwindow.cpp:5315
+#: src/konqmainwindow.cpp:5341 src/urlloader.cpp:802
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1633,7 +1633,7 @@ msgstr ""
 "Terdapat ralat konfigurasi. Anda telah mengaitkan Konqueror dengan %1, "
 "tetapi ia tidak dapat menangani jenis fail ini."
 
-#: src/konqmainwindow.cpp:5400
+#: src/konqmainwindow.cpp:5426
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1646,23 +1646,23 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5405
+#: src/konqmainwindow.cpp:5431
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5405
+#: src/konqmainwindow.cpp:5431
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5406 src/konqmainwindow.cpp:5434
+#: src/konqmainwindow.cpp:5432 src/konqmainwindow.cpp:5460
 #, fuzzy, kde-format
 #| msgid "Show Configuration Button"
 msgid "Show proxy configuration dialog"
 msgstr "Papar Butang Penyelarasan"
 
-#: src/konqmainwindow.cpp:5430
+#: src/konqmainwindow.cpp:5456
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1671,22 +1671,22 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5433
+#: src/konqmainwindow.cpp:5459
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5434
+#: src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5434
+#: src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5450
+#: src/konqmainwindow.cpp:5476
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -2022,19 +2022,19 @@ msgstr "Amaran"
 msgid "Resend"
 msgstr "Kirim Semula"
 
-#: src/urlloader.cpp:421
+#: src/urlloader.cpp:422
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr ""
 
-#: src/urlloader.cpp:424
+#: src/urlloader.cpp:425
 #, kde-format
 msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
 msgstr ""
 
-#: src/urlloader.cpp:431
+#: src/urlloader.cpp:432
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -2044,14 +2044,14 @@ msgid ""
 "display it?"
 msgstr ""
 
-#: src/urlloader.cpp:437
+#: src/urlloader.cpp:438
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
-#: src/urlloader.cpp:747
+#: src/urlloader.cpp:748
 #, fuzzy, kde-format
 #| msgid "Set Name..."
 msgid "Save As"
