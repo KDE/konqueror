@@ -14,13 +14,13 @@
 # obsoleteman <tulliana@gmail.com>, 2008-2009.
 # obsoleteman <tulliana@gmail.com>, 2010,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014, 2015.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# SPDX-FileCopyrightText: 2022, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2022-10-18 05:49+0300\n"
+"PO-Revision-Date: 2024-11-27 13:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
@@ -44,15 +44,15 @@ msgid ""
 "a folder) are not displayed.\n"
 "If checked, they are gathered in a \"root\" folder."
 msgstr ""
-"Eğer bu seçenek seçilmezse sıralamanın kökünde bulunan (bir klasörde "
-"olmayan) yer imleri gösterilmeyecek.\n"
-"Eğer seçilirse bu yer imleri bir \"kök\" klasörde toplanacak."
+"Bu seçenek işaretlenmemişse hiyerarşinin kökündeki yer imleri (klasörde "
+"olmayan) görüntülenmez.\n"
+"İşaretlenmişse bir “kök” klasörde toplanırlar."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
 #: bookmarks.ui:26
 #, kde-format
 msgid "&Show bookmarks without folder"
-msgstr "Yer imlerini klasörler &olmadan göster"
+msgstr "Yer imlerini klasör &olmadan göster"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
 #: bookmarks.ui:37
@@ -63,10 +63,10 @@ msgid ""
 "It looks less nice but it may help if you have a very big folder you want to "
 "spread in two columns."
 msgstr ""
-"Alt klasörler öntanımlı olarak kendi üst klasörleri içinde gösterilir. Eğer "
-"bu seçeneği etkinleştirirseniz alt klasörler ayrı gösterilir.\n"
-"Bu kötü görünür; ancak eğer iki sütunda gösterilmesini istediğiniz çok büyük "
-"bir dizininiz varsa kullanışlıdır."
+"Alt klasörler öntanımlı olarak üst ögelerinde gösterilir. Bu seçeneği "
+"etkinleştirirseniz alt klasörler kendi başlarına görüntülenir.\n"
+"Daha az güzel görünürler; ancak iki sütuna yayılmak istediğiniz çok büyük "
+"bir klasörünüz varsa yardımcı olabilir."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
 #: bookmarks.ui:40
@@ -81,8 +81,8 @@ msgid ""
 "Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
 "as a file manager."
 msgstr ""
-"KDE konumlarını içeren bir kutucuk göster (Ana Klasör, Ağ, ...). Dosya "
-"yöneticisi olarak Konqueror kullanıyorsanız kullanışlıdır."
+"Ortak konumları gösteren bir ortak kutu göster (Ana Klasör, Ağ, …). Dosya "
+"yöneticisi olarak kullanıyorsanız yararlıdır."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
 #: bookmarks.ui:50
@@ -104,9 +104,9 @@ msgid ""
 "of columns depends on the width of the konqueror window and the number of "
 "bookmarks you have."
 msgstr ""
-"Klasörler otomatik olarak birkaç sütuna dağıtılmıştır. En uygun sütun "
-"sayısı, Konqueror penceresinin genişliğine ve kaç tane yer iminiz olduğuna "
-"göre değişir."
+"Klasörler kendiliğinden birkaç sütuna dağıtılır. Olabilecek en iyi sütun "
+"sayısı, Konqueror penceresinin genişliğine ve sahip olduğunuz yer imlerinin "
+"sayısına bağlıdır."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: bookmarks.ui:74
@@ -119,8 +119,8 @@ msgstr "Gösterilecek sütunların sayısı:"
 #, kde-format
 msgid "Disable it on slow system to disable background images."
 msgstr ""
-"Bu seçeneği yavaş sistemlerde arka plan görsellerini pasifleştirmek için "
-"etkisizleştirin."
+"Arka plan görsellerini yavaş sistemlerde devre dışı bırakmak "
+"isteyebilirsiniz."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
 #: bookmarks.ui:112
@@ -132,7 +132,7 @@ msgstr "&Klasör arka planlarını göster"
 #: bookmarks.ui:138
 #, kde-format
 msgid "How much disk space is used to cache the pixmaps"
-msgstr "Piksel eşlemi için kullanılacak disk alanı"
+msgstr "Piksel eşlemlerini önbelleklemek için kullanılacak disk alanı"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: bookmarks.ui:141
@@ -144,7 +144,7 @@ msgstr "Piksel Eşlemi Önbelleği"
 #: bookmarks.ui:150
 #, kde-format
 msgid "Disk cache size:"
-msgstr "Disk önbellek boyutu:"
+msgstr "Disk önbelleği boyutu:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
 #: bookmarks.ui:163
