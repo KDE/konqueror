@@ -1,7 +1,7 @@
 # Finnish messages for kwebkitpart.
 # Copyright © 2011, 2012 This_file_is_part_of_KDE
 # This file is distributed under the same license as the extragear-base package.
-# Tommi Nieminen <translator@legisign.org>, 2010, 2011, 2016, 2017, 2018, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2010, 2011, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
 # Jorma Karvonen <karvonen.jorma@gmail.com>, 2011.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2012, 2013, 2014, 2016, 2017.
 #
@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-04 00:39+0000\n"
-"PO-Revision-Date: 2023-12-11 15:34+0200\n"
+"PO-Revision-Date: 2024-11-06 20:52+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -22,18 +22,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-POT-Import-Date: 2012-12-01 22:20:04+0000\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Tommi Nieminen,Jorma Karvonen"
+msgstr "Tommi Nieminen, Jorma Karvonen"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "translator@legisign.org,karvonen.jorma@gmail.com"
+msgstr "translator@legisign.org, karvonen.jorma@gmail.com"
 
 #: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:74
 #: src/about/konq_aboutpage.cpp:197 src/about/konq_aboutpage.cpp:199
@@ -314,71 +313,63 @@ msgstr ""
 #, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
-msgstr ""
+msgstr " tallennettiin nimellä "
 
 #: src/actondownloadedfilebar.cpp:120
 #, kde-format
 msgctxt "@label location where a remote URL was downloaded"
 msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
-msgstr ""
+msgstr "<tt>%1</tt> tallennettiin nimellä <tt>%2</tt>"
 
 #: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "Avaa ”%1”"
+msgstr "Avaa ohjelmalla…"
 
 #: src/actondownloadedfilebar.cpp:146
-#, fuzzy, kde-format
-#| msgid "OpenSSL"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "OpenSSL"
+msgstr "Avaa"
 
 #: src/actondownloadedfilebar.cpp:155
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Avaa ”%1”"
+msgstr "Avaa &ohjelmalla %1"
 
 #: src/actondownloadedfilebar.cpp:184
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
-msgstr ""
+msgstr "Avaa uuteen välilehteen"
 
 #: src/actondownloadedfilebar.cpp:184
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here"
-msgstr ""
+msgstr "Näytä tässä"
 
 #: src/actondownloadedfilebar.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "Avaa ”%1”"
+msgstr "Avaa &ohjelmalla %1"
 
 #: src/capturesourcechooserdlg.cpp:29
 #, kde-format
 msgid ""
 "Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
-msgstr ""
+msgstr "<tt>%1</tt> pyytää lupaa kaapata näytön sisällön: sallitaanko tämä?"
 
 #: src/capturesourcechooserdlg.cpp:31
 #, kde-format
 msgid "Choose window or screen to capture"
-msgstr ""
+msgstr "Valitse kaapattava ikkuna tai näyttö"
 
 #: src/capturesourcechooserdlg.cpp:38
-#, fuzzy, kde-format
-#| msgid "Allow"
+#, kde-format
 msgctxt "Allow a web page to capture the screen"
 msgid "Allow"
 msgstr "Salli"
@@ -387,25 +378,19 @@ msgstr "Salli"
 #, kde-format
 msgctxt "Block a web page from capturing the screen"
 msgid "Block"
-msgstr ""
+msgstr "Estä"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "Choose Save Format"
+#, kde-format
 msgid "Choose Capture Source"
-msgstr "Valitse tallennusmuoto"
+msgstr "Valitse kaappauslähde"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "Do you want to allow this page to capture the contents of your screen?"
-msgstr ""
-"<qt>Haluatko antaa sivuston liittää seuraavat tiedostot sähköpostiviestiin?</"
-"qt>"
+msgstr "Haluatko antaa tälle sivulle luvan kaapata näytön sisällön?"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1241,7 +1226,7 @@ msgstr "&Täytä lomakkeet nyt"
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "Look Again for Forms"
-msgstr ""
+msgstr "Etsi lomakkeita uudelleen"
 
 #: src/webenginepart.cpp:1017
 #, kde-format
