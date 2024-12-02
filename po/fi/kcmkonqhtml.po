@@ -6,7 +6,7 @@
 # Teemu Rytilahti <teemu.rytilahti@kde-fi.org>, 2003, 2004, 2008.
 # Tapio Kautto <eleknader@phnet.fi>, 2004.
 # Ilpo Kantonen <ilpo@iki.fi>, 2005.
-# Tommi Nieminen <translator@legisign.org>, 2009, 2016, 2018, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2009, 2016, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
 # Jorma Karvonen <karvonen.jorma@gmail.com>, 2010.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2011, 2012, 2013, 2014, 2016.
 #
@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-24 00:38+0000\n"
-"PO-Revision-Date: 2023-12-11 15:33+0200\n"
+"PO-Revision-Date: 2024-10-21 19:46+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -28,8 +28,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-POT-Import-Date: 2012-12-01 22:22:01+0000\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -905,7 +904,7 @@ msgstr "&Muokatut…"
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Mukautettu sivun tausta"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -924,21 +923,34 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Käytä verkkosivuille mukautettua "
+"taustaväriä. Väriä käytetään:</p><ul style=\"margin-top: 0px; margin-bottom: "
+"0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li align="
+"\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">kun sivu tai "
+"mukautettu tyylisivu ei nimenomaisesti aseta taustaväriä</li><li align="
+"\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">ennen sivun "
+"lataamista</li></ul><p align=\"justify\">Mukautetun taustavärin "
+"asettamisesta on hyötyä ennen kaikkea, jos käytät mukautettua tyylisivua, "
+"joka asettaa sivun taustavärin (erityisesti tumman), jolloin välttyy "
+"valkoiselta välähdykseltä sivun latautuessa</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Käytä &mukautettua taustaväriä"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>Verkkosivuilla käytettävä mukautettu taustaväri.</p></"
+"body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -961,12 +973,27 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Lisää mukautettuun tyylisivuun "
+"(samoin kuin saavutettavuustyylisivuun) sääntö asettaa kaikki taustavärit "
+"yllä valituksi väriksi. Näin vältyy asettamasta taustaväriä sekä "
+"tyylisivulla että asetuksissa.</p><p align=\"justify\"><span style=\" font-"
+"weight:600;\">Huomaa:</span></p><ul style=\"margin-top: 0px; margin-bottom: "
+"0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li align="
+"\"justify\" style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">muut "
+"taustaväriasetukset ohittavat mukautetun tyylisivun asetuksen tavallisten "
+"CSS-sääntöjen mukaan</li><li align=\"justify\" style=\" margin-top:0px; "
+"margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">sääntöä ei lisätä mukautetun tyylisivun tiedostoon vaan "
+"ainoastaan Konquerorin muistissaan pitämään kopioon. Jos siis samaa "
+"tyylisivua käyttää muissakin selaimissa, sinun on lisättävä se tiedostoon "
+"itse.</li></ul></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Lisää mukautettu taustaväri tyylisivuun"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
@@ -1810,17 +1837,16 @@ msgstr ""
 "Lähetä DNT-otsake kertoaksesi sivustoille, ettet halua sinua seurattavan"
 
 #: htmlopts.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this box if you want to inform a web site that you do not want your "
-#| "web browsing habits tracked."
+#, kde-format
 msgid ""
 "<p>Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
 "considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
-"Valitse tämä, jos haluat ilmoittaa sivustoille, ettet halua verkkoselailuasi "
-"ja selailutapojasi seurattavan"
+"<p>Valitse tämä, jos haluat ilmoittaa sivustoille, ettet halua "
+"verkkoselailuasi ja selailutapojasi seurattavan.</p><p><strong>Varoitus:</"
+"strong> otsaketta pidetään vanhentuneena, joten useimmat sivustot "
+"todennäköisesti sivuuttavat sen.</p>"
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -1848,7 +1874,7 @@ msgstr ""
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Always display files from web pages in a new tab"
-msgstr ""
+msgstr "Näytä tiedostot verkkosivuilta aina uudessa välilehdessä"
 
 #: htmlopts.cpp:137
 #, kde-format
@@ -1856,6 +1882,8 @@ msgid ""
 "<p>When showing in Konqueror files from links in web pages, always use a new "
 "tab"
 msgstr ""
+"<p>Näytettäessä Konquerorissa tiedostoja verkkosivujen linkeistä, käytä aina "
+"uutta välilehteä"
 
 #: jsopts.cpp:57
 #, kde-format
@@ -2298,6 +2326,10 @@ msgid ""
 "\">shift</span> when opening a new tab to reverse this behavior</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>Avaa uuden välilehden taustalle edustan sijaan.</"
+"p><p>Toiminnan voi kääntää vastakkaiseksi painamalla <span style=\"font-"
+"family: 'Fira Code';\">vaihtonäppäintä</span> uutta välilehteä avattaessa.</"
+"p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
@@ -2441,12 +2473,13 @@ msgstr "&Valitse tämä identiteetti"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:160
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p><br/></p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
-msgstr "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+"<html><head/><body><p>Jos valittu, poistetaan käytöstä mukautettu "
+"tunnistautuminen ja käytetään oletusta</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:163

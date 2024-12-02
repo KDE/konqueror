@@ -3,6 +3,7 @@
 # KDE Finnish translation sprint participants:
 # Author: Artnay
 # Author: Lliehu
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
 # Kim Enkovaara <kim.enkovaara@iki.fi>, 2002, 2003, 2006.
 # Teemu Rytilahti <teemu.rytilahti@d5k.net>, 2003.
 # Mikko Ikola <kola@netikka.fi>, 2003.
@@ -12,7 +13,6 @@
 # Teemu Rytilahti <tpr@d5k.net>, 2005, 2008.
 # Mikko Ikola <ikola@iki.fi>, 2005.
 # Mikko Piippo <piippo@cc.helsinki.fi>, 2007.
-# Tommi Nieminen <translator@legisign.org>, 2010, 2011, 2012, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
 # Jiri Grönroos <jiri.gronroos+kde@iki.fi>, 2012.
 msgid ""
@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-24 02:34+0000\n"
-"PO-Revision-Date: 2024-02-02 12:52+0200\n"
+"PO-Revision-Date: 2024-11-17 10:09+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -28,8 +28,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-POT-Import-Date: 2012-12-01 22:22:03+0000\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -50,96 +49,85 @@ msgstr ""
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "Tyyppi: %1"
 
 #: src/downloadactionquestion.cpp:170
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "Muista toimenpide tälle tiedostotyypille"
 
 #: src/downloadactionquestion.cpp:286
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
-msgstr ""
+msgstr "Tallennetaanko ”%1”?"
 
 #: src/downloadactionquestion.cpp:288
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr "Avaa ohjelmaan %1"
+msgstr "Avataanko ”%1”?"
 
 #: src/downloadactionquestion.cpp:306
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr "Avaa &ohjelmaan"
+msgstr "Avaa &ohjelmaan…"
 
 #: src/downloadactionquestion.cpp:314 src/downloadactionquestion.cpp:467
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr "Avaa ohjelmaan %1"
+msgstr "Avaa o&hjelmaan %1"
 
 #: src/downloadactionquestion.cpp:323
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
-msgstr "Avaa &ohjelmaan"
+msgstr "&Avaa ohjelmaan"
 
 #: src/downloadactionquestion.cpp:339
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
-msgstr "Näytä"
+msgstr "&Näytä ohjelmassa %1"
 
 #: src/downloadactionquestion.cpp:351
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
-msgstr "Näytä"
+msgstr "Näytä &ohjelmassa"
 
 #: src/downloadactionquestion.cpp:373
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Avaa ohjelmaan %1"
+msgstr "Avaa &ohjelmaan %1"
 
 #: src/downloadactionquestion.cpp:405
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
-msgstr "Näytä"
+msgstr "&Näytä ohjelmassa %1"
 
 #: src/downloadactionquestion.cpp:427
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
-msgstr ""
+msgstr "Tämä tiedosto ei tue katselimia"
 
 #: src/downloadactionquestion.cpp:431
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
-msgstr ""
+msgstr "Katselimet tuskin osaavat näyttää tiedoston sisältöä"
 
 #: src/downloadactionquestion.cpp:432
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
-msgstr ""
+msgstr "tämä tiedosto"
 
 #: src/downloadactionquestion.cpp:433
 #, kde-format
@@ -149,19 +137,22 @@ msgid ""
 "type is incorrect or if a viewer can display %1 even if it doesn't "
 "officially support it.</p>"
 msgstr ""
+"<p>Katselimet, joiden ei oleteta kykenevän näyttämään tyyppiä %1. Niiden "
+"käyttö todennäköisimmin epäonnistuu.</p><p>Nämä valinnat tarjotaan, koska "
+"tunnistettu tiedostotyyppi voi olla väärä tai katselin osaakin näyttää "
+"tyypin %1, vaikkei virallisesti tue sitä.</p>"
 
 #: src/downloadactionquestion.cpp:454
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr "Nimi:"
+msgstr "Nimi: %1"
 
 #: src/downloadactionquestion.cpp:456
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "Tämä on palvelimen ehdottama tiedostonimi"
 
 #: src/konqapplication.cpp:115
 #, kde-format
@@ -556,10 +547,9 @@ msgid "profile"
 msgstr "profiili"
 
 #: src/konqapplication.cpp:228
-#, fuzzy, kde-format
-#| msgid "List available sessions"
+#, kde-format
 msgid "List available sessions and exit"
-msgstr "Listaa saatavilla olevat istunnot"
+msgstr "Luettele saatavilla olevat istunnot ja lopeta"
 
 #: src/konqapplication.cpp:229
 #, kde-format
@@ -1959,9 +1949,7 @@ msgid "Execute"
 msgstr "Suorita"
 
 #: src/urlloader.cpp:425
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
 msgstr "Näytä"
