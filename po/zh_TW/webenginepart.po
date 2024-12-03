@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-04 00:39+0000\n"
-"PO-Revision-Date: 2024-09-10 01:34+0900\n"
+"PO-Revision-Date: 2024-12-02 17:03+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.08.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #, kde-format
@@ -296,12 +296,10 @@ msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>Mime 類型</td><td>描述</td><td>後綴</td><td>外掛程式</td>"
 
 #: src/actondownloadedfilebar.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@label location where a remote URL was downloaded"
-#| msgid "%1 was saved in %2"
+#, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
-msgstr "%1 已儲存於 %2"
+msgstr "已儲存為"
 
 #: src/actondownloadedfilebar.cpp:120
 #, kde-format
@@ -310,19 +308,16 @@ msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
 msgstr "<tt>%1</tt> 已儲存為 <tt>%2</tt>"
 
 #: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "用 %1 開啟(&W)"
+msgstr "開啟方式…"
 
 #: src/actondownloadedfilebar.cpp:146
-#, fuzzy, kde-format
-#| msgid "OpenSSL"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "OpenSSL"
+msgstr "開啟"
 
 #: src/actondownloadedfilebar.cpp:155
 #, kde-format
@@ -343,27 +338,24 @@ msgid "Show here"
 msgstr "在此顯示"
 
 #: src/actondownloadedfilebar.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "用 %1 開啟(&W)"
+msgstr "用 %1 顯示(&W)"
 
 #: src/capturesourcechooserdlg.cpp:29
 #, kde-format
 msgid ""
 "Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
-msgstr ""
+msgstr "您要允許 <tt>%1</tt> 擷取您螢幕上的內容嗎？"
 
 #: src/capturesourcechooserdlg.cpp:31
 #, kde-format
 msgid "Choose window or screen to capture"
-msgstr ""
+msgstr "選擇要擷取的視窗或螢幕"
 
 #: src/capturesourcechooserdlg.cpp:38
-#, fuzzy, kde-format
-#| msgid "Allow"
+#, kde-format
 msgctxt "Allow a web page to capture the screen"
 msgid "Allow"
 msgstr "允許"
@@ -372,23 +364,19 @@ msgstr "允許"
 #, kde-format
 msgctxt "Block a web page from capturing the screen"
 msgid "Block"
-msgstr ""
+msgstr "阻擋"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "Choose Save Format"
+#, kde-format
 msgid "Choose Capture Source"
-msgstr "選擇儲存格式"
+msgstr "選擇擷取來源"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "Do you want to allow this page to capture the contents of your screen?"
-msgstr "<qt>您允許此站台附加這些檔案在信件中嗎？</qt>"
+msgstr "您要允許此頁面擷取您螢幕上的內容嗎？"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1208,7 +1196,7 @@ msgstr "現在填入表單(&F)"
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "Look Again for Forms"
-msgstr ""
+msgstr "重新偵測表單"
 
 #: src/webenginepart.cpp:1017
 #, kde-format
