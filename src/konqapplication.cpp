@@ -562,6 +562,6 @@ bool KonquerorApplication::isActivityServiceRunning() const
 #ifdef KActivities_FOUND
     return m_activityConsumer->serviceStatus() == KActivities::Consumer::Running;
 #else
-    return false
+    return false;
 #endif
 }
