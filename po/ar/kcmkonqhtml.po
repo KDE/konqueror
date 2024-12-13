@@ -6,22 +6,23 @@
 # محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
 # AbdulAziz AlSharif <a.a-a.s@hotmail.com>, 2007.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# zayed <zayed.alsaidi@gmail.com>, 2008.
+# SPDX-FileCopyrightText: 2008, 2024 zayed <zayed.alsaidi@gmail.com>
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-24 00:38+0000\n"
-"PO-Revision-Date: 2014-09-10 20:31+0300\n"
-"Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"PO-Revision-Date: 2024-12-12 10:59+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -355,13 +356,13 @@ msgstr ""
 #: cache/cache.ui:54
 #, kde-format
 msgid "Auto"
-msgstr ""
+msgstr "آليّ"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:57
 #, kde-format
 msgid " MB"
-msgstr ""
+msgstr " م.بايت"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:85
@@ -391,97 +392,93 @@ msgstr ""
 #: cookies/kcookiesmanagement.ui:20
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "ابحث"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:27
 #, kde-format
 msgid "Search interactively for domains and hosts"
-msgstr ""
+msgstr "ابحث بشكل تفاعلي عن المجالات والمضيفين"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:43
 #, kde-format
 msgid "Site"
-msgstr ""
+msgstr "الموقع"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:48
 #, kde-format
 msgid "Cookie Name"
-msgstr ""
+msgstr "اسم الكعكة"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDelete)
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "D&elete"
 msgstr "ا&حذف"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
 #: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "Delete A&ll"
-msgstr "ا&حذف"
+msgstr "احذف ال&كلّ"
 
 #. i18n: ectx: property (text), widget (QPushButton, configPolicyButton)
 #: cookies/kcookiesmanagement.ui:70
 #, kde-format
 msgid "Configure &Policy..."
-msgstr ""
+msgstr "اضبط ال&سّياسة..."
 
 #. i18n: ectx: property (text), widget (QPushButton, reloadButton)
 #: cookies/kcookiesmanagement.ui:77
 #, kde-format
 msgid "&Reload List"
-msgstr ""
+msgstr "أ&عِد تحميل القائمة"
 
 #. i18n: ectx: property (title), widget (QGroupBox, detailsGroupBox)
 #: cookies/kcookiesmanagement.ui:97
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "التفاصيل"
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
 #: cookies/kcookiesmanagement.ui:106
 #, kde-format
 msgid "Name:"
-msgstr ""
+msgstr "الاسم:"
 
 #. i18n: ectx: property (text), widget (QLabel, valueLabel)
 #: cookies/kcookiesmanagement.ui:129
-#, fuzzy, kde-format
-#| msgid "Value"
+#, kde-format
 msgid "Value:"
-msgstr "القيمة"
+msgstr "القيمة:"
 
 #. i18n: ectx: property (text), widget (QLabel, domainLabel)
 #: cookies/kcookiesmanagement.ui:152
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain:"
-msgstr "المجال/النطاق"
+msgstr "المجال:"
 
 #. i18n: ectx: property (text), widget (QLabel, patchLabel)
 #: cookies/kcookiesmanagement.ui:175
 #, kde-format
 msgid "Path:"
-msgstr ""
+msgstr "المسار:"
 
 #. i18n: ectx: property (text), widget (QLabel, expiresLabel)
 #: cookies/kcookiesmanagement.ui:198
 #, kde-format
 msgid "Expires:"
-msgstr ""
+msgstr "تنقضي في:"
 
 #. i18n: ectx: property (text), widget (QLabel, secureLabel)
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
-msgstr ""
+msgstr "الأمن:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -494,13 +491,18 @@ msgid ""
 "unbrowsable.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"<p>فعّل دعم الكعكات. غالبًا ما تريد تفعيل دعم الكعكات وتخصيصها لتناسب احتياجات "
+"الخصوصيّك لديك.</p><p>\n"
+"رجاءً لاحظ بأنّ تعطيل دعم الكعكات قد يجعل من الصّعب تصفّح العديد من المواقع على "
+"الشّبكة.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
-#, fuzzy, kde-format
-#| msgid "Enable filters"
+#, kde-format
 msgid "Enable coo&kies"
-msgstr "مكّن ال&مرشحات"
+msgstr "فعّل ال&كعكات"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -515,12 +517,17 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"ارفض كعكات الطّرف الثّالث. هذه الكعكات تأتي من موقع يختلف عن الذي تتصفّحه. "
+"فمثلًا إن كنت تتصفّح <b>www.foobar.com</b> وهذا الخيار مفعّل، فستُعالج الكعكات "
+"من www.foobar.com فقط، وستُرفض الكعكات القادمة من أيّ موقع آخر. يقلّل هذا من "
+"احتمال تجميع ملّاك المواقع معلومات عن عادات التّصفّح لديك وتجميعها في لاحة.</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
 #, kde-format
 msgid "Only acce&pt cookies from originating server"
-msgstr ""
+msgstr "ا&قبل الكعكات من الخادوم الأصليّ فقط"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:46
@@ -534,13 +541,16 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
+"<p>اقبل آليًّا الكعكات المؤقّتة التي ستنقضي في نهاية الجلسة الحاليّة. لن تُخزّن "
+"هذه الكعكات في قرص الحاسوب الصّلب أو على جهاز خارجيّ، بل ستُحذف ما إن تُغلق كلّ "
+"التّطبيقات (مثل المتصفّح) التي تستخدمها.</p><p><u>لاحظ</u> يتجاوز تأشير هذا "
+"الخيار مبدئيّاتك كما وسياسات الكعكات الخاصّة بالمواقع لكعكات الجلسات.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
-#, fuzzy, kde-format
-#| msgid "A&utomatically load images"
+#, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr "&حمّل الصور آليًا"
+msgstr "اقبل كعكات الجلسة آ&ليًّا"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -562,50 +572,53 @@ msgid ""
 "precedence over the default policy.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"يحدد كيفية معالجة الكعكات المستلمة من جهاز بعيد: \n"
+"<ul>\n"
+"<li>سيتسبب <b>السؤال</b>  في أن تطلب كِيدِي تأكيدك متى أراد الخادم تثبيت "
+"الكعكات.</li>\n"
+"<li>سيتسبب <b>القبول</b> إلى قبول ملفات كعكات دون إخبارك. .</li>\n"
+"<li>سيتسبب <b>القبول حتى نهاية الجلسة</b>  إلى قبول الكعكات لكنها ستنتهي في "
+"نهاية الجلسة.</li>\n"
+"<li>سيتسبب <b>الرفض</b> رفض جميع الكعكات مطلقا.</li>\n"
+"</ul><p>\n"
+"<u>ملاحظة:</u> السياسات الخاصة بالمجال ، والتي يمكن تعيينها أدناه ، لها "
+"الأسبقية دائمًا على النهج المبدئي.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
-#, fuzzy, kde-format
-#| msgid "Default encoding:"
+#, kde-format
 msgid "Default Policy"
-msgstr "الترميز الافتراضي:"
+msgstr "السّياسة المبدئيّة"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
 #, kde-format
 msgid "Accep&t all cookies"
-msgstr ""
+msgstr "ا&قبل كلّ الكعكات"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr ""
+msgstr "اقبل حتّى &تنتهي الجلسة"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
-#, fuzzy, kde-format
-#| msgid "A&nimations:"
+#, kde-format
 msgid "Ask &for confirmation"
-msgstr "ال&حركات:"
+msgstr "اطلب ال&تّأكيد"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
 #: cookies/kcookiespolicies.ui:98
 #, kde-format
 msgid "Re&ject all cookies"
-msgstr ""
+msgstr "ار&فض كلّ الكعكات"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can set specific Java policies for any particular host or "
-#| "domain. To add a new policy, simply click the <i>New...</i> button and "
-#| "supply the necessary information requested by the dialog box. To change "
-#| "an existing policy, click on the <i>Change...</i> button and choose the "
-#| "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#| "button will remove the selected policy, causing the default policy "
-#| "setting to be used for that domain."
+#, kde-format
 msgid ""
 "<qt>\n"
 "To add a new policy, simply click on the <b>Add...</b> button and supply the "
@@ -616,30 +629,31 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
-"يمكنك هنا تعيين سياسات جافا لأي مضيف أو نطاق معين. لإضافة سياسة جديدة، "
-"ببساطة، انقر على زر <i>جديد...</i> وقم بتوفير المعلومات التي يطلبها مربع "
-"الحوار. لتغيير سياسة موجودة أصلاً، انقر على زر <i>غيّر...</i> واختر سياسة "
-"جديدة من نافذة السياسات. النقر على زر <i>احذف</i> سوف يزيل السياسة المُحدّدة، "
-"جاعلاً السياسة الافتراضية السياسة المستخدمة لذلك النطاق."
+"<qt>\n"
+"لإضافة سياسة جديدة، انقر زرّ <b>أضف...</b> وأدخِل المعلومات الضّرورية. ولتغيير "
+"سياسة موجودة، استخدم زرّ <b>غيّر...</b> واختر السّياسة الجديدة من حواريّ "
+"السّياسات. نقر الزّرّ <b>احذف</b> سيزيل السّياسة المحدّدة حاليًا ما سيفرض استخدام "
+"السّياسة المبدئيّة لذاك المجال. بينما الزّرّ <b>احذف الكلّ</b> يزيل كلّ السّياسات "
+"الخاصّة بهذا المجال.\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Site Policy"
-msgstr "السياسة"
+msgstr "سياسة الموقع"
 
 #. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr ""
+msgstr "ابحث بشكل تفاعلي عن المجالات"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "ابحث..."
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -650,13 +664,16 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"قائمة المواقع التي وُضعت لها سياسة كعكات محدّدة. تتجاوز السّياسات المحدّدة "
+"إعدادات السّياسة المبدئيّة لهذه المواقع.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain"
-msgstr "المجال/النطاق"
+msgstr "المجال"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
@@ -687,18 +704,22 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"أدخِل اسم المضيف أو المجال الذي ستُطبَّق السّياسة عليه، مثل <b>www.kde.org</b> أو "
+"<b>.kde.org</b>.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
 #, kde-format
 msgid "Site name:"
-msgstr ""
+msgstr "اسم الموقع:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:38
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
-msgstr ""
+msgstr "أدخِل اسم المضيف أو المجال (مثل ”‎.kde.org“) والذي سيتُطبّق السّياسة عليه."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -717,13 +738,20 @@ msgid ""
 "</ul>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"اختر السياسة التي ترغب بها:\n"
+"<ul>\n"
+"<li><b>اقبل</b> - السماح لهذا الموقع بتعيين كعكات</li>\n"
+"<li><b>ارفض</b> - رفض كلّ الكعكات التي يرسلها هذا الموقع</li>\n"
+"<li><b>اسألني</b> - السؤال كلّما استُقبِلت كعكات من هذا الموقع</li>\n"
+"</ul>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Policy:"
-msgstr "السياسة"
+msgstr "السّياسة:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:192
@@ -736,7 +764,7 @@ msgstr "اقبل"
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr ""
+msgstr "اقبل حتّى تنتهي الجلسة"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:194
@@ -870,7 +898,7 @@ msgstr ""
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "استخدم لون &خلفية مخصص:"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
@@ -1227,7 +1255,7 @@ msgstr ""
 "يمكن قراءتها بسبب التصاميم السيئة."
 
 #: css/kcmcss.cpp:386
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<html>\n"
 "<head>\n"
@@ -1250,15 +1278,22 @@ msgid ""
 "</html>\n"
 msgstr ""
 "<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>العنوان 1</h1>\n"
+"<h2>العنوان 2</h2>\n"
+"<h3>العنوان 3</h3>\n"
 "\n"
-"<h1>العنوان 1</h1><br/>\n"
-"<h2>العنوان 2</h2><br/>\n"
-"<h3>العنوان 3</h3><br/>\n"
+"<p>تتيح أوراق الأنماط المحددة من قبل المستخدم إمكانية وصول متزايدة للأشخاص "
+"ذوي الإعاقة البصرية.</p>\n"
 "\n"
-"<p>إن استخدام صفحات الأسلوب التي يُعرّفها المستخدم\n"
-"تسهل قراءة الصفحات على الأشخاص الذين يعانون من مشاكل\n"
-"بصرية.</p>\n"
-"\n"
+"</body>\n"
 "</html>\n"
 
 #: domainlistview.cpp:33
@@ -1323,13 +1358,13 @@ msgid "Use Global"
 msgstr "استخدم العام"
 
 #: domainlistview.cpp:232
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "سياسة جافاسكربت جديدة"
 
 #: domainlistview.cpp:235
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
 msgstr "غيّر سياسة جافاسكربت"
@@ -1360,14 +1395,14 @@ msgid "Hide filtered images"
 msgstr "أخفِ الصور المرشحة"
 
 #: filteropts.cpp:58
-#, fuzzy, kde-format
+#, kde-format
 msgid "Manual Filter"
-msgstr "مكّن ال&مرشحات"
+msgstr "المرشح اليدوي"
 
 #: filteropts.cpp:76
 #, kde-format
 msgid "Search:"
-msgstr ""
+msgstr "ابحث:"
 
 #: filteropts.cpp:84
 #, kde-format
@@ -1487,24 +1522,23 @@ msgstr ""
 #: filteropts.cpp:256
 #, kde-format
 msgid "Import Filters"
-msgstr ""
+msgstr "استورد مرشّحات"
 
 #: filteropts.cpp:300
-#, fuzzy, kde-format
-#| msgid "URL Expressions to Filter"
+#, kde-format
 msgid "Export Filters"
-msgstr "تعابير الموقع المرشحة"
+msgstr "صدر مرشّحات"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: filteropts.cpp:553 useragent/useragent.ui:58
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "الاسم"
 
 #: filteropts.cpp:554
 #, kde-format
 msgid "URL"
-msgstr ""
+msgstr "الرابط"
 
 #: generalopts.cpp:54
 #, kde-format
@@ -1527,12 +1561,10 @@ msgid "Show Introduction Page"
 msgstr "أظهر صفحة التقديم"
 
 #: generalopts.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox"
-#| msgid "Show My Home Page"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
-msgstr "أظهر الصفحة الرئيسية"
+msgstr "أظهر صفحة البداية الخاصة بي"
 
 #: generalopts.cpp:71
 #, kde-format
@@ -1547,10 +1579,10 @@ msgid "Show My Bookmarks"
 msgstr "أظهر علاماتي"
 
 #: generalopts.cpp:78
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
-msgstr "اختر الصفخة الرئيسية"
+msgstr "حدد صفحة البداية"
 
 #: generalopts.cpp:83
 #, kde-format
@@ -1563,10 +1595,10 @@ msgid "Home page:"
 msgstr "الصفحة الرئيسية:"
 
 #: generalopts.cpp:97
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
-msgstr "اختر الصفخة الرئيسية"
+msgstr "حدد الصفحة الرئيسة"
 
 #: generalopts.cpp:102
 #, fuzzy, kde-format
@@ -1701,9 +1733,9 @@ msgstr ""
 "للفأرة وتحرك."
 
 #: htmlopts.cpp:115
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
-msgstr "مكّن/عطل تنشيط مفتاح الوصول مع مفتاح Ctrl"
+msgstr "&مكن تنشيط مفتاح الوصول باستخدام مفتاح Ctrl"
 
 #: htmlopts.cpp:116
 #, fuzzy, kde-format
@@ -2035,10 +2067,10 @@ msgstr ""
 "للوصلات. هذا الخيار يحدد طريقة التعامل مع هذه المحاولات."
 
 #: policydlg.cpp:30
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Domain-Specific Policies"
-msgstr "السياسات محدودة النطاق"
+msgstr "سياسات لنطاقات محددة"
 
 #: policydlg.cpp:47
 #, kde-format
@@ -2061,10 +2093,9 @@ msgstr "يجب أن تدخل اسم النطاق أولاً."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
-msgstr "سل&وك الفأرة"
+msgstr "سلوك الألسنة"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
@@ -2128,7 +2159,7 @@ msgstr ""
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr ""
+msgstr "الاستخدام"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2164,7 +2195,7 @@ msgstr "افتح الم&نبثقات في لسان جديد بدلًا من نا
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
 #: tabs/tabsoptions.ui:119
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "When you click a URL in another KDE program or call kfmclient to open a URL, "
 "the current desktop will be searched for a non-minimized Konqueror and, if "
@@ -2183,10 +2214,9 @@ msgstr "افتح كَلِسان في كنكر الموجود عند استدعا
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
-msgstr "سل&وك الفأرة"
+msgstr "سلوك اللسان الجديد"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2224,7 +2254,7 @@ msgstr "افتح الل&سان الجديد بعد اللسان الحالي"
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Closing"
-msgstr ""
+msgstr "يغلق"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167
@@ -2304,31 +2334,29 @@ msgstr ""
 #: useragent/useragent.ui:63
 #, kde-format
 msgid "Content"
-msgstr ""
+msgstr "المحتوى"
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
 #: useragent/useragent.ui:94
-#, fuzzy, kde-format
-#| msgid "&Export..."
+#, kde-format
 msgid "&Edit..."
-msgstr "ص&دِّر..."
+msgstr "&حرّر..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:107
 #, kde-format
 msgid "&Rename..."
-msgstr ""
+msgstr "أ&عد التّسمية..."
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
 #: useragent/useragent.ui:120
 #, kde-format
 msgid "Du&plicate..."
-msgstr ""
+msgstr "&كرّر..."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:133
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "&Delete"
 msgstr "ا&حذف"
 

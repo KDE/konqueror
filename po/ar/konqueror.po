@@ -10,7 +10,7 @@
 # محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
 # عبدالعزيز الشريف <a.a-a.s@hotmail.com>, 2007.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# zayed <zayed.alsaidi@gmail.com>, 2008, 2009.
+# SPDX-FileCopyrightText: 2008, 2009, 2024 zayed <zayed.alsaidi@gmail.com>
 # Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2010, 2012.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
 msgid ""
@@ -18,15 +18,16 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-24 00:40+0000\n"
-"PO-Revision-Date: 2014-09-07 23:49+0300\n"
-"Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"PO-Revision-Date: 2024-12-12 10:03+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -47,47 +48,43 @@ msgstr ""
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "النوع: %1"
 
 #: src/downloadactionquestion.cpp:170
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "تذكّر الإجراء لهذا النوع من الملفات"
 
 #: src/downloadactionquestion.cpp:286
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
-msgstr ""
+msgstr "احفظ '%1'؟"
 
 #: src/downloadactionquestion.cpp:288
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr "افتح بِـ %1"
+msgstr "افتح '%1'؟"
 
 #: src/downloadactionquestion.cpp:306
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr "ا&فتح بِـ"
+msgstr "ا&فتح في…"
 
 #: src/downloadactionquestion.cpp:314 src/downloadactionquestion.cpp:467
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr "افتح بِـ %1"
+msgstr "ا&فتح في %1"
 
 #: src/downloadactionquestion.cpp:323
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
-msgstr "ا&فتح بِـ"
+msgstr "ا&فتح في"
 
 #: src/downloadactionquestion.cpp:339
 #, kde-format
@@ -130,7 +127,7 @@ msgstr ""
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
-msgstr ""
+msgstr "هذا الملف"
 
 #: src/downloadactionquestion.cpp:433
 #, kde-format
@@ -142,17 +139,16 @@ msgid ""
 msgstr ""
 
 #: src/downloadactionquestion.cpp:454
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr "الاسم:"
+msgstr "الاسم: %1"
 
 #: src/downloadactionquestion.cpp:456
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "هذا هو الاسم الذي اقترحه الخادوم"
 
 #: src/konqapplication.cpp:115
 #, kde-format
@@ -172,10 +168,9 @@ msgid "Web browser, file manager and document viewer."
 msgstr "متصفّح وِب، ومدير ملفات وعارض مستندات."
 
 #: src/konqapplication.cpp:161
-#, fuzzy, kde-format
-#| msgid "(C) 1999-2008, The Konqueror developers"
+#, kde-format
 msgid "(C) 1999-2023, The Konqueror developers"
-msgstr "(C) 1999-2008, The Konqueror developers"
+msgstr "(ج) 1999-2023، مطورو كونكيورر"
 
 #: src/konqapplication.cpp:174
 #, kde-format
@@ -185,7 +180,7 @@ msgstr ""
 #: src/konqapplication.cpp:174
 #, kde-format
 msgid "Current maintainer"
-msgstr ""
+msgstr "الصائن الحاليّ"
 
 #: src/konqapplication.cpp:175
 #, kde-format
@@ -193,11 +188,11 @@ msgid "David Faure"
 msgstr "David Faure"
 
 #: src/konqapplication.cpp:175
-#, fuzzy, kde-format
-#| msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#, kde-format
 msgid ""
 "Developer (framework, parts, JavaScript, I/O library) and former maintainer"
-msgstr "مطوِّر (إطار العمل والأجزاء وجافاسكريبت ومكتبة الدَخْل/الخَرْج) والمصين"
+msgstr ""
+"مطوِّر (إطار العمل والأجزاء وجافاسكريبت ومكتبة الدَخْل/الخَرْج) والصائن السابق"
 
 #: src/konqapplication.cpp:176
 #, kde-format
@@ -502,12 +497,12 @@ msgstr "Eduardo Robles Elvira"
 #: src/konqapplication.cpp:212
 #, kde-format
 msgid "Matthias Kalle Dalheimer"
-msgstr ""
+msgstr "Matthias Kalle Dalheimer"
 
 #: src/konqapplication.cpp:213
 #, kde-format
 msgid "Daniel Molkentin"
-msgstr ""
+msgstr "دانييل مولكنتين"
 
 #: src/konqapplication.cpp:214
 #, kde-format
@@ -535,7 +530,7 @@ msgstr ""
 #: src/konqapplication.cpp:227
 #, kde-format
 msgid "profile"
-msgstr ""
+msgstr "تشكيلة"
 
 #: src/konqapplication.cpp:228
 #, fuzzy, kde-format
@@ -549,10 +544,9 @@ msgid "Session to open"
 msgstr "الجلسة لفتحها"
 
 #: src/konqapplication.cpp:229
-#, fuzzy, kde-format
-#| msgid "Sessions"
+#, kde-format
 msgid "session"
-msgstr "الجلسات"
+msgstr "جلسة"
 
 #: src/konqapplication.cpp:230
 #, kde-format
@@ -562,7 +556,7 @@ msgstr "نوع Mime لاستخدامه لهذا العنوان (مثلًا text/
 #: src/konqapplication.cpp:230
 #, kde-format
 msgid "mimetype"
-msgstr ""
+msgstr "نوع التنسيق"
 
 #: src/konqapplication.cpp:231
 #, kde-format
@@ -572,7 +566,7 @@ msgstr "الجزء لاستخدامه (مثلًا khtml أو kwebkitpart)"
 #: src/konqapplication.cpp:231
 #, kde-format
 msgid "service"
-msgstr ""
+msgstr "خدمة"
 
 #: src/konqapplication.cpp:232
 #, kde-format
@@ -585,7 +579,7 @@ msgstr ""
 #: src/konqapplication.cpp:233
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
-msgstr ""
+msgstr "المستندات والعناوين التي يفتحها التّطبيق ستُحذف بعد استخدامها"
 
 #: src/konqapplication.cpp:235
 #, kde-format
@@ -620,11 +614,10 @@ msgid "no name"
 msgstr "بلا اسم"
 
 #: src/konqextensionmanager.cpp:49
-#, fuzzy, kde-format
-#| msgid "Configure Extensions..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Extensions"
-msgstr "اضبط الامتدادات..."
+msgstr "اضبط الامتدادات"
 
 #: src/konqextensionmanager.cpp:69
 #, kde-format
@@ -660,7 +653,7 @@ msgstr ""
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p٪"
 
 #: src/konqframestatusbar.cpp:155
 #, kde-format
@@ -789,13 +782,12 @@ msgstr "يحمّل..."
 #: src/konqmainwindow.cpp:766
 #, kde-format
 msgid "Access denied"
-msgstr ""
+msgstr "رُفض النّفاذ"
 
 #: src/konqmainwindow.cpp:1526
-#, fuzzy, kde-format
-#| msgid "&Open File..."
+#, kde-format
 msgid "Open File"
-msgstr "ا&فتح ملفًا..."
+msgstr "افتح الملف"
 
 #: src/konqmainwindow.cpp:1590
 #, kde-format
@@ -1415,11 +1407,10 @@ msgid "Open bookmarks folder in new tabs"
 msgstr "افتح مجلد العلامات في ألسنة جديدة"
 
 #: src/konqmainwindow.cpp:4173
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "ا&فتح"
+msgstr "افتح"
 
 #: src/konqmainwindow.cpp:4335
 #, kde-format
@@ -1616,10 +1607,9 @@ msgstr "افتح الألسنة في النافذة الحالية"
 
 #. i18n: ectx: property (text), widget (QLabel, lblSessionName)
 #: src/konqnewsessiondlg_base.ui:56
-#, fuzzy, kde-format
-#| msgid "&Session name:"
+#, kde-format
 msgid "Session n&ame:"
-msgstr "اسم ال&جلسة:"
+msgstr "ا&سم الجلسة:"
 
 #: src/konqsessiondlg.cpp:60
 #, kde-format
@@ -1660,12 +1650,10 @@ msgstr "جديد..."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
 #: src/konqsessiondlg_base.ui:33
-#, fuzzy, kde-format
-#| msgctxt "@action:button Save current session"
-#| msgid "Save Current"
+#, kde-format
 msgctxt "@action:button Save current session"
 msgid "Save Current..."
-msgstr "احفظ الحالي"
+msgstr "احفظ الحاليّ..."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
 #: src/konqsessiondlg_base.ui:40
@@ -1736,22 +1724,20 @@ msgid "Ask Me Later"
 msgstr "اسألني لاحقًا"
 
 #: src/konqstatusbarmessagelabel.cpp:67
-#, fuzzy, kde-format
-#| msgid "Close View"
+#, kde-format
 msgctxt "@info"
 msgid "Close"
-msgstr "أغلق العرض"
+msgstr "أغلق"
 
 #: src/konqstatusbarmessagelabel.cpp:68
-#, fuzzy, kde-format
-#| msgid "Close View"
+#, kde-format
 msgid "Close"
-msgstr "أغلق العرض"
+msgstr "أغلق"
 
 #: src/konqstatusbarmessagelabel.cpp:147
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "الخطأ: %1"
 
 #: src/konqtabs.cpp:51
 #, kde-format
@@ -1915,13 +1901,13 @@ msgstr "أعد الإرسال"
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
-msgstr ""
+msgstr "نفّذ"
 
 #: src/urlloader.cpp:425
 #, kde-format
 msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
-msgstr ""
+msgstr "اعرض"
 
 #: src/urlloader.cpp:432
 #, kde-kuit-format
@@ -1941,10 +1927,9 @@ msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
 #: src/urlloader.cpp:748
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As"
-msgstr "احفظ كـ..."
+msgstr "احفظ باسم"
 
 #, fuzzy
 #~| msgid ""
