@@ -1,0 +1,282 @@
+# Sanskrit translations for konqueror package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: imgallerydialog.cpp:37
+#, kde-format
+msgctxt "@title:window"
+msgid "Create Image Gallery"
+msgstr ""
+
+#: imgallerydialog.cpp:38
+#, kde-format
+msgid "Create"
+msgstr "निर्मियताम्"
+
+#: imgallerydialog.cpp:48 imgallerydialog.cpp:84
+#, kde-format
+msgid "Image Gallery for %1"
+msgstr "%1 कृते चित्रसङ्ग्रहालयः"
+
+#: imgallerydialog.cpp:76
+#, kde-format
+msgid "Look"
+msgstr "अवलोकनम्‌"
+
+#: imgallerydialog.cpp:77
+#, kde-format
+msgid "Page Look"
+msgstr "पृष्ठ देखें"
+
+#: imgallerydialog.cpp:85
+#, kde-format
+msgid "&Page title:"
+msgstr "&पृष्ठस्य शीर्षक: ."
+
+#: imgallerydialog.cpp:93
+#, kde-format
+msgid "I&mages per row:"
+msgstr "प्रति पङ्क्तिः I&mages:"
+
+#: imgallerydialog.cpp:95
+#, kde-format
+msgid "Show image file &name"
+msgstr "चित्रसञ्चिकां &नाम दर्शयतु"
+
+#: imgallerydialog.cpp:99
+#, kde-format
+msgid "Show image file &size"
+msgstr "चित्रसञ्चिकां &आकारं दर्शयतु"
+
+#: imgallerydialog.cpp:103
+#, kde-format
+msgid "Show image &dimensions"
+msgstr "चित्रं & आयामान् दर्शयतु"
+
+#: imgallerydialog.cpp:114
+#, kde-format
+msgid "Fon&t name:"
+msgstr "Fon&t नाम : १."
+
+#: imgallerydialog.cpp:122
+#, kde-format
+msgid "Font si&ze:"
+msgstr "फ़ॉन्ट् आकारः : १."
+
+#: imgallerydialog.cpp:126
+#, kde-format
+msgid "&Foreground color:"
+msgstr "&अग्रभूमिवर्णः : १."
+
+#: imgallerydialog.cpp:130
+#, kde-format
+msgid "&Background color:"
+msgstr "&पृष्ठभूमि रंगः : १."
+
+#: imgallerydialog.cpp:136 imgallerydialog.cpp:137
+#, kde-format
+msgid "Folders"
+msgstr "पुटम्"
+
+#: imgallerydialog.cpp:145
+#, kde-format
+msgid "&Save to HTML file:"
+msgstr "&HTML सञ्चिकायां रक्षन्तु:"
+
+#: imgallerydialog.cpp:147
+#, kde-format
+msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
+msgstr "<p>एषा गैलरी यस्मिन् HTML सञ्चिकायां रक्षिता भविष्यति ।</p>"
+
+#: imgallerydialog.cpp:150
+#, kde-format
+msgid "&Recurse subfolders"
+msgstr "&उपपुटं पुनः कुर्वन्तु"
+
+#: imgallerydialog.cpp:152
+#, kde-format
+msgid ""
+"<p>Whether subfolders should be included for the image gallery creation or "
+"not.</p>"
+msgstr "<p>चित्रसङ्ग्रहनिर्माणार्थं उपपुटाः समाविष्टाः भवेयुः वा न वा।</p>"
+
+#: imgallerydialog.cpp:163
+#, kde-format
+msgid "Endless"
+msgstr "अनन्तम्"
+
+#: imgallerydialog.cpp:165
+#, kde-format
+msgid ""
+"<p>You can limit the number of folders the image gallery creator will "
+"traverse to by setting an upper bound for the recursion depth.</p>"
+msgstr ""
+"<p>पुनरावृत्तिगहनतायाः उपरितनसीमायाः सेट् कृत्वा भवन्तः इमेज-गैलरी-निर्माता येषु पुटेषु "
+"भ्रमति इति सीमितुं शक्नुवन्ति ।</p>"
+
+#: imgallerydialog.cpp:168
+#, kde-format
+msgid "Rec&ursion depth:"
+msgstr "Rec&ursion गभीरता : १."
+
+#: imgallerydialog.cpp:172
+#, kde-format
+msgid "Copy or&iginal files"
+msgstr "or&iginal सञ्चिकाः प्रतिलिख्यताम्"
+
+#: imgallerydialog.cpp:174
+#, kde-format
+msgid ""
+"<p>This makes a copy of all images and the gallery will refer to these "
+"copies instead of the original images.</p>"
+msgstr ""
+"<p>एतेन सर्वेषां चित्राणां प्रतिलिपिः भवति तथा च गैलरी मूलचित्रस्य स्थाने एताः प्रतिलिपानि "
+"सन्दर्भयिष्यति ।</p>"
+
+#: imgallerydialog.cpp:179
+#, kde-format
+msgid "Use &comment file"
+msgstr "&comment सञ्चिकायाः उपयोगं कुर्वन्तु"
+
+#: imgallerydialog.cpp:181
+#, kde-format
+msgid ""
+"<p>If you enable this option you can specify a comment file which will be "
+"used for generating subtitles for the images.</p><p>For details about the "
+"file format please see the \"What's This?\" help below.</p>"
+msgstr ""
+"<p>यदि भवान् एतत् विकल्पं सक्षमं करोति तर्हि भवान् टिप्पणीसञ्चिकां निर्दिष्टुं शक्नोति यस्याः "
+"उपयोगः चित्राणां उपशीर्षकजननार्थं भविष्यति ।</p><p> सञ्चिकास्वरूपस्य विषये विवरणार्थं "
+"कृपया &quot;What&#39;s This?&quot; अधः सहायतां कुर्वन्तु।</p>"
+
+#: imgallerydialog.cpp:190
+#, kde-format
+msgid ""
+"<p>You can specify the name of the comment file here. The comment file "
+"contains the subtitles for the images. The format of this file is:</"
+"p><p>FILENAME1:<br />Description<br /><br />FILENAME2:<br />Description<br /"
+"><br />and so on</p>"
+msgstr ""
+"<p>अत्र टिप्पणीसञ्चिकायाः नाम निर्दिष्टुं शक्नुवन्ति । टिप्पणीसञ्चिकायां चित्राणां "
+"उपशीर्षकाणि सन्ति । अस्याः सञ्चिकायाः प्रारूपम् अस्ति :</p><p> सञ्चिकानाम१: १.<br /> "
+"वर्णनम्‌<br /><br /> सञ्चिकानाम२: १.<br /> वर्णनम्‌<br /><br /> इत्यादि</p>"
+
+#: imgallerydialog.cpp:200
+#, kde-format
+msgid "Comments &file:"
+msgstr "टिप्पणियाँ &सञ्चिका:"
+
+#: imgallerydialog.cpp:210 imgallerydialog.cpp:211
+#, kde-format
+msgid "Thumbnails"
+msgstr "लघुचित्रम्"
+
+#: imgallerydialog.cpp:224
+#, kde-format
+msgid "Image f&ormat:"
+msgstr "चित्रं च&ormat: ."
+
+#: imgallerydialog.cpp:232
+#, kde-format
+msgid "Thumbnail size:"
+msgstr "लघुचित्रस्य आकारः : १."
+
+#: imgallerydialog.cpp:235
+#, kde-format
+msgid "&Set different color depth:"
+msgstr "&विभिन्नवर्णगहनतां सेट् कुर्वन्तु:"
+
+#: imgallerydialog.cpp:246
+#, kde-format
+msgid "Color depth:"
+msgstr "वर्णगहनता : १."
+
+#: imgalleryplugin.cpp:44
+#, kde-format
+msgid "&Create Image Gallery..."
+msgstr "&चित्रसङ्ग्रहालयं रचयन्तु..."
+
+#: imgalleryplugin.cpp:54
+#, kde-format
+msgid "Could not create the plugin, please report a bug."
+msgstr "प्लगिन् निर्मातुं न शक्तवान्, कृपया दोषं निवेदयन्तु ।"
+
+#: imgalleryplugin.cpp:60
+#, kde-format
+msgid "Creating an image gallery works only on local folders."
+msgstr "चित्रसङ्ग्रहालयस्य निर्माणं केवलं स्थानीयपुटयोः कार्यं करोति ।"
+
+#: imgalleryplugin.cpp:80
+#, kde-format
+msgid "Creating thumbnails"
+msgstr "लघुचित्रं रचयन्"
+
+#: imgalleryplugin.cpp:103 imgalleryplugin.cpp:270
+#, kde-format
+msgid "Could not create folder: %1"
+msgstr "पुटं निर्मातुं न शक्तम्: %1"
+
+#: imgalleryplugin.cpp:168
+#, kde-format
+msgid "<i>Number of images</i>: %1"
+msgstr "<i>चित्राणां संख्या</i> : %1"
+
+#: imgalleryplugin.cpp:169
+#, kde-format
+msgid "<i>Created on</i>: %1"
+msgstr ": %1 <i>दिनाङ्के निर्मितम्</i>"
+
+#: imgalleryplugin.cpp:174
+#, kde-format
+msgid "<i>Subfolders</i>:"
+msgstr "<i>उपपुटम्</i> : १."
+
+#: imgalleryplugin.cpp:207
+#, kde-format
+msgid ""
+"Created thumbnail for: \n"
+"%1"
+msgstr ""
+"कृते लघुचित्रं निर्मितम् : \n"
+"%1"
+
+#: imgalleryplugin.cpp:210
+#, kde-format
+msgid ""
+"Creating thumbnail for: \n"
+"%1\n"
+" failed"
+msgstr ""
+"कृते लघुचित्रं निर्माय: \n"
+"%1\n"
+" असफल"
+
+#: imgalleryplugin.cpp:225
+#, kde-format
+msgid "KiB"
+msgstr "किब"
+
+#: imgalleryplugin.cpp:343 imgalleryplugin.cpp:443
+#, kde-format
+msgid "Could not open file: %1"
+msgstr "सञ्चिकां उद्घाटयितुं न शक्यते: %1"
+
+#. i18n: ectx: Menu (tools)
+#: kimgallery.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&उपकरणाः"
