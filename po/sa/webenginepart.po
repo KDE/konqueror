@@ -19,19 +19,19 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:74
 #: src/about/konq_aboutpage.cpp:197 src/about/konq_aboutpage.cpp:199
 #, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
-msgstr ""
+msgstr "स्वतन्त्र भव।"
 
 #: src/about/konq_aboutpage.cpp:73 src/about/konq_aboutpage.cpp:132
 #: src/about/konq_aboutpage.cpp:198
@@ -52,7 +52,7 @@ msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
 "Points contains links to Home, Network Folders, Trash, etc."
 msgid "Starting Points"
-msgstr ""
+msgstr "प्रारम्भ बिन्दु"
 
 #: src/about/konq_aboutpage.cpp:77 src/about/konq_aboutpage.cpp:136
 #: src/about/konq_aboutpage.cpp:202
@@ -120,7 +120,7 @@ msgstr "जालपुटे अन्वेषणं कुर्वन्त�
 #, kde-format
 msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
 msgid "Be free."
-msgstr ""
+msgstr "स्वतन्त्र भव।"
 
 #: src/about/konq_aboutpage.cpp:138
 #, kde-format
@@ -277,7 +277,7 @@ msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
 "Points contains links to Home, Network Folders, Trash, etc."
 msgid "<a href=\"%1\">Return to Starting Points</a>"
-msgstr ""
+msgstr "<a href=\"%1\">प्रारम्भबिन्दुषु पुनः आगच्छन्तु</a>"
 
 #: src/about/konq_aboutpage.cpp:246
 #, kde-format
@@ -303,49 +303,49 @@ msgstr "<td>माइम प्रकार</td><td> वर्णनम्‌</t
 #, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
-msgstr ""
+msgstr "यथा रक्षितम् आसीत्"
 
 #: src/actondownloadedfilebar.cpp:120
 #, kde-format
 msgctxt "@label location where a remote URL was downloaded"
 msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
-msgstr ""
+msgstr "<tt>%1</tt> इति <tt>%2</tt> इति रक्षितम्"
 
 #: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
 #, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr ""
+msgstr "Open With..."
 
 #: src/actondownloadedfilebar.cpp:146
 #, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr ""
+msgstr "उद्घाटित"
 
 #: src/actondownloadedfilebar.cpp:155
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr ""
+msgstr "&%1 इत्यनेन सह उद्घाटयन्तु"
 
 #: src/actondownloadedfilebar.cpp:184
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
-msgstr ""
+msgstr "नूतन ट्याब् मध्ये दर्शयतु"
 
 #: src/actondownloadedfilebar.cpp:184
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here"
-msgstr ""
+msgstr "अत्र दर्शयतु"
 
 #: src/actondownloadedfilebar.cpp:198
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr ""
+msgstr "&%1 इत्यनेन सह दर्शयतु"
 
 #: src/capturesourcechooserdlg.cpp:29
 #, kde-format
@@ -368,7 +368,7 @@ msgstr "अनुमन्यताम्‌"
 #, kde-format
 msgctxt "Block a web page from capturing the screen"
 msgid "Block"
-msgstr ""
+msgstr "मृदुवस्तु"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
@@ -453,13 +453,13 @@ msgstr "TextLabel इति"
 #, kde-format
 msgctxt "@label the cookie expires when the browser session ends"
 msgid "End of Session"
-msgstr ""
+msgstr "सत्रस्य समाप्तिः"
 
 #: src/cookies/cookiealertdlg.cpp:29
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by https servers"
 msgid "Secure servers only"
-msgstr ""
+msgstr "केवलं सुरक्षितसर्वरः"
 
 #: src/cookies/cookiealertdlg.cpp:31
 #, kde-format
@@ -467,13 +467,13 @@ msgctxt ""
 "@label exposure string - the cookie may be used by https servers AND client-"
 "side javascripts"
 msgid "Secure servers, page scripts"
-msgstr ""
+msgstr "सुरक्षित सर्वर, पृष्ठ लिपि"
 
 #: src/cookies/cookiealertdlg.cpp:35
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by http servers"
 msgid "Servers"
-msgstr ""
+msgstr "सर्वर्"
 
 #: src/cookies/cookiealertdlg.cpp:37
 #, kde-format
@@ -481,25 +481,25 @@ msgctxt ""
 "@label exposure string - the cookie may be used by http servers AND client-"
 "side javascripts"
 msgid "Servers, page scripts"
-msgstr ""
+msgstr "सर्वर्, पृष्ठलिपिः"
 
 #: src/cookies/cookiealertdlg.cpp:41
 #, kde-format
 msgctxt "@label accept cookie"
 msgid "Accept"
-msgstr ""
+msgstr "स्वीकरोतु"
 
 #: src/cookies/cookiealertdlg.cpp:42
 #, kde-format
 msgctxt "@label accept cookie for this session only"
 msgid "Accept for this session"
-msgstr ""
+msgstr "अस्य सत्रस्य स्वीकारं कुर्वन्तु"
 
 #: src/cookies/cookiealertdlg.cpp:45
 #, kde-format
 msgctxt "@label reject cookie"
 msgid "Reject"
-msgstr ""
+msgstr "अस्वीकार"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CookieAlertDlg)
 #: src/cookies/cookiealertdlg.ui:14
@@ -681,13 +681,13 @@ msgstr "&गुप्तशब्दान् दर्शयतु"
 #, kde-format
 msgctxt "@action:deny permission"
 msgid "&Deny permission"
-msgstr ""
+msgstr "&अनुज्ञां नकारयतु"
 
 #: src/ui/featurepermissionbar.cpp:26
 #, kde-format
 msgctxt "@action:grant permission"
 msgid "&Grant permission"
-msgstr ""
+msgstr "&अनुमति प्रदान करें"
 
 #: src/ui/featurepermissionbar.cpp:57
 #, kde-format
@@ -744,19 +744,19 @@ msgstr "<html><b>%1</b> भवतः पटलं भवतः श्रव्�
 #, kde-format
 msgctxt "@action:remember password"
 msgid "&Remember"
-msgstr ""
+msgstr "&स्मरतु"
 
 #: src/ui/passwordbar.cpp:33
 #, kde-format
 msgctxt "@action:never for this site"
 msgid "Ne&ver for this site"
-msgstr ""
+msgstr "अस्य साइट् कृते कदापि न&"
 
 #: src/ui/passwordbar.cpp:37
 #, kde-format
 msgctxt "@action:not now"
 msgid "N&ot now"
-msgstr ""
+msgstr "न खलु"
 
 #: src/ui/passwordbar.cpp:41 src/ui/passwordbar.cpp:125
 #, kde-format
@@ -768,7 +768,7 @@ msgstr "&विवरणं दर्शयतु"
 #, kde-format
 msgctxt "@action:hide details about credentials to store"
 msgid "&Hide details"
-msgstr ""
+msgstr "&विवरणं गोपयन्तु"
 
 #: src/ui/searchbar.cpp:38
 #, kde-format
@@ -840,25 +840,25 @@ msgstr "मेलनं प्रकाशयन्तु"
 #, kde-format
 msgctxt "Web field with type 'text'"
 msgid "text"
-msgstr ""
+msgstr "पाठ"
 
 #: src/wallet/webenginewallet.cpp:106
 #, kde-format
 msgctxt "Web field with type 'password'"
 msgid "password"
-msgstr ""
+msgstr "समाभाष्"
 
 #: src/wallet/webenginewallet.cpp:107
 #, kde-format
 msgctxt "Web field with type 'e-mail'"
 msgid "e-mail"
-msgstr ""
+msgstr "ई-मेल"
 
 #: src/wallet/webenginewallet.cpp:108
 #, kde-format
 msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
 msgid "other"
-msgstr ""
+msgstr "इतर"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
@@ -1074,19 +1074,19 @@ msgstr "मुद्रण पूर्वावलोकनम्"
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
-msgstr ""
+msgstr "Zoom In इति"
 
 #: src/webenginepart.cpp:208
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Zoom Out इति"
 
 #: src/webenginepart.cpp:213
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
-msgstr ""
+msgstr "वास्तविक आकार"
 
 #: src/webenginepart.cpp:218
 #, kde-format
@@ -1112,7 +1112,7 @@ msgstr "Do&cument स्रोतः पश्यन्तु"
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
-msgstr ""
+msgstr "SSL"
 
 #: src/webenginepart.cpp:253
 #, kde-format
@@ -1121,6 +1121,7 @@ msgid ""
 "<h3>Find text</h3>Shows a dialog that allows you to find text on the "
 "displayed page."
 msgstr ""
+"<h3>पाठं ज्ञातव्यम्</h3> एकं संवादं दर्शयति यत् भवन्तः प्रदर्शितपृष्ठे पाठं अन्वेष्टुं शक्नुवन्ति ।"
 
 #: src/webenginepart.cpp:553
 #, kde-format
@@ -1133,7 +1134,7 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid "Email: "
-msgstr ""
+msgstr "ईमेल : १. "
 
 #: src/webenginepart.cpp:663
 #, kde-format
@@ -1141,7 +1142,7 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid " - CC: "
-msgstr ""
+msgstr " - सी. सी. . "
 
 #: src/webenginepart.cpp:665
 #, kde-format
@@ -1149,7 +1150,7 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid " - BCC: "
-msgstr ""
+msgstr " - बी.सी.सी. "
 
 #: src/webenginepart.cpp:667
 #, kde-format
@@ -1157,7 +1158,7 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid " - Subject: "
-msgstr ""
+msgstr " - विषयः: "
 
 #: src/webenginepart.cpp:671 src/webenginepart.cpp:682
 #, kde-format
@@ -1204,13 +1205,13 @@ msgstr "<html>किं भवान् इच्छति यत् %1 <b>%2</b
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
-msgstr ""
+msgstr "&अधुना प्रपत्राणि पूरयन्तु"
 
 #: src/webenginepart.cpp:1013
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "Look Again for Forms"
-msgstr ""
+msgstr "पुनः रूपाणि पश्यन्तु"
 
 #: src/webenginepart.cpp:1017
 #, kde-format
@@ -1302,13 +1303,13 @@ msgstr "URL प्रविष्टं कुर्वन्तु:"
 #, kde-format
 msgctxt "Ignore the certificate error for this URL only for now"
 msgid "Yes, &once"
-msgstr ""
+msgstr "आम्, &एकदा"
 
 #: src/webenginepartcertificateerrordlg.cpp:45
 #, kde-format
 msgctxt "Ignore the certificate error for this URL now and in the future"
 msgid "Yes, &forever"
-msgstr ""
+msgstr "आम्, &सदा"
 
 #: src/webenginepartcertificateerrordlg.cpp:50
 #, kde-format
@@ -1323,7 +1324,7 @@ msgstr ""
 #, kde-format
 msgctxt "title of a dialog asking what to do about a SSL certificate error"
 msgid "Certificate error"
-msgstr ""
+msgstr "प्रमाणपत्रदोषः"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEnginePartCertificateErrorDlg)
 #: src/webenginepartcertificateerrordlg.ui:14
@@ -1367,25 +1368,25 @@ msgstr "सञ्चिकां रक्षन् त्रुटिः अभ
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
-msgstr ""
+msgstr "डाउनलोड् करणम्"
 
 #: src/webenginepartdownloadmanager.cpp:321
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
-msgstr ""
+msgstr "स्रोतः"
 
 #: src/webenginepartdownloadmanager.cpp:322
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
-msgstr ""
+msgstr "गन्तव्य"
 
 #: src/webenginepartdownloadmanager.cpp:344
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
-msgstr ""
+msgstr "%1 %2 इति रक्षितम्"
 
 #: src/webengineview.cpp:351
 #, kde-format
@@ -1431,7 +1432,7 @@ msgstr "&पाठस्य प्रतिलिपिः"
 #, kde-format
 msgctxt "open selected url"
 msgid "Open '%1'"
-msgstr ""
+msgstr "'%1' उद्घाटयन्तु।"
 
 #: src/webengineview.cpp:461
 #, kde-format
@@ -1507,13 +1508,13 @@ msgstr "C&opy मीडिया URL"
 #, kde-format
 msgctxt "Search \"search provider\" for \"text\""
 msgid "Search %1 for '%2'"
-msgstr ""
+msgstr "'%2' इत्यस्य कृते %1 अन्वेष्टुम् ।"
 
 #: src/webengineview.cpp:595
 #, kde-format
 msgctxt "Search for \"text\" with"
 msgid "Search for '%1' with"
-msgstr ""
+msgstr "'%1' इत्यनेन सह अन्वेष्टुम्"
 
 #: src/webengineview.cpp:608
 #, kde-format
@@ -1524,67 +1525,67 @@ msgstr "जालशॉर्टकट् विन्यस्तं कुर�
 #, kde-format
 msgctxt "Label of a web field"
 msgid "Field name"
-msgstr ""
+msgstr "क्षेत्रनाम"
 
 #: src/webfieldsdataview.cpp:62
 #, kde-format
 msgctxt "Value of a web field"
 msgid "Field value"
-msgstr ""
+msgstr "क्षेत्रमूल्यम्"
 
 #: src/webfieldsdataview.cpp:63
 #, kde-format
 msgctxt "Name attribute of a web field"
 msgid "Internal field name"
-msgstr ""
+msgstr "आन्तरिकक्षेत्रनाम"
 
 #: src/webfieldsdataview.cpp:64
 #, kde-format
 msgctxt "Type of a web field"
 msgid "Field type"
-msgstr ""
+msgstr "क्षेत्रप्रकारः"
 
 #: src/webfieldsdataview.cpp:65
 #, kde-format
 msgctxt "The id of a web field"
 msgid "Field id"
-msgstr ""
+msgstr "क्षेत्र id"
 
 #: src/webfieldsdataview.cpp:66
 #, kde-format
 msgctxt "Other details about a web field"
 msgid "Details"
-msgstr ""
+msgstr "वर्णन"
 
 #: src/webfieldsdataview.cpp:125
 #, kde-format
 msgctxt "web field has the readonly attribute"
 msgid "read only"
-msgstr ""
+msgstr "केवलं पठ्यते"
 
 #: src/webfieldsdataview.cpp:128
 #, kde-format
 msgctxt "web field has the autocomplete attribute set to off"
 msgid "auto-completion off"
-msgstr ""
+msgstr "स्वतः पूर्णता बंद"
 
 #: src/webfieldsdataview.cpp:131
 #, kde-format
 msgctxt "web field is disabled"
 msgid "disabled"
-msgstr ""
+msgstr "अक्षमित"
 
 #: src/webfieldsdataview.cpp:159
 #, kde-format
 msgctxt "A statement about a field is true"
 msgid "yes"
-msgstr ""
+msgstr "आम्‌"
 
 #: src/webfieldsdataview.cpp:160
 #, kde-format
 msgctxt "A statement about a field is false"
 msgid "no"
-msgstr ""
+msgstr "नहि"
 
 #: src/webfieldsdataview.cpp:163
 #, kde-format

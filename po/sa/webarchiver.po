@@ -20,12 +20,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: app/archivedialog.cpp:82
 #, kde-format
@@ -81,8 +81,8 @@ msgstr "विकल्पाः"
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " क्षण"
+msgstr[1] " सेकण्ड्"
 
 #: app/archivedialog.cpp:132
 #, kde-format
@@ -95,25 +95,25 @@ msgctxt "@info"
 msgid ""
 "The web archive download cannot use the current proxy settings. No proxy "
 "will be used."
-msgstr ""
+msgstr "जालसंग्रहस्य डाउनलोड् वर्तमानप्रॉक्सीसेटिंग्स् उपयोक्तुं न शक्नोति । न प्रॉक्सी उपयुज्यते।"
 
 #: app/archivedialog.cpp:349
 #, kde-format
 msgctxt "@info"
 msgid "The save location is not valid."
-msgstr ""
+msgstr "रक्षणस्थानं वैधं नास्ति ।"
 
 #: app/archivedialog.cpp:369
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
-msgstr ""
+msgstr "wget(1) आदेशं न लभ्यते, .<nl/> पश्यतु<link> %1</link> ."
 
 #: app/archivedialog.cpp:391
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
-msgstr ""
+msgstr "गन्तव्यस्थान<nl/><filename>%1</filename><nl/>%2 सत्यापयितुं न शक्यते"
 
 #: app/archivedialog.cpp:408
 #, kde-kuit-format
@@ -121,13 +121,13 @@ msgctxt "@info"
 msgid ""
 "The archive directory<nl/><filename>%1</filename><nl/>already exists as a "
 "file."
-msgstr ""
+msgstr "संग्रहनिर्देशिका<nl/><filename>%1</filename><nl/>पूर्वमेव सञ्चिकारूपेण विद्यते ।"
 
 #: app/archivedialog.cpp:409
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
-msgstr ""
+msgstr "संग्रहनिर्देशिका<nl/><filename>%1</filename><nl/>पूर्वमेव अस्ति ।"
 
 #: app/archivedialog.cpp:413
 #, kde-kuit-format
@@ -135,13 +135,13 @@ msgctxt "@info"
 msgid ""
 "The archive file<nl/><filename>%1</filename><nl/>already exists as a "
 "directory."
-msgstr ""
+msgstr "संग्रहसञ्चिका<nl/><filename>%1</filename><nl/>पूर्वमेव निर्देशिकारूपेण विद्यते ।"
 
 #: app/archivedialog.cpp:414
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
-msgstr ""
+msgstr "<nl/><filename>%1</filename><nl/>सङ्ग्रहसञ्चिका पूर्वमेव अस्ति ।"
 
 #: app/archivedialog.cpp:418
 #, kde-format
@@ -152,25 +152,25 @@ msgstr "अभिलेखागारः पूर्वमेव अस्त�
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
-msgstr ""
+msgstr "मूलसंग्रह<nl/><filename>%1</filename><nl/>%2 विलोपयितुं न शक्यते"
 
 #: app/archivedialog.cpp:465
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
-msgstr ""
+msgstr "अस्थायी निर्देशिका<nl/><filename>%1</filename><nl/> निर्मातुं न शक्यते"
 
 #: app/archivedialog.cpp:537
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot start the archiver process <filename>%1</filename>"
-msgstr ""
+msgstr "संग्रहकप्रक्रिया <filename>%1</filename> आरभ्यतुं न शक्यते"
 
 #: app/archivedialog.cpp:553
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The download process was interrupted."
-msgstr ""
+msgstr "डाउनलोड् प्रक्रिया बाधिता आसीत् ।"
 
 #: app/archivedialog.cpp:554
 #, kde-kuit-format
@@ -178,7 +178,7 @@ msgctxt "@info"
 msgid ""
 "<para>The download process <filename>%1</filename> failed with signal %2.</"
 "para>"
-msgstr ""
+msgstr "<para>अवलोकनप्रक्रिया <filename>%1</filename> %2 संकेतेन सह विफलम्।</para>"
 
 #: app/archivedialog.cpp:559
 #, kde-kuit-format
@@ -187,6 +187,7 @@ msgid ""
 "<para>The download process <filename>%1</filename> failed with status %2.</"
 "para>"
 msgstr ""
+"<para>अवलोकनप्रक्रिया <filename>%1</filename> %2 इति स्थितिना सह विफलम्।</para>"
 
 #: app/archivedialog.cpp:563
 #, kde-kuit-format
@@ -194,13 +195,13 @@ msgctxt "@info"
 msgid ""
 "<para>This may simply indicate a 404 error for some of the page elements.</"
 "para>"
-msgstr ""
+msgstr "<para>एतत् केवलं केषाञ्चन पृष्ठतत्त्वानां कृते ४०४ दोषं सूचयितुं शक्नोति ।</para>"
 
 #: app/archivedialog.cpp:569
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
-msgstr ""
+msgstr "<para>आंशिकं जालसंग्रहं धारयतु?</para>"
 
 #: app/archivedialog.cpp:570
 #, kde-format
@@ -216,25 +217,26 @@ msgstr "हृ"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."
-msgstr ""
+msgstr "जालसंग्रहस्य निर्माणं विफलम् अभवत् ।"
 
 #: app/archivedialog.cpp:718
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
 msgstr ""
+"संग्रहणं प्रति<nl/><filename>%1</filename><nl/>%2 इत्यत्र प्रतिलिपिं कर्तुं न शक्यते"
 
 #: app/archivedialog.cpp:748
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
-msgstr ""
+msgstr "<nl/><filename>%1</filename><nl/>%2 इत्यत्र अनुमतिः सेट् कर्तुं न शक्यते"
 
 #: app/archivedialog.cpp:756
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"
-msgstr ""
+msgstr "जालसंग्रहः यथा रक्षितः<nl/><filename><link> %1</link></filename>"
 
 #: app/main.cpp:26
 #, kde-format
@@ -402,6 +404,8 @@ msgid ""
 "Cannot find the <command>kcreatewebarchive</command> executable,<nl/>check "
 "the plugin and helper installation."
 msgstr ""
+"<command>kcreatewebarchive</command> कार्यान्वयनीयं न प्राप्नुयात्,<nl/>प्लगिन् तथा "
+"सहायकसंस्थापनं परीक्ष्यताम् ।"
 
 #: plugin_webarchiver.cpp:51
 #, kde-format
