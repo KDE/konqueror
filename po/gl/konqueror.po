@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-24 00:40+0000\n"
-"PO-Revision-Date: 2024-11-09 15:56+0100\n"
+"PO-Revision-Date: 2024-12-16 23:00+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -30,7 +30,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1566,29 +1566,30 @@ msgid ""
 "proxy URL manually in the settings dialog. Do you want to change proxy "
 "settings now?"
 msgstr ""
-"A súa configuración de devasa non pode usarse co motor de HTML de "
-"QtWebEngine. Non se usará ningunha devasa.\n"
+"A súa configuración de mandatario non pode usarse co motor de HTML de "
+"QtWebEngine. Non se usará ningún mandatario.\n"
 "\n"
-" QtWebEngine só permite unha devasa fixa, así que a configuración automática "
-"de devasa (PAC) e o protocolo de descubrimento automático de devasa web non "
-"poden usarse con QtWebEngine. Se necesita unha devasa, seleccione a "
-"configuración de devasa do sistema ou indique un URL de devasa manualmente "
-"no diálogo de configuración. Quere cambiar a configuración de devasa agora?"
+" QtWebEngine só permite un mandatario fixo, así que a configuración "
+"automática de mandatario (PAC) e o protocolo de descubrimento automático de "
+"mandatario web non poden usarse con QtWebEngine. Se necesita un mandatario, "
+"seleccione a configuración de mandatario do sistema ou indique un URL de "
+"mandatario manualmente no diálogo de configuración. Quere cambiar a "
+"configuración de mandatario agora?"
 
 #: src/konqmainwindow.cpp:5431
 #, kde-format
 msgid "Unsupported proxy configuration"
-msgstr "Configuración de devasa non permitida"
+msgstr "Configuración de mandatario non permitida"
 
 #: src/konqmainwindow.cpp:5431
 #, kde-format
 msgid "Don't use a proxy"
-msgstr "Non usar unha devasa."
+msgstr "Non usar un mandatario."
 
 #: src/konqmainwindow.cpp:5432 src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Show proxy configuration dialog"
-msgstr "Amosar o diálogo de configuración de devasa"
+msgstr "Amosar o diálogo de configuración de mandatario"
 
 #: src/konqmainwindow.cpp:5456
 #, kde-format
@@ -1598,25 +1599,26 @@ msgid ""
 "protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
-"A súa configuración de devasa non pode usarse co motor de HTML QtWebEngine "
-"porque non permite ter distintas devasas para os protocolos HTTP e HTTPS. A "
-"súa configuración actual é:<p><b>Devasa para HTTP:</b> <tt>%1</tt></"
-"p><p><b>Devasa para HTTPS: </b><tt>%2</tt></p>Que quere facer?"
+"A súa configuración de mandatario non pode usarse co motor de HTML "
+"QtWebEngine porque non permite ter distintos mandatarios para os protocolos "
+"HTTP e HTTPS. A súa configuración actual é:<p><b>Mandatario para HTTP:</b> "
+"<tt>%1</tt></p><p><b>Mandatario para HTTPS: </b><tt>%2</tt></p>Que quere "
+"facer?"
 
 #: src/konqmainwindow.cpp:5459
 #, kde-format
 msgid "Conflicting proxy configuration"
-msgstr "Configuración de devasa en conflito"
+msgstr "Configuración de mandatario en conflito"
 
 #: src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
-msgstr "Usar a devasa de HTTP (só esta vez)"
+msgstr "Usar o mandatario de HTTP (só esta vez)"
 
 #: src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
-msgstr "Usar a devasa de HTTPS (só esta vez)"
+msgstr "Usar o mandatario de HTTPS (só esta vez)"
 
 #: src/konqmainwindow.cpp:5476
 #, kde-format
