@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-24 00:40+0000\n"
-"PO-Revision-Date: 2024-08-19 23:45+0200\n"
+"PO-Revision-Date: 2024-12-24 17:33+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -33,96 +33,85 @@ msgstr "kde@peremen.name"
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "형식: %1"
 
 #: src/downloadactionquestion.cpp:170
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "이 파일 형식과 연결된 동작 기억하기"
 
 #: src/downloadactionquestion.cpp:286
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
-msgstr ""
+msgstr "'%1' 저장?"
 
 #: src/downloadactionquestion.cpp:288
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr "%1(으)로 열기|/|%1$[으 %1]로 열기"
+msgstr "'%1' 열기?"
 
 #: src/downloadactionquestion.cpp:306
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr "다음으로 열기(&O)"
+msgstr "다음으로 열기(&O)..."
 
 #: src/downloadactionquestion.cpp:314 src/downloadactionquestion.cpp:467
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr "%1(으)로 열기|/|%1$[으 %1]로 열기"
+msgstr "%1(으)로 열기(&O)"
 
 #: src/downloadactionquestion.cpp:323
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "다음으로 열기(&O)"
 
 #: src/downloadactionquestion.cpp:339
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
-msgstr "표시"
+msgstr "%1에서 표시(&D)"
 
 #: src/downloadactionquestion.cpp:351
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
-msgstr "표시"
+msgstr "다음에서 표시(&D)"
 
 #: src/downloadactionquestion.cpp:373
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "%1(으)로 열기|/|%1$[으 %1]로 열기"
+msgstr "%1(으)로 열기(&W)"
 
 #: src/downloadactionquestion.cpp:405
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
-msgstr "표시"
+msgstr "%1에서 표시(&I)"
 
 #: src/downloadactionquestion.cpp:427
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
-msgstr ""
+msgstr "이 파일을 지원하지 않는 뷰어"
 
 #: src/downloadactionquestion.cpp:431
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
-msgstr ""
+msgstr "이 파일을 지원하지 않을 것 같은 뷰어"
 
 #: src/downloadactionquestion.cpp:432
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
-msgstr ""
+msgstr "이 파일"
 
 #: src/downloadactionquestion.cpp:433
 #, kde-format
@@ -132,19 +121,22 @@ msgid ""
 "type is incorrect or if a viewer can display %1 even if it doesn't "
 "officially support it.</p>"
 msgstr ""
+"<p>%1을(를) 표시하지 못할 것 같은 뷰어입니다. 해당 뷰어를 사용하면 올바르게 "
+"작동하지 않을 수도 있습니다.</p><p>감지된 파일 형식이 잘못되었거나, %1에서 공"
+"식적으로 지원하지 않는 경우라고 해도 표시할 수 있기 때문에 선택 항목이 제공됩"
+"니다.</p>"
 
 #: src/downloadactionquestion.cpp:454
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr "이름:"
+msgstr "이름: %1"
 
 #: src/downloadactionquestion.cpp:456
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "서버에서 제안한 파일 이름입니다"
 
 #: src/konqapplication.cpp:115
 #, kde-format
@@ -1918,9 +1910,7 @@ msgid "Execute"
 msgstr "실행"
 
 #: src/urlloader.cpp:425
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
 msgstr "표시"
