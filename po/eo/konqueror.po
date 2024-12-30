@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-24 00:40+0000\n"
-"PO-Revision-Date: 2024-12-27 10:42+0100\n"
+"PO-Revision-Date: 2024-12-29 19:47+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -45,7 +45,7 @@ msgstr "Tipo: %1"
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "Memori agon por dosieroj de ĉi tiu tipo"
 
 #: src/downloadactionquestion.cpp:286
 #, kde-format
@@ -105,13 +105,13 @@ msgstr "Montr&i en %1"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
-msgstr ""
+msgstr "Vidiloj de subtentantaj ĉi dosieron"
 
 #: src/downloadactionquestion.cpp:431
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
-msgstr ""
+msgstr "Vidiloj verŝajne malkapablaj montri la dosieron"
 
 #: src/downloadactionquestion.cpp:432
 #, kde-format
@@ -127,6 +127,10 @@ msgid ""
 "type is incorrect or if a viewer can display %1 even if it doesn't "
 "officially support it.</p>"
 msgstr ""
+"<p>Vidiloj kiuj supozeble ne povas montri %1. Uzado de ili plej verŝajne "
+"malsukcesos.</p><p>Ĉi tiuj elektoj estas disponigitaj se la detektita "
+"dosiertipo estas malĝusta aŭ se vidilo povas montri %1 eĉ se ĝi ne oficiale "
+"subtenas ĝin.</p>"
 
 #: src/downloadactionquestion.cpp:454
 #, kde-format
@@ -138,7 +142,7 @@ msgstr "Nomo: %1"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "Ĉi tiu estas la dosiernomo proponita de la servilo"
 
 #: src/konqapplication.cpp:115
 #, kde-format
