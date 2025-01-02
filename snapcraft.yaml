@@ -79,9 +79,11 @@ parts:
       - libssl-dev
       - libcups2-dev
       - libxkbcommon-dev
+      - libpulse0
     stage-packages:
       - libxcb-util1
       - cups-client
+      - libpulse0
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DCMAKE_BUILD_TYPE=Release
