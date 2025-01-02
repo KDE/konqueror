@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-04 00:39+0000\n"
-"PO-Revision-Date: 2024-09-21 10:41+0200\n"
+"PO-Revision-Date: 2024-12-28 17:41+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -304,12 +304,10 @@ msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>Mima Tipo</td><td>Priskribo</td><td>Sufiksoj</td><td>Aldonaĵo</td>"
 
 #: src/actondownloadedfilebar.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@label location where a remote URL was downloaded"
-#| msgid "%1 was saved in %2"
+#, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
-msgstr "%1 estis konservita en %2"
+msgstr "estis konservita kiel"
 
 #: src/actondownloadedfilebar.cpp:120
 #, kde-format
@@ -318,20 +316,16 @@ msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
 msgstr "<tt>%1</tt> estis konservita kiel <tt>%2</tt>"
 
 #: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "Malfermi &per %1"
+msgstr "Malfermi Per..."
 
 #: src/actondownloadedfilebar.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "Malfermi '%1'"
+msgstr "Malfermi"
 
 #: src/actondownloadedfilebar.cpp:155
 #, kde-format
@@ -352,27 +346,24 @@ msgid "Show here"
 msgstr "Malfermi tie ĉi"
 
 #: src/actondownloadedfilebar.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "Malfermi &per %1"
+msgstr "Montri &per %1"
 
 #: src/capturesourcechooserdlg.cpp:29
 #, kde-format
 msgid ""
 "Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
-msgstr ""
+msgstr "Ĉu vi volas permesi al <tt>%1</tt> kapti la enhavon de via ekrano?"
 
 #: src/capturesourcechooserdlg.cpp:31
 #, kde-format
 msgid "Choose window or screen to capture"
-msgstr ""
+msgstr "Elekti fenestron aŭ ekranon kaptendan"
 
 #: src/capturesourcechooserdlg.cpp:38
-#, fuzzy, kde-format
-#| msgid "Allow"
+#, kde-format
 msgctxt "Allow a web page to capture the screen"
 msgid "Allow"
 msgstr "Permesi"
@@ -381,25 +372,19 @@ msgstr "Permesi"
 #, kde-format
 msgctxt "Block a web page from capturing the screen"
 msgid "Block"
-msgstr ""
+msgstr "Bloki"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "Choose Save Format"
+#, kde-format
 msgid "Choose Capture Source"
-msgstr "Elekti Konservo-Formaton"
+msgstr "Elekti Fonton de Kapto"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "Do you want to allow this page to capture the contents of your screen?"
-msgstr ""
-"<qt>Ĉu vi volas permesi al ĉi tiu retejo kunsendi la jenajn dosierojn al la "
-"retmesaĝo?</qt>"
+msgstr "Ĉu vi volas permesi al ĉi tiu paĝo kapti la enhavon de via akrano?"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -831,7 +816,7 @@ msgstr "An&taŭa"
 #: src/ui/searchbar.ui:87
 #, kde-format
 msgid "&Options"
-msgstr "&Opcioj"
+msgstr "&Elektebloj"
 
 #. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:116
@@ -1233,7 +1218,7 @@ msgstr "&Plenigi formularojn nun"
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "Look Again for Forms"
-msgstr ""
+msgstr "Rerigardi pri Formularoj"
 
 #: src/webenginepart.cpp:1017
 #, kde-format
@@ -1621,23 +1606,3 @@ msgstr ""
 "li><li><b>ID de kampo: </b>%3</li><li><b>Kampo estas nur-legebla: </b>%4</"
 "li><li><b>Kampo estas ebligita: </b>%5</li><li><b>Aŭtomata kompletigo estas "
 "ŝaltita: </b>%6</li></ul>"
-
-#~ msgid "Show file in this tab"
-#~ msgstr "Montri dosieron en ĉi tiu langeto"
-
-#~ msgid "Show file in a new tab in Konqueror"
-#~ msgstr "Montri dosieron en nova langeto en Konqueror"
-
-#~ msgid "Open in external application"
-#~ msgstr "Malfermi en ekstera aplikaĵo"
-
-#~ msgid "Open in %1"
-#~ msgstr "Malfermi en %1"
-
-#~ msgctxt "@action:button"
-#~ msgid "Show in new tab using %1"
-#~ msgstr "Montri en nova langeto uzante %1"
-
-#~ msgctxt "@action:button"
-#~ msgid "Show here using %1"
-#~ msgstr "Montri tie ĉi uzante %1"
