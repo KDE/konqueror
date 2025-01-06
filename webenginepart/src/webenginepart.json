@@ -1,8 +1,8 @@
 {
-    "KParts": {
-        "Capabilities": [
-            "ReadOnly",
-            "BrowserView"
+    "kparts": {
+        "capabilities": [
+            "readonly",
+            "browserview"
         ]
     },
     "KPlugin": {
@@ -328,10 +328,6 @@
         "Name[x-test]": "xxWebEnginexx",
         "Name[zh_CN]": "WebEngine",
         "Name[zh_TW]": "WebEngine",
-        "ServiceTypes": [
-            "KParts/ReadOnlyPart",
-            "Browser/View"
-        ],
         "Version": "1.3.0",
         "Website": ""
     },

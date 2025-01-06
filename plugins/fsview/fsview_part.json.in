@@ -149,5 +149,10 @@
         ],
         "Version": "@fsview_VERSION@"
     },
-    "MimeType": "inode/directory;"
+    "MimeType": "inode/directory;",
+    "KParts": {
+        "Capabilities": [
+            "ReadOnly"
+        ]
+    }
 }
