@@ -12,13 +12,13 @@
 # obsoleteman <tulliana@gmail.com>, 2008-2010.
 # obsoleteman <tulliana@gmail.com>, 2010,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014.
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-24 00:38+0000\n"
-"PO-Revision-Date: 2024-07-25 13:13+0300\n"
+"PO-Revision-Date: 2025-01-10 16:11+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -330,8 +330,8 @@ msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
 "language encoding' and should not have to change this."
 msgstr ""
-"Kullanmak için öntanımlı karakter kümesini seçin; normalde, ‘Dilin Karakter "
-"Kümesini Kullan’ seçin ve bunu değiştirmek zorunda kalmayın."
+"Kullanılacak öntanımlı karakter kümesini seçin; normalde, “Dilin karakter "
+"kümesini kullan” seçilidir ve bunu değiştirmenize gerek yoktur."
 
 #. i18n: ectx: property (title), widget (QGroupBox, cacheEnabled)
 #: cache/cache.ui:17
@@ -1554,7 +1554,7 @@ msgid ""
 "otherwise a placeholder 'blocked' image will be used."
 msgstr ""
 "Etkinleştirildiğinde, engellenmiş görseller sayfadan tamamen kaldırılır, "
-"aksi durumda ‘engellenmiş’ görsel yer tutucuları gösterilir."
+"aksi takdirde “engellenmiş” görsel yer tutucuları gösterilir."
 
 #: filteropts.cpp:163
 #, kde-format
@@ -1576,9 +1576,9 @@ msgid ""
 msgstr ""
 "<qt><p>Bir süzgeç tanımı girin. Süzgeç tanımları:<ul><li>Kabuk tarzı özel "
 "işaret, örn. <tt>http://www.example.com/ads*</tt>, <tt>*?[]</tt> işaretleri "
-"kullanılabilir</li><li>Metnin başına ve sonuna '<tt>/</tt>', vb. konularak "
-"tam bir düzenli ifade tanımlanabilir<tt>/\\/(ad|banner)\\./</tt></li></"
-"ul><p>Herhangi bir süzgeç metni başına‘<tt>@@</tt>’ konularak eşleşen URL "
+"kullanılabilir</li><li>Metnin başına ve sonuna “<tt>/</tt>” vb. konularak "
+"tam bir düzenli ifade tanımlanabilir <tt>/\\/(ad|banner)\\./</tt></li></"
+"ul><p>Herhangi bir süzgeç metni başına “<tt>@@</tt>” konularak eşleşen URL "
 "beyaz (izin verilen) listeye eklenir. Beyaz liste süzgeçlerin kara liste "
 "(engellenen) süzgeçlere göre önceliği vardır."
 
@@ -1590,7 +1590,7 @@ msgid ""
 "ignored. Any other line is added as a filter expression."
 msgstr ""
 "<qt><p>Süzgeç içe aktarma dosyası bir düz metin dosyasıdır. Boş satırlar, "
-"‘<tt>!</tt>’ ile başlayan yorum satırları ve <tt>[AdBlock]</tt> başlık "
+"“<tt>!</tt>” ile başlayan yorum satırları ve <tt>[AdBlock]</tt> başlık "
 "satırı yok sayılır. Kalan tüm satırlar süzgeç ifadesi olarak eklenir."
 
 #: filteropts.cpp:188
