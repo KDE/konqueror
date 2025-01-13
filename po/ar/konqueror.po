@@ -10,7 +10,7 @@
 # محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
 # عبدالعزيز الشريف <a.a-a.s@hotmail.com>, 2007.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# SPDX-FileCopyrightText: 2008, 2009, 2024 zayed <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2008, 2009, 2024, 2025 zayed <zayed.alsaidi@gmail.com>
 # Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2010, 2012.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
 msgid ""
@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-24 00:40+0000\n"
-"PO-Revision-Date: 2024-12-12 10:03+0400\n"
+"PO-Revision-Date: 2025-01-12 12:45+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -99,11 +99,10 @@ msgid "&Display in"
 msgstr ""
 
 #: src/downloadactionquestion.cpp:373
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "افتح بِـ %1"
+msgstr "افتح &في %1"
 
 #: src/downloadactionquestion.cpp:405
 #, kde-format
@@ -533,10 +532,9 @@ msgid "profile"
 msgstr "تشكيلة"
 
 #: src/konqapplication.cpp:228
-#, fuzzy, kde-format
-#| msgid "List available sessions"
+#, kde-format
 msgid "List available sessions and exit"
-msgstr "قائمة الجلسات المتوفّرة"
+msgstr "يعرض قائمة الجلسات المتوفّرة و يخرج"
 
 #: src/konqapplication.cpp:229
 #, kde-format
@@ -594,11 +592,10 @@ msgid "Location to open"
 msgstr "الموقع لفتحه"
 
 #: src/konqapplication.cpp:352
-#, fuzzy, kde-format
-#| msgid "Session to open"
+#, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "الجلسة لفتحها"
+msgstr "تعذر فتح الجلسة %1"
 
 #: src/konqapplication.cpp:478
 #, kde-format
@@ -722,8 +719,7 @@ msgid "Open in New Tab"
 msgstr "افتح في لسان جديد"
 
 #: src/konqhistoryview.cpp:65
-#, fuzzy, kde-format
-#| msgid "Open in New Tab"
+#, kde-format
 msgid "Open in Current Tab"
 msgstr "افتح في لسان جديد"
 
@@ -1364,10 +1360,9 @@ msgstr ""
 "الموصولة الأخرى."
 
 #: src/konqmainwindow.cpp:3676
-#, fuzzy, kde-format
-#| msgid "C&lose Current Tab"
+#, kde-format
 msgid "&Inspect Current Page"
-msgstr "أ&غلق اللسان الحالي"
+msgstr "ا&فحص الصفحة الحالية"
 
 #: src/konqmainwindow.cpp:3677
 #, kde-format
@@ -1548,10 +1543,9 @@ msgid "Don't use a proxy"
 msgstr ""
 
 #: src/konqmainwindow.cpp:5432 src/konqmainwindow.cpp:5460
-#, fuzzy, kde-format
-#| msgid "Show Configuration Button"
+#, kde-format
 msgid "Show proxy configuration dialog"
-msgstr "أظهر زرّ الضبط"
+msgstr "أظهر مربع حوار ضبط الوكيل"
 
 #: src/konqmainwindow.cpp:5456
 #, kde-format
@@ -1587,10 +1581,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
-#, fuzzy, kde-format
-#| msgid "Save open tabs and windows for easy retrieval"
+#, kde-format
 msgid "Save open &tabs and windows for easy retrieval"
-msgstr "احفظ الألسنة المفتوحة والنوافذ لاسترجاعها بسهولة"
+msgstr "احفظ الألسنة ال&مفتوحة والنوافذ لاسترجاعها بسهولة"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_pAllWindows)
 #: src/konqnewsessiondlg_base.ui:34
@@ -1600,10 +1593,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_pCurrentWindow)
 #: src/konqnewsessiondlg_base.ui:44
-#, fuzzy, kde-format
-#| msgid "Open tabs inside current window"
+#, kde-format
 msgid "Onl&y current window"
-msgstr "افتح الألسنة في النافذة الحالية"
+msgstr "النافذة الحالية &فقط"
 
 #. i18n: ectx: property (text), widget (QLabel, lblSessionName)
 #: src/konqnewsessiondlg_base.ui:56

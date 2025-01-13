@@ -1,12 +1,12 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2012, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2012, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-04 00:39+0000\n"
-"PO-Revision-Date: 2024-10-17 10:06+0400\n"
+"PO-Revision-Date: 2025-01-12 13:02+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -73,11 +73,9 @@ msgid "Home Folder"
 msgstr "مجلّد المنزل"
 
 #: src/about/konq_aboutpage.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "EMAIL OF TRANSLATORS"
-#| msgid "Your emails"
+#, kde-format
 msgid "Your personal files"
-msgstr "zayed.alsaidi@gmail.com"
+msgstr "ملفاتك الشخصية"
 
 #: src/about/konq_aboutpage.cpp:87
 #, kde-format
@@ -278,20 +276,16 @@ msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
 msgstr ""
 
 #: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "افتح &في %1"
+msgstr "افتح ب‍..."
 
 #: src/actondownloadedfilebar.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "افتح '%1'"
+msgstr "افتح"
 
 #: src/actondownloadedfilebar.cpp:155
 #, kde-format
@@ -312,12 +306,10 @@ msgid "Show here"
 msgstr "اعرض هنا"
 
 #: src/actondownloadedfilebar.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "افتح &في %1"
+msgstr "اعرض بـ%1"
 
 #: src/capturesourcechooserdlg.cpp:29
 #, kde-format
@@ -331,8 +323,7 @@ msgid "Choose window or screen to capture"
 msgstr ""
 
 #: src/capturesourcechooserdlg.cpp:38
-#, fuzzy, kde-format
-#| msgid "Allow"
+#, kde-format
 msgctxt "Allow a web page to capture the screen"
 msgid "Allow"
 msgstr "اسمح"
@@ -341,25 +332,19 @@ msgstr "اسمح"
 #, kde-format
 msgctxt "Block a web page from capturing the screen"
 msgid "Block"
-msgstr ""
+msgstr "احظر"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "Choose Save Format"
+#, kde-format
 msgid "Choose Capture Source"
-msgstr "اختر تنسيق الحفظ"
+msgstr "اختر مصدر الالتقاط"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "Do you want to allow this page to capture the contents of your screen?"
-msgstr ""
-"<qt>هل تريد أن تسمح لهذا الموقع أن يرفق الملفات التالية بالبريد الإلكتروني؟</"
-"qt>"
+msgstr "هل تريد السماح لهذه الصفحة بالتقاط محتويات شاشتك؟"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -468,8 +453,7 @@ msgid "Accept for this session"
 msgstr "اقبل لهذه الجلسة"
 
 #: src/cookies/cookiealertdlg.cpp:45
-#, fuzzy, kde-format
-#| msgid "Reject"
+#, kde-format
 msgctxt "@label reject cookie"
 msgid "Reject"
 msgstr "ارفض"
@@ -487,6 +471,8 @@ msgid ""
 "<html><head/><body><p>You received a cookie from %1</p><p>Do you want to "
 "accept or reject this cookie?</p></body></html>"
 msgstr ""
+"<html><head/><body><p>لقد تلقيت ملف تعريف ارتباط من %1</p><p>هل تريد قبول أو "
+"رفض ملف تعريف الارتباط هذا؟</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/cookies/cookiealertdlg.ui:30
@@ -661,14 +647,9 @@ msgid "&Grant permission"
 msgstr ""
 
 #: src/ui/featurepermissionbar.cpp:57
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "<html><b>%1</b> would like to send you notifications"
-msgstr ""
-"<qt>هل تريد أن تسمح لهذا الموقع أن يرفق الملفات التالية بالبريد الإلكتروني؟</"
-"qt>"
+msgstr "<html><b>%1</b> يرغب في إرسال إشعارات إليك"
 
 #: src/ui/featurepermissionbar.cpp:59
 #, kde-format
@@ -678,70 +659,44 @@ msgid ""
 msgstr ""
 
 #: src/ui/featurepermissionbar.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your microphone and other audio capture "
 "devices"
 msgstr ""
-"<qt>هل تريد أن تسمح لهذا الموقع أن يرفق الملفات التالية بالبريد الإلكتروني؟</"
-"qt>"
+"<html><b>%1</b> يرغب في الوصول إلى الميكروفون وأجهزة التقاط الصوت الأخرى"
 
 #: src/ui/featurepermissionbar.cpp:63
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your camera and other video capture "
 "devices"
 msgstr ""
-"<qt>هل تريد أن تسمح لهذا الموقع أن يرفق الملفات التالية بالبريد الإلكتروني؟</"
-"qt>"
+"<html><b>%1</b> يرغب في الوصول إلى الكاميرا وأجهزة التقاط الفيديو الأخرى"
 
 #: src/ui/featurepermissionbar.cpp:65
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access to your microphone, camera and other "
 "audio and video capture devices"
 msgstr ""
-"<qt>هل تريد أن تسمح لهذا الموقع أن يرفق الملفات التالية بالبريد الإلكتروني؟</"
-"qt>"
+"<html><b>%1</b> يرغب في الوصول إلى الميكروفون والكاميرا وأجهزة التقاط الصوت "
+"والفيديو الأخرى"
 
 #: src/ui/featurepermissionbar.cpp:67
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
-msgstr ""
-"<qt>هل تريد أن تسمح لهذا الموقع أن يرفق الملفات التالية بالبريد الإلكتروني؟</"
-"qt>"
+msgstr "<html><b>%1</b> يريد قفل الفأرة داخل صفحة الويب"
 
 #: src/ui/featurepermissionbar.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "<html><b>%1</b> would like to record your screen"
-msgstr ""
-"<qt>هل تريد أن تسمح لهذا الموقع أن يرفق الملفات التالية بالبريد الإلكتروني؟</"
-"qt>"
+msgstr "<html><b>%1</b> يرغب في تسجيل شاشتك"
 
 #: src/ui/featurepermissionbar.cpp:71
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "<html><b>%1</b> would like to record your screen and your audio"
-msgstr ""
-"<qt>هل تريد أن تسمح لهذا الموقع أن يرفق الملفات التالية بالبريد الإلكتروني؟</"
-"qt>"
+msgstr "<html><b>%1</b> يرغب في تسجيل شاشتك وصوتك"
 
 #: src/ui/passwordbar.cpp:29
 #, kde-format
@@ -865,10 +820,9 @@ msgstr "أخرى"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "Choose files to upload"
+#, kde-format
 msgid "Choose fields to remember"
-msgstr "اختر الملفات لرفعها"
+msgstr "اختر الحقول التي تريد تذكرها"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
@@ -1064,10 +1018,9 @@ msgid "Do Not Allow"
 msgstr "لا تسمح"
 
 #: src/webenginepart.cpp:195
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "احفظ الصورة باسم..."
+msgstr "احفظ صفحة HTML كاملة باسم..."
 
 #: src/webenginepart.cpp:199
 #, kde-format
@@ -1218,10 +1171,9 @@ msgid "Look Again for Forms"
 msgstr ""
 
 #: src/webenginepart.cpp:1017
-#, fuzzy, kde-format
-#| msgid "Remove all cached passwords for this site"
+#, kde-format
 msgid "&Memorize Passwords in This Page Now"
-msgstr "أزل جميع كلمات السر المحفوظة مؤقتا لهذا الموقع"
+msgstr "ا&حفظ كلمات السر في هذه الصفحة الآن"
 
 #: src/webenginepart.cpp:1021
 #, kde-format
@@ -1234,16 +1186,14 @@ msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 
 #: src/webenginepart.cpp:1029
-#, fuzzy, kde-format
-#| msgid "&Allow password caching for this site"
+#, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "ا&سمح بالحفظ المؤقت لكلمات السر لهذا الموقع"
 
 #: src/webenginepart.cpp:1033
-#, fuzzy, kde-format
-#| msgid "Remove all cached passwords for this site"
+#, kde-format
 msgid "Remove All Memorized Passwords for This Site"
-msgstr "أزل جميع كلمات السر المحفوظة مؤقتا لهذا الموقع"
+msgstr "أزل جميع كلمات السر لهذا الموقع"
 
 #: src/webenginepart.cpp:1037
 #, kde-format
@@ -1345,13 +1295,9 @@ msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, subjectTab)
 #: src/webenginepartcertificateerrordlg.ui:63
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
-#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
-#| msgid " - Subject: "
+#, kde-format
 msgid "&Subject"
-msgstr " - الموضوع: "
+msgstr "ال&موضوع"
 
 #. i18n: ectx: attribute (title), widget (QWidget, issuerTab)
 #: src/webenginepartcertificateerrordlg.ui:73
@@ -1467,10 +1413,9 @@ msgid "&Play/Pause"
 msgstr "&شغّل/ألبث"
 
 #: src/webengineview.cpp:503
-#, fuzzy, kde-format
-#| msgid "Un&mute"
+#, kde-format
 msgid "Un&mute/&Mute"
-msgstr "لا &تكتم"
+msgstr "أ&كتم/لا &تكتم"
 
 #: src/webengineview.cpp:508
 #, kde-format
@@ -1478,10 +1423,9 @@ msgid "Toggle &Loop"
 msgstr ""
 
 #: src/webengineview.cpp:513
-#, fuzzy, kde-format
-#| msgid "Show &Controls"
+#, kde-format
 msgid "Toggle &Controls"
-msgstr "أظهر ال&متحكمات"
+msgstr "بدّل ال&متحكمات"
 
 #: src/webengineview.cpp:524
 #, kde-format

@@ -7,13 +7,13 @@
 # AbdulAziz AlSharif <a.a-a.s@hotmail.com>, 2007.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
-# SPDX-FileCopyrightText: 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-22 00:38+0000\n"
-"PO-Revision-Date: 2024-10-17 09:39+0400\n"
+"PO-Revision-Date: 2025-01-12 12:52+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -35,7 +35,7 @@ msgid "Your emails"
 msgstr "zayed.alsaidi@gmail.com"
 
 #: kfmclient.cpp:57
-#, fuzzy, kde-format
+#, kde-format
 msgid "kfmclient"
 msgstr "kfmclient"
 
@@ -60,6 +60,8 @@ msgid ""
 "The mimetype of the URL. Allows Konqueror to determine in advance which "
 "component to use, making it start faster."
 msgstr ""
+"نوع MIME الخاص بعنوان URL. يسمح لبرنامج كنكر بتحديد المكون الذي سيُستخدم "
+"مسبقًا، مما يجعله يبدأ بشكل أسرع."
 
 #: kfmclient.cpp:78
 #, kde-format
@@ -80,7 +82,7 @@ msgstr "معطيات الأمر"
 #: kfmclient.cpp:84
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
-msgstr ""
+msgstr "المستندات والعناوين التي يفتحها التّطبيق ستُحذف بعد استخدامها"
 
 #: kfmclient.cpp:93
 #, kde-format
@@ -92,14 +94,7 @@ msgstr ""
 "الصياغة:\n"
 
 #: kfmclient.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kfmclient openURL 'url' ['mimetype']\n"
-#| "            # Opens a window showing 'url'.\n"
-#| "            #  'url' may be a relative path\n"
-#| "            #   or file name, such as . or subdir/\n"
-#| "            #   If 'url' is omitted, $HOME is used instead.\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
 "            # Opens a window showing 'url'.\n"
@@ -112,18 +107,11 @@ msgstr ""
 "            # يفتح نافذة تُظهر 'url'.\n"
 "            #   قد يكون 'url' مسارًا نسبيًا \n"
 "            #   أو اسم ملف، مثل . أو subdir/‎\n"
-"            #   إذا أُسقط 'url'،  سيُستخدَم ‎$HOME بدلًا منه.\n"
+"            #   إذا أُسقط 'url'،  سيُستخدَم صفحة البداية بدلًا منه.\n"
 "\n"
 
 #: kfmclient.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "            # If 'mimetype' is specified, it will be used to determine "
-#| "the\n"
-#| "            #   component that Konqueror should use. For instance, set it "
-#| "to\n"
-#| "            #   text/html for a web page, to make it appear faster\n"
-#| "\n"
+#, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
 "            #   component that Konqueror should use. For instance, set it "
@@ -136,6 +124,8 @@ msgstr ""
 "            # إذا حُدِّد 'mimetype'، سيُستخدَم لتحديد المكوّن الذي يجب\n"
 "            #   أن يستخدمه كنكر. مثلًا استخدم text/html لصفحة وِب،\n"
 "            #   لتظهر بشكل أسرع\n"
+"            # ملاحظة: هذه الطريقة لتحديد نوع mimetype أصبحت قديمة.\n"
+"            # يرجى استخدام خيار --mimetype\n"
 "\n"
 
 #: kfmclient.cpp:104
@@ -154,20 +144,17 @@ msgstr ""
 "\n"
 
 #: kfmclient.cpp:280
-#, fuzzy, kde-format
-#| msgid "Syntax Error: Not enough arguments\n"
+#, kde-format
 msgid "Syntax error, not enough arguments\n"
 msgstr "خطأ صياغي، لا معطيات كافية\n"
 
 #: kfmclient.cpp:284
-#, fuzzy, kde-format
-#| msgid "Syntax Error: Too many arguments\n"
+#, kde-format
 msgid "Syntax error, too many arguments\n"
 msgstr "خطأ صياغي، الكثير من المعطيات\n"
 
 #: kfmclient.cpp:339
-#, fuzzy, kde-format
-#| msgid "Syntax Error: Unknown command '%1'\n"
+#, kde-format
 msgid "Syntax error, unknown command '%1'\n"
 msgstr "خطأ صياغي: الأمر '%1' مجهول\n"
 
