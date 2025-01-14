@@ -6,14 +6,14 @@
 # محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
 # AbdulAziz AlSharif <a.a-a.s@hotmail.com>, 2007.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# SPDX-FileCopyrightText: 2008, 2024 zayed <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2008, 2024, 2025 zayed <zayed.alsaidi@gmail.com>
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-24 00:38+0000\n"
-"PO-Revision-Date: 2024-12-12 10:59+0400\n"
+"PO-Revision-Date: 2025-01-13 19:10+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -73,7 +73,7 @@ msgid "Dra&w frame around not completely loaded images"
 msgstr "ا&رسم إطارًا حول الصور غير مكتملة التحميل"
 
 #: appearance.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<html>If this box is checked, Konqueror will draw a frame as a placeholder "
 "around images embedded in a web page that are not yet fully loaded.<br />You "
@@ -102,7 +102,7 @@ msgid "Show Only Once"
 msgstr "أظهرها مرّة واحدة فقط"
 
 #: appearance.cpp:77
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
 "b>: Show all animations completely.</li><li><b>Disabled</b>: Never show "
@@ -148,7 +148,7 @@ msgid "Und&erline links:"
 msgstr "ت&سطير الوصلات:"
 
 #: appearance.cpp:96
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<html>Controls how Konqueror handles underlining hyperlinks:<br /"
 "><ul><li><b>Enabled</b>: Always underline links</li><li><b>Disabled</b>: "
@@ -1425,12 +1425,12 @@ msgstr ""
 #, kde-format
 msgid " day"
 msgid_plural " days"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] " (أقلّ من يوم)"
+msgstr[1] " يوم واحد"
+msgstr[2] " يومان"
+msgstr[3] " أيّام"
+msgstr[4] " يومًا"
+msgstr[5] " يوم"
 
 #: filteropts.cpp:120
 #, kde-format
@@ -1465,7 +1465,7 @@ msgid ""
 msgstr ""
 
 #: filteropts.cpp:154
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
 "should be defined in the filter list for blocking to take effect."
@@ -1474,22 +1474,20 @@ msgstr ""
 "منعها في قائمة المنع للمرشح حتى تفعل."
 
 #: filteropts.cpp:156
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "When enabled blocked images will be removed from the page completely, "
 "otherwise a placeholder 'blocked' image will be used."
 msgstr ""
-"عند تفعيل منع الصور ؛ فإنها سوف تزال من الصفحة بشكل كامل وإلا فإن علامة "
+"عند تفعيل منع الصور؛ فإنها سوف تزال من الصفحة بشكل كامل وإلا فإن علامة "
 "'ممنوع' سوف تظهر محلها."
 
 #: filteropts.cpp:163
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
 "and media objects."
-msgstr ""
-"هذه قائمة بعناوين المرشحات التي ستطبق على جميع وصلات الصور والإطارات. وسوف "
-"تنفذ المرشحات حسب الترتيب ، لذا ضع المرشحات العامة في أعلى القائمة."
+msgstr "هذه قائمة بعناوين المرشحات التي ستطبق على جميع وصلات الصور والإطارات. "
 
 #: filteropts.cpp:167
 #, kde-format
@@ -1601,19 +1599,11 @@ msgid "Select Home Page"
 msgstr "حدد الصفحة الرئيسة"
 
 #: generalopts.cpp:102
-#, fuzzy, kde-format
-#| msgid ""
-#| "This is the URL of the web page where Konqueror (as web browser) will "
-#| "jump to when the \"Home\" button is pressed. When Konqueror is started as "
-#| "a file manager, that button makes it jump to your local home folder "
-#| "instead."
+#, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
 "\" button is pressed."
-msgstr ""
-"هذا هو عنوان الصفحة الذي سيتوجه إليها كنكرر (كمتصفح وب) عند نقر زر \"المنزل"
-"\". عندما يبدأ كنكرر كمدير ملفات، فإن هذا الزر سيجعل كنكرر يذهب إلى مجلد "
-"المنزل المحلي."
+msgstr "هذا هو عنوان الصفحة الذي سيتوجه إليها كنكرر عند نقر زر \"المنزل\"."
 
 #: generalopts.cpp:110
 #, kde-format
@@ -1738,15 +1728,15 @@ msgid "Enable Access Ke&y activation with Ctrl key"
 msgstr "&مكن تنشيط مفتاح الوصول باستخدام مفتاح Ctrl"
 
 #: htmlopts.cpp:116
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Pressing the Ctrl key when viewing webpages activates Access Keys. "
 "Unchecking this box will disable this accessibility feature. (Konqueror "
 "needs to be restarted for this change to take effect.)"
 msgstr ""
-"ضغط المفتاح Ctrl  أثناء عرض صفحات الويب ينشط مفاتيح النفاذ للكِيدِي. بإلغاء "
-"اختيار هذا المربع ستعطل ميزة إتاحة الوصول هذه. (كونكيورر بحاجة لإعادة تشغيل "
-"لتطبيق التأثيرات)"
+"ضغط المفتاح Ctrl  أثناء عرض صفحات الويب ينشط مفاتيح النفاذ. بإلغاء اختيار "
+"هذا المربع ستعطل ميزة إتاحة الوصول هذه. (كونكيورر بحاجة لإعادة تشغيل لتطبيق "
+"التأثيرات)"
 
 #: htmlopts.cpp:121
 #, kde-format
