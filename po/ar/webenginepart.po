@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-04 00:39+0000\n"
-"PO-Revision-Date: 2025-01-12 13:02+0400\n"
+"PO-Revision-Date: 2025-01-14 20:53+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -32,19 +32,19 @@ msgstr "zayed.alsaidi@gmail.com"
 #, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
-msgstr "كن حرا."
+msgstr "كُنْ حُرًّا."
 
 #: src/about/konq_aboutpage.cpp:73 src/about/konq_aboutpage.cpp:132
 #: src/about/konq_aboutpage.cpp:198
 #, kde-format
 msgid "Konqueror"
-msgstr "كونكيورر"
+msgstr "كنكر"
 
 #: src/about/konq_aboutpage.cpp:75 src/about/konq_aboutpage.cpp:134
 #: src/about/konq_aboutpage.cpp:200
 #, kde-format
 msgid "Konqueror is a web browser, file manager and universal document viewer."
-msgstr ""
+msgstr "كنكر هو متصفح ويب ومدير ملفات وعارض مستندات عالمي."
 
 #: src/about/konq_aboutpage.cpp:76 src/about/konq_aboutpage.cpp:135
 #: src/about/konq_aboutpage.cpp:201
@@ -53,7 +53,7 @@ msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
 "Points contains links to Home, Network Folders, Trash, etc."
 msgid "Starting Points"
-msgstr ""
+msgstr "نقاط البداية"
 
 #: src/about/konq_aboutpage.cpp:77 src/about/konq_aboutpage.cpp:136
 #: src/about/konq_aboutpage.cpp:202
@@ -85,7 +85,7 @@ msgstr "المهملات"
 #: src/about/konq_aboutpage.cpp:88
 #, kde-format
 msgid "Browse and restore the trash"
-msgstr ""
+msgstr "تصفح واستعادة سلة المهملات"
 
 #: src/about/konq_aboutpage.cpp:91
 #, kde-format
@@ -95,7 +95,7 @@ msgstr "مجلّدات الشبكة"
 #: src/about/konq_aboutpage.cpp:92
 #, kde-format
 msgid "Shared files and folders"
-msgstr ""
+msgstr "الملفات والمجلدات المشتركة"
 
 #: src/about/konq_aboutpage.cpp:95
 #, kde-format
@@ -105,17 +105,17 @@ msgstr "العلامات"
 #: src/about/konq_aboutpage.cpp:96
 #, kde-format
 msgid "Quick access to your bookmarks"
-msgstr ""
+msgstr "الوصول السريع إلى الإشارات المرجعية الخاصة بك"
 
 #: src/about/konq_aboutpage.cpp:99
 #, kde-format
 msgid "Next: An Introduction to Konqueror"
-msgstr ""
+msgstr "التالي: مقدمة إلى كنكر"
 
 #: src/about/konq_aboutpage.cpp:101
 #, kde-format
 msgid "Search the Web"
-msgstr ""
+msgstr "البحث في الويب"
 
 #: src/about/konq_aboutpage.cpp:131 src/about/konq_aboutpage.cpp:133
 #, kde-format
@@ -130,6 +130,9 @@ msgid ""
 "both local and networked folders while enjoying advanced features such as "
 "the powerful sidebar and file previews."
 msgstr ""
+"يجعل برنامج كنكر العمل مع الملفات وإدارتها أمرًا سهلاً. يمكنك تصفح المجلدات "
+"المحلية والمتصلة بالشبكة مع الاستمتاع بالميزات المتقدمة مثل الشريط الجانبي "
+"القوي ومعاينات الملفات."
 
 #: src/about/konq_aboutpage.cpp:142
 #, kde-format
@@ -139,6 +142,10 @@ msgid ""
 "kde.org\">http://www.kde.org</a>) of a web page you would like to visit in "
 "the location bar and press Enter, or choose an entry from the Bookmarks menu."
 msgstr ""
+"يعد كنكر أيضًا متصفح ويب كامل الميزات وسهل الاستخدام يمكنك استخدامه لاستكشاف "
+"الإنترنت. أدخل عنوان (على سبيل المثال <a href=\"http://www.kde.org\">http://"
+"www.kde.org</a>) صفحة الويب التي ترغب في زيارتها في شريط الموقع واضغط على "
+"Enter، أو اختر إدخالاً من قائمة الإشارات المرجعية."
 
 #: src/about/konq_aboutpage.cpp:147
 #, kde-format
@@ -146,6 +153,8 @@ msgid ""
 "To return to the previous location, press the back button <img width='16' "
 "height='16' src=\"%1\"></img> in the toolbar. "
 msgstr ""
+"للعودة إلى الموقع السابق، اضغط على زر الرجوع <img width='16' height='16' src="
+"\"%1\"></img> في شريط الأدوات. "
 
 #: src/about/konq_aboutpage.cpp:150
 #, kde-format
@@ -153,22 +162,24 @@ msgid ""
 "To quickly go to your Home folder press the home button <img width='16' "
 "height='16' src=\"%1\"></img>."
 msgstr ""
+"للانتقال بسرعة إلى المجلد الرئيس، اضغط على زر الصفحة الرئيسية <img "
+"width='16' height='16' src=\"%1\"></img>."
 
 #: src/about/konq_aboutpage.cpp:152
 #, kde-format
 msgid ""
 "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
-msgstr ""
+msgstr "للحصول على وثائق أكثر تفصيلاً عن كنكر انقر <a href=\"%1\">هنا</a>."
 
 #: src/about/konq_aboutpage.cpp:155
 #, kde-format
 msgid "Next: Tips & Tricks"
-msgstr ""
+msgstr "التالي: النصائح والحيل"
 
 #: src/about/konq_aboutpage.cpp:204
 #, kde-format
 msgid "Tips & Tricks"
-msgstr ""
+msgstr "النصائح والحيل"
 
 #: src/about/konq_aboutpage.cpp:205
 #, kde-format
@@ -179,6 +190,10 @@ msgid ""
 "encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-"
 "Shortcuts."
 msgstr ""
+"استخدم اختصارات الويب: عن طريق كتابة \"gg: KDE\" يمكن للمرء البحث في "
+"الإنترنت باستخدام غوغل عن عبارة البحث \"KDE\". هناك العديد من اختصارات الويب "
+"المحددة مسبقًا لتسهيل البحث عن البرامج أو البحث عن كلمات معينة في موسوعة. "
+"يمكنك حتى <a href=\"%1\">أنشئ اختصارات الويب الخاصة بك</a>."
 
 #: src/about/konq_aboutpage.cpp:210
 #, kde-format
@@ -187,6 +202,9 @@ msgid ""
 "want to clear the current entry by pressing the black arrow with the white "
 "cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
 msgstr ""
+"عندما تريد لصق عنوان جديد في شريط أدوات الموقع، قد ترغب في مسح الإدخال "
+"الحالي عن طريق الضغط على السهم الأسود الذي يحتوي على علامة متقاطعة بيضاء "
+"<img width='16' height='16' src=\"%1\"></img> في شريط الأدوات."
 
 #: src/about/konq_aboutpage.cpp:214
 #, kde-format
@@ -195,6 +213,9 @@ msgid ""
 "the icon (favicon) that is to the left of the Location toolbar, drop it on "
 "to the desktop, and choose \"Icon\"."
 msgstr ""
+"لإنشاء رابط على سطح المكتب الخاص بك يشير إلى الصفحة الحالية، ما عليك سوى سحب "
+"الرمز (الرمز المفضل) الموجود على يسار شريط أدوات الموقع، وإسقاطه على سطح "
+"المكتب، واختيار \"أيقونة\"."
 
 #: src/about/konq_aboutpage.cpp:217
 #, kde-format
@@ -203,6 +224,8 @@ msgid ""
 "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
 "sessions."
 msgstr ""
+"يمكنك أيضًا العثور على <img width='16' height='16' src=\"%1\" /> \"وضع ملء "
+"الشاشة\" في قائمة الإعدادات. هذه الميزة مفيدة جدًا لجلسات \"التحدث\"."
 
 #: src/about/konq_aboutpage.cpp:220
 #, kde-format
@@ -211,6 +234,9 @@ msgid ""
 "two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> Split "
 "View Left/Right) you can make Konqueror appear the way you like."
 msgstr ""
+"فرق تسد- عن طريق تقسيم النافذة إلى قسمين (على سبيل المثال، النافذة -> <img "
+"width='16' height='16' src=\"%1\" /> اقسم العرض لليسار/لليمين ) يمكنك جعل "
+"كنكر يظهر بالطريقة التي تريدها."
 
 #: src/about/konq_aboutpage.cpp:223
 #, kde-format
@@ -219,6 +245,8 @@ msgid ""
 "visiting asks you to use a different browser (and do not forget to send a "
 "complaint to the webmaster!)"
 msgstr ""
+"استخدم ميزة <a href=\"%1\">وكيل المستخدم</a> إذا طلب منك موقع الويب الذي "
+"تزوره استخدام متصفح مختلف (ولا تنس إرسال شكوى إلى مشرف الموقع!)"
 
 #: src/about/konq_aboutpage.cpp:226
 #, kde-format
@@ -226,6 +254,8 @@ msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
 "ensures that you can keep track of the pages you have visited recently."
 msgstr ""
+"يضمن <img width='16' height='16' src=\"%1\"></img> السجل الموجود في الشريط "
+"الجانبي لديك إمكانية تتبع الصفحات التي قمت بزيارتها مؤخرًا."
 
 #: src/about/konq_aboutpage.cpp:228
 #, kde-format
@@ -234,6 +264,8 @@ msgid ""
 "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
 "Terminal Emulator)."
 msgstr ""
+"سيقدر المستخدمون المتقدمون وحدة التحكم التي يمكنك تضمينها في كنكر (الإعدادات "
+"-> <img width='16' height='16' SRC=\"%1\"></img> إظهار المحاكي الطرفي)."
 
 #: src/about/konq_aboutpage.cpp:232
 #, kde-format
@@ -241,17 +273,17 @@ msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
 "Points contains links to Home, Network Folders, Trash, etc."
 msgid "<a href=\"%1\">Return to Starting Points</a>"
-msgstr ""
+msgstr "<a href=\"%1\">العودة إلى نقاط البداية</a>"
 
 #: src/about/konq_aboutpage.cpp:246
 #, kde-format
 msgid "Installed Plugins"
-msgstr ""
+msgstr "الملحقات المثبتة"
 
 #: src/about/konq_aboutpage.cpp:247
 #, kde-format
 msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
-msgstr ""
+msgstr "<td>الملحق</td><td>الوصف</td><td>الملف</td><td>الأنواع</td>"
 
 #: src/about/konq_aboutpage.cpp:248
 #, kde-format
@@ -261,19 +293,19 @@ msgstr "الأكثر تثبيتاً"
 #: src/about/konq_aboutpage.cpp:249
 #, kde-format
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
-msgstr ""
+msgstr "<td>نوع Mime</td><td>الوصف</td><td>اللاحقات</td><td>الملحق</td>"
 
 #: src/actondownloadedfilebar.cpp:88
 #, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
-msgstr ""
+msgstr "حُفظ ك‍"
 
 #: src/actondownloadedfilebar.cpp:120
 #, kde-format
 msgctxt "@label location where a remote URL was downloaded"
 msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
-msgstr ""
+msgstr "<tt>%1</tt> حُفظ كـ <tt>%2</tt>"
 
 #: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
 #, kde-format
@@ -297,7 +329,7 @@ msgstr "افتح &في %1"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
-msgstr ""
+msgstr "اعرض في لسان جديد"
 
 #: src/actondownloadedfilebar.cpp:184
 #, kde-format
@@ -315,12 +347,12 @@ msgstr "اعرض بـ%1"
 #, kde-format
 msgid ""
 "Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
-msgstr ""
+msgstr "هل تريد السماح لـ <tt>%1</tt> بالتقاط محتويات شاشتك؟"
 
 #: src/capturesourcechooserdlg.cpp:31
 #, kde-format
 msgid "Choose window or screen to capture"
-msgstr ""
+msgstr "اختر نافذة أو شاشة لالتقاطها"
 
 #: src/capturesourcechooserdlg.cpp:38
 #, kde-format
@@ -352,6 +384,8 @@ msgid ""
 "The page will be saved as a single HTML file. Only the text of the page will "
 "be saved. External resources such as images won't be saved"
 msgstr ""
+"ستُحفظ الصفحة كملف HTML واحد. ستُحفظ نص الصفحة فقط. لن تُحفظ الموارد الخارجية "
+"مثل الصور"
 
 #: src/choosepagesaveformatdlg.cpp:40
 #, kde-format
@@ -359,6 +393,8 @@ msgid ""
 "The page will be saved as an HTML file. Any external resources the page "
 "requires, such as images, will be saved inside an apposite directory"
 msgstr ""
+"ستُحفظ الصفحة كملف HTML. ستُحفظ أي موارد خارجية تتطلبها الصفحة، مثل الصور، "
+"داخل دليل مناسب"
 
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
@@ -368,6 +404,9 @@ msgid ""
 "<br><strong>Note</strong>: not all browsers are able to display this kind of "
 "files"
 msgstr ""
+"ستُحفظ الصفحة كملف MTHML يحتوي على نص الصفحة وأي موارد خارجية تتطلبها، مثل "
+"الصور. <br><strong>ملاحظة</strong>: ليست كل المتصفحات قادرة على عرض هذا "
+"النوع من الملفات"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
@@ -379,25 +418,25 @@ msgstr "اختر تنسيق الحفظ"
 #: src/choosepagesaveformatdlg.ui:20
 #, kde-format
 msgid "How would you like to save the page?"
-msgstr ""
+msgstr "كيف تريد حفظ الصفحة؟"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As an HTML file &without external resources"
-msgstr ""
+msgstr "كملف HTML &دون المصادر الخارجية"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
 #, kde-format
 msgid "As a &complete HTML page"
-msgstr ""
+msgstr "كصفحة HTML &كاملة"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As a &MHTML file"
-msgstr ""
+msgstr "&كملف MHTML"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -462,7 +501,7 @@ msgstr "ارفض"
 #: src/cookies/cookiealertdlg.ui:14
 #, kde-format
 msgid "CookieAlertDlg"
-msgstr ""
+msgstr "تنبيه ملفات الكعكات"
 
 #. i18n: ectx: property (text), widget (QLabel, header)
 #: src/cookies/cookiealertdlg.ui:20
@@ -620,7 +659,7 @@ msgstr "الإملاء"
 #: src/spellcheckermanager.cpp:102
 #, kde-format
 msgid "Spell Checking Enabled"
-msgstr ""
+msgstr "التدقيق الإملائي ممكن"
 
 #: src/spellcheckermanager.cpp:120
 #, kde-format
@@ -638,13 +677,13 @@ msgstr "أ&ظهر كلمات السر"
 #, kde-format
 msgctxt "@action:deny permission"
 msgid "&Deny permission"
-msgstr ""
+msgstr "ا&رفض الإذن"
 
 #: src/ui/featurepermissionbar.cpp:26
 #, kde-format
 msgctxt "@action:grant permission"
 msgid "&Grant permission"
-msgstr ""
+msgstr "ا&منح الإذن"
 
 #: src/ui/featurepermissionbar.cpp:57
 #, kde-format
@@ -656,7 +695,7 @@ msgstr "<html><b>%1</b> يرغب في إرسال إشعارات إليك"
 msgid ""
 "<html><b>%1</b> would like to access information about your current physical "
 "location"
-msgstr ""
+msgstr "<html><b>%1</b> يرغب في الوصول إلى معلومات حول موقعك الفعلي الحالي"
 
 #: src/ui/featurepermissionbar.cpp:61
 #, kde-format
@@ -828,13 +867,13 @@ msgstr "اختر الحقول التي تريد تذكرها"
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
 #, kde-format
 msgid "Switch between displaying passwords or placeholders"
-msgstr ""
+msgstr "التبديل بين عرض كلمات السر أو العناصر النائبة"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
 #, kde-format
 msgid "Show advanced information about the fields"
-msgstr ""
+msgstr "أظهر معلومات متقدمة حول الحقول"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
@@ -853,13 +892,13 @@ msgstr "ال&حقول المتاحة"
 #: src/webenginecustomizecacheablefieldsdlg.ui:101
 #, kde-format
 msgid "Store form data in KWallet when closing the dialog"
-msgstr ""
+msgstr "خزّن بيانات النموذج في حافظتك عند إغلاق مربع الحوار"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
 #, kde-format
 msgid "&Immediately memorize form data"
-msgstr ""
+msgstr "ا&حفظ بيانات النموذج فورًا"
 
 #: src/webenginepage.cpp:159
 #, kde-format
@@ -1162,13 +1201,13 @@ msgstr "<html>هل تريد %1 يتذكر معلومات الدخول لـ<b>%2<
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
-msgstr ""
+msgstr "ا&ملأ النماذج الآن"
 
 #: src/webenginepart.cpp:1013
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "Look Again for Forms"
-msgstr ""
+msgstr "ابحث مرة أخرى عن النماذج"
 
 #: src/webenginepart.cpp:1017
 #, kde-format
@@ -1178,12 +1217,12 @@ msgstr "ا&حفظ كلمات السر في هذه الصفحة الآن"
 #: src/webenginepart.cpp:1021
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
-msgstr ""
+msgstr "&خصص الحقول لحفظها في هذه الصفحة..."
 
 #: src/webenginepart.cpp:1025
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
-msgstr ""
+msgstr "أزل إعدادات الحفظ المخصصة لهذه الصفحة"
 
 #: src/webenginepart.cpp:1029
 #, kde-format
@@ -1233,7 +1272,7 @@ msgstr "أ&دوات"
 #: src/webenginepart.rc:32
 #, kde-format
 msgid "&Credential management"
-msgstr ""
+msgstr "إدارة الا&عتمادات"
 
 #. i18n: ectx: ToolBar (htmlToolBar)
 #: src/webenginepart.rc:47
@@ -1260,13 +1299,13 @@ msgstr "أدخل العنوان:"
 #, kde-format
 msgctxt "Ignore the certificate error for this URL only for now"
 msgid "Yes, &once"
-msgstr ""
+msgstr "نعم، &مرة واحد"
 
 #: src/webenginepartcertificateerrordlg.cpp:45
 #, kde-format
 msgctxt "Ignore the certificate error for this URL now and in the future"
 msgid "Yes, &forever"
-msgstr ""
+msgstr "نعم، &دائما"
 
 #: src/webenginepartcertificateerrordlg.cpp:50
 #, kde-format
@@ -1274,6 +1313,8 @@ msgid ""
 "<p>The server <tt>%1</tt> failed the authenticity check. The error is:</"
 "p><p><tt>%2</tt></p>Do you want to ignore this error?"
 msgstr ""
+"<p>فشل الخادم <tt>%1</tt> في التحقق من صحة البيانات. الخطأ هو:</p><p><tt>%2</"
+"tt></p>هل تريد تجاهل هذا الخطأ؟"
 
 #: src/webenginepartcertificateerrordlg.cpp:56
 #, kde-format
@@ -1291,7 +1332,7 @@ msgstr "حواريّ"
 #: src/webenginepartcertificateerrordlg.ui:50
 #, kde-format
 msgid "Certificate details"
-msgstr ""
+msgstr "تفاصيل الشّهادة"
 
 #. i18n: ectx: attribute (title), widget (QWidget, subjectTab)
 #: src/webenginepartcertificateerrordlg.ui:63
@@ -1311,11 +1352,13 @@ msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
 "default style sheet will be used"
 msgstr ""
+"لم نتمكن من فتح الملف <tt>%1</tt> الذي يحتوي على ورقة الأنماط الخاصة "
+"بالمستخدم. ستُستخدم ورقة الأنماط المبدئية"
 
 #: src/webenginepartdownloadmanager.cpp:309
 #, kde-format
 msgid "An error occurred while saving the file: %1"
-msgstr ""
+msgstr "حدث خطأ أثناء حفظ الملف: %1"
 
 #: src/webenginepartdownloadmanager.cpp:320
 #, kde-format
@@ -1339,7 +1382,7 @@ msgstr "المقصد"
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
-msgstr ""
+msgstr "حُفظ %1 كـ %2"
 
 #: src/webengineview.cpp:351
 #, kde-format
@@ -1420,7 +1463,7 @@ msgstr "أ&كتم/لا &تكتم"
 #: src/webengineview.cpp:508
 #, kde-format
 msgid "Toggle &Loop"
-msgstr ""
+msgstr "بدّل ال&تكرار"
 
 #: src/webengineview.cpp:513
 #, kde-format
@@ -1484,13 +1527,13 @@ msgstr "اسم الحقل"
 #, kde-format
 msgctxt "Value of a web field"
 msgid "Field value"
-msgstr ""
+msgstr "قيمة الحقل"
 
 #: src/webfieldsdataview.cpp:63
 #, kde-format
 msgctxt "Name attribute of a web field"
 msgid "Internal field name"
-msgstr ""
+msgstr "اسم الحقل الداخلي"
 
 #: src/webfieldsdataview.cpp:64
 #, kde-format
@@ -1502,7 +1545,7 @@ msgstr "نوع الحقل"
 #, kde-format
 msgctxt "The id of a web field"
 msgid "Field id"
-msgstr ""
+msgstr "معرف الحقل"
 
 #: src/webfieldsdataview.cpp:66
 #, kde-format
@@ -1520,7 +1563,7 @@ msgstr "للقراءة فقط"
 #, kde-format
 msgctxt "web field has the autocomplete attribute set to off"
 msgid "auto-completion off"
-msgstr ""
+msgstr "الإكمال التلقائي متوقف"
 
 #: src/webfieldsdataview.cpp:131
 #, kde-format
@@ -1548,6 +1591,10 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
+"<ul><li><b>الاسم الداخلي للحقل: </b>%1</li><li><b>نوع الحقل: </b>%2</"
+"li><li><b>معرف الحقل: </b>%3</li><li><b>الحقل للقراءة فقط: </b>%4</"
+"li><li><b>الحقل ممكّن: </b>%5</li><li><b>الإكمال التلقائي ممكّن: </b>%6</li></"
+"ul>"
 
 #~ msgid "Open in external application"
 #~ msgstr "افتح في تطبيق خارجي"
