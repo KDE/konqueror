@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the konqueror package.
-# SPDX-FileCopyrightText: 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-03 00:38+0000\n"
-"PO-Revision-Date: 2024-10-17 09:40+0400\n"
+"PO-Revision-Date: 2025-01-14 21:21+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -31,32 +31,32 @@ msgstr "zayed.alsaidi@gmail.com"
 #: app/archivedialog.cpp:82
 #, kde-format
 msgid "Create Archive"
-msgstr ""
+msgstr "أنشئ أرشيفًا"
 
 #: app/archivedialog.cpp:98
 #, kde-format
 msgid "The URL of the page that is to be archived"
-msgstr ""
+msgstr "عنوان URL للصفحة التي ستُأرشف"
 
 #: app/archivedialog.cpp:101
 #, kde-format
 msgid "Source &URL:"
-msgstr ""
+msgstr "عنوان ال&مصدر:"
 
 #: app/archivedialog.cpp:110
 #, kde-format
 msgid "Web archive (*.war)"
-msgstr ""
+msgstr "أرشيف ويب (*.war)"
 
 #: app/archivedialog.cpp:111
 #, kde-format
 msgid "Tar archive (*.tar)"
-msgstr ""
+msgstr "أرشيف تار (*.tar)"
 
 #: app/archivedialog.cpp:112
 #, kde-format
 msgid "Zip archive (*.zip)"
-msgstr ""
+msgstr "أرشيف Zip مضغوط (‎*.zip)"
 
 #: app/archivedialog.cpp:113
 #, kde-format
@@ -66,7 +66,7 @@ msgstr "الدّليل"
 #: app/archivedialog.cpp:118
 #, kde-format
 msgid "The file or directory where the archived page will be saved"
-msgstr ""
+msgstr "الملف أو الدليل الذي ستحفظ الصفحة المؤرشفة فيه"
 
 #: app/archivedialog.cpp:119
 #, kde-format
@@ -76,14 +76,18 @@ msgstr "ا&حفظ في:"
 #: app/archivedialog.cpp:121
 #, kde-format
 msgid "Options"
-msgstr ""
+msgstr "خيارات"
 
 #: app/archivedialog.cpp:131
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " ثانية"
+msgstr[1] " ثانية"
+msgstr[2] " ثانية"
+msgstr[3] " ثواني"
+msgstr[4] " ثانية"
+msgstr[5] " ثانية"
 
 #: app/archivedialog.cpp:132
 #, kde-format
@@ -97,24 +101,25 @@ msgid ""
 "The web archive download cannot use the current proxy settings. No proxy "
 "will be used."
 msgstr ""
+"لا يمكن لتنزيل أرشيف الويب استخدام إعدادات الوكيل الحالية. لن يستخدم أي وكيل."
 
 #: app/archivedialog.cpp:349
 #, kde-format
 msgctxt "@info"
 msgid "The save location is not valid."
-msgstr ""
+msgstr "موقع الحفظ غير صالح."
 
 #: app/archivedialog.cpp:369
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
-msgstr ""
+msgstr "لا يمكن العثور على الأمر wget(1)،<nl/>راجع <link>%1</link>."
 
 #: app/archivedialog.cpp:391
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
-msgstr ""
+msgstr "لا يمكن التحقق من المقصد<nl/><filename>%1</filename><nl/>%2"
 
 #: app/archivedialog.cpp:408
 #, kde-kuit-format
@@ -122,13 +127,13 @@ msgctxt "@info"
 msgid ""
 "The archive directory<nl/><filename>%1</filename><nl/>already exists as a "
 "file."
-msgstr ""
+msgstr "دليل الأرشيف<nl/><filename>%1</filename><nl/>موجود فعلًا كملف."
 
 #: app/archivedialog.cpp:409
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
-msgstr ""
+msgstr "دليل الأرشيف<nl/><filename>%1</filename><nl/>موجود فعلًا."
 
 #: app/archivedialog.cpp:413
 #, kde-kuit-format
@@ -136,42 +141,42 @@ msgctxt "@info"
 msgid ""
 "The archive file<nl/><filename>%1</filename><nl/>already exists as a "
 "directory."
-msgstr ""
+msgstr "ملف الأرشيف<nl/><filename>%1</filename><nl/>موجود فعلًا كدليل."
 
 #: app/archivedialog.cpp:414
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
-msgstr ""
+msgstr "لف الأرشيف <nl/><filename>%1</filename><nl/>موجود فعلًا."
 
 #: app/archivedialog.cpp:418
 #, kde-format
 msgid "Archive Already Exists"
-msgstr ""
+msgstr "الأرشيف موجود فعلًا"
 
 #: app/archivedialog.cpp:448
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
-msgstr ""
+msgstr "لا يمكن حذف الأرشيف الأصلي<nl/><filename>%1</filename><nl/>%2"
 
 #: app/archivedialog.cpp:465
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
-msgstr ""
+msgstr "لا يمكن إنشاء دليل مؤقت<nl/><filename>%1</filename><nl/>"
 
 #: app/archivedialog.cpp:537
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot start the archiver process <filename>%1</filename>"
-msgstr ""
+msgstr "لا يمكن بدء عملية الأرشيف <filename>%1</filename>"
 
 #: app/archivedialog.cpp:553
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The download process was interrupted."
-msgstr ""
+msgstr "قُطعت عملية التنزيل."
 
 #: app/archivedialog.cpp:554
 #, kde-kuit-format
@@ -179,7 +184,7 @@ msgctxt "@info"
 msgid ""
 "<para>The download process <filename>%1</filename> failed with signal %2.</"
 "para>"
-msgstr ""
+msgstr "<para>فشلت عملية التنزيل <filename>%1</filename> مع الإشارة %2.</para>"
 
 #: app/archivedialog.cpp:559
 #, kde-kuit-format
@@ -187,7 +192,7 @@ msgctxt "@info"
 msgid ""
 "<para>The download process <filename>%1</filename> failed with status %2.</"
 "para>"
-msgstr ""
+msgstr "<para>فشلت عملية التنزيل <filename>%1</filename> مع الحالة %2.</para>"
 
 #: app/archivedialog.cpp:563
 #, kde-kuit-format
@@ -195,77 +200,77 @@ msgctxt "@info"
 msgid ""
 "<para>This may simply indicate a 404 error for some of the page elements.</"
 "para>"
-msgstr ""
+msgstr "<para>قد يشير هذا ببساطة إلى خطأ 404 لبعض عناصر الصفحة.</para>"
 
 #: app/archivedialog.cpp:569
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
-msgstr ""
+msgstr "<para>الاحتفاظ بالأرشيف الجزئي للويب؟</para>"
 
 #: app/archivedialog.cpp:570
 #, kde-format
 msgid "Retain Archive?"
-msgstr ""
+msgstr "الاحتفاظ بالأرشيف؟"
 
 #: app/archivedialog.cpp:571
 #, kde-format
 msgid "Retain"
-msgstr ""
+msgstr "احتفظ"
 
 #: app/archivedialog.cpp:575
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."
-msgstr ""
+msgstr "فشل إنشاء أرشيف الويب."
 
 #: app/archivedialog.cpp:718
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
-msgstr ""
+msgstr "لا يمكن نسخ الأرشيف إلى<nl/><filename>%1</filename><nl/>%2"
 
 #: app/archivedialog.cpp:748
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
-msgstr ""
+msgstr "لا يمكن تعيين الأذونات على<nl/><filename>%1</filename><nl/>%2"
 
 #: app/archivedialog.cpp:756
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"
-msgstr ""
+msgstr "حُفظ أرشيف الويب باسم<nl/><filename><link>%1</link></filename>"
 
 #: app/main.cpp:26
 #, kde-format
 msgid "Web Archiver"
-msgstr ""
+msgstr "مؤرشف الويب"
 
 #: app/main.cpp:27
 #, kde-format
 msgid "0.0.1"
-msgstr ""
+msgstr "0.0.1"
 
 #: app/main.cpp:28
 #, kde-format
 msgid "Archive a web page"
-msgstr ""
+msgstr "أرشفة صفحة ويب"
 
 #: app/main.cpp:30
 #, kde-format
 msgid "Copyright (c) 2020 Jonathan Marten"
-msgstr ""
+msgstr "حقوق النشر (ج) 2020 لجوناثان مارتن"
 
 #: app/main.cpp:31
 #, kde-format
 msgid "Jonathan Marten"
-msgstr ""
+msgstr "جوناثان مارتن"
 
 #: app/main.cpp:43
 #, kde-format
 msgid "URL of the web page to archive"
-msgstr ""
+msgstr "عنوان URL لصفحة الويب المراد أرشفتها"
 
 #: app/main.cpp:43
 #, kde-format
@@ -282,37 +287,37 @@ msgstr "وقت الانتظار:"
 #: app/settings.kcfg:11
 #, kde-format
 msgid "The wait time between item requests, to reduce web server load"
-msgstr ""
+msgstr "وقت الانتظار بين طلبات العناصر لتقليل تحميل خادم الويب"
 
 #. i18n: ectx: label, entry (NoProxy), group (Options)
 #: app/settings.kcfg:18
 #, kde-format
 msgid "Do not use proxy"
-msgstr ""
+msgstr "لا تستخدم الوكيل"
 
 #. i18n: ectx: tooltip, entry (NoProxy), group (Options)
 #: app/settings.kcfg:19
 #, kde-format
 msgid "Do not use the system proxy settings to fetch the web page"
-msgstr ""
+msgstr "لا تستخدم إعدادات وكيل النظام لجلب صفحة الويب"
 
 #. i18n: ectx: label, entry (RandomWait), group (Options)
 #: app/settings.kcfg:24
 #, kde-format
 msgid "Randomise wait time"
-msgstr ""
+msgstr "وقت الانتظار العشوائي"
 
 #. i18n: ectx: tooltip, entry (RandomWait), group (Options)
 #: app/settings.kcfg:25
 #, kde-format
 msgid "Vary the wait time between requests, to confuse server log analysis"
-msgstr ""
+msgstr "غيّر وقت الانتظار بين الطلبات للتشويش على تحليل سجل الخادم"
 
 #. i18n: ectx: label, entry (FixExtensions), group (Options)
 #: app/settings.kcfg:30
 #, kde-format
 msgid "Save in standard web archive format"
-msgstr ""
+msgstr "احفظ بتنسيق أرشيف الويب القياسي"
 
 #. i18n: ectx: tooltip, entry (FixExtensions), group (Options)
 #: app/settings.kcfg:37
@@ -334,6 +339,17 @@ msgid ""
 "original URL refers to a directory but does not end with a slash.</p>\n"
 "      "
 msgstr ""
+"<p>احفظ الملفات التي المنزلة كلها في دليل واحد، مع امتدادات اسم الملف "
+"المناسبة للتصفح المحلي.\n"
+"على سبيل المثال، سيتم دائمًا تسمية الصفحة الرئيسية HTML باسم \"index.html\" "
+"وستُحفظ صفحة .php عن بُعد بالامتداد القياسي .html.</p>\n"
+"<p>اترك هذا الخيار قيد التشغيل لإنتاج ملف أرشيف ويب قياسي (.war).</p>\n"
+"<p>إذا عُطل هذا الخيار، فستُحفظ الملفات تمامًا مثل ما نزلت.\n"
+"هذا يعني أنها قد تكون في أدلة فرعية تعكس بنية موقع الويب الأصلي، ولن يعدل "
+"الامتدادات.\n"
+"لاحظ أن التنزيل قد لا يعمل بشكل صحيح إذا كان عنوان URL الأصلي يشير إلى دليل "
+"ولكنه لا ينتهي بعلامة مائلة.</p>\n"
+"     "
 
 #. i18n: ectx: label, entry (RunInTerminal), group (Options)
 #: app/settings.kcfg:42
@@ -352,18 +368,23 @@ msgid ""
 "p>\n"
 "      "
 msgstr ""
+"<p>شغّل عملية التنزيل في نافذة الطرفية. أغلق نافذة الطرفية عند انتهاء التنزيل."
+"</p>\n"
+"                  <p>إذا عُطل هذا الخيار، فسيشغل التنزيل في الخلفية. يجب أن "
+"يظهر ناتج تقدمه في ملف سجل الجلسة.</p>\n"
+"                 "
 
 #. i18n: ectx: label, entry (CloseWhenFinished), group (Options)
 #: app/settings.kcfg:50
 #, kde-format
 msgid "Close when finished"
-msgstr ""
+msgstr "أغلق عند الانتهاء"
 
 #. i18n: ectx: tooltip, entry (CloseWhenFinished), group (Options)
 #: app/settings.kcfg:51
 #, kde-format
 msgid "Close this window when the download has finished successfully"
-msgstr ""
+msgstr "أغلق هذه النافذة عند انتهاء التنزيل بنجاح"
 
 #. i18n: ectx: label, entry (ArchiveType), group (Options)
 #: app/settings.kcfg:56
@@ -375,12 +396,12 @@ msgstr "نوع الأر&شيف:"
 #: app/settings.kcfg:57
 #, kde-format
 msgid "The type of web archive to save"
-msgstr ""
+msgstr "نوع أرشيف الويب المراد حفظه"
 
 #: plugin_webarchiver.cpp:32
 #, kde-format
 msgid "Archive Web Page..."
-msgstr ""
+msgstr "صفحة ويب الأرشيف..."
 
 #: plugin_webarchiver.cpp:50
 #, kde-kuit-format
@@ -389,11 +410,13 @@ msgid ""
 "Cannot find the <command>kcreatewebarchive</command> executable,<nl/>check "
 "the plugin and helper installation."
 msgstr ""
+"لا يمكن العثور على الملف القابل للتنفيذ <command>kcreatewebarchive</command>،"
+"<nl/>تحقق من تثبيت الملحق والمساعد."
 
 #: plugin_webarchiver.cpp:51
 #, kde-format
 msgid "Cannot Create Web Archive"
-msgstr ""
+msgstr "لا يمكن إنشاء أرشيف ويب"
 
 #. i18n: ectx: Menu (tools)
 #: webarchiverplugin.rc:4
