@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-24 00:38+0000\n"
-"PO-Revision-Date: 2025-01-14 18:36+0400\n"
+"PO-Revision-Date: 2025-01-15 19:06+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -331,12 +331,14 @@ msgid ""
 "p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
+"html><head/><body><p>لا تخزن الخبيئة على القرص ولكن فقط في الذاكرة.</"
+"p><p>يعني تشغيل هذا أنه ستُمسح الخبيئة عند الخروج من كنكر</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:32
 #, kde-format
 msgid "Keep cache in &memory"
-msgstr ""
+msgstr "أبقِ الخبيئة &في الذاكرة"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: cache/cache.ui:41
@@ -351,6 +353,8 @@ msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
+"الحد الأقصى للمساحة على القرص أو الذاكرة التي يمكن أن يستخدمها للخبيئة. عند "
+"الوصول إلى هذا الحد، ستزال الصفحات القديمة لإفساح المجال للصفحات الجديدة"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:54
@@ -368,13 +372,13 @@ msgstr " م.بايت"
 #: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr ""
+msgstr "استخدم دليلًا مخصصًا للاحتفاظ بالخبيئة"
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:88
 #, kde-format
 msgid "&Custom cache directory"
-msgstr ""
+msgstr "&دليل خبيئة مخصص"
 
 #. i18n: ectx: property (text), widget (QLabel, customCachePathLabel)
 #: cache/cache.ui:100
@@ -386,7 +390,7 @@ msgstr "&دليل الخبيئة"
 #: cache/cache.ui:113
 #, kde-format
 msgid "The custom directory to store cache"
-msgstr ""
+msgstr "الدليل المخصص لتخزين الخبيئة"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
@@ -874,7 +878,7 @@ msgstr "خ&صّص..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "خلفية الصفحة المخصصة"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -893,6 +897,17 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">استخدم لون خلفية مخصص لصفحات الويب. "
+"يتم استخدام هذا اللون:</p><ul style=\"margin-top: 0px; margin-bottom: 0px; "
+"margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li align="
+"\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">عندما لا تعُين لون "
+"الخلفية بشكل صريح بواسطة الصفحة أو بواسطة جدول أنماط مخصص</li><li align="
+"\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">قبل تحميل صفحة "
+"الويب</li></ul><p align=\"justify\">يكون تعيين لون خلفية مخصص مفيدًا في "
+"الغالب إذا تستخدم جدول أنماط مخصصًا يحدد لون الخلفية للصفحة (خاصةً اللون "
+"الداكن)، لتجنب وميض أبيض قبل تحميل الصفحة</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
@@ -907,6 +922,8 @@ msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>لون الخلفية المخصص للاستخدام لصفحات الويب</p></body></"
+"html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -929,12 +946,27 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">أضف إلى جدول الأنماط المخصص (بما في "
+"ذلك جدول أنماط إمكانية الوصول) قاعدة لتعيين جميع ألوان الخلفية إلى اللون "
+"المخصص الذي اخترته أعلاه. يتجنب هذا الحاجة إلى تعيين لون الخلفية في كل من "
+"جدول الأنماط ومربع حوار التكوين.</p><p align=\"justify\"><span style=\" font-"
+"weight:600;\">ملاحظات:</span></p><ul style=\"margin-top: 0px; margin-bottom: "
+"0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li align="
+"\"justify\" style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">سيتم تجاوز القاعدة "
+"بواسطة قواعد أخرى لألوان الخلفية في جدول الأنماط المخصص لديك وفقًا لقواعد CSS "
+"المعتادة</li><li align=\"justify\" style=\" margin-top:0px; margin-"
+"bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\"> لا تُضاف القاعدة فعليًا إلى الملف الذي يحتوي على جدول الأنماط "
+"المخصص الخاص بك؛ بل تُدرج فقط في النسخة التي يحتفظ بها كنكر في الذاكرة. وهذا "
+"يعني أنه إذا كنت تستخدم جدول الأنماط في متصفحات أخرى، فستحتاج إلى إضافة "
+"القاعدة إليه يدويًا.</li></ul></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "أضف لون خلفية مخصص إلى ورقة الأنماط"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
@@ -1421,7 +1453,7 @@ msgstr "مرشح آلي"
 #: filteropts.cpp:109
 #, kde-format
 msgid "Automatic update interval:"
-msgstr ""
+msgstr "فترة التحديث التلقائي:"
 
 #: filteropts.cpp:114
 #, kde-format
@@ -1465,6 +1497,8 @@ msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
 "\"exporthelp\">export format</a>"
 msgstr ""
+"<qt>مزيد من المعلومات حول <a href=\"importhelp\"> تنسيق الاستيراد</a>، <a "
+"href=\"exporthelp\">تنسيق التصدير</a>"
 
 #: filteropts.cpp:154
 #, kde-format
@@ -1502,6 +1536,13 @@ msgid ""
 "(allow) any matching URL, which takes priority over any blacklist (blocking) "
 "filter."
 msgstr ""
+"<qt><p>أدخل تعبيرًا للتصفية. يمكن تعريف المرشحات على أنها:<ul><li>حرف بدل على "
+"غرار shell، على سبيل المثال <tt>http://www.example.com/ads*</tt>، يمكن "
+"استخدام الأحرف البدل <tt>*?[]</tt></li><li>تعبير عادي كامل عن طريق إحاطة "
+"السلسلة بـ '<tt>/</tt>'، على سبيل المثال <tt>/\\/(ad|banner)\\./</tt></li></"
+"ul><p>يمكن أن تسبق أي سلسلة مرشح '<tt>@@</tt>' لإدراج أي عنوان URL مطابق في "
+"القائمة البيضاء (السماح به)، والذي يأخذ الأولوية على أي مرشح في القائمة "
+"السوداء (الحظر)."
 
 #: filteropts.cpp:183
 #, kde-format
@@ -1510,6 +1551,9 @@ msgid ""
 "lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
 "ignored. Any other line is added as a filter expression."
 msgstr ""
+"<qt><p>تنسيق استيراد المرشح هو ملف نص عادي. تُتجاهل الأسطر الفارغة وسطور "
+"التعليقات التي تبدأ بـ '<tt>!</tt>' وسطر العنوان <tt>[AdBlock]</tt>. تتم "
+"إضافة أي سطر آخر كتعبير مرشح."
 
 #: filteropts.cpp:188
 #, kde-format
@@ -1518,6 +1562,8 @@ msgid ""
 "header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
 "separate line."
 msgstr ""
+"<qt><p>تنسيق تصدير المرشح هو ملف نص عادي. يبدأ الملف بسطر رأسي "
+"<tt>[AdBlock]</tt>، ثم تتبعه جميع المرشحات في سطر منفصل."
 
 #: filteropts.cpp:256
 #, kde-format
@@ -1546,13 +1592,13 @@ msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
 "empty"
 msgid "Please, insert the custom start page"
-msgstr ""
+msgstr "الرجاء أدرج صفحة بداية مخصصة"
 
 #: generalopts.cpp:60
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
-msgstr ""
+msgstr "&عند إنشاء لسان جديد"
 
 #: generalopts.cpp:69
 #, kde-format
@@ -1587,7 +1633,7 @@ msgstr "حدد صفحة البداية"
 #: generalopts.cpp:83
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
-msgstr ""
+msgstr "هذا هو عنوان URL لصفحة الويب التي سيعرضها كنكر عند بدء التشغيل."
 
 #: generalopts.cpp:94
 #, kde-format
@@ -1610,27 +1656,27 @@ msgstr "هذا هو عنوان الصفحة الذي سيتوجه إليها ك�
 #: generalopts.cpp:110
 #, kde-format
 msgid "Default web browser engine:"
-msgstr ""
+msgstr "محرك متصفح الويب المبدئي:"
 
 #: generalopts.cpp:119
 #, kde-format
 msgid "When splitting a view"
-msgstr ""
+msgstr "عند تقسيم العرض"
 
 #: generalopts.cpp:123
 #, kde-format
 msgid "Always duplicate current view"
-msgstr ""
+msgstr "كرر العرض الحالي دائمًا"
 
 #: generalopts.cpp:124
 #, kde-format
 msgid "Duplicate current view only for local files"
-msgstr ""
+msgstr "كرر العرض الحالي للملفات المحلية"
 
 #: generalopts.cpp:130
 #, kde-format
 msgid "When starting up, restore state from last time"
-msgstr ""
+msgstr "عند بدء التشغيل، استعد الحالة من المرة الأخيرة"
 
 #: htmlopts.cpp:39
 #, kde-format
@@ -1743,7 +1789,7 @@ msgstr ""
 #: htmlopts.cpp:121
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
-msgstr ""
+msgstr "أرسل رأس DNT لإخبار مواقع الويب أنك لا تريدها أن تتعقبك"
 
 #: htmlopts.cpp:122
 #, kde-format
@@ -1752,32 +1798,37 @@ msgid ""
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
 "considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
+"<p>حدد هذا المربع إذا كنت تريد إبلاغ موقع ويب بأنك لا تريد تتبع عادات تصفح "
+"الويب الخاصة بك.</p><p><strong>تحذير:</strong> يعتبر هذا العنوان قديمًا، لذا "
+"فمن المحتمل أن يتم تجاهله بواسطة معظم صفحات الويب.</p>"
 
 #: htmlopts.cpp:126
 #, kde-format
 msgid "Offer to save website passwords"
-msgstr ""
+msgstr "اعرض حفظ كلمات السر لموقع الويب"
 
 #: htmlopts.cpp:127
 #, kde-format
 msgid "Uncheck this box to prevent being prompted to save website passwords"
-msgstr ""
+msgstr "ألغ تحديد هذا المربع لمنع مطالبتك بحفظ كلمات سر موقع الويب"
 
 #: htmlopts.cpp:131
 #, kde-format
 msgid "Display online PDF files using WebEngine"
-msgstr ""
+msgstr "اعرض ملفات بي دي اف عبر الإنترنت باستخدام WebEngine"
 
 #: htmlopts.cpp:132
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
 msgstr ""
+"ألغ تحديد هذا المربع لعرض ملفات بي دي اف عبر الإنترنت كما ضبطتها في إعدادات "
+"النظام"
 
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Always display files from web pages in a new tab"
-msgstr ""
+msgstr "اعرض الملفات من صفحات الويب دائمًا في لسان جديد"
 
 #: htmlopts.cpp:137
 #, kde-format
@@ -1785,6 +1836,8 @@ msgid ""
 "<p>When showing in Konqueror files from links in web pages, always use a new "
 "tab"
 msgstr ""
+"<p> عند العرض في ملفات كنكر من الروابط الموجودة في صفحات الويب، استخدم دائمًا "
+"لسانًا جديدًا"
 
 #: jsopts.cpp:57
 #, kde-format
@@ -2093,7 +2146,7 @@ msgstr "سلوك الألسنة"
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr ""
+msgstr "النسبة الباعيّة"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2121,31 +2174,31 @@ msgstr "مكان شريط اللسان"
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "اختر مكان عرض شريط الألسنة"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "فوق المحتويات"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "تحت المحتويات"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "يسار المحتويات"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "يمين المحتويات"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
@@ -2219,6 +2272,9 @@ msgid ""
 "\">shift</span> when opening a new tab to reverse this behavior</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>سيؤدي هذا إلى فتح علامة تبويب جديدة في الخلفية، بدلاً "
+"من المقدمة.</p><p>اضغط على مفتاح <span style=\" font-family:'Fira Code';"
+"\">shift</span> عند فتح لسان جديد لعكس هذا السلوك</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
@@ -2311,7 +2367,7 @@ msgstr "نشّط اللسان المُستخدَم سابقًا عند إغلا�
 #: useragent/useragent.ui:20
 #, kde-format
 msgid "Existing identifications"
-msgstr ""
+msgstr "التعريفات الموجودة"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
@@ -2320,7 +2376,7 @@ msgstr ""
 #: useragent/useragent.ui:147
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: useragent/useragent.ui:63
@@ -2356,7 +2412,7 @@ msgstr "ا&حذف"
 #: useragent/useragent.ui:150
 #, kde-format
 msgid "Choose &selected identification"
-msgstr ""
+msgstr "اختر التعريف ال&محدد"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:160
@@ -2365,18 +2421,20 @@ msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
 msgstr ""
+"<html><head/><body><p>إذا حددته، فسيتعطل اختيار تعريف مخصص وسيستخدم التعريف "
+"المبدئي</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:163
 #, kde-format
 msgid "Use &default identification"
-msgstr ""
+msgstr "ا&ستخدم التعريف المبدئي"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:178
 #, kde-format
 msgid "&Custom identification"
-msgstr ""
+msgstr "تعريف &مخصص"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
 #: useragent/useragent.ui:188
@@ -2387,6 +2445,9 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>معرف المتصفح الذي سيستخدم عند تعطيل التعريف المبدئي.</"
+"p><p>يمكنك إدخاله يدويًا أو البدء من أحد المعرفات الموجودة في القائمة أدناه "
+"وتغييره وفقًا لاحتياجاتك.</p></body></html>"
 
 #~ msgid "Form Com&pletion"
 #~ msgstr "إ&تمام النماذج"
