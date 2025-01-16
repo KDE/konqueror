@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-24 02:34+0000\n"
-"PO-Revision-Date: 2025-01-14 20:05+0400\n"
+"PO-Revision-Date: 2025-01-15 19:18+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -90,13 +90,13 @@ msgstr "ا&فتح في"
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
-msgstr ""
+msgstr "ا&عرض في %1"
 
 #: src/downloadactionquestion.cpp:351
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
-msgstr ""
+msgstr "ا&عرض في"
 
 #: src/downloadactionquestion.cpp:373
 #, kde-format
@@ -108,19 +108,19 @@ msgstr "افتح &في %1"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
-msgstr ""
+msgstr "اعرض &في %1"
 
 #: src/downloadactionquestion.cpp:427
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
-msgstr ""
+msgstr "العارضون لا يدعمون هذا الملف"
 
 #: src/downloadactionquestion.cpp:431
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
-msgstr ""
+msgstr "من غير المرجح أن يعرض العارضون الملف"
 
 #: src/downloadactionquestion.cpp:432
 #, kde-format
@@ -136,6 +136,9 @@ msgid ""
 "type is incorrect or if a viewer can display %1 even if it doesn't "
 "officially support it.</p>"
 msgstr ""
+"<p>العارضون الذين من المفترض ألا يكونوا قادرين على عرض %1. من المرجح أن يفشل "
+"استخدامها.</p><p>يتوفر هذه الخيارات في حالة عدم صحة نوع الملف المكتشف أو إذا "
+"كان بإمكان العارض عرض %1 حتى لو لم يكن يدعمه رسميًا.</p>"
 
 #: src/downloadactionquestion.cpp:454
 #, kde-format
@@ -155,6 +158,8 @@ msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
+"<p>أنت تشغل كنكر بصفتك الجذر. وهذا يتطلب تمكين وضع غير آمن للغاية في مكون "
+"المتصفح.</p><p>ماذا تريد أن تفعل؟</p>"
 
 #: src/konqapplication.cpp:158
 #, kde-format
@@ -174,7 +179,7 @@ msgstr "(ج) 1999-2023، مطورو كونكيورر"
 #: src/konqapplication.cpp:174
 #, kde-format
 msgid "Stefano Crocco"
-msgstr ""
+msgstr "ستيفن كروكو"
 
 #: src/konqapplication.cpp:174
 #, kde-format
@@ -509,6 +514,8 @@ msgid ""
 "JavaScript access controls\n"
 "Per-domain policies extensions"
 msgstr ""
+"متحكمات الوصول إلى جافاسكربت\n"
+"امتدادات السياسات محدودة النطاق"
 
 #: src/konqapplication.cpp:225
 #, kde-format
@@ -524,7 +531,7 @@ msgstr "حمّل مسبقًا للاستخدام اللاحق. لا يدعم ه�
 #: src/konqapplication.cpp:227
 #, kde-format
 msgid "Profile to open (DEPRECATED, IGNORED)"
-msgstr ""
+msgstr "التشكيلة التي ستفتح (غير صالح للاستخدام، متجاهل)"
 
 #: src/konqapplication.cpp:227
 #, kde-format
@@ -585,6 +592,8 @@ msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
 "only when developing Konqueror itself"
 msgstr ""
+"أنشئ عملية كنكر جديدة، حتى لو كانت موجودة فعلًا. الغرض من ذلك هو استخدامها "
+"فقط عند تطوير كنكر نفسه"
 
 #: src/konqapplication.cpp:237
 #, kde-format
@@ -603,6 +612,7 @@ msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr ""
+"لا يمكنك تمرير عناوين URL عند استخدام مفتاح --preload. ستُتجاهل عناوين URL\n"
 
 #: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4864
 #: src/konqmainwindow.cpp:4910
@@ -1370,11 +1380,13 @@ msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
+"<html>يعرض أدوات المطور للصفحة الحالية<br/><br/>يُقسم العرض الحالي إلى نصفين "
+"ويتم عرض أدوات المطور في النصف الثاني"
 
 #: src/konqmainwindow.cpp:3678
 #, kde-format
 msgid "Shows the developer tools for the current page"
-msgstr ""
+msgstr "إظهار أدوات المطور للصفحة الحالية"
 
 #: src/konqmainwindow.cpp:3840
 #, kde-format
@@ -1531,16 +1543,23 @@ msgid ""
 "proxy URL manually in the settings dialog. Do you want to change proxy "
 "settings now?"
 msgstr ""
+"لا يمكن استخدام ضبط الوكيل الخاص بك مع محرك HTML الخاص بـ QtWebEngine. لن "
+"يُستخدم أي وكيل\n"
+"\n"
+"يدعم QtWebEngine فقط وكيلًا ثابتًا، لذا لا يمكن استخدام ميفاق التكوين التلقائي "
+"للوكيل (PAC) واكتشاف الوكيل التلقائي على الويب مع QtWebEngine. إذا كنت بحاجة "
+"إلى وكيل، فيرجى تحديد ضبط الوكيل للنظام أو تحديد عنوان URL للوكيل يدويًا في "
+"مربع حوار الإعدادات. هل تريد تغيير إعدادات الوكيل الآن؟"
 
 #: src/konqmainwindow.cpp:5431
 #, kde-format
 msgid "Unsupported proxy configuration"
-msgstr ""
+msgstr "ضبط الوكيل غير مدعوم"
 
 #: src/konqmainwindow.cpp:5431
 #, kde-format
 msgid "Don't use a proxy"
-msgstr ""
+msgstr "لا تستخدم وكيل"
 
 #: src/konqmainwindow.cpp:5432 src/konqmainwindow.cpp:5460
 #, kde-format
@@ -1555,21 +1574,25 @@ msgid ""
 "protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
+"لا يمكن استخدام ضبط الوكيل الخاص بك مع محرك HTML الخاص بـ QtWebEngine لأنه "
+"لا يدعم وجود وكلاء مختلفين لميفاقي HTTP وHTTPS. إعداداتك الحالية هي:"
+"<p><b>وكيل HTTP:</b> <tt>%1</tt></p><p><b>وكيل HTTPS: </b><tt>%2</tt></"
+"p>ماذا تريد أن تفعل؟"
 
 #: src/konqmainwindow.cpp:5459
 #, kde-format
 msgid "Conflicting proxy configuration"
-msgstr ""
+msgstr "ضبط الوكيل المتضارب"
 
 #: src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
-msgstr ""
+msgstr "استخدم وكيل HTTP (هذه المرة فقط)"
 
 #: src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
-msgstr ""
+msgstr "استخدم وكيل HTTPS (هذه المرة فقط)"
 
 #: src/konqmainwindow.cpp:5476
 #, kde-format
@@ -1578,6 +1601,8 @@ msgid ""
 "hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
 "Mode (%1)"
 msgstr ""
+"لقد دخلت إلى وضع ملء الشاشة بالكامل (واجهة المستخدم مخفية تمامًا). يمكنك "
+"الخروج منه بالضغط على اختصار لوحة المفاتيح لوضع ملء الشاشة (%1)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
@@ -1589,7 +1614,7 @@ msgstr "احفظ الألسنة ال&مفتوحة والنوافذ لاسترج�
 #: src/konqnewsessiondlg_base.ui:34
 #, kde-format
 msgid "A&ll open windows"
-msgstr ""
+msgstr "&كل النوافذ المفتوحة"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_pCurrentWindow)
 #: src/konqnewsessiondlg_base.ui:44
@@ -1909,14 +1934,14 @@ msgctxt ""
 msgid ""
 "<filename>%1</filename> can be executed. Do you want to execute it or to "
 "display it?"
-msgstr ""
+msgstr "يمكن تنفيذ <filename>%1</filename>. هل تريد تنفيذه أم عرضه؟"
 
 #: src/urlloader.cpp:438
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
-msgstr ""
+msgstr "يمكن تنفيذ <filename>%1</filename>. هل تريد تنفيذه؟"
 
 #: src/urlloader.cpp:748
 #, kde-format
