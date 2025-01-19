@@ -62,6 +62,14 @@ public:
      */
     QSet<QNetworkCookie> cookies() const override;
 
+    void addDomainException(const QString &domain, CookieAdvice advice) override;
+    void addCookieException(const QString &name, const QString &domain, const QString &path, CookieAdvice advice) override;
+
+    bool areCookiesEnabled() const override;
+
+    CookieAdvice adviceForDomain(const QString &domain) const override;
+    CookieAdvice adviceForCookie(const QString &name, const QString &domain, const QString &path) const override;
+
 public slots:
 
     /**

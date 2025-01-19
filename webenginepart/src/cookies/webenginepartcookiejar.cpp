@@ -78,6 +78,36 @@ WebEnginePartCookieJar::~WebEnginePartCookieJar()
     f.close();
 }
 
+bool WebEnginePartCookieJar::areCookiesEnabled() const
+{
+    return m_policy.cookiesEnabled;
+}
+
+void WebEnginePartCookieJar::addDomainException(const QString& domain, CookieAdvice advice)
+{
+    m_policy.domainExceptions.insert(domain, advice);
+    writeConfig();
+}
+
+void WebEnginePartCookieJar::addCookieException(const QString &name, const QString &domain, const QString &path, CookieAdvice advice)
+{
+    m_policy.cookieExceptions.insert({name, domain, path}, advice);
+    saveCookieAdvice();
+}
+
+WebEnginePartCookieJar::CookieAdvice WebEnginePartCookieJar::adviceForDomain(const QString& domain) const
+{
+    auto it = m_policy.domainExceptions.constFind(domain);
+    return it != m_policy.domainExceptions.constEnd() ? *it : m_policy.defaultPolicy;
+}
+
+WebEnginePartCookieJar::CookieAdvice WebEnginePartCookieJar::adviceForCookie(const QString &name, const QString &domain, const QString &path) const
+{
+    CookieIdentifier id{name, domain, path};
+    auto it = m_policy.cookieExceptions.constFind(id);
+    return it != m_policy.cookieExceptions.constEnd() ? *it : adviceForDomain(domain);
+}
+
 QSet<QNetworkCookie> WebEnginePartCookieJar::cookies() const
 {
     return m_cookies;

@@ -60,6 +60,48 @@ public:
      */
     static void writeAdviceConfigEntry(KConfigGroup &grp, const char* key, CookieAdvice advice);
 
+    /**
+     * @brief Adds an exception to the default cookie policy for a given domain
+     * @param domain the domain of the cookie
+     * @param advice how to handle cookies coming from @p domain
+     */
+
+    virtual void addDomainException(const QString &domain, CookieAdvice advice) = 0;
+
+    /**
+     * @brief Adds an exception to the default cookie policy for a given cookie
+     * @param name the name of the cookie
+     * @param domain the domain of the cookie
+     * @param path the path of the cookie
+     * @param advice how to handle cookies coming from @p domain
+     */
+    virtual void addCookieException(const QString &name, const QString &domain, const QString &path, CookieAdvice advice) = 0;
+
+    /**
+     * @brief How to handle cookies from the given domain
+     *
+     * @param domain the domain
+     * @return how to handle cookies from @p domain. If the user chose a specific handling of cookies from @p domain,
+     * the corresponding value is returned, otherwise the default behavior is returned
+     */
+    virtual CookieAdvice adviceForDomain(const QString &domain) const = 0;
+
+    /**
+     * @brief How to handle a specific cookie
+     * @param name the name of the cookie
+     * @param domain the domain of the cookie
+     * @param path the path of the cookie
+     * @return how to handle the given cookie. If the user chose a specific way to handle that cookie, the corresponding
+     * value is returned. Otherwise the return value will be the same as calling adviceForDomain with @p domain
+     */
+    virtual CookieAdvice adviceForCookie(const QString &name, const QString &domain, const QString &path) const = 0;
+
+    /**
+     * @brief Whether or not cookies are globally enabled
+     * @return whether or not cookies are globally enabled
+     */
+    virtual bool areCookiesEnabled() const = 0;
+
 public slots:
     /**
      * @brief Removes all cookies from the cookie jar

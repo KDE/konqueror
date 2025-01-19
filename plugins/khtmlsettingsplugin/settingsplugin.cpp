@@ -5,6 +5,8 @@
 */
 
 #include "settingsplugin.h"
+#include "interfaces/browser.h"
+#include "interfaces/cookiejar.h"
 
 #include <kwidgetsaddons_version.h>
 #include <kconfig.h>
@@ -100,6 +102,12 @@ SettingsPlugin::~SettingsPlugin()
     delete mConfig;
 }
 
+KonqInterfaces::CookieJar* SettingsPlugin::cookieJar() const
+{
+    KonqInterfaces::Browser *browser = KonqInterfaces::Browser::browser(qApp);
+    return browser ? browser->cookieJar() : nullptr;
+}
+
 static HtmlSettingsInterface *settingsInterfaceFor(QObject *obj)
 {
     HtmlExtension *extension = HtmlExtension::childObject(obj);
@@ -115,7 +123,7 @@ void SettingsPlugin::showPopup()
     KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(parent());
 
     KProtocolManager::reparseConfiguration();
-    const bool cookies = cookiesEnabled(part->url().url());
+    const bool cookies = cookiesEnabled(part->url().host());
     actionCollection()->action(QStringLiteral("cookies"))->setChecked(cookies);
     actionCollection()->action(QStringLiteral("useproxy"))->setChecked(QNetworkProxy::applicationProxy().type() != QNetworkProxy::NoProxy);
 
@@ -153,23 +161,19 @@ void SettingsPlugin::toggleJavascript(bool checked)
 void SettingsPlugin::toggleCookies(bool checked)
 {
     KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(parent());
-    if (part) {
-        const QString advice((checked ? QStringLiteral("Accept") : QStringLiteral("Reject")));
+    if (!part) {
+        return;
+    }
 
-        // TODO generate interface from the installed org.kde.KCookieServer.xml file
-        // but not until 4.3 is released, since 4.2 had "void setDomainAdvice"
-        // while 4.3 has "bool setDomainAdvice".
-
-        QDBusInterface kded(QStringLiteral("org.kde.kded5"),
-                            QStringLiteral("/modules/kcookiejar"),
-                            QStringLiteral("org.kde.KCookieServer"));
-        QDBusReply<void> reply = kded.call(QStringLiteral("setDomainAdvice"), part->url().url(), advice);
-
-        if (!reply.isValid())
-            KMessageBox::error(part->widget(),
-                               i18n("The cookie setting could not be changed, because the "
-                                    "cookie daemon could not be contacted."),
-                               i18nc("@title:window", "Cookie Settings Unavailable"));
+    using Advice = Konq::Settings::CookieAdvice;
+    Advice advice = checked ? Advice::Accept : Advice::Reject;
+    KonqInterfaces::Browser *browser = KonqInterfaces::Browser::browser(qApp);
+    if (!browser) {
+        return;
+    }
+    KonqInterfaces::CookieJar *jar = browser->cookieJar();
+    if (jar) {
+        jar->addDomainException(part->url().url(), advice);
     }
 }
 
@@ -191,25 +195,11 @@ void SettingsPlugin::toggleImageLoading(bool checked)
 
 bool SettingsPlugin::cookiesEnabled(const QString &url)
 {
-    QDBusInterface kded(QStringLiteral("org.kde.kded5"),
-                        QStringLiteral("/modules/kcookiejar"),
-                        QStringLiteral("org.kde.KCookieServer"));
-    QDBusReply<QString> reply = kded.call(QStringLiteral("getDomainAdvice"), url);
-
-    bool enabled = false;
-
-    if (reply.isValid()) {
-        QString advice = reply;
-        enabled = (advice == QLatin1String("Accept"));
-        if (!enabled && advice == QLatin1String("Dunno")) {
-            // TODO, check the global setting via dcop
-            KConfig _kc(QStringLiteral("kcookiejarrc"), KConfig::NoGlobals);
-            KConfigGroup kc(&_kc, "Cookie Policy");
-            enabled = (kc.readEntry("CookieGlobalAdvice", "Reject") == QLatin1String("Accept"));
-        }
+    KonqInterfaces::CookieJar *jar = cookieJar();
+    if (!jar) {
+        return false;
     }
-
-    return enabled;
+    return jar->adviceForDomain(url) == Konq::SettingsBase::CookieAdvice::Accept;
 }
 
 //

@@ -12,6 +12,10 @@
 
 class KConfig;
 
+namespace KonqInterfaces {
+    class CookieJar;
+}
+
 class SettingsPlugin : public KonqParts::Plugin
 {
     Q_OBJECT
@@ -25,6 +29,7 @@ private:
     bool cookiesEnabled(const QString &url);
     void updateIOSlaves();
     int proxyType();
+    KonqInterfaces::CookieJar *cookieJar() const;
 
 private slots:
     void toggleJavascript(bool checked);
