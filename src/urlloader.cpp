@@ -58,7 +58,7 @@ UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url
     m_request(req),
     m_view(view),
     m_trustedSource(trustedSource),
-    m_protocolAllowsReading(KProtocolManager::supportsReading(m_url) || !KProtocolInfo::isKnownProtocol(m_url)), // If the protocol is unknown, assume it allows reading
+    m_protocolAllowsReading(KProtocolManager::supportsReading(m_url)), // If the protocol is unknown, assume it doesn't allow reading
     m_useDownloadJob(req.browserArgs.downloadJob()),
     m_downloadJob(req.browserArgs.downloadJob()),
     m_allowedActions{m_request.urlActions()}
@@ -96,6 +96,10 @@ void UrlLoader::updateAllowedActions()
         //be done
             m_request.forceEmbed();
         }
+    }
+
+    if (!m_protocolAllowsReading && !isMimeTypeKnown(m_mimeType) && m_allowedActions.isAllowed(Konq::UrlAction::Open)) {
+        m_allowedActions.force(Konq::UrlAction::Open);
     }
 
     if (serviceIsKonqueror(m_service)) {
@@ -199,8 +203,8 @@ void UrlLoader::decideAction()
     if (isMimeTypeKnown(m_mimeType)) {
         m_part = findEmbeddingPart();
         findService();
-        updateAllowedActions();
     }
+    updateAllowedActions();
 
     decideExecute();
     switch (m_request.chosenAction) {
@@ -810,13 +814,19 @@ void UrlLoader::open()
     }
 
     KJob *job = nullptr;
-    KIO::ApplicationLauncherJob *j = new KIO::ApplicationLauncherJob(m_service);
-    j->setUrls({m_url});
-    j->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
-    if (m_request.tempFile) {
-        j->setRunFlags(KIO::ApplicationLauncherJob::DeleteTemporaryFiles);
+    if (m_service) {
+        KIO::ApplicationLauncherJob *j = new KIO::ApplicationLauncherJob(m_service);
+        j->setUrls({m_url});
+        if (m_request.tempFile) {
+            j->setRunFlags(KIO::ApplicationLauncherJob::DeleteTemporaryFiles);
+        }
+        job = j;
+    } else {
+        KIO::OpenUrlJob *j = new KIO::OpenUrlJob(m_url, m_mimeType);
+        j->setRunExecutables(false);
+        job = j;
     }
-    job = j;
+    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
     connect(job, &KJob::finished, this, [this, job](){done(job);});
     job->start();
 }

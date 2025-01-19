@@ -309,8 +309,9 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
     QUrl reqUrl(url);
 
     // Handle "mailto:" url here...
-    if (handleMailToUrl(reqUrl, type))
+    if (handleMailToUrl(reqUrl, type)) {
         return false;
+    }
 
     const bool isTypedUrl = property("NavigationTypeUrlEntered").toBool();
 
@@ -715,7 +716,7 @@ bool WebEnginePage::handleMailToUrl (const QUrl &url, NavigationType type) const
         }
 
         //qCDebug(WEBENGINEPART_LOG) << "Emitting openUrlRequest with " << mailtoUrl;
-        emit m_part->navigationExtension()->openUrlRequest(mailtoUrl);
+        emit m_part->browserExtension()->browserOpenUrlRequest(mailtoUrl);
         return true;
     }
 
