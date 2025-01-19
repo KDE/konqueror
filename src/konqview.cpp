@@ -1585,11 +1585,9 @@ void KonqView::duplicateView(KonqView* otherView)
     connect(j, &KJob::result, this, doOpening);
 }
 
-#if QT_VERSION < QT_VERSION_CHECK(6,6,3)
 void KonqView::forceWebEnginePartFocus()
 {
     setFocus();
     disconnect(m_pPart, &KParts::ReadOnlyPart::completed, this, &KonqView::forceWebEnginePartFocus);
     disconnect(m_pPart, &KParts::ReadOnlyPart::completedWithPendingAction, this, &KonqView::forceWebEnginePartFocus);
 }
-#endif

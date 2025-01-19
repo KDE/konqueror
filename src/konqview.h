@@ -635,18 +635,20 @@ public Q_SLOTS:
     // but also to UrlLoader's job
     void slotInfoMessage(KJob *, const QString &msg);
 
-#if QT_VERSION < QT_VERSION_CHECK(6,6,3)
     /**
-     * @brief Works around an isssue in QWebEngineView in Qt6 up to 6.6.2
+     * @brief Works around issues with QWebEngineView::setFocus
      *
      * Calling QWebEngineView::setFocus after calling QWebEngineView::load (or similar) twice
      * causes the view not begin given focus (see https://bugreports.qt.io/browse/QTBUG-122153).
      * To work around the issue, KonqMainWindow connects this slot to a WebEnginePart's
      * `completed()` and `completedWithPendingAction()` signals * after starting loading
      * an URL. This function calls setFocus() then disconnects itself.
+     *
+     * The issue was fixed in Qt 6.6.3 but started happening again at least with Qt 6.8.1. Since the
+     * workaround doesn't create problems with other versions and I'm not sure when the bug appeared
+     * again, enable the workaround for all versions.
      */
     void forceWebEnginePartFocus();
-#endif
 
 private Q_SLOTS:
     // connected to the KROP's KIO::Job
