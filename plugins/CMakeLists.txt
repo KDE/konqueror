@@ -27,6 +27,7 @@ add_subdirectory( webarchiver )
 add_subdirectory( kget )
 add_subdirectory( akregator )
 add_subdirectory( searchbar )
+add_subdirectory(temporarysavedir)
 
 if (QtTextToSpeech_FOUND)
    add_subdirectory(ttsplugin)

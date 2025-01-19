@@ -5555,3 +5555,13 @@ KonqFrameBase* KonqMainWindow::tab(int idx) const
 {
     return m_pViewManager->tabContainer()->tabAt(idx);
 }
+
+QString KonqMainWindow::saveDir() const
+{
+    return m_saveDir;
+}
+
+void KonqMainWindow::setSaveDir(const QString& dir)
+{
+    m_saveDir = dir;
+}

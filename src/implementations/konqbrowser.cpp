@@ -143,3 +143,11 @@ Window* KonqBrowser::window(QWidget* widget)
     QWidget *mainWindow = widget->window();
     return KonqInterfaces::Window::window(mainWindow);
 }
+
+void KonqBrowser::setSaveDirForWindow(const QString& saveDir, QWidget* window)
+{
+    KonqMainWindow *mw = qobject_cast<KonqMainWindow*>(window);
+    if (mw) {
+        mw->setSaveDir(saveDir);
+    }
+}

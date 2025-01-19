@@ -1,0 +1,11 @@
+<!DOCTYPE gui SYSTEM "kpartgui.dtd">
+<gui name="temporarysavedir" version="1" translationDomain="temporarysavedir">
+<MenuBar>
+ <Menu name="tools"><text>&amp;Tools</text>
+  <Action name="temporarysavedir_action_menu"/>
+ </Menu>
+</MenuBar>
+<ToolBar name="extraToolBar"><text>Extra Toolbar</text>
+  <Action name="temporarysavedir_action_menu"/>
+</ToolBar>
+</gui>

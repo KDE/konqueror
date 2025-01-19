@@ -70,6 +70,12 @@ public:
 
     KonqInterfaces::Window* window(QWidget* widget) override;
 
+    /**
+     * @brief Implementation of KonqInterfaces::Browser::setSaveDirForWindow()
+     * @see KonqInterfaces::Browser::setSaveDirForWindow()
+     */
+    void setSaveDirForWindow(const QString &saveDir, QWidget *window) override;
+
 private:
 
     /**

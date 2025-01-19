@@ -135,6 +135,12 @@ public:
     virtual bool openUrl(const QUrl &url, KParts::OpenUrlArguments &args, const BrowserArguments &bargs, QWidget *window = nullptr) = 0;
 
     virtual Window* window(QWidget *widget) = 0;
+    /**
+     * @brief Sets the starting directory for the "Save As" dialogs used to download files from the given window
+     * @param saveDir the new starting directory
+     * @param window the window to change the directory for
+     */
+    virtual void setSaveDirForWindow(const QString &saveDir, QWidget *window) = 0;
 
 signals:
     void configurationChanged(); ///< Signal emitted after the configuration has changed

@@ -299,6 +299,8 @@ private:
      */
     bool can(OpenUrlAction action) const;
 
+    QString startingSaveDir() const;
+
 private:
     QPointer<KonqMainWindow> m_mainWindow;
     QUrl m_url;
@@ -357,6 +359,7 @@ private:
      * the URL has been downloaded to, while #m_originalUrl will not be changed
      */
     QUrl m_originalUrl;
+    static const constexpr char* s_lastSaveDirProperty{"lastSaveDir"};
 };
 
 #endif // URLLLOADER_H

@@ -380,6 +380,18 @@ public:
      */
     static bool newTabInFront(Qt::KeyboardModifiers mods);
 
+    /**
+     * @brief The starting directory for "Save As" dialogs when downloading files
+     * @return the starting directory for "Save As" dialogs when downloading files
+     */
+    QString saveDir() const;
+
+    /**
+     * @brief Changes the starting directory for "Save As" dialogs when downloading files
+     * @param dir the new starting directory. An empty value means using a default directory
+     */
+    void setSaveDir(const QString &dir);
+
 Q_SIGNALS:
     void viewAdded(KonqView *view);
     void viewRemoved(KonqView *view);
@@ -827,6 +839,8 @@ private: // members
      * @brief Unique identifier for the window. Used for activities
      */
     QString m_uuid;
+
+    QString m_saveDir; //!< The starting directory for "Save As" dialogs when downloading files
     
     friend class KonqBrowserWindowInterface;
 };

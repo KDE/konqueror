@@ -745,6 +745,20 @@ void UrlLoader::embed()
     }
 }
 
+QString UrlLoader::startingSaveDir() const
+{
+    QString startDir = m_mainWindow->saveDir();
+    if (startDir.isEmpty()) {
+        //TODO: find a better way to store the last save dir
+        QString lastSaveDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
+        QVariant lastSaveDirData = m_mainWindow->property(s_lastSaveDirProperty);
+        if (lastSaveDirData.isValid()) {
+            startDir = lastSaveDirData.toString();
+        }
+    }
+    return startDir;
+}
+
 void UrlLoader::save()
 {
     QFileDialog dlg(m_mainWindow);
@@ -753,14 +767,17 @@ void UrlLoader::save()
     dlg.setOption(QFileDialog::DontConfirmOverwrite, false);
     QString suggestedName = !m_request.suggestedFileName.isEmpty() ? m_request.suggestedFileName : m_url.fileName();
     dlg.selectFile(suggestedName);
-    dlg.setDirectory(QStandardPaths::writableLocation(QStandardPaths::DownloadLocation));
+    dlg.setDirectory(startingSaveDir());
+
     //NOTE: we can't use QDialog::open() because the dialog needs to be synchronous so that we can call
     //DownloadJob::setDownloadPath()
     if (dlg.exec() == QDialog::Rejected) {
         done();
         return;
     }
-    performSave(m_url, dlg.selectedUrls().value(0));
+    QUrl chosenUrl = dlg.selectedUrls().value(0);
+    m_mainWindow->setProperty(s_lastSaveDirProperty, QFileInfo(chosenUrl.path()).absoluteDir().path());
+    performSave(m_url, chosenUrl);
 }
 
 void UrlLoader::performSave(const QUrl& orig, const QUrl& dest)
