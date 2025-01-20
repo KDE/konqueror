@@ -1,5 +1,10 @@
 {
     "DocPath": "konq-plugins/fsview/index.html",
+    "KParts": {
+        "Capabilities": [
+            "ReadOnly"
+        ]
+    },
     "KPlugin": {
         "Authors": [
             {
@@ -149,10 +154,5 @@
         ],
         "Version": "@fsview_VERSION@"
     },
-    "MimeType": "inode/directory;",
-    "KParts": {
-        "Capabilities": [
-            "ReadOnly"
-        ]
-    }
+    "MimeType": "inode/directory;"
 }

@@ -1,10 +1,4 @@
 {
-    "kparts": {
-        "capabilities": [
-            "readonly",
-            "browserview"
-        ]
-    },
     "KPlugin": {
         "Authors": [
             {
@@ -332,5 +326,11 @@
         "Website": ""
     },
     "MimeType": "text/html;application/xml;application/xhtml+xml;audio/flac;audio/mpeg;audio/ogg;audio/x-vorbis+ogg",
-    "X-KDE-Default-UserAgent": "Mozilla/5.0 (%PLATFORM%; %SECURITY%; %OSNAME% %OSVERSION% %SYSTYPE%; %LANGUAGE%) AppleWebKit/534.34 (KHTML, like Gecko) %APPVERSION% Safari/534.34"
+    "X-KDE-Default-UserAgent": "Mozilla/5.0 (%PLATFORM%; %SECURITY%; %OSNAME% %OSVERSION% %SYSTYPE%; %LANGUAGE%) AppleWebKit/534.34 (KHTML, like Gecko) %APPVERSION% Safari/534.34",
+    "kparts": {
+        "capabilities": [
+            "readonly",
+            "browserview"
+        ]
+    }
 }
