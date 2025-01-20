@@ -51,7 +51,7 @@ TemporarySaveDirPlugin::TemporarySaveDirPlugin(QObject *parent, const KPluginMet
 {
     setMetaData(metaData);
 
-    m_menu = new KActionMenu(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("Temporay Download Directory"), actionCollection());
+    m_menu = new KActionMenu(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("Temporary Download Directory"), actionCollection());
     actionCollection()->addAction(QStringLiteral("temporarysavedir_action_menu"), m_menu);
     m_menu->setPopupMode(QToolButton::InstantPopup);
     connect(m_menu->menu(), &QMenu::aboutToShow, this, &TemporarySaveDirPlugin::updateMenu);
