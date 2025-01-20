@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2006-04-02 12:24+0200\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -17,93 +17,108 @@ msgstr ""
 "X-Generator: KBabel 1.11.1\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: temporarysavedir.cpp:54
+#, kde-format
+msgid "Temporay Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:60
+#, kde-format
+msgid "Choose Custom Download Directory..."
+msgstr ""
+
+#: temporarysavedir.cpp:61
+#, kde-format
+msgid ""
+"Choose a custom directory to use when downloading URLs from this window, "
+"temporarily overriding the default one"
+msgstr ""
+
+#: temporarysavedir.cpp:66
+#, kde-format
+msgctxt "@action:inmenu stop using a temporary download directory"
+msgid "Stop Using Temporary Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:67
+#, kde-format
+msgid ""
+"Use the default download directory instead of a custom one (only for this "
+"window)"
+msgstr ""
+
+#: temporarysavedir.cpp:113
+#, kde-format
+msgid "Temporary save directory"
+msgstr ""
+
+#: temporarysavedir.cpp:114
+#, kde-format
+msgid "Choose Temporary Save Directory"
+msgstr ""
+
 #. i18n: ectx: Menu (tools)
-#: khtmlsettingsplugin.rc:4
+#: temporarysavedir.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr ""
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: khtmlsettingsplugin.rc:8
+#: temporarysavedir.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Қўшимча асбоблар панели"
 
-#: settingsplugin.cpp:43
-#, kde-format
-msgid "HTML Settings"
-msgstr "HTML мосламалари"
+#~ msgid "HTML Settings"
+#~ msgstr "HTML мосламалари"
 
-#: settingsplugin.cpp:48
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
-#: settingsplugin.cpp:53
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
+#~ msgid "&Java"
+#~ msgstr "&Java"
 
-#: settingsplugin.cpp:58
-#, kde-format
-msgid "&Cookies"
-msgstr "&Кукилар"
+#~ msgid "&Cookies"
+#~ msgstr "&Кукилар"
 
-#: settingsplugin.cpp:63
-#, kde-format
-msgid "&Plugins"
-msgstr "&Плагинлар"
+#~ msgid "&Plugins"
+#~ msgstr "&Плагинлар"
 
-#: settingsplugin.cpp:68
-#, kde-format
-msgid "Autoload &Images"
-msgstr "Расмларни &авто-юклаш"
+#~ msgid "Autoload &Images"
+#~ msgstr "Расмларни &авто-юклаш"
 
-#: settingsplugin.cpp:75
-#, kde-format
-msgid "Enable Pro&xy"
-msgstr "&Проксидан фойдаланиш"
+#~ msgid "Enable Pro&xy"
+#~ msgstr "&Проксидан фойдаланиш"
 
-#: settingsplugin.cpp:80
-#, kde-format
-msgid "Enable Cac&he"
-msgstr "Кэшдан &фойдаланиш"
+#~ msgid "Enable Cac&he"
+#~ msgstr "Кэшдан &фойдаланиш"
 
-#: settingsplugin.cpp:85
-#, kde-format
-msgid "Cache Po&licy"
-msgstr "Кэш қо&идаси"
+#~ msgid "Cache Po&licy"
+#~ msgstr "Кэш қо&идаси"
 
-#: settingsplugin.cpp:87
-#, kde-format
-msgid "&Keep Cache in Sync"
-msgstr "Кэшни доим &янгилаб туриш"
+#~ msgid "&Keep Cache in Sync"
+#~ msgstr "Кэшни доим &янгилаб туриш"
 
-#: settingsplugin.cpp:88
-#, kde-format
-msgid "&Use Cache if Possible"
-msgstr "Имкони бўлса кэшдан &фойдаланиш"
+#~ msgid "&Use Cache if Possible"
+#~ msgstr "Имкони бўлса кэшдан &фойдаланиш"
 
-#: settingsplugin.cpp:89
-#, kde-format
-msgid "&Offline Browsing Mode"
-msgstr "&Офлайн ишлаш усули"
+#~ msgid "&Offline Browsing Mode"
+#~ msgstr "&Офлайн ишлаш усули"
 
-#: settingsplugin.cpp:170
-#, fuzzy, kde-format
-#| msgid ""
-#| "I can't enable cookies, because the cookie daemon could not be started."
-msgid ""
-"The cookie setting could not be changed, because the cookie daemon could not "
-"be contacted."
-msgstr "Кукиларни қўллаб бўлмайди, чунки куки демонини ишга тушириб бўлмайди."
+#, fuzzy
+#~| msgid ""
+#~| "I can't enable cookies, because the cookie daemon could not be started."
+#~ msgid ""
+#~ "The cookie setting could not be changed, because the cookie daemon could "
+#~ "not be contacted."
+#~ msgstr ""
+#~ "Кукиларни қўллаб бўлмайди, чунки куки демонини ишга тушириб бўлмайди."
 
-#: settingsplugin.cpp:172
-#, fuzzy, kde-format
-#| msgid "Cookies Disabled"
-msgctxt "@title:window"
-msgid "Cookie Settings Unavailable"
-msgstr "Кукилар қўлланилмайди"
+#, fuzzy
+#~| msgid "Cookies Disabled"
+#~ msgctxt "@title:window"
+#~ msgid "Cookie Settings Unavailable"
+#~ msgstr "Кукилар қўлланилмайди"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

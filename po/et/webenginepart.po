@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-04 00:39+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2021-05-01 21:52+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -986,7 +986,7 @@ msgstr ""
 "\n"
 "Põimimine on seni välja lülitatud."
 
-#: src/webenginepage.cpp:342
+#: src/webenginepage.cpp:343
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -999,12 +999,12 @@ msgstr ""
 "juba ostu, siis klõpsa nupule Loobu, et mitte ostu teist korda sooritada. "
 "Muul juhul võid klõpsata nupule Jätka, et lasta veebilehte uuesti kuvada.</p>"
 
-#: src/webenginepage.cpp:349
+#: src/webenginepage.cpp:350
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Teabe uuesti saatmine"
 
-#: src/webenginepage.cpp:546
+#: src/webenginepage.cpp:547
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -1013,18 +1013,18 @@ msgstr ""
 "See lehekülg üritab saata teavet sinu füüsilise asukoha kohta.\n"
 "Kas lubada selline ligipääs?"
 
-#: src/webenginepage.cpp:550 src/webenginepage.cpp:628
-#: src/webenginepage.cpp:639
+#: src/webenginepage.cpp:551 src/webenginepage.cpp:629
+#: src/webenginepage.cpp:640
 #, kde-format
 msgid "Network Transmission"
 msgstr "Võrguedastus"
 
-#: src/webenginepage.cpp:551
+#: src/webenginepage.cpp:552
 #, kde-format
 msgid "Allow access"
 msgstr "Luba ligipääs"
 
-#: src/webenginepage.cpp:621
+#: src/webenginepage.cpp:622
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1036,12 +1036,12 @@ msgstr ""
 "Kõrvalised isikud võivad selle info kinni püüda ning seda vaadata.\n"
 "Kas soovid kindlasti saata andmed krüptimata?"
 
-#: src/webenginepage.cpp:629
+#: src/webenginepage.cpp:630
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Saada krüptimata"
 
-#: src/webenginepage.cpp:636
+#: src/webenginepage.cpp:637
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1050,34 +1050,34 @@ msgstr ""
 "See lehekülg üritab saata vormi andmeid e-postiga.\n"
 "Kas soovid jätkata?"
 
-#: src/webenginepage.cpp:640
+#: src/webenginepage.cpp:641
 #, kde-format
 msgid "&Send Email"
 msgstr "&Saada kiri"
 
-#: src/webenginepage.cpp:689
+#: src/webenginepage.cpp:690
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 msgstr "<qt>Kas lubada leheküljel lisada e-kirjale järgmised failid?</qt>"
 
-#: src/webenginepage.cpp:691
+#: src/webenginepage.cpp:692
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "E-kirjale manuse lisamise kinnitus"
 
-#: src/webenginepage.cpp:692
+#: src/webenginepage.cpp:693
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Lub&a manuste lisamine"
 
-#: src/webenginepage.cpp:693
+#: src/webenginepage.cpp:694
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "E&ira manuseid"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:708
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1086,12 +1086,12 @@ msgstr ""
 "See lehekülg üritas vormi andmetega panna kaasa ka faili sinu arvutist. Fail "
 "eemaldati sinu kaitseks."
 
-#: src/webenginepage.cpp:710
+#: src/webenginepage.cpp:711
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Kaasatud fail eemaldati"
 
-#: src/webenginepage.cpp:841
+#: src/webenginepage.cpp:842
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1100,7 +1100,7 @@ msgstr ""
 "See lehekülg tahab avada hüpikakna.\n"
 "Kas soovid seda lubada?"
 
-#: src/webenginepage.cpp:843
+#: src/webenginepage.cpp:844
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1109,17 +1109,17 @@ msgstr ""
 "<qt>See lehekülg tahab avada hüpikakna<p>%1</p><br/>Kas soovid seda lubada?</"
 "qt>"
 
-#: src/webenginepage.cpp:846
+#: src/webenginepage.cpp:847
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "JavaScripti hüpikakna kinnitus"
 
-#: src/webenginepage.cpp:847
+#: src/webenginepage.cpp:848
 #, kde-format
 msgid "Allow"
 msgstr "Luba"
 
-#: src/webenginepage.cpp:847
+#: src/webenginepage.cpp:848
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Ära luba"

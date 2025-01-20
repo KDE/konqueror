@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2023-05-24 01:44+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -24,90 +24,103 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 23.07.70\n"
 
+#: temporarysavedir.cpp:54
+#, kde-format
+msgid "Temporay Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:60
+#, kde-format
+msgid "Choose Custom Download Directory..."
+msgstr ""
+
+#: temporarysavedir.cpp:61
+#, kde-format
+msgid ""
+"Choose a custom directory to use when downloading URLs from this window, "
+"temporarily overriding the default one"
+msgstr ""
+
+#: temporarysavedir.cpp:66
+#, kde-format
+msgctxt "@action:inmenu stop using a temporary download directory"
+msgid "Stop Using Temporary Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:67
+#, kde-format
+msgid ""
+"Use the default download directory instead of a custom one (only for this "
+"window)"
+msgstr ""
+
+#: temporarysavedir.cpp:113
+#, kde-format
+msgid "Temporary save directory"
+msgstr ""
+
+#: temporarysavedir.cpp:114
+#, kde-format
+msgid "Choose Temporary Save Directory"
+msgstr ""
+
 #. i18n: ectx: Menu (tools)
-#: khtmlsettingsplugin.rc:4
+#: temporarysavedir.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "&Araçlar"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: khtmlsettingsplugin.rc:8
+#: temporarysavedir.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Ek Araç Çubuğu"
 
-#: settingsplugin.cpp:43
-#, kde-format
-msgid "HTML Settings"
-msgstr "HTML Ayarları"
+#~ msgid "HTML Settings"
+#~ msgstr "HTML Ayarları"
 
-#: settingsplugin.cpp:48
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
-#: settingsplugin.cpp:53
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
+#~ msgid "&Java"
+#~ msgstr "&Java"
 
-#: settingsplugin.cpp:58
-#, kde-format
-msgid "&Cookies"
-msgstr "Ç&erezler"
+#~ msgid "&Cookies"
+#~ msgstr "Ç&erezler"
 
-#: settingsplugin.cpp:63
-#, kde-format
-msgid "&Plugins"
-msgstr "&Eklentiler"
+#~ msgid "&Plugins"
+#~ msgstr "&Eklentiler"
 
-#: settingsplugin.cpp:68
-#, kde-format
-msgid "Autoload &Images"
-msgstr "Gö&rselleri Otomatik Yükle"
+#~ msgid "Autoload &Images"
+#~ msgstr "Gö&rselleri Otomatik Yükle"
 
-#: settingsplugin.cpp:75
-#, kde-format
-msgid "Enable Pro&xy"
-msgstr "&Vekil Sunucuyu Etkinleştir"
+#~ msgid "Enable Pro&xy"
+#~ msgstr "&Vekil Sunucuyu Etkinleştir"
 
-#: settingsplugin.cpp:80
-#, kde-format
-msgid "Enable Cac&he"
-msgstr "Ön&belleği Etkinleştir"
+#~ msgid "Enable Cac&he"
+#~ msgstr "Ön&belleği Etkinleştir"
 
-#: settingsplugin.cpp:85
-#, kde-format
-msgid "Cache Po&licy"
-msgstr "Önbellek K&ullanımı"
+#~ msgid "Cache Po&licy"
+#~ msgstr "Önbellek K&ullanımı"
 
-#: settingsplugin.cpp:87
-#, kde-format
-msgid "&Keep Cache in Sync"
-msgstr "Ö&nbelleği Her Zaman Eşzamanla"
+#~ msgid "&Keep Cache in Sync"
+#~ msgstr "Ö&nbelleği Her Zaman Eşzamanla"
 
-#: settingsplugin.cpp:88
-#, kde-format
-msgid "&Use Cache if Possible"
-msgstr "Mümkünse Önbe&llek Kullan"
+#~ msgid "&Use Cache if Possible"
+#~ msgstr "Mümkünse Önbe&llek Kullan"
 
-#: settingsplugin.cpp:89
-#, kde-format
-msgid "&Offline Browsing Mode"
-msgstr "&Çevrimdışı Çalışma Kipi"
+#~ msgid "&Offline Browsing Mode"
+#~ msgstr "&Çevrimdışı Çalışma Kipi"
 
-#: settingsplugin.cpp:170
-#, kde-format
-msgid ""
-"The cookie setting could not be changed, because the cookie daemon could not "
-"be contacted."
-msgstr "Çerez ayarı değiştirilemedi; çünkü çerez ardalan sürecine ulaşılamadı."
+#~ msgid ""
+#~ "The cookie setting could not be changed, because the cookie daemon could "
+#~ "not be contacted."
+#~ msgstr ""
+#~ "Çerez ayarı değiştirilemedi; çünkü çerez ardalan sürecine ulaşılamadı."
 
-#: settingsplugin.cpp:172
-#, kde-format
-msgctxt "@title:window"
-msgid "Cookie Settings Unavailable"
-msgstr "Çerez Ayarları Kullanılamıyor"
+#~ msgctxt "@title:window"
+#~ msgid "Cookie Settings Unavailable"
+#~ msgstr "Çerez Ayarları Kullanılamıyor"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

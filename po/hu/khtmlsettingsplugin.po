@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2011-05-25 22:08+0200\n"
 "Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -18,96 +18,110 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.2\n"
 
+#: temporarysavedir.cpp:54
+#, kde-format
+msgid "Temporay Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:60
+#, kde-format
+msgid "Choose Custom Download Directory..."
+msgstr ""
+
+#: temporarysavedir.cpp:61
+#, kde-format
+msgid ""
+"Choose a custom directory to use when downloading URLs from this window, "
+"temporarily overriding the default one"
+msgstr ""
+
+#: temporarysavedir.cpp:66
+#, kde-format
+msgctxt "@action:inmenu stop using a temporary download directory"
+msgid "Stop Using Temporary Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:67
+#, kde-format
+msgid ""
+"Use the default download directory instead of a custom one (only for this "
+"window)"
+msgstr ""
+
+#: temporarysavedir.cpp:113
+#, kde-format
+msgid "Temporary save directory"
+msgstr ""
+
+#: temporarysavedir.cpp:114
+#, kde-format
+msgid "Choose Temporary Save Directory"
+msgstr ""
+
 #. i18n: ectx: Menu (tools)
-#: khtmlsettingsplugin.rc:4
+#: temporarysavedir.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "&Eszközök"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: khtmlsettingsplugin.rc:8
+#: temporarysavedir.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Extra eszköztár"
 
-#: settingsplugin.cpp:43
-#, kde-format
-msgid "HTML Settings"
-msgstr "HTML-beállítások"
+#~ msgid "HTML Settings"
+#~ msgstr "HTML-beállítások"
 
-#: settingsplugin.cpp:48
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
-#: settingsplugin.cpp:53
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
+#~ msgid "&Java"
+#~ msgstr "&Java"
 
-#: settingsplugin.cpp:58
-#, kde-format
-msgid "&Cookies"
-msgstr "&Sütik"
+#~ msgid "&Cookies"
+#~ msgstr "&Sütik"
 
-#: settingsplugin.cpp:63
-#, kde-format
-msgid "&Plugins"
-msgstr "&Bővítőmodulok"
+#~ msgid "&Plugins"
+#~ msgstr "&Bővítőmodulok"
 
-#: settingsplugin.cpp:68
-#, kde-format
-msgid "Autoload &Images"
-msgstr "A képek automatikus be&töltése"
+#~ msgid "Autoload &Images"
+#~ msgstr "A képek automatikus be&töltése"
 
-#: settingsplugin.cpp:75
-#, kde-format
-msgid "Enable Pro&xy"
-msgstr "A pro&xy-kezelés engedélyezése"
+#~ msgid "Enable Pro&xy"
+#~ msgstr "A pro&xy-kezelés engedélyezése"
 
-#: settingsplugin.cpp:80
-#, kde-format
-msgid "Enable Cac&he"
-msgstr "A &gyorsítótár bekapcsolása"
+#~ msgid "Enable Cac&he"
+#~ msgstr "A &gyorsítótár bekapcsolása"
 
-#: settingsplugin.cpp:85
-#, kde-format
-msgid "Cache Po&licy"
-msgstr "A gy&orsítótárkezelés beállításai"
+#~ msgid "Cache Po&licy"
+#~ msgstr "A gy&orsítótárkezelés beállításai"
 
-#: settingsplugin.cpp:87
-#, kde-format
-msgid "&Keep Cache in Sync"
-msgstr "A gy&orsítótár folyamatos frissítése"
+#~ msgid "&Keep Cache in Sync"
+#~ msgstr "A gy&orsítótár folyamatos frissítése"
 
-#: settingsplugin.cpp:88
-#, kde-format
-msgid "&Use Cache if Possible"
-msgstr "A gyorsítótár &használata, ha lehetséges"
+#~ msgid "&Use Cache if Possible"
+#~ msgstr "A gyorsítótár &használata, ha lehetséges"
 
-#: settingsplugin.cpp:89
-#, kde-format
-msgid "&Offline Browsing Mode"
-msgstr "Ka&pcsolat nélküli mód"
+#~ msgid "&Offline Browsing Mode"
+#~ msgstr "Ka&pcsolat nélküli mód"
 
-#: settingsplugin.cpp:170
-#, fuzzy, kde-format
-#| msgid ""
-#| "Cookies could not be enabled, because the cookie daemon could not be "
-#| "started."
-msgid ""
-"The cookie setting could not be changed, because the cookie daemon could not "
-"be contacted."
-msgstr ""
-"A sütik nem engedélyezhetők, mivel a sütiszolgáltatás nem indítható el."
+#, fuzzy
+#~| msgid ""
+#~| "Cookies could not be enabled, because the cookie daemon could not be "
+#~| "started."
+#~ msgid ""
+#~ "The cookie setting could not be changed, because the cookie daemon could "
+#~ "not be contacted."
+#~ msgstr ""
+#~ "A sütik nem engedélyezhetők, mivel a sütiszolgáltatás nem indítható el."
 
-#: settingsplugin.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Cookies Disabled"
-msgctxt "@title:window"
-msgid "Cookie Settings Unavailable"
-msgstr "Sütik letiltva"
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "Cookies Disabled"
+#~ msgctxt "@title:window"
+#~ msgid "Cookie Settings Unavailable"
+#~ msgstr "Sütik letiltva"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

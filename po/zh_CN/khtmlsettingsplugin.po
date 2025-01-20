@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -17,87 +17,99 @@ msgstr ""
 "X-Crowdin-File: /kf6-trunk/messages/konqueror/khtmlsettingsplugin.pot\n"
 "X-Crowdin-File-ID: 48582\n"
 
+#: temporarysavedir.cpp:54
+#, kde-format
+msgid "Temporay Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:60
+#, kde-format
+msgid "Choose Custom Download Directory..."
+msgstr ""
+
+#: temporarysavedir.cpp:61
+#, kde-format
+msgid ""
+"Choose a custom directory to use when downloading URLs from this window, "
+"temporarily overriding the default one"
+msgstr ""
+
+#: temporarysavedir.cpp:66
+#, kde-format
+msgctxt "@action:inmenu stop using a temporary download directory"
+msgid "Stop Using Temporary Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:67
+#, kde-format
+msgid ""
+"Use the default download directory instead of a custom one (only for this "
+"window)"
+msgstr ""
+
+#: temporarysavedir.cpp:113
+#, kde-format
+msgid "Temporary save directory"
+msgstr ""
+
+#: temporarysavedir.cpp:114
+#, kde-format
+msgid "Choose Temporary Save Directory"
+msgstr ""
+
 #. i18n: ectx: Menu (tools)
-#: khtmlsettingsplugin.rc:4
+#: temporarysavedir.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "工具(&T)"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: khtmlsettingsplugin.rc:8
+#: temporarysavedir.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "额外工具栏"
 
-#: settingsplugin.cpp:43
-#, kde-format
-msgid "HTML Settings"
-msgstr "HTML 设置"
+#~ msgid "HTML Settings"
+#~ msgstr "HTML 设置"
 
-#: settingsplugin.cpp:48
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
-#: settingsplugin.cpp:53
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
+#~ msgid "&Java"
+#~ msgstr "&Java"
 
-#: settingsplugin.cpp:58
-#, kde-format
-msgid "&Cookies"
-msgstr "&Cookie"
+#~ msgid "&Cookies"
+#~ msgstr "&Cookie"
 
-#: settingsplugin.cpp:63
-#, kde-format
-msgid "&Plugins"
-msgstr "插件(&P)"
+#~ msgid "&Plugins"
+#~ msgstr "插件(&P)"
 
-#: settingsplugin.cpp:68
-#, kde-format
-msgid "Autoload &Images"
-msgstr "自动加载图像(&I)"
+#~ msgid "Autoload &Images"
+#~ msgstr "自动加载图像(&I)"
 
-#: settingsplugin.cpp:75
-#, kde-format
-msgid "Enable Pro&xy"
-msgstr "启用代理服务器(&X)"
+#~ msgid "Enable Pro&xy"
+#~ msgstr "启用代理服务器(&X)"
 
-#: settingsplugin.cpp:80
-#, kde-format
-msgid "Enable Cac&he"
-msgstr "启用缓存(&H)"
+#~ msgid "Enable Cac&he"
+#~ msgstr "启用缓存(&H)"
 
-#: settingsplugin.cpp:85
-#, kde-format
-msgid "Cache Po&licy"
-msgstr "缓存策略(&L)"
+#~ msgid "Cache Po&licy"
+#~ msgstr "缓存策略(&L)"
 
-#: settingsplugin.cpp:87
-#, kde-format
-msgid "&Keep Cache in Sync"
-msgstr "保持缓存同步(&K)"
+#~ msgid "&Keep Cache in Sync"
+#~ msgstr "保持缓存同步(&K)"
 
-#: settingsplugin.cpp:88
-#, kde-format
-msgid "&Use Cache if Possible"
-msgstr "尽可能使用缓存(&U)"
+#~ msgid "&Use Cache if Possible"
+#~ msgstr "尽可能使用缓存(&U)"
 
-#: settingsplugin.cpp:89
-#, kde-format
-msgid "&Offline Browsing Mode"
-msgstr "离线浏览模式(&O)"
+#~ msgid "&Offline Browsing Mode"
+#~ msgstr "离线浏览模式(&O)"
 
-#: settingsplugin.cpp:170
-#, kde-format
-msgid ""
-"The cookie setting could not be changed, because the cookie daemon could not "
-"be contacted."
-msgstr "Cookie 设置无法修改，因为无法与 Cookie 守护进程联系。"
+#~ msgid ""
+#~ "The cookie setting could not be changed, because the cookie daemon could "
+#~ "not be contacted."
+#~ msgstr "Cookie 设置无法修改，因为无法与 Cookie 守护进程联系。"
 
-#: settingsplugin.cpp:172
-#, kde-format
-msgctxt "@title:window"
-msgid "Cookie Settings Unavailable"
-msgstr "Cookie 设置不可用"
+#~ msgctxt "@title:window"
+#~ msgid "Cookie Settings Unavailable"
+#~ msgstr "Cookie 设置不可用"

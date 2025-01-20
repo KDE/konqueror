@@ -1,7 +1,7 @@
 # Translation of khtmlsettingsplugin.po to Slovenian
 # SLOVENIAN TRANSLATION OF KHTMLSETTINGSPLUGIN.
 # Copyright (C) 2001, 2003, 2004 Free Software Foundation, Inc.
-# $Id: khtmlsettingsplugin.po 1678443 2024-04-22 01:08:38Z scripty $
+# $Id: khtmlsettingsplugin.po 1700742 2025-01-20 01:19:37Z scripty $
 # $Source$
 #
 # Gregor Rakar <gregor.rakar@kiss.uni-lj.si>, 2001.
@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2020-09-01 16:29+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -24,92 +24,104 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 
+#: temporarysavedir.cpp:54
+#, kde-format
+msgid "Temporay Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:60
+#, kde-format
+msgid "Choose Custom Download Directory..."
+msgstr ""
+
+#: temporarysavedir.cpp:61
+#, kde-format
+msgid ""
+"Choose a custom directory to use when downloading URLs from this window, "
+"temporarily overriding the default one"
+msgstr ""
+
+#: temporarysavedir.cpp:66
+#, kde-format
+msgctxt "@action:inmenu stop using a temporary download directory"
+msgid "Stop Using Temporary Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:67
+#, kde-format
+msgid ""
+"Use the default download directory instead of a custom one (only for this "
+"window)"
+msgstr ""
+
+#: temporarysavedir.cpp:113
+#, kde-format
+msgid "Temporary save directory"
+msgstr ""
+
+#: temporarysavedir.cpp:114
+#, kde-format
+msgid "Choose Temporary Save Directory"
+msgstr ""
+
 #. i18n: ectx: Menu (tools)
-#: khtmlsettingsplugin.rc:4
+#: temporarysavedir.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "Orodja"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: khtmlsettingsplugin.rc:8
+#: temporarysavedir.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Dodatna orodna vrstica"
 
-#: settingsplugin.cpp:43
-#, kde-format
-msgid "HTML Settings"
-msgstr "Nastavitve HTML"
+#~ msgid "HTML Settings"
+#~ msgstr "Nastavitve HTML"
 
-#: settingsplugin.cpp:48
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
-#: settingsplugin.cpp:53
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
+#~ msgid "&Java"
+#~ msgstr "&Java"
 
-#: settingsplugin.cpp:58
-#, kde-format
-msgid "&Cookies"
-msgstr "Piškotki"
+#~ msgid "&Cookies"
+#~ msgstr "Piškotki"
 
-#: settingsplugin.cpp:63
-#, kde-format
-msgid "&Plugins"
-msgstr "Vstavki"
+#~ msgid "&Plugins"
+#~ msgstr "Vstavki"
 
-#: settingsplugin.cpp:68
-#, kde-format
-msgid "Autoload &Images"
-msgstr "Samodejno naloži slike"
+#~ msgid "Autoload &Images"
+#~ msgstr "Samodejno naloži slike"
 
-#: settingsplugin.cpp:75
-#, kde-format
-msgid "Enable Pro&xy"
-msgstr "Omogoči posredniški strežnik"
+#~ msgid "Enable Pro&xy"
+#~ msgstr "Omogoči posredniški strežnik"
 
-#: settingsplugin.cpp:80
-#, kde-format
-msgid "Enable Cac&he"
-msgstr "Omogoči predpomnilnik"
+#~ msgid "Enable Cac&he"
+#~ msgstr "Omogoči predpomnilnik"
 
-#: settingsplugin.cpp:85
-#, kde-format
-msgid "Cache Po&licy"
-msgstr "Pravi&lnik za predpomnilnik"
+#~ msgid "Cache Po&licy"
+#~ msgstr "Pravi&lnik za predpomnilnik"
 
-#: settingsplugin.cpp:87
-#, kde-format
-msgid "&Keep Cache in Sync"
-msgstr "Usklajuj predpomnilnik"
+#~ msgid "&Keep Cache in Sync"
+#~ msgstr "Usklajuj predpomnilnik"
 
-#: settingsplugin.cpp:88
-#, kde-format
-msgid "&Use Cache if Possible"
-msgstr "&Uporabi predpomnilnik, če je mogoče"
+#~ msgid "&Use Cache if Possible"
+#~ msgstr "&Uporabi predpomnilnik, če je mogoče"
 
-#: settingsplugin.cpp:89
-#, kde-format
-msgid "&Offline Browsing Mode"
-msgstr "Način brskanja brez povezave"
+#~ msgid "&Offline Browsing Mode"
+#~ msgstr "Način brskanja brez povezave"
 
-#: settingsplugin.cpp:170
-#, kde-format
-msgid ""
-"The cookie setting could not be changed, because the cookie daemon could not "
-"be contacted."
-msgstr ""
-"Nastavitev piškotkov ni bilo mogoče spremeniti, ker ni bilo mogoče stopiti v "
-"stik z ozadnjim programom za piškotke."
+#~ msgid ""
+#~ "The cookie setting could not be changed, because the cookie daemon could "
+#~ "not be contacted."
+#~ msgstr ""
+#~ "Nastavitev piškotkov ni bilo mogoče spremeniti, ker ni bilo mogoče "
+#~ "stopiti v stik z ozadnjim programom za piškotke."
 
-#: settingsplugin.cpp:172
-#, kde-format
-msgctxt "@title:window"
-msgid "Cookie Settings Unavailable"
-msgstr "Nastavitve piškotkov niso na voljo"
+#~ msgctxt "@title:window"
+#~ msgid "Cookie Settings Unavailable"
+#~ msgstr "Nastavitve piškotkov niso na voljo"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

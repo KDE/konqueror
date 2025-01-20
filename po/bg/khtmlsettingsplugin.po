@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2024-11-10 13:04+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <dict@ludost.net>\n"
@@ -20,88 +20,100 @@ msgstr ""
 "X-Generator: Lokalize 24.11.70\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
+#: temporarysavedir.cpp:54
+#, kde-format
+msgid "Temporay Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:60
+#, kde-format
+msgid "Choose Custom Download Directory..."
+msgstr ""
+
+#: temporarysavedir.cpp:61
+#, kde-format
+msgid ""
+"Choose a custom directory to use when downloading URLs from this window, "
+"temporarily overriding the default one"
+msgstr ""
+
+#: temporarysavedir.cpp:66
+#, kde-format
+msgctxt "@action:inmenu stop using a temporary download directory"
+msgid "Stop Using Temporary Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:67
+#, kde-format
+msgid ""
+"Use the default download directory instead of a custom one (only for this "
+"window)"
+msgstr ""
+
+#: temporarysavedir.cpp:113
+#, kde-format
+msgid "Temporary save directory"
+msgstr ""
+
+#: temporarysavedir.cpp:114
+#, kde-format
+msgid "Choose Temporary Save Directory"
+msgstr ""
+
 #. i18n: ectx: Menu (tools)
-#: khtmlsettingsplugin.rc:4
+#: temporarysavedir.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "&Инструменти"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: khtmlsettingsplugin.rc:8
+#: temporarysavedir.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Допълнителна лента с инструменти"
 
-#: settingsplugin.cpp:43
-#, kde-format
-msgid "HTML Settings"
-msgstr "Настройки на HTML"
+#~ msgid "HTML Settings"
+#~ msgstr "Настройки на HTML"
 
-#: settingsplugin.cpp:48
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
-#: settingsplugin.cpp:53
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
+#~ msgid "&Java"
+#~ msgstr "&Java"
 
-#: settingsplugin.cpp:58
-#, kde-format
-msgid "&Cookies"
-msgstr "&Бисквитки"
+#~ msgid "&Cookies"
+#~ msgstr "&Бисквитки"
 
-#: settingsplugin.cpp:63
-#, kde-format
-msgid "&Plugins"
-msgstr "&Приставки"
+#~ msgid "&Plugins"
+#~ msgstr "&Приставки"
 
-#: settingsplugin.cpp:68
-#, kde-format
-msgid "Autoload &Images"
-msgstr "&Автоматично зареждане на изображения"
+#~ msgid "Autoload &Images"
+#~ msgstr "&Автоматично зареждане на изображения"
 
-#: settingsplugin.cpp:75
-#, kde-format
-msgid "Enable Pro&xy"
-msgstr "Включване на п&роксито"
+#~ msgid "Enable Pro&xy"
+#~ msgstr "Включване на п&роксито"
 
-#: settingsplugin.cpp:80
-#, kde-format
-msgid "Enable Cac&he"
-msgstr "Включване на к&еш-паметта"
+#~ msgid "Enable Cac&he"
+#~ msgstr "Включване на к&еш-паметта"
 
-#: settingsplugin.cpp:85
-#, kde-format
-msgid "Cache Po&licy"
-msgstr "Правила на ке&ш-паметта"
+#~ msgid "Cache Po&licy"
+#~ msgstr "Правила на ке&ш-паметта"
 
-#: settingsplugin.cpp:87
-#, kde-format
-msgid "&Keep Cache in Sync"
-msgstr "&Синхронизиране на кеш-паметта"
+#~ msgid "&Keep Cache in Sync"
+#~ msgstr "&Синхронизиране на кеш-паметта"
 
-#: settingsplugin.cpp:88
-#, kde-format
-msgid "&Use Cache if Possible"
-msgstr "&Използване кеш-паметта, когато е възможно"
+#~ msgid "&Use Cache if Possible"
+#~ msgstr "&Използване кеш-паметта, когато е възможно"
 
-#: settingsplugin.cpp:89
-#, kde-format
-msgid "&Offline Browsing Mode"
-msgstr "Ре&жим \"Без връзка с мрежата\""
+#~ msgid "&Offline Browsing Mode"
+#~ msgstr "Ре&жим \"Без връзка с мрежата\""
 
-#: settingsplugin.cpp:170
-#, kde-format
-msgid ""
-"The cookie setting could not be changed, because the cookie daemon could not "
-"be contacted."
-msgstr ""
-"Бисквитките не могат да бъдат променени, понеже няма връзка с демона им."
+#~ msgid ""
+#~ "The cookie setting could not be changed, because the cookie daemon could "
+#~ "not be contacted."
+#~ msgstr ""
+#~ "Бисквитките не могат да бъдат променени, понеже няма връзка с демона им."
 
-#: settingsplugin.cpp:172
-#, kde-format
-msgctxt "@title:window"
-msgid "Cookie Settings Unavailable"
-msgstr "Настройките на бисквитки са недостъпни"
+#~ msgctxt "@title:window"
+#~ msgid "Cookie Settings Unavailable"
+#~ msgstr "Настройките на бисквитки са недостъпни"

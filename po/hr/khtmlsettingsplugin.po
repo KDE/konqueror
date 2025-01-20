@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2009-08-29 19:20+0200\n"
 "Last-Translator: DoDo <DoDoEntertainment@gmail.com>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -20,96 +20,110 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
+#: temporarysavedir.cpp:54
+#, kde-format
+msgid "Temporay Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:60
+#, kde-format
+msgid "Choose Custom Download Directory..."
+msgstr ""
+
+#: temporarysavedir.cpp:61
+#, kde-format
+msgid ""
+"Choose a custom directory to use when downloading URLs from this window, "
+"temporarily overriding the default one"
+msgstr ""
+
+#: temporarysavedir.cpp:66
+#, kde-format
+msgctxt "@action:inmenu stop using a temporary download directory"
+msgid "Stop Using Temporary Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:67
+#, kde-format
+msgid ""
+"Use the default download directory instead of a custom one (only for this "
+"window)"
+msgstr ""
+
+#: temporarysavedir.cpp:113
+#, kde-format
+msgid "Temporary save directory"
+msgstr ""
+
+#: temporarysavedir.cpp:114
+#, kde-format
+msgid "Choose Temporary Save Directory"
+msgstr ""
+
 #. i18n: ectx: Menu (tools)
-#: khtmlsettingsplugin.rc:4
+#: temporarysavedir.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "&Alati"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: khtmlsettingsplugin.rc:8
+#: temporarysavedir.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Dodatna alatna traka"
 
-#: settingsplugin.cpp:43
-#, kde-format
-msgid "HTML Settings"
-msgstr "HTML postavke"
+#~ msgid "HTML Settings"
+#~ msgstr "HTML postavke"
 
-#: settingsplugin.cpp:48
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
-#: settingsplugin.cpp:53
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
+#~ msgid "&Java"
+#~ msgstr "&Java"
 
-#: settingsplugin.cpp:58
-#, kde-format
-msgid "&Cookies"
-msgstr "&Kolačići"
+#~ msgid "&Cookies"
+#~ msgstr "&Kolačići"
 
-#: settingsplugin.cpp:63
-#, kde-format
-msgid "&Plugins"
-msgstr "&Dodaci"
+#~ msgid "&Plugins"
+#~ msgstr "&Dodaci"
 
-#: settingsplugin.cpp:68
-#, kde-format
-msgid "Autoload &Images"
-msgstr "Automatsko učitavanje &slika"
+#~ msgid "Autoload &Images"
+#~ msgstr "Automatsko učitavanje &slika"
 
-#: settingsplugin.cpp:75
-#, kde-format
-msgid "Enable Pro&xy"
-msgstr "Omogući pro&xy"
+#~ msgid "Enable Pro&xy"
+#~ msgstr "Omogući pro&xy"
 
-#: settingsplugin.cpp:80
-#, kde-format
-msgid "Enable Cac&he"
-msgstr "Omogući po&hranu"
+#~ msgid "Enable Cac&he"
+#~ msgstr "Omogući po&hranu"
 
-#: settingsplugin.cpp:85
-#, kde-format
-msgid "Cache Po&licy"
-msgstr "Pravi&la pohranjivanja"
+#~ msgid "Cache Po&licy"
+#~ msgstr "Pravi&la pohranjivanja"
 
-#: settingsplugin.cpp:87
-#, kde-format
-msgid "&Keep Cache in Sync"
-msgstr "Usa&glasi lokalnu pohranu"
+#~ msgid "&Keep Cache in Sync"
+#~ msgstr "Usa&glasi lokalnu pohranu"
 
-#: settingsplugin.cpp:88
-#, kde-format
-msgid "&Use Cache if Possible"
-msgstr "&Upotrijebi pohranu ako je moguće"
+#~ msgid "&Use Cache if Possible"
+#~ msgstr "&Upotrijebi pohranu ako je moguće"
 
-#: settingsplugin.cpp:89
-#, kde-format
-msgid "&Offline Browsing Mode"
-msgstr "Pregledavanje izvan &mreže"
+#~ msgid "&Offline Browsing Mode"
+#~ msgstr "Pregledavanje izvan &mreže"
 
-#: settingsplugin.cpp:170
-#, fuzzy, kde-format
-#| msgid ""
-#| "Cookies could not be enabled, because the cookie daemon could not be "
-#| "started."
-msgid ""
-"The cookie setting could not be changed, because the cookie daemon could not "
-"be contacted."
-msgstr ""
-"Omogućavanje kolačića nije moguće jer uslugu kolačića nije bilo moguće "
-"pokrenuti."
+#, fuzzy
+#~| msgid ""
+#~| "Cookies could not be enabled, because the cookie daemon could not be "
+#~| "started."
+#~ msgid ""
+#~ "The cookie setting could not be changed, because the cookie daemon could "
+#~ "not be contacted."
+#~ msgstr ""
+#~ "Omogućavanje kolačića nije moguće jer uslugu kolačića nije bilo moguće "
+#~ "pokrenuti."
 
-#: settingsplugin.cpp:172
-#, fuzzy, kde-format
-#| msgid "Cookies Disabled"
-msgctxt "@title:window"
-msgid "Cookie Settings Unavailable"
-msgstr "Kolačići su onemogućeni"
+#, fuzzy
+#~| msgid "Cookies Disabled"
+#~ msgctxt "@title:window"
+#~ msgid "Cookie Settings Unavailable"
+#~ msgstr "Kolačići su onemogućeni"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

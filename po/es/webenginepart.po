@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-04 00:39+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2024-11-04 18:11+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -945,7 +945,7 @@ msgstr ""
 "\n"
 "Se deshabilitará la integración."
 
-#: src/webenginepage.cpp:342
+#: src/webenginepage.cpp:343
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -959,12 +959,12 @@ msgstr ""
 "para evitar hacer una compra duplicada. En caso contrario, pulse el botón "
 "«Continuar» para volver a mostrar la página web.</p>"
 
-#: src/webenginepage.cpp:349
+#: src/webenginepage.cpp:350
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Volver a enviar la información"
 
-#: src/webenginepage.cpp:546
+#: src/webenginepage.cpp:547
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -973,18 +973,18 @@ msgstr ""
 "Este sitio está intentando acceder a información sobre su ubicación física.\n"
 "¿Desea permitirle el acceso?"
 
-#: src/webenginepage.cpp:550 src/webenginepage.cpp:628
-#: src/webenginepage.cpp:639
+#: src/webenginepage.cpp:551 src/webenginepage.cpp:629
+#: src/webenginepage.cpp:640
 #, kde-format
 msgid "Network Transmission"
 msgstr "Transferencia de red"
 
-#: src/webenginepage.cpp:551
+#: src/webenginepage.cpp:552
 #, kde-format
 msgid "Allow access"
 msgstr "Permitir acceso"
 
-#: src/webenginepage.cpp:621
+#: src/webenginepage.cpp:622
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -997,12 +997,12 @@ msgstr ""
 "Un tercero podría interceptarlos y ver esta información.\n"
 "¿Seguro que desea enviar los datos sin cifrar?"
 
-#: src/webenginepage.cpp:629
+#: src/webenginepage.cpp:630
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "Enviar &sin cifrar"
 
-#: src/webenginepage.cpp:636
+#: src/webenginepage.cpp:637
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1011,12 +1011,12 @@ msgstr ""
 "Este sitio está intentando enviar los datos del formulario por correo-e.\n"
 "¿Seguro que desea continuar?"
 
-#: src/webenginepage.cpp:640
+#: src/webenginepage.cpp:641
 #, kde-format
 msgid "&Send Email"
 msgstr "&Enviar correo-e"
 
-#: src/webenginepage.cpp:689
+#: src/webenginepage.cpp:690
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1025,22 +1025,22 @@ msgstr ""
 "<qt>¿Desea permitir que este sitio web adjunte los siguientes archivos al "
 "mensaje de correo?</qt>"
 
-#: src/webenginepage.cpp:691
+#: src/webenginepage.cpp:692
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Confirmación de adjuntos de correo-e"
 
-#: src/webenginepage.cpp:692
+#: src/webenginepage.cpp:693
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Permitir &adjuntos"
 
-#: src/webenginepage.cpp:693
+#: src/webenginepage.cpp:694
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignorar adjuntos"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:708
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1049,12 +1049,12 @@ msgstr ""
 "Este sitio intentó adjuntar un archivo de su equipo al confirmar el "
 "formulario. El adjunto ha sido eliminado para protegerle."
 
-#: src/webenginepage.cpp:710
+#: src/webenginepage.cpp:711
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Adjunto eliminado"
 
-#: src/webenginepage.cpp:841
+#: src/webenginepage.cpp:842
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1063,7 +1063,7 @@ msgstr ""
 "Este sitio está solicitando abrir una nueva ventana emergente.\n"
 "¿Desea permitirlo?"
 
-#: src/webenginepage.cpp:843
+#: src/webenginepage.cpp:844
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1072,17 +1072,17 @@ msgstr ""
 "<qt>Este sitio está solicitando abrir una ventana emergente para<p>%1</p><br/"
 ">¿Desea permitirlo?</qt>"
 
-#: src/webenginepage.cpp:846
+#: src/webenginepage.cpp:847
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Confirmación de ventana emergente de JavaScript"
 
-#: src/webenginepage.cpp:847
+#: src/webenginepage.cpp:848
 #, kde-format
 msgid "Allow"
 msgstr "Permitir"
 
-#: src/webenginepage.cpp:847
+#: src/webenginepage.cpp:848
 #, kde-format
 msgid "Do Not Allow"
 msgstr "No permitir"

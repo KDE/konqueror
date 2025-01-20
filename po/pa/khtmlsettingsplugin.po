@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2011-06-28 21:55+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -18,95 +18,109 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
+#: temporarysavedir.cpp:54
+#, kde-format
+msgid "Temporay Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:60
+#, kde-format
+msgid "Choose Custom Download Directory..."
+msgstr ""
+
+#: temporarysavedir.cpp:61
+#, kde-format
+msgid ""
+"Choose a custom directory to use when downloading URLs from this window, "
+"temporarily overriding the default one"
+msgstr ""
+
+#: temporarysavedir.cpp:66
+#, kde-format
+msgctxt "@action:inmenu stop using a temporary download directory"
+msgid "Stop Using Temporary Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:67
+#, kde-format
+msgid ""
+"Use the default download directory instead of a custom one (only for this "
+"window)"
+msgstr ""
+
+#: temporarysavedir.cpp:113
+#, kde-format
+msgid "Temporary save directory"
+msgstr ""
+
+#: temporarysavedir.cpp:114
+#, kde-format
+msgid "Choose Temporary Save Directory"
+msgstr ""
+
 #. i18n: ectx: Menu (tools)
-#: khtmlsettingsplugin.rc:4
+#: temporarysavedir.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "ਟੂਲ(&T)"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: khtmlsettingsplugin.rc:8
+#: temporarysavedir.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "ਵਾਧੂ ਟੂਲਬਾਰ"
 
-#: settingsplugin.cpp:43
-#, kde-format
-msgid "HTML Settings"
-msgstr "HTML ਸੈਟਿੰਗ"
+#~ msgid "HTML Settings"
+#~ msgstr "HTML ਸੈਟਿੰਗ"
 
-#: settingsplugin.cpp:48
-#, kde-format
-msgid "Java&Script"
-msgstr "ਜਾਵਾ ਸਕ੍ਰਿਪਟ(&S)"
+#~ msgid "Java&Script"
+#~ msgstr "ਜਾਵਾ ਸਕ੍ਰਿਪਟ(&S)"
 
-#: settingsplugin.cpp:53
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
+#~ msgid "&Java"
+#~ msgstr "&Java"
 
-#: settingsplugin.cpp:58
-#, kde-format
-msgid "&Cookies"
-msgstr "ਕੂਕੀਜ਼(&C)"
+#~ msgid "&Cookies"
+#~ msgstr "ਕੂਕੀਜ਼(&C)"
 
-#: settingsplugin.cpp:63
-#, kde-format
-msgid "&Plugins"
-msgstr "ਪਲੱਗਇਨ(&P)"
+#~ msgid "&Plugins"
+#~ msgstr "ਪਲੱਗਇਨ(&P)"
 
-#: settingsplugin.cpp:68
-#, kde-format
-msgid "Autoload &Images"
-msgstr "ਚਿੱਤਰ ਆਟੋਲੋਡ(&I)"
+#~ msgid "Autoload &Images"
+#~ msgstr "ਚਿੱਤਰ ਆਟੋਲੋਡ(&I)"
 
-#: settingsplugin.cpp:75
-#, kde-format
-msgid "Enable Pro&xy"
-msgstr "ਪਰਾਕਸੀ ਯੋਗ(&x)"
+#~ msgid "Enable Pro&xy"
+#~ msgstr "ਪਰਾਕਸੀ ਯੋਗ(&x)"
 
-#: settingsplugin.cpp:80
-#, kde-format
-msgid "Enable Cac&he"
-msgstr "ਕੈਸ਼ ਯੋਗ(&h)"
+#~ msgid "Enable Cac&he"
+#~ msgstr "ਕੈਸ਼ ਯੋਗ(&h)"
 
-#: settingsplugin.cpp:85
-#, kde-format
-msgid "Cache Po&licy"
-msgstr "ਕੈਸ਼ ਪਾਲਸੀ(&l)"
+#~ msgid "Cache Po&licy"
+#~ msgstr "ਕੈਸ਼ ਪਾਲਸੀ(&l)"
 
-#: settingsplugin.cpp:87
-#, kde-format
-msgid "&Keep Cache in Sync"
-msgstr "ਸੈਕਰੋ ਵਿੱਚ ਕੈਸ਼ ਰੱਖੋ(&K)"
+#~ msgid "&Keep Cache in Sync"
+#~ msgstr "ਸੈਕਰੋ ਵਿੱਚ ਕੈਸ਼ ਰੱਖੋ(&K)"
 
-#: settingsplugin.cpp:88
-#, kde-format
-msgid "&Use Cache if Possible"
-msgstr "ਜੇ ਸੰਭਵ ਹੋਵੇ ਤਾਂ ਕੈਸ਼ ਵਰਤੋਂ(&U)"
+#~ msgid "&Use Cache if Possible"
+#~ msgstr "ਜੇ ਸੰਭਵ ਹੋਵੇ ਤਾਂ ਕੈਸ਼ ਵਰਤੋਂ(&U)"
 
-#: settingsplugin.cpp:89
-#, kde-format
-msgid "&Offline Browsing Mode"
-msgstr "ਆਫਲਾਈਨ ਬਰਾਊਜ਼ਿੰਗ ਮੋਡ(&O)"
+#~ msgid "&Offline Browsing Mode"
+#~ msgstr "ਆਫਲਾਈਨ ਬਰਾਊਜ਼ਿੰਗ ਮੋਡ(&O)"
 
-#: settingsplugin.cpp:170
-#, fuzzy, kde-format
-#| msgid ""
-#| "Cookies could not be enabled, because the cookie daemon could not be "
-#| "started."
-msgid ""
-"The cookie setting could not be changed, because the cookie daemon could not "
-"be contacted."
-msgstr "ਕੂਕੀਜ਼ ਯੋਗ ਨਹੀਂ ਕੀਤੇ ਜਾ ਸਕੇ, ਕਿਉਂਕਿ ਕੂਕੀ ਡੈਮਨ ਸ਼ੁਰੂ ਨਹੀਂ ਹੋ ਸਕੀ।"
+#, fuzzy
+#~| msgid ""
+#~| "Cookies could not be enabled, because the cookie daemon could not be "
+#~| "started."
+#~ msgid ""
+#~ "The cookie setting could not be changed, because the cookie daemon could "
+#~ "not be contacted."
+#~ msgstr "ਕੂਕੀਜ਼ ਯੋਗ ਨਹੀਂ ਕੀਤੇ ਜਾ ਸਕੇ, ਕਿਉਂਕਿ ਕੂਕੀ ਡੈਮਨ ਸ਼ੁਰੂ ਨਹੀਂ ਹੋ ਸਕੀ।"
 
-#: settingsplugin.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Cookies Disabled"
-msgctxt "@title:window"
-msgid "Cookie Settings Unavailable"
-msgstr "ਕੂਕੀਜ਼ ਆਯੋਗ ਕੀਤੇ"
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "Cookies Disabled"
+#~ msgctxt "@title:window"
+#~ msgid "Cookie Settings Unavailable"
+#~ msgstr "ਕੂਕੀਜ਼ ਆਯੋਗ ਕੀਤੇ"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-04 00:39+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2024-11-24 18:22+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -928,7 +928,7 @@ msgstr ""
 "\n"
 "Integrering kommer att inaktiveras."
 
-#: src/webenginepage.cpp:342
+#: src/webenginepage.cpp:343
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -941,12 +941,12 @@ msgstr ""
 "gjorde ett köp, klicka på knappen Avbryt för att förhindra ett duplicerat "
 "inköp. Klicka annars på knappen Fortsätt för att visa webbsidan igen.</p>"
 
-#: src/webenginepage.cpp:349
+#: src/webenginepage.cpp:350
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Skicka in information igen"
 
-#: src/webenginepage.cpp:546
+#: src/webenginepage.cpp:547
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -955,18 +955,18 @@ msgstr ""
 "Den här platsen försöker komma åt information om din fysiska plats.\n"
 "Vill du ge den tillåtelse?"
 
-#: src/webenginepage.cpp:550 src/webenginepage.cpp:628
-#: src/webenginepage.cpp:639
+#: src/webenginepage.cpp:551 src/webenginepage.cpp:629
+#: src/webenginepage.cpp:640
 #, kde-format
 msgid "Network Transmission"
 msgstr "Nätverksöverföring"
 
-#: src/webenginepage.cpp:551
+#: src/webenginepage.cpp:552
 #, kde-format
 msgid "Allow access"
 msgstr "Tillåt åtkomst"
 
-#: src/webenginepage.cpp:621
+#: src/webenginepage.cpp:622
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -979,12 +979,12 @@ msgstr ""
 "En tredje part kan fånga upp och visa den här informationen.\n"
 "Är du säker på att du vill skicka data okrypterad?"
 
-#: src/webenginepage.cpp:629
+#: src/webenginepage.cpp:630
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Skicka okrypterat"
 
-#: src/webenginepage.cpp:636
+#: src/webenginepage.cpp:637
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -993,12 +993,12 @@ msgstr ""
 "Den här platsen försöker skicka formulärdata via e-post.\n"
 "Vill du fortsätta?"
 
-#: src/webenginepage.cpp:640
+#: src/webenginepage.cpp:641
 #, kde-format
 msgid "&Send Email"
 msgstr "&Skicka e-post"
 
-#: src/webenginepage.cpp:689
+#: src/webenginepage.cpp:690
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1006,22 +1006,22 @@ msgid ""
 msgstr ""
 "<qt>Vill du tillåta att den här platsen bifogar följande filer i brevet?</qt>"
 
-#: src/webenginepage.cpp:691
+#: src/webenginepage.cpp:692
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Bekräftelse av bilaga till brev"
 
-#: src/webenginepage.cpp:692
+#: src/webenginepage.cpp:693
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Tillåt bil&agor"
 
-#: src/webenginepage.cpp:693
+#: src/webenginepage.cpp:694
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignorera bilagor"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:708
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1030,12 +1030,12 @@ msgstr ""
 "Den här platsen försöker lägga till en fil från datorn i formuläret som "
 "skickas. Bilagan togs bort för att skydda dig."
 
-#: src/webenginepage.cpp:710
+#: src/webenginepage.cpp:711
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Bilaga borttagen"
 
-#: src/webenginepage.cpp:841
+#: src/webenginepage.cpp:842
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1044,7 +1044,7 @@ msgstr ""
 "Den här platsen försöker öppna ett meddelandefönster.\n"
 "Vill du tillåta det?"
 
-#: src/webenginepage.cpp:843
+#: src/webenginepage.cpp:844
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1053,17 +1053,17 @@ msgstr ""
 "<qt>Den här platsen försöker öppna ett meddelandefönster till<p>%1</p><br/"
 ">Vill du tillåta det?</qt>"
 
-#: src/webenginepage.cpp:846
+#: src/webenginepage.cpp:847
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Bekräftelse för Javascript-fönster"
 
-#: src/webenginepage.cpp:847
+#: src/webenginepage.cpp:848
 #, kde-format
 msgid "Allow"
 msgstr "Tillåt"
 
-#: src/webenginepage.cpp:847
+#: src/webenginepage.cpp:848
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Tillåt inte"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-04 00:39+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2014-07-02 23:14+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -950,7 +950,7 @@ msgstr ""
 "\n"
 "De Inbetten warrt utmaakt."
 
-#: src/webenginepage.cpp:342
+#: src/webenginepage.cpp:343
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -964,12 +964,12 @@ msgstr ""
 "op afbreken, anners kööpst Du dat villicht tweemaal. Klick op Wiedermaken, "
 "wenn Du de Nettsiet nochmaal ankieken wullt.</p>"
 
-#: src/webenginepage.cpp:349
+#: src/webenginepage.cpp:350
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Informatschonen nochmaal loosstüern"
 
-#: src/webenginepage.cpp:546
+#: src/webenginepage.cpp:547
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -979,18 +979,18 @@ msgstr ""
 "büst.\n"
 "Wullt Du ehr dat verlöven?"
 
-#: src/webenginepage.cpp:550 src/webenginepage.cpp:628
-#: src/webenginepage.cpp:639
+#: src/webenginepage.cpp:551 src/webenginepage.cpp:629
+#: src/webenginepage.cpp:640
 #, kde-format
 msgid "Network Transmission"
 msgstr "Nettwark-Överdregen"
 
-#: src/webenginepage.cpp:551
+#: src/webenginepage.cpp:552
 #, kde-format
 msgid "Allow access"
 msgstr "&Togriep verlöven"
 
-#: src/webenginepage.cpp:621
+#: src/webenginepage.cpp:622
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1003,12 +1003,12 @@ msgstr ""
 "Annere Lüüd köönt disse Informatschonen villicht ankieken.\n"
 "Büst Du seker, wat Du de Daten ahn Verslöteln loosstüern wullt?"
 
-#: src/webenginepage.cpp:629
+#: src/webenginepage.cpp:630
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "Ahn Verslöteln &loosstüern"
 
-#: src/webenginepage.cpp:636
+#: src/webenginepage.cpp:637
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1017,12 +1017,12 @@ msgstr ""
 "De Siet versöcht, Formulordaten mit en Nettbreef to verschicken.\n"
 "Wullt Du wiedermaken?"
 
-#: src/webenginepage.cpp:640
+#: src/webenginepage.cpp:641
 #, kde-format
 msgid "&Send Email"
 msgstr "&Nettbreef loosstüern"
 
-#: src/webenginepage.cpp:689
+#: src/webenginepage.cpp:690
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1031,22 +1031,22 @@ msgstr ""
 "<qt>Wullt Du tolaten, dat disse Siet den Nettbreef de nakamen Dateien "
 "bileggt?</qt>"
 
-#: src/webenginepage.cpp:691
+#: src/webenginepage.cpp:692
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Nettpostbilaag beglöven"
 
-#: src/webenginepage.cpp:692
+#: src/webenginepage.cpp:693
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Bilagen &tolaten"
 
-#: src/webenginepage.cpp:693
+#: src/webenginepage.cpp:694
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "Bilagen ö&vergahn"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:708
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1055,12 +1055,12 @@ msgstr ""
 "Disse Siet wull bi't Afschicken vun't Formulor en Datei vun Dien Reekner "
 "bileggen. För Dien Sekerheit wöör de Bilaag wegdaan."
 
-#: src/webenginepage.cpp:710
+#: src/webenginepage.cpp:711
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Bilaag wegdaan"
 
-#: src/webenginepage.cpp:841
+#: src/webenginepage.cpp:842
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1069,7 +1069,7 @@ msgstr ""
 "Disse Siet will en nieg Opdukfinster opmaken.\n"
 "Wullt Du dat verlöven?"
 
-#: src/webenginepage.cpp:843
+#: src/webenginepage.cpp:844
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1078,17 +1078,17 @@ msgstr ""
 "<qt>Disse Siet will en nieg Opdukfinster na<br /><p>%1</p> opmaken.<br/"
 ">Wullt Du dat verlöven?</qt>"
 
-#: src/webenginepage.cpp:846
+#: src/webenginepage.cpp:847
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "JavaScript-Opduker verlöven"
 
-#: src/webenginepage.cpp:847
+#: src/webenginepage.cpp:848
 #, kde-format
 msgid "Allow"
 msgstr "Verlöven"
 
-#: src/webenginepage.cpp:847
+#: src/webenginepage.cpp:848
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Nich verlöven"

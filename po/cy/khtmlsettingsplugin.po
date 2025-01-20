@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2004-02-25 10:01+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -21,93 +21,108 @@ msgstr ""
 "\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
+#: temporarysavedir.cpp:54
+#, kde-format
+msgid "Temporay Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:60
+#, kde-format
+msgid "Choose Custom Download Directory..."
+msgstr ""
+
+#: temporarysavedir.cpp:61
+#, kde-format
+msgid ""
+"Choose a custom directory to use when downloading URLs from this window, "
+"temporarily overriding the default one"
+msgstr ""
+
+#: temporarysavedir.cpp:66
+#, kde-format
+msgctxt "@action:inmenu stop using a temporary download directory"
+msgid "Stop Using Temporary Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:67
+#, kde-format
+msgid ""
+"Use the default download directory instead of a custom one (only for this "
+"window)"
+msgstr ""
+
+#: temporarysavedir.cpp:113
+#, kde-format
+msgid "Temporary save directory"
+msgstr ""
+
+#: temporarysavedir.cpp:114
+#, kde-format
+msgid "Choose Temporary Save Directory"
+msgstr ""
+
 #. i18n: ectx: Menu (tools)
-#: khtmlsettingsplugin.rc:4
+#: temporarysavedir.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr ""
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: khtmlsettingsplugin.rc:8
+#: temporarysavedir.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Bar Offer Ychwanegol"
 
-#: settingsplugin.cpp:43
-#, kde-format
-msgid "HTML Settings"
-msgstr "Gosodiadau HTML"
+#~ msgid "HTML Settings"
+#~ msgstr "Gosodiadau HTML"
 
-#: settingsplugin.cpp:48
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
-#: settingsplugin.cpp:53
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
+#~ msgid "&Java"
+#~ msgstr "&Java"
 
-#: settingsplugin.cpp:58
-#, kde-format
-msgid "&Cookies"
-msgstr "&Bisgedi"
+#~ msgid "&Cookies"
+#~ msgstr "&Bisgedi"
 
-#: settingsplugin.cpp:63
-#, kde-format
-msgid "&Plugins"
-msgstr "&Ategion"
+#~ msgid "&Plugins"
+#~ msgstr "&Ategion"
 
-#: settingsplugin.cpp:68
-#, kde-format
-msgid "Autoload &Images"
-msgstr "Hunan-lwytho &Delweddau"
+#~ msgid "Autoload &Images"
+#~ msgstr "Hunan-lwytho &Delweddau"
 
-#: settingsplugin.cpp:75
-#, kde-format
-msgid "Enable Pro&xy"
-msgstr "Galluogi D&irprwy"
+#~ msgid "Enable Pro&xy"
+#~ msgstr "Galluogi D&irprwy"
 
-#: settingsplugin.cpp:80
-#, kde-format
-msgid "Enable Cac&he"
-msgstr "Galluogi &Celc"
+#~ msgid "Enable Cac&he"
+#~ msgstr "Galluogi &Celc"
 
-#: settingsplugin.cpp:85
-#, kde-format
-msgid "Cache Po&licy"
-msgstr "&Polisi'r Celc"
+#~ msgid "Cache Po&licy"
+#~ msgstr "&Polisi'r Celc"
 
-#: settingsplugin.cpp:87
-#, kde-format
-msgid "&Keep Cache in Sync"
-msgstr "Cadw'r Celc yn &Gyfoes"
+#~ msgid "&Keep Cache in Sync"
+#~ msgstr "Cadw'r Celc yn &Gyfoes"
 
-#: settingsplugin.cpp:88
-#, kde-format
-msgid "&Use Cache if Possible"
-msgstr "Defnyddio'r Celc os &Bosibl"
+#~ msgid "&Use Cache if Possible"
+#~ msgstr "Defnyddio'r Celc os &Bosibl"
 
-#: settingsplugin.cpp:89
-#, kde-format
-msgid "&Offline Browsing Mode"
-msgstr "Modd &Pori All-lein"
+#~ msgid "&Offline Browsing Mode"
+#~ msgstr "Modd &Pori All-lein"
 
-#: settingsplugin.cpp:170
-#, fuzzy, kde-format
-#| msgid ""
-#| "I can't enable cookies, because the cookie daemon could not be started."
-msgid ""
-"The cookie setting could not be changed, because the cookie daemon could not "
-"be contacted."
-msgstr "Fedra' i ddim alluogi bisgedi, am na ellir cychwyn ellyll y bisgedi."
+#, fuzzy
+#~| msgid ""
+#~| "I can't enable cookies, because the cookie daemon could not be started."
+#~ msgid ""
+#~ "The cookie setting could not be changed, because the cookie daemon could "
+#~ "not be contacted."
+#~ msgstr ""
+#~ "Fedra' i ddim alluogi bisgedi, am na ellir cychwyn ellyll y bisgedi."
 
-#: settingsplugin.cpp:172
-#, fuzzy, kde-format
-#| msgid "Cookies Disabled"
-msgctxt "@title:window"
-msgid "Cookie Settings Unavailable"
-msgstr "Analluogwyd Bisgedi"
+#, fuzzy
+#~| msgid "Cookies Disabled"
+#~ msgctxt "@title:window"
+#~ msgid "Cookie Settings Unavailable"
+#~ msgstr "Analluogwyd Bisgedi"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

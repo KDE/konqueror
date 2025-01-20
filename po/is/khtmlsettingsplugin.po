@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2018-01-10 08:44+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
@@ -21,92 +21,104 @@ msgstr ""
 "\n"
 "\n"
 
+#: temporarysavedir.cpp:54
+#, kde-format
+msgid "Temporay Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:60
+#, kde-format
+msgid "Choose Custom Download Directory..."
+msgstr ""
+
+#: temporarysavedir.cpp:61
+#, kde-format
+msgid ""
+"Choose a custom directory to use when downloading URLs from this window, "
+"temporarily overriding the default one"
+msgstr ""
+
+#: temporarysavedir.cpp:66
+#, kde-format
+msgctxt "@action:inmenu stop using a temporary download directory"
+msgid "Stop Using Temporary Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:67
+#, kde-format
+msgid ""
+"Use the default download directory instead of a custom one (only for this "
+"window)"
+msgstr ""
+
+#: temporarysavedir.cpp:113
+#, kde-format
+msgid "Temporary save directory"
+msgstr ""
+
+#: temporarysavedir.cpp:114
+#, kde-format
+msgid "Choose Temporary Save Directory"
+msgstr ""
+
 #. i18n: ectx: Menu (tools)
-#: khtmlsettingsplugin.rc:4
+#: temporarysavedir.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "&Verkfæri"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: khtmlsettingsplugin.rc:8
+#: temporarysavedir.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Auka-verkfærastika"
 
-#: settingsplugin.cpp:43
-#, kde-format
-msgid "HTML Settings"
-msgstr "HTML-stillingar"
+#~ msgid "HTML Settings"
+#~ msgstr "HTML-stillingar"
 
-#: settingsplugin.cpp:48
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
-#: settingsplugin.cpp:53
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
+#~ msgid "&Java"
+#~ msgstr "&Java"
 
-#: settingsplugin.cpp:58
-#, kde-format
-msgid "&Cookies"
-msgstr "Vef&kökur"
+#~ msgid "&Cookies"
+#~ msgstr "Vef&kökur"
 
-#: settingsplugin.cpp:63
-#, kde-format
-msgid "&Plugins"
-msgstr "Við&bætur"
+#~ msgid "&Plugins"
+#~ msgstr "Við&bætur"
 
-#: settingsplugin.cpp:68
-#, kde-format
-msgid "Autoload &Images"
-msgstr "Sækja &myndir sjálfvirkt"
+#~ msgid "Autoload &Images"
+#~ msgstr "Sækja &myndir sjálfvirkt"
 
-#: settingsplugin.cpp:75
-#, kde-format
-msgid "Enable Pro&xy"
-msgstr "Nota &milliþjón"
+#~ msgid "Enable Pro&xy"
+#~ msgstr "Nota &milliþjón"
 
-#: settingsplugin.cpp:80
-#, kde-format
-msgid "Enable Cac&he"
-msgstr "Virkja &skyndiminni"
+#~ msgid "Enable Cac&he"
+#~ msgstr "Virkja &skyndiminni"
 
-#: settingsplugin.cpp:85
-#, kde-format
-msgid "Cache Po&licy"
-msgstr "Skyndiminnis&tefna"
+#~ msgid "Cache Po&licy"
+#~ msgstr "Skyndiminnis&tefna"
 
-#: settingsplugin.cpp:87
-#, kde-format
-msgid "&Keep Cache in Sync"
-msgstr "Halda skyndiminni &samhæfðu"
+#~ msgid "&Keep Cache in Sync"
+#~ msgstr "Halda skyndiminni &samhæfðu"
 
-#: settingsplugin.cpp:88
-#, kde-format
-msgid "&Use Cache if Possible"
-msgstr "Nota skyndi&minni ef mögulegt"
+#~ msgid "&Use Cache if Possible"
+#~ msgstr "Nota skyndi&minni ef mögulegt"
 
-#: settingsplugin.cpp:89
-#, kde-format
-msgid "&Offline Browsing Mode"
-msgstr "Ó&nettengdur vafurhamur."
+#~ msgid "&Offline Browsing Mode"
+#~ msgstr "Ó&nettengdur vafurhamur."
 
-#: settingsplugin.cpp:170
-#, kde-format
-msgid ""
-"The cookie setting could not be changed, because the cookie daemon could not "
-"be contacted."
-msgstr ""
-"Ekki er hægt að breyta stillingum fyrir vefkökur því ekki var hægt að ræsa "
-"neinn vefkökumiðlara."
+#~ msgid ""
+#~ "The cookie setting could not be changed, because the cookie daemon could "
+#~ "not be contacted."
+#~ msgstr ""
+#~ "Ekki er hægt að breyta stillingum fyrir vefkökur því ekki var hægt að "
+#~ "ræsa neinn vefkökumiðlara."
 
-#: settingsplugin.cpp:172
-#, kde-format
-msgctxt "@title:window"
-msgid "Cookie Settings Unavailable"
-msgstr "Stillingar fyrir vefkökur ekki tiltækar"
+#~ msgctxt "@title:window"
+#~ msgid "Cookie Settings Unavailable"
+#~ msgstr "Stillingar fyrir vefkökur ekki tiltækar"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

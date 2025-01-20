@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2004-08-10 22:04--800\n"
 "Last-Translator: I. Felix <ifelix25@yahoo.co.in>\n"
 "Language-Team: TAMIL <tamilinix@yahoogroups.com>\n"
@@ -16,94 +16,108 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
+#: temporarysavedir.cpp:54
+#, kde-format
+msgid "Temporay Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:60
+#, kde-format
+msgid "Choose Custom Download Directory..."
+msgstr ""
+
+#: temporarysavedir.cpp:61
+#, kde-format
+msgid ""
+"Choose a custom directory to use when downloading URLs from this window, "
+"temporarily overriding the default one"
+msgstr ""
+
+#: temporarysavedir.cpp:66
+#, kde-format
+msgctxt "@action:inmenu stop using a temporary download directory"
+msgid "Stop Using Temporary Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:67
+#, kde-format
+msgid ""
+"Use the default download directory instead of a custom one (only for this "
+"window)"
+msgstr ""
+
+#: temporarysavedir.cpp:113
+#, kde-format
+msgid "Temporary save directory"
+msgstr ""
+
+#: temporarysavedir.cpp:114
+#, kde-format
+msgid "Choose Temporary Save Directory"
+msgstr ""
+
 #. i18n: ectx: Menu (tools)
-#: khtmlsettingsplugin.rc:4
+#: temporarysavedir.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr ""
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: khtmlsettingsplugin.rc:8
+#: temporarysavedir.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "கூடுதல் கருவிப்பட்டை "
 
-#: settingsplugin.cpp:43
-#, kde-format
-msgid "HTML Settings"
-msgstr "HTML அமைப்புக்கள்"
+#~ msgid "HTML Settings"
+#~ msgstr "HTML அமைப்புக்கள்"
 
-#: settingsplugin.cpp:48
-#, kde-format
-msgid "Java&Script"
-msgstr "ஜாவா ஸ்கிரிப்ட்"
+#~ msgid "Java&Script"
+#~ msgstr "ஜாவா ஸ்கிரிப்ட்"
 
-#: settingsplugin.cpp:53
-#, kde-format
-msgid "&Java"
-msgstr "ஜாவா"
+#~ msgid "&Java"
+#~ msgstr "ஜாவா"
 
-#: settingsplugin.cpp:58
-#, kde-format
-msgid "&Cookies"
-msgstr "திடீர் நிரல்கள்"
+#~ msgid "&Cookies"
+#~ msgstr "திடீர் நிரல்கள்"
 
-#: settingsplugin.cpp:63
-#, kde-format
-msgid "&Plugins"
-msgstr "சொருகுகள்"
+#~ msgid "&Plugins"
+#~ msgstr "சொருகுகள்"
 
-#: settingsplugin.cpp:68
-#, kde-format
-msgid "Autoload &Images"
-msgstr "தானியங்கியாக படங்களை ஏற்று "
+#~ msgid "Autoload &Images"
+#~ msgstr "தானியங்கியாக படங்களை ஏற்று "
 
-#: settingsplugin.cpp:75
-#, kde-format
-msgid "Enable Pro&xy"
-msgstr "பதிலாளை செயல்படுத்து"
+#~ msgid "Enable Pro&xy"
+#~ msgstr "பதிலாளை செயல்படுத்து"
 
-#: settingsplugin.cpp:80
-#, kde-format
-msgid "Enable Cac&he"
-msgstr "Enable Cac&he"
+#~ msgid "Enable Cac&he"
+#~ msgstr "Enable Cac&he"
 
-#: settingsplugin.cpp:85
-#, kde-format
-msgid "Cache Po&licy"
-msgstr "காக்கெ கொள்கை"
+#~ msgid "Cache Po&licy"
+#~ msgstr "காக்கெ கொள்கை"
 
-#: settingsplugin.cpp:87
-#, kde-format
-msgid "&Keep Cache in Sync"
-msgstr "காக்கெவை Syncயில் வை"
+#~ msgid "&Keep Cache in Sync"
+#~ msgstr "காக்கெவை Syncயில் வை"
 
-#: settingsplugin.cpp:88
-#, kde-format
-msgid "&Use Cache if Possible"
-msgstr "தேவைப்பட்டால் காக்கெவை பயன்படுத்து"
+#~ msgid "&Use Cache if Possible"
+#~ msgstr "தேவைப்பட்டால் காக்கெவை பயன்படுத்து"
 
-#: settingsplugin.cpp:89
-#, kde-format
-msgid "&Offline Browsing Mode"
-msgstr "அகல்நிலை உலாவுதல் பாங்கு "
+#~ msgid "&Offline Browsing Mode"
+#~ msgstr "அகல்நிலை உலாவுதல் பாங்கு "
 
-#: settingsplugin.cpp:170
-#, fuzzy, kde-format
-#| msgid ""
-#| "I can't enable cookies, because the cookie daemon could not be started."
-msgid ""
-"The cookie setting could not be changed, because the cookie daemon could not "
-"be contacted."
-msgstr ""
-"திடீர் நிரல்கள் டெய்மனை திறக்க முடியாத காரணத்தால் திடீர் நிரல்களை பயன்படுத்த முடியவில்லை"
+#, fuzzy
+#~| msgid ""
+#~| "I can't enable cookies, because the cookie daemon could not be started."
+#~ msgid ""
+#~ "The cookie setting could not be changed, because the cookie daemon could "
+#~ "not be contacted."
+#~ msgstr ""
+#~ "திடீர் நிரல்கள் டெய்மனை திறக்க முடியாத காரணத்தால் திடீர் நிரல்களை பயன்படுத்த முடியவில்லை"
 
-#: settingsplugin.cpp:172
-#, fuzzy, kde-format
-#| msgid "Cookies Disabled"
-msgctxt "@title:window"
-msgid "Cookie Settings Unavailable"
-msgstr "திடீர் நிரல்கள் முடக்கப்பட்டன "
+#, fuzzy
+#~| msgid "Cookies Disabled"
+#~ msgctxt "@title:window"
+#~ msgid "Cookie Settings Unavailable"
+#~ msgstr "திடீர் நிரல்கள் முடக்கப்பட்டன "
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2006-10-31 20:56+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -18,95 +18,109 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: LocFactoryEditor 1.6fc1\n"
 
+#: temporarysavedir.cpp:54
+#, kde-format
+msgid "Temporay Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:60
+#, kde-format
+msgid "Choose Custom Download Directory..."
+msgstr ""
+
+#: temporarysavedir.cpp:61
+#, kde-format
+msgid ""
+"Choose a custom directory to use when downloading URLs from this window, "
+"temporarily overriding the default one"
+msgstr ""
+
+#: temporarysavedir.cpp:66
+#, kde-format
+msgctxt "@action:inmenu stop using a temporary download directory"
+msgid "Stop Using Temporary Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:67
+#, kde-format
+msgid ""
+"Use the default download directory instead of a custom one (only for this "
+"window)"
+msgstr ""
+
+#: temporarysavedir.cpp:113
+#, kde-format
+msgid "Temporary save directory"
+msgstr ""
+
+#: temporarysavedir.cpp:114
+#, kde-format
+msgid "Choose Temporary Save Directory"
+msgstr ""
+
 #. i18n: ectx: Menu (tools)
-#: khtmlsettingsplugin.rc:4
+#: temporarysavedir.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr ""
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: khtmlsettingsplugin.rc:8
+#: temporarysavedir.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Thanh công cụ thêm"
 
-#: settingsplugin.cpp:43
-#, kde-format
-msgid "HTML Settings"
-msgstr "Thiết lập HTML"
+#~ msgid "HTML Settings"
+#~ msgstr "Thiết lập HTML"
 
-#: settingsplugin.cpp:48
-#, kde-format
-msgid "Java&Script"
-msgstr "Java&Script"
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
 
-#: settingsplugin.cpp:53
-#, kde-format
-msgid "&Java"
-msgstr "&Java"
+#~ msgid "&Java"
+#~ msgstr "&Java"
 
-#: settingsplugin.cpp:58
-#, kde-format
-msgid "&Cookies"
-msgstr "&Cookie"
+#~ msgid "&Cookies"
+#~ msgstr "&Cookie"
 
-#: settingsplugin.cpp:63
-#, kde-format
-msgid "&Plugins"
-msgstr "&Bổ sung"
+#~ msgid "&Plugins"
+#~ msgstr "&Bổ sung"
 
-#: settingsplugin.cpp:68
-#, kde-format
-msgid "Autoload &Images"
-msgstr "Tự tả&i ảnh"
+#~ msgid "Autoload &Images"
+#~ msgstr "Tự tả&i ảnh"
 
-#: settingsplugin.cpp:75
-#, kde-format
-msgid "Enable Pro&xy"
-msgstr "Bật &uỷ nhiệm"
+#~ msgid "Enable Pro&xy"
+#~ msgstr "Bật &uỷ nhiệm"
 
-#: settingsplugin.cpp:80
-#, kde-format
-msgid "Enable Cac&he"
-msgstr "Bật bộ n&hớ tạm"
+#~ msgid "Enable Cac&he"
+#~ msgstr "Bật bộ n&hớ tạm"
 
-#: settingsplugin.cpp:85
-#, kde-format
-msgid "Cache Po&licy"
-msgstr "Chính sách &lưu tạm"
+#~ msgid "Cache Po&licy"
+#~ msgstr "Chính sách &lưu tạm"
 
-#: settingsplugin.cpp:87
-#, kde-format
-msgid "&Keep Cache in Sync"
-msgstr "&Cứ đồng bộ hoá bộ nhớ tạm"
+#~ msgid "&Keep Cache in Sync"
+#~ msgstr "&Cứ đồng bộ hoá bộ nhớ tạm"
 
-#: settingsplugin.cpp:88
-#, kde-format
-msgid "&Use Cache if Possible"
-msgstr "Dùng bộ nhớ tạm nế&u có thể"
+#~ msgid "&Use Cache if Possible"
+#~ msgstr "Dùng bộ nhớ tạm nế&u có thể"
 
-#: settingsplugin.cpp:89
-#, kde-format
-msgid "&Offline Browsing Mode"
-msgstr "Chế độ duyệt ng&oại tuyến"
+#~ msgid "&Offline Browsing Mode"
+#~ msgstr "Chế độ duyệt ng&oại tuyến"
 
-#: settingsplugin.cpp:170
-#, fuzzy, kde-format
-#| msgid ""
-#| "I can't enable cookies, because the cookie daemon could not be started."
-msgid ""
-"The cookie setting could not be changed, because the cookie daemon could not "
-"be contacted."
-msgstr ""
-"Không thể bật khả năng sử dụng tệp duy trì thông tin đặc trưng cho chỗ Mạng "
-"(cookie) vì không thể khởi chạy trình nền cookie."
+#, fuzzy
+#~| msgid ""
+#~| "I can't enable cookies, because the cookie daemon could not be started."
+#~ msgid ""
+#~ "The cookie setting could not be changed, because the cookie daemon could "
+#~ "not be contacted."
+#~ msgstr ""
+#~ "Không thể bật khả năng sử dụng tệp duy trì thông tin đặc trưng cho chỗ "
+#~ "Mạng (cookie) vì không thể khởi chạy trình nền cookie."
 
-#: settingsplugin.cpp:172
-#, fuzzy, kde-format
-#| msgid "Cookies Disabled"
-msgctxt "@title:window"
-msgid "Cookie Settings Unavailable"
-msgstr "Cookie bị tắt"
+#, fuzzy
+#~| msgid "Cookies Disabled"
+#~ msgctxt "@title:window"
+#~ msgid "Cookie Settings Unavailable"
+#~ msgstr "Cookie bị tắt"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

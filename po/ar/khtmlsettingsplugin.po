@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 00:38+0000\n"
+"POT-Creation-Date: 2025-01-20 00:41+0000\n"
 "PO-Revision-Date: 2024-05-09 09:36+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -22,90 +22,102 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
+#: temporarysavedir.cpp:54
+#, kde-format
+msgid "Temporay Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:60
+#, kde-format
+msgid "Choose Custom Download Directory..."
+msgstr ""
+
+#: temporarysavedir.cpp:61
+#, kde-format
+msgid ""
+"Choose a custom directory to use when downloading URLs from this window, "
+"temporarily overriding the default one"
+msgstr ""
+
+#: temporarysavedir.cpp:66
+#, kde-format
+msgctxt "@action:inmenu stop using a temporary download directory"
+msgid "Stop Using Temporary Download Directory"
+msgstr ""
+
+#: temporarysavedir.cpp:67
+#, kde-format
+msgid ""
+"Use the default download directory instead of a custom one (only for this "
+"window)"
+msgstr ""
+
+#: temporarysavedir.cpp:113
+#, kde-format
+msgid "Temporary save directory"
+msgstr ""
+
+#: temporarysavedir.cpp:114
+#, kde-format
+msgid "Choose Temporary Save Directory"
+msgstr ""
+
 #. i18n: ectx: Menu (tools)
-#: khtmlsettingsplugin.rc:4
+#: temporarysavedir.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "أ&دوات"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: khtmlsettingsplugin.rc:8
+#: temporarysavedir.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "شريط أدوات إضافي"
 
-#: settingsplugin.cpp:43
-#, kde-format
-msgid "HTML Settings"
-msgstr "إعدادات HTML"
+#~ msgid "HTML Settings"
+#~ msgstr "إعدادات HTML"
 
-#: settingsplugin.cpp:48
-#, kde-format
-msgid "Java&Script"
-msgstr "جافا&سكرِبت"
+#~ msgid "Java&Script"
+#~ msgstr "جافا&سكرِبت"
 
-#: settingsplugin.cpp:53
-#, kde-format
-msgid "&Java"
-msgstr "&جافا"
+#~ msgid "&Java"
+#~ msgstr "&جافا"
 
-#: settingsplugin.cpp:58
-#, kde-format
-msgid "&Cookies"
-msgstr "ال&كعكات"
+#~ msgid "&Cookies"
+#~ msgstr "ال&كعكات"
 
-#: settingsplugin.cpp:63
-#, kde-format
-msgid "&Plugins"
-msgstr "ال&ملحقات"
+#~ msgid "&Plugins"
+#~ msgstr "ال&ملحقات"
 
-#: settingsplugin.cpp:68
-#, kde-format
-msgid "Autoload &Images"
-msgstr "التحميل الآلي لل&صور"
+#~ msgid "Autoload &Images"
+#~ msgstr "التحميل الآلي لل&صور"
 
-#: settingsplugin.cpp:75
-#, kde-format
-msgid "Enable Pro&xy"
-msgstr "مكّن ال&وكيل"
+#~ msgid "Enable Pro&xy"
+#~ msgstr "مكّن ال&وكيل"
 
-#: settingsplugin.cpp:80
-#, kde-format
-msgid "Enable Cac&he"
-msgstr "مكّن ال&خبيئة"
+#~ msgid "Enable Cac&he"
+#~ msgstr "مكّن ال&خبيئة"
 
-#: settingsplugin.cpp:85
-#, kde-format
-msgid "Cache Po&licy"
-msgstr "سيا&سة الخبيئة"
+#~ msgid "Cache Po&licy"
+#~ msgstr "سيا&سة الخبيئة"
 
-#: settingsplugin.cpp:87
-#, kde-format
-msgid "&Keep Cache in Sync"
-msgstr "&حافظ على مزامنة الخبيئة"
+#~ msgid "&Keep Cache in Sync"
+#~ msgstr "&حافظ على مزامنة الخبيئة"
 
-#: settingsplugin.cpp:88
-#, kde-format
-msgid "&Use Cache if Possible"
-msgstr "ا&ستخدم الخبيئة إن أمكن"
+#~ msgid "&Use Cache if Possible"
+#~ msgstr "ا&ستخدم الخبيئة إن أمكن"
 
-#: settingsplugin.cpp:89
-#, kde-format
-msgid "&Offline Browsing Mode"
-msgstr "وضع التصفّح دون &اتصال"
+#~ msgid "&Offline Browsing Mode"
+#~ msgstr "وضع التصفّح دون &اتصال"
 
-#: settingsplugin.cpp:170
-#, kde-format
-msgid ""
-"The cookie setting could not be changed, because the cookie daemon could not "
-"be contacted."
-msgstr "لا يمكن تغيير إعداد الكعكات، لأنه لا يمكن الاتصال ببرنامج الكعكات."
+#~ msgid ""
+#~ "The cookie setting could not be changed, because the cookie daemon could "
+#~ "not be contacted."
+#~ msgstr "لا يمكن تغيير إعداد الكعكات، لأنه لا يمكن الاتصال ببرنامج الكعكات."
 
-#: settingsplugin.cpp:172
-#, kde-format
-msgctxt "@title:window"
-msgid "Cookie Settings Unavailable"
-msgstr "إعدادات الكعكات غير متوفرة"
+#~ msgctxt "@title:window"
+#~ msgid "Cookie Settings Unavailable"
+#~ msgstr "إعدادات الكعكات غير متوفرة"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"
