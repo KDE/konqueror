@@ -1,18 +1,17 @@
-# translation of khtmlsettingsplugin.po to Español
-# traducción de khtmlsettingsplugin.po a Español
-# Copyright (C) 2003, 2004, 2006, 2007, 2009 Free Software Foundation, Inc.
+# Translation of khtmlsettingsplugin.po to Spanish
+# Copyright (C) 2003-2025 Free Software Foundation, Inc.
 #
-# Rafael Osuna <rosuna@wol.es>, 2003, 2004.
-# Santiago Fernandez Sancho <santi@kde-es.org>, 2006.
-# Santiago Fernández Sancho <santi@kde-es.org>, 2007.
-# Miguel Angel Quesada Fernandez <kesadalive@gmail.com>, 2009, 2011.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2016.
+# SPDX-FileCopyrightText: 2003, 2004 Rafael Osuna <rosuna@wol.es>
+# SPDX-FileCopyrightText: 2006 Santiago Fernandez Sancho <santi@kde-es.org>
+# SPDX-FileCopyrightText: 2007 Santiago Fernández Sancho <santi@kde-es.org>
+# SPDX-FileCopyrightText: 2009, 2011 Miguel Angel Quesada Fernandez <kesadalive@gmail.com>
+# SPDX-FileCopyrightText: 2016, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-20 00:41+0000\n"
-"PO-Revision-Date: 2016-08-04 19:43+0200\n"
+"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"PO-Revision-Date: 2025-01-20 12:37+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -20,18 +19,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "First-Translator: Pablo de Vicente <pvicentea@nexo.es>\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 24.12.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporay Download Directory"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Temporay Download Directory"
+msgid "Temporary Download Directory"
+msgstr "Directorio de descarga temporal"
 
 #: temporarysavedir.cpp:60
 #, kde-format
 msgid "Choose Custom Download Directory..."
-msgstr ""
+msgstr "Elegir el directorio personalizado de descarga..."
 
 #: temporarysavedir.cpp:61
 #, kde-format
@@ -39,12 +39,14 @@ msgid ""
 "Choose a custom directory to use when downloading URLs from this window, "
 "temporarily overriding the default one"
 msgstr ""
+"Elegir un directorio personalizado para usar cuando se descarguen URL de "
+"esta ventana, anulando temporalmente el predeterminado."
 
 #: temporarysavedir.cpp:66
 #, kde-format
 msgctxt "@action:inmenu stop using a temporary download directory"
 msgid "Stop Using Temporary Download Directory"
-msgstr ""
+msgstr "Dejar de usar el directorio de descarga temporal"
 
 #: temporarysavedir.cpp:67
 #, kde-format
@@ -52,16 +54,18 @@ msgid ""
 "Use the default download directory instead of a custom one (only for this "
 "window)"
 msgstr ""
+"Usar el directorio de descarga predeterminado en lugar de uno personalizado "
+"(solo para esta ventana)"
 
 #: temporarysavedir.cpp:113
 #, kde-format
 msgid "Temporary save directory"
-msgstr ""
+msgstr "Directorio temporal para guardar"
 
 #: temporarysavedir.cpp:114
 #, kde-format
 msgid "Choose Temporary Save Directory"
-msgstr ""
+msgstr "Elegir el directorio temporal para guardar"
 
 #. i18n: ectx: Menu (tools)
 #: temporarysavedir.rc:4

@@ -16,27 +16,28 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-20 00:41+0000\n"
-"PO-Revision-Date: 2024-02-03 23:28+0200\n"
+"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"PO-Revision-Date: 2025-01-20 13:12+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.12.0\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
 #: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporay Download Directory"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Temporay Download Directory"
+msgid "Temporary Download Directory"
+msgstr "תיקיית הורדות זמנית"
 
 #: temporarysavedir.cpp:60
 #, kde-format
 msgid "Choose Custom Download Directory..."
-msgstr ""
+msgstr "בחירת תיקיית הורדה משלך…"
 
 #: temporarysavedir.cpp:61
 #, kde-format
@@ -44,29 +45,31 @@ msgid ""
 "Choose a custom directory to use when downloading URLs from this window, "
 "temporarily overriding the default one"
 msgstr ""
+"בחירת תיקייה משלך בעת הורדת כתובות מהחלון הזה, תוך דריסה זמנית של תיקיית "
+"ברירת המחדל"
 
 #: temporarysavedir.cpp:66
 #, kde-format
 msgctxt "@action:inmenu stop using a temporary download directory"
 msgid "Stop Using Temporary Download Directory"
-msgstr ""
+msgstr "להפסיק להשתמש בתיקיית הורדה זמנית"
 
 #: temporarysavedir.cpp:67
 #, kde-format
 msgid ""
 "Use the default download directory instead of a custom one (only for this "
 "window)"
-msgstr ""
+msgstr "להשתמש בתיקיית ברירת המחדל במקום באחת משלך (רק לחלון הזה)"
 
 #: temporarysavedir.cpp:113
 #, kde-format
 msgid "Temporary save directory"
-msgstr ""
+msgstr "תיקיית שמירה זמנית"
 
 #: temporarysavedir.cpp:114
 #, kde-format
 msgid "Choose Temporary Save Directory"
-msgstr ""
+msgstr "בחירת תיקיית שמירה זמנית"
 
 #. i18n: ectx: Menu (tools)
 #: temporarysavedir.rc:4

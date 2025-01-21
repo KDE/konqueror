@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-20 00:41+0000\n"
-"PO-Revision-Date: 2022-08-19 06:01+0200\n"
+"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"PO-Revision-Date: 2025-01-20 04:18+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,17 +16,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.5\n"
 
 #: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporay Download Directory"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Temporay Download Directory"
+msgid "Temporary Download Directory"
+msgstr "დროებითი გადმოწერების საქაღალდე"
 
 #: temporarysavedir.cpp:60
 #, kde-format
 msgid "Choose Custom Download Directory..."
-msgstr ""
+msgstr "აირჩიეთ მორგებული გადმოწერის საქაღალდე..."
 
 #: temporarysavedir.cpp:61
 #, kde-format
@@ -34,12 +35,14 @@ msgid ""
 "Choose a custom directory to use when downloading URLs from this window, "
 "temporarily overriding the default one"
 msgstr ""
+"აირჩიეთ მორგებული საქაღალდე, რომელიც ამ ფანჯარაში URL-ების გადმოსაწერად "
+"იქნება გამოყენებული. ის დროებით გადაფარავს ნაგულისხმევს"
 
 #: temporarysavedir.cpp:66
 #, kde-format
 msgctxt "@action:inmenu stop using a temporary download directory"
 msgid "Stop Using Temporary Download Directory"
-msgstr ""
+msgstr "დროებითი გადმოწერების საქაღალდის გამოყენების შეწყვეტა"
 
 #: temporarysavedir.cpp:67
 #, kde-format
@@ -47,16 +50,18 @@ msgid ""
 "Use the default download directory instead of a custom one (only for this "
 "window)"
 msgstr ""
+"ნაგულისხმევი გადმოწერების საქაღალდის გამოყენება მორგებულის მაგიერ (მხოლოდ ამ "
+"ფანჯრისთვის)"
 
 #: temporarysavedir.cpp:113
 #, kde-format
 msgid "Temporary save directory"
-msgstr ""
+msgstr "დროებითი შენახვის საქაღალდე"
 
 #: temporarysavedir.cpp:114
 #, kde-format
 msgid "Choose Temporary Save Directory"
-msgstr ""
+msgstr "აირჩიეთ დროებითი შენახვის საქაღალდე"
 
 #. i18n: ectx: Menu (tools)
 #: temporarysavedir.rc:4
