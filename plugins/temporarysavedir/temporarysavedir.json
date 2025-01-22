@@ -5,6 +5,7 @@
                 "Email": "stefano.crocco@alice.it",
                 "Name": "Stefano Crocco",
                 "Name[ar]": "ستيفن كروكو",
+                "Name[bg]": "Stefano Crocco",
                 "Name[ca@valencia]": "Stefano Crocco",
                 "Name[ca]": "Stefano Crocco",
                 "Name[es]": "Stefano Crocco",
@@ -16,12 +17,14 @@
                 "Name[sv]": "Stefano Crocco",
                 "Name[tr]": "Stefano Crocco",
                 "Name[uk]": "Stefano Crocco",
-                "Name[x-test]": "xxStefano Croccoxx"
+                "Name[x-test]": "xxStefano Croccoxx",
+                "Name[zh_CN]": "Stefano Crocco"
             }
         ],
         "Category": "Tools",
         "Description": "Temporarily choose a fixed directory where to open the save as dialog",
         "Description[ar]": "اختر مؤقتًا دليلًا ثابتًا لفتح مربع الحوار \"حفظ باسم\"",
+        "Description[bg]": "Временно изберете фиксирана директория, в която да отваряте диалоговия прозорец Запазване като",
         "Description[ca@valencia]": "Tria temporalment un directori fix on obrir el diàleg de guardar",
         "Description[ca]": "Tria temporalment un directori fix on obrir el diàleg de desar",
         "Description[es]": "Elija temporalmente un directorio fijo donde abrir el diálogo «Guardar como»",
@@ -34,11 +37,13 @@
         "Description[tr]": "Dosya aç iletişim kutusunun açılacağı geçici bir sabit dizin seçin",
         "Description[uk]": "Тимчасово виберіть фіксований каталог, де слід відкривати вікно збереження",
         "Description[x-test]": "xxTemporarily choose a fixed directory where to open the save as dialogxx",
+        "Description[zh_CN]": "临时选择一个固定的目录，作为另存为对话框的打开位置",
         "EnabledByDefault": true,
         "Icon": "document-save-as",
         "License": "GPL",
         "Name": "Temporary save directory",
         "Name[ar]": "الدليل الحفظ المؤقت",
+        "Name[bg]": "Временна директория за запазване",
         "Name[ca@valencia]": "Directori temporal de guardada",
         "Name[ca]": "Directori temporal de desament",
         "Name[es]": "Directorio temporal para guardar",
@@ -50,7 +55,8 @@
         "Name[sv]": "Tillfällig katalog att spara i",
         "Name[tr]": "Geçici İndirme Dizini",
         "Name[uk]": "Тимчасовий каталог збереження даних",
-        "Name[x-test]": "xxTemporary save directoryxx"
+        "Name[x-test]": "xxTemporary save directoryxx",
+        "Name[zh_CN]": "临时保存目录"
     },
     "X-KDE-ParentApp": "konqueror"
 }
