@@ -4,31 +4,31 @@
 # Zlatko Popov <zlatkopopov@fsa-bg.org>, 2006, 2007.
 # Aleksandar Yordanov <punkin.drublik@gmail.com>, 2007.
 # Yasen Pramatarov <yasen@lindeas.com>, 2009, 2011, 2021.
-# SPDX-FileCopyrightText: 2024 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2024, 2025 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-21 00:41+0000\n"
-"PO-Revision-Date: 2024-11-10 13:04+0100\n"
+"PO-Revision-Date: 2025-01-21 23:04+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
-"Language-Team: Bulgarian <dict@ludost.net>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.03.70\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: temporarysavedir.cpp:54
 #, kde-format
 msgid "Temporary Download Directory"
-msgstr ""
+msgstr "Временна папка за запазване на изтеглянията"
 
 #: temporarysavedir.cpp:60
 #, kde-format
 msgid "Choose Custom Download Directory..."
-msgstr ""
+msgstr "Изберете потребителска директория за изтеглянията.."
 
 #: temporarysavedir.cpp:61
 #, kde-format
@@ -36,12 +36,15 @@ msgid ""
 "Choose a custom directory to use when downloading URLs from this window, "
 "temporarily overriding the default one"
 msgstr ""
+"Изберете потребителска директория, която да се използва при изтегляне на URL "
+"адреси от този прозорец, като временно замените директорията по подразбиране."
 
 #: temporarysavedir.cpp:66
 #, kde-format
 msgctxt "@action:inmenu stop using a temporary download directory"
 msgid "Stop Using Temporary Download Directory"
 msgstr ""
+"Спиране на използването на временната папка за запазване на изтеглянията"
 
 #: temporarysavedir.cpp:67
 #, kde-format
@@ -49,16 +52,18 @@ msgid ""
 "Use the default download directory instead of a custom one (only for this "
 "window)"
 msgstr ""
+"Използване на стандартната директория за запазване на изтеглянията вместо "
+"потребителска директория (само за този прозорец)"
 
 #: temporarysavedir.cpp:113
 #, kde-format
 msgid "Temporary save directory"
-msgstr ""
+msgstr "Временна директория за запазване"
 
 #: temporarysavedir.cpp:114
 #, kde-format
 msgid "Choose Temporary Save Directory"
-msgstr ""
+msgstr "Избиране на временна директория за запазване"
 
 #. i18n: ectx: Menu (tools)
 #: temporarysavedir.rc:4
