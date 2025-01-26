@@ -748,15 +748,17 @@ void UrlLoader::embed()
 QString UrlLoader::startingSaveDir() const
 {
     QString startDir = m_mainWindow->saveDir();
-    if (startDir.isEmpty()) {
-        //TODO: find a better way to store the last save dir
-        QString lastSaveDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
-        QVariant lastSaveDirData = m_mainWindow->property(s_lastSaveDirProperty);
-        if (lastSaveDirData.isValid()) {
-            startDir = lastSaveDirData.toString();
-        }
+    if (!startDir.isEmpty()) {
+        return startDir;
     }
-    return startDir;
+
+    //TODO find a way to store the last save directory without using properties
+    QString lastSaveDir = m_mainWindow->property(s_lastSaveDirProperty).toString();
+    if (!lastSaveDir.isEmpty()) {
+        return lastSaveDir;
+    } else {
+        return QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
+    }
 }
 
 void UrlLoader::save()

@@ -299,6 +299,17 @@ private:
      */
     bool can(OpenUrlAction action) const;
 
+    /**
+     * @brief The directory to start the Save As dialog in
+     *
+     * This directory is determined in the following way:
+     * - if the main window has a chosen save directory (according to KonqMainWindow::saveDir), use that
+     * - if the main window has a valid property with name #s_lastSaveDirProperty, use the property value.
+     *  This is the directory where an URL was last downloaded in this window and it's updated from save().
+     * - as a fallback value, use the download directory as determined by `QStandardPaths`
+     *
+     * @return the directory where to start the Save As dialog in
+     */
     QString startingSaveDir() const;
 
 private:
@@ -337,21 +348,6 @@ private:
     Konq::AllowedUrlActions m_allowedActions;
 
     /**
-     * @brief Whether only the `embed` action is allowed
-     *
-     * If `true`, the only action performed will be to embed the URL. If that action can't be performed for any reason (including
-     * not having an available part able to display the URL or an error happening), nothing will be done (including displaying error messages).
-     *
-     * This variable is set if the metadata in the `KonqOpenURLRequest` passed to the constructor contains the `"EmbedOrNothing"` entry.
-     *
-     * @note This is a workaround to allow WebEnginePart to display a downloaded file without risking asking again the user to save
-     *
-     * @todo Remove this after a better way to allow the user to quickly display a file after downloading it has been implemented. See comment
-     * for WebEnginePage::saveUrlToDiskAndDisplay
-     */
-    // bool m_embedOrNothing = false;
-
-    /**
      * @brief The URL that the UrlLoader has been asked to open, in case the requesting parts wants to download it itself
      *
      * If the requesting part doesn't want to download the URL itself, this is empty. Otherwise, when the UrlLoader is created,
@@ -359,7 +355,8 @@ private:
      * the URL has been downloaded to, while #m_originalUrl will not be changed
      */
     QUrl m_originalUrl;
-    static const constexpr char* s_lastSaveDirProperty{"lastSaveDir"};
+
+    static const constexpr char* s_lastSaveDirProperty{"lastSaveDir"}; //!< The name of the property where the directory an URL was last downloaded is stored
 };
 
 #endif // URLLLOADER_H
