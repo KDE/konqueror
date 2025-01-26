@@ -77,21 +77,23 @@ protected slots:
     virtual void embedderFinished(const QString &html);
     
 protected:
+
+    using MaybeJobError = std::optional<QWebEngineUrlRequestJob::Error>;
     
     /**
     * @brief Creates and returns the html embedder object
-    * 
-    * This is the object used to replace local URLs with their content as `data` URLs. 
+    *
+    * This is the object used to replace local URLs with their content as `data` URLs.
     *
     * The embedder is only created on the first use of this function. When this happens, its
     * WebEnginePartHtmlEmbedder::finished() signal is connected to the embedderFinished(). If you
     * don't want this, either disconnect the signal or reimplement embedderFinished() so that it
     * does nothing, then connect WebEnginePartHtmlEmbedder::finished() with the appropriate slot
     * yourself
-    * 
+    *
     * @return the html embedder
     */
-    
+
     /**
      * @brief The request object
      * 
@@ -102,32 +104,38 @@ protected:
     /**
      * @brief The error code to pass to `QWebEngineUrlRequestJob::fail`
      * 
-     * In the base class implementation, this can be either `QWebEngineUrlRequestJob::NoError` or
-     * `QWebEngineUrlRequestJob::RequestFailed`.
+     * In the base class implementation, this can be either `QWebEngineUrlRequestJob::RequestFailed`
+     * or std::nullopt if the request succeeded
      * 
      * @return the error code to pass to `QWebEngineUrlRequestJob::fail`
      */
-    inline QWebEngineUrlRequestJob::Error error() const {return m_error;}
+    inline MaybeJobError error() const {return m_error;}
     
     /**
      * @brief Sets the error code passed to `QWebEngineUrlRequestJob::fail`
      * 
-     * Changes the error code. This function can be called by derived class in their
-     * implementation of processSlaveOutput(). It should always be set to `QWebEngineUrlRequestJob::NoError`
-     * if `QWebEngineUrlRequestJob::reply` should be called.
+     * Passing `std::nullopt` here will mark the request as successful.
+     *
+     * This function can be called by derived class in their implementation of processSlaveOutput().
+     *
+     * Note that there may be situations where the slave produces an error but the URL request should
+     * be considered successful. This happens if, despite the failure, there's something to show the user
+     * (for example, when the slave produced an error message which is more informative than the generic
+     * message QtWebEngine would have produced). In this case, pass `std::nullopt` here.
      * 
      * @see isSuccessful()
      * 
-     * @param error: the new error code
+     * @param error: the new error code. Pass `std::nullopt` to clear any previously set error code
+     * and treat the request as successful
      */
-    inline void setError(QWebEngineUrlRequestJob::Error error) {m_error = error;}
+    inline void setError(MaybeJobError error) {m_error = error;}
     
     /**
      * @brief Whether an error has occurred or not
      * 
-     * @return `true` if error() is `QWebEngineUrlRequestJob::NoError` and false otherwise
+     * @return `true` if error() is `std::nullopt` and false otherwise
      */
-    inline bool isSuccessful() const {return m_error == QWebEngineUrlRequestJob::NoError;}
+    inline bool isSuccessful() const {return !m_error.has_value();}
     
     /**
      * @brief The error message
@@ -273,10 +281,12 @@ private:
     
     /**
      * @brief The error code to use for `QWebEngineUrlRequestJob::fail` for the current request
+     *
+     * A value of `std::nullopt` means no error occurred.
      * 
      * This is valid only after the call to kioJobFinished()
      */
-    QWebEngineUrlRequestJob::Error m_error;
+    MaybeJobError m_error;
     
     /**
      * @brief The error message produced by KIO for the current request

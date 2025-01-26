@@ -42,7 +42,9 @@ void KIOHandler::sendReply()
                 m_currentRequest->reply(m_mimeType.name().toUtf8(), buf);
             }
         } else {
-            m_currentRequest->fail(m_error);
+            //isSuccessful() returns true only if m_error doesn't have a value,
+            //so here we're sure that m_error does have a value
+            m_currentRequest->fail(m_error.value());
         }
         m_currentRequest.clear();
     }
@@ -96,14 +98,14 @@ void KIOHandler::kioJobFinished(KIO::StoredTransferJob* job)
     //as reply. The error string reported by the job will be most likely more informative than the generic error
     //message produced by QtWebEngine.
     if (job->error() == 0) {
-        m_error = QWebEngineUrlRequestJob::NoError;
+        m_error = std::nullopt;
         m_mimeType = db.mimeTypeForName(job->mimetype());
         m_data = job->data();
         m_redirectUrl = job->redirectUrl();
     } else {
         createDataFromErrorString(job);
         m_mimeType = db.mimeTypeForName("text/html");
-        m_error = m_data.isEmpty() ? QWebEngineUrlRequestJob::RequestFailed : QWebEngineUrlRequestJob::NoError;
+        m_error = m_data.isEmpty() ? MaybeJobError{QWebEngineUrlRequestJob::RequestFailed} : std::nullopt;
         m_redirectUrl.clear();
     }
     processSlaveOutput();

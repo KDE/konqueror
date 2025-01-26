@@ -43,5 +43,6 @@ void ExecSchemeHandler::requestStarted(QWebEngineUrlRequestJob* job)
     launcherJob->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
     launcherJob->start();
     //It's not really a failure, but there's no other way to tell QtWebEngine that the request will be handled by someone else
-    job->fail(QWebEngineUrlRequestJob::NoError);
+    //It used to use QWebEngineUrlRequestJob::NoError, but it's been deprecated
+    job->fail(QWebEngineUrlRequestJob::RequestAborted);
 }
