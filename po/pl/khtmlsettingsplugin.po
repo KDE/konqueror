@@ -1,17 +1,17 @@
 # translation of khtmlsettingsplugin.po to
-# Version: $Revision: 1700816 $
+# Version: $Revision: 1701155 $
 #
 # Copyright (C) 2002, 2004, 2005, 2007 Free Software Foundation, Inc.
 # Marcin Giedz <mgiedz@elka.pw.edu.pl>, 2002.
 # Mikolaj Machowski <mikmach@wp.pl>, 2004.
 # Marta Rybczyńska <kde-i18n@rybczynska.net>, 2007.
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2016, 2023.
+# SPDX-FileCopyrightText: 2011, 2016, 2023, 2025 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-21 00:41+0000\n"
-"PO-Revision-Date: 2023-03-12 09:03+0100\n"
+"PO-Revision-Date: 2025-01-25 12:00+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -20,16 +20,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #: temporarysavedir.cpp:54
 #, kde-format
 msgid "Temporary Download Directory"
-msgstr ""
+msgstr "Tymczasowy katalog do pobierania"
 
 #: temporarysavedir.cpp:60
 #, kde-format
 msgid "Choose Custom Download Directory..."
-msgstr ""
+msgstr "Wybierz własny katalog do pobierania…"
 
 #: temporarysavedir.cpp:61
 #, kde-format
@@ -37,12 +38,14 @@ msgid ""
 "Choose a custom directory to use when downloading URLs from this window, "
 "temporarily overriding the default one"
 msgstr ""
+"Wybierz własny katalog do pobierania adresów URL z tego okna, tymczasowo "
+"zastępując ten domyślny"
 
 #: temporarysavedir.cpp:66
 #, kde-format
 msgctxt "@action:inmenu stop using a temporary download directory"
 msgid "Stop Using Temporary Download Directory"
-msgstr ""
+msgstr "Przestań używać tymczasowego katalogu do pobierania"
 
 #: temporarysavedir.cpp:67
 #, kde-format
@@ -50,16 +53,17 @@ msgid ""
 "Use the default download directory instead of a custom one (only for this "
 "window)"
 msgstr ""
+"Użyj domyślnego katalogu do pobierania zamiast własnego (tylko dla tego okna)"
 
 #: temporarysavedir.cpp:113
 #, kde-format
 msgid "Temporary save directory"
-msgstr ""
+msgstr "Tymczasowy katalog do zapisywania"
 
 #: temporarysavedir.cpp:114
 #, kde-format
 msgid "Choose Temporary Save Directory"
-msgstr ""
+msgstr "Wybierz tymczasowy katalog do zapisywania"
 
 #. i18n: ectx: Menu (tools)
 #: temporarysavedir.rc:4
