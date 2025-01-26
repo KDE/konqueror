@@ -70,12 +70,6 @@ void KIOHandler::processNextRequest()
     connect(job, &KIO::StoredTransferJob::result, this, [this, job](){kioJobFinished(job);});
 }
 
-void KIOHandler::embedderFinished(const QString& html)
-{
-    m_data = html.toUtf8();
-    emit ready();
-}
-
 void KIOHandler::processSlaveOutput()
 {
     emit ready();

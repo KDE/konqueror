@@ -20,16 +20,12 @@ namespace KIO {
 
 namespace WebEngine {
 
-class WebEnginePartHtmlEmbedder;
-
 /**
  * @brief Class which allows QWebEngine to access URLs provided by KIO
  * 
  * The class assumes that the data can be obtained from KIO using `KIO::storedGet` and
  * passes it to `QWebEngineUrlRequestJob::reply`. The mime type is determined using 
- * `QMimeDatabase::mimeTypeForData`. If the data is HTML or XHTML, on Qt versions before 5.12
- * WebEnginePartHtmlEmbedder is used to embed the contents of local URLs inside the code,
- * so that it can be displayed by QWebEngine without breaking cross-origin rules.
+ * `QMimeDatabase::mimeTypeForData`.
  * 
  * This class provides a virtual function, processSlaveOutput() which allows to further process KIO output before
  * using it as reply. Derived classes can use it to change the data, its mimetype and to set 
@@ -61,21 +57,7 @@ public:
      * @param  req: the request job
      */
     void requestStarted(QWebEngineUrlRequestJob* req) override;
-    
-protected slots:
-    
-    /**
-    * @brief Slot called in response to the WebEnginePartHtmlEmbedder::finished() signal
-    * 
-    * The base class implementation calls setData() with the resulting HTML code, then
-    * emits the ready() signal. You can override this function to do something else with
-    * the HTML code. In this case, most likely you won't want to call the base class version
-    * but just call setData() and emit the ready() when you're done processing the HTML code
-    * 
-    * @param html: the HTML code produced by the embedder 
-    */
-    virtual void embedderFinished(const QString &html);
-    
+
 protected:
 
     using MaybeJobError = std::optional<QWebEngineUrlRequestJob::Error>;
