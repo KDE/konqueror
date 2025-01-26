@@ -244,13 +244,13 @@ void SettingsPlugin::cachePolicyChanged(int p)
 
     switch (p) {
     case 0:
-        policy = KIO::getCacheControlString(KIO::CC_Verify);
+        policy = QStringLiteral("Verify");
         break;
     case 1:
-        policy = KIO::getCacheControlString(KIO::CC_Cache);
+        policy = QStringLiteral("Cache");
         break;
     case 2:
-        policy = KIO::getCacheControlString(KIO::CC_CacheOnly);
+        policy = QStringLiteral("CacheOnly");
         break;
     };
 
