@@ -128,7 +128,11 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     connect(m_splitBehaviour, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &KKonqGeneralOptions::slotChanged);
 
     m_restoreLastState = new QCheckBox(i18n("When starting up, restore state from last time"), widget());
+#if QT_VERSION >= QT_VERSION_CHECK(6,7,0)
+    connect(m_restoreLastState, &QCheckBox::checkStateChanged, this, &KKonqGeneralOptions::slotChanged);
+#else
     connect(m_restoreLastState, &QCheckBox::stateChanged, this, &KKonqGeneralOptions::slotChanged);
+#endif
     formLayout->addRow(m_restoreLastState);
 }
 
