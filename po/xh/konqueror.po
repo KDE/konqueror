@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-20 00:41+0000\n"
+"POT-Creation-Date: 2025-01-27 00:40+0000\n"
 "PO-Revision-Date: 2002-11-08 14:54+0200\n"
 "Last-Translator: Thelma Lungcuzo <thelma@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -620,8 +620,8 @@ msgid ""
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4867
-#: src/konqmainwindow.cpp:4913
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4865
+#: src/konqmainwindow.cpp:4911
 #, fuzzy, kde-format
 #| msgctxt "NAME OF TRANSLATORS"
 #| msgid "Your names"
@@ -732,7 +732,7 @@ msgstr ""
 msgid "Miscellaneous"
 msgstr ""
 
-#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4345
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4343
 #, fuzzy, kde-format
 msgid "Open in New &Window"
 msgstr "Entsha &Window"
@@ -795,83 +795,83 @@ msgctxt "@title:window"
 msgid "Clear History?"
 msgstr "Imbali Ecacileyo?"
 
-#: src/konqmainwindow.cpp:737
+#: src/konqmainwindow.cpp:735
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
 msgstr ""
 
-#: src/konqmainwindow.cpp:769
+#: src/konqmainwindow.cpp:767
 #, fuzzy, kde-format
 #| msgid "Accessed"
 msgid "Access denied"
 msgstr "Igqithiselwe"
 
-#: src/konqmainwindow.cpp:1529
+#: src/konqmainwindow.cpp:1527
 #, fuzzy, kde-format
 msgid "Open File"
 msgstr "Thu&mela Ifayile"
 
-#: src/konqmainwindow.cpp:1593
+#: src/konqmainwindow.cpp:1591
 #, kde-format
 msgid "Canceled."
 msgstr "Icinyiwe."
 
-#: src/konqmainwindow.cpp:1629
+#: src/konqmainwindow.cpp:1627
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
 "Reloading the page will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:1630 src/konqmainwindow.cpp:2268
-#: src/konqmainwindow.cpp:2357 src/konqmainwindow.cpp:2389
-#: src/konqmainwindow.cpp:2432 src/konqmainwindow.cpp:2454
-#: src/konqmainwindow.cpp:4832
+#: src/konqmainwindow.cpp:1628 src/konqmainwindow.cpp:2266
+#: src/konqmainwindow.cpp:2355 src/konqmainwindow.cpp:2387
+#: src/konqmainwindow.cpp:2430 src/konqmainwindow.cpp:2452
+#: src/konqmainwindow.cpp:4830
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:1630 src/konqmainwindow.cpp:2268
-#: src/konqmainwindow.cpp:2357 src/konqmainwindow.cpp:2389
-#: src/konqmainwindow.cpp:2432 src/konqmainwindow.cpp:2455
-#: src/konqmainwindow.cpp:4832
+#: src/konqmainwindow.cpp:1628 src/konqmainwindow.cpp:2266
+#: src/konqmainwindow.cpp:2355 src/konqmainwindow.cpp:2387
+#: src/konqmainwindow.cpp:2430 src/konqmainwindow.cpp:2453
+#: src/konqmainwindow.cpp:4830
 #, kde-format
 msgid "&Discard Changes"
 msgstr ""
 
-#: src/konqmainwindow.cpp:1944 src/konqmainwindow.cpp:1950
+#: src/konqmainwindow.cpp:1942 src/konqmainwindow.cpp:1948
 #, fuzzy, kde-format
 msgid "Home Folder"
 msgstr "Njengencwadi enenkcukacha Entsha"
 
-#: src/konqmainwindow.cpp:1945 src/konqmainwindow.cpp:3367
+#: src/konqmainwindow.cpp:1943 src/konqmainwindow.cpp:3365
 #, fuzzy, kde-format
 msgid "Home"
 msgstr "Ikhaya URL"
 
-#: src/konqmainwindow.cpp:1951
+#: src/konqmainwindow.cpp:1949
 #, fuzzy, kde-format
 msgid "Navigate to your 'Home Folder'"
 msgstr "Lawulela kwi 'URL Yasekhaya'"
 
-#: src/konqmainwindow.cpp:1952
+#: src/konqmainwindow.cpp:1950
 #, fuzzy, kde-format
 msgid "Navigate to your local 'Home Folder'"
 msgstr "Lawulela kwi 'URL Yasekhaya'"
 
-#: src/konqmainwindow.cpp:1955
+#: src/konqmainwindow.cpp:1953
 #, fuzzy, kde-format
 msgid "Home Page"
 msgstr "Ikhaya URL"
 
-#: src/konqmainwindow.cpp:1957
+#: src/konqmainwindow.cpp:1955
 #, fuzzy, kde-format
 msgid "Navigate to your 'Home Page'"
 msgstr "Lawulela kwi 'URL Yasekhaya'"
 
-#: src/konqmainwindow.cpp:1958
+#: src/konqmainwindow.cpp:1956
 #, fuzzy, kde-format
 msgid ""
 "<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
@@ -882,332 +882,332 @@ msgstr ""
 "kuyo <b>KDE Umbindi wolawulo</b>, ngaphantsi <b> Umphathi Wefayile</b> / <b> "
 "Ukuziphatha</b>."
 
-#: src/konqmainwindow.cpp:2267
+#: src/konqmainwindow.cpp:2265
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Detaching the tab will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2356
+#: src/konqmainwindow.cpp:2354
 #, kde-format
 msgid ""
 "This view contains changes that have not been submitted.\n"
 "Closing the view will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2388
+#: src/konqmainwindow.cpp:2386
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the tab will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2414
+#: src/konqmainwindow.cpp:2412
 #, fuzzy, kde-format
 msgid "Do you really want to close all other tabs?"
 msgstr "Ufuna ngokwenene ukucacisa eyona mbali eyiyo?"
 
-#: src/konqmainwindow.cpp:2415 src/konqmainwindow.cpp:3447 src/konqtabs.cpp:74
+#: src/konqmainwindow.cpp:2413 src/konqmainwindow.cpp:3445 src/konqtabs.cpp:74
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr "Vala Enye i &Tab"
 
-#: src/konqmainwindow.cpp:2415
+#: src/konqmainwindow.cpp:2413
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
 msgstr "Vala Enye i &Tab"
 
-#: src/konqmainwindow.cpp:2431
+#: src/konqmainwindow.cpp:2429
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing other tabs will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2453
+#: src/konqmainwindow.cpp:2451
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Reloading all tabs will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:2510
+#: src/konqmainwindow.cpp:2508
 #, fuzzy, kde-format
 #| msgid "Enter Target"
 msgctxt "@title:window"
 msgid "Enter Target"
 msgstr "Ngenisa Itekeni"
 
-#: src/konqmainwindow.cpp:2517
+#: src/konqmainwindow.cpp:2515
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:2527
+#: src/konqmainwindow.cpp:2525
 #, fuzzy, kde-format
 msgid "Copy selected files from %1 to:"
 msgstr "Khuphela iifayile ezikhethiweyo ku"
 
-#: src/konqmainwindow.cpp:2540
+#: src/konqmainwindow.cpp:2538
 #, fuzzy, kde-format
 msgid "Move selected files from %1 to:"
 msgstr "Hambisa iifayile ezikhethiweyo ku"
 
-#: src/konqmainwindow.cpp:2708
+#: src/konqmainwindow.cpp:2706
 #, fuzzy, kde-format
 #| msgid "Clear History"
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
 msgstr "Cacisa Imbali"
 
-#: src/konqmainwindow.cpp:2730
+#: src/konqmainwindow.cpp:2728
 #, fuzzy, kde-format
 msgid "Save As..."
 msgstr "Cwangcisa i URL"
 
-#: src/konqmainwindow.cpp:2732
+#: src/konqmainwindow.cpp:2730
 #, fuzzy, kde-format
 msgid "Manage..."
 msgstr "Tshints&ha Uphawu lomfanekiso..."
 
-#: src/konqmainwindow.cpp:3276
+#: src/konqmainwindow.cpp:3274
 #, kde-format
 msgid "New &Window"
 msgstr "Entsha &Window"
 
-#: src/konqmainwindow.cpp:3281
+#: src/konqmainwindow.cpp:3279
 #, kde-format
 msgid "&Duplicate Window"
 msgstr "&Yenza Kubini i Window"
 
-#: src/konqmainwindow.cpp:3286
+#: src/konqmainwindow.cpp:3284
 #, fuzzy, kde-format
 msgid "Send &Link Address..."
 msgstr "&Thumela Ikhonkco"
 
-#: src/konqmainwindow.cpp:3290
+#: src/konqmainwindow.cpp:3288
 #, fuzzy, kde-format
 msgid "S&end File..."
 msgstr "Thu&mela Ifayile"
 
-#: src/konqmainwindow.cpp:3294
+#: src/konqmainwindow.cpp:3292
 #, fuzzy, kde-format
 #| msgid "Open Location"
 msgid "&Open Location"
 msgstr "Vula Indawo ekuyo"
 
-#: src/konqmainwindow.cpp:3300
+#: src/konqmainwindow.cpp:3298
 #, fuzzy, kde-format
 msgid "&Open File..."
 msgstr "Thu&mela Ifayile"
 
-#: src/konqmainwindow.cpp:3305
+#: src/konqmainwindow.cpp:3303
 #, kde-format
 msgid "&Find File..."
 msgstr "&Fumana Ifayile..."
 
-#: src/konqmainwindow.cpp:3314
+#: src/konqmainwindow.cpp:3312
 #, kde-format
 msgid "Lock to Current Location"
 msgstr "Tshixa Kwindawo ekuyo Yangoku"
 
-#: src/konqmainwindow.cpp:3317
+#: src/konqmainwindow.cpp:3315
 #, fuzzy, kde-format
 #| msgid "Lin&k View"
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr "Diban&isa Imboniselo"
 
-#: src/konqmainwindow.cpp:3322
+#: src/konqmainwindow.cpp:3320
 #, kde-format
 msgid "&Up"
 msgstr "&Ngentla"
 
-#: src/konqmainwindow.cpp:3332
+#: src/konqmainwindow.cpp:3330
 #, fuzzy, kde-format
 #| msgid "Copy Items"
 msgid "Closed Items"
 msgstr "Khuphela Imiba"
 
-#: src/konqmainwindow.cpp:3345
+#: src/konqmainwindow.cpp:3343
 #, fuzzy, kde-format
 #| msgid "Permissions"
 msgid "Sessions"
 msgstr "Iimvume"
 
-#: src/konqmainwindow.cpp:3372
+#: src/konqmainwindow.cpp:3370
 #, fuzzy, kde-format
 #| msgid "Most Often Visited"
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr "Indwendwelwa Rhoqo Kaninzi"
 
-#: src/konqmainwindow.cpp:3376
+#: src/konqmainwindow.cpp:3374
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3385
+#: src/konqmainwindow.cpp:3383
 #, fuzzy, kde-format
 #| msgid "History"
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr "Imbali"
 
-#: src/konqmainwindow.cpp:3397
+#: src/konqmainwindow.cpp:3395
 #, fuzzy, kde-format
 msgid "Configure Extensions..."
 msgstr "&Qwalasela Iimboniselo zabucala Zemboniselo..."
 
-#: src/konqmainwindow.cpp:3401
+#: src/konqmainwindow.cpp:3399
 #, fuzzy, kde-format
 msgid "Configure Spell Checking..."
 msgstr "&Qwalasela Iimboniselo zabucala Zemboniselo..."
 
-#: src/konqmainwindow.cpp:3407
+#: src/konqmainwindow.cpp:3405
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr "&Chaka Imboniselo Ekhohlo/Ekunene"
 
-#: src/konqmainwindow.cpp:3412
+#: src/konqmainwindow.cpp:3410
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr "&Chaka Imboniselo Ngentla/Ngezantsi"
 
-#: src/konqmainwindow.cpp:3417 src/konqtabs.cpp:41
+#: src/konqmainwindow.cpp:3415 src/konqtabs.cpp:41
 #, kde-format
 msgid "&New Tab"
 msgstr "&Tab Entsha"
 
-#: src/konqmainwindow.cpp:3426
+#: src/konqmainwindow.cpp:3424
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr "&Yenza i Tab Yangoku Ngokubini"
 
-#: src/konqmainwindow.cpp:3431
+#: src/konqmainwindow.cpp:3429
 #, kde-format
 msgid "Detach Current Tab"
 msgstr "Susa i Tab Yangoku"
 
-#: src/konqmainwindow.cpp:3436
+#: src/konqmainwindow.cpp:3434
 #, fuzzy, kde-format
 msgid "&Close Active View"
 msgstr "&Susa Imboniselo Esebenzayo"
 
-#: src/konqmainwindow.cpp:3441
+#: src/konqmainwindow.cpp:3439
 #, fuzzy, kde-format
 msgid "Close Current Tab"
 msgstr "Vala i Tab Yangoku"
 
-#: src/konqmainwindow.cpp:3451
+#: src/konqmainwindow.cpp:3449
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "Sebenzisa Isithuba Esilandelayo"
 
-#: src/konqmainwindow.cpp:3455
+#: src/konqmainwindow.cpp:3453
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "Sebenzisa Isithuba Esidlulileyo"
 
-#: src/konqmainwindow.cpp:3462
+#: src/konqmainwindow.cpp:3460
 #, fuzzy, kde-format
 msgid "Activate Tab %1"
 msgstr "Sebenzisa Isithuba Esilandelayo"
 
-#: src/konqmainwindow.cpp:3467
+#: src/konqmainwindow.cpp:3465
 #, fuzzy, kde-format
 msgid "Move Tab Left"
 msgstr "Bonisa ii T Ekhohlo"
 
-#: src/konqmainwindow.cpp:3472
+#: src/konqmainwindow.cpp:3470
 #, kde-format
 msgid "Move Tab Right"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3480
+#: src/konqmainwindow.cpp:3478
 #, kde-format
 msgid "Dump Debug Info"
 msgstr "Lahla Ulwazi Lokupho lwegciwane"
 
-#: src/konqmainwindow.cpp:3498
+#: src/konqmainwindow.cpp:3496
 #, fuzzy, kde-format
 msgid "&Reload"
 msgstr "&Vala i Tab"
 
-#: src/konqmainwindow.cpp:3503 src/konqtabs.cpp:68
+#: src/konqmainwindow.cpp:3501 src/konqtabs.cpp:68
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3511
+#: src/konqmainwindow.cpp:3509
 #, fuzzy, kde-format
 msgid "&Force Reload"
 msgstr "&Vala i Tab"
 
-#: src/konqmainwindow.cpp:3536
+#: src/konqmainwindow.cpp:3534
 #, kde-format
 msgid "&Stop"
 msgstr "&Yima"
 
-#: src/konqmainwindow.cpp:3545
+#: src/konqmainwindow.cpp:3543
 #, kde-format
 msgid "Throbber"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3549 src/konqmainwindow.cpp:3552
+#: src/konqmainwindow.cpp:3547 src/konqmainwindow.cpp:3550
 #, kde-format
 msgid "L&ocation: "
 msgstr "I&ndawo ekuyo:"
 
-#: src/konqmainwindow.cpp:3559
+#: src/konqmainwindow.cpp:3557
 #, kde-format
 msgid "Location Bar"
 msgstr "Ibar Yendawo ekuyo"
 
-#: src/konqmainwindow.cpp:3565
+#: src/konqmainwindow.cpp:3563
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3569
+#: src/konqmainwindow.cpp:3567
 #, fuzzy, kde-format
 msgid "Clear Location Bar"
 msgstr "Ibar yokucacisa indawo ekuyo"
 
-#: src/konqmainwindow.cpp:3572
+#: src/konqmainwindow.cpp:3570
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
 "</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3577
+#: src/konqmainwindow.cpp:3575
 #, fuzzy, kde-format
 msgid "&Bookmarks"
 msgstr "&Inqaku lencwadi"
 
-#: src/konqmainwindow.cpp:3598
+#: src/konqmainwindow.cpp:3596
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "&Ulwaziso lwe Konqueror"
 
-#: src/konqmainwindow.cpp:3603
+#: src/konqmainwindow.cpp:3601
 #, kde-format
 msgid "Go"
 msgstr "Yiya"
 
-#: src/konqmainwindow.cpp:3605
+#: src/konqmainwindow.cpp:3603
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
 "bar.</html>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3613
+#: src/konqmainwindow.cpp:3611
 #, fuzzy, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
@@ -1217,28 +1217,28 @@ msgstr ""
 "Ngenisa isilawuli aomzala<p>Umzekelo. ukuba indawo yangoku yefayile:/ ekhaya/"
 "%1 ukucinizela eliqosha lizakusa kwifayile:/ekhaya."
 
-#: src/konqmainwindow.cpp:3616
+#: src/konqmainwindow.cpp:3614
 #, fuzzy, kde-format
 msgid "Enter the parent folder"
 msgstr "Ngenisa umlawuli womzali"
 
-#: src/konqmainwindow.cpp:3618 src/konqmainwindow.cpp:3619
+#: src/konqmainwindow.cpp:3616 src/konqmainwindow.cpp:3617
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "Yiya ngasemva inyathelo elinye kwimbali yokhangelo lweeencwadi"
 
-#: src/konqmainwindow.cpp:3621 src/konqmainwindow.cpp:3622
+#: src/konqmainwindow.cpp:3619 src/konqmainwindow.cpp:3620
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "Yiya phambili inyathelo elinye kwimbali yokukhangela"
 
-#: src/konqmainwindow.cpp:3624 src/konqmainwindow.cpp:3625
+#: src/konqmainwindow.cpp:3622 src/konqmainwindow.cpp:3623
 #, fuzzy, kde-format
 #| msgid "Move backwards one step in the browsing history"
 msgid "Move backwards one step in the closed tabs history"
 msgstr "Yiya ngasemva inyathelo elinye kwimbali yokhangelo lweeencwadi"
 
-#: src/konqmainwindow.cpp:3627
+#: src/konqmainwindow.cpp:3625
 #, fuzzy, kde-format
 #| msgid ""
 #| "Reload the currently displayed document<p>This may, for example, be "
@@ -1253,12 +1253,12 @@ msgstr ""
 "web aguqulwe kancincane ukusuka kwixesha lolayisho, xa ufuna ukwenza ukuba "
 "intshintsho zibonakale."
 
-#: src/konqmainwindow.cpp:3630
+#: src/konqmainwindow.cpp:3628
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "Layisha kwakhona uxwebhu oluboniswe lwangoku"
 
-#: src/konqmainwindow.cpp:3632
+#: src/konqmainwindow.cpp:3630
 #, fuzzy, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1269,12 +1269,12 @@ msgstr ""
 "web aguqulwe kancincane ukusuka kwixesha lolayisho, xa ufuna ukwenza ukuba "
 "intshintsho zibonakale."
 
-#: src/konqmainwindow.cpp:3635
+#: src/konqmainwindow.cpp:3633
 #, fuzzy, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr "Layisha kwakhona uxwebhu oluboniswe lwangoku"
 
-#: src/konqmainwindow.cpp:3637
+#: src/konqmainwindow.cpp:3635
 #, fuzzy, kde-format
 #| msgid ""
 #| "Stop loading the document<p>All network transfers will be stopped and "
@@ -1287,7 +1287,7 @@ msgstr ""
 "Yeka ukulayisha uxwebhu<p>Lonke uhambiso lomnatha lizakumiswa kwaye i "
 "Konqueror izakubonisa umxholo osele efumaniwe kude kube ngoku."
 
-#: src/konqmainwindow.cpp:3641
+#: src/konqmainwindow.cpp:3639
 #, fuzzy, kde-format
 #| msgid ""
 #| "Reload the currently displayed document<p>This may, for example, be "
@@ -1303,18 +1303,18 @@ msgstr ""
 "web aguqulwe kancincane ukusuka kwixesha lolayisho, xa ufuna ukwenza ukuba "
 "intshintsho zibonakale."
 
-#: src/konqmainwindow.cpp:3645
+#: src/konqmainwindow.cpp:3643
 #, fuzzy, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr "Layisha kwakhona uxwebhu oluboniswe lwangoku"
 
-#: src/konqmainwindow.cpp:3647
+#: src/konqmainwindow.cpp:3645
 #, kde-format
 msgid "Stop loading the document"
 msgstr "Yima ukulayisha uxwebhu"
 
-#: src/konqmainwindow.cpp:3649
+#: src/konqmainwindow.cpp:3647
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cut the currently selected text or item(s) and move it to the system "
@@ -1329,13 +1329,13 @@ msgstr ""
 "yokusebenza yebhodi eqhotyoshwayo<p>Oku kuyenza ifumaneke <b>Cola</b> "
 "umyalelo kwi Konqueror nezinye izicelo ze KDE."
 
-#: src/konqmainwindow.cpp:3653
+#: src/konqmainwindow.cpp:3651
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr ""
 "Hamabisa okubhaliweyo okukhetiweyo okanye umba(ii) kwibhodi eqhotyoshwayo"
 
-#: src/konqmainwindow.cpp:3655
+#: src/konqmainwindow.cpp:3653
 #, fuzzy, kde-format
 #| msgid ""
 #| "Copy the currently selected text or item(s) to the system "
@@ -1350,13 +1350,13 @@ msgstr ""
 "kwibhodi eqhotyoshwayo<p>Oku kuyenza ifumaneke kwi <b>Cola</b> umyalelo kwi "
 "Konqueror nezinye izicelo ze KDE."
 
-#: src/konqmainwindow.cpp:3659
+#: src/konqmainwindow.cpp:3657
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr ""
 "Khuphela okukhethiweyo okubhaliweyo okanye umba(imi) kwibhodi eqhotyoshwayo"
 
-#: src/konqmainwindow.cpp:3661
+#: src/konqmainwindow.cpp:3659
 #, fuzzy, kde-format
 #| msgid ""
 #| "Paste the previously cut or copied clipboard contents<p>This also works "
@@ -1369,12 +1369,12 @@ msgstr ""
 "eqhotyoshiweyo ekhuphelweyo<p> Oku kusebenzela okubhaliweyo okukhuphelweyo "
 "okanye okusikiweyo okusuka kwezinye izicelo ze KDE."
 
-#: src/konqmainwindow.cpp:3664
+#: src/konqmainwindow.cpp:3662
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "Cola imixholo yebhodi eqhotyoshwayo"
 
-#: src/konqmainwindow.cpp:3666
+#: src/konqmainwindow.cpp:3664
 #, fuzzy, kde-format
 #| msgid ""
 #| "Print the currently displayed document<p>You will be presented with a "
@@ -1395,12 +1395,12 @@ msgstr ""
 "ngonikezelo kwinkonzo ezikhethekileyo ze KDE njengokwenza ifayile ye PDF "
 "ukusuka kuxwebhu lwangoku."
 
-#: src/konqmainwindow.cpp:3672
+#: src/konqmainwindow.cpp:3670
 #, kde-format
 msgid "Print the current document"
 msgstr "Shicilela uxwebhu lwangoku"
 
-#: src/konqmainwindow.cpp:3674
+#: src/konqmainwindow.cpp:3672
 #, fuzzy, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
@@ -1409,7 +1409,7 @@ msgstr ""
 "Imboniselo etshixiweyo ayinakuzitshintsha izilawuli. Yisebenzise nodibaniso "
 "'lwemboniselo yekhonkco' ukuhlola iifayile ezininzi kulawulo olunye"
 
-#: src/konqmainwindow.cpp:3675
+#: src/konqmainwindow.cpp:3673
 #, fuzzy, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
@@ -1418,154 +1418,154 @@ msgstr ""
 "Icwangcisa imboniselo njenge'khonkco'. Imboniselo enekhonkco ilandela "
 "utshintsho lolawulo olwenziweyo kwezinye iimboniselo ezinekhonkco."
 
-#: src/konqmainwindow.cpp:3679
+#: src/konqmainwindow.cpp:3677
 #, fuzzy, kde-format
 msgid "&Inspect Current Page"
 msgstr "Vala i Tab Yangoku"
 
-#: src/konqmainwindow.cpp:3680
+#: src/konqmainwindow.cpp:3678
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3681
+#: src/konqmainwindow.cpp:3679
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3843
+#: src/konqmainwindow.cpp:3841
 #, kde-format
 msgid "Copy &Files..."
 msgstr "Khuphela &Iifayile..."
 
-#: src/konqmainwindow.cpp:3847
+#: src/konqmainwindow.cpp:3845
 #, kde-format
 msgid "M&ove Files..."
 msgstr "H&ambisa Iifayile..."
 
-#: src/konqmainwindow.cpp:4173
+#: src/konqmainwindow.cpp:4171
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
 "while. Continue?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4175
+#: src/konqmainwindow.cpp:4173
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "Vula kwi &Tab Entsha"
 
-#: src/konqmainwindow.cpp:4176
+#: src/konqmainwindow.cpp:4174
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr "&Thumela Ikhonkco"
 
-#: src/konqmainwindow.cpp:4338
+#: src/konqmainwindow.cpp:4336
 #, fuzzy, kde-format
 msgid "Open in T&his Window"
 msgstr "Entsha &Window"
 
-#: src/konqmainwindow.cpp:4339
+#: src/konqmainwindow.cpp:4337
 #, fuzzy, kde-format
 msgid "Open the document in current window"
 msgstr "Vula uxwebhu kwisithuba esitsha sekhusi"
 
-#: src/konqmainwindow.cpp:4346
+#: src/konqmainwindow.cpp:4344
 #, fuzzy, kde-format
 msgid "Open the document in a new window"
 msgstr "Vula uxwebhu kwisithuba esitsha sekhusi"
 
-#: src/konqmainwindow.cpp:4352
+#: src/konqmainwindow.cpp:4350
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Vula kwi &Tab Entsha"
 
-#: src/konqmainwindow.cpp:4354
+#: src/konqmainwindow.cpp:4352
 #, fuzzy, kde-format
 msgid "Open the document in a new tab"
 msgstr "Vula uxwebhu kwisithuba esitsha sekhusi"
 
-#: src/konqmainwindow.cpp:4610
+#: src/konqmainwindow.cpp:4608
 #, fuzzy, kde-format
 #| msgid "Open with %1"
 msgid "&Open With"
 msgstr "Vula nge %1"
 
-#: src/konqmainwindow.cpp:4623
+#: src/konqmainwindow.cpp:4621
 #, kde-format
 msgid "Open with %1"
 msgstr "Vula nge %1"
 
-#: src/konqmainwindow.cpp:4673
+#: src/konqmainwindow.cpp:4671
 #, fuzzy, kde-format
 #| msgid "&View Mode"
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "&Indlela Yemboniselo"
 
-#: src/konqmainwindow.cpp:4796
+#: src/konqmainwindow.cpp:4794
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4798
+#: src/konqmainwindow.cpp:4796
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Igalelo langaphakathi luyafuneka:"
 
-#: src/konqmainwindow.cpp:4800
+#: src/konqmainwindow.cpp:4798
 #, fuzzy, kde-format
 msgid "C&lose Current Tab"
 msgstr "Vala i Tab Yangoku"
 
-#: src/konqmainwindow.cpp:4828
+#: src/konqmainwindow.cpp:4826
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:4829
+#: src/konqmainwindow.cpp:4827
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:4989
+#: src/konqmainwindow.cpp:4987
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr ""
 
-#: src/konqmainwindow.cpp:4989 src/konqmainwindow.cpp:4996
+#: src/konqmainwindow.cpp:4987 src/konqmainwindow.cpp:4994
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Qwalasela Ibar yasecaleni"
 
-#: src/konqmainwindow.cpp:4994
+#: src/konqmainwindow.cpp:4992
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4996
+#: src/konqmainwindow.cpp:4994
 #, fuzzy, kde-format
 msgid "Add"
 msgstr "Idilesi"
 
-#: src/konqmainwindow.cpp:4996
+#: src/konqmainwindow.cpp:4994
 #, kde-format
 msgid "Do Not Add"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5344 src/urlloader.cpp:823
+#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:823
 #, fuzzy, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1574,7 +1574,7 @@ msgstr ""
 "Nako kuvela imposiso uoqwqalaselo. Uyinxulumanise i Konqueror ne %1, kodwa "
 "ayinakuluphatha olu didi lwefayile."
 
-#: src/konqmainwindow.cpp:5429
+#: src/konqmainwindow.cpp:5427
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1587,23 +1587,23 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5434
+#: src/konqmainwindow.cpp:5432
 #, fuzzy, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "Uqwalaselo Lweqosha Elikhawulezayo"
 
-#: src/konqmainwindow.cpp:5434
+#: src/konqmainwindow.cpp:5432
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5435 src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5433 src/konqmainwindow.cpp:5461
 #, fuzzy, kde-format
 #| msgid "Show Configuration Button"
 msgid "Show proxy configuration dialog"
 msgstr "Uqwalaselo Lweqosha Elikhawulezayo"
 
-#: src/konqmainwindow.cpp:5459
+#: src/konqmainwindow.cpp:5457
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1612,22 +1612,22 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5462
+#: src/konqmainwindow.cpp:5460
 #, fuzzy, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "Uqwalaselo Lweqosha Elikhawulezayo"
 
-#: src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5461
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5461
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5479
+#: src/konqmainwindow.cpp:5477
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "

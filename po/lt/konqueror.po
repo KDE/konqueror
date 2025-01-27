@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-20 00:41+0000\n"
+"POT-Creation-Date: 2025-01-27 00:40+0000\n"
 "PO-Revision-Date: 2024-02-02 22:39+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -608,8 +608,8 @@ msgid ""
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4867
-#: src/konqmainwindow.cpp:4913
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4865
+#: src/konqmainwindow.cpp:4911
 #, kde-format
 msgid "no name"
 msgstr "be pavadinimo"
@@ -714,7 +714,7 @@ msgstr "Vietinis"
 msgid "Miscellaneous"
 msgstr "Įvairūs"
 
-#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4345
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4343
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Atverti naujame &lange"
@@ -776,29 +776,29 @@ msgctxt "@title:window"
 msgid "Clear History?"
 msgstr "Išvalyti istoriją?"
 
-#: src/konqmainwindow.cpp:737
+#: src/konqmainwindow.cpp:735
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
 msgstr "Įkeliama..."
 
-#: src/konqmainwindow.cpp:769
+#: src/konqmainwindow.cpp:767
 #, kde-format
 msgid "Access denied"
 msgstr ""
 
-#: src/konqmainwindow.cpp:1529
+#: src/konqmainwindow.cpp:1527
 #, fuzzy, kde-format
 #| msgid "&Open File..."
 msgid "Open File"
 msgstr "&Atverti failą..."
 
-#: src/konqmainwindow.cpp:1593
+#: src/konqmainwindow.cpp:1591
 #, kde-format
 msgid "Canceled."
 msgstr "Nutraukta."
 
-#: src/konqmainwindow.cpp:1629
+#: src/konqmainwindow.cpp:1627
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -807,54 +807,54 @@ msgstr ""
 "Šiame puslapyje yra pakeitimų, kurie nebuvo išsiųsti.\n"
 "Puslapį iš naujo įkėlus šie pakeitimai bus prarasti."
 
-#: src/konqmainwindow.cpp:1630 src/konqmainwindow.cpp:2268
-#: src/konqmainwindow.cpp:2357 src/konqmainwindow.cpp:2389
-#: src/konqmainwindow.cpp:2432 src/konqmainwindow.cpp:2454
-#: src/konqmainwindow.cpp:4832
+#: src/konqmainwindow.cpp:1628 src/konqmainwindow.cpp:2266
+#: src/konqmainwindow.cpp:2355 src/konqmainwindow.cpp:2387
+#: src/konqmainwindow.cpp:2430 src/konqmainwindow.cpp:2452
+#: src/konqmainwindow.cpp:4830
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
 msgstr "Atmesti pakeitimus?"
 
-#: src/konqmainwindow.cpp:1630 src/konqmainwindow.cpp:2268
-#: src/konqmainwindow.cpp:2357 src/konqmainwindow.cpp:2389
-#: src/konqmainwindow.cpp:2432 src/konqmainwindow.cpp:2455
-#: src/konqmainwindow.cpp:4832
+#: src/konqmainwindow.cpp:1628 src/konqmainwindow.cpp:2266
+#: src/konqmainwindow.cpp:2355 src/konqmainwindow.cpp:2387
+#: src/konqmainwindow.cpp:2430 src/konqmainwindow.cpp:2453
+#: src/konqmainwindow.cpp:4830
 #, kde-format
 msgid "&Discard Changes"
 msgstr "&Atmesti pakeitimus"
 
-#: src/konqmainwindow.cpp:1944 src/konqmainwindow.cpp:1950
+#: src/konqmainwindow.cpp:1942 src/konqmainwindow.cpp:1948
 #, kde-format
 msgid "Home Folder"
 msgstr "Namų aplankas"
 
-#: src/konqmainwindow.cpp:1945 src/konqmainwindow.cpp:3367
+#: src/konqmainwindow.cpp:1943 src/konqmainwindow.cpp:3365
 #, kde-format
 msgid "Home"
 msgstr "Namai"
 
-#: src/konqmainwindow.cpp:1951
+#: src/konqmainwindow.cpp:1949
 #, kde-format
 msgid "Navigate to your 'Home Folder'"
 msgstr "Pereiti į Jūsų „Namų aplanką“"
 
-#: src/konqmainwindow.cpp:1952
+#: src/konqmainwindow.cpp:1950
 #, kde-format
 msgid "Navigate to your local 'Home Folder'"
 msgstr "Pereiti į Jūsų vietinį „Namų aplanką“"
 
-#: src/konqmainwindow.cpp:1955
+#: src/konqmainwindow.cpp:1953
 #, kde-format
 msgid "Home Page"
 msgstr "Namų puslapis"
 
-#: src/konqmainwindow.cpp:1957
+#: src/konqmainwindow.cpp:1955
 #, kde-format
 msgid "Navigate to your 'Home Page'"
 msgstr "Keliauti į „Namų puslapį“"
 
-#: src/konqmainwindow.cpp:1958
+#: src/konqmainwindow.cpp:1956
 #, kde-format
 msgid ""
 "<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
@@ -865,7 +865,7 @@ msgstr ""
 "galite parinkti, <b>Nustatymai -> Konfigūruoti Konqueror -> Bendri</b>.</"
 "html>"
 
-#: src/konqmainwindow.cpp:2267
+#: src/konqmainwindow.cpp:2265
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -874,7 +874,7 @@ msgstr ""
 "Šioje kortelėje yra pakeitimai, kurie nebuvo išsiųsti.\n"
 "Atskyrus kortelę šie pakeitimai bus atmesti."
 
-#: src/konqmainwindow.cpp:2356
+#: src/konqmainwindow.cpp:2354
 #, kde-format
 msgid ""
 "This view contains changes that have not been submitted.\n"
@@ -883,7 +883,7 @@ msgstr ""
 "Šiame rodyme matote pakeitimus, kurie nebuvo išsiųsti. \n"
 "Uždarius rodymą pakeitimai bus prarasti."
 
-#: src/konqmainwindow.cpp:2388
+#: src/konqmainwindow.cpp:2386
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -892,23 +892,23 @@ msgstr ""
 "Šioje kortelėje yra pakeitimai, kurie nebuvo išsiųsti.\n"
 "Uždarius kortelę šie pakeitimai bus atmesti."
 
-#: src/konqmainwindow.cpp:2414
+#: src/konqmainwindow.cpp:2412
 #, kde-format
 msgid "Do you really want to close all other tabs?"
 msgstr "Ar tikrai norite užverti visas kitas korteles?"
 
-#: src/konqmainwindow.cpp:2415 src/konqmainwindow.cpp:3447 src/konqtabs.cpp:74
+#: src/konqmainwindow.cpp:2413 src/konqmainwindow.cpp:3445 src/konqtabs.cpp:74
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr "Užverti &kitas korteles"
 
-#: src/konqmainwindow.cpp:2415
+#: src/konqmainwindow.cpp:2413
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
 msgstr "Kitų kortelių uždarymo patvirtinimas"
 
-#: src/konqmainwindow.cpp:2431
+#: src/konqmainwindow.cpp:2429
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -917,7 +917,7 @@ msgstr ""
 "Šioje kortelėje yra pakeitimai, kurie nebuvo išsiųsti.\n"
 "Uždarius kitas korteles šie pakeitimai bus atmesti."
 
-#: src/konqmainwindow.cpp:2453
+#: src/konqmainwindow.cpp:2451
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -926,233 +926,233 @@ msgstr ""
 "Šioje kortelėje yra pakeitimai, kurie nebuvo išsiųsti.\n"
 "Iš naujo įkėlus visas korteles šie pakeitimai bus atmesti."
 
-#: src/konqmainwindow.cpp:2510
+#: src/konqmainwindow.cpp:2508
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Target"
 msgstr "Įveskite paskirtį"
 
-#: src/konqmainwindow.cpp:2517
+#: src/konqmainwindow.cpp:2515
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
 msgstr "<qt><b>%1</b> yra neteisingas</qt>"
 
-#: src/konqmainwindow.cpp:2527
+#: src/konqmainwindow.cpp:2525
 #, kde-format
 msgid "Copy selected files from %1 to:"
 msgstr "Kopijuoti pasirinktus failus iš %1 į:"
 
-#: src/konqmainwindow.cpp:2540
+#: src/konqmainwindow.cpp:2538
 #, kde-format
 msgid "Move selected files from %1 to:"
 msgstr "Perkelti pažymėtus failus iš %1 į:"
 
-#: src/konqmainwindow.cpp:2708
+#: src/konqmainwindow.cpp:2706
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
 msgstr "Ištuštinti užvertų atvejų istoriją"
 
-#: src/konqmainwindow.cpp:2730
+#: src/konqmainwindow.cpp:2728
 #, kde-format
 msgid "Save As..."
 msgstr "Išsaugoti kaip..."
 
-#: src/konqmainwindow.cpp:2732
+#: src/konqmainwindow.cpp:2730
 #, kde-format
 msgid "Manage..."
 msgstr "Tvarkyti..."
 
-#: src/konqmainwindow.cpp:3276
+#: src/konqmainwindow.cpp:3274
 #, kde-format
 msgid "New &Window"
 msgstr "Naujas &langas"
 
-#: src/konqmainwindow.cpp:3281
+#: src/konqmainwindow.cpp:3279
 #, kde-format
 msgid "&Duplicate Window"
 msgstr "&Dubliuoti langą"
 
-#: src/konqmainwindow.cpp:3286
+#: src/konqmainwindow.cpp:3284
 #, kde-format
 msgid "Send &Link Address..."
 msgstr "Siųsti nuo&rodą..."
 
-#: src/konqmainwindow.cpp:3290
+#: src/konqmainwindow.cpp:3288
 #, kde-format
 msgid "S&end File..."
 msgstr "&Siųsti failą..."
 
-#: src/konqmainwindow.cpp:3294
+#: src/konqmainwindow.cpp:3292
 #, kde-format
 msgid "&Open Location"
 msgstr "&Atverti vietą"
 
-#: src/konqmainwindow.cpp:3300
+#: src/konqmainwindow.cpp:3298
 #, kde-format
 msgid "&Open File..."
 msgstr "&Atverti failą..."
 
-#: src/konqmainwindow.cpp:3305
+#: src/konqmainwindow.cpp:3303
 #, kde-format
 msgid "&Find File..."
 msgstr "&Ieškoti failo..."
 
-#: src/konqmainwindow.cpp:3314
+#: src/konqmainwindow.cpp:3312
 #, kde-format
 msgid "Lock to Current Location"
 msgstr "Užsklęsti dabartinėje vietoje"
 
-#: src/konqmainwindow.cpp:3317
+#: src/konqmainwindow.cpp:3315
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr "Susie&tas rodymas"
 
-#: src/konqmainwindow.cpp:3322
+#: src/konqmainwindow.cpp:3320
 #, kde-format
 msgid "&Up"
 msgstr "&Aukštyn"
 
-#: src/konqmainwindow.cpp:3332
+#: src/konqmainwindow.cpp:3330
 #, kde-format
 msgid "Closed Items"
 msgstr "Užverti vienetai"
 
-#: src/konqmainwindow.cpp:3345
+#: src/konqmainwindow.cpp:3343
 #, kde-format
 msgid "Sessions"
 msgstr "Sesijos"
 
-#: src/konqmainwindow.cpp:3372
+#: src/konqmainwindow.cpp:3370
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr "Dažniausiai lankyta"
 
-#: src/konqmainwindow.cpp:3376
+#: src/konqmainwindow.cpp:3374
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr "Neseniai aplankyta"
 
-#: src/konqmainwindow.cpp:3385
+#: src/konqmainwindow.cpp:3383
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr "Rodyti istoriją"
 
-#: src/konqmainwindow.cpp:3397
+#: src/konqmainwindow.cpp:3395
 #, kde-format
 msgid "Configure Extensions..."
 msgstr "Konfigūruoti išplėtimus..."
 
-#: src/konqmainwindow.cpp:3401
+#: src/konqmainwindow.cpp:3399
 #, kde-format
 msgid "Configure Spell Checking..."
 msgstr "Konfigūruoti rašybos tikrinimą..."
 
-#: src/konqmainwindow.cpp:3407
+#: src/konqmainwindow.cpp:3405
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr "Skaidyti rodymą į &kairę ir dešinę"
 
-#: src/konqmainwindow.cpp:3412
+#: src/konqmainwindow.cpp:3410
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr "Skaidyti rodymą į &viršų ir apačią"
 
-#: src/konqmainwindow.cpp:3417 src/konqtabs.cpp:41
+#: src/konqmainwindow.cpp:3415 src/konqtabs.cpp:41
 #, kde-format
 msgid "&New Tab"
 msgstr "&Nauja kortelė"
 
-#: src/konqmainwindow.cpp:3426
+#: src/konqmainwindow.cpp:3424
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr "&Dubliuoti esamą kortelę"
 
-#: src/konqmainwindow.cpp:3431
+#: src/konqmainwindow.cpp:3429
 #, kde-format
 msgid "Detach Current Tab"
 msgstr "Atkabinti esamą kortelę"
 
-#: src/konqmainwindow.cpp:3436
+#: src/konqmainwindow.cpp:3434
 #, kde-format
 msgid "&Close Active View"
 msgstr "&Užverti aktyvų rodymą"
 
-#: src/konqmainwindow.cpp:3441
+#: src/konqmainwindow.cpp:3439
 #, kde-format
 msgid "Close Current Tab"
 msgstr "Užverti esamą kortelę"
 
-#: src/konqmainwindow.cpp:3451
+#: src/konqmainwindow.cpp:3449
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "Suaktyvinti sekančią kortelę"
 
-#: src/konqmainwindow.cpp:3455
+#: src/konqmainwindow.cpp:3453
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "Suaktyvinti ankstesnę kortelę"
 
-#: src/konqmainwindow.cpp:3462
+#: src/konqmainwindow.cpp:3460
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "Aktyvinti %1 kortelę"
 
-#: src/konqmainwindow.cpp:3467
+#: src/konqmainwindow.cpp:3465
 #, kde-format
 msgid "Move Tab Left"
 msgstr "Perkelti kortelę į kairę"
 
-#: src/konqmainwindow.cpp:3472
+#: src/konqmainwindow.cpp:3470
 #, kde-format
 msgid "Move Tab Right"
 msgstr "Perkelti kortelę į dešinę"
 
-#: src/konqmainwindow.cpp:3480
+#: src/konqmainwindow.cpp:3478
 #, kde-format
 msgid "Dump Debug Info"
 msgstr "Išvesti richtavimo informaciją"
 
-#: src/konqmainwindow.cpp:3498
+#: src/konqmainwindow.cpp:3496
 #, kde-format
 msgid "&Reload"
 msgstr "Į&kelti iš naujo"
 
-#: src/konqmainwindow.cpp:3503 src/konqtabs.cpp:68
+#: src/konqmainwindow.cpp:3501 src/konqtabs.cpp:68
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr "Iš naujo įkelti &visas korteles"
 
-#: src/konqmainwindow.cpp:3511
+#: src/konqmainwindow.cpp:3509
 #, kde-format
 msgid "&Force Reload"
 msgstr "Į&kelti iš naujo priverstinai"
 
-#: src/konqmainwindow.cpp:3536
+#: src/konqmainwindow.cpp:3534
 #, kde-format
 msgid "&Stop"
 msgstr "&Sustabdyti"
 
-#: src/konqmainwindow.cpp:3545
+#: src/konqmainwindow.cpp:3543
 #, kde-format
 msgid "Throbber"
 msgstr "Throbber"
 
-#: src/konqmainwindow.cpp:3549 src/konqmainwindow.cpp:3552
+#: src/konqmainwindow.cpp:3547 src/konqmainwindow.cpp:3550
 #, kde-format
 msgid "L&ocation: "
 msgstr "A&dresas: "
 
-#: src/konqmainwindow.cpp:3559
+#: src/konqmainwindow.cpp:3557
 #, kde-format
 msgid "Location Bar"
 msgstr "Adreso juosta"
 
-#: src/konqmainwindow.cpp:3565
+#: src/konqmainwindow.cpp:3563
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
@@ -1160,12 +1160,12 @@ msgstr ""
 "<html>Adreso juosta<br /><br />Įrašykite žiniatinklio adresą arba ieškokite "
 "termino.</html>"
 
-#: src/konqmainwindow.cpp:3569
+#: src/konqmainwindow.cpp:3567
 #, kde-format
 msgid "Clear Location Bar"
 msgstr "Išvalyti adreso juostą"
 
-#: src/konqmainwindow.cpp:3572
+#: src/konqmainwindow.cpp:3570
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
@@ -1173,22 +1173,22 @@ msgid ""
 msgstr ""
 "<html>Išvalyti adreso juostą<br /><br />Išvalo adreso juostos turinį. </html>"
 
-#: src/konqmainwindow.cpp:3577
+#: src/konqmainwindow.cpp:3575
 #, kde-format
 msgid "&Bookmarks"
 msgstr "Ž&ymelės"
 
-#: src/konqmainwindow.cpp:3598
+#: src/konqmainwindow.cpp:3596
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "Kon&queror įžanga"
 
-#: src/konqmainwindow.cpp:3603
+#: src/konqmainwindow.cpp:3601
 #, kde-format
 msgid "Go"
 msgstr "Eiti"
 
-#: src/konqmainwindow.cpp:3605
+#: src/konqmainwindow.cpp:3603
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
@@ -1197,7 +1197,7 @@ msgstr ""
 "<html>Eiti<br /><br />Perkelia į puslapį, kuris nurodytas adreso juostoje. </"
 "html>"
 
-#: src/konqmainwindow.cpp:3613
+#: src/konqmainwindow.cpp:3611
 #, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
@@ -1207,27 +1207,27 @@ msgstr ""
 "<html>Eiti į aukštesniojo lygio aplanką<br /><br />Jei, pvz., dabartinis "
 "adresas yra file:/home/%1, spragtelėję čia pateksite į file:/home.</html>"
 
-#: src/konqmainwindow.cpp:3616
+#: src/konqmainwindow.cpp:3614
 #, kde-format
 msgid "Enter the parent folder"
 msgstr "Eiti į aukštesniojo lygio aplanką"
 
-#: src/konqmainwindow.cpp:3618 src/konqmainwindow.cpp:3619
+#: src/konqmainwindow.cpp:3616 src/konqmainwindow.cpp:3617
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "Eiti atgal vieną žingsnį naršymo istorijoje"
 
-#: src/konqmainwindow.cpp:3621 src/konqmainwindow.cpp:3622
+#: src/konqmainwindow.cpp:3619 src/konqmainwindow.cpp:3620
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "Eiti pirmyn vieną žingsnį naršymo istorijoje"
 
-#: src/konqmainwindow.cpp:3624 src/konqmainwindow.cpp:3625
+#: src/konqmainwindow.cpp:3622 src/konqmainwindow.cpp:3623
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
 msgstr "Eiti atgal vieną žingsnį užvertų kortelių istorijoje"
 
-#: src/konqmainwindow.cpp:3627
+#: src/konqmainwindow.cpp:3625
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1238,12 +1238,12 @@ msgstr ""
 "pavyzdžiui, atnaujinti tinklalapių, kurie buvo pakeisti po to, kai buvo "
 "įkelti, rodymą, kad pakeitimai taptų matomi.</html>"
 
-#: src/konqmainwindow.cpp:3630
+#: src/konqmainwindow.cpp:3628
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "Iš naujo įkelti šiuo metu rodomą dokumentą"
 
-#: src/konqmainwindow.cpp:3632
+#: src/konqmainwindow.cpp:3630
 #, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1254,12 +1254,12 @@ msgstr ""
 ">To gali prireikti, pavyzdžiui, atnaujinant tinklalapių, kurie buvo pakeisti "
 "po to, kai buvo įkelti rodymą, kad pakeitimai taptų matomi.</html>"
 
-#: src/konqmainwindow.cpp:3635
+#: src/konqmainwindow.cpp:3633
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr "Iš naujo įkelti šiuo metu kortelėse rodomus dokumentus"
 
-#: src/konqmainwindow.cpp:3637
+#: src/konqmainwindow.cpp:3635
 #, kde-format
 msgid ""
 "<html>Stop loading the document<br /><br />All network transfers will be "
@@ -1269,7 +1269,7 @@ msgstr ""
 "<html>Sustabdyti dokumento įkėlimą<br /><br />Visi informacijos persiuntimai "
 "tinkle bus sustabdyti ir Konqueror parodys iki šiol atsiųstą turinį.</html>"
 
-#: src/konqmainwindow.cpp:3641
+#: src/konqmainwindow.cpp:3639
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1283,7 +1283,7 @@ msgstr ""
 "paveikslėliai bus iš naujo atsisiųsti, net jei jų kopijos ir yra atmintinėje."
 "</html>"
 
-#: src/konqmainwindow.cpp:3645
+#: src/konqmainwindow.cpp:3643
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
@@ -1291,12 +1291,12 @@ msgstr ""
 "Priverstinai iš naujo įkelti šiuo metu rodomą dokumentą ir jame esančius "
 "paveikslėlius"
 
-#: src/konqmainwindow.cpp:3647
+#: src/konqmainwindow.cpp:3645
 #, kde-format
 msgid "Stop loading the document"
 msgstr "Stabdyti dokumento įkėlimą"
 
-#: src/konqmainwindow.cpp:3649
+#: src/konqmainwindow.cpp:3647
 #, kde-format
 msgid ""
 "<html>Cut the currently selected text or item(s) and move it to the system "
@@ -1307,12 +1307,12 @@ msgstr ""
 "sistemos laikinąją talpyklę.<br /> <br />Tokiu būdu tekstas taps prieinamas "
 "naudojant <b>Padėti</b> komandą Konqueror ir kitose KDE programose.</html>"
 
-#: src/konqmainwindow.cpp:3653
+#: src/konqmainwindow.cpp:3651
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr "Perkelti pažymėtą tekstą/objektą(us) į laikinąją talpyklę"
 
-#: src/konqmainwindow.cpp:3655
+#: src/konqmainwindow.cpp:3653
 #, kde-format
 msgid ""
 "<html>Copy the currently selected text or item(s) to the system "
@@ -1323,12 +1323,12 @@ msgstr ""
 "laikinąją talpyklę.<br /><br />Pažymėti objektai ar tekstas tampa prieinami "
 "naudojant <b>Įterpti</b> komandą Konqueror ir kitose KDE programose.</html>"
 
-#: src/konqmainwindow.cpp:3659
+#: src/konqmainwindow.cpp:3657
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr "Kopijuoti pažymėtą tekstą ar objektą(us) į laikinąją talpyklę"
 
-#: src/konqmainwindow.cpp:3661
+#: src/konqmainwindow.cpp:3659
 #, kde-format
 msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
@@ -1338,12 +1338,12 @@ msgstr ""
 "><br />Šis veiksmas taip pat veikia su tekstu, anksčiau nukopijuotu ar "
 "iškirptu kitose KDE programose.</html>"
 
-#: src/konqmainwindow.cpp:3664
+#: src/konqmainwindow.cpp:3662
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "Padėti talpyklės turinį"
 
-#: src/konqmainwindow.cpp:3666
+#: src/konqmainwindow.cpp:3664
 #, kde-format
 msgid ""
 "<html>Print the currently displayed document<br /><br />You will be "
@@ -1358,12 +1358,12 @@ msgstr ""
 "prieiti prie specialių KDE spausdinimo tarnybų, tokių kaip PDF failo kūrimas "
 "iš esamo dokumento.</html>"
 
-#: src/konqmainwindow.cpp:3672
+#: src/konqmainwindow.cpp:3670
 #, kde-format
 msgid "Print the current document"
 msgstr "Spausdinti esamą dokumentą"
 
-#: src/konqmainwindow.cpp:3674
+#: src/konqmainwindow.cpp:3672
 #, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
@@ -1372,7 +1372,7 @@ msgstr ""
 "Užrakinto rodymo veiksenoje negalima keisti aplankų. Norėdami peržiūrėti "
 "daug failų iš vieno aplanko, naudokite parinktį „Susietas rodymas“"
 
-#: src/konqmainwindow.cpp:3675
+#: src/konqmainwindow.cpp:3673
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
@@ -1381,35 +1381,35 @@ msgstr ""
 "Nustatys rodymą „susietu“. Susietas rodymas keičiasi, keičiantis aplankui "
 "kituose susietuose rodymuose."
 
-#: src/konqmainwindow.cpp:3679
+#: src/konqmainwindow.cpp:3677
 #, fuzzy, kde-format
 #| msgid "C&lose Current Tab"
 msgid "&Inspect Current Page"
 msgstr "Užv&erti esamą kortelę"
 
-#: src/konqmainwindow.cpp:3680
+#: src/konqmainwindow.cpp:3678
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3681
+#: src/konqmainwindow.cpp:3679
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3843
+#: src/konqmainwindow.cpp:3841
 #, kde-format
 msgid "Copy &Files..."
 msgstr "&Kopijuoti failus..."
 
-#: src/konqmainwindow.cpp:3847
+#: src/konqmainwindow.cpp:3845
 #, kde-format
 msgid "M&ove Files..."
 msgstr "&Perkelti failus..."
 
-#: src/konqmainwindow.cpp:4173
+#: src/konqmainwindow.cpp:4171
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
@@ -1418,79 +1418,79 @@ msgstr ""
 "Prašote atverti daugiau nei 20 žymelių kortelėse. Tai gali užtrukti. Ar "
 "norite tęsti?"
 
-#: src/konqmainwindow.cpp:4175
+#: src/konqmainwindow.cpp:4173
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "Atverti žymelių aplanką naujose kortelėse"
 
-#: src/konqmainwindow.cpp:4176
+#: src/konqmainwindow.cpp:4174
 #, fuzzy, kde-format
 #| msgid "&Open"
 msgctxt "@action:button"
 msgid "Open"
 msgstr "&Atverti"
 
-#: src/konqmainwindow.cpp:4338
+#: src/konqmainwindow.cpp:4336
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "Atverti šia&me lange"
 
-#: src/konqmainwindow.cpp:4339
+#: src/konqmainwindow.cpp:4337
 #, kde-format
 msgid "Open the document in current window"
 msgstr "Atverti dokumentą dabartiniame lange"
 
-#: src/konqmainwindow.cpp:4346
+#: src/konqmainwindow.cpp:4344
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "Atverti dokumentą naujame lange"
 
-#: src/konqmainwindow.cpp:4352
+#: src/konqmainwindow.cpp:4350
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Atverti &naujoje kortelėje"
 
-#: src/konqmainwindow.cpp:4354
+#: src/konqmainwindow.cpp:4352
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "Atverti dokumentą naujoje kortelėje"
 
-#: src/konqmainwindow.cpp:4610
+#: src/konqmainwindow.cpp:4608
 #, kde-format
 msgid "&Open With"
 msgstr "&Atverti su"
 
-#: src/konqmainwindow.cpp:4623
+#: src/konqmainwindow.cpp:4621
 #, kde-format
 msgid "Open with %1"
 msgstr "Atverti su %1"
 
-#: src/konqmainwindow.cpp:4673
+#: src/konqmainwindow.cpp:4671
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "Žiū&rėjimo būdas"
 
-#: src/konqmainwindow.cpp:4796
+#: src/konqmainwindow.cpp:4794
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr ""
 "Jūs atvėrėte kelias korteles šiame lange, ar tikrai norite užverti langą?"
 
-#: src/konqmainwindow.cpp:4798
+#: src/konqmainwindow.cpp:4796
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Patvirtinimas"
 
-#: src/konqmainwindow.cpp:4800
+#: src/konqmainwindow.cpp:4798
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "Užv&erti esamą kortelę"
 
-#: src/konqmainwindow.cpp:4828
+#: src/konqmainwindow.cpp:4826
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1499,7 +1499,7 @@ msgstr ""
 "Šioje kortelėje yra pakeitimų, kurie nebuvo išsiųsti.\n"
 "Uždarius langą šie pakeitimai bus atmesti."
 
-#: src/konqmainwindow.cpp:4829
+#: src/konqmainwindow.cpp:4827
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1508,7 +1508,7 @@ msgstr ""
 "Šiame lape yra pakeitimų, kurie nebuvo išsiųsti.\n"
 "Uždarius langą šie pakeitimai bus atmesti."
 
-#: src/konqmainwindow.cpp:4989
+#: src/konqmainwindow.cpp:4987
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1516,28 +1516,28 @@ msgstr ""
 "Jūsų šoninė juosta yra nefunkcionuojanti arba neprieinama. Naujas įrašas "
 "negali būti pridėtas."
 
-#: src/konqmainwindow.cpp:4989 src/konqmainwindow.cpp:4996
+#: src/konqmainwindow.cpp:4987 src/konqmainwindow.cpp:4994
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Žiniatinklio šoninė juosta"
 
-#: src/konqmainwindow.cpp:4994
+#: src/konqmainwindow.cpp:4992
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Ar įdėti naują žiniatinklio plėtinį „%1“ į šoninę juostą?"
 
-#: src/konqmainwindow.cpp:4996
+#: src/konqmainwindow.cpp:4994
 #, kde-format
 msgid "Add"
 msgstr "Pridėti"
 
-#: src/konqmainwindow.cpp:4996
+#: src/konqmainwindow.cpp:4994
 #, kde-format
 msgid "Do Not Add"
 msgstr "Neįtraukti"
 
-#: src/konqmainwindow.cpp:5344 src/urlloader.cpp:823
+#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:823
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1546,7 +1546,7 @@ msgstr ""
 "Atrodo, kad susidūrėme su konfigūravimo klaida. Jūs susiejote konqueror su "
 "%1, bet jis negali operuoti šio tipo failais."
 
-#: src/konqmainwindow.cpp:5429
+#: src/konqmainwindow.cpp:5427
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1559,23 +1559,23 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5434
+#: src/konqmainwindow.cpp:5432
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5434
+#: src/konqmainwindow.cpp:5432
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5435 src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5433 src/konqmainwindow.cpp:5461
 #, fuzzy, kde-format
 #| msgid "Show Configuration Button"
 msgid "Show proxy configuration dialog"
 msgstr "Rodyti konfigūracijos mygtuką"
 
-#: src/konqmainwindow.cpp:5459
+#: src/konqmainwindow.cpp:5457
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1584,22 +1584,22 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5462
+#: src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5461
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5461
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5479
+#: src/konqmainwindow.cpp:5477
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
