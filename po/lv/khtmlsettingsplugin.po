@@ -4,32 +4,32 @@
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
 # Maris Nartiss <maris.kde@gmail.com>, 2008.
 # Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011.
-# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024, 2025 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-21 00:41+0000\n"
-"PO-Revision-Date: 2024-04-06 14:38+0300\n"
+"PO-Revision-Date: 2025-01-27 16:27+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
 #: temporarysavedir.cpp:54
 #, kde-format
 msgid "Temporary Download Directory"
-msgstr ""
+msgstr "Pagaidu lejupielāžu mape"
 
 #: temporarysavedir.cpp:60
 #, kde-format
 msgid "Choose Custom Download Directory..."
-msgstr ""
+msgstr "Izvēlieties pagaidu lejupielāžu mapi..."
 
 #: temporarysavedir.cpp:61
 #, kde-format
@@ -37,12 +37,14 @@ msgid ""
 "Choose a custom directory to use when downloading URLs from this window, "
 "temporarily overriding the default one"
 msgstr ""
+"Izvēlieties pielāgotu mapi URL lejupielādei no šī loga, kas uz laiku "
+"pārrakstīs noklusējuma vietu"
 
 #: temporarysavedir.cpp:66
 #, kde-format
 msgctxt "@action:inmenu stop using a temporary download directory"
 msgid "Stop Using Temporary Download Directory"
-msgstr ""
+msgstr "Beigt izmantot pagaidu lejupielādes mapi"
 
 #: temporarysavedir.cpp:67
 #, kde-format
@@ -50,16 +52,18 @@ msgid ""
 "Use the default download directory instead of a custom one (only for this "
 "window)"
 msgstr ""
+"Izmantot noklusējuma lejupielāžu mapi pielāgotās mapes vietā (tikai šim "
+"logam)."
 
 #: temporarysavedir.cpp:113
 #, kde-format
 msgid "Temporary save directory"
-msgstr ""
+msgstr "Pagaidu saglabāšanas mape"
 
 #: temporarysavedir.cpp:114
 #, kde-format
 msgid "Choose Temporary Save Directory"
-msgstr ""
+msgstr "Izvēlieties pagaidu saglabāšanas mapi"
 
 #. i18n: ectx: Menu (tools)
 #: temporarysavedir.rc:4
