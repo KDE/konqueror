@@ -41,7 +41,7 @@ public:
     static Konq::Settings::CookieAdvice strToAdvice(const QString &_str)
     {
         if (_str.isEmpty()) {
-            return Konq::Settings::CookieAdvice::Unknown;
+            return Konq::Settings::defaultCookieAdvice();
         }
 
         QString advice = _str.toLower().remove(QLatin1Char(' '));
@@ -55,7 +55,7 @@ public:
         } else if (advice == QLatin1String("ask")) {
             return Konq::Settings::CookieAdvice::Ask;
         } else {
-            return Konq::Settings::CookieAdvice::Unknown;
+            return Konq::Settings::defaultCookieAdvice();
         }
     }
 };

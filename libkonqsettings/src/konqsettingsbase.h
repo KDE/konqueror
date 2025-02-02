@@ -41,14 +41,14 @@ public:
     /**
      * @brief The possible ways to deal with a cookie
      * @internal
-     * It's important that Unknown has value 0.
+     * The enum starts from 1 because originally 0 corresponded to an `Unknown` entry which was
+     * later removed. Starting from 1 avoids having to update user settings to reflect this change
      *
      * @warning If the last enum value is changed, intToAdvice() needs to be changed accordingly
      * @endinternal
      */
     enum class CookieAdvice {
-        Unknown=0, ///< No action has been decided
-        Accept, ///< Accept the cookie
+        Accept=1, ///< Accept the cookie
         AcceptForSession, ///< Accept the cookie, but discard it when the application is closed
         Reject, ///<Reject the cookie
         Ask ///< Ask the user what to do
@@ -96,13 +96,21 @@ public:
     void setCookieDomainAdvice(const QHash<QString, CookieAdvice> &advice);
 
     /**
+     * @brief The cookie advice to use when the user didn't choose one
+     *
+     * This should also be used if the entry isn't valid
+     * @return the default cookie advice
+     */
+    static CookieAdvice defaultCookieAdvice() {return CookieAdvice::Accept;}
+
+    /**
      * @brief Helper function which converts an int to a CookieAdvice
      *
      * @param value the value to convert
      * @param defaultValue the value to return if @p value doesn't correspond to any advice value
      * @return the advice corresponding to the number @p value or @p defaultValue if it isn't a valid advice value
      */
-    static CookieAdvice intToAdvice(int value, CookieAdvice defaultValue = CookieAdvice::Unknown);
+    static CookieAdvice intToAdvice(int value, CookieAdvice defaultValue = defaultCookieAdvice());
 
     /**
      * @brief Returns a list of the certificate errors the user chose to always ignore for a given URL

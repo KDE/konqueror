@@ -78,6 +78,15 @@ public:
     virtual void addCookieException(const QString &name, const QString &domain, const QString &path, CookieAdvice advice) = 0;
 
     /**
+     * @brief How to globally handle cookies
+     *
+     * The global advice is overridden by domain and cookies exceptions
+     *
+     * @return The global advice
+     */
+    virtual CookieAdvice globalAdvice() const = 0;
+
+    /**
      * @brief How to handle cookies from the given domain
      *
      * @param domain the domain

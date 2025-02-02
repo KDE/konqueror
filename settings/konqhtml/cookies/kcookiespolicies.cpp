@@ -297,8 +297,6 @@ void KCookiesPolicies::load()
         mUi.rbPolicyReject->setChecked(true);
         break;
     case Konq::Settings::CookieAdvice::Ask:
-    case Konq::Settings::CookieAdvice::Unknown:
-    default:
         mUi.rbPolicyAsk->setChecked(true);
     }
 

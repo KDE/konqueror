@@ -67,6 +67,7 @@ public:
 
     bool areCookiesEnabled() const override;
 
+    CookieAdvice globalAdvice() const override;
     CookieAdvice adviceForDomain(const QString &domain) const override;
     CookieAdvice adviceForCookie(const QString &name, const QString &domain, const QString &path) const override;
 

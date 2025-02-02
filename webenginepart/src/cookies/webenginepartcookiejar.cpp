@@ -95,6 +95,11 @@ void WebEnginePartCookieJar::addCookieException(const QString &name, const QStri
     saveCookieAdvice();
 }
 
+WebEnginePartCookieJar::CookieAdvice WebEnginePartCookieJar::globalAdvice() const
+{
+    return m_policy.defaultPolicy;
+}
+
 WebEnginePartCookieJar::CookieAdvice WebEnginePartCookieJar::adviceForDomain(const QString& domain) const
 {
     auto it = m_policy.domainExceptions.constFind(domain);
@@ -208,13 +213,13 @@ void WebEnginePartCookieJar::removeSessionCookies()
 
 WebEnginePartCookieJar::CookieAdvice WebEnginePartCookieJar::decideCookieAction(const QNetworkCookie cookie)
 {
-    CookieAdvice option = CookieAdvice::Unknown;
+    std::optional<CookieAdvice> option = std::nullopt;
     auto cookiesExIt = m_policy.cookieExceptions.constFind(CookieIdentifier{cookie.name(), cookie.domain(), cookie.path()});
     if (cookiesExIt != m_policy.cookieExceptions.constEnd()) {
         option = cookiesExIt.value();
     }
 
-    if (option == CookieAdvice::Unknown && m_policy.acceptSessionCookies && !cookie.expirationDate().isValid()) {
+    if (!option.has_value() && m_policy.acceptSessionCookies && !cookie.expirationDate().isValid()) {
         return CookieAdvice::Accept;
     }
 
@@ -223,15 +228,15 @@ WebEnginePartCookieJar::CookieAdvice WebEnginePartCookieJar::decideCookieAction(
         option = domainExIt.value();
     }
 
-    if (option == CookieAdvice::Unknown) {
-        option = m_policy.defaultPolicy != CookieAdvice::Unknown ? m_policy.defaultPolicy : CookieAdvice::Accept;
+    if (!option.has_value()) {
+        option = m_policy.defaultPolicy;
     }
 
     if (option == CookieAdvice::Ask) {
         option = askCookieQuestion(cookie);
     }
 
-    return option;
+    return option.value();
 }
 
 WebEnginePartCookieJar::CookieAdvice WebEnginePartCookieJar::askCookieQuestion(const QNetworkCookie cookie)

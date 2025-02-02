@@ -20,7 +20,7 @@ SettingsBase::SettingsBase(KSharedConfig::Ptr config, QObject* parent) : KConfig
 
 SettingsBase::CookieAdvice SettingsBase::intToAdvice(int value, CookieAdvice defaultValue)
 {
-    if (value < 0 || value > static_cast<int>(CookieAdvice::Ask)) { //Ask is the last value
+    if (value < 1 || value > static_cast<int>(CookieAdvice::Ask)) { //Ask is the last value
         return defaultValue;
     }
     return static_cast<CookieAdvice>(value);
@@ -37,7 +37,7 @@ SettingsBase::CookieAdvice SettingsBase::cookieGlobalAdvice() const
 {
     KConfigSkeleton::ItemInt *it = cookieGlobalAdviceItem();
     if (!it) {
-        return CookieAdvice::Unknown;
+        return defaultCookieAdvice();
     }
     return intToAdvice(it->value());
 }
@@ -160,9 +160,6 @@ QDebug Konq::operator<<(QDebug dbg, SettingsBase::CookieAdvice advice)
 {
     QDebugStateSaver saver(dbg);
     switch (advice) {
-        case SettingsBase::CookieAdvice::Unknown:
-            dbg.nospace() << "Unknown";
-            break;
         case SettingsBase::CookieAdvice::Accept:
             dbg.nospace() << "Accept";
             break;
