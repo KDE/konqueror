@@ -320,20 +320,16 @@ msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
 msgstr ""
 
 #: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "&Otevřít pomocí %1"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "Otevřít '%1'"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:155
 #, kde-format
@@ -354,12 +350,10 @@ msgid "Show here"
 msgstr "Zobrazit zde"
 
 #: src/actondownloadedfilebar.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Open &with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "&Otevřít pomocí %1"
+msgstr ""
 
 #: src/capturesourcechooserdlg.cpp:29
 #, kde-format
@@ -373,11 +367,10 @@ msgid "Choose window or screen to capture"
 msgstr ""
 
 #: src/capturesourcechooserdlg.cpp:38
-#, fuzzy, kde-format
-#| msgid "Allow"
+#, kde-format
 msgctxt "Allow a web page to capture the screen"
 msgid "Allow"
-msgstr "Povolit"
+msgstr ""
 
 #: src/capturesourcechooserdlg.cpp:39
 #, kde-format
@@ -387,21 +380,15 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "Choose Save Format"
+#, kde-format
 msgid "Choose Capture Source"
-msgstr "Vyberte formát pro uložení"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "Do you want to allow this page to capture the contents of your screen?"
 msgstr ""
-"<qt>Přejete si této stránce umožnit, aby k e-mailové zprávě přiložila "
-"následující soubory?</qt>"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1600,13 +1587,3 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
-
-#~ msgid "Open in external application"
-#~ msgstr "Otevřít v externí aplikaci"
-
-#~ msgid "Open in %1"
-#~ msgstr "Otevřít v %1"
-
-#~ msgctxt "@action:button"
-#~ msgid "Show in new tab using %1"
-#~ msgstr "Zobrazit v nové kartě pomocí %1"
