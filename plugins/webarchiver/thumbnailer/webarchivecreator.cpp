@@ -17,18 +17,11 @@
 #include <QMimeDatabase>
 #include <QTemporaryDir>
 
-#ifdef THUMBNAIL_USE_WEBKIT
-#include <qwebview.h>
-#include <qwebpage.h>
-#include <qwebsettings.h>
-#include <QNetworkCookie>
-#else // THUMBNAIL_USE_WEBKIT
 #include <QWebEngineView>
 #include <QWebEnginePage>
 #include <QWebEngineProfile>
 #include <QWebEngineSettings>
 #include <QWebEngineCookieStore>
-#endif // THUMBNAIL_USE_WEBKIT
 
 #include <ktar.h>
 #include <karchivedirectory.h>
@@ -38,8 +31,6 @@
 
 
 #undef SHOW_RENDER_WINDOW
-
-//TODO KF6: remove all instances of THUMBNAIL_USE_WEBKIT
 
 // This is an time limit for the entire thumbnail generation process
 // (page loading and rendering).  If it expires then it is assumed
@@ -80,13 +71,11 @@ WebArchiveCreator::~WebArchiveCreator()
 }
 
 
-#ifndef THUMBNAIL_USE_WEBKIT
 static bool disallowWebEngineCookies(const QWebEngineCookieStore::FilterRequest &req)
 {
     Q_UNUSED(req);
     return (false);
 }
-#endif // THUMBNAIL_USE_WEBKIT
 
 KIO::ThumbnailResult WebArchiveCreator::create(const KIO::ThumbnailRequest& request)
 {
@@ -177,30 +166,6 @@ KIO::ThumbnailResult WebArchiveCreator::create(const KIO::ThumbnailRequest& requ
     const QUrl indexUrl = QUrl::fromLocalFile(indexFile);
     qCDebug(WEBARCHIVERPLUGIN_LOG) << "indexUrl" << indexUrl;
 
-#ifdef THUMBNAIL_USE_WEBKIT
-    QWebView view;
-    connect(&view, &QWebView::loadFinished, this, &WebArchiveCreator::slotLoadFinished);
-
-    QWebSettings *settings = view.settings();
-    settings->setThirdPartyCookiePolicy(QWebSettings::AlwaysBlockThirdPartyCookies);
-    settings->setAttribute(QWebSettings::LocalContentCanAccessRemoteUrls, false);
-    settings->setAttribute(QWebSettings::LocalContentCanAccessFileUrls, true);
-    settings->setAttribute(QWebSettings::ZoomTextOnly, false);
-    settings->setAttribute(QWebSettings::PrivateBrowsingEnabled, true);
-    settings->setAttribute(QWebSettings::NotificationsEnabled, false);
-    settings->setAttribute(QWebSettings::JavascriptEnabled, false);
-    settings->setAttribute(QWebSettings::JavaEnabled, false);
-    settings->setAttribute(QWebSettings::LocalStorageEnabled, false);
-    settings->setAttribute(QWebSettings::LocalContentCanAccessRemoteUrls, false);
-    settings->setAttribute(QWebSettings::PluginsEnabled, false);
-    settings->setAttribute(QWebSettings::AllowRunningInsecureContent, false);
-    settings->setAttribute(QWebSettings::PrintElementBackgrounds, true);
-    settings->setAttribute(QWebSettings::PrivateBrowsingEnabled, true);
-
-    QWebPage *page = view.page();
-    auto *cookieJar = new WebArchiveCreatorCookieJar;
-    page->networkAccessManager()->setCookieJar(cookieJar);
-#else // THUMBNAIL_USE_WEBKIT
     QWebEngineView view;
     connect(&view, &QWebEngineView::loadFinished, this, &WebArchiveCreator::slotLoadFinished);
 
@@ -221,7 +186,6 @@ KIO::ThumbnailResult WebArchiveCreator::create(const KIO::ThumbnailRequest& requ
     profile->setPersistentCookiesPolicy(QWebEngineProfile::NoPersistentCookies);
     profile->setSpellCheckEnabled(false);
     profile->cookieStore()->setCookieFilter(&disallowWebEngineCookies);
-#endif // THUMBNAIL_USE_WEBKIT
 
     view.resize(c_pixmapSize);
     view.setZoomFactor(c_renderScale);				// 0.25 is the minimum allowed
@@ -260,11 +224,7 @@ KIO::ThumbnailResult WebArchiveCreator::create(const KIO::ThumbnailRequest& requ
 
     view.render(&pix);					// render the view into the pixmap
     view.hide();					// finished with the view and page
-#ifdef THUMBNAIL_USE_WEBKIT
-    page->setVisibilityState(QWebPage::VisibilityStateHidden);
-#else // THUMBNAIL_USE_WEBKIT
     page->setLifecycleState(QWebEnginePage::LifecycleState::Discarded);
-#endif // THUMBNAIL_USE_WEBKIT
     return KIO::ThumbnailResult::pass(pix.toImage());
 }
 
@@ -273,26 +233,14 @@ void WebArchiveCreator::slotLoadFinished(bool ok)
     qCDebug(WEBARCHIVERPLUGIN_LOG) << "ok?" << ok;
     if (!ok)
     {
-        // If WebKit is being used, it is possible that 'ok' can be false
-        // here even if the page load succeeded but it could only be
-        // partially rendered (for example, a broken image source link).
-        // Ignore the error indication and render the page anyway.
-#ifndef THUMBNAIL_USE_WEBKIT
         m_error = true;
         return;
-#endif // THUMBNAIL_USE_WEBKIT
     }
 
-#ifdef THUMBNAIL_USE_WEBKIT
-    // WebKit will have finished rendering when the loadFinished() signal has been
-    // delivered.  Render the bitmap immediately.
-    slotRenderTimer();
-#else // THUMBNAIL_USE_WEBKIT
     // WebEngine renders asynchronously after the loadFinished() signal has been
     // delivered.  It is not possible to tell when page rendering has finished, so
     // a timer is used and the page is assumed to be ready when it expires.
     QTimer::singleShot(c_renderTimeout, this, &WebArchiveCreator::slotRenderTimer);
-#endif // THUMBNAIL_USE_WEBKIT
 }
 
 
@@ -306,37 +254,6 @@ void WebArchiveCreator::slotRenderTimer()
 {
     m_rendered = true;
 }
-
-
-#ifdef THUMBNAIL_USE_WEBKIT
-
-// WebArchiveCreatorCookieJar
-//
-// A cookie jar that ignores any cookies sent to it and never
-// delivers any.
-
-WebArchiveCreatorCookieJar::WebArchiveCreatorCookieJar(QObject *parent)
-    : QNetworkCookieJar(parent)
-{
-}
-
-QList<QNetworkCookie> WebArchiveCreatorCookieJar::cookiesForUrl(const QUrl &url) const
-{
-    return (QList<QNetworkCookie>());
-}
-
-bool WebArchiveCreatorCookieJar::insertCookie(const QNetworkCookie &cookie)
-{
-    return (false);
-}
-
-
-bool WebArchiveCreatorCookieJar::setCookiesFromUrl(const QList<QNetworkCookie> &cookieList, const QUrl &url)
-{
-    return (false);
-}
-
-#endif // THUMBNAIL_USE_WEBKIT
 
 #include "moc_webarchivecreator.cpp"
 #include "webarchivecreator.moc"
