@@ -18,6 +18,11 @@ WebEngineUrlRequestInterceptor::WebEngineUrlRequestInterceptor(QObject* parent) 
 
 void WebEngineUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
+    //If the URL was requested by a konq URL, accept the request as it is
+    if (info.firstPartyUrl().scheme() == QStringLiteral("konq")) {
+        return;
+    }
+
     if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage) {
         if (info.requestUrl().scheme() == QLatin1String("http") && info.firstPartyUrl().scheme() == QLatin1String("https")) {
             info.block(true);
