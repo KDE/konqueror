@@ -343,7 +343,7 @@ void KCMFilter::save()
     }
     cg.writeEntry("Count", mListBox->count());
 
-    mAutomaticFilterModel.save(cg);
+    mAutomaticFilterModel.save();
     cg.writeEntry("HTMLFilterListMaxAgeDays", mRefreshFreqSpinBox->value());
 
     cg.sync();
@@ -360,7 +360,7 @@ void KCMFilter::load()
     QStringList paths;
 
     KConfigGroup cg(mConfig, mGroupname);
-    mAutomaticFilterModel.load(cg);
+    mAutomaticFilterModel.load();
     mAutomaticFilterList->resizeColumnToContents(0);
     int refreshFreq = cg.readEntry("HTMLFilterListMaxAgeDays", 7);
     mRefreshFreqSpinBox->setValue(refreshFreq < 1 ? 1 : refreshFreq);
@@ -438,52 +438,62 @@ void KCMFilter::spinBoxChanged(int)
     setNeedsSave(true);
 }
 
+QString AutomaticFilterModel::autoFilterFileName()
+{
+    static QString s_autoFilterFileName{"konqautofiltersrc"};
+    return s_autoFilterFileName;
+}
+
 AutomaticFilterModel::AutomaticFilterModel(QObject *parent)
     : QAbstractItemModel(parent),
       mGroupname(QStringLiteral("Filter Settings"))
 {
-    //mConfig = KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals);
-    mConfig = KSharedConfig::openConfig(QStringLiteral("khtmlrc"), KConfig::IncludeGlobals);
+    mConfig = KSharedConfig::openConfig(autoFilterFileName(), KConfig::NoGlobals);
 }
 
-void AutomaticFilterModel::load(KConfigGroup &cg)
+void AutomaticFilterModel::load()
 {
     beginResetModel();
     mFilters.clear();
-    const int maxNumFilters = 1024;
-    const bool defaultHTMLFilterListEnabled = false;
 
-    for (int numFilters = 1; numFilters < maxNumFilters; ++numFilters) {
-        struct FilterConfig filterConfig;
-        filterConfig.filterName = cg.readEntry(QStringLiteral("HTMLFilterListName-") + QString::number(numFilters), "");
-        if (filterConfig.filterName == QLatin1String("")) {
-            break;
-        }
-
-        filterConfig.enableFilter = cg.readEntry(QStringLiteral("HTMLFilterListEnabled-") + QString::number(numFilters), defaultHTMLFilterListEnabled);
-        filterConfig.filterURL = cg.readEntry(QStringLiteral("HTMLFilterListURL-") + QString::number(numFilters), "");
-        filterConfig.filterLocalFilename = cg.readEntry(QStringLiteral("HTMLFilterListLocalFilename-") + QString::number(numFilters), "");
-
-        mFilters << filterConfig;
-    }
+    auto createFilter = [this](const QString &name) {
+        FilterConfig filter;
+        KConfigGroup grp = mConfig->group(name);
+        return FilterConfig{grp.readEntry("Enabled", false), name, grp.readEntry("URL"), grp.readEntry("LocalFileName"), grp.readEntry("Position", 0)};
+    };
+    QStringList groups = mConfig->groupList();
+    std::transform(groups.constBegin(), groups.constEnd(), std::back_inserter(mFilters), createFilter);
+    std::sort(mFilters.begin(), mFilters.end(), [](const FilterConfig &f1, const FilterConfig &f2){return f1.position < f2.position;});
     endResetModel();
 }
 
-void AutomaticFilterModel::save(KConfigGroup &cg)
+void AutomaticFilterModel::save()
 {
-    for (int i = mFilters.count() - 1; i >= 0; --i) {
-        cg.writeEntry(QStringLiteral("HTMLFilterListLocalFilename-") + QString::number(i + 1), mFilters[i].filterLocalFilename);
-        cg.writeEntry(QStringLiteral("HTMLFilterListURL-") + QString::number(i + 1), mFilters[i].filterURL);
-        cg.writeEntry(QStringLiteral("HTMLFilterListName-") + QString::number(i + 1), mFilters[i].filterName);
-        cg.writeEntry(QStringLiteral("HTMLFilterListEnabled-") + QString::number(i + 1), mFilters[i].enableFilter);
-    }
+    //We pass SimpleConfig to force saving all entries, not only those whose values have changed
+    KSharedConfig::Ptr cfg = KSharedConfig::openConfig(autoFilterFileName(), KConfig::SimpleConfig);
+
+    auto writeFilter = [cfg](const FilterConfig &flt) {
+        //WARNING This assumes that filters are disabled by default: this tells that if flt.enableFilter is true
+        //the user enabled it and so we want to save it; if flt.enableFilter is false, the filter is in its
+        //default state and can be removed from the config file.
+        //If any filter should become enabled by default, this algorithm should be revised
+        if (flt.enableFilter) {
+            KConfigGroup grp = cfg->group(flt.filterName);
+            grp.writeEntry("Enabled", flt.enableFilter);
+            grp.writeEntry("URL", flt.filterURL);
+            grp.writeEntry("LocalFileName", flt.filterLocalFilename);
+        } else {
+            cfg->deleteGroup(flt.filterName);
+        }
+    };
+    std::for_each(mFilters.constBegin(), mFilters.constEnd(), writeFilter);
+    cfg->sync();
 }
 
 void AutomaticFilterModel::defaults()
 {
-    mConfig = KSharedConfig::openConfig(QStringLiteral("khtmlrc"), KConfig::IncludeGlobals);
-    KConfigGroup cg(mConfig, mGroupname);
-    load(cg);
+    mConfig = KSharedConfig::openConfig(autoFilterFileName());
+    load();
 }
 
 QModelIndex AutomaticFilterModel::index(int row, int column, const QModelIndex & /*parent*/) const

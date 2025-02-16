@@ -215,6 +215,21 @@ private:
     void initCookieJarSettings();
     void initNSPluginSettings();
     void initKIOSlaveSettings();
+    void initAutoFilters();
+
+    /**
+     * @brief Reads autofilter data from a config group and loads the filter
+     *
+     * If the filter isn't enabled or its URL is invalid, nothing is done.
+     *
+     * This function tries to download the filter and cache it if the cache doesn't already
+     * exist or is too old
+     * @note This function assumes that the directory @p cacheDir actually exists. It doesn't
+     * try to create it
+     * @param grp the config group to read the filter settings from
+     * @param cacheDir the name of the directory where to find and/or write the cache
+     */
+    void loadAutoFilter(const KConfigGroup &grp, const QString &cacheDir);
 
     /**
      * @internal Constructor

@@ -20,14 +20,46 @@ class QTreeView;
 class KListWidgetSearchLine;
 class KPluralHandlingSpinBox;
 
+/**
+ * @brief Model which handles loading and saving the list of automatic filters
+ *
+ * The name of the configuration file where the list is stored is returned by autoFilterFileName()
+ * and, currently, is `konqautofiltersrc`. This file should only be used to store the automatic filters
+ * and have a group for each filter:
+ * - the name of the group is the filter name
+ * - it has entries telling whether it's enabled, its URL, the name of the cache file to use for it and
+ *  the position where display it in the list of filters.
+ *
+ * @note This configuration file isn't used in the usual way. See save() for more information.
+ */
 class AutomaticFilterModel : public QAbstractItemModel
 {
     Q_OBJECT
+
+    /**
+     * @brief The name of the config file where the list of filters is kept
+     * @return The name of the config file where the list of filters is kept. Currently, this is `konqautofiltersrc`
+     */
+    static QString autoFilterFileName();
+
 public:
     AutomaticFilterModel(QObject *parent = nullptr);
 
-    void load(KConfigGroup &cg);
-    void save(KConfigGroup &cg);
+    void load();
+
+    /**
+     * @brief Saves the information to file
+     *
+     * Saving the information must take into account the situation where an entry has been removed
+     * by the default configuration (for example because the list isn't maintained anymore):
+     * - if the entry had been enabled by the user, we want to keep it not to surprise the user
+     * - if the entry hasn't been enabled by the user, we don't want to keep it because it would clutter the UI.
+     * To do so, we store all the information (not only those changed from the default) for enabled entries.
+     *
+     * @warning This function assumes that all filters are disabled by default. if this changes, the algorithm
+     * which decides what entries should be saved must be changed
+     */
+    void save();
     void defaults();
 
     QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const override;
@@ -49,6 +81,7 @@ private:
         QString filterName;
         QString filterURL;
         QString filterLocalFilename;
+        int position;
     };
     QList<struct FilterConfig> mFilters;
 

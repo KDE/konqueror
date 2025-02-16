@@ -111,6 +111,8 @@ public:
     bool m_allowMixedContentDisplay:1;
     bool m_doNotTrack = false;
 
+    int htmlFilterListMaxAgeDays;
+
     // the virtual global "domain"
     KPerDomainSettings global;
 
@@ -328,6 +330,7 @@ void WebEngineSettings::init()
   initNSPluginSettings();
   initCookieJarSettings();
   initKIOSlaveSettings();
+  initAutoFilters();
 }
 
 void WebEngineSettings::init( KConfig * config, bool reset )
@@ -344,67 +347,29 @@ void WebEngineSettings::init( KConfig * config, bool reset )
       d->m_accessKeysEnabled = cgAccess.readEntry( "Enabled", true );
   }
 
+  KConfig filters(QStringLiteral("konqautofilters"));
   KConfigGroup cgFilter( config, "Filter Settings" );
-  if ((reset || cgFilter.exists()) && (d->m_adFilterEnabled = cgFilter.readEntry("Enabled", false)))
-  {
+  if ((reset || cgFilter.exists()) && (d->m_adFilterEnabled = cgFilter.readEntry("Enabled", false))) {
       d->m_hideAdsEnabled = cgFilter.readEntry("Shrink", false);
 
       d->adBlackList.clear();
       d->adWhiteList.clear();
 
       /** read maximum age for filter list files, minimum is one day */
-      int htmlFilterListMaxAgeDays = cgFilter.readEntry(QStringLiteral("HTMLFilterListMaxAgeDays")).toInt();
-      if (htmlFilterListMaxAgeDays < 1)
-          htmlFilterListMaxAgeDays = 1;
+      d->htmlFilterListMaxAgeDays = cgFilter.readEntry(QStringLiteral("HTMLFilterListMaxAgeDays"), 1);
 
-      QMapIterator<QString,QString> it (cgFilter.entryMap());
-      while (it.hasNext())
-      {
-          it.next();
-          int id = -1;
+      QMap<QString, QString> filtersMap = cgFilter.entryMap();
+      for (auto it = filtersMap.constBegin(); it != filtersMap.constEnd(); ++it) {
           const QString name = it.key();
           const QString url = it.value();
-
-          if (name.startsWith(QLatin1String("Filter")))
-          {
-              if (url.startsWith(QLatin1String("@@")))
-                  d->adWhiteList.addFilter(url);
-              else
-                  d->adBlackList.addFilter(url);
+          if (!name.startsWith(QLatin1String("Filter"))) {
+              continue;
           }
-          else if (name.startsWith(QLatin1String("HTMLFilterListName-")) && (id = QStringView{name}.mid(19).toInt()) > 0)
-          {
-              /** check if entry is enabled */
-              bool filterEnabled = cgFilter.readEntry(QStringLiteral("HTMLFilterListEnabled-").append(QString::number(id))) != QLatin1String("false");
 
-              /** get url for HTMLFilterList */
-              QUrl url(cgFilter.readEntry(QStringLiteral("HTMLFilterListURL-").append(QString::number(id))));
-
-              if (filterEnabled && url.isValid()) {
-                  /** determine where to cache HTMLFilterList file */
-                  QString localFile = cgFilter.readEntry(QStringLiteral("HTMLFilterListLocalFilename-").append(QString::number(id)));
-                  QString dirName = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
-                  QDir().mkpath(dirName);
-                  localFile =  dirName + '/' + localFile;
-
-                  /** determine existence and age of cache file */
-                  QFileInfo fileInfo(localFile);
-
-                  /** load cached file if it exists, irrespective of age */
-                  if (fileInfo.exists())
-                      d->adblockFilterLoadList( localFile );
-
-                  /** if no cache list file exists or if it is too old ... */
-                  if (!fileInfo.exists() || fileInfo.lastModified().daysTo(QDateTime::currentDateTime()) > htmlFilterListMaxAgeDays)
-                  {
-                      /** ... in this case, refetch list asynchronously */
-                      // qCDebug(WEBENGINEPART_LOG) << "Fetching filter list from" << url << "to" << localFile;
-                      KIO::StoredTransferJob *job = KIO::storedGet( url, KIO::Reload, KIO::HideProgressInfo );
-                      QObject::connect( job, &KJob::result, d, &WebEngineSettingsPrivate::adblockFilterResult);
-                      /** for later reference, store name of cache file */
-                      job->setProperty("webenginesettings_adBlock_filename", localFile);
-                  }
-              }
+          if (url.startsWith(QLatin1String("@@"))) {
+            d->adWhiteList.addFilter(url);
+          } else {
+            d->adBlackList.addFilter(url);
           }
       }
   }
@@ -1344,6 +1309,53 @@ void WebEngineSettings::initKIOSlaveSettings()
 {
     KConfigGroup grp(KSharedConfig::openConfig(QStringLiteral("kioslaverc")), {});
     d->m_doNotTrack = grp.readEntry("DoNotTrack", false);
+}
+
+void WebEngineSettings::loadAutoFilter(const KConfigGroup& grp, const QString& cacheDir)
+{
+    QUrl url = grp.readEntry("URL", QUrl{});
+    if (!url.isValid() || !grp.readEntry("Enabled", false)) {
+        return;
+    }
+    QString localFile = grp.readEntry("LocalFileName", QString{});
+    localFile = cacheDir + '/' + localFile;
+
+    /** determine existence and age of cache file */
+    QFileInfo fileInfo(localFile);
+
+    /** load cached file if it exists, irrespective of age */
+    if (fileInfo.exists()) {
+        d->adblockFilterLoadList(localFile);
+    }
+
+    /** if no cache list file exists or if it is too old ... */
+    if (!fileInfo.exists() || fileInfo.lastModified().daysTo(QDateTime::currentDateTime()) > d->htmlFilterListMaxAgeDays)
+    {
+        /** ... in this case, refetch list asynchronously */
+        // qCDebug(WEBENGINEPART_LOG) << "Fetching filter list from" << url << "to" << localFile;
+        KIO::StoredTransferJob *job = KIO::storedGet( url, KIO::Reload, KIO::HideProgressInfo );
+        QObject::connect( job, &KJob::result, d, &WebEngineSettingsPrivate::adblockFilterResult);
+        /** for later reference, store name of cache file */
+        job->setProperty("webenginesettings_adBlock_filename", localFile);
+    }
+}
+
+void WebEngineSettings::initAutoFilters()
+{
+    if (!d->m_adFilterEnabled) {
+        return;
+    }
+    KConfig cfg("konqautofiltersrc");
+    QStringList groupList = cfg.groupList();
+
+    QString dirName = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+    QDir().mkpath(dirName);
+
+    auto createFilter = [this, &cfg, dirName](const QString &name){
+        KConfigGroup grp = cfg.group(name);
+        loadAutoFilter(grp, dirName);
+    };
+    std::for_each(groupList.constBegin(), groupList.constEnd(), createFilter);
 }
 
 WebEngineSettings* WebEngineSettings::self()

@@ -146,3 +146,4 @@ install(TARGETS konqueror ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 ########### install files ###############
 # install( FILES konqueror.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR} )
 install( FILES org.kde.Konqueror.Main.xml org.kde.Konqueror.MainWindow.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR} )
+install(FILES konqautofiltersrc DESTINATION ${KDE_INSTALL_CONFDIR})
