@@ -12,13 +12,13 @@
 # Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
 # obsoleteman <tulliana@gmail.com>, 2008-2009.
 # obsoleteman <tulliana@gmail.com>, 2010,2012.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# SPDX-FileCopyrightText: 2022, 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:32+0000\n"
-"PO-Revision-Date: 2022-10-19 13:13+0300\n"
+"PO-Revision-Date: 2025-02-17 18:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #. i18n: ectx: Menu (tools)
 #: konq_shellcmdplugin.rc:4
@@ -37,12 +37,12 @@ msgstr "&Araçlar"
 #: kshellcmdexecutor.cpp:106
 #, kde-format
 msgid "Input Required:"
-msgstr "Girdi Gerekli:"
+msgstr "Girdi gerekli:"
 
 #: kshellcmdplugin.cpp:32
 #, kde-format
 msgid "&Execute Shell Command..."
-msgstr "&Kabuk Komutlarını Yürüt..."
+msgstr "&Kabuk Komutu Yürüt…"
 
 #: kshellcmdplugin.cpp:41
 #, kde-format
@@ -66,9 +66,9 @@ msgstr "Kabuk Komutu Yürüt"
 #: kshellcmdplugin.cpp:74
 #, kde-format
 msgid "Execute shell command in current directory:"
-msgstr "Kabuk komutunu bu dizinde yürüt:"
+msgstr "Kabuk komutunu geçerli dizinde yürüt:"
 
 #: kshellcmdplugin.cpp:85
 #, kde-format
 msgid "Output from command: \"%1\""
-msgstr "Komut çıktısı: \"%1\""
+msgstr "Komut çıktısı: “%1”"

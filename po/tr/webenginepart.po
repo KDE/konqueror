@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: extragear-base-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-04 00:39+0000\n"
-"PO-Revision-Date: 2025-02-05 11:27+0300\n"
+"PO-Revision-Date: 2025-02-17 19:18+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -118,12 +118,12 @@ msgstr "Yer imlerinize tez erişim"
 #: src/about/konq_aboutpage.cpp:99
 #, kde-format
 msgid "Next: An Introduction to Konqueror"
-msgstr "Sonrası: Konqueror'a yakından bakış"
+msgstr "Sonrası: Konqueror’a yakından bakış"
 
 #: src/about/konq_aboutpage.cpp:101
 #, kde-format
 msgid "Search the Web"
-msgstr "Web'de Arayın"
+msgstr "Web’de Arayın"
 
 #: src/about/konq_aboutpage.cpp:131 src/about/konq_aboutpage.cpp:133
 #, kde-format
@@ -152,7 +152,7 @@ msgid ""
 msgstr ""
 "Konqueror, aynı zamanda tam özellikli bir web tarayıcısıdır. Konum çubuğuna "
 "gitmek istediğiniz web sitesinin adresini girip (örn. <a href=\"http://www."
-"kde.org\">http://www.kde.org</a>) Giriş'e basın veya Yer İmleri menüsünden "
+"kde.org\">http://www.kde.org</a>) Giriş’e basın veya Yer İmleri menüsünden "
 "bir girdi seçin."
 
 #: src/about/konq_aboutpage.cpp:147
@@ -200,8 +200,8 @@ msgid ""
 "encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-"
 "Shortcuts."
 msgstr ""
-"Web kısayollarını kullanın: \"gg: KDE\" yazarak internette Google kullanarak "
-"\"KDE\" terimi için arama yapabilirsiniz. Örneğin bir yazılım aramak veya "
+"Web kısayollarını kullanın: “gg: KDE” yazarak internette Google kullanarak "
+"“KDE” terimi için arama yapabilirsiniz. Örneğin bir yazılım aramak veya "
 "çeşitli sözcüklere bakmak için işinizi kolaylaştıracak bir sürü web "
 "kısayolları vardır. İsterseniz <a href=\"%1\">kendi kısayolunuzu</a> da "
 "yaratabilirsiniz."
@@ -225,8 +225,8 @@ msgid ""
 "to the desktop, and choose \"Icon\"."
 msgstr ""
 "Masaüstünüzde geçerli sayfayı gösteren bir bağlantı oluşturmak isterseniz "
-"Konum araç çubuğunun sol tarafındaki küçük simgeyi sürükleyip Masaüstü'ne "
-"bırakın ve \"Simge\"yi seçin."
+"Konum araç çubuğunun sol tarafındaki küçük simgeyi sürükleyip Masaüstü’ne "
+"bırakın ve “Simge”yi seçin."
 
 #: src/about/konq_aboutpage.cpp:217
 #, kde-format
@@ -235,9 +235,9 @@ msgid ""
 "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
 "sessions."
 msgstr ""
-"Aynı zamanda <img width='16' height='16' src=\"%1\" /> \"Tam Ekran Kipi\"ni "
-"Ayarlar menüsünde bulabilirsiniz. Bu özellik, \"Konuşma\" oturumları için "
-"pek yararlıdır."
+"Aynı zamanda <img width='16' height='16' src=\"%1\" /> “Tam Ekran Kipi”ni "
+"Ayarlar menüsünde bulabilirsiniz. Bu özellik, “Konuşma” oturumları için pek "
+"yararlıdır."
 
 #: src/about/konq_aboutpage.cpp:220
 #, kde-format
@@ -246,9 +246,9 @@ msgid ""
 "two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> Split "
 "View Left/Right) you can make Konqueror appear the way you like."
 msgstr ""
-"Bir pencereyi iki parçaya bölerek divide et impera (lat. \"Böl ve Fethet\") "
+"Bir pencereyi iki parçaya bölerek divide et impera (lat. “Böl ve Fethet”) "
 "yapabilirsiniz (örn. Pencere → <img width='16' height='16' src=\"%1\" /> "
-"Görünümü Sol/Sağ Şeklinde Böl). Konqueror'u istediğiniz şekilde kullanın."
+"Görünümü Sol/Sağ Şeklinde Böl). Konqueror’u istediğiniz şekilde kullanın."
 
 #: src/about/konq_aboutpage.cpp:223
 #, kde-format
@@ -258,7 +258,7 @@ msgid ""
 "complaint to the webmaster!)"
 msgstr ""
 "Ziyaret ettiğiniz web sayfası, sizden başka bir tarayıcı kullanmanızı "
-"istiyorsa <a href=\"%1\">user-agent</a> özelliğini kullanın (ve sayfayı "
+"istiyorsa <a href=\"%1\">User-Agent</a> özelliğini kullanın (ve sayfayı "
 "yapana bir şikayet yazmayı unutmayın!)"
 
 #: src/about/konq_aboutpage.cpp:226
@@ -267,7 +267,7 @@ msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
 "ensures that you can keep track of the pages you have visited recently."
 msgstr ""
-"Kenar Çubuğu'nuzdaki <img width='16' height='16' src=\"%1\"></img> Geçmiş "
+"Kenar çubuğunuzdaki <img width='16' height='16' src=\"%1\"></img> Geçmiş "
 "özelliği, son zamanlarda ziyaret ettiğiniz sayfaların çetelesini tutmanıza "
 "yardımcı olur."
 
@@ -278,9 +278,9 @@ msgid ""
 "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
 "Terminal Emulator)."
 msgstr ""
-"Gelişmiş kullanıcılar, Konqueror'a gömebileceğiniz Konsole özelliğini çok "
+"Gelişmiş kullanıcılar, Konqueror’a gömebileceğiniz Konsole özelliğini çok "
 "seveceklerdir (Ayarlar → <img width='16' height='16' SRC=\"%1\"></img> "
-"Uçbirim Öykünücüsünü Göster)."
+"Göster: Uçbirim Öykünücüsü)."
 
 #: src/about/konq_aboutpage.cpp:232
 #, kde-format
@@ -614,12 +614,12 @@ msgstr "İstenen işlem tamamlanamadı"
 #: src/schemehandlers/errorschemehandler.cpp:113
 #, kde-format
 msgid "Technical Reason: %1"
-msgstr "Teknik Neden:  %1"
+msgstr "Teknik gerekçe:  %1"
 
 #: src/schemehandlers/errorschemehandler.cpp:118
 #, kde-format
 msgid "Details of the Request:"
-msgstr "İsteğin Ayrıntıları:"
+msgstr "İsteğin ayrıntıları:"
 
 #. i18n, and once for HTML.
 #: src/schemehandlers/errorschemehandler.cpp:121
@@ -636,13 +636,13 @@ msgstr "Protokol: %1"
 #: src/schemehandlers/errorschemehandler.cpp:131
 #, kde-format
 msgid "Date and Time: %1"
-msgstr "Tarih ve Zaman: %1"
+msgstr "Tarih ve zaman: %1"
 
 #. i18n, and once for HTML.
 #: src/schemehandlers/errorschemehandler.cpp:135
 #, kde-format
 msgid "Additional Information: %1"
-msgstr "Ek Bilgiler: %1"
+msgstr "Ek bilgiler: %1"
 
 #: src/schemehandlers/errorschemehandler.cpp:137
 #, kde-format
@@ -652,12 +652,12 @@ msgstr "Açıklama:"
 #: src/schemehandlers/errorschemehandler.cpp:144
 #, kde-format
 msgid "Possible Causes:"
-msgstr "Olası Nedenler:"
+msgstr "Olası nedenler:"
 
 #: src/schemehandlers/errorschemehandler.cpp:152
 #, kde-format
 msgid "Possible Solutions:"
-msgstr "Olası Çözümler:"
+msgstr "Olası çözümler:"
 
 #: src/schemehandlers/errorschemehandler.cpp:158
 #, kde-format
@@ -911,7 +911,7 @@ msgstr "&Kullanılabilir alanlar"
 #: src/webenginecustomizecacheablefieldsdlg.ui:101
 #, kde-format
 msgid "Store form data in KWallet when closing the dialog"
-msgstr "Pencereyi kapatırken form verisini K Cüzdan'da depola"
+msgstr "İletişim kutusunu kapatırken form verisini K Cüzdan’da depola"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
@@ -983,9 +983,9 @@ msgid ""
 "A third party may be able to intercept and view this information.\n"
 "Are you sure you want to send the data unencrypted?"
 msgstr ""
-"Uyarı - Bu güvenli bir form; ancak size ait olan veriyi şifrelenmemiş olarak "
-"geri göndermek istiyor.\n"
-"Başkaları bu bilgiyi yakalayabilir ve bilgileri görüntüleyebilir.\n"
+"Uyarı — Bu güvenli bir form; ancak size ait olan veriyi\n"
+"şifrelenmemiş olarak geri göndermek istiyor. Başkaları bu\n"
+"bilgiyi yakalayabilir ve bilgileri görüntüleyebilir.\n"
 "Bu işlemi sürdürmek istiyor musunuz?"
 
 #: src/webenginepage.cpp:629
@@ -1114,7 +1114,7 @@ msgstr "Yalnızca Metni Yakınlaştır"
 #: src/webenginepart.cpp:226
 #, kde-format
 msgid "Zoom To DPI"
-msgstr "DPI'a Yakınlaştır"
+msgstr "DPI’ye Yakınlaştır"
 
 #: src/webenginepart.cpp:239
 #, kde-format
@@ -1422,7 +1422,7 @@ msgstr "Görseli Gönder..."
 #: src/webengineview.cpp:361
 #, kde-format
 msgid "Copy Image URL"
-msgstr "Görsel URL'sini Kopyala"
+msgstr "Görsel URL’sini Kopyala"
 
 #: src/webengineview.cpp:367
 #, kde-format
@@ -1453,7 +1453,7 @@ msgstr "Metni Ko&pyala"
 #, kde-format
 msgctxt "open selected url"
 msgid "Open '%1'"
-msgstr "Aç: '%1'"
+msgstr "Aç: “%1”"
 
 #: src/webengineview.cpp:461
 #, kde-format
@@ -1513,7 +1513,7 @@ msgstr "&Sesi Farklı Kaydet..."
 #: src/webengineview.cpp:528
 #, kde-format
 msgid "C&opy Audio URL"
-msgstr "Ses URL'sini Ko&pyala"
+msgstr "Ses URL’sini Ko&pyala"
 
 #: src/webengineview.cpp:530
 #, kde-format
@@ -1529,13 +1529,13 @@ msgstr "Ortam Adresini Ko&pyala"
 #, kde-format
 msgctxt "Search \"search provider\" for \"text\""
 msgid "Search %1 for '%2'"
-msgstr "'%2' İfadesini %1 Kullanarak Ara"
+msgstr "“%2” İfadesini %1 Kullanarak Ara"
 
 #: src/webengineview.cpp:595
 #, kde-format
 msgctxt "Search for \"text\" with"
 msgid "Search for '%1' with"
-msgstr "'%1' İfadesini Şununla Ara"
+msgstr "“%1” İfadesini Şununla Ara"
 
 #: src/webengineview.cpp:608
 #, kde-format
@@ -1588,7 +1588,7 @@ msgstr "saltokunur"
 #, kde-format
 msgctxt "web field has the autocomplete attribute set to off"
 msgid "auto-completion off"
-msgstr "otomatik tamamlama kapalı"
+msgstr "kendiliğinden tamamlama kapalı"
 
 #: src/webfieldsdataview.cpp:131
 #, kde-format

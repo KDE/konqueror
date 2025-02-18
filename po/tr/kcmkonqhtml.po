@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-24 00:38+0000\n"
-"PO-Revision-Date: 2025-01-10 16:11+0300\n"
+"PO-Revision-Date: 2025-02-17 19:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -105,7 +105,7 @@ msgstr "Kapalı"
 #: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
-msgstr "Yalnızca Bir Kez Göster"
+msgstr "Yalnızca bir kez göster"
 
 #: appearance.cpp:77
 #, kde-format
@@ -147,7 +147,7 @@ msgstr "Kapalı"
 #: appearance.cpp:92
 #, kde-format
 msgid "Only on Hover"
-msgstr "Yalnızca Üstüne Gelince"
+msgstr "Yalnızca üzerine gelince"
 
 #: appearance.cpp:93
 #, kde-format
@@ -173,13 +173,13 @@ msgstr ""
 #: appearance.cpp:105
 #, kde-format
 msgid "When Efficient"
-msgstr "Eğer Faydalıysa"
+msgstr "Eğer yararlıysa"
 
 #: appearance.cpp:106
 #, kde-format
 msgctxt "smooth scrolling"
 msgid "Always"
-msgstr "Her Zaman"
+msgstr "Her zaman"
 
 #: appearance.cpp:107
 #, kde-format
@@ -317,7 +317,7 @@ msgstr "&Bu kodlama için yazıtipi boyutu ayarları:"
 #: appearance.cpp:200 appearance.cpp:394
 #, kde-format
 msgid "Use Language Encoding"
-msgstr "Dilin Karakter Kümesini Kullan"
+msgstr "Dilin karakter kümesini kullan"
 
 #: appearance.cpp:202
 #, kde-format
@@ -377,7 +377,7 @@ msgstr ""
 #: cache/cache.ui:54
 #, kde-format
 msgid "Auto"
-msgstr "Otomatik"
+msgstr "Kendiliğinden"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:57
@@ -577,7 +577,7 @@ msgstr ""
 #: cookies/kcookiespolicies.ui:49
 #, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr "Oturum çerezlerini otomat&ik olarak kabul et"
+msgstr "Oturum çerezlerini kendiliğinden kabul et"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -677,7 +677,7 @@ msgstr "Site Politikası"
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr "Alan adlarını etkileşimli ara"
+msgstr "Etki alanlarını etkileşimli olarak ara"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
@@ -703,7 +703,7 @@ msgstr ""
 #: cookies/kcookiespolicies.ui:163
 #, kde-format
 msgid "Domain"
-msgstr "Alan Adı"
+msgstr "Etki Alanı"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
@@ -838,7 +838,7 @@ msgstr ""
 #: css/cssconfig.ui:29
 #, kde-format
 msgid "Stylesheets"
-msgstr "Biçem sayfaları"
+msgstr "Biçem Sayfaları"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
 #: css/cssconfig.ui:35
@@ -1373,7 +1373,7 @@ msgstr "Ala&n Adına Özel"
 #: domainlistview.cpp:40
 #, kde-format
 msgid "Host/Domain"
-msgstr "Makine/Alan Adı"
+msgstr "Makine/Etki Alanı"
 
 #: domainlistview.cpp:56
 #, kde-format
@@ -1412,8 +1412,8 @@ msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
 "the list box."
 msgstr ""
-"Liste kutusunda seçilen makine veya alan adı için politikayı silmek üzere bu "
-"düğmeye tıklayın."
+"Liste kutusundaki seçili makine veya alan adı için politikayı silmek üzere "
+"bu düğmeye tıklayın."
 
 #: domainlistview.cpp:125
 #, kde-format
@@ -1428,7 +1428,7 @@ msgstr "Önce silmek için bir politika seçmelisiniz."
 #: domainlistview.cpp:190 policydlg.cpp:63
 #, kde-format
 msgid "Use Global"
-msgstr "Genel Ayarları Kullan"
+msgstr "Global Ayarları Kullan"
 
 #: domainlistview.cpp:232
 #, kde-format
@@ -1470,7 +1470,7 @@ msgstr "Süzülmüş görselleri gizle"
 #: filteropts.cpp:58
 #, kde-format
 msgid "Manual Filter"
-msgstr "El ile Süz"
+msgstr "Elle süz"
 
 #: filteropts.cpp:76
 #, kde-format
@@ -1489,12 +1489,12 @@ msgstr ""
 #: filteropts.cpp:100
 #, kde-format
 msgid "Automatic Filter"
-msgstr "Otomatik Süz"
+msgstr "Kendiliğinden Süz"
 
 #: filteropts.cpp:109
 #, kde-format
 msgid "Automatic update interval:"
-msgstr "Otomatik güncelleme aralığı:"
+msgstr "Kendiliğinden güncelleme aralığı:"
 
 #: filteropts.cpp:114
 #, kde-format
@@ -1643,25 +1643,25 @@ msgstr "Yeni bir &sekme oluşturulduğunda"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
-msgstr "Giriş Sayfasını Göster"
+msgstr "Giriş sayfasını göster"
 
 #: generalopts.cpp:70
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
-msgstr "Giriş Sayfamı Göster"
+msgstr "Giriş sayfamı göster"
 
 #: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
-msgstr "Boş Sayfa Göster"
+msgstr "Boş sayfa göster"
 
 #: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
-msgstr "Yer İmlerimi Göster"
+msgstr "Yer imlerimi göster"
 
 #: generalopts.cpp:78
 #, kde-format
@@ -1768,7 +1768,7 @@ msgstr ""
 #: htmlopts.cpp:74
 #, kde-format
 msgid "&Maximum completions:"
-msgstr "&Azami tamamlama:"
+msgstr "&En çok tamamlama:"
 
 #: htmlopts.cpp:76
 #, kde-format
@@ -1815,7 +1815,7 @@ msgstr ""
 #: htmlopts.cpp:115
 #, kde-format
 msgid "Enable Access Ke&y activation with Ctrl key"
-msgstr "Erişim &Düğmesi etkinleştirmesini Kontrol düğmesi ile etkinleştir"
+msgstr "&Kontrol düğmesiyle Erişim Düğmesi etkinleştirmesini sağla"
 
 #: htmlopts.cpp:116
 #, kde-format
@@ -1824,9 +1824,9 @@ msgid ""
 "Unchecking this box will disable this accessibility feature. (Konqueror "
 "needs to be restarted for this change to take effect.)"
 msgstr ""
-"Ağ sayfaları gösterilirken Kontrol düğmesine basmak Erişim düğmelerini "
+"Web sayfaları gösterilirken Kontrol düğmesine basmak Erişim düğmelerini "
 "etkinleştirir. Bu kutucuğun işaretini kaldırmak söz konusu erişilebilirlik "
-"özelliğini pasifleştirir. (Değişikliğin etkinleştirilebilmesi için "
+"özelliğini devre dışı bırakır. (Değişikliğin etkinleştirilebilmesi için "
 "Konqueror’un yeniden başlatılması gerekir.)"
 
 #: htmlopts.cpp:121
@@ -1965,7 +1965,7 @@ msgstr ""
 #: jsopts.cpp:96
 #, kde-format
 msgid "Global JavaScript Policies"
-msgstr "Genel JavaScript Politikaları"
+msgstr "Global JavaScript Politikaları"
 
 #: jspolicies.cpp:161
 #, kde-format
@@ -1976,13 +1976,13 @@ msgstr "Yeni pencereleri aç:"
 #: jspolicies.cpp:337
 #, kde-format
 msgid "Use global"
-msgstr "Genel kullan"
+msgstr "Global ayarları kullan"
 
 #: jspolicies.cpp:170 jspolicies.cpp:224 jspolicies.cpp:261 jspolicies.cpp:298
 #: jspolicies.cpp:338
 #, kde-format
 msgid "Use setting from global policy."
-msgstr "Genel politikalarda bulunan ayarları kullan."
+msgstr "Global politikalarda bulunan ayarları kullan."
 
 #: jspolicies.cpp:176 jspolicies.cpp:230 jspolicies.cpp:267 jspolicies.cpp:304
 #: jspolicies.cpp:344
@@ -2053,7 +2053,7 @@ msgstr "Betiklerin pencere boyutunu düzenlemesine izin ver."
 #: jspolicies.cpp:236 jspolicies.cpp:273 jspolicies.cpp:310 jspolicies.cpp:350
 #, kde-format
 msgid "Ignore"
-msgstr "Yok Say"
+msgstr "Yok say"
 
 #: jspolicies.cpp:237
 #, kde-format
@@ -2432,7 +2432,7 @@ msgstr "Seçili sekme kapatıldığında daha önce etkin olan sekmeyi etkinleş
 #: useragent/useragent.ui:20
 #, kde-format
 msgid "Existing identifications"
-msgstr "Var olan tanımlamalar"
+msgstr "Var Olan Tanımlamalar"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
@@ -2477,7 +2477,7 @@ msgstr "&Sil"
 #: useragent/useragent.ui:150
 #, kde-format
 msgid "Choose &selected identification"
-msgstr "&Seçili tanımlamayı seç"
+msgstr "&Seçili Tanımlamayı Seç"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:160
