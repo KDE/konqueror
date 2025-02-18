@@ -7,13 +7,13 @@
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
 # Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
 # obsoleteman <tulliana@gmail.com>, 2008,2012.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# SPDX-FileCopyrightText: 2022, 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-22 00:38+0000\n"
-"PO-Revision-Date: 2022-12-17 18:39+0300\n"
+"PO-Revision-Date: 2025-02-17 19:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #: imgallerydialog.cpp:37
 #, kde-format
@@ -102,7 +102,7 @@ msgstr "Klasörler"
 #: imgallerydialog.cpp:145
 #, kde-format
 msgid "&Save to HTML file:"
-msgstr "&HTML Dosyasına Kaydet:"
+msgstr "&HTML dosyasına kaydet:"
 
 #: imgallerydialog.cpp:147
 #, kde-format
@@ -112,7 +112,7 @@ msgstr "<p> Bu galerinin kaydedileceği HTML dosyasının adı.</p>"
 #: imgallerydialog.cpp:150
 #, kde-format
 msgid "&Recurse subfolders"
-msgstr "Alt klasörleri &kapsa"
+msgstr "Alt klasörlerde ö&zyinele"
 
 #: imgallerydialog.cpp:152
 #, kde-format
@@ -133,18 +133,18 @@ msgid ""
 "<p>You can limit the number of folders the image gallery creator will "
 "traverse to by setting an upper bound for the recursion depth.</p>"
 msgstr ""
-"<p>Görsel galerisi oluşturucunun dikkate alacağı alt ve üst limit sayıları "
-"vererek klasörlerin sayısını sınırlayabilirsiniz.</p>"
+"<p>Özyineleme derinliği için bir üst sınır belirleyerek görsel galerisi "
+"oluşturucusunun geçeceği klasör sayısını sınırlayabilirsiniz.</p>"
 
 #: imgallerydialog.cpp:168
 #, kde-format
 msgid "Rec&ursion depth:"
-msgstr "Kapsama &derinliği:"
+msgstr "Özyineleme &derinliği:"
 
 #: imgallerydialog.cpp:172
 #, kde-format
 msgid "Copy or&iginal files"
-msgstr "Asıl dos&yaları kopyala"
+msgstr "Özgün dos&yaları kopyala"
 
 #: imgallerydialog.cpp:174
 #, kde-format
@@ -152,8 +152,8 @@ msgid ""
 "<p>This makes a copy of all images and the gallery will refer to these "
 "copies instead of the original images.</p>"
 msgstr ""
-"<p>Bu işlem, bütün görsellerin bir kopyasını oluşturur ve Galeride bu "
-"kopyalardan görselleri alır.</p>"
+"<p>Bu, tüm görsellerin bir kopyasını oluşturur ve galeri özgün görseller "
+"yerine bu kopyalara başvurur.</p>"
 
 #: imgallerydialog.cpp:179
 #, kde-format
@@ -206,7 +206,7 @@ msgstr "Küçük görsel boyutu:"
 #: imgallerydialog.cpp:235
 #, kde-format
 msgid "&Set different color depth:"
-msgstr "&Farklı bir renk derinliği tanımla:"
+msgstr "&Farklı bir renk derinliği ayarla:"
 
 #: imgallerydialog.cpp:246
 #, kde-format
@@ -221,7 +221,7 @@ msgstr "Gö&rsel Galerisi Oluştur..."
 #: imgalleryplugin.cpp:54
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
-msgstr "Eklenti oluşturulamıyor. Lütfen bir hata raporu gönderin."
+msgstr "Eklenti oluşturulamadı. Lütfen bir hata raporu gönderin."
 
 #: imgalleryplugin.cpp:60
 #, kde-format
