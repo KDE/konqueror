@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-24 00:38+0000\n"
-"PO-Revision-Date: 2025-02-17 19:31+0300\n"
+"PO-Revision-Date: 2025-02-21 21:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -55,7 +55,7 @@ msgstr "Görseller"
 #: appearance.cpp:52
 #, kde-format
 msgid "A&utomatically load images"
-msgstr "Görs&elleri otomatik yükle"
+msgstr "Görs&elleri kendiliğinden yükle"
 
 #: appearance.cpp:53
 #, kde-format
@@ -67,8 +67,8 @@ msgid ""
 "probably want to check this box to enhance your browsing experience.</html>"
 msgstr ""
 "<html>Eğer bu kutu işaretlenmişse Konqueror web sayfalarındaki görselleri "
-"otomatik olarak yükleyecektir. Diğer koşulda, görseller yerine yer tutucular "
-"getirilecek ve siz el ile görseller düğmesine basarak onları "
+"kendiliğinden yükleyecektir. Diğer koşulda, görseller yerine yer tutucular "
+"getirilecek ve siz elle görseller düğmesine basarak onları "
 "yükleyebileceksiniz.<br />Çok yavaş bir ağ bağlantınız yoksa bu kutuyu "
 "işaretleyip web gezintinizi daha zevkli hale getirebilirsiniz.</html>"
 
@@ -401,7 +401,7 @@ msgstr "&Özel önbellek dizini"
 #: cache/cache.ui:100
 #, kde-format
 msgid "Cache &Directory"
-msgstr "Önbellek &Dizini"
+msgstr "Önbellek &dizini"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
 #: cache/cache.ui:113
@@ -566,7 +566,7 @@ msgid ""
 "for session cookies.</p>"
 msgstr ""
 "<p>\n"
-"Geçerli oturumun sonunda sona erecek olan çerezleri otomatik olarak kabul "
+"Geçerli oturumun sonunda sona erecek olan çerezleri kendiliğinden kabul "
 "edin. Bu tür çerezler, bilgisayarınızın sabit sürücüsünde veya depolama "
 "aygıtında depolanmayacaktır. Bunun yerine, onları kullanan tüm uygulamaları "
 "(örn. tarayıcınız) kapattığınızda silinirler.</p><p><u>NOT</u> Bu seçeneğin "
@@ -1717,12 +1717,12 @@ msgstr "Geçerli görünümü yalnızca yerel dosyalar için çoğalt"
 #: generalopts.cpp:130
 #, kde-format
 msgid "When starting up, restore state from last time"
-msgstr "Başlarken, son durumu geri yükle"
+msgstr "Başlarken son durumu geri yükle"
 
 #: htmlopts.cpp:39
 #, kde-format
 msgid "Boo&kmarks"
-msgstr "Yer &imleri"
+msgstr "Yer İ&mleri"
 
 #: htmlopts.cpp:42
 #, kde-format
@@ -1832,7 +1832,7 @@ msgstr ""
 #: htmlopts.cpp:121
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
-msgstr "İzlenmeyi engellemek için web sayfalarına DNT başlığı gönder"
+msgstr "İzlenmeyi engellemek için web sayfalarına DNT üstbilgisi gönder"
 
 #: htmlopts.cpp:122
 #, kde-format
@@ -2318,7 +2318,7 @@ msgstr ""
 #, kde-format
 msgid "Open as tab in existing Konqueror when URL is called externally"
 msgstr ""
-"Harici bir URL çağrıldığı zaman mevcut Konqueror penceresindeki sekmede "
+"Dış bir URL çağrıldığı zaman var olan Konqueror penceresindeki sekmede "
 "görüntüle"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
