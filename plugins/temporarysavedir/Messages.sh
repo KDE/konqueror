@@ -1,3 +1,3 @@
 #! /bin/sh
 $EXTRACTRC *.rc >> rc.cpp
-$XGETTEXT *.cpp -o $podir/khtmlsettingsplugin.pot
+$XGETTEXT *.cpp -o $podir/temporarysavedir.pot
