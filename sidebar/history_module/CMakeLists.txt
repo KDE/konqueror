@@ -1,4 +1,3 @@
-add_definitions(-DTRANSLATION_DOMAIN=\"konqueror\")
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/../../src # konqueror dir (for konqhistory*.h)
   ${CMAKE_CURRENT_SOURCE_DIR}/.. # sidebar dir

@@ -1,3 +1,5 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"konqsidebar\")
+
 include_directories (${CMAKE_CURRENT_SOURCE_DIR})
 find_package(KF${KF_MAJOR_VERSION} REQUIRED COMPONENTS JobWidgets IconThemes)
 
