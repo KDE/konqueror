@@ -9,7 +9,7 @@
 #include <QBuffer>
 #include <QWebEngineUrlRequestJob>
 
-#include <kiconloader.h>
+#include <KIconLoader>
 #include <KLocalizedString>
 #include <ki18n_version.h>
 
@@ -42,6 +42,18 @@ static QString loadFile(const QString &file)
     return res;
 }
 
+QString KonqAboutPageSingleton::urlStringForIconName(const QString& iconName, KIconLoader::Group group)
+{
+    QString iconPath = KIconLoader::global()->iconPath(iconName, group);
+    if (iconPath.startsWith(':')) {
+        QUrl u("qrc:");
+        u.setPath(iconPath.mid(1));
+        return u.toString();
+    } else {
+        return QUrl::fromLocalFile(iconPath).toString();
+    }
+}
+
 QString KonqAboutPageSingleton::launch()
 {
     if (!m_launch_html.isEmpty()) {
@@ -55,12 +67,13 @@ QString KonqAboutPageSingleton::launch()
 
     KIconLoader *iconloader = KIconLoader::global();
     int iconSize = iconloader->currentSize(KIconLoader::Desktop);
-    QString home_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("user-home"), KIconLoader::Desktop)).toString();
-    QString remote_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("folder-remote"), KIconLoader::Desktop)).toString();
-    QString wastebin_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("user-trash-full"), KIconLoader::Desktop)).toString();
-    QString bookmarks_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("bookmarks"), KIconLoader::Desktop)).toString();
+
+    QString home_icon_path = urlStringForIconName(QStringLiteral("user-home"));
+    QString remote_icon_path = urlStringForIconName(QStringLiteral("folder-remote"));
+    QString wastebin_icon_path = urlStringForIconName(QStringLiteral("user-trash-full"));
+    QString bookmarks_icon_path = urlStringForIconName(QStringLiteral("bookmarks"));
     QString home_folder = QUrl::fromLocalFile(QDir::homePath()).toString();
-    QString continue_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small)).toString();
+    QString continue_icon_path = urlStringForIconName(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small);
 
     res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage.css"))).toString());
     if (qApp->layoutDirection() == Qt::RightToLeft) {
@@ -116,10 +129,9 @@ QString KonqAboutPageSingleton::intro()
         return res;
     }
 
-    KIconLoader *iconloader = KIconLoader::global();
-    QString back_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-next" : "go-previous", KIconLoader::Small)).toString();
-    QString gohome_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("go-home"), KIconLoader::Small)).toString();
-    QString continue_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small)).toString();
+    QString back_icon_path = urlStringForIconName(QApplication::isRightToLeft() ? "go-next" : "go-previous", KIconLoader::Small);
+    QString gohome_icon_path = urlStringForIconName(QStringLiteral("go-home"), KIconLoader::Small);
+    QString continue_icon_path = urlStringForIconName(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small);
 
     res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage.css"))).toString());
     if (qApp->layoutDirection() == Qt::RightToLeft) {
@@ -171,21 +183,14 @@ QString KonqAboutPageSingleton::tips()
     }
 
     KIconLoader *iconloader = KIconLoader::global();
-    QString viewmag_icon_path =
-        QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("format-font-size-more"), KIconLoader::Small)).toString();
-    QString history_icon_path =
-        QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("view-history"), KIconLoader::Small)).toString();
-    QString openterm_icon_path =
-        QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("utilities-terminal"), KIconLoader::Small)).toString();
-    QString locationbar_erase_rtl_icon_path =
-        QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("edit-clear-locationbar-ltr"), KIconLoader::Small)).toString();
-    QString locationbar_erase_icon_path =
-        QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("edit-clear-locationbar-rtl"), KIconLoader::Small)).toString();
-    QString window_fullscreen_icon_path =
-        QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("view-fullscreen"), KIconLoader::Small)).toString();
-    QString view_left_right_icon_path =
-        QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("view-split-left-right"), KIconLoader::Small)).toString();
-    QString continue_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small)).toString();
+    QString viewmag_icon_path = urlStringForIconName(QStringLiteral("format-font-size-more"), KIconLoader::Small);
+    QString history_icon_path = urlStringForIconName(QStringLiteral("view-history"), KIconLoader::Small);
+    QString openterm_icon_path = urlStringForIconName(QStringLiteral("utilities-terminal"), KIconLoader::Small);
+    QString locationbar_erase_rtl_icon_path = urlStringForIconName(QStringLiteral("edit-clear-locationbar-ltr"), KIconLoader::Small);
+    QString locationbar_erase_icon_path = urlStringForIconName(QStringLiteral("edit-clear-locationbar-rtl"), KIconLoader::Small);
+    QString window_fullscreen_icon_path = urlStringForIconName(QStringLiteral("view-fullscreen"), KIconLoader::Small);
+    QString view_left_right_icon_path = urlStringForIconName(QStringLiteral("view-split-left-right"), KIconLoader::Small);
+    QString continue_icon_path = urlStringForIconName(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small);
 
     res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage.css"))).toString());
     if (qApp->layoutDirection() == Qt::RightToLeft) {
