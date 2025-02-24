@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-24 00:38+0000\n"
+"POT-Creation-Date: 2025-02-24 02:31+0000\n"
 "PO-Revision-Date: 2024-07-25 04:57+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -393,6 +393,28 @@ msgstr "&კეშის საქაღალდე"
 msgid "The custom directory to store cache"
 msgstr "ქეშის საქაღალდის მითითება"
 
+#: cookies/kcookiesmain.cpp:33
+#, fuzzy, kde-format
+#| msgid "Policy"
+msgid "&Policy"
+msgstr "წესები"
+
+#: cookies/kcookiesmain.cpp:35
+#, kde-format
+msgid "&Management"
+msgstr ""
+
+#: cookies/kcookiesmanagement.cpp:46
+#, fuzzy, kde-format
+#| msgid "Accept until end of session"
+msgid "End of session"
+msgstr "ყველა ქუქის მიღება ამ სესიის ბოლომდე"
+
+#: cookies/kcookiesmanagement.cpp:51
+#, kde-format
+msgid "Yes"
+msgstr ""
+
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
 #, kde-format
@@ -484,6 +506,41 @@ msgstr "იწურება:"
 #, kde-format
 msgid "Secure:"
 msgstr "დაცული:"
+
+#: cookies/kcookiespolicies.cpp:137
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Change Java Policy"
+msgctxt "@title:window"
+msgid "Change Cookie Policy"
+msgstr "Java-ის პოლიტიკის შეცვლა"
+
+#: cookies/kcookiespolicies.cpp:156
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Java Policy"
+msgctxt "@title:window"
+msgid "New Cookie Policy"
+msgstr "Java-ის ახალი პოლიტიკა"
+
+#: cookies/kcookiespolicies.cpp:189
+#, kde-format
+msgid ""
+"<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+"replace it?</qt>"
+msgstr ""
+
+#: cookies/kcookiespolicies.cpp:193
+#, fuzzy, kde-format
+#| msgid "Site Policy"
+msgctxt "@title:window"
+msgid "Duplicate Policy"
+msgstr "საიტის პოლიტიკა"
+
+#: cookies/kcookiespolicies.cpp:194
+#, kde-format
+msgid "Replace"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -2410,6 +2467,35 @@ msgstr ""
 msgid "Activate previously used tab when closing the current tab"
 msgstr "მიმდინარე ჩანართის დახურვისას წინა გამოყენებულ ჩანართზე გადართვა"
 
+#: useragent/useragent.cpp:195
+#, kde-format
+msgctxt ""
+"@title:window Title of dialog to choose name to given to new User Agent"
+msgid "Choose User Agent name"
+msgstr ""
+
+#: useragent/useragent.cpp:196
+#, kde-format
+msgctxt "Name of the new User Agent"
+msgid "User Agent name"
+msgstr ""
+
+#: useragent/useragent.cpp:256
+#, kde-format
+msgid "there are templates with empty names"
+msgstr ""
+
+#: useragent/useragent.cpp:261
+#, kde-format
+msgid "there are multiple templates with the same name"
+msgstr ""
+
+#: useragent/useragent.cpp:284
+#, kde-format
+msgctxt "The user gave a custom user agent string an empty or duplicate name"
+msgid "Invalid user agent names:"
+msgstr ""
+
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20
 #, kde-format
@@ -2664,14 +2750,6 @@ msgstr ""
 #~ msgctxt "@title:group"
 #~ msgid "Doma&in-Specific"
 #~ msgstr "მხოლოდ მითითებულ &დომენზე"
-
-#~ msgctxt "@title:window"
-#~ msgid "New Java Policy"
-#~ msgstr "Java-ის ახალი პოლიტიკა"
-
-#~ msgctxt "@title:window"
-#~ msgid "Change Java Policy"
-#~ msgstr "Java-ის პოლიტიკის შეცვლა"
 
 #~ msgid "&Java policy:"
 #~ msgstr "&Java-ის პოლიტიკა:"

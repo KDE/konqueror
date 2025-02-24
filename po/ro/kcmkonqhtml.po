@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-24 00:38+0000\n"
+"POT-Creation-Date: 2025-02-24 02:31+0000\n"
 "PO-Revision-Date: 2024-01-07 16:26+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -406,6 +406,27 @@ msgstr ""
 msgid "The custom directory to store cache"
 msgstr ""
 
+#: cookies/kcookiesmain.cpp:33
+#, fuzzy, kde-format
+#| msgid "Policy"
+msgid "&Policy"
+msgstr "Politică"
+
+#: cookies/kcookiesmain.cpp:35
+#, kde-format
+msgid "&Management"
+msgstr ""
+
+#: cookies/kcookiesmanagement.cpp:46
+#, kde-format
+msgid "End of session"
+msgstr ""
+
+#: cookies/kcookiesmanagement.cpp:51
+#, kde-format
+msgid "Yes"
+msgstr ""
+
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
 #, fuzzy, kde-format
@@ -502,6 +523,41 @@ msgstr ""
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
+msgstr ""
+
+#: cookies/kcookiespolicies.cpp:137
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Change Java Policy"
+msgctxt "@title:window"
+msgid "Change Cookie Policy"
+msgstr "Modifică politica Java"
+
+#: cookies/kcookiespolicies.cpp:156
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Java Policy"
+msgctxt "@title:window"
+msgid "New Cookie Policy"
+msgstr "Politică Java nouă"
+
+#: cookies/kcookiespolicies.cpp:189
+#, kde-format
+msgid ""
+"<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+"replace it?</qt>"
+msgstr ""
+
+#: cookies/kcookiespolicies.cpp:193
+#, fuzzy, kde-format
+#| msgid "Policy"
+msgctxt "@title:window"
+msgid "Duplicate Policy"
+msgstr "Politică"
+
+#: cookies/kcookiespolicies.cpp:194
+#, kde-format
+msgid "Replace"
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
@@ -2391,6 +2447,35 @@ msgstr ""
 msgid "Activate previously used tab when closing the current tab"
 msgstr "Activează fila utilizată anterior atunci cînd închideți fila curentă"
 
+#: useragent/useragent.cpp:195
+#, kde-format
+msgctxt ""
+"@title:window Title of dialog to choose name to given to new User Agent"
+msgid "Choose User Agent name"
+msgstr ""
+
+#: useragent/useragent.cpp:196
+#, kde-format
+msgctxt "Name of the new User Agent"
+msgid "User Agent name"
+msgstr ""
+
+#: useragent/useragent.cpp:256
+#, kde-format
+msgid "there are templates with empty names"
+msgstr ""
+
+#: useragent/useragent.cpp:261
+#, kde-format
+msgid "there are multiple templates with the same name"
+msgstr ""
+
+#: useragent/useragent.cpp:284
+#, kde-format
+msgctxt "The user gave a custom user agent string an empty or duplicate name"
+msgid "Invalid user agent names:"
+msgstr ""
+
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20
 #, kde-format
@@ -2644,14 +2729,6 @@ msgstr ""
 #~ msgctxt "@title:group"
 #~ msgid "Doma&in-Specific"
 #~ msgstr "Specific &domeniului"
-
-#~ msgctxt "@title:window"
-#~ msgid "New Java Policy"
-#~ msgstr "Politică Java nouă"
-
-#~ msgctxt "@title:window"
-#~ msgid "Change Java Policy"
-#~ msgstr "Modifică politica Java"
 
 #~ msgid "&Java policy:"
 #~ msgstr "Politică &Java:"

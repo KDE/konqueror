@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-24 00:38+0000\n"
+"POT-Creation-Date: 2025-02-24 02:31+0000\n"
 "PO-Revision-Date: 2025-02-13 11:20+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -413,6 +413,27 @@ msgstr ""
 msgid "The custom directory to store cache"
 msgstr ""
 
+#: cookies/kcookiesmain.cpp:33
+#, fuzzy, kde-format
+#| msgid "Policy"
+msgid "&Policy"
+msgstr "Правило"
+
+#: cookies/kcookiesmain.cpp:35
+#, kde-format
+msgid "&Management"
+msgstr ""
+
+#: cookies/kcookiesmanagement.cpp:46
+#, kde-format
+msgid "End of session"
+msgstr ""
+
+#: cookies/kcookiesmanagement.cpp:51
+#, kde-format
+msgid "Yes"
+msgstr ""
+
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
 #, fuzzy, kde-format
@@ -510,6 +531,41 @@ msgstr "Истекает:"
 #, kde-format
 msgid "Secure:"
 msgstr "Защита:"
+
+#: cookies/kcookiespolicies.cpp:137
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Change Plugin Policy"
+msgctxt "@title:window"
+msgid "Change Cookie Policy"
+msgstr "Изменение правила для модулей"
+
+#: cookies/kcookiespolicies.cpp:156
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Plugin Policy"
+msgctxt "@title:window"
+msgid "New Cookie Policy"
+msgstr "Создание правила для модулей"
+
+#: cookies/kcookiespolicies.cpp:189
+#, kde-format
+msgid ""
+"<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+"replace it?</qt>"
+msgstr ""
+
+#: cookies/kcookiespolicies.cpp:193
+#, fuzzy, kde-format
+#| msgid "Policy"
+msgctxt "@title:window"
+msgid "Duplicate Policy"
+msgstr "Правило"
+
+#: cookies/kcookiespolicies.cpp:194
+#, kde-format
+msgid "Replace"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -2375,6 +2431,35 @@ msgstr ""
 msgid "Activate previously used tab when closing the current tab"
 msgstr "Активировать последнюю использовавшуюся вкладку при закрытии вкладки"
 
+#: useragent/useragent.cpp:195
+#, kde-format
+msgctxt ""
+"@title:window Title of dialog to choose name to given to new User Agent"
+msgid "Choose User Agent name"
+msgstr ""
+
+#: useragent/useragent.cpp:196
+#, kde-format
+msgctxt "Name of the new User Agent"
+msgid "User Agent name"
+msgstr ""
+
+#: useragent/useragent.cpp:256
+#, kde-format
+msgid "there are templates with empty names"
+msgstr ""
+
+#: useragent/useragent.cpp:261
+#, kde-format
+msgid "there are multiple templates with the same name"
+msgstr ""
+
+#: useragent/useragent.cpp:284
+#, kde-format
+msgctxt "The user gave a custom user agent string an empty or duplicate name"
+msgid "Invalid user agent names:"
+msgstr ""
+
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20
 #, kde-format
@@ -2944,14 +3029,6 @@ msgstr ""
 
 #~ msgid "Doma&in-Specific"
 #~ msgstr "В зависимости от &домена"
-
-#~ msgctxt "@title:window"
-#~ msgid "New Plugin Policy"
-#~ msgstr "Создание правила для модулей"
-
-#~ msgctxt "@title:window"
-#~ msgid "Change Plugin Policy"
-#~ msgstr "Изменение правила для модулей"
 
 #~ msgid "&Plugin policy:"
 #~ msgstr "Правила &модулей:"
