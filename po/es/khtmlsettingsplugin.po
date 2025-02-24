@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2025-01-21 12:12+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -22,97 +22,107 @@ msgstr ""
 "X-Generator: Lokalize 24.12.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporary Download Directory"
-msgstr "Directorio de descarga temporal"
-
-#: temporarysavedir.cpp:60
-#, kde-format
-msgid "Choose Custom Download Directory..."
-msgstr "Elegir el directorio personalizado de descarga..."
-
-#: temporarysavedir.cpp:61
-#, kde-format
-msgid ""
-"Choose a custom directory to use when downloading URLs from this window, "
-"temporarily overriding the default one"
-msgstr ""
-"Elegir un directorio personalizado para usar cuando se descarguen URL de "
-"esta ventana, anulando temporalmente el predeterminado."
-
-#: temporarysavedir.cpp:66
-#, kde-format
-msgctxt "@action:inmenu stop using a temporary download directory"
-msgid "Stop Using Temporary Download Directory"
-msgstr "Dejar de usar el directorio de descarga temporal"
-
-#: temporarysavedir.cpp:67
-#, kde-format
-msgid ""
-"Use the default download directory instead of a custom one (only for this "
-"window)"
-msgstr ""
-"Usar el directorio de descarga predeterminado en lugar de uno personalizado "
-"(solo para esta ventana)"
-
-#: temporarysavedir.cpp:113
-#, kde-format
-msgid "Temporary save directory"
-msgstr "Directorio temporal para guardar"
-
-#: temporarysavedir.cpp:114
-#, kde-format
-msgid "Choose Temporary Save Directory"
-msgstr "Elegir el directorio temporal para guardar"
-
 #. i18n: ectx: Menu (tools)
-#: temporarysavedir.rc:4
+#: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "Herramien&tas"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: temporarysavedir.rc:8
+#: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Barra de herramientas extra"
 
-#~ msgid "HTML Settings"
-#~ msgstr "Preferencias de HTML"
+#: settingsplugin.cpp:45
+#, kde-format
+msgid "HTML Settings"
+msgstr "Preferencias de HTML"
 
-#~ msgid "Java&Script"
-#~ msgstr "Java&Script"
+#: settingsplugin.cpp:50
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
 
-#~ msgid "&Java"
-#~ msgstr "&Java"
+#: settingsplugin.cpp:55
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
 
-#~ msgid "&Cookies"
-#~ msgstr "&Cookies"
+#: settingsplugin.cpp:60
+#, kde-format
+msgid "&Cookies"
+msgstr "&Cookies"
 
-#~ msgid "&Plugins"
-#~ msgstr "Com&plementos"
+#: settingsplugin.cpp:65
+#, kde-format
+msgid "&Plugins"
+msgstr "Com&plementos"
 
-#~ msgid "Autoload &Images"
-#~ msgstr "Autocargar &imágenes"
+#: settingsplugin.cpp:70
+#, kde-format
+msgid "Autoload &Images"
+msgstr "Autocargar &imágenes"
 
-#~ msgid "Enable Pro&xy"
-#~ msgstr "Activar pro&xy"
+#: settingsplugin.cpp:77
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "Activar pro&xy"
 
-#~ msgid "Enable Cac&he"
-#~ msgstr "Activar memoria cac&hé"
+#: settingsplugin.cpp:82
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "Activar memoria cac&hé"
 
-#~ msgid "Cache Po&licy"
-#~ msgstr "Po&lítica de memoria caché"
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "Po&lítica de memoria caché"
 
-#~ msgid "&Keep Cache in Sync"
-#~ msgstr "&Mantener memoria caché sincronizada"
+#: settingsplugin.cpp:89
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "&Mantener memoria caché sincronizada"
 
-#~ msgid "&Use Cache if Possible"
-#~ msgstr "&Usar memoria caché si es posible"
+#: settingsplugin.cpp:90
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "&Usar memoria caché si es posible"
 
-#~ msgid "&Offline Browsing Mode"
-#~ msgstr "Modo de navegación &desconectado"
+#: settingsplugin.cpp:91
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "Modo de navegación &desconectado"
+
+#~ msgid "Temporary Download Directory"
+#~ msgstr "Directorio de descarga temporal"
+
+#~ msgid "Choose Custom Download Directory..."
+#~ msgstr "Elegir el directorio personalizado de descarga..."
+
+#~ msgid ""
+#~ "Choose a custom directory to use when downloading URLs from this window, "
+#~ "temporarily overriding the default one"
+#~ msgstr ""
+#~ "Elegir un directorio personalizado para usar cuando se descarguen URL de "
+#~ "esta ventana, anulando temporalmente el predeterminado."
+
+#~ msgctxt "@action:inmenu stop using a temporary download directory"
+#~ msgid "Stop Using Temporary Download Directory"
+#~ msgstr "Dejar de usar el directorio de descarga temporal"
+
+#~ msgid ""
+#~ "Use the default download directory instead of a custom one (only for this "
+#~ "window)"
+#~ msgstr ""
+#~ "Usar el directorio de descarga predeterminado en lugar de uno "
+#~ "personalizado (solo para esta ventana)"
+
+#~ msgid "Temporary save directory"
+#~ msgstr "Directorio temporal para guardar"
+
+#~ msgid "Choose Temporary Save Directory"
+#~ msgstr "Elegir el directorio temporal para guardar"
 
 #~ msgid ""
 #~ "The cookie setting could not be changed, because the cookie daemon could "

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2011-05-11 10:44+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -16,94 +16,78 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "X-Language: km-CM\n"
 
-#: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporary Download Directory"
-msgstr ""
-
-#: temporarysavedir.cpp:60
-#, kde-format
-msgid "Choose Custom Download Directory..."
-msgstr ""
-
-#: temporarysavedir.cpp:61
-#, kde-format
-msgid ""
-"Choose a custom directory to use when downloading URLs from this window, "
-"temporarily overriding the default one"
-msgstr ""
-
-#: temporarysavedir.cpp:66
-#, kde-format
-msgctxt "@action:inmenu stop using a temporary download directory"
-msgid "Stop Using Temporary Download Directory"
-msgstr ""
-
-#: temporarysavedir.cpp:67
-#, kde-format
-msgid ""
-"Use the default download directory instead of a custom one (only for this "
-"window)"
-msgstr ""
-
-#: temporarysavedir.cpp:113
-#, kde-format
-msgid "Temporary save directory"
-msgstr ""
-
-#: temporarysavedir.cpp:114
-#, kde-format
-msgid "Choose Temporary Save Directory"
-msgstr ""
-
 #. i18n: ectx: Menu (tools)
-#: temporarysavedir.rc:4
+#: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "ឧបករណ៍"
 
 #  i18n: file konq-simplebrowser.rc line 76
 #. i18n: ectx: ToolBar (extraToolBar)
-#: temporarysavedir.rc:8
+#: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "របារ​ឧបករណ៍​បន្ថែម"
 
-#~ msgid "HTML Settings"
-#~ msgstr "ការ​កំណត់ HTML"
+#: settingsplugin.cpp:45
+#, kde-format
+msgid "HTML Settings"
+msgstr "ការ​កំណត់ HTML"
 
-#~ msgid "Java&Script"
-#~ msgstr "Java&Script"
+#: settingsplugin.cpp:50
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
 
-#~ msgid "&Java"
-#~ msgstr "&Java"
+#: settingsplugin.cpp:55
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
 
-#~ msgid "&Cookies"
-#~ msgstr "ខូឃី"
+#: settingsplugin.cpp:60
+#, kde-format
+msgid "&Cookies"
+msgstr "ខូឃី"
 
-#~ msgid "&Plugins"
-#~ msgstr "កម្មវិធី​ជំនួយ"
+#: settingsplugin.cpp:65
+#, kde-format
+msgid "&Plugins"
+msgstr "កម្មវិធី​ជំនួយ"
 
-#~ msgid "Autoload &Images"
-#~ msgstr "ផ្ទុក​រូបភាព​ដោយ​ស្វ័យ​ប្រវត្តិ"
+#: settingsplugin.cpp:70
+#, kde-format
+msgid "Autoload &Images"
+msgstr "ផ្ទុក​រូបភាព​ដោយ​ស្វ័យ​ប្រវត្តិ"
 
-#~ msgid "Enable Pro&xy"
-#~ msgstr "បើក​ប្រូកស៊ី"
+#: settingsplugin.cpp:77
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "បើក​ប្រូកស៊ី"
 
-#~ msgid "Enable Cac&he"
-#~ msgstr "បើក​ឃ្លាំង​សម្ងាត់"
+#: settingsplugin.cpp:82
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "បើក​ឃ្លាំង​សម្ងាត់"
 
-#~ msgid "Cache Po&licy"
-#~ msgstr "គោលនយោបាយ​ឃ្លាំង​សម្ងាត់"
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "គោលនយោបាយ​ឃ្លាំង​សម្ងាត់"
 
-#~ msgid "&Keep Cache in Sync"
-#~ msgstr "ឲ្យ​ឃ្លាំង​សម្ងាត់​ធ្វើ​សមកាលកម្ម"
+#: settingsplugin.cpp:89
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "ឲ្យ​ឃ្លាំង​សម្ងាត់​ធ្វើ​សមកាលកម្ម"
 
-#~ msgid "&Use Cache if Possible"
-#~ msgstr "ប្រើ​ឃ្លាំង​សម្ងាត់​ ប្រសិន​បើ​អាច"
+#: settingsplugin.cpp:90
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "ប្រើ​ឃ្លាំង​សម្ងាត់​ ប្រសិន​បើ​អាច"
 
-#~ msgid "&Offline Browsing Mode"
-#~ msgstr "របៀប​រុករក​ក្រៅបណ្ដាញ"
+#: settingsplugin.cpp:91
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "របៀប​រុករក​ក្រៅបណ្ដាញ"
 
 #, fuzzy
 #~| msgid ""

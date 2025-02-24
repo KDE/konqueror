@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-24 00:38+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2009-01-07 12:45+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bengali INDIA <fedora-trans-bn_IN@redhat.com>\n"
@@ -360,6 +360,27 @@ msgstr ""
 msgid "The custom directory to store cache"
 msgstr ""
 
+#: cookies/kcookiesmain.cpp:33
+#, fuzzy, kde-format
+#| msgid "Policy"
+msgid "&Policy"
+msgstr "নীতি"
+
+#: cookies/kcookiesmain.cpp:35
+#, kde-format
+msgid "&Management"
+msgstr ""
+
+#: cookies/kcookiesmanagement.cpp:46
+#, kde-format
+msgid "End of session"
+msgstr ""
+
+#: cookies/kcookiesmanagement.cpp:51
+#, kde-format
+msgid "Yes"
+msgstr ""
+
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
 #, kde-format
@@ -454,6 +475,39 @@ msgstr ""
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
+msgstr ""
+
+#: cookies/kcookiespolicies.cpp:137
+#, fuzzy, kde-format
+#| msgid "Change Plugin Policy"
+msgctxt "@title:window"
+msgid "Change Cookie Policy"
+msgstr "প্লাগ-ইন সংক্রান্ত নীতি পরিবর্তন করুন"
+
+#: cookies/kcookiespolicies.cpp:156
+#, fuzzy, kde-format
+#| msgid "New Plugin Policy"
+msgctxt "@title:window"
+msgid "New Cookie Policy"
+msgstr "প্লাগ-ইন সংক্রান্ত নতুন নীতি"
+
+#: cookies/kcookiespolicies.cpp:189
+#, kde-format
+msgid ""
+"<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+"replace it?</qt>"
+msgstr ""
+
+#: cookies/kcookiespolicies.cpp:193
+#, fuzzy, kde-format
+#| msgid "Policy"
+msgctxt "@title:window"
+msgid "Duplicate Policy"
+msgstr "নীতি"
+
+#: cookies/kcookiespolicies.cpp:194
+#, kde-format
+msgid "Replace"
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
@@ -1412,12 +1466,12 @@ msgid "Export Filters"
 msgstr "ফিল্টার করার জন্য চিহ্নিত URL এক্সপ্রেশন"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:553 useragent/useragent.ui:58
+#: filteropts.cpp:563 useragent/useragent.ui:58
 #, kde-format
 msgid "Name"
 msgstr ""
 
-#: filteropts.cpp:554
+#: filteropts.cpp:564
 #, kde-format
 msgid "URL"
 msgstr ""
@@ -2132,6 +2186,35 @@ msgstr ""
 msgid "Activate previously used tab when closing the current tab"
 msgstr "বর্তমান ট্যাব বন্ধ করার সময়, পূর্বে ব্যবহৃত ট্যাবটি সক্রিয় করা হবে"
 
+#: useragent/useragent.cpp:195
+#, kde-format
+msgctxt ""
+"@title:window Title of dialog to choose name to given to new User Agent"
+msgid "Choose User Agent name"
+msgstr ""
+
+#: useragent/useragent.cpp:196
+#, kde-format
+msgctxt "Name of the new User Agent"
+msgid "User Agent name"
+msgstr ""
+
+#: useragent/useragent.cpp:256
+#, kde-format
+msgid "there are templates with empty names"
+msgstr ""
+
+#: useragent/useragent.cpp:261
+#, kde-format
+msgid "there are multiple templates with the same name"
+msgstr ""
+
+#: useragent/useragent.cpp:284
+#, kde-format
+msgctxt "The user gave a custom user agent string an empty or duplicate name"
+msgid "Invalid user agent names:"
+msgstr ""
+
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20
 #, kde-format
@@ -2453,18 +2536,6 @@ msgstr ""
 
 #~ msgid "Doma&in-Specific"
 #~ msgstr "ডোমেইনের জন্য সুনির্দিষ্ট (&i)"
-
-#, fuzzy
-#~| msgid "New Plugin Policy"
-#~ msgctxt "@title:window"
-#~ msgid "New Plugin Policy"
-#~ msgstr "প্লাগ-ইন সংক্রান্ত নতুন নীতি"
-
-#, fuzzy
-#~| msgid "Change Plugin Policy"
-#~ msgctxt "@title:window"
-#~ msgid "Change Plugin Policy"
-#~ msgstr "প্লাগ-ইন সংক্রান্ত নীতি পরিবর্তন করুন"
 
 #~ msgid "&Plugin policy:"
 #~ msgstr "প্লাগ-ইন সংক্রান্ত নীতি: (&P)"

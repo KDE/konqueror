@@ -1,7 +1,7 @@
 # Translation of khtmlsettingsplugin.po to Slovenian
 # SLOVENIAN TRANSLATION OF KHTMLSETTINGSPLUGIN.
 # Copyright (C) 2001, 2003, 2004 Free Software Foundation, Inc.
-# $Id: khtmlsettingsplugin.po 1700882 2025-01-22 01:19:26Z scripty $
+# $Id: khtmlsettingsplugin.po 1703671 2025-02-24 01:19:30Z scripty $
 # $Source$
 #
 # Gregor Rakar <gregor.rakar@kiss.uni-lj.si>, 2001.
@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2025-01-21 07:11+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -24,95 +24,105 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.5\n"
 
-#: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporary Download Directory"
-msgstr "Začasni imenik prenosov"
-
-#: temporarysavedir.cpp:60
-#, kde-format
-msgid "Choose Custom Download Directory..."
-msgstr "Izberi imenik za prenos po meri..."
-
-#: temporarysavedir.cpp:61
-#, kde-format
-msgid ""
-"Choose a custom directory to use when downloading URLs from this window, "
-"temporarily overriding the default one"
-msgstr ""
-"Izberi imenik po meri za uporabo pri prenosu URL-jev iz tega okna in začasno "
-"preglasi privzetega"
-
-#: temporarysavedir.cpp:66
-#, kde-format
-msgctxt "@action:inmenu stop using a temporary download directory"
-msgid "Stop Using Temporary Download Directory"
-msgstr "Prenehaj uporabljati začasni imenik za prenos"
-
-#: temporarysavedir.cpp:67
-#, kde-format
-msgid ""
-"Use the default download directory instead of a custom one (only for this "
-"window)"
-msgstr "Uporabi privzeti imenik za prenos namesto po meri (samo za to okno)"
-
-#: temporarysavedir.cpp:113
-#, kde-format
-msgid "Temporary save directory"
-msgstr "Imenik začasnega shranjevanja"
-
-#: temporarysavedir.cpp:114
-#, kde-format
-msgid "Choose Temporary Save Directory"
-msgstr "Izberi imenik začasnega shranjevanja"
-
 #. i18n: ectx: Menu (tools)
-#: temporarysavedir.rc:4
+#: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "Orodja"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: temporarysavedir.rc:8
+#: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Dodatna orodna vrstica"
 
-#~ msgid "HTML Settings"
-#~ msgstr "Nastavitve HTML"
+#: settingsplugin.cpp:45
+#, kde-format
+msgid "HTML Settings"
+msgstr "Nastavitve HTML"
 
-#~ msgid "Java&Script"
-#~ msgstr "Java&Script"
+#: settingsplugin.cpp:50
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
 
-#~ msgid "&Java"
-#~ msgstr "&Java"
+#: settingsplugin.cpp:55
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
 
-#~ msgid "&Cookies"
-#~ msgstr "Piškotki"
+#: settingsplugin.cpp:60
+#, kde-format
+msgid "&Cookies"
+msgstr "Piškotki"
 
-#~ msgid "&Plugins"
-#~ msgstr "Vstavki"
+#: settingsplugin.cpp:65
+#, kde-format
+msgid "&Plugins"
+msgstr "Vstavki"
 
-#~ msgid "Autoload &Images"
-#~ msgstr "Samodejno naloži slike"
+#: settingsplugin.cpp:70
+#, kde-format
+msgid "Autoload &Images"
+msgstr "Samodejno naloži slike"
 
-#~ msgid "Enable Pro&xy"
-#~ msgstr "Omogoči posredniški strežnik"
+#: settingsplugin.cpp:77
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "Omogoči posredniški strežnik"
 
-#~ msgid "Enable Cac&he"
-#~ msgstr "Omogoči predpomnilnik"
+#: settingsplugin.cpp:82
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "Omogoči predpomnilnik"
 
-#~ msgid "Cache Po&licy"
-#~ msgstr "Pravi&lnik za predpomnilnik"
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "Pravi&lnik za predpomnilnik"
 
-#~ msgid "&Keep Cache in Sync"
-#~ msgstr "Usklajuj predpomnilnik"
+#: settingsplugin.cpp:89
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "Usklajuj predpomnilnik"
 
-#~ msgid "&Use Cache if Possible"
-#~ msgstr "&Uporabi predpomnilnik, če je mogoče"
+#: settingsplugin.cpp:90
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "&Uporabi predpomnilnik, če je mogoče"
 
-#~ msgid "&Offline Browsing Mode"
-#~ msgstr "Način brskanja brez povezave"
+#: settingsplugin.cpp:91
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "Način brskanja brez povezave"
+
+#~ msgid "Temporary Download Directory"
+#~ msgstr "Začasni imenik prenosov"
+
+#~ msgid "Choose Custom Download Directory..."
+#~ msgstr "Izberi imenik za prenos po meri..."
+
+#~ msgid ""
+#~ "Choose a custom directory to use when downloading URLs from this window, "
+#~ "temporarily overriding the default one"
+#~ msgstr ""
+#~ "Izberi imenik po meri za uporabo pri prenosu URL-jev iz tega okna in "
+#~ "začasno preglasi privzetega"
+
+#~ msgctxt "@action:inmenu stop using a temporary download directory"
+#~ msgid "Stop Using Temporary Download Directory"
+#~ msgstr "Prenehaj uporabljati začasni imenik za prenos"
+
+#~ msgid ""
+#~ "Use the default download directory instead of a custom one (only for this "
+#~ "window)"
+#~ msgstr "Uporabi privzeti imenik za prenos namesto po meri (samo za to okno)"
+
+#~ msgid "Temporary save directory"
+#~ msgstr "Imenik začasnega shranjevanja"
+
+#~ msgid "Choose Temporary Save Directory"
+#~ msgstr "Izberi imenik začasnega shranjevanja"
 
 #~ msgid ""
 #~ "The cookie setting could not be changed, because the cookie daemon could "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2011-05-25 22:08+0200\n"
 "Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -18,93 +18,77 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.2\n"
 
-#: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporary Download Directory"
-msgstr ""
-
-#: temporarysavedir.cpp:60
-#, kde-format
-msgid "Choose Custom Download Directory..."
-msgstr ""
-
-#: temporarysavedir.cpp:61
-#, kde-format
-msgid ""
-"Choose a custom directory to use when downloading URLs from this window, "
-"temporarily overriding the default one"
-msgstr ""
-
-#: temporarysavedir.cpp:66
-#, kde-format
-msgctxt "@action:inmenu stop using a temporary download directory"
-msgid "Stop Using Temporary Download Directory"
-msgstr ""
-
-#: temporarysavedir.cpp:67
-#, kde-format
-msgid ""
-"Use the default download directory instead of a custom one (only for this "
-"window)"
-msgstr ""
-
-#: temporarysavedir.cpp:113
-#, kde-format
-msgid "Temporary save directory"
-msgstr ""
-
-#: temporarysavedir.cpp:114
-#, kde-format
-msgid "Choose Temporary Save Directory"
-msgstr ""
-
 #. i18n: ectx: Menu (tools)
-#: temporarysavedir.rc:4
+#: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "&Eszközök"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: temporarysavedir.rc:8
+#: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Extra eszköztár"
 
-#~ msgid "HTML Settings"
-#~ msgstr "HTML-beállítások"
+#: settingsplugin.cpp:45
+#, kde-format
+msgid "HTML Settings"
+msgstr "HTML-beállítások"
 
-#~ msgid "Java&Script"
-#~ msgstr "Java&Script"
+#: settingsplugin.cpp:50
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
 
-#~ msgid "&Java"
-#~ msgstr "&Java"
+#: settingsplugin.cpp:55
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
 
-#~ msgid "&Cookies"
-#~ msgstr "&Sütik"
+#: settingsplugin.cpp:60
+#, kde-format
+msgid "&Cookies"
+msgstr "&Sütik"
 
-#~ msgid "&Plugins"
-#~ msgstr "&Bővítőmodulok"
+#: settingsplugin.cpp:65
+#, kde-format
+msgid "&Plugins"
+msgstr "&Bővítőmodulok"
 
-#~ msgid "Autoload &Images"
-#~ msgstr "A képek automatikus be&töltése"
+#: settingsplugin.cpp:70
+#, kde-format
+msgid "Autoload &Images"
+msgstr "A képek automatikus be&töltése"
 
-#~ msgid "Enable Pro&xy"
-#~ msgstr "A pro&xy-kezelés engedélyezése"
+#: settingsplugin.cpp:77
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "A pro&xy-kezelés engedélyezése"
 
-#~ msgid "Enable Cac&he"
-#~ msgstr "A &gyorsítótár bekapcsolása"
+#: settingsplugin.cpp:82
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "A &gyorsítótár bekapcsolása"
 
-#~ msgid "Cache Po&licy"
-#~ msgstr "A gy&orsítótárkezelés beállításai"
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "A gy&orsítótárkezelés beállításai"
 
-#~ msgid "&Keep Cache in Sync"
-#~ msgstr "A gy&orsítótár folyamatos frissítése"
+#: settingsplugin.cpp:89
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "A gy&orsítótár folyamatos frissítése"
 
-#~ msgid "&Use Cache if Possible"
-#~ msgstr "A gyorsítótár &használata, ha lehetséges"
+#: settingsplugin.cpp:90
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "A gyorsítótár &használata, ha lehetséges"
 
-#~ msgid "&Offline Browsing Mode"
-#~ msgstr "Ka&pcsolat nélküli mód"
+#: settingsplugin.cpp:91
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "Ka&pcsolat nélküli mód"
 
 #, fuzzy
 #~| msgid ""

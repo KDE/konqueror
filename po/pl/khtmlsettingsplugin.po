@@ -1,5 +1,5 @@
 # translation of khtmlsettingsplugin.po to
-# Version: $Revision: 1701155 $
+# Version: $Revision: 1703671 $
 #
 # Copyright (C) 2002, 2004, 2005, 2007 Free Software Foundation, Inc.
 # Marcin Giedz <mgiedz@elka.pw.edu.pl>, 2002.
@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2025-01-25 12:00+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -22,96 +22,107 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 24.12.1\n"
 
-#: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporary Download Directory"
-msgstr "Tymczasowy katalog do pobierania"
-
-#: temporarysavedir.cpp:60
-#, kde-format
-msgid "Choose Custom Download Directory..."
-msgstr "Wybierz własny katalog do pobierania…"
-
-#: temporarysavedir.cpp:61
-#, kde-format
-msgid ""
-"Choose a custom directory to use when downloading URLs from this window, "
-"temporarily overriding the default one"
-msgstr ""
-"Wybierz własny katalog do pobierania adresów URL z tego okna, tymczasowo "
-"zastępując ten domyślny"
-
-#: temporarysavedir.cpp:66
-#, kde-format
-msgctxt "@action:inmenu stop using a temporary download directory"
-msgid "Stop Using Temporary Download Directory"
-msgstr "Przestań używać tymczasowego katalogu do pobierania"
-
-#: temporarysavedir.cpp:67
-#, kde-format
-msgid ""
-"Use the default download directory instead of a custom one (only for this "
-"window)"
-msgstr ""
-"Użyj domyślnego katalogu do pobierania zamiast własnego (tylko dla tego okna)"
-
-#: temporarysavedir.cpp:113
-#, kde-format
-msgid "Temporary save directory"
-msgstr "Tymczasowy katalog do zapisywania"
-
-#: temporarysavedir.cpp:114
-#, kde-format
-msgid "Choose Temporary Save Directory"
-msgstr "Wybierz tymczasowy katalog do zapisywania"
-
 #. i18n: ectx: Menu (tools)
-#: temporarysavedir.rc:4
+#: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "&Narzędzia"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: temporarysavedir.rc:8
+#: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Dodatkowy pasek"
 
-#~ msgid "HTML Settings"
-#~ msgstr "Ustawienia HTML"
+#: settingsplugin.cpp:45
+#, kde-format
+msgid "HTML Settings"
+msgstr "Ustawienia HTML"
 
-#~ msgid "Java&Script"
-#~ msgstr "Java&Script"
+#: settingsplugin.cpp:50
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
 
-#~ msgid "&Java"
-#~ msgstr "&Java"
+#: settingsplugin.cpp:55
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
 
-#~ msgid "&Cookies"
-#~ msgstr "&Ciasteczka"
+#: settingsplugin.cpp:60
+#, kde-format
+msgid "&Cookies"
+msgstr "&Ciasteczka"
 
-#~ msgid "&Plugins"
-#~ msgstr "&Wtyczki"
+#: settingsplugin.cpp:65
+#, kde-format
+msgid "&Plugins"
+msgstr "&Wtyczki"
 
-#~ msgid "Autoload &Images"
-#~ msgstr "Automatyczne wczytywanie &obrazków"
+#: settingsplugin.cpp:70
+#, kde-format
+msgid "Autoload &Images"
+msgstr "Automatyczne wczytywanie &obrazków"
 
-#~ msgid "Enable Pro&xy"
-#~ msgstr "Włącz &pośrednika"
+#: settingsplugin.cpp:77
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "Włącz &pośrednika"
 
-#~ msgid "Enable Cac&he"
-#~ msgstr "&Włącz pamięć"
+#: settingsplugin.cpp:82
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "&Włącz pamięć"
 
-#~ msgid "Cache Po&licy"
-#~ msgstr "&Zasady pamięci"
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "&Zasady pamięci"
 
-#~ msgid "&Keep Cache in Sync"
-#~ msgstr "&Utrzymuj zsynchronizowaną pamięć podręczną"
+#: settingsplugin.cpp:89
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "&Utrzymuj zsynchronizowaną pamięć podręczną"
 
-#~ msgid "&Use Cache if Possible"
-#~ msgstr "&Użyj pamięci podręcznej jeśli możliwe"
+#: settingsplugin.cpp:90
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "&Użyj pamięci podręcznej jeśli możliwe"
 
-#~ msgid "&Offline Browsing Mode"
-#~ msgstr "Tryb przeglądania &offline"
+#: settingsplugin.cpp:91
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "Tryb przeglądania &offline"
+
+#~ msgid "Temporary Download Directory"
+#~ msgstr "Tymczasowy katalog do pobierania"
+
+#~ msgid "Choose Custom Download Directory..."
+#~ msgstr "Wybierz własny katalog do pobierania…"
+
+#~ msgid ""
+#~ "Choose a custom directory to use when downloading URLs from this window, "
+#~ "temporarily overriding the default one"
+#~ msgstr ""
+#~ "Wybierz własny katalog do pobierania adresów URL z tego okna, tymczasowo "
+#~ "zastępując ten domyślny"
+
+#~ msgctxt "@action:inmenu stop using a temporary download directory"
+#~ msgid "Stop Using Temporary Download Directory"
+#~ msgstr "Przestań używać tymczasowego katalogu do pobierania"
+
+#~ msgid ""
+#~ "Use the default download directory instead of a custom one (only for this "
+#~ "window)"
+#~ msgstr ""
+#~ "Użyj domyślnego katalogu do pobierania zamiast własnego (tylko dla tego "
+#~ "okna)"
+
+#~ msgid "Temporary save directory"
+#~ msgstr "Tymczasowy katalog do zapisywania"
+
+#~ msgid "Choose Temporary Save Directory"
+#~ msgstr "Wybierz tymczasowy katalog do zapisywania"
 
 #~ msgid ""
 #~ "The cookie setting could not be changed, because the cookie daemon could "

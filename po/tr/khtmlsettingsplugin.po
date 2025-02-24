@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2025-01-21 10:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -24,97 +24,107 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 25.03.70\n"
 
-#: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporary Download Directory"
-msgstr "Geçici İndirme Dizini"
-
-#: temporarysavedir.cpp:60
-#, kde-format
-msgid "Choose Custom Download Directory..."
-msgstr "Geçici İndirme Dizini Seç…"
-
-#: temporarysavedir.cpp:61
-#, kde-format
-msgid ""
-"Choose a custom directory to use when downloading URLs from this window, "
-"temporarily overriding the default one"
-msgstr ""
-"Bu pencereden URL’ler indirirken, öntanımlı indirme dizinini geçersiz kılan "
-"bir geçici indirme dizini seçin."
-
-#: temporarysavedir.cpp:66
-#, kde-format
-msgctxt "@action:inmenu stop using a temporary download directory"
-msgid "Stop Using Temporary Download Directory"
-msgstr "Geçici İndirme Dizini Kullanmayı Durdur"
-
-#: temporarysavedir.cpp:67
-#, kde-format
-msgid ""
-"Use the default download directory instead of a custom one (only for this "
-"window)"
-msgstr ""
-"Geçici bir indirme dizini yerine öntanımlı indirme dizinini kullanın "
-"(yalnızca bu pencere için)."
-
-#: temporarysavedir.cpp:113
-#, kde-format
-msgid "Temporary save directory"
-msgstr "Geçici indirme dizini"
-
-#: temporarysavedir.cpp:114
-#, kde-format
-msgid "Choose Temporary Save Directory"
-msgstr "Geçici İndirme Dizini Seç"
-
 #. i18n: ectx: Menu (tools)
-#: temporarysavedir.rc:4
+#: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "&Araçlar"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: temporarysavedir.rc:8
+#: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Ek Araç Çubuğu"
 
-#~ msgid "HTML Settings"
-#~ msgstr "HTML Ayarları"
+#: settingsplugin.cpp:45
+#, kde-format
+msgid "HTML Settings"
+msgstr "HTML Ayarları"
 
-#~ msgid "Java&Script"
-#~ msgstr "Java&Script"
+#: settingsplugin.cpp:50
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
 
-#~ msgid "&Java"
-#~ msgstr "&Java"
+#: settingsplugin.cpp:55
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
 
-#~ msgid "&Cookies"
-#~ msgstr "Ç&erezler"
+#: settingsplugin.cpp:60
+#, kde-format
+msgid "&Cookies"
+msgstr "Ç&erezler"
 
-#~ msgid "&Plugins"
-#~ msgstr "&Eklentiler"
+#: settingsplugin.cpp:65
+#, kde-format
+msgid "&Plugins"
+msgstr "&Eklentiler"
 
-#~ msgid "Autoload &Images"
-#~ msgstr "Gö&rselleri Otomatik Yükle"
+#: settingsplugin.cpp:70
+#, kde-format
+msgid "Autoload &Images"
+msgstr "Gö&rselleri Otomatik Yükle"
 
-#~ msgid "Enable Pro&xy"
-#~ msgstr "&Vekil Sunucuyu Etkinleştir"
+#: settingsplugin.cpp:77
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "&Vekil Sunucuyu Etkinleştir"
 
-#~ msgid "Enable Cac&he"
-#~ msgstr "Ön&belleği Etkinleştir"
+#: settingsplugin.cpp:82
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "Ön&belleği Etkinleştir"
 
-#~ msgid "Cache Po&licy"
-#~ msgstr "Önbellek K&ullanımı"
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "Önbellek K&ullanımı"
 
-#~ msgid "&Keep Cache in Sync"
-#~ msgstr "Ö&nbelleği Her Zaman Eşzamanla"
+#: settingsplugin.cpp:89
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "Ö&nbelleği Her Zaman Eşzamanla"
 
-#~ msgid "&Use Cache if Possible"
-#~ msgstr "Mümkünse Önbe&llek Kullan"
+#: settingsplugin.cpp:90
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "Mümkünse Önbe&llek Kullan"
 
-#~ msgid "&Offline Browsing Mode"
-#~ msgstr "&Çevrimdışı Çalışma Kipi"
+#: settingsplugin.cpp:91
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "&Çevrimdışı Çalışma Kipi"
+
+#~ msgid "Temporary Download Directory"
+#~ msgstr "Geçici İndirme Dizini"
+
+#~ msgid "Choose Custom Download Directory..."
+#~ msgstr "Geçici İndirme Dizini Seç…"
+
+#~ msgid ""
+#~ "Choose a custom directory to use when downloading URLs from this window, "
+#~ "temporarily overriding the default one"
+#~ msgstr ""
+#~ "Bu pencereden URL’ler indirirken, öntanımlı indirme dizinini geçersiz "
+#~ "kılan bir geçici indirme dizini seçin."
+
+#~ msgctxt "@action:inmenu stop using a temporary download directory"
+#~ msgid "Stop Using Temporary Download Directory"
+#~ msgstr "Geçici İndirme Dizini Kullanmayı Durdur"
+
+#~ msgid ""
+#~ "Use the default download directory instead of a custom one (only for this "
+#~ "window)"
+#~ msgstr ""
+#~ "Geçici bir indirme dizini yerine öntanımlı indirme dizinini kullanın "
+#~ "(yalnızca bu pencere için)."
+
+#~ msgid "Temporary save directory"
+#~ msgstr "Geçici indirme dizini"
+
+#~ msgid "Choose Temporary Save Directory"
+#~ msgstr "Geçici İndirme Dizini Seç"
 
 #~ msgid ""
 #~ "The cookie setting could not be changed, because the cookie daemon could "

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2025-01-21 20:25+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -20,97 +20,107 @@ msgstr ""
 "X-Generator: Lokalize 24.12.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporary Download Directory"
-msgstr "Tillfällig nerladdningskatalog"
-
-#: temporarysavedir.cpp:60
-#, kde-format
-msgid "Choose Custom Download Directory..."
-msgstr "Välj en egen nerladdningskatalog..."
-
-#: temporarysavedir.cpp:61
-#, kde-format
-msgid ""
-"Choose a custom directory to use when downloading URLs from this window, "
-"temporarily overriding the default one"
-msgstr ""
-"Välj en egen katalog att använda när webbadresser laddas ner från det här "
-"fönstret, som tillfälligt överskrider den förvalda"
-
-#: temporarysavedir.cpp:66
-#, kde-format
-msgctxt "@action:inmenu stop using a temporary download directory"
-msgid "Stop Using Temporary Download Directory"
-msgstr "Sluta använda tillfällig nerladdningskatalog"
-
-#: temporarysavedir.cpp:67
-#, kde-format
-msgid ""
-"Use the default download directory instead of a custom one (only for this "
-"window)"
-msgstr ""
-"Använd den normala nerladdningskatalogen istället för en egen (bara för det "
-"här fönstret)"
-
-#: temporarysavedir.cpp:113
-#, kde-format
-msgid "Temporary save directory"
-msgstr "Tillfällig katalog att spara i"
-
-#: temporarysavedir.cpp:114
-#, kde-format
-msgid "Choose Temporary Save Directory"
-msgstr "Välj tillfällig katalog att spara i"
-
 #. i18n: ectx: Menu (tools)
-#: temporarysavedir.rc:4
+#: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "Verk&tyg"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: temporarysavedir.rc:8
+#: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Extra verktygsrad"
 
-#~ msgid "HTML Settings"
-#~ msgstr "HTML-inställningar"
+#: settingsplugin.cpp:45
+#, kde-format
+msgid "HTML Settings"
+msgstr "HTML-inställningar"
 
-#~ msgid "Java&Script"
-#~ msgstr "Java&skript"
+#: settingsplugin.cpp:50
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&skript"
 
-#~ msgid "&Java"
-#~ msgstr "&Java"
+#: settingsplugin.cpp:55
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
 
-#~ msgid "&Cookies"
-#~ msgstr "&Kakor"
+#: settingsplugin.cpp:60
+#, kde-format
+msgid "&Cookies"
+msgstr "&Kakor"
 
-#~ msgid "&Plugins"
-#~ msgstr "Insticks&program"
+#: settingsplugin.cpp:65
+#, kde-format
+msgid "&Plugins"
+msgstr "Insticks&program"
 
-#~ msgid "Autoload &Images"
-#~ msgstr "Ladda b&ilder automatiskt"
+#: settingsplugin.cpp:70
+#, kde-format
+msgid "Autoload &Images"
+msgstr "Ladda b&ilder automatiskt"
 
-#~ msgid "Enable Pro&xy"
-#~ msgstr "Aktivera pro&xy"
+#: settingsplugin.cpp:77
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "Aktivera pro&xy"
 
-#~ msgid "Enable Cac&he"
-#~ msgstr "Aktivera cac&he"
+#: settingsplugin.cpp:82
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "Aktivera cac&he"
 
-#~ msgid "Cache Po&licy"
-#~ msgstr "Cachepo&licy"
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "Cachepo&licy"
 
-#~ msgid "&Keep Cache in Sync"
-#~ msgstr "Håll cachen syn&kroniserad"
+#: settingsplugin.cpp:89
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "Håll cachen syn&kroniserad"
 
-#~ msgid "&Use Cache if Possible"
-#~ msgstr "&Använd cache om möjligt"
+#: settingsplugin.cpp:90
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "&Använd cache om möjligt"
 
-#~ msgid "&Offline Browsing Mode"
-#~ msgstr "Nedk&opplat webbläsningsläge"
+#: settingsplugin.cpp:91
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "Nedk&opplat webbläsningsläge"
+
+#~ msgid "Temporary Download Directory"
+#~ msgstr "Tillfällig nerladdningskatalog"
+
+#~ msgid "Choose Custom Download Directory..."
+#~ msgstr "Välj en egen nerladdningskatalog..."
+
+#~ msgid ""
+#~ "Choose a custom directory to use when downloading URLs from this window, "
+#~ "temporarily overriding the default one"
+#~ msgstr ""
+#~ "Välj en egen katalog att använda när webbadresser laddas ner från det här "
+#~ "fönstret, som tillfälligt överskrider den förvalda"
+
+#~ msgctxt "@action:inmenu stop using a temporary download directory"
+#~ msgid "Stop Using Temporary Download Directory"
+#~ msgstr "Sluta använda tillfällig nerladdningskatalog"
+
+#~ msgid ""
+#~ "Use the default download directory instead of a custom one (only for this "
+#~ "window)"
+#~ msgstr ""
+#~ "Använd den normala nerladdningskatalogen istället för en egen (bara för "
+#~ "det här fönstret)"
+
+#~ msgid "Temporary save directory"
+#~ msgstr "Tillfällig katalog att spara i"
+
+#~ msgid "Choose Temporary Save Directory"
+#~ msgstr "Välj tillfällig katalog att spara i"
 
 #~ msgid ""
 #~ "The cookie setting could not be changed, because the cookie daemon could "

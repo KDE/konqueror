@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2025-01-27 16:27+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -21,97 +21,107 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
-#: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporary Download Directory"
-msgstr "Pagaidu lejupielāžu mape"
-
-#: temporarysavedir.cpp:60
-#, kde-format
-msgid "Choose Custom Download Directory..."
-msgstr "Izvēlieties pagaidu lejupielāžu mapi..."
-
-#: temporarysavedir.cpp:61
-#, kde-format
-msgid ""
-"Choose a custom directory to use when downloading URLs from this window, "
-"temporarily overriding the default one"
-msgstr ""
-"Izvēlieties pielāgotu mapi URL lejupielādei no šī loga, kas uz laiku "
-"pārrakstīs noklusējuma vietu"
-
-#: temporarysavedir.cpp:66
-#, kde-format
-msgctxt "@action:inmenu stop using a temporary download directory"
-msgid "Stop Using Temporary Download Directory"
-msgstr "Beigt izmantot pagaidu lejupielādes mapi"
-
-#: temporarysavedir.cpp:67
-#, kde-format
-msgid ""
-"Use the default download directory instead of a custom one (only for this "
-"window)"
-msgstr ""
-"Izmantot noklusējuma lejupielāžu mapi pielāgotās mapes vietā (tikai šim "
-"logam)."
-
-#: temporarysavedir.cpp:113
-#, kde-format
-msgid "Temporary save directory"
-msgstr "Pagaidu saglabāšanas mape"
-
-#: temporarysavedir.cpp:114
-#, kde-format
-msgid "Choose Temporary Save Directory"
-msgstr "Izvēlieties pagaidu saglabāšanas mapi"
-
 #. i18n: ectx: Menu (tools)
-#: temporarysavedir.rc:4
+#: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "&Rīki"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: temporarysavedir.rc:8
+#: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Papildu rīkjosla"
 
-#~ msgid "HTML Settings"
-#~ msgstr "HTML iestatījumi"
+#: settingsplugin.cpp:45
+#, kde-format
+msgid "HTML Settings"
+msgstr "HTML iestatījumi"
 
-#~ msgid "Java&Script"
-#~ msgstr "Java&Script"
+#: settingsplugin.cpp:50
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
 
-#~ msgid "&Java"
-#~ msgstr "&Java"
+#: settingsplugin.cpp:55
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
 
-#~ msgid "&Cookies"
-#~ msgstr "&Sīkdatnes"
+#: settingsplugin.cpp:60
+#, kde-format
+msgid "&Cookies"
+msgstr "&Sīkdatnes"
 
-#~ msgid "&Plugins"
-#~ msgstr "S&praudņi"
+#: settingsplugin.cpp:65
+#, kde-format
+msgid "&Plugins"
+msgstr "S&praudņi"
 
-#~ msgid "Autoload &Images"
-#~ msgstr "&Automātiski ielādēt attēlus"
+#: settingsplugin.cpp:70
+#, kde-format
+msgid "Autoload &Images"
+msgstr "&Automātiski ielādēt attēlus"
 
-#~ msgid "Enable Pro&xy"
-#~ msgstr "Ieslēgt s&tarpniekserveri"
+#: settingsplugin.cpp:77
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "Ieslēgt s&tarpniekserveri"
 
-#~ msgid "Enable Cac&he"
-#~ msgstr "Ieslēgt k&ešatmiņu"
+#: settingsplugin.cpp:82
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "Ieslēgt k&ešatmiņu"
 
-#~ msgid "Cache Po&licy"
-#~ msgstr "Kešatmiņas no&teikumi"
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "Kešatmiņas no&teikumi"
 
-#~ msgid "&Keep Cache in Sync"
-#~ msgstr "Turēt &kešatmiņu sinhronizētu"
+#: settingsplugin.cpp:89
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "Turēt &kešatmiņu sinhronizētu"
 
-#~ msgid "&Use Cache if Possible"
-#~ msgstr "&Lietot kešatmiņu, ja iespējams"
+#: settingsplugin.cpp:90
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "&Lietot kešatmiņu, ja iespējams"
 
-#~ msgid "&Offline Browsing Mode"
-#~ msgstr "&Nesaistes pārlūkošanas režīms"
+#: settingsplugin.cpp:91
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "&Nesaistes pārlūkošanas režīms"
+
+#~ msgid "Temporary Download Directory"
+#~ msgstr "Pagaidu lejupielāžu mape"
+
+#~ msgid "Choose Custom Download Directory..."
+#~ msgstr "Izvēlieties pagaidu lejupielāžu mapi..."
+
+#~ msgid ""
+#~ "Choose a custom directory to use when downloading URLs from this window, "
+#~ "temporarily overriding the default one"
+#~ msgstr ""
+#~ "Izvēlieties pielāgotu mapi URL lejupielādei no šī loga, kas uz laiku "
+#~ "pārrakstīs noklusējuma vietu"
+
+#~ msgctxt "@action:inmenu stop using a temporary download directory"
+#~ msgid "Stop Using Temporary Download Directory"
+#~ msgstr "Beigt izmantot pagaidu lejupielādes mapi"
+
+#~ msgid ""
+#~ "Use the default download directory instead of a custom one (only for this "
+#~ "window)"
+#~ msgstr ""
+#~ "Izmantot noklusējuma lejupielāžu mapi pielāgotās mapes vietā (tikai šim "
+#~ "logam)."
+
+#~ msgid "Temporary save directory"
+#~ msgstr "Pagaidu saglabāšanas mape"
+
+#~ msgid "Choose Temporary Save Directory"
+#~ msgstr "Izvēlieties pagaidu saglabāšanas mapi"
 
 #~ msgid ""
 #~ "The cookie setting could not be changed, because the cookie daemon could "

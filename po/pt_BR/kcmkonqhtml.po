@@ -14,19 +14,20 @@
 # Marcus Vinícius de Andrade Gama <marcus.gama@gmail.com>, 2010, 2012.
 # Aracele Torres <araceletorres@gmail.com>, 2010.
 # Geraldo Simiao <geraldosimiao@fedoraproject.org>, 2023.
+# SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-24 00:38+0000\n"
-"PO-Revision-Date: 2023-07-29 13:43-0300\n"
-"Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
+"PO-Revision-Date: 2025-02-23 19:21-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 24.12.2\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: appearance.cpp:39
@@ -411,6 +412,27 @@ msgstr "&Pasta do cache"
 msgid "The custom directory to store cache"
 msgstr "A pasta personalizada para armazenar o cache"
 
+#: cookies/kcookiesmain.cpp:33
+#, fuzzy, kde-format
+#| msgid "Policy"
+msgid "&Policy"
+msgstr "Política"
+
+#: cookies/kcookiesmain.cpp:35
+#, kde-format
+msgid "&Management"
+msgstr ""
+
+#: cookies/kcookiesmanagement.cpp:46
+#, kde-format
+msgid "End of session"
+msgstr ""
+
+#: cookies/kcookiesmanagement.cpp:51
+#, kde-format
+msgid "Yes"
+msgstr ""
+
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
 #, fuzzy, kde-format
@@ -507,6 +529,41 @@ msgstr ""
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
+msgstr ""
+
+#: cookies/kcookiespolicies.cpp:137
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Change Plugin Policy"
+msgctxt "@title:window"
+msgid "Change Cookie Policy"
+msgstr "Alterar política de plugins"
+
+#: cookies/kcookiespolicies.cpp:156
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Plugin Policy"
+msgctxt "@title:window"
+msgid "New Cookie Policy"
+msgstr "Nova política de plugins"
+
+#: cookies/kcookiespolicies.cpp:189
+#, kde-format
+msgid ""
+"<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+"replace it?</qt>"
+msgstr ""
+
+#: cookies/kcookiespolicies.cpp:193
+#, fuzzy, kde-format
+#| msgid "Policy"
+msgctxt "@title:window"
+msgid "Duplicate Policy"
+msgstr "Política"
+
+#: cookies/kcookiespolicies.cpp:194
+#, kde-format
+msgid "Replace"
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
@@ -1560,12 +1617,12 @@ msgid "Export Filters"
 msgstr "Exportar filtros"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:553 useragent/useragent.ui:58
+#: filteropts.cpp:563 useragent/useragent.ui:58
 #, kde-format
 msgid "Name"
 msgstr "Nome"
 
-#: filteropts.cpp:554
+#: filteropts.cpp:564
 #, kde-format
 msgid "URL"
 msgstr "URL"
@@ -1942,12 +1999,12 @@ msgstr "Permitir"
 #: jspolicies.cpp:177
 #, kde-format
 msgid "Accept all popup window requests."
-msgstr "Aceita todas as requisições de janelas popup."
+msgstr "Aceita todas as requisições de janelas pop-up."
 
 #: jspolicies.cpp:183
 #, kde-format
 msgid "Prompt every time a popup window is requested."
-msgstr "Pergunta toda vez que uma janela popup é requisitada."
+msgstr "Pergunta toda vez que uma janela pop-up é requisitada."
 
 #: jspolicies.cpp:188
 #, kde-format
@@ -1957,7 +2014,7 @@ msgstr "Recusar"
 #: jspolicies.cpp:189
 #, kde-format
 msgid "Reject all popup window requests."
-msgstr "Rejeita todas as requisições de janelas popup."
+msgstr "Rejeita todas as requisições de janelas pop-up."
 
 #: jspolicies.cpp:194
 #, kde-format
@@ -2239,8 +2296,8 @@ msgid ""
 "Whether or not JavaScript popups if allowed shall open in a new tab or in a "
 "new window."
 msgstr ""
-"Permite ou não que janelas JavaScript (popups) abram em uma nova aba, em vez "
-"de abrirem em uma nova janela."
+"Permite ou não que janelas JavaScript (pop-ups) abram em uma nova aba, em "
+"vez de abrirem em uma nova janela."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
 #: tabs/tabsoptions.ui:112
@@ -2373,6 +2430,35 @@ msgstr ""
 #, kde-format
 msgid "Activate previously used tab when closing the current tab"
 msgstr "Ativar a aba usada anteriormente ao fechar a aba atual"
+
+#: useragent/useragent.cpp:195
+#, kde-format
+msgctxt ""
+"@title:window Title of dialog to choose name to given to new User Agent"
+msgid "Choose User Agent name"
+msgstr ""
+
+#: useragent/useragent.cpp:196
+#, kde-format
+msgctxt "Name of the new User Agent"
+msgid "User Agent name"
+msgstr ""
+
+#: useragent/useragent.cpp:256
+#, kde-format
+msgid "there are templates with empty names"
+msgstr ""
+
+#: useragent/useragent.cpp:261
+#, kde-format
+msgid "there are multiple templates with the same name"
+msgstr ""
+
+#: useragent/useragent.cpp:284
+#, kde-format
+msgctxt "The user gave a custom user agent string an empty or duplicate name"
+msgid "Invalid user agent names:"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20
@@ -2966,14 +3052,6 @@ msgstr ""
 
 #~ msgid "Doma&in-Specific"
 #~ msgstr "E&specífico do domínio"
-
-#~ msgctxt "@title:window"
-#~ msgid "New Plugin Policy"
-#~ msgstr "Nova política de plugins"
-
-#~ msgctxt "@title:window"
-#~ msgid "Change Plugin Policy"
-#~ msgstr "Alterar política de plugins"
 
 #~ msgid "&Plugin policy:"
 #~ msgstr "&Política de plugin:"

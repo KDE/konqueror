@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-24 00:38+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2025-02-21 21:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -409,6 +409,28 @@ msgstr "Önbellek &dizini"
 msgid "The custom directory to store cache"
 msgstr "Önbelleği depolamak için kullanılacak özel dizin"
 
+#: cookies/kcookiesmain.cpp:33
+#, fuzzy, kde-format
+#| msgid "Policy"
+msgid "&Policy"
+msgstr "Davranış"
+
+#: cookies/kcookiesmain.cpp:35
+#, kde-format
+msgid "&Management"
+msgstr ""
+
+#: cookies/kcookiesmanagement.cpp:46
+#, fuzzy, kde-format
+#| msgid "Accept until end of session"
+msgid "End of session"
+msgstr "Oturumun sonuna dek kabul et"
+
+#: cookies/kcookiesmanagement.cpp:51
+#, kde-format
+msgid "Yes"
+msgstr ""
+
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
 #, kde-format
@@ -500,6 +522,41 @@ msgstr "Son kullanım:"
 #, kde-format
 msgid "Secure:"
 msgstr "Güvenli:"
+
+#: cookies/kcookiespolicies.cpp:137
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Change Java Policy"
+msgctxt "@title:window"
+msgid "Change Cookie Policy"
+msgstr "Java Politikasını Değiştir"
+
+#: cookies/kcookiespolicies.cpp:156
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Java Policy"
+msgctxt "@title:window"
+msgid "New Cookie Policy"
+msgstr "Yeni Java Politikası"
+
+#: cookies/kcookiespolicies.cpp:189
+#, kde-format
+msgid ""
+"<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+"replace it?</qt>"
+msgstr ""
+
+#: cookies/kcookiespolicies.cpp:193
+#, fuzzy, kde-format
+#| msgid "Site Policy"
+msgctxt "@title:window"
+msgid "Duplicate Policy"
+msgstr "Site Politikası"
+
+#: cookies/kcookiespolicies.cpp:194
+#, kde-format
+msgid "Replace"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -1615,12 +1672,12 @@ msgid "Export Filters"
 msgstr "Süzgeçleri Dışa Aktar"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
-#: filteropts.cpp:553 useragent/useragent.ui:58
+#: filteropts.cpp:563 useragent/useragent.ui:58
 #, kde-format
 msgid "Name"
 msgstr "Ad"
 
-#: filteropts.cpp:554
+#: filteropts.cpp:564
 #, kde-format
 msgid "URL"
 msgstr "Adres"
@@ -2428,6 +2485,35 @@ msgstr ""
 msgid "Activate previously used tab when closing the current tab"
 msgstr "Seçili sekme kapatıldığında daha önce etkin olan sekmeyi etkinleştir"
 
+#: useragent/useragent.cpp:195
+#, kde-format
+msgctxt ""
+"@title:window Title of dialog to choose name to given to new User Agent"
+msgid "Choose User Agent name"
+msgstr ""
+
+#: useragent/useragent.cpp:196
+#, kde-format
+msgctxt "Name of the new User Agent"
+msgid "User Agent name"
+msgstr ""
+
+#: useragent/useragent.cpp:256
+#, kde-format
+msgid "there are templates with empty names"
+msgstr ""
+
+#: useragent/useragent.cpp:261
+#, kde-format
+msgid "there are multiple templates with the same name"
+msgstr ""
+
+#: useragent/useragent.cpp:284
+#, kde-format
+msgctxt "The user gave a custom user agent string an empty or duplicate name"
+msgid "Invalid user agent names:"
+msgstr ""
+
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20
 #, kde-format
@@ -2684,14 +2770,6 @@ msgstr ""
 #~ msgctxt "@title:group"
 #~ msgid "Doma&in-Specific"
 #~ msgstr "&Alan Adına Özel"
-
-#~ msgctxt "@title:window"
-#~ msgid "New Java Policy"
-#~ msgstr "Yeni Java Politikası"
-
-#~ msgctxt "@title:window"
-#~ msgid "Change Java Policy"
-#~ msgstr "Java Politikasını Değiştir"
 
 #~ msgid "&Java policy:"
 #~ msgstr "&Java politikası:"

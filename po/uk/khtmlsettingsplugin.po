@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2025-01-21 22:53+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -23,97 +23,107 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporary Download Directory"
-msgstr "Тимчасовий каталог отриманих даних"
-
-#: temporarysavedir.cpp:60
-#, kde-format
-msgid "Choose Custom Download Directory..."
-msgstr "Виберіть нетиповий каталог отримання даних…"
-
-#: temporarysavedir.cpp:61
-#, kde-format
-msgid ""
-"Choose a custom directory to use when downloading URLs from this window, "
-"temporarily overriding the default one"
-msgstr ""
-"Виберіть нетиповий каталог для отримання даних з адрес у цьому вікні, "
-"тимчасово перевизначивши типовий каталог"
-
-#: temporarysavedir.cpp:66
-#, kde-format
-msgctxt "@action:inmenu stop using a temporary download directory"
-msgid "Stop Using Temporary Download Directory"
-msgstr "Припинити використання тимчасового каталогу отримання даних"
-
-#: temporarysavedir.cpp:67
-#, kde-format
-msgid ""
-"Use the default download directory instead of a custom one (only for this "
-"window)"
-msgstr ""
-"Використати типовий каталог отримання замість нетипового (лише для цього "
-"вікна)"
-
-#: temporarysavedir.cpp:113
-#, kde-format
-msgid "Temporary save directory"
-msgstr "Тимчасовий каталог збереження даних"
-
-#: temporarysavedir.cpp:114
-#, kde-format
-msgid "Choose Temporary Save Directory"
-msgstr "Виберіть тимчасовий каталог збереження даних"
-
 #. i18n: ectx: Menu (tools)
-#: temporarysavedir.rc:4
+#: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "&Інструменти"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: temporarysavedir.rc:8
+#: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Додатковий пенал"
 
-#~ msgid "HTML Settings"
-#~ msgstr "Параметри HTML"
+#: settingsplugin.cpp:45
+#, kde-format
+msgid "HTML Settings"
+msgstr "Параметри HTML"
 
-#~ msgid "Java&Script"
-#~ msgstr "Java&Script"
+#: settingsplugin.cpp:50
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
 
-#~ msgid "&Java"
-#~ msgstr "&Java"
+#: settingsplugin.cpp:55
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
 
-#~ msgid "&Cookies"
-#~ msgstr "&Куки"
+#: settingsplugin.cpp:60
+#, kde-format
+msgid "&Cookies"
+msgstr "&Куки"
 
-#~ msgid "&Plugins"
-#~ msgstr "Д&одатки"
+#: settingsplugin.cpp:65
+#, kde-format
+msgid "&Plugins"
+msgstr "Д&одатки"
 
-#~ msgid "Autoload &Images"
-#~ msgstr "Автозавантаження &зображень"
+#: settingsplugin.cpp:70
+#, kde-format
+msgid "Autoload &Images"
+msgstr "Автозавантаження &зображень"
 
-#~ msgid "Enable Pro&xy"
-#~ msgstr "Ввімкнути про&ксі"
+#: settingsplugin.cpp:77
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "Ввімкнути про&ксі"
 
-#~ msgid "Enable Cac&he"
-#~ msgstr "Ввімкнути ке&ш"
+#: settingsplugin.cpp:82
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "Ввімкнути ке&ш"
 
-#~ msgid "Cache Po&licy"
-#~ msgstr "Прави&ла кешування"
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "Прави&ла кешування"
 
-#~ msgid "&Keep Cache in Sync"
-#~ msgstr "&Підтримувати актуальність кешу"
+#: settingsplugin.cpp:89
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "&Підтримувати актуальність кешу"
 
-#~ msgid "&Use Cache if Possible"
-#~ msgstr "&Використовувати кеш за можливості"
+#: settingsplugin.cpp:90
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "&Використовувати кеш за можливості"
 
-#~ msgid "&Offline Browsing Mode"
-#~ msgstr "&Автономний режим навігації"
+#: settingsplugin.cpp:91
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "&Автономний режим навігації"
+
+#~ msgid "Temporary Download Directory"
+#~ msgstr "Тимчасовий каталог отриманих даних"
+
+#~ msgid "Choose Custom Download Directory..."
+#~ msgstr "Виберіть нетиповий каталог отримання даних…"
+
+#~ msgid ""
+#~ "Choose a custom directory to use when downloading URLs from this window, "
+#~ "temporarily overriding the default one"
+#~ msgstr ""
+#~ "Виберіть нетиповий каталог для отримання даних з адрес у цьому вікні, "
+#~ "тимчасово перевизначивши типовий каталог"
+
+#~ msgctxt "@action:inmenu stop using a temporary download directory"
+#~ msgid "Stop Using Temporary Download Directory"
+#~ msgstr "Припинити використання тимчасового каталогу отримання даних"
+
+#~ msgid ""
+#~ "Use the default download directory instead of a custom one (only for this "
+#~ "window)"
+#~ msgstr ""
+#~ "Використати типовий каталог отримання замість нетипового (лише для цього "
+#~ "вікна)"
+
+#~ msgid "Temporary save directory"
+#~ msgstr "Тимчасовий каталог збереження даних"
+
+#~ msgid "Choose Temporary Save Directory"
+#~ msgstr "Виберіть тимчасовий каталог збереження даних"
 
 #~ msgid ""
 #~ "The cookie setting could not be changed, because the cookie daemon could "

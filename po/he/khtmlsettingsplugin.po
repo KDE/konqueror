@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2025-01-22 11:37+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -28,95 +28,105 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
-#: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporary Download Directory"
-msgstr "תיקיית הורדות זמנית"
-
-#: temporarysavedir.cpp:60
-#, kde-format
-msgid "Choose Custom Download Directory..."
-msgstr "בחירת תיקיית הורדה משלך…"
-
-#: temporarysavedir.cpp:61
-#, kde-format
-msgid ""
-"Choose a custom directory to use when downloading URLs from this window, "
-"temporarily overriding the default one"
-msgstr ""
-"בחירת תיקייה משלך בעת הורדת כתובות מהחלון הזה, תוך דריסה זמנית של תיקיית "
-"ברירת המחדל"
-
-#: temporarysavedir.cpp:66
-#, kde-format
-msgctxt "@action:inmenu stop using a temporary download directory"
-msgid "Stop Using Temporary Download Directory"
-msgstr "להפסיק להשתמש בתיקיית הורדה זמנית"
-
-#: temporarysavedir.cpp:67
-#, kde-format
-msgid ""
-"Use the default download directory instead of a custom one (only for this "
-"window)"
-msgstr "להשתמש בתיקיית ברירת המחדל במקום באחת משלך (רק לחלון הזה)"
-
-#: temporarysavedir.cpp:113
-#, kde-format
-msgid "Temporary save directory"
-msgstr "תיקיית שמירה זמנית"
-
-#: temporarysavedir.cpp:114
-#, kde-format
-msgid "Choose Temporary Save Directory"
-msgstr "בחירת תיקיית שמירה זמנית"
-
 #. i18n: ectx: Menu (tools)
-#: temporarysavedir.rc:4
+#: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "&כלים"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: temporarysavedir.rc:8
+#: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "סרגל כלים נוסף"
 
-#~ msgid "HTML Settings"
-#~ msgstr "הגדרות HTML"
+#: settingsplugin.cpp:45
+#, kde-format
+msgid "HTML Settings"
+msgstr "הגדרות HTML"
 
-#~ msgid "Java&Script"
-#~ msgstr "Java&Script"
+#: settingsplugin.cpp:50
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
 
-#~ msgid "&Java"
-#~ msgstr "&Java"
+#: settingsplugin.cpp:55
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
 
-#~ msgid "&Cookies"
-#~ msgstr "&עוגיות"
+#: settingsplugin.cpp:60
+#, kde-format
+msgid "&Cookies"
+msgstr "&עוגיות"
 
-#~ msgid "&Plugins"
-#~ msgstr "תו&ספים"
+#: settingsplugin.cpp:65
+#, kde-format
+msgid "&Plugins"
+msgstr "תו&ספים"
 
-#~ msgid "Autoload &Images"
-#~ msgstr "&טעינת תמונות אוטומטית"
+#: settingsplugin.cpp:70
+#, kde-format
+msgid "Autoload &Images"
+msgstr "&טעינת תמונות אוטומטית"
 
-#~ msgid "Enable Pro&xy"
-#~ msgstr "ה&פעלת מתווך"
+#: settingsplugin.cpp:77
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "ה&פעלת מתווך"
 
-#~ msgid "Enable Cac&he"
-#~ msgstr "הפעלת מ&טמון"
+#: settingsplugin.cpp:82
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "הפעלת מ&טמון"
 
-#~ msgid "Cache Po&licy"
-#~ msgstr "מ&דיניות מטמון"
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "מ&דיניות מטמון"
 
-#~ msgid "&Keep Cache in Sync"
-#~ msgstr "&שמירה על עדכניות המטמון"
+#: settingsplugin.cpp:89
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "&שמירה על עדכניות המטמון"
 
-#~ msgid "&Use Cache if Possible"
-#~ msgstr "לה&שתמש במטמון אם ניתן"
+#: settingsplugin.cpp:90
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "לה&שתמש במטמון אם ניתן"
 
-#~ msgid "&Offline Browsing Mode"
-#~ msgstr "&מצב גלישה לא מקוונת"
+#: settingsplugin.cpp:91
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "&מצב גלישה לא מקוונת"
+
+#~ msgid "Temporary Download Directory"
+#~ msgstr "תיקיית הורדות זמנית"
+
+#~ msgid "Choose Custom Download Directory..."
+#~ msgstr "בחירת תיקיית הורדה משלך…"
+
+#~ msgid ""
+#~ "Choose a custom directory to use when downloading URLs from this window, "
+#~ "temporarily overriding the default one"
+#~ msgstr ""
+#~ "בחירת תיקייה משלך בעת הורדת כתובות מהחלון הזה, תוך דריסה זמנית של תיקיית "
+#~ "ברירת המחדל"
+
+#~ msgctxt "@action:inmenu stop using a temporary download directory"
+#~ msgid "Stop Using Temporary Download Directory"
+#~ msgstr "להפסיק להשתמש בתיקיית הורדה זמנית"
+
+#~ msgid ""
+#~ "Use the default download directory instead of a custom one (only for this "
+#~ "window)"
+#~ msgstr "להשתמש בתיקיית ברירת המחדל במקום באחת משלך (רק לחלון הזה)"
+
+#~ msgid "Temporary save directory"
+#~ msgstr "תיקיית שמירה זמנית"
+
+#~ msgid "Choose Temporary Save Directory"
+#~ msgstr "בחירת תיקיית שמירה זמנית"
 
 #~ msgid ""
 #~ "The cookie setting could not be changed, because the cookie daemon could "

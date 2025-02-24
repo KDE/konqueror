@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2025-01-21 14:35+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -22,97 +22,107 @@ msgstr ""
 "X-Generator: Lokalize 24.12.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporary Download Directory"
-msgstr "Tijdelijke map voor downloaden"
-
-#: temporarysavedir.cpp:60
-#, kde-format
-msgid "Choose Custom Download Directory..."
-msgstr "Aangepaste map voor downloaden kiezen..."
-
-#: temporarysavedir.cpp:61
-#, kde-format
-msgid ""
-"Choose a custom directory to use when downloading URLs from this window, "
-"temporarily overriding the default one"
-msgstr ""
-"Een aangepaste map kiezen om te gebruiken bij downloaden van URL's uit dit "
-"venster, tijdelijk de standaard overschrijven"
-
-#: temporarysavedir.cpp:66
-#, kde-format
-msgctxt "@action:inmenu stop using a temporary download directory"
-msgid "Stop Using Temporary Download Directory"
-msgstr "Stoppen met de tijdelijke map voor downloaden te gebruiken"
-
-#: temporarysavedir.cpp:67
-#, kde-format
-msgid ""
-"Use the default download directory instead of a custom one (only for this "
-"window)"
-msgstr ""
-"De standaard map voor downloaden gebruiken in plaats van een aangepaste "
-"(alleen voor dit venster)"
-
-#: temporarysavedir.cpp:113
-#, kde-format
-msgid "Temporary save directory"
-msgstr "Tijdelijke map voor opslaan"
-
-#: temporarysavedir.cpp:114
-#, kde-format
-msgid "Choose Temporary Save Directory"
-msgstr "Tijdelijke map voor opslaan kiezen"
-
 #. i18n: ectx: Menu (tools)
-#: temporarysavedir.rc:4
+#: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "H&ulpmiddelen"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: temporarysavedir.rc:8
+#: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Extra werkbalk"
 
-#~ msgid "HTML Settings"
-#~ msgstr "HTML-instellingen"
+#: settingsplugin.cpp:45
+#, kde-format
+msgid "HTML Settings"
+msgstr "HTML-instellingen"
 
-#~ msgid "Java&Script"
-#~ msgstr "Java&Script"
+#: settingsplugin.cpp:50
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
 
-#~ msgid "&Java"
-#~ msgstr "&Java"
+#: settingsplugin.cpp:55
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
 
-#~ msgid "&Cookies"
-#~ msgstr "&Cookies"
+#: settingsplugin.cpp:60
+#, kde-format
+msgid "&Cookies"
+msgstr "&Cookies"
 
-#~ msgid "&Plugins"
-#~ msgstr "&Plugins"
+#: settingsplugin.cpp:65
+#, kde-format
+msgid "&Plugins"
+msgstr "&Plugins"
 
-#~ msgid "Autoload &Images"
-#~ msgstr "Afbeeld&ingen automatisch laden"
+#: settingsplugin.cpp:70
+#, kde-format
+msgid "Autoload &Images"
+msgstr "Afbeeld&ingen automatisch laden"
 
-#~ msgid "Enable Pro&xy"
-#~ msgstr "Pro&xy activeren"
+#: settingsplugin.cpp:77
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "Pro&xy activeren"
 
-#~ msgid "Enable Cac&he"
-#~ msgstr "Ca&che activeren"
+#: settingsplugin.cpp:82
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "Ca&che activeren"
 
-#~ msgid "Cache Po&licy"
-#~ msgstr "Cachebe&leid"
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "Cachebe&leid"
 
-#~ msgid "&Keep Cache in Sync"
-#~ msgstr "Cache synchroon &houden"
+#: settingsplugin.cpp:89
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "Cache synchroon &houden"
 
-#~ msgid "&Use Cache if Possible"
-#~ msgstr "Cache gebr&uiken, indien mogelijk"
+#: settingsplugin.cpp:90
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "Cache gebr&uiken, indien mogelijk"
 
-#~ msgid "&Offline Browsing Mode"
-#~ msgstr "&Offline browsingmodus"
+#: settingsplugin.cpp:91
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "&Offline browsingmodus"
+
+#~ msgid "Temporary Download Directory"
+#~ msgstr "Tijdelijke map voor downloaden"
+
+#~ msgid "Choose Custom Download Directory..."
+#~ msgstr "Aangepaste map voor downloaden kiezen..."
+
+#~ msgid ""
+#~ "Choose a custom directory to use when downloading URLs from this window, "
+#~ "temporarily overriding the default one"
+#~ msgstr ""
+#~ "Een aangepaste map kiezen om te gebruiken bij downloaden van URL's uit "
+#~ "dit venster, tijdelijk de standaard overschrijven"
+
+#~ msgctxt "@action:inmenu stop using a temporary download directory"
+#~ msgid "Stop Using Temporary Download Directory"
+#~ msgstr "Stoppen met de tijdelijke map voor downloaden te gebruiken"
+
+#~ msgid ""
+#~ "Use the default download directory instead of a custom one (only for this "
+#~ "window)"
+#~ msgstr ""
+#~ "De standaard map voor downloaden gebruiken in plaats van een aangepaste "
+#~ "(alleen voor dit venster)"
+
+#~ msgid "Temporary save directory"
+#~ msgstr "Tijdelijke map voor opslaan"
+
+#~ msgid "Choose Temporary Save Directory"
+#~ msgstr "Tijdelijke map voor opslaan kiezen"
 
 #~ msgid ""
 #~ "The cookie setting could not be changed, because the cookie daemon could "

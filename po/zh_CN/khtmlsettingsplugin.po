@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -17,54 +17,100 @@ msgstr ""
 "X-Crowdin-File: /kf6-trunk/messages/konqueror/khtmlsettingsplugin.pot\n"
 "X-Crowdin-File-ID: 48582\n"
 
-#: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporary Download Directory"
-msgstr "临时下载目录"
-
-#: temporarysavedir.cpp:60
-#, kde-format
-msgid "Choose Custom Download Directory..."
-msgstr "选择自定义下载目录..."
-
-#: temporarysavedir.cpp:61
-#, kde-format
-msgid ""
-"Choose a custom directory to use when downloading URLs from this window, "
-"temporarily overriding the default one"
-msgstr "选择一个用于从此窗口下载 URL 时的自定义目录，它将暂时覆盖默认目录"
-
-#: temporarysavedir.cpp:66
-#, kde-format
-msgctxt "@action:inmenu stop using a temporary download directory"
-msgid "Stop Using Temporary Download Directory"
-msgstr "停止使用临时下载目录"
-
-#: temporarysavedir.cpp:67
-#, kde-format
-msgid ""
-"Use the default download directory instead of a custom one (only for this "
-"window)"
-msgstr "使用默认下载目录而不是自定义目录 (仅适用于此窗口)"
-
-#: temporarysavedir.cpp:113
-#, kde-format
-msgid "Temporary save directory"
-msgstr "临时保存目录"
-
-#: temporarysavedir.cpp:114
-#, kde-format
-msgid "Choose Temporary Save Directory"
-msgstr "选择临时保存目录"
-
 #. i18n: ectx: Menu (tools)
-#: temporarysavedir.rc:4
+#: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "工具(&T)"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: temporarysavedir.rc:8
+#: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "额外工具栏"
+
+#: settingsplugin.cpp:45
+#, kde-format
+msgid "HTML Settings"
+msgstr ""
+
+#: settingsplugin.cpp:50
+#, kde-format
+msgid "Java&Script"
+msgstr ""
+
+#: settingsplugin.cpp:55
+#, kde-format
+msgid "&Java"
+msgstr ""
+
+#: settingsplugin.cpp:60
+#, kde-format
+msgid "&Cookies"
+msgstr ""
+
+#: settingsplugin.cpp:65
+#, kde-format
+msgid "&Plugins"
+msgstr ""
+
+#: settingsplugin.cpp:70
+#, kde-format
+msgid "Autoload &Images"
+msgstr ""
+
+#: settingsplugin.cpp:77
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr ""
+
+#: settingsplugin.cpp:82
+#, kde-format
+msgid "Enable Cac&he"
+msgstr ""
+
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "Cache Po&licy"
+msgstr ""
+
+#: settingsplugin.cpp:89
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr ""
+
+#: settingsplugin.cpp:90
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr ""
+
+#: settingsplugin.cpp:91
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr ""
+
+#~ msgid "Temporary Download Directory"
+#~ msgstr "临时下载目录"
+
+#~ msgid "Choose Custom Download Directory..."
+#~ msgstr "选择自定义下载目录..."
+
+#~ msgid ""
+#~ "Choose a custom directory to use when downloading URLs from this window, "
+#~ "temporarily overriding the default one"
+#~ msgstr "选择一个用于从此窗口下载 URL 时的自定义目录，它将暂时覆盖默认目录"
+
+#~ msgctxt "@action:inmenu stop using a temporary download directory"
+#~ msgid "Stop Using Temporary Download Directory"
+#~ msgstr "停止使用临时下载目录"
+
+#~ msgid ""
+#~ "Use the default download directory instead of a custom one (only for this "
+#~ "window)"
+#~ msgstr "使用默认下载目录而不是自定义目录 (仅适用于此窗口)"
+
+#~ msgid "Temporary save directory"
+#~ msgstr "临时保存目录"
+
+#~ msgid "Choose Temporary Save Directory"
+#~ msgstr "选择临时保存目录"

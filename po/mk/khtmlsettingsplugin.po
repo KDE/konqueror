@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2006-05-02 10:11+0200\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -19,93 +19,77 @@ msgstr ""
 "Plural-Forms: Plural-Forms: nplurals=3; plural=n%10==1 ? 0 : n%10==2 ? 1 : "
 "2;\n"
 
-#: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporary Download Directory"
-msgstr ""
-
-#: temporarysavedir.cpp:60
-#, kde-format
-msgid "Choose Custom Download Directory..."
-msgstr ""
-
-#: temporarysavedir.cpp:61
-#, kde-format
-msgid ""
-"Choose a custom directory to use when downloading URLs from this window, "
-"temporarily overriding the default one"
-msgstr ""
-
-#: temporarysavedir.cpp:66
-#, kde-format
-msgctxt "@action:inmenu stop using a temporary download directory"
-msgid "Stop Using Temporary Download Directory"
-msgstr ""
-
-#: temporarysavedir.cpp:67
-#, kde-format
-msgid ""
-"Use the default download directory instead of a custom one (only for this "
-"window)"
-msgstr ""
-
-#: temporarysavedir.cpp:113
-#, kde-format
-msgid "Temporary save directory"
-msgstr ""
-
-#: temporarysavedir.cpp:114
-#, kde-format
-msgid "Choose Temporary Save Directory"
-msgstr ""
-
 #. i18n: ectx: Menu (tools)
-#: temporarysavedir.rc:4
+#: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr ""
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: temporarysavedir.rc:8
+#: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Екстра алатник"
 
-#~ msgid "HTML Settings"
-#~ msgstr "Поставувања за HTML"
+#: settingsplugin.cpp:45
+#, kde-format
+msgid "HTML Settings"
+msgstr "Поставувања за HTML"
 
-#~ msgid "Java&Script"
-#~ msgstr "Јава&скрипт"
+#: settingsplugin.cpp:50
+#, kde-format
+msgid "Java&Script"
+msgstr "Јава&скрипт"
 
-#~ msgid "&Java"
-#~ msgstr "&Јава"
+#: settingsplugin.cpp:55
+#, kde-format
+msgid "&Java"
+msgstr "&Јава"
 
-#~ msgid "&Cookies"
-#~ msgstr "&Колачиња"
+#: settingsplugin.cpp:60
+#, kde-format
+msgid "&Cookies"
+msgstr "&Колачиња"
 
-#~ msgid "&Plugins"
-#~ msgstr "&Приклучоци"
+#: settingsplugin.cpp:65
+#, kde-format
+msgid "&Plugins"
+msgstr "&Приклучоци"
 
-#~ msgid "Autoload &Images"
-#~ msgstr "Автом. вчитување &слики"
+#: settingsplugin.cpp:70
+#, kde-format
+msgid "Autoload &Images"
+msgstr "Автом. вчитување &слики"
 
-#~ msgid "Enable Pro&xy"
-#~ msgstr "Овозможи прок&си"
+#: settingsplugin.cpp:77
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "Овозможи прок&си"
 
-#~ msgid "Enable Cac&he"
-#~ msgstr "Овозможи ке&ш"
+#: settingsplugin.cpp:82
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "Овозможи ке&ш"
 
-#~ msgid "Cache Po&licy"
-#~ msgstr "По&литика за кеш"
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "По&литика за кеш"
 
-#~ msgid "&Keep Cache in Sync"
-#~ msgstr "&Чувај го кешот синхронизиран"
+#: settingsplugin.cpp:89
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "&Чувај го кешот синхронизиран"
 
-#~ msgid "&Use Cache if Possible"
-#~ msgstr "К&ористи кеш ако е можно"
+#: settingsplugin.cpp:90
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "К&ористи кеш ако е можно"
 
-#~ msgid "&Offline Browsing Mode"
-#~ msgstr "П&релистување во режим без мрежа"
+#: settingsplugin.cpp:91
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "П&релистување во режим без мрежа"
 
 #, fuzzy
 #~| msgid ""

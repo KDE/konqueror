@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2025-01-21 06:30+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -24,97 +24,107 @@ msgstr ""
 "X-Generator: Lokalize 24.12.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporary Download Directory"
-msgstr "Aldi batean zama-jaisteko direktorioa"
-
-#: temporarysavedir.cpp:60
-#, kde-format
-msgid "Choose Custom Download Directory..."
-msgstr "Aukeratu neurrira ipinitako zama-jaisteko direktorioa..."
-
-#: temporarysavedir.cpp:61
-#, kde-format
-msgid ""
-"Choose a custom directory to use when downloading URLs from this window, "
-"temporarily overriding the default one"
-msgstr ""
-"Leiho honetatik URLak zama-jaistean erabili beharreko direktorioa neurrira "
-"ipini, aldi batean lehenetsitakoa indargabetuz"
-
-#: temporarysavedir.cpp:66
-#, kde-format
-msgctxt "@action:inmenu stop using a temporary download directory"
-msgid "Stop Using Temporary Download Directory"
-msgstr "Zama-jaisteko aldi baterako direktorioa erabiltzeari utzi"
-
-#: temporarysavedir.cpp:67
-#, kde-format
-msgid ""
-"Use the default download directory instead of a custom one (only for this "
-"window)"
-msgstr ""
-"Erabili zama-jaisteko direktorio lehenetsia neurrira ipinitakoaren ordez "
-"(leiho honetarako bakarrik)"
-
-#: temporarysavedir.cpp:113
-#, kde-format
-msgid "Temporary save directory"
-msgstr "Aldi batean gordetzeko direktorioa"
-
-#: temporarysavedir.cpp:114
-#, kde-format
-msgid "Choose Temporary Save Directory"
-msgstr "Aukeratu aldi batean gordetzeko direktorioa"
-
 #. i18n: ectx: Menu (tools)
-#: temporarysavedir.rc:4
+#: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "&Tresnak"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: temporarysavedir.rc:8
+#: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Tresna-barra gehigarria"
 
-#~ msgid "HTML Settings"
-#~ msgstr "HTML ezarpenak"
+#: settingsplugin.cpp:45
+#, kde-format
+msgid "HTML Settings"
+msgstr "HTML ezarpenak"
 
-#~ msgid "Java&Script"
-#~ msgstr "Java&Script"
+#: settingsplugin.cpp:50
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
 
-#~ msgid "&Java"
-#~ msgstr "&Java"
+#: settingsplugin.cpp:55
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
 
-#~ msgid "&Cookies"
-#~ msgstr "&Cookie-ak"
+#: settingsplugin.cpp:60
+#, kde-format
+msgid "&Cookies"
+msgstr "&Cookie-ak"
 
-#~ msgid "&Plugins"
-#~ msgstr "&Pluginak"
+#: settingsplugin.cpp:65
+#, kde-format
+msgid "&Plugins"
+msgstr "&Pluginak"
 
-#~ msgid "Autoload &Images"
-#~ msgstr "Autokargatu &irudiak"
+#: settingsplugin.cpp:70
+#, kde-format
+msgid "Autoload &Images"
+msgstr "Autokargatu &irudiak"
 
-#~ msgid "Enable Pro&xy"
-#~ msgstr "Gaitu &proxy-a"
+#: settingsplugin.cpp:77
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "Gaitu &proxy-a"
 
-#~ msgid "Enable Cac&he"
-#~ msgstr "Gaitu &cache-a"
+#: settingsplugin.cpp:82
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "Gaitu &cache-a"
 
-#~ msgid "Cache Po&licy"
-#~ msgstr "Cache-aren &arauak"
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "Cache-aren &arauak"
 
-#~ msgid "&Keep Cache in Sync"
-#~ msgstr "E&duki cache-a sinkronizatuta"
+#: settingsplugin.cpp:89
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "E&duki cache-a sinkronizatuta"
 
-#~ msgid "&Use Cache if Possible"
-#~ msgstr "&Erabili cache-a ahal izanez gero"
+#: settingsplugin.cpp:90
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "&Erabili cache-a ahal izanez gero"
 
-#~ msgid "&Offline Browsing Mode"
-#~ msgstr "&Lineaz kanpoko arakatze modua"
+#: settingsplugin.cpp:91
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "&Lineaz kanpoko arakatze modua"
+
+#~ msgid "Temporary Download Directory"
+#~ msgstr "Aldi batean zama-jaisteko direktorioa"
+
+#~ msgid "Choose Custom Download Directory..."
+#~ msgstr "Aukeratu neurrira ipinitako zama-jaisteko direktorioa..."
+
+#~ msgid ""
+#~ "Choose a custom directory to use when downloading URLs from this window, "
+#~ "temporarily overriding the default one"
+#~ msgstr ""
+#~ "Leiho honetatik URLak zama-jaistean erabili beharreko direktorioa "
+#~ "neurrira ipini, aldi batean lehenetsitakoa indargabetuz"
+
+#~ msgctxt "@action:inmenu stop using a temporary download directory"
+#~ msgid "Stop Using Temporary Download Directory"
+#~ msgstr "Zama-jaisteko aldi baterako direktorioa erabiltzeari utzi"
+
+#~ msgid ""
+#~ "Use the default download directory instead of a custom one (only for this "
+#~ "window)"
+#~ msgstr ""
+#~ "Erabili zama-jaisteko direktorio lehenetsia neurrira ipinitakoaren ordez "
+#~ "(leiho honetarako bakarrik)"
+
+#~ msgid "Temporary save directory"
+#~ msgstr "Aldi batean gordetzeko direktorioa"
+
+#~ msgid "Choose Temporary Save Directory"
+#~ msgstr "Aukeratu aldi batean gordetzeko direktorioa"
 
 #~ msgid ""
 #~ "The cookie setting could not be changed, because the cookie daemon could "

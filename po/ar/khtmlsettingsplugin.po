@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2025-01-23 16:32+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -23,95 +23,105 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: temporarysavedir.cpp:54
-#, kde-format
-msgid "Temporary Download Directory"
-msgstr "دليل التنزيل المؤقت"
-
-#: temporarysavedir.cpp:60
-#, kde-format
-msgid "Choose Custom Download Directory..."
-msgstr "اختر دليل التنزيل مخصص..."
-
-#: temporarysavedir.cpp:61
-#, kde-format
-msgid ""
-"Choose a custom directory to use when downloading URLs from this window, "
-"temporarily overriding the default one"
-msgstr ""
-"اختر دليلاً مخصصًا لاستخدامه عند تنزيل عناوين URL من هذه النافذة، مع تجاوز "
-"الدليل المبدئي مؤقتًا"
-
-#: temporarysavedir.cpp:66
-#, kde-format
-msgctxt "@action:inmenu stop using a temporary download directory"
-msgid "Stop Using Temporary Download Directory"
-msgstr "توقف عن استخدام دليل التنزيل المؤقت"
-
-#: temporarysavedir.cpp:67
-#, kde-format
-msgid ""
-"Use the default download directory instead of a custom one (only for this "
-"window)"
-msgstr "استخدم دليل التنزيل المبدئي بدلاً من دليل مخصص (لهذه النافذة فقط)"
-
-#: temporarysavedir.cpp:113
-#, kde-format
-msgid "Temporary save directory"
-msgstr "الدليل الحفظ المؤقت"
-
-#: temporarysavedir.cpp:114
-#, kde-format
-msgid "Choose Temporary Save Directory"
-msgstr "اختر دليل الحفظ المؤقت"
-
 #. i18n: ectx: Menu (tools)
-#: temporarysavedir.rc:4
+#: khtmlsettingsplugin.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "أ&دوات"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: temporarysavedir.rc:8
+#: khtmlsettingsplugin.rc:8
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "شريط أدوات إضافي"
 
-#~ msgid "HTML Settings"
-#~ msgstr "إعدادات HTML"
+#: settingsplugin.cpp:45
+#, kde-format
+msgid "HTML Settings"
+msgstr "إعدادات HTML"
 
-#~ msgid "Java&Script"
-#~ msgstr "جافا&سكرِبت"
+#: settingsplugin.cpp:50
+#, kde-format
+msgid "Java&Script"
+msgstr "جافا&سكرِبت"
 
-#~ msgid "&Java"
-#~ msgstr "&جافا"
+#: settingsplugin.cpp:55
+#, kde-format
+msgid "&Java"
+msgstr "&جافا"
 
-#~ msgid "&Cookies"
-#~ msgstr "ال&كعكات"
+#: settingsplugin.cpp:60
+#, kde-format
+msgid "&Cookies"
+msgstr "ال&كعكات"
 
-#~ msgid "&Plugins"
-#~ msgstr "ال&ملحقات"
+#: settingsplugin.cpp:65
+#, kde-format
+msgid "&Plugins"
+msgstr "ال&ملحقات"
 
-#~ msgid "Autoload &Images"
-#~ msgstr "التحميل الآلي لل&صور"
+#: settingsplugin.cpp:70
+#, kde-format
+msgid "Autoload &Images"
+msgstr "التحميل الآلي لل&صور"
 
-#~ msgid "Enable Pro&xy"
-#~ msgstr "مكّن ال&وكيل"
+#: settingsplugin.cpp:77
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "مكّن ال&وكيل"
 
-#~ msgid "Enable Cac&he"
-#~ msgstr "مكّن ال&خبيئة"
+#: settingsplugin.cpp:82
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "مكّن ال&خبيئة"
 
-#~ msgid "Cache Po&licy"
-#~ msgstr "سيا&سة الخبيئة"
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "سيا&سة الخبيئة"
 
-#~ msgid "&Keep Cache in Sync"
-#~ msgstr "&حافظ على مزامنة الخبيئة"
+#: settingsplugin.cpp:89
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "&حافظ على مزامنة الخبيئة"
 
-#~ msgid "&Use Cache if Possible"
-#~ msgstr "ا&ستخدم الخبيئة إن أمكن"
+#: settingsplugin.cpp:90
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "ا&ستخدم الخبيئة إن أمكن"
 
-#~ msgid "&Offline Browsing Mode"
-#~ msgstr "وضع التصفّح دون &اتصال"
+#: settingsplugin.cpp:91
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "وضع التصفّح دون &اتصال"
+
+#~ msgid "Temporary Download Directory"
+#~ msgstr "دليل التنزيل المؤقت"
+
+#~ msgid "Choose Custom Download Directory..."
+#~ msgstr "اختر دليل التنزيل مخصص..."
+
+#~ msgid ""
+#~ "Choose a custom directory to use when downloading URLs from this window, "
+#~ "temporarily overriding the default one"
+#~ msgstr ""
+#~ "اختر دليلاً مخصصًا لاستخدامه عند تنزيل عناوين URL من هذه النافذة، مع تجاوز "
+#~ "الدليل المبدئي مؤقتًا"
+
+#~ msgctxt "@action:inmenu stop using a temporary download directory"
+#~ msgid "Stop Using Temporary Download Directory"
+#~ msgstr "توقف عن استخدام دليل التنزيل المؤقت"
+
+#~ msgid ""
+#~ "Use the default download directory instead of a custom one (only for this "
+#~ "window)"
+#~ msgstr "استخدم دليل التنزيل المبدئي بدلاً من دليل مخصص (لهذه النافذة فقط)"
+
+#~ msgid "Temporary save directory"
+#~ msgstr "الدليل الحفظ المؤقت"
+
+#~ msgid "Choose Temporary Save Directory"
+#~ msgstr "اختر دليل الحفظ المؤقت"
 
 #~ msgid ""
 #~ "The cookie setting could not be changed, because the cookie daemon could "
