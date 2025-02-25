@@ -1,4 +1,4 @@
-add_definitions(-DTRANSLATION_DOMAIN=\"kio_bookmarks\")
+add_definitions(-DTRANSLATION_DOMAIN=\"kio6_bookmarks\")
 
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 
