@@ -1,0 +1,463 @@
+# SPDX-FileCopyrightText: 2025 Matjaž Jeran <matjaz.jeran@amis.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
+"PO-Revision-Date: 2025-02-24 11:21+0100\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 24.12.2\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+
+#: bookmarks_module/bookmarks_module.cpp:273
+#, fuzzy, kde-format
+#| msgid "Bookmarks Sidebar Module"
+msgctxt "@action:inmenu Add"
+msgid "Bookmarks Sidebar Module"
+msgstr "Modul stranske vrstice zaznamkov"
+
+#: bookmarks_module/bookmarks_module.cpp:296
+#, fuzzy, kde-format
+#| msgid "Bookmarks"
+msgctxt "@title:tab"
+msgid "Bookmarks"
+msgstr "Zaznamki"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbDefaultAction)
+#: history_module/history_dlg.ui:17
+#, kde-format
+msgid "Default action"
+msgstr "Privzeto dejanje"
+
+#. i18n: ectx: property (text), widget (QLabel, lDefault)
+#: history_module/history_dlg.ui:23
+#, kde-format
+msgid "Default action when double clicking an URL"
+msgstr "Privzeto dejanje ob dvojnem kliku URL-ja"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbLimits)
+#: history_module/history_dlg.ui:36
+#, kde-format
+msgid "Limits"
+msgstr "Omejitve"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbExpire)
+#: history_module/history_dlg.ui:61
+#, kde-format
+msgid "URLs e&xpire after"
+msgstr "URL-ji potečejo po"
+
+#. i18n: ectx: property (text), widget (QLabel, lEntries)
+#: history_module/history_dlg.ui:71
+#, kde-format
+msgid "Maximum &number of URLs:"
+msgstr "Največje število URL-jev:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbFonts)
+#: history_module/history_dlg.ui:87
+#, kde-format
+msgid "Custom Fonts For"
+msgstr "Pisave po meri za"
+
+#. i18n: ectx: property (text), widget (QLabel, lbNewer)
+#: history_module/history_dlg.ui:102
+#, kde-format
+msgid "URLs newer than"
+msgstr "URL-ji, novejši od"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnFontOlder)
+#. i18n: ectx: property (text), widget (QPushButton, btnFontNewer)
+#: history_module/history_dlg.ui:118 history_module/history_dlg.ui:138
+#, kde-format
+msgid "Choose Font..."
+msgstr "Izberite pisavo..."
+
+#. i18n: ectx: property (text), widget (QLabel, lbOlder)
+#: history_module/history_dlg.ui:125
+#, kde-format
+msgid "URLs older than"
+msgstr "URL-ji starejši od"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbDetails)
+#: history_module/history_dlg.ui:148
+#, kde-format
+msgid "Details"
+msgstr "Podrobnosti"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, cbDetailedTips)
+#: history_module/history_dlg.ui:154
+#, kde-format
+msgid ""
+"Shows the number of times visited and the dates of the first and last "
+"visits, in addition to the URL"
+msgstr ""
+"Poleg URL-ja prikazuje število obiskov ter datume prvega in zadnjega obiska"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbDetailedTips)
+#: history_module/history_dlg.ui:157
+#, kde-format
+msgid "Detailed tooltips"
+msgstr "Podrobni opisi orodij"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnClearHistory)
+#: history_module/history_dlg.ui:169
+#, kde-format
+msgid "Clear History"
+msgstr "Počisti zgodovino"
+
+#: history_module/history_module.cpp:139
+#, fuzzy, kde-format
+#| msgid "History Sidebar Module"
+msgctxt "@action:inmenu Add"
+msgid "History Sidebar Module"
+msgstr "Modul stranske vrstice Zgodovina"
+
+#: history_module/history_module.cpp:162
+#, fuzzy, kde-format
+#| msgid "History"
+msgctxt "@title:tab"
+msgid "History"
+msgstr "Zgodovina"
+
+#: history_module/kcmhistory.cpp:49
+#, fuzzy, kde-format
+#| msgid "Auto"
+msgctxt "Automatically decide which action to perform"
+msgid "Auto"
+msgstr "Avto"
+
+#: history_module/kcmhistory.cpp:50
+#, fuzzy, kde-format
+#| msgid "Open in new tab"
+msgctxt "Open URL in new tab"
+msgid "Open in new tab"
+msgstr "Odpri v novem zavihku"
+
+#: history_module/kcmhistory.cpp:51
+#, fuzzy, kde-format
+#| msgid "Open in current tab"
+msgctxt "Open URL in current tab"
+msgid "Open in current tab"
+msgstr "Odpri v trenutnem zavihku"
+
+#: history_module/kcmhistory.cpp:52
+#, fuzzy, kde-format
+#| msgid "Open in new window"
+msgctxt "Open URL in new window"
+msgid "Open in new window"
+msgstr "Odpri v novem oknu"
+
+#: history_module/kcmhistory.cpp:54
+#, kde-format
+msgid ""
+"Action to carry out when opening an URL from history:<dl><dl><dt>Auto:</"
+"dt><dd>opens the URL in a new tab unless the current tab is empty or an "
+"intro page</dd><dt>Open URL in a new tab:</dt><dd>always opens the URL in a "
+"new tab</dd><dt>Open URL in current tab:</dt><dd>always opens the URL in the "
+"current tab</dd><dt>Open URL in new window:</dt><dd>always opens the URL in "
+"a new window</dd></dl>"
+msgstr ""
+"Dejanje, ki ga je treba izvesti pri odpiranju URL-ja iz zgodovine:"
+"<dl><dl><dt>Samodejno:</dt><dd>odpre URL v novem zavihku, razen če je "
+"trenutni zavihek prazen ali uvodna stran</dd><dt>Odpri URL v novem zavihku:</"
+"dt><dd>vedno odpre URL v novem zavihku</dd><dt>Odpri URL v trenutnem zavihku:"
+"</dt><dd>vedno odpre URL v trenutnem zavihek</dd><dt>Odpri URL v novem oknu:"
+"</dt><dd>vedno odpre URL v novem oknu</dd></dl>"
+
+#: history_module/kcmhistory.cpp:65
+#, kde-format
+msgid "days"
+msgstr "dni"
+
+#: history_module/kcmhistory.cpp:71 history_module/kcmhistory.cpp:76
+#: history_module/kcmhistory.cpp:200 history_module/kcmhistory.cpp:213
+#, fuzzy, kde-format
+#| msgid "Minute"
+msgid "Minute"
+msgid_plural "Minutes"
+msgstr[0] "Minuta"
+msgstr[1] "Minuta"
+msgstr[2] "Minuta"
+msgstr[3] "Minuta"
+
+#: history_module/kcmhistory.cpp:73 history_module/kcmhistory.cpp:78
+#: history_module/kcmhistory.cpp:198 history_module/kcmhistory.cpp:211
+#, fuzzy, kde-format
+#| msgid "Day"
+msgid "Day"
+msgid_plural "Days"
+msgstr[0] "Dan"
+msgstr[1] "Dan"
+msgstr[2] "Dan"
+msgstr[3] "Dan"
+
+#: history_module/kcmhistory.cpp:245
+#, kde-format
+msgid "Do you really want to clear the entire history?"
+msgstr "Ali res želite počistiti celotno zgodovino?"
+
+#: history_module/kcmhistory.cpp:247
+#, fuzzy, kde-format
+#| msgid "Clear History?"
+msgctxt "@title:window"
+msgid "Clear History?"
+msgstr "Počisti zgodovino?"
+
+#: places_module/places_module.cpp:76
+#, fuzzy, kde-format
+#| msgid "Places Sidebar Module"
+msgctxt "@action:inmenu Add"
+msgid "Places Sidebar Module"
+msgstr "Modul stranske vrstice Mesta"
+
+#: places_module/places_module.cpp:99
+#, fuzzy, kde-format
+#| msgid "Places"
+msgctxt "@title:tab"
+msgid "Places"
+msgstr "Mesta"
+
+#: sidebar_widget.cpp:83
+#, kde-format
+msgid "Restore All Removed Default Buttons"
+msgstr "Obnovi vse odstranjene privzete gumbe"
+
+#: sidebar_widget.cpp:84
+#, kde-format
+msgid "Rollback to System Default"
+msgstr "Povrnitev na sistemsko privzeto"
+
+#: sidebar_widget.cpp:143 sidebar_widget.cpp:429
+#, kde-format
+msgid "Configure Sidebar"
+msgstr "Konfigurirajte stransko vrstico"
+
+#: sidebar_widget.cpp:145
+#, kde-format
+msgid "Add New"
+msgstr "Dodaj novo"
+
+#: sidebar_widget.cpp:149
+#, kde-format
+msgid "Multiple Views"
+msgstr "Več pogledov"
+
+#: sidebar_widget.cpp:151 sidebar_widget.cpp:268
+#, kde-format
+msgid "Show Tabs on Left"
+msgstr "Pokaži zavihke na levi"
+
+#: sidebar_widget.cpp:152
+#, kde-format
+msgid "Show Configuration Button"
+msgstr "Prikaži gumb za konfiguracijo"
+
+#: sidebar_widget.cpp:155
+#, kde-format
+msgid "Close Sidebar"
+msgstr "Zapri stransko vrstico"
+
+#: sidebar_widget.cpp:210
+#, kde-format
+msgid "This entry already exists."
+msgstr "Ta vnos že obstaja."
+
+#: sidebar_widget.cpp:226
+#, kde-format
+msgid ""
+"<qt>This removes all your entries from the sidebar and adds the system "
+"default ones.<br /><b>This procedure is irreversible.</b><br />Do you want "
+"to proceed?</qt>"
+msgstr ""
+"<qt>S tem odstranite vse vaše vnose iz stranske vrstice in dodate sistemske "
+"privzete.<br /><b>Ta postopek je nepovraten.</b><br />Ali želite nadaljevati?"
+"</qt>"
+
+#: sidebar_widget.cpp:268
+#, kde-format
+msgid "Show Tabs on Right"
+msgstr "Pokaži zavihke na desni"
+
+#: sidebar_widget.cpp:279
+#, fuzzy, kde-format
+#| msgid "Set Name"
+msgctxt "@title:window"
+msgid "Set Name"
+msgstr "Nastavite ime"
+
+#: sidebar_widget.cpp:280
+#, kde-format
+msgid "Enter the name:"
+msgstr "Vnesite ime:"
+
+#: sidebar_widget.cpp:298
+#, kde-format
+msgid "Enter a URL:"
+msgstr "Vnesite URL:"
+
+#: sidebar_widget.cpp:322
+#, kde-format
+msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+msgstr "<qt>Ali res želite odstraniti zavihek <b>%1</b>?</qt>"
+
+#: sidebar_widget.cpp:372
+#, kde-format
+msgid ""
+"You have hidden the sidebar configuration button. To make it visible again, "
+"click the right mouse button on any of the sidebar buttons and select \"Show "
+"Configuration Button\"."
+msgstr ""
+"Skrili ste gumb za konfiguracijo stranske vrstice. Če ga želite znova "
+"prikazati, kliknite z desnim gumbom miške na katerega koli gumba stranske "
+"vrstice in izberite »Pokaži gumb za konfiguracijo«."
+
+#: sidebar_widget.cpp:573
+#, kde-format
+msgid "Set Name..."
+msgstr "Nastavi ime..."
+
+#: sidebar_widget.cpp:574
+#, kde-format
+msgid "Set URL..."
+msgstr "Nastavi URL..."
+
+#: sidebar_widget.cpp:575
+#, kde-format
+msgid "Set Icon..."
+msgstr "Nastavi ikono..."
+
+#: sidebar_widget.cpp:577
+#, kde-format
+msgid "Show Hidden Folders..."
+msgstr "Pokaži skrite mape..."
+
+#: sidebar_widget.cpp:582
+#, kde-format
+msgid "Remove"
+msgstr "Odstrani"
+
+#: sidebar_widget.cpp:908
+#, kde-format
+msgid "Web module"
+msgstr "Spletni modul"
+
+#: tree_module/tree_module.cpp:259
+#, fuzzy, kde-format
+#| msgid "Tree Sidebar Module"
+msgctxt "@action:inmenu Add"
+msgid "Tree Sidebar Module"
+msgstr "Modul drevesne stranske vrstice"
+
+#: tree_module/tree_module.cpp:282
+#, fuzzy, kde-format
+#| msgid "Tree"
+msgctxt "@title:tab"
+msgid "Tree"
+msgstr "Drevo"
+
+#: vertical_tabbar/vertical_tabbar.cpp:91
+#, fuzzy, kde-format
+#| msgid "Vertical Tab Bar"
+msgctxt "@action:inmenu Add"
+msgid "Vertical Tab Bar"
+msgstr "Navpična vrstica z zavihki"
+
+#: vertical_tabbar/vertical_tabbar.cpp:114
+#, fuzzy, kde-format
+#| msgid "Tabs"
+msgctxt "@title:tab"
+msgid "Tabs"
+msgstr "Zavihki"
+
+#: web_module/web_module.cpp:42
+#, kde-format
+msgid "&Open Link"
+msgstr "&Odpri povezavo"
+
+#: web_module/web_module.cpp:46
+#, kde-format
+msgid "Open in New &Window"
+msgstr "Odpri v novem oknu"
+
+#: web_module/web_module.cpp:52
+#, kde-format
+msgid "&Reload"
+msgstr "Ponovno naloži"
+
+#: web_module/web_module.cpp:57
+#, kde-format
+msgid "Set &Automatic Reload"
+msgstr "Nastavi samodejno ponovno nalaganje"
+
+#: web_module/web_module.cpp:121
+#, fuzzy, kde-format
+#| msgid "Set Refresh Timeout (0 disables)"
+msgctxt "@title:window"
+msgid "Set Refresh Timeout (0 disables)"
+msgstr "Nastavi časovno omejitev osveževanja (0 onemogoči)"
+
+#: web_module/web_module.cpp:132
+#, fuzzy, kde-format
+#| msgid " minute"
+msgid " minute"
+msgid_plural " minutes"
+msgstr[0] " minuta"
+msgstr[1] " minuta"
+msgstr[2] " minuta"
+msgstr[3] " minuta"
+
+#: web_module/web_module.cpp:136
+#, fuzzy, kde-format
+#| msgid " second"
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " drugo"
+msgstr[1] " drugo"
+msgstr[2] " drugo"
+msgstr[3] " drugo"
+
+#: web_module/web_module.cpp:269
+#, fuzzy, kde-format
+#| msgid "Web Sidebar Module"
+msgctxt "@action:inmenu Add"
+msgid "Web Sidebar Module"
+msgstr "Modul spletne stranske vrstice"
+
+#: web_module/web_module.cpp:289
+#, fuzzy, kde-format
+#| msgid "Name:"
+msgctxt "@label"
+msgid "Name:"
+msgstr "Ime:"
+
+#: web_module/web_module.cpp:289
+#, fuzzy, kde-format
+#| msgid "Path or URL:"
+msgctxt "@label"
+msgid "Path or URL:"
+msgstr "Pot ali URL:"
+
+#: web_module/web_module.cpp:290
+#, fuzzy, kde-format
+#| msgid "Add web sidebar module"
+msgctxt "@title:window"
+msgid "Add web sidebar module"
+msgstr "Dodajte modul spletne stranske vrstice"
+
+#~ msgid "Minutes"
+#~ msgstr "Minute"
+
+#~ msgid "Days"
+#~ msgstr "Dni"
+
+#~ msgid " minutes"
+#~ msgstr " minut"
+
+#~ msgid " seconds"
+#~ msgstr " sekund"

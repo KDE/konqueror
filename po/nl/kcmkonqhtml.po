@@ -11,21 +11,21 @@
 # Tom Albers <tomalbers@kde.nl>, 2004.
 # Bram Schoenmakers <bramschoenmakers@kde.nl>, 2006.
 # Kristof Bal <kristof.bal@gmail.com>, 2008.
-# SPDX-FileCopyrightText: 2009, 2023, 2024 Freek de Kruijf <f.de.kruijf@hetnet.nl>
+# SPDX-FileCopyrightText: 2009, 2023, 2024, 2025 Freek de Kruijf <f.de.kruijf@hetnet.nl>
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010, 2011, 2012, 2013, 2016, 2018, 2019, 2020, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 00:41+0000\n"
-"PO-Revision-Date: 2024-07-25 10:08+0200\n"
+"PO-Revision-Date: 2025-02-24 11:27+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.12.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: appearance.cpp:39
@@ -415,26 +415,24 @@ msgid "The custom directory to store cache"
 msgstr "Een aangepaste map om de cache in op te slaan"
 
 #: cookies/kcookiesmain.cpp:33
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "&Policy"
-msgstr "Beleid"
+msgstr "&Beleid"
 
 #: cookies/kcookiesmain.cpp:35
 #, kde-format
 msgid "&Management"
-msgstr ""
+msgstr "Be&heer"
 
 #: cookies/kcookiesmanagement.cpp:46
-#, fuzzy, kde-format
-#| msgid "Accept until end of session"
+#, kde-format
 msgid "End of session"
-msgstr "Tot het einde van de sessie accepteren"
+msgstr "Einde van de sessie"
 
 #: cookies/kcookiesmanagement.cpp:51
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
@@ -529,20 +527,16 @@ msgid "Secure:"
 msgstr "Is beveiligd:"
 
 #: cookies/kcookiespolicies.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Change Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Change Cookie Policy"
-msgstr "Plugin-beleid wijzigen"
+msgstr "Cookiebeleid wijzigen"
 
 #: cookies/kcookiespolicies.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Cookie Policy"
-msgstr "Nieuw plugin-beleid"
+msgstr "Nieuw cookiebeleid"
 
 #: cookies/kcookiespolicies.cpp:189
 #, kde-format
@@ -550,18 +544,19 @@ msgid ""
 "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
 "replace it?</qt>"
 msgstr ""
+"<qt>Er bestaat reeds een beleid voor <center><b>%1</b></center>. Wilt u deze "
+"vervangen?</qt>"
 
 #: cookies/kcookiespolicies.cpp:193
-#, fuzzy, kde-format
-#| msgid "Site Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Duplicate Policy"
-msgstr "Websitebeleid"
+msgstr "Dubbel beleid"
 
 #: cookies/kcookiespolicies.cpp:194
 #, kde-format
 msgid "Replace"
-msgstr ""
+msgstr "Vervangen"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -2525,29 +2520,29 @@ msgstr ""
 msgctxt ""
 "@title:window Title of dialog to choose name to given to new User Agent"
 msgid "Choose User Agent name"
-msgstr ""
+msgstr "Naam van gebruikersagent kiezen"
 
 #: useragent/useragent.cpp:196
 #, kde-format
 msgctxt "Name of the new User Agent"
 msgid "User Agent name"
-msgstr ""
+msgstr "Naam van gebruikersagent"
 
 #: useragent/useragent.cpp:256
 #, kde-format
 msgid "there are templates with empty names"
-msgstr ""
+msgstr "er zijn sjablonen met lege namen"
 
 #: useragent/useragent.cpp:261
 #, kde-format
 msgid "there are multiple templates with the same name"
-msgstr ""
+msgstr "er zijn meerdere sjablonen met dezelfde naam"
 
 #: useragent/useragent.cpp:284
 #, kde-format
 msgctxt "The user gave a custom user agent string an empty or duplicate name"
 msgid "Invalid user agent names:"
-msgstr ""
+msgstr "Ongeldige namen van gebruikersagent:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20

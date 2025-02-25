@@ -3,20 +3,20 @@
 #
 # Zlatko Popov <zlatkopopov@fsa-bg.org>, 2006, 2007, 2008.
 # Yasen Pramatarov <yasen@lindeas.com>, 2009, 2010, 2011, 2021.
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 00:41+0000\n"
-"PO-Revision-Date: 2024-09-29 14:39+0200\n"
+"PO-Revision-Date: 2025-02-24 19:44+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 25.03.70\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: appearance.cpp:39
@@ -387,26 +387,24 @@ msgid "The custom directory to store cache"
 msgstr "Потребителската директория за съхранение на кеша"
 
 #: cookies/kcookiesmain.cpp:33
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "&Policy"
-msgstr "Правило"
+msgstr "&Политика"
 
 #: cookies/kcookiesmain.cpp:35
 #, kde-format
 msgid "&Management"
-msgstr ""
+msgstr "&Управление"
 
 #: cookies/kcookiesmanagement.cpp:46
-#, fuzzy, kde-format
-#| msgid "Accept until end of session"
+#, kde-format
 msgid "End of session"
-msgstr "Приемане до края на сесията"
+msgstr "Край на сесията"
 
 #: cookies/kcookiesmanagement.cpp:51
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
@@ -501,19 +499,16 @@ msgid "Secure:"
 msgstr "Шифроване:"
 
 #: cookies/kcookiespolicies.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Change JavaScript Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Change Cookie Policy"
-msgstr "Промяна на политиката за JavaScript"
+msgstr "Промяна на политиката за бисквитки"
 
 #: cookies/kcookiespolicies.cpp:156
-#, fuzzy, kde-format
-#| msgid "Site Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Cookie Policy"
-msgstr "Правила за сайтове"
+msgstr "Нова политика за бисквитките"
 
 #: cookies/kcookiespolicies.cpp:189
 #, kde-format
@@ -521,18 +516,19 @@ msgid ""
 "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
 "replace it?</qt>"
 msgstr ""
+"<qt>Вече съществува политика за <center><b>%1</b></center>Искате ли да я "
+"замените?</qt>"
 
 #: cookies/kcookiespolicies.cpp:193
-#, fuzzy, kde-format
-#| msgid "Site Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Duplicate Policy"
-msgstr "Правила за сайтове"
+msgstr "Дублиране на политиката"
 
 #: cookies/kcookiespolicies.cpp:194
 #, kde-format
 msgid "Replace"
-msgstr ""
+msgstr "Замяна"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -2476,29 +2472,29 @@ msgstr ""
 msgctxt ""
 "@title:window Title of dialog to choose name to given to new User Agent"
 msgid "Choose User Agent name"
-msgstr ""
+msgstr "Избиране на име на User Agent"
 
 #: useragent/useragent.cpp:196
 #, kde-format
 msgctxt "Name of the new User Agent"
 msgid "User Agent name"
-msgstr ""
+msgstr "Име на User Agent"
 
 #: useragent/useragent.cpp:256
 #, kde-format
 msgid "there are templates with empty names"
-msgstr ""
+msgstr "има шаблони с празни имена"
 
 #: useragent/useragent.cpp:261
 #, kde-format
 msgid "there are multiple templates with the same name"
-msgstr ""
+msgstr "има множество шаблони с едно и също име"
 
 #: useragent/useragent.cpp:284
 #, kde-format
 msgctxt "The user gave a custom user agent string an empty or duplicate name"
 msgid "Invalid user agent names:"
-msgstr ""
+msgstr "Невалидни имена за user agent"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20

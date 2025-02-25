@@ -1,7 +1,7 @@
 # translation of kcmkonqhtml.po to
 # Translation of kcmkonqhtml.po to Slovenian
 # SLOVENIAN TRANSLATION OF KCMKONQHTML.
-# $Id: kcmkonqhtml.po 1703671 2025-02-24 01:19:30Z scripty $
+# $Id: kcmkonqhtml.po 1703755 2025-02-25 01:18:49Z scripty $
 # $Source$
 #
 # Copyright (C) 2002, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 00:41+0000\n"
-"PO-Revision-Date: 2024-08-01 07:26+0200\n"
+"PO-Revision-Date: 2025-02-24 07:26+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -405,26 +405,24 @@ msgid "The custom directory to store cache"
 msgstr "Imenik po meri za shranjevanje medpomnilnika"
 
 #: cookies/kcookiesmain.cpp:33
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "&Policy"
-msgstr "Politika"
+msgstr "Pravilnik"
 
 #: cookies/kcookiesmain.cpp:35
 #, kde-format
 msgid "&Management"
-msgstr ""
+msgstr "Upravljanje"
 
 #: cookies/kcookiesmanagement.cpp:46
-#, fuzzy, kde-format
-#| msgid "Accept until end of session"
+#, kde-format
 msgid "End of session"
-msgstr "Sprejmi do konca seje"
+msgstr "Konec seje"
 
 #: cookies/kcookiesmanagement.cpp:51
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Da"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
@@ -519,20 +517,16 @@ msgid "Secure:"
 msgstr "Zavaruj:"
 
 #: cookies/kcookiespolicies.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Change Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Change Cookie Policy"
-msgstr "Spremeni pravilnik za vstavek"
+msgstr "Spremeni pravilnik piškotkov"
 
 #: cookies/kcookiespolicies.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Cookie Policy"
-msgstr "Novo pravilnik za vstavek"
+msgstr "Novi pravilnik piškotkov"
 
 #: cookies/kcookiespolicies.cpp:189
 #, kde-format
@@ -540,18 +534,19 @@ msgid ""
 "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
 "replace it?</qt>"
 msgstr ""
+"<qt>Že obstaja pravilnik za<center><b>%1</b></center>Ali ga želite zamenjati?"
+"</qt>"
 
 #: cookies/kcookiespolicies.cpp:193
-#, fuzzy, kde-format
-#| msgid "Site Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Duplicate Policy"
-msgstr "Politika spletišča"
+msgstr "Podvoji pravilnik"
 
 #: cookies/kcookiespolicies.cpp:194
 #, kde-format
 msgid "Replace"
-msgstr ""
+msgstr "Zamenjaj"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -2488,29 +2483,29 @@ msgstr "Ob zaprtju trenutnega zavihka omogoči prej uporabljen zavihek"
 msgctxt ""
 "@title:window Title of dialog to choose name to given to new User Agent"
 msgid "Choose User Agent name"
-msgstr ""
+msgstr "Izberite ime uporabniškega agenta"
 
 #: useragent/useragent.cpp:196
 #, kde-format
 msgctxt "Name of the new User Agent"
 msgid "User Agent name"
-msgstr ""
+msgstr "Ime uporabniškega agenta"
 
 #: useragent/useragent.cpp:256
 #, kde-format
 msgid "there are templates with empty names"
-msgstr ""
+msgstr "obstajajo predloge s praznimi imeni"
 
 #: useragent/useragent.cpp:261
 #, kde-format
 msgid "there are multiple templates with the same name"
-msgstr ""
+msgstr "obstaja več predlog z istim imenom"
 
 #: useragent/useragent.cpp:284
 #, kde-format
 msgctxt "The user gave a custom user agent string an empty or duplicate name"
 msgid "Invalid user agent names:"
-msgstr ""
+msgstr "Neveljavna imena uporabniških agentov:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20
