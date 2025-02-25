@@ -1,4 +1,5 @@
 # translation of kcmkonqhtml.po to Italian
+# SPDX-FileCopyrightText: 2016, 2019, 2020, 2022, 2023, 2024, 2025 Luigi Toscano <luigi.toscano@tiscali.it>
 # Andrea Rizzi <rizzi@kde.org>, 2003, 2004, 2005, 2007.
 # Giovanni Venturi <jumpyj@tiscali.it>, 2004.
 # Andrea RIZZI <arizzi@pi.infn.it>, 2004.
@@ -6,13 +7,12 @@
 # Luciano Montanaro <mikelima@cirulla.net>, 2008.
 # Vincenzo Reale <smart2128vr@gmail.com>, 2009.
 # Federico Zenith <federico.zenith@member.fsf.org>, 2009, 2010, 2011, 2012.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2016, 2019, 2020, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 02:31+0000\n"
-"PO-Revision-Date: 2024-07-25 15:49+0200\n"
+"PO-Revision-Date: 2025-02-24 18:25+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -412,26 +412,24 @@ msgid "The custom directory to store cache"
 msgstr "La cartella personalizzata per la cache"
 
 #: cookies/kcookiesmain.cpp:33
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "&Policy"
-msgstr "Politica"
+msgstr "&Politica"
 
 #: cookies/kcookiesmain.cpp:35
 #, kde-format
 msgid "&Management"
-msgstr ""
+msgstr "&Gestione"
 
 #: cookies/kcookiesmanagement.cpp:46
-#, fuzzy, kde-format
-#| msgid "Accept until end of session"
+#, kde-format
 msgid "End of session"
-msgstr "Accetta per la sessione"
+msgstr "Fine della sessione"
 
 #: cookies/kcookiesmanagement.cpp:51
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Sì"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
@@ -526,20 +524,16 @@ msgid "Secure:"
 msgstr "È sicuro:"
 
 #: cookies/kcookiespolicies.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Change Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Change Cookie Policy"
-msgstr "Cambia politica dei plugin"
+msgstr "Cambia la politica dei cookie"
 
 #: cookies/kcookiespolicies.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Cookie Policy"
-msgstr "Nuova politica dei plugin"
+msgstr "Nuova politica dei cookie"
 
 #: cookies/kcookiespolicies.cpp:189
 #, kde-format
@@ -547,18 +541,19 @@ msgid ""
 "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
 "replace it?</qt>"
 msgstr ""
+"<qt>Esiste già una politica per<center><b>%1</b></center> Vuoi sostituirla?</"
+"qt>"
 
 #: cookies/kcookiespolicies.cpp:193
-#, fuzzy, kde-format
-#| msgid "Site Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Duplicate Policy"
-msgstr "Politica del sito"
+msgstr "Politica duplicata"
 
 #: cookies/kcookiespolicies.cpp:194
 #, kde-format
 msgid "Replace"
-msgstr ""
+msgstr "Sostituisci"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -2524,29 +2519,29 @@ msgstr "Torna alla scheda di prima quando si chiude l'attuale"
 msgctxt ""
 "@title:window Title of dialog to choose name to given to new User Agent"
 msgid "Choose User Agent name"
-msgstr ""
+msgstr "Scegli il nome dello User Agent"
 
 #: useragent/useragent.cpp:196
 #, kde-format
 msgctxt "Name of the new User Agent"
 msgid "User Agent name"
-msgstr ""
+msgstr "Nome dello User Agent"
 
 #: useragent/useragent.cpp:256
 #, kde-format
 msgid "there are templates with empty names"
-msgstr ""
+msgstr "ci sono modelli con nomi vuoti"
 
 #: useragent/useragent.cpp:261
 #, kde-format
 msgid "there are multiple templates with the same name"
-msgstr ""
+msgstr "ci sono diversi modelli con lo stesso nome"
 
 #: useragent/useragent.cpp:284
 #, kde-format
 msgctxt "The user gave a custom user agent string an empty or duplicate name"
 msgid "Invalid user agent names:"
-msgstr ""
+msgstr "Nomi di user agent non validi:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20

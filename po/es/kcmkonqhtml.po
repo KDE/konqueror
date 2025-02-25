@@ -1,34 +1,30 @@
-# Translation of kcmkonqhtml to Spanish
-# translation of kcmkonqhtml.po to Spanish
-# Copyright (C) 2000-2002.
+# Translation of kcmkonqhtml.po to Spanish
 #
-# Pablo de Vicente <vicente@oan.es>,2000-2002.
-# Jaime Robles <jaime@kde.org>, 2003, 2007, 2008, 2009.
-# Miguel Revilla Rodríguez <yo@miguelrevilla.com>, 2003, 2004.
-# Pablo de Vicente <p.devicente@wanadoo.es>, 2004, 2005.
-# Juan Manuel Garcia Molina <juanma@superiodico.net>, 2005.
-# Jaime Robles <jaime@robles.nu>, 2005.
-# Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
-# SPDX-FileCopyrightText: 2010, 2012, 2016, 2019, 2020, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
-# Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>, 2010, 2011.
-# Javier Vinal <fjvinal@gmail.com>, 2011.
-# arklad, 2011.
-# Rocio Gallego <traducciones@rociogallego.com>, 2016.
+# SPDX-FileCopyrightText: 2000-2002 Pablo de Vicente <vicente@oan.es>
+# SPDX-FileCopyrightText: 2003, 2007, 2008, 2009 Jaime Robles <jaime@kde.org>
+# SPDX-FileCopyrightText: 2003, 2004 Miguel Revilla Rodríguez <yo@miguelrevilla.com>
+# SPDX-FileCopyrightText: 2004, 2005 Pablo de Vicente <p.devicente@wanadoo.es>
+# SPDX-FileCopyrightText: 2005 Juan Manuel Garcia Molina <juanma@superiodico.net>
+# SPDX-FileCopyrightText: 2005 Jaime Robles <jaime@robles.nu>
+# SPDX-FileCopyrightText: 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2010, 2012, 2016, 2019, 2020, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2010, 2011 Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>
+# SPDX-FileCopyrightText: 2011 Javier Vinal <fjvinal@gmail.com>
+# SPDX-FileCopyrightText: 2016 Rocio Gallego <traducciones@rociogallego.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 02:31+0000\n"
-"PO-Revision-Date: 2024-07-26 00:39+0200\n"
+"PO-Revision-Date: 2025-02-24 18:03+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"com>\n"
 "First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.12.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: appearance.cpp:39
@@ -419,26 +415,24 @@ msgid "The custom directory to store cache"
 msgstr "El directorio personalizado para almacenar la caché"
 
 #: cookies/kcookiesmain.cpp:33
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "&Policy"
-msgstr "Política"
+msgstr "&Política"
 
 #: cookies/kcookiesmain.cpp:35
 #, kde-format
 msgid "&Management"
-msgstr ""
+msgstr "&Gestión"
 
 #: cookies/kcookiesmanagement.cpp:46
-#, fuzzy, kde-format
-#| msgid "Accept until end of session"
+#, kde-format
 msgid "End of session"
-msgstr "Aceptar hasta el final de la sesión"
+msgstr "Fin de la sesión"
 
 #: cookies/kcookiesmanagement.cpp:51
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Sí"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
@@ -482,7 +476,7 @@ msgstr "Borrar &todo"
 #: cookies/kcookiesmanagement.ui:70
 #, kde-format
 msgid "Configure &Policy..."
-msgstr "Configurar &política..."
+msgstr "Configurar &política…"
 
 #. i18n: ectx: property (text), widget (QPushButton, reloadButton)
 #: cookies/kcookiesmanagement.ui:77
@@ -533,20 +527,16 @@ msgid "Secure:"
 msgstr "Segura:"
 
 #: cookies/kcookiespolicies.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Change Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Change Cookie Policy"
-msgstr "Cambiar política de complementos"
+msgstr "Cambiar regla de cookies"
 
 #: cookies/kcookiespolicies.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Cookie Policy"
-msgstr "Nueva política de complementos"
+msgstr "Nueva regla de cookies"
 
 #: cookies/kcookiespolicies.cpp:189
 #, kde-format
@@ -554,18 +544,19 @@ msgid ""
 "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
 "replace it?</qt>"
 msgstr ""
+"<qt>Ya existe una regla para<center><b>%1</b></center>¿Desea sustituirla?</"
+"qt>"
 
 #: cookies/kcookiespolicies.cpp:193
-#, fuzzy, kde-format
-#| msgid "Site Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Duplicate Policy"
-msgstr "Política del sitio"
+msgstr "Duplicar regla"
 
 #: cookies/kcookiespolicies.cpp:194
 #, kde-format
 msgid "Replace"
-msgstr ""
+msgstr "Sustituir"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -637,7 +628,7 @@ msgstr ""
 "actual. Estas cookies no se almacenarán en el disco duro ni en ningún "
 "dispositivo de almacenamiento de su equipo. En lugar de ello, se eliminarán "
 "cuando cierre todas las aplicaciones (por ejemplo, su navegador) que las "
-"usan.</p><p><u>NOTA</u> Al marcar esta opción, se anulan las políticas de "
+"usan.</p><p><u>NOTA</u> Al marcar esta opción, se anulan las reglas de "
 "cookies predeterminadas y específicas del sitio para las cookies de sesión.</"
 "p>"
 
@@ -678,8 +669,8 @@ msgstr ""
 "<li><b>Rechazar</b> hará que se rechacen todas las cookies que se reciban.</"
 "li>\n"
 "</ul><p>\n"
-"<u>Nota:</u> Las políticas específicas de dominios, que se pueden definir "
-"más abajo, siempre tienen preferencia sobre la política predeterminada.</p>\n"
+"<u>Nota:</u> Las reglas específicas de dominios, que se pueden definir más "
+"abajo, siempre tienen preferencia sobre la regla predeterminada.</p>\n"
 "</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
@@ -726,13 +717,12 @@ msgid ""
 "</qt>"
 msgstr ""
 "<qt>\n"
-"Para añadir una nueva política, pulse el botón <b>Añadir...</b> e introduzca "
-"la información necesaria. Para cambiar una política existente, use el botón "
-"<b>Cambiar...</b> y escoja la nueva política en el diálogo de políticas. Si "
-"pulsa el botón <b>Borrar</b> se eliminará la política seleccionada, haciendo "
-"que se use la política predeterminada para este dominio, mientras que el "
-"botón <b>Borrar todas</b> eliminará todas las políticas específicas del "
-"sitio.\n"
+"Para añadir una nueva regla, pulse el botón <b>Añadir…</b> e introduzca la "
+"información necesaria. Para cambiar una regla existente, use el botón "
+"<b>Cambiar…</b> y escoja la nueva regla en el diálogo de reglas. Si pulsa el "
+"botón <b>Borrar</b> se eliminará la regla seleccionada, haciendo que se use "
+"la regla predeterminada para este dominio, mientras que el botón <b>Borrar "
+"todas</b> eliminará todas las reglas específicas del sitio.\n"
 "</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
@@ -751,7 +741,7 @@ msgstr "Buscar dominios de forma interactiva"
 #: cookies/kcookiespolicies.ui:138
 #, kde-format
 msgid "Search..."
-msgstr "Buscar..."
+msgstr "Buscar…"
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -763,8 +753,8 @@ msgid ""
 "</qt>"
 msgstr ""
 "<qt>\n"
-"Lista de sitios para los que ha definido una política de cookies específica. "
-"Las políticas específicas tienen preferencia sobre la configuración de la "
+"Lista de sitios para los que ha definido una regla de cookies específica. "
+"Las reglas específicas tienen preferencia sobre la configuración de la "
 "política predeterminada para estos sitios.\n"
 "</qt>"
 
@@ -778,7 +768,7 @@ msgstr "Dominio"
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
 #, kde-format
 msgid "Policy"
-msgstr "Política"
+msgstr "Regla"
 
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
@@ -786,13 +776,13 @@ msgstr "Política"
 #: useragent/useragent.ui:81
 #, kde-format
 msgid "&New..."
-msgstr "&Nuevo..."
+msgstr "&Nuevo…"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbChange)
 #: cookies/kcookiespolicies.ui:183 domainlistview.cpp:52
 #, kde-format
 msgid "Chan&ge..."
-msgstr "Ca&mbiar..."
+msgstr "Ca&mbiar…"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:22
@@ -804,8 +794,8 @@ msgid ""
 "</qt>"
 msgstr ""
 "<qt>\n"
-"Introduzca la máquina o el dominio al que se aplica esta política (por "
-"ejemplo, <b>www.kde.org</b> o <b>.kde.org</b>.\n"
+"Introduzca la máquina o el dominio al que se aplica esta regla (por ejemplo, "
+"<b>www.kde.org</b> o <b>.kde.org</b>.\n"
 "</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
@@ -820,7 +810,7 @@ msgstr "Nombre del sitio:"
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
 msgstr ""
 "Introduzca la máquina o el nombre de dominio (como .kde.org) al que se "
-"aplica esta política."
+"aplica esta regla."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -840,7 +830,7 @@ msgid ""
 "</qt>"
 msgstr ""
 "<qt>\n"
-"Seleccione la política deseada:\n"
+"Seleccione la regla deseada:\n"
 "<ul>\n"
 "<li><b>Aceptar</b>: Permite que este sitio establezca cookies</li>\n"
 "<li><b>Aceptar hasta el final de la sesión</b>: Permite que este sitio "
@@ -856,7 +846,7 @@ msgstr ""
 #: cookies/kcookiespolicyselectiondlg.ui:56
 #, kde-format
 msgid "Policy:"
-msgstr "Política:"
+msgstr "Regla:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:192
@@ -976,7 +966,7 @@ msgstr "Usar la hoja de estilo de acce&sibilidad"
 #: css/cssconfig.ui:146
 #, kde-format
 msgid "Custom&ize..."
-msgstr "&Personalizar..."
+msgstr "&Personalizar…"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customPageBackgroundBox)
 #: css/cssconfig.ui:177
@@ -1467,19 +1457,19 @@ msgstr "E&liminar"
 #: domainlistview.cpp:60
 #, kde-format
 msgid "&Import..."
-msgstr "&Importar..."
+msgstr "&Importar…"
 
 #: domainlistview.cpp:66
 #, kde-format
 msgid "&Export..."
-msgstr "&Exportar..."
+msgstr "&Exportar…"
 
 #: domainlistview.cpp:74
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr ""
-"Pulse en este botón para añadir manualmente una política específica de "
-"máquina o de dominio."
+"Pulse en este botón para añadir manualmente una regla específica de máquina "
+"o de dominio."
 
 #: domainlistview.cpp:76
 #, kde-format
@@ -1487,8 +1477,8 @@ msgid ""
 "Click on this button to change the policy for the host or domain selected in "
 "the list box."
 msgstr ""
-"Pulse en este botón para modificar manualmente la política para la máquina o "
-"el dominio seleccionado en la lista."
+"Pulse en este botón para modificar manualmente la regla para la máquina o el "
+"dominio seleccionado en la lista."
 
 #: domainlistview.cpp:78
 #, kde-format
@@ -1496,18 +1486,18 @@ msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
 "the list box."
 msgstr ""
-"Pulse en este botón para modificar manualmente la política para la máquina o "
-"el dominio seleccionado en la lista."
+"Pulse en este botón para modificar manualmente la regla para la máquina o el "
+"dominio seleccionado en la lista."
 
 #: domainlistview.cpp:125
 #, kde-format
 msgid "You must first select a policy to be changed."
-msgstr "Debe seleccionar primero una política para modificar."
+msgstr "Debe seleccionar primero una regla para modificar."
 
 #: domainlistview.cpp:152
 #, kde-format
 msgid "You must first select a policy to delete."
-msgstr "Debe seleccionar primero una política para borrar."
+msgstr "Debe seleccionar primero una regla para borrar."
 
 #: domainlistview.cpp:190 policydlg.cpp:63
 #, kde-format
@@ -1518,30 +1508,30 @@ msgstr "Usar globalmente"
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
-msgstr "Nueva política de JavaScript"
+msgstr "Nueva regla de JavaScript"
 
 #: domainlistview.cpp:235
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
-msgstr "Modificar política de JavaScript"
+msgstr "Modificar regla de JavaScript"
 
 #: domainlistview.cpp:239
 #, kde-format
 msgid "JavaScript policy:"
-msgstr "Política JavaScript:"
+msgstr "Regla de JavaScript:"
 
 #: domainlistview.cpp:240
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
 msgstr ""
-"Seleccionar una política JavaScript para el nombre de dominio o de la "
+"Seleccionar una regla de JavaScript para el nombre de dominio o de la "
 "máquina de arriba."
 
 #: domainlistview.cpp:242
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
-msgstr "Política específica de JavaScript para un dominio concreto"
+msgstr "Regla específica de JavaScript para un dominio concreto"
 
 #: filteropts.cpp:48
 #, kde-format
@@ -1607,12 +1597,12 @@ msgstr "Eliminar"
 #: filteropts.cpp:130
 #, kde-format
 msgid "Import..."
-msgstr "Importar..."
+msgstr "Importar…"
 
 #: filteropts.cpp:133
 #, kde-format
 msgid "Export..."
-msgstr "Exportar..."
+msgstr "Exportar…"
 
 #: filteropts.cpp:140
 #, kde-format
@@ -2012,16 +2002,15 @@ msgid ""
 "share your policies with other people by allowing you to save and retrieve "
 "them from a zipped file."
 msgstr ""
-"Aquí podrá ajustar políticas específicas JavaScript para cualquier dominio o "
-"máquina en particular. Para añadir una nueva política, simplemente pulse en "
-"el botón <i>Nuevo...</i> y suministre la información necesaria solicitada "
-"por el cuadro de diálogo. Para modificar una política existente, pulse en el "
-"botón <i>Cambiar...</i> y elija la nueva política del cuadro de diálogo de "
-"política. Si selecciona el botón <i>Eliminar</i>, la política elegida será "
-"suprimida y la configuración de política estándar se usará para este "
-"dominio. Los botones <i>Importar</i> y <i>Exportar</i> le permiten compartir "
-"fácilmente sus políticas con otras personas y guardarlas y recuperarlas de "
-"un archivo comprimido con zip."
+"Aquí podrá ajustar reglas específicas de JavaScript para cualquier dominio o "
+"máquina en particular. Para añadir una nueva regla, pulse en  botón <i>Nueva…"
+"</i> y proporcione la información necesaria que se solicita en el diálogo. "
+"Para modificar una regla existente, pulse el botón <i>Cambiar…</i> y elija "
+"la nueva regla del diálogo de reglas. Si selecciona el botón <i>Eliminar</"
+"i>, la regla elegida se eliminará y la configuración de la política estándar "
+"se usará para este dominio. Los botones <i>Importar</i> y <i>Exportar</i> le "
+"permiten compartir fácilmente sus reglas con otras personas y guardarlas y "
+"recuperarlas de un archivo comprimido con zip."
 
 #: jsopts.cpp:80
 #, kde-format
@@ -2033,9 +2022,9 @@ msgid ""
 "it.</p>"
 msgstr ""
 "<p>Esta caja contiene los dominios y máquinas para los que usted debe fijar "
-"una política específica para JavaScript. Esta política se usará en vez de la "
+"una regla específica para JavaScript. Esta regla se usará en vez de la "
 "política estándar para habilitar o deshabilitar JavaScript en las páginas "
-"enviadas por estos dominios o </p><p>Seleccione una política y use los "
+"enviadas por estos dominios o máquinas.</p><p>Seleccione una regla y use los "
 "controles a la derecha para modificarla.</p>"
 
 #: jsopts.cpp:87
@@ -2045,8 +2034,8 @@ msgid ""
 "These policies will be merged with the existing ones. Duplicate entries are "
 "ignored."
 msgstr ""
-"Pulse en este botón para elegir el archivo que contenga las políticas "
-"JavaScript.  Estas políticas se fundirán con otras existentes. Las entradas "
+"Pulse en este botón para elegir el archivo que contenga las reglas de "
+"JavaScript.  Estas reglas se fusionarán con otras existentes. Las entradas "
 "duplicadas se ignorarán."
 
 #: jsopts.cpp:90
@@ -2056,14 +2045,14 @@ msgid ""
 "named <b>javascript_policy.tgz</b>, will be saved to a location of your "
 "choice."
 msgstr ""
-"Pulse en este botón para guardar la política JavaScript en un archivo "
+"Pulse este botón para guardar la regla de JavaScript en un archivo "
 "comprimido con zip. El archivo, denominado <b>javascript_policy.tgz</b>, "
 "será guardado en el sitio que usted escoja."
 
 #: jsopts.cpp:96
 #, kde-format
 msgid "Global JavaScript Policies"
-msgstr "Políticas globales de JavaScript"
+msgstr "Reglas globales de JavaScript"
 
 #: jspolicies.cpp:161
 #, kde-format
@@ -2533,29 +2522,29 @@ msgstr "Activar la pestaña previamente utilizada al cerrar la pestaña actual"
 msgctxt ""
 "@title:window Title of dialog to choose name to given to new User Agent"
 msgid "Choose User Agent name"
-msgstr ""
+msgstr "Escoger nombre del agente de usuario"
 
 #: useragent/useragent.cpp:196
 #, kde-format
 msgctxt "Name of the new User Agent"
 msgid "User Agent name"
-msgstr ""
+msgstr "Nombre del agente de usuario"
 
 #: useragent/useragent.cpp:256
 #, kde-format
 msgid "there are templates with empty names"
-msgstr ""
+msgstr "hay plantillas con nombres en blanco"
 
 #: useragent/useragent.cpp:261
 #, kde-format
 msgid "there are multiple templates with the same name"
-msgstr ""
+msgstr "hay varias plantillas con el mismo nombre"
 
 #: useragent/useragent.cpp:284
 #, kde-format
 msgctxt "The user gave a custom user agent string an empty or duplicate name"
 msgid "Invalid user agent names:"
-msgstr ""
+msgstr "Nombres de agente de usuario no válidos:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20
@@ -2582,19 +2571,19 @@ msgstr "Contenido"
 #: useragent/useragent.ui:94
 #, kde-format
 msgid "&Edit..."
-msgstr "&Editar..."
+msgstr "&Editar…"
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:107
 #, kde-format
 msgid "&Rename..."
-msgstr "Cam&biar nombre..."
+msgstr "Cam&biar nombre…"
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
 #: useragent/useragent.ui:120
 #, kde-format
 msgid "Du&plicate..."
-msgstr "Du&plicar..."
+msgstr "Du&plicar…"
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:133

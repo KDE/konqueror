@@ -1,0 +1,410 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# SPDX-FileCopyrightText: 2025 Freek de Kruijf <freekdekruijf@kde.nl>
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-02-24 11:22+0000\n"
+"PO-Revision-Date: 2025-02-24 17:23+0100\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.12.2\n"
+
+#: bookmarks_module/bookmarks_module.cpp:273
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "Bookmarks Sidebar Module"
+msgstr "Zijbalkmodule voor bladwijzers"
+
+#: bookmarks_module/bookmarks_module.cpp:296
+#, kde-format
+msgctxt "@title:tab"
+msgid "Bookmarks"
+msgstr "Bladwijzers"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbDefaultAction)
+#: history_module/history_dlg.ui:17
+#, kde-format
+msgid "Default action"
+msgstr "Standaard actie"
+
+#. i18n: ectx: property (text), widget (QLabel, lDefault)
+#: history_module/history_dlg.ui:23
+#, kde-format
+msgid "Default action when double clicking an URL"
+msgstr "Standaard actie bij dubbelklikken op een URL"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbLimits)
+#: history_module/history_dlg.ui:36
+#, kde-format
+msgid "Limits"
+msgstr "Limieten"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbExpire)
+#: history_module/history_dlg.ui:61
+#, kde-format
+msgid "URLs e&xpire after"
+msgstr "URL's ver&lopen na"
+
+#. i18n: ectx: property (text), widget (QLabel, lEntries)
+#: history_module/history_dlg.ui:71
+#, kde-format
+msgid "Maximum &number of URLs:"
+msgstr "Maximum aa&ntal URL's:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbFonts)
+#: history_module/history_dlg.ui:87
+#, kde-format
+msgid "Custom Fonts For"
+msgstr "Aangepaste lettertypen voor"
+
+#. i18n: ectx: property (text), widget (QLabel, lbNewer)
+#: history_module/history_dlg.ui:102
+#, kde-format
+msgid "URLs newer than"
+msgstr "URL's nieuwer dan"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnFontOlder)
+#. i18n: ectx: property (text), widget (QPushButton, btnFontNewer)
+#: history_module/history_dlg.ui:118 history_module/history_dlg.ui:138
+#, kde-format
+msgid "Choose Font..."
+msgstr "Lettertype kiezen..."
+
+#. i18n: ectx: property (text), widget (QLabel, lbOlder)
+#: history_module/history_dlg.ui:125
+#, kde-format
+msgid "URLs older than"
+msgstr "URL's ouder dan"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbDetails)
+#: history_module/history_dlg.ui:148
+#, kde-format
+msgid "Details"
+msgstr "Details"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, cbDetailedTips)
+#: history_module/history_dlg.ui:154
+#, kde-format
+msgid ""
+"Shows the number of times visited and the dates of the first and last "
+"visits, in addition to the URL"
+msgstr ""
+"Toont het aantal keren bezocht en de datums van het eerste en laatste "
+"bezoek, naast de URL"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbDetailedTips)
+#: history_module/history_dlg.ui:157
+#, kde-format
+msgid "Detailed tooltips"
+msgstr "Gedetailleerde tekstballonnen"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnClearHistory)
+#: history_module/history_dlg.ui:169
+#, kde-format
+msgid "Clear History"
+msgstr "Geschiedenis wissen"
+
+#: history_module/history_module.cpp:139
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "History Sidebar Module"
+msgstr "Zijbalkmodule met geschiedenis"
+
+#: history_module/history_module.cpp:162
+#, kde-format
+msgctxt "@title:tab"
+msgid "History"
+msgstr "Geschiedenis"
+
+#: history_module/kcmhistory.cpp:49
+#, kde-format
+msgctxt "Automatically decide which action to perform"
+msgid "Auto"
+msgstr "Automatisch"
+
+#: history_module/kcmhistory.cpp:50
+#, kde-format
+msgctxt "Open URL in new tab"
+msgid "Open in new tab"
+msgstr "In nieuw tabblad openen"
+
+#: history_module/kcmhistory.cpp:51
+#, kde-format
+msgctxt "Open URL in current tab"
+msgid "Open in current tab"
+msgstr "In huidig tabblad openen"
+
+#: history_module/kcmhistory.cpp:52
+#, kde-format
+msgctxt "Open URL in new window"
+msgid "Open in new window"
+msgstr "Openen in nieuw venster"
+
+#: history_module/kcmhistory.cpp:54
+#, kde-format
+msgid ""
+"Action to carry out when opening an URL from history:<dl><dl><dt>Auto:</"
+"dt><dd>opens the URL in a new tab unless the current tab is empty or an "
+"intro page</dd><dt>Open URL in a new tab:</dt><dd>always opens the URL in a "
+"new tab</dd><dt>Open URL in current tab:</dt><dd>always opens the URL in the "
+"current tab</dd><dt>Open URL in new window:</dt><dd>always opens the URL in "
+"a new window</dd></dl>"
+msgstr ""
+"Uit te voeren actie bij openen van een URL uit de geschiedenis:"
+"<dl><dl><dt>Automatisch:</dt><dd>opent de URL in een nieuw tabblad tenzij "
+"het huidige tabblad leeg is of een introductiepagina</dd><dt>URL in een "
+"nieuw tabblad openen:</dt><dd>opent de URL altijd in een nieuw tabblad</"
+"dd><dt>URL openen in huidig tabblad:</dt><dd>de URL altijd in het huidige "
+"tabblad openen</dd><dt>URL in nieuw venster openen:</dt><dd>de URL altijd in "
+"een nieuw venster openen</dd></dl>"
+
+#: history_module/kcmhistory.cpp:65
+#, kde-format
+msgid "days"
+msgstr "dagen"
+
+#: history_module/kcmhistory.cpp:71 history_module/kcmhistory.cpp:76
+#: history_module/kcmhistory.cpp:200 history_module/kcmhistory.cpp:213
+#, kde-format
+msgid "Minute"
+msgid_plural "Minutes"
+msgstr[0] "Minuut"
+msgstr[1] "Minuten"
+
+#: history_module/kcmhistory.cpp:73 history_module/kcmhistory.cpp:78
+#: history_module/kcmhistory.cpp:198 history_module/kcmhistory.cpp:211
+#, kde-format
+msgid "Day"
+msgid_plural "Days"
+msgstr[0] "Dag"
+msgstr[1] "Dagen"
+
+#: history_module/kcmhistory.cpp:245
+#, kde-format
+msgid "Do you really want to clear the entire history?"
+msgstr "Wilt u de hele geschiedenis wissen?"
+
+#: history_module/kcmhistory.cpp:247
+#, kde-format
+msgctxt "@title:window"
+msgid "Clear History?"
+msgstr "Geschiedenis wissen?"
+
+#: places_module/places_module.cpp:76
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "Places Sidebar Module"
+msgstr "Zijbalkmodule voor plaatsen"
+
+#: places_module/places_module.cpp:99
+#, kde-format
+msgctxt "@title:tab"
+msgid "Places"
+msgstr "Plaatsen"
+
+#: sidebar_widget.cpp:83
+#, kde-format
+msgid "Restore All Removed Default Buttons"
+msgstr "Alle verwijderde standaard knoppen terugzetten"
+
+#: sidebar_widget.cpp:84
+#, kde-format
+msgid "Rollback to System Default"
+msgstr "De systeemstandaard terugzetten"
+
+#: sidebar_widget.cpp:143 sidebar_widget.cpp:429
+#, kde-format
+msgid "Configure Sidebar"
+msgstr "Zijbalk configureren"
+
+#: sidebar_widget.cpp:145
+#, kde-format
+msgid "Add New"
+msgstr "Nieuwe toevoegen"
+
+#: sidebar_widget.cpp:149
+#, kde-format
+msgid "Multiple Views"
+msgstr "Meerdere weergaven"
+
+#: sidebar_widget.cpp:151 sidebar_widget.cpp:268
+#, kde-format
+msgid "Show Tabs on Left"
+msgstr "Tabbladen links tonen"
+
+#: sidebar_widget.cpp:152
+#, kde-format
+msgid "Show Configuration Button"
+msgstr "Configuratieknop tonen"
+
+#: sidebar_widget.cpp:155
+#, kde-format
+msgid "Close Sidebar"
+msgstr "Zijbalk sluiten"
+
+#: sidebar_widget.cpp:210
+#, kde-format
+msgid "This entry already exists."
+msgstr "Dit item bestaat al."
+
+#: sidebar_widget.cpp:226
+#, kde-format
+msgid ""
+"<qt>This removes all your entries from the sidebar and adds the system "
+"default ones.<br /><b>This procedure is irreversible.</b><br />Do you want "
+"to proceed?</qt>"
+msgstr ""
+"<qt>Dit verwijdert al uw items uit de zijbalk en voegt die van de "
+"systeemstandaard toe.<br /><b>Deze procedure is onomkeerbaar.</b><br />Wilt "
+"u doorgaan?</qt>"
+
+#: sidebar_widget.cpp:268
+#, kde-format
+msgid "Show Tabs on Right"
+msgstr "Tabbladen rechts tonen"
+
+#: sidebar_widget.cpp:279
+#, kde-format
+msgctxt "@title:window"
+msgid "Set Name"
+msgstr "Voer naam in"
+
+#: sidebar_widget.cpp:280
+#, kde-format
+msgid "Enter the name:"
+msgstr "De naam invoeren:"
+
+#: sidebar_widget.cpp:298
+#, kde-format
+msgid "Enter a URL:"
+msgstr "Voer een URL-adres in:"
+
+#: sidebar_widget.cpp:322
+#, kde-format
+msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+msgstr "<qt>Wilt u het tabblad <b>%1</b> verwijderen?</qt>"
+
+#: sidebar_widget.cpp:372
+#, kde-format
+msgid ""
+"You have hidden the sidebar configuration button. To make it visible again, "
+"click the right mouse button on any of the sidebar buttons and select \"Show "
+"Configuration Button\"."
+msgstr ""
+"U hebt de configuratieknop van de zijbalk verborgen. Om deze weer zichtbaar "
+"te maken, klik op de rechter muisknop op een van de zijbalkknoppen en "
+"selecteer \"Configuratieknop tonen\"."
+
+#: sidebar_widget.cpp:573
+#, kde-format
+msgid "Set Name..."
+msgstr "Zet naam..."
+
+#: sidebar_widget.cpp:574
+#, kde-format
+msgid "Set URL..."
+msgstr "Zet URL..."
+
+#: sidebar_widget.cpp:575
+#, kde-format
+msgid "Set Icon..."
+msgstr "Pictogram instellen..."
+
+#: sidebar_widget.cpp:577
+#, kde-format
+msgid "Show Hidden Folders..."
+msgstr "Verborgen mappen tonen..."
+
+#: sidebar_widget.cpp:582
+#, kde-format
+msgid "Remove"
+msgstr "Verwijderen"
+
+#: sidebar_widget.cpp:908
+#, kde-format
+msgid "Web module"
+msgstr "Webmodule"
+
+#: tree_module/tree_module.cpp:259
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "Tree Sidebar Module"
+msgstr "Zijbalkmodule voor boomstructuur"
+
+#: tree_module/tree_module.cpp:282
+#, kde-format
+msgctxt "@title:tab"
+msgid "Tree"
+msgstr "Boomstructuur"
+
+#: web_module/web_module.cpp:42
+#, kde-format
+msgid "&Open Link"
+msgstr "Koppeling &openen"
+
+#: web_module/web_module.cpp:46
+#, kde-format
+msgid "Open in New &Window"
+msgstr "Openen in nieu&w venster"
+
+#: web_module/web_module.cpp:52
+#, kde-format
+msgid "&Reload"
+msgstr "He&rladen"
+
+#: web_module/web_module.cpp:57
+#, kde-format
+msgid "Set &Automatic Reload"
+msgstr "&Automatisch herladen zetten"
+
+#: web_module/web_module.cpp:121
+#, kde-format
+msgctxt "@title:window"
+msgid "Set Refresh Timeout (0 disables)"
+msgstr "Zet time-out voor verversen (0 schakelt uit)"
+
+#: web_module/web_module.cpp:132
+#, kde-format
+msgid " minute"
+msgid_plural " minutes"
+msgstr[0] " minuut"
+msgstr[1] " minuten"
+
+#: web_module/web_module.cpp:136
+#, kde-format
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " seconde"
+msgstr[1] " seconden"
+
+#: web_module/web_module.cpp:269
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "Web Sidebar Module"
+msgstr "Webzijbalkmodule"
+
+#: web_module/web_module.cpp:289
+#, kde-format
+msgctxt "@label"
+msgid "Name:"
+msgstr "Naam:"
+
+#: web_module/web_module.cpp:289
+#, kde-format
+msgctxt "@label"
+msgid "Path or URL:"
+msgstr "Pad of URL:"
+
+#: web_module/web_module.cpp:290
+#, kde-format
+msgctxt "@title:window"
+msgid "Add web sidebar module"
+msgstr "Webzijbalkmodule toevoegen"
