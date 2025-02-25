@@ -18,3 +18,6 @@ Dependencies:
     'frameworks/kdoctools': '@latest-kf6'
     'frameworks/kdesu': '@latest-kf6'
     'plasma/plasma-activities': '@latest-kf6'
+
+Options:
+  require-passing-tests-on: [ '@all' ]
