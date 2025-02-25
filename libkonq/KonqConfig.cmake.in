@@ -1,6 +1,6 @@
 @PACKAGE_INIT@
 
-​include(CMakeFindDependencyMacro)
+include(CMakeFindDependencyMacro)
 find_dependency(KF${KF_MAJOR_VERSION}XmlGui)
 find_dependency(KF${KF_MAJOR_VERSION}Config)
 find_dependency(KF${KF_MAJOR_VERSION}KIO)
