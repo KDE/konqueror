@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 00:41+0000\n"
-"PO-Revision-Date: 2025-01-21 10:10+0100\n"
+"PO-Revision-Date: 2025-02-24 11:45+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -38,89 +38,59 @@ msgstr "Barra d'eines extra"
 #: settingsplugin.cpp:45
 #, kde-format
 msgid "HTML Settings"
-msgstr ""
+msgstr "Configuració HTML"
 
 #: settingsplugin.cpp:50
 #, kde-format
 msgid "Java&Script"
-msgstr ""
+msgstr "Java&Script"
 
 #: settingsplugin.cpp:55
 #, kde-format
 msgid "&Java"
-msgstr ""
+msgstr "&Java"
 
 #: settingsplugin.cpp:60
 #, kde-format
 msgid "&Cookies"
-msgstr ""
+msgstr "&Galetes"
 
 #: settingsplugin.cpp:65
 #, kde-format
 msgid "&Plugins"
-msgstr ""
+msgstr "&Connectors"
 
 #: settingsplugin.cpp:70
 #, kde-format
 msgid "Autoload &Images"
-msgstr ""
+msgstr "Carrega automàticament les &imatges"
 
 #: settingsplugin.cpp:77
 #, kde-format
 msgid "Enable Pro&xy"
-msgstr ""
+msgstr "Habilita el servidor &intermediari"
 
 #: settingsplugin.cpp:82
 #, kde-format
 msgid "Enable Cac&he"
-msgstr ""
+msgstr "Habilita la memòria &cau"
 
 #: settingsplugin.cpp:87
 #, kde-format
 msgid "Cache Po&licy"
-msgstr ""
+msgstr "Po&lítica de memòria cau"
 
 #: settingsplugin.cpp:89
 #, kde-format
 msgid "&Keep Cache in Sync"
-msgstr ""
+msgstr "Man&tín la memòria cau sincronitzada"
 
 #: settingsplugin.cpp:90
 #, kde-format
 msgid "&Use Cache if Possible"
-msgstr ""
+msgstr "Utilit&za la memòria cau si és possible"
 
 #: settingsplugin.cpp:91
 #, kde-format
 msgid "&Offline Browsing Mode"
-msgstr ""
-
-#~ msgid "Temporary Download Directory"
-#~ msgstr "Directori temporal de baixades"
-
-#~ msgid "Choose Custom Download Directory..."
-#~ msgstr "Seleccioneu un directori temporal de baixades…"
-
-#~ msgid ""
-#~ "Choose a custom directory to use when downloading URLs from this window, "
-#~ "temporarily overriding the default one"
-#~ msgstr ""
-#~ "Seleccioneu un directori temporal que s'utilitzarà en baixar URL des "
-#~ "d'esta finestra, substituint temporalment el predeterminat"
-
-#~ msgctxt "@action:inmenu stop using a temporary download directory"
-#~ msgid "Stop Using Temporary Download Directory"
-#~ msgstr "Para l'ús del directori temporal de baixades"
-
-#~ msgid ""
-#~ "Use the default download directory instead of a custom one (only for this "
-#~ "window)"
-#~ msgstr ""
-#~ "Utilitza el directori predeterminat de baixades en lloc del personalitzat "
-#~ "(només per a esta finestra)"
-
-#~ msgid "Temporary save directory"
-#~ msgstr "Directori temporal de guardada"
-
-#~ msgid "Choose Temporary Save Directory"
-#~ msgstr "Seleccioneu un directori temporal de guardada"
+msgstr "Mode de navegació &desconnectat"
