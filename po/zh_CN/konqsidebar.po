@@ -21,74 +21,74 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Bookmarks Sidebar Module"
-msgstr ""
+msgstr "书签侧边栏模块"
 
 #: bookmarks_module/bookmarks_module.cpp:296
 #, kde-format
 msgctxt "@title:tab"
 msgid "Bookmarks"
-msgstr ""
+msgstr "书签"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDefaultAction)
 #: history_module/history_dlg.ui:17
 #, kde-format
 msgid "Default action"
-msgstr ""
+msgstr "默认操作"
 
 #. i18n: ectx: property (text), widget (QLabel, lDefault)
 #: history_module/history_dlg.ui:23
 #, kde-format
 msgid "Default action when double clicking an URL"
-msgstr ""
+msgstr "双击 URL 时的默认操作"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbLimits)
 #: history_module/history_dlg.ui:36
 #, kde-format
 msgid "Limits"
-msgstr ""
+msgstr "限制"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbExpire)
 #: history_module/history_dlg.ui:61
 #, kde-format
 msgid "URLs e&xpire after"
-msgstr ""
+msgstr "URL 过期时限(&X)"
 
 #. i18n: ectx: property (text), widget (QLabel, lEntries)
 #: history_module/history_dlg.ui:71
 #, kde-format
 msgid "Maximum &number of URLs:"
-msgstr ""
+msgstr "URL 最大数量(&N)："
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbFonts)
 #: history_module/history_dlg.ui:87
 #, kde-format
 msgid "Custom Fonts For"
-msgstr ""
+msgstr "自定义字体于"
 
 #. i18n: ectx: property (text), widget (QLabel, lbNewer)
 #: history_module/history_dlg.ui:102
 #, kde-format
 msgid "URLs newer than"
-msgstr ""
+msgstr "URL 新于"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnFontOlder)
 #. i18n: ectx: property (text), widget (QPushButton, btnFontNewer)
 #: history_module/history_dlg.ui:118 history_module/history_dlg.ui:138
 #, kde-format
 msgid "Choose Font..."
-msgstr ""
+msgstr "选择字体..."
 
 #. i18n: ectx: property (text), widget (QLabel, lbOlder)
 #: history_module/history_dlg.ui:125
 #, kde-format
 msgid "URLs older than"
-msgstr ""
+msgstr "URL 旧于"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDetails)
 #: history_module/history_dlg.ui:148
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "详情"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbDetailedTips)
 #: history_module/history_dlg.ui:154
@@ -96,55 +96,55 @@ msgstr ""
 msgid ""
 "Shows the number of times visited and the dates of the first and last "
 "visits, in addition to the URL"
-msgstr ""
+msgstr "除 URL 以外，还显示访问次数以及第一次和最后一次访问的日期"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbDetailedTips)
 #: history_module/history_dlg.ui:157
 #, kde-format
 msgid "Detailed tooltips"
-msgstr ""
+msgstr "详细悬停信息"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnClearHistory)
 #: history_module/history_dlg.ui:169
 #, kde-format
 msgid "Clear History"
-msgstr ""
+msgstr "清除历史记录"
 
 #: history_module/history_module.cpp:139
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "History Sidebar Module"
-msgstr ""
+msgstr "历史记录侧边栏模块"
 
 #: history_module/history_module.cpp:162
 #, kde-format
 msgctxt "@title:tab"
 msgid "History"
-msgstr ""
+msgstr "历史记录"
 
 #: history_module/kcmhistory.cpp:49
 #, kde-format
 msgctxt "Automatically decide which action to perform"
 msgid "Auto"
-msgstr ""
+msgstr "自动"
 
 #: history_module/kcmhistory.cpp:50
 #, kde-format
 msgctxt "Open URL in new tab"
 msgid "Open in new tab"
-msgstr ""
+msgstr "在新标签页中打开"
 
 #: history_module/kcmhistory.cpp:51
 #, kde-format
 msgctxt "Open URL in current tab"
 msgid "Open in current tab"
-msgstr ""
+msgstr "在当前标签页中打开"
 
 #: history_module/kcmhistory.cpp:52
 #, kde-format
 msgctxt "Open URL in new window"
 msgid "Open in new window"
-msgstr ""
+msgstr "在新窗口中打开"
 
 #: history_module/kcmhistory.cpp:54
 #, kde-format
@@ -156,93 +156,98 @@ msgid ""
 "current tab</dd><dt>Open URL in new window:</dt><dd>always opens the URL in "
 "a new window</dd></dl>"
 msgstr ""
+"从历史记录中打开 URL 时执行的操作：<dl><dl><dt>自动：</dt><dd>在新标签页中打"
+"开 URL，除非当前标签页为空白页或介绍页</dd><dt>在新标签页中打开 URL：</"
+"dt><dd>始终在新标签页中打开 URL：</dd><dt>在当前标签页中打开 URL：</dt><dd>始"
+"终在当前标签页中打开 URL：</dd><dt>在新窗口中打开 URL：</dt><dd>始终在新窗口"
+"中打开 URL：</dd></dl>"
 
 #: history_module/kcmhistory.cpp:65
 #, kde-format
 msgid "days"
-msgstr ""
+msgstr " 天"
 
 #: history_module/kcmhistory.cpp:71 history_module/kcmhistory.cpp:76
 #: history_module/kcmhistory.cpp:200 history_module/kcmhistory.cpp:213
 #, kde-format
 msgid "Minute"
 msgid_plural "Minutes"
-msgstr[0] ""
+msgstr[0] "分钟"
 
 #: history_module/kcmhistory.cpp:73 history_module/kcmhistory.cpp:78
 #: history_module/kcmhistory.cpp:198 history_module/kcmhistory.cpp:211
 #, kde-format
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
+msgstr[0] "天"
 
 #: history_module/kcmhistory.cpp:245
 #, kde-format
 msgid "Do you really want to clear the entire history?"
-msgstr ""
+msgstr "您确定要清除所有历史记录吗？"
 
 #: history_module/kcmhistory.cpp:247
 #, kde-format
 msgctxt "@title:window"
 msgid "Clear History?"
-msgstr ""
+msgstr "清除历史记录？"
 
 #: places_module/places_module.cpp:76
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Places Sidebar Module"
-msgstr ""
+msgstr "常用位置侧边栏模块"
 
 #: places_module/places_module.cpp:99
 #, kde-format
 msgctxt "@title:tab"
 msgid "Places"
-msgstr ""
+msgstr "常用位置"
 
 #: sidebar_widget.cpp:83
 #, kde-format
 msgid "Restore All Removed Default Buttons"
-msgstr ""
+msgstr "恢复所有已移除的默认按钮"
 
 #: sidebar_widget.cpp:84
 #, kde-format
 msgid "Rollback to System Default"
-msgstr ""
+msgstr "重置为系统默认值"
 
 #: sidebar_widget.cpp:143 sidebar_widget.cpp:429
 #, kde-format
 msgid "Configure Sidebar"
-msgstr ""
+msgstr "配置侧边栏"
 
 #: sidebar_widget.cpp:145
 #, kde-format
 msgid "Add New"
-msgstr ""
+msgstr "添加"
 
 #: sidebar_widget.cpp:149
 #, kde-format
 msgid "Multiple Views"
-msgstr ""
+msgstr "多视图"
 
 #: sidebar_widget.cpp:151 sidebar_widget.cpp:268
 #, kde-format
 msgid "Show Tabs on Left"
-msgstr ""
+msgstr "标签页显示在左侧"
 
 #: sidebar_widget.cpp:152
 #, kde-format
 msgid "Show Configuration Button"
-msgstr ""
+msgstr "显示配置按钮"
 
 #: sidebar_widget.cpp:155
 #, kde-format
 msgid "Close Sidebar"
-msgstr ""
+msgstr "关闭侧边栏"
 
 #: sidebar_widget.cpp:210
 #, kde-format
 msgid "This entry already exists."
-msgstr ""
+msgstr "该项目已存在。"
 
 #: sidebar_widget.cpp:226
 #, kde-format
@@ -251,32 +256,34 @@ msgid ""
 "default ones.<br /><b>This procedure is irreversible.</b><br />Do you want "
 "to proceed?</qt>"
 msgstr ""
+"<qt>这将从侧边栏移除所有自定义项目，并添加系统默认项目。<br /><b>此过程不可撤"
+"销。</b><br />您确定要继续吗？</qt>"
 
 #: sidebar_widget.cpp:268
 #, kde-format
 msgid "Show Tabs on Right"
-msgstr ""
+msgstr "标签页显示在右侧"
 
 #: sidebar_widget.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Name"
-msgstr ""
+msgstr "设置名称"
 
 #: sidebar_widget.cpp:280
 #, kde-format
 msgid "Enter the name:"
-msgstr ""
+msgstr "输入名称："
 
 #: sidebar_widget.cpp:298
 #, kde-format
 msgid "Enter a URL:"
-msgstr ""
+msgstr "输入 URL："
 
 #: sidebar_widget.cpp:322
 #, kde-format
 msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
-msgstr ""
+msgstr "<qt>您确定要移除 <b>%1</b> 标签页吗？</qt>"
 
 #: sidebar_widget.cpp:372
 #, kde-format
@@ -285,107 +292,109 @@ msgid ""
 "click the right mouse button on any of the sidebar buttons and select \"Show "
 "Configuration Button\"."
 msgstr ""
+"您已隐藏侧边栏配置按钮。要重新显示该按钮， 请在侧边栏的任意按钮上单击右键，然"
+"后选择“显示配置按钮”。"
 
 #: sidebar_widget.cpp:573
 #, kde-format
 msgid "Set Name..."
-msgstr ""
+msgstr "设置名称..."
 
 #: sidebar_widget.cpp:574
 #, kde-format
 msgid "Set URL..."
-msgstr ""
+msgstr "设置 URL..."
 
 #: sidebar_widget.cpp:575
 #, kde-format
 msgid "Set Icon..."
-msgstr ""
+msgstr "设置图标..."
 
 #: sidebar_widget.cpp:577
 #, kde-format
 msgid "Show Hidden Folders..."
-msgstr ""
+msgstr "显示隐藏文件夹..."
 
 #: sidebar_widget.cpp:582
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "移除"
 
 #: sidebar_widget.cpp:908
 #, kde-format
 msgid "Web module"
-msgstr ""
+msgstr "网页模块"
 
 #: tree_module/tree_module.cpp:259
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Tree Sidebar Module"
-msgstr ""
+msgstr "树状图侧边栏模块"
 
 #: tree_module/tree_module.cpp:282
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree"
-msgstr ""
+msgstr "树状图"
 
 #: web_module/web_module.cpp:42
 #, kde-format
 msgid "&Open Link"
-msgstr ""
+msgstr "打开链接(&O)"
 
 #: web_module/web_module.cpp:46
 #, kde-format
 msgid "Open in New &Window"
-msgstr ""
+msgstr "在新窗口中打开(&W)"
 
 #: web_module/web_module.cpp:52
 #, kde-format
 msgid "&Reload"
-msgstr ""
+msgstr "重新加载(&R)"
 
 #: web_module/web_module.cpp:57
 #, kde-format
 msgid "Set &Automatic Reload"
-msgstr ""
+msgstr "设置自动重新加载(&A)"
 
 #: web_module/web_module.cpp:121
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Refresh Timeout (0 disables)"
-msgstr ""
+msgstr "设置刷新超时 (0 则禁用)"
 
 #: web_module/web_module.cpp:132
 #, kde-format
 msgid " minute"
 msgid_plural " minutes"
-msgstr[0] ""
+msgstr[0] " 分钟"
 
 #: web_module/web_module.cpp:136
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
-msgstr[0] ""
+msgstr[0] " 秒"
 
 #: web_module/web_module.cpp:269
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Web Sidebar Module"
-msgstr ""
+msgstr "网页侧边栏模块"
 
 #: web_module/web_module.cpp:289
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr ""
+msgstr "名称："
 
 #: web_module/web_module.cpp:289
 #, kde-format
 msgctxt "@label"
 msgid "Path or URL:"
-msgstr ""
+msgstr "路径或 URL："
 
 #: web_module/web_module.cpp:290
 #, kde-format
 msgctxt "@title:window"
 msgid "Add web sidebar module"
-msgstr ""
+msgstr "添加网页侧边栏模块"

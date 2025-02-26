@@ -5,13 +5,13 @@
 # obsoleteman <tulliana@gmail.com>, 2008,2012.
 # Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 # Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# SPDX-FileCopyrightText: 2022, 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:32+0000\n"
-"PO-Revision-Date: 2022-04-26 11:21+0300\n"
+"PO-Revision-Date: 2025-02-25 10:03+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,17 +19,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #: autorefresh.cpp:28
 #, kde-format
 msgid "&Auto Refresh"
-msgstr "&Otomatik Yenileme"
+msgstr "&Kendiliğinden Yenile"
 
 #: autorefresh.cpp:32
 #, kde-format
 msgid "None"
-msgstr "Hiçbiri"
+msgstr "Yok"
 
 #: autorefresh.cpp:33
 #, kde-format
@@ -44,7 +44,7 @@ msgstr "30 saniyede bir"
 #: autorefresh.cpp:35
 #, kde-format
 msgid "Every Minute"
-msgstr "Her Dakika"
+msgstr "Her dakika"
 
 #: autorefresh.cpp:36
 #, kde-format
@@ -90,7 +90,7 @@ msgstr "Kaynak Yenilenemiyor"
 #: autorefresh.cpp:101
 #, kde-format
 msgid "<qt>This plugin cannot auto-refresh the current part.</qt>"
-msgstr "<qt>Geçerli bölüm eklentisi otomatik olarak yenilenemiyor.</qt>"
+msgstr "<qt>Geçerli bölüm eklentisi kendiliğinden yenilenemiyor.</qt>"
 
 #. i18n: ectx: Menu (tools)
 #: autorefresh.rc:5

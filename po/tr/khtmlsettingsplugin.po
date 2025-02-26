@@ -8,13 +8,13 @@
 # Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
 # obsoleteman <tulliana@gmail.com>, 2008-2009,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2017.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-22 00:38+0000\n"
-"PO-Revision-Date: 2023-05-24 01:44+0300\n"
+"PO-Revision-Date: 2025-02-25 10:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.07.70\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #. i18n: ectx: Menu (tools)
 #: khtmlsettingsplugin.rc:4
@@ -64,7 +64,7 @@ msgstr "&Eklentiler"
 #: settingsplugin.cpp:68
 #, kde-format
 msgid "Autoload &Images"
-msgstr "Gö&rselleri Otomatik Yükle"
+msgstr "Gö&rselleri Kendiliğinden Yükle"
 
 #: settingsplugin.cpp:75
 #, kde-format
@@ -89,7 +89,7 @@ msgstr "Ö&nbelleği Her Zaman Eşzamanla"
 #: settingsplugin.cpp:88
 #, kde-format
 msgid "&Use Cache if Possible"
-msgstr "Mümkünse Önbe&llek Kullan"
+msgstr "Olanaklıysa Önbe&llek Kullan"
 
 #: settingsplugin.cpp:89
 #, kde-format

@@ -380,22 +380,22 @@ msgstr "用于存储缓存的自定义目录"
 #: cookies/kcookiesmain.cpp:33
 #, kde-format
 msgid "&Policy"
-msgstr ""
+msgstr "策略(&P)"
 
 #: cookies/kcookiesmain.cpp:35
 #, kde-format
 msgid "&Management"
-msgstr ""
+msgstr "管理(&M)"
 
 #: cookies/kcookiesmanagement.cpp:46
 #, kde-format
 msgid "End of session"
-msgstr ""
+msgstr "会话结束"
 
 #: cookies/kcookiesmanagement.cpp:51
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "是"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
@@ -493,31 +493,31 @@ msgstr "安全："
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Cookie Policy"
-msgstr ""
+msgstr "更改 Cookie 策略"
 
 #: cookies/kcookiespolicies.cpp:156
 #, kde-format
 msgctxt "@title:window"
 msgid "New Cookie Policy"
-msgstr ""
+msgstr "新建 Cookie 策略"
 
 #: cookies/kcookiespolicies.cpp:189
 #, kde-format
 msgid ""
 "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
 "replace it?</qt>"
-msgstr ""
+msgstr "<qt><center><b>%1</b></center> 已存在一个策略，您想要替换它吗？</qt>"
 
 #: cookies/kcookiespolicies.cpp:193
 #, kde-format
 msgctxt "@title:window"
 msgid "Duplicate Policy"
-msgstr ""
+msgstr "重复的策略"
 
 #: cookies/kcookiespolicies.cpp:194
 #, kde-format
 msgid "Replace"
-msgstr ""
+msgstr "替换"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -2347,29 +2347,29 @@ msgstr "关闭当前标签页时激活先前使用的标签页"
 msgctxt ""
 "@title:window Title of dialog to choose name to given to new User Agent"
 msgid "Choose User Agent name"
-msgstr ""
+msgstr "选择用户代理 (UA) 名称"
 
 #: useragent/useragent.cpp:196
 #, kde-format
 msgctxt "Name of the new User Agent"
 msgid "User Agent name"
-msgstr ""
+msgstr "用户代理 (UA) 名称"
 
 #: useragent/useragent.cpp:256
 #, kde-format
 msgid "there are templates with empty names"
-msgstr ""
+msgstr "存在名称为空的模板"
 
 #: useragent/useragent.cpp:261
 #, kde-format
 msgid "there are multiple templates with the same name"
-msgstr ""
+msgstr "存在多个名称相同的模板"
 
 #: useragent/useragent.cpp:284
 #, kde-format
 msgctxt "The user gave a custom user agent string an empty or duplicate name"
 msgid "Invalid user agent names:"
-msgstr ""
+msgstr "无效的用户代理 (UA) 名称："
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20
