@@ -27,19 +27,14 @@
 <sect1 id="sys-performance">
 <title>Performance Settings</title>
 
-<para>&konqueror;, is used on a wide variety of computers by a wide variety of users.  Under the category of 
-performance, this dialog allows each user to adjust options which may make the computer that &konqueror; is 
-installed on feel more responsive. </para>
+<para>&konqueror; is used on a wide variety of computers by a wide variety of users. Under the category of performance, this dialog allows each user to adjust options which may make the computer that &konqueror; is installed on feel more responsive. </para>
 
 <sect2><title>Preloading</title>
 <para>The subsection labeled <guilabel>Preloading</guilabel> makes a tradeoff between memory and performance.</para>
 
-<para><emphasis>Preloading</emphasis> refers to loading an instance of &konqueror; into memory before a user asks to start &konqueror;.  The positive effect of this is that when a user asks to load &konqueror; the window appears instantly
- because most of the application has been preloaded.  The negative effect is that this instance of &konqueror; uses memory that 
-could be used by other programs. By default, when a user closes &konqueror;, the instance is not closed.
-This means that the next time a user wants &konqueror; loaded, it is nearly instantaneous again.</para>
+<para><emphasis>Preloading</emphasis> refers to loading an instance of &konqueror; into memory before a user asks to start &konqueror;. The positive effect of this is that when a user asks to load &konqueror; the window appears instantly because most of the application has been preloaded. The negative effect is that this instance of &konqueror; uses memory that could be used by other programs. By default, when a user closes &konqueror;, the instance is not closed. This means that the next time a user wants &konqueror; loaded, it is nearly instantaneous again.</para>
 
-<para>The final check box labeled <guilabel>Always try to have at least one preloaded instance</guilabel> signals that you always want to have one preloaded, but not used, instance of &konqueror; available.  This option will actually decrease performance on some machines (especially those with limited physical memory).</para>
+<para>The final check box labeled <guilabel>Always try to have at least one preloaded instance</guilabel> signals that you always want to have one preloaded, but not used, instance of &konqueror; available. This option will actually decrease performance on some machines (especially those with limited physical memory).</para>
 </sect2>
 </sect1>
 
