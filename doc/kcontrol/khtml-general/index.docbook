@@ -19,7 +19,7 @@
 
 </articleinfo>
 <para>On this page you find settings for home and start page and the behavior 
-of tabbed browsing both for &konqueror;'s file manager and browser mode.</para>
+of tabbed browsing both for &konqueror;’s file manager and browser mode.</para>
 
 <variablelist>
 <varlistentry>
@@ -51,7 +51,7 @@ new tab instead of in new window</guilabel></term>
 <listitem><para>&konqueror; defaults to a single window per page, but has the
 capability to open multiple <firstterm>tabs</firstterm> inside a
 single window. &konqueror; also, by default, has a &MMB; shortcut to
-open any link in a new window.  If you enable <guilabel>Open links in
+open any link in a new window. If you enable <guilabel>Open links in
 new tab instead of in new window</guilabel> you can &MMB; click on a
 link to have it open in a new tab.</para></listitem>
 </varlistentry>
@@ -65,7 +65,7 @@ new window.</para></listitem>
 <varlistentry>
 <term><guilabel>Open as tab in existing Konqueror when URL is called externally</guilabel></term>
 <listitem><para>When you click a &URL; in another &kde; program or call kfmclient to open a &URL;, 
-the current desktop will be searched for a non-minimized &konqueror; and, if 
+the current desktop will be searched for a nonminimized &konqueror; and, if
 found, the &URL; opened as a new tab within it. Otherwise a new &konqueror; 
 window will be opened with the required &URL;.</para></listitem>
 </varlistentry>
@@ -74,10 +74,10 @@ window will be opened with the required &URL;.</para></listitem>
 <term><guilabel>Open new tabs in the background</guilabel></term>
 <listitem><para>If you are using tabbed browsing, you can choose if a newly
 opened tab becomes the active (<quote>front</quote>) tab, or goes to
-the back.  On a slow Internet connection, or while browsing a page
+the back. On a slow Internet connection, or while browsing a page
 that has a list of headlines or other links in a list, you may like to
 have the new tabs load in the background while you continue reading.
-In this case, enable this setting.  If you prefer to go
+In this case, enable this setting. If you prefer to go
 straight to the new page, leaving the old one in the background to
 return to later, disable it.</para></listitem>
 </varlistentry>
@@ -96,11 +96,11 @@ it will always be displayed.</para></listitem>
 
 <varlistentry>
 <term><guilabel>Show close button on tabs</guilabel></term>
-<listitem><para>This will display close buttons inside each tab instead of websites' icons.</para></listitem>
+<listitem><para>This will display close buttons inside each tab instead of websites’ icons.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Middle-click on a tab to close it</guilabel></term>
+<term><guilabel>Middleclick on a tab to close it</guilabel></term>
 <listitem><para>When you click on a tab using the middle mouse button or mouse wheel, it 
 will close that tab. &konqueror; needs to be restarted for changes to take 
 effect.</para></listitem>
@@ -109,8 +109,8 @@ effect.</para></listitem>
 <varlistentry>
 <term><guilabel>Confirm when closing windows with multiple tabs</guilabel></term>
 <listitem><para>If you close a window in &konqueror; that has multiple tabs
-open, &konqueror; will ask you if you're sure that you meant to close
-it.  You can toggle on and off this behavior with this
+open, &konqueror; will ask you if you’re sure that you meant to close
+it. You can toggle on and off this behavior with this
 check box.</para></listitem>
 </varlistentry>
 
