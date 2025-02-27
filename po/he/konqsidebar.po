@@ -7,14 +7,15 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 11:22+0000\n"
-"PO-Revision-Date: 2025-02-25 08:41+0200\n"
+"PO-Revision-Date: 2025-02-26 08:33+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 24.12.2\n"
 
 #: bookmarks_module/bookmarks_module.cpp:273
@@ -156,6 +157,12 @@ msgid ""
 "current tab</dd><dt>Open URL in new window:</dt><dd>always opens the URL in "
 "a new window</dd></dl>"
 msgstr ""
+"פעולה לביצוע בעת פתיחת כתובת מההיסטוריה:<dl><dl><dt>אוטו׳:</dt><dd>פותח את "
+"הכתובת בלשונית חדשה אלא אם כן הלשונית הנוכחית ריקה או שמופיע עמוד ההקדמה</"
+"dd><dt>פתיחת כתובת בלשונית חדשה:</dt><dd>תמיד לפתוח את הכתובת בלשונית חדשה</"
+"dd><dt>פתיחת כתובת בלשונית הנוכחית:</dt><dd>תמיד לפתוח את הכתובת בלשונית "
+"הנוכחית</dd><dt>פתיחת כתובת בחלון חדש:</dt><dd>תמיד לפתוח את הכתובת בחלון "
+"חדש</dd></dl>"
 
 #: history_module/kcmhistory.cpp:65
 #, kde-format
@@ -164,19 +171,23 @@ msgstr "ימים"
 
 #: history_module/kcmhistory.cpp:71 history_module/kcmhistory.cpp:76
 #: history_module/kcmhistory.cpp:200 history_module/kcmhistory.cpp:213
-#, kde-format
+#, fuzzy, kde-format
 msgid "Minute"
 msgid_plural "Minutes"
 msgstr[0] "דקה"
 msgstr[1] "דקות"
+msgstr[2] ""
+msgstr[3] ""
 
 #: history_module/kcmhistory.cpp:73 history_module/kcmhistory.cpp:78
 #: history_module/kcmhistory.cpp:198 history_module/kcmhistory.cpp:211
-#, kde-format
+#, fuzzy, kde-format
 msgid "Day"
 msgid_plural "Days"
 msgstr[0] "יום"
 msgstr[1] "ימים"
+msgstr[2] ""
+msgstr[3] ""
 
 #: history_module/kcmhistory.cpp:245
 #, kde-format
@@ -361,18 +372,22 @@ msgid "Set Refresh Timeout (0 disables)"
 msgstr "הגדרת תום זמן רענון (0 להשבתה)"
 
 #: web_module/web_module.cpp:132
-#, kde-format
+#, fuzzy, kde-format
 msgid " minute"
 msgid_plural " minutes"
 msgstr[0] " דקה"
 msgstr[1] " דקות"
+msgstr[2] ""
+msgstr[3] ""
 
 #: web_module/web_module.cpp:136
-#, kde-format
+#, fuzzy, kde-format
 msgid " second"
 msgid_plural " seconds"
 msgstr[0] " שנייה"
 msgstr[1] " שניות"
+msgstr[2] ""
+msgstr[3] ""
 
 #: web_module/web_module.cpp:269
 #, kde-format
@@ -396,4 +411,4 @@ msgstr "נתיב או כתובת:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add web sidebar module"
-msgstr ""
+msgstr "הוספת מודול סרגל צד דפדפן"
