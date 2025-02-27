@@ -47,7 +47,7 @@ filter.</para>
 <para><guilabel>Import</guilabel> and <guilabel>Export</guilabel> will 
 save or read the current filter list to a plain text file. The file begins with a 
 header line <userinput>[AdBlock]</userinput>, then all of the filters follow each 
-on a  separate line. Lines prefixed with an exclamation mark (<userinput>!</userinput>) 
+on a separate line. Lines prefixed with an exclamation mark (<userinput>!</userinput>)
 and the header line are treated as comments and can be used 
 to clarify or label a set of filters.</para>
 
@@ -61,7 +61,7 @@ Insert</guibutton> button.</para>
 <term><guilabel>Automatic Filter</guilabel></term>
 <listitem>
 <para>
-This tab shows a list of names and &URL;'s with predefined AdBlock filter entries. 
+This tab shows a list of names and &URL;’s with predefined AdBlock filter entries.
 To enable an entry tick the checkbox beside the filter name and adjust the
 <guilabel>Automatic update interval</guilabel> (default 7 days).
 <!-- how goes it work? After 7 days eachtime going online with konqui the selected 
@@ -71,7 +71,7 @@ User notification about that?
 </para>
 </listitem>
 </varlistentry>
-  
+
 </variablelist>
 
 <para>If AdBlock filters are enabled, an icon at the right side of status bar is shown.
