@@ -160,6 +160,7 @@ void KonquerorApplication::setupAboutData()
     m_aboutData.addLicense(KAboutLicense::GPL_V2);
     m_aboutData.setCopyrightStatement(i18n("(C) 1999-2023, The Konqueror developers"));
     m_aboutData.setHomepage("https://apps.kde.org/konqueror");
+    m_aboutData.setDesktopFileName("konqbrowser");
 
     // The window icon, retrieved in KAboutApplicationDialogPrivate::init(),
     // may vary for this application depending on what is displayed.  Set the
