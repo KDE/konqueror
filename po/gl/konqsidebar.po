@@ -1,92 +1,94 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
 #
-# SPDX-FileCopyrightText: 2025 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2025 Adrián Chaves (Gallaecio)
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 00:41+0000\n"
-"PO-Revision-Date: 2025-02-28 13:27+0100\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <French <kde-francophone@kde.org>>\n"
-"Language: fr\n"
+"PO-Revision-Date: 2025-03-01 09:14+0100\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
+"Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.12.2\n"
 
 #: bookmarks_module/bookmarks_module.cpp:273
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Bookmarks Sidebar Module"
-msgstr "Module de la barre latérale pour les signets"
+msgstr "Módulo da barra lateral de marcadores"
 
 #: bookmarks_module/bookmarks_module.cpp:296
 #, kde-format
 msgctxt "@title:tab"
 msgid "Bookmarks"
-msgstr "Signets"
+msgstr "Marcadores"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDefaultAction)
 #: history_module/history_dlg.ui:17
 #, kde-format
 msgid "Default action"
-msgstr "Action par défaut"
+msgstr "Acción predeterminada"
 
 #. i18n: ectx: property (text), widget (QLabel, lDefault)
 #: history_module/history_dlg.ui:23
 #, kde-format
 msgid "Default action when double clicking an URL"
-msgstr "Action par défaut pour un double clic sur une URL"
+msgstr "Acción predeterminada ao facer clic duplo nun URL."
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbLimits)
 #: history_module/history_dlg.ui:36
 #, kde-format
 msgid "Limits"
-msgstr "Limites"
+msgstr "Límites"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbExpire)
 #: history_module/history_dlg.ui:61
 #, kde-format
 msgid "URLs e&xpire after"
-msgstr "Les URL e&xpirent après"
+msgstr "O URL caduca tra&s"
 
 #. i18n: ectx: property (text), widget (QLabel, lEntries)
 #: history_module/history_dlg.ui:71
 #, kde-format
 msgid "Maximum &number of URLs:"
-msgstr "&Nombre maximum d'URL :"
+msgstr "&Número máximo de URL:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbFonts)
 #: history_module/history_dlg.ui:87
 #, kde-format
 msgid "Custom Fonts For"
-msgstr "Polices personnalisées pour"
+msgstr "Fontes personalizadas para"
 
 #. i18n: ectx: property (text), widget (QLabel, lbNewer)
 #: history_module/history_dlg.ui:102
 #, kde-format
 msgid "URLs newer than"
-msgstr "URL plus récentes que"
+msgstr "URL anteriores a"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnFontOlder)
 #. i18n: ectx: property (text), widget (QPushButton, btnFontNewer)
 #: history_module/history_dlg.ui:118 history_module/history_dlg.ui:138
 #, kde-format
 msgid "Choose Font..."
-msgstr "Sélectionner une police..."
+msgstr "Escoller a fonte…"
 
 #. i18n: ectx: property (text), widget (QLabel, lbOlder)
 #: history_module/history_dlg.ui:125
 #, kde-format
 msgid "URLs older than"
-msgstr "URL plus anciennes que "
+msgstr "URL posteriores a"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDetails)
 #: history_module/history_dlg.ui:148
 #, kde-format
 msgid "Details"
-msgstr "Détails"
+msgstr "Detalles"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbDetailedTips)
 #: history_module/history_dlg.ui:154
@@ -95,56 +97,56 @@ msgid ""
 "Shows the number of times visited and the dates of the first and last "
 "visits, in addition to the URL"
 msgstr ""
-"Affiche le nombre de consultations et les dates de première et dernière "
-"visites en plus de l'URL"
+"Amosa o número de veces que se visitou e as datas da primeira e da última "
+"visita, ademais do URL."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbDetailedTips)
 #: history_module/history_dlg.ui:157
 #, kde-format
 msgid "Detailed tooltips"
-msgstr "Infobulles détaillées"
+msgstr "Mensaxes emerxentes detalladas."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnClearHistory)
 #: history_module/history_dlg.ui:169
 #, kde-format
 msgid "Clear History"
-msgstr "Effacer l'historique"
+msgstr "Borrar o historial"
 
 #: history_module/history_module.cpp:139
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "History Sidebar Module"
-msgstr "Module de barre latérale d'historique"
+msgstr "Módulo da barra lateral co historial"
 
 #: history_module/history_module.cpp:162
 #, kde-format
 msgctxt "@title:tab"
 msgid "History"
-msgstr "Historique"
+msgstr "Historial"
 
 #: history_module/kcmhistory.cpp:49
 #, kde-format
 msgctxt "Automatically decide which action to perform"
 msgid "Auto"
-msgstr "Auto"
+msgstr "Automática"
 
 #: history_module/kcmhistory.cpp:50
 #, kde-format
 msgctxt "Open URL in new tab"
 msgid "Open in new tab"
-msgstr "Ouvrir dans un nouvel onglet"
+msgstr "Abrir nunha lapela"
 
 #: history_module/kcmhistory.cpp:51
 #, kde-format
 msgctxt "Open URL in current tab"
 msgid "Open in current tab"
-msgstr "Ouvrir dans l'onglet courant"
+msgstr "Abrir na lapela actual"
 
 #: history_module/kcmhistory.cpp:52
 #, kde-format
 msgctxt "Open URL in new window"
 msgid "Open in new window"
-msgstr "Ouvrir dans une nouvelle fenêtre"
+msgstr "Abrir nunha nova xanela"
 
 #: history_module/kcmhistory.cpp:54
 #, kde-format
@@ -156,101 +158,101 @@ msgid ""
 "current tab</dd><dt>Open URL in new window:</dt><dd>always opens the URL in "
 "a new window</dd></dl>"
 msgstr ""
-"Action à effectuer lors de l'ouverture d'une URL à partir de l'historique : "
-"<dl><dl> <dt>Auto : </dt><dd>ouvre l'URL dans un nouvel onglet sauf si "
-"l'onglet courant est vide ou une page d'introduction</dd> <dt>Ouvrir l'URL "
-"dans un nouvel onglet :</dt><dd> ouvre toujours l'URL dans un nouvel onglet</"
-"dd> <dt>Ouvrir l'URL dans une nouvelle fenêtre : </dt><dd> ouvre toujours "
-"l'URL dans une nouvelle fenêtre</dd> </dl>"
+"Acción a realizar ao abrir un URL do historial:<dl><dl><dt>Automática:</"
+"dt><dd>Abre o URL nunha lapela a menos que a lapela actual estea baleira ou "
+"sexa a páxina de inicio.</dd><dt>Abrir nunha lapela:</dt><dd>Abre sempre o "
+"URL nunha nova lapela.</dd><dt>Abrir na lapela actual:</dt><dd>Abre sempre o "
+"URL na lapela actual.</dd><dt>Abrir o URL nunha nova xanela:</dt><dd>Abre "
+"sempre o URL nunha nova xanela.</dd></dl>"
 
 #: history_module/kcmhistory.cpp:65
 #, kde-format
 msgid "days"
-msgstr "jours"
+msgstr "días"
 
 #: history_module/kcmhistory.cpp:71 history_module/kcmhistory.cpp:76
 #: history_module/kcmhistory.cpp:200 history_module/kcmhistory.cpp:213
 #, kde-format
 msgid "Minute"
 msgid_plural "Minutes"
-msgstr[0] "Minute"
-msgstr[1] "Minutes"
+msgstr[0] "Minuto"
+msgstr[1] "Minutos"
 
 #: history_module/kcmhistory.cpp:73 history_module/kcmhistory.cpp:78
 #: history_module/kcmhistory.cpp:198 history_module/kcmhistory.cpp:211
 #, kde-format
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] "Jour"
-msgstr[1] "Jours"
+msgstr[0] "Día"
+msgstr[1] "Días"
 
 #: history_module/kcmhistory.cpp:245
 #, kde-format
 msgid "Do you really want to clear the entire history?"
-msgstr "Voulez -vous vraiment effacer la totalité de l'historique ?"
+msgstr "Seguro que quere borrar todo o historial?"
 
 #: history_module/kcmhistory.cpp:247
 #, kde-format
 msgctxt "@title:window"
 msgid "Clear History?"
-msgstr "Effacer l'historique ?"
+msgstr "Quere borrar o historial?"
 
 #: places_module/places_module.cpp:76
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Places Sidebar Module"
-msgstr "Module de barre latérale d'emplacements"
+msgstr "Módulo da barra lateral de lugares"
 
 #: places_module/places_module.cpp:99
 #, kde-format
 msgctxt "@title:tab"
 msgid "Places"
-msgstr "Emplacements"
+msgstr "Lugares"
 
 #: sidebar_widget.cpp:83
 #, kde-format
 msgid "Restore All Removed Default Buttons"
-msgstr "Restaurer tous les boutons par défaut supprimés"
+msgstr "Restaurar os botóns predeterminados retirados"
 
 #: sidebar_widget.cpp:84
 #, kde-format
 msgid "Rollback to System Default"
-msgstr "Revenir à la configuration par défaut du système"
+msgstr "Restaurar a predeterminada do sistema"
 
 #: sidebar_widget.cpp:143 sidebar_widget.cpp:429
 #, kde-format
 msgid "Configure Sidebar"
-msgstr "Configurer la barre latérale"
+msgstr "Configurar a barra lateral"
 
 #: sidebar_widget.cpp:145
 #, kde-format
 msgid "Add New"
-msgstr "Ajouter un nouveau"
+msgstr "Engadir unha nova"
 
 #: sidebar_widget.cpp:149
 #, kde-format
 msgid "Multiple Views"
-msgstr "Vues multiples"
+msgstr "Varias vistas"
 
 #: sidebar_widget.cpp:151 sidebar_widget.cpp:268
 #, kde-format
 msgid "Show Tabs on Left"
-msgstr "Afficher les onglets sur la gauche"
+msgstr "Amosar as lapelas na esquerda"
 
 #: sidebar_widget.cpp:152
 #, kde-format
 msgid "Show Configuration Button"
-msgstr "Afficher un bouton de configuration"
+msgstr "Amosar o botón de configuración"
 
 #: sidebar_widget.cpp:155
 #, kde-format
 msgid "Close Sidebar"
-msgstr "Fermer la barre latérale"
+msgstr "Pechar a barra lateral"
 
 #: sidebar_widget.cpp:210
 #, kde-format
 msgid "This entry already exists."
-msgstr "Cette entrée existe déjà."
+msgstr "A entrada xa existe."
 
 #: sidebar_widget.cpp:226
 #, kde-format
@@ -259,35 +261,35 @@ msgid ""
 "default ones.<br /><b>This procedure is irreversible.</b><br />Do you want "
 "to proceed?</qt>"
 msgstr ""
-"<qt>Cette action supprimera toutes les entrées de la barre latérale et y "
-"placera les entrées par défaut du système. Cette procédure ne peut être "
-"annuler.</b><br />Voulez-vous vraiment effectuer cette action ?</qt>"
+"<qt>Isto retira todas as entradas da barra lateral e engade as "
+"predeterminadas do sistema.<br /><b>O procedemento é irreversíbel.</b><br /"
+">Quere proceder?</qt>"
 
 #: sidebar_widget.cpp:268
 #, kde-format
 msgid "Show Tabs on Right"
-msgstr "Afficher les onglets sur la droite"
+msgstr "Amosar as lapelas na dereita"
 
 #: sidebar_widget.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Name"
-msgstr "Définir un nom"
+msgstr "Definir o nome"
 
 #: sidebar_widget.cpp:280
 #, kde-format
 msgid "Enter the name:"
-msgstr "Saisir un nom :"
+msgstr "Escriba o nome:"
 
 #: sidebar_widget.cpp:298
 #, kde-format
 msgid "Enter a URL:"
-msgstr "Saisir une URL :"
+msgstr "Insira o URL:"
 
 #: sidebar_widget.cpp:322
 #, kde-format
 msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
-msgstr "<qt>Voulez -vous vraiment supprimer l'onglet %1 ?</qt>"
+msgstr "<qt>Seguro que quere retirar a lapela <b>%1</b>?</qt>"
 
 #: sidebar_widget.cpp:372
 #, kde-format
@@ -296,125 +298,124 @@ msgid ""
 "click the right mouse button on any of the sidebar buttons and select \"Show "
 "Configuration Button\"."
 msgstr ""
-"Vous avez masqué le bouton de configuration de la barre latérale. Pour le "
-"rendre visible à nouveau, veuillez cliquer sur le bouton droit de la souris "
-"sur n'importe quel bouton de la barre latérale et sélectionner « Afficher le "
-"bouton de configuration »."
+"Agochou o botón de configuración da barra lateral. Para facelo visíbel de "
+"novo, prema o botón dereito do rato sobre calquera botón da barra lateral e "
+"seleccione «Amosar o botón de configuración»."
 
 #: sidebar_widget.cpp:573
 #, kde-format
 msgid "Set Name..."
-msgstr "Définir un nom..."
+msgstr "Definir o nome…"
 
 #: sidebar_widget.cpp:574
 #, kde-format
 msgid "Set URL..."
-msgstr "Définir une URL..."
+msgstr "Definir o URL…"
 
 #: sidebar_widget.cpp:575
 #, kde-format
 msgid "Set Icon..."
-msgstr "Définir une icône..."
+msgstr "Definir a icona…"
 
 #: sidebar_widget.cpp:577
 #, kde-format
 msgid "Show Hidden Folders..."
-msgstr "Afficher les dossiers masqués..."
+msgstr "Amosar os cartafoles agochados…"
 
 #: sidebar_widget.cpp:582
 #, kde-format
 msgid "Remove"
-msgstr "Supprimer"
+msgstr "Retirar"
 
 #: sidebar_widget.cpp:908
 #, kde-format
 msgid "Web module"
-msgstr "Module Internet"
+msgstr "Módulo web"
 
 #: tree_module/tree_module.cpp:259
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Tree Sidebar Module"
-msgstr "Module de barre latérale en arborescence"
+msgstr "Módulo da barra lateral de árbore"
 
 #: tree_module/tree_module.cpp:282
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree"
-msgstr "Arborescence"
+msgstr "Árbore"
 
 #: vertical_tabbar/vertical_tabbar.cpp:91
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Vertical Tab Bar"
-msgstr "Barre verticale d'onglets"
+msgstr "Barra de lapelas vertical"
 
 #: vertical_tabbar/vertical_tabbar.cpp:114
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tabs"
-msgstr "Onglets"
+msgstr "Lapelas"
 
 #: web_module/web_module.cpp:42
 #, kde-format
 msgid "&Open Link"
-msgstr "&Ouvrir un lien"
+msgstr "&Abrir a ligazón"
 
 #: web_module/web_module.cpp:46
 #, kde-format
 msgid "Open in New &Window"
-msgstr "Ouvrir dans une nou&velle fenêtre"
+msgstr "Abrir nunha &xanela nova"
 
 #: web_module/web_module.cpp:52
 #, kde-format
 msgid "&Reload"
-msgstr "&Recharger"
+msgstr "&Recargar"
 
 #: web_module/web_module.cpp:57
 #, kde-format
 msgid "Set &Automatic Reload"
-msgstr "Sélectionner un rechargement automatique"
+msgstr "Definir a recarga &automática"
 
 #: web_module/web_module.cpp:121
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Refresh Timeout (0 disables)"
-msgstr "Définir le délai maximal pour rafraîchissement (0 pour désactivation)"
+msgstr "Definir o tempo límite de actualización (0 desactívao)"
 
 #: web_module/web_module.cpp:132
 #, kde-format
 msgid " minute"
 msgid_plural " minutes"
-msgstr[0] " minute"
-msgstr[1] " minutes"
+msgstr[0] " minuto"
+msgstr[1] " minutos"
 
 #: web_module/web_module.cpp:136
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
-msgstr[0] " seconde"
-msgstr[1] " secondes"
+msgstr[0] " segundo"
+msgstr[1] " segundos"
 
 #: web_module/web_module.cpp:269
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Web Sidebar Module"
-msgstr "Module de barre latérale Internet"
+msgstr "Módulo da barra lateral web"
 
 #: web_module/web_module.cpp:289
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr "Nom :"
+msgstr "Nome:"
 
 #: web_module/web_module.cpp:289
 #, kde-format
 msgctxt "@label"
 msgid "Path or URL:"
-msgstr "Emplacement ou URL :"
+msgstr "Ruta ou URL:"
 
 #: web_module/web_module.cpp:290
 #, kde-format
 msgctxt "@title:window"
 msgid "Add web sidebar module"
-msgstr "Ajouter un module de barre latérale Internet"
+msgstr "Engadir un módulo de barra lateral web"

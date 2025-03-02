@@ -9,7 +9,7 @@
 # marce villarino <mvillarino@users.sourceforge.net>, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2009, 2011, 2012, 2013, 2014.
 # Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>, 2017.
-# SPDX-FileCopyrightText: 2023, 2024 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Adrián Chaves (Gallaecio)
 #
 # Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
 # colaborar connosco, podes atopar máis información en http://trasno.gpul.org
@@ -21,15 +21,15 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 00:41+0000\n"
-"PO-Revision-Date: 2024-12-17 22:58+0100\n"
-"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"PO-Revision-Date: 2025-03-01 08:45+0100\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -409,26 +409,24 @@ msgid "The custom directory to store cache"
 msgstr "O cartafol personalizado para almacenar a caché."
 
 #: cookies/kcookiesmain.cpp:33
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "&Policy"
-msgstr "Política"
+msgstr "&Directrices"
 
 #: cookies/kcookiesmain.cpp:35
 #, kde-format
 msgid "&Management"
-msgstr ""
+msgstr "&Xestión"
 
 #: cookies/kcookiesmanagement.cpp:46
-#, fuzzy, kde-format
-#| msgid "Accept until end of session"
+#, kde-format
 msgid "End of session"
-msgstr "Aceptar nesta sesión"
+msgstr "Fin da sesión"
 
 #: cookies/kcookiesmanagement.cpp:51
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Si"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
@@ -523,20 +521,16 @@ msgid "Secure:"
 msgstr "Seguro:"
 
 #: cookies/kcookiespolicies.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Change Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Change Cookie Policy"
-msgstr "Cambiar a política do complemento"
+msgstr "Cambiar as directrices dos rastros"
 
 #: cookies/kcookiespolicies.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Cookie Policy"
-msgstr "Nova política de complemento"
+msgstr "Novas directrices de rastros"
 
 #: cookies/kcookiespolicies.cpp:189
 #, kde-format
@@ -544,18 +538,19 @@ msgid ""
 "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
 "replace it?</qt>"
 msgstr ""
+"<qt>Xa existen unhas directrices para <center><b>%1</b></center>Quere "
+"substituílas?</qt>"
 
 #: cookies/kcookiespolicies.cpp:193
-#, fuzzy, kde-format
-#| msgid "Site Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Duplicate Policy"
-msgstr "Política do sitio"
+msgstr "Duplicar as directrices"
 
 #: cookies/kcookiespolicies.cpp:194
 #, kde-format
 msgid "Replace"
-msgstr ""
+msgstr "Substituír"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -2508,29 +2503,29 @@ msgstr "Activar o separador usado antes cando se peche o separador actual"
 msgctxt ""
 "@title:window Title of dialog to choose name to given to new User Agent"
 msgid "Choose User Agent name"
-msgstr ""
+msgstr "Escoller un nome de axente"
 
 #: useragent/useragent.cpp:196
 #, kde-format
 msgctxt "Name of the new User Agent"
 msgid "User Agent name"
-msgstr ""
+msgstr "Nome de axente"
 
 #: useragent/useragent.cpp:256
 #, kde-format
 msgid "there are templates with empty names"
-msgstr ""
+msgstr "hai modelos con nomes baleiros"
 
 #: useragent/useragent.cpp:261
 #, kde-format
 msgid "there are multiple templates with the same name"
-msgstr ""
+msgstr "hai varios modelos co mesmo nome"
 
 #: useragent/useragent.cpp:284
 #, kde-format
 msgctxt "The user gave a custom user agent string an empty or duplicate name"
 msgid "Invalid user agent names:"
-msgstr ""
+msgstr "Nomes de axente non válidos:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20

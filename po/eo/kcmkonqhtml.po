@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 00:41+0000\n"
-"PO-Revision-Date: 2024-08-02 22:32+0200\n"
+"PO-Revision-Date: 2025-03-01 17:55+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -399,26 +399,24 @@ msgid "The custom directory to store cache"
 msgstr "La propra dosierujo por konservi kaŝmemoron"
 
 #: cookies/kcookiesmain.cpp:33
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "&Policy"
-msgstr "Politiko"
+msgstr "&Politiko"
 
 #: cookies/kcookiesmain.cpp:35
 #, kde-format
 msgid "&Management"
-msgstr ""
+msgstr "&Mastrumado"
 
 #: cookies/kcookiesmanagement.cpp:46
-#, fuzzy, kde-format
-#| msgid "Accept until end of session"
+#, kde-format
 msgid "End of session"
-msgstr "Akcepti ĝis fino de la seanco"
+msgstr "Fino de seanco"
 
 #: cookies/kcookiesmanagement.cpp:51
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Jes"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
@@ -513,19 +511,16 @@ msgid "Secure:"
 msgstr "Sekura:"
 
 #: cookies/kcookiespolicies.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Change JavaScript Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Change Cookie Policy"
-msgstr "Ŝanĝi Ĝavoskriptan politikon"
+msgstr "Ŝanĝi Kuketan Politikon"
 
 #: cookies/kcookiespolicies.cpp:156
-#, fuzzy, kde-format
-#| msgid "Site Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Cookie Policy"
-msgstr "Reteja Politiko"
+msgstr "Nova Kuket-Politiko"
 
 #: cookies/kcookiespolicies.cpp:189
 #, kde-format
@@ -535,11 +530,10 @@ msgid ""
 msgstr ""
 
 #: cookies/kcookiespolicies.cpp:193
-#, fuzzy, kde-format
-#| msgid "Site Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Duplicate Policy"
-msgstr "Reteja Politiko"
+msgstr "Duobliga Politiko"
 
 #: cookies/kcookiespolicies.cpp:194
 #, kde-format
@@ -2482,12 +2476,12 @@ msgstr ""
 #, kde-format
 msgctxt "Name of the new User Agent"
 msgid "User Agent name"
-msgstr ""
+msgstr "Uzant-Agenta nomo"
 
 #: useragent/useragent.cpp:256
 #, kde-format
 msgid "there are templates with empty names"
-msgstr ""
+msgstr "ekzistas ŝablonoj kun malplena nomo"
 
 #: useragent/useragent.cpp:261
 #, kde-format
@@ -2585,6 +2579,3 @@ msgstr ""
 "<html><head/><body><p>La retumila identigo uzenda kiam la defaŭlta identigo "
 "estas malŝaltita.</p><p>Vi povas enigi ĝin permane aŭ komenci de unu en la "
 "suba listo kaj ŝanĝi ĝin laŭ viaj bezonoj.</p></body></html>"
-
-#~ msgid "Form"
-#~ msgstr "Formo"

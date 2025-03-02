@@ -1,0 +1,74 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# SPDX-FileCopyrightText: 2025 Adrián Chaves (Gallaecio)
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
+"PO-Revision-Date: 2025-03-01 08:45+0100\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
+"Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.12.2\n"
+
+#: temporarysavedir.cpp:54
+#, kde-format
+msgid "Temporary Download Directory"
+msgstr "Cartafol temporal de descarga"
+
+#: temporarysavedir.cpp:60
+#, kde-format
+msgid "Choose Custom Download Directory..."
+msgstr "Escoller un cartafol personalizado de descarga…"
+
+#: temporarysavedir.cpp:61
+#, kde-format
+msgid ""
+"Choose a custom directory to use when downloading URLs from this window, "
+"temporarily overriding the default one"
+msgstr ""
+"Escolla un cartafol personalizado para usar ao descargar enderezos URL desde "
+"esta xanela, co que substituír temporalmente o predeterminado."
+
+#: temporarysavedir.cpp:66
+#, kde-format
+msgctxt "@action:inmenu stop using a temporary download directory"
+msgid "Stop Using Temporary Download Directory"
+msgstr "Deixar de usar o cartafol temporal de descarga"
+
+#: temporarysavedir.cpp:67
+#, kde-format
+msgid ""
+"Use the default download directory instead of a custom one (only for this "
+"window)"
+msgstr ""
+"Usar o cartafol temporal de descarga en lugar dun personalizado (só para "
+"esta xanela)."
+
+#: temporarysavedir.cpp:113
+#, kde-format
+msgid "Temporary save directory"
+msgstr "Cartafol temporal de garda"
+
+#: temporarysavedir.cpp:114
+#, kde-format
+msgid "Choose Temporary Save Directory"
+msgstr "Escoller un cartafol temporal de garda"
+
+#. i18n: ectx: Menu (tools)
+#: temporarysavedir.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Utilidades"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: temporarysavedir.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Barra de ferramentas extra"
