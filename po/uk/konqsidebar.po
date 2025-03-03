@@ -1,94 +1,95 @@
-# Copyright (C) 2025 This file is copyright:
+# Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the konqueror package.
 #
-# SPDX-FileCopyrightText: 2025 Adrián Chaves (Gallaecio)
+# Yuri Chornoivan <yurchor@ukr.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 11:22+0000\n"
-"PO-Revision-Date: 2025-03-02 09:00+0100\n"
-"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
-"Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
-"Language: gl\n"
+"PO-Revision-Date: 2025-02-24 11:34+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.2\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: bookmarks_module/bookmarks_module.cpp:273
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Bookmarks Sidebar Module"
-msgstr "Módulo da barra lateral de marcadores"
+msgstr "Модуль закладок бічної панелі"
 
 #: bookmarks_module/bookmarks_module.cpp:296
 #, kde-format
 msgctxt "@title:tab"
 msgid "Bookmarks"
-msgstr "Marcadores"
+msgstr "Закладки"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDefaultAction)
 #: history_module/history_dlg.ui:17
 #, kde-format
 msgid "Default action"
-msgstr "Acción predeterminada"
+msgstr "Типова дія"
 
 #. i18n: ectx: property (text), widget (QLabel, lDefault)
 #: history_module/history_dlg.ui:23
 #, kde-format
 msgid "Default action when double clicking an URL"
-msgstr "Acción predeterminada ao facer clic duplo nun URL."
+msgstr "Типова дія у відповідь на подвійне клацання на адресі"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbLimits)
 #: history_module/history_dlg.ui:36
 #, kde-format
 msgid "Limits"
-msgstr "Límites"
+msgstr "Обмеження"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbExpire)
 #: history_module/history_dlg.ui:61
 #, kde-format
 msgid "URLs e&xpire after"
-msgstr "O URL caduca tra&s"
+msgstr "Адреси з&астарівають за"
 
 #. i18n: ectx: property (text), widget (QLabel, lEntries)
 #: history_module/history_dlg.ui:71
 #, kde-format
 msgid "Maximum &number of URLs:"
-msgstr "&Número máximo de URL:"
+msgstr "Максимальна &кількість адрес:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbFonts)
 #: history_module/history_dlg.ui:87
 #, kde-format
 msgid "Custom Fonts For"
-msgstr "Fontes personalizadas para"
+msgstr "Нетипові шрифти для"
 
 #. i18n: ectx: property (text), widget (QLabel, lbNewer)
 #: history_module/history_dlg.ui:102
 #, kde-format
 msgid "URLs newer than"
-msgstr "URL anteriores a"
+msgstr "Адрес, які новіші за"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnFontOlder)
 #. i18n: ectx: property (text), widget (QPushButton, btnFontNewer)
 #: history_module/history_dlg.ui:118 history_module/history_dlg.ui:138
 #, kde-format
 msgid "Choose Font..."
-msgstr "Escoller a fonte…"
+msgstr "Вибрати шрифт…"
 
 #. i18n: ectx: property (text), widget (QLabel, lbOlder)
 #: history_module/history_dlg.ui:125
 #, kde-format
 msgid "URLs older than"
-msgstr "URL posteriores a"
+msgstr "Адреси, які старіші за"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDetails)
 #: history_module/history_dlg.ui:148
 #, kde-format
 msgid "Details"
-msgstr "Detalles"
+msgstr "Подробиці"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbDetailedTips)
 #: history_module/history_dlg.ui:154
@@ -97,56 +98,56 @@ msgid ""
 "Shows the number of times visited and the dates of the first and last "
 "visits, in addition to the URL"
 msgstr ""
-"Amosa o número de veces que se visitou e as datas da primeira e da última "
-"visita, ademais do URL."
+"Показує, окрім адреси, кількість відвідувань та дати першого та останнього "
+"відвідувань"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbDetailedTips)
 #: history_module/history_dlg.ui:157
 #, kde-format
 msgid "Detailed tooltips"
-msgstr "Mensaxes emerxentes detalladas."
+msgstr "Докладні підказки"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnClearHistory)
 #: history_module/history_dlg.ui:169
 #, kde-format
 msgid "Clear History"
-msgstr "Borrar o historial"
+msgstr "Спорожнити журнал"
 
 #: history_module/history_module.cpp:139
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "History Sidebar Module"
-msgstr "Módulo da barra lateral co historial"
+msgstr "Модуль бічної панелі журналу"
 
 #: history_module/history_module.cpp:162
 #, kde-format
 msgctxt "@title:tab"
 msgid "History"
-msgstr "Historial"
+msgstr "Журнал"
 
 #: history_module/kcmhistory.cpp:49
 #, kde-format
 msgctxt "Automatically decide which action to perform"
 msgid "Auto"
-msgstr "Automática"
+msgstr "Авто"
 
 #: history_module/kcmhistory.cpp:50
 #, kde-format
 msgctxt "Open URL in new tab"
 msgid "Open in new tab"
-msgstr "Abrir nunha lapela"
+msgstr "Відкрити у новій вкладці"
 
 #: history_module/kcmhistory.cpp:51
 #, kde-format
 msgctxt "Open URL in current tab"
 msgid "Open in current tab"
-msgstr "Abrir na lapela actual"
+msgstr "Відкрити у поточній вкладці"
 
 #: history_module/kcmhistory.cpp:52
 #, kde-format
 msgctxt "Open URL in new window"
 msgid "Open in new window"
-msgstr "Abrir nunha nova xanela"
+msgstr "Відкрити у новому вікні"
 
 #: history_module/kcmhistory.cpp:54
 #, kde-format
@@ -158,101 +159,106 @@ msgid ""
 "current tab</dd><dt>Open URL in new window:</dt><dd>always opens the URL in "
 "a new window</dd></dl>"
 msgstr ""
-"Acción a realizar ao abrir un URL do historial:<dl><dl><dt>Automática:</"
-"dt><dd>Abre o URL nunha lapela a menos que a lapela actual estea baleira ou "
-"sexa a páxina de inicio.</dd><dt>Abrir nunha lapela:</dt><dd>Abre sempre o "
-"URL nunha nova lapela.</dd><dt>Abrir na lapela actual:</dt><dd>Abre sempre o "
-"URL na lapela actual.</dd><dt>Abrir o URL nunha nova xanela:</dt><dd>Abre "
-"sempre o URL nunha nova xanela.</dd></dl>"
+"Дія, яку слід виконати при відкритті адреси з журналу:<dl><dl><dt>Авто:</"
+"dt><dd>відкрити адресу у новій вкладці, якщо поточна вкладка є непорожньою "
+"або не містить початкової сторінки</dd><dt>Відкрити адресу у новій вкладці:</"
+"dt><dd>завжди відкриває адресу у новій вкладці</dd><dt>Відкрити адресу у "
+"поточній вкладці:</dt><dd>завжди відкриває адресу у поточній вкладці</"
+"dd><dt>Відкрити адресу у новому вікні:</dt><dd>завжди відкриває адресу у "
+"новому вікні</dd></dl>"
 
 #: history_module/kcmhistory.cpp:65
 #, kde-format
 msgid "days"
-msgstr "días"
+msgstr "днів"
 
 #: history_module/kcmhistory.cpp:71 history_module/kcmhistory.cpp:76
 #: history_module/kcmhistory.cpp:200 history_module/kcmhistory.cpp:213
 #, kde-format
 msgid "Minute"
 msgid_plural "Minutes"
-msgstr[0] "Minuto"
-msgstr[1] "Minutos"
+msgstr[0] "хвилина"
+msgstr[1] "хвилини"
+msgstr[2] "хвилин"
+msgstr[3] "хвилина"
 
 #: history_module/kcmhistory.cpp:73 history_module/kcmhistory.cpp:78
 #: history_module/kcmhistory.cpp:198 history_module/kcmhistory.cpp:211
 #, kde-format
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] "Día"
-msgstr[1] "Días"
+msgstr[0] "день"
+msgstr[1] "дні"
+msgstr[2] "днів"
+msgstr[3] "день"
 
 #: history_module/kcmhistory.cpp:245
 #, kde-format
 msgid "Do you really want to clear the entire history?"
-msgstr "Seguro que quere borrar todo o historial?"
+msgstr "Ви дійсно хочете очистити всю історію?"
 
 #: history_module/kcmhistory.cpp:247
 #, kde-format
 msgctxt "@title:window"
 msgid "Clear History?"
-msgstr "Quere borrar o historial?"
+msgstr "Спорожнити журнал?"
 
 #: places_module/places_module.cpp:76
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Places Sidebar Module"
-msgstr "Módulo da barra lateral de lugares"
+msgstr "Модуль місць бічної панелі"
 
 #: places_module/places_module.cpp:99
 #, kde-format
 msgctxt "@title:tab"
 msgid "Places"
-msgstr "Lugares"
+msgstr "Місця"
 
 #: sidebar_widget.cpp:83
 #, kde-format
 msgid "Restore All Removed Default Buttons"
-msgstr "Restaurar os botóns predeterminados retirados"
+msgstr "Відновити усі вилучені типові кнопки"
 
 #: sidebar_widget.cpp:84
 #, kde-format
 msgid "Rollback to System Default"
-msgstr "Regresar á predeterminada do sistema"
+msgstr "Повернутися до типового для системи"
 
 #: sidebar_widget.cpp:143 sidebar_widget.cpp:429
 #, kde-format
 msgid "Configure Sidebar"
-msgstr "Configurar a barra lateral"
+msgstr "Налаштувати бічну панель"
 
 #: sidebar_widget.cpp:145
 #, kde-format
 msgid "Add New"
-msgstr "Engadir unha nova"
+msgstr "Додати"
 
 #: sidebar_widget.cpp:149
 #, kde-format
 msgid "Multiple Views"
-msgstr "Varias vistas"
+msgstr "Декілька панелей"
 
 #: sidebar_widget.cpp:151 sidebar_widget.cpp:268
 #, kde-format
 msgid "Show Tabs on Left"
-msgstr "Amosar as lapelas na esquerda"
+msgstr "Показувати вкладки ліворуч"
 
 #: sidebar_widget.cpp:152
 #, kde-format
 msgid "Show Configuration Button"
-msgstr "Amosar o botón de configuración"
+msgstr "Показувати кнопку налаштувань"
 
 #: sidebar_widget.cpp:155
 #, kde-format
 msgid "Close Sidebar"
-msgstr "Pechar a barra lateral"
+msgstr "Закрити бічну панель"
 
 #: sidebar_widget.cpp:210
 #, kde-format
 msgid "This entry already exists."
-msgstr "A entrada xa existe."
+msgstr "Цей запис вже існує."
 
 #: sidebar_widget.cpp:226
 #, kde-format
@@ -261,35 +267,35 @@ msgid ""
 "default ones.<br /><b>This procedure is irreversible.</b><br />Do you want "
 "to proceed?</qt>"
 msgstr ""
-"<qt>Isto retira todas as entradas da barra lateral e engade as "
-"predeterminadas do sistema.<br /><b>O procedemento é irreversíbel.</b><br /"
-">Quere proceder?</qt>"
+"<qt>У результаті буде вилучення усі ваші записи бічної панелі і додано "
+"типові для системи пункти.<br /><b>Результати не можна буде скасувати.</"
+"b><br />Хочете повернутися до типових записів?</qt>"
 
 #: sidebar_widget.cpp:268
 #, kde-format
 msgid "Show Tabs on Right"
-msgstr "Amosar as lapelas na dereita"
+msgstr "Показувати вкладки праворуч"
 
 #: sidebar_widget.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Name"
-msgstr "Definir o nome"
+msgstr "Надати назву"
 
 #: sidebar_widget.cpp:280
 #, kde-format
 msgid "Enter the name:"
-msgstr "Escriba o nome:"
+msgstr "Введіть назву:"
 
 #: sidebar_widget.cpp:298
 #, kde-format
 msgid "Enter a URL:"
-msgstr "Insira o URL:"
+msgstr "Введіть URL:"
 
 #: sidebar_widget.cpp:322
 #, kde-format
 msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
-msgstr "<qt>Seguro que quere retirar a lapela <b>%1</b>?</qt>"
+msgstr "<qt>Ви справді хочете вилучити вкладку <b>%1</b>?</qt>"
 
 #: sidebar_widget.cpp:372
 #, kde-format
@@ -298,112 +304,124 @@ msgid ""
 "click the right mouse button on any of the sidebar buttons and select \"Show "
 "Configuration Button\"."
 msgstr ""
-"Agochou o botón de configuración da barra lateral. Para facelo visíbel de "
-"novo, prema o botón dereito do rato sobre calquera botón da barra lateral e "
-"seleccione «Amosar o botón de configuración»."
+"Вами приховано кнопку налаштовування бічної панелі. Щоб зробити її знову "
+"видимою, клацніть правою кнопок миші на будь-якій з кнопок бічної панелі і "
+"виберіть у контекстному меню пункт «Показувати кнопку налаштувань»."
 
 #: sidebar_widget.cpp:573
 #, kde-format
 msgid "Set Name..."
-msgstr "Definir o nome…"
+msgstr "Вказати назву…"
 
 #: sidebar_widget.cpp:574
 #, kde-format
 msgid "Set URL..."
-msgstr "Definir o URL…"
+msgstr "Вказати адресу…"
 
 #: sidebar_widget.cpp:575
 #, kde-format
 msgid "Set Icon..."
-msgstr "Definir a icona…"
+msgstr "Встановити піктограму..."
 
 #: sidebar_widget.cpp:577
 #, kde-format
 msgid "Show Hidden Folders..."
-msgstr "Amosar os cartafoles agochados…"
+msgstr "Показувати приховані теки…"
 
 #: sidebar_widget.cpp:582
 #, kde-format
 msgid "Remove"
-msgstr "Retirar"
+msgstr "Вилучити"
 
 #: sidebar_widget.cpp:908
 #, kde-format
 msgid "Web module"
-msgstr "Módulo web"
+msgstr "Вебмодуль"
 
 #: tree_module/tree_module.cpp:259
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Tree Sidebar Module"
-msgstr "Módulo da barra lateral de árbore"
+msgstr "Модуль ієрархії тек бічної панелі"
 
 #: tree_module/tree_module.cpp:282
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree"
-msgstr "Árbore"
+msgstr "Ієрархія"
 
 #: web_module/web_module.cpp:42
 #, kde-format
 msgid "&Open Link"
-msgstr "&Abrir a ligazón"
+msgstr "&Відкрити посилання"
 
 #: web_module/web_module.cpp:46
 #, kde-format
 msgid "Open in New &Window"
-msgstr "Abrir nunha &xanela nova"
+msgstr "Відкрити у новому &вікні"
 
 #: web_module/web_module.cpp:52
 #, kde-format
 msgid "&Reload"
-msgstr "&Recargar"
+msgstr "&Перезавантажити"
 
 #: web_module/web_module.cpp:57
 #, kde-format
 msgid "Set &Automatic Reload"
-msgstr "Definir a recarga &automática"
+msgstr "Встановити &автоматичне перезавантаження"
 
 #: web_module/web_module.cpp:121
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Refresh Timeout (0 disables)"
-msgstr "Definir o tempo límite de actualización (0 desactívao)"
+msgstr "Встановити час очікування на освіження (0 — вимкнути)"
 
 #: web_module/web_module.cpp:132
 #, kde-format
 msgid " minute"
 msgid_plural " minutes"
-msgstr[0] " minuto"
-msgstr[1] " minutos"
+msgstr[0] " хвилина"
+msgstr[1] " хвилини"
+msgstr[2] " хвилин"
+msgstr[3] " хвилина"
 
 #: web_module/web_module.cpp:136
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
-msgstr[0] " segundo"
-msgstr[1] " segundos"
+msgstr[0] " секунда"
+msgstr[1] " секунди"
+msgstr[2] " секунд"
+msgstr[3] " секунда"
 
 #: web_module/web_module.cpp:269
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Web Sidebar Module"
-msgstr "Módulo da barra lateral web"
+msgstr "Модуль бічної панелі інтернету"
 
 #: web_module/web_module.cpp:289
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr "Nome:"
+msgstr "Назва:"
 
 #: web_module/web_module.cpp:289
 #, kde-format
 msgctxt "@label"
 msgid "Path or URL:"
-msgstr "Ruta ou URL:"
+msgstr "Шлях або адреса:"
 
 #: web_module/web_module.cpp:290
 #, kde-format
 msgctxt "@title:window"
 msgid "Add web sidebar module"
-msgstr "Engadir un módulo de barra lateral web"
+msgstr "Додавання модуля бічної вебпанелі"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Vertical Tab Bar"
+#~ msgstr "Вертикальна панель вкладок"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Tabs"
+#~ msgstr "Вкладки"
