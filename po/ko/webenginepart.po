@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-24 00:41+0000\n"
+"POT-Creation-Date: 2025-03-03 00:41+0000\n"
 "PO-Revision-Date: 2024-12-24 17:35+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,27 +27,27 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:74
-#: src/about/konq_aboutpage.cpp:197 src/about/konq_aboutpage.cpp:199
+#: src/about/konq_aboutpage.cpp:85 src/about/konq_aboutpage.cpp:87
+#: src/about/konq_aboutpage.cpp:202 src/about/konq_aboutpage.cpp:204
 #, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
 msgstr "자유롭게."
 
-#: src/about/konq_aboutpage.cpp:73 src/about/konq_aboutpage.cpp:132
-#: src/about/konq_aboutpage.cpp:198
+#: src/about/konq_aboutpage.cpp:86 src/about/konq_aboutpage.cpp:144
+#: src/about/konq_aboutpage.cpp:203
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: src/about/konq_aboutpage.cpp:75 src/about/konq_aboutpage.cpp:134
-#: src/about/konq_aboutpage.cpp:200
+#: src/about/konq_aboutpage.cpp:88 src/about/konq_aboutpage.cpp:146
+#: src/about/konq_aboutpage.cpp:205
 #, kde-format
 msgid "Konqueror is a web browser, file manager and universal document viewer."
 msgstr "Konqueror는 웹 브라우저, 파일 관리자, 문서 파일 뷰어입니다."
 
-#: src/about/konq_aboutpage.cpp:76 src/about/konq_aboutpage.cpp:135
-#: src/about/konq_aboutpage.cpp:201
+#: src/about/konq_aboutpage.cpp:89 src/about/konq_aboutpage.cpp:147
+#: src/about/konq_aboutpage.cpp:206
 #, kde-format
 msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
@@ -55,75 +55,75 @@ msgctxt ""
 msgid "Starting Points"
 msgstr "시작 지점"
 
-#: src/about/konq_aboutpage.cpp:77 src/about/konq_aboutpage.cpp:136
-#: src/about/konq_aboutpage.cpp:202
+#: src/about/konq_aboutpage.cpp:90 src/about/konq_aboutpage.cpp:148
+#: src/about/konq_aboutpage.cpp:207
 #, kde-format
 msgid "Introduction"
 msgstr "소개"
 
-#: src/about/konq_aboutpage.cpp:78 src/about/konq_aboutpage.cpp:137
-#: src/about/konq_aboutpage.cpp:203
+#: src/about/konq_aboutpage.cpp:91 src/about/konq_aboutpage.cpp:149
+#: src/about/konq_aboutpage.cpp:208
 #, kde-format
 msgid "Tips"
 msgstr "팁"
 
-#: src/about/konq_aboutpage.cpp:83
+#: src/about/konq_aboutpage.cpp:96
 #, kde-format
 msgid "Home Folder"
 msgstr "홈 폴더"
 
-#: src/about/konq_aboutpage.cpp:84
+#: src/about/konq_aboutpage.cpp:97
 #, kde-format
 msgid "Your personal files"
 msgstr "내 개인적인 파일"
 
-#: src/about/konq_aboutpage.cpp:87
+#: src/about/konq_aboutpage.cpp:100
 #, kde-format
 msgid "Trash"
 msgstr "휴지통"
 
-#: src/about/konq_aboutpage.cpp:88
+#: src/about/konq_aboutpage.cpp:101
 #, kde-format
 msgid "Browse and restore the trash"
 msgstr "휴지통에 보낸 파일 복원과 삭제"
 
-#: src/about/konq_aboutpage.cpp:91
+#: src/about/konq_aboutpage.cpp:104
 #, kde-format
 msgid "Network Folders"
 msgstr "네트워크 폴더"
 
-#: src/about/konq_aboutpage.cpp:92
+#: src/about/konq_aboutpage.cpp:105
 #, kde-format
 msgid "Shared files and folders"
 msgstr "공유된 파일과 폴더"
 
-#: src/about/konq_aboutpage.cpp:95
+#: src/about/konq_aboutpage.cpp:108
 #, kde-format
 msgid "Bookmarks"
 msgstr "책갈피"
 
-#: src/about/konq_aboutpage.cpp:96
+#: src/about/konq_aboutpage.cpp:109
 #, kde-format
 msgid "Quick access to your bookmarks"
 msgstr "책갈피에 빨리 접근하기"
 
-#: src/about/konq_aboutpage.cpp:99
+#: src/about/konq_aboutpage.cpp:112
 #, kde-format
 msgid "Next: An Introduction to Konqueror"
 msgstr "다음: Konqueror 소개"
 
-#: src/about/konq_aboutpage.cpp:101
+#: src/about/konq_aboutpage.cpp:114
 #, kde-format
 msgid "Search the Web"
 msgstr "웹 검색"
 
-#: src/about/konq_aboutpage.cpp:131 src/about/konq_aboutpage.cpp:133
+#: src/about/konq_aboutpage.cpp:143 src/about/konq_aboutpage.cpp:145
 #, kde-format
 msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
 msgid "Be free."
 msgstr "자유롭게."
 
-#: src/about/konq_aboutpage.cpp:138
+#: src/about/konq_aboutpage.cpp:150
 #, kde-format
 msgid ""
 "Konqueror makes working with and managing your files easy. You can browse "
@@ -133,7 +133,7 @@ msgstr ""
 "Konqueror는 파일 관리를 쉽게 도와 줍니다. 강력한 사이드바와 파일 미리 보기를 "
 "사용하면서 로컬 폴더와 네트워크 폴더 둘 다를 탐색할 수 있습니다."
 
-#: src/about/konq_aboutpage.cpp:142
+#: src/about/konq_aboutpage.cpp:154
 #, kde-format
 msgid ""
 "Konqueror is also a full featured and easy to use web browser which you can "
@@ -145,7 +145,7 @@ msgstr ""
 "제: <a href=\"http://www.kde.org\">http://www.kde.org</a>)를 주소 표시줄에 입"
 "력하고 엔터 키를 누르거나, 책갈피 메뉴의 항목을 선택하십시오."
 
-#: src/about/konq_aboutpage.cpp:147
+#: src/about/konq_aboutpage.cpp:159
 #, kde-format
 msgid ""
 "To return to the previous location, press the back button <img width='16' "
@@ -154,7 +154,7 @@ msgstr ""
 "이전 위치로 되돌아가려면 도구 모음에서 <img width='16' height='16' src="
 "\"%1\"></img> 뒤로 단추를 누르십시오. "
 
-#: src/about/konq_aboutpage.cpp:150
+#: src/about/konq_aboutpage.cpp:162
 #, kde-format
 msgid ""
 "To quickly go to your Home folder press the home button <img width='16' "
@@ -163,24 +163,24 @@ msgstr ""
 "홈 폴더로 빠르게 되돌아가려면 도구 모음에서 <img width='16' height='16' src="
 "\"%1\"></img> 홈 단추를 누르십시오."
 
-#: src/about/konq_aboutpage.cpp:152
+#: src/about/konq_aboutpage.cpp:164
 #, kde-format
 msgid ""
 "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
 msgstr ""
 "Konqueror에 대한 자세한 정보를 보려면 <a href=\"%1\">여기</a>를 클릭하십시오."
 
-#: src/about/konq_aboutpage.cpp:155
+#: src/about/konq_aboutpage.cpp:167
 #, kde-format
 msgid "Next: Tips & Tricks"
 msgstr "다음: 팁과 트릭"
 
-#: src/about/konq_aboutpage.cpp:204
+#: src/about/konq_aboutpage.cpp:209
 #, kde-format
 msgid "Tips & Tricks"
 msgstr "팁과 트릭"
 
-#: src/about/konq_aboutpage.cpp:205
+#: src/about/konq_aboutpage.cpp:210
 #, kde-format
 msgid ""
 "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, using "
@@ -194,7 +194,7 @@ msgstr ""
 "있는 미리 정의된 웹 바로 가기가 있습니다. <a href=\"%1\">여기에서</a> 웹 바"
 "로 가기를 새로 추가할 수 있습니다."
 
-#: src/about/konq_aboutpage.cpp:210
+#: src/about/konq_aboutpage.cpp:215
 #, kde-format
 msgid ""
 "When you want to paste a new address into the Location toolbar you might "
@@ -205,7 +205,7 @@ msgstr ""
 "도구 모음에 있는 <img width='16' height='16' src=\"%1\"></img> 흰색 가위표가 "
 "있는 검은 화살표를 누르면 이전의 항목이 지워집니다."
 
-#: src/about/konq_aboutpage.cpp:214
+#: src/about/konq_aboutpage.cpp:219
 #, kde-format
 msgid ""
 "To create a link on your desktop pointing to the current page, simply drag "
@@ -215,7 +215,7 @@ msgstr ""
 "바탕 화면에 현재 페이지로 향한 링크를 만들려면 위치 도구 모음의 왼쪽에 있는 "
 "아이콘(파비콘)을 바탕 화면에 끌어다 놓은 다음, \"아이콘\"을 선택하십시오."
 
-#: src/about/konq_aboutpage.cpp:217
+#: src/about/konq_aboutpage.cpp:222
 #, kde-format
 msgid ""
 "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
@@ -225,7 +225,7 @@ msgstr ""
 "설정 메뉴에서 <img width='16' height='16' SRC=\"%1\"></img> \"전체 화면 모드"
 "\"를 찾을 수 있습니다. \"대화\" 세션에서 유용하게 사용할 수 있습니다."
 
-#: src/about/konq_aboutpage.cpp:220
+#: src/about/konq_aboutpage.cpp:225
 #, kde-format
 msgid ""
 "Divide et impera (lat. \"Divide and conquer\") - by splitting a window into "
@@ -236,7 +236,7 @@ msgstr ""
 "있습니다. 예: 창 -> <img width='16' height='16' src=\"%1\" /> 왼쪽/오른쪽으"
 "로 나눠서 보기. 이것을 사용해서 Konqueror를 원하는 대로 나눌 수 있습니다."
 
-#: src/about/konq_aboutpage.cpp:223
+#: src/about/konq_aboutpage.cpp:228
 #, kde-format
 msgid ""
 "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
@@ -246,7 +246,7 @@ msgstr ""
 "특정한 브라우저를 고집하는 웹사이트에서는 <a href=\"%1\">사용자 에이전트</a> "
 "기능을 사용하십시오. 웹사이트 관리자에게 항의하는 것을 잊지 마십시오!"
 
-#: src/about/konq_aboutpage.cpp:226
+#: src/about/konq_aboutpage.cpp:231
 #, kde-format
 msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
@@ -255,7 +255,7 @@ msgstr ""
 "<img width='16' height='16' src=\"%1\"></img> 사이드바에 있는 과거 기록 항목"
 "은 과거에 방문했던 웹 페이지 기록을 쉽게 볼 수 있도록 해 줍니다."
 
-#: src/about/konq_aboutpage.cpp:228
+#: src/about/konq_aboutpage.cpp:233
 #, kde-format
 msgid ""
 "Advanced users will appreciate the Konsole which you can embed into "
@@ -265,7 +265,7 @@ msgstr ""
 "고급 사용자라면 Konqueror 창에 들어갈 수 있는 Konsole을 확인해 보십시오. (설"
 "정 -> <img width='16' height='16' SRC=\"%1\"></img> 터미널 에뮬레이터 표시)"
 
-#: src/about/konq_aboutpage.cpp:232
+#: src/about/konq_aboutpage.cpp:237
 #, kde-format
 msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
@@ -273,22 +273,22 @@ msgctxt ""
 msgid "<a href=\"%1\">Return to Starting Points</a>"
 msgstr "<a href=\"%1\">시작 위치로 돌아가기</a>"
 
-#: src/about/konq_aboutpage.cpp:246
+#: src/about/konq_aboutpage.cpp:251
 #, kde-format
 msgid "Installed Plugins"
 msgstr "설치된 플러그인"
 
-#: src/about/konq_aboutpage.cpp:247
+#: src/about/konq_aboutpage.cpp:252
 #, kde-format
 msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
 msgstr "<td>플러그인</td><td>설명</td><td>파일</td><td>형식</td>"
 
-#: src/about/konq_aboutpage.cpp:248
+#: src/about/konq_aboutpage.cpp:253
 #, kde-format
 msgid "Installed"
 msgstr "설치됨"
 
-#: src/about/konq_aboutpage.cpp:249
+#: src/about/konq_aboutpage.cpp:254
 #, kde-format
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>MIME 형식</td><td>설명</td><td>접미사</td><td>플러그인</td>"

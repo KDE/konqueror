@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-24 00:41+0000\n"
+"POT-Creation-Date: 2025-03-03 00:41+0000\n"
 "PO-Revision-Date: 2024-11-04 08:07+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -28,27 +28,27 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:74
-#: src/about/konq_aboutpage.cpp:197 src/about/konq_aboutpage.cpp:199
+#: src/about/konq_aboutpage.cpp:85 src/about/konq_aboutpage.cpp:87
+#: src/about/konq_aboutpage.cpp:202 src/about/konq_aboutpage.cpp:204
 #, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
 msgstr "החופש להיות."
 
-#: src/about/konq_aboutpage.cpp:73 src/about/konq_aboutpage.cpp:132
-#: src/about/konq_aboutpage.cpp:198
+#: src/about/konq_aboutpage.cpp:86 src/about/konq_aboutpage.cpp:144
+#: src/about/konq_aboutpage.cpp:203
 #, kde-format
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: src/about/konq_aboutpage.cpp:75 src/about/konq_aboutpage.cpp:134
-#: src/about/konq_aboutpage.cpp:200
+#: src/about/konq_aboutpage.cpp:88 src/about/konq_aboutpage.cpp:146
+#: src/about/konq_aboutpage.cpp:205
 #, kde-format
 msgid "Konqueror is a web browser, file manager and universal document viewer."
 msgstr "Konqueror הוא דפדפן אינטרנט, מנהל קבצים ומציג מסמכים אוניברסלי."
 
-#: src/about/konq_aboutpage.cpp:76 src/about/konq_aboutpage.cpp:135
-#: src/about/konq_aboutpage.cpp:201
+#: src/about/konq_aboutpage.cpp:89 src/about/konq_aboutpage.cpp:147
+#: src/about/konq_aboutpage.cpp:206
 #, kde-format
 msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
@@ -56,75 +56,75 @@ msgctxt ""
 msgid "Starting Points"
 msgstr "נקודות התחלה"
 
-#: src/about/konq_aboutpage.cpp:77 src/about/konq_aboutpage.cpp:136
-#: src/about/konq_aboutpage.cpp:202
+#: src/about/konq_aboutpage.cpp:90 src/about/konq_aboutpage.cpp:148
+#: src/about/konq_aboutpage.cpp:207
 #, kde-format
 msgid "Introduction"
 msgstr "היכרות"
 
-#: src/about/konq_aboutpage.cpp:78 src/about/konq_aboutpage.cpp:137
-#: src/about/konq_aboutpage.cpp:203
+#: src/about/konq_aboutpage.cpp:91 src/about/konq_aboutpage.cpp:149
+#: src/about/konq_aboutpage.cpp:208
 #, kde-format
 msgid "Tips"
 msgstr "עצות"
 
-#: src/about/konq_aboutpage.cpp:83
+#: src/about/konq_aboutpage.cpp:96
 #, kde-format
 msgid "Home Folder"
 msgstr "תיקיית הבית"
 
-#: src/about/konq_aboutpage.cpp:84
+#: src/about/konq_aboutpage.cpp:97
 #, kde-format
 msgid "Your personal files"
 msgstr "הקבצים האישיים שלך"
 
-#: src/about/konq_aboutpage.cpp:87
+#: src/about/konq_aboutpage.cpp:100
 #, kde-format
 msgid "Trash"
 msgstr "אשפה"
 
-#: src/about/konq_aboutpage.cpp:88
+#: src/about/konq_aboutpage.cpp:101
 #, kde-format
 msgid "Browse and restore the trash"
 msgstr "עיון ושחזור מהאשפה"
 
-#: src/about/konq_aboutpage.cpp:91
+#: src/about/konq_aboutpage.cpp:104
 #, kde-format
 msgid "Network Folders"
 msgstr "תיקיות רשת"
 
-#: src/about/konq_aboutpage.cpp:92
+#: src/about/konq_aboutpage.cpp:105
 #, kde-format
 msgid "Shared files and folders"
 msgstr "קבצים ותיקיות משותפים"
 
-#: src/about/konq_aboutpage.cpp:95
+#: src/about/konq_aboutpage.cpp:108
 #, kde-format
 msgid "Bookmarks"
 msgstr "סימניות"
 
-#: src/about/konq_aboutpage.cpp:96
+#: src/about/konq_aboutpage.cpp:109
 #, kde-format
 msgid "Quick access to your bookmarks"
 msgstr "גישה מהירה לסימניות שלך"
 
-#: src/about/konq_aboutpage.cpp:99
+#: src/about/konq_aboutpage.cpp:112
 #, kde-format
 msgid "Next: An Introduction to Konqueror"
 msgstr "הבא: היכרות עם Konqueror"
 
-#: src/about/konq_aboutpage.cpp:101
+#: src/about/konq_aboutpage.cpp:114
 #, kde-format
 msgid "Search the Web"
 msgstr "חיפוש באינטרנט"
 
-#: src/about/konq_aboutpage.cpp:131 src/about/konq_aboutpage.cpp:133
+#: src/about/konq_aboutpage.cpp:143 src/about/konq_aboutpage.cpp:145
 #, kde-format
 msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
 msgid "Be free."
 msgstr "החופש להיות."
 
-#: src/about/konq_aboutpage.cpp:138
+#: src/about/konq_aboutpage.cpp:150
 #, kde-format
 msgid ""
 "Konqueror makes working with and managing your files easy. You can browse "
@@ -134,7 +134,7 @@ msgstr ""
 "Konqueror מקל על העבודה עם הקבצים שלך. אפשר לדפדף בתיקיות מקומיות ומרוחקות "
 "תוך ניצול תכונות מתקדמות כגון סרגל הצד עתיר היכולות ותצוגות מקדימות של קבצים."
 
-#: src/about/konq_aboutpage.cpp:142
+#: src/about/konq_aboutpage.cpp:154
 #, kde-format
 msgid ""
 "Konqueror is also a full featured and easy to use web browser which you can "
@@ -147,7 +147,7 @@ msgstr ""
 "kde.org</a>) של אתר כלשהו לביקור בסרגל הכתובות וללחוץ על Enter או לבחור "
 "רשומה מתפריט הסימניות."
 
-#: src/about/konq_aboutpage.cpp:147
+#: src/about/konq_aboutpage.cpp:159
 #, kde-format
 msgid ""
 "To return to the previous location, press the back button <img width='16' "
@@ -156,7 +156,7 @@ msgstr ""
 "כדי לחזור למקום הקודם, יש ללחוץ על כפתור הקודם <img width='16' height='16' "
 "src=\"%1\"></img> בסרגל הכלים."
 
-#: src/about/konq_aboutpage.cpp:150
+#: src/about/konq_aboutpage.cpp:162
 #, kde-format
 msgid ""
 "To quickly go to your Home folder press the home button <img width='16' "
@@ -165,23 +165,23 @@ msgstr ""
 "כדי לקפוץ בזריזות לתיקיית הבית שלך יש ללחוץ על כפתור הבית <img width='16' "
 "height='16' src=\"%1\"></img>."
 
-#: src/about/konq_aboutpage.cpp:152
+#: src/about/konq_aboutpage.cpp:164
 #, kde-format
 msgid ""
 "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
 msgstr "לתיעוד מפורט יותר של Konqueror יש ללחוץ <a href=\"%1\">כאן</a>."
 
-#: src/about/konq_aboutpage.cpp:155
+#: src/about/konq_aboutpage.cpp:167
 #, kde-format
 msgid "Next: Tips & Tricks"
 msgstr "הבא: עצות ותכסיסים"
 
-#: src/about/konq_aboutpage.cpp:204
+#: src/about/konq_aboutpage.cpp:209
 #, kde-format
 msgid "Tips & Tricks"
 msgstr "עצות ותכסיסים"
 
-#: src/about/konq_aboutpage.cpp:205
+#: src/about/konq_aboutpage.cpp:210
 #, kde-format
 msgid ""
 "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, using "
@@ -195,7 +195,7 @@ msgstr ""
 "תוכנה או מילים מסוימות באנציקלופדיה. אפשר גם <a href=\"%1\">ליצור קיצורי "
 "אינטרנט משלך</a>."
 
-#: src/about/konq_aboutpage.cpp:210
+#: src/about/konq_aboutpage.cpp:215
 #, kde-format
 msgid ""
 "When you want to paste a new address into the Location toolbar you might "
@@ -206,7 +206,7 @@ msgstr ""
 "לחיצה על החץ השחור עם האיקס הלבן <img width='16' height='16' src=\"%1\"></"
 "img> בסרגל הכלים."
 
-#: src/about/konq_aboutpage.cpp:214
+#: src/about/konq_aboutpage.cpp:219
 #, kde-format
 msgid ""
 "To create a link on your desktop pointing to the current page, simply drag "
@@ -217,7 +217,7 @@ msgstr ""
 "לגרור את הסמל (סמל מועדפים/favicon) שמימין בסרגל הכתובות, להשליך אותו על "
 "שולחן העבודה ולבחור ב„סמל”."
 
-#: src/about/konq_aboutpage.cpp:217
+#: src/about/konq_aboutpage.cpp:222
 #, kde-format
 msgid ""
 "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
@@ -227,7 +227,7 @@ msgstr ""
 "אפשר גם למצוא <img width='16' height='16' src=\"%1\" /> „מצב מסך מלא” בתפריט "
 "ההגדרות. היכולת הזאת מאוד שימושית להפעלות „שיח”."
 
-#: src/about/konq_aboutpage.cpp:220
+#: src/about/konq_aboutpage.cpp:225
 #, kde-format
 msgid ""
 "Divide et impera (lat. \"Divide and conquer\") - by splitting a window into "
@@ -238,7 +238,7 @@ msgstr ""
 "(כלומר חלון -> <img width='16' height='16' src=\"%1\" /> פיצול התצוגה "
 "לשמאל/ימין) אפשר לגרום ל־Konqueror להופיע בדרך המתאימה לך."
 
-#: src/about/konq_aboutpage.cpp:223
+#: src/about/konq_aboutpage.cpp:228
 #, kde-format
 msgid ""
 "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
@@ -248,7 +248,7 @@ msgstr ""
 "אפשר להשתמש ביכולת<a href=\"%1\">user-agent</a> (סוכן משתמש) אם האתר בו בחרת "
 "לבקר מבקש ממך להשתמש בדפדפן אחר (ולא לשכוח לשלוח תלונה להנהלת האתר!)"
 
-#: src/about/konq_aboutpage.cpp:226
+#: src/about/konq_aboutpage.cpp:231
 #, kde-format
 msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
@@ -257,7 +257,7 @@ msgstr ""
 "<img width='16' height='16' src=\"%1\"></img> ההיסטוריה בסרגל הצד שלך מסייעת "
 "לך לשמור על העמודים שביקרת בהם לאחרונה."
 
-#: src/about/konq_aboutpage.cpp:228
+#: src/about/konq_aboutpage.cpp:233
 #, kde-format
 msgid ""
 "Advanced users will appreciate the Konsole which you can embed into "
@@ -267,7 +267,7 @@ msgstr ""
 "משתמשים מתקדמים ודאי יעריכו את העובדה שאפשר לשבץ את Konsole לתוך Konqueror "
 "(הגדרות -> <img width='16' height='16' SRC=\"%1\"></img> הצגת מדמה מסוף)."
 
-#: src/about/konq_aboutpage.cpp:232
+#: src/about/konq_aboutpage.cpp:237
 #, kde-format
 msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
@@ -275,22 +275,22 @@ msgctxt ""
 msgid "<a href=\"%1\">Return to Starting Points</a>"
 msgstr "<a href=\"%1\">חזרה לנקודות ההתחלה</a>"
 
-#: src/about/konq_aboutpage.cpp:246
+#: src/about/konq_aboutpage.cpp:251
 #, kde-format
 msgid "Installed Plugins"
 msgstr "תוספים מותקנים"
 
-#: src/about/konq_aboutpage.cpp:247
+#: src/about/konq_aboutpage.cpp:252
 #, kde-format
 msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
 msgstr "<td>תוסף</td><td>תיאור</td><td>קובץ</td><td>סוגים</td>"
 
-#: src/about/konq_aboutpage.cpp:248
+#: src/about/konq_aboutpage.cpp:253
 #, kde-format
 msgid "Installed"
 msgstr "מותקן"
 
-#: src/about/konq_aboutpage.cpp:249
+#: src/about/konq_aboutpage.cpp:254
 #, kde-format
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>סוג תוכן</td><td>תיאור</td><td>סיומות</td><td>תוסף</td>"
