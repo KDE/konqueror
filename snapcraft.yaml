@@ -1,36 +1,39 @@
-# SPDX-FileCopyrightText: 2024 Scarlett Moore <sgmoore@kde.org>
+# SPDX-FileCopyrightText: 2024-2025 Scarlett Moore <sgmoore@kde.org>
 #
 # SPDX-License-Identifier: CC0-1.0
 ---
 name: konqueror
 confinement: strict
 grade: stable
-base: core22
+base: core24
 adopt-info: konqueror
 apps:
     konqueror:
         extensions:
         - kde-neon-6
         common-id: org.kde.konqueror.desktop
-        desktop: usr/share/applications/org.kde.konqueror.desktop
+        desktop: usr/share/applications/konqbrowser.desktop
         command: usr/bin/konqueror
         plugs:
         - pulseaudio
         - browser-support
+        environment:
+         DICPATH: "$SNAP/usr/share/hunspell"
+         ALSA_CONFIG_PATH: "$SNAP/kf6/etc/asound.conf"
+         QTWEBENGINE_DISABLE_SANDBOX: 1
+         XDG_DATA_DIRS: "$XDG_DATA_DIRS:$SNAP/usr/share"
+         XDG_CONFIG_DIRS: "$XDG_CONFIG_DIRS:$SNAP/etc/xdg"
+plugs:
+  hunspell-dictionaries:
+    content: hunspell-dictionaries
+    interface: content
+    target: "$SNAP/usr/share/hunspell"
+    default-provider: hunspell-dictionaries
 slots:
     session-dbus-interface:
         interface: dbus
         name: org.kde.konqueror
         bus: session
-package-repositories:
--   type: apt
-    components:
-    - main
-    suites:
-    - jammy
-    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: http://origin.archive.neon.kde.org/user
-    key-server: keyserver.ubuntu.com
 parts:
   qca:
     source: https://invent.kde.org/libraries/qca.git
@@ -80,6 +83,8 @@ parts:
       - libcups2-dev
       - libxkbcommon-dev
       - libpulse0
+    build-snaps:
+      - hunspell-dictionaries
     stage-packages:
       - libxcb-util1
       - cups-client
@@ -101,6 +106,8 @@ parts:
       - -DCMAKE_INSTALL_LIBDIR=lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
       - --log-level=STATUS
       - -DCMAKE_LIBRARY_PATH=lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
+    build-environment:
+      - DICPATH: "$CRAFT_STAGE/usr/share/hunspell"
     prime:
       - -usr/lib/*/cmake/*
       - -usr/include/*
@@ -110,15 +117,24 @@ parts:
       - -usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0
       - -usr/lib/aspell/*
       - -usr/share/lintian
+  gpu-2404:
+    after: [konqueror]
+    source: https://github.com/canonical/gpu-snap.git
+    plugin: dump
+    override-prime: |
+      craftctl default
+      ${CRAFT_PART_SRC}/bin/gpu-2404-cleanup mesa-2404
+    prime:
+      - bin/gpu-2404-wrapper
   cleanup:
     after:
       - konqueror
     plugin: nil
     build-snaps:
-      - core22
-      - kf6-core22
+      - core24
+      - kf6-core24
     override-prime: |
       set -eux
-      for snap in "core22" "kf6-core22"; do
+      for snap in "core24" "kf6-core24"; do
         cd "/snap/$snap/current" && find . -type f,l -exec rm -rf "${CRAFT_PRIME}/{}" \;
       done
