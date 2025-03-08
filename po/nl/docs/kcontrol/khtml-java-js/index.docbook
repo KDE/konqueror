@@ -52,12 +52,12 @@
 >Met het keuzevakje onder <guilabel
 >Java globaal inschakelen</guilabel
 > kunt u &Java;-ondersteuning standaard aanzetten voor alle webpagina's. U kunt er ook voor kiezen om &Java; aan of uit te zetten voor specifieke hosts. Om een beleid voor een specifieke host toe te voegen, klikt u op de knop <guilabel
->Nieuw...</guilabel
+>Nieuw…</guilabel
 > knop, om een dialoogvenster te doen verschijnen waarin u een specifieke host kan intypen om acceptatie van &Java; aan of uit te zetten. Daardoor zal het toegevoegde domein aan de linkerkant van de pagina verschijnen.</para>
 
 <para
 >U kunt een host uit de lijst kiezen, en daarna op <guilabel
->Wijzigen...</guilabel
+>Wijzigen…</guilabel
 > klikken om een ander beleid te kiezen voor die host. De knop <guilabel
 >Verwijderen</guilabel
 > verwijdert het beleid voor de gekozen host, waardoor de globale instellingen weer van toepassing worden voor deze host.</para>
@@ -83,9 +83,9 @@
 >KIO gebruiken</guilabel
 > zorgt ervoor dat <acronym
 >JVM</acronym
-> &kde;'s eigen <acronym
+> de eigen <acronym
 >KIO</acronym
-> gebruikt voor netwerkverbindingen.</para>
+> transporten van &kde; gebruikt worden voor netwerkverbindingen.</para>
 
 <para
 >Met het keuzevakje <guilabel
@@ -94,7 +94,7 @@
 
 <para
 >U kunt ervoor kiezen om &konqueror; de &Java;-installatie op uw systeem te laten detecteren, of u kunt zelf het pad specificeren naar de installatie door <guilabel
->Pad naar java-programma of 'java'</guilabel
+>Pad naar java-programma of java</guilabel
 > te selecteren. Dit laatste is handig als u bijvoorbeeld meerdere &Java;-installaties hebt op uw systeem, en u wilt specificeren welke &Java;-installatie er moet gebruikt worden. Als de &Java; Virtuele Machine die u gebruikt speciale opstart-opties nodig heeft, kunt u deze intypen in het veld met de naam <guilabel
 >Extra Java-argumenten</guilabel
 >.</para>
@@ -115,20 +115,16 @@
 >Het keuzevakje <guilabel
 >JavScript globaal inschakelen</guilabel
 > staat u toe om JavaScript-ondersteuning standaard aan te zetten voor alle websites. U kunt JavaScript ook aan- of afzetten voor specifieke hosts. Om een beleid voor een specifieke host toe te voegen klikt u op de knop <guilabel
->Nieuw...</guilabel
+>Nieuw…</guilabel
 >, om zo een dialoogvenster te doen verschijnen waarin u een hostnaam kunt invoeren en JavaScript-code te accepteren of af te wijzen voor het betreffende domein. Het domein zal dan zichtbaar worden in de lijst aan de linkerkant van de pagina.</para>
 
 <para
 >U kunt een host uit de lijst kiezen, en daarna op <guilabel
->Wijzigen...</guilabel
+>Wijzigen…</guilabel
 > klikken om een ander beleid te kiezen voor die host. De knop <guilabel
 >Verwijderen</guilabel
 > verwijdert het beleid voor de gekozen host, waardoor de globale instellingen weer van toepassing worden voor deze host.</para>
-<!-- missing section Debugging
-Enable debugger Enables builtin JavaScript debugger.
-Report errors Enables the reporting of errors that occur when JavaScript code is executed.
-How are errors reported? popup window? icon in status bar?
--->
+
 <para
 >Het laatste set opties op de sectie <guilabel
 >Globaal JavaScript beleid</guilabel

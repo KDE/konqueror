@@ -45,9 +45,9 @@
 >&FDLNotice;</legalnotice>
 
 <date
->5 de novembre de 2016</date>
+>27 de febrer de 2025</date>
 <releaseinfo
->Aplicacions 16.12</releaseinfo>
+>Gear 25.02</releaseinfo>
 
 <abstract
 ><para
@@ -78,7 +78,6 @@
 >&Pamela.Roberts;</author>
 &traductor.Antoni.Bella; 
 </authorgroup>
-
 </chapterinfo>
 
 <title
@@ -91,7 +90,7 @@
 >gestor de fitxers</link
 >, el qual proporciona funcions per a l'administració de fitxers, que van des de les operacions simples com retalla/copia i enganxa a la navegació per fitxers locals i remots. Els continguts de les carpetes es poden mostrar en una varietat de <link linkend="viewmode"
 >modes de vista</link
-> de text i icones, els quals poden incloure imatges de vistes prèvies en miniatura del contingut de cada fitxer. Les propietats dels fitxers i carpetes es poden examinar i canviar amb facilitat, i les aplicacions es poden iniciar amb un simple clic del &BER;.</para>
+> de text i icones, els quals poden incloure imatges de vistes prèvies en miniatura del contingut de cada fitxer. Les propietats dels fitxers i carpetes es poden examinar i canviar amb facilitat, i les aplicacions es poden iniciar amb un doble clic del &BER;.</para>
 
 <para
 >En les aplicacions &kde;, el &dolphin; és el gestor de fitxers per omissió. Per a canviar el component per omissió per a navegar per les carpetes, obriu <guimenu
@@ -105,11 +104,11 @@
 >navegador web</link
 > conforme a l'<acronym
 >HTML</acronym
-> 4.01 amb suport integrat per a JavaScript (ECMA-262), <acronym
+> 5 amb suport integrat per a JavaScript (ECMA-262), <acronym
 >CSS</acronym
-> (fulls d'estil en cascada) i scripts bidireccionals (àrab i hebreu). Proporciona suport per a l'execució de miniaplicacions segures de &Java;, connectors del &Netscape; per a visualitzar &Flash;, &RealAudio; i &RealVideo; i per a comunicacions segures mitjançant <acronym
+> (fulls d'estil en cascada) i scripts bidireccionals (p. ex. àrab, hebreu i altres). Proporciona suport de <acronym
 >SSL</acronym
->. Entre les característiques avançades s'inclou la compleció automàtica dels &URL; i formularis, l'habilitat per a importar adreces d'interès des d'altres navegadors i la navegació amb pestanyes. </para>
+> per a comunicacions segures. Les característiques avançades inclouen la compleció automàtica dels &URL; i formularis, l'habilitat per a importar adreces d'interès des d'altres navegadors i la navegació amb pestanyes.</para>
 
 <para
 >El <emphasis
@@ -130,19 +129,16 @@
 >&konqueror;</emphasis
 > és una aplicació molt personalitzable que qualsevol pot <link linkend="config"
 >configurar</link
-> perquè s'adapti a les seves necessitats, des de canviar l'estil global i les mides del text i icones a seleccionar quins elements apareixeran a la barra de menús, canviar el número i posició de les barres d'eines i fins i tot definir noves combinacions de tecla per a dreceres de teclat. </para>
-
+> perquè s'adapti a les seves necessitats, des de canviar l'estil global i les mides del text i icones a seleccionar quins elements apareixeran a la barra de menús, canviar el número i posició de les barres d'eines i fins i tot definir combinacions noves de tecla per a dreceres de teclat. </para>
 </chapter>
 
 <chapter id="basics">
-
 <chapterinfo>
 <authorgroup>
 <author
 >&Pamela.Roberts;</author>
 &traductor.Antoni.Bella; 
 </authorgroup>
-
 </chapterinfo>
 
 <title
@@ -150,33 +146,27 @@
 
 <important
 ><para
->Com totes les aplicacions &kde;, el &konqueror; és altament configurable. Aquest document ens descriu com es comporta el &konqueror; amb l'arranjament per omissió.</para>
-<para
->Un ratolí de tres botons pot resultar d'utilitat en l'ús del &konqueror; o de qualsevol altra aplicació del &kde;. Si el vostre ratolí tan sols disposa de dos botons, hauríeu de poder configurar el sistema de manera que simuli un &BMR; quan es premin els dos botons alhora.</para>
-<para
->Podeu llegir més a sobre d'aquest tema en <xref linkend="lmb-mmb"/>.</para>
-<para
->Si esteu acostumat a fer doble clic per a realitzar una acció, tingueu cura, perquè igual que amb la resta del &kde;, per omissió el &konqueror; empra un únic clic.</para
+>Com totes les aplicacions &kde;, el &konqueror; és altament configurable. Aquest document ens descriu com es comporta el &konqueror; amb l'arranjament per omissió.</para
+><para
+>Un ratolí de tres botons pot resultar d'utilitat en l'ús del &konqueror; o de qualsevol altra aplicació del &kde;. Si el vostre ratolí tan sols disposa de dos botons, hauríeu de poder configurar el sistema de manera que simuli un &BMR; quan es premin els dos botons alhora.</para
+><para
+>Podeu llegir més a sobre d'aquest tema en <xref linkend="lmb-mmb"/>.</para
 ></important>
 
 <sect1 id="konq-start">
 <title
 >Iniciar el &konqueror;</title>
 
-<para
->Atès que és una aplicació que combina el gestor de fitxers i el navegador, el &konqueror; pot passar de l'un a l'altre mode sobre la marxa, però convé triar el mode en el qual s'usarà abans d'iniciar-lo.</para>
-
 <itemizedlist>
-
 <listitem
 ><para
->Des del menú llançador d'aplicacions, seleccionar <menuchoice
+>Des del menú llançador d'aplicacions, seleccioneu <menuchoice
 ><guisubmenu
 >Internet</guisubmenu
 ><guimenuitem
->Konqueror (Navegador web)</guimenuitem
+>Konqueror</guimenuitem
 ></menuchoice
-> per a engegar-lo com a navegador. </para
+> per a iniciar-lo com a navegador.</para
 ></listitem>
 
 <listitem
@@ -191,7 +181,6 @@
 >https://www.kde.org</userinput
 > per a iniciar-lo com a navegador.</para
 ></listitem>
-
 </itemizedlist>
 
 <note
@@ -204,13 +193,9 @@
 ></note>
 
 <para
->Si el &konqueror; és el gestor de fitxers per omissió, també s'iniciarà automàticament quan feu clic <mousebutton
->esquerre</mousebutton
-> a sobre d'una icona de l'escriptori que representa una carpeta, tal com un disc dur o la icona de la <guiicon
+>Si el &konqueror; és el gestor de fitxers per omissió, també s'iniciarà automàticament quan feu doble clic a sobre d'una icona de l'escriptori que representa una carpeta, tal com un disc dur o la icona de la <guiicon
 >Paperera</guiicon
->. </para>
-
-
+>.</para>
 </sect1>
 
 <sect1 id="parts">
@@ -329,21 +314,13 @@
 >Arranjament</guimenu
 ></link
 > per a triar quan mostrar o ocultar la barra de menús, la barra d'eines principal, la barra d'eines de localització i la barra d'eines d'adreces d'interès, o fins i tot afegir una barra d'eines extra.</para
-></listitem>
-<listitem
+></listitem
+><listitem
 ><para
 >Si les barres d'eines estan desbloquejades, també les podeu arrossegar fent clic <mousebutton
 >esquerre</mousebutton
-> sobre la nansa a l'extrem esquerre d'una barra i moure-la mantenint premut el &BER; mentre l'arrossegueu. </para
+> sobre la nansa a l'extrem esquerre d'una barra i moure-la mantenint premut el &BER; mentre l'arrossegueu.</para
 ></listitem>
-<!--
-<listitem
-><para
->This screenshot does not show the optional <link linkend="sidebar">
-Sidebar</link
->.</para
-></listitem>
--->
 </itemizedlist>
 
 <para
@@ -456,7 +433,7 @@ Sidebar</link
 ><guimenu
 >Arranjament</guimenu
 ><guimenuitem
->Configura Konqueror... </guimenuitem
+>Configura el Konqueror… </guimenuitem
 ></menuchoice
 >.</para
 ></listitem>
@@ -466,7 +443,7 @@ Sidebar</link
 <para
 >Fer clic amb el &BMR; a sobre d'un fitxer o nom de carpeta essencialment produirà el mateix efecte que el clic <mousebutton
 >esquerre</mousebutton
-> a excepció que ho fa en una nova finestra del &konqueror;, a menys que la casella <guilabel
+> a excepció que ho fa en una finestra nova del &konqueror;, a menys que la casella <guilabel
 >Obre els enllaços a una pestanya nova en comptes d'una finestra nova</guilabel
 > hagi estat seleccionada a la pàgina <guimenuitem
 >General</guimenuitem
@@ -474,7 +451,7 @@ Sidebar</link
 ><guimenu
 >Arranjament</guimenu
 ><guimenuitem
->Configura Konqueror...</guimenuitem
+>Configura el Konqueror…</guimenuitem
 ></menuchoice
 >. El &konqueror; pot obrir enllaços de pàgines i <menuchoice
 ><guimenu
@@ -488,7 +465,7 @@ Sidebar</link
 >Endavant</guibutton
 > i <guibutton
 >Enrere</guibutton
-> en una nova pestanya o finestra.</para>
+> en una pestanya o finestra nova.</para>
 
 <para
 >Si manteniu premuda la tecla &Maj; mentre premeu el &BMR; s'obrirà l'enllaç en el fons.</para>
@@ -525,7 +502,7 @@ Sidebar</link
 ><para
 >Fer clic <mousebutton
 >dret</mousebutton
-> a sobre de qualsevol espai buit de la barra de títol mostrarà el menú de la barra de títol, permetent-vos controlar la posició de la finestra del &konqueror; així com la decoració aplicada a totes les finestres de programa del &kde;. </para
+> a sobre de qualsevol espai buit de la barra de títol mostrarà el menú de la barra de títol, permetent-vos controlar la posició de la finestra del &konqueror; així com la decoració aplicada a totes les finestres de programa del &kde;.</para
 ></listitem>
 </varlistentry>
 
@@ -571,7 +548,7 @@ Sidebar</link
 >Endavant</guiicon
 > i <guiicon
 >Recarrega</guiicon
->. </para
+>.</para
 ></listitem>
 </varlistentry>
 
@@ -591,8 +568,8 @@ Sidebar</link
 > o <guimenuitem
 >Eliminar</guimenuitem
 > l'element de diverses maneres, obrir-lo amb el programa de la vostra elecció, reanomenar-lo, o editar el tipus de fitxer o les propietats.</para
-></listitem
-> </varlistentry>
+></listitem>
+</varlistentry>
 
 <varlistentry>
 <term
@@ -602,8 +579,7 @@ Sidebar</link
 >Feu clic <mousebutton
 >dret</mousebutton
 > sobre la barra d'estat a la part inferior d'una finestra o d'una vista afegirà o eliminarà una vista i bloquejarà o enllaçarà les vistes dintre de la finestra del &konqueror;.</para
-></listitem
-> 
+></listitem>
 </varlistentry>
 </variablelist>
 
@@ -648,8 +624,8 @@ Sidebar</link
 
 <note
 ><para
->Malauradament, les pàgines d'ajuda del &kde; estan emmagatzemades de manera que no es puguin veure des d'altres navegadors. Si realment us cal fer això, l'única possibilitat és connectar-se a Internet i visitar <ulink url="http://docs.kde.org"
-> http://docs.kde.org</ulink
+>Malauradament, les pàgines d'ajuda del &kde; estan emmagatzemades de manera que no es puguin veure des d'altres navegadors. Si realment us cal fer això, l'única possibilitat és connectar-se a Internet i visitar <ulink url="https://docs.kde.org"
+> https://docs.kde.org</ulink
 >.</para
 ></note>
 </sect1>
@@ -704,8 +680,8 @@ Sidebar</link
 >~/carta.txt</filename
 > es refereix al fitxer <filename
 >carta.txt</filename
-> en la meva carpeta personal.</para>
-<para
+> en la meva carpeta personal.</para
+><para
 >Tingueu en compte que sovint s'usa el terme «directori» en comptes de «carpeta».</para>
 </sect1>
 
@@ -723,9 +699,8 @@ Sidebar</link
 
 <note
 ><para
->En el mode gestor de fitxers, el &konqueror; utilitza incrustat un component del &dolphin;.</para
+>En el mode gestor de fitxers, el &konqueror; utilitza incrustat un component del &dolphin;. Consulteu la documentació del &dolphin; per a obtenir informació detallada sobre aquest mode.</para
 ></note>
-<!--FIXME begin copy from dolphin docbook synced for 16.04-->
 <itemizedlist>
 
 <listitem
@@ -764,7 +739,7 @@ Sidebar</link
 <para
 >Al menú contextual de la línia de capçalera podeu escollir entre l'amplada de columna personalitzada o automàtica. L'amplada automàtica ajusta totes les columnes una vegada per a mostrar l'element més llarg a tota la columna, a excepció de la columna <guilabel
 >Nom</guilabel
-> on l'extensió se substitueix per «...» </para>
+> on l'extensió se substitueix amb «…» </para>
 <para
 >L'ordre de les columnes es pot canviar arrossegant i deixant anar sobre les capçaleres de la columna, a excepció de la capçalera <guilabel
 >Nom</guilabel
@@ -803,43 +778,6 @@ Sidebar</link
 ></caption>
 </mediaobject>
 </screenshot>
-<!--FIXME end copy from dolphin docbook synced for 16.04 -->
-
-<sect2 id="filetipinfo">
-<title
->Consells informatius de fitxer</title>
-<para
->Marcar la casella <guilabel
->Mostra els consells</guilabel
-> en la pàgina <menuchoice
-><guimenu
->Gestió de fitxers</guimenu
-><guimenuitem
->General</guimenuitem
-></menuchoice
-> del diàleg de configuració del &konqueror; farà aparèixer una petita finestra informativa emergent quan el punter del ratolí resti a sobre d'un nom fitxer o carpeta, o d'una icona. </para>
-</sect2>
-
-<sect2 id="previews">
-<title
->Vistes prèvies de fitxer</title>
-<para
->La pestanya <guilabel
->Vistes prèvies</guilabel
-> de la pàgina de configuració <menuchoice
-><guimenu
->Gestió de fitxers</guimenu
-><guisubmenu
->General</guisubmenu
-></menuchoice
-> us permet habilitar vistes prèvies per a certs tipus de fitxers.</para>
-<para
->Generalment això significa que la icona del fitxer serà substituïda per una petita imatge mostrant els continguts del fitxer.</para>
-<para
->Com que el &konqueror; ha de llegir molt més que el nom d'un fitxer per a generar una vista prèvia, aquestes podrien no ser apropiades quan es visualitzen fitxers en disquets o des d'un sistema remot. Per a inhabilitar la vista prèvia en fitxers remots, on la lectura de les dades addicionals seria massa llarg establiu un límit de mida de fitxer a la part inferior de la pestanya <guilabel
->Vista prèvia</guilabel
->.</para>
-</sect2>
 
 <!--FIXME begin copy from dolphin docbook synced for 16.04-->
 <sect2 id="dolphin-view-information">
@@ -870,7 +808,7 @@ Sidebar</link
 >. </para>
 
 <para
->Depenent del tipus de fitxer es poden seleccionar els següents criteris addicionals: <simplelist>
+>Depenent del tipus de fitxer es poden seleccionar els criteris addicionals següents: <simplelist>
   <member
 ><guimenuitem
 >Document</guimenuitem
@@ -923,7 +861,7 @@ Sidebar</link
 
 <listitem
 ><para
->L'ordenació dels elements, que es determinen per l'ordre d'ordenació (ascendent, descendent) i l'atribut (com el nom, la mida...) en el que s'ordenen els elements </para
+>L'ordenació dels elements, que es determinen per l'ordre d'ordenació (ascendent, descendent) i l'atribut (com el nom, la mida…) en el que s'ordenen els elements </para
 ></listitem>
 
 <listitem
@@ -994,11 +932,9 @@ Sidebar</link
 >Si <guilabel
 >Usa aquestes propietats de vista com a predeterminades</guilabel
 > està habilitat, les propietats de la vista escollides també s'utilitzaran per a totes les carpetes que encara no tenen propietats de vista personalitzades. </para>
-
 </sect2>
-
 </sect1>
-<!--FIXME end copy from dolphin docbook  synced for 16.04-->
+
 <sect1 id="navigation">
 <title
 >Navegació</title>
@@ -1013,7 +949,7 @@ Sidebar</link
 ><para
 >Per a descendir a una subcarpeta, feu clic <mousebutton
 >esquerre</mousebutton
-> a sobre del seu nom o icona, o si ja l'heu «seleccionada» (vegeu a sota) simplement premeu <keysym
+> a sobre del seu nom o icona, o si ja l'heu «seleccionada» (vegeu a sota), només premeu <keysym
 >Retorn</keysym
 >.</para
 ></listitem
@@ -1149,7 +1085,7 @@ find your way around the file system.</para>
 ><guimenu
 >Eines</guimenu
 ><guimenuitem
->Cerca el fitxer...</guimenuitem
+>Cerca el fitxer…</guimenuitem
 ></menuchoice
 > de la barra de menús. Això iniciarà l'aplicació de cercar &kfind;. Per a més informació consulteu el <ulink url="help:/kfind/index.html"
 >manual de &kfind;</ulink
@@ -1180,7 +1116,7 @@ find your way around the file system.</para>
 >Dispositius extraïbles</title>
 
 <para
->Qualsevol dispositiu extraïble (memòria USB, disquetera, unitat de &CD; o partició de disc dur que tingueu al vostre sistema usualment apareixerà en les carpetes <filename class="directory"
+>Qualsevol dispositiu extraïble (memòria USB, unitat de &CD; o partició de disc dur que tingueu al vostre sistema usualment apareixerà en les carpetes <filename class="directory"
 >/ </filename
 >, <filename class="directory"
 >/media</filename
@@ -1223,7 +1159,7 @@ find your way around the file system.</para>
 > a sobre de la icona i escolliu l'element <guimenuitem
 >Desmunta</guimenuitem
 >. Per a veure com crear una icona com aquesta consulteu la secció <link linkend="making"
->Crea nou...</link
+>Crea nou…</link
 > en aquest manual.</para
 ></listitem>
 
@@ -1260,7 +1196,7 @@ find your way around the file system.</para>
 ><guimenu
 >Eines</guimenu
 ><guimenuitem
->Executa una ordre</guimenuitem
+>Executa una ordre de l'intèrpret d'ordres...</guimenuitem
 ></menuchoice
 > (<keycombo action="simul"
 >&Ctrl;<keycap
@@ -1268,12 +1204,9 @@ find your way around the file system.</para>
 ></keycombo
 >). </para
 ></note>
-
 </listitem>
-
 </itemizedlist>
 </sect2>
-
 </sect1>
 
 <sect1 id="deleting">
@@ -1375,7 +1308,7 @@ find your way around the file system.</para>
 
 <listitem
 ><para
->Navegar fins a la carpeta en la qual voleu copiar l'element i aleshores, enganxar-hi el nou element emprant el botó <guiicon
+>Navegar fins a la carpeta en la qual voleu copiar l'element i aleshores, enganxar-hi l'element nou emprant el botó <guiicon
 >Enganxa</guiicon
 > de la barra d'eines, l'opció <menuchoice
 ><guimenu
@@ -1406,30 +1339,7 @@ find your way around the file system.</para>
 >Retallat</guimenuitem
 > serà eliminat de la carpeta original quan feu <guimenuitem
 >Enganxa</guimenuitem
-> a dins de la nova carpeta.</para>
-
-<para
->També podeu copiar o moure elements seleccionats a una altra carpeta seleccionant <guimenuitem
->Copia a</guimenuitem
-> o <guimenuitem
->Mou a</guimenuitem
-> des del menú contextual que s'obté en fer clic <mousebutton
->dret</mousebutton
-> a sobre d'un fitxer o nom de carpeta en la finestra del gestor de fitxers.</para>
-<para
->Per a habilitar aquesta característica, seleccioneu <guilabel
->Mostra l'ordre «Copia a» i «Mou a»</guilabel
-> a la pàgina <menuchoice
-><guimenu
->Gestió de fitxers</guimenu
-> <guimenuitem
->Serveis</guimenuitem
-></menuchoice
-> de la configuració.</para>
-<note
-><para
->Potser no sereu capaç de copiar o moure fitxers o carpetes si no disposeu dels permisos adequats.</para
-></note>
+> a dins de la carpeta nova.</para>
 
 <sect2 id="dnd">
 <title
@@ -1445,7 +1355,7 @@ find your way around the file system.</para>
 >Mou aquí</guimenuitem
 > o <guimenuitem
 >Enllaça aquí</guimenuitem
->. Assegureu-vos de «deixar» l'element en una àrea buida de la vista de la carpeta de destinació -deixar-lo a sobre d'una subcarpeta copiarà o mourà l'element cap a dins d'aquesta-.</para>
+>. Assegureu-vos de «deixar» l'element en una àrea buida de la vista de la carpeta de destinació: deixar-lo a sobre d'una subcarpeta copiarà o mourà l'element cap a dins d'aquesta.</para>
 
 <para
 >També podeu configurar el &konqueror; per a mostrar més d'una carpeta dintre de la seva finestra i arrossegar i deixar anar entre elles.</para>
@@ -1574,25 +1484,6 @@ find your way around the file system.</para>
 >Si es prem la tecla &Maj; mentre es fa clic sobre un element amb el &BER;, se seleccionaran tots els elements entre l'element actual anterior i l'element on feu clic. </para
 ></listitem>
 
-<listitem
-><para
->Si <guilabel
->Mostra un marcador de selecció</guilabel
-> està activada a la pestanya <guilabel
->Comportament</guilabel
-> de la secció <menuchoice
-><guimenu
->Gestió de fitxers</guimenu
-> <guimenuitem
->General</guimenuitem
-></menuchoice
-> de la configuració, apareixerà un petit botó <guiicon
->+</guiicon
-> o <guiicon
->-</guiicon
-> a la cantonada superior esquerra de l'element que es troba actualment sota el ratolí. En fer clic en aquest signe se selecciona o desselecciona l'element, respectivament. </para
-></listitem>
-
 </itemizedlist>
 
 </sect2>
@@ -1613,7 +1504,7 @@ find your way around the file system.</para>
 >Inici</keycap
 > o <keycap
 >Fi</keycap
->, el nou element actual és seleccionat, i la selecció anterior es neteja. </para
+>, se selecciona l'element actual nou, i la selecció anterior es neteja. </para
 ></listitem>
 
 <listitem
@@ -1623,7 +1514,7 @@ find your way around the file system.</para>
 
 <listitem
 ><para
->Si es manté premuda la tecla &Maj; mentre es prem una de les tecles anteriors, tots els elements entre l'element actual anterior i el nou element actual seran seleccionats. </para
+>Si es manté premuda la tecla &Maj; mentre es prem una de les tecles anteriors, se seleccionaran tots els elements entre l'element actual anterior i l'element actual nou. </para
 ></listitem>
 
 <listitem
@@ -1679,7 +1570,7 @@ find your way around the file system.</para>
 ><guimenuitem
 >Selecció</guimenuitem
 ><guimenuitem
->Selecciona elements que coincideixen...</guimenuitem
+>Selecciona elements que coincideixen…</guimenuitem
 ></menuchoice
 > de la barra de menús o la drecera de teclat <keycombo action="simul"
 >&Ctrl;<keycap
@@ -1692,7 +1583,7 @@ find your way around the file system.</para>
 >, el qual coincideix amb un únic caràcter. Premeu <guibutton
 >D'acord</guibutton
 > i el &konqueror; ressaltarà tots els fitxers en què el seu nom coincideixi. Per exemple:</para>
-      
+
 <itemizedlist>
 <listitem
 ><para
@@ -1727,7 +1618,7 @@ find your way around the file system.</para>
 ><guisubmenu
 >Selecció</guisubmenu
 ><guimenuitem
->Desselecciona elements que coincideixen...</guimenuitem
+>Desselecciona elements que coincideixen…</guimenuitem
 ></menuchoice
 > de la barra de menús per a especificar quins dels fitxers seleccionats hauran de ser eliminats de la selecció.</para>
 
@@ -1767,44 +1658,42 @@ find your way around the file system.</para>
 <para
 >Quan el &konqueror; estigui en el mode de gestor de fitxers, seleccionant <guisubmenu
 >Crea nou</guisubmenu
-> des del menú <guimenu
->Edita</guimenu
-> o des del menú contextual que s'obté amb el clic del &BDR; a sobre d'una àrea lliure en una vista de carpeta oferint-vos un submenú que us permetrà crear qualsevol dels següents elements en la carpeta actual:</para>
+> amb el &BDR; fent clic a sobre d'una àrea lliure en una vista de carpeta oferint-vos un submenú que us permetrà crear qualsevol dels elements següents en la carpeta actual:</para>
 
 <variablelist>
 
 <varlistentry>
 <term
 ><guimenuitem
->Carpeta...</guimenuitem
+>Carpeta…</guimenuitem
 ></term>
 <listitem
 ><para
->Un mètode fàcil de crear una nova (sub)carpeta.</para
+>Un mètode fàcil de crear una (sub)carpeta nova.</para
 ></listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><guimenuitem
->Fitxer de text...</guimenuitem
+>Fitxer de text…</guimenuitem
 ></term>
 <listitem
 ><para
->Empreu això per a crear un fitxer de text ordinari, buit. S'obrirà un diàleg perquè pugueu introduir el nom del vostre nou fitxer.</para
+>Empreu això per a crear un fitxer de text ordinari, buit. S'obrirà un diàleg perquè pugueu introduir el nom del vostre fitxer nou.</para
 ></listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><guimenuitem
->Fitxer HTML...</guimenuitem
+>Fitxer HTML…</guimenuitem
 ></term>
 <listitem
 ><para
 >Crea l'esquelet d'un fitxer font <acronym
 >HTML</acronym
->. Quan escriviu el nou nom de fitxer en el diàleg probablement és millor donar-li una extensió <literal role="extension"
+>. Quan escriviu el nom de fitxer nou en el diàleg probablement és millor donar-li una extensió <literal role="extension"
 >.html </literal
 > per a evitar confusions.</para
 ></listitem>
@@ -1815,7 +1704,7 @@ find your way around the file system.</para>
 ><guimenuitem
 >Document <replaceable
 >Tipus de document</replaceable
->...</guimenuitem
+>…</guimenuitem
 ></term>
 <listitem
 ><para
@@ -1826,16 +1715,16 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Enllaç a una localització (URL)...</guimenuitem
+>Enllaç a una localització (URL)…</guimenuitem
 ></term>
 <listitem
 ><para
 >Això us permet crear una icona per a obrir el &konqueror; a una carpeta en particular o una pàgina web. Com amb <guimenuitem
->Enllaç a l'aplicació...</guimenuitem
+>Enllaç a l'aplicació…</guimenuitem
 > podreu fer que la icona de l'aplicació aparegui al vostre escriptori creant l'enllaç a la vostra carpeta <filename
 >~/Desktop</filename
 > o anant al submenú <guisubmenu
->Crea nou...</guisubmenu
+>Crea nou…</guisubmenu
 > fent clic <mousebutton
 >dret</mousebutton
 > a sobre d'una àrea lliure de l'escriptori.</para
@@ -1845,7 +1734,7 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Enllaç bàsic a un fitxer o directori...</guimenuitem
+>Enllaç bàsic a un fitxer o directori…</guimenuitem
 ></term>
 <listitem
 ><para
@@ -1856,7 +1745,7 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Enllaç a una aplicació...</guimenuitem
+>Enllaç a una aplicació…</guimenuitem
 ></term>
 <listitem
 ><para
@@ -1880,7 +1769,7 @@ find your way around the file system.</para>
 >Per a fer que la icona de l'aplicació aparegui a sobre del vostre escriptori, creeu l'enllaç a la vostra carpeta <filename class="directory"
 >~/Desktop</filename
 > (aquesta podria tenir un nom diferent depenent de com vàreu instal·lar el &kde; al vostre sistema) o accediu al submenú <guisubmenu
->Crea nou...</guisubmenu
+>Crea nou…</guisubmenu
 > amb el clic <mousebutton
 >dret</mousebutton
 > a sobre d'una àrea lliure de l'escriptori en comptes de dins d'una finestra del &konqueror;.</para>
@@ -1896,26 +1785,9 @@ find your way around the file system.</para>
 >~/.local/share/applications</filename
 >.</para>
 <para
->Per a posar un enllaç a una aplicació en el plafó, primer creu-lo en la carpeta d'aplicacions, després arrossegueu la icona cap a una àrea neta del plafó.</para>
-
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guisubmenu
->Enllaç a dispositiu</guisubmenu
-></term>
-<listitem
-><para
->Empreu aquesta opció per a crear una icona que muntarà un dispositiu i que obrirà una instància del &konqueror; mostrant els continguts d'aquest. Per a desmuntar el dispositiu quan s'hagi finalitzat, feu clic <mousebutton
->dret</mousebutton
-> a sobre de la icona i seleccioneu <guimenuitem
->Desmunta</guimenuitem
->. De tota manera, en la majoria dels casos voldreu crear una icona al vostre escriptori. </para
+>Per a posar un enllaç a una aplicació en el plafó, primer creu-lo en la carpeta d'aplicacions, després arrossegueu la icona cap a una àrea neta del plafó.</para
 ></listitem>
 </varlistentry>
-
 </variablelist>
 
 </sect1>
@@ -1972,15 +1844,15 @@ find your way around the file system.</para>
 <title
 >Copia i reanomena</title>
 <para
->Si voleu fer una còpia d'un fitxer existent amb un nom diferent -potser com a còpia de seguretat- a la mateixa carpeta que el fitxer original, feu un <guimenuitem
+>Si voleu fer una còpia d'un fitxer existent amb un nom diferent, potser com a còpia de seguretat, a la mateixa carpeta que el fitxer original, feu un <guimenuitem
 >Copia</guimenuitem
 > normal, després quan feu <guimenuitem
 >Enganxa</guimenuitem
-> apareixerà un diàleg emergent queixant-se que el fitxer ja existeix. Simplement introduïu el nou nom al quadre de text del diàleg i premeu el botó <guibutton
+> apareixerà un diàleg emergent queixant-se que el fitxer ja existeix. Simplement introduïu el nom nou al quadre de text del diàleg i premeu el botó <guibutton
 >Continua</guibutton
 > (o si us sentiu amb mandra premeu el botó <guibutton
->Suggereix un nou nom</guibutton
-> i es generarà un nou nom).</para>
+>Suggereix un nom nou</guibutton
+> i es generarà un nom nou).</para>
 </sect2>
 
 </sect1>
@@ -1989,14 +1861,14 @@ find your way around the file system.</para>
 <title
 >Configurar associacions de fitxer</title>
 
-<!-- TODO: The content should probably be here too, but this'll do for -->
+<!-- TODO: The content should probably be here too, but this’ll do for -->
 <!-- now. -->
 <para
->El &kde; proporciona algunes aplicacions amb les quals obrir diferents tipus de fitxers. La majoria de les vegades, els valors per omissió no us donaran problemes, però el &konqueror; proporciona un potent sistema per a permetre canviar l'aplicació emprada per a obrir cada tipus de fitxer. Per a obtenir més detalls, escolliu l'element del menú <menuchoice
+>El &kde; proporciona algunes aplicacions amb les quals obrir diferents tipus de fitxers. La majoria de les vegades, els valors per omissió no us donaran problemes, però el &konqueror; proporciona un sistema potent per a permetre canviar l'aplicació emprada per a obrir cada tipus de fitxer. Per a obtenir més detalls, escolliu l'element del menú <menuchoice
 ><guimenu
 >Arranjament</guimenu
 ><guimenuitem
->Configura Konqueror...</guimenuitem
+>Configura el Konqueror…</guimenuitem
 ></menuchoice
 >, seleccioneu <guilabel
 >Associacions de fitxer</guilabel
@@ -2030,7 +1902,7 @@ find your way around the file system.</para>
 > <guimenu
 >Eines</guimenu
 ><guimenuitem
->Executa l'ordre shell</guimenuitem
+>Executa una ordre de l'intèrpret d'ordres…</guimenuitem
 ></menuchoice
 > (<keycombo action="simul"
 >&Ctrl;<keycap
@@ -2043,18 +1915,18 @@ find your way around the file system.</para>
 ><guimenu
 >Eines</guimenu
 ><guimenuitem
->Executa l'ordre shell... </guimenuitem
+>Executa una ordre de l'intèrpret d'ordres… </guimenuitem
 ></menuchoice
 > (<keycombo action="simul"
 >&Ctrl; <keycap
 >E</keycap
 ></keycombo
->) obre una petita finestra de diàleg de línia d'ordres, a on podreu introduir una ordre com <userinput
+>) obre una finestra de diàleg petita de línia d'ordres, a on podreu introduir una ordre com <userinput
 >ps -ax | grep kdeinit </userinput
->. Tingueu en compte que no permet totes les característiques dels caràcters de control per a un terminal, de manera que les aplicacions com <userinput
+>. Tingueu en compte que no permet totes les característiques dels caràcters de control d'un terminal, de manera que les aplicacions com <userinput
 >top</userinput
 > i <userinput
-> less</userinput
+>less</userinput
 > no funcionaran adequadament, però estaran disponibles immediatament en no patir cap retard per l'inici del &konsole;. </para>
 
 <para
@@ -2079,7 +1951,6 @@ find your way around the file system.</para>
 </chapter>
 
 <chapter id="browser">
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -2101,59 +1972,6 @@ find your way around the file system.</para>
 >Navegant per www.konqueror.org</phrase>
 </textobject>
 </mediaobject>
-<!--FIXME rm this sect?-->
-<sect1 id="conn-inet">
-<title
->Connectar-se a Internet</title>
-
-<para
->Una vegada estigueu connectat a Internet, podreu usar el &konqueror; per a navegar per la xarxa amb tanta facilitat com l'useu per a manejar els vostres fitxers locals. Simplement introduïu un &URL; a la barra d'eines de <guilabel
->Localització</guilabel
-> de la finestra, premeu <keysym
->Retorn</keysym
->, i ja hi sou!</para>
-
-<itemizedlist>
-<listitem
-><para
->Si useu una connexió telefònica amb mòdem, aleshores estareu usant el &kppp; o un programa de trucada similar per a realitzar la connexió.</para
-></listitem>
-
-<listitem
-><para
->Si la vostra màquina està connectada a una xarxa d'àrea local (<acronym
->LAN</acronym
->) que us ofereix una connexió a Internet a través d'un intermediari (proxy), aleshores haureu de configurar el &konqueror; per a una connexió per intermediari. Ho podeu fer amb la pàgina <menuchoice
-><guimenu
->Navegació web</guimenu
-> <guimenuitem
->Intermediari</guimenuitem
-></menuchoice
-> del diàleg <menuchoice
-><guimenu
->Arranjament</guimenu
-><guimenuitem
->Configura Konqueror...</guimenuitem
-></menuchoice
->.</para
-></listitem>
-
-<listitem
-><para
->Si sou afortunat i teniu una connexió per cable d'alta velocitat, aleshores el proveïdor de serveis probablement us proporcionarà un mòdem de cable extern el qual requereix una connexió ethernet a la vostra màquina. Malauradament els detalls de com establir la connexió depenen del proveïdor de serveis i també en certa manera de la distribució Linux/&UNIX; que estigueu emprant. Alguns <abbrev
->ISP</abbrev
-> connecten als seus clients a la Internet a través d'un servidor intermediari, en aquest cas haureu de configurar el &konqueror; perquè l'usi. Podria ser que us resulti útil cercar pels arxius de les llistes de correu del grup d'usuaris de la vostra distribució per a trobar ajuda.</para>
-</listitem>
-</itemizedlist>
-
-<note
-><para
->Un error del tipus <errorname
->Màquina desconeguda</errorname
-> normalment vol dir que el &konqueror; no pot trobar una connexió a la Internet o que heu introduït un &URL; incorrecte.</para
-></note>
-
-</sect1>
 
 <sect1 id="surf">
 <title
@@ -2176,10 +1994,8 @@ find your way around the file system.</para>
 ></inlinemediaobject
 ></guiicon
 > al costat dret de la barra d'eines de localització, i el &konqueror; baixarà i mostrarà aquesta pàgina. Si ja l'havíeu visitat, la <link linkend="path-complete"
->compleció de codi automàtica</link
-> del &konqueror; us podrà ajudar a introduir aquest &URL; per segona vegada. Si desitgeu emprar un dels motors de cerca, la característica de <link linkend="enhanced-browsing"
->Dreceres web</link
-> del &konqueror; us pot facilitar la tasca.</para>
+>compleció automàtica de text</link
+> del &konqueror; us podrà ajudar a introduir aquest &URL; per segona vegada. Si desitgeu emprar un dels motors de cerca, la característica de Paraules clau de cerca a la web del &konqueror; us pot facilitar la tasca.</para>
 
 <para
 >Feu clic <mousebutton
@@ -2187,7 +2003,7 @@ find your way around the file system.</para>
 > a sobre d'un enllaç en una pàgina per a obrir-lo.</para>
 
 <para
->Per a obrir un enllaç en una nova instància del &konqueror;, mantenint oberta l'antiga, feu clic amb el &BMR; a sobre de l'enllaç i seleccioneu l'opció <guimenuitem
+>Per a obrir un enllaç en una instància nova del &konqueror;, mantenint oberta l'antiga, feu clic amb el &BMR; a sobre de l'enllaç i seleccioneu l'opció <guimenuitem
 >Obre en una finestra nova</guimenuitem
 >. Alternativament, potser desitjareu l'opció <guimenuitem
 >Obre en una pestanya nova</guimenuitem
@@ -2259,20 +2075,7 @@ find your way around the file system.</para>
 > i <keysym
 >Av Pàg</keysym
 >.</para>
-<para
->Si voleu llegir una pàgina web molt llarga utilitzant la característica de desplaçament automàtic de &konqueror;. Inicieu el desplaçament automàtic amb <keycombo action="simul"
->&Maj;<keysym
->Fletxa avall</keysym
-></keycombo
-> o <keycombo action="simul"
->&Maj;<keysym
->Fletxa amunt</keysym
-></keycombo
->. A continuació, utilitzeu aquestes tecles per a augmentar o disminuir la velocitat del desplaçament. Podeu iniciar o aturar el desplaçament automàtic temporalment prement la tecla &Maj; -premeu qualsevol tecla per a desactivar aquesta funció-. </para>
-<para
->El desplaçament automàtic només funciona en el mode de vista <guimenuitem
->KHTML</guimenuitem
->. </para>
+
 <para
 >Si desitgeu aturar una descàrrega per qualsevol motiu, aleshores useu la tecla &Esc;, el botó <guibutton
 >Atura</guibutton
@@ -2287,7 +2090,7 @@ find your way around the file system.</para>
 <para
 >Quan estigueu visualitzant una pàgina web amb la <guilabel
 >Barra d'eines HTML</guilabel
-> habilitada hauríeu de veure dues noves icones a la barra d'eines <guiicon
+> habilitada hauríeu de veure dues icones noves a la barra d'eines <guiicon
 ><inlinemediaobject
 ><imageobject
 > <imagedata fileref="format-font-size-less.png" format="PNG"/> </imageobject
@@ -2323,16 +2126,16 @@ find your way around the file system.</para>
 ></keycombo
 > per a circular entre les diferents pàgines amb pestanyes. De forma alternativa, podeu moure la <mousebutton
 >rodeta</mousebutton
-> del ratolí mentre el punter resta a sobre de la barra de pestanyes (evidentment, tan sols d'ús si disposeu d'un ratolí que en tingui). També, podreu obrir una nova pestanya fent doble clic a sobre d'un espai buit a la barra de pestanyes.</para>
+> del ratolí mentre el punter resta a sobre de la barra de pestanyes (evidentment, tan sols d'ús si disposeu d'un ratolí que en tingui). També, podreu obrir una pestanya nova fent doble clic a sobre d'un espai buit a la barra de pestanyes.</para>
 
 <para
 >L'opció <guilabel
->Obre les noves pestanyes al darrere</guilabel
+>Obre les pestanyes noves al darrere</guilabel
 > en la pàgina <guilabel
 >General</guilabel
 > del diàleg <guimenu
 >Configuració</guimenu
->, en fer clic sobre un enllaç també descarrega la pàgina i la mostra en una nova pestanya, però la nova pàgina no serà mostrada fins que feu clic <mousebutton
+>, en fer clic sobre un enllaç també descarrega la pàgina i la mostra en una pestanya nova, però la pàgina nova no es mostrarà fins que feu clic <mousebutton
 >esquerre</mousebutton
 > a sobre de la pestanya.</para>
 
@@ -2345,14 +2148,14 @@ find your way around the file system.</para>
 ><guimenu
 >Arranjament</guimenu
 ><guimenuitem
->Configura Konqueror...</guimenuitem
+>Configura el Konqueror…</guimenuitem
 ></menuchoice
->, en fer clic del &BMR; a sobre d'un enllaç s'obrirà una nova pàgina amb pestanya i si manteniu premuda la tecla &Maj; mentre feu clic amb el &BMR; l'enllaç s'obrirà en una pàgina amb pestanya al fons.</para>
+>, en fer clic del &BMR; a sobre d'un enllaç s'obrirà una pàgina nova amb pestanya i si manteniu premuda la tecla &Maj; mentre feu clic amb el &BMR; l'enllaç s'obrirà en una pàgina amb pestanya al fons.</para>
 
 <para
 >En fer clic <mousebutton
 >dret</mousebutton
-> a sobre d'una pestanya s'obrirà un menú amb les següents opcions:</para>
+> a sobre d'una pestanya s'obrirà un menú amb les opcions següents:</para>
 <variablelist>
 
 <varlistentry>
@@ -2448,7 +2251,7 @@ find your way around the file system.</para>
 >)</term>
 <listitem
 ><para
->Aquesta opció elimina la pàgina amb pestanya que està seleccionada de la finestra actual del &konqueror; i l'obre en una nova instància del &konqueror;.</para>
+>Aquesta opció elimina la pàgina amb pestanya que està seleccionada de la finestra actual del &konqueror; i l'obre en una instància nova del &konqueror;.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -2470,11 +2273,11 @@ find your way around the file system.</para>
 
 <sect1 id="enhanced-browsing">
 <title
->Dreceres web</title
+>Paraules clau de cerca a la web</title
 > 
 
 <para
->Si estan habilitades, la característica de dreceres web del &konqueror; us permetrà enviar directament peticions a un motor de cerca o lloc web similar sense haver de visitar el lloc primer.</para
+>Si estan habilitades, la característica de paraules clau de cerca a la web del &konqueror; us permetrà enviar directament peticions a un motor de cerca o lloc web similar sense haver de visitar el lloc primer.</para
 > <para
 >Per exemple, si introduïu <userinput
 >gg:konqueror</userinput
@@ -2484,11 +2287,15 @@ find your way around the file system.</para>
 >Google</trademark
 > que cerqui elements relacionats amb &konqueror;.</para>
 <para
->Per a veure quines dreceres web hi ha disponibles, i potser afegir-ne de vostres, obriu el mòdul <ulink url="help:/kcontrol/webshortcuts/"
->Dreceres web</ulink
-> a la categoria <guilabel
->Espai de treball</guilabel
-> a &systemsettings;.</para>
+>Per a veure quines paraules clau de cerca a la web estan disponibles, i potser afegir-ne de pròpies, obriu la pàgina <guilabel
+>Paraules clau de cerca a la web</guilabel
+> a la pàgina de <menuchoice
+> <guimenu
+>Configuració</guimenu
+> <guimenuitem
+>Configura el Konqueror…</guimenuitem
+></menuchoice
+>.</para>
 
 </sect1>
 
@@ -2577,13 +2384,13 @@ strings.</para
 ><guimenu
 >Fitxer</guimenu
 ><guimenuitem
->Desa com a...</guimenuitem
+>Desa com a…</guimenuitem
 ></menuchoice
 >. Si la pàgina que esteu veient empra marcs, aleshores se us oferirà l'opció <menuchoice
 ><guimenu
 >Fitxer</guimenu
 ><guimenuitem
->Desa el marc com a...</guimenuitem
+>Desa el marc com a…</guimenuitem
 ></menuchoice
 >. Si primer en voleu desar un d'específic, feu clic <mousebutton
 >esquerre</mousebutton
@@ -2594,7 +2401,7 @@ strings.</para
 ><guimenu
 >Fitxer</guimenu
 ><guimenuitem
->Desa la imatge de fons com a...</guimenuitem
+>Desa la imatge de fons com a…</guimenuitem
 ></menuchoice
 >.</para>
 
@@ -2602,14 +2409,14 @@ strings.</para
 >Però si el que voleu és aquesta gloriosa fotografia de l'últim Ferrari, aleshores feu clic <mousebutton
 >dret</mousebutton
 > a sobre de la imatge i apareixerà un menú desplegable amb l'opció <guimenuitem
->Desa imatge com...</guimenuitem
+>Desa imatge com…</guimenuitem
 >. Assegureu-vos de respectar el copyright dels propietaris, i demaneu permís abans d'usar les imatges desades d'aquesta manera per a altres finalitats que el vostre propi plaer de mirar-les.</para>
 
 <para
 >Si feu clic <mousebutton
 >dret</mousebutton
 > a sobre d'un enllaç (el qual podria ser una imatge) i seleccioneu <guimenuitem
->Desa l'enllaç com...</guimenuitem
+>Desa l'enllaç com…</guimenuitem
 > des del menú emergent &HTML; bàsic o el text font similar aquest serà descarregat i desat al vostre disc local.</para>
 
 <para
@@ -2617,7 +2424,7 @@ strings.</para
 >dret</mousebutton
 > a sobre d'un enllaç (el qual podria ser una imatge) i escolliu <guimenuitem
 >Copia l'adreça d'enllaç</guimenuitem
-> es copiarà l'&URL; de l'enllaç al porta-retalls de manera que el pugueu enganxar, diguem, a un missatge de correu electrònic a un amic explicant-li les coses bones que ofereix aquest nou lloc.</para>
+> es copiarà l'&URL; de l'enllaç al porta-retalls de manera que el pugueu enganxar, diguem, a un missatge de correu electrònic a un amic explicant-li les coses bones que ofereix aquest lloc nou.</para>
 
 <para
 >Si feu clic <mousebutton
@@ -2631,10 +2438,10 @@ strings.</para
 ><guimenu
 >Fitxer</guimenu
 > <guimenuitem
->Imprimeix...</guimenuitem
+>Imprimeix…</guimenuitem
 ></menuchoice
 > de la barra de menús o <guimenuitem
->Imprimeix el marc...</guimenuitem
+>Imprimeix el marc…</guimenuitem
 >, o amb el botó <guiicon
 >Imprimeix</guiicon
 > de la barra d'eines.</para>
@@ -2736,7 +2543,7 @@ OverridenPorts=Llista_de_ports_permesos_separats_per_comes
 ></screen
 > (no incloure cap espai intermedi).</para>
 <para
->El &konqueror; rebutjarà els següents ports:</para>
+>El &konqueror; rebutjarà els ports següents:</para>
 <para
 >1, 7, 9, 11, 13, 15, 17, 19, 20, 21, 22, 23, 25, 37, 42, 43, 53, 77, 79, 87, 95, 101, 102, 103, 104, 109, 110, 111, 113, 115, 117, 119, 123, 135, 139, 143, 179, 389, 512, 513, 514, 515, 526, 530, 531, 532, 540, 556, 587, 601, 989, 990, 992, 993, 995, 1080, 2049, 4045, 6000, 6667 </para>
 </sect1>
@@ -2744,7 +2551,6 @@ OverridenPorts=Llista_de_ports_permesos_separats_per_comes
 </chapter>
 
 <chapter id="path-complete">
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -2767,7 +2573,7 @@ OverridenPorts=Llista_de_ports_permesos_separats_per_comes
 >dret</mousebutton
 > a sobre d'una part neta en el quadre d'entrada de text de la barra d'eines de localització i seleccioneu <guisubmenu
 >Compleció de text</guisubmenu
-> en el menú emergent. Això us permetrà escollir entre les següents opcions:</para>
+> en el menú emergent. Això us permetrà escollir entre les opcions següents:</para>
 
 <variablelist>
 
@@ -2810,7 +2616,7 @@ OverridenPorts=Llista_de_ports_permesos_separats_per_comes
 >Retorn</keysym
 > per a acceptar-ho.</para
 ></listitem>
- </varlistentry>
+</varlistentry>
 
 <varlistentry>
 <term
@@ -2941,7 +2747,7 @@ Text Completion function can be viewed and edited in the <guilabel
 ><guimenu
 >Adreces d'interès </guimenu
 ><guimenuitem
->Carpeta nova d'adreces d'interès...</guimenuitem
+>Carpeta nova d'adreces d'interès…</guimenuitem
 ></menuchoice
 >. Per a afegir un adreça d'interès en una subcarpeta en comptes de la llista d'adreces d'interès principal, seleccioneu la carpeta amb la llista d'<guimenu
 >Adreces d'interès</guimenu
@@ -2993,7 +2799,7 @@ disable sidebar subdir, the concept will have to be rethought
 
 <para
 >The Sidebar appears as a separate view at the left of 
-&konqueror;'s window. It can be invoked with <menuchoice
+&konqueror;’s window. It can be invoked with <menuchoice
 ><guimenu
 >Settings
 </guimenu
@@ -3019,7 +2825,7 @@ toggled on and off with the <keycap
 >It contains a number of tabbed pages; <mousebutton
 >left</mousebutton
 > 
-click on a tab's icon to view that page. <mousebutton
+click on a tab’s icon to view that page. <mousebutton
 >Left</mousebutton
 > 
 clicking on the icon for the visible page will collapse the Sidebar 
@@ -3076,7 +2882,7 @@ on any entry in the History page also gives you the option of choosing
 whether the entire history is sorted by name or by date.</para>
 <para
 >Selecting <guimenuitem
->Preferences...</guimenuitem
+>Preferences…</guimenuitem
 > from this pop up 
 menu brings up the <guilabel
 >History Sidebar</guilabel
@@ -3143,11 +2949,11 @@ new ones just as you would make any other subfolder. The items within
 these folders are held as <literal role="extension"
 >.desktop</literal
 > files 
-and can be created with &konqueror;'s <menuchoice
+and can be created with &konqueror;’s <menuchoice
 ><guisubmenu
 >Create New</guisubmenu>
 <guimenuitem
->Link to Location (URL)...</guimenuitem
+>Link to Location (URL)…</guimenuitem
 ></menuchoice
 > option in the 
 <guimenu
@@ -3168,7 +2974,7 @@ and can be created with &konqueror;'s <menuchoice
 > tree has the path <filename
 class="directory"
 >/</filename
->, and is the base folder of your system's
+>, and is the base folder of your system’s
 local files. If you expand the <quote
 >Root</quote
 > folder you will find 
@@ -3231,7 +3037,7 @@ The easiest way to add a folder to the <guilabel
 drag it and drop it in the panel. Moreover, you can click inside the panel with
 the &RMB; and choose <menuchoice
 ><guimenuitem
->Add Entry...</guimenuitem
+>Add Entry…</guimenuitem
 ></menuchoice>
 from the context menu.
 </para>
@@ -3391,8 +3197,8 @@ as described above.</para>
 
 </chapter>
 -->
-<chapter id="save-settings">
 
+<chapter id="save-settings">
 <chapterinfo>
 <authorgroup>
 <author
@@ -3411,7 +3217,7 @@ as described above.</para>
 ><guimenu
 >Visualitza</guimenu
 ><guimenuitem
->Ajusta les propietats de la vista...</guimenuitem
+>Ajusta les propietats de la vista…</guimenuitem
 ></menuchoice
 >, canvieu les preferències del diàleg <guimenu
 >Propietats de la vista</guimenu
@@ -3442,7 +3248,6 @@ as described above.</para>
 </chapter>
 
 <chapter id="plugins">
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -3456,38 +3261,6 @@ as described above.</para>
 <title
 >Connectors</title>
 
-<!-- 
-adblock from baseapps+extragear
-Show all blockable html elements
-
-akregator
-This works on KHTMLPart and allows you to add feeds to Akregator directly from Konqueror.
-
-konq plugins in other modules
-kdeutils 
-  filelight
-  ark?
-
-kdebase apps
-  kttsdplugin (browser mode ?)
-  shellcmdplugin (file manager mode)
-  
-kdenetwork
-  Download Manager kget (browser mode)
-
-kdepim
-  Konqueror Feed Icon akregator
-  
-extragear/network
-  Konqueror Choqok Plugin
-
-extragear/base
-  Nepomuk-Webminer Plugin
-
-playground/utils  
-  Userscript (Grease Monkey) Support khtml_userscript
--->
-
 <sect1 id="konq-plugin">
 <title
 >Connectors del &konqueror;</title>
@@ -3500,32 +3273,25 @@ playground/utils
 ><guimenu
 >Arranjament</guimenu
 ><guimenuitem
-> Configura les extensions...</guimenuitem
+> Configura les extensions…</guimenuitem
 ></menuchoice
 > s'obrirà un diàleg amb tots els connectors instal·lats, seleccioneu el que us cal. Tots els connectors són accessibles des del menú <guimenu
 >Eines</guimenu
 >.</para>
 
 <para
->Només els connectors adequats per al mode actual (gestor de fitxers o navegador en la vista KHTML/WebEngine) són llistats en el diàleg.</para>
+>Només els connectors adequats per al mode actual (gestor de fitxers o navegador) es llisten en el diàleg.</para>
 
 <variablelist>
 <title
 >Mode navegador</title>
-<!-- 
-FIXME 16.12
-KHTML:  Auto Refresh, HTML Settings, Translate (disabled), Document Relations, Search Bar
-kwebkitpart for kf5 in extragear/base in branch frameworks
-WebKit only HTML Settings and Translate (disabled)
-WebEngine -> no extensions
--->
-<varlistentry
-> <!-- disabled here, why?-->
+
+<varlistentry>
 <term
 >Traducció de pàgines web</term>
 <listitem
 ><para
->Utilitza el servei de màquina de traducció proveït per <ulink url="http://translate.google.com/"
+>Utilitza el servei de màquina de traducció proveït per <ulink url="https://translate.google.com/"
 >Google Translate</ulink
 > per a traduir la pàgina <acronym
 >HTML</acronym
@@ -3544,8 +3310,7 @@ WebEngine -> no extensions
 >La traducció automàtica no és una ciència exacta! Google proporciona en el millor dels casos una traducció aproximada, i en el pitjor un text molt divertit. No baseu decisions importants sobre coses que heu llegit en una pàgina traduïda per Google, sense confirmar que la traducció és correcta.</para>
 </important>
 
-<note
-> 
+<note>
 <para
 >Tan sols podreu traduir pàgines web que siguin accessibles sobre la WWW. Per a traduir qualsevol altre text, haureu d'anar directament al mateix lloc del Google, a on podreu enganxar el text a traduir.</para>
 </note>
@@ -3554,19 +3319,21 @@ WebEngine -> no extensions
 
 <varlistentry>
 <term
->Arranjament HTML (vista KHTML)</term>
+>Configuració HTML</term>
 <listitem
 ><para
 >Seleccioneu <menuchoice
 ><guimenu
 >Eines</guimenu
 ><guisubmenu
->Arranjament HTML</guisubmenu
+>Configuració HTML</guisubmenu
 ></menuchoice
 > per a habilitar o inhabilitar una sèrie d'opcions HTML sense passar pel diàleg <guimenu
 >Arranjament</guimenu
->. </para>
-<variablelist>
+>.</para
+></listitem>
+</varlistentry>
+
 <varlistentry>
 <term
 ><guimenuitem
@@ -3670,108 +3437,6 @@ WebEngine -> no extensions
 </varlistentry>
 </variablelist>
 
-</listitem>
-</varlistentry>
-<!--FIXME not in kf5
-<varlistentry>
-<term
->User Agent Changer</term>
-<listitem
-><para
->Select <menuchoice
-><guimenu
->Tools</guimenu
-><guisubmenu
->Change
-Browser Identification</guisubmenu
-></menuchoice
-> to get a menu that allows
-you to change the User Agent string without going through the 
-<guimenu
->Settings</guimenu
-> dialog procedure.
-</para>
-<para
->The plugin allows you to
-change the Browser and Operating System identification on a
-domain-by-domain basis. This is useful when browsing websites that
-limit access to those using a particular web browser.</para>
-<variablelist>
-<varlistentry>
-<term
-><guimenuitem
->Default Identification</guimenuitem
-></term>
-<listitem
-><para
->The default User Agent header for &konqueror; is Mozilla/5.0(compatible;Konqueror/4.7)(KHTML/4.7, like Gecko).  If you come across a site that refuses this browser access, change your User Agent to one of the options below.</para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
->Browser submenu</term>
-<listitem
-><para>
-The following menu items show a list of popular browsers such as <guimenuitem
->Firefox</guimenuitem
->,
-<guimenuitem
->Internet Explorer</guimenuitem
->, <guimenuitem
->Netscape Navigator</guimenuitem
->,
-<guimenuitem
->Opera</guimenuitem
->, <guimenuitem
->Other</guimenuitem
->, and <guimenuitem
->Safari</guimenuitem
->.
-</para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guimenuitem
->Apply To Entire Site</guimenuitem
-></term>
-<listitem
-><para
->This option allows you to specify that the defined User Agent applies across every page on the site you are visiting.</para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guimenuitem
->Configure</guimenuitem
-></term>
-<listitem
-><para
->Selecting <guimenuitem
->Configure</guimenuitem
-> opens the settings dialog and allows you to fine tune the amount of information you wish to reveal about the browser and operating system being used.</para
-></listitem>
-</varlistentry>
-</variablelist>
-
-</listitem>
-</varlistentry>
--->
-
-<varlistentry>
-<term
->Actualització automàtica (només a la vista KHTML)</term>
-<listitem
-><para
->Això funciona en qualsevol part de només lectura (tot i que actualment només es connecta amb la part del KHTML). Permet que li indiqueu al &konqueror; que actualitzi automàticament una pàgina després d'un període específic. Això és útil per a coses com les pàgines de notícies, i hauria de ser molt agradable per a les persones que utilitzen el mode de pantalla Quiosk </para
-></listitem>
-</varlistentry>
-
-</variablelist>
-
 <variablelist>
 <title
 >Mode gestor de fitxers</title>
@@ -3827,7 +3492,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 <term
 >El diàleg «Aspecte» s'usa per a ajustar l'aparença de la pàgina de la galeria.</term>
 <listitem>
-  
+
 <screenshot>
 <screeninfo
 >Captura de pantalla del diàleg «Aspecte de la pàgina»</screeninfo>
@@ -3952,7 +3617,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 <term
 >El diàleg «Carpetes» s'usa per a triar el lloc en on es desarà la galeria. També s'usa per a configurar quines carpetes s'usaran.</term>
 <listitem>
-  
+
 <screenshot>
 <screeninfo
 >Captura de pantalla del diàleg «Carpetes»</screeninfo>
@@ -4037,7 +3702,7 @@ Descripció
 <term
 >El diàleg «Miniatures» s'usa per a ajustar les propietats de les miniatures en la galeria.</term>
 <listitem>
-  
+
 <screenshot>
 <screeninfo
 >Captura de pantalla del diàleg «Miniatures»</screeninfo>
@@ -4107,8 +3772,8 @@ Descripció
 >Barra de cerca</term>
 <listitem
 ><para
->Proporciona un quadre de text per a facilitar l'accés a motors de cerca com Google. En fer clic sobre la icona a la part esquerra del quadre de cerca s'obrirà un menú per a seleccionar i habilitar els diferents motors de cerca i configurar les seves <ulink url="help:/kcontrol/webshortcuts/index.html"
->Dreceres web</ulink
+>Proporciona un quadre de text per a facilitar l'accés a motors de cerca com Google. En fer clic sobre la icona a la part esquerra del quadre de cerca s'obrirà un menú per a seleccionar i habilitar els diferents motors de cerca i configurar la seva obertura amb les <guilabel
+>Paraules clau de cerca a la web</guilabel
 >. </para>
 </listitem>
 </varlistentry>
@@ -4129,9 +3794,7 @@ imagerotation context menu Actions -> Convert to -> JPEG,PNG,GIF,TIFF
 Additional Download Manager from KGet
 -->
 </variablelist>
-
 </sect1>
-
 </chapter>
 
 <chapter id="view-extensions">
@@ -4139,13 +3802,6 @@ Additional Download Manager from KGet
 <title
 >Extensions del mode de vista</title>
 
-<!--filemanager mode:
-default Icons/Details/Compact (Dolphin), File Size View (konq-plugins)
-additional Terminal Emulator (Konsole), (File Replace View (kdewebdev), )Cervisia (kdesdk), SVN Client, Radial Map (Filelight-kdeutils) and more
-browser mode:
-default KHTML, Embedded Advanced Text Editor
-additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
-  -->
 <para
 >&konqueror; proveeix vistes addicionals en <menuchoice
 ><guimenu
@@ -4305,12 +3961,10 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 <para
 >Copyright per Josef Weidendorfer, llicenciat emprant la GPL V2.</para>
 </sect2>
-
 </sect1>
 </chapter>
 
 <chapter id="config">
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -4345,7 +3999,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Arranjament</guimenu
 ><guimenuitem
->Configura el Konqueror...</guimenuitem
+>Configura el Konqueror…</guimenuitem
 ></menuchoice
 > s'obrirà un diàleg que podeu emprar per a controlar la majoria dels aspectes del comportament del &konqueror;.</para
 > 
@@ -4363,7 +4017,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 <listitem
 ><para
 ><ulink url="help:/kcontrol/performance/index.html"
->Rendiment</ulink
+>Rendiment del KDE</ulink
 >: Configurar les opcions que poden millorar el rendiment del &konqueror;.</para
 ></listitem>
 <listitem
@@ -4371,12 +4025,6 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><ulink url="help:/kcontrol/bookmarks/index.html"
 >Adreces d'interès</ulink
 >: Configurar la pàgina d'inici d'adreces d'interès.</para
-></listitem>
-<listitem
-><para
-><ulink url="help:/kcontrol/filemanager/index.html"
->Gestió de fitxers</ulink
->: Podeu configurar la manera en què es comporta el Konqueror com a gestor de fitxers.</para
 ></listitem>
 <listitem
 ><para
@@ -4465,8 +4113,8 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 <listitem
 ><para
 ><ulink url="help:/kcontrol/khtml-java-js/index.html"
->Java i JavaScript</ulink
->: Configurar el comportament de Java i JavaScript.</para
+>JavaScript</ulink
+>: Configurar el comportament del JavaScript.</para
 ></listitem>
 </itemizedlist>
 <para
@@ -4476,11 +4124,9 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 >Què és això?</link
 >.</para>
 </sect1>
-
 </chapter>
 
 <chapter id="commands">
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -4512,7 +4158,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ></term>
 <listitem>
 <para
->Estableix el focus al següent quadre d'entrada de text en la barra d'eines de localització.</para>
+>Estableix el focus al quadre d'entrada de text en la barra d'eines de localització.</para>
 </listitem>
 </varlistentry>
 
@@ -4525,7 +4171,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ></term>
 <listitem>
 <para
->Activa la següent pàgina amb pestanya.</para>
+>Activa la pàgina següent amb pestanya.</para>
 </listitem>
 </varlistentry>
 
@@ -4555,7 +4201,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Edita</guimenu
 ><guimenuitem
->Cerca...</guimenuitem
+>Cerca…</guimenuitem
 > </menuchoice
 > no apareixerà mentre estigueu visualitzant els continguts d'un directori.</para>
 
@@ -4629,12 +4275,12 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Fitxer</guimenu
 > <guimenuitem
->Obre la localització...</guimenuitem
+>Obre la localització…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
 ><para
->Estableix el focus al següent quadre d'entrada de text en la barra d'eines de localització.</para
+>Estableix el focus al quadre d'entrada de text en la barra d'eines de localització.</para
 ></listitem>
 </varlistentry>
 
@@ -4650,7 +4296,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Fitxer</guimenu
 > <guimenuitem
->Obre el fitxer...</guimenuitem
+>Obre el fitxer…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -4680,7 +4326,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Fitxer</guimenu
 > <guimenuitem
->Envia l'adreça d'enllaç</guimenuitem
+>Envia l'adreça d'enllaç…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -4695,7 +4341,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Fitxer</guimenu
 > <guimenuitem
->Envia el fitxer...</guimenuitem
+>Envia el fitxer…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -4704,37 +4350,19 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ></listitem>
 </varlistentry>
 
-
 <varlistentry>
 <term
 ><menuchoice
 > <guimenu
 >Fitxer</guimenu
 > <guimenuitem
->Desa la imatge de fons com a...</guimenuitem
-></menuchoice
-> (mode navegador -vista KHTML-)</term>
-<listitem>
-<para
->Només és aplicable si esteu veient una pàgina web amb una imatge de fons. Obre el diàleg <guilabel
->Desa com a</guilabel
-> per a permetre-us desar-la al vostre ordinador.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <guimenu
->Fitxer</guimenu
-> <guimenuitem
->Desa com a...</guimenuitem
+>Desa com a…</guimenuitem
 ></menuchoice
 > (mode navegador)</term>
 <listitem
 ><para
 >Només aplicable si esteu veient un document o pàgina web, empra el diàleg <guilabel
->Desa com a...</guilabel
+>Desa com a…</guilabel
 > per a permetre-us desar una còpia al vostre ordinador.</para
 ></listitem>
 </varlistentry>
@@ -4745,13 +4373,13 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Fitxer</guimenu
 > <guimenuitem
->Desa el marc com a...</guimenuitem
+>Desa el marc com a…</guimenuitem
 ></menuchoice
 > (mode navegador)</term>
 <listitem
 ><para
 >Similar a <guimenuitem
->Desa com a...</guimenuitem
+>Desa com a…</guimenuitem
 > però per a emprar-ho amb un lloc web que usi marcs.</para
 ></listitem>
 </varlistentry>
@@ -4768,7 +4396,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Fitxer</guimenu
 > <guimenuitem
->Imprimeix...</guimenuitem
+>Imprimeix…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -4943,7 +4571,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Edita</guimenu
 > <guimenuitem
->Enganxa el contingut del porta-retalls...</guimenuitem
+>Enganxa el contingut del porta-retalls…</guimenuitem
 ></menuchoice
 > o <menuchoice
 ><guimenu
@@ -4966,7 +4594,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 >) (mode gestor de fitxers)</term>
 <listitem
 ><para
->Enganxa elements actualment copiats/retallats a la carpeta actual. Si el porta-retalls no conté fitxers o carpetes, el contingut del porta-retalls (per exemple, dades de text o d'imatge) s'enganxa en un nou fitxer.</para
+>Enganxa elements actualment copiats/retallats a la carpeta actual. Si el porta-retalls no conté fitxers o carpetes, el contingut del porta-retalls (per exemple, dades de text o d'imatge) s'enganxa en un fitxer nou.</para
 ></listitem>
 </varlistentry>
 
@@ -5006,8 +4634,8 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > (mode gestor de fitxers)</term>
 <listitem
 ><para
->Crea un nou objecte (com ara una carpeta o un fitxer de text) a la carpeta actual. Per a més detalls consulteu la secció <link linkend="making"
->Crea nou...</link
+>Crea un objecte nou (com ara una carpeta o un fitxer de text) a la carpeta actual. Per a més detalls consulteu la secció <link linkend="making"
+>Crea nou…</link
 >.</para
 ></listitem>
 </varlistentry>
@@ -5028,7 +4656,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 <listitem
 ><para
 >Us permet reanomenar un fitxer o carpeta sense que calgui obrir el diàleg <guimenuitem
->Propietats...</guimenuitem
+>Propietats…</guimenuitem
 >. </para
 ></listitem>
 </varlistentry>
@@ -5079,7 +4707,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Edita</guimenu
 > <guimenuitem
->Edita el tipus de fitxer...</guimenuitem
+>Edita el tipus de fitxer…</guimenuitem
 ></menuchoice
 > (mode gestor de fitxers)</term>
 <listitem
@@ -5102,7 +4730,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Edita</guimenu
 > <guimenuitem
->Propietats...</guimenuitem
+>Propietats…</guimenuitem
 ></menuchoice
 > (mode gestor de fitxers)</term>
 <listitem
@@ -5125,13 +4753,13 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guisubmenu
 >Selecció</guisubmenu
 > <guimenuitem
->Selecciona elements que coincideixin...</guimenuitem
+>Selecciona elements que coincideixin…</guimenuitem
 ></menuchoice
 > (mode gestor de fitxers)</term>
 <listitem
 ><para
 >Junt amb les ordres <guimenuitem
->Desselecciona elements que coincideixin...</guimenuitem
+>Desselecciona elements que coincideixin…</guimenuitem
 >, <guimenuitem
 >Desselecciona-ho tot</guimenuitem
 > i <guimenuitem
@@ -5156,13 +4784,13 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guisubmenu
 >Selecció</guisubmenu
 > <guimenuitem
->Desselecciona elements que coincideixin...</guimenuitem
+>Desselecciona elements que coincideixin…</guimenuitem
 ></menuchoice
 > (mode gestor de fitxers)</term>
 <listitem
 ><para
 >Desselecciona fitxers o carpetes mitjançant un diàleg similar a l'emprat per <guimenuitem
->Selecciona...</guimenuitem
+>Selecciona…</guimenuitem
 >.</para
 ></listitem>
 </varlistentry>
@@ -5248,7 +4876,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Edita</guimenu
 > <guimenuitem
->Cerca...</guimenuitem
+>Cerca…</guimenuitem
 > </menuchoice
 > (mode navegador)</term>
 <listitem
@@ -5256,49 +4884,6 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 >Mostra la barra de cerca a la part inferior de la finestra actual. Quan comenceu a escriure troba una cadena de text en una pàgina de text que estigueu previsualitzant o en una pàgina &HTML;.</para
 ></listitem>
 </varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <shortcut
-><keycap
->F3</keycap
-> </shortcut
-> <guimenu
->Edita</guimenu
-> <guimenuitem
->Cerca la següent</guimenuitem
-></menuchoice
-> (mode navegador -vista KHTML-)</term>
-<listitem
-><para
->Cerca la següent ocurrència de la cadena de text en la pàgina de text o &HTML;.</para
-></listitem
-> 
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <shortcut
-><keycombo action="simul"
->&Maj;<keycap
->F3</keycap
-></keycombo
-></shortcut
-> <guimenu
->Edita</guimenu
-> <guimenuitem
->Cerca l'anterior</guimenuitem
-></menuchoice
-> (mode navegador -vista KHTML-)</term>
-<listitem
-><para
->Cerca l'anterior ocurrència de la cadena de text en la pàgina de text o &HTML;.</para
-></listitem
-> 
-</varlistentry>
-
 </variablelist>
 
 </sect2>
@@ -5321,8 +4906,6 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 <listitem
 ><para
 >En el mode navegador aquest submenú conté elements per a seleccionar vistes encastades com <guimenuitem
->KHTML</guimenuitem
->, <guimenuitem
 >WebEngine</guimenuitem
 >, <guimenuitem
 >Editor avançat de text incrustat</guimenuitem
@@ -5414,40 +4997,6 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <shortcut
 ><keycombo action="simul"
 >&Ctrl;<keycap
->+</keycap
-></keycombo
-></shortcut
-> <guimenu
->Visualitza</guimenu
-> <guimenuitem
->Augmenta la lletra</guimenuitem
-></menuchoice
-> / <menuchoice
-> <shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
->-</keycap
-></keycombo
-></shortcut
-><guimenu
->Visualitza</guimenu
-> <guimenuitem
->Minva la lletra</guimenuitem
-></menuchoice
-> (mode navegador -vista KHTML-)</term>
-<listitem
-><para
->Utilitzeu-los per a ajustar la mida del text a la pàgina si us resulta difícil de llegir. Com de bé funcioni dependrà de com s'ha construït la pàgina web.</para
-></listitem
-> 
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
 >U</keycap
 > </keycombo
 > </shortcut
@@ -5456,7 +5005,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenuitem
 >Visualitza el codi font del document</guimenuitem
 ></menuchoice
-> (mode navegador -vista KHTML-)</term>
+> (mode navegador)</term>
 <listitem
 ><para
 >Visualitza el text del codi font del document.</para>
@@ -5500,33 +5049,10 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenuitem
 >Zoom al PPP</guimenuitem
 ></menuchoice
-> (mode navegador -vista WebEngine-)</term>
+> (mode navegador)</term>
 <listitem
 ><para
 >Aquests elements de menú ofereixen diferents accions per a modificar la mida dels elements a la pàgina.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
->I</keycap
-> </keycombo
-> </shortcut
-> <guimenu
->Visualitza</guimenu
-> <guimenuitem
->Visualitza informació del document</guimenuitem
-></menuchoice
-> (mode navegador -vista KHTML-)</term>
-<listitem
-><para
->Visualitza la informació del document, tal com les capçaleres de títol, &URL; i &HTTP; emprades en rebre el document.</para>
-<para
->Tan sols disponible si esteu visualitzant una pàgina &HTML;.</para>
 </listitem>
 </varlistentry>
 
@@ -5546,24 +5072,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > és usualment la millor elecció.</para
 ></listitem>
 </varlistentry>
-<!-- what is this?
-<varlistentry>
-<term
-><menuchoice>
-<guimenu
->View</guimenu>
-<guimenuitem
->Use Stylesheet</guimenuitem
-></menuchoice
-> (Browser mode)</term>
-<listitem
-><para
->???Automatic Detection Basic Page Style KDE Stylesheet</para
-></listitem>
-</varlistentry>
-http://websvn.kde.org/?view=revision&revision=269436
--->
-<!--FIXME synced with Dolphin 16.04-->
+
 <varlistentry>
 <term
 ><menuchoice
@@ -5675,7 +5184,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenu
 >Visualitza</guimenu
 > <guimenuitem
->Ajusta les propietats de la vista...</guimenuitem
+>Ajusta les propietats de la vista…</guimenuitem
 ></menuchoice
 > (mode gestor de fitxers)</term>
 <listitem
@@ -5844,27 +5353,6 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenu
 >Ves</guimenu
 > <guimenuitem
->Arranjament</guimenuitem
-></menuchoice
-> (mode gestor de fitxers)</term>
-<listitem
-><para
->Obre una carpeta virtual amb tots els mòduls de l'&systemsettings; en les vistes <guimenuitem
->Icones</guimenuitem
->, <guimenuitem
->Detalls</guimenuitem
-> o <guimenuitem
->Columnes</guimenuitem
->. Seleccioneu un element per a mostrar el mòdul de configuració en una finestra de diàleg separada.</para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <guimenu
->Ves</guimenu
-> <guimenuitem
 >Paperera</guimenuitem
 ></menuchoice
 > (mode gestor de fitxers)</term>
@@ -5910,7 +5398,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ></term>
 <listitem
 ><para
->Mostra una vista en arbre del vostre historial de navegació en una finestra a part. </para
+>Mostra una vista en arbre del vostre historial de navegació en una finestra a part.</para
 ></listitem>
 </varlistentry>
 
@@ -6004,7 +5492,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ><guimenu
 >Adreces d'interès</guimenu
 > <guimenuitem
->Pestanyes d'adreces d'interès com a carpeta...</guimenuitem
+>Pestanyes d'adreces d'interès com a carpeta…</guimenuitem
 > </menuchoice
 ></term>
 <listitem>
@@ -6019,7 +5507,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ><guimenu
 >Adreces d'interès</guimenu
 > <guimenuitem
->Carpeta nova d'adreces d'interès...</guimenuitem
+>Carpeta nova d'adreces d'interès…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -6034,7 +5522,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ><guimenu
 >Adreces d'interès</guimenu
 > <guimenuitem
->Edita les adreces d'interès...</guimenuitem
+>Edita les adreces d'interès…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -6085,7 +5573,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenu
 >Eines</guimenu
 > <guimenuitem
->Cerca el fitxer...</guimenuitem
+>Cerca el fitxer…</guimenuitem
 ></menuchoice
 > (mode gestor de fitxers)</term>
 <listitem
@@ -6147,29 +5635,28 @@ http://websvn.kde.org/?view=revision&revision=269436
 >Obre una petita vista d'un terminal de text a la part inferior de la finestra principal.</para
 ></listitem>
 </varlistentry>
-<!--
+
 <varlistentry>
 <term
-><menuchoice>
-<shortcut>
-<keycombo action="simul"
+><menuchoice
+><shortcut
+> <keycombo action="simul"
 ><keycap
 >F9</keycap
 ></keycombo
-></shortcut>
-<guimenu
->Settings</guimenu>
-<guimenuitem
->Show Sidebar</guimenuitem>
-</menuchoice
+></shortcut
+> <guimenu
+>Arranjament</guimenu
+> <guimenuitem
+>Mostra la barra lateral</guimenuitem
+> </menuchoice
 ></term>
 <listitem
 ><para
->Toggles the display of the &konqueror; sidebar. See
-<xref linkend="sidebar"/>.</para
+>Commuta la visualització de la barra lateral del &konqueror;.</para
 ></listitem>
 </varlistentry>
--->
+
 <varlistentry>
 <term
 ><menuchoice
@@ -6203,7 +5690,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ><guimenu
 >Arranjament</guimenu
 > <guimenuitem
->Configura les extensions...</guimenuitem
+>Configura les extensions…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -6220,7 +5707,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ><guimenu
 > Arranjament</guimenu
 > <guimenuitem
->Configura el corrector ortogràfic...</guimenuitem
+>Configura el corrector ortogràfic…</guimenuitem
 > </menuchoice
 ></term>
 <listitem>
@@ -6256,7 +5743,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ></term>
 <listitem
 ><para
->Divideix la vista esquerra/dreta.</para
+>Divideix la vista d'esquerra a dreta.</para
 ></listitem>
 </varlistentry>
 
@@ -6277,7 +5764,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ></term>
 <listitem
 ><para
->Divideix la vista superior/inferior.</para
+>Divideix la vista des de dalt a baix.</para
 ></listitem>
 </varlistentry>
 
@@ -6361,7 +5848,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ></term>
 <listitem
 ><para
->Obre una nova pàgina amb pestanya buida.</para
+>Obre una pàgina nova amb pestanya buida.</para
 ></listitem>
 </varlistentry>
 
@@ -6403,7 +5890,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ></term>
 <listitem
 ><para
->Mostra la pàgina amb pestanya actual en una nova instància del &konqueror;.</para
+>Mostra la pàgina amb pestanya actual en una instància nova del &konqueror;.</para
 ></listitem>
 </varlistentry>
 
@@ -6574,16 +6061,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 >qtpaths --paths GenericCacheLocation</filename
 > conté la memòria cau del navegador.</para
 ></listitem>
-<!--
-<listitem
-><para
->The Sidebar uses the files and subfolders in <filename
->konqsidebartng</filename>
-in the folder <filename class="directory"
->qtpaths - -paths GenericConfigLocation</filename
-></para
-></listitem>
--->
+
 </itemizedlist>
 <para
 >Les opcions específiques de la vista de carpeta es posen en fitxers <literal role="extension"
@@ -6635,8 +6113,8 @@ in the folder <filename class="directory"
 <question
 ><para
 >Com habilitar, inhabilitar o netejar la memòria cau del navegador?</para
-></question
-> <answer>
+></question>
+<answer>
 <para
 >Si seleccioneu <menuchoice
 ><guimenu
@@ -6648,7 +6126,7 @@ in the folder <filename class="directory"
 ><guimenu
 >Arranjament</guimenu
 ><guimenuitem
->Configura Konqueror...</guimenuitem
+>Configura el Konqueror…</guimenuitem
 ></menuchoice
 > obtindreu un diàleg que us permetrà inhabilitar-lo, netejar-lo, canviar la seva mida i/o la política del cau.</para>
 </answer>
@@ -6657,26 +6135,7 @@ in the folder <filename class="directory"
 <qandaentry>
 <question
 ><para
->Com puc canviar els valors de desconnexió emprats pel &konqueror; quan es navega una web?</para
-></question
-> <answer>
-<para
->A &systemsettings; a la categoria <guilabel
->Xarxa</guilabel
-> sobre la pàgina <menuchoice
-><guimenu
->Arranjament</guimenu
-><guimenuitem
->Preferències de connexió</guimenuitem
-></menuchoice
->.</para>
-</answer>
-</qandaentry>
-
-<qandaentry>
-<question
-><para
->Com estableixo la meva pàgina d'«Inici» - la que es carrega al començament?</para
+>Com estableixo la meva pàgina d'«Inici»: la que es carrega al començament?</para
 ></question>
 <answer
 ><para
@@ -6691,7 +6150,7 @@ in the folder <filename class="directory"
 ><guimenu
 >Arranjament</guimenu
 > <guimenuitem
->Configura Konqueror...</guimenuitem
+>Configura el Konqueror…</guimenuitem
 ><guilabel
 >General</guilabel
 ></menuchoice
@@ -6714,7 +6173,6 @@ in the folder <filename class="directory"
 >En el mode navegador web el &konqueror; s'inicia amb l'entrada <guilabel
 >Pàgina d'inici</guilabel
 >.</para>
-
 </answer>
 </qandaentry>
 
@@ -6726,27 +6184,18 @@ in the folder <filename class="directory"
 > 
 <answer>
 <para
->Doneu un cop d'ull a <ulink url="https://konqueror.org/faq/"
->http://www.konqueror.org/faq.html</ulink
-> o <ulink url="https://konqueror.org/contact/"
->https://konqueror.org/contact/</ulink
->.</para>
-<para
->Podeu trobar més informació als <ulink url="http://forum.kde.org/"
+>Podeu trobar més informació als <ulink url="https://discuss.kde.org/"
 >Fòrums de la comunitat del KDE</ulink
-> o a la <ulink url="http://userbase.kde.org/Konqueror"
+> o a la <ulink url="https://userbase.kde.org/Konqueror"
 >pàgina KDE Userbase pel Konqueror</ulink
 >.</para>
 </answer>
 </qandaentry>
-
 </qandaset>
-
 </chapter>
 
 <chapter id="credits"
 > <!-- 4.11-->
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -6761,7 +6210,7 @@ in the folder <filename class="directory"
 >Crèdits i llicència</title>
 
 <para
->&konqueror;. Copyright del programa 1999-2003, els desenvolupadors del &konqueror;:</para>
+>Copyright del programa 1999-2025, els desenvolupadors del &konqueror;:</para>
 
 <variablelist>
 
@@ -7143,7 +6592,7 @@ in the folder <filename class="directory"
 </variablelist>
 
 <para
->Copyright de la documentació 2000-2003</para>
+>Copyright de la documentació 2000-2025</para>
 
 <itemizedlist>
 <listitem
@@ -7158,7 +6607,6 @@ in the folder <filename class="directory"
 
 <para
 >Documentació actualitzada pel &kde; 3.2 per &Philip.Rodrigues; &Philip.Rodrigues.mail;.</para>
-
 <para
 >Correccions a la documentació per al &kde; 4.11 per en David Palser <email
 >davidpalser179@btinternet.com</email

@@ -52,12 +52,12 @@
 >La casella de selecció <guilabel
 >Habilita Java globalment</guilabel
 > us permet activar per omissió la funcionalitat &Java; per a tots els llocs web. També podeu seleccionar la possibilitat de des/activar &Java; per a màquines específiques. Per a afegir una política per a una màquina específica, feu clic al botó <guilabel
->Nou...</guilabel
+>Nou…</guilabel
 > i se us mostrarà un diàleg en què introduireu el nom de la màquina per a després acceptar o refusar el codi &Java; d'aquesta en particular, el qual afegirà el domini a la llista de l'esquerra de la pàgina.</para>
 
 <para
 >Podeu seleccionar una màquina de la llista i fer clic al botó <guibutton
->Canvia...</guibutton
+>Canvia…</guibutton
 > per a escollir una política diferent per a aquesta màquina. Fent clic sobre el botó <guibutton
 >Suprimeix</guibutton
 > s'eliminarà la política per a la màquina seleccionada. Després de suprimir-la, sobre aquesta màquina s'aplicaran les opcions globals.</para>
@@ -115,20 +115,16 @@
 >La casella de selecció <guilabel
 >Habilita JavaScript globalment</guilabel
 > us permet activar la funcionalitat JavaScript, per omissió, per a totes les pàgines web. També podeu seleccionar la possibilitat de des/activar el JavaScript per a màquines específiques. Per a afegir una política per a una màquina específica, feu clic al botó <guilabel
->Nou...</guilabel
+>Nou…</guilabel
 > i se us mostrarà un diàleg en què podreu introduir el nom de la màquina i després acceptar o refusar el codi JavaScript d'aquesta en particular, el qual afegirà el domini a la llista de l'esquerra de la pàgina.</para>
 
 <para
 >Podeu seleccionar una màquina de la llista i fer clic al botó <guibutton
->Canvia...</guibutton
+>Canvia…</guibutton
 > per a escollir una política diferent per a aquesta màquina. Fent clic sobre el botó <guibutton
 >Suprimeix</guibutton
 > s'eliminarà la política per a la màquina seleccionada. Després de suprimir-la, sobre aquesta màquina s'aplicaran les opcions globals.</para>
-<!-- missing section Debugging
-Enable debugger Enables builtin JavaScript debugger.
-Report errors Enables the reporting of errors that occur when JavaScript code is executed.
-How are errors reported? popup window? icon in status bar?
--->
+
 <para
 >L'últim conjunt d'opcions en la secció <guilabel
 >Polítiques JavaScript globals</guilabel

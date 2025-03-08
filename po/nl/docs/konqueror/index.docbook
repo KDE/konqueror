@@ -45,13 +45,13 @@
 >&FDLNotice;</legalnotice>
 
 <date
->2016-11-05</date>
+>2025-02-27</date>
 <releaseinfo
->Applications 16.12</releaseinfo>
+>Gear 25.02</releaseinfo>
 
 <abstract
 ><para
->&konqueror; is een bestandsbeheerder, webbrowser en algemeen weergaveprogramma voor &kde;.</para>
+>&konqueror; is een geavanceerde bestandsbeheerder, webbrowser en algemeen weergaveprogramma van &kde;.</para>
 </abstract>
 
 <keywordset>
@@ -78,7 +78,6 @@
 >&Pamela.Roberts;</author>
 &Bram.Schoenmakers;&Niels.Reedijk;&Rinse.Devries; 
 </authorgroup>
-
 </chapterinfo>
 
 <title
@@ -91,10 +90,10 @@
 >bestandsbeheerder</link
 >. Het biedt mogelijkheden om bestanden te beheren variërend van eenvoudige knip-, kopieer- en plakacties tot geavanceerd bestandsbeheer op een lokale computer of via een netwerk. De inhoud van een map kan met verschillende <link linkend="viewmode"
 >weergavemodi</link
-> bekeken worden,inclusief voorbeeldminiaturen van de bestandsinhoud. Bestands- en mapeigenschappen kunnen gemakkelijk bekeken en veranderd worden. De bestanden kunnen met een klik op de &LMB; met een toepassing geopend worden.</para>
+> bekeken worden,inclusief voorbeeldminiaturen van de bestandsinhoud. Bestands- en mapeigenschappen kunnen gemakkelijk bekeken en veranderd worden. De bestanden kunnen met een dubbelklik op de &LMB; met een toepassing geopend worden.</para>
 
 <para
->In &kde; Applications is &dolphin; de standaard bestandsbeheerder. Om de standaard component voor bladeren door mappen te wijzigen en &konqueror; te selecteren als bestandsbeheerder, opent u <guimenu
+>In toepassingen van &kde; is &dolphin; de standaard bestandsbeheerder. Om de standaard component voor bladeren door mappen te wijzigen en &konqueror; te selecteren als bestandsbeheerder, opent u <guimenu
 >Standaard programma's</guimenu
 > in &systemsettings;.</para>
 
@@ -105,11 +104,11 @@
 >webbrowser</link
 > volgens <acronym
 >HTML</acronym
-> 4.01 met ingebouwde ondersteuning voor JavaScript (ECMA-262), <acronym
+> 5 met ingebouwde ondersteuning voor JavaScript (ECMA-262), <acronym
 >CSS</acronym
-> (Cascading Style Sheets) en bidirectionele scripts (Arabisch en Hebreeuws). Het heeft ook ondersteuning voor &Java;-applets, &Netscape;-plugins om &Flash;, &RealAudio; en &RealVideo; te bekijken en <acronym
+> (Cascading Style Sheets) en bi-directionele scripts (bijv. Arabisch, Hebreeuws en andere). Het biedt ook ondersteuning voor <acronym
 >SSL</acronym
-> om beveiligde verbindingen op te bouwen. Daarnaast biedt het ook geavanceerde mogelijkheden als het automatisch aanvullen van &URL;-adressen en formulieren, browsen met tabbladen en het importeren van bladwijzers uit andere browsers. </para>
+> om beveiligde verbindingen op te bouwen. Daarnaast biedt het ook geavanceerde mogelijkheden als het automatisch aanvullen van &URL;'s en formulieren, browsen met tabbladen en het importeren van bladwijzers uit andere browsers.</para>
 
 <para
 ><emphasis
@@ -131,18 +130,15 @@
 > is een volledig aanpasbaar programma dat iedereen naar wens kan <link linkend="config"
 >instellen</link
 >. U kunt bijvoorbeeld de tekst- en pictogramgrootte instellen, selecteren welke items u in de menubalk wilt hebben, het aantal werkbalken instellen met elk een eigen positie en het is zelfs mogelijk om nieuwe sneltoetsen te definiëren. </para>
-
 </chapter>
 
 <chapter id="basics">
-
 <chapterinfo>
 <authorgroup>
 <author
 >&Pamela.Roberts;</author>
 &Bram.Schoenmakers;&Niels.Reedijk;&Rinse.Devries; 
 </authorgroup>
-
 </chapterinfo>
 
 <title
@@ -150,33 +146,27 @@
 
 <important
 ><para
->Zoals alle &kde;-toepassingen is &konqueror; volledig instelbaar. Dit document beschrijft hoe &konqueror; zich gedraagt met de normale, standaard instellingen.</para>
-<para
->Een muis met drie knoppen kan handig zijn bij &konqueror; of ieder ander &kde;-programma. Wanneer uw muis maar twee knoppen heeft dient u uw systeem zo in te stellen dat u een &MMB; kunt nabootsen door beide knoppen tegelijkertijd in te drukken.</para>
-<para
->U kunt meer over het gebruik van de muis lezen in <xref linkend="lmb-mmb"/></para>
-<para
->Wanneer u gewend bent om bepaalde acties uit te voeren met een dubbelklik een kleine waarschuwing; &konqueror; is, net als de rest van &kde; standaard ingesteld op het gebruik van een enkele muisklik.</para
+>Zoals alle &kde;-toepassingen is &konqueror; volledig instelbaar. Dit document beschrijft hoe &konqueror; zich gedraagt met de normale, standaard instellingen.</para
+><para
+>Een muis met drie knoppen kan handig zijn bij &konqueror; of ieder ander &kde;-programma. Wanneer uw muis maar twee knoppen heeft dient u uw systeem zo in te stellen dat u een &MMB; kunt nabootsen door beide knoppen tegelijkertijd in te drukken.</para
+><para
+>U kunt meer over het gebruik van de muis lezen in <xref linkend="lmb-mmb"/></para
 ></important>
 
 <sect1 id="konq-start">
 <title
 >&konqueror; opstarten</title>
 
-<para
->Omdat &konqueror; zowel een bestandsbeheerder als een webbrowser is, zal &konqueror; automatisch tussen deze twee standen schakelen. Het is makkelijker om al bij het opstarten de gewenste modus te kiezen.</para>
-
 <itemizedlist>
-
 <listitem
 ><para
 >Vanuit het menu voor het starten van programma's, selecteer <menuchoice
 ><guisubmenu
 >Internet</guisubmenu
 ><guimenuitem
->Konqueror (Webbrowser)</guimenuitem
+>Konqueror</guimenuitem
 ></menuchoice
-> om het als een browser te starten. </para
+> om het als een browser te starten.</para
 ></listitem>
 
 <listitem
@@ -191,7 +181,6 @@
 >https://www.kde.org</userinput
 >.</para
 ></listitem>
-
 </itemizedlist>
 
 <note
@@ -206,11 +195,9 @@
 <para
 >Als &konqueror; uw standaard bestandsbeheerder is, wordt deze ook automatisch gestart wanneer u met de <mousebutton
 >linker</mousebutton
-> op een pictogram klikt die een map op het bureaublad representeert, zoals een harde schijf of het pictogram van de <guiicon
+> op een pictogram dubbelklikt die een map op het bureaublad representeert, zoals een harde schijf of het pictogram van de <guiicon
 >Prullenbak</guiicon
->. </para>
-
-
+>.</para>
 </sect1>
 
 <sect1 id="parts">
@@ -218,7 +205,7 @@
 >De onderdelen van &konqueror;</title>
 
 <para
->Een overzicht van de belangrijkste onderdelen van &konqueror;'s venster:</para>
+>Een overzicht van de belangrijkste onderdelen van het venster van &konqueror;:</para>
 
 <mediaobject>
 <imageobject
@@ -302,7 +289,7 @@
 ><guimenu
 >Venster</guimenu
 ></link
-> kunt u het scherm splitsen, zodat u gemakkelijk bestanden heen en weer kunt slepen. Ook kunt u &konqueror; meerdere tabladen laten openen. </para>
+> kunt u het scherm splitsen, zodat u gemakkelijk bestanden heen en weer kunt slepen. Ook kunt u &konqueror; meerdere tabbladen laten openen. </para>
 
 <para
 >De <interface
@@ -311,13 +298,13 @@
 >actief</quote
 > is. Wanneer u met de <mousebutton
 >rechter</mousebutton
->muisknop op de statusbalk klikt komt het <link linkend="rmb-menus"
->statusbalk menu</link
-> tevoorschijn.</para>
+> muisknop op de statusbalk klikt komt het <link linkend="rmb-menus"
+>statusbalkmenu</link
+> te voorschijn.</para>
 
 <note
 ><para
->Uw versie van &konqueror; ziet er waarschijnlijk niet zo uit als in de schermafdruk. U kunt een hoop instellen in &konqueror;. Zoals:</para>
+>Uw versie van &konqueror; ziet er waarschijnlijk niet zo uit als in de schermafdruk. U kunt veel instellen in &konqueror;. Zoals:</para>
 
 <itemizedlist>
 <listitem
@@ -327,38 +314,30 @@
 >Instellingen</guimenu
 ></link
 > kunt u de menubalk, werkbalken of bladwijzerbalk in- of uitschakelen. U kunt zelfs een extra werkbalk toevoegen.</para
-></listitem>
-<listitem
+></listitem
+><listitem
 ><para
 >Als de werkbalken niet zijn vergrendeld, dan kunt U ze ook naar een nieuwe locatie slepen door helemaal links op de handel van de werkbalk met de <mousebutton
 >linker</mousebutton
-> te klikken of verplaatsten door de &LMB; ingedrukt te houden en daarna deze te verslepen. </para
+> te klikken of verplaatsten door de &LMB; ingedrukt te houden en daarna deze te verslepen.</para
 ></listitem>
-<!--
-<listitem
-><para
->This screenshot does not show the optional <link linkend="sidebar">
-Sidebar</link
->.</para
-></listitem>
--->
 </itemizedlist>
 
 <para
 >In de sectie <link linkend="config"
 >&konqueror; configureren</link
-> vindt u meer informatie over hoe u het uiterlijk van &konqueror; kunt veranderen</para
+> vindt u meer informatie over hoe u het uiterlijk van &konqueror; kunt wijzigen.</para
 ></note>
 
 </sect1>
 
 <sect1 id="bubble">
 <title
->Knopinfo en Wat is dit?</title>
+>Tekstballonnen en Wat is dit?</title>
 
 <para
->U kunt al een hoop te weten komen over &konqueror; zonder dit hele document door te lezen, simpel door gebruik te maken van de <guilabel
->Knopinfo</guilabel
+>U kunt al veel te weten komen over &konqueror; zonder dit hele document door te lezen, simpel door gebruik te maken van de <guilabel
+>Tekstballonnen</guilabel
 > en de optie <guimenuitem
 >Wat is dit?</guimenuitem
 > in het menu <guimenu
@@ -405,7 +384,7 @@ Sidebar</link
 >activeert</quote
 > een object in &konqueror; door er met de <mousebutton
 >linker</mousebutton
->muisknop op te klikken. Dus</para>
+> muisknop op te klikken. Dus</para>
 
 <itemizedlist>
 
@@ -450,7 +429,7 @@ Sidebar</link
 ><para
 >Door met de <mousebutton
 >linker</mousebutton
->muisknop op een bestand te klikken zal &konqueror; proberen de juiste actie te ondernemen, uitgaande van het bestandstype. In het algemeen betekent dit het openen van een vooruitblik voor <acronym
+> muisknop op een bestand te klikken zal &konqueror; proberen de juiste actie te ondernemen, uitgaande van het bestandstype. In het algemeen betekent dit het openen van een vooruitblik voor <acronym
 >HTML</acronym
 >-pagina's of het tonen van teksten, afbeeldingen, multimediabestanden of documenten in het venster van Konqueror zelf. (<quote
 >Voorbeeld</quote
@@ -464,7 +443,7 @@ Sidebar</link
 ><guimenu
 >Instellingen</guimenu
 ><guimenuitem
->Konqueror instellen... </guimenuitem
+>Konqueror instellen… </guimenuitem
 ></menuchoice
 >.</para
 ></listitem>
@@ -482,7 +461,7 @@ Sidebar</link
 ><guimenu
 >Instellingen</guimenu
 ><guimenuitem
->Konqueror instellen...</guimenuitem
+>Konqueror instellen…</guimenuitem
 ></menuchoice
 >. &konqueror; kan koppelingen in pagina's openen en <menuchoice
 ><guimenu
@@ -513,7 +492,7 @@ Sidebar</link
 <para
 >Door met de <mousebutton
 >rechter</mousebutton
-> muisknop te klikken op vrijwel ieder onderdeel van &konqueror;s venster zal een bijbehorend contextmenu worden geopend.</para>
+> muisknop te klikken op vrijwel ieder onderdeel van het venster van &konqueror; zal een bijbehorend contextmenu worden geopend.</para>
 
 <note
 ><para
@@ -537,7 +516,7 @@ Sidebar</link
 ><para
 >Bij het klikken met de <mousebutton
 >rechter</mousebutton
->muisknop in een leeg gedeelte van de titelbalk komt er een menu tevoorschijn waarmee u de positie en grootte van het venster kunt veranderen. U kunt via dit menu ook het venstergedrag wijzigen. Dit is dan van toepassing op alle vensters binnen &kde;. </para
+> muisknop in een leeg gedeelte van de titelbalk komt er een menu tevoorschijn waarmee u de positie en grootte van het venster van &konqueror; kunt veranderen. U kunt via dit menu ook het venstergedrag wijzigen. Dit is dan van toepassing op alle vensters binnen &kde;.</para
 ></listitem>
 </varlistentry>
 
@@ -583,7 +562,7 @@ Sidebar</link
 >Verder</guiicon
 > en <guiicon
 >Herladen</guiicon
->. </para
+>.</para
 ></listitem>
 </varlistentry>
 
@@ -605,8 +584,8 @@ Sidebar</link
 > of <guimenuitem
 >Verwijderen</guimenuitem
 > van het item op verschillende manieren, het openen met het programma van uw keuze of een voorbeeld tonen, het hernoemen, of het bestandstype of eigenschappen bewerken.</para
-></listitem
-> </varlistentry>
+></listitem>
+</varlistentry>
 
 <varlistentry>
 <term
@@ -615,9 +594,8 @@ Sidebar</link
 ><para
 >Klik met de <mousebutton
 >rechter</mousebutton
->muisknop op de statusbalk onderaan het venster om een deelvenster toe te voegen of te verwijderen of deze vast te zetten of teh koppelen binnenin het venster van &konqueror;.</para
-></listitem
-> 
+>muisknop op de statusbalk onderaan het venster om een deelvenster toe te voegen of te verwijderen of deze vast te zetten of te koppelen binnenin het venster van &konqueror;.</para
+></listitem>
 </varlistentry>
 </variablelist>
 
@@ -726,8 +704,8 @@ Sidebar</link
 >~/letter.txt</filename
 > naar het bestand <filename
 >letter.txt</filename
-> in uw persoonlijke map.</para>
-<para
+> in uw persoonlijke map.</para
+><para
 >Opmerking: vaak wordt het woord <quote
 >directory</quote
 > gebruikt in plaats van <quote
@@ -751,9 +729,8 @@ Sidebar</link
 
 <note
 ><para
->&konqueror; gebruikt in bestandsbeheerdermodus een ingebedde &dolphin;-component.</para
+>&konqueror; gebruikt in modus bestandsbeheerder een ingebedde &dolphin;-component. Kijk naar de documentatie van &dolphin; voor gedetailleerde informatie over deze modus.</para
 ></note>
-<!--FIXME begin copy from dolphin docbook synced for 16.04-->
 <itemizedlist>
 
 <listitem
@@ -793,7 +770,7 @@ Sidebar</link
 >In het contextmenu van de kopregel kunt u kiezen tussen aangepast of automatische kolombreedte. Automatische breedte past de breedte van alle kolommen een keer aan om het langste item volledig in de kolom te laten passen, behalve voor de <guilabel
 >Naam</guilabel
 >-kolom waar de extensie is vervangen door <quote
->...</quote
+>…</quote
 > </para>
 <para
 >De volgorde van kolommen kan gewijzigd worden door slepen en laten vallen van kolomkoppen, behalve de kop <guilabel
@@ -837,43 +814,6 @@ Sidebar</link
 ></caption>
 </mediaobject>
 </screenshot>
-<!--FIXME end copy from dolphin docbook synced for 16.04 -->
-
-<sect2 id="filetipinfo">
-<title
->Bestandsinfo tonen</title>
-<para
->Wanneer u <guilabel
->Tekstballonnen tonen</guilabel
-> heeft aangevinkt in de pagina <menuchoice
-> <guimenu
->Bestandsbeheer</guimenu
-><guimenuitem
->Algemeen</guimenuitem
-></menuchoice
-> van de instellingendialoog dan komt er, wanneer u de muiscursor boven een pictogram van een bestand of map plaatst, een tekstballon met informatie tevoorschijn.  </para>
-</sect2>
-
-<sect2 id="previews">
-<title
->Bestandsvoorbeelden</title>
-<para
->Het tabblad <guilabel
->Voorbeelden</guilabel
-> van de instellingenpagina van <menuchoice
-><guimenu
->Bestandsbeheer</guimenu
-> <guimenuitem
->Algemeen</guimenuitem
-></menuchoice
-> laat u bestandenvoorbeelden inschakelen voor bepaalde typen bestanden.</para>
-<para
->Dit betekent dat het standaard pictogram vervangen zal worden door een kleine afbeelding met de bestandsinhoud.</para>
-<para
->Omdat &konqueror; bij het maken van een voorbeeld veel meer gegevens moet inlezen dan alleen de bestandsnaam is deze functie minder geschikt voor het bekijken van bestanden op een externe computer. In het tabblad <guilabel
->Voorbeelden</guilabel
-> onderaan kunt u een limiet voor de bestandsgrootte instellen als het ophalen van extra gegevens te lang zou duren.</para>
-</sect2>
 
 <!--FIXME begin copy from dolphin docbook synced for 16.04-->
 <sect2 id="dolphin-view-information">
@@ -957,7 +897,7 @@ Sidebar</link
 
 <listitem
 ><para
->Het sorteren van items, wat wordt bepaald door de volgorde van sorteren (oplopend, aflopend) en het attribuut (zoals naam, grootte,...) waarmee de items gesorteerd worden </para
+>Het sorteren van items, wat wordt bepaald door de volgorde van sorteren (oplopend, aflopend) en het attribuut (zoals naam, grootte,…) waarmee de items gesorteerd worden </para
 ></listitem>
 
 <listitem
@@ -1028,11 +968,9 @@ Sidebar</link
 >Wanneer <guilabel
 >Deze weergave-eigenschappen als standaard gebruiken</guilabel
 > is ingeschakeld, zullen de gekozen weergave-eigenschappen ook gebruikt worden voor alle mappen die nog geen aangepaste weergave-eigenschappen hebben. </para>
-
 </sect2>
-
 </sect1>
-<!--FIXME end copy from dolphin docbook  synced for 16.04-->
+
 <sect1 id="navigation">
 <title
 >Navigatie</title>
@@ -1047,7 +985,7 @@ Sidebar</link
 ><para
 >Om af te dalen in een submap, klikt u met de <mousebutton
 >linker</mousebutton
->muisknop op de naam of het pictogram. Wanneer de map al is <quote
+> muisknop op de naam of het pictogram. Wanneer de map al is <quote
 >geselecteerd</quote
 > (zie hieronder) drukt u gewoon op <keysym
 >Enter</keysym
@@ -1119,7 +1057,7 @@ find your way around the file system.</para>
 > </keycombo
 > naar de Locatiebalk en zijn pad intypen. De functie<link linkend="path-complete"
 > Tekst aanvullen</link
-> kan hierbij nuttig zijn. Vergeet niet dat map- en bestandsnamen hoofdlettergevoelig zijn in &Linux; en &UNIX;.</para>
+> van &konqueror; kan hierbij nuttig zijn. Vergeet niet dat map- en bestandsnamen hoofdlettergevoelig zijn in &Linux; en &UNIX;.</para>
 
 <para
 >Wanneer u een nieuwe map bent binnengegaan kunt u teruggaan naar de vorige getoonde map door in de werkbalk <guiicon
@@ -1187,7 +1125,7 @@ find your way around the file system.</para>
 ><guimenu
 >Hulpmiddelen</guimenu
 ><guimenuitem
->Bestand zoeken...</guimenuitem
+>Bestand zoeken…</guimenuitem
 ></menuchoice
 > selecteren. Dit zal het zoekprogramma &kfind; starten. Zie het <ulink url="help:/kfind/index.html"
 >Handboek van &kfind;</ulink
@@ -1218,7 +1156,7 @@ find your way around the file system.</para>
 >Verwijderbare apparaten</title>
 
 <para
->Iedere verwijderbaar apparaat (USB-stick, diskette, &CD; of andere partitie op de harde schijf, die u in uw systeem hebt) zal normaal gesproken ergens in de map <filename class="directory"
+>Ieder verwijderbaar apparaat (USB-stick, &CD; of andere partitie op de harde schijf, die u in uw systeem hebt) zal normaal gesproken ergens in de map <filename class="directory"
 >/ </filename
 >, <filename class="directory"
 >/media</filename
@@ -1265,7 +1203,7 @@ find your way around the file system.</para>
 >muisknop op het pictogram en kies voor <guimenuitem
 >Afkoppelen (unmount)</guimenuitem
 >. Lees hier meer over in de sectie <link linkend="making"
->Nieuw aanmaken...</link
+>Nieuw aanmaken…</link
 > in dit handboek.</para
 ></listitem>
 
@@ -1298,11 +1236,11 @@ find your way around the file system.</para>
 >mount</command
 > en <command
 >umount</command
-> te typen, is het eenvoudiger om in &konqueror;s menu <menuchoice
+> te typen, is het eenvoudiger om in het menu van &konqueror; <menuchoice
 ><guimenu
 >Hulpmiddelen</guimenu
 ><guimenuitem
->Shellcommando uitvoeren...</guimenuitem
+>Shellcommando uitvoeren</guimenuitem
 ></menuchoice
 > (<keycombo action="simul"
 >&Ctrl;<keycap
@@ -1310,12 +1248,9 @@ find your way around the file system.</para>
 ></keycombo
 >) te kiezen. </para
 ></note>
-
 </listitem>
-
 </itemizedlist>
 </sect2>
-
 </sect1>
 
 <sect1 id="deleting">
@@ -1341,7 +1276,7 @@ find your way around the file system.</para>
 >.</para>
 <para
 >Als u deze functie wilt gebruiken activeer dan de optie <guilabel
->'Verwijdermenuitems' tonen die de prullenbak overslaan</guilabel
+>menu-items 'Verwijderen' tonen die de prullenbak overslaan</guilabel
 > op de instellingenpagina <guilabel
 >Bestandsbeheer</guilabel
 >.</para
@@ -1460,32 +1395,9 @@ find your way around the file system.</para>
 >Kopiëren</guimenuitem
 >. Het item dat u geknipt hebt zal verwijderd worden uit de oorspronkelijke map nadat u het item op een andere locatie heeft geplakt.</para>
 
-<para
->U kunt geselecteerde items ook kopiëren of verplaatsen naar een ander map door <guimenuitem
->Kopiëren naar</guimenuitem
-> of <guimenuitem
->Verplaatsen naar</guimenuitem
-> te kiezen uit het context-menu, dat u krijgt wanneer u met de <mousebutton
->rechter</mousebutton
->muisknop op een bestand of map klikt in het venster van de bestandsbeheerder.</para>
-<para
->Om deze functie in te schakelen selecteert u <guilabel
->Opdrachten 'Kopiëren naar' en 'Verplaatsen naar' tonen</guilabel
-> op de pagina <menuchoice
-><guimenu
->Bestandsbeheer</guimenu
-> <guimenuitem
->Services</guimenuitem
-></menuchoice
-> van instellingen.</para>
-<note
-><para
->U kunt geen bestanden kopiëren of verplaatsen wanneer u niet de nodige toegangsrechten hebt.</para
-></note>
-
 <sect2 id="dnd">
 <title
->Slepen en laten vallen gebruiken</title>
+>Slepen en loslaten gebruiken</title>
 
 <para
 >&konqueror; ondersteunt ook het kopiëren en verplaatsen van items door middel van slepen en loslaten.</para>
@@ -1632,25 +1544,6 @@ find your way around the file system.</para>
 >Door de &Shift;-toets in te drukken terwijl u met de &LMB; op een item klikt, selecteert u alle items tussen dit item en het hiervoor geselecteerde item. </para
 ></listitem>
 
-<listitem
-><para
->Als in het tabblad <guilabel
->Gedrag</guilabel
-> van de sectie <menuchoice
-><guimenu
->Bestandsbeheer</guimenu
-> <guimenuitem
->Algemeen</guimenuitem
-></menuchoice
-> in instellingen <guilabel
->Selectiemarkeerder tonen</guilabel
-> is ingeschakeld, verschijnt er een klein <guiicon
->+</guiicon
-> of <guiicon
->-</guiicon
->-teken in de linkerbovenhoek van het item onder de muisaanwijzer. Door op dit teken te klikken wordt het item respectievelijk geselecteerd of wordt de selectie ongedaan gemaakt. </para
-></listitem>
-
 </itemizedlist>
 
 </sect2>
@@ -1737,7 +1630,7 @@ find your way around the file system.</para>
 ><guisubmenu
 >Selectie</guisubmenu
 ><guimenuitem
->Overeenkomende items selecteren...</guimenuitem
+>Overeenkomende items selecteren…</guimenuitem
 ></menuchoice
 > of gebruik de sneltoets <keycombo action="simul"
 >&Ctrl;<keycap
@@ -1750,7 +1643,7 @@ find your way around the file system.</para>
 > (staat voor één willekeurig teken). Klik daarna op <guibutton
 >OK</guibutton
 > en &konqueror; zal alle overeenkomende bestandsnamen selecteren. Bijvoorbeeld:</para>
-      
+
 <itemizedlist>
 <listitem
 ><para
@@ -1789,7 +1682,7 @@ find your way around the file system.</para>
 > <guisubmenu
 >Selectie</guisubmenu
 > <guimenuitem
->Overeenkomende items deselecteren...</guimenuitem
+>Overeenkomende items deselecteren…</guimenuitem
 ></menuchoice
 > te kiezen om op te geven welke bestanden uit de selectie gehaald moeten worden.</para>
 
@@ -1827,20 +1720,16 @@ find your way around the file system.</para>
 >Nieuwe aanmaken</title>
 
 <para
->Wanneer &konqueror; zich in bestandsbeheerdermodus bevindt, kunt u <guisubmenu
+>Wanneer &konqueror; zich in modus bestandsbeheerder bevindt, kunt u <guisubmenu
 >Nieuw aanmaken</guisubmenu
-> selecteren in het menu <guimenu
->Bewerken</guimenu
->, of uit het menu dat in beeld komt wanneer u met de <mousebutton
->rechter</mousebutton
->muisknop op een lege plaats klikt in een mapweergave:</para>
+> selecteren uit het menu na klikken met de &RMB; op een lege plaats die u een van de volgende laat aanmaken in de huidige map:</para>
 
 <variablelist>
 
 <varlistentry>
 <term
 ><guimenuitem
->Map...</guimenuitem
+>Map…</guimenuitem
 ></term>
 <listitem
 ><para
@@ -1851,7 +1740,7 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Tekstbestand...</guimenuitem
+>Tekstbestand…</guimenuitem
 ></term>
 <listitem
 ><para
@@ -1862,7 +1751,7 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->HTML-bestand...</guimenuitem
+>HTML-bestand…</guimenuitem
 ></term>
 <listitem
 ><para
@@ -1879,7 +1768,7 @@ find your way around the file system.</para>
 ><guimenuitem
 ><replaceable
 >Documenttype</replaceable
-> document...</guimenuitem
+> document…</guimenuitem
 ></term>
 <listitem
 ><para
@@ -1890,16 +1779,16 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Koppeling naar locatie...</guimenuitem
+>Koppeling naar locatie (URL)…</guimenuitem
 ></term>
 <listitem
 ><para
 >Hiermee kunt u een pictogram aanmaken dat een bepaalde map of website in &konqueror; opent. Net zoals met <guimenuitem
->Koppeling naar toepassing...</guimenuitem
+>Koppeling naar toepassing…</guimenuitem
 > kunt u het pictogram op uw bureaublad plaatsen door de koppeling in de map <filename
 >~/Desktop</filename
 > te plaatsen. U kunt ook op een lege plaats van uw bureaublad klikken om vervolgens in het context-menu voor <guisubmenu
->Nieuw aanmaken</guisubmenu
+>Nieuw aanmaken…</guisubmenu
 > te kiezen.</para
 ></listitem>
 </varlistentry>
@@ -1907,7 +1796,7 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Basis koppeling naar bestand of map...</guimenuitem
+>Koppeling naar bestand of map…</guimenuitem
 ></term>
 <listitem
 ><para
@@ -1918,7 +1807,7 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Koppeling naar programma...</guimenuitem
+>Koppeling naar programma…</guimenuitem
 ></term>
 <listitem
 ><para
@@ -1940,10 +1829,12 @@ find your way around the file system.</para>
 
 <para
 >Om een toepassingspictogram op uw bureaublad te maken kunt u een koppeling maken in de map <filename class="directory"
->~/Desktop</filename
+>~/Bureaublad</filename
 > (deze map kan ook anders heten, hangt af van de installatie van &kde;). Maar makkelijker is het om gewoon met de <mousebutton
 >rechter</mousebutton
-> muisknop op een leeg gedeelte van het bureaublad te klikken.</para>
+> muisknop op een leeg gedeelte van het bureaublad te klikken of binnen het venster van &konqueror; en het submenu <guisubmenu
+>Nieuw aanmaken…</guisubmenu
+> te krijgen.</para>
 
 <para
 >Wanneer u niet wilt dat uw bureaublad vol komt te staan met toepassingen kunt u ze ook in de map Toepassingen plaatsen. U kunt deze map openen door in &konqueror; naar <menuchoice
@@ -1956,26 +1847,9 @@ find your way around the file system.</para>
 >~/.local/share/applications</filename
 >.</para>
 <para
->Om een koppeling naar een toepassing in uw paneel te plaatsen, maakt u eerst een koppeling aan de map Toepassingen. Sleep de koppeling vervolgens naar een lege plaats in uw paneel.</para>
-
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guisubmenu
->Koppeling naar apparaat</guisubmenu
-></term>
-<listitem
-><para
->Gebruik deze opties in submenu wanneer u een pictogram wilt aanmaken dat een een apparaat aankoppelt en vervolgens zal openen met &konqueror;, waardoor de inhoud getoond zal worden. Om het apparaat weer af te koppelen dient u met de <mousebutton
->rechter</mousebutton
->muisknop op het pictogram te klikken en vervolgens <guimenuitem
->Afkoppelen</guimenuitem
-> te kiezen. In veel gevallen is het handig om zo'n pictogram op uw bureaublad aan te maken. </para
+>Om een koppeling naar een toepassing in uw paneel te plaatsen, maakt u eerst een koppeling aan de map Toepassingen. Sleep de koppeling vervolgens naar een lege plaats in uw paneel.</para
 ></listitem>
 </varlistentry>
-
 </variablelist>
 
 </sect1>
@@ -2051,14 +1925,14 @@ find your way around the file system.</para>
 <title
 >Bestandassociaties instellen</title>
 
-<!-- TODO: The content should probably be here too, but this'll do for -->
+<!-- TODO: The content should probably be here too, but this’ll do for -->
 <!-- now. -->
 <para
 >&kde; levert een groot aantal toepassingen die vele soorten bestanden kunnen openen. Meestal werkt de standaardinstelling zonder problemen. Maar &konqueror; heeft ook een systeem dat u de mogelijkheid geeft om de toepassing of toepassingen waarmee een bestandstype wordt geopend kan worden aangepast naar uw eigen voorkeur. Voor meer informatie kiest u <menuchoice
 ><guimenu
 >Instellingen</guimenu
 ><guimenuitem
->Konqueror instellen...</guimenuitem
+>Konqueror instellen…</guimenuitem
 ></menuchoice
 > in de menubalk en vervolgens <guilabel
 >Bestandsassociaties</guilabel
@@ -2092,7 +1966,7 @@ find your way around the file system.</para>
 ><guimenu
 >Hulpmiddelen</guimenu
 ><guimenuitem
->Shellcommando uitvoeren...</guimenuitem
+>Shellcommando uitvoeren…</guimenuitem
 ></menuchoice
 > (<keycombo action="simul"
 >&Ctrl;<keycap
@@ -2105,7 +1979,7 @@ find your way around the file system.</para>
 ><guimenu
 >Hulpmiddelen</guimenu
 ><guimenuitem
->Shellcommando uitvoeren...</guimenuitem
+>Shellcommando uitvoeren…</guimenuitem
 ></menuchoice
 > (<keycombo action="simul"
 >&Ctrl;<keycap
@@ -2141,7 +2015,6 @@ find your way around the file system.</para>
 </chapter>
 
 <chapter id="browser">
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -2163,57 +2036,6 @@ find your way around the file system.</para>
 >Surfen naar www.konqueror.org</phrase>
 </textobject>
 </mediaobject>
-<!--FIXME rm this sect?-->
-<sect1 id="conn-inet">
-<title
->Verbinding maken met het internet</title>
-
-<para
->Wanneer u eenmaal verbonden bent met het internet kunt u met &konqueror; net zo makkelijk het web doorbladeren als met een gewone browser. Typ gewoon een &URL; in de <guilabel
->locatiebalk</guilabel
-> gevolgd door <keysym
->Enter</keysym
-> en u bent al onderweg!</para>
-
-<itemizedlist>
-<listitem
-><para
->Wanneer u gebruik maakt van een inbelverbinding, kunt u gebruik maken van &kppp; of een soortgelijk programma om een verbinding te maken.</para
-></listitem>
-
-<listitem
-><para
->Indien uw computer verbonden is met een Local Area Network (<acronym
->LAN</acronym
->) dat via een proxy-server verbonden is met het internet, dan dient u &konqueror; daarop in te stellen. Deze instelling kunt u doen in de pagina <menuchoice
-><guimenu
->Webbrowsen</guimenu
-> <guimenuitem
->Proxy</guimenuitem
-> </menuchoice
-> van de dialoog <menuchoice
-><guimenu
-> Instellingen</guimenu
-><guimenuitem
->Konqueror instellen...</guimenuitem
-></menuchoice
->.</para
-></listitem>
-
-<listitem
-><para
->Wanneer u een breedbandverbinding hebt zal uw internetprovider waarschijnlijk een externe modem geleverd hebben. Dit hebt u nodig om een ethernet-verbinding op te zetten met uw computer. Helaas hangt het instellen van uw modem af van uw internetprovider en uw Linux-distributie. Sommige providers verbinden hun klanten door middel van een proxy-server. In dit geval moet u &konqueror; daarop instellen om hier gebruik van te maken. Het kan handig zijn om de archieven van de mailing lijsten van uw Linux te doorzoeken voor meer hulp en informatie.</para>
-</listitem>
-</itemizedlist>
-
-<note
-><para
->Een foutmelding zoals <errorname
->Onbekende host</errorname
-> betekent meestal dat &konqueror; geen verbinding kon maken met het internet of dat u geen geldig &URL; heeft ingevoerd.</para
-></note>
-
-</sect1>
 
 <sect1 id="surf">
 <title
@@ -2235,9 +2057,7 @@ find your way around the file system.</para>
 ></guiicon
 > <guibutton
 >Ga naar</guibutton
-> aan de rechterzijde van de locatiebalk. &konqueror; zal de pagina laden en weergeven. Wanneer u een pagina al eerder bezocht heeft, kan &konqueror; automatisch de tekst aanvullen om het &URL; sneller in te voeren. &konqueror; maakt het zoeken met zoekmachines gemakkelijker door <link linkend="enhanced-browsing"
-> Webkoppelingen</link
-> te gebruiken.</para>
+> aan de rechterzijde van de locatiebalk. &konqueror; zal de pagina laden en weergeven. Wanneer u een pagina al eerder bezocht heeft, kan &konqueror; automatisch de tekst aanvullen om het &URL; sneller in te voeren. &konqueror; maakt het zoeken met zoekmachines gemakkelijker door Webzoeksleutelwoorden te gebruiken.</para>
 
 <para
 >Klik met de <mousebutton
@@ -2317,20 +2137,7 @@ find your way around the file system.</para>
 > en <keysym
 >PgDn</keysym
 > gebruiken.</para>
-<para
->Als u een webpagina wilt lezen gebruik dan de automatische mogelijkheid van doorschuiven van &konqueror;. Start het automatisch doorschuiven met <keycombo action="simul"
->&Shift;<keysym
->Down</keysym
-></keycombo
-> of <keycombo action="simul"
->&Shift;<keysym
->Up</keysym
-></keycombo
->. Gebruik daarna deze toetsen om de schuifsnelheid te vergroten of te verkleinen. U kunt automatisch schuiven tijdelijk starten of stoppen door de &Shift;-toets in te drukken; elke andere knop indrukken schakelt deze functie uit. </para>
-<para
->Automatisch schuiven werkt alleen in de weergavemodus <guimenuitem
->KHTML</guimenuitem
->. </para>
+
 <para
 >Wanneer u het laden van een pagina wilt stoppen drukt u op &Esc;, gebruikt u de werkbalkknop <guibutton
 >Stoppen</guibutton
@@ -2405,7 +2212,7 @@ find your way around the file system.</para>
 ><guimenu
 >Instellingen</guimenu
 ><guimenuitem
->Konqueror instellen...</guimenuitem
+>Konqueror instellen…</guimenuitem
 ></menuchoice
 >, zullen koppelingen geopend worden in een nieuw tabblad indien ze met de middelste muisknop zijn aangeklikt. Wanneer u &Shift; ingedrukt houdt bij het klikken met de middelste muisknop zal het tabblad op de achtergrond geopend worden.</para>
 
@@ -2530,11 +2337,11 @@ find your way around the file system.</para>
 
 <sect1 id="enhanced-browsing">
 <title
->Websnelkoppelingen</title
+>Webzoektrefwoorden</title
 > 
 
 <para
->Wanneer &konqueror;s webkoppelingen aanstaan, kunt u onmiddellijk zoeken bij een zoekmachine zonder eerst naar die site te bezoeken.</para
+>Wanneer de functie van &konqueror; webzoeksleutelwoorden aanstaan, kunt u onmiddellijk zoeken bij een zoekmachine zonder eerst die site te bezoeken.</para
 > <para
 >U kunt bijvoorbeeld <userinput
 >gg:konqueror</userinput
@@ -2544,10 +2351,14 @@ find your way around the file system.</para>
 >Google</trademark
 > gaat dan zoeken naar webpagina's die het woord &konqueror; bevatten.</para>
 <para
->Om te zien welke websnelkoppelingen beschikbaar zijn en misschien uw eigen toevoegen, open dan de module <ulink url="help:/kcontrol/webshortcuts/"
->Websnelkoppelingen</ulink
-> in the &systemsettings;-categorie <guilabel
-> Werkruimte</guilabel
+>Om te zien welke webzoeksleutelwoorden er allemaal zijn of om webzoeksleutelwoorden toe te voegen, gaat u naar <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Konqueror configureren…</guimenuitem
+></menuchoice
+> en opent u de pagina <guilabel
+>Webzoeksleutelwoorden</guilabel
 >.</para>
 
 </sect1>
@@ -2641,13 +2452,13 @@ strings.</para
 ><guimenu
 >Bestand</guimenu
 ><guimenuitem
->Opslaan als...</guimenuitem
+>Opslaan als…</guimenuitem
 ></menuchoice
 > om dat te doen. Wanneer de pagina frames bevat, wordt de optie <menuchoice
 ><guimenu
 >Bestand</guimenu
 ><guimenuitem
->Frame opslaan als...</guimenuitem
+>Frame opslaan als…</guimenuitem
 ></menuchoice
 > actief. U moet wel eerst met de <mousebutton
 >linker</mousebutton
@@ -2658,7 +2469,7 @@ strings.</para
 ><guimenu
 >Bestand</guimenu
 ><guimenuitem
->Achtergrondafbeelding opslaan als...</guimenuitem
+>Achtergrondafbeelding opslaan als…</guimenuitem
 ></menuchoice
 >.</para>
 
@@ -2666,14 +2477,14 @@ strings.</para
 >Maar als u alleen dat geweldige plaatje wilt opslaan van de allerlaatste Ferrari, klik er dan met de <mousebutton
 >rechter</mousebutton
 >muisknop op en kies in het context-menu <guimenuitem
->Afbeelding opslaan als...</guimenuitem
+>Afbeelding opslaan als…</guimenuitem
 >. Houd rekening met de auteursrechten van de eigenaar, vraag toestemming voordat u afbeeldingen gaat gebruiken voor andere doeleinden dan het bekijken ervan op uw eigen computer.</para>
 
 <para
 >Om een bestand (bijvoorbeeld een plaatje) achter een koppeling op uw computer op te kunnen slaan klikt u met de <mousebutton
 >rechter</mousebutton
 >muisknop op die koppeling en klikt u op <guimenuitem
->Koppeling opslaan als...</guimenuitem
+>Koppeling opslaan als…</guimenuitem
 >. Alleen de basis <acronym
 >HTML</acronym
 >-code of vergelijkbare bestanden (het plaatje) zal worden opgeslagen.</para>
@@ -2697,12 +2508,12 @@ strings.</para
 ><guimenu
 >Bestand</guimenu
 > <guimenuitem
->Afdrukken...</guimenuitem
+>Afdrukken…</guimenuitem
 ></menuchoice
 >, <guimenuitem
 >Frame afdrukken</guimenuitem
 > of met de werkbalkknop <guiicon
->Afdrukken...</guiicon
+>Afdrukken…</guiicon
 >.</para>
 
 </sect1>
@@ -2814,7 +2625,6 @@ OverridenPorts=CommaSeparatedListOfAllowedPorts
 </chapter>
 
 <chapter id="path-complete">
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -2880,7 +2690,7 @@ OverridenPorts=CommaSeparatedListOfAllowedPorts
 >Enter</keysym
 > om het zichtbare URL-adres te openen.</para
 ></listitem>
- </varlistentry>
+</varlistentry>
 
 <varlistentry>
 <term
@@ -2974,7 +2784,7 @@ Text Completion function can be viewed and edited in the <guilabel
 >Bladwijzers gebruiken</title>
 
 <para
->Hoewel u de bladwijzers kunt gebruiken om de locaties van uw bestanden en mappen vast te leggen, komen ze het meest van pas bij het surfen op internet, zodat u een lijst van nuttige webpagina's kunt maken.</para>
+>Hoewel u de bladwijzers van &konqueror; kunt gebruiken om de locaties van uw bestanden en mappen vast te leggen, komen ze het meest van pas bij het surfen op internet, zodat u een lijst van nuttige webpagina's kunt maken.</para>
 
 <para
 >Om het menu <guimenu
@@ -3013,7 +2823,7 @@ Text Completion function can be viewed and edited in the <guilabel
 ><guimenu
 >Bladwijzers </guimenu
 ><guimenuitem
->Nieuwe bladwijzermap...</guimenuitem
+>Nieuwe bladwijzermap…</guimenuitem
 ></menuchoice
 >. Om een bladwijzer in een submap te plaatsen in plaats van de hoofdmap bladert u eerst naar die map en drukt u dan op <guimenu
 >Bladwijzer toevoegen</guimenu
@@ -3063,7 +2873,7 @@ disable sidebar subdir, the concept will have to be rethought
 
 <para
 >The Sidebar appears as a separate view at the left of 
-&konqueror;'s window. It can be invoked with <menuchoice
+&konqueror;’s window. It can be invoked with <menuchoice
 ><guimenu
 >Settings
 </guimenu
@@ -3089,7 +2899,7 @@ toggled on and off with the <keycap
 >It contains a number of tabbed pages; <mousebutton
 >left</mousebutton
 > 
-click on a tab's icon to view that page. <mousebutton
+click on a tab’s icon to view that page. <mousebutton
 >Left</mousebutton
 > 
 clicking on the icon for the visible page will collapse the Sidebar 
@@ -3146,7 +2956,7 @@ on any entry in the History page also gives you the option of choosing
 whether the entire history is sorted by name or by date.</para>
 <para
 >Selecting <guimenuitem
->Preferences...</guimenuitem
+>Preferences…</guimenuitem
 > from this pop up 
 menu brings up the <guilabel
 >History Sidebar</guilabel
@@ -3213,11 +3023,11 @@ new ones just as you would make any other subfolder. The items within
 these folders are held as <literal role="extension"
 >.desktop</literal
 > files 
-and can be created with &konqueror;'s <menuchoice
+and can be created with &konqueror;’s <menuchoice
 ><guisubmenu
 >Create New</guisubmenu>
 <guimenuitem
->Link to Location (URL)...</guimenuitem
+>Link to Location (URL)…</guimenuitem
 ></menuchoice
 > option in the 
 <guimenu
@@ -3238,7 +3048,7 @@ and can be created with &konqueror;'s <menuchoice
 > tree has the path <filename
 class="directory"
 >/</filename
->, and is the base folder of your system's
+>, and is the base folder of your system’s
 local files. If you expand the <quote
 >Root</quote
 > folder you will find 
@@ -3301,7 +3111,7 @@ The easiest way to add a folder to the <guilabel
 drag it and drop it in the panel. Moreover, you can click inside the panel with
 the &RMB; and choose <menuchoice
 ><guimenuitem
->Add Entry...</guimenuitem
+>Add Entry…</guimenuitem
 ></menuchoice>
 from the context menu.
 </para>
@@ -3461,8 +3271,8 @@ as described above.</para>
 
 </chapter>
 -->
-<chapter id="save-settings">
 
+<chapter id="save-settings">
 <chapterinfo>
 <authorgroup>
 <author
@@ -3481,7 +3291,7 @@ as described above.</para>
 ><guimenu
 >Beeld</guimenu
 ><guimenuitem
->Weergave-eigenschappen aanpassen...</guimenuitem
+>Weergave-eigenschappen aanpassen…</guimenuitem
 ></menuchoice
 >, wijzig de <guimenu
 >Beeld</guimenu
@@ -3512,7 +3322,6 @@ as described above.</para>
 </chapter>
 
 <chapter id="plugins">
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -3526,38 +3335,6 @@ as described above.</para>
 <title
 >Plug-ins</title>
 
-<!-- 
-adblock from baseapps+extragear
-Show all blockable html elements
-
-akregator
-This works on KHTMLPart and allows you to add feeds to Akregator directly from Konqueror.
-
-konq plugins in other modules
-kdeutils 
-  filelight
-  ark?
-
-kdebase apps
-  kttsdplugin (browser mode ?)
-  shellcmdplugin (file manager mode)
-  
-kdenetwork
-  Download Manager kget (browser mode)
-
-kdepim
-  Konqueror Feed Icon akregator
-  
-extragear/network
-  Konqueror Choqok Plugin
-
-extragear/base
-  Nepomuk-Webminer Plugin
-
-playground/utils  
-  Userscript (Grease Monkey) Support khtml_userscript
--->
-
 <sect1 id="konq-plugin">
 <title
 >&konqueror;-plug-ins</title>
@@ -3570,32 +3347,25 @@ playground/utils
 ><guimenu
 >Instellingen</guimenu
 ><guimenuitem
->Extensies instellen...</guimenuitem
+>Extensies instellen…</guimenuitem
 ></menuchoice
 > om en dialoog te openen met alle geïnstalleerde plug-ins en selecteer diegene die u nodig hebt. Alle plug-ins zijn toegankelijk in het menu <guimenu
 >Hulpmiddelen</guimenu
 >.</para>
 
 <para
->Alleen plug-ins van toepassing op de huidige modus (bestandsbeheerder of browser in weergave KHTML/WebEngine) worden in de dialoog getoond.</para>
+>Alleen plug-ins van toepassing op de huidige modus (bestandsbeheerder of browser) worden in de dialoog getoond.</para>
 
 <variablelist>
 <title
 >Browsermodus</title>
-<!-- 
-FIXME 16.12
-KHTML:  Auto Refresh, HTML Settings, Translate (disabled), Document Relations, Search Bar
-kwebkitpart for kf5 in extragear/base in branch frameworks
-WebKit only HTML Settings and Translate (disabled)
-WebEngine -> no extensions
--->
-<varlistentry
-> <!-- disabled here, why?-->
+
+<varlistentry>
 <term
 >Webpagina vertalen</term>
 <listitem
 ><para
->Deze plug-in gebruikt de machinale vertaalservice geleverd door <ulink url="http://translate.google.com/"
+>Deze plug-in gebruikt de machinale vertaalservice geleverd door <ulink url="https://translate.google.com/"
 >Google Translate</ulink
 > om de huidige <acronym
 >HTML</acronym
@@ -3614,8 +3384,7 @@ WebEngine -> no extensions
 >Vertaling door een machine is nooit foutloos! Google zal hoogstens een ruwe vertaling geven. Wanneer u minder geluk hebt zal er een lachwekkende vertaling uitkomen. Baseer belangrijke informatie niet op een pagina die door Google is vertaald zonder dat u werkelijk nagaat of de vertaling correct was.</para>
 </important>
 
-<note
-> 
+<note>
 <para
 >Het is alleen mogelijk om webpagina's te vertalen die op het World Wide Web staan. Om andere teksten te vertalen dient u naar de site van Google zelf te gaan, daar kunt u de tekst plakken die u wilt vertalen.</para>
 </note>
@@ -3624,7 +3393,7 @@ WebEngine -> no extensions
 
 <varlistentry>
 <term
->HTML-instellingen (KHTML weergave)</term>
+>HTML-instellingen</term>
 <listitem
 ><para
 >Selecteer <menuchoice
@@ -3635,8 +3404,10 @@ WebEngine -> no extensions
 ></menuchoice
 > om enkele HTML-instellingen aan of uit te zetten zonder dat u naar het venster <guimenu
 >Instellingen</guimenu
-> hoeft te gaan. </para>
-<variablelist>
+> hoeft te gaan.</para
+></listitem>
+</varlistentry>
+
 <varlistentry>
 <term
 ><guimenuitem
@@ -3740,108 +3511,6 @@ WebEngine -> no extensions
 </varlistentry>
 </variablelist>
 
-</listitem>
-</varlistentry>
-<!--FIXME not in kf5
-<varlistentry>
-<term
->User Agent Changer</term>
-<listitem
-><para
->Select <menuchoice
-><guimenu
->Tools</guimenu
-><guisubmenu
->Change
-Browser Identification</guisubmenu
-></menuchoice
-> to get a menu that allows
-you to change the User Agent string without going through the 
-<guimenu
->Settings</guimenu
-> dialog procedure.
-</para>
-<para
->The plugin allows you to
-change the Browser and Operating System identification on a
-domain-by-domain basis. This is useful when browsing websites that
-limit access to those using a particular web browser.</para>
-<variablelist>
-<varlistentry>
-<term
-><guimenuitem
->Default Identification</guimenuitem
-></term>
-<listitem
-><para
->The default User Agent header for &konqueror; is Mozilla/5.0(compatible;Konqueror/4.7)(KHTML/4.7, like Gecko).  If you come across a site that refuses this browser access, change your User Agent to one of the options below.</para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
->Browser submenu</term>
-<listitem
-><para>
-The following menu items show a list of popular browsers such as <guimenuitem
->Firefox</guimenuitem
->,
-<guimenuitem
->Internet Explorer</guimenuitem
->, <guimenuitem
->Netscape Navigator</guimenuitem
->,
-<guimenuitem
->Opera</guimenuitem
->, <guimenuitem
->Other</guimenuitem
->, and <guimenuitem
->Safari</guimenuitem
->.
-</para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guimenuitem
->Apply To Entire Site</guimenuitem
-></term>
-<listitem
-><para
->This option allows you to specify that the defined User Agent applies across every page on the site you are visiting.</para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guimenuitem
->Configure</guimenuitem
-></term>
-<listitem
-><para
->Selecting <guimenuitem
->Configure</guimenuitem
-> opens the settings dialog and allows you to fine tune the amount of information you wish to reveal about the browser and operating system being used.</para
-></listitem>
-</varlistentry>
-</variablelist>
-
-</listitem>
-</varlistentry>
--->
-
-<varlistentry>
-<term
->Aleen verversen (alleen KHTML weergave)</term>
-<listitem
-><para
->Dit werkt op elk alleen-lezen deel (het plugt echter alleen in in khtmlpart). Het laat u &konqueror; vertellen om een pagina automatisch na een specifieke periode te vernieuwen. Dit is nuttig voor dingen zoals nieuwspagina's en zou erg leuk zijn voor mensen die Kiosk-modus gebruiken </para
-></listitem>
-</varlistentry>
-
-</variablelist>
-
 <variablelist>
 <title
 >Bestandsbeheermodus</title>
@@ -3897,7 +3566,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 <term
 >In het dialoogvenster "Uiterlijk" kunt u het uiterlijk van de galerijpagina instellen.</term>
 <listitem>
-  
+
 <screenshot>
 <screeninfo
 >Schermafdruk dialoogvenster "Uiterlijk"</screeninfo>
@@ -4022,7 +3691,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 <term
 >In dit dialoogvenster kunt u kiezen waar u de galerij wilt opslaan. U kunt hier ook instellen welke mappen gebruikt moeten worden.</term>
 <listitem>
-  
+
 <screenshot>
 <screeninfo
 >Schermafdruk dialoogvenster "Mappen"</screeninfo>
@@ -4083,7 +3752,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 <para
 >Het formaat van dit bestand is:</para>
 <programlisting
-># dit is een toelichting, regels beginnend met '#' worden genegeerd
+># dit is een toelichting, regels beginnend met “#” worden genegeerd
 BESTANDSNAAM1:
 Beschrijving
 
@@ -4107,7 +3776,7 @@ Beschrijving
 <term
 >U kunt dit dialoogvenster gebruiken om de eigenschappen van de miniatuurafbeeldingen in de galerij aan te passen.</term>
 <listitem>
-  
+
 <screenshot>
 <screeninfo
 >Schermafdruk dialoogvenster "Miniaturen"</screeninfo>
@@ -4177,8 +3846,8 @@ Beschrijving
 >Zoekbalk</term>
 <listitem
 ><para
->Levert u een tekstvak om gemakkelijk toegang te geven tot zoekmachines zoals Google. Klikken op het pictogram links van het zoekvak opent een menu om verschillende zoekmachines te selecteren en te in te schakelen en hun <ulink url="help:/kcontrol/webshortcuts/index.html"
->Websneltoetsen</ulink
+>Levert u een tekstvak om gemakkelijk toegang te geven tot zoekmachines zoals Google. Klikken op het pictogram links van het zoekvak opent een menu om verschillende zoek-engines te openen en de <guilabel
+>Webzoeksleutelwoorden</guilabel
 > te configureren. </para>
 </listitem>
 </varlistentry>
@@ -4199,9 +3868,7 @@ imagerotation context menu Actions -> Convert to -> JPEG,PNG,GIF,TIFF
 Additional Download Manager from KGet
 -->
 </variablelist>
-
 </sect1>
-
 </chapter>
 
 <chapter id="view-extensions">
@@ -4209,13 +3876,6 @@ Additional Download Manager from KGet
 <title
 >Weergavemodusextensies</title>
 
-<!--filemanager mode:
-default Icons/Details/Compact (Dolphin), File Size View (konq-plugins)
-additional Terminal Emulator (Konsole), (File Replace View (kdewebdev), )Cervisia (kdesdk), SVN Client, Radial Map (Filelight-kdeutils) and more
-browser mode:
-default KHTML, Embedded Advanced Text Editor
-additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
-  -->
 <para
 >&konqueror; biedt extra weergaven in <menuchoice
 ><guimenu
@@ -4254,7 +3914,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 </sect1info>
 
 <title
->&fsview; - de bestandssysteemweergave</title>
+>&fsview; — de bestandssysteemweergave</title>
 <sect2>
 <title
 >Inleiding</title>
@@ -4263,7 +3923,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 >De &fsview;-plugin voor &konqueror; is een andere weergavemodus voor lokale mappen. Het kan gezien worden als een alternatief voor de diverse weergaven waarmee u door het systeem kunt bladeren.</para>
 
 <para
->De unieke eigenschap van &fsview; is de mogelijkheid om complete geneste mapstructuren te tonen, waarbij gebruik wordt gemaakt van een zogenaamde boomstructuur voor de grafische voorstelling.  Boomstructuren maken het mogelijk om de afmeting van objecten in geneste structuren te tonen: elk object wordt voorgesteld door een rechthoek met een oppervlakte die evenredig is aan diens afmeting. De afmeting dient de eigenschap te bezitten dat de som van de afmetingen van de subgebieden van een bepaald object gelijk of kleiner is dan de afmeting van het object zelf.</para>
+>De unieke eigenschap van &fsview; is de mogelijkheid om complete geneste mapstructuren te tonen, waarbij gebruik wordt gemaakt van een zogenaamde boomstructuur voor de grafische voorstelling. Boomstructuren maken het mogelijk om de afmeting van objecten in geneste structuren te tonen: elk object wordt voorgesteld door een rechthoek met een oppervlakte die evenredig is aan diens afmeting. De afmeting dient de eigenschap te bezitten dat de som van de afmetingen van de subgebieden van een bepaald object gelijk of kleiner is dan de afmeting van het object zelf.</para>
 
 <para
 >In &fsview; worden de afmetingen van de mappen bepaald door de totale grootte van de subitems. Op deze manier kunt u grote bestanden in mappen terugvinden door gewoon de grote rechthoeken op te zoeken. &fsview; kan eigenlijk gezien worden als een grafische weergave van het commando <command
@@ -4373,12 +4033,10 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 <para
 >Copyright Josef Weidendorfer, onder de GPL V2-licentie.</para>
 </sect2>
-
 </sect1>
 </chapter>
 
 <chapter id="config">
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -4413,7 +4071,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Instellingen</guimenu
 ><guimenuitem
-> &konqueror; instellen...</guimenuitem
+> &konqueror; instellen…</guimenuitem
 ></menuchoice
 > te gaan komt er een dialoogvenster in beeld waar u de meeste aspecten van het gedrag van &konqueror; in kunt instellen.</para
 > 
@@ -4431,7 +4089,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 <listitem
 ><para
 ><ulink url="help:/kcontrol/performance/index.html"
->Prestatie</ulink
+>KDE prestaties</ulink
 >: Hier kunt u instellingen kiezen die de prestaties van &konqueror; verbeteren</para
 ></listitem>
 <listitem
@@ -4439,12 +4097,6 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><ulink url="help:/kcontrol/bookmarks/index.html"
 >Bladwijzers</ulink
 >: De webpagina's voor bladwijzers instellen</para
-></listitem>
-<listitem
-><para
-><ulink url="help:/kcontrol/filemanager/index.html"
->Bestandsbeheer</ulink
->: Hier kunt u het uiterlijk van Konqueror als bestandsbeheerder instellen</para
 ></listitem>
 <listitem
 ><para
@@ -4533,8 +4185,8 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 <listitem
 ><para
 ><ulink url="help:/kcontrol/khtml-java-js/index.html"
->Java &amp; JavaScript</ulink
->: Hier kunt u het gedrag van Java en JavaScript instellen</para
+>JavaScript</ulink
+>: Hier kunt u het gedrag van JavaScript configureren</para
 ></listitem>
 </itemizedlist>
 <para
@@ -4544,11 +4196,9 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 >Wat is dit?</link
 >.</para>
 </sect1>
-
 </chapter>
 
 <chapter id="commands">
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -4623,7 +4273,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Bewerken</guimenu
 ><guimenuitem
->Zoeken...</guimenuitem
+>Zoeken…</guimenuitem
 > </menuchoice
 > zal niet beschikbaar zijn wanneer u de inhoud van een map aan het bekijken bent.</para>
 
@@ -4697,7 +4347,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Bestand</guimenu
 > <guimenuitem
->Locatie openen...</guimenuitem
+>Locatie openen…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -4718,7 +4368,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Bestand</guimenu
 > <guimenuitem
->Bestand openen...</guimenuitem
+>Bestand openen…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -4748,7 +4398,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Bestand</guimenu
 > <guimenuitem
->Koppelingsadres verzenden...</guimenuitem
+>Koppelingsadres verzenden…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -4763,7 +4413,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Bestand</guimenu
 > <guimenuitem
->Bestand verzenden...</guimenuitem
+>Bestand verzenden…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -4772,36 +4422,20 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ></listitem>
 </varlistentry>
 
-
 <varlistentry>
 <term
 ><menuchoice
 > <guimenu
 >Bestand</guimenu
 > <guimenuitem
->Achtergrondafbeelding opslaan als...</guimenuitem
-></menuchoice
-> (Browsermodus - KHTML weergave)</term>
-<listitem>
-<para
->Dit is alleen van toepassing wanneer u een pagina bekijkt met een achtergrondafbeelding. Opent de dialoog <guilabel
->opslaan als</guilabel
-> waarmee u de afbeelding kunt opslaan op uw eigen computer.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <guimenu
->Bestand</guimenu
-> <guimenuitem
->Opslaan als...</guimenuitem
+>Opslaan als…</guimenuitem
 ></menuchoice
 > (Browsermodus)</term>
 <listitem
 ><para
->Dit is alleen van toepassing wanneer u een webpagina bekijkt. Dit opent een dialoogvenster waarmee u een kopie van de pagina kunt opslaan op uw computer (alleen de HTML-code).</para
+>Dit is alleen van toepassing wanneer u een document of webpagina bekijkt en het dialoogvenster<guilabel
+>Opslaan als…</guilabel
+> gebruikt om een kopie op te slaan op uw computer.</para
 ></listitem>
 </varlistentry>
 
@@ -4811,13 +4445,13 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Bestand</guimenu
 > <guimenuitem
->Frame opslaan als...</guimenuitem
+>Frame opslaan als…</guimenuitem
 ></menuchoice
 > (Browsermodus)</term>
 <listitem
 ><para
 >Gelijk aan <guimenuitem
->Opslaan als...</guimenuitem
+>Opslaan als…</guimenuitem
 >, maar dan voor een website dat frames gebruikt.</para
 ></listitem>
 </varlistentry>
@@ -4834,7 +4468,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Bestand</guimenu
 > <guimenuitem
->Afdrukken...</guimenuitem
+>Afdrukken…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -4864,7 +4498,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Bestand</guimenu
 > <guimenuitem
->Openen met...</guimenuitem
+>Openen met…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -5009,7 +4643,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Bewerken</guimenu
 > <guimenuitem
->Klembordinhoud plakken...</guimenuitem
+>Klembordinhoud plakken…</guimenuitem
 ></menuchoice
 > of <menuchoice
 ><guimenu
@@ -5029,7 +4663,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenuitem
 >x items plakken</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Plak de huidig gekopieerde/geknipte item(s) in de huidige map. Als het klembord geen bestanden of mappen bevat, wordt de klembordinhoud (zoals tekst of afbeeldingen) in een nieuw bestand geplakt.</para
@@ -5069,11 +4703,11 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guisubmenu
 >Nieuwe aanmaken</guisubmenu
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Maakt een nieuwe object aan (zoiets als een map of een tekstbestand) in de huidige map. Kijk voor meer details bij de sectie <link linkend="making"
->Nieuw aanmaken...</link
+>Nieuw aanmaken…</link
 >.</para
 ></listitem>
 </varlistentry>
@@ -5090,11 +4724,11 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenuitem
 >Hernoemen</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Hiermee kunt u een bestand of map een nieuwe naam geven zonder dat u het dialoogvenster <guimenuitem
->Eigenschappen...</guimenuitem
+>Eigenschappen…</guimenuitem
 > hoeft te openen. </para
 ></listitem>
 </varlistentry>
@@ -5111,7 +4745,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenuitem
 >Naar prullenbak verplaatsen</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Verplaatst de geselecteerde items naar de prullenbak.</para
@@ -5132,7 +4766,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenuitem
 >Verwijderen</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Verwijdert de geselecteerde items.</para
@@ -5145,9 +4779,9 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Bewerken</guimenu
 > <guimenuitem
->Bestandstype bewerken...</guimenuitem
+>Bestandstype bewerken…</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Opent het dialoogvenster <guilabel
@@ -5168,9 +4802,9 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Bewerken</guimenu
 > <guimenuitem
->Eigenschappen...</guimenuitem
+>Eigenschappen…</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Toont de eigenschappendialoog van het/de nu geselecteerde item(s).</para
@@ -5191,13 +4825,13 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guisubmenu
 >Selectie</guisubmenu
 > <guimenuitem
->Overeenkomende items selecteren...</guimenuitem
+>Overeenkomende items selecteren…</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Samen met de items <guimenuitem
->Overeenkomende items deselecteren...</guimenuitem
+>Overeenkomende items deselecteren…</guimenuitem
 >, <guimenuitem
 >Alles deselecteren</guimenuitem
 > en <guimenuitem
@@ -5222,13 +4856,13 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guisubmenu
 >Selectie</guisubmenu
 > <guimenuitem
->Overeenkomende items deselecteren...</guimenuitem
+>Overeenkomende items deselecteren…</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Deselecteert bestanden op dezelfde manier als bij <guimenuitem
->Selecteren...</guimenuitem
+>Selecteren…</guimenuitem
 >.</para
 ></listitem>
 </varlistentry>
@@ -5249,7 +4883,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenuitem
 >Alles selecteren</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Selecteert alle items in een map. U kunt ze dan <guimenuitem
@@ -5272,7 +4906,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenuitem
 >Alles deselecteren</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Deselecteert alle geselecteerde bestanden en mappen.</para
@@ -5295,7 +4929,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenuitem
 >Selectie omkeren</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Keert de huidige selectie om.</para
@@ -5314,7 +4948,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Bewerken</guimenu
 > <guimenuitem
->Zoeken...</guimenuitem
+>Zoeken…</guimenuitem
 ></menuchoice
 > (Browsermodus)</term>
 <listitem
@@ -5322,49 +4956,6 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 >Toont de zoekbalk onderaan het huidige venster. Begin met typen om een tekst in een tekstpagina, die u aan het bekijken bent, te vinden of in een &HTML; pagina.</para
 ></listitem>
 </varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <shortcut
-><keycap
->F3</keycap
-></shortcut
-> <guimenu
->Bewerken</guimenu
-> <guimenuitem
->Volgende zoeken</guimenuitem
-></menuchoice
-> (Browsermodus - KHTML-weergave)</term>
-<listitem
-><para
->Zoekt naar de volgende overeenkomst van een tekenreeks op een tekst- of &HTML;-pagina.</para
-></listitem
-> 
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <shortcut
-> <keycombo action="simul"
->&Shift;<keycap
->F3</keycap
-></keycombo
-> </shortcut
-> <guimenu
->Bewerken</guimenu
-> <guimenuitem
->Vorige zoeken</guimenuitem
-></menuchoice
-> (Browsermodus - KHTML-weergave)</term>
-<listitem
-><para
->Zoek naar de vorige overeenkomst van een tekenreeks op een tekst- of &HTML;-pagina.</para
-></listitem
-> 
-</varlistentry>
-
 </variablelist>
 
 </sect2>
@@ -5387,8 +4978,6 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 <listitem
 ><para
 >In browsermodus bevat dit submenu items om ingebedde weergaven zoals <guimenuitem
->KHTML</guimenuitem
->, <guimenuitem
 >WebEngine</guimenuitem
 >, <guimenuitem
 >Ingebedde geavanceerde tekstbewerker</guimenuitem
@@ -5480,40 +5069,6 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <shortcut
 ><keycombo action="simul"
 >&Ctrl;<keycap
->+</keycap
-></keycombo
-></shortcut
-> <guimenu
->Beeld</guimenu
-> <guimenuitem
->Tekens vergroten</guimenuitem
-></menuchoice
-> / <menuchoice
-> <shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
->-</keycap
-></keycombo
-></shortcut
-> <guimenu
->Beeld</guimenu
-> <guimenuitem
->Tekens verkleinen</guimenuitem
-></menuchoice
-> (Browsermodus - KHTML-weergave)</term>
-<listitem
-><para
->Gebruik deze om de tekengrootte van de tekst op de pagina te veranderen wanneer het lastig te lezen is. Het hangt helaas af van de opbouw van de webpagina hoe goed deze optie werkt.</para
-></listitem
-> 
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
 >U</keycap
 > </keycombo
 > </shortcut
@@ -5522,7 +5077,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenuitem
 >Documentbron tonen</guimenuitem
 ></menuchoice
-> (Browsermodus - KHTML weergave)</term>
+> (Browsermodus)</term>
 <listitem
 ><para
 >Opent de broncode van het document.</para>
@@ -5568,35 +5123,10 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenuitem
 >Zoom naar DPI</guimenuitem
 ></menuchoice
-> (Browsermodus - WebEngine-weergave)</term>
+> (Browsermodus)</term>
 <listitem
 ><para
 >Deze menu-items bieden verschillende acties om de grootte van de items in de pagina te wijzigen.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
->I</keycap
-> </keycombo
-> </shortcut
-> <guimenu
->Beeld</guimenu
-> <guimenuitem
->Documentinformatie tonen</guimenuitem
-></menuchoice
-> (Browsermodus - KHTML weergave)</term>
-<listitem
-><para
->Toont informatie over het document, zoals de titel, &URL; en &HTTP;-koppen die gebruikt werden bij het ophalen van het document.</para>
-<para
->Deze optie is alleen beschikbaar wanneer u een <acronym
->&HTML;</acronym
->-pagina bekijkt.</para>
 </listitem>
 </varlistentry>
 
@@ -5616,24 +5146,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > wordt hierbij aanbevolen.</para
 ></listitem>
 </varlistentry>
-<!-- what is this?
-<varlistentry>
-<term
-><menuchoice>
-<guimenu
->View</guimenu>
-<guimenuitem
->Use Stylesheet</guimenuitem
-></menuchoice
-> (Browser mode)</term>
-<listitem
-><para
->???Automatic Detection Basic Page Style KDE Stylesheet</para
-></listitem>
-</varlistentry>
-http://websvn.kde.org/?view=revision&revision=269436
--->
-<!--FIXME synced with Dolphin 16.04-->
+
 <varlistentry>
 <term
 ><menuchoice
@@ -5642,7 +5155,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guisubmenu
 >Sorteren op</guisubmenu
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 ><action
@@ -5669,7 +5182,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guisubmenu
 >Aanvullende Informatie</guisubmenu
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 ><action
@@ -5688,7 +5201,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenuitem
 >Voorbeeld</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 ><action
@@ -5705,7 +5218,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenuitem
 >In groepen tonen</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 ><action
@@ -5730,7 +5243,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenuitem
 >Verborgen bestanden tonen</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 ><action
@@ -5745,9 +5258,9 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenu
 >Beeld</guimenu
 > <guimenuitem
->Weergave-eigenschappen aanpassen...</guimenuitem
+>Weergave-eigenschappen aanpassen…</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 ><action
@@ -5867,7 +5380,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenuitem
 >Persoonlijke map</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 ><action
@@ -5884,7 +5397,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenuitem
 >Toepassingen</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Opent de map die alle snelkoppelingen naar uw toepassingen bevat.</para
@@ -5899,7 +5412,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenuitem
 >Netwerkmappen</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Netwerkmappen worden getoond in een speciale locatie van &konqueror; en &dolphin; een virtuele map genaamd. Meer informatie over hoe deze map te gebruiken vindt u in het <ulink url="help:/knetattach/index.html"
@@ -5914,30 +5427,9 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenu
 >Ga naar</guimenu
 > <guimenuitem
->Instellingen</guimenuitem
-></menuchoice
-> (Bestandsbeheerdermodus)</term>
-<listitem
-><para
->Een virtuele map openen met alle modules in &systemsettings; <guimenuitem
->Pictogrammen</guimenuitem
->, <guimenuitem
->Details</guimenuitem
-> of weergave in <guimenuitem
->Kolommen</guimenuitem
->. Selecteer een te tonen item in demodule voor instellingen in apart dialoogvenster.</para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <guimenu
->Ga naar</guimenu
-> <guimenuitem
 >Prullenbak</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Opent uw map <filename class="directory"
@@ -5954,7 +5446,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenuitem
 >Autostart</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Opent uw map <filename class="directory"
@@ -5980,7 +5472,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ></term>
 <listitem
 ><para
->Toont een boomstructuur van uw browsinggeschiedenis in een apart venster. </para
+>Toont een boomstructuur van uw browsinggeschiedenis in een apart venster.</para
 ></listitem>
 </varlistentry>
 
@@ -6074,7 +5566,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ><guimenu
 >Bladwijzers</guimenu
 > <guimenuitem
->Tabs bewaren als bladwijzermap...</guimenuitem
+>Tabs bewaren als bladwijzermap…</guimenuitem
 > </menuchoice
 ></term>
 <listitem>
@@ -6089,7 +5581,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ><guimenu
 >Bladwijzers</guimenu
 > <guimenuitem
->Nieuwe bladwijzermap...</guimenuitem
+>Nieuwe bladwijzermap…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -6104,7 +5596,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ><guimenu
 >Bladwijzers</guimenu
 > <guimenuitem
->Bladwijzers bewerken...</guimenuitem
+>Bladwijzers bewerken…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -6136,7 +5628,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenuitem
 >Terminal openen</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Opent een &konsole;-venster.</para
@@ -6155,9 +5647,9 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenu
 >Hulpmiddelen</guimenu
 > <guimenuitem
->Bestand zoeken...</guimenuitem
+>Bestand zoeken…</guimenuitem
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 >Opent de toepassing &kfind;.</para
@@ -6172,7 +5664,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guisubmenu
 >Externe tekenset selecteren</guisubmenu
 ></menuchoice
-> (Bestandsbeheerdermodus)</term>
+> (Modus Bestandsbeheer)</term>
 <listitem
 ><para
 ><action
@@ -6215,29 +5707,28 @@ http://websvn.kde.org/?view=revision&revision=269436
 >Opent een klein terminalvenster onderaan de hoofdweergave.</para
 ></listitem>
 </varlistentry>
-<!--
+
 <varlistentry>
 <term
-><menuchoice>
-<shortcut>
-<keycombo action="simul"
+><menuchoice
+><shortcut
+> <keycombo action="simul"
 ><keycap
 >F9</keycap
 ></keycombo
-></shortcut>
-<guimenu
->Settings</guimenu>
-<guimenuitem
->Show Sidebar</guimenuitem>
-</menuchoice
+></shortcut
+> <guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Zijbalk tonen</guimenuitem
+> </menuchoice
 ></term>
 <listitem
 ><para
->Toggles the display of the &konqueror; sidebar. See
-<xref linkend="sidebar"/>.</para
+>Toont/verbergt de weergave van de zijbalk van &konqueror;.</para
 ></listitem>
 </varlistentry>
--->
+
 <varlistentry>
 <term
 ><menuchoice
@@ -6271,7 +5762,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ><guimenu
 >Instellingen</guimenu
 > <guimenuitem
->Extensies instellen...</guimenuitem
+>Extensies instellen…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -6288,7 +5779,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ><guimenu
 >Instellingen</guimenu
 > <guimenuitem
->Spellingcontrole instellen...</guimenuitem
+>Spellingcontrole instellen…</guimenuitem
 > </menuchoice
 ></term>
 <listitem>
@@ -6345,7 +5836,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ></term>
 <listitem
 ><para
->Splitst het venster in twee delen: één aan de bovenzijde en één aan de onderzijde.</para
+>Venster splitsen in boven en onder.</para
 ></listitem>
 </varlistentry>
 
@@ -6366,7 +5857,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ></term>
 <listitem
 ><para
->Verwijdert het actieve deelventer.</para
+>Het actieve venter verwijderen.</para
 ></listitem>
 </varlistentry>
 
@@ -6644,16 +6135,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 >qtpaths --paths GenericCacheLocation</filename
 > bevat de cache van de browser.</para
 ></listitem>
-<!--
-<listitem
-><para
->The Sidebar uses the files and subfolders in <filename
->konqsidebartng</filename>
-in the folder <filename class="directory"
->qtpaths - -paths GenericConfigLocation</filename
-></para
-></listitem>
--->
+
 </itemizedlist>
 <para
 >Specifieke weergave-instellingen voor iedere map worden opgeslagen in de map zelf; namelijk in het bestand <literal role="extension"
@@ -6709,14 +6191,14 @@ in the folder <filename class="directory"
 <question
 ><para
 >Hoe zet ik mijn browsercache aan of uit en hoe wis ik hem?</para
-></question
-> <answer>
+></question>
+<answer>
 <para
 >In het venster dat u krijgt via <menuchoice
 ><guimenu
 >Instellingen</guimenu
 ><guimenuitem
->Konqueror instellen...</guimenuitem
+>Konqueror configureren…</guimenuitem
 ></menuchoice
 > kunt u in de dialoog <menuchoice
 ><guimenu
@@ -6725,25 +6207,6 @@ in the folder <filename class="directory"
 >Cache</guimenuitem
 > </menuchoice
 > de cache uitzetten, wissen, de grootte instellen en het cache-beleid wijzigen.</para>
-</answer>
-</qandaentry>
-
-<qandaentry>
-<question
-><para
->Hoe kan ik de door &konqueror; gebruikte tijdslimietwaarden veranderen bij het surfen?</para
-></question
-> <answer>
-<para
->In &systemsettings; categorie <guilabel
->Netwerk</guilabel
-> in de pagina <menuchoice
-><guimenu
->Instellingen</guimenu
-> <guimenuitem
->Verbindingsvoorkeuren</guimenuitem
-></menuchoice
->.</para>
 </answer>
 </qandaentry>
 
@@ -6767,7 +6230,7 @@ in the folder <filename class="directory"
 ><guimenu
 >Instellingen</guimenu
 ><guimenuitem
->Konqueror instellen</guimenuitem
+>Konqueror configureren…</guimenuitem
 ><guilabel
 >Algemeen</guilabel
 ></menuchoice
@@ -6790,7 +6253,6 @@ in the folder <filename class="directory"
 >In browsermodus start &konqueror; met de <guilabel
 >Home-pagina</guilabel
 >.</para>
-
 </answer>
 </qandaentry>
 
@@ -6802,27 +6264,18 @@ in the folder <filename class="directory"
 > 
 <answer>
 <para
->Bekijk dan eens <ulink url="https://konqueror.org/faq/"
-> https://konqueror.org/faq/</ulink
-> of <ulink url="https://konqueror.org/contact/"
-> https://konqueror.org/contact/</ulink
->.</para>
-<para
->Er is verdere informatie te vinden in de <ulink url="http://forum.kde.org/"
+>Er is verdere informatie te vinden in de <ulink url="https://discuss.kde.org/"
 >KDE-gemeenschapsforums</ulink
 > of op <ulink url="http://userbase.kde.org/Konqueror"
 >KDE Userbase-pagina van Konqueror</ulink
 >.</para>
 </answer>
 </qandaentry>
-
 </qandaset>
-
 </chapter>
 
 <chapter id="credits"
 > <!-- 4.11-->
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -6837,7 +6290,7 @@ in the folder <filename class="directory"
 >Dankbetuigingen en licentie</title>
 
 <para
->&konqueror;. Copyright 1999-2003, de &konqueror;-ontwikkelaars:</para>
+>&konqueror;. Copyright 1999-2025, de ontwikkelaars van &konqueror;:</para>
 
 <variablelist>
 
@@ -7219,7 +6672,7 @@ in the folder <filename class="directory"
 </variablelist>
 
 <para
->Documentatie copyright 2000-2003</para>
+>Copyright van de documentatie 2000-2025</para>
 
 <itemizedlist>
 <listitem
@@ -7234,7 +6687,6 @@ in the folder <filename class="directory"
 
 <para
 >Documentatie vernieuwd voor &kde; 3.2 door &Philip.Rodrigues; &Philip.Rodrigues.mail;.</para>
-
 <para
 >De documentatie voor &kde; 4.11 is nagelezen door David Palser <email
 >davidpalser179@btinternet.com</email
