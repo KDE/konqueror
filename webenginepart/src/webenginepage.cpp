@@ -889,6 +889,7 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
     WindowArgs wargs (m_windowArgs);
 
     KParts::ReadOnlyPart* newWindowPart = nullptr;
+    m_createNewWindow = false;
     emit part()->browserExtension()->browserCreateNewWindow(url, uargs, bargs, wargs, &newWindowPart);
     qCDebug(WEBENGINEPART_LOG) << "Created new window" << newWindowPart;
 
