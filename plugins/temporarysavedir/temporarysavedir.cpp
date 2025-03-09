@@ -74,7 +74,7 @@ TemporarySaveDirPlugin::TemporarySaveDirPlugin(QObject *parent, const KPluginMet
     m_core = w->property(s_temporarySaveDirProperty).value<TemporarySaveDirCore*>();
     if (!m_core) {
         m_core = new TemporarySaveDirCore(w);
-        w->setProperty(s_temporarySaveDirProperty, QVariant::fromValue(m_core));
+        w->setProperty(s_temporarySaveDirProperty, QVariant::fromValue(m_core.data()));
     } else {
         m_clearTemporarySaveDirectory->setEnabled(m_core->useTemporarySaveDir());
     }
