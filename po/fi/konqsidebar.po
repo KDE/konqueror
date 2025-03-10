@@ -1,94 +1,94 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+# SPDX-FileCopyrightText: 2025 Tommi Nieminen <translator@legisign.org>
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 00:41+0000\n"
-"PO-Revision-Date: 2025-02-24 19:26\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2025-03-01 17:46+0200\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-stable/messages/konqueror/konqsidebar.pot\n"
-"X-Crowdin-File-ID: 57205\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: bookmarks_module/bookmarks_module.cpp:273
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Bookmarks Sidebar Module"
-msgstr "书签侧边栏模块"
+msgstr "Kirjanmerkkien sivupaneelimoduuli"
 
 #: bookmarks_module/bookmarks_module.cpp:296
 #, kde-format
 msgctxt "@title:tab"
 msgid "Bookmarks"
-msgstr "书签"
+msgstr "Kirjanmerkit"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDefaultAction)
 #: history_module/history_dlg.ui:17
 #, kde-format
 msgid "Default action"
-msgstr "默认操作"
+msgstr "Oletustoiminto"
 
 #. i18n: ectx: property (text), widget (QLabel, lDefault)
 #: history_module/history_dlg.ui:23
 #, kde-format
 msgid "Default action when double clicking an URL"
-msgstr "双击 URL 时的默认操作"
+msgstr "Oletustoiminto verkko-osoitetta kaksoisnapsautettaessa"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbLimits)
 #: history_module/history_dlg.ui:36
 #, kde-format
 msgid "Limits"
-msgstr "限制"
+msgstr "Rajoitukset"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbExpire)
 #: history_module/history_dlg.ui:61
 #, kde-format
 msgid "URLs e&xpire after"
-msgstr "URL 过期时限(&X)"
+msgstr "Verkko-osoitteet vanhenevat"
 
 #. i18n: ectx: property (text), widget (QLabel, lEntries)
 #: history_module/history_dlg.ui:71
 #, kde-format
 msgid "Maximum &number of URLs:"
-msgstr "URL 最大数量(&N)："
+msgstr "&Verkko-osoitteiden enimmäismäärä:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbFonts)
 #: history_module/history_dlg.ui:87
 #, kde-format
 msgid "Custom Fonts For"
-msgstr "自定义字体于"
+msgstr "Mukautetut fontit"
 
 #. i18n: ectx: property (text), widget (QLabel, lbNewer)
 #: history_module/history_dlg.ui:102
 #, kde-format
 msgid "URLs newer than"
-msgstr "URL 新于"
+msgstr "Verkko-osoitteet, jotka ovat uudempia kuin"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnFontOlder)
 #. i18n: ectx: property (text), widget (QPushButton, btnFontNewer)
 #: history_module/history_dlg.ui:118 history_module/history_dlg.ui:138
 #, kde-format
 msgid "Choose Font..."
-msgstr "选择字体..."
+msgstr "Valitse fontti…"
 
 #. i18n: ectx: property (text), widget (QLabel, lbOlder)
 #: history_module/history_dlg.ui:125
 #, kde-format
 msgid "URLs older than"
-msgstr "URL 旧于"
+msgstr "Verkko-osoitteet, jotka ovat vanhempia kuin"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDetails)
 #: history_module/history_dlg.ui:148
 #, kde-format
 msgid "Details"
-msgstr "详情"
+msgstr "Tiedot"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbDetailedTips)
 #: history_module/history_dlg.ui:154
@@ -96,55 +96,57 @@ msgstr "详情"
 msgid ""
 "Shows the number of times visited and the dates of the first and last "
 "visits, in addition to the URL"
-msgstr "除 URL 以外，还显示访问次数以及第一次和最后一次访问的日期"
+msgstr ""
+"Näyttää verkko-osoitteen lisäksi käyntikertojen määrän sekä ensimmäisen ja "
+"viimeisimmän käynnin päivämäärän"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbDetailedTips)
 #: history_module/history_dlg.ui:157
 #, kde-format
 msgid "Detailed tooltips"
-msgstr "详细悬停信息"
+msgstr "Yksityiskohtaiset työkaluvihjeet"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnClearHistory)
 #: history_module/history_dlg.ui:169
 #, kde-format
 msgid "Clear History"
-msgstr "清除历史记录"
+msgstr "Tyhjennä historia"
 
 #: history_module/history_module.cpp:139
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "History Sidebar Module"
-msgstr "历史记录侧边栏模块"
+msgstr "Historian sivupaneelimoduuli"
 
 #: history_module/history_module.cpp:162
 #, kde-format
 msgctxt "@title:tab"
 msgid "History"
-msgstr "历史记录"
+msgstr "Historia"
 
 #: history_module/kcmhistory.cpp:49
 #, kde-format
 msgctxt "Automatically decide which action to perform"
 msgid "Auto"
-msgstr "自动"
+msgstr "Automaattinen"
 
 #: history_module/kcmhistory.cpp:50
 #, kde-format
 msgctxt "Open URL in new tab"
 msgid "Open in new tab"
-msgstr "在新标签页中打开"
+msgstr "Avaa uuteen välilehteen"
 
 #: history_module/kcmhistory.cpp:51
 #, kde-format
 msgctxt "Open URL in current tab"
 msgid "Open in current tab"
-msgstr "在当前标签页中打开"
+msgstr "Avaa nykyiseen välilehteen"
 
 #: history_module/kcmhistory.cpp:52
 #, kde-format
 msgctxt "Open URL in new window"
 msgid "Open in new window"
-msgstr "在新窗口中打开"
+msgstr "Avaa uuteen ikkunaan"
 
 #: history_module/kcmhistory.cpp:54
 #, kde-format
@@ -156,98 +158,102 @@ msgid ""
 "current tab</dd><dt>Open URL in new window:</dt><dd>always opens the URL in "
 "a new window</dd></dl>"
 msgstr ""
-"从历史记录中打开 URL 时执行的操作：<dl><dl><dt>自动：</dt><dd>在新标签页中打"
-"开 URL，除非当前标签页为空白页或介绍页</dd><dt>在新标签页中打开 URL：</"
-"dt><dd>始终在新标签页中打开 URL：</dd><dt>在当前标签页中打开 URL：</dt><dd>始"
-"终在当前标签页中打开 URL：</dd><dt>在新窗口中打开 URL：</dt><dd>始终在新窗口"
-"中打开 URL：</dd></dl>"
+"Mitä tehdään avattaessa verkko-osoite historiasta:<dl><dl><dt>Automaattinen:"
+"</dt><dd>avaa verkko-osoitteen uuteen välilehteen paitsi jos nykyinen on "
+"tyhjä tai aloitussivu</dd><dt>Avaa verkko-osoite uuteen välilehteen:</"
+"dt><dd>avaa verkko-osoitteen aina uuteen välilehteen</dd><dt>Avaa verkko-"
+"osoite nykyiseen välilehteen</dt><dd>avaa verkko-osoitteen aina nykyiseen "
+"välilehteen</dd><dt>Avaa verkko-osoite uuteen ikkunaan:</dt><dd>avaa verkko-"
+"osoitteen aina uuteen ikkunaan</dd></dl>"
 
 #: history_module/kcmhistory.cpp:65
 #, kde-format
 msgid "days"
-msgstr " 天"
+msgstr "päivää"
 
 #: history_module/kcmhistory.cpp:71 history_module/kcmhistory.cpp:76
 #: history_module/kcmhistory.cpp:200 history_module/kcmhistory.cpp:213
 #, kde-format
 msgid "Minute"
 msgid_plural "Minutes"
-msgstr[0] "分钟"
+msgstr[0] "minuutti"
+msgstr[1] "minuuttia"
 
 #: history_module/kcmhistory.cpp:73 history_module/kcmhistory.cpp:78
 #: history_module/kcmhistory.cpp:198 history_module/kcmhistory.cpp:211
 #, kde-format
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] "天"
+msgstr[0] "päivä"
+msgstr[1] "päivää"
 
 #: history_module/kcmhistory.cpp:245
 #, kde-format
 msgid "Do you really want to clear the entire history?"
-msgstr "您确定要清除所有历史记录吗？"
+msgstr "Haluatko varmasti tyhjentää koko historian?"
 
 #: history_module/kcmhistory.cpp:247
 #, kde-format
 msgctxt "@title:window"
 msgid "Clear History?"
-msgstr "清除历史记录？"
+msgstr "Tyhjennetäänkö historia?"
 
 #: places_module/places_module.cpp:76
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Places Sidebar Module"
-msgstr "常用位置侧边栏模块"
+msgstr "Sijaintien sivupaneelimoduuli"
 
 #: places_module/places_module.cpp:99
 #, kde-format
 msgctxt "@title:tab"
 msgid "Places"
-msgstr "常用位置"
+msgstr "Sijainnit"
 
 #: sidebar_widget.cpp:83
 #, kde-format
 msgid "Restore All Removed Default Buttons"
-msgstr "恢复所有已移除的默认按钮"
+msgstr "Palauta kaikki poistetut oletuspainikkeet"
 
 #: sidebar_widget.cpp:84
 #, kde-format
 msgid "Rollback to System Default"
-msgstr "重置为系统默认值"
+msgstr "Palaa järjestelmän oletuksiin"
 
 #: sidebar_widget.cpp:143 sidebar_widget.cpp:429
 #, kde-format
 msgid "Configure Sidebar"
-msgstr "配置侧边栏"
+msgstr "Sivupaneelin asetukset"
 
 #: sidebar_widget.cpp:145
 #, kde-format
 msgid "Add New"
-msgstr "添加"
+msgstr "Lisää uusi"
 
 #: sidebar_widget.cpp:149
 #, kde-format
 msgid "Multiple Views"
-msgstr "多视图"
+msgstr "Useampi näkymä"
 
 #: sidebar_widget.cpp:151 sidebar_widget.cpp:268
 #, kde-format
 msgid "Show Tabs on Left"
-msgstr "标签页显示在左侧"
+msgstr "Näytä välilehdet vasemmalla"
 
 #: sidebar_widget.cpp:152
 #, kde-format
 msgid "Show Configuration Button"
-msgstr "显示配置按钮"
+msgstr "Näytä asetuspainike"
 
 #: sidebar_widget.cpp:155
 #, kde-format
 msgid "Close Sidebar"
-msgstr "关闭侧边栏"
+msgstr "Sulje sivupaneeli"
 
 #: sidebar_widget.cpp:210
 #, kde-format
 msgid "This entry already exists."
-msgstr "该项目已存在。"
+msgstr "Tämä kohde on jo olemassa."
 
 #: sidebar_widget.cpp:226
 #, kde-format
@@ -256,34 +262,34 @@ msgid ""
 "default ones.<br /><b>This procedure is irreversible.</b><br />Do you want "
 "to proceed?</qt>"
 msgstr ""
-"<qt>这将从侧边栏移除所有自定义项目，并添加系统默认项目。<br /><b>此过程不可撤"
-"销。</b><br />您确定要继续吗？</qt>"
+"<qt>Tämä poistaa kohteesi sivupaneelista ja lisää järjestelmän oletukset."
+"<br /><b>Toimintoa ei voi kumota.</b><br />Haluatko jatkaa?</qt>"
 
 #: sidebar_widget.cpp:268
 #, kde-format
 msgid "Show Tabs on Right"
-msgstr "标签页显示在右侧"
+msgstr "Näytä välilehdet oikealla"
 
 #: sidebar_widget.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Name"
-msgstr "设置名称"
+msgstr "Aseta nimi"
 
 #: sidebar_widget.cpp:280
 #, kde-format
 msgid "Enter the name:"
-msgstr "输入名称："
+msgstr "Anna nimi:"
 
 #: sidebar_widget.cpp:298
 #, kde-format
 msgid "Enter a URL:"
-msgstr "输入 URL："
+msgstr "Anna verkko-osoite:"
 
 #: sidebar_widget.cpp:322
 #, kde-format
 msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
-msgstr "<qt>您确定要移除 <b>%1</b> 标签页吗？</qt>"
+msgstr "<qt>Haluatko varmasti poistaa välilehden <b>%1</b>?</qt>"
 
 #: sidebar_widget.cpp:372
 #, kde-format
@@ -292,121 +298,124 @@ msgid ""
 "click the right mouse button on any of the sidebar buttons and select \"Show "
 "Configuration Button\"."
 msgstr ""
-"您已隐藏侧边栏配置按钮。要重新显示该按钮， 请在侧边栏的任意按钮上单击右键，然"
-"后选择“显示配置按钮”。"
+"Sivupaneelin asetuspainike on piilotettu. Sen saa taas näkyviin "
+"napsauttamalla hiiren oikeaa painiketta jollakin sivupaneelipainikkeella ja "
+"valitsemalla ”Näytä asetuspainike”."
 
 #: sidebar_widget.cpp:573
 #, kde-format
 msgid "Set Name..."
-msgstr "设置名称..."
+msgstr "Aseta nimi…"
 
 #: sidebar_widget.cpp:574
 #, kde-format
 msgid "Set URL..."
-msgstr "设置 URL..."
+msgstr "Aseta Verkko-osoite…"
 
 #: sidebar_widget.cpp:575
 #, kde-format
 msgid "Set Icon..."
-msgstr "设置图标..."
+msgstr "Aseta kuvake…"
 
 #: sidebar_widget.cpp:577
 #, kde-format
 msgid "Show Hidden Folders..."
-msgstr "显示隐藏文件夹..."
+msgstr "Näytä piilokansiot…"
 
 #: sidebar_widget.cpp:582
 #, kde-format
 msgid "Remove"
-msgstr "移除"
+msgstr "Poista"
 
 #: sidebar_widget.cpp:908
 #, kde-format
 msgid "Web module"
-msgstr "网页模块"
+msgstr "Verkkomoduuli"
 
 #: tree_module/tree_module.cpp:259
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Tree Sidebar Module"
-msgstr "树状图侧边栏模块"
+msgstr "Puu-sivupaneelimoduuli"
 
 #: tree_module/tree_module.cpp:282
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree"
-msgstr "树状图"
+msgstr "Puu"
 
 #: vertical_tabbar/vertical_tabbar.cpp:91
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Vertical Tab Bar"
-msgstr "垂直标签页"
+msgstr "Pystysuuntainen välilehtirivi"
 
 #: vertical_tabbar/vertical_tabbar.cpp:114
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tabs"
-msgstr "标签页"
+msgstr "Välilehdet"
 
 #: web_module/web_module.cpp:42
 #, kde-format
 msgid "&Open Link"
-msgstr "打开链接(&O)"
+msgstr "A&vaa linkki"
 
 #: web_module/web_module.cpp:46
 #, kde-format
 msgid "Open in New &Window"
-msgstr "在新窗口中打开(&W)"
+msgstr "Avaa uuteen &ikkunaan"
 
 #: web_module/web_module.cpp:52
 #, kde-format
 msgid "&Reload"
-msgstr "重新加载(&R)"
+msgstr "&Virkistä"
 
 #: web_module/web_module.cpp:57
 #, kde-format
 msgid "Set &Automatic Reload"
-msgstr "设置自动重新加载(&A)"
+msgstr "A&seta automaattivirkistys"
 
 #: web_module/web_module.cpp:121
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Refresh Timeout (0 disables)"
-msgstr "设置刷新超时 (0 则禁用)"
+msgstr "Aseta automaattivirkistys (0 poistaa käytöstä)"
 
 #: web_module/web_module.cpp:132
 #, kde-format
 msgid " minute"
 msgid_plural " minutes"
-msgstr[0] " 分钟"
+msgstr[0] " minuutti"
+msgstr[1] " minuuttia"
 
 #: web_module/web_module.cpp:136
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
-msgstr[0] " 秒"
+msgstr[0] " sekunti"
+msgstr[1] " sekuntia"
 
 #: web_module/web_module.cpp:269
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Web Sidebar Module"
-msgstr "网页侧边栏模块"
+msgstr "Verkkosivupalkkimoduuli"
 
 #: web_module/web_module.cpp:289
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr "名称："
+msgstr "Nimi:"
 
 #: web_module/web_module.cpp:289
 #, kde-format
 msgctxt "@label"
 msgid "Path or URL:"
-msgstr "路径或 URL："
+msgstr "Sijainti tai verkko-osoite:"
 
 #: web_module/web_module.cpp:290
 #, kde-format
 msgctxt "@title:window"
 msgid "Add web sidebar module"
-msgstr "添加网页侧边栏模块"
+msgstr "Lisää verkkosivupaneelimoduuli"
