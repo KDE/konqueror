@@ -63,22 +63,18 @@
 >За допомогою &Java; можна отримувати і запускати програми у переглядачі Тенет, якщо на вашому комп’ютері встановлено потрібне програмне забезпечення. &Java; використовується на багатьох сайтах (наприклад сайтах інтерактивних банкових служб або ігрових сайтах). Вам слід остерігатися запуску програм з невідомих джерел, оскільки такі дії можуть бути загрозою для даних на вашому комп’ютері, навіть якщо потенційна шкода і не може бути великою.</para>
 
 <para
->За допомогою полів для позначок, розташованих під написом <guilabel
->Дозволити Java всюди</guilabel
->, ви можете типово увімкнути підтримку &Java; для всіх вебсайтів. Крім того, ви можете увімкнути або вимкнути &Java; для певних вузлів мережі. Щоб додати правило для окремого вузла, натисніть кнопку <guibutton
->Створити...</guibutton
->, — буде відкрито діалогове вікно, у якому ви зможете ввести назву вузла, а потім вказати: приймати чи відкидати код &Java;, надісланий з цього вузла. Після введення потрібних даних вказаний домен буде додано до списку, розташованого у лівій частині сторінки.</para>
+>The check box <guilabel
+>Enable Java globally</guilabel
+> allows you to turn &Java; support on for all web sites by default. You can also select to turn &Java; on or off for specific hosts. To add a policy for a specific host, click the <guibutton
+>New...</guibutton
+> button to bring up a dialog in which you can type the host name and then choose to accept or reject &Java; code from that particular host, which will add the domain to the list on the left of the page.</para>
 
 <para
->Ви можете обрати вузол зі списку і натиснути кнопку <guilabel
->Змінити...</guilabel
->, щоб обрати інші правила для відповідного вузла. Натискання кнопки <guilabel
->Вилучити</guilabel
-> вилучить правила для виділеного вузла, після вилучення до цього вузла буде застосовано загальні параметри. Ви можете імпортувати правила з файла натисканням кнопки <guilabel
->Імпортувати...</guilabel
->. Щоб зберегти поточний список до стиснутого файла архіву, скористайтеся кнопкою <guilabel
->Експортувати...</guilabel
->.</para>
+>You can select a host in the list, and click the <guibutton
+>Change...</guibutton
+> button to choose a different policy for that host. Clicking the <guibutton
+>Delete</guibutton
+> button removes the policy for the selected host; after deletion, the global settings will then apply to that host.</para>
 
 <para
 >Нарешті, за допомогою групи елементів керування з міткою <guilabel
@@ -97,13 +93,13 @@
 > за допомогою інструменту керування правилами &Java;, щоб надати коду, отриманому з певних сайтів, додаткові дозволи на виконання дій.</para>
 
 <para
->Позначення пункту <guilabel
->Використовувати KIO</guilabel
-> призведе до того, що <acronym
+><guilabel
+>Use KIO</guilabel
+> will cause the <acronym
 >JVM</acronym
-> використовуватиме власні інструменти <acronym
+>to use &kde;'s own <acronym
 >KIO</acronym
-> &kde; для передавання інформації під час мережевих з’єднань.</para>
+> transports for network connections.</para>
 
 <para
 >За допомогою пункту <guilabel
@@ -111,10 +107,10 @@
 > ви можете зберегти ресурси системи завершенням роботи сервера аплетів &Java;, якщо той не використовується, замість продовження виконання його у фоновому режимі. Якщо не позначати цей пункт, аплети &Java; запускатимуться швидше, але сервер використовуватиме ресурси системи (оперативну пам’ять і процесор), коли ви не користуватиметесь аплетами &Java;. У разі позначення пункту ви зможете встановити час очікування.</para>
 
 <para
->Ви можете обрати між автоматичним визначенням &konqueror; системи &Java;, встановленої на вашому комп’ютері і визначенням шляху до встановленої системи власноруч, — для цього слід позначити пункт <guilabel
->Шлях до програми віртуальної машини Java</guilabel
->. Другим методом можна скористатися, якщо, наприклад, у вашій системі встановлено декілька віртуальних машин &Java;, і ви бажаєте вказати ту з них, яку слід використовувати. Якщо для запуску віртуальної машини &Java;, яку ви бажаєте використовувати, потрібні додаткові параметри запуску, ви можете ввести їх до поля для введення тексту з міткою <guilabel
->Додаткові аргументи для Java</guilabel
+>You can either opt to have &konqueror; automatically detect the &Java; installation on your system, or specify the path to the installation yourself by selecting <guilabel
+>Path to Java executable or 'java'</guilabel
+>. You may want to choose the latter method, for instance, if you have multiple &Java; installations on your system, and want to specify which one to use. If the &Java; Virtual Machine you are using requires any special startup options, you can type them in the text box labeled <guilabel
+>Additional Java arguments</guilabel
 >.</para>
 
 </sect2>
@@ -130,23 +126,23 @@
 >Перша частина цієї вкладки складається з пунктів, подібних до пунктів параметрів &Java;.</para>
 
 <para
->За допомогою полів для позначок, розташованих під написом <guilabel
->Увімкнути JavaScript всюди</guilabel
->, ви можете типово увімкнути підтримку JavaScript; для всіх вебсайтів. Крім того, ви можете увімкнути або вимкнути JavaScript для певних вузлів мережі. Щоб додати правило для окремого вузла, натисніть кнопку <guilabel
->Створити...</guilabel
->, — буде відкрито діалогове вікно, у якому ви зможете ввести назву вузла, а потім вказати: приймати чи відкидати код JavaScript, надісланий з цього вузла. Після введення потрібних даних вказаний домен буде додано до списку, розташованого у лівій частині сторінки.</para>
+>The checkbox <guilabel
+>Enable JavaScript globally</guilabel
+> allows you to turn JavaScript support on for all web sites by default. You can also select to turn JavaScript on or off for specific hosts. To add a policy for a specific host, click the <guibutton
+>New...</guibutton
+> button to bring up a dialog in which you can type the host name and then choose to accept or reject JavaScript code from that particular host, which will add the domain to the list on the left of the page.</para>
 
 <para
->Ви можете обрати вузол зі списку і натиснути кнопку <guilabel
->Змінити...</guilabel
->, щоб обрати інші правила для відповідного вузла. Натискання кнопки <guilabel
->Вилучити</guilabel
-> вилучить правила для виділеного вузла, після вилучення до цього вузла буде застосовано загальні параметри. Ви можете імпортувати правила з файла натисканням кнопки <guilabel
->Імпортувати...</guilabel
->. Щоб зберегти поточний список до стиснутого файла архіву, скористайтеся кнопкою <guilabel
->Експортувати...</guilabel
->.</para>
-
+>You can select a host in the list, and click the <guibutton
+>Change...</guibutton
+> button to choose a different policy for that host. Clicking the <guibutton
+>Delete</guibutton
+> button removes the policy for the selected host; after deletion, the global settings will then apply to that host.</para>
+<!-- missing section Debugging
+Enable debugger Enables builtin JavaScript debugger.
+Report errors Enables the reporting of errors that occur when JavaScript code is executed.
+How are errors reported? popup window? icon in status bar?
+-->
 <para
 >Решта пунктів розділу <guilabel
 >Загальні правила для JavaScript</guilabel

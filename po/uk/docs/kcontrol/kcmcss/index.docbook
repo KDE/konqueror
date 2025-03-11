@@ -66,9 +66,9 @@
 > <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-html"-->
 
 <para
->За допомогою пункту з міткою <guilabel
->Автоматично завантажувати зображення</guilabel
-> ви можете керувати тим, чи будуть типово завантажувати зображення на вебсторінках. У випадку, якщо з’єднання вашого комп’ютера з інтернетом не є аж занадто повільним, вам, ймовірно, не слід знімати позначку з цього пункту, адже багатьма вебсторінками важко користуватися без зображень. Якщо ви знімете позначку з пункту щодо автоматично завантаження зображень, ви зможете переглядати текст сторінки, а потім, за потреби, завантажити зображення з неї.</para>
+>The check box labeled <guilabel
+>Automatically load images</guilabel
+> allows you to control whether images on web pages are loaded by default. Unless you have a very slow connection, you will probably want to leave this option selected, as there are many web pages that are difficult to use without images. If you don't select the option to automatically load images, you can still view the text on the page, and then load the images if you need them.</para>
 
 <para
 >Якщо буде позначено пункт <guilabel
@@ -88,15 +88,15 @@
 >. Якщо обрано цей варіант, будь-який текст на вебсторінці, який працює як посилання буде показано підкресленим шрифтом. Хоча багато вебсторінок використовують колір для позначення тексту, який працює як посилання, підкреслювання полегшує знаходження посилань на сторінці.</para>
 
 <para
->Якщо вам не подобаються підкреслені посилання, ви можете обрати варіант <guilabel
->Вимкнено</guilabel
->, щоб жодне з посилань не було підкреслено. Проміжним варіантом є варіант <guilabel
->Під курсором</guilabel
->, за його використання посилання буде підкреслено лише, якщо ви затримали над ними вказівник миші, вони залишатимуться непідкресленими у решті випадків.</para>
+>If you don't like underlined links, you can choose <guilabel
+>Disabled</guilabel
+>, so that no links are underlined. Or you can choose a middle ground, <guilabel
+>Only on Hover</guilabel
+>, so that links are underlined when the mouse cursor is resting over them, and not underlined the rest of the time.</para>
 
 <note
 ><para
->За допомогою цього пункту можна змінити визначення CSS сайта.</para
+>The site's CSS definitions can override this value.</para
 ></note>
 
 <para
@@ -196,10 +196,10 @@
 >heets (вкладені таблиці стилів).</para>
 
 <para
->&konqueror; може використовувати власну таблицю стилів, засновану на простих типових значеннях і схемі кольорів, яку ви використовуєте на стільниці. &konqueror; також може використовувати створену вами власноруч таблицю стилів. Нарешті, ви можете вказати таблицю стилів за допомогою цього модуля. Параметри цього модуля спрямовано на покращення доступності, особливо для людей з обмеженими зоровими можливостями.</para>
+>&kde; can use its own stylesheet, based on simple defaults and the color scheme you are using for your desktop. &kde; can also use a stylesheet that you have written yourself. Finally, you can specify a stylesheet in this module. The options presented in this module are tuned for accessibility purposes, especially for people with reduced vision.</para>
 
 <para
->Вибрані вами за допомогою цього модуля параметри вплинуть на всі програми &kde;, у яких HTML буде показано за допомогою власного рушія показу &kde;, який має назву khtml. Серед цих програм &kmail;, &khelpcenter; і, звичайно ж, &konqueror;. Вибрані параметри не вплинуть на показ сторінок у інших переглядачах, зокрема &firefox;.</para>
+>Your choices here affect every &kde; application that renders HTML with &kde;'s own renderer, which is called khtml. These include &kmail;, &khelpcenter; and of course &konqueror;. Choices here do not affect other browsers such as &firefox;.</para>
 
 </sect3>
 

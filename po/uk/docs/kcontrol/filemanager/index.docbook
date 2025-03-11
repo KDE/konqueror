@@ -46,12 +46,12 @@
 </articleinfo>
 
 <para
->За допомогою цих модулів ви можете налаштувати різноманітні параметри функціональних можливостей інструменту для роботи з файлами &konqueror;. </para>
+>In these modules, you can configure various aspects of &konqueror;'s file manager functionality. </para>
 
 <note
 ><para
->Функціональні можливості переглядача Тенет &konqueror; можна налаштувати за допомогою <ulink url="help:/kcontrol/khtml-behavior/index.html"
->відповідних модулів налаштування</ulink
+>&konqueror;'s web browser functionality has its <ulink url="help:/kcontrol/khtml-behavior/index.html"
+>own configuration modules</ulink
 >.</para
 ></note>
 
@@ -65,37 +65,39 @@
 ><guilabel
 >Відкривати теки у окремих вікнах</guilabel
 ></term>
-<listitem>
-<para
->Якщо позначено цей пункт, під час відкриття теки буде використано нове вікно &konqueror;, замість показу вмісту теки у поточному вікні.</para>
-</listitem>
+<listitem
+> <para
+>If this option is checked, a new &konqueror; window will be created when you open a folder, rather than simply showing that folder's contents in the current window.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><guilabel
->Показувати пункт контекстного меню «Вилучити», що оминає смітник</guilabel
+>Show 'Delete' menu entries which bypass the trashcan</guilabel
 ></term>
 <listitem>
 <para
->Позначте, якщо ви хочете, щоб пункти меню «Вилучити» було показано на стільниці та в контекстному меню програми для керування файлами. Ви завжди можете вилучити файли остаточно: для цього слід натиснути клавішу &Shift; і обрати пункт меню <guimenuitem
->Пересунути в смітник</guimenuitem
+>Check this if you want <quote
+>Delete</quote
+> menu commands to be displayed on the desktop and in the file manager's context menus. You can always delete files by holding the &Shift; key while calling <guimenuitem
+>Move to Trash</guimenuitem
 >.</para>
 </listitem>
 </varlistentry>
 </variablelist>
 
 <para
->Параметри керування файлами, визначені для режиму керування файлами &konqueror; на сторінках <guilabel
->Режими перегляду</guilabel
+>The settings for &konqueror;'s file manager mode on the <guilabel
+>View Modes</guilabel
 >, <guilabel
->Навігація</guilabel
+>Navigation</guilabel
 >, <guilabel
->Служби</guilabel
+>Services</guilabel
 >, <guilabel
->Загальне</guilabel
-> та <guilabel
->Смітник</guilabel
->, також використовуються і у &dolphin;.</para>
+>General</guilabel
+> and <guilabel
+>Trash</guilabel
+> pages are used by &dolphin; as well. </para>
 
 </article>

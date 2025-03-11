@@ -59,13 +59,13 @@
 >&FDLNotice;</legalnotice>
 
 <date
->27 лютого 2025 року</date>
+>2016-11-05</date>
 <releaseinfo
->Gear 25.02</releaseinfo>
+>Applications 16.12</releaseinfo>
 
 <abstract
 ><para
->&konqueror; — це засіб для роботи з файлами з додатковими можливостями у &kde;, переглядач Тенет і програма-універсальний переглядач файлів.</para>
+>&konqueror; is &kde;'s advanced File Manager, Web Browser and Universal Viewing Application.</para>
 </abstract>
 
 <keywordset>
@@ -106,6 +106,7 @@
 ></othercredit
 > 
 </authorgroup>
+
 </chapterinfo>
 
 <title
@@ -114,29 +115,29 @@
 <para
 ><emphasis
 >&konqueror;</emphasis
-> — це <link linkend="filemanager"
->засіб для роботи з файлами</link
-> з широкими можливостями. У цій програмі ви знайдете різноманітні функції з керування файлами від простого вирізання або копіювання зі вставленням до складного перегляду локальних або мережевих файлів. Вміст тек може бути показано у декількох <link linkend="viewmode"
->режимах перегляду</link
->, серед яких є перегляд мініатюр зображень вмісту файлів. Ви зможете легко визначати властивості файлів або тек і змінювати їх. Ви зможете запускати програми подвійним клацанням лівою кнопкою миші.</para>
+> is an advanced <link linkend="filemanager"
+>file manager</link
+>, providing file management functions ranging from simple cut/copy and paste operations to advanced local and remote network file browsing. Folder contents can be displayed in a variety of text and icon <link linkend="viewmode"
+>view modes</link
+>, which can include thumbnail preview images of file contents. File and folder properties can easily be examined and changed, and applications launched with a simple click of the &LMB;.</para>
 
 <para
->Серед програм &kde; &dolphin; є типовим інструментом для роботи з файлами. Щоб змінити типовий компонент для перегляду тек на диску, відкрийте сторінку «Особисті параметри» <guimenu
->Типові програми</guimenu
-> у Системних параметрах і вкажіть, що з файлами має працювати &konqueror;.</para>
+>In &kde; Applications &dolphin; is the default file manager. To change the default component for browsing folders, open <guimenu
+>Default Applications</guimenu
+> in the &systemsettings; and select &konqueror; as file manager.</para>
 
 <para
 ><emphasis
 >&konqueror;</emphasis
-> — це сумісний зі стандартом <acronym
+> is an <acronym
 >HTML</acronym
 > 4.01 compliant <link linkend="browser"
->переглядач Тенет</link
->, у який вбудовано підтримку JavaScript (ECMA-262), <acronym
+>web browser</link
+> with built in support for JavaScript (ECMA-262), <acronym
 >CSS</acronym
-> (Cascading Style Sheets) і запису мов у двох напрямках (для арабської і єврейської мов). У програмі є підтримка <acronym
+> (Cascading Style Sheets) and bidirectional scripts (such as Arabic and Hebrew). It provides support for the secure running of &Java; applets, &Netscape; plugins for viewing &Flash;, &RealAudio; and &RealVideo; and <acronym
 >SSL</acronym
-> для безпечного обміну інформацією. Серед додаткових можливостей автоматичне доповнення адрес &URL; і заповнення форм, можливість імпорту закладок з інших переглядачів і перегляд з вкладками.</para>
+> for secure communications. Advanced features include automatic &URL; and form completion, the ability to import bookmarks from other browsers and tabbed browsing. </para>
 
 <para
 ><emphasis
@@ -158,9 +159,11 @@
 > можна налаштувати, кожен може <link linkend="config"
 >підлаштувати</link
 > програму відповідно до власних потреб: від повної зміни стилю і розмірів тексту і піктограм до вибору елементі смужки меню, зміни числа і розташування панелей інструментів і навіть визначення нових клавіатурних скорочень. </para>
+
 </chapter>
 
 <chapter id="basics">
+
 <chapterinfo>
 <authorgroup>
 <author
@@ -181,6 +184,7 @@
 ></othercredit
 > 
 </authorgroup>
+
 </chapterinfo>
 
 <title
@@ -188,27 +192,33 @@
 
 <important
 ><para
->Як і всі програми &kde;, має безліч налаштувань &konqueror;. У цьому документі описано поведінку програми &konqueror; зі звичайними типовими параметрами.</para
-><para
->Коли ви працюєте з &konqueror; або будь-якою іншою програмою &kde;, може бути корисною миша з трьома кнопками. Якщо на вашій миші всього дві кнопки, ви можете налаштувати систему так, що одночасне натискання двох кнопок призводитиме до імітації натискання середньої кнопки миші.</para
-><para
->Докладніше про використання миші ви можете прочитати у розділі <xref linkend="lmb-mmb"/>.</para
+>Як і всі програми &kde;, має безліч налаштувань &konqueror;. У цьому документі описано поведінку програми &konqueror; зі звичайними типовими параметрами.</para>
+<para
+>Коли ви працюєте з &konqueror; або будь-якою іншою програмою &kde;, може бути корисною миша з трьома кнопками. Якщо на вашій миші всього дві кнопки, ви можете налаштувати систему так, що одночасне натискання двох кнопок призводитиме до імітації натискання середньої кнопки миші.</para>
+<para
+>Докладніше про використання миші ви можете прочитати у розділі <xref linkend="lmb-mmb"/>.</para>
+<para
+>If you are used to having to double-click to perform an action, then take care, because in common with the rest of &kde;, &konqueror; defaults to single-clicking.</para
 ></important>
 
 <sect1 id="konq-start">
 <title
 >Як запустити &konqueror;</title>
 
+<para
+>Being a combined File Manager and Browser, &konqueror; will automatically switch between the two modes as needed when it is running, but it is convenient to be able to choose which mode is to be used when you start it up.</para>
+
 <itemizedlist>
+
 <listitem
 ><para
->У меню інструменту для запуску програм виберіть пункт <menuchoice
+>From the application launcher menu, select <menuchoice
 ><guisubmenu
->Інтернет</guisubmenu
-> <guimenuitem
->Konqueror</guimenuitem
+>Internet</guisubmenu
+><guimenuitem
+>Konqueror (Web Browser)</guimenuitem
 ></menuchoice
->, щоб запустити програму як переглядач інтернету.</para
+> to start it as a browser. </para
 ></listitem>
 
 <listitem
@@ -223,6 +233,7 @@
 >https://www.kde.org</userinput
 >, щоб запустити &konqueror; у режимі переглядача Тенет.</para
 ></listitem>
+
 </itemizedlist>
 
 <note
@@ -235,11 +246,13 @@
 ></note>
 
 <para
->Крім того, якщо &konqueror; є типовим інструментом для керування файлами, програма автоматично запускається, коли ви наводите вказівник на піктограму стільниці, що відповідає теці, зокрема піктограму пристрою диска або піктограму <guiicon
->Смітник</guiicon
->, і клацаєте <mousebutton
->лівою</mousebutton
-> кнопкою миші.</para>
+>If &konqueror; is the default file manager it also starts automatically when you <mousebutton
+>left</mousebutton
+> click on a desktop icon that represents a folder, such as a hard disk drive or the <guiicon
+>Trash</guiicon
+> icon. </para>
+
+
 </sect1>
 
 <sect1 id="parts">
@@ -247,23 +260,23 @@
 >Частини &konqueror;</title>
 
 <para
->Коротенький огляд головних частин вікна &konqueror;:</para>
+>A brief look at the main parts of &konqueror;'s window:</para>
 
 <mediaobject>
 <imageobject
 ><imagedata format="PNG" fileref="parts.png"/></imageobject>
 <textobject>
 <phrase
->Ось знімок вікна &konqueror;</phrase>
+>Here's a screenshot of &konqueror;</phrase>
 </textobject>
 </mediaobject>
 
 <para
-><interface
->Смужка заголовка</interface
-> — це смуга вздовж верхньої частини вікна &konqueror;, вона працює у той самий спосіб, що і у інших програмах &kde;. Наведення вказівника на її центральну частину з наступним клацанням <mousebutton
->правою</mousebutton
-> кнопкою миші відкриває коротеньке контекстне меню смужки заголовка.</para>
+>The <interface
+>Titlebar</interface
+> is the strip across the top of &konqueror;'s window, and operates in the same way as for other &kde; applications. <mousebutton
+>Right</mousebutton
+> click on the central portion to bring up the neat Titlebar menu.</para>
 
 <para
 ><interface
@@ -294,17 +307,17 @@
 <para
 >На деяких піктограмах, наприклад піктограмах «Вгору» і «Вниз» на попередньому знімку вікна, показано маленький чорну стрілку праворуч. Якщо ви наведете вказівник миші на цю стрілочку і клацнете лівою кнопкою миші, буде показано невеличке спадне меню.</para
 > <para
->Наведення вказівника миші на <interface
->Панель інструментів</interface
-> з наступним клацанням <mousebutton
->правою</mousebutton
-> кнопкою миші відкриє список <link linkend="rmb-menus"
->меню <guilabel
->Панель інструментів</guilabel
-></link
->, яким можна скористатися для зміни вигляду і розташування <interface
->Панелі інструментів</interface
->.</para>
+><mousebutton
+>Right</mousebutton
+> clicking on the <interface
+>Toolbar</interface
+> will bring up the <link linkend="rmb-menus"
+><guilabel
+>Toolbar Settings</guilabel
+> menu</link
+> which you can use to change the <interface
+>Toolbar</interface
+>'s appearance and position.</para>
 
 <para
 >На <interface
@@ -331,28 +344,30 @@
 >.</para>
 
 <para
-><interface
->Вікно</interface
-> — це головна область &konqueror;, у ній може бути показано вміст каталогу, вебсторінки, документа або зображення. За допомогою меню <link linkend="menu-window"
+>The <interface
+>Window</interface
+> is the main area of &konqueror; and can show you the contents of a directory, web page, document or image. Using the <link linkend="menu-window"
 ><guimenu
->Вікно</guimenu
+>Window</guimenu
 ></link
-> ви можете розділити головне вікно &konqueror; на декілька окремих областей перегляду, це корисно під час виконання дій з перетягування і скидання. Крім того можна поділити це вікно на дві або більше областей перегляду з вкладками. </para>
+> menu you can split &konqueror;'s main window into one or more separate views, useful for drag and drop operations, or set it to contain two or more tabbed views. </para>
 
 <para
-><interface
->Смужка стану</interface
-> знаходиться вздовж нижнього краю вікна &konqueror;. Цю область вікна програми призначено для показу інформації про об’єкт, позначка якого знаходиться під вказівником миші. Якщо ви поділите головне вікно на декілька областей перегляду, у кожній з цих областей буде власна смужка стану, у лівій частині смужки стану <quote
->активної</quote
-> області перегляду буде показано невеличкий зелений вогник. Наведення вказівника миші на смужку стану з наступним клацанням <mousebutton
->правою</mousebutton
-> кнопкою миші відкриває <link linkend="rmb-menus"
->Контекстне меню</link
-> смужки стану.</para>
+>The <interface
+>Status Bar</interface
+> runs across the bottom of the &konqueror;'s window and often shows general information about whatever the mouse pointer is hovering over. If you have split the main window into a number of views you will get a Status Bar for each view, and it will include a small green light at the left hand end to show which is the <quote
+>active</quote
+> view. <mousebutton
+>Right</mousebutton
+> clicking on the Status Bar brings up the Status Bar <link linkend="rmb-menus"
+><mousebutton
+>Right</mousebutton
+> Mouse Button Menu</link
+>.</para>
 
 <note
 ><para
->Не переймайтеся, якщо ваш &konqueror; не виглядає точно так само, як на знімку вікна, — програма дуже гнучка у налаштуваннях. Зокрема:</para>
+>Don't worry if your &konqueror; doesn't look exactly like this screenshot; it is highly configurable. In particular:</para>
 
 <itemizedlist>
 <listitem
@@ -362,58 +377,66 @@
 >Параметри</guimenu
 ></link
 >, щоб визначити, чи слід показувати смужку меню, головну панель, панель адреси, панель закладок або навіть додати додаткову панель.</para
-></listitem
-><listitem
+></listitem>
+<listitem
 ><para
 >Якщо панелі інструментів розблоковано, ви також можете перетягнути панель інструментів наведенням вказівника миші на інструмент керування, розташований біля лівого краю панелі, з наступним клацанням <mousebutton
 >лівою</mousebutton
-> кнопкою миші або пересувати панелі утримуючи ліву кнопку миші натиснутою і одночасно перетягуючи вказівник миші разом з панеллю у потрібне місце.</para
+> кнопкою миші або пересувати панелі утримуючи ліву кнопку миші натиснутою і одночасно перетягуючи вказівник миші разом з панеллю у потрібне місце. </para
 ></listitem>
+<!--
+<listitem
+><para
+>This screenshot does not show the optional <link linkend="sidebar">
+Sidebar</link
+>.</para
+></listitem>
+-->
 </itemizedlist>
 
 <para
->Щоб дізнатися більше про те, як змінити вигляд &konqueror;, прочитайте розділ <link linkend="config"
->Як налаштувати &konqueror;</link
->.</para
+>For more details of how to change &konqueror;'s appearance, see the <link linkend="config"
+>Configuring &konqueror;</link
+> section</para
 ></note>
 
 </sect1>
 
 <sect1 id="bubble">
 <title
->Підказки та інструмент «Що це?»</title>
+>Tooltips and What's This?</title>
 
 <para
->Ви можете досить багато дізнатися про те, як працює &konqueror;, навіть не читаючи весь цей документ, якщо скористаєтеся <guilabel
->Підказками</guilabel
-> та можливостями пункту меню <guimenuitem
->Що це?</guimenuitem
->.</para>
+>You can find out a lot about how &konqueror; works without needing to read this entire document if you take advantage of <guilabel
+>Tooltips</guilabel
+> and the <guimenuitem
+>What's This?</guimenuitem
+> feature.</para>
 
 <para
 >Після наведення вказівника миші на кнопку вкладки панелі інструментів за деякий час ви побачите невеличку панель з коротеньким описом призначення відповідної кнопки.</para>
 
 <para
->Функцію <guimenuitem
->Що це?</guimenuitem
-> можна викликати за допомогою смужки меню, а саме, пункту меню <menuchoice
-><guimenu
->Довідка</guimenu
 ><guimenuitem
->Що це?</guimenuitem
+>What's This?</guimenuitem
+> is invoked by the Menubar <menuchoice
+><guimenu
+>Help</guimenu
+><guimenuitem
+>What's This?</guimenuitem
 ></menuchoice
-> або за допомогою комбінації клавіш <keycombo action="simul"
+> item or by <keycombo action="simul"
 >&Shift;<keycap
 >F1</keycap
 ></keycombo
->. В результаті всіх цих дій поряд з позначкою стрілки вказівника миші з’явиться символ знака питання.</para>
+>. It changes the cursor to show a question mark alongside the arrow.</para>
 
 <para
->Після того, як ви побачите цей знак питання клацання лівою кнопкою миші перестане виконувати основні функції у всіх частинах вікна, окрім засобів керування (або тексту, що їх супроводжує), які підтримують функцію <guimenuitem
->Що це?</guimenuitem
->. У разі клацання на елемента, що мають підтримку цієї функції, буде показано достатньо повний опис тієї функції, яку виконує у програмі відповідних засіб керування. Більшість з діалогових вікон, які відкриваються у &konqueror;, мають підтримку функції <guimenuitem
->Що це?</guimenuitem
->.</para>
+>When this question mark is visible, a &LMB; click won't actually do anything until you have clicked on a control (or the text alongside it) that supports <guimenuitem
+>What's This?</guimenuitem
+>, in which case it will display a reasonably comprehensive description of what the control does. Most of the dialog boxes that &konqueror; brings up support the <guimenuitem
+>What's This?</guimenuitem
+> feature.</para>
 
 </sect1>
 
@@ -426,9 +449,9 @@
 > кнопок миші</title>
 
 <para
->Якщо ви наведете вказівник миші на елемент у вікні &konqueror; і клацнете лівою кнопкою миші, цей елемент буде <quote
->активовано</quote
->. Ось так:</para>
+>If you click the &LMB; on an item in &konqueror;'s window, it will be <quote
+>activated</quote
+>. Thus</para>
 
 <itemizedlist>
 
@@ -471,55 +494,55 @@
 ></listitem>
 <listitem
 ><para
->Після наведення вказівника миші на назву або піктограму файла з наступним клацанням <mousebutton
->лівою</mousebutton
-> кнопкою миші &konqueror; виконає дію, яку програма вважає відповідною до файлів такого типу. У більшості випадків, це означає відкриття сторінок <acronym
+><mousebutton
+>Left</mousebutton
+> click on a file name or icon and &konqueror; will do whatever it thinks appropriate, based on the file type. In general this means opening <acronym
 >HTML</acronym
-> або перегляд тексту, зображення або документів &okular;. Всі ці файли буде показано у вікні &konqueror; (<quote
->Перегляд</quote
-> означає, що ви зможете бачити вміст файла, але не зможете його змінювати).</para
+> pages, or previewing text, image or &okular; documents, showing them within &konqueror;'s window (<quote
+>Preview</quote
+> means that you can see the file but not change it).</para
 > 
 
 <para
->&konqueror; визначає тип файла за допомогою порівняння суфікса файла зі списком суфіксів відомих типів файлів. Якщо таке порівняння не дає результатів, програма намагається визначити тип файла за його вмістом. Змінити список відомих типів файлів і дії, які відповідають цим типам файлів, можна за допомогою сторінки <guilabel
->Прив’язка файлів</guilabel
-> діалогового вікна <menuchoice
+>&konqueror; decides what the file type is by matching the filename extension against a list of known types. If that fails it tries to guess the type from the file contents. You can change the list of known file types and associated actions with the <guilabel
+>File Associations</guilabel
+> page of the <menuchoice
 ><guimenu
->Параметри</guimenu
+>Settings</guimenu
 ><guimenuitem
->Налаштувати Konqueror... </guimenuitem
+>Configure Konqueror... </guimenuitem
 ></menuchoice
->.</para
+> dialog.</para
 ></listitem>
 
 </itemizedlist>
 
 <para
->Клацання середньою кнопкою миші на позначці теки або піктограмі виконує ту саму функцію, що і клацання <mousebutton
->лівою</mousebutton
-> кнопкою миші, але у цьому випадку показ вмісту відбуватиметься у новому вікні &konqueror;, якщо не позначено пункт <guilabel
->Відкривати посилання у нових вкладках, а не у нових вікнах</guilabel
-> на сторінці <guimenuitem
->Загальне</guimenuitem
-> діалогового вікна <menuchoice
+>Clicking the &MMB; on a file or folder name or icon does essentially the same as <mousebutton
+>left</mousebutton
+> clicking except that it usually does it in a new &konqueror; window, unless the <guilabel
+>Open links in new tab instead of in new window</guilabel
+> box has been checked in the <guimenuitem
+>General</guimenuitem
+> page of the <menuchoice
 ><guimenu
->Параметри</guimenu
+>Settings</guimenu
 ><guimenuitem
->Налаштувати Konqueror...</guimenuitem
+>Configure Konqueror...</guimenuitem
 ></menuchoice
->. &konqueror; може відкривати посилання на сторінки і <menuchoice
+> dialog. &konqueror; can open links on pages and <menuchoice
 ><guimenu
->Закладки</guimenu
+>Bookmarks</guimenu
 ></menuchoice
->, а також вміст посилань <guibutton
->Домівка</guibutton
+>, as well as the <guibutton
+>Home</guibutton
 >, <guibutton
->Вгору</guibutton
+>Up</guibutton
 >, <guibutton
->Назад</guibutton
-> і <guibutton
->Вперед</guibutton
-> у новій вкладці або у новому вікні.</para>
+>Back</guibutton
+> and <guibutton
+>Forward</guibutton
+> entries in a new tab or window.</para>
 
 <para
 >Утримування натиснутою клавіші &Shift; під час натискання середньої кнопки миші відкриє посилання у фоновій вкладці.</para>
@@ -532,21 +555,21 @@
 > кнопкою миші</title>
 
 <para
->Клацання правою кнопкою миші майже на всіх частинах вікна &konqueror; відкриє відповідне контекстне меню.</para>
+>Clicking the &RMB; on almost any part of &konqueror;'s window will bring up an appropriate context menu.</para>
 
 <note
 ><para
->Якщо ви позначите пункт <guilabel
->Клацання правою повертає назад у історії</guilabel
-> у параметрах <link linkend="othersettings"
->налаштування</link
-> &konqueror;, звичайне клацання <mousebutton
->правою</mousebutton
-> кнопкою миші стане еквівалентним натисканню кнопки <guibutton
->Назад</guibutton
->. Доступ до контекстного меню у цьому випадку можна отримати пересуваючи вказівник миші з одночасним утримуванням натиснутою <mousebutton
->правої</mousebutton
-> кнопки миші.</para
+>If you have enabled the <guilabel
+>Right click goes back in history</guilabel
+> option in &konqueror;'s <link linkend="othersettings"
+> configuration</link
+> settings a simple <mousebutton
+>right</mousebutton
+> click is equivalent to clicking on the <guibutton
+>Back</guibutton
+> button. In this case you can access the context menu by moving the mouse with the <mousebutton
+>right</mousebutton
+> button held down.</para
 ></note>
 
 <variablelist>
@@ -556,9 +579,9 @@
 >На смужці заголовка</term>
 <listitem
 ><para
->Наведення вказівника миші на порожню частину смужки заголовка з наступним клацанням <mousebutton
->правою</mousebutton
-> кнопкою миші відкриє меню смужки заголовка, за допомогою якого ви зможете керувати розташуванням вікна &konqueror;, а також декораціями, які буде застосовано до всіх вікон програм &kde;.</para
+><mousebutton
+>Right</mousebutton
+> clicking on any free area of the Titlebar brings up the Titlebar Menu, allowing you to control the position of &konqueror;'s window as well as the decoration applied to all &kde; program windows. </para
 ></listitem>
 </varlistentry>
 
@@ -571,7 +594,7 @@
 >правою</mousebutton
 > кнопкою миші відкриє меню панелі інструментів. Крім того, ви можете скористатися меню панелі інструментів для того, щоб встановити розмір кнопок панелі, а також чи буде показано ці кнопки у вигляді піктограм, тексту чи обох видів позначення кнопки.</para>
 <para
->Розблокуйте панель інструментів, щоб перемістити її у верхню, нижню, ліву чи праву частину вікна &konqueror;. </para>
+>Unlock the toolbar and you can move it to the top, bottom, left or right of &konqueror;'s window. </para>
 </listitem>
 </varlistentry>
 
@@ -604,7 +627,7 @@
 >Вперед</guiicon
 > і <guiicon
 >Перезавантажити</guiicon
->.</para
+>. </para
 ></listitem>
 </varlistentry>
 
@@ -626,18 +649,19 @@
 > або <guimenuitem
 >Вилучити</guimenuitem
 > елемент у декілька способів, відкрити його у певній програмі або показати попередній перегляд елемента, перейменувати елемент або змінити тип його файла і властивості.</para
-></listitem>
-</varlistentry>
+></listitem
+> </varlistentry>
 
 <varlistentry>
 <term
 >На смужці стану</term>
 <listitem
 ><para
->Наведіть вказівник миші на смужку стану внизу вікна або області перегляду і клацніть <mousebutton
->правою</mousebutton
-> кнопкою миші, щоб додати або вилучити область перегляду чи заблокувати або пов’язати області перегляду з вікна &konqueror;.</para
-></listitem>
+><mousebutton
+>Right</mousebutton
+> click on the Status Bar at the bottom of a window or view to add or remove a view and lock or link views within &konqueror;'s window.</para
+></listitem
+> 
 </varlistentry>
 </variablelist>
 
@@ -651,15 +675,15 @@
 >Ви можете переглядати довідку з &kde; і сторінки man та info &UNIX; безпосередньо з &konqueror;, без запуску програми «Центр довідки KDE». </para>
 
 <para
->Щоб переглянути сторінку довідки &kde;, введіть <userinput
+>To view a &kde; Help page, enter <userinput
 >help:/<replaceable
->назва програми</replaceable
+>application name</replaceable
 ></userinput
-> (наприклад <userinput
+> (for example <userinput
 >help:/<replaceable
 >kmail</replaceable
 ></userinput
->, щоб переглянути підручник з &kmail;) у рядку адреси &konqueror;. </para>
+> to view the &kmail; documentation.) into &konqueror;'s Location Toolbar window. </para>
 
 <para
 >Якщо вам потрібно почитати сторінки довідки (man) &UNIX;, &konqueror; зробить такий перегляд дуже простим. Наприклад, вам слід ввести <userinput
@@ -672,13 +696,13 @@
 > 
 
 <para
->Для перегляду сторінок info &UNIX; введіть у поле адреси <userinput
+>To browse through &UNIX; Info pages, entering <userinput
 >info:/dir</userinput
->. Перехід за цією адресою відкриє перед вами вміст каталогу верхнього рівня. Щоб дістатися потрібної вам сторінки, достатньо просто натискати відповідні посилання. Крім того, ви можете скористатися адресою <userinput
+> takes you to Info's top level directory, then it's just a matter of clicking on the right links to find the page you want. Alternatively, use <userinput
 >info:/<replaceable
->назва команди</replaceable
+>command name</replaceable
 ></userinput
->, щоб перейти безпосередньо до сторінки Info потрібної команди.</para>
+> to go straight to the Info page you want.</para>
 
 <note
 ><para
@@ -750,20 +774,20 @@
 >портативних пристроїв</link
 >). </para>
 <para
->Всі користувачі систем &UNIX; / &Linux; мають власні <quote
->домашні</quote
-> теки, де зберігаються їх особисті файли і параметри, наприклад <filename class="directory"
+>Every user on a &UNIX; / &Linux; system has their own <quote
+>home</quote
+> folder to hold their personal files and settings; for example <filename class="directory"
 >/home/john</filename
-> і <filename class="directory"
+> and <filename class="directory"
 >/home/mary</filename
->. Символ <keycap
+>. The symbol <keycap
 >~</keycap
-> часто використовують на позначення домашньої теки користувача, отже, <filename
+> is often used to represent the user's home folder, so that <filename
 >~/letter.txt</filename
-> означає файл <filename
+> refers to the file <filename
 >letter.txt</filename
-> у моїй домашній теці.</para
-><para
+> in my home folder.</para>
+<para
 >Зауважте, що часто замість терміна <quote
 >тека</quote
 > використовують термін <quote
@@ -787,8 +811,9 @@
 
 <note
 ><para
->У режимі керування файлами &konqueror; використовує вбудований компонент &dolphin;. Докладніший опис цього режиму можна знайти у документації до &dolphin;.</para
+>In File Manager mode, &konqueror; uses an embedded &dolphin; component.</para
 ></note>
+<!--FIXME begin copy from dolphin docbook synced for 16.04-->
 <itemizedlist>
 
 <listitem
@@ -825,9 +850,11 @@
 >Подробиці</guibutton
 > вміст теки буде показано як докладний список, що міститиме назву, розмір та час останньої зміни, внесеної до кожного з об’єктів у області перегляду. Ви зможете додати інші стовпчики даних: достатньо навести вказівник миші на смужку заголовку таблиці, клацнути правою кнопкою миші і обрати у контекстному меню потрібні вам пункти. </para>
 <para
->За допомогою контекстного меню рядка заголовка ви можете вказати спосіб визначення ширини стовпчика: нетиповий або автоматичний. У разі вибору автоматичного способу визначення ширини ширину буде підібрано так, щоб у стовпчику можна було повністю бачити найдовший з його записів, окрім стовпчику <guilabel
->Назва</guilabel
->, у якому розширення буде замінено на «...» </para>
+>In the context menu of the header line you can choose between custom or automatic column width. Automatic width adjusts the width of all columns once to display the longest item in the column completely, except for the <guilabel
+>Name</guilabel
+> column where the extension is replaced by <quote
+>...</quote
+> </para>
 <para
 >Порядок стовпчиків можна змінити перетягуванням зі скиданням заголовків цих стовпчиків, окрім стовпчика <guilabel
 >Назва</guilabel
@@ -866,6 +893,43 @@
 ></caption>
 </mediaobject>
 </screenshot>
+<!--FIXME end copy from dolphin docbook synced for 16.04 -->
+
+<sect2 id="filetipinfo">
+<title
+>File Tip Info</title>
+<para
+>Checking the <guilabel
+>Show tooltips</guilabel
+> box in the <menuchoice
+> <guimenu
+>File Management</guimenu
+><guimenuitem
+>General</guimenuitem
+></menuchoice
+> page of the &konqueror; Configuration dialog causes a small pop up information window to appear when the mouse pointer is hovered over a file or folder name or icon. </para>
+</sect2>
+
+<sect2 id="previews">
+<title
+>File Previews</title>
+<para
+>The <guilabel
+>Previews</guilabel
+> tab of the <menuchoice
+><guimenu
+>File Management</guimenu
+> <guimenuitem
+>General</guimenuitem
+></menuchoice
+> settings page lets you enable file previews for certain types of file.</para>
+<para
+>Generally this means that the file's icon will be replaced by a small image showing the file contents.</para>
+<para
+>Because &konqueror; has to read much more data than just the file name to generate a preview, file previews may not be appropriate when viewing files from a remote system. To disable previews for remote files where reading the extra data would take too long set a file size limit at the bottom of the <guilabel
+>Previews</guilabel
+> tab.</para>
+</sect2>
 
 <!--FIXME begin copy from dolphin docbook synced for 16.04-->
 <sect2 id="dolphin-view-information">
@@ -949,7 +1013,7 @@
 
 <listitem
 ><para
->Параметри впорядкування об’єктів, які визначаються режимом впорядковування об’єктів (за зростанням або за спаданням) та атрибутом впорядковування (наприклад назвою, розміром тощо). </para
+>The sorting of items, which is determined by the sort order (ascending, descending) and the attribute (such as name, size,...) that the items are sorted by </para
 ></listitem>
 
 <listitem
@@ -959,9 +1023,9 @@
 
 <listitem
 ><para
->Те, чи буде показано мініатюри замість піктограм (параметри показу можна визначити за допомогою вкладки <guilabel
->Перегляд</guilabel
-> сторінки «Загальне» параметрів програми). </para
+>Previews &ndash; are they shown instead of icons (based on the settings made in <guilabel
+>Previews</guilabel
+> tab of &konqueror;'s General settings) or not? </para
 ></listitem>
 
 <listitem
@@ -1020,9 +1084,11 @@
 >Якщо буде позначено пункт <guilabel
 >Використовувати ці властивості перегляду як типові</guilabel
 >, вибрані вами властивості перегляду буде використано для всіх тек, для яких ви ще не змінювали властивості перегляду. </para>
-</sect2>
-</sect1>
 
+</sect2>
+
+</sect1>
+<!--FIXME end copy from dolphin docbook  synced for 16.04-->
 <sect1 id="navigation">
 <title
 >Навігація</title>
@@ -1035,11 +1101,11 @@
 <itemizedlist>
 <listitem
 ><para
->Щоб увійти до підтеки, наведіть на її назву або піктограму вказівник миші і клацніть <mousebutton
->лівою</mousebutton
-> кнопкою миші. Якщо підтеку вже <quote
->вибрано</quote
-> (пояснення див. нижче), просто натисніть клавішу <keysym
+>To descend into a subfolder <mousebutton
+>left </mousebutton
+> click on its name or icon -- or if you have already <quote
+>selected</quote
+> it (see below) -- then just press <keysym
 >Enter</keysym
 >.</para
 ></listitem
@@ -1095,19 +1161,19 @@
 find your way around the file system.</para>
 -->
 <para
->Ви можете перейти до будь-якої теки безпосередньо, якщо введете її шлях на панелі адреси або у діалогове вікно, яке відкривається пунктом меню <menuchoice
+>You can go directly to any folder by switching with <menuchoice
 ><guimenu
->Файл</guimenu
-> <guimenuitem
->Відкрити адресу</guimenuitem
+>File</guimenu
+><guimenuitem
+>Open Location</guimenuitem
 > </menuchoice
-> або комбінацією клавіш <keycombo action="simul"
+> or <keycombo action="simul"
 >&Alt;<keycap
 >O</keycap
-></keycombo
->. Під час виконання цієї операції може бути корисною можливість <link linkend="path-complete"
->доповнення тексту</link
->, вбудована у &konqueror;. Не забудьте, що під час написання назв файлів і тек у &Linux; / &UNIX; слід враховувати регістр символів, що їх складають.</para>
+> </keycombo
+> to the Location Bar and typing its path. &konqueror;'s <link linkend="path-complete"
+> Text Completion</link
+> feature may be useful when you do this. Don't forget that in &Linux; / &UNIX; file and folder names are case sensitive.</para>
 
 <para
 >Після того, як ви перейшли до нової теки, повернутися назад можна за допомогою кнопки панелі інструментів <guiicon
@@ -1169,19 +1235,19 @@ find your way around the file system.</para>
 >Як шукати файли і теки</title>
 
 <para
->Якщо ви не знаєте або не можете згадати, де певний файл або тека знаходяться у вашій системі, скористайтеся клавіатурним скороченням <keycombo action="simul"
+>If you don't know or can't remember where a file or folder is within your system, then use the shortcut <keycombo action="simul"
 >&Ctrl;<keycap
 >F</keycap
 ></keycombo
-> або пунктом меню <menuchoice
+> or the Menubar <menuchoice
 ><guimenu
->Інструменти</guimenu
-> <guimenuitem
->Знайти файл...</guimenuitem
+>Tools</guimenu
+><guimenuitem
+>Find File...</guimenuitem
 ></menuchoice
->. Ця діє відкриє вбудований у вікно &konqueror; елемент програми для пошуку &kfind;. Довідку щодо використання &kfind; можна знайти у <ulink url="help:/kfind/index.html"
->підручнику з &kfind;</ulink
->. </para>
+> option. This starts the file finder application &kfind;. See the <ulink url="help:/kfind/index.html"
+>&kfind; Handbook</ulink
+> for help in using &kfind;. </para>
 
 <note
 ><para
@@ -1210,19 +1276,19 @@ find your way around the file system.</para>
 >Портативні пристрої</title>
 
 <para
->Теки портативних пристроїв (флеш-дисків USB, дискет, компакт-дисків або інших розділів жорсткого диска), які присутні у вашій системі, зазвичай, зберігаються у теці <filename class="directory"
+>Any removable device (USB stick, floppy disk, &CD; drive or other hard disk partition that you have on your system) will usually appear in the <filename class="directory"
 >/ </filename
 >, <filename class="directory"
 >/media</filename
 >, <filename class="directory"
 >/mnt</filename
-> або <filename class="directory"
+> or <filename class="directory"
 >/auto</filename
->, шлях до них виглядає так: <filename class="directory"
+> folder, having a path something like <filename class="directory"
 >/mnt/floppy</filename
->, або так: <filename class="directory"
+> or <filename class="directory"
 >/cdrom</filename
->. Точний вигляд шляху залежить від налаштувань вашої системи.</para>
+>. The details will depend on how your system was set up.</para>
 
 <para
 >У &UNIX; / &Linux; потрібно <command
@@ -1248,13 +1314,15 @@ find your way around the file system.</para>
 </listitem>
 <listitem
 ><para
->Якщо ви користуєтеся режимом перегляду тек для вашої стільниці, ви можете викласти піктограми портативних пристроїв на вашу стільницю. У цьому випадку ви зможете змонтувати відповідні пристрої простим клацанням лівою кнопкою миші, коли вказівник наведено на відповідну піктограму. Крім того, виконання подібної дії відкриватиме вікно &konqueror;, у якому буде показано вміст портативного носія даних. Щоб демонтувати відповідний пристрій, наведіть вказівник миші на піктограму пристрою, клацніть <mousebutton
->правою</mousebutton
-> кнопкою миші і у контекстному меню оберіть пункт <guimenuitem
->Демонтувати</guimenuitem
->. Прочитайте розділ цього підручника, присвячений команді <link linkend="making"
->Створити...</link
->, щоб дізнатися про те, як створити піктограму на стільниці.</para
+>If you use the <guilabel
+>Folder View</guilabel
+> layout for your desktop you may have icons for removable devices on your desktop, in which case &LMB; click on the icon to mount it. Doing this should also bring up a &konqueror; window showing the contents of the device. To unmount, <mousebutton
+>right</mousebutton
+> click on the icon and choose the <guimenuitem
+>Unmount</guimenuitem
+> item. Visit the section <link linkend="making"
+>Create New...</link
+> in this Handbook to see how to create such an icon.</para
 ></listitem>
 
 <listitem
@@ -1282,25 +1350,28 @@ find your way around the file system.</para>
 >). </para>
 <note
 ><para
->Ви можете віддати перевагу перед відкриттям текстової консолі, у якій можна виконати команди монтування,  <command
+>Rather than having to open a text console to type the <command
 >mount </command
-> або демонтування, <command
+> or <command
 >umount</command
->, простій можливості &konqueror;, якою можна скористатися за допомогою пункту меню <menuchoice
+> commands, you may prefer to use &konqueror;'s <menuchoice
 ><guimenu
-> Інструменти</guimenu
-> <guimenuitem
->Виконати команду оболонки</guimenuitem
+>Tools</guimenu
+><guimenuitem
+>Execute Shell Command</guimenuitem
 ></menuchoice
 > (<keycombo action="simul"
 >&Ctrl;<keycap
 >E</keycap
 ></keycombo
->). </para
+>) feature. </para
 ></note>
+
 </listitem>
+
 </itemizedlist>
 </sect2>
+
 </sect1>
 
 <sect1 id="deleting">
@@ -1321,15 +1392,15 @@ find your way around the file system.</para>
 
 <listitem
 ><para
->Ви можете просто скористатися пунктом «Вилучити», вибір якого призведе до вилучення елемента з теки і додавання дискового простору, який від займав, до списку вільних областей на диску, у той же спосіб як це робить команда <command
+>You can just plain Delete it, which removes the entry from the folder and adds the disk area occupied by the file(s) to the system's list of free disk areas, in the same way as the <command
 >rm</command
->.</para>
+> command.</para>
 <para
->Якщо ви хочете скористатися цією можливістю, позначте пункт <guilabel
->Показувати пункт контекстного меню «Вилучити», що оминає смітник</guilabel
-> на сторінці налаштування <guilabel
->Керування файлами</guilabel
->.</para
+>If you want to use this feature check the option <guilabel
+>Show 'Delete' menu entries which bypass the trashcan</guilabel
+> on the <guilabel
+>File Management</guilabel
+> settings page.</para
 ></listitem>
 </itemizedlist>
 
@@ -1369,7 +1440,7 @@ find your way around the file system.</para>
 
 <note
 ><para
->Ви не зможете вилучити файл або теку, якщо у вас на це немає достатніх дозволів.</para
+>You won't be able to remove a file or folder if you don't have the necessary permissions.</para
 ></note>
 
 </sect1>
@@ -1443,21 +1514,48 @@ find your way around the file system.</para>
 >Вставити</guimenuitem
 > у його новій теці.</para>
 
+<para
+>You can also copy or move selected item(s) to another folder by selecting <guimenuitem
+>Copy To</guimenuitem
+> or <guimenuitem
+>Move To</guimenuitem
+> from the context menu you get when you <mousebutton
+>right</mousebutton
+> click on a file or folder name in the File Manager window.</para>
+<para
+>To enable this feature select <guilabel
+>Show 'Copy To' and 'Move To' commands</guilabel
+> on the <menuchoice
+><guimenu
+>File Management</guimenu
+> <guimenuitem
+>Services</guimenuitem
+></menuchoice
+> page of the settings.</para>
+<note
+><para
+>You may not be able to copy or move a file or folder if you don't have the necessary permissions.</para
+></note>
+
 <sect2 id="dnd">
 <title
->Користування перетягуванням і скиданням</title>
+>Using Drag 'n Drop</title>
 
 <para
 >Крім того, &konqueror; підтримує копіювання і пересування файлів і тек за протоколом перетягування і скидання.</para>
 
 <para
->Відповідну операцію можна виконати між двома екземплярами &konqueror;, у одному з яких буде показано теку, з якої ви бажаєте копіювати, а у іншому — теку призначення. Наведіть вказівник миші на позначку об’єкта, який ви бажаєте копіювати або пересунути, потім, утримуючи натиснутою ліву кнопку миші, «перетягніть» позначку вказівником миші на порожнє місце у вікні теки призначення. Відпустіть кнопку, — перед вами відкриється меню, за допомогою якого ви можете обрати потрібну дію: <guimenuitem
->Копіювати сюди</guimenuitem
+>You can do this by having two instances of &konqueror;, one showing the folder you want to copy from, the other showing the target folder. Position the mouse pointer over the item you wish to copy or move, then, holding the &LMB; pressed, <quote
+>drag</quote
+> it to a clear space in the target folder. Release the button and you will be presented with a menu choice of <guimenuitem
+>Copy Here</guimenuitem
 >, <guimenuitem
->Пересунути сюди</guimenuitem
-> або <guimenuitem
->Створити посилання</guimenuitem
->. Пам’ятайте, що «скидати» позначку слід саме на порожнє місце у теці призначення — скидання на назву або піктограму іншого елемента може призвести до небажаних результатів.</para>
+>Move Here</guimenuitem
+> or <guimenuitem
+>Link Here</guimenuitem
+>. Take care to <quote
+>drop</quote
+> the item into an empty area of the target folder view - dropping it on top of a subfolder will copy or move the item into that folder.</para>
 
 <para
 >Крім того, ви можете налаштувати &konqueror; так, щоб програма показувати декілька тек у одному вікні одночасно, тоді ви зможете перетягувати і скидати елементи між цими частинами вікна.</para>
@@ -1495,19 +1593,19 @@ find your way around the file system.</para>
 > кнопкою миші.</para>
 
 <para
->Щоб вилучити активну область перегляду з вікна &konqueror;, скористайтеся клавіатурним скороченням <keycombo action="simul"
+>To remove an active view from &konqueror;'s window use the <keycombo action="simul"
 >&Ctrl;&Shift;<keycap
 >W</keycap
-> </keycombo
->, пунктом меню <menuchoice
+></keycombo
+> shortcut, or the Menubar <menuchoice
 ><guimenu
->Вікно</guimenu
-> <guimenuitem
->Закрити активний перегляд</guimenuitem
+>Window</guimenu
+><guimenuitem
+>Close Active View</guimenuitem
 ></menuchoice
-> або наведіть вказівник миші на смужку стану, клацніть правою кнопкою миші і виберіть пункт <guimenuitem
->Закрити перегляд</guimenuitem
-> з контекстного меню.</para>
+> option, or &RMB; click on the Status Bar and choose the <guimenuitem
+>Close View</guimenuitem
+> option from the resulting menu.</para>
 
 <para
 >Якщо ви використовуєте вкладки &konqueror;, ви можете виконувати операцію з перетягування і скидання між вкладками: перетягніть позначку потрібного файла на мітку вкладки, не відпускаючи лівої кнопки. Відкриється вкладка призначення, і ви зможете продовжити операцію перетягування з наступним скиданням файла.</para>
@@ -1586,6 +1684,25 @@ find your way around the file system.</para>
 <listitem
 ><para
 >Якщо під час наведення вказівника миші на позначку об’єкта з наступним клацанням лівою кнопкою миші ви утримуватимете натиснутою клавішу &Shift;, програма позначить всі об’єкти, позначки яких розташовано між попереднім позначеним об’єктом і об’єктом, на який було наведено вказівник миші. </para
+></listitem>
+
+<listitem
+><para
+>If <guilabel
+>Show selection marker</guilabel
+> is enabled in the <guilabel
+>Behavior</guilabel
+> tab of the <menuchoice
+><guimenu
+>File Management</guimenu
+> <guimenuitem
+>General</guimenuitem
+></menuchoice
+> section of the settings, a small <guiicon
+>+</guiicon
+> or <guiicon
+>-</guiicon
+> button appears in the top left corner of the item which is currently hovered over with the mouse. Clicking this sign selects or deselects the item, respectively. </para
 ></listitem>
 
 </itemizedlist>
@@ -1668,26 +1785,26 @@ find your way around the file system.</para>
 > з однієї теки до іншої. &konqueror; спрощує цю процедуру: він надає вам змогу вибрати декілька файлів на основі подібності їх назв.</para>
 
 <para
->Скористайтеся пунктом меню <menuchoice
+>Use the Menubar <menuchoice
 ><guimenu
->Зміни</guimenu
+>Edit</guimenu
 ><guisubmenu
->Вибір</guisubmenu
+>Selection</guisubmenu
 > <guimenuitem
->Пошук для позначення...</guimenuitem
+>Select Matching Items...</guimenuitem
 ></menuchoice
-> або клавіатурним скороченням <keycombo action="simul"
+> option or the shortcut <keycombo action="simul"
 >&Ctrl;<keycap
 >S</keycap
 ></keycombo
->. Обидві ці дії призведуть до відкриття невеличкого діалогового вікна, у якому ви зможете ввести назву файлів з використанням шаблонів заміни: <keycap
+>. This brings up a little dialog box in which you enter a filename containing the wildcard characters <keycap
 >*</keycap
->, який відповідає будь-якій кількості довільних символів, і <keycap
+>, which matches any number of characters, and <keycap
 >?</keycap
->, який відповідає одному довільному символу. Натисніть кнопку <guibutton
->Гаразд</guibutton
->, і &konqueror; виділить всі позначки файлів, назви яких відповідають введеному шаблону. Приклад:</para>
-
+> which matches a single character. Press <guibutton
+>OK</guibutton
+> and &konqueror; will highlight all files with matching names. For example:</para>
+      
 <itemizedlist>
 <listitem
 ><para
@@ -1720,15 +1837,15 @@ find your way around the file system.</para>
 </itemizedlist>
 
 <para
->Якщо ви вибрали діапазон файлів, ви можете відфільтрувати вибір за допомогою пункту меню <menuchoice
+>When you have selected a range of files, you can narrow down the selection by using the Menubar <menuchoice
 ><guimenu
->Зміни</guimenu
-> <guisubmenu
->Вибір</guisubmenu
+>Edit</guimenu
+><guisubmenu
+>Selection</guisubmenu
 > <guimenuitem
->Пошук для зняття позначення...</guimenuitem
+>Unselect Matching Items...</guimenuitem
 ></menuchoice
->: ви зможете вказати, позначення з яких файлів слід зняти.</para>
+> option to specify which of the selected files should be removed from the selection.</para>
 
 <para
 >Щоб скасувати вибір, скористайтесь пунктом меню <menuchoice
@@ -1764,16 +1881,18 @@ find your way around the file system.</para>
 >Створити</title>
 
 <para
->Якщо &konqueror; працює у режимі менеджера файлів, вибір пункту <guisubmenu
->Створити</guisubmenu
-> з контекстного меню, яке можна викликати клацання правою кнопкою миші, коли вказівник знаходиться на порожньому місці у вікні перегляду, відкриє підменю, за допомогою якого ви зможете створити у поточній теці один з таких елементів:</para>
+>When &konqueror; is in File Manager mode, picking <guisubmenu
+>Create New</guisubmenu
+> from the <guimenu
+>Edit</guimenu
+> menu or from the context menu you get by &RMB; clicking on a free area in a folder view gives you a submenu letting you create any of the following in the current folder:</para>
 
 <variablelist>
 
 <varlistentry>
 <term
 ><guimenuitem
->Тека…</guimenuitem
+>Folder...</guimenuitem
 ></term>
 <listitem
 ><para
@@ -1784,7 +1903,7 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Текстовий файл…</guimenuitem
+>Text File...</guimenuitem
 ></term>
 <listitem
 ><para
@@ -1795,24 +1914,24 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Файл HTML…</guimenuitem
+>HTML File...</guimenuitem
 ></term>
 <listitem
 ><para
->Створює каркас файла кодів <acronym
+>Creates a skeleton <acronym
 >HTML</acronym
->. Коли вписуватимете назву нового файла у діалогове вікно, краще ввести суфікс <literal role="extension"
+> source file. When you type the new file's name into the dialog box it is probably best to give it a <literal role="extension"
 >.html </literal
->, щоб уникнути плутанини.</para
+> extension to avoid confusion.</para
 ></listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><guimenuitem
->Документ <replaceable
->тип документа</replaceable
->…</guimenuitem
+><replaceable
+>Type of Document</replaceable
+> Document...</guimenuitem
 ></term>
 <listitem
 ><para
@@ -1823,24 +1942,24 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Посилання на адресу (URL)…</guimenuitem
+>Link to Location (URL)...</guimenuitem
 ></term>
 <listitem
 ><para
->Цей пункт надасть вам змогу створити піктограму, яка відкриватиме &konqueror; у певній теці або на певній вебсторінці. Так само, як і для <guimenuitem
->Посилання на програму...</guimenuitem
-> ви можете винести піктограму посилання на адресу на вашу стільницю, якщо створите посилання у вашій теці <filename
+>This lets you create an icon to open &konqueror; at a particular folder or web page. As with <guimenuitem
+>Link To Application...</guimenuitem
+> you can make the application icon appear on your desktop by creating the link in your <filename
 >~/Desktop</filename
-> або скористаєтеся пунктом підменю <guisubmenu
->Створити...</guisubmenu
->, яке буде викликано клацанням правою кнопкою миші на вільному місці вашої стільниці.</para
+> folder or going to the <guisubmenu
+>Create New...</guisubmenu
+> sub menu by right clicking on a free area of the desktop.</para
 ></listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><guimenuitem
->Посилання на файл або каталог…</guimenuitem
+>Basic link to file or directory...</guimenuitem
 ></term>
 <listitem
 ><para
@@ -1851,7 +1970,7 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Посилання на програму…</guimenuitem
+>Link to Application...</guimenuitem
 ></term>
 <listitem
 ><para
@@ -1872,28 +1991,45 @@ find your way around the file system.</para>
 > у &kwrite;. На цій сторінці також можна змінити додаткові параметри, такі як типи файлів, які може відкривати відповідна програма.</para>
 
 <para
->Щоб вашу піктограму програми було показано на стільниці, створіть на неї посилання у вашій теці <filename class="directory"
+>To make the application icon appear on your desktop, create the link in your <filename class="directory"
 >~/Desktop</filename
-> (назва може трохи відрізнятися залежно від способу, у який &kde; було встановлено у вашій системі) або скористайтеся пунктом підменю <guisubmenu
->Створити...</guisubmenu
-> клацанням <mousebutton
->правою</mousebutton
-> кнопкою миші, коли вказівник миші знаходиться на вільному місці стільниці, а не вікна &konqueror;.</para>
+> folder (this may be called something slightly different depending on how &kde; was installed on your system) or get to the <guisubmenu
+>Create New...</guisubmenu
+> sub menu by <mousebutton
+>right</mousebutton
+> clicking on a free area of the desktop instead of within &konqueror;'s window.</para>
 
 <para
->Якщо у вас є забагато спеціалізованих програм і ви не бажаєте засмічувати свою стільницю, ви можете створити відповідні посилання у вашій теці Програм. Перейти до цієї теки можна за допомогою пункту меню &konqueror; <menuchoice
+>If you have a lot of specialized application links and don't want to clutter up the desktop, then why not create them in your Applications folder. You can get there in &konqueror; by choosing <menuchoice
 ><guimenu
->Перехід</guimenu
+>Go</guimenu
 > <guimenuitem
->Програми</guimenuitem
+>Applications</guimenuitem
 ></menuchoice
->. Після створення посилань ви можете створити на вашій стільниці окрему піктограму, яка відкриватиме вашу теку Програм, ця тека зазвичай знаходиться за адресою <filename class="directory"
+>. Then create a single icon on your desktop to open your Applications folder, which is usually in <filename class="directory"
 >~/.local/share/applications</filename
 >.</para>
 <para
->Щоб розташувати вашу піктограму з посиланням на програму на панелі, спочатку створіть піктограму у теці Програм, а потім перетягніть цю піктограму на вільне місце на панелі.</para
+>Щоб розташувати вашу піктограму з посиланням на програму на панелі, спочатку створіть піктограму у теці Програм, а потім перетягніть цю піктограму на вільне місце на панелі.</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guisubmenu
+>Link to Device</guisubmenu
+></term>
+<listitem
+><para
+>Use the options in this submenu to create an icon that will mount a device and open an instance of &konqueror; showing it's contents. To unmount the device when you have finished with it <mousebutton
+>right</mousebutton
+> click on the icon and select <guimenuitem
+>Unmount</guimenuitem
+>. However, in most cases you will want to create the icon on your desktop. </para
 ></listitem>
 </varlistentry>
+
 </variablelist>
 
 </sect1>
@@ -1943,8 +2079,8 @@ find your way around the file system.</para>
 <listitem
 ><para
 ><guilabel
->Дозволи</guilabel
->, тут показано належність відповідного елемента і права на доступ до нього, за наявності відповідних прав ви можете змінити ці дозволи. </para
+>Permissions</guilabel
+>, which shows you the item's ownership and access permissions and lets you change the permissions. </para
 ></listitem>
 </itemizedlist>
 <!--FIXME Checksums tab missing-->
@@ -1952,15 +2088,15 @@ find your way around the file system.</para>
 <title
 >Копіювання і перейменування</title>
 <para
->Якщо ви бажаєте зробити копію існуючого файла з новою назвою — наприклад для резервування — у тій же теці, де знаходиться початковий файл, виконайте звичайну операцію <guimenuitem
->Копіювати</guimenuitem
->, а потім <guimenuitem
->Вставити</guimenuitem
->: з’явиться діалогове вікно, у якому програма жалітиметься на те, що файл з такою назвою вже існує. Просто введіть нову назву у поле для введення тексту і натисніть кнопку <guibutton
->Продовжити</guibutton
-> (або, якщо вам ліньки, натисніть кнопку <guibutton
->Запропонувати нову назву</guibutton
->, щоб програма створила нову назву самостійно).</para>
+>If you want to make a copy of an existing file with a different name -- perhaps as a backup -- in the same folder as the original file, do a normal <guimenuitem
+>Copy</guimenuitem
+> then when you <guimenuitem
+>Paste</guimenuitem
+> it a dialog box will pop up complaining that the file already exists. Just type the new name into the dialog's text box and press the <guibutton
+>Continue</guibutton
+> button (or if you are feeling lazy pressing the <guibutton
+>Suggest New Name</guibutton
+> button will generate a new name for you).</para>
 </sect2>
 
 </sect1>
@@ -1969,19 +2105,19 @@ find your way around the file system.</para>
 <title
 >Налаштування прив’язки файлів</title>
 
-<!-- TODO: The content should probably be here too, but this’ll do for -->
+<!-- TODO: The content should probably be here too, but this'll do for -->
 <!-- now. -->
 <para
->У &kde; є багато програм, які можу відкривати файли багатьох різних типів. У більшості випадків типові програми працюють без проблем, але у &konqueror; є потужна система, яка надає вам змогу змінювати програми, які буде використано для відкриття файла будь-якого типу. Щоб дізнатися про це більше, скористайтеся пунктом меню <menuchoice
+>&kde; provides many applications which can open many different types of file. Most of the time, the defaults will work with no problems, but &konqueror; provides a powerful system to allow you to change the applications used to open each file type. For more details, choose the <menuchoice
 ><guimenu
->Параметри</guimenu
+>Settings</guimenu
 ><guimenuitem
->Налаштувати Konqueror...</guimenuitem
+>Configure Konqueror...</guimenuitem
 ></menuchoice
->, виберіть пункт <guilabel
->Прив’язка файлів</guilabel
-> у діалоговому вікні налаштування, і натисніть кнопку <guibutton
->Довідка</guibutton
+> menu item, select <guilabel
+>File Associations</guilabel
+> in the configuration dialog, and click on <guibutton
+>Help</guibutton
 >.</para>
 
 </sect1>
@@ -1994,46 +2130,46 @@ find your way around the file system.</para>
 >Хоча &konqueror; є дуже потужним і гнучким інструментом для роботи з файлами з графічним інтерфейсом, існують випадки, коли досвідчений користувач &Linux; / &UNIX; бажав би повернутися до основ і виконати певну роботу за допомогою текстового командного рядка.</para>
 
 <para
->Ви, звичайно ж, можете відкрити програму &konsole;, наприклад за допомогою пункту меню &konqueror; <menuchoice
+>You can, of course, open an instance of &konsole;, perhaps with &konqueror;'s Menubar <menuchoice
 ><guimenu
->Інструменти</guimenu
+>Tools</guimenu
 ><guimenuitem
->Відкрити термінал</guimenuitem
+>Open Terminal</guimenuitem
 ></menuchoice
-> або клавіатурного скорочення <keycap
+> option or with <keycap
 >F4</keycap
 >.</para>
 <para
->Якщо вам потрібно всього лише виконати команду або переглянути адресу &URL;, найкращим виходом буде скористатися пунктом меню <menuchoice
+>If you only want to launch a program or view a &URL;, the <menuchoice
 > <guimenu
->Інструменти</guimenu
+>Tools</guimenu
 ><guimenuitem
->Виконати команду оболонки...</guimenuitem
+>Execute Shell Command...</guimenuitem
 ></menuchoice
 > (<keycombo action="simul"
 >&Ctrl;<keycap
 >E</keycap
 ></keycombo
->).</para>
+>) option may be easier.</para>
 
 <para
->Пункт меню <menuchoice
+><menuchoice
 ><guimenu
->Інструменти</guimenu
+>Tools</guimenu
 ><guimenuitem
->Виконання команди оболонки... </guimenuitem
+>Execute Shell Command... </guimenuitem
 ></menuchoice
 > (<keycombo action="simul"
 >&Ctrl; <keycap
 >E</keycap
 ></keycombo
->) відкриває невеличке діалогове вікно командного рядка, у якому ви можете ввести команду оболонки, наприклад <userinput
+>) opens a small command line dialog window where you can enter a shell command such as <userinput
 >ps -ax | grep kdeinit </userinput
->. Зауважте, що повної підтримки керування з термінала не буде, отже програми на зразок <userinput
+>. Note that it does not support full featured terminal control characters, so applications such as <userinput
 >top</userinput
-> і <userinput
->less</userinput
-> не працюватимуть належним чином, але такий спосіб гарний тим, що працює миттєво, — вам не потрібно чекати, доки буде запущено &konsole;. </para>
+> and <userinput
+> less</userinput
+> will not work properly, but it is available immediately without the delay involved in starting &konsole;. </para>
 
 <para
 >Для складніших операцій у &konqueror; є інша чудова можливість: пункт меню <menuchoice
@@ -2057,6 +2193,7 @@ find your way around the file system.</para>
 </chapter>
 
 <chapter id="browser">
+
 <chapterinfo>
 <authorgroup>
 <author
@@ -2092,6 +2229,59 @@ find your way around the file system.</para>
 >Перегляд www.konqueror.org</phrase>
 </textobject>
 </mediaobject>
+<!--FIXME rm this sect?-->
+<sect1 id="conn-inet">
+<title
+>Connecting to the Internet</title>
+
+<para
+>Once you are connected to the Internet you can use &konqueror; to browse the Web just as easily as you can use it to handle your local files. Just type a &URL; into the <guilabel
+>Location</guilabel
+> Toolbar window, press <keysym
+>Enter</keysym
+>, and you are away!</para>
+
+<itemizedlist>
+<listitem
+><para
+>If you use a dial-up modem connection, then you will be using &kppp; or a similar dialer program to make the connection.</para
+></listitem>
+
+<listitem
+><para
+>If your machine is connected to a local area network (<acronym
+>LAN</acronym
+>) that gives you a proxy connection to the Internet then you will have to set &konqueror; up for the proxy connection. This can be done with the <menuchoice
+><guimenu
+>Web Browsing</guimenu
+> <guimenuitem
+>Proxy</guimenuitem
+></menuchoice
+> page of the <menuchoice
+><guimenu
+> Settings</guimenu
+><guimenuitem
+>Configure Konqueror...</guimenuitem
+> </menuchoice
+> dialog.</para
+></listitem>
+
+<listitem
+><para
+>If you are lucky enough to have a high speed cable connection, then the service provider will probably give you an external cable modem which needs an ethernet connection to your machine. Unfortunately the details of how to establish the connection depend on the service provider and to some extent on which Linux/&UNIX; distribution you are using. Some <acronym
+>ISP</acronym
+>s connect their customers to the Internet through a proxy server, in which case you will have to set up &konqueror; to use it. You may find it useful to search the archives of your distribution's user group mailing list for help.</para>
+</listitem>
+</itemizedlist>
+
+<note
+><para
+>An error message such as <errorname
+>Unknown Host</errorname
+> usually means that &konqueror; cannot find a connection to the Internet or that you have entered an incorrect &URL;.</para
+></note>
+
+</sect1>
 
 <sect1 id="surf">
 <title
@@ -2101,21 +2291,23 @@ find your way around the file system.</para>
 >Після налаштування з’єднання з інтернетом, ви можете здійснювати навігацію Тенетами за допомогою &konqueror; у той самий спосіб, у який ви це робите у інших переглядачах Тенет.</para>
 
 <para
->Наберіть адресу &URL; у віконечку панелі адреси, натисніть клавішу <keysym
+>Type a &URL; into the Location Toolbar window, press <keysym
 >Enter</keysym
-> або наведіть вказівник миші на кнопку <guiicon
+> or <mousebutton
+>left</mousebutton
+> click on the <guiicon
 ><inlinemediaobject
 ><imageobject
 > <imagedata fileref="go-jump.png" format="PNG"/> </imageobject
 ></inlinemediaobject
 ></guiicon
-><guibutton
->Перейти</guibutton
-> і клацніть <mousebutton
->лівою</mousebutton
-> кнопкою миші, і &konqueror; отримає і покаже відповідну сторінку. Якщо ви вже відвідували цю сторінку раніше, функція <link linkend="path-complete"
->Автоматичного доповнення тексту</link
-> &konqueror; може допомогти вам у повторному набиранні адреси &URL;. Якщо ви бажаєте скористатися одним з рушіїв пошуку у мережі, функція вебскорочень пошуку &konqueror; може значно спростити справу.</para>
+> <guibutton
+>Go</guibutton
+> button at the right hand end of the Location Toolbar, and &konqueror; will download and display that page. If you have visited the page before, &konqueror;'s <link linkend="path-complete"
+>Automatic Text Completion</link
+> feature can help you type the &URL; a second time. If you want to use one of the web's search engines, &konqueror;'s <link linkend="enhanced-browsing"
+> Web Shortcuts</link
+> feature can make this easier.</para>
 
 <para
 >Наведіть вказівник миші на посилання і клацніть <mousebutton
@@ -2197,7 +2389,20 @@ find your way around the file system.</para>
 > і <keysym
 >PgDn</keysym
 >.</para>
-
+<para
+>If you want to read a long webpage use the automatic scrolling feature of &konqueror;. Start automatic scrolling with <keycombo action="simul"
+>&Shift;<keysym
+>Down</keysym
+></keycombo
+> or <keycombo action="simul"
+>&Shift;<keysym
+>Up</keysym
+></keycombo
+>. Then use these keys to increase and decrease the scrolling speed. You can start or stop automatic scrolling temporarily by pressing the &Shift; key; pressing any other key deactivates this feature. </para>
+<para
+>Automatic scrolling works only in the view mode <guimenuitem
+>KHTML</guimenuitem
+>. </para>
 <para
 >Якщо з якоїсь причини ви бажаєте зупинити отримання, скористайтесь клавішею &Esc;, кнопкою <guibutton
 >Зупинити</guibutton
@@ -2266,17 +2471,17 @@ find your way around the file system.</para>
 > кнопкою на заголовку нової вкладки.</para>
 
 <para
->Якщо ви позначили пункт <guilabel
->Відкривати посилання у новій вкладці замість нового вікна</guilabel
-> на сторінці <guimenuitem
->Загальне</guimenuitem
-> діалогового вікна, що відкривається пунктом меню <menuchoice
+>If you check the <guilabel
+>Open links in new tab instead of in new window</guilabel
+> box in the <guimenuitem
+>General</guimenuitem
+> page of the <menuchoice
 ><guimenu
->Параметри</guimenu
-> <guimenuitem
->Налаштувати Konqueror... </guimenuitem
+>Settings</guimenu
+><guimenuitem
+>Configure Konqueror... </guimenuitem
 ></menuchoice
->, клацання середньою кнопкою миші на посиланні відкриватиме його у новій сторінці-вкладці, а якщо ви утримуватимете натиснутою клавішу &Shift; під час клацання середньою кнопкою миші, посилання буде відкрито у фоновій сторінці-вкладці.</para>
+> dialog, &MMB; clicking on a link will open it in a new tab page and if you hold the &Shift; key down while clicking the &MMB; the link will be opened in a background tab page.</para>
 
 <para
 >Наведення вказівника миші на заголовок вкладки з наступним клацанням <mousebutton
@@ -2397,11 +2602,11 @@ find your way around the file system.</para>
 
 <sect1 id="enhanced-browsing">
 <title
->Ключові слова пошуку в інтернеті</title
+>Web Shortcuts</title
 > 
 
 <para
->Якщо увімкнено, функція ключових слів пошуку в інтернеті &konqueror; надасть вам змогу надсилати запит до рушія пошуку або подібного вебсайта без потреби попереднього відвідування основного сайта.</para
+>If enabled, &konqueror;'s Web Shortcuts feature lets you submit a query directly to a search engine or similar web site without having to visit the site first.</para
 > <para
 >Наприклад, якщо ввести до поля адреси <userinput
 >gg:konqueror</userinput
@@ -2411,14 +2616,10 @@ find your way around the file system.</para>
 >Google</trademark
 > сторінок у Тенетах, які стосуються &konqueror;.</para>
 <para
->Щоб переглянути список доступних ключових слів пошуку в інтернеті і, можливо, додати власне ключове слово відкрийте сторінку <guilabel
->Ключові слова пошуку в інтернеті</guilabel
-> у вікні, яке відкривається за допомогою пункту меню <menuchoice
-><guimenu
->Параметри</guimenu
-> <guimenuitem
->Налаштувати Konqueror...</guimenuitem
-></menuchoice
+>To see what Web Shortcuts are available, and perhaps add your own, open the <ulink url="help:/kcontrol/webshortcuts/"
+>Web Shortcuts</ulink
+> module in the &systemsettings; category <guilabel
+>Workspace</guilabel
 >.</para>
 
 </sect1>
@@ -2508,44 +2709,44 @@ strings.</para
 >Збереження і друк елементів з Тенет</title>
 
 <para
->Під час перегляду вебсторінки ви можете зберегти її (або, принаймні, її &HTML;-основу або подібний код) на ваш локальний диск за допомогою пункту меню <menuchoice
+>When you are viewing a web page you can save it (or at least the basic &HTML; or similar source text) to your local disk with <menuchoice
 ><guimenu
->Файл</guimenu
-> <guimenuitem
->Зберегти як...</guimenuitem
-></menuchoice
->. Якщо на сторінці, яку ви переглядаєте використано фрейми, ви також зможете скористатися пунктом меню <menuchoice
-><guimenu
->Файл</guimenu
-> <guimenuitem
->Зберегти фрейм як...</guimenuitem
-></menuchoice
->. Наведіть вказівник на фрейм, який ви бажаєте зберегти першим, і клацніть <mousebutton
->лівою</mousebutton
-> кнопкою миші.</para>
-
-<para
->Якщо під час створення сторінки було використано фонове зображення, ви можете отримати і зберегти це зображення за допомогою пункту меню <menuchoice
-><guimenu
->Файл</guimenu
+>File</guimenu
 ><guimenuitem
->Зберегти фонове зображення як...</guimenuitem
+>Save As...</guimenuitem
 ></menuchoice
->.</para>
+>. If the page you are viewing uses frames, then you will also be given the <menuchoice
+><guimenu
+>File</guimenu
+><guimenuitem
+>Save Frame As...</guimenuitem
+></menuchoice
+> option. <mousebutton
+>Left</mousebutton
+> click in the frame you want to save first.</para>
 
 <para
->Але, якщо все, що вам потрібно, — це чудовий знімок найостаннішої моделі Ferrari, наведення вказівника миші на відповідне зображення з наступним клацанням <mousebutton
->правою</mousebutton
-> кнопкою миші відкриє спадне меню, у якому ви зможете обрати пункт <guimenuitem
->Зберегти зображення як...</guimenuitem
->. Пам’ятайте, що слід зважати на авторські права власника і слід попросити дозволу, перш ніж використовувати якесь із зображень, збережених у такий спосіб, для чогось іншого окрім простого споглядання.</para>
+>If the page uses a background image, you can get and save that with the <menuchoice
+><guimenu
+>File</guimenu
+><guimenuitem
+>Save Background Image As...</guimenuitem
+></menuchoice
+> option.</para>
 
 <para
->Якщо ви наведете вказівник миші на посилання (яким може бути і картинка), клацнете <mousebutton
->правою</mousebutton
-> кнопкою миші і оберете пункт <guimenuitem
->Зберегти посилання як...</guimenuitem
-> з контекстного меню, базовий &HTML; або подібний початковий код сторінки буде отримано і збережено на ваш локальний диск.</para>
+>But if what you really want is that glorious picture of the latest Ferrari, then <mousebutton
+>right</mousebutton
+> clicking on the image will give you a drop-down menu with a <guimenuitem
+>Save Image As...</guimenuitem
+> option. Be sure to respect the owner's copyright, and ask for permission before using any pictures saved this way for anything other than your own viewing pleasure.</para>
+
+<para
+>If you <mousebutton
+>right</mousebutton
+> click on a link (which may be a picture) and select <guimenuitem
+>Save Link As...</guimenuitem
+> from the pop up menu the basic &HTML; or similar source text will be downloaded and saved on your local disk.</para>
 
 <para
 >Якщо ви наведете вказівник миші на посилання (яким може бути і картинка), клацнете <mousebutton
@@ -2562,17 +2763,17 @@ strings.</para
 > скопіює адресу &URL; цього зображення до буфера.</para>
 
 <para
->Надрукувати копію сторінки, яку ви переглядаєте, можна дуже просто: скористайтесь пунктами меню <menuchoice
+>Printing a copy of the page you are viewing is easily done with the Menubar <menuchoice
 ><guimenu
->Файл</guimenu
+>File</guimenu
 > <guimenuitem
->Друкувати...</guimenuitem
+>Print...</guimenuitem
 ></menuchoice
-> або <guimenuitem
->Друкувати фрейм</guimenuitem
->, або кнопкою <guiicon
->Друк</guiicon
-> на панелі інструментів.</para>
+> or <guimenuitem
+>Print Frame</guimenuitem
+> option or with the Toolbar <guiicon
+>Print</guiicon
+> button.</para>
 
 </sect1>
 
@@ -2584,11 +2785,11 @@ strings.</para
 >&FTP; або File Transfer Protocol (протокол передачі файлів) є одним з найдавніших, але все ще найкращих, способів передавання файлів між комп’ютерами за посередництвом Інтернету.</para>
 
 <para
->За допомогою &FTP; ви можете бачити файли і теки на віддаленому комп’ютері так само, як ви їх бачите на вашій системі, отримувати їх на ваш комп’ютер за допомогою звичайних операцій &konqueror; <guimenuitem
->Копіювати</guimenuitem
-> і <guimenuitem
->Вставити</guimenuitem
-> або способів перетягування і скидання, а також, якщо маєте на це дозвіл, вивантажувати файли з вашого комп’ютера до файлової системи іншого комп’ютера. Спробуйте набрати таку адресу &URL;</para>
+>With &FTP; you can see files and folders on the distant computer just as if they were on your own system, download them onto your computer using &konqueror;'s normal <guimenuitem
+>Copy</guimenuitem
+> and <guimenuitem
+>Paste</guimenuitem
+> or Drag n' Drop methods and, if allowed, upload files from your machine to the other computer's filesystem. To try it, type the &URL;</para>
 
 <screen
 ><userinput
@@ -2683,6 +2884,7 @@ OverridenPorts=РозділенийКомамиСписокДозволених�
 </chapter>
 
 <chapter id="path-complete">
+
 <chapterinfo>
 <authorgroup>
 <author
@@ -2758,11 +2960,11 @@ OverridenPorts=РозділенийКомамиСписокДозволених�
 ></term>
 <listitem
 ><para
->Мірою того, як ви набираєте адресу у полі панелі адреси, &konqueror; буде автоматично дописувати до введеної вами інформації символи, які утворюватимуть один з можливих шляхів або адрес &URL;, підсвічуючи додані програмою символи. Продовжуйте набирати адресу, якщо пропозиції програми не відповідають вашим намірам, або натисніть кнопку <keysym
+>As you type into the Location Toolbar window &konqueror; will automatically extend what you type to complete one possible path or &URL;, highlighting the characters it has added. Continue typing if that's not what you wanted or press <keysym
 >Enter</keysym
->, щоб прийняти їх.</para
+> to accept it.</para
 ></listitem>
-</varlistentry>
+ </varlistentry>
 
 <varlistentry>
 <term
@@ -2870,7 +3072,7 @@ Text Completion function can be viewed and edited in the <guilabel
 >Користування закладками</title>
 
 <para
->Хоча ви і можете використовувати закладки &konqueror; для запису розташування ваших власних файлів або тек, набагато більше користі від них можна отримати під час подорожей Тенетами, вони нададуть вам змогу побудувати список корисних для вас сайтів.</para>
+>Although you can use &konqueror;'s bookmarks to record the locations of your own files and folders, they are most useful when you are surfing the Web, letting you build up a list of useful sites.</para>
 
 <para
 >Щоб відкрити меню <guimenu
@@ -2903,19 +3105,19 @@ Text Completion function can be viewed and edited in the <guilabel
 > з контекстного меню.</para>
 
 <para
->У списку <guimenu
->Закладки</guimenu
-> можуть міститися підтеки, у яких містяться інші закладки, створити такі підтеки ви можете за допомогою пункту меню <menuchoice
+>The <guimenu
+>Bookmarks</guimenu
+> list can contain subfolders containing other bookmarks, you can create these with <menuchoice
 ><guimenu
->Закладки </guimenu
+>Bookmarks </guimenu
 ><guimenuitem
->Нова тека закладок...</guimenuitem
+>New Bookmark Folder...</guimenuitem
 ></menuchoice
->. Щоб додати закладку до підтеки, а не до основного списку закладок, виберіть теку зі списку <guimenu
->Закладки</guimenu
->, а потім скористайтеся пунктом меню <guimenuitem
->Додати закладку</guimenuitem
-> цієї теки.</para>
+> To add a bookmark into a subfolder rather than into the main Bookmark list, select the folder from within the <guimenu
+>Bookmarks</guimenu
+> list and use the <guimenuitem
+>Add Bookmark</guimenuitem
+> item in that folder.</para>
 <!--
 <para
 >You can also access your bookmarks from the <link linkend="sidebar">
@@ -2961,7 +3163,7 @@ disable sidebar subdir, the concept will have to be rethought
 
 <para
 >The Sidebar appears as a separate view at the left of 
-&konqueror;’s window. It can be invoked with <menuchoice
+&konqueror;'s window. It can be invoked with <menuchoice
 ><guimenu
 >Settings
 </guimenu
@@ -2987,7 +3189,7 @@ toggled on and off with the <keycap
 >It contains a number of tabbed pages; <mousebutton
 >left</mousebutton
 > 
-click on a tab’s icon to view that page. <mousebutton
+click on a tab's icon to view that page. <mousebutton
 >Left</mousebutton
 > 
 clicking on the icon for the visible page will collapse the Sidebar 
@@ -3044,7 +3246,7 @@ on any entry in the History page also gives you the option of choosing
 whether the entire history is sorted by name or by date.</para>
 <para
 >Selecting <guimenuitem
->Preferences…</guimenuitem
+>Preferences...</guimenuitem
 > from this pop up 
 menu brings up the <guilabel
 >History Sidebar</guilabel
@@ -3111,11 +3313,11 @@ new ones just as you would make any other subfolder. The items within
 these folders are held as <literal role="extension"
 >.desktop</literal
 > files 
-and can be created with &konqueror;’s <menuchoice
+and can be created with &konqueror;'s <menuchoice
 ><guisubmenu
 >Create New</guisubmenu>
 <guimenuitem
->Link to Location (URL)…</guimenuitem
+>Link to Location (URL)...</guimenuitem
 ></menuchoice
 > option in the 
 <guimenu
@@ -3136,7 +3338,7 @@ and can be created with &konqueror;’s <menuchoice
 > tree has the path <filename
 class="directory"
 >/</filename
->, and is the base folder of your system’s
+>, and is the base folder of your system's
 local files. If you expand the <quote
 >Root</quote
 > folder you will find 
@@ -3199,7 +3401,7 @@ The easiest way to add a folder to the <guilabel
 drag it and drop it in the panel. Moreover, you can click inside the panel with
 the &RMB; and choose <menuchoice
 ><guimenuitem
->Add Entry…</guimenuitem
+>Add Entry...</guimenuitem
 ></menuchoice>
 from the context menu.
 </para>
@@ -3359,8 +3561,8 @@ as described above.</para>
 
 </chapter>
 -->
-
 <chapter id="save-settings">
+
 <chapterinfo>
 <authorgroup>
 <author
@@ -3387,23 +3589,25 @@ as described above.</para>
 <title
 >Збереження параметрів роботи</title>
 <para
->Ви можете встановити інші параметри меню <guimenu
->Перегляд</guimenu
-> для окремої теки. Щоб зробити це, виберіть пункт <guimenuitem
->Налаштувати властивості перегляду...</guimenuitem
-> у меню <guimenu
->Перегляд</guimenu
->, змініть параметри <guimenu
->Перегляду</guimenu
-> на потрібні вам, а потім застосуйте параметри перегляду до <guilabel
->Поточної теки</guilabel
->. Ця операція створить файл <filename
+>You can specify different <guimenu
+>View</guimenu
+> menu settings for an individual folder. To do this select <menuchoice
+><guimenu
+>View</guimenu
+> <guimenuitem
+>Adjust View Properties...</guimenuitem
+></menuchoice
+>, change the <guimenu
+>View</guimenu
+> settings in the dialog to whatever you want. Then apply the view properties to the <guilabel
+>Current folder</guilabel
+>. Doing this creates a <filename
 >.directory</filename
-> у відповідній теці, у цьому файлі зберігатимуться параметри <guimenu
->Перегляду</guimenu
->. Щоб вилучити окремі параметри перегляду теки, скористайтеся відповідним діалоговим вікном ще раз (або просто вилучіть файл <filename
+> file in that folder to hold the folder <guimenu
+>View</guimenu
+> settings. Use this dialog again to remove the folder specific settings (or just delete the <filename
 >.directory</filename
->).</para>
+> file).</para>
 <note
 ><para
 >Одним з чудових прикладів використання цієї можливості є теки для зображень. Ви можете вказати для такої теки параметр перегляду піктограмами зображень (для цього виберіть пункти меню <menuchoice
@@ -3422,6 +3626,7 @@ as described above.</para>
 </chapter>
 
 <chapter id="plugins">
+
 <chapterinfo>
 <authorgroup>
 <author
@@ -3449,6 +3654,38 @@ as described above.</para>
 <title
 >Додатки</title>
 
+<!-- 
+adblock from baseapps+extragear
+Show all blockable html elements
+
+akregator
+This works on KHTMLPart and allows you to add feeds to Akregator directly from Konqueror.
+
+konq plugins in other modules
+kdeutils 
+  filelight
+  ark?
+
+kdebase apps
+  kttsdplugin (browser mode ?)
+  shellcmdplugin (file manager mode)
+  
+kdenetwork
+  Download Manager kget (browser mode)
+
+kdepim
+  Konqueror Feed Icon akregator
+  
+extragear/network
+  Konqueror Choqok Plugin
+
+extragear/base
+  Nepomuk-Webminer Plugin
+
+playground/utils  
+  Userscript (Grease Monkey) Support khtml_userscript
+-->
+
 <sect1 id="konq-plugin">
 <title
 >Додатки &konqueror;</title>
@@ -3457,37 +3694,44 @@ as described above.</para>
 >У &kde; передбачено декілька корисних додатків, здатних взаємодіяти з &konqueror; у різні способи. Нижче наведено короткий опис цих додатків.</para>
 
 <para
->За допомогою пункту меню <menuchoice
+>Use <menuchoice
 ><guimenu
->Параметри</guimenu
+>Settings</guimenu
 ><guimenuitem
->Налаштувати розширення...</guimenuitem
+>Configure Extensions...</guimenuitem
 ></menuchoice
-> можна відкрити діалогове вікно зі списком всіх встановлених додатків і вибрати ті з них, які вам потрібні. Доступ до дій увімкнених додатків можна здійснювати за допомогою меню <guimenu
->Інструменти</guimenu
->.</para>
+> to open a dialog with all installed plugins and select the ones you need. All plugins are accessible in the <guimenu
+>Tools</guimenu
+> menu.</para>
 
 <para
->У діалоговому вікні буде показано лише пункти додатків, відповідні до поточного режиму (керування файлами чи перегляду інтернету).</para>
+>Only plugins appropriate for the current mode (file manager or browser in KHTML/WebEngine view) are listed in the dialog.</para>
 
 <variablelist>
 <title
 >Режим перегляду інтернету</title>
-
-<varlistentry>
+<!-- 
+FIXME 16.12
+KHTML:  Auto Refresh, HTML Settings, Translate (disabled), Document Relations, Search Bar
+kwebkitpart for kf5 in extragear/base in branch frameworks
+WebKit only HTML Settings and Translate (disabled)
+WebEngine -> no extensions
+-->
+<varlistentry
+> <!-- disabled here, why?-->
 <term
 >Переклад вебсторінок</term>
 <listitem
 ><para
->Цей додаток використовує службу комп’ютерного перекладу <ulink url="http://translate.google.com/"
->Перекладач Google</ulink
-> для перекладу поточної сторінки <acronym
+>This uses the machine translation service provided by <ulink url="http://translate.google.com/"
+>Google Translate</ulink
+> to translate the current <acronym
 >HTML</acronym
-> будь-якою мовою, якою забажаєте (звичайно, у рамках здорового глузду). Додаток можна запустити за допомогою меню <menuchoice
+> page to whatever language you want (within reason). It can be launched with <menuchoice
 ><guimenu
->Інструменти</guimenu
-> <guisubmenu
->Перекласти вебсторінку</guisubmenu
+>Tools</guimenu
+><guisubmenu
+>Translate Web Page</guisubmenu
 ></menuchoice
 >.</para>
 <para
@@ -3495,10 +3739,11 @@ as described above.</para>
 
 <important>
 <para
->Комп’ютерний переклад все ще далекий від досконалості! Максимум, на що здатний Google, це грубий переклад, у гіршому випадку, такий переклад може лише насмішити вас. Не робіть ніяких важливих висновків на основі тексту, який ви прочитали після перекладу за допомогою Google, якщо ви не певні, що цей переклад насправді є точним.</para>
+>Machine translation is not a perfect science! Google will at best give you a rough translation, and at worst will give you a very funny read. Don't base important decisions on things you have read from a Google translated page, without confirming that the translation is indeed accurate.</para>
 </important>
 
-<note>
+<note
+> 
 <para
 >Ви можете перекладати лише сторінки, доступ до яких відкрито з всесвітніх Тенет (world wide web). Щоб перекласти будь-який інший текст, вам слід перейти безпосередньо на сайт Google, де ви зможете вставити текст, який слід перекласти.</para>
 </note>
@@ -3507,7 +3752,7 @@ as described above.</para>
 
 <varlistentry>
 <term
->Параметри HTML</term>
+>HTML Settings (KHTML view)</term>
 <listitem
 ><para
 >Виберіть пункт меню <menuchoice
@@ -3518,10 +3763,8 @@ as described above.</para>
 ></menuchoice
 >, щоб увімкнути або вимкнути ряд параметрів HTML, оминаючи блукання діалоговим вікном <guimenu
 >Параметри</guimenu
->.</para
-></listitem>
-</varlistentry>
-
+>. </para>
+<variablelist>
 <varlistentry>
 <term
 ><guimenuitem
@@ -3625,6 +3868,108 @@ as described above.</para>
 </varlistentry>
 </variablelist>
 
+</listitem>
+</varlistentry>
+<!--FIXME not in kf5
+<varlistentry>
+<term
+>User Agent Changer</term>
+<listitem
+><para
+>Select <menuchoice
+><guimenu
+>Tools</guimenu
+><guisubmenu
+>Change
+Browser Identification</guisubmenu
+></menuchoice
+> to get a menu that allows
+you to change the User Agent string without going through the 
+<guimenu
+>Settings</guimenu
+> dialog procedure.
+</para>
+<para
+>The plugin allows you to
+change the Browser and Operating System identification on a
+domain-by-domain basis. This is useful when browsing websites that
+limit access to those using a particular web browser.</para>
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Default Identification</guimenuitem
+></term>
+<listitem
+><para
+>The default User Agent header for &konqueror; is Mozilla/5.0(compatible;Konqueror/4.7)(KHTML/4.7, like Gecko).  If you come across a site that refuses this browser access, change your User Agent to one of the options below.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Browser submenu</term>
+<listitem
+><para>
+The following menu items show a list of popular browsers such as <guimenuitem
+>Firefox</guimenuitem
+>,
+<guimenuitem
+>Internet Explorer</guimenuitem
+>, <guimenuitem
+>Netscape Navigator</guimenuitem
+>,
+<guimenuitem
+>Opera</guimenuitem
+>, <guimenuitem
+>Other</guimenuitem
+>, and <guimenuitem
+>Safari</guimenuitem
+>.
+</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Apply To Entire Site</guimenuitem
+></term>
+<listitem
+><para
+>This option allows you to specify that the defined User Agent applies across every page on the site you are visiting.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Configure</guimenuitem
+></term>
+<listitem
+><para
+>Selecting <guimenuitem
+>Configure</guimenuitem
+> opens the settings dialog and allows you to fine tune the amount of information you wish to reveal about the browser and operating system being used.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</listitem>
+</varlistentry>
+-->
+
+<varlistentry>
+<term
+>Auto Refresh (KHTML view only)</term>
+<listitem
+><para
+>This works on any readonly part (though currently it only plugs into khtmlpart). It lets you tell &konqueror; to refresh a page automatically after a specific period. This is useful for things like news pages, and should be very nice for people using Kiosk mode </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
 <variablelist>
 <title
 >Режим керування файлами</title>
@@ -3680,7 +4025,7 @@ as described above.</para>
 <term
 >За допомогою діалогового вікна «Вигляд» ви зможете налаштувати вигляд сторінки галереї.</term>
 <listitem>
-
+  
 <screenshot>
 <screeninfo
 >Знімок діалогового вікна вигляду</screeninfo>
@@ -3805,7 +4150,7 @@ as described above.</para>
 <term
 >Діалогове вікно тек призначено для вибору теки, куди буде збережено галерею. Цим діалоговим вікном можна також скористатися для налаштування тек, які буде використано для роботи додатка.</term>
 <listitem>
-
+  
 <screenshot>
 <screeninfo
 >Знімок діалогового вікна тек</screeninfo>
@@ -3866,12 +4211,12 @@ as described above.</para>
 <para
 >Формат цього файла:</para>
 <programlisting
-># коментар, рядки, що починаються з «#» не беруться до уваги
-НАЗВА_ФАЙЛА1:
-Опис
+># this is a comment, lines starting with '#' are ignored
+FILENAME1:
+Description
 
-НАЗВА_ФАЙЛА2:
-Опис
+FILENAME2:
+Description
 </programlisting>
 </listitem>
 </varlistentry>
@@ -3890,7 +4235,7 @@ as described above.</para>
 <term
 >Діалогове вікно «Мініатюри» призначено для налаштування властивостей мініатюр вашої галереї.</term>
 <listitem>
-
+  
 <screenshot>
 <screeninfo
 >Знімок діалогового вікна мініатюр</screeninfo>
@@ -3960,8 +4305,8 @@ as described above.</para>
 >Панель пошуку</term>
 <listitem
 ><para
->Містить поле введення даних, яке спрощує доступ до рушіїв пошуку, зокрема Google. Натискання піктограми у лівій частині поля пошуку відкриває меню, за допомогою якого можна вибрати і задіяти різні рушії пошуку, а також налаштувати відповідні <guilabel
->Ключові слова пошуку в інтернеті</guilabel
+>Provides a text box for easy access to search engines such as Google. Clicking on the icon on the left side of the search box opens a menu to select and enable different search engines and configure their <ulink url="help:/kcontrol/webshortcuts/index.html"
+>Web Shortcuts</ulink
 >. </para>
 </listitem>
 </varlistentry>
@@ -3982,7 +4327,9 @@ imagerotation context menu Actions -> Convert to -> JPEG,PNG,GIF,TIFF
 Additional Download Manager from KGet
 -->
 </variablelist>
+
 </sect1>
+
 </chapter>
 
 <chapter id="view-extensions">
@@ -3990,6 +4337,13 @@ Additional Download Manager from KGet
 <title
 >Розширення режиму перегляду</title>
 
+<!--filemanager mode:
+default Icons/Details/Compact (Dolphin), File Size View (konq-plugins)
+additional Terminal Emulator (Konsole), (File Replace View (kdewebdev), )Cervisia (kdesdk), SVN Client, Radial Map (Filelight-kdeutils) and more
+browser mode:
+default KHTML, Embedded Advanced Text Editor
+additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
+  -->
 <para
 >У &konqueror; передбачено додаткові панелі перегляду, які можна відкрити за допомогою пунктів підменю <menuchoice
 ><guimenu
@@ -4028,7 +4382,7 @@ Additional Download Manager from KGet
 </sect1info>
 
 <title
->&fsview; — перегляд файлової системи</title>
+>&fsview; - the File System View</title>
 <sect2>
 <title
 >Вступ</title>
@@ -4039,7 +4393,7 @@ Additional Download Manager from KGet
 >. Його можна розглядати як альтернативу до різноманітних переглядів піктограмами та списками під час навігації вмістом вашої локальної файлової системи.</para>
 
 <para
->Унікальною здатністю &fsview; є можливість показу всієї ієрархії тек за допомогою так званої карти дерева для графічної візуалізації. За допомогою карт дерева можна показувати метрику об’єктів у вузловій структурі: кожному об’єкту відповідає прямокутник з площею, пропорційною до його метрики. Сума метрик дочірніх об’єктів рівна або менша з метрику батьківського об’єкта.</para>
+>The unique property of &fsview; is its ability to show whole nested folder hierarchies using a so-called tree map for graphical visualization. Tree maps allow for displaying metrics of objects in nested structures: each object is represented by a rectangle whose area is proportional to its metric. The sum of the children's metrics must be equal to or smaller than the parent object's metric.</para>
 
 <para
 >У &fsview; як метрика використовується розмір файлів і тек, а розмір теки визначається як сума розмірів її елементів. Таким чином, великі файли, навіть у глибині ієрархії файлів легко можна виявити як великі прямокутники. Отже, &fsview; можна розглядати яка графічну і інтерактивну версію команди &UNIX; <command
@@ -4088,7 +4442,7 @@ Additional Download Manager from KGet
 >Алгоритми побудови TreeMap</title>
 
 <para
->Алгоритми малювання карт дерева мають виконувати закон пропорційності метрики елемента до площі. Карта дерева &fsview; не зовсім відповідає цій вимозі: для розмежування елементів слід малювати границі, а границі теж займають певну площу, яку буде забрано у площ дочірніх об’єктів. Зауважте, що на границі буде втрачено найменше площі, якщо прямокутник є квадратом.</para>
+>For drawing algorithms in tree maps, the rule that the area is proportional to the metric of an item should hold true. With the tree map in &fsview;, this goal isn't always met: we draw borders to show the nesting of items, and this border takes space for an item which is possibly lost for the areas of child items. Note that less space is lost for the border if the rectangle is quadratic.</para>
 
 <para
 >Так само, для полегшення перегляду кожен прямокутник повинен містити назву об’єкта, а назва теж займає площу. Можна вибрати один з варіантів: або завжди показувати написи, або показувати написи, лише якщо є вільне місце. У останньому випадку, якщо ви наводитимете вказівник миші на малі елементи і затримуватимете його там на деякий час, з’являтиметься панель з підказкою щодо файла. На панелі буде показано відомості щодо елемента, над яким знаходиться вказівник миші, а також його стосунки місце у ієрархії кореневого елемента карти дерева.</para>
@@ -4149,10 +4503,12 @@ Additional Download Manager from KGet
 <para
 >Авторські права належать © Josef Weidendorfer, випущено за умов дотримання GPL V2.</para>
 </sect2>
+
 </sect1>
 </chapter>
 
 <chapter id="config">
+
 <chapterinfo>
 <authorgroup>
 <author
@@ -4184,7 +4540,7 @@ Additional Download Manager from KGet
 >Так само, як і решта програм &kde;, &konqueror; дуже гнучкий у налаштуваннях, отже ви справді можете зробити його вигляд і поведінку такими, що найкраще відповідають вашим потребам і побажанням.</para>
 
 <para
->Одразу після встановлення &kde; у вікні &konqueror; містяться смужка меню, головна панель і панель адреси і, ймовірно, панель закладок.</para>
+>When &kde; is newly installed, &konqueror;'s window contains a Menubar, Main and Location Toolbars and possibly a Bookmark Toolbar.</para>
 
 <para
 >Докладний опис внесення змін у панелі інструментів та список клавіатурних скорочень наведено у розділах щодо <ulink url="help:/fundamentals/config.html#toolbars"
@@ -4197,13 +4553,13 @@ Additional Download Manager from KGet
 <title
 >Інші параметри</title>
 <para
->За допомогою пункту меню <menuchoice
+>Selecting <menuchoice
 ><guimenu
->Параметри</guimenu
-> <guimenuitem
->Налаштувати Konqueror...</guimenuitem
+>Settings</guimenu
+><guimenuitem
+> Configure Konqueror...</guimenuitem
 ></menuchoice
-> можна відкрити діалогове вікно, за допомогою якого ви можете керувати більшістю аспектів поведінки &konqueror;.</para
+> brings up a dialog box which you can use to control most aspects of &konqueror;'s behavior.</para
 > 
 <para
 >У цьому вікні міститься декілька розділів, які можна обрати за допомогою клацання <mousebutton
@@ -4219,14 +4575,20 @@ Additional Download Manager from KGet
 <listitem
 ><para
 ><ulink url="help:/kcontrol/performance/index.html"
->Швидкодія</ulink
->: налаштування параметрів, пов’язаних з швидкодією програми &konqueror;.</para
+>Performance</ulink
+>: Configure settings that can improve &konqueror;'s performance</para
 ></listitem>
 <listitem
 ><para
 ><ulink url="help:/kcontrol/bookmarks/index.html"
 >Закладки</ulink
 >: тут ви можете налаштувати роботу з закладками у програмі.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/filemanager/index.html"
+>File Management</ulink
+>: You can configure how Konqueror behaves as a file manager here</para
 ></listitem>
 <listitem
 ><para
@@ -4315,20 +4677,22 @@ Additional Download Manager from KGet
 <listitem
 ><para
 ><ulink url="help:/kcontrol/khtml-java-js/index.html"
->JavaScript</ulink
->: налаштування поведінки JavaScript.</para
+>Java &amp; JavaScript</ulink
+>: Configure the behavior of Java and JavaScript</para
 ></listitem>
 </itemizedlist>
 <para
->Натискання кнопки <guibutton
->Довідка</guibutton
-> відкриє перед вами докладні настанови щодо того, як можна використати кожен з цих розділів, ви також можете скористатися можливостями пункту <link linkend="bubble"
->Що це?</link
->.</para>
+>Pressing the <guibutton
+>Help</guibutton
+> button will give you detailed instructions about how to use each of these sections, or you can use the <link linkend="bubble"
+>What's This?</link
+> feature.</para>
 </sect1>
+
 </chapter>
 
 <chapter id="commands">
+
 <chapterinfo>
 <authorgroup>
 <author
@@ -4413,23 +4777,23 @@ Additional Download Manager from KGet
 <title
 >Панель меню</title
 > <para
->Пам’ятайте, що деякі з пунктів меню з’являтимуться, лише якщо дії, що ними викликаються, можна застосовувати до файла, який відкрито у &konqueror;. Наприклад, пункт меню <menuchoice
+>Note that some menu entries only appear when they are applicable to the file you currently have open in &konqueror;. For example, the <menuchoice
 ><guimenu
->Зміни</guimenu
+>Edit</guimenu
 ><guimenuitem
->Пошук...</guimenuitem
+>Find...</guimenuitem
 > </menuchoice
-> з’явиться, лише якщо ви переглядаєте вміст каталогу.</para>
+> item will not appear when you are viewing the contents of a directory.</para>
 
 <para
 >У &konqueror; передбачено різні пункти меню для режимів керування файлами та перегляду інтернету. У цій главі описано лише пункти цих двох режимів. </para>
 
 <para
->Якщо <emphasis
+>If <emphasis
 >&konqueror;</emphasis
-> використовує вбудовані компоненти (модулі &kde;), наприклад &gwenview;, для перегляду зображень, &okular; для перегляду документів <acronym
+> is using embedded components (&kde; Parts) such as &gwenview; for image viewing, &okular; for <acronym
 >PDF</acronym
-> і &PostScript; тощо, пункти меню відповідних програм буде додано до пунктів меню &konqueror;. Довідкову інформацію щодо цих додаткових пунктів меню можна знайти у підручнику з вбудованої програми.</para>
+> and &PostScript; documents &etc; the menu items from these applications are merged into &konqueror;'s menu. Help for these additional menu items you find in the handbook of the embedded application.</para>
 
 <sect2 id="menu-location">
 <title
@@ -4489,9 +4853,9 @@ Additional Download Manager from KGet
 ></keycombo
 > </shortcut
 > <guimenu
->Файл</guimenu
+>File</guimenu
 > <guimenuitem
->Відкрити адресу...</guimenuitem
+>Open Location...</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -4510,9 +4874,9 @@ Additional Download Manager from KGet
 ></keycombo
 > </shortcut
 > <guimenu
->Файл</guimenu
+>File</guimenu
 > <guimenuitem
->Відкрити файл...</guimenuitem
+>Open File...</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -4540,9 +4904,9 @@ Additional Download Manager from KGet
 <term
 ><menuchoice
 ><guimenu
->Файл</guimenu
+>File</guimenu
 > <guimenuitem
->Відіслати посилання...</guimenuitem
+>Send Link Address...</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -4555,9 +4919,9 @@ Additional Download Manager from KGet
 <term
 ><menuchoice
 ><guimenu
->Файл</guimenu
+>File</guimenu
 > <guimenuitem
->Відіслати файл...</guimenuitem
+>Send File...</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -4566,33 +4930,55 @@ Additional Download Manager from KGet
 ></listitem>
 </varlistentry>
 
+
 <varlistentry>
 <term
-><guimenu
->Файл</guimenu
+><menuchoice
+> <guimenu
+>File</guimenu
 > <guimenuitem
->Зберегти як...</guimenuitem
-> (режим керування файлами)</term>
+>Save Background Image As...</guimenuitem
+></menuchoice
+> (Browser mode - KHTML view)</term>
+<listitem>
+<para
+>Only applies if you are viewing a web page with a background image. Opens the <guilabel
+>Save As</guilabel
+> dialog box to let you save the background image file to your own computer.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>File</guimenu
+> <guimenuitem
+>Save As...</guimenuitem
+></menuchoice
+> (Browser mode)</term>
 <listitem
 ><para
->Може бути застосовано лише під час перегляду документа або вебсторінки. Цей пункт відкриває діалогове вікно <guilabel
->Зберегти як...</guilabel
->, за допомогою якого ви можете зберегти копію документа на вашому власному комп’ютері.</para
+>Only applies if you are viewing a document or web page, uses the <guilabel
+>Save As...</guilabel
+> dialog box to let you save a copy to your own computer.</para
 ></listitem>
 </varlistentry>
 
 <varlistentry>
 <term
-><guimenu
->Файл</guimenu
+><menuchoice
+> <guimenu
+>File</guimenu
 > <guimenuitem
->Зберегти блок як...</guimenuitem
-> (режим перегляду інтернету)</term>
+>Save Frame As...</guimenuitem
+></menuchoice
+> (Browser mode)</term>
 <listitem
 ><para
->Виконує дію подібну до <guimenuitem
->Зберегти як...</guimenuitem
->, але цю дію призначено для вебсайтів, які використовують блоки (фрейми).</para
+>Similar to <guimenuitem
+>Save As...</guimenuitem
+> but for use with a web site that uses frames.</para
 ></listitem>
 </varlistentry>
 
@@ -4606,9 +4992,9 @@ Additional Download Manager from KGet
 ></keycombo
 > </shortcut
 > <guimenu
->Файл</guimenu
+>File</guimenu
 > <guimenuitem
->Друкувати...</guimenuitem
+>Print...</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -4779,29 +5165,29 @@ Additional Download Manager from KGet
 ></keycombo
 > </shortcut
 > <guimenu
->Зміни</guimenu
+>Edit</guimenu
 > <guimenuitem
->Вставити вміст буфера...</guimenuitem
+>Paste Clipboard Contents...</guimenuitem
 ></menuchoice
-> або <menuchoice
+> or <menuchoice
 ><guimenu
->Зміни</guimenu
+>Edit</guimenu
 ><guimenuitem
->Вставити один файл</guimenuitem
+>Paste one File</guimenuitem
 ></menuchoice
->, або <menuchoice
+> or <menuchoice
 ><guimenu
->Зміни</guimenu
+>Edit</guimenu
 ><guimenuitem
->Вставити одну теку</guimenuitem
+>Paste one Folder</guimenuitem
 ></menuchoice
-> або <menuchoice
+> or <menuchoice
 ><guimenu
->Зміни</guimenu
+>Edit</guimenu
 ><guimenuitem
->Вставити x елементів</guimenuitem
-> </menuchoice
-> (режим керування файлами)</term>
+>Paste x Items</guimenuitem
+></menuchoice
+> (File Manager mode)</term>
 <listitem
 ><para
 >Вставити поточні скопійовані або вирізані об’єкти до поточної теки. Якщо у буфері обміну (кишені) не міститься файлів або тек, вміст буфера обміну (текстові дані або дані зображення) буде вставлено до нового файла.</para
@@ -4844,9 +5230,9 @@ Additional Download Manager from KGet
 > (режим керування файлами)</term>
 <listitem
 ><para
->Створити новий об’єкт (зокрема теку або текстовий файл) у поточній теці. Щоб дізнатися більше, перегляньте розділ <link linkend="making"
->Створити...</link
->.</para
+>Creates a new object (such as a folder or a text file) in the current folder. See the <link linkend="making"
+>Create New...</link
+> section for more details.</para
 ></listitem>
 </varlistentry>
 
@@ -4865,9 +5251,9 @@ Additional Download Manager from KGet
 > (режим керування файлами)</term>
 <listitem
 ><para
->Надає вам змогу перейменувати файл або теку не вдаючись до відкриття діалогового вікна <guimenuitem
->Властивості...</guimenuitem
->. </para
+>Lets you rename a file or folder without having to open the <guimenuitem
+>Properties...</guimenuitem
+> dialog box. </para
 ></listitem>
 </varlistentry>
 
@@ -4914,12 +5300,12 @@ Additional Download Manager from KGet
 <varlistentry>
 <term
 ><menuchoice
-><guimenu
->Зміни</guimenu
+> <guimenu
+>Edit</guimenu
 > <guimenuitem
->Змінити тип файла...</guimenuitem
+>Edit File Type...</guimenuitem
 ></menuchoice
-> (режим керування файлами)</term>
+> (File Manager mode)</term>
 <listitem
 ><para
 >Відкриває діалогове вікно <guilabel
@@ -4938,11 +5324,11 @@ Additional Download Manager from KGet
 ></keycombo
 > </shortcut
 > <guimenu
->Зміни</guimenu
+>Edit</guimenu
 > <guimenuitem
->Властивості...</guimenuitem
+>Properties...</guimenuitem
 ></menuchoice
-> (режим керування файлами)</term>
+> (File Manager mode)</term>
 <listitem
 ><para
 >Показати вікно властивостей для позначених об’єктів.</para
@@ -4959,24 +5345,22 @@ Additional Download Manager from KGet
 ></keycombo
 > </shortcut
 > <guimenu
->Зміни</guimenu
+>Edit</guimenu
 > <guisubmenu
->Вибір</guisubmenu
+>Selection</guisubmenu
 > <guimenuitem
->Пошук для позначення...</guimenuitem
+>Select Items Matching...</guimenuitem
 ></menuchoice
-> (режим керування файлами)</term>
+> (File Manager mode)</term>
 <listitem
 ><para
->Разом з пунктами <guimenuitem
->Пошук для зняття позначення...</guimenuitem
->,<guimenuitem
->Скасувати вибір...</guimenuitem
+>Together with the <guimenuitem
+>Unselect Items Matching...</guimenuitem
 >, <guimenuitem
->Скасувати вибір всього</guimenuitem
-> і <guimenuitem
->Інвертувати вибір</guimenuitem
->, цей пункт є простим і потужним інструментом вибору декількох файлів.</para>
+>Unselect All</guimenuitem
+> and <guimenuitem
+>Invert Selection</guimenuitem
+> commands, this provides an easy and powerful way of selecting multiple files.</para>
 <para
 >Ця команда відкриває діалогове вікно, у якому ви можете ввести назву файла з використанням шаблонів заміни, символів * і ?, наприклад, за введеним шаблоном <literal role="extension"
 >*.html</literal
@@ -4992,17 +5376,17 @@ Additional Download Manager from KGet
 <term
 ><menuchoice
 > <guimenu
->Зміни</guimenu
+>Edit</guimenu
 > <guisubmenu
 >Selection</guisubmenu
 > <guimenuitem
->Пошук для зняття позначення...</guimenuitem
+>Unselect Items Matching...</guimenuitem
 ></menuchoice
-> (режим керування файлами)</term>
+> (File Manager mode)</term>
 <listitem
 ><para
->Скасовує вибір файлів і тек за допомогою діалогового вікна, подібного до того, яке використовується у команді <guimenuitem
->Вибрати...</guimenuitem
+>Unselect files or folders via a dialog similar to the one used by <guimenuitem
+>Select...</guimenuitem
 >.</para
 ></listitem>
 </varlistentry>
@@ -5079,23 +5463,66 @@ Additional Download Manager from KGet
 <varlistentry>
 <term
 ><menuchoice
-><shortcut
+> <shortcut
 > <keycombo action="simul"
 >&Ctrl;<keycap
 >F</keycap
 ></keycombo
 > </shortcut
 ><guimenu
->Зміни</guimenu
+>Edit</guimenu
 > <guimenuitem
->Пошук...</guimenuitem
+>Find...</guimenuitem
 ></menuchoice
-> (режим перегляду інтернету)</term>
+> (Browser mode)</term>
 <listitem
 ><para
 >Показати панель пошуку у нижній частині поточного вікна. Введіть у відповідне поле рядок для пошуку тексту на тестовій сторінці або сторінці &HTML;.</para
 ></listitem>
 </varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>F3</keycap
+></shortcut
+> <guimenu
+>Edit</guimenu
+> <guimenuitem
+>Find Next</guimenuitem
+></menuchoice
+> (Browser mode - KHTML view)</term>
+<listitem
+><para
+>Find the next occurrence of the text string in the text or &HTML; page.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Shift;<keycap
+>F3</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Edit</guimenu
+> <guimenuitem
+>Find Previous</guimenuitem
+></menuchoice
+> (Browser mode - KHTML view)</term>
+<listitem
+><para
+>Find the previous occurrence of the text string in the text or &HTML; page.</para
+></listitem
+> 
+</varlistentry>
+
 </variablelist>
 
 </sect2>
@@ -5117,13 +5544,13 @@ Additional Download Manager from KGet
 ></term>
 <listitem
 ><para
->У режимі перегляду інтернету у цьому підменю міститимуться пункти вибору вбудованих панелей, зокрема <guimenuitem
+>In browser mode this submenu holds items to select embedded views like <guimenuitem
+>KHTML</guimenuitem
+>, <guimenuitem
 >WebEngine</guimenuitem
->,<guimenuitem
->WebKit</guimenuitem
->,<guimenuitem
->Вмонтований потужний текстовий редактор</guimenuitem
->.</para>
+>, <guimenuitem
+>Embedded Advanced Text Editor</guimenuitem
+> and more embedded views.</para>
 <para
 >За допомогою цього пункту у режимі керування файлами ви можете відкрити підменю вибору режиму перегляду: <guimenuitem
 >Піктограми</guimenuitem
@@ -5208,18 +5635,52 @@ Additional Download Manager from KGet
 <varlistentry>
 <term
 ><menuchoice
-><shortcut
+> <shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+></shortcut
+> <guimenu
+>View</guimenu
+> <guimenuitem
+>Enlarge Font</guimenuitem
+></menuchoice
+> / <menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+></shortcut
+> <guimenu
+>View</guimenu
+> <guimenuitem
+>Shrink Font</guimenuitem
+></menuchoice
+> (Browser mode - KHTML view)</term>
+<listitem
+><para
+>Use these to adjust the size of the text in the page if you find it difficult to read. How well this works will depend on how the web page has been constructed.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
 ><keycombo action="simul"
 >&Ctrl;<keycap
 >U</keycap
 > </keycombo
 > </shortcut
 > <guimenu
->Перегляд</guimenu
+>View</guimenu
 > <guimenuitem
->Переглянути джерело документа</guimenuitem
+>View Document Source</guimenuitem
 ></menuchoice
-> (режим перегляду інтернету)</term>
+> (Browser mode - KHTML view)</term>
 <listitem
 ><para
 >Відкриває перегляд початкового коду документа.</para>
@@ -5249,22 +5710,45 @@ Additional Download Manager from KGet
 <term
 ><menuchoice
 > <guimenu
->Перегляд</guimenu
+>View</guimenu
 > <guimenuitem
->Збільшити</guimenuitem
+>Zoom In</guimenuitem
 > <guimenuitem
->Зменшити</guimenuitem
+>Zoom Out</guimenuitem
 > <guimenuitem
->Фактичний розмір</guimenuitem
+>Actual Size</guimenuitem
 > <guimenuitem
->Змінювати лише масштаб тексту</guimenuitem
+>Zoom Text Only</guimenuitem
 > <guimenuitem
->Масштабувати за точками на дюйм</guimenuitem
+>Zoom To DPI</guimenuitem
 ></menuchoice
-> (режим перегляду інтернету — WebEngine)</term>
+> (Browser mode - WebEngine view)</term>
 <listitem
 ><para
 >За допомогою цих пунктів меню можна виконувати різні дії щодо зміни розміру елементів на сторінці.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>I</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>View</guimenu
+> <guimenuitem
+>View Document Information</guimenuitem
+></menuchoice
+> (Browser mode - KHTML view)</term>
+<listitem
+><para
+>View document information, such as title, &URL;, and &HTTP; headers used in retrieving the document.</para>
+<para
+>Only available if you are viewing an &HTML; page.</para>
 </listitem>
 </varlistentry>
 
@@ -5284,7 +5768,24 @@ Additional Download Manager from KGet
 >.</para
 ></listitem>
 </varlistentry>
-
+<!-- what is this?
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Use Stylesheet</guimenuitem
+></menuchoice
+> (Browser mode)</term>
+<listitem
+><para
+>???Automatic Detection Basic Page Style KDE Stylesheet</para
+></listitem>
+</varlistentry>
+http://websvn.kde.org/?view=revision&revision=269436
+-->
+<!--FIXME synced with Dolphin 16.04-->
 <varlistentry>
 <term
 ><menuchoice
@@ -5393,12 +5894,12 @@ Additional Download Manager from KGet
 <varlistentry>
 <term
 ><menuchoice
-><guimenu
->Перегляд</guimenu
+> <guimenu
+>View</guimenu
 > <guimenuitem
->Налаштувати властивості вигляду...</guimenuitem
+>Adjust View Properties...</guimenuitem
 ></menuchoice
-> (режим керування файлами)</term>
+> (File Manager mode)</term>
 <listitem
 ><para
 ><action
@@ -5477,7 +5978,7 @@ Additional Download Manager from KGet
 ></term>
 <listitem
 ><para
->Вперед можна переходити, лише якщо перед цим ви поверталися назад.</para
+>You can only go forward if you've previously gone back.</para
 ></listitem>
 </varlistentry>
 
@@ -5562,6 +6063,27 @@ Additional Download Manager from KGet
 <varlistentry>
 <term
 ><menuchoice
+> <guimenu
+>Go</guimenu
+> <guimenuitem
+>Settings</guimenuitem
+></menuchoice
+> (File Manager mode)</term>
+<listitem
+><para
+>Open a virtual folder with all &systemsettings; modules in <guimenuitem
+>Icons</guimenuitem
+>, <guimenuitem
+>Details</guimenuitem
+> or <guimenuitem
+>Columns</guimenuitem
+> view. Select an item to display the settings module in a separate dialog window.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
 ><guimenu
 >Перехід</guimenu
 > <guimenuitem
@@ -5610,7 +6132,7 @@ Additional Download Manager from KGet
 ></term>
 <listitem
 ><para
->Показати ієрархічний список відвіданих вами сторінок у окремому вікні.</para
+>Показати ієрархічний список відвіданих вами сторінок у окремому вікні. </para
 ></listitem>
 </varlistentry>
 
@@ -5702,9 +6224,9 @@ Additional Download Manager from KGet
 <term
 ><menuchoice
 ><guimenu
->Закладки</guimenu
+>Bookmarks</guimenu
 > <guimenuitem
->Додати вкладки до закладок, як окрему теку...</guimenuitem
+>Bookmark Tabs as Folder...</guimenuitem
 > </menuchoice
 ></term>
 <listitem>
@@ -5717,9 +6239,9 @@ Additional Download Manager from KGet
 <term
 ><menuchoice
 ><guimenu
->Закладки</guimenu
+>Bookmarks</guimenu
 > <guimenuitem
->Створити теку закладок...</guimenuitem
+>New Bookmark Folder...</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -5732,9 +6254,9 @@ Additional Download Manager from KGet
 <term
 ><menuchoice
 ><guimenu
->Закладки</guimenu
+>Bookmarks</guimenu
 > <guimenuitem
->Редагувати закладки...</guimenuitem
+>Edit Bookmarks...</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -5783,11 +6305,11 @@ Additional Download Manager from KGet
 ></keycombo
 ></shortcut
 > <guimenu
->Інструменти</guimenu
+>Tools</guimenu
 > <guimenuitem
->Знайти файл...</guimenuitem
+>Find File...</guimenuitem
 ></menuchoice
-> (режим керування файлами)</term>
+> (File Manager mode)</term>
 <listitem
 ><para
 >Відкриває вікно програми &kfind;.</para
@@ -5845,28 +6367,29 @@ Additional Download Manager from KGet
 >Відкриває маленьку панель текстового термінала, розташовану внизу головного вікна.</para
 ></listitem>
 </varlistentry>
-
+<!--
 <varlistentry>
 <term
-><menuchoice
-><shortcut
-> <keycombo action="simul"
+><menuchoice>
+<shortcut>
+<keycombo action="simul"
 ><keycap
 >F9</keycap
 ></keycombo
-></shortcut
-> <guimenu
->Параметри</guimenu
-> <guimenuitem
->Показати бічну панель</guimenuitem
-> </menuchoice
+></shortcut>
+<guimenu
+>Settings</guimenu>
+<guimenuitem
+>Show Sidebar</guimenuitem>
+</menuchoice
 ></term>
 <listitem
 ><para
->Вмикає або вимикає показ бічної панелі &konqueror;.</para
+>Toggles the display of the &konqueror; sidebar. See
+<xref linkend="sidebar"/>.</para
 ></listitem>
 </varlistentry>
-
+-->
 <varlistentry>
 <term
 ><menuchoice
@@ -5898,9 +6421,9 @@ Additional Download Manager from KGet
 <term
 ><menuchoice
 ><guimenu
->Параметри</guimenu
+>Settings</guimenu
 > <guimenuitem
->Налаштувати розширення...</guimenuitem
+>Configure Extensions...</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -5915,9 +6438,9 @@ Additional Download Manager from KGet
 <term
 ><menuchoice
 ><guimenu
->Параметри</guimenu
+>Settings</guimenu
 > <guimenuitem
->Налаштування перевірки правопису...</guimenuitem
+>Configure Spell Checking...</guimenuitem
 > </menuchoice
 ></term>
 <listitem>
@@ -5953,7 +6476,7 @@ Additional Download Manager from KGet
 ></term>
 <listitem
 ><para
->Розділяє область перегляду на ліву і праву частини.</para
+>Split View Left/Right.</para
 ></listitem>
 </varlistentry>
 
@@ -5974,7 +6497,7 @@ Additional Download Manager from KGet
 ></term>
 <listitem
 ><para
->Розділяє область перегляду на верхню і нижню частини.</para
+>Split View Top/Bottom.</para
 ></listitem>
 </varlistentry>
 
@@ -5995,7 +6518,7 @@ Additional Download Manager from KGet
 ></term>
 <listitem
 ><para
->Закриває активний перегляд.</para
+>Remove Active View.</para
 ></listitem>
 </varlistentry>
 
@@ -6225,11 +6748,11 @@ Additional Download Manager from KGet
 
 <answer
 ><para
->Просто встановіть &Qt;, &kde-frameworks; та &konqueror;, а потім у вашому улюбленому засобі для керування вікнами запустіть &konqueror;. програма має нормально функціонувати, але якщо цього не сталося (розробники &kde; не часто займаються такими експериментами), повідомте про це за адресою <ulink url="https://bugs.kde.org"
+>Just install &Qt;, &kde-frameworks; and &konqueror;, and from your favorite window manager, launch &konqueror;. It should work just fine, but if it doesn't (&kde; developers don't test that case often), report it to <ulink url="https://bugs.kde.org"
 >https://bugs.kde.org</ulink
->, а потім спробуйте виконати команду <application
+> and try running <application
 >kdeinit</application
-> перед запуском &konqueror;: зазвичай, це допомагає.</para
+> before running &konqueror;; it usually helps.</para
 ></answer>
 </qandaentry>
 
@@ -6240,11 +6763,11 @@ Additional Download Manager from KGet
 ></question>
 <answer
 ><para
->Загалом кажучи, у теці <filename class="directory"
+>Generally in the <filename class="directory"
 >qtpaths --paths GenericDataLocation</filename
-> (це, ймовірно, тека <filename
+> folder (this may be <filename
 >~/.local/share</filename
-> вашої системи, залежно від того, яким чином було встановлено &konqueror;). Не змінюйте ці файли вручну, якщо вам не відомо точно, які саме зміни спричинять ваші дії.</para>
+> on your system, depending on how &konqueror; was installed). Don't alter these files unless you really know what you are doing.</para>
 
 <itemizedlist>
 
@@ -6287,7 +6810,16 @@ Additional Download Manager from KGet
 >qtpaths --paths GenericCacheLocation</filename
 > зберігається кеш переглядача.</para
 ></listitem>
-
+<!--
+<listitem
+><para
+>The Sidebar uses the files and subfolders in <filename
+>konqsidebartng</filename>
+in the folder <filename class="directory"
+>qtpaths - -paths GenericConfigLocation</filename
+></para
+></listitem>
+-->
 </itemizedlist>
 <para
 >Будь-які особливі параметри перегляду теки знаходяться у файлах <literal role="extension"
@@ -6343,31 +6875,50 @@ Additional Download Manager from KGet
 <question
 ><para
 >Як мені увімкнути, вимкнути або очистити кеш переглядача?</para
-></question>
-<answer>
+></question
+> <answer>
 <para
->Якщо ви оберете сторінку <menuchoice
+>If you select <menuchoice
 ><guimenu
->Навігація інтернетом</guimenu
+>Web Browsing</guimenu
 ><guimenuitem
->Кеш</guimenuitem
+>Cache</guimenuitem
 > </menuchoice
-> у діалоговому вікні, яке відкривається за допомогою меню <menuchoice
+> in the dialog launched by selecting <menuchoice
 ><guimenu
->Параметри</guimenu
+>Settings</guimenu
 ><guimenuitem
->Налаштувати Konqueror... </guimenuitem
+>Configure Konqueror... </guimenuitem
 ></menuchoice
->, ви побачите перед собою вікно, у якому зможете вимкнути кеш, очистити його вміст або встановити його розмір, а також змінити правила формування кешу.</para>
+>, you will be presented with a dialog box that lets you disable the cache, clear it or set its size, and change the caching policy.</para>
 </answer>
 </qandaentry>
 
 <qandaentry>
 <question
 ><para
->Як мені встановити свою <quote
->домашню</quote
-> сторінку — сторінку, яка завантажується одразу після запуску програми?</para
+>How can I change the timeout values used by &konqueror; when web browsing?</para
+></question
+> <answer>
+<para
+>In the &systemsettings; category <guilabel
+>Network</guilabel
+> on the <menuchoice
+><guimenu
+>Settings</guimenu
+> <guimenuitem
+>Connection Preferences</guimenuitem
+></menuchoice
+> page.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>How do I set my <quote
+>home</quote
+> page - the page loaded on startup?</para
 ></question>
 <answer
 ><para
@@ -6378,13 +6929,13 @@ Additional Download Manager from KGet
 > у режимі переглядача інтернету.</para>
 
 <para
->Щоб внести зміни до цих параметрів скористайтеся сторінкою <menuchoice
+>To change these settings launch <menuchoice
 ><guimenu
->Параметри</guimenu
+>Settings</guimenu
 ><guimenuitem
->Налаштувати Konqueror</guimenuitem
+>Configure Konqueror</guimenuitem
 ><guilabel
->Загальне</guilabel
+>General</guilabel
 ></menuchoice
 >.</para>
 
@@ -6405,29 +6956,39 @@ Additional Download Manager from KGet
 >У режимі перегляду інтернету &konqueror; розпочинає роботу з відкриття <guilabel
 >Домашньої сторінки</guilabel
 >.</para>
+
 </answer>
 </qandaentry>
 
 <qandaentry>
 <question
 ><para
->Як не знайшов(-ла) відповіді на свої питання у цьому списку.</para
+>I can't find the answer to my question here.</para
 ></question
 > 
 <answer>
 <para
->Докладніші відомості ви можете знайти на <ulink url="https://discuss.kde.org/"
->Форумі спільноти KDE</ulink
-> або <ulink url="http://userbase.kde.org/Konqueror/uk"
->сторінці UserBase Konqueror</ulink
+>Take a look at <ulink url="https://konqueror.org/faq/"
+> https://konqueror.org/faq/</ulink
+> or <ulink url="https://konqueror.org/contact/"
+> https://konqueror.org/contact/</ulink
+>.</para>
+<para
+>You may find further information in the <ulink url="http://forum.kde.org/"
+> KDE Community Forums</ulink
+> or on <ulink url="http://userbase.kde.org/Konqueror"
+> Konqueror's KDE Userbase page</ulink
 >.</para>
 </answer>
 </qandaentry>
+
 </qandaset>
+
 </chapter>
 
 <chapter id="credits"
 > <!-- 4.11-->
+
 <chapterinfo>
 <authorgroup>
 <author
@@ -6456,7 +7017,7 @@ Additional Download Manager from KGet
 >Подяки і ліцензія</title>
 
 <para
->Авторські права на програму &konqueror; належать розробникам &konqueror;, 1999-2025:</para>
+>&konqueror;. Program copyright 1999-2003, the &konqueror; developers:</para>
 
 <variablelist>
 
@@ -6838,7 +7399,7 @@ Additional Download Manager from KGet
 </variablelist>
 
 <para
->Авторські права на документацію 2000-2025</para>
+>Documentation copyright 2000-2003</para>
 
 <itemizedlist>
 <listitem
@@ -6853,6 +7414,7 @@ Additional Download Manager from KGet
 
 <para
 >Автор оновлення документації для &kde; 3.2 — &Philip.Rodrigues; &Philip.Rodrigues.mail;.</para>
+
 <para
 >Вичитка документації для &kde; 4.11 — David Palser <email
 >davidpalser179@btinternet.com</email
