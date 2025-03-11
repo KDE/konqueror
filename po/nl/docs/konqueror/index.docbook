@@ -47,7 +47,7 @@
 <date
 >2025-02-27</date>
 <releaseinfo
->Gear 25.02</releaseinfo>
+>Gear 25.04</releaseinfo>
 
 <abstract
 ><para
@@ -1722,7 +1722,7 @@ find your way around the file system.</para>
 <para
 >Wanneer &konqueror; zich in modus bestandsbeheerder bevindt, kunt u <guisubmenu
 >Nieuw aanmaken</guisubmenu
-> selecteren uit het menu na klikken met de &RMB; op een lege plaats die u een van de volgende laat aanmaken in de huidige map:</para>
+> selecteren uit het menu na klikken met de &RMB; op een lege plaats die u een van de volgende laat:</para>
 
 <variablelist>
 
@@ -2049,15 +2049,17 @@ find your way around the file system.</para>
 >Enter</keysym
 >, of klik met de <mousebutton
 >linker</mousebutton
->muisknop op <guiicon
+> muisknop op <guiicon
 ><inlinemediaobject
 ><imageobject
 > <imagedata fileref="go-jump.png" format="PNG"/> </imageobject
 ></inlinemediaobject
 ></guiicon
 > <guibutton
->Ga naar</guibutton
-> aan de rechterzijde van de locatiebalk. &konqueror; zal de pagina laden en weergeven. Wanneer u een pagina al eerder bezocht heeft, kan &konqueror; automatisch de tekst aanvullen om het &URL; sneller in te voeren. &konqueror; maakt het zoeken met zoekmachines gemakkelijker door Webzoeksleutelwoorden te gebruiken.</para>
+> Ga naar</guibutton
+> aan de rechterzijde van de locatiebalk. &konqueror; zal de pagina laden en weergeven. Wanneer u een pagina al eerder bezocht heeft, kan &konqueror; kan de functie <link linkend="path-complete"
+>Automatisch tekst aanvullen</link
+> om te helpen bij het typen van de &URL;. &konqueror; maakt het zoeken met zoekmachines gemakkelijker door Webzoeksleutelwoorden te gebruiken.</para>
 
 <para
 >Klik met de <mousebutton
@@ -4368,7 +4370,7 @@ Additional Download Manager from KGet
 > <guimenu
 >Bestand</guimenu
 > <guimenuitem
->Bestand openen…</guimenuitem
+>Bestand openen...</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -4498,7 +4500,7 @@ Additional Download Manager from KGet
 ><guimenu
 >Bestand</guimenu
 > <guimenuitem
->Openen met…</guimenuitem
+>Openen met...</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -4638,7 +4640,7 @@ Additional Download Manager from KGet
 > <keycombo action="simul"
 >&Ctrl;<keycap
 >V</keycap
-></keycombo
+> </keycombo
 > </shortcut
 > <guimenu
 >Bewerken</guimenu
@@ -4703,7 +4705,7 @@ Additional Download Manager from KGet
 > <guisubmenu
 >Nieuwe aanmaken</guisubmenu
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 >Maakt een nieuwe object aan (zoiets als een map of een tekstbestand) in de huidige map. Kijk voor meer details bij de sectie <link linkend="making"
@@ -4724,7 +4726,7 @@ Additional Download Manager from KGet
 > <guimenuitem
 >Hernoemen</guimenuitem
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 >Hiermee kunt u een bestand of map een nieuwe naam geven zonder dat u het dialoogvenster <guimenuitem
@@ -4745,7 +4747,7 @@ Additional Download Manager from KGet
 > <guimenuitem
 >Naar prullenbak verplaatsen</guimenuitem
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 >Verplaatst de geselecteerde items naar de prullenbak.</para
@@ -4766,7 +4768,7 @@ Additional Download Manager from KGet
 > <guimenuitem
 >Verwijderen</guimenuitem
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 >Verwijdert de geselecteerde items.</para
@@ -4883,7 +4885,7 @@ Additional Download Manager from KGet
 > <guimenuitem
 >Alles selecteren</guimenuitem
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 >Selecteert alle items in een map. U kunt ze dan <guimenuitem
@@ -4906,7 +4908,7 @@ Additional Download Manager from KGet
 > <guimenuitem
 >Alles deselecteren</guimenuitem
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 >Deselecteert alle geselecteerde bestanden en mappen.</para
@@ -4929,7 +4931,7 @@ Additional Download Manager from KGet
 > <guimenuitem
 >Selectie omkeren</guimenuitem
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 >Keert de huidige selectie om.</para
@@ -5155,7 +5157,7 @@ Additional Download Manager from KGet
 > <guisubmenu
 >Sorteren op</guisubmenu
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 ><action
@@ -5182,7 +5184,7 @@ Additional Download Manager from KGet
 > <guisubmenu
 >Aanvullende Informatie</guisubmenu
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 ><action
@@ -5201,7 +5203,7 @@ Additional Download Manager from KGet
 > <guimenuitem
 >Voorbeeld</guimenuitem
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 ><action
@@ -5218,7 +5220,7 @@ Additional Download Manager from KGet
 > <guimenuitem
 >In groepen tonen</guimenuitem
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 ><action
@@ -5243,7 +5245,7 @@ Additional Download Manager from KGet
 > <guimenuitem
 >Verborgen bestanden tonen</guimenuitem
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 ><action
@@ -5380,7 +5382,7 @@ Additional Download Manager from KGet
 > <guimenuitem
 >Persoonlijke map</guimenuitem
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 ><action
@@ -5397,7 +5399,7 @@ Additional Download Manager from KGet
 > <guimenuitem
 >Toepassingen</guimenuitem
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 >Opent de map die alle snelkoppelingen naar uw toepassingen bevat.</para
@@ -5412,7 +5414,7 @@ Additional Download Manager from KGet
 > <guimenuitem
 >Netwerkmappen</guimenuitem
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 >Netwerkmappen worden getoond in een speciale locatie van &konqueror; en &dolphin; een virtuele map genaamd. Meer informatie over hoe deze map te gebruiken vindt u in het <ulink url="help:/knetattach/index.html"
@@ -5429,7 +5431,7 @@ Additional Download Manager from KGet
 > <guimenuitem
 >Prullenbak</guimenuitem
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 >Opent uw map <filename class="directory"
@@ -5446,7 +5448,7 @@ Additional Download Manager from KGet
 > <guimenuitem
 >Autostart</guimenuitem
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 >Opent uw map <filename class="directory"
@@ -5628,7 +5630,7 @@ Additional Download Manager from KGet
 > <guimenuitem
 >Terminal openen</guimenuitem
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 >Opent een &konsole;-venster.</para
@@ -5664,7 +5666,7 @@ Additional Download Manager from KGet
 > <guisubmenu
 >Externe tekenset selecteren</guisubmenu
 ></menuchoice
-> (Modus Bestandsbeheer)</term>
+> (Bestandsbeheerdermodus)</term>
 <listitem
 ><para
 ><action
