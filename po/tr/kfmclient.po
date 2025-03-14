@@ -8,13 +8,13 @@
 # Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 # obsoleteman <tulliana@gmail.com>, 2008.
 # Volkan Gezer <volkangezer@gmail.com>, 2013.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-22 00:38+0000\n"
-"PO-Revision-Date: 2023-08-14 14:01+0300\n"
+"PO-Revision-Date: 2025-03-13 22:37+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -60,7 +60,7 @@ msgid ""
 "The mimetype of the URL. Allows Konqueror to determine in advance which "
 "component to use, making it start faster."
 msgstr ""
-"URL'nin MIME türü. Konqueror'un hangi bileşeni kullanacağını önceden "
+"URL’nin MIME türü. Konqueror’un hangi bileşeni kullanacağını önceden "
 "belirleyerek daha hızlı başlamasını sağlar."
 
 #: kfmclient.cpp:78
@@ -105,10 +105,10 @@ msgid ""
 "\n"
 msgstr ""
 "  kfmclient openURL 'url'\n"
-"            # 'url'yi göstererek bir pencere açar.\n"
-"            #  'url' nispi bir yol ya da\n"
-"            #   dosya adı, ör, . ya da alt dizin/ olabilir\n"
-"            #   'url' boş bırakılmışsa başlangıç sayfası gösterilir.\n"
+"            #  “url”yi göstererek bir pencere açar.\n"
+"            #  “url” göreceli bir yol olabilir\n"
+"            #  dosya adı; örneğin, . veya dizin/ olabilir\n"
+"            #  “url” boş bırakılmışsa başlangıç sayfası gösterilir.\n"
 "\n"
 
 #: kfmclient.cpp:99
@@ -141,9 +141,9 @@ msgid ""
 "\n"
 msgstr ""
 "  kfmclient newTab 'url' ['mimetype']\n"
-"            # Yukarıdaki ile aynı şey ama eğer olanaklıysa etkin "
-"masaüstündeki var olan Konqueror\n"
-"            #penceresinde yeni bir sekmede 'URL'yi' açar.\n"
+"            # Yukarıdakiyle aynı; ancak olanaklıysa\n"
+"            # etkin masaüstündeki var olan Konqueror\n"
+"            # penceresinde yeni bir sekmede “URL”yi açar.\n"
 "\n"
 
 #: kfmclient.cpp:280
