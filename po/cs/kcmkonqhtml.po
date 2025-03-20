@@ -398,26 +398,24 @@ msgid "The custom directory to store cache"
 msgstr "Vlastní adresář pro uložení mezipaměti"
 
 #: cookies/kcookiesmain.cpp:33
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "&Policy"
-msgstr "Chování"
+msgstr "Zása&dy"
 
 #: cookies/kcookiesmain.cpp:35
 #, kde-format
 msgid "&Management"
-msgstr ""
+msgstr "S&práva"
 
 #: cookies/kcookiesmanagement.cpp:46
-#, fuzzy, kde-format
-#| msgid "Accept until end of session"
+#, kde-format
 msgid "End of session"
-msgstr "Přijmout do konce sezení"
+msgstr "Konec sezení"
 
 #: cookies/kcookiesmanagement.cpp:51
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Ano"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
@@ -512,19 +510,16 @@ msgid "Secure:"
 msgstr "Bezpečný:"
 
 #: cookies/kcookiespolicies.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Change JavaScript Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Change Cookie Policy"
-msgstr "Změnit chování JavaScriptu"
+msgstr "Změnit zásady pro cookie"
 
 #: cookies/kcookiespolicies.cpp:156
-#, fuzzy, kde-format
-#| msgid "Site Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Cookie Policy"
-msgstr "Chování pro server"
+msgstr "Nové zásady pro cookie"
 
 #: cookies/kcookiespolicies.cpp:189
 #, kde-format
@@ -532,18 +527,19 @@ msgid ""
 "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
 "replace it?</qt>"
 msgstr ""
+"<qt>Zásady chování pro<center><b>%1</b></center> již existují. Přejete si je "
+"nahradit ?</qt>"
 
 #: cookies/kcookiespolicies.cpp:193
-#, fuzzy, kde-format
-#| msgid "Site Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Duplicate Policy"
-msgstr "Chování pro server"
+msgstr "Duplikovat chování"
 
 #: cookies/kcookiespolicies.cpp:194
 #, kde-format
 msgid "Replace"
-msgstr ""
+msgstr "Nahradit"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
