@@ -13,6 +13,7 @@
 #include "konqview.h"
 #include "konqsettings.h"
 #include "konqmainwindowfactory.h"
+#include "urlloader.h"
 
 #include <konqdebug.h>
 
@@ -150,4 +151,15 @@ void KonqBrowser::setSaveDirForWindow(const QString& saveDir, QWidget* window)
     if (mw) {
         mw->setSaveDir(saveDir);
     }
+}
+
+QString KonqBrowser::partForLocalFile(const QString& path, const QString& mimeType)
+{
+    if (!mimeType.isEmpty()) {
+        QString part = UrlLoader::partForMimetype(mimeType);
+        if (!part.isEmpty()) {
+            return part;
+        }
+    }
+    return UrlLoader::partForLocalFile(path);
 }

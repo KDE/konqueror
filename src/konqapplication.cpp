@@ -438,12 +438,14 @@ KonquerorApplication::WindowCreationResult KonquerorApplication::createWindowsFo
 
     QUrl firstUrl = urlList.takeFirst();
 
+    KonqOpenURLRequest req;
+
     KParts::OpenUrlArguments urlargs;
     if (m_parser.isSet("mimetype")) {
         urlargs.setMimeType(m_parser.value("mimetype"));
+        req.forceMimeType = true;
     }
 
-    KonqOpenURLRequest req;
     req.args = urlargs;
     req.filesToSelect = filesToSelect;
     req.tempFile = m_parser.isSet("tempfile");

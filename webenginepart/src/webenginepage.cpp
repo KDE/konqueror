@@ -237,7 +237,7 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
     emit m_part->browserExtension()->browserOpenUrlRequestSync(url, args, bArgs, true);
 
     if (item->state() == QWebEngineDownloadRequest::DownloadRequested) {
-        qCDebug(WEBENGINEPART_LOG()) << "Automatically accepting download for" << item->url() << "This shouldn't happen";
+        qCDebug(WEBENGINEPART_LOG) << "Automatically accepting download for" << item->url() << "This shouldn't happen";
         item->accept();
     }
 
@@ -281,13 +281,14 @@ bool WebEnginePage::shouldOpenUrl(const QUrl& url) const
     if (!url.isLocalFile()) {
         return true;
     }
-    BrowserInterface *bi = m_part->browserExtension()->browserInterface();
-    bool useThisPart = false;
-    //We don't check whether bi is valid, as invokeMethod will fail if it's nullptr
-    //If invokeMethod fails, useThisPart will keep its default value (false) which is what we need to return, so there's no
-    //need to check the return value of invokeMethod
-    QMetaObject::invokeMethod(bi, "isCorrectPartForLocalFile", Q_RETURN_ARG(bool, useThisPart), Q_ARG(KParts::ReadOnlyPart*, part()), Q_ARG(QString, url.path()));
-    return useThisPart;
+
+    KonqInterfaces::Browser *iface = KonqInterfaces::Browser::browser(qApp);
+    if (!iface) {
+        qCDebug(WEBENGINEPART_LOG) << "Konqueror application should provide BrowserInterface but it doesn't";
+        return true;
+    }
+    QString partToUse = iface->partForLocalFile(url.path(), part()->arguments().mimeType());
+    return partToUse == part()->metaData().pluginId();
 }
 
 bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool isMainFrame)

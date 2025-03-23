@@ -142,6 +142,16 @@ public:
      */
     virtual void setSaveDirForWindow(const QString &saveDir, QWidget *window) = 0;
 
+    /**
+     * @brief The part to use to open a given local file
+     *
+     * This function will try to determine the mimetype of the file using `QMimeDatabase`, unless a mimetype is explicitly given.
+     * @param path the path of the file
+     * @param mimetype if this is not empty, the mimetype of the file won't be determined automatically using `QMimeDatabase`.
+     *  @p mimetype will be used as mimetype, instead
+     */
+    virtual QString partForLocalFile(const QString &path, const QString &mimeType = {}) = 0;
+
 signals:
     void configurationChanged(); ///< Signal emitted after the configuration has changed
 

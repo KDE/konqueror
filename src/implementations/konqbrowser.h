@@ -76,6 +76,8 @@ public:
      */
     void setSaveDirForWindow(const QString &saveDir, QWidget *window) override;
 
+    QString partForLocalFile(const QString & path, const QString & mimeType) override;
+
 private:
 
     /**

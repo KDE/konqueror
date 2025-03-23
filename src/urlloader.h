@@ -147,6 +147,15 @@ public:
      */
     static QString partForLocalFile(const QString &path);
 
+    /**
+     * @brief The @c ID of the part to use to open an URL with a given mimetype
+     *
+     * @param mimetype the mimetype to open
+     * @return the plugin id for the preferred part for @p mimetype (as returned by @c KPluginMetaData::pluginId() or
+     * an empty string if no part could be found
+     */
+    static QString partForMimetype(const QString &mimetype);
+
 signals:
     void finished(UrlLoader *self);
 

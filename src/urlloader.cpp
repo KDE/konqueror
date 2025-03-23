@@ -285,6 +285,7 @@ KPluginMetaData UrlLoader::findEmbeddingPart(bool forceServiceName) const
         // for the MIME type.
         part = preferredPart(m_mimeType);
     }
+    qDebug() << "PREFERRED PART FOR" << m_url << "WITH MIMETYPE" << m_mimeType << part;
 
     /* Corner case: webenginepart can't determine mimetype (gives application/octet-stream) but
      * OpenUrlJob determines a mimetype supported by WebEnginePart (for example application/xml):
@@ -517,6 +518,9 @@ void UrlLoader::downloadForEmbeddingOrOpeningDone(KonqInterfaces::DownloadJob *j
 
 void UrlLoader::checkDownloadedMimetype()
 {
+    if (m_request.forceMimeType) {
+        return;
+    }
     QMimeDatabase db;
     QMimeType type = db.mimeTypeForFile(m_url.path());
     QString typeName = type.name();
@@ -873,6 +877,12 @@ QString UrlLoader::partForLocalFile(const QString& path)
     QMimeDatabase db;
     QString mimetype = db.mimeTypeForFile(path).name();
 
+    KPluginMetaData plugin = preferredPart(mimetype);
+    return plugin.pluginId();
+}
+
+QString UrlLoader::partForMimetype(const QString& mimetype)
+{
     KPluginMetaData plugin = preferredPart(mimetype);
     return plugin.pluginId();
 }

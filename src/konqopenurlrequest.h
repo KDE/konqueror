@@ -89,6 +89,9 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
         if (userRequestedReload) {
             s << QStringLiteral("userRequestedReload");
         }
+        if (forceMimeType) {
+            s << QStringLiteral("forceMimeType");
+        }
         return "[" + s.join(QStringLiteral(" ")) + "]";
 #else
         return QString();
@@ -114,6 +117,14 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
         browserArgs.setAllowedUrlActions({Konq::UrlAction::Embed});
     }
     Konq::UrlAction chosenAction = Konq::UrlAction::UnknownAction;
+    /**
+     * @brief Whether or not to enforce the mimetype in #args
+     *
+     * If this is `false`, `QMimeDatabase` will be used (if possible) to determine the actual mimetype of the URL
+     * (in case of a remote URL, this will be done after the URL has been downloaded). If this is `true`, instead,
+     * the mimetype returned by \link args #args.mimetype\endlink will always be used.
+     */
+    bool forceMimeType = false; //!< If `true`, the mimetype set in #args will be always used, even if doesn't correspond
 
     static KonqOpenURLRequest null;
 };
