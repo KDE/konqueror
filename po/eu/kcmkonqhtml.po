@@ -1,26 +1,26 @@
 # Translation for kcmkonqhtml.po to Euskara/Basque (eu).
-# Copyright (C) 2004-2024 This file is copyright:
+# Copyright (C) 2004-2025 This file is copyright:
 # This file is distributed under the same license as the konqueror package.
-# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # marcos <marcos@euskalgnu.org>, 2006, 2007, 2010.
 # Asier Urio Larrea <asieriko@gmail.com>, 2008.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2010, 2011, 2018, 2019, 2020, 2022, 2023, 2024.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2010, 2011, 2018, 2019, 2020, 2022, 2023, 2024, 2025.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 00:41+0000\n"
-"PO-Revision-Date: 2024-07-25 17:29+0200\n"
+"PO-Revision-Date: 2025-03-25 17:43+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: appearance.cpp:39
@@ -406,26 +406,24 @@ msgid "The custom directory to store cache"
 msgstr "Cachea gordetzeko neurrira ipinitako direktorioa"
 
 #: cookies/kcookiesmain.cpp:33
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "&Policy"
-msgstr "Politika"
+msgstr "&Gidalerroak"
 
 #: cookies/kcookiesmain.cpp:35
 #, kde-format
 msgid "&Management"
-msgstr ""
+msgstr "&Kudeaketa"
 
 #: cookies/kcookiesmanagement.cpp:46
-#, fuzzy, kde-format
-#| msgid "Accept until end of session"
+#, kde-format
 msgid "End of session"
-msgstr "Onartu saioa amaitu arte"
+msgstr "Saioaren amaiera"
 
 #: cookies/kcookiesmanagement.cpp:51
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Bai"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
@@ -520,20 +518,16 @@ msgid "Secure:"
 msgstr "Segurua:"
 
 #: cookies/kcookiespolicies.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Change Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Change Cookie Policy"
-msgstr "Aldatu pluginen politika"
+msgstr "Aldatu Cookien gidalerroak"
 
 #: cookies/kcookiespolicies.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Cookie Policy"
-msgstr "Pluginen politika berria"
+msgstr "Cookien gidalerro berria"
 
 #: cookies/kcookiespolicies.cpp:189
 #, kde-format
@@ -541,18 +535,19 @@ msgid ""
 "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
 "replace it?</qt>"
 msgstr ""
+"<qt>Jada badago<center><b>%1</b>(e)ren</center> gidalerro bat. Hura "
+"ordezkatu nahi duzu?</qt>"
 
 #: cookies/kcookiespolicies.cpp:193
-#, fuzzy, kde-format
-#| msgid "Site Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Duplicate Policy"
-msgstr "Guneko gidalerroak"
+msgstr "Bikoiztu gidalerroak"
 
 #: cookies/kcookiespolicies.cpp:194
 #, kde-format
 msgid "Replace"
-msgstr ""
+msgstr "Ordeztu"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -766,7 +761,7 @@ msgstr "Domeinua"
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
 #, kde-format
 msgid "Policy"
-msgstr "Politika"
+msgstr "Gidalerroak"
 
 #. i18n: ectx: property (text), widget (QPushButton, newTemplateBtn)
 #. i18n: ectx: property (text), widget (QPushButton, pbNew)
@@ -1464,7 +1459,8 @@ msgstr "&Esportatu..."
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr ""
-"Klik egin botoi honetan ostalari edo domeinuen politika eskuz gehitzeko."
+"Egin klik botoi honetan ostalari edo domeinu bati berariazko gidalerro bat "
+"eskuz gehitzeko."
 
 #: domainlistview.cpp:76
 #, kde-format
@@ -1472,8 +1468,8 @@ msgid ""
 "Click on this button to change the policy for the host or domain selected in "
 "the list box."
 msgstr ""
-"Klik egin botoi honetan zerrendatik hautatutako ostalari edo domeinuaren "
-"politika aldatzeko."
+"Egin klik botoi honetan zerrendan hautatutako ostalari edo domeinuaren "
+"gidalerroa aldatzeko."
 
 #: domainlistview.cpp:78
 #, kde-format
@@ -1481,18 +1477,18 @@ msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
 "the list box."
 msgstr ""
-"Klik egin botoi honetan zerrendatik hautatutako ostalari edo domeinuaren "
-"politika ezabatzeko."
+"Egin klik botoi honetan zerrendan hautatutako ostalari edo domeinuaren "
+"gidalerroa ezabatzeko."
 
 #: domainlistview.cpp:125
 #, kde-format
 msgid "You must first select a policy to be changed."
-msgstr "Aurrenik aldatuko den politika hautatu behar duzu."
+msgstr "Aurrena aldatu beharreko gidalerroa hautatu behar duzu."
 
 #: domainlistview.cpp:152
 #, kde-format
 msgid "You must first select a policy to delete."
-msgstr "Aurrenik ezabatuko den politika hautatu behar duzu."
+msgstr "Aurrena ezabatu beharreko gidalerroa hautatu behar duzu."
 
 #: domainlistview.cpp:190 policydlg.cpp:63
 #, kde-format
@@ -1503,28 +1499,28 @@ msgstr "Erabili orokorra"
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
-msgstr "JavaScript-en politika berria"
+msgstr "JavaScript gidalerro berria"
 
 #: domainlistview.cpp:235
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
-msgstr "Aldatu JavaScript-en politika"
+msgstr "Aldatu JavaScript gidalerroa"
 
 #: domainlistview.cpp:239
 #, kde-format
 msgid "JavaScript policy:"
-msgstr "JavaScript politika:"
+msgstr "JavaScript gidalerroa:"
 
 #: domainlistview.cpp:240
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
-msgstr "Hautatu JavaScript politika goiko ostalari edo domeinuetarako."
+msgstr "Hautatu goiko ostalari edo domeinurako JavaScript gidalerroa."
 
 #: domainlistview.cpp:242
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
-msgstr "Domeinuaren JavaScript politika berariazkoak"
+msgstr "Domeinuaren berariazko JavaScript gidalerroak"
 
 #: filteropts.cpp:48
 #, kde-format
@@ -1991,15 +1987,16 @@ msgid ""
 "share your policies with other people by allowing you to save and retrieve "
 "them from a zipped file."
 msgstr ""
-"Hemen JavaScript-en berariazko politikak hauta ditzakezu edozein ostalari "
-"edo domeinu jakinentzat. Politika berria gehitzeko, <i>Berria...</i> botoian "
-"klik egitea eta elkarrizketa-koadroan behar den informazioa ematea baino ez "
-"daukazu. Indarrean dagoen politika aldatzeko, klik egin <i>Aldatu...</i> "
-"botoian eta aukeratu berria politika elkarrizketa-koadroan. <i>Ezabatu</i> "
-"botoian klik eginez gero, hautatutako politika ezabatu egingo da, domeinu "
-"horrek erabiliko duen politika berria lehenetsia izango delarik. "
-"<i>Inportatu</i> eta <i>Esportatu</i> botoiak zure politikak besteekin erraz "
-"partekatzen utziko dizu konprimitutako fitxategian gorde eta berreskuratuz."
+"Hemen, edozein ostalari edo domeinurako JavaScript gidalerro zehatzak ezar "
+"ditzakezu. Gidalerro berri bat gehitzeko, <i>Berria...</i> botoian klik egin "
+"eta elkarrizketa-koadroak eskatutako beharrezko informazioa gehitzea "
+"besterik ez duzu egin behar. Dagoen gidalerro bat aldatzeko, <i>Aldatu...</"
+"i> botoian klik egin eta hautatu gidalerro berria gidalerro elkarrizketa-"
+"koadrotik. <i>Ezabatu</i> botoian klik eginez gero, hautatutako gidalerroa "
+"ezabatuko da, domeinu horretarako gidalerro lehenetsia erabiliko delarik. "
+"<i>Inportatu</i> eta <i>Esportatu</i> botoiak zure gidalerroak besteekin "
+"erraz partekatzeko aukera ematen dizu, konprimitutako zipfitxategi batean "
+"gorde eta bertatik berreskuratzeko aukera emanez."
 
 #: jsopts.cpp:80
 #, kde-format
@@ -2010,11 +2007,11 @@ msgid ""
 "or hosts.</p><p>Select a policy and use the controls on the right to modify "
 "it.</p>"
 msgstr ""
-"<p>Koadro honek JavaScript politika ezarri behar diezun domeinu eta "
-"ostalariak ditu. Politika hau, domeinu edo ostalari horiek bidalitako "
-"orrietako JavaScript-a gaitzeko edo desgaitzeko politika lehenetsien ordez "
-"erabiliko da.</p><p>Hautatu politika bat eta erabili eskuineko botoiak "
-"aldaketak egiteko.</p>"
+"<p>Koadro honek JavaScript gidalerro bat ezarri diezun domeinuak eta "
+"ostalariak ditu. Gidalerro hori lehenetsitakoaren ordez erabiliko da domeinu "
+"edo ostalari horietatik bidalitako orrietan JavaScript gaitzeko edo "
+"ezgaitzeko.</p><p>Hautatu gidalerro bat eta erabili eskuineko aginteak hura "
+"aldatzeko.</p>"
 
 #: jsopts.cpp:87
 #, kde-format
@@ -2023,9 +2020,9 @@ msgid ""
 "These policies will be merged with the existing ones. Duplicate entries are "
 "ignored."
 msgstr ""
-"Egin klik botoi honetan JavaScript-en politikak dituen fitxategia "
-"aukeratzeko. Politika hauek aurretik daudenekin batuko dira. Bikoiztutako "
-"sarrerei ez ikusi egingo zaie."
+"Egin klik botoi honetan JavaScript gidalerroak dituen fitxategia "
+"aukeratzeko. Gidalerro hauek aurretik daudenekin bateratuko dira. "
+"Bikoiztutako sarrerei ezikusi egingo zaie."
 
 #: jsopts.cpp:90
 #, kde-format
@@ -2034,14 +2031,14 @@ msgid ""
 "named <b>javascript_policy.tgz</b>, will be saved to a location of your "
 "choice."
 msgstr ""
-"Egin klik botoi honetan JavaScript politika konprimitutako fitxategi batean "
-"gordetzeko. Fitxategia zuk aukeratutako lekuan gordeko da "
-"<b>javascript_policy.tgz</b> izenarekin."
+"Egin klik botoi honetan JavaScript gidalerroa konprimitutako zip fitxategi "
+"batean gordetzeko. <b>javascript_policy.tgz</b> izendatutako fitxategia zuk "
+"hautatutako kokalekuan gordeko da."
 
 #: jsopts.cpp:96
 #, kde-format
 msgid "Global JavaScript Policies"
-msgstr "JavaScript politika orokorrak"
+msgstr "JavaScript gidalerro orokorrak"
 
 #: jspolicies.cpp:161
 #, kde-format
@@ -2058,7 +2055,7 @@ msgstr "Erabili orokorra"
 #: jspolicies.cpp:338
 #, kde-format
 msgid "Use setting from global policy."
-msgstr "Erabili politika orokorreko ezarpena."
+msgstr "Erabili gidalerro orokorretako ezarpena."
 
 #: jspolicies.cpp:176 jspolicies.cpp:230 jspolicies.cpp:267 jspolicies.cpp:304
 #: jspolicies.cpp:344
@@ -2253,7 +2250,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Domain-Specific Policies"
-msgstr "Domeinuen berariazko politikak"
+msgstr "Domeinuen berariazko gidalerroak"
 
 #: policydlg.cpp:47
 #, kde-format
@@ -2510,29 +2507,29 @@ msgstr "Aktibatu lehen erabilitako fitxa, uneko fitxa ixtean"
 msgctxt ""
 "@title:window Title of dialog to choose name to given to new User Agent"
 msgid "Choose User Agent name"
-msgstr ""
+msgstr "Aukeratu Erabiltzaile-agentearen izena"
 
 #: useragent/useragent.cpp:196
 #, kde-format
 msgctxt "Name of the new User Agent"
 msgid "User Agent name"
-msgstr ""
+msgstr "Erabiltzaile-agentearen izena"
 
 #: useragent/useragent.cpp:256
 #, kde-format
 msgid "there are templates with empty names"
-msgstr ""
+msgstr "izen hutsak dituzten txantiloiak daude"
 
 #: useragent/useragent.cpp:261
 #, kde-format
 msgid "there are multiple templates with the same name"
-msgstr ""
+msgstr "izen bera duten hainbat txantiloi daude"
 
 #: useragent/useragent.cpp:284
 #, kde-format
 msgctxt "The user gave a custom user agent string an empty or duplicate name"
 msgid "Invalid user agent names:"
-msgstr ""
+msgstr "Erabiltzaile-agentearen izen baliogabeak:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20

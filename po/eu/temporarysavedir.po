@@ -1,0 +1,77 @@
+# Translation for temporarysavedir.po to Euskara/Basque (eu).
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+# KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>.
+#
+# Translators:
+# SPDX-FileCopyrightText: 2025 Iñigo Salvador Azurmendi <xalba@ni.eus>
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
+"PO-Revision-Date: 2025-03-25 17:52+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.12.3\n"
+
+#: temporarysavedir.cpp:54
+#, kde-format
+msgid "Temporary Download Directory"
+msgstr "Aldi baterako zama-jaisteko direktorioa"
+
+#: temporarysavedir.cpp:60
+#, kde-format
+msgid "Choose Custom Download Directory..."
+msgstr "Hautatu neurriko zama-jaisteko direktorioa..."
+
+#: temporarysavedir.cpp:61
+#, kde-format
+msgid ""
+"Choose a custom directory to use when downloading URLs from this window, "
+"temporarily overriding the default one"
+msgstr ""
+"Hautatu, leiho honetatik URLak zama-jaistean erabili beharreko neurrira "
+"ipinitako direktorioa, lehenetsitakoa aldi baterako indargabetuko duena."
+
+#: temporarysavedir.cpp:66
+#, kde-format
+msgctxt "@action:inmenu stop using a temporary download directory"
+msgid "Stop Using Temporary Download Directory"
+msgstr "Zama-jaisteko aldi baterako direktorioa erabiltzeari utzi"
+
+#: temporarysavedir.cpp:67
+#, kde-format
+msgid ""
+"Use the default download directory instead of a custom one (only for this "
+"window)"
+msgstr ""
+"Erabili zama-jaisteko direktorio lehenetsia neurrira ipinitako baten ordez "
+"(leiho honetarako bakarrik)"
+
+#: temporarysavedir.cpp:113
+#, kde-format
+msgid "Temporary save directory"
+msgstr "Aldi baterako gordetzeko direktorioa"
+
+#: temporarysavedir.cpp:114
+#, kde-format
+msgid "Choose Temporary Save Directory"
+msgstr "Aukeratu aldi baterako gordetzeko direktorioa"
+
+#. i18n: ectx: Menu (tools)
+#: temporarysavedir.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Tresnak"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: temporarysavedir.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Tresna-barra gehigarria"
