@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-03 00:41+0000\n"
+"POT-Creation-Date: 2025-03-31 00:41+0000\n"
 "PO-Revision-Date: 2024-11-09 11:50+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -932,7 +932,7 @@ msgstr ""
 "\n"
 "Integrazioa ezgaitu egingo da."
 
-#: src/webenginepage.cpp:343
+#: src/webenginepage.cpp:344
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -946,12 +946,12 @@ msgstr ""
 "saihesteko. Bestela, klik egin Jarraitu botoian web-orria berriz erakusteko."
 "</p>"
 
-#: src/webenginepage.cpp:350
+#: src/webenginepage.cpp:351
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Berbidali informazioa"
 
-#: src/webenginepage.cpp:547
+#: src/webenginepage.cpp:548
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -961,18 +961,18 @@ msgstr ""
 "dabil.\n"
 "Atzitzen utzi nahi diozu?"
 
-#: src/webenginepage.cpp:551 src/webenginepage.cpp:629
-#: src/webenginepage.cpp:640
+#: src/webenginepage.cpp:552 src/webenginepage.cpp:630
+#: src/webenginepage.cpp:641
 #, kde-format
 msgid "Network Transmission"
 msgstr "Sareko transmisioa"
 
-#: src/webenginepage.cpp:552
+#: src/webenginepage.cpp:553
 #, kde-format
 msgid "Allow access"
 msgstr "Atzitzen utzi"
 
-#: src/webenginepage.cpp:622
+#: src/webenginepage.cpp:623
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -985,12 +985,12 @@ msgstr ""
 "Hirugarrenek informazio hau harrapatu eta ikusi dezakete.\n"
 "Ziur zaude datuak zifratu gabe bidali nahi dituzula?"
 
-#: src/webenginepage.cpp:630
+#: src/webenginepage.cpp:631
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Bidali zifratu gabe"
 
-#: src/webenginepage.cpp:637
+#: src/webenginepage.cpp:638
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -999,12 +999,12 @@ msgstr ""
 "Leku hau formularioko datuak e-posta bitartez bidaltzen saiatzen ari da.\n"
 "Jarraitu nahi duzu?"
 
-#: src/webenginepage.cpp:641
+#: src/webenginepage.cpp:642
 #, kde-format
 msgid "&Send Email"
 msgstr "&Bidali e-posta"
 
-#: src/webenginepage.cpp:690
+#: src/webenginepage.cpp:691
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1013,22 +1013,22 @@ msgstr ""
 "<qt>Leku honek ondorengo fitxategiak e-posta mezuari eranstea baimendu nahi "
 "duzu?</qt>"
 
-#: src/webenginepage.cpp:692
+#: src/webenginepage.cpp:693
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "E-Posta eranskinen berrespena"
 
-#: src/webenginepage.cpp:693
+#: src/webenginepage.cpp:694
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Baimendu eranskinak"
 
-#: src/webenginepage.cpp:694
+#: src/webenginepage.cpp:695
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Jaramonik ez eranskinei"
 
-#: src/webenginepage.cpp:708
+#: src/webenginepage.cpp:709
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1037,12 +1037,12 @@ msgstr ""
 "Gune hau zure konputagailuko fitxategi bat formularioaren bidalketan "
 "eransten saiatu da. Eranskina zure segurtasunerako kendu da."
 
-#: src/webenginepage.cpp:711
+#: src/webenginepage.cpp:712
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Eranskina kendu da"
 
-#: src/webenginepage.cpp:842
+#: src/webenginepage.cpp:843
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1051,7 +1051,7 @@ msgstr ""
 "Leku hau leiho-gainerakor berri bat irekitzea eskatzen ari da.\n"
 "Hori egiten utzi nahi duzu?"
 
-#: src/webenginepage.cpp:844
+#: src/webenginepage.cpp:845
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1060,17 +1060,17 @@ msgstr ""
 "<qt>Leku hau<p>%1</p>-(e)ra leiho-gainerakor bat irekitzea eskatzen ari da."
 "<br/>Hori egiten utzi nahi duzu?</qt>"
 
-#: src/webenginepage.cpp:847
+#: src/webenginepage.cpp:848
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript leiho-gainerakorren berrespena"
 
-#: src/webenginepage.cpp:848
+#: src/webenginepage.cpp:849
 #, kde-format
 msgid "Allow"
 msgstr "Baimendu"
 
-#: src/webenginepage.cpp:848
+#: src/webenginepage.cpp:849
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Ez baimendu"

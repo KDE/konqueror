@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-05 00:43+0000\n"
+"POT-Creation-Date: 2025-03-31 00:41+0000\n"
 "PO-Revision-Date: 2007-11-01 17:45+0545\n"
 "Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -602,7 +602,7 @@ msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
 msgstr "खोलिने स्थान"
 
-#: src/konqapplication.cpp:479
+#: src/konqapplication.cpp:481
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
@@ -1600,7 +1600,7 @@ msgstr "थप्नुहोस्"
 msgid "Do Not Add"
 msgstr "नथप्नुहोस्"
 
-#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:825
+#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:829
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -2010,19 +2010,19 @@ msgstr "चेतावनी"
 msgid "Resend"
 msgstr "पुन: पठाउनुहोस्"
 
-#: src/urlloader.cpp:426
+#: src/urlloader.cpp:427
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr ""
 
-#: src/urlloader.cpp:429
+#: src/urlloader.cpp:430
 #, kde-format
 msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
 msgstr ""
 
-#: src/urlloader.cpp:436
+#: src/urlloader.cpp:437
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -2032,14 +2032,14 @@ msgid ""
 "display it?"
 msgstr ""
 
-#: src/urlloader.cpp:442
+#: src/urlloader.cpp:443
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
-#: src/urlloader.cpp:768
+#: src/urlloader.cpp:772
 #, fuzzy, kde-format
 #| msgid "Set Name..."
 msgid "Save As"

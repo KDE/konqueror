@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-05 00:43+0000\n"
+"POT-Creation-Date: 2025-03-31 00:41+0000\n"
 "PO-Revision-Date: 2022-09-27 17:54+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -604,7 +604,7 @@ msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
 msgstr "Sesi untuk dibuka"
 
-#: src/konqapplication.cpp:479
+#: src/konqapplication.cpp:481
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
@@ -1543,7 +1543,7 @@ msgstr "Tambah"
 msgid "Do Not Add"
 msgstr "Jangan Tambah"
 
-#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:825
+#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:829
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1941,7 +1941,7 @@ msgstr "Peringatan"
 msgid "Resend"
 msgstr "Kirim Ulang"
 
-#: src/urlloader.cpp:426
+#: src/urlloader.cpp:427
 #, fuzzy, kde-format
 #| msgctxt "Execute an executable file"
 #| msgid "Execute it"
@@ -1949,7 +1949,7 @@ msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "Mengeksekusinya"
 
-#: src/urlloader.cpp:429
+#: src/urlloader.cpp:430
 #, fuzzy, kde-format
 #| msgctxt "Display an executable file"
 #| msgid "Display it"
@@ -1957,7 +1957,7 @@ msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
 msgstr "Menampilkannya"
 
-#: src/urlloader.cpp:436
+#: src/urlloader.cpp:437
 #, fuzzy, kde-kuit-format
 #| msgctxt ""
 #| "The user has to decide whether to execute an executable file or display it"
@@ -1973,7 +1973,7 @@ msgstr ""
 "<tt>%1</tt> bisa dieksekusi. Apakah Anda ingin mengeksekusinya atau hanya "
 "menampilkannya?"
 
-#: src/urlloader.cpp:442
+#: src/urlloader.cpp:443
 #, fuzzy, kde-kuit-format
 #| msgctxt ""
 #| "The user has to decide whether to execute an executable file or not"
@@ -1983,7 +1983,7 @@ msgctxt ""
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<tt>%1</tt> bisa dieksekusi. Apakah Anda ingin mengeksekusinya?"
 
-#: src/urlloader.cpp:768
+#: src/urlloader.cpp:772
 #, kde-format
 msgid "Save As"
 msgstr "Simpan Sebagai"
