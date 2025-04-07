@@ -1,0 +1,412 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+# SPDX-FileCopyrightText: 2025 Shinjo Park <kde@peremen.name>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
+"PO-Revision-Date: 2025-04-07 01:17+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#: bookmarks_module/bookmarks_module.cpp:273
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "Bookmarks Sidebar Module"
+msgstr "책갈피 사이드바 모듈"
+
+#: bookmarks_module/bookmarks_module.cpp:296
+#, kde-format
+msgctxt "@title:tab"
+msgid "Bookmarks"
+msgstr "책갈피"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbDefaultAction)
+#: history_module/history_dlg.ui:17
+#, kde-format
+msgid "Default action"
+msgstr "기본 동작"
+
+#. i18n: ectx: property (text), widget (QLabel, lDefault)
+#: history_module/history_dlg.ui:23
+#, kde-format
+msgid "Default action when double clicking an URL"
+msgstr "URL을 두 번 클릭했을 때 사용할 기본 동작"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbLimits)
+#: history_module/history_dlg.ui:36
+#, kde-format
+msgid "Limits"
+msgstr "제한"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbExpire)
+#: history_module/history_dlg.ui:61
+#, kde-format
+msgid "URLs e&xpire after"
+msgstr "다음 기간 이후 URL 만료(&X)"
+
+#. i18n: ectx: property (text), widget (QLabel, lEntries)
+#: history_module/history_dlg.ui:71
+#, kde-format
+msgid "Maximum &number of URLs:"
+msgstr "최대 URL 개수(&N):"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbFonts)
+#: history_module/history_dlg.ui:87
+#, kde-format
+msgid "Custom Fonts For"
+msgstr "다음에 대한 사용자 정의 글꼴"
+
+#. i18n: ectx: property (text), widget (QLabel, lbNewer)
+#: history_module/history_dlg.ui:102
+#, kde-format
+msgid "URLs newer than"
+msgstr "다음보다 최신 URL"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnFontOlder)
+#. i18n: ectx: property (text), widget (QPushButton, btnFontNewer)
+#: history_module/history_dlg.ui:118 history_module/history_dlg.ui:138
+#, kde-format
+msgid "Choose Font..."
+msgstr "글꼴 선택..."
+
+#. i18n: ectx: property (text), widget (QLabel, lbOlder)
+#: history_module/history_dlg.ui:125
+#, kde-format
+msgid "URLs older than"
+msgstr "다음보다 오래된 URL"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbDetails)
+#: history_module/history_dlg.ui:148
+#, kde-format
+msgid "Details"
+msgstr "자세히"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, cbDetailedTips)
+#: history_module/history_dlg.ui:154
+#, kde-format
+msgid ""
+"Shows the number of times visited and the dates of the first and last "
+"visits, in addition to the URL"
+msgstr "URL과 더불어서 첫 방문과 마지막 방문, 방문 횟수 등 자세한 정보 표시"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbDetailedTips)
+#: history_module/history_dlg.ui:157
+#, kde-format
+msgid "Detailed tooltips"
+msgstr "자세한 풍선 도움말 표시"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnClearHistory)
+#: history_module/history_dlg.ui:169
+#, kde-format
+msgid "Clear History"
+msgstr "과거 기록 비우기"
+
+#: history_module/history_module.cpp:139
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "History Sidebar Module"
+msgstr "과거 기록 사이드바 모듈"
+
+#: history_module/history_module.cpp:162
+#, kde-format
+msgctxt "@title:tab"
+msgid "History"
+msgstr "과거 기록"
+
+#: history_module/kcmhistory.cpp:49
+#, kde-format
+msgctxt "Automatically decide which action to perform"
+msgid "Auto"
+msgstr "자동"
+
+#: history_module/kcmhistory.cpp:50
+#, kde-format
+msgctxt "Open URL in new tab"
+msgid "Open in new tab"
+msgstr "새 탭으로 열기"
+
+#: history_module/kcmhistory.cpp:51
+#, kde-format
+msgctxt "Open URL in current tab"
+msgid "Open in current tab"
+msgstr "현재 탭에 열기"
+
+#: history_module/kcmhistory.cpp:52
+#, kde-format
+msgctxt "Open URL in new window"
+msgid "Open in new window"
+msgstr "새 창으로 열기"
+
+#: history_module/kcmhistory.cpp:54
+#, kde-format
+msgid ""
+"Action to carry out when opening an URL from history:<dl><dl><dt>Auto:</"
+"dt><dd>opens the URL in a new tab unless the current tab is empty or an "
+"intro page</dd><dt>Open URL in a new tab:</dt><dd>always opens the URL in a "
+"new tab</dd><dt>Open URL in current tab:</dt><dd>always opens the URL in the "
+"current tab</dd><dt>Open URL in new window:</dt><dd>always opens the URL in "
+"a new window</dd></dl>"
+msgstr ""
+"과거 기록에서 URL을 열 때 실행할 동작:<dl><dl><dt>자동:</dt><dd>현재 탭이 비"
+"어 있거나 소개 페이지일 때를 제외하고 URL을 새 탭으로 열기</dd><dt>새 탭으로 "
+"URL 열기:</dt><dd>항상 URL을 새 탭으로 열기</dd><dt>현재 탭에 URL 열기:</"
+"dt><dd>항상 URL을 현재 탭에 열기</dd><dt>새 창으로 URL 열기:</dt><dd>항상 URL"
+"을 새 창에 열기</dd></dl>"
+
+#: history_module/kcmhistory.cpp:65
+#, kde-format
+msgid "days"
+msgstr "일"
+
+#: history_module/kcmhistory.cpp:71 history_module/kcmhistory.cpp:76
+#: history_module/kcmhistory.cpp:200 history_module/kcmhistory.cpp:213
+#, kde-format
+msgid "Minute"
+msgid_plural "Minutes"
+msgstr[0] "분"
+
+#: history_module/kcmhistory.cpp:73 history_module/kcmhistory.cpp:78
+#: history_module/kcmhistory.cpp:198 history_module/kcmhistory.cpp:211
+#, kde-format
+msgid "Day"
+msgid_plural "Days"
+msgstr[0] "일"
+
+#: history_module/kcmhistory.cpp:245
+#, kde-format
+msgid "Do you really want to clear the entire history?"
+msgstr "과거 기록을 전부 삭제하시겠습니까?"
+
+#: history_module/kcmhistory.cpp:247
+#, kde-format
+msgctxt "@title:window"
+msgid "Clear History?"
+msgstr "과거 기록 삭제?"
+
+#: places_module/places_module.cpp:76
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "Places Sidebar Module"
+msgstr "위치 사이드바 모듈"
+
+#: places_module/places_module.cpp:99
+#, kde-format
+msgctxt "@title:tab"
+msgid "Places"
+msgstr "위치"
+
+#: sidebar_widget.cpp:83
+#, kde-format
+msgid "Restore All Removed Default Buttons"
+msgstr "모든 삭제된 기본 단추 복원"
+
+#: sidebar_widget.cpp:84
+#, kde-format
+msgid "Rollback to System Default"
+msgstr "시스템 기본값으로 복원"
+
+#: sidebar_widget.cpp:143 sidebar_widget.cpp:429
+#, kde-format
+msgid "Configure Sidebar"
+msgstr "사이드바 설정"
+
+#: sidebar_widget.cpp:145
+#, kde-format
+msgid "Add New"
+msgstr "새로 추가"
+
+#: sidebar_widget.cpp:149
+#, kde-format
+msgid "Multiple Views"
+msgstr "다중 보기"
+
+#: sidebar_widget.cpp:151 sidebar_widget.cpp:268
+#, kde-format
+msgid "Show Tabs on Left"
+msgstr "왼쪽에 탭 표시"
+
+#: sidebar_widget.cpp:152
+#, kde-format
+msgid "Show Configuration Button"
+msgstr "설정 단추 표시"
+
+#: sidebar_widget.cpp:155
+#, kde-format
+msgid "Close Sidebar"
+msgstr "사이드바 닫기"
+
+#: sidebar_widget.cpp:210
+#, kde-format
+msgid "This entry already exists."
+msgstr "이 항목이 이미 존재합니다."
+
+#: sidebar_widget.cpp:226
+#, kde-format
+msgid ""
+"<qt>This removes all your entries from the sidebar and adds the system "
+"default ones.<br /><b>This procedure is irreversible.</b><br />Do you want "
+"to proceed?</qt>"
+msgstr ""
+"<qt>사이드바에 추가한 모든 항목을 삭제하고 시스템 기본값을 추가합니다.<br /"
+"><b>이 동작은 실행 취소할 수 없습니다.</b><br />계속 진행하시겠습니까?</qt>"
+
+#: sidebar_widget.cpp:268
+#, kde-format
+msgid "Show Tabs on Right"
+msgstr "오른쪽에 탭 표시"
+
+#: sidebar_widget.cpp:279
+#, kde-format
+msgctxt "@title:window"
+msgid "Set Name"
+msgstr "이름 설정"
+
+#: sidebar_widget.cpp:280
+#, kde-format
+msgid "Enter the name:"
+msgstr "이름 입력:"
+
+#: sidebar_widget.cpp:298
+#, kde-format
+msgid "Enter a URL:"
+msgstr "URL 입력:"
+
+#: sidebar_widget.cpp:322
+#, kde-format
+msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+msgstr "<qt><b>%1</b> 탭을 삭제하시겠습니까?</qt>"
+
+#: sidebar_widget.cpp:372
+#, kde-format
+msgid ""
+"You have hidden the sidebar configuration button. To make it visible again, "
+"click the right mouse button on any of the sidebar buttons and select \"Show "
+"Configuration Button\"."
+msgstr ""
+"사이드바 설정 단추를 숨겼습니다. 다시 표시하려면 임의의 사이드바 단추를 오른"
+"쪽 클릭한 후 \"설정 단추 표시\"를 선택하십시오."
+
+#: sidebar_widget.cpp:573
+#, kde-format
+msgid "Set Name..."
+msgstr "이름 설정..."
+
+#: sidebar_widget.cpp:574
+#, kde-format
+msgid "Set URL..."
+msgstr "URL 설정..."
+
+#: sidebar_widget.cpp:575
+#, kde-format
+msgid "Set Icon..."
+msgstr "아이콘 설정..."
+
+#: sidebar_widget.cpp:577
+#, kde-format
+msgid "Show Hidden Folders..."
+msgstr "숨김 폴더 표시..."
+
+#: sidebar_widget.cpp:582
+#, kde-format
+msgid "Remove"
+msgstr "삭제"
+
+#: sidebar_widget.cpp:908
+#, kde-format
+msgid "Web module"
+msgstr "웹 모듈"
+
+#: tree_module/tree_module.cpp:259
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "Tree Sidebar Module"
+msgstr "트리 사이드바 모듈"
+
+#: tree_module/tree_module.cpp:282
+#, kde-format
+msgctxt "@title:tab"
+msgid "Tree"
+msgstr "트리"
+
+#: vertical_tabbar/vertical_tabbar.cpp:91
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "Vertical Tab Bar"
+msgstr "수직 탭 표시줄"
+
+#: vertical_tabbar/vertical_tabbar.cpp:114
+#, kde-format
+msgctxt "@title:tab"
+msgid "Tabs"
+msgstr "탭"
+
+#: web_module/web_module.cpp:42
+#, kde-format
+msgid "&Open Link"
+msgstr "링크 열기(&O)"
+
+#: web_module/web_module.cpp:46
+#, kde-format
+msgid "Open in New &Window"
+msgstr "새 창으로 열기(&W)"
+
+#: web_module/web_module.cpp:52
+#, kde-format
+msgid "&Reload"
+msgstr "새로 고침(&R)"
+
+#: web_module/web_module.cpp:57
+#, kde-format
+msgid "Set &Automatic Reload"
+msgstr "자동 새로 고침 활성화(&A)"
+
+#: web_module/web_module.cpp:121
+#, kde-format
+msgctxt "@title:window"
+msgid "Set Refresh Timeout (0 disables)"
+msgstr "새로 고침 시간 간격 설정(0: 비활성화)"
+
+#: web_module/web_module.cpp:132
+#, kde-format
+msgid " minute"
+msgid_plural " minutes"
+msgstr[0] "분"
+
+#: web_module/web_module.cpp:136
+#, kde-format
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] "초"
+
+#: web_module/web_module.cpp:269
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "Web Sidebar Module"
+msgstr "웹 사이드바 모듈"
+
+#: web_module/web_module.cpp:289
+#, kde-format
+msgctxt "@label"
+msgid "Name:"
+msgstr "이름:"
+
+#: web_module/web_module.cpp:289
+#, kde-format
+msgctxt "@label"
+msgid "Path or URL:"
+msgstr "경로나 URL:"
+
+#: web_module/web_module.cpp:290
+#, kde-format
+msgctxt "@title:window"
+msgid "Add web sidebar module"
+msgstr "웹 사이드바 모듈 추가"
