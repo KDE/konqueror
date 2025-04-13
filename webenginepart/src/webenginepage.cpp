@@ -302,6 +302,7 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
     if (isMainFrame) {
         KonqInterfaces::Browser *browser = KonqInterfaces::Browser::browser(qApp);
         if (browser && !browser->canNavigateTo(part(), url)) {
+            askBrowserToOpenUrl(url);
             return false;
         }
     }

@@ -22,6 +22,7 @@
 #include "browserextension.h"
 #include "placeholderpart.h"
 #include "konqurl.h"
+#include "konqframevisitor.h"
 
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
@@ -1590,4 +1591,35 @@ void KonqView::forceWebEnginePartFocus()
     setFocus();
     disconnect(m_pPart, &KParts::ReadOnlyPart::completed, this, &KonqView::forceWebEnginePartFocus);
     disconnect(m_pPart, &KParts::ReadOnlyPart::completedWithPendingAction, this, &KonqView::forceWebEnginePartFocus);
+}
+
+KonqFrameBase* KonqView::tab() const
+{
+    KonqFrameBase* frm = frame();
+    KonqFrameContainerBase *frameContainer = frm->parentContainer();
+
+    while (frameContainer) {
+        switch (frameContainer->frameType()) {
+            case KonqFrameBase::MainWindow:
+                return nullptr;
+            case KonqFrameBase::Tabs:
+                return frm;
+            default:
+                frm = frameContainer;
+                frameContainer = frameContainer->parentContainer();
+        }
+    }
+    return nullptr; //It should be impossible to get here
+}
+
+QList<KonqView *> KonqView::linkedViews() const
+{
+    if (!m_bLinkedView) {
+        return {};
+    }
+    QList<KonqView*> viewsInTab = KonqViewCollector().collect(tab());
+    QList<KonqView*> linkedViewsList;
+    std::copy_if(viewsInTab.constBegin(), viewsInTab.constEnd(), std::back_inserter(linkedViewsList),
+                 [this](KonqView *v) {return v != this && v->isLinkedView();});
+    return linkedViewsList;
 }

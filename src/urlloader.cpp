@@ -737,14 +737,30 @@ void UrlLoader::embed()
     if (embedded) {
         done();
     } else {
-        m_allowedActions.allow(UrlAction::Embed, false);
-        m_request.serviceName = {};
-        //This is an unexpected situation, so enable open and save action even if they hadn't been originally requested
-        m_allowedActions.allow(Konq::UrlAction::Open, true);
-        m_allowedActions.allow(Konq::UrlAction::Save, true);
-        m_part = {};
-        decideEmbedOpenOrSave();
-        performAction();
+        //There are two reasons, that I'm aware of, which could cause openView to return false:
+        //- the view is locked and there aren't linked views
+        //- an error occurs while creating the part
+        //The first case is handled by calling KonqMainWindow::openUrl again and forcing the use of a new tab
+        //In the second case, try again to decide an action, but only among Open or Save (since embedding failed)
+
+        //TODO: shouldn't these failures be handled somewhere else, where there are more information about the failure?
+        //This is especially true for the first situation (and maybe other like it), but I think it would require a
+        //better separation of roles between main window, view and url loader
+        if (m_view->isLockedLocation() && m_view->linkedViews().isEmpty()) {
+            m_request.browserArgs.setNewTab(true);
+            m_request.browserArgs.setForcesNewWindow(true);
+            m_mainWindow->openUrl(nullptr, m_url, m_request);
+            done();
+        } else {
+            m_allowedActions.allow(UrlAction::Embed, false);
+            m_request.serviceName = {};
+            //This is an unexpected situation, so enable open and save action even if they hadn't been originally requested
+            m_allowedActions.allow(Konq::UrlAction::Open, true);
+            m_allowedActions.allow(Konq::UrlAction::Save, true);
+            m_part = {};
+            decideEmbedOpenOrSave();
+            performAction();
+        }
     }
 }
 

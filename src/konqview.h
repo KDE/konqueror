@@ -597,6 +597,30 @@ public:
      */
     bool isDelayed() const;
 
+    /**
+     * @brief The tab containing the view as a KonqFrameBase object
+     *
+     * Since the KonqFrameBase class hierarchy doesn't provide a concept of `tab`,
+     * this return, among the frames directly or indirectly containing the view,
+     * the one whose parent is a frame of tyep KonqFrameBase::Tabs.
+     *
+     * @return the parent frame representing the tab containing the view or `nullptr`
+     * if no such frame exists (which should never happen)
+     */
+    KonqFrameBase* tab() const;
+
+    /**
+     * @brief A list of all the views linked to this one
+     *
+     * The views linked to this one are all the views in the same tab for which isLinkedView()
+     * returns `true`, except for this one. If this view doesn't have the #m_bLinkedView
+     * flag set, it means that it isn't linked to any other view, so an empty list is returned
+     * @return the list of all views linked to this one or an empty list if this list isn't
+     * linked to other views.
+     */
+    QList<KonqView*> linkedViews() const;
+
+
 Q_SIGNALS:
 
     /**

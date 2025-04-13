@@ -30,6 +30,7 @@
 #include <kio/job.h>
 #include <ksycoca.h>
 #include <KLocalizedString>
+#include "implementations/konqbrowser.h"
 
 //#define TEST_KHTML 1
 
@@ -64,28 +65,6 @@ public:
 };
 #endif
 
-
-// Return the main widget for the given KonqView; used for clicking onto it
-// Duplicated from konqhtmltest.cpp -> move to KonqView?
-static QWidget *partWidget(KonqView *view)
-{
-    QWidget *widget = view->part()->widget();
-#ifdef TEST_KHTML
-    KHTMLPart *htmlPart = qobject_cast<KHTMLPart *>(view->part());
-#else
-    WebEnginePart *htmlPart = qobject_cast<WebEnginePart *>(view->part());
-#endif
-    if (htmlPart) {
-        widget = htmlPart->view();    // khtmlview != widget() nowadays, due to find bar
-    }
-    if (QScrollArea *scrollArea = qobject_cast<QScrollArea *>(widget)) {
-        widget = scrollArea->widget();
-    }
-    if (widget && widget->focusProxy()) { // for WebEngine's RenderWidgetHostViewQtDelegateWidget
-        return widget->focusProxy();
-    }
-    return widget;
-}
 
 void ViewMgrTest::sendAllPendingResizeEvents(QWidget *mainWindow)
 {
@@ -178,10 +157,12 @@ private:
 
 void ViewMgrTest::initTestCase()
 {
+    QStandardPaths::setTestModeEnabled(true);
+
     WebEnginePartControls::self()->disablePageLifecycleStateManagement();
     KLocalizedString::setApplicationDomain("konqviewmgrtest");
 
-    QStandardPaths::setTestModeEnabled(true);
+    qApp->setProperty("browser", QVariant::fromValue(new KonqBrowser(qApp)));
 
     QWebEngineSettings *settings = WebEnginePart::defaultProfile()->settings();
     settings->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, true);
