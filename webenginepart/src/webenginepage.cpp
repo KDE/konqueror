@@ -117,17 +117,22 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     };
     connect(this, &QWebEnginePage::loadFinished, this, unsetInspectedPageIfNeeded);
 
-    WebEnginePartControls::self()->navigationRecorder()->registerPage(this);
+    controls()->navigationRecorder()->registerPage(this);
     m_part->downloadManager()->addPage(this);
 
     setBackgroundColor(WebEngineSettings::self()->customBackgroundColor());
-    connect(WebEnginePartControls::self(), &WebEnginePartControls::updateBackgroundColor, this, [this](const QColor &color){setBackgroundColor(color);});
-    connect(WebEnginePartControls::self(), &WebEnginePartControls::updateStyleSheet, this, &WebEnginePage::updateUserStyleSheet);
+    connect(controls(), &WebEnginePartControls::updateBackgroundColor, this, [this](const QColor &color){setBackgroundColor(color);});
+    connect(controls(), &WebEnginePartControls::updateStyleSheet, this, &WebEnginePage::updateUserStyleSheet);
 }
 
 WebEnginePage::~WebEnginePage()
 {
 //qCDebug(WEBENGINEPART_LOG) << this;
+}
+
+inline WebEnginePartControls* WebEnginePage::controls() const
+{
+    return WebEnginePartControls::self();
 }
 
 const WebSslInfo& WebEnginePage::sslInfo() const
@@ -778,11 +783,13 @@ void WebEnginePage::setStatusBarText(const QString& text)
 
 void WebEnginePage::changeLifecycleState(QWebEnginePage::LifecycleState recommendedState)
 {
-    if (recommendedState != QWebEnginePage::LifecycleState::Active && !isVisible()) {
-        setLifecycleState(QWebEnginePage::LifecycleState::Frozen);
-    } else {
-        setLifecycleState(QWebEnginePage::LifecycleState::Active);
+    using State = QWebEnginePage::LifecycleState;
+
+    State newState = State::Active;
+    if (recommendedState != State::Active && !isVisible() && controls()->isPageLifecycleManagementEnabled()) {
+        newState = State::Frozen;
     }
+    setLifecycleState(newState);
 }
 
 void WebEnginePage::updateUserStyleSheet(const QString& script)

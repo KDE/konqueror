@@ -16,8 +16,10 @@
 #include <webenginepart.h>
 #include <webengineview.h>
 #include <webenginepage.h>
+#include <webenginepartcontrols.h>
 #include <QWebEngineProfile>
 #include <QWebEngineSettings>
+#include <QMenu>
 
 #include <KSharedConfig>
 #include <ktoolbar.h>
@@ -35,6 +37,8 @@ using namespace Konq;
 
 class KonqHtmlTest : public QObject
 {
+    static constexpr const char* s_htmlTemplate{"/XXXXXX.html"};
+
     Q_OBJECT
 private Q_SLOTS:
     void initTestCase()
@@ -43,7 +47,7 @@ private Q_SLOTS:
         QStandardPaths::setTestModeEnabled(true);
 
         KonqSessionManager::self()->disableAutosave();
-        //qRegisterMetaType<KonqView *>("KonqView*");
+        WebEnginePartControls::self()->disablePageLifecycleStateManagement();
 
         // Ensure the tests use webenginepart, not KHTML or kwebkitpart
         // This code is inspired by settings/konqhtml/generalopts.cpp
@@ -72,6 +76,21 @@ private Q_SLOTS:
         // in case some test broke, don't assert in khtmlglobal...
         deleteAllMainWindows();
     }
+
+    void cleanup() {
+        deleteAllMainWindows();
+    }
+
+    bool copyToTemporaryFile(const QString &fileName, QTemporaryFile &tmpFile, std::function<QString(QString)> fnc={}) {
+        QFile file(fileName);
+        if (!file.open(QFile::ReadOnly)) {
+            return false;
+        }
+        QString contents = file.readAll();
+        tmpFile.write(fnc ? fnc(contents).toLatin1() : contents.toLatin1());
+        return true;
+    }
+
     void loadSimpleHtml()
     {
         KonqMainWindow mainWindow;
@@ -93,7 +112,6 @@ private Q_SLOTS:
         const QUrl url = QUrl::fromLocalFile(QDir::homePath());
         mainWindow.openUrl(nullptr, url, QStringLiteral("text/html"));
         KonqView *view = mainWindow.currentView();
-        qDebug() << "Waiting for first completed signal";
         QSignalSpy spyCompleted(view, &KonqView::viewCompleted);
         QVERIFY(spyCompleted.wait(20000));        // error calls openUrlRequest
         if (view->aborted()) {
@@ -107,74 +125,134 @@ private Q_SLOTS:
         }
     }
 
-    void rightClickClose() // #149736
+    void adjustSettings(WebEnginePart *part) {
+        Settings::self()->setMmbOpensTab(false);
+        Konq::Settings::setAlwaysHavePreloaded(false);
+        QWebEngineSettings *settings = part->profile()->settings();
+        settings->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
+        settings->setAttribute(QWebEngineSettings::AllowRunningInsecureContent, true);
+        settings->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, true);
+        settings->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, true);
+        settings->setAttribute(QWebEngineSettings::AllowWindowActivationFromJavaScript, true);
+    }
+
+    /*
+     * Test that right-clicking on a page which automatically closes on a mouse click doesn't crash trying
+     * to display the context menu (BUG #149736).
+     *
+     * This requires a complex setup because javascript window.close() is only allowed to close a window
+     * opened from javascript, so we need two windows: one which automatically closes on mouse press and
+     * one to open the other one. Another complication raises from the fact that, when the popup menu is shown
+     * everything is blocked (apparently, including running javascript). To work around this, we use a QTimer
+     * to send a Qt::Key_Escape key click to the active menu, so that it can be closed
+     */
+    void rightClickClose()
     {
-        QPointer<KonqMainWindow> mainWindow = new KonqMainWindow;
-        // we specify the mimetype so that we don't have to wait for a KonqRun
-        mainWindow->openUrl(nullptr, QUrl(
-                                "data:text/html, <script type=\"text/javascript\">"
-                                "function closeMe() { window.close(); } "
-                                "document.onmousedown = closeMe; "
-                                "</script>"), QStringLiteral("text/html"));
+        Settings::self()->setAlwaysEmbedInNewTab(false);
+
+        QTemporaryFile popupFile(QDir::tempPath() + s_htmlTemplate);
+        QVERIFY(popupFile.open());
+        QVERIFY(copyToTemporaryFile(":popupmouseclose.html", popupFile));
+        QUrl popupUrl = QUrl::fromLocalFile(popupFile.fileName());
+        popupFile.close();
+
+        QTemporaryFile openerFile(QDir::tempPath() + s_htmlTemplate);
+        QVERIFY(openerFile.open());
+        QVERIFY(copyToTemporaryFile(":windowopener.html", openerFile, [popupUrl](const QString &s){return s.arg(popupUrl.toString());}));
+
+        QUrl url = QUrl::fromLocalFile(openerFile.fileName());
+        openerFile.close();
+
+        //Create the launcher window
+        KonqMainWindow *mainWindow = KonqMainWindowFactory::createNewWindow(url);
+        QCOMPARE(KMainWindow::memberList().count(), 1);
         QPointer<KonqView> view = mainWindow->currentView();
         QVERIFY(view);
-        QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
+        QSignalSpy spyCompleted(view, &KonqView::viewCompleted);
         QVERIFY(spyCompleted.wait(20000));
+        WebEnginePart *htmlPart = qobject_cast<WebEnginePart *>(view->part());
+        adjustSettings(htmlPart);
         QWidget *widget = partWidget(view);
-        qDebug() << "Clicking on" << widget;
+        QVERIFY(widget);
+        QTest::mousePress(widget, Qt::LeftButton);
+
+        //Ensure the new window has been created
+        QTRY_COMPARE(KMainWindow::memberList().count(), 2);
+        hideAllMainWindows();
+        QPointer<KonqMainWindow> newWindow = KonqMainWindow::mainWindows().last();
+        QVERIFY(newWindow);
+        QVERIFY(newWindow != mainWindow);
+
+        //Get the view in the new window
+        QCOMPARE(newWindow->viewCount(), 1);
+        view = newWindow->currentView();
+        KonqFrame *frame = newWindow->currentView()->frame();
+        WebEnginePart *part = qobject_cast<WebEnginePart *>(frame->part());
+        QVERIFY(part);
+        QSignalSpy spyPopupLoaded(part, &WebEnginePart::completed);
+        //Ensure the view has finished loading
+        QVERIFY(spyPopupLoaded.wait(20000));
+        widget = partWidget(newWindow->currentView());
+        bool menuShown = false; //Check the menu is shown
+        QTimer t(this);
+        auto timeout = [newWindow, &t, &menuShown] {
+            //Ensure there is at most one active menu
+            QList<QMenu*> menus = newWindow->findChildren<QMenu*>();
+            QList<QMenu*> activeMenus;
+            std::copy_if(menus.constBegin(), menus.constEnd(), std::back_inserter(activeMenus), [](QMenu *m){return m->isActiveWindow();});
+            QVERIFY(activeMenus.count() < 2);
+
+            if (activeMenus.count() == 0) {
+                return;
+            }
+            menuShown = true;
+            QTest::keyClick(activeMenus.at(0), Qt::Key_Escape);
+            t.stop();
+        };
+        connect(&t, &QTimer::timeout, newWindow, timeout);
+        t.start(100);
         QTest::mousePress(widget, Qt::RightButton);
-        QTRY_VERIFY(!view); // deleted
-        QTRY_VERIFY(!mainWindow); // the whole window gets deleted, in fact
+        QTRY_VERIFY(menuShown);
+        QTRY_VERIFY(!view);
+        QTRY_VERIFY(!newWindow);
     }
 
     void windowOpen()
     {
         // Simple test for window.open in a onmousedown handler.
 
-        // Want a window, not a tab (historical test)
-        Settings::self()->setMmbOpensTab(false);
-        Konq::Settings::setAlwaysHavePreloaded(false);
-
         // We have to use the same protocol for both the orig and dest urls.
         // KAuthorized would forbid a data: URL to redirect to a file: URL for instance.
-        QTemporaryFile tempFile;
-        QVERIFY(tempFile.open());
-        tempFile.write("<title>Popup</title><script>document.title=\"Opener=\" + window.opener;</script>");
+        QTemporaryFile popupTempFile(QDir::tempPath() + s_htmlTemplate);
+        QVERIFY(popupTempFile.open());
+        QVERIFY(copyToTemporaryFile(":popup.html", popupTempFile));
 
-        QTemporaryFile origTempFile;
-        QVERIFY(origTempFile.open());
-        origTempFile.write(
-            "<html><script>"
-            "function openWindow() { window.open('" + QUrl::fromLocalFile(tempFile.fileName()).url().toUtf8() + "'); } "
-            "document.onmousedown = openWindow; "
-            "</script></html>"
-        );
-        tempFile.close();
-        const QString origFile = origTempFile.fileName();
-        origTempFile.close();
+        QTemporaryFile openerTempFile(QDir::tempPath() + s_htmlTemplate);
+        QString fileName = QUrl::fromLocalFile(popupTempFile.fileName()).url().toUtf8();
+        QVERIFY(openerTempFile.open());
+        QVERIFY(copyToTemporaryFile(":windowopener.html", openerTempFile, [fileName](const QString &s){return s.arg(fileName);}));
+        popupTempFile.close();
+        const QString openerFileName = openerTempFile.fileName();
+        openerTempFile.close();
 
-        KonqMainWindow *mainWindow = KonqMainWindowFactory::createNewWindow(QUrl::fromLocalFile(origFile));
+        KonqOpenURLRequest req;
+        req.browserArgs.setEmbedWith("webenginepart");
+        KonqMainWindow *mainWindow = KonqMainWindowFactory::createNewWindow(QUrl::fromLocalFile(openerFileName), req);
         QCOMPARE(KMainWindow::memberList().count(), 1);
         KonqView *view = mainWindow->currentView();
         QVERIFY(view);
-        QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
+        QSignalSpy spyCompleted(view, &KonqView::viewCompleted);
         QVERIFY(spyCompleted.wait(20000));
         qApp->processEvents();
         WebEnginePart *htmlPart = qobject_cast<WebEnginePart *>(view->part());
-        htmlPart->view()->page()->profile()->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
-        htmlPart->view()->page()->profile()->settings()->setAttribute(QWebEngineSettings::AllowRunningInsecureContent, true);
-        htmlPart->view()->page()->profile()->settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls	, true);
-        htmlPart->view()->page()->profile()->settings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, true);
-        htmlPart->view()->page()->profile()->settings()->setAttribute(QWebEngineSettings::AllowWindowActivationFromJavaScript, true);
+        adjustSettings(htmlPart);
         QWidget *widget = partWidget(view);
         QVERIFY(widget);
-        qDebug() << "Clicking on the khtmlview";
+        qDebug() << "Clicking on the webengineview";
         QTest::mousePress(widget, Qt::LeftButton);
-        qApp->processEvents(); // openurlrequestdelayed
-        qApp->processEvents(); // browserrun
-        hideAllMainWindows(); // TODO: why does it appear nonetheless? hiding too early? hiding too late
         // Did it open a window?
         QTRY_COMPARE(KMainWindow::memberList().count(), 2);
+        hideAllMainWindows();
         KonqMainWindow *newWindow = qobject_cast<KonqMainWindow *>(KMainWindow::memberList().last());
         QVERIFY(newWindow);
         QVERIFY(newWindow != mainWindow);
@@ -187,7 +265,7 @@ private Q_SLOTS:
         WebEnginePart *part = qobject_cast<WebEnginePart *>(frame->part());
         QVERIFY(part);
         QTRY_VERIFY(!part->view()->url().isEmpty() && part->view()->url().scheme() != QStringLiteral("konq")); // hack to wait for webengine to load the page
-        QTRY_COMPARE(part->view()->title(), QString("Opener=[object Window]"));
+        QTRY_COMPARE(part->view()->title(), QString("Opener=null")); //It seems the new window can't access the window.opener object, as it the two origins are considered different
         deleteAllMainWindows();
     }
 

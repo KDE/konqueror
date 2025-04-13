@@ -152,6 +152,7 @@ void KonqPopupMenuTest::initTestCase()
     m_actionCollection.addAction(QStringLiteral("viewDocumentSource"), viewDocumentSource);
 
     m_newMenu = new KNewFileMenu(nullptr);
+    m_newMenu->setObjectName("newmenu");
 
     // Check if extractActionNames works
     QMenu popup;
@@ -160,7 +161,7 @@ void KonqPopupMenuTest::initTestCase()
     popup.addMenu(subMenu);
     subMenu->addAction(m_trash);
     QStringList actions = extractActionNames(popup);
-    // qDebug() << actions;
+    qDebug() << actions;
     QCOMPARE(actions, QStringList({"rename", "submenu"}));
 }
 
@@ -172,6 +173,30 @@ void KonqPopupMenuTest::cleanupTestCase()
     if (m_deleteMakefileDir) {
         QDir().rmdir(dir.path());
     }
+}
+
+void KonqPopupMenuTest::adjustExpectedActions(QStringList& expected, const QStringList& actions)
+{
+    //Depending on configuration, this can or cannot exist
+    if (!actions.contains(QLatin1String("pasteto"))) {
+        expected.removeOne(QStringLiteral("pasteto"));
+    }
+
+    //Depending on configuration, this can either be in the popup menu or in a submenu
+    if (!actions.contains(QLatin1String("open-terminal-here"))) {
+        expected.removeOne(QStringLiteral("open-terminal-here"));
+    }
+
+    // These are provided by Dolphin and depend on its configuration. Remove them if the copyTo submenu doesn't exist
+    if (!actions.contains("copyTo_submenu")) {
+        expected.removeOne(QStringLiteral("copyTo_submenu"));
+        expected.removeOne(QStringLiteral("moveTo_submenu"));
+    }
+
+    //Remove duplicates. The only possible duplicates are separators in case there was a separator before one of the removed
+    //entries and another one after it
+    auto res = std::unique(expected.begin(), expected.end());
+    expected.erase(res, expected.end());
 }
 
 void KonqPopupMenuTest::testFile()
@@ -199,7 +224,7 @@ void KonqPopupMenuTest::testFile()
     if (actions.count(QStringLiteral("openwith")) == 2) {
         actions.removeOne(QStringLiteral("openwith"));
     }
-    // qDebug() << actions;
+    qDebug() << actions;
     QStringList expectedActions {
         QStringLiteral("openInNewWindow"),
         QStringLiteral("openInNewTab"),
@@ -211,21 +236,14 @@ void KonqPopupMenuTest::testFile()
         QStringLiteral("openwith") ,
         QStringLiteral("separator") ,
         QStringLiteral("preview1") ,
-        QStringLiteral("separator")
+        QStringLiteral("separator"),
+        QStringLiteral("copyTo_submenu"),
+        QStringLiteral("moveTo_submenu"),
+        QStringLiteral("separator"),
+        QStringLiteral("properties")
     };
 
-    // These are provided by Dolphin and depend on its configuration.
-    // If actions contains copyTo_submenu, it means they exist, so add them
-    if (actions.contains("copyTo_submenu")) {
-        QStringList extraActions {
-            QStringLiteral("copyTo_submenu"),
-            QStringLiteral("moveTo_submenu"),
-            QStringLiteral("separator")
-        };
-        expectedActions.append(extraActions);
-    }
-
-    expectedActions << QStringLiteral("properties");
+    adjustExpectedActions(expectedActions, actions);
     // qDebug() << "Expected:" << expectedActions;
 
     QCOMPARE(actions, expectedActions);
@@ -261,7 +279,7 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
     if (actions.count(QStringLiteral("openwith")) == 2) {
         actions.removeOne(QStringLiteral("openwith"));
     }
-    // qDebug() << actions;
+    qDebug() << actions;
 
     QStringList expectedActions {
         QStringLiteral("openInNewWindow"),
@@ -272,12 +290,12 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
         QStringLiteral("separator"),
         QStringLiteral("preview1"),
         QStringLiteral("separator"),
+        QStringLiteral("copyTo_submenu"),
+        QStringLiteral("separator"),
+        QStringLiteral("properties")
     };
-    // copyTo_submenu is provided by Dolphin and depends on its configuration.
-    if (actions.contains(QStringLiteral("copyTo_submenu"))) {
-        expectedActions.append({QStringLiteral("copyTo_submenu"), QStringLiteral("separator")});
-    }
-        expectedActions << QStringLiteral("properties");
+
+    adjustExpectedActions(expectedActions, actions);
     // qDebug() << "Expected:" << expectedActions;
 
     QCOMPARE(actions, expectedActions);
@@ -307,7 +325,7 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
     if (actions.count(QStringLiteral("openwith")) == 2) {
         actions.removeOne(QStringLiteral("openwith"));
     }
-    // qDebug() << actions;
+    qDebug() << actions;
 
     QStringList expectedActions {
         QStringLiteral("openInNewWindow"),
@@ -320,17 +338,15 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
         QStringLiteral("openwith"),
         QStringLiteral("separator"),
         QStringLiteral("preview_submenu"),
-        QStringLiteral("separator")
+        QStringLiteral("separator"),
+        QStringLiteral("copyTo_submenu"),
+        QStringLiteral("moveTo_submenu"),
+        QStringLiteral("separator"),
+        QStringLiteral("properties")
     };
-    if (actions.contains("copyTo_submenu")) {
-        QStringList extraActions {
-            QStringLiteral("copyTo_submenu"),
-            QStringLiteral("moveTo_submenu"),
-            QStringLiteral("separator")
-        };
-        expectedActions.append(extraActions);
-    }
-        expectedActions.append({QStringLiteral("properties")});
+
+    adjustExpectedActions(expectedActions, actions);
+
     // qDebug() << "Expected:" << expectedActions;
 
     QCOMPARE(actions, expectedActions);
@@ -355,35 +371,29 @@ void KonqPopupMenuTest::testSubDirectory()
     popup.setActionGroups(actionGroups);
     QStringList actions = extractActionNames(popup);
     actions.removeAll(QStringLiteral("services_submenu"));
-    // qDebug() << actions;
+    qDebug() << actions;
     QStringList expectedActions{
         QStringLiteral("openInNewWindow"),
         QStringLiteral("openInNewTab"),
         QStringLiteral("separator"),
         QStringLiteral("cut"),
         QStringLiteral("copy"),
+        QStringLiteral("pasteto"),
         QStringLiteral("rename"),
         QStringLiteral("trash"),
         QStringLiteral("openwith"),
         QStringLiteral("separator"),
         QStringLiteral("preview_submenu"),
-        // It seems it has been moved to a submenu
-        // QStringLiteral("open-terminal-here"),
-        QStringLiteral("separator")
+        QStringLiteral("open-terminal-here"),
+        QStringLiteral("copyTo_submenu"),
+        QStringLiteral("moveTo_submenu"),
+        QStringLiteral("separator"),
+        QStringLiteral("properties")
     };
 
-    // These are provided by Dolphin and depend on its configuration.
-    // If actions contains copyTo_submenu, it means they exist, so add them
-    if (actions.contains("copyTo_submenu")) {
-        QStringList extraActions {
-            QStringLiteral("copyTo_submenu"),
-            QStringLiteral("moveTo_submenu"),
-            QStringLiteral("separator")
-        };
-        expectedActions.append(extraActions);
-    }
-    expectedActions << QStringLiteral("properties");
+    adjustExpectedActions(expectedActions, actions);
     // qDebug() << "Expected:" << expectedActions;
+
     QCOMPARE(actions, expectedActions);
 }
 
@@ -406,7 +416,7 @@ void KonqPopupMenuTest::testViewDirectory()
 
     QStringList actions = extractActionNames(popup);
     actions.removeAll(QStringLiteral("services_submenu"));
-    // qDebug() << actions;
+    qDebug() << actions;
     QStringList expectedActions {
         QStringLiteral("newmenu"),
         QStringLiteral("separator") ,
@@ -414,22 +424,16 @@ void KonqPopupMenuTest::testViewDirectory()
         QStringLiteral("openwith") ,
         QStringLiteral("separator") ,
         QStringLiteral("preview_submenu"),
-         // It seems it has been moved to a submenu
-        // QStringLiteral("open-terminal-here"),
-        QStringLiteral("separator")
+        QStringLiteral("open-terminal-here"),
+        QStringLiteral("separator"),
+        QStringLiteral("copyTo_submenu"),
+        QStringLiteral("moveTo_submenu"),
+        QStringLiteral("separator"),
+        QStringLiteral("properties")
     };
-    // These are provided by Dolphin and depend on its configuration.
-    // If actions contains copyTo_submenu, it means they exist, so add them
-    if (actions.contains("copyTo_submenu")) {
-        QStringList extraActions {
-            QStringLiteral("copyTo_submenu"),
-            QStringLiteral("moveTo_submenu"),
-            QStringLiteral("separator")
-        };
-        expectedActions.append(extraActions);
-    }
-    expectedActions << QStringLiteral("properties");
+    adjustExpectedActions(expectedActions, actions);
     // qDebug() << "Expected:" << expectedActions;
+
     QCOMPARE(actions, expectedActions);
 }
 
@@ -453,29 +457,23 @@ void KonqPopupMenuTest::testViewReadOnlyDirectory()
 
     QStringList actions = extractActionNames(popup);
     actions.removeAll(QStringLiteral("services_submenu"));
-    // qDebug() << actions;
+    qDebug() << actions;
     QStringList expectedActions {
         // "paste" // no paste since readonly
         QStringLiteral("openwith"),
         QStringLiteral("separator"),
         QStringLiteral("preview_submenu"),
-        // It seems it has been moved to a submenu
-        // QStringLiteral("open-terminal-here"),
+        QStringLiteral("open-terminal-here"),
         QStringLiteral("separator"),
+        QStringLiteral("copyTo_submenu"),
+        // no moveTo_submenu, since readonly ,
+        QStringLiteral("separator"),
+        QStringLiteral("properties")
     };
 
-    // This is provided by Dolphin and depends on its configuration.
-    // If actions contains copyTo_submenu, it means they exist, so add them
-    if (actions.contains("copyTo_submenu")) {
-        QStringList extraActions {
-            QStringLiteral("copyTo_submenu"),
-            // no moveTo_submenu, since readonly ,
-            QStringLiteral("separator")
-        };
-        expectedActions.append(extraActions);
-        expectedActions << QStringLiteral("properties");
-    }
+    adjustExpectedActions(expectedActions, actions);
     // qDebug() << "Expected:" << expectedActions;
+
     QCOMPARE(actions, expectedActions);
 }
 
@@ -503,7 +501,7 @@ void KonqPopupMenuTest::testHtmlLink()
     if (actions.count(QStringLiteral("openwith")) == 2) {
         actions.removeOne(QStringLiteral("openwith"));
     }
-    // qDebug() << actions;
+    qDebug() << actions;
 
     QStringList expectedActions {
         QStringLiteral("openInNewWindow"),
@@ -515,7 +513,8 @@ void KonqPopupMenuTest::testHtmlLink()
         QStringLiteral("openwith"),
         QStringLiteral("separator"),
         QStringLiteral("preview_submenu"),
-        QStringLiteral("services_submenu"),
+        //It seems it's not here anymore. Who used to provide it?
+        // QStringLiteral("services_submenu"),
         QStringLiteral("separator"),
         QStringLiteral("viewDocumentSource")
     };
@@ -555,14 +554,15 @@ void KonqPopupMenuTest::testHtmlPage()
     if (actions.count(QStringLiteral("openwith")) == 2) {
         actions.removeOne(QStringLiteral("openwith"));
     }
-    // qDebug() << actions;
+    qDebug() << actions;
 
     QStringList expectedActions {
         QStringLiteral("bookmark_add"),
         QStringLiteral("openwith"),
         QStringLiteral("separator"),
         QStringLiteral("preview_submenu"),
-        QStringLiteral("services_submenu"),
+        //It seems it's not here anymore. Who used to provide it?
+        // QStringLiteral("services_submenu"),
         QStringLiteral("separator"),
         // TODO "stopanimations",
         QStringLiteral("viewDocumentSource"),

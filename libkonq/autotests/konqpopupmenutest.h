@@ -19,6 +19,21 @@ class KonqPopupMenuTest : public QObject
 public:
     KonqPopupMenuTest();
 
+private:
+
+    /**
+     * @brief Adjusts the expected actions to take into account different configurations
+     *
+     * Some menu entries are sensitive to a system configurations. This means that the same test
+     * could pass on a system and fail on another depending on their configuration and/or installed
+     * software. This function removes some entries from the list of expected actions depending on
+     * whether they exist or not in the actual actions.
+     *
+     * @param expected the list of expected actions to be modified
+     * @param actions the actual actions
+     */
+    static void adjustExpectedActions(QStringList &expected, const QStringList &actions);
+
 private Q_SLOTS:
     void initTestCase();
     void cleanupTestCase();

@@ -6,6 +6,7 @@
 
 #include <webenginepart.h>
 #include "webengine_testutils.h"
+#include <webenginepartcontrols.h>
 
 #include <KIO/Job>
 #include <KParts/NavigationExtension>
@@ -30,6 +31,17 @@ KPluginMetaData dummyMetaData()
 }
 }
 
+//Needed to have a browser interface without having to create the application
+class TestBrowserInterface : public BrowserInterface {
+    Q_OBJECT
+public:
+    TestBrowserInterface(QObject *parent=nullptr) : BrowserInterface(parent){}
+public Q_SLOTS:
+    bool isCorrectPartForLocalFile(KParts::ReadOnlyPart *, const QString &) {
+        return true;
+    }
+};
+
 class WebEnginePartApiTest : public QObject
 {
     Q_OBJECT
@@ -45,6 +57,7 @@ private Q_SLOTS:
 
 void WebEnginePartApiTest::initTestCase()
 {
+    WebEnginePartControls::self()->disablePageLifecycleStateManagement();
     qRegisterMetaType<KIO::Job *>(); // for the KParts started signal
 }
 
@@ -127,6 +140,8 @@ void WebEnginePartApiTest::shouldEmitOpenUrlNotifyOnClick()
 {
     // GIVEN
     WebEnginePart part(nullptr, nullptr, dummyMetaData());
+    TestBrowserInterface *iface = new TestBrowserInterface(this);
+    part.browserExtension()->setBrowserInterface(iface);
     QSignalSpy spyStarted(&part, &KParts::ReadOnlyPart::started);
     QSignalSpy spyCompleted(&part, SIGNAL(completed()));
     QSignalSpy spySetWindowCaption(&part, &KParts::ReadOnlyPart::setWindowCaption);
@@ -140,7 +155,6 @@ void WebEnginePartApiTest::shouldEmitOpenUrlNotifyOnClick()
     QVERIFY(spyOpenUrlNotify.isEmpty());
     QWebEnginePage *page = part.view()->page();
     const QPoint pos = elementCenter(page, QStringLiteral("linkid")); // doesn't seem fully correct...
-    part.widget()->show();
     spyCompleted.clear();
 
     // WHEN clicking on the link

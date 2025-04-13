@@ -1140,7 +1140,7 @@ void KonqViewManager::loadRootItem(const KConfigGroup &cfg, KonqFrameContainerBa
             }
         }
     };
-    QTimer::singleShot(0, delayedLoadCurrentTab);
+    QTimer::singleShot(0, this, delayedLoadCurrentTab);
 
     m_pMainWindow->enableAllActions(true);
 

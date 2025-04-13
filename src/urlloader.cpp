@@ -285,7 +285,6 @@ KPluginMetaData UrlLoader::findEmbeddingPart(bool forceServiceName) const
         // for the MIME type.
         part = preferredPart(m_mimeType);
     }
-    qDebug() << "PREFERRED PART FOR" << m_url << "WITH MIMETYPE" << m_mimeType << part;
 
     /* Corner case: webenginepart can't determine mimetype (gives application/octet-stream) but
      * OpenUrlJob determines a mimetype supported by WebEnginePart (for example application/xml):

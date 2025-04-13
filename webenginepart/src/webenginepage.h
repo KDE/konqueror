@@ -31,6 +31,7 @@ class WebEnginePart;
 class KPasswdServerClient;
 class WebEngineWallet;
 class WebEngineDownloadJob;
+class WebEnginePartControls;
 
 class WebEnginePage : public QWebEnginePage
 {
@@ -81,6 +82,8 @@ public:
      */
     void setDropOperationStarted();
 
+    static bool allowLifeycleStateManagement(bool allow);
+
     QWidget* view() const;
 
 Q_SIGNALS:
@@ -119,6 +122,15 @@ protected:
      * @internal
      */
     bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame) override;
+
+    /**
+     * @brief Helper function to easily access the single WebEnginePartControls instance
+     *
+     * This is a shortcut for `WebEnginePartControls::self()`
+     *
+     * @return the single WebEnginePartControls instance
+     */
+    WebEnginePartControls* controls() const;
 
 protected Q_SLOTS:
     void slotLoadFinished(bool ok);
@@ -193,6 +205,8 @@ private:
     QTimer *m_dropOperationTimer;
 
     QMultiHash<QUrl, QWebEngineDownloadRequest*> m_downloadItems;
+
+    static bool s_allowLifecycleStateManagement;
 };
 
 

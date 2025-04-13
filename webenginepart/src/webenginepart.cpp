@@ -152,6 +152,16 @@ WebEnginePart::~WebEnginePart()
 {
 }
 
+QWebEngineProfile * WebEnginePart::defaultProfile()
+{
+    return KonqWebEnginePart::Profile::defaultProfile();
+}
+
+QWebEngineProfile * WebEnginePart::profile() const
+{
+    return defaultProfile();
+}
+
 void WebEnginePart::setPage(WebEnginePage* newPage)
 {
     WebEnginePage *oldPage = page();

@@ -137,7 +137,22 @@ public:
     const WebEnginePage* page() const;
     BrowserExtension *browserExtension() const;
 
+    /**
+     * @brief The profile used by the part
+     *
+     * @note Currently all parts use the default profile, so this just returns KonqWebEnginePart::Profile::defaultProfile().
+     * Using this function ensures that in the future this may be changed (for example to implement private profiles)
+     *
+     * @return the profile used by the part
+     */
     QWebEngineProfile *profile() const;
+
+    /**
+     * @brief The default profile
+     * @note Currently, all parts use the default profile, but this may change in the future
+     * @return the default profile
+     */
+    static QWebEngineProfile *defaultProfile();
 
     bool isWebEnginePart() const {return true;}
 

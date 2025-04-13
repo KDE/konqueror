@@ -9,8 +9,9 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/downloadactionquestiontest/  )
 
 ########### konqviewmgrtest ###############
 
-ecm_add_test(konqviewmgrtest.cpp
+ecm_add_test(konqviewmgrtest.cpp TEST_NAME konqviewmgrtest
     LINK_LIBRARIES konqueror_internal_lib Qt${KF_MAJOR_VERSION}::Core Qt${KF_MAJOR_VERSION}::Gui kwebenginepartlib Qt${KF_MAJOR_VERSION}::WebEngineWidgets Qt${KF_MAJOR_VERSION}::Test)
+qt_add_resources(konqviewmgrtest "viewmgrtest.qrc" PREFIX "/kxmlgui5/konqviewmgrtest/" BASE ../src/ FILES ../src/konqueror.rc )
 
 ########### historymanagertest ###############
 
@@ -24,7 +25,9 @@ ecm_add_test(undomanagertest.cpp
 
 ########### konqhtmltest ###############
 
-ecm_add_test(konqhtmltest.cpp
+set (konqhtmltest_SRCS konqhtmltest/konqhtmltest.cpp)
+qt_add_resources(konqhtmltest_SRCS konqhtmltest/konqhtmltest.qrc)
+ecm_add_test(${konqhtmltest_SRCS} TEST_NAME konqhtmltest
     LINK_LIBRARIES konqueror_internal_lib kwebenginepartlib Qt${KF_MAJOR_VERSION}::Core Qt${KF_MAJOR_VERSION}::Test)
 
 ########### konqviewtest ###############

@@ -7,6 +7,7 @@
 #include "konqviewmgrtest.h"
 #include <konqmainwindowfactory.h>
 #include "konqsettings.h"
+#include "webenginepartcontrols.h"
 #include <QToolBar>
 #include <QProcess>
 #include <QScrollArea>
@@ -14,6 +15,9 @@
 #include <qtest_gui.h>
 #include <qtestmouse.h>
 #include <QLabel>
+#include <QWebEngineSettings>
+#include <QWebEngineProfile>
+#include <webenginepage.h>
 
 #include <konqframe.h>
 #include <konqmainwindow.h>
@@ -174,9 +178,15 @@ private:
 
 void ViewMgrTest::initTestCase()
 {
+    WebEnginePartControls::self()->disablePageLifecycleStateManagement();
     KLocalizedString::setApplicationDomain("konqviewmgrtest");
 
     QStandardPaths::setTestModeEnabled(true);
+
+    QWebEngineSettings *settings = WebEnginePart::defaultProfile()->settings();
+    settings->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, true);
+    settings->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, true);
+
     QDir(KonqSessionManager::self()->autosaveDirectory()).removeRecursively();
     QString configLocationDir = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation);
     const QLatin1String expConfigDir(".qttest/config");
@@ -194,7 +204,7 @@ void ViewMgrTest::initTestCase()
     KSharedConfig::Ptr profile = KSharedConfig::openConfig(QStringLiteral("mimeapps.list"), KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
     KConfigGroup addedServices(profile, "Added KDE Service Associations");
     bool needsUpdate = false;
-    for (const QString &mimeType : QStringList{"text/html", "application/xhtml+xml", "application/xml"}) {
+    for (const QString &mimeType : QStringList{"text/html", "application/xhtml+xml", "application/xml", "text/plain"}) {
         QStringList services = addedServices.readXdgListEntry(mimeType);
         const QString wanted = QStringLiteral("webenginepart.desktop");
         if (services.isEmpty() || services.at(0) != wanted) {
@@ -204,6 +214,13 @@ void ViewMgrTest::initTestCase()
             needsUpdate = true;
         }
     }
+
+    //Ensure that text/plain files are embedded and not opened in an external application
+    KSharedConfig::Ptr cfg = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals, QStandardPaths::ConfigLocation);
+    KConfigGroup embedGrp = cfg->group("EmbedSettings");
+    embedGrp.writeEntry("embed-text/plain", true);
+
+    cfg->sync();
     if (needsUpdate) {
         profile->sync();
         // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
@@ -412,7 +429,12 @@ static void openHtmlWithLink(KonqMainWindow &mainWindow)
 {
     // Much like KonqHtmlTest::loadSimpleHtml.
     // We use text/plain as the linked file, in order to test #67956 (switching parts in new tab)
-    mainWindow.openUrl(nullptr, QUrl(QStringLiteral("data:text/html, <a href=\"data:text/plain, Link target\" id=\"linkid\">Click me</a>")), QStringLiteral("text/html"));
+    QString linkFilename = QFINDTESTDATA("konqviewmgrtest/link_target.txt");
+    QVERIFY(!linkFilename.isEmpty());
+    QString linkUrl = QUrl::fromLocalFile(linkFilename).toString();
+    QUrl url = QUrl::fromLocalFile(QFINDTESTDATA("konqviewmgrtest/page.html"));
+    // QUrl url = QUrl(QString("data:text/html, <a href=\"%1\" id=\"linkid\">Click me</a>").arg(linkUrl));
+    mainWindow.openUrl(nullptr, url, QStringLiteral("text/html"));
     KonqView *view = mainWindow.currentView();
     QVERIFY(view);
     QSignalSpy spyCompleted(view, &KonqView::viewCompleted);
@@ -443,32 +465,16 @@ void ViewMgrTest::testLinkedViews()
     view2->setLinkedView(true);
     view->setLockedLocation(true);
 
-    mainWindow.show();
-
     // "Click" on the link
     qDebug() << "ACTIVATING LINK";
 
-#ifdef TEST_KHTML
-    KHTMLPart *part = qobject_cast<KHTMLPart *>(view->part());
-    QVERIFY(part);
-    DOM::HTMLAnchorElement anchor = part->htmlDocument().getElementsByTagName(DOM::DOMString("a")).item(0);
-    QVERIFY(!anchor.isNull());
-    anchor.focus();
-    QKeyEvent ev(QKeyEvent::KeyPress, Qt::Key_Return, 0, "\n");
-    QApplication::sendEvent(part->view(), &ev);
-    qApp->processEvents(); // openUrlRequestDelayed
-    QTest::qWait(0);
-#else
     QTest::mouseClick(part->view()->focusProxy(), Qt::LeftButton, Qt::KeyboardModifiers(),
             elementCenter(part->view()->page(), QStringLiteral("linkid")));
 
     // Check that the link opened in the 2nd view, not the first one
-#endif
     QCOMPARE(view->url().url(), origUrl.url());
-#ifndef TEST_KHTML
-    QEXPECT_FAIL("", "Broken feature right now, requires URLs to be opened by konq rather than the part", Abort);
-#endif
-    QTRY_COMPARE_WITH_TIMEOUT(view2->url().url(), QUrl("data:text/plain, Link target").url(), 400);
+    QUrl expUrl = QUrl::fromLocalFile(QFINDTESTDATA("konqviewmgrtest/link_target.txt"));
+    QTRY_COMPARE_WITH_TIMEOUT(view2->url().url(), expUrl.toString(), 400);
 }
 
 void ViewMgrTest::testPopupNewTab() // RMB, "Open in new tab"
@@ -524,9 +530,12 @@ void ViewMgrTest::testCtrlClickOnLink()
     openHtmlWithLink(mainWindow);
     KonqFrameTabs *tabs = mainWindow.viewManager()->tabContainer();
     KonqView *view = mainWindow.currentView();
-    mainWindow.show();
-    qDebug() << "CLICKING NOW";
-    QTest::mouseClick(partWidget(view), Qt::LeftButton, Qt::ControlModifier, QPoint(10, 10));
+    WebEnginePart *part = qobject_cast<WebEnginePart*>(view->part());
+    QVERIFY(part);
+    //We can't use a real mouse click because we don't know the coordinates of the link, so
+    //we simulate it using javascript
+    qDebug() << "SIMULATING CLICKING NOW";
+    part->page()->runJavaScript("simulateLeftCtrlClick()");
     QTest::qWait(100);
     KonqView *newView = nullptr;
     // Expected behavior for Ctrl+click:
@@ -535,6 +544,7 @@ void ViewMgrTest::testCtrlClickOnLink()
     //  (this code is called for both cases)
     if (Konq::Settings::mmbOpensTab()) {
         QCOMPARE(KMainWindow::memberList().count(), 1);
+        // QTest::qWait(2000);
         QTRY_COMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
         if (Konq::Settings::newTabsInFront()) { // when called by sameTestsWithNewTabsInFront
             QCOMPARE(tabs->currentIndex(), 1);
@@ -818,7 +828,6 @@ void ViewMgrTest::testCloseOtherTabs()
     tabWidget->setCurrentIndex(3);
     QCOMPARE(mainWindow.linkableViewsCount(), 1);
     // Switching to an empty tab -> focus goes to location bar (#84867)
-    QEXPECT_FAIL("", "Known bug with unknown causes. Worked around it with commit 78f47b4d4ce97f7ff0278b16c04182e7d80c8dba", Continue);
     QCOMPARE(mainWindow.focusWidget()->metaObject()->className(), "KonqCombo");
 
     // Check that removeOtherTabs deals with split views correctly
@@ -855,8 +864,7 @@ void ViewMgrTest::testBrowserArgumentsNewTab()
     BrowserExtension *ext = qobject_cast<BrowserExtension *>(view->navigationExtension());
     QVERIFY(ext);
     emit ext->browserOpenUrlRequest(QUrl(QStringLiteral("data:text/html, <p>Second tab test</p>")), urlArgs, browserArgs);
-    QTest::qWait(5000);
-    QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
+    QTRY_COMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF]."));
     QCOMPARE(view->url(), QUrl("data:text/html, <p>Hello World</p>"));
 
     // compare the url of the new view... how to?

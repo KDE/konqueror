@@ -9,6 +9,9 @@
 #include <konqmainwindow.h>
 #include <konqview.h>
 
+#include <KSharedConfig>
+#include <KConfigGroup>
+
 class KonqViewTest : public QObject
 {
     Q_OBJECT
@@ -17,6 +20,13 @@ private Q_SLOTS:
     void initTestCase()
     {
         QStandardPaths::setTestModeEnabled(true);
+
+        //Ensure that text/plain files are embedded and not opened in an external application
+        KSharedConfig::Ptr cfg = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals, QStandardPaths::ConfigLocation);
+        KConfigGroup embedGrp = cfg->group("EmbedSettings");
+        embedGrp.writeEntry("embed-text/plain", true);
+
+        cfg->sync();
     }
 
     void textThenHtml()
