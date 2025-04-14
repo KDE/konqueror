@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-31 00:41+0000\n"
+"POT-Creation-Date: 2025-04-14 00:41+0000\n"
 "PO-Revision-Date: 2022-04-09 15:19+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -922,12 +922,12 @@ msgstr ""
 msgid "&Immediately memorize form data"
 msgstr ""
 
-#: src/webenginepage.cpp:159
+#: src/webenginepage.cpp:164
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Správcu sťahovania (%1) sa nepodarilo nájsť vo vašej inštalácii."
 
-#: src/webenginepage.cpp:160
+#: src/webenginepage.cpp:165
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -938,7 +938,7 @@ msgstr ""
 "\n"
 "Integrácia bude zakázaná."
 
-#: src/webenginepage.cpp:344
+#: src/webenginepage.cpp:349
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -952,12 +952,12 @@ msgstr ""
 "nákupu.Inak kliknite na tlačidlo Pokračovať na zobrazenie webovej stránky "
 "znova.</p>"
 
-#: src/webenginepage.cpp:351
+#: src/webenginepage.cpp:356
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Znovu odoslať informácie"
 
-#: src/webenginepage.cpp:548
+#: src/webenginepage.cpp:553
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -966,18 +966,18 @@ msgstr ""
 "Tento server sa pokúša pristupovať k informáciám o vašej fyzickej polohe.\n"
 "Chcete povoliť tento prístup?"
 
-#: src/webenginepage.cpp:552 src/webenginepage.cpp:630
-#: src/webenginepage.cpp:641
+#: src/webenginepage.cpp:557 src/webenginepage.cpp:635
+#: src/webenginepage.cpp:646
 #, kde-format
 msgid "Network Transmission"
 msgstr "Sieťový prenos"
 
-#: src/webenginepage.cpp:553
+#: src/webenginepage.cpp:558
 #, kde-format
 msgid "Allow access"
 msgstr "Povoliť prístup"
 
-#: src/webenginepage.cpp:623
+#: src/webenginepage.cpp:628
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -990,12 +990,12 @@ msgstr ""
 "Niekto v sieti by mohol tieto údaje zachytiť a prezrieť.\n"
 "Naozaj chcete poslať údaje nešifrované?"
 
-#: src/webenginepage.cpp:631
+#: src/webenginepage.cpp:636
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Poslať nezašifrované"
 
-#: src/webenginepage.cpp:638
+#: src/webenginepage.cpp:643
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1004,12 +1004,12 @@ msgstr ""
 "Tento server sa pokúša poslať údaje formulára pomocou e-mailu.\n"
 "Chcete pokračovať?"
 
-#: src/webenginepage.cpp:642
+#: src/webenginepage.cpp:647
 #, kde-format
 msgid "&Send Email"
 msgstr "&Poslať e-mail"
 
-#: src/webenginepage.cpp:691
+#: src/webenginepage.cpp:696
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1018,22 +1018,22 @@ msgstr ""
 "<qt>Chcete povoliť tomuto serveru pripojiť nasledovné súbory k e-mailovej "
 "správe?</qt>"
 
-#: src/webenginepage.cpp:693
+#: src/webenginepage.cpp:698
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Potvrdenie prílohy e-mailu"
 
-#: src/webenginepage.cpp:694
+#: src/webenginepage.cpp:699
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Povoliť prílohy"
 
-#: src/webenginepage.cpp:695
+#: src/webenginepage.cpp:700
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "Ignorovať prílohy"
 
-#: src/webenginepage.cpp:709
+#: src/webenginepage.cpp:714
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1042,12 +1042,12 @@ msgstr ""
 "Tento server sa pokúsil priložiť k formuláru súbor z vášho počítača. Táto "
 "príloha bola odstránená kvôli vašej bezpečnosti."
 
-#: src/webenginepage.cpp:712
+#: src/webenginepage.cpp:717
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Príloha odstránená"
 
-#: src/webenginepage.cpp:843
+#: src/webenginepage.cpp:850
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1056,7 +1056,7 @@ msgstr ""
 "Tento server požaduje otvorenie nového popup okna.\n"
 "Chcete to povoliť?"
 
-#: src/webenginepage.cpp:845
+#: src/webenginepage.cpp:852
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1065,77 +1065,77 @@ msgstr ""
 "<qt>Tento server požaduje otvorenie nového popup okna na<br /><b>%1</b>.<br /"
 ">Chcete to povoliť?</qt>"
 
-#: src/webenginepage.cpp:848
+#: src/webenginepage.cpp:855
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript Popup potvrdenie"
 
-#: src/webenginepage.cpp:849
+#: src/webenginepage.cpp:856
 #, kde-format
 msgid "Allow"
 msgstr "Povoliť"
 
-#: src/webenginepage.cpp:849
+#: src/webenginepage.cpp:856
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Nepovoliť"
 
-#: src/webenginepart.cpp:195
+#: src/webenginepart.cpp:205
 #, fuzzy, kde-format
 #| msgid "Save Image As..."
 msgid "Save Full HTML Page As..."
 msgstr "Uložiť obrázok ako..."
 
-#: src/webenginepart.cpp:199
+#: src/webenginepart.cpp:209
 #, kde-format
 msgid "Print Preview"
 msgstr "Náhľad tlače"
 
-#: src/webenginepart.cpp:203
+#: src/webenginepart.cpp:213
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Priblížiť"
 
-#: src/webenginepart.cpp:208
+#: src/webenginepart.cpp:218
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Oddialiť"
 
-#: src/webenginepart.cpp:213
+#: src/webenginepart.cpp:223
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Aktuálna veľkosť"
 
-#: src/webenginepart.cpp:218
+#: src/webenginepart.cpp:228
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Priblížiť len text"
 
-#: src/webenginepart.cpp:226
+#: src/webenginepart.cpp:236
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Priblížiť na DPI"
 
-#: src/webenginepart.cpp:239
+#: src/webenginepart.cpp:249
 #, kde-format
 msgid "Set &Encoding"
 msgstr "Nastaviť &kódovanie"
 
-#: src/webenginepart.cpp:242
+#: src/webenginepart.cpp:252
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Zobraziť z&drojový kód dokumentu"
 
-#: src/webenginepart.cpp:247 src/webenginepart.cpp:555
+#: src/webenginepart.cpp:257 src/webenginepart.cpp:565
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:253
+#: src/webenginepart.cpp:263
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1145,12 +1145,12 @@ msgstr ""
 "<h3>Nájsť text</h3>Zobrazí dialóg, pomocou ktorého môžete nájsť text na "
 "zobrazenej stránke."
 
-#: src/webenginepart.cpp:553
+#: src/webenginepart.cpp:563
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "SSL informácia pre túto stránku sa zdá byť poškodená."
 
-#: src/webenginepart.cpp:634
+#: src/webenginepart.cpp:644
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1158,7 +1158,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "E-mail:"
 
-#: src/webenginepart.cpp:663
+#: src/webenginepart.cpp:673
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1166,7 +1166,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - CC: "
 
-#: src/webenginepart.cpp:665
+#: src/webenginepart.cpp:675
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1174,7 +1174,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - BCC: "
 
-#: src/webenginepart.cpp:667
+#: src/webenginepart.cpp:677
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1182,93 +1182,93 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Subject: "
 
-#: src/webenginepart.cpp:671 src/webenginepart.cpp:682
+#: src/webenginepart.cpp:681 src/webenginepart.cpp:692
 #, kde-format
 msgid " (In new window)"
 msgstr " (V novom okne)"
 
-#: src/webenginepart.cpp:680
+#: src/webenginepart.cpp:690
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (V rodičovskom rámci)"
 
-#: src/webenginepart.cpp:746
+#: src/webenginepart.cpp:756
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Chcete hľadať <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:747
+#: src/webenginepart.cpp:757
 #, kde-format
 msgid "Internet Search"
 msgstr "Hľadanie na Internete"
 
-#: src/webenginepart.cpp:747
+#: src/webenginepart.cpp:757
 #, kde-format
 msgid "&Search"
 msgstr "&Hľadať"
 
-#: src/webenginepart.cpp:860
+#: src/webenginepart.cpp:870
 #, kde-format
 msgid "Close window?"
 msgstr "Zavrieť okno?"
 
-#: src/webenginepart.cpp:860
+#: src/webenginepart.cpp:870
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Vyžaduje sa potvrdenie"
 
-#: src/webenginepart.cpp:937
+#: src/webenginepart.cpp:947
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 "<html>Chcete aby %1 uložil prihlasovanie informácie pre <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1008
+#: src/webenginepart.cpp:1018
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr ""
 
-#: src/webenginepart.cpp:1013
+#: src/webenginepart.cpp:1023
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "Look Again for Forms"
 msgstr ""
 
-#: src/webenginepart.cpp:1017
+#: src/webenginepart.cpp:1027
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "&Memorize Passwords in This Page Now"
 msgstr "Odstrániť všetky uložené heslá pre tento server"
 
-#: src/webenginepart.cpp:1021
+#: src/webenginepart.cpp:1031
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1035
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1029
+#: src/webenginepart.cpp:1039
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "&Povoliť ukladanie hesiel pre túto stránku"
 
-#: src/webenginepart.cpp:1033
+#: src/webenginepart.cpp:1043
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "Odstrániť všetky uložené heslá pre tento server"
 
-#: src/webenginepart.cpp:1037
+#: src/webenginepart.cpp:1047
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Spustiť správcu pre Wallet"
 
-#: src/webenginepart.cpp:1041
+#: src/webenginepart.cpp:1051
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Zavrieť wallet"
