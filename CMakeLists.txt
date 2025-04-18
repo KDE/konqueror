@@ -39,6 +39,9 @@ set(KONQUEROR_LIB_VERSION "${RELEASE_SERVICE_VERSION}")
 set(KONQUEROR_VERSION "${KONQUEROR_LIB_VERSION}")
 
 find_package(Qt${KF_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets WebEngineWidgets)
+if(Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.9.0")
+    find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED GuiPrivate)
+endif()
 find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Parts KCMUtils Archive Crash WindowSystem IconThemes DBusAddons GuiAddons I18n Sonnet TextWidgets Codecs)
 
 find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} COMPONENTS DocTools) # Optional
