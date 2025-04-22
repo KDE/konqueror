@@ -27,6 +27,9 @@ class CaptureSourceChooserDlg;
  * @brief Dialog which allows the user to choose the source when a web page asks to capture the screen
  *
  * This dialog is supposed to be called from a slot connected to the `WebEnginePage::desktopMediaRequested()` signal.
+ *
+ * @todo Once the Qt bug https://bugreports.qt.io/browse/QTBUG-136111 has been fixed, change the dialog so that there's
+ * a single combo box containing both windows and screens, using `QConcatenateTablesProxyModel` and a single Ok button.
  */
 class CaptureSourceChooserDlg : public QDialog
 {
@@ -54,6 +57,9 @@ public:
      * To find out whether the user chose a window or the whole screen, callers must compare the `model()` of the returned
      * index with the two models passed to the constructor.
      *
+     * @warning The user decides what to share by closing the dialog using one of the `Share Screen`, `Share Window` or
+     * `Share None` buttons. Before that happens, this function behaves as if the user had chosen to share nothing.
+     *
      * @return the index corresponding to the source chosen by the user or an invalid index if the user chose to block
      * the page from capturing the screen
      */
@@ -62,24 +68,28 @@ public:
 private Q_SLOTS:
 
     /**
-     * @brief Enables or disables the OK button depending on whether or not the user chose a source
+     * @brief Enables or disables the `Share Window` and `Share Screen` buttons depending on the combo boxes status
      */
-    void updateOkStatus();
+    void updateShareBtnStatus();
 
 private:
+
     /**
-     * @brief Helper function returning the current index of the combo box mapped to its original model
-     * @return The value returned by calling `mapToSource` on #m_model passing it the current index in the combo box.
-     * It will be one of #m_windowsModel, #m_screensModel or #m_defaultLineModel
+     * @brief Enum describing what the user chose to share
      */
-    QModelIndex currentSourceIndex() const;
+    enum class Choice {
+        ShareWindow, //!< The user chose to share a window
+        ShareScreen, //!< The user chose to share a screen
+        ShareNone //!< The user chose not to share anything
+    };
 
 private:
+    Choice m_choice = Choice::ShareNone; //!< The choice made by the user when closing the dialog
     QScopedPointer<Ui::CaptureSourceChooserDlg> m_ui; //!< The UI object
     QPointer<QAbstractListModel> m_windowsModel; //!< The model containing the list of possible windows to capture
     QPointer<QAbstractListModel> m_screensModel; //!< The model containing the list of possible screens to capture
-    QStandardItemModel *m_defaultLineModel; //!< The model containing the default entry for the combo box
-    QConcatenateTablesProxyModel *m_model; //!< The model which merges the contents of the other models to insert them in the combo box
+    QPointer<QPushButton> m_shareScreenBtn; //!< The button to close the dialog choosing to share a screen
+    QPointer<QPushButton> m_shareWindowBtn; //!< The button to close the dialog choosing to share a window
 };
 
 }

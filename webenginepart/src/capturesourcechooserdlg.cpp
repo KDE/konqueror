@@ -19,45 +19,46 @@ CaptureSourceChooserDlg::CaptureSourceChooserDlg(const QUrl &url, QAbstractListM
     QDialog(parent),
     m_ui(new Ui::CaptureSourceChooserDlg),
     m_windowsModel(windowsModel),
-    m_screensModel(screensModel),
-    m_defaultLineModel(new QStandardItemModel(this)),
-    m_model(new QConcatenateTablesProxyModel(this))
+    m_screensModel(screensModel)
 {
     m_ui->setupUi(this);
 
     QString urlString = url.toDisplayString(QUrl::RemoveUserInfo|QUrl::RemoveQuery|QUrl::RemoveFragment);
     m_ui->label->setText(i18n("Do you want to allow <tt>%1</tt> to capture the contents of your screen?", urlString));
 
-    m_defaultLineModel->appendRow(new QStandardItem(i18n("Choose window or screen to capture")));
-    m_model->addSourceModel(m_defaultLineModel);
-    m_model->addSourceModel(m_windowsModel);
-    m_model->addSourceModel(m_screensModel);
-    m_ui->choicesCombo->setModel(m_model);
-    updateOkStatus();
+    m_shareScreenBtn = new QPushButton(i18nc("Choose to share a screen", "Share Screen"), m_ui->buttonBox);
+    connect(m_shareScreenBtn, &QPushButton::clicked, this, [this]{m_choice = Choice::ShareScreen;});
+    m_shareWindowBtn = new QPushButton(i18nc("Choose to share a window", "Share Window"), m_ui->buttonBox);
+    connect(m_shareWindowBtn, &QPushButton::clicked, this, [this]{m_choice = Choice::ShareWindow;});
+    m_ui->buttonBox->addButton(m_shareWindowBtn, QDialogButtonBox::AcceptRole);
+    m_ui->buttonBox->addButton(m_shareScreenBtn, QDialogButtonBox::AcceptRole);
+    m_ui->buttonBox->button(QDialogButtonBox::Cancel)->setText(i18nc("Don't share any part of the screen", "Share nothing"));
 
-    m_ui->buttonBox->button(QDialogButtonBox::Ok)->setText(i18nc("Allow a web page to capture the screen", "Allow"));
-    m_ui->buttonBox->button(QDialogButtonBox::Cancel)->setText(i18nc("Block a web page from capturing the screen", "Block"));
+    m_ui->windowCombo->setModel(m_windowsModel);
+    m_ui->windowCombo->setCurrentIndex(-1);
+    m_ui->screenCombo->setModel(m_screensModel);
+    m_ui->screenCombo->setCurrentIndex(-1);
+    updateShareBtnStatus();
 
-    connect(m_ui->choicesCombo, &QComboBox::currentIndexChanged, this, &CaptureSourceChooserDlg::updateOkStatus);
+    connect(m_ui->windowCombo, &QComboBox::currentIndexChanged, this, &CaptureSourceChooserDlg::updateShareBtnStatus);
+    connect(m_ui->screenCombo, &QComboBox::currentIndexChanged, this, &CaptureSourceChooserDlg::updateShareBtnStatus);
 }
 
 CaptureSourceChooserDlg::~CaptureSourceChooserDlg()
 {
 }
 
-QModelIndex CaptureSourceChooserDlg::currentSourceIndex() const
-{
-    return m_model->mapToSource(m_ui->choicesCombo->view()->currentIndex());
-}
-
 QModelIndex WebEngine::CaptureSourceChooserDlg::choice() const
 {
-    QModelIndex sourceIdx = currentSourceIndex();
-    return sourceIdx.model() == m_defaultLineModel ? QModelIndex() : sourceIdx;
+    if (m_choice == Choice::ShareNone) {
+        return {};
+    }
+    QComboBox *currentBox = m_choice == Choice::ShareWindow ? m_ui->windowCombo : m_ui->screenCombo;
+    return currentBox->view()->currentIndex();
 }
 
-void CaptureSourceChooserDlg::updateOkStatus()
+void CaptureSourceChooserDlg::updateShareBtnStatus()
 {
-    QModelIndex idx = currentSourceIndex();
-    m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(idx.model() != m_defaultLineModel);
+    m_shareScreenBtn->setEnabled(m_ui->screenCombo->currentIndex() >= 0);
+    m_shareWindowBtn->setEnabled(m_ui->windowCombo->currentIndex() >= 0);
 }
