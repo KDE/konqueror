@@ -809,7 +809,7 @@ void WebEnginePart::slotShowWalletMenu()
 
 void WebEnginePart::slotLaunchWalletManager()
 {
-    const KService::Ptr kwalletManager = KService::serviceByDesktopName(QStringLiteral("org.kde.kwalletmanager5"));
+    const KService::Ptr kwalletManager = KService::serviceByDesktopName(QStringLiteral("org.kde.kwalletmanager"));
     auto job = new KIO::ApplicationLauncherJob(kwalletManager);
     job->start();
 }
