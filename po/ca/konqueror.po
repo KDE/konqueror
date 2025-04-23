@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:41+0000\n"
+"POT-Creation-Date: 2025-04-23 00:41+0000\n"
 "PO-Revision-Date: 2024-10-21 09:53+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1549,7 +1549,7 @@ msgstr "Afegeix"
 msgid "Do Not Add"
 msgstr "No afegeixis"
 
-#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:828
+#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:844
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1928,7 +1928,7 @@ msgstr "Des&fés: pestanya tancada"
 msgid "Und&o"
 msgstr "Des&fés"
 
-#: src/konqview.cpp:1274
+#: src/konqview.cpp:1275
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1939,13 +1939,13 @@ msgstr ""
 "enviat. Si torneu a enviar les dades, es repetirà l'acció efectuada pel "
 "formulari (com ara una cerca o una compra en línia). "
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Avís"
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgid "Resend"
 msgstr "Torna a enviar"
@@ -1980,7 +1980,7 @@ msgctxt ""
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename> es pot executar. El voleu executar?"
 
-#: src/urlloader.cpp:771
+#: src/urlloader.cpp:787
 #, kde-format
 msgid "Save As"
 msgstr "Desa com a"

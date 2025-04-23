@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:41+0000\n"
+"POT-Creation-Date: 2025-04-23 00:42+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -907,7 +907,7 @@ msgstr ""
 "\n"
 "集成特性将被禁用。"
 
-#: src/webenginepage.cpp:349
+#: src/webenginepage.cpp:350
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -919,12 +919,12 @@ msgstr ""
 "果您正在网上购物，请点击取消按钮以免产生重复的交易。否则，请点击继续以再次显"
 "示网页。</p>"
 
-#: src/webenginepage.cpp:356
+#: src/webenginepage.cpp:357
 #, kde-format
 msgid "Resubmit Information"
 msgstr "重新提交信息"
 
-#: src/webenginepage.cpp:553
+#: src/webenginepage.cpp:554
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -933,18 +933,18 @@ msgstr ""
 "该站点试图访问您的物理位置信息。\n"
 "您想允许它访问吗？"
 
-#: src/webenginepage.cpp:557 src/webenginepage.cpp:635
-#: src/webenginepage.cpp:646
+#: src/webenginepage.cpp:558 src/webenginepage.cpp:636
+#: src/webenginepage.cpp:647
 #, kde-format
 msgid "Network Transmission"
 msgstr "网络传送"
 
-#: src/webenginepage.cpp:558
+#: src/webenginepage.cpp:559
 #, kde-format
 msgid "Allow access"
 msgstr "允许访问"
 
-#: src/webenginepage.cpp:628
+#: src/webenginepage.cpp:629
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -956,12 +956,12 @@ msgstr ""
 "第三方可能可以截获并查看该信息。\n"
 "您确定要发送未加密的数据吗？"
 
-#: src/webenginepage.cpp:636
+#: src/webenginepage.cpp:637
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "不加密发送(&S)"
 
-#: src/webenginepage.cpp:643
+#: src/webenginepage.cpp:644
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -970,34 +970,34 @@ msgstr ""
 "该站点试图通过电子邮件来提交表格数据。\n"
 "您想继续吗？"
 
-#: src/webenginepage.cpp:647
+#: src/webenginepage.cpp:648
 #, kde-format
 msgid "&Send Email"
 msgstr "发送电子邮件(&S)"
 
-#: src/webenginepage.cpp:696
+#: src/webenginepage.cpp:697
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 msgstr "<qt>您想要允许此站点附加以下文件到电子邮件信件中吗？</qt>"
 
-#: src/webenginepage.cpp:698
+#: src/webenginepage.cpp:699
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "电子邮件附件确认"
 
-#: src/webenginepage.cpp:699
+#: src/webenginepage.cpp:700
 #, kde-format
 msgid "&Allow attachments"
 msgstr "允许附件(&A)"
 
-#: src/webenginepage.cpp:700
+#: src/webenginepage.cpp:701
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "忽略附件(&I)"
 
-#: src/webenginepage.cpp:714
+#: src/webenginepage.cpp:715
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1006,12 +1006,12 @@ msgstr ""
 "该网站在提交表格时试图从您的计算机中附加文件。为了保护您的隐私，附件已被删"
 "除。"
 
-#: src/webenginepage.cpp:717
+#: src/webenginepage.cpp:718
 #, kde-format
 msgid "Attachment Removed"
 msgstr "附件已删除"
 
-#: src/webenginepage.cpp:850
+#: src/webenginepage.cpp:851
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1020,24 +1020,24 @@ msgstr ""
 "该站点试图打开一个新的弹出窗口。\n"
 "您想继续吗？"
 
-#: src/webenginepage.cpp:852
+#: src/webenginepage.cpp:853
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
 "want to allow this?</qt>"
 msgstr "<qt>该站点试图在一个新的弹出窗口中打开 <p>%1</p><br/>您想继续吗？</qt>"
 
-#: src/webenginepage.cpp:855
+#: src/webenginepage.cpp:856
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript 弹出确认"
 
-#: src/webenginepage.cpp:856
+#: src/webenginepage.cpp:857
 #, kde-format
 msgid "Allow"
 msgstr "允许"
 
-#: src/webenginepage.cpp:856
+#: src/webenginepage.cpp:857
 #, kde-format
 msgid "Do Not Allow"
 msgstr "不允许"

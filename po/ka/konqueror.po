@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:41+0000\n"
+"POT-Creation-Date: 2025-04-23 00:41+0000\n"
 "PO-Revision-Date: 2024-10-21 05:44+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1536,7 +1536,7 @@ msgstr "დამატება"
 msgid "Do Not Add"
 msgstr "არ დაამატოთ"
 
-#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:828
+#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:844
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1910,7 +1910,7 @@ msgstr "&გაუქმება: დახურული ფანჯარ�
 msgid "Und&o"
 msgstr "&გაუქმება"
 
-#: src/konqview.cpp:1274
+#: src/konqview.cpp:1275
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1921,13 +1921,13 @@ msgstr ""
 "მონაცემებს თავიდან გადააგზავნით, ქმედებები, რომლებიც შესრულდა (ძებნა ან "
 "შეძენა ინტერნეტით), გამეორდება. "
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "ყურადღება"
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgid "Resend"
 msgstr "თავიდან გაგზავნა"
@@ -1963,7 +1963,7 @@ msgctxt ""
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "შესაძლებელია <filename>%1</filename>-ის გაშვება. გნებავთ, გაუშვათ ის?"
 
-#: src/urlloader.cpp:771
+#: src/urlloader.cpp:787
 #, kde-format
 msgid "Save As"
 msgstr "შენახვა როგორც"

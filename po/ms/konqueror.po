@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:41+0000\n"
+"POT-Creation-Date: 2025-04-23 00:41+0000\n"
 "PO-Revision-Date: 2009-08-16 18:29+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -1624,7 +1624,7 @@ msgstr "Tambah"
 msgid "Do Not Add"
 msgstr "Jangan Tambah"
 
-#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:828
+#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:844
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -2000,7 +2000,7 @@ msgstr "Tutup Ta&b"
 msgid "Und&o"
 msgstr "&Nyahcara"
 
-#: src/konqview.cpp:1274
+#: src/konqview.cpp:1275
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -2011,13 +2011,13 @@ msgstr ""
 "anda menghantar semula data, aksi lain yang dibawa keluar (seperti carian "
 "atau belian dalam talian) akan berulang. "
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Amaran"
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgid "Resend"
 msgstr "Kirim Semula"
@@ -2051,7 +2051,7 @@ msgctxt ""
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
-#: src/urlloader.cpp:771
+#: src/urlloader.cpp:787
 #, fuzzy, kde-format
 #| msgid "Set Name..."
 msgid "Save As"

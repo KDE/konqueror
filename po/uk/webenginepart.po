@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:41+0000\n"
+"POT-Creation-Date: 2025-04-23 00:42+0000\n"
 "PO-Revision-Date: 2024-11-04 19:52+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -933,7 +933,7 @@ msgstr ""
 "\n"
 "Інтеграцію поки що буде вимкнено."
 
-#: src/webenginepage.cpp:349
+#: src/webenginepage.cpp:350
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -947,12 +947,12 @@ msgstr ""
 "сплати. Якщо ж це не так, натисніть кнопку «Продовжити», щоб надати програмі "
 "змогу знову показати сторінку.</p>"
 
-#: src/webenginepage.cpp:356
+#: src/webenginepage.cpp:357
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Інформація щодо повторного надсилання даних"
 
-#: src/webenginepage.cpp:553
+#: src/webenginepage.cpp:554
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -962,18 +962,18 @@ msgstr ""
 "перебування.\n"
 "Надати доступ до цих даних?"
 
-#: src/webenginepage.cpp:557 src/webenginepage.cpp:635
-#: src/webenginepage.cpp:646
+#: src/webenginepage.cpp:558 src/webenginepage.cpp:636
+#: src/webenginepage.cpp:647
 #, kde-format
 msgid "Network Transmission"
 msgstr "Перенесення мережею"
 
-#: src/webenginepage.cpp:558
+#: src/webenginepage.cpp:559
 #, kde-format
 msgid "Allow access"
 msgstr "Дозволити доступ"
 
-#: src/webenginepage.cpp:628
+#: src/webenginepage.cpp:629
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -986,12 +986,12 @@ msgstr ""
 "Третя сторона може перехопити та переглянути цю інформацію.\n"
 "Ви впевнені, що бажаєте надіслати незашифровані дані?"
 
-#: src/webenginepage.cpp:636
+#: src/webenginepage.cpp:637
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Надіслати незашифрованим"
 
-#: src/webenginepage.cpp:643
+#: src/webenginepage.cpp:644
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1000,12 +1000,12 @@ msgstr ""
 "Цей сайт намагається надіслати дані форми електронною поштою.\n"
 "Продовжити?"
 
-#: src/webenginepage.cpp:647
+#: src/webenginepage.cpp:648
 #, kde-format
 msgid "&Send Email"
 msgstr "Надіслати &лист"
 
-#: src/webenginepage.cpp:696
+#: src/webenginepage.cpp:697
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1014,22 +1014,22 @@ msgstr ""
 "<qt>Бажаєте дозволити долучення наведених нижче файлів до повідомлення "
 "електронної пошти на цьому сайті?</qt>"
 
-#: src/webenginepage.cpp:698
+#: src/webenginepage.cpp:699
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Підтвердження долучення"
 
-#: src/webenginepage.cpp:699
+#: src/webenginepage.cpp:700
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Дозволити долучення"
 
-#: src/webenginepage.cpp:700
+#: src/webenginepage.cpp:701
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ігнорувати долучення"
 
-#: src/webenginepage.cpp:714
+#: src/webenginepage.cpp:715
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1038,12 +1038,12 @@ msgstr ""
 "Цей сайт спробував долучити файл з вашого комп'ютера при надсиланні даних "
 "форми. Долучення було вилучено з метою забезпечення вашої безпеки."
 
-#: src/webenginepage.cpp:717
+#: src/webenginepage.cpp:718
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Вилучено долучення"
 
-#: src/webenginepage.cpp:850
+#: src/webenginepage.cpp:851
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1052,7 +1052,7 @@ msgstr ""
 "Ця сторінка надіслала запит щодо відкриття нового контекстного вікна.\n"
 "Дозволити такий перехід?"
 
-#: src/webenginepage.cpp:852
+#: src/webenginepage.cpp:853
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1061,17 +1061,17 @@ msgstr ""
 "<qt>Ця сторінка надіслала запит щодо відкриття контекстного вікна зі "
 "сторінкою<p>%1</p><br/>Дозволити такий перехід?</qt>"
 
-#: src/webenginepage.cpp:855
+#: src/webenginepage.cpp:856
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Контекстне підтвердження Javascript"
 
-#: src/webenginepage.cpp:856
+#: src/webenginepage.cpp:857
 #, kde-format
 msgid "Allow"
 msgstr "Дозволити"
 
-#: src/webenginepage.cpp:856
+#: src/webenginepage.cpp:857
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Не дозволяти"

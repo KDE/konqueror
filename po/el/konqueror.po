@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:41+0000\n"
+"POT-Creation-Date: 2025-04-23 00:41+0000\n"
 "PO-Revision-Date: 2023-01-07 10:28+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1544,7 +1544,7 @@ msgstr "Προσθήκη"
 msgid "Do Not Add"
 msgstr "Να μην προστεθεί"
 
-#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:828
+#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:844
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1924,7 +1924,7 @@ msgstr "Αναίρεση: Κλείσιμ&ο παραθύρου"
 msgid "Und&o"
 msgstr "Αναί&ρεση"
 
-#: src/konqview.cpp:1274
+#: src/konqview.cpp:1275
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1935,13 +1935,13 @@ msgstr ""
 "δεδομένων φόρμας. Αν ξαναστείλετε τα δεδομένα οποιαδήποτε ενέργεια που "
 "εκτέλεσε η φόρμα (όπως αναζήτηση η διαδικτυακή αγορά) θα επαναληφθεί. "
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Προειδοποίηση"
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgid "Resend"
 msgstr "Αποστολή ξανά"
@@ -1987,7 +1987,7 @@ msgctxt ""
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "Το <tt>%1</tt> μπορεί να εκτελεστεί. Θα το εκτελέσετε;"
 
-#: src/urlloader.cpp:771
+#: src/urlloader.cpp:787
 #, kde-format
 msgid "Save As"
 msgstr "Αποθήκευση ως"

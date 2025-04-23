@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:41+0000\n"
+"POT-Creation-Date: 2025-04-23 00:41+0000\n"
 "PO-Revision-Date: 2024-10-22 12:17+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -1575,7 +1575,7 @@ msgstr "Ajouter"
 msgid "Do Not Add"
 msgstr "Ne pas ajouter"
 
-#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:828
+#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:844
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1959,7 +1959,7 @@ msgstr "An&nuler : fenêtre fermée"
 msgid "Und&o"
 msgstr "&Annuler"
 
-#: src/konqview.cpp:1274
+#: src/konqview.cpp:1275
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1971,13 +1971,13 @@ msgstr ""
 "traitements de l'action précédente seront à nouveau effectués (recherche, "
 "achat en ligne)."
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Avertissement"
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgid "Resend"
 msgstr "Renvoyer"
@@ -2014,7 +2014,7 @@ msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 "<filename>%1</filename> peut être exécuté. Voulez-vous vraiment l'exécuter ?"
 
-#: src/urlloader.cpp:771
+#: src/urlloader.cpp:787
 #, kde-format
 msgid "Save As"
 msgstr "Enregistrer sous..."

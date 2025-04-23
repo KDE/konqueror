@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:41+0000\n"
+"POT-Creation-Date: 2025-04-23 00:41+0000\n"
 "PO-Revision-Date: 2024-12-24 17:33+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1511,7 +1511,7 @@ msgstr "추가"
 msgid "Do Not Add"
 msgstr "추가하지 않기"
 
-#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:828
+#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:844
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1882,7 +1882,7 @@ msgstr "실행 취소: 창 닫기(&O)"
 msgid "Und&o"
 msgstr "실행 취소(&O)"
 
-#: src/konqview.cpp:1274
+#: src/konqview.cpp:1275
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1892,13 +1892,13 @@ msgstr ""
 "보려고 하는 페이지는 제출한 폼의 결과입니다. 데이터를 다시 보내면, 검색이나 "
 "온라인 구매 같은 폼의 동작이 다시 수행될 수 있습니다."
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "경고"
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgid "Resend"
 msgstr "다시 보내기"
@@ -1934,7 +1934,7 @@ msgctxt ""
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename>을(를) 실행할 수 있습니다. 실행하시겠습니까?"
 
-#: src/urlloader.cpp:771
+#: src/urlloader.cpp:787
 #, kde-format
 msgid "Save As"
 msgstr "다른 이름으로 저장"

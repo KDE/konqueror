@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:41+0000\n"
+"POT-Creation-Date: 2025-04-23 00:41+0000\n"
 "PO-Revision-Date: 2019-11-05 18:25+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
@@ -1539,7 +1539,7 @@ msgstr "Bæta við"
 msgid "Do Not Add"
 msgstr "Ekki bæta við"
 
-#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:828
+#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:844
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1901,7 +1901,7 @@ msgstr "Hætta við: L&okaður gluggi"
 msgid "Und&o"
 msgstr "&Afturkalla"
 
-#: src/konqview.cpp:1274
+#: src/konqview.cpp:1275
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1912,13 +1912,13 @@ msgstr ""
 "innsláttarvalmynd. Ef þú sendir þau gögn aftur þá verður aðgerðin endurtekin "
 "(t.d. leit eða kaup vöru). "
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Aðvörun"
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgid "Resend"
 msgstr "Senda aftur"
@@ -1952,7 +1952,7 @@ msgctxt ""
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
-#: src/urlloader.cpp:771
+#: src/urlloader.cpp:787
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As"

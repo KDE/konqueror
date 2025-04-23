@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:41+0000\n"
+"POT-Creation-Date: 2025-04-23 00:41+0000\n"
 "PO-Revision-Date: 2013-03-28 15:17+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -1507,7 +1507,7 @@ msgstr "जोडा"
 msgid "Do Not Add"
 msgstr "जोडू नका"
 
-#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:828
+#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:844
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1869,7 +1869,7 @@ msgstr "पुन्हा करा: बंद चौकट (&o)"
 msgid "Und&o"
 msgstr "पूर्ववत करा (&O)"
 
-#: src/konqview.cpp:1274
+#: src/konqview.cpp:1275
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1880,13 +1880,13 @@ msgstr ""
 "माहिती पुन्हा पाठविल्यास, फॉर्म द्वारे कार्यरत कोणतीही कृतीची (जसे की शोध किंवा ऑनलाइन "
 "विक्री) पुन्हाकृती केली जाईल. "
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "इशारा"
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgid "Resend"
 msgstr "पुन्हा पाठवा"
@@ -1920,7 +1920,7 @@ msgctxt ""
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
-#: src/urlloader.cpp:771
+#: src/urlloader.cpp:787
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As"

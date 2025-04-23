@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:41+0000\n"
+"POT-Creation-Date: 2025-04-23 00:41+0000\n"
 "PO-Revision-Date: 2008-12-26 16:53+0530\n"
 "Last-Translator: Manoj Kumar Giri <mgiri@redhat.com>\n"
 "Language-Team: Oriya <oriya-it@googlegroups.com>\n"
@@ -1530,7 +1530,7 @@ msgstr "ଯୋଗ କରନ୍ତୁ"
 msgid "Do Not Add"
 msgstr "ଯୋଗ କରନ୍ତୁ ନାହିଁ"
 
-#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:828
+#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:844
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1902,7 +1902,7 @@ msgstr "ପଦକ୍ଷେପ ବାତିଲ କରନ୍ତୁ (&o): ବନ୍
 msgid "Und&o"
 msgstr ""
 
-#: src/konqview.cpp:1274
+#: src/konqview.cpp:1275
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1910,14 +1910,14 @@ msgid ""
 "purchase) will be repeated. "
 msgstr ""
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "ଚେତାବନି"
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgid "Resend"
 msgstr "ପୁଣି ପଠାନ୍ତୁ"
@@ -1951,7 +1951,7 @@ msgctxt ""
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
-#: src/urlloader.cpp:771
+#: src/urlloader.cpp:787
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As"

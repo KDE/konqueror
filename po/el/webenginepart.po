@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:41+0000\n"
+"POT-Creation-Date: 2025-04-23 00:42+0000\n"
 "PO-Revision-Date: 2023-01-07 10:35+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -955,7 +955,7 @@ msgstr ""
 "\n"
 "Η ενοποίηση θα απενεργοποιηθεί."
 
-#: src/webenginepage.cpp:349
+#: src/webenginepage.cpp:350
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -969,12 +969,12 @@ msgstr ""
 "για να μη γίνει διπλή αγορά. Διαφορετικά, με κλικ στο κουμπί Συνέχεια "
 "εμφανίζεται ξανά η ιστοσελίδα.</p>"
 
-#: src/webenginepage.cpp:356
+#: src/webenginepage.cpp:357
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Επανυποβολή πληροφορίας"
 
-#: src/webenginepage.cpp:553
+#: src/webenginepage.cpp:554
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -984,18 +984,18 @@ msgstr ""
 "τη φυσική σας θέση.\n"
 "Θα επιτρέψετε την πρόσβαση;"
 
-#: src/webenginepage.cpp:557 src/webenginepage.cpp:635
-#: src/webenginepage.cpp:646
+#: src/webenginepage.cpp:558 src/webenginepage.cpp:636
+#: src/webenginepage.cpp:647
 #, kde-format
 msgid "Network Transmission"
 msgstr "Μετάδοση δικτύου"
 
-#: src/webenginepage.cpp:558
+#: src/webenginepage.cpp:559
 #, kde-format
 msgid "Allow access"
 msgstr "Να επιτρέπεται η πρόσβαση"
 
-#: src/webenginepage.cpp:628
+#: src/webenginepage.cpp:629
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1008,12 +1008,12 @@ msgstr ""
 "Τρίτοι μπορούν να παρεμβληθούν και να δουν αυτές τις πληροφορίες.\n"
 "Σίγουρα θέλετε να στείλει πίσω τα δεδομένα σας ακρυπτογράφητα;"
 
-#: src/webenginepage.cpp:636
+#: src/webenginepage.cpp:637
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Αποστολή μη κρυπτογραφημένου"
 
-#: src/webenginepage.cpp:643
+#: src/webenginepage.cpp:644
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1023,12 +1023,12 @@ msgstr ""
 "ταχυδρομείου.\n"
 "Θέλετε να συνεχίσετε;"
 
-#: src/webenginepage.cpp:647
+#: src/webenginepage.cpp:648
 #, kde-format
 msgid "&Send Email"
 msgstr "&Αποστολή ηλ. αλληλογραφίας"
 
-#: src/webenginepage.cpp:696
+#: src/webenginepage.cpp:697
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1037,22 +1037,22 @@ msgstr ""
 "<qt>Θέλετε να επιτρέψετε στον ιστότοπο να επισυνάψει τα ακόλουθα αρχεία στο "
 "μήνυμα ηλ αλληλογραφίας;</qt>"
 
-#: src/webenginepage.cpp:698
+#: src/webenginepage.cpp:699
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Επιβεβαίωση συνημμένων ηλ.αλληλογραφίας"
 
-#: src/webenginepage.cpp:699
+#: src/webenginepage.cpp:700
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Να επιτρέπονται συνημμέν&α"
 
-#: src/webenginepage.cpp:700
+#: src/webenginepage.cpp:701
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "Αγνόηση &συνημμένων"
 
-#: src/webenginepage.cpp:714
+#: src/webenginepage.cpp:715
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1061,12 +1061,12 @@ msgstr ""
 "Αυτός ο ιστότοπος επιχείρησε να επισυνάψει ένα αρχείο από τον υπολογιστή σας "
 "κατά την υποβολή της φόρμας. Το συνημμένο αφαιρέθηκε για δική σας προστασία."
 
-#: src/webenginepage.cpp:717
+#: src/webenginepage.cpp:718
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Το συνημμένο αφαιρέθηκε"
 
-#: src/webenginepage.cpp:850
+#: src/webenginepage.cpp:851
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1075,7 +1075,7 @@ msgstr ""
 "Αυτός ο ιστότοπος ζητάει να ανοίξει ένα νέο αναδυόμενο παράθυρο.\n"
 "Θα το επιτρέψετε αυτό;"
 
-#: src/webenginepage.cpp:852
+#: src/webenginepage.cpp:853
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1084,17 +1084,17 @@ msgstr ""
 "<qt>Αυτός ο ιστότοπος ζητάει να ανοίξει ένα αναδυόμενο παράθυρο στο<p>%1</"
 "p><br/>Θα το επιτρέψετε αυτό;</qt>"
 
-#: src/webenginepage.cpp:855
+#: src/webenginepage.cpp:856
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Επιβεβαίωση ανάδυσης Javascript"
 
-#: src/webenginepage.cpp:856
+#: src/webenginepage.cpp:857
 #, kde-format
 msgid "Allow"
 msgstr "Να επιτρέπεται"
 
-#: src/webenginepage.cpp:856
+#: src/webenginepage.cpp:857
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Να μην επιτρέπεται"

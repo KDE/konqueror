@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:41+0000\n"
+"POT-Creation-Date: 2025-04-23 00:41+0000\n"
 "PO-Revision-Date: 2014-03-18 00:16+0100\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1538,7 +1538,7 @@ msgstr "Tofögen"
 msgid "Do Not Add"
 msgstr "Nich tofögen"
 
-#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:828
+#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:844
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1907,7 +1907,7 @@ msgstr "&Torüchnehmen: Paneel tomaken"
 msgid "Und&o"
 msgstr "Torüch&nehmen"
 
-#: src/konqview.cpp:1274
+#: src/konqview.cpp:1275
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1919,13 +1919,13 @@ msgstr ""
 "sennst, warrt allens, wat dat Formulor maakt hett, nochmaal daan. Dat kunn t."
 "B. en Söök, man ok en Koop wesen."
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Wohrschoen"
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgid "Resend"
 msgstr "Nochmaal sennen"
@@ -1959,7 +1959,7 @@ msgctxt ""
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
-#: src/urlloader.cpp:771
+#: src/urlloader.cpp:787
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As"

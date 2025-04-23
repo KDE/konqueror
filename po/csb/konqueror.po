@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:41+0000\n"
+"POT-Creation-Date: 2025-04-23 00:41+0000\n"
 "PO-Revision-Date: 2009-12-16 23:23+0100\n"
 "Last-Translator: Mark Kwidzińśczi <mark@linuxcsb.org>\n"
 "Language-Team: Kaszëbsczi <i18n-csb@linuxcsb.org>\n"
@@ -1535,7 +1535,7 @@ msgstr "Dodôj"
 msgid "Do Not Add"
 msgstr "Nie dodôwôj"
 
-#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:828
+#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:844
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1914,7 +1914,7 @@ msgstr "&Przëwrócë: Zamkniãtą kôrtã"
 msgid "Und&o"
 msgstr "P&rzëwrócë"
 
-#: src/konqview.cpp:1274
+#: src/konqview.cpp:1275
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1925,14 +1925,14 @@ msgstr ""
 "wëslesz pòdôwczi znowa, wszëtczé dzejania jaczi są skùtkã wësłaniô fòlmùlaru "
 "(np. wësłanié zamówieniô czë szëkba), òstaną znowioné. "
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Òstrzéga"
 
-#: src/konqview.cpp:1276
+#: src/konqview.cpp:1277
 #, kde-format
 msgid "Resend"
 msgstr "Wëslë znowa"
@@ -1966,7 +1966,7 @@ msgctxt ""
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
-#: src/urlloader.cpp:771
+#: src/urlloader.cpp:787
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As"
