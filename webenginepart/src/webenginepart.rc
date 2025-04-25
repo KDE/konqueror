@@ -1,5 +1,5 @@
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
-<gui name="webenginepart" version="11" translationDomain="webenginepart">
+<gui name="webenginepart" version="12" translationDomain="webenginepart">
 <MenuBar>
  <Menu name="file">
   <text>&amp;File</text>
@@ -32,6 +32,8 @@
      <text>&amp;Credential management</text>
      <Action name="walletFillFormsNow" enabled="false"/>
      <Action name="walletCacheFormsNow"/>
+     <Separator />
+     <Action name="walletRescan" />
      <Separator />
      <Action name="walletCustomizeFields"/>
      <Action name="walletRemoveCustomization"/>

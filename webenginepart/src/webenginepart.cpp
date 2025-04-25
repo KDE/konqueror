@@ -321,6 +321,7 @@ void WebEnginePart::setWallet(WebEngineWallet* wallet)
         disconnect(m_wallet, &WebEngineWallet::walletOpened, this, &WebEnginePart::updateWalletActions);
     }
     m_wallet = wallet;
+    updateWalletActions();
     if (m_wallet) {
         connect(m_wallet, &WebEngineWallet::saveFormDataRequested,
                 this, &WebEnginePart::slotSaveFormDataRequested);
@@ -1060,7 +1061,7 @@ void WebEnginePart::updateWalletActions()
     bool enableCaching = m_webView && !WebEngineSettings::self()->isNonPasswordStorableSite(m_webView->url().host());
     bool hasCustomForms = m_wallet && m_wallet->hasCustomizedCacheableForms(url());
     actionCollection()->action("walletFillFormsNow")->setEnabled(enableCaching && m_wallet && m_walletData.hasCachedData);
-    actionCollection()->action("walletRescan")->setEnabled(enableCaching && m_wallet && m_walletData.hasCachedData);
+    actionCollection()->action("walletRescan")->setEnabled(enableCaching && m_wallet && !Utils::isKonqUrl(url()));
     actionCollection()->action("walletCacheFormsNow")->setEnabled(enableCaching && m_wallet && (m_walletData.hasAutoFillableForms || hasCustomForms));
     actionCollection()->action("walletCustomizeFields")->setEnabled(enableCaching && m_walletData.hasForms);
     actionCollection()->action("walletRemoveCustomization")->setEnabled(hasCustomForms);
