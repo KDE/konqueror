@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Choose fields to remember</string>
+   <string>Customize Fields To Store</string>
   </property>
   <property name="sizeGripEnabled">
    <bool>true</bool>
@@ -25,7 +25,7 @@
      <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+        <enum>Qt::Orientation::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -41,14 +41,14 @@
         <string>Switch between displaying passwords or placeholders</string>
        </property>
        <property name="text">
-        <string>&amp;Show passwords</string>
+        <string>Show &amp;passwords</string>
        </property>
       </widget>
      </item>
      <item>
       <spacer name="horizontalSpacer_3">
        <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+        <enum>Qt::Orientation::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -64,14 +64,14 @@
         <string>Show advanced information about the fields</string>
        </property>
        <property name="text">
-        <string>&amp;Show details</string>
+        <string>Show field &amp;details</string>
        </property>
       </widget>
      </item>
      <item>
       <spacer name="horizontalSpacer_2">
        <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+        <enum>Qt::Orientation::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -101,17 +101,17 @@
       <string>Store form data in KWallet when closing the dialog</string>
      </property>
      <property name="text">
-      <string>&amp;Immediately memorize form data</string>
+      <string>&amp;Store the contents of selected fields when closing the dialog</string>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttons">
      <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+      <enum>Qt::Orientation::Horizontal</enum>
      </property>
      <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
      </property>
     </widget>
    </item>

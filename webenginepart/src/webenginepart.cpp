@@ -1016,32 +1016,32 @@ void WebEnginePart::slotWalletSavedForms(const QUrl& url, bool success)
 
 void WebEnginePart::createWalletActions()
 {
-    QAction *a = new QAction(i18nc("Fill the Forms with Data from KWallet", "&Fill forms now"), this);
+    QAction *a = new QAction(i18nc("Fill the Forms with Data from KWallet", "&Fill In Credentials"), this);
     actionCollection()->addAction("walletFillFormsNow", a);
     actionCollection()->setDefaultShortcut(a, QKeySequence("Ctrl+Shift+V"));
     connect(a, &QAction::triggered, this, [this]{if(page() && m_wallet){m_wallet->detectAndFillPageForms(page());}});
 
-    a = new QAction(i18nc("Scans again the page to detect forms to fill", "Look Again for Forms"), this);
+    a = new QAction(i18nc("Scans again the page to detect forms to fill", "&Search Page for Credential Requests"), this);
     actionCollection()->addAction("walletRescan", a);
     connect(a, &QAction::triggered, this, [this]{if(page() && m_wallet){m_wallet->detectAndFillPageForms(page());}});
 
-    a = new QAction(i18n("&Memorize Passwords in This Page Now"), this);
+    a = new QAction(i18nc("Store in KWallet the current content of the fields", "&Store Credentials Now"), this);
     actionCollection()->addAction("walletCacheFormsNow", a);
     connect(a, &QAction::triggered, this, [this]{if (page() && m_wallet){m_wallet->savePageDataNow(page());}});
 
-    a = new QAction(i18n("&Customize Fields to Memorize for This Page..."), this);
+    a = new QAction(i18nc("Shows a dialog where the use can choose which fields to store", "&Customize Credentials Settings for Page..."), this);
     actionCollection()->addAction("walletCustomizeFields", a);
     connect(a, &QAction::triggered, this, [this](){if (m_wallet){m_wallet->customizeFieldsToCache(page(), view());}});
 
-    a = new QAction(i18n("Remove Customized Memorization Settings for This Page"), this);
+    a = new QAction(i18n("Reset Custom Credential Settings for Page"), this);
     actionCollection()->addAction("walletRemoveCustomization", a);
     connect(a, &QAction::triggered, this, [this](){m_wallet->removeCustomizationForPage(url());});
 
-    KToggleAction *ta = new KToggleAction (i18n("&Allow Password Caching for This Site"), this);
+    KToggleAction *ta = new KToggleAction (i18n("&Allow Credential Caching for This Page"), this);
     actionCollection()->addAction("walletDisablePasswordCaching", ta);
     connect(ta, &QAction::triggered, this, &WebEnginePart::togglePasswordStorableState);
 
-    a = new QAction(i18n("Remove All Memorized Passwords for This Site"), this);
+    a = new QAction(i18n("Remove All Stored Passwords for This Site"), this);
     actionCollection()->addAction("walletRemoveCachedData", a);
     connect(a, &QAction::triggered, this, &WebEnginePart::slotRemoveCachedPasswords);
 
