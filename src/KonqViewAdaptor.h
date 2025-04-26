@@ -14,7 +14,7 @@
 class KonqView;
 
 /**
- * DBus interface for a konqueror view
+ * @brief DBus interface for a konqueror view
  */
 class KonqViewAdaptor : public QObject
 {
@@ -23,98 +23,141 @@ class KonqViewAdaptor : public QObject
 
 public:
 
+    /**
+     * @brief Constructor
+     *
+     * @param view the view represented by the new object
+     */
     explicit KonqViewAdaptor(KonqView *view);
-    ~KonqViewAdaptor() override;
+    ~KonqViewAdaptor() override; //!< Destructor
 
 public slots:
 
     /**
-     * Displays another URL, but without changing the view mode
-     * (Make sure the part can display this URL)
+     * @brief Displays another URL, but without changing the view mode
+     *
+     * @note Callers should make sure the current part can display the new URL
+     * @param url the URL to display
+     * @param locationBarURL the URL to set in the location bar
+     * @param nameFilter a filter to apply to the view's contents (e.g. *.cpp). It makes
+     * sense only for some parts (e.g. DolphinPart)
+     *
+     * @see KonqView::openUrl()
      */
-    void openUrl(const QString &url,
-                 const QString &locationBarURL,
-                 const QString &nameFilter);
+    void openUrl(const QString &url, const QString &locationBarURL, const QString &nameFilter);
 
     /**
-     * Reload
+     * @brief Reloads the view
      */
     void reload();
 
     /**
-     * Change the type of view (i.e. loads a new konqueror view)
+     * @brief Changes the part associated with the view so that it can display a
+     * given mimetype
      * @param mimeType the mime type we want to show
-     * @param serviceName allows to enforce a particular service to be chosen,
-     *        @see KonqFactory.
-     * @note This assumes mimeType is a real mimetype, not `"Browser/View"`
+     * @param serviceName the plugin id of the part to use. It must be a part able
+     * to show @p mimeType. If empty, the part to use is chosen according to user
+     * preferences
      */
-    bool changeViewMode(const QString &mimeType,
-                        const QString &serviceName);
+    bool changeViewMode(const QString &mimeType, const QString &serviceName);
 
     /**
-     * Call this to prevent next openUrl() call from changing history lists
-     * Used when the same URL is reloaded (for instance with another view mode)
+     * @brief Prevents the next call to openUrl() to change history
+     *
+     * This should be used when reloading the same URL for any reason (for example,
+     * when changing view mode)
      */
     void lockHistory();
 
     /**
-     * Stop loading
+     * @brief Stops loading the current URL
      */
     void stop();
 
     /**
-     * Retrieve view's URL
+     * @brief The URL currently shown in the view
+     *
+     * @return the URL currently shown in the view
      */
     QString url();
 
     /**
-     * Get view's location bar URL, i.e. the one that the view signals
-     * It can be different from url(), for instance if we display a index.html
+     * @brief The URL in the view as it should be reported to the user
+     *
+     * @return the URL in the view as it should be reported to the user
+     * @see KonqView::locationBarURL()
      */
     QString locationBarURL();
 
     /**
-     * @return the servicetype this view is currently displaying
+     * @brief The type of the view
+     *
+     * @return The type of the view. This can be either the mimetype of the URL
+     * displayed in the view or `Browser/View`
+     *
+     * @see KonqView::type()
      */
     QString type();
 
     /**
-     * @return the servicetypes this view is capable to display
+     * @brief The part capabilities of the part shown in the view
+     * @return a list with the string representation of the part capabilities of the part shown in the view
      */
     QStringList serviceTypes();
 
     /**
-     * @return the part embedded into this view
+     * @brief The DBus path of the part associated with the view
+     * @return the DBus path of the part embedded into the view
      */
     QDBusObjectPath part();
 
     /**
-     * Enable/Disable the context popup menu for this view.
+     * @brief Enables or disables the context popup menu for the view
+     * @param b `true` if the popup menu should be enabled and `false` if it should be disabled
      */
     void enablePopupMenu(bool b);
 
+    /**
+     * @brief Whether the popup menu for the view is enabled or not
+     * @return b `true` if the popup menu is enabled and `false` if it is disabled
+     */
     bool isPopupMenuEnabled() const;
 
-    /*
-     * Return length of history
+    /**
+     * @brief The number of entries in the history of the view
+     * @return the number of entries in the view history
      */
     uint historyLength()const;
 
-    /*
-     * Move forward in history "-1"
+    /**
+     * @brief Moves one step forward in history
      */
     void goForward();
-    /*
-     * Move back in history "+1"
+
+    /**
+     * @brief Moves one step backwards in history
      */
     void goBack();
 
-    bool canGoBack()const;
-    bool canGoForward()const;
+    /**
+     * @brief Whether we can go back in history
+     *
+     * @return `false` if the view is showing the first element in history and `false` if
+     * it's showing a later element
+     */
+    bool canGoBack() const;
+
+    /**
+     * @brief Whether we can go forward in history
+     *
+     * @return `false` if the view is showing the last element in history and `true` if
+     * it's showing an earlier element
+     */
+    bool canGoForward() const;
 
 private:
 
-    KonqView *m_pView;
+    KonqView *m_pView; //!< The view this object represents
 
 };
 

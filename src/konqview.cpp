@@ -399,7 +399,6 @@ bool KonqView::changePart(const ViewType &type,
     m_appServiceOffers = appServiceOffers;
 
     // Check if that's already the kind of part we have -> no need to recreate it
-    // Note: we should have an operator== for KService...
     if (m_service.isValid() && m_service.pluginId() == service.pluginId()) {
         qCDebug(KONQUEROR_LOG) << "Reusing service. Service type set to" << m_type;
         if (m_pMainWindow->currentView() == this) {
@@ -1131,7 +1130,7 @@ void KonqView::setPartMimeType()
 bool KonqView::callExtensionMethod(const char *methodName)
 {
     QObject *obj = KParts::NavigationExtension::childObject(m_pPart);
-    if (!obj) { // not all views have a browser extension !
+    if (!obj) { // not all views have a navigation extension !
         return false;
     }
 
@@ -1394,7 +1393,7 @@ void HistoryEntry::saveConfig(KConfigGroup &config, const QString &prefix, const
 HistoryEntry* HistoryEntry::fromDelayedLoadingData(const KConfigGroup& config, const QString& prefix, const KonqFrameBase::Options& options)
 {
     HistoryEntry *entry = new HistoryEntry;
-    if (options & (KonqFrameBase::SaveUrls|KonqFrameBase::SaveHistoryItems)) { // eitentryr one
+    if (options & (KonqFrameBase::SaveUrls|KonqFrameBase::SaveHistoryItems)) {
         entry->url = QUrl(config.readEntry(QStringLiteral("Url").prepend(prefix), ""));
         entry->locationBarURL = config.readEntry(QStringLiteral("LocationBarURL").prepend(prefix), "");
         entry->title = config.readEntry(QStringLiteral("Title").prepend(prefix), "");
@@ -1606,8 +1605,6 @@ bool KonqView::canNavigateTo(const QUrl& newUrl) const
 
 void KonqView::duplicateView(KonqView* otherView)
 {
-    // openUrl(otherView->requestedUrl(), otherView->locationBarURL(), otherView->nameFilter(), !otherView->m_tempFile.isEmpty());
-
     //If requested and real URLs are the same, otherView isn't displaying a downloaded file, so just call openUrl
     if (otherView->url() == otherView->realUrl()) {
         openUrl(otherView->url(), otherView->locationBarURL());
@@ -1621,7 +1618,7 @@ void KonqView::duplicateView(KonqView* otherView)
     KIO::CopyJob *j = KIO::copy(otherView->realUrl(), dest);
 
     const QString locBarUrl = otherView->locationBarURL();
-    //If displaying a downloaded URL, the reaul URL will always be a temporary one
+    //If displaying a downloaded URL, the real URL will always be a temporary one
     bool temp = true;
     const QString nameFilter = otherView->nameFilter();
     const QUrl reqUrl = otherView->m_url.url();

@@ -142,7 +142,7 @@ namespace KonqWebEnginePart {
         /**
          * @brief Removes a dialog from the list and displays the next dialog (if any) for the same window
          *
-         * @param obj the dialog to remove. It is a @c QObject rather than a WebEnginePartCertificateErrorDlg
+         * @param dlg the dialog to remove. It is a @c QObject rather than a WebEnginePartCertificateErrorDlg
          * because this slot is called in response to the dialog @c destroyed signal, which has a @c QObject* as argument
          */
         void removeDestroyedDialog(QObject *dlg);
@@ -150,7 +150,7 @@ namespace KonqWebEnginePart {
         /**
          * @brief Removes any dialog from the given window from the list
          *
-         * @param obj the window. It is a @c QObject rather than a @c QWidget
+         * @param window the window. It is a @c QObject rather than a @c QWidget
          * because this slot is called in response to the window @c destroyed signal, which has a @c QObject* as argument
          */
         void removeDestroyedWindow(QObject *window);

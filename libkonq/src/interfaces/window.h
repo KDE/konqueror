@@ -172,7 +172,7 @@ Q_SIGNALS:
     /**
      * @brief Signal emitted when the url of a tab changes
      * @param idx the index of the tab
-     * @param title the new url of the tab
+     * @param url the new url of the tab
      */
     void tabUrlChanged(int idx, const QUrl &url);
 

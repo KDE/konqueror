@@ -41,7 +41,13 @@ public:
 
     void setCookieJar(KonqInterfaces::CookieJar* jar) override; ///< Implementation of KonqInterfaces::Browser::setCookieJar()
 
-    QString konqUserAgent() const override; ///< Implementation of Browser::konqUserAgent()
+    /**
+     * @brief Implementation of Browser::konqUserAgent()
+     *
+     * @return konquerorUserAgent()
+     */
+    QString konqUserAgent() const override;
+
     QString defaultUserAgent() const override; ///< Implementation of Browser::defaultUserAgent()
     QString userAgent() const override; ///< Implementation of Browser::currentUserAgent()
     void setTemporaryUserAgent(const QString & newUA) override; ///< Implementation of Browser::setTemporaryUserAgent()
@@ -54,6 +60,13 @@ public:
      */
     void applyConfiguration();
 
+    /**
+     * @brief It returns the default user agent used by `QtWebEngine`
+     *
+     * @note Since `QtWebEngine` doesn't provide a way to retrieve its default user agent,
+     * this function tries to mimic it. If the format of the default `QtWebEngine` user agent should
+     * change, this needs to be changed accordingly.
+     */
     static QString konquerorUserAgent(); ///< The standard Konqueror user agent string
 
     /**
@@ -70,7 +83,7 @@ public:
      */
     bool openUrl(const QUrl & url, KParts::OpenUrlArguments & args, const BrowserArguments & bargs, QWidget * window = nullptr) override;
 
-    KonqInterfaces::Window* window(QWidget* widget) override;
+    KonqInterfaces::Window* window(QWidget* widget) override; //!< Implementation of Browser::window()
 
     /**
      * @brief Implementation of KonqInterfaces::Browser::setSaveDirForWindow()
@@ -78,14 +91,14 @@ public:
      */
     void setSaveDirForWindow(const QString &saveDir, QWidget *window) override;
 
-    QString partForLocalFile(const QString & path, const QString & mimeType) override;
+    QString partForLocalFile(const QString & path, const QString & mimeType) override; //!< Implementation of Browser::partForLocalFile()
 
-    KonqInterfaces::SpeedDial* speedDial() override;
+    KonqInterfaces::SpeedDial* speedDial() override; //!< Implementation of KonqBrowser::speedDial()
 
 private:
 
     /**
-     * @brief Struct used to store information about the user agent
+     * @brief Struct which stores information about the user agent
      */
     struct UserAgentData {
         QString defaultUA; ///< The default user agent
@@ -94,7 +107,7 @@ private:
         /**
          * @brief The user agent currently in use
          *
-         * Depending on the value of #usingDefaultUA, this will either be #defaulUA or #temporaryUA
+         * Depending on the value of #usingDefaultUA, this will either be #defaultUA or #temporaryUA
          */
         QString currentUserAgent() const {return usingDefaultUA ? defaultUA : temporaryUA;}
     };

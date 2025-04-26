@@ -88,7 +88,7 @@ private:
      *
      * This function is used to retrieve data set using specifyDownloadObjective().
      *
-     * @param req the url to download
+     * @param url the URL to download
      * @param page the page requesting the download
      * @return the specified objective for the URL in @p url and page @p page, if any, and
      *  \link DownloadObjective::OpenInApplication OpenInApplication\endlink otherwise

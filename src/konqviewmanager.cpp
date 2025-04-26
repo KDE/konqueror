@@ -795,7 +795,7 @@ KonqView *KonqViewManager::chooseNextView(KonqView *view)
             break;    // no next view found
         }
 
-        KonqView *nextView = viewList.at(it);;
+        KonqView *nextView = viewList.at(it);
         if (nextView && !nextView->isPassiveMode()) {
             return nextView;
         }

@@ -35,7 +35,7 @@ public:
 
     /**
      * @brief The window where the sidebar module is
-     * @param the object representing the window
+     * @param window the object representing the window
      */
     void setWindow(KonqInterfaces::Window *window);
 
@@ -119,7 +119,7 @@ private Q_SLOTS:
 private:
 
     /**
-     * @brif Creates an item representing the given tab
+     * @brief Creates an item representing the given tab
      * @param tabIdx the number of the tab
      * @return an item corresponding to the tab with number @p tabIdx
      */

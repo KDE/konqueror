@@ -21,70 +21,174 @@
 namespace KHM
 {
 
+/**
+ * @brief An entry in the model
+ */
 struct Entry {
+    /**
+     * @brief The type of entry
+     */
     enum Type {
-        History,
-        Group,
-        Root
+        History, //!< A normal history entry
+        Group, //!< A entry representing a group
+        Root //!< The root entry
     };
 
+    /**
+     * @brief Constructor
+     *
+     * @param _type the entry type
+     */
     Entry(Type _type)
         : type(_type)
     {}
 
-    virtual ~Entry()
-    {}
+    virtual ~Entry() {} //!< Destructor
 
-    virtual QVariant data(int /*role*/, int /*column*/) const
+    /**
+     * @brief The data for a given role and column
+     *
+     * @param role the role
+     * @param column the column
+     *
+     * @return The data in column @p column for the @p role role.
+     * The base class implementation always return an invalid `QVariant()`
+     */
+    virtual QVariant data(int role, int column) const
     {
+        Q_UNUSED(role);
+        Q_UNUSED(column);
         return QVariant();
     }
 
-    const Type type;
+    const Type type; //!< The type of entry
 };
 
+/**
+ * @brief Entry representing An history element
+ */
 struct HistoryEntry : public Entry {
+    /**
+     * @brief Constructor
+     *
+     * @param _entry the entry this refers to
+     * @param _parent the parent group
+     */
     HistoryEntry(const KonqHistoryEntry &_entry, GroupEntry *_parent);
 
+    /**
+     * @brief Override of Entry::data()
+     *
+     * @param role the role
+     * @param column the column
+     *
+     * @return The data contained in the history entry passed to the constructor
+     * for the following roles: `Qt::DisplayRole`, `Qt::DecorationRole`, `Qt::ToolTipRole`,
+     * `KonqHistory::TypeRole`, `KonqHistory::DetailedToolTipRole`, `KonqHistory::LastVisitedRole`
+     * and `KonqHistory::UrlRole`. It returns an invalid `QVariant` in for all other roles
+     */
     QVariant data(int role, int column) const override;
+
+    /**
+     * @brief Updates the entry
+     *
+     * This also updates the icon associated with this object.
+     *
+     * @param entry the new history entry to associate with this object
+     */
     void update(const KonqHistoryEntry &entry);
 
-    KonqHistoryEntry entry;
-    GroupEntry *parent;
-    QIcon icon;
+    KonqHistoryEntry entry; //!< The history entry associated with this object
+    GroupEntry *parent; //!< The group entry containing this object
+    QIcon icon; //!< The icon for this object
 };
 
+/**
+ * @brief Entry representing a group
+ */
 struct GroupEntry : public Entry {
+    /**
+     * @brief Constructor
+     *
+     * @param _url the URL of the group
+     * @param _key The name of the group
+     */
     GroupEntry(const QUrl &_url, const QString &_key);
 
+    /**
+     * @brief Destructor
+     *
+     * Deletes all child entries
+     */
     ~GroupEntry() override
     {
         qDeleteAll(entries);
     }
 
+    /**
+     * @brief Override of Entry::data()
+     *
+     * @param role the role
+     * @param column the column
+     *
+     * @return The #key as `Qt::DisplayRole`, the icon associated with the URL as
+     * `Qt::DecorationRole, `KonqHistory::GroupType` as `KonqHistory::TypeRole`,
+     * the last time one of the entries was visited as `KonqHistory::LastVisitedRole`
+     * and an invalid `QVariant` in all other cases.
+     */
     QVariant data(int role, int column) const override;
+
+    /**
+     * @brief Finds the child corresponding to the given entry
+     *
+     * @param entry the entry corresponding to the child to find
+     * @param index if not `nullptr`, it will be set to the value of the index of
+     * the child, or to -1 if no child was found
+     * @return the child corresponding to @p entry and `nullptr` if no such child
+     * could be found
+     */
     HistoryEntry *findChild(const KonqHistoryEntry &entry, int *index = nullptr) const;
+
+    /**
+     * @brief A list of the URLs of entries in the group
+     *
+     * @return a list of the URLs of entries in the group
+     */
     QList<QUrl> urls() const;
 
-    QList<HistoryEntry *> entries;
-    QUrl url;
-    QString key;
-    QIcon icon;
-    bool hasFavIcon : 1;
+    QList<HistoryEntry *> entries; //!< A list of all the child entries
+    QUrl url; //!< The URL of the group
+    QString key; //!< The title of the group
+    QIcon icon; //!< The icon of the group
+    bool hasFavIcon : 1; //!< Whether the icon has been initialized yet
 };
 
+/**
+ * @brief Class representing the root of the history tree
+ *
+ * This class contains all groups (there can't be entries which aren't part of a
+ * group).
+ */
 struct RootEntry : public Entry {
+    /**
+     * @brief Constructor
+     */
     RootEntry()
         : Entry(Root)
     {}
 
+    /**
+     * @brief Destructor
+     *
+     * It deletes all groups
+     */
     ~RootEntry() override
     {
         qDeleteAll(groups);
     }
 
-    QList<GroupEntry *> groups;
-    QHash<QString, GroupEntry *> groupsByName;
+    QList<GroupEntry *> groups; //!< A list of all groups
+    QHash<QString, GroupEntry *> groupsByName; //!< A hash associating groups and their names
 };
 
 HistoryEntry::HistoryEntry(const KonqHistoryEntry &_entry, GroupEntry *_parent)

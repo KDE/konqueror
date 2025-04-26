@@ -19,12 +19,25 @@
 #include <QToolButton>
 #include <QTimer>
 
+/**
+ * @brief Enum used as a constant for the time before calling assureVisibleText() from setMessage()
+ */
 enum { GeometryTimeout = 100 };
+
+/**
+ * @brief Enum used as a constant for the space between two elements in the label
+ */
 enum { BorderGap = 2 };
 
+/**
+ * @brief The d-pointer class for KonqStatusBarMessageLabel
+ */
 class KonqStatusBarMessageLabel::Private
 {
 public:
+    /**
+     * @brief Constructor
+     */
     Private() :
         m_type(Default),
         m_state(DefaultState),
@@ -34,22 +47,37 @@ public:
         m_closeButton(nullptr)
     {}
 
+/**
+ * @brief Whether the message is rich text or plain text
+ *
+ * To be considered rich text, the message should start with either `<html>` or `<qt>`
+ * @return `true` if the message is rich text and `false` if it's plain text
+ */
     bool isRichText() const
     {
         return m_text.startsWith(QLatin1String("<html>")) || m_text.startsWith(QLatin1String("<qt>"));
     }
 
-    KonqStatusBarMessageLabel::Type m_type;
+    KonqStatusBarMessageLabel::Type m_type; //!< The message type
+    /**
+     * @brief The state regarding the background transparency animation
+     * @see KonqStatusBarMessageLabel::timerDone()
+     */
     KonqStatusBarMessageLabel::State m_state;
+    /**
+     * @brief Level of transparency of the background
+     *
+     * This is half the alpha channel of the background color of the label
+     */
     int m_illumination;
-    int m_minTextHeight;
-    QTimer *m_timer;
-    QString m_text;
-    QString m_defaultText;
-    QTextDocument m_textDocument;
-    QList<QString> m_pendingMessages;
-    QPixmap m_pixmap;
-    QToolButton *m_closeButton;
+    int m_minTextHeight; //!< The minimum height of the text
+    QTimer *m_timer; //!< The timer used for the transparency animation
+    QString m_text; //!< The text of the message if it's a plain text message
+    QString m_defaultText; //!< The default text of the label
+    QTextDocument m_textDocument; //!<The message if a rich text message
+    QList<QString> m_pendingMessages; //!< A list of messages waiting to be shown
+    QPixmap m_pixmap; //!< The pixmap of the icon shown beside the message
+    QToolButton *m_closeButton; //!< The button to close an error message
 };
 
 KonqStatusBarMessageLabel::KonqStatusBarMessageLabel(QWidget *parent) :

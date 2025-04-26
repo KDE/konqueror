@@ -385,7 +385,8 @@ QList<QAction *> KonqFrameTabs::otherTabsActions() const
 {
     int i = 0;
     QList<QAction*> actions;
-    auto createAction = [&i](KonqFrameBase *frameBase) {
+    auto createAction = [&i, this](KonqFrameBase *frameBase) -> QAction* {
+        if (frameBase == currentTab()) return nullptr;
         KonqFrame *frame = dynamic_cast<KonqFrame *>(frameBase);
         QAction *action = nullptr;
         if (frame && frame->activeChildView()) {
@@ -402,6 +403,7 @@ QList<QAction *> KonqFrameTabs::otherTabsActions() const
         return action;
     };
     std::transform(m_childFrameList.constBegin(), m_childFrameList.constEnd(), std::back_inserter(actions), createAction);
+    actions.removeAll(nullptr);
     return actions;
 }
 

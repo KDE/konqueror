@@ -18,6 +18,7 @@
 
 #include <algorithm>
 
+//TODO Is this needed? It seems to compile even without it
 template class QList<KonqHistoryEntry *>;
 
 /////////////////

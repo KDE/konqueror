@@ -13,24 +13,55 @@
 
 class QToolBar;
 
+/**
+ * @brief Class representing the animated button shown to the right of the location bar
+ */
 class KonqAnimatedLogo : public KAnimatedButton
 {
     Q_OBJECT
 
 public:
     /**
-     * Creates an animated logo button which follows the toolbar icon size
+     * @brief Creates an animated logo button which follows the toolbar icon size
+     *
+     * @param parent the parent widget
      */
     KonqAnimatedLogo(QWidget *parent = nullptr);
 
 protected:
+
+    /**
+     * @brief Override of `KonqAnimatedLogo::changeEvent()`
+     *
+     * It connects and disconnects from parent's signals when the parent changes.
+     * It always calls the base class version of the function.
+     *
+     * @param event the event
+     */
     void changeEvent(QEvent *event) override;
 
 private Q_SLOTS:
-    void setAnimatedLogoSize(const QSize &);
+
+    /**
+     * @brief Updates the path of the file containing the animation so that it
+     * has the given size
+     *
+     * @param size the new size of the button
+     */
+    void setAnimatedLogoSize(const QSize &size);
 
 private:
-    void connectToToolBar(QToolBar *);
+
+    /**
+     * @brief Connects to a toolbar's signals
+     *
+     * It also calls setAnimatedLogoSize() so that the animation size matches the
+     * toolbar's icon size
+     *
+     * @param bar the toolbar to connect to. It's assumed that this will be the toolbar
+     * where the button is
+     */
+    void connectToToolBar(QToolBar *bar);
 };
 
 #endif // KONQANIMATEDLOGO_P_H

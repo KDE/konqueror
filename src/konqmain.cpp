@@ -7,6 +7,12 @@
 
 #include "konqapplication.h"
 
+/**
+ * @brief The main function
+ *
+ * @param argc the number of command line arguments
+ * @param argv the command line arguments
+ */
 int main(int argc, char **argv)
 {
     QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts); // says QtWebEngine. Note: this must be set before creating the application

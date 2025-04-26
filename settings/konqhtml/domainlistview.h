@@ -54,11 +54,11 @@ public:
     };
 
     /**
-     * constructor
+     * @brief Constructor
      * @param config configuration to read from and to write to
-     * @param title title to be used for enclosing group box
+     * @param group the configuration group to save global policies to
+     * @param options the `KCModule` containing this object
      * @param parent parent widget
-     * @param name internal name for debugging
      */
     DomainListView(KSharedConfig::Ptr config, const QString &group, KJavaScriptOptions *options, QWidget *parent);
 
@@ -183,8 +183,8 @@ protected:
      * The default implementation does nothing.
      * @param trigger triggered by which button
      * @param pDlg reference to policy dialog
-     * @param copy policies object this dialog is used for changing. Derived
-     *    classes can safely cast the @p copy object to the same type they
+     * @param pol policies object this dialog is used for changing. Derived
+     *    classes can safely cast the @p pol object to the same type they
      *    returned in their createPolicies implementation.
      */
     void setupPolicyDlg(PushButton trigger, PolicyDialog& pDlg, JSPolicies* pol);

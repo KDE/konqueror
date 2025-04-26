@@ -26,12 +26,20 @@ class KonqBrowserWindowInterface : public BrowserInterface
 
 public:
     /**
-     * Default constructor
+     * @brief Default constructor
+     *
+     * @param mainWindow the main window associated with the interface
+     * @param part the part associated with the interface
      */
     KonqBrowserWindowInterface(KonqMainWindow *mainWindow, KParts::ReadOnlyPart *part);
-    ~KonqBrowserWindowInterface() override {}
+    ~KonqBrowserWindowInterface() override {} //!< Destructor
 
 public slots:
+    /**
+     * @brief Toggles the complete full screen mode on or off
+     *
+     * @param on whether complete full screen should be turned on or off
+     */
     void toggleCompleteFullScreen(bool on);
 
     /**
@@ -46,8 +54,8 @@ public slots:
     bool isCorrectPartForLocalFile(KParts::ReadOnlyPart *part, const QString &path);
 
 private:
-    KonqMainWindow *m_mainWindow;
-    KParts::ReadOnlyPart *m_part;
+    KonqMainWindow *m_mainWindow; //!< The main window associated with this object
+    KParts::ReadOnlyPart *m_part; //!< The main window associated with this object
 
 };
 

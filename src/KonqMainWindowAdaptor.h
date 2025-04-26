@@ -28,52 +28,100 @@ class KonqMainWindowAdaptor : public QDBusAbstractAdaptor
 
 public:
 
+    /**
+     * @brief Constructor
+     *
+     * @param mainWindow the main window associated with the new object
+     */
     explicit KonqMainWindowAdaptor(KonqMainWindow *mainWindow);
-    ~KonqMainWindowAdaptor() override;
+    ~KonqMainWindowAdaptor() override; //!< Destructor
 
 public slots:
 
     /**
-     * Open a url in this window
-     * @param url the url to open
-     * @param tempFile whether to delete the file after use, usually this is false
+     * @brief Opens a URL in the currente tab of this window
+     *
+     * @param url the URL to open
+     * @param tempFile whether to delete the file after use. Usually this should be `false`
      */
     void openUrl(const QString &url, bool tempFile);
+
     /**
-     * Open a url in a new tab in this window
-     * @param url the url to open
-     * @param tempFile whether to delete the file after use, usually this is false
+     * @brief Opens a URL in a new tab in this window
+     *
+     * @param url the URL to open
+     * @param tempFile whether to delete the file after use. Usually this should be `false`
      */
     void newTab(const QString &url, bool tempFile);
 
+    /**
+     * @brief Opens and URL in a new tab specifying a startup id
+     *
+     * @param url the URL to open
+     * @param startup_id the startup id
+     * @param tempFile whether to delete the file after the view which displays it is closed.
+     * This should usually be `false`
+     */
     void newTabASN(const QString &url, const QByteArray &startup_id, bool tempFile);
 
+    /**
+     * @brief Opens and URL with the givne mimetype in a new tab specifying a startup id
+     * @param url the URL to open
+     * @param mimetype the mimetype of the URL
+     * @param startup_id the startup id
+     * @param tempFile whether to delete the file after the view which displays it is closed.
+     * This should usually be `false`
+     */
     void newTabASNWithMimeType(const QString &url, const QString &mimetype, const QByteArray &startup_id, bool tempFile);
 
+    /**
+     * @brief Splits the current view horizontally
+     */
     void splitViewHorizontally();
+
+    /**
+     * @brief Splits the current view vertically
+     */
     void splitViewVertically();
 
     /**
-     * Reloads the current view.
+     * @brief Reloads the current view.
      */
     void reload();
 
     /**
-     * @return reference to the current KonqView
+     * @brief The current view
+     *
+     * @return the DBus path representing the current KonqView
      */
     QDBusObjectPath currentView();
+
     /**
-     * @return reference to the current part
+     * @brief The current part
+     *
+     * @return the DBus path representing the current part
      */
     QDBusObjectPath currentPart();
 
+    /**
+     * @brief The view corresponding to the given index
+     *
+     * @param viewNumber the index of the view
+     * @return the DBus path of the view corresponding to index @p viewNumber
+     */
     QDBusObjectPath view(int viewNumber);
 
+    /**
+     * @brief The part corresponding to the given index
+     *
+     * @param partNumber the index of the part
+     * @return the DBus path of the part corresponding to index @p partNumber
+     */
     QDBusObjectPath part(int partNumber);
 
 private:
 
-    KonqMainWindow *m_pMainWindow;
+    KonqMainWindow *m_pMainWindow; //!< The main window
 };
 
 #endif

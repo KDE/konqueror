@@ -58,48 +58,163 @@ static QString titleOfURL(const QString &urlStr)
 
 ///////////////////////////////////////////////////////////////////////////////
 
+/**
+ * @brief Subclass of `QListWidgetItem` used for to display URLs in the completion box
+ *
+ * It has two differences from `QListWidgetItem`:
+ * - it stores the title associated with the URL (if any) in the `Qt::UserRole`
+ * of the item. This typically is the title of the page the URL points to
+ * - it automatically fetches the favicon associated with the URL using KonqPixmapProvider
+ * and uses it as item icon.
+ */
 class KonqListWidgetItem : public QListWidgetItem
 {
 public:
-    enum { KonqItemType = 0x1845D5CC };
+    enum { KonqItemType = 0x1845D5CC }; //!< Item type for items of this class
 
+    /**
+     * @brief Constructor
+     *
+     * @param parent the list widget the item should be inserted in
+     */
     KonqListWidgetItem(QListWidget *parent = nullptr);
+    /**
+     * @brief Constructor
+     *
+     * @param text the text of the item
+     * @param parent the list widget the item should be inserted in
+     */
     KonqListWidgetItem(const QString &text, QListWidget *parent = nullptr);
 
+    /**
+     * @brief Override of `QListWidgetItem::data()`
+     *
+     * It works as the base class version except that, if @p role is not `Qt::DisplayRole`,
+     * it also stores the title associated with the URL in the `Qt::UserRole` and
+     * fetches the icon (if needed).
+     *
+     * @param role the role to retrieve the data for
+     *
+     * @internal
+     * This function sets #lookupPending to `false`
+     * @endinternal
+     */
     QVariant data(int role) const override;
 
+    /**
+     * @brief Use this item to display a different URL
+     *
+     * @param newText the new URL to display in the item
+     * @return `true` if the content of the item has changed and `false` if @p newText is the same as `text()`
+     * @internal
+     * When returning `true`, this function sets #lookupPending to `true`
+     * @endinternal
+     */
     bool reuse(const QString &newText);
 
 private:
-    mutable bool lookupPending;
+
+    mutable bool lookupPending; //!< Whether the favicon needs to be fetched
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 
+/**
+ * @brief Subclass of `QItemDelegate` used to display URLs in the location bar
+ */
 class KonqComboItemDelegate : public QItemDelegate
 {
 public:
+    /**
+     * @brief Constructor
+     * @param parent  the parent obejct
+     */
     KonqComboItemDelegate(QObject *parent) : QItemDelegate(parent) {}
+
+    /**
+     * @brief Override of `QItemDelegate::sizeHint()`
+     *
+     * @param option the option to use to compute the size hint
+     * @param index the index to compute the size hint for
+     * @return the size hint for @p index according to the option @p option
+     */
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
+
+    /**
+     * @brief Override of `QItemDelegate::paint()`
+     *
+     * It writes both the URL and the title of the item instead of just the URL
+     *
+     * @param painter the painter to use
+     * @param option the option to use for painting
+     * @param index the index to paint
+     */
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 
+/**
+ * @brief Line edit used by the Konqueror location bar
+ *
+ * It differs from `KLineEdit` in that it uses a KonqComboCompletionBox as completion
+ * box and that it allows the user to select everything by double clicking inside it
+ */
 class KonqComboLineEdit : public KLineEdit
 {
 public:
+
+    /**
+     * @brief Constructor
+     * @param parent the parent widget
+     */
     KonqComboLineEdit(QWidget *parent = nullptr);
+
+    /**
+     * @brief Override of `KLineEdit::completionBox()`
+     *
+     * It works as the base class version except that it creates an instance of KonqComboCompletionBox.
+     *
+     * @param create whether or not to create the completion box if it doesn't exist
+     * @return the completion box. If the completion box doesn't exist, the behavior depends
+     * on the value of @p create: if @p create is `true` a new KonqComboCompletionBox is created
+     * and returned, if it's `false`, it just returns `nullptr`.
+     */
     KCompletionBox *completionBox(bool create) override;
 
 protected:
+    /**
+     * @brief Override of `KLineEdit::mouseDoubleClickEvent()`
+     *
+     * It selects everything in the line edit in case of a left button double click.
+     *
+     * @param e the event
+     */
     void mouseDoubleClickEvent(QMouseEvent *e) override;
 };
 
+/**
+ * @brief Completion box class used by the location bar
+ */
 class KonqComboCompletionBox : public KCompletionBox
 {
 public:
+
+    /**
+     * @brief Constructor
+     *
+     * @param parent the parent widget
+     */
     KonqComboCompletionBox(QWidget *parent);
+
+    /**
+     * @brief Sets the items shown in the completion box
+     *
+     * This function works as `KCompletionBox::setItems()` except that  it uses
+     * KonqListWidgetItem::reuse() when changing the content of an item which already
+     * exists.
+     * @param items the new content of the completion box
+     */
     void setItems(const QStringList &items);
 };
 

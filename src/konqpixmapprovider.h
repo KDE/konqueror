@@ -25,6 +25,8 @@ namespace KIO {
 /**
  * @brief Class providing favicon management
  *
+ * This is a singleton class.
+ *
  * This class uses KIO::FavIconRequestJob to download favicons, then stores the
  * corresponding URLs in a cache for quick retrieval.
  *
@@ -35,17 +37,25 @@ namespace KIO {
  * many FavIconRequestJob are created at the same time, which makes Konqueror hang. To avoid
  * this issue, at most #s_maxJobs are created at the same time: the others are queued and start
  * automatically as soon as the number of running jobs goes below that threshold.
+ *
+ * Favicon download is asynchronous: the changed() signal is emitted when the favicon is ready.
  */
 class KONQUERORPRIVATE_EXPORT KonqPixmapProvider : public QObject
 {
     Q_OBJECT
 public:
+    /**
+     * @brief The single instance of this class
+     * @return the single instance of this class
+     */
     static KonqPixmapProvider *self();
 
-    ~KonqPixmapProvider() override;
+    ~KonqPixmapProvider() override; //!< Destructor
 
     /**
      * @brief Trigger a download of a default favicon
+     *
+     * @param hostUrl the URL to retrieve the favicon for
      */
     void downloadHostIcon(const QUrl &hostUrl);
 
@@ -55,7 +65,7 @@ public:
      * This works as downloadHostIcon() except that it doesn't emit the changed()
      * signal after each download but only after all of them have finished.
      *
-     * If you need to download the favicon for the host of many URLs, it's better to
+     * If you need to download the favicon for many URLs, it's better to
      * call this rather than downloadHostIcon() as it will avoid many consecutive calls
      * to slot connected with the changed() signal.
      * @param urls the list of URLs to download the host favicon for
@@ -67,12 +77,22 @@ public:
     void downloadHostIcons(const QList<QUrl> &urls);
 
     /**
-     * Trigger a download of a custom favicon (from the HTML page)
+     * @brief Trigger a download of a custom favicon for a given host
+     *
+     * @param hostUrl the URL of the host
+     * @param iconUrl the URL of the icon to use for the host
      */
     void setIconForUrl(const QUrl &hostUrl, const QUrl &iconUrl);
 
     /**
-     * Looks up a pixmap for @p url. Uses a cache for the iconname of url.
+     * @brief Looks up a pixmap for the given URL
+     *
+     * This uses a cache as described in iconNameFor().
+     *
+     * @param url the URL to load the pixmap for
+     * @param size the size of the requested pixmap
+     * @return the pixmap to use
+     * @see iconNameFor()
      */
     QPixmap pixmapFor(const QString &url, int size);
 
@@ -168,16 +188,19 @@ private:
      */
     bool updateIcons(KIO::FavIconRequestJob* job, UpdateMode mode = UpdateMode::Host);
 
+    /**
+     * @brief Constructor
+     */
     KonqPixmapProvider();
     friend class KonqPixmapProviderSingleton;
 
-    QMap<QUrl, QString> iconMap;
+    QMap<QUrl, QString> iconMap; //!< Cache which associates URLs with the corresponding icon
 
     //TODO currently the number 10 is chosen arbitrarily. There should be a better way to choose it
     int static constexpr s_maxJobs = 10; //!< The maximum number of jobs to run at the same time
     QList<FavIconRequestData> m_pendingRequests; //!< Data describing the favicon requests for which a job hasn't been started yet
     /**
-     * @brief A list of the currently running jobs
+     * @brief A list of the currently running favicon request jobs
      * @note Jobs are automatically removed when they finish
      */
     QList<QObject*> m_jobs;

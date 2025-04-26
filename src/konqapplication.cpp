@@ -326,7 +326,7 @@ int KonquerorApplication::start()
     //Couldn't register name 'org.kde.konqueror' with DBUS - another process owns it already!
     //Moving the service creation outside the if block seems to solve the issue.
     //
-    //This also disables reusing an existing instance when running in developer mode
+    //This also disables reusing an existing instance when the --force-new-process switch was given
     KDBusService dbusService(forceNewProcess ? KDBusService::Multiple | KDBusService::NoExitOnFailure : KDBusService::Unique);
     if (!forceNewProcess) {
         auto activateApp = [this](const QStringList &arguments, const QString &workingDirectory) {

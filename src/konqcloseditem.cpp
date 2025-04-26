@@ -21,16 +21,22 @@
 
 #include <QFontDatabase>
 
+/**
+ * @brief Helper class providing a desaturated Konqueror icon
+ */
 class KonqIcon
 {
 public:
+    /**
+     * @brief Constructor
+     */
     KonqIcon()
         : image(QIcon::fromTheme(QStringLiteral("konqueror")).pixmap(16).toImage())
     {
         KIconEffect::deSaturate(image, 0.60f);
     }
 
-    QImage image;
+    QImage image; //!< The icon
 };
 
 Q_GLOBAL_STATIC(KonqIcon, s_lightIconImage)

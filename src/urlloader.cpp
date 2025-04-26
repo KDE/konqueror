@@ -385,7 +385,7 @@ void UrlLoader::decideExecute()
 
     //We don't want to execute when we are reloading the file is visible in the current part
     //(the file is visible in the current part, so we know the user wanted to display it) unless
-    //for, some reasons, we're forced to do so.
+    //for, some reason, we're forced to do so.
     if (m_request.args.reload() && !m_allowedActions.isForced(UrlAction::Execute)) {
         return;
     }

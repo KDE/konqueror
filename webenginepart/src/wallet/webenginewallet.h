@@ -69,7 +69,7 @@ public:
          *
          * @param type the type of the field
          * @param localized whether or not the returned type should be localized
-         * @return a string with the name of the type @type. If @p localized is @b true, `i18n` will be used to localize the string
+         * @return a string with the name of the type @p type. If @p localized is @b true, `i18n` will be used to localize the string
          */
         static QString fieldNameFromType(WebFieldType type, bool localized = false);
 
@@ -378,7 +378,7 @@ Q_SIGNALS:
      * @brief Signal emitted from detectAndFillPageForms() after form detection has finished.
      *
      * @param url the URL of the page
-     * @param found whether the page contains any form of type @e text, @e, email or @e password
+     * @param found whether the page contains any form of type @e text, @e email or @e password
      * @param autoFillableFound whether the page contains any form which can be automatically filled
      *
      * @see detectAndFillPageForms()
@@ -433,7 +433,7 @@ protected:
     bool hasCachedFormData(const WebForm& form, const QString& key = {}) const;
 
     /**
-     * @return Fills the web forms in frame that point to @p url with data from @p forms.
+     * @brief Fills the web forms in frame that point to @p url with data from @p forms.
      *
      * @param url the URL of the page
      * @param forms the forms to fill the page with

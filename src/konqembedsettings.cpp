@@ -13,10 +13,13 @@
 #include <QMimeDatabase>
 #include <QMimeType>
 
+/**
+ * @brief Singleton class containing the only instance of KonqFMSettings
+ */
 class KonqEmbedSettingsSingleton
 {
 public:
-    KonqFMSettings self;
+    KonqFMSettings self; //!< The only instance of KonqFMSettings
 };
 Q_GLOBAL_STATIC(KonqEmbedSettingsSingleton, globalEmbedSettings)
 

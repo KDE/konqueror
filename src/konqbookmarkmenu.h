@@ -29,9 +29,10 @@ class KonqBookmarkMenu : public KBookmarkMenu
     Q_OBJECT
 public:
     /**
-     * Fills a bookmark menu with konquerors bookmarks
-     * (one instance of KonqBookmarkMenu is created for the toplevel menu,
-     *  but also one per submenu).
+     * @brief Fills a bookmark menu with Konqueror's bookmarks
+     *
+     * One instance of KonqBookmarkMenu is created for the toplevel menu,
+     *  but also one per submenu.
      *
      * @param mgr The bookmark manager to use (i.e. for reading and writing)
      * @param owner implementation of the KBookmarkOwner callback interface.
@@ -47,12 +48,22 @@ public:
         parentMenu->menu()->installEventFilter(this);
 #endif
     }
+
+    /**
+     * @brief Destructor
+     */
     ~KonqBookmarkMenu() override
     {}
 
     /**
-     * Creates a bookmark submenu.
-     * Only used internally and for bookmark toolbar.
+     * @brief Creates a bookmark submenu
+     *
+     * @note This is only used internally and for bookmark toolbar.
+     *
+     * @param mgr the bookmark manager to use
+     * @param owner the implementation of `KBookmarkOwner` to use
+     * @param parentMenu the menu to be filled
+     * @param parentAddress the bookmark address of the parent bookmark group
      */
     KonqBookmarkMenu(KBookmarkManager *mgr, KBookmarkOwner *owner, KBookmarkActionMenu *parentMenu, QString parentAddress)
         : KBookmarkMenu(mgr, owner, parentMenu->menu(), parentAddress)
@@ -79,26 +90,92 @@ public:
 #endif
 
 protected Q_SLOTS:
+    /**
+     * @brief Loads favicons for the bookmarks in the menu
+     */
     void fillFavicons();
 
 protected:
+    /**
+     * @brief Fills the menu
+     *
+     * If this is the root item, the menu will have first the common bookmarks actions (add bookmark and so on), then
+     * the list of bookmarks; if it represents a bookmark group, the common actions will be at the end.
+     *
+     * After creating the actions, it starts the asynchronous process of loading favicons by calling startFillingFavicons()
+     */
     void refill() override;
+
+    /**
+     * @brief Starts the asynchronous process of loading favicons for the bookmarks
+     *
+     * Favicons are provided by KonqPixmapProvider. When the KonqPixmapProvider has finished loading the favicons,
+     * fillFavicons() is automatically called.
+     */
     void startFillingFavicons();
+
+    /**
+     * @brief Override of `KBookmarkMenu::actionForBookmark`
+     *
+     * It only differs from the base class version because it creates a `KonqBookmarkMenu` instead of `KBookmarkMenu`
+     * for submenus.
+     * @param bm the bookmark to create the menu for
+     */
     QAction *actionForBookmark(const KBookmark &bm) override;
+
+    /**
+     * @brief Override of `KBookmarkMenu::contextMenu()`
+     *
+     * Unlike the base class version, the context menu is represented by a KonqBookmarkContextMenu.
+     * @param action the action to display the context menu for
+     */
     QMenu *contextMenu(QAction *action) override;
 };
 
+/**
+ * @brief Class which represent the context menu for a bookmark
+ */
 class KonqBookmarkContextMenu : public KBookmarkContextMenu
 {
     Q_OBJECT
 public:
+
+    /**
+     * @brief Constructor
+     *
+     * @param bm the bookmark this context menu is for
+     * @param mgr the bookmark manager
+     * @param owner the bookmark owner
+     */
     KonqBookmarkContextMenu(const KBookmark &bm, KBookmarkManager *mgr, KBookmarkOwner *owner);
+
+    /**
+     * @brief Destructor
+     */
     ~KonqBookmarkContextMenu() override;
+
+    /**
+     * @brief Override of `KBookmarkContextMenu::addActions()`
+     *
+     * Relative to the base class version, it adds actions for toggling the bookmark visibility
+     * in filtered toolbars and actions to open a bookmark in a new window or tab
+     */
     void addActions() override;
 
 public Q_SLOTS:
+    /**
+     * @brief Opens the boomark in a new tab
+     */
     void openInNewTab();
+
+    /**
+     * @brief Opens the boomark in a new window
+     */
     void openInNewWindow();
+
+    /**
+     * @brief Enables or disables showing the bookmark in the toolbar
+     */
     void toggleShowInToolbar();
 
     /**

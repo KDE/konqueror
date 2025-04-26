@@ -196,14 +196,6 @@ void KBookmarkBar::removeTempSep()
 
 }
 
-/**
- * Handle a QDragMoveEvent event on a toolbar drop
- * @return true if the event should be accepted, false if the event should be ignored
- * @param pos the current QDragMoveEvent position
- * @param the toolbar
- * @param actions the list of actions plugged into the bar
- *        returned action was dropped on
- */
 bool KBookmarkBar::handleToolbarDragMoveEvent(const QPoint &p, const QList<QAction *> &actions, const QString &text)
 {
     if (d->m_filteredToolbar) {

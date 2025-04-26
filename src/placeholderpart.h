@@ -17,9 +17,12 @@ namespace Konq {
  * The only scope of this class is to support delayed loading of views, which is
  * used by session loading to avoid having to load many URLs all at once (which
  * is especially slow for web pages). In this case, views create instances of
- * this part instead of the part they would use. This part provides the same
- * interface of a `KParts::ReadOnlyPart`, but both its implementations of openFile()
- * and openUrl() do nothing and its widget is an empty `QWidget`
+ * this part instead of the part associated with their mimetype.
+ *
+ * This part provides the same * interface of a `KParts::ReadOnlyPart`, but both
+ * its implementations of openFile() * and openUrl() do nothing and its widget is
+ * an empty `QWidget`. After creating this part, use setDelayedLoadingData() to
+ * associate with it information about the URL to load.
 */
 class PlaceholderPart : public KParts::ReadOnlyPart
 {

@@ -19,12 +19,28 @@ namespace KParts {
     class ReadOnlyPart;
 }
 
+/**
+ * @brief Class containing information about how Konqueror should open an URL
+ */
 struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
 
-    KonqOpenURLRequest() = default;
+    KonqOpenURLRequest() = default; //!< Default constructor
 
+    /**
+     * @brief Constructor
+     *
+     * @param url the string that the user entered in the location bar, from which the URL was created.
+     * @note @p url isn't the actual URL which will be opened, and it may not even be a valid URL
+     * @see typedUrl
+     */
     KonqOpenURLRequest(const QString &url) : typedUrl(url) {}
 
+    /**
+     * @brief Constructor
+     * @param _args information about how to open the URL
+     * @param _browserArgs Konqueror-specific information about how to open the URL
+     * @param _requestingPart the part which asked to open an URL
+     */
     KonqOpenURLRequest(const KParts::OpenUrlArguments &_args, const BrowserArguments &_browserArgs,
                        KParts::ReadOnlyPart *_requestingPart) {
         args = _args;
@@ -32,6 +48,10 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
         requestingPart = _requestingPart;
     };
 
+    /**
+     * @brief A string with debug information about the object
+     * @return a string with debug information about the object
+     */
     QString debug() const
     {
 #ifndef NDEBUG
@@ -106,17 +126,20 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
     bool openAfterCurrentPage = false; ///< open the URL after the current tab
     bool tempFile = false; ///< if true, the URL should be deleted after use
     bool userRequestedReload = false; ///< `args.reload` because the user requested it, not a website
-    KParts::OpenUrlArguments args;
-    BrowserArguments browserArgs;
+    KParts::OpenUrlArguments args; //!< Information on how to open the URL
+    BrowserArguments browserArgs; //!< Konqueror-specific information on how to open the URL
     QList<QUrl> filesToSelect; ///< files to select in a konqdirpart
     QString suggestedFileName; ///< The suggested name when saving an URL
     KParts::ReadOnlyPart *requestingPart = nullptr; ///< The part which requested the download of an URL
     Konq::AllowedUrlActions urlActions() const {return browserArgs.urlActions();}
     void setAllowedUrlActions(const Konq::AllowedUrlActions &actions){browserArgs.setAllowedUrlActions(actions);}
+    /**
+     * @brief Makes embedding the only allowed action
+     */
     void forceEmbed() {
         browserArgs.setAllowedUrlActions({Konq::UrlAction::Embed});
     }
-    Konq::UrlAction chosenAction = Konq::UrlAction::UnknownAction;
+    Konq::UrlAction chosenAction = Konq::UrlAction::UnknownAction; //!< The action the user chose to perform on the URL
     /**
      * @brief Whether or not to enforce the mimetype in #args
      *
@@ -126,7 +149,7 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
      */
     bool forceMimeType = false; //!< If `true`, the mimetype set in #args will be always used, even if doesn't correspond
 
-    static KonqOpenURLRequest null;
+    static KonqOpenURLRequest null; //!< An object representing a default (invalid) request
 };
 
 #endif

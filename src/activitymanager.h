@@ -67,8 +67,16 @@ public:
      */
     void registerMainWindow(KonqMainWindow *window);
 
+    /**
+     * @brief Whether the ActivityManager is in the process of handling the restart of a previously stopped activity
+     *
+     * @return `true` if a previously stopped activity is being restored and `false` otherwise
+     */
     bool restoringStoppedActivity() const {return m_restoringStoppedActivity;}
 
+    /**
+     * @brief Informs the ActivityManager that restoring a stopped activity has finished
+     */
     void restoringStoppedActivityDone() {m_restoringStoppedActivity = false;}
 
 private slots:

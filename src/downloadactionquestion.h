@@ -44,6 +44,7 @@ class DownloadActionQuestion
 public:
     /**
      * Constructor, for all kinds of dialogs shown in this class.
+     * @param parent the parent widget
      * @param url the URL in question
      * @param mimeType the mimetype of the URL
      */
@@ -100,7 +101,7 @@ public:
      * @param actions the possible actions which can be chosen. Usually, this will contain Action::Save and at least one of Action::Open
      * or Action::Embed
      * @param flag additional information about how to handle the URL
-     * @return the action to perform on the URL. Only the actions in @actions can be returned
+     * @return the action to perform on the URL. Only the actions in @p actions can be returned
      * @note If only Action::Embed is given but there are no parts for the mimetype, Action::Save will be enabled.
      * @note If only Action::Save is given, no dialog will be shown (even if @p flag is ForceDialog). This is because the dialog would
      * only contain the Save and the Cancel button, but since a "Save as" dialog will usually be shown by the caller after the user
@@ -223,9 +224,10 @@ private:
 
     /**
      * @brief The key for the config file option determining whether to display a dialog for the given mode
-     * @param action the action for which to determine the key. It can only be \link BrowserOpenOrSaveQuestion::Action::Open Open\endlink
-     * or Action::Embed.
-     * @return the name of the key or an empty string if @p action is Action::Save or Action::Cancel
+     * @param action the action for which to determine the key. It can only be \link DownloadActionQuestion::Action Open\endlink
+     * or \link DownloadActionQuestion::Action Embed\endlink
+     * @return the name of the key or an empty string if @p action is \link DownloadActionQuestion::Action Save\endlink
+     * or \link DownloadActionQuestion::Action Cancel\endlink
      */
     QString dontAskAgainKey(Action action) const;
 

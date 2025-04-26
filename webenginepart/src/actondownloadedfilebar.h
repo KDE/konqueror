@@ -179,7 +179,7 @@ private Q_SLOTS:
      * @brief Opens or embeds the downloaded file depending on which button the user clicked
      *
      * @param choice whether to open or embed the file
-     * @param newTab whether the file should be embedded in a new tab or here. It's ignored if @p action is #Open
+     * @param newTab whether the file should be embedded in a new tab or here. It's ignored if @p action is Konq::UrlAction::Open
      * @param data the data describing the part or application to use, if the user chose one from the menu.
      *  If invalid, the default application or part is used.
      * @note This isn't called when the user clicks on the _Show containing folder_ button

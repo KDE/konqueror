@@ -13,28 +13,61 @@
 class KonqMainWindow;
 class QUrl;
 
+/**
+ * @brief Namespace for functions related to creating windows
+ */
 namespace KonqMainWindowFactory
 {
 
 /**
- * Create a new empty window.
- * This layer on top of the KonqMainWindow constructor allows to reuse preloaded windows,
- * and offers restoring windows after a crash.
- * Note: the caller must call show()
+ * @brief Returns a new empty window
+ *
+ * If there's a preloaded window, that window is returned, otherwise a new window
+ * is created.
+ *
+ * The new window is always on the current activity and its URL is `konq:blank`.
+ *
+ * If the user chose to always have a preloaded window, this function starts a
+ * timer which creates a preloaded window after 500ms.
+ *
+ * @note: the window is not made visible, so the caller of this function must be
+ * sure to call `show()` on it.
+ *
+ * @return an empty Konqueror window
  */
 KonqMainWindow *createEmptyWindow();
 
+/**
+ * @brief Creates a preloaded window
+ *
+ * A preloaded window is simply a window which is not visible and points to `konq:blank`.
+ *
+ * @return The new preloaded window
+ */
 KonqMainWindow *createPreloadWindow();
 
 /**
- * Create a new window for @p url using @p args and @p req.
- * This layer on top of the KonqMainWindow constructor allows to reuse preloaded windows,
- * and offers restoring windows after a crash.
- * Note: the caller must call show()
+ * @brief Creates a new window showing the given URL
+ *
+ * If there's a preloaded window, that window is used, otherwise a new window
+ * is created. In both cases, @p url is opened in the window.
+ *
+ * @note The returned window is not visible, so the caller must call `show()` on
+ * it
+ *
+ * @param url the URL to open in the new window
+ * @param req information about how to open the URL
+ * @return a new or preloaded window which shows @p url
  */
 KONQ_TESTS_EXPORT KonqMainWindow *createNewWindow(const QUrl &url = QUrl(),
         const KonqOpenURLRequest &req = KonqOpenURLRequest());
 
+/**
+ * @brief Finds a preloaded window, if it exists
+ *
+ * @return an existing preloaded window or `nullptr` if no preloaded window
+ * exists
+ */
 KonqMainWindow *findPreloadedWindow();
 
 };

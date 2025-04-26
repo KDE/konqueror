@@ -148,8 +148,8 @@ public:
      *
      * This function will try to determine the mimetype of the file using `QMimeDatabase`, unless a mimetype is explicitly given.
      * @param path the path of the file
-     * @param mimetype if this is not empty, the mimetype of the file won't be determined automatically using `QMimeDatabase`.
-     *  @p mimetype will be used as mimetype, instead
+     * @param mimeType if this is not empty, the mimetype of the file won't be determined automatically using `QMimeDatabase`.
+     *  @p mimeType will be used as mimetype, instead
      */
     virtual QString partForLocalFile(const QString &path, const QString &mimeType = {}) = 0;
 

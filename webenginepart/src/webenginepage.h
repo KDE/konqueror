@@ -206,7 +206,7 @@ protected Q_SLOTS:
     * @brief Handles a certificate error
     * @see CertificateErrorDialogManager::handleCertificateError
     *
-    * @param _ce the certificate error
+    * @param ce the certificate error
     */
     void handleCertificateError(const QWebEngineCertificateError &ce);
 

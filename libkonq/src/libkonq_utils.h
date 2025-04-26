@@ -30,7 +30,7 @@ namespace Konq {
      * @brief Displays a `Save as` dialog asking for the location where to download an URL
      * @param suggestedFileName the suggested file name for the downloaded file
      * @param parent the dialog's parent
-     * @param the starting directory for the dialog. If omitted, the standard download location will be used
+     * @param startingDir the starting directory for the dialog. If omitted, the standard download location will be used
      * @return a string with the download path chosen by the user or an empty string if the user cancels the dialog
      */
     LIBKONQ_EXPORT QString askDownloadLocation(const QString &suggestedFileName, QWidget *parent = nullptr, const QString &startingDir = {});

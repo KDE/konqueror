@@ -13,10 +13,6 @@
 #include "konqclosedwindowsmanager_interface.h"
 #include <kio/fileundomanager.h>
 #include <QDirIterator>
-#include <QMetaType>
-#include <QDBusConnection>
-#include <QDBusMessage>
-#include <QDBusReply>
 #include <KLocalizedString>
 
 #include <kconfig.h>
@@ -177,7 +173,7 @@ void KonqClosedWindowsManager::saveConfig()
     delete config;
 }
 
-void KonqClosedWindowsManager ::readConfig()
+void KonqClosedWindowsManager::readConfig()
 {
     if (m_konqClosedItemsConfig) {
         return;

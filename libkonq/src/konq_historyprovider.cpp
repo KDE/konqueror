@@ -30,70 +30,162 @@ class KonqHistoryProviderPrivate : public QObject, QDBusContext
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.Konqueror.HistoryManager")
 public:
+    /**
+     * @brief Constructor
+     *
+     * @param qq the KonqHistoryProvider this object is for
+     */
     KonqHistoryProviderPrivate(KonqHistoryProvider *qq);
 
     /**
-     * Resizes the history list to contain less or equal than m_maxCount
-     * entries. The first (oldest) entries are removed.
+     * @brief Resizes the history list to ensure that it doesn't exceed the maximum value
+     *
+     * The maximum value is stored in #m_maxCount. If history is currently larger than
+     * #m_maxCount, the oldest (first) entries are removed.
      */
     void adjustSize();
 
     /**
-     * Saves the entire history.
+     * @brief Saves the entire history
      */
     bool saveHistory();
 
 Q_SIGNALS: // DBUS methods/signals,  they have to match org.kde.Konqueror.HistoryManager.xml
     friend class KonqHistoryProvider;
     /**
-     * Every konqueror instance broadcasts new history entries to the other
-     * konqueror instances. Those add the entry to their list, but don't
-     * save the list, because the sender saves the list.
+     * @brief DBus signal which notifies every Konqueror instance that a new history entry
+     * has been added
      *
-     * @param e the new history entry
-     * @param saveId is the dbus service of the sender so that
-     * only the sender saves the new history.
+     * On receiving this signal, other instances add the entry to their list.
+     * The sender instance, but not the other, then save the list.
+     *
+     * @param historyEntry the content of the history entry
      */
     void notifyHistoryEntry(const QByteArray &historyEntry);
 
     /**
-     * Called when the configuration of the maximum count changed.
-     * Called via DBUS by some config-module
+     * @brief DBus signal which notifies every Konqueror instance that the maximum
+     * number of history entries has changed
+     *
+     * On receiving this signal, other instances should change the size of their
+     * history, removing the older entries if necessary. The sender instance, but
+     * not the other, then save the list.
+     *
+     * @param count the new maximum history size
      */
     void notifyMaxCount(int count);
 
     /**
-     * Called when the configuration of the maximum age of history-entries
-     * changed. Called via DBUS by some config-module
+     * @brief DBus signal which notifies every Konqueror instance that the maximum
+     * age of history entries has changed
+     *
+     * On receiving this signal, other instances should remove the older entries
+     * from their history, if necessary. The sender instance, but not the other,
+     * then save the list.
+     *
+     * @param days the new maximum age. A value of 0 means there's no maximum age
      */
     void notifyMaxAge(int days);
 
     /**
-     * Clears the history completely. Called via DBUS by some config-module
+     * @brief DBus signal which notifies every Konqueror instance that the history
+     * has been cleared
+     *
+     * On receiving this signal, other instances should clear the history. The
+     * sender instance, but not the other, then save the list.
      */
     void notifyClear();
 
     /**
-     * Notifes about a url that has to be removed from the history.
-     * The sender instance has to save the history.
+     * @brief DBus signal which notifies every Konqueror instance that the an history
+     * entry has been removed.
+     *
+     * On receiving this signal, other instances should remove the entry from their
+     * history. The sender instance, but not the other, then save the list.
+     *
+     * @param url the URL of the removed entry
      */
     void notifyRemove(const QString &url);
 
     /**
-     * Notifes about a list of urls that has to be removed from the history.
-     * The sender instance has to save the history.
+     * @brief DBus signal which notifies every Konqueror instance that the several
+     * history entries have been removed.
+     *
+     * On receiving this signal, other instances should remove the entries from their
+     * history. The sender instance, but not the other, then save the list.
+     *
+     * @param urls the URLs of the removed entries
      */
     void notifyRemoveList(const QStringList &urls);
 
 private Q_SLOTS: // connected to DBUS signals
+
+    /**
+     * @brief Slot connected via DBus to the notifyHistoryEntry() signal
+     *
+     * It adds the entry to the history and, if the signal was emitted by this
+     * instance, it saves the history.
+     *
+     * If an entry for the same URL as @p historyEntry already exists, it updates
+     * it instead of adding a new entry.
+     * @param historyEntry the new history entry
+     */
     void slotNotifyHistoryEntry(const QByteArray &historyEntry);
+
+    /**
+     * @brief Slot connected via DBus to the notifyMaxCount() signal
+     *
+     * It changes the maximum history size and, if the current history size is larger
+     * than the new maximum, it shrinks it by removing the older entries. If the
+     * signal was emitted by this instance, it also saves the history.
+     *
+     * @param count the new maximum size of the history
+     */
     void slotNotifyMaxCount(int count);
+
+    /**
+     * @brief Slot connected via DBus to the notifyMaxAge() signal
+     *
+     * It changes the maximum age of history entries, removing entries older than
+     * the new maximum age if necessary. If the signal was emitted by this instance,
+     * it also saves the history.
+     *
+     * @param days the new maximum age of history entries
+     */
     void slotNotifyMaxAge(int days);
+
+    /**
+     * @brief Slot connected via DBus to the notifyClear() signal
+     *
+     * It clears the history and, if the signal was emitted by this instance,
+     * it also saves the history.
+     */
     void slotNotifyClear();
+
+    /**
+     * @brief Slot connected via DBus to the notifyRemove() signal
+     *
+     * It removes the given entry from the history. If the signal was emitted by this instance,
+     * it also saves the history.
+     *
+     * @param url the URL of the entry to remove
+     */
     void slotNotifyRemove(const QString &url);
+
+    /**
+     * @brief Slot connected via DBus to the notifyRemoveList() signal
+     *
+     * It removes the given entries from the history. If the signal was emitted by this instance,
+     * it also saves the history.
+     *
+     * @param urls the URL of the entries to remove
+     */
     void slotNotifyRemoveList(const QStringList &urls);
 
 public:
+    /**
+     * @brief The configuration object where history settings are stored
+     */
     KSharedConfig::Ptr konqConfig()
     {
         // We want to use konquerorrc even when this class isn't used in konqueror,
@@ -101,10 +193,10 @@ public:
         return KSharedConfig::openConfig(QStringLiteral("konquerorrc"));
     }
 
-    KonqHistoryList m_history;
-    int m_maxCount;   // maximum of history entries
-    int m_maxAgeDays; // maximum age of a history entry
-    KonqHistoryProvider *q;
+    KonqHistoryList m_history; //!< The history object
+    int m_maxCount;   //!< The maximum number of history entries
+    int m_maxAgeDays; //!< The maximum age of a history entry
+    KonqHistoryProvider *q; //!< The KonqHistoryProvider associated to this class
 };
 
 KonqHistoryProviderPrivate::KonqHistoryProviderPrivate(KonqHistoryProvider *qq)

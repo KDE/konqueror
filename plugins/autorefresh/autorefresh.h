@@ -16,8 +16,8 @@ class QTimer;
 class KSelectAction;
 
 /**
- * A plugin is the way to add actions to an existing @ref KParts application,
- * or to a @ref Part.
+ * A plugin is the way to add actions to an existing `KParts` application,
+ * or to a `Part`.
  *
  * The XML of those plugins looks exactly like of the shell or parts,
  * with one small difference: The document tag should have an additional

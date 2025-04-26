@@ -36,19 +36,29 @@
 #include <KGuiItem>
 #include <QVBoxLayout>
 
+/**
+ * @brief D-Pointer for for KonqSessionDlg
+ *
+ * It also provides the UI
+ */
 class KonqSessionDlg::KonqSessionDlgPrivate : public QWidget,
     public Ui::KonqSessionDlgBase
 {
 public:
+    /**
+     * @brief Constructor
+     *
+     * @see KonqSessionDlg::KonqSessionDlg
+     */
     KonqSessionDlgPrivate(KonqViewManager *manager, QWidget *parent = nullptr)
         : QWidget(parent), m_pViewManager(manager), m_pParent(parent)
     {
         setupUi(this);
     }
-    KonqViewManager *const m_pViewManager;
-    KDirModel *m_pModel;
-    QWidget *m_pParent;
-    QDialogButtonBox *m_buttonBox;
+    KonqViewManager *const m_pViewManager; //!< The view manager
+    KDirModel *m_pModel; //!< The model containing the list of sessions
+    QWidget *m_pParent; //!< The parent widget
+    QDialogButtonBox *m_buttonBox; //!< The button box
 };
 
 KonqSessionDlg::KonqSessionDlg(KonqViewManager *manager, QWidget *parent)
@@ -190,20 +200,29 @@ void KonqSessionDlg::slotSelectionChanged()
     openButton->setEnabled(enable);
 }
 
+/**
+ * @brief D-Pointer for for KonqNewSessionDlg
+ *
+ * It also provides the UI
+ */
 class KonqNewSessionDlg::KonqNewSessionDlgPrivate : public QWidget,
     public Ui::KonqNewSessionDlgBase
 {
 public:
+    /**
+     * @brief Constructor
+     * @see KonqNewSessionDlg::KonqNewSessionDlg()
+     */
     KonqNewSessionDlgPrivate(QWidget *parent = nullptr, KonqMainWindow *mainWindow = nullptr,
                              KonqNewSessionDlg::Mode m = KonqNewSessionDlg::NewFile)
         : QWidget(parent), m_pParent(parent), m_mainWindow(mainWindow), m_mode(m)
     {
         setupUi(this);
     }
-    QWidget *m_pParent;
-    KonqMainWindow *m_mainWindow;
-    KonqNewSessionDlg::Mode m_mode;
-    QDialogButtonBox *m_buttonBox;
+    QWidget *m_pParent; //!< The parent widget
+    KonqMainWindow *m_mainWindow; //!< The main window
+    KonqNewSessionDlg::Mode m_mode; //!< The dialog mode
+    QDialogButtonBox *m_buttonBox; //!< The button box
 };
 
 KonqNewSessionDlg::KonqNewSessionDlg(QWidget *parent, KonqMainWindow *mainWindow, QString sessionName, Mode mode)

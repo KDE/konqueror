@@ -22,6 +22,7 @@ public:
 
     bool showAllChildren;
 };
+//@endcond
 
 KSortFilterProxyModel::KSortFilterProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent), d_ptr(new KSortFilterProxyModelPrivate)

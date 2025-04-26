@@ -31,16 +31,13 @@ class FullScreenManager : public QObject
 
 public:
     /**
-     * Constructor
+     * @brief Constructor
      *
      * @param parent the main window
      */
     FullScreenManager(KonqMainWindow *parent);
 
-    /**
-     * Destructor
-     */
-    ~FullScreenManager();
+    ~FullScreenManager(); //!< Destructor
 
     /**
      * @brief Reads the initial satus from the main window

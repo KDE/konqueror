@@ -125,11 +125,10 @@ KParts::ReadOnlyPart *KonqFrame::attach(const KonqViewFactory &viewFactory, bool
 {
     KonqViewFactory factory(viewFactory);
 
-    // Note that we set the parent to 0.
-    // We don't want that deleting the widget deletes the part automatically
-    // because we already have that taken care of in KParts...
-
     if (!viewFactory.isNull()) {
+        // Note that we use nullptr as parent
+        // We don't want that deleting the widget deletes the part automatically
+        // because we already have that taken care of in KParts...
         m_pPart = factory.create(this, nullptr);
     }
 

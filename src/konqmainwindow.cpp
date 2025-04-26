@@ -738,7 +738,6 @@ void KonqMainWindow::urlLoaderFinished(UrlLoader* loader)
     }
 
     // An error happened in UrlLoader - stop wheel etc.
-
     if (childView) {
         childView->setLoading(false);
 
@@ -843,7 +842,7 @@ bool KonqMainWindow::openView(ViewType type, const QUrl &_url, KonqView *childVi
         originalURL += req.nameFilter;
     } else {
         //If the part requesting the download wants to perform the download itself,
-        //url will contain the url of the local file, but in the location bar we
+        //url will contain the URL of the local file, but in the location bar we
         //want to display the remote URL
         if (!requestedUrl.isEmpty()) {
             originalURL = requestedUrl.toString();
@@ -1071,6 +1070,9 @@ QObject *KonqMainWindow::lastFrame(KonqView *view)
     QObject *nextFrame, *viewFrame;
     nextFrame = view->frame();
     viewFrame = nullptr;
+    //This relies that internally Qt implements a tab widget using a QStackedWidget:
+    //if we find one, we know we're inside a tab widget and we can use the the
+    //QStackedWidget to uniquely identify the tab.
     while (nextFrame != nullptr && !::qobject_cast<QStackedWidget *>(nextFrame)) {
         viewFrame = nextFrame;
         nextFrame = nextFrame->parent();
@@ -1193,6 +1195,8 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
     }
 
     KonqMainWindow *mainWindow = nullptr;
+    //If the target frame name is not empty and it's not "_blank", use the view with
+    //that name, if any, and don't create a new window
     if (!req.browserArgs.frameName.isEmpty() && req.browserArgs.frameName.toLower() != QLatin1String("_blank")) {
         KParts::ReadOnlyPart *ro_part = nullptr;
         KParts::NavigationExtension *be = ::qobject_cast<KParts::NavigationExtension *>(sender());
@@ -1207,6 +1211,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
         }
     }
 
+    //Determine whether to create a new tab or not
     bool createTab = req.browserArgs.newTab();
     if (!createTab && !req.browserArgs.forcesNewWindow() /* explicit "Open in New Window" action, e.g. on frame or history item */) {
         if (req.args.actionRequestedByUser()) { // MMB or some RMB popupmenu action
@@ -1218,12 +1223,15 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
     }
     qCDebug(KONQUEROR_LOG) << "createTab=" << createTab << "part=" << part;
 
+    //Handle the creation of a new tab if this is not a popup with a proxy window
     if (createTab && !m_isPopupWithProxyWindow) {
 
         bool newtabsinfront = newTabInFront(QApplication::keyboardModifiers());
         const bool aftercurrentpage = Settings::openAfterCurrentPage();
 
         // Can we use the standard way (openUrl), or do we need the part pointer immediately?
+        //If we don't need the part, just call openUrl() and let it do everything. Otherwise,
+        //manually create the view and pass it to openUrl().
         if (!part) {
             req.browserArgs.setNewTab(true);
             req.forceEmbed();
@@ -1261,6 +1269,8 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
         return;
     }
 
+    //We need to create a new window
+
     req.browserArgs.setNewTab(false); // we got a new window, no need for a new tab in that window
     req.forceEmbed();
     req.serviceName = preferredService(m_currentView, req.args.mimeType());
@@ -1268,7 +1278,8 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
     mainWindow = KonqMainWindowFactory::createEmptyWindow();
     mainWindow->resetAutoSaveSettings(); // Don't autosave
 
-    // Do we know the mimetype? If not, go to generic openUrl which will use a KonqRun.
+    // Do we know the mimetype? If not, use openUrl() which will determine it (possibly
+    //asynchronously). Otherwise, directly call openView()
     if (req.args.mimeType().isEmpty()) {
         mainWindow->openUrl(nullptr, url, QString(), req);
     } else {
@@ -1285,6 +1296,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
 
     qCDebug(KONQUEROR_LOG) << "newWindow" << mainWindow << "currentView" << mainWindow->currentView() << "views" << mainWindow->viewMap().count();
 
+    //Retrieve the new part and store it in *part
     KonqView *view = nullptr;
     // cannot use activePart/currentView, because the activation through the partmanager
     // is delayed by a singleshot timer (see KonqViewManager::setActivePart)
@@ -1316,10 +1328,11 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
     mainWindow->move(xPos, yPos);
     mainWindow->resize(width, height);
 
-    // Make the window open properties configurable. This is equivalent to
-    // Firefox's "dom.disable_window_open_feature.*" properties. For now
-    // only LocationBar visibility is configurable.
-
+    //Apply settings in windowArgs. These control whether menu, toolbars and statusbar
+    //are visible, whether the window should be on top or not and whether it should
+    //be fullscreen. The location bar is visible by default, but there's a setting
+    //to hide it (for security concerns, there's no UI to toggle this setting: the
+    //user should manually edit the configuration file)
     if (!windowArgs.isMenuBarVisible()) {
         mainWindow->menuBar()->hide();
         mainWindow->m_paShowMenuBar->setChecked(false);
@@ -2732,9 +2745,6 @@ void KonqMainWindow::slotBackAboutToShow()
     }
 }
 
-/**
- * Fill the closed tabs action menu before it's shown
- */
 void KonqMainWindow::slotClosedItemsListAboutToShow()
 {
     QMenu *popup = m_paClosedItems->popupMenu();
@@ -2755,8 +2765,6 @@ void KonqMainWindow::slotClosedItemsListAboutToShow()
     KAcceleratorManager::manage(popup);
 }
 
-/**
- */
 void KonqMainWindow::slotSessionsListAboutToShow()
 {
     QMenu *popup = m_paSessions->menu();
@@ -4654,7 +4662,7 @@ void KonqMainWindow::saveMainWindowSettings(KConfigGroup &config)
 
     KParts::MainWindow::saveMainWindowSettings(config);
     if (m_currentView) {
-        /// @Note status bar isn't direct child to main window
+        /// @note status bar isn't direct child to main window
         config.writeEntry("StatusBar", m_currentView->frame()->statusbar()->isHidden() ? "Disabled" : "Enabled");
         config.sync();
     }
@@ -5222,6 +5230,20 @@ static void hp_removeCommonPrefix(KCompletionMatches &l, const QString &prefix)
 
 // don't include common prefixes like 'http://', i.e. when s == 'h', include
 // http://hotmail.com but don't include everything just starting with 'http://'
+
+/**
+ * @brief Removes from a list of completion matches for a given string the ones
+ * corresponding to common prefixes
+ *
+ * This is to avoid showing, for example, all `http` URLS when the string to complete
+ * starts with `h`.
+ *
+ * @param [inout] matches all the available completions for @p s. This function
+ * modifies this list removing from it all those matches which starts with a common
+ * prefixes which in turn starts with @p s. Common prefixes include `http://`,
+ * `https://`, `www.` and so on
+ * @param s the string to complete
+ */
 static void hp_checkCommonPrefixes(KCompletionMatches &matches, const QString &s)
 {
     static const char *const prefixes[] = {
@@ -5382,7 +5404,7 @@ KonqFrameBase::FrameType KonqMainWindow::frameType() const
     return KonqFrameBase::MainWindow;
 }
 
-KonqFrameBase *KonqMainWindow::childFrame()const
+KonqFrameBase *KonqMainWindow::childFrame() const
 {
     return m_pChildFrame;
 }
@@ -5409,15 +5431,6 @@ bool KonqMainWindow::isMimeTypeAssociatedWithSelf(const QString &/*mimeType*/, c
     // 2) check what OpenUrlJob is going to do before calling it.
     return (offer && (offer->desktopEntryName() == QLatin1String("konqueror") ||
                       offer->exec().trimmed().startsWith(QLatin1String("kfmclient"))));
-}
-
-bool KonqMainWindow::refuseExecutingKonqueror(const QString &mimeType)
-{
-    if (activeViewsNotLockedCount() > 0) {   // if I lock the only view, then there's no error: open links in a new window
-        KMessageBox::error(this, i18n("There appears to be a configuration error. You have associated Konqueror with %1, but it cannot handle this file type.", mimeType));
-        return true; // we refuse indeed
-    }
-    return false; // no error
 }
 
 bool KonqMainWindow::event(QEvent *e)

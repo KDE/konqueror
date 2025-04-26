@@ -23,7 +23,7 @@ namespace KonqParts
 class PluginPrivate;
 
 /**
- * @class Plugin plugin.h <KParts/Plugin>
+ * @class Plugin
  *
  * @short A plugin is the way to add actions to an existing KParts application,
  * or to a Part.

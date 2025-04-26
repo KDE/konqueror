@@ -30,19 +30,38 @@ static QPixmap statusBarIcon(const char *name)
 }
 
 /**
- * A CheckBox with a special paintEvent(). It looks like the
- * unchecked radiobutton in b2k style if unchecked and contains a little
- * anchor if checked.
+ * @brief A special checkbox used to display the linked status of a view
+ *
+ * When it's checked, it displays a little chain, while when unchecked it displays
+ * a small empty square.
  */
 class KonqCheckBox : public QCheckBox
 {
-    //Q_OBJECT // for classname. not used, and needs a moc
 public:
+
+    /**
+     * @brief Constructor
+     *
+     * @param parent the parent widget
+     */
     explicit KonqCheckBox(QWidget *parent = nullptr)
         : QCheckBox(parent) {}
 protected:
-    void paintEvent(QPaintEvent *) override;
 
+    /**
+     * @brief Override of `QCheckBox::paintEvent()`
+     *
+     * It draws the appropriate pixmap depending on whether the checkbox is checked or not
+     *
+     * @param ev the paint event
+     */
+    void paintEvent(QPaintEvent *ev) override;
+
+    /**
+     * @brief Override fo `QCheckBox::sizeHint()`
+     *
+     * @return a QSize with the same size as the pixmap increased by a little bit for the border
+     */
     QSize sizeHint() const override
     {
         QSize size = connectPixmap().size();
@@ -54,12 +73,22 @@ protected:
     }
 
 private:
+    /**
+     * @brief The pixmap to use when the checkbox is checked
+     *
+     * @return The pixmap to use when the checkbox is checked
+     */
     const QPixmap &connectPixmap() const
     {
         static QPixmap indicator_connect(statusBarIcon("indicator_connect"));
         return indicator_connect;
     }
 
+    /**
+     * @brief The pixmap to use when the checkbox is not checked
+     *
+     * @return The pixmap to use when the checkbox is not checked
+     */
     const QPixmap &noConnectPixmap() const
     {
         static QPixmap indicator_noconnect(statusBarIcon("indicator_noconnect"));
@@ -87,8 +116,6 @@ KonqFrameStatusBar::KonqFrameStatusBar(KonqFrame *_parent)
 {
     setSizeGripEnabled(false);
 
-    // TODO remove active view indicator and use a different bg color like dolphin does?
-    // Works nicely for file management, but not so much with other parts...
     m_led = new QLabel(this);
     m_led->setAlignment(Qt::AlignCenter);
     m_led->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));

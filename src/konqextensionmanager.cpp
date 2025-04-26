@@ -32,14 +32,17 @@
 #include "konqview.h"
 #include "konqmainwindow.h"
 
+/**
+ * @brief Class used as D-pointer by KonqExtensionManager
+ */
 class KonqExtensionManagerPrivate
 {
 public:
-    KPluginWidget *pluginSelector;
-    KonqMainWindow *mainWindow;
-    KParts::ReadOnlyPart *activePart;
-    QDialogButtonBox *buttonBox;
-    bool isChanged = false;
+    KPluginWidget *pluginSelector; //!< The widget to display the list of plugins
+    KonqMainWindow *mainWindow; //!< The main window
+    KParts::ReadOnlyPart *activePart; //!< The part to choose plugins for
+    QDialogButtonBox *buttonBox; //!< The button box of the dialog
+    bool isChanged = false; //!< Whether there are changes which haven't been applied
 };
 
 KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *mainWindow, KParts::ReadOnlyPart *activePart)
