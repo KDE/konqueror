@@ -82,10 +82,12 @@ private:
     QSize computeSizeHint() const;
 
     /**
-     * @brief Removes a tab with settings which don't apply to Konqueror from the General Dolphin KCM
+     * @brief Adjusts the General Dolphin KCM to better integrate it with Konqueror
      *
-     * The General Dolphin KCM contains a tab which entries which only applies to Dolphin itself, so
-     * we remove that tab to avoid confusing the user.
+     * This function does two things:
+     * - it removes from the KCM a tab which contains options which Konqueror doesn't use,
+     * as not to confuse the user
+     * - it changes the name and header of the KCM to make it more descriptive
      */
     void fixDolphinGeneralPage(KPageWidgetItem *it);
 

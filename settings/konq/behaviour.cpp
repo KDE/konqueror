@@ -33,7 +33,9 @@ KBehaviourOptions::KBehaviourOptions(QObject *parent, const KPluginMetaData &md,
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(widget());
 
-    QGroupBox *miscGb = new QGroupBox(i18n("Misc Options"), widget());
+//TODO Currently, the option for showing each folder in a different window doesn't work, so the code to display the corresponding widgets is disabled. Find out whether it's possible to make the option work again
+#if 0
+    QGroupBox *miscGb = new QGroupBox(widget());
     QHBoxLayout *miscHLayout = new QHBoxLayout;
     QVBoxLayout *miscLayout = new QVBoxLayout;
 
@@ -65,6 +67,7 @@ KBehaviourOptions::KBehaviourOptions(QObject *parent, const KPluginMetaData &md,
     miscGb->setLayout(miscHLayout);
 
     mainLayout->addWidget(miscGb);
+#endif
 
     cbShowDeleteCommand = new QCheckBox(i18n("Show 'Delete' me&nu entries which bypass the trashcan"), widget());
     mainLayout->addWidget(cbShowDeleteCommand);
@@ -74,8 +77,6 @@ KBehaviourOptions::KBehaviourOptions(QObject *parent, const KPluginMetaData &md,
                                            "on the desktop and in the file manager's menus and context menus. "
                                            "You can always delete files by holding the Shift key "
                                            "while calling 'Move to Trash'."));
-
-    mainLayout->addStretch();
 }
 
 KBehaviourOptions::~KBehaviourOptions()
@@ -84,8 +85,11 @@ KBehaviourOptions::~KBehaviourOptions()
 
 void KBehaviourOptions::load()
 {
+//See TODO at the beginning of constructor
+#if 0
     cbNewWin->setChecked(Konq::Settings::alwaysNewWin());
     updateWinPixmap(cbNewWin->isChecked());
+#endif
 
     KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig(QStringLiteral("kdeglobals"), KConfig::NoGlobals);
     KConfigGroup cg2(globalconfig, "KDE");
@@ -94,15 +98,21 @@ void KBehaviourOptions::load()
 
 void KBehaviourOptions::defaults()
 {
+//See TODO at the beginning of constructor
+#if 0
     cbNewWin->setChecked(false);
+#endif
 
     cbShowDeleteCommand->setChecked(false);
 }
 
 void KBehaviourOptions::save()
 {
+//See TODO at the beginning of constructor
+#if 0
     Konq::Settings::setAlwaysNewWin(cbNewWin->isChecked());
     Konq::Settings::self()->save();
+#endif
 
     KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig(QStringLiteral("kdeglobals"), KConfig::NoGlobals);
     KConfigGroup cg2(globalconfig, "KDE");
@@ -117,11 +127,15 @@ void KBehaviourOptions::save()
 
 void KBehaviourOptions::updateWinPixmap(bool b)
 {
+//See TODO at the beginning of constructor
+    Q_UNUSED(b)
+#if 0
     if (b) {
         winPixmap->setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kcontrol/pics/overlapping.png"))));
     } else {
         winPixmap->setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kcontrol/pics/onlyone.png"))));
     }
+#endif
 }
 
 #include "behaviour.moc"

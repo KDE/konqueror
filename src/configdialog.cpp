@@ -7,6 +7,7 @@
 #include "configdialog.h"
 
 #include <KCModule>
+#include <KLocalizedString>
 
 #include <QTabWidget>
 
@@ -68,6 +69,9 @@ void Konq::ConfigDialog::fixDolphinGeneralPage(KPageWidgetItem *it)
     if(tw && tw->count() > 0) {
         tw->removeTab(0);
     }
+    QString name = i18nc("@title:tab The file manager behavior tab. Also used in the list of tabs for consistency", "File Manager Behavior");
+    it->setName(name);
+    it->setHeader(name);
 }
 
 QSize Konq::ConfigDialog::computeSizeHint() const
