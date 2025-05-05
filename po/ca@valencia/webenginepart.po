@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:42+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2024-11-04 09:47+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -686,7 +686,6 @@ msgstr "&Idiomes"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/ui/credentialsdetailswidget.ui:34
-#: src/webenginecustomizecacheablefieldsdlg.ui:44
 #, kde-format
 msgid "&Show passwords"
 msgstr "Mo&stra les contrasenyes"
@@ -882,15 +881,23 @@ msgstr "altres"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, kde-format
-msgid "Choose fields to remember"
-msgstr "Escolliu els camps que s'han de recordar"
+#, fuzzy, kde-format
+#| msgid "&Customize Fields to Memorize for This Page..."
+msgid "Customize Fields To Store"
+msgstr "&Personalitza els camps que s'han de memoritzar d'esta pàgina…"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
 #, kde-format
 msgid "Switch between displaying passwords or placeholders"
 msgstr "Canvia entre mostrar les contrasenyes o els marcadors de posició"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
+#: src/webenginecustomizecacheablefieldsdlg.ui:44
+#, fuzzy, kde-format
+#| msgid "&Show passwords"
+msgid "Show &passwords"
+msgstr "Mo&stra les contrasenyes"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
@@ -900,9 +907,9 @@ msgstr "Mostra informació avançada quant als camps"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
-#: src/webenginepartcertificateerrordlg.ui:30
-#, kde-format
-msgid "&Show details"
+#, fuzzy, kde-format
+#| msgid "&Show details"
+msgid "Show field &details"
 msgstr "Mo&stra els detalls"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -919,9 +926,10 @@ msgstr "Emmagatzema les dades del formulari en KWallet en tancar el diàleg"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
-#, kde-format
-msgid "&Immediately memorize form data"
-msgstr "Memoritza &immediatament les dades del formulari"
+#, fuzzy, kde-format
+#| msgid "Store form data in KWallet when closing the dialog"
+msgid "&Store the contents of selected fields when closing the dialog"
+msgstr "Emmagatzema les dades del formulari en KWallet en tancar el diàleg"
 
 #: src/webenginepage.cpp:164
 #, kde-format
@@ -1131,7 +1139,7 @@ msgstr "Establix la &codificació"
 msgid "View Do&cument Source"
 msgstr "Visualitza el codi font del do&cument"
 
-#: src/webenginepart.cpp:257 src/webenginepart.cpp:565
+#: src/webenginepart.cpp:257 src/webenginepart.cpp:566
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
@@ -1147,12 +1155,12 @@ msgstr ""
 "<h3>Busca el text</h3>Mostra un diàleg que us permet buscar text en la "
 "pàgina mostrada."
 
-#: src/webenginepart.cpp:563
+#: src/webenginepart.cpp:564
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "La informació SSL d'este lloc pareix corrupta."
 
-#: src/webenginepart.cpp:644
+#: src/webenginepart.cpp:645
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1160,7 +1168,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "Adreça electrònica: "
 
-#: src/webenginepart.cpp:673
+#: src/webenginepart.cpp:674
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1168,7 +1176,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - CC: "
 
-#: src/webenginepart.cpp:675
+#: src/webenginepart.cpp:676
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1176,7 +1184,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - BCC: "
 
-#: src/webenginepart.cpp:677
+#: src/webenginepart.cpp:678
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1184,91 +1192,97 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Assumpte: "
 
-#: src/webenginepart.cpp:681 src/webenginepart.cpp:692
+#: src/webenginepart.cpp:682 src/webenginepart.cpp:693
 #, kde-format
 msgid " (In new window)"
 msgstr " (En una finestra nova)"
 
-#: src/webenginepart.cpp:690
+#: src/webenginepart.cpp:691
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (Al marc origen)"
 
-#: src/webenginepart.cpp:756
+#: src/webenginepart.cpp:757
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Voleu buscar <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:757
+#: src/webenginepart.cpp:758
 #, kde-format
 msgid "Internet Search"
 msgstr "Busca en Internet"
 
-#: src/webenginepart.cpp:757
+#: src/webenginepart.cpp:758
 #, kde-format
 msgid "&Search"
 msgstr "Bu&sca"
 
-#: src/webenginepart.cpp:870
+#: src/webenginepart.cpp:871
 #, kde-format
 msgid "Close window?"
 msgstr "Tanque la finestra?"
 
-#: src/webenginepart.cpp:870
+#: src/webenginepart.cpp:871
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Es requerix confirmació"
 
-#: src/webenginepart.cpp:947
+#: src/webenginepart.cpp:948
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 "<html>Voleu que %1 recorde la informació de connexió per a <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1018
+#: src/webenginepart.cpp:1019
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
-msgid "&Fill forms now"
-msgstr "Emplena ara els &formularis"
+msgid "&Fill In Credentials"
+msgstr ""
 
-#: src/webenginepart.cpp:1023
+#: src/webenginepart.cpp:1024
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
-msgid "Look Again for Forms"
-msgstr "Torna a buscar formularis"
+msgid "&Search Page for Credential Requests"
+msgstr ""
 
-#: src/webenginepart.cpp:1027
+#: src/webenginepart.cpp:1028
 #, kde-format
-msgid "&Memorize Passwords in This Page Now"
-msgstr "&Memoritza ara les contrasenyes d'esta pàgina"
+msgctxt "Store in KWallet the current content of the fields"
+msgid "&Store Credentials Now"
+msgstr ""
 
-#: src/webenginepart.cpp:1031
-#, kde-format
-msgid "&Customize Fields to Memorize for This Page..."
+#: src/webenginepart.cpp:1032
+#, fuzzy, kde-format
+#| msgid "&Customize Fields to Memorize for This Page..."
+msgctxt "Shows a dialog where the use can choose which fields to store"
+msgid "&Customize Credentials Settings for Page..."
 msgstr "&Personalitza els camps que s'han de memoritzar d'esta pàgina…"
 
-#: src/webenginepart.cpp:1035
-#, kde-format
-msgid "Remove Customized Memorization Settings for This Page"
+#: src/webenginepart.cpp:1036
+#, fuzzy, kde-format
+#| msgid "Remove Customized Memorization Settings for This Page"
+msgid "Reset Custom Credential Settings for Page"
 msgstr "Elimina la configuració memoritzada de personalització d'esta pàgina"
 
-#: src/webenginepart.cpp:1039
-#, kde-format
-msgid "&Allow Password Caching for This Site"
+#: src/webenginepart.cpp:1040
+#, fuzzy, kde-format
+#| msgid "&Allow Password Caching for This Site"
+msgid "&Allow Credential Caching for This Page"
 msgstr "Permet l'ús de la memòria c&au de contrasenyes per a este lloc"
 
-#: src/webenginepart.cpp:1043
-#, kde-format
-msgid "Remove All Memorized Passwords for This Site"
+#: src/webenginepart.cpp:1044
+#, fuzzy, kde-format
+#| msgid "Remove All Memorized Passwords for This Site"
+msgid "Remove All Stored Passwords for This Site"
 msgstr "Elimina totes les contrasenyes memoritzades d'este lloc"
 
-#: src/webenginepart.cpp:1047
+#: src/webenginepart.cpp:1048
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Inicia el gestor de carteres"
 
-#: src/webenginepart.cpp:1051
+#: src/webenginepart.cpp:1052
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Tanca la cartera"
@@ -1304,7 +1318,7 @@ msgid "&Credential management"
 msgstr "Gestió de &credencials"
 
 #. i18n: ectx: ToolBar (htmlToolBar)
-#: src/webenginepart.rc:47
+#: src/webenginepart.rc:49
 #, kde-format
 msgid "HTML Toolbar"
 msgstr "Barra d'eines HTML"
@@ -1356,6 +1370,12 @@ msgstr "S'ha produït un error del certificat"
 #, kde-format
 msgid "Dialog"
 msgstr "Diàleg"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showDetails)
+#: src/webenginepartcertificateerrordlg.ui:30
+#, kde-format
+msgid "&Show details"
+msgstr "Mo&stra els detalls"
 
 #. i18n: ectx: property (title), widget (QGroupBox, details)
 #: src/webenginepartcertificateerrordlg.ui:50
@@ -1624,3 +1644,20 @@ msgstr ""
 "li><li><b>ID del camp: </b>%3</li><li><b>El camp és de només lectura: </b>"
 "%4</li><li><b>El camp està habilitat: </b>%5</li><li><b>La compleció "
 "automàtica està habilitada: </b>%6</li></ul>"
+
+#~ msgid "Choose fields to remember"
+#~ msgstr "Escolliu els camps que s'han de recordar"
+
+#~ msgid "&Immediately memorize form data"
+#~ msgstr "Memoritza &immediatament les dades del formulari"
+
+#~ msgctxt "Fill the Forms with Data from KWallet"
+#~ msgid "&Fill forms now"
+#~ msgstr "Emplena ara els &formularis"
+
+#~ msgctxt "Scans again the page to detect forms to fill"
+#~ msgid "Look Again for Forms"
+#~ msgstr "Torna a buscar formularis"
+
+#~ msgid "&Memorize Passwords in This Page Now"
+#~ msgstr "&Memoritza ara les contrasenyes d'esta pàgina"

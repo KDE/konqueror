@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2010-11-08 11:18+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -19,17 +19,12 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "X-Language: km-KH\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "ជម្រើស​ផ្សេងៗ"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "បើក​ថត​ក្នុង​បង្អួច​ផ្សេង​គ្នា​"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -38,12 +33,12 @@ msgstr ""
 "បើ​បាន​ធីក​ជម្រើស​នេះ Konqueror នឹង​បើក​បង្អួច​ថ្មី​មួយ នៅ​ពេល​ដែល​អ្នក​បើក​ថត​មួយ ប្រសើរ​ជាង​ការ​បង្ហាញ​"
 "មាតិកា​ថត​នៅ​ក្នុង​បង្អួច​បច្ចុប្បន្ន ។"
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "បង្ហាញ​ធាតុ​ម៉ឺនុយ​ 'លុប' ដែល​ចម្លង​ទៅ​ធុងសំរាម"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -53,6 +48,9 @@ msgstr ""
 "ធីក​វា​នេះ បើ​អ្នក​ចង់​ឲ្យ​ពាក្យ​បញ្ជា​ម៉ឺនុយ 'លុប' បង្ហាញ​លើ​ផ្ទៃតុ និងក្នុង​ម៉ឺនុយ​បរិបទ​របស់​កម្មវិធី​គ្រប់គ្រង​"
 "ឯកសារ ។ អ្នក​អាច​លុប​ឯកសារ​ជានិច្ច ​ដោយ​សង្កត់​គ្រាប់​ចុច​ប្តូរ (​Shift) ខណៈ​ពេល​កំពុង​ប្រើ 'ផ្លាស់ទី​ទៅ​ធុង​"
 "សំរាម' ។"
+
+#~ msgid "Misc Options"
+#~ msgstr "ជម្រើស​ផ្សេងៗ"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2005-02-14 04:22-0800\n"
 "Last-Translator: Tamil PC <tamilpc@ambalam.com>\n"
 "Language-Team: Tamil <en@li.org>\n"
@@ -17,17 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "இதர விருப்பங்கள்"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "அடைவுகளைத் தனிச் சாளரங்களில் திற"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, fuzzy, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -36,13 +31,13 @@ msgstr ""
 "இவ் விருப்பத்தை தேர்வு செய்து, நீங்கள் ஒரு அடைவை க்ளிக் செய்தால் கான்கொரர் உங்கள் பழைய "
 "சாளரத்தில் அந்த அடைவை காட்டுவதற்கு பதில், ஒரு புதிய சாளரத்தை திறக்கும்."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, fuzzy, kde-format
 #| msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "குப்பைத்தொட்டிக்கு செல்லும் 'நீக்கு' உரை பட்டியல் உள்ளீடுகளை காட்டு"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if you want 'Delete' menu commands to be displayed on the "
@@ -56,6 +51,9 @@ msgstr ""
 "மேல்மேசை, கோப்பு மேலாளரின் பட்டிகள் மற்றும் சூழல் பட்டியலில் 'நீக்கு' பட்டியல் கட்டளைகள் "
 "தெரியவேண்டாமானால் இதை தேர்ந்தெடுக்கவும். நீங்கள் கோப்புகளை ஷிப்ட் விசை பிடித்துக்கொண்டு "
 "'குப்பைத்தொட்டிக்கு நகர்த்து' என்பதை க்ளிக் செய்வதன் மூலம் நீக்கலாம்."
+
+#~ msgid "Misc Options"
+#~ msgstr "இதர விருப்பங்கள்"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

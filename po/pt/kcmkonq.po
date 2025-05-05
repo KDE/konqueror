@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2011-05-10 10:15+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -14,17 +14,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-POFile-SpellExtra: netscape\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "Opções Diversas"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "Abrir as pastas em &janelas separadas"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -34,12 +29,12 @@ msgstr ""
 "carrega numa pasta, em vez de mostrar o conteúdo dessa pasta na janela "
 "actual."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "Mostrar os ite&ns 'Apagar' que não usam o caixote do lixo"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -50,6 +45,9 @@ msgstr ""
 "mostrados no ecrã e nos menus normais e de contexto do gestor de ficheiros. "
 "Poderá sempre remover os ficheiros se mantiver a tecla Shift carregada ao "
 "invocar o 'Enviar para o Lixo'."
+
+#~ msgid "Misc Options"
+#~ msgstr "Opções Diversas"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

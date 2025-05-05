@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:42+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-25 19:45+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -675,7 +675,6 @@ msgstr "&भाषा"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/ui/credentialsdetailswidget.ui:34
-#: src/webenginecustomizecacheablefieldsdlg.ui:44
 #, kde-format
 msgid "&Show passwords"
 msgstr "&गुप्तशब्दान् दर्शयतु"
@@ -865,15 +864,23 @@ msgstr "इतर"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, kde-format
-msgid "Choose fields to remember"
-msgstr "स्मर्तुं क्षेत्राणि चिनुत"
+#, fuzzy, kde-format
+#| msgid "&Customize Fields to Memorize for This Page..."
+msgid "Customize Fields To Store"
+msgstr "&अस्य पृष्ठस्य कृते कण्ठस्थं कर्तुं क्षेत्राणि अनुकूलितं कुर्वन्तु..."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
 #, kde-format
 msgid "Switch between displaying passwords or placeholders"
 msgstr "गुप्तशब्दान् अथवा स्थानधारकान् प्रदर्शयितुं मध्ये स्विच् कुर्वन्तु"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
+#: src/webenginecustomizecacheablefieldsdlg.ui:44
+#, fuzzy, kde-format
+#| msgid "&Show passwords"
+msgid "Show &passwords"
+msgstr "&गुप्तशब्दान् दर्शयतु"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
@@ -883,9 +890,9 @@ msgstr "क्षेत्राणां विषये उन्नतसू�
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
-#: src/webenginepartcertificateerrordlg.ui:30
-#, kde-format
-msgid "&Show details"
+#, fuzzy, kde-format
+#| msgid "&Show details"
+msgid "Show field &details"
 msgstr "&विवरणं दर्शयतु"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -902,9 +909,10 @@ msgstr "संवादं बन्दं कुर्वन् KWallet मध�
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
-#, kde-format
-msgid "&Immediately memorize form data"
-msgstr "&तत्क्षणं रूपदत्तांशं कण्ठस्थं कुर्वन्तु"
+#, fuzzy, kde-format
+#| msgid "Store form data in KWallet when closing the dialog"
+msgid "&Store the contents of selected fields when closing the dialog"
+msgstr "संवादं बन्दं कुर्वन् KWallet मध्ये प्रपत्रदत्तांशं संग्रहयन्तु"
 
 #: src/webenginepage.cpp:164
 #, kde-format
@@ -1111,7 +1119,7 @@ msgstr "सेट् &एन्कोडिंग"
 msgid "View Do&cument Source"
 msgstr "Do&cument स्रोतः पश्यन्तु"
 
-#: src/webenginepart.cpp:257 src/webenginepart.cpp:565
+#: src/webenginepart.cpp:257 src/webenginepart.cpp:566
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
@@ -1126,12 +1134,12 @@ msgid ""
 msgstr ""
 "<h3>पाठं ज्ञातव्यम्</h3> एकं संवादं दर्शयति यत् भवन्तः प्रदर्शितपृष्ठे पाठं अन्वेष्टुं शक्नुवन्ति ।"
 
-#: src/webenginepart.cpp:563
+#: src/webenginepart.cpp:564
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "अस्य साइट् कृते SSL सूचना दूषिता दृश्यते ।"
 
-#: src/webenginepart.cpp:644
+#: src/webenginepart.cpp:645
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1139,7 +1147,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "ईमेल : "
 
-#: src/webenginepart.cpp:673
+#: src/webenginepart.cpp:674
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1147,7 +1155,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - सी. सी. . "
 
-#: src/webenginepart.cpp:675
+#: src/webenginepart.cpp:676
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1155,7 +1163,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - बी.सी.सी. "
 
-#: src/webenginepart.cpp:677
+#: src/webenginepart.cpp:678
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1163,90 +1171,96 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - विषयः: "
 
-#: src/webenginepart.cpp:681 src/webenginepart.cpp:692
+#: src/webenginepart.cpp:682 src/webenginepart.cpp:693
 #, kde-format
 msgid " (In new window)"
 msgstr " (नवविण्डो मध्ये)"
 
-#: src/webenginepart.cpp:690
+#: src/webenginepart.cpp:691
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (मातापितृचतुष्कोणे)"
 
-#: src/webenginepart.cpp:756
+#: src/webenginepart.cpp:757
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt><b>%1</b> अन्वेष्टुम् इच्छति वा ?</qt>"
 
-#: src/webenginepart.cpp:757
+#: src/webenginepart.cpp:758
 #, kde-format
 msgid "Internet Search"
 msgstr "अन्तर्जालसन्धानम्"
 
-#: src/webenginepart.cpp:757
+#: src/webenginepart.cpp:758
 #, kde-format
 msgid "&Search"
 msgstr "&अन्वेषण"
 
-#: src/webenginepart.cpp:870
+#: src/webenginepart.cpp:871
 #, kde-format
 msgid "Close window?"
 msgstr "खिडकीं पिधाय?"
 
-#: src/webenginepart.cpp:870
+#: src/webenginepart.cpp:871
 #, kde-format
 msgid "Confirmation Required"
 msgstr "पुष्टिकरणम् आवश्यकम्"
 
-#: src/webenginepart.cpp:947
+#: src/webenginepart.cpp:948
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>किं भवान् इच्छति यत् %1 <b>%2</b> कृते प्रवेशसूचना स्मर्तुं शक्नोति ?</html>"
 
-#: src/webenginepart.cpp:1018
+#: src/webenginepart.cpp:1019
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
-msgid "&Fill forms now"
-msgstr "&अधुना प्रपत्राणि पूरयन्तु"
+msgid "&Fill In Credentials"
+msgstr ""
 
-#: src/webenginepart.cpp:1023
+#: src/webenginepart.cpp:1024
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
-msgid "Look Again for Forms"
-msgstr "पुनः रूपाणि पश्यन्तु"
+msgid "&Search Page for Credential Requests"
+msgstr ""
 
-#: src/webenginepart.cpp:1027
+#: src/webenginepart.cpp:1028
 #, kde-format
-msgid "&Memorize Passwords in This Page Now"
-msgstr "&अधुना अस्मिन् पृष्ठे गुप्तशब्दान् कण्ठस्थं कुर्वन्तु"
+msgctxt "Store in KWallet the current content of the fields"
+msgid "&Store Credentials Now"
+msgstr ""
 
-#: src/webenginepart.cpp:1031
-#, kde-format
-msgid "&Customize Fields to Memorize for This Page..."
+#: src/webenginepart.cpp:1032
+#, fuzzy, kde-format
+#| msgid "&Customize Fields to Memorize for This Page..."
+msgctxt "Shows a dialog where the use can choose which fields to store"
+msgid "&Customize Credentials Settings for Page..."
 msgstr "&अस्य पृष्ठस्य कृते कण्ठस्थं कर्तुं क्षेत्राणि अनुकूलितं कुर्वन्तु..."
 
-#: src/webenginepart.cpp:1035
-#, kde-format
-msgid "Remove Customized Memorization Settings for This Page"
+#: src/webenginepart.cpp:1036
+#, fuzzy, kde-format
+#| msgid "Remove Customized Memorization Settings for This Page"
+msgid "Reset Custom Credential Settings for Page"
 msgstr "अस्य पृष्ठस्य कृते अनुकूलितं कण्ठस्थीकरणसेटिंग्स् निष्कासयन्तु"
 
-#: src/webenginepart.cpp:1039
-#, kde-format
-msgid "&Allow Password Caching for This Site"
+#: src/webenginepart.cpp:1040
+#, fuzzy, kde-format
+#| msgid "&Allow Password Caching for This Site"
+msgid "&Allow Credential Caching for This Page"
 msgstr "&अस्य साइट् कृते Password Caching इत्यस्य अनुमतिं ददातु"
 
-#: src/webenginepart.cpp:1043
-#, kde-format
-msgid "Remove All Memorized Passwords for This Site"
+#: src/webenginepart.cpp:1044
+#, fuzzy, kde-format
+#| msgid "Remove All Memorized Passwords for This Site"
+msgid "Remove All Stored Passwords for This Site"
 msgstr "अस्य साइट् कृते सर्वाणि कण्ठस्थानि गुप्तशब्दानि निष्कासयन्तु"
 
-#: src/webenginepart.cpp:1047
+#: src/webenginepart.cpp:1048
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Launch Wallet Manager"
 
-#: src/webenginepart.cpp:1051
+#: src/webenginepart.cpp:1052
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&बटुआ बन्द करो"
@@ -1282,7 +1296,7 @@ msgid "&Credential management"
 msgstr "&प्रमाणपत्र प्रबन्धन"
 
 #. i18n: ectx: ToolBar (htmlToolBar)
-#: src/webenginepart.rc:47
+#: src/webenginepart.rc:49
 #, kde-format
 msgid "HTML Toolbar"
 msgstr "HTML Toolbar इति"
@@ -1334,6 +1348,12 @@ msgstr "प्रमाणपत्रदोषः"
 #, kde-format
 msgid "Dialog"
 msgstr "संवादः"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showDetails)
+#: src/webenginepartcertificateerrordlg.ui:30
+#, kde-format
+msgid "&Show details"
+msgstr "&विवरणं दर्शयतु"
 
 #. i18n: ectx: property (title), widget (QGroupBox, details)
 #: src/webenginepartcertificateerrordlg.ui:50
@@ -1601,3 +1621,20 @@ msgstr ""
 "<ul><li><b>क्षेत्रस्य आन्तरिकनाम:</b> %1</li><li> <b>क्षेत्रप्रकारः</b> %2</li><li> "
 "<b>क्षेत्रपरिचयः</b> %3</li><li> <b>क्षेत्रं केवलं पठ्यते:</b> %4</li><li> <b>क्षेत्रं "
 "सक्षमम् अस्ति:</b> %5</li><li> <b>स्वतःसमापनं सक्षमम् अस्ति:</b> %6</li></ul>"
+
+#~ msgid "Choose fields to remember"
+#~ msgstr "स्मर्तुं क्षेत्राणि चिनुत"
+
+#~ msgid "&Immediately memorize form data"
+#~ msgstr "&तत्क्षणं रूपदत्तांशं कण्ठस्थं कुर्वन्तु"
+
+#~ msgctxt "Fill the Forms with Data from KWallet"
+#~ msgid "&Fill forms now"
+#~ msgstr "&अधुना प्रपत्राणि पूरयन्तु"
+
+#~ msgctxt "Scans again the page to detect forms to fill"
+#~ msgid "Look Again for Forms"
+#~ msgstr "पुनः रूपाणि पश्यन्तु"
+
+#~ msgid "&Memorize Passwords in This Page Now"
+#~ msgstr "&अधुना अस्मिन् पृष्ठे गुप्तशब्दान् कण्ठस्थं कुर्वन्तु"

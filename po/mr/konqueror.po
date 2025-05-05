@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2013-03-28 15:17+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -32,6 +32,15 @@ msgid "Your emails"
 msgstr ""
 "sandeep.shedmake@gmail.com, \n"
 "chetan@kompkin.com"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "फाईल व्यवस्थापन"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -1952,9 +1961,6 @@ msgstr "असे साठवा..."
 #~ msgstr ""
 #~ "सदोषीत URL\n"
 #~ "%1"
-
-#~ msgid "File Management"
-#~ msgstr "फाईल व्यवस्थापन"
 
 #~ msgid "Web Browsing"
 #~ msgstr "वेब ब्राऊजिंग"

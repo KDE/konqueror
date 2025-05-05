@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2024-11-12 21:03+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -35,6 +35,15 @@ msgid "Your emails"
 msgstr ""
 "andris.m@delfi.lv, maris.kde@gmail.com, nitalynx@gmail.com, toms."
 "trasuns@posteo.net"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Datņu pārvaldība"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2087,9 +2096,6 @@ msgstr "Saglabāt kā"
 #~ msgstr ""
 #~ "Kļūdains URL\n"
 #~ "%1"
-
-#~ msgid "File Management"
-#~ msgstr "Datņu pārvaldība"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Tīmekļa pārlūkošana"

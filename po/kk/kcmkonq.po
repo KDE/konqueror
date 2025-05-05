@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2011-06-14 06:22+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -21,17 +21,12 @@ msgstr ""
 "\n"
 "\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "Басқа параметрлері"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "Қапшықтар бөлек &терезелерде ашылсын"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -40,13 +35,13 @@ msgstr ""
 "Бұл белгісі қойылса, Konqueror қапшықтың мазмұнын назардағы терезеде "
 "көрсетудің орнына, оған бөлек терезе ашады."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr ""
 "Өшірілінгендер шелегіне салмай жоятын, 'Жою' контекст мәзірі&нің жолы болсын"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -56,6 +51,9 @@ msgstr ""
 "Үстел жане файл менеджерінің мәзірінде 'Жою' командасы болсын десеңіз, осы "
 "белгіні қойыңыз. Сонымен қатар, әрқашанда, бұл әрекетті Shift пернесін басып "
 "тұрып, 'Шелекке тастау' дегенмен істей аласыз."
+
+#~ msgid "Misc Options"
+#~ msgstr "Басқа параметрлері"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

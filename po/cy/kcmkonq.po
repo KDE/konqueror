@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2004-07-03 17:50+0100\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -24,17 +24,12 @@ msgstr ""
 "\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "Dewisiadau Amrywiol"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "Agor plygyll mewn &ffenestri ar wahân"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, fuzzy, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -44,12 +39,12 @@ msgstr ""
 "gyfeiriadur, yn hytrach na dangos cynnwys y blygell hwnnw yn y ffenestr "
 "gyfredol."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, fuzzy, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "Dangos cofnodion &dewislen 'Dileu' sy'n osgoi'r bin sbwriel"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, fuzzy, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -58,6 +53,9 @@ msgid ""
 msgstr ""
 "Dadfritho hyn os na hoffech gorchmynion dewislen 'Dileu' i'w dangos ar y "
 "penbwrdd ac yn newislenni y trefnydd ffeiliau neu ddewislenni cyd-destun."
+
+#~ msgid "Misc Options"
+#~ msgstr "Dewisiadau Amrywiol"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

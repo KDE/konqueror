@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -27,6 +27,15 @@ msgstr "Séamus Ó Ciardhuáin,Kevin Scannell"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "seoc@iolfree.ie,kscanne@gmail.com"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Bainisteoireacht Comhad"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2060,9 +2069,6 @@ msgstr "Sábháil Mar..."
 #~ msgstr ""
 #~ "URL míchumtha\n"
 #~ "%1"
-
-#~ msgid "File Management"
-#~ msgstr "Bainisteoireacht Comhad"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Brabhsáil an Ghréasáin"

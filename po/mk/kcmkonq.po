@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2010-01-29 22:27+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -20,17 +20,12 @@ msgstr ""
 "Plural-Forms: Plural-Forms: nplurals=3; plural=n%10==1 ? 0 : n%10==2 ? 1 : "
 "2;\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "Разни опции"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "&Отворај ги папките во посебни прозорци"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -39,7 +34,7 @@ msgstr ""
 "Ако е избрана оваа опција, Konqueror ќе отвори нов прозорец кога ќе отворите "
 "папка, наместо да ја прикажува содржината на таа папка во тековниот прозорец."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, fuzzy, kde-format
 #| msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
@@ -47,7 +42,7 @@ msgstr ""
 "Покажи ги во контексното ме&ни ставките „Избриши“ што ја заобиколуваат "
 "корпата"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if you want 'Delete' menu commands to be displayed on the "
@@ -62,6 +57,9 @@ msgstr ""
 "површината и во менијата и контекстните менија на менаџерот на датотеки. "
 "Датотеките секогаш може да ги избришете со држење на копчето Shift додека "
 "избирате „Премести во корпата“."
+
+#~ msgid "Misc Options"
+#~ msgstr "Разни опции"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

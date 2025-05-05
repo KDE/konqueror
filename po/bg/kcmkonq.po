@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2011-07-12 22:13+0300\n"
 "Last-Translator: Yasen Pramatarov <yasen@lindeas.com>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -18,17 +18,12 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "Допълнителни настройки"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "Отваря&не на директориите в нов прозорец"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -37,12 +32,12 @@ msgstr ""
 "Ако отметката е включена, когато щракнете върху директория тя ще бъде "
 "отворена в нов прозорец, а не в същия."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "Показване на \"&Изтриване\" в менютата, заобикалящо кошчето"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -53,3 +48,6 @@ msgstr ""
 "и контекстните менюта на екрана и във файловия мениджър. Винаги можете да "
 "изтриване файлове, като задържате клавиша \"Shift\" при избиране на "
 "действието \"Преместване в кошчето\"."
+
+#~ msgid "Misc Options"
+#~ msgstr "Допълнителни настройки"

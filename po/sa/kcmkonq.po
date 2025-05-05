@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-25 19:45+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -19,17 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "विविधविकल्पाः"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "पृथक् &windows इत्यत्र समुच्चय उद्घाटयन्तु"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -38,12 +33,12 @@ msgstr ""
 "यदि एषः विकल्पः परीक्षितः अस्ति तर्हि Konqueror नूतनं विण्डो उद्घाटयिष्यति यदा भवान् "
 "पुटं उद्घाटयति, न तु वर्तमानविण्डो मध्ये तस्य पुटस्य सामग्रीं दर्शयति ।"
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "'Delete' me&nu प्रविष्टयः दर्शयन्तु ये कचराकोषं बाईपासं कुर्वन्ति"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -53,3 +48,6 @@ msgstr ""
 "यदि भवान् इच्छति यत् 'Delete' मेन्यू आदेशाः डेस्कटॉप् मध्ये तथा च सञ्चिकाप्रबन्धकस्य मेनूषु "
 "सन्दर्भमेनूषु च प्रदर्शिताः भवेयुः तर्हि एतत् परीक्ष्यताम् । 'Move to Trash' इति आह्वयन् "
 "Shift कीलं धारयित्वा भवान् सर्वदा सञ्चिकाः विलोपयितुं शक्नोति ।"
+
+#~ msgid "Misc Options"
+#~ msgstr "विविधविकल्पाः"

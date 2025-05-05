@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2009-07-31 12:08+0000\n"
 "Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -28,6 +28,15 @@ msgstr "KDE Shqip, Launchpad Contributions: Vilson Gjeci"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-shqip@yahoogroups.com,vilsongjeci@gmail.com"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Administrimi i Skedarëve"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2096,9 +2105,6 @@ msgstr "Ruaje Si..."
 #~ msgstr ""
 #~ "Nëse është e vërtetë, kur hapni një seksion brenda dialogut të seksioneve "
 #~ "tabelat do të hapen në brendësi të dritares ekzistuese."
-
-#~ msgid "File Management"
-#~ msgstr "Administrimi i Skedarëve"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Web Browsing"

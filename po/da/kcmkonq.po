@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2011-05-17 23:16+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -20,17 +20,12 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "Diverse indstillinger"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "Åbn mapper i separate &vinduer"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -39,12 +34,12 @@ msgstr ""
 "Hvis dette er afkrydset, vil Konqueror åbne et nyt vindue, når du åbner en "
 "mappe i stedet for at vise mappens indhold i det nuværende vindue."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "Vis \"Slet\" i me&nupunkter hvilket forbigår papirkurven"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -55,6 +50,9 @@ msgstr ""
 "skrivebordets og filhåndteringens menuer og kontekstmenuer. Du kan altid "
 "slette filer ved at holde Skift-tasten nede mens du trykker på \"Flyt til "
 "papirkurv\"."
+
+#~ msgid "Misc Options"
+#~ msgstr "Diverse indstillinger"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

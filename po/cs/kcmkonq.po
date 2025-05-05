@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2011-06-10 09:57+0200\n"
 "Last-Translator: Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -17,17 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 1.2\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "Různé volby"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "Otevírat složky v &samostatném okně"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -36,12 +31,12 @@ msgstr ""
 "Je-li zvolena tato volba, tak Konqueror bude při otevření složky otevírat "
 "nové okno místo zobrazení obsahu této složky v aktuálním okně."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "Zobrazovat položky &nabídky s přímým mazáním souborů"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -51,3 +46,6 @@ msgstr ""
 "Zaškrtněte toto políčko, pokud si přejete, aby správce souborů a plocha "
 "zobrazovala položky pro přímé mazání souborů. Soubory lze vždy smazat přímo "
 "podržením klávesy 'Shift' při operaci 'Přesunout do koše'."
+
+#~ msgid "Misc Options"
+#~ msgstr "Různé volby"

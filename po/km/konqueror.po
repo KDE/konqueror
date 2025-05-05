@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2012-06-11 14:26+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer\n"
@@ -28,6 +28,15 @@ msgid "Your emails"
 msgstr ""
 "khoemsokhem@open.org.kh,​​mornmet@khmeros.info,sutha@open.org.kh,"
 "ratanak@khmeros.info,sophea@open.org.kh"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "ការ​គ្រប់គ្រង​ឯកសារ​"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2057,9 +2066,6 @@ msgstr "រក្សាទុក​ជា..."
 #~ "If true, when opening a session from within the sessions dialog the tabs "
 #~ "will be opened inside current window."
 #~ msgstr "ប្រសិនបើ​ពិត នៅ​ពេល​បើក​សម័យ​ពី​ក្នុង​​ផ្ទាំង​ប្រអប់​​សម័យ​ នឹង​ត្រូវ​បាន​បើក​ខាង​ក្នុង​បង្អួច​បច្ចុប្បន្ន ។"
-
-#~ msgid "File Management"
-#~ msgstr "ការ​គ្រប់គ្រង​ឯកសារ​"
 
 #~ msgid "Web Browsing"
 #~ msgstr "ការ​រុករក​បណ្ដាញ"

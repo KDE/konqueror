@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2013-12-22 13:51+0200\n"
 "Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
 "Language-Team: Finnish <lokalisointi@lists.coss.fi>\n"
@@ -26,17 +26,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "Muut asetukset"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "&Avaa kansiot omiin ikkunoihin"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -45,12 +40,12 @@ msgstr ""
 "Jos tämä valitsin on valittuna, Konqueror avaa kansiot uuteen ikkunaan, eikä "
 "näytä kansion sisältöä nykyisessä ikkunassa."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "Näytä ”Poista” &valikossa (ohittaa roskakorin)"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -60,6 +55,9 @@ msgstr ""
 "Valitse tämä, jos haluat näyttää ”Poista” -vaihtoehdon työpöydän ja "
 "tiedostonhallinnan pikavalikossa. Voit aina poistaa tiedostoja pitämällä "
 "Vaihto-näppäin alhaalla valitessasi ”Siirrä roskakoriin”."
+
+#~ msgid "Misc Options"
+#~ msgstr "Muut asetukset"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:42+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2017-12-03 22:53+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -649,7 +649,6 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/ui/credentialsdetailswidget.ui:34
-#: src/webenginecustomizecacheablefieldsdlg.ui:44
 #, kde-format
 msgid "&Show passwords"
 msgstr ""
@@ -852,13 +851,19 @@ msgstr ""
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
 #, kde-format
-msgid "Choose fields to remember"
+msgid "Customize Fields To Store"
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
 #, kde-format
 msgid "Switch between displaying passwords or placeholders"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
+#: src/webenginecustomizecacheablefieldsdlg.ui:44
+#, kde-format
+msgid "Show &passwords"
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
@@ -869,9 +874,8 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
-#: src/webenginepartcertificateerrordlg.ui:30
 #, kde-format
-msgid "&Show details"
+msgid "Show field &details"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -889,7 +893,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
 #, kde-format
-msgid "&Immediately memorize form data"
+msgid "&Store the contents of selected fields when closing the dialog"
 msgstr ""
 
 #: src/webenginepage.cpp:164
@@ -1101,7 +1105,7 @@ msgstr "Постави &кодирање"
 msgid "View Do&cument Source"
 msgstr "Прикажи извор &документа"
 
-#: src/webenginepart.cpp:257 src/webenginepart.cpp:565
+#: src/webenginepart.cpp:257 src/webenginepart.cpp:566
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
@@ -1117,12 +1121,12 @@ msgstr ""
 "<h3>Нађи текст</h3>Приказује дијалог помоћу којег можете тражити текст на "
 "приказаној страници."
 
-#: src/webenginepart.cpp:563
+#: src/webenginepart.cpp:564
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "Подаци о ССЛ‑у за овај сајт делују искварено."
 
-#: src/webenginepart.cpp:644
+#: src/webenginepart.cpp:645
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1130,7 +1134,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "е‑пошта: "
 
-#: src/webenginepart.cpp:673
+#: src/webenginepart.cpp:674
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1138,7 +1142,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " — ЦЦ: "
 
-#: src/webenginepart.cpp:675
+#: src/webenginepart.cpp:676
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1146,7 +1150,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " — БЦЦ: "
 
-#: src/webenginepart.cpp:677
+#: src/webenginepart.cpp:678
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1154,94 +1158,96 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " — тема: "
 
-#: src/webenginepart.cpp:681 src/webenginepart.cpp:692
+#: src/webenginepart.cpp:682 src/webenginepart.cpp:693
 #, kde-format
 msgid " (In new window)"
 msgstr " (у новом прозору)"
 
-#: src/webenginepart.cpp:690
+#: src/webenginepart.cpp:691
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (у родитељском оквиру)"
 
-#: src/webenginepart.cpp:756
+#: src/webenginepart.cpp:757
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Желите ли да потражите <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:757
+#: src/webenginepart.cpp:758
 #, kde-format
 msgid "Internet Search"
 msgstr "Претрага Интернета"
 
-#: src/webenginepart.cpp:757
+#: src/webenginepart.cpp:758
 #, kde-format
 msgid "&Search"
 msgstr "&Тражи"
 
-#: src/webenginepart.cpp:870
+#: src/webenginepart.cpp:871
 #, kde-format
 msgid "Close window?"
 msgstr "Затворити прозор?"
 
-#: src/webenginepart.cpp:870
+#: src/webenginepart.cpp:871
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Потребна је потврда"
 
-#: src/webenginepart.cpp:947
+#: src/webenginepart.cpp:948
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>Желите ли да %1 упамти податке о пријави за <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1018
+#: src/webenginepart.cpp:1019
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
-msgid "&Fill forms now"
+msgid "&Fill In Credentials"
 msgstr ""
 
-#: src/webenginepart.cpp:1023
+#: src/webenginepart.cpp:1024
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
-msgid "Look Again for Forms"
+msgid "&Search Page for Credential Requests"
 msgstr ""
 
-#: src/webenginepart.cpp:1027
+#: src/webenginepart.cpp:1028
 #, kde-format
-msgid "&Memorize Passwords in This Page Now"
+msgctxt "Store in KWallet the current content of the fields"
+msgid "&Store Credentials Now"
 msgstr ""
 
-#: src/webenginepart.cpp:1031
+#: src/webenginepart.cpp:1032
 #, kde-format
-msgid "&Customize Fields to Memorize for This Page..."
+msgctxt "Shows a dialog where the use can choose which fields to store"
+msgid "&Customize Credentials Settings for Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1035
+#: src/webenginepart.cpp:1036
 #, kde-format
-msgid "Remove Customized Memorization Settings for This Page"
+msgid "Reset Custom Credential Settings for Page"
 msgstr ""
 
 # rewrite-msgid: /caching/storing/
-#: src/webenginepart.cpp:1039
+#: src/webenginepart.cpp:1040
 #, fuzzy, kde-format
 #| msgid "&Allow password caching for this site"
-msgid "&Allow Password Caching for This Site"
+msgid "&Allow Credential Caching for This Page"
 msgstr "&Дозволи складиштење лозинки за овај сајт"
 
 # rewrite-msgid: /cached/stored/
-#: src/webenginepart.cpp:1043
+#: src/webenginepart.cpp:1044
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
-msgid "Remove All Memorized Passwords for This Site"
+msgid "Remove All Stored Passwords for This Site"
 msgstr "Уклони ускладиштене лозинке за овај сајт"
 
-#: src/webenginepart.cpp:1047
+#: src/webenginepart.cpp:1048
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1051
+#: src/webenginepart.cpp:1052
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Затвори новчаник"
@@ -1277,7 +1283,7 @@ msgid "&Credential management"
 msgstr ""
 
 #. i18n: ectx: ToolBar (htmlToolBar)
-#: src/webenginepart.rc:47
+#: src/webenginepart.rc:49
 #, kde-format
 msgid "HTML Toolbar"
 msgstr "ХТМЛ трака"
@@ -1329,6 +1335,12 @@ msgstr "Грешка филтера"
 #: src/webenginepartcertificateerrordlg.ui:14
 #, kde-format
 msgid "Dialog"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, showDetails)
+#: src/webenginepartcertificateerrordlg.ui:30
+#, kde-format
+msgid "&Show details"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, details)

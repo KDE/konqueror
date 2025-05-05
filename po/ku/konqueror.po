@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2009-01-06 14:18+0200\n"
 "Last-Translator: Erdal Ronahi <erdal.ronahi@nospam.gmail.com>\n"
 "Language-Team: American English <kde-i18n-doc@lists.kde.org>\n"
@@ -32,6 +32,15 @@ msgstr "Erdal Ronahi"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "erdal.ronahi@nospam.gmail.com"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Gerînendetiya Pelan"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -1995,9 +2004,6 @@ msgstr "Cuda Tomar Bike..."
 #~ msgstr ""
 #~ "URL'ya nerast\n"
 #~ "%1"
-
-#~ msgid "File Management"
-#~ msgstr "Gerînendetiya Pelan"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Lêgerîna Webê"

@@ -1,6 +1,6 @@
 # translation of kcmkonq.po to
 # translation of kcmkonq.po to
-# Version: $Revision: 1685456 $
+# Version: $Revision: 1708314 $
 # translation of kcmkonq.po to Polish
 # translation of kcmkonq.po to
 # translation of kcmkonq.po to
@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2022-04-10 11:32+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -28,17 +28,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "Inne ustawienia"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "&Otwieraj katalogi w osobnych oknach"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -47,12 +42,12 @@ msgstr ""
 "Jeśli ta opcja jest włączona, katalogi będą przeglądane w nowych oknach. W "
 "przeciwnym razie wykorzystane zostanie aktualne okno."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "Pokaż w menu pozycję '&Usuń', która omija kosz"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -63,6 +58,9 @@ msgstr ""
 "pulpicie, w menu menadżera plików i menu kontekstowych. Zawsze możesz usunąć "
 "pliki, poprzez przytrzymanie klawisza Shift, podczas wywoływania polecenia "
 "'Wyrzuć do kosza'."
+
+#~ msgid "Misc Options"
+#~ msgstr "Inne ustawienia"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

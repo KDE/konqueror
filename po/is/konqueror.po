@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2019-11-05 18:25+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
@@ -41,6 +41,15 @@ msgid "Your emails"
 msgstr ""
 "logir@logi.org, ra@ra.is, tux@islandia.is, spm@vlug.eyjar.is, pjetur@pjetur."
 "net, svanurpalsson@hotmail.com, sv1@fellsnet.is"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Skráastjórnun"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2067,9 +2076,6 @@ msgstr "Vista sem..."
 #~ msgstr ""
 #~ "Ef þetta er virkt verða flipar fyrir setu sem er opnuð úr annarri virkri "
 #~ "setu verða opnaðir inni í virkum glugga."
-
-#~ msgid "File Management"
-#~ msgstr "Skráastjórnun"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Vefskoðun"

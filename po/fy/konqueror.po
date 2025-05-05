@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2010-07-16 13:20+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -28,6 +28,15 @@ msgstr "Berend Ytsma,Rinse de Vries"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "berendy@bigfoot.com,rinsedevries@kde.nl"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Triembehear"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2128,9 +2137,6 @@ msgstr "Bewarje as..."
 #~ msgstr ""
 #~ "Ferkeard foarme URL-adres:\n"
 #~ "%1"
-
-#~ msgid "File Management"
-#~ msgstr "Triembehear"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Webblêdzje"

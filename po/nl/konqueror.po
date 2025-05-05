@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2024-10-21 11:25+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -41,6 +41,15 @@ msgstr "Rinse de Vries,Onno Zweers,Antoon Tolboom,Freek de Kruijf - t/m 2024"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "rinsedevries@kde.nl,,,freekdekruijf@kde.nl"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Bestandsbeheer"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2128,9 +2137,6 @@ msgstr "Opslaan als"
 
 #~ msgid "Could not find any application or handler for %1"
 #~ msgstr "Kon geen enkele toepassing of behandelaar voor %1 vinden"
-
-#~ msgid "File Management"
-#~ msgstr "Bestandsbeheer"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Webbrowsen"

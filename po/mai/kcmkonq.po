@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2010-01-29 13:18+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -22,17 +22,12 @@ msgstr ""
 "\n"
 "\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "विविध विकल्प"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "फोल्डर अलग विंडो मे खोलू (&w)"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -41,19 +36,22 @@ msgstr ""
 "जँ ई विकल्प चेक कएल जाइछ तँ जखन अहाँ कोनो फोल्डर खोलम तँ बजाए ओ विंडो मे फोल्डरक "
 "सामग्री केँ देखाबैक, कान्करर एकटा नवीन विंडो मे खुलताह."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, fuzzy, kde-format
 #| msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "'मेटाबू' संदर्भित मेनू देखाबू जे रद्दीक टोकरी केँ बायपास करए (&n)"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
 "and in the file manager's menus and context menus. You can always delete "
 "files by holding the Shift key while calling 'Move to Trash'."
 msgstr ""
+
+#~ msgid "Misc Options"
+#~ msgstr "विविध विकल्प"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2007-11-04 18:19+0545\n"
 "Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -19,17 +19,12 @@ msgstr ""
 "\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "विविध विकल्प"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "फरक सञ्झ्यालमा फोल्डर खोल्नुहोस्"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -38,13 +33,13 @@ msgstr ""
 "यदि यो विकल्प जाँचिएको छ भने, तपाईँले फोल्डर खोल्दा हालको सञ्झ्यालमा फोल्डरको सामाग्री "
 "देखाउन भन्दा, कन्क्वेररले नयाँ सञ्झ्याल खोल्नेछ ।"
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, fuzzy, kde-format
 #| msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "प्रविष्टि रद्दीटोकरीमा पठाउने 'मेट्नुहोस्' प्रसङ्ग मेनु देखाउनुहोस्"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if you want 'Delete' menu commands to be displayed on the "
@@ -58,6 +53,9 @@ msgstr ""
 "यदि तपाईँ डेस्कटप र फाइल प्रबन्धकको प्रसङ्ग मेनुमा प्रदर्शित हुने मेनु आदेश 'मेट्न' चाहनुहुन्छ भने "
 "यो जाँच गर्नुहोस् । तपाईँले सधैँ 'रद्दीटोकरीमा' सार्नुहोस् भनेको बेलामा Shift key मा होल्ड "
 "गरेर फाइल मेट्न सक्नुहुन्छ ।"
+
+#~ msgid "Misc Options"
+#~ msgstr "विविध विकल्प"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

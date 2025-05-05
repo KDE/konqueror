@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2011-09-29 20:50+0200\n"
 "Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
 "Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
@@ -16,17 +16,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.2\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "Egyéb beállítások"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "A könyvtárak megnyitása mindig ú&j ablakban történjen"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -35,12 +30,12 @@ msgstr ""
 "Ha ez az opció be van jelölve, akkor a Konqueror mindig új ablakban jeleníti "
 "meg a megnyitott könyvtárak tartalmát."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "A közvetlen „Törlés” me&nübejegyzések megjelenítése"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -51,6 +46,9 @@ msgstr ""
 "menüpontok megjelenjenek a munkaasztal és a fájlkezelő helyi menüiben. "
 "Közvetlen törlés mindig végezhető, elég a Shift lenyomva tartása mellett "
 "kidobni valamit a kukába."
+
+#~ msgid "Misc Options"
+#~ msgstr "Egyéb beállítások"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

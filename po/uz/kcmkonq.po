@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2006-10-01 21:18+0000\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -17,17 +17,12 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "Har xil parametrlar"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "Jildlarni &alohida oynada ochish"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -35,13 +30,13 @@ msgid ""
 msgstr ""
 "Agar belgilansa, jild ochilganda Konqueror uni yangi oynada koʻrsatadi."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, fuzzy, kde-format
 #| msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "&Kontekst menyuda oʻchirish bandini koʻrsatish"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if you want 'Delete' menu commands to be displayed on the "
@@ -54,6 +49,9 @@ msgid ""
 msgstr ""
 "Agar belgilansa, ish stoli yoki fayl-brauzerning kontekst menyusida "
 "oʻchirish bandi koʻrinadi."
+
+#~ msgid "Misc Options"
+#~ msgstr "Har xil parametrlar"
 
 #, fuzzy
 #~| msgid "Desktop %1:"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2022-04-09 15:18+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -31,6 +31,15 @@ msgstr "Stanislav Višňovský,Michal Šulek,Roman Paholík"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "visnovsky@kde.org,misurel@gmail.com,wizzardsk@gmail.com"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Správa súborov"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2058,9 +2067,6 @@ msgstr "Uložiť ako"
 #~ msgstr ""
 #~ "Ak je povolené, pri otváraní relácie z dialógu sedení budú karty otvorené "
 #~ "v aktuálnom okne."
-
-#~ msgid "File Management"
-#~ msgstr "Správa súborov"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Prehliadanie webu"

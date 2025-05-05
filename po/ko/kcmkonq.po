@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2020-01-28 22:35+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -25,17 +25,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 19.04.3\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "기타 설정"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "다른 창에서 디렉터리 열기(&W)"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -44,12 +39,12 @@ msgstr ""
 "이 설정을 사용하면 Konqueror에서는 폴더를 열 때 폴더의 내용을 현재 창에 보여"
 "주는 대신 새 창에 표시합니다."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "휴지통을 거치지 않고 삭제하는 메뉴 추가하기(&N)"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -59,6 +54,9 @@ msgstr ""
 "바탕 화면과 파일 관리자의 상황에 맞는 메뉴에 '삭제' 명령을 표시할지 설정합니"
 "다. Shift 키를 누르면서 '휴지통으로 이동' 메뉴를 누르면 항상 파일을 삭제할 "
 "수 있습니다."
+
+#~ msgid "Misc Options"
+#~ msgstr "기타 설정"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

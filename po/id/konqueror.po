@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2022-09-27 17:54+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -29,6 +29,15 @@ msgstr "Andhika Padmawan, Arif Budiman,Wantoyo"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "andhika.padmawan@gmail.com,arif@kangarif.com,wantoyek@gmail.com"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Pengelolaan File"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2122,9 +2131,6 @@ msgstr "Simpan Sebagai"
 
 #~ msgid "Could not find any application or handler for %1"
 #~ msgstr "Tidak bisa menemukan penanganan atau aplikasi apapun untuk %1"
-
-#~ msgid "File Management"
-#~ msgstr "Pengelolaan File"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Meramban Web"

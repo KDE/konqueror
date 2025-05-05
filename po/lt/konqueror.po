@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2024-02-02 22:39+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -31,6 +31,15 @@ msgstr "Ričardas Čepas, Donatas Glodenis"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "rch@richard.eu.org, dgvirtual@akl.lt"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Failų tvarkymas"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2074,9 +2083,6 @@ msgstr "Išsaugoti kaip..."
 #~ msgstr ""
 #~ "Jei ši parinktis įjungta, atveriant sesiją iš sesijų dialogo kortelės bus "
 #~ "atvertos šiame lange."
-
-#~ msgid "File Management"
-#~ msgstr "Failų tvarkymas"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Žiniatinklio naršymas"

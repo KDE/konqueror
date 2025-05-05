@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2009-01-16 22:16+0530\n"
 "Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
 "Language-Team: Telugu <en@li.org>\n"
@@ -27,6 +27,15 @@ msgstr "కృష్ణబాబు కె , విజయ్ కిరణ్ క
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "k.meetme@gmail.com,infyquest@gmail.com"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "దస్త్ర నిర్వహణ"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -1861,9 +1870,6 @@ msgstr "పునఃనామకరణము"
 #~| msgid "Open in New Window"
 #~ msgid "Open folders in separate windows"
 #~ msgstr "కొత్త విండోనందు తెరువుము"
-
-#~ msgid "File Management"
-#~ msgstr "దస్త్ర నిర్వహణ"
 
 #~ msgid "Web Browsing"
 #~ msgstr "వెబ్ బ్రౌజింగ్"

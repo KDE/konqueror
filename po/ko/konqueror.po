@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-24 17:33+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -28,6 +28,15 @@ msgstr "박신조"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "파일 관리"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2066,9 +2075,6 @@ msgstr "다른 이름으로 저장"
 
 #~ msgid "Could not find any application or handler for %1"
 #~ msgstr "%1을(를) 처리할 프로그램이나 핸들러를 찾을 수 없음"
-
-#~ msgid "File Management"
-#~ msgstr "파일 관리"
 
 #~ msgid "Web Browsing"
 #~ msgstr "웹 탐색"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2011-05-10 17:41+0200\n"
 "Last-Translator: Stefan Asserhall <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -23,17 +23,12 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "Diverse inställningar"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "Öppna &kataloger i egna fönster"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -43,12 +38,12 @@ msgstr ""
 "fönster när du öppnar en katalog, i stället för att visa den katalogens "
 "innehåll i det nuvarande fönstret."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "Visa me&nyalternativ för 'Ta bort' som förbigår papperskorgen"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -59,6 +54,9 @@ msgstr ""
 "skrivbordet och i filhanterarens menyer och sammanhangsberoende menyer. Du "
 "kan alltid ta bort filer genom att hålla nere skifttangenten när 'Flytta "
 "till papperskorg' används."
+
+#~ msgid "Misc Options"
+#~ msgstr "Diverse inställningar"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

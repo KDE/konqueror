@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2024-10-22 12:17+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -51,6 +51,15 @@ msgid "Your emails"
 msgstr ""
 "xavier.besnard@kde.org, caulier.gilles@free.fr, duranceau@kde.org, "
 "cousin@kde.org, gerard@delafond.org"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Gestion de fichiers"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2161,9 +2170,6 @@ msgstr "Enregistrer sous..."
 
 #~ msgid "Could not find any application or handler for %1"
 #~ msgstr "Impossible de trouver une application ou un module pour %1"
-
-#~ msgid "File Management"
-#~ msgstr "Gestion de fichiers"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Navigation Web"

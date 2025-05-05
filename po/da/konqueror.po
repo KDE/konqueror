@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2020-08-02 16:59+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -27,6 +27,15 @@ msgstr "Erik Kjær Pedersen,Lars K. Schunk,Martin Schlander"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "erik@binghamton.edu,lars@schunk.dk,mschlander@opensuse.org"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Filhåndtering"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2079,9 +2088,6 @@ msgstr "Gem som..."
 #~ msgstr ""
 #~ "Misdannet URL\n"
 #~ "%1"
-
-#~ msgid "File Management"
-#~ msgstr "Filhåndtering"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Webbrowsing"

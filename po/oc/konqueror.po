@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2008-08-06 00:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: Occitan <oc@li.org>\n"
@@ -29,6 +29,15 @@ msgstr "Yannig Marchegay (Kokoyaya)"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yannig@marchegay.org"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Gestion de fichièrs"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -1893,9 +1902,6 @@ msgstr "Enregistrar la session"
 #~| msgid "Open the document in a new window"
 #~ msgid "Open folders in separate windows"
 #~ msgstr "Dobrir lo document dins una fenèstra nòva"
-
-#~ msgid "File Management"
-#~ msgstr "Gestion de fichièrs"
 
 #, fuzzy
 #~| msgid "Configure"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2011-06-23 00:06+0300\n"
 "Last-Translator: Marek Laane <bald@smail.ee>\n"
 "Language-Team: Estonian <kde-et@linux.ee>\n"
@@ -20,17 +20,12 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "Muud seadistused"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "&Kataloogid avatakse eraldi aknas"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -39,12 +34,12 @@ msgstr ""
 "Kui see on sisse lülitatud, avab Konqueror kataloogi avamisel selle uues "
 "aknas, mitte ei näita selle sisu aktiivses aknas."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "Faile lõplikult kustutava käsu \"Kustuta\" näitamine me&nüüdes"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -54,6 +49,9 @@ msgstr ""
 "Märkimisel näidatakse töölaua ja failihalduri menüüdes ja kontekstimenüüdes "
 "käsku \"Kustuta\". Faile saab alati kustutada ka klahvi Shift vajutades ja "
 "samal ajal käsku \"Viska prügikasti\" valides."
+
+#~ msgid "Misc Options"
+#~ msgstr "Muud seadistused"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

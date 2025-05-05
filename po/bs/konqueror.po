@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2015-01-09 11:55+0100\n"
 "Last-Translator: Samir Ribic <samir.ribic@etf.unsa.ba>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -30,6 +30,15 @@ msgstr "Vedran Ljubović,Arne Goetje,Samir Ribić"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Vljubovic@smartnet.ba,arne@linux.org.tw,samir.ribic@etf.unsa.ba"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Upravljanje datotekama"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2083,9 +2092,6 @@ msgstr "Sačuvaj kao..."
 #~ msgstr ""
 #~ "Ako je uključeno, pri otvaranju sesije iz dijaloga sesija jezičci će biti "
 #~ "otvoreni u tekućem prozoru."
-
-#~ msgid "File Management"
-#~ msgstr "Upravljanje datotekama"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Web pregledanje"

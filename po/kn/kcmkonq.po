@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2008-12-28 23:57+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: Kannada <en@li.org>\n"
@@ -18,17 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "ಇತರೆ ಆಯ್ಕೆಗಳು"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "&ವಿಂಡೋಗಳನ್ನು ಪ್ರತ್ಯೇಕ ಫೋಲ್ಡರಿನಲ್ಲಿ ತೆರೆ"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -37,13 +32,13 @@ msgstr ""
 "ಈ ಆಯ್ಕೆಯನ್ನು ಆರಿಸಿದಲ್ಲಿ, ನೀವು ಒಂದು ಫೋಲ್ಡರನ್ನು ತೆರೆದಾಗ, ಅದು ಪ್ರಸ್ತುತ ಇರುವ ವಿಂಡೋದಲ್ಲಿ "
 "ತೆರೆದುಕೊಳ್ಳುವ ಬದಲು Konqueror ಒಂದು ಹೊಸ ವಿಂಡೋವನ್ನು ತೆರೆಯುತ್ತದೆ."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, fuzzy, kde-format
 #| msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "ಕಸದಬುಟ್ಟಿಯನ್ನು ಕಡೆಗಣಿಸುವ 'ಅಳಿಸು' ಸನ್ನಿವೇಶ ಪರಿವಿಡಿಯನ್ನು ತೋರಿಸು(&u)"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if you want 'Delete' menu commands to be displayed on the "
@@ -57,6 +52,9 @@ msgstr ""
 "'ಅಳಿಸಿ ಹಾಕು' ಪರಿವಿಡಿ ಆಜ್ಞೆಗಳು ಗಣಕತೆರೆಯ ಮೇಲೆ ಹಾಗು ಕಡತ ವ್ಯವಸ್ಥಾಪಕದಲ್ಲಿನ ಸನ್ನಿವೇಶ "
 "ಪರಿವಿಡಿಯಲ್ಲಿ ಕಾಣಿಸಕೊಳ್ಳಬೇಕೆಂದರೆ, ಇದನ್ನು ಆರಿಸಿ. 'ಕಸದಬುಟ್ಟಿಗೆ ಜರುಗಿಸು' ಎಂದು "
 "ಹೇಳುವಾಗ ನೀವು ಶಿಫ್ಟ್ ಕೀಲಿಯನ್ನು ಒತ್ತಿಹಿಡಿಯುವುದರ ಮೂಲಕ ಕಡತಗಳನ್ನು ಅಳಿಸಬಹುದು."
+
+#~ msgid "Misc Options"
+#~ msgstr "ಇತರೆ ಆಯ್ಕೆಗಳು"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

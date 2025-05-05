@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2008-11-18 23:30+0100\n"
 "Last-Translator: Eduard Werner <edi.werner@gmx.de>\n"
 "Language-Team: en_US <kde-i18n-doc@lists.kde.org>\n"
@@ -28,6 +28,15 @@ msgstr "Edward Wornar"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "e.werner@rz.uni-leipzig.de"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Rjadowanje datajow"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -1990,9 +1999,6 @@ msgstr "Zawěsćić jako ..."
 #~ msgstr ""
 #~ "Hubjene mjeno za URL\n"
 #~ " %1"
-
-#~ msgid "File Management"
-#~ msgstr "Rjadowanje datajow"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Web Browsing"

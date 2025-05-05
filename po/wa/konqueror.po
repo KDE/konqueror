@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2012-12-22 11:35+0100\n"
 "Last-Translator: Jean Cayron <jean.cayron@gmail.com>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -30,6 +30,15 @@ msgstr "Djan Cayron"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "jean.cayron@gmail.com"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Manaedjmint des fitchîs"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2104,9 +2113,6 @@ msgstr "Schaper eyet rlomer..."
 #~ msgstr ""
 #~ "URL må basti\n"
 #~ "%1"
-
-#~ msgid "File Management"
-#~ msgstr "Manaedjmint des fitchîs"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Naiviaedje waibe"

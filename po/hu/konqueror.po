@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2017-03-04 14:51+0100\n"
 "Last-Translator: Kiszel Kristóf <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -27,6 +27,15 @@ msgstr "Kiszel Kristóf,Lengyel Marcell,Szántó Tamás"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ulysses@kubuntu.org,marcell@kde.hu,tszanto@interware.hu"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Fájlkezelő"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2071,9 +2080,6 @@ msgstr "Mentés másként..."
 #~ msgstr ""
 #~ "Hibás URL.\n"
 #~ "%1"
-
-#~ msgid "File Management"
-#~ msgstr "Fájlkezelő"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Webböngésző"

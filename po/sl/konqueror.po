@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2024-10-21 07:10+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -38,6 +38,15 @@ msgid "Your emails"
 msgstr ""
 "markos@elite.org,roman.maurer@amis.net,gregor.rakar@kiss.si,dora.mali@guest."
 "arnes.si,jlp@holodeck1.com,andrejm@ubuntu.si,matjaz.jeran@amis.net"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Upravljanje datotek"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2108,9 +2117,6 @@ msgstr "Shrani kot"
 
 #~ msgid "Could not find any application or handler for %1"
 #~ msgstr "Ni bilo mogoče najti aplikacije ali orodja za %1"
-
-#~ msgid "File Management"
-#~ msgstr "Upravljanje datotek"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Brskanje po spletu"

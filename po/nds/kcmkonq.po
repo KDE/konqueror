@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2011-06-13 06:57+0200\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -19,17 +19,12 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "Anner Optschonen"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "&Ornern in niege Finstern opmaken"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -38,13 +33,13 @@ msgstr ""
 "Wenn anmaakt, maakt Konqueror en nieg Finster op, wenn Du en Orner opmaakst, "
 "anners warrt de Inholt vun den Orner binnen dat aktuelle Finster wiest."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr ""
 "\"Wegdoon\"-&Menü binnen dat Rechtsklickmenü wiesen (övergeiht de Affalltünn)"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -55,6 +50,9 @@ msgstr ""
 "dat Rechtsklickmenü vun den Dateipleger hebben wullt. Du kannst Dateien ok "
 "wegdoon, wenn Du de Ümschalttast drückst, wielt Du op \"Na de Affalltünn "
 "verschuven\" klickst."
+
+#~ msgid "Misc Options"
+#~ msgstr "Anner Optschonen"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

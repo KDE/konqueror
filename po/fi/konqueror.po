@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2024-11-17 10:09+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -44,6 +44,15 @@ msgstr ""
 "kim.enkovaara@iki.fi, ikola@iki.fi, ilpo@iki.fi, eleknader@phnet.fi, lasse."
 "liehu@gmail.com, translator@legisign.org, piippo@cc.helsinki.fi, teemu."
 "rytilahti@kde-fi.org"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Tiedostonhallinta"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2111,9 +2120,6 @@ msgstr "Tallenna nimellä"
 
 #~ msgid "Could not find any application or handler for %1"
 #~ msgstr "Osoitteelle %1 ei löytynyt sovellusta tai käsittelijää"
-
-#~ msgid "File Management"
-#~ msgstr "Tiedostonhallinta"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Verkkoselaus"

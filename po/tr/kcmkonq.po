@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-25 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2025-01-30 16:57+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -25,17 +25,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 25.03.70\n"
 
-#: behaviour.cpp:36
-#, kde-format
-msgid "Misc Options"
-msgstr "Çeşitli Seçenekler"
-
-#: behaviour.cpp:45
+#: behaviour.cpp:47
 #, kde-format
 msgid "Open folders in separate &windows"
 msgstr "Klasörleri ayrı &pencerelerde aç"
 
-#: behaviour.cpp:46
+#: behaviour.cpp:48
 #, kde-format
 msgid ""
 "If this option is checked, Konqueror will open a new window when you open a "
@@ -44,12 +39,12 @@ msgstr ""
 "Bu seçenek işaretlenirse bir klasöre tıkladığınızda Konqueror, bu klasörün "
 "içeriğini açık olan pencerede göstermek yerine, yeni bir pencere açar."
 
-#: behaviour.cpp:69
+#: behaviour.cpp:72
 #, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr "Çöp kutusuna göndermeden silmek için “Sil” &menü girdisini göster"
 
-#: behaviour.cpp:73
+#: behaviour.cpp:76
 #, kde-format
 msgid ""
 "Check this if you want 'Delete' menu commands to be displayed on the desktop "
@@ -60,6 +55,9 @@ msgstr ""
 "menülerinde “Sil” menü komutunun olmasını istiyorsanız bu seçeneği seçin. "
 "“Çöp Kutusuna Taşı” işlemi sırasında Üst Karakter düğmesine basılı "
 "tutarsanız da silme işlemini yapabilirsiniz."
+
+#~ msgid "Misc Options"
+#~ msgstr "Çeşitli Seçenekler"
 
 #~ msgid ""
 #~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "

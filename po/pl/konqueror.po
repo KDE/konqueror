@@ -1,6 +1,6 @@
 # translation of konqueror.po to Polish
 # translation of konqueror.po to
-# Version: $Revision: 1707601 $
+# Version: $Revision: 1708314 $
 # Tłumaczenie autorstwa Artura Skury, marzec 2000
 # SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 # Aktualne tłumaczenie Norbert Popiołek <norbert@kde.com.pl>, czerwiec 2001
@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2024-10-26 12:42+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -36,6 +36,15 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 "mrudolf@kdewebdev.org, norbert@kde.com.pl, lukasz.wojnilowicz@gmail.com"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Zarządzanie plikami"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2104,9 +2113,6 @@ msgstr "Zapisz jako"
 
 #~ msgid "Could not find any application or handler for %1"
 #~ msgstr "Nie znaleziono programu obsługującego %1"
-
-#~ msgid "File Management"
-#~ msgstr "Zarządzanie plikami"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Przeglądanie sieci"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2025-01-15 19:18+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -43,6 +43,15 @@ msgstr ""
 "f2c2001@yahoo.com,mosawi@arabeyes.org,bayazidi@arabeyes.org,nuriddin@eminaga."
 "de,mhdyousif@gmx.net,munzir@kacst.edu.sa,metehyi@free.fr,a.a-a.s@hotmail.com,"
 "zayed.alsaidi@gmail.com,osamak.wfm@gmail.com "
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "إدارة الملفات"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2064,9 +2073,6 @@ msgstr "احفظ باسم"
 #~ msgstr ""
 #~ "المسار غير صحيح التكوين\n"
 #~ "%1"
-
-#~ msgid "File Management"
-#~ msgstr "إدارة الملفات"
 
 #~ msgid "Web Browsing"
 #~ msgstr "تصفّح الوِب"

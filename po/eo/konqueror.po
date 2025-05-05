@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-29 19:47+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -34,6 +34,14 @@ msgstr "Pierre-Marie Pédrot,Cindy McKee,Oliver Kellogg"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "pedrotpmx@wanadoo.fr,cfmckee@gmail.com,olivermkellogg@gmail.com"
+
+#: src/configdialog.cpp:72
+#, kde-format
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr ""
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format

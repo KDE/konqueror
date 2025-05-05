@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2022-10-05 09:27+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -45,6 +45,15 @@ msgid "Your emails"
 msgstr ""
 "eugeneai@icc.ru,mokhin@bog.msu.ru,skull@kde.ru,leon@asplinux.ru,translation-"
 "team@basealt.ru"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Управление файлами"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2134,9 +2143,6 @@ msgstr "Сохранить как"
 
 #~ msgid "Could not find any application or handler for %1"
 #~ msgstr "Не удалось найти ни одного приложения или службы обработки для «%1»"
-
-#~ msgid "File Management"
-#~ msgstr "Управление файлами"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Веб-браузер"

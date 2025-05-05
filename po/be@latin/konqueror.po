@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:41+0000\n"
+"POT-Creation-Date: 2025-05-05 00:41+0000\n"
 "PO-Revision-Date: 2008-10-04 16:18+0300\n"
 "Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
 "Language-Team: Belarusian Latin <i18n@mova.org>\n"
@@ -29,6 +29,15 @@ msgstr "Ihar Hračyška"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ihar.hrachyshka@gmail.com"
+
+#: src/configdialog.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Management"
+msgctxt ""
+"@title:tab The file manager behavior tab. Also used in the list of tabs for "
+"consistency"
+msgid "File Manager Behavior"
+msgstr "Kiravańnie fajłami"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
@@ -2007,9 +2016,6 @@ msgstr "Zapišy jak..."
 #~ msgstr ""
 #~ "Kiepski adras\n"
 #~ "%1"
-
-#~ msgid "File Management"
-#~ msgstr "Kiravańnie fajłami"
 
 #~ msgid "Web Browsing"
 #~ msgstr "Hartańnie sieciva"
