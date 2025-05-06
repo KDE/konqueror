@@ -1,10 +1,10 @@
-# Translation of webkitkde.po to Spanish
-# Copyright (C) YEAR This_file_is_part_of_KDE
+# Spanish translations for webenginepart.po package.
+# Copyright (C) 2009-2025 This file is copyright:
 # This file is distributed under the same license as the konqueror package.
 #
 # SPDX-FileCopyrightText: 2009 Enrique Matias Sanchez <cronopios@gmail.com>
 # SPDX-FileCopyrightText: 2009 Cristina Yenyxe Gonzalez Garcia <the.blue.valkyrie@gmail.com>
-# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 # SPDX-FileCopyrightText: 2009 Ricardo Varas Santana <ricardoivaras@gmail.com>
 # SPDX-FileCopyrightText: 2009 Jaime Robles <jaime@kde.org>
 # SPDX-FileCopyrightText: 2010, 2011 Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>
@@ -14,15 +14,14 @@ msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-05 00:41+0000\n"
-"PO-Revision-Date: 2024-11-04 18:11+0100\n"
+"PO-Revision-Date: 2025-05-05 20:46+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"com>\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -333,7 +332,7 @@ msgstr "<tt>%1</tt> se ha guardado como <tt>%2</tt>"
 #, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "Abrir con..."
+msgstr "Abrir con…"
 
 #: src/actondownloadedfilebar.cpp:146
 #, kde-format
@@ -797,7 +796,7 @@ msgstr "&Ocultar detalles"
 #: src/ui/searchbar.cpp:38
 #, kde-format
 msgid "Find..."
-msgstr "Buscar..."
+msgstr "Buscar…"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, closeButton)
 #: src/ui/searchbar.ui:23
@@ -886,10 +885,9 @@ msgstr "otro"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgid "Customize Fields To Store"
-msgstr "Personalizar los &campos a memorizar de esta página..."
+msgstr "Personalizar los campos que se guardarán"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
@@ -899,8 +897,7 @@ msgstr "Conmutar entre mostrar contraseñas o sus sustitutos"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "&Show passwords"
+#, kde-format
 msgid "Show &passwords"
 msgstr "Mo&strar contraseñas"
 
@@ -912,10 +909,9 @@ msgstr "Mostrar información avanzada sobre los campos"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
-#, fuzzy, kde-format
-#| msgid "&Show details"
+#, kde-format
 msgid "Show field &details"
-msgstr "Mo&strar detalles"
+msgstr "Mostrar &detalles de los campos"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
@@ -931,10 +927,9 @@ msgstr "Guardar los datos del formulario en KWallet al cerrar el diálogo"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
-#, fuzzy, kde-format
-#| msgid "Store form data in KWallet when closing the dialog"
+#, kde-format
 msgid "&Store the contents of selected fields when closing the dialog"
-msgstr "Guardar los datos del formulario en KWallet al cerrar el diálogo"
+msgstr "Guardar el contenido de los campos seleccionados al cerrar el diálogo"
 
 #: src/webenginepage.cpp:164
 #, kde-format
@@ -1098,7 +1093,7 @@ msgstr "No permitir"
 #: src/webenginepart.cpp:205
 #, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "Guardar la página HTML completa como..."
+msgstr "Guardar la página HTML completa como…"
 
 #: src/webenginepart.cpp:209
 #, kde-format
@@ -1242,44 +1237,40 @@ msgstr ""
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
-msgstr ""
+msgstr "&Rellenar las credenciales"
 
 #: src/webenginepart.cpp:1024
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
-msgstr ""
+msgstr "&Buscar solicitudes de credenciales en la página"
 
 #: src/webenginepart.cpp:1028
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
-msgstr ""
+msgstr "&Guardar credenciales ahora"
 
 #: src/webenginepart.cpp:1032
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
-msgstr "Personalizar los &campos a memorizar de esta página..."
+msgstr "&Personalizar las preferencias de credenciales por página…"
 
 #: src/webenginepart.cpp:1036
-#, fuzzy, kde-format
-#| msgid "Remove Customized Memorization Settings for This Page"
+#, kde-format
 msgid "Reset Custom Credential Settings for Page"
-msgstr "Eliminar las preferencias de memorización personalizada de esta página"
+msgstr "Reiniciar las preferencias de credenciales personalizadas por página"
 
 #: src/webenginepart.cpp:1040
-#, fuzzy, kde-format
-#| msgid "&Allow Password Caching for This Site"
+#, kde-format
 msgid "&Allow Credential Caching for This Page"
-msgstr "Permitir c&achear las contraseñas de este sitio"
+msgstr "Per&mitir el uso de la caché de credenciales para esta página"
 
 #: src/webenginepart.cpp:1044
-#, fuzzy, kde-format
-#| msgid "Remove All Memorized Passwords for This Site"
+#, kde-format
 msgid "Remove All Stored Passwords for This Site"
-msgstr "Eliminar todas las contraseñas memorizadas de este sitio"
+msgstr "Eliminar todas las contraseñas guardadas de este sitio"
 
 #: src/webenginepart.cpp:1048
 #, kde-format
@@ -1440,12 +1431,12 @@ msgstr "Se ha guardado %1 como %2"
 #: src/webengineview.cpp:351
 #, kde-format
 msgid "Save Image As..."
-msgstr "Guardar imagen como..."
+msgstr "Guardar imagen como…"
 
 #: src/webengineview.cpp:356
 #, kde-format
 msgid "Send Image..."
-msgstr "Enviar imagen..."
+msgstr "Enviar imagen…"
 
 #: src/webengineview.cpp:361
 #, kde-format
@@ -1465,7 +1456,7 @@ msgstr "Ver imagen (%1)"
 #: src/webengineview.cpp:380
 #, kde-format
 msgid "Block Image..."
-msgstr "Bloquear imagen..."
+msgstr "Bloquear imagen…"
 
 #: src/webengineview.cpp:388
 #, kde-format
@@ -1501,7 +1492,7 @@ msgstr "Copiar la &URL del enlace"
 #: src/webengineview.cpp:478
 #, kde-format
 msgid "&Save Link As..."
-msgstr "&Guardar enlace como..."
+msgstr "&Guardar enlace como…"
 
 #: src/webengineview.cpp:498
 #, kde-format
@@ -1526,7 +1517,7 @@ msgstr "&Conmutar controles"
 #: src/webengineview.cpp:524
 #, kde-format
 msgid "Sa&ve Video As..."
-msgstr "Guardar &vídeo como..."
+msgstr "Guardar &vídeo como…"
 
 #: src/webengineview.cpp:525
 #, kde-format
@@ -1536,7 +1527,7 @@ msgstr "C&opiar URL del vídeo"
 #: src/webengineview.cpp:527
 #, kde-format
 msgid "Sa&ve Audio As..."
-msgstr "Guardar a&udio como..."
+msgstr "Guardar a&udio como…"
 
 #: src/webengineview.cpp:528
 #, kde-format
@@ -1546,7 +1537,7 @@ msgstr "C&opiar URL del audio"
 #: src/webengineview.cpp:530
 #, kde-format
 msgid "Sa&ve Media As..."
-msgstr "Guardar &medio como..."
+msgstr "Guardar &medio como…"
 
 #: src/webengineview.cpp:531
 #, kde-format
@@ -1568,7 +1559,7 @@ msgstr "Buscar «%1» con"
 #: src/webengineview.cpp:608
 #, kde-format
 msgid "Configure Web Shortcuts..."
-msgstr "Configurar los atajos web..."
+msgstr "Configurar los atajos web…"
 
 #: src/webfieldsdataview.cpp:61
 #, kde-format
@@ -1648,386 +1639,3 @@ msgstr ""
 "%2</li><li><b>ID del campo: </b>%3</li><li><b>Campo de solo lectura: </b>%4</"
 "li><li><b>Campo activado: </b>%5</li><li><b>Terminación automática activada: "
 "</b>%6</li></ul>"
-
-#~ msgid "Choose fields to remember"
-#~ msgstr "Escoja los campos a recordar"
-
-#~ msgid "&Immediately memorize form data"
-#~ msgstr "Memorizar &inmediatamente los datos del formulario"
-
-#~ msgctxt "Fill the Forms with Data from KWallet"
-#~ msgid "&Fill forms now"
-#~ msgstr "&Rellenar formularios ahora"
-
-#~ msgctxt "Scans again the page to detect forms to fill"
-#~ msgid "Look Again for Forms"
-#~ msgstr "Volver a buscar formularios"
-
-#~ msgid "&Memorize Passwords in This Page Now"
-#~ msgstr "&Memorizar las contraseñas de esta página ahora"
-
-#~ msgid "Show file in this tab"
-#~ msgstr "Mostrar archivo en esta pestaña"
-
-#~ msgid "Show file in a new tab in Konqueror"
-#~ msgstr "Mostrar archivo en una nueva pestaña de Konqueror"
-
-#~ msgid "Open in external application"
-#~ msgstr "Abrir en aplicación externa"
-
-#~ msgid "Open in %1"
-#~ msgstr "Abrir en %1"
-
-#~ msgctxt "@action:button"
-#~ msgid "Show in new tab using %1"
-#~ msgstr "Mostrar en nueva pestaña usando %1"
-
-#~ msgctxt "@action:button"
-#~ msgid "Show here using %1"
-#~ msgstr "Mostrar aquí usando %1"
-
-#~ msgid "Specifications"
-#~ msgstr "Especificaciones"
-
-#~ msgid ""
-#~ "Konqueror is designed to embrace and support Internet standards. The aim "
-#~ "is to fully implement the officially sanctioned standards from "
-#~ "organizations such as the W3 and OASIS, while also adding extra support "
-#~ "for other common usability features that arise as de facto standards "
-#~ "across the Internet. Along with this support, for such functions as "
-#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
-#~ "also implements:"
-#~ msgstr ""
-#~ "Konqueror ha sido diseñado para adoptar y apoyar los estándares de "
-#~ "Internet. Su propósito es implementar completamente los estándares "
-#~ "aprobados oficialmente de organizaciones como W3 y OASIS, a la vez que "
-#~ "añade un uso adicional de otras funcionalidades comunes de usabilidad que "
-#~ "se han erigido como estándares de facto en Internet. Junto a estas "
-#~ "implementaciones, como el uso de «favicons», accesos rápidos Web y <a "
-#~ "href=\"%1\">marcadores XBEL</a>, Konqueror también implementa:"
-
-#~ msgid "Web Browsing"
-#~ msgstr "Navegación web"
-
-#~ msgid "Supported standards"
-#~ msgstr "Estándares compatibles"
-
-#~ msgid "Additional requirements*"
-#~ msgstr "Requisitos adicionales*"
-
-#~ msgid ""
-#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
-#~ "\"%2\">HTML 4.01</A>"
-#~ msgstr ""
-#~ "<a href=\"%2\">HTML 4.01</a> basado en <a href=\"%1\">DOM</a> (Nivel 1, y "
-#~ "parcialmente Nivel 2)"
-
-#~ msgid "built-in"
-#~ msgstr "integrado"
-
-#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
-#~ msgstr ""
-#~ "<a href=\"%1\">Hojas de estilos en cascada</a> (CSS 1, y parcialmente CSS "
-#~ "2)"
-
-#~ msgid ""
-#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
-#~ msgstr ""
-#~ "<a href=\"%1\">ECMA-262</a> Edition 3 (bastante similar a JavaScript 1.5)"
-
-#~ msgid ""
-#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
-#~ msgstr ""
-#~ "JavaScript desactivado (globalmente). Active JavaScript <a href="
-#~ "\"%1\">aquí</a>."
-
-#~ msgid ""
-#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
-#~ "\">here</A>."
-#~ msgstr ""
-#~ "JavaScript activado (globalmente). Configure JavaScript <a href=\\\"%1\\"
-#~ "\">aquí</a>."
-
-#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
-#~ msgstr "Uso seguro de <a href=\"%1\">Java</a><sup>&reg;</sup>"
-
-#~ msgid ""
-#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
-#~ "\"%2\">Sun/Oracle</A>)"
-#~ msgstr ""
-#~ "VM compatible con JDK 1.2.0 (Java 2) (<a href=\"%1\">OpenJDK</a> o <a "
-#~ "href=\"%2\">Sun/Oracle</a>)"
-
-#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
-#~ msgstr "Active Java (globalmente) <A HREF=\"%1\">aquí</A>."
-
-#~ msgid ""
-#~ "NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF="
-#~ "\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)"
-#~ msgstr ""
-#~ "<A HREF=\"%2\">Complementos</A> NPAPI (para reproducir <A HREF="
-#~ "\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)"
-
-#~ msgid "Secure Sockets Layer"
-#~ msgstr "Secure Sockets Layer (seguridad de la capa de transporte)"
-
-#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
-#~ msgstr "(TLS/SSL v2/3) para comunicaciones seguras de hasta 168 bits"
-
-#~ msgid "Bidirectional 16bit unicode support"
-#~ msgstr "Uso de unicode bidireccional de 16 bits"
-
-#~ msgid "AutoCompletion for forms"
-#~ msgstr "Completar formularios automáticamente"
-
-#~ msgctxt "Title of an html 'group box' explaining konqueror features"
-#~ msgid "General"
-#~ msgstr "General"
-
-#~ msgid "Feature"
-#~ msgstr "Funcionalidad"
-
-#~ msgid "Details"
-#~ msgstr "Detalles"
-
-#~ msgid "Image formats"
-#~ msgstr "Formatos de imágenes"
-
-#~ msgid "PNG<br />JPG<br />GIF"
-#~ msgstr "PNG<br />JPG<br />GIF"
-
-#~ msgid "Transfer protocols"
-#~ msgstr "Protocolos de transferencia"
-
-#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
-#~ msgstr "HTTP 1.1 (incluida compresión gzip/bzip2)"
-
-#~ msgid "FTP"
-#~ msgstr "FTP"
-
-#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
-#~ msgstr ""
-#~ "y <A HREF=\"%1\">muchos más (consulte Kioslaves en KHelpCenter)...</A>"
-
-#~ msgctxt "A feature of Konqueror"
-#~ msgid "URL-Completion"
-#~ msgstr "Terminación de URL"
-
-#~ msgid "Manual"
-#~ msgstr "Manual"
-
-#~ msgid "Popup"
-#~ msgstr "Desplegable"
-
-#~ msgid "(Short-) Automatic"
-#~ msgstr "(Acceso rápido) Automático"
-
-#~ msgid ""
-#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
-#~ "the HTML toolbar to increase the font size on your web page."
-#~ msgstr ""
-#~ "Use el botón de la lupa <img width='16' height='16' src=\"%1\"></img> que "
-#~ "hay en la barra de herramientas de HTML para aumentar el tamaño de la "
-#~ "letra de la página web."
-
-#~ msgid ""
-#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
-#~ "connection."
-#~ msgstr ""
-#~ "Use un <a href=\"%1\">proxy</a> de caché para acelerar la conexión a "
-#~ "Internet."
-
-#~ msgid "Next: Specifications"
-#~ msgstr "Siguiente: Especificaciones"
-
-#~ msgid ""
-#~ "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
-#~ "the link?</qt>"
-#~ msgstr ""
-#~ "<qt>Esta página no fiable enlaza con <br/><b>%1</b>.<br/>¿Desea seguir el "
-#~ "enlace?</qt>"
-
-#~ msgid "Security Warning"
-#~ msgstr "Advertencia de seguridad"
-
-#~ msgctxt "follow link despite of security warning"
-#~ msgid "Follow"
-#~ msgstr "Continuar"
-
-#~ msgid "Security Alert"
-#~ msgstr "Alerta de seguridad"
-
-#~ msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
-#~ msgstr ""
-#~ "<qt>Acceso de la página no fiable a <br/><b>%1</b><br/> denegado.</qt>"
-
-#~ msgctxt "Finished saving BLOB URL"
-#~ msgid "Finished saving %1 as %2"
-#~ msgstr "Se ha terminado de guardar %1 como %2"
-
-#~ msgid ""
-#~ "The complete contents of the page will be saved. Both the page and any "
-#~ "external resources it requires, such as images, will be saved in a single "
-#~ "MHTML file"
-#~ msgstr ""
-#~ "Se guardará el contenido completo de la página. Tanto la página como "
-#~ "cualquier recurso externo que necesite, como las imágenes, se guardarán "
-#~ "dentro de un único archivo MHTML."
-
-#~ msgid "As &directory"
-#~ msgstr "Como &directorio"
-
-#~ msgid "Save &Frame As..."
-#~ msgstr "Guardar &marco como..."
-
-#~ msgctxt "Program Name"
-#~ msgid "WebEnginePart"
-#~ msgstr "WebEnginePart"
-
-#~ msgctxt "Short Description"
-#~ msgid "QtWebEngine Browser Engine Component"
-#~ msgstr "Componente del motor de navegación QtWebEngine"
-
-#~ msgid ""
-#~ "(C) 2009-2010 Dawit Alemayehu\n"
-#~ "(C) 2008-2010 Urs Wolfer\n"
-#~ "(C) 2007 Trolltech ASA"
-#~ msgstr ""
-#~ "© 2009-2010 Dawit Alemayehu\n"
-#~ "© 2008-2010 Urs Wolfer\n"
-#~ "© 2007 Trolltech ASA"
-
-#~ msgid "Sune Vuorela"
-#~ msgstr "Sune Vuorela"
-
-#~ msgid "Maintainer, Developer"
-#~ msgstr "Encargado, desarrollador"
-
-#~ msgid "Dawit Alemayehu"
-#~ msgstr "Dawit Alemayehu"
-
-#~ msgid "Developer"
-#~ msgstr "Desarrollador"
-
-#~ msgid "Urs Wolfer"
-#~ msgstr "Urs Wolfer"
-
-#~ msgid "Michael Howell"
-#~ msgstr "Michael Howell"
-
-#~ msgid "Laurent Montel"
-#~ msgstr "Laurent Montel"
-
-#~ msgid "Dirk Mueller"
-#~ msgstr "Dirk Mueller"
-
-#~ msgid "Save As"
-#~ msgstr "Guardar como"
-
-#~ msgid "Authentication error"
-#~ msgstr "Error de autenticación"
-
-#~ msgctxt "label for input line to find text"
-#~ msgid "&Find:"
-#~ msgstr "&Buscar:"
-
-#~ msgctxt "input dialog window title for selecting html elements"
-#~ msgid "Select elements"
-#~ msgstr "Seleccionar elementos"
-
-#~ msgid "New Window"
-#~ msgstr "Nueva ventana"
-
-#~ msgid "Print"
-#~ msgstr "Imprimir"
-
-#~ msgid "Close"
-#~ msgstr "Cerrar"
-
-#~ msgid "Zoom &In"
-#~ msgstr "&Ampliar"
-
-#~ msgid "Zoom &Out"
-#~ msgstr "&Reducir"
-
-#~ msgid "Reset Zoom"
-#~ msgstr "Reiniciar ampliación"
-
-#~ msgid "Dump HTML"
-#~ msgstr "Volcar HTML"
-
-#~ msgid "F&ormat"
-#~ msgstr "F&ormato"
-
-#~ msgid "Writing Direction"
-#~ msgstr "Sentido de escritura"
-
-#~ msgid "Select elements..."
-#~ msgstr "Seleccionar elementos..."
-
-#~ msgid "KDELauncher"
-#~ msgstr "KDELauncher"
-
-#~ msgid "%1 element selected"
-#~ msgid_plural "%1 elements selected"
-#~ msgstr[0] "%1 elemento seleccionado"
-#~ msgstr[1] "%1 elementos seleccionados"
-
-#~ msgid "Toggle Caret Mode"
-#~ msgstr "Conmutar modo de inserción"
-
-#~ msgid "Blocked by ad filter"
-#~ msgstr "Bloqueado por filtro de publicidad"
-
-#~ msgid "Access keys activated"
-#~ msgstr "Teclas de acceso activadas"
-
-#~ msgctxt "Text direction"
-#~ msgid "Direction"
-#~ msgstr "Dirección"
-
-#~ msgid "Default"
-#~ msgstr "Por omisión"
-
-#~ msgid "Left to right"
-#~ msgstr "De izquierda a derecha"
-
-#~ msgid "Right to left"
-#~ msgstr "De derecha a izquierda"
-
-#~ msgid "Spellcheck selection..."
-#~ msgstr "Seleccionar corrector ortográfico..."
-
-#~ msgctxt "@title:menu HTML frame/iframe"
-#~ msgid "Frame"
-#~ msgstr "Marco"
-
-#~ msgid "Open in New &Window"
-#~ msgstr "Abrir en una &ventana nueva"
-
-#~ msgid "Open in &This Window"
-#~ msgstr "Abrir en &esta ventana"
-
-#~ msgid "Open in &New Tab"
-#~ msgstr "Abrir en una pestaña &nueva"
-
-#~ msgid "Reload Frame"
-#~ msgstr "Recargar marco"
-
-#~ msgid "Print Frame..."
-#~ msgstr "Imprimir la imagen..."
-
-#~ msgid "View Frame Source"
-#~ msgstr "Ver el código fuente"
-
-#~ msgid "Block IFrame..."
-#~ msgstr "Bloquear iframe..."
-
-#~ msgid "&Play"
-#~ msgstr "&Reproducir"
-
-#~ msgid "&Mute"
-#~ msgstr "&Silenciar"
-
-#~ msgid "&Loop"
-#~ msgstr "Buc&le"

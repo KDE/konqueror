@@ -1,16 +1,16 @@
 # Translation of webenginepart.po to Catalan
-# Copyright (C) 2016-2024 This_file_is_part_of_KDE
+# Copyright (C) 2016-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # SPDX-FileCopyrightText: 2017, 2019, 2020, 2023 Antoni Bella Pérez <antonibella5@yahoo.com>
-# SPDX-FileCopyrightText: 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-05 00:41+0000\n"
-"PO-Revision-Date: 2024-11-04 09:47+0100\n"
+"PO-Revision-Date: 2025-05-05 13:39+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -882,10 +882,9 @@ msgstr "altres"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgid "Customize Fields To Store"
-msgstr "&Personalitza els camps a memoritzar d'aquesta pàgina..."
+msgstr "Personalitza els camps a emmagatzemar"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
@@ -895,10 +894,9 @@ msgstr "Commuta entre mostrar les contrasenyes o els marcadors de posició"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "&Show passwords"
+#, kde-format
 msgid "Show &passwords"
-msgstr "Mo&stra les contrasenyes"
+msgstr "Mostra les &contrasenyes"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
@@ -908,10 +906,9 @@ msgstr "Mostra informació avançada quant als camps"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
-#, fuzzy, kde-format
-#| msgid "&Show details"
+#, kde-format
 msgid "Show field &details"
-msgstr "Mo&stra els detalls"
+msgstr "Mostra els &detalls dels camps"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
@@ -927,10 +924,9 @@ msgstr "Emmagatzema les dades del formulari al KWallet en tancar el diàleg"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
-#, fuzzy, kde-format
-#| msgid "Store form data in KWallet when closing the dialog"
+#, kde-format
 msgid "&Store the contents of selected fields when closing the dialog"
-msgstr "Emmagatzema les dades del formulari al KWallet en tancar el diàleg"
+msgstr "&Emmagatzema el contingut dels camps seleccionats en tancar el diàleg"
 
 #: src/webenginepage.cpp:164
 #, kde-format
@@ -1239,45 +1235,42 @@ msgstr ""
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
-msgstr ""
+msgstr "&Omple les credencials"
 
 #: src/webenginepart.cpp:1024
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
-msgstr ""
+msgstr "&Cerca a la pàgina sol·licituds de credencials"
 
 #: src/webenginepart.cpp:1028
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
-msgstr ""
+msgstr "&Emmagatzema ara les credencials"
 
 #: src/webenginepart.cpp:1032
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
-msgstr "&Personalitza els camps a memoritzar d'aquesta pàgina..."
+msgstr "&Personalitza la configuració de les credencials per a la pàgina..."
 
 #: src/webenginepart.cpp:1036
-#, fuzzy, kde-format
-#| msgid "Remove Customized Memorization Settings for This Page"
+#, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr ""
-"Elimina la configuració memoritzada de personalització d'aquesta pàgina"
+"Reinicialitza la configuració personalitzada de les credencials per a la "
+"pàgina"
 
 #: src/webenginepart.cpp:1040
-#, fuzzy, kde-format
-#| msgid "&Allow Password Caching for This Site"
+#, kde-format
 msgid "&Allow Credential Caching for This Page"
-msgstr "Permet l'ús de la memòria c&au de contrasenyes per a aquest lloc"
+msgstr "Permet l'ús de la memòria c&au de credencials per a aquesta pàgina"
 
 #: src/webenginepart.cpp:1044
-#, fuzzy, kde-format
-#| msgid "Remove All Memorized Passwords for This Site"
+#, kde-format
 msgid "Remove All Stored Passwords for This Site"
-msgstr "Elimina totes les contrasenyes memoritzades d'aquest lloc"
+msgstr "Elimina totes les contrasenyes emmagatzemades d'aquest lloc"
 
 #: src/webenginepart.cpp:1048
 #, kde-format

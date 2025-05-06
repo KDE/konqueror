@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the konqueror package.
 #
-# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-05 00:41+0000\n"
-"PO-Revision-Date: 2024-11-04 08:07+0200\n"
+"PO-Revision-Date: 2025-05-05 15:29+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -855,10 +855,9 @@ msgstr "אחר"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgid "Customize Fields To Store"
-msgstr "התאמת &שדות לזכירה לעמוד הזה…"
+msgstr "התאמת שדות האחסון"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
@@ -868,8 +867,7 @@ msgstr "להחליף בין הצגת סיסמאות לממלאי מקום"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "&Show passwords"
+#, kde-format
 msgid "Show &passwords"
 msgstr "ה&צגת סיסמאות"
 
@@ -881,10 +879,9 @@ msgstr "הצגת פרטים מתקדמים על השדות"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
-#, fuzzy, kde-format
-#| msgid "&Show details"
+#, kde-format
 msgid "Show field &details"
-msgstr "הצגת &פרטים"
+msgstr "הצגת פ&רטי שדה"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
@@ -900,10 +897,9 @@ msgstr "לאחסן את פרטי הטופס ב־KWallet עם סגירת החלו
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
-#, fuzzy, kde-format
-#| msgid "Store form data in KWallet when closing the dialog"
+#, kde-format
 msgid "&Store the contents of selected fields when closing the dialog"
-msgstr "לאחסן את פרטי הטופס ב־KWallet עם סגירת החלונית"
+msgstr "לאחסן את תוכן השדות הנבחרים בעת &סגירת החלונית"
 
 #: src/webenginepage.cpp:164
 #, kde-format
@@ -1202,44 +1198,40 @@ msgstr "<html>לאפשר לאתר %1 לזכור את פרטי הכניסה אל 
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
-msgstr ""
+msgstr "מילוי &פרטי גישה"
 
 #: src/webenginepart.cpp:1024
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
-msgstr ""
+msgstr "עמוד חיפוש ל&בקשות פרטי גישה"
 
 #: src/webenginepart.cpp:1028
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
-msgstr ""
+msgstr "ל&אחסן את פרטי הגישה כעת"
 
 #: src/webenginepart.cpp:1032
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
-msgstr "התאמת &שדות לזכירה לעמוד הזה…"
+msgstr "התאמת ה&גדרות פרטי גישה לעמוד…"
 
 #: src/webenginepart.cpp:1036
-#, fuzzy, kde-format
-#| msgid "Remove Customized Memorization Settings for This Page"
+#, kde-format
 msgid "Reset Custom Credential Settings for Page"
-msgstr "הסרת הגדרות זכירה מותאמות אישית לעמוד הזה"
+msgstr "איפוס הגדרות פרטי גישה מתואמות לעמוד"
 
 #: src/webenginepart.cpp:1040
-#, fuzzy, kde-format
-#| msgid "&Allow Password Caching for This Site"
+#, kde-format
 msgid "&Allow Credential Caching for This Page"
-msgstr "לאפשר מ&טמון סיסמאות לאתר הזה"
+msgstr "לאפשר &שמירת פרטי גישה לעמוד הזה במטמון"
 
 #: src/webenginepart.cpp:1044
-#, fuzzy, kde-format
-#| msgid "Remove All Memorized Passwords for This Site"
+#, kde-format
 msgid "Remove All Stored Passwords for This Site"
-msgstr "הסרת כל הסיסמאות השמורות לאתר הזה"
+msgstr "הסרת כל הסיסמאות שאוחסנו עבור האתר הזה"
 
 #: src/webenginepart.cpp:1048
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-05 00:41+0000\n"
-"PO-Revision-Date: 2024-11-04 05:07+0100\n"
+"PO-Revision-Date: 2025-05-05 03:46+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -874,10 +874,9 @@ msgstr "სხვა"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgid "Customize Fields To Store"
-msgstr "&ამ გვერდისთვის დასამახსოვრებელი ველების მორგება..."
+msgstr "დასამახსოვრებელი ველების მორგება"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
@@ -887,10 +886,9 @@ msgstr "პაროლებსა და ადგილმჭერებს 
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "&Show passwords"
+#, kde-format
 msgid "Show &passwords"
-msgstr "პაროლების &ჩვენება"
+msgstr "&პაროლების ჩვენება"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
@@ -900,10 +898,9 @@ msgstr "ველების შესახებ დამატებით�
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
-#, fuzzy, kde-format
-#| msgid "&Show details"
+#, kde-format
 msgid "Show field &details"
-msgstr "&დეტალების ჩვენება"
+msgstr "ველის &დეტალების ჩვენება"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
@@ -919,10 +916,9 @@ msgstr "ფანჯრის დახურვისას ფორმის 
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
-#, fuzzy, kde-format
-#| msgid "Store form data in KWallet when closing the dialog"
+#, kde-format
 msgid "&Store the contents of selected fields when closing the dialog"
-msgstr "ფანჯრის დახურვისას ფორმის მონაცემების KWallet-ში შენახვა"
+msgstr "მონიშნული ველების მნიშვნელობის &შენახვა დიალოგის დახურვისას"
 
 #: src/webenginepage.cpp:164
 #, kde-format
@@ -1230,42 +1226,38 @@ msgstr ""
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
-msgstr ""
+msgstr "&ავტორიზაციის დეტალების შევსება"
 
 #: src/webenginepart.cpp:1024
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
-msgstr ""
+msgstr "&გვერდზე ავტორიზაციის დეტალების მოთხოვნის მოძებნა"
 
 #: src/webenginepart.cpp:1028
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
-msgstr ""
+msgstr "ავტორიზაციის დეტალების შენახვა &ახლავე"
 
 #: src/webenginepart.cpp:1032
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
-msgstr "&ამ გვერდისთვის დასამახსოვრებელი ველების მორგება..."
+msgstr "ავტორიზაციის დეტალების მორგება &გვერდისთვის..."
 
 #: src/webenginepart.cpp:1036
-#, fuzzy, kde-format
-#| msgid "Remove Customized Memorization Settings for This Page"
+#, kde-format
 msgid "Reset Custom Credential Settings for Page"
-msgstr "ამ გვერდისთვის მორგებული დამახსოვრების პარამეტრების წაშლა"
+msgstr "ავტორიზაციის დეტალების მორგებული პარამეტრების ჩამოყრა გვერდისთვის"
 
 #: src/webenginepart.cpp:1040
-#, fuzzy, kde-format
-#| msgid "&Allow Password Caching for This Site"
+#, kde-format
 msgid "&Allow Credential Caching for This Page"
-msgstr "&ამ საიტისთვის პაროლების დამახსოვრების დაშვება"
+msgstr "&ამ გვერდისთვის პაროლების დამახსოვრების დაშვება"
 
 #: src/webenginepart.cpp:1044
-#, fuzzy, kde-format
-#| msgid "Remove All Memorized Passwords for This Site"
+#, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "ამ საიტისთვის ყველა დამახსოვრებული პაროლის წაშლა"
 
