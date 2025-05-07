@@ -13,15 +13,15 @@ msgstr ""
 "Project-Id-Version: extragear-base-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-05 00:41+0000\n"
-"PO-Revision-Date: 2025-02-21 20:56+0300\n"
-"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"PO-Revision-Date: 2025-05-06 22:55+0300\n"
+"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.03.70\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -788,7 +788,7 @@ msgstr "A&yrıntıları gizle"
 #: src/ui/searchbar.cpp:38
 #, kde-format
 msgid "Find..."
-msgstr "&Bul..."
+msgstr "&Bul…"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, closeButton)
 #: src/ui/searchbar.ui:23
@@ -877,10 +877,9 @@ msgstr "diğer"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgid "Customize Fields To Store"
-msgstr "Bu &Sayfa için Bellenecek Alanları Özelleştir..."
+msgstr "Depolanacak Alanları Özelleştir"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
@@ -890,8 +889,7 @@ msgstr "Parola ve yer tutucu gösterimi arasında geçiş yap"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "&Show passwords"
+#, kde-format
 msgid "Show &passwords"
 msgstr "&Parolaları göster"
 
@@ -903,10 +901,9 @@ msgstr "Alanlar hakkında gelişmiş bilgi göster"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
-#, fuzzy, kde-format
-#| msgid "&Show details"
+#, kde-format
 msgid "Show field &details"
-msgstr "&Ayrıntıları göster"
+msgstr "&Alan ayrıntılarını göster"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
@@ -922,10 +919,9 @@ msgstr "İletişim kutusunu kapatırken form verisini K Cüzdan’da depola"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
-#, fuzzy, kde-format
-#| msgid "Store form data in KWallet when closing the dialog"
+#, kde-format
 msgid "&Store the contents of selected fields when closing the dialog"
-msgstr "İletişim kutusunu kapatırken form verisini K Cüzdan’da depola"
+msgstr "İletişim kutusunu kapatırken seçili alanların içeriğini depo&la"
 
 #: src/webenginepage.cpp:164
 #, kde-format
@@ -1089,7 +1085,7 @@ msgstr "İzin Verme"
 #: src/webenginepart.cpp:205
 #, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "Tam HTML Sayfasını Farklı Kaydet..."
+msgstr "Tam HTML Sayfasını Farklı Kaydet…"
 
 #: src/webenginepart.cpp:209
 #, kde-format
@@ -1234,44 +1230,40 @@ msgstr ""
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
-msgstr ""
+msgstr "Kimlik Bilgilerini &Doldur"
 
 #: src/webenginepart.cpp:1024
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
-msgstr ""
+msgstr "Kimlik Bilgisi İstekleri için &Sayfada Ara"
 
 #: src/webenginepart.cpp:1028
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
-msgstr ""
+msgstr "Kimlik Bilgilerini Şimdi &Depola"
 
 #: src/webenginepart.cpp:1032
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
-msgstr "Bu &Sayfa için Bellenecek Alanları Özelleştir..."
+msgstr "&Sayfa için Kimlik Bilgisi Ayarlarını Özelleştir…"
 
 #: src/webenginepart.cpp:1036
-#, fuzzy, kde-format
-#| msgid "Remove Customized Memorization Settings for This Page"
+#, kde-format
 msgid "Reset Custom Credential Settings for Page"
-msgstr "Bu Sayfa için Bellenecek Alanlar Ayarlarını Kaldır"
+msgstr "Sayfa için Özel Kimlik Bilgisi Ayarlarını Sıfırla"
 
 #: src/webenginepart.cpp:1040
-#, fuzzy, kde-format
-#| msgid "&Allow Password Caching for This Site"
+#, kde-format
 msgid "&Allow Credential Caching for This Page"
-msgstr "B&u Site için Parola Tutmaya İzin Ver"
+msgstr "Bu S&ayfa için Kimlik Bilgisi Önbelleklemeye İzin Ver"
 
 #: src/webenginepart.cpp:1044
-#, fuzzy, kde-format
-#| msgid "Remove All Memorized Passwords for This Site"
+#, kde-format
 msgid "Remove All Stored Passwords for This Site"
-msgstr "Bu Site için Anımsanan Tüm Parolaları Kaldır"
+msgstr "Bu Site için Depolanan Tüm Parolaları Kaldır"
 
 #: src/webenginepart.cpp:1048
 #, kde-format
@@ -1432,12 +1424,12 @@ msgstr "%1, %2 olarak kaydedildi"
 #: src/webengineview.cpp:351
 #, kde-format
 msgid "Save Image As..."
-msgstr "Görseli Farklı Kaydet..."
+msgstr "Görseli Farklı Kaydet…"
 
 #: src/webengineview.cpp:356
 #, kde-format
 msgid "Send Image..."
-msgstr "Görseli Gönder..."
+msgstr "Görseli Gönder…"
 
 #: src/webengineview.cpp:361
 #, kde-format
@@ -1457,7 +1449,7 @@ msgstr "Görseli Görüntüle (%1)"
 #: src/webengineview.cpp:380
 #, kde-format
 msgid "Block Image..."
-msgstr "Görseli Engelle..."
+msgstr "Görseli Engelle…"
 
 #: src/webengineview.cpp:388
 #, kde-format
@@ -1493,7 +1485,7 @@ msgstr "B&ağlantı Adresini Kopyala"
 #: src/webengineview.cpp:478
 #, kde-format
 msgid "&Save Link As..."
-msgstr "Bağlantıyı Farklı &Kaydet..."
+msgstr "Bağlantıyı Farklı &Kaydet…"
 
 #: src/webengineview.cpp:498
 #, kde-format
@@ -1518,7 +1510,7 @@ msgstr "&Denetimleri Aç/Kapat"
 #: src/webengineview.cpp:524
 #, kde-format
 msgid "Sa&ve Video As..."
-msgstr "&Videoyu Farklı Kaydet..."
+msgstr "&Videoyu Farklı Kaydet…"
 
 #: src/webengineview.cpp:525
 #, kde-format
@@ -1528,7 +1520,7 @@ msgstr "Video Adresini Ko&pyala"
 #: src/webengineview.cpp:527
 #, kde-format
 msgid "Sa&ve Audio As..."
-msgstr "&Sesi Farklı Kaydet..."
+msgstr "&Sesi Farklı Kaydet…"
 
 #: src/webengineview.cpp:528
 #, kde-format
@@ -1538,7 +1530,7 @@ msgstr "Ses URL’sini Ko&pyala"
 #: src/webengineview.cpp:530
 #, kde-format
 msgid "Sa&ve Media As..."
-msgstr "&Ortamı Farklı Kaydet..."
+msgstr "&Ortamı Farklı Kaydet…"
 
 #: src/webengineview.cpp:531
 #, kde-format
@@ -1560,7 +1552,7 @@ msgstr "“%1” İfadesini Şununla Ara"
 #: src/webengineview.cpp:608
 #, kde-format
 msgid "Configure Web Shortcuts..."
-msgstr "Web Kısayollarını Yapılandır..."
+msgstr "Web Kısayollarını Yapılandır…"
 
 #: src/webfieldsdataview.cpp:61
 #, kde-format
