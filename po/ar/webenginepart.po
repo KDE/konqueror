@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-05 00:41+0000\n"
-"PO-Revision-Date: 2025-01-14 20:53+0400\n"
+"PO-Revision-Date: 2025-05-07 18:32+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -858,10 +858,9 @@ msgstr "أخرى"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgid "Customize Fields To Store"
-msgstr "&خصص الحقول لحفظها في هذه الصفحة..."
+msgstr "خصص الحقول لحفظها"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
@@ -871,8 +870,7 @@ msgstr "التبديل بين عرض كلمات السر أو العناصر ا�
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "&Show passwords"
+#, kde-format
 msgid "Show &passwords"
 msgstr "أ&ظهر كلمات السر"
 
@@ -884,10 +882,9 @@ msgstr "أظهر معلومات متقدمة حول الحقول"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
-#, fuzzy, kde-format
-#| msgid "&Show details"
+#, kde-format
 msgid "Show field &details"
-msgstr "أ&ظهر التّفاصيل"
+msgstr "أ&ظهر تفاصيل الحقل"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
@@ -903,10 +900,9 @@ msgstr "خزّن بيانات النموذج في حافظتك عند إغلاق
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
-#, fuzzy, kde-format
-#| msgid "Store form data in KWallet when closing the dialog"
+#, kde-format
 msgid "&Store the contents of selected fields when closing the dialog"
-msgstr "خزّن بيانات النموذج في حافظتك عند إغلاق مربع الحوار"
+msgstr "خزّن محتويات الحقول المحددة &عند إغلاق مربع الحوار"
 
 #: src/webenginepage.cpp:164
 #, kde-format
@@ -1209,44 +1205,40 @@ msgstr "<html>هل تريد %1 يتذكر معلومات الدخول لـ<b>%2<
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
-msgstr ""
+msgstr "ا&ملأ بيانات التسجيل"
 
 #: src/webenginepart.cpp:1024
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
-msgstr ""
+msgstr "ابحث &في الصفحة عن طلبات التسجيل"
 
 #: src/webenginepart.cpp:1028
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
-msgstr ""
+msgstr "&خزّن بيانات التسجيل الآن"
 
 #: src/webenginepart.cpp:1032
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
-msgstr "&خصص الحقول لحفظها في هذه الصفحة..."
+msgstr "&خصص إعدادات التسجيل للصفحة…"
 
 #: src/webenginepart.cpp:1036
-#, fuzzy, kde-format
-#| msgid "Remove Customized Memorization Settings for This Page"
+#, kde-format
 msgid "Reset Custom Credential Settings for Page"
-msgstr "أزل إعدادات الحفظ المخصصة لهذه الصفحة"
+msgstr "صفّر إعدادات بيانات التسجيل المخصصة للصفحة"
 
 #: src/webenginepart.cpp:1040
-#, fuzzy, kde-format
-#| msgid "&Allow Password Caching for This Site"
+#, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr "ا&سمح بالحفظ المؤقت لكلمات السر لهذا الموقع"
 
 #: src/webenginepart.cpp:1044
-#, fuzzy, kde-format
-#| msgid "Remove All Memorized Passwords for This Site"
+#, kde-format
 msgid "Remove All Stored Passwords for This Site"
-msgstr "أزل جميع كلمات السر لهذا الموقع"
+msgstr "أزِل جميع كلمات السر المخزنة لهذا الموقع"
 
 #: src/webenginepart.cpp:1048
 #, kde-format
