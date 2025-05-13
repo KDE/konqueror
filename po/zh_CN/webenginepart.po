@@ -849,10 +849,9 @@ msgstr "其他"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgid "Customize Fields To Store"
-msgstr "自定义此页内需记住的字段(&C)..."
+msgstr "自定义要存储的字段"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
@@ -862,10 +861,9 @@ msgstr "在显示密码和显示占位符之间进行切换"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "&Show passwords"
+#, kde-format
 msgid "Show &passwords"
-msgstr "显示密码(&S)"
+msgstr "显示密码(&P)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
@@ -875,10 +873,9 @@ msgstr "显示该字段相关的高级信息"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
-#, fuzzy, kde-format
-#| msgid "&Show details"
+#, kde-format
 msgid "Show field &details"
-msgstr "显示详情(&S)"
+msgstr "显示字段详情(&D)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
@@ -894,10 +891,9 @@ msgstr "关闭对话框后，将表单中的数据储存到 KWallet 中"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
-#, fuzzy, kde-format
-#| msgid "Store form data in KWallet when closing the dialog"
+#, kde-format
 msgid "&Store the contents of selected fields when closing the dialog"
-msgstr "关闭对话框后，将表单中的数据储存到 KWallet 中"
+msgstr "关闭对话框时存储所选字段的内容(&S)"
 
 #: src/webenginepage.cpp:164
 #, kde-format
@@ -1194,44 +1190,40 @@ msgstr "<html>您想要让 %1 记住 <b>%2</b> 的登录信息吗？</html>"
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
-msgstr ""
+msgstr "填写登录凭据(&F)"
 
 #: src/webenginepart.cpp:1024
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
-msgstr ""
+msgstr "搜索页面中的登录凭证请求(&S)"
 
 #: src/webenginepart.cpp:1028
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
-msgstr ""
+msgstr "立即保存登录凭证(&S)"
 
 #: src/webenginepart.cpp:1032
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
-msgstr "自定义此页内需记住的字段(&C)..."
+msgstr "自定义页面的登录凭据设置(&C)..."
 
 #: src/webenginepart.cpp:1036
-#, fuzzy, kde-format
-#| msgid "Remove Customized Memorization Settings for This Page"
+#, kde-format
 msgid "Reset Custom Credential Settings for Page"
-msgstr "删除此页的自定义记住设置"
+msgstr "重置页面的自定义登录凭据设置"
 
 #: src/webenginepart.cpp:1040
-#, fuzzy, kde-format
-#| msgid "&Allow Password Caching for This Site"
+#, kde-format
 msgid "&Allow Credential Caching for This Page"
-msgstr "允许缓存此网站的密码(&A)"
+msgstr "允许此页面进行登录凭据缓存(&A)"
 
 #: src/webenginepart.cpp:1044
-#, fuzzy, kde-format
-#| msgid "Remove All Memorized Passwords for This Site"
+#, kde-format
 msgid "Remove All Stored Passwords for This Site"
-msgstr "删除此网站所有已记住的密码"
+msgstr "移除此站点存储的所有密码"
 
 #: src/webenginepart.cpp:1048
 #, kde-format
@@ -1597,20 +1589,3 @@ msgstr ""
 "<ul><li><b>字段内部名称：</b>%1</li><li><b>字段类型：</b>%2</li><li><b>字段 "
 "ID：</b>%3</li><li><b>字段是否为只读：</b>%4</li><li><b>字段是否已启用：</b>"
 "%5</li><li><b>是否开启自动补全：</b>%6</li></ul>"
-
-#~ msgid "Choose fields to remember"
-#~ msgstr "选择要记住的字段"
-
-#~ msgid "&Immediately memorize form data"
-#~ msgstr "立刻记住表单数据(&I)"
-
-#~ msgctxt "Fill the Forms with Data from KWallet"
-#~ msgid "&Fill forms now"
-#~ msgstr "立刻填充表格(&F)"
-
-#~ msgctxt "Scans again the page to detect forms to fill"
-#~ msgid "Look Again for Forms"
-#~ msgstr "再次寻找表单"
-
-#~ msgid "&Memorize Passwords in This Page Now"
-#~ msgstr "立刻记住此页内的密码(&M)"
