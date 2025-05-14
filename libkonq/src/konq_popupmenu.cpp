@@ -17,8 +17,6 @@
 #include <klocalizedstring.h>
 #include <kbookmarkmanager.h>
 #include <kbookmarkdialog.h>
-#include <KIO/OpenUrlJob>
-#include <KIO/JobUiDelegate>
 #include <kprotocolmanager.h>
 #include <knewfilemenu.h>
 #include <kconfiggroup.h>
@@ -26,12 +24,17 @@
 #include <kdesktopfile.h>
 #include <kauthorized.h>
 #include <kacceleratormanager.h>
+#include <kio_version.h>
 #include <KIO/EmptyTrashJob>
 #include <KIO/JobUiDelegate>
 #include <KIO/RestoreJob>
 #include <KIO/CommandLauncherJob>
-#include <kio_version.h>
+#include <KIO/AskUserActionInterface>
 #include <KIO/OpenUrlJob>
+#include <KIO/JobUiDelegate>
+#include <KIO/DeleteOrTrashJob>
+#include <KIO/OpenUrlJob>
+#include <KIO/JobUiDelegateFactory>
 #include <KTerminalLauncherJob>
 #include <KFileCopyToMenu>
 #include <KJobWidgets>
@@ -39,7 +42,6 @@
 #include <KMimeTypeEditor>
 #include <KPluginMetaData>
 #include <KStandardGuiItem>
-#include <KIO/JobUiDelegateFactory>
 #include <ki18n_version.h>
 
 #include <QIcon>
@@ -496,14 +498,11 @@ void KonqPopupMenuPrivate::slotPopupNewDir()
 
 void KonqPopupMenuPrivate::slotPopupEmptyTrashBin()
 {
-    KJobUiDelegate* baseUiDelegate = KIO::createDefaultJobUiDelegate(KJobUiDelegate::Flags{}, m_parentWidget);
-    KIO::JobUiDelegate* uiDelegate = qobject_cast<KIO::JobUiDelegate*>(baseUiDelegate);
-    uiDelegate->setWindow(m_parentWidget);
-    if (uiDelegate && uiDelegate->askDeleteConfirmation(QList<QUrl>(), KIO::JobUiDelegate::EmptyTrash, KIO::JobUiDelegate::DefaultConfirmation)) {
-        KIO::Job *job = KIO::emptyTrash();
-        KJobWidgets::setWindow(job, m_parentWidget);
-        job->uiDelegate()->setAutoErrorHandlingEnabled(true); // or connect to the result signal
-    }
+    using IFace = KIO::AskUserActionInterface;
+    auto deleteJob = new KIO::DeleteOrTrashJob({}, IFace::EmptyTrash, IFace::DefaultConfirmation, m_parentWidget);
+    deleteJob->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::Flags{}, m_parentWidget));
+    deleteJob->uiDelegate()->setAutoErrorHandlingEnabled(true);
+    deleteJob->start();
 }
 
 void KonqPopupMenuPrivate::slotConfigTrashBin()

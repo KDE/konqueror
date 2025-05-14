@@ -22,9 +22,6 @@
 #include <KPluginMetaData>
 
 #include <kprotocolmanager.h>
-#include <kio/copyjob.h>
-#include <kio/deletejob.h>
-#include <KIO/Paste>
 #include <kmessagebox.h>
 #include <kactionmenu.h>
 #include <kactioncollection.h>
@@ -39,6 +36,11 @@
 #include <KLocalizedString>
 #include <KIO/ApplicationLauncherJob>
 #include <KIO/JobUiDelegateFactory>
+#include <KIO/AskUserActionInterface>
+#include <KIO/DeleteOrTrashJob>
+#include <KIO/CopyJob>
+#include <KIO/DeleteJob>
+#include <KIO/Paste>
 
 #include <QApplication>
 #include <QMimeData>
@@ -449,16 +451,13 @@ FSViewNavigationExtension::~FSViewNavigationExtension()
 void FSViewNavigationExtension::del()
 {
     const QList<QUrl> urls = _view->selectedUrls();
-    KJobUiDelegate* baseUiDelegate = KIO::createDefaultJobUiDelegate(KJobUiDelegate::Flags{}, _view);
-    KIO::JobUiDelegate* uiDelegate = qobject_cast<KIO::JobUiDelegate*>(baseUiDelegate);
-    uiDelegate->setWindow(_view);
-    if (uiDelegate && uiDelegate->askDeleteConfirmation(urls,
-                                         KIO::JobUiDelegate::Delete, KIO::JobUiDelegate::DefaultConfirmation)) {
-        KIO::Job *job = KIO::del(urls);
-        KJobWidgets::setWindow(job, _view);
-        job->uiDelegate()->setAutoErrorHandlingEnabled(true);
-        connect(job, &KJob::result, this, &FSViewNavigationExtension::refresh);
-    }
+
+    using IFace = KIO::AskUserActionInterface;
+    auto deleteJob = new KIO::DeleteOrTrashJob(urls, IFace::Delete, IFace::DefaultConfirmation, _view);
+    deleteJob->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::Flags{}, _view));
+    deleteJob->uiDelegate()->setAutoErrorHandlingEnabled(true);
+    connect(deleteJob, &KJob::result, this, &FSViewNavigationExtension::refresh);
+    deleteJob->start();
 }
 
 void FSViewNavigationExtension::trash()
@@ -467,18 +466,14 @@ void FSViewNavigationExtension::trash()
     if (deleteNotTrash) {
         del();
     } else {
-        KJobUiDelegate* baseUiDelegate = KIO::createDefaultJobUiDelegate(KJobUiDelegate::Flags{}, _view);
-        KIO::JobUiDelegate* uiDelegate = qobject_cast<KIO::JobUiDelegate*>(baseUiDelegate);
-        uiDelegate->setWindow(_view);
         const QList<QUrl> urls = _view->selectedUrls();
-        if (uiDelegate && uiDelegate->askDeleteConfirmation(urls,
-                                             KIO::JobUiDelegate::Trash, KIO::JobUiDelegate::DefaultConfirmation)) {
-            KIO::Job *job = KIO::trash(urls);
-            KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Trash, urls, QUrl("trash:/"), job);
-            KJobWidgets::setWindow(job, _view);
-            job->uiDelegate()->setAutoErrorHandlingEnabled(true);
-            connect(job, &KJob::result, this, &FSViewNavigationExtension::refresh);
-        }
+
+        using IFace = KIO::AskUserActionInterface;
+        auto deleteJob = new KIO::DeleteOrTrashJob(urls, IFace::Trash, IFace::DefaultConfirmation, _view);
+        deleteJob->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::Flags{}, _view));
+        deleteJob->uiDelegate()->setAutoErrorHandlingEnabled(true);
+        connect(deleteJob, &KJob::result, this, &FSViewNavigationExtension::refresh);
+        deleteJob->start();
     }
 }
 
