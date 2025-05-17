@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 00:38+0000\n"
+"POT-Creation-Date: 2025-05-17 00:41+0000\n"
 "PO-Revision-Date: 2011-07-26 23:44+0530\n"
 "Last-Translator: Danishka Navin <danishka@gmail.com>\n"
 "Language-Team: Sinhala <info@hanthana.org>\n"
@@ -72,12 +72,12 @@ msgstr "Mime වර්ගය"
 msgid "Go To"
 msgstr "වෙත යන්න"
 
-#: fsview.cpp:284 fsview_part.cpp:106
+#: fsview.cpp:284 fsview_part.cpp:108
 #, kde-format
 msgid "Stop at Depth"
 msgstr "පතුළේදී නවතින්න"
 
-#: fsview.cpp:285 fsview_part.cpp:103
+#: fsview.cpp:285 fsview_part.cpp:105
 #, kde-format
 msgid "Stop at Area"
 msgstr "ප්‍රදේශයේ නවතින්න"
@@ -107,12 +107,12 @@ msgstr "ප්‍රතිපූර්ණය"
 msgid "Refresh '%1'"
 msgstr "ප්‍රතිපූර්ණය '%1'"
 
-#: fsview.cpp:313 fsview_part.cpp:113
+#: fsview.cpp:313 fsview_part.cpp:115
 #, kde-format
 msgid "Color Mode"
 msgstr "වර්ණ ප්‍රකාරය"
 
-#: fsview.cpp:316 fsview_part.cpp:109
+#: fsview.cpp:316 fsview_part.cpp:111
 #, kde-format
 msgid "Visualization"
 msgstr "දෘෂ්ටි කල්පනය"
@@ -127,21 +127,21 @@ msgstr "නැත"
 msgid "Depth"
 msgstr "ගැඹුර"
 
-#: fsview_part.cpp:70
+#: fsview_part.cpp:72
 #, kde-format
 msgid "Read 1 folder, in %2"
 msgid_plural "Read %1 folders, in %2"
 msgstr[0] "%2 හි, 1 බහලුම කියවන්න"
 msgstr[1] "%2 හි, %1 බහලුම් කියවන්න"
 
-#: fsview_part.cpp:74
+#: fsview_part.cpp:76
 #, kde-format
 msgid "1 folder"
 msgid_plural "%1 folders"
 msgstr[0] "1 බහලුම"
 msgstr[1] "%1 බහලුම"
 
-#: fsview_part.cpp:87
+#: fsview_part.cpp:89
 #, kde-format
 msgid ""
 "<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
@@ -155,46 +155,46 @@ msgstr ""
 "දැනුවත්ව සිදු <b>නොකරන</b>බව සලකන්න. </p><p>භාවිත හා අභිප්‍රේත පිළිබඳ වැඩිදුර තොරතුරු සඳහා "
 "'සහාය/FSView උදව් පිටු' මෙනුවෙන් මාර්ගගත සහය ලබන්න.</p>"
 
-#: fsview_part.cpp:119
+#: fsview_part.cpp:121
 #, kde-format
 msgid "&FSView Manual"
 msgstr "&FSView සහාය පිටු"
 
-#: fsview_part.cpp:121
+#: fsview_part.cpp:123
 #, kde-format
 msgid "Show FSView manual"
 msgstr "FSදසුන් උපදෙස් පෙන්වන්න"
 
-#: fsview_part.cpp:122
+#: fsview_part.cpp:124
 #, kde-format
 msgid "Opens the help browser with the FSView documentation"
 msgstr "FSView ලේඛනයන් සමඟ සහාය ගවේශකය විවෘත කරයි"
 
-#: fsview_part.cpp:154
+#: fsview_part.cpp:156
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Move to Trash"
 msgstr "ඉවතලන්න"
 
-#: fsview_part.cpp:161
+#: fsview_part.cpp:163
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Delete"
 msgstr "මකන්න"
 
-#: fsview_part.cpp:166
+#: fsview_part.cpp:168
 #, kde-format
 msgctxt "@action:inmenu Edit"
 msgid "&Edit File Type..."
 msgstr "ගොනු වර්ගය සකසන්න ... (&E)"
 
-#: fsview_part.cpp:170
+#: fsview_part.cpp:172
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Properties"
 msgstr "වත්කම්"
 
-#: fsview_part.cpp:203
+#: fsview_part.cpp:205
 #, kde-format
 msgid ""
 "FSView intentionally does not support automatic updates when changes are "

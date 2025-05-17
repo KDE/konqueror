@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fsview\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 00:38+0000\n"
+"POT-Creation-Date: 2025-05-17 00:41+0000\n"
 "PO-Revision-Date: 2023-03-10 07:08+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -79,12 +79,12 @@ msgstr "Vrsta MIME"
 msgid "Go To"
 msgstr "Pojdi na"
 
-#: fsview.cpp:284 fsview_part.cpp:106
+#: fsview.cpp:284 fsview_part.cpp:108
 #, kde-format
 msgid "Stop at Depth"
 msgstr "Zaustavi na globini"
 
-#: fsview.cpp:285 fsview_part.cpp:103
+#: fsview.cpp:285 fsview_part.cpp:105
 #, kde-format
 msgid "Stop at Area"
 msgstr "Zaustavi se na območju"
@@ -114,12 +114,12 @@ msgstr "Osveži"
 msgid "Refresh '%1'"
 msgstr "Osveži '%1'"
 
-#: fsview.cpp:313 fsview_part.cpp:113
+#: fsview.cpp:313 fsview_part.cpp:115
 #, kde-format
 msgid "Color Mode"
 msgstr "Barvni način"
 
-#: fsview.cpp:316 fsview_part.cpp:109
+#: fsview.cpp:316 fsview_part.cpp:111
 #, kde-format
 msgid "Visualization"
 msgstr "Predočenje"
@@ -134,7 +134,7 @@ msgstr "Brez"
 msgid "Depth"
 msgstr "Globina"
 
-#: fsview_part.cpp:70
+#: fsview_part.cpp:72
 #, kde-format
 msgid "Read 1 folder, in %2"
 msgid_plural "Read %1 folders, in %2"
@@ -143,7 +143,7 @@ msgstr[1] "Prebrani %1 mapi v %2"
 msgstr[2] "Prebrane %1 mape v %2"
 msgstr[3] "Prebranih %1 map v %2"
 
-#: fsview_part.cpp:74
+#: fsview_part.cpp:76
 #, kde-format
 msgid "1 folder"
 msgid_plural "%1 folders"
@@ -152,7 +152,7 @@ msgstr[1] "%1 mapi"
 msgstr[2] "%1 mape"
 msgstr[3] "%1 map"
 
-#: fsview_part.cpp:87
+#: fsview_part.cpp:89
 #, kde-format
 msgid ""
 "<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
@@ -168,46 +168,46 @@ msgstr ""
 "možnostih, ki so na voljo, si oglejte spletno pomoč v meniju »Pomoč/"
 "Priročnik FSView«.</p>"
 
-#: fsview_part.cpp:119
+#: fsview_part.cpp:121
 #, kde-format
 msgid "&FSView Manual"
 msgstr "Priročnik &FSViev"
 
-#: fsview_part.cpp:121
+#: fsview_part.cpp:123
 #, kde-format
 msgid "Show FSView manual"
 msgstr "Prikaži priročnik FSView"
 
-#: fsview_part.cpp:122
+#: fsview_part.cpp:124
 #, kde-format
 msgid "Opens the help browser with the FSView documentation"
 msgstr "Odpre brskalnik pomoči z dokumentacijo FSView"
 
-#: fsview_part.cpp:154
+#: fsview_part.cpp:156
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Move to Trash"
 msgstr "Premakni v Smeti"
 
-#: fsview_part.cpp:161
+#: fsview_part.cpp:163
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Delete"
 msgstr "Izbriši"
 
-#: fsview_part.cpp:166
+#: fsview_part.cpp:168
 #, kde-format
 msgctxt "@action:inmenu Edit"
 msgid "&Edit File Type..."
 msgstr "Ur&edi vrsto datoteke..."
 
-#: fsview_part.cpp:170
+#: fsview_part.cpp:172
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Properties"
 msgstr "Lastnosti"
 
-#: fsview_part.cpp:203
+#: fsview_part.cpp:205
 #, kde-format
 msgid ""
 "FSView intentionally does not support automatic updates when changes are "

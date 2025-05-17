@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeaddons/fsview.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 00:38+0000\n"
+"POT-Creation-Date: 2025-05-17 00:41+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -72,13 +72,13 @@ msgstr "Cineál MIME"
 msgid "Go To"
 msgstr "Téigh Go"
 
-#: fsview.cpp:284 fsview_part.cpp:106
+#: fsview.cpp:284 fsview_part.cpp:108
 #, kde-format
 msgid "Stop at Depth"
 msgstr "Stop ag Doimhneacht"
 
 # area as in mathematics
-#: fsview.cpp:285 fsview_part.cpp:103
+#: fsview.cpp:285 fsview_part.cpp:105
 #, kde-format
 msgid "Stop at Area"
 msgstr "Stop ag Achar"
@@ -108,12 +108,12 @@ msgstr "Athnuaigh"
 msgid "Refresh '%1'"
 msgstr "Athnuaigh '%1'"
 
-#: fsview.cpp:313 fsview_part.cpp:113
+#: fsview.cpp:313 fsview_part.cpp:115
 #, kde-format
 msgid "Color Mode"
 msgstr "Mód Dathanna"
 
-#: fsview.cpp:316 fsview_part.cpp:109
+#: fsview.cpp:316 fsview_part.cpp:111
 #, kde-format
 msgid "Visualization"
 msgstr "Amharcléiriú"
@@ -129,7 +129,7 @@ msgstr "Gan Mód Dathanna"
 msgid "Depth"
 msgstr "Doimhneacht"
 
-#: fsview_part.cpp:70
+#: fsview_part.cpp:72
 #, kde-format
 msgid "Read 1 folder, in %2"
 msgid_plural "Read %1 folders, in %2"
@@ -139,7 +139,7 @@ msgstr[2] "Léadh %1 fhillteán, i %2"
 msgstr[3] "Léadh %1 bhfillteán, i %2"
 msgstr[4] "Léadh %1 fillteán, i %2"
 
-#: fsview_part.cpp:74
+#: fsview_part.cpp:76
 #, kde-format
 msgid "1 folder"
 msgid_plural "%1 folders"
@@ -149,7 +149,7 @@ msgstr[2] "%1 fhillteán"
 msgstr[3] "%1 bhfillteán"
 msgstr[4] "%1 fillteán"
 
-#: fsview_part.cpp:87
+#: fsview_part.cpp:89
 #, kde-format
 msgid ""
 "<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
@@ -164,46 +164,46 @@ msgstr ""
 "p><p>Chun tuilleadh eolais a fháil maidir le húsáid agus roghanna, féach ar "
 "an gcabhair ar líne faoi roghchlár 'Cabhair/Lámhleabhar FSView'.</p>"
 
-#: fsview_part.cpp:119
+#: fsview_part.cpp:121
 #, kde-format
 msgid "&FSView Manual"
 msgstr "Lámhleabhar &FSView"
 
-#: fsview_part.cpp:121
+#: fsview_part.cpp:123
 #, kde-format
 msgid "Show FSView manual"
 msgstr "Taispeáin an lámhleabhar FSView"
 
-#: fsview_part.cpp:122
+#: fsview_part.cpp:124
 #, kde-format
 msgid "Opens the help browser with the FSView documentation"
 msgstr "Oscail an brabhsálaí cabhrach le doiciméadú FSView"
 
-#: fsview_part.cpp:154
+#: fsview_part.cpp:156
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Move to Trash"
 msgstr "Cuir sa Bhruscar"
 
-#: fsview_part.cpp:161
+#: fsview_part.cpp:163
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Delete"
 msgstr "Scrios"
 
-#: fsview_part.cpp:166
+#: fsview_part.cpp:168
 #, kde-format
 msgctxt "@action:inmenu Edit"
 msgid "&Edit File Type..."
 msgstr "&Cuir Cineál Comhaid in Eagar..."
 
-#: fsview_part.cpp:170
+#: fsview_part.cpp:172
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Properties"
 msgstr "Airíonna"
 
-#: fsview_part.cpp:203
+#: fsview_part.cpp:205
 #, kde-format
 msgid ""
 "FSView intentionally does not support automatic updates when changes are "

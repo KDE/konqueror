@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fsview\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 00:38+0000\n"
+"POT-Creation-Date: 2025-05-17 00:41+0000\n"
 "PO-Revision-Date: 2024-02-02 22:50+0200\n"
 "Last-Translator: Liudas Alisauskas <liudas@akmc.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -75,12 +75,12 @@ msgstr "MIME tipas"
 msgid "Go To"
 msgstr "Eiti prie"
 
-#: fsview.cpp:284 fsview_part.cpp:106
+#: fsview.cpp:284 fsview_part.cpp:108
 #, kde-format
 msgid "Stop at Depth"
 msgstr "Sustoti ties gyliu"
 
-#: fsview.cpp:285 fsview_part.cpp:103
+#: fsview.cpp:285 fsview_part.cpp:105
 #, kde-format
 msgid "Stop at Area"
 msgstr "Sustoti ties vieta"
@@ -110,12 +110,12 @@ msgstr "Atnaujinti"
 msgid "Refresh '%1'"
 msgstr "Atnaujinti '%1'"
 
-#: fsview.cpp:313 fsview_part.cpp:113
+#: fsview.cpp:313 fsview_part.cpp:115
 #, kde-format
 msgid "Color Mode"
 msgstr "Spalvų veiksena"
 
-#: fsview.cpp:316 fsview_part.cpp:109
+#: fsview.cpp:316 fsview_part.cpp:111
 #, kde-format
 msgid "Visualization"
 msgstr "Vizualizacijos"
@@ -130,7 +130,7 @@ msgstr "Nieko"
 msgid "Depth"
 msgstr "Gylis"
 
-#: fsview_part.cpp:70
+#: fsview_part.cpp:72
 #, kde-format
 msgid "Read 1 folder, in %2"
 msgid_plural "Read %1 folders, in %2"
@@ -139,7 +139,7 @@ msgstr[1] "Skaityti %1 aplankus, esančius %2"
 msgstr[2] "Skaityti %1 aplankų, esančių %2"
 msgstr[3] "Skaityti %1 aplanką, esantį %2"
 
-#: fsview_part.cpp:74
+#: fsview_part.cpp:76
 #, kde-format
 msgid "1 folder"
 msgid_plural "%1 folders"
@@ -148,7 +148,7 @@ msgstr[1] "%1 aplankai"
 msgstr[2] "%1 aplankų"
 msgstr[3] "%1 aplankas"
 
-#: fsview_part.cpp:87
+#: fsview_part.cpp:89
 #, kde-format
 msgid ""
 "<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
@@ -164,46 +164,46 @@ msgstr ""
 "detalesnę informaciją apie įskiepio naudojimą, žr. internete esančia "
 "pagalbos informaciją iš meniu „Pagalba/FSView žinynas“.</p>"
 
-#: fsview_part.cpp:119
+#: fsview_part.cpp:121
 #, kde-format
 msgid "&FSView Manual"
 msgstr "&FSView vadovas"
 
-#: fsview_part.cpp:121
+#: fsview_part.cpp:123
 #, kde-format
 msgid "Show FSView manual"
 msgstr "Rodyti FSView žinyną"
 
-#: fsview_part.cpp:122
+#: fsview_part.cpp:124
 #, kde-format
 msgid "Opens the help browser with the FSView documentation"
 msgstr "Atveria pagalbos naršyklę su FSView dokumentacija"
 
-#: fsview_part.cpp:154
+#: fsview_part.cpp:156
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Move to Trash"
 msgstr "Perkelti į šiukšliadėžę"
 
-#: fsview_part.cpp:161
+#: fsview_part.cpp:163
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Delete"
 msgstr "Ištrinti"
 
-#: fsview_part.cpp:166
+#: fsview_part.cpp:168
 #, kde-format
 msgctxt "@action:inmenu Edit"
 msgid "&Edit File Type..."
 msgstr "&Keisti failo tipą..."
 
-#: fsview_part.cpp:170
+#: fsview_part.cpp:172
 #, kde-format
 msgctxt "@action:inmenu File"
 msgid "Properties"
 msgstr "Savybės"
 
-#: fsview_part.cpp:203
+#: fsview_part.cpp:205
 #, kde-format
 msgid ""
 "FSView intentionally does not support automatic updates when changes are "
