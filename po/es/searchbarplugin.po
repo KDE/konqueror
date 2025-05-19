@@ -1,16 +1,18 @@
-# translation of searchbarplugin.po to Spanish
-# Rafael Osuna <rosuna@wol.es>, 2004.
-# santi <santi@kde-es.org>, 2005.
-# Pablo de Vicente <pablo.devicente@gmail.com>, 2006.
-# Santiago Fernández Sancho <santi@kde-es.org>, 2007.
-# SPDX-FileCopyrightText: 2009, 2019, 2022, 2024 Eloy Cuadra <ecuadra@eloihr.net>
-# Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>, 2010, 2012.
+# Spanish translations for searchbarplugin.po package.
+# Copyright (C) 2004-2025 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# SPDX-FileCopyrightText: 2004 Rafael Osuna <rosuna@wol.es>
+# SPDX-FileCopyrightText: 2005, 2007 Santiago Fernández Sancho <santi@kde-es.org>
+# SPDX-FileCopyrightText: 2006 Pablo de Vicente <pablo.devicente@gmail.com>
+# SPDX-FileCopyrightText: 2009, 2019, 2022, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2010, 2012 Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: searchbarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:38+0000\n"
-"PO-Revision-Date: 2024-01-11 02:09+0100\n"
+"PO-Revision-Date: 2025-05-18 13:25+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -42,7 +44,7 @@ msgstr "Foco de la barra de búsqueda"
 #: searchbar.cpp:272
 #, kde-format
 msgid "Find in Page..."
-msgstr "Buscar en la página..."
+msgstr "Buscar en la página…"
 
 #: searchbar.cpp:292
 #, kde-format
@@ -52,12 +54,12 @@ msgstr "Buscar en esta página"
 #: searchbar.cpp:304
 #, kde-format
 msgid "Select Search Engines..."
-msgstr "Seleccionar motor de búsqueda..."
+msgstr "Seleccionar motor de búsqueda…"
 
 #: searchbar.cpp:323
 #, kde-format
 msgid "Add %1..."
-msgstr "Añadir %1..."
+msgstr "Añadir %1…"
 
 #. i18n: ectx: ToolBar (locationToolBar)
 #: searchbarplugin.rc:3
@@ -79,12 +81,3 @@ msgstr "Nombre:"
 #, kde-format
 msgid "Shortcuts:"
 msgstr "Atajos de teclado:"
-
-#~ msgid "Enable Suggestion"
-#~ msgstr "Activar sugerencias"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancelar"
-
-#~ msgid "OK"
-#~ msgstr "OK"

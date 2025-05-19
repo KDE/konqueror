@@ -1,25 +1,23 @@
-# Translation of libkonq to Spanish
-# traducción de libkonq.po a Español
-# translation of libkonq.po to Spanish
-# Translation to spanish
-# Copyright (C) 2001-2002
+# Spanish translations for libkonq.po package.
+# Copyright (C) 2001-2025 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
 #
-# Pablo de Vicente <vicente@oan.es>, 2001-2002.
-# Jaime Robles <jaime@kde.org>, 2003, 2004, 2005, 2007, 2008, 2009.
-# Miguel Revilla Rodríguez <yo@miguelrevilla.com>, 2003, 2004.
-# Pablo de Vicente <p.devicente@wanadoo.es>, 2004.
-# Jaime Robles <jaime@robles.nu>, 2005.
-# Santiago Fernandez Sancho <santi@kde-es.org>, 2005.
-# Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
-# Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>, 2010, 2011.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2010, 2011, 2019, 2020, 2023.
-# arklad, 2011.
+# SPDX-FileCopyrightText: 2001-2002 Pablo de Vicente <vicente@oan.es>
+# SPDX-FileCopyrightText: 2003, 2004, 2005, 2007, 2008, 2009 Jaime Robles <jaime@kde.org>
+# SPDX-FileCopyrightText: 2003, 2004 Miguel Revilla Rodríguez <yo@miguelrevilla.com>
+# SPDX-FileCopyrightText: 2004 Pablo de Vicente <p.devicente@wanadoo.es>
+# SPDX-FileCopyrightText: 2005 Jaime Robles <jaime@robles.nu>
+# SPDX-FileCopyrightText: 2005 Santiago Fernandez Sancho <santi@kde-es.org>
+# SPDX-FileCopyrightText: 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2010, 2011 Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>
+# SPDX-FileCopyrightText: 2010, 2011, 2019, 2020, 2023, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2011 arklad
 msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-06 00:39+0000\n"
-"PO-Revision-Date: 2023-08-01 14:03+0200\n"
+"PO-Revision-Date: 2025-05-18 13:24+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -46,7 +44,7 @@ msgstr "&Abrir"
 #: src/konq_popupmenu.cpp:244
 #, kde-format
 msgid "Create &Folder..."
-msgstr "Crear &carpeta..."
+msgstr "Crear &carpeta…"
 
 #: src/konq_popupmenu.cpp:255
 #, kde-format
@@ -107,175 +105,3 @@ msgstr "Mostrar vista previa en"
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Abrir terminal aquí"
-
-#~ msgctxt "@label Type of file"
-#~ msgid "Type: %1"
-#~ msgstr "Tipo: %1"
-
-#~ msgctxt "@label:checkbox"
-#~ msgid "Remember action for files of this type"
-#~ msgstr "Recordar la acción para este tipo de archivos"
-
-#~ msgctxt "@label:button"
-#~ msgid "&Open with %1"
-#~ msgstr "&Abrir con %1"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Open &with %1"
-#~ msgstr "Abrir &con %1"
-
-#~ msgctxt "@info"
-#~ msgid "Open '%1'?"
-#~ msgstr "¿Abrir «%1»?"
-
-#~ msgctxt "@label:button"
-#~ msgid "&Open with..."
-#~ msgstr "&Abrir con..."
-
-#~ msgctxt "@label:button"
-#~ msgid "&Open with"
-#~ msgstr "&Abrir con"
-
-#~ msgctxt "@label:button"
-#~ msgid "&Open"
-#~ msgstr "&Abrir"
-
-#~ msgctxt "@label File name"
-#~ msgid "Name: %1"
-#~ msgstr "Nombre: %1"
-
-#~ msgctxt "@info:whatsthis"
-#~ msgid "This is the file name suggested by the server"
-#~ msgstr "Este es el nombre de archivo sugerido por el servidor"
-
-#~ msgid "&Properties"
-#~ msgstr "&Propiedades"
-
-#~ msgctxt "@title:menu"
-#~ msgid "Copy To"
-#~ msgstr "Copiar a"
-
-#~ msgctxt "@title:menu"
-#~ msgid "Move To"
-#~ msgstr "Mover a"
-
-#~ msgctxt "@title:menu"
-#~ msgid "Home Folder"
-#~ msgstr "Carpeta personal"
-
-#~ msgctxt "@title:menu"
-#~ msgid "Root Folder"
-#~ msgstr "Carpeta raíz"
-
-#~ msgctxt "@title:menu in Copy To or Move To submenu"
-#~ msgid "Browse..."
-#~ msgstr "Explorar..."
-
-#~ msgctxt "@title:menu"
-#~ msgid "Copy Here"
-#~ msgstr "Copiar aquí"
-
-#~ msgctxt "@title:menu"
-#~ msgid "Move Here"
-#~ msgstr "Mover aquí"
-
-#~ msgid "You cannot drop a folder on to itself"
-#~ msgstr "No puede soltar una carpeta sobre sí misma"
-
-#~ msgid "File name for dropped contents:"
-#~ msgstr "Nombre de archivo para el contenido soltado:"
-
-#~ msgid "&Move Here"
-#~ msgstr "&Mover aquí"
-
-#~ msgid "&Copy Here"
-#~ msgstr "&Copiar aquí"
-
-#~ msgid "&Link Here"
-#~ msgstr "En&lazar aquí"
-
-#~ msgid "Set as &Wallpaper"
-#~ msgstr "Establecer como papel &tapiz"
-
-#~ msgid "C&ancel"
-#~ msgstr "C&ancelar"
-
-#~ msgctxt "@action:button"
-#~ msgid "Create directory"
-#~ msgstr "Crear carpeta"
-
-#~ msgctxt "@action:button"
-#~ msgid "Enter a different name"
-#~ msgstr "Introduzca un nombre diferente"
-
-#~ msgid ""
-#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
-#~ "default."
-#~ msgstr ""
-#~ "El nombre «%1» empieza con un punto, por lo que carpeta estará oculta por "
-#~ "defecto."
-
-#~ msgctxt "@title:window"
-#~ msgid "Create hidden directory?"
-#~ msgstr "¿Crear carpeta oculta?"
-
-#~ msgctxt "@label Default name when creating a folder"
-#~ msgid "New Folder"
-#~ msgstr "Nueva carpeta"
-
-#~ msgctxt "@title:window"
-#~ msgid "New Folder"
-#~ msgstr "Nueva carpeta"
-
-#~ msgctxt "@label:textbox"
-#~ msgid "Enter folder name:"
-#~ msgstr "Introduzca el nombre de la carpeta:"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Paste One Folder"
-#~ msgstr "Pegar una carpeta"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Paste One File"
-#~ msgstr "Pegar un archivo"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Paste One Item"
-#~ msgid_plural "Paste %1 Items"
-#~ msgstr[0] "Pegar un elemento"
-#~ msgstr[1] "Pegar %1 elementos"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Paste Clipboard Contents..."
-#~ msgstr "Pegar contenido del portapapeles..."
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Paste"
-#~ msgstr "Pegar"
-
-#~ msgid ""
-#~ "Restores this file or directory, back to the location where it was "
-#~ "deleted from initially"
-#~ msgstr ""
-#~ "Restaura este archivo o carpeta a la ubicación donde se encontraba antes "
-#~ "de ser eliminado"
-
-#~ msgid ""
-#~ "Opens a new file manager window showing the target of this link, in its "
-#~ "parent directory."
-#~ msgstr ""
-#~ "Abre una nueva ventana del explorador de archivos para mostrar el destino "
-#~ "de este enlace, en su carpeta padre."
-
-#~ msgid "Share"
-#~ msgstr "Compartir"
-
-#~ msgctxt "@info"
-#~ msgid "Close"
-#~ msgstr "Cerrar"
-
-#~ msgid "Close"
-#~ msgstr "Cerrar"
-
-#~ msgid "Error: %1"
-#~ msgstr "Error: %1"

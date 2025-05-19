@@ -1,5 +1,6 @@
-# Translation of konqueror to Spanish
-# Copyright (C) 2001-2002
+# Spanish translations for konqueror.po package.
+# Copyright (C) 2001-2025 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
 #
 # SPDX-FileCopyrightText: 2001-2002, 2003, 2004 Pablo de Vicente <vicente@oan.es>
 # SPDX-FileCopyrightText: 2003, 2004, 2005, 2007, 2008, 2009 Jaime Robles <jaime@kde.org>
@@ -8,7 +9,7 @@
 # SPDX-FileCopyrightText: 2005 Jaime Robles <jaime@robles.nu>
 # SPDX-FileCopyrightText: 2005 Santiago Fernandez Sancho <santi@kde-es.org>
 # SPDX-FileCopyrightText: 2005, 2006 Pablo de Vicente <pablo.devicente@gmail.com>
-# SPDX-FileCopyrightText: 2005, 2010, 2012, 2013, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2005, 2010, 2012, 2013, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 # SPDX-FileCopyrightText: 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
 # SPDX-FileCopyrightText: 2010, 2011, 2012 Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>
 # SPDX-FileCopyrightText: 2011 Javier Vinal <fjvinal@gmail.com>
@@ -18,15 +19,13 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-05 00:43+0000\n"
-"PO-Revision-Date: 2024-10-21 17:22+0200\n"
+"PO-Revision-Date: 2025-05-18 13:23+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"com>\n"
-"com>\n"
 "First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
 "X-Generator: Lokalize 24.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -73,7 +72,7 @@ msgstr "¿Abrir «%1»?"
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr "&Abrir con..."
+msgstr "&Abrir con…"
 
 #: src/downloadactionquestion.cpp:314 src/downloadactionquestion.cpp:467
 #, kde-format
@@ -763,7 +762,7 @@ msgstr "&Borrar historial"
 #: src/konqhistoryview.cpp:86
 #, kde-format
 msgid "&Preferences..."
-msgstr "&Preferencias..."
+msgstr "&Preferencias…"
 
 #: src/konqhistoryview.cpp:93
 #, kde-format
@@ -795,7 +794,7 @@ msgstr "¿Borrar historial?"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
-msgstr "Cargando..."
+msgstr "Cargando…"
 
 #: src/konqmainwindow.cpp:767
 #, kde-format
@@ -970,12 +969,12 @@ msgstr "Vaciar el historial de elementos cerrados"
 #: src/konqmainwindow.cpp:2728
 #, kde-format
 msgid "Save As..."
-msgstr "Guardar como..."
+msgstr "Guardar como…"
 
 #: src/konqmainwindow.cpp:2730
 #, kde-format
 msgid "Manage..."
-msgstr "Gestionar..."
+msgstr "Gestionar…"
 
 #: src/konqmainwindow.cpp:3274
 #, kde-format
@@ -990,12 +989,12 @@ msgstr "D&uplicar ventana"
 #: src/konqmainwindow.cpp:3284
 #, kde-format
 msgid "Send &Link Address..."
-msgstr "Enviar en&lace de la dirección..."
+msgstr "Enviar en&lace de la dirección…"
 
 #: src/konqmainwindow.cpp:3288
 #, kde-format
 msgid "S&end File..."
-msgstr "En&viar archivo..."
+msgstr "En&viar archivo…"
 
 #: src/konqmainwindow.cpp:3292
 #, kde-format
@@ -1005,12 +1004,12 @@ msgstr "Abrir &ubicación"
 #: src/konqmainwindow.cpp:3298
 #, kde-format
 msgid "&Open File..."
-msgstr "Abrir archiv&o..."
+msgstr "Abrir archiv&o…"
 
 #: src/konqmainwindow.cpp:3303
 #, kde-format
 msgid "&Find File..."
-msgstr "&Buscar archivo..."
+msgstr "&Buscar archivo…"
 
 #: src/konqmainwindow.cpp:3312
 #, kde-format
@@ -1059,12 +1058,12 @@ msgstr "Mostrar historia"
 #: src/konqmainwindow.cpp:3395
 #, kde-format
 msgid "Configure Extensions..."
-msgstr "Configurar extensiones..."
+msgstr "Configurar extensiones…"
 
 #: src/konqmainwindow.cpp:3399
 #, kde-format
 msgid "Configure Spell Checking..."
-msgstr "Configurar corrector ortográfico..."
+msgstr "Configurar corrector ortográfico…"
 
 #: src/konqmainwindow.cpp:3405
 #, kde-format
@@ -1419,12 +1418,12 @@ msgstr "Muestra las herramientas del desarrollador para la página actual"
 #: src/konqmainwindow.cpp:3841
 #, kde-format
 msgid "Copy &Files..."
-msgstr "Copiar &archivos..."
+msgstr "Copiar &archivos…"
 
 #: src/konqmainwindow.cpp:3845
 #, kde-format
 msgid "M&ove Files..."
-msgstr "Mo&ver archivos..."
+msgstr "Mo&ver archivos…"
 
 #: src/konqmainwindow.cpp:4171
 #, kde-format
@@ -1698,21 +1697,21 @@ msgstr "La sesión existe. ¿Sobrescribir?"
 #, kde-format
 msgctxt "@action:button New session"
 msgid "New..."
-msgstr "Nuevo..."
+msgstr "Nuevo…"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
 #: src/konqsessiondlg_base.ui:33
 #, kde-format
 msgctxt "@action:button Save current session"
 msgid "Save Current..."
-msgstr "Guardar actual..."
+msgstr "Guardar actual…"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
 #: src/konqsessiondlg_base.ui:40
 #, kde-format
 msgctxt "@action:button Rename session"
 msgid "Rename..."
-msgstr "Renombrar..."
+msgstr "Renombrar…"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
 #: src/konqsessiondlg_base.ui:47
@@ -1987,878 +1986,3 @@ msgstr "<filename>%1</filename> se puede ejecutar. ¿Desea ejecutarlo?"
 #, kde-format
 msgid "Save As"
 msgstr "Guardar como"
-
-#~ msgid "Start Page"
-#~ msgstr "Página de inicio"
-
-#~ msgid "This is the URL of the web page where Konqueror will start from."
-#~ msgstr "Esta es la URL de la página web desde donde Konqueror comenzará."
-
-#~ msgid ""
-#~ "This is the URL of the web page where Konqueror will jump to when the \\"
-#~ "\"Home\\\" button is pressed."
-#~ msgstr ""
-#~ "Esta es la URL de la página web donde Konqueror irá cuando se pulse el "
-#~ "botón «Inicio»."
-
-#~ msgid "Maximum number of Closed Items"
-#~ msgstr "Máximo número de elementos cerrados"
-
-#~ msgid ""
-#~ "This sets the maximum number of closed items that will be stored in "
-#~ "memory. This limit will not be surpassed."
-#~ msgstr ""
-#~ "Define el número máximo de elementos cerrados que se almacenarán en "
-#~ "memoria. Este límite no será sobrepasado."
-
-#~ msgid "Open folders in separate windows"
-#~ msgstr "Abrir pestañas en ventanas separadas"
-
-#~ msgid ""
-#~ "If this option is checked, Konqueror will open a new window when you open "
-#~ "a folder, rather than showing that folder's contents in the current "
-#~ "window."
-#~ msgstr ""
-#~ "Si se habilita esta opción, Konqueror abrirá una nueva ventana cuando "
-#~ "abra una carpeta, en vez de mostrar el contenido de la carpeta en la "
-#~ "ventana actual."
-
-#~ msgid "Show file tips"
-#~ msgstr "Mostrar consejos de archivos"
-
-#~ msgid ""
-#~ "Here you can control if, when moving the mouse over a file, you want to "
-#~ "see a small popup window with additional information about that file"
-#~ msgstr ""
-#~ "Aquí puede controlar si, cuando se mueve el ratón sobre un archivo, "
-#~ "quiere ver una pequeña ventana emergente con información adicional sobre "
-#~ "el archivo"
-
-#~ msgid "Show previews in file tips"
-#~ msgstr "Mostrar vistas previas en los consejos de los archivos"
-
-#~ msgid ""
-#~ "Here you can control if you want the popup window to contain a larger "
-#~ "preview for the file, when moving the mouse over it"
-#~ msgstr ""
-#~ "Aquí puede controlar si quiere que ventana emergente contenga una vista "
-#~ "previa más grande, cuando mueva el ratón sobre él"
-
-#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
-#~ msgstr "Mostrar entradas de menú para «Eliminar» que ignoren la papelera"
-
-#~ msgid ""
-#~ "Check this if you want 'Delete' menu commands to be displayed on the "
-#~ "desktop and in the file manager's menus and context menus. You can always "
-#~ "delete files when hidden by holding the Shift key while calling 'Move to "
-#~ "Trash'."
-#~ msgstr ""
-#~ "Marque esta opción si quiere que se muestren las órdenes para «Eliminar» "
-#~ "en los menús típicos y contextuales del escritorio y del administrador de "
-#~ "archivos. Aunque estén ocultas, siempre puede borrar los archivos "
-#~ "manteniendo pulsada la tecla Mayúsculas mientras elige «Mover a la "
-#~ "papelera»."
-
-#~ msgid "Choose where to display the tabs bar"
-#~ msgstr "Elija dónde quiere que se muestre la barra de pestañas"
-
-#~ msgid "Number of Open With items in the File menu"
-#~ msgstr "Número de elementos abiertos en el menú de archivo"
-
-#~ msgid "Standard font"
-#~ msgstr "Tipo de letra estándar"
-
-#~ msgid "This is the font used to display text in Konqueror windows."
-#~ msgstr ""
-#~ "Se usará este tipo de letra para mostrar texto en las ventanas de "
-#~ "Konqueror."
-
-#~ msgid "Maximum number of history items per view"
-#~ msgstr "Número máximo por vista de elementos en el histórico."
-
-#~ msgid "Ask confirmation for deleting a file."
-#~ msgstr "Pedir confirmación al eliminar un archivo."
-
-#~ msgid ""
-#~ "This option tells Konqueror whether to ask for a confirmation when you "
-#~ "delete a file without using the trash folder. Warning, deleted files can "
-#~ "not be recovered, so it is recommended to leave this confirmation enabled."
-#~ msgstr ""
-#~ "Esta opción le dice a Konqueror si debe o no  pedir confirmación al "
-#~ "eliminar un archivo sin usar la papelera. Atención, los archivos "
-#~ "eliminados no pueden ser recuperados así que se recomienda dejar esta "
-#~ "opción habilitada."
-
-#~ msgid "Ask confirmation for move to trash"
-#~ msgstr "Pedir confirmación para mover a la papelera"
-
-#~ msgid ""
-#~ "This option tells Konqueror whether to ask for a confirmation when you "
-#~ "move the file to your trash folder, from where it can be recovered very "
-#~ "easily."
-#~ msgstr ""
-#~ "Esta opción le dice a Konqueror si debe o no pedir confirmación cuando "
-#~ "mueva un archivo a la papeleta, desde donde puede recuperarlo fácilmente."
-
-#~ msgid ""
-#~ "If true, when opening a session from within the sessions dialog the tabs "
-#~ "will be opened inside current window."
-#~ msgstr ""
-#~ "Si está habilitado, cuando abra una sesión desde el menú de sesiones, las "
-#~ "pestañas se abrirán dentro de la misma ventana."
-
-#~ msgid "TEST"
-#~ msgstr "PRUEBA"
-
-#~ msgid ""
-#~ "Malformed URL\n"
-#~ "%1"
-#~ msgstr ""
-#~ "URL mal formada\n"
-#~ "%1"
-
-#~ msgid ""
-#~ "<qt>Unable to run the command specified. The file or folder <b>%1</b> "
-#~ "does not exist.</qt>"
-#~ msgstr ""
-#~ "<qt>No se ha podido ejecutar la orden indicada. El archivo o carpeta <b>"
-#~ "%1</b> no existe.</qt>"
-
-#~ msgid "Could not find any application or handler for %1"
-#~ msgstr ""
-#~ "No se ha podido encontrar ninguna aplicación ni herramienta para manejar "
-#~ "%1"
-
-#~ msgid "File Management"
-#~ msgstr "Gestión de archivos"
-
-#~ msgid "Web Browsing"
-#~ msgstr "Navegación web"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure"
-#~ msgstr "Configurar"
-
-#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
-#~ msgid "Be free."
-#~ msgstr "Libérate"
-
-#~ msgid ""
-#~ "Konqueror is a web browser, file manager and universal document viewer."
-#~ msgstr ""
-#~ "Konqueror es su gestor de archivos, navegador web y visor universal de "
-#~ "documentos."
-
-#~ msgctxt ""
-#~ "Link that points to the first page of the Konqueror 'about page', "
-#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
-#~ msgid "Starting Points"
-#~ msgstr "Lugares de inicio"
-
-#~ msgid "Introduction"
-#~ msgstr "Introducción"
-
-#~ msgid "Tips"
-#~ msgstr "Consejos"
-
-#~ msgid "Specifications"
-#~ msgstr "Especificaciones"
-
-#~ msgid "Your personal files"
-#~ msgstr "Sus archivos personales"
-
-#~ msgid "Trash"
-#~ msgstr "Papelera"
-
-#~ msgid "Browse and restore the trash"
-#~ msgstr "Explorar y restaurar la papelera"
-
-#~ msgid "Network Folders"
-#~ msgstr "Carpetas de red"
-
-#~ msgid "Shared files and folders"
-#~ msgstr "Archivos y carpetas compartidos"
-
-#~ msgid "Bookmarks"
-#~ msgstr "Marcadores"
-
-#~ msgid "Quick access to your bookmarks"
-#~ msgstr "Acceso rápido a sus marcadores"
-
-#~ msgid "Next: An Introduction to Konqueror"
-#~ msgstr "Siguiente: Una introducción a Konqueror"
-
-#~ msgid "Search the Web"
-#~ msgstr "Buscar en la web"
-
-#~ msgid ""
-#~ "Konqueror makes working with and managing your files easy. You can browse "
-#~ "both local and networked folders while enjoying advanced features such as "
-#~ "the powerful sidebar and file previews."
-#~ msgstr ""
-#~ "Konqueror hace que trabajar y gestionar sus archivos sea sencillo. Puede "
-#~ "explorar tanto las carpetas locales como las de red mientras disfruta de "
-#~ "propiedades avanzadas como el potente panel lateral o las vistas previas "
-#~ "de archivos."
-
-#~ msgid ""
-#~ "Konqueror is also a full featured and easy to use web browser which you "
-#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
-#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
-#~ "visit in the location bar and press Enter, or choose an entry from the "
-#~ "Bookmarks menu."
-#~ msgstr ""
-#~ "Konqueror es un navegador web completamente equipado y fácil de usar con "
-#~ "el que puede explorar Internet. Introduzca la dirección de Internet (p.ej "
-#~ "<a href=\"http://www.kde.org\">http://www.kde.org</a>) de una página web "
-#~ "en la barra de ubicación y pulse Intro, o elija una de las entradas de su "
-#~ "menú de marcadores."
-
-#~ msgid ""
-#~ "To return to the previous location, press the back button <img width='16' "
-#~ "height='16' src=\"%1\"></img> in the toolbar. "
-#~ msgstr ""
-#~ "Si desea volver a la ubicación previa, pulse sobre el botón <img "
-#~ "width='16' height='16' src=\"%1\"> </img>en la barra de herramientas. "
-
-#~ msgid ""
-#~ "To quickly go to your Home folder press the home button <img width='16' "
-#~ "height='16' src=\"%1\"></img>."
-#~ msgstr ""
-#~ "Si desea volver rápidamente a su carpeta personal, pulse el botón de "
-#~ "inicio <img width='16' height='16' src=\"%1\"></img>."
-
-#~ msgid ""
-#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
-#~ "a>."
-#~ msgstr ""
-#~ "Para ver documentación más detallada sobre Konqueror pulse <a href="
-#~ "\"%1\">aquí</a>."
-
-#~ msgid "Next: Tips & Tricks"
-#~ msgstr "Siguiente: Trucos y consejos"
-
-#~ msgid ""
-#~ "Konqueror is designed to embrace and support Internet standards. The aim "
-#~ "is to fully implement the officially sanctioned standards from "
-#~ "organizations such as the W3 and OASIS, while also adding extra support "
-#~ "for other common usability features that arise as de facto standards "
-#~ "across the Internet. Along with this support, for such functions as "
-#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
-#~ "also implements:"
-#~ msgstr ""
-#~ "Konqueror está diseñado para apoyar y soportar los estándares de "
-#~ "Internet. El objetivo es implementar totalmente los estándares "
-#~ "oficialmente sancionados de organizaciones como W3 y OASIS, además de "
-#~ "añadir soporte adicional para otras propiedades útiles de uso habitual, "
-#~ "que surgen como estándares de facto en Internet. Junto con este soporte, "
-#~ "para funciones como favicons, accesos rápidos web, y <A HREF="
-#~ "\"%1\">marcadores XBEL</A>, Konqueror también implementa:"
-
-#~ msgid "Supported standards"
-#~ msgstr "Estándares soportados"
-
-#~ msgid "Additional requirements*"
-#~ msgstr "Requisitos adicionales*"
-
-#~ msgid ""
-#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
-#~ "\"%2\">HTML 4.01</A>"
-#~ msgstr ""
-#~ "<A HREF=\"%1\">DOM</A> (Nivel 1, parcialmente nivel 2) basado en <A HREF="
-#~ "\"%2\">HTML 4.01</A>"
-
-#~ msgid "built-in"
-#~ msgstr "incluido"
-
-#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
-#~ msgstr ""
-#~ "<A HREF=\"%1\">Hojas de estilo de cascada</A> (CSS 1, parcialmente CSS 2)"
-
-#~ msgid ""
-#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
-#~ msgstr ""
-#~ "<A HREF=\"%1\">ECMA-262</A> Edición 3 (aproximadamente igual a Javascript "
-#~ "1.5)"
-
-#~ msgid ""
-#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
-#~ msgstr ""
-#~ "Javascript desactivado (globalmente). Activar Javascript <A HREF="
-#~ "\"%1\">aquí</A>."
-
-#~ msgid ""
-#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
-#~ "\">here</A>."
-#~ msgstr ""
-#~ "Javascript activado (globalmente). Configurar Javascript <A HREF=\\\"%1\\"
-#~ "\">aquí</A>."
-
-#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
-#~ msgstr "Soporte seguro de <A HREF=\"%1\">Java</A><SUP>&reg;</SUP>"
-
-#~ msgid ""
-#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
-#~ "\"%2\">Sun/Oracle</A>)"
-#~ msgstr ""
-#~ "Compatible con la máquina virtual de JDK 1.2.0 (Java 2) (<A HREF="
-#~ "\"%1\">OpenJDK</A> o <A HREF=\"%2\">Sun/Oracle</A>)"
-
-#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
-#~ msgstr "Activar Java (globalmente) <A HREF=\"%1\">aquí</A>."
-
-#~ msgid ""
-#~ "NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF="
-#~ "\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)"
-#~ msgstr ""
-#~ "<A HREF=\"%2\">Complementos</A> de NPAPI (para ver <A HREF="
-#~ "\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)"
-
-#~ msgid "Secure Sockets Layer"
-#~ msgstr "Capa de sockets seguros"
-
-#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
-#~ msgstr "(TLS/SSL v2/3) para comunicaciones seguras de hasta 168bit"
-
-#~ msgid "OpenSSL"
-#~ msgstr "OpenSSL"
-
-#~ msgid "Bidirectional 16bit unicode support"
-#~ msgstr "Soporte bidireccional unicode de 16 bits"
-
-#~ msgid "AutoCompletion for forms"
-#~ msgstr "Autorrelleno para formularios"
-
-#~ msgctxt "Title of an html 'group box' explaining konqueror features"
-#~ msgid "General"
-#~ msgstr "General"
-
-#~ msgid "Feature"
-#~ msgstr "Propiedad"
-
-#~ msgid "Details"
-#~ msgstr "Detalles"
-
-#~ msgid "Image formats"
-#~ msgstr "Formatos de imagen"
-
-#~ msgid "PNG<br />JPG<br />GIF"
-#~ msgstr "PNG<br />JPG<br />GIF"
-
-#~ msgid "Transfer protocols"
-#~ msgstr "Protocolos de transferencia"
-
-#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
-#~ msgstr "HTTP 1.1 (incluyendo compresión gzip/bzip2)"
-
-#~ msgid "FTP"
-#~ msgstr "FTP"
-
-#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
-#~ msgstr ""
-#~ "y <A HREF=\"%1\">muchos más (consulte Kioslaves en KHelpCenter)...</A>"
-
-#~ msgctxt "A feature of Konqueror"
-#~ msgid "URL-Completion"
-#~ msgstr "Completado de URL"
-
-#~ msgid "Manual"
-#~ msgstr "Manual"
-
-#~ msgid "Popup"
-#~ msgstr "Desplegable"
-
-#~ msgid "(Short-) Automatic"
-#~ msgstr "(Corto-) Automático"
-
-#~ msgctxt ""
-#~ "Link that points to the first page of the Konqueror 'about page', "
-#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
-#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
-#~ msgstr "<a href=\"%1\">Volver a los lugares de inicio</a>"
-
-#~ msgid "Tips & Tricks"
-#~ msgstr "Trucos y consejos"
-
-#~ msgid ""
-#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
-#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
-#~ "Shortcuts predefined to make searching for software or looking up certain "
-#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
-#~ "your own</a> Web-Shortcuts."
-#~ msgstr ""
-#~ "Utilice accesos rápidos web: introduciendo «gg:KDE», puede buscar en "
-#~ "Internet la frase «KDE» utilizando Google. Hay muchos accesos rápidos web "
-#~ "predefinidos para que busque software o ciertas palabras en una "
-#~ "enciclopedia en un suspiro. Puede incluso <a href=\"%1\">crear sus "
-#~ "propios</a> accesos rápidos web."
-
-#~ msgid ""
-#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
-#~ "the HTML toolbar to increase the font size on your web page."
-#~ msgstr ""
-#~ "Utilice el botón de la lupa <img width='16' height='16' src=\"%1\"></img> "
-#~ "en la barra de herramientas HTML para aumentar el tamaño del tipo de "
-#~ "letra en su página web."
-
-#~ msgid ""
-#~ "When you want to paste a new address into the Location toolbar you might "
-#~ "want to clear the current entry by pressing the black arrow with the "
-#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
-#~ msgstr ""
-#~ "Cuando desee pegar una nueva dirección en la barra de ubicación puede "
-#~ "borrar la entrada actual pulsando la flecha negra con una cruz blanca "
-#~ "<img width='16' height='16' src=\"%1\"></img> en la barra de herramientas."
-
-#~ msgid ""
-#~ "To create a link on your desktop pointing to the current page, simply "
-#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
-#~ "it on to the desktop, and choose \"Icon\"."
-#~ msgstr ""
-#~ "Para crear un enlace en su escritorio que apunte a la página actual, "
-#~ "simplemente arrastre el icono (favicon) que está a la izquierda de la "
-#~ "barra de herramientas de ubicación, suéltela en el escritorio, y "
-#~ "seleccione «Icono»."
-
-#~ msgid ""
-#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
-#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
-#~ "sessions."
-#~ msgstr ""
-#~ "También puede encontrar en el menú Preferencias el <img width='16' "
-#~ "height='16' src=\"%1\" />«Modo de pantalla completa». Esta propiedad es "
-#~ "muy útil para sesiones de «Talk»."
-
-#~ msgid ""
-#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
-#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
-#~ "Split View Left/Right) you can make Konqueror appear the way you like."
-#~ msgstr ""
-#~ "Divide et impera (lat «Divide y vencerás»). Dividiendo una ventana en dos "
-#~ "partes (por ejemplo, Ventana -> <img width='16' height='16' src=\"%1\" /> "
-#~ "Dividir vista izquierda/derecha) puede hacer que Konqueror tenga el "
-#~ "aspecto que desee."
-
-#~ msgid ""
-#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
-#~ "visiting asks you to use a different browser (and do not forget to send a "
-#~ "complaint to the webmaster!)"
-#~ msgstr ""
-#~ "Usar el <a href=\"%1\">agente de usuario</a> si la página web que está "
-#~ "visitando le solicita usar un navegador diferente (no olvide quejarse al "
-#~ "administrador de dicha página)"
-
-#~ msgid ""
-#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
-#~ "ensures that you can keep track of the pages you have visited recently."
-#~ msgstr ""
-#~ "El <img width='16' height='16' src=\"%1\"></img> historial en la barra "
-#~ "lateral le permite mantener una relación de las páginas visitadas "
-#~ "recientemente."
-
-#~ msgid ""
-#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
-#~ "connection."
-#~ msgstr ""
-#~ "Utilice un <a href=\"%1\">proxy</a> de caché para aumentar la velocidad "
-#~ "de su conexión de Internet."
-
-#~ msgid ""
-#~ "Advanced users will appreciate the Konsole which you can embed into "
-#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
-#~ "Terminal Emulator)."
-#~ msgstr ""
-#~ "Los usuarios avanzados apreciarán que Konsole se pueda incrustar en "
-#~ "Konqueror (Ventana -> <img width='16' height='16' src=\"%1\"></img> "
-#~ "Mostrar emulador de terminal)."
-
-#~ msgid "Next: Specifications"
-#~ msgstr "Siguiente: Especificaciones"
-
-#~ msgid "Installed Plugins"
-#~ msgstr "Complementos instalados"
-
-#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
-#~ msgstr ""
-#~ "<td>Complemento</td><td>Descripción</td><td>Archivo</td><td>Tipos</td>"
-
-#~ msgid "Installed"
-#~ msgstr "Instalado"
-
-#~ msgid ""
-#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
-#~ msgstr ""
-#~ "<td>Tipo MIME</td><td>Descripción</td><td>Sufijos</td><td>Complemento</td>"
-
-#~ msgid ""
-#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
-#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
-#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
-#~ "SUP></A>Video, etc.)"
-#~ msgstr ""
-#~ "<A HREF=\"%4\">Complementos</A> de Netscape Communicator<SUP>&reg;</SUP> "
-#~ "(para ver <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
-#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
-#~ "SUP></A>Video, etc.)"
-
-#~ msgid "http://konqueror.kde.org"
-#~ msgstr "http://konqueror.kde.org"
-
-#~ msgid "Limits"
-#~ msgstr "Límites"
-
-#~ msgid "URLs e&xpire after"
-#~ msgstr "URLs e&xpiran después"
-
-#~ msgid "Maximum &number of URLs:"
-#~ msgstr "Máximo &número de URLs:"
-
-#~ msgid "Custom Fonts For"
-#~ msgstr "Tipos de letra personalizados para "
-
-#~ msgid "URLs newer than"
-#~ msgstr "URLs más modernas que"
-
-#~ msgid "Choose Font..."
-#~ msgstr "Elegir tipo de letra..."
-
-#~ msgid "URLs older than"
-#~ msgstr "URLs más antiguas que"
-
-#~ msgid ""
-#~ "Shows the number of times visited and the dates of the first and last "
-#~ "visits, in addition to the URL"
-#~ msgstr ""
-#~ "Muestra el número de visitas y las fechas de la primera y última visita "
-#~ "además de la URL"
-
-#~ msgid "Detailed tooltips"
-#~ msgstr "Sugerencias detalladas de uso"
-
-#~ msgid "Clear History"
-#~ msgstr "Borrar historial"
-
-#~ msgctxt "@action:inmenu Add"
-#~ msgid "History Sidebar Module"
-#~ msgstr "Módulo de barra lateral de historial"
-
-#~ msgctxt "@title:tab"
-#~ msgid "History"
-#~ msgstr "Historial"
-
-#~ msgid "days"
-#~ msgstr "días"
-
-#~ msgid "Minute"
-#~ msgid_plural "Minutes"
-#~ msgstr[0] "Minuto"
-#~ msgstr[1] "Minuto"
-
-#~ msgid "Day"
-#~ msgid_plural "Days"
-#~ msgstr[0] "Día"
-#~ msgstr[1] "Día"
-
-#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
-#~ msgstr ""
-#~ "<h1>Barra lateral del historial</h1> Puede configurar la barra del "
-#~ "historial aquí."
-
-#~ msgctxt "@action:inmenu Add"
-#~ msgid "Places Sidebar Module"
-#~ msgstr "Módulo de barra lateral de lugares"
-
-#~ msgctxt "@title:tab"
-#~ msgid "Places"
-#~ msgstr "Lugares"
-
-#~ msgid "Extended Sidebar"
-#~ msgstr "Panel de navegación extendido"
-
-#~ msgid "Rollback to System Default"
-#~ msgstr "Volver al sistema predefinido"
-
-#~ msgid "Configure Sidebar"
-#~ msgstr "Configurar panel de navegación"
-
-#~ msgid "Add New"
-#~ msgstr "Añadir nuevo"
-
-#~ msgid "Multiple Views"
-#~ msgstr "Vistas múltiples"
-
-#~ msgid "Show Tabs Left"
-#~ msgstr "Mostrar pestañas a la izquierda"
-
-#~ msgid "Close Sidebar"
-#~ msgstr "Cerrar barra lateral"
-
-#~ msgid "This entry already exists."
-#~ msgstr "Esta entrada ya existe."
-
-#~ msgid ""
-#~ "<qt>This removes all your entries from the sidebar and adds the system "
-#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
-#~ "to proceed?</qt>"
-#~ msgstr ""
-#~ "<qt>Esto elimina todas sus entradas de la barra lateral y añade las "
-#~ "predefinidas del sistema.<br /><b>Este proceso es irreversible</b><br /"
-#~ ">¿Desea continuar?</qt>"
-
-#~ msgid "Show Tabs Right"
-#~ msgstr "Mover pestaña a la derecha"
-
-#~ msgctxt "@title:window"
-#~ msgid "Set Name"
-#~ msgstr "Establecer nombre"
-
-#~ msgid "Enter the name:"
-#~ msgstr "Introduzca el nombre:"
-
-#~ msgid "Enter a URL:"
-#~ msgstr "Introducir una URL:"
-
-#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
-#~ msgstr "<qt>¿Realmente desea eliminar la pestaña <b>%1</b>?</qt>"
-
-#~ msgid ""
-#~ "You have hidden the sidebar configuration button. To make it visible "
-#~ "again, click the right mouse button on any of the sidebar buttons and "
-#~ "select \"Show Configuration Button\"."
-#~ msgstr ""
-#~ "Ha ocultado el botón de configuración de la barra lateral. Para volver a "
-#~ "hacerlo visible, pulse con el botón derecho del ratón sobre cualquiera "
-#~ "botón de esta y seleccione «Mostrar botón de configuración»."
-
-#~ msgid "Set Name..."
-#~ msgstr "Establecer nombre..."
-
-#~ msgid "Set URL..."
-#~ msgstr "Establecer URL..."
-
-#~ msgid "Set Icon..."
-#~ msgstr "Establecer icono..."
-
-#~ msgid "Remove"
-#~ msgstr "Eliminar"
-
-#~ msgid "Web module"
-#~ msgstr "Módulo web"
-
-#~ msgid "&Create New Folder"
-#~ msgstr "&Crear nueva carpeta"
-
-#~ msgid "Delete Folder"
-#~ msgstr "Eliminar carpeta"
-
-#~ msgid "Delete Bookmark"
-#~ msgstr "Borrar marcador"
-
-#~ msgid "Properties"
-#~ msgstr "Propiedades"
-
-#~ msgid "Open in New Window"
-#~ msgstr "Abrir en ventana nueva"
-
-#~ msgid "Open Folder in Tabs"
-#~ msgstr "Abrir carpeta en pestañas"
-
-#~ msgid "Copy Link Address"
-#~ msgstr "Copiar la dirección del enlace"
-
-#~ msgctxt "@title:window"
-#~ msgid "Create New Bookmark Folder"
-#~ msgstr "Crear nueva carpeta de marcadores"
-
-#~ msgid "New folder:"
-#~ msgstr "Nueva carpeta:"
-
-#~ msgid ""
-#~ "Are you sure you wish to remove the bookmark folder\n"
-#~ "\"%1\"?"
-#~ msgstr ""
-#~ "¿Está seguro de que desea eliminar esta carpeta de marcadores\n"
-#~ "«%1»?"
-
-#~ msgid ""
-#~ "Are you sure you wish to remove the bookmark\n"
-#~ "\"%1\"?"
-#~ msgstr ""
-#~ "¿Está seguro de que desea eliminar este marcador\n"
-#~ "«%1»?"
-
-#~ msgctxt "@title:window"
-#~ msgid "Bookmark Folder Deletion"
-#~ msgstr "Eliminación de carpeta de marcadores"
-
-#~ msgctxt "@title:window"
-#~ msgid "Bookmark Deletion"
-#~ msgstr "Eliminación del marcador"
-
-#~ msgctxt "@title:window"
-#~ msgid "Bookmark Properties"
-#~ msgstr "Propiedades del marcador"
-
-#~ msgid "&Update"
-#~ msgstr "Act&ualizar"
-
-#~ msgid "Location:"
-#~ msgstr "Ubicación:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Add Bookmark"
-#~ msgstr "Añadir marcador"
-
-#~ msgid "Cannot find parent item %1 in the tree. Internal error."
-#~ msgstr ""
-#~ "Imposible encontrar el elemento padre %1 en el árbol. Error interno."
-
-#~ msgid "&Create New Folder..."
-#~ msgstr "&Crear carpeta nueva..."
-
-#~ msgid "Move to Trash"
-#~ msgstr "Mover a la papelera"
-
-#~ msgid "Rename"
-#~ msgstr "Renombrar"
-
-#~ msgid "Delete Link"
-#~ msgstr "Eliminar enlace"
-
-#~ msgid "New Folder"
-#~ msgstr "Nueva carpeta"
-
-#~ msgctxt "@title:window"
-#~ msgid "Create New Folder"
-#~ msgstr "Crear nueva carpeta"
-
-#~ msgid "Enter folder name:"
-#~ msgstr "Introducir nombre de la carpeta:"
-
-#~ msgctxt "@label"
-#~ msgid "Name:"
-#~ msgstr "Nombre:"
-
-#~ msgctxt "@label"
-#~ msgid "Path or URL:"
-#~ msgstr "Ruta o URL:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Add folder sidebar module"
-#~ msgstr "Añadir módulo de barra lateral de carpetas"
-
-#~ msgid "&Open Link"
-#~ msgstr "Abrir en&lace"
-
-#~ msgid "Set &Automatic Reload"
-#~ msgstr "Establecer recarga &automática"
-
-#~ msgctxt "@title:window"
-#~ msgid "Set Refresh Timeout (0 disables)"
-#~ msgstr "Establecer tiempo de expiración de refresco (0 desactiva)"
-
-#~ msgid " minute"
-#~ msgid_plural " minutes"
-#~ msgstr[0] " minuto"
-#~ msgstr[1] " minutos"
-
-#~ msgid " second"
-#~ msgid_plural " seconds"
-#~ msgstr[0] " segundo"
-#~ msgstr[1] " segundos"
-
-#~ msgctxt "@action:inmenu Add"
-#~ msgid "Web Sidebar Module"
-#~ msgstr "Módulo de barra lateral web"
-
-#~ msgctxt "@title:window"
-#~ msgid "Add web sidebar module"
-#~ msgstr "Añadir módulo de barra lateral web"
-
-#~ msgid "&Use index.html"
-#~ msgstr "&Usar index.html"
-
-#~ msgid "If present, open index.html when entering a folder."
-#~ msgstr "Abrir index.html al entrar en una carpeta, si está presente."
-
-#~ msgid ""
-#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
-#~ "faster, you can turn off this information screen by clicking <a href="
-#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
-#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
-#~ "As... -> \"Web Browsing\"."
-#~ msgstr ""
-#~ "<em>Consejo de optimización:</em> Si desea que el navegador web Konqueror "
-#~ "arranque más rápido, puede eliminar esta pantalla de información pulsando "
-#~ "<a href=\"%1\">aquí</a>. Puede reactivarla eligiendo la opción de menú "
-#~ "Ayuda -> Introducción a Konqueror, y pulsando Preferencias -> Guardar "
-#~ "perfil de vista como... -> «Navegación web»."
-
-#~ msgid ""
-#~ "Do you want to disable showing the introduction in the webbrowsing "
-#~ "profile?"
-#~ msgstr ""
-#~ "¿Desea desactivar mostrar la introducción en el perfil de navegación web?"
-
-#~ msgctxt "@title:window"
-#~ msgid "Faster Startup?"
-#~ msgstr "¿Inicio más rápido?"
-
-#~ msgid "Disable"
-#~ msgstr "Desactivar"
-
-#~ msgid "Keep"
-#~ msgstr "Mantener"
-
-#~ msgid "Profile to open"
-#~ msgstr "Perfil a abrir"
-
-#~ msgid "List available profiles"
-#~ msgstr "Listar perfiles disponibles"
-
-#~ msgid "&Save View Profile As..."
-#~ msgstr "&Guardar perfil de vista como..."
-
-#~ msgid "C&onfigure View Profiles..."
-#~ msgstr "C&onfigurar perfiles de vista..."
-
-#~ msgid "Load &View Profile"
-#~ msgstr "Cargar perfil de &vista"
-
-#~ msgctxt "@title:window"
-#~ msgid "Profile Management"
-#~ msgstr "Gestión del perfil"
-
-#~ msgid "&Rename Profile"
-#~ msgstr "&Renombrar perfil"
-
-#~ msgid "&Delete Profile"
-#~ msgstr "Sup&rimir perfil"
-
-#~ msgid "&Profile name:"
-#~ msgstr "Nombre del &perfil:"
-
-#~ msgid "Save &URLs in profile"
-#~ msgstr "Guardar &URLs en el perfil"
-
-#~ msgid ""
-#~ "You have multiple tabs open in this window.\n"
-#~ "Loading a view profile will close them."
-#~ msgstr ""
-#~ "Tiene varias pestañas abiertas en esta ventana.\n"
-#~ "El cargar un perfil de vista las cerrará."
-
-#~ msgid "Load View Profile"
-#~ msgstr "Cargar perfil de vista"
-
-#~ msgid ""
-#~ "This tab contains changes that have not been submitted.\n"
-#~ "Loading a profile will discard these changes."
-#~ msgstr ""
-#~ "Esta pestaña contiene cambios que no han sido enviados.\n"
-#~ "Cargar un perfil hará que se descarten los cambios."
-
-#~ msgid " day"
-#~ msgid_plural " days"
-#~ msgstr[0] " día"
-#~ msgstr[1] " día"
