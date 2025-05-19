@@ -1,20 +1,20 @@
-# Translation of kcmperformance to Spanish
-# translation of kcmperformance.po to Spanish
-# Copyright (C) 2003, 2004, 2005, 2007, 2008 Free Software Foundation, Inc.
+# Spanish translations for kcmperformance.po package.
+# Copyright (C) 2003-2025 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
 #
-# Miguel Revilla Rodríguez <yo@miguelrevilla.com>, 2003.
-# Jaime Robles <jaime@kde.org>, 2003, 2005, 2007, 2008.
-# Pablo de Vicente <p.devicente@wanadoo.es>, 2004, 2005.
-# Juan Manuel Garcia Molina <juanma@superiodico.net>, 2005.
-# Pablo de Vicente <pablo.devicente@gmail.com>, 2005.
-# Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2016, 2017.
+# SPDX-FileCopyrightText: 2003 Miguel Revilla Rodríguez <yo@miguelrevilla.com>
+# SPDX-FileCopyrightText: 2003, 2005, 2007, 2008 Jaime Robles <jaime@kde.org>
+# SPDX-FileCopyrightText: 2004, 2005 Pablo de Vicente <p.devicente@wanadoo.es>
+# SPDX-FileCopyrightText: 2005 Juan Manuel Garcia Molina <juanma@superiodico.net>
+# SPDX-FileCopyrightText: 2005 Pablo de Vicente <pablo.devicente@gmail.com>
+# SPDX-FileCopyrightText: 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2016, 2017, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-22 00:38+0000\n"
-"PO-Revision-Date: 2017-04-02 12:44+0200\n"
+"PO-Revision-Date: 2025-05-18 13:32+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -136,81 +136,3 @@ msgid ""
 msgstr ""
 "Esta opción puede en raras ocasiones conducir a problemas diversos. Consulte "
 "la ayuda de «¿Qué es esto?» (Mayúsculas+F1) para más detalles."
-
-#~ msgid ""
-#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
-#~ "performance here."
-#~ msgstr ""
-#~ "<h1>Rendimiento de KDE</h1> Aquí puede configurar las opciones que "
-#~ "mejorarán el rendimiento de KDE."
-
-#~ msgid ""
-#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
-#~ "improve Konqueror performance here. These include options for reusing "
-#~ "already running instances and for keeping instances preloaded."
-#~ msgstr ""
-#~ "<h1>Rendimiento de Konqueror</h1> Aquí puede configurar varios parámetros "
-#~ "que mejoran el rendimiento de Konqueror. Esto incluye opciones para la "
-#~ "reutilización de sesiones ya abiertos y precarga de sesiones."
-
-#~ msgid ""
-#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
-#~ "after all their windows have been closed, up to the number specified in "
-#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
-#~ "preloaded instances will be reused instead, improving responsiveness at "
-#~ "the expense of the memory required by the preloaded instances.</p>"
-#~ msgstr ""
-#~ "<p>Si no es cero, esta opción permite mantener el número indicado de "
-#~ "sesiones de Konqueror en memoria una vez que se han cerrado sus ventanas."
-#~ "</p><p>Cuando se abra una nueva sesión de Konqueror, se reutilizará una "
-#~ "de estas sesiones anteriores, mejorando el nivel de respuesta a cambio de "
-#~ "un mayor consumo de memoria para la precarga de sesiones.</p>"
-
-#~ msgid "&Maximum number of instances kept preloaded:"
-#~ msgstr "Número &máximo de instancias precargadas:"
-
-#~ msgid ""
-#~ "Disables the minimization of memory usage and allows you to make each "
-#~ "browsing activity independent from the others"
-#~ msgstr ""
-#~ "Desactiva la minimización del uso de memoria y permite que cada sesión de "
-#~ "navegación sea independiente de las otras"
-
-#~ msgid ""
-#~ "<p>With this option activated, only one instance of Konqueror used for "
-#~ "file browsing will exist in the memory of your computer at any moment, no "
-#~ "matter how many file browsing windows you open, thus reducing resource "
-#~ "requirements.</p><p>Be aware that this also means that, if something goes "
-#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
-#~ msgstr ""
-#~ "<p>Con esta opción activada, solo existirá en memoria una sesión de "
-#~ "exploración de archivos de Konqueror en cada momento determinado, "
-#~ "independientemente del número de ventanas abiertas, lo que reduce el "
-#~ "consumo de recursos.</p><p>Tenga en cuenta que esto significa que, si "
-#~ "algo va mal, todas las ventanas de exploración de archivos se cerrarán "
-#~ "simultáneamente.</p>"
-
-#~ msgid ""
-#~ "<p>With this option activated, only one instance of Konqueror will exist "
-#~ "in the memory of your computer at any moment, no matter how many browsing "
-#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
-#~ "that this also means that, if something goes wrong, all your browsing "
-#~ "windows will be closed simultaneously.</p>"
-#~ msgstr ""
-#~ "<p>Con esta opción activada, solo existirá en memoria una sesión de "
-#~ "Konqueror en cada momento determinado, independientemente del número de "
-#~ "ventanas abiertas, lo que reduce el consumo de recursos.</p><p>Tenga en "
-#~ "cuenta que esto significa que, si algo va mal, todas las ventanas de "
-#~ "navegación se cerrarán simultáneamente.</p>"
-
-#~ msgid "Minimize Memory Usage"
-#~ msgstr "Minimizar uso de memoria"
-
-#~ msgid "&Never"
-#~ msgstr "&Nunca"
-
-#~ msgid "For &file browsing only (recommended)"
-#~ msgstr "Solo para exploración de &archivos (recomendado)"
-
-#~ msgid "Alwa&ys (use with care)"
-#~ msgstr "&Siempre (utilizar con cuidado)"
