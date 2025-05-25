@@ -61,9 +61,9 @@ msgid ""
 msgstr ""
 "<html>Si està marcada, Konqueror carregarà automàticament qualsevol imatge "
 "incrustada a una pàgina web. D'altra manera, mostrarà l'espai de les imatges "
-"i llavors podreu carregar-les manualment clicant en el botó d'imatge. <br /"
-">Si no és que teniu una connexió de xarxa molt lenta, segurament voldreu "
-"marcar esta casella per a millorar la vostra navegació.</html>"
+"i llavors podreu carregar-les manualment clicant damunt del botó d'imatge. "
+"<br />Si no és que teniu una connexió de xarxa molt lenta, segurament "
+"voldreu marcar esta casella per a millorar la vostra navegació.</html>"
 
 #: appearance.cpp:63
 #, kde-format
@@ -304,7 +304,7 @@ msgstr ""
 #: appearance.cpp:192
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
-msgstr "Ajustament de la mida de la lletra per a a&questa codificació:"
+msgstr "Ajustament de la mida de la lletra per a es&ta codificació:"
 
 #: appearance.cpp:200 appearance.cpp:394
 #, kde-format
@@ -706,13 +706,13 @@ msgid ""
 "</qt>"
 msgstr ""
 "<qt>\n"
-"Per a afegir una política nova, senzillament cliqueu en el botó <b>Afig…</b> "
-"i proporcioneu la informació necessària. Per a canviar una política "
-"existent, cliqueu en el botó <b>Canvia…</b> i trieu la política nova del "
-"diàleg de polítiques. Clicant en el botó <b>Suprimix</b> s'eliminarà la "
-"política seleccionada, fent que per a este domini s'utilitze la política "
-"predeterminada, mentre que <b>Suprimix-ho tot</b> eliminarà totes les "
-"polítiques específiques de lloc.\n"
+"Per a afegir una política nova, senzillament cliqueu damunt del botó <b>Afig…"
+"</b> i proporcioneu la informació necessària. Per a canviar una política "
+"existent, cliqueu damunt del botó <b>Canvia…</b> i trieu la política nova "
+"del diàleg de polítiques. Quan es clique damunt del botó <b>Suprimix</b> "
+"s'eliminarà la política seleccionada, fent que per a este domini s'utilitze "
+"la política predeterminada, mentre que <b>Suprimix-ho tot</b> eliminarà "
+"totes les polítiques específiques de lloc.\n"
 "</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
@@ -981,7 +981,7 @@ msgid ""
 "flash before the page is loaded</p></body></html>"
 msgstr ""
 "<html><head/><body><p align=\"justify\">Utilitza un clor de fons "
-"personalitzat que es farà servir a les pàgines web. S'utilitza este color:</"
+"personalitzat que s'utilitzarà en les pàgines web. S'utilitza este color:</"
 "p><ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-"
 "right: 0px; -qt-list-indent: 1;\"><li align=\"justify\" style=\" margin-"
 "top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
@@ -1007,8 +1007,8 @@ msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
 msgstr ""
-"<html><head/><body><p>El color de fons personalitzat que es farà servir a "
-"les pàgines web</p></body></html>"
+"<html><head/><body><p>El color de fons personalitzat que s'utilitzarà en les "
+"pàgines web</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -1456,8 +1456,8 @@ msgstr "&Exporta…"
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
 msgstr ""
-"Cliqueu en este botó per a afegir manualment una política específica per a "
-"un amfitrió o domini."
+"Cliqueu damunt d'este botó per a afegir manualment una política específica "
+"per a un amfitrió o domini."
 
 #: domainlistview.cpp:76
 #, kde-format
@@ -1465,8 +1465,8 @@ msgid ""
 "Click on this button to change the policy for the host or domain selected in "
 "the list box."
 msgstr ""
-"Cliqueu en este botó per a canviar la política per a un amfitrió o domini "
-"seleccionat en el quadro de llista."
+"Cliqueu damunt d'este botó per a canviar la política per a un amfitrió o "
+"domini seleccionat en el quadro de llista."
 
 #: domainlistview.cpp:78
 #, kde-format
@@ -1474,8 +1474,8 @@ msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
 "the list box."
 msgstr ""
-"Cliqueu en este botó per a suprimir la política per a un amfitrió o domini "
-"seleccionat en el quadro de llista."
+"Cliqueu damunt d'este botó per a suprimir la política per a un amfitrió o "
+"domini seleccionat en el quadro de llista."
 
 #: domainlistview.cpp:125
 #, kde-format
@@ -1864,7 +1864,7 @@ msgid ""
 "clicking on a Konqueror view."
 msgstr ""
 "Si està marcada, podreu obrir l'URL de la selecció clicant amb el botó del "
-"mig a una vista de Konqueror."
+"mig damunt d'una vista de Konqueror."
 
 #: htmlopts.cpp:97
 #, kde-format
@@ -1878,9 +1878,9 @@ msgid ""
 "Konqueror view. To access the context menu, press the right mouse button and "
 "move."
 msgstr ""
-"Si està marcada, podreu retrocedir en l'historial fent clic dret en una "
-"vista de Konqueror. Per a accedir al menú contextual, premeu el botó dret "
-"del ratolí i moveu-lo."
+"Si està marcada, podreu retrocedir en l'historial fent clic dret damunt "
+"d'una vista de Konqueror. Per a accedir al menú contextual, premeu el botó "
+"dret del ratolí i moveu-lo."
 
 #: htmlopts.cpp:115
 #, kde-format
@@ -1991,14 +1991,14 @@ msgid ""
 msgstr ""
 "Ací podeu establir polítiques específiques de JavaScript per a qualsevol "
 "amfitrió o domini en particular. Per a afegir una política nova, "
-"senzillament cliqueu en el botó <i>Nova…</i> i empleneu la informació que "
-"vos demana el diàleg. Per a canviar una política existent, cliqueu en el "
-"botó <i>Canvia…</i> i trieu una política nova des del diàleg. Clicant en "
-"<i>Suprimix</i> s'eliminarà la política seleccionada, fent que s'utilitze la "
-"configuració de política predeterminada per a este domini. Els botons "
-"<i>Importa</i> i <i>Exporta</i> vos permeten compartir amb facilitat les "
-"vostres polítiques amb d'altra gent, deixant-vos guardar-les i recuperar-les "
-"des d'un fitxer zip."
+"senzillament cliqueu damunt del botó <i>Nova…</i> i empleneu la informació "
+"que vos demana el diàleg. Per a canviar una política existent, cliqueu "
+"damunt del botó <i>Canvia…</i> i trieu una política nova des del diàleg. "
+"Quan es clique damunt <i>Suprimix</i> s'eliminarà la política seleccionada, "
+"fent que s'utilitze la configuració de política predeterminada per a este "
+"domini. Els botons <i>Importa</i> i <i>Exporta</i> vos permeten compartir "
+"amb facilitat les vostres polítiques amb d'altra gent, deixant-vos guardar-"
+"les i recuperar-les des d'un fitxer zip."
 
 #: jsopts.cpp:80
 #, kde-format
@@ -2022,7 +2022,7 @@ msgid ""
 "These policies will be merged with the existing ones. Duplicate entries are "
 "ignored."
 msgstr ""
-"Cliqueu este botó per a triar el fitxer que conté les polítiques de "
+"Cliqueu damunt d'este botó per a triar el fitxer que conté les polítiques de "
 "JavaScript. Estes polítiques es barrejaran amb les ja existents. Les "
 "entrades duplicades s'ignoraran."
 
@@ -2033,9 +2033,9 @@ msgid ""
 "named <b>javascript_policy.tgz</b>, will be saved to a location of your "
 "choice."
 msgstr ""
-"Cliqueu este botó per a guardar la política de JavaScript a un fitxer zip. "
-"El fitxer, anomenat <b>javascript_policy.tgz</b>, es guardarà al lloc que "
-"trieu."
+"Cliqueu damunt d'este botó per a guardar la política de JavaScript a un "
+"fitxer zip. El fitxer, anomenat <b>javascript_policy.tgz</b>, es guardarà al "
+"lloc que trieu."
 
 #: jsopts.cpp:96
 #, kde-format
@@ -2467,8 +2467,8 @@ msgid ""
 "When you click on a tab using the middle mouse button or mouse wheel, it "
 "will close that tab."
 msgstr ""
-"Clicant en una pestanya amb el botó del mig o la roda del ratolí, es tancarà "
-"esta pestanya."
+"Quan es clique damunt d'una pestanya amb el botó del mig o la roda del "
+"ratolí, es tancarà esta pestanya."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
 #: tabs/tabsoptions.ui:180
