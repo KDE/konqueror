@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 00:41+0000\n"
+"POT-Creation-Date: 2025-05-26 00:41+0000\n"
 "PO-Revision-Date: 2025-05-07 18:32+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -343,28 +343,30 @@ msgctxt "@action:inmenu"
 msgid "Show &with %1"
 msgstr "اعرض بـ%1"
 
-#: src/capturesourcechooserdlg.cpp:29
+#: src/capturesourcechooserdlg.cpp:27
 #, kde-format
 msgid ""
 "Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
 msgstr "هل تريد السماح لـ <tt>%1</tt> بالتقاط محتويات شاشتك؟"
 
+#: src/capturesourcechooserdlg.cpp:29
+#, kde-format
+msgctxt "Choose to share a screen"
+msgid "Share Screen"
+msgstr ""
+
 #: src/capturesourcechooserdlg.cpp:31
-#, kde-format
-msgid "Choose window or screen to capture"
-msgstr "اختر نافذة أو شاشة لالتقاطها"
+#, fuzzy, kde-format
+#| msgid "New Window"
+msgctxt "Choose to share a window"
+msgid "Share Window"
+msgstr "نافذة جديدة"
 
-#: src/capturesourcechooserdlg.cpp:38
+#: src/capturesourcechooserdlg.cpp:35
 #, kde-format
-msgctxt "Allow a web page to capture the screen"
-msgid "Allow"
-msgstr "اسمح"
-
-#: src/capturesourcechooserdlg.cpp:39
-#, kde-format
-msgctxt "Block a web page from capturing the screen"
-msgid "Block"
-msgstr "احظر"
+msgctxt "Don't share any part of the screen"
+msgid "Share nothing"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
@@ -375,8 +377,34 @@ msgstr "اختر مصدر الالتقاط"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
 #, kde-format
-msgid "Do you want to allow this page to capture the contents of your screen?"
-msgstr "هل تريد السماح لهذه الصفحة بالتقاط محتويات شاشتك؟"
+msgid "Which part of your screen do you want to share?"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: src/capturesourcechooserdlg.ui:44
+#, fuzzy, kde-format
+#| msgid "New Window"
+msgid "Window"
+msgstr "نافذة جديدة"
+
+#. i18n: ectx: property (placeholderText), widget (QComboBox, windowCombo)
+#: src/capturesourcechooserdlg.ui:51
+#, fuzzy, kde-format
+#| msgid "Close window?"
+msgid "Choose window"
+msgstr "أغلق النافذة ؟"
+
+#. i18n: ectx: property (text), widget (QLabel, Screen)
+#: src/capturesourcechooserdlg.ui:75
+#, kde-format
+msgid "Screen"
+msgstr ""
+
+#. i18n: ectx: property (placeholderText), widget (QComboBox, screenCombo)
+#: src/capturesourcechooserdlg.ui:82
+#, kde-format
+msgid "Choose screen"
+msgstr ""
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1608,6 +1636,21 @@ msgstr ""
 "li><li><b>الحقل ممكّن: </b>%5</li><li><b>الإكمال التلقائي ممكّن: </b>%6</li></"
 "ul>"
 
+#~ msgid "Choose window or screen to capture"
+#~ msgstr "اختر نافذة أو شاشة لالتقاطها"
+
+#~ msgctxt "Allow a web page to capture the screen"
+#~ msgid "Allow"
+#~ msgstr "اسمح"
+
+#~ msgctxt "Block a web page from capturing the screen"
+#~ msgid "Block"
+#~ msgstr "احظر"
+
+#~ msgid ""
+#~ "Do you want to allow this page to capture the contents of your screen?"
+#~ msgstr "هل تريد السماح لهذه الصفحة بالتقاط محتويات شاشتك؟"
+
 #~ msgid "Choose fields to remember"
 #~ msgstr "اختر الحقول التي تريد تذكرها"
 
@@ -1713,9 +1756,6 @@ msgstr ""
 #~ msgctxt "input dialog window title for selecting html elements"
 #~ msgid "Select elements"
 #~ msgstr "اختر العناصر"
-
-#~ msgid "New Window"
-#~ msgstr "نافذة جديدة"
 
 #~ msgid "Print"
 #~ msgstr "اطبع"

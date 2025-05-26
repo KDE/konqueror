@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 00:41+0000\n"
+"POT-Creation-Date: 2025-05-26 00:41+0000\n"
 "PO-Revision-Date: 2024-11-09 11:50+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -354,28 +354,30 @@ msgctxt "@action:inmenu"
 msgid "Show &with %1"
 msgstr "Erakutsi %1(e)&kin"
 
-#: src/capturesourcechooserdlg.cpp:29
+#: src/capturesourcechooserdlg.cpp:27
 #, kde-format
 msgid ""
 "Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
 msgstr "<tt>%1</tt>(e)ri zure pantailaren edukia atzematen utzi nahi diozu?"
 
+#: src/capturesourcechooserdlg.cpp:29
+#, kde-format
+msgctxt "Choose to share a screen"
+msgid "Share Screen"
+msgstr ""
+
 #: src/capturesourcechooserdlg.cpp:31
-#, kde-format
-msgid "Choose window or screen to capture"
-msgstr "Hautatu atzeman beharreko leihoa edo pantaila"
+#, fuzzy, kde-format
+#| msgid "New Window"
+msgctxt "Choose to share a window"
+msgid "Share Window"
+msgstr "Lehio berria"
 
-#: src/capturesourcechooserdlg.cpp:38
+#: src/capturesourcechooserdlg.cpp:35
 #, kde-format
-msgctxt "Allow a web page to capture the screen"
-msgid "Allow"
-msgstr "Baimendu"
-
-#: src/capturesourcechooserdlg.cpp:39
-#, kde-format
-msgctxt "Block a web page from capturing the screen"
-msgid "Block"
-msgstr "Oztopatu"
+msgctxt "Don't share any part of the screen"
+msgid "Share nothing"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
@@ -386,8 +388,34 @@ msgstr "Aukeratu atzemateko sorburua"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
 #, kde-format
-msgid "Do you want to allow this page to capture the contents of your screen?"
-msgstr "Orri honi zure pantailaren edukia atzematen utzi nahi diozu?"
+msgid "Which part of your screen do you want to share?"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: src/capturesourcechooserdlg.ui:44
+#, fuzzy, kde-format
+#| msgid "New Window"
+msgid "Window"
+msgstr "Lehio berria"
+
+#. i18n: ectx: property (placeholderText), widget (QComboBox, windowCombo)
+#: src/capturesourcechooserdlg.ui:51
+#, fuzzy, kde-format
+#| msgid "Close window?"
+msgid "Choose window"
+msgstr "Itxi leihoa?"
+
+#. i18n: ectx: property (text), widget (QLabel, Screen)
+#: src/capturesourcechooserdlg.ui:75
+#, kde-format
+msgid "Screen"
+msgstr ""
+
+#. i18n: ectx: property (placeholderText), widget (QComboBox, screenCombo)
+#: src/capturesourcechooserdlg.ui:82
+#, kde-format
+msgid "Choose screen"
+msgstr ""
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1642,6 +1670,21 @@ msgstr ""
 "li><li><b>Eremua gaituta dago: </b>%5</li><li><b>osatze automatikoa gaituta "
 "dago: </b>%6</li></ul>"
 
+#~ msgid "Choose window or screen to capture"
+#~ msgstr "Hautatu atzeman beharreko leihoa edo pantaila"
+
+#~ msgctxt "Allow a web page to capture the screen"
+#~ msgid "Allow"
+#~ msgstr "Baimendu"
+
+#~ msgctxt "Block a web page from capturing the screen"
+#~ msgid "Block"
+#~ msgstr "Oztopatu"
+
+#~ msgid ""
+#~ "Do you want to allow this page to capture the contents of your screen?"
+#~ msgstr "Orri honi zure pantailaren edukia atzematen utzi nahi diozu?"
+
 #~ msgid "Choose fields to remember"
 #~ msgstr "Hautatu oroitu beharreko eremuak"
 
@@ -1928,9 +1971,6 @@ msgstr ""
 #~ msgctxt "input dialog window title for selecting html elements"
 #~ msgid "Select elements"
 #~ msgstr "Elementuak hautatu"
-
-#~ msgid "New Window"
-#~ msgstr "Lehio berria"
 
 #~ msgid "Print"
 #~ msgstr "Inprimatu"

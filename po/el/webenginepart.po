@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 00:41+0000\n"
+"POT-Creation-Date: 2025-05-26 00:41+0000\n"
 "PO-Revision-Date: 2023-01-07 10:35+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -372,27 +372,29 @@ msgctxt "@action:inmenu"
 msgid "Show &with %1"
 msgstr "Άνοιγμα '%1'"
 
-#: src/capturesourcechooserdlg.cpp:29
+#: src/capturesourcechooserdlg.cpp:27
 #, kde-format
 msgid ""
 "Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
 msgstr ""
 
-#: src/capturesourcechooserdlg.cpp:31
+#: src/capturesourcechooserdlg.cpp:29
 #, kde-format
-msgid "Choose window or screen to capture"
+msgctxt "Choose to share a screen"
+msgid "Share Screen"
 msgstr ""
 
-#: src/capturesourcechooserdlg.cpp:38
-#, kde-format
-msgctxt "Allow a web page to capture the screen"
-msgid "Allow"
-msgstr "Να επιτρέπεται"
+#: src/capturesourcechooserdlg.cpp:31
+#, fuzzy, kde-format
+#| msgid "New Window"
+msgctxt "Choose to share a window"
+msgid "Share Window"
+msgstr "Νέο Παράθυρο"
 
-#: src/capturesourcechooserdlg.cpp:39
+#: src/capturesourcechooserdlg.cpp:35
 #, kde-format
-msgctxt "Block a web page from capturing the screen"
-msgid "Block"
+msgctxt "Don't share any part of the screen"
+msgid "Share nothing"
 msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
@@ -405,14 +407,35 @@ msgstr "Επιλέξτε στοιχεία"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
-msgid "Do you want to allow this page to capture the contents of your screen?"
+#, kde-format
+msgid "Which part of your screen do you want to share?"
 msgstr ""
-"<qt>Θέλετε να επιτρέψετε στον ιστότοπο να επισυνάψει τα ακόλουθα αρχεία στο "
-"μήνυμα ηλ αλληλογραφίας;</qt>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: src/capturesourcechooserdlg.ui:44
+#, fuzzy, kde-format
+#| msgid "New Window"
+msgid "Window"
+msgstr "Νέο Παράθυρο"
+
+#. i18n: ectx: property (placeholderText), widget (QComboBox, windowCombo)
+#: src/capturesourcechooserdlg.ui:51
+#, fuzzy, kde-format
+#| msgid "Close window?"
+msgid "Choose window"
+msgstr "Κλείσιμο παραθύρου;"
+
+#. i18n: ectx: property (text), widget (QLabel, Screen)
+#: src/capturesourcechooserdlg.ui:75
+#, kde-format
+msgid "Screen"
+msgstr ""
+
+#. i18n: ectx: property (placeholderText), widget (QComboBox, screenCombo)
+#: src/capturesourcechooserdlg.ui:82
+#, kde-format
+msgid "Choose screen"
+msgstr ""
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1662,6 +1685,20 @@ msgstr ""
 "μόνο: </b>%4</li><li><b>Το πεδίο είναι ενεργό: </b>%5</li><li><b>Η αυτόματη "
 "συμπλήρωση είναι ενεργή: </b>%6</li></ul>"
 
+#~ msgctxt "Allow a web page to capture the screen"
+#~ msgid "Allow"
+#~ msgstr "Να επιτρέπεται"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>Do you want to allow this site to attach the following files to the "
+#~| "email message?</qt>"
+#~ msgid ""
+#~ "Do you want to allow this page to capture the contents of your screen?"
+#~ msgstr ""
+#~ "<qt>Θέλετε να επιτρέψετε στον ιστότοπο να επισυνάψει τα ακόλουθα αρχεία "
+#~ "στο μήνυμα ηλ αλληλογραφίας;</qt>"
+
 #~ msgid "Choose fields to remember"
 #~ msgstr "Επιλογή αρχείων για απομνημόνευση"
 
@@ -1918,9 +1955,6 @@ msgstr ""
 #~ msgctxt "input dialog window title for selecting html elements"
 #~ msgid "Select elements"
 #~ msgstr "Επιλέξτε στοιχεία"
-
-#~ msgid "New Window"
-#~ msgstr "Νέο Παράθυρο"
 
 #~ msgid "Print"
 #~ msgstr "Εκτύπωση"

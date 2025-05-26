@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 00:41+0000\n"
+"POT-Creation-Date: 2025-05-26 00:41+0000\n"
 "PO-Revision-Date: 2022-09-27 18:12+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -364,28 +364,28 @@ msgctxt "@action:inmenu"
 msgid "Show &with %1"
 msgstr "Buka '%1'"
 
-#: src/capturesourcechooserdlg.cpp:29
+#: src/capturesourcechooserdlg.cpp:27
 #, kde-format
 msgid ""
 "Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
 msgstr ""
 
-#: src/capturesourcechooserdlg.cpp:31
+#: src/capturesourcechooserdlg.cpp:29
 #, kde-format
-msgid "Choose window or screen to capture"
+msgctxt "Choose to share a screen"
+msgid "Share Screen"
 msgstr ""
 
-#: src/capturesourcechooserdlg.cpp:38
-#, fuzzy, kde-format
-#| msgid "Allow"
-msgctxt "Allow a web page to capture the screen"
-msgid "Allow"
-msgstr "Izinkan"
-
-#: src/capturesourcechooserdlg.cpp:39
+#: src/capturesourcechooserdlg.cpp:31
 #, kde-format
-msgctxt "Block a web page from capturing the screen"
-msgid "Block"
+msgctxt "Choose to share a window"
+msgid "Share Window"
+msgstr ""
+
+#: src/capturesourcechooserdlg.cpp:35
+#, kde-format
+msgctxt "Don't share any part of the screen"
+msgid "Share nothing"
 msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
@@ -396,14 +396,34 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
-msgid "Do you want to allow this page to capture the contents of your screen?"
+#, kde-format
+msgid "Which part of your screen do you want to share?"
 msgstr ""
-"<qt>Apakah Anda mengizinkan situs ini untuk menampirkan file berikut ke "
-"pesan surel?</qt>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: src/capturesourcechooserdlg.ui:44
+#, kde-format
+msgid "Window"
+msgstr ""
+
+#. i18n: ectx: property (placeholderText), widget (QComboBox, windowCombo)
+#: src/capturesourcechooserdlg.ui:51
+#, fuzzy, kde-format
+#| msgid "Close window?"
+msgid "Choose window"
+msgstr "Tutup jendela?"
+
+#. i18n: ectx: property (text), widget (QLabel, Screen)
+#: src/capturesourcechooserdlg.ui:75
+#, kde-format
+msgid "Screen"
+msgstr ""
+
+#. i18n: ectx: property (placeholderText), widget (QComboBox, screenCombo)
+#: src/capturesourcechooserdlg.ui:82
+#, kde-format
+msgid "Choose screen"
+msgstr ""
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1642,6 +1662,22 @@ msgstr ""
 "li><li><b>Id bidang: </b>%3</li><li><b>Bidang hanya baca: </b>%4</"
 "li><li><b>Bidang difungsikan: </b>%5</li><li><b>Auto penyelesaian "
 "difungsikan: </b>%6</li></ul>"
+
+#, fuzzy
+#~| msgid "Allow"
+#~ msgctxt "Allow a web page to capture the screen"
+#~ msgid "Allow"
+#~ msgstr "Izinkan"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>Do you want to allow this site to attach the following files to the "
+#~| "email message?</qt>"
+#~ msgid ""
+#~ "Do you want to allow this page to capture the contents of your screen?"
+#~ msgstr ""
+#~ "<qt>Apakah Anda mengizinkan situs ini untuk menampirkan file berikut ke "
+#~ "pesan surel?</qt>"
 
 #~ msgid "Choose fields to remember"
 #~ msgstr "Pilih bidang untuk diingat"
