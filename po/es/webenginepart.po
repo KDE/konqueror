@@ -14,14 +14,14 @@ msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-26 00:41+0000\n"
-"PO-Revision-Date: 2025-05-18 13:39+0100\n"
+"PO-Revision-Date: 2025-05-26 12:28+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.04.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -374,19 +374,19 @@ msgstr "¿Quiere permitir que <tt>%1</tt> capture el contenido de la pantalla?"
 #, kde-format
 msgctxt "Choose to share a screen"
 msgid "Share Screen"
-msgstr ""
+msgstr "Compartir la pantalla"
 
 #: src/capturesourcechooserdlg.cpp:31
 #, kde-format
 msgctxt "Choose to share a window"
 msgid "Share Window"
-msgstr ""
+msgstr "Compartir la ventana"
 
 #: src/capturesourcechooserdlg.cpp:35
 #, kde-format
 msgctxt "Don't share any part of the screen"
 msgid "Share nothing"
-msgstr ""
+msgstr "No compartir nada"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
@@ -398,32 +398,31 @@ msgstr "Escoger fuente de captura"
 #: src/capturesourcechooserdlg.ui:20
 #, kde-format
 msgid "Which part of your screen do you want to share?"
-msgstr ""
+msgstr "¿Qué parte de la pantalla quiere compartir?"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/capturesourcechooserdlg.ui:44
 #, kde-format
 msgid "Window"
-msgstr ""
+msgstr "Ventana"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, windowCombo)
 #: src/capturesourcechooserdlg.ui:51
-#, fuzzy, kde-format
-#| msgid "Close window?"
+#, kde-format
 msgid "Choose window"
-msgstr "¿Cerrar la ventana?"
+msgstr "Escoger ventana"
 
 #. i18n: ectx: property (text), widget (QLabel, Screen)
 #: src/capturesourcechooserdlg.ui:75
 #, kde-format
 msgid "Screen"
-msgstr ""
+msgstr "Pantalla"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, screenCombo)
 #: src/capturesourcechooserdlg.ui:82
 #, kde-format
 msgid "Choose screen"
-msgstr ""
+msgstr "Escoger pantalla"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1665,19 +1664,3 @@ msgstr ""
 "%2</li><li><b>ID del campo: </b>%3</li><li><b>Campo de solo lectura: </b>%4</"
 "li><li><b>Campo activado: </b>%5</li><li><b>Terminación automática activada: "
 "</b>%6</li></ul>"
-
-#~ msgid "Choose window or screen to capture"
-#~ msgstr "Escoger la ventana o la pantalla que se va a capturar"
-
-#~ msgctxt "Allow a web page to capture the screen"
-#~ msgid "Allow"
-#~ msgstr "Permitir"
-
-#~ msgctxt "Block a web page from capturing the screen"
-#~ msgid "Block"
-#~ msgstr "Bloquear"
-
-#~ msgid ""
-#~ "Do you want to allow this page to capture the contents of your screen?"
-#~ msgstr ""
-#~ "¿Quiere permitir que esta página captura el contenido de la pantalla?"

@@ -1,16 +1,16 @@
 # Translation for webenginepart.po to Euskara/Basque (eu).
-# Copyright (C) 2010-2024 This file is copyright:
+# Copyright (C) 2010-2025 This file is copyright:
 # This file is distributed under the same terms as the konqueror package.
-# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2010, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2010, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-26 00:41+0000\n"
-"PO-Revision-Date: 2024-11-09 11:50+0100\n"
+"PO-Revision-Date: 2025-05-26 18:32+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -364,20 +364,19 @@ msgstr "<tt>%1</tt>(e)ri zure pantailaren edukia atzematen utzi nahi diozu?"
 #, kde-format
 msgctxt "Choose to share a screen"
 msgid "Share Screen"
-msgstr ""
+msgstr "Partekatu pantaila"
 
 #: src/capturesourcechooserdlg.cpp:31
-#, fuzzy, kde-format
-#| msgid "New Window"
+#, kde-format
 msgctxt "Choose to share a window"
 msgid "Share Window"
-msgstr "Lehio berria"
+msgstr "Partekatu leihoa"
 
 #: src/capturesourcechooserdlg.cpp:35
 #, kde-format
 msgctxt "Don't share any part of the screen"
 msgid "Share nothing"
-msgstr ""
+msgstr "Ez partekatu ezer"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
@@ -389,33 +388,31 @@ msgstr "Aukeratu atzemateko sorburua"
 #: src/capturesourcechooserdlg.ui:20
 #, kde-format
 msgid "Which part of your screen do you want to share?"
-msgstr ""
+msgstr "Zure pantailaren zein zati partekatu nahi duzu?"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/capturesourcechooserdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "New Window"
+#, kde-format
 msgid "Window"
-msgstr "Lehio berria"
+msgstr "Leihoa"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, windowCombo)
 #: src/capturesourcechooserdlg.ui:51
-#, fuzzy, kde-format
-#| msgid "Close window?"
+#, kde-format
 msgid "Choose window"
-msgstr "Itxi leihoa?"
+msgstr "Hautatu leihoa"
 
 #. i18n: ectx: property (text), widget (QLabel, Screen)
 #: src/capturesourcechooserdlg.ui:75
 #, kde-format
 msgid "Screen"
-msgstr ""
+msgstr "Pantaila"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, screenCombo)
 #: src/capturesourcechooserdlg.ui:82
 #, kde-format
 msgid "Choose screen"
-msgstr ""
+msgstr "Hautatu pantaila"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -902,10 +899,9 @@ msgstr "bestelakoa"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgid "Customize Fields To Store"
-msgstr "Nor&bere erara egokitu orri honetan memorizatu beharreko eremuak..."
+msgstr "Neurrira ipini gorde beharreko eremuak"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
@@ -915,10 +911,9 @@ msgstr "Aldatu pasahitzak edo leku-markak azaltzearen artean"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "&Show passwords"
+#, kde-format
 msgid "Show &passwords"
-msgstr "Erakut&si pasahitzak"
+msgstr "Erakutsi &pasahitzak"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
@@ -928,10 +923,9 @@ msgstr "Erakutsi eremuei buruzko informazio aurreratua"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
-#, fuzzy, kde-format
-#| msgid "&Show details"
+#, kde-format
 msgid "Show field &details"
-msgstr "Erakut&si xehetasunak"
+msgstr "Erakutsi eremuen &xehetasunak"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
@@ -947,10 +941,9 @@ msgstr "Gorde formularioko datuak KWallet-en elkarrizketa-koadroa ixtean"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
-#, fuzzy, kde-format
-#| msgid "Store form data in KWallet when closing the dialog"
+#, kde-format
 msgid "&Store the contents of selected fields when closing the dialog"
-msgstr "Gorde formularioko datuak KWallet-en elkarrizketa-koadroa ixtean"
+msgstr "&Gorde hautatutako eremuen edukia elkarrizketa-koadroa ixtean"
 
 #: src/webenginepage.cpp:164
 #, kde-format
@@ -1263,44 +1256,40 @@ msgstr ""
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
-msgstr ""
+msgstr "Be&te kredentzialak"
 
 #: src/webenginepart.cpp:1024
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
-msgstr ""
+msgstr "&Bilatu orrian kredentzial eskaerak"
 
 #: src/webenginepart.cpp:1028
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
-msgstr ""
+msgstr "&Gorde kredentzialak orain"
 
 #: src/webenginepart.cpp:1032
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
-msgstr "Nor&bere erara egokitu orri honetan memorizatu beharreko eremuak..."
+msgstr "&Neurrira ipini kredentzialen ezarpenak ... orrirako"
 
 #: src/webenginepart.cpp:1036
-#, fuzzy, kde-format
-#| msgid "Remove Customized Memorization Settings for This Page"
+#, kde-format
 msgid "Reset Custom Credential Settings for Page"
-msgstr "Kendu orri honetan norbere erara egokitutako memorizatzeko ezarpenak"
+msgstr "Berrezarri orrirako neurrira ipinitako kredentzialen ezarpenak"
 
 #: src/webenginepart.cpp:1040
-#, fuzzy, kde-format
-#| msgid "&Allow Password Caching for This Site"
+#, kde-format
 msgid "&Allow Credential Caching for This Page"
-msgstr "B&aimendu leku honetako pasahitzak cacheratzea"
+msgstr "B&aimendu orri honetako kredentzialak cacheratzea"
 
 #: src/webenginepart.cpp:1044
-#, fuzzy, kde-format
-#| msgid "Remove All Memorized Passwords for This Site"
+#, kde-format
 msgid "Remove All Stored Passwords for This Site"
-msgstr "Kendu leku honetako memorizatutako pasahitz guztiak"
+msgstr "Kendu leku honetarako gordetako pasahitz guztiak"
 
 #: src/webenginepart.cpp:1048
 #, kde-format

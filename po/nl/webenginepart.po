@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-26 00:41+0000\n"
-"PO-Revision-Date: 2025-05-05 10:21+0200\n"
+"PO-Revision-Date: 2025-05-26 11:10+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.04.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -366,20 +366,19 @@ msgstr "Wilt u aan <tt>%1</tt> toestaan de inhoud van uw scherm op te nemen?"
 #, kde-format
 msgctxt "Choose to share a screen"
 msgid "Share Screen"
-msgstr ""
+msgstr "Scherm delen"
 
 #: src/capturesourcechooserdlg.cpp:31
-#, fuzzy, kde-format
-#| msgid "New Window"
+#, kde-format
 msgctxt "Choose to share a window"
 msgid "Share Window"
-msgstr "Nieuw venster"
+msgstr "Venster delen"
 
 #: src/capturesourcechooserdlg.cpp:35
 #, kde-format
 msgctxt "Don't share any part of the screen"
 msgid "Share nothing"
-msgstr ""
+msgstr "Niets delen"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
@@ -391,33 +390,31 @@ msgstr "Bron van opnemen kiezen"
 #: src/capturesourcechooserdlg.ui:20
 #, kde-format
 msgid "Which part of your screen do you want to share?"
-msgstr ""
+msgstr "Welk deel van uw scherm wilt u delen?"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/capturesourcechooserdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "New Window"
+#, kde-format
 msgid "Window"
-msgstr "Nieuw venster"
+msgstr "Venster"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, windowCombo)
 #: src/capturesourcechooserdlg.ui:51
-#, fuzzy, kde-format
-#| msgid "Close window?"
+#, kde-format
 msgid "Choose window"
-msgstr "Venster sluiten?"
+msgstr "Kies venster"
 
 #. i18n: ectx: property (text), widget (QLabel, Screen)
 #: src/capturesourcechooserdlg.ui:75
 #, kde-format
 msgid "Screen"
-msgstr ""
+msgstr "Scherm"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, screenCombo)
 #: src/capturesourcechooserdlg.ui:82
 #, kde-format
 msgid "Choose screen"
-msgstr ""
+msgstr "Kies scherm"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-26 00:41+0000\n"
-"PO-Revision-Date: 2025-05-05 09:45+0300\n"
+"PO-Revision-Date: 2025-05-26 08:56+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -362,20 +362,19 @@ msgstr "Хочете дозволити <tt>%1</tt> захоплювати зо�
 #, kde-format
 msgctxt "Choose to share a screen"
 msgid "Share Screen"
-msgstr ""
+msgstr "Спільний екран"
 
 #: src/capturesourcechooserdlg.cpp:31
-#, fuzzy, kde-format
-#| msgid "New Window"
+#, kde-format
 msgctxt "Choose to share a window"
 msgid "Share Window"
-msgstr "Нове вікно"
+msgstr "Спільне вікно"
 
 #: src/capturesourcechooserdlg.cpp:35
 #, kde-format
 msgctxt "Don't share any part of the screen"
 msgid "Share nothing"
-msgstr ""
+msgstr "Не ділитися нічим"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
@@ -387,33 +386,31 @@ msgstr "Виберіть джерело захоплення"
 #: src/capturesourcechooserdlg.ui:20
 #, kde-format
 msgid "Which part of your screen do you want to share?"
-msgstr ""
+msgstr "Яку частину екрана ви хочете оприлюднити?"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/capturesourcechooserdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "New Window"
+#, kde-format
 msgid "Window"
-msgstr "Нове вікно"
+msgstr "Вікно"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, windowCombo)
 #: src/capturesourcechooserdlg.ui:51
-#, fuzzy, kde-format
-#| msgid "Close window?"
+#, kde-format
 msgid "Choose window"
-msgstr "Закрити вікно?"
+msgstr "Вибрати вікно"
 
 #. i18n: ectx: property (text), widget (QLabel, Screen)
 #: src/capturesourcechooserdlg.ui:75
 #, kde-format
 msgid "Screen"
-msgstr ""
+msgstr "Екран"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, screenCombo)
 #: src/capturesourcechooserdlg.ui:82
 #, kde-format
 msgid "Choose screen"
-msgstr ""
+msgstr "Вибрати екран"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format

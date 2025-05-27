@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: extragear-base-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-26 00:41+0000\n"
-"PO-Revision-Date: 2025-05-06 22:55+0300\n"
+"PO-Revision-Date: 2025-05-27 00:44+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -370,19 +370,19 @@ msgstr ""
 #, kde-format
 msgctxt "Choose to share a screen"
 msgid "Share Screen"
-msgstr ""
+msgstr "Ekranı paylaş"
 
 #: src/capturesourcechooserdlg.cpp:31
 #, kde-format
 msgctxt "Choose to share a window"
 msgid "Share Window"
-msgstr ""
+msgstr "Pencereyi paylaş"
 
 #: src/capturesourcechooserdlg.cpp:35
 #, kde-format
 msgctxt "Don't share any part of the screen"
 msgid "Share nothing"
-msgstr ""
+msgstr "Hiçbir şey paylaşma"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
@@ -394,32 +394,31 @@ msgstr "Yakalama Kaynağı Seç"
 #: src/capturesourcechooserdlg.ui:20
 #, kde-format
 msgid "Which part of your screen do you want to share?"
-msgstr ""
+msgstr "Ekranınızın hangi kısmını paylaşmak istiyorsunuz?"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/capturesourcechooserdlg.ui:44
 #, kde-format
 msgid "Window"
-msgstr ""
+msgstr "Pencere"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, windowCombo)
 #: src/capturesourcechooserdlg.ui:51
-#, fuzzy, kde-format
-#| msgid "Close window?"
+#, kde-format
 msgid "Choose window"
-msgstr "Pencere kapatılsın mı?"
+msgstr "Pencere seç"
 
 #. i18n: ectx: property (text), widget (QLabel, Screen)
 #: src/capturesourcechooserdlg.ui:75
 #, kde-format
 msgid "Screen"
-msgstr ""
+msgstr "Ekran"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, screenCombo)
 #: src/capturesourcechooserdlg.ui:82
 #, kde-format
 msgid "Choose screen"
-msgstr ""
+msgstr "Ekran seç"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format

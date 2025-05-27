@@ -382,10 +382,9 @@ msgstr ""
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, windowCombo)
 #: src/capturesourcechooserdlg.ui:51
-#, fuzzy, kde-format
-#| msgid "Close window?"
+#, kde-format
 msgid "Choose window"
-msgstr "关闭窗口吗？"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, Screen)
 #: src/capturesourcechooserdlg.ui:75
@@ -1615,18 +1614,3 @@ msgstr ""
 "<ul><li><b>字段内部名称：</b>%1</li><li><b>字段类型：</b>%2</li><li><b>字段 "
 "ID：</b>%3</li><li><b>字段是否为只读：</b>%4</li><li><b>字段是否已启用：</b>"
 "%5</li><li><b>是否开启自动补全：</b>%6</li></ul>"
-
-#~ msgid "Choose window or screen to capture"
-#~ msgstr "选择要捕获的窗口或屏幕"
-
-#~ msgctxt "Allow a web page to capture the screen"
-#~ msgid "Allow"
-#~ msgstr "允许"
-
-#~ msgctxt "Block a web page from capturing the screen"
-#~ msgid "Block"
-#~ msgstr "阻止"
-
-#~ msgid ""
-#~ "Do you want to allow this page to capture the contents of your screen?"
-#~ msgstr "您想要允许此页面捕获您屏幕的内容吗？"

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-26 00:41+0000\n"
-"PO-Revision-Date: 2025-05-05 13:39+0200\n"
+"PO-Revision-Date: 2025-05-26 13:47+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -368,19 +368,19 @@ msgstr ""
 #, kde-format
 msgctxt "Choose to share a screen"
 msgid "Share Screen"
-msgstr ""
+msgstr "Compartix una pantalla"
 
 #: src/capturesourcechooserdlg.cpp:31
 #, kde-format
 msgctxt "Choose to share a window"
 msgid "Share Window"
-msgstr ""
+msgstr "Compartix una finestra"
 
 #: src/capturesourcechooserdlg.cpp:35
 #, kde-format
 msgctxt "Don't share any part of the screen"
 msgid "Share nothing"
-msgstr ""
+msgstr "No compartisques res"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
@@ -392,32 +392,31 @@ msgstr "Seleccioneu l'origen de la captura"
 #: src/capturesourcechooserdlg.ui:20
 #, kde-format
 msgid "Which part of your screen do you want to share?"
-msgstr ""
+msgstr "Quina part de la pantalla voleu compartir?"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/capturesourcechooserdlg.ui:44
 #, kde-format
 msgid "Window"
-msgstr ""
+msgstr "Finestra"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, windowCombo)
 #: src/capturesourcechooserdlg.ui:51
-#, fuzzy, kde-format
-#| msgid "Close window?"
+#, kde-format
 msgid "Choose window"
-msgstr "Tanque la finestra?"
+msgstr "Seleccioneu una finestra"
 
 #. i18n: ectx: property (text), widget (QLabel, Screen)
 #: src/capturesourcechooserdlg.ui:75
 #, kde-format
 msgid "Screen"
-msgstr ""
+msgstr "Pantalla"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, screenCombo)
 #: src/capturesourcechooserdlg.ui:82
 #, kde-format
 msgid "Choose screen"
-msgstr ""
+msgstr "Seleccioneu una pantalla"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -1663,19 +1662,3 @@ msgstr ""
 "li><li><b>ID del camp: </b>%3</li><li><b>El camp és de només lectura: </b>"
 "%4</li><li><b>El camp està habilitat: </b>%5</li><li><b>La compleció "
 "automàtica està habilitada: </b>%6</li></ul>"
-
-#~ msgid "Choose window or screen to capture"
-#~ msgstr "Seleccioneu la finestra o pantalla a capturar"
-
-#~ msgctxt "Allow a web page to capture the screen"
-#~ msgid "Allow"
-#~ msgstr "Permet"
-
-#~ msgctxt "Block a web page from capturing the screen"
-#~ msgid "Block"
-#~ msgstr "Bloqueja"
-
-#~ msgid ""
-#~ "Do you want to allow this page to capture the contents of your screen?"
-#~ msgstr ""
-#~ "Voleu permetre que esta pàgina capture el contingut de la vostra pantalla?"
