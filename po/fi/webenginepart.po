@@ -1,7 +1,7 @@
 # Finnish messages for kwebkitpart.
 # Copyright © 2011, 2012 This_file_is_part_of_KDE
 # This file is distributed under the same license as the extragear-base package.
-# SPDX-FileCopyrightText: 2010, 2011, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2010, 2011, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
 # Jorma Karvonen <karvonen.jorma@gmail.com>, 2011.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2012, 2013, 2014, 2016, 2017.
 #
@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-26 00:41+0000\n"
-"PO-Revision-Date: 2024-11-06 20:52+0200\n"
+"PO-Revision-Date: 2025-05-25 16:53+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -901,10 +901,9 @@ msgstr "muu"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgid "Customize Fields To Store"
-msgstr "&Mukauta kenttiä tämän sivun muistamiseksi…"
+msgstr "Mukauta tallennettavia kenttiä"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
@@ -914,10 +913,9 @@ msgstr "Vaihda salasanojen ja paikkamerkkien näytön välillä"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "&Show passwords"
+#, kde-format
 msgid "Show &passwords"
-msgstr "&Näytä salasanat"
+msgstr "Näytä &salasanat"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
@@ -927,10 +925,9 @@ msgstr "Näytä lisätietoa kentistä"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
-#, fuzzy, kde-format
-#| msgid "&Show details"
+#, kde-format
 msgid "Show field &details"
-msgstr "Näytä &yksityiskohdat"
+msgstr "Näytä kentän &yksityiskohdat"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
@@ -946,10 +943,9 @@ msgstr "Tallenna lomaketiedot lompakkoon, kun ikkuna suljetaan"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
-#, fuzzy, kde-format
-#| msgid "Store form data in KWallet when closing the dialog"
+#, kde-format
 msgid "&Store the contents of selected fields when closing the dialog"
-msgstr "Tallenna lomaketiedot lompakkoon, kun ikkuna suljetaan"
+msgstr "Tallenna &valittujen kenttien tiedot, kun ikkuna suljetaan"
 
 #: src/webenginepage.cpp:164
 #, kde-format
@@ -1256,44 +1252,40 @@ msgstr ""
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
-msgstr ""
+msgstr "&Täytä tunnistautumistiedot"
 
 #: src/webenginepart.cpp:1024
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
-msgstr ""
+msgstr "&Etsi sivulta tunnistautumispyyntöjä"
 
 #: src/webenginepart.cpp:1028
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
-msgstr ""
+msgstr "Ta&llenna tunnistautumistiedot nyt"
 
 #: src/webenginepart.cpp:1032
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
-msgstr "&Mukauta kenttiä tämän sivun muistamiseksi…"
+msgstr "&Mukauta sivun tunnistautumisasetuksia…"
 
 #: src/webenginepart.cpp:1036
-#, fuzzy, kde-format
-#| msgid "Remove Customized Memorization Settings for This Page"
+#, kde-format
 msgid "Reset Custom Credential Settings for Page"
-msgstr "Poista tämän sivun mukautetut muistiasetukset"
+msgstr "Palauta sivun tunnistautumisasetukset oletuksiinsa"
 
 #: src/webenginepart.cpp:1040
-#, fuzzy, kde-format
-#| msgid "&Allow Password Caching for This Site"
+#, kde-format
 msgid "&Allow Credential Caching for This Page"
-msgstr "&Käytä tässä sivustossa salasanavälimuistia"
+msgstr "&Salli sivun tunnistautumistietojen vienti välimuistiin"
 
 #: src/webenginepart.cpp:1044
-#, fuzzy, kde-format
-#| msgid "Remove All Memorized Passwords for This Site"
+#, kde-format
 msgid "Remove All Stored Passwords for This Site"
-msgstr "Poista kaikki sivustosta muistetut salasanat"
+msgstr "Poista kaikki sivustosta tallennetut salasanat"
 
 #: src/webenginepart.cpp:1048
 #, kde-format
