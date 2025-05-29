@@ -36,6 +36,7 @@
 
 #include <QtGui/private/qtx11extras_p.h>
 
+#include <KAboutData>
 #include <KCrash>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -155,6 +156,8 @@ void KonquerorApplication::slotComboCleared(const QDBusMessage &msg)
 
 void KonquerorApplication::setupAboutData()
 {
+    // TODO: m_aboutData is now a local variable (and in this function
+    // it always was), so rename it.
     KAboutData m_aboutData("konqueror", i18n("Konqueror"), KONQUEROR_VERSION);
     m_aboutData.setShortDescription(i18n("Web browser, file manager and document viewer."));
     m_aboutData.addLicense(KAboutLicense::GPL_V2);
@@ -221,7 +224,7 @@ void KonquerorApplication::setupAboutData()
 void KonquerorApplication::setupParser()
 {
     m_parser.setSingleDashWordOptionMode(QCommandLineParser::ParseAsLongOptions);
-    m_aboutData.setupCommandLine(&m_parser);
+    KAboutData::applicationData().setupCommandLine(&m_parser);
 
     m_parser.addOption(QCommandLineOption(QStringList{QStringLiteral("silent")}, i18n("Start without a default window, when called without URLs")));
     m_parser.addOption(QCommandLineOption(QStringList{QStringLiteral("preload")}, i18n("Preload for later use. This mode does not support URLs on the command line")));
@@ -303,7 +306,7 @@ int KonquerorApplication::start()
     KCrash::initialize();
 
     m_parser.process(*this);
-    m_aboutData.processCommandLine(&m_parser);
+    KAboutData::applicationData().processCommandLine(&m_parser);
 
     //This can't be done in performStart, because it must be done before creating the
     //DBus service. Otherwise, the list of session will be printed in the standard output

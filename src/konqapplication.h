@@ -12,8 +12,6 @@
 
 #include <QApplication>
 
-#include <KAboutData>
-
 #include <QCommandLineParser>
 
 #ifdef KActivities_FOUND
@@ -87,7 +85,6 @@ private:
     static KonquerorAsRootBehavior checkRootBehavior();
 
 private:
-    KAboutData m_aboutData;
     QCommandLineParser m_parser;
     bool m_sessionRecoveryAttempted = false;
     KonquerorAsRootBehavior m_runningAsRootBehavior = NotRoot;
