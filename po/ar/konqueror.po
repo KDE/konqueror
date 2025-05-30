@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 00:41+0000\n"
+"POT-Creation-Date: 2025-05-30 00:42+0000\n"
 "PO-Revision-Date: 2025-05-07 17:47+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -160,7 +160,7 @@ msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
 msgstr "هذا هو الاسم الذي اقترحه الخادوم"
 
-#: src/konqapplication.cpp:115
+#: src/konqapplication.cpp:116
 #, kde-format
 msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
@@ -169,245 +169,245 @@ msgstr ""
 "<p>أنت تشغل كنكر بصفتك الجذر. وهذا يتطلب تمكين وضع غير آمن للغاية في مكون "
 "المتصفح.</p><p>ماذا تريد أن تفعل؟</p>"
 
-#: src/konqapplication.cpp:158
+#: src/konqapplication.cpp:161
 #, kde-format
 msgid "Konqueror"
 msgstr "كنكر"
 
-#: src/konqapplication.cpp:159
+#: src/konqapplication.cpp:162
 #, kde-format
 msgid "Web browser, file manager and document viewer."
 msgstr "متصفّح وِب، ومدير ملفات وعارض مستندات."
 
-#: src/konqapplication.cpp:161
+#: src/konqapplication.cpp:164
 #, kde-format
 msgid "(C) 1999-2023, The Konqueror developers"
 msgstr "(ج) 1999-2023، مطورو كونكيورر"
 
-#: src/konqapplication.cpp:175
+#: src/konqapplication.cpp:178
 #, kde-format
 msgid "Stefano Crocco"
 msgstr "ستيفن كروكو"
 
-#: src/konqapplication.cpp:175
+#: src/konqapplication.cpp:178
 #, kde-format
 msgid "Current maintainer"
 msgstr "الصائن الحاليّ"
 
-#: src/konqapplication.cpp:176
+#: src/konqapplication.cpp:179
 #, kde-format
 msgid "David Faure"
 msgstr "ديفيد فور"
 
-#: src/konqapplication.cpp:176
+#: src/konqapplication.cpp:179
 #, kde-format
 msgid ""
 "Developer (framework, parts, JavaScript, I/O library) and former maintainer"
 msgstr ""
 "مطوِّر (إطار العمل والأجزاء وجافاسكريبت ومكتبة الدَخْل/الخَرْج) والصائن السابق"
 
-#: src/konqapplication.cpp:177
+#: src/konqapplication.cpp:180
 #, kde-format
 msgid "Simon Hausmann"
 msgstr "سيمون هاوسمان"
 
-#: src/konqapplication.cpp:177
+#: src/konqapplication.cpp:180
 #, kde-format
 msgid "Developer (framework, parts)"
 msgstr "مطوِّر (إطار العمل والأجزاء)"
 
-#: src/konqapplication.cpp:178
+#: src/konqapplication.cpp:181
 #, kde-format
 msgid "Michael Reiher"
 msgstr "Michael Reiher"
 
-#: src/konqapplication.cpp:178 src/konqapplication.cpp:206
-#: src/konqapplication.cpp:212
+#: src/konqapplication.cpp:181 src/konqapplication.cpp:209
+#: src/konqapplication.cpp:215
 #, kde-format
 msgid "Developer (framework)"
 msgstr "مطوِّر (إطار العمل)"
 
-#: src/konqapplication.cpp:179
+#: src/konqapplication.cpp:182
 #, kde-format
 msgid "Matthias Welk"
 msgstr "Matthias Welk"
 
-#: src/konqapplication.cpp:179
+#: src/konqapplication.cpp:182
 #, kde-format
 msgid "Developer"
 msgstr "مطوِّر"
 
-#: src/konqapplication.cpp:180
+#: src/konqapplication.cpp:183
 #, kde-format
 msgid "Alexander Neundorf"
 msgstr "ألكساندر نيوندورف"
 
-#: src/konqapplication.cpp:180
+#: src/konqapplication.cpp:183
 #, kde-format
 msgid "Developer (List views)"
 msgstr "مطوِّر (عروض القوائم)"
 
-#: src/konqapplication.cpp:181
+#: src/konqapplication.cpp:184
 #, kde-format
 msgid "Michael Brade"
 msgstr "Michael Brade"
 
-#: src/konqapplication.cpp:181
+#: src/konqapplication.cpp:184
 #, kde-format
 msgid "Developer (List views, I/O library)"
 msgstr "مطوِّر (عروض القوائم ومكتب الدَخْل/الخَرْج)"
 
-#: src/konqapplication.cpp:182
+#: src/konqapplication.cpp:185
 #, kde-format
 msgid "Lars Knoll"
 msgstr "Lars Knoll"
 
-#: src/konqapplication.cpp:182 src/konqapplication.cpp:183
-#: src/konqapplication.cpp:184 src/konqapplication.cpp:186
+#: src/konqapplication.cpp:185 src/konqapplication.cpp:186
 #: src/konqapplication.cpp:187 src/konqapplication.cpp:189
-#: src/konqapplication.cpp:190 src/konqapplication.cpp:191
-#: src/konqapplication.cpp:192 src/konqapplication.cpp:194
+#: src/konqapplication.cpp:190 src/konqapplication.cpp:192
+#: src/konqapplication.cpp:193 src/konqapplication.cpp:194
+#: src/konqapplication.cpp:195 src/konqapplication.cpp:197
 #, kde-format
 msgid "Developer (HTML rendering engine)"
 msgstr "مطوِّر (محرّك تصيير HTML)"
 
-#: src/konqapplication.cpp:183
+#: src/konqapplication.cpp:186
 #, kde-format
 msgid "Dirk Mueller"
 msgstr "ديرك مولر"
 
-#: src/konqapplication.cpp:184
+#: src/konqapplication.cpp:187
 #, kde-format
 msgid "Peter Kelly"
 msgstr "بيتر كيلي"
 
-#: src/konqapplication.cpp:185
+#: src/konqapplication.cpp:188
 #, kde-format
 msgid "Waldo Bastian"
 msgstr "والدو باستيان"
 
-#: src/konqapplication.cpp:185
+#: src/konqapplication.cpp:188
 #, kde-format
 msgid "Developer (HTML rendering engine, I/O library)"
 msgstr "مطوِّر (محرّك تصيير HTML ومكتبة الدَخْل/الخَرْج)"
 
-#: src/konqapplication.cpp:186
+#: src/konqapplication.cpp:189
 #, kde-format
 msgid "Germain Garand"
 msgstr "Germain Garand"
 
-#: src/konqapplication.cpp:187 src/konqapplication.cpp:215
+#: src/konqapplication.cpp:190 src/konqapplication.cpp:218
 #, kde-format
 msgid "Leo Savernik"
 msgstr "Leo Savernik"
 
-#: src/konqapplication.cpp:188
+#: src/konqapplication.cpp:191
 #, kde-format
 msgid "Stephan Kulow"
 msgstr "ستيفن كولو"
 
-#: src/konqapplication.cpp:188
+#: src/konqapplication.cpp:191
 #, kde-format
 msgid ""
 "Developer (HTML rendering engine, I/O library, regression test framework)"
 msgstr "مطوِّر (محرّك تصيير HTML، ومكتبة الدَخْل/الخَرْج وإطار عمل الاختبار العكسي)"
 
-#: src/konqapplication.cpp:189
+#: src/konqapplication.cpp:192
 #, kde-format
 msgid "Antti Koivisto"
 msgstr "Antti Koivisto"
 
-#: src/konqapplication.cpp:190
+#: src/konqapplication.cpp:193
 #, kde-format
 msgid "Zack Rusin"
 msgstr "زاك روسين"
 
-#: src/konqapplication.cpp:191
+#: src/konqapplication.cpp:194
 #, kde-format
 msgid "Tobias Anton"
 msgstr "Tobias Anton"
 
-#: src/konqapplication.cpp:192
+#: src/konqapplication.cpp:195
 #, kde-format
 msgid "Lubos Lunak"
 msgstr "Lubos Lunak"
 
-#: src/konqapplication.cpp:193
+#: src/konqapplication.cpp:196
 #, kde-format
 msgid "Maks Orlovich"
 msgstr "Maks Orlovich"
 
-#: src/konqapplication.cpp:193 src/konqapplication.cpp:195
+#: src/konqapplication.cpp:196 src/konqapplication.cpp:198
 #, kde-format
 msgid "Developer (HTML rendering engine, JavaScript)"
 msgstr "مطوِّر (محرّك تصيير HTML وجافاسكربت)"
 
-#: src/konqapplication.cpp:194
+#: src/konqapplication.cpp:197
 #, kde-format
 msgid "Allan Sandfeld Jensen"
 msgstr "Allan Sandfeld Jensen"
 
-#: src/konqapplication.cpp:195
+#: src/konqapplication.cpp:198
 #, kde-format
 msgid "Apple Safari Developers"
 msgstr "مطوّرو أبل سفاري"
 
-#: src/konqapplication.cpp:196
+#: src/konqapplication.cpp:199
 #, kde-format
 msgid "Harri Porten"
 msgstr "هاري بوتن"
 
-#: src/konqapplication.cpp:196
+#: src/konqapplication.cpp:199
 #, kde-format
 msgid "Developer (JavaScript)"
 msgstr "مطوِّر (جافاسكريبت)"
 
-#: src/konqapplication.cpp:197
+#: src/konqapplication.cpp:200
 #, kde-format
 msgid "Koos Vriezen"
 msgstr "Koos Vriezen"
 
-#: src/konqapplication.cpp:197
+#: src/konqapplication.cpp:200
 #, kde-format
 msgid "Developer (Java applets and other embedded objects)"
 msgstr "مطوِّر (بريمجات جافا والكائنات الأخرى المضمّنة)"
 
-#: src/konqapplication.cpp:198
+#: src/konqapplication.cpp:201
 #, kde-format
 msgid "Matt Koss"
 msgstr "Matt Koss"
 
-#: src/konqapplication.cpp:198 src/konqapplication.cpp:199
+#: src/konqapplication.cpp:201 src/konqapplication.cpp:202
 #, kde-format
 msgid "Developer (I/O library)"
 msgstr "مطوِّر (مكتب الدَخْل/الخَرْج)"
 
-#: src/konqapplication.cpp:199
+#: src/konqapplication.cpp:202
 #, kde-format
 msgid "Alex Zepeda"
 msgstr "أليكس زيبيدا"
 
-#: src/konqapplication.cpp:200
+#: src/konqapplication.cpp:203
 #, kde-format
 msgid "Richard Moore"
 msgstr "ريتشارد مور"
 
-#: src/konqapplication.cpp:200 src/konqapplication.cpp:201
+#: src/konqapplication.cpp:203 src/konqapplication.cpp:204
 #, kde-format
 msgid "Developer (Java applet support)"
 msgstr "مطوِّر (دعم بريمجات جافا)"
 
-#: src/konqapplication.cpp:201
+#: src/konqapplication.cpp:204
 #, kde-format
 msgid "Dima Rogozin"
 msgstr "ديما روجوزين"
 
-#: src/konqapplication.cpp:202
+#: src/konqapplication.cpp:205
 #, kde-format
 msgid "Wynn Wilkes"
 msgstr "وين ويلكس"
 
-#: src/konqapplication.cpp:202
+#: src/konqapplication.cpp:205
 #, kde-format
 msgid ""
 "Developer (Java 2 security manager support,\n"
@@ -416,107 +416,107 @@ msgstr ""
 "مطوِّر (دعم مدير أمن جافا 2،\n"
 " وتحسينات أساسية أخرى لدعم البريمجات)"
 
-#: src/konqapplication.cpp:203
+#: src/konqapplication.cpp:206
 #, kde-format
 msgid "Stefan Schimanski"
 msgstr "ستيفان شيمانسكي"
 
-#: src/konqapplication.cpp:203
+#: src/konqapplication.cpp:206
 #, kde-format
 msgid "Developer (Netscape plugin support)"
 msgstr "مطوِّر (دعم ملحقة نِت‌سكيب)"
 
-#: src/konqapplication.cpp:204
+#: src/konqapplication.cpp:207
 #, kde-format
 msgid "George Staikos"
 msgstr "جورج ستايكوس"
 
-#: src/konqapplication.cpp:204
+#: src/konqapplication.cpp:207
 #, kde-format
 msgid "Developer (SSL, Netscape plugins)"
 msgstr "مطوِّر (SSL وملحقات نت‌سكيب)"
 
-#: src/konqapplication.cpp:205
+#: src/konqapplication.cpp:208
 #, kde-format
 msgid "Dawit Alemayehu"
 msgstr "داويت أليمايهو"
 
-#: src/konqapplication.cpp:205
+#: src/konqapplication.cpp:208
 #, kde-format
 msgid "Developer (I/O library, Authentication support)"
 msgstr "مطوِّر (مكتبة الدَخْل/الخَرْج ودعم الاستيثاق)"
 
-#: src/konqapplication.cpp:206
+#: src/konqapplication.cpp:209
 #, kde-format
 msgid "Carsten Pfeiffer"
 msgstr "كارستن فايفر"
 
-#: src/konqapplication.cpp:207
+#: src/konqapplication.cpp:210
 #, kde-format
 msgid "Torsten Rahn"
 msgstr "تورستِن راهن"
 
-#: src/konqapplication.cpp:207
+#: src/konqapplication.cpp:210
 #, kde-format
 msgid "Graphics/icons"
 msgstr "الرسومات/الأيقونات"
 
-#: src/konqapplication.cpp:208
+#: src/konqapplication.cpp:211
 #, kde-format
 msgid "Torben Weis"
 msgstr "Torben Weis"
 
-#: src/konqapplication.cpp:208
+#: src/konqapplication.cpp:211
 #, kde-format
 msgid "KFM author"
 msgstr "مؤلّف KFM"
 
-#: src/konqapplication.cpp:209
+#: src/konqapplication.cpp:212
 #, kde-format
 msgid "Joseph Wenninger"
 msgstr "جوزيف وينينجر"
 
-#: src/konqapplication.cpp:209
+#: src/konqapplication.cpp:212
 #, kde-format
 msgid "Developer (navigation panel framework)"
 msgstr "مطوِّر (إطار عمل لوحة التصفّح)"
 
-#: src/konqapplication.cpp:210
+#: src/konqapplication.cpp:213
 #, kde-format
 msgid "Stephan Binner"
 msgstr "ستيفان بينر"
 
-#: src/konqapplication.cpp:210
+#: src/konqapplication.cpp:213
 #, kde-format
 msgid "Developer (misc stuff)"
 msgstr "مطوِّر (أمور متنوعة)"
 
-#: src/konqapplication.cpp:211
+#: src/konqapplication.cpp:214
 #, kde-format
 msgid "Ivor Hewitt"
 msgstr "Ivor Hewitt"
 
-#: src/konqapplication.cpp:211
+#: src/konqapplication.cpp:214
 #, kde-format
 msgid "Developer (AdBlock filter)"
 msgstr "مطوِّر (مرشّح مانع الإعلانات)"
 
-#: src/konqapplication.cpp:212
+#: src/konqapplication.cpp:215
 #, kde-format
 msgid "Eduardo Robles Elvira"
 msgstr "Eduardo Robles Elvira"
 
-#: src/konqapplication.cpp:213
+#: src/konqapplication.cpp:216
 #, kde-format
 msgid "Matthias Kalle Dalheimer"
 msgstr "Matthias Kalle Dalheimer"
 
-#: src/konqapplication.cpp:214
+#: src/konqapplication.cpp:217
 #, kde-format
 msgid "Daniel Molkentin"
 msgstr "دانييل مولكنتين"
 
-#: src/konqapplication.cpp:215
+#: src/konqapplication.cpp:218
 #, kde-format
 msgid ""
 "JavaScript access controls\n"
@@ -525,63 +525,63 @@ msgstr ""
 "متحكمات الوصول إلى جافاسكربت\n"
 "امتدادات السياسات محدودة النطاق"
 
-#: src/konqapplication.cpp:226
+#: src/konqapplication.cpp:229
 #, kde-format
 msgid "Start without a default window, when called without URLs"
 msgstr "ابدأ بلا نافذة افتراضية، عند النداء دون عناوين"
 
-#: src/konqapplication.cpp:227
+#: src/konqapplication.cpp:230
 #, kde-format
 msgid ""
 "Preload for later use. This mode does not support URLs on the command line"
 msgstr "حمّل مسبقًا للاستخدام اللاحق. لا يدعم هذا الوضع العناوين في سطر الأوامر"
 
-#: src/konqapplication.cpp:228
+#: src/konqapplication.cpp:231
 #, kde-format
 msgid "Profile to open (DEPRECATED, IGNORED)"
 msgstr "التشكيلة التي ستفتح (غير صالح للاستخدام، متجاهل)"
 
-#: src/konqapplication.cpp:228
+#: src/konqapplication.cpp:231
 #, kde-format
 msgid "profile"
 msgstr "تشكيلة"
 
-#: src/konqapplication.cpp:229
+#: src/konqapplication.cpp:232
 #, kde-format
 msgid "List available sessions and exit"
 msgstr "يعرض قائمة الجلسات المتوفّرة و يخرج"
 
-#: src/konqapplication.cpp:230
+#: src/konqapplication.cpp:233
 #, kde-format
 msgid "Session to open"
 msgstr "الجلسة لفتحها"
 
-#: src/konqapplication.cpp:230
+#: src/konqapplication.cpp:233
 #, kde-format
 msgid "session"
 msgstr "جلسة"
 
-#: src/konqapplication.cpp:231
+#: src/konqapplication.cpp:234
 #, kde-format
 msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
 msgstr "نوع Mime لاستخدامه لهذا العنوان (مثلًا text/html أو inode/directory)"
 
-#: src/konqapplication.cpp:231
+#: src/konqapplication.cpp:234
 #, kde-format
 msgid "mimetype"
 msgstr "نوع التنسيق"
 
-#: src/konqapplication.cpp:232
+#: src/konqapplication.cpp:235
 #, kde-format
 msgid "Part to use (e.g. khtml or kwebkitpart)"
 msgstr "الجزء لاستخدامه (مثلًا khtml أو kwebkitpart)"
 
-#: src/konqapplication.cpp:232
+#: src/konqapplication.cpp:235
 #, kde-format
 msgid "service"
 msgstr "خدمة"
 
-#: src/konqapplication.cpp:233
+#: src/konqapplication.cpp:236
 #, kde-format
 msgid ""
 "For URLs that point to files, opens the directory and selects the file, "
@@ -589,12 +589,12 @@ msgid ""
 msgstr ""
 "للعناوين التي تشير إلى ملفات، افتح الدليل وحدّد الملف، بدلًا من فتح الملف فعليًا"
 
-#: src/konqapplication.cpp:234
+#: src/konqapplication.cpp:237
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr "المستندات والعناوين التي يفتحها التّطبيق ستُحذف بعد استخدامها"
 
-#: src/konqapplication.cpp:236
+#: src/konqapplication.cpp:239
 #, kde-format
 msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
@@ -603,18 +603,18 @@ msgstr ""
 "أنشئ عملية كنكر جديدة، حتى لو كانت موجودة فعلًا. الغرض من ذلك هو استخدامها "
 "فقط عند تطوير كنكر نفسه"
 
-#: src/konqapplication.cpp:238
+#: src/konqapplication.cpp:241
 #, kde-format
 msgid "Location to open"
 msgstr "الموقع لفتحه"
 
-#: src/konqapplication.cpp:353
+#: src/konqapplication.cpp:356
 #, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
 msgstr "تعذر فتح الجلسة %1"
 
-#: src/konqapplication.cpp:481
+#: src/konqapplication.cpp:484
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
