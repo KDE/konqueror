@@ -80,12 +80,12 @@
 >Las caja de comprobación <guilabel
 >Habilitar Java globalmente</guilabel
 > le permite activar el soporte para &Java; para todos los sitios web de forma predeterminada. También puede seleccionar la posibilidad de activar o desactivar &Java; para máquinas específicas. Para añadir una política para una máquina específica, pulse el botón <guilabel
->Nuevo...</guilabel
+>Nuevo…</guilabel
 > que le mostrará un diálogo en el que puede introducir el nombre de la máquina y después aceptar o rechazar código &Java; de esa máquina en particular y se añadirá el dominio a la lista en la izquierda de la página.</para>
 
 <para
 >Puede seleccionar una máquina de la lista y pulsar el botón <guilabel
->Cambiar...</guilabel
+>Cambiar…</guilabel
 > para elegir una política diferente para dicha máquina. Pulsando sobre el botón <guilabel
 >Eliminar</guilabel
 > elimina la política para la máquina seleccionada; después de la eliminación, las opciones globales se aplicarán sobre dicha máquina.</para>
@@ -143,20 +143,16 @@
 >La casilla de verificación <guilabel
 >Habilitar JavaScript globalmente</guilabel
 > le permite activar el soporte para JavaScript en todos los sitios web de forma predeterminada. También puede seleccionar la posibilidad de activar o desactivar JavaScript para servidores específicos. Para añadir una política para un servidor específico, pulse el botón <guilabel
->Nuevo...</guilabel
+>Nuevo…</guilabel
 > que le mostrará un diálogo en el que puede introducir el nombre del servidor y después aceptar o rechazar el código JavaScript que provenga de ese servidor en particular, lo que añadirá el dominio a la lista de la izquierda de la página.</para>
 
 <para
 >Puede seleccionar una máquina de la lista y pulsar el botón <guilabel
->Cambiar...</guilabel
+>Cambiar…</guilabel
 > para elegir una política diferente para dicha máquina. Pulsando sobre el botón <guilabel
 >Eliminar</guilabel
 > elimina la política para la máquina seleccionada; después de la eliminación, las opciones globales se aplicarán sobre dicha máquina.</para>
-<!-- missing section Debugging
-Enable debugger Enables builtin JavaScript debugger.
-Report errors Enables the reporting of errors that occur when JavaScript code is executed.
-How are errors reported? popup window? icon in status bar?
--->
+
 <para
 >El conjunto final de opciones de la sección <guilabel
 >Políticas globales de JavaScript</guilabel
