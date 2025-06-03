@@ -101,9 +101,9 @@
 >&FDLNotice;</legalnotice>
 
 <date
->2016-11-05</date>
+>2025-02-27</date>
 <releaseinfo
->Aplicaciones 16.12</releaseinfo>
+>Gear 25.04</releaseinfo>
 
 <abstract
 ><para
@@ -190,7 +190,6 @@
 > </othercredit
 > 
 </authorgroup>
-
 </chapterinfo>
 
 <title
@@ -203,10 +202,10 @@
 >administrador de archivos</link
 > avanzado, que proporciona funciones de administración de archivos, que van desde operaciones como cortar/copiar y pegar hasta navegación local y remota avanzada. Los contenidos de las carpetas se pueden mostrar en los diferentes <link linkend="viewmode"
 >modos de vista</link
-> de iconos y texto, que incluyen la posibilidad de visualizar vistas previas del contenido de los archivos en miniaturas. Las propiedades de los archivos y carpetas se pueden examinar y modificar con facilidad e iniciar aplicaciones con una simple pulsación del &LMB;.</para>
+> de iconos y texto, que incluyen la posibilidad de visualizar vistas previas del contenido de los archivos en miniaturas. Las propiedades de los archivos y carpetas se pueden examinar y modificar con facilidad e iniciar aplicaciones con una doble pulsación del &LMB;.</para>
 
 <para
->En las Aplicaciones de &kde;, &dolphin; es el administrador de archivos predefinido. Para cambiar el componente predefinido para explorar las carpetas, abra <guimenu
+>En las aplicaciones de &kde;, &dolphin; es el administrador de archivos predefinido. Para cambiar el componente predefinido para explorar las carpetas, abra <guimenu
 >Aplicaciones predefinidas</guimenu
 > en las &systemsettings; y seleccione &konqueror; como administrador de archivos.</para>
 
@@ -217,11 +216,11 @@
 >navegador web</link
 > que cumple las especificaciones de <acronym
 >HTML</acronym
-> 4.01 con soporte incorporado para JavaScript (ECMA-262), <acronym
+> 5 con soporte incorporado para JavaScript (ECMA-262), <acronym
 >CSS</acronym
-> (hojas de estilo en cascada) y escrituras bidireccionales (árabe y hebreo). Proporciona soporte para ejecución de applets de &Java;, extensiones de &Netscape; para visualizar &Flash;, &RealAudio; y &RealVideo; y comunicaciones seguras mediante <acronym
+> (hojas de estilo en cascada) y escrituras bidireccionales (como árabe y hebreo, entre otras). Proporciona comunicaciones seguras mediante <acronym
 >SSL</acronym
->. Entre las propiedades avanzadas se incluyen, relleno automático de &URL; y formularios, y la posibilidad de importar marcadores de otros navegadores y navegación por pestañas. </para>
+>. Entre las propiedades avanzadas se incluyen, relleno automático de &URL; y formularios, así como la posibilidad de importar marcadores de otros navegadores y navegación por pestañas.</para>
 
 <para
 ><emphasis
@@ -243,11 +242,9 @@
 > es una aplicación muy personalizable que cualquiera puede <link linkend="config"
 >configurar</link
 > para que se adapte a sus necesidades. Se puede cambiar el estilo global, y el tamaño de textos e iconos, seleccionar los elementos que aparecen en la barra de menú, cambiar el número y posición de las barras de herramientas e incluso definir nuevas combinaciones de teclas para atajos de teclado. </para>
-
 </chapter>
 
 <chapter id="basics">
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -310,7 +307,6 @@
 > </othercredit
 > 
 </authorgroup>
-
 </chapterinfo>
 
 <title
@@ -318,33 +314,27 @@
 
 <important
 ><para
->Como todas las aplicaciones &kde;, &konqueror; es muy configurable. Este documento describe como se comporta &konqueror; con las preferencias predeterminadas.</para>
-<para
->Un ratón de tres botones puede resultar muy útil en el uso de &konqueror; o de cualquier otra aplicación de &kde;. Si su ratón solo dispone de dos botones debería poder configurar su sistema de modo que pueda simular un botón central pulsando los dos botones simultáneamente.</para>
-<para
->Puede leer más sobre el uso del ratón en <xref linkend="lmb-mmb"/></para>
-<para
->Si está acostumbrado a realizar una doble pulsación para realizar algo, tenga cuidado, porque al igual que con el resto de &kde; &konqueror; se maneja con una sola pulsación de manera predeterminada.</para
+>Como todas las aplicaciones &kde;, &konqueror; es muy configurable. Este documento describe como se comporta &konqueror; con las preferencias predeterminadas.</para
+><para
+>Un ratón de tres botones puede resultar muy útil en el uso de &konqueror; o de cualquier otra aplicación de &kde;. Si su ratón solo dispone de dos botones debería poder configurar su sistema de modo que pueda simular un botón central pulsando los dos botones simultáneamente.</para
+><para
+>Puede leer más sobre el uso del ratón en <xref linkend="lmb-mmb"/></para
 ></important>
 
 <sect1 id="konq-start">
 <title
 >Iniciando &konqueror;</title>
 
-<para
->Como &konqueror; es una aplicación que combina el administrador de archivos con el navegador, se puede cambiar de uno a otro modo sobre la marcha y según sea necesario. Sin embargo, es conveniente seleccionar el modo en el que se va a trabajar antes de iniciarlo.</para>
-
 <itemizedlist>
-
 <listitem
 ><para
->Desde el menú lanzador de aplicaciones, seleccione <menuchoice
+>En el menú del lanzador de aplicaciones, seleccione <menuchoice
 ><guisubmenu
 >Internet</guisubmenu
 ><guimenuitem
->Konqueror (Navegador web)</guimenuitem
+>Konqueror</guimenuitem
 ></menuchoice
-> para iniciarlo como navegador. </para
+> para iniciarlo como navegador.</para
 ></listitem>
 
 <listitem
@@ -359,7 +349,6 @@
 >https://www.kde.org</userinput
 >, para iniciar &konqueror; como navegador.</para
 ></listitem>
-
 </itemizedlist>
 
 <note
@@ -372,13 +361,9 @@
 ></note>
 
 <para
->Si &konqueror; es su administrador de archivos predeterminado también se inicia automáticamente al pulsar el botón <mousebutton
->izquierdo</mousebutton
-> del ratón sobre un icono de carpeta en el escritorio, como un disco duro o el icono de la <guiicon
+>Si &konqueror; es su administrador de archivos predeterminado también se inicia automáticamente al hacer doble clic sobre un icono de carpeta en el escritorio, como un disco duro o el icono de la <guiicon
 >Papelera</guiicon
->. </para>
-
-
+>.</para>
 </sect1>
 
 <sect1 id="parts">
@@ -393,7 +378,7 @@
 ><imagedata format="PNG" fileref="parts.png"/></imageobject>
 <textobject>
 <phrase
->Aquí hay una captura de pantalla de &konqueror;</phrase>
+>Captura de pantalla de &konqueror;</phrase>
 </textobject>
 </mediaobject>
 
@@ -505,21 +490,13 @@
 >Preferencias</guimenu
 ></link
 > para mostrar u ocultar la barra de menús, la barra de herramientas principal, la de ubicación y la de marcadores, o incluso añadir una barra adicional.</para
-></listitem>
-<listitem
+></listitem
+><listitem
 ><para
 >Si las barras de herramientas están desbloqueadas, también puede arrastrarlas a una nueva posición pulsando el botón <mousebutton
 >izquierdo</mousebutton
-> del ratón sobre el tirador situado en el extremo izquierdo de las barras y moviéndolas manteniendo pulsado el &LMB; mientras las arrastra. </para
+> del ratón sobre el tirador situado en el extremo izquierdo de las barras y moviéndolas manteniendo pulsado el &LMB; mientras las arrastra.</para
 ></listitem>
-<!--
-<listitem
-><para
->This screenshot does not show the optional <link linkend="sidebar">
-Sidebar</link
->.</para
-></listitem>
--->
 </itemizedlist>
 
 <para
@@ -634,7 +611,7 @@ Sidebar</link
 ><guimenu
 >Preferencias</guimenu
 ><guimenuitem
->Configurar Konqueror...</guimenuitem
+>Configurar Konqueror…</guimenuitem
 ></menuchoice
 ></para
 ></listitem>
@@ -652,7 +629,7 @@ Sidebar</link
 ><guimenu
 >Preferencias</guimenu
 ><guimenuitem
->Configurar Konqueror...</guimenuitem
+>Configurar Konqueror…</guimenuitem
 ></menuchoice
 > &konqueror; puede abrir enlaces en las páginas web y <menuchoice
 ><guimenu
@@ -705,7 +682,7 @@ Sidebar</link
 ><para
 >Pulsando el botón <mousebutton
 >derecho</mousebutton
-> del ratón sobre cualquier espacio vacío de la barra de título muestra el menú de la barra de título, que le permite controlar la posición de la ventana de &konqueror; así como la decoración aplicada a todas las ventanas de los programas de &kde;. </para
+> del ratón sobre cualquier espacio vacío de la barra de título muestra el menú de la barra de título, que le permite controlar la posición de la ventana de &konqueror; así como la decoración aplicada a todas las ventanas de los programas de &kde;.</para
 ></listitem>
 </varlistentry>
 
@@ -753,7 +730,7 @@ Sidebar</link
 >Actualizar</guiicon
 > y <guimenuitem
 >Recargar</guimenuitem
->. </para
+>.</para
 ></listitem>
 </varlistentry>
 
@@ -771,8 +748,8 @@ Sidebar</link
 > o <guimenuitem
 >eliminar</guimenuitem
 > el elemento de diversas formas, abrirlo con el programa que desee, obtener una vista previa, cambiarle el nombre o editar el tipo de archivo o las propiedades.</para
-></listitem
-> </varlistentry>
+></listitem>
+</varlistentry>
 
 <varlistentry>
 <term
@@ -782,8 +759,7 @@ Sidebar</link
 >Pulse con el botón <mousebutton
 >derecho</mousebutton
 > del ratón sobre la barra de estado de la parte inferior de una ventana o de una vista para añadir o eliminar una vista y fijar o enlazar vistas dentro de la ventana de &konqueror;.</para
-></listitem
-> 
+></listitem>
 </varlistentry>
 </variablelist>
 
@@ -938,8 +914,8 @@ Sidebar</link
 >~/carta.txt</filename
 > se refiere al archivo <filename
 >carta.txt</filename
-> en mi carpeta personal.</para>
-<para
+> en mi carpeta personal.</para
+><para
 >Note que el término «carpeta» se usa frecuentemente en lugar de «directorio».</para>
 </sect1>
 
@@ -957,9 +933,8 @@ Sidebar</link
 
 <note
 ><para
->En el modo de administración de archivos, &konqueror; utiliza un componente &dolphin; empotrado.</para
+>En el modo de administración de archivos, &konqueror; utiliza un componente &dolphin; empotrado. Consulte la documentación de &dolphin; para obtener información más detallada sobre este modo.</para
 ></note>
-<!--FIXME begin copy from dolphin docbook synced for 16.04-->
 <itemizedlist>
 
 <listitem
@@ -998,7 +973,7 @@ Sidebar</link
 <para
 >En el menú de contexto de la línea de cabecera, puede elegir entre un ancho de columna automático o personalizado. El ancho automático ajusta el ancho de todas las columnas a la vez, de manera que el elemento más largo de la columna se vea completamente, excepto en la columna <guilabel
 >Nombre</guilabel
->, en la que la extensión se reemplaza por «...» </para>
+>, en la que la extensión se reemplaza por «…» </para>
 <para
 >El orden de las columnas se puede cambiar arrastrando y soltando las cabeceras de las columnas, excepto la cabecera <guilabel
 >Nombre</guilabel
@@ -1037,43 +1012,6 @@ Sidebar</link
 ></caption>
 </mediaobject>
 </screenshot>
-<!--FIXME end copy from dolphin docbook synced for 16.04 -->
-
-<sect2 id="filetipinfo">
-<title
->Sugerencias informativas de archivo</title>
-<para
->Si marca la casilla <guilabel
->Mostrar consejos</guilabel
-> en la página <menuchoice
-> <guimenu
->Administración de archivos</guimenu
-><guimenuitem
->General</guimenuitem
-></menuchoice
-> del diálogo de de Configuración de &konqueror;, aparecerá una pequeña ventana emergente cuando el puntero del ratón permanezca sobre un archivo, un nombre de carpeta o un icono. </para>
-</sect2>
-
-<sect2 id="previews">
-<title
->Previsualizaciones de archivos</title>
-<para
->La pestaña <guilabel
->Vistas previas</guilabel
-> de la página de preferencias <menuchoice
-><guimenu
->Administración de archivos</guimenu
-> <guimenuitem
->General</guimenuitem
-></menuchoice
-> le permite obtener una vista previa de cierto tipo de archivos.</para>
-<para
->Generalmente esto significa que el icono del archivo será reemplazado por una pequeña imagen mostrando los contenidos del archivo.</para>
-<para
->Debido a que &konqueror; tiene que leer muchos más datos que el nombre de un archivo para generar una vista previa, las vistas previas de archivos pueden no ser apropiadas cuando se visualizan archivos desde un sistema remoto. Para desactivar las vistas previas para archivos remotos en los casos en los se tardaría demasiado en leer los datos adicionales, establezca un límite de tamaño de archivo en la parte inferior de la pestaña <guilabel
->Vistas previas</guilabel
->.</para>
-</sect2>
 
 <!--FIXME begin copy from dolphin docbook synced for 16.04-->
 <sect2 id="dolphin-view-information">
@@ -1157,7 +1095,7 @@ Sidebar</link
 
 <listitem
 ><para
->Ordenación de los elementos, la cual viene determinada por el orden (ascendente o descendente) y el atributo (como nombre, tamaño, etc.) por el que se clasifican los elementos </para
+>Ordenación de los elementos, la cual viene determinada por el orden (ascendente o descendente) y el atributo (como nombre, tamaño…) por el que se clasifican los elementos </para
 ></listitem>
 
 <listitem
@@ -1228,11 +1166,9 @@ Sidebar</link
 >Si está activada la opción <guilabel
 >Usar estas propiedades de vista de manera predeterminada</guilabel
 >, las propiedades de vista seleccionadas también se aplicarán a todas las carpetas que no tengan propiedades de vista personalizadas aún. </para>
-
 </sect2>
-
 </sect1>
-<!--FIXME end copy from dolphin docbook  synced for 16.04-->
+
 <sect1 id="navigation">
 <title
 >Navegación</title>
@@ -1383,7 +1319,7 @@ find your way around the file system.</para>
 ><guimenu
 >Herramientas</guimenu
 ><guimenuitem
->Buscar archivo...</guimenuitem
+>Buscar archivo…</guimenuitem
 ></menuchoice
 >Esto inicia la aplicación de búsqueda de archivos &kfind;. Consulte <ulink url="help:/kfind/index.html"
 >Manual de &kfind; </ulink
@@ -1414,7 +1350,7 @@ find your way around the file system.</para>
 >Dispositivos extraíbles</title>
 
 <para
->Cualquier dispositivo extraíble (memoria USB, disquetera, unidad de &CD; u otra partición de disco duro que usted tenga en su sistema aparecerá habitualmente en la carpeta <filename class="directory"
+>Cualquier dispositivo extraíble (memoria USB, unidad de &CD; u otra partición de disco duro que usted tenga en su sistema aparecerá habitualmente en la carpeta <filename class="directory"
 >/ </filename
 >, <filename class="directory"
 >/media</filename
@@ -1461,7 +1397,7 @@ find your way around the file system.</para>
 > y elija la opción <guimenuitem
 >Desmontar</guimenuitem
 >. Consulte la sección <link linkend="making"
->Crear nuevo...</link
+>Crear nuevo…</link
 > en este manual para ver cómo crear un icono de este tipo.</para
 ></listitem>
 
@@ -1506,12 +1442,9 @@ find your way around the file system.</para>
 ></keycombo
 >). </para
 ></note>
-
 </listitem>
-
 </itemizedlist>
 </sect2>
-
 </sect1>
 
 <sect1 id="deleting">
@@ -1646,32 +1579,9 @@ find your way around the file system.</para>
 >Pegará</guimenuitem
 > en la nueva carpeta.</para>
 
-<para
->También puede copiar o mover los elementos seleccionados a otra carpeta seleccionando <guimenuitem
->Copiar a</guimenuitem
-> o <guimenuitem
->Mover a</guimenuitem
-> en el menú de contexto que se obtiene al hacer clic con el botón <mousebutton
->derecho</mousebutton
-> del ratón sobre un archivo o nombre de carpeta en la ventana del administrador de archivos.</para>
-<para
->Para activar esta característica, seleccione <guilabel
->Mostrar órdenes «Copiar a» y «Mover a» </guilabel
-> en la página <menuchoice
-><guimenu
->Administración de archivos</guimenu
-> <guimenuitem
->Servicios</guimenuitem
-></menuchoice
-> de las preferencias.</para>
-<note
-><para
->No podrá copiar o mover archivos o carpetas si no dispone de los permisos necesarios.</para
-></note>
-
 <sect2 id="dnd">
 <title
->Utilizando arrastrar y soltar</title>
+>Uso de arrastrar y soltar</title>
 
 <para
 >&konqueror; también permite copiar y mover archivos y carpetas utilizando arrastrar y soltar.</para>
@@ -1683,7 +1593,7 @@ find your way around the file system.</para>
 >Mover aquí</guimenuitem
 > o <guimenuitem
 >Enlazar aquí</guimenuitem
->. Asegúrese de «soltar» el elemento en un área vacía de la vista de la carpeta de destino; si lo suelta encima de una subcarpeta, el elemento se copiará o se moverá en dicha subcarpeta.</para>
+>. Asegúrese de «soltar» el elemento en un área vacía de la vista de la carpeta de destino: si lo suelta encima de una subcarpeta, el elemento se copiará o se moverá en dicha subcarpeta.</para>
 
 <para
 >También puede configurar &konqueror; para mostrar más de una carpeta dentro de esta ventana y arrastrar y soltar entre ellas.</para>
@@ -1812,25 +1722,6 @@ find your way around the file system.</para>
 >Si se pulsa la tecla &Shift; mientras se hace clic en un elemento con el &LMB;, todos los elementos que queden entre el elemento seleccionado anterior y el elemento sobre el que se ha hecho clic quedarán seleccionados. </para
 ></listitem>
 
-<listitem
-><para
->Si la opción <guilabel
->Mostrar marcador de selección</guilabel
-> está activada en la pestaña de<guilabel
->Comportamiento</guilabel
-> de la sección <menuchoice
-><guimenu
->Administración de archivos</guimenu
-> <guimenuitem
->General</guimenuitem
-></menuchoice
-> de las preferencias, aparece un pequeño botón con el signo <guiicon
->+</guiicon
-> o <guiicon
->-</guiicon
-> en la esquina superior izquierda del elemento sobre el que está el puntero actualmente. Al pulsar dicho signo, se selecciona o se elimina la selección del elemento, respectivamente. </para
-></listitem>
-
 </itemizedlist>
 
 </sect2>
@@ -1917,7 +1808,7 @@ find your way around the file system.</para>
 ><guisubmenu
 >Selección</guisubmenu
 > <guimenuitem
->Seleccionar elementos que coincidan...</guimenuitem
+>Seleccionar elementos que coincidan…</guimenuitem
 ></menuchoice
 > o el atajo de teclado <keycombo action="simul"
 >&Ctrl;<keycap
@@ -1930,7 +1821,7 @@ find your way around the file system.</para>
 > que corresponde a un solo carácter. Pulse <guibutton
 >Aceptar</guibutton
 > y &konqueror; resaltará todos los archivos cuyos nombres que coincidan. Por ejemplo:</para>
-      
+
 <itemizedlist>
 <listitem
 ><para
@@ -1963,7 +1854,7 @@ find your way around the file system.</para>
 ><guimenu
 >Editar</guimenu
 > <guimenuitem
->Eliminar selección de elementos que coincidan...</guimenuitem
+>Eliminar selección de elementos que coincidan…</guimenuitem
 ></menuchoice
 > para especificar cuáles de los archivos seleccionados deben eliminarse de la selección.</para>
 
@@ -2001,18 +1892,16 @@ find your way around the file system.</para>
 >Crear nuevo</title>
 
 <para
->Cuando &konqueror; esté en el modo de administrador de archivos seleccionando <guisubmenu
+>Cuando &konqueror; está en modo administrador de archivos, al seleccionar <guisubmenu
 >Crear nuevo</guisubmenu
-> desde el menú <guimenu
->Editar</guimenu
-> o desde el menú desplegable que se obtiene al pulsar el &RMB; sobre un área libre en una vista de directorio le ofrece un submenú que le permite crear cualquiera de las siguientes acciones en la carpeta actual:</para>
+> desde el &RMB; y hacer clic en un área libre en la vista de carpeta, se abre un submenú que le permite crear cualquiera de los siguientes elementos en la carpeta actual:</para>
 
 <variablelist>
 
 <varlistentry>
 <term
 ><guimenuitem
->Carpeta...</guimenuitem
+>Carpeta…</guimenuitem
 ></term>
 <listitem
 ><para
@@ -2023,7 +1912,7 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Archivo de texto...</guimenuitem
+>Archivo de texto…</guimenuitem
 ></term>
 <listitem
 ><para
@@ -2034,7 +1923,7 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Archivo HTML...</guimenuitem
+>Archivo HTML…</guimenuitem
 ></term>
 <listitem
 ><para
@@ -2049,9 +1938,9 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
-><replaceable
->Tipo de documento</replaceable
-> Documento...</guimenuitem
+>Documento <replaceable
+>tipo de documento</replaceable
+>…</guimenuitem
 ></term>
 <listitem
 ><para
@@ -2062,16 +1951,16 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Enlace a la ubicación (URL)...</guimenuitem
+>Enlace a la ubicación (URL)…</guimenuitem
 ></term>
 <listitem
 ><para
 >Esto le permite crear un icono para abrir &konqueror; en una carpeta o en una página web enparticular. Con <guimenuitem
->Enlazar a aplicación...</guimenuitem
+>Enlazar a aplicación…</guimenuitem
 > puede hacer que el icono de la aplicación aparezca en su escritorio creando el enlace en su carpeta <filename
 >~/Desktop</filename
 > o mediante el submenú <guisubmenu
->Crear nuevo...</guisubmenu
+>Crear nuevo…</guisubmenu
 > pulsando con el botón derecho del ratón sobre una área libre del escritorio.</para
 ></listitem>
 </varlistentry>
@@ -2079,7 +1968,7 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Enlace básico a un archivo o a un directorio...</guimenuitem
+>Enlace a archivo o directorio…</guimenuitem
 ></term>
 <listitem
 ><para
@@ -2090,7 +1979,7 @@ find your way around the file system.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Enlace a una aplicación...</guimenuitem
+>Enlace a aplicación…</guimenuitem
 ></term>
 <listitem
 ><para
@@ -2114,7 +2003,7 @@ find your way around the file system.</para>
 >Para hacer que el icono de la aplicación aparezca en su escritorio, cree el enlace en su carpeta <filename class="directory"
 >~/Desktop</filename
 > (puede que tenga un nombre algo distinto dependiendo de cómo se instaló &kde; es su sistema) o acceda al submenú <guisubmenu
->Crear nuevo... </guisubmenu
+>Crear nuevo… </guisubmenu
 > pulsando con el botón <mousebutton
 >derecho</mousebutton
 > del ratón sobre un área libre del escritorio en lugar de dentro de una ventana de &konqueror;.</para>
@@ -2130,26 +2019,9 @@ find your way around the file system.</para>
 >~/.local/share/applications</filename
 >.</para>
 <para
->Para poner un enlace a una aplicación en el panel, primero créelo en el directorio de aplicaciones, después arrastre el icono a un área limpia del panel.</para>
-
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guisubmenu
->Enlace a un dispositivo</guisubmenu
-></term>
-<listitem
-><para
->Utilice las opciones de este submenú para crear un icono que montará un dispositivo y abrirá una instancia de &konqueror; que mostrará su contenido. Para desmontar el dispositivo cuando haya terminado de usarlo, pulse con el botón <mousebutton
->derecho</mousebutton
-> del ratón sobre el icono y seleccione <guimenuitem
->Desmontar</guimenuitem
->. No obstante, en la mayoría de los casos querrá crear el icono en su escritorio. </para
+>Para poner un enlace a una aplicación en el panel, primero créelo en el directorio de aplicaciones, después arrastre el icono a un área limpia del panel.</para
 ></listitem>
 </varlistentry>
-
 </variablelist>
 
 </sect1>
@@ -2206,7 +2078,7 @@ find your way around the file system.</para>
 <title
 >Copiar y renombrar</title>
 <para
->Si desea hacer una copia de un archivo que ya existe con un nombre diferente, quizá como copia de seguridad, en la misma carpeta que el archivo original, seleccione <guimenuitem
+>Si desea hacer una copia de un archivo que ya existe con un nombre diferente (quizá como copia de seguridad) en la misma carpeta que el archivo original, seleccione <guimenuitem
 >Copiar</guimenuitem
 >; después, cuando seleccione <guimenuitem
 >Pegar</guimenuitem
@@ -2223,14 +2095,14 @@ find your way around the file system.</para>
 <title
 >Configurar asociaciones de archivo</title>
 
-<!-- TODO: The content should probably be here too, but this'll do for -->
+<!-- TODO: The content should probably be here too, but this’ll do for -->
 <!-- now. -->
 <para
 >&kde; proporciona algunas aplicaciones con las que abrir diferentes tipos de archivo. La mayor parte de las veces, los valores predeterminados no darán problemas, pero &konqueror; proporciona un potente sistema para permitirle cambiar la aplicación utilizada para abrir cada tipo de archivo. Para obtener más detalles, seleccione el elemento de menú <menuchoice
 ><guimenu
 >Preferencias</guimenu
 ><guimenuitem
->Configurar Konqueror...</guimenuitem
+>Configurar Konqueror…</guimenuitem
 ></menuchoice
 >, seleccione <guilabel
 >Asociaciones de archivo</guilabel
@@ -2264,7 +2136,7 @@ find your way around the file system.</para>
 > <guimenu
 >Herramientas</guimenu
 ><guimenuitem
->Ejecutar orden en terminal...</guimenuitem
+>Ejecutar orden en terminal…</guimenuitem
 ></menuchoice
 > (<keycombo action="simul"
 >&Ctrl;<keycap
@@ -2277,7 +2149,7 @@ find your way around the file system.</para>
 ><guimenu
 >Herramientas</guimenu
 ><guimenuitem
->Ejecutar orden del intérprete... </guimenuitem
+>Ejecutar orden del intérprete… </guimenuitem
 ></menuchoice
 > (<keycombo action="simul"
 >&Ctrl; <keycap
@@ -2313,7 +2185,6 @@ find your way around the file system.</para>
 </chapter>
 
 <chapter id="browser">
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -2391,57 +2262,6 @@ find your way around the file system.</para>
 >Explorando www.konqueror.org</phrase>
 </textobject>
 </mediaobject>
-<!--FIXME rm this sect?-->
-<sect1 id="conn-inet">
-<title
->Conectándose a Internet</title>
-
-<para
->Una vez esté conectado a Internet puede utilizar &konqueror; para navegar por la Web tan fácilmente como lo utiliza para manejar sus archivos locales. Simplemente introduzca una &URL; en la barra de dirección, pulse <keysym
->Intro</keysym
->, y ¡ya está fuera!</para>
-
-<itemizedlist>
-<listitem
-><para
->Si usted utiliza una conexión telefónica con módem, entonces utilizará &kppp; o un programa de llamada similar para hacer la conexión.</para
-></listitem>
-
-<listitem
-><para
->Si su equipo está conectado a una red de área local (<acronym
->LAN</acronym
->) que le suministra una conexión a Internet a través de un proxy, tendrá que configurar &konqueror; para la conexión proxy. Esto se puede hacer con la página <menuchoice
-><guimenu
->Navegación web</guimenu
-> <guimenuitem
->Proxy</guimenuitem
-></menuchoice
->del diálogo <menuchoice
-><guimenu
->Preferencias</guimenu
-><guimenuitem
->Configurar Konqueror...</guimenuitem
-> </menuchoice
->.</para
-></listitem>
-
-<listitem
-><para
->Si es usted afortunado y tiene una conexión por cable de alta velocidad, entonces el proveedor de servicios le proporcionará un cable módem externo que necesita una conexión ethernet a su máquina. Desafortunadamente los detalles de cómo establecer la conexión dependen del proveedor de servicios y también en cierta medida de la distribución Linux/&UNIX; que esté usando. Algunos <abbrev
->ISP</abbrev
->s conectan a sus clientes a Internet a través de un servidor proxy, en cuyo caso tendrá que configurar &konqueror; para usarlo. Puede que le resulte útil buscar los archivos de las listas de discusión de usuarios de su distribución para encontrar ayuda.</para>
-</listitem>
-</itemizedlist>
-
-<note
-><para
->Un error del tipo <errorname
->Máquina desconocida</errorname
-> normalmente significa que &konqueror; no puede encontrar una conexión a Internet o que usted ha introducido una &URL; incorrecta.</para
-></note>
-
-</sect1>
 
 <sect1 id="surf">
 <title
@@ -2465,9 +2285,7 @@ find your way around the file system.</para>
 >Ir</guibutton
 > en el lado derecho de la barra de dirección y &konqueror; descargará y mostrará esa página. Si usted ha visitado esa página antes, la característica de <link linkend="path-complete"
 >Relleno automático de texto</link
-> de &konqueror; le puede ayudar a introducir la &URL; por segunda vez. Si desea usar uno de los motores de búsqueda, los <link linkend="enhanced-browsing"
-> atajos web</link
-> de &konqueror; pueden facilitarle el trabajo.</para>
+> de &konqueror; le puede ayudar a introducir la &URL; por segunda vez. Si desea usar uno de los motores de búsqueda, los atajos web de &konqueror; pueden facilitarle el trabajo.</para>
 
 <para
 >Para abrir un enlace, pulse con el <mousebutton
@@ -2547,20 +2365,7 @@ find your way around the file system.</para>
 > y <keysym
 >AvPág</keysym
 >.</para>
-<para
->Si quiere leer una página web extensa, use la función de desplazamiento automático de &konqueror;. Puede activarlo mediante <keycombo action="simul"
->&Shift;<keysym
->Flecha abajo</keysym
-></keycombo
-> o <keycombo action="simul"
->&Shift;<keysym
->Flecha arriba</keysym
-></keycombo
->. Tras ello, use dichas teclas para aumentar o disminuir la velocidad de desplazamiento. Puede iniciar o detener el desplazamiento automático temporalmente pulsando la tecla &Shift;; si pulsa otra tecla, se desactivará esta función. </para>
-<para
->El desplazamiento automático solo funciona en el modo de vista <guimenuitem
->KHTML</guimenuitem
->. </para>
+
 <para
 >Si desea detener la descarga por alguna razón, utilice la tecla &Esc;, el botón <guibutton
 >Parar</guibutton
@@ -2633,7 +2438,7 @@ find your way around the file system.</para>
 ><guimenu
 >Preferencias</guimenu
 ><guimenuitem
->Configurar Konqueror... </guimenuitem
+>Configurar Konqueror… </guimenuitem
 ></menuchoice
 >, al pulsar con el &MMB; del ratón sobre un enlace, la página se abrirá en una nueva pestaña y si mantiene pulsada la tecla &Shift; mientras pulsa el &MMB; del ratón, el enlace se abrirá en una pestaña en el fondo.</para>
 
@@ -2758,11 +2563,11 @@ find your way around the file system.</para>
 
 <sect1 id="enhanced-browsing">
 <title
->Atajos web</title
+>Palabras clave de búsqueda web</title
 > 
 
 <para
->Si están activadas, la propiedad de atajos web de &konqueror; le permite enviar directamente peticiones a un buscador o sitio web similar sin tener que visitar el sitio primero.</para
+>Si está activada, la función de palabras clave de búsqueda web de &konqueror; le permite enviar directamente peticiones a un buscador o sitio web similar sin tener que visitar el sitio primero.</para
 > <para
 >Por ejemplo, si introduce <userinput
 >gg:konqueror</userinput
@@ -2772,11 +2577,15 @@ find your way around the file system.</para>
 >Google</trademark
 > que busque todo lo relacionado con &konqueror;.</para>
 <para
->Para ver los atajos web disponibles, y para poder añadir otros, abra el módulo <ulink url="help:/kcontrol/webshortcuts/"
->Atajos web</ulink
-> la categoría <guilabel
->Espacio de trabajo</guilabel
-> de las &systemsettings;.</para>
+>Para ver las palabras clave de búsqueda web disponibles, y quizá para añadir algunas propias, abra la página <guilabel
+>Palabras clave de búsqueda web</guilabel
+> en la página <menuchoice
+><guimenu
+>Preferencias</guimenu
+><guimenuitem
+>Configurar Konqueror…</guimenuitem
+></menuchoice
+>.</para>
 
 </sect1>
 
@@ -2865,13 +2674,13 @@ strings.</para
 ><guimenu
 >Archivo</guimenu
 ><guimenuitem
->Guardar como...</guimenuitem
+>Guardar como…</guimenuitem
 ></menuchoice
 > Si la página que está viendo utiliza marcos, entonces se le ofrecerá la opción <menuchoice
 ><guimenu
 >Archivo</guimenu
 ><guimenuitem
->Guardar marco como...</guimenuitem
+>Guardar marco como…</guimenuitem
 ></menuchoice
 >. Pulse con el botón <mousebutton
 >izquierdo</mousebutton
@@ -2882,7 +2691,7 @@ strings.</para
 ><guimenu
 >Archivo</guimenu
 ><guimenuitem
->Guardar imagen de fondo como...</guimenuitem
+>Guardar imagen de fondo como…</guimenuitem
 ></menuchoice
 >.</para>
 
@@ -2890,14 +2699,14 @@ strings.</para
 >Pero si lo que desea es esa fabulosa foto del último Ferrari, entonces pulse con el botón <mousebutton
 >derecho</mousebutton
 > del ratón sobre la imagen y aparecerá un menú desplegable con la opción <guimenuitem
->Guardar imagen como...</guimenuitem
+>Guardar imagen como…</guimenuitem
 > Asegúrese de respetar los derechos de autor de los propietarios, y solicite permiso antes de utilizar las imágenes guardadas de este modo para propósitos diferentes que su propio placer.</para>
 
 <para
 >Si pulsa con el <mousebutton
 >botón derecho</mousebutton
 > sobre un enlace (que puede ser una imagen) y elige <guimenuitem
->Guardar enlace como...</guimenuitem
+>Guardar enlace como…</guimenuitem
 > desde el menú emergente, el &HTML; básico o el texto original se descargará y guardará en el disco local.</para>
 
 <para
@@ -2919,7 +2728,7 @@ strings.</para
 ><guimenu
 >Archivo</guimenu
 > <guimenuitem
->Imprimir...</guimenuitem
+>Imprimir…</guimenuitem
 ></menuchoice
 > o <guimenuitem
 >Imprimir marco</guimenuitem
@@ -3032,7 +2841,6 @@ OverridenPorts=ListaDePuertosSeparadosPorComas
 </chapter>
 
 <chapter id="path-complete">
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -3154,7 +2962,7 @@ OverridenPorts=ListaDePuertosSeparadosPorComas
 >Intro</keysym
 > para aceptarlo.</para
 ></listitem>
- </varlistentry>
+</varlistentry>
 
 <varlistentry>
 <term
@@ -3343,7 +3151,7 @@ Text Completion function can be viewed and edited in the <guilabel
 ><guimenu
 >Marcadores </guimenu
 ><guimenuitem
->Nueva carpeta de marcadores...</guimenuitem
+>Nueva carpeta de marcadores…</guimenuitem
 ></menuchoice
 >. Para añadir un marcador en una subcarpeta en lugar de en la lista principal de marcadores, seleccione la carpeta desde el menú de <guimenu
 >Marcadores</guimenu
@@ -3395,7 +3203,7 @@ disable sidebar subdir, the concept will have to be rethought
 
 <para
 >The Sidebar appears as a separate view at the left of 
-&konqueror;'s window. It can be invoked with <menuchoice
+&konqueror;’s window. It can be invoked with <menuchoice
 ><guimenu
 >Settings
 </guimenu
@@ -3421,7 +3229,7 @@ toggled on and off with the <keycap
 >It contains a number of tabbed pages; <mousebutton
 >left</mousebutton
 > 
-click on a tab's icon to view that page. <mousebutton
+click on a tab’s icon to view that page. <mousebutton
 >Left</mousebutton
 > 
 clicking on the icon for the visible page will collapse the Sidebar 
@@ -3478,7 +3286,7 @@ on any entry in the History page also gives you the option of choosing
 whether the entire history is sorted by name or by date.</para>
 <para
 >Selecting <guimenuitem
->Preferences...</guimenuitem
+>Preferences…</guimenuitem
 > from this pop up 
 menu brings up the <guilabel
 >History Sidebar</guilabel
@@ -3545,11 +3353,11 @@ new ones just as you would make any other subfolder. The items within
 these folders are held as <literal role="extension"
 >.desktop</literal
 > files 
-and can be created with &konqueror;'s <menuchoice
+and can be created with &konqueror;’s <menuchoice
 ><guisubmenu
 >Create New</guisubmenu>
 <guimenuitem
->Link to Location (URL)...</guimenuitem
+>Link to Location (URL)…</guimenuitem
 ></menuchoice
 > option in the 
 <guimenu
@@ -3570,7 +3378,7 @@ and can be created with &konqueror;'s <menuchoice
 > tree has the path <filename
 class="directory"
 >/</filename
->, and is the base folder of your system's
+>, and is the base folder of your system’s
 local files. If you expand the <quote
 >Root</quote
 > folder you will find 
@@ -3633,7 +3441,7 @@ The easiest way to add a folder to the <guilabel
 drag it and drop it in the panel. Moreover, you can click inside the panel with
 the &RMB; and choose <menuchoice
 ><guimenuitem
->Add Entry...</guimenuitem
+>Add Entry…</guimenuitem
 ></menuchoice>
 from the context menu.
 </para>
@@ -3793,8 +3601,8 @@ as described above.</para>
 
 </chapter>
 -->
-<chapter id="save-settings">
 
+<chapter id="save-settings">
 <chapterinfo>
 <authorgroup>
 <author
@@ -3869,7 +3677,7 @@ as described above.</para>
 ><guimenu
 >Ver</guimenu
 ><guimenuitem
->Ajustar propiedades de vista...</guimenuitem
+>Ajustar propiedades de vista…</guimenuitem
 ></menuchoice
 > y en el diálogo, cambie las preferencias de <guimenu
 >Ver</guimenu
@@ -3900,7 +3708,6 @@ as described above.</para>
 </chapter>
 
 <chapter id="plugins">
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -3970,38 +3777,6 @@ as described above.</para>
 <title
 >Complementos</title>
 
-<!-- 
-adblock from baseapps+extragear
-Show all blockable html elements
-
-akregator
-This works on KHTMLPart and allows you to add feeds to Akregator directly from Konqueror.
-
-konq plugins in other modules
-kdeutils 
-  filelight
-  ark?
-
-kdebase apps
-  kttsdplugin (browser mode ?)
-  shellcmdplugin (file manager mode)
-  
-kdenetwork
-  Download Manager kget (browser mode)
-
-kdepim
-  Konqueror Feed Icon akregator
-  
-extragear/network
-  Konqueror Choqok Plugin
-
-extragear/base
-  Nepomuk-Webminer Plugin
-
-playground/utils  
-  Userscript (Grease Monkey) Support khtml_userscript
--->
-
 <sect1 id="konq-plugin">
 <title
 >Complementos de &konqueror;</title>
@@ -4014,32 +3789,25 @@ playground/utils
 ><guimenu
 >Preferencias</guimenu
 ><guisubmenu
->Configurar complementos...</guisubmenu
+>Configurar complementos…</guisubmenu
 ></menuchoice
 > para abrir un cuadro de diálogo con todos los complementos instalados y elija aquellos que necesite. Puede acceder a todos ellos desde el menú <guimenu
 >Herramientas</guimenu
 >.</para>
 
 <para
->Solo se muestran en el diálogo los complementos adecuados para el modo actual (administrador de archivos o navegador en la vista KHTML/WebEngine).</para>
+>Solo se muestran en el diálogo los complementos adecuados para el modo actual (administrador de archivos o navegador).</para>
 
 <variablelist>
 <title
 >Modo de navegador</title>
-<!-- 
-FIXME 16.12
-KHTML:  Auto Refresh, HTML Settings, Translate (disabled), Document Relations, Search Bar
-kwebkitpart for kf5 in extragear/base in branch frameworks
-WebKit only HTML Settings and Translate (disabled)
-WebEngine -> no extensions
--->
-<varlistentry
-> <!-- disabled here, why?-->
+
+<varlistentry>
 <term
 >Traducción de páginas web</term>
 <listitem
 ><para
->Utiliza el servicio de traducción automática proporcionado por <ulink url="http://translate.google.com/"
+>Utiliza el servicio de traducción automática proporcionado por <ulink url="https://translate.google.com/"
 >Google Translate</ulink
 > para traducir la página <acronym
 >HTML</acronym
@@ -4058,8 +3826,7 @@ WebEngine -> no extensions
 >La traducción automática no es una ciencia exacta. Google proporciona en el mejor de los casos una traducción tosca y en el peor, un texto muy extraño. No base decisiones importantes sobre cosas que haya leído en una página traducida por Google sin confirmar que la traducción es correcta.</para>
 </important>
 
-<note
-> 
+<note>
 <para
 >Únicamente puede traducir páginas web que están disponibles en Internet. Para traducir cualquier otro texto, deberá ir directamente a la página web de Google, donde podrá pegar el texto a traducir.</para>
 </note>
@@ -4068,7 +3835,7 @@ WebEngine -> no extensions
 
 <varlistentry>
 <term
->Opciones de HTML (vista KHTML)</term>
+>Preferencias de HTML</term>
 <listitem
 ><para
 >Seleccione <menuchoice
@@ -4079,8 +3846,10 @@ WebEngine -> no extensions
 ></menuchoice
 > para activar o desactivar una serie de opciones HTML sin pasar por el diálogo <guimenu
 >Opciones</guimenu
->. </para>
-<variablelist>
+>.</para
+></listitem>
+</varlistentry>
+
 <varlistentry>
 <term
 ><guimenuitem
@@ -4184,108 +3953,6 @@ WebEngine -> no extensions
 </varlistentry>
 </variablelist>
 
-</listitem>
-</varlistentry>
-<!--FIXME not in kf5
-<varlistentry>
-<term
->User Agent Changer</term>
-<listitem
-><para
->Select <menuchoice
-><guimenu
->Tools</guimenu
-><guisubmenu
->Change
-Browser Identification</guisubmenu
-></menuchoice
-> to get a menu that allows
-you to change the User Agent string without going through the 
-<guimenu
->Settings</guimenu
-> dialog procedure.
-</para>
-<para
->The plugin allows you to
-change the Browser and Operating System identification on a
-domain-by-domain basis. This is useful when browsing websites that
-limit access to those using a particular web browser.</para>
-<variablelist>
-<varlistentry>
-<term
-><guimenuitem
->Default Identification</guimenuitem
-></term>
-<listitem
-><para
->The default User Agent header for &konqueror; is Mozilla/5.0(compatible;Konqueror/4.7)(KHTML/4.7, like Gecko).  If you come across a site that refuses this browser access, change your User Agent to one of the options below.</para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
->Browser submenu</term>
-<listitem
-><para>
-The following menu items show a list of popular browsers such as <guimenuitem
->Firefox</guimenuitem
->,
-<guimenuitem
->Internet Explorer</guimenuitem
->, <guimenuitem
->Netscape Navigator</guimenuitem
->,
-<guimenuitem
->Opera</guimenuitem
->, <guimenuitem
->Other</guimenuitem
->, and <guimenuitem
->Safari</guimenuitem
->.
-</para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guimenuitem
->Apply To Entire Site</guimenuitem
-></term>
-<listitem
-><para
->This option allows you to specify that the defined User Agent applies across every page on the site you are visiting.</para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guimenuitem
->Configure</guimenuitem
-></term>
-<listitem
-><para
->Selecting <guimenuitem
->Configure</guimenuitem
-> opens the settings dialog and allows you to fine tune the amount of information you wish to reveal about the browser and operating system being used.</para
-></listitem>
-</varlistentry>
-</variablelist>
-
-</listitem>
-</varlistentry>
--->
-
-<varlistentry>
-<term
->Refrescar automáticamente (solo en la vista KHTML)</term>
-<listitem
-><para
->Esto funciona en cualquier parte que sea de solo lectura (aunque en la actualidad solo se conecta a khtmlpart). Le permite indicarle a &konqueror; que actualice una página automáticamente tras un determinado período. Resulta útil en páginas de noticias y debería ser interesante para quienes usen el modo Kiosko. </para
-></listitem>
-</varlistentry>
-
-</variablelist>
-
 <variablelist>
 <title
 >Modo de administrador de archivos</title>
@@ -4341,7 +4008,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 <term
 >El diálogo de aspecto se utiliza para ajustar la apariencia de la página de la galería.</term>
 <listitem>
-  
+
 <screenshot>
 <screeninfo
 >Captura de pantalla del diálogo del aspecto de la página</screeninfo>
@@ -4466,7 +4133,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 <term
 >El diálogo Carpetas se utiliza para elegir el lugar en que se guardará la galería. También se utiliza para configurar qué carpetas se van a usar.</term>
 <listitem>
-  
+
 <screenshot>
 <screeninfo
 >Captura de pantalla del diálogo carpetas</screeninfo>
@@ -4527,7 +4194,7 @@ The following menu items show a list of popular browsers such as <guimenuitem
 <para
 >El formato de este archivo es:</para>
 <programlisting
-># Esto es un comentario, las líneas que empiezan por '#' se ignoran
+># Esto es un comentario, las líneas que empiezan por «#» se ignoran
 NOMBREARCHIVO1:
 Descripción
 
@@ -4551,7 +4218,7 @@ Descripción
 <term
 >El diálogo miniaturas se utiliza para ajustar las propiedades de las miniaturas de la galería.</term>
 <listitem>
-  
+
 <screenshot>
 <screeninfo
 >Captura de pantalla del diálogo de miniaturas</screeninfo>
@@ -4621,8 +4288,8 @@ Descripción
 >Barra de búsqueda</term>
 <listitem
 ><para
->Proporciona un cuadro de texto para acceder fácilmente a motores de búsqueda como Google. Al hacer clic sobre el icono del lado izquierdo del cuadro de búsqueda, se abre un menú para seleccionar y activar los diferentes motores y configurar sus <ulink url="help:/kcontrol/webshortcuts/index.html"
->Atajos web</ulink
+>Proporciona un cuadro de texto para acceder fácilmente a motores de búsqueda como Google. Al hacer clic sobre el icono del lado izquierdo del cuadro de búsqueda, se abre un menú para seleccionar y activar los diferentes motores de búsqueda y configurar sus <guilabel
+>palabras clave de búsqueda web</guilabel
 >. </para>
 </listitem>
 </varlistentry>
@@ -4643,9 +4310,7 @@ imagerotation context menu Actions -> Convert to -> JPEG,PNG,GIF,TIFF
 Additional Download Manager from KGet
 -->
 </variablelist>
-
 </sect1>
-
 </chapter>
 
 <chapter id="view-extensions">
@@ -4653,13 +4318,6 @@ Additional Download Manager from KGet
 <title
 >Extensiones del modo de vista</title>
 
-<!--filemanager mode:
-default Icons/Details/Compact (Dolphin), File Size View (konq-plugins)
-additional Terminal Emulator (Konsole), (File Replace View (kdewebdev), )Cervisia (kdesdk), SVN Client, Radial Map (Filelight-kdeutils) and more
-browser mode:
-default KHTML, Embedded Advanced Text Editor
-additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
-  -->
 <para
 >&konqueror; ofrece más vistas en <menuchoice
 ><guimenu
@@ -4698,7 +4356,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 </sect1info>
 
 <title
->&fsview; - la vista del sistema de archivos</title>
+>&fsview;: la vista del sistema de archivos</title>
 <sect2>
 <title
 >Introducción</title>
@@ -4819,12 +4477,10 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 <para
 >Derechos de autor. Josef Weidendorfer. Bajo licencia GPL V2.</para>
 </sect2>
-
 </sect1>
 </chapter>
 
 <chapter id="config">
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -4915,7 +4571,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Preferencias</guimenu
 ><guimenuitem
-> Configurar Konqueror...</guimenuitem
+> Configurar Konqueror…</guimenuitem
 ></menuchoice
 > se abrirá un cuadro de diálogo que puede utilizar para controlar la mayoría del comportamiento de &konqueror;.</para
 > 
@@ -4933,20 +4589,14 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 <listitem
 ><para
 ><ulink url="help:/kcontrol/performance/index.html"
->Rendimiento</ulink
->: configurar las preferencias que pueden mejorar el rendimiento de &konqueror;</para
+>Rendimiento de KDE</ulink
+>: configurar las preferencias que pueden mejorar el rendimiento de  &konqueror;</para
 ></listitem>
 <listitem
 ><para
 ><ulink url="help:/kcontrol/bookmarks/index.html"
 >Marcadores</ulink
 >: Configurar la página de inicio de los marcadores</para
-></listitem>
-<listitem
-><para
-><ulink url="help:/kcontrol/filemanager/index.html"
->Administración de archivos</ulink
->: Aquí puede configurar como se comportará Konqueror como administrador de archivos</para
 ></listitem>
 <listitem
 ><para
@@ -5035,8 +4685,8 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 <listitem
 ><para
 ><ulink url="help:/kcontrol/khtml-java-js/index.html"
->Java y JavaScript</ulink
->: Configurar el comportamiento de Java y JavaScript</para
+>JavaScript</ulink
+>: Configurar el comportamiento de JavaScript</para
 ></listitem>
 </itemizedlist>
 <para
@@ -5046,11 +4696,9 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 >¿Qué es esto?</link
 >.</para>
 </sect1>
-
 </chapter>
 
 <chapter id="commands">
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -5255,7 +4903,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Archivo</guimenu
 > <guimenuitem
->Abrir dirección...</guimenuitem
+>Abrir dirección…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -5276,7 +4924,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Archivo</guimenu
 > <guimenuitem
->Abrir archivo...</guimenuitem
+>Abrir archivo…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -5306,7 +4954,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Archivo</guimenu
 > <guimenuitem
->Enviar dirección de enlace...</guimenuitem
+>Enviar dirección de enlace…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -5321,7 +4969,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Archivo</guimenu
 > <guimenuitem
->Enviar archivo...</guimenuitem
+>Enviar archivo…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -5330,37 +4978,19 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ></listitem>
 </varlistentry>
 
-
-<varlistentry>
-<term
-><menuchoice
-><guimenu
->Archivo</guimenu
-> <guimenuitem
->Guardar imagen de fondo como...</guimenuitem
-></menuchoice
-> (modo navegador, vista KHTML)</term>
-<listitem>
-<para
->Solo aplicable si está viendo una página web con una imagen de fondo. Abre el cuadro de diálogo <guilabel
->Guardar como</guilabel
-> para permitirle guardar la imagen de fondo en su propio equipo.</para>
-</listitem>
-</varlistentry>
-
 <varlistentry>
 <term
 ><menuchoice
 > <guimenu
 >Archivo</guimenu
 > <guimenuitem
->Guardar como...</guimenuitem
+>Guardar como…</guimenuitem
 ></menuchoice
 > (modo de navegador)</term>
 <listitem
 ><para
 >Solo aplicable si está viendo un documento o página web, utiliza el cuadro de diálogo <guilabel
->Guardar como...</guilabel
+>Guardar como…</guilabel
 > para permitirle guardar una copia en su propia computadora.</para
 ></listitem>
 </varlistentry>
@@ -5371,13 +5001,13 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Archivo</guimenu
 > <guimenuitem
->Guardar marco como...</guimenuitem
+>Guardar marco como…</guimenuitem
 ></menuchoice
 > (modo navegador)</term>
 <listitem
 ><para
 >Similar a <guimenuitem
->Guardar como...</guimenuitem
+>Guardar como…</guimenuitem
 > pero para utilizarlo con un sitio web que utiliza marcos.</para
 ></listitem>
 </varlistentry>
@@ -5394,7 +5024,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 ><guimenu
 >Archivo</guimenu
 > <guimenuitem
->Imprimir...</guimenuitem
+>Imprimir…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -5569,7 +5199,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Editar</guimenu
 > <guimenuitem
->Pegar el contenido del portapapeles...</guimenuitem
+>Pegar el contenido del portapapeles…</guimenuitem
 ></menuchoice
 > o <menuchoice
 ><guimenu
@@ -5633,7 +5263,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 <listitem
 ><para
 >Crea un nuevo objeto (como una carpeta o un archivo) en la carpeta actual.  Consulte la sección <link linkend="making"
->Crear nuevo...</link
+>Crear nuevo…</link
 > para obtener más información.</para
 ></listitem>
 </varlistentry>
@@ -5654,7 +5284,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 <listitem
 ><para
 >Le permite renombrar un archivo o carpeta sin tener que abrir el cuadro de diálogo <guimenuitem
->Propiedades...</guimenuitem
+>Propiedades…</guimenuitem
 >. </para
 ></listitem>
 </varlistentry>
@@ -5705,7 +5335,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Editar</guimenu
 > <guimenuitem
->Editar tipo de archivo...</guimenuitem
+>Editar tipo de archivo…</guimenuitem
 ></menuchoice
 > (modo administrador de archivos)</term>
 <listitem
@@ -5728,7 +5358,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Editar</guimenu
 > <guimenuitem
->Propiedades...</guimenuitem
+>Propiedades…</guimenuitem
 ></menuchoice
 > (modo administrador de archivos)</term>
 <listitem
@@ -5751,13 +5381,13 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guisubmenu
 >Selección</guisubmenu
 > <guimenuitem
->Seleccionar elementos que coincidan...</guimenuitem
+>Seleccionar elementos que coincidan…</guimenuitem
 ></menuchoice
 > (modo administrador de archivos)</term>
 <listitem
 ><para
 >Junto con las órdenes de <guimenuitem
->Eliminar la selección de los elementos coincidentes...</guimenuitem
+>Eliminar la selección de los elementos coincidentes…</guimenuitem
 >, <guimenuitem
 >Eliminar toda la selección</guimenuitem
 > e <guimenuitem
@@ -5782,13 +5412,13 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guisubmenu
 >Selección</guisubmenu
 > <guimenuitem
->Eliminar la selección de los elementos coincidentes...</guimenuitem
+>Eliminar la selección de los elementos coincidentes…</guimenuitem
 ></menuchoice
 > (modo administrador de archivos)</term>
 <listitem
 ><para
 >Deselecciona los archivos o las carpetas a través de un diálogo similar al utilizado con <guimenuitem
->Seleccionar...</guimenuitem
+>Seleccionar…</guimenuitem
 >.</para
 ></listitem>
 </varlistentry>
@@ -5872,7 +5502,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenu
 >Editar</guimenu
 > <guimenuitem
->Buscar...</guimenuitem
+>Buscar…</guimenuitem
 ></menuchoice
 > (modo navegador)</term>
 <listitem
@@ -5880,51 +5510,6 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 >Muestra a barra de búsqueda en la parte inferior de la ventana actual. Empiece a escribir para encontrar una cadena de texto en una página de texto o en una página &HTML;.</para
 ></listitem>
 </varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <shortcut
-><keycap
->F3</keycap
-></shortcut
-> <guimenu
->Editar</guimenu
-> <guimenuitem
->Buscar siguiente</guimenuitem
-></menuchoice
-> (modo navegador, vista KHTML)</term>
-<listitem
-><para
->Busca la siguiente aparición de la cadena de texto en el texto o en la página <acronym
->HTML</acronym
->.</para
-></listitem
-> 
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <shortcut
-><keycombo action="simul"
->&Shift;<keycap
->F3</keycap
-></keycombo
-></shortcut
-> <guimenu
->Editar</guimenu
-> <guimenuitem
->Buscar anterior</guimenuitem
-></menuchoice
-> (modo navegador, vista KHTML)</term>
-<listitem
-><para
->Busca la aparición anterior de la cadena de texto en el texto o en la página &HTML;.</para
-></listitem
-> 
-</varlistentry>
-
 </variablelist>
 
 </sect2>
@@ -5947,8 +5532,6 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 <listitem
 ><para
 >En modo navegador, este submenú contiene opciones que permiten seleccionar vistas incrustadas como <guimenuitem
->KHTML</guimenuitem
->, <guimenuitem
 >Motor web</guimenuitem
 > y <guimenuitem
 >Editor de texto avanzado integrado</guimenuitem
@@ -6042,40 +5625,6 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <shortcut
 ><keycombo action="simul"
 >&Ctrl;<keycap
->+</keycap
-></keycombo
-></shortcut
-> <guimenu
->Ver</guimenu
-> <guimenuitem
->Aumentar tamaño de letra</guimenuitem
-></menuchoice
-> / <menuchoice
-> <shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
->-</keycap
-></keycombo
-></shortcut
-> <guimenu
->Ver</guimenu
-> <guimenuitem
->Reducir tamaño de letra</guimenuitem
-></menuchoice
-> (modo navegador, vista KHTML)</term>
-<listitem
-><para
->Utilice esta opción para ajustar el tamaño de la letra en la página si le resulta difícil leer el texto. Funcionará mejor o peor según como se haya construido la página web.</para
-></listitem
-> 
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
 >U</keycap
 > </keycombo
 > </shortcut
@@ -6084,7 +5633,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenuitem
 >Ver origen del documento</guimenuitem
 ></menuchoice
-> (modo navegador: vista KHTML)</term>
+> (modo navegador)</term>
 <listitem
 ><para
 >Permite ver el texto fuente del documento.</para>
@@ -6128,33 +5677,10 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > <guimenuitem
 >Ampliar a PPP</guimenuitem
 ></menuchoice
-> (Modo navegador - Vista del motor web)</term>
+> (modo navegador)</term>
 <listitem
 ><para
 >Estas opciones del menú ofrecen distintas acciones para modificar el tamaño de los elementos de la página.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
->I</keycap
-> </keycombo
-> </shortcut
-> <guimenu
->Ver</guimenu
-> <guimenuitem
->Ver información del documento</guimenuitem
-></menuchoice
-> (modo navegador: vista KHTML)</term>
-<listitem
-><para
->Muestra información sobre el documento, tal como el título, &URL; y cabeceras &HTTP; utilizadas en la descarga del documento.</para>
-<para
->Solo disponible si está visualizando una página &HTML;.</para>
 </listitem>
 </varlistentry>
 
@@ -6174,24 +5700,7 @@ additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
 > es la mejor opción.</para
 ></listitem>
 </varlistentry>
-<!-- what is this?
-<varlistentry>
-<term
-><menuchoice>
-<guimenu
->View</guimenu>
-<guimenuitem
->Use Stylesheet</guimenuitem
-></menuchoice
-> (Browser mode)</term>
-<listitem
-><para
->???Automatic Detection Basic Page Style KDE Stylesheet</para
-></listitem>
-</varlistentry>
-http://websvn.kde.org/?view=revision&revision=269436
--->
-<!--FIXME synced with Dolphin 16.04-->
+
 <varlistentry>
 <term
 ><menuchoice
@@ -6303,7 +5812,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenu
 >Ver</guimenu
 > <guimenuitem
->Ajustar propiedades de vista...</guimenuitem
+>Ajustar propiedades de vista…</guimenuitem
 ></menuchoice
 > (modo administrador de archivos)</term>
 <listitem
@@ -6472,27 +5981,6 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenu
 >Ir</guimenu
 > <guimenuitem
->Preferencias</guimenuitem
-></menuchoice
-> (modo administrador de archivos)</term>
-<listitem
-><para
->Abre una carpeta virtual con todos los módulos de &systemsettings; de las vistas <guimenuitem
->Iconos</guimenuitem
->, <guimenuitem
->Detalles</guimenuitem
-> o<guimenuitem
->Columnas</guimenuitem
->. Seleccione un elemento para mostrar las preferencias del módulo en una ventana de diálogo diferente.</para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-> <guimenu
->Ir</guimenu
-> <guimenuitem
 >Papelera</guimenuitem
 ></menuchoice
 > (modo administrador de archivos)</term>
@@ -6538,7 +6026,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ></term>
 <listitem
 ><para
->Muestra una vista de árbol con el historial de navegación en una ventana diferente. </para
+>Muestra una vista de árbol con el historial de navegación en una ventana diferente.</para
 ></listitem>
 </varlistentry>
 
@@ -6632,7 +6120,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ><guimenu
 >Marcadores</guimenu
 > <guimenuitem
-> Crear una pestaña de marcadores con las pestañas abiertas...</guimenuitem
+> Crear una pestaña de marcadores con las pestañas abiertas…</guimenuitem
 > </menuchoice
 ></term>
 <listitem>
@@ -6662,7 +6150,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ><guimenu
 >Marcadores</guimenu
 > <guimenuitem
->Editar marcadores...</guimenuitem
+>Editar marcadores…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -6713,7 +6201,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 > <guimenu
 >Herramientas</guimenu
 > <guimenuitem
->Buscar archivo...</guimenuitem
+>Buscar archivo…</guimenuitem
 ></menuchoice
 > (modo administrador de archivos)</term>
 <listitem
@@ -6773,29 +6261,28 @@ http://websvn.kde.org/?view=revision&revision=269436
 >Abre una vista pequeña de terminal de texto al fondo de la ventana principal.</para
 ></listitem>
 </varlistentry>
-<!--
+
 <varlistentry>
 <term
-><menuchoice>
-<shortcut>
-<keycombo action="simul"
+><menuchoice
+><shortcut
+> <keycombo action="simul"
 ><keycap
 >F9</keycap
 ></keycombo
-></shortcut>
-<guimenu
->Settings</guimenu>
-<guimenuitem
->Show Sidebar</guimenuitem>
-</menuchoice
+></shortcut
+> <guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Mostrar panel lateral</guimenuitem
+> </menuchoice
 ></term>
 <listitem
 ><para
->Toggles the display of the &konqueror; sidebar. See
-<xref linkend="sidebar"/>.</para
+>Conmuta la visualización de la barra lateral de &konqueror;.</para
 ></listitem>
 </varlistentry>
--->
+
 <varlistentry>
 <term
 ><menuchoice
@@ -6829,7 +6316,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ><guimenu
 >Preferencias</guimenu
 > <guimenuitem
->Configurar extensiones...</guimenuitem
+>Configurar extensiones…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -6846,7 +6333,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ><guimenu
 >Preferencias</guimenu
 > <guimenuitem
->Configurar la comprobación de ortografía...</guimenuitem
+>Configurar la comprobación de ortografía…</guimenuitem
 > </menuchoice
 ></term>
 <listitem>
@@ -6882,7 +6369,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ></term>
 <listitem
 ><para
->Dividir vista izquierda/derecha.</para
+>Dividir la vista de izquierda a derecha.</para
 ></listitem>
 </varlistentry>
 
@@ -6903,7 +6390,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ></term>
 <listitem
 ><para
->Dividir vista superior/inferior.</para
+>Dividir la vista de arriba a abajo.</para
 ></listitem>
 </varlistentry>
 
@@ -6924,7 +6411,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 ></term>
 <listitem
 ><para
->Elimina la vista activa.</para
+>Eliminar la vista activa.</para
 ></listitem>
 </varlistentry>
 
@@ -7258,16 +6745,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 >qtpaths --paths GenericCacheLocation</filename
 > contiene la caché del navegador.</para
 ></listitem>
-<!--
-<listitem
-><para
->The Sidebar uses the files and subfolders in <filename
->konqsidebartng</filename>
-in the folder <filename class="directory"
->qtpaths - -paths GenericConfigLocation</filename
-></para
-></listitem>
--->
+
 </itemizedlist>
 <para
 >Cualquier configuración específica de la vista de carpetas se guarda en archivos <literal role="extension"
@@ -7319,8 +6797,8 @@ in the folder <filename class="directory"
 <question
 ><para
 >¿Cómo activar, desactivar o limpiar el caché del navegador?</para
-></question
-> <answer>
+></question>
+<answer>
 <para
 >Si selecciona <menuchoice
 ><guimenu
@@ -7332,7 +6810,7 @@ in the folder <filename class="directory"
 ><guimenu
 >Preferencias</guimenu
 ><guimenuitem
->Configurar Konqueror...</guimenuitem
+>Configurar Konqueror…</guimenuitem
 ></menuchoice
 >, aparecerá un cuadro de diálogo que le permite desactivar la caché, borrarla, configurar su tamaño o cambiar la política de caché.</para>
 </answer>
@@ -7341,26 +6819,7 @@ in the folder <filename class="directory"
 <qandaentry>
 <question
 ><para
->¿Cómo puedo cambiar los valores de desconexión utilizados por &konqueror; cuando se utiliza como navegador web?</para
-></question
-> <answer>
-<para
->En la categoría &systemsettings; <guilabel
->Red</guilabel
-> de la página <menuchoice
-><guimenu
->Preferencias</guimenu
-> <guimenuitem
->Preferencias de la conexión</guimenuitem
-></menuchoice
->.</para>
-</answer>
-</qandaentry>
-
-<qandaentry>
-<question
-><para
->¿Cómo hago que «mi» página se cargue durante el inicio?</para
+>¿Cómo hago que mi página «carpeta personal» se cargue durante el inicio?</para
 ></question>
 <answer
 ><para
@@ -7375,7 +6834,7 @@ in the folder <filename class="directory"
 ><guimenu
 >Preferencias</guimenu
 ><guimenuitem
->Configurar Konqueror</guimenuitem
+>Configurar Konqueror…</guimenuitem
 ><guilabel
 >General</guilabel
 ></menuchoice
@@ -7398,7 +6857,6 @@ in the folder <filename class="directory"
 >En modo navegador, &konqueror; se inicia con la <guilabel
 >Página de inicio</guilabel
 >.</para>
-
 </answer>
 </qandaentry>
 
@@ -7410,27 +6868,18 @@ in the folder <filename class="directory"
 > 
 <answer>
 <para
->Eche un vistazo a <ulink url="https://konqueror.org/faq/"
->https://konqueror.org/faq/</ulink
-> o a <ulink url="https://konqueror.org/contact/"
->https://konqueror.org/contact/</ulink
->.</para>
-<para
->Puede encontrar más información en los <ulink url="http://forum.kde.org/"
+>Puede encontrar más información en los <ulink url="https://discuss.kde.org/"
 > Foros de la comunidad KDE</ulink
 > o en la <ulink url="http://userbase.kde.org/Konqueror"
 > página de Konqueror en KDE Userbase</ulink
 >.</para>
 </answer>
 </qandaentry>
-
 </qandaset>
-
 </chapter>
 
 <chapter id="credits"
 > <!-- 4.11-->
-
 <chapterinfo>
 <authorgroup>
 <author
@@ -7501,7 +6950,7 @@ in the folder <filename class="directory"
 >Créditos y licencia</title>
 
 <para
->Derechos de autor de &konqueror;. 1999-2003. Los desarrolladores de &konqueror;:</para>
+>Copyright del programa 1999–2025, los desarrolladores de &konqueror;:</para>
 
 <variablelist>
 
@@ -7887,7 +7336,7 @@ in the folder <filename class="directory"
 </variablelist>
 
 <para
->Derechos de autor de la documentación. 2000-2003:</para>
+>Copyright de la documentación 2000–2025</para>
 
 <itemizedlist>
 <listitem
@@ -7902,7 +7351,6 @@ in the folder <filename class="directory"
 
 <para
 >Documentación actualizada para &kde; 3.2 por &Philip.Rodrigues; &Philip.Rodrigues.mail;.</para>
-
 <para
 >Revisión de la documentación para &kde; 4.11: David Palser <email
 >davidpalser179@btinternet.com</email
