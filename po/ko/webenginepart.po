@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2013, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2013, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-26 00:41+0000\n"
-"PO-Revision-Date: 2024-12-24 17:35+0100\n"
+"PO-Revision-Date: 2025-06-10 23:19+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -351,20 +351,19 @@ msgstr "<tt>%1</tt>에서 화면의 내용을 캡처할 수 있도록 허용하�
 #, kde-format
 msgctxt "Choose to share a screen"
 msgid "Share Screen"
-msgstr ""
+msgstr "화면 공유"
 
 #: src/capturesourcechooserdlg.cpp:31
-#, fuzzy, kde-format
-#| msgid "New Window"
+#, kde-format
 msgctxt "Choose to share a window"
 msgid "Share Window"
-msgstr "새 창"
+msgstr "창 공유"
 
 #: src/capturesourcechooserdlg.cpp:35
 #, kde-format
 msgctxt "Don't share any part of the screen"
 msgid "Share nothing"
-msgstr ""
+msgstr "공유하지 않음"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
@@ -376,33 +375,31 @@ msgstr "캡처 원본 선택"
 #: src/capturesourcechooserdlg.ui:20
 #, kde-format
 msgid "Which part of your screen do you want to share?"
-msgstr ""
+msgstr "화면의 어떤 부분을 공유하시겠습니까?"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/capturesourcechooserdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "New Window"
+#, kde-format
 msgid "Window"
-msgstr "새 창"
+msgstr "창"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, windowCombo)
 #: src/capturesourcechooserdlg.ui:51
-#, fuzzy, kde-format
-#| msgid "Close window?"
+#, kde-format
 msgid "Choose window"
-msgstr "창을 닫으시겠습니까?"
+msgstr "창 선택"
 
 #. i18n: ectx: property (text), widget (QLabel, Screen)
 #: src/capturesourcechooserdlg.ui:75
 #, kde-format
 msgid "Screen"
-msgstr ""
+msgstr "화면"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, screenCombo)
 #: src/capturesourcechooserdlg.ui:82
 #, kde-format
 msgid "Choose screen"
-msgstr ""
+msgstr "화면 선택"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -882,10 +879,9 @@ msgstr "기타"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgid "Customize Fields To Store"
-msgstr "이 페이지에서 기억할 필드 사용자 정의(&C)..."
+msgstr "기억할 필드 사용자 정의"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
@@ -895,10 +891,9 @@ msgstr "암호와 자리 비움자 표시 전환"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "&Show passwords"
+#, kde-format
 msgid "Show &passwords"
-msgstr "암호 표시(&S)"
+msgstr "암호 표시(&P)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
@@ -908,10 +903,9 @@ msgstr "필드 고급 정보 표시"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
-#, fuzzy, kde-format
-#| msgid "&Show details"
+#, kde-format
 msgid "Show field &details"
-msgstr "자세한 정보 표시(&S)"
+msgstr "필드 정보 표시(&S)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
@@ -927,10 +921,9 @@ msgstr "대화 상자를 닫을 때 양식 데이터를 KWallet에 저장"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
-#, fuzzy, kde-format
-#| msgid "Store form data in KWallet when closing the dialog"
+#, kde-format
 msgid "&Store the contents of selected fields when closing the dialog"
-msgstr "대화 상자를 닫을 때 양식 데이터를 KWallet에 저장"
+msgstr "대화 상자를 닫을 때 선택한 필드 내용 저장(&S)"
 
 #: src/webenginepage.cpp:164
 #, kde-format
@@ -1235,42 +1228,38 @@ msgstr "<html>%1에서 <b>%2</b>의 로그인 정보를 기억하도록 하시�
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
-msgstr ""
+msgstr "자격 증명 입력(&F)"
 
 #: src/webenginepart.cpp:1024
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
-msgstr ""
+msgstr "페이지에서 자격 증명 요청 검색(&S)"
 
 #: src/webenginepart.cpp:1028
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
-msgstr ""
+msgstr "지금 자격 증명 저장(&S)"
 
 #: src/webenginepart.cpp:1032
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
-msgstr "이 페이지에서 기억할 필드 사용자 정의(&C)..."
+msgstr "페이지의 자격 증명 사용자 정의(&C)..."
 
 #: src/webenginepart.cpp:1036
-#, fuzzy, kde-format
-#| msgid "Remove Customized Memorization Settings for This Page"
+#, kde-format
 msgid "Reset Custom Credential Settings for Page"
-msgstr "이 페이지의 사용자 정의 기억 설정 삭제"
+msgstr "이 페이지의 사용자 정의 자격 증명 설정 초기화"
 
 #: src/webenginepart.cpp:1040
-#, fuzzy, kde-format
-#| msgid "&Allow Password Caching for This Site"
+#, kde-format
 msgid "&Allow Credential Caching for This Page"
-msgstr "이 사이트에 암호 저장 허용(&A)"
+msgstr "이 사이트에 자격 증명 캐시 허용(&A)"
 
 #: src/webenginepart.cpp:1044
-#, fuzzy, kde-format
-#| msgid "Remove All Memorized Passwords for This Site"
+#, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "이 사이트의 모든 저장된 암호 삭제"
 
