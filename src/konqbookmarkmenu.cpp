@@ -11,6 +11,9 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include <QMenu>
 #include <QFile>
+#include <QEvent>
+#include <QMouseEvent>
+#include <QGuiApplication>
 
 #include <kconfig.h>
 #include <ksharedconfig.h>
@@ -143,7 +146,7 @@ QAction *KonqBookmarkMenu::actionForBookmark(const KBookmark &_bm)
         // qCDebug(KBOOKMARKS_LOG) << "Creating Konq bookmark action named " << bm.text();
         QUrl host = bm.url().adjusted(QUrl::RemovePath | QUrl::RemoveQuery);
             bm.setIcon(KonqPixmapProvider::self()->iconNameFor(host));
-        KBookmarkAction *action = new KBookmarkAction(bm, owner(), this);
+        BookmarkAction *action = new BookmarkAction(bm, owner(), this);
         action->setData(bm.url());
         m_actions.append(action);
         return action;
@@ -158,5 +161,42 @@ QMenu *KonqBookmarkMenu::contextMenu(QAction *action)
     }
     return new KonqBookmarkContextMenu(act->bookmark(), manager(), owner());
 }
+
+#ifdef KBOOKMARKS_FIX_REQUIRED
+bool Konqueror::KonqBookmarkMenu::eventFilter(QObject* watched, QEvent* event)
+{
+    if (watched != parentMenu() || event->type() != QEvent::MouseButtonRelease) {
+        return false;
+    }
+    QMouseEvent *me = static_cast<QMouseEvent*>(event);
+    BookmarkAction *ba = qobject_cast<BookmarkAction*>(parentMenu()->actionAt(me->pos()));
+    if (ba) {
+        ba->setTriggeringMouseButton(me->button());
+    }
+    return false;
+}
+
+BookmarkAction::BookmarkAction(const KBookmark& bm, KBookmarkOwner* owner, QObject* parent) : KBookmarkAction(bm, owner, parent)
+{
+    disconnect(this, &QAction::triggered, nullptr, nullptr);
+    connect(this, &QAction::triggered, this, &BookmarkAction::callSlotSelected);
+}
+
+BookmarkAction::~BookmarkAction() noexcept
+{
+}
+
+void BookmarkAction::setTriggeringMouseButton(Qt::MouseButton btn)
+{
+    m_triggeringMouseButton = btn;
+}
+
+void BookmarkAction::callSlotSelected()
+{
+    slotSelected(m_triggeringMouseButton, QGuiApplication::keyboardModifiers());
+    m_triggeringMouseButton = Qt::NoButton;
+}
+#endif
+
 
 #include "moc_konqbookmarkmenu.cpp"
