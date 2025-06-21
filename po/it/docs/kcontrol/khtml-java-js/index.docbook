@@ -88,12 +88,12 @@
 >La casella <guilabel
 >Abilita Java globalmente</guilabel
 > permette di attivare il supporto per &Java; per tutti i siti non esplicitamente esclusi; puoi anche decidere di abilitare o disabilitare &Java; per alcuni siti specifici. Per aggiungere una politica di gestione per un sito specifico premi il pulsante <guilabel
->Nuovo</guilabel
+>Nuovo…</guilabel
 >: comparirà una finestra in cui scriverai il nome dell'host e sceglierai se accettarne o rifiutarne il codice &Java;. Ciò aggiungerà il dominio all'elenco sulla sinistra della pagina.</para>
 
 <para
 >Per scegliere un'altra politica per quell'host puoi selezionarne uno dall'elenco, e premere poi <guilabel
->Cambia</guilabel
+>Cambia…</guilabel
 >. Premendo invece il pulsante <guilabel
 >Elimina</guilabel
 > rimuoverai la politica dell'host selezionato; dopo l'eliminazione, per l'host si useranno le impostazioni globali.</para>
@@ -130,7 +130,7 @@
 
 <para
 >Puoi scegliere se &konqueror; debba automaticamente riconoscere l'installazione di &Java; del sistema, o se specificare il percorso dell'installazione da te usando <guilabel
->Percorso dell'eseguibile Java, o «java»</guilabel
+>Percorso dell'eseguibile Java, o java</guilabel
 >. Potresti preferire il secondo metodo, ad esempio, se hai installazioni multiple di &Java; sul sistema e vuoi specificare quale usare. Se alla macchina virtuale di &Java; usata servono opzioni di avvio particolari, puoi inserirle nella casella di testo indicata con <guilabel
 >Argomenti Java aggiuntivi</guilabel
 >.</para>
@@ -151,20 +151,16 @@
 >La casella <guilabel
 >Abilita JavaScript globalmente</guilabel
 > permette di attivare o disattivare il supporto per JavaScript per tutti i siti come impostazione predefinita. Puoi anche scegliere di attivare o disattivare JavaScript per host specifici. Per aggiungere una politica per un host specifico premi il pulsante <guilabel
->Nuovo</guilabel
+>Nuovo…</guilabel
 >: apparirà una finestra in cui potrai inserire il nome dell'host, e poi scegliere se accettarne o rifiutarne il codice JavaScript. Ciò aggiungerà il dominio dell'host all'elenco sulla sinistra della pagina.</para>
 
 <para
 >Per scegliere un'altra politica per quell'host puoi selezionarne uno dall'elenco, e premere poi <guilabel
->Cambia</guilabel
+>Cambia…</guilabel
 >. Premendo invece il pulsante <guilabel
 >Elimina</guilabel
 > rimuoverai la politica dell'host selezionato; dopo l'eliminazione, per l'host si useranno le impostazioni globali.</para>
-<!-- missing section Debugging
-Enable debugger Enables builtin JavaScript debugger.
-Report errors Enables the reporting of errors that occur when JavaScript code is executed.
-How are errors reported? popup window? icon in status bar?
--->
+
 <para
 >L'ultimo insieme di opzioni nella sezione <guilabel
 >Politiche JavaScript globali</guilabel
