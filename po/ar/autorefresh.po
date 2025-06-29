@@ -4,7 +4,7 @@
 # Ahmad M. Zawawi <azawawi@emirates.net.ae>, 2004.
 # محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# zayed <zayed.alsaidi@gmail.com>, 2008, 2012.
+# SPDX-FileCopyrightText: 2008, 2012, 2025 zayed <zayed.alsaidi@gmail.com>
 # Abdalrahim G. Fakhouri <abdilra7eem@yahoo.com>, 2012.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
 msgid ""
@@ -12,20 +12,21 @@ msgstr ""
 "Project-Id-Version: autorefresh\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:32+0000\n"
-"PO-Revision-Date: 2014-07-15 18:05+0300\n"
-"Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"PO-Revision-Date: 2025-06-28 17:38+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: autorefresh.cpp:28
 #, kde-format
 msgid "&Auto Refresh"
-msgstr "إ&نعاش آلي"
+msgstr "&تحديث آلي"
 
 #: autorefresh.cpp:32
 #, kde-format
@@ -86,7 +87,7 @@ msgstr "كلّ 6 ساعات"
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot Refresh Source"
-msgstr "تعذّر إنعاش المصدر"
+msgstr "تعذّر تحديث المصدر"
 
 #: autorefresh.cpp:101
 #, kde-format
