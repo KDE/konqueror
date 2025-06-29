@@ -204,12 +204,15 @@ void KKonqGeneralOptions::load()
         return !md.mimeTypes().contains(QStringLiteral("text/plain"));
     };
     std::copy_if(allParts.constBegin(), allParts.constEnd(), std::back_inserter(partOfferList), filter);
+    
+    QMap<QString, KPluginMetaData> uniqueMap;
 
-    //We need to remove duplicates caused by having parts with both plugin metadata and .desktop files being returned twice by KParts::PartLoader::partsForMimeType
-    //TODO: remove this when this doesn't happen anymore (KF6?)
-    std::sort(partOfferList.begin(), partOfferList.end(), [](const KPluginMetaData &md1, const KPluginMetaData &md2){return md1.pluginId() == md2.pluginId();});
-    auto unique = std::unique(partOfferList.begin(), partOfferList.end(), [](const KPluginMetaData &md1, const KPluginMetaData &md2){return md1.pluginId() == md2.pluginId();});
-    partOfferList.erase(unique, partOfferList.end());
+    for (const auto& metaData : partOfferList) {
+        uniqueMap.insert(metaData.pluginId(), metaData);
+    }
+
+    partOfferList = uniqueMap.values().toVector();
+    
     for (const KPluginMetaData &md : partOfferList) {
         m_webEngineCombo->addItem(QIcon::fromTheme(md.iconName()), md.name(), md.pluginId());
     }

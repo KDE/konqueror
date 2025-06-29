@@ -1,6 +1,7 @@
 /*
     This file is part of the KDE project
     SPDX-FileCopyrightText: 2008 Eduardo Robles Elvira <edulix@gmail.com>
+    SPDX-FileCopyrightText: 2025 Raphael Rosch <kde-dev@insaner.com>
 
     SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -51,6 +52,9 @@
 #include <QScreen>
 #include <KSharedConfig>
 
+#include <QClipboard>
+#include <QMenu>
+
 #include "konqapplication.h"
 #include <QMessageBox>
 
@@ -72,9 +76,13 @@ public:
 
 Q_GLOBAL_STATIC(KonqSessionManagerPrivate, myKonqSessionManagerPrivate)
 
-static QString viewIdFor(const QString &sessionFile, const QString &viewId)
+static QString windowIdFor(const QString &sessionFile, const QString &windowId)
 {
-    return (sessionFile + viewId);
+    return (sessionFile + windowId);
+}
+static QString viewIdFor(const QString &sessionFile, const QString &windowId, const QString &viewId)
+{
+    return (sessionFile + windowId + viewId);
 }
 
 static const QList<KConfigGroup> windowConfigGroups(/*NOT const, we'll use writeEntry*/ KConfig &config)
@@ -127,58 +135,76 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
     m_treeWidget = new QTreeWidget(this);
     m_treeWidget->setHeader(nullptr);
     m_treeWidget->setHeaderHidden(true);
-    m_treeWidget->setToolTip(i18nc("@tooltip:session list", "Uncheck the sessions you do not want to be restored"));
+    
+    m_treeWidget->setContextMenuPolicy(Qt::CustomContextMenu);  // enable right-click
+        // handle right-click context menu
+    QObject::connect(m_treeWidget, &QTreeWidget::customContextMenuRequested, this, &SessionRestoreDialog::showContextMenu);
 
     QStyleOptionViewItem styleOption;
     styleOption.initFrom(m_treeWidget);
     QFontMetrics fm(styleOption.font);
     int w = m_treeWidget->width();
     const QRect desktop = screen()->geometry();
-
+    const QString toolTipForSessionList = i18nc("@tooltip:session list", "Uncheck the sessions or windows you do not want to be restored");
     // Collect info from the sessions to restore
     for (const QString &sessionFile: sessionFilePaths) {
+        QFileInfo fileInfo(sessionFile);
+        QString sessionName = fileInfo.fileName();
         qCDebug(KONQUEROR_LOG) << sessionFile;
-        QTreeWidgetItem *windowItem = nullptr;
+        QRegularExpression trailingDigitsRE(R"(\d+$)");
+        QTreeWidgetItem *sessionItem = new QTreeWidgetItem(m_treeWidget);
+        sessionItem->setText(0, i18nc("@item:treewidget", "Session %1", sessionName));
+        sessionItem->setToolTip(0, toolTipForSessionList);
+        sessionItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
+        sessionItem->setCheckState(0, Qt::Checked);
+        sessionItem->setExpanded(true);
+        
         KConfig config(sessionFile, KConfig::SimpleConfig);
-        const QList<KConfigGroup> groups = windowConfigGroups(config);
-        for (const KConfigGroup &group: groups) {
+        const QList<KConfigGroup> windowGroups = windowConfigGroups(config);
+        for (const KConfigGroup &windowGroup: windowGroups) {
+            QTreeWidgetItem *windowItem = nullptr;
+            const QString windowId = windowGroup.name();
             // To avoid a recursive search, let's do linear search on Foo_CurrentHistoryItem=1
-            for (const QString &key: group.keyList()) {
+            for (const QString &key: windowGroup.keyList()) {
                 if (key.endsWith(QLatin1String("_CurrentHistoryItem"))) {
                     const QString viewId = key.left(key.length() - qstrlen("_CurrentHistoryItem"));
-                    const QString historyIndex = group.readEntry(key, QString());
+                    const QString historyIndex = windowGroup.readEntry(key, QString());
                     const QString prefix = "HistoryItem" + viewId + '_' + historyIndex;
                     // Ignore the sidebar views
-                    if (group.readEntry(prefix + "StrServiceName", QString()).startsWith(QLatin1String("konq_sidebar"))) {
+                    if (windowGroup.readEntry(prefix + "StrServiceName", QString()).startsWith(QLatin1String("konq_sidebar"))) {
                         continue;
                     }
-                    const QString url = group.readEntry(prefix + "Url", QString());
-                    const QString title = group.readEntry(prefix + "Title", QString());
+                    const QString url = windowGroup.readEntry(prefix + "Url", QString());
+                    const QString title = windowGroup.readEntry(prefix + "Title", QString());
                     qCDebug(KONQUEROR_LOG) << viewId << url << title;
                     const QString displayText = (title.trimmed().isEmpty() ? url : title);
                     if (!displayText.isEmpty()) {
                         if (!windowItem) {
-                            windowItem = new QTreeWidgetItem(m_treeWidget);
-                            const int index = sessionFilePaths.indexOf(sessionFile) + 1;
-                            windowItem->setText(0, i18nc("@item:treewidget", "Window %1", index));
+                            windowItem = new QTreeWidgetItem(sessionItem);
+                            QRegularExpressionMatch trailingDigitsMatch = trailingDigitsRE.match(windowId);
+                            // I assume this is done this way for the benefit of i18n. Otherwise it would be easier to just use what is in the session file
+                            windowItem->setText(0, i18nc("@item:treewidget", "Window %1", trailingDigitsMatch.captured(0).toInt())); // FIXME: what if for some reason this is broken and there is no match?
+                            windowItem->setToolTip(0, toolTipForSessionList);
                             windowItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
+                            windowItem->setData(0, ViewIdRole, windowIdFor(sessionFile, windowId));
                             windowItem->setCheckState(0, Qt::Checked);
                             windowItem->setExpanded(true);
+                            m_sessionItemsCount++;
                         }
                         QTreeWidgetItem *item = new QTreeWidgetItem(windowItem);
                         item->setText(0, displayText);
-                        item->setData(0, Qt::UserRole, viewIdFor(sessionFile, viewId));
+                        item->setToolTip(0, url);
+                        item->setData(0, ViewIdRole, viewIdFor(sessionFile, windowId, viewId));
+                        item->setData(0, UrlRole, url);    // "hidden" data to be pulled by the context menu handler
                         item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
-                        item->setCheckState(0, Qt::Checked);
+                        // item->setIcon(0, QIcon::fromTheme("view-restore")); // could also be replaced with just a bullet point, or nothing
                         w = qMax(w, fm.horizontalAdvance(displayText));
-                        m_sessionItemsCount++;
                     }
                 }
             }
-        }
-
-        if (windowItem) {
-            m_checkedSessionItems.insert(windowItem, windowItem->childCount());
+            if (windowItem) {
+                m_checkedSessionItems.insert(sessionItem, sessionItem->childCount());
+            }
         }
     }
 
@@ -229,9 +255,9 @@ bool SessionRestoreDialog::isEmpty() const
     return m_treeWidget->topLevelItemCount() == 0;
 }
 
-QStringList SessionRestoreDialog::discardedSessionList() const
+QStringList SessionRestoreDialog::discardedWindowList() const
 {
-    return m_discardedSessionList;
+    return m_discardedWindowList;
 }
 
 bool SessionRestoreDialog::isDontShowChecked() const
@@ -244,29 +270,57 @@ void SessionRestoreDialog::slotClicked(bool checked)
     m_dontShowChecked = checked;
 }
 
+void SessionRestoreDialog::showContextMenu(const QPoint &pos) {
+    QTreeWidgetItem *item = m_treeWidget->itemAt(pos);
+    if (!item) return;
+
+    QString copyThis = item->data(0, UrlRole).toString();
+
+    // Only present the tooltip if it's a view with a URL
+    if (!copyThis.isEmpty()) {
+        QMenu context_menu;
+        int screenWidth = m_treeWidget->screen()->geometry().width();
+        QFontMetrics metrics(m_treeWidget->font());
+        QString clipboardPrompt = i18nc("@tooltip:copy url to clipboard", "Copy url to clipboard:  %1", copyThis);
+        QString clipboardPromptFit = metrics.elidedText(clipboardPrompt, Qt::ElideMiddle, screenWidth);
+
+        QAction *copyAction = context_menu.addAction(clipboardPromptFit);
+        connect(copyAction, &QAction::triggered, this, [copyThis]() {
+            QApplication::clipboard()->setText(copyThis);
+        });
+
+        context_menu.exec(m_treeWidget->mapToGlobal(pos));
+    }
+}
+
 void SessionRestoreDialog::slotItemChanged(QTreeWidgetItem *item, int column)
 {
     Q_ASSERT(item);
-
     const int itemChildCount = item->childCount();
-    QTreeWidgetItem *parentItem = nullptr;
+    QTreeWidgetItem *parentItem = item;
 
     const bool blocked = item->treeWidget()->blockSignals(true);
-    if (itemChildCount > 0) {
-        parentItem = item;
+
+    const int maxDepthToDisplay = 1; // 0 = session, 1 = window, 2 = views (not containers)
+    int depth = 0;
+    for (QTreeWidgetItem *tmpItem = item; tmpItem->parent();  tmpItem = tmpItem->parent()) {
+        depth++;
+    }
+
+    if (depth < maxDepthToDisplay && itemChildCount > 0) {	// toggle child items
         for (int i = 0; i < itemChildCount; ++i) {
             QTreeWidgetItem *childItem = item->child(i);
-            if (childItem) {
+            if (childItem && childItem->checkState(column) != item->checkState(column)) {
                 childItem->setCheckState(column, item->checkState(column));
                 switch (childItem->checkState(column)) {
                 case Qt::Checked:
                     m_sessionItemsCount++;
-                    m_discardedSessionList.removeAll(childItem->data(column, Qt::UserRole).toString());
+                    m_discardedWindowList.removeAll(childItem->data(column, ViewIdRole).toString());
                     m_checkedSessionItems[item]++;
                     break;
                 case Qt::Unchecked:
                     m_sessionItemsCount--;
-                    m_discardedSessionList.append(childItem->data(column, Qt::UserRole).toString());
+                    m_discardedWindowList.append(childItem->data(column, ViewIdRole).toString());
                     m_checkedSessionItems[item]--;
                     break;
                 default:
@@ -274,17 +328,18 @@ void SessionRestoreDialog::slotItemChanged(QTreeWidgetItem *item, int column)
                 }
             }
         }
-    } else {
+    } 
+    if (depth > 0) {	// toggle parent item
         parentItem = item->parent();
         switch (item->checkState(column)) {
         case Qt::Checked:
             m_sessionItemsCount++;
-            m_discardedSessionList.removeAll(item->data(column, Qt::UserRole).toString());
+            m_discardedWindowList.removeAll(item->data(column, ViewIdRole).toString());
             m_checkedSessionItems[parentItem]++;
             break;
         case Qt::Unchecked:
             m_sessionItemsCount--;
-            m_discardedSessionList.append(item->data(column, Qt::UserRole).toString());
+            m_discardedWindowList.append(item->data(column, ViewIdRole).toString());
             m_checkedSessionItems[parentItem]--;
             break;
         default:
@@ -484,6 +539,7 @@ KonqSessionManager *KonqSessionManager::self()
 
 void KonqSessionManager::autoSaveSession()
 {
+    // FIXME: Should really be checking if the session has changed before saving, to prevent needless I/O activity
     if (!m_autosaveEnabled) {
         return;
     }
@@ -661,6 +717,10 @@ void KonqSessionManager::restoreSession(const QString &sessionFilePath, bool
     KConfig config(sessionFilePath, KConfig::SimpleConfig);
     const QList<KConfigGroup> groups = windowConfigGroups(config);
     for (const KConfigGroup &configGroup: groups) {
+        if (!configGroup.exists()) { // because if the session file has the wrong number of windows, it would launch empty windows for the missing number of windows
+            // qWarning() << "restoreSession cleaning empty window group"; // should a warning be issued?
+            continue;
+        }
         if (!openTabsInsideCurrentWindow) {
             KonqViewManager::openSavedWindow(configGroup)->show();
         } else {
@@ -686,9 +746,9 @@ bool KonqSessionManager::restoreSessionSavedAtExit()
     return !KonqMainWindow::mainWindows().isEmpty();
 }
 
-static void removeDiscardedSessions(const QStringList &sessionFiles, const QStringList &discardedSessions)
+static void removeDiscardedWindows(const QStringList &sessionFiles, const QStringList &discardedWindows)
 {
-    if (discardedSessions.isEmpty()) {
+    if (discardedWindows.isEmpty()) {
         return;
     }
 
@@ -697,16 +757,11 @@ static void removeDiscardedSessions(const QStringList &sessionFiles, const QStri
         QList<KConfigGroup> groups = windowConfigGroups(config);
         for (int i = 0, count = groups.count(); i < count; ++i) {
             KConfigGroup &group = groups[i];
-            const QString rootItem = group.readEntry("RootItem", "empty");
-            const QString viewsKey(rootItem + QLatin1String("_Children"));
-            QStringList views = group.readEntry(viewsKey, QStringList());
-            QMutableStringListIterator it(views);
-            while (it.hasNext()) {
-                if (discardedSessions.contains(viewIdFor(sessionFile, it.next()))) {
-                    it.remove();
-                }
+            const QString windowName = group.name();
+            const QString windowId = windowIdFor(sessionFile, windowName);
+            if (discardedWindows.contains(windowId)) {
+                group.deleteGroup();
             }
-            group.writeEntry(viewsKey, views);
         }
     }
 }
@@ -721,7 +776,7 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
     disableAutosave();
 
     int result;
-    QStringList discardedSessionList;
+    QStringList discardedWindowList;
     const QLatin1String dontAskAgainName("Restore session when konqueror didn't close correctly");
 
     if (SessionRestoreDialog::shouldBeShown(dontAskAgainName, &result)) {
@@ -730,7 +785,7 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
             result = QDialogButtonBox::No;
         } else {
             result = restoreDlg->exec();
-            discardedSessionList = restoreDlg->discardedSessionList();
+            discardedWindowList = restoreDlg->discardedWindowList();
             if (restoreDlg->isDontShowChecked()) {
                 SessionRestoreDialog::saveDontShow(dontAskAgainName, result);
             }
@@ -741,7 +796,7 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
     switch (result) {
     case QDialogButtonBox::Yes:
         // Remove the discarded session list files.
-        removeDiscardedSessions(sessionFilePaths, discardedSessionList);
+        removeDiscardedWindows(sessionFilePaths, discardedWindowList);
         restoreSessions(sessionFilePaths);
         enableAutosave();
         return true;

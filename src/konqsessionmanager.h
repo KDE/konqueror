@@ -36,12 +36,14 @@ public:
     explicit SessionRestoreDialog(const QStringList &sessionFilePaths, QWidget *parent = nullptr);
     ~SessionRestoreDialog() override;
 
+    enum CustomRoles {ViewIdRole = Qt::UserRole, UrlRole};
+
     bool isEmpty() const;
 
     /**
      * Returns the list of session discarded/unselected by the user.
      */
-    QStringList discardedSessionList() const;
+    QStringList discardedWindowList() const;
 
     /**
      * Returns true if the don't show checkbox is checked.
@@ -71,10 +73,11 @@ public:
 private Q_SLOTS:
     void slotClicked(bool);
     void slotItemChanged(QTreeWidgetItem *, int);
+    void showContextMenu(const QPoint &pos);
 
 private:
     QTreeWidget *m_treeWidget;
-    QStringList m_discardedSessionList;
+    QStringList m_discardedWindowList;
     QHash<QTreeWidgetItem *, int> m_checkedSessionItems;
     int m_sessionItemsCount;
     QDialogButtonBox *m_buttonBox;
