@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-18 00:42+0000\n"
+"POT-Creation-Date: 2025-06-30 00:41+0000\n"
 "PO-Revision-Date: 2025-05-06 22:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1719,13 +1719,13 @@ msgstr "Sil"
 msgid "Open tabs inside current window"
 msgstr "Geçerli pencere içerisinde sekmeler açar"
 
-#: src/konqsessionmanager.cpp:97
+#: src/konqsessionmanager.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "Restore Session?"
 msgstr "Oturumu Yeniden Yükle?"
 
-#: src/konqsessionmanager.cpp:118
+#: src/konqsessionmanager.cpp:126
 #, kde-format
 msgid ""
 "Konqueror did not close correctly. Would you like to restore these previous "
@@ -1734,40 +1734,56 @@ msgstr ""
 "Konqueror düzgün bir şekilde kapatılmamış. Önceki oturumu yeniden yüklemek "
 "ister misiniz?"
 
-#: src/konqsessionmanager.cpp:130
-#, kde-format
+#: src/konqsessionmanager.cpp:148
+#, fuzzy, kde-format
+#| msgctxt "@tooltip:session list"
+#| msgid "Uncheck the sessions you do not want to be restored"
 msgctxt "@tooltip:session list"
-msgid "Uncheck the sessions you do not want to be restored"
+msgid "Uncheck the sessions or windows you do not want to be restored"
 msgstr "Geri yüklenilmesini istemediğiniz oturumların işaretini kaldırın"
 
-#: src/konqsessionmanager.cpp:163
+#: src/konqsessionmanager.cpp:156
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgctxt "@item:treewidget"
+msgid "Session %1"
+msgstr "Oturumlar"
+
+#. i18n. Otherwise it would be easier to just use what is in the session file
+#: src/konqsessionmanager.cpp:186
 #, kde-format
 msgctxt "@item:treewidget"
 msgid "Window %1"
 msgstr "Pencere %1"
 
-#: src/konqsessionmanager.cpp:201
+#: src/konqsessionmanager.cpp:227
 #, kde-format
 msgid "Do not ask again"
 msgstr "Bir daha sorma"
 
-#: src/konqsessionmanager.cpp:215
+#: src/konqsessionmanager.cpp:241
 #, kde-format
 msgctxt "@action:button yes"
 msgid "Restore Session"
 msgstr "Oturumu Geri Yükle"
 
-#: src/konqsessionmanager.cpp:216
+#: src/konqsessionmanager.cpp:242
 #, kde-format
 msgctxt "@action:button no"
 msgid "Do Not Restore"
 msgstr "Geri Yükleme"
 
-#: src/konqsessionmanager.cpp:217
+#: src/konqsessionmanager.cpp:243
 #, kde-format
 msgctxt "@action:button ask later"
 msgid "Ask Me Later"
 msgstr "Daha Sonra Sor"
+
+#: src/konqsessionmanager.cpp:284
+#, kde-format
+msgctxt "@tooltip:copy url to clipboard"
+msgid "Copy url to clipboard:  %1"
+msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, kde-format

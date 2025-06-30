@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-18 00:42+0000\n"
+"POT-Creation-Date: 2025-06-30 00:41+0000\n"
 "PO-Revision-Date: 2024-11-12 21:03+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1712,13 +1712,13 @@ msgstr "Dzēst"
 msgid "Open tabs inside current window"
 msgstr "Atvērt cilnes aktīvajā logā"
 
-#: src/konqsessionmanager.cpp:97
+#: src/konqsessionmanager.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "Restore Session?"
 msgstr "Atjaunot sesiju?"
 
-#: src/konqsessionmanager.cpp:118
+#: src/konqsessionmanager.cpp:126
 #, kde-format
 msgid ""
 "Konqueror did not close correctly. Would you like to restore these previous "
@@ -1727,40 +1727,56 @@ msgstr ""
 "„Konqueror“ netika korekti aizvērts. Vai vēlaties atjaunot iepriekšējo "
 "sesiju?"
 
-#: src/konqsessionmanager.cpp:130
-#, kde-format
+#: src/konqsessionmanager.cpp:148
+#, fuzzy, kde-format
+#| msgctxt "@tooltip:session list"
+#| msgid "Uncheck the sessions you do not want to be restored"
 msgctxt "@tooltip:session list"
-msgid "Uncheck the sessions you do not want to be restored"
+msgid "Uncheck the sessions or windows you do not want to be restored"
 msgstr "Noņemiet atzīmi sesijām, kuras nevēlaties atjaunot"
 
-#: src/konqsessionmanager.cpp:163
+#: src/konqsessionmanager.cpp:156
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgctxt "@item:treewidget"
+msgid "Session %1"
+msgstr "Sesijas"
+
+#. i18n. Otherwise it would be easier to just use what is in the session file
+#: src/konqsessionmanager.cpp:186
 #, kde-format
 msgctxt "@item:treewidget"
 msgid "Window %1"
 msgstr "Logs „%1“"
 
-#: src/konqsessionmanager.cpp:201
+#: src/konqsessionmanager.cpp:227
 #, kde-format
 msgid "Do not ask again"
 msgstr "Nejautāt atkal"
 
-#: src/konqsessionmanager.cpp:215
+#: src/konqsessionmanager.cpp:241
 #, kde-format
 msgctxt "@action:button yes"
 msgid "Restore Session"
 msgstr "Atjaunot sesiju"
 
-#: src/konqsessionmanager.cpp:216
+#: src/konqsessionmanager.cpp:242
 #, kde-format
 msgctxt "@action:button no"
 msgid "Do Not Restore"
 msgstr "Neatjaunot"
 
-#: src/konqsessionmanager.cpp:217
+#: src/konqsessionmanager.cpp:243
 #, kde-format
 msgctxt "@action:button ask later"
 msgid "Ask Me Later"
 msgstr "Jautāt vēlāk"
+
+#: src/konqsessionmanager.cpp:284
+#, kde-format
+msgctxt "@tooltip:copy url to clipboard"
+msgid "Copy url to clipboard:  %1"
+msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, kde-format

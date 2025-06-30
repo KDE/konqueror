@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-18 00:42+0000\n"
+"POT-Creation-Date: 2025-06-30 00:41+0000\n"
 "PO-Revision-Date: 2012-12-22 11:35+0100\n"
 "Last-Translator: Jean Cayron <jean.cayron@gmail.com>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -1723,13 +1723,13 @@ msgstr "Disfacer"
 msgid "Open tabs inside current window"
 msgstr "Drovi des linwetes el finiesse do moumint"
 
-#: src/konqsessionmanager.cpp:97
+#: src/konqsessionmanager.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "Restore Session?"
 msgstr "Rapexhî session?"
 
-#: src/konqsessionmanager.cpp:118
+#: src/konqsessionmanager.cpp:126
 #, kde-format
 msgid ""
 "Konqueror did not close correctly. Would you like to restore these previous "
@@ -1737,41 +1737,57 @@ msgid ""
 msgstr ""
 "Konqueror n' a nén cloyou comifåt. Vôrîz rapexhî les sessions di dvant?"
 
-#: src/konqsessionmanager.cpp:130
-#, kde-format
+#: src/konqsessionmanager.cpp:148
+#, fuzzy, kde-format
+#| msgctxt "@tooltip:session list"
+#| msgid "Uncheck the sessions you do not want to be restored"
 msgctxt "@tooltip:session list"
-msgid "Uncheck the sessions you do not want to be restored"
+msgid "Uncheck the sessions or windows you do not want to be restored"
 msgstr ""
 "Disclitchîz les sessions k' vos n' voloz nén k' ele soeyexhe rapexheyes"
 
-#: src/konqsessionmanager.cpp:163
+#: src/konqsessionmanager.cpp:156
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgctxt "@item:treewidget"
+msgid "Session %1"
+msgstr "Sessions"
+
+#. i18n. Otherwise it would be easier to just use what is in the session file
+#: src/konqsessionmanager.cpp:186
 #, kde-format
 msgctxt "@item:treewidget"
 msgid "Window %1"
 msgstr "Finiesse %1"
 
-#: src/konqsessionmanager.cpp:201
+#: src/konqsessionmanager.cpp:227
 #, kde-format
 msgid "Do not ask again"
 msgstr "Èn pus dmander"
 
-#: src/konqsessionmanager.cpp:215
+#: src/konqsessionmanager.cpp:241
 #, kde-format
 msgctxt "@action:button yes"
 msgid "Restore Session"
 msgstr "Rapexhî session"
 
-#: src/konqsessionmanager.cpp:216
+#: src/konqsessionmanager.cpp:242
 #, kde-format
 msgctxt "@action:button no"
 msgid "Do Not Restore"
 msgstr "Èn nén rapexhî"
 
-#: src/konqsessionmanager.cpp:217
+#: src/konqsessionmanager.cpp:243
 #, kde-format
 msgctxt "@action:button ask later"
 msgid "Ask Me Later"
 msgstr "Èm dimander pus tård"
+
+#: src/konqsessionmanager.cpp:284
+#, kde-format
+msgctxt "@tooltip:copy url to clipboard"
+msgid "Copy url to clipboard:  %1"
+msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, fuzzy, kde-format

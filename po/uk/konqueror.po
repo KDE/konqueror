@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-18 00:42+0000\n"
+"POT-Creation-Date: 2025-06-30 00:41+0000\n"
 "PO-Revision-Date: 2025-05-05 09:35+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -1730,13 +1730,13 @@ msgstr "Вилучити"
 msgid "Open tabs inside current window"
 msgstr "Відкрити вкладку у поточному вікні"
 
-#: src/konqsessionmanager.cpp:97
+#: src/konqsessionmanager.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "Restore Session?"
 msgstr "Відновити сеанс?"
 
-#: src/konqsessionmanager.cpp:118
+#: src/konqsessionmanager.cpp:126
 #, kde-format
 msgid ""
 "Konqueror did not close correctly. Would you like to restore these previous "
@@ -1744,40 +1744,56 @@ msgid ""
 msgstr ""
 "Konqueror завершив роботу некоректно. Бажаєте відновити ці попередні сеанси?"
 
-#: src/konqsessionmanager.cpp:130
-#, kde-format
+#: src/konqsessionmanager.cpp:148
+#, fuzzy, kde-format
+#| msgctxt "@tooltip:session list"
+#| msgid "Uncheck the sessions you do not want to be restored"
 msgctxt "@tooltip:session list"
-msgid "Uncheck the sessions you do not want to be restored"
+msgid "Uncheck the sessions or windows you do not want to be restored"
 msgstr "Зніміть позначки з пунктів сеансів, які не слід відновлювати"
 
-#: src/konqsessionmanager.cpp:163
+#: src/konqsessionmanager.cpp:156
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgctxt "@item:treewidget"
+msgid "Session %1"
+msgstr "Сеанси"
+
+#. i18n. Otherwise it would be easier to just use what is in the session file
+#: src/konqsessionmanager.cpp:186
 #, kde-format
 msgctxt "@item:treewidget"
 msgid "Window %1"
 msgstr "Вікно %1"
 
-#: src/konqsessionmanager.cpp:201
+#: src/konqsessionmanager.cpp:227
 #, kde-format
 msgid "Do not ask again"
 msgstr "Більше не питати"
 
-#: src/konqsessionmanager.cpp:215
+#: src/konqsessionmanager.cpp:241
 #, kde-format
 msgctxt "@action:button yes"
 msgid "Restore Session"
 msgstr "Відновити сеанс"
 
-#: src/konqsessionmanager.cpp:216
+#: src/konqsessionmanager.cpp:242
 #, kde-format
 msgctxt "@action:button no"
 msgid "Do Not Restore"
 msgstr "Не відновлювати"
 
-#: src/konqsessionmanager.cpp:217
+#: src/konqsessionmanager.cpp:243
 #, kde-format
 msgctxt "@action:button ask later"
 msgid "Ask Me Later"
 msgstr "Спитати пізніше"
+
+#: src/konqsessionmanager.cpp:284
+#, kde-format
+msgctxt "@tooltip:copy url to clipboard"
+msgid "Copy url to clipboard:  %1"
+msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, kde-format

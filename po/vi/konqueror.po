@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-18 00:42+0000\n"
+"POT-Creation-Date: 2025-06-30 00:41+0000\n"
 "PO-Revision-Date: 2022-09-05 11:32+0200\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -1756,57 +1756,71 @@ msgstr "&Xoá"
 msgid "Open tabs inside current window"
 msgstr "Mở tài liệu trong cửa sổ hiện tại"
 
-#: src/konqsessionmanager.cpp:97
+#: src/konqsessionmanager.cpp:105
 #, fuzzy, kde-format
 #| msgid "End of session"
 msgctxt "@title:window"
 msgid "Restore Session?"
 msgstr "Kết thúc phiên chạy"
 
-#: src/konqsessionmanager.cpp:118
+#: src/konqsessionmanager.cpp:126
 #, kde-format
 msgid ""
 "Konqueror did not close correctly. Would you like to restore these previous "
 "sessions?"
 msgstr ""
 
-#: src/konqsessionmanager.cpp:130
+#: src/konqsessionmanager.cpp:148
 #, kde-format
 msgctxt "@tooltip:session list"
-msgid "Uncheck the sessions you do not want to be restored"
+msgid "Uncheck the sessions or windows you do not want to be restored"
 msgstr ""
 
-#: src/konqsessionmanager.cpp:163
+#: src/konqsessionmanager.cpp:156
+#, fuzzy, kde-format
+#| msgid "Permissions"
+msgctxt "@item:treewidget"
+msgid "Session %1"
+msgstr "Quyền hạn"
+
+#. i18n. Otherwise it would be easier to just use what is in the session file
+#: src/konqsessionmanager.cpp:186
 #, fuzzy, kde-format
 #| msgid "&Window"
 msgctxt "@item:treewidget"
 msgid "Window %1"
 msgstr "&Cửa sổ"
 
-#: src/konqsessionmanager.cpp:201
+#: src/konqsessionmanager.cpp:227
 #, kde-format
 msgid "Do not ask again"
 msgstr ""
 
-#: src/konqsessionmanager.cpp:215
+#: src/konqsessionmanager.cpp:241
 #, fuzzy, kde-format
 #| msgid "End of session"
 msgctxt "@action:button yes"
 msgid "Restore Session"
 msgstr "Kết thúc phiên chạy"
 
-#: src/konqsessionmanager.cpp:216
+#: src/konqsessionmanager.cpp:242
 #, kde-format
 msgctxt "@action:button no"
 msgid "Do Not Restore"
 msgstr ""
 
-#: src/konqsessionmanager.cpp:217
+#: src/konqsessionmanager.cpp:243
 #, fuzzy, kde-format
 #| msgid "As New Folder"
 msgctxt "@action:button ask later"
 msgid "Ask Me Later"
 msgstr "Thành thư mục mới"
+
+#: src/konqsessionmanager.cpp:284
+#, kde-format
+msgctxt "@tooltip:copy url to clipboard"
+msgid "Copy url to clipboard:  %1"
+msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, fuzzy, kde-format
