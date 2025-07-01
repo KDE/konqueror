@@ -22,14 +22,14 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-30 00:41+0000\n"
-"PO-Revision-Date: 2025-05-05 10:12+0200\n"
+"PO-Revision-Date: 2025-06-30 18:07+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.04.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -1750,19 +1750,16 @@ msgstr ""
 "Konqueror is niet goed afgesloten. Wilt u deze vorige sessies herstellen?"
 
 #: src/konqsessionmanager.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@tooltip:session list"
-#| msgid "Uncheck the sessions you do not want to be restored"
+#, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr "Deactiveer de sessies die u niet wilt herstellen"
+msgstr "Deactiveer de sessies of vensters die u niet wilt herstellen"
 
 #: src/konqsessionmanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Sessions"
+#, kde-format
 msgctxt "@item:treewidget"
 msgid "Session %1"
-msgstr "Sessies"
+msgstr "Sessies %1"
 
 #. i18n. Otherwise it would be easier to just use what is in the session file
 #: src/konqsessionmanager.cpp:186
@@ -1798,7 +1795,7 @@ msgstr "Later opnieuw vragen"
 #, kde-format
 msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"
-msgstr ""
+msgstr "URL kopiëren naar klembord:  %1"
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, kde-format

@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-30 00:41+0000\n"
-"PO-Revision-Date: 2025-05-31 11:25+0200\n"
+"PO-Revision-Date: 2025-06-30 19:19+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -1731,19 +1731,16 @@ msgstr ""
 "sessioner?"
 
 #: src/konqsessionmanager.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@tooltip:session list"
-#| msgid "Uncheck the sessions you do not want to be restored"
+#, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr "Avmarkera sessionerna du inte vill ska återställas"
+msgstr "Avmarkera sessionerna eller fönstren du inte vill ska återställas"
 
 #: src/konqsessionmanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Sessions"
+#, kde-format
 msgctxt "@item:treewidget"
 msgid "Session %1"
-msgstr "Sessioner"
+msgstr "Session %1"
 
 #. i18n. Otherwise it would be easier to just use what is in the session file
 #: src/konqsessionmanager.cpp:186
@@ -1779,7 +1776,7 @@ msgstr "Fråga igen senare"
 #, kde-format
 msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"
-msgstr ""
+msgstr "Kopiera webbadress till klippbordet:  %1"
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, kde-format

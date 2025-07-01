@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-30 00:41+0000\n"
-"PO-Revision-Date: 2025-05-18 13:36+0100\n"
+"PO-Revision-Date: 2025-06-30 12:29+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.04.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -1750,19 +1750,16 @@ msgstr ""
 "anteriores?"
 
 #: src/konqsessionmanager.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@tooltip:session list"
-#| msgid "Uncheck the sessions you do not want to be restored"
+#, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr "Desmarque las sesiones que no desee restaurar"
+msgstr "Desmarque las sesiones o ventanas que no desee restaurar"
 
 #: src/konqsessionmanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Sessions"
+#, kde-format
 msgctxt "@item:treewidget"
 msgid "Session %1"
-msgstr "Sesiones"
+msgstr "Sesión %1"
 
 #. i18n. Otherwise it would be easier to just use what is in the session file
 #: src/konqsessionmanager.cpp:186
@@ -1798,7 +1795,7 @@ msgstr "Preguntarme más tarde"
 #, kde-format
 msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"
-msgstr ""
+msgstr "Copiar URL al portapapeles: %1"
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, kde-format
