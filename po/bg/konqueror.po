@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-30 00:41+0000\n"
-"PO-Revision-Date: 2025-05-08 18:36+0200\n"
+"PO-Revision-Date: 2025-07-11 23:33+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -1734,19 +1734,18 @@ msgstr ""
 "сесии?"
 
 #: src/konqsessionmanager.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@tooltip:session list"
-#| msgid "Uncheck the sessions you do not want to be restored"
+#, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr "Премахнете отметката от сесиите, които не искате да бъдат възстановени"
+msgstr ""
+"Премахнете отметката от сесиите или прозорците, които не искате да бъдат "
+"възстановени"
 
 #: src/konqsessionmanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Sessions"
+#, kde-format
 msgctxt "@item:treewidget"
 msgid "Session %1"
-msgstr "Сесии"
+msgstr "Сесия %1"
 
 #. i18n. Otherwise it would be easier to just use what is in the session file
 #: src/konqsessionmanager.cpp:186
@@ -1782,7 +1781,7 @@ msgstr "Питане по късно"
 #, kde-format
 msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"
-msgstr ""
+msgstr "Копиране на адреса в клипборда:  %1"
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, kde-format
