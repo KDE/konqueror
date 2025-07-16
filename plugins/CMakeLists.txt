@@ -7,8 +7,9 @@ function (konqueror_install_plugin_in_namespaces name)
     install(TARGETS ${name} DESTINATION ${KDE_INSTALL_PLUGINDIR})
     install(FILES ${name}.rc DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/partsrcfiles)
 
-    # install the symlink in all the given nammespace, we do not want to duplicate the actual files
-    set(namespace_list khtml/kpartplugins kwebkitpart/kpartplugins webenginepart/kpartplugins)
+    # install the symlink in all the given namespaces, we do not want to duplicate the actual files
+    # currently, there's only one html part, webenginepart
+    set(namespace_list webenginepart/kpartplugins)
     foreach(INSTALL_NAMESPACE ${namespace_list})
         string(REPLACE "/" "_" install_namespace_file ${INSTALL_NAMESPACE})
         add_custom_command(TARGET ${name} POST_BUILD
