@@ -12,77 +12,22 @@
 #include <QTimer>
 #include <QStringList>
 #include <QString>
+#include <QTreeWidget>
+#include <QDialog>
+#include <QFontMetrics>
 
 #include <kconfig.h>
-#include <QDialog>
 #include <konqprivate_export.h>
 #include <config-konqueror.h>
 #include <KX11Extras>
+#include <KConfigGroup>
 
 class KonqMainWindow;
-class QDialogButtonBox;
-class QTreeWidget;
-class QTreeWidgetItem;
 class QSessionManager;
 
 #ifdef KActivities_FOUND
 class ActivityManager;
 #endif
-
-class SessionRestoreDialog : public QDialog
-{
-    Q_OBJECT
-public:
-    explicit SessionRestoreDialog(const QStringList &sessionFilePaths, QWidget *parent = nullptr);
-    ~SessionRestoreDialog() override;
-
-    enum CustomRoles {ViewIdRole = Qt::UserRole, UrlRole};
-
-    bool isEmpty() const;
-
-    /**
-     * Returns the list of session discarded/unselected by the user.
-     */
-    QStringList discardedWindowList() const;
-
-    /**
-     * Returns true if the don't show checkbox is checked.
-     */
-    bool isDontShowChecked() const;
-
-    /**
-     * Returns true if the corresponding session restore dialog should be shown.
-     *
-     * @param dontShowAgainName the name that identify the session restore dialog box.
-     * @param result if not null, it will be set to the result that was chosen the last
-     * time the dialog box was shown. This is only useful if the restore dialog box should
-     * be shown.
-     */
-    static bool shouldBeShown(const QString &dontShowAgainName, int *result);
-
-    /**
-     * Save the fact that the session restore dialog should not be shown again.
-     *
-     * @param dontShowAgainName the name that identify the session restore dialog. If
-     * empty, this method does nothing.
-     * @param result the value (Yes or No) that should be used as the result
-     * for the message box.
-     */
-    static void saveDontShow(const QString &dontShowAgainName, int result);
-
-private Q_SLOTS:
-    void slotClicked(bool);
-    void slotItemChanged(QTreeWidgetItem *, int);
-    void showContextMenu(const QPoint &pos);
-
-private:
-    QTreeWidget *m_treeWidget;
-    QStringList m_discardedWindowList;
-    QHash<QTreeWidgetItem *, int> m_checkedSessionItems;
-    int m_sessionItemsCount;
-    QDialogButtonBox *m_buttonBox;
-    bool m_dontShowChecked;
-};
 
 /**
  * This class is a singleton. It does some session related tasks:
@@ -175,6 +120,9 @@ public:
     void setPreloadedWindowsNumber(const QList<int> &numbers);
 
     void registerMainWindow(KonqMainWindow *window);
+
+    static QString fullWindowId(const QString &sessionFile, const QString &windowId);
+    static const QList<KConfigGroup> windowConfigGroups(/*NOT const, we'll use writeEntry*/ KConfig &config);
 
 #ifdef KActivities_FOUND
     ActivityManager* activityManager();

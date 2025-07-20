@@ -81,6 +81,7 @@ set(konqueror_KDEINIT_SRCS
    konqundomanager.cpp
    konqclosedwindowsmanager.cpp
    konqsessionmanager.cpp
+   konqsessiondialog.cpp
    konqcloseditem.cpp
    konqhistorydialog.cpp
    konqstatusbarmessagelabel.cpp
