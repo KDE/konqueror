@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-30 00:41+0000\n"
-"PO-Revision-Date: 2025-06-10 23:17+0200\n"
+"PO-Revision-Date: 2025-07-20 01:47+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -1704,19 +1704,16 @@ msgstr ""
 "Konqueror가 올바르게 종료되지 않았습니다. 이전 세션을 복원하시겠습니까?"
 
 #: src/konqsessionmanager.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@tooltip:session list"
-#| msgid "Uncheck the sessions you do not want to be restored"
+#, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr "복원하지 않을 세션의 선택을 해제하십시오"
+msgstr "복원하지 않을 세션이나 창의 선택을 해제하십시오"
 
 #: src/konqsessionmanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Sessions"
+#, kde-format
 msgctxt "@item:treewidget"
 msgid "Session %1"
-msgstr "세션"
+msgstr "세션 %1"
 
 #. i18n. Otherwise it would be easier to just use what is in the session file
 #: src/konqsessionmanager.cpp:186
@@ -1752,7 +1749,7 @@ msgstr "나중에 묻기"
 #, kde-format
 msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"
-msgstr ""
+msgstr "클립보드로 URL 복사:  %1"
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, kde-format
