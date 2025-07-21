@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 00:41+0000\n"
+"POT-Creation-Date: 2025-07-21 00:42+0000\n"
 "PO-Revision-Date: 2008-11-18 23:30+0100\n"
 "Last-Translator: Eduard Werner <edi.werner@gmx.de>\n"
 "Language-Team: en_US <kde-i18n-doc@lists.kde.org>\n"
@@ -1640,6 +1640,70 @@ msgstr "Wočinić in"
 msgid "Session n&ame:"
 msgstr "Posedźenja"
 
+#: src/konqsessiondialog.cpp:50
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions or windows you do not want to be restored"
+msgstr ""
+
+#: src/konqsessiondialog.cpp:95
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgctxt "@item:treewidget"
+msgid "Session %1"
+msgstr "Posedźenja"
+
+#. i18n. Otherwise it would be easier to just use what is in the session file
+#: src/konqsessiondialog.cpp:113
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "Wokno %1"
+
+#: src/konqsessiondialog.cpp:262
+#, kde-format
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "Posedźenje ponowić?"
+
+#: src/konqsessiondialog.cpp:283
+#, fuzzy, kde-format
+#| msgid "Konqueror didn't close correctly. Would you like to restore session?"
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr ""
+"Konqueror njej so korektnje zakónčił. Ma so poslednje posedźenje ponowić?"
+
+#: src/konqsessiondialog.cpp:298
+#, kde-format
+msgid "Do not ask again"
+msgstr "Njeprašej so hišće raz"
+
+#: src/konqsessiondialog.cpp:312
+#, kde-format
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "Posedźenje ponowić"
+
+#: src/konqsessiondialog.cpp:313
+#, kde-format
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "Nic ponowić"
+
+#: src/konqsessiondialog.cpp:314
+#, kde-format
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "Woprašej so pozdźišo"
+
+#: src/konqsessiondialog.cpp:352
+#, kde-format
+msgctxt "@tooltip:copy url to clipboard"
+msgid "Copy url to clipboard:  %1"
+msgstr ""
+
 #: src/konqsessiondlg.cpp:60
 #, fuzzy, kde-format
 #| msgid "Manage Sessions"
@@ -1709,70 +1773,6 @@ msgstr "Zničić"
 #, kde-format
 msgid "Open tabs inside current window"
 msgstr "Jězdniki w aktualnym woknje wočinić"
-
-#: src/konqsessionmanager.cpp:105
-#, kde-format
-msgctxt "@title:window"
-msgid "Restore Session?"
-msgstr "Posedźenje ponowić?"
-
-#: src/konqsessionmanager.cpp:126
-#, fuzzy, kde-format
-#| msgid "Konqueror didn't close correctly. Would you like to restore session?"
-msgid ""
-"Konqueror did not close correctly. Would you like to restore these previous "
-"sessions?"
-msgstr ""
-"Konqueror njej so korektnje zakónčił. Ma so poslednje posedźenje ponowić?"
-
-#: src/konqsessionmanager.cpp:148
-#, kde-format
-msgctxt "@tooltip:session list"
-msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr ""
-
-#: src/konqsessionmanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Sessions"
-msgctxt "@item:treewidget"
-msgid "Session %1"
-msgstr "Posedźenja"
-
-#. i18n. Otherwise it would be easier to just use what is in the session file
-#: src/konqsessionmanager.cpp:186
-#, kde-format
-msgctxt "@item:treewidget"
-msgid "Window %1"
-msgstr "Wokno %1"
-
-#: src/konqsessionmanager.cpp:227
-#, kde-format
-msgid "Do not ask again"
-msgstr "Njeprašej so hišće raz"
-
-#: src/konqsessionmanager.cpp:241
-#, kde-format
-msgctxt "@action:button yes"
-msgid "Restore Session"
-msgstr "Posedźenje ponowić"
-
-#: src/konqsessionmanager.cpp:242
-#, kde-format
-msgctxt "@action:button no"
-msgid "Do Not Restore"
-msgstr "Nic ponowić"
-
-#: src/konqsessionmanager.cpp:243
-#, kde-format
-msgctxt "@action:button ask later"
-msgid "Ask Me Later"
-msgstr "Woprašej so pozdźišo"
-
-#: src/konqsessionmanager.cpp:284
-#, kde-format
-msgctxt "@tooltip:copy url to clipboard"
-msgid "Copy url to clipboard:  %1"
-msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, kde-format

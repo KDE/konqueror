@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 00:41+0000\n"
+"POT-Creation-Date: 2025-07-21 00:42+0000\n"
 "PO-Revision-Date: 2025-07-02 17:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1655,6 +1655,70 @@ msgstr "&Yalnızca geçerli pencere"
 msgid "Session n&ame:"
 msgstr "Oturum &adı:"
 
+#: src/konqsessiondialog.cpp:50
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions or windows you do not want to be restored"
+msgstr ""
+"Geri yüklenilmesi istenmeyen oturumların veya pencerelerin işaretini kaldır"
+
+#: src/konqsessiondialog.cpp:95
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Session %1"
+msgstr "Oturum %1"
+
+#. i18n. Otherwise it would be easier to just use what is in the session file
+#: src/konqsessiondialog.cpp:113
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "Pencere %1"
+
+#: src/konqsessiondialog.cpp:262
+#, kde-format
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "Oturumu Yeniden Yükle?"
+
+#: src/konqsessiondialog.cpp:283
+#, kde-format
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr ""
+"Konqueror düzgün bir şekilde kapatılmamış. Önceki oturumu yeniden yüklemek "
+"ister misiniz?"
+
+#: src/konqsessiondialog.cpp:298
+#, kde-format
+msgid "Do not ask again"
+msgstr "Bir daha sorma"
+
+#: src/konqsessiondialog.cpp:312
+#, kde-format
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "Oturumu Geri Yükle"
+
+#: src/konqsessiondialog.cpp:313
+#, kde-format
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "Geri Yükleme"
+
+#: src/konqsessiondialog.cpp:314
+#, kde-format
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "Daha Sonra Sor"
+
+#: src/konqsessiondialog.cpp:352
+#, kde-format
+msgctxt "@tooltip:copy url to clipboard"
+msgid "Copy url to clipboard:  %1"
+msgstr "URL’yi panoya kopyala: %1"
+
 #: src/konqsessiondlg.cpp:60
 #, kde-format
 msgctxt "@title:window"
@@ -1718,70 +1782,6 @@ msgstr "Sil"
 #, kde-format
 msgid "Open tabs inside current window"
 msgstr "Geçerli pencere içerisinde sekmeler açar"
-
-#: src/konqsessionmanager.cpp:105
-#, kde-format
-msgctxt "@title:window"
-msgid "Restore Session?"
-msgstr "Oturumu Yeniden Yükle?"
-
-#: src/konqsessionmanager.cpp:126
-#, kde-format
-msgid ""
-"Konqueror did not close correctly. Would you like to restore these previous "
-"sessions?"
-msgstr ""
-"Konqueror düzgün bir şekilde kapatılmamış. Önceki oturumu yeniden yüklemek "
-"ister misiniz?"
-
-#: src/konqsessionmanager.cpp:148
-#, kde-format
-msgctxt "@tooltip:session list"
-msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr ""
-"Geri yüklenilmesi istenmeyen oturumların veya pencerelerin işaretini kaldır"
-
-#: src/konqsessionmanager.cpp:156
-#, kde-format
-msgctxt "@item:treewidget"
-msgid "Session %1"
-msgstr "Oturum %1"
-
-#. i18n. Otherwise it would be easier to just use what is in the session file
-#: src/konqsessionmanager.cpp:186
-#, kde-format
-msgctxt "@item:treewidget"
-msgid "Window %1"
-msgstr "Pencere %1"
-
-#: src/konqsessionmanager.cpp:227
-#, kde-format
-msgid "Do not ask again"
-msgstr "Bir daha sorma"
-
-#: src/konqsessionmanager.cpp:241
-#, kde-format
-msgctxt "@action:button yes"
-msgid "Restore Session"
-msgstr "Oturumu Geri Yükle"
-
-#: src/konqsessionmanager.cpp:242
-#, kde-format
-msgctxt "@action:button no"
-msgid "Do Not Restore"
-msgstr "Geri Yükleme"
-
-#: src/konqsessionmanager.cpp:243
-#, kde-format
-msgctxt "@action:button ask later"
-msgid "Ask Me Later"
-msgstr "Daha Sonra Sor"
-
-#: src/konqsessionmanager.cpp:284
-#, kde-format
-msgctxt "@tooltip:copy url to clipboard"
-msgid "Copy url to clipboard:  %1"
-msgstr "URL’yi panoya kopyala: %1"
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, kde-format

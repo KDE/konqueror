@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 00:41+0000\n"
+"POT-Creation-Date: 2025-07-21 00:42+0000\n"
 "PO-Revision-Date: 2024-02-02 22:39+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -1643,6 +1643,70 @@ msgstr "Atverti kortelę dabartiniame lange"
 msgid "Session n&ame:"
 msgstr "&Sesijos pavadinimas:"
 
+#: src/konqsessiondialog.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "@tooltip:session list"
+#| msgid "Uncheck the sessions you do not want to be restored"
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions or windows you do not want to be restored"
+msgstr "Nuimkite varnelę, jei nenorite, kad būtų atkurta"
+
+#: src/konqsessiondialog.cpp:95
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgctxt "@item:treewidget"
+msgid "Session %1"
+msgstr "Sesijos"
+
+#. i18n. Otherwise it would be easier to just use what is in the session file
+#: src/konqsessiondialog.cpp:113
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "Langas %1"
+
+#: src/konqsessiondialog.cpp:262
+#, kde-format
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "Atstatyti sesiją?"
+
+#: src/konqsessiondialog.cpp:283
+#, kde-format
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr "Konqueror nebuvo tinkamai užvertas. Ar norite atkuri buvusias sesijas?"
+
+#: src/konqsessiondialog.cpp:298
+#, kde-format
+msgid "Do not ask again"
+msgstr "Daugiau nebeklausti"
+
+#: src/konqsessiondialog.cpp:312
+#, kde-format
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "Atstatyti sesiją"
+
+#: src/konqsessiondialog.cpp:313
+#, kde-format
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "Neatstatyti"
+
+#: src/konqsessiondialog.cpp:314
+#, kde-format
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "Paklausti vėliau"
+
+#: src/konqsessiondialog.cpp:352
+#, kde-format
+msgctxt "@tooltip:copy url to clipboard"
+msgid "Copy url to clipboard:  %1"
+msgstr ""
+
 #: src/konqsessiondlg.cpp:60
 #, kde-format
 msgctxt "@title:window"
@@ -1708,70 +1772,6 @@ msgstr "Trinti"
 #, kde-format
 msgid "Open tabs inside current window"
 msgstr "Atverti kortelę dabartiniame lange"
-
-#: src/konqsessionmanager.cpp:105
-#, kde-format
-msgctxt "@title:window"
-msgid "Restore Session?"
-msgstr "Atstatyti sesiją?"
-
-#: src/konqsessionmanager.cpp:126
-#, kde-format
-msgid ""
-"Konqueror did not close correctly. Would you like to restore these previous "
-"sessions?"
-msgstr "Konqueror nebuvo tinkamai užvertas. Ar norite atkuri buvusias sesijas?"
-
-#: src/konqsessionmanager.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@tooltip:session list"
-#| msgid "Uncheck the sessions you do not want to be restored"
-msgctxt "@tooltip:session list"
-msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr "Nuimkite varnelę, jei nenorite, kad būtų atkurta"
-
-#: src/konqsessionmanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Sessions"
-msgctxt "@item:treewidget"
-msgid "Session %1"
-msgstr "Sesijos"
-
-#. i18n. Otherwise it would be easier to just use what is in the session file
-#: src/konqsessionmanager.cpp:186
-#, kde-format
-msgctxt "@item:treewidget"
-msgid "Window %1"
-msgstr "Langas %1"
-
-#: src/konqsessionmanager.cpp:227
-#, kde-format
-msgid "Do not ask again"
-msgstr "Daugiau nebeklausti"
-
-#: src/konqsessionmanager.cpp:241
-#, kde-format
-msgctxt "@action:button yes"
-msgid "Restore Session"
-msgstr "Atstatyti sesiją"
-
-#: src/konqsessionmanager.cpp:242
-#, kde-format
-msgctxt "@action:button no"
-msgid "Do Not Restore"
-msgstr "Neatstatyti"
-
-#: src/konqsessionmanager.cpp:243
-#, kde-format
-msgctxt "@action:button ask later"
-msgid "Ask Me Later"
-msgstr "Paklausti vėliau"
-
-#: src/konqsessionmanager.cpp:284
-#, kde-format
-msgctxt "@tooltip:copy url to clipboard"
-msgid "Copy url to clipboard:  %1"
-msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, fuzzy, kde-format

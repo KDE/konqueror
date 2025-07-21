@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 00:41+0000\n"
+"POT-Creation-Date: 2025-07-21 00:42+0000\n"
 "PO-Revision-Date: 2013-03-28 15:17+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -1613,6 +1613,68 @@ msgstr "वर्तमान चौकट अंतर्गत टॅब उ�
 msgid "Session n&ame:"
 msgstr "सत्र नाव (&S):"
 
+#: src/konqsessiondialog.cpp:50
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions or windows you do not want to be restored"
+msgstr ""
+
+#: src/konqsessiondialog.cpp:95
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgctxt "@item:treewidget"
+msgid "Session %1"
+msgstr "सत्र"
+
+#. i18n. Otherwise it would be easier to just use what is in the session file
+#: src/konqsessiondialog.cpp:113
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "चौकट %1"
+
+#: src/konqsessiondialog.cpp:262
+#, kde-format
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "सत्र पुन्हस्थापन करायचे आहे का?"
+
+#: src/konqsessiondialog.cpp:283
+#, kde-format
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr "कॉन्करर योग्यरित्या बंद झाले नाही. पूर्वीचे सत्र पुन्हा स्थापीत करायचे का?"
+
+#: src/konqsessiondialog.cpp:298
+#, kde-format
+msgid "Do not ask again"
+msgstr "परत विचारु नका"
+
+#: src/konqsessiondialog.cpp:312
+#, kde-format
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "सत्र पुन्हस्थापन"
+
+#: src/konqsessiondialog.cpp:313
+#, kde-format
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "पुन्हस्थापन करू नका"
+
+#: src/konqsessiondialog.cpp:314
+#, kde-format
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "नंतर विचारा"
+
+#: src/konqsessiondialog.cpp:352
+#, kde-format
+msgctxt "@tooltip:copy url to clipboard"
+msgid "Copy url to clipboard:  %1"
+msgstr ""
+
 #: src/konqsessiondlg.cpp:60
 #, kde-format
 msgctxt "@title:window"
@@ -1678,68 +1740,6 @@ msgstr "काढून टाका"
 #, kde-format
 msgid "Open tabs inside current window"
 msgstr "वर्तमान चौकट अंतर्गत टॅब उघडा"
-
-#: src/konqsessionmanager.cpp:105
-#, kde-format
-msgctxt "@title:window"
-msgid "Restore Session?"
-msgstr "सत्र पुन्हस्थापन करायचे आहे का?"
-
-#: src/konqsessionmanager.cpp:126
-#, kde-format
-msgid ""
-"Konqueror did not close correctly. Would you like to restore these previous "
-"sessions?"
-msgstr "कॉन्करर योग्यरित्या बंद झाले नाही. पूर्वीचे सत्र पुन्हा स्थापीत करायचे का?"
-
-#: src/konqsessionmanager.cpp:148
-#, kde-format
-msgctxt "@tooltip:session list"
-msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr ""
-
-#: src/konqsessionmanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Sessions"
-msgctxt "@item:treewidget"
-msgid "Session %1"
-msgstr "सत्र"
-
-#. i18n. Otherwise it would be easier to just use what is in the session file
-#: src/konqsessionmanager.cpp:186
-#, kde-format
-msgctxt "@item:treewidget"
-msgid "Window %1"
-msgstr "चौकट %1"
-
-#: src/konqsessionmanager.cpp:227
-#, kde-format
-msgid "Do not ask again"
-msgstr "परत विचारु नका"
-
-#: src/konqsessionmanager.cpp:241
-#, kde-format
-msgctxt "@action:button yes"
-msgid "Restore Session"
-msgstr "सत्र पुन्हस्थापन"
-
-#: src/konqsessionmanager.cpp:242
-#, kde-format
-msgctxt "@action:button no"
-msgid "Do Not Restore"
-msgstr "पुन्हस्थापन करू नका"
-
-#: src/konqsessionmanager.cpp:243
-#, kde-format
-msgctxt "@action:button ask later"
-msgid "Ask Me Later"
-msgstr "नंतर विचारा"
-
-#: src/konqsessionmanager.cpp:284
-#, kde-format
-msgctxt "@tooltip:copy url to clipboard"
-msgid "Copy url to clipboard:  %1"
-msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, fuzzy, kde-format

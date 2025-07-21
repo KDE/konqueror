@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 00:41+0000\n"
+"POT-Creation-Date: 2025-07-21 00:42+0000\n"
 "PO-Revision-Date: 2019-12-12 21:22+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: SMC <smc.org.in>\n"
@@ -1575,6 +1575,68 @@ msgstr "നിലവിലുള്ള ജാലകത്തില്‍ കി�
 msgid "Session n&ame:"
 msgstr "&സെഷന്റെ പേര്:"
 
+#: src/konqsessiondialog.cpp:50
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions or windows you do not want to be restored"
+msgstr ""
+
+#: src/konqsessiondialog.cpp:95
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgctxt "@item:treewidget"
+msgid "Session %1"
+msgstr "പ്രവര്‍ത്തനവേളകള്‍"
+
+#. i18n. Otherwise it would be easier to just use what is in the session file
+#: src/konqsessiondialog.cpp:113
+#, fuzzy, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "&ജാലകം"
+
+#: src/konqsessiondialog.cpp:262
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "പ്രവര്‍ത്തനവേള വീണ്ടെടുക്കണമോ?"
+
+#: src/konqsessiondialog.cpp:283
+#, fuzzy, kde-format
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr "കോണ്‍ക്വറര്‍ ശരിയായല്ല അടച്ചതു്. പ്രവര്‍ത്തന വേള തിരിച്ചെടുക്കണോ?"
+
+#: src/konqsessiondialog.cpp:298
+#, kde-format
+msgid "Do not ask again"
+msgstr ""
+
+#: src/konqsessiondialog.cpp:312
+#, fuzzy, kde-format
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "പ്രവര്‍ത്തനവേള വീണ്ടെടുക്കുക"
+
+#: src/konqsessiondialog.cpp:313
+#, fuzzy, kde-format
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "വീണ്ടെടുക്കേണ്ട"
+
+#: src/konqsessiondialog.cpp:314
+#, fuzzy, kde-format
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "പിന്നീടു് ചോദിക്കുക"
+
+#: src/konqsessiondialog.cpp:352
+#, kde-format
+msgctxt "@tooltip:copy url to clipboard"
+msgid "Copy url to clipboard:  %1"
+msgstr ""
+
 #: src/konqsessiondlg.cpp:60
 #, fuzzy, kde-format
 msgctxt "@title:window"
@@ -1638,68 +1700,6 @@ msgstr "വെട്ടി മാറ്റുക"
 #, kde-format
 msgid "Open tabs inside current window"
 msgstr "നിലവിലുള്ള ജാലകത്തില്‍ കിളിവാതിലുകള്‍ തുറക്കുക"
-
-#: src/konqsessionmanager.cpp:105
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Restore Session?"
-msgstr "പ്രവര്‍ത്തനവേള വീണ്ടെടുക്കണമോ?"
-
-#: src/konqsessionmanager.cpp:126
-#, fuzzy, kde-format
-msgid ""
-"Konqueror did not close correctly. Would you like to restore these previous "
-"sessions?"
-msgstr "കോണ്‍ക്വറര്‍ ശരിയായല്ല അടച്ചതു്. പ്രവര്‍ത്തന വേള തിരിച്ചെടുക്കണോ?"
-
-#: src/konqsessionmanager.cpp:148
-#, kde-format
-msgctxt "@tooltip:session list"
-msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr ""
-
-#: src/konqsessionmanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Sessions"
-msgctxt "@item:treewidget"
-msgid "Session %1"
-msgstr "പ്രവര്‍ത്തനവേളകള്‍"
-
-#. i18n. Otherwise it would be easier to just use what is in the session file
-#: src/konqsessionmanager.cpp:186
-#, fuzzy, kde-format
-msgctxt "@item:treewidget"
-msgid "Window %1"
-msgstr "&ജാലകം"
-
-#: src/konqsessionmanager.cpp:227
-#, kde-format
-msgid "Do not ask again"
-msgstr ""
-
-#: src/konqsessionmanager.cpp:241
-#, fuzzy, kde-format
-msgctxt "@action:button yes"
-msgid "Restore Session"
-msgstr "പ്രവര്‍ത്തനവേള വീണ്ടെടുക്കുക"
-
-#: src/konqsessionmanager.cpp:242
-#, fuzzy, kde-format
-msgctxt "@action:button no"
-msgid "Do Not Restore"
-msgstr "വീണ്ടെടുക്കേണ്ട"
-
-#: src/konqsessionmanager.cpp:243
-#, fuzzy, kde-format
-msgctxt "@action:button ask later"
-msgid "Ask Me Later"
-msgstr "പിന്നീടു് ചോദിക്കുക"
-
-#: src/konqsessionmanager.cpp:284
-#, kde-format
-msgctxt "@tooltip:copy url to clipboard"
-msgid "Copy url to clipboard:  %1"
-msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, fuzzy, kde-format

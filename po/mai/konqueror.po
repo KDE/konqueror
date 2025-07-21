@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 00:41+0000\n"
+"POT-Creation-Date: 2025-07-21 00:42+0000\n"
 "PO-Revision-Date: 2010-09-24 21:45+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -1602,6 +1602,73 @@ msgstr "दस्ताबेज केँ वर्तमान दृश्य
 msgid "Session n&ame:"
 msgstr "सत्र"
 
+#: src/konqsessiondialog.cpp:50
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions or windows you do not want to be restored"
+msgstr ""
+
+#: src/konqsessiondialog.cpp:95
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgctxt "@item:treewidget"
+msgid "Session %1"
+msgstr "सत्र"
+
+#. i18n. Otherwise it would be easier to just use what is in the session file
+#: src/konqsessiondialog.cpp:113
+#, fuzzy, kde-format
+#| msgid "&Window"
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "विंडो (&W)"
+
+#: src/konqsessiondialog.cpp:262
+#, fuzzy, kde-format
+#| msgid "Restore Session?"
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "सत्र फिनु बहाल करू?"
+
+#: src/konqsessiondialog.cpp:283
+#, kde-format
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr ""
+
+#: src/konqsessiondialog.cpp:298
+#, kde-format
+msgid "Do not ask again"
+msgstr ""
+
+#: src/konqsessiondialog.cpp:312
+#, fuzzy, kde-format
+#| msgid "Restore Session"
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "सत्र फिनु बहाल करू"
+
+#: src/konqsessiondialog.cpp:313
+#, fuzzy, kde-format
+#| msgid "Do Not Restore"
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "सत्र फिनु नहि बहाल करू"
+
+#: src/konqsessiondialog.cpp:314
+#, fuzzy, kde-format
+#| msgid "Ask Me Later"
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "हमरासँ बाद मे पूछू"
+
+#: src/konqsessiondialog.cpp:352
+#, kde-format
+msgctxt "@tooltip:copy url to clipboard"
+msgid "Copy url to clipboard:  %1"
+msgstr ""
+
 #: src/konqsessiondlg.cpp:60
 #, fuzzy, kde-format
 #| msgid "Manage Sessions"
@@ -1669,73 +1736,6 @@ msgstr "मेटाबू"
 #: src/konqsessiondlg_base.ui:73
 #, kde-format
 msgid "Open tabs inside current window"
-msgstr ""
-
-#: src/konqsessionmanager.cpp:105
-#, fuzzy, kde-format
-#| msgid "Restore Session?"
-msgctxt "@title:window"
-msgid "Restore Session?"
-msgstr "सत्र फिनु बहाल करू?"
-
-#: src/konqsessionmanager.cpp:126
-#, kde-format
-msgid ""
-"Konqueror did not close correctly. Would you like to restore these previous "
-"sessions?"
-msgstr ""
-
-#: src/konqsessionmanager.cpp:148
-#, kde-format
-msgctxt "@tooltip:session list"
-msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr ""
-
-#: src/konqsessionmanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Sessions"
-msgctxt "@item:treewidget"
-msgid "Session %1"
-msgstr "सत्र"
-
-#. i18n. Otherwise it would be easier to just use what is in the session file
-#: src/konqsessionmanager.cpp:186
-#, fuzzy, kde-format
-#| msgid "&Window"
-msgctxt "@item:treewidget"
-msgid "Window %1"
-msgstr "विंडो (&W)"
-
-#: src/konqsessionmanager.cpp:227
-#, kde-format
-msgid "Do not ask again"
-msgstr ""
-
-#: src/konqsessionmanager.cpp:241
-#, fuzzy, kde-format
-#| msgid "Restore Session"
-msgctxt "@action:button yes"
-msgid "Restore Session"
-msgstr "सत्र फिनु बहाल करू"
-
-#: src/konqsessionmanager.cpp:242
-#, fuzzy, kde-format
-#| msgid "Do Not Restore"
-msgctxt "@action:button no"
-msgid "Do Not Restore"
-msgstr "सत्र फिनु नहि बहाल करू"
-
-#: src/konqsessionmanager.cpp:243
-#, fuzzy, kde-format
-#| msgid "Ask Me Later"
-msgctxt "@action:button ask later"
-msgid "Ask Me Later"
-msgstr "हमरासँ बाद मे पूछू"
-
-#: src/konqsessionmanager.cpp:284
-#, kde-format
-msgctxt "@tooltip:copy url to clipboard"
-msgid "Copy url to clipboard:  %1"
 msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:67

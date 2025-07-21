@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 00:41+0000\n"
+"POT-Creation-Date: 2025-07-21 00:42+0000\n"
 "PO-Revision-Date: 2012-06-11 14:26+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer\n"
@@ -1627,6 +1627,71 @@ msgstr "បើក​ផ្ទាំង​ខាង​ក្នុង​បង្
 msgid "Session n&ame:"
 msgstr "ឈ្មោះ​សម័យ ៖"
 
+#: src/konqsessiondialog.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "@tooltip:session list"
+#| msgid "Uncheck the sessions you do not want to be restored"
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions or windows you do not want to be restored"
+msgstr "មិន​ពិនិត្យមើល​សម័យ​ដែល​អ្នក​មិន​ចង់​ស្ដារ​"
+
+#: src/konqsessiondialog.cpp:95
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgctxt "@item:treewidget"
+msgid "Session %1"
+msgstr "សម័យ"
+
+#  i18n: file konqueror.rc line 94
+#. i18n. Otherwise it would be easier to just use what is in the session file
+#: src/konqsessiondialog.cpp:113
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "បង្អួច %1"
+
+#: src/konqsessiondialog.cpp:262
+#, kde-format
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "ស្ដារ​សម័យ​ឡើងវិញ​ឬ ?"
+
+#: src/konqsessiondialog.cpp:283
+#, kde-format
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr "Konqueror មិន​បាន​បិទ​ដោយ​ត្រឹមត្រូវ​ឡើយ ។ តើ​អ្នក​ស្ដារ​សម័យ​មុនៗ​ឬ ?"
+
+#: src/konqsessiondialog.cpp:298
+#, kde-format
+msgid "Do not ask again"
+msgstr "កុំ​សួរ​ខ្ញុំ​​ម្ដងទៀត"
+
+#: src/konqsessiondialog.cpp:312
+#, kde-format
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "ស្ដារ​សម័យ​"
+
+#: src/konqsessiondialog.cpp:313
+#, kde-format
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "កុំ​ស្ដារ​"
+
+#: src/konqsessiondialog.cpp:314
+#, kde-format
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "សួរ​ខ្ញុំ​នៅ​ពេល​ក្រោយ"
+
+#: src/konqsessiondialog.cpp:352
+#, kde-format
+msgctxt "@tooltip:copy url to clipboard"
+msgid "Copy url to clipboard:  %1"
+msgstr ""
+
 #: src/konqsessiondlg.cpp:60
 #, kde-format
 msgctxt "@title:window"
@@ -1692,71 +1757,6 @@ msgstr "លុប"
 #, kde-format
 msgid "Open tabs inside current window"
 msgstr "បើក​ផ្ទាំង​ខាង​ក្នុង​បង្អួច​បច្ចុប្បន្ន"
-
-#: src/konqsessionmanager.cpp:105
-#, kde-format
-msgctxt "@title:window"
-msgid "Restore Session?"
-msgstr "ស្ដារ​សម័យ​ឡើងវិញ​ឬ ?"
-
-#: src/konqsessionmanager.cpp:126
-#, kde-format
-msgid ""
-"Konqueror did not close correctly. Would you like to restore these previous "
-"sessions?"
-msgstr "Konqueror មិន​បាន​បិទ​ដោយ​ត្រឹមត្រូវ​ឡើយ ។ តើ​អ្នក​ស្ដារ​សម័យ​មុនៗ​ឬ ?"
-
-#: src/konqsessionmanager.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@tooltip:session list"
-#| msgid "Uncheck the sessions you do not want to be restored"
-msgctxt "@tooltip:session list"
-msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr "មិន​ពិនិត្យមើល​សម័យ​ដែល​អ្នក​មិន​ចង់​ស្ដារ​"
-
-#: src/konqsessionmanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Sessions"
-msgctxt "@item:treewidget"
-msgid "Session %1"
-msgstr "សម័យ"
-
-#  i18n: file konqueror.rc line 94
-#. i18n. Otherwise it would be easier to just use what is in the session file
-#: src/konqsessionmanager.cpp:186
-#, kde-format
-msgctxt "@item:treewidget"
-msgid "Window %1"
-msgstr "បង្អួច %1"
-
-#: src/konqsessionmanager.cpp:227
-#, kde-format
-msgid "Do not ask again"
-msgstr "កុំ​សួរ​ខ្ញុំ​​ម្ដងទៀត"
-
-#: src/konqsessionmanager.cpp:241
-#, kde-format
-msgctxt "@action:button yes"
-msgid "Restore Session"
-msgstr "ស្ដារ​សម័យ​"
-
-#: src/konqsessionmanager.cpp:242
-#, kde-format
-msgctxt "@action:button no"
-msgid "Do Not Restore"
-msgstr "កុំ​ស្ដារ​"
-
-#: src/konqsessionmanager.cpp:243
-#, kde-format
-msgctxt "@action:button ask later"
-msgid "Ask Me Later"
-msgstr "សួរ​ខ្ញុំ​នៅ​ពេល​ក្រោយ"
-
-#: src/konqsessionmanager.cpp:284
-#, kde-format
-msgctxt "@tooltip:copy url to clipboard"
-msgid "Copy url to clipboard:  %1"
-msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, fuzzy, kde-format

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 00:41+0000\n"
+"POT-Creation-Date: 2025-07-21 00:42+0000\n"
 "PO-Revision-Date: 2010-12-17 20:03+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1636,6 +1636,78 @@ msgstr "เปิดแท็บไว้ภายในหน้าต่าง
 msgid "Session n&ame:"
 msgstr "ชื่อ&วาระการใช้งาน:"
 
+#: src/konqsessiondialog.cpp:50
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions or windows you do not want to be restored"
+msgstr ""
+
+#: src/konqsessiondialog.cpp:95
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgctxt "@item:treewidget"
+msgid "Session %1"
+msgstr "วาระการใช้งาน"
+
+#. i18n. Otherwise it would be easier to just use what is in the session file
+#: src/konqsessiondialog.cpp:113
+#, fuzzy, kde-format
+#| msgid "&Window"
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "&หน้าต่าง"
+
+#: src/konqsessiondialog.cpp:262
+#, fuzzy, kde-format
+#| msgid "Restore Session?"
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "เรียกคืนวาระงานเดิมหรือไม่ ?"
+
+#: src/konqsessiondialog.cpp:283
+#, fuzzy, kde-format
+#| msgid ""
+#| "Konqueror did not close correctly. Would you like to restore the previous "
+#| "session?"
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr ""
+"โปรแกรม Konqueror ไม่ได้ถูกปิดโปรแกรมอย่างถูกต้อง "
+"คุณต้องการจะเรียกคืนวาระการใช้งานก่อนหน้านี้หรือไม่ ?"
+
+#: src/konqsessiondialog.cpp:298
+#, kde-format
+msgid "Do not ask again"
+msgstr ""
+
+#: src/konqsessiondialog.cpp:312
+#, fuzzy, kde-format
+#| msgid "Restore Session"
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "เรียกคืนวาระงาน"
+
+#: src/konqsessiondialog.cpp:313
+#, fuzzy, kde-format
+#| msgid "Do Not Restore"
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "ไม่ต้องเรียกคืน"
+
+#: src/konqsessiondialog.cpp:314
+#, fuzzy, kde-format
+#| msgid "Ask Me Later"
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "ถามอีกครั้งในภายหลัง"
+
+#: src/konqsessiondialog.cpp:352
+#, kde-format
+msgctxt "@tooltip:copy url to clipboard"
+msgid "Copy url to clipboard:  %1"
+msgstr ""
+
 #: src/konqsessiondlg.cpp:60
 #, fuzzy, kde-format
 #| msgid "Manage Sessions"
@@ -1705,78 +1777,6 @@ msgstr "ลบทิ้ง"
 #, kde-format
 msgid "Open tabs inside current window"
 msgstr "เปิดแท็บไว้ภายในหน้าต่างปัจจุบัน"
-
-#: src/konqsessionmanager.cpp:105
-#, fuzzy, kde-format
-#| msgid "Restore Session?"
-msgctxt "@title:window"
-msgid "Restore Session?"
-msgstr "เรียกคืนวาระงานเดิมหรือไม่ ?"
-
-#: src/konqsessionmanager.cpp:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "Konqueror did not close correctly. Would you like to restore the previous "
-#| "session?"
-msgid ""
-"Konqueror did not close correctly. Would you like to restore these previous "
-"sessions?"
-msgstr ""
-"โปรแกรม Konqueror ไม่ได้ถูกปิดโปรแกรมอย่างถูกต้อง "
-"คุณต้องการจะเรียกคืนวาระการใช้งานก่อนหน้านี้หรือไม่ ?"
-
-#: src/konqsessionmanager.cpp:148
-#, kde-format
-msgctxt "@tooltip:session list"
-msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr ""
-
-#: src/konqsessionmanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Sessions"
-msgctxt "@item:treewidget"
-msgid "Session %1"
-msgstr "วาระการใช้งาน"
-
-#. i18n. Otherwise it would be easier to just use what is in the session file
-#: src/konqsessionmanager.cpp:186
-#, fuzzy, kde-format
-#| msgid "&Window"
-msgctxt "@item:treewidget"
-msgid "Window %1"
-msgstr "&หน้าต่าง"
-
-#: src/konqsessionmanager.cpp:227
-#, kde-format
-msgid "Do not ask again"
-msgstr ""
-
-#: src/konqsessionmanager.cpp:241
-#, fuzzy, kde-format
-#| msgid "Restore Session"
-msgctxt "@action:button yes"
-msgid "Restore Session"
-msgstr "เรียกคืนวาระงาน"
-
-#: src/konqsessionmanager.cpp:242
-#, fuzzy, kde-format
-#| msgid "Do Not Restore"
-msgctxt "@action:button no"
-msgid "Do Not Restore"
-msgstr "ไม่ต้องเรียกคืน"
-
-#: src/konqsessionmanager.cpp:243
-#, fuzzy, kde-format
-#| msgid "Ask Me Later"
-msgctxt "@action:button ask later"
-msgid "Ask Me Later"
-msgstr "ถามอีกครั้งในภายหลัง"
-
-#: src/konqsessionmanager.cpp:284
-#, kde-format
-msgctxt "@tooltip:copy url to clipboard"
-msgid "Copy url to clipboard:  %1"
-msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, fuzzy, kde-format

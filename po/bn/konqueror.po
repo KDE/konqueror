@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 00:41+0000\n"
+"POT-Creation-Date: 2025-07-21 00:42+0000\n"
 "PO-Revision-Date: 2008-12-26 23:24-0800\n"
 "Last-Translator: Deepayan Sarkar <deepayan.sarkar@gmail.com>\n"
 "Language-Team: en_US <kde-translation@bengalinux.org>\n"
@@ -1653,6 +1653,74 @@ msgstr "ট্যাব বর্তমান উইণ্ডোয় খোলো
 msgid "Session n&ame:"
 msgstr "সে&শনের নাম:"
 
+#: src/konqsessiondialog.cpp:50
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions or windows you do not want to be restored"
+msgstr ""
+
+#: src/konqsessiondialog.cpp:95
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgctxt "@item:treewidget"
+msgid "Session %1"
+msgstr "সেশনসমূহ"
+
+#. i18n. Otherwise it would be easier to just use what is in the session file
+#: src/konqsessiondialog.cpp:113
+#, fuzzy, kde-format
+#| msgid "&Window"
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "&উইণ্ডো"
+
+#: src/konqsessiondialog.cpp:262
+#, fuzzy, kde-format
+#| msgid "Restore Session?"
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "সেশন আবার চালু করব?"
+
+#: src/konqsessiondialog.cpp:283
+#, fuzzy, kde-format
+#| msgid "Konqueror didn't close correctly. Would you like to restore session?"
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr "কনকরার সঠিকভাবে বন্ধ হয়নি। আপনি কি তৎকালীন সেশনগুলি আবার চালু করতে চান?"
+
+#: src/konqsessiondialog.cpp:298
+#, kde-format
+msgid "Do not ask again"
+msgstr ""
+
+#: src/konqsessiondialog.cpp:312
+#, fuzzy, kde-format
+#| msgid "Restore Session"
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "সেশন আবার চালু করো"
+
+#: src/konqsessiondialog.cpp:313
+#, fuzzy, kde-format
+#| msgid "Do Not Restore"
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "চালু কোর না"
+
+#: src/konqsessiondialog.cpp:314
+#, fuzzy, kde-format
+#| msgid "Ask Me Later"
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "পরে জিজ্ঞাসা কোরো"
+
+#: src/konqsessiondialog.cpp:352
+#, kde-format
+msgctxt "@tooltip:copy url to clipboard"
+msgid "Copy url to clipboard:  %1"
+msgstr ""
+
 #: src/konqsessiondlg.cpp:60
 #, fuzzy, kde-format
 #| msgid "Manage Sessions"
@@ -1720,74 +1788,6 @@ msgstr "মুছে ফেলো"
 #, kde-format
 msgid "Open tabs inside current window"
 msgstr "ট্যাব বর্তমান উইণ্ডোয় খোলো"
-
-#: src/konqsessionmanager.cpp:105
-#, fuzzy, kde-format
-#| msgid "Restore Session?"
-msgctxt "@title:window"
-msgid "Restore Session?"
-msgstr "সেশন আবার চালু করব?"
-
-#: src/konqsessionmanager.cpp:126
-#, fuzzy, kde-format
-#| msgid "Konqueror didn't close correctly. Would you like to restore session?"
-msgid ""
-"Konqueror did not close correctly. Would you like to restore these previous "
-"sessions?"
-msgstr "কনকরার সঠিকভাবে বন্ধ হয়নি। আপনি কি তৎকালীন সেশনগুলি আবার চালু করতে চান?"
-
-#: src/konqsessionmanager.cpp:148
-#, kde-format
-msgctxt "@tooltip:session list"
-msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr ""
-
-#: src/konqsessionmanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Sessions"
-msgctxt "@item:treewidget"
-msgid "Session %1"
-msgstr "সেশনসমূহ"
-
-#. i18n. Otherwise it would be easier to just use what is in the session file
-#: src/konqsessionmanager.cpp:186
-#, fuzzy, kde-format
-#| msgid "&Window"
-msgctxt "@item:treewidget"
-msgid "Window %1"
-msgstr "&উইণ্ডো"
-
-#: src/konqsessionmanager.cpp:227
-#, kde-format
-msgid "Do not ask again"
-msgstr ""
-
-#: src/konqsessionmanager.cpp:241
-#, fuzzy, kde-format
-#| msgid "Restore Session"
-msgctxt "@action:button yes"
-msgid "Restore Session"
-msgstr "সেশন আবার চালু করো"
-
-#: src/konqsessionmanager.cpp:242
-#, fuzzy, kde-format
-#| msgid "Do Not Restore"
-msgctxt "@action:button no"
-msgid "Do Not Restore"
-msgstr "চালু কোর না"
-
-#: src/konqsessionmanager.cpp:243
-#, fuzzy, kde-format
-#| msgid "Ask Me Later"
-msgctxt "@action:button ask later"
-msgid "Ask Me Later"
-msgstr "পরে জিজ্ঞাসা কোরো"
-
-#: src/konqsessionmanager.cpp:284
-#, kde-format
-msgctxt "@tooltip:copy url to clipboard"
-msgid "Copy url to clipboard:  %1"
-msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, fuzzy, kde-format

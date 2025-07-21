@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 00:41+0000\n"
+"POT-Creation-Date: 2025-07-21 00:42+0000\n"
 "PO-Revision-Date: 2021-06-19 19:45+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1670,6 +1670,72 @@ msgstr "தற்போதைய சாளரத்தில் ஆவணத்�
 msgid "Session n&ame:"
 msgstr "அனுமதிகள்"
 
+#: src/konqsessiondialog.cpp:50
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions or windows you do not want to be restored"
+msgstr ""
+
+#: src/konqsessiondialog.cpp:95
+#, fuzzy, kde-format
+#| msgid "Permissions"
+msgctxt "@item:treewidget"
+msgid "Session %1"
+msgstr "அனுமதிகள்"
+
+#. i18n. Otherwise it would be easier to just use what is in the session file
+#: src/konqsessiondialog.cpp:113
+#, fuzzy, kde-format
+#| msgid "&Window"
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "&சாளரம்"
+
+#: src/konqsessiondialog.cpp:262
+#, fuzzy, kde-format
+#| msgid "Renaming"
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "மறுபெயரிடல்"
+
+#: src/konqsessiondialog.cpp:283
+#, kde-format
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr ""
+
+#: src/konqsessiondialog.cpp:298
+#, kde-format
+msgid "Do not ask again"
+msgstr ""
+
+#: src/konqsessiondialog.cpp:312
+#, fuzzy, kde-format
+#| msgid "Renaming"
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "மறுபெயரிடல்"
+
+#: src/konqsessiondialog.cpp:313
+#, kde-format
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr ""
+
+#: src/konqsessiondialog.cpp:314
+#, fuzzy, kde-format
+#| msgid "As New Folder"
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "As New Folder"
+
+#: src/konqsessiondialog.cpp:352
+#, kde-format
+msgctxt "@tooltip:copy url to clipboard"
+msgid "Copy url to clipboard:  %1"
+msgstr ""
+
 #: src/konqsessiondlg.cpp:60
 #, fuzzy, kde-format
 msgctxt "@title:window"
@@ -1738,72 +1804,6 @@ msgstr "இணைப்பை நீக்கு"
 #| msgid "Open the document in current window"
 msgid "Open tabs inside current window"
 msgstr "தற்போதைய சாளரத்தில் ஆவணத்தைத் திற"
-
-#: src/konqsessionmanager.cpp:105
-#, fuzzy, kde-format
-#| msgid "Renaming"
-msgctxt "@title:window"
-msgid "Restore Session?"
-msgstr "மறுபெயரிடல்"
-
-#: src/konqsessionmanager.cpp:126
-#, kde-format
-msgid ""
-"Konqueror did not close correctly. Would you like to restore these previous "
-"sessions?"
-msgstr ""
-
-#: src/konqsessionmanager.cpp:148
-#, kde-format
-msgctxt "@tooltip:session list"
-msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr ""
-
-#: src/konqsessionmanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Permissions"
-msgctxt "@item:treewidget"
-msgid "Session %1"
-msgstr "அனுமதிகள்"
-
-#. i18n. Otherwise it would be easier to just use what is in the session file
-#: src/konqsessionmanager.cpp:186
-#, fuzzy, kde-format
-#| msgid "&Window"
-msgctxt "@item:treewidget"
-msgid "Window %1"
-msgstr "&சாளரம்"
-
-#: src/konqsessionmanager.cpp:227
-#, kde-format
-msgid "Do not ask again"
-msgstr ""
-
-#: src/konqsessionmanager.cpp:241
-#, fuzzy, kde-format
-#| msgid "Renaming"
-msgctxt "@action:button yes"
-msgid "Restore Session"
-msgstr "மறுபெயரிடல்"
-
-#: src/konqsessionmanager.cpp:242
-#, kde-format
-msgctxt "@action:button no"
-msgid "Do Not Restore"
-msgstr ""
-
-#: src/konqsessionmanager.cpp:243
-#, fuzzy, kde-format
-#| msgid "As New Folder"
-msgctxt "@action:button ask later"
-msgid "Ask Me Later"
-msgstr "As New Folder"
-
-#: src/konqsessionmanager.cpp:284
-#, kde-format
-msgctxt "@tooltip:copy url to clipboard"
-msgid "Copy url to clipboard:  %1"
-msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:67
 #, fuzzy, kde-format
