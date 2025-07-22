@@ -292,7 +292,9 @@ bool WebEnginePage::shouldOpenUrl(const QUrl& url) const
         qCDebug(WEBENGINEPART_LOG) << "Konqueror application should provide BrowserInterface but it doesn't";
         return true;
     }
-    QString partToUse = iface->partForLocalFile(url.path(), part()->arguments().mimeType());
+    QMimeDatabase db;
+    QMimeType mime = db.mimeTypeForFile(url.path());
+    QString partToUse = iface->partForLocalFile(url.path(), mime.name());
     return partToUse == part()->metaData().pluginId();
 }
 
