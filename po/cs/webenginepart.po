@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-26 00:41+0000\n"
+"POT-Creation-Date: 2025-07-26 00:42+0000\n"
 "PO-Revision-Date: 2024-05-30 13:45+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -948,7 +948,7 @@ msgstr ""
 "\n"
 "Integrace bude vypnuta."
 
-#: src/webenginepage.cpp:350
+#: src/webenginepage.cpp:352
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -957,12 +957,12 @@ msgid ""
 "Otherwise, click the Continue button to display the webpage again.</p>"
 msgstr ""
 
-#: src/webenginepage.cpp:357
+#: src/webenginepage.cpp:359
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Znovu poslat informace"
 
-#: src/webenginepage.cpp:554
+#: src/webenginepage.cpp:556
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -971,18 +971,18 @@ msgstr ""
 "Tento server se pokouší přistupovat k informacím o vaší fyzické pozici.\n"
 "Přejete si povolit mu přístup?"
 
-#: src/webenginepage.cpp:558 src/webenginepage.cpp:636
-#: src/webenginepage.cpp:647
+#: src/webenginepage.cpp:560 src/webenginepage.cpp:638
+#: src/webenginepage.cpp:649
 #, kde-format
 msgid "Network Transmission"
 msgstr "Síťový přenos"
 
-#: src/webenginepage.cpp:559
+#: src/webenginepage.cpp:561
 #, kde-format
 msgid "Allow access"
 msgstr "Povolit přístup"
 
-#: src/webenginepage.cpp:629
+#: src/webenginepage.cpp:631
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -995,12 +995,12 @@ msgstr ""
 "Někdo jiný může být schopen odchytit a zobrazit tuto informaci.\n"
 "Opravdu si přejete poslat data nešifrovaně?"
 
-#: src/webenginepage.cpp:637
+#: src/webenginepage.cpp:639
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "Ode&slat nešifrovaně"
 
-#: src/webenginepage.cpp:644
+#: src/webenginepage.cpp:646
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1009,12 +1009,12 @@ msgstr ""
 "Tento server se pokouší odeslat data z formuláře pomocí e-mailu.\n"
 "Přejete si pokračovat?"
 
-#: src/webenginepage.cpp:648
+#: src/webenginepage.cpp:650
 #, kde-format
 msgid "&Send Email"
 msgstr "Ode&slat e-mail"
 
-#: src/webenginepage.cpp:697
+#: src/webenginepage.cpp:699
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1023,22 +1023,22 @@ msgstr ""
 "<qt>Přejete si této stránce umožnit, aby k e-mailové zprávě přiložila "
 "následující soubory?</qt>"
 
-#: src/webenginepage.cpp:699
+#: src/webenginepage.cpp:701
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Potvrzení přílohy e-mailu"
 
-#: src/webenginepage.cpp:700
+#: src/webenginepage.cpp:702
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Povolit přílohy"
 
-#: src/webenginepage.cpp:701
+#: src/webenginepage.cpp:703
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignorovat přílohy"
 
-#: src/webenginepage.cpp:715
+#: src/webenginepage.cpp:717
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1047,12 +1047,12 @@ msgstr ""
 "Tento server se pokusil při odeslání formuláře připojit soubor z vašeho "
 "počítače. Příloha byla pro vaši bezpečnost odstraněna."
 
-#: src/webenginepage.cpp:718
+#: src/webenginepage.cpp:720
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Příloha odebrána"
 
-#: src/webenginepage.cpp:851
+#: src/webenginepage.cpp:853
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1061,7 +1061,7 @@ msgstr ""
 "Tato stránka žádá o otevření nového vyskakovacího okna.\n"
 "Přejete si to povolit?"
 
-#: src/webenginepage.cpp:853
+#: src/webenginepage.cpp:855
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1070,17 +1070,17 @@ msgstr ""
 "<qt>Tato stránka žádá o otevření vyskakovacího okna na<br /><b>%1</b><br/"
 ">Přejete si to povolit?</qt>"
 
-#: src/webenginepage.cpp:856
+#: src/webenginepage.cpp:858
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Potvrzeni vyskakovacího okna Java Scriptu"
 
-#: src/webenginepage.cpp:857
+#: src/webenginepage.cpp:859
 #, kde-format
 msgid "Allow"
 msgstr "Povolit"
 
-#: src/webenginepage.cpp:857
+#: src/webenginepage.cpp:859
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Nepovolovat"

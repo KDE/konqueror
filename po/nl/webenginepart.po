@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-26 00:41+0000\n"
+"POT-Creation-Date: 2025-07-26 00:42+0000\n"
 "PO-Revision-Date: 2025-05-26 11:10+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -967,7 +967,7 @@ msgstr ""
 "\n"
 "De integratie zal worden uitgeschakeld."
 
-#: src/webenginepage.cpp:350
+#: src/webenginepage.cpp:352
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -981,12 +981,12 @@ msgstr ""
 "een dubbele aanakoop te voorkomen. Klik anders op de knop Doorgaan om de "
 "webpagina opnieuw te tonen.</p>"
 
-#: src/webenginepage.cpp:357
+#: src/webenginepage.cpp:359
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Informatie opnieuw verzenden"
 
-#: src/webenginepage.cpp:554
+#: src/webenginepage.cpp:556
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -996,18 +996,18 @@ msgstr ""
 "locatie.\n"
 "Wilt u deze toegang toestaan?"
 
-#: src/webenginepage.cpp:558 src/webenginepage.cpp:636
-#: src/webenginepage.cpp:647
+#: src/webenginepage.cpp:560 src/webenginepage.cpp:638
+#: src/webenginepage.cpp:649
 #, kde-format
 msgid "Network Transmission"
 msgstr "Netwerkverkeer"
 
-#: src/webenginepage.cpp:559
+#: src/webenginepage.cpp:561
 #, kde-format
 msgid "Allow access"
 msgstr "Toegang toestaan"
 
-#: src/webenginepage.cpp:629
+#: src/webenginepage.cpp:631
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1021,12 +1021,12 @@ msgstr ""
 "en te bekijken.\n"
 "Wilt u doorgaan?"
 
-#: src/webenginepage.cpp:637
+#: src/webenginepage.cpp:639
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "Zonder ver&sleuteling verzenden"
 
-#: src/webenginepage.cpp:644
+#: src/webenginepage.cpp:646
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1035,12 +1035,12 @@ msgstr ""
 "Deze website tracht formuliergegevens te verzenden via e-mail.\n"
 "Wilt u doorgaan?"
 
-#: src/webenginepage.cpp:648
+#: src/webenginepage.cpp:650
 #, kde-format
 msgid "&Send Email"
 msgstr "E-mail ver&zenden"
 
-#: src/webenginepage.cpp:697
+#: src/webenginepage.cpp:699
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1049,22 +1049,22 @@ msgstr ""
 "<qt>Wilt u deze site toestaan om de volgende bestanden als bijlagen aan het "
 "e-mailbericht te hangen?</qt>"
 
-#: src/webenginepage.cpp:699
+#: src/webenginepage.cpp:701
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Bevestiging van bijlagen aan e-mailbericht"
 
-#: src/webenginepage.cpp:700
+#: src/webenginepage.cpp:702
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Bijlagen toestaan"
 
-#: src/webenginepage.cpp:701
+#: src/webenginepage.cpp:703
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "Bijl&agen negeren"
 
-#: src/webenginepage.cpp:715
+#: src/webenginepage.cpp:717
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1073,12 +1073,12 @@ msgstr ""
 "Deze website trachtte een bestand van uw computer in te voegen in de "
 "verzending van een formulier. Deze bijlage is verwijderd om u te beschermen."
 
-#: src/webenginepage.cpp:718
+#: src/webenginepage.cpp:720
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Bijlage verwijderd"
 
-#: src/webenginepage.cpp:851
+#: src/webenginepage.cpp:853
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1087,7 +1087,7 @@ msgstr ""
 "Deze website probeert een nieuw pop-up-venster te openen.\n"
 "Wilt u dit toestaan?"
 
-#: src/webenginepage.cpp:853
+#: src/webenginepage.cpp:855
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1096,17 +1096,17 @@ msgstr ""
 "<qt>Deze website probeert een pop-up-venster te openen naar <p>%1</p><br/"
 ">Wilt u dit toestaan?</qt>"
 
-#: src/webenginepage.cpp:856
+#: src/webenginepage.cpp:858
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Bevestiging van Javascript-pop-up"
 
-#: src/webenginepage.cpp:857
+#: src/webenginepage.cpp:859
 #, kde-format
 msgid "Allow"
 msgstr "Toestaan"
 
-#: src/webenginepage.cpp:857
+#: src/webenginepage.cpp:859
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Niet toestaan"
