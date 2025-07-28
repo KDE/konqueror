@@ -18,6 +18,8 @@
 #include <QAbstractButton>
 #include <QResizeEvent>
 #include <QLayout>
+#include <QFileInfo>
+#include <QDir>
 
 using namespace WebEngine;
 using namespace Konq;
@@ -37,15 +39,16 @@ ActOnDownloadedFileBar::ActOnDownloadedFileBar(const QUrl &url, const QUrl& down
     setCloseButtonVisible(true);
 
     setupOpenAction();
-    connect(m_openAction, &QAction::triggered, this, [this](){actOnChoice(UrlAction::Open, true, {});});
+    connect(m_openAction, &QAction::triggered, this, [this](){actOnDownloadedUrl(UrlAction::Open, true, {});});
     setupEmbedAction(true);
     setupEmbedAction(false);
     if (m_embedActionNewTab) {
-        connect(m_embedActionNewTab, &QAction::triggered, this, [this](){actOnChoice(UrlAction::Embed, true, {});});
+        connect(m_embedActionNewTab, &QAction::triggered, this, [this](){actOnDownloadedUrl(UrlAction::Embed, true, {});});
     }
     if (m_embedActionHere) {
-        connect(m_embedActionHere, &QAction::triggered, this, [this](){actOnChoice(UrlAction::Embed, false, {});});
+        connect(m_embedActionHere, &QAction::triggered, this, [this](){actOnDownloadedUrl(UrlAction::Embed, false, {});});
     }
+    setupEmbedDirectoryAction();
 
     connect(m_timer, &QTimer::timeout, this, [this](){animatedHide();});
     m_timer->setSingleShot(true);
@@ -70,8 +73,8 @@ void WebEngine::ActOnDownloadedFileBar::setElidedText()
     //Start from the width of the layout's contents rectangle
     int maxWidth = layout()->contentsRect().width();
     //Subtract the spacing between widgets multiplied by the number of buttons
-    maxWidth -= layout()->spacing() * buttons().count();
     QList<QAbstractButton*>btns = buttons();
+    maxWidth -= layout()->spacing() * btns.count();
     //Subtract the total width of the buttons
     maxWidth -= std::accumulate(btns.constBegin(), btns.constEnd(), 0, [](int res, auto *b){return res + b->width();});
     //Reduce the resulting value by 20% to be on the safe side: better to truncate some characters
@@ -134,7 +137,7 @@ void WebEngine::ActOnDownloadedFileBar::setupOpenAction()
     KService::List apps = KFileItemActions::associatedApplications(QStringList{m_mimeType});
     QMenu *menu = createOpenWithMenu(apps);
     connect(menu, &QMenu::triggered, this, [this](QAction *action){
-        actOnChoice(Konq::UrlAction::Open, true, action ? action->data() : QVariant());
+        actOnDownloadedUrl(Konq::UrlAction::Open, true, action ? action->data() : QVariant());
     });
     m_openAction->setMenu(menu);
     if (apps.isEmpty()) {
@@ -184,10 +187,12 @@ void WebEngine::ActOnDownloadedFileBar::setupEmbedAction(bool newTab)
     QString actionName = newTab ? i18nc("@action:button", "Show in new tab") : i18nc("@action:button", "Show here");
     act = new QAction(QIcon::fromTheme(md.iconName()), actionName, this);
     QMenu *menu = createEmbedWithMenu(parts);
-    connect(menu, &QMenu::triggered, this, [this, newTab](QAction *action){
-        actOnChoice(Konq::UrlAction::Embed, newTab, action ? action->data() : QVariant());
-    });
-    act->setMenu(menu);
+    if (menu) {
+        connect(menu, &QMenu::triggered, this, [this, newTab](QAction *action){
+            actOnDownloadedUrl(Konq::UrlAction::Embed, newTab, action ? action->data() : QVariant());
+        });
+        act->setMenu(menu);
+    }
     addAction(act);
 }
 
@@ -205,10 +210,38 @@ QMenu* WebEngine::ActOnDownloadedFileBar::createEmbedWithMenu(const QList<KPlugi
     QList<QAction*> actions;
     std::transform(parts.constBegin(), parts.constEnd(), std::back_inserter(actions), createAction);
     QMenu *menu = createMenu(actions);
-    connect(menu, &QMenu::triggered, this, [this](QAction *action){
-        actOnChoice(Konq::UrlAction::Embed, true, action ? action->data() : QVariant());
-    });
+    if (menu) {
+        connect(menu, &QMenu::triggered, this, [this](QAction *action){
+            actOnDownloadedUrl(Konq::UrlAction::Embed, true, action ? action->data() : QVariant());
+        });
+    }
     return menu;
+}
+
+void WebEngine::ActOnDownloadedFileBar::setupEmbedDirectoryAction()
+{
+    QString dir = QFileInfo(m_downloadUrl.path()).dir().path();
+    const QString mimetype = QStringLiteral("inode/directory");
+    QList<KPluginMetaData> mds = KParts::PartLoader::partsForMimeType(mimetype);
+    if (!QFileInfo(dir).isDir() || mds.isEmpty()) {
+        return;
+    }
+    KPluginMetaData md = mds.at(0);
+    QIcon icon = QIcon::fromTheme(md.iconName());
+    m_embedDirectory = new QAction(icon, i18nc("@action:button Display the folder which contains the downloaded file", "Show containing folder"), this);
+    QAction *displayNewTab = new QAction(icon, i18nc("@action:menu Display the folder which contains the downloaded file in a new tab", "Show containing folder in new tab"), this);
+    QAction *displayThisTab = new QAction(icon, i18nc("@action:menu Display the folder which contains the downloaded file in this tab", "Show containing folder here"), this);
+
+    auto lambdaDisplayHere = [this, dir, md]{displayDirectory(dir, false, md.pluginId());};
+    auto lambdaDisplayNewTab = [this, dir, md]{displayDirectory(dir, true, md.pluginId());};
+    connect(m_embedDirectory, &QAction::triggered, this, lambdaDisplayHere);
+    connect(displayNewTab, &QAction::triggered, this, lambdaDisplayNewTab);
+    connect(displayThisTab, &QAction::triggered, this, lambdaDisplayHere);
+
+    QMenu *menu = createMenu({displayThisTab, displayNewTab});
+    m_embedDirectory->setMenu(menu);
+
+    addAction(m_embedDirectory);
 }
 
 QMenu* WebEngine::ActOnDownloadedFileBar::createMenu(const QList<QAction*> &actions)
@@ -224,26 +257,37 @@ QMenu* WebEngine::ActOnDownloadedFileBar::createMenu(const QList<QAction*> &acti
     return menu;
 }
 
-void WebEngine::ActOnDownloadedFileBar::actOnChoice(Konq::UrlAction choice, bool newTab, const QVariant &data)
+void WebEngine::ActOnDownloadedFileBar::actOnDownloadedUrl(Konq::UrlAction choice, bool newTab, const QVariant &data)
 {
-    if (!m_part) {
+    actOnChoice(choice, m_downloadUrl, m_mimeType, newTab, data.toString());
+}
+
+void WebEngine::ActOnDownloadedFileBar::displayDirectory(const QString& dir, bool newTab, const QString &part)
+{
+    actOnChoice(Konq::UrlAction::Embed, QUrl::fromLocalFile(dir), QStringLiteral("inode/directory"), newTab, part);
+}
+
+void WebEngine::ActOnDownloadedFileBar::actOnChoice(Konq::UrlAction action, const QUrl &url, const QString &mimetype, bool newTab, const QString& name)
+{
+    if (!m_part || (action != Konq::UrlAction::Embed && action != Konq::UrlAction::Open)) {
         return;
     }
-
     KParts::OpenUrlArguments args;
-    args.setMimeType(m_mimeType);
+    args.setMimeType(mimetype);
     BrowserArguments bargs;
-    if (data.isValid()) {
-        if (choice == Konq::UrlAction::Embed) {
-            bargs.setEmbedWith(data.toString());
+    if (!name.isEmpty()) {
+        if (action == Konq::UrlAction::Embed) {
+            bargs.setEmbedWith(name);
         } else {
-            bargs.setOpenWith(data.toString());
+            bargs.setOpenWith(name);
         }
     }
-    bargs.setAllowedUrlActions(AllowedUrlActions{choice});
+    bargs.setAllowedUrlActions(AllowedUrlActions{action});
     bargs.setForcesNewWindow(newTab);
     bargs.setNewTab(newTab);
-    m_part->browserExtension()->browserOpenUrlRequest(m_downloadUrl, args, bargs);
+    m_part->browserExtension()->browserOpenUrlRequest(url, args, bargs);
     animatedHide();
     deleteLater();
 }
+
+

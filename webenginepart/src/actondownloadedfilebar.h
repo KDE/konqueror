@@ -35,10 +35,14 @@ namespace WebEngine {
  * To avoid disrupting the user workflow in case he isn't interested at opening it, this widget
  * is automatically hidden after 5 seconds, unless the user starts interacting with it.
  *
- * This widget provides the user three buttons:
+ * This widget provides the user four buttons:
  * - open: opens the file in an external application
  * - embed: shows the file in Konqueror replacing the current view
  * - embed in a new tab: shows the file in a new tab inside Konqueror
+ * - display the containing directory: allows to show the folder where the file was downloaded
+ *  either in this tab or in a new tab. To avoid cluttering the interface, there's just one button
+ *  with a menu: clicking the button opens the directory in the current tab; the menu provides the
+ *  option to open it in a new tab.
  *
  * If there are multiple applications able to open the file, the "Open" button also has a menu where
  * the user can choose which application to use. The same for the "Embed here" and "Embed in new tab"
@@ -154,6 +158,13 @@ private:
     void setupEmbedAction(bool newTab);
 
     /**
+     * @brief Fills the contents of the "Show containing folder" action
+     *
+     * It also creates the menu and connects the action
+     */
+    void setupEmbedDirectoryAction();
+
+    /**
      * @brief A list of all the buttons in the bar
      *
      * As `KMessageWidget` doesn't provide access to buttons, this uses `QObject::findChildren` with template
@@ -163,15 +174,42 @@ private:
     QList<QAbstractButton*> buttons() const;
 
 private Q_SLOTS:
+
     /**
-     * @brief Carries out the choice made by the user
+     * @brief Opens or embeds the downloaded file depending on which button the user clicked
      *
      * @param choice whether to open or embed the file
      * @param newTab whether the file should be embedded in a new tab or here. It's ignored if @p action is #Open
      * @param data the data describing the part or application to use, if the user chose one from the menu.
      *  If invalid, the default application or part is used.
+     * @note This isn't called when the user clicks on the _Show containing folder_ button
      */
-    void actOnChoice(Konq::UrlAction choice, bool newTab, const QVariant &data);
+    void actOnDownloadedUrl(Konq::UrlAction choice, bool newTab, const QVariant &data);
+
+    /**
+     * @brief Displays the directory containing the downloaded file in the current tab or in a new tab
+     *
+     * @param dir the directory to display
+     * @param newTab whether the directory should be displayed in a new tab or in the current tab
+     * @param part the id of the part to display the directory with
+     */
+    void displayDirectory(const QString &dir, bool newTab, const QString &part);
+
+private:
+
+    /**
+     * @brief Opens or embeds the given URL
+     *
+     * @param action the action to carry out. It can only be Konq::UrlAction::Open or Konq::UrlAction::Embed:
+     * if any other value is given, nothing is done
+     * @param url the URL to open or embed
+     * @param mimetype the mimetype of @p url
+     * @param newTab `true` if the URL should be embedded in a new tab and `false`
+     * if it should be embedded in this tab. It's ignored if @p action is Konq::UrlAction::Open
+     * @param name the name of the application or the id of the part to use. If
+     * empty, the default application or part will be used
+     */
+    void actOnChoice(Konq::UrlAction action, const QUrl &url, const QString &mimetype, bool newTab, const QString &name);
 
 private:
     QPointer<WebEnginePart> m_part; //!< The part associated with this widget
@@ -180,6 +218,7 @@ private:
     QAction *m_openAction = nullptr; //!< The action which opens the file in an external application
     QAction *m_embedActionHere = nullptr; //!< The action which embeds the file in the current view
     QAction *m_embedActionNewTab = nullptr; //!< The action which embeds the file in a new tab
+    QAction *m_embedDirectory = nullptr; //!< The action which opens the directory where the file has been saved to
     QString m_mimeType; //!< The mimetype of the file. It's determined using `QMimeDatabase::mimeTypeForFile`
     QTimer* m_timer; //!< Timer which hides the widget. It's stopped when the user opens a menu and restarted when he closes it
 };
