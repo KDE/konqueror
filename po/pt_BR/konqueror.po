@@ -6,7 +6,7 @@
 # Henrique Pinto <stampede@coltec.ufmg.br>, 2003.
 # Lisiane Sztoltz Teixeira <lisiane@kdemail.net>, 2003, 2004, 2005.
 # Lisiane Sztoltz Teixeira <lisiane@conectiva.com.br>, 2004.
-# Marcus Gama <marcus.gama@gmail.com>, 2004.
+# SPDX-FileCopyrightText: 2004, 2025 Marcus Gama <marcus.gama@gmail.com>
 # Diniz Bortolotto <diniz.bortolotto@gmail.com>, 2007, 2008.
 # doutor.zero <doutor.zero@gmail.com>, 2007.
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2019.
@@ -19,15 +19,15 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-21 00:42+0000\n"
-"PO-Revision-Date: 2023-11-14 11:35-0300\n"
-"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"PO-Revision-Date: 2025-08-04 14:53-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -40,108 +40,96 @@ msgid "Your emails"
 msgstr "rodrigo@conectiva.com.br, doutor.zero@gmail.com, alvarenga@kde.org"
 
 #: src/configdialog.cpp:72
-#, fuzzy, kde-format
-#| msgid "File Management"
+#, kde-format
 msgctxt ""
 "@title:tab The file manager behavior tab. Also used in the list of tabs for "
 "consistency"
 msgid "File Manager Behavior"
-msgstr "Gerenciamento de arquivos"
+msgstr "Comportamento do gerenciador de arquivos"
 
 #: src/downloadactionquestion.cpp:162
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "Tipo: %1"
 
 #: src/downloadactionquestion.cpp:170
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "Lembrar ação para arquivos deste tipo"
 
 #: src/downloadactionquestion.cpp:286
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
-msgstr ""
+msgstr "Salvar '%1'?"
 
 #: src/downloadactionquestion.cpp:288
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr "Abrir com %1"
+msgstr "Abrir '%1'?"
 
 #: src/downloadactionquestion.cpp:306
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr "Abrir c&om"
+msgstr "Abrir c&om..."
 
 #: src/downloadactionquestion.cpp:314 src/downloadactionquestion.cpp:467
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr "Abrir com %1"
+msgstr "A&brir com %1"
 
 #: src/downloadactionquestion.cpp:323
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "Abrir c&om"
 
 #: src/downloadactionquestion.cpp:339
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
-msgstr "Mostrar"
+msgstr "&Mostrar em %1"
 
 #: src/downloadactionquestion.cpp:351
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
-msgstr "Mostrar"
+msgstr "M&ostrar em"
 
 #: src/downloadactionquestion.cpp:373
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Abrir com %1"
+msgstr "Abrir &com %1"
 
 #: src/downloadactionquestion.cpp:405
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
-msgstr "Mostrar"
+msgstr "Mostrar &em %1"
 
 #: src/downloadactionquestion.cpp:427
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
-msgstr ""
+msgstr "Visualizadores não suportam este arquivo"
 
 #: src/downloadactionquestion.cpp:431
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
-msgstr ""
+msgstr "É improvável que os visualizadores exibam o arquivo"
 
 #: src/downloadactionquestion.cpp:432
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
-msgstr ""
+msgstr "este arquivo"
 
 #: src/downloadactionquestion.cpp:433
 #, kde-format
@@ -151,18 +139,22 @@ msgid ""
 "type is incorrect or if a viewer can display %1 even if it doesn't "
 "officially support it.</p>"
 msgstr ""
+"<p>Visualizadores que não deveriam ser capazes de exibir %1. Usá-los "
+"provavelmente falhará.</p><p>Estas opções são fornecidas caso o tipo de "
+"arquivo detectado esteja incorreto ou se um visualizador puder exibir %1 "
+"mesmo que não o suporte oficialmente.</p>"
 
 #: src/downloadactionquestion.cpp:454
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr ""
+msgstr "Nome: %1"
 
 #: src/downloadactionquestion.cpp:456
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "Este é o nome de arquivo sugerido pelo servidor"
 
 #: src/konqapplication.cpp:116
 #, kde-format
@@ -557,10 +549,9 @@ msgid "profile"
 msgstr "perfil"
 
 #: src/konqapplication.cpp:230
-#, fuzzy, kde-format
-#| msgid "List available sessions"
+#, kde-format
 msgid "List available sessions and exit"
-msgstr "Lista as seções disponíveis"
+msgstr "Listar as seções disponíveis e sair"
 
 #: src/konqapplication.cpp:231
 #, kde-format
@@ -684,7 +675,7 @@ msgstr ""
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: src/konqframestatusbar.cpp:155
 #, kde-format
@@ -1676,19 +1667,16 @@ msgid "Session n&ame:"
 msgstr "&Nome da sessão:"
 
 #: src/konqsessiondialog.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@tooltip:session list"
-#| msgid "Uncheck the sessions you do not want to be restored"
+#, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr "Desmarque as sessões que não deseja restaurar"
+msgstr "Desmarque as sessões ou janelas que não deseja restaurar"
 
 #: src/konqsessiondialog.cpp:95
-#, fuzzy, kde-format
-#| msgid "Sessions"
+#, kde-format
 msgctxt "@item:treewidget"
 msgid "Session %1"
-msgstr "Sessões"
+msgstr "Sessão %1"
 
 #. i18n. Otherwise it would be easier to just use what is in the session file
 #: src/konqsessiondialog.cpp:113
@@ -1739,7 +1727,7 @@ msgstr "Pergunte-me mais tarde"
 #, kde-format
 msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"
-msgstr ""
+msgstr "Copiar url para a área de transferência:  %1"
 
 #: src/konqsessiondlg.cpp:60
 #, kde-format
@@ -1988,12 +1976,10 @@ msgid "Execute"
 msgstr "Executar"
 
 #: src/urlloader.cpp:429
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display"
+#, kde-format
 msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
-msgstr "Mostrar"
+msgstr "Exibir"
 
 #: src/urlloader.cpp:436
 #, kde-kuit-format

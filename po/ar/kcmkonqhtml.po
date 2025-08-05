@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 00:41+0000\n"
-"PO-Revision-Date: 2025-03-02 10:37+0400\n"
+"PO-Revision-Date: 2025-08-04 18:47+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -51,7 +51,7 @@ msgstr "الصور"
 #: appearance.cpp:52
 #, kde-format
 msgid "A&utomatically load images"
-msgstr "&حمّل الصور آليًا"
+msgstr "&حمّل الصور آليًّا"
 
 #: appearance.cpp:53
 #, kde-format
@@ -62,7 +62,7 @@ msgid ""
 "image button.<br />Unless you have a very slow network connection, you will "
 "probably want to check this box to enhance your browsing experience.</html>"
 msgstr ""
-"<html>إن علّمت هذا المربّع، سيحمّل كنكر أيّة صور مُضمَّنة في صفحة الوِب آليًا. وإلّا "
+"<html>إن علّمت هذا المربّع، سيحمّل كنكر أيّة صور مُضمَّنة في صفحة الوِب آليًّا. وإلّا "
 "سيعرض ماسكات مكان للصور؛ ليمكنك تحميلها يدويًا بنقر زرّ الصورة.<br />إلّا إذا "
 "كان لديك اتّصال شبكة بطيء للغاية، فقد تحتاج غالبًا إلى تعليم هذا المربّع لتحسين "
 "تجربة التصفّح.</html>"
@@ -306,7 +306,7 @@ msgstr "استخدم ترميز اللغة"
 #: appearance.cpp:202
 #, kde-format
 msgid "Default encoding:"
-msgstr "الترميز الافتراضي:"
+msgstr "الترميز المبدئي:"
 
 #: appearance.cpp:204
 #, kde-format
@@ -314,7 +314,7 @@ msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
 "language encoding' and should not have to change this."
 msgstr ""
-"اختر الترميز الافتراضي الذي يتم استخدامه. عادة سوف تجد الخيار الأفضل هو "
+"اختر الترميز المبدئي الذي يتم استخدامه. عادة سوف تجد الخيار الأفضل هو "
 "'استخدم ترميز اللغة' ولن تحتاج إلى تغييره."
 
 #. i18n: ectx: property (title), widget (QGroupBox, cacheEnabled)
@@ -548,8 +548,8 @@ msgid ""
 "</qt>"
 msgstr ""
 "<qt>\n"
-"<p>فعّل دعم الكعكات. غالبًا ما تريد تفعيل دعم الكعكات وتخصيصها لتناسب احتياجات "
-"الخصوصيّك لديك.</p><p>\n"
+"<p>مكّن دعم الكعكات. غالبًا ما تريد تفعيل دعم الكعكات وتخصيصها لتناسب احتياجات "
+"خصوصيّك لديك.</p><p>\n"
 "رجاءً لاحظ بأنّ تعطيل دعم الكعكات قد يجعل من الصّعب تصفّح العديد من المواقع على "
 "الشّبكة.</p>\n"
 "</qt>"
@@ -558,7 +558,7 @@ msgstr ""
 #: cookies/kcookiespolicies.ui:23
 #, kde-format
 msgid "Enable coo&kies"
-msgstr "فعّل ال&كعكات"
+msgstr "مكّن ال&كعكات"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -575,7 +575,7 @@ msgid ""
 msgstr ""
 "<qt>\n"
 "ارفض كعكات الطّرف الثّالث. هذه الكعكات تأتي من موقع يختلف عن الذي تتصفّحه. "
-"فمثلًا إن كنت تتصفّح <b>www.foobar.com</b> وهذا الخيار مفعّل، فستُعالج الكعكات "
+"فمثلًا إن كنت تتصفّح <b>www.foobar.com</b> وهذا الخيار ممكّن، فستُعالج الكعكات "
 "من www.foobar.com فقط، وستُرفض الكعكات القادمة من أيّ موقع آخر. يقلّل هذا من "
 "احتمال تجميع ملّاك المواقع معلومات عن عادات التّصفّح لديك وتجميعها في لاحة.</qt>"
 
@@ -869,8 +869,8 @@ msgid ""
 "<b>Use default stylesheet</b><p>Select this option to use the default "
 "stylesheet.</p>"
 msgstr ""
-"<b>استخدم صفحة الأسلوب الافتراضية</b><p>اختر هذا الخيار لاستخدام صفحة "
-"الأسلوب الافتراضية.</p>"
+"<b>استخدم صفحة الأسلوب المبدئية</b><p>اختر هذا الخيار لاستخدام صفحة الأسلوب "
+"المبدئية.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useDefault)
 #: css/cssconfig.ui:38
@@ -911,7 +911,7 @@ msgid ""
 "your desired options.</p>"
 msgstr ""
 "<b>استخدم صفحة أسلوب إتاحة الوصول</b> <p>تحديد هذا الخيار يسمح لك بأن تعرف "
-"خطاً افتراضياً وحجمه ولونه بعدد قليل من نقرات الفأرة البسيطة. ببساطة، اذهب إلى "
+"خطاً مبدئياً وحجمه ولونه بعدد قليل من نقرات الفأرة البسيطة. ببساطة، اذهب إلى "
 "حوار خصّص... واختر الخيارات التي تريدها.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useAccess)
@@ -1211,7 +1211,7 @@ msgstr "أ&بيض على أسود"
 msgid ""
 "<b>Custom</b><p>Select this option to define a custom color for the default "
 "font.</p>"
-msgstr "<b>مخصص</b><p>اختر هذا الخيار لتعريف لون مخصص للخط الافتراضي.</p>"
+msgstr "<b>مخصص</b><p>اختر هذا الخيار لتعريف لون مخصص للخط المبدئي.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, customColor)
 #: css/csscustom.ui:209
@@ -1253,7 +1253,7 @@ msgid ""
 "color to the default font as well as any custom fonts as specified in a "
 "stylesheet.</p>"
 msgstr ""
-"<b>استخدم نفس اللون لكلّ النصوص</b><p>اختر هذا الخيار لجعل الخط الافتراضي وأي "
+"<b>استخدم نفس اللون لكلّ النصوص</b><p>اختر هذا الخيار لجعل الخط المبدئي وأي "
 "خطوط مخصصة تستخدم اللون المحدد في صفحة الأسلوب.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameColor)
@@ -1500,12 +1500,12 @@ msgstr ""
 #: filteropts.cpp:100
 #, kde-format
 msgid "Automatic Filter"
-msgstr "مرشح آلي"
+msgstr "مرشح آليّ"
 
 #: filteropts.cpp:109
 #, kde-format
 msgid "Automatic update interval:"
-msgstr "فترة التحديث التلقائي:"
+msgstr "فترة التحديث الآليّ:"
 
 #: filteropts.cpp:114
 #, kde-format
