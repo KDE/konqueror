@@ -1,95 +1,94 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the konqueror package.
-# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
+# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 00:41+0000\n"
-"PO-Revision-Date: 2025-03-02 10:34+0400\n"
-"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
-"Language-Team: ar\n"
-"Language: ar\n"
+"PO-Revision-Date: 2025-08-04 14:41-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: bookmarks_module/bookmarks_module.cpp:273
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Bookmarks Sidebar Module"
-msgstr "وحدة الشريط الجانبي للعلامات"
+msgstr "Módulo de barra lateral de favoritos"
 
 #: bookmarks_module/bookmarks_module.cpp:296
 #, kde-format
 msgctxt "@title:tab"
 msgid "Bookmarks"
-msgstr "العلامات"
+msgstr "Favoritos"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDefaultAction)
 #: history_module/history_dlg.ui:17
 #, kde-format
 msgid "Default action"
-msgstr "الإجراء المبدئي"
+msgstr "Ação padrão"
 
 #. i18n: ectx: property (text), widget (QLabel, lDefault)
 #: history_module/history_dlg.ui:23
 #, kde-format
 msgid "Default action when double clicking an URL"
-msgstr "الإجراء المبدئي الذي سيفعل عند النقر المزدوج على أي عنوان"
+msgstr "Ação padrão ao dar um duplo clique em uma URL"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbLimits)
 #: history_module/history_dlg.ui:36
 #, kde-format
 msgid "Limits"
-msgstr "الحدود"
+msgstr "Limites"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbExpire)
 #: history_module/history_dlg.ui:61
 #, kde-format
 msgid "URLs e&xpire after"
-msgstr "الروابط تنتهي &صلاحيتها بعد"
+msgstr "URLs e&xpira após"
 
 #. i18n: ectx: property (text), widget (QLabel, lEntries)
 #: history_module/history_dlg.ui:71
 #, kde-format
 msgid "Maximum &number of URLs:"
-msgstr "الحد الأ&قصى لعدد الروابط:"
+msgstr "&Número máximo de URLs:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbFonts)
 #: history_module/history_dlg.ui:87
 #, kde-format
 msgid "Custom Fonts For"
-msgstr "خطوط مخصصة لـ"
+msgstr "Fontes personalizadas para"
 
 #. i18n: ectx: property (text), widget (QLabel, lbNewer)
 #: history_module/history_dlg.ui:102
 #, kde-format
 msgid "URLs newer than"
-msgstr "الروابط الأحدث من"
+msgstr "URLs mais novas que"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnFontOlder)
 #. i18n: ectx: property (text), widget (QPushButton, btnFontNewer)
 #: history_module/history_dlg.ui:118 history_module/history_dlg.ui:138
 #, kde-format
 msgid "Choose Font..."
-msgstr "اختر خطًّا…"
+msgstr "Escolher fone..."
 
 #. i18n: ectx: property (text), widget (QLabel, lbOlder)
 #: history_module/history_dlg.ui:125
 #, kde-format
 msgid "URLs older than"
-msgstr "الروابط الأقدم من"
+msgstr "URLs mais antigas que"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDetails)
 #: history_module/history_dlg.ui:148
 #, kde-format
 msgid "Details"
-msgstr "التفاصيل"
+msgstr "Detalhes"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbDetailedTips)
 #: history_module/history_dlg.ui:154
@@ -98,55 +97,56 @@ msgid ""
 "Shows the number of times visited and the dates of the first and last "
 "visits, in addition to the URL"
 msgstr ""
-"يظهر عدد مرات الزيارة وتواريخ الزيارة الأولى والأخيرة، بالإضافة إلى الروابط"
+"Mostra o número de vezes que o site foi visitado e as datas da primeira e "
+"última visita, além da URL."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbDetailedTips)
 #: history_module/history_dlg.ui:157
 #, kde-format
 msgid "Detailed tooltips"
-msgstr "التّلميحات المفصّلة"
+msgstr "Dicas detalhadas"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnClearHistory)
 #: history_module/history_dlg.ui:169
 #, kde-format
 msgid "Clear History"
-msgstr "امحُ التاريخ"
+msgstr "Limpar histórico"
 
 #: history_module/history_module.cpp:139
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "History Sidebar Module"
-msgstr "وحدة الشريط الجانبي للتاريخ"
+msgstr "Módulo de barra lateral de histórico"
 
 #: history_module/history_module.cpp:162
 #, kde-format
 msgctxt "@title:tab"
 msgid "History"
-msgstr "التاريخ"
+msgstr "Histórico"
 
 #: history_module/kcmhistory.cpp:49
 #, kde-format
 msgctxt "Automatically decide which action to perform"
 msgid "Auto"
-msgstr "آليّ"
+msgstr "Automático"
 
 #: history_module/kcmhistory.cpp:50
 #, kde-format
 msgctxt "Open URL in new tab"
 msgid "Open in new tab"
-msgstr "افتح في لسان جديد"
+msgstr "Abrir em uma nova aba"
 
 #: history_module/kcmhistory.cpp:51
 #, kde-format
 msgctxt "Open URL in current tab"
 msgid "Open in current tab"
-msgstr "افتح في لسان جديد"
+msgstr "Abrir na aba atual"
 
 #: history_module/kcmhistory.cpp:52
 #, kde-format
 msgctxt "Open URL in new window"
 msgid "Open in new window"
-msgstr "افتح في نافذة جديدة"
+msgstr "Abrir em uma nova janela"
 
 #: history_module/kcmhistory.cpp:54
 #, kde-format
@@ -158,109 +158,101 @@ msgid ""
 "current tab</dd><dt>Open URL in new window:</dt><dd>always opens the URL in "
 "a new window</dd></dl>"
 msgstr ""
-"الإجراء الذي يجب تنفيذه عند فتح رابط من التاريخ:<dl><dl><dt>آليّ:</"
-"dt><dd>يفتح الرابط في لسان جديد ما لم يكن اللسان الحالي فارغ أو صفحة "
-"المقدمة</dd><dt>يفتح الرابط في لسان جديد:</dt><dd>يفتح الرابط دائمًا في لسان "
-"جديد</dd><dt>يفتح الربط في اللسان الحالي:</dt><dd>يفتح الرابط دائمًا في "
-"اللسان الحالي</dd><dt>يفتح الرابط في نافذة جديدة:</dt><dd>يفتح الرابط دائمًا "
-"في نافذة جديدة</dd></dl>"
+"Ação a ser executada ao abrir uma URL do histórico:<dl><dl><dt>Automático:</"
+"dt><dd>abre a URL em uma nova aba, a menos que a aba atual esteja vazia ou "
+"seja uma página de introdução</dd><dt>Abrir URL em uma nova aba:</"
+"dt><dd>sempre abre a URL em uma nova aba</dd><dt>Abrir URL na aba atual:</"
+"dt><dd>sempre abre a URL na aba atual</dd><dt>Abrir URL em uma nova janela:</"
+"dt><dd>sempre abre a URL em uma nova janela</dd></dl>"
 
 #: history_module/kcmhistory.cpp:65
 #, kde-format
 msgid "days"
-msgstr "يوم"
+msgstr "dias"
 
 #: history_module/kcmhistory.cpp:71 history_module/kcmhistory.cpp:76
 #: history_module/kcmhistory.cpp:200 history_module/kcmhistory.cpp:213
 #, kde-format
 msgid "Minute"
 msgid_plural "Minutes"
-msgstr[0] "دقيقة"
-msgstr[1] "دقيقة"
-msgstr[2] "دقيقتان"
-msgstr[3] "دقائق"
-msgstr[4] "دقيقة"
-msgstr[5] "دقيقة"
+msgstr[0] "Minuto"
+msgstr[1] "Minutos"
 
 #: history_module/kcmhistory.cpp:73 history_module/kcmhistory.cpp:78
 #: history_module/kcmhistory.cpp:198 history_module/kcmhistory.cpp:211
 #, kde-format
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] "يوم"
-msgstr[1] "يوم واحد"
-msgstr[2] "يومان"
-msgstr[3] "أيام"
-msgstr[4] "يوماً"
-msgstr[5] "يوم"
+msgstr[0] "Dia"
+msgstr[1] "Dias"
 
 #: history_module/kcmhistory.cpp:245
 #, kde-format
 msgid "Do you really want to clear the entire history?"
-msgstr "أتريد حقًّا محو التاريخ كلّه؟"
+msgstr "Deseja realmente limpar todo o histórico?"
 
 #: history_module/kcmhistory.cpp:247
 #, kde-format
 msgctxt "@title:window"
 msgid "Clear History?"
-msgstr "أأمحو التأريخ؟"
+msgstr "Limpar histórico?"
 
 #: places_module/places_module.cpp:76
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Places Sidebar Module"
-msgstr "وحدة الشريط الجانبي للأماكن"
+msgstr "Módulo de barra lateral de locais"
 
 #: places_module/places_module.cpp:99
 #, kde-format
 msgctxt "@title:tab"
 msgid "Places"
-msgstr "الأماكن"
+msgstr "Locais"
 
 #: sidebar_widget.cpp:83
 #, kde-format
 msgid "Restore All Removed Default Buttons"
-msgstr "استعدْ كل الأزرار المبدئي المزالة"
+msgstr "Restaurar todos os botões padrão removidos"
 
 #: sidebar_widget.cpp:84
 #, kde-format
 msgid "Rollback to System Default"
-msgstr "ارجع إلى مبدئيات النظام"
+msgstr "Retornar ao padrão do sistema"
 
 #: sidebar_widget.cpp:143 sidebar_widget.cpp:429
 #, kde-format
 msgid "Configure Sidebar"
-msgstr "اضبط الشريط الجانبي"
+msgstr "Configurar barra lateral"
 
 #: sidebar_widget.cpp:145
 #, kde-format
 msgid "Add New"
-msgstr "أضف أيضاً"
+msgstr "Adicionar nova"
 
 #: sidebar_widget.cpp:149
 #, kde-format
 msgid "Multiple Views"
-msgstr "عرض متعدد"
+msgstr "Visualizações múltiplas"
 
 #: sidebar_widget.cpp:151 sidebar_widget.cpp:268
 #, kde-format
 msgid "Show Tabs on Left"
-msgstr "اعرض الألسنة على اليسار"
+msgstr "Mostrar abas à esquerda"
 
 #: sidebar_widget.cpp:152
 #, kde-format
 msgid "Show Configuration Button"
-msgstr "اعرض زر الضبط"
+msgstr "Mostrar botão de configuração"
 
 #: sidebar_widget.cpp:155
 #, kde-format
 msgid "Close Sidebar"
-msgstr "أغلق الشريط الجانبي"
+msgstr "Fechar barra lateral"
 
 #: sidebar_widget.cpp:210
 #, kde-format
 msgid "This entry already exists."
-msgstr "هذه المدخلة موجودة فعلًا"
+msgstr "Esta entrada já existe."
 
 #: sidebar_widget.cpp:226
 #, kde-format
@@ -269,35 +261,35 @@ msgid ""
 "default ones.<br /><b>This procedure is irreversible.</b><br />Do you want "
 "to proceed?</qt>"
 msgstr ""
-"<qt>يؤدي هذا إلى إزالة جميع الإدخالات من الشريط الجانبي وإضافة الإدخالات "
-"المبدئية للنظام.<br /><b>هذا الإجراء لا رجعة فيه.</b><br />هل تريد المتابعة؟"
-"</qt>"
+"<qt>Isso remove todas as suas entradas da barra lateral e adiciona as "
+"entradas padrão do sistema.<br /><b>Este procedimento é irreversível.</"
+"b><br />Deseja continuar?</qt>"
 
 #: sidebar_widget.cpp:268
 #, kde-format
 msgid "Show Tabs on Right"
-msgstr "اعرض الألسنة على اليمين"
+msgstr "Mostrar abas à direita"
 
 #: sidebar_widget.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Name"
-msgstr "ضع الاسم"
+msgstr "Definir nome"
 
 #: sidebar_widget.cpp:280
 #, kde-format
 msgid "Enter the name:"
-msgstr "أدخل الاسم:"
+msgstr "Digite o nome:"
 
 #: sidebar_widget.cpp:298
 #, kde-format
 msgid "Enter a URL:"
-msgstr "أدخل عنواناً:"
+msgstr "Digite uma URL:"
 
 #: sidebar_widget.cpp:322
 #, kde-format
 msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
-msgstr "<qt>هل ترغب في إزالة اللسان <b>%1</b>؟</qt>"
+msgstr "<qt>Você realmente deseja remover a aba <b>%1</b>?</qt>"
 
 #: sidebar_widget.cpp:372
 #, kde-format
@@ -306,131 +298,124 @@ msgid ""
 "click the right mouse button on any of the sidebar buttons and select \"Show "
 "Configuration Button\"."
 msgstr ""
-"قمت بإخفاء زر ضبط الشريط الجانبي. لإظهاره مرة أخرى، انقر بزر الفأرة الأيمن "
-"على أي من أزرار الشريط الجانبي وحدد \"اعرض زر الضبط\"."
+"Você ocultou o botão de configuração da barra lateral. Para torná-lo visível "
+"novamente, clique com o botão direito do mouse em qualquer um dos botões da "
+"barra lateral e selecione \"Mostrar botão de configuração\"."
 
 #: sidebar_widget.cpp:573
 #, kde-format
 msgid "Set Name..."
-msgstr "ضعّ الاسم…"
+msgstr "Definir nome..."
 
 #: sidebar_widget.cpp:574
 #, kde-format
 msgid "Set URL..."
-msgstr "ضعّ رابط…"
+msgstr "Definir URL..."
 
 #: sidebar_widget.cpp:575
 #, kde-format
 msgid "Set Icon..."
-msgstr "اضبط الأيقونة…"
+msgstr "Definir ícone..."
 
 #: sidebar_widget.cpp:577
 #, kde-format
 msgid "Show Hidden Folders..."
-msgstr "أظهر المجلدات المخفية"
+msgstr "Mostrar pastas ocultas..."
 
 #: sidebar_widget.cpp:582
 #, kde-format
 msgid "Remove"
-msgstr "أزل"
+msgstr "Remover"
 
 #: sidebar_widget.cpp:908
 #, kde-format
 msgid "Web module"
-msgstr "وحدة الويب"
+msgstr "Módulo Web"
 
 #: tree_module/tree_module.cpp:259
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Tree Sidebar Module"
-msgstr "وحدة الشريط الجانبي للشجرة"
+msgstr "Módulo de barra lateral de árvore"
 
 #: tree_module/tree_module.cpp:282
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree"
-msgstr "الشجرة"
+msgstr "Árvore"
 
 #: vertical_tabbar/vertical_tabbar.cpp:91
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Vertical Tab Bar"
-msgstr "شريط ألسنة رأسي"
+msgstr "Barra de abas vertical"
 
 #: vertical_tabbar/vertical_tabbar.cpp:114
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tabs"
-msgstr "الألسنة"
+msgstr "Abas"
 
 #: web_module/web_module.cpp:42
 #, kde-format
 msgid "&Open Link"
-msgstr "افتح ال&وصلة"
+msgstr "&Abrir link"
 
 #: web_module/web_module.cpp:46
 #, kde-format
 msgid "Open in New &Window"
-msgstr "افتح في نافذة &جديدة"
+msgstr "Abrir em uma nova &janela"
 
 #: web_module/web_module.cpp:52
 #, kde-format
 msgid "&Reload"
-msgstr "أ&عد التّحميل"
+msgstr "&Recarregar"
 
 #: web_module/web_module.cpp:57
 #, kde-format
 msgid "Set &Automatic Reload"
-msgstr "&عين إعادة التحميل آليّ"
+msgstr "Configurar recarregamento &automático"
 
 #: web_module/web_module.cpp:121
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Refresh Timeout (0 disables)"
-msgstr "عيّن مهلة التحديث (0 معطل)"
+msgstr "Definir tempo limite de atualização (0 desativa)"
 
 #: web_module/web_module.cpp:132
 #, kde-format
 msgid " minute"
 msgid_plural " minutes"
-msgstr[0] " (أقلّ من دقيقة)"
-msgstr[1] " دقيقة"
-msgstr[2] " دقيقتان"
-msgstr[3] " دقائق"
-msgstr[4] " دقيقة"
-msgstr[5] " دقيقة"
+msgstr[0] " minuto"
+msgstr[1] " minutos"
 
 #: web_module/web_module.cpp:136
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
-msgstr[0] " ثانية"
-msgstr[1] " ثانية"
-msgstr[2] " ثانية"
-msgstr[3] " ثانية"
-msgstr[4] " ثانية"
-msgstr[5] " ثانية"
+msgstr[0] " segundo"
+msgstr[1] " segundos"
 
 #: web_module/web_module.cpp:269
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Web Sidebar Module"
-msgstr "وحدة الشريط الجانبي للوِب"
+msgstr "Módulo de barra lateral Web"
 
 #: web_module/web_module.cpp:289
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr "الاسم:"
+msgstr "Nome:"
 
 #: web_module/web_module.cpp:289
 #, kde-format
 msgctxt "@label"
 msgid "Path or URL:"
-msgstr "المسار أو الرابط:"
+msgstr "Caminho ou URL:"
 
 #: web_module/web_module.cpp:290
 #, kde-format
 msgctxt "@title:window"
 msgid "Add web sidebar module"
-msgstr "أضف وحدة الشريط الجانبي للوِب"
+msgstr "Adicionar módulo de barra lateral web"

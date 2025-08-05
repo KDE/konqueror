@@ -1,0 +1,74 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
+"PO-Revision-Date: 2025-08-04 14:44-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 25.04.3\n"
+
+#: temporarysavedir.cpp:54
+#, kde-format
+msgid "Temporary Download Directory"
+msgstr "Pasta temporária para arquivos baixados"
+
+#: temporarysavedir.cpp:60
+#, kde-format
+msgid "Choose Custom Download Directory..."
+msgstr "Selecione uma pasta personalizada para baixar arquivos..."
+
+#: temporarysavedir.cpp:61
+#, kde-format
+msgid ""
+"Choose a custom directory to use when downloading URLs from this window, "
+"temporarily overriding the default one"
+msgstr ""
+"Escolha uma pasta personalizada para usar ao baixar URLs desta janela, "
+"substituindo temporariamente a pasta padrão"
+
+#: temporarysavedir.cpp:66
+#, kde-format
+msgctxt "@action:inmenu stop using a temporary download directory"
+msgid "Stop Using Temporary Download Directory"
+msgstr "Pare de usar a pasta temporária para baixar arquivos"
+
+#: temporarysavedir.cpp:67
+#, kde-format
+msgid ""
+"Use the default download directory instead of a custom one (only for this "
+"window)"
+msgstr ""
+"Use a pasta padrão para baixar arquivos em vez de uma personalizada (apenas "
+"para esta janela)"
+
+#: temporarysavedir.cpp:113
+#, kde-format
+msgid "Temporary save directory"
+msgstr "Pasta para salvar temporariamente"
+
+#: temporarysavedir.cpp:114
+#, kde-format
+msgid "Choose Temporary Save Directory"
+msgstr "Selecione a pasta para salvar temporariamente"
+
+#. i18n: ectx: Menu (tools)
+#: temporarysavedir.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "Ferramen&tas"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: temporarysavedir.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Barra de ferramentas extra"
