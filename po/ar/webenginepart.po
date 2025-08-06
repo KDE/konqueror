@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-26 00:42+0000\n"
-"PO-Revision-Date: 2025-08-03 15:25+0400\n"
+"PO-Revision-Date: 2025-08-05 18:06+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "يجعل برنامج كنكر العمل مع الملفات وإدارتها أمرًا سهلاً. يمكنك تصفح المجلدات "
 "المحلية والمتصلة بالشبكة مع الاستمتاع بالميزات المتقدمة مثل الشريط الجانبي "
-"القوي ومعاينات الملفات."
+"القوي ومعاينة الملفات."
 
 #: src/about/konq_aboutpage.cpp:154
 #, kde-format
@@ -480,7 +480,7 @@ msgstr "نهاية الجلسة"
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by https servers"
 msgid "Secure servers only"
-msgstr "الخواديم الآمنة فقط"
+msgstr "الخوادم الآمنة فقط"
 
 #: src/cookies/cookiealertdlg.cpp:31
 #, kde-format
@@ -488,13 +488,13 @@ msgctxt ""
 "@label exposure string - the cookie may be used by https servers AND client-"
 "side javascripts"
 msgid "Secure servers, page scripts"
-msgstr "الخواديم الآمنة، سكربتات الصّفحات"
+msgstr "الخوادم الآمنة، سكربتات الصّفحات"
 
 #: src/cookies/cookiealertdlg.cpp:35
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by http servers"
 msgid "Servers"
-msgstr "الخواديم"
+msgstr "الخوادم"
 
 #: src/cookies/cookiealertdlg.cpp:37
 #, kde-format
@@ -502,7 +502,7 @@ msgctxt ""
 "@label exposure string - the cookie may be used by http servers AND client-"
 "side javascripts"
 msgid "Servers, page scripts"
-msgstr "الخواديم، سكربتات الصّفحات"
+msgstr "الخوادم، سكربتات الصّفحات"
 
 #: src/cookies/cookiealertdlg.cpp:41
 #, kde-format
@@ -638,7 +638,7 @@ msgstr "المسار: %1"
 #: src/schemehandlers/errorschemehandler.cpp:127
 #, kde-format
 msgid "Protocol: %1"
-msgstr "البرتوكول: %1"
+msgstr "الميفاق: %1"
 
 #: src/schemehandlers/errorschemehandler.cpp:131
 #, kde-format
@@ -943,7 +943,7 @@ msgid ""
 msgstr ""
 "حاول أن تعيد تثبيته ، و تأكد أنه موجود في المسار التالي $PATH. \n"
 "\n"
-"سيتم تعطيل التكامل."
+"سيُعطل التكامل."
 
 #: src/webenginepage.cpp:352
 #, kde-format
@@ -1044,13 +1044,13 @@ msgid ""
 "This site attempted to attach a file from your computer in the form "
 "submission. The attachment was removed for your protection."
 msgstr ""
-"هذا الموقع يريد ارفاق ملف من جهازك في النموذج المرسل. تم إزالة الملف المرفق "
+"هذا الموقع يريد إرفاق ملف من جهازك في النموذج المرسل. أُزيل الملف المرفق "
 "لحمايتك."
 
 #: src/webenginepage.cpp:720
 #, kde-format
 msgid "Attachment Removed"
-msgstr "تمت إزالة المرفقات"
+msgstr "أُزيلت المرفقات"
 
 #: src/webenginepage.cpp:853
 #, kde-format
@@ -1203,7 +1203,7 @@ msgstr "<qt>هل تريد أن تبحث عن <b>%1</b>؟</qt>"
 #: src/webenginepart.cpp:758
 #, kde-format
 msgid "Internet Search"
-msgstr "ابحث على الانترنت "
+msgstr "ابحث على الإنترنت "
 
 #: src/webenginepart.cpp:758
 #, kde-format
@@ -1515,7 +1515,7 @@ msgstr "ا&حفظ الفيديو كـ..."
 #: src/webengineview.cpp:525
 #, kde-format
 msgid "C&opy Video URL"
-msgstr "انسخ عنوان ال&فديو"
+msgstr "انسخ عنوان الفيديو"
 
 #: src/webengineview.cpp:527
 #, kde-format
