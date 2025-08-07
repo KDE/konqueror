@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-26 00:42+0000\n"
+"POT-Creation-Date: 2025-08-07 00:42+0000\n"
 "PO-Revision-Date: 2013-10-04 03:20+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -270,19 +270,19 @@ msgstr ""
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:88
+#: src/actondownloadedfilebar.cpp:91
 #, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:120
+#: src/actondownloadedfilebar.cpp:123
 #, kde-format
 msgctxt "@label location where a remote URL was downloaded"
 msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:141 src/actondownloadedfilebar.cpp:166
+#: src/actondownloadedfilebar.cpp:144 src/actondownloadedfilebar.cpp:169
 #, fuzzy, kde-format
 #| msgctxt "open selected url"
 #| msgid "Open '%1'"
@@ -290,7 +290,7 @@ msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
 msgstr "'%1' дегенді ашу"
 
-#: src/actondownloadedfilebar.cpp:146
+#: src/actondownloadedfilebar.cpp:149
 #, fuzzy, kde-format
 #| msgctxt "open selected url"
 #| msgid "Open '%1'"
@@ -298,7 +298,7 @@ msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
 msgstr "'%1' дегенді ашу"
 
-#: src/actondownloadedfilebar.cpp:155
+#: src/actondownloadedfilebar.cpp:158
 #, fuzzy, kde-format
 #| msgctxt "open selected url"
 #| msgid "Open '%1'"
@@ -306,25 +306,47 @@ msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "'%1' дегенді ашу"
 
-#: src/actondownloadedfilebar.cpp:184
+#: src/actondownloadedfilebar.cpp:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:184
+#: src/actondownloadedfilebar.cpp:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here"
 msgstr ""
 
-#: src/actondownloadedfilebar.cpp:198
+#: src/actondownloadedfilebar.cpp:203
 #, fuzzy, kde-format
 #| msgctxt "open selected url"
 #| msgid "Open '%1'"
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
 msgstr "'%1' дегенді ашу"
+
+#: src/actondownloadedfilebar.cpp:231
+#, kde-format
+msgctxt "@action:button Display the folder which contains the downloaded file"
+msgid "Show containing folder"
+msgstr ""
+
+#: src/actondownloadedfilebar.cpp:232
+#, kde-format
+msgctxt ""
+"@action:menu Display the folder which contains the downloaded file in a new "
+"tab"
+msgid "Show containing folder in new tab"
+msgstr ""
+
+#: src/actondownloadedfilebar.cpp:233
+#, kde-format
+msgctxt ""
+"@action:menu Display the folder which contains the downloaded file in this "
+"tab"
+msgid "Show containing folder here"
+msgstr ""
 
 #: src/capturesourcechooserdlg.cpp:27
 #, kde-format
