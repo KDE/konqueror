@@ -41,7 +41,7 @@ msgid ""
 "be able to work while it is loading, so you may not even notice that it is "
 "taking longer).</p>"
 msgstr ""
-"<p>إن مُكِّن، أيّة سيرورة من كنكر ستُحمَّل مسبقًا بعد تسلسل بدء بلازما الاعتيادي.</"
+"<p>إن مُكِّن، أيّة نسخة من كنكر ستُحمَّل مسبقًا بعد تسلسل بدء بلازما الاعتيادي.</"
 "p><p>هذا يجعل أول نافذة من كنكر تفتح بسرعة، لكن على حساب زيادة عدد مرات بدء "
 "بلازما (ولكن يمكنك العمل أثناء تحميلها، لذا فقد لا تلاحظ حتّى أنّه يستغرق وقتًا "
 "أطول).</p>"
@@ -55,10 +55,10 @@ msgid ""
 "In some cases, it is actually possible that this will reduce perceived "
 "performance.</p>"
 msgstr ""
-"<p>إن مُكِّن، سيحاول كنكر دائمًا امتلاك سيرورة مُحمَّلة مسبقًا جاهزة، وأيضًا تحميل "
-"سيرورة جديدة مسبقًا في الخلفيّة متى ما لم تتوفّر واحدة، لتبقى النوافذ تفتح "
-"بسرعة دائمًا.</p><p><b>تحذير:</b> في بعض الحالات، قد يُنقِص هذا في الواقع "
-"الأداء المنتظر.</p>"
+"<p>إن مُكِّن، سيحاول كنكر دائمًا امتلاك نسخة مُحمَّلة مسبقًا جاهزة، وأيضًا تحميل نسخة "
+"جديدة مسبقًا في الخلفيّة متى ما لم تتوفّر واحدة، لتبقى النوافذ تفتح بسرعة دائمًا."
+"</p><p><b>تحذير:</b> في بعض الحالات، قد يُنقِص هذا في الواقع الأداء المنتظر.</"
+"p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
 #: konqueror_ui.ui:17
@@ -70,13 +70,13 @@ msgstr "التحميل المسبق"
 #: konqueror_ui.ui:23
 #, kde-format
 msgid "Preload an instance after desktop startup"
-msgstr "حمّل مسبقًا سيرورة واحدة بعد بدء بلازما"
+msgstr "حمّل مسبقًا نسخة واحدة بعد بدء بلازما"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
 #: konqueror_ui.ui:30
 #, kde-format
 msgid "Always try to have one preloaded instance"
-msgstr "حاول دائمًا امتلاك سيرورة واحدة مُحمَّلة مسبقًا"
+msgstr "حاول دائمًا امتلاك نسخة واحدة مُحمَّلة مسبقًا"
 
 #: system.cpp:22
 #, kde-format
