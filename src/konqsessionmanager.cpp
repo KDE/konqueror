@@ -19,6 +19,7 @@
 #ifdef KActivities_FOUND
 #include "activitymanager.h"
 #include <PlasmaActivities/Consumer>
+#include <KX11Extras>
 #endif
 
 #include "konqdebug.h"
@@ -455,6 +456,9 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
         if (restoreDlg->isEmpty()) {
             result = QDialogButtonBox::No;
         } else {
+#ifdef KActivities_FOUND
+            KX11Extras::setOnActivities(restoreDlg->winId(), {});
+#endif
             result = restoreDlg->exec();
             discardedWindowList = restoreDlg->discardedWindowList();
             if (restoreDlg->isDontShowChecked()) {
