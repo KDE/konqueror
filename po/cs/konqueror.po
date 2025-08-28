@@ -1619,19 +1619,16 @@ msgid "Session n&ame:"
 msgstr "Název s&ezení:"
 
 #: src/konqsessiondialog.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@tooltip:session list"
-#| msgid "Uncheck the sessions you do not want to be restored"
+#, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr "Odškrtněte, pokud nechcete obnovovat"
+msgstr ""
 
 #: src/konqsessiondialog.cpp:95
-#, fuzzy, kde-format
-#| msgid "Sessions"
+#, kde-format
 msgctxt "@item:treewidget"
 msgid "Session %1"
-msgstr "Sezení"
+msgstr ""
 
 #. i18n. Otherwise it would be easier to just use what is in the session file
 #: src/konqsessiondialog.cpp:113
