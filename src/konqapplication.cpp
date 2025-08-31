@@ -22,6 +22,7 @@
 #include "konqmisc.h"
 #include <config-konqueror.h>
 #include "implementations/konqbrowser.h"
+#include "konqsettings.h"
 
 #include "interfaces/browser.h"
 
@@ -380,9 +381,11 @@ int KonquerorApplication::performStart(const QString& workingDirectory, bool fir
 
     bool sessionRestored = KonqSessionManager::self()->restoreSessionSavedAtExit();
     if (!args.isEmpty()) {
-        //KonqSessionManager::restoreSessionSavedAtExit only returns true if there's at least one main window,
-        //so there's no need to check whether the list is empty
-        result = createWindowsForUrlArguments(args, workingDirectory, sessionRestored ? KonqMainWindow::mainWindows().at(0) : nullptr);
+        KonqMainWindow *mw = nullptr;
+        if (Konq::Settings::konquerorTabforExternalURL() || sessionRestored) {
+            mw = KonqMainWindow::mostSuitableWindow();
+        }
+        result = createWindowsForUrlArguments(args, workingDirectory, mw);
     } else if (sessionRestored){
         result = WindowCreationResult{KonqMainWindow::mainWindows().at(0), 0};
     } else {
