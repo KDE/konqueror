@@ -322,9 +322,8 @@ msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
 "language encoding' and should not have to change this."
 msgstr ""
-"Seleccioneu la codificació predeterminada que s'utilitzarà; normalment, en "
-"tindreu prou amb «Utilitza la codificació de l'idioma» i no ho hauríeu de "
-"canviar."
+"Trieu la codificació predeterminada que s'utilitzarà; normalment, en tindreu "
+"prou amb «Utilitza la codificació de l'idioma» i no ho hauríeu de canviar."
 
 #. i18n: ectx: property (title), widget (QGroupBox, cacheEnabled)
 #: cache/cache.ui:17
@@ -820,7 +819,7 @@ msgid ""
 "</qt>"
 msgstr ""
 "<qt>\n"
-"Seleccioneu la política desitjada:\n"
+"Trieu la política desitjada:\n"
 "<ul>\n"
 "<li><b>Accepta</b> - Permet a este lloc establir galetes</li>\n"
 "<li><b>Accepta fins al final de sessió</b> Permet que este lloc establisca "
@@ -897,7 +896,7 @@ msgid ""
 "<b>Use default stylesheet</b><p>Select this option to use the default "
 "stylesheet.</p>"
 msgstr ""
-"<b>Utilitza el full d'estil predeterminat</b><p>Seleccioneu esta opció per a "
+"<b>Utilitza el full d'estil predeterminat</b><p>Trieu esta opció per a "
 "utilitzar el full d'estil predeterminat.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useDefault)
@@ -940,10 +939,10 @@ msgid ""
 "of the mouse. Simply wander over to the Customize... dialog and pick out "
 "your desired options.</p>"
 msgstr ""
-"<b>Utilitza el full d'estil d'accessibilitat</b><p> Si seleccioneu esta "
-"opció, podreu definir una lletra predeterminada, una mida i un color de "
-"lletra amb uns quants clics de ratolí. Senzillament, exploreu el diàleg "
-"Personalitza… i trieu les opcions desitjades.</p>"
+"<b>Utilitza el full d'estil d'accessibilitat</b><p> Si trieu esta opció, "
+"podreu definir una lletra predeterminada, una mida i un color de lletra amb "
+"uns quants clics de ratolí. Senzillament, exploreu el diàleg Personalitza… i "
+"trieu les opcions desitjades.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useAccess)
 #: css/cssconfig.ui:106
@@ -1092,9 +1091,8 @@ msgid ""
 "<b>Use same family for all text</b><p>Select this option to override custom "
 "fonts everywhere in favor of the base font.</p>"
 msgstr ""
-"<b>Utilitza la mateixa família per a tot el text</b><p>Seleccioneu esta "
-"opció per a modificar els tipus lletra personalitzats en favor de la lletra "
-"base.</p>"
+"<b>Utilitza la mateixa família per a tot el text</b><p>Trieu esta opció per "
+"a modificar els tipus lletra personalitzats en favor de la lletra base.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
 #: css/csscustom.ui:47
@@ -1200,10 +1198,9 @@ msgid ""
 "custom font sizes in favor of the base font size. All fonts will be "
 "displayed in the same size.</p>"
 msgstr ""
-"<b>Utilitza la mateixa mida per a tots els elements</b><p>Seleccioneu esta "
-"opció per a modificar les mides personalitzades de les lletres en favor de "
-"la mida de les lletres base. Totes les lletres es mostraran amb la mateixa "
-"mida.</p>"
+"<b>Utilitza la mateixa mida per a tots els elements</b><p>Trieu esta opció "
+"per a modificar les mides personalitzades de les lletres en favor de la mida "
+"de les lletres base. Totes les lletres es mostraran amb la mateixa mida.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, dontScale)
 #: css/csscustom.ui:151
@@ -1250,7 +1247,7 @@ msgid ""
 "<b>Custom</b><p>Select this option to define a custom color for the default "
 "font.</p>"
 msgstr ""
-"<b>Personalitza</b><p>Seleccioneu esta opció per a definir un color per a la "
+"<b>Personalitza</b><p>Trieu esta opció per a definir un color per a la "
 "lletra predeterminada.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, customColor)
@@ -1293,9 +1290,9 @@ msgid ""
 "color to the default font as well as any custom fonts as specified in a "
 "stylesheet.</p>"
 msgstr ""
-"<b>Utilitza el mateix color per a tot el text</b><p>Seleccioneu esta opció "
-"per a aplicar la vostra elecció del color a la lletra predeterminada així "
-"com a qualsevol de les lletres especificades en un full d'estil.</p>"
+"<b>Utilitza el mateix color per a tot el text</b><p>Trieu esta opció per a "
+"aplicar la vostra elecció del color a la lletra predeterminada així com a "
+"qualsevol de les lletres especificades en un full d'estil.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameColor)
 #: css/csscustom.ui:251
@@ -1733,7 +1730,7 @@ msgstr "Mostra les meues adreces d'interés"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
-msgstr "Seleccioneu la pàgina inicial"
+msgstr "Trieu la pàgina inicial"
 
 #: generalopts.cpp:83
 #, kde-format
@@ -1749,7 +1746,7 @@ msgstr "Pàgina inicial:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
-msgstr "Seleccioneu la pàgina inicial"
+msgstr "Trieu la pàgina inicial"
 
 #: generalopts.cpp:102
 #, kde-format
@@ -1763,7 +1760,7 @@ msgstr ""
 #: generalopts.cpp:110
 #, kde-format
 msgid "Default web browser engine:"
-msgstr "Motor de navegació web per defecte:"
+msgstr "Motor de navegació web predeterminada:"
 
 #: generalopts.cpp:119
 #, kde-format
@@ -2012,7 +2009,7 @@ msgstr ""
 "<p>Este quadro conté els dominis i amfitrions per als quals heu establit una "
 "política de JavaScript específica. Esta política s'utilitzarà en comptes de "
 "la política predeterminada per tal d'habilitar o inhabilitar JavaScript a "
-"les pàgines enviades per estos dominis o amfitrions.</p><p>Seleccioneu una "
+"les pàgines enviades per estos dominis o amfitrions.</p><p>Trieu una "
 "política i utilitzeu els controls a la dreta per a modificar-la.</p>"
 
 #: jsopts.cpp:87
@@ -2313,7 +2310,7 @@ msgstr "Posició de la barra de pestanyes"
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr "Seleccioneu a on mostrar la barra de pestanyes"
+msgstr "Trieu a on mostrar la barra de pestanyes"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
@@ -2514,7 +2511,7 @@ msgstr "Activa la pestanya utilitzada prèviament en tancar la pestanya actual"
 msgctxt ""
 "@title:window Title of dialog to choose name to given to new User Agent"
 msgid "Choose User Agent name"
-msgstr "Seleccioneu un nom d'Agent d'Usuari"
+msgstr "Trieu un nom d'Agent d'Usuari"
 
 #: useragent/useragent.cpp:196
 #, kde-format
@@ -2587,7 +2584,7 @@ msgstr "Sup&rimix"
 #: useragent/useragent.ui:150
 #, kde-format
 msgid "Choose &selected identification"
-msgstr "Seleccioneu la identificació &seleccionada"
+msgstr "Trieu la identificació &seleccionada"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:160
