@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-21 00:42+0000\n"
-"PO-Revision-Date: 2025-05-09 17:09+0200\n"
+"PO-Revision-Date: 2025-09-02 17:49+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1658,19 +1658,16 @@ msgid "Session n&ame:"
 msgstr "Nomi&ne de session:"
 
 #: src/konqsessiondialog.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@tooltip:session list"
-#| msgid "Uncheck the sessions you do not want to be restored"
+#, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr "Leva marca a sessiones que tu non vole que es restabilite"
+msgstr "Leva marca a sessiones o fenestras que tu non vole que es restabilite"
 
 #: src/konqsessiondialog.cpp:95
-#, fuzzy, kde-format
-#| msgid "Sessions"
+#, kde-format
 msgctxt "@item:treewidget"
 msgid "Session %1"
-msgstr "Sessiones"
+msgstr "Session %1"
 
 #. i18n. Otherwise it would be easier to just use what is in the session file
 #: src/konqsessiondialog.cpp:113
@@ -1721,7 +1718,7 @@ msgstr "Tu demanda me postea"
 #, kde-format
 msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"
-msgstr ""
+msgstr "Copia URL a area de transferentia:  %1"
 
 #: src/konqsessiondlg.cpp:60
 #, kde-format
