@@ -27,6 +27,7 @@ class KonqSidebarPlugin;
 class QMenu;
 class QHBoxLayout;
 class QSplitter;
+class QContextMenuEvent;
 
 class ButtonInfo
 {
@@ -85,9 +86,8 @@ public Q_SLOTS:
 
 protected:
     void customEvent(QEvent *ev) override;
-    //void resizeEvent(QResizeEvent* ev);
     bool eventFilter(QObject *, QEvent *) override;
-    void mousePressEvent(QMouseEvent *) override;
+    void contextMenuEvent(QContextMenuEvent *ev) override;
 
 protected Q_SLOTS:
     void showHidePage(int value);
