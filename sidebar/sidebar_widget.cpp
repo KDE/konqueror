@@ -25,6 +25,7 @@
 #include <QIcon>
 #include <QHBoxLayout>
 #include <QStandardPaths>
+#include <QContextMenuEvent>
 
 // KDE
 #include <KLocalizedString>
@@ -591,12 +592,10 @@ bool Sidebar_Widget::eventFilter(QObject *obj, QEvent *ev)
     return false;
 }
 
-void Sidebar_Widget::mousePressEvent(QMouseEvent *ev)
+void Sidebar_Widget::contextMenuEvent(QContextMenuEvent *ev)
 {
-    // TODO move to contextMenuEvent?
-    if (ev->type() == QEvent::MouseButtonPress && ev->button() == Qt::RightButton) {
-        m_menu->exec(QCursor::pos());
-    }
+    m_menu->exec(ev->globalPos());
+    ev->accept();
 }
 
 KonqSidebarModule *Sidebar_Widget::loadModule(QWidget *parent, const QString &desktopName,
