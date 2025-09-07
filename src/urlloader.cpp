@@ -37,6 +37,7 @@
 #include <KLocalizedString>
 #include <KIO/JobUiDelegateFactory>
 #include <KJobTrackerInterface>
+#include <KDesktopFile>
 
 #include <QDebug>
 #include <QArgument>
@@ -396,7 +397,7 @@ bool UrlLoader::isUrlExecutable() const
         return false;
     }
 
-    return QFileInfo(m_url.path()).isExecutable();
+    return QFileInfo(m_url.path()).isExecutable() || isDesktopFileExecutable(m_url.path());
 }
 
 
@@ -885,6 +886,12 @@ void UrlLoader::execute()
 bool UrlLoader::isTextExecutable(const QString &mimeType)
 {
     return ( mimeType == QLatin1String("application/x-desktop") || mimeType == QLatin1String("application/x-shellscript"));
+}
+
+bool UrlLoader::isDesktopFileExecutable(const QString& path)
+{
+    return KDesktopFile::isDesktopFile(path) && KDesktopFile::isAuthorizedDesktopFile(path) &&
+        KDesktopFile(path).hasApplicationType();
 }
 
 QString UrlLoader::partForLocalFile(const QString& path)

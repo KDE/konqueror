@@ -193,6 +193,7 @@ private:
     void detectSettingsForRemoteFiles();
     void launchMimeTypeFinderJob();
     static bool isTextExecutable(const QString &mimeType);
+    static bool isDesktopFileExecutable(const QString &path);
     void openExternally();
     void killOpenUrlJob();
     static bool serviceIsKonqueror(KService::Ptr service);
