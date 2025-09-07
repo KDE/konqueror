@@ -734,34 +734,43 @@ void UrlLoader::embed()
         m_mimeType = QStringLiteral("text/html");
         m_part = findPartById(QStringLiteral("webenginepart"));
     }
-    bool embedded = m_mainWindow->openView(m_mimeType, m_url, m_view, m_request, m_originalUrl);
+
+    //We need a copy of the request because we need to force embedding: KonqMainWindow::openView()
+    //uses KonqFMSettings::shouldEmbed() to determine whether to embed an URL, but if we're here
+    //it means that the user already decided to embed it and that choice should override what
+    //KonqFMSettings says. However, we don't want to call m_request.forceEmbed to avoid loosing
+    //information about available actions which are still useful in case embedding fails.
+    KonqOpenURLRequest req{m_request};
+    req.forceEmbed();
+
+    bool embedded = m_mainWindow->openView(m_mimeType, m_url, m_view, req, m_originalUrl);
     if (embedded) {
         done();
-    } else {
-        //There are two reasons, that I'm aware of, which could cause openView to return false:
-        //- the view is locked and there aren't linked views
-        //- an error occurs while creating the part
-        //The first case is handled by calling KonqMainWindow::openUrl again and forcing the use of a new tab
-        //In the second case, try again to decide an action, but only among Open or Save (since embedding failed)
+        return;
+    }
+    //There are two reasons, that I'm aware of, which could cause openView to return false:
+    //- the view is locked and there aren't linked views
+    //- an error occurs while creating the part
+    //The first case is handled by calling KonqMainWindow::openUrl again and forcing the use of a new tab
+    //In the second case, try again to decide an action, but only among Open or Save (since embedding failed)
 
-        //TODO: shouldn't these failures be handled somewhere else, where there are more information about the failure?
-        //This is especially true for the first situation (and maybe other like it), but I think it would require a
-        //better separation of roles between main window, view and url loader
-        if (m_view->isLockedLocation() && m_view->linkedViews().isEmpty()) {
-            m_request.browserArgs.setNewTab(true);
-            m_request.browserArgs.setForcesNewWindow(true);
-            m_mainWindow->openUrl(nullptr, m_url, m_request);
-            done();
-        } else {
-            m_allowedActions.allow(UrlAction::Embed, false);
-            m_request.serviceName = {};
-            //This is an unexpected situation, so enable open and save action even if they hadn't been originally requested
-            m_allowedActions.allow(Konq::UrlAction::Open, true);
-            m_allowedActions.allow(Konq::UrlAction::Save, true);
-            m_part = {};
-            decideEmbedOpenOrSave();
-            performAction();
-        }
+    //TODO: shouldn't these failures be handled somewhere else, where there are more information about the failure?
+    //This is especially true for the first situation (and maybe other like it), but I think it would require a
+    //better separation of roles between main window, view and url loader
+    if (m_view->isLockedLocation() && m_view->linkedViews().isEmpty()) {
+        m_request.browserArgs.setNewTab(true);
+        m_request.browserArgs.setForcesNewWindow(true);
+        m_mainWindow->openUrl(nullptr, m_url, m_request);
+        done();
+    } else {
+        m_allowedActions.allow(UrlAction::Embed, false);
+        m_request.serviceName = {};
+        //This is an unexpected situation, so enable open and save action even if they hadn't been originally requested
+        m_allowedActions.allow(Konq::UrlAction::Open, true);
+        m_allowedActions.allow(Konq::UrlAction::Save, true);
+        m_part = {};
+        decideEmbedOpenOrSave();
+        performAction();
     }
 }
 
