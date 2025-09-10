@@ -34,6 +34,7 @@
 #include <QDebug>
 
 #include "textextension.h"
+#include "browserextension.h"
 
 static const KAboutData aboutdata(QStringLiteral("babelfish"), i18n("Translate Web Page"), QStringLiteral("1.0"));
 K_PLUGIN_CLASS_WITH_JSON(PluginBabelFish, "plugin_translator.json")
@@ -411,7 +412,12 @@ which may fetch the insecure version of the page."),
     }
 
     // Connect to the fish
-    emit ext->openUrlRequest(result);
+    // copied from plugins/akregator/konqfeedicon.cpp
+    if (auto browserExtension = qobject_cast<BrowserExtension *>(ext)) {
+        emit browserExtension->browserOpenUrlRequest(result);
+    } else {
+        emit ext->openUrlRequest(result);
+    }
 }
 
 #include <plugin_babelfish.moc>
