@@ -20,6 +20,7 @@
 
 #include <kwidgetsaddons_version.h>
 #include <kactioncollection.h>
+#include <kcountryflagemojiiconengine.h>
 #include <QMenu>
 #include <kmessagebox.h>
 #include <KLocalizedString>
@@ -58,12 +59,54 @@ PluginBabelFish::PluginBabelFish(QObject *parent,
     }
 }
 
+static QIcon iconForLanguage(const QString &languageCode)
+{
+    // The 2-letter codes used internally in this plugin are language codes,
+    // but KCountryFlagEmojiIconEngine generates a flag image for a country
+    // code. So what is really wanted is "the country that is the generally
+    // recognised homeland of that language".  To obtain this a QLocale is
+    // constructed with the language code duplicated to specify a language
+    // and country.  Without that, for example, QLocale("pt") guesses Brazil
+    // for the country and generates the wrong flag, but QLocale("pt_pt")
+    // has the intended country.  Some fixes still need to be applied later.
+    const QLocale loc(languageCode+"_"+languageCode);
+    QString countryCode = QLocale::territoryToCode(loc.territory());
+
+    if (countryCode.isEmpty() && languageCode.startsWith(QStringLiteral("zt"))) {
+        // Language code "zt" is only used internally to this plugin.
+       countryCode = QStringLiteral("cn");
+    }
+    else if (loc.language() == QLocale::English && QLocale::system().territory() == QLocale::UnitedKingdom) {
+        // British English users get their own flag for that language.
+        // The original country code returned by QLocale in this case
+        // will have been "us".
+        countryCode = QStringLiteral("gb");
+    }
+    //qDebug() << languageCode << "->" << countryCode;
+
+    if (countryCode.isEmpty()) return (QIcon());
+
+    // Generate the flag icon using the Noto Emoji font.
+    // The QIcon constructor takes ownership of the QIconEngine.
+    KCountryFlagEmojiIconEngine *engine = new KCountryFlagEmojiIconEngine(countryCode);
+    return (!engine->isNull() ? QIcon(engine) : QIcon());
+}
+
 void PluginBabelFish::addTopLevelAction(const QString &name, const QString &text)
 {
     QAction *a = actionCollection()->addAction(name);
     a->setText(text);
+    a->setIcon(iconForLanguage(name));
     m_menu->addAction(a);
     m_actionGroup.addAction(a);
+}
+
+/* private */ KActionMenu *PluginBabelFish::createMenu(const QString &languageCode, const QString &title)
+{
+    KActionMenu *menu = new KActionMenu(QIcon::fromTheme(QStringLiteral("babelfish")), title, actionCollection());
+    menu->setIcon(iconForLanguage(languageCode));
+    actionCollection()->addAction(QStringLiteral("translatewebpage_")+languageCode, menu);
+    return (menu);
 }
 
 void PluginBabelFish::slotAboutToShow()
@@ -77,32 +120,15 @@ void PluginBabelFish::slotAboutToShow()
     // Create a menu for each "source->dest" translation possibility where
     // there's more than one dest for a given source.
 
-    KActionMenu *menu_en = new KActionMenu(QIcon::fromTheme(QStringLiteral("babelfish")), i18n("&English To"), actionCollection());
-    actionCollection()->addAction(QStringLiteral("translatewebpage_en"), menu_en);
-
-    KActionMenu *menu_fr = new KActionMenu(QIcon::fromTheme(QStringLiteral("babelfish")), i18n("&French To"), actionCollection());
-    actionCollection()->addAction(QStringLiteral("translatewebpage_fr"), menu_fr);
-
-    KActionMenu *menu_de = new KActionMenu(QIcon::fromTheme(QStringLiteral("babelfish")), i18n("&German To"), actionCollection());
-    actionCollection()->addAction(QStringLiteral("translatewebpage_de"), menu_de);
-
-    KActionMenu *menu_el = new KActionMenu(QIcon::fromTheme(QStringLiteral("babelfish")), i18n("&Greek To"), actionCollection());
-    actionCollection()->addAction(QStringLiteral("translatewebpage_el"), menu_el);
-
-    KActionMenu *menu_es = new KActionMenu(QIcon::fromTheme(QStringLiteral("babelfish")), i18n("&Spanish To"), actionCollection());
-    actionCollection()->addAction(QStringLiteral("translatewebpage_es"), menu_es);
-
-    KActionMenu *menu_pt = new KActionMenu(QIcon::fromTheme(QStringLiteral("babelfish")), i18n("&Portuguese To"), actionCollection());
-    actionCollection()->addAction(QStringLiteral("translatewebpage_pt"), menu_pt);
-
-    KActionMenu *menu_it = new KActionMenu(QIcon::fromTheme(QStringLiteral("babelfish")), i18n("&Italian To"), actionCollection());
-    actionCollection()->addAction(QStringLiteral("translatewebpage_it"), menu_it);
-
-    KActionMenu *menu_nl = new KActionMenu(QIcon::fromTheme(QStringLiteral("babelfish")), i18n("&Dutch To"), actionCollection());
-    actionCollection()->addAction(QStringLiteral("translatewebpage_nl"), menu_nl);
-
-    KActionMenu *menu_ru = new KActionMenu(QIcon::fromTheme(QStringLiteral("babelfish")), i18n("&Russian To"), actionCollection());
-    actionCollection()->addAction(QStringLiteral("translatewebpage_ru"), menu_ru);
+    KActionMenu *menu_en = createMenu(QStringLiteral("en"), i18n("&English To"));
+    KActionMenu *menu_fr = createMenu(QStringLiteral("fr"), i18n("&French To"));
+    KActionMenu *menu_de = createMenu(QStringLiteral("de"), i18n("&German To"));
+    KActionMenu *menu_el = createMenu(QStringLiteral("el"), i18n("&Greek To"));
+    KActionMenu *menu_es = createMenu(QStringLiteral("es"), i18n("&Spanish To"));
+    KActionMenu *menu_pt = createMenu(QStringLiteral("pt"), i18n("&Portugese To"));
+    KActionMenu *menu_it = createMenu(QStringLiteral("it"), i18n("&Italian To"));
+    KActionMenu *menu_nl = createMenu(QStringLiteral("nl"), i18n("&Dutch To"));
+    KActionMenu *menu_ru = createMenu(QStringLiteral("ru"), i18n("&Russian To"));
 
     // List of translation possibilities for filling the above menus
     // Mostly from babelfish.
@@ -168,6 +194,8 @@ void PluginBabelFish::slotAboutToShow()
             QAction *a = actionCollection()->addAction(translation);
             m_actionGroup.addAction(a);
             a->setText(entry.name.toString());
+            QString destLang = translation.mid(underScorePos+1);
+            a->setIcon(iconForLanguage(destLang));
             actionMenu->addAction(a);
         } else {
             qWarning() << "No menu found for" << srcLang;
@@ -390,7 +418,6 @@ which may fetch the insecure version of the page."),
             }
         }
     } else {
-
         const QStringList parts = language.split('_');
 
         if (hasSelection) { //https://translate.google.com/#en|de|text_to_translate

@@ -26,6 +26,7 @@ private slots:
 
 private:
     void addTopLevelAction(const QString &name, const QString &text);
+    KActionMenu *createMenu(const QString &languageCode, const QString &title);
 
 private:
     QActionGroup m_actionGroup;
