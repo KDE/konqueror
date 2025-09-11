@@ -92,13 +92,32 @@ static QIcon iconForLanguage(const QString &languageCode)
     return (!engine->isNull() ? QIcon(engine) : QIcon());
 }
 
-void PluginBabelFish::addTopLevelAction(const QString &name, const QString &text)
+/* private */ void PluginBabelFish::addMenuAction(KActionMenu *menu, const QString &srcName, const QString &text, const QString &dstName)
 {
-    QAction *a = actionCollection()->addAction(name);
+    QAction *a = actionCollection()->addAction(srcName);
     a->setText(text);
-    a->setIcon(iconForLanguage(name));
-    m_menu->addAction(a);
+    a->setIcon(iconForLanguage(!dstName.isEmpty() ? dstName : srcName));
+    addMenuAction(menu, a);
     m_actionGroup.addAction(a);
+}
+
+/* private */ void PluginBabelFish::addMenuAction(KActionMenu *menu, QAction *action)
+{
+    // Insert an action into a menu, in an appropriate place so that
+    // the menu actions end up in alphabetical order in the UI language.
+    const QString actionText = KLocalizedString::removeAcceleratorMarker(action->text());
+    QList<QAction *> existingActions = menu->menu()->actions();
+    QAction *before = nullptr;
+
+    for (QAction *existingAction : std::as_const(existingActions)) {
+        const QString existingText = KLocalizedString::removeAcceleratorMarker(existingAction->text());
+        if (existingText.compare(actionText, Qt::CaseInsensitive)>0) {
+            before = existingAction;
+            break;
+        }
+    }
+
+    menu->insertAction(before, action);
 }
 
 /* private */ KActionMenu *PluginBabelFish::createMenu(const QString &languageCode, const QString &title)
@@ -191,12 +210,8 @@ void PluginBabelFish::slotAboutToShow()
         const QString srcLang = translation.left(underScorePos);
         QAction *srcAction = actionCollection()->action(QLatin1String("translatewebpage_") + srcLang);
         if (KActionMenu *actionMenu = qobject_cast<KActionMenu *>(srcAction)) {
-            QAction *a = actionCollection()->addAction(translation);
-            m_actionGroup.addAction(a);
-            a->setText(entry.name.toString());
-            QString destLang = translation.mid(underScorePos+1);
-            a->setIcon(iconForLanguage(destLang));
-            actionMenu->addAction(a);
+            const QString destLang = translation.mid(underScorePos+1);
+            addMenuAction(actionMenu, translation, entry.name.toString(), destLang);
         } else {
             qWarning() << "No menu found for" << srcLang;
         }
@@ -205,25 +220,20 @@ void PluginBabelFish::slotAboutToShow()
     // Fill the toplevel menu, both with single source->dest possibilities
     // and with submenus.
 
-    addTopLevelAction(QStringLiteral("zh_en"), i18n("&Chinese (Simplified) to English"));
-    addTopLevelAction(QStringLiteral("zt_en"), i18n("Chinese (&Traditional) to English"));
+    addMenuAction(m_menu, menu_nl);
+    addMenuAction(m_menu, menu_en);
+    addMenuAction(m_menu, menu_fr);
+    addMenuAction(m_menu, menu_de);
+    addMenuAction(m_menu, menu_el);
+    addMenuAction(m_menu, menu_it);
+    addMenuAction(m_menu, menu_pt);
+    addMenuAction(m_menu, menu_ru);
+    addMenuAction(m_menu, menu_es);
 
-    m_menu->addAction(menu_nl);
-    m_menu->addAction(menu_en);
-    m_menu->addAction(menu_fr);
-    m_menu->addAction(menu_de);
-    m_menu->addAction(menu_el);
-    m_menu->addAction(menu_it);
-
-    addTopLevelAction(QStringLiteral("ja_en"), i18n("&Japanese to English"));
-    addTopLevelAction(QStringLiteral("ko_en"), i18n("&Korean to English"));
-
-    m_menu->addAction(menu_pt);
-    m_menu->addAction(menu_ru);
-    m_menu->addAction(menu_es);
-
-    // TODO we could sort the action texts alphabetically, so that they wouldn't
-    // be sorted in English only...
+    addMenuAction(m_menu, QStringLiteral("zh_en"), i18n("&Chinese (Simplified) to English"));
+    addMenuAction(m_menu, QStringLiteral("zt_en"), i18n("Chinese (&Traditional) to English"));
+    addMenuAction(m_menu, QStringLiteral("ja_en"), i18n("&Japanese to English"));
+    addMenuAction(m_menu, QStringLiteral("ko_en"), i18n("&Korean to English"));
 }
 
 PluginBabelFish::~PluginBabelFish()
