@@ -144,7 +144,7 @@ void PluginBabelFish::slotAboutToShow()
     KActionMenu *menu_de = createMenu(QStringLiteral("de"), i18n("&German To"));
     KActionMenu *menu_el = createMenu(QStringLiteral("el"), i18n("&Greek To"));
     KActionMenu *menu_es = createMenu(QStringLiteral("es"), i18n("&Spanish To"));
-    KActionMenu *menu_pt = createMenu(QStringLiteral("pt"), i18n("&Portugese To"));
+    KActionMenu *menu_pt = createMenu(QStringLiteral("pt"), i18n("&Portuguese To"));
     KActionMenu *menu_it = createMenu(QStringLiteral("it"), i18n("&Italian To"));
     KActionMenu *menu_nl = createMenu(QStringLiteral("nl"), i18n("&Dutch To"));
     KActionMenu *menu_ru = createMenu(QStringLiteral("ru"), i18n("&Russian To"));
