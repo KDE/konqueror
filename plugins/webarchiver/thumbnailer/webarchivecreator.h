@@ -9,9 +9,6 @@
 #define WEBARCHIVECREATOR_H
 
 #include <QObject>
-#ifdef THUMBNAIL_USE_WEBKIT
-#include <QNetworkCookieJar>
-#endif // THUMBNAIL_USE_WEBKIT
 
 #include <KIO/ThumbnailCreator>
 
@@ -43,21 +40,5 @@ private:
 };
 
 
-#ifdef THUMBNAIL_USE_WEBKIT
-
-class WebArchiveCreatorCookieJar : public QNetworkCookieJar
-{
-    Q_OBJECT
-
-public:
-    WebArchiveCreatorCookieJar(QObject *parent = nullptr);
-    ~WebArchiveCreatorCookieJar() override = default;
-
-    QList<QNetworkCookie> cookiesForUrl(const QUrl &url) const override;
-    bool insertCookie(const QNetworkCookie & cookie) override;
-    bool setCookiesFromUrl(const QList<QNetworkCookie> &cookieList, const QUrl &url) override;
-};
-
-#endif // THUMBNAIL_USE_WEBKIT
 
 #endif // WEBARCHIVECREATOR_H
