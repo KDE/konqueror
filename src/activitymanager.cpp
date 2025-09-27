@@ -22,7 +22,9 @@
 
 ActivityManager::ActivityManager(QObject* parent) : QObject(parent), m_activitiesConsumer(new KActivities::Consumer(this))
 {
+#ifdef ACTIVITIES_CAN_BE_STOPPED
     connect(m_activitiesConsumer, &KActivities::Consumer::runningActivitiesChanged, this, &ActivityManager::handleRunningActivitiesChange);
+#endif
     connect(m_activitiesConsumer, &KActivities::Consumer::activityRemoved, this, &ActivityManager::removeActivityState);
     connect(KX11Extras::self(), &KX11Extras::windowChanged, this, &ActivityManager::handleWindowChanged);
 }
@@ -43,6 +45,7 @@ QString ActivityManager::activitiesGroupName()
     return s_activitiesGroupName;
 }
 
+#ifdef ACTIVITIES_CAN_BE_STOPPED
 void ActivityManager::closeWindowBecauseNotInRunningActivities(KonqMainWindow* window)
 {
     disconnect(window, &KonqMainWindow::closing, this, &ActivityManager::removeWindowFromActivities);
@@ -56,7 +59,9 @@ void ActivityManager::closeWindowBecauseNotInRunningActivities(KonqMainWindow* w
         window->close();
     }
 }
+#endif
 
+#ifdef ACTIVITIES_CAN_BE_STOPPED
 void ActivityManager::handleRunningActivitiesChange(const QStringList& runningActivities)
 {
     QList<KonqMainWindow*> *windows = KonqMainWindow::mainWindowList();
@@ -116,6 +121,7 @@ void ActivityManager::handleRunningActivitiesChange(const QStringList& runningAc
         closeWindowBecauseNotInRunningActivities(it.key());
     }
 }
+#endif //ACTIVITIES_CAN_BE_STOPPED
 
 void ActivityManager::saveWindowsActivityInfo(const QHash<KonqMainWindow *, QStringList>& windowsWithActivities)
 {
@@ -184,16 +190,21 @@ void ActivityManager::handleWindowChanged(WId id, NET::Properties, NET::Properti
     if (activities.isEmpty()) {
         return;
     }
+
+#ifdef ACTIVITIES_CAN_BE_STOPPED
     QStringList runningActivities = m_activitiesConsumer->runningActivities();
     auto isRunning = [runningActivities](const QString &act){return runningActivities.contains(act);};
     if (std::any_of(activities.constBegin(), activities.constEnd(), isRunning)) {
         return;
     }
+#endif
 
     QHash<KonqMainWindow*, QStringList> hash;
     hash.insert(w, activities);
     saveWindowsActivityInfo(hash);
+#ifdef ACTIVITIES_CAN_BE_STOPPED
     closeWindowBecauseNotInRunningActivities(w);
+#endif
 }
 
 void ActivityManager::removeWindowFromActivities(KonqMainWindow* window)
@@ -244,6 +255,7 @@ void ActivityManager::removeActivityState(const QString& id)
     config->sync();
 }
 
+#ifdef ACTIVITIES_CAN_BE_STOPPED
 KonqMainWindow* ActivityManager::restoreWindowFromActivityState(const QString& uuid)
 {
     //WARNING: for efficiency reasons, this method assumes no window with the given uuid exists. It's up to the caller to make sure of that
@@ -275,6 +287,7 @@ KonqMainWindow* ActivityManager::restoreWindowFromActivityState(const QString& u
 
     return w;
 }
+#endif
 
 void ActivityManager::registerMainWindow(KonqMainWindow* window)
 {
