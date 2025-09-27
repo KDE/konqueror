@@ -11,6 +11,16 @@
 
 #include <KX11Extras>
 
+#ifdef KActivities_FOUND
+//Functions allowing to query about running activities has been removed from Plasma 6.5.0
+//since activities are always considered to be running. Code making use of that
+//functionality needs to be skipped
+#include <PlasmaActivities/Version>
+#if PLASMA_ACTIVITIES_VERSION < QT_VERSION_CHECK(6, 4, 90)
+#define ACTIVITIES_CAN_BE_STOPPED
+#endif
+#endif
+
 class KonqMainWindow;
 namespace KActivities {
   class Consumer;
@@ -20,9 +30,9 @@ namespace KActivities {
  * @brief Class which handles closing and restoring windows according to the current activity
  *
  * In particular, this class:
- * - closes windows when all the activities they belong to are stopped
- * - stores information about windows which are closed because they only belong to stopped activities
- * - creates windows belonging to activities which are restarted
+ * - closes windows when all the activities they belong to are stopped (only for Plasma versions less than 6.5)
+ * - stores information about windows which are closed because they only belong to stopped activities (only for Plasma versions less than 6.5)
+ * - creates windows belonging to activities which are restarted (only for Plasma versions less than 6.5)
  * - removes information about deleted activities
  * - removes information about windows closed by the user
  *
@@ -72,18 +82,20 @@ private slots:
      */
     void removeWindowFromActivities(KonqMainWindow *window);
 
+#ifdef ACTIVITIES_CAN_BE_STOPPED
     /**
      * @brief Performs the operations needed to keep windows in sync with running activities
      *
      * In particular, this method:
      * - finds out which windows should be closed because all the activities they belong to are closed
-     * - saves informations about the windows to close
+     * - saves information about the windows to close
      * - closes the windows which only belong to stopped activities
      * - checks whether there are windows which belong to running activities but which don't exist and creates them
      * @note this method ignores preloaded windows (if any)
      * @param runningActivities the list of identifiers of all running activities
      */
     void handleRunningActivitiesChange(const QStringList &runningActivities);
+#endif
 
     /**
      * @brief Removes information about a deleted activity
@@ -131,6 +143,7 @@ private:
      */
     void handleWindowChanged(WId id, NET::Properties prop, NET::Properties2 prop2);
 
+#ifdef ACTIVITIES_CAN_BE_STOPPED
     /**
      * @brief Closes a window in a way which works correctly with activities management
      *
@@ -155,6 +168,7 @@ private:
      * @return the restored window
      */
     KonqMainWindow* restoreWindowFromActivityState(const QString &uuid);
+#endif
 
     /**
      * @return The path of the configuration file where activities information is stored
