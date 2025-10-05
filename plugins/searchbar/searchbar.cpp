@@ -62,6 +62,7 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
     m_searchCombo = new SearchBarCombo(nullptr);
     m_searchCombo->lineEdit()->installEventFilter(this);
     connect(m_searchCombo, &QComboBox::textActivated, this, &SearchBarPlugin::startSearch);
+    connect(m_searchCombo, &KComboBox::returnPressed, this, &SearchBarPlugin::startSearch);
     connect(m_searchCombo, &SearchBarCombo::iconClicked, this, &SearchBarPlugin::showSelectionMenu);
     m_searchCombo->setWhatsThis(i18n("Search Bar<p>"
                                      "Enter a search term. Click on the icon to change search mode or provider.</p>"));
@@ -76,7 +77,7 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
     a->setText(i18n("Focus Searchbar"));
     actionCollection()->setDefaultShortcut(a, QKeySequence(Qt::CTRL | Qt::ALT | Qt::Key_S));
     connect(a, &QAction::triggered, this, &SearchBarPlugin::focusSearchbar);
-    m_searchProvidersDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kde5/services/searchproviders/";
+    m_searchProvidersDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kf6/searchproviders/";
     QDir().mkpath(m_searchProvidersDir);
     configurationChanged();
 
@@ -201,7 +202,7 @@ void SearchBarPlugin::startSearch(const QString &search)
         }
     } else if (m_searchMode == UseSearchProvider) {
         m_urlEnterLock = true;
-        const KUriFilterSearchProvider &provider = m_searchProviders.value(m_currentEngine);
+        const KUriFilterSearchProvider &provider = m_searchProviders.value(m_currentEngine).first;
         KUriFilterData data;
         data.setData(provider.defaultKey() + m_delimiter + search);
         //qCDebug(SEARCHBAR_LOG) << "Query:" << (provider.defaultKey() + m_delimiter + search);
@@ -222,12 +223,14 @@ void SearchBarPlugin::startSearch(const QString &search)
                      emit ext->createNewWindow(data.uri());
                 }
             }
-        } else {
-            if (ext) {
+        } else if (ext) {
+            if (BrowserExtension *be = qobject_cast<BrowserExtension*>(ext)) {
+                emit be->browserOpenUrlRequest(data.uri());
+            } else {
                 emit ext->openUrlRequest(data.uri());
-                if (!m_part.isNull()) {
-                    m_part->widget()->setFocus();    // #152923
-                }
+            }
+            if (!m_part.isNull()) {
+                m_part->widget()->setFocus();    // #152923
             }
         }
     }
@@ -245,7 +248,7 @@ void SearchBarPlugin::setIcon()
     } else {
         const QString engine = (m_currentEngine.isEmpty() ? m_searchEngines.first() : m_currentEngine);
         //qCDebug(SEARCHBAR_LOG) << "Icon Name:" << m_searchProviders.value(engine).iconName();
-        const QString iconName = m_searchProviders.value(engine).iconName();
+        const QString iconName = m_searchProviders.value(engine).second;
         if (iconName.startsWith(QLatin1Char('/'))) {
             m_searchIcon = QPixmap(iconName);
         } else {
@@ -272,7 +275,7 @@ void SearchBarPlugin::setIcon()
         m_searchCombo->lineEdit()->setPlaceholderText(i18n("Find in Page..."));
     } else {
         if (m_searchProviders.contains(m_currentEngine)) {
-            m_searchCombo->lineEdit()->setPlaceholderText(m_searchProviders.value(m_currentEngine).name());
+            m_searchCombo->lineEdit()->setPlaceholderText(m_searchProviders.value(m_currentEngine).first.name());
         }
     }
 }
@@ -295,8 +298,8 @@ void SearchBarPlugin::showSelectionMenu()
         }
 
         for (int i = 0, count = m_searchEngines.count(); i != count; ++i) {
-            const KUriFilterSearchProvider &provider = m_searchProviders.value(m_searchEngines.at(i));
-            QAction *action = m_popupMenu->addAction(QIcon::fromTheme(provider.iconName()), provider.name());
+            const ProviderWithIcon &provider = m_searchProviders.value(m_searchEngines.at(i));
+            QAction *action = m_popupMenu->addAction(QIcon::fromTheme(provider.second), provider.first.name());
             action->setData(QVariant::fromValue(i));
         }
 
@@ -390,8 +393,8 @@ void SearchBarPlugin::configurationChanged()
         for (const QString &engine: data.preferredSearchProviders()) {
             //qCDebug(SEARCHBAR_LOG) << "Found search provider:" << engine;
             const KUriFilterSearchProvider &provider = data.queryForSearchProvider(engine);
-
-            m_searchProviders.insert(provider.desktopEntryName(), provider);
+            QString icon = data.iconNameForPreferredSearchProvider(provider.name());
+            m_searchProviders.insert(provider.desktopEntryName(), {provider, icon});
             m_searchEngines << provider.desktopEntryName();
         }
     }

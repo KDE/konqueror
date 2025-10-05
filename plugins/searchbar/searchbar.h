@@ -203,7 +203,8 @@ private:
     QString m_lastSearch;
     QString m_currentEngine;
     QStringList m_searchEngines;
-    QMap<QString, KUriFilterSearchProvider> m_searchProviders;
+    using ProviderWithIcon = std::pair<KUriFilterSearchProvider, QString>;
+    QMap<QString, ProviderWithIcon> m_searchProviders;
     QChar m_delimiter;
     QMap<QString, QString> m_openSearchDescs;
     bool m_reloadConfiguration;
