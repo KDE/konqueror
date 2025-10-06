@@ -22,14 +22,14 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 00:41+0000\n"
-"PO-Revision-Date: 2025-08-02 21:16+0300\n"
+"PO-Revision-Date: 2025-10-05 12:32+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -168,7 +168,7 @@ msgstr ""
 "<html>קובע כיצד Konqueror יפעל לגבי מתיחת קו מתחת קישורים: <br /> <ul> "
 "<li><b>כן</b>: מתח תמיד קווים מתחת קישורים</li> <li><b>לא</b>: אל תמתח אף "
 "פעם קווים מתחת קישורים</li> <li><b>בעת ריחוף בלבד</b>: מתח קו כאשר העכבר "
-"עובר מעל לקישור</li> </ul> <br  /> <i>הערה: הגדרות גיליון הסגנון של האתר "
+"עובר מעל לקישור</li> </ul> <br /> <i>הערה: הגדרות גיליון הסגנון של האתר "
 "עשויות לעקוף ערך זה</i> </html>"
 
 #: appearance.cpp:105
@@ -1477,12 +1477,12 @@ msgstr "מדיניות JavaScript:"
 #: domainlistview.cpp:240
 #, kde-format
 msgid "Select a JavaScript policy for the above host or domain."
-msgstr "בחר מדיניות JavaScript למארח או למתחם הנ\"ל."
+msgstr "בחירת מדיניות JavaScript למארח או לשם התחום שלעיל."
 
 #: domainlistview.cpp:242
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
-msgstr "שינוי מדיניות JavaScript ספציפיות עבור מתחם"
+msgstr "שינוי מדיניות JavaScript נקודתיות לשם תחום"
 
 #: filteropts.cpp:48
 #, kde-format
@@ -1510,7 +1510,7 @@ msgid ""
 "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
 "\"filterhelp\">more information</a>):"
 msgstr ""
-"‏<qt>ביטוי סינון (למשל: <tt>http://www.example.com/ad/*‎</tt>, <a href="
+"‏<qt>ביטוי סינון (למשל: <tt>https://www.example.com/ad/*‎</tt>, <a href="
 "\"filterhelp\">מידע נוסף</a>):"
 
 #: filteropts.cpp:100
@@ -1540,22 +1540,22 @@ msgstr "הוספה"
 #: filteropts.cpp:123
 #, kde-format
 msgid "Update"
-msgstr "עדכן"
+msgstr "עדכון"
 
 #: filteropts.cpp:126
 #, kde-format
 msgid "Remove"
-msgstr "הסר"
+msgstr "הסרה"
 
 #: filteropts.cpp:130
 #, kde-format
 msgid "Import..."
-msgstr "ייבוא..."
+msgstr "ייבוא…"
 
 #: filteropts.cpp:133
 #, kde-format
 msgid "Export..."
-msgstr "ייצוא..."
+msgstr "ייצוא…"
 
 #: filteropts.cpp:140
 #, kde-format
@@ -1563,8 +1563,8 @@ msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
 "\"exporthelp\">export format</a>"
 msgstr ""
-"‏<qt>מידע נוסף על <a href=\"importhelp\">ייבור פורמט</a>, <a href=\"exporthelp"
-"\">ייצור פורמט</a>"
+"‏<qt>מידע נוסף על <a href=\"importhelp\">תסדיר ייבוא</a>, <a href=\"exporthelp"
+"\">תסדיר ייצוא</a>"
 
 #: filteropts.cpp:154
 #, kde-format
@@ -1602,12 +1602,12 @@ msgid ""
 "(allow) any matching URL, which takes priority over any blacklist (blocking) "
 "filter."
 msgstr ""
-"‏<qt><p>הכנס ביטוי לסינון. ניתן להגדיר מסננים בדרכים הבאות: <ul><li>,תו כללי "
-"בסגנון מסוף, לדוגמא:<tt>http://www.example.com/ads*</tt>, ניתן להשתמש בתווים "
-"הכללים: <tt>*?[]</tt></li><li>, ובביטוי רגולרי על ידי הקפת המחרוזת בתווים "
-"'<tt>/</tt>', לדוגמא: <tt>/\\/(ad|banner)\\./</tt></li></ul><p> כל מחרוזת "
-"סינון שבתחילתה '<tt>@@</tt>' ברשימה הלבנה של כתובות URL, תהיה בעדיפות על כל "
-"מסנן פילטור ברשימה שחורה."
+"‏<qt><p>נא למלא ביטוי לסינון. ניתן להגדיר מסננים בדרכים הבאות: <ul><li>תו "
+"כללי בסגנון מסוף, למשל:<tt>https://www.example.com/ads*</tt>, ניתן להשתמש "
+"בתווים הכלליים: <tt>*?[]</tt></li><li>, ובביטוי רגולרי על ידי תחימת המחרוזת "
+"בתווים ‚<tt>/</tt>’, למשל: <tt>/\\/(ad|banner)\\./</tt></li></ul><p> כל "
+"מחרוזת סינון שבתחילתה ‚<tt>@@</tt>’ ברשימת הכתובות המותרות, תהיה בעדיפות על "
+"כל מסנן ברשימה שחורה."
 
 #: filteropts.cpp:183
 #, kde-format
@@ -1669,25 +1669,25 @@ msgstr "כאשר נוצרת &לשונית חדשה"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
-msgstr "הצגת עמוד ההיכרות"
+msgstr "להציג את עמוד ההיכרות"
 
 #: generalopts.cpp:70
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
-msgstr "הצגת עמוד הפתיחה שלי"
+msgstr "להציג את עמוד הפתיחה שלי"
 
 #: generalopts.cpp:71
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
-msgstr "הצגת עמוד ריק"
+msgstr "להציג עמוד ריק"
 
 #: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
-msgstr "הצגת הסימניות שלי"
+msgstr "להציג את הסימניות שלי"
 
 #: generalopts.cpp:78
 #, kde-format
