@@ -382,7 +382,7 @@ int KonquerorApplication::performStart(const QString& workingDirectory, bool fir
     if (!args.isEmpty()) {
         KonqMainWindow *mw = nullptr;
         if (Konq::Settings::konquerorTabforExternalURL() || sessionRestored) {
-            mw = KonqMainWindow::mostSuitableWindow();
+            mw = KonqMainWindow::findMostSuitableWindow();
         }
         result = createWindowsForUrlArguments(args, workingDirectory, mw);
     } else if (sessionRestored){

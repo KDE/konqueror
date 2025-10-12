@@ -369,6 +369,7 @@ KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup &configGroup
 {
     // TODO factorize to avoid code duplication with loadViewProfileFromGroup
     KonqMainWindow *mainWindow = new KonqMainWindow;
+    qDebug() << "WINDOW CREATED";
 
     if (configGroup.readEntry("FullScreen", false)) {
         // Full screen on

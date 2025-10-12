@@ -100,7 +100,7 @@ public:
     explicit KonqMainWindow(const QUrl &initialURL = QUrl());
     ~KonqMainWindow() override;
 
-    static KonqMainWindow* mostSuitableWindow();
+    static KonqMainWindow* findMostSuitableWindow();
 
     /**
      * Filters the URL and calls the main openUrl method.
@@ -392,6 +392,17 @@ public:
      */
     void setSaveDir(const QString &dir);
 
+    /**
+     * @brief Whether this window should not be used for opening links requested from outside the window itself
+     *
+     * The user chooses to make a window protected when he doesn't want links clicked in other widnows or outside
+     * Konqueror to be opened inside that window. Links clicked in views inside the window can be opened inside it
+     * and create new tabs inside it.
+     *
+     * @return `true` if the window is protected and `false` otherwise
+     */
+    bool isProtected() const;
+
 Q_SIGNALS:
     void viewAdded(KonqView *view);
     void viewRemoved(KonqView *view);
@@ -494,6 +505,7 @@ public Q_SLOTS:
     void slotReloadPopup();
 
     void slotBreakOffTabPopup();
+
 private Q_SLOTS:
     void slotViewCompleted(KonqView *view);
 
@@ -761,6 +773,8 @@ private: // members
     KToggleFullScreenAction *m_ptaFullScreen;
 
     QAction *m_paShowDeveloperTools;
+
+    KToggleAction *m_protectWindow;
 
     bool m_fullyConstructed: 1;
     bool m_bLocationBarConnected: 1;

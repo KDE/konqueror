@@ -383,7 +383,7 @@ KonqMainWindow::~KonqMainWindow()
     //qCDebug(KONQUEROR_LOG) << this << "deleted";
 }
 
-KonqMainWindow* KonqMainWindow::mostSuitableWindow()
+KonqMainWindow* KonqMainWindow::findMostSuitableWindow()
 {
     QList<KonqMainWindow *> windows = mainWindows();
     if (windows.isEmpty()) {
@@ -394,6 +394,9 @@ KonqMainWindow* KonqMainWindow::mostSuitableWindow()
     //(if activities are enabled)
     QString currentActivity = KonquerorApplication::currentActivity();
     auto filter = [currentActivity](KonqMainWindow *mw) {
+        if (mw->isProtected()) {
+            return false;
+        }
         KWindowInfo winfo(mw->winId(), NET::WMDesktop, NET::WM2Activities);
         bool isInCurrentActivity = true;
         //if currentActivity is empty, it means that the activity service status is not running or that activity support is disabled,
@@ -3472,6 +3475,9 @@ void KonqMainWindow::initActions()
     connect(m_paMoveTabRight, &QAction::triggered, this, &KonqMainWindow::slotMoveTabRight);
     actionCollection()->setDefaultShortcut(m_paMoveTabRight, Qt::CTRL | Qt::SHIFT | Qt::Key_Right);
 
+    m_protectWindow = new KToggleAction(QIcon::fromTheme(QStringLiteral("lock")), i18n("Protect Window"), this);
+    actionCollection()->addAction(QStringLiteral("protect_window"), m_protectWindow);
+
 #ifndef NDEBUG
     action = actionCollection()->addAction(QStringLiteral("dumpdebuginfo"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("view-dump-debug-info")));
@@ -3677,6 +3683,9 @@ void KonqMainWindow::initActions()
     m_paShowDeveloperTools->setText(i18n("&Inspect Current Page"));
     m_paShowDeveloperTools->setWhatsThis(i18n("<html>Shows the developer tools for the current page<br/><br/>The current view is split in two and the developer tools are displayed in the second half"));
     m_paShowDeveloperTools->setStatusTip(i18n("Shows the developer tools for the current page"));
+
+    m_protectWindow->setStatusTip(i18n("Mark the current window as protected"));
+    m_protectWindow->setWhatsThis(i18n("<p>Mark the current window as protected</p><p>Marking a window as protected ensures that Konqueror will never open external links in it</p>"));
 }
 
 void KonqExtendedBookmarkOwner::openBookmark(const KBookmark &bm, Qt::MouseButtons mb, Qt::KeyboardModifiers km)
@@ -4518,6 +4527,7 @@ void KonqMainWindow::saveProperties(KConfigGroup &config)
     m_pViewManager->saveViewConfigToGroup(config, flags);
     config.writeEntry("Uuid", m_uuid);
     config.writeEntry("Activities", activities());
+    config.writeEntry("Protected", m_protectWindow && m_protectWindow->isChecked());
 }
 
 void KonqMainWindow::readProperties(const KConfigGroup &configGroup)
@@ -4538,6 +4548,10 @@ void KonqMainWindow::applyMainWindowSettings(const KConfigGroup &config)
         /// @note status bar isn't direct child to main window
         QString entry = config.readEntry("StatusBar", "Enabled");
         m_currentView->frame()->statusbar()->setVisible(entry != QLatin1String("Disabled"));
+    }
+
+    if (config.hasKey(QStringLiteral("Protected"))) {
+        m_protectWindow->setChecked(config.readEntry("Protected", false));
     }
 
     //Only call setOnActivities if the config object actually contains the "Activities" key
@@ -5562,4 +5576,9 @@ QString KonqMainWindow::saveDir() const
 void KonqMainWindow::setSaveDir(const QString& dir)
 {
     m_saveDir = dir;
+}
+
+bool KonqMainWindow::isProtected() const
+{
+    return m_protectWindow && m_protectWindow->isChecked();
 }

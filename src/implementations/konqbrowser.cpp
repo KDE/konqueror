@@ -132,7 +132,7 @@ bool KonqBrowser::openUrl(const QUrl& url, KParts::OpenUrlArguments& args, const
 {
     KonqMainWindow *mainWindow = qobject_cast<KonqMainWindow*>(window);
     if (!mainWindow) {
-        mainWindow = KonqMainWindow::mostSuitableWindow();
+        mainWindow = KonqMainWindow::findMostSuitableWindow();
     }
     if (!mainWindow) {
         mainWindow = KonqMainWindowFactory::createEmptyWindow();

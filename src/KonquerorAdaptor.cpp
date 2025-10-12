@@ -125,7 +125,7 @@ QStringList KonquerorAdaptor::urls() const
 
 QDBusObjectPath KonquerorAdaptor::windowForTab()
 {
-    KonqMainWindow *window = KonqMainWindow::mostSuitableWindow();
+    KonqMainWindow *window = KonqMainWindow::findMostSuitableWindow();
     if (window) {
         Q_ASSERT(!window->dbusName().isEmpty());
     }
