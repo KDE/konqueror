@@ -288,6 +288,17 @@ void WebEngineNavigationExtension::slotSaveFullHTMLPage()
     }
 }
 
+void WebEngineNavigationExtension::doPrinting(QPrinter* printer)
+{
+        //According to the documentation for QWebEngineView::print(), the resolution should be at least 300
+        //We only do this when printing to file, as for physical printers the user may have chosen a lower
+        //resolution and we shouldn't override his choice.
+        if (printer->resolution() < s_previewMinResolution && !printer->outputFileName().isEmpty()) {
+            printer->setResolution(s_previewMinResolution);
+        }
+        m_view->print(printer);
+}
+
 void WebEngineNavigationExtension::print()
 {
     if (view()) {
@@ -300,7 +311,7 @@ void WebEngineNavigationExtension::print()
             return;
         }
         delete dialog;
-        view()->print(mCurrentPrinter);
+        doPrinting(mCurrentPrinter);
     }
 }
 
@@ -861,8 +872,8 @@ void WebEngineNavigationExtension::slotPrintPreview()
     QPrintPreviewDialog dlg(&printer, view());
     auto printPreview = [this](QPrinter *p){
         QEventLoop loop;
-        auto preview = [&](bool) {loop.quit();};
-        m_view->print(p);
+        auto preview = [&loop](bool) {loop.quit();};
+        doPrinting(p);
         connect(m_view, &QWebEngineView::printFinished, &loop, preview);
         loop.exec();
     };

@@ -139,6 +139,20 @@ private:
     WebEngineView* view();
     WebEnginePage* page();
 
+    /**
+     * @brief Performs the actual printing
+     *
+     * This calls `QWebEngineView::print()` after raising the printer resolution,
+     * if it's not high enough.
+     *
+     * The resolution is only changed when printing to a file, since for physical
+     * printers the user may have chosen a low resolution and we want to respect
+     * that choice.
+     *
+     * @param printer the printer to use
+     */
+    void doPrinting(QPrinter* printer);
+
     QPointer<WebEnginePart> m_part;
     QPointer<WebEngineView> m_view;
     quint32 m_spellTextSelectionStart;
@@ -146,6 +160,14 @@ private:
     QByteArray m_historyData;
     QPrinter *mCurrentPrinter;
     bool m_historyWorkaround = false; //!< Whether saveState() should apply the history workaround or not
+
+    /**
+     * @brief The minimum resolution when printing to a PDF from the preview dialog
+     *
+     * This is a compromise between the minimum resolution suggested in the documentation
+     * for `QWebEnginePage::print()` and the high resolution value described in `QPrinter::HighResolution`.
+     */
+    static constexpr int s_previewMinResolution = 600;
 };
 
 /**
