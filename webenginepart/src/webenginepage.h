@@ -143,6 +143,11 @@ protected Q_SLOTS:
     void chooseDesktopMedia(const QWebEngineDesktopMediaRequest &request);
 #endif
 
+    void print();
+#ifdef WEBENGINE_FRAMES_SUPPORTED
+    void printFrame(QWebEngineFrame frame);
+#endif
+
     /**
     * @brief Handles a certificate error
     * @see CertificateErrorDialogManager::handleCertificateError

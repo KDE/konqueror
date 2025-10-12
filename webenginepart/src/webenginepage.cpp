@@ -98,6 +98,10 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
             this, &WebEnginePage::slotAuthenticationRequired);
     connect(this, &QWebEnginePage::fullScreenRequested, this, &WebEnginePage::changeFullScreenMode);
     connect(this, &QWebEnginePage::recommendedStateChanged, this, &WebEnginePage::changeLifecycleState);
+    connect(this, &QWebEnginePage::printRequested, this, &WebEnginePage::print);
+#ifdef WEBENGINE_FRAMES_SUPPORTED
+    connect(this, &QWebEnginePage::printRequestedByFrame, this, &WebEnginePage::printFrame);
+#endif
 
 #ifdef MEDIAREQUEST_SUPPORTED
     connect(this, &QWebEnginePage::desktopMediaRequested, this, &WebEnginePage::chooseDesktopMedia);
@@ -816,6 +820,46 @@ void WebEnginePage::chooseDesktopMedia(const QWebEngineDesktopMediaRequest& requ
     }
 }
 #endif
+
+void WebEnginePage::print()
+{
+    m_part->displayPrintPreview();
+}
+
+#ifdef WEBENGINE_FRAMES_SUPPORTED
+void WebEnginePage::printFrame(QWebEngineFrame frame)
+{
+    QString baseName = frame.htmlName();
+    if (baseName.isEmpty()) {
+        baseName = frame.name();
+    }
+    if (baseName.isEmpty()) {
+        baseName = QString::number(QTime::currentTime().msecsSinceStartOfDay());
+    }
+    baseName.append(QLatin1StringView(".pdf"));
+    QString fileName = Konq::generateUniqueFileName(baseName, m_part->temporaryDir().path());
+    auto callback = [this, fileName](const QByteArray &data) {
+        if (data.isEmpty()) {
+            KMessageBox::error(view(), i18n("An error occurred while converting the page to PDF"));
+            return;
+        }
+        QFile file(fileName);
+        if (!file.open(QFile::WriteOnly)) {
+            KMessageBox::error(view(), i18n("An error occurred while saving a PDF version of the page as %1", fileName));
+            return;
+        }
+        file.write(data);
+        file.close();
+
+        BrowserArguments ba;
+        ba.setNewTab(true);
+        ba.setForcesNewWindow(true);
+        emit m_part->browserExtension()->browserOpenUrlRequest(QUrl::fromLocalFile(fileName), {}, ba, true);
+    };
+    frame.printToPdf(callback);
+}
+#endif
+
 
 /************************************* Begin NewWindowPage ******************************************/
 

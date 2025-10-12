@@ -76,6 +76,7 @@
 #include <QWebEngineFindTextResult>
 #include <QMimeDatabase>
 #include <QTimer>
+#include <QTemporaryDir>
 
 #include "utils.h"
 #include <kio_version.h>
@@ -208,7 +209,7 @@ void WebEnginePart::initActions()
 
     action = new QAction(QIcon::fromTheme(QStringLiteral("document-print-preview")), i18n("Print Preview"), this);
     actionCollection()->addAction(QStringLiteral("printPreview"), action);
-    connect(action, &QAction::triggered, m_browserExtension, &WebEngineNavigationExtension::slotPrintPreview);
+    connect(action, &QAction::triggered, this, &WebEnginePart::displayPrintPreview);
 
     action = new QAction(QIcon::fromTheme(QStringLiteral("zoom-in")), i18nc("zoom in action", "Zoom In"), this);
     actionCollection()->addAction(QStringLiteral("zoomIn"), action);
@@ -1160,4 +1161,16 @@ void WebEnginePart::displayActOnDownloadedFileBar(KonqInterfaces::DownloadJob* j
     };
     connect(m_actOnDownloadedFileWidget, &ActOnDownloadedFileBar::hideAnimationFinished, this, [deleteWidget]{deleteWidget();});
     widget()->layout()->addWidget(m_actOnDownloadedFileWidget);
+}
+
+void WebEnginePart::displayPrintPreview()
+{
+    m_browserExtension->slotPrintPreview();
+}
+
+
+QTemporaryDir& WebEnginePart::temporaryDir()
+{
+    static QTemporaryDir s_tempDownloadDir(QDir(QDir::tempPath()).filePath(QStringLiteral("WebEnginePart")));
+    return s_tempDownloadDir;
 }

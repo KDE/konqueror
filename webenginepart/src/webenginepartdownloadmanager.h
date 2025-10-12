@@ -104,8 +104,6 @@ private:
      */
     void saveHtmlPage(QWebEngineDownloadRequest *it, WebEnginePage *page);
 
-    static QTemporaryDir& tempDownloadDir();
-
     /**
      * @brief Asks Konqueror to download the given URL using KonqInterfaces::Browser::openUrl()
      *

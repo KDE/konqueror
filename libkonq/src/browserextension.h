@@ -70,7 +70,7 @@ Q_SIGNALS:
      */
     void browserOpenUrlRequest(const QUrl &url,
                         const KParts::OpenUrlArguments &arguments = KParts::OpenUrlArguments(),
-                        const BrowserArguments &browserArguments = BrowserArguments());
+                        const BrowserArguments &browserArguments = BrowserArguments(), bool temp = false);
 
     /**
      * @brief As browserOpenUrlRequest except that the browserOpenUrlRequestDelayed signal is emitted
@@ -160,7 +160,7 @@ private Q_SLOTS:
     void slotEmitOpenUrlRequestDelayed();
     void slotOpenUrlRequest(const QUrl &url,
                                              const KParts::OpenUrlArguments &arguments,
-                                             const BrowserArguments &browserArguments);
+                                             const BrowserArguments &browserArguments, bool temp);
 
 private:
     BrowserArguments m_browserArgs;

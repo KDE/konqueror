@@ -42,6 +42,7 @@ class WebEngineNavigationExtension;
 class WebEngineWallet;
 class KPluginMetaData;
 class WebEnginePartControls;
+class QTemporaryDir;
 
 namespace KonqInterfaces {
     class DownloadJob;
@@ -158,6 +159,8 @@ public:
 
     Q_PROPERTY(bool isWebEnginePart READ isWebEnginePart)
 
+    static QTemporaryDir& temporaryDir();
+
 public Q_SLOTS:
     void exitFullScreen();
     void setInspectedPart(KParts::ReadOnlyPart *part);
@@ -166,6 +169,8 @@ public Q_SLOTS:
      * @brief Displays a widget which the user can use to display or open a file he has just finished downloading
      */
     void displayActOnDownloadedFileBar(KonqInterfaces::DownloadJob *job);
+
+    void displayPrintPreview();
 
 protected:
     /**

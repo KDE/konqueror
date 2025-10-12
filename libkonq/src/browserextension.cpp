@@ -15,6 +15,7 @@ struct DelayedRequest {
     QUrl m_delayedURL;
     KParts::OpenUrlArguments m_delayedArgs;
     BrowserArguments m_delayedBrowserArgs;
+    bool m_temp;
 };
 
 BrowserExtension::BrowserExtension(KParts::ReadOnlyPart *parent)
@@ -55,12 +56,13 @@ void BrowserExtension::slotCompleted()
     setBrowserArguments(BrowserArguments());
 }
 
-void BrowserExtension::slotOpenUrlRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs)
+void BrowserExtension::slotOpenUrlRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const BrowserArguments &browserArgs, bool temp)
 {
     DelayedRequest req;
     req.m_delayedURL = url;
     req.m_delayedArgs = args;
     req.m_delayedBrowserArgs = browserArgs;
+    req.m_temp = temp;
     m_requests.append(req);
     QTimer::singleShot(0, this, &BrowserExtension::slotEmitOpenUrlRequestDelayed);
 }
@@ -72,7 +74,7 @@ void BrowserExtension::slotEmitOpenUrlRequestDelayed()
     }
     DelayedRequest req = m_requests.front();
     m_requests.pop_front();
-    Q_EMIT browserOpenUrlRequestDelayed(req.m_delayedURL, req.m_delayedArgs, req.m_delayedBrowserArgs);
+    Q_EMIT browserOpenUrlRequestDelayed(req.m_delayedURL, req.m_delayedArgs, req.m_delayedBrowserArgs, req.m_temp);
 }
 
 #include "moc_browserextension.cpp"

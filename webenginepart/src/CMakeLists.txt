@@ -76,6 +76,11 @@ if (Qt6WebEngineCore_VERSION VERSION_GREATER_EQUAL "6.7.0")
   target_compile_definitions(kwebenginepartlib PRIVATE MEDIAREQUEST_SUPPORTED)
 endif()
 
+#QWebEngineFrame and related functions only exist starting from Qt 6.8
+if (Qt6WebEngineCore_VERSION VERSION_GREATER_EQUAL "6.8.0")
+  target_compile_definitions(kwebenginepartlib PRIVATE WEBENGINE_FRAMES_SUPPORTED)
+endif()
+
 target_link_libraries(kwebenginepartlib
     PUBLIC
         Qt${KF_MAJOR_VERSION}::Core

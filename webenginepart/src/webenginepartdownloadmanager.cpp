@@ -13,6 +13,7 @@
 #include "webenginepartcontrols.h"
 #include "navigationrecorder.h"
 #include "choosepagesaveformatdlg.h"
+#include "webenginepart.h"
 
 #include "libkonq_utils.h"
 #include "interfaces/browser.h"
@@ -36,12 +37,6 @@
 #include <KIO/JobUiDelegateFactory>
 
 using namespace KonqInterfaces;
-
-QTemporaryDir& WebEnginePartDownloadManager::tempDownloadDir()
-{
-    static QTemporaryDir s_tempDownloadDir(QDir(QDir::tempPath()).filePath(QStringLiteral("WebEnginePartDownloadManager")));
-    return s_tempDownloadDir;
-}
 
 WebEnginePartDownloadManager::WebEnginePartDownloadManager(QWebEngineProfile *profile, QObject *parent)
     : QObject(parent)
@@ -152,7 +147,7 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadRequest* it
         forceNew = true;
     }
 
-    it->setDownloadDirectory(tempDownloadDir().path());
+    it->setDownloadDirectory(WebEnginePart::temporaryDir().path());
     QMimeDatabase db;
     QMimeType type = db.mimeTypeForName(it->mimeType());
     QString suggestedName = it->suggestedFileName();
@@ -185,7 +180,7 @@ QString WebEnginePartDownloadManager::generateDownloadTempFileName(const QString
     if (QFileInfo(baseName).completeSuffix().isEmpty() && !ext.isEmpty()) {
         baseName.append("."+ext);
     }
-    return Konq::generateUniqueFileName(baseName, tempDownloadDir().path());
+    return Konq::generateUniqueFileName(baseName, WebEnginePart::temporaryDir().path());
 }
 
 void WebEnginePartDownloadManager::saveHtmlPage(QWebEngineDownloadRequest* it, WebEnginePage *page)
