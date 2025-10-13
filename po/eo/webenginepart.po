@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:42+0000\n"
+"POT-Creation-Date: 2025-10-13 00:42+0000\n"
 "PO-Revision-Date: 2024-12-28 17:41+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -967,12 +967,12 @@ msgstr "Konservi formularajn datumojn en KWallet kiam vi fermas la dialogon"
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr "Konservi formularajn datumojn en KWallet kiam vi fermas la dialogon"
 
-#: src/webenginepage.cpp:164
+#: src/webenginepage.cpp:168
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "La elŝuta administranto (%1) ne troveblas en via instalado."
 
-#: src/webenginepage.cpp:165
+#: src/webenginepage.cpp:169
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -983,7 +983,7 @@ msgstr ""
 "\n"
 "La integriĝo estos malŝaltita."
 
-#: src/webenginepage.cpp:352
+#: src/webenginepage.cpp:356
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -996,12 +996,12 @@ msgstr ""
 "aĉeton, alklaku la butonon Nuligi por malhelpi duplikaton. aĉeto.Alie, "
 "alklaku la butonon Daŭrigi por montri la retpaĝon denove.</p>"
 
-#: src/webenginepage.cpp:359
+#: src/webenginepage.cpp:363
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Resendi Informojn"
 
-#: src/webenginepage.cpp:556
+#: src/webenginepage.cpp:560
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -1010,18 +1010,18 @@ msgstr ""
 "Ĉi tiu retejo provas aliri informojn pri via fizika loko.\n"
 "Ĉu vi volas permesi al ĝi aliri?"
 
-#: src/webenginepage.cpp:560 src/webenginepage.cpp:638
-#: src/webenginepage.cpp:649
+#: src/webenginepage.cpp:564 src/webenginepage.cpp:642
+#: src/webenginepage.cpp:653
 #, kde-format
 msgid "Network Transmission"
 msgstr "Reta transsendo"
 
-#: src/webenginepage.cpp:561
+#: src/webenginepage.cpp:565
 #, kde-format
 msgid "Allow access"
 msgstr "Permesi aliron"
 
-#: src/webenginepage.cpp:631
+#: src/webenginepage.cpp:635
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1034,12 +1034,12 @@ msgstr ""
 "Eble tria partio povos kapti kaj vidi ĉi tiun informon.\n"
 "Ĉu vi certas, ke vi volas sendi la datumojn neĉifrite?"
 
-#: src/webenginepage.cpp:639
+#: src/webenginepage.cpp:643
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Sendi neĉifrite"
 
-#: src/webenginepage.cpp:646
+#: src/webenginepage.cpp:650
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1048,12 +1048,12 @@ msgstr ""
 "Tiu retejo provas elsendi formularajn datumojn per retpoŝto.\n"
 "Ĉu vi volas permesi tion?"
 
-#: src/webenginepage.cpp:650
+#: src/webenginepage.cpp:654
 #, kde-format
 msgid "&Send Email"
 msgstr "&Sendi retleteron"
 
-#: src/webenginepage.cpp:699
+#: src/webenginepage.cpp:703
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1062,22 +1062,22 @@ msgstr ""
 "<qt>Ĉu vi volas permesi al ĉi tiu retejo kunsendi la jenajn dosierojn al la "
 "retmesaĝo?</qt>"
 
-#: src/webenginepage.cpp:701
+#: src/webenginepage.cpp:705
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Retpoŝta Aldonaĵo Konfirmo"
 
-#: src/webenginepage.cpp:702
+#: src/webenginepage.cpp:706
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Permesi aldonaĵojn"
 
-#: src/webenginepage.cpp:703
+#: src/webenginepage.cpp:707
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignori aldonaĵojn"
 
-#: src/webenginepage.cpp:717
+#: src/webenginepage.cpp:721
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1086,12 +1086,24 @@ msgstr ""
 "Tiu retejo penis aldoni dosieron de via komputilo al la elsendotajn "
 "formulardatumojn. La aldonaĵo estas forigita pro via sekureco."
 
-#: src/webenginepage.cpp:720
+#: src/webenginepage.cpp:724
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Aldonaĵo Forigita"
 
-#: src/webenginepage.cpp:853
+#: src/webenginepage.cpp:843
+#, fuzzy, kde-format
+#| msgid "An error occurred while saving the file: %1"
+msgid "An error occurred while converting the page to PDF"
+msgstr "Okazis eraro dum konservado de la dosiero: %1"
+
+#: src/webenginepage.cpp:848
+#, fuzzy, kde-format
+#| msgid "An error occurred while saving the file: %1"
+msgid "An error occurred while saving a PDF version of the page as %1"
+msgstr "Okazis eraro dum konservado de la dosiero: %1"
+
+#: src/webenginepage.cpp:897
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1099,7 +1111,7 @@ msgid ""
 msgstr ""
 "Ĉi tiu retejo petas malfermi novan ŝprucfenestron.\\Ĉu vi volas permesi tion?"
 
-#: src/webenginepage.cpp:855
+#: src/webenginepage.cpp:899
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1108,76 +1120,76 @@ msgstr ""
 "<qt>Ĉi tiu retejo petas malfermi ŝprucfenestron al<p>%1</p><br/>Ĉu vi volas "
 "permesi ĉi tion?</qt>"
 
-#: src/webenginepage.cpp:858
+#: src/webenginepage.cpp:902
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript Ŝprucfenestro-Konfirmo"
 
-#: src/webenginepage.cpp:859
+#: src/webenginepage.cpp:903
 #, kde-format
 msgid "Allow"
 msgstr "Permesi"
 
-#: src/webenginepage.cpp:859
+#: src/webenginepage.cpp:903
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Ne permesi"
 
-#: src/webenginepart.cpp:205
+#: src/webenginepart.cpp:206
 #, kde-format
 msgid "Save Full HTML Page As..."
 msgstr "Konservi Plenan HTML-Paĝon Kiel..."
 
-#: src/webenginepart.cpp:209
+#: src/webenginepart.cpp:210
 #, kde-format
 msgid "Print Preview"
 msgstr "Presa Antaŭrigardo"
 
-#: src/webenginepart.cpp:213
+#: src/webenginepart.cpp:214
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Enzomi"
 
-#: src/webenginepart.cpp:218
+#: src/webenginepart.cpp:219
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Elzomi"
 
-#: src/webenginepart.cpp:223
+#: src/webenginepart.cpp:224
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Reala Grandeco"
 
-#: src/webenginepart.cpp:228
+#: src/webenginepart.cpp:229
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Zomi Nur Tekston"
 
-#: src/webenginepart.cpp:236
+#: src/webenginepart.cpp:237
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Zomi al DPI"
 
-#: src/webenginepart.cpp:249
+#: src/webenginepart.cpp:250
 #, kde-format
 msgid "Set &Encoding"
 msgstr "Agordi Ko&digon"
 
-#: src/webenginepart.cpp:252
+#: src/webenginepart.cpp:253
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Montri do&kumentofonton"
 
-#: src/webenginepart.cpp:257 src/webenginepart.cpp:566
+#: src/webenginepart.cpp:258 src/webenginepart.cpp:567
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:263
+#: src/webenginepart.cpp:264
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1187,12 +1199,12 @@ msgstr ""
 "<h3>Trovi tekston</h3>Montras dialogon, kiu ebligas al vi trovi tekston sur "
 "la montrata paĝo."
 
-#: src/webenginepart.cpp:564
+#: src/webenginepart.cpp:565
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "La SSL-informo por ĉi tiu retejo ŝajnas esti korupta."
 
-#: src/webenginepart.cpp:645
+#: src/webenginepart.cpp:646
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1200,7 +1212,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "Retpoŝto: "
 
-#: src/webenginepart.cpp:674
+#: src/webenginepart.cpp:675
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1208,7 +1220,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr "- CC:"
 
-#: src/webenginepart.cpp:676
+#: src/webenginepart.cpp:677
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1216,7 +1228,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr "- BCC:"
 
-#: src/webenginepart.cpp:678
+#: src/webenginepart.cpp:679
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1224,97 +1236,97 @@ msgctxt ""
 msgid " - Subject: "
 msgstr "- Subjekto:"
 
-#: src/webenginepart.cpp:682 src/webenginepart.cpp:693
+#: src/webenginepart.cpp:683 src/webenginepart.cpp:694
 #, kde-format
 msgid " (In new window)"
 msgstr "(En nova fenestro)"
 
-#: src/webenginepart.cpp:691
+#: src/webenginepart.cpp:692
 #, kde-format
 msgid " (In parent frame)"
 msgstr "(En gepatra kadro)"
 
-#: src/webenginepart.cpp:757
+#: src/webenginepart.cpp:758
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Ĉu vi volas serĉi <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:758
+#: src/webenginepart.cpp:759
 #, kde-format
 msgid "Internet Search"
 msgstr "Interreta serĉo"
 
-#: src/webenginepart.cpp:758
+#: src/webenginepart.cpp:759
 #, kde-format
 msgid "&Search"
 msgstr "&Serĉi"
 
-#: src/webenginepart.cpp:871
+#: src/webenginepart.cpp:872
 #, kde-format
 msgid "Close window?"
 msgstr "Ĉu fermi la fenestron?"
 
-#: src/webenginepart.cpp:871
+#: src/webenginepart.cpp:872
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Bezonas konfirmon"
 
-#: src/webenginepart.cpp:948
+#: src/webenginepart.cpp:949
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 "<html>Ĉu vi volas, ke %1 memoru la salutinformojn por <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1019
+#: src/webenginepart.cpp:1020
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr ""
 
-#: src/webenginepart.cpp:1024
+#: src/webenginepart.cpp:1025
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr ""
 
-#: src/webenginepart.cpp:1028
+#: src/webenginepart.cpp:1029
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr ""
 
-#: src/webenginepart.cpp:1032
+#: src/webenginepart.cpp:1033
 #, fuzzy, kde-format
 #| msgid "&Customize Fields to Memorize for This Page..."
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr "&Proprigi Kampojn Memorigendajn por Ĉi tiu Paĝo..."
 
-#: src/webenginepart.cpp:1036
+#: src/webenginepart.cpp:1037
 #, fuzzy, kde-format
 #| msgid "Remove Customized Memorization Settings for This Page"
 msgid "Reset Custom Credential Settings for Page"
 msgstr "Forigi Proprigitajn Memor-Agordojn por Ĉi tiu Paĝo"
 
-#: src/webenginepart.cpp:1040
+#: src/webenginepart.cpp:1041
 #, fuzzy, kde-format
 #| msgid "&Allow Password Caching for This Site"
 msgid "&Allow Credential Caching for This Page"
 msgstr "Permesi P&asvortan Kaŝmemoron por Ĉi tiu Retejo"
 
-#: src/webenginepart.cpp:1044
+#: src/webenginepart.cpp:1045
 #, fuzzy, kde-format
 #| msgid "Remove All Memorized Passwords for This Site"
 msgid "Remove All Stored Passwords for This Site"
 msgstr "Forigi Ĉiujn Memoritajn Pasvortojn por Ĉi tiu Retejo"
 
-#: src/webenginepart.cpp:1048
+#: src/webenginepart.cpp:1049
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Lanĉi Monujo-Administranton"
 
-#: src/webenginepart.cpp:1052
+#: src/webenginepart.cpp:1053
 #, kde-format
 msgid "&Close Wallet"
 msgstr "F&ermi sekretejon"
@@ -1355,17 +1367,17 @@ msgstr "Administrado de &Akreditaĵoj"
 msgid "HTML Toolbar"
 msgstr "HTML-ilobreto"
 
-#: src/webenginepart_ext.cpp:296
+#: src/webenginepart_ext.cpp:307
 #, kde-format
 msgid "Print Document"
 msgstr "Presi Dokumenton"
 
-#: src/webenginepart_ext.cpp:513
+#: src/webenginepart_ext.cpp:524
 #, kde-format
 msgid "Add URL to Filter"
 msgstr "Aldoni URL al Filtrilo"
 
-#: src/webenginepart_ext.cpp:514
+#: src/webenginepart_ext.cpp:525
 #, kde-format
 msgid "Enter the URL:"
 msgstr "Enigu la URL:"
@@ -1436,30 +1448,30 @@ msgstr ""
 "Ne eblis malfermi la dosieron <tt>%1</tt> enhavante la stilfolion de la "
 "uzanto. La defaŭlta stilfolio estos uzata"
 
-#: src/webenginepartdownloadmanager.cpp:309
+#: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Okazis eraro dum konservado de la dosiero: %1"
 
-#: src/webenginepartdownloadmanager.cpp:320
+#: src/webenginepartdownloadmanager.cpp:315
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Elŝutante"
 
-#: src/webenginepartdownloadmanager.cpp:321
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Fonto"
 
-#: src/webenginepartdownloadmanager.cpp:322
+#: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Celo"
 
-#: src/webenginepartdownloadmanager.cpp:344
+#: src/webenginepartdownloadmanager.cpp:339
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

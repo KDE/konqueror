@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:42+0000\n"
+"POT-Creation-Date: 2025-10-13 00:42+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -942,12 +942,12 @@ msgstr "关闭对话框后，将表单中的数据储存到 KWallet 中"
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr "关闭对话框时存储所选字段的内容(&S)"
 
-#: src/webenginepage.cpp:164
+#: src/webenginepage.cpp:168
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "无法在您的安装路径中找到下载管理器 (%1)。"
 
-#: src/webenginepage.cpp:165
+#: src/webenginepage.cpp:169
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -958,7 +958,7 @@ msgstr ""
 "\n"
 "集成特性将被禁用。"
 
-#: src/webenginepage.cpp:352
+#: src/webenginepage.cpp:356
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -970,12 +970,12 @@ msgstr ""
 "果您正在网上购物，请点击取消按钮以免产生重复的交易。否则，请点击继续以再次显"
 "示网页。</p>"
 
-#: src/webenginepage.cpp:359
+#: src/webenginepage.cpp:363
 #, kde-format
 msgid "Resubmit Information"
 msgstr "重新提交信息"
 
-#: src/webenginepage.cpp:556
+#: src/webenginepage.cpp:560
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -984,18 +984,18 @@ msgstr ""
 "该站点试图访问您的物理位置信息。\n"
 "您想允许它访问吗？"
 
-#: src/webenginepage.cpp:560 src/webenginepage.cpp:638
-#: src/webenginepage.cpp:649
+#: src/webenginepage.cpp:564 src/webenginepage.cpp:642
+#: src/webenginepage.cpp:653
 #, kde-format
 msgid "Network Transmission"
 msgstr "网络传送"
 
-#: src/webenginepage.cpp:561
+#: src/webenginepage.cpp:565
 #, kde-format
 msgid "Allow access"
 msgstr "允许访问"
 
-#: src/webenginepage.cpp:631
+#: src/webenginepage.cpp:635
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1007,12 +1007,12 @@ msgstr ""
 "第三方可能可以截获并查看该信息。\n"
 "您确定要发送未加密的数据吗？"
 
-#: src/webenginepage.cpp:639
+#: src/webenginepage.cpp:643
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "不加密发送(&S)"
 
-#: src/webenginepage.cpp:646
+#: src/webenginepage.cpp:650
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1021,34 +1021,34 @@ msgstr ""
 "该站点试图通过电子邮件来提交表格数据。\n"
 "您想继续吗？"
 
-#: src/webenginepage.cpp:650
+#: src/webenginepage.cpp:654
 #, kde-format
 msgid "&Send Email"
 msgstr "发送电子邮件(&S)"
 
-#: src/webenginepage.cpp:699
+#: src/webenginepage.cpp:703
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 msgstr "<qt>您想要允许此站点附加以下文件到电子邮件信件中吗？</qt>"
 
-#: src/webenginepage.cpp:701
+#: src/webenginepage.cpp:705
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "电子邮件附件确认"
 
-#: src/webenginepage.cpp:702
+#: src/webenginepage.cpp:706
 #, kde-format
 msgid "&Allow attachments"
 msgstr "允许附件(&A)"
 
-#: src/webenginepage.cpp:703
+#: src/webenginepage.cpp:707
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "忽略附件(&I)"
 
-#: src/webenginepage.cpp:717
+#: src/webenginepage.cpp:721
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1057,12 +1057,24 @@ msgstr ""
 "该网站在提交表格时试图从您的计算机中附加文件。为了保护您的隐私，附件已被删"
 "除。"
 
-#: src/webenginepage.cpp:720
+#: src/webenginepage.cpp:724
 #, kde-format
 msgid "Attachment Removed"
 msgstr "附件已删除"
 
-#: src/webenginepage.cpp:853
+#: src/webenginepage.cpp:843
+#, fuzzy, kde-format
+#| msgid "An error occurred while saving the file: %1"
+msgid "An error occurred while converting the page to PDF"
+msgstr "保存文件时出错：%1"
+
+#: src/webenginepage.cpp:848
+#, fuzzy, kde-format
+#| msgid "An error occurred while saving the file: %1"
+msgid "An error occurred while saving a PDF version of the page as %1"
+msgstr "保存文件时出错：%1"
+
+#: src/webenginepage.cpp:897
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1071,83 +1083,83 @@ msgstr ""
 "该站点试图打开一个新的弹出窗口。\n"
 "您想继续吗？"
 
-#: src/webenginepage.cpp:855
+#: src/webenginepage.cpp:899
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
 "want to allow this?</qt>"
 msgstr "<qt>该站点试图在一个新的弹出窗口中打开 <p>%1</p><br/>您想继续吗？</qt>"
 
-#: src/webenginepage.cpp:858
+#: src/webenginepage.cpp:902
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript 弹出确认"
 
-#: src/webenginepage.cpp:859
+#: src/webenginepage.cpp:903
 #, kde-format
 msgid "Allow"
 msgstr "允许"
 
-#: src/webenginepage.cpp:859
+#: src/webenginepage.cpp:903
 #, kde-format
 msgid "Do Not Allow"
 msgstr "不允许"
 
-#: src/webenginepart.cpp:205
+#: src/webenginepart.cpp:206
 #, kde-format
 msgid "Save Full HTML Page As..."
 msgstr "保存完整的 HTML 页面为..."
 
-#: src/webenginepart.cpp:209
+#: src/webenginepart.cpp:210
 #, kde-format
 msgid "Print Preview"
 msgstr "打印预览"
 
-#: src/webenginepart.cpp:213
+#: src/webenginepart.cpp:214
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "放大"
 
-#: src/webenginepart.cpp:218
+#: src/webenginepart.cpp:219
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "缩小"
 
-#: src/webenginepart.cpp:223
+#: src/webenginepart.cpp:224
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "实际大小"
 
-#: src/webenginepart.cpp:228
+#: src/webenginepart.cpp:229
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "只缩放文本"
 
-#: src/webenginepart.cpp:236
+#: src/webenginepart.cpp:237
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "缩放至 DPI"
 
-#: src/webenginepart.cpp:249
+#: src/webenginepart.cpp:250
 #, kde-format
 msgid "Set &Encoding"
 msgstr "设置编码(&E)"
 
-#: src/webenginepart.cpp:252
+#: src/webenginepart.cpp:253
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "查看文档源文件(&C)"
 
-#: src/webenginepart.cpp:257 src/webenginepart.cpp:566
+#: src/webenginepart.cpp:258 src/webenginepart.cpp:567
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:263
+#: src/webenginepart.cpp:264
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1155,12 +1167,12 @@ msgid ""
 "displayed page."
 msgstr "<h3>查找文本</h3>显示一个对话框，让您可以在所显示的页面中查找文本。"
 
-#: src/webenginepart.cpp:564
+#: src/webenginepart.cpp:565
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "此站点的 SSL 信息似乎已损坏。"
 
-#: src/webenginepart.cpp:645
+#: src/webenginepart.cpp:646
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1168,7 +1180,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "电子邮件："
 
-#: src/webenginepart.cpp:674
+#: src/webenginepart.cpp:675
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1176,7 +1188,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - 抄送："
 
-#: src/webenginepart.cpp:676
+#: src/webenginepart.cpp:677
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1184,7 +1196,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - 密送："
 
-#: src/webenginepart.cpp:678
+#: src/webenginepart.cpp:679
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1192,92 +1204,92 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - 主题："
 
-#: src/webenginepart.cpp:682 src/webenginepart.cpp:693
+#: src/webenginepart.cpp:683 src/webenginepart.cpp:694
 #, kde-format
 msgid " (In new window)"
 msgstr " (在新窗口中)"
 
-#: src/webenginepart.cpp:691
+#: src/webenginepart.cpp:692
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (在父框架中)"
 
-#: src/webenginepart.cpp:757
+#: src/webenginepart.cpp:758
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>您想要搜索 <b>%1</b> 吗？</qt>"
 
-#: src/webenginepart.cpp:758
+#: src/webenginepart.cpp:759
 #, kde-format
 msgid "Internet Search"
 msgstr "互联网搜索"
 
-#: src/webenginepart.cpp:758
+#: src/webenginepart.cpp:759
 #, kde-format
 msgid "&Search"
 msgstr "搜索(&S)"
 
-#: src/webenginepart.cpp:871
+#: src/webenginepart.cpp:872
 #, kde-format
 msgid "Close window?"
 msgstr "关闭窗口吗？"
 
-#: src/webenginepart.cpp:871
+#: src/webenginepart.cpp:872
 #, kde-format
 msgid "Confirmation Required"
 msgstr "需要确认"
 
-#: src/webenginepart.cpp:948
+#: src/webenginepart.cpp:949
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>您想要让 %1 记住 <b>%2</b> 的登录信息吗？</html>"
 
-#: src/webenginepart.cpp:1019
+#: src/webenginepart.cpp:1020
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr "填写登录凭据(&F)"
 
-#: src/webenginepart.cpp:1024
+#: src/webenginepart.cpp:1025
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr "搜索页面中的登录凭证请求(&S)"
 
-#: src/webenginepart.cpp:1028
+#: src/webenginepart.cpp:1029
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr "立即保存登录凭证(&S)"
 
-#: src/webenginepart.cpp:1032
+#: src/webenginepart.cpp:1033
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr "自定义页面的登录凭据设置(&C)..."
 
-#: src/webenginepart.cpp:1036
+#: src/webenginepart.cpp:1037
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr "重置页面的自定义登录凭据设置"
 
-#: src/webenginepart.cpp:1040
+#: src/webenginepart.cpp:1041
 #, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr "允许此页面进行登录凭据缓存(&A)"
 
-#: src/webenginepart.cpp:1044
+#: src/webenginepart.cpp:1045
 #, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "移除此站点存储的所有密码"
 
-#: src/webenginepart.cpp:1048
+#: src/webenginepart.cpp:1049
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "启动密码库管理器(&L)"
 
-#: src/webenginepart.cpp:1052
+#: src/webenginepart.cpp:1053
 #, kde-format
 msgid "&Close Wallet"
 msgstr "关闭密码库(&C)"
@@ -1318,17 +1330,17 @@ msgstr "登录信息管理(&C)"
 msgid "HTML Toolbar"
 msgstr "HTML 工具栏"
 
-#: src/webenginepart_ext.cpp:296
+#: src/webenginepart_ext.cpp:307
 #, kde-format
 msgid "Print Document"
 msgstr "打印文档"
 
-#: src/webenginepart_ext.cpp:513
+#: src/webenginepart_ext.cpp:524
 #, kde-format
 msgid "Add URL to Filter"
 msgstr "将 URL 添加到过滤器"
 
-#: src/webenginepart_ext.cpp:514
+#: src/webenginepart_ext.cpp:525
 #, kde-format
 msgid "Enter the URL:"
 msgstr "输入 URL："
@@ -1397,30 +1409,30 @@ msgid ""
 "default style sheet will be used"
 msgstr "无法打开包含用户样式表的文件 <tt>%1</tt>。将使用默认样式表"
 
-#: src/webenginepartdownloadmanager.cpp:309
+#: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "保存文件时出错：%1"
 
-#: src/webenginepartdownloadmanager.cpp:320
+#: src/webenginepartdownloadmanager.cpp:315
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "正在下载"
 
-#: src/webenginepartdownloadmanager.cpp:321
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "源文件"
 
-#: src/webenginepartdownloadmanager.cpp:322
+#: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "目标文件"
 
-#: src/webenginepartdownloadmanager.cpp:344
+#: src/webenginepartdownloadmanager.cpp:339
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
