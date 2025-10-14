@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-13 00:42+0000\n"
-"PO-Revision-Date: 2025-08-07 04:38+0200\n"
+"PO-Revision-Date: 2025-10-13 04:49+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1092,16 +1092,14 @@ msgid "Attachment Removed"
 msgstr "მიმაგრებული ფაილი წაშლილია"
 
 #: src/webenginepage.cpp:843
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while converting the page to PDF"
-msgstr "შეცდომა ფაილის შენახვისას: %1"
+msgstr "შეცდომა გვერდის PDF-ზე გადაყვანისას"
 
 #: src/webenginepage.cpp:848
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
-msgstr "შეცდომა ფაილის შენახვისას: %1"
+msgstr "მოხდა შეცდომა გვერდის PDF ვერსიის %1 სახით შენახვისას"
 
 #: src/webenginepage.cpp:897
 #, kde-format

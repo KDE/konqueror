@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-13 00:42+0000\n"
-"PO-Revision-Date: 2025-09-14 08:50-0300\n"
+"PO-Revision-Date: 2025-10-13 08:40-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -1099,16 +1099,14 @@ msgid "Attachment Removed"
 msgstr "Anexo removido"
 
 #: src/webenginepage.cpp:843
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while converting the page to PDF"
-msgstr "Um erro ocorreu ao salvar o arquivo: %1"
+msgstr "Ocorreu um erro ao converter a página para PDF"
 
 #: src/webenginepage.cpp:848
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
-msgstr "Um erro ocorreu ao salvar o arquivo: %1"
+msgstr "Ocorreu um erro ao salvar uma versão PDF da página como %1"
 
 #: src/webenginepage.cpp:897
 #, kde-format

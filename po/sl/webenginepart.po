@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-13 00:42+0000\n"
-"PO-Revision-Date: 2025-08-07 07:08+0200\n"
+"PO-Revision-Date: 2025-10-13 07:33+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1092,16 +1092,14 @@ msgid "Attachment Removed"
 msgstr "Priloga odstranjena"
 
 #: src/webenginepage.cpp:843
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while converting the page to PDF"
-msgstr "Pri shranjevanju datoteke je prišlo do napake: %1"
+msgstr "Prišlo do napake pri predelavi strani v PDF"
 
 #: src/webenginepage.cpp:848
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
-msgstr "Pri shranjevanju datoteke je prišlo do napake: %1"
+msgstr "Prišlo je do napake pri shranjevanju PDF različice strani kot %1"
 
 #: src/webenginepage.cpp:897
 #, kde-format

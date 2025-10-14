@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-13 00:42+0000\n"
-"PO-Revision-Date: 2025-08-07 08:22+0300\n"
+"PO-Revision-Date: 2025-10-13 14:05+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1095,16 +1095,14 @@ msgid "Attachment Removed"
 msgstr "Вилучено долучення"
 
 #: src/webenginepage.cpp:843
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while converting the page to PDF"
-msgstr "Під час спроби зберегти файл сталася помилка: %1"
+msgstr "Під час спроби перетворити сторінку на PDF сталася помилка"
 
 #: src/webenginepage.cpp:848
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
-msgstr "Під час спроби зберегти файл сталася помилка: %1"
+msgstr "Під час спроби зберегти PDF-версію сторінки як %1 сталася помилка"
 
 #: src/webenginepage.cpp:897
 #, kde-format
