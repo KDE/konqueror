@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-13 00:42+0000\n"
-"PO-Revision-Date: 2025-08-16 22:24+0200\n"
+"PO-Revision-Date: 2025-10-14 21:57+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -1101,16 +1101,14 @@ msgid "Attachment Removed"
 msgstr "Прикрепеният файл е премахнат"
 
 #: src/webenginepage.cpp:843
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while converting the page to PDF"
-msgstr "Възникна грешка при запазване на файла: %1"
+msgstr "Възникна грешка при конвертирането на страницата в PDF"
 
 #: src/webenginepage.cpp:848
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
-msgstr "Възникна грешка при запазване на файла: %1"
+msgstr "Възникна грешка при запазване на PDF версия на страницата като %1"
 
 #: src/webenginepage.cpp:897
 #, kde-format
