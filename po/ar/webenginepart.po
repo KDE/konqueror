@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-13 00:42+0000\n"
-"PO-Revision-Date: 2025-08-20 21:28+0400\n"
+"PO-Revision-Date: 2025-10-15 20:44+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1075,16 +1075,14 @@ msgid "Attachment Removed"
 msgstr "أُزيلت المرفقات"
 
 #: src/webenginepage.cpp:843
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while converting the page to PDF"
-msgstr "حدث خطأ أثناء حفظ الملف: %1"
+msgstr "حدث خطأ أثناء تحويل الصفحة إلى بي دي اف"
 
 #: src/webenginepage.cpp:848
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
-msgstr "حدث خطأ أثناء حفظ الملف: %1"
+msgstr "حدث خطأ أثناء حفظ إصدارة بي دي اف من الصفحة كـ %1"
 
 #: src/webenginepage.cpp:897
 #, kde-format
