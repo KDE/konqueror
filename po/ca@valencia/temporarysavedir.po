@@ -3,7 +3,7 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2025.
+# SPDX-FileCopyrightText: 2025 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
@@ -27,7 +27,7 @@ msgstr "Directori temporal de baixades"
 #: temporarysavedir.cpp:60
 #, kde-format
 msgid "Choose Custom Download Directory..."
-msgstr "Seleccioneu un directori temporal de baixades…"
+msgstr "Trieu un directori temporal de baixades…"
 
 #: temporarysavedir.cpp:61
 #, kde-format
@@ -35,7 +35,7 @@ msgid ""
 "Choose a custom directory to use when downloading URLs from this window, "
 "temporarily overriding the default one"
 msgstr ""
-"Seleccioneu un directori temporal que s'utilitzarà en baixar URL des d'esta "
+"Trieu un directori temporal que s'utilitzarà en baixar URL des d'esta "
 "finestra, substituint temporalment el predeterminat"
 
 #: temporarysavedir.cpp:66
@@ -61,7 +61,7 @@ msgstr "Directori temporal de guardada"
 #: temporarysavedir.cpp:114
 #, kde-format
 msgid "Choose Temporary Save Directory"
-msgstr "Seleccioneu un directori temporal de guardada"
+msgstr "Trieu un directori temporal de guardada"
 
 #. i18n: ectx: Menu (tools)
 #: temporarysavedir.rc:4
