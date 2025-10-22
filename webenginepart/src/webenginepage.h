@@ -24,6 +24,7 @@
 #include <QScopedPointer>
 #include <QWebEngineFullScreenRequest>
 #include <QWebEngineDownloadRequest>
+#include <QWebEngineNavigationRequest>
 
 class QAuthenticator;
 class WebSslInfo;
@@ -67,11 +68,11 @@ public:
     /**
      * @brief Informs the page that a drop operation has been started
      *
-     * Calling this method changes the behavior of createWindow()
+     * Calling this method changes the behavior of createNewWindow()
      * @note Since `QWebEngineView` doesn't provide a way to tell when a drop operation actually end,
      * there's no function to inform that the drop operation has ended. The page considers the
      * drop operation to have ended when one the following happens:
-     * - createWindow() is called
+     * - createNewWindow() is called
      * - the `loadStarted` signal is emitted
      * - 100ms have elapsed since the last call to this method (this time interval has been chosen arbitrary: it should
      *   be enough for the drop operation to have actually ended but short enough to make it unlikely that
@@ -102,26 +103,13 @@ protected:
      */
     WebEnginePart* part() const;
 
-    /**
-     * @brief Override of `QWebEnginePage::createWindow`
-     *
-     * Reimplemented for internal reasons, the API is not affected.
-     *
-     * By default, a new NewWindowPage will be returned; however, calling setDropOperationStarted changes
-     * this behavior: in this case, no pages will be created and the function returns `this`. The default
-     * behavior is restored when the drop operation ends (see setDropOperationStarted()).
-     * @param type the window type to create. This is ignored if setDropOperationStarted has been called with `true`
-     * @return a new NewWindowPage or `this` if within a drop operation
-     * @see setDropOperationStarted
-     */
-    QWebEnginePage* createWindow(WebWindowType type) override;
 protected:
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
      * @internal
      */
-    bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame) override;
+    // bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame) override;
 
     /**
      * @brief Helper function to easily access the single WebEnginePartControls instance
@@ -142,6 +130,7 @@ protected Q_SLOTS:
 #ifdef MEDIAREQUEST_SUPPORTED
     void chooseDesktopMedia(const QWebEngineDesktopMediaRequest &request);
 #endif
+    void createNewWindow(QWebEngineNewWindowRequest &req);
 
     void print();
 #ifdef WEBENGINE_FRAMES_SUPPORTED
@@ -156,6 +145,8 @@ protected Q_SLOTS:
     */
     void handleCertificateError(const QWebEngineCertificateError &ce);
 
+    void handleNavigationRequest(QWebEngineNavigationRequest &req);
+
     /**
      * @brief Updates the stylesheet applied to the page
      *
@@ -168,10 +159,16 @@ protected Q_SLOTS:
 
 private:
     bool checkFormData(const QUrl& url) const;
-    bool handleMailToUrl (const QUrl& , NavigationType type) const;
+    bool handleMailToUrl (const QUrl& , QWebEngineNavigationRequest::NavigationType type) const;
     void setPageJScriptPolicy(const QUrl& url);
     bool askBrowserToOpenUrl(const QUrl &url, const QString &mimetype=QString(), const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(), const BrowserArguments &bargs = BrowserArguments());
     bool downloadWithExternalDonwloadManager(const QUrl &url);
+    /**
+     * @brief Decide whether the page is allowed to open a new window requested by javascript or not
+     * @param url the URL to load in the new window
+     * @return `true` if the page is allowed to open the new window and `false` if it isn't
+     */
+    bool decideHandlingOfJavascripWindow(const QUrl url) const;
 
     /**
      * @brief Whether WebEnginePart should open an URL by itself or delegate the main application
@@ -212,51 +209,6 @@ private:
     QMultiHash<QUrl, QWebEngineDownloadRequest*> m_downloadItems;
 
     static bool s_allowLifecycleStateManagement;
-};
-
-
-/**
- * This is a fake implementation of WebEnginePage to workaround the ugly API used
- * to request for the creation of a new window from javascript in QtWebEngine. PORTING_TODO
- *
- * The KPart API for creating new windows requires all the information about the
- * new window up front. Unfortunately QWebEnginePage::createWindow function does not
- * provide any of these necessary information except for the window type. All
- * the other necessary information is emitted as signals instead! Hence, the
- * need for this class to collect all of the necessary information, such as
- * window name, size and position, before calling KPart's createNewWindow
- * function.
- */
-class NewWindowPage : public WebEnginePage
-{
-    Q_OBJECT
-public:
-    NewWindowPage(WebWindowType windowType, WebEnginePart* part,
-                  QWidget* parent = nullptr);
-    ~NewWindowPage() override;
-
-protected:
-    bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame) override;
-
-private Q_SLOTS:
-    void slotGeometryChangeRequested(const QRect& rect) override;
-    void slotMenuBarVisibilityChangeRequested(bool visible);
-    void slotStatusBarVisibilityChangeRequested(bool visible);
-    void slotToolBarVisibilityChangeRequested(bool visible);
-    void slotLoadFinished(bool);
-
-private:
-    /**
-     * @brief Decide whether the page is allowed to open a new window requested by javascript or not
-     * @param url the URL to load in the new window
-     * @return `true` if the page is allowed to open the new window and `false` if it isn't
-     */
-    bool decideHandlingOfJavascripWindow(const QUrl url) const;
-
-private:
-    WindowArgs m_windowArgs;
-    WebWindowType m_type;
-    bool m_createNewWindow;
 };
 
 #endif // WEBENGINEPAGE_H

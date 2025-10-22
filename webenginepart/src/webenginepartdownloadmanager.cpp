@@ -115,6 +115,7 @@ void WebEnginePartDownloadManager::removePage(QObject* page)
 void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadRequest* it)
 {
     QUrl url = it->url();
+    qDebug() << "PERFORM DOWNLOAD: URL" << url << "PAGE" << it->page()->objectName();
     WebEnginePage *page = qobject_cast<WebEnginePage*>(it->page());
     if (it->isSavePageDownload()) {
         saveHtmlPage(it, page);
