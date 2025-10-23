@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-13 00:42+0000\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
 "PO-Revision-Date: 2025-10-13 07:33+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -966,12 +966,12 @@ msgstr "Shrani podatke obrazca v KWallet ob zapiranju dialoga"
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr "&Shrani vsebino izbranih polj ob zapiranju pogovornega okna"
 
-#: src/webenginepage.cpp:168
+#: src/webenginepage.cpp:177
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "V vaši namestitvi ni bilo mogoče najti upravljalnika prejemov (%1)."
 
-#: src/webenginepage.cpp:169
+#: src/webenginepage.cpp:178
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -983,26 +983,7 @@ msgstr ""
 "\n"
 "Vključitev bo onemogočena."
 
-#: src/webenginepage.cpp:356
-#, kde-format
-msgid ""
-"<qt><p>To display the requested web page again, the browser needs to resend "
-"information you have previously submitted.</p><p>If you were shopping online "
-"and made a purchase, click the Cancel button to prevent a duplicate purchase."
-"Otherwise, click the Continue button to display the webpage again.</p>"
-msgstr ""
-"<qt><p>Da znova prikažete zahtevano spletno stran, mora brskalnik ponovno "
-"poslati podatke, ki ste jih poslali že prej.</p><p>Če ste nakupovali preko "
-"spleta in ste opravili nakup, kliknite na Prekliči, da se izognete "
-"podvojenemu nakupu. V nasprotnem primeru kliknite gumb Nadaljuj, da spletno "
-"stran znova prikažete.</p>"
-
-#: src/webenginepage.cpp:363
-#, kde-format
-msgid "Resubmit Information"
-msgstr "Znova pošlji podatke"
-
-#: src/webenginepage.cpp:560
+#: src/webenginepage.cpp:525
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -1011,18 +992,18 @@ msgstr ""
 "Ta stran poskuša dostopati do podatka o tem kje se trenutno nahajate.\n"
 "Ali ji želite dovoliti dostop?"
 
-#: src/webenginepage.cpp:564 src/webenginepage.cpp:642
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:529 src/webenginepage.cpp:607
+#: src/webenginepage.cpp:618
 #, kde-format
 msgid "Network Transmission"
 msgstr "Omrežni prenos"
 
-#: src/webenginepage.cpp:565
+#: src/webenginepage.cpp:530
 #, kde-format
 msgid "Allow access"
 msgstr "Dovoli dostop"
 
-#: src/webenginepage.cpp:635
+#: src/webenginepage.cpp:600
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1034,12 +1015,12 @@ msgstr ""
 "Tretje osebe bi lahko prestregle in si ogledale te podatke.\n"
 "Ali ste prepričani, da želite poslati podatke nešifrirano?"
 
-#: src/webenginepage.cpp:643
+#: src/webenginepage.cpp:608
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "Pošlji nešifrirano"
 
-#: src/webenginepage.cpp:650
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1048,12 +1029,12 @@ msgstr ""
 "Ta stran poskuša poslati podatke obrazca preko e-pošte.\n"
 "Ali želite nadaljevati?"
 
-#: src/webenginepage.cpp:654
+#: src/webenginepage.cpp:619
 #, kde-format
 msgid "&Send Email"
 msgstr "Pošlji e-pošto"
 
-#: src/webenginepage.cpp:703
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1062,22 +1043,22 @@ msgstr ""
 "<qt>Ali želite tej strani dovoliti, da sporočilu e-pošte priloži naslednje "
 "datoteke?</qt>"
 
-#: src/webenginepage.cpp:705
+#: src/webenginepage.cpp:672
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Potrditev prilog k e-poštnemu sporočilu"
 
-#: src/webenginepage.cpp:706
+#: src/webenginepage.cpp:673
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Dovoli priloge"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:674
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "Prezr&i priloge"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:687
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1086,22 +1067,22 @@ msgstr ""
 "Ta stran je ob pošiljanju obrazca poskušala priložiti datoteke iz vašega "
 "računalnika. Zaradi vaše varnosti, je bila priloga odstranjena."
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:690
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Priloga odstranjena"
 
-#: src/webenginepage.cpp:843
+#: src/webenginepage.cpp:809
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
 msgstr "Prišlo do napake pri predelavi strani v PDF"
 
-#: src/webenginepage.cpp:848
+#: src/webenginepage.cpp:814
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "Prišlo je do napake pri shranjevanju PDF različice strani kot %1"
 
-#: src/webenginepage.cpp:897
+#: src/webenginepage.cpp:882
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1110,7 +1091,7 @@ msgstr ""
 "Ta stran zahteva odprtje novega pojavnega okna.\n"
 "Ali želite to dovoliti?"
 
-#: src/webenginepage.cpp:899
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1119,17 +1100,17 @@ msgstr ""
 "<qt>Ta stran bi rada odprla pojavno okno na<p>%1</p><br/>Ali želite to "
 "dovoliti</qt>"
 
-#: src/webenginepage.cpp:902
+#: src/webenginepage.cpp:887
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Potrditev odprtja pojavnega okna Javascript"
 
-#: src/webenginepage.cpp:903
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Allow"
 msgstr "Dovoli"
 
-#: src/webenginepage.cpp:903
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Ne dovoli"
@@ -1443,30 +1424,30 @@ msgstr ""
 "Ni bilo mogoče odpreti datoteke <tt>%1</tt>, ki vsebuje uporabniški slogovni "
 "list. Uporabljen bo privzeti slogovni list"
 
-#: src/webenginepartdownloadmanager.cpp:304
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Pri shranjevanju datoteke je prišlo do napake: %1"
 
-#: src/webenginepartdownloadmanager.cpp:315
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Prenašanje"
 
-#: src/webenginepartdownloadmanager.cpp:316
+#: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Vir"
 
-#: src/webenginepartdownloadmanager.cpp:317
+#: src/webenginepartdownloadmanager.cpp:318
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Cilj"
 
-#: src/webenginepartdownloadmanager.cpp:339
+#: src/webenginepartdownloadmanager.cpp:340
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
@@ -1683,6 +1664,22 @@ msgstr ""
 "li><li><b>Id polja: </b>%3</li><li><b>Polje je samo za branje: </b>%4</"
 "li><li><b>Polje je omogočeno: </b>%5</li><li><b>Omogočeno je samo "
 "dokončevanje: </b>%6</li></ul>"
+
+#~ msgid ""
+#~ "<qt><p>To display the requested web page again, the browser needs to "
+#~ "resend information you have previously submitted.</p><p>If you were "
+#~ "shopping online and made a purchase, click the Cancel button to prevent a "
+#~ "duplicate purchase.Otherwise, click the Continue button to display the "
+#~ "webpage again.</p>"
+#~ msgstr ""
+#~ "<qt><p>Da znova prikažete zahtevano spletno stran, mora brskalnik ponovno "
+#~ "poslati podatke, ki ste jih poslali že prej.</p><p>Če ste nakupovali "
+#~ "preko spleta in ste opravili nakup, kliknite na Prekliči, da se izognete "
+#~ "podvojenemu nakupu. V nasprotnem primeru kliknite gumb Nadaljuj, da "
+#~ "spletno stran znova prikažete.</p>"
+
+#~ msgid "Resubmit Information"
+#~ msgstr "Znova pošlji podatke"
 
 #~ msgid "Choose window or screen to capture"
 #~ msgstr "Izberite okno ali zaslon za zajem"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-13 00:42+0000\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
 "PO-Revision-Date: 2025-10-13 04:49+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -966,12 +966,12 @@ msgstr "ფანჯრის დახურვისას ფორმის 
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr "მონიშნული ველების მნიშვნელობის &შენახვა დიალოგის დახურვისას"
 
-#: src/webenginepage.cpp:168
+#: src/webenginepage.cpp:177
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "გადმოწერების მმართველი (%1) თქვენს დაყენებულ პროგრამებში ვერ ვიპოვე."
 
-#: src/webenginepage.cpp:169
+#: src/webenginepage.cpp:178
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -982,26 +982,7 @@ msgstr ""
 "\n"
 "ინტეგრაცია გაითიშება."
 
-#: src/webenginepage.cpp:356
-#, kde-format
-msgid ""
-"<qt><p>To display the requested web page again, the browser needs to resend "
-"information you have previously submitted.</p><p>If you were shopping online "
-"and made a purchase, click the Cancel button to prevent a duplicate purchase."
-"Otherwise, click the Continue button to display the webpage again.</p>"
-msgstr ""
-"<qt><p>მოთხოვნილი ვებგვერდის თავიდან საჩვენებლად ბრაუზერს ინფორმაციის, "
-"რომელიც უკვე გადაგზავნილია, თავიდან გაგზავნა ესაჭიროება.</p><p>თუ საყიდლებით "
-"იყავით დაკავებული და რამე შეიძინეთ, დააჭირეთ გაუქმებას, რათა ორჯერ შეძენა "
-"თავიდან აიცილოთ. სხვა შემთხვევაში დააჭირეთ გაგრძელების ღილაკს და ვებგვერდი "
-"თავიდან ჩაიტვირთება.</p>"
-
-#: src/webenginepage.cpp:363
-#, kde-format
-msgid "Resubmit Information"
-msgstr "ინფორმაციის თავიდან გადაცემა"
-
-#: src/webenginepage.cpp:560
+#: src/webenginepage.cpp:525
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -1011,18 +992,18 @@ msgstr ""
 "შესახებ.\n"
 "გნებავთ, მისცეთ მას ეს წვდომა?"
 
-#: src/webenginepage.cpp:564 src/webenginepage.cpp:642
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:529 src/webenginepage.cpp:607
+#: src/webenginepage.cpp:618
 #, kde-format
 msgid "Network Transmission"
 msgstr "ქელით გადაცემა"
 
-#: src/webenginepage.cpp:565
+#: src/webenginepage.cpp:530
 #, kde-format
 msgid "Allow access"
 msgstr "წვდომის დაშვება"
 
-#: src/webenginepage.cpp:635
+#: src/webenginepage.cpp:600
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1035,12 +1016,12 @@ msgstr ""
 "მესამე მხარეს ამ მონაცემთა გადაჭერა და ნახვა შეუძლია.\n"
 "დარწმუნებული ბრძანდებით, რომ გნებავთ, ეს მონაცემები დაუშიფრავად გააგზავნოთ?"
 
-#: src/webenginepage.cpp:643
+#: src/webenginepage.cpp:608
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "და&უშიფრავად გაგზავნა"
 
-#: src/webenginepage.cpp:650
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1049,12 +1030,12 @@ msgstr ""
 "საიტი ცდილობს ფორმის მონაცემების ელფოსტით გაგზავნას.\n"
 "გსურთ გაგრძელება?"
 
-#: src/webenginepage.cpp:654
+#: src/webenginepage.cpp:619
 #, kde-format
 msgid "&Send Email"
 msgstr "&ელფოსტის გაგზავნა"
 
-#: src/webenginepage.cpp:703
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1062,22 +1043,22 @@ msgid ""
 msgstr ""
 "<qt>გნებავთ, მისცეთ ამ ვებგვერდს უფლება, ელფოსტებს ფაილები მიამაგროს?</qt>"
 
-#: src/webenginepage.cpp:705
+#: src/webenginepage.cpp:672
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "ელფოსტაზე მიმაგრების დადასტურება"
 
-#: src/webenginepage.cpp:706
+#: src/webenginepage.cpp:673
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&მიმაგრებული ფაილების დაშვება"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:674
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&მიმაგრებული ფაილების იგნორი"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:687
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1086,22 +1067,22 @@ msgstr ""
 "საიტი ცდილობს თქვენი კომპიუტერის ფაილის გასაგზავნ ფორმაში ჩართვას. "
 "უსაფრთხოების მიზნით დანართი ფაილი ამოიშლება."
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:690
 #, kde-format
 msgid "Attachment Removed"
 msgstr "მიმაგრებული ფაილი წაშლილია"
 
-#: src/webenginepage.cpp:843
+#: src/webenginepage.cpp:809
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
 msgstr "შეცდომა გვერდის PDF-ზე გადაყვანისას"
 
-#: src/webenginepage.cpp:848
+#: src/webenginepage.cpp:814
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "მოხდა შეცდომა გვერდის PDF ვერსიის %1 სახით შენახვისას"
 
-#: src/webenginepage.cpp:897
+#: src/webenginepage.cpp:882
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1110,7 +1091,7 @@ msgstr ""
 "ეს საიტი ახალი მხტუნარა ფანჯრის გახსნას ცდილობს.\n"
 "დავუშვათ ეს?"
 
-#: src/webenginepage.cpp:899
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1119,17 +1100,17 @@ msgstr ""
 "<qt>ეს ვებგვერდი ითხოვს მხტუნარა ფანჯრის გახსნას <p>%1</p><br/>დავუშვათ ეს?</"
 "qt>"
 
-#: src/webenginepage.cpp:902
+#: src/webenginepage.cpp:887
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript -ის მხტუნარის დადასტურება"
 
-#: src/webenginepage.cpp:903
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Allow"
 msgstr "დაშვება"
 
-#: src/webenginepage.cpp:903
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Do Not Allow"
 msgstr "აკრძალვა"
@@ -1442,30 +1423,30 @@ msgid ""
 "default style sheet will be used"
 msgstr "მომხმარებლის სტილების ცხრილის შემცველი ფაილი <tt>%1</tt> ვერ გავხსენი"
 
-#: src/webenginepartdownloadmanager.cpp:304
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "შეცდომა ფაილის შენახვისას: %1"
 
-#: src/webenginepartdownloadmanager.cpp:315
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "გადმოწერა"
 
-#: src/webenginepartdownloadmanager.cpp:316
+#: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "წყარო"
 
-#: src/webenginepartdownloadmanager.cpp:317
+#: src/webenginepartdownloadmanager.cpp:318
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "დანიშნულება"
 
-#: src/webenginepartdownloadmanager.cpp:339
+#: src/webenginepartdownloadmanager.cpp:340
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
@@ -1682,6 +1663,22 @@ msgstr ""
 "li><li><b>ველის id: </b>%3</li><li><b>ველი მხოლოდ წაკითხვადია: </b>%4</"
 "li><li><b>ველი ჩართულია: </b>%5</li><li><b>ავტოდასრულება ჩართულია: </b>%6</"
 "li></ul>"
+
+#~ msgid ""
+#~ "<qt><p>To display the requested web page again, the browser needs to "
+#~ "resend information you have previously submitted.</p><p>If you were "
+#~ "shopping online and made a purchase, click the Cancel button to prevent a "
+#~ "duplicate purchase.Otherwise, click the Continue button to display the "
+#~ "webpage again.</p>"
+#~ msgstr ""
+#~ "<qt><p>მოთხოვნილი ვებგვერდის თავიდან საჩვენებლად ბრაუზერს ინფორმაციის, "
+#~ "რომელიც უკვე გადაგზავნილია, თავიდან გაგზავნა ესაჭიროება.</p><p>თუ "
+#~ "საყიდლებით იყავით დაკავებული და რამე შეიძინეთ, დააჭირეთ გაუქმებას, რათა "
+#~ "ორჯერ შეძენა თავიდან აიცილოთ. სხვა შემთხვევაში დააჭირეთ გაგრძელების "
+#~ "ღილაკს და ვებგვერდი თავიდან ჩაიტვირთება.</p>"
+
+#~ msgid "Resubmit Information"
+#~ msgstr "ინფორმაციის თავიდან გადაცემა"
 
 #~ msgid "Choose window or screen to capture"
 #~ msgstr "აირჩიეთ ფანჯარა ან ეკრანი გადასაღებად"

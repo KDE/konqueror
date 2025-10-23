@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-13 00:42+0000\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
 "PO-Revision-Date: 2025-10-14 21:57+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -974,12 +974,12 @@ msgstr ""
 "&Съхраняване на съдържанието на избраните полета при затваряне на диалоговия "
 "прозорец"
 
-#: src/webenginepage.cpp:168
+#: src/webenginepage.cpp:177
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Програмата за изтегляния (%1) не е открита в инсталацията ви."
 
-#: src/webenginepage.cpp:169
+#: src/webenginepage.cpp:178
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -990,26 +990,7 @@ msgstr ""
 "\n"
 "Интеграцията ще бъде изключена."
 
-#: src/webenginepage.cpp:356
-#, kde-format
-msgid ""
-"<qt><p>To display the requested web page again, the browser needs to resend "
-"information you have previously submitted.</p><p>If you were shopping online "
-"and made a purchase, click the Cancel button to prevent a duplicate purchase."
-"Otherwise, click the Continue button to display the webpage again.</p>"
-msgstr ""
-"<qt><p> За да се покаже отново заявената уеб страница, браузърът трябва да "
-"изпрати отново информация, която сте изпратили по-рано.</p><p> Ако сте "
-"пазарували онлайн и направихте покупка, щракнете върху бутона Отказ, за ​​да "
-"предотвратите дублиране на покупка.В противен случай щракнете върху бутона "
-"Продължи, за да се покаже отново уеб страницата.</p>"
-
-#: src/webenginepage.cpp:363
-#, kde-format
-msgid "Resubmit Information"
-msgstr "Повторно изпращане на информация"
-
-#: src/webenginepage.cpp:560
+#: src/webenginepage.cpp:525
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -1019,18 +1000,18 @@ msgstr ""
 "местоположение.\n"
 "Искате ли да му разрешите достъп?"
 
-#: src/webenginepage.cpp:564 src/webenginepage.cpp:642
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:529 src/webenginepage.cpp:607
+#: src/webenginepage.cpp:618
 #, kde-format
 msgid "Network Transmission"
 msgstr "Предаване на данни по мрежата"
 
-#: src/webenginepage.cpp:565
+#: src/webenginepage.cpp:530
 #, kde-format
 msgid "Allow access"
 msgstr "Разрешаване на достъп"
 
-#: src/webenginepage.cpp:635
+#: src/webenginepage.cpp:600
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1043,12 +1024,12 @@ msgstr ""
 "Трета страна може да прихване връзката и да види тези данни.\n"
 "Сигурни ли сте, че искате да изпратите данните нешифрирани?"
 
-#: src/webenginepage.cpp:643
+#: src/webenginepage.cpp:608
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "Изпращане не&шифрирано"
 
-#: src/webenginepage.cpp:650
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1057,12 +1038,12 @@ msgstr ""
 "Тази страница се опитва да изпрати въведените данни по електронна поща.\n"
 "Сигурни ли сте, че искате да продължите?"
 
-#: src/webenginepage.cpp:654
+#: src/webenginepage.cpp:619
 #, kde-format
 msgid "&Send Email"
 msgstr "&Изпращане на поща"
 
-#: src/webenginepage.cpp:703
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1071,22 +1052,22 @@ msgstr ""
 "<qt>Да се разреши ли на този сайт да прикрепи следните файлове към писмото?</"
 "qt>"
 
-#: src/webenginepage.cpp:705
+#: src/webenginepage.cpp:672
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Потвърждение за прикрепени файлове"
 
-#: src/webenginepage.cpp:706
+#: src/webenginepage.cpp:673
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Позволяване на прикрепените файлове"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:674
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "Пре&небрегване на прикрепените файлове"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:687
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1095,22 +1076,22 @@ msgstr ""
 "Този сайт се опита да прикачи файл от вашия компютър във формата за "
 "изпращане. Прикаченият файл беше премахнат за ваша безопасност."
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:690
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Прикрепеният файл е премахнат"
 
-#: src/webenginepage.cpp:843
+#: src/webenginepage.cpp:809
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
 msgstr "Възникна грешка при конвертирането на страницата в PDF"
 
-#: src/webenginepage.cpp:848
+#: src/webenginepage.cpp:814
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "Възникна грешка при запазване на PDF версия на страницата като %1"
 
-#: src/webenginepage.cpp:897
+#: src/webenginepage.cpp:882
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1119,7 +1100,7 @@ msgstr ""
 "Този сайт иска да отвори нов изскачащ прозорец.\n"
 "Искате ли да разрешите това?"
 
-#: src/webenginepage.cpp:899
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1128,17 +1109,17 @@ msgstr ""
 "<qt>Този сайт иска да отвори изскачащ прозорец в <p>%1</p><br/> Наистина ли "
 "искате да разрешите това?</qt>"
 
-#: src/webenginepage.cpp:902
+#: src/webenginepage.cpp:887
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Потвърждение за изскачащ прозорец на Javascript"
 
-#: src/webenginepage.cpp:903
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Allow"
 msgstr "Разрешаване"
 
-#: src/webenginepage.cpp:903
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Забраняване"
@@ -1453,30 +1434,30 @@ msgstr ""
 "Не можа да се отвори файлът <tt>%1</tt>, съдържащ потребителския лист със "
 "стилове. Ще бъде използван листът със стилове по подразбиране"
 
-#: src/webenginepartdownloadmanager.cpp:304
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Възникна грешка при запазване на файла: %1"
 
-#: src/webenginepartdownloadmanager.cpp:315
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Изтегляне"
 
-#: src/webenginepartdownloadmanager.cpp:316
+#: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Източник"
 
-#: src/webenginepartdownloadmanager.cpp:317
+#: src/webenginepartdownloadmanager.cpp:318
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Назначение"
 
-#: src/webenginepartdownloadmanager.cpp:339
+#: src/webenginepartdownloadmanager.cpp:340
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
@@ -1693,3 +1674,19 @@ msgstr ""
 "li><li><b> Идент. на поле: </b>%3</li><li><b> Полето е само за четене: </b>"
 "%4 </li><li><b> Полето е активирано: </b>%5</li><li><b> Автоматичното "
 "попълване е активирано: </b>%6 </li></ul>"
+
+#~ msgid ""
+#~ "<qt><p>To display the requested web page again, the browser needs to "
+#~ "resend information you have previously submitted.</p><p>If you were "
+#~ "shopping online and made a purchase, click the Cancel button to prevent a "
+#~ "duplicate purchase.Otherwise, click the Continue button to display the "
+#~ "webpage again.</p>"
+#~ msgstr ""
+#~ "<qt><p> За да се покаже отново заявената уеб страница, браузърът трябва "
+#~ "да изпрати отново информация, която сте изпратили по-рано.</p><p> Ако сте "
+#~ "пазарували онлайн и направихте покупка, щракнете върху бутона Отказ, за ​​"
+#~ "да предотвратите дублиране на покупка.В противен случай щракнете върху "
+#~ "бутона Продължи, за да се покаже отново уеб страницата.</p>"
+
+#~ msgid "Resubmit Information"
+#~ msgstr "Повторно изпращане на информация"

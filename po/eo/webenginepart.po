@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-13 00:42+0000\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
 "PO-Revision-Date: 2024-12-28 17:41+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -967,12 +967,12 @@ msgstr "Konservi formularajn datumojn en KWallet kiam vi fermas la dialogon"
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr "Konservi formularajn datumojn en KWallet kiam vi fermas la dialogon"
 
-#: src/webenginepage.cpp:168
+#: src/webenginepage.cpp:177
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "La elŝuta administranto (%1) ne troveblas en via instalado."
 
-#: src/webenginepage.cpp:169
+#: src/webenginepage.cpp:178
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -983,25 +983,7 @@ msgstr ""
 "\n"
 "La integriĝo estos malŝaltita."
 
-#: src/webenginepage.cpp:356
-#, kde-format
-msgid ""
-"<qt><p>To display the requested web page again, the browser needs to resend "
-"information you have previously submitted.</p><p>If you were shopping online "
-"and made a purchase, click the Cancel button to prevent a duplicate purchase."
-"Otherwise, click the Continue button to display the webpage again.</p>"
-msgstr ""
-"<qt><p>Por montri la petitan retpaĝon denove, la retumilo devas resendi "
-"informojn, kiujn vi antaŭe sendis.</p><p>Se vi aĉetis interrete kaj faris "
-"aĉeton, alklaku la butonon Nuligi por malhelpi duplikaton. aĉeto.Alie, "
-"alklaku la butonon Daŭrigi por montri la retpaĝon denove.</p>"
-
-#: src/webenginepage.cpp:363
-#, kde-format
-msgid "Resubmit Information"
-msgstr "Resendi Informojn"
-
-#: src/webenginepage.cpp:560
+#: src/webenginepage.cpp:525
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -1010,18 +992,18 @@ msgstr ""
 "Ĉi tiu retejo provas aliri informojn pri via fizika loko.\n"
 "Ĉu vi volas permesi al ĝi aliri?"
 
-#: src/webenginepage.cpp:564 src/webenginepage.cpp:642
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:529 src/webenginepage.cpp:607
+#: src/webenginepage.cpp:618
 #, kde-format
 msgid "Network Transmission"
 msgstr "Reta transsendo"
 
-#: src/webenginepage.cpp:565
+#: src/webenginepage.cpp:530
 #, kde-format
 msgid "Allow access"
 msgstr "Permesi aliron"
 
-#: src/webenginepage.cpp:635
+#: src/webenginepage.cpp:600
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1034,12 +1016,12 @@ msgstr ""
 "Eble tria partio povos kapti kaj vidi ĉi tiun informon.\n"
 "Ĉu vi certas, ke vi volas sendi la datumojn neĉifrite?"
 
-#: src/webenginepage.cpp:643
+#: src/webenginepage.cpp:608
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Sendi neĉifrite"
 
-#: src/webenginepage.cpp:650
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1048,12 +1030,12 @@ msgstr ""
 "Tiu retejo provas elsendi formularajn datumojn per retpoŝto.\n"
 "Ĉu vi volas permesi tion?"
 
-#: src/webenginepage.cpp:654
+#: src/webenginepage.cpp:619
 #, kde-format
 msgid "&Send Email"
 msgstr "&Sendi retleteron"
 
-#: src/webenginepage.cpp:703
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1062,22 +1044,22 @@ msgstr ""
 "<qt>Ĉu vi volas permesi al ĉi tiu retejo kunsendi la jenajn dosierojn al la "
 "retmesaĝo?</qt>"
 
-#: src/webenginepage.cpp:705
+#: src/webenginepage.cpp:672
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Retpoŝta Aldonaĵo Konfirmo"
 
-#: src/webenginepage.cpp:706
+#: src/webenginepage.cpp:673
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Permesi aldonaĵojn"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:674
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignori aldonaĵojn"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:687
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1086,24 +1068,24 @@ msgstr ""
 "Tiu retejo penis aldoni dosieron de via komputilo al la elsendotajn "
 "formulardatumojn. La aldonaĵo estas forigita pro via sekureco."
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:690
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Aldonaĵo Forigita"
 
-#: src/webenginepage.cpp:843
+#: src/webenginepage.cpp:809
 #, fuzzy, kde-format
 #| msgid "An error occurred while saving the file: %1"
 msgid "An error occurred while converting the page to PDF"
 msgstr "Okazis eraro dum konservado de la dosiero: %1"
 
-#: src/webenginepage.cpp:848
+#: src/webenginepage.cpp:814
 #, fuzzy, kde-format
 #| msgid "An error occurred while saving the file: %1"
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "Okazis eraro dum konservado de la dosiero: %1"
 
-#: src/webenginepage.cpp:897
+#: src/webenginepage.cpp:882
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1111,7 +1093,7 @@ msgid ""
 msgstr ""
 "Ĉi tiu retejo petas malfermi novan ŝprucfenestron.\\Ĉu vi volas permesi tion?"
 
-#: src/webenginepage.cpp:899
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1120,17 +1102,17 @@ msgstr ""
 "<qt>Ĉi tiu retejo petas malfermi ŝprucfenestron al<p>%1</p><br/>Ĉu vi volas "
 "permesi ĉi tion?</qt>"
 
-#: src/webenginepage.cpp:902
+#: src/webenginepage.cpp:887
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript Ŝprucfenestro-Konfirmo"
 
-#: src/webenginepage.cpp:903
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Allow"
 msgstr "Permesi"
 
-#: src/webenginepage.cpp:903
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Ne permesi"
@@ -1448,30 +1430,30 @@ msgstr ""
 "Ne eblis malfermi la dosieron <tt>%1</tt> enhavante la stilfolion de la "
 "uzanto. La defaŭlta stilfolio estos uzata"
 
-#: src/webenginepartdownloadmanager.cpp:304
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Okazis eraro dum konservado de la dosiero: %1"
 
-#: src/webenginepartdownloadmanager.cpp:315
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Elŝutante"
 
-#: src/webenginepartdownloadmanager.cpp:316
+#: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Fonto"
 
-#: src/webenginepartdownloadmanager.cpp:317
+#: src/webenginepartdownloadmanager.cpp:318
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Celo"
 
-#: src/webenginepartdownloadmanager.cpp:339
+#: src/webenginepartdownloadmanager.cpp:340
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
@@ -1688,6 +1670,21 @@ msgstr ""
 "li><li><b>ID de kampo: </b>%3</li><li><b>Kampo estas nur-legebla: </b>%4</"
 "li><li><b>Kampo estas ebligita: </b>%5</li><li><b>Aŭtomata kompletigo estas "
 "ŝaltita: </b>%6</li></ul>"
+
+#~ msgid ""
+#~ "<qt><p>To display the requested web page again, the browser needs to "
+#~ "resend information you have previously submitted.</p><p>If you were "
+#~ "shopping online and made a purchase, click the Cancel button to prevent a "
+#~ "duplicate purchase.Otherwise, click the Continue button to display the "
+#~ "webpage again.</p>"
+#~ msgstr ""
+#~ "<qt><p>Por montri la petitan retpaĝon denove, la retumilo devas resendi "
+#~ "informojn, kiujn vi antaŭe sendis.</p><p>Se vi aĉetis interrete kaj faris "
+#~ "aĉeton, alklaku la butonon Nuligi por malhelpi duplikaton. aĉeto.Alie, "
+#~ "alklaku la butonon Daŭrigi por montri la retpaĝon denove.</p>"
+
+#~ msgid "Resubmit Information"
+#~ msgstr "Resendi Informojn"
 
 #~ msgid "Choose window or screen to capture"
 #~ msgstr "Elekti fenestron aŭ ekranon kaptendan"

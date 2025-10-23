@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-13 00:42+0000\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
 "PO-Revision-Date: 2024-12-25 19:45+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -964,12 +964,12 @@ msgstr "संवादं बन्दं कुर्वन् KWallet मध�
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr "संवादं बन्दं कुर्वन् KWallet मध्ये प्रपत्रदत्तांशं संग्रहयन्तु"
 
-#: src/webenginepage.cpp:168
+#: src/webenginepage.cpp:177
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "भवतः संस्थापने डाउनलोड् प्रबन्धकः (%1) न लब्धः ।"
 
-#: src/webenginepage.cpp:169
+#: src/webenginepage.cpp:178
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -980,25 +980,7 @@ msgstr ""
 "\n"
 "एकीकरणं अक्षमं भविष्यति।"
 
-#: src/webenginepage.cpp:356
-#, kde-format
-msgid ""
-"<qt><p>To display the requested web page again, the browser needs to resend "
-"information you have previously submitted.</p><p>If you were shopping online "
-"and made a purchase, click the Cancel button to prevent a duplicate purchase."
-"Otherwise, click the Continue button to display the webpage again.</p>"
-msgstr ""
-"<qt><p>पुनः अनुरोधितं जालपुटं प्रदर्शयितुं ब्राउजर् भवता पूर्वं प्रदत्तां सूचनां पुनः प्रेषयितुं "
-"आवश्यकम् ।</p><p> यदि भवान् ऑनलाइन शॉपिंगं कुर्वन् आसीत् तथा च क्रयणं कृतवान् तर्हि "
-"द्वितीयकं क्रयणं निवारयितुं Cancel बटनं नुदतु।अन्यथा पुनः जालपुटं प्रदर्शयितुं Continue बटनं "
-"नुदतु।</p>"
-
-#: src/webenginepage.cpp:363
-#, kde-format
-msgid "Resubmit Information"
-msgstr "सूचना पुनः प्रस्तुत करें"
-
-#: src/webenginepage.cpp:560
+#: src/webenginepage.cpp:525
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -1007,18 +989,18 @@ msgstr ""
 "एषा साइट् भवतः भौतिकस्थानस्य विषये सूचनां प्राप्तुं प्रयतते ।\n"
 "किं भवन्तः तस्य प्रवेशं दातुम् इच्छन्ति ?"
 
-#: src/webenginepage.cpp:564 src/webenginepage.cpp:642
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:529 src/webenginepage.cpp:607
+#: src/webenginepage.cpp:618
 #, kde-format
 msgid "Network Transmission"
 msgstr "संजाल संचरण"
 
-#: src/webenginepage.cpp:565
+#: src/webenginepage.cpp:530
 #, kde-format
 msgid "Allow access"
 msgstr "प्रवेशं अनुमन्यताम्"
 
-#: src/webenginepage.cpp:635
+#: src/webenginepage.cpp:600
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1031,12 +1013,12 @@ msgstr ""
 "तृतीयपक्षः एतां सूचनां अवरुद्ध्य द्रष्टुं शक्नोति ।\n"
 "किं भवन्तः निश्चयेन दत्तांशं अगुप्तरूपेण प्रेषयितुम् इच्छन्ति?"
 
-#: src/webenginepage.cpp:643
+#: src/webenginepage.cpp:608
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&अनगुप्तं प्रेषयतु"
 
-#: src/webenginepage.cpp:650
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1045,12 +1027,12 @@ msgstr ""
 "एषा साइट् ईमेलद्वारा प्रपत्रदत्तांशं प्रदातुं प्रयतते।\n"
 "किं त्वं निरन्तरं कर्तुम् इच्छसि ?"
 
-#: src/webenginepage.cpp:654
+#: src/webenginepage.cpp:619
 #, kde-format
 msgid "&Send Email"
 msgstr "&ईमेल प्रेषयन्तु"
 
-#: src/webenginepage.cpp:703
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1059,22 +1041,22 @@ msgstr ""
 "<qt>किं भवान् अस्याः साइट्-स्थलस्य ईमेल-सन्देशे निम्नलिखित-सञ्चिकाः संलग्नं कर्तुं अनुमतिं दातुम् "
 "इच्छति?</qt>"
 
-#: src/webenginepage.cpp:705
+#: src/webenginepage.cpp:672
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "ईमेल संलग्नकस्य पुष्टिः"
 
-#: src/webenginepage.cpp:706
+#: src/webenginepage.cpp:673
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&अनुलग्नकान् अनुमन्यताम्"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:674
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&संलग्नानाम् अवहेलना"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:687
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1083,24 +1065,24 @@ msgstr ""
 "एषा साइट् भवतः सङ्गणकात् सञ्चिकां प्रपत्रनिवेदने संलग्नं कर्तुं प्रयतते स्म । भवतः रक्षणार्थं "
 "आसक्तिः निष्कासिता आसीत्।"
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:690
 #, kde-format
 msgid "Attachment Removed"
 msgstr "आसक्तिः निष्कासितः"
 
-#: src/webenginepage.cpp:843
+#: src/webenginepage.cpp:809
 #, fuzzy, kde-format
 #| msgid "An error occurred while saving the file: %1"
 msgid "An error occurred while converting the page to PDF"
 msgstr "सञ्चिकां रक्षन् त्रुटिः अभवत्: %1"
 
-#: src/webenginepage.cpp:848
+#: src/webenginepage.cpp:814
 #, fuzzy, kde-format
 #| msgid "An error occurred while saving the file: %1"
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "सञ्चिकां रक्षन् त्रुटिः अभवत्: %1"
 
-#: src/webenginepage.cpp:897
+#: src/webenginepage.cpp:882
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1109,7 +1091,7 @@ msgstr ""
 "एषा साइट् नूतनं पॉपअप विण्डो उद्घाटयितुं अनुरोधं करोति ।\n"
 "किं भवन्तः एतत् अनुमन्यन्ते ?"
 
-#: src/webenginepage.cpp:899
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1118,17 +1100,17 @@ msgstr ""
 "<qt>एषा साइट् एकं पॉपअप विण्डो उद्घाटयितुं अनुरोधं करोति यत्...<p> %1</p><br/> किं "
 "भवन्तः एतत् अनुमन्यन्ते ?</qt>"
 
-#: src/webenginepage.cpp:902
+#: src/webenginepage.cpp:887
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "जावास्क्रिप्ट पॉपअप पुष्टिः"
 
-#: src/webenginepage.cpp:903
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Allow"
 msgstr "अनुमन्यताम्‌"
 
-#: src/webenginepage.cpp:903
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Do Not Allow"
 msgstr "न अनुमन्यताम्"
@@ -1444,30 +1426,30 @@ msgstr ""
 "उपयोक्तृशैलीपत्रं विद्यमानं <tt>%1</tt> सञ्चिकां उद्घाटयितुं न शक्तम् । "
 "पूर्वनिर्धारितशैलीपत्रस्य उपयोगः भविष्यति"
 
-#: src/webenginepartdownloadmanager.cpp:304
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "सञ्चिकां रक्षन् त्रुटिः अभवत्: %1"
 
-#: src/webenginepartdownloadmanager.cpp:315
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "डाउनलोड् करणम्"
 
-#: src/webenginepartdownloadmanager.cpp:316
+#: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "स्रोतः"
 
-#: src/webenginepartdownloadmanager.cpp:317
+#: src/webenginepartdownloadmanager.cpp:318
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "गन्तव्य"
 
-#: src/webenginepartdownloadmanager.cpp:339
+#: src/webenginepartdownloadmanager.cpp:340
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
@@ -1683,6 +1665,21 @@ msgstr ""
 "<ul><li><b>क्षेत्रस्य आन्तरिकनाम:</b> %1</li><li> <b>क्षेत्रप्रकारः</b> %2</li><li> "
 "<b>क्षेत्रपरिचयः</b> %3</li><li> <b>क्षेत्रं केवलं पठ्यते:</b> %4</li><li> <b>क्षेत्रं "
 "सक्षमम् अस्ति:</b> %5</li><li> <b>स्वतःसमापनं सक्षमम् अस्ति:</b> %6</li></ul>"
+
+#~ msgid ""
+#~ "<qt><p>To display the requested web page again, the browser needs to "
+#~ "resend information you have previously submitted.</p><p>If you were "
+#~ "shopping online and made a purchase, click the Cancel button to prevent a "
+#~ "duplicate purchase.Otherwise, click the Continue button to display the "
+#~ "webpage again.</p>"
+#~ msgstr ""
+#~ "<qt><p>पुनः अनुरोधितं जालपुटं प्रदर्शयितुं ब्राउजर् भवता पूर्वं प्रदत्तां सूचनां पुनः प्रेषयितुं "
+#~ "आवश्यकम् ।</p><p> यदि भवान् ऑनलाइन शॉपिंगं कुर्वन् आसीत् तथा च क्रयणं कृतवान् तर्हि "
+#~ "द्वितीयकं क्रयणं निवारयितुं Cancel बटनं नुदतु।अन्यथा पुनः जालपुटं प्रदर्शयितुं Continue "
+#~ "बटनं नुदतु।</p>"
+
+#~ msgid "Resubmit Information"
+#~ msgstr "सूचना पुनः प्रस्तुत करें"
 
 #~ msgid "Choose window or screen to capture"
 #~ msgstr "गृहीतुं विण्डो वा पटलं वा चिनोतु"

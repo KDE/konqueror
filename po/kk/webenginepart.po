@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-13 00:42+0000\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
 "PO-Revision-Date: 2013-10-04 03:20+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -980,12 +980,12 @@ msgstr ""
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr ""
 
-#: src/webenginepage.cpp:168
+#: src/webenginepage.cpp:177
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Орнатылымыңызда жүктеу менеджер (%1) бағдарламасы табылмады."
 
-#: src/webenginepage.cpp:169
+#: src/webenginepage.cpp:178
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -996,25 +996,7 @@ msgstr ""
 "\n"
 "Әзірше енді онымен бірігіп істтеу бұғатталады."
 
-#: src/webenginepage.cpp:356
-#, kde-format
-msgid ""
-"<qt><p>To display the requested web page again, the browser needs to resend "
-"information you have previously submitted.</p><p>If you were shopping online "
-"and made a purchase, click the Cancel button to prevent a duplicate purchase."
-"Otherwise, click the Continue button to display the webpage again.</p>"
-msgstr ""
-"<qt><p>Керек веб-парағын қайта көрсету үшін өткенде жіберілген ақпаратты "
-"шолғыш жаңадан жібермек.</p><p>Ол онлайн сатып алуыңыздің мәліметі болса, "
-"тағы бір рет сатып алмау үшін Қайту дегенді басыңыз. Әйтпесе, жәй жаңарту "
-"үшін Жалғастыру дегенді басыңыз."
-
-#: src/webenginepage.cpp:363
-#, kde-format
-msgid "Resubmit Information"
-msgstr "Ақпаратты қайта жіберу"
-
-#: src/webenginepage.cpp:560
+#: src/webenginepage.cpp:525
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -1023,18 +1005,18 @@ msgstr ""
 "Бұл сайт физикалық қай жердеңізді білуге әрекет жасап жатыр.\n"
 "Ол мәліметке қатынау рұқсат па?"
 
-#: src/webenginepage.cpp:564 src/webenginepage.cpp:642
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:529 src/webenginepage.cpp:607
+#: src/webenginepage.cpp:618
 #, kde-format
 msgid "Network Transmission"
 msgstr "Желі арқылы беру"
 
-#: src/webenginepage.cpp:565
+#: src/webenginepage.cpp:530
 #, kde-format
 msgid "Allow access"
 msgstr "Қатынауға рұқсат"
 
-#: src/webenginepage.cpp:635
+#: src/webenginepage.cpp:600
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1047,12 +1029,12 @@ msgstr ""
 "Бөтендер бұл ашық ақпаратты сығалауы мүмкін.\n"
 "Бола берсін бе?"
 
-#: src/webenginepage.cpp:643
+#: src/webenginepage.cpp:608
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Шифрламай жіберу"
 
-#: src/webenginepage.cpp:650
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1061,12 +1043,12 @@ msgstr ""
 "Бұл сайт деректер пішінді эл.пошта арқылы жіберуге әрекет жасап жатыр.\n"
 "Бола берсін бе?"
 
-#: src/webenginepage.cpp:654
+#: src/webenginepage.cpp:619
 #, kde-format
 msgid "&Send Email"
 msgstr "&Эл.поштаны жіберу"
 
-#: src/webenginepage.cpp:703
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1075,22 +1057,22 @@ msgstr ""
 "<qt>Бұл сайтқа эл.пошта хатқа келесі файлдарды тіркемелеп жіберуге рұқсат "
 "бересіз бе?</qt>"
 
-#: src/webenginepage.cpp:705
+#: src/webenginepage.cpp:672
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Эл.пошта тіркемесі қылуды құптау"
 
-#: src/webenginepage.cpp:706
+#: src/webenginepage.cpp:673
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Тіркемелеуі рұқсат"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:674
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Тіркемелеуге рұқсат жоқ"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:687
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1099,22 +1081,22 @@ msgstr ""
 "Сайтқа жіберу пішіміндегі деректерге жергілікті файлды тіркеу әрекеті. "
 "Қауіпсіздігіңіз үшін тіркелген файл жойылды."
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:690
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Тіркемесі өшірілді"
 
-#: src/webenginepage.cpp:843
+#: src/webenginepage.cpp:809
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
 msgstr ""
 
-#: src/webenginepage.cpp:848
+#: src/webenginepage.cpp:814
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr ""
 
-#: src/webenginepage.cpp:897
+#: src/webenginepage.cpp:882
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1123,7 +1105,7 @@ msgstr ""
 "Бұл сайт жаңа қалқымалы терезе ашу әрекетін жасауда.\n"
 "Бұны рұқсат етесіз бе?"
 
-#: src/webenginepage.cpp:899
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1132,17 +1114,17 @@ msgstr ""
 "<qt>Бұл сайт <p>%1</p>дегенге қалқымалы терезе ашу әрекетін жасауда.<br/"
 ">Бұны рұқсат етесіз бе?</qt>"
 
-#: src/webenginepage.cpp:902
+#: src/webenginepage.cpp:887
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript қалқымалыны құптау"
 
-#: src/webenginepage.cpp:903
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Allow"
 msgstr "Құп"
 
-#: src/webenginepage.cpp:903
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Рұқсат жоқ"
@@ -1458,31 +1440,31 @@ msgid ""
 "default style sheet will be used"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:304
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:315
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:316
+#: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:317
+#: src/webenginepartdownloadmanager.cpp:318
 #, fuzzy, kde-format
 #| msgid "Description:"
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Сипаттамасы:"
 
-#: src/webenginepartdownloadmanager.cpp:339
+#: src/webenginepartdownloadmanager.cpp:340
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
@@ -1699,6 +1681,21 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
+
+#~ msgid ""
+#~ "<qt><p>To display the requested web page again, the browser needs to "
+#~ "resend information you have previously submitted.</p><p>If you were "
+#~ "shopping online and made a purchase, click the Cancel button to prevent a "
+#~ "duplicate purchase.Otherwise, click the Continue button to display the "
+#~ "webpage again.</p>"
+#~ msgstr ""
+#~ "<qt><p>Керек веб-парағын қайта көрсету үшін өткенде жіберілген ақпаратты "
+#~ "шолғыш жаңадан жібермек.</p><p>Ол онлайн сатып алуыңыздің мәліметі болса, "
+#~ "тағы бір рет сатып алмау үшін Қайту дегенді басыңыз. Әйтпесе, жәй жаңарту "
+#~ "үшін Жалғастыру дегенді басыңыз."
+
+#~ msgid "Resubmit Information"
+#~ msgstr "Ақпаратты қайта жіберу"
 
 #, fuzzy
 #~| msgid "Allow"

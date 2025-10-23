@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-13 00:42+0000\n"
+"POT-Creation-Date: 2025-10-23 00:42+0000\n"
 "PO-Revision-Date: 2025-10-15 17:47+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -978,13 +978,13 @@ msgstr "Guardar los datos del formulario en KWallet al cerrar el diálogo"
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr "Guardar el contenido de los campos seleccionados al cerrar el diálogo"
 
-#: src/webenginepage.cpp:168
+#: src/webenginepage.cpp:177
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr ""
 "No ha sido posible encontrar el gestor de descargas (%1) en su instalación."
 
-#: src/webenginepage.cpp:169
+#: src/webenginepage.cpp:178
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -995,26 +995,7 @@ msgstr ""
 "\n"
 "Se deshabilitará la integración."
 
-#: src/webenginepage.cpp:356
-#, kde-format
-msgid ""
-"<qt><p>To display the requested web page again, the browser needs to resend "
-"information you have previously submitted.</p><p>If you were shopping online "
-"and made a purchase, click the Cancel button to prevent a duplicate purchase."
-"Otherwise, click the Continue button to display the webpage again.</p>"
-msgstr ""
-"<qt><p>Para volver a mostrar la página web solicitada, es necesario que el "
-"navegador envíe de nuevo la información que acaba de enviar.</p><p>Si estaba "
-"comprando en línea y había realizado una compra, pulse el botón «Cancelar» "
-"para evitar hacer una compra duplicada. En caso contrario, pulse el botón "
-"«Continuar» para volver a mostrar la página web.</p>"
-
-#: src/webenginepage.cpp:363
-#, kde-format
-msgid "Resubmit Information"
-msgstr "Volver a enviar la información"
-
-#: src/webenginepage.cpp:560
+#: src/webenginepage.cpp:525
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -1023,18 +1004,18 @@ msgstr ""
 "Este sitio está intentando acceder a información sobre su ubicación física.\n"
 "¿Desea permitirle el acceso?"
 
-#: src/webenginepage.cpp:564 src/webenginepage.cpp:642
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:529 src/webenginepage.cpp:607
+#: src/webenginepage.cpp:618
 #, kde-format
 msgid "Network Transmission"
 msgstr "Transferencia de red"
 
-#: src/webenginepage.cpp:565
+#: src/webenginepage.cpp:530
 #, kde-format
 msgid "Allow access"
 msgstr "Permitir acceso"
 
-#: src/webenginepage.cpp:635
+#: src/webenginepage.cpp:600
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1047,12 +1028,12 @@ msgstr ""
 "Un tercero podría interceptarlos y ver esta información.\n"
 "¿Seguro que desea enviar los datos sin cifrar?"
 
-#: src/webenginepage.cpp:643
+#: src/webenginepage.cpp:608
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "Enviar &sin cifrar"
 
-#: src/webenginepage.cpp:650
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1061,12 +1042,12 @@ msgstr ""
 "Este sitio está intentando enviar los datos del formulario por correo-e.\n"
 "¿Seguro que desea continuar?"
 
-#: src/webenginepage.cpp:654
+#: src/webenginepage.cpp:619
 #, kde-format
 msgid "&Send Email"
 msgstr "&Enviar correo-e"
 
-#: src/webenginepage.cpp:703
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1075,22 +1056,22 @@ msgstr ""
 "<qt>¿Desea permitir que este sitio web adjunte los siguientes archivos al "
 "mensaje de correo?</qt>"
 
-#: src/webenginepage.cpp:705
+#: src/webenginepage.cpp:672
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Confirmación de adjuntos de correo-e"
 
-#: src/webenginepage.cpp:706
+#: src/webenginepage.cpp:673
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Permitir &adjuntos"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:674
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignorar adjuntos"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:687
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1099,22 +1080,22 @@ msgstr ""
 "Este sitio intentó adjuntar un archivo de su equipo al confirmar el "
 "formulario. El adjunto ha sido eliminado para protegerle."
 
-#: src/webenginepage.cpp:724
+#: src/webenginepage.cpp:690
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Adjunto eliminado"
 
-#: src/webenginepage.cpp:843
+#: src/webenginepage.cpp:809
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
 msgstr "Ha ocurrido un error al convertir la página a PDF"
 
-#: src/webenginepage.cpp:848
+#: src/webenginepage.cpp:814
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "Ha ocurrido un error al guardar una versión PDF de la página como %1"
 
-#: src/webenginepage.cpp:897
+#: src/webenginepage.cpp:882
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1123,7 +1104,7 @@ msgstr ""
 "Este sitio está solicitando abrir una nueva ventana emergente.\n"
 "¿Desea permitirlo?"
 
-#: src/webenginepage.cpp:899
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1132,17 +1113,17 @@ msgstr ""
 "<qt>Este sitio está solicitando abrir una ventana emergente para<p>%1</p><br/"
 ">¿Desea permitirlo?</qt>"
 
-#: src/webenginepage.cpp:902
+#: src/webenginepage.cpp:887
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Confirmación de ventana emergente de JavaScript"
 
-#: src/webenginepage.cpp:903
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Allow"
 msgstr "Permitir"
 
-#: src/webenginepage.cpp:903
+#: src/webenginepage.cpp:888
 #, kde-format
 msgid "Do Not Allow"
 msgstr "No permitir"
@@ -1456,30 +1437,30 @@ msgstr ""
 "No se ha podido abrir el archivo <tt>%1</tt> que contiene la hoja de estilos "
 "del usuario. Se usará la hoja de estilos predeterminada."
 
-#: src/webenginepartdownloadmanager.cpp:304
+#: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Ha ocurrido un error al guardar el archivo: %1"
 
-#: src/webenginepartdownloadmanager.cpp:315
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Descargando"
 
-#: src/webenginepartdownloadmanager.cpp:316
+#: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Origen"
 
-#: src/webenginepartdownloadmanager.cpp:317
+#: src/webenginepartdownloadmanager.cpp:318
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Destino"
 
-#: src/webenginepartdownloadmanager.cpp:339
+#: src/webenginepartdownloadmanager.cpp:340
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
@@ -1696,3 +1677,19 @@ msgstr ""
 "%2</li><li><b>ID del campo: </b>%3</li><li><b>Campo de solo lectura: </b>%4</"
 "li><li><b>Campo activado: </b>%5</li><li><b>Terminación automática activada: "
 "</b>%6</li></ul>"
+
+#~ msgid ""
+#~ "<qt><p>To display the requested web page again, the browser needs to "
+#~ "resend information you have previously submitted.</p><p>If you were "
+#~ "shopping online and made a purchase, click the Cancel button to prevent a "
+#~ "duplicate purchase.Otherwise, click the Continue button to display the "
+#~ "webpage again.</p>"
+#~ msgstr ""
+#~ "<qt><p>Para volver a mostrar la página web solicitada, es necesario que "
+#~ "el navegador envíe de nuevo la información que acaba de enviar.</p><p>Si "
+#~ "estaba comprando en línea y había realizado una compra, pulse el botón "
+#~ "«Cancelar» para evitar hacer una compra duplicada. En caso contrario, "
+#~ "pulse el botón «Continuar» para volver a mostrar la página web.</p>"
+
+#~ msgid "Resubmit Information"
+#~ msgstr "Volver a enviar la información"
