@@ -205,14 +205,6 @@ void KKonqGeneralOptions::load()
     };
     std::copy_if(allParts.constBegin(), allParts.constEnd(), std::back_inserter(partOfferList), filter);
     
-    QMap<QString, KPluginMetaData> uniqueMap;
-
-    for (const auto& metaData : partOfferList) {
-        uniqueMap.insert(metaData.pluginId(), metaData);
-    }
-
-    partOfferList = uniqueMap.values().toVector();
-    
     for (const KPluginMetaData &md : partOfferList) {
         m_webEngineCombo->addItem(QIcon::fromTheme(md.iconName()), md.name(), md.pluginId());
     }
