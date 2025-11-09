@@ -1046,16 +1046,14 @@ msgid "Attachment Removed"
 msgstr "附件已删除"
 
 #: src/webenginepage.cpp:809
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while converting the page to PDF"
-msgstr "保存文件时出错：%1"
+msgstr "转换页面到 PDF 时出错"
 
 #: src/webenginepage.cpp:814
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
-msgstr "保存文件时出错：%1"
+msgstr "保存页面为 PDF 版本 %1 时出错"
 
 #: src/webenginepage.cpp:882
 #, kde-format
@@ -1631,17 +1629,3 @@ msgstr ""
 "<ul><li><b>字段内部名称：</b>%1</li><li><b>字段类型：</b>%2</li><li><b>字段 "
 "ID：</b>%3</li><li><b>字段是否为只读：</b>%4</li><li><b>字段是否已启用：</b>"
 "%5</li><li><b>是否开启自动补全：</b>%6</li></ul>"
-
-#~ msgid ""
-#~ "<qt><p>To display the requested web page again, the browser needs to "
-#~ "resend information you have previously submitted.</p><p>If you were "
-#~ "shopping online and made a purchase, click the Cancel button to prevent a "
-#~ "duplicate purchase.Otherwise, click the Continue button to display the "
-#~ "webpage again.</p>"
-#~ msgstr ""
-#~ "<qt><p>为了再次显示请求的页面，浏览器需要重新发送您之前提交的信息。</p><p>"
-#~ "如果您正在网上购物，请点击取消按钮以免产生重复的交易。否则，请点击继续以再"
-#~ "次显示网页。</p>"
-
-#~ msgid "Resubmit Information"
-#~ msgstr "重新提交信息"
