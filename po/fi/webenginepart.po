@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-23 00:42+0000\n"
-"PO-Revision-Date: 2025-09-11 17:37+0300\n"
+"PO-Revision-Date: 2025-10-31 20:21+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -1073,16 +1073,14 @@ msgid "Attachment Removed"
 msgstr "Liite poistettu"
 
 #: src/webenginepage.cpp:809
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while converting the page to PDF"
-msgstr "Tiedostoa tallennettaessa tapahtui virhe: %1"
+msgstr "Muunnettaessa sivua PDF:ksi tapahtui virhe"
 
 #: src/webenginepage.cpp:814
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
-msgstr "Tiedostoa tallennettaessa tapahtui virhe: %1"
+msgstr "Tallennettaessa sivun PDF-versiota nimelle %1 tapahtui virhe"
 
 #: src/webenginepage.cpp:882
 #, kde-format
