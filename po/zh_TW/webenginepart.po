@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-23 00:42+0000\n"
-"PO-Revision-Date: 2025-08-16 13:35+0900\n"
+"PO-Revision-Date: 2025-11-13 21:57+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 25.11.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #, kde-format
@@ -1049,16 +1049,14 @@ msgid "Attachment Removed"
 msgstr "附檔已移除"
 
 #: src/webenginepage.cpp:809
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while converting the page to PDF"
-msgstr "儲存檔案時發生錯誤：%1"
+msgstr "將頁面轉為 PDF 時發生錯誤"
 
 #: src/webenginepage.cpp:814
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
-msgstr "儲存檔案時發生錯誤：%1"
+msgstr "將頁面作為 PDF 儲存至 %1 時發生錯誤"
 
 #: src/webenginepage.cpp:882
 #, kde-format
