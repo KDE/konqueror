@@ -253,7 +253,7 @@ public:
      * @see realUrl()
      * @see KonqInterfaces::DownloadJob
      */
-    QUrl url() const {return m_requestedUrl;};
+    QUrl url() const;
 
     /**
      * @brief The real URL displayed in the view
@@ -703,6 +703,19 @@ private Q_SLOTS:
         const KParts::NavigationExtension::ActionGroupMap &actionGroups);
 
     /**
+     * @brief Slot called in response to the part's `urlChanged()` signal
+     *
+     * It updates the view URL to match @p newUrl and emits the urlChanged() signal.
+     *
+     * When openUrl() is called for a file which has been transparently downloaded,
+     * the part will emit the `urlChanged()` signal with the new URL of the downloaded
+     * file. In this case, this function emits the urlChanged() signal passing the
+     * requested URL instead of the downloaded one and doesn't change the view's URL
+     * @param newUrl the new URL of the view
+     */
+    void updateUrl(const QUrl &newUrl);
+
+    /**
      * Connected to the NavigationExtension
      */
     void slotSelectionInfo(const KFileItemList &items);
@@ -822,7 +835,38 @@ private:
     QString m_caption;
     QString m_tempFile;
     QString m_dbusObjectPath;
-    QUrl m_requestedUrl;
+
+    /**
+     * @brief Struct which contains the real URL shown in the view's part and the URL requested by the user
+     *
+     * In many cases, the URL requested by the user will be the one shown in the part: in this case, ViewUrl::requested
+     * will be `std::nullopt`. When a remote file should be shown in a part which isn't the browser part
+     * (i.e. WebEnginePart), it needs to be downloaded, but this should remain transparent to the user. In this
+     * case, ViewUrl::real will contain the URL of the downloaded file, but ViewUrl::requested will be the
+     * URL of the remote file.
+     *
+     * In most cases, url() should be used to decide whether #real or #requested should be used. Only in very
+     * specific circumstances you should explicitly use #real or #requested.
+     */
+    struct ViewUrl {
+        QUrl real; //!< The URL which is displayed in the part
+        std::optional<QUrl> requested; //!< The URL requested by the user
+
+        /**
+         * @brief The logical URL shown in the view
+         *
+         * @return `requested.value()` if #requested has a value and #real otherwise
+         */
+        QUrl url() const {return requested ? *requested : real;}
+    };
+
+    /**
+     * @brief The URL shown in the view
+     *
+     * Using `m_url.real` is the same as using `m_pPart->url()`. The reason it needs
+     * to be stored is to be able to compare it with the argument passed to updateUrl().
+     */
+    ViewUrl m_url;
 };
 
 #endif

@@ -88,7 +88,8 @@ KonqView::KonqView(KonqFrame *viewFrame, KonqMainWindow *mainWindow) :
     m_bBuiltinView{true},
     m_bURLDropHandling{false},
     m_bDisableScrolling{false},
-    m_bErrorURL{false}
+    m_bErrorURL{false},
+    m_url{{}, {}}
 {
     m_pKonqFrame->setView(this);
     KonqViewFactory factory;
@@ -163,6 +164,11 @@ KonqView::~KonqView()
 
     setUrlLoader(nullptr);
     //qCDebug(KONQUEROR_LOG) << this << "done";
+}
+
+QUrl KonqView::url() const
+{
+    return m_url.url();
 }
 
 bool KonqView::isDevtoolsAvailable() const
@@ -249,7 +255,7 @@ void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
         }
     }
 
-    m_requestedUrl = !requestedUrl.isEmpty() ? requestedUrl : url;
+    m_url = {url, !requestedUrl.isEmpty() ? std::make_optional(requestedUrl) : std::nullopt};
     aboutToOpenURL(url, args);
 
     m_pPart->openUrl(url);
@@ -407,6 +413,16 @@ bool KonqView::changePart(const ViewType &type,
     return true;
 }
 
+void KonqView::updateUrl(const QUrl& newUrl)
+{
+    if (m_url.requested && m_url.real == newUrl) {
+        emit urlChanged(m_url.url());
+        return;
+    }
+    m_url = {newUrl, std::nullopt};
+    emit urlChanged(newUrl);
+}
+
 void KonqView::connectPart()
 {
     //qCDebug(KONQUEROR_LOG);
@@ -419,7 +435,8 @@ void KonqView::connectPart()
             this, SLOT(slotCanceled(QString)));
     connect(m_pPart, SIGNAL(setWindowCaption(QString)),
             this, SLOT(setCaption(QString)));
-    connect(m_pPart, &KParts::ReadOnlyPart::urlChanged, this, &KonqView::urlChanged);
+    // connect(m_pPart, &KParts::ReadOnlyPart::urlChanged, this, &KonqView::urlChanged);
+    connect(m_pPart, &KParts::ReadOnlyPart::urlChanged, this, &KonqView::updateUrl);
     if (!internalViewMode().isEmpty()) {
         // Update checked action in "View Mode" menu when switching view mode in dolphin
         connect(m_pPart, SIGNAL(viewModeChanged()),
@@ -814,7 +831,7 @@ void KonqView::updateHistoryEntry(bool needsReload)
         return;
     }
 
-    QUrl url = m_requestedUrl;
+    QUrl url = m_url.url();
 
 #ifdef DEBUG_HISTORY
     qCDebug(KONQUEROR_LOG) << "Saving part URL:" << url << "in history position" << historyIndex();
@@ -905,7 +922,7 @@ void KonqView::restoreHistory()
 
     setPartMimeType();
 
-    m_requestedUrl = h.url;
+    m_url = {h.url, {}};
     aboutToOpenURL(h.url);
 
     if (h.reload == false && navigationExtension() && historyIndex() > 0) {
@@ -953,8 +970,7 @@ void KonqView::copyHistory(KonqView *other)
 
 QUrl KonqView::realUrl() const
 {
-    Q_ASSERT(m_pPart);
-    return m_pPart->url();
+    return m_url.real;
 }
 
 QUrl KonqView::upUrl() const
@@ -1425,7 +1441,7 @@ void KonqView::storeDelayedLoadingData(const ViewType& type, const QString& serv
     int historySize = grp.readEntry(keyHistoryItems, 0);
     if (historySize < 1) {
         //Note: this won't really open the URL because the part will be a PlaceholderPart
-        m_requestedUrl = url;
+        m_url = {url, {}};
         m_pPart->openUrl(url);
         return;
     }
@@ -1434,7 +1450,7 @@ void KonqView::storeDelayedLoadingData(const ViewType& type, const QString& serv
     if (!m_lstHistory.isEmpty()) {
         //Note: this won't really open the URL because the part will be a PlaceholderPart
         QUrl histUrl = m_lstHistory.at(m_lstHistoryIndex)->url;
-        m_requestedUrl = histUrl;
+        m_url = {histUrl, {}};
         m_pPart->openUrl(histUrl);
     }
 }
@@ -1576,7 +1592,7 @@ void KonqView::duplicateView(KonqView* otherView)
     //If displaying a downloaded URL, the reaul URL will always be a temporary one
     bool temp = true;
     const QString nameFilter = otherView->nameFilter();
-    const QUrl reqUrl = otherView->m_requestedUrl;
+    const QUrl reqUrl = otherView->m_url.url();
 
     auto doOpening = [this, dest, temp, nameFilter, reqUrl, locBarUrl](KJob *job) {
         if (!job->error()) {
