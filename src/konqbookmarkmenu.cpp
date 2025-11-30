@@ -8,6 +8,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 #include "konqbookmarkmenu.h"
 #include "kbookmarkowner.h"
 #include "kbookmarkaction.h"
+#include "interfaces/speeddial.h"
 
 #include <QMenu>
 #include <QFile>
@@ -38,49 +39,65 @@ KonqBookmarkContextMenu::~KonqBookmarkContextMenu()
 
 void KonqBookmarkContextMenu::addActions()
 {
-KConfigGroup config = KSharedConfig::openConfig(QStringLiteral("kbookmarkrc"), KConfig::NoGlobals)->group("Bookmarks");
-bool filteredToolbar = config.readEntry("FilteredToolbar", false);
+    KConfigGroup config = KSharedConfig::openConfig(QStringLiteral("kbookmarkrc"), KConfig::NoGlobals)->group("Bookmarks");
+    bool filteredToolbar = config.readEntry("FilteredToolbar", false);
 
-if (bookmark().isGroup()) {
-    addOpenFolderInTabs();
-    addBookmark();
+    if (bookmark().isGroup()) {
+        addOpenFolderInTabs();
+        addBookmark();
 
-    if (filteredToolbar) {
-        QString text = bookmark().showInToolbar() ? tr("Hide in toolbar") : tr("Show in toolbar");
-        addAction(text, this, &KonqBookmarkContextMenu::toggleShowInToolbar);
+        if (filteredToolbar) {
+            QString text = bookmark().showInToolbar() ? tr("Hide in toolbar") : tr("Show in toolbar");
+            addAction(text, this, &KonqBookmarkContextMenu::toggleShowInToolbar);
+        }
+
+        addFolderActions();
+    } else {
+        if (owner()) {
+            addAction(QIcon::fromTheme(QStringLiteral("window-new")), tr("Open in New Window"), this, &KonqBookmarkContextMenu::openInNewWindow);
+            addAction(QIcon::fromTheme(QStringLiteral("tab-new")), tr("Open in New Tab"), this, &KonqBookmarkContextMenu::openInNewTab);
+        }
+        addBookmark();
+
+        if (filteredToolbar) {
+            QString text = bookmark().showInToolbar() ? tr("Hide in toolbar") : tr("Show in toolbar");
+            addAction(text, this, &KonqBookmarkContextMenu::toggleShowInToolbar);
+        }
+
+        addBookmarkActions();
+
+        addSeparator();
+        addAction(QIcon::fromTheme(QStringLiteral("speedometer")), tr("Add to speed dial"), this, &KonqBookmarkContextMenu::addToSpeedDial);
     }
-
-    addFolderActions();
-} else {
-    if (owner()) {
-        addAction(QIcon::fromTheme(QStringLiteral("window-new")), tr("Open in New Window"), this, &KonqBookmarkContextMenu::openInNewWindow);
-        addAction(QIcon::fromTheme(QStringLiteral("tab-new")), tr("Open in New Tab"), this, &KonqBookmarkContextMenu::openInNewTab);
-    }
-    addBookmark();
-
-    if (filteredToolbar) {
-        QString text = bookmark().showInToolbar() ? tr("Hide in toolbar") : tr("Show in toolbar");
-        addAction(text, this, &KonqBookmarkContextMenu::toggleShowInToolbar);
-    }
-
-    addBookmarkActions();
-}
 }
 
 void KonqBookmarkContextMenu::toggleShowInToolbar()
 {
-bookmark().setShowInToolbar(!bookmark().showInToolbar());
-manager()->emitChanged(bookmark().parentGroup());
+    bookmark().setShowInToolbar(!bookmark().showInToolbar());
+    manager()->emitChanged(bookmark().parentGroup());
 }
 
 void KonqBookmarkContextMenu::openInNewTab()
 {
-owner()->openInNewTab(bookmark());
+    owner()->openInNewTab(bookmark());
 }
 
 void KonqBookmarkContextMenu::openInNewWindow()
 {
-owner()->openInNewWindow(bookmark());
+    owner()->openInNewWindow(bookmark());
+}
+
+void Konqueror::KonqBookmarkContextMenu::addToSpeedDial()
+{
+    KonqInterfaces::SpeedDial *sd = KonqInterfaces::SpeedDial::speedDial();
+    if (!sd) {
+        return;
+    }
+    KBookmark bm{bookmark()};
+    QString icon = bm.icon();
+    //Treat absolute paths as local files and anything else as a generic URL
+    QUrl iconUrl = icon.startsWith('/') ? QUrl::fromLocalFile(icon) : QUrl(icon);
+    sd->addEntry({bm.text(), bm.url(), iconUrl}, this);
 }
 
 /******************************/

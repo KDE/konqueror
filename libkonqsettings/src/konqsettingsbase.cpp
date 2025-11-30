@@ -156,6 +156,43 @@ bool Konq::SettingsBase::addCertificateException(const QString& url, int excepti
     return true;
 }
 
+QList<Konq::SettingsBase::SpeedDialEntry> Konq::SettingsBase::speedDialEntries() const
+{
+    KConfigGroup grp = config()->group("SpeedDial");
+    int count = grp.readEntry("EntriesCount", 0);
+    QList<SpeedDialEntry> entries;
+    entries.reserve(count);
+    for (int i = 0; i < count; ++i) {
+        QString suffix = QString::number(i);
+        SpeedDialEntry e {
+            grp.readEntry(QStringLiteral("Name") + suffix),
+            grp.readEntry(QStringLiteral("Url") + suffix, QUrl{}),
+            grp.readEntry(QStringLiteral("Icon") + suffix, QUrl{})
+        };
+        entries.append(e);
+    }
+    return entries;
+}
+
+void Konq::SettingsBase::setSpeedDialEntries(const QList<SpeedDialEntry>& entries)
+{
+    KConfigGroup grp = config()->group("SpeedDial");
+    grp.writeEntry("EntriesCount", entries.length());
+    for (int i = 0; i < entries.length(); ++i) {
+        QString suffix = QString::number(i);
+        SpeedDialEntry e = entries.at(i);
+        grp.writeEntry(QStringLiteral("Name") + suffix, e.name);
+        grp.writeEntry(QStringLiteral("Url") + suffix, e.url);
+        grp.writeEntry(QStringLiteral("Icon") + suffix, e.iconUrl);
+    }
+}
+
+size_t Konq::qHash(const Konq::SettingsBase::SpeedDialEntry& e, size_t seed)
+{
+    return qHashMulti(seed, e.name, e.url, e.iconUrl);
+}
+
+
 QDebug Konq::operator<<(QDebug dbg, SettingsBase::CookieAdvice advice)
 {
     QDebugStateSaver saver(dbg);

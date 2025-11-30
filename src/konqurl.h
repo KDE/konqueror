@@ -23,7 +23,8 @@ namespace KonqUrl {
         Specs,
         Intro,
         Tips,
-        Plugins
+        Plugins,
+        SpeedDial
     };
     
     QLatin1String scheme();

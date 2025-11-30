@@ -6,6 +6,7 @@
 
 #include "implementations/konqbrowser.h"
 
+#include "implementations/konqspeeddial.h"
 #include "interfaces/cookiejar.h"
 #include "interfaces/window.h"
 #include "konqapplication.h"
@@ -30,7 +31,9 @@ QString KonqBrowser::konquerorUserAgent() {
     return s_konqUserAgent;
 }
 
-KonqBrowser::KonqBrowser(QObject* parent) : Browser(parent), m_cookieJar(nullptr)
+KonqBrowser::KonqBrowser(QObject* parent) : Browser(parent),
+    m_cookieJar(nullptr),
+    m_speedDial{new KonqSpeedDial(this)}
 {
     applyConfiguration();
 }
@@ -162,4 +165,9 @@ QString KonqBrowser::partForLocalFile(const QString& path, const QString& mimeTy
         }
     }
     return UrlLoader::partForLocalFile(path);
+}
+
+KonqInterfaces::SpeedDial* KonqBrowser::speedDial()
+{
+    return m_speedDial;
 }

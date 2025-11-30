@@ -515,6 +515,12 @@
     </entry>
   </group>
 
+  <group name="SpeedDial">
+    <entry key="EntriesCount" type="Int">
+      <default>0</default>
+    </entry>
+  </group>
+
 <!--TODO Settings: is this worth keeping? it's an hidden option with limited usefulness -->
   <group name="DisableWindowOpenFeatures">
     <entry key="LocationBar" name="locationBarInJsWindows" type="Bool">

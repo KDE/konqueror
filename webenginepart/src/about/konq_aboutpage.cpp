@@ -1,5 +1,8 @@
 #include "konq_aboutpage.h"
 
+#include "interfaces/speeddial.h"
+#include "interfaces/browser.h"
+
 #include <QApplication>
 #include <QDir>
 #include <QSaveFile>
@@ -8,10 +11,13 @@
 #include <QUrl>
 #include <QBuffer>
 #include <QWebEngineUrlRequestJob>
+#include <QIcon>
 
 #include <KIconLoader>
 #include <KLocalizedString>
 #include <ki18n_version.h>
+#include <KConfigGroup>
+#include <KSharedConfig>
 
 #include <webenginepart_debug.h>
 
@@ -40,6 +46,52 @@ static QString loadFile(const QString &file)
                        QLatin1String("/\">\n");
     res.replace(QLatin1String("<head>"), "<head>\n\t" + basehref, Qt::CaseInsensitive);
     return res;
+}
+
+QString KonqAboutPageSingleton::infopageCssPath()
+{
+    static QString s_infoPageCssPath = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage.css"))).toString();
+    return s_infoPageCssPath;
+}
+
+QString KonqAboutPageSingleton::infopageRtlCssPath()
+{
+    static QString s_infoPageRtlCssPath = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage_rtl.css"))).toString();
+    return s_infoPageRtlCssPath;
+}
+
+QString KonqAboutPageSingleton::includeRtlCss()
+{
+    return qApp->layoutDirection() == Qt::RightToLeft ? QStringLiteral("@import \"%1\";").arg(infopageRtlCssPath()) : QString{};
+}
+
+QString KonqAboutPageSingleton::rtlCssLink()
+{
+    if (qApp->layoutDirection() == Qt::RightToLeft) {
+        return QStringLiteral("<link rel=\"stylesheet\" href=\"%1\" />").arg(infopageRtlCssPath());
+    } else {
+        return {};
+    }
+}
+
+QString KonqAboutPageSingleton::konquerorTag()
+{
+    return QStringLiteral("Konqueror");
+}
+
+QString KonqAboutPageSingleton::beFreeTag()
+{
+    return i18nc("KDE 4 tag line", "Be free.");
+}
+
+QString KonqAboutPageSingleton::konqDescription()
+{
+    return i18n("Konqueror is a web browser, file manager and universal document viewer.");
+}
+
+QString KonqAboutPageSingleton::startingPoints()
+{
+    return i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "Starting Points");
 }
 
 QString KonqAboutPageSingleton::urlStringForIconName(const QString& iconName, KIconLoader::Group group)
@@ -75,18 +127,14 @@ QString KonqAboutPageSingleton::launch()
     QString home_folder = QUrl::fromLocalFile(QDir::homePath()).toString();
     QString continue_icon_path = urlStringForIconName(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small);
 
-    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage.css"))).toString());
-    if (qApp->layoutDirection() == Qt::RightToLeft) {
-        res = res.arg(QStringLiteral("@import \"%1\";")).arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage_rtl.css"))).toString());
-    } else {
-        res = res.arg(QLatin1String(""));
-    }
+    res = res.arg(infopageCssPath());
+    res = res.arg(includeRtlCss());
 
-    res = res.arg(i18nc("KDE 4 tag line", "Be free."))
-          .arg(i18n("Konqueror"))
-          .arg(i18nc("KDE 4 tag line", "Be free."))
-          .arg(i18n("Konqueror is a web browser, file manager and universal document viewer."))
-          .arg(i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "Starting Points"))
+    res = res.arg(beFreeTag())
+          .arg(konquerorTag())
+          .arg(beFreeTag())
+          .arg(konqDescription())
+          .arg(startingPoints())
           .arg(i18n("Introduction"))
           .arg(i18n("Tips"))
           .arg(home_folder)
@@ -110,6 +158,7 @@ QString KonqAboutPageSingleton::launch()
           .arg(continue_icon_path)
           .arg(KIconLoader::SizeSmall).arg(KIconLoader::SizeSmall)
           .arg(i18n("Next: An Introduction to Konqueror"))
+          .replace(QStringLiteral("%%SPEEDDIAL%%"), i18nc("link to the speed dial", "Speed Dial"))
           ;
     i18n("Search the Web");//i18n for possible future use
 
@@ -133,18 +182,13 @@ QString KonqAboutPageSingleton::intro()
     QString gohome_icon_path = urlStringForIconName(QStringLiteral("go-home"), KIconLoader::Small);
     QString continue_icon_path = urlStringForIconName(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small);
 
-    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage.css"))).toString());
-    if (qApp->layoutDirection() == Qt::RightToLeft) {
-        res = res.arg(QStringLiteral("@import \"%1\";")).arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage_rtl.css"))).toString());
-    } else {
-        res = res.arg(QLatin1String(""));
-    }
-
-    res = res.arg(i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free."))
-          .arg(i18n("Konqueror"))
-          .arg(i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free."))
-          .arg(i18n("Konqueror is a web browser, file manager and universal document viewer."))
-          .arg(i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "Starting Points"))
+    res = res.arg(infopageCssPath());
+    res = res.arg(includeRtlCss());
+    res = res.arg(beFreeTag())
+          .arg(konquerorTag())
+          .arg(beFreeTag())
+          .arg(konqDescription())
+          .arg(startingPoints())
           .arg(i18n("Introduction"))
           .arg(i18n("Tips"))
           .arg(i18n("Konqueror makes working with and managing your files easy. You can browse "
@@ -165,6 +209,7 @@ QString KonqAboutPageSingleton::intro()
                     QStringLiteral("https://docs.kde.org/?application=konqueror")))
           .arg(QStringLiteral("<img width='16' height='16' src=\"%1\">")).arg(continue_icon_path)
           .arg(i18n("Next: Tips & Tricks"))
+          .replace(QStringLiteral("%%SPEEDDIAL%%"), i18nc("link to the speed dial", "Speed Dial"))
           ;
 
     m_intro_html = res;
@@ -182,7 +227,6 @@ QString KonqAboutPageSingleton::tips()
         return res;
     }
 
-    KIconLoader *iconloader = KIconLoader::global();
     QString viewmag_icon_path = urlStringForIconName(QStringLiteral("format-font-size-more"), KIconLoader::Small);
     QString history_icon_path = urlStringForIconName(QStringLiteral("view-history"), KIconLoader::Small);
     QString openterm_icon_path = urlStringForIconName(QStringLiteral("utilities-terminal"), KIconLoader::Small);
@@ -192,18 +236,13 @@ QString KonqAboutPageSingleton::tips()
     QString view_left_right_icon_path = urlStringForIconName(QStringLiteral("view-split-left-right"), KIconLoader::Small);
     QString continue_icon_path = urlStringForIconName(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small);
 
-    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage.css"))).toString());
-    if (qApp->layoutDirection() == Qt::RightToLeft) {
-        res = res.arg(QStringLiteral("@import \"%1\";")).arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage_rtl.css"))).toString());
-    } else {
-        res = res.arg(QLatin1String(""));
-    }
-
-    res = res.arg(i18nc("KDE 4 tag line", "Be free."))
-          .arg(i18n("Konqueror"))
-          .arg(i18nc("KDE 4 tag line", "Be free."))
-          .arg(i18n("Konqueror is a web browser, file manager and universal document viewer."))
-          .arg(i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "Starting Points"))
+    res = res.arg(infopageCssPath());
+    res = res.arg(includeRtlCss());
+    res = res.arg(beFreeTag())
+          .arg(konquerorTag())
+          .arg(beFreeTag())
+          .arg(konqDescription())
+          .arg(startingPoints())
           .arg(i18n("Introduction"))
           .arg(i18n("Tips"))
           .arg(i18n("Tips & Tricks"))
@@ -234,7 +273,8 @@ QString KonqAboutPageSingleton::tips()
                     "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
                     "Terminal Emulator).", openterm_icon_path))
           .arg(QStringLiteral("<img width='16' height='16' src=\"%1\">")).arg(continue_icon_path)
-          .arg(i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "<a href=\"%1\">Return to Starting Points</a>", QStringLiteral("konq:konqueror")))
+          .arg(startingPoints())
+          .replace(QStringLiteral("%%SPEEDDIAL%%"), i18nc("link to the speed dial", "Speed Dial"))
           ;
 
     m_tips_html = res;
@@ -260,6 +300,42 @@ QString KonqAboutPageSingleton::plugins()
     return res;
 }
 
+QString KonqAboutPageSingleton::speedDialButtonHtml(const KonqInterfaces::SpeedDial::Entry &entry)
+{
+    static const QString s_buttonTemplate = QStringLiteral(
+        "<a href=\"%1\" class=\"%4\"><div class=\"dial-entry\">"
+        "  <p class=\"button-content\"><img class=\"%5\" src=\"%2\" height=\"48\" width=\"48\"></p>"
+        "  <p class=\"button-content\">%3</p>"
+        "</div>"
+        "</a>"
+    );
+    QString imgSrc;
+    KonqInterfaces::SpeedDial *sd = KonqInterfaces::Browser::browser(qApp)->speedDial();
+    QUrl iconUrl = sd->localIconUrlForEntry(entry, KIconLoader::SizeLarge);
+    return s_buttonTemplate.arg(entry.url.toString()).arg(iconUrl.toString()).arg(entry.name).arg(entry.url.toString()).arg(entry.iconUrl.toString());
+}
+
+QString KonqAboutPageSingleton::speedDial() const
+{
+    KonqInterfaces::SpeedDial *sd = KonqInterfaces::Browser::browser(qApp)->speedDial();
+    KonqInterfaces::SpeedDial::Entries entries = sd->entries();
+    QStringList buttonsHtml;
+    std::transform(entries.constBegin(), entries.constEnd(), std::back_inserter(buttonsHtml), speedDialButtonHtml);
+
+    QString html = loadFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/about/speeddial.html"));
+    html.replace(QStringLiteral("%%BUTTONS CODE%%"), buttonsHtml.join('\n'));
+    html.replace(QStringLiteral("%%RTL_CSS_LINK%%"), rtlCssLink());
+    html.replace(QStringLiteral("%%INFOPAGE.CSS%%"), infopageCssPath());
+    html.replace(QStringLiteral("%%KONQUEROR_TAG%%"), konquerorTag());
+    html.replace(QStringLiteral("%%BE_FREE_TAG%%"), beFreeTag());
+    html.replace(QStringLiteral("%%KONQUEROR_DESCRIPTION%%"), konqDescription());
+    html.replace(QStringLiteral("%%LAUNCH_LINK%%"), startingPoints());
+    html.replace(QStringLiteral("%%INTRO_LINK%%"), i18n("Introduction"));
+    html.replace(QStringLiteral("%%TIPS_LINK%%"), i18n("Tips"));
+    html.replace(QStringLiteral("%%SPEEDDIAL_LINK%%"), i18n("Speed Dial"));
+    return html;
+}
+
 KonqUrlSchemeHandler::KonqUrlSchemeHandler(QObject *parent) : QWebEngineUrlSchemeHandler(parent)
 {
 }
@@ -283,6 +359,8 @@ void KonqUrlSchemeHandler::requestStarted(QWebEngineUrlRequestJob *req)
         data = s_staticData->tips();
     } else if (path.endsWith(QStringLiteral("plugins"))) {
         data = s_staticData->plugins();
+    } else if (path.endsWith(QStringLiteral("speeddial"))) {
+        data = s_staticData->speedDial();
     } else {
         data = s_staticData->launch();
     }

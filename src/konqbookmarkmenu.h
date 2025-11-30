@@ -101,6 +101,11 @@ public Q_SLOTS:
     void openInNewTab();
     void openInNewWindow();
     void toggleShowInToolbar();
+
+    /**
+     * @brief Adds the bookmark to the speed dial
+     */
+    void addToSpeedDial();
 };
 
 #ifdef KBOOKMARKS_FIX_REQUIRED

@@ -65,7 +65,8 @@ public:
         HistoryModule, //!< The history module
         CookiesModule, //!< The cookies module
         JavaModule, //!< The java/javascript module
-        UserAgentModule //!< The user agent module
+        UserAgentModule, //!< The user agent module
+        SpeedDialModule //!< The speeddial module
     };
 
     /**

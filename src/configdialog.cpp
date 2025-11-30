@@ -37,7 +37,8 @@ Konq::ConfigDialog::ConfigDialog(QWidget* parent) : KCMultiDialog(parent)
         {HistoryModule, "konqueror_kcms/kcm_history"},
         {CookiesModule, "konqueror_kcms/khtml_cookies"},
         {JavaModule, "konqueror_kcms/khtml_java_js"},
-        {UserAgentModule, "konqueror_kcms/khtml_useragent"}
+        {UserAgentModule, "konqueror_kcms/khtml_useragent"},
+        {SpeedDialModule, "konqueror_kcms/kcm_speeddial"}
     };
 
 #ifdef Q_OS_WIN

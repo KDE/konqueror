@@ -97,6 +97,7 @@ set(konqueror_KDEINIT_SRCS
    fullscreenmanager.cpp
    downloadactionquestion.cpp
    implementations/konqwindow.cpp
+   implementations/konqspeeddial.cpp
 )
 
 if (${KActivities_FOUND})
@@ -135,6 +136,7 @@ target_link_libraries(${konqueror_internal_lib_target}
    KF${KF_MAJOR_VERSION}::SonnetUi
    KF${KF_MAJOR_VERSION}::Bookmarks
    KF${KF_MAJOR_VERSION}::BookmarksWidgets
+   KF${KF_MAJOR_VERSION}::KIOCore
 )
 
 if (KActivities_FOUND)

@@ -21,6 +21,7 @@
 #include <webenginepart_debug.h>
 #include "profile.h"
 #include "interfaces/browser.h"
+#include "interfaces/speeddial.h"
 #include "schemehandlers/execschemehandler.h"
 
 #include "konqsettings.h"
@@ -97,9 +98,9 @@ void WebEnginePartControls::registerScripts()
     }
 
     QFile jsonFile(QStringLiteral(":/scripts.json"));
-    jsonFile.open(QIODevice::ReadOnly);
+    bool ok = jsonFile.open(QIODevice::ReadOnly);
     QJsonObject obj = QJsonDocument::fromJson(jsonFile.readAll()).object();
-    Q_ASSERT(!obj.isEmpty());
+    Q_ASSERT(ok && !obj.isEmpty());
     jsonFile.close();
     for (auto it = obj.constBegin(); it != obj.constEnd(); ++it) {
         QJsonObject scriptData = it.value().toObject();
@@ -119,8 +120,8 @@ QWebEngineScript WebEnginePartControls::scriptFromJson(const QString& name, cons
         return script;
     }
     QFile sourceFile(file);
-    sourceFile.open(QIODevice::ReadOnly);
-    Q_ASSERT(sourceFile.isOpen());
+    bool open = sourceFile.open(QIODevice::ReadOnly);
+    Q_ASSERT(open);
     script.setSourceCode(QString(sourceFile.readAll()));
     QJsonValue val = obj.value(QLatin1String("injectionPoint"));
     if (!val.isNull()) {
@@ -272,8 +273,7 @@ void WebEnginePartControls::updateUserStyleSheetScript()
     if (userStyleSheetEnabled) {
         //Read the contents of the custom style sheet
         QFile cssFile(userStyleSheetUrl.path());
-        cssFile.open(QFile::ReadOnly);
-        if (cssFile.isOpen()) {
+        if (cssFile.open(QFile::ReadOnly)) {
             css = cssFile.readAll();
             cssFile.close();
         }
@@ -296,8 +296,8 @@ void WebEnginePartControls::updateUserStyleSheetScript()
 
     //Create the js code
     QFile applyUserCssFile(":/applyuserstylesheet.js");
-    applyUserCssFile.open(QFile::ReadOnly);
-    Q_ASSERT(applyUserCssFile.isOpen());
+    bool open = applyUserCssFile.open(QFile::ReadOnly);
+    Q_ASSERT(open);
     QString code{QString(applyUserCssFile.readAll()).arg(s_userStyleSheetScriptName).arg(css.simplified())};
     applyUserCssFile.close();
 

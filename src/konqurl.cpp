@@ -21,6 +21,7 @@ namespace KonqUrl {
         QLatin1String("konq:konqueror/intro"),
         QLatin1String("konq:konqueror/tips"),
         QLatin1String("konq:plugins"),
+        QLatin1String("konq:speeddial")
       };
       return s_konqUrls[static_cast<int>(type)];
     }
@@ -47,11 +48,11 @@ namespace KonqUrl {
     }
   
     bool hasKnownPathRoot(const QString &url) {
-        return url == string(Type::Blank) || url == string(Type::Plugins) || url.startsWith(string(Type::Konqueror));
+        return url == string(Type::Blank) || url == string(Type::Plugins) || url.startsWith(string(Type::Konqueror)) || url.startsWith(string(Type::SpeedDial));
     }
     
     bool isValidNotBlank(const QString &url) {
-        return url == string(Type::NoPath) || url == string(Type::Plugins) || url.startsWith(string(Type::Konqueror));
+        return url == string(Type::NoPath) || url == string(Type::Plugins) || url.startsWith(string(Type::Konqueror)) || url == string(Type::SpeedDial);
     }
     
     bool isValidNotBlank(const QUrl &url) {

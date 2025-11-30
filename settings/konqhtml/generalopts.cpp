@@ -32,7 +32,7 @@
 using namespace Konq;
 
 // Keep in sync with the order in the combo
-enum StartPage { ShowAboutPage, ShowStartUrlPage, ShowBlankPage, ShowBookmarksPage };
+enum StartPage { ShowAboutPage, ShowSpeedDial, ShowStartUrlPage, ShowBlankPage, ShowBookmarksPage };
 
 //-----------------------------------------------------------------------------
 
@@ -67,6 +67,7 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     m_startCombo = new QComboBox(widget());
     m_startCombo->setEditable(false);
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show Introduction Page"), ShowAboutPage);
+    m_startCombo->addItem(i18nc("@item:inlistbox", "Show Speed Dial"), ShowSpeedDial);
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show My Start Page"), ShowStartUrlPage);
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show Blank Page"), ShowBlankPage);
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show My Bookmarks"), ShowBookmarksPage);
@@ -160,6 +161,9 @@ static StartPage urlToStartPageEnum(const QString &startUrl)
     if (startUrl == QLatin1String("bookmarks:") || startUrl == QLatin1String("bookmarks:/")) {
         return ShowBookmarksPage;
     }
+    if (startUrl == QLatin1String("konq:speeddial")) {
+        return ShowSpeedDial;
+    }
     return ShowStartUrlPage;
 }
 
@@ -172,6 +176,8 @@ static QString startPageEnumToUrl(StartPage startPage)
             return QStringLiteral("konq:konqueror");
         case ShowBookmarksPage:
             return QStringLiteral("bookmarks:/");
+        case ShowSpeedDial:
+            return QStringLiteral("konq:speeddial");
         case ShowStartUrlPage:
             return QString();
     }

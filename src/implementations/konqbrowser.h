@@ -16,6 +16,8 @@ namespace KonqInterfaces
     class CookieJar;
 }
 
+class KonqSpeedDial;
+
 class KonquerorApplication;
 
 /**
@@ -78,6 +80,8 @@ public:
 
     QString partForLocalFile(const QString & path, const QString & mimeType) override;
 
+    KonqInterfaces::SpeedDial* speedDial() override;
+
 private:
 
     /**
@@ -110,6 +114,8 @@ private:
     UserAgentData m_userAgent; ///< The user agent data
 
     QPointer<KonqInterfaces::CookieJar> m_cookieJar; ///< Holds the cookie jar
+
+    KonqSpeedDial *m_speedDial;
 };
 
 #endif // KONQBROWSER_H

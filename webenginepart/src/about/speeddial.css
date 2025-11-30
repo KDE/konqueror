@@ -1,0 +1,34 @@
+#speeddial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Use a Flexbox to display buttons in lines */
+#buttons {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  /* Use a gradient to mimic the appearance of other pages*/
+  background: linear-gradient(rgba(205, 205, 205, 0.8) 10%, rgba(205, 205, 205, 0.3), rgba(205, 205, 205, 0.8) 90%);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+div.dial-entry {
+  background: rgba(255, 255, 255, 0.4);
+  margin: 5px;
+  padding: 5px;
+  box-shadow: 10px 5px 5px gray;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.button-content {
+  text-align: center;
+};

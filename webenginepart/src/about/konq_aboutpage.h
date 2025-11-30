@@ -1,9 +1,13 @@
 #ifndef __konq_aboutpage_h__
 #define __konq_aboutpage_h__
 
+#include "interfaces/speeddial.h"
+
 #include <QWebEngineUrlSchemeHandler>
 
 #include <KIconLoader>
+
+#include <QUrl>
 
 class KonqAboutPageSingleton
 {
@@ -12,6 +16,7 @@ public:
     QString intro();
     QString tips();
     QString plugins();
+    QString speedDial() const;
 
 private:
 
@@ -26,6 +31,23 @@ private:
      * path returned by `KIconLoader::iconPath()`
      */
     static QString urlStringForIconName(const QString &iconName, KIconLoader::Group group = KIconLoader::Desktop);
+
+    struct SpeedDialEntry {
+      QUrl url;
+      QUrl icon;
+      QString text;
+    };
+
+    static QString speedDialButtonHtml(const KonqInterfaces::SpeedDial::Entry &entry);
+
+    static QString infopageCssPath();
+    static QString infopageRtlCssPath();
+    static QString includeRtlCss();
+    static QString rtlCssLink();
+    static QString konquerorTag();
+    static QString beFreeTag();
+    static QString konqDescription();
+    static QString startingPoints();
 
 private:
     QString m_launch_html, m_intro_html, m_specs_html, m_tips_html, m_plugins_html;

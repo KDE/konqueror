@@ -134,6 +134,42 @@ public:
     bool addCertificateException(const QString &url, int exception);
 
     /**
+     * @brief Struct representing an entry in the Speed Dial
+     */
+    struct SpeedDialEntry {
+        QString name; //!< The name of the entry
+        QUrl url; //!< The URL the entry points to
+        /**
+         * @brief The icon the user chose for the entry
+         *
+         * This isn't always the real URL of the icon to display:
+         * - if it's empty, it means the favicon for #url should be used
+         * - if it's an absolute path but it doesn't have a scheme, it's the full path
+         * of a local URL and should be treated as if it had the `file` scheme
+         * - if it's a relative URL without a scheme, it represents an icon name.
+         * The real path of the icon should be retrieved using `KIconLoader::iconPath()`
+         *
+         * @note Remote icons (including favicons) need to be downloaded before being displayed
+         * in the speed dial.
+         */
+        QUrl iconUrl;
+
+        /**
+         * @brief Equality operator
+         *
+         * @param e2 the SpeedDialEntry to compare this with
+         * @return `true` if #name, #url and #iconUrl of the two objects are equal
+         * and `false` otherwise
+         */
+        bool operator==(const SpeedDialEntry &e2) const {
+            return iconUrl == e2.iconUrl && name == e2.name && url == e2.url;
+        };
+    };
+
+    QList<SpeedDialEntry> speedDialEntries() const;
+    void setSpeedDialEntries(const QList<SpeedDialEntry> &entries);
+
+    /**
      * @brief Helper function which calls a lambda with `isDefaults` turned on then restores it to the orignal value
      *
      * This is usually used from a KCM defaults method:
@@ -216,6 +252,8 @@ private:
     };
 
     CertificateExceptionsSettings m_certificateExceptions; //!< Certificate error settings
+
+
 };
 
 template<typename Functor> void Konq::SettingsBase::withDefaults(Functor lambda)
@@ -225,8 +263,12 @@ template<typename Functor> void Konq::SettingsBase::withDefaults(Functor lambda)
     useDefaults(old);
 }
 
+
+// LIBKONQSETTINGS_EXPORT bool operator==(const SettingsBase::SpeedDialEntry &e1, const SettingsBase::SpeedDialEntry &e2);
+LIBKONQSETTINGS_EXPORT size_t qHash(const SettingsBase::SpeedDialEntry &e, size_t seed);
 LIBKONQSETTINGS_EXPORT QDebug operator<<(QDebug dbg, SettingsBase::CookieAdvice) ;
 
 }
+
 
 #endif // KONQ_SETTINGSBASE_H

@@ -614,7 +614,10 @@ void KonqView::setLoading(bool loading, bool hasPending /*= false*/)
         m_pMainWindow->updateToolBarActions(hasPending);
         // Make sure the focus is restored on the part's widget and not the combo
         // box if it starts loading a request. See #304933.
-        if (loading) {
+        // Don't do this for konq URLs, as it's much more likely that the user
+        // wants to either enter an URL in the location bar or click on a link
+        // with the mouse
+        if (loading && !KonqUrl::hasKonqScheme(url())) {
             QWidget *partWidget = (m_pPart ? m_pPart->widget() : nullptr);
             if (partWidget && !partWidget->hasFocus()) {
                 //qCDebug(KONQUEROR_LOG) << "SET FOCUS on the widget";

@@ -187,6 +187,11 @@ protected:
      */
     bool openFile() override;
 
+    /**
+     * @brief Connects the part with signals from KonqInterfaces::SpeedDial
+     */
+    void connectToSpeedDialSignals();
+
 private Q_SLOTS:
     void slotShowSecurity();
     void slotShowSearchBar();

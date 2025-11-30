@@ -33,6 +33,8 @@
 #include "webenginepartcontrols.h"
 #include "profile.h"
 #include "actondownloadedfilebar.h"
+#include "interfaces/browser.h"
+#include "interfaces/speeddial.h"
 
 #include "ui/searchbar.h"
 #include "ui/passwordbar.h"
@@ -139,6 +141,8 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
             this, &WebEnginePart::slotUrlChanged);
     connect(m_webView, &QWebEngineView::loadFinished,
             this, &WebEnginePart::slotLoadFinished);
+
+    connectToSpeedDialSignals();
 
     // Init the QAction we are going to use...
     initActions();
@@ -307,6 +311,32 @@ void WebEnginePart::connectWebEnginePageSignals(WebEnginePage* page)
                 emit m_browserExtension->setIconUrl(url);
         }
     });
+}
+
+void WebEnginePart::connectToSpeedDialSignals()
+{
+    KonqInterfaces::SpeedDial *sd = KonqInterfaces::SpeedDial::speedDial();
+    if (!sd) {
+        return;
+    }
+
+    //Reload the speed dial page when it changes
+    auto reloadSpeedDial = [this] {
+        if (page() && url() == KonqInterfaces::SpeedDial::url()) {
+            page()->triggerAction(QWebEnginePage::Reload);
+        }
+    };
+    connect(sd, &KonqInterfaces::SpeedDial::speedDialChanged, this, reloadSpeedDial);
+
+    //Update a speed dial icon when the corresponding file has been downloaded
+    auto updateSpeedDialIcon = [this] (const KonqInterfaces::SpeedDial::Entry &e, const QUrl &localIconUrl) {
+        if (!page() || url() != KonqInterfaces::SpeedDial::url()) {
+            return;
+        }
+        QString jsFunctionCall = QStringLiteral("updateSpeedDialIcon(\"%1\", \"%2\", \"%3\")").arg(e.url.toString()) .arg(e.iconUrl.toString()).arg(localIconUrl.toString());
+        page()->runJavaScript(jsFunctionCall, QWebEngineScript::ApplicationWorld);
+    };
+    connect(sd, &KonqInterfaces::SpeedDial::iconReady, this, updateSpeedDialIcon);
 }
 
 void WebEnginePart::setWallet(WebEngineWallet* wallet)

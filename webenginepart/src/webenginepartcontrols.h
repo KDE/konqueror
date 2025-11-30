@@ -16,6 +16,8 @@
 
 #include "cookies/webenginepartcookiejar.h"
 
+#include "interfaces/speeddial.h"
+
 class QWebEngineProfile;
 class QWebEngineScript;
 

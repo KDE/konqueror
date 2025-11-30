@@ -22,6 +22,7 @@ namespace KonqInterfaces {
 
 class CookieJar;
 class Window;
+class SpeedDial;
 
 /**
  * @brief Abstract class representing the Konqueror browser
@@ -151,6 +152,12 @@ public:
      *  @p mimetype will be used as mimetype, instead
      */
     virtual QString partForLocalFile(const QString &path, const QString &mimeType = {}) = 0;
+
+    /**
+     * @brief The global speed dial object
+     * @return the global speed dial object
+     */
+    virtual SpeedDial* speedDial() = 0;
 
 signals:
     void configurationChanged(); ///< Signal emitted after the configuration has changed

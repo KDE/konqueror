@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Speed Dial</title>
+  <style>
+  /*<![CDATA[*/
+    @import ""; /* kde_infopage.css */
+    %%IMPORT_RTL_CSS%% /* maybe @import "kde_infopage_rtl.css"; */
+    @import "konq.css";
+  /*]]>*/
+  </style>
+  <link rel="stylesheet" href="%%INFOPAGE.CSS%%" />
+  %%RTL_CSS_LINK%%
+  <link rel="stylesheet" href="konq.css" />
+  <link rel="stylesheet" href="speeddial.css" />
+</head>
+<body>
+  <div id="header">
+    <div id="headerL"></div>
+    <div id="headerR"></div>
+    <div id="title">
+      %%KONQUEROR_TAG%%
+    </div>
+    <div id="tagline">
+      %%BE_FREE_TAG%%
+    </div>
+  </div>
+  <div id="barCenter" class="bar_text">
+    %%KONQUEROR_DESCRIPTION%%<br />
+    <ul>
+      <li><a href="konq:konqueror">%%LAUNCH_LINK%%</a></li>
+      <li><a href="konq:konqueror/intro">%%INTRO_LINK%%</a></li>
+      <li><a href="konq:tips">%%TIPS_LINK%%</a></li>
+      <li><a class="selected">%%SPEEDDIAL_LINK%%</a></li>
+    </ul>
+  </div>
+<div id="speeddial">
+
+  <div id="buttons">
+%%BUTTONS CODE%%
+  </div> <!-- End of buttons div -->
+</div> <!-- End of speeddial div -->
+
+</body>
+</html>

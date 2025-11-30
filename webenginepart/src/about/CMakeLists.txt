@@ -5,9 +5,11 @@ install(FILES
     tips.html
     plugins.html
     plugins_rtl.html
+    speeddial.html
     konq.css
     kde_infopage.css
     kde_infopage_rtl.css
+    speeddial.css
     body-background.png
     box-middle-left.png
     box-middle-right.png
