@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2025-10-03 10:10+0300\n"
+"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"PO-Revision-Date: 2025-11-30 21:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -1205,7 +1205,7 @@ msgstr ""
 #: css/csscustom.ui:151
 #, kde-format
 msgid "&Use same size for all elements"
-msgstr "&Tüm ögeler için aynı yazıtipi boyutunu kullan"
+msgstr "&Tüm ögeler için aynı yazıtipi puntosunu kullan"
 
 #. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
 #: css/csscustom.ui:161
@@ -1700,44 +1700,50 @@ msgstr "Giriş sayfasını göster"
 #: generalopts.cpp:70
 #, kde-format
 msgctxt "@item:inlistbox"
+msgid "Show Speed Dial"
+msgstr ""
+
+#: generalopts.cpp:71
+#, kde-format
+msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "Giriş sayfamı göster"
 
-#: generalopts.cpp:71
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "Boş sayfa göster"
 
-#: generalopts.cpp:72
+#: generalopts.cpp:73
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "Yer imlerimi göster"
 
-#: generalopts.cpp:78
+#: generalopts.cpp:79
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "Giriş Sayfasını Seç"
 
-#: generalopts.cpp:83
+#: generalopts.cpp:84
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr "Konqueror açılırken bu URLdeki web sayfasını gösterecek."
 
-#: generalopts.cpp:94
+#: generalopts.cpp:95
 #, kde-format
 msgid "Home page:"
 msgstr "Giriş sayfası:"
 
-#: generalopts.cpp:97
+#: generalopts.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "Giriş Sayfasını Seç"
 
-#: generalopts.cpp:102
+#: generalopts.cpp:103
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
@@ -1746,27 +1752,27 @@ msgstr ""
 "Konqueror’un Ana Sayfa’ düğmesine basıldığında gideceği web sayfasının "
 "URL’idir."
 
-#: generalopts.cpp:110
+#: generalopts.cpp:111
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "Öntanımlı web tarayıcısı işletkesi:"
 
-#: generalopts.cpp:119
+#: generalopts.cpp:120
 #, kde-format
 msgid "When splitting a view"
 msgstr "Bir görünüm bölünürken"
 
-#: generalopts.cpp:123
+#: generalopts.cpp:124
 #, kde-format
 msgid "Always duplicate current view"
 msgstr "Geçerli görünümü her zaman çoğalt"
 
-#: generalopts.cpp:124
+#: generalopts.cpp:125
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "Geçerli görünümü yalnızca yerel dosyalar için çoğalt"
 
-#: generalopts.cpp:130
+#: generalopts.cpp:131
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr "Başlarken son durumu geri yükle"

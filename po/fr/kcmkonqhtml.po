@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-01 00:42+0000\n"
 "PO-Revision-Date: 2025-04-02 21:48+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -1742,44 +1742,50 @@ msgstr "Afficher la page d'introduction"
 #: generalopts.cpp:70
 #, kde-format
 msgctxt "@item:inlistbox"
+msgid "Show Speed Dial"
+msgstr ""
+
+#: generalopts.cpp:71
+#, kde-format
+msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "Afficher ma page de démarrage"
 
-#: generalopts.cpp:71
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "Afficher une page vide"
 
-#: generalopts.cpp:72
+#: generalopts.cpp:73
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "Afficher mes signets"
 
-#: generalopts.cpp:78
+#: generalopts.cpp:79
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "Sélectionner la page de démarrage"
 
-#: generalopts.cpp:83
+#: generalopts.cpp:84
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr "Voici l'adresse du site Internet que Konqueror affichera en démarrant."
 
-#: generalopts.cpp:94
+#: generalopts.cpp:95
 #, kde-format
 msgid "Home page:"
 msgstr "Page d'accueil :"
 
-#: generalopts.cpp:97
+#: generalopts.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "Sélectionner la page d'accueil"
 
-#: generalopts.cpp:102
+#: generalopts.cpp:103
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
@@ -1788,27 +1794,27 @@ msgstr ""
 "Voici l'adresse du site Internet utilisée par Konqueror lorsque vous appuyez "
 "sur le bouton « Accueil »."
 
-#: generalopts.cpp:110
+#: generalopts.cpp:111
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "Moteur de navigation Web par défaut :"
 
-#: generalopts.cpp:119
+#: generalopts.cpp:120
 #, kde-format
 msgid "When splitting a view"
 msgstr "Lors du fractionnement d'un affichage"
 
-#: generalopts.cpp:123
+#: generalopts.cpp:124
 #, kde-format
 msgid "Always duplicate current view"
 msgstr "Toujours dupliquer l'affichage courant"
 
-#: generalopts.cpp:124
+#: generalopts.cpp:125
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "Dupliquer l'affichage courant uniquement pour les fichiers locaux"
 
-#: generalopts.cpp:130
+#: generalopts.cpp:131
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr ""

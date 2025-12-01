@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-01 00:42+0000\n"
 "PO-Revision-Date: 2025-08-04 14:05-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1719,44 +1719,50 @@ msgstr "Exibir a página introdutória"
 #: generalopts.cpp:70
 #, kde-format
 msgctxt "@item:inlistbox"
+msgid "Show Speed Dial"
+msgstr ""
+
+#: generalopts.cpp:71
+#, kde-format
+msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "Exibir minha página inicial"
 
-#: generalopts.cpp:71
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "Exibir uma página em branco"
 
-#: generalopts.cpp:72
+#: generalopts.cpp:73
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "Exibir meus favoritos"
 
-#: generalopts.cpp:78
+#: generalopts.cpp:79
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "Selecionar página inicial"
 
-#: generalopts.cpp:83
+#: generalopts.cpp:84
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr "Esta é a URL do site que o Konqueror irá exibir ao iniciar"
 
-#: generalopts.cpp:94
+#: generalopts.cpp:95
 #, kde-format
 msgid "Home page:"
 msgstr "Página inicial:"
 
-#: generalopts.cpp:97
+#: generalopts.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "Selecione a página inicial"
 
-#: generalopts.cpp:102
+#: generalopts.cpp:103
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
@@ -1765,27 +1771,27 @@ msgstr ""
 "Esta é a URL do site onde o Konqueror irá quando o botão \"Home\" for "
 "pressionado."
 
-#: generalopts.cpp:110
+#: generalopts.cpp:111
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "Mecanismo padrão do navegador Web:"
 
-#: generalopts.cpp:119
+#: generalopts.cpp:120
 #, kde-format
 msgid "When splitting a view"
 msgstr "Quando dividir uma visualização"
 
-#: generalopts.cpp:123
+#: generalopts.cpp:124
 #, kde-format
 msgid "Always duplicate current view"
 msgstr "Sempre duplicar a visualização atual"
 
-#: generalopts.cpp:124
+#: generalopts.cpp:125
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "Duplicar a visualização atual apenas para arquivos locais"
 
-#: generalopts.cpp:130
+#: generalopts.cpp:131
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr "Ao iniciar, restaurar o estado da última vez"

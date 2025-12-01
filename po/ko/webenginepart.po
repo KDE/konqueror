@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-01 00:42+0000\n"
 "PO-Revision-Date: 2025-10-09 00:59+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,27 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: src/about/konq_aboutpage.cpp:85 src/about/konq_aboutpage.cpp:87
-#: src/about/konq_aboutpage.cpp:202 src/about/konq_aboutpage.cpp:204
+#: src/about/konq_aboutpage.cpp:84
 #, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
 msgstr "자유롭게."
 
-#: src/about/konq_aboutpage.cpp:86 src/about/konq_aboutpage.cpp:144
-#: src/about/konq_aboutpage.cpp:203
-#, kde-format
-msgid "Konqueror"
-msgstr "Konqueror"
-
-#: src/about/konq_aboutpage.cpp:88 src/about/konq_aboutpage.cpp:146
-#: src/about/konq_aboutpage.cpp:205
+#: src/about/konq_aboutpage.cpp:89
 #, kde-format
 msgid "Konqueror is a web browser, file manager and universal document viewer."
 msgstr "Konqueror는 웹 브라우저, 파일 관리자, 문서 파일 뷰어입니다."
 
-#: src/about/konq_aboutpage.cpp:89 src/about/konq_aboutpage.cpp:147
-#: src/about/konq_aboutpage.cpp:206
+#: src/about/konq_aboutpage.cpp:94
 #, kde-format
 msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
@@ -55,75 +46,76 @@ msgctxt ""
 msgid "Starting Points"
 msgstr "시작 지점"
 
-#: src/about/konq_aboutpage.cpp:90 src/about/konq_aboutpage.cpp:148
-#: src/about/konq_aboutpage.cpp:207
+#: src/about/konq_aboutpage.cpp:138 src/about/konq_aboutpage.cpp:192
+#: src/about/konq_aboutpage.cpp:246 src/about/konq_aboutpage.cpp:333
 #, kde-format
 msgid "Introduction"
 msgstr "소개"
 
-#: src/about/konq_aboutpage.cpp:91 src/about/konq_aboutpage.cpp:149
-#: src/about/konq_aboutpage.cpp:208
+#: src/about/konq_aboutpage.cpp:139 src/about/konq_aboutpage.cpp:193
+#: src/about/konq_aboutpage.cpp:247 src/about/konq_aboutpage.cpp:334
 #, kde-format
 msgid "Tips"
 msgstr "팁"
 
-#: src/about/konq_aboutpage.cpp:96
+#: src/about/konq_aboutpage.cpp:144
 #, kde-format
 msgid "Home Folder"
 msgstr "홈 폴더"
 
-#: src/about/konq_aboutpage.cpp:97
+#: src/about/konq_aboutpage.cpp:145
 #, kde-format
 msgid "Your personal files"
 msgstr "내 개인적인 파일"
 
-#: src/about/konq_aboutpage.cpp:100
+#: src/about/konq_aboutpage.cpp:148
 #, kde-format
 msgid "Trash"
 msgstr "휴지통"
 
-#: src/about/konq_aboutpage.cpp:101
+#: src/about/konq_aboutpage.cpp:149
 #, kde-format
 msgid "Browse and restore the trash"
 msgstr "휴지통에 보낸 파일 복원과 삭제"
 
-#: src/about/konq_aboutpage.cpp:104
+#: src/about/konq_aboutpage.cpp:152
 #, kde-format
 msgid "Network Folders"
 msgstr "네트워크 폴더"
 
-#: src/about/konq_aboutpage.cpp:105
+#: src/about/konq_aboutpage.cpp:153
 #, kde-format
 msgid "Shared files and folders"
 msgstr "공유된 파일과 폴더"
 
-#: src/about/konq_aboutpage.cpp:108
+#: src/about/konq_aboutpage.cpp:156
 #, kde-format
 msgid "Bookmarks"
 msgstr "책갈피"
 
-#: src/about/konq_aboutpage.cpp:109
+#: src/about/konq_aboutpage.cpp:157
 #, kde-format
 msgid "Quick access to your bookmarks"
 msgstr "책갈피에 빨리 접근하기"
 
-#: src/about/konq_aboutpage.cpp:112
+#: src/about/konq_aboutpage.cpp:160
 #, kde-format
 msgid "Next: An Introduction to Konqueror"
 msgstr "다음: Konqueror 소개"
 
-#: src/about/konq_aboutpage.cpp:114
+#: src/about/konq_aboutpage.cpp:161 src/about/konq_aboutpage.cpp:212
+#: src/about/konq_aboutpage.cpp:277
+#, kde-format
+msgctxt "link to the speed dial"
+msgid "Speed Dial"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:163
 #, kde-format
 msgid "Search the Web"
 msgstr "웹 검색"
 
-#: src/about/konq_aboutpage.cpp:143 src/about/konq_aboutpage.cpp:145
-#, kde-format
-msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
-msgid "Be free."
-msgstr "자유롭게."
-
-#: src/about/konq_aboutpage.cpp:150
+#: src/about/konq_aboutpage.cpp:194
 #, kde-format
 msgid ""
 "Konqueror makes working with and managing your files easy. You can browse "
@@ -133,7 +125,7 @@ msgstr ""
 "Konqueror는 파일 관리를 쉽게 도와 줍니다. 강력한 사이드바와 파일 미리 보기를 "
 "사용하면서 로컬 폴더와 네트워크 폴더 둘 다를 탐색할 수 있습니다."
 
-#: src/about/konq_aboutpage.cpp:154
+#: src/about/konq_aboutpage.cpp:198
 #, kde-format
 msgid ""
 "Konqueror is also a full featured and easy to use web browser which you can "
@@ -145,7 +137,7 @@ msgstr ""
 "제: <a href=\"http://www.kde.org\">http://www.kde.org</a>)를 주소 표시줄에 입"
 "력하고 엔터 키를 누르거나, 책갈피 메뉴의 항목을 선택하십시오."
 
-#: src/about/konq_aboutpage.cpp:159
+#: src/about/konq_aboutpage.cpp:203
 #, kde-format
 msgid ""
 "To return to the previous location, press the back button <img width='16' "
@@ -154,7 +146,7 @@ msgstr ""
 "이전 위치로 되돌아가려면 도구 모음에서 <img width='16' height='16' src="
 "\"%1\"></img> 뒤로 단추를 누르십시오. "
 
-#: src/about/konq_aboutpage.cpp:162
+#: src/about/konq_aboutpage.cpp:206
 #, kde-format
 msgid ""
 "To quickly go to your Home folder press the home button <img width='16' "
@@ -163,24 +155,24 @@ msgstr ""
 "홈 폴더로 빠르게 되돌아가려면 도구 모음에서 <img width='16' height='16' src="
 "\"%1\"></img> 홈 단추를 누르십시오."
 
-#: src/about/konq_aboutpage.cpp:164
+#: src/about/konq_aboutpage.cpp:208
 #, kde-format
 msgid ""
 "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
 msgstr ""
 "Konqueror에 대한 자세한 정보를 보려면 <a href=\"%1\">여기</a>를 클릭하십시오."
 
-#: src/about/konq_aboutpage.cpp:167
+#: src/about/konq_aboutpage.cpp:211
 #, kde-format
 msgid "Next: Tips & Tricks"
 msgstr "다음: 팁과 트릭"
 
-#: src/about/konq_aboutpage.cpp:209
+#: src/about/konq_aboutpage.cpp:248
 #, kde-format
 msgid "Tips & Tricks"
 msgstr "팁과 트릭"
 
-#: src/about/konq_aboutpage.cpp:210
+#: src/about/konq_aboutpage.cpp:249
 #, kde-format
 msgid ""
 "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, using "
@@ -194,7 +186,7 @@ msgstr ""
 "있는 미리 정의된 웹 바로 가기가 있습니다. <a href=\"%1\">여기에서</a> 웹 바"
 "로 가기를 새로 추가할 수 있습니다."
 
-#: src/about/konq_aboutpage.cpp:215
+#: src/about/konq_aboutpage.cpp:254
 #, kde-format
 msgid ""
 "When you want to paste a new address into the Location toolbar you might "
@@ -205,7 +197,7 @@ msgstr ""
 "도구 모음에 있는 <img width='16' height='16' src=\"%1\"></img> 흰색 가위표가 "
 "있는 검은 화살표를 누르면 이전의 항목이 지워집니다."
 
-#: src/about/konq_aboutpage.cpp:219
+#: src/about/konq_aboutpage.cpp:258
 #, kde-format
 msgid ""
 "To create a link on your desktop pointing to the current page, simply drag "
@@ -215,7 +207,7 @@ msgstr ""
 "바탕 화면에 현재 페이지로 향한 링크를 만들려면 위치 도구 모음의 왼쪽에 있는 "
 "아이콘(파비콘)을 바탕 화면에 끌어다 놓은 다음, \"아이콘\"을 선택하십시오."
 
-#: src/about/konq_aboutpage.cpp:222
+#: src/about/konq_aboutpage.cpp:261
 #, kde-format
 msgid ""
 "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
@@ -225,7 +217,7 @@ msgstr ""
 "설정 메뉴에서 <img width='16' height='16' SRC=\"%1\"></img> \"전체 화면 모드"
 "\"를 찾을 수 있습니다. \"대화\" 세션에서 유용하게 사용할 수 있습니다."
 
-#: src/about/konq_aboutpage.cpp:225
+#: src/about/konq_aboutpage.cpp:264
 #, kde-format
 msgid ""
 "Divide et impera (lat. \"Divide and conquer\") - by splitting a window into "
@@ -236,7 +228,7 @@ msgstr ""
 "있습니다. 예: 창 -> <img width='16' height='16' src=\"%1\" /> 왼쪽/오른쪽으"
 "로 나눠서 보기. 이것을 사용해서 Konqueror를 원하는 대로 나눌 수 있습니다."
 
-#: src/about/konq_aboutpage.cpp:228
+#: src/about/konq_aboutpage.cpp:267
 #, kde-format
 msgid ""
 "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
@@ -246,7 +238,7 @@ msgstr ""
 "특정한 브라우저를 고집하는 웹사이트에서는 <a href=\"%1\">사용자 에이전트</a> "
 "기능을 사용하십시오. 웹사이트 관리자에게 항의하는 것을 잊지 마십시오!"
 
-#: src/about/konq_aboutpage.cpp:231
+#: src/about/konq_aboutpage.cpp:270
 #, kde-format
 msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
@@ -255,7 +247,7 @@ msgstr ""
 "<img width='16' height='16' src=\"%1\"></img> 사이드바에 있는 과거 기록 항목"
 "은 과거에 방문했던 웹 페이지 기록을 쉽게 볼 수 있도록 해 줍니다."
 
-#: src/about/konq_aboutpage.cpp:233
+#: src/about/konq_aboutpage.cpp:272
 #, kde-format
 msgid ""
 "Advanced users will appreciate the Konsole which you can embed into "
@@ -265,33 +257,30 @@ msgstr ""
 "고급 사용자라면 Konqueror 창에 들어갈 수 있는 Konsole을 확인해 보십시오. (설"
 "정 -> <img width='16' height='16' SRC=\"%1\"></img> 터미널 에뮬레이터 표시)"
 
-#: src/about/konq_aboutpage.cpp:237
-#, kde-format
-msgctxt ""
-"Link that points to the first page of the Konqueror 'about page', Starting "
-"Points contains links to Home, Network Folders, Trash, etc."
-msgid "<a href=\"%1\">Return to Starting Points</a>"
-msgstr "<a href=\"%1\">시작 위치로 돌아가기</a>"
-
-#: src/about/konq_aboutpage.cpp:251
+#: src/about/konq_aboutpage.cpp:291
 #, kde-format
 msgid "Installed Plugins"
 msgstr "설치된 플러그인"
 
-#: src/about/konq_aboutpage.cpp:252
+#: src/about/konq_aboutpage.cpp:292
 #, kde-format
 msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
 msgstr "<td>플러그인</td><td>설명</td><td>파일</td><td>형식</td>"
 
-#: src/about/konq_aboutpage.cpp:253
+#: src/about/konq_aboutpage.cpp:293
 #, kde-format
 msgid "Installed"
 msgstr "설치됨"
 
-#: src/about/konq_aboutpage.cpp:254
+#: src/about/konq_aboutpage.cpp:294
 #, kde-format
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>MIME 형식</td><td>설명</td><td>접미사</td><td>플러그인</td>"
+
+#: src/about/konq_aboutpage.cpp:335
+#, kde-format
+msgid "Speed Dial"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:91
 #, kde-format
@@ -1098,61 +1087,61 @@ msgstr "허용"
 msgid "Do Not Allow"
 msgstr "허용하지 않음"
 
-#: src/webenginepart.cpp:206
+#: src/webenginepart.cpp:210
 #, kde-format
 msgid "Save Full HTML Page As..."
 msgstr "다른 이름으로 전체 HTML 페이지 저장..."
 
-#: src/webenginepart.cpp:210
+#: src/webenginepart.cpp:214
 #, kde-format
 msgid "Print Preview"
 msgstr "인쇄 미리 보기"
 
-#: src/webenginepart.cpp:214
+#: src/webenginepart.cpp:218
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "확대"
 
-#: src/webenginepart.cpp:219
+#: src/webenginepart.cpp:223
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "축소"
 
-#: src/webenginepart.cpp:224
+#: src/webenginepart.cpp:228
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "원래 크기로"
 
-#: src/webenginepart.cpp:229
+#: src/webenginepart.cpp:233
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "텍스트만 확대/축소"
 
-#: src/webenginepart.cpp:237
+#: src/webenginepart.cpp:241
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "DPI로 크기 조절"
 
-#: src/webenginepart.cpp:250
+#: src/webenginepart.cpp:254
 #, kde-format
 msgid "Set &Encoding"
 msgstr "인코딩 설정(&E)"
 
-#: src/webenginepart.cpp:253
+#: src/webenginepart.cpp:257
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "문서 원본 보기(&C)"
 
-#: src/webenginepart.cpp:258 src/webenginepart.cpp:567
+#: src/webenginepart.cpp:262 src/webenginepart.cpp:597
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:264
+#: src/webenginepart.cpp:268
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1162,12 +1151,12 @@ msgstr ""
 "<h3>텍스트 찾기</h3>현재 페이지의 텍스트를 찾을 수 있는 대화 상자를 표시합니"
 "다."
 
-#: src/webenginepart.cpp:565
+#: src/webenginepart.cpp:595
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "이 사이트의 SSL 정보가 잘못된 것 같습니다."
 
-#: src/webenginepart.cpp:646
+#: src/webenginepart.cpp:676
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1175,7 +1164,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "전자 우편: "
 
-#: src/webenginepart.cpp:675
+#: src/webenginepart.cpp:705
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1183,7 +1172,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - 참조: "
 
-#: src/webenginepart.cpp:677
+#: src/webenginepart.cpp:707
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1191,7 +1180,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - 숨은 참조: "
 
-#: src/webenginepart.cpp:679
+#: src/webenginepart.cpp:709
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1199,92 +1188,92 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - 제목: "
 
-#: src/webenginepart.cpp:683 src/webenginepart.cpp:694
+#: src/webenginepart.cpp:713 src/webenginepart.cpp:724
 #, kde-format
 msgid " (In new window)"
 msgstr " (새 창에서)"
 
-#: src/webenginepart.cpp:692
+#: src/webenginepart.cpp:722
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (부모 프레임에서)"
 
-#: src/webenginepart.cpp:758
+#: src/webenginepart.cpp:788
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt><b>%1</b>(으)로 검색하시겠습니까?</qt>"
 
-#: src/webenginepart.cpp:759
+#: src/webenginepart.cpp:789
 #, kde-format
 msgid "Internet Search"
 msgstr "인터넷 검색"
 
-#: src/webenginepart.cpp:759
+#: src/webenginepart.cpp:789
 #, kde-format
 msgid "&Search"
 msgstr "찾기(&S)"
 
-#: src/webenginepart.cpp:872
+#: src/webenginepart.cpp:902
 #, kde-format
 msgid "Close window?"
 msgstr "창을 닫으시겠습니까?"
 
-#: src/webenginepart.cpp:872
+#: src/webenginepart.cpp:902
 #, kde-format
 msgid "Confirmation Required"
 msgstr "확인 필요"
 
-#: src/webenginepart.cpp:949
+#: src/webenginepart.cpp:979
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>%1에서 <b>%2</b>의 로그인 정보를 기억하도록 하시겠습니까?</html>"
 
-#: src/webenginepart.cpp:1020
+#: src/webenginepart.cpp:1050
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr "자격 증명 입력(&F)"
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1055
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr "페이지에서 자격 증명 요청 검색(&S)"
 
-#: src/webenginepart.cpp:1029
+#: src/webenginepart.cpp:1059
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr "지금 자격 증명 저장(&S)"
 
-#: src/webenginepart.cpp:1033
+#: src/webenginepart.cpp:1063
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr "페이지의 자격 증명 사용자 정의(&C)..."
 
-#: src/webenginepart.cpp:1037
+#: src/webenginepart.cpp:1067
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr "이 페이지의 사용자 정의 자격 증명 설정 초기화"
 
-#: src/webenginepart.cpp:1041
+#: src/webenginepart.cpp:1071
 #, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr "이 사이트에 자격 증명 캐시 허용(&A)"
 
-#: src/webenginepart.cpp:1045
+#: src/webenginepart.cpp:1075
 #, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "이 사이트의 모든 저장된 암호 삭제"
 
-#: src/webenginepart.cpp:1049
+#: src/webenginepart.cpp:1079
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "지갑 관리자 실행하기(&L)"
 
-#: src/webenginepart.cpp:1053
+#: src/webenginepart.cpp:1083
 #, kde-format
 msgid "&Close Wallet"
 msgstr "지갑 닫기(&C)"
@@ -1645,6 +1634,19 @@ msgstr ""
 "<ul><li><b>필드 내부 이름: </b>%1</li><li><b>필드 종류: </b>%2</li><li><b>필"
 "드 ID: </b>%3</li><li><b>필드 읽기 전용 여부: </b>%4</li><li><b>필드 활성화 "
 "여부: </b>%5</li><li><b>자동 완성 활성화 여부: </b>%6</li></ul>"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "자유롭게."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">시작 위치로 돌아가기</a>"
 
 #~ msgid ""
 #~ "<qt><p>To display the requested web page again, the browser needs to "

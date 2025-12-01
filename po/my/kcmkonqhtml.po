@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-01 00:42+0000\n"
 "PO-Revision-Date: 2021-09-15 20:30+0630\n"
 "Last-Translator: \n"
 "Language-Team: Burmese <kde-i18n-doc@kde.org>\n"
@@ -1478,71 +1478,77 @@ msgstr "မိတ်ဆက်စာမျက်နှာပြမည်"
 #: generalopts.cpp:70
 #, kde-format
 msgctxt "@item:inlistbox"
+msgid "Show Speed Dial"
+msgstr ""
+
+#: generalopts.cpp:71
+#, kde-format
+msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "ကျွန်တော်၏ အစစာမျက်နှာပြမည်"
 
-#: generalopts.cpp:71
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "ဗလာစာမျက်နှာပြမည်"
 
-#: generalopts.cpp:72
+#: generalopts.cpp:73
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "ကျွန်တော်၏စာမျက်နှာအမှတ်အသားများ ပြမည်"
 
-#: generalopts.cpp:78
+#: generalopts.cpp:79
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "အစစာမျက်နှာရွေးချယ်မည်"
 
-#: generalopts.cpp:83
+#: generalopts.cpp:84
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr ""
 
-#: generalopts.cpp:94
+#: generalopts.cpp:95
 #, kde-format
 msgid "Home page:"
 msgstr "အိမ်စာမျက်နှာ -"
 
-#: generalopts.cpp:97
+#: generalopts.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "အိမ်စာမျက်နှာရွေးချယ်မည်"
 
-#: generalopts.cpp:102
+#: generalopts.cpp:103
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
 "\" button is pressed."
 msgstr ""
 
-#: generalopts.cpp:110
+#: generalopts.cpp:111
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "မူလ ဝက်ဘ်ဘရောက်ဇာ အင်ဂျင်"
 
-#: generalopts.cpp:119
+#: generalopts.cpp:120
 #, kde-format
 msgid "When splitting a view"
 msgstr "မြင်ကွင်းခွဲသောအခါ"
 
-#: generalopts.cpp:123
+#: generalopts.cpp:124
 #, fuzzy, kde-format
 msgid "Always duplicate current view"
 msgstr "လက်ရှိမှတ်တမ်းပုံနှိပ်မူ ပိတ်မည်"
 
-#: generalopts.cpp:124
+#: generalopts.cpp:125
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr ""
 
-#: generalopts.cpp:130
+#: generalopts.cpp:131
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr ""

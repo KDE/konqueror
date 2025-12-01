@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-01 00:42+0000\n"
 "PO-Revision-Date: 2021-05-01 21:52+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -29,8 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "qiilaq69@gmail.com"
 
-#: src/about/konq_aboutpage.cpp:85 src/about/konq_aboutpage.cpp:87
-#: src/about/konq_aboutpage.cpp:202 src/about/konq_aboutpage.cpp:204
+#: src/about/konq_aboutpage.cpp:84
 #, fuzzy, kde-format
 #| msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
 #| msgid "Be free."
@@ -38,21 +37,13 @@ msgctxt "KDE 4 tag line"
 msgid "Be free."
 msgstr "Tunne end vabalt."
 
-#: src/about/konq_aboutpage.cpp:86 src/about/konq_aboutpage.cpp:144
-#: src/about/konq_aboutpage.cpp:203
-#, kde-format
-msgid "Konqueror"
-msgstr "Konqueror"
-
-#: src/about/konq_aboutpage.cpp:88 src/about/konq_aboutpage.cpp:146
-#: src/about/konq_aboutpage.cpp:205
+#: src/about/konq_aboutpage.cpp:89
 #, kde-format
 msgid "Konqueror is a web browser, file manager and universal document viewer."
 msgstr ""
 "Konqueror on veebilehitseja, failihaldur ja universaalne dokumentide näitaja."
 
-#: src/about/konq_aboutpage.cpp:89 src/about/konq_aboutpage.cpp:147
-#: src/about/konq_aboutpage.cpp:206
+#: src/about/konq_aboutpage.cpp:94
 #, kde-format
 msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
@@ -60,75 +51,76 @@ msgctxt ""
 msgid "Starting Points"
 msgstr "Alustuseks"
 
-#: src/about/konq_aboutpage.cpp:90 src/about/konq_aboutpage.cpp:148
-#: src/about/konq_aboutpage.cpp:207
+#: src/about/konq_aboutpage.cpp:138 src/about/konq_aboutpage.cpp:192
+#: src/about/konq_aboutpage.cpp:246 src/about/konq_aboutpage.cpp:333
 #, kde-format
 msgid "Introduction"
 msgstr "Sissejuhatus"
 
-#: src/about/konq_aboutpage.cpp:91 src/about/konq_aboutpage.cpp:149
-#: src/about/konq_aboutpage.cpp:208
+#: src/about/konq_aboutpage.cpp:139 src/about/konq_aboutpage.cpp:193
+#: src/about/konq_aboutpage.cpp:247 src/about/konq_aboutpage.cpp:334
 #, kde-format
 msgid "Tips"
 msgstr "Vihjed"
 
-#: src/about/konq_aboutpage.cpp:96
+#: src/about/konq_aboutpage.cpp:144
 #, kde-format
 msgid "Home Folder"
 msgstr "Kodukataloog"
 
-#: src/about/konq_aboutpage.cpp:97
+#: src/about/konq_aboutpage.cpp:145
 #, kde-format
 msgid "Your personal files"
 msgstr "Sinu isiklikud failid"
 
-#: src/about/konq_aboutpage.cpp:100
+#: src/about/konq_aboutpage.cpp:148
 #, kde-format
 msgid "Trash"
 msgstr "Prügikast"
 
-#: src/about/konq_aboutpage.cpp:101
+#: src/about/konq_aboutpage.cpp:149
 #, kde-format
 msgid "Browse and restore the trash"
 msgstr "Prügikasti sirvimine ja taastamine"
 
-#: src/about/konq_aboutpage.cpp:104
+#: src/about/konq_aboutpage.cpp:152
 #, kde-format
 msgid "Network Folders"
 msgstr "Võrgukataloogid"
 
-#: src/about/konq_aboutpage.cpp:105
+#: src/about/konq_aboutpage.cpp:153
 #, kde-format
 msgid "Shared files and folders"
 msgstr "Jagatud failid ja kataloogid"
 
-#: src/about/konq_aboutpage.cpp:108
+#: src/about/konq_aboutpage.cpp:156
 #, kde-format
 msgid "Bookmarks"
 msgstr "Järjehoidjad"
 
-#: src/about/konq_aboutpage.cpp:109
+#: src/about/konq_aboutpage.cpp:157
 #, kde-format
 msgid "Quick access to your bookmarks"
 msgstr "Kiire ligipääs oma järjehoidjatele"
 
-#: src/about/konq_aboutpage.cpp:112
+#: src/about/konq_aboutpage.cpp:160
 #, kde-format
 msgid "Next: An Introduction to Konqueror"
 msgstr "Edasi: Konquerori sissejuhatus"
 
-#: src/about/konq_aboutpage.cpp:114
+#: src/about/konq_aboutpage.cpp:161 src/about/konq_aboutpage.cpp:212
+#: src/about/konq_aboutpage.cpp:277
+#, kde-format
+msgctxt "link to the speed dial"
+msgid "Speed Dial"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:163
 #, kde-format
 msgid "Search the Web"
 msgstr "Veebiotsingud"
 
-#: src/about/konq_aboutpage.cpp:143 src/about/konq_aboutpage.cpp:145
-#, kde-format
-msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
-msgid "Be free."
-msgstr "Tunne end vabalt."
-
-#: src/about/konq_aboutpage.cpp:150
+#: src/about/konq_aboutpage.cpp:194
 #, kde-format
 msgid ""
 "Konqueror makes working with and managing your files easy. You can browse "
@@ -139,7 +131,7 @@ msgstr ""
 "kohalikke kui ka võrgukatalooge ning kasutada mitmesuguseid mõnusaid "
 "omadusi, nagu näiteks võimas külgriba ja failide eelvaatlused."
 
-#: src/about/konq_aboutpage.cpp:154
+#: src/about/konq_aboutpage.cpp:198
 #, kde-format
 msgid ""
 "Konqueror is also a full featured and easy to use web browser which you can "
@@ -152,7 +144,7 @@ msgstr ""
 "mida soovid külastada (nt <a href=\"http://www.kde.org\">http://www.kde.org</"
 "a>), ja vajuta Enter või vali vajalik kirje järjehoidjate menüüst."
 
-#: src/about/konq_aboutpage.cpp:159
+#: src/about/konq_aboutpage.cpp:203
 #, kde-format
 msgid ""
 "To return to the previous location, press the back button <img width='16' "
@@ -161,7 +153,7 @@ msgstr ""
 "Eelmisse asukohta liikumiseks klõpsa tööriistaribal nuppu <img width='16' "
 "height='16' src=\"%1\"></img>."
 
-#: src/about/konq_aboutpage.cpp:162
+#: src/about/konq_aboutpage.cpp:206
 #, kde-format
 msgid ""
 "To quickly go to your Home folder press the home button <img width='16' "
@@ -170,7 +162,7 @@ msgstr ""
 "Kiireks pääsuks kodukataloogi klõpsa kodunuppu <img width='16' height='16' "
 "src=\"%1\"></img>."
 
-#: src/about/konq_aboutpage.cpp:164
+#: src/about/konq_aboutpage.cpp:208
 #, kde-format
 msgid ""
 "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
@@ -178,17 +170,17 @@ msgstr ""
 "Konquerori põhjaliku dokumentatsiooniga tutvumiseks klõpsa <a href="
 "\"%1\">siia</a>."
 
-#: src/about/konq_aboutpage.cpp:167
+#: src/about/konq_aboutpage.cpp:211
 #, kde-format
 msgid "Next: Tips & Tricks"
 msgstr "Edasi: vihjed ja nipid"
 
-#: src/about/konq_aboutpage.cpp:209
+#: src/about/konq_aboutpage.cpp:248
 #, kde-format
 msgid "Tips & Tricks"
 msgstr "Vihjed ja nipid"
 
-#: src/about/konq_aboutpage.cpp:210
+#: src/about/konq_aboutpage.cpp:249
 #, kde-format
 msgid ""
 "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, using "
@@ -203,7 +195,7 @@ msgstr ""
 "sõnu entsüklopeediatest. Soovi korral võib <a href=\"%1\">luua omaenda</a> "
 "veebi kiirkorraldusi."
 
-#: src/about/konq_aboutpage.cpp:215
+#: src/about/konq_aboutpage.cpp:254
 #, kde-format
 msgid ""
 "When you want to paste a new address into the Location toolbar you might "
@@ -214,7 +206,7 @@ msgstr ""
 "varasema kirje, klõpsates tööriistaribal valge ristiga mustale noolele <img "
 "width='16' height='16' src=\"%1\"></img>."
 
-#: src/about/konq_aboutpage.cpp:219
+#: src/about/konq_aboutpage.cpp:258
 #, kde-format
 msgid ""
 "To create a link on your desktop pointing to the current page, simply drag "
@@ -225,7 +217,7 @@ msgstr ""
 "ikoon (lemmikikoon), mis asub asukohariba vasakus servas, töölauale ja vali "
 "\"Ikoon\"."
 
-#: src/about/konq_aboutpage.cpp:222
+#: src/about/konq_aboutpage.cpp:261
 #, kde-format
 msgid ""
 "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
@@ -235,7 +227,7 @@ msgstr ""
 "Seadistustemenüüst leiab ka <img width='16' height='16' src=\"%1\" /> "
 "\"täisekraanirežiimi. See on eriti abiks vestlusseanssidel."
 
-#: src/about/konq_aboutpage.cpp:225
+#: src/about/konq_aboutpage.cpp:264
 #, kde-format
 msgid ""
 "Divide et impera (lat. \"Divide and conquer\") - by splitting a window into "
@@ -247,7 +239,7 @@ msgstr ""
 "vaade vertikaalselt) saad anda Konquerorile just sellise välimuse, mis sulle "
 "meeldib."
 
-#: src/about/konq_aboutpage.cpp:228
+#: src/about/konq_aboutpage.cpp:267
 #, kde-format
 msgid ""
 "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
@@ -258,7 +250,7 @@ msgstr ""
 "veebilehekülg, mida külastad, palub kasutada mõnda muud veebilehitsejat (ja "
 "ära unusta selle peale saatmast veebimeistrile kaebust!)"
 
-#: src/about/konq_aboutpage.cpp:231
+#: src/about/konq_aboutpage.cpp:270
 #, kde-format
 msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
@@ -267,7 +259,7 @@ msgstr ""
 "Külgribal paiknev <img width='16' height='16' src=\"%1\"></img> Ajalugu "
 "aitab silma peal hoida viimati külastatud veebilehtedel."
 
-#: src/about/konq_aboutpage.cpp:233
+#: src/about/konq_aboutpage.cpp:272
 #, kde-format
 msgid ""
 "Advanced users will appreciate the Konsole which you can embed into "
@@ -278,33 +270,30 @@ msgstr ""
 "Konqueroris (Seadistused -> <img width='16' height='16' SRC=\"%1\"></img> "
 "Terminaliemulaatori näitamine)."
 
-#: src/about/konq_aboutpage.cpp:237
-#, kde-format
-msgctxt ""
-"Link that points to the first page of the Konqueror 'about page', Starting "
-"Points contains links to Home, Network Folders, Trash, etc."
-msgid "<a href=\"%1\">Return to Starting Points</a>"
-msgstr "<a href=\"%1\">Tagasi alguse juurde</a>"
-
-#: src/about/konq_aboutpage.cpp:251
+#: src/about/konq_aboutpage.cpp:291
 #, kde-format
 msgid "Installed Plugins"
 msgstr "Paigaldatud pluginad"
 
-#: src/about/konq_aboutpage.cpp:252
+#: src/about/konq_aboutpage.cpp:292
 #, kde-format
 msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
 msgstr "<td>Plugin</td><td>Kirjeldus</td><td>Fail</td><td>Tüübid</td>"
 
-#: src/about/konq_aboutpage.cpp:253
+#: src/about/konq_aboutpage.cpp:293
 #, kde-format
 msgid "Installed"
 msgstr "Paigaldatud"
 
-#: src/about/konq_aboutpage.cpp:254
+#: src/about/konq_aboutpage.cpp:294
 #, kde-format
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>MIME tüüp</td><td>Kirjeldus</td><td>Sufiksid</td><td>Plugin</td>"
+
+#: src/about/konq_aboutpage.cpp:335
+#, kde-format
+msgid "Speed Dial"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:91
 #, kde-format
@@ -1165,62 +1154,62 @@ msgstr "Luba"
 msgid "Do Not Allow"
 msgstr "Ära luba"
 
-#: src/webenginepart.cpp:206
+#: src/webenginepart.cpp:210
 #, fuzzy, kde-format
 #| msgid "Save Image As..."
 msgid "Save Full HTML Page As..."
 msgstr "Salvesta pilt kui..."
 
-#: src/webenginepart.cpp:210
+#: src/webenginepart.cpp:214
 #, kde-format
 msgid "Print Preview"
 msgstr "Trükkimise eelvaatlus"
 
-#: src/webenginepart.cpp:214
+#: src/webenginepart.cpp:218
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Suurenda"
 
-#: src/webenginepart.cpp:219
+#: src/webenginepart.cpp:223
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Vähenda"
 
-#: src/webenginepart.cpp:224
+#: src/webenginepart.cpp:228
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Tegelik suurus"
 
-#: src/webenginepart.cpp:229
+#: src/webenginepart.cpp:233
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Suurenda ainult teksti"
 
-#: src/webenginepart.cpp:237
+#: src/webenginepart.cpp:241
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Suurenda DPI peale"
 
-#: src/webenginepart.cpp:250
+#: src/webenginepart.cpp:254
 #, kde-format
 msgid "Set &Encoding"
 msgstr "Kod&eering"
 
-#: src/webenginepart.cpp:253
+#: src/webenginepart.cpp:257
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Vaata do&kumendi lähteteksti"
 
-#: src/webenginepart.cpp:258 src/webenginepart.cpp:567
+#: src/webenginepart.cpp:262 src/webenginepart.cpp:597
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:264
+#: src/webenginepart.cpp:268
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1230,12 +1219,12 @@ msgstr ""
 "<h3>Otsi teksti</h3>Avab dialoogi, kus saab otsida teksti näidataval "
 "leheküljel."
 
-#: src/webenginepart.cpp:565
+#: src/webenginepart.cpp:595
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "Selle lehekülje SSL teave tundub olevat vigane."
 
-#: src/webenginepart.cpp:646
+#: src/webenginepart.cpp:676
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1243,7 +1232,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "E-post: "
 
-#: src/webenginepart.cpp:675
+#: src/webenginepart.cpp:705
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1251,7 +1240,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - CC: "
 
-#: src/webenginepart.cpp:677
+#: src/webenginepart.cpp:707
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1259,7 +1248,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - BCC: "
 
-#: src/webenginepart.cpp:679
+#: src/webenginepart.cpp:709
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1267,94 +1256,94 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Teema: "
 
-#: src/webenginepart.cpp:683 src/webenginepart.cpp:694
+#: src/webenginepart.cpp:713 src/webenginepart.cpp:724
 #, kde-format
 msgid " (In new window)"
 msgstr " (uues aknas)"
 
-#: src/webenginepart.cpp:692
+#: src/webenginepart.cpp:722
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (eellaspaneelis)"
 
-#: src/webenginepart.cpp:758
+#: src/webenginepart.cpp:788
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Kas otsida <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:759
+#: src/webenginepart.cpp:789
 #, kde-format
 msgid "Internet Search"
 msgstr "Internetiotsing"
 
-#: src/webenginepart.cpp:759
+#: src/webenginepart.cpp:789
 #, kde-format
 msgid "&Search"
 msgstr "Ot&si"
 
-#: src/webenginepart.cpp:872
+#: src/webenginepart.cpp:902
 #, kde-format
 msgid "Close window?"
 msgstr "Kas sulgeda aken?"
 
-#: src/webenginepart.cpp:872
+#: src/webenginepart.cpp:902
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Kinnituse nõudmine"
 
-#: src/webenginepart.cpp:949
+#: src/webenginepart.cpp:979
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>Kas %1 peaks jätma meelde <b>%2</b> sisselogimisteabe?</html>"
 
-#: src/webenginepart.cpp:1020
+#: src/webenginepart.cpp:1050
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr ""
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1055
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr ""
 
-#: src/webenginepart.cpp:1029
+#: src/webenginepart.cpp:1059
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr ""
 
-#: src/webenginepart.cpp:1033
+#: src/webenginepart.cpp:1063
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1037
+#: src/webenginepart.cpp:1067
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1041
+#: src/webenginepart.cpp:1071
 #, fuzzy, kde-format
 #| msgid "&Allow password caching for this site"
 msgid "&Allow Credential Caching for This Page"
 msgstr "Lub&a parooli puhverdamine sellel saidil"
 
-#: src/webenginepart.cpp:1045
+#: src/webenginepart.cpp:1075
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "Remove All Stored Passwords for This Site"
 msgstr "Eemalda kõik selle saidi puhverdatud paroolid"
 
-#: src/webenginepart.cpp:1049
+#: src/webenginepart.cpp:1079
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1053
+#: src/webenginepart.cpp:1083
 #, kde-format
 msgid "&Close Wallet"
 msgstr "S&ulge turvalaegas"
@@ -1724,6 +1713,19 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Tunne end vabalt."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Tagasi alguse juurde</a>"
 
 #~ msgid ""
 #~ "<qt><p>To display the requested web page again, the browser needs to "

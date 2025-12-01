@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-01 00:42+0000\n"
 "PO-Revision-Date: 2024-12-20 21:52+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1637,71 +1637,77 @@ msgstr "परिचय पृष्ठं दर्शयतु"
 #: generalopts.cpp:70
 #, kde-format
 msgctxt "@item:inlistbox"
+msgid "Show Speed Dial"
+msgstr ""
+
+#: generalopts.cpp:71
+#, kde-format
+msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
 msgstr "मम आरम्भपृष्ठं दर्शयतु"
 
-#: generalopts.cpp:71
+#: generalopts.cpp:72
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
 msgstr "रिक्त पृष्ठं दर्शयतु"
 
-#: generalopts.cpp:72
+#: generalopts.cpp:73
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
 msgstr "मम पुस्तकचिह्नानि दर्शयतु"
 
-#: generalopts.cpp:78
+#: generalopts.cpp:79
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "Start Page इति चिनोतु"
 
-#: generalopts.cpp:83
+#: generalopts.cpp:84
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr "इदं जालपुटस्य URL अस्ति यत् Konqueror आरम्भे दर्शयिष्यति ।"
 
-#: generalopts.cpp:94
+#: generalopts.cpp:95
 #, kde-format
 msgid "Home page:"
 msgstr "मुखपृष्ठम् :"
 
-#: generalopts.cpp:97
+#: generalopts.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "मुखपृष्ठं चिनोतु"
 
-#: generalopts.cpp:102
+#: generalopts.cpp:103
 #, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
 "\" button is pressed."
 msgstr "एतत् जालपुटस्य URL अस्ति यत्र \"Home\" बटन् नुदने सति Konqueror कूर्दति ।"
 
-#: generalopts.cpp:110
+#: generalopts.cpp:111
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "पूर्वनिर्धारितं जालपुटस्य इञ्जिनम् :"
 
-#: generalopts.cpp:119
+#: generalopts.cpp:120
 #, kde-format
 msgid "When splitting a view"
 msgstr "यदा दृश्यं विभज्यते"
 
-#: generalopts.cpp:123
+#: generalopts.cpp:124
 #, kde-format
 msgid "Always duplicate current view"
 msgstr "वर्तमानदृश्यं सर्वदा द्वितीयकं कुर्वन्तु"
 
-#: generalopts.cpp:124
+#: generalopts.cpp:125
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "केवलं स्थानीयसञ्चिकानां कृते वर्तमानदृश्यस्य द्वितीयकं कुर्वन्तु"
 
-#: generalopts.cpp:130
+#: generalopts.cpp:131
 #, kde-format
 msgid "When starting up, restore state from last time"
 msgstr "आरम्भं कुर्वन् अन्तिमसमयात् स्थितिं पुनः स्थापयन्तु"

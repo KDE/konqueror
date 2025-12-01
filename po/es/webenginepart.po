@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-01 00:42+0000\n"
 "PO-Revision-Date: 2025-10-15 17:47+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -35,29 +35,20 @@ msgid "Your emails"
 msgstr ""
 "ecuadra@eloihr.net,traducciones@rociogallego.com,the.blue.valkyrie@gmail.com"
 
-#: src/about/konq_aboutpage.cpp:85 src/about/konq_aboutpage.cpp:87
-#: src/about/konq_aboutpage.cpp:202 src/about/konq_aboutpage.cpp:204
+#: src/about/konq_aboutpage.cpp:84
 #, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
 msgstr "Libérese."
 
-#: src/about/konq_aboutpage.cpp:86 src/about/konq_aboutpage.cpp:144
-#: src/about/konq_aboutpage.cpp:203
-#, kde-format
-msgid "Konqueror"
-msgstr "Konqueror"
-
-#: src/about/konq_aboutpage.cpp:88 src/about/konq_aboutpage.cpp:146
-#: src/about/konq_aboutpage.cpp:205
+#: src/about/konq_aboutpage.cpp:89
 #, kde-format
 msgid "Konqueror is a web browser, file manager and universal document viewer."
 msgstr ""
 "Konqueror es un navegador web, gestor de archivos y visor universal de "
 "documentos."
 
-#: src/about/konq_aboutpage.cpp:89 src/about/konq_aboutpage.cpp:147
-#: src/about/konq_aboutpage.cpp:206
+#: src/about/konq_aboutpage.cpp:94
 #, kde-format
 msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
@@ -65,75 +56,76 @@ msgctxt ""
 msgid "Starting Points"
 msgstr "Puntos de entrada"
 
-#: src/about/konq_aboutpage.cpp:90 src/about/konq_aboutpage.cpp:148
-#: src/about/konq_aboutpage.cpp:207
+#: src/about/konq_aboutpage.cpp:138 src/about/konq_aboutpage.cpp:192
+#: src/about/konq_aboutpage.cpp:246 src/about/konq_aboutpage.cpp:333
 #, kde-format
 msgid "Introduction"
 msgstr "Introducción"
 
-#: src/about/konq_aboutpage.cpp:91 src/about/konq_aboutpage.cpp:149
-#: src/about/konq_aboutpage.cpp:208
+#: src/about/konq_aboutpage.cpp:139 src/about/konq_aboutpage.cpp:193
+#: src/about/konq_aboutpage.cpp:247 src/about/konq_aboutpage.cpp:334
 #, kde-format
 msgid "Tips"
 msgstr "Consejos"
 
-#: src/about/konq_aboutpage.cpp:96
+#: src/about/konq_aboutpage.cpp:144
 #, kde-format
 msgid "Home Folder"
 msgstr "Carpeta personal"
 
-#: src/about/konq_aboutpage.cpp:97
+#: src/about/konq_aboutpage.cpp:145
 #, kde-format
 msgid "Your personal files"
 msgstr "Sus archivos personales"
 
-#: src/about/konq_aboutpage.cpp:100
+#: src/about/konq_aboutpage.cpp:148
 #, kde-format
 msgid "Trash"
 msgstr "Papelera"
 
-#: src/about/konq_aboutpage.cpp:101
+#: src/about/konq_aboutpage.cpp:149
 #, kde-format
 msgid "Browse and restore the trash"
 msgstr "Explorar y restaurar de la papelera"
 
-#: src/about/konq_aboutpage.cpp:104
+#: src/about/konq_aboutpage.cpp:152
 #, kde-format
 msgid "Network Folders"
 msgstr "Carpetas de red"
 
-#: src/about/konq_aboutpage.cpp:105
+#: src/about/konq_aboutpage.cpp:153
 #, kde-format
 msgid "Shared files and folders"
 msgstr "Archivos y carpetas compartidos"
 
-#: src/about/konq_aboutpage.cpp:108
+#: src/about/konq_aboutpage.cpp:156
 #, kde-format
 msgid "Bookmarks"
 msgstr "Marcadores"
 
-#: src/about/konq_aboutpage.cpp:109
+#: src/about/konq_aboutpage.cpp:157
 #, kde-format
 msgid "Quick access to your bookmarks"
 msgstr "Acceso rápido a sus marcadores"
 
-#: src/about/konq_aboutpage.cpp:112
+#: src/about/konq_aboutpage.cpp:160
 #, kde-format
 msgid "Next: An Introduction to Konqueror"
 msgstr "Siguiente: Introducción a Konqueror"
 
-#: src/about/konq_aboutpage.cpp:114
+#: src/about/konq_aboutpage.cpp:161 src/about/konq_aboutpage.cpp:212
+#: src/about/konq_aboutpage.cpp:277
+#, kde-format
+msgctxt "link to the speed dial"
+msgid "Speed Dial"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:163
 #, kde-format
 msgid "Search the Web"
 msgstr "Buscar en la Web"
 
-#: src/about/konq_aboutpage.cpp:143 src/about/konq_aboutpage.cpp:145
-#, kde-format
-msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
-msgid "Be free."
-msgstr "Libérese."
-
-#: src/about/konq_aboutpage.cpp:150
+#: src/about/konq_aboutpage.cpp:194
 #, kde-format
 msgid ""
 "Konqueror makes working with and managing your files easy. You can browse "
@@ -144,7 +136,7 @@ msgstr ""
 "remotas aprovechando sus funciones avanzadas, como la potente barra lateral "
 "y las vistas previas de archivos."
 
-#: src/about/konq_aboutpage.cpp:154
+#: src/about/konq_aboutpage.cpp:198
 #, kde-format
 msgid ""
 "Konqueror is also a full featured and easy to use web browser which you can "
@@ -158,7 +150,7 @@ msgstr ""
 "visitar en la barra de ubicación y pulse Intro, o bien elija una entrada del "
 "menú Marcadores."
 
-#: src/about/konq_aboutpage.cpp:159
+#: src/about/konq_aboutpage.cpp:203
 #, kde-format
 msgid ""
 "To return to the previous location, press the back button <img width='16' "
@@ -168,7 +160,7 @@ msgstr ""
 "width='16' height='16' src=\"%1\"></img> que hay en la barra de "
 "herramientas. "
 
-#: src/about/konq_aboutpage.cpp:162
+#: src/about/konq_aboutpage.cpp:206
 #, kde-format
 msgid ""
 "To quickly go to your Home folder press the home button <img width='16' "
@@ -177,7 +169,7 @@ msgstr ""
 "Para ir directamente a su carpeta personal, pulse el botón de la casa <img "
 "width='16' height='16' src=\"%1\"></img>."
 
-#: src/about/konq_aboutpage.cpp:164
+#: src/about/konq_aboutpage.cpp:208
 #, kde-format
 msgid ""
 "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
@@ -185,17 +177,17 @@ msgstr ""
 "Para una documentación más detallada sobre Konqueror, pulse <a href="
 "\"%1\">aquí</a>."
 
-#: src/about/konq_aboutpage.cpp:167
+#: src/about/konq_aboutpage.cpp:211
 #, kde-format
 msgid "Next: Tips & Tricks"
 msgstr "Siguiente: Consejos y trucos"
 
-#: src/about/konq_aboutpage.cpp:209
+#: src/about/konq_aboutpage.cpp:248
 #, kde-format
 msgid "Tips & Tricks"
 msgstr "Consejos y trucos"
 
-#: src/about/konq_aboutpage.cpp:210
+#: src/about/konq_aboutpage.cpp:249
 #, kde-format
 msgid ""
 "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, using "
@@ -209,7 +201,7 @@ msgstr ""
 "facilitarle la búsqueda de software o de ciertas palabras en una "
 "enciclopedia. También puede <a href=\"%1\">crear sus propios</a> atajos web."
 
-#: src/about/konq_aboutpage.cpp:215
+#: src/about/konq_aboutpage.cpp:254
 #, kde-format
 msgid ""
 "When you want to paste a new address into the Location toolbar you might "
@@ -221,7 +213,7 @@ msgstr ""
 "negra que tiene una cruz blanca <img width='16' height='16' src=\"%1\"></"
 "img> en la barra de herramientas."
 
-#: src/about/konq_aboutpage.cpp:219
+#: src/about/konq_aboutpage.cpp:258
 #, kde-format
 msgid ""
 "To create a link on your desktop pointing to the current page, simply drag "
@@ -232,7 +224,7 @@ msgstr ""
 "arrastre el icono (el «favicon») que hay a la izquierda de la barra de "
 "herramientas de ubicación, suéltelo en el escritorio y elija «Icono»."
 
-#: src/about/konq_aboutpage.cpp:222
+#: src/about/konq_aboutpage.cpp:261
 #, kde-format
 msgid ""
 "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
@@ -243,7 +235,7 @@ msgstr ""
 "pantalla completa» en el menú de Preferencias. Esta funcionalidad resulta "
 "muy útil para sesiones de «charla»."
 
-#: src/about/konq_aboutpage.cpp:225
+#: src/about/konq_aboutpage.cpp:264
 #, kde-format
 msgid ""
 "Divide et impera (lat. \"Divide and conquer\") - by splitting a window into "
@@ -255,7 +247,7 @@ msgstr ""
 "> Dividir vista izquierda/derecha), puede hacer que Konqueror se muestre del "
 "modo que prefiera."
 
-#: src/about/konq_aboutpage.cpp:228
+#: src/about/konq_aboutpage.cpp:267
 #, kde-format
 msgid ""
 "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
@@ -266,7 +258,7 @@ msgstr ""
 "web que visite le solicita que use un navegador distinto (y no se olvide de "
 "enviarle una queja a su webmaster)."
 
-#: src/about/konq_aboutpage.cpp:231
+#: src/about/konq_aboutpage.cpp:270
 #, kde-format
 msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
@@ -276,7 +268,7 @@ msgstr ""
 "lateral se asegura de que pueda seguir el rastro de las páginas que haya "
 "visitado recientemente."
 
-#: src/about/konq_aboutpage.cpp:233
+#: src/about/konq_aboutpage.cpp:272
 #, kde-format
 msgid ""
 "Advanced users will appreciate the Konsole which you can embed into "
@@ -287,34 +279,31 @@ msgstr ""
 "(Preferencias -> <img width='16' height='16' SRC=\"%1\"></img> Mostrar "
 "emulardor de terminal)."
 
-#: src/about/konq_aboutpage.cpp:237
-#, kde-format
-msgctxt ""
-"Link that points to the first page of the Konqueror 'about page', Starting "
-"Points contains links to Home, Network Folders, Trash, etc."
-msgid "<a href=\"%1\">Return to Starting Points</a>"
-msgstr "<a href=\"%1\">Volver a los puntos de entrada</a>"
-
-#: src/about/konq_aboutpage.cpp:251
+#: src/about/konq_aboutpage.cpp:291
 #, kde-format
 msgid "Installed Plugins"
 msgstr "Complementos instalados"
 
-#: src/about/konq_aboutpage.cpp:252
+#: src/about/konq_aboutpage.cpp:292
 #, kde-format
 msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
 msgstr "<td>Complemento</td><td>Descripción</td><td>Archivo</td><td>Tipos</td>"
 
-#: src/about/konq_aboutpage.cpp:253
+#: src/about/konq_aboutpage.cpp:293
 #, kde-format
 msgid "Installed"
 msgstr "Instalado"
 
-#: src/about/konq_aboutpage.cpp:254
+#: src/about/konq_aboutpage.cpp:294
 #, kde-format
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr ""
 "<td>Tipo MIME</td><td>Descripción</td><td>Sufijos</td><td>Complemento</td>"
+
+#: src/about/konq_aboutpage.cpp:335
+#, kde-format
+msgid "Speed Dial"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:91
 #, kde-format
@@ -1128,61 +1117,61 @@ msgstr "Permitir"
 msgid "Do Not Allow"
 msgstr "No permitir"
 
-#: src/webenginepart.cpp:206
+#: src/webenginepart.cpp:210
 #, kde-format
 msgid "Save Full HTML Page As..."
 msgstr "Guardar la página HTML completa como…"
 
-#: src/webenginepart.cpp:210
+#: src/webenginepart.cpp:214
 #, kde-format
 msgid "Print Preview"
 msgstr "Vista previa de la impresión"
 
-#: src/webenginepart.cpp:214
+#: src/webenginepart.cpp:218
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Ampliar"
 
-#: src/webenginepart.cpp:219
+#: src/webenginepart.cpp:223
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Reducir"
 
-#: src/webenginepart.cpp:224
+#: src/webenginepart.cpp:228
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Tamaño real"
 
-#: src/webenginepart.cpp:229
+#: src/webenginepart.cpp:233
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Ampliar solo el texto"
 
-#: src/webenginepart.cpp:237
+#: src/webenginepart.cpp:241
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Ampliar a DPI"
 
-#: src/webenginepart.cpp:250
+#: src/webenginepart.cpp:254
 #, kde-format
 msgid "Set &Encoding"
 msgstr "Establecer c&odificación"
 
-#: src/webenginepart.cpp:253
+#: src/webenginepart.cpp:257
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Ver el código fuente del do&cumento"
 
-#: src/webenginepart.cpp:258 src/webenginepart.cpp:567
+#: src/webenginepart.cpp:262 src/webenginepart.cpp:597
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:264
+#: src/webenginepart.cpp:268
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1192,12 +1181,12 @@ msgstr ""
 "<h3>Buscar texto</h3>Muestra un diálogo que le permite buscar texto en la "
 "página mostrada."
 
-#: src/webenginepart.cpp:565
+#: src/webenginepart.cpp:595
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "La información SSL del sitio parece dañada."
 
-#: src/webenginepart.cpp:646
+#: src/webenginepart.cpp:676
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1205,7 +1194,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "Correo electrónico: "
 
-#: src/webenginepart.cpp:675
+#: src/webenginepart.cpp:705
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1213,7 +1202,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - Cc: "
 
-#: src/webenginepart.cpp:677
+#: src/webenginepart.cpp:707
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1221,7 +1210,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - Cco: "
 
-#: src/webenginepart.cpp:679
+#: src/webenginepart.cpp:709
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1229,93 +1218,93 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Asunto: "
 
-#: src/webenginepart.cpp:683 src/webenginepart.cpp:694
+#: src/webenginepart.cpp:713 src/webenginepart.cpp:724
 #, kde-format
 msgid " (In new window)"
 msgstr " (en una ventana nueva)"
 
-#: src/webenginepart.cpp:692
+#: src/webenginepart.cpp:722
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (en la ventana padre)"
 
-#: src/webenginepart.cpp:758
+#: src/webenginepart.cpp:788
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>¿Desea buscar <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:759
+#: src/webenginepart.cpp:789
 #, kde-format
 msgid "Internet Search"
 msgstr "Búsqueda en Internet"
 
-#: src/webenginepart.cpp:759
+#: src/webenginepart.cpp:789
 #, kde-format
 msgid "&Search"
 msgstr "&Buscar"
 
-#: src/webenginepart.cpp:872
+#: src/webenginepart.cpp:902
 #, kde-format
 msgid "Close window?"
 msgstr "¿Cerrar la ventana?"
 
-#: src/webenginepart.cpp:872
+#: src/webenginepart.cpp:902
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Se requiere confirmación"
 
-#: src/webenginepart.cpp:949
+#: src/webenginepart.cpp:979
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 "<html>¿Desea que %1 recuerde la información de ingreso para <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1020
+#: src/webenginepart.cpp:1050
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr "&Rellenar las credenciales"
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1055
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr "&Buscar solicitudes de credenciales en la página"
 
-#: src/webenginepart.cpp:1029
+#: src/webenginepart.cpp:1059
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr "&Guardar credenciales ahora"
 
-#: src/webenginepart.cpp:1033
+#: src/webenginepart.cpp:1063
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr "&Personalizar las preferencias de credenciales por página…"
 
-#: src/webenginepart.cpp:1037
+#: src/webenginepart.cpp:1067
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr "Reiniciar las preferencias de credenciales personalizadas por página"
 
-#: src/webenginepart.cpp:1041
+#: src/webenginepart.cpp:1071
 #, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr "Per&mitir el uso de la caché de credenciales para esta página"
 
-#: src/webenginepart.cpp:1045
+#: src/webenginepart.cpp:1075
 #, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "Eliminar todas las contraseñas guardadas de este sitio"
 
-#: src/webenginepart.cpp:1049
+#: src/webenginepart.cpp:1079
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Lanzar el gestor de carteras"
 
-#: src/webenginepart.cpp:1053
+#: src/webenginepart.cpp:1083
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Cerrar cartera"
@@ -1677,6 +1666,19 @@ msgstr ""
 "%2</li><li><b>ID del campo: </b>%3</li><li><b>Campo de solo lectura: </b>%4</"
 "li><li><b>Campo activado: </b>%5</li><li><b>Terminación automática activada: "
 "</b>%6</li></ul>"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Libérese."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Volver a los puntos de entrada</a>"
 
 #~ msgid ""
 #~ "<qt><p>To display the requested web page again, the browser needs to "

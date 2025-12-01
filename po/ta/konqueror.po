@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-01 00:42+0000\n"
 "PO-Revision-Date: 2021-06-19 19:45+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -32,7 +32,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ubuntu-l10n-tam@lists.ubuntu.com"
 
-#: src/configdialog.cpp:72
+#: src/configdialog.cpp:73
 #, fuzzy, kde-format
 #| msgid "File Management"
 msgctxt ""
@@ -152,253 +152,253 @@ msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
 msgstr ""
 
-#: src/konqapplication.cpp:117
+#: src/konqapplication.cpp:116
 #, kde-format
 msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
 
-#: src/konqapplication.cpp:160
+#: src/konqapplication.cpp:159
 #, kde-format
 msgid "Konqueror"
 msgstr "கான்கொயரர்"
 
-#: src/konqapplication.cpp:161
+#: src/konqapplication.cpp:160
 #, kde-format
 msgid "Web browser, file manager and document viewer."
 msgstr "இணைய உலாவி, கோப்பு நிர்வாகி ஆவணங் காட்டி."
 
-#: src/konqapplication.cpp:163
+#: src/konqapplication.cpp:162
 #, fuzzy, kde-format
 #| msgid "(C) 1999-2007, The Konqueror developers"
 msgid "(C) 1999-2023, The Konqueror developers"
 msgstr "(c) 1999 - 2007 கான்கொயரர் உருவாக்கிவோர்"
 
-#: src/konqapplication.cpp:177
+#: src/konqapplication.cpp:176
 #, kde-format
 msgid "Stefano Crocco"
 msgstr ""
 
-#: src/konqapplication.cpp:177
+#: src/konqapplication.cpp:176
 #, kde-format
 msgid "Current maintainer"
 msgstr ""
 
-#: src/konqapplication.cpp:178
+#: src/konqapplication.cpp:177
 #, kde-format
 msgid "David Faure"
 msgstr "டேவிட் பவுர்"
 
-#: src/konqapplication.cpp:178
+#: src/konqapplication.cpp:177
 #, fuzzy, kde-format
 #| msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
 msgid ""
 "Developer (framework, parts, JavaScript, I/O library) and former maintainer"
 msgstr "உருவாக்கியோர் (வார்ப்பு, பகுதிகள், ஜாவாநிரல், I/O நிரலகம்) மற்றும் பராமரிப்பாளர்"
 
-#: src/konqapplication.cpp:179
+#: src/konqapplication.cpp:178
 #, kde-format
 msgid "Simon Hausmann"
 msgstr "சைமன் ஹவுஸ்மான்"
 
-#: src/konqapplication.cpp:179
+#: src/konqapplication.cpp:178
 #, kde-format
 msgid "Developer (framework, parts)"
 msgstr "உருவாக்கியோர் (வார்ப்பு, பகுதிகள்)"
 
-#: src/konqapplication.cpp:180
+#: src/konqapplication.cpp:179
 #, kde-format
 msgid "Michael Reiher"
 msgstr "மைக்கேல் ரேஹர்"
 
-#: src/konqapplication.cpp:180 src/konqapplication.cpp:208
-#: src/konqapplication.cpp:214
+#: src/konqapplication.cpp:179 src/konqapplication.cpp:207
+#: src/konqapplication.cpp:213
 #, kde-format
 msgid "Developer (framework)"
 msgstr "உருவாக்கியோர் (வார்ப்பு)"
 
-#: src/konqapplication.cpp:181
+#: src/konqapplication.cpp:180
 #, kde-format
 msgid "Matthias Welk"
 msgstr "மைத்தேயஸ் வெல்க்"
 
-#: src/konqapplication.cpp:181
+#: src/konqapplication.cpp:180
 #, kde-format
 msgid "Developer"
 msgstr "உருவாக்கியோர்"
 
-#: src/konqapplication.cpp:182
+#: src/konqapplication.cpp:181
 #, kde-format
 msgid "Alexander Neundorf"
 msgstr "அலெக்ஸாண்டர் நியுன்டார்ப்"
 
-#: src/konqapplication.cpp:182
+#: src/konqapplication.cpp:181
 #, kde-format
 msgid "Developer (List views)"
 msgstr "உருவாக்கியோர் (காட்சிகளைப் பட்டியலிடு)"
 
-#: src/konqapplication.cpp:183
+#: src/konqapplication.cpp:182
 #, kde-format
 msgid "Michael Brade"
 msgstr "மைக்கேல் பிரேட்"
 
-#: src/konqapplication.cpp:183
+#: src/konqapplication.cpp:182
 #, kde-format
 msgid "Developer (List views, I/O library)"
 msgstr "உருவாக்கியோர் (காட்சிகளை பட்டியலிடு, I/O நிரலகம்)"
 
-#: src/konqapplication.cpp:184
+#: src/konqapplication.cpp:183
 #, kde-format
 msgid "Lars Knoll"
 msgstr "லர்ஸ் க்னோல்"
 
-#: src/konqapplication.cpp:184 src/konqapplication.cpp:185
-#: src/konqapplication.cpp:186 src/konqapplication.cpp:188
-#: src/konqapplication.cpp:189 src/konqapplication.cpp:191
-#: src/konqapplication.cpp:192 src/konqapplication.cpp:193
-#: src/konqapplication.cpp:194 src/konqapplication.cpp:196
+#: src/konqapplication.cpp:183 src/konqapplication.cpp:184
+#: src/konqapplication.cpp:185 src/konqapplication.cpp:187
+#: src/konqapplication.cpp:188 src/konqapplication.cpp:190
+#: src/konqapplication.cpp:191 src/konqapplication.cpp:192
+#: src/konqapplication.cpp:193 src/konqapplication.cpp:195
 #, kde-format
 msgid "Developer (HTML rendering engine)"
 msgstr "உருவாக்கியோர் (HTML தருவிக்கும் பொறி)"
 
-#: src/konqapplication.cpp:185
+#: src/konqapplication.cpp:184
 #, kde-format
 msgid "Dirk Mueller"
 msgstr "டிர்க் முல்லர்"
 
-#: src/konqapplication.cpp:186
+#: src/konqapplication.cpp:185
 #, kde-format
 msgid "Peter Kelly"
 msgstr "பீட்டர் கெல்லி"
 
-#: src/konqapplication.cpp:187
+#: src/konqapplication.cpp:186
 #, kde-format
 msgid "Waldo Bastian"
 msgstr "வால்டோ பஸ்டியான்"
 
-#: src/konqapplication.cpp:187
+#: src/konqapplication.cpp:186
 #, kde-format
 msgid "Developer (HTML rendering engine, I/O library)"
 msgstr "உருவாக்கியோர் (HTML தருவிக்கும் பொறி, I/O நிரலகம்)"
 
-#: src/konqapplication.cpp:188
+#: src/konqapplication.cpp:187
 #, kde-format
 msgid "Germain Garand"
 msgstr "ஜெர்மைன் காரன்ட்"
 
-#: src/konqapplication.cpp:189 src/konqapplication.cpp:217
+#: src/konqapplication.cpp:188 src/konqapplication.cpp:216
 #, kde-format
 msgid "Leo Savernik"
 msgstr "லியோ சவர்நிக்"
 
-#: src/konqapplication.cpp:190
+#: src/konqapplication.cpp:189
 #, kde-format
 msgid "Stephan Kulow"
 msgstr "ஸ்டீபன் குளோ"
 
-#: src/konqapplication.cpp:190
+#: src/konqapplication.cpp:189
 #, kde-format
 msgid ""
 "Developer (HTML rendering engine, I/O library, regression test framework)"
 msgstr "உருவாக்கியோர் (HTML தருவிக்கும் பொறி, I/O நிரலகம், கடுஞ் சோதனை வார்ப்பு)"
 
-#: src/konqapplication.cpp:191
+#: src/konqapplication.cpp:190
 #, kde-format
 msgid "Antti Koivisto"
 msgstr "அன்டி கோவிஸ்டோ"
 
-#: src/konqapplication.cpp:192
+#: src/konqapplication.cpp:191
 #, kde-format
 msgid "Zack Rusin"
 msgstr "சாக் ருஸின்"
 
-#: src/konqapplication.cpp:193
+#: src/konqapplication.cpp:192
 #, kde-format
 msgid "Tobias Anton"
 msgstr "டோபியாஸ் அன்டன்"
 
-#: src/konqapplication.cpp:194
+#: src/konqapplication.cpp:193
 #, kde-format
 msgid "Lubos Lunak"
 msgstr "லுபாஸ் லுனாக்"
 
-#: src/konqapplication.cpp:195
+#: src/konqapplication.cpp:194
 #, kde-format
 msgid "Maks Orlovich"
 msgstr ""
 
-#: src/konqapplication.cpp:195 src/konqapplication.cpp:197
+#: src/konqapplication.cpp:194 src/konqapplication.cpp:196
 #, kde-format
 msgid "Developer (HTML rendering engine, JavaScript)"
 msgstr "உருவாக்குவோர் (HTML தருவிக்கும் பொறி, ஜாவாநிரல்)"
 
-#: src/konqapplication.cpp:196
+#: src/konqapplication.cpp:195
 #, kde-format
 msgid "Allan Sandfeld Jensen"
 msgstr "அல்லான் சான்ட்பெல்டு ஜென்சன்"
 
-#: src/konqapplication.cpp:197
+#: src/konqapplication.cpp:196
 #, kde-format
 msgid "Apple Safari Developers"
 msgstr "ஆப்பிள் சபாரி உருவாக்குவோர்"
 
-#: src/konqapplication.cpp:198
+#: src/konqapplication.cpp:197
 #, kde-format
 msgid "Harri Porten"
 msgstr "ஹாரி போர்டன்"
 
-#: src/konqapplication.cpp:198
+#: src/konqapplication.cpp:197
 #, kde-format
 msgid "Developer (JavaScript)"
 msgstr "உருவாக்குவோர் (ஜாவாநிரல்)"
 
-#: src/konqapplication.cpp:199
+#: src/konqapplication.cpp:198
 #, kde-format
 msgid "Koos Vriezen"
 msgstr "கூஸ் வெரைசன்"
 
-#: src/konqapplication.cpp:199
+#: src/konqapplication.cpp:198
 #, kde-format
 msgid "Developer (Java applets and other embedded objects)"
 msgstr "உருவாக்குவோர் (ஜாவா ஆப்லெட் மற்றும் ஏனைய உட்பொதிந்த பொருட்கள்) "
 
-#: src/konqapplication.cpp:200
+#: src/konqapplication.cpp:199
 #, kde-format
 msgid "Matt Koss"
 msgstr "மாட் கோஸ்"
 
-#: src/konqapplication.cpp:200 src/konqapplication.cpp:201
+#: src/konqapplication.cpp:199 src/konqapplication.cpp:200
 #, kde-format
 msgid "Developer (I/O library)"
 msgstr "உருவாக்குவோர் (I/O நிரலகம்)"
 
-#: src/konqapplication.cpp:201
+#: src/konqapplication.cpp:200
 #, kde-format
 msgid "Alex Zepeda"
 msgstr "அலெக்ஸ் செபெடா"
 
-#: src/konqapplication.cpp:202
+#: src/konqapplication.cpp:201
 #, kde-format
 msgid "Richard Moore"
 msgstr "ரிச்சர்ட் மூர்"
 
-#: src/konqapplication.cpp:202 src/konqapplication.cpp:203
+#: src/konqapplication.cpp:201 src/konqapplication.cpp:202
 #, kde-format
 msgid "Developer (Java applet support)"
 msgstr "உருவாக்குவோர் (ஜாவா ஆப்லெட் ஆதரவு)"
 
-#: src/konqapplication.cpp:203
+#: src/konqapplication.cpp:202
 #, kde-format
 msgid "Dima Rogozin"
 msgstr "டிமா ரோகோசின்"
 
-#: src/konqapplication.cpp:204
+#: src/konqapplication.cpp:203
 #, kde-format
 msgid "Wynn Wilkes"
 msgstr "வைன் வில்கிஸ்"
 
-#: src/konqapplication.cpp:204
+#: src/konqapplication.cpp:203
 #, kde-format
 msgid ""
 "Developer (Java 2 security manager support,\n"
@@ -407,174 +407,174 @@ msgstr ""
 "உருவாக்கியோர் (ஜாவா 2 பாதுகாப்பு நிர்வாக ஆதரவு,\n"
 "மற்றும் ஆப்லெட் ஆதரவிற்கான ஏனைய மேம்பாடுகள்)"
 
-#: src/konqapplication.cpp:205
+#: src/konqapplication.cpp:204
 #, kde-format
 msgid "Stefan Schimanski"
 msgstr "ஸ்டிபன் சிமான்ஸ்கி"
 
-#: src/konqapplication.cpp:205
+#: src/konqapplication.cpp:204
 #, kde-format
 msgid "Developer (Netscape plugin support)"
 msgstr "உருவாக்கியோர் (நெட்ஸ்கேப் செருகி ஆதரவு)"
 
-#: src/konqapplication.cpp:206
+#: src/konqapplication.cpp:205
 #, kde-format
 msgid "George Staikos"
 msgstr "ஜார்ஜ் ஸ்டைகோஸ்"
 
-#: src/konqapplication.cpp:206
+#: src/konqapplication.cpp:205
 #, kde-format
 msgid "Developer (SSL, Netscape plugins)"
 msgstr "உருவாக்குவோர் (எஸ் எஸ் எல், நெட்ஸ்கேப் செருகி)"
 
-#: src/konqapplication.cpp:207
+#: src/konqapplication.cpp:206
 #, kde-format
 msgid "Dawit Alemayehu"
 msgstr "டாவிட் அலெமேஹூ"
 
-#: src/konqapplication.cpp:207
+#: src/konqapplication.cpp:206
 #, kde-format
 msgid "Developer (I/O library, Authentication support)"
 msgstr "உருவாக்கியோர் (I/O நிரலகம், அத்தாட்சிஉறுதி ஆதரவு)"
 
-#: src/konqapplication.cpp:208
+#: src/konqapplication.cpp:207
 #, kde-format
 msgid "Carsten Pfeiffer"
 msgstr "கார்ஸ்டென் பீபர்"
 
-#: src/konqapplication.cpp:209
+#: src/konqapplication.cpp:208
 #, kde-format
 msgid "Torsten Rahn"
 msgstr "டார்ஸ்டென் ரான்"
 
-#: src/konqapplication.cpp:209
+#: src/konqapplication.cpp:208
 #, kde-format
 msgid "Graphics/icons"
 msgstr "வரைகலை/ ஓவங்கள்"
 
-#: src/konqapplication.cpp:210
+#: src/konqapplication.cpp:209
 #, kde-format
 msgid "Torben Weis"
 msgstr "டார்பென் வீஸ்"
 
-#: src/konqapplication.cpp:210
+#: src/konqapplication.cpp:209
 #, kde-format
 msgid "KFM author"
 msgstr "KFM இயற்றியவர்"
 
-#: src/konqapplication.cpp:211
+#: src/konqapplication.cpp:210
 #, kde-format
 msgid "Joseph Wenninger"
 msgstr "ஜோசப் வென்னிங்னர்"
 
-#: src/konqapplication.cpp:211
+#: src/konqapplication.cpp:210
 #, kde-format
 msgid "Developer (navigation panel framework)"
 msgstr "உருவாக்கியவர் (நாவிகேஷன் பலக வார்ப்பு)"
 
-#: src/konqapplication.cpp:212
+#: src/konqapplication.cpp:211
 #, kde-format
 msgid "Stephan Binner"
 msgstr "ஸடீபன் பின்னர்"
 
-#: src/konqapplication.cpp:212
+#: src/konqapplication.cpp:211
 #, kde-format
 msgid "Developer (misc stuff)"
 msgstr "உருவாக்கியோர் (இதர விடயங்கள்)"
 
-#: src/konqapplication.cpp:213
+#: src/konqapplication.cpp:212
 #, kde-format
 msgid "Ivor Hewitt"
 msgstr "இவோர் ஹெவிட்"
 
-#: src/konqapplication.cpp:213
+#: src/konqapplication.cpp:212
 #, kde-format
 msgid "Developer (AdBlock filter)"
 msgstr "உருவாக்கியோர் (விளம்பர வழிகட்டி)"
 
-#: src/konqapplication.cpp:214
+#: src/konqapplication.cpp:213
 #, kde-format
 msgid "Eduardo Robles Elvira"
 msgstr ""
 
-#: src/konqapplication.cpp:215
+#: src/konqapplication.cpp:214
 #, kde-format
 msgid "Matthias Kalle Dalheimer"
 msgstr ""
 
-#: src/konqapplication.cpp:216
+#: src/konqapplication.cpp:215
 #, kde-format
 msgid "Daniel Molkentin"
 msgstr ""
 
-#: src/konqapplication.cpp:217
+#: src/konqapplication.cpp:216
 #, kde-format
 msgid ""
 "JavaScript access controls\n"
 "Per-domain policies extensions"
 msgstr ""
 
-#: src/konqapplication.cpp:228
+#: src/konqapplication.cpp:227
 #, fuzzy, kde-format
 #| msgid "Start without a default window"
 msgid "Start without a default window, when called without URLs"
 msgstr "இயல்பிருப்பு சாளரமின்றி துவங்கவும்."
 
-#: src/konqapplication.cpp:229
+#: src/konqapplication.cpp:228
 #, kde-format
 msgid ""
 "Preload for later use. This mode does not support URLs on the command line"
 msgstr ""
 
-#: src/konqapplication.cpp:230
+#: src/konqapplication.cpp:229
 #, kde-format
 msgid "Profile to open (DEPRECATED, IGNORED)"
 msgstr ""
 
-#: src/konqapplication.cpp:230
+#: src/konqapplication.cpp:229
 #, kde-format
 msgid "profile"
 msgstr ""
 
-#: src/konqapplication.cpp:231
+#: src/konqapplication.cpp:230
 #, fuzzy, kde-format
 #| msgid "List available profiles"
 msgid "List available sessions and exit"
 msgstr "கிடைக்கக்கூடிய பண்புகளை விவரிக்க"
 
-#: src/konqapplication.cpp:232
+#: src/konqapplication.cpp:231
 #, fuzzy, kde-format
 #| msgid "Location to open"
 msgid "Session to open"
 msgstr "திறக்கவேண்டிய இடம்"
 
-#: src/konqapplication.cpp:232
+#: src/konqapplication.cpp:231
 #, fuzzy, kde-format
 #| msgid "Permissions"
 msgid "session"
 msgstr "அனுமதிகள்"
 
-#: src/konqapplication.cpp:233
+#: src/konqapplication.cpp:232
 #, kde-format
 msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
 msgstr "இந்த யுஆர்எல்லின் பொருட்டு மைம் வகை (உ.ம்: உரை/html அல்லது inode/அடைவு)."
 
-#: src/konqapplication.cpp:233
+#: src/konqapplication.cpp:232
 #, kde-format
 msgid "mimetype"
 msgstr ""
 
-#: src/konqapplication.cpp:234
+#: src/konqapplication.cpp:233
 #, kde-format
 msgid "Part to use (e.g. khtml or kwebkitpart)"
 msgstr ""
 
-#: src/konqapplication.cpp:234
+#: src/konqapplication.cpp:233
 #, fuzzy, kde-format
 msgid "service"
 msgstr "Select files:"
 
-#: src/konqapplication.cpp:235
+#: src/konqapplication.cpp:234
 #, kde-format
 msgid ""
 "For URLs that point to files, opens the directory and selects the file, "
@@ -583,39 +583,39 @@ msgstr ""
 "கோப்புகளை சுட்டும் யுஆர்எல் களுக்கு, உரிய கோப்பினை திறந்திடாது, அடைவை திறந்து கோப்பை "
 "தேர்வு செய்யும்."
 
-#: src/konqapplication.cpp:236
+#: src/konqapplication.cpp:235
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr ""
 
-#: src/konqapplication.cpp:238
+#: src/konqapplication.cpp:237
 #, kde-format
 msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
 "only when developing Konqueror itself"
 msgstr ""
 
-#: src/konqapplication.cpp:240
+#: src/konqapplication.cpp:239
 #, kde-format
 msgid "Location to open"
 msgstr "திறக்கவேண்டிய இடம்"
 
-#: src/konqapplication.cpp:355
+#: src/konqapplication.cpp:354
 #, fuzzy, kde-format
 #| msgid "Location to open"
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
 msgstr "திறக்கவேண்டிய இடம்"
 
-#: src/konqapplication.cpp:485
+#: src/konqapplication.cpp:484
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4865
-#: src/konqmainwindow.cpp:4911
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4866
+#: src/konqmainwindow.cpp:4912
 #, kde-format
 msgid "no name"
 msgstr "உபுண்டு தமிழ் குழுமம்"
@@ -725,7 +725,7 @@ msgstr "வட்டார கோப்பு"
 msgid "Miscellaneous"
 msgstr "மற்றவை"
 
-#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4343
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4344
 #, kde-format
 msgid "Open in New &Window"
 msgstr "புதிய &சாளரத்தில் திறக்கவும்"
@@ -825,7 +825,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1628 src/konqmainwindow.cpp:2266
 #: src/konqmainwindow.cpp:2355 src/konqmainwindow.cpp:2387
 #: src/konqmainwindow.cpp:2430 src/konqmainwindow.cpp:2452
-#: src/konqmainwindow.cpp:4830
+#: src/konqmainwindow.cpp:4831
 #, fuzzy, kde-format
 #| msgid "Discard Changes?"
 msgctxt "@title:window"
@@ -835,7 +835,7 @@ msgstr "மாற்றங்களை கைவிடலாமா?"
 #: src/konqmainwindow.cpp:1628 src/konqmainwindow.cpp:2266
 #: src/konqmainwindow.cpp:2355 src/konqmainwindow.cpp:2387
 #: src/konqmainwindow.cpp:2430 src/konqmainwindow.cpp:2453
-#: src/konqmainwindow.cpp:4830
+#: src/konqmainwindow.cpp:4831
 #, kde-format
 msgid "&Discard Changes"
 msgstr "மாற்றங்களை &கைவிடலாமா?"
@@ -1446,88 +1446,88 @@ msgstr "&கோப்புகளை படியெடு..."
 msgid "M&ove Files..."
 msgstr "கோப்புகளை &நகர்த்துக"
 
-#: src/konqmainwindow.cpp:4171
+#: src/konqmainwindow.cpp:4172
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
 "while. Continue?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4173
+#: src/konqmainwindow.cpp:4174
 #, fuzzy, kde-format
 #| msgid "Open Folder in Tabs"
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "அடைவுகளை தத்துக்களில் திறக்க"
 
-#: src/konqmainwindow.cpp:4174
+#: src/konqmainwindow.cpp:4175
 #, fuzzy, kde-format
 #| msgid "&Open Link"
 msgctxt "@action:button"
 msgid "Open"
 msgstr "இணைப்பை &திற"
 
-#: src/konqmainwindow.cpp:4336
+#: src/konqmainwindow.cpp:4337
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "&இச்சாளரத்தில் திறக்கவும்"
 
-#: src/konqmainwindow.cpp:4337
+#: src/konqmainwindow.cpp:4338
 #, kde-format
 msgid "Open the document in current window"
 msgstr "தற்போதைய சாளரத்தில் ஆவணத்தைத் திற"
 
-#: src/konqmainwindow.cpp:4344
+#: src/konqmainwindow.cpp:4345
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "புதிய சாளரத்தில் ஆவணத்தை திறக்கவும்"
 
-#: src/konqmainwindow.cpp:4350
+#: src/konqmainwindow.cpp:4351
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "&புதிய தத்தில் திறக்கவும்"
 
-#: src/konqmainwindow.cpp:4352
+#: src/konqmainwindow.cpp:4353
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "புதிய தத்தில் ஆவணத்தை திறக்கவும்"
 
-#: src/konqmainwindow.cpp:4608
+#: src/konqmainwindow.cpp:4609
 #, fuzzy, kde-format
 #| msgid "Open with %1"
 msgid "&Open With"
 msgstr "இதனாற் திற %1"
 
-#: src/konqmainwindow.cpp:4621
+#: src/konqmainwindow.cpp:4622
 #, kde-format
 msgid "Open with %1"
 msgstr "இதனாற் திற %1"
 
-#: src/konqmainwindow.cpp:4671
+#: src/konqmainwindow.cpp:4672
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "&காட்சி முறைமை"
 
-#: src/konqmainwindow.cpp:4794
+#: src/konqmainwindow.cpp:4795
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr "இந்த சாளரத்தில் பல தத்துகள் திறக்கப்படுள்ளன. இவற்றை முடிடத்தான்வேண்டுமா? "
 
-#: src/konqmainwindow.cpp:4796
+#: src/konqmainwindow.cpp:4797
 #, fuzzy, kde-format
 #| msgid "Confirmation"
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "உறுதிப்படுத்தல்"
 
-#: src/konqmainwindow.cpp:4798
+#: src/konqmainwindow.cpp:4799
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "தற்போதைய தத்தை &மூடு"
 
-#: src/konqmainwindow.cpp:4826
+#: src/konqmainwindow.cpp:4827
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1536,7 +1536,7 @@ msgstr ""
 "இத்தத்தில் சமர்ப்பிக்கப்படாத மாற்றங்கள் உள்ளன.\n"
 "சாளரத்தை மூடுவதன் மூலம் இம்மாற்றங்கள் புறந்தள்ளப்படும்."
 
-#: src/konqmainwindow.cpp:4827
+#: src/konqmainwindow.cpp:4828
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1545,36 +1545,36 @@ msgstr ""
 "இந்த தத்தலில் கொடுக்கப்படாத மாற்றங்கள் உள்ளன.\n"
 "சாளரத்தை மூடுவதன் மூலம் மாற்றங்கள் கைவிடப்படும்."
 
-#: src/konqmainwindow.cpp:4987
+#: src/konqmainwindow.cpp:4988
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr ""
 "தங்களது பக்கப்பட்டி செயற்படவில்லை அல்லது கிடைக்கவில்லை. புதிய பதிவொன்றை சேர்க்க இயலாது."
 
-#: src/konqmainwindow.cpp:4987 src/konqmainwindow.cpp:4994
+#: src/konqmainwindow.cpp:4988 src/konqmainwindow.cpp:4995
 #, fuzzy, kde-format
 #| msgid "Web Sidebar"
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "இணைய பக்கப்பட்டி"
 
-#: src/konqmainwindow.cpp:4992
+#: src/konqmainwindow.cpp:4993
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "\"%1\"  என்ற புதிய இணைய நீட்டிப்பை உங்கள் பக்கபட்டியுடன் சேர்க்கவா?"
 
-#: src/konqmainwindow.cpp:4994
+#: src/konqmainwindow.cpp:4995
 #, kde-format
 msgid "Add"
 msgstr "சேர்க்க"
 
-#: src/konqmainwindow.cpp:4994
+#: src/konqmainwindow.cpp:4995
 #, kde-format
 msgid "Do Not Add"
 msgstr "சேர்க்க வேண்டாம்"
 
-#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:854
+#: src/konqmainwindow.cpp:5343 src/urlloader.cpp:854
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1583,7 +1583,7 @@ msgstr ""
 "வடிவமைப்பில் வழு உள்ளது போல் தெரிகிறது. %1 உடன் கான்கொயரரை தொடர்பு படுத்தியுள்ளீர்கள், "
 "இக்கோப்பு வகையை இதனால் கையாள இயலாது."
 
-#: src/konqmainwindow.cpp:5427
+#: src/konqmainwindow.cpp:5428
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1596,23 +1596,23 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5432
+#: src/konqmainwindow.cpp:5433
 #, fuzzy, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "மேல்மேசை வடிவமைப்பு"
 
-#: src/konqmainwindow.cpp:5432
+#: src/konqmainwindow.cpp:5433
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5433 src/konqmainwindow.cpp:5461
+#: src/konqmainwindow.cpp:5434 src/konqmainwindow.cpp:5462
 #, fuzzy, kde-format
 #| msgid "Show Configuration Button"
 msgid "Show proxy configuration dialog"
 msgstr "வடிவமைப்பு பொத்தானைக் காட்டு"
 
-#: src/konqmainwindow.cpp:5457
+#: src/konqmainwindow.cpp:5458
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1621,22 +1621,22 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5460
+#: src/konqmainwindow.cpp:5461
 #, fuzzy, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "மேல்மேசை வடிவமைப்பு"
 
-#: src/konqmainwindow.cpp:5461
+#: src/konqmainwindow.cpp:5462
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5461
+#: src/konqmainwindow.cpp:5462
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5477
+#: src/konqmainwindow.cpp:5478
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1968,7 +1968,7 @@ msgstr "திரும்பப்பெறு: மூடப்பட்ட ச
 msgid "Und&o"
 msgstr ""
 
-#: src/konqview.cpp:1275
+#: src/konqview.cpp:1294
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1979,14 +1979,14 @@ msgstr ""
 "அனுப்பினால், படிவம் செய்த எந்தவொரு காரியமும் (தேடுதல் அ இணையக் கொள்முதல் போன்றவை) மீண்டும் "
 "செய்யப்டும். "
 
-#: src/konqview.cpp:1277
+#: src/konqview.cpp:1296
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "எச்சரிக்கை"
 
-#: src/konqview.cpp:1277
+#: src/konqview.cpp:1296
 #, kde-format
 msgid "Resend"
 msgstr "மீளனுப்புக"

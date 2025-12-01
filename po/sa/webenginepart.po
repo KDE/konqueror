@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-01 00:42+0000\n"
 "PO-Revision-Date: 2024-12-25 19:45+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -29,27 +29,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "skkalwar999@gmail.com"
 
-#: src/about/konq_aboutpage.cpp:85 src/about/konq_aboutpage.cpp:87
-#: src/about/konq_aboutpage.cpp:202 src/about/konq_aboutpage.cpp:204
+#: src/about/konq_aboutpage.cpp:84
 #, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
 msgstr "स्वतन्त्र भव।"
 
-#: src/about/konq_aboutpage.cpp:86 src/about/konq_aboutpage.cpp:144
-#: src/about/konq_aboutpage.cpp:203
-#, kde-format
-msgid "Konqueror"
-msgstr "विजेता"
-
-#: src/about/konq_aboutpage.cpp:88 src/about/konq_aboutpage.cpp:146
-#: src/about/konq_aboutpage.cpp:205
+#: src/about/konq_aboutpage.cpp:89
 #, kde-format
 msgid "Konqueror is a web browser, file manager and universal document viewer."
 msgstr "Konqueror एकः जालपुटः, सञ्चिकाप्रबन्धकः, सार्वभौमिकदस्तावेजदर्शकः च अस्ति ।"
 
-#: src/about/konq_aboutpage.cpp:89 src/about/konq_aboutpage.cpp:147
-#: src/about/konq_aboutpage.cpp:206
+#: src/about/konq_aboutpage.cpp:94
 #, kde-format
 msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
@@ -57,75 +48,76 @@ msgctxt ""
 msgid "Starting Points"
 msgstr "प्रारम्भ बिन्दु"
 
-#: src/about/konq_aboutpage.cpp:90 src/about/konq_aboutpage.cpp:148
-#: src/about/konq_aboutpage.cpp:207
+#: src/about/konq_aboutpage.cpp:138 src/about/konq_aboutpage.cpp:192
+#: src/about/konq_aboutpage.cpp:246 src/about/konq_aboutpage.cpp:333
 #, kde-format
 msgid "Introduction"
 msgstr "आमुख"
 
-#: src/about/konq_aboutpage.cpp:91 src/about/konq_aboutpage.cpp:149
-#: src/about/konq_aboutpage.cpp:208
+#: src/about/konq_aboutpage.cpp:139 src/about/konq_aboutpage.cpp:193
+#: src/about/konq_aboutpage.cpp:247 src/about/konq_aboutpage.cpp:334
 #, kde-format
 msgid "Tips"
 msgstr "संकेता"
 
-#: src/about/konq_aboutpage.cpp:96
+#: src/about/konq_aboutpage.cpp:144
 #, kde-format
 msgid "Home Folder"
 msgstr "Home Folder"
 
-#: src/about/konq_aboutpage.cpp:97
+#: src/about/konq_aboutpage.cpp:145
 #, kde-format
 msgid "Your personal files"
 msgstr "भवतः व्यक्तिगतसञ्चिकाः"
 
-#: src/about/konq_aboutpage.cpp:100
+#: src/about/konq_aboutpage.cpp:148
 #, kde-format
 msgid "Trash"
 msgstr "तुच्छद्रव्य"
 
-#: src/about/konq_aboutpage.cpp:101
+#: src/about/konq_aboutpage.cpp:149
 #, kde-format
 msgid "Browse and restore the trash"
 msgstr "कचरा ब्राउज् कृत्वा पुनः स्थापयन्तु"
 
-#: src/about/konq_aboutpage.cpp:104
+#: src/about/konq_aboutpage.cpp:152
 #, kde-format
 msgid "Network Folders"
 msgstr "संजालपुटम्"
 
-#: src/about/konq_aboutpage.cpp:105
+#: src/about/konq_aboutpage.cpp:153
 #, kde-format
 msgid "Shared files and folders"
 msgstr "साझासञ्चिकाः, पुटकानि च"
 
-#: src/about/konq_aboutpage.cpp:108
+#: src/about/konq_aboutpage.cpp:156
 #, kde-format
 msgid "Bookmarks"
 msgstr "बुकमार्क्स"
 
-#: src/about/konq_aboutpage.cpp:109
+#: src/about/konq_aboutpage.cpp:157
 #, kde-format
 msgid "Quick access to your bookmarks"
 msgstr "भवतः पुस्तकचिह्नानां शीघ्रं प्रवेशः"
 
-#: src/about/konq_aboutpage.cpp:112
+#: src/about/konq_aboutpage.cpp:160
 #, kde-format
 msgid "Next: An Introduction to Konqueror"
 msgstr "अग्रिमः : विजेतायाः परिचयः"
 
-#: src/about/konq_aboutpage.cpp:114
+#: src/about/konq_aboutpage.cpp:161 src/about/konq_aboutpage.cpp:212
+#: src/about/konq_aboutpage.cpp:277
+#, kde-format
+msgctxt "link to the speed dial"
+msgid "Speed Dial"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:163
 #, kde-format
 msgid "Search the Web"
 msgstr "जालपुटे अन्वेषणं कुर्वन्तु"
 
-#: src/about/konq_aboutpage.cpp:143 src/about/konq_aboutpage.cpp:145
-#, kde-format
-msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
-msgid "Be free."
-msgstr "स्वतन्त्र भव।"
-
-#: src/about/konq_aboutpage.cpp:150
+#: src/about/konq_aboutpage.cpp:194
 #, kde-format
 msgid ""
 "Konqueror makes working with and managing your files easy. You can browse "
@@ -136,7 +128,7 @@ msgstr ""
 "पार्श्वपट्टिका, सञ्चिकापूर्वावलोकनम् इत्यादीनां उन्नतविशेषतानां आनन्दं लभन्ते सति भवान् "
 "स्थानीयं संजालयुक्तं च पुटं ब्राउज् कर्तुं शक्नोति ।"
 
-#: src/about/konq_aboutpage.cpp:154
+#: src/about/konq_aboutpage.cpp:198
 #, kde-format
 msgid ""
 "Konqueror is also a full featured and easy to use web browser which you can "
@@ -149,7 +141,7 @@ msgstr ""
 "kde.org\">http://www.kde.org</a> ) प्रविश्य Enter नुदन्तु, अथवा Bookmarks मेन्यूतः "
 "प्रविष्टिं चिनोतु ।"
 
-#: src/about/konq_aboutpage.cpp:159
+#: src/about/konq_aboutpage.cpp:203
 #, kde-format
 msgid ""
 "To return to the previous location, press the back button <img width='16' "
@@ -158,7 +150,7 @@ msgstr ""
 "पूर्वस्थानं प्रति प्रत्यागन्तुं पृष्ठबटनं नुदन्तु<img width='16' height='16' src=\"%1\"></"
 "img> साधनपट्टिकायां । "
 
-#: src/about/konq_aboutpage.cpp:162
+#: src/about/konq_aboutpage.cpp:206
 #, kde-format
 msgid ""
 "To quickly go to your Home folder press the home button <img width='16' "
@@ -167,7 +159,7 @@ msgstr ""
 "शीघ्रं स्वस्य Home समुच्चय प्रति गन्तुं home बटनं नुदन्तु<img width='16' height='16' src="
 "\"%1\"></img> ."
 
-#: src/about/konq_aboutpage.cpp:164
+#: src/about/konq_aboutpage.cpp:208
 #, kde-format
 msgid ""
 "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
@@ -175,17 +167,17 @@ msgstr ""
 "Konqueror इत्यस्य विषये अधिकविस्तृतदस्तावेजानां कृते <a href=\"%1\">अत्र</a> क्लिक् "
 "कुर्वन्तु ."
 
-#: src/about/konq_aboutpage.cpp:167
+#: src/about/konq_aboutpage.cpp:211
 #, kde-format
 msgid "Next: Tips & Tricks"
 msgstr "अग्रिमम् : युक्तयः युक्तयः च"
 
-#: src/about/konq_aboutpage.cpp:209
+#: src/about/konq_aboutpage.cpp:248
 #, kde-format
 msgid "Tips & Tricks"
 msgstr "युक्तयः एवं युक्तयः"
 
-#: src/about/konq_aboutpage.cpp:210
+#: src/about/konq_aboutpage.cpp:249
 #, kde-format
 msgid ""
 "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, using "
@@ -200,7 +192,7 @@ msgstr ""
 "Shortcuts-इत्येतत् बहु सन्ति । भवान् <a href=\"%1\">स्वकीयं Web-Shortcuts अपि "
 "निर्मातुम्</a> अर्हति ।"
 
-#: src/about/konq_aboutpage.cpp:215
+#: src/about/konq_aboutpage.cpp:254
 #, kde-format
 msgid ""
 "When you want to paste a new address into the Location toolbar you might "
@@ -211,7 +203,7 @@ msgstr ""
 "कृष्णबाणं नुदन् वर्तमानप्रविष्टिं स्वच्छं कर्तुम् इच्छति<img width='16' height='16' src="
 "\"%1\"></img> साधनपट्टिकायां ।"
 
-#: src/about/konq_aboutpage.cpp:219
+#: src/about/konq_aboutpage.cpp:258
 #, kde-format
 msgid ""
 "To create a link on your desktop pointing to the current page, simply drag "
@@ -221,7 +213,7 @@ msgstr ""
 "वर्तमानपृष्ठं सूचयन् स्वस्य डेस्कटॉप् मध्ये लिङ्क् निर्मातुं केवलं Location toolbar इत्यस्य वामभागे "
 "स्थितं चिह्नं (favicon) कर्षयित्वा डेस्कटॉप् मध्ये पातयित्वा \"Icon\" इति चिनोतु"
 
-#: src/about/konq_aboutpage.cpp:222
+#: src/about/konq_aboutpage.cpp:261
 #, kde-format
 msgid ""
 "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
@@ -232,7 +224,7 @@ msgstr ""
 "मध्ये &quot;Full-Screen Mode&quot; इति । &quot;Talk&quot; सत्रेषु एतत् विशेषता अतीव "
 "उपयोगी भवति ।"
 
-#: src/about/konq_aboutpage.cpp:225
+#: src/about/konq_aboutpage.cpp:264
 #, kde-format
 msgid ""
 "Divide et impera (lat. \"Divide and conquer\") - by splitting a window into "
@@ -243,7 +235,7 @@ msgstr ""
 "विभज्य (उदा. खिडकी -&gt;<img width='16' height='16' src=\"%1\" /> Split View "
 "Left/Right) भवान् Konqueror इत्येतत् यथा इच्छति तथा दृश्यते इति कर्तुं शक्नोति ।"
 
-#: src/about/konq_aboutpage.cpp:228
+#: src/about/konq_aboutpage.cpp:267
 #, kde-format
 msgid ""
 "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
@@ -254,7 +246,7 @@ msgstr ""
 "प्रेषयितुं च न विस्मरतु!) तर्हि <a href=\"%1\">उपयोक्तृ-एजेण्ट्-</a> विशेषतायाः उपयोगं "
 "कुर्वन्तु ।"
 
-#: src/about/konq_aboutpage.cpp:231
+#: src/about/konq_aboutpage.cpp:270
 #, kde-format
 msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
@@ -263,7 +255,7 @@ msgstr ""
 "द<img width='16' height='16' src=\"%1\"></img> भवतः Sidebar मध्ये इतिहासः "
 "सुनिश्चितं करोति यत् भवान् अद्यतनतया गतानां पृष्ठानां निरीक्षणं कर्तुं शक्नोति ।"
 
-#: src/about/konq_aboutpage.cpp:233
+#: src/about/konq_aboutpage.cpp:272
 #, kde-format
 msgid ""
 "Advanced users will appreciate the Konsole which you can embed into "
@@ -274,33 +266,30 @@ msgstr ""
 "&gt;) इत्यस्मिन् एम्बेड् कर्तुं शक्नोति<img width='16' height='16' SRC=\"%1\"></img> "
 "टर्मिनल एमुलेटरं दर्शयतु)।"
 
-#: src/about/konq_aboutpage.cpp:237
-#, kde-format
-msgctxt ""
-"Link that points to the first page of the Konqueror 'about page', Starting "
-"Points contains links to Home, Network Folders, Trash, etc."
-msgid "<a href=\"%1\">Return to Starting Points</a>"
-msgstr "<a href=\"%1\">प्रारम्भबिन्दुषु पुनः आगच्छन्तु</a>"
-
-#: src/about/konq_aboutpage.cpp:251
+#: src/about/konq_aboutpage.cpp:291
 #, kde-format
 msgid "Installed Plugins"
 msgstr "संस्थापिताः प्लगिन्स्"
 
-#: src/about/konq_aboutpage.cpp:252
+#: src/about/konq_aboutpage.cpp:292
 #, kde-format
 msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
 msgstr "<td>प्लगइन</td><td> वर्णनम्‌</td><td> संचिका</td><td> प्रकाराः</td>"
 
-#: src/about/konq_aboutpage.cpp:253
+#: src/about/konq_aboutpage.cpp:293
 #, kde-format
 msgid "Installed"
 msgstr "संस्थापितम्"
 
-#: src/about/konq_aboutpage.cpp:254
+#: src/about/konq_aboutpage.cpp:294
 #, kde-format
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>माइम प्रकार</td><td> वर्णनम्‌</td><td> प्रत्ययाः</td><td> प्लगइन</td>"
+
+#: src/about/konq_aboutpage.cpp:335
+#, kde-format
+msgid "Speed Dial"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:91
 #, kde-format
@@ -1115,61 +1104,61 @@ msgstr "अनुमन्यताम्‌"
 msgid "Do Not Allow"
 msgstr "न अनुमन्यताम्"
 
-#: src/webenginepart.cpp:206
+#: src/webenginepart.cpp:210
 #, kde-format
 msgid "Save Full HTML Page As..."
 msgstr "सम्पूर्ण HTML पृष्ठं रक्षन्तु यथा..."
 
-#: src/webenginepart.cpp:210
+#: src/webenginepart.cpp:214
 #, kde-format
 msgid "Print Preview"
 msgstr "मुद्रण पूर्वावलोकनम्"
 
-#: src/webenginepart.cpp:214
+#: src/webenginepart.cpp:218
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Zoom In इति"
 
-#: src/webenginepart.cpp:219
+#: src/webenginepart.cpp:223
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Zoom Out इति"
 
-#: src/webenginepart.cpp:224
+#: src/webenginepart.cpp:228
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "वास्तविक आकार"
 
-#: src/webenginepart.cpp:229
+#: src/webenginepart.cpp:233
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "केवलं पाठं जूम कुर्वन्तु"
 
-#: src/webenginepart.cpp:237
+#: src/webenginepart.cpp:241
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Zoom To DPI इति"
 
-#: src/webenginepart.cpp:250
+#: src/webenginepart.cpp:254
 #, kde-format
 msgid "Set &Encoding"
 msgstr "सेट् &एन्कोडिंग"
 
-#: src/webenginepart.cpp:253
+#: src/webenginepart.cpp:257
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Do&cument स्रोतः पश्यन्तु"
 
-#: src/webenginepart.cpp:258 src/webenginepart.cpp:567
+#: src/webenginepart.cpp:262 src/webenginepart.cpp:597
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:264
+#: src/webenginepart.cpp:268
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1178,12 +1167,12 @@ msgid ""
 msgstr ""
 "<h3>पाठं ज्ञातव्यम्</h3> एकं संवादं दर्शयति यत् भवन्तः प्रदर्शितपृष्ठे पाठं अन्वेष्टुं शक्नुवन्ति ।"
 
-#: src/webenginepart.cpp:565
+#: src/webenginepart.cpp:595
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "अस्य साइट् कृते SSL सूचना दूषिता दृश्यते ।"
 
-#: src/webenginepart.cpp:646
+#: src/webenginepart.cpp:676
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1191,7 +1180,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "ईमेल : "
 
-#: src/webenginepart.cpp:675
+#: src/webenginepart.cpp:705
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1199,7 +1188,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - सी. सी. . "
 
-#: src/webenginepart.cpp:677
+#: src/webenginepart.cpp:707
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1207,7 +1196,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - बी.सी.सी. "
 
-#: src/webenginepart.cpp:679
+#: src/webenginepart.cpp:709
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1215,96 +1204,96 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - विषयः: "
 
-#: src/webenginepart.cpp:683 src/webenginepart.cpp:694
+#: src/webenginepart.cpp:713 src/webenginepart.cpp:724
 #, kde-format
 msgid " (In new window)"
 msgstr " (नवविण्डो मध्ये)"
 
-#: src/webenginepart.cpp:692
+#: src/webenginepart.cpp:722
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (मातापितृचतुष्कोणे)"
 
-#: src/webenginepart.cpp:758
+#: src/webenginepart.cpp:788
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt><b>%1</b> अन्वेष्टुम् इच्छति वा ?</qt>"
 
-#: src/webenginepart.cpp:759
+#: src/webenginepart.cpp:789
 #, kde-format
 msgid "Internet Search"
 msgstr "अन्तर्जालसन्धानम्"
 
-#: src/webenginepart.cpp:759
+#: src/webenginepart.cpp:789
 #, kde-format
 msgid "&Search"
 msgstr "&अन्वेषण"
 
-#: src/webenginepart.cpp:872
+#: src/webenginepart.cpp:902
 #, kde-format
 msgid "Close window?"
 msgstr "खिडकीं पिधाय?"
 
-#: src/webenginepart.cpp:872
+#: src/webenginepart.cpp:902
 #, kde-format
 msgid "Confirmation Required"
 msgstr "पुष्टिकरणम् आवश्यकम्"
 
-#: src/webenginepart.cpp:949
+#: src/webenginepart.cpp:979
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>किं भवान् इच्छति यत् %1 <b>%2</b> कृते प्रवेशसूचना स्मर्तुं शक्नोति ?</html>"
 
-#: src/webenginepart.cpp:1020
+#: src/webenginepart.cpp:1050
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr ""
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1055
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr ""
 
-#: src/webenginepart.cpp:1029
+#: src/webenginepart.cpp:1059
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr ""
 
-#: src/webenginepart.cpp:1033
+#: src/webenginepart.cpp:1063
 #, fuzzy, kde-format
 #| msgid "&Customize Fields to Memorize for This Page..."
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr "&अस्य पृष्ठस्य कृते कण्ठस्थं कर्तुं क्षेत्राणि अनुकूलितं कुर्वन्तु..."
 
-#: src/webenginepart.cpp:1037
+#: src/webenginepart.cpp:1067
 #, fuzzy, kde-format
 #| msgid "Remove Customized Memorization Settings for This Page"
 msgid "Reset Custom Credential Settings for Page"
 msgstr "अस्य पृष्ठस्य कृते अनुकूलितं कण्ठस्थीकरणसेटिंग्स् निष्कासयन्तु"
 
-#: src/webenginepart.cpp:1041
+#: src/webenginepart.cpp:1071
 #, fuzzy, kde-format
 #| msgid "&Allow Password Caching for This Site"
 msgid "&Allow Credential Caching for This Page"
 msgstr "&अस्य साइट् कृते Password Caching इत्यस्य अनुमतिं ददातु"
 
-#: src/webenginepart.cpp:1045
+#: src/webenginepart.cpp:1075
 #, fuzzy, kde-format
 #| msgid "Remove All Memorized Passwords for This Site"
 msgid "Remove All Stored Passwords for This Site"
 msgstr "अस्य साइट् कृते सर्वाणि कण्ठस्थानि गुप्तशब्दानि निष्कासयन्तु"
 
-#: src/webenginepart.cpp:1049
+#: src/webenginepart.cpp:1079
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Launch Wallet Manager"
 
-#: src/webenginepart.cpp:1053
+#: src/webenginepart.cpp:1083
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&बटुआ बन्द करो"
@@ -1665,6 +1654,19 @@ msgstr ""
 "<ul><li><b>क्षेत्रस्य आन्तरिकनाम:</b> %1</li><li> <b>क्षेत्रप्रकारः</b> %2</li><li> "
 "<b>क्षेत्रपरिचयः</b> %3</li><li> <b>क्षेत्रं केवलं पठ्यते:</b> %4</li><li> <b>क्षेत्रं "
 "सक्षमम् अस्ति:</b> %5</li><li> <b>स्वतःसमापनं सक्षमम् अस्ति:</b> %6</li></ul>"
+
+#~ msgid "Konqueror"
+#~ msgstr "विजेता"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "स्वतन्त्र भव।"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">प्रारम्भबिन्दुषु पुनः आगच्छन्तु</a>"
 
 #~ msgid ""
 #~ "<qt><p>To display the requested web page again, the browser needs to "
