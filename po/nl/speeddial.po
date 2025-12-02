@@ -1,0 +1,111 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# SPDX-FileCopyrightText: 2025 Freek de Kruijf <freekdekruijf@kde.nl>
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"PO-Revision-Date: 2025-12-01 18:21+0100\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.08.3\n"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editspeeddialentrydlg.ui:19
+#, kde-format
+msgid "&Name"
+msgstr "&Naam"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, nameWidget)
+#: editspeeddialentrydlg.ui:29
+#, kde-format
+msgid "The name you want displayed on the Speed Dial button"
+msgstr "De naam die u getoond wilt hebben op de knop Snelkiezer"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editspeeddialentrydlg.ui:36
+#, kde-format
+msgid "&Url"
+msgstr "&Url"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: editspeeddialentrydlg.ui:55
+#, kde-format
+msgid "Icon"
+msgstr "Pictogram"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useFaviconBtn)
+#: editspeeddialentrydlg.ui:61
+#, kde-format
+msgid "Use favicon"
+msgstr "Favicon gebruiken"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useLocalIconBtn)
+#: editspeeddialentrydlg.ui:86
+#, kde-format
+msgid "Use local icon"
+msgstr "Lokaal pictogram gebruiken"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useRemoteIconBtn)
+#: editspeeddialentrydlg.ui:133
+#, kde-format
+msgid "Use remote icon"
+msgstr "Pictogram op afstand gebruiken"
+
+#: speeddialconfig.cpp:43
+#, kde-format
+msgid "Name"
+msgstr "Naam"
+
+#: speeddialconfig.cpp:43
+#, kde-format
+msgid "Url"
+msgstr "URL"
+
+#: speeddialconfig.cpp:264
+#, kde-format
+msgid "Do you want to delete \"%1\"?"
+msgstr "Wilt u \"%1\" verwijderen?"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: speeddialconfig.ui:17
+#, kde-format
+msgid "Speed dial entries"
+msgstr "Snelkiezer-items"
+
+#. i18n: ectx: property (text), widget (QPushButton, addEntryBtn)
+#: speeddialconfig.ui:57
+#, kde-format
+msgid "Add entry…"
+msgstr "Item toevoegen…"
+
+#. i18n: ectx: property (text), widget (QPushButton, editEntryBtn)
+#: speeddialconfig.ui:64
+#, kde-format
+msgid "Edit entry…"
+msgstr "Bewerk item…"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeEntryBtn)
+#: speeddialconfig.ui:71
+#, kde-format
+msgid "Remove entry"
+msgstr "Item verwijderen"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveUpBtn)
+#: speeddialconfig.ui:91
+#, kde-format
+msgid "Move up"
+msgstr "Omhoog verplaatsen"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveDownBtn)
+#: speeddialconfig.ui:98
+#, kde-format
+msgid "Move down"
+msgstr "Omlaag verplaatsen"
