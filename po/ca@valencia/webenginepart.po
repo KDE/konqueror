@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-01 00:42+0000\n"
-"PO-Revision-Date: 2025-10-13 09:08+0200\n"
+"PO-Revision-Date: 2025-12-01 11:37+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -114,7 +114,7 @@ msgstr "Següent: una introducció a Konqueror"
 #, kde-format
 msgctxt "link to the speed dial"
 msgid "Speed Dial"
-msgstr ""
+msgstr "Marcador ràpid"
 
 #: src/about/konq_aboutpage.cpp:163
 #, kde-format
@@ -296,7 +296,7 @@ msgstr ""
 #: src/about/konq_aboutpage.cpp:335
 #, kde-format
 msgid "Speed Dial"
-msgstr ""
+msgstr "Marcador ràpid"
 
 #: src/actondownloadedfilebar.cpp:91
 #, kde-format
@@ -1073,12 +1073,13 @@ msgstr "Eliminació d'adjunt"
 #: src/webenginepage.cpp:809
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
-msgstr "S'ha produït un error en convertir la pàgina a PDF"
+msgstr "S'ha produït un error mentre es convertia la pàgina a PDF"
 
 #: src/webenginepage.cpp:814
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
-msgstr "S'ha produït un error en guardar una versió PDF de la pàgina com a %1"
+msgstr ""
+"S'ha produït un error mentre es guardava una versió PDF de la pàgina com a %1"
 
 #: src/webenginepage.cpp:882
 #, kde-format
@@ -1376,8 +1377,8 @@ msgid ""
 "<p>The server <tt>%1</tt> failed the authenticity check. The error is:</"
 "p><p><tt>%2</tt></p>Do you want to ignore this error?"
 msgstr ""
-"<p>El servidor <tt>%1</tt> ha fallat en comprovar l'autenticitat. L'error és:"
-"</p><p><tt>%2</tt></p>Voleu ignorar este error?"
+"<p>El servidor <tt>%1</tt> ha fallat mentre es comprovava l'autenticitat. "
+"L'error és:</p><p><tt>%2</tt></p>Voleu ignorar este error?"
 
 #: src/webenginepartcertificateerrordlg.cpp:56
 #, kde-format
@@ -1427,7 +1428,7 @@ msgstr ""
 #: src/webenginepartdownloadmanager.cpp:305
 #, kde-format
 msgid "An error occurred while saving the file: %1"
-msgstr "S'ha produït un error en guardar el fitxer: %1"
+msgstr "S'ha produït un error mentre es guardava el fitxer: %1"
 
 #: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
@@ -1664,33 +1665,3 @@ msgstr ""
 "li><li><b>ID del camp: </b>%3</li><li><b>El camp és de només lectura: </b>"
 "%4</li><li><b>El camp està habilitat: </b>%5</li><li><b>La compleció "
 "automàtica està habilitada: </b>%6</li></ul>"
-
-#~ msgid "Konqueror"
-#~ msgstr "Konqueror"
-
-#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
-#~ msgid "Be free."
-#~ msgstr "Sigueu lliure."
-
-#~ msgctxt ""
-#~ "Link that points to the first page of the Konqueror 'about page', "
-#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
-#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
-#~ msgstr "<a href=\"%1\">Torna als punts d'inici</a>"
-
-#~ msgid ""
-#~ "<qt><p>To display the requested web page again, the browser needs to "
-#~ "resend information you have previously submitted.</p><p>If you were "
-#~ "shopping online and made a purchase, click the Cancel button to prevent a "
-#~ "duplicate purchase.Otherwise, click the Continue button to display the "
-#~ "webpage again.</p>"
-#~ msgstr ""
-#~ "<qt><p>Per a tornar a mostrar la pàgina web sol·licitada, el navegador "
-#~ "necessita tornar a enviar informació que ja s'ha tramés anteriorment.</"
-#~ "p><p>Si esteu en una botiga en línia i heu fet una compra, cliqueu damunt "
-#~ "del botó «Cancel·la» per a evitar duplicar la compra. En cas contrari, "
-#~ "cliqueu damunt del botó «Continua» per a tornar a mostrar la pàgina web.</"
-#~ "p>"
-
-#~ msgid "Resubmit Information"
-#~ msgstr "Torna a trametre la informació"

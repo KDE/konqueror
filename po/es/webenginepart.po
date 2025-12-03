@@ -14,14 +14,14 @@ msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-01 00:42+0000\n"
-"PO-Revision-Date: 2025-10-15 17:47+0100\n"
+"PO-Revision-Date: 2025-12-02 02:04+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -118,7 +118,7 @@ msgstr "Siguiente: Introducción a Konqueror"
 #, kde-format
 msgctxt "link to the speed dial"
 msgid "Speed Dial"
-msgstr ""
+msgstr "Marcador rápido"
 
 #: src/about/konq_aboutpage.cpp:163
 #, kde-format
@@ -303,7 +303,7 @@ msgstr ""
 #: src/about/konq_aboutpage.cpp:335
 #, kde-format
 msgid "Speed Dial"
-msgstr ""
+msgstr "Marcador rápido"
 
 #: src/actondownloadedfilebar.cpp:91
 #, kde-format
@@ -1666,32 +1666,3 @@ msgstr ""
 "%2</li><li><b>ID del campo: </b>%3</li><li><b>Campo de solo lectura: </b>%4</"
 "li><li><b>Campo activado: </b>%5</li><li><b>Terminación automática activada: "
 "</b>%6</li></ul>"
-
-#~ msgid "Konqueror"
-#~ msgstr "Konqueror"
-
-#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
-#~ msgid "Be free."
-#~ msgstr "Libérese."
-
-#~ msgctxt ""
-#~ "Link that points to the first page of the Konqueror 'about page', "
-#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
-#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
-#~ msgstr "<a href=\"%1\">Volver a los puntos de entrada</a>"
-
-#~ msgid ""
-#~ "<qt><p>To display the requested web page again, the browser needs to "
-#~ "resend information you have previously submitted.</p><p>If you were "
-#~ "shopping online and made a purchase, click the Cancel button to prevent a "
-#~ "duplicate purchase.Otherwise, click the Continue button to display the "
-#~ "webpage again.</p>"
-#~ msgstr ""
-#~ "<qt><p>Para volver a mostrar la página web solicitada, es necesario que "
-#~ "el navegador envíe de nuevo la información que acaba de enviar.</p><p>Si "
-#~ "estaba comprando en línea y había realizado una compra, pulse el botón "
-#~ "«Cancelar» para evitar hacer una compra duplicada. En caso contrario, "
-#~ "pulse el botón «Continuar» para volver a mostrar la página web.</p>"
-
-#~ msgid "Resubmit Information"
-#~ msgstr "Volver a enviar la información"
