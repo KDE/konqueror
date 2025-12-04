@@ -1,111 +1,112 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-01 00:42+0000\n"
-"PO-Revision-Date: 2025-12-01 18:38\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2025-12-03 16:52+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/konqueror/speeddial.pot\n"
-"X-Crowdin-File-ID: 59756\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editspeeddialentrydlg.ui:19
 #, kde-format
 msgid "&Name"
-msgstr "名称(&N)"
+msgstr "الا&سم"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, nameWidget)
 #: editspeeddialentrydlg.ui:29
 #, kde-format
 msgid "The name you want displayed on the Speed Dial button"
-msgstr "您希望在快速访问仪表盘按钮上显示的名称"
+msgstr "الاسم الذي تريد عرضه على زر الوصول السريع"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editspeeddialentrydlg.ui:36
 #, kde-format
 msgid "&Url"
-msgstr "&URL"
+msgstr "ال&رابط"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: editspeeddialentrydlg.ui:55
 #, kde-format
 msgid "Icon"
-msgstr "图标"
+msgstr "الأيقونة"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useFaviconBtn)
 #: editspeeddialentrydlg.ui:61
 #, kde-format
 msgid "Use favicon"
-msgstr "使用网站图标"
+msgstr "استعمل أيقونة الموقع"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useLocalIconBtn)
 #: editspeeddialentrydlg.ui:86
 #, kde-format
 msgid "Use local icon"
-msgstr "使用本地图标"
+msgstr "استعمل أيقونة محلية"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useRemoteIconBtn)
 #: editspeeddialentrydlg.ui:133
 #, kde-format
 msgid "Use remote icon"
-msgstr "使用远程图标"
+msgstr "استعمل أيقونة بعيدة"
 
 #: speeddialconfig.cpp:43
 #, kde-format
 msgid "Name"
-msgstr "名称"
+msgstr "الاسم"
 
 #: speeddialconfig.cpp:43
 #, kde-format
 msgid "Url"
-msgstr "URL"
+msgstr "الرابط"
 
 #: speeddialconfig.cpp:264
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
-msgstr "您想要删除“%1”吗？"
+msgstr "أتريد حذف ”%1“؟"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: speeddialconfig.ui:17
 #, kde-format
 msgid "Speed dial entries"
-msgstr "快速访问仪表盘项目"
+msgstr "مدخلات الوصول السريع"
 
 #. i18n: ectx: property (text), widget (QPushButton, addEntryBtn)
 #: speeddialconfig.ui:57
 #, kde-format
 msgid "Add entry…"
-msgstr "添加项目…"
+msgstr "أضف مدخلة…"
 
 #. i18n: ectx: property (text), widget (QPushButton, editEntryBtn)
 #: speeddialconfig.ui:64
 #, kde-format
 msgid "Edit entry…"
-msgstr "编辑项目…"
+msgstr "حرّر المدخلة…"
 
 #. i18n: ectx: property (text), widget (QPushButton, removeEntryBtn)
 #: speeddialconfig.ui:71
 #, kde-format
 msgid "Remove entry"
-msgstr "移除项目"
+msgstr "أزِل المدخلة"
 
 #. i18n: ectx: property (text), widget (QPushButton, moveUpBtn)
 #: speeddialconfig.ui:91
 #, kde-format
 msgid "Move up"
-msgstr "上移"
+msgstr "انقل لأعلى"
 
 #. i18n: ectx: property (text), widget (QPushButton, moveDownBtn)
 #: speeddialconfig.ui:98
 #, kde-format
 msgid "Move down"
-msgstr "下移"
+msgstr "انقل لأسفل"
