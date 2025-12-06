@@ -66,12 +66,12 @@
 >A opção <guilabel
 >Habilitar Java globalmente</guilabel
 > permite que você habilite o suporte ao &Java; para todos os sites web, por padrão. Você pode também habilitar o &Java; somente para hosts específicos. Para adicionar uma política para um host específico, clique em <guibutton
->Novo...</guibutton
+>Novo…</guibutton
 > e uma janela será aberta, na qual você pode digitar o nome do host e então escolher a política de aceitar ou rejeitar o código &Java;, de um host particular. O domínio será adicionado, na lista do lado esquerdo da página.</para>
 
 <para
 >Você pode selecionar um host da lista e clicar no botão <guibutton
->Alterar...</guibutton
+>Alterar…</guibutton
 > para modificar a política daquele host. Clicando no botão <guibutton
 >Apagar</guibutton
 > você remove a política do host selecionado; depois da remoção, as configurações globais serão aplicadas para aquele host.</para>
@@ -129,20 +129,16 @@
 >A opção <guilabel
 >Habilitar JavaScript globalmente</guilabel
 > permite que você habilite o suporte a JavaScript para todos os sites, por padrão. Você pode também habilitar para sites específicos. Para adicionar uma política para um host específico, clique em <guibutton
->Novo...</guibutton
+>Novo…</guibutton
 > para abrir uma janela, na qual você pode digitar o nome do host e em seguida escolher aceitar ou rejeitar o código JavaScript de um host em particular. Ele será adicionado à lista, no lado esquerdo da página.</para>
 
 <para
 >Você pode selecionar um host da lista e clicar no botão <guibutton
->Alterar...</guibutton
+>Alterar…</guibutton
 > para modificar a política daquele host. Clicando no botão <guibutton
 >Apagar</guibutton
 > você remove a política do host selecionado; depois da remoção, as configurações globais serão aplicadas para aquele host.</para>
-<!-- missing section Debugging
-Enable debugger Enables builtin JavaScript debugger.
-Report errors Enables the reporting of errors that occur when JavaScript code is executed.
-How are errors reported? popup window? icon in status bar?
--->
+
 <para
 >O conjunto final de opções, na seção <guilabel
 >Políticas Globais de JavaScript</guilabel
