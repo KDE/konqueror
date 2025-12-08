@@ -27,7 +27,10 @@
 using namespace KonqInterfaces;
 
 QString KonqBrowser::konquerorUserAgent() {
-    QString s_konqUserAgent{QStringLiteral("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/%1 Chrome/%2 Safari/537.36 Konqueror (WebEngine)").arg(qWebEngineVersion()).arg(qWebEngineChromiumVersion())};
+    //We want to replicate the QWebEngine user agent, since there's no way to retrieve it from QtWebEngine itself. The .split().at() call
+    //on the result of qWebEngineChromiumVersion() is there because the QWebEngine user agent only uses the first group of digits, and using
+    //0 for the other three (at least, this is the case for Qt 6.10.1)
+    QString s_konqUserAgent{QStringLiteral("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/%1 Chrome/%2 Safari/537.36").arg(qWebEngineVersion()).arg(QString(qWebEngineChromiumVersion()).split(".").at(0) + ".0.0.0")};
     return s_konqUserAgent;
 }
 
