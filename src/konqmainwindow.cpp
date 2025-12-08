@@ -4083,7 +4083,6 @@ void KonqMainWindow::showEvent(QShowEvent *event)
 
 QUrl KonqExtendedBookmarkOwner::currentUrl() const
 {
-    qDebug() << "CURRENT VIEW URL" << m_pKonqMainWindow->currentView()->url() << "CURRENT MAIN WINDOW URL" << m_pKonqMainWindow->currentURL() << "TITLE" << m_pKonqMainWindow->currentTitle();
     const KonqView *view = m_pKonqMainWindow->currentView();
     return view ? view->url() : QUrl();
 }

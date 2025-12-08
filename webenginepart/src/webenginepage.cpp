@@ -87,10 +87,6 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
         m_passwdServerClient(new KPasswdServerClient),
         m_dropOperationTimer(new QTimer(this))
 {
-    static int s_pageNumber = 1;
-    setObjectName(QString("Page %1").arg(s_pageNumber));
-    s_pageNumber ++;
-
     if (view()) {
         WebEngineSettings::self()->computeFontSizes(view()->logicalDpiY());
     }
