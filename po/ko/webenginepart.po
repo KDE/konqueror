@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"POT-Creation-Date: 2025-12-09 00:42+0000\n"
 "PO-Revision-Date: 2025-10-09 00:59+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -936,12 +936,12 @@ msgstr "대화 상자를 닫을 때 양식 데이터를 KWallet에 저장"
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr "대화 상자를 닫을 때 선택한 필드 내용 저장(&S)"
 
-#: src/webenginepage.cpp:177
+#: src/webenginepage.cpp:173
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "다운로드 관리자(%1)를 찾을 수 없습니다."
 
-#: src/webenginepage.cpp:178
+#: src/webenginepage.cpp:174
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -952,7 +952,7 @@ msgstr ""
 "\n"
 "통합을 사용할 수 없습니다."
 
-#: src/webenginepage.cpp:525
+#: src/webenginepage.cpp:521
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -961,18 +961,18 @@ msgstr ""
 "이 사이트에서 현재 물리적 위치에 접근하려고 합니다.\n"
 "접근을 허용하시겠습니까?"
 
-#: src/webenginepage.cpp:529 src/webenginepage.cpp:607
-#: src/webenginepage.cpp:618
+#: src/webenginepage.cpp:525 src/webenginepage.cpp:603
+#: src/webenginepage.cpp:614
 #, kde-format
 msgid "Network Transmission"
 msgstr "네트워크 전송"
 
-#: src/webenginepage.cpp:530
+#: src/webenginepage.cpp:526
 #, kde-format
 msgid "Allow access"
 msgstr "접근 허용"
 
-#: src/webenginepage.cpp:600
+#: src/webenginepage.cpp:596
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -985,12 +985,12 @@ msgstr ""
 "제 3자가 이 정보를 보고 가로챌 수도 있습니다.\n"
 "데이터를 암호화하지 안고 보내시겠습니까?"
 
-#: src/webenginepage.cpp:608
+#: src/webenginepage.cpp:604
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "암호화하지 않고 보냄(&S)"
 
-#: src/webenginepage.cpp:615
+#: src/webenginepage.cpp:611
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -999,12 +999,12 @@ msgstr ""
 "이 사이트는 폼 데이터를 이메일로 보내려고 하고 있습니다.\n"
 "계속 진행하시겠습니까?"
 
-#: src/webenginepage.cpp:619
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid "&Send Email"
 msgstr "이메일 보내기(&S)"
 
-#: src/webenginepage.cpp:670
+#: src/webenginepage.cpp:666
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1013,22 +1013,22 @@ msgstr ""
 "<qt>이 사이트에서 이메일 메시지에 다음 파일을 첨부할 수 있도록 허용하시겠습니"
 "까?</qt>"
 
-#: src/webenginepage.cpp:672
+#: src/webenginepage.cpp:668
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "이메일 첨부 확인"
 
-#: src/webenginepage.cpp:673
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "&Allow attachments"
 msgstr "첨부 허용(&A)"
 
-#: src/webenginepage.cpp:674
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "첨부 무시(&I)"
 
-#: src/webenginepage.cpp:687
+#: src/webenginepage.cpp:683
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1037,24 +1037,24 @@ msgstr ""
 "이 사이트는 폼을 제출하는 과정에서 컴퓨터에 있는 파일을 첨부하려고 시도했습니"
 "다. 보안을 위해서 첨부 파일을 삭제했습니다."
 
-#: src/webenginepage.cpp:690
+#: src/webenginepage.cpp:686
 #, kde-format
 msgid "Attachment Removed"
 msgstr "첨부 삭제됨"
 
-#: src/webenginepage.cpp:809
+#: src/webenginepage.cpp:805
 #, fuzzy, kde-format
 #| msgid "An error occurred while saving the file: %1"
 msgid "An error occurred while converting the page to PDF"
 msgstr "파일을 저장하는 중 오류 발생: %1"
 
-#: src/webenginepage.cpp:814
+#: src/webenginepage.cpp:810
 #, fuzzy, kde-format
 #| msgid "An error occurred while saving the file: %1"
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "파일을 저장하는 중 오류 발생: %1"
 
-#: src/webenginepage.cpp:882
+#: src/webenginepage.cpp:878
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1063,7 +1063,7 @@ msgstr ""
 "이 사이트에서 새 창을 열려고 합니다.\n"
 "허용하시겠습니까?"
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:880
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1072,17 +1072,17 @@ msgstr ""
 "<qt>이 사이트에서 팝업 창으로<p>%1</p><br/>을(를) 열려고 합니다. 허용하시겠습"
 "니까?</qt>"
 
-#: src/webenginepage.cpp:887
+#: src/webenginepage.cpp:883
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "자바스크립트 팝업 확인"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid "Allow"
 msgstr "허용"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid "Do Not Allow"
 msgstr "허용하지 않음"
@@ -1395,30 +1395,30 @@ msgstr ""
 "사용자 스타일시트 파일 <tt>%1</tt>을(를) 열 수 없습니다. 기본 스타일시트를 사"
 "용합니다"
 
-#: src/webenginepartdownloadmanager.cpp:305
+#: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "파일을 저장하는 중 오류 발생: %1"
 
-#: src/webenginepartdownloadmanager.cpp:316
+#: src/webenginepartdownloadmanager.cpp:315
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "다운로드"
 
-#: src/webenginepartdownloadmanager.cpp:317
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "원본"
 
-#: src/webenginepartdownloadmanager.cpp:318
+#: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "대상"
 
-#: src/webenginepartdownloadmanager.cpp:340
+#: src/webenginepartdownloadmanager.cpp:339
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

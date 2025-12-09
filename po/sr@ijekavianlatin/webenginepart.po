@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"POT-Creation-Date: 2025-12-09 00:42+0000\n"
 "PO-Revision-Date: 2017-12-03 22:53+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -927,12 +927,12 @@ msgstr ""
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr ""
 
-#: src/webenginepage.cpp:177
+#: src/webenginepage.cpp:173
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Menadžer preuzimanja (%1) nije pronađen u ovoj instalaciji."
 
-#: src/webenginepage.cpp:178
+#: src/webenginepage.cpp:174
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -943,7 +943,7 @@ msgstr ""
 "\n"
 "Integracija će biti isključena."
 
-#: src/webenginepage.cpp:525
+#: src/webenginepage.cpp:521
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -952,18 +952,18 @@ msgstr ""
 "Ovaj sajt pokušava da pristupi podacima o vašoj fizičkoj lokaciji.\n"
 "Želite li da mu dozvolite pristup?"
 
-#: src/webenginepage.cpp:529 src/webenginepage.cpp:607
-#: src/webenginepage.cpp:618
+#: src/webenginepage.cpp:525 src/webenginepage.cpp:603
+#: src/webenginepage.cpp:614
 #, kde-format
 msgid "Network Transmission"
 msgstr "Mrežni prenos"
 
-#: src/webenginepage.cpp:530
+#: src/webenginepage.cpp:526
 #, kde-format
 msgid "Allow access"
 msgstr "Dozvoli pristup"
 
-#: src/webenginepage.cpp:600
+#: src/webenginepage.cpp:596
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -976,12 +976,12 @@ msgstr ""
 "Treća strana bi mogla da presretne i vidi ove podatke.\n"
 "Želite li zaista da ovi podaci budu poslati nešifrovano?"
 
-#: src/webenginepage.cpp:608
+#: src/webenginepage.cpp:604
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "Pošalji &nešifrovano"
 
-#: src/webenginepage.cpp:615
+#: src/webenginepage.cpp:611
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -990,12 +990,12 @@ msgstr ""
 "Ovaj sajt pokušava da pošalje podatke iz formulara e‑poštom.\n"
 "Želite li da nastavite?"
 
-#: src/webenginepage.cpp:619
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid "&Send Email"
 msgstr "Pošalji &e‑poštom"
 
-#: src/webenginepage.cpp:670
+#: src/webenginepage.cpp:666
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1004,22 +1004,22 @@ msgstr ""
 "<qt>Želite li da dozvolite ovom sajtu da priloži sljedeće fajlove uz poruku "
 "e‑pošte?</qt>"
 
-#: src/webenginepage.cpp:672
+#: src/webenginepage.cpp:668
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Potvrda priloga e‑pošte"
 
-#: src/webenginepage.cpp:673
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Dozvoli priloge"
 
-#: src/webenginepage.cpp:674
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Zanemari priloge"
 
-#: src/webenginepage.cpp:687
+#: src/webenginepage.cpp:683
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1028,22 +1028,22 @@ msgstr ""
 "Ovaj sajt je pokušao da priloži fajl sa vašeg računara pri predaji "
 "formulara. Prilog uklonjen radi vaše zaštite."
 
-#: src/webenginepage.cpp:690
+#: src/webenginepage.cpp:686
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Prilog uklonjen"
 
-#: src/webenginepage.cpp:809
+#: src/webenginepage.cpp:805
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
 msgstr ""
 
-#: src/webenginepage.cpp:814
+#: src/webenginepage.cpp:810
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr ""
 
-#: src/webenginepage.cpp:882
+#: src/webenginepage.cpp:878
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1052,7 +1052,7 @@ msgstr ""
 "Ovaj sajt traži da otvori novi iskačući prozor.\n"
 "Želite li da dozvolite ovo?"
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:880
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1061,18 +1061,18 @@ msgstr ""
 "<qt>Ovaj sajt traži da otvori iskačući prozor do<p>%1</p><br/>Želite li da "
 "dozvolite ovo?</qt>"
 
-#: src/webenginepage.cpp:887
+#: src/webenginepage.cpp:883
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Potvrda JavaScript iskakanja"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid "Allow"
 msgstr "Dozvoli"
 
 # rewrite-msgid: /Do Not Allow/Deny/
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Odbij"
@@ -1393,30 +1393,30 @@ msgid ""
 "default style sheet will be used"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:305
+#: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:316
+#: src/webenginepartdownloadmanager.cpp:315
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:317
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:318
+#: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:340
+#: src/webenginepartdownloadmanager.cpp:339
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

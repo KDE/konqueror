@@ -1,0 +1,114 @@
+# Translation for speeddial.po to Euskara/Basque (eu).
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+# KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>.
+#
+# Translators:
+# SPDX-FileCopyrightText: 2025 Iñigo Salvador Azurmendi <xalba@ni.eus>
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"PO-Revision-Date: 2025-12-07 19:55+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 25.08.3\n"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editspeeddialentrydlg.ui:19
+#, kde-format
+msgid "&Name"
+msgstr "Ize&na"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, nameWidget)
+#: editspeeddialentrydlg.ui:29
+#, kde-format
+msgid "The name you want displayed on the Speed Dial button"
+msgstr "Abiadura-marka botoian azaltzea nahi duzun izena"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editspeeddialentrydlg.ui:36
+#, kde-format
+msgid "&Url"
+msgstr "&URL"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: editspeeddialentrydlg.ui:55
+#, kde-format
+msgid "Icon"
+msgstr "Ikonoa"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useFaviconBtn)
+#: editspeeddialentrydlg.ui:61
+#, kde-format
+msgid "Use favicon"
+msgstr "Erabili favicon"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useLocalIconBtn)
+#: editspeeddialentrydlg.ui:86
+#, kde-format
+msgid "Use local icon"
+msgstr "Erabili tokiko ikonoa"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useRemoteIconBtn)
+#: editspeeddialentrydlg.ui:133
+#, kde-format
+msgid "Use remote icon"
+msgstr "Erabili urrutiko ikonoa"
+
+#: speeddialconfig.cpp:43
+#, kde-format
+msgid "Name"
+msgstr "Izena"
+
+#: speeddialconfig.cpp:43
+#, kde-format
+msgid "Url"
+msgstr "URL"
+
+#: speeddialconfig.cpp:264
+#, kde-format
+msgid "Do you want to delete \"%1\"?"
+msgstr "\"%1\" ezabatu nahi duzu?"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: speeddialconfig.ui:17
+#, kde-format
+msgid "Speed dial entries"
+msgstr "Abiadura-marka sarrerak"
+
+#. i18n: ectx: property (text), widget (QPushButton, addEntryBtn)
+#: speeddialconfig.ui:57
+#, kde-format
+msgid "Add entry…"
+msgstr "Gehitu sarrera…"
+
+#. i18n: ectx: property (text), widget (QPushButton, editEntryBtn)
+#: speeddialconfig.ui:64
+#, kde-format
+msgid "Edit entry…"
+msgstr "Editatu sarrera…"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeEntryBtn)
+#: speeddialconfig.ui:71
+#, kde-format
+msgid "Remove entry"
+msgstr "Kendu sarrera"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveUpBtn)
+#: speeddialconfig.ui:91
+#, kde-format
+msgid "Move up"
+msgstr "Eraman gora"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveDownBtn)
+#: speeddialconfig.ui:98
+#, kde-format
+msgid "Move down"
+msgstr "Eraman behera"

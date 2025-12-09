@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"POT-Creation-Date: 2025-12-09 00:42+0000\n"
 "PO-Revision-Date: 2020-08-02 16:59+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -612,8 +612,8 @@ msgid ""
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4866
-#: src/konqmainwindow.cpp:4912
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4865
+#: src/konqmainwindow.cpp:4911
 #, kde-format
 msgid "no name"
 msgstr "intet navn"
@@ -718,7 +718,7 @@ msgstr "Lokal"
 msgid "Miscellaneous"
 msgstr "Diverse"
 
-#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4344
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4343
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Åbn i nyt &vindue"
@@ -813,7 +813,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1628 src/konqmainwindow.cpp:2266
 #: src/konqmainwindow.cpp:2355 src/konqmainwindow.cpp:2387
 #: src/konqmainwindow.cpp:2430 src/konqmainwindow.cpp:2452
-#: src/konqmainwindow.cpp:4831
+#: src/konqmainwindow.cpp:4830
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -822,7 +822,7 @@ msgstr "Kassér ændringer?"
 #: src/konqmainwindow.cpp:1628 src/konqmainwindow.cpp:2266
 #: src/konqmainwindow.cpp:2355 src/konqmainwindow.cpp:2387
 #: src/konqmainwindow.cpp:2430 src/konqmainwindow.cpp:2453
-#: src/konqmainwindow.cpp:4831
+#: src/konqmainwindow.cpp:4830
 #, kde-format
 msgid "&Discard Changes"
 msgstr "&Kassér ændringer"
@@ -1413,7 +1413,7 @@ msgstr "Kopiér &filer..."
 msgid "M&ove Files..."
 msgstr "F&lyt filer..."
 
-#: src/konqmainwindow.cpp:4172
+#: src/konqmainwindow.cpp:4171
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
@@ -1422,78 +1422,78 @@ msgstr ""
 "Du har anmodet om at åbne mere end 20 bogmærker i faneblade. Dette kan tage "
 "et stykke tid. Vil du fortsætte?"
 
-#: src/konqmainwindow.cpp:4174
+#: src/konqmainwindow.cpp:4173
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "Åbn bogmærkemappe i nye faneblade"
 
-#: src/konqmainwindow.cpp:4175
+#: src/konqmainwindow.cpp:4174
 #, fuzzy, kde-format
 #| msgid "&Open"
 msgctxt "@action:button"
 msgid "Open"
 msgstr "Å&bn"
 
-#: src/konqmainwindow.cpp:4337
+#: src/konqmainwindow.cpp:4336
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "Åbn i dette &vindue"
 
-#: src/konqmainwindow.cpp:4338
+#: src/konqmainwindow.cpp:4337
 #, kde-format
 msgid "Open the document in current window"
 msgstr "Åbn dokumentet i dette vindue"
 
-#: src/konqmainwindow.cpp:4345
+#: src/konqmainwindow.cpp:4344
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "Åbn dokumentet i et nyt vindue"
 
-#: src/konqmainwindow.cpp:4351
+#: src/konqmainwindow.cpp:4350
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Åbn i &nyt faneblad"
 
-#: src/konqmainwindow.cpp:4353
+#: src/konqmainwindow.cpp:4352
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "Åbn dokument i et nyt faneblad"
 
-#: src/konqmainwindow.cpp:4609
+#: src/konqmainwindow.cpp:4608
 #, kde-format
 msgid "&Open With"
 msgstr "Å&bn med"
 
-#: src/konqmainwindow.cpp:4622
+#: src/konqmainwindow.cpp:4621
 #, kde-format
 msgid "Open with %1"
 msgstr "Åbn med %1"
 
-#: src/konqmainwindow.cpp:4672
+#: src/konqmainwindow.cpp:4671
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "&Visningstilstand"
 
-#: src/konqmainwindow.cpp:4795
+#: src/konqmainwindow.cpp:4794
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr "Du har flere faneblade åbne i dette vindue, vil du virkelig afslutte?"
 
-#: src/konqmainwindow.cpp:4797
+#: src/konqmainwindow.cpp:4796
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Bekræftelse"
 
-#: src/konqmainwindow.cpp:4799
+#: src/konqmainwindow.cpp:4798
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "&Luk dette faneblad"
 
-#: src/konqmainwindow.cpp:4827
+#: src/konqmainwindow.cpp:4826
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1502,7 +1502,7 @@ msgstr ""
 "Dette faneblad indeholder ændringer der ikke er blevet indsendt.\n"
 "Lukning af vinduet vil kassere disse ændringer."
 
-#: src/konqmainwindow.cpp:4828
+#: src/konqmainwindow.cpp:4827
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1511,7 +1511,7 @@ msgstr ""
 "Denne side indeholder ændringer der ikke er blevet indsendt.\n"
 "Lukning af vinduet vil kassere disse ændringer."
 
-#: src/konqmainwindow.cpp:4988
+#: src/konqmainwindow.cpp:4987
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1519,28 +1519,28 @@ msgstr ""
 "Dit sidepanel er ikke funktionelt eller utilgængeligt. En ny indgang kan "
 "ikke tilføjes."
 
-#: src/konqmainwindow.cpp:4988 src/konqmainwindow.cpp:4995
+#: src/konqmainwindow.cpp:4987 src/konqmainwindow.cpp:4994
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Netsidepanel"
 
-#: src/konqmainwindow.cpp:4993
+#: src/konqmainwindow.cpp:4992
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Tilføj ny netudvidelse \"%1\" til dit sidepanel?"
 
-#: src/konqmainwindow.cpp:4995
+#: src/konqmainwindow.cpp:4994
 #, kde-format
 msgid "Add"
 msgstr "Tilføj"
 
-#: src/konqmainwindow.cpp:4995
+#: src/konqmainwindow.cpp:4994
 #, kde-format
 msgid "Do Not Add"
 msgstr "Tilføj ikke"
 
-#: src/konqmainwindow.cpp:5343 src/urlloader.cpp:854
+#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:854
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1549,7 +1549,7 @@ msgstr ""
 "Der synes at være en forkert indstilling. Du har associeret Konqueror med "
 "%1, men den kan ikke klare denne filtype."
 
-#: src/konqmainwindow.cpp:5428
+#: src/konqmainwindow.cpp:5427
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1570,22 +1570,22 @@ msgstr ""
 "proxy-konfiguration eller angiv en URL til din proxy manuelt i "
 "indstillingsdialogen. Vil du skifte proxy-indstillinger nu?"
 
-#: src/konqmainwindow.cpp:5433
+#: src/konqmainwindow.cpp:5432
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5433
+#: src/konqmainwindow.cpp:5432
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "Brug ikke en proxy"
 
-#: src/konqmainwindow.cpp:5434 src/konqmainwindow.cpp:5462
+#: src/konqmainwindow.cpp:5433 src/konqmainwindow.cpp:5461
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "Vis konfigurationsdialog til proxy"
 
-#: src/konqmainwindow.cpp:5458
+#: src/konqmainwindow.cpp:5457
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1598,22 +1598,22 @@ msgstr ""
 "protokollerne Dine aktuelle indstillinger er:<p><b>HTTP-proxy:</b> <tt>%1</"
 "tt></p><p><b>HTTPS-proxy: </b><tt>%2</tt></p>Hvad vil du gøre?"
 
-#: src/konqmainwindow.cpp:5461
+#: src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5462
+#: src/konqmainwindow.cpp:5461
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "Brug HTTP-proxy (kun denne gang)"
 
-#: src/konqmainwindow.cpp:5462
+#: src/konqmainwindow.cpp:5461
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "Brug HTTPS-proxy (kun denne gang)"
 
-#: src/konqmainwindow.cpp:5478
+#: src/konqmainwindow.cpp:5477
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "

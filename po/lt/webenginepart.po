@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"POT-Creation-Date: 2025-12-09 00:42+0000\n"
 "PO-Revision-Date: 2017-06-25 15:05+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -972,12 +972,12 @@ msgstr ""
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr ""
 
-#: src/webenginepage.cpp:177
+#: src/webenginepage.cpp:173
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Atsisiuntimo tvarkyklė (%1) nerasta Jūsų įrenginyje."
 
-#: src/webenginepage.cpp:178
+#: src/webenginepage.cpp:174
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -989,7 +989,7 @@ msgstr ""
 "\n"
 "Integracija bus išjungta."
 
-#: src/webenginepage.cpp:525
+#: src/webenginepage.cpp:521
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -998,18 +998,18 @@ msgstr ""
 "Ši svetainė bando pasiekti informaciją apie Jūsų fizinę buvimo vietą.\n"
 "Ar norite jai leisti pasiekti?"
 
-#: src/webenginepage.cpp:529 src/webenginepage.cpp:607
-#: src/webenginepage.cpp:618
+#: src/webenginepage.cpp:525 src/webenginepage.cpp:603
+#: src/webenginepage.cpp:614
 #, kde-format
 msgid "Network Transmission"
 msgstr "Tinklo perdavimas"
 
-#: src/webenginepage.cpp:530
+#: src/webenginepage.cpp:526
 #, kde-format
 msgid "Allow access"
 msgstr "Leisti prieiti"
 
-#: src/webenginepage.cpp:600
+#: src/webenginepage.cpp:596
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1022,12 +1022,12 @@ msgstr ""
 "Treti asmenys gali juos perimti ir peržiūrėti šią informaciją.\n"
 "Ar Jūs tikrai norite tęsti?"
 
-#: src/webenginepage.cpp:608
+#: src/webenginepage.cpp:604
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Siųsti neužšifravus"
 
-#: src/webenginepage.cpp:615
+#: src/webenginepage.cpp:611
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1036,12 +1036,12 @@ msgstr ""
 "Ši sritis bando siųsti formos duomenis naudodama el. paštą.\n"
 "Ar norite tęsti?"
 
-#: src/webenginepage.cpp:619
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid "&Send Email"
 msgstr "&Siųsti el. laišką"
 
-#: src/webenginepage.cpp:670
+#: src/webenginepage.cpp:666
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1050,22 +1050,22 @@ msgstr ""
 "<qt>Ar norite leisti šiai svetainei pridėti sekančius failus prie  el. "
 "laiško?</qt>"
 
-#: src/webenginepage.cpp:672
+#: src/webenginepage.cpp:668
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "El. pašto priedo patvirtinimas"
 
-#: src/webenginepage.cpp:673
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Leisti priedus"
 
-#: src/webenginepage.cpp:674
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignoruoti priedus"
 
-#: src/webenginepage.cpp:687
+#: src/webenginepage.cpp:683
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1074,22 +1074,22 @@ msgstr ""
 "Ši sritis bandė prisegti failą iš Jūsų kompiuterio formos siuntimo metu.  "
 "Prisegtas failas buvo pašalintas dėl jūsų saugumo."
 
-#: src/webenginepage.cpp:690
+#: src/webenginepage.cpp:686
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Priedas pašalintas"
 
-#: src/webenginepage.cpp:809
+#: src/webenginepage.cpp:805
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
 msgstr ""
 
-#: src/webenginepage.cpp:814
+#: src/webenginepage.cpp:810
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr ""
 
-#: src/webenginepage.cpp:882
+#: src/webenginepage.cpp:878
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1098,7 +1098,7 @@ msgstr ""
 "Ši svetainė prašo atverti naują iššokantį langą.\n"
 "Ar norite leisti?"
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:880
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1107,17 +1107,17 @@ msgstr ""
 "<qt>Ši svetainė prašo atverti naują iššokantį langą į<br /><b>%1</b>.<br /"
 ">Ar norite leisti tai?</qt>"
 
-#: src/webenginepage.cpp:887
+#: src/webenginepage.cpp:883
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript iškylantis patvirtinimas"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid "Allow"
 msgstr "Leisti"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Neleisti"
@@ -1435,31 +1435,31 @@ msgid ""
 "default style sheet will be used"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:305
+#: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:316
+#: src/webenginepartdownloadmanager.cpp:315
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:317
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:318
+#: src/webenginepartdownloadmanager.cpp:317
 #, fuzzy, kde-format
 #| msgid "Description:"
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Aprašymas:"
 
-#: src/webenginepartdownloadmanager.cpp:340
+#: src/webenginepartdownloadmanager.cpp:339
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

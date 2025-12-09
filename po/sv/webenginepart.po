@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"POT-Creation-Date: 2025-12-09 00:42+0000\n"
 "PO-Revision-Date: 2025-10-13 22:31+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -951,12 +951,12 @@ msgstr "Lagra formulärdata i plånboken när dialogrutan stängs"
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr "Lagra innehållet i markerade fält när dialogrutan &stängs"
 
-#: src/webenginepage.cpp:177
+#: src/webenginepage.cpp:173
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Nerladdningshanteraren (%1) hittades inte i din installation."
 
-#: src/webenginepage.cpp:178
+#: src/webenginepage.cpp:174
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -968,7 +968,7 @@ msgstr ""
 "\n"
 "Integrering kommer att inaktiveras."
 
-#: src/webenginepage.cpp:525
+#: src/webenginepage.cpp:521
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -977,18 +977,18 @@ msgstr ""
 "Den här platsen försöker komma åt information om din fysiska plats.\n"
 "Vill du ge den tillåtelse?"
 
-#: src/webenginepage.cpp:529 src/webenginepage.cpp:607
-#: src/webenginepage.cpp:618
+#: src/webenginepage.cpp:525 src/webenginepage.cpp:603
+#: src/webenginepage.cpp:614
 #, kde-format
 msgid "Network Transmission"
 msgstr "Nätverksöverföring"
 
-#: src/webenginepage.cpp:530
+#: src/webenginepage.cpp:526
 #, kde-format
 msgid "Allow access"
 msgstr "Tillåt åtkomst"
 
-#: src/webenginepage.cpp:600
+#: src/webenginepage.cpp:596
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1001,12 +1001,12 @@ msgstr ""
 "En tredje part kan fånga upp och visa den här informationen.\n"
 "Är du säker på att du vill skicka data okrypterad?"
 
-#: src/webenginepage.cpp:608
+#: src/webenginepage.cpp:604
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Skicka okrypterat"
 
-#: src/webenginepage.cpp:615
+#: src/webenginepage.cpp:611
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1015,12 +1015,12 @@ msgstr ""
 "Den här platsen försöker skicka formulärdata via e-post.\n"
 "Vill du fortsätta?"
 
-#: src/webenginepage.cpp:619
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid "&Send Email"
 msgstr "&Skicka e-post"
 
-#: src/webenginepage.cpp:670
+#: src/webenginepage.cpp:666
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1028,22 +1028,22 @@ msgid ""
 msgstr ""
 "<qt>Vill du tillåta att den här platsen bifogar följande filer i brevet?</qt>"
 
-#: src/webenginepage.cpp:672
+#: src/webenginepage.cpp:668
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Bekräftelse av bilaga till brev"
 
-#: src/webenginepage.cpp:673
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Tillåt bil&agor"
 
-#: src/webenginepage.cpp:674
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignorera bilagor"
 
-#: src/webenginepage.cpp:687
+#: src/webenginepage.cpp:683
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1052,22 +1052,22 @@ msgstr ""
 "Den här platsen försöker lägga till en fil från datorn i formuläret som "
 "skickas. Bilagan togs bort för att skydda dig."
 
-#: src/webenginepage.cpp:690
+#: src/webenginepage.cpp:686
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Bilaga borttagen"
 
-#: src/webenginepage.cpp:809
+#: src/webenginepage.cpp:805
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
 msgstr "Ett fel uppstod vid konvertering av sidan till PDF"
 
-#: src/webenginepage.cpp:814
+#: src/webenginepage.cpp:810
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "Ett fel uppstod när en PDF-version av sidan skulle sparas som %1"
 
-#: src/webenginepage.cpp:882
+#: src/webenginepage.cpp:878
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1076,7 +1076,7 @@ msgstr ""
 "Den här platsen försöker öppna ett meddelandefönster.\n"
 "Vill du tillåta det?"
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:880
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1085,17 +1085,17 @@ msgstr ""
 "<qt>Den här platsen försöker öppna ett meddelandefönster till<p>%1</p><br/"
 ">Vill du tillåta det?</qt>"
 
-#: src/webenginepage.cpp:887
+#: src/webenginepage.cpp:883
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Bekräftelse för Javascript-fönster"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid "Allow"
 msgstr "Tillåt"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Tillåt inte"
@@ -1410,30 +1410,30 @@ msgstr ""
 "Kunde inte öppna filen <tt>%1</tt> som innehåller användarens stilmall. "
 "Förvald stilmall kommer att användas."
 
-#: src/webenginepartdownloadmanager.cpp:305
+#: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Ett fel uppstod när filen sparades: %1"
 
-#: src/webenginepartdownloadmanager.cpp:316
+#: src/webenginepartdownloadmanager.cpp:315
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Laddar ner"
 
-#: src/webenginepartdownloadmanager.cpp:317
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Källa"
 
-#: src/webenginepartdownloadmanager.cpp:318
+#: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Mål"
 
-#: src/webenginepartdownloadmanager.cpp:340
+#: src/webenginepartdownloadmanager.cpp:339
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

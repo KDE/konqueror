@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"POT-Creation-Date: 2025-12-09 00:42+0000\n"
 "PO-Revision-Date: 2024-11-08 14:57+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -962,12 +962,12 @@ msgstr "Store form data in KWallet when closing the dialogue"
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr "Store form data in KWallet when closing the dialogue"
 
-#: src/webenginepage.cpp:177
+#: src/webenginepage.cpp:173
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "The download manager (%1) could not be found in your installation."
 
-#: src/webenginepage.cpp:178
+#: src/webenginepage.cpp:174
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -978,7 +978,7 @@ msgstr ""
 "\n"
 "The integration will be disabled."
 
-#: src/webenginepage.cpp:525
+#: src/webenginepage.cpp:521
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -987,18 +987,18 @@ msgstr ""
 "This site is attempting to access information about your physical location.\n"
 "Do you want to allow it access?"
 
-#: src/webenginepage.cpp:529 src/webenginepage.cpp:607
-#: src/webenginepage.cpp:618
+#: src/webenginepage.cpp:525 src/webenginepage.cpp:603
+#: src/webenginepage.cpp:614
 #, kde-format
 msgid "Network Transmission"
 msgstr "Network Transmission"
 
-#: src/webenginepage.cpp:530
+#: src/webenginepage.cpp:526
 #, kde-format
 msgid "Allow access"
 msgstr "Allow access"
 
-#: src/webenginepage.cpp:600
+#: src/webenginepage.cpp:596
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1011,12 +1011,12 @@ msgstr ""
 "A third party may be able to intercept and view this information.\n"
 "Are you sure you want to send the data unencrypted?"
 
-#: src/webenginepage.cpp:608
+#: src/webenginepage.cpp:604
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Send Unencrypted"
 
-#: src/webenginepage.cpp:615
+#: src/webenginepage.cpp:611
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1025,12 +1025,12 @@ msgstr ""
 "This site is attempting to submit form data via email.\n"
 "Do you want to continue?"
 
-#: src/webenginepage.cpp:619
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid "&Send Email"
 msgstr "&Send Email"
 
-#: src/webenginepage.cpp:670
+#: src/webenginepage.cpp:666
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1039,22 +1039,22 @@ msgstr ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 
-#: src/webenginepage.cpp:672
+#: src/webenginepage.cpp:668
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Email Attachment Confirmation"
 
-#: src/webenginepage.cpp:673
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Allow attachments"
 
-#: src/webenginepage.cpp:674
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignore attachments"
 
-#: src/webenginepage.cpp:687
+#: src/webenginepage.cpp:683
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1063,24 +1063,24 @@ msgstr ""
 "This site attempted to attach a file from your computer in the form "
 "submission. The attachment was removed for your protection."
 
-#: src/webenginepage.cpp:690
+#: src/webenginepage.cpp:686
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Attachment Removed"
 
-#: src/webenginepage.cpp:809
+#: src/webenginepage.cpp:805
 #, fuzzy, kde-format
 #| msgid "An error occurred while saving the file: %1"
 msgid "An error occurred while converting the page to PDF"
 msgstr "An error occurred while saving the file: %1"
 
-#: src/webenginepage.cpp:814
+#: src/webenginepage.cpp:810
 #, fuzzy, kde-format
 #| msgid "An error occurred while saving the file: %1"
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "An error occurred while saving the file: %1"
 
-#: src/webenginepage.cpp:882
+#: src/webenginepage.cpp:878
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1089,7 +1089,7 @@ msgstr ""
 "This site is requesting to open a new popup window.\n"
 "Do you want to allow this?"
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:880
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1098,17 +1098,17 @@ msgstr ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
 "want to allow this?</qt>"
 
-#: src/webenginepage.cpp:887
+#: src/webenginepage.cpp:883
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript Popup Confirmation"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid "Allow"
 msgstr "Allow"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Do Not Allow"
@@ -1426,30 +1426,30 @@ msgstr ""
 "Could not open the file <tt>%1</tt> containing the user style sheet. The "
 "default style sheet will be used"
 
-#: src/webenginepartdownloadmanager.cpp:305
+#: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "An error occurred while saving the file: %1"
 
-#: src/webenginepartdownloadmanager.cpp:316
+#: src/webenginepartdownloadmanager.cpp:315
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Downloading"
 
-#: src/webenginepartdownloadmanager.cpp:317
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Source"
 
-#: src/webenginepartdownloadmanager.cpp:318
+#: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Destination"
 
-#: src/webenginepartdownloadmanager.cpp:340
+#: src/webenginepartdownloadmanager.cpp:339
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

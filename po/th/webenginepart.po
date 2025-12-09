@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"POT-Creation-Date: 2025-12-09 00:42+0000\n"
 "PO-Revision-Date: 2010-03-06 09:46+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -951,12 +951,12 @@ msgstr ""
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr ""
 
-#: src/webenginepage.cpp:177
+#: src/webenginepage.cpp:173
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "ไม่พบตัวจัดการการดาวน์โหลด (%1) ที่ถูกติดตั้งอยู่บนระบบของคุณ"
 
-#: src/webenginepage.cpp:178
+#: src/webenginepage.cpp:174
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -967,7 +967,7 @@ msgstr ""
 "\n"
 "การผนวกการทำงานร่วมกันจะถูกปิดการใช้งานไว้ก่อน"
 
-#: src/webenginepage.cpp:525
+#: src/webenginepage.cpp:521
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is attempting to submit form data via email.\n"
@@ -979,19 +979,19 @@ msgstr ""
 "เว็บไซต์นี้พยายามจะส่งข้อมูลในแบบฟอร์มผ่านทางอีเมล\n"
 "คุณต้องการจะทำต่อไปหรือไม่ ?"
 
-#: src/webenginepage.cpp:529 src/webenginepage.cpp:607
-#: src/webenginepage.cpp:618
+#: src/webenginepage.cpp:525 src/webenginepage.cpp:603
+#: src/webenginepage.cpp:614
 #, kde-format
 msgid "Network Transmission"
 msgstr "การส่งถ่ายข้อมูลผ่านเครือข่าย"
 
-#: src/webenginepage.cpp:530
+#: src/webenginepage.cpp:526
 #, fuzzy, kde-format
 #| msgid "&Allow attachments"
 msgid "Allow access"
 msgstr "&อนุญาตให้ทำการแนบแฟ้ม"
 
-#: src/webenginepage.cpp:600
+#: src/webenginepage.cpp:596
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1004,12 +1004,12 @@ msgstr ""
 "บุคคลที่สามอาจจะสามารถดักจับและแสดงข้อมูลนี้ได้\n"
 "คุณแน่ใจว่าต้องการจะทำต่อไปอีกหรือไม่ ?"
 
-#: src/webenginepage.cpp:608
+#: src/webenginepage.cpp:604
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&ส่งโดยไม่ต้องเข้ารหัส"
 
-#: src/webenginepage.cpp:615
+#: src/webenginepage.cpp:611
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1018,12 +1018,12 @@ msgstr ""
 "เว็บไซต์นี้พยายามจะส่งข้อมูลในแบบฟอร์มผ่านทางอีเมล\n"
 "คุณต้องการจะทำต่อไปหรือไม่ ?"
 
-#: src/webenginepage.cpp:619
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid "&Send Email"
 msgstr "&ส่งอีเมล"
 
-#: src/webenginepage.cpp:670
+#: src/webenginepage.cpp:666
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Do you want to allow this site to attach the following files to the "
@@ -1034,22 +1034,22 @@ msgid ""
 msgstr ""
 "<qt>คุณต้องการจะอนุญาตให้เว็บไซต์นี้ทำการแนบแฟ้มต่าง ๆ ต่อไปนี้เข้าไปยังจดหมายหรือไม่ ?</qt>"
 
-#: src/webenginepage.cpp:672
+#: src/webenginepage.cpp:668
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "การยืนยันการแนบแฟ้มในจดหมาย"
 
-#: src/webenginepage.cpp:673
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&อนุญาตให้ทำการแนบแฟ้ม"
 
-#: src/webenginepage.cpp:674
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "ไ&ม่สนใจการแนบแฟ้ม"
 
-#: src/webenginepage.cpp:687
+#: src/webenginepage.cpp:683
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1058,22 +1058,22 @@ msgstr ""
 "เว็บไซต์นี้พยายามจะแนบแฟ้มที่อยู่ภายในเครื่องของคุณไปกับการส่งแบบฟอร์ม ซึ่งแฟ้มต่าง ๆ "
 "ที่แนบไปด้วยจะถูกเอาออกเพื่อเป็นการปกป้องคุณ"
 
-#: src/webenginepage.cpp:690
+#: src/webenginepage.cpp:686
 #, kde-format
 msgid "Attachment Removed"
 msgstr "แฟ้มที่แนบมาด้วยถูกเอาออกแล้ว"
 
-#: src/webenginepage.cpp:809
+#: src/webenginepage.cpp:805
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
 msgstr ""
 
-#: src/webenginepage.cpp:814
+#: src/webenginepage.cpp:810
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr ""
 
-#: src/webenginepage.cpp:882
+#: src/webenginepage.cpp:878
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is attempting to submit form data via email.\n"
@@ -1085,7 +1085,7 @@ msgstr ""
 "เว็บไซต์นี้พยายามจะส่งข้อมูลในแบบฟอร์มผ่านทางอีเมล\n"
 "คุณต้องการจะทำต่อไปหรือไม่ ?"
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:880
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
@@ -1097,19 +1097,19 @@ msgstr ""
 "<qt>หน้าเว็บที่ไม่น่าเชื่อถือนี้มีส่วนเชื่อมโยงไปยัง <br /><b>%1</b> <br/> "
 "คุณต้องการจะเรียกไปยังตำแหน่งที่เชื่อมโยงไปนี้หรือไม่ ?</qt>"
 
-#: src/webenginepage.cpp:887
+#: src/webenginepage.cpp:883
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr ""
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:884
 #, fuzzy, kde-format
 #| msgctxt "follow link despite of security warning"
 #| msgid "Follow"
 msgid "Allow"
 msgstr "เรียกไป"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid "Do Not Allow"
 msgstr ""
@@ -1432,31 +1432,31 @@ msgid ""
 "default style sheet will be used"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:305
+#: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:316
+#: src/webenginepartdownloadmanager.cpp:315
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:317
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:318
+#: src/webenginepartdownloadmanager.cpp:317
 #, fuzzy, kde-format
 #| msgid "Description:"
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "คำอธิบาย:"
 
-#: src/webenginepartdownloadmanager.cpp:340
+#: src/webenginepartdownloadmanager.cpp:339
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"

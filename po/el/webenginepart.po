@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"POT-Creation-Date: 2025-12-09 00:42+0000\n"
 "PO-Revision-Date: 2023-01-07 10:35+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -981,12 +981,12 @@ msgid "&Store the contents of selected fields when closing the dialog"
 msgstr ""
 "Να αποθηκεύονται τα δεδομένα φόρμας στο KWallet κατά το κλείσιμο του διαλόγου"
 
-#: src/webenginepage.cpp:177
+#: src/webenginepage.cpp:173
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Ο διαχειριστής λήψεων (%1) δεν βρέθηκε στην εγκατάστασή σας."
 
-#: src/webenginepage.cpp:178
+#: src/webenginepage.cpp:174
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -998,7 +998,7 @@ msgstr ""
 "\n"
 "Η ενοποίηση θα απενεργοποιηθεί."
 
-#: src/webenginepage.cpp:525
+#: src/webenginepage.cpp:521
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -1008,18 +1008,18 @@ msgstr ""
 "τη φυσική σας θέση.\n"
 "Θα επιτρέψετε την πρόσβαση;"
 
-#: src/webenginepage.cpp:529 src/webenginepage.cpp:607
-#: src/webenginepage.cpp:618
+#: src/webenginepage.cpp:525 src/webenginepage.cpp:603
+#: src/webenginepage.cpp:614
 #, kde-format
 msgid "Network Transmission"
 msgstr "Μετάδοση δικτύου"
 
-#: src/webenginepage.cpp:530
+#: src/webenginepage.cpp:526
 #, kde-format
 msgid "Allow access"
 msgstr "Να επιτρέπεται η πρόσβαση"
 
-#: src/webenginepage.cpp:600
+#: src/webenginepage.cpp:596
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1032,12 +1032,12 @@ msgstr ""
 "Τρίτοι μπορούν να παρεμβληθούν και να δουν αυτές τις πληροφορίες.\n"
 "Σίγουρα θέλετε να στείλει πίσω τα δεδομένα σας ακρυπτογράφητα;"
 
-#: src/webenginepage.cpp:608
+#: src/webenginepage.cpp:604
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Αποστολή μη κρυπτογραφημένου"
 
-#: src/webenginepage.cpp:615
+#: src/webenginepage.cpp:611
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1047,12 +1047,12 @@ msgstr ""
 "ταχυδρομείου.\n"
 "Θέλετε να συνεχίσετε;"
 
-#: src/webenginepage.cpp:619
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid "&Send Email"
 msgstr "&Αποστολή ηλ. αλληλογραφίας"
 
-#: src/webenginepage.cpp:670
+#: src/webenginepage.cpp:666
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1061,22 +1061,22 @@ msgstr ""
 "<qt>Θέλετε να επιτρέψετε στον ιστότοπο να επισυνάψει τα ακόλουθα αρχεία στο "
 "μήνυμα ηλ αλληλογραφίας;</qt>"
 
-#: src/webenginepage.cpp:672
+#: src/webenginepage.cpp:668
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Επιβεβαίωση συνημμένων ηλ.αλληλογραφίας"
 
-#: src/webenginepage.cpp:673
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Να επιτρέπονται συνημμέν&α"
 
-#: src/webenginepage.cpp:674
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "Αγνόηση &συνημμένων"
 
-#: src/webenginepage.cpp:687
+#: src/webenginepage.cpp:683
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1085,24 +1085,24 @@ msgstr ""
 "Αυτός ο ιστότοπος επιχείρησε να επισυνάψει ένα αρχείο από τον υπολογιστή σας "
 "κατά την υποβολή της φόρμας. Το συνημμένο αφαιρέθηκε για δική σας προστασία."
 
-#: src/webenginepage.cpp:690
+#: src/webenginepage.cpp:686
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Το συνημμένο αφαιρέθηκε"
 
-#: src/webenginepage.cpp:809
+#: src/webenginepage.cpp:805
 #, fuzzy, kde-format
 #| msgid "An error occurred while saving the file: %1"
 msgid "An error occurred while converting the page to PDF"
 msgstr "Παρουσιάστηκε σφάλμα κατά την αποθήκευση του αρχείου: %1"
 
-#: src/webenginepage.cpp:814
+#: src/webenginepage.cpp:810
 #, fuzzy, kde-format
 #| msgid "An error occurred while saving the file: %1"
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "Παρουσιάστηκε σφάλμα κατά την αποθήκευση του αρχείου: %1"
 
-#: src/webenginepage.cpp:882
+#: src/webenginepage.cpp:878
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1111,7 +1111,7 @@ msgstr ""
 "Αυτός ο ιστότοπος ζητάει να ανοίξει ένα νέο αναδυόμενο παράθυρο.\n"
 "Θα το επιτρέψετε αυτό;"
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:880
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1120,17 +1120,17 @@ msgstr ""
 "<qt>Αυτός ο ιστότοπος ζητάει να ανοίξει ένα αναδυόμενο παράθυρο στο<p>%1</"
 "p><br/>Θα το επιτρέψετε αυτό;</qt>"
 
-#: src/webenginepage.cpp:887
+#: src/webenginepage.cpp:883
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Επιβεβαίωση ανάδυσης Javascript"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid "Allow"
 msgstr "Να επιτρέπεται"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:884
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Να μην επιτρέπεται"
@@ -1448,30 +1448,30 @@ msgid ""
 "default style sheet will be used"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:305
+#: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Παρουσιάστηκε σφάλμα κατά την αποθήκευση του αρχείου: %1"
 
-#: src/webenginepartdownloadmanager.cpp:316
+#: src/webenginepartdownloadmanager.cpp:315
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Λήψη"
 
-#: src/webenginepartdownloadmanager.cpp:317
+#: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Πηγή"
 
-#: src/webenginepartdownloadmanager.cpp:318
+#: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Προορισμός"
 
-#: src/webenginepartdownloadmanager.cpp:340
+#: src/webenginepartdownloadmanager.cpp:339
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
