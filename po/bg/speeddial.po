@@ -1,0 +1,111 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# SPDX-FileCopyrightText: 2025 Mincho Kondarev <mkondarev@yahoo.de>
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"PO-Revision-Date: 2025-12-04 17:47+0100\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.07.70\n"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editspeeddialentrydlg.ui:19
+#, kde-format
+msgid "&Name"
+msgstr "&Име"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, nameWidget)
+#: editspeeddialentrydlg.ui:29
+#, kde-format
+msgid "The name you want displayed on the Speed Dial button"
+msgstr "Името, което искате да се показва на бутона за бърз достъп"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editspeeddialentrydlg.ui:36
+#, kde-format
+msgid "&Url"
+msgstr "&Адрес"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: editspeeddialentrydlg.ui:55
+#, kde-format
+msgid "Icon"
+msgstr "Икона"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useFaviconBtn)
+#: editspeeddialentrydlg.ui:61
+#, kde-format
+msgid "Use favicon"
+msgstr "Използване на уеб иконата"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useLocalIconBtn)
+#: editspeeddialentrydlg.ui:86
+#, kde-format
+msgid "Use local icon"
+msgstr "Използване на локална икона"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useRemoteIconBtn)
+#: editspeeddialentrydlg.ui:133
+#, kde-format
+msgid "Use remote icon"
+msgstr "Използване на отдалечена икона"
+
+#: speeddialconfig.cpp:43
+#, kde-format
+msgid "Name"
+msgstr "Име"
+
+#: speeddialconfig.cpp:43
+#, kde-format
+msgid "Url"
+msgstr "Адрес"
+
+#: speeddialconfig.cpp:264
+#, kde-format
+msgid "Do you want to delete \"%1\"?"
+msgstr "Искате ли да изтриете „%1“?"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: speeddialconfig.ui:17
+#, kde-format
+msgid "Speed dial entries"
+msgstr "Елементи на бърз достъп"
+
+#. i18n: ectx: property (text), widget (QPushButton, addEntryBtn)
+#: speeddialconfig.ui:57
+#, kde-format
+msgid "Add entry…"
+msgstr "Добавяне на елемент…"
+
+#. i18n: ectx: property (text), widget (QPushButton, editEntryBtn)
+#: speeddialconfig.ui:64
+#, kde-format
+msgid "Edit entry…"
+msgstr "Редактиране на елемент…"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeEntryBtn)
+#: speeddialconfig.ui:71
+#, kde-format
+msgid "Remove entry"
+msgstr "Премахване на елемент"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveUpBtn)
+#: speeddialconfig.ui:91
+#, kde-format
+msgid "Move up"
+msgstr "Преместване нагоре"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveDownBtn)
+#: speeddialconfig.ui:98
+#, kde-format
+msgid "Move down"
+msgstr "Преместване надолу"
