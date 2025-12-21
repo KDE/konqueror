@@ -2,10 +2,10 @@
 <html>
 <head>
 <script>
-function simulateLeftCtrlClick() {
-  let event = document.createEvent("MouseEvents");
-  event.initMouseEvent("click", true, true, document.defaultView, 1, 0, 0, 0, 0, true, false, false, false, 0, null);
-  document.getElementById("linkid").dispatchEvent(event);
+function getLinkCoordinates() {
+  let link = document.getElementById("linkid");
+  let rect = link.getBoundingClientRect();
+  return [(rect.left+rect.right)/2, (rect.top + rect.bottom)/2];
 }
 </script>
 </head>

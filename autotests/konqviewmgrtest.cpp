@@ -508,16 +508,34 @@ void ViewMgrTest::testPopupNewWindow() // RMB, "Open new window"
 void ViewMgrTest::testCtrlClickOnLink()
 {
     KonqMainWindow mainWindow;
+    QVERIFY2(KMainWindow::memberList().count() == 1, "More than one main window already exists");
     openHtmlWithLink(mainWindow);
     KonqFrameTabs *tabs = mainWindow.viewManager()->tabContainer();
     KonqView *view = mainWindow.currentView();
     WebEnginePart *part = qobject_cast<WebEnginePart*>(view->part());
     QVERIFY(part);
-    //We can't use a real mouse click because we don't know the coordinates of the link, so
-    //we simulate it using javascript
-    qDebug() << "SIMULATING CLICKING NOW";
-    part->page()->runJavaScript("simulateLeftCtrlClick()");
-    QTest::qWait(100);
+
+    //To simulate a mouse click, we need to know the coordinates of the <a> element, which we get
+    //using javascript. We use the javascript function getLinkCoordinates() defined in the html
+    //page to get the coordinates. In the callback function, we then simulate a mouse click in that
+    //position.
+    //We use QTest::qWaitFor to wait until either a new tab has been opened in the main window or a
+    //new main window has been created (one of the two possbile successful outcomes of this test), then
+    //proceed with testing the results
+    auto simulateClick = [part](const QVariant &var) {
+        if (!var.isValid()) {
+            return;
+        }
+        QVariantList lst = var.toList();
+        QPoint pt{lst.at(0).toInt(), lst.at(1).toInt()};
+        //For some reason, mouse events delivered to QWebEngineView don't work: they need to be delivered
+        //to a child widget of the QWebEngineView
+        QTest::mouseClick(part->view()->findChild<QWidget*>(), Qt::LeftButton, Qt::ControlModifier, pt);
+    };
+    part->page()->runJavaScript("getLinkCoordinates()", 0, simulateClick);
+    bool waitSuccessful = QTest::qWaitFor([&mainWindow]{return mainWindow.tabsCount() > 1 || KMainWindow::memberList().count() > 1;}, 1000);
+    QVERIFY2(waitSuccessful, "Link wasn't opened");
+
     KonqView *newView = nullptr;
     // Expected behavior for Ctrl+click:
     //  new tab, if mmbOpensTab
@@ -525,7 +543,6 @@ void ViewMgrTest::testCtrlClickOnLink()
     //  (this code is called for both cases)
     if (Konq::Settings::mmbOpensTab()) {
         QCOMPARE(KMainWindow::memberList().count(), 1);
-        // QTest::qWait(2000);
         QTRY_COMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
         if (Konq::Settings::newTabsInFront()) { // when called by sameTestsWithNewTabsInFront
             QCOMPARE(tabs->currentIndex(), 1);
@@ -821,16 +838,18 @@ void ViewMgrTest::testCloseTabsFast() // #210551/#150162
     KonqMainWindow mainWindow;
     mainWindow.openUrl(nullptr, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
     KonqViewManager *viewManager = mainWindow.viewManager();
+    QVERIFY(viewManager);
     viewManager->addTab(QStringLiteral("text/html"));
     viewManager->addTab(QStringLiteral("text/html"));
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FFF]."));   // mainWindow, tab widget, 3 simple tabs
     QTabWidget *tabWidget = mainWindow.findChild<QTabWidget *>();
+    QVERIFY(tabWidget);
     tabWidget->setCurrentIndex(2);
 
     mainWindow.setWorkingTab(1);
     mainWindow.slotRemoveTabPopup();
     mainWindow.slotRemoveTabPopup();
-    QTest::qWait(100); // process the delayed invocations
+    QVERIFY(QTest::qWaitFor([&mainWindow]{return mainWindow.tabsCount() == 1;}, 500));
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F]."));   // mainWindow, tab widget, 1 tab left
 }
 
