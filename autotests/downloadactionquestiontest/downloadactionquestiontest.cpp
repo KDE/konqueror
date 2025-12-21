@@ -174,7 +174,7 @@ void DownloadActionQuestionTest::performDetermineActionTest(bool localUrl, const
     KConfigGroup grp = writeDontAskAgainConfigEntries(mimeType, openEntry, embedEntry);
 
     QUrl url = localUrl ? QUrl::fromLocalFile(QStringLiteral("/tmp/test")) : QUrl(QStringLiteral("https://www.example.com/test"));
-    DownloadActionQuestion question(nullptr, url, mimeType, false);
+    DownloadActionQuestion question(nullptr, url, mimeType);
 
     question.setApps(appsToUse);
     question.setParts(partsToUse);

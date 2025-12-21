@@ -46,10 +46,8 @@ public:
      * Constructor, for all kinds of dialogs shown in this class.
      * @param url the URL in question
      * @param mimeType the mimetype of the URL
-     * @param skipDefaultHtmlPart if @p mimetype is `text/html`, skip the preferred part and use
-     * the second preferred one
      */
-    DownloadActionQuestion(QWidget *parent, const QUrl &url, const QString &mimeType, bool skipDefaultHtmlPart = false);
+    DownloadActionQuestion(QWidget *parent, const QUrl &url, const QString &mimeType);
 
     /**
      * @brief destructor

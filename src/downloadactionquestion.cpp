@@ -44,7 +44,7 @@ class DownloadActionQuestionPrivate : public QDialog
     Q_OBJECT
 public:
 
-    DownloadActionQuestionPrivate(QWidget *parent, const QUrl &url, const QString &mimeType, bool skipDefaultHtmlPart);
+    DownloadActionQuestionPrivate(QWidget *parent, const QUrl &url, const QString &mimeType);
 
     void showService(KService::Ptr selectedService);
     void disableAction(Action action);
@@ -57,7 +57,6 @@ public:
     QUrl url;
     QString mimeType;
     QMimeType mime;
-    bool skipDefaultHtmlPart;
     Actions availableActions;
     KService::Ptr selectedService;
     KPluginMetaData selectedPart;
@@ -114,11 +113,10 @@ private:
 #endif
 };
 
-DownloadActionQuestionPrivate::DownloadActionQuestionPrivate(QWidget *parent, const QUrl &url, const QString &mimeType, bool skipDefaultHtmlPart)
+DownloadActionQuestionPrivate::DownloadActionQuestionPrivate(QWidget *parent, const QUrl &url, const QString &mimeType)
     : QDialog(parent)
     , url(url)
     , mimeType(mimeType)
-    , skipDefaultHtmlPart(skipDefaultHtmlPart)
 {
     // Use askSave or askEmbedOrSave from filetypesrc
     dontAskConfig = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals);
@@ -228,9 +226,6 @@ void DownloadActionQuestionPrivate::setup(Actions actions)
         selectedService = apps.first();
     }
 
-    if (skipDefaultHtmlPart && mimeType == QLatin1String("text/html") && !parts.isEmpty()) {
-        parts.removeAt(0);
-    }
     if (!parts.isEmpty()) {
         selectedPart = parts.first();
     }
@@ -523,8 +518,8 @@ void DownloadActionQuestionPrivate::setServices(const KService::List& _forcedSer
 }
 #endif
 
-DownloadActionQuestion::DownloadActionQuestion(QWidget *parent, const QUrl &url, const QString &mimeType, bool skipDefaultHtmlPart)
-    : d(new DownloadActionQuestionPrivate(parent, url, mimeType, skipDefaultHtmlPart))
+DownloadActionQuestion::DownloadActionQuestion(QWidget *parent, const QUrl &url, const QString &mimeType)
+    : d(new DownloadActionQuestionPrivate(parent, url, mimeType))
 {
 }
 

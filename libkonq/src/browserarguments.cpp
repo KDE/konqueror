@@ -179,16 +179,6 @@ void BrowserArguments::setOpenWith(const QString& app)
     ensureD()->openWith = app;
 }
 
-bool BrowserArguments::ignoreDefaultHtmlPart() const
-{
-    return d ? d->ignoreDefaultHtmlPart : false;
-}
-
-void BrowserArguments::setIgnoreDefaultHtmlPart(bool ignore)
-{
-    ensureD()->ignoreDefaultHtmlPart = ignore;
-}
-
 Konq::AllowedUrlActions BrowserArguments::urlActions() const
 {
     return d ? d->allowedActions : AllowedUrlActions();

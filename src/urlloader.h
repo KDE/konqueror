@@ -348,7 +348,6 @@ private:
     QPointer<KIO::MimeTypeFinderJob> m_mimeTypeFinderJob;
     QString m_oldLocationBarUrl;
     int m_jobErrorCode = 0;
-    bool m_ignoreDefaultHtmlPart;
     bool m_protocolAllowsReading;
     bool m_useDownloadJob = false; ///<Whether the URL should be downloaded by the part before opening/embedding/saving it
     QPointer<KonqInterfaces::DownloadJob> m_downloadJob; //!<The job to use to download the URL, if any

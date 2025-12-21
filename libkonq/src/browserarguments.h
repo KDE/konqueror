@@ -208,32 +208,6 @@ struct LIBKONQ_EXPORT BrowserArguments {
      */
     void setOpenWith(const QString &app);
 
-    //TODO: is it possible to provide more information about the reasons for ignoring the default part,
-    //so that Konqueror can better choose a different approach
-    /**
-     * @brief Tells Konqueror to ignore the default part for html files when deciding what part to use when
-     * embedding the URL
-     *
-     * There are situation in which Konqueror may think that an URL should be displayed in the default part
-     * for HTML files but it is already known that this isn't actually true. This informs Konqueror of this
-     * situation, so that it can choose another part. This is, for example, the case when downloading a file
-     * supported by the html part but with a response containing the `Content-Disposition: attachment` header.
-     *
-     * @return `true` if Konqueror shouldn't use the default part for html files to embed the URL or `false` if
-     * it can use such part
-     */
-    bool ignoreDefaultHtmlPart() const;
-    /**
-     * @brief Sets whether or not the default part for html files should be ignored when deciding what part to use
-     * to embed the URL
-     *
-     * The default behavior is _not_ to ignore the default part for html files.
-     * @warning It's important to always call this when the default part for html files should be ignored: not doing
-     * so could lead to endless loops
-     * @param ignore whether the default part for html files should be ignored or not
-     */
-    void setIgnoreDefaultHtmlPart(bool ignore);
-
     /**
      * @brief An object describing which actions are allowed when opening the URL
      * @return An object describing which actions are allowed when opening the URL

@@ -76,7 +76,6 @@ UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url
         m_downloadJob->setParent(this);
     }
     determineStartingMimetype();
-    m_ignoreDefaultHtmlPart = m_request.browserArgs.ignoreDefaultHtmlPart();
 }
 
 UrlLoader::~UrlLoader()
@@ -286,29 +285,6 @@ KPluginMetaData UrlLoader::findEmbeddingPart(bool forceServiceName) const
         // for the MIME type.
         part = preferredPart(m_mimeType);
     }
-
-    /* Corner case: webenginepart can't determine mimetype (gives application/octet-stream) but
-     * OpenUrlJob determines a mimetype supported by WebEnginePart (for example application/xml):
-     * if the preferred part is webenginepart, we'd get an endless loop because webenginepart will
-     * call again this. To avoid this, if the preferred service is webenginepart and m_ignoreDefaultHtmlPart
-     * is true, use the second preferred service (if any); otherwise return false. This will offer the user
-     * the option to open or save, instead.
-     *
-     * This can also happen if the URL was opened from a link with the "download" attribute or with a
-     * "CONTENT-DISPOSITION: attachment" header. In these cases, WebEnginePart will always refuse to open
-     * the URL and will ask Konqueror to download it. However, if the preferred part for the URL mimetype is
-     * WebEnginePart itself, this would lead to an endless loop. This check avoids it
-     */
-    if (m_ignoreDefaultHtmlPart && m_part.pluginId() == webEngineName) {
-        QVector<KPluginMetaData> parts = KParts::PartLoader::partsForMimeType(m_mimeType);
-        auto findPart = [&webEngineName](const KPluginMetaData &md){return md.pluginId() != webEngineName;};
-        QVector<KPluginMetaData>::const_iterator partToUse = std::find_if(parts.constBegin(), parts.constEnd(), findPart);
-        if (partToUse != parts.constEnd()) {
-            part = *partToUse;
-        } else {
-            part = KPluginMetaData();
-        }
-    }
     return part;
 }
 
@@ -355,7 +331,7 @@ void UrlLoader::decideEmbedOpenOrSave()
 void UrlLoader::askEmbedSaveOrOpen()
 {
     using Result = DownloadActionQuestion::Action;
-    DownloadActionQuestion dlg(m_mainWindow, m_url, m_mimeType, m_ignoreDefaultHtmlPart);
+    DownloadActionQuestion dlg(m_mainWindow, m_url, m_mimeType);
     dlg.setSuggestedFileName(m_request.suggestedFileName);
     Result saveMode = can(OpenUrlAction::Save) ? Result::Save : Result::Cancel;
     Result openMode = can(OpenUrlAction::Open) ? Result::Open : Result::Cancel;
@@ -529,8 +505,6 @@ void UrlLoader::checkDownloadedMimetype()
         return;
     }
     m_mimeType = typeName;
-    //The URL is a local file now, so there are no problems in opening it with WebEnginePart
-    m_ignoreDefaultHtmlPart = false;
     if (shouldEmbedThis()) {
         m_part = findEmbeddingPart(false);
         if (m_part.isValid()) {
@@ -606,7 +580,7 @@ void UrlLoader::mimetypeDeterminedByJob()
 
 bool UrlLoader::shouldUseDefaultHttpMimeype() const
 {
-    if (m_ignoreDefaultHtmlPart || isMimeTypeKnown(m_mimeType)) {
+    if (isMimeTypeKnown(m_mimeType)) {
         return false;
     }
     const QVector<QString> webengineSchemes = {QStringLiteral("error"), QStringLiteral("konq"), QStringLiteral("data")};

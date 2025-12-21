@@ -240,8 +240,6 @@ void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWin
     }
     args.setMimeType(mime.name());
 
-    bArgs.setIgnoreDefaultHtmlPart(true);
-
     if (objective == WebEnginePartDownloadManager::DownloadObjective::SaveUrl || objective == WebEnginePartDownloadManager::DownloadObjective::SavePageAs) {
         bArgs.setAllowedUrlActions(Konq::AllowedUrlActions{Konq::UrlAction::Save});
     } else if (objective == WebEnginePartDownloadManager::DownloadObjective::AskUser) {
