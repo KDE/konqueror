@@ -264,8 +264,7 @@ private Q_SLOTS:
         QVERIFY(!frame->childView()->isLoading());
         WebEnginePart *part = qobject_cast<WebEnginePart *>(frame->part());
         QVERIFY(part);
-        QTRY_VERIFY(!part->view()->url().isEmpty() && part->view()->url().scheme() != QStringLiteral("konq")); // hack to wait for webengine to load the page
-        QTRY_COMPARE(part->view()->title(), QString("Opener=null")); //It seems the new window can't access the window.opener object, as it the two origins are considered different
+        QTRY_COMPARE(part->view()->title(), QString("Opener=[object Window]"));
         deleteAllMainWindows();
     }
 
