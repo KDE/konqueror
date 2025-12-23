@@ -31,7 +31,7 @@
 </authorgroup>
 
 <date
->2016-11-08</date>
+>2016‒11‒08</date>
 <releaseinfo
 >Uygulamalar 16.12</releaseinfo>
 
@@ -39,11 +39,11 @@
 <keyword
 >KDE</keyword>
 <keyword
->Sistem ayarları</keyword>
+>Sistem Ayarları</keyword>
 <keyword
 >konqueror</keyword>
 <keyword
->gezinme</keyword>
+>tarama</keyword>
 <keyword
 >Java</keyword>
 <keyword
@@ -60,58 +60,58 @@
 >&Java;</title>
 
 <para
->&Java;, makinenize gerekli yazılımın kurulu olması koşuluyla, bir web tarayıcısı tarafından indirilebilen ve çalıştırılan uygulamalar sağlar. Birçok web sitesi &Java;'yı kullanır (örneğin çevrimiçi bankacılık hizmetleri veya interaktif oyun siteleri). Bilinmeyen kaynaklardan çalışan programların, muhtemel zarar büyük olmasa bile, bilgisayarınızın güvenliğini tehdit edebileceğinin farkında olmalısınız.</para>
+>&Java; gerekli yazılım makinenizde kuruluysa uygulamaların bir web tarayıcısı tarafından indirilmesine ve çalıştırılmasına izin verir. Birçok web sitesi &Java; kullanır (örneğin, çevrimiçi bankacılık hizmetleri veya etkileşimli oyun siteleri). Bilinmeyen kaynaklardan program çalıştırmanın, olası hasarın boyutu büyük olmasa bile, bilgisayarınızın güvenliği için bir tehdit oluşturabileceğinin farkında olmalısınız.</para>
 
 <para
 ><guilabel
->Java global olarak etkinleştir</guilabel
-> onay kutusu, varsayılan olarak tüm web sitelerinde &Java; desteğini etkinleştirmenizi sağlar. Belirli bilgisayarlar için &Java;'yı açıp kapatmayı da seçebilirsiniz. Belirli bir ana makine için bir politika eklemek, makine adını yazabileceğiniz bir iletişim penceresi için <guibutton
->Yeni...</guibutton
-> düğmesine tıklayın ve ardından belirli bir makineden &Java; kodunu kabul etmeyi veya reddetmeyi seçmeyi, sayfanın solundaki listeye ekleneceği anlamına gelmektedir.</para>
+>Java’yı global olarak etkinleştir</guilabel
+> onay kutusu, öntanımlı olarak tüm web siteleri için &Java; desteğini açmanızı sağlar. Ayrıca belirli ana bilgisayarlar için &Java;’yı açmayı veya kapatmayı seçebilirsiniz. Belirli bir ana bilgisayar için bir politika eklemek için ana bilgisayar adını yazabileceğiniz ve ardından belirli ana bilgisayardan &Java; kodunu kabul etmeyi veya reddetmeyi seçebileceğiniz bir iletişim kutusu açmak için <guibutton
+>Yeni…</guibutton
+> düğmesine tıklayın; bu, etki alanını sayfanın solundaki listeye ekleyecektir.</para>
 
 <para
->Listeden bir makine seçebilir ve bu makine için farklı bir politika seçmek için <guibutton
->Değiştir...</guibutton
+>Listeden bir ana bilgisayarı seçebilir ve o ana bilgisayar için farklı bir politika seçmek üzere <guibutton
+>Değiştir…</guibutton
 > düğmesine tıklayabilirsiniz. <guibutton
->Delete</guibutton
-> düğmesine tıklamak, seçilen makinenin politikasını kaldırır; sildikten sonra, genel ayarlar o makine için uygulanacaktır.</para>
+>Sil</guibutton
+> düğmesine tıklamak, seçili ana bilgisayar için politikayı kaldırır; silme işleminden sonra, global ayarlar o ana bilgisayara uygulanır.</para>
 
 <para
 >Son olarak, <guilabel
 >Java Çalışma Zamanı Ayarları</guilabel
-> etiketli kontrol grubu, &Java;'nın çalışması için bazı seçenekler belirlemenize izin verir.</para>
+> etiketli denetim grubu, &Java;’nın çalıştırılması için bazı seçenekler ayarlamanıza olanak tanır.</para>
 
 <para
 ><guilabel
->Güvenlik yöneticisini kullan</guilabel
->, varsayılan olarak etkindir. Bu ayar, <acronym
+>Güvenlik yöneticisi kullan</guilabel
+> normalde öntanımlı olarak etkindir. Bu ayar, <acronym
 >JVM</acronym
->'nin Güvenlik Yöneticisi ile başlatılmasını sağlar. Bu işlem, programcıkların sistemdeki dosyalara yazması ve bu dosyaları okumasını engeller. Bu seçeneği kapatmadan önce iki kez düşünmenizi öneririz. Ayrıca <filename
+>’nin bir güvenlik yöneticisi ile çalışmasını sağlar. Bu, uygulamaların dosya sisteminizi okuyup yazmasını, keyfi yuvalar oluşturmasını ve sisteminizi tehlikeye atmak için kullanılabilecek diğer eylemleri yapmasını engeller. Bu seçeneği devre dışı bırakmak sizin riskinizdedir. Belirli sitelerden indirilen kodlara daha fazla izin vermek için <filename
 >$<envar
 >HOME</envar
 >/.java.policy</filename
-> dosyasını &Java; policytool aracı kullanarak düzenleyebilir ve bazı sitelere daha fazla izin verilmesini sağlayabilirsiniz.</para>
+> dosyanızı &Java; policytool yardımcı programıyla değiştirebilirsiniz.</para>
 
 <para
 ><guilabel
->KIO kullan</guilabel
->, ağ bağlantıları için, &kde;'nin kendi <acronym
->KIO</acronym
-> aktarımını <acronym
+>KIO’yu kullan</guilabel
+>, <acronym
 >JVM</acronym
->'nin kullanmasına olanak sağlar.</para>
+>’nin ağ bağlantıları için &kde;’nin kendi <acronym
+>KIO</acronym
+> taşımalarını kullanmasını sağlar.</para>
 
 <para
 ><guilabel
->Artık etkin olmayan applet sunucusunu kapat</guilabel
-> işaret kutusu, arka planda çalışmaya bırakmak yerine Java Applet Sunucusu’nu kapatırken kaynak tasarrufu yapmanıza olanak tanır. Bunu devre dışı bırakmak, Java applet’lerinin daha hızlı başlatmasını sağlayabilir ancak bir Java uygulaması kullanmadığınızda sistem kaynaklarını kullanır. Bunu etkinleştirirseniz, zaman aşımını ayarlayabilirsiniz.</para>
+>Şu kadar süre kadar etkin olmadığında uygulamacık sunucusunu kapat</guilabel
+> onay kutusu, &Java; uygulamacağı sunucusunu arka planda çalışır durumda bırakmak yerine, kullanılmadığında kapatarak özkaynak tasarrufu yapmanızı sağlar. Bunu devre dışı bırakmak &Java; uygulamacıklarının daha hızlı başlamasını sağlayabilir; ancak &Java; uygulamacığını kullanmadığınızda sistem özkaynaklarını kullanır. Bunu etkinleştirirseniz bir zaman aşımı ayarlayabilirsiniz.</para>
 
 <para
->&konqueror;'un sisteminizdeki &Java; yüklemesini otomatik olarak tespit etmesini veya <guilabel
->Java çalıştırılabilir dosya yolu, 'java'</guilabel
-> seçeneğini seçerek, kurulum yolunu kendiniz belirlemeyi seçebilirsiniz. İkinci yöntemi seçmek isteyebilirsiniz, örneğin birden çok ve Java varsa hangisini kullanacağınızı belirtmek isteyebilirsiniz. Kullandığınız Java Sanal Makinesi herhangi bir özel başlatma seçeneği gerektiriyorsa, bunları <guilabel
->Ek Java değişkenleri</guilabel
-> metin kutusuna yazabilirsiniz.</para>
+>Sisteminizdeki &Java; kurulumunu &konqueror; kendiliğinden algılamayı seçebilir veya <guilabel
+>Java yürütülebiliri yolu veya “java” yolu</guilabel
+> seçeneğini belirleyerek kurulum yolunu kendiniz belirtebilirsiniz. Örneğin, sisteminizde birden fazla &Java; kurulumu varsa ve hangisinin kullanılacağını belirtmek istiyorsanız ikinci yöntemi tercih edebilirsiniz. Kullandığınız &Java; sanal makinesi herhangi bir özel başlatma seçeneği gerektiriyorsa bunları <guilabel
+>Ek Java argümanları</guilabel
+> etiketli metin kutusuna yazabilirsiniz.</para>
 
 </sect2>
 
@@ -120,54 +120,50 @@
 >JavaScript</title>
 
 <para
->Adına rağmen, JavaScript hiçbir şekilde &Java; ile ilişkili değildir.</para>
+>Adına rağmen JavaScript’in &Java; ile hiçbir ilgisi yoktur.</para>
 
 <para
->Bu sekmenin ilk kısmı &Java; ayarları ile aynı şekilde çalışır.</para>
+>Bu sekmenin ilk kısmı &Java; ayarlarıyla aynı şekilde çalışmaktadır.</para>
 
 <para
 ><guilabel
->JavaScript global olarak etkinleştir</guilabel
-> onay kutusu, varsayılan olarak tüm web sitelerinde JavaScript desteğini etkinleştirmenizi sağlar. Belirli bilgisayarlar için JavaScript’i açıp kapatmayı da seçebilirsiniz. Belirli bir ana makine için bir politika eklemek, makine adını yazabileceğiniz bir iletişim penceresi için <guibutton
->Yeni...</guibutton
-> düğmesine tıklayın ve ardından belirli bir makineden JavaScript kodunu kabul etmeyi veya reddetmeyi seçmeyi, sayfanın solundaki listeye ekleneceği anlamına gelmektedir.</para>
+>JavaScript’i global olarak etkinleştir</guilabel
+> onay kutusu, öntanımlı olarak tüm web siteleri için JavaScript desteğini açmanızı sağlar. Ayrıca, belirli ana bilgisayarlar için JavaScript’i açmayı veya kapatmayı seçebilirsiniz. Belirli bir ana bilgisayar için bir politika eklemek üzere, ana bilgisayar adını yazabileceğiniz ve ardından söz konusu ana bilgisayardan JavaScript kodunu kabul etmeyi veya reddetmeyi seçebileceğiniz bir iletişim kutusu açmak için <guibutton
+>Yeni…</guibutton
+> düğmesine tıklayın; bu, etki alanını sayfanın solundaki listeye ekleyecektir.</para>
 
 <para
->Listeden bir makine seçebilir ve bu makine için farklı bir politika seçmek için <guibutton
->Değiştir...</guibutton
+>Listeden bir ana bilgisayarı seçebilir ve o ana bilgisayar için farklı bir politika seçmek üzere <guibutton
+>Değiştir…</guibutton
 > düğmesine tıklayabilirsiniz. <guibutton
->Delete</guibutton
-> düğmesine tıklamak, seçilen makinenin politikasını kaldırır; sildikten sonra, genel ayarlar o makine için uygulanacaktır.</para>
-<!-- missing section Debugging
-Enable debugger Enables builtin JavaScript debugger.
-Report errors Enables the reporting of errors that occur when JavaScript code is executed.
-How are errors reported? popup window? icon in status bar?
--->
+>Sil</guibutton
+> düğmesine tıklamak, seçili ana bilgisayar için politikayı kaldırır; silme işleminden sonra, global ayarlar o ana bilgisayara uygulanır.</para>
+
 <para
 ><guilabel
 >Global JavaScript Politikaları</guilabel
-> bölümündeki son seçenekler, bir sayfada belirli eylemler için JavaScript kullanıldığında ne olacağını belirler.</para>
+> bölümündeki seçeneklerin son kümesi, bir sayfanın belirli eylemler için JavaScript kullandığında ne olacağını belirler.</para>
 
 <para
->Pencerelerinizi hareket ettirerek, yeniden boyutlandırarak veya odağı değiştirerek, düzenleme kabiliyetini JavaScript için tek tek etkinleştirebilir veya devre dışı bırakabilirsiniz. JavaScript’in durum çubuğu metnini değiştirmesini de devre dışı bırakabilirsiniz, böylece örneğin bağlantıların tıklandığında sizi nereye götürebileceğini görebilirsiniz. Bı seçenekler, <guilabel
+>JavaScript’in pencerelerinizi taşıyarak, yeniden boyutlandırarak veya odaklamayı değiştirerek yönetme yeteneğini ayrı ayrı etkinleştirebilir veya devre dışı bırakabilirsiniz. Ayrıca JavaScript’in durum çubuğu metnini değiştirmesini de devre dışı bırakabilirsiniz, böylece örneğin, tıklandığında bağlantıların sizi nereye götüreceğini her zaman görebilirsiniz. Bu seçenekler için seçenekler <guilabel
 >İzin Ver</guilabel
 > ve <guilabel
->Yoksay</guilabel
->.</para>
+>Yok Say</guilabel
+> olarak sunulur.</para>
 
 <para
->Yeni bir pencere açmak için, daha fazla kontrol vardır. &konqueror;'da tüm istekler için <guilabel
+>Yeni bir pencere açmak için daha da fazla denetim vardır. &konqueror;’un tüm bu tür isteklere <guilabel
 >İzin Ver</guilabel
->, her istek geldiğinde <guilabel
+>, her istek yapıldığında <guilabel
 >Sor</guilabel
-> ya da tüm açılır pencere istekleri için <guilabel
+> veya tüm açılır pencere isteklerini <guilabel
 >Reddet</guilabel
-> seçeneklerini kullanabilirsiniz.</para>
+> olarak yanıtlayacak biçimde davranmasını ayarlayabilirsiniz.</para>
 
 <para
 ><guilabel
 >Akıllı</guilabel
-> ayar, yalnızca bir pencere oluşturan bir bağlantıyı açıkça seçtiğinizde JavaScript açılır pencerelerine izin verir.</para>
+> ayarı, yalnızca bir JavaScript açılır penceresi oluşturan bir bağlantıyı açıkça seçtiğinizde JavaScript açılır pencerelerine izin verir.</para>
 </sect2>
 
 </sect1>

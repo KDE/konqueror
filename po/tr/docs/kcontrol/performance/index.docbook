@@ -9,7 +9,7 @@
 <article id="performance" lang="&language;">
 <articleinfo>
 <title
->Performans</title>
+>Başarım</title>
 <authorgroup>
 <author
 >&Mike.McBride; &Mike.McBride.mail;</author>
@@ -31,7 +31,7 @@
 </authorgroup>
 
 <date
->2016-11-08</date>
+>2016‒11‒08</date>
 <releaseinfo
 >Uygulamalar 16.12</releaseinfo>
 
@@ -39,38 +39,38 @@
 <keyword
 >KDE</keyword>
 <keyword
->Sistem ayarları</keyword>
+>Sistem Ayarları</keyword>
 <keyword
->performans</keyword>
+>başarım</keyword>
 <keyword
->önyükleme</keyword>
+>önden yükle</keyword>
 </keywordset>
 </articleinfo>
 
 <sect1 id="sys-performance">
 <title
->Performans Ayarları</title>
+>Başarım Ayarları</title>
 
 <para
->&konqueror;, çok çeşitli bilgisayarlarda çok çeşitli kullanıcılar tarafından kullanılmaktadır. Başarım kategorisi altında, bu iletişim kutusu her kullanıcının, &konqueror;'un kurulu olduğu bilgisayarın daha duyarlı olmasını sağlayacak seçenekleri ayarlamasına olanak tanır. </para>
+>&konqueror;, çok çeşitli kullanıcılar tarafından çok çeşitli bilgisayarlarda kullanılır. Başarım kategorisi altında, bu iletişim kutusu her kullanıcının &konqueror;’un kurulu olduğu bilgisayarı daha duyarlı hale getirebilecek seçenekleri ayarlamasına olanak tanır. </para>
 
 <sect2
 ><title
->Önyükleme</title>
+>Önden Yükleme</title>
 <para
 ><guilabel
->Önyükleme</guilabel
-> etiketli alt bölüm, bellek ile performans arasında bir ödünleşim yapar.</para>
+>Önden Yükleme</guilabel
+> başlıklı alt bölüm, bellek ve başarım arasında bir takas yapar.</para>
 
 <para
 ><emphasis
->Önyükleme</emphasis
->, bir kullanıcının, &konqueror; başlatmasını istemeden önce bir &konqueror; örneğini belleğe yüklemeyi ifade eder. Bunun olumlu etkisi, bir kullanıcı &konqueror;'u yüklemesini istediğinde, pencerenin anında görüntülenebilmesidir, çünkü uygulamanın bir kısmı önceden yüklenmiş olacaktır. Negatif etkisi, &konqueror; örneğinin diğer programlar tarafından kullanılabilecek belleği kullanmasıdır. Varsayılan olarak, bir kullanıcı &konqueror;'u kapattığında, örnek kapatılmaz. Bu, bir dahaki sefere bir kullanıcının &konqueror; yüklenmesini istediği zaman hızlıca görünmesini sağlayacaktır.</para>
+>Önden Yükleme</emphasis
+>, bir kullanıcı &konqueror;’ı başlatmayı istemeden önce &konqueror; örneğinin belleğe yüklenmesi anlamına gelir. Bunun olumlu etkisi, bir kullanıcı &konqueror; yüklemeyi istediğinde uygulamanın çoğu önceden yüklenmiş olduğundan pencerenin anında görünmesidir. Olumsuz etkisi ise bu &konqueror; örneğinin diğer programlar tarafından kullanılabilecek belleği kullanmasıdır. Öntanımlı olarak, bir kullanıcı &konqueror; kapattığında, örnek kapatılmaz. Bu, bir kullanıcı bir sonraki sefer &konqueror; yüklenmesini istediğinde, bunun yine neredeyse anında gerçekleşeceği anlamına gelir.</para>
 
 <para
 ><guilabel
->Her zaman önceden yüklenmiş bir örneğe sahip olmayı deneyin</guilabel
-> etiketli son onay kutusu, önceden yüklenmiş, ancak kullanılmayan &konqueror; örneğini veya her zaman mevcut olmasını sağlayacaktır. Bu seçenek bazı makinelerde (özellikle de sınırlı fiziksel belleğe sahip olanlarda) performansı düşürecektir.</para>
+>Her zaman en az bir önceden yüklenmiş örneğe sahip olmaya çalış</guilabel
+> etiketli son onay kutusu, &konqueror; örneğinin her zaman önceden yüklenmiş; ancak kullanılmamış bir örneğinin var olmasını istediğinizi belirtir. Bu seçenek aslında bazı makinelerde (özellikle sınırlı fiziksel belleğe sahip olanlarda) başarımı düşürecektir.</para>
 </sect2>
 </sect1>
 

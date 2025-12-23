@@ -36,11 +36,25 @@
 ><contrib
 >Çeviri</contrib
 ></othercredit
+> <othercredit role="translator"
+><firstname
+>Emir</firstname
+><surname
+>SARI</surname
+><affiliation
+><address
+><email
+>emir_sari@icloud.com</email
+></address
+></affiliation
+><contrib
+>Çeviri</contrib
+></othercredit
 > 
 </authorgroup>
 
 <date
->2016-11-08</date>
+>2016‒11‒08</date>
 <releaseinfo
 >Uygulamalar 16.12</releaseinfo>
 
@@ -48,7 +62,7 @@
 <keyword
 >KDE</keyword>
 <keyword
->Sistem ayarları</keyword>
+>sistem ayarları</keyword>
 <keyword
 >yer imleri</keyword>
 <keyword
@@ -59,15 +73,15 @@
 <title
 >Yer imleri ana sayfası</title>
 <para
->Bu modül, yer imleri ana sayfasını yapılandırmanıza izin verir.</para>
+>Bu modül, yer imleri ana sayfasını yapılandırmanıza olanak tanır.</para>
 <para
->Yer imleri ana sayfasını görüntülemek için, konum çubuğuna <userinput
+>Yer imleri ana sayfasını görüntülemek için konum çubuğuna <userinput
 >bookmarks:/</userinput
 > yazın.</para>
 <para
 >Bu modüldeki ayarlara, konum çubuğuna <userinput
 >bookmarks:/config</userinput
-> yazılarak ta ulaşılabilirdir.</para>
+> yazarak da ulaşılabilirsiniz.</para>
 <sect2 id="conf-general">
 <title
 >Genel ayarlar</title>
@@ -79,18 +93,18 @@
 ></term>
 <listitem>
 <para
->Dizinler otomatik olarak birkaç sütuna dağıtılmıştır. En uygun sütun sayısı, &konqueror; penceresinin genişliğine ve kaç tane yer iminiz olduğuna göre değişir.</para>
+>Klasörler kendiliğinden birkaç sütuna dağıtılır. Olabilecek en iyi sütun sayısı, &konqueror; penceresinin genişliğine ve sahip olduğunuz yer imlerinin sayısına bağlıdır.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><guilabel
->Klasör arkaplanlarını göster</guilabel
+>Klasör arka planlarını göster</guilabel
 ></term>
 <listitem>
 <para
->Bu seçeneği yavaş sistemlerde arkaplan resimlerini pasifleştirmek için etkisizleştirin.</para>
+>Arka plan görsellerini yavaş sistemlerde devre dışı bırakmak isteyebilirsiniz.</para>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -107,18 +121,18 @@
 ></term>
 <listitem>
 <para
->Eğer bu seçenek seçilmezse sıralamanın kökünde bulunan (bir dizinde olmayan) yer imleri gösterilmeyecek. Eğer seçilirse bu yer imleri bir "kök" dizinde toplanacak.</para>
+>Bu seçenek işaretlenmemişse hiyerarşinin kökündeki yer imleri (klasörde olmayan) görüntülenmez. İşaretlenmişse bir “kök” klasörde toplanırlar.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><guilabel
->Düz yer imleri ağacı</guilabel
+>Yer imleri ağacını düzleştir</guilabel
 ></term>
 <listitem>
 <para
->Alt dizinler öntanımlı olarak kendi üst dizinleri içerisinde gösterilir. Eğer bu seçeneği etkinleştirirseniz alt-dizinler ayrı gösterilir. Bu kötü görünür ancak eğer iki sütunda gösterilmesini istediğiniz çok büyük bir dizininiz varsa kullanışlıdır.</para>
+>Alt klasörler öntanımlı olarak üst ögelerinde gösterilir. Bu seçeneği etkinleştirirseniz alt klasörler kendi başlarına görüntülenir. Daha az güzel görünürler; ancak iki sütuna yayılmak istediğiniz çok büyük bir klasörünüz varsa yardımcı olabilir.</para>
 </listitem>
 </varlistentry>
 
@@ -129,7 +143,7 @@
 ></term>
 <listitem>
 <para
->Yaygın konumları içeren bir kutucuk göster (Ev Dizini, Ağ, ...). Dosya yöneticisi olarak &konqueror; kullanıyorsanız kullanışlıdır.</para>
+>Ortak konumları gösteren bir ortak kutu göster (Ana Klasör, Ağ, …). &konqueror;’ı dosya yöneticisi olarak kullanıyorsanız yararlıdır.</para>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -137,16 +151,16 @@
 
 <sect2 id="conf-cache">
 <title
->Resim önbelleği</title>
+>Piksel eşlemi önbelleği</title>
 <variablelist>
 <varlistentry>
 <term
 ><guilabel
->Disk önbellek boyutu</guilabel
+>Disk önbelleği boyutu</guilabel
 ></term>
 <listitem>
 <para
->Resimler için kullanılacak disk alanı belirt.</para>
+>Piksel eşlemlerini önbellemek için ne kadar alan gerekeceğini belirtin.</para>
 </listitem>
 </varlistentry>
 
@@ -157,7 +171,7 @@
 ></term>
 <listitem>
 <para
->Ön belleğe alınmış tüm resimleri kaldır. Bazı simgeler bozulursa ve otomatik olarak yenilenmezlerse bu gerekli olabilir.</para>
+>Önbelleğe alınan tüm görselleri kaldırın. Bazı site simgeleri çürürse ve kendiliğinden yenilenmezse bu gerekli olabilir.</para>
 </listitem>
 </varlistentry>
 </variablelist>

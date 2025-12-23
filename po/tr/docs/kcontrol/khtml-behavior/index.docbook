@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Turkish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-behavior" lang="&language;">
+<articleinfo>
+<title
+>Web Tarama</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Kaan</firstname
+><surname
+>Özdinçer</surname
+><affiliation
+><address
+><email
+>kaanozdincer@gmail.com</email
+></address
+></affiliation
+><contrib
+>Çeviri</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2019‒11‒04</date>
+<releaseinfo
+>Uygulamalar 19.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Sistem Ayarları</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>web tarama</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>Web Tarama</title>
+
+<para
+>&systemsettings;’nın &konqueror; tarayıcısı modülü, &kde;’nin tümleşik web tarayıcısı olan &konqueror;’un davranışları için çeşitli seçenekleri yapılandırmanıza olanak tanır.</para>
+
+<para
+><guilabel
+>Yer imleri koyarken ad ve klasör seç</guilabel
+> işaretliyse &konqueror;, yer iminin başlığını değiştirebilmenize ve yeni bir im koyarken hangi klasörde depolamak istediğinize karar verebilmenize olanak tanır.</para>
+
+<para
+><guilabel
+>Yer imleri araç çubuğunda yalnızca imli yer imlerini göster</guilabel
+> seçeneğini etkinleştirdiğinizde &konqueror;, size yalnızca yer imleri düzenleyicisinde bunun için imlediğiniz yer imlerini araç çubuğunda göstermenize olanak tanır.</para>
+
+<para
+>Bu sayfada etkinleştirebileceğiniz bir sonraki seçenek ise <guilabel
+>Form Tamamlama</guilabel
+>’dır. Bu kutuyu işaretlerseniz &konqueror;, form alanlarına hangi yanıtları girdiğinizi anımsamaya çalışır ve bundan sonra bu yanıtlarla kendiliğinden formları doldurur.</para>
+
+<para
+><guilabel
+>En çok tamamlamalar</guilabel
+> şeklinde etiketli döndürme kutusu ile &konqueror;’ın en çok anımsayacağı form ögesi sayısını yapılandırabilirsiniz.</para>
+
+<note
+><para
+>Bu arada, &konqueror;’un kendiliğinden doldurduğu her şeyi siz daha sonra formu göndermeden önce elle düzenleyebileceksiniz!</para
+></note>
+
+<para
+>Bir sonraki seçenek ise <guilabel
+>Bağlantı üzerindeyken imleci değiştir</guilabel
+> seçeneğidir. Bu seçenek seçiliyse imlecin şekli her ne zaman bir köprünün üzerine gelirse değişir (genellikle bir el imlecine). Bu, bağlantıları ayırt etmeyi kolaylaştırır; özellikle bir görselin içine yerleştirilmişlerse.</para>
+
+<para
+><guilabel
+>Orta tık seçili URL’yi açar</guilabel
+> işaretliyse seçili &URL;’yi bir &konqueror; görünümünde orta tıklayarak açabilirsiniz.</para>
+
+<para
+>Bir kolaylık olarak <guilabel
+>Sağ tık geçmişte geri gider</guilabel
+> özelliğini etkinleştirirseniz &konqueror; penceresinde boş bir alanda sağ tıklamak (&ie; bir bağlantı yokken), sanki araç çubuğundaki <guiicon
+>Geri</guiicon
+> düğmesine basmışsınızcasına davranır.</para>
+
+<para
+><guilabel
+>Kendiliğinden gecikmeli yeniden yüklemeye/yönlendirmeye izin ver</guilabel
+> seçeneğini etkinleştirmek, web sitelerinin sizin etkileşiminiz olmadan sizi başka bir sayfaya göndermesine olanak tanır. Birçok durumda bu bir kolaylıktır. Örneğin, web sitesi yeni bir &URL; adresine taşınmıştır. Bu durumdaki birçok web yöneticisi, eski siteye bir sayfa koyarak taşındığını ve yer imlerinizi değiştirmek isteyebileceğinizi söyler ve ardından sizi kendiliğinden yeni web sitesine yönlendirir. Ancak, bu tür özellikler kötüye kullanıldığında kafa karıştırıcı veya can sıkıcı olabilir ve bu nedenle devre dışı bırakmak isteyebilirsiniz.</para>
+
+<para
+><guilabel
+>&Ctrl; düğmesiyle erişim anahtarı etkinleştirmesine izin ver</guilabel
+>: Web sayfalarını görüntülerken &Ctrl; düğmesine basmak erişim düğmelerini etkinleştirir. Bu kutunun işaretini kaldırmak bu erişilebilirlik özelliğini devre dışı bırakır. Bu değişikliğin etkili olabilmesi için &konqueror;’ın yeniden başlatılması gerekir.</para>
+
+<para
+><guilabel
+>İzlenmek istemediğinizi web sitelerine bildirmek için DNT başlığını gönder</guilabel
+>. Bir web sitesine web tarama alışkanlıklarınızın izlenmesini istemediğinizi bildirmek istiyorsanız bu kutuyu işaretleyin. </para>
+
+<para
+><guilabel
+>Web sitesi parolalarını kaydetmeyi teklif et</guilabel
+>. Web sitesi parolalarını kaydetmeyi sormayı durdurmak için bu kutunun işaretini kaldırın. </para>
+
+<para
+><guilabel
+>Çevrimiçi &PDF; dosyalarını WebEngine kullanarak görüntüle</guilabel
+>. Çevrimiçi &PDF; dosyalarını &systemsettings;’nın <guilabel
+>Dosya İlişkilendirmeleri</guilabel
+> modülünde yapılandırıldığı üzere görüntülemek için bu kutunun işaretini kaldırın. </para>
+
+</sect1>
+
+</article>

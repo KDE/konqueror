@@ -17,7 +17,7 @@
 ><firstname
 >Turgay</firstname
 ><surname
->GULMEZ</surname
+>GÜLMEZ</surname
 ><affiliation
 ><address
 ><email
@@ -31,7 +31,7 @@
 </authorgroup>
 
 <date
->2016-11-08</date>
+>2016‒11‒08</date>
 <releaseinfo
 >Uygulamalar 16.12</releaseinfo>
 
@@ -41,18 +41,18 @@
 <keyword
 >Sistem Ayarları</keyword>
 <keyword
->dosya yönetimi</keyword>
+>dosya yöneticisi</keyword>
 </keywordset>
 </articleinfo>
 
 <para
->Bu modüllerde, &konqueror;'ın dosya yöneticisi işlevselliğinin çeşitli yönlerini yapılandırabilirsiniz. </para>
+>Bu modüllerde, &konqueror;’un dosya yöneticisi işlevselliğinin çeşitli yönlerini yapılandırabilirsiniz. </para>
 
 <note
 ><para
->&konqueror;'ın web tarayıcısı işlevselliği <ulink url="help:/kcontrol/khtml-behavior/index.html"
->kendi yapılandırmamodüllerine</ulink
-> sahiptir.</para
+>&konqueror;’ın web tarayıcısı işlevselliğinin kendi <ulink url="help:/kcontrol/khtml-behavior/index.html"
+>yapılandırma modülleri</ulink
+> vardır.</para
 ></note>
 
 <variablelist>
@@ -63,41 +63,41 @@
 <varlistentry>
 <term
 ><guilabel
->Ayrı pencerelerde klasörleri açmak</guilabel
+>Pencereleri ayrı klasörlerde aç</guilabel
 ></term>
-<listitem
-> <para
->Eğer bu seçenek işaretlenmiş ise, bir klasör açtığınız zaman sadece mevcut pencerede klasörün içeriğini göstermektense yeni bir &konqueror; penceresi oluşturulacaktır.</para
-></listitem>
+<listitem>
+<para
+>Bu seçenek işaretlenmişse bir klasörü açtığınızda klasörün içeriği geçerli pencerede gösterilmek yerine, yeni bir &konqueror; penceresi oluşturulur.</para>
+</listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><guilabel
->Çöp tenekesine kısayol açan 'Sil' menüsü girdilerini göstermek</guilabel
+>Çöp kutusuna göndermeden silmek için “Sil” menü girdisini göster</guilabel
 ></term>
 <listitem>
 <para
->Bunu masaüstünde görüntülenecek menü komutlarını ve dosya yöneticisinin bağlam menülerini <quote
->Silmek</quote
-> istiyorsanız onaylayın. Dosyaları her zaman <guimenuitem
+><quote
+>Sil</quote
+> menü komutlarının masaüstünde ve dosya yöneticisinin bağlam menülerinde görüntülenmesini istiyorsanız bunu işaretleyin. Dosyaları her zaman <guimenuitem
 >Çöp Kutusuna Taşı</guimenuitem
->'yı çağırıyorken &Shift; tuşuna basılı tutarak silebilirsiniz.</para>
+> ögesini çağırırken &Shift; düğmesini basılı tutarak silebilirsiniz.</para>
 </listitem>
 </varlistentry>
 </variablelist>
 
 <para
->&konqueror;'ın dosya yöneticisi biçimleri için olan ayarlar <guilabel
->Görünüm Kipi</guilabel
+>&konqueror;’un dosya yöneticisi kipindeki <guilabel
+>Görünüm Kipleri</guilabel
 >, <guilabel
->Gezinme</guilabel
+>Dolaşım</guilabel
 >, <guilabel
->Servisler</guilabel
+>Hizmetler</guilabel
 >, <guilabel
 >Genel</guilabel
 > ve <guilabel
->Çöp</guilabel
-> sayfaları &dolphin; tarafından da kullanılmaktadır. </para>
+>Çöp Sepeti</guilabel
+> sayfaları için olan ayarlar &dolphin; tarafından da kullanılır.</para>
 
 </article>
