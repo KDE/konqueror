@@ -8,13 +8,13 @@
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2011.
 # obsoleteman <tulliana@gmail.com>, 2008-2009,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014.
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:40+0000\n"
-"PO-Revision-Date: 2024-09-23 15:20+0300\n"
+"PO-Revision-Date: 2025-12-23 12:32+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -112,7 +112,7 @@ msgstr "Yenile"
 #: fsview.cpp:301
 #, kde-format
 msgid "Refresh '%1'"
-msgstr "'%1' Ögesini Yenile"
+msgstr "“%1” Ögesini Yenile"
 
 #: fsview.cpp:313 fsview_part.cpp:115
 #, kde-format
@@ -158,8 +158,8 @@ msgid ""
 "help under menu 'Help/FSView Manual'.</p>"
 msgstr ""
 "<p>FSView eklentisi, görsel bir arayüz yardımıyla dosya sistemindeki ögeleri "
-"bir ağaç şeklinde gösterir.</p><p> Bu görünüm altında dosyalar üzerindeki "
-"değişiklikler anında görüntülenemeyecektir. </p><p> Kullanım seçenekleri "
+"bir ağaç şeklinde gösterir.</p><p>Bu görünüm altında dosyalar üzerindeki "
+"değişiklikler anında görüntülenemeyecektir.</p><p>Kullanım seçenekleri "
 "hakkında detaylı bilgilere Yardım/FSView Kılavuzu menüsü altından "
 "erişebilirsiniz.</p>"
 
@@ -194,7 +194,7 @@ msgstr "Sil"
 #, kde-format
 msgctxt "@action:inmenu Edit"
 msgid "&Edit File Type..."
-msgstr "Dosya Türünü Dü&zenle..."
+msgstr "Dosya Türünü Dü&zenle…"
 
 #: fsview_part.cpp:172
 #, kde-format
@@ -211,8 +211,8 @@ msgid ""
 "For details, see the 'Help/FSView Manual'."
 msgstr ""
 "FSView, dosya ya da dizinler üzerinde bir değişiklik yapıldığı anda etkin "
-"görünümü otomatik olarak değiştirmez.\n"
-"Daha çok detay için Yardım/FSView Kılavuzu'nu okuyun."
+"görünümü kendiliğinden değiştirmez.\n"
+"Daha çok ayrıntı için Yardım/FSView Kılavuzu’nu okuyun."
 
 #. i18n: ectx: Menu (edit)
 #: fsview_part.rc:4
@@ -385,7 +385,7 @@ msgstr "Alan Sınırı Yok"
 #: treemap.cpp:3413
 #, kde-format
 msgid "Area of '%1' (%2)"
-msgstr "'%1' (%2) Alanı"
+msgstr "“%1” (%2) Alanı"
 
 #: treemap.cpp:3425 treemap.cpp:3438
 #, kde-format
@@ -412,7 +412,7 @@ msgstr "Derinlik Sınırı Yok"
 #: treemap.cpp:3486
 #, kde-format
 msgid "Depth of '%1' (%2)"
-msgstr "'%1' (%2) için Derinlik"
+msgstr "“%1” (%2) için Derinlik"
 
 #: treemap.cpp:3498 treemap.cpp:3511
 #, kde-format
