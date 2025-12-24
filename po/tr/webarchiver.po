@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the konqueror package.
 #
-# SPDX-FileCopyrightText: 2022, 2024 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2024, 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2024-09-23 15:20+0300\n"
+"PO-Revision-Date: 2025-12-23 12:37+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -35,7 +35,7 @@ msgstr "Arşiv Oluştur"
 #: app/archivedialog.cpp:98
 #, kde-format
 msgid "The URL of the page that is to be archived"
-msgstr "Arşivlenecek sayfanın URL'si"
+msgstr "Arşivlenecek sayfanın URL’si"
 
 #: app/archivedialog.cpp:101
 #, kde-format
@@ -87,7 +87,7 @@ msgstr[1] " saniye"
 #: app/archivedialog.cpp:132
 #, kde-format
 msgid "None"
-msgstr "Hiçbiri"
+msgstr "Yok"
 
 #: app/archivedialog.cpp:210
 #, kde-kuit-format
@@ -275,12 +275,12 @@ msgstr "Jonathan Marten"
 #: app/main.cpp:43
 #, kde-format
 msgid "URL of the web page to archive"
-msgstr "Arşivlenecek web sayfasının URL'si"
+msgstr "Arşivlenecek web sayfasının URL’si"
 
 #: app/main.cpp:43
 #, kde-format
 msgid "url"
-msgstr "url"
+msgstr "URL"
 
 #. i18n: ectx: label, entry (WaitTime), group (Options)
 #: app/settings.kcfg:10
@@ -349,7 +349,7 @@ msgid ""
 msgstr ""
 "<p>İndirilen tüm dosyaları, yerel göz atmaya uygun bir biçimde tek bir "
 "dizine kaydet.\n"
-"                        Örneğin, ana HTML sayfası her zaman \"index.html\" "
+"                        Örneğin, ana HTML sayfası her zaman “index.html” "
 "olarak ve uzaktaki bir .php sayfası da standart .html uzantısıyla "
 "kaydedilecektir.</p>\n"
 "               <p>Bir standart web arşivi (.war) dosyası oluşturmak için bu "
@@ -412,7 +412,7 @@ msgstr "Kaydedilecek web arşivinin türü"
 #: plugin_webarchiver.cpp:32
 #, kde-format
 msgid "Archive Web Page..."
-msgstr "Web Sayfasını Arşivle..."
+msgstr "Web Sayfasını Arşivle…"
 
 #: plugin_webarchiver.cpp:50
 #, kde-kuit-format
