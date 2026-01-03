@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-09 00:42+0000\n"
+"POT-Creation-Date: 2026-01-03 00:43+0000\n"
 "PO-Revision-Date: 2025-06-30 15:42+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -625,8 +625,8 @@ msgstr ""
 "Не можна передавати адреси при використанні перемикача --preload. Адреси "
 "буде проігноровано.\n"
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4865
-#: src/konqmainwindow.cpp:4911
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4879
+#: src/konqmainwindow.cpp:4925
 #, kde-format
 msgid "no name"
 msgstr "без назви"
@@ -733,7 +733,7 @@ msgstr "Локальна"
 msgid "Miscellaneous"
 msgstr "Різне"
 
-#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4343
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4352
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Відкрити у новому &вікні"
@@ -794,28 +794,28 @@ msgctxt "@title:window"
 msgid "Clear History?"
 msgstr "Спорожнити журнал?"
 
-#: src/konqmainwindow.cpp:735
+#: src/konqmainwindow.cpp:738
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
 msgstr "Завантаження..."
 
-#: src/konqmainwindow.cpp:767
+#: src/konqmainwindow.cpp:770
 #, kde-format
 msgid "Access denied"
 msgstr "Доступ заборонено"
 
-#: src/konqmainwindow.cpp:1527
+#: src/konqmainwindow.cpp:1530
 #, kde-format
 msgid "Open File"
 msgstr "Відкриття файла"
 
-#: src/konqmainwindow.cpp:1591
+#: src/konqmainwindow.cpp:1594
 #, kde-format
 msgid "Canceled."
 msgstr "Припинено."
 
-#: src/konqmainwindow.cpp:1627
+#: src/konqmainwindow.cpp:1630
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -824,54 +824,54 @@ msgstr ""
 "Ця сторінка містить зміни, які не було передано.\n"
 "Закриття сторінки призведе до відкидання змін."
 
-#: src/konqmainwindow.cpp:1628 src/konqmainwindow.cpp:2266
-#: src/konqmainwindow.cpp:2355 src/konqmainwindow.cpp:2387
-#: src/konqmainwindow.cpp:2430 src/konqmainwindow.cpp:2452
-#: src/konqmainwindow.cpp:4830
+#: src/konqmainwindow.cpp:1631 src/konqmainwindow.cpp:2269
+#: src/konqmainwindow.cpp:2358 src/konqmainwindow.cpp:2390
+#: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:2455
+#: src/konqmainwindow.cpp:4844
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
 msgstr "Відкинути зміни?"
 
-#: src/konqmainwindow.cpp:1628 src/konqmainwindow.cpp:2266
-#: src/konqmainwindow.cpp:2355 src/konqmainwindow.cpp:2387
-#: src/konqmainwindow.cpp:2430 src/konqmainwindow.cpp:2453
-#: src/konqmainwindow.cpp:4830
+#: src/konqmainwindow.cpp:1631 src/konqmainwindow.cpp:2269
+#: src/konqmainwindow.cpp:2358 src/konqmainwindow.cpp:2390
+#: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:2456
+#: src/konqmainwindow.cpp:4844
 #, kde-format
 msgid "&Discard Changes"
 msgstr "В&ідкинути зміни"
 
-#: src/konqmainwindow.cpp:1942 src/konqmainwindow.cpp:1948
+#: src/konqmainwindow.cpp:1945 src/konqmainwindow.cpp:1951
 #, kde-format
 msgid "Home Folder"
 msgstr "Домашня тека"
 
-#: src/konqmainwindow.cpp:1943 src/konqmainwindow.cpp:3365
+#: src/konqmainwindow.cpp:1946 src/konqmainwindow.cpp:3368
 #, kde-format
 msgid "Home"
 msgstr "Домівка"
 
-#: src/konqmainwindow.cpp:1949
+#: src/konqmainwindow.cpp:1952
 #, kde-format
 msgid "Navigate to your 'Home Folder'"
 msgstr "Перейти до вашої «Домівки»"
 
-#: src/konqmainwindow.cpp:1950
+#: src/konqmainwindow.cpp:1953
 #, kde-format
 msgid "Navigate to your local 'Home Folder'"
 msgstr "Перейти до вашої локальної «Домівки»"
 
-#: src/konqmainwindow.cpp:1953
+#: src/konqmainwindow.cpp:1956
 #, kde-format
 msgid "Home Page"
 msgstr "Домашня сторінка"
 
-#: src/konqmainwindow.cpp:1955
+#: src/konqmainwindow.cpp:1958
 #, kde-format
 msgid "Navigate to your 'Home Page'"
 msgstr "Перейти до вашої «Домашньої сторінки»"
 
-#: src/konqmainwindow.cpp:1956
+#: src/konqmainwindow.cpp:1959
 #, kde-format
 msgid ""
 "<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
@@ -882,7 +882,7 @@ msgstr ""
 "адресу, до якої веде ця кнопка, у розділі <b>Параметри -> Налаштувати "
 "Konqueror -> Загальне</b>.</html>"
 
-#: src/konqmainwindow.cpp:2265
+#: src/konqmainwindow.cpp:2268
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -891,7 +891,7 @@ msgstr ""
 "Ця вкладка містить зміни, які ще не були збережені.\n"
 "Відокремлення вкладки призведе до втрати змін."
 
-#: src/konqmainwindow.cpp:2354
+#: src/konqmainwindow.cpp:2357
 #, kde-format
 msgid ""
 "This view contains changes that have not been submitted.\n"
@@ -900,7 +900,7 @@ msgstr ""
 "Цей перегляд містить зміни, які ще не були збережені.\n"
 "Закриття перегляду призведе до втрати змін."
 
-#: src/konqmainwindow.cpp:2386
+#: src/konqmainwindow.cpp:2389
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -909,23 +909,23 @@ msgstr ""
 "Ця вкладка містить зміни, які ще не були збережені.\n"
 "Закриття вкладки призведе до втрати змін."
 
-#: src/konqmainwindow.cpp:2412
+#: src/konqmainwindow.cpp:2415
 #, kde-format
 msgid "Do you really want to close all other tabs?"
 msgstr "Ви дійсно хочете закрити всі інші вкладки?"
 
-#: src/konqmainwindow.cpp:2413 src/konqmainwindow.cpp:3445 src/konqtabs.cpp:74
+#: src/konqmainwindow.cpp:2416 src/konqmainwindow.cpp:3448 src/konqtabs.cpp:74
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr "Закрити ін&ші вкладки"
 
-#: src/konqmainwindow.cpp:2413
+#: src/konqmainwindow.cpp:2416
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
 msgstr "Підтвердження закриття інших вкладок"
 
-#: src/konqmainwindow.cpp:2429
+#: src/konqmainwindow.cpp:2432
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -934,7 +934,7 @@ msgstr ""
 "Ця вкладка містить зміни, які ще не були збережені.\n"
 "Закриття інших вкладок призведе до втрати змін."
 
-#: src/konqmainwindow.cpp:2451
+#: src/konqmainwindow.cpp:2454
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -943,233 +943,239 @@ msgstr ""
 "Ця вкладка містить зміни, які ще не були збережені.\n"
 "Перезавантаження всіх вкладок призведе до втрати змін."
 
-#: src/konqmainwindow.cpp:2508
+#: src/konqmainwindow.cpp:2511
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Target"
 msgstr "Введення адреси призначення"
 
-#: src/konqmainwindow.cpp:2515
+#: src/konqmainwindow.cpp:2518
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
 msgstr "<qt><b>%1</b> — неправильна</qt>"
 
-#: src/konqmainwindow.cpp:2525
+#: src/konqmainwindow.cpp:2528
 #, kde-format
 msgid "Copy selected files from %1 to:"
 msgstr "Копіювати вибрані файли з %1 до:"
 
-#: src/konqmainwindow.cpp:2538
+#: src/konqmainwindow.cpp:2541
 #, kde-format
 msgid "Move selected files from %1 to:"
 msgstr "Пересунути вибрані файли з %1 до:"
 
-#: src/konqmainwindow.cpp:2706
+#: src/konqmainwindow.cpp:2709
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
 msgstr "Спорожнити журнал закритих вкладок"
 
-#: src/konqmainwindow.cpp:2728
+#: src/konqmainwindow.cpp:2731
 #, kde-format
 msgid "Save As..."
 msgstr "Зберегти як..."
 
-#: src/konqmainwindow.cpp:2730
+#: src/konqmainwindow.cpp:2733
 #, kde-format
 msgid "Manage..."
 msgstr "Керування..."
 
-#: src/konqmainwindow.cpp:3274
+#: src/konqmainwindow.cpp:3277
 #, kde-format
 msgid "New &Window"
 msgstr "Нове &вікно"
 
-#: src/konqmainwindow.cpp:3279
+#: src/konqmainwindow.cpp:3282
 #, kde-format
 msgid "&Duplicate Window"
 msgstr "&Здублювати вікно"
 
-#: src/konqmainwindow.cpp:3284
+#: src/konqmainwindow.cpp:3287
 #, kde-format
 msgid "Send &Link Address..."
 msgstr "Відіслати &посилання..."
 
-#: src/konqmainwindow.cpp:3288
+#: src/konqmainwindow.cpp:3291
 #, kde-format
 msgid "S&end File..."
 msgstr "В&ідіслати файл..."
 
-#: src/konqmainwindow.cpp:3292
+#: src/konqmainwindow.cpp:3295
 #, kde-format
 msgid "&Open Location"
 msgstr "Відкрити &адресу"
 
-#: src/konqmainwindow.cpp:3298
+#: src/konqmainwindow.cpp:3301
 #, kde-format
 msgid "&Open File..."
 msgstr "Від&крити файл..."
 
-#: src/konqmainwindow.cpp:3303
+#: src/konqmainwindow.cpp:3306
 #, kde-format
 msgid "&Find File..."
 msgstr "&Знайти файл..."
 
-#: src/konqmainwindow.cpp:3312
+#: src/konqmainwindow.cpp:3315
 #, kde-format
 msgid "Lock to Current Location"
 msgstr "Зафіксувати на цій адресі"
 
-#: src/konqmainwindow.cpp:3315
+#: src/konqmainwindow.cpp:3318
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr "П&ерегляд з посиланнями"
 
-#: src/konqmainwindow.cpp:3320
+#: src/konqmainwindow.cpp:3323
 #, kde-format
 msgid "&Up"
 msgstr "В&гору"
 
-#: src/konqmainwindow.cpp:3330
+#: src/konqmainwindow.cpp:3333
 #, kde-format
 msgid "Closed Items"
 msgstr "Закриті вкладки"
 
-#: src/konqmainwindow.cpp:3343
+#: src/konqmainwindow.cpp:3346
 #, kde-format
 msgid "Sessions"
 msgstr "Сеанси"
 
-#: src/konqmainwindow.cpp:3370
+#: src/konqmainwindow.cpp:3373
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr "Що найчастіше відвідуються"
 
-#: src/konqmainwindow.cpp:3374
+#: src/konqmainwindow.cpp:3377
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr "Недавно відвідані"
 
-#: src/konqmainwindow.cpp:3383
+#: src/konqmainwindow.cpp:3386
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr "Показати історію"
 
-#: src/konqmainwindow.cpp:3395
+#: src/konqmainwindow.cpp:3398
 #, kde-format
 msgid "Configure Extensions..."
 msgstr "Налаштувати розширення..."
 
-#: src/konqmainwindow.cpp:3399
+#: src/konqmainwindow.cpp:3402
 #, kde-format
 msgid "Configure Spell Checking..."
 msgstr "Налаштувати перевірку правопису..."
 
-#: src/konqmainwindow.cpp:3405
+#: src/konqmainwindow.cpp:3408
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr "Розділений перегляд: &лівий/правий"
 
-#: src/konqmainwindow.cpp:3410
+#: src/konqmainwindow.cpp:3413
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr "Розділений перегляд: &вгорі/внизу"
 
-#: src/konqmainwindow.cpp:3415 src/konqtabs.cpp:41
+#: src/konqmainwindow.cpp:3418 src/konqtabs.cpp:41
 #, kde-format
 msgid "&New Tab"
 msgstr "Н&ова вкладка"
 
-#: src/konqmainwindow.cpp:3424
+#: src/konqmainwindow.cpp:3427
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr "З&дублювати поточну вкладку"
 
-#: src/konqmainwindow.cpp:3429
+#: src/konqmainwindow.cpp:3432
 #, kde-format
 msgid "Detach Current Tab"
 msgstr "Відокремити поточну вкладку"
 
-#: src/konqmainwindow.cpp:3434
+#: src/konqmainwindow.cpp:3437
 #, kde-format
 msgid "&Close Active View"
 msgstr "&Закрити активний перегляд"
 
-#: src/konqmainwindow.cpp:3439
+#: src/konqmainwindow.cpp:3442
 #, kde-format
 msgid "Close Current Tab"
 msgstr "Закрити поточну вкладку"
 
-#: src/konqmainwindow.cpp:3449
+#: src/konqmainwindow.cpp:3452
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "Активізувати наступну вкладку"
 
-#: src/konqmainwindow.cpp:3453
+#: src/konqmainwindow.cpp:3456
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "Активізувати попередню вкладку"
 
-#: src/konqmainwindow.cpp:3460
+#: src/konqmainwindow.cpp:3463
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "Активізувати вкладку %1"
 
-#: src/konqmainwindow.cpp:3465
+#: src/konqmainwindow.cpp:3468
 #, kde-format
 msgid "Move Tab Left"
 msgstr "Пересунути закладку ліворуч"
 
-#: src/konqmainwindow.cpp:3470
+#: src/konqmainwindow.cpp:3473
 #, kde-format
 msgid "Move Tab Right"
 msgstr "Пересунути вкладку праворуч"
 
 #: src/konqmainwindow.cpp:3478
+#, fuzzy, kde-format
+#| msgid "New &Window"
+msgid "Protect Window"
+msgstr "Нове &вікно"
+
+#: src/konqmainwindow.cpp:3484
 #, kde-format
 msgid "Dump Debug Info"
 msgstr "Скинути інформацію налагодження"
 
-#: src/konqmainwindow.cpp:3496
+#: src/konqmainwindow.cpp:3502
 #, kde-format
 msgid "&Reload"
 msgstr "&Перезавантажити"
 
-#: src/konqmainwindow.cpp:3501 src/konqtabs.cpp:68
+#: src/konqmainwindow.cpp:3507 src/konqtabs.cpp:68
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr "&Перезавантажити всі вкладки"
 
-#: src/konqmainwindow.cpp:3509
+#: src/konqmainwindow.cpp:3515
 #, kde-format
 msgid "&Force Reload"
 msgstr "&Примусово перезавантажити"
 
-#: src/konqmainwindow.cpp:3534
+#: src/konqmainwindow.cpp:3540
 #, kde-format
 msgid "&Stop"
 msgstr "З&упинити"
 
-#: src/konqmainwindow.cpp:3543
+#: src/konqmainwindow.cpp:3549
 #, kde-format
 msgid "Throbber"
 msgstr "Індикатор роботи"
 
-#: src/konqmainwindow.cpp:3547 src/konqmainwindow.cpp:3550
+#: src/konqmainwindow.cpp:3553 src/konqmainwindow.cpp:3556
 #, kde-format
 msgid "L&ocation: "
 msgstr "Адр&еса: "
 
-#: src/konqmainwindow.cpp:3557
+#: src/konqmainwindow.cpp:3563
 #, kde-format
 msgid "Location Bar"
 msgstr "Панель адреси"
 
-#: src/konqmainwindow.cpp:3563
+#: src/konqmainwindow.cpp:3569
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
@@ -1177,12 +1183,12 @@ msgstr ""
 "<html>Панель адреси<br /><br />Введіть адресу сторінки інтернету або рядок "
 "для пошуку.</html>"
 
-#: src/konqmainwindow.cpp:3567
+#: src/konqmainwindow.cpp:3573
 #, kde-format
 msgid "Clear Location Bar"
 msgstr "Спорожнити панель адреси"
 
-#: src/konqmainwindow.cpp:3570
+#: src/konqmainwindow.cpp:3576
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
@@ -1190,22 +1196,22 @@ msgid ""
 msgstr ""
 "<html>Спорожнити панель адреси<br /><br />Стирає вміст панелі адреси.</html>"
 
-#: src/konqmainwindow.cpp:3575
+#: src/konqmainwindow.cpp:3581
 #, kde-format
 msgid "&Bookmarks"
 msgstr "&Закладки"
 
-#: src/konqmainwindow.cpp:3596
+#: src/konqmainwindow.cpp:3602
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "Вс&туп до Konqueror"
 
-#: src/konqmainwindow.cpp:3601
+#: src/konqmainwindow.cpp:3607
 #, kde-format
 msgid "Go"
 msgstr "Перейти"
 
-#: src/konqmainwindow.cpp:3603
+#: src/konqmainwindow.cpp:3609
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
@@ -1214,7 +1220,7 @@ msgstr ""
 "<html>Перейти<br /><br />Переходить до сторінки, адресу якої введено в "
 "панель адреси.</html>"
 
-#: src/konqmainwindow.cpp:3611
+#: src/konqmainwindow.cpp:3617
 #, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
@@ -1225,27 +1231,27 @@ msgstr ""
 "є file:/home/%1, при натисканні на цю кнопку, ви потрапите до file:/home.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3614
+#: src/konqmainwindow.cpp:3620
 #, kde-format
 msgid "Enter the parent folder"
 msgstr "Перейти до батьківської теки"
 
-#: src/konqmainwindow.cpp:3616 src/konqmainwindow.cpp:3617
+#: src/konqmainwindow.cpp:3622 src/konqmainwindow.cpp:3623
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "Перейти на один крок назад в історії навігації"
 
-#: src/konqmainwindow.cpp:3619 src/konqmainwindow.cpp:3620
+#: src/konqmainwindow.cpp:3625 src/konqmainwindow.cpp:3626
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "Перейти на один крок вперед в історії навігації"
 
-#: src/konqmainwindow.cpp:3622 src/konqmainwindow.cpp:3623
+#: src/konqmainwindow.cpp:3628 src/konqmainwindow.cpp:3629
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
 msgstr "Перейти на один крок назад в історії закритих вкладок"
 
-#: src/konqmainwindow.cpp:3625
+#: src/konqmainwindow.cpp:3631
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1256,12 +1262,12 @@ msgstr ""
 "потрібною, щоб оновлювати вебсторінки, які було змінено з часу їхнього "
 "завантаження, і бачити ці зміни.</html>"
 
-#: src/konqmainwindow.cpp:3628
+#: src/konqmainwindow.cpp:3634
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "Перезавантажити поточний документ"
 
-#: src/konqmainwindow.cpp:3630
+#: src/konqmainwindow.cpp:3636
 #, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1272,12 +1278,12 @@ msgstr ""
 "бути потрібною, щоб оновити вебсторінки, які було змінено з часу їхнього "
 "завантаження, і побачити ці зміни.</html>"
 
-#: src/konqmainwindow.cpp:3633
+#: src/konqmainwindow.cpp:3639
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr "Перезавантажити всі документи у всіх вкладках"
 
-#: src/konqmainwindow.cpp:3635
+#: src/konqmainwindow.cpp:3641
 #, kde-format
 msgid ""
 "<html>Stop loading the document<br /><br />All network transfers will be "
@@ -1287,7 +1293,7 @@ msgstr ""
 "<html>Припинити завантаження документа<br /><br />Всі перенесення даних по "
 "мережі буде зупинено, і Konqueror покаже вміст, який було отримано.</html>"
 
-#: src/konqmainwindow.cpp:3639
+#: src/konqmainwindow.cpp:3645
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1300,19 +1306,19 @@ msgstr ""
 "завантаження, і бачити ці зміни. Всі зображення на сторінці буде отримано "
 "повторно, навіть якщо у кеші є їхні копії.</html>"
 
-#: src/konqmainwindow.cpp:3643
+#: src/konqmainwindow.cpp:3649
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr ""
 "Примусово перезавантажити поточний документ і всі зображення, які він містить"
 
-#: src/konqmainwindow.cpp:3645
+#: src/konqmainwindow.cpp:3651
 #, kde-format
 msgid "Stop loading the document"
 msgstr "Зупинити завантаження документа"
 
-#: src/konqmainwindow.cpp:3647
+#: src/konqmainwindow.cpp:3653
 #, kde-format
 msgid ""
 "<html>Cut the currently selected text or item(s) and move it to the system "
@@ -1323,12 +1329,12 @@ msgstr ""
 "кишеню<br /><br /> Це дозволить скористатись командою <b>Вставити</b> в "
 "Konqueror та інших програмах KDE.</html>"
 
-#: src/konqmainwindow.cpp:3651
+#: src/konqmainwindow.cpp:3657
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr "Перенести вибраний текст або елемент(и) у кишеню"
 
-#: src/konqmainwindow.cpp:3653
+#: src/konqmainwindow.cpp:3659
 #, kde-format
 msgid ""
 "<html>Copy the currently selected text or item(s) to the system "
@@ -1339,12 +1345,12 @@ msgstr ""
 ">Це дозволить скористатись командою <b>Вставити</b> в Konqueror та інших "
 "програмах KDE.</html>"
 
-#: src/konqmainwindow.cpp:3657
+#: src/konqmainwindow.cpp:3663
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr "Скопіювати вибраний текст або елементи у кишеню"
 
-#: src/konqmainwindow.cpp:3659
+#: src/konqmainwindow.cpp:3665
 #, kde-format
 msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
@@ -1354,12 +1360,12 @@ msgstr ""
 ">Це також працює для тексту вирізаного або скопійованого з інших програм KDE."
 "</html>"
 
-#: src/konqmainwindow.cpp:3662
+#: src/konqmainwindow.cpp:3668
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "Вставити вміст кишені"
 
-#: src/konqmainwindow.cpp:3664
+#: src/konqmainwindow.cpp:3670
 #, kde-format
 msgid ""
 "<html>Print the currently displayed document<br /><br />You will be "
@@ -1374,12 +1380,12 @@ msgstr ""
 "спеціальних служб друку KDE, таких як створення PDF-файлів з поточного "
 "документа.</html>"
 
-#: src/konqmainwindow.cpp:3670
+#: src/konqmainwindow.cpp:3676
 #, kde-format
 msgid "Print the current document"
 msgstr "Друкує поточний документ"
 
-#: src/konqmainwindow.cpp:3672
+#: src/konqmainwindow.cpp:3678
 #, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
@@ -1389,7 +1395,7 @@ msgstr ""
 "разом зі «виглядом з посиланнями», щоб переглядати багато файлів з однієї "
 "теки."
 
-#: src/konqmainwindow.cpp:3673
+#: src/konqmainwindow.cpp:3679
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
@@ -1398,12 +1404,12 @@ msgstr ""
 "Робить вигляд «зв'язаним». Зв'язаний вигляд повторює зміни теки у інших "
 "зв'язаних виглядах."
 
-#: src/konqmainwindow.cpp:3677
+#: src/konqmainwindow.cpp:3683
 #, kde-format
 msgid "&Inspect Current Page"
 msgstr "&Інспектувати поточну вкладку"
 
-#: src/konqmainwindow.cpp:3678
+#: src/konqmainwindow.cpp:3684
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
@@ -1413,22 +1419,34 @@ msgstr ""
 "панель перегляду буде поділено на дві частини; інструменти розробника буде "
 "показано у другій частині"
 
-#: src/konqmainwindow.cpp:3679
+#: src/konqmainwindow.cpp:3685
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr "Показує інструменти розробника для поточної сторінки"
 
-#: src/konqmainwindow.cpp:3841
+#: src/konqmainwindow.cpp:3687
+#, kde-format
+msgid "Mark the current window as protected"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3688
+#, kde-format
+msgid ""
+"<p>Mark the current window as protected</p><p>Marking a window as protected "
+"ensures that Konqueror will never open external links in it</p>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3850
 #, kde-format
 msgid "Copy &Files..."
 msgstr "Копіювати фа&йли..."
 
-#: src/konqmainwindow.cpp:3845
+#: src/konqmainwindow.cpp:3854
 #, kde-format
 msgid "M&ove Files..."
 msgstr "Пере&сунути файли..."
 
-#: src/konqmainwindow.cpp:4171
+#: src/konqmainwindow.cpp:4180
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
@@ -1437,78 +1455,78 @@ msgstr ""
 "Ви наказали програмі відкрити більше, ніж 20 закладок у вкладках. Виконання "
 "команди може тривати досить довго. Продовжити?"
 
-#: src/konqmainwindow.cpp:4173
+#: src/konqmainwindow.cpp:4182
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "Відкриття закладки у нових вкладках"
 
-#: src/konqmainwindow.cpp:4174
+#: src/konqmainwindow.cpp:4183
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr "Відкрити"
 
-#: src/konqmainwindow.cpp:4336
+#: src/konqmainwindow.cpp:4345
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "Відкрити у &цьому вікні"
 
-#: src/konqmainwindow.cpp:4337
+#: src/konqmainwindow.cpp:4346
 #, kde-format
 msgid "Open the document in current window"
 msgstr "Відкрити документ у поточному вікні"
 
-#: src/konqmainwindow.cpp:4344
+#: src/konqmainwindow.cpp:4353
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "Відкрити документ у новому вікні"
 
-#: src/konqmainwindow.cpp:4350
+#: src/konqmainwindow.cpp:4359
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Відкрити у н&овій вкладці"
 
-#: src/konqmainwindow.cpp:4352
+#: src/konqmainwindow.cpp:4361
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "Відкрити документ у новій вкладці"
 
-#: src/konqmainwindow.cpp:4608
+#: src/konqmainwindow.cpp:4622
 #, kde-format
 msgid "&Open With"
 msgstr "&Відкрити у"
 
-#: src/konqmainwindow.cpp:4621
+#: src/konqmainwindow.cpp:4635
 #, kde-format
 msgid "Open with %1"
 msgstr "Відкрити у %1"
 
-#: src/konqmainwindow.cpp:4671
+#: src/konqmainwindow.cpp:4685
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "Ре&жим перегляду"
 
-#: src/konqmainwindow.cpp:4794
+#: src/konqmainwindow.cpp:4808
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr ""
 "У вас відкрито декілька вкладок у цьому вікні, ви дійсно хочете його закрити?"
 
-#: src/konqmainwindow.cpp:4796
+#: src/konqmainwindow.cpp:4810
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Підтвердження"
 
-#: src/konqmainwindow.cpp:4798
+#: src/konqmainwindow.cpp:4812
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "&Закрити поточну вкладку"
 
-#: src/konqmainwindow.cpp:4826
+#: src/konqmainwindow.cpp:4840
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1517,7 +1535,7 @@ msgstr ""
 "Ця вкладка містить зміни, які ще не були збережені.\n"
 "Закриття вікна призведе до втрати змін."
 
-#: src/konqmainwindow.cpp:4827
+#: src/konqmainwindow.cpp:4841
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1526,7 +1544,7 @@ msgstr ""
 "На цій сторінці є зміни, які ще не було збережено.\n"
 "Закриття вікна призведе до втрати змін."
 
-#: src/konqmainwindow.cpp:4987
+#: src/konqmainwindow.cpp:5001
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1534,28 +1552,28 @@ msgstr ""
 "Не вдається примусити працювати бічну панель або вона взагалі не наявна. "
 "Новий запис неможливо додати."
 
-#: src/konqmainwindow.cpp:4987 src/konqmainwindow.cpp:4994
+#: src/konqmainwindow.cpp:5001 src/konqmainwindow.cpp:5008
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Бічна вебпанель"
 
-#: src/konqmainwindow.cpp:4992
+#: src/konqmainwindow.cpp:5006
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Додати нове інтернет-розширення «%1» до бічної панелі?"
 
-#: src/konqmainwindow.cpp:4994
+#: src/konqmainwindow.cpp:5008
 #, kde-format
 msgid "Add"
 msgstr "Додати"
 
-#: src/konqmainwindow.cpp:4994
+#: src/konqmainwindow.cpp:5008
 #, kde-format
 msgid "Do Not Add"
 msgstr "Не додавати"
 
-#: src/konqmainwindow.cpp:5342 src/urlloader.cpp:854
+#: src/konqmainwindow.cpp:5356 src/urlloader.cpp:854
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1564,7 +1582,7 @@ msgstr ""
 "Здається, існує помилка у налаштуваннях. Ви прив'язали %1 до Konqueror, але "
 "він не вміє обробляти такий тип файлів."
 
-#: src/konqmainwindow.cpp:5427
+#: src/konqmainwindow.cpp:5441
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1587,22 +1605,22 @@ msgstr ""
 "за допомогою діалогового вікна параметрів програми. Хочете змінити параметри "
 "проксі-сервера зараз?"
 
-#: src/konqmainwindow.cpp:5432
+#: src/konqmainwindow.cpp:5446
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "Непідтримувані налаштування проксі"
 
-#: src/konqmainwindow.cpp:5432
+#: src/konqmainwindow.cpp:5446
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "Не використовувати проксі"
 
-#: src/konqmainwindow.cpp:5433 src/konqmainwindow.cpp:5461
+#: src/konqmainwindow.cpp:5447 src/konqmainwindow.cpp:5475
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "Показати вікно налаштовування проксі-сервера"
 
-#: src/konqmainwindow.cpp:5457
+#: src/konqmainwindow.cpp:5471
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1616,22 +1634,22 @@ msgstr ""
 "налаштування:<p><b>Проксі-сервера HTTP:</b> <tt>%1</tt></p><p><b>Проксі-"
 "сервер HTTPS: </b><tt>%2</tt></p>Що робити?"
 
-#: src/konqmainwindow.cpp:5460
+#: src/konqmainwindow.cpp:5474
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "Конфлікт налаштувань проксі-сервера"
 
-#: src/konqmainwindow.cpp:5461
+#: src/konqmainwindow.cpp:5475
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "Використовувати HTTP-проксі (лише цього разу)"
 
-#: src/konqmainwindow.cpp:5461
+#: src/konqmainwindow.cpp:5475
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "Використовувати HTTPS-проксі (лише цього разу)"
 
-#: src/konqmainwindow.cpp:5477
+#: src/konqmainwindow.cpp:5491
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1901,31 +1919,31 @@ msgid "&Window"
 msgstr "В&ікно"
 
 #. i18n: ectx: Menu (help)
-#: src/konqueror.rc:94
+#: src/konqueror.rc:96
 #, kde-format
 msgid "&Help"
 msgstr "&Довідка"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: src/konqueror.rc:99
+#: src/konqueror.rc:101
 #, kde-format
 msgid "Main Toolbar"
 msgstr "Головний пенал"
 
 #. i18n: ectx: ToolBar (extraToolBar)
-#: src/konqueror.rc:110
+#: src/konqueror.rc:112
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Додатковий пенал"
 
 #. i18n: ectx: ToolBar (locationToolBar)
-#: src/konqueror.rc:117
+#: src/konqueror.rc:119
 #, kde-format
 msgid "Location Toolbar"
 msgstr "Пенал адреси"
 
 #. i18n: ectx: ToolBar (bookmarkToolBar)
-#: src/konqueror.rc:123
+#: src/konqueror.rc:125
 #, kde-format
 msgid "Bookmark Toolbar"
 msgstr "Пенал закладок"
