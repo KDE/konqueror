@@ -25,6 +25,7 @@
 #include <QWebEngineFullScreenRequest>
 #include <QWebEngineDownloadRequest>
 #include <QWebEngineNavigationRequest>
+#include <QWebEngineLoadingInfo>
 
 class QAuthenticator;
 class WebSslInfo;
@@ -126,6 +127,19 @@ protected Q_SLOTS:
     void slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature);
     void slotAuthenticationRequired(const QUrl &requestUrl, QAuthenticator *auth);
     void changeFullScreenMode(QWebEngineFullScreenRequest req);
+
+    /**
+     * @brief Changes the life cycle state of the page
+     *
+     * This will make the page either `Active` or `Frozen` (it's never `Discarded`).
+     * A page will be made `Frozen` only if:
+     * - @p recommendedState is't `Active`
+     * - the page is not visible
+     * - the page is not loading (according to #m_loadStatus)
+     * - life cycle state management is enabled (according to WebEnginePartControls::isPageLifecycleManagementEnabled()
+     *
+     * @param recommendedState the life cycle state recommended by `QWebEnginePage`
+     */
     void changeLifecycleState(QWebEnginePage::LifecycleState recommendedState);
 #ifdef MEDIAREQUEST_SUPPORTED
     void chooseDesktopMedia(const QWebEngineDesktopMediaRequest &request);
@@ -208,7 +222,14 @@ private:
 
     QMultiHash<QUrl, QWebEngineDownloadRequest*> m_downloadItems;
 
-    static bool s_allowLifecycleStateManagement;
+    /**
+     * @brief The loading status of the page
+     *
+     * This is needed in changeLifecycleState() to know whether a page is being loaded,
+     * since `QWebEnginePage::isLoading()` sometimes returns `false` even if the
+     * page is loading
+     */
+    QWebEngineLoadingInfo::LoadStatus m_loadStatus;
 };
 
 #endif // WEBENGINEPAGE_H

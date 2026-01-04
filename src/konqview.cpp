@@ -906,7 +906,7 @@ void KonqView::go(int steps)
     restoreHistory();
 }
 
-void KonqView::restoreHistory()
+void KonqView::restoreHistory(bool openUrlIfNoBuffer)
 {
     HistoryEntry h(*currentHistoryEntry());   // make a copy of the current history entry, as the data
     // the pointer points to will change with the following calls
@@ -928,7 +928,12 @@ void KonqView::restoreHistory()
     m_url = {h.url, {}};
     aboutToOpenURL(h.url);
 
-    if (h.reload == false && navigationExtension() && historyIndex() > 0) {
+    bool useRestoreState = !h.reload && navigationExtension() && historyIndex() > 0;
+    if (openUrlIfNoBuffer && useRestoreState && h.buffer.isEmpty()) {
+        useRestoreState = false;
+    }
+
+    if (useRestoreState) {
         //qCDebug(KONQUEROR_LOG) << "Restoring view from stream";
         QDataStream stream(h.buffer);
 
@@ -1482,7 +1487,7 @@ void KonqView::loadDelayed()
             }
             m_pMainWindow->openView(data.type, url, this, req);
         } else {
-            restoreHistory();
+            restoreHistory(true);
         }
     }
     setLockedLocation(data.lockedLocation);

@@ -192,8 +192,16 @@ public:
 
     /**
      * Helper function for go() and KonqViewManager
+     *
+     * @param openUrlIfNoBuffer whether or not to use the part's `openUrl()` method
+     * to restore history if the history entry's buffer is empty. If `false`, the
+     * part's `NavigationExtension` `restoreState()` method is used, even if it
+     * likely won't do anything as there's no data for it in the bufer; if `true`,
+     * the `restoerState()` method isn't used and the part's `openUrl()` method
+     * is called instead. This parameter is ignored if the part
+     * doesnt' have a `NavigationExtension`
      */
-    void restoreHistory();
+    void restoreHistory(bool openUrlIfNoBuffer = false);
 
     void setHistoryIndex(int index)
     {
