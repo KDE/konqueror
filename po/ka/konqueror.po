@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-03 00:43+0000\n"
-"PO-Revision-Date: 2025-06-30 04:20+0200\n"
+"PO-Revision-Date: 2026-01-03 03:09+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1116,10 +1116,9 @@ msgid "Move Tab Right"
 msgstr "ჩანართის მარჯვნივ გადატანა"
 
 #: src/konqmainwindow.cpp:3478
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "&ახალი ფანჯარა"
+msgstr "ფანჯრის დაცვა"
 
 #: src/konqmainwindow.cpp:3484
 #, kde-format
@@ -1415,7 +1414,7 @@ msgstr "პროგრამისტის ხელსაწყოები�
 #: src/konqmainwindow.cpp:3687
 #, kde-format
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "მიმდინარე ფანჯრის დაცულად მონიშვნა"
 
 #: src/konqmainwindow.cpp:3688
 #, kde-format
@@ -1423,6 +1422,8 @@ msgid ""
 "<p>Mark the current window as protected</p><p>Marking a window as protected "
 "ensures that Konqueror will never open external links in it</p>"
 msgstr ""
+"<p>მიმდინარე ფანჯრის დაცულად მონიშვნა</p><p>ფანჯრის მონიშვნა დაცულად "
+"ნიშნავს, რომ Konqueror არასდროს გახსნის მასში გარე ბმულებს</p>"
 
 #: src/konqmainwindow.cpp:3850
 #, kde-format

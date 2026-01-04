@@ -1,7 +1,7 @@
 # Translation of konqueror.po to Catalan
-# Copyright (C) 1999-2025 This_file_is_part_of_KDE
+# Copyright (C) 1999-2026 This_file_is_part_of_KDE
 #
-# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Josep M. Ferrer <txemaq@gmail.com>
 # SPDX-FileCopyrightText: 1999, 2000, 2001, 2002, 2004, 2005, 2006 Sebastià Pla i Sanz <sps@sastia.com>
 # SPDX-FileCopyrightText: 2003, 2011, 2014, 2016, 2017, 2019, 2020, 2022 Antoni Bella Pérez <antonibella5@yahoo.com>
 # SPDX-FileCopyrightText: 2004, 2005 Albert Astals Cid <aacid@kde.org>
@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-03 00:43+0000\n"
-"PO-Revision-Date: 2025-06-30 09:20+0200\n"
+"PO-Revision-Date: 2026-01-03 08:31+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -1127,10 +1127,9 @@ msgid "Move Tab Right"
 msgstr "Mou la pestanya a la dreta"
 
 #: src/konqmainwindow.cpp:3478
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "&Finestra nova"
+msgstr "Protegeix la finestra"
 
 #: src/konqmainwindow.cpp:3484
 #, kde-format
@@ -1428,7 +1427,7 @@ msgstr "Mostra les eines de desenvolupador per a la pàgina actual"
 #: src/konqmainwindow.cpp:3687
 #, kde-format
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "Marca la finestra actual com a protegida"
 
 #: src/konqmainwindow.cpp:3688
 #, kde-format
@@ -1436,6 +1435,8 @@ msgid ""
 "<p>Mark the current window as protected</p><p>Marking a window as protected "
 "ensures that Konqueror will never open external links in it</p>"
 msgstr ""
+"<p>Marca la finestra actual com a protegida</p><p>Marcar una finestra com a "
+"protegida assegura que el Konqueror mai hi obrirà enllaços externs</p>"
 
 #: src/konqmainwindow.cpp:3850
 #, kde-format

@@ -22,14 +22,14 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-03 00:43+0000\n"
-"PO-Revision-Date: 2025-06-30 09:12+0300\n"
+"PO-Revision-Date: 2026-01-03 15:48+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.12.0\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -1120,10 +1120,9 @@ msgid "Move Tab Right"
 msgstr "הזזת לשונית ימינה"
 
 #: src/konqmainwindow.cpp:3478
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "&חלון חדש"
+msgstr "הגנה על חלון"
 
 #: src/konqmainwindow.cpp:3484
 #, kde-format
@@ -1402,7 +1401,7 @@ msgstr "מציג את הכלים למפתחים לעמוד הנוכחי"
 #: src/konqmainwindow.cpp:3687
 #, kde-format
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "סימון החלון הנוכחי כמוגן"
 
 #: src/konqmainwindow.cpp:3688
 #, kde-format
@@ -1410,6 +1409,8 @@ msgid ""
 "<p>Mark the current window as protected</p><p>Marking a window as protected "
 "ensures that Konqueror will never open external links in it</p>"
 msgstr ""
+"<p>סימון החלון הנוכחי כמוגן</p><p>סימון חלון כמוגן מוודא ש־Konqueror אף פעם "
+"לא יפתח בו קישורים חיצוניים</p>"
 
 #: src/konqmainwindow.cpp:3850
 #, kde-format

@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-03 00:43+0000\n"
-"PO-Revision-Date: 2025-06-30 07:08+0200\n"
+"PO-Revision-Date: 2026-01-03 10:26+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1126,10 +1126,9 @@ msgid "Move Tab Right"
 msgstr "Premakni zavihek desno"
 
 #: src/konqmainwindow.cpp:3478
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "Novo okno"
+msgstr "Zavaruj okno"
 
 #: src/konqmainwindow.cpp:3484
 #, kde-format
@@ -1423,7 +1422,7 @@ msgstr "Prikaže razvojna orodja za trenutno stran"
 #: src/konqmainwindow.cpp:3687
 #, kde-format
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "Označi trenutno okno kot zavarovano"
 
 #: src/konqmainwindow.cpp:3688
 #, kde-format
@@ -1431,6 +1430,9 @@ msgid ""
 "<p>Mark the current window as protected</p><p>Marking a window as protected "
 "ensures that Konqueror will never open external links in it</p>"
 msgstr ""
+"<p>Označi trenutno okno kot zavarovano</p><p>Označevanje okna kot "
+"zavarovanega zagotavlja, da Konqueror v njem nikoli ne bo odprl zunanjih "
+"povezav</p>"
 
 #: src/konqmainwindow.cpp:3850
 #, kde-format

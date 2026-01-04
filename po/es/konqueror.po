@@ -1,5 +1,5 @@
 # Spanish translations for konqueror.po package.
-# Copyright (C) 2001-2025 This file is copyright:
+# Copyright (C) 2001-2026 This file is copyright:
 # This file is distributed under the same license as the konqueror package.
 #
 # SPDX-FileCopyrightText: 2001-2002, 2003, 2004 Pablo de Vicente <vicente@oan.es>
@@ -9,7 +9,7 @@
 # SPDX-FileCopyrightText: 2005 Jaime Robles <jaime@robles.nu>
 # SPDX-FileCopyrightText: 2005 Santiago Fernandez Sancho <santi@kde-es.org>
 # SPDX-FileCopyrightText: 2005, 2006 Pablo de Vicente <pablo.devicente@gmail.com>
-# SPDX-FileCopyrightText: 2005, 2010, 2012, 2013, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2005, 2010, 2012, 2013, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Eloy Cuadra <ecuadra@eloihr.net>
 # SPDX-FileCopyrightText: 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
 # SPDX-FileCopyrightText: 2010, 2011, 2012 Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>
 # SPDX-FileCopyrightText: 2011 Javier Vinal <fjvinal@gmail.com>
@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-03 00:43+0000\n"
-"PO-Revision-Date: 2025-06-30 12:29+0100\n"
+"PO-Revision-Date: 2026-01-03 16:45+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.12.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -1134,10 +1134,9 @@ msgid "Move Tab Right"
 msgstr "Mover pestaña a la derecha"
 
 #: src/konqmainwindow.cpp:3478
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "Nueva &ventana"
+msgstr "Proteger ventana"
 
 #: src/konqmainwindow.cpp:3484
 #, kde-format
@@ -1432,7 +1431,7 @@ msgstr "Muestra las herramientas del desarrollador para la página actual"
 #: src/konqmainwindow.cpp:3687
 #, kde-format
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "Marcar la ventana actual como protegida"
 
 #: src/konqmainwindow.cpp:3688
 #, kde-format
@@ -1440,6 +1439,8 @@ msgid ""
 "<p>Mark the current window as protected</p><p>Marking a window as protected "
 "ensures that Konqueror will never open external links in it</p>"
 msgstr ""
+"<p>Marcar la ventana actual como protegida</p><p>Marcar una ventana como "
+"protegida asegura que Konqueror no abra ningún enlace externo en ella.</p>"
 
 #: src/konqmainwindow.cpp:3850
 #, kde-format
