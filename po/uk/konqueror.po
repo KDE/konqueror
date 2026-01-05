@@ -7,13 +7,13 @@
 # Eugene Onischenko <oneugene@ukr.net>, 2002, 2003, 2004, 2005.
 # Andriy Rysin <rysin@kde.org>, 2002, 2003.
 # Ivan Petrouchtchak <fr.ivan@ukrainian-orthodox.org>, 2004, 2005, 2006, 2007, 2008.
-# Yuri Chornoivan <yurchor@ukr.net>, 2008, 2009, 2010, 2011, 2012, 2013, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025.
+# Yuri Chornoivan <yurchor@ukr.net>, 2008, 2009, 2010, 2011, 2012, 2013, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-03 00:43+0000\n"
-"PO-Revision-Date: 2025-06-30 15:42+0300\n"
+"PO-Revision-Date: 2026-01-04 11:46+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1130,10 +1130,9 @@ msgid "Move Tab Right"
 msgstr "Пересунути вкладку праворуч"
 
 #: src/konqmainwindow.cpp:3478
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "Нове &вікно"
+msgstr "Захистити вікно"
 
 #: src/konqmainwindow.cpp:3484
 #, kde-format
@@ -1427,7 +1426,7 @@ msgstr "Показує інструменти розробника для пот
 #: src/konqmainwindow.cpp:3687
 #, kde-format
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "Позначити поточне вікно як захищене"
 
 #: src/konqmainwindow.cpp:3688
 #, kde-format
@@ -1435,6 +1434,8 @@ msgid ""
 "<p>Mark the current window as protected</p><p>Marking a window as protected "
 "ensures that Konqueror will never open external links in it</p>"
 msgstr ""
+"<p>Позначити поточне вікно як захищене</p><p>Якщо вікно позначено як "
+"захищене, Konqueror ніколи не відкриватиме у ньому зовнішні посилання</p>"
 
 #: src/konqmainwindow.cpp:3850
 #, kde-format

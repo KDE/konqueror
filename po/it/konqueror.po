@@ -1,5 +1,5 @@
 # translation of konqueror.po to Italian
-# SPDX-FileCopyrightText: 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Paolo Zamponi <feus73@gmail.com>
+# SPDX-FileCopyrightText: 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Paolo Zamponi <feus73@gmail.com>
 # Andrea Rizzi <rizzi@kde.org>, 2003, 2004, 2005.
 # Andrea RIZZI <arizzi@pi.infn.it>, 2004.
 # Federico Zenith <federico.zenith@member.fsf.org>, 2004, 2010, 2011, 2012, 2013.
@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-03 00:43+0000\n"
-"PO-Revision-Date: 2025-07-13 08:38+0200\n"
+"PO-Revision-Date: 2026-01-03 18:14+0100\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1125,10 +1125,9 @@ msgid "Move Tab Right"
 msgstr "Sposta la scheda a destra"
 
 #: src/konqmainwindow.cpp:3478
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "&Nuova finestra"
+msgstr "Proteggi finestra"
 
 #: src/konqmainwindow.cpp:3484
 #, kde-format
@@ -1428,7 +1427,7 @@ msgstr "Mostra gli strumenti di sviluppo per la pagina corrente"
 #: src/konqmainwindow.cpp:3687
 #, kde-format
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "Marca la finestra corrente come protetta"
 
 #: src/konqmainwindow.cpp:3688
 #, kde-format
@@ -1436,6 +1435,9 @@ msgid ""
 "<p>Mark the current window as protected</p><p>Marking a window as protected "
 "ensures that Konqueror will never open external links in it</p>"
 msgstr ""
+"<p>Marca la finestra corrente come protetta</p><p>Se una finestra come è "
+"marcata come protetta, Konqueror non aprirà mai i collegamenti esterni in "
+"essa contenuti</p>"
 
 #: src/konqmainwindow.cpp:3850
 #, kde-format

@@ -13,20 +13,20 @@
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2011, 2013, 2017.
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2019.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-03 00:43+0000\n"
-"PO-Revision-Date: 2025-07-01 19:36+0900\n"
+"PO-Revision-Date: 2026-01-05 02:56+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 26.03.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #, kde-format
@@ -1118,10 +1118,9 @@ msgid "Move Tab Right"
 msgstr "在右邊顯示分頁"
 
 #: src/konqmainwindow.cpp:3478
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "新視窗(&W)"
+msgstr "保護視窗"
 
 #: src/konqmainwindow.cpp:3484
 #, kde-format
@@ -1396,7 +1395,7 @@ msgstr "為目前頁面顯示開發者工具"
 #: src/konqmainwindow.cpp:3687
 #, kde-format
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "將目前視窗標記為受保護"
 
 #: src/konqmainwindow.cpp:3688
 #, kde-format
@@ -1404,6 +1403,8 @@ msgid ""
 "<p>Mark the current window as protected</p><p>Marking a window as protected "
 "ensures that Konqueror will never open external links in it</p>"
 msgstr ""
+"<p>將目前視窗標記為受保護</p><p>Konquerer 會確保不要在受保護的視窗當中開啟外"
+"部連結</p>"
 
 #: src/konqmainwindow.cpp:3850
 #, kde-format

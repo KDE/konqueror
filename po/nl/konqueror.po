@@ -14,7 +14,7 @@
 # Rinse de Vries <RinseDeVries@home.nl>, 2005.
 # Sander Koning <sanderkoning@kde.nl>, 2005.
 # Kristof Bal <kristof.bal@gmail.com>, 2008.
-# SPDX-FileCopyrightText: 2009, 2010, 2023, 2024, 2025 Freek de Kruijf <f.de.kruijf@hetnet.nl>
+# SPDX-FileCopyrightText: 2009, 2010, 2023, 2024, 2025, 2026 Freek de Kruijf <f.de.kruijf@hetnet.nl>
 # Freek de Kruijf <freek@opensuse.org>, 2009.
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010, 2011, 2012, 2013, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
@@ -22,20 +22,20 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-03 00:43+0000\n"
-"PO-Revision-Date: 2025-06-30 18:07+0200\n"
+"PO-Revision-Date: 2026-01-04 14:13+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.12.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Rinse de Vries,Onno Zweers,Antoon Tolboom,Freek de Kruijf - t/m 2025"
+msgstr "Rinse de Vries,Onno Zweers,Antoon Tolboom,Freek de Kruijf - t/m 2026"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -1135,10 +1135,9 @@ msgid "Move Tab Right"
 msgstr "Tabblad naar rechts verplaatsen"
 
 #: src/konqmainwindow.cpp:3478
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "Nieuw &venster"
+msgstr "Venster beschermen"
 
 #: src/konqmainwindow.cpp:3484
 #, kde-format
@@ -1435,7 +1434,7 @@ msgstr "De ontwikkelhulpmiddelen voor de huidige pagina"
 #: src/konqmainwindow.cpp:3687
 #, kde-format
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "Het huidige venster als beschermd markeren"
 
 #: src/konqmainwindow.cpp:3688
 #, kde-format
@@ -1443,6 +1442,9 @@ msgid ""
 "<p>Mark the current window as protected</p><p>Marking a window as protected "
 "ensures that Konqueror will never open external links in it</p>"
 msgstr ""
+"<p>Het huidige venster als beschermd markeren</p><p>Een venster als "
+"beschermd markeren verzekert dat Konqueror nooit een externe koppeling erin "
+"zal openen</p>"
 
 #: src/konqmainwindow.cpp:3850
 #, kde-format
