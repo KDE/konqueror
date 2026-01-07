@@ -12,7 +12,7 @@
 # Christophe LEFEBVRE <clefebvre@free.fr>, 2010.
 # Sebastien Renard <Sebastien.Renard@digitalfox.org>, 2010, 2011.
 # Sébastien Renard <renard@kde.org>, 2011, 2012.
-# SPDX-FileCopyrightText: 2012, 2013, 2020, 2021, 2022, 2023, 2024, 2025 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2012, 2013, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Xavier Besnard <xavier.besnard@kde.org>
 # Vincent Pinon <vpinon@kde.org>, 2017.
 # Simon Depiets <sdepiets@gmail.com>, 2019.
 # Xavier Besnard <xavier.besnard@kde.org>, 2023.
@@ -25,9 +25,9 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-03 00:43+0000\n"
-"PO-Revision-Date: 2025-07-01 09:29+0200\n"
+"PO-Revision-Date: 2026-01-05 09:19+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <French <kde-francophone@kde.org>>\n"
+"Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.12.0\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -1151,10 +1151,9 @@ msgid "Move Tab Right"
 msgstr "Déplacer un onglet à droite"
 
 #: src/konqmainwindow.cpp:3478
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "&Nouvelle fenêtre"
+msgstr "Protéger la fenêtre"
 
 #: src/konqmainwindow.cpp:3484
 #, kde-format
@@ -1454,7 +1453,7 @@ msgstr "Affiche les outils de développement pour la page courante."
 #: src/konqmainwindow.cpp:3687
 #, kde-format
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "Marquer la fenêtre courante comme « Protégée »"
 
 #: src/konqmainwindow.cpp:3688
 #, kde-format
@@ -1462,6 +1461,9 @@ msgid ""
 "<p>Mark the current window as protected</p><p>Marking a window as protected "
 "ensures that Konqueror will never open external links in it</p>"
 msgstr ""
+"<p>Marquer la fenêtre courante comme « Protégée »</p><p>. Le marquage d'une "
+"fenêtre comme « Protégée » garantit que Konqueror n'ouvrira jamais de liens "
+"externes dans celle-ci.</p>"
 
 #: src/konqmainwindow.cpp:3850
 #, kde-format
