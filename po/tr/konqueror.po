@@ -13,13 +13,13 @@
 # obsoleteman <tulliana@gmail.com>, 2008-2009,2011.
 # obsoleteman <tulliana@gmail.com>, 2010,2012-2013.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-03 00:43+0000\n"
-"PO-Revision-Date: 2025-07-02 17:14+0300\n"
+"PO-Revision-Date: 2026-01-07 20:38+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1129,10 +1129,9 @@ msgid "Move Tab Right"
 msgstr "Sekmeyi Sağa Taşı"
 
 #: src/konqmainwindow.cpp:3478
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "&Yeni Pencere"
+msgstr "Pencereyi Koru"
 
 #: src/konqmainwindow.cpp:3484
 #, kde-format
@@ -1422,7 +1421,7 @@ msgstr "Geçerli sayfa için geliştirici araçlarını gösterir"
 #: src/konqmainwindow.cpp:3687
 #, kde-format
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "Geçerli pencereyi korunmuş olarak imle"
 
 #: src/konqmainwindow.cpp:3688
 #, kde-format
@@ -1430,6 +1429,9 @@ msgid ""
 "<p>Mark the current window as protected</p><p>Marking a window as protected "
 "ensures that Konqueror will never open external links in it</p>"
 msgstr ""
+"<p>Geçerli pencereyi korunmuş olarak imle</p><p>Bir pencereyi korunmuş "
+"olarak imlemek, Konqueror’un orada hiçbir dış bağlantıyı açmayacağı anlamına "
+"gelir.</p>"
 
 #: src/konqmainwindow.cpp:3850
 #, kde-format
