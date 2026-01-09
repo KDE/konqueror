@@ -10,7 +10,7 @@
 # محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
 # عبدالعزيز الشريف <a.a-a.s@hotmail.com>, 2007.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# SPDX-FileCopyrightText: 2008, 2009, 2024, 2025 zayed <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2008, 2009, 2024, 2025, 2026 zayed <zayed.alsaidi@gmail.com>
 # Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2010, 2012.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
 msgid ""
@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-03 00:43+0000\n"
-"PO-Revision-Date: 2025-08-09 22:56+0400\n"
+"PO-Revision-Date: 2026-01-07 19:01+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1122,10 +1122,9 @@ msgid "Move Tab Right"
 msgstr "انقل اللسان لليمين"
 
 #: src/konqmainwindow.cpp:3478
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "نافذة &جديدة"
+msgstr "نافذة محمية"
 
 #: src/konqmainwindow.cpp:3484
 #, kde-format
@@ -1405,7 +1404,7 @@ msgstr "إظهار أدوات المطور للصفحة الحالية"
 #: src/konqmainwindow.cpp:3687
 #, kde-format
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "ضع علامة على النافذة الحالية على أنها محمية"
 
 #: src/konqmainwindow.cpp:3688
 #, kde-format
@@ -1413,6 +1412,8 @@ msgid ""
 "<p>Mark the current window as protected</p><p>Marking a window as protected "
 "ensures that Konqueror will never open external links in it</p>"
 msgstr ""
+"<p>ضع علامة على النافذة الحالية على أنها محمية</p><p>وضع علامة على نافذة على "
+"أنها محمية يضمن أن كنكرر لن يفتح أبدًا روابط خارجية فيها</p>"
 
 #: src/konqmainwindow.cpp:3850
 #, kde-format
