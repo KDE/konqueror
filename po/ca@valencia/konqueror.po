@@ -650,7 +650,7 @@ msgid ""
 "The diagnostics is:\n"
 "%2"
 msgstr ""
-"S'ha produït un error en carregar el mòdul %1.\n"
+"S'ha produït un error mentre es carregava el mòdul %1.\n"
 "El diagnòstic és:\n"
 "%2"
 
@@ -1580,31 +1580,31 @@ msgid ""
 "proxy URL manually in the settings dialog. Do you want to change proxy "
 "settings now?"
 msgstr ""
-"La configuració del servidor intermediari no es pot utilitzar amb el motor "
-"HTML de QtWebEngine. No s'utilitzarà cap servidor intermediari\n"
+"La configuració de l'amfitrió intermediari no es pot utilitzar amb el motor "
+"HTML de QtWebEngine. No s'utilitzarà cap amfitrió intermediari\n"
 "\n"
-"QtWebEngine només accepta un servidor intermediari fix i, per tant, no es "
-"poden utilitzar ni la configuració automàtica del servidor intermediari "
+"QtWebEngine només accepta un amfitrió intermediari fix i, per tant, no es "
+"poden utilitzar ni la configuració automàtica de l'amfitrió intermediari "
 "(PAC) ni el protocol Web Proxy Auto-Discovery amb QtWebEngine. Si necessiteu "
-"un servidor intermediari, trieu una configuració de servidor intermediari "
-"del sistema o especifiqueu manualment l'URL del servidor intermediari en el "
-"diàleg de configuració. Voleu canviar ara la configuració del servidor "
+"un amfitrió intermediari, trieu una configuració d'amfitrió intermediari del "
+"sistema o especifiqueu manualment l'URL de l'amfitrió intermediari en el "
+"diàleg de configuració. Voleu canviar ara la configuració de l'amfitrió "
 "intermediari?"
 
 #: src/konqmainwindow.cpp:5432
 #, kde-format
 msgid "Unsupported proxy configuration"
-msgstr "Configuració no admesa del servidor intermediari"
+msgstr "Configuració no admesa de l'amfitrió intermediari"
 
 #: src/konqmainwindow.cpp:5432
 #, kde-format
 msgid "Don't use a proxy"
-msgstr "No utilitza cap servidor intermediari"
+msgstr "No utilitza cap amfitrió intermediari"
 
 #: src/konqmainwindow.cpp:5433 src/konqmainwindow.cpp:5461
 #, kde-format
 msgid "Show proxy configuration dialog"
-msgstr "Mostra el diàleg de configuració del servidor intermediari"
+msgstr "Mostra el diàleg de configuració de l'amfitrió intermediari"
 
 #: src/konqmainwindow.cpp:5457
 #, kde-format
@@ -1614,26 +1614,26 @@ msgid ""
 "protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
-"La configuració del servidor intermediari no es pot utilitzar amb el motor "
+"La configuració de l'amfitrió intermediari no es pot utilitzar amb el motor "
 "HTML de QtWebEngine perquè no admet tindre servidors intermediaris diferents "
-"per als protocols HTTP i HTTPS. La configuració actual és:<p><b>Servidor "
-"intermediari HTTP:</b> <tt>%1</tt></p><p><b>Servidor intermediari HTTPS: </"
+"per als protocols HTTP i HTTPS. La configuració actual és:<p><b>Amfitrió "
+"intermediari HTTP:</b> <tt>%1</tt></p><p><b>Amfitrió intermediari HTTPS: </"
 "b><tt>%2</tt></p>Què voleu fer?"
 
 #: src/konqmainwindow.cpp:5460
 #, kde-format
 msgid "Conflicting proxy configuration"
-msgstr "Configureu el servidor intermediari entra en conflicte"
+msgstr "Configureu l'amfitrió intermediari entra en conflicte"
 
 #: src/konqmainwindow.cpp:5461
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
-msgstr "Utilitza el servidor intermediari HTTP (només esta vegada)"
+msgstr "Utilitza l'amfitrió intermediari HTTP (només esta vegada)"
 
 #: src/konqmainwindow.cpp:5461
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
-msgstr "Utilitza el servidor intermediari HTTPS (només esta vegada)"
+msgstr "Utilitza l'amfitrió intermediari HTTPS (només esta vegada)"
 
 #: src/konqmainwindow.cpp:5477
 #, kde-format

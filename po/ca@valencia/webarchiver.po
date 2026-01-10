@@ -98,8 +98,8 @@ msgid ""
 "The web archive download cannot use the current proxy settings. No proxy "
 "will be used."
 msgstr ""
-"La baixada de l'arxiu web no pot utilitzar la configuració actual del "
-"servidor intermediari. No s'utilitzarà cap servidor intermediari."
+"La baixada de l'arxiu web no pot utilitzar la configuració actual de "
+"l'amfitrió intermediari. No s'utilitzarà cap amfitrió intermediari."
 
 #: app/archivedialog.cpp:349
 #, kde-format
@@ -231,7 +231,7 @@ msgstr "Mantín"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."
-msgstr "No s'ha pogut crear l'arxiu web."
+msgstr "Ha fallat mentre es creava l'arxiu web."
 
 #: app/archivedialog.cpp:718
 #, kde-kuit-format
@@ -306,14 +306,14 @@ msgstr ""
 #: app/settings.kcfg:18
 #, kde-format
 msgid "Do not use proxy"
-msgstr "No utilitzes cap servidor intermediari"
+msgstr "No utilitzes cap amfitrió intermediari"
 
 #. i18n: ectx: tooltip, entry (NoProxy), group (Options)
 #: app/settings.kcfg:19
 #, kde-format
 msgid "Do not use the system proxy settings to fetch the web page"
 msgstr ""
-"No utilitzes la configuració del servidor intermediari per a recuperar la "
+"No utilitzes la configuració de l'amfitrió intermediari per a recuperar la "
 "pàgina web"
 
 #. i18n: ectx: label, entry (RandomWait), group (Options)
