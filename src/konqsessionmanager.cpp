@@ -124,29 +124,19 @@ void KonqSessionManager::restoreSessionSavedAtLogout()
 {
     askUserToRestoreAutosavedAbandonedSessions();
 
-    m_preloadedWindowsNumber.clear();
     int n = 1;
     while (KonqMainWindow::canBeRestored(n)) {
         const QString className = KXmlGuiWindow::classNameOfToplevel(n);
 
         //The !m_preloadedWindowsNumber.contains(n) check avoid restoring preloaded windows
-        if (className == QLatin1String("KonqMainWindow") && !m_preloadedWindowsNumber.contains(n)) {
+        if (className == QLatin1String("KonqMainWindow")) {
             KonqMainWindow * mw = new KonqMainWindow();
             mw->restore(n);
-
-            //m_preloadedWindowsNumber is set from the readGlobalProperties of the first (n==1) window.
-            //This means that the first window is always restored, even if it was preloaded (because readGlobalProperties
-            //is called from restore). For the first window, we need to check whether it was preloaded, and in that case
-            //delete it afterwards
-            if (n == 1 && m_preloadedWindowsNumber.contains(1)) {
-                mw->deleteLater();
-            }
         } else  {
             qCWarning(KONQUEROR_LOG) << "Unknown class" << className << "in session saved data!";
         }
         ++n;
     }
-    m_preloadedWindowsNumber.clear();
 }
 
 
@@ -494,11 +484,6 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
         enableAutosave();
         return false;
     }
-}
-
-void KonqSessionManager::setPreloadedWindowsNumber(const QList<int> &numbers)
-{
-    m_preloadedWindowsNumber = numbers;
 }
 
 void KonqSessionManager::registerMainWindow(KonqMainWindow* window)

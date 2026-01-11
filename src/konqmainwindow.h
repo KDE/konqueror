@@ -693,10 +693,6 @@ private:
 
     QLineEdit *comboEdit();
 
-    void saveGlobalProperties(KConfig * sessionConfig) override;
-
-    void readGlobalProperties(KConfig * sessionConfig) override;
-
     /**
      * @brief Attempts to show the given window behind this window
      *

@@ -117,8 +117,6 @@ public:
      */
     QString autosaveDirectory() const;
 
-    void setPreloadedWindowsNumber(const QList<int> &numbers);
-
     void registerMainWindow(KonqMainWindow *window);
 
     static QString fullWindowId(const QString &sessionFile, const QString &windowId);
@@ -191,7 +189,7 @@ private:
     bool m_autosaveEnabled;
     bool m_createdOwnedByDir;
     KConfig *m_sessionConfig;
-    QList<int> m_preloadedWindowsNumber;
+
 #ifdef KActivities_FOUND
     ActivityManager *m_activityManager;
 #endif
