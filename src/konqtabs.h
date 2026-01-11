@@ -115,7 +115,7 @@ private:
         New, //!< Create a new tab
         Duplicate, //!< Duplicate the working tab
         Reload, //!< Reload the working tab
-        OtherTabs, //!< The "other tabs" submenu
+        AllTabs, //!< The "all tabs" submenu
         BreakOff, //!< Remove the working tab from the current window and insert it into a new window
         Remove, //!< Close the working tab
         ReloadAll, //!< Reload all tabs

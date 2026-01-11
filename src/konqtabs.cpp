@@ -52,8 +52,8 @@ TabBarContextMenu::TabBarContextMenu(KonqFrameTabs *tabsContainer, QWidget *pare
     addSeparator();
     m_subMenu = new QMenu(this);
     connect(m_subMenu, &QMenu::triggered, this, &TabBarContextMenu::subMenuTriggered);
-    m_actions[TabAction::OtherTabs] = addMenu(m_subMenu);
-    m_actions[TabAction::OtherTabs]->setText(i18n("Other Tabs"));
+    m_actions[TabAction::AllTabs] = addMenu(m_subMenu);
+    m_actions[TabAction::AllTabs]->setText(i18n("All Tabs"));
     addSeparator();
     m_actions[TabAction::BreakOff] = addAction(QIcon::fromTheme(QStringLiteral("tab-detach")),
                                            i18n("D&etach Tab"),
@@ -101,7 +101,7 @@ void TabBarContextMenu::prepare(bool hasWorkingTab)
     m_actions.value(TabAction::Duplicate)->setEnabled(true);
     m_actions.value(TabAction::BreakOff)->setEnabled(hasWorkingTab && m_tabsContainer->tabCount() > 1);
     m_actions.value(TabAction::Remove)->setEnabled(hasWorkingTab);
-    m_actions.value(TabAction::OtherTabs)->setEnabled(true);
+    m_actions.value(TabAction::AllTabs)->setEnabled(true);
     m_actions.value(TabAction::CloseOthers)->setEnabled(hasWorkingTab);
 }
 
