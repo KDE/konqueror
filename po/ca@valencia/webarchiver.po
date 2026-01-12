@@ -98,8 +98,8 @@ msgid ""
 "The web archive download cannot use the current proxy settings. No proxy "
 "will be used."
 msgstr ""
-"La baixada de l'arxiu web no pot utilitzar la configuració actual de "
-"l'amfitrió intermediari. No s'utilitzarà cap amfitrió intermediari."
+"La baixada de l'arxiu web no pot utilitzar la configuració actual del "
+"servidor intermediari. No s'utilitzarà cap servidor intermediari."
 
 #: app/archivedialog.cpp:349
 #, kde-format
@@ -306,14 +306,14 @@ msgstr ""
 #: app/settings.kcfg:18
 #, kde-format
 msgid "Do not use proxy"
-msgstr "No utilitzes cap amfitrió intermediari"
+msgstr "No utilitzes cap servidor intermediari"
 
 #. i18n: ectx: tooltip, entry (NoProxy), group (Options)
 #: app/settings.kcfg:19
 #, kde-format
 msgid "Do not use the system proxy settings to fetch the web page"
 msgstr ""
-"No utilitzes la configuració de l'amfitrió intermediari per a recuperar la "
+"No utilitzes la configuració del servidor intermediari per a recuperar la "
 "pàgina web"
 
 #. i18n: ectx: label, entry (RandomWait), group (Options)
