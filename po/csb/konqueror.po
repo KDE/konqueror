@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-03 00:43+0000\n"
+"POT-Creation-Date: 2026-01-12 00:43+0000\n"
 "PO-Revision-Date: 2009-12-16 23:23+0100\n"
 "Last-Translator: Mark Kwidzińśczi <mark@linuxcsb.org>\n"
 "Language-Team: Kaszëbsczi <i18n-csb@linuxcsb.org>\n"
@@ -38,96 +38,96 @@ msgctxt ""
 msgid "File Manager Behavior"
 msgstr "Sprôwianié lopkama"
 
-#: src/downloadactionquestion.cpp:162
+#: src/downloadactionquestion.cpp:160
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
 msgstr ""
 
-#: src/downloadactionquestion.cpp:170
+#: src/downloadactionquestion.cpp:168
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr ""
 
-#: src/downloadactionquestion.cpp:286
+#: src/downloadactionquestion.cpp:281
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
 msgstr ""
 
-#: src/downloadactionquestion.cpp:288
+#: src/downloadactionquestion.cpp:283
 #, fuzzy, kde-format
 #| msgid "Open with %1"
 msgctxt "@info"
 msgid "Open '%1'?"
 msgstr "Òtemkni w %1"
 
-#: src/downloadactionquestion.cpp:306
+#: src/downloadactionquestion.cpp:301
 #, fuzzy, kde-format
 #| msgid "&Open With"
 msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "Ò&temkni w"
 
-#: src/downloadactionquestion.cpp:314 src/downloadactionquestion.cpp:467
+#: src/downloadactionquestion.cpp:309 src/downloadactionquestion.cpp:462
 #, fuzzy, kde-format
 #| msgid "Open with %1"
 msgctxt "@label:button"
 msgid "&Open with %1"
 msgstr "Òtemkni w %1"
 
-#: src/downloadactionquestion.cpp:323
+#: src/downloadactionquestion.cpp:318
 #, fuzzy, kde-format
 #| msgid "&Open With"
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "Ò&temkni w"
 
-#: src/downloadactionquestion.cpp:339
+#: src/downloadactionquestion.cpp:334
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
 msgstr ""
 
-#: src/downloadactionquestion.cpp:351
+#: src/downloadactionquestion.cpp:346
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
 msgstr ""
 
-#: src/downloadactionquestion.cpp:373
+#: src/downloadactionquestion.cpp:368
 #, fuzzy, kde-format
 #| msgid "Open with %1"
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "Òtemkni w %1"
 
-#: src/downloadactionquestion.cpp:405
+#: src/downloadactionquestion.cpp:400
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
 msgstr ""
 
-#: src/downloadactionquestion.cpp:427
+#: src/downloadactionquestion.cpp:422
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
 msgstr ""
 
-#: src/downloadactionquestion.cpp:431
+#: src/downloadactionquestion.cpp:426
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
 msgstr ""
 
-#: src/downloadactionquestion.cpp:432
+#: src/downloadactionquestion.cpp:427
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
 msgstr ""
 
-#: src/downloadactionquestion.cpp:433
+#: src/downloadactionquestion.cpp:428
 #, kde-format
 msgid ""
 "<p>Viewers which aren't supposed to be able to display %1. Using them will "
@@ -136,14 +136,14 @@ msgid ""
 "officially support it.</p>"
 msgstr ""
 
-#: src/downloadactionquestion.cpp:454
+#: src/downloadactionquestion.cpp:449
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr "Miono:"
 
-#: src/downloadactionquestion.cpp:456
+#: src/downloadactionquestion.cpp:451
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
@@ -610,8 +610,8 @@ msgid ""
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4879
-#: src/konqmainwindow.cpp:4925
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4884
+#: src/konqmainwindow.cpp:4930
 #, kde-format
 msgid "no name"
 msgstr "bez miona"
@@ -812,7 +812,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1631 src/konqmainwindow.cpp:2269
 #: src/konqmainwindow.cpp:2358 src/konqmainwindow.cpp:2390
 #: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:2455
-#: src/konqmainwindow.cpp:4844
+#: src/konqmainwindow.cpp:4849
 #, fuzzy, kde-format
 #| msgid "Discard Changes?"
 msgctxt "@title:window"
@@ -822,7 +822,7 @@ msgstr "Pòcësnąc zmianë?"
 #: src/konqmainwindow.cpp:1631 src/konqmainwindow.cpp:2269
 #: src/konqmainwindow.cpp:2358 src/konqmainwindow.cpp:2390
 #: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:2456
-#: src/konqmainwindow.cpp:4844
+#: src/konqmainwindow.cpp:4849
 #, kde-format
 msgid "&Discard Changes"
 msgstr "&Pòcësni zmianë"
@@ -1480,41 +1480,41 @@ msgstr "Òtemkni w &nowi karce"
 msgid "Open the document in a new tab"
 msgstr "Òtemkni dokùment w nowi karce"
 
-#: src/konqmainwindow.cpp:4622
+#: src/konqmainwindow.cpp:4627
 #, kde-format
 msgid "&Open With"
 msgstr "Ò&temkni w"
 
-#: src/konqmainwindow.cpp:4635
+#: src/konqmainwindow.cpp:4640
 #, kde-format
 msgid "Open with %1"
 msgstr "Òtemkni w %1"
 
-#: src/konqmainwindow.cpp:4685
+#: src/konqmainwindow.cpp:4690
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "Ôrt &wëzdrzatkù"
 
-#: src/konqmainwindow.cpp:4808
+#: src/konqmainwindow.cpp:4813
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr "W tim òknie je òtemkłëch wiele kôrtów. Na gwës zakùńczëc?"
 
-#: src/konqmainwindow.cpp:4810
+#: src/konqmainwindow.cpp:4815
 #, fuzzy, kde-format
 #| msgid "Confirmation"
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Pòcwierdzenié"
 
-#: src/konqmainwindow.cpp:4812
+#: src/konqmainwindow.cpp:4817
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "Zamkni &aktualną kôrtã"
 
-#: src/konqmainwindow.cpp:4840
+#: src/konqmainwindow.cpp:4845
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1523,7 +1523,7 @@ msgstr ""
 "Na kôrta zamëkô w se jesz nie wësłóné zmianë.\n"
 "Zamëkając to òknò niechôsz te zmianë."
 
-#: src/konqmainwindow.cpp:4841
+#: src/konqmainwindow.cpp:4846
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1532,7 +1532,7 @@ msgstr ""
 "Na starna zamëkô w se jesz ni wësłóné zmianë.\n"
 "Zamëkając to òknò niechôsz te zmianë."
 
-#: src/konqmainwindow.cpp:5001
+#: src/konqmainwindow.cpp:5006
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1540,29 +1540,29 @@ msgstr ""
 "Twòjô bòcznô listew nie fùnkcjonëje abò je nieprzistãpnô. Ni mòże dodac "
 "wpisënkù."
 
-#: src/konqmainwindow.cpp:5001 src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5006 src/konqmainwindow.cpp:5013
 #, fuzzy, kde-format
 #| msgid "Web Sidebar"
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Sécowô bòcznô listew"
 
-#: src/konqmainwindow.cpp:5006
+#: src/konqmainwindow.cpp:5011
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Dodac nowé sécowé rozszérzenié \"%1\" do twòji bòczni listewë?"
 
-#: src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5013
 #, kde-format
 msgid "Add"
 msgstr "Dodôj"
 
-#: src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5013
 #, kde-format
 msgid "Do Not Add"
 msgstr "Nie dodôwôj"
 
-#: src/konqmainwindow.cpp:5356 src/urlloader.cpp:854
+#: src/konqmainwindow.cpp:5361 src/urlloader.cpp:828
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1571,7 +1571,7 @@ msgstr ""
 "Pòkôza sã wierã fela kòfigùracëji. Konqueror òstôł sparłączony z ôrtã %1 "
 "jaczégò nie rozmie òbsłużëc."
 
-#: src/konqmainwindow.cpp:5441
+#: src/konqmainwindow.cpp:5446
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1584,23 +1584,23 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5446
+#: src/konqmainwindow.cpp:5451
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5446
+#: src/konqmainwindow.cpp:5451
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5447 src/konqmainwindow.cpp:5475
+#: src/konqmainwindow.cpp:5452 src/konqmainwindow.cpp:5480
 #, fuzzy, kde-format
 #| msgid "Show Configuration Button"
 msgid "Show proxy configuration dialog"
 msgstr "Pòkôżë knąpã kònfigùracëji"
 
-#: src/konqmainwindow.cpp:5471
+#: src/konqmainwindow.cpp:5476
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1609,22 +1609,22 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5474
+#: src/konqmainwindow.cpp:5479
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5475
+#: src/konqmainwindow.cpp:5480
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5475
+#: src/konqmainwindow.cpp:5480
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5491
+#: src/konqmainwindow.cpp:5496
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1955,7 +1955,7 @@ msgstr "&Przëwrócë: Zamkniãtą kôrtã"
 msgid "Und&o"
 msgstr "P&rzëwrócë"
 
-#: src/konqview.cpp:1294
+#: src/konqview.cpp:1299
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1966,31 +1966,31 @@ msgstr ""
 "wëslesz pòdôwczi znowa, wszëtczé dzejania jaczi są skùtkã wësłaniô fòlmùlaru "
 "(np. wësłanié zamówieniô czë szëkba), òstaną znowioné. "
 
-#: src/konqview.cpp:1296
+#: src/konqview.cpp:1301
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Òstrzéga"
 
-#: src/konqview.cpp:1296
+#: src/konqview.cpp:1301
 #, kde-format
 msgid "Resend"
 msgstr "Wëslë znowa"
 
-#: src/urlloader.cpp:427
+#: src/urlloader.cpp:403
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr ""
 
-#: src/urlloader.cpp:430
+#: src/urlloader.cpp:406
 #, kde-format
 msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
 msgstr ""
 
-#: src/urlloader.cpp:437
+#: src/urlloader.cpp:413
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -2000,14 +2000,14 @@ msgid ""
 "display it?"
 msgstr ""
 
-#: src/urlloader.cpp:443
+#: src/urlloader.cpp:419
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
-#: src/urlloader.cpp:797
+#: src/urlloader.cpp:771
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-03 00:43+0000\n"
+"POT-Creation-Date: 2026-01-12 00:43+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -35,91 +35,91 @@ msgctxt ""
 msgid "File Manager Behavior"
 msgstr "文件管理器行为"
 
-#: src/downloadactionquestion.cpp:162
+#: src/downloadactionquestion.cpp:160
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
 msgstr "类型：%1"
 
-#: src/downloadactionquestion.cpp:170
+#: src/downloadactionquestion.cpp:168
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr "记住用于此类型文件的操作"
 
-#: src/downloadactionquestion.cpp:286
+#: src/downloadactionquestion.cpp:281
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
 msgstr "保存“%1”吗？"
 
-#: src/downloadactionquestion.cpp:288
+#: src/downloadactionquestion.cpp:283
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
 msgstr "打开“%1”吗？"
 
-#: src/downloadactionquestion.cpp:306
+#: src/downloadactionquestion.cpp:301
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "打开方式(&O)..."
 
-#: src/downloadactionquestion.cpp:314 src/downloadactionquestion.cpp:467
+#: src/downloadactionquestion.cpp:309 src/downloadactionquestion.cpp:462
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
 msgstr "用 %1 打开(&O)"
 
-#: src/downloadactionquestion.cpp:323
+#: src/downloadactionquestion.cpp:318
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "打开方式(&O)"
 
-#: src/downloadactionquestion.cpp:339
+#: src/downloadactionquestion.cpp:334
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
 msgstr "用 %1 显示(&D)"
 
-#: src/downloadactionquestion.cpp:351
+#: src/downloadactionquestion.cpp:346
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
 msgstr "显示方式(&D)"
 
-#: src/downloadactionquestion.cpp:373
+#: src/downloadactionquestion.cpp:368
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "用 %1 打开(&W)"
 
-#: src/downloadactionquestion.cpp:405
+#: src/downloadactionquestion.cpp:400
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
 msgstr "用 %1 显示(&I)"
 
-#: src/downloadactionquestion.cpp:427
+#: src/downloadactionquestion.cpp:422
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
 msgstr "不支持此文件的查看器"
 
-#: src/downloadactionquestion.cpp:431
+#: src/downloadactionquestion.cpp:426
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
 msgstr "可能无法显示此文件的查看器"
 
-#: src/downloadactionquestion.cpp:432
+#: src/downloadactionquestion.cpp:427
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
 msgstr "此文件"
 
-#: src/downloadactionquestion.cpp:433
+#: src/downloadactionquestion.cpp:428
 #, kde-format
 msgid ""
 "<p>Viewers which aren't supposed to be able to display %1. Using them will "
@@ -131,13 +131,13 @@ msgstr ""
 "提供这些查看器选项是为了应对文件类型检测有误的情况，或者某个特定的查看器的确"
 "能够显示 %1，尽管它并不官方支持此文件类型的情况。</p>"
 
-#: src/downloadactionquestion.cpp:454
+#: src/downloadactionquestion.cpp:449
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr "名称：%1"
 
-#: src/downloadactionquestion.cpp:456
+#: src/downloadactionquestion.cpp:451
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
@@ -602,8 +602,8 @@ msgid ""
 "ignored\n"
 msgstr "您不能在使用 --preload 参数时传递 URL。该 URL 将被忽略\n"
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4879
-#: src/konqmainwindow.cpp:4925
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4884
+#: src/konqmainwindow.cpp:4930
 #, kde-format
 msgid "no name"
 msgstr "未命名"
@@ -799,7 +799,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1631 src/konqmainwindow.cpp:2269
 #: src/konqmainwindow.cpp:2358 src/konqmainwindow.cpp:2390
 #: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:2455
-#: src/konqmainwindow.cpp:4844
+#: src/konqmainwindow.cpp:4849
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -808,7 +808,7 @@ msgstr "丢弃更改？"
 #: src/konqmainwindow.cpp:1631 src/konqmainwindow.cpp:2269
 #: src/konqmainwindow.cpp:2358 src/konqmainwindow.cpp:2390
 #: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:2456
-#: src/konqmainwindow.cpp:4844
+#: src/konqmainwindow.cpp:4849
 #, kde-format
 msgid "&Discard Changes"
 msgstr "丢弃更改(&D)"
@@ -1446,40 +1446,40 @@ msgstr "在新建标签页中打开(&N)"
 msgid "Open the document in a new tab"
 msgstr "在新标签页中打开文档"
 
-#: src/konqmainwindow.cpp:4622
+#: src/konqmainwindow.cpp:4627
 #, kde-format
 msgid "&Open With"
 msgstr "打开方式(&O)"
 
-#: src/konqmainwindow.cpp:4635
+#: src/konqmainwindow.cpp:4640
 #, kde-format
 msgid "Open with %1"
 msgstr "用 %1 打开"
 
-#: src/konqmainwindow.cpp:4685
+#: src/konqmainwindow.cpp:4690
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "视图模式(&V)"
 
-#: src/konqmainwindow.cpp:4808
+#: src/konqmainwindow.cpp:4813
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr "此窗口中打开了多个标签页，您确定要退出吗？"
 
-#: src/konqmainwindow.cpp:4810
+#: src/konqmainwindow.cpp:4815
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "确认"
 
-#: src/konqmainwindow.cpp:4812
+#: src/konqmainwindow.cpp:4817
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "关闭当前标签页(&L)"
 
-#: src/konqmainwindow.cpp:4840
+#: src/konqmainwindow.cpp:4845
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1488,7 +1488,7 @@ msgstr ""
 "此标签页包含尚未提交的更改。\n"
 "关闭窗口将会丢弃这些更改。"
 
-#: src/konqmainwindow.cpp:4841
+#: src/konqmainwindow.cpp:4846
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1497,34 +1497,34 @@ msgstr ""
 "此页面包含尚未提交的更改。\n"
 "关闭窗口将会丢弃这些更改。"
 
-#: src/konqmainwindow.cpp:5001
+#: src/konqmainwindow.cpp:5006
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr "您的侧边栏没有功能或不可用。新的项目无法被添加。"
 
-#: src/konqmainwindow.cpp:5001 src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5006 src/konqmainwindow.cpp:5013
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Web 侧边栏"
 
-#: src/konqmainwindow.cpp:5006
+#: src/konqmainwindow.cpp:5011
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "要给您的侧边栏添加新的 Web 扩展“%1”吗？"
 
-#: src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5013
 #, kde-format
 msgid "Add"
 msgstr "添加"
 
-#: src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5013
 #, kde-format
 msgid "Do Not Add"
 msgstr "不添加"
 
-#: src/konqmainwindow.cpp:5356 src/urlloader.cpp:854
+#: src/konqmainwindow.cpp:5361 src/urlloader.cpp:828
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1532,7 +1532,7 @@ msgid ""
 msgstr ""
 "看起来有配置错误。您将 Konqueror 和 %1 相关联，但它无法处理该文件类型。"
 
-#: src/konqmainwindow.cpp:5441
+#: src/konqmainwindow.cpp:5446
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1550,22 +1550,22 @@ msgstr ""
 "现协议。如果您需要使用代理，请选择系统代理配置，或在设置对话框中手动指定代理 "
 "URL。您确定要立刻更改代理设置吗？"
 
-#: src/konqmainwindow.cpp:5446
+#: src/konqmainwindow.cpp:5451
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "不支持的代理配置"
 
-#: src/konqmainwindow.cpp:5446
+#: src/konqmainwindow.cpp:5451
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "不使用代理"
 
-#: src/konqmainwindow.cpp:5447 src/konqmainwindow.cpp:5475
+#: src/konqmainwindow.cpp:5452 src/konqmainwindow.cpp:5480
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "显示代理配置对话框"
 
-#: src/konqmainwindow.cpp:5471
+#: src/konqmainwindow.cpp:5476
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1577,22 +1577,22 @@ msgstr ""
 "协议以外的代理。当前的设置为：<p><b>HTTP 代理：</b><tt>%1</tt></"
 "p><p><b>HTTPS 代理：</b><tt>%2</tt></p>接下来怎么做？"
 
-#: src/konqmainwindow.cpp:5474
+#: src/konqmainwindow.cpp:5479
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "代理配置冲突"
 
-#: src/konqmainwindow.cpp:5475
+#: src/konqmainwindow.cpp:5480
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "使用 HTTP 代理 (仅限本次)"
 
-#: src/konqmainwindow.cpp:5475
+#: src/konqmainwindow.cpp:5480
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "使用 HTTPS 代理 (仅限本次)"
 
-#: src/konqmainwindow.cpp:5491
+#: src/konqmainwindow.cpp:5496
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1903,7 +1903,7 @@ msgstr "撤销：已关闭窗口(&O)"
 msgid "Und&o"
 msgstr "撤销(&O)"
 
-#: src/konqview.cpp:1294
+#: src/konqview.cpp:1299
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1913,30 +1913,30 @@ msgstr ""
 "您试图查看的页面是表单数据提交的结果。如果您重新发送数据，此表单执行的任何操"
 "作(如搜索或在线购买)都将被重复。"
 
-#: src/konqview.cpp:1296
+#: src/konqview.cpp:1301
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "警告"
 
-#: src/konqview.cpp:1296
+#: src/konqview.cpp:1301
 #, kde-format
 msgid "Resend"
 msgstr "重新发送"
 
-#: src/urlloader.cpp:427
+#: src/urlloader.cpp:403
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "执行"
 
-#: src/urlloader.cpp:430
+#: src/urlloader.cpp:406
 #, kde-format
 msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
 msgstr "显示"
 
-#: src/urlloader.cpp:437
+#: src/urlloader.cpp:413
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -1946,14 +1946,14 @@ msgid ""
 "display it?"
 msgstr "<filename>%1</filename> 是可执行文件。你想要执行它，还是显示它的内容？"
 
-#: src/urlloader.cpp:443
+#: src/urlloader.cpp:419
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename> 是可执行文件。你想要执行它吗？"
 
-#: src/urlloader.cpp:797
+#: src/urlloader.cpp:771
 #, kde-format
 msgid "Save As"
 msgstr "另存为"

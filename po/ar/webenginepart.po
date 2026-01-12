@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-09 00:42+0000\n"
+"POT-Creation-Date: 2026-01-12 00:43+0000\n"
 "PO-Revision-Date: 2025-12-03 16:50+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -940,12 +940,12 @@ msgstr "خزّن بيانات النموذج في حافظتك عند إغلاق
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr "خزّن محتويات الحقول المحددة &عند إغلاق مربع الحوار"
 
-#: src/webenginepage.cpp:173
+#: src/webenginepage.cpp:176
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "مدبر تنزيل  (%1) لا يمكن إيجاده في نظامك."
 
-#: src/webenginepage.cpp:174
+#: src/webenginepage.cpp:177
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -956,7 +956,7 @@ msgstr ""
 "\n"
 "سيُعطل التكامل."
 
-#: src/webenginepage.cpp:521
+#: src/webenginepage.cpp:522
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -965,18 +965,18 @@ msgstr ""
 "يحاول هذا الموقع الوصول إلى معلومات حول موقعك الفعلي. \n"
 "هل تريد السماح لها بالوصول؟"
 
-#: src/webenginepage.cpp:525 src/webenginepage.cpp:603
-#: src/webenginepage.cpp:614
+#: src/webenginepage.cpp:526 src/webenginepage.cpp:604
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid "Network Transmission"
 msgstr "نقل عبر الشبكة"
 
-#: src/webenginepage.cpp:526
+#: src/webenginepage.cpp:527
 #, kde-format
 msgid "Allow access"
 msgstr "اسمح بالوصول"
 
-#: src/webenginepage.cpp:596
+#: src/webenginepage.cpp:597
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -988,12 +988,12 @@ msgstr ""
 "من الممكن أن يعترض طرف ثالث الإرسال، و رؤية هذه المعلومات.\n"
 "هل أنت متأكد أنك تريد إرسال البيانات بلا تعمية؟"
 
-#: src/webenginepage.cpp:604
+#: src/webenginepage.cpp:605
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "ا&رسل غير معمى"
 
-#: src/webenginepage.cpp:611
+#: src/webenginepage.cpp:612
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1002,12 +1002,12 @@ msgstr ""
 "هذا الموقع يحاول إرسال بيانات النموذج عبر البريد الإلكتروني.\n"
 "هل تريد المتابعة؟"
 
-#: src/webenginepage.cpp:615
+#: src/webenginepage.cpp:616
 #, kde-format
 msgid "&Send Email"
 msgstr "ارسل &بريد إلكتروني"
 
-#: src/webenginepage.cpp:666
+#: src/webenginepage.cpp:667
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1016,22 +1016,22 @@ msgstr ""
 "<qt>هل تريد أن تسمح لهذا الموقع أن يرفق الملفات التالية بالبريد الإلكتروني؟</"
 "qt>"
 
-#: src/webenginepage.cpp:668
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "تأكيد مرفقات البريد الإلكتروني"
 
-#: src/webenginepage.cpp:669
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid "&Allow attachments"
 msgstr "ا&سمح بالمرفقات"
 
-#: src/webenginepage.cpp:670
+#: src/webenginepage.cpp:671
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&تجاهل المرفقات"
 
-#: src/webenginepage.cpp:683
+#: src/webenginepage.cpp:684
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1040,22 +1040,22 @@ msgstr ""
 "هذا الموقع يريد إرفاق ملف من جهازك في النموذج المرسل. أُزيل الملف المرفق "
 "لحمايتك."
 
-#: src/webenginepage.cpp:686
+#: src/webenginepage.cpp:687
 #, kde-format
 msgid "Attachment Removed"
 msgstr "أُزيلت المرفقات"
 
-#: src/webenginepage.cpp:805
+#: src/webenginepage.cpp:807
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
 msgstr "حدث خطأ أثناء تحويل الصفحة إلى بي دي اف"
 
-#: src/webenginepage.cpp:810
+#: src/webenginepage.cpp:812
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "حدث خطأ أثناء حفظ إصدارة بي دي اف من الصفحة كـ %1"
 
-#: src/webenginepage.cpp:878
+#: src/webenginepage.cpp:880
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1064,7 +1064,7 @@ msgstr ""
 "يطلب هذا الموقع أن يفتح نافذة منبثقة جديدة.\n"
 "هل تريد السماح بذلك؟"
 
-#: src/webenginepage.cpp:880
+#: src/webenginepage.cpp:882
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1073,17 +1073,17 @@ msgstr ""
 "<qt> لـ<p>%1</p><br/> يطلب هذا الموقع أن يفتح نافذة منبثقة\n"
 "هل تريد السماح بذلك؟</qt>"
 
-#: src/webenginepage.cpp:883
+#: src/webenginepage.cpp:885
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "تأكيد نافذة منبثقة من نوع جافاسكربت"
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:886
 #, kde-format
 msgid "Allow"
 msgstr "اسمح"
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:886
 #, kde-format
 msgid "Do Not Allow"
 msgstr "لا تسمح"

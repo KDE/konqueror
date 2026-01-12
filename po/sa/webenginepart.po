@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-09 00:42+0000\n"
+"POT-Creation-Date: 2026-01-12 00:43+0000\n"
 "PO-Revision-Date: 2024-12-25 19:45+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -953,12 +953,12 @@ msgstr "संवादं बन्दं कुर्वन् KWallet मध�
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr "संवादं बन्दं कुर्वन् KWallet मध्ये प्रपत्रदत्तांशं संग्रहयन्तु"
 
-#: src/webenginepage.cpp:173
+#: src/webenginepage.cpp:176
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "भवतः संस्थापने डाउनलोड् प्रबन्धकः (%1) न लब्धः ।"
 
-#: src/webenginepage.cpp:174
+#: src/webenginepage.cpp:177
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -969,7 +969,7 @@ msgstr ""
 "\n"
 "एकीकरणं अक्षमं भविष्यति।"
 
-#: src/webenginepage.cpp:521
+#: src/webenginepage.cpp:522
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -978,18 +978,18 @@ msgstr ""
 "एषा साइट् भवतः भौतिकस्थानस्य विषये सूचनां प्राप्तुं प्रयतते ।\n"
 "किं भवन्तः तस्य प्रवेशं दातुम् इच्छन्ति ?"
 
-#: src/webenginepage.cpp:525 src/webenginepage.cpp:603
-#: src/webenginepage.cpp:614
+#: src/webenginepage.cpp:526 src/webenginepage.cpp:604
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid "Network Transmission"
 msgstr "संजाल संचरण"
 
-#: src/webenginepage.cpp:526
+#: src/webenginepage.cpp:527
 #, kde-format
 msgid "Allow access"
 msgstr "प्रवेशं अनुमन्यताम्"
 
-#: src/webenginepage.cpp:596
+#: src/webenginepage.cpp:597
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1002,12 +1002,12 @@ msgstr ""
 "तृतीयपक्षः एतां सूचनां अवरुद्ध्य द्रष्टुं शक्नोति ।\n"
 "किं भवन्तः निश्चयेन दत्तांशं अगुप्तरूपेण प्रेषयितुम् इच्छन्ति?"
 
-#: src/webenginepage.cpp:604
+#: src/webenginepage.cpp:605
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&अनगुप्तं प्रेषयतु"
 
-#: src/webenginepage.cpp:611
+#: src/webenginepage.cpp:612
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1016,12 +1016,12 @@ msgstr ""
 "एषा साइट् ईमेलद्वारा प्रपत्रदत्तांशं प्रदातुं प्रयतते।\n"
 "किं त्वं निरन्तरं कर्तुम् इच्छसि ?"
 
-#: src/webenginepage.cpp:615
+#: src/webenginepage.cpp:616
 #, kde-format
 msgid "&Send Email"
 msgstr "&ईमेल प्रेषयन्तु"
 
-#: src/webenginepage.cpp:666
+#: src/webenginepage.cpp:667
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1030,22 +1030,22 @@ msgstr ""
 "<qt>किं भवान् अस्याः साइट्-स्थलस्य ईमेल-सन्देशे निम्नलिखित-सञ्चिकाः संलग्नं कर्तुं अनुमतिं दातुम् "
 "इच्छति?</qt>"
 
-#: src/webenginepage.cpp:668
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "ईमेल संलग्नकस्य पुष्टिः"
 
-#: src/webenginepage.cpp:669
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&अनुलग्नकान् अनुमन्यताम्"
 
-#: src/webenginepage.cpp:670
+#: src/webenginepage.cpp:671
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&संलग्नानाम् अवहेलना"
 
-#: src/webenginepage.cpp:683
+#: src/webenginepage.cpp:684
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1054,24 +1054,24 @@ msgstr ""
 "एषा साइट् भवतः सङ्गणकात् सञ्चिकां प्रपत्रनिवेदने संलग्नं कर्तुं प्रयतते स्म । भवतः रक्षणार्थं "
 "आसक्तिः निष्कासिता आसीत्।"
 
-#: src/webenginepage.cpp:686
+#: src/webenginepage.cpp:687
 #, kde-format
 msgid "Attachment Removed"
 msgstr "आसक्तिः निष्कासितः"
 
-#: src/webenginepage.cpp:805
+#: src/webenginepage.cpp:807
 #, fuzzy, kde-format
 #| msgid "An error occurred while saving the file: %1"
 msgid "An error occurred while converting the page to PDF"
 msgstr "सञ्चिकां रक्षन् त्रुटिः अभवत्: %1"
 
-#: src/webenginepage.cpp:810
+#: src/webenginepage.cpp:812
 #, fuzzy, kde-format
 #| msgid "An error occurred while saving the file: %1"
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "सञ्चिकां रक्षन् त्रुटिः अभवत्: %1"
 
-#: src/webenginepage.cpp:878
+#: src/webenginepage.cpp:880
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1080,7 +1080,7 @@ msgstr ""
 "एषा साइट् नूतनं पॉपअप विण्डो उद्घाटयितुं अनुरोधं करोति ।\n"
 "किं भवन्तः एतत् अनुमन्यन्ते ?"
 
-#: src/webenginepage.cpp:880
+#: src/webenginepage.cpp:882
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1089,17 +1089,17 @@ msgstr ""
 "<qt>एषा साइट् एकं पॉपअप विण्डो उद्घाटयितुं अनुरोधं करोति यत्...<p> %1</p><br/> किं "
 "भवन्तः एतत् अनुमन्यन्ते ?</qt>"
 
-#: src/webenginepage.cpp:883
+#: src/webenginepage.cpp:885
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "जावास्क्रिप्ट पॉपअप पुष्टिः"
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:886
 #, kde-format
 msgid "Allow"
 msgstr "अनुमन्यताम्‌"
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:886
 #, kde-format
 msgid "Do Not Allow"
 msgstr "न अनुमन्यताम्"

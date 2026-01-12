@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-03 00:43+0000\n"
+"POT-Creation-Date: 2026-01-12 00:43+0000\n"
 "PO-Revision-Date: 2026-01-07 20:38+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -49,91 +49,91 @@ msgctxt ""
 msgid "File Manager Behavior"
 msgstr "Dosya Yöneticisi Davranışı"
 
-#: src/downloadactionquestion.cpp:162
+#: src/downloadactionquestion.cpp:160
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
 msgstr "Tür: %1"
 
-#: src/downloadactionquestion.cpp:170
+#: src/downloadactionquestion.cpp:168
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr "Bu türdeki dosyalar için eylemi anımsa"
 
-#: src/downloadactionquestion.cpp:286
+#: src/downloadactionquestion.cpp:281
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
 msgstr "“%1” kaydedilsin mi?"
 
-#: src/downloadactionquestion.cpp:288
+#: src/downloadactionquestion.cpp:283
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
 msgstr "“%1” açılsın mı?"
 
-#: src/downloadactionquestion.cpp:306
+#: src/downloadactionquestion.cpp:301
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "&Birlikte Aç…"
 
-#: src/downloadactionquestion.cpp:314 src/downloadactionquestion.cpp:467
+#: src/downloadactionquestion.cpp:309 src/downloadactionquestion.cpp:462
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
 msgstr "%1 ile &Aç"
 
-#: src/downloadactionquestion.cpp:323
+#: src/downloadactionquestion.cpp:318
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "&Birlikte Aç"
 
-#: src/downloadactionquestion.cpp:339
+#: src/downloadactionquestion.cpp:334
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
 msgstr "%1 İçinde &Görüntüle"
 
-#: src/downloadactionquestion.cpp:351
+#: src/downloadactionquestion.cpp:346
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
 msgstr "Şurada &Görüntüle"
 
-#: src/downloadactionquestion.cpp:373
+#: src/downloadactionquestion.cpp:368
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "%1 &ile Aç"
 
-#: src/downloadactionquestion.cpp:405
+#: src/downloadactionquestion.cpp:400
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
 msgstr "%1 İçind&e Görüntüle"
 
-#: src/downloadactionquestion.cpp:427
+#: src/downloadactionquestion.cpp:422
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
 msgstr "Görüntüleyiciler Dosyayı Desteklemiyor"
 
-#: src/downloadactionquestion.cpp:431
+#: src/downloadactionquestion.cpp:426
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
 msgstr "Görüntüleyiciler Dosyayı Görüntüleyemiyor"
 
-#: src/downloadactionquestion.cpp:432
+#: src/downloadactionquestion.cpp:427
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
 msgstr "bu dosya"
 
-#: src/downloadactionquestion.cpp:433
+#: src/downloadactionquestion.cpp:428
 #, kde-format
 msgid ""
 "<p>Viewers which aren't supposed to be able to display %1. Using them will "
@@ -146,13 +146,13 @@ msgstr ""
 "türünün hatalı olması veya resmi olarak desteklemese bile görüntüleyicinin "
 "%1 dosyasını görüntüleyebilme olasılığına karşın yine de sunulurlar.</p>"
 
-#: src/downloadactionquestion.cpp:454
+#: src/downloadactionquestion.cpp:449
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr "Ad: %1"
 
-#: src/downloadactionquestion.cpp:456
+#: src/downloadactionquestion.cpp:451
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
@@ -627,8 +627,8 @@ msgstr ""
 "--preload anahtarını kullanırken URL’ler geçiremezsiniz. URL’ler yok "
 "sayılacaktır.\n"
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4879
-#: src/konqmainwindow.cpp:4925
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4884
+#: src/konqmainwindow.cpp:4930
 #, kde-format
 msgid "no name"
 msgstr "adsız"
@@ -826,7 +826,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1631 src/konqmainwindow.cpp:2269
 #: src/konqmainwindow.cpp:2358 src/konqmainwindow.cpp:2390
 #: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:2455
-#: src/konqmainwindow.cpp:4844
+#: src/konqmainwindow.cpp:4849
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -835,7 +835,7 @@ msgstr "Değişiklikleri At?"
 #: src/konqmainwindow.cpp:1631 src/konqmainwindow.cpp:2269
 #: src/konqmainwindow.cpp:2358 src/konqmainwindow.cpp:2390
 #: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:2456
-#: src/konqmainwindow.cpp:4844
+#: src/konqmainwindow.cpp:4849
 #, kde-format
 msgid "&Discard Changes"
 msgstr "&Değişiklikleri At"
@@ -1489,40 +1489,40 @@ msgstr "&Yeni Sekmede Aç"
 msgid "Open the document in a new tab"
 msgstr "Belgeyi yeni bir sekmede aç"
 
-#: src/konqmainwindow.cpp:4622
+#: src/konqmainwindow.cpp:4627
 #, kde-format
 msgid "&Open With"
 msgstr "&Birlikte Aç"
 
-#: src/konqmainwindow.cpp:4635
+#: src/konqmainwindow.cpp:4640
 #, kde-format
 msgid "Open with %1"
 msgstr "%1 ile Aç"
 
-#: src/konqmainwindow.cpp:4685
+#: src/konqmainwindow.cpp:4690
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "&Görünüm Kipi"
 
-#: src/konqmainwindow.cpp:4808
+#: src/konqmainwindow.cpp:4813
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr "Birden çok sekme açık, çıkmak istediğinizden emin misiniz?"
 
-#: src/konqmainwindow.cpp:4810
+#: src/konqmainwindow.cpp:4815
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Onay"
 
-#: src/konqmainwindow.cpp:4812
+#: src/konqmainwindow.cpp:4817
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "&Geçerli Sekmeyi Kapat"
 
-#: src/konqmainwindow.cpp:4840
+#: src/konqmainwindow.cpp:4845
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1531,7 +1531,7 @@ msgstr ""
 "Bu sekme gönderilmemiş değişiklikler içeriyor.\n"
 "Pencereyi kapatmak tüm değişiklikleri yok sayar."
 
-#: src/konqmainwindow.cpp:4841
+#: src/konqmainwindow.cpp:4846
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1540,35 +1540,35 @@ msgstr ""
 "Bu sayfa gönderilmemiş değişiklikler içeriyor.\n"
 "Pencereyi kapatmak tüm değişiklikleri yok sayar."
 
-#: src/konqmainwindow.cpp:5001
+#: src/konqmainwindow.cpp:5006
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr ""
 "Kenar çubuğunuz işlevsel değil veya ulaşılamıyor. Yeni girdi eklenemedi."
 
-#: src/konqmainwindow.cpp:5001 src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5006 src/konqmainwindow.cpp:5013
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Web Kenar Çubuğu"
 
-#: src/konqmainwindow.cpp:5006
+#: src/konqmainwindow.cpp:5011
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "“%1” web uzantısı kenar çubuğuna eklensin mi?"
 
-#: src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5013
 #, kde-format
 msgid "Add"
 msgstr "Ekle"
 
-#: src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5013
 #, kde-format
 msgid "Do Not Add"
 msgstr "Ekleme"
 
-#: src/konqmainwindow.cpp:5356 src/urlloader.cpp:854
+#: src/konqmainwindow.cpp:5361 src/urlloader.cpp:828
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1577,7 +1577,7 @@ msgstr ""
 "Bir yapılandırma hatası var gibi görünüyor. Konqueror’u %1 türündeki "
 "dosyalar ile ilişkilendirmişsiniz; ancak Konqueror bu tür dosyaları açamıyor."
 
-#: src/konqmainwindow.cpp:5441
+#: src/konqmainwindow.cpp:5446
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1598,22 +1598,22 @@ msgstr ""
 "yapılandırmasını seçin veya ayarlar penceresinde elle bir vekil URL’si "
 "tanımlayın. Vekil ayarlarını şimdi değiştirmek istiyor musunuz?"
 
-#: src/konqmainwindow.cpp:5446
+#: src/konqmainwindow.cpp:5451
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "Desteklenmeyen vekil yapılandırması"
 
-#: src/konqmainwindow.cpp:5446
+#: src/konqmainwindow.cpp:5451
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "Vekil kullanma"
 
-#: src/konqmainwindow.cpp:5447 src/konqmainwindow.cpp:5475
+#: src/konqmainwindow.cpp:5452 src/konqmainwindow.cpp:5480
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "Vekil yapılandırma iletişim kutusunu göster"
 
-#: src/konqmainwindow.cpp:5471
+#: src/konqmainwindow.cpp:5476
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1626,22 +1626,22 @@ msgstr ""
 "<p><b>HTTP vekili:</b> <tt>%1</tt></p><p><b>HTTPS vekili: </b><tt>%2</tt></"
 "p>Ne yapmak istiyorsunuz?"
 
-#: src/konqmainwindow.cpp:5474
+#: src/konqmainwindow.cpp:5479
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "Çakışan vekil yapılandırması"
 
-#: src/konqmainwindow.cpp:5475
+#: src/konqmainwindow.cpp:5480
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "HTTP vekilini kullan (yalnızca bu kez)"
 
-#: src/konqmainwindow.cpp:5475
+#: src/konqmainwindow.cpp:5480
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "HTTPS vekilini kullan (yalnızca bu kez)"
 
-#: src/konqmainwindow.cpp:5491
+#: src/konqmainwindow.cpp:5496
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1956,7 +1956,7 @@ msgstr "Ge&ri Al: Kapatılmış Pencere"
 msgid "Und&o"
 msgstr "&Geri Al"
 
-#: src/konqview.cpp:1294
+#: src/konqview.cpp:1299
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1967,30 +1967,30 @@ msgstr ""
 "Veriyi yeniden gönderirseniz formun daha önceden gerçekleştirdiği herhangi "
 "bir eylem (örneğin arama veya çevrimiçi satın alma) yinelenecektir."
 
-#: src/konqview.cpp:1296
+#: src/konqview.cpp:1301
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Uyarı"
 
-#: src/konqview.cpp:1296
+#: src/konqview.cpp:1301
 #, kde-format
 msgid "Resend"
 msgstr "Yeniden Gönder"
 
-#: src/urlloader.cpp:427
+#: src/urlloader.cpp:403
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "Yürüt"
 
-#: src/urlloader.cpp:430
+#: src/urlloader.cpp:406
 #, kde-format
 msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
 msgstr "Görüntüle"
 
-#: src/urlloader.cpp:437
+#: src/urlloader.cpp:413
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -2002,14 +2002,14 @@ msgstr ""
 "<filename>%1</filename>, yürütülebilir. Yürütmek mi görüntülemek mi "
 "istiyorsunuz?"
 
-#: src/urlloader.cpp:443
+#: src/urlloader.cpp:419
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename>, yürütülebilir. Yürütmek istiyor musunuz?"
 
-#: src/urlloader.cpp:797
+#: src/urlloader.cpp:771
 #, kde-format
 msgid "Save As"
 msgstr "Farklı Kaydet"

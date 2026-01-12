@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-03 00:43+0000\n"
+"POT-Creation-Date: 2026-01-12 00:43+0000\n"
 "PO-Revision-Date: 2025-07-20 01:47+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -37,91 +37,91 @@ msgctxt ""
 msgid "File Manager Behavior"
 msgstr "파일 관리자 행동"
 
-#: src/downloadactionquestion.cpp:162
+#: src/downloadactionquestion.cpp:160
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
 msgstr "형식: %1"
 
-#: src/downloadactionquestion.cpp:170
+#: src/downloadactionquestion.cpp:168
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr "이 파일 형식과 연결된 동작 기억하기"
 
-#: src/downloadactionquestion.cpp:286
+#: src/downloadactionquestion.cpp:281
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
 msgstr "'%1' 저장?"
 
-#: src/downloadactionquestion.cpp:288
+#: src/downloadactionquestion.cpp:283
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
 msgstr "'%1' 열기?"
 
-#: src/downloadactionquestion.cpp:306
+#: src/downloadactionquestion.cpp:301
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "다음으로 열기(&O)..."
 
-#: src/downloadactionquestion.cpp:314 src/downloadactionquestion.cpp:467
+#: src/downloadactionquestion.cpp:309 src/downloadactionquestion.cpp:462
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
 msgstr "%1(으)로 열기(&O)"
 
-#: src/downloadactionquestion.cpp:323
+#: src/downloadactionquestion.cpp:318
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "다음으로 열기(&O)"
 
-#: src/downloadactionquestion.cpp:339
+#: src/downloadactionquestion.cpp:334
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
 msgstr "%1에서 표시(&D)"
 
-#: src/downloadactionquestion.cpp:351
+#: src/downloadactionquestion.cpp:346
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
 msgstr "다음에서 표시(&D)"
 
-#: src/downloadactionquestion.cpp:373
+#: src/downloadactionquestion.cpp:368
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "%1(으)로 열기(&W)"
 
-#: src/downloadactionquestion.cpp:405
+#: src/downloadactionquestion.cpp:400
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
 msgstr "%1에서 표시(&I)"
 
-#: src/downloadactionquestion.cpp:427
+#: src/downloadactionquestion.cpp:422
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
 msgstr "이 파일을 지원하지 않는 뷰어"
 
-#: src/downloadactionquestion.cpp:431
+#: src/downloadactionquestion.cpp:426
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
 msgstr "이 파일을 지원하지 않을 것 같은 뷰어"
 
-#: src/downloadactionquestion.cpp:432
+#: src/downloadactionquestion.cpp:427
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
 msgstr "이 파일"
 
-#: src/downloadactionquestion.cpp:433
+#: src/downloadactionquestion.cpp:428
 #, kde-format
 msgid ""
 "<p>Viewers which aren't supposed to be able to display %1. Using them will "
@@ -134,13 +134,13 @@ msgstr ""
 "식적으로 지원하지 않는 경우라고 해도 표시할 수 있기 때문에 선택 항목이 제공됩"
 "니다.</p>"
 
-#: src/downloadactionquestion.cpp:454
+#: src/downloadactionquestion.cpp:449
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr "이름: %1"
 
-#: src/downloadactionquestion.cpp:456
+#: src/downloadactionquestion.cpp:451
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
@@ -610,8 +610,8 @@ msgid ""
 "ignored\n"
 msgstr "--preload 스위치에는 URL을 지정할 수 없습니다. URL을 무시합니다\n"
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4879
-#: src/konqmainwindow.cpp:4925
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4884
+#: src/konqmainwindow.cpp:4930
 #, kde-format
 msgid "no name"
 msgstr "이름 없음"
@@ -808,7 +808,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1631 src/konqmainwindow.cpp:2269
 #: src/konqmainwindow.cpp:2358 src/konqmainwindow.cpp:2390
 #: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:2455
-#: src/konqmainwindow.cpp:4844
+#: src/konqmainwindow.cpp:4849
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -817,7 +817,7 @@ msgstr "변경 사항을 취소하시겠습니까?"
 #: src/konqmainwindow.cpp:1631 src/konqmainwindow.cpp:2269
 #: src/konqmainwindow.cpp:2358 src/konqmainwindow.cpp:2390
 #: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:2456
-#: src/konqmainwindow.cpp:4844
+#: src/konqmainwindow.cpp:4849
 #, kde-format
 msgid "&Discard Changes"
 msgstr "변경 사항 취소(&D)"
@@ -1458,40 +1458,40 @@ msgstr "새 탭으로 열기(&N)"
 msgid "Open the document in a new tab"
 msgstr "문서를 새 탭으로 열기"
 
-#: src/konqmainwindow.cpp:4622
+#: src/konqmainwindow.cpp:4627
 #, kde-format
 msgid "&Open With"
 msgstr "다음으로 열기(&O)"
 
-#: src/konqmainwindow.cpp:4635
+#: src/konqmainwindow.cpp:4640
 #, kde-format
 msgid "Open with %1"
 msgstr "%1(으)로 열기|/|%1$[으 %1]로 열기"
 
-#: src/konqmainwindow.cpp:4685
+#: src/konqmainwindow.cpp:4690
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "보기 모드(&V)"
 
-#: src/konqmainwindow.cpp:4808
+#: src/konqmainwindow.cpp:4813
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr "현재 창에 여러 탭이 열려 있습니다. 종료하시겠습니까?"
 
-#: src/konqmainwindow.cpp:4810
+#: src/konqmainwindow.cpp:4815
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "확인"
 
-#: src/konqmainwindow.cpp:4812
+#: src/konqmainwindow.cpp:4817
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "현재 탭 닫기(&L)"
 
-#: src/konqmainwindow.cpp:4840
+#: src/konqmainwindow.cpp:4845
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1500,7 +1500,7 @@ msgstr ""
 "이 탭에는 저장되지 않은 변경 사항이 들어 있습니다.\n"
 "다른 탭을 닫으면 변경된 부분은 버려집니다."
 
-#: src/konqmainwindow.cpp:4841
+#: src/konqmainwindow.cpp:4846
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1509,35 +1509,35 @@ msgstr ""
 "이 페이지에는 저장되지 않은 변경 사항이 들어 있습니다.\n"
 "다른 탭을 닫으면 변경된 부분은 버려집니다."
 
-#: src/konqmainwindow.cpp:5001
+#: src/konqmainwindow.cpp:5006
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr ""
 "사이드바가 동작하지 않거나 사용할 수 없습니다. 새 항목을 추가할 수 없습니다."
 
-#: src/konqmainwindow.cpp:5001 src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5006 src/konqmainwindow.cpp:5013
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "웹 사이드바"
 
-#: src/konqmainwindow.cpp:5006
+#: src/konqmainwindow.cpp:5011
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "새 웹 확장 기능 \"%1\"을(를) 사이드바에 추가하시겠습니까?"
 
-#: src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5013
 #, kde-format
 msgid "Add"
 msgstr "추가"
 
-#: src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5013
 #, kde-format
 msgid "Do Not Add"
 msgstr "추가하지 않기"
 
-#: src/konqmainwindow.cpp:5356 src/urlloader.cpp:854
+#: src/konqmainwindow.cpp:5361 src/urlloader.cpp:828
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1546,7 +1546,7 @@ msgstr ""
 "설정 오류가 있는 것 같습니다. Konqueror에게 %1 형식의 파일을 처리하라고 했지"
 "만, 이 파일 형식은 처리할 수 없습니다."
 
-#: src/konqmainwindow.cpp:5441
+#: src/konqmainwindow.cpp:5446
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1566,22 +1566,22 @@ msgstr ""
 "시스템 프록시 설정을 선택하거나 설정 대화 상자에서 프록시 URL을 직접 지정하십"
 "시오. 지금 프록시 설정을 변경하시겠습니까?"
 
-#: src/konqmainwindow.cpp:5446
+#: src/konqmainwindow.cpp:5451
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "지원하지 않는 프록시 설정"
 
-#: src/konqmainwindow.cpp:5446
+#: src/konqmainwindow.cpp:5451
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "프록시 사용하지 않음"
 
-#: src/konqmainwindow.cpp:5447 src/konqmainwindow.cpp:5475
+#: src/konqmainwindow.cpp:5452 src/konqmainwindow.cpp:5480
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "프록시 설정 대화 상자 표시"
 
-#: src/konqmainwindow.cpp:5471
+#: src/konqmainwindow.cpp:5476
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1594,22 +1594,22 @@ msgstr ""
 "<p><b>HTTP 프록시:</b> <tt>%1</tt></p><p><b>HTTPS 프록시: </b><tt>%2</tt></p>"
 "무엇을 하시겠습니까?"
 
-#: src/konqmainwindow.cpp:5474
+#: src/konqmainwindow.cpp:5479
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "프록시 설정 충돌"
 
-#: src/konqmainwindow.cpp:5475
+#: src/konqmainwindow.cpp:5480
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "HTTP 프록시 사용(이번만)"
 
-#: src/konqmainwindow.cpp:5475
+#: src/konqmainwindow.cpp:5480
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "HTTPS 프록시 사용(이번만)"
 
-#: src/konqmainwindow.cpp:5491
+#: src/konqmainwindow.cpp:5496
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1921,7 +1921,7 @@ msgstr "실행 취소: 창 닫기(&O)"
 msgid "Und&o"
 msgstr "실행 취소(&O)"
 
-#: src/konqview.cpp:1294
+#: src/konqview.cpp:1299
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -1931,30 +1931,30 @@ msgstr ""
 "보려고 하는 페이지는 제출한 폼의 결과입니다. 데이터를 다시 보내면, 검색이나 "
 "온라인 구매 같은 폼의 동작이 다시 수행될 수 있습니다."
 
-#: src/konqview.cpp:1296
+#: src/konqview.cpp:1301
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "경고"
 
-#: src/konqview.cpp:1296
+#: src/konqview.cpp:1301
 #, kde-format
 msgid "Resend"
 msgstr "다시 보내기"
 
-#: src/urlloader.cpp:427
+#: src/urlloader.cpp:403
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "실행"
 
-#: src/urlloader.cpp:430
+#: src/urlloader.cpp:406
 #, kde-format
 msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
 msgstr "표시"
 
-#: src/urlloader.cpp:437
+#: src/urlloader.cpp:413
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -1966,14 +1966,14 @@ msgstr ""
 "<filename>%1</filename>을(를) 실행할 수 있습니다. 실행하거나 표시하시겠습니"
 "까?"
 
-#: src/urlloader.cpp:443
+#: src/urlloader.cpp:419
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename>을(를) 실행할 수 있습니다. 실행하시겠습니까?"
 
-#: src/urlloader.cpp:797
+#: src/urlloader.cpp:771
 #, kde-format
 msgid "Save As"
 msgstr "다른 이름으로 저장"
