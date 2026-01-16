@@ -1,22 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the konqueror package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SPDX-FileCopyrightText: 2026 Vít Pelčák <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-01 00:42+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
-"Language: ga\n"
+"PO-Revision-Date: 2026-01-15 08:35+0100\n"
+"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
-"3 : 4\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editspeeddialentrydlg.ui:19
@@ -34,13 +33,13 @@ msgstr ""
 #: editspeeddialentrydlg.ui:36
 #, kde-format
 msgid "&Url"
-msgstr ""
+msgstr "&URL"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: editspeeddialentrydlg.ui:55
 #, kde-format
 msgid "Icon"
-msgstr ""
+msgstr "Ikona"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useFaviconBtn)
 #: editspeeddialentrydlg.ui:61
@@ -63,17 +62,17 @@ msgstr ""
 #: speeddialconfig.cpp:43
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Název"
 
 #: speeddialconfig.cpp:43
 #, kde-format
 msgid "Url"
-msgstr ""
+msgstr "URL"
 
 #: speeddialconfig.cpp:264
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
-msgstr ""
+msgstr "Přejete si smazat \"%1\"?"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: speeddialconfig.ui:17
@@ -85,28 +84,28 @@ msgstr ""
 #: speeddialconfig.ui:57
 #, kde-format
 msgid "Add entry…"
-msgstr ""
+msgstr "Přidat položku…"
 
 #. i18n: ectx: property (text), widget (QPushButton, editEntryBtn)
 #: speeddialconfig.ui:64
 #, kde-format
 msgid "Edit entry…"
-msgstr ""
+msgstr "Upravit záznam…"
 
 #. i18n: ectx: property (text), widget (QPushButton, removeEntryBtn)
 #: speeddialconfig.ui:71
 #, kde-format
 msgid "Remove entry"
-msgstr ""
+msgstr "Odstranit položku"
 
 #. i18n: ectx: property (text), widget (QPushButton, moveUpBtn)
 #: speeddialconfig.ui:91
 #, kde-format
 msgid "Move up"
-msgstr ""
+msgstr "Posunout nahoru"
 
 #. i18n: ectx: property (text), widget (QPushButton, moveDownBtn)
 #: speeddialconfig.ui:98
 #, kde-format
 msgid "Move down"
-msgstr ""
+msgstr "Posunout dolů"

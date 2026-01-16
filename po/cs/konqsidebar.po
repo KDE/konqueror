@@ -1,22 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the konqueror package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SPDX-FileCopyrightText: 2026 Vít Pelčák <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
-"Language: ga\n"
+"PO-Revision-Date: 2026-01-15 08:35+0100\n"
+"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
-"3 : 4\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: bookmarks_module/bookmarks_module.cpp:273
 #, kde-format
@@ -28,7 +27,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Bookmarks"
-msgstr ""
+msgstr "Záložky"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDefaultAction)
 #: history_module/history_dlg.ui:17
@@ -46,7 +45,7 @@ msgstr ""
 #: history_module/history_dlg.ui:36
 #, kde-format
 msgid "Limits"
-msgstr ""
+msgstr "Limity"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbExpire)
 #: history_module/history_dlg.ui:61
@@ -77,7 +76,7 @@ msgstr ""
 #: history_module/history_dlg.ui:118 history_module/history_dlg.ui:138
 #, kde-format
 msgid "Choose Font..."
-msgstr ""
+msgstr "Zvolte písmo..."
 
 #. i18n: ectx: property (text), widget (QLabel, lbOlder)
 #: history_module/history_dlg.ui:125
@@ -89,7 +88,7 @@ msgstr ""
 #: history_module/history_dlg.ui:148
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Podrobnosti"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbDetailedTips)
 #: history_module/history_dlg.ui:154
@@ -109,43 +108,43 @@ msgstr ""
 #: history_module/history_dlg.ui:169
 #, kde-format
 msgid "Clear History"
-msgstr ""
+msgstr "Vyprázdnit historii"
 
 #: history_module/history_module.cpp:139
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "History Sidebar Module"
-msgstr ""
+msgstr "Modul postranního panelu historie"
 
 #: history_module/history_module.cpp:162
 #, kde-format
 msgctxt "@title:tab"
 msgid "History"
-msgstr ""
+msgstr "Historie"
 
 #: history_module/kcmhistory.cpp:49
 #, kde-format
 msgctxt "Automatically decide which action to perform"
 msgid "Auto"
-msgstr ""
+msgstr "Automaticky"
 
 #: history_module/kcmhistory.cpp:50
 #, kde-format
 msgctxt "Open URL in new tab"
 msgid "Open in new tab"
-msgstr ""
+msgstr "Otevřít v nové kartě"
 
 #: history_module/kcmhistory.cpp:51
 #, kde-format
 msgctxt "Open URL in current tab"
 msgid "Open in current tab"
-msgstr ""
+msgstr "Otevřít v současné kartě"
 
 #: history_module/kcmhistory.cpp:52
 #, kde-format
 msgctxt "Open URL in new window"
 msgid "Open in new window"
-msgstr ""
+msgstr "Otevřít v novém okně"
 
 #: history_module/kcmhistory.cpp:54
 #, kde-format
@@ -161,46 +160,48 @@ msgstr ""
 #: history_module/kcmhistory.cpp:65
 #, kde-format
 msgid "days"
-msgstr ""
+msgstr "dnů"
 
 #: history_module/kcmhistory.cpp:71 history_module/kcmhistory.cpp:76
 #: history_module/kcmhistory.cpp:200 history_module/kcmhistory.cpp:213
 #, kde-format
 msgid "Minute"
 msgid_plural "Minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Minuta"
+msgstr[1] "Minuty"
+msgstr[2] "Minut"
 
 #: history_module/kcmhistory.cpp:73 history_module/kcmhistory.cpp:78
 #: history_module/kcmhistory.cpp:198 history_module/kcmhistory.cpp:211
 #, kde-format
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Den"
+msgstr[1] "Dny"
+msgstr[2] "Dnů"
 
 #: history_module/kcmhistory.cpp:245
 #, kde-format
 msgid "Do you really want to clear the entire history?"
-msgstr ""
+msgstr "Opravdu si přejete smazat celou historii?"
 
 #: history_module/kcmhistory.cpp:247
 #, kde-format
 msgctxt "@title:window"
 msgid "Clear History?"
-msgstr ""
+msgstr "Smazat historii?"
 
 #: places_module/places_module.cpp:76
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Places Sidebar Module"
-msgstr ""
+msgstr "Modul postranního panelu míst"
 
 #: places_module/places_module.cpp:99
 #, kde-format
 msgctxt "@title:tab"
 msgid "Places"
-msgstr ""
+msgstr "Místa"
 
 #: sidebar_widget.cpp:84
 #, kde-format
@@ -220,7 +221,7 @@ msgstr ""
 #: sidebar_widget.cpp:146
 #, kde-format
 msgid "Add New"
-msgstr ""
+msgstr "Přidat nové"
 
 #: sidebar_widget.cpp:150
 #, kde-format
@@ -240,7 +241,7 @@ msgstr ""
 #: sidebar_widget.cpp:156
 #, kde-format
 msgid "Close Sidebar"
-msgstr ""
+msgstr "Zavřít postranní panel"
 
 #: sidebar_widget.cpp:211
 #, kde-format
@@ -264,7 +265,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Name"
-msgstr ""
+msgstr "Nastavit jméno"
 
 #: sidebar_widget.cpp:281
 #, kde-format
@@ -274,7 +275,7 @@ msgstr ""
 #: sidebar_widget.cpp:299
 #, kde-format
 msgid "Enter a URL:"
-msgstr ""
+msgstr "Zadejte URL:"
 
 #: sidebar_widget.cpp:323
 #, kde-format
@@ -292,7 +293,7 @@ msgstr ""
 #: sidebar_widget.cpp:574
 #, kde-format
 msgid "Set Name..."
-msgstr ""
+msgstr "Nastavit jméno..."
 
 #: sidebar_widget.cpp:575
 #, kde-format
@@ -302,17 +303,17 @@ msgstr ""
 #: sidebar_widget.cpp:576
 #, kde-format
 msgid "Set Icon..."
-msgstr ""
+msgstr "Nastavit ikonu..."
 
 #: sidebar_widget.cpp:578
 #, kde-format
 msgid "Show Hidden Folders..."
-msgstr ""
+msgstr "Zobrazovat skryté složky..."
 
 #: sidebar_widget.cpp:583
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Odstranit"
 
 #: sidebar_widget.cpp:907
 #, kde-format
@@ -323,13 +324,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Tree Sidebar Module"
-msgstr ""
+msgstr "Modul stromového postranního panelu"
 
 #: tree_module/tree_module.cpp:282
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree"
-msgstr ""
+msgstr "Strom"
 
 #: vertical_tabbar/vertical_tabbar.cpp:91
 #, kde-format
@@ -341,22 +342,22 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tabs"
-msgstr ""
+msgstr "Karty"
 
 #: web_module/web_module.cpp:42
 #, kde-format
 msgid "&Open Link"
-msgstr ""
+msgstr "&Otevřít odkaz"
 
 #: web_module/web_module.cpp:46
 #, kde-format
 msgid "Open in New &Window"
-msgstr ""
+msgstr "Otevřít v novém &okně"
 
 #: web_module/web_module.cpp:52
 #, kde-format
 msgid "&Reload"
-msgstr ""
+msgstr "Znovu načís&t"
 
 #: web_module/web_module.cpp:57
 #, kde-format
@@ -373,33 +374,35 @@ msgstr ""
 #, kde-format
 msgid " minute"
 msgid_plural " minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " minuta"
+msgstr[1] " minuty"
+msgstr[2] " minut"
 
 #: web_module/web_module.cpp:136
 #, kde-format
 msgid " second"
 msgid_plural " seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " sekunda"
+msgstr[1] " sekundy"
+msgstr[2] " sekund"
 
 #: web_module/web_module.cpp:269
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Web Sidebar Module"
-msgstr ""
+msgstr "Webový postranní panel"
 
 #: web_module/web_module.cpp:289
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr ""
+msgstr "Název:"
 
 #: web_module/web_module.cpp:289
 #, kde-format
 msgctxt "@label"
 msgid "Path or URL:"
-msgstr ""
+msgstr "Cesta nebo URL:"
 
 #: web_module/web_module.cpp:290
 #, kde-format
