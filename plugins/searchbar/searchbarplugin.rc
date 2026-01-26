@@ -1,6 +1,6 @@
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
-<gui name="searchbar" version="5" translationDomain="searchbarplugin">
-<ToolBar fullWidth="true" name="locationToolBar" newline="true"><text>Search Toolbar</text>
+<gui name="searchbar" version="6" translationDomain="searchbarplugin">
+<ToolBar fullWidth="true" name="searchToolBar" newline="true"><text>Search Toolbar</text>
   <Action name="toolbar_search_bar" />
 </ToolBar>
 </gui>
