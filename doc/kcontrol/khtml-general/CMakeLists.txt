@@ -1,2 +1,2 @@
 ########### install files ###############
-kdoctools_create_handbook(index.docbook INSTALL_DESTINATION ${KDE_INSTALL_DOCBUNDLEDIR}/en SUBDIR kcontrol${KF_MAJOR_VERSION}/khtml-general)
+kdoctools_create_handbook(index.docbook INSTALL_DESTINATION ${KDE_INSTALL_DOCBUNDLEDIR}/en SUBDIR kcontrol/khtml-general)
