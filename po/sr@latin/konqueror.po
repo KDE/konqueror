@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2017-09-29 16:43+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1811,9 +1811,10 @@ msgid "&Reload Tab"
 msgstr "&Učitaj ponovo jezičak"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "Drugi jezičci"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "&Učitaj ponovo sve jezičke"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -1994,6 +1995,9 @@ msgstr ""
 #| msgid "Save As..."
 msgid "Save As"
 msgstr "Sačuvaj kao..."
+
+#~ msgid "Other Tabs"
+#~ msgstr "Drugi jezičci"
 
 #~ msgid "Start Page"
 #~ msgstr "Početna stranica"

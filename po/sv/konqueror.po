@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2025-06-30 19:19+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1823,9 +1823,10 @@ msgid "&Reload Tab"
 msgstr "Upp&datera flik"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "Övriga flikar"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "Upp&datera alla flikar"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -2006,6 +2007,9 @@ msgstr "<filename>%1</filename> går att köra. Vill du köra den?"
 #, kde-format
 msgid "Save As"
 msgstr "Spara som"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Övriga flikar"
 
 #~ msgid "Start Page"
 #~ msgstr "Startsida"

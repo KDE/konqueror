@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2023-04-03 16:30+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1852,9 +1852,10 @@ msgid "&Reload Tab"
 msgstr "&Unterfenster neu laden"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "Andere Unterfenster"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "&Alle Unterfenster neu laden"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -2037,6 +2038,9 @@ msgstr ""
 #, kde-format
 msgid "Save As"
 msgstr "Speichern unter"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Andere Unterfenster"
 
 #~ msgid "Start Page"
 #~ msgstr "Startseite"

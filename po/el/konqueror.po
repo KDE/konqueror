@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2023-01-07 10:28+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1839,9 +1839,10 @@ msgid "&Reload Tab"
 msgstr "&Επαναφόρτωση καρτέλας"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "Άλλες καρτέλες"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "&Επαναφόρτωση όλων των καρτελών"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -2034,6 +2035,9 @@ msgstr "Το <tt>%1</tt> μπορεί να εκτελεστεί. Θα το εκ�
 #, kde-format
 msgid "Save As"
 msgstr "Αποθήκευση ως"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Άλλες καρτέλες"
 
 #~ msgid "Start Page"
 #~ msgstr "Σελίδα εκκίνησης"

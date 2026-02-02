@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2022-10-05 09:27+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1855,9 +1855,10 @@ msgid "&Reload Tab"
 msgstr "Обновить &вкладку"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "Другие вкладки"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "О&бновить все вкладки"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -2050,6 +2051,9 @@ msgstr "<tt>%1</tt> возможно выполнить. Сделать это?"
 #, kde-format
 msgid "Save As"
 msgstr "Сохранить как"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Другие вкладки"
 
 #~ msgid "Start Page"
 #~ msgstr "Начальная страница"

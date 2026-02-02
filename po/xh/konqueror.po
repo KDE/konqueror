@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2002-11-08 14:54+0200\n"
 "Last-Translator: Thelma Lungcuzo <thelma@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -1848,8 +1848,9 @@ msgstr "&Vala i Tab"
 
 #: src/konqtabs.cpp:56
 #, fuzzy, kde-format
-msgid "Other Tabs"
-msgstr "Vala Enye i &Tab"
+#| msgid "&Close Tab"
+msgid "All Tabs"
+msgstr "&Vala i Tab"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -2026,6 +2027,10 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "Save As"
 msgstr "Cwangcisa i URL"
+
+#, fuzzy
+#~ msgid "Other Tabs"
+#~ msgstr "Vala Enye i &Tab"
 
 #, fuzzy
 #~| msgid "Maximum &number of URLs:"
@@ -2869,11 +2874,6 @@ msgstr "Cwangcisa i URL"
 
 #~ msgid "Open &Terminal"
 #~ msgstr "&Vula Isiphelo sendlela"
-
-#, fuzzy
-#~| msgid "&Close Tab"
-#~ msgid "Closed Tabs"
-#~ msgstr "&Vala i Tab"
 
 #~ msgid "Unknown"
 #~ msgstr "Engaziwayo"

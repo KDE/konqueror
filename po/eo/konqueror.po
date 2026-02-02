@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2024-12-29 19:47+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -1822,9 +1822,10 @@ msgid "&Reload Tab"
 msgstr "&Reŝargi la Langeton"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "Aliaj Langetoj"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "&Reŝargi ĉiujn langetojn"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -2006,3 +2007,6 @@ msgstr "<filename>%1</filename> povas esti efektivigita. Ĉu vi volas ruli ĝin?
 #, kde-format
 msgid "Save As"
 msgstr "Konservi kiel"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Aliaj Langetoj"

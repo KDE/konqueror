@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2022-09-27 17:54+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -1835,9 +1835,10 @@ msgid "&Reload Tab"
 msgstr "Muat U&lang Tab"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "Tab Lain"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "Muat Ulang Se&mua Tab"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -2030,6 +2031,9 @@ msgstr "<tt>%1</tt> bisa dieksekusi. Apakah Anda ingin mengeksekusinya?"
 #, kde-format
 msgid "Save As"
 msgstr "Simpan Sebagai"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Tab Lain"
 
 #~ msgid "Start Page"
 #~ msgstr "Halaman Awal"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2008-06-08 22:24+0200\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -1830,9 +1830,10 @@ msgid "&Reload Tab"
 msgstr "Табни қайтадан &юклаш"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "Бошқа таблар"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "Ҳамма табларни қайтадан &юклаш"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -2006,6 +2007,9 @@ msgstr ""
 #| msgid "Save as.."
 msgid "Save As"
 msgstr "...сифатида сақлаш"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Бошқа таблар"
 
 #, fuzzy
 #~ msgid ""

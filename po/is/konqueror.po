@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2019-11-05 18:25+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
@@ -1816,9 +1816,10 @@ msgid "&Reload Tab"
 msgstr "Endur&lesa flipa"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "Aðrir flipar"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "Endur&lesa alla flipa"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -2000,6 +2001,9 @@ msgstr ""
 #| msgid "Save As..."
 msgid "Save As"
 msgstr "Vista sem..."
+
+#~ msgid "Other Tabs"
+#~ msgstr "Aðrir flipar"
 
 #~ msgid "Start Page"
 #~ msgstr "Upphafssíða"

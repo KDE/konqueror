@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2026-01-03 15:48+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1802,9 +1802,10 @@ msgid "&Reload Tab"
 msgstr "&ריענון הלשונית"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "לשוניות אחרות"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "&ריענון כל הלשוניות"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -1982,6 +1983,9 @@ msgstr "אפשר להפעיל את הקובץ <filename>%1</filename>. להפע�
 #, kde-format
 msgid "Save As"
 msgstr "שמירה בשם"
+
+#~ msgid "Other Tabs"
+#~ msgstr "לשוניות אחרות"
 
 #~ msgid "Start Page"
 #~ msgstr "עמוד פתיחה"

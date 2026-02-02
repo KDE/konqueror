@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2026-01-05 02:56+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1786,9 +1786,10 @@ msgid "&Reload Tab"
 msgstr "重新載入分頁(&R)"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "其他分頁"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "重新載入所有的分頁(&R)"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -1964,6 +1965,9 @@ msgstr "<filename>%1</filename> 可執行。您要執行它嗎？"
 #, kde-format
 msgid "Save As"
 msgstr "另存為"
+
+#~ msgid "Other Tabs"
+#~ msgstr "其他分頁"
 
 #~ msgid "Start Page"
 #~ msgstr "開始頁面"

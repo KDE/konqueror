@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror stable\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2006-01-17 16:37+0200\n"
 "Last-Translator: Frikkie Thirion <frikkie.thirion@deneloptronics.co.za>\n"
 "Language-Team: AFRIKAANS <translate-discuss-af@lists.sourceforge.net>\n"
@@ -1910,9 +1910,10 @@ msgid "&Reload Tab"
 msgstr "Herlaai Oortjie"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "Ander Oortjies"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "Herlaai Alle Oortjies"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -2099,6 +2100,9 @@ msgstr ""
 #| msgid "Set Name..."
 msgid "Save As"
 msgstr "Stel Naam..."
+
+#~ msgid "Other Tabs"
+#~ msgstr "Ander Oortjies"
 
 #, fuzzy
 #~ msgid ""

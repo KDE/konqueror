@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2021-09-17 17:27+0630\n"
 "Last-Translator: \n"
 "Language-Team: Burmese <kde-i18n-doc@kde.org>\n"
@@ -1722,9 +1722,10 @@ msgid "&Reload Tab"
 msgstr "&Rတပ်ဘ်ပြန်တွန်းတင်မည်"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "အခြားတပ်ဘ်များ"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "&Rတပ်ဘ်အကုန်ပြန်တွန်းတင်မည်"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -1897,6 +1898,9 @@ msgstr ""
 #| msgid "Save As..."
 msgid "Save As"
 msgstr "အဖြစ်သိမ်းမည်..."
+
+#~ msgid "Other Tabs"
+#~ msgstr "အခြားတပ်ဘ်များ"
 
 #~ msgid "Start Page"
 #~ msgstr "အစစာမျက်နှာ"

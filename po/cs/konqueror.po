@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2024-09-18 09:38+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1788,9 +1788,10 @@ msgid "&Reload Tab"
 msgstr "Znovu načíst &kartu"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "Ostatní karty"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "Znovu načíst všechny ka&rty"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -1971,3 +1972,6 @@ msgstr "<filename>%1</filename> lze spustit. Přejte si jej spustit?"
 #, kde-format
 msgid "Save As"
 msgstr "Uložit jako"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Ostatní karty"

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2026-01-03 06:34-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1839,9 +1839,10 @@ msgid "&Reload Tab"
 msgstr "&Recarregar aba"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "Outras abas"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "&Recarregar todas as abas"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -2022,6 +2023,9 @@ msgstr "<filename>%1</filename> pode ser executado. Deseja executá-lo?"
 #, kde-format
 msgid "Save As"
 msgstr "Salvar como"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Outras abas"
 
 #~ msgid "Start Page"
 #~ msgstr "Página inicial"

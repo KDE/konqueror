@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2009-01-30 18:10+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -1794,9 +1794,10 @@ msgid "&Reload Tab"
 msgstr "टैब फिर से लोड करव (&R)"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "अऊ दूसर टैब"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "सब्बो टैब फिर से लोड करव (&R)"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -1972,6 +1973,9 @@ msgstr ""
 #| msgid "Save As..."
 msgid "Save As"
 msgstr "अइसन सहेजव..."
+
+#~ msgid "Other Tabs"
+#~ msgstr "अऊ दूसर टैब"
 
 #, fuzzy
 #~| msgid ""

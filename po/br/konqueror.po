@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2004-09-22 16:11+0200\n"
 "Last-Translator: Thierry Vignaud <tvignaud@mandriva.com>\n"
 "Language-Team: Brezhoneg <ofisk.bzh@wanadoo.fr>\n"
@@ -1780,9 +1780,10 @@ msgid "&Reload Tab"
 msgstr "&Adkargañ ar vevennig"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "Bevennigoù all"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "&Adkargañ an holl vevennigoù"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -1958,6 +1959,9 @@ msgstr ""
 #| msgid "Set Name..."
 msgid "Save As"
 msgstr "Lakaat an anv ..."
+
+#~ msgid "Other Tabs"
+#~ msgstr "Bevennigoù all"
 
 #, fuzzy
 #~| msgid "Maximum &number of URLs:"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2026-01-19 22:33+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1830,9 +1830,10 @@ msgid "&Reload Tab"
 msgstr "Презаре&ждане на подпрозореца"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "Останалите подпрозорци"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "Пр&езареждане на всички подпрозорци"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -2016,3 +2017,6 @@ msgstr "<filename>%1</filename>може да се изпълни. Искате �
 #, kde-format
 msgid "Save As"
 msgstr "Запазване като"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Останалите подпрозорци"

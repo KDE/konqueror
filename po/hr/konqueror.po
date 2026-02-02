@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror 0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2011-02-15 16:19+0100\n"
 "Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -1849,9 +1849,10 @@ msgid "&Reload Tab"
 msgstr "&Ponovno učitaj karticu"
 
 #: src/konqtabs.cpp:56
-#, kde-format
-msgid "Other Tabs"
-msgstr "Ostale kartice"
+#, fuzzy, kde-format
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "&Osvježi sve kartice"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -2033,6 +2034,9 @@ msgstr ""
 #| msgid "Save As..."
 msgid "Save As"
 msgstr "Spremi kao …"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Ostale kartice"
 
 #, fuzzy
 #~ msgid ""

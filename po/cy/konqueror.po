@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:43+0000\n"
+"POT-Creation-Date: 2026-02-02 00:43+0000\n"
 "PO-Revision-Date: 2003-12-27 14:40+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -1867,8 +1867,9 @@ msgstr "&Ail-lwytho bob tab"
 
 #: src/konqtabs.cpp:56
 #, fuzzy, kde-format
-msgid "Other Tabs"
-msgstr "Cau Tabiau &Eraill"
+#| msgid "&Reload All Tabs"
+msgid "All Tabs"
+msgstr "&Ail-lwytho bob tab"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -2045,6 +2046,10 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "Save As"
 msgstr "Gosod URL..."
+
+#, fuzzy
+#~ msgid "Other Tabs"
+#~ msgstr "Cau Tabiau &Eraill"
 
 #, fuzzy
 #~| msgid "Maximum &number of URLs:"
