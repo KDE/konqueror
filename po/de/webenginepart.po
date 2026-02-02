@@ -3,20 +3,21 @@
 # SPDX-FileCopyrightText: 2010 Markus Slopianka <markus.s@kdemail.net>
 # SPDX-FileCopyrightText: 2010 Johannes Obermayr <johannesobermayr@gmx.de>
 # SPDX-FileCopyrightText: 2010, 2011, 2012, 2016, 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2025, 2026 Alois Spitzbart <spitz234@hotmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:40+0000\n"
-"PO-Revision-Date: 2023-05-05 19:50+0200\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2026-01-31 12:43+0100\n"
+"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.07.70\n"
+"X-Generator: Lokalize 26.03.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -317,13 +318,13 @@ msgstr "<td>MIME-Typ</td><td>Beschreibung</td><td>Suffixe</td><td>Modul</td>"
 #, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
-msgstr ""
+msgstr "wurde gespeichert als"
 
 #: src/actondownloadedfilebar.cpp:123
 #, kde-format
 msgctxt "@label location where a remote URL was downloaded"
 msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
-msgstr ""
+msgstr "<tt>%1</tt> wurde gespeichert als <tt>%2</tt>"
 
 #: src/actondownloadedfilebar.cpp:144 src/actondownloadedfilebar.cpp:169
 #, fuzzy, kde-format
@@ -334,25 +335,22 @@ msgid "Open With..."
 msgstr "„%1“ öffnen"
 
 #: src/actondownloadedfilebar.cpp:149
-#, fuzzy, kde-format
-#| msgid "OpenSSL"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "OpenSSL"
+msgstr "Öffnen"
 
 #: src/actondownloadedfilebar.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "„%1“ öffnen"
+msgstr "&Mit %1 öffnen"
 
 #: src/actondownloadedfilebar.cpp:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
-msgstr ""
+msgstr "In neuem Unterfenster anzeigen"
 
 #: src/actondownloadedfilebar.cpp:187
 #, kde-format
@@ -361,12 +359,10 @@ msgid "Show here"
 msgstr ""
 
 #: src/actondownloadedfilebar.cpp:203
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "„%1“ öffnen"
+msgstr "&Mit %1 anzeigen"
 
 #: src/actondownloadedfilebar.cpp:231
 #, kde-format
@@ -417,10 +413,9 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "Choose Save Format"
+#, kde-format
 msgid "Choose Capture Source"
-msgstr "Speicherformat auswählen"
+msgstr "Quelle für Erfassung auswählen"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
@@ -430,29 +425,27 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/capturesourcechooserdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "New Window"
+#, kde-format
 msgid "Window"
-msgstr "Neues Fenster"
+msgstr "Fenster"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, windowCombo)
 #: src/capturesourcechooserdlg.ui:51
-#, fuzzy, kde-format
-#| msgid "Close window?"
+#, kde-format
 msgid "Choose window"
-msgstr "Fenster schließen?"
+msgstr "Fenster auswählen"
 
 #. i18n: ectx: property (text), widget (QLabel, Screen)
 #: src/capturesourcechooserdlg.ui:75
 #, kde-format
 msgid "Screen"
-msgstr ""
+msgstr "Bildschirm"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, screenCombo)
 #: src/capturesourcechooserdlg.ui:82
 #, kde-format
 msgid "Choose screen"
-msgstr ""
+msgstr "Bildschirm auswählen"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -493,21 +486,19 @@ msgstr "Wie möchten Sie die Seite speichern?"
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As an HTML file &without external resources"
-msgstr ""
+msgstr "Als HTML-Datei &ohne externe Ressourcen"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
-#, fuzzy, kde-format
-#| msgid "As a &Single HTML page"
+#, kde-format
 msgid "As a &complete HTML page"
-msgstr "Als &einzelne HTML-Seite"
+msgstr "Als &vollständige HTML-Seite"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "As single MHTML file"
+#, kde-format
 msgid "As a &MHTML file"
-msgstr "Als einzelne MHTML-Datei"
+msgstr "Als &MHTML-Datei"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -520,13 +511,13 @@ msgstr "Textfeld"
 #, kde-format
 msgctxt "@label the cookie expires when the browser session ends"
 msgid "End of Session"
-msgstr ""
+msgstr "Sitzungsende"
 
 #: src/cookies/cookiealertdlg.cpp:29
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by https servers"
 msgid "Secure servers only"
-msgstr ""
+msgstr "Nur sichere Server"
 
 #: src/cookies/cookiealertdlg.cpp:31
 #, kde-format
@@ -534,13 +525,13 @@ msgctxt ""
 "@label exposure string - the cookie may be used by https servers AND client-"
 "side javascripts"
 msgid "Secure servers, page scripts"
-msgstr ""
+msgstr "Sichere Server, Seitenskripte"
 
 #: src/cookies/cookiealertdlg.cpp:35
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by http servers"
 msgid "Servers"
-msgstr ""
+msgstr "Server"
 
 #: src/cookies/cookiealertdlg.cpp:37
 #, kde-format
@@ -548,26 +539,22 @@ msgctxt ""
 "@label exposure string - the cookie may be used by http servers AND client-"
 "side javascripts"
 msgid "Servers, page scripts"
-msgstr ""
+msgstr "Server, Seitenskripte"
 
 #: src/cookies/cookiealertdlg.cpp:41
-#, fuzzy, kde-format
-#| msgid "Accept"
+#, kde-format
 msgctxt "@label accept cookie"
 msgid "Accept"
 msgstr "Annehmen"
 
 #: src/cookies/cookiealertdlg.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@action:never for this site"
-#| msgid "Ne&ver for this site"
+#, kde-format
 msgctxt "@label accept cookie for this session only"
 msgid "Accept for this session"
-msgstr "Nie für &diese Seite"
+msgstr "Für diese Sitzung annehmen"
 
 #: src/cookies/cookiealertdlg.cpp:45
-#, fuzzy, kde-format
-#| msgid "Reject"
+#, kde-format
 msgctxt "@label reject cookie"
 msgid "Reject"
 msgstr "Ablehnen"
@@ -585,38 +572,38 @@ msgid ""
 "<html><head/><body><p>You received a cookie from %1</p><p>Do you want to "
 "accept or reject this cookie?</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Sie haben ein Cookie von %1 erhalten</p><p>Möchten Sie "
+"es annehmen oder ablehnen?</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/cookies/cookiealertdlg.ui:30
-#, fuzzy, kde-format
-#| msgctxt "@action:hide details about credentials to store"
-#| msgid "&Hide details"
+#, kde-format
 msgid "Cookie details"
-msgstr "&Details ausblenden"
+msgstr "Cookie-Details"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/cookies/cookiealertdlg.ui:36
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: src/cookies/cookiealertdlg.ui:50
 #, kde-format
 msgid "Value"
-msgstr ""
+msgstr "Wert"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: src/cookies/cookiealertdlg.ui:64
 #, kde-format
 msgid "Expires"
-msgstr ""
+msgstr "Gültig bis"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: src/cookies/cookiealertdlg.ui:78
 #, kde-format
 msgid "Path"
-msgstr ""
+msgstr "Pfad"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: src/cookies/cookiealertdlg.ui:99
@@ -628,31 +615,31 @@ msgstr ""
 #: src/cookies/cookiealertdlg.ui:113
 #, kde-format
 msgid "Domain"
-msgstr ""
+msgstr "Domain"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: src/cookies/cookiealertdlg.ui:123
 #, kde-format
 msgid "Apply choice to"
-msgstr ""
+msgstr "Auswahl anwenden auf"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToThis)
 #: src/cookies/cookiealertdlg.ui:129
 #, kde-format
 msgid "Only this cookie"
-msgstr ""
+msgstr "Nur dieses Cookie"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToDomain)
 #: src/cookies/cookiealertdlg.ui:136
 #, kde-format
 msgid "All cookies from this domain"
-msgstr ""
+msgstr "Alle Cookies dieser Domain"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToAll)
 #: src/cookies/cookiealertdlg.ui:143
 #, kde-format
 msgid "All cookies"
-msgstr ""
+msgstr "Alle Cookies"
 
 #: src/schemehandlers/errorschemehandler.cpp:97
 #, kde-format
@@ -962,10 +949,9 @@ msgstr "Andere"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "&Customize Fields to Memorize for This Page..."
+#, kde-format
 msgid "Customize Fields To Store"
-msgstr "&Gespeicherte Felder für diese Seite anpassen"
+msgstr "Zu speichernde Felder anpassen"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
@@ -975,8 +961,7 @@ msgstr "Zwischen der Anzeige von Passwörtern und Platzhaltern wechseln"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "&Show passwords"
+#, kde-format
 msgid "Show &passwords"
 msgstr "&Passwörter im Klartext anzeigen"
 
@@ -988,10 +973,9 @@ msgstr "Mehr Informationen über die Felder anzeigen"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
-#, fuzzy, kde-format
-#| msgid "&Show details"
+#, kde-format
 msgid "Show field &details"
-msgstr "&Details anzeigen"
+msgstr "Feld&details anzeigen"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
@@ -1314,7 +1298,7 @@ msgstr ""
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
-msgstr ""
+msgstr "Zugangsdaten &ausfüllen"
 
 #: src/webenginepart.cpp:1025
 #, kde-format
@@ -1326,7 +1310,7 @@ msgstr ""
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
-msgstr ""
+msgstr "Zugangsdaten jetzt &speichern"
 
 #: src/webenginepart.cpp:1033
 #, fuzzy, kde-format
@@ -1465,13 +1449,9 @@ msgstr "Zertifikatsdetails"
 
 #. i18n: ectx: attribute (title), widget (QWidget, subjectTab)
 #: src/webenginepartcertificateerrordlg.ui:63
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
-#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
-#| msgid " - Subject: "
+#, kde-format
 msgid "&Subject"
-msgstr " – Betreff: "
+msgstr "&Betreff"
 
 #. i18n: ectx: attribute (title), widget (QWidget, issuerTab)
 #: src/webenginepartcertificateerrordlg.ui:73
@@ -1513,7 +1493,7 @@ msgstr "Ziel"
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
-msgstr ""
+msgstr "%1 wurde gespeichert als %2"
 
 #: src/webengineview.cpp:351
 #, kde-format
