@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-02 00:43+0000\n"
-"PO-Revision-Date: 2026-01-03 16:45+0100\n"
+"PO-Revision-Date: 2026-02-02 11:48+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -1843,10 +1843,9 @@ msgid "&Reload Tab"
 msgstr "&Recargar pestaña"
 
 #: src/konqtabs.cpp:56
-#, fuzzy, kde-format
-#| msgid "&Reload All Tabs"
+#, kde-format
 msgid "All Tabs"
-msgstr "R&ecargar todas las pestañas"
+msgstr "Todas las pestañas"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -2027,6 +2026,3 @@ msgstr "<filename>%1</filename> se puede ejecutar. ¿Desea ejecutarlo?"
 #, kde-format
 msgid "Save As"
 msgstr "Guardar como"
-
-#~ msgid "Other Tabs"
-#~ msgstr "Otras pestañas"
