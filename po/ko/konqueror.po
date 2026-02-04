@@ -2,14 +2,14 @@
 # Copyright (C) 2001-2004, 2007-2008 Free Software Foundation, Inc.
 # KIM KyungHeon <tody@kde.or.kr>, 2001, 2002, 2003, 2004.
 # Lee Seok <ddoman@kde.or.kr>, 2004.
-# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2020, 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-02 00:43+0000\n"
-"PO-Revision-Date: 2025-07-20 01:47+0200\n"
+"PO-Revision-Date: 2026-02-04 00:09+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1110,10 +1110,9 @@ msgid "Move Tab Right"
 msgstr "탭 오른쪽으로 이동"
 
 #: src/konqmainwindow.cpp:3478
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "새 창(&W)"
+msgstr "창 보호"
 
 #: src/konqmainwindow.cpp:3484
 #, kde-format
@@ -1393,7 +1392,7 @@ msgstr "현재 페이지 개발자 도구 표시"
 #: src/konqmainwindow.cpp:3687
 #, kde-format
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "현재 창을 보호된 것으로 표시"
 
 #: src/konqmainwindow.cpp:3688
 #, kde-format
@@ -1401,6 +1400,8 @@ msgid ""
 "<p>Mark the current window as protected</p><p>Marking a window as protected "
 "ensures that Konqueror will never open external links in it</p>"
 msgstr ""
+"<p>현재 창을 보호된 것으로 표시</p><p>창을 보호된 것으로 표시하면 Konqueror에"
+"서 해당 창에 외부 링크를 열지 않습니다</p>"
 
 #: src/konqmainwindow.cpp:3850
 #, kde-format
@@ -1796,10 +1797,9 @@ msgid "&Reload Tab"
 msgstr "탭 새로 고침(&R)"
 
 #: src/konqtabs.cpp:56
-#, fuzzy, kde-format
-#| msgid "&Reload All Tabs"
+#, kde-format
 msgid "All Tabs"
-msgstr "모든 탭 새로 고침(&R)"
+msgstr "모든 탭"
 
 #: src/konqtabs.cpp:59
 #, kde-format

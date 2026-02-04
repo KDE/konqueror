@@ -5,14 +5,14 @@
 # 유규형 <master@aerobuster.net>, 2004.
 # Youngbin Park <shrike@nate.com>, 2005.
 # Sung-Jae, Cho <jachin@hanafos.com>, 2005.
-# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2011, 2012, 2015, 2016, 2020, 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2011, 2012, 2015, 2016, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-01 00:42+0000\n"
-"PO-Revision-Date: 2025-04-06 23:20+0200\n"
+"PO-Revision-Date: 2026-02-04 00:08+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -597,7 +597,7 @@ msgid ""
 msgstr ""
 "<p>\n"
 "현재 세션이 끝날 때 만료되는 쿠키를 자동으로 승인합니다. 이러한 쿠키는 사용자"
-"의 컴퓨터 하드디스크나 저장 장치에 저장되지 않습니다. 대신 이 쿠키는 이 쿠키"
+"의 컴퓨터 하드 디스크나 저장 장치에 저장되지 않습니다. 대신 이 쿠키는 이 쿠키"
 "를 사용하는 모든 앱(예를 들어 웹 브라우저)을 종료했을 때 삭제됩니다.</"
 "p><p><u>참고:</u> 이 옵션을 사용하면 기본 세션 쿠키 설정 및 사이트 지정 세션 "
 "쿠키 설정을 덮어씁니다.</p>"
@@ -1659,7 +1659,7 @@ msgstr "소개 페이지 표시"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Speed Dial"
-msgstr ""
+msgstr "스피드 다이얼 표시"
 
 #: generalopts.cpp:71
 #, kde-format

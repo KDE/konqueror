@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2013, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2013, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-12 00:43+0000\n"
-"PO-Revision-Date: 2025-10-09 00:59+0200\n"
+"PO-Revision-Date: 2026-02-04 00:09+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -108,7 +108,7 @@ msgstr "다음: Konqueror 소개"
 #, kde-format
 msgctxt "link to the speed dial"
 msgid "Speed Dial"
-msgstr ""
+msgstr "스피드 다이얼"
 
 #: src/about/konq_aboutpage.cpp:163
 #, kde-format
@@ -280,7 +280,7 @@ msgstr "<td>MIME 형식</td><td>설명</td><td>접미사</td><td>플러그인</t
 #: src/about/konq_aboutpage.cpp:335
 #, kde-format
 msgid "Speed Dial"
-msgstr ""
+msgstr "스피드 다이얼"
 
 #: src/actondownloadedfilebar.cpp:91
 #, kde-format
@@ -1043,16 +1043,14 @@ msgid "Attachment Removed"
 msgstr "첨부 삭제됨"
 
 #: src/webenginepage.cpp:807
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while converting the page to PDF"
-msgstr "파일을 저장하는 중 오류 발생: %1"
+msgstr "페이지를 PDF로 변환하는 중 오류 발생"
 
 #: src/webenginepage.cpp:812
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
-msgstr "파일을 저장하는 중 오류 발생: %1"
+msgstr "페이지의 PDF 버전을 %1(으)로 저장하는 중 오류 발생"
 
 #: src/webenginepage.cpp:880
 #, kde-format
