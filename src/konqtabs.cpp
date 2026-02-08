@@ -51,7 +51,7 @@ TabBarContextMenu::TabBarContextMenu(KonqFrameTabs *tabsContainer, QWidget *pare
                                window, &KonqMainWindow::slotReloadPopup);
     addSeparator();
     m_subMenu = new QMenu(this);
-    connect(m_subMenu, &QMenu::triggered, this, &TabBarContextMenu::subMenuTriggered);
+    connect(m_subMenu, &QMenu::triggered, this, &TabBarContextMenu::allTabsSubMenuTriggered);
     m_actions[TabAction::AllTabs] = addMenu(m_subMenu);
     m_actions[TabAction::AllTabs]->setText(i18n("All Tabs"));
     addSeparator();
@@ -113,6 +113,14 @@ QAction* TabBarContextMenu::execWithWorkingTab(const QPoint& pt, std::optional<i
     }
     prepare(workingTab.has_value());
     return KonqInterfaces::TabBarContextMenu::exec(pt);
+}
+
+void TabBarContextMenu::allTabsSubMenuTriggered(QAction* action)
+{
+    if (!action->data().isValid()) {
+        return;
+    }
+    emit switchToTabTriggered(action->data().toInt());
 }
 
 //###################################################################
@@ -403,11 +411,6 @@ void KonqFrameTabs::slotCloseRequest(int idx)
     emit removeTabPopup();
 }
 
-void KonqFrameTabs::slotSubPopupMenuTabActivated(QAction *action)
-{
-    setCurrentIndex(action->data().toInt());
-}
-
 void KonqFrameTabs::slotMouseMiddleClick()
 {
     KonqMainWindow *mainWindow = m_pViewManager->mainWindow();
@@ -511,7 +514,7 @@ void KonqFrameTabs::forceHideTabBar(bool force)
 void KonqFrameTabs::initPopupMenu()
 {
     m_pPopupMenu = new TabBarContextMenu(this, this);
-    connect(m_pPopupMenu, &TabBarContextMenu::subMenuTriggered, this, &KonqFrameTabs::slotSubPopupMenuTabActivated);
+    connect(m_pPopupMenu, &TabBarContextMenu::switchToTabTriggered, this, &KonqFrameTabs::setCurrentIndex);
     connect(this, qOverload<QWidget*, const QPoint&>(&KonqFrameTabs::contextMenu), this, qOverload<QWidget*, const QPoint &>(&KonqFrameTabs::slotContextMenu));
     connect(this, qOverload<const QPoint&>(&KonqFrameTabs::contextMenu), this, qOverload<const QPoint &>(&KonqFrameTabs::slotContextMenu));
 }

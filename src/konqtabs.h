@@ -85,9 +85,23 @@ public:
 
 Q_SIGNALS:
     /**
-     * @brief Signal emitted when the user chooses an action in the "other tabs" submenu
+     * @brief Signal emitted when the user chooses one of the actions to switch to a different tab
+     *
+     * @param idx the tab to switch to
      */
-    void subMenuTriggered(QAction *action);
+    void switchToTabTriggered(int idx);
+
+private Q_SLOTS:
+
+    /**
+     * @brief Slot called when one of the actions in the All Tabs submenu is triggered
+     *
+     * If @p action is an action to switch to another tab, it emits the switchToTabTriggered() signal,
+     * otherwise it does nothing.
+     *
+     * @param action the action which was triggered
+     */
+    void allTabsSubMenuTriggered(QAction *action);
 
 private:
     /**
@@ -257,7 +271,6 @@ private Q_SLOTS:
     void slotReceivedDropEvent(QDropEvent *);
     void slotInitiateDrag(QWidget *);
     void slotReceivedDropEvent(QWidget *, QDropEvent *);
-    void slotSubPopupMenuTabActivated(QAction *);
 
 private:
     QList<KonqFrameBase *> m_childFrameList;
