@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-02 00:43+0000\n"
+"POT-Creation-Date: 2026-02-09 00:43+0000\n"
 "PO-Revision-Date: 2024-09-18 09:38+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1803,7 +1803,7 @@ msgstr "V&ytrhnout kartu"
 msgid "&Close Tab"
 msgstr "Zavřít &kartu"
 
-#: src/konqtabs.cpp:132
+#: src/konqtabs.cpp:140
 #, kde-format
 msgid ""
 "This bar contains the list of currently open tabs. Click on a tab to make it "
@@ -1818,12 +1818,12 @@ msgstr ""
 "pohyb mezi kartami. Text na kartě zobrazuje název právě otevřené stránky; "
 "pokud je zkrácen, ponecháním kurzoru myši nad kartou uvidíte celý text."
 
-#: src/konqtabs.cpp:166
+#: src/konqtabs.cpp:174
 #, kde-format
 msgid "Open a new tab"
 msgstr "Otevřít novou kartu"
 
-#: src/konqtabs.cpp:175
+#: src/konqtabs.cpp:183
 #, kde-format
 msgid "Close the current tab"
 msgstr "Zavřít současnou kartu"
