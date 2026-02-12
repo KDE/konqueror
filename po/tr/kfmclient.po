@@ -159,31 +159,4 @@ msgstr "Sözdizim hatası, çok fazla argüman\n"
 #: kfmclient.cpp:339
 #, kde-format
 msgid "Syntax error, unknown command '%1'\n"
-msgstr "Sözdizim hatası, bilinmeyen komut '%1'\n"
-
-#~ msgid ""
-#~ "  kfmclient exec is deprecated and kept for compatibility with KDE 3. \n"
-#~ "            # See kioclient exec for more information.\n"
-#~ msgstr ""
-#~ "  kfmclient exec sadece KDE 3 uyumluluğu için tutulmaktadır.\n"
-#~ "            # Daha fazla bilgi için kioclient exec komutuna bakın.\n"
-
-#~ msgid ""
-#~ "  kfmclient openProfile 'profile' ['url']\n"
-#~ "            # Opens a window using the given profile.\n"
-#~ "            #   'profile' is a file under ~/.kde/share/apps/konqueror/"
-#~ "profiles.\n"
-#~ "            #   'url' is an optional URL to open.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "  kfmclient openProfile 'profil' ['url']\n"
-#~ "            # Belli bir profili kullanarak oturum açar.\n"
-#~ "            #   'profil' aşağıdaki konumda yer alan bir dosyadır: ~/.kde/"
-#~ "share/apps/konqueror/profiles.\n"
-#~ "            #   'url' açılacak olan URL adresidir.\n"
-#~ "\n"
-
-#, fuzzy
-#~| msgid "Profile %1 not found\n"
-#~ msgid "Profile '%1' not found\n"
-#~ msgstr "%1 profili bulunamadı\n"
+msgstr "Sözdizim hatası, bilinmeyen komut \"%1\"\n"
