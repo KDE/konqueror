@@ -29,13 +29,7 @@ msgid "System"
 msgstr "Córas"
 
 #: konqueror.cpp:24
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If enabled, an instance of Konqueror will be preloaded after the "
-#| "ordinary KDE startup sequence.</p><p>This will make the first Konqueror "
-#| "window open faster, but at the expense of longer KDE startup times (but "
-#| "you will be able to work while it is loading, so you may not even notice "
-#| "that it is taking longer).</p>"
+#, kde-format
 msgid ""
 "<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
 "Plasma startup sequence.</p><p>This will make the first Konqueror window "
@@ -43,20 +37,9 @@ msgid ""
 "be able to work while it is loading, so you may not even notice that it is "
 "taking longer).</p>"
 msgstr ""
-"<p>Leis an rogha seo, réamhluchtófar próiseas Konqueror tar éis an "
-"ghnáthsheichimh tosaithe KDE.</p><p>Osclófar an chéad fhuinneog Konqueror "
-"níos tapúla mar sin, ach ar chostas amanna tosaithe KDE níos faide (ach "
-"beidh tú in ann obair a dhéanamh agus KDE á luchtú, agus seans nach "
-"dtabharfaidh tú faoi deara go bhfuil sé níos moille dá bhrí sin).</p>"
 
 #: konqueror.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If enabled, KDE will always try to have one preloaded Konqueror "
-#| "instance ready; preloading a new instance in the background whenever "
-#| "there is not one available, so that windows will always open quickly.</"
-#| "p><p><b>Warning:</b> In some cases, it is actually possible that this "
-#| "will reduce perceived performance.</p>"
+#, kde-format
 msgid ""
 "<p>If enabled, Konqueror will always try to have one preloaded instance "
 "ready; preloading a new instance in the background whenever there is not one "
@@ -64,11 +47,6 @@ msgid ""
 "In some cases, it is actually possible that this will reduce perceived "
 "performance.</p>"
 msgstr ""
-"<p>Leis an rogha seo, déanfaidh KDE iarracht ar phróiseas réamhluchtaithe "
-"Konqueror a choinneáil réidh i gcónaí, trí phróiseas nua a luchtú sa chúlra "
-"nuair nach bhfuil ceann ar fáil, sa chaoi go n-osclóidh fuinneoga go tapa.</"
-"p><p><b>Rabhadh:</b> I gcásanna áirithe, sílfidh tú go bhfuil an ríomhaire "
-"níos moille dá bhrí seo.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
 #: konqueror_ui.ui:17
@@ -78,19 +56,15 @@ msgstr "Réamhluchtáil"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
 #: konqueror_ui.ui:23
-#, fuzzy, kde-format
-#| msgid "Preload an instance after KDE startup"
+#, kde-format
 msgid "Preload an instance after desktop startup"
-msgstr "Réamhluchtaigh ásc tar éis tosú KDE"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
 #: konqueror_ui.ui:30
-#, fuzzy, kde-format
-#| msgid "Always try to have at least one preloaded instance"
+#, kde-format
 msgid "Always try to have one preloaded instance"
 msgstr ""
-"Déan iarracht ar phróiseas amháin ar a laghad a bheith réamhluchtaithe i "
-"gcónaí"
 
 #: system.cpp:22
 #, kde-format
@@ -145,84 +119,3 @@ msgid ""
 msgstr ""
 "I gcásanna neamhchoitianta, feicfidh tú fadhbanna éagsúla leis an rogha seo. "
 "Féach ar an gcabhair \"Cad É Seo\" (Shift+F1) chun tuilleadh eolais a fháil."
-
-#~ msgid ""
-#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
-#~ "performance here."
-#~ msgstr ""
-#~ "<h1>Feidhmiúchán KDE</h1> Anseo is féidir leat socruithe a dhéanamh a "
-#~ "chuireann feabhas ar fheidhmiúchán KDE."
-
-#~ msgid ""
-#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
-#~ "improve Konqueror performance here. These include options for reusing "
-#~ "already running instances and for keeping instances preloaded."
-#~ msgstr ""
-#~ "<h1>Feidhmiúchán Konqueror</h1> Anseo is féidir leat roinnt socruithe a "
-#~ "dhéanamh a chuireann feabhas ar fheidhmiúchán KDE. Mar shampla, roghanna "
-#~ "a cheadaíonn próisis a athúsáid agus próisis réamhluchtaithe a choinneáil."
-
-#~ msgid ""
-#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
-#~ "after all their windows have been closed, up to the number specified in "
-#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
-#~ "preloaded instances will be reused instead, improving responsiveness at "
-#~ "the expense of the memory required by the preloaded instances.</p>"
-#~ msgstr ""
-#~ "<p>Má roghnaíonn tú luach nach bhfuil náid, coinneofar próisis Konqueror "
-#~ "sa chuimhne fiú tar éis a bhfuinneoga go léir a dhúnadh, suas leis an "
-#~ "líon sonraithe anseo.</p><p>Nuair a bheidh próiseas nua Konqueror de "
-#~ "dhíth, athúsáidfear ceann de na próisis réamhluchtaithe seo, ag cur "
-#~ "feabhas ar luas an chórais, ar chostas na cuimhne a theastaíonn ó na "
-#~ "próisis réamhluchtaithe.</p>"
-
-#, fuzzy
-#~| msgid "Maximum number of instances kept &preloaded:"
-#~ msgid "&Maximum number of instances kept preloaded:"
-#~ msgstr "Líon uasta ásc &réamhluchtaithe:"
-
-#~ msgid ""
-#~ "Disables the minimization of memory usage and allows you to make each "
-#~ "browsing activity independent from the others"
-#~ msgstr ""
-#~ "Díchumasaigh íosmhéadú úsáide chuimhne sa chaoi gur féidir leat gach "
-#~ "gníomh brabhsála neamhspleách ar na cinn eile"
-
-#~ msgid ""
-#~ "<p>With this option activated, only one instance of Konqueror used for "
-#~ "file browsing will exist in the memory of your computer at any moment, no "
-#~ "matter how many file browsing windows you open, thus reducing resource "
-#~ "requirements.</p><p>Be aware that this also means that, if something goes "
-#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
-#~ msgstr ""
-#~ "<p>Leis an rogha seo, ní bheidh ach próiseas Konqueror amháin a úsáidtear "
-#~ "le comhaid a bhrabhsáil i gcuimhne do ríomhaire san am céanna, is cuma cé "
-#~ "mhéad fuinneog bhrabhsála a osclaíonn tú, agus na hacmhainní riachtanacha "
-#~ "a laghdú mar sin.</p><p>Ag an am céanna, tabhair faoi deara go "
-#~ "gciallaíonn sé seo go ndúnfaí d'fhuinneoga brabhsála go léir dá rachadh "
-#~ "rud éigin amú</p>"
-
-#~ msgid ""
-#~ "<p>With this option activated, only one instance of Konqueror will exist "
-#~ "in the memory of your computer at any moment, no matter how many browsing "
-#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
-#~ "that this also means that, if something goes wrong, all your browsing "
-#~ "windows will be closed simultaneously.</p>"
-#~ msgstr ""
-#~ "<p>Leis an rogha seo, ní bheidh ach próiseas Konqueror amháin i gcuimhne "
-#~ "do ríomhaire san am céanna, is cuma cé mhéad fuinneog bhrabhsála a "
-#~ "osclaíonn tú, agus na hacmhainní riachtanacha a laghdú mar sin.</p><p>Ag "
-#~ "an am céanna, tabhair faoi deara go gciallaíonn sé seo go ndúnfaí "
-#~ "d'fhuinneoga brabhsála go léir dá rachadh rud éigin amú.</p>"
-
-#~ msgid "Minimize Memory Usage"
-#~ msgstr "Laghdaigh Úsáid na Cuimhne"
-
-#~ msgid "&Never"
-#~ msgstr "&Riamh"
-
-#~ msgid "For &file browsing only (recommended)"
-#~ msgstr "Brabhsáil na g&comhad amháin (molta)"
-
-#~ msgid "Alwa&ys (use with care)"
-#~ msgstr "I gCó&naí (bí cúramach)"

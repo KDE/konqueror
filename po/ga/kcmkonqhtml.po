@@ -392,10 +392,9 @@ msgid "The custom directory to store cache"
 msgstr ""
 
 #: cookies/kcookiesmain.cpp:33
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "&Policy"
-msgstr "Polasaí"
+msgstr ""
 
 #: cookies/kcookiesmain.cpp:35
 #, kde-format
@@ -414,10 +413,9 @@ msgstr ""
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search"
-msgstr "Cuardaigh:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:27
@@ -440,18 +438,16 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, pbDelete)
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "D&elete"
-msgstr "Sc&rios"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
 #: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "Delete A&ll"
-msgstr "Sc&rios"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, configPolicyButton)
 #: cookies/kcookiesmanagement.ui:70
@@ -473,24 +469,21 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
 #: cookies/kcookiesmanagement.ui:106
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "Ainm"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, valueLabel)
 #: cookies/kcookiesmanagement.ui:129
-#, fuzzy, kde-format
-#| msgid "Value"
+#, kde-format
 msgid "Value:"
-msgstr "Luach"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, domainLabel)
 #: cookies/kcookiesmanagement.ui:152
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain:"
-msgstr "Óstríomhaire/Fearann"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, patchLabel)
 #: cookies/kcookiesmanagement.ui:175
@@ -511,20 +504,16 @@ msgid "Secure:"
 msgstr ""
 
 #: cookies/kcookiespolicies.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Change Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Change Cookie Policy"
-msgstr "Athraigh an Polasaí Breiseáin"
+msgstr ""
 
 #: cookies/kcookiespolicies.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Cookie Policy"
-msgstr "Polasaí Nua Breiseáin"
+msgstr ""
 
 #: cookies/kcookiespolicies.cpp:189
 #, kde-format
@@ -534,11 +523,10 @@ msgid ""
 msgstr ""
 
 #: cookies/kcookiespolicies.cpp:193
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Duplicate Policy"
-msgstr "Polasaí"
+msgstr ""
 
 #: cookies/kcookiespolicies.cpp:194
 #, kde-format
@@ -559,10 +547,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
-#, fuzzy, kde-format
-#| msgid "Enable filters"
+#, kde-format
 msgid "Enable coo&kies"
-msgstr "Cumasaigh scagairí"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -599,10 +586,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
-#, fuzzy, kde-format
-#| msgid "A&utomatically load images"
+#, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr "L&uchtaigh íomhánna go huathoibríoch"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -627,10 +613,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
-#, fuzzy, kde-format
-#| msgid "Default encoding:"
+#, kde-format
 msgid "Default Policy"
-msgstr "Ionchódú réamhshocraithe:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
@@ -646,10 +631,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
-#, fuzzy, kde-format
-#| msgid "A&nimations:"
+#, kde-format
 msgid "Ask &for confirmation"
-msgstr "Íomhá&nna Beo:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
 #: cookies/kcookiespolicies.ui:98
@@ -659,15 +643,7 @@ msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can set specific Java policies for any particular host or "
-#| "domain. To add a new policy, simply click the <i>New...</i> button and "
-#| "supply the necessary information requested by the dialog box. To change "
-#| "an existing policy, click on the <i>Change...</i> button and choose the "
-#| "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#| "button will remove the selected policy, causing the default policy "
-#| "setting to be used for that domain."
+#, kde-format
 msgid ""
 "<qt>\n"
 "To add a new policy, simply click on the <b>Add...</b> button and supply the "
@@ -678,20 +654,12 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
-"Anseo is féidir leat polasaithe Java ar leith a shocrú le haghaidh aon "
-"óstríomhaire nó fearann. Chun polasaí nua a chur leis, cliceáil an cnaipe "
-"<i>Nua...</i> agus tabhair uait an fhaisnéis a iarrann an bosca dialóige. "
-"Chun polasaí atá ann a athrú, cliceáil an cnaipe <i>Athraigh...</i> agus "
-"roghnaigh an polasaí ón bhosca dialóige. Cliceáil an cnaipe <i>Scrios</i> "
-"chun an polasaí roghnaithe a scriosadh; sa chás seo úsáidfear an polasaí "
-"réamhshocraithe le haghaidh an fhearainn seo."
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Site Policy"
-msgstr "Polasaí"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:135
@@ -701,10 +669,9 @@ msgstr ""
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search..."
-msgstr "Cuardaigh:"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -718,10 +685,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain"
-msgstr "Óstríomhaire/Fearann"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
@@ -785,10 +751,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Policy:"
-msgstr "Polasaí"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:192
@@ -1479,9 +1444,6 @@ msgid " day"
 msgid_plural " days"
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
 
 #: filteropts.cpp:120
 #, kde-format
@@ -1588,16 +1550,14 @@ msgstr ""
 "ar líne ar leith."
 
 #: filteropts.cpp:256
-#, fuzzy, kde-format
-#| msgid "Automatic Filter"
+#, kde-format
 msgid "Import Filters"
-msgstr "Scagaire Uathoibríoch"
+msgstr ""
 
 #: filteropts.cpp:300
-#, fuzzy, kde-format
-#| msgid "URL Expressions to Filter"
+#, kde-format
 msgid "Export Filters"
-msgstr "Sloinn URL le Scagadh"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: filteropts.cpp:563 useragent/useragent.ui:58
@@ -1631,12 +1591,10 @@ msgid "Show Introduction Page"
 msgstr "Taispeáin Leathanach Tosaigh"
 
 #: generalopts.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox"
-#| msgid "Show My Home Page"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
-msgstr "Taispeáin Mo Leathanach Baile"
+msgstr ""
 
 #: generalopts.cpp:71
 #, kde-format
@@ -1651,12 +1609,10 @@ msgid "Show My Bookmarks"
 msgstr "Taispeáin Mo Chuid Leabharmharcanna"
 
 #: generalopts.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Home Page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
-msgstr "Roghnaigh Leathanach Baile"
+msgstr ""
 
 #: generalopts.cpp:83
 #, kde-format
@@ -1675,19 +1631,11 @@ msgid "Select Home Page"
 msgstr "Roghnaigh Leathanach Baile"
 
 #: generalopts.cpp:102
-#, fuzzy, kde-format
-#| msgid ""
-#| "This is the URL of the web page where Konqueror (as web browser) will "
-#| "jump to when the \"Home\" button is pressed. When Konqueror is started as "
-#| "a file manager, that button makes it jump to your local home folder "
-#| "instead."
+#, kde-format
 msgid ""
 "This is the URL of the web page where Konqueror will jump to when the \"Home"
 "\" button is pressed."
 msgstr ""
-"Seo é URL an leathanaigh Gréasáin a rachaidh Konqueror (mar bhrabhsálaí) "
-"chuige nuair a bhrúitear an cnaipe \"Baile\". Nuair a thosaítear Konqueror "
-"mar bhainisteoir comhad, rachaidh sé chuig an bhfillteán logánta baile."
 
 #: generalopts.cpp:110
 #, kde-format
@@ -2192,10 +2140,9 @@ msgstr "Caithfidh tú ainm fearainn a iontráil ar dtús."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
-msgstr "Oibriú na &Luiche"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
@@ -2318,10 +2265,9 @@ msgstr "Oscail mar chluaisín i Konqueror nuair a ghlaoitear URL go seachtrach"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
-msgstr "Oibriú na &Luiche"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2475,10 +2421,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
 #: useragent/useragent.ui:94
-#, fuzzy, kde-format
-#| msgid "&Export..."
+#, kde-format
 msgid "&Edit..."
-msgstr "&Easpórtáil..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:107
@@ -2494,10 +2439,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:133
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "&Delete"
-msgstr "Sc&rios"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, useTemplateBtn)
 #: useragent/useragent.ui:150
@@ -2534,553 +2478,3 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
-
-#~ msgid "Form Com&pletion"
-#~ msgstr "Comhlánú &Foirme"
-
-#~ msgid "Chan&ge cursor over links"
-#~ msgstr "Athrai&gh an cúrsóir os cionn nasc"
-
-#~ msgid ""
-#~ "If this option is set, the shape of the cursor will change (usually to a "
-#~ "hand) if it is moved over a hyperlink."
-#~ msgstr ""
-#~ "Leis an rogha seo, athróidh cruth an chúrsóra (go dtí lámh go hiondúil) "
-#~ "nuair atá sé ag ainliú os cionn hipearnaisc."
-
-#~ msgid "Allow automatic delayed &reloading/redirecting"
-#~ msgstr "Ceadaigh &athluchtú/atreorú moillithe uathoibríoch"
-
-#~ msgid ""
-#~ "Some web pages request an automatic reload or redirection after a certain "
-#~ "period of time. By unchecking this box Konqueror will ignore these "
-#~ "requests."
-#~ msgstr ""
-#~ "Iarrann roinnt leathanach Gréasáin athluchtú nó atreorú uathoibríoch tar "
-#~ "éis tréimhse áirithe. Bain an tic ón bhosca seo más mian leat go "
-#~ "ndéanfaidh Konqueror neamhaird de na hiarratais seo."
-
-#~ msgid "Enable Ja&va globally"
-#~ msgstr "Cumasaigh Ja&va i ngach áit"
-
-#~ msgid "Java Runtime Settings"
-#~ msgstr "Socruithe Java ag Am Rite"
-
-#~ msgid "&Use security manager"
-#~ msgstr "Ú&sáid bainisteoir na slándála"
-
-#~ msgid "Use &KIO"
-#~ msgstr "Úsáid &KIO"
-
-#~ msgid "Shu&tdown applet server when inactive for more than"
-#~ msgstr ""
-#~ "Múch an freas&talaí feidhmchláirín nuair atá neamhghníomhach níos faide ná"
-
-#~ msgid " second"
-#~ msgid_plural " seconds"
-#~ msgstr[0] " soicind"
-#~ msgstr[1] " shoicind"
-#~ msgstr[2] " shoicind"
-#~ msgstr[3] " soicind"
-#~ msgstr[4] " soicind"
-
-#~ msgid "&Path to Java executable, or 'java':"
-#~ msgstr "&Conair go dtí an comhad inrite Java, nó 'java':"
-
-#~ msgid "Additional Java a&rguments:"
-#~ msgstr "A&rgóintí Java Breise:"
-
-#~ msgid ""
-#~ "Enables the execution of scripts written in Java that can be contained in "
-#~ "HTML pages. Note that, as with any browser, enabling active contents can "
-#~ "be a security problem."
-#~ msgstr ""
-#~ "Cumasaigh scripteanna scríofa in Java is féidir a bheith leabaithe i "
-#~ "leathanaigh HTML. Tabhair faoi deara go bhfuil fadhbanna slándála a "
-#~ "bhaineann le hinneachar gníomhach, díreach cosúil le gach brabhsálaí eile."
-
-#~ msgid ""
-#~ "<p>This box contains the domains and hosts you have set a specific Java "
-#~ "policy for. This policy will be used instead of the default policy for "
-#~ "enabling or disabling Java applets on pages sent by these domains or "
-#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
-#~ "it.</p>"
-#~ msgstr ""
-#~ "<p>Is éard atá sa bhosca seo ná na fearainn agus na hóstríomhairí ar "
-#~ "shocraigh tú polasaí Java dóibh. Úsáidfear an polasaí seo in ionad an "
-#~ "pholasaí réamhshocraithe chun feidhmchláiríní a chumasú nó a dhíchumasú "
-#~ "ar leathanaigh a sheolann na fearainn nó na hóstríomhairí seo.</"
-#~ "p><p>Roghnaigh polasaí ansin bain úsáid as na rialtáin ar dheis chun é a "
-#~ "mhionathrú.</p>"
-
-#~ msgid ""
-#~ "Click this button to choose the file that contains the Java policies. "
-#~ "These policies will be merged with the existing ones. Duplicate entries "
-#~ "are ignored."
-#~ msgstr ""
-#~ "Cliceáil an cnaipe seo chun an comhad ina bhfuil na polasaithe Java a "
-#~ "roghnú. Cumascfar na polasaithe seo leis na cinn atá ann. Déanfar "
-#~ "neamhaird ar iontrálacha dúblacha."
-
-#~ msgid ""
-#~ "Click this button to save the Java policy to a zipped file. The file, "
-#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
-#~ msgstr ""
-#~ "Cliceáil an cnaipe seo chun an polasaí Java a shábháil i gcomhad "
-#~ "comhbhrúite. Sábhálfar an comhad, darb ainm <b>java_policy.tgz</b>, san "
-#~ "áit a roghnaíonn tú."
-
-#~ msgid ""
-#~ "Here you can set specific Java policies for any particular host or "
-#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
-#~ "supply the necessary information requested by the dialog box. To change "
-#~ "an existing policy, click on the <i>Change...</i> button and choose the "
-#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#~ "button will remove the selected policy, causing the default policy "
-#~ "setting to be used for that domain."
-#~ msgstr ""
-#~ "Anseo is féidir leat polasaithe Java ar leith a shocrú le haghaidh aon "
-#~ "óstríomhaire nó fearann. Chun polasaí nua a chur leis, cliceáil an cnaipe "
-#~ "<i>Nua...</i> agus tabhair uait an fhaisnéis a iarrann an bosca dialóige. "
-#~ "Chun polasaí atá ann a athrú, cliceáil an cnaipe <i>Athraigh...</i> agus "
-#~ "roghnaigh an polasaí ón bhosca dialóige. Cliceáil an cnaipe <i>Scrios</i> "
-#~ "chun an polasaí roghnaithe a scriosadh; sa chás seo úsáidfear an polasaí "
-#~ "réamhshocraithe le haghaidh an fhearainn seo."
-
-#~ msgid ""
-#~ "Enabling the security manager will cause the jvm to run with a Security "
-#~ "Manager in place. This will keep applets from being able to read and "
-#~ "write to your file system, creating arbitrary sockets, and other actions "
-#~ "which could be used to compromise your system. Disable this option at "
-#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
-#~ "policytool utility to give code downloaded from certain sites more "
-#~ "permissions."
-#~ msgstr ""
-#~ "Má chumasaíonn tú an bainisteoir slándála, rithfidh an jvm le Bainisteoir "
-#~ "Slándála ann. Leis seo, ní bheidh cead ag feidhmchláiríní do chóras "
-#~ "comhad a léamh nó scríobh, soicéid a chruthú, nó do chóras a chur i "
-#~ "gcontúirt trí ghníomhartha eile. Díchumasaigh an rogha seo ar do phriacal "
-#~ "féin. Is féidir leat do chomhad $HOME/.java.policy a athrú leis an uirlis "
-#~ "Java policytool chun níos mó cead a thabhairt do chód a thagann ó shuímh "
-#~ "áirithe."
-
-#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
-#~ msgstr "Leis seo, úsáidfidh an jvm KIO le haghaidh cumarsáide líonra "
-
-#~ msgid ""
-#~ "Enter the path to the java executable. If you want to use the jre in your "
-#~ "path, simply leave it as 'java'. If you need to use a different jre, "
-#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
-#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
-#~ "IBMJava2-13)."
-#~ msgstr ""
-#~ "Iontráil an chonair go dtí an clár inrite java. Más mian leat an jre atá "
-#~ "i do chonair réamhshocraithe a úsáid, fág é mar 'java'. Más gá jre eile a "
-#~ "úsáid, iontráil an chonair go dtí an clár inrite java (m.sh. /usr/lib/jdk/"
-#~ "bin/java), nó conair na comhadlainne ina bhfuil 'bin/java' (m.sh. /opt/"
-#~ "IBMJava2-13)."
-
-#~ msgid ""
-#~ "If you want special arguments to be passed to the virtual machine, enter "
-#~ "them here."
-#~ msgstr ""
-#~ "Más mian leat argóintí speisialta a thabhairt don mheaisín fíorúil, "
-#~ "iontráil iad anseo."
-
-#~ msgid ""
-#~ "When all the applets have been destroyed, the applet server should shut "
-#~ "down. However, starting the jvm takes a lot of time. If you would like to "
-#~ "keep the java process running while you are browsing, you can set the "
-#~ "timeout value to whatever you like. To keep the java process running for "
-#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
-#~ "Server checkbox unchecked."
-#~ msgstr ""
-#~ "Nuair a bheidh na feidhmchláiríní go léir scriosta, ba chóir an "
-#~ "freastalaí feidhmchláirín a mhúchadh.  Ach, tógann sé go leor ama an jvm "
-#~ "a thosú. Más mian leat an próiseas java a choinneáil ar siúl le linn "
-#~ "brabhsála, is féidir an teorainn ama a shocrú anseo. Chun an próiseas "
-#~ "java a choinneáil ar siúl chomh fada is go bhfuil an próiseas konqueror "
-#~ "ag rith, ná cuir tic sa bhosca 'Múch an Freastalaí Feidhmchláirín'."
-
-#~ msgctxt "@title:group"
-#~ msgid "Doma&in-Specific"
-#~ msgstr "Sainiúi&l don Fhearann"
-
-#~ msgctxt "@title:window"
-#~ msgid "New Java Policy"
-#~ msgstr "Polasaí Nua Java"
-
-#~ msgctxt "@title:window"
-#~ msgid "Change Java Policy"
-#~ msgstr "Athraigh an Polasaí Java"
-
-#~ msgid "&Java policy:"
-#~ msgstr "Polasaí &Java:"
-
-#~ msgid "Select a Java policy for the above host or domain."
-#~ msgstr ""
-#~ "Roghnaigh polasaí Java le haghaidh an óstríomhaire nó fearainn thuas."
-
-#~ msgid "Debugging"
-#~ msgstr "Dífhabhtú"
-
-#~ msgid "Enable debu&gger"
-#~ msgstr "Cumasaigh an dí&fhabhtóir"
-
-#~ msgid "Enables builtin JavaScript debugger."
-#~ msgstr "Cumasaigh an dífhabhtóir insuite JavaScript."
-
-#~ msgid "Report &errors"
-#~ msgstr "Tabhair tuairisc ar &earráidí"
-
-#~ msgid ""
-#~ "Enables the reporting of errors that occur when JavaScript code is "
-#~ "executed."
-#~ msgstr ""
-#~ "Leis an rogha seo déanfar tuairisc ar earráidí a tharlaíonn nuair a "
-#~ "ritear cód JavaScript."
-
-#~ msgid "&Java"
-#~ msgstr "&Java"
-
-#~ msgid "Java&Script"
-#~ msgstr "Java&Script"
-
-#~ msgid ""
-#~ "This will open a new tab in the background, instead of in the foreground."
-#~ msgstr "Osclóidh sé seo cluaisín nua sa chúlra in ionad sa tulra."
-
-#~ msgid ""
-#~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
-#~ "Konqueror should use to display the web pages you view."
-#~ msgstr ""
-#~ "<h1>Clónna Konqueror</h1>Ar an leathanach seo, is féidir leat clónna a "
-#~ "roghnú ar chóir do Konqueror iad a úsáid agus leathanaigh Ghréasáin á "
-#~ "dtaispeáint."
-
-#~ msgid ""
-#~ "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list "
-#~ "of filters that are checked against linked images and frames. URL's that "
-#~ "match are either discarded or replaced with a placeholder image. "
-#~ msgstr ""
-#~ "<h1>AdBlocK Konqueror</h1> Ceadaíonn AdBlocK Konqueror duit liosta de "
-#~ "scagairí a chruthú a chuirfear i gcomparáid le híomhánna agus frámaí "
-#~ "nasctha. Caithfear URLanna comhoiriúnacha i gcártaí, nó úsáidfear "
-#~ "ionadchoinneálaithe. "
-
-#~ msgid "Tabbed Browsing"
-#~ msgstr "Brabhsáil le Cluaisíní"
-
-#~ msgid ""
-#~ "<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
-#~ "functionality. Please note that the file manager functionality has to be "
-#~ "configured using the \"File Manager\" configuration module. You can make "
-#~ "some settings how Konqueror should handle the HTML code in the web pages "
-#~ "it loads. It is usually not necessary to change anything here."
-#~ msgstr ""
-#~ "<h1>Brabhsálaí Konqueror</h1> Anseo is féidir leat feidhmiúlacht "
-#~ "bhrabhsála Konqueror a chumrú. Tabhair faoi deara go gcaithfear é a "
-#~ "chumrú mar bhainisteoir comhad tríd an modúl cumraíochta \"Bainisteoir "
-#~ "Comhad\". Is féidir athruithe a dhéanamh ar an gcaoi a láimhseálann "
-#~ "Konqueror an cód HTML sna leathanaigh a luchtaíonn sé. Go hiondúil, ní gá "
-#~ "aon rud a athrú anseo."
-
-#~ msgid ""
-#~ "<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
-#~ "programs embedded in web pages should be allowed to be executed by "
-#~ "Konqueror.<h2>Java</h2>On this page, you can configure whether Java "
-#~ "applets embedded in web pages should be allowed to be executed by "
-#~ "Konqueror.<br /><br /><b>Note:</b> Active content is always a security "
-#~ "risk, which is why Konqueror allows you to specify very fine-grained from "
-#~ "which hosts you want to execute Java and/or JavaScript programs."
-#~ msgstr ""
-#~ "<h2>JavaScript</h2>Ar an leathanach seo, is féidir leat socrú an mbeidh "
-#~ "cead ag Konqueror ríomhchláir JavaScript leabaithe i leathanaigh "
-#~ "Ghréasáin a rith.<h2>Java</h2>Ar an leathanach seo, is féidir leat socrú "
-#~ "an mbeidh cead ag Konqueror feidhmchláiríní Java leabaithe i leathanaigh "
-#~ "Ghréasáin a rith.<br /><br /><b>Nóta:</b> Tá ábhar gníomhach ina phriacal "
-#~ "slándála i gcónaí agus dá bharr seo ceadaíonn Konqueror duit na "
-#~ "hóstríomhairí a nglacfaidh tú ríomhchláir Java agus JavaScript uathu a "
-#~ "shonrú i slí mhín."
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Séamus Ó Ciardhuáin,Kevin Scannell"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "seoc@iolfree.ie,kscanne@gmail.com"
-
-#~ msgid "Konqueror Browsing Control Module"
-#~ msgstr "Modúl Rialaithe Brabhsála do Konqueror"
-
-#~ msgid "(c) 1999 - 2001 The Konqueror Developers"
-#~ msgstr "© 1999 - 2001 Forbróirí Konqueror"
-
-#~ msgid "Waldo Bastian"
-#~ msgstr "Waldo Bastian"
-
-#~ msgid "David Faure"
-#~ msgstr "David Faure"
-
-#~ msgid "Matthias Kalle Dalheimer"
-#~ msgstr "Matthias Kalle Dalheimer"
-
-#~ msgid "Lars Knoll"
-#~ msgstr "Lars Knoll"
-
-#~ msgid "Dirk Mueller"
-#~ msgstr "Dirk Mueller"
-
-#~ msgid "Daniel Molkentin"
-#~ msgstr "Daniel Molkentin"
-
-#~ msgid "Wynn Wilkes"
-#~ msgstr "Wynn Wilkes"
-
-#~ msgid "Leo Savernik"
-#~ msgstr "Leo Savernik"
-
-#~ msgid ""
-#~ "JavaScript access controls\n"
-#~ "Per-domain policies extensions"
-#~ msgstr ""
-#~ "Rialú rochtana JavaScript\n"
-#~ "Polasaithe sainiúil d'fhearann"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "When &Konqueror starts:"
-#~ msgstr "Nuair a thosaíonn &Konqueror:"
-
-#~ msgid "Accept languages:"
-#~ msgstr "Teangacha glactha:"
-
-#~ msgid "Accept character sets:"
-#~ msgstr "Tacair carachtar glactha:"
-
-#~ msgid "Plugins"
-#~ msgstr "Breiseáin"
-
-#~ msgid "Folders"
-#~ msgstr "Fillteáin"
-
-#~ msgid "&Remove"
-#~ msgstr "&Bain"
-
-#~ msgid "&New"
-#~ msgstr "&Nua"
-
-#~ msgid "Do&wn"
-#~ msgstr "Sío&s"
-
-#~ msgid "&Up"
-#~ msgstr "S&uas"
-
-#~ msgid "Click here to scan for newly installed Netscape plugins now."
-#~ msgstr ""
-#~ "Cliceáil anseo chun cuardach a dhéanamh ar bhreiseáin nuashuiteáilte "
-#~ "Netscape anois."
-
-#~ msgid "&Scan for Plugins"
-#~ msgstr "Déan &Cuardach ar Bhreiseáin"
-
-#~ msgid "Here you can see a list of the Netscape plugins KDE has found."
-#~ msgstr "Seo é liosta na mbreiseán Netscape a d'aimsigh KDE."
-
-#~ msgid "Information"
-#~ msgstr "Eolas"
-
-#~ msgid "Global Settings"
-#~ msgstr "Socruithe Comhchoiteanna"
-
-#~ msgid "&Enable plugins globally"
-#~ msgstr "&Cumasaigh breiseáin i ngach áit"
-
-#~ msgid "Only allow &HTTP and HTTPS URLs for plugins"
-#~ msgstr "Ná ceadaigh ach URLanna den chineál &HTTP nó HTTPS do bhreiseáin"
-
-#~ msgid "&Load plugins on demand only"
-#~ msgstr "&Luchtaigh breiseáin ar éileamh amháin"
-
-#~ msgid "CPU priority for plugins: %1"
-#~ msgstr "Tosaíocht LAP le haghaidh breiseán: %1"
-
-#~ msgid "Domain-Specific Settin&gs"
-#~ msgstr "Socruithe &Sainiúil don Fhearann"
-
-#~ msgid ""
-#~ "Enables the execution of plugins that can be contained in HTML pages, e."
-#~ "g. Macromedia Flash. Note that, as with any browser, enabling active "
-#~ "contents can be a security problem."
-#~ msgstr ""
-#~ "Ceadaigh do bhreiseáin rith i leathanaigh HTML, m.sh. Macromedia Flash. "
-#~ "Tabhair faoi deara go mb'fhéidir le hábhar gníomhach bheith ina phriacal "
-#~ "slándála, díreach cosúil le brabhsálaí ar bith."
-
-#~ msgid ""
-#~ "<p>This box contains the domains and hosts you have set a specific plugin "
-#~ "policy for. This policy will be used instead of the default policy for "
-#~ "enabling or disabling plugins on pages sent by these domains or hosts.</"
-#~ "p><p>Select a policy and use the controls on the right to modify it.</p>"
-#~ msgstr ""
-#~ "<p>Sa bhosca seo feicfidh tú liosta de na fearainn agus óstríomhairí a "
-#~ "bhfuil polasaí breiseáin acu. Úsáidfear an polasaí seo in ionad an "
-#~ "pholasaí réamhshocraithe chun breiseáin a chumasú nó a dhíchumasú ar "
-#~ "leathanaigh a sheolann na fearainn nó na hóstríomhairí seo.</"
-#~ "p><p>Roghnaigh polasaí agus úsáid na rialtáin ar dheis chun é a "
-#~ "mhionathrú.</p>"
-
-#~ msgid ""
-#~ "Click this button to choose the file that contains the plugin policies. "
-#~ "These policies will be merged with the existing ones. Duplicate entries "
-#~ "are ignored."
-#~ msgstr ""
-#~ "Cliceáil an cnaipe seo chun an comhad ina bhfuil na polasaithe breiseáin "
-#~ "a roghnú. Cumascfar na polasaithe seo leis na cinn atá ann faoi láthair. "
-#~ "Déanfar neamhaird d'iontrálacha dúblacha."
-
-#~ msgid ""
-#~ "Click this button to save the plugin policy to a zipped file. The file, "
-#~ "named <b>plugin_policy.tgz</b>, will be saved to a location of your "
-#~ "choice."
-#~ msgstr ""
-#~ "Cliceáil an cnaipe seo chun an polasaí breiseáin a shábháil i gcomhad "
-#~ "comhbhrúite. Sábhálfar an comhad, darb ainm <b>plugin_policy.tgz</b>, san "
-#~ "áit a roghnaíonn tú."
-
-#~ msgid ""
-#~ "Here you can set specific plugin policies for any particular host or "
-#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
-#~ "supply the necessary information requested by the dialog box. To change "
-#~ "an existing policy, click on the <i>Change...</i> button and choose the "
-#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#~ "button will remove the selected policy causing the default policy setting "
-#~ "to be used for that domain."
-#~ msgstr ""
-#~ "Anseo is féidir leat polasaithe breiseáin ar leith a shocrú le haghaidh "
-#~ "óstríomhaire nó fearann. Chun polasaí nua a chur leis, cliceáil an cnaipe "
-#~ "<i>Nua...</i> agus tabhair uait an fhaisnéis a iarrann an bosca dialóige. "
-#~ "Chun polasaí atá ann a athrú, cliceáil an cnaipe <i>Athraigh...</i> agus "
-#~ "roghnaigh an polasaí ón bhosca dialóige. Cliceáil an cnaipe <i>Scrios</i> "
-#~ "chun an polasaí roghnaithe a scriosadh; sa chás seo úsáidfear an polasaí "
-#~ "réamhshocraithe le haghaidh an fhearainn seo."
-
-#~ msgctxt "lowest priority"
-#~ msgid "lowest"
-#~ msgstr "is ísle"
-
-#~ msgctxt "low priority"
-#~ msgid "low"
-#~ msgstr "íseal"
-
-#~ msgctxt "medium priority"
-#~ msgid "medium"
-#~ msgstr "gnách"
-
-#~ msgctxt "high priority"
-#~ msgid "high"
-#~ msgstr "ard"
-
-#~ msgctxt "highest priority"
-#~ msgid "highest"
-#~ msgstr "is airde"
-
-#~ msgid ""
-#~ "<h1>Konqueror Plugins</h1> The Konqueror web browser can use Netscape "
-#~ "plugins to show special content, just like the Navigator does. Please "
-#~ "note that the way you have to install Netscape plugins may depend on your "
-#~ "distribution. A typical place to install them is, for example, '/opt/"
-#~ "netscape/plugins'."
-#~ msgstr ""
-#~ "<h1>Breiseáin Konqueror</h1> Is féidir leis an mbrabhsálaí Konqueror "
-#~ "breiseáin Netscape a úsáid chun ábhar speisialta a thaispeáint, díreach "
-#~ "cosúil le Navigator. Tabhair faoi deara go mbraitheann modh suiteála "
-#~ "breiseán Netscape ar do chóras. Suiteáiltear iad i '/opt/netscape/"
-#~ "plugins' go minic, mar shampla."
-
-#~ msgid ""
-#~ "Do you want to apply your changes before the scan? Otherwise the changes "
-#~ "will be lost."
-#~ msgstr ""
-#~ "An bhfuil fonn ort do chuid athruithe a chur i bhfeidhm roimh an scanadh? "
-#~ "Mura bhfuil, caillfidh tú na hathruithe."
-
-#~ msgid ""
-#~ "The nspluginscan executable cannot be found. Netscape plugins will not be "
-#~ "scanned."
-#~ msgstr ""
-#~ "Níor aimsíodh clár inrite nspluginscan. Ní scanfar breiseáin Netscape."
-
-#~ msgid "Scanning for plugins"
-#~ msgstr "Breiseáin á scanadh"
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Plugin Scan Folder"
-#~ msgstr "Roghnaigh Fillteán Breiseáin le Scanadh"
-
-#~ msgid "Netscape Plugins"
-#~ msgstr "Breiseáin Netscape"
-
-#~ msgid "Plugin"
-#~ msgstr "Breiseán"
-
-#~ msgid "MIME type"
-#~ msgstr "Cineál MIME"
-
-#~ msgid "Description"
-#~ msgstr "Cur Síos"
-
-#~ msgid "Suffixes"
-#~ msgstr "Iarmhíreanna"
-
-#~ msgid "Doma&in-Specific"
-#~ msgstr "Sainiúi&l don Fhearann"
-
-#~ msgid "&Plugin policy:"
-#~ msgstr "&Polasaí Breiseáin:"
-
-#~ msgid "Select a plugin policy for the above host or domain."
-#~ msgstr ""
-#~ "Roghnaigh polasaí breiseáin le haghaidh an óstríomhaire nó fearainn thuas."
-
-#, fuzzy
-#~| msgid "Sa&ns serif font:"
-#~ msgid "Sans Serif"
-#~ msgstr "Cló Sa&ns serif:"
-
-#, fuzzy
-#~| msgid "S&tandard font:"
-#~ msgid "Standard Symbols L"
-#~ msgstr "Cló &caighdeánach:"
-
-#~ msgid "kcmkonqhtml"
-#~ msgstr "kcmkonqhtml"
-
-#~ msgid "Expression (e.g. http://www.example.com/ad/*):"
-#~ msgstr "Slonn (m.sh. http://www.example.com/ad/*):"
-
-#~ msgid ""
-#~ "Enter an expression to filter. Expressions can be defined as either a "
-#~ "filename style wildcard e.g. http://www.example.com/ads* or as a full "
-#~ "regular expression by surrounding the string with '/' e.g.  //(ad|"
-#~ "banner)\\./"
-#~ msgstr ""
-#~ "Iontráil slonn scagtha. Is féidir sloinn a thabhairt le saoróga, cosúil "
-#~ "le hainmneacha comhaid, m.sh. http://www.sampla.com/ads*, nó mar shlonn "
-#~ "ionadaíochta iomlán trí shlaiseanna a chur ar gach taobh den teaghrán, m."
-#~ "sh. //(ad|banner)\\./"
-
-#~ msgid "Cancel"
-#~ msgstr "Cealaigh"
-
-#~ msgid "Netscape Plugin Config"
-#~ msgstr "Cumraíocht Bhreiseán Netscape"
-
-#~ msgid "Scan"
-#~ msgstr "Scan"
-
-#~ msgid "Use a&rtsdsp to pipe plugin sound through aRts"
-#~ msgstr "Úsáid a&rtsdsp chun fuaim an bhreiseáin a phíopáil trí aRts"
-
-#~ msgid "Scan for new plugins at &KDE startup"
-#~ msgstr "Déan cuardach ar bhreiseáin nua ag am tosaithe &KDE"

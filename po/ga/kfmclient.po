@@ -85,14 +85,7 @@ msgstr ""
 "Comhréir:\n"
 
 #: kfmclient.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kfmclient openURL 'url' ['mimetype']\n"
-#| "            # Opens a window showing 'url'.\n"
-#| "            #  'url' may be a relative path\n"
-#| "            #   or file name, such as . or subdir/\n"
-#| "            #   If 'url' is omitted, $HOME is used instead.\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
 "            # Opens a window showing 'url'.\n"
@@ -101,22 +94,9 @@ msgid ""
 "            #   If 'url' is omitted, the start page is shown.\n"
 "\n"
 msgstr ""
-"  kfmclient openURL 'url' ['cineálMIME']\n"
-"            # Oscail 'url' i bhfuinneog.\n"
-"            #  Is féidir 'url' a bheith ina chonair choibhneasta\n"
-"            #   nó ina ainm comhaid, m.sh. '.' or 'cmhdlann/'\n"
-"            #   Gan 'url', úsáidtear $HOME ina ionad.\n"
-"\n"
 
 #: kfmclient.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "            # If 'mimetype' is specified, it will be used to determine "
-#| "the\n"
-#| "            #   component that Konqueror should use. For instance, set it "
-#| "to\n"
-#| "            #   text/html for a web page, to make it appear faster\n"
-#| "\n"
+#, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
 "            #   component that Konqueror should use. For instance, set it "
@@ -126,12 +106,6 @@ msgid ""
 "            #   Please use the --mimetype option\n"
 "\n"
 msgstr ""
-"            # Má shonraítear 'cineálMIME', úsáidfidh Konqueror é chun "
-"comhpháirt\n"
-"            #   oiriúnach a roghnú.  Mar shampla, más leathanach Gréasáin é, "
-"ba chóir\n"
-"            #   duit 'text/html' a shonrú chun é a thaispeáint níos tapa\n"
-"\n"
 
 #: kfmclient.cpp:104
 #, kde-format
@@ -148,47 +122,16 @@ msgstr ""
 "\n"
 
 #: kfmclient.cpp:280
-#, fuzzy, kde-format
-#| msgid "Syntax Error: Not enough arguments\n"
+#, kde-format
 msgid "Syntax error, not enough arguments\n"
-msgstr "Earráid Chomhréire: Níl go leor argóintí ann\n"
+msgstr ""
 
 #: kfmclient.cpp:284
-#, fuzzy, kde-format
-#| msgid "Syntax Error: Too many arguments\n"
+#, kde-format
 msgid "Syntax error, too many arguments\n"
-msgstr "Earráid Chomhréire: An iomarca argóintí\n"
+msgstr ""
 
 #: kfmclient.cpp:339
-#, fuzzy, kde-format
-#| msgid "Syntax Error: Unknown command '%1'\n"
+#, kde-format
 msgid "Syntax error, unknown command '%1'\n"
-msgstr "Earráid Chomhréire: Ordú anaithnid '%1'\n"
-
-#~ msgid ""
-#~ "  kfmclient exec is deprecated and kept for compatibility with KDE 3. \n"
-#~ "            # See kioclient exec for more information.\n"
-#~ msgstr ""
-#~ "  Tá kfmclient exec i léig agus tá sé coinnithe ar son comhoiriúnacht le "
-#~ "KDE 3. \n"
-#~ "            # Féach ar kioclient exec chun tuilleadh eolais a fháil.\n"
-
-#~ msgid ""
-#~ "  kfmclient openProfile 'profile' ['url']\n"
-#~ "            # Opens a window using the given profile.\n"
-#~ "            #   'profile' is a file under ~/.kde/share/apps/konqueror/"
-#~ "profiles.\n"
-#~ "            #   'url' is an optional URL to open.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "  kfmclient openProfile 'próifíl' ['url']\n"
-#~ "            # Oscail fuinneog leis an bpróifíl sonraithe.\n"
-#~ "            #   Is comhad i ~/.kde/share/apps/konqueror/profiles é "
-#~ "'próifíl'.\n"
-#~ "            #   Is URL roghnach le hoscailt é 'url'.\n"
-#~ "\n"
-
-#, fuzzy
-#~| msgid "Profile %1 not found\n"
-#~ msgid "Profile '%1' not found\n"
-#~ msgstr "Próifíl %1 gan aimsiú\n"
+msgstr ""

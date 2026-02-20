@@ -48,13 +48,12 @@ msgstr ""
 
 #: src/about/konq_aboutpage.cpp:89 src/about/konq_aboutpage.cpp:147
 #: src/about/konq_aboutpage.cpp:206
-#, fuzzy, kde-format
-#| msgid "Start Plugin"
+#, kde-format
 msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
 "Points contains links to Home, Network Folders, Trash, etc."
 msgid "Starting Points"
-msgstr "Tosaigh Breiseán"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:90 src/about/konq_aboutpage.cpp:148
 #: src/about/konq_aboutpage.cpp:207
@@ -74,11 +73,9 @@ msgid "Home Folder"
 msgstr ""
 
 #: src/about/konq_aboutpage.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "EMAIL OF TRANSLATORS"
-#| msgid "Your emails"
+#, kde-format
 msgid "Your personal files"
-msgstr "kscanne@gmail.com"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:100
 #, kde-format
@@ -247,10 +244,9 @@ msgid "<a href=\"%1\">Return to Starting Points</a>"
 msgstr ""
 
 #: src/about/konq_aboutpage.cpp:251
-#, fuzzy, kde-format
-#| msgid "Start Plugin"
+#, kde-format
 msgid "Installed Plugins"
-msgstr "Tosaigh Breiseán"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:252
 #, kde-format
@@ -280,28 +276,22 @@ msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
 msgstr ""
 
 #: src/actondownloadedfilebar.cpp:144 src/actondownloadedfilebar.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "Oscail '%1'"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:149
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "Oscail '%1'"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Oscail '%1'"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:187
 #, kde-format
@@ -316,12 +306,10 @@ msgid "Show here"
 msgstr ""
 
 #: src/actondownloadedfilebar.cpp:203
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "Oscail '%1'"
+msgstr ""
 
 #: src/actondownloadedfilebar.cpp:231
 #, kde-format
@@ -358,11 +346,10 @@ msgid "Share Screen"
 msgstr ""
 
 #: src/capturesourcechooserdlg.cpp:31
-#, fuzzy, kde-format
-#| msgid "New Window"
+#, kde-format
 msgctxt "Choose to share a window"
 msgid "Share Window"
-msgstr "Fuinneog Nua"
+msgstr ""
 
 #: src/capturesourcechooserdlg.cpp:35
 #, kde-format
@@ -372,11 +359,9 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
-#, fuzzy, kde-format
-#| msgctxt "input dialog text for selecting html elements"
-#| msgid "Choose elements"
+#, kde-format
 msgid "Choose Capture Source"
-msgstr "Roghnaigh eilimintí"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
@@ -386,17 +371,15 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/capturesourcechooserdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "New Window"
+#, kde-format
 msgid "Window"
-msgstr "Fuinneog Nua"
+msgstr ""
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, windowCombo)
 #: src/capturesourcechooserdlg.ui:51
-#, fuzzy, kde-format
-#| msgid "Close window?"
+#, kde-format
 msgid "Choose window"
-msgstr "An bhfuil fonn ort an fhuinneog a dhúnadh?"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, Screen)
 #: src/capturesourcechooserdlg.ui:75
@@ -435,11 +418,9 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
-#, fuzzy, kde-format
-#| msgctxt "input dialog text for selecting html elements"
-#| msgid "Choose elements"
+#, kde-format
 msgid "Choose Save Format"
-msgstr "Roghnaigh eilimintí"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:20
@@ -507,11 +488,10 @@ msgid "Servers, page scripts"
 msgstr ""
 
 #: src/cookies/cookiealertdlg.cpp:41
-#, fuzzy, kde-format
-#| msgid "Accept"
+#, kde-format
 msgctxt "@label accept cookie"
 msgid "Accept"
-msgstr "Glac Leis"
+msgstr ""
 
 #: src/cookies/cookiealertdlg.cpp:42
 #, kde-format
@@ -520,11 +500,10 @@ msgid "Accept for this session"
 msgstr ""
 
 #: src/cookies/cookiealertdlg.cpp:45
-#, fuzzy, kde-format
-#| msgid "Reject"
+#, kde-format
 msgctxt "@label reject cookie"
 msgid "Reject"
-msgstr "Diúltaigh"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CookieAlertDlg)
 #: src/cookies/cookiealertdlg.ui:14
@@ -677,10 +656,9 @@ msgid "Filter error"
 msgstr "Earráid scagtha"
 
 #: src/spellcheckermanager.cpp:98
-#, fuzzy, kde-format
-#| msgid "Check Spelling..."
+#, kde-format
 msgid "Spelling"
-msgstr "Ceartaigh Litriú..."
+msgstr ""
 
 #: src/spellcheckermanager.cpp:102
 #, kde-format
@@ -789,10 +767,9 @@ msgid "&Hide details"
 msgstr ""
 
 #: src/ui/searchbar.cpp:38
-#, fuzzy, kde-format
-#| msgid "&Find:"
+#, kde-format
 msgid "Find..."
-msgstr "&Aimsigh:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, closeButton)
 #: src/ui/searchbar.ui:23
@@ -868,14 +845,10 @@ msgid "password"
 msgstr ""
 
 #: src/wallet/webenginewallet.cpp:107
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
-#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
-#| msgid "Email: "
+#, kde-format
 msgctxt "Web field with type 'e-mail'"
 msgid "e-mail"
-msgstr "Ríomhphost: "
+msgstr ""
 
 #: src/wallet/webenginewallet.cpp:108
 #, kde-format
@@ -948,16 +921,11 @@ msgstr ""
 "Díchumasófar an comhtháthú."
 
 #: src/webenginepage.cpp:525
-#, fuzzy, kde-format
-#| msgid ""
-#| "This site is attempting to submit form data via email.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
 "Do you want to allow it access?"
 msgstr ""
-"Tá an suíomh seo ag iarraidh foirm a sheoladh trí ríomhphost.\n"
-"An bhfuil fonn ort dul ar aghaidh?"
 
 #: src/webenginepage.cpp:529 src/webenginepage.cpp:607
 #: src/webenginepage.cpp:618
@@ -1076,10 +1044,9 @@ msgid "Do Not Allow"
 msgstr "Ná Ceadaigh"
 
 #: src/webenginepart.cpp:206
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "Sábháil an Íomhá Mar..."
+msgstr ""
 
 #: src/webenginepart.cpp:210
 #, kde-format
@@ -1110,11 +1077,9 @@ msgid "Zoom Text Only"
 msgstr "Súmáil Téacs Amháin"
 
 #: src/webenginepart.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "zoom in action"
-#| msgid "Zoom In"
+#, kde-format
 msgid "Zoom To DPI"
-msgstr "Súmáil Isteach"
+msgstr ""
 
 #: src/webenginepart.cpp:250
 #, kde-format
@@ -1340,11 +1305,10 @@ msgid ""
 msgstr ""
 
 #: src/webenginepartcertificateerrordlg.cpp:56
-#, fuzzy, kde-format
-#| msgid "Filter error"
+#, kde-format
 msgctxt "title of a dialog asking what to do about a SSL certificate error"
 msgid "Certificate error"
-msgstr "Earráid scagtha"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEnginePartCertificateErrorDlg)
 #: src/webenginepartcertificateerrordlg.ui:14
@@ -1366,13 +1330,9 @@ msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, subjectTab)
 #: src/webenginepartcertificateerrordlg.ui:63
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
-#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
-#| msgid " - Subject: "
+#, kde-format
 msgid "&Subject"
-msgstr " - Ábhar: "
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, issuerTab)
 #: src/webenginepartcertificateerrordlg.ui:73
@@ -1405,11 +1365,10 @@ msgid "Source"
 msgstr ""
 
 #: src/webenginepartdownloadmanager.cpp:318
-#, fuzzy, kde-format
-#| msgid "Description:"
+#, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
-msgstr "Cur Síos:"
+msgstr ""
 
 #: src/webenginepartdownloadmanager.cpp:340
 #, kde-format
@@ -1484,16 +1443,14 @@ msgid "&Save Link As..."
 msgstr "&Sábháil an Nasc Mar..."
 
 #: src/webengineview.cpp:498
-#, fuzzy, kde-format
-#| msgid "&Pause"
+#, kde-format
 msgid "&Play/Pause"
-msgstr "&Sos"
+msgstr ""
 
 #: src/webengineview.cpp:503
-#, fuzzy, kde-format
-#| msgid "Un&mute"
+#, kde-format
 msgid "Un&mute/&Mute"
-msgstr "Le Fuai&m"
+msgstr ""
 
 #: src/webengineview.cpp:508
 #, kde-format
@@ -1501,10 +1458,9 @@ msgid "Toggle &Loop"
 msgstr ""
 
 #: src/webengineview.cpp:513
-#, fuzzy, kde-format
-#| msgid "Show &Controls"
+#, kde-format
 msgid "Toggle &Controls"
-msgstr "Taispeáin &Rialtáin"
+msgstr ""
 
 #: src/webengineview.cpp:524
 #, kde-format
@@ -1602,11 +1558,10 @@ msgid "auto-completion off"
 msgstr ""
 
 #: src/webfieldsdataview.cpp:131
-#, fuzzy, kde-format
-#| msgid "Set Editable"
+#, kde-format
 msgctxt "web field is disabled"
 msgid "disabled"
-msgstr "Déan Ineagarthóireachta"
+msgstr ""
 
 #: src/webfieldsdataview.cpp:159
 #, kde-format
@@ -1628,202 +1583,3 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
-
-#~ msgid "Resubmit Information"
-#~ msgstr "Seol Faisnéis Arís"
-
-#, fuzzy
-#~| msgid "Allow"
-#~ msgctxt "Allow a web page to capture the screen"
-#~ msgid "Allow"
-#~ msgstr "Ceadaigh"
-
-#, fuzzy
-#~| msgctxt "open selected url"
-#~| msgid "Open '%1'"
-#~ msgid "Open in %1"
-#~ msgstr "Oscail '%1'"
-
-#, fuzzy
-#~| msgid "Search Automatically"
-#~ msgid "(Short-) Automatic"
-#~ msgstr "Cuardaigh Go hUathoibríoch"
-
-#~ msgid "Security Warning"
-#~ msgstr "Rabhadh Slándála"
-
-#~ msgctxt "follow link despite of security warning"
-#~ msgid "Follow"
-#~ msgstr "Lean ar aghaidh"
-
-#~ msgid "Security Alert"
-#~ msgstr "Foláireamh Slándála"
-
-#~ msgid "Save &Frame As..."
-#~ msgstr "Sábháil an &Fráma Mar..."
-
-#, fuzzy
-#~| msgctxt "Program Name"
-#~| msgid "KWebKitPart"
-#~ msgctxt "Program Name"
-#~ msgid "WebEnginePart"
-#~ msgstr "KWebKitPart"
-
-#, fuzzy
-#~| msgctxt "Short Description"
-#~| msgid "QtWebKit Browser Engine Component"
-#~ msgctxt "Short Description"
-#~ msgid "QtWebEngine Browser Engine Component"
-#~ msgstr "Comhpháirt Innill Brabhsálaí QtWebKit"
-
-#~ msgid ""
-#~ "(C) 2009-2010 Dawit Alemayehu\n"
-#~ "(C) 2008-2010 Urs Wolfer\n"
-#~ "(C) 2007 Trolltech ASA"
-#~ msgstr ""
-#~ "© 2009-2010 Dawit Alemayehu\n"
-#~ "© 2008 - 2010, Urs Wolfer\n"
-#~ "© 2007 Trolltech ASA"
-
-#~ msgid "Maintainer, Developer"
-#~ msgstr "Cothaitheoir, Forbróir"
-
-#~ msgid "Dawit Alemayehu"
-#~ msgstr "Dawit Alemayehu"
-
-#~ msgid "Developer"
-#~ msgstr "Forbróir"
-
-#~ msgid "Urs Wolfer"
-#~ msgstr "Urs Wolfer"
-
-#~ msgid "Michael Howell"
-#~ msgstr "Michael Howell"
-
-#~ msgid "Laurent Montel"
-#~ msgstr "Laurent Montel"
-
-#~ msgid "Dirk Mueller"
-#~ msgstr "Dirk Mueller"
-
-#, fuzzy
-#~| msgid "Save Image As..."
-#~ msgid "Save As"
-#~ msgstr "Sábháil an Íomhá Mar..."
-
-#~ msgctxt "label for input line to find text"
-#~ msgid "&Find:"
-#~ msgstr "&Aimsigh:"
-
-#~ msgctxt "input dialog window title for selecting html elements"
-#~ msgid "Select elements"
-#~ msgstr "Roghnaigh eilimintí"
-
-#~ msgid "Print"
-#~ msgstr "Priontáil"
-
-#~ msgid "Close"
-#~ msgstr "Dún"
-
-#~ msgid "Zoom &In"
-#~ msgstr "Súmáil &Isteach"
-
-#~ msgid "Zoom &Out"
-#~ msgstr "Súmáil &Amach"
-
-#~ msgid "Reset Zoom"
-#~ msgstr "Athshocraigh Súmáil"
-
-#~ msgid "Dump HTML"
-#~ msgstr "Dumpáil HTML"
-
-#~ msgid "F&ormat"
-#~ msgstr "F&ormáid"
-
-#~ msgid "Writing Direction"
-#~ msgstr "Treo Scríofa"
-
-#~ msgid "Select elements..."
-#~ msgstr "Roghnaigh eilimintí..."
-
-#~ msgid "KDELauncher"
-#~ msgstr "KDELauncher"
-
-#~ msgid "%1 element selected"
-#~ msgid_plural "%1 elements selected"
-#~ msgstr[0] "%1 eilimint roghnaithe"
-#~ msgstr[1] "%1 eilimint roghnaithe"
-#~ msgstr[2] "%1 eilimint roghnaithe"
-#~ msgstr[3] "%1 n-eilimint roghnaithe"
-#~ msgstr[4] "%1 eilimint roghnaithe"
-
-#~ msgctxt "Text direction"
-#~ msgid "Direction"
-#~ msgstr "Treo Scríofa"
-
-#~ msgid "Default"
-#~ msgstr "Réamhshocrú"
-
-#~ msgid "Left to right"
-#~ msgstr "Clé-go-Deas"
-
-#~ msgid "Right to left"
-#~ msgstr "Deas-go-Clé"
-
-#~ msgctxt "@title:menu HTML frame/iframe"
-#~ msgid "Frame"
-#~ msgstr "Fráma"
-
-#~ msgid "Open in New &Window"
-#~ msgstr "Oscail i bh&Fuinneog Nua"
-
-#~ msgid "Open in &This Window"
-#~ msgstr "Oscail san fhuinneog &seo"
-
-#~ msgid "Open in &New Tab"
-#~ msgstr "Oscail i gCluaisín &Nua"
-
-#~ msgid "Reload Frame"
-#~ msgstr "Athluchtaigh an Fráma"
-
-#~ msgid "Print Frame..."
-#~ msgstr "Priontáil an Fráma..."
-
-#~ msgid "View Frame Source"
-#~ msgstr "Féach Foinse an Fhráma"
-
-#~ msgid "Block IFrame..."
-#~ msgstr "Cuir Cosc ar I-Fhráma..."
-
-#~ msgid "&Play"
-#~ msgstr "&Seinn"
-
-#~ msgid "&Mute"
-#~ msgstr "&Gan fuaim"
-
-#~ msgid "&Loop"
-#~ msgstr "&Lúb"
-
-#~ msgid "Esc"
-#~ msgstr "Esc"
-
-#~ msgid "Enter the text to search for here"
-#~ msgstr "Iontráil téacs le lorg anseo"
-
-#~ msgid "Do you want to store this password?"
-#~ msgstr "An bhfuil tú fonn ort an focal faire seo a stóráil?"
-
-#~ msgid "JavaScript"
-#~ msgstr "JavaScript"
-
-#~ msgid "Text to find:"
-#~ msgstr "Téacs le haimsiú:"
-
-#~ msgid "Blocked request."
-#~ msgstr "Iarratas a gcuireadh cosc air."
-
-#~ msgid "Enlarge Font"
-#~ msgstr "Méadaigh an Cló"
-
-#~ msgid "Shrink Font"
-#~ msgstr "Laghdaigh an Cló"
