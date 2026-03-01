@@ -43,7 +43,7 @@
      <item row="1" column="1">
       <widget class="KUrlRequester" name="urlWidget">
        <property name="mode">
-        <set>KFile::Mode::ExistingOnly|KFile::Mode::File</set>
+        <set>KFile::Mode::Directory|KFile::Mode::ExistingOnly|KFile::Mode::File</set>
        </property>
       </widget>
      </item>
