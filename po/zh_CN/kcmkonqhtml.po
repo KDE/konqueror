@@ -209,7 +209,7 @@ msgstr "最小字体大小(&I)："
 msgid ""
 "Konqueror will never display text smaller than this size,<br />overriding "
 "any other settings."
-msgstr "不管网站的设置如何，<br />Konqueror 将不显示小于此大小的文字。"
+msgstr "不管网站的设置如何，<br />Konqueror 将不显示小于此大小的文本。"
 
 #: appearance.cpp:144
 #, kde-format
@@ -224,7 +224,7 @@ msgstr "标准字体(&T)："
 #: appearance.cpp:158
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
-msgstr "这是用来显示网页中普通文字的字体。"
+msgstr "这是用来显示网页中正常文本的字体。"
 
 #: appearance.cpp:162
 #, kde-format
@@ -235,7 +235,7 @@ msgstr "等宽字体(&F)："
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
-msgstr "这个字体用来显示等宽(非比例)文字。"
+msgstr "这个字体用来显示等宽 (非比例) 文本。"
 
 #: appearance.cpp:167
 #, kde-format
@@ -245,7 +245,7 @@ msgstr "有衬线字体(&E)："
 #: appearance.cpp:168
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
-msgstr "这个字体用来显示标为有衬线字体的文字。"
+msgstr "这个字体用来显示标为有衬线字体的文本。"
 
 #: appearance.cpp:172
 #, kde-format
@@ -255,7 +255,7 @@ msgstr "无衬线字体(&N)："
 #: appearance.cpp:173
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
-msgstr "该字体用于显示标为无衬线字体的文字。"
+msgstr "该字体用于显示标为无衬线字体的文本。"
 
 #: appearance.cpp:177
 #, kde-format
@@ -265,7 +265,7 @@ msgstr "手写体字体(&U)："
 #: appearance.cpp:178
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
-msgstr "该字体用于显示标为斜体的文字。"
+msgstr "该字体用于显示标为斜体的文本。"
 
 #: appearance.cpp:182
 #, kde-format
@@ -276,7 +276,7 @@ msgstr "绚丽字体(&Y)："
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
-msgstr "该字体用于显示标为绚丽字体的文字。"
+msgstr "该字体用于显示标为绚丽字体的文本。"
 
 #: appearance.cpp:192
 #, kde-format
@@ -1195,7 +1195,7 @@ msgid ""
 "<b>Background</b><p>This background color is the one displayed behind the "
 "text by default. A background image will override this.</p>"
 msgstr ""
-"<b>背景色</b><p>背景色是默认显示在文字后面的颜色。背景图片覆盖该选项。</p>"
+"<b>背景色</b><p>背景色是默认显示在文本后面的颜色。背景图片覆盖该选项。</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, txtBackground)
 #: css/csscustom.ui:222
@@ -1219,14 +1219,14 @@ msgid ""
 "color to the default font as well as any custom fonts as specified in a "
 "stylesheet.</p>"
 msgstr ""
-"<b>所有文字使用相同颜色</b><p>选择该选项将您选定的颜色应用到样式表中指定的默"
+"<b>所有文本使用相同颜色</b><p>选择该选项将您选定的颜色应用到样式表中指定的默"
 "认字体和任何自定义的字体</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameColor)
 #: css/csscustom.ui:251
 #, kde-format
 msgid "Use same color for all text"
-msgstr "所有文字使用相同颜色"
+msgstr "所有文本使用相同颜色"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, txtForeground)
 #. i18n: ectx: property (whatsThis), widget (KColorButton, foregroundColorButton)
@@ -1235,7 +1235,7 @@ msgstr "所有文字使用相同颜色"
 msgid ""
 "<b>Foreground color</b><p>The foreground color is the color that the text is "
 "drawn in.</p>"
-msgstr "<b>前景色</b><p>前景色是描绘文字的颜色。</p>"
+msgstr "<b>前景色</b><p>前景色是描绘文本的颜色。</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, txtForeground)
 #: css/csscustom.ui:264

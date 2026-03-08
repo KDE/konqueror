@@ -415,7 +415,7 @@ msgid ""
 "The page will be saved as a single HTML file. Only the text of the page will "
 "be saved. External resources such as images won't be saved"
 msgstr ""
-"页面将被保存为一个 HTML 文件。只有页面中的文字会被保存。图像等外部资源将不会"
+"页面将被保存为一个 HTML 文件。只有页面中的文本会被保存。图像等外部资源将不会"
 "被保存。"
 
 #: src/choosepagesaveformatdlg.cpp:40
@@ -435,7 +435,7 @@ msgid ""
 "<br><strong>Note</strong>: not all browsers are able to display this kind of "
 "files"
 msgstr ""
-"页面将被保存为一个 MHTML 文件，这种文件可以同时内嵌页面的文字和页面所需的所有"
+"页面将被保存为一个 MHTML 文件，这种文件可以同时内嵌页面的文本和页面所需的所有"
 "外部资源，例如图像等。<br><strong>请注意</strong>：某些浏览器不能正常显示这种"
 "文件"
 
@@ -474,7 +474,7 @@ msgstr "保存为 &MHTML 文件"
 #: src/choosepagesaveformatdlg.ui:57 src/webenginepartcertificateerrordlg.ui:23
 #, kde-format
 msgid "TextLabel"
-msgstr "文字标签"
+msgstr "文本标签"
 
 #: src/cookies/cookiealertdlg.cpp:22
 #, kde-format
