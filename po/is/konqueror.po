@@ -8,20 +8,20 @@
 # Arnar Leósson <leosson@frisurf.no>, 2003.
 # Svanur Palsson <svanur@tern.is>, 2004.
 # Arnar Leosson <leosson@frisurf.no>, 2004, 2005.
-# Sveinn í Felli <sveinki@nett.is>, 2008, 2009, 2010, 2011, 2014, 2018, 2019.
+# SPDX-FileCopyrightText: 2008, 2009, 2010, 2011, 2014, 2018, 2019, 2026 Sveinn í Felli <sveinki@nett.is>
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-23 00:44+0000\n"
-"PO-Revision-Date: 2019-11-05 18:25+0000\n"
+"PO-Revision-Date: 2026-03-12 13:01+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
+"Language-Team: Icelandic\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 "\n"
@@ -84,15 +84,13 @@ msgid "&Open with..."
 msgstr "&Opna með"
 
 #: src/downloadactionquestion.cpp:309 src/downloadactionquestion.cpp:462
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr "Opna með %1"
+msgstr "&Opna með %1"
 
 #: src/downloadactionquestion.cpp:318
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "&Opna með"
@@ -110,11 +108,10 @@ msgid "&Display in"
 msgstr ""
 
 #: src/downloadactionquestion.cpp:368
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Opna með %1"
+msgstr "Opna &með %1"
 
 #: src/downloadactionquestion.cpp:400
 #, kde-format
@@ -150,11 +147,10 @@ msgid ""
 msgstr ""
 
 #: src/downloadactionquestion.cpp:449
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr "Heiti:"
+msgstr "Heiti: %1"
 
 #: src/downloadactionquestion.cpp:451
 #, kde-format
@@ -180,10 +176,9 @@ msgid "Web browser, file manager and document viewer."
 msgstr "Vafri, skráastjóri og skjalarýnir."
 
 #: src/konqapplication.cpp:162
-#, fuzzy, kde-format
-#| msgid "(C) 1999-2016, The Konqueror developers"
+#, kde-format
 msgid "(C) 1999-2023, The Konqueror developers"
-msgstr "(C) 1999-2016, KDE Konqueror forritararnir"
+msgstr "(C) 1999-2023, KDE Konqueror forritararnir"
 
 #: src/konqapplication.cpp:176
 #, kde-format
@@ -548,10 +543,9 @@ msgid "profile"
 msgstr "notandasnið"
 
 #: src/konqapplication.cpp:230
-#, fuzzy, kde-format
-#| msgid "List available sessions"
+#, kde-format
 msgid "List available sessions and exit"
-msgstr "Sýna tiltækar setur"
+msgstr "Sýna tiltækar setur og fara út"
 
 #: src/konqapplication.cpp:231
 #, kde-format
@@ -611,11 +605,10 @@ msgid "Location to open"
 msgstr "Staður sem skal opna"
 
 #: src/konqapplication.cpp:354
-#, fuzzy, kde-format
-#| msgid "Session to open"
+#, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "Seta sem skal opna"
+msgstr "Ekki var hægt að opna setuna %1"
 
 #: src/konqapplication.cpp:484
 #, kde-format
@@ -631,11 +624,10 @@ msgid "no name"
 msgstr "no name"
 
 #: src/konqextensionmanager.cpp:49
-#, fuzzy, kde-format
-#| msgid "Configure Extensions..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Extensions"
-msgstr "Stilla viðbætur..."
+msgstr "Stilla viðbætur"
 
 #: src/konqextensionmanager.cpp:69
 #, kde-format
@@ -741,10 +733,9 @@ msgid "Open in New Tab"
 msgstr "Opna í nýjum flipa"
 
 #: src/konqhistoryview.cpp:65
-#, fuzzy, kde-format
-#| msgid "Open in New Tab"
+#, kde-format
 msgid "Open in Current Tab"
-msgstr "Opna í nýjum flipa"
+msgstr "Opna í þessum flipa"
 
 #: src/konqhistoryview.cpp:69
 #, kde-format
@@ -1127,10 +1118,9 @@ msgid "Move Tab Right"
 msgstr "Færa flipa til hægri"
 
 #: src/konqmainwindow.cpp:3479
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "Nýr &gluggi"
+msgstr "Vernda glugga"
 
 #: src/konqmainwindow.cpp:3485
 #, kde-format
@@ -1399,10 +1389,9 @@ msgstr ""
 "gluggar framkvæma."
 
 #: src/konqmainwindow.cpp:3684
-#, fuzzy, kde-format
-#| msgid "C&lose Current Tab"
+#, kde-format
 msgid "&Inspect Current Page"
-msgstr "Loka núverandi f&lipa"
+msgstr "Skoða fyrirliggjandi síðu"
 
 #: src/konqmainwindow.cpp:3685
 #, kde-format
@@ -1454,11 +1443,10 @@ msgid "Open bookmarks folder in new tabs"
 msgstr "Opna bókamerkjamöppu í nýjum flipum"
 
 #: src/konqmainwindow.cpp:4184
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "&Opna"
+msgstr "Opna"
 
 #: src/konqmainwindow.cpp:4346
 #, kde-format
@@ -1599,10 +1587,9 @@ msgid "Don't use a proxy"
 msgstr ""
 
 #: src/konqmainwindow.cpp:5453 src/konqmainwindow.cpp:5481
-#, fuzzy, kde-format
-#| msgid "Show Configuration Button"
+#, kde-format
 msgid "Show proxy configuration dialog"
-msgstr "Sýna stillingahnapp"
+msgstr "Sýna stillingaglugga milliþjóns"
 
 #: src/konqmainwindow.cpp:5477
 #, kde-format
@@ -1661,19 +1648,16 @@ msgid "Session n&ame:"
 msgstr "He&iti setu:"
 
 #: src/konqsessiondialog.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@tooltip:session list"
-#| msgid "Uncheck the sessions you do not want to be restored"
+#, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr "Taktu hakið af þeim setum sem þú vilt ekki endurheimta"
+msgstr "Taktu merkið úr þeim setum eða gluggum sem þú vilt ekki endurheimta"
 
 #: src/konqsessiondialog.cpp:95
-#, fuzzy, kde-format
-#| msgid "Sessions"
+#, kde-format
 msgctxt "@item:treewidget"
 msgid "Session %1"
-msgstr "Setur"
+msgstr "Seta %1"
 
 #. i18n. Otherwise it would be easier to just use what is in the session file
 #: src/konqsessiondialog.cpp:113
@@ -1816,10 +1800,9 @@ msgid "&Reload Tab"
 msgstr "Endur&lesa flipa"
 
 #: src/konqtabs.cpp:56
-#, fuzzy, kde-format
-#| msgid "&Reload All Tabs"
+#, kde-format
 msgid "All Tabs"
-msgstr "Endur&lesa alla flipa"
+msgstr "Alla flipa"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -1997,10 +1980,9 @@ msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
 #: src/urlloader.cpp:771
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As"
-msgstr "Vista sem..."
+msgstr "Vista sem"
 
 #~ msgid "Other Tabs"
 #~ msgstr "Aðrir flipar"
