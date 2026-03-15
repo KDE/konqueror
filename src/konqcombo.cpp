@@ -147,7 +147,6 @@ KonqCombo::KonqCombo(QWidget *parent)
     // is either removed or hidden.
     connect(this, QOverload<int>::of(&QComboBox::highlighted), this, &KonqCombo::slotSetIcon);
     connect(this, &QComboBox::textActivated, this, &KonqCombo::slotActivated);
-    connect(this, &KComboBox::returnPressed, this, &KonqCombo::slotActivated);
     connect(this, &KComboBox::completionModeChanged, this, &KonqCombo::slotCompletionModeChanged);
 }
 
