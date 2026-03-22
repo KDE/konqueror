@@ -109,6 +109,16 @@ Q_SIGNALS:
 
     void mainFrameNavigationRequested(WebEnginePage *page, const QUrl);
 
+    /**
+     * @brief Signal emitted when a page starts loading
+     *
+     * It's analogous to `QWebEnginePage::loadStarted() except that it provides as argument
+     * the URL of the page which has started loading.
+     *
+     * @param url the URL of the page which has started loading
+     */
+    void loadingStarted(const QUrl &url);
+
 protected:
     /**
      * Returns the webengine part in use by this object.

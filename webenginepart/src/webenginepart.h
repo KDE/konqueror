@@ -195,7 +195,7 @@ protected:
 private Q_SLOTS:
     void slotShowSecurity();
     void slotShowSearchBar();
-    void slotLoadStarted();
+    void slotLoadStarted(const QUrl &newUrl);
     void slotLoadAborted(const QUrl &);
     void slotLoadFinished(bool);
 
