@@ -873,12 +873,8 @@ void WebEnginePage::createNewWindow(QWebEngineNewWindowRequest& req)
         wargs.setLowerWindow(true);
     }
 
-    KParts::ReadOnlyPart* newWindowPart = nullptr;
-    emit part()->browserExtension()->browserCreateNewWindow(req.requestedUrl(), args, bargs, wargs, &newWindowPart);
-    WebEnginePart *newWebEnginePart = qobject_cast<WebEnginePart*>(newWindowPart);
-    if (newWebEnginePart) {
-        req.openIn(newWebEnginePart->page());
-    }
+    //We don't call req.openIn() because the new URL will already be opened by KonqMainWindow::slotCreateNewWindow()
+    emit part()->browserExtension()->browserCreateNewWindow(req.requestedUrl(), args, bargs, wargs);
 }
 
 bool WebEnginePage::decideHandlingOfJavascripWindow(const QUrl url) const

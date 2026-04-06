@@ -166,6 +166,21 @@ protected Q_SLOTS:
 #ifdef MEDIAREQUEST_SUPPORTED
     void chooseDesktopMedia(const QWebEngineDesktopMediaRequest &request);
 #endif
+
+    /**
+     * @brief Slot connected to the `newWindowRequested()` signal
+     *
+     * It asks the browser to create a new window.
+     *
+     * If a drag & drop operation is happening (meaning that #m_dropOperationTimer is active)
+     * this assumes that the drop operation should be concluded in this page, so that
+     * the dropped URL will be opened in this page and no new window will be created.
+     *
+     * @note This slot doesn't call `QWebEngineNewWindowRequest::openIn()` because the slot
+     * connected to this signal (KonqMainWindow::slotCreateNewWindow()) already calls
+     * KonqMainWindow::openUrl() on the new window. This isn't optimal, but it's the
+     * simplest way to avoid duplicating calls to KonqMainWindow::openUrl().
+     */
     void createNewWindow(QWebEngineNewWindowRequest &req);
 
     void print();
