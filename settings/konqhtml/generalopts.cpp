@@ -57,7 +57,7 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     m_emptyStartUrlWarning->hide();
     formLayout->addRow(m_emptyStartUrlWarning);
 
-    QLabel *startLabel = new QLabel(i18nc("@label:listbox", "When a new &Tab is created"), widget());
+    QLabel *startLabel = new QLabel(i18nc("@label:listbox", "When a new &window is created"), widget());
 
     QWidget *containerWidget = new QWidget(widget());
     QHBoxLayout *hboxLayout = new QHBoxLayout(containerWidget);

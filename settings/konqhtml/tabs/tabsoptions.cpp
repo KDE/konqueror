@@ -26,6 +26,7 @@ TabsOptions::TabsOptions(QObject* parent, const KPluginMetaData& md, const QVari
     connect(m_ui->m_pShowMMBInTabs, &QAbstractButton::toggled, this, [this](bool){setNeedsSave(true);});
     connect(m_ui->m_pDynamicTabbarHide, &QAbstractButton::toggled, this, [this](bool){setNeedsSave(true);});
     connect(m_ui->m_pNewTabsInBackground, &QAbstractButton::toggled, this, [this](bool){setNeedsSave(true);});
+    connect(m_ui->m_newTabEmpty, &QAbstractButton::toggled, this, [this](bool){setNeedsSave(true);});
     connect(m_ui->m_pOpenAfterCurrentPage, &QAbstractButton::toggled, this, [this](bool){setNeedsSave(true);});
     connect(m_ui->m_pTabConfirm, &QAbstractButton::toggled, this, [this](bool){setNeedsSave(true);});
     connect(m_ui->m_pTabCloseActivatePrevious, &QAbstractButton::toggled, this, [this](bool){setNeedsSave(true);});
@@ -57,6 +58,7 @@ void TabsOptions::load()
     m_ui->m_pDynamicTabbarHide->setChecked(!Settings::alwaysTabbedMode());
     m_ui->m_pNewTabsInBackground->setChecked(!Settings::newTabsInFront());
     m_ui->m_pOpenAfterCurrentPage->setChecked(Settings::openAfterCurrentPage());
+    m_ui->m_newTabEmpty->setChecked(Settings::newTabEmpty());
     m_ui->m_pPermanentCloseButton->setChecked(Settings::permanentCloseButton());
     m_ui->m_pKonquerorTabforExternalURL->setChecked(Settings::konquerorTabforExternalURL());
     m_ui->m_pPopupsWithinTabs->setChecked(Settings::popupsWithinTabs());
@@ -78,6 +80,7 @@ void TabsOptions::save()
     Settings::setAlwaysTabbedMode(!(m_ui->m_pDynamicTabbarHide->isChecked()));
     Settings::setNewTabsInFront(!(m_ui->m_pNewTabsInBackground->isChecked()));
     Settings::setOpenAfterCurrentPage(m_ui->m_pOpenAfterCurrentPage->isChecked());
+    Settings::setNewTabEmpty(m_ui->m_newTabEmpty->isChecked());
     Settings::setPermanentCloseButton(m_ui->m_pPermanentCloseButton->isChecked());
     Settings::setKonquerorTabforExternalURL(m_ui->m_pKonquerorTabforExternalURL->isChecked());
     Settings::setPopupsWithinTabs(m_ui->m_pPopupsWithinTabs->isChecked());

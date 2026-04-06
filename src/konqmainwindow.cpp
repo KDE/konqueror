@@ -2211,7 +2211,8 @@ void KonqMainWindow::slotAddTab()
         return;
     }
 
-    openUrl(newView, KonqUrl::url(KonqUrl::Type::Blank), QString());
+    QUrl url = Konq::Settings::newTabEmpty() ? KonqUrl::url(KonqUrl::Type::Blank) : QUrl(Konq::Settings::startURL());
+    openUrl(newView, url, QString());
 
     //HACK!! QTabBar likes to steal focus when changing widgets.  This can result
     //in a flicker since we don't want it to get focus we want the combo to get
