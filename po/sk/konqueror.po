@@ -19,8 +19,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -33,8 +33,7 @@ msgid "Your emails"
 msgstr "visnovsky@kde.org,misurel@gmail.com,wizzardsk@gmail.com"
 
 #: src/configdialog.cpp:73
-#, fuzzy, kde-format
-#| msgid "File Management"
+#, kde-format
 msgctxt ""
 "@title:tab The file manager behavior tab. Also used in the list of tabs for "
 "consistency"
@@ -45,44 +44,40 @@ msgstr "Správa súborov"
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "Typ: %1"
 
 #: src/downloadactionquestion.cpp:168
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "Zapamätať akciu pre súbory tohto typu"
 
 #: src/downloadactionquestion.cpp:281
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
-msgstr ""
+msgstr "Uložiť '%1'?"
 
 #: src/downloadactionquestion.cpp:283
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
 msgstr "Otvoriť pomocou %1"
 
 #: src/downloadactionquestion.cpp:301
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "&Otvoriť pomocou"
 
 #: src/downloadactionquestion.cpp:309 src/downloadactionquestion.cpp:462
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
 msgstr "Otvoriť pomocou %1"
 
 #: src/downloadactionquestion.cpp:318
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "&Otvoriť pomocou"
@@ -91,17 +86,16 @@ msgstr "&Otvoriť pomocou"
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
-msgstr ""
+msgstr "&Zobraziť v %1"
 
 #: src/downloadactionquestion.cpp:346
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
-msgstr ""
+msgstr "&Zobraziť v"
 
 #: src/downloadactionquestion.cpp:368
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "Otvoriť pomocou %1"
@@ -110,25 +104,25 @@ msgstr "Otvoriť pomocou %1"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
-msgstr ""
+msgstr "Zobraziť &v %1"
 
 #: src/downloadactionquestion.cpp:422
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
-msgstr ""
+msgstr "Prehliadače nepodporujúce tento súbor"
 
 #: src/downloadactionquestion.cpp:426
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
-msgstr ""
+msgstr "Prehliadače, ktoré pravdepodobne nezobrazia súbor"
 
 #: src/downloadactionquestion.cpp:427
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
-msgstr ""
+msgstr "tento súbor"
 
 #: src/downloadactionquestion.cpp:428
 #, kde-format
@@ -138,19 +132,22 @@ msgid ""
 "type is incorrect or if a viewer can display %1 even if it doesn't "
 "officially support it.</p>"
 msgstr ""
+"<p>Prehliadače, ktoré by nemali byť schopné zobraziť %1. Ich použitie s "
+"najväčšou pravdepodobnosťou zlyhá.</p><p>Tieto možnosti sú poskytnuté pre "
+"prípad, že zistený typ súboru je nesprávny alebo ak prehliadač dokáže "
+"zobraziť %1, aj keď ho oficiálne nepodporuje.</p>"
 
 #: src/downloadactionquestion.cpp:449
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr "Názov:"
+msgstr "Name: %1"
 
 #: src/downloadactionquestion.cpp:451
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "Toto je názov súboru navrhnutý serverom"
 
 #: src/konqapplication.cpp:116
 #, kde-format
@@ -158,6 +155,8 @@ msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
+"<p>Spúšťate Konqueror ako root. To vyžaduje povolenie vysoko nebezpečného "
+"režimu v komponente prehliadača.</p><p>Čo chcete urobiť?</p>"
 
 #: src/konqapplication.cpp:159
 #, kde-format
@@ -170,10 +169,9 @@ msgid "Web browser, file manager and document viewer."
 msgstr "Webový prehliadač, správca súborov a prehliadač dokumentov."
 
 #: src/konqapplication.cpp:162
-#, fuzzy, kde-format
-#| msgid "(C) 1999-2016, The Konqueror developers"
+#, kde-format
 msgid "(C) 1999-2023, The Konqueror developers"
-msgstr "(C) 1999-2016, vývojári Konquerora"
+msgstr "(C) 1999-2023, vývojári Konquerora"
 
 #: src/konqapplication.cpp:176
 #, kde-format
@@ -500,12 +498,12 @@ msgstr "Eduardo Robles Elvira"
 #: src/konqapplication.cpp:214
 #, kde-format
 msgid "Matthias Kalle Dalheimer"
-msgstr ""
+msgstr "Matthias Kalle Dalheimer"
 
 #: src/konqapplication.cpp:215
 #, kde-format
 msgid "Daniel Molkentin"
-msgstr ""
+msgstr "Daniel Molkentin"
 
 #: src/konqapplication.cpp:216
 #, kde-format
@@ -513,6 +511,8 @@ msgid ""
 "JavaScript access controls\n"
 "Per-domain policies extensions"
 msgstr ""
+"Riadenie prístupu JavaScriptu\n"
+"Rozšírenia pravidiel pre jednotlivé domény"
 
 #: src/konqapplication.cpp:227
 #, kde-format
@@ -538,8 +538,7 @@ msgid "profile"
 msgstr "profil"
 
 #: src/konqapplication.cpp:230
-#, fuzzy, kde-format
-#| msgid "List available sessions"
+#, kde-format
 msgid "List available sessions and exit"
 msgstr "Zoznam dostupných sedení"
 
@@ -594,6 +593,8 @@ msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
 "only when developing Konqueror itself"
 msgstr ""
+"Vytvoriť nový proces Konqueror, aj keď už jeden existuje. Určené na použitie "
+"iba pri vývoji samotného Konqueror"
 
 #: src/konqapplication.cpp:239
 #, kde-format
@@ -601,11 +602,10 @@ msgid "Location to open"
 msgstr "Umiestnenie na otvorenie"
 
 #: src/konqapplication.cpp:354
-#, fuzzy, kde-format
-#| msgid "Session to open"
+#, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "Sedenie na otvorenie"
+msgstr "Session %1 couldn't be opened"
 
 #: src/konqapplication.cpp:484
 #, kde-format
@@ -613,6 +613,8 @@ msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr ""
+"Pri použití prepínača --preload nie je možné zadávať URL adresy. URL adresy "
+"budú ignorované\n"
 
 #: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4885
 #: src/konqmainwindow.cpp:4931
@@ -662,7 +664,7 @@ msgstr ""
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: src/konqframestatusbar.cpp:155
 #, kde-format
@@ -731,8 +733,7 @@ msgid "Open in New Tab"
 msgstr "Otvoriť v novej karte"
 
 #: src/konqhistoryview.cpp:65
-#, fuzzy, kde-format
-#| msgid "Open in New Tab"
+#, kde-format
 msgid "Open in Current Tab"
 msgstr "Otvoriť v novej karte"
 
@@ -1117,8 +1118,7 @@ msgid "Move Tab Right"
 msgstr "Presunúť kartu vpravo"
 
 #: src/konqmainwindow.cpp:3479
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
 msgstr "Nové &okno"
 
@@ -1392,8 +1392,7 @@ msgstr ""
 "vykonané v ostatných viazaných pohľadoch."
 
 #: src/konqmainwindow.cpp:3684
-#, fuzzy, kde-format
-#| msgid "C&lose Current Tab"
+#, kde-format
 msgid "&Inspect Current Page"
 msgstr "Zatvoriť &aktuálnu kartu"
 
@@ -1403,16 +1402,19 @@ msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
+"<html>Zobrazí vývojárske nástroje pre aktuálnu stránku<br/><br/>Aktuálne "
+"zobrazenie sa rozdelí na dve časti a vývojárske nástroje sa zobrazia v "
+"druhej polovici"
 
 #: src/konqmainwindow.cpp:3686
 #, kde-format
 msgid "Shows the developer tools for the current page"
-msgstr ""
+msgstr "Zobrazí vývojárske nástroje pre aktuálnu stránku"
 
 #: src/konqmainwindow.cpp:3688
 #, kde-format
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "Označiť aktuálne okno ako chránené"
 
 #: src/konqmainwindow.cpp:3689
 #, kde-format
@@ -1420,6 +1422,8 @@ msgid ""
 "<p>Mark the current window as protected</p><p>Marking a window as protected "
 "ensures that Konqueror will never open external links in it</p>"
 msgstr ""
+"<p>Označiť aktuálne okno ako chránené</p><p>Označenie okna ako chráneného "
+"zabezpečí, že Konqueror v ňom nikdy neotvorí externé odkazy</p>"
 
 #: src/konqmainwindow.cpp:3851
 #, kde-format
@@ -1447,8 +1451,7 @@ msgid "Open bookmarks folder in new tabs"
 msgstr "Otvoriť priečinok záložiek v nových kartách"
 
 #: src/konqmainwindow.cpp:4184
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr "&Otvoriť"
@@ -1580,20 +1583,27 @@ msgid ""
 "proxy URL manually in the settings dialog. Do you want to change proxy "
 "settings now?"
 msgstr ""
+"Vaše nastavenie proxy nie je možné použiť s HTML jadrom QtWebEngine. Proxy "
+"sa nepoužije\n"
+"\n"
+" QtWebEngine podporuje iba pevné proxy, takže automatická konfigurácia proxy "
+"(PAC) a protokol Web Proxy Auto-Discovery nie je možné použiť s QtWebEngine. "
+"Ak potrebujete proxy, vyberte systémovú konfiguráciu proxy alebo zadajte URL "
+"adresu proxy ručne v dialógovom okne nastavení. Chcete teraz zmeniť "
+"nastavenia proxy?"
 
 #: src/konqmainwindow.cpp:5452
 #, kde-format
 msgid "Unsupported proxy configuration"
-msgstr ""
+msgstr "Nepodporovaná konfigurácia proxy"
 
 #: src/konqmainwindow.cpp:5452
 #, kde-format
 msgid "Don't use a proxy"
-msgstr ""
+msgstr "Nepoužívať proxy"
 
 #: src/konqmainwindow.cpp:5453 src/konqmainwindow.cpp:5481
-#, fuzzy, kde-format
-#| msgid "Show Configuration Button"
+#, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "Zobraziť tlačidlo nastavenia"
 
@@ -1605,21 +1615,25 @@ msgid ""
 "protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
+"Vaše nastavenie proxy nie je možné použiť s HTML jadrom QtWebEngine, pretože "
+"nepodporuje rôzne proxy pre protokoly HTTP a HTTPS. Vaše aktuálne nastavenia "
+"sú:<p><b>HTTP proxy:</b> <tt>%1</tt></p><p><b>HTTPS proxy: </b><tt>%2</tt></"
+"p>Čo chcete urobiť?"
 
 #: src/konqmainwindow.cpp:5480
 #, kde-format
 msgid "Conflicting proxy configuration"
-msgstr ""
+msgstr "Konfliktná konfigurácia proxy"
 
 #: src/konqmainwindow.cpp:5481
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
-msgstr ""
+msgstr "Použiť HTTP proxy (iba tentokrát)"
 
 #: src/konqmainwindow.cpp:5481
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
-msgstr ""
+msgstr "Použiť HTTPS proxy (iba tentokrát)"
 
 #: src/konqmainwindow.cpp:5497
 #, kde-format
@@ -1628,6 +1642,9 @@ msgid ""
 "hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
 "Mode (%1)"
 msgstr ""
+"Vstúpili ste do režimu úplnej celej obrazovky (používateľské rozhranie je "
+"úplne skryté). Môžete ho ukončiť stlačením klávesovej skratky pre režim "
+"celej obrazovky (%1)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
@@ -1654,19 +1671,16 @@ msgid "Session n&ame:"
 msgstr "&Názov sedenia:"
 
 #: src/konqsessiondialog.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@tooltip:session list"
-#| msgid "Uncheck the sessions you do not want to be restored"
+#, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions or windows you do not want to be restored"
 msgstr "Odznačte sedenia, ktoré nechcete obnoviť"
 
 #: src/konqsessiondialog.cpp:95
-#, fuzzy, kde-format
-#| msgid "Sessions"
+#, kde-format
 msgctxt "@item:treewidget"
 msgid "Session %1"
-msgstr "Sedenia"
+msgstr "Session %1"
 
 #. i18n. Otherwise it would be easier to just use what is in the session file
 #: src/konqsessiondialog.cpp:113
@@ -1716,7 +1730,7 @@ msgstr "Opýtať sa neskôr"
 #, kde-format
 msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"
-msgstr ""
+msgstr "Kopírovať URL do schránky:  %1"
 
 #: src/konqsessiondlg.cpp:60
 #, kde-format
@@ -1809,8 +1823,7 @@ msgid "&Reload Tab"
 msgstr "Znovu &načítať kartu"
 
 #: src/konqtabs.cpp:56
-#, fuzzy, kde-format
-#| msgid "&Reload All Tabs"
+#, kde-format
 msgid "All Tabs"
 msgstr "Znovu &načítať všetky karty"
 
@@ -1963,13 +1976,13 @@ msgstr "Znovu poslať"
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
-msgstr ""
+msgstr "Spustenie"
 
 #: src/urlloader.cpp:406
 #, kde-format
 msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
-msgstr ""
+msgstr "Displej"
 
 #: src/urlloader.cpp:413
 #, kde-kuit-format
@@ -1980,13 +1993,14 @@ msgid ""
 "<filename>%1</filename> can be executed. Do you want to execute it or to "
 "display it?"
 msgstr ""
+"<filename>%1</filename> je možné spustiť. Chcete ho spustiť alebo zobraziť?"
 
 #: src/urlloader.cpp:419
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
-msgstr ""
+msgstr "<filename>%1</filename> je možné spustiť. Chcete ho spustiť?"
 
 #: src/urlloader.cpp:771
 #, kde-format

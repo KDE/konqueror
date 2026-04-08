@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -29,9 +29,7 @@ msgid "Your emails"
 msgstr "wizzardsk@gmail.com,matejm98mthw@gmail.com"
 
 #: src/about/konq_aboutpage.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
-#| msgid "Be free."
+#, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
 msgstr "Buďte slobodní."
@@ -106,14 +104,14 @@ msgstr "Rýchly prístup k vašim záložkám"
 #: src/about/konq_aboutpage.cpp:160
 #, kde-format
 msgid "Next: An Introduction to Konqueror"
-msgstr ""
+msgstr "Next: An Introduction to Konqueror"
 
 #: src/about/konq_aboutpage.cpp:161 src/about/konq_aboutpage.cpp:212
 #: src/about/konq_aboutpage.cpp:277
 #, kde-format
 msgctxt "link to the speed dial"
 msgid "Speed Dial"
-msgstr ""
+msgstr "Speed Dial"
 
 #: src/about/konq_aboutpage.cpp:163
 #, kde-format
@@ -127,6 +125,9 @@ msgid ""
 "both local and networked folders while enjoying advanced features such as "
 "the powerful sidebar and file previews."
 msgstr ""
+"Konqueror makes working with and managing your files easy. Môžete browse "
+"both local and networked folders while enjoying advanced features ako "
+"napríklad the powerful sidebar and file previews."
 
 #: src/about/konq_aboutpage.cpp:198
 #, kde-format
@@ -136,6 +137,10 @@ msgid ""
 "kde.org\">http://www.kde.org</a>) of a web page you would like to visit in "
 "the location bar and press Enter, or choose an entry from the Bookmarks menu."
 msgstr ""
+"Konqueror is also a full featured and easy to use web browser which môžete "
+"use to explore the Internet. Enter the address (napr. <a href=\"http://www."
+"kde.org\">http://www.kde.org</a>) of a web page you would like to visit in "
+"the location bar and press Enter, or choose an entry from the Bookmarks menu."
 
 #: src/about/konq_aboutpage.cpp:203
 #, kde-format
@@ -143,6 +148,8 @@ msgid ""
 "To return to the previous location, press the back button <img width='16' "
 "height='16' src=\"%1\"></img> in the toolbar. "
 msgstr ""
+"To return to the previous location, press the back button <img width='16' "
+"height='16' src=\"%1\"></img> in the toolbar. "
 
 #: src/about/konq_aboutpage.cpp:206
 #, kde-format
@@ -150,12 +157,15 @@ msgid ""
 "To quickly go to your Home folder press the home button <img width='16' "
 "height='16' src=\"%1\"></img>."
 msgstr ""
+"To quickly go to your Home folder press the home button <img width='16' "
+"height='16' src=\"%1\"></img>."
 
 #: src/about/konq_aboutpage.cpp:208
 #, kde-format
 msgid ""
 "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
 msgstr ""
+"For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
 
 #: src/about/konq_aboutpage.cpp:211
 #, kde-format
@@ -176,6 +186,11 @@ msgid ""
 "encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-"
 "Shortcuts."
 msgstr ""
+"Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, using "
+"Google, for the search phrase \"KDE\". Existujú a lot of Web-Shortcuts "
+"predefined to make searching for software or looking up certain words in an "
+"encyclopedia a breeze. Môžete even <a href=\"%1\">create your own</a> Web-"
+"Shortcuts."
 
 #: src/about/konq_aboutpage.cpp:254
 #, kde-format
@@ -184,6 +199,9 @@ msgid ""
 "want to clear the current entry by pressing the black arrow with the white "
 "cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
 msgstr ""
+"When chcete to paste a new address into the Location toolbar you might want "
+"to clear aktuálny entry by pressing the black arrow with the white cross "
+"<img width='16' height='16' src=\"%1\"></img> in the toolbar."
 
 #: src/about/konq_aboutpage.cpp:258
 #, kde-format
@@ -192,6 +210,9 @@ msgid ""
 "the icon (favicon) that is to the left of the Location toolbar, drop it on "
 "to the desktop, and choose \"Icon\"."
 msgstr ""
+"To create a link on your desktop pointing to aktuálny page, simply drag the "
+"icon (favicon) that is to the left of the Location toolbar, drop it on to "
+"the desktop, and choose \"Icon\"."
 
 #: src/about/konq_aboutpage.cpp:261
 #, kde-format
@@ -200,6 +221,8 @@ msgid ""
 "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
 "sessions."
 msgstr ""
+"Môžete also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen Mode"
+"\" in the Settings menu. Táto funkcia is very useful for \"Talk\" sessions."
 
 #: src/about/konq_aboutpage.cpp:264
 #, kde-format
@@ -208,6 +231,9 @@ msgid ""
 "two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> Split "
 "View Left/Right) you can make Konqueror appear the way you like."
 msgstr ""
+"Divide et impera (lat. \"Divide and conquer\") - by splitting a window into "
+"two parts (napr. Window -> <img width='16' height='16' src=\"%1\" /> Split "
+"View Left/Right) môžete make Konqueror appear the way you like."
 
 #: src/about/konq_aboutpage.cpp:267
 #, kde-format
@@ -216,6 +242,9 @@ msgid ""
 "visiting asks you to use a different browser (and do not forget to send a "
 "complaint to the webmaster!)"
 msgstr ""
+"Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+"visiting asks you to use a different browser (and do not forget to send a "
+"complaint to the webmaster!)"
 
 #: src/about/konq_aboutpage.cpp:270
 #, kde-format
@@ -223,6 +252,8 @@ msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
 "ensures that you can keep track of the pages you have visited recently."
 msgstr ""
+"The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+"ensures that môžete keep track of the pages you have visited recently."
 
 #: src/about/konq_aboutpage.cpp:272
 #, kde-format
@@ -231,6 +262,9 @@ msgid ""
 "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
 "Terminal Emulator)."
 msgstr ""
+"Advanced users will appreciate the Konsole which môžete embed into Konqueror "
+"(Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show Terminal "
+"Emulator)."
 
 #: src/about/konq_aboutpage.cpp:291
 #, kde-format
@@ -240,7 +274,7 @@ msgstr "Nainštalované doplnky"
 #: src/about/konq_aboutpage.cpp:292
 #, kde-format
 msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
-msgstr ""
+msgstr "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
 
 #: src/about/konq_aboutpage.cpp:293
 #, kde-format
@@ -250,44 +284,39 @@ msgstr "Nainštalované"
 #: src/about/konq_aboutpage.cpp:294
 #, kde-format
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
-msgstr ""
+msgstr "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 
 #: src/about/konq_aboutpage.cpp:335
 #, kde-format
 msgid "Speed Dial"
-msgstr ""
+msgstr "Speed Dial"
 
 #: src/actondownloadedfilebar.cpp:91
 #, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
-msgstr ""
+msgstr "was saved as"
 
 #: src/actondownloadedfilebar.cpp:123
 #, kde-format
 msgctxt "@label location where a remote URL was downloaded"
 msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
-msgstr ""
+msgstr "<tt>%1</tt> was saved as <tt>%2</tt>"
 
 #: src/actondownloadedfilebar.cpp:144 src/actondownloadedfilebar.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "Otvoriť '%1'"
+msgstr "Open With..."
 
 #: src/actondownloadedfilebar.cpp:149
-#, fuzzy, kde-format
-#| msgid "OpenSSL"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
 msgstr "OpenSSL"
 
 #: src/actondownloadedfilebar.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "Otvoriť '%1'"
@@ -296,18 +325,16 @@ msgstr "Otvoriť '%1'"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
-msgstr ""
+msgstr "Show in new tab"
 
 #: src/actondownloadedfilebar.cpp:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here"
-msgstr ""
+msgstr "Show here"
 
 #: src/actondownloadedfilebar.cpp:203
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
 msgstr "Otvoriť '%1'"
@@ -316,7 +343,7 @@ msgstr "Otvoriť '%1'"
 #, kde-format
 msgctxt "@action:button Display the folder which contains the downloaded file"
 msgid "Show containing folder"
-msgstr ""
+msgstr "Show containing folder"
 
 #: src/actondownloadedfilebar.cpp:232
 #, kde-format
@@ -324,7 +351,7 @@ msgctxt ""
 "@action:menu Display the folder which contains the downloaded file in a new "
 "tab"
 msgid "Show containing folder in new tab"
-msgstr ""
+msgstr "Show containing folder in new tab"
 
 #: src/actondownloadedfilebar.cpp:233
 #, kde-format
@@ -332,23 +359,22 @@ msgctxt ""
 "@action:menu Display the folder which contains the downloaded file in this "
 "tab"
 msgid "Show containing folder here"
-msgstr ""
+msgstr "Show containing folder here"
 
 #: src/capturesourcechooserdlg.cpp:27
 #, kde-format
 msgid ""
 "Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
-msgstr ""
+msgstr "Do chcete to allow <tt>%1</tt> to capture the contents of your screen?"
 
 #: src/capturesourcechooserdlg.cpp:29
 #, kde-format
 msgctxt "Choose to share a screen"
 msgid "Share Screen"
-msgstr ""
+msgstr "Share Screen"
 
 #: src/capturesourcechooserdlg.cpp:31
-#, fuzzy, kde-format
-#| msgid "New Window"
+#, kde-format
 msgctxt "Choose to share a window"
 msgid "Share Window"
 msgstr "Nové okno"
@@ -357,13 +383,11 @@ msgstr "Nové okno"
 #, kde-format
 msgctxt "Don't share any part of the screen"
 msgid "Share nothing"
-msgstr ""
+msgstr "Share nothing"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
-#, fuzzy, kde-format
-#| msgctxt "input dialog text for selecting html elements"
-#| msgid "Choose elements"
+#, kde-format
 msgid "Choose Capture Source"
 msgstr "Zvoliť prvky"
 
@@ -371,19 +395,17 @@ msgstr "Zvoliť prvky"
 #: src/capturesourcechooserdlg.ui:20
 #, kde-format
 msgid "Which part of your screen do you want to share?"
-msgstr ""
+msgstr "Which súčasť your screen do chcete to share?"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/capturesourcechooserdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "New Window"
+#, kde-format
 msgid "Window"
 msgstr "Nové okno"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, windowCombo)
 #: src/capturesourcechooserdlg.ui:51
-#, fuzzy, kde-format
-#| msgid "Close window?"
+#, kde-format
 msgid "Choose window"
 msgstr "Zavrieť okno?"
 
@@ -391,13 +413,13 @@ msgstr "Zavrieť okno?"
 #: src/capturesourcechooserdlg.ui:75
 #, kde-format
 msgid "Screen"
-msgstr ""
+msgstr "Obrazovka"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, screenCombo)
 #: src/capturesourcechooserdlg.ui:82
 #, kde-format
 msgid "Choose screen"
-msgstr ""
+msgstr "Choose screen"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -405,6 +427,8 @@ msgid ""
 "The page will be saved as a single HTML file. Only the text of the page will "
 "be saved. External resources such as images won't be saved"
 msgstr ""
+"The page will be saved as a single HTML file. Only the text of the page will "
+"be saved. External resources ako napríklad images won't be saved"
 
 #: src/choosepagesaveformatdlg.cpp:40
 #, kde-format
@@ -412,6 +436,8 @@ msgid ""
 "The page will be saved as an HTML file. Any external resources the page "
 "requires, such as images, will be saved inside an apposite directory"
 msgstr ""
+"The page will be saved as an HTML file. Any external resources the page "
+"requires, ako napríklad images, will be saved inside an apposite directory"
 
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
@@ -421,12 +447,14 @@ msgid ""
 "<br><strong>Note</strong>: not all browsers are able to display this kind of "
 "files"
 msgstr ""
+"The page will be saved as a MTHML file which contains both the text of the "
+"page and any external resources it requires, ako napríklad images. "
+"<br><strong>Note</strong>: not all browsers are schopný display this kind of "
+"files"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
-#, fuzzy, kde-format
-#| msgctxt "input dialog text for selecting html elements"
-#| msgid "Choose elements"
+#, kde-format
 msgid "Choose Save Format"
 msgstr "Zvoliť prvky"
 
@@ -434,25 +462,25 @@ msgstr "Zvoliť prvky"
 #: src/choosepagesaveformatdlg.ui:20
 #, kde-format
 msgid "How would you like to save the page?"
-msgstr ""
+msgstr "How would you like to save the page?"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As an HTML file &without external resources"
-msgstr ""
+msgstr "As an HTML file &without external resources"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
 #, kde-format
 msgid "As a &complete HTML page"
-msgstr ""
+msgstr "As a &complete HTML page"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As a &MHTML file"
-msgstr ""
+msgstr "As a &MHTML file"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -465,13 +493,13 @@ msgstr "TextLabel"
 #, kde-format
 msgctxt "@label the cookie expires when the browser session ends"
 msgid "End of Session"
-msgstr ""
+msgstr "End of Session"
 
 #: src/cookies/cookiealertdlg.cpp:29
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by https servers"
 msgid "Secure servers only"
-msgstr ""
+msgstr "Secure servers only"
 
 #: src/cookies/cookiealertdlg.cpp:31
 #, kde-format
@@ -479,13 +507,13 @@ msgctxt ""
 "@label exposure string - the cookie may be used by https servers AND client-"
 "side javascripts"
 msgid "Secure servers, page scripts"
-msgstr ""
+msgstr "Secure servers, page scripts"
 
 #: src/cookies/cookiealertdlg.cpp:35
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by http servers"
 msgid "Servers"
-msgstr ""
+msgstr "Servers"
 
 #: src/cookies/cookiealertdlg.cpp:37
 #, kde-format
@@ -493,18 +521,16 @@ msgctxt ""
 "@label exposure string - the cookie may be used by http servers AND client-"
 "side javascripts"
 msgid "Servers, page scripts"
-msgstr ""
+msgstr "Servers, page scripts"
 
 #: src/cookies/cookiealertdlg.cpp:41
 #, kde-format
 msgctxt "@label accept cookie"
 msgid "Accept"
-msgstr ""
+msgstr "Prijať"
 
 #: src/cookies/cookiealertdlg.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@action:never for this site"
-#| msgid "Ne&ver for this site"
+#, kde-format
 msgctxt "@label accept cookie for this session only"
 msgid "Accept for this session"
 msgstr "&Nikdy pre tento server"
@@ -513,13 +539,13 @@ msgstr "&Nikdy pre tento server"
 #, kde-format
 msgctxt "@label reject cookie"
 msgid "Reject"
-msgstr ""
+msgstr "Odmietnuť"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CookieAlertDlg)
 #: src/cookies/cookiealertdlg.ui:14
 #, kde-format
 msgid "CookieAlertDlg"
-msgstr ""
+msgstr "CookieAlertDlg"
 
 #. i18n: ectx: property (text), widget (QLabel, header)
 #: src/cookies/cookiealertdlg.ui:20
@@ -528,12 +554,12 @@ msgid ""
 "<html><head/><body><p>You received a cookie from %1</p><p>Do you want to "
 "accept or reject this cookie?</p></body></html>"
 msgstr ""
+"<html><head/><body><p>You received a cookie from %1</p><p>Do chcete to "
+"accept or reject this cookie?</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/cookies/cookiealertdlg.ui:30
-#, fuzzy, kde-format
-#| msgctxt "@action:hide details about credentials to store"
-#| msgid "&Hide details"
+#, kde-format
 msgid "Cookie details"
 msgstr "Skryť podrobnosti"
 
@@ -541,61 +567,61 @@ msgstr "Skryť podrobnosti"
 #: src/cookies/cookiealertdlg.ui:36
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Názov"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: src/cookies/cookiealertdlg.ui:50
 #, kde-format
 msgid "Value"
-msgstr ""
+msgstr "Value"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: src/cookies/cookiealertdlg.ui:64
 #, kde-format
 msgid "Expires"
-msgstr ""
+msgstr "Expires"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: src/cookies/cookiealertdlg.ui:78
 #, kde-format
 msgid "Path"
-msgstr ""
+msgstr "Cesta"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: src/cookies/cookiealertdlg.ui:99
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "Exposure"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: src/cookies/cookiealertdlg.ui:113
 #, kde-format
 msgid "Domain"
-msgstr ""
+msgstr "Domain"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: src/cookies/cookiealertdlg.ui:123
 #, kde-format
 msgid "Apply choice to"
-msgstr ""
+msgstr "Apply choice to"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToThis)
 #: src/cookies/cookiealertdlg.ui:129
 #, kde-format
 msgid "Only this cookie"
-msgstr ""
+msgstr "Only this cookie"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToDomain)
 #: src/cookies/cookiealertdlg.ui:136
 #, kde-format
 msgid "All cookies from this domain"
-msgstr ""
+msgstr "All cookies from this domain"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToAll)
 #: src/cookies/cookiealertdlg.ui:143
 #, kde-format
 msgid "All cookies"
-msgstr ""
+msgstr "All cookies"
 
 #: src/schemehandlers/errorschemehandler.cpp:97
 #, kde-format
@@ -677,7 +703,7 @@ msgstr "Pravopis"
 #: src/spellcheckermanager.cpp:102
 #, kde-format
 msgid "Spell Checking Enabled"
-msgstr ""
+msgstr "Spell Checking Enabled"
 
 #: src/spellcheckermanager.cpp:120
 #, kde-format
@@ -703,92 +729,60 @@ msgid "&Grant permission"
 msgstr "Povoliť prístup"
 
 #: src/ui/featurepermissionbar.cpp:57
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid "<html><b>%1</b> would like to send you notifications"
-msgstr ""
-"<html>Chcete povoliť serveru získať informácie o vašej aktuálnej fyzickej "
-"polohe?"
+msgstr "<html><b>%1</b> would like to send you notifications"
 
 #: src/ui/featurepermissionbar.cpp:59
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access information about your current physical "
 "location"
 msgstr ""
-"<html>Chcete povoliť serveru získať informácie o vašej aktuálnej fyzickej "
-"polohe?"
+"<html><b>%1</b> would like to access information about your current physical "
+"location"
 
 #: src/ui/featurepermissionbar.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your microphone and other audio capture "
 "devices"
 msgstr ""
-"<html>Chcete povoliť serveru získať informácie o vašej aktuálnej fyzickej "
-"polohe?"
+"<html><b>%1</b> would like to access your microphone and other audio capture "
+"devices"
 
 #: src/ui/featurepermissionbar.cpp:63
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your camera and other video capture "
 "devices"
 msgstr ""
-"<html>Chcete povoliť serveru získať informácie o vašej aktuálnej fyzickej "
-"polohe?"
+"<html><b>%1</b> would like to access your camera and other video capture "
+"devices"
 
 #: src/ui/featurepermissionbar.cpp:65
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access to your microphone, camera and other "
 "audio and video capture devices"
 msgstr ""
-"<html>Chcete povoliť serveru získať informácie o vašej aktuálnej fyzickej "
-"polohe?"
+"<html><b>%1</b> would like to access to your microphone, camera and other "
+"audio and video capture devices"
 
 #: src/ui/featurepermissionbar.cpp:67
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
-msgstr ""
-"<qt>Chcete povoliť tomuto serveru pripojiť nasledovné súbory k e-mailovej "
-"správe?</qt>"
+msgstr "<html><b>%1</b> would like to lock your mouse inside the web page"
 
 #: src/ui/featurepermissionbar.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid "<html><b>%1</b> would like to record your screen"
-msgstr ""
-"<html>Chcete povoliť serveru získať informácie o vašej aktuálnej fyzickej "
-"polohe?"
+msgstr "<html><b>%1</b> would like to record your screen"
 
 #: src/ui/featurepermissionbar.cpp:71
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid "<html><b>%1</b> would like to record your screen and your audio"
-msgstr ""
-"<html>Chcete povoliť serveru získať informácie o vašej aktuálnej fyzickej "
-"polohe?"
+msgstr "<html><b>%1</b> would like to record your screen and your audio"
 
 #: src/ui/passwordbar.cpp:29
 #, kde-format
@@ -914,18 +908,17 @@ msgstr "ostatné"
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
 #, kde-format
 msgid "Customize Fields To Store"
-msgstr ""
+msgstr "Customize Fields To Store"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
 #, kde-format
 msgid "Switch between displaying passwords or placeholders"
-msgstr ""
+msgstr "Switch between displaying passwords or placeholders"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
-#, fuzzy, kde-format
-#| msgid "&Show passwords"
+#, kde-format
 msgid "Show &passwords"
 msgstr "Zobraziť heslá"
 
@@ -933,12 +926,11 @@ msgstr "Zobraziť heslá"
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
 #, kde-format
 msgid "Show advanced information about the fields"
-msgstr ""
+msgstr "Show advanced information about the fields"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
-#, fuzzy, kde-format
-#| msgid "&Show details"
+#, kde-format
 msgid "Show field &details"
 msgstr "Zobraziť detaily"
 
@@ -952,13 +944,13 @@ msgstr "Dostupné polia"
 #: src/webenginecustomizecacheablefieldsdlg.ui:101
 #, kde-format
 msgid "Store form data in KWallet when closing the dialog"
-msgstr ""
+msgstr "Store form data in KWallet when closing the dialog"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
 #, kde-format
 msgid "&Store the contents of selected fields when closing the dialog"
-msgstr ""
+msgstr "&Store the contents of selected fields when closing the dialog"
 
 #: src/webenginepage.cpp:176
 #, kde-format
@@ -1067,14 +1059,12 @@ msgid "Attachment Removed"
 msgstr "Príloha odstránená"
 
 #: src/webenginepage.cpp:807
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while converting the page to PDF"
-msgstr "Pri ukladaní súboru sa vyskytla chyba: %1"
+msgstr "An error occurred while converting the page to PDF"
 
 #: src/webenginepage.cpp:812
-#, fuzzy, kde-format
-#| msgid "An error occurred while saving the file: %1"
+#, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "Pri ukladaní súboru sa vyskytla chyba: %1"
 
@@ -1112,8 +1102,7 @@ msgid "Do Not Allow"
 msgstr "Nepovoliť"
 
 #: src/webenginepart.cpp:210
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Save Full HTML Page As..."
 msgstr "Uložiť obrázok ako..."
 
@@ -1259,40 +1248,38 @@ msgstr ""
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
-msgstr ""
+msgstr "&Fill In Credentials"
 
 #: src/webenginepart.cpp:1055
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
-msgstr ""
+msgstr "&Search Page for Credential Requests"
 
 #: src/webenginepart.cpp:1059
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
-msgstr ""
+msgstr "&Store Credentials Now"
 
 #: src/webenginepart.cpp:1063
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
-msgstr ""
+msgstr "&Customize Credentials Settings for Page..."
 
 #: src/webenginepart.cpp:1067
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
-msgstr ""
+msgstr "Reset Custom Credential Settings for Page"
 
 #: src/webenginepart.cpp:1071
-#, fuzzy, kde-format
-#| msgid "&Allow Password Caching for This Site"
+#, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr "&Povoliť ukladanie hesiel pre túto stránku"
 
 #: src/webenginepart.cpp:1075
-#, fuzzy, kde-format
-#| msgid "Remove all cached passwords for this site"
+#, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "Odstrániť všetky uložené heslá pre tento server"
 
@@ -1334,7 +1321,7 @@ msgstr "&Nástroje"
 #: src/webenginepart.rc:32
 #, kde-format
 msgid "&Credential management"
-msgstr ""
+msgstr "&Credential management"
 
 #. i18n: ectx: ToolBar (htmlToolBar)
 #: src/webenginepart.rc:49
@@ -1361,19 +1348,16 @@ msgstr "Zadajte URL:"
 #, kde-format
 msgctxt "Ignore the certificate error for this URL only for now"
 msgid "Yes, &once"
-msgstr ""
+msgstr "Yes, &once"
 
 #: src/webenginepartcertificateerrordlg.cpp:45
 #, kde-format
 msgctxt "Ignore the certificate error for this URL now and in the future"
 msgid "Yes, &forever"
-msgstr ""
+msgstr "Yes, &forever"
 
 #: src/webenginepartcertificateerrordlg.cpp:50
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The server failed the authenticity check (%1). The error is:</p><p><tt>"
-#| "%2</tt></p>Do you want to ignore this error?"
+#, kde-format
 msgid ""
 "<p>The server <tt>%1</tt> failed the authenticity check. The error is:</"
 "p><p><tt>%2</tt></p>Do you want to ignore this error?"
@@ -1382,8 +1366,7 @@ msgstr ""
 "p>Chcete túto chybu ignorovať?"
 
 #: src/webenginepartcertificateerrordlg.cpp:56
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "title of a dialog asking what to do about a SSL certificate error"
 msgid "Certificate error"
 msgstr "Podrobnosti"
@@ -1424,6 +1407,8 @@ msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
 "default style sheet will be used"
 msgstr ""
+"Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
+"default style sheet will be used"
 
 #: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
@@ -1452,7 +1437,7 @@ msgstr "Cieľ"
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
-msgstr ""
+msgstr "Saved %1 as %2"
 
 #: src/webengineview.cpp:351
 #, kde-format
@@ -1597,13 +1582,13 @@ msgstr "Meno poľa"
 #, kde-format
 msgctxt "Value of a web field"
 msgid "Field value"
-msgstr ""
+msgstr "Field value"
 
 #: src/webfieldsdataview.cpp:63
 #, kde-format
 msgctxt "Name attribute of a web field"
 msgid "Internal field name"
-msgstr ""
+msgstr "Internal field name"
 
 #: src/webfieldsdataview.cpp:64
 #, kde-format
@@ -1615,11 +1600,10 @@ msgstr "Typ poľa"
 #, kde-format
 msgctxt "The id of a web field"
 msgid "Field id"
-msgstr ""
+msgstr "Field id"
 
 #: src/webfieldsdataview.cpp:66
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "Other details about a web field"
 msgid "Details"
 msgstr "Podrobnosti"
@@ -1634,11 +1618,10 @@ msgstr "len na čítanie"
 #, kde-format
 msgctxt "web field has the autocomplete attribute set to off"
 msgid "auto-completion off"
-msgstr ""
+msgstr "auto-completion off"
 
 #: src/webfieldsdataview.cpp:131
-#, fuzzy, kde-format
-#| msgid "Set Editable"
+#, kde-format
 msgctxt "web field is disabled"
 msgid "disabled"
 msgstr "nedostupné"
@@ -1663,6 +1646,10 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
+"<ul><li><b>Field internal name: </b>%1</li><li><b>Field type: </b>%2</"
+"li><li><b>Field id: </b>%3</li><li><b>Field is read only: </b>%4</"
+"li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
+"%6</li></ul>"
 
 #~ msgid "Konqueror"
 #~ msgstr "Konqueror"
@@ -1688,15 +1675,11 @@ msgstr ""
 #~ msgstr "Znovu odoslať informácie"
 
 #, fuzzy
-#~| msgid "Allow"
 #~ msgctxt "Allow a web page to capture the screen"
 #~ msgid "Allow"
 #~ msgstr "Povoliť"
 
 #, fuzzy
-#~| msgid ""
-#~| "<qt>Do you want to allow this site to attach the following files to the "
-#~| "email message?</qt>"
 #~ msgid ""
 #~ "Do you want to allow this page to capture the contents of your screen?"
 #~ msgstr ""
@@ -1704,18 +1687,14 @@ msgstr ""
 #~ "správe?</qt>"
 
 #, fuzzy
-#~| msgid "Choose files to upload"
 #~ msgid "Choose fields to remember"
 #~ msgstr "Vyberte súbory na odoslanie"
 
 #, fuzzy
-#~| msgid "Remove all cached passwords for this site"
 #~ msgid "&Memorize Passwords in This Page Now"
 #~ msgstr "Odstrániť všetky uložené heslá pre tento server"
 
 #, fuzzy
-#~| msgctxt "open selected url"
-#~| msgid "Open '%1'"
 #~ msgid "Open in %1"
 #~ msgstr "Otvoriť '%1'"
 
@@ -1853,7 +1832,6 @@ msgstr ""
 #~ msgstr "Dirk Mueller"
 
 #, fuzzy
-#~| msgid "Save Image As..."
 #~ msgid "Save As"
 #~ msgstr "Uložiť obrázok ako..."
 

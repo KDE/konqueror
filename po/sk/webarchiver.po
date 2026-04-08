@@ -12,8 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 19.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -28,32 +28,32 @@ msgstr "wizzardsk@gmail.com"
 #: app/archivedialog.cpp:82
 #, kde-format
 msgid "Create Archive"
-msgstr ""
+msgstr "Vytvoriť archív"
 
 #: app/archivedialog.cpp:98
 #, kde-format
 msgid "The URL of the page that is to be archived"
-msgstr ""
+msgstr "URL stránky, ktorá sa má archivovať"
 
 #: app/archivedialog.cpp:101
 #, kde-format
 msgid "Source &URL:"
-msgstr ""
+msgstr "Zdrojová &URL:"
 
 #: app/archivedialog.cpp:110
 #, kde-format
 msgid "Web archive (*.war)"
-msgstr ""
+msgstr "Webový archív (*.war)"
 
 #: app/archivedialog.cpp:111
 #, kde-format
 msgid "Tar archive (*.tar)"
-msgstr ""
+msgstr "Archív tar (*.tar)"
 
 #: app/archivedialog.cpp:112
 #, kde-format
 msgid "Zip archive (*.zip)"
-msgstr ""
+msgstr "Archív zip (*.zip)"
 
 #: app/archivedialog.cpp:113
 #, kde-format
@@ -63,7 +63,7 @@ msgstr "Adresár"
 #: app/archivedialog.cpp:118
 #, kde-format
 msgid "The file or directory where the archived page will be saved"
-msgstr ""
+msgstr "Súbor alebo priečinok, kam sa uloží archivovaná stránka"
 
 #: app/archivedialog.cpp:119
 #, kde-format
@@ -95,24 +95,26 @@ msgid ""
 "The web archive download cannot use the current proxy settings. No proxy "
 "will be used."
 msgstr ""
+"Sťahovanie webového archívu nemôže použiť aktuálne nastavenia proxy. Proxy "
+"sa nepoužije."
 
 #: app/archivedialog.cpp:349
 #, kde-format
 msgctxt "@info"
 msgid "The save location is not valid."
-msgstr ""
+msgstr "Umiestnenie na uloženie nie je platné."
 
 #: app/archivedialog.cpp:369
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
-msgstr ""
+msgstr "Nie je možné nájsť príkaz wget(1),<nl/>pozrite <link>%1</link>."
 
 #: app/archivedialog.cpp:391
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
-msgstr ""
+msgstr "Nie je možné overiť cieľ<nl/><filename>%1</filename><nl/>%2"
 
 #: app/archivedialog.cpp:408
 #, kde-kuit-format
@@ -121,12 +123,13 @@ msgid ""
 "The archive directory<nl/><filename>%1</filename><nl/>already exists as a "
 "file."
 msgstr ""
+"Priečinok archívu<nl/><filename>%1</filename><nl/>už existuje ako súbor."
 
 #: app/archivedialog.cpp:409
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
-msgstr ""
+msgstr "Priečinok archívu<nl/><filename>%1</filename><nl/>už existuje."
 
 #: app/archivedialog.cpp:413
 #, kde-kuit-format
@@ -135,41 +138,44 @@ msgid ""
 "The archive file<nl/><filename>%1</filename><nl/>already exists as a "
 "directory."
 msgstr ""
+"Súbor archívu<nl/><filename>%1</filename><nl/>už existuje ako priečinok."
 
 #: app/archivedialog.cpp:414
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
-msgstr ""
+msgstr "Súbor archívu <nl/><filename>%1</filename><nl/>už existuje."
 
 #: app/archivedialog.cpp:418
 #, kde-format
 msgid "Archive Already Exists"
-msgstr ""
+msgstr "Archív už existuje"
 
 #: app/archivedialog.cpp:448
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
 msgstr ""
+"Nie je možné odstrániť pôvodný archív<nl/><filename>%1</filename><nl/>%2"
 
 #: app/archivedialog.cpp:465
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
 msgstr ""
+"Nie je možné vytvoriť dočasný priečinok<nl/><filename>%1</filename><nl/>"
 
 #: app/archivedialog.cpp:537
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot start the archiver process <filename>%1</filename>"
-msgstr ""
+msgstr "Nie je možné spustiť proces archivácie <filename>%1</filename>"
 
 #: app/archivedialog.cpp:553
 #, kde-kuit-format
 msgctxt "@info"
 msgid "The download process was interrupted."
-msgstr ""
+msgstr "Proces sťahovania bol prerušený."
 
 #: app/archivedialog.cpp:554
 #, kde-kuit-format
@@ -178,6 +184,7 @@ msgid ""
 "<para>The download process <filename>%1</filename> failed with signal %2.</"
 "para>"
 msgstr ""
+"<para>Proces sťahovania <filename>%1</filename> zlyhal so signálom %2.</para>"
 
 #: app/archivedialog.cpp:559
 #, kde-kuit-format
@@ -186,6 +193,7 @@ msgid ""
 "<para>The download process <filename>%1</filename> failed with status %2.</"
 "para>"
 msgstr ""
+"<para>Proces sťahovania <filename>%1</filename> zlyhal so stavom %2.</para>"
 
 #: app/archivedialog.cpp:563
 #, kde-kuit-format
@@ -194,46 +202,49 @@ msgid ""
 "<para>This may simply indicate a 404 error for some of the page elements.</"
 "para>"
 msgstr ""
+"<para>Toto môže jednoducho znamenať chybu 404 pre niektoré prvky stránky.</"
+"para>"
 
 #: app/archivedialog.cpp:569
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>Retain the partial web archive?</para>"
-msgstr ""
+msgstr "<para>Ponechať čiastočný webový archív?</para>"
 
 #: app/archivedialog.cpp:570
 #, kde-format
 msgid "Retain Archive?"
-msgstr ""
+msgstr "Ponechať archív?"
 
 #: app/archivedialog.cpp:571
 #, kde-format
 msgid "Retain"
-msgstr ""
+msgstr "Ponechať"
 
 #: app/archivedialog.cpp:575
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Creating the web archive failed."
-msgstr ""
+msgstr "Vytvorenie webového archívu zlyhalo."
 
 #: app/archivedialog.cpp:718
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
-msgstr ""
+msgstr "Nie je možné skopírovať archív do<nl/><filename>%1</filename><nl/>%2"
 
 #: app/archivedialog.cpp:748
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
 msgstr ""
+"Nie je možné nastaviť oprávnenia pre<nl/><filename>%1</filename><nl/>%2"
 
 #: app/archivedialog.cpp:756
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"
-msgstr ""
+msgstr "Webový archív uložený ako<nl/><filename><link>%1</link></filename>"
 
 #: app/main.cpp:26
 #, kde-format
@@ -248,7 +259,7 @@ msgstr "0.0.1"
 #: app/main.cpp:28
 #, kde-format
 msgid "Archive a web page"
-msgstr ""
+msgstr "Archivovať webovú stránku"
 
 #: app/main.cpp:30
 #, kde-format
@@ -263,7 +274,7 @@ msgstr "Jonathan Marten"
 #: app/main.cpp:43
 #, kde-format
 msgid "URL of the web page to archive"
-msgstr ""
+msgstr "URL webovej stránky na archiváciu"
 
 #: app/main.cpp:43
 #, kde-format
@@ -274,43 +285,45 @@ msgstr "url"
 #: app/settings.kcfg:10
 #, kde-format
 msgid "Wait time:"
-msgstr ""
+msgstr "Čas čakania:"
 
 #. i18n: ectx: tooltip, entry (WaitTime), group (Options)
 #: app/settings.kcfg:11
 #, kde-format
 msgid "The wait time between item requests, to reduce web server load"
 msgstr ""
+"Čas čakania medzi požiadavkami na položky na zníženie záťaže webového servera"
 
 #. i18n: ectx: label, entry (NoProxy), group (Options)
 #: app/settings.kcfg:18
 #, kde-format
 msgid "Do not use proxy"
-msgstr ""
+msgstr "Nepoužívať proxy"
 
 #. i18n: ectx: tooltip, entry (NoProxy), group (Options)
 #: app/settings.kcfg:19
 #, kde-format
 msgid "Do not use the system proxy settings to fetch the web page"
-msgstr ""
+msgstr "Nepoužívať systémové nastavenia proxy na získanie webovej stránky"
 
 #. i18n: ectx: label, entry (RandomWait), group (Options)
 #: app/settings.kcfg:24
 #, kde-format
 msgid "Randomise wait time"
-msgstr ""
+msgstr "Náhodne meniť čas čakania"
 
 #. i18n: ectx: tooltip, entry (RandomWait), group (Options)
 #: app/settings.kcfg:25
 #, kde-format
 msgid "Vary the wait time between requests, to confuse server log analysis"
 msgstr ""
+"Meniť čas čakania medzi požiadavkami na sťaženie analýzy protokolov servera"
 
 #. i18n: ectx: label, entry (FixExtensions), group (Options)
 #: app/settings.kcfg:30
 #, kde-format
 msgid "Save in standard web archive format"
-msgstr ""
+msgstr "Uložiť v štandardnom formáte webového archívu"
 
 #. i18n: ectx: tooltip, entry (FixExtensions), group (Options)
 #: app/settings.kcfg:37
@@ -332,6 +345,21 @@ msgid ""
 "original URL refers to a directory but does not end with a slash.</p>\n"
 "      "
 msgstr ""
+"<p>Save downloaded files all in a single directory, with file name "
+"extensions suitable for local browsing.\n"
+"                        For example, the main HTML page will always be "
+"called \"index.html\" and a remote .php page will be saved with the "
+"standard .html extension.</p>\n"
+"               <p>Leave this option turned on to produce a standard web "
+"archive (.war) file.</p>\n"
+"               <p>If this option is turned off, then the files will be saved "
+"exactly as downloaded.\n"
+"                        This means that they may be in subdirectories "
+"reflecting the structure of the original web site, and extensions will not "
+"be adjusted.\n"
+"                        Note that the download may not work correctly if the "
+"original URL refers to a directory but does not end with a slash.</p>\n"
+"      "
 
 #. i18n: ectx: label, entry (RunInTerminal), group (Options)
 #: app/settings.kcfg:42
@@ -350,18 +378,23 @@ msgid ""
 "p>\n"
 "      "
 msgstr ""
+"<p>Spustí proces sťahovania v okne terminálu. Po dokončení sťahovania "
+"zatvorte okno terminálu.</p>\n"
+"               <p>Ak je táto voľba vypnutá, sťahovanie prebehne na pozadí. "
+"Jeho výstup o priebehu by sa mal objaviť v súbore denníka relácie.</p>\n"
+"      "
 
 #. i18n: ectx: label, entry (CloseWhenFinished), group (Options)
 #: app/settings.kcfg:50
 #, kde-format
 msgid "Close when finished"
-msgstr ""
+msgstr "Zavrieť po dokončení"
 
 #. i18n: ectx: tooltip, entry (CloseWhenFinished), group (Options)
 #: app/settings.kcfg:51
 #, kde-format
 msgid "Close this window when the download has finished successfully"
-msgstr ""
+msgstr "Zavrieť toto okno po úspešnom dokončení sťahovania"
 
 #. i18n: ectx: label, entry (ArchiveType), group (Options)
 #: app/settings.kcfg:56
@@ -373,12 +406,12 @@ msgstr "Typ archívu:"
 #: app/settings.kcfg:57
 #, kde-format
 msgid "The type of web archive to save"
-msgstr ""
+msgstr "Typ webového archívu na uloženie"
 
 #: plugin_webarchiver.cpp:32
 #, kde-format
 msgid "Archive Web Page..."
-msgstr ""
+msgstr "Archivovať webovú stránku..."
 
 #: plugin_webarchiver.cpp:50
 #, kde-kuit-format
@@ -387,11 +420,13 @@ msgid ""
 "Cannot find the <command>kcreatewebarchive</command> executable,<nl/>check "
 "the plugin and helper installation."
 msgstr ""
+"Nepodarilo sa nájsť spustiteľný súbor <command>kcreatewebarchive</command>,"
+"<nl/>skontrolujte inštaláciu zásuvného modulu a pomocných programov."
 
 #: plugin_webarchiver.cpp:51
 #, kde-format
 msgid "Cannot Create Web Archive"
-msgstr ""
+msgstr "Nepodarilo sa vytvoriť webový archív"
 
 #. i18n: ectx: Menu (tools)
 #: webarchiverplugin.rc:4
