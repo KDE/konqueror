@@ -18,8 +18,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -323,7 +323,7 @@ msgstr ""
 #: cache/cache.ui:17
 #, kde-format
 msgid "&Enable cache"
-msgstr ""
+msgstr "&Povoliť vyrovnávaciu pamäť"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:29
@@ -333,18 +333,21 @@ msgid ""
 "p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Neukladať vyrovnávaciu pamäť na disk, ale iba do "
+"pamäte.</p><p>Zapnutie tejto voľby znamená, že vyrovnávacia pamäť sa vymaže "
+"pri ukončení Konqueror</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:32
 #, kde-format
 msgid "Keep cache in &memory"
-msgstr ""
+msgstr "Uchovávať vyrovnávaciu pamäť v pa&mäti"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: cache/cache.ui:41
 #, kde-format
 msgid "&Cache size"
-msgstr ""
+msgstr "Veľkosť vyrovnávacej pamäte (&C)"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:51
@@ -353,102 +356,101 @@ msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
+"Maximálny priestor na disku alebo v pamäti, ktorý môže vyrovnávacia pamäť "
+"využiť. Po dosiahnutí tohto limitu sa staré stránky odstránia, aby sa "
+"uvoľnilo miesto pre nové"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:54
 #, kde-format
 msgid "Auto"
-msgstr ""
+msgstr "Automaticky"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:57
 #, kde-format
 msgid " MB"
-msgstr ""
+msgstr " MB"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr ""
+msgstr "Použiť vlastný priečinok na uchovávanie vyrovnávacej pamäte"
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:88
 #, kde-format
 msgid "&Custom cache directory"
-msgstr ""
+msgstr "Vlastný priečinok vyrovnávacej pamäte (&C)"
 
 #. i18n: ectx: property (text), widget (QLabel, customCachePathLabel)
 #: cache/cache.ui:100
 #, kde-format
 msgid "Cache &Directory"
-msgstr ""
+msgstr "&Priečinok vyrovnávacej pamäte"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
 #: cache/cache.ui:113
 #, kde-format
 msgid "The custom directory to store cache"
-msgstr ""
+msgstr "Vlastný priečinok na ukladanie vyrovnávacej pamäte"
 
 #: cookies/kcookiesmain.cpp:33
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "&Policy"
 msgstr "Politika"
 
 #: cookies/kcookiesmain.cpp:35
 #, kde-format
 msgid "&Management"
-msgstr ""
+msgstr "&Správa"
 
 #: cookies/kcookiesmanagement.cpp:46
 #, kde-format
 msgid "End of session"
-msgstr ""
+msgstr "Koniec sedenia"
 
 #: cookies/kcookiesmanagement.cpp:51
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Áno"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search"
-msgstr "Hľadať:"
+msgstr "&Hľadať"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:27
 #, kde-format
 msgid "Search interactively for domains and hosts"
-msgstr ""
+msgstr "Interaktívne vyhľadávanie domén a hostiteľov"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:43
 #, kde-format
 msgid "Site"
-msgstr ""
+msgstr "Stránka"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:48
 #, kde-format
 msgid "Cookie Name"
-msgstr ""
+msgstr "Názov cookie"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDelete)
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "D&elete"
 msgstr "&Odstrániť"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
 #: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "Delete A&ll"
 msgstr "&Odstrániť"
 
@@ -456,38 +458,35 @@ msgstr "&Odstrániť"
 #: cookies/kcookiesmanagement.ui:70
 #, kde-format
 msgid "Configure &Policy..."
-msgstr ""
+msgstr "Nastaviť &politiku..."
 
 #. i18n: ectx: property (text), widget (QPushButton, reloadButton)
 #: cookies/kcookiesmanagement.ui:77
 #, kde-format
 msgid "&Reload List"
-msgstr ""
+msgstr "&Znovu načítať zoznam"
 
 #. i18n: ectx: property (title), widget (QGroupBox, detailsGroupBox)
 #: cookies/kcookiesmanagement.ui:97
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Podrobnosti"
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
 #: cookies/kcookiesmanagement.ui:106
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "Názov"
+msgstr "Názov:"
 
 #. i18n: ectx: property (text), widget (QLabel, valueLabel)
 #: cookies/kcookiesmanagement.ui:129
-#, fuzzy, kde-format
-#| msgid "Value"
+#, kde-format
 msgid "Value:"
-msgstr "Hodnota"
+msgstr "Hodnota:"
 
 #. i18n: ectx: property (text), widget (QLabel, domainLabel)
 #: cookies/kcookiesmanagement.ui:152
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain:"
 msgstr "Hostiteľ/Doména"
 
@@ -495,32 +494,28 @@ msgstr "Hostiteľ/Doména"
 #: cookies/kcookiesmanagement.ui:175
 #, kde-format
 msgid "Path:"
-msgstr ""
+msgstr "Cesta:"
 
 #. i18n: ectx: property (text), widget (QLabel, expiresLabel)
 #: cookies/kcookiesmanagement.ui:198
 #, kde-format
 msgid "Expires:"
-msgstr ""
+msgstr "Platnosť:"
 
 #. i18n: ectx: property (text), widget (QLabel, secureLabel)
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
-msgstr ""
+msgstr "Zabezpečené:"
 
 #: cookies/kcookiespolicies.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Change Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Change Cookie Policy"
 msgstr "Zmeniť politiku pluginov"
 
 #: cookies/kcookiespolicies.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Cookie Policy"
 msgstr "Nová politika pluginov"
@@ -531,10 +526,11 @@ msgid ""
 "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
 "replace it?</qt>"
 msgstr ""
+"<qt>Politika už existuje pre<center><b>%1</b></center>Chcete ju nahradiť?</"
+"qt>"
 
 #: cookies/kcookiespolicies.cpp:193
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Duplicate Policy"
 msgstr "Politika"
@@ -542,7 +538,7 @@ msgstr "Politika"
 #: cookies/kcookiespolicies.cpp:194
 #, kde-format
 msgid "Replace"
-msgstr ""
+msgstr "Nahradiť"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -555,11 +551,16 @@ msgid ""
 "unbrowsable.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"<p>Povoliť podporu cookies. Zvyčajne budete chcieť mať podporu cookies "
+"povolenú a prispôsobiť ju vašim potrebám ochrany súkromia.</p><p>\n"
+"Upozorňujeme, že zakázanie podpory cookies môže spôsobiť, že mnohé webové "
+"stránky nebudú použiteľné.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
-#, fuzzy, kde-format
-#| msgid "Enable filters"
+#, kde-format
 msgid "Enable coo&kies"
 msgstr "Povoliť filtre"
 
@@ -576,12 +577,20 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Odmietnuť takzvané cookies tretích strán. Sú to cookies, ktoré pochádzajú z "
+"inej stránky, než je tá, ktorú práve prehliadate. Napríklad, ak navštívite "
+"<b>www.foobar.com</b> s touto voľbou zapnutou, spracujú sa podľa vašich "
+"nastavení iba cookies pochádzajúce z www.foobar.com. Cookies z akejkoľvek "
+"inej stránky budú odmietnuté. Tým sa znížia šance, že prevádzkovatelia "
+"stránok si vytvoria profil o vašich každodenných návykoch pri prehliadaní.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
 #, kde-format
 msgid "Only acce&pt cookies from originating server"
-msgstr ""
+msgstr "Prijímať iba coo&kies z pôvodného servera"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:46
@@ -595,11 +604,17 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
+"<p>\n"
+"Automaticky prijať dočasné cookies, ktoré majú vypršať na konci aktuálneho "
+"sedenia. Takéto cookies nebudú uložené na pevnom disku ani úložnom zariadení "
+"vášho počítača. Namiesto toho sa odstránia, keď zatvoríte všetky aplikácie "
+"(napr. prehliadač), ktoré ich používajú.</p><p><u>POZNÁMKA</u> Zaškrtnutie "
+"tejto voľby prepíše vaše predvolené nastavenie, ako aj politiky cookies "
+"špecifické pre jednotlivé stránky pre cookies sedenia.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
-#, fuzzy, kde-format
-#| msgid "A&utomatically load images"
+#, kde-format
 msgid "Automaticall&y accept session cookies"
 msgstr "&Automaticky načítať obrázky"
 
@@ -623,11 +638,24 @@ msgid ""
 "precedence over the default policy.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Určuje, ako sa budú spracovávať cookies prijaté zo vzdialeného počítača: \n"
+"<ul>\n"
+"<li><b>Opýtať sa</b> spôsobí, že KDE sa vás opýta na potvrdenie vždy, keď "
+"server chce nastaviť cookie.</li>\n"
+"<li><b>Prijať</b> spôsobí, že cookies budú prijaté bez výzvy.</li>\n"
+"<li><b>Prijať do konca sedenia</b> spôsobí, že cookies budú prijaté, ale "
+"vypršia na konci sedenia.</li>\n"
+"<li><b>Odmietnuť</b> spôsobí, že úložisko cookies odmietne všetky prijaté "
+"cookies.</li>\n"
+"</ul><p>\n"
+"<u>POZNÁMKA:</u> Politiky špecifické pre doménu, ktoré je možné nastaviť "
+"nižšie, majú vždy prednosť pred predvolenou politikou.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
-#, fuzzy, kde-format
-#| msgid "Default encoding:"
+#, kde-format
 msgid "Default Policy"
 msgstr "Štandardná znaková sada:"
 
@@ -635,18 +663,17 @@ msgstr "Štandardná znaková sada:"
 #: cookies/kcookiespolicies.ui:77
 #, kde-format
 msgid "Accep&t all cookies"
-msgstr ""
+msgstr "Prija&ť všetky cookies"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr ""
+msgstr "Prijať do &konca sedenia"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
-#, fuzzy, kde-format
-#| msgid "A&nimations:"
+#, kde-format
 msgid "Ask &for confirmation"
 msgstr "&Animácie:"
 
@@ -654,19 +681,11 @@ msgstr "&Animácie:"
 #: cookies/kcookiespolicies.ui:98
 #, kde-format
 msgid "Re&ject all cookies"
-msgstr ""
+msgstr "Od&mietnuť všetky cookies"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can set specific Java policies for any particular host or "
-#| "domain. To add a new policy, simply click the <i>New...</i> button and "
-#| "supply the necessary information requested by the dialog box. To change "
-#| "an existing policy, click on the <i>Change...</i> button and choose the "
-#| "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#| "button will remove the selected policy, causing the default policy "
-#| "setting to be used for that domain."
+#, kde-format
 msgid ""
 "<qt>\n"
 "To add a new policy, simply click on the <b>Add...</b> button and supply the "
@@ -686,8 +705,7 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Site Policy"
 msgstr "Politika"
 
@@ -695,14 +713,13 @@ msgstr "Politika"
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr ""
+msgstr "Interaktívne vyhľadávanie domén"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search..."
-msgstr "Hľadať:"
+msgstr "Hľadať..."
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -713,13 +730,17 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Zoznam stránok, pre ktoré ste nastavili špecifickú politiku cookies. "
+"Špecifické politiky prepíšu predvolené nastavenie politiky pre tieto "
+"stránky.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain"
-msgstr "Hostiteľ/Doména"
+msgstr "Doména"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:168 domainlistview.cpp:40
@@ -750,18 +771,24 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Zadajte hostiteľa alebo doménu, pre ktorú sa táto politika uplatňuje, napr. "
+"<b>www.kde.org</b> alebo <b>.kde.org</b>.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
 #, kde-format
 msgid "Site name:"
-msgstr ""
+msgstr "Názov stránky:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:38
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
 msgstr ""
+"Zadajte názov hostiteľa alebo domény, napr. .kde.org, pre ktorú sa táto "
+"politika uplatňuje."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -780,11 +807,22 @@ msgid ""
 "</ul>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Vyberte požadovanú politiku:\n"
+"<ul>\n"
+"<li><b>Prijať</b> – Umožní tejto stránke nastavovať cookies</li>\n"
+"<li><b>Prijať do konca sedenia</b> – Umožní tejto stránke nastavovať "
+"cookies, ale tie vypršia na konci sedenia.</li>\n"
+"<li><b>Odmietnuť</b> – Odmietne všetky cookies odoslané z tejto stránky</"
+"li>\n"
+"<li><b>Opýtať sa</b> – Zobrazí výzvu pri prijatí cookies z tejto stránky</"
+"li>\n"
+"</ul>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Policy:"
 msgstr "Politika"
 
@@ -799,7 +837,7 @@ msgstr "Prijať"
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr ""
+msgstr "Prijať do konca sedenia"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:194
@@ -909,7 +947,7 @@ msgstr "Pr&ispôsobiť..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Vlastné pozadie stránky"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -928,12 +966,24 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Použiť vlastnú farbu pozadia pre "
+"webové stránky. Táto farba sa použije:</p><ul style=\"margin-top: 0px; "
+"margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"
+"\"><li align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">keď farba "
+"pozadia nie je explicitne nastavená stránkou alebo vlastným štýlom</li><li "
+"align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">pred "
+"načítaním webovej stránky</li></ul><p align=\"justify\">Nastavenie vlastnej "
+"farby pozadia je užitočné najmä ak používate vlastný štýl, ktorý nastavuje "
+"farbu pozadia stránky (najmä tmavú farbu), aby ste sa vyhli bielemu záblesku "
+"pred načítaním stránky</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Použiť vlastnú farbu poza&dia"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
@@ -942,6 +992,8 @@ msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>Vlastná farba pozadia pre webové stránky</p></body></"
+"html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -964,12 +1016,28 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Pridajte do svojho vlastného štýlu "
+"(vrátane štýlu prístupnosti) pravidlo na nastavenie všetkých farieb pozadia "
+"na vlastnú farbu, ktorú ste si vybrali vyššie. Tým odpadne potreba "
+"nastavovať farbu pozadia v štýle aj v konfiguračnom dialógu.</p><p align="
+"\"justify\"><span style=\" font-weight:600;\">Poznámky:</span></p><ul style="
+"\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -"
+"qt-list-indent: 1;\"><li align=\"justify\" style=\" margin-top:12px; margin-"
+"bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\">pravidlo bude prepísané inými pravidlami pre farby pozadia vo "
+"vašom vlastnom štýle podľa bežných pravidiel CSS</li><li align=\"justify\" "
+"style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">pravidlo nie je v "
+"skutočnosti pridané do súboru obsahujúceho váš vlastný štýl; je vložené iba "
+"do kópie, ktorú si Konqueror uchováva v pamäti. To znamená, že ak používate "
+"štýl v iných prehliadačoch, budete musieť pravidlo pridať ručne.</li></ul></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Pridať vlastnú farbu pozadia do štýlu"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
@@ -1611,7 +1679,7 @@ msgstr "Prosím, vložte vlastnú štartovaciu stránku"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
-msgstr ""
+msgstr "Keď sa vytvorí nová &karta"
 
 #: generalopts.cpp:69
 #, kde-format
@@ -1623,7 +1691,7 @@ msgstr "Zobraz uvítaciu obrazovku"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Speed Dial"
-msgstr ""
+msgstr "Zobraziť rýchlu voľbu"
 
 #: generalopts.cpp:71
 #, kde-format
@@ -1697,7 +1765,7 @@ msgstr "Duplikovať aktuálny pohľad iba pre miestne súbory"
 #: generalopts.cpp:131
 #, kde-format
 msgid "When starting up, restore state from last time"
-msgstr ""
+msgstr "Pri spustení obnoviť stav z posledného použitia"
 
 #: htmlopts.cpp:39
 #, kde-format
@@ -1814,10 +1882,7 @@ msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr "Poslať stránke hlavičku DNT na oznámenie, že nechcete byť sledovaní"
 
 #: htmlopts.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this box if you want to inform a web site that you do not want your "
-#| "web browsing habits tracked."
+#, kde-format
 msgid ""
 "<p>Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
@@ -1852,7 +1917,7 @@ msgstr ""
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Always display files from web pages in a new tab"
-msgstr ""
+msgstr "Vždy zobrazovať súbory z webových stránok na novej karte"
 
 #: htmlopts.cpp:137
 #, kde-format
@@ -1860,6 +1925,8 @@ msgid ""
 "<p>When showing in Konqueror files from links in web pages, always use a new "
 "tab"
 msgstr ""
+"<p>Pri zobrazovaní súborov z odkazov na webových stránkach v Konquerore vždy "
+"používať novú kartu"
 
 #: jsopts.cpp:57
 #, kde-format
@@ -2167,8 +2234,7 @@ msgstr "Najprv musíte zadať doménové meno serveru."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
 msgstr "Správanie &myši"
 
@@ -2176,7 +2242,7 @@ msgstr "Správanie &myši"
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr ""
+msgstr "Vzhľad"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2198,43 +2264,43 @@ msgstr "Skryť panel kariet ak je otvorená iba jedna karta"
 #: tabs/tabsoptions.ui:38
 #, kde-format
 msgid "Tab bar position"
-msgstr ""
+msgstr "Poloha panela kariet"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "Vyberte, kde sa má zobrazovať panel kariet"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "Nad obsahom"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "Pod obsahom"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "Naľavo od obsahu"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "Napravo od obsahu"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr ""
+msgstr "Používanie"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2291,8 +2357,7 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
 msgstr "Správanie &myši"
 
@@ -2305,6 +2370,9 @@ msgid ""
 "\">shift</span> when opening a new tab to reverse this behavior</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>Nová karta sa otvorí na pozadí namiesto v popredí.</"
+"p><p>Stlačte <span style=\" font-family:'Fira Code';\">shift</span> pri "
+"otváraní novej karty na obrátenie tohto správania</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
@@ -2331,7 +2399,7 @@ msgstr "Otvoriť &novú kartu za aktuálnou"
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Closing"
-msgstr ""
+msgstr "Zatváranie"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:167
@@ -2398,35 +2466,35 @@ msgstr "Aktivovať naposledy použitú kartu po zatvorení aktuálnej"
 msgctxt ""
 "@title:window Title of dialog to choose name to given to new User Agent"
 msgid "Choose User Agent name"
-msgstr ""
+msgstr "Vyberte názov identifikácie prehliadača"
 
 #: useragent/useragent.cpp:196
 #, kde-format
 msgctxt "Name of the new User Agent"
 msgid "User Agent name"
-msgstr ""
+msgstr "Názov identifikácie prehliadača"
 
 #: useragent/useragent.cpp:256
 #, kde-format
 msgid "there are templates with empty names"
-msgstr ""
+msgstr "existujú šablóny s prázdnymi názvami"
 
 #: useragent/useragent.cpp:261
 #, kde-format
 msgid "there are multiple templates with the same name"
-msgstr ""
+msgstr "existuje viacero šablón s rovnakým názvom"
 
 #: useragent/useragent.cpp:284
 #, kde-format
 msgctxt "The user gave a custom user agent string an empty or duplicate name"
 msgid "Invalid user agent names:"
-msgstr ""
+msgstr "Neplatné názvy identifikácie prehliadača:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20
 #, kde-format
 msgid "Existing identifications"
-msgstr ""
+msgstr "Existujúce identifikácie"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
@@ -2435,45 +2503,43 @@ msgstr ""
 #: useragent/useragent.ui:147
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: useragent/useragent.ui:63
 #, kde-format
 msgid "Content"
-msgstr ""
+msgstr "Obsah"
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
 #: useragent/useragent.ui:94
-#, fuzzy, kde-format
-#| msgid "&Export..."
+#, kde-format
 msgid "&Edit..."
-msgstr "&Exportovať..."
+msgstr "&Upraviť..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:107
 #, kde-format
 msgid "&Rename..."
-msgstr ""
+msgstr "&Premenovať..."
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
 #: useragent/useragent.ui:120
 #, kde-format
 msgid "Du&plicate..."
-msgstr ""
+msgstr "Duplikovať..."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:133
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "&Delete"
-msgstr "&Odstrániť"
+msgstr "O&dstrániť"
 
 #. i18n: ectx: property (text), widget (QPushButton, useTemplateBtn)
 #: useragent/useragent.ui:150
 #, kde-format
 msgid "Choose &selected identification"
-msgstr ""
+msgstr "Vybrať o&značenú identifikáciu"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:160
@@ -2482,18 +2548,20 @@ msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Ak je začiarknuté, zakáže výber vlastnej identifikácie "
+"a použije predvolenú</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:163
 #, kde-format
 msgid "Use &default identification"
-msgstr ""
+msgstr "Použiť pre&dvolenú identifikáciu"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:178
 #, kde-format
 msgid "&Custom identification"
-msgstr ""
+msgstr "&Vlastná identifikácia"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
 #: useragent/useragent.ui:188
@@ -2504,6 +2572,9 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>Identifikácia prehliadača, ktorá sa použije, keď je "
+"predvolená identifikácia zakázaná.</p><p>Môžete ju zadať ručne alebo začať z "
+"jednej v zozname nižšie a zmeniť ju podľa vašich potrieb.</p></body></html>"
 
 #~ msgid "Form Com&pletion"
 #~ msgstr "Vypĺňanie &formulárov"
