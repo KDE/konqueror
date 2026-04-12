@@ -1,0 +1,424 @@
+# Slovak translations for konqueror package.
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# Roman Paholik <wizzardsk@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"PO-Revision-Date: 2026-04-11 12:00+0200\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@kde.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: bookmarks_module/bookmarks_module.cpp:273
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "Bookmarks Sidebar Module"
+msgstr "Modul bočného panela záložiek"
+
+#: bookmarks_module/bookmarks_module.cpp:296
+#, kde-format
+msgctxt "@title:tab"
+msgid "Bookmarks"
+msgstr "Záložky"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbDefaultAction)
+#: history_module/history_dlg.ui:17
+#, kde-format
+msgid "Default action"
+msgstr "Predvolená akcia"
+
+#. i18n: ectx: property (text), widget (QLabel, lDefault)
+#: history_module/history_dlg.ui:23
+#, kde-format
+msgid "Default action when double clicking an URL"
+msgstr "Predvolená akcia pri dvojitom kliknutí na URL"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbLimits)
+#: history_module/history_dlg.ui:36
+#, kde-format
+msgid "Limits"
+msgstr "Limity"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbExpire)
+#: history_module/history_dlg.ui:61
+#, kde-format
+msgid "URLs e&xpire after"
+msgstr "URL e&xpirujú po"
+
+#. i18n: ectx: property (text), widget (QLabel, lEntries)
+#: history_module/history_dlg.ui:71
+#, kde-format
+msgid "Maximum &number of URLs:"
+msgstr "Maximálny &počet URL:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbFonts)
+#: history_module/history_dlg.ui:87
+#, kde-format
+msgid "Custom Fonts For"
+msgstr "Vlastné písma pre"
+
+#. i18n: ectx: property (text), widget (QLabel, lbNewer)
+#: history_module/history_dlg.ui:102
+#, kde-format
+msgid "URLs newer than"
+msgstr "URL novšie ako"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnFontOlder)
+#. i18n: ectx: property (text), widget (QPushButton, btnFontNewer)
+#: history_module/history_dlg.ui:118 history_module/history_dlg.ui:138
+#, kde-format
+msgid "Choose Font..."
+msgstr "Vybrať písmo..."
+
+#. i18n: ectx: property (text), widget (QLabel, lbOlder)
+#: history_module/history_dlg.ui:125
+#, kde-format
+msgid "URLs older than"
+msgstr "URL staršie ako"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbDetails)
+#: history_module/history_dlg.ui:148
+#, kde-format
+msgid "Details"
+msgstr "Podrobnosti"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, cbDetailedTips)
+#: history_module/history_dlg.ui:154
+#, kde-format
+msgid ""
+"Shows the number of times visited and the dates of the first and last "
+"visits, in addition to the URL"
+msgstr ""
+"Zobrazí počet návštev a dátumy prvej a poslednej návštevy, navyše k URL"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbDetailedTips)
+#: history_module/history_dlg.ui:157
+#, kde-format
+msgid "Detailed tooltips"
+msgstr "Podrobné bublinové nápovedy"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnClearHistory)
+#: history_module/history_dlg.ui:169
+#, kde-format
+msgid "Clear History"
+msgstr "Vymazať históriu"
+
+#: history_module/history_module.cpp:139
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "History Sidebar Module"
+msgstr "Modul bočného panela histórie"
+
+#: history_module/history_module.cpp:162
+#, kde-format
+msgctxt "@title:tab"
+msgid "History"
+msgstr "História"
+
+#: history_module/kcmhistory.cpp:49
+#, kde-format
+msgctxt "Automatically decide which action to perform"
+msgid "Auto"
+msgstr "Automaticky"
+
+#: history_module/kcmhistory.cpp:50
+#, kde-format
+msgctxt "Open URL in new tab"
+msgid "Open in new tab"
+msgstr "Otvoriť v novej karte"
+
+#: history_module/kcmhistory.cpp:51
+#, kde-format
+msgctxt "Open URL in current tab"
+msgid "Open in current tab"
+msgstr "Otvoriť v aktuálnej karte"
+
+#: history_module/kcmhistory.cpp:52
+#, kde-format
+msgctxt "Open URL in new window"
+msgid "Open in new window"
+msgstr "Otvoriť v novom okne"
+
+#: history_module/kcmhistory.cpp:54
+#, kde-format
+msgid ""
+"Action to carry out when opening an URL from history:<dl><dl><dt>Auto:</"
+"dt><dd>opens the URL in a new tab unless the current tab is empty or an "
+"intro page</dd><dt>Open URL in a new tab:</dt><dd>always opens the URL in a "
+"new tab</dd><dt>Open URL in current tab:</dt><dd>always opens the URL in the "
+"current tab</dd><dt>Open URL in new window:</dt><dd>always opens the URL in "
+"a new window</dd></dl>"
+msgstr ""
+"Akcia, ktorá sa vykoná pri otváraní URL z histórie:<dl><dl><dt>Automaticky:</"
+"dt><dd>otvorí URL v novej karte, pokiaľ aktuálna karta nie je prázdna alebo "
+"úvodná stránka</dd><dt>Otvoriť URL v novej karte:</dt><dd>vždy otvorí URL v "
+"novej karte</dd><dt>Otvoriť URL v aktuálnej karte:</dt><dd>vždy otvorí URL v "
+"aktuálnej karte</dd><dt>Otvoriť URL v novom okne:</dt><dd>vždy otvorí URL v "
+"novom okne</dd></dl>"
+
+#: history_module/kcmhistory.cpp:65
+#, kde-format
+msgid "days"
+msgstr "dní"
+
+#: history_module/kcmhistory.cpp:71 history_module/kcmhistory.cpp:76
+#: history_module/kcmhistory.cpp:200 history_module/kcmhistory.cpp:213
+#, kde-format
+msgid "Minute"
+msgid_plural "Minutes"
+msgstr[0] "Minúta"
+msgstr[1] "Minúty"
+msgstr[2] "Minút"
+
+#: history_module/kcmhistory.cpp:73 history_module/kcmhistory.cpp:78
+#: history_module/kcmhistory.cpp:198 history_module/kcmhistory.cpp:211
+#, kde-format
+msgid "Day"
+msgid_plural "Days"
+msgstr[0] "Deň"
+msgstr[1] "Dni"
+msgstr[2] "Dní"
+
+#: history_module/kcmhistory.cpp:245
+#, kde-format
+msgid "Do you really want to clear the entire history?"
+msgstr "Naozaj chcete vymazať celú históriu?"
+
+#: history_module/kcmhistory.cpp:247
+#, kde-format
+msgctxt "@title:window"
+msgid "Clear History?"
+msgstr "Vymazať históriu?"
+
+#: places_module/places_module.cpp:76
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "Places Sidebar Module"
+msgstr "Modul bočného panela miest"
+
+#: places_module/places_module.cpp:99
+#, kde-format
+msgctxt "@title:tab"
+msgid "Places"
+msgstr "Miesta"
+
+#: sidebar_widget.cpp:84
+#, kde-format
+msgid "Restore All Removed Default Buttons"
+msgstr "Obnoviť všetky odstránené predvolené tlačidlá"
+
+#: sidebar_widget.cpp:85
+#, kde-format
+msgid "Rollback to System Default"
+msgstr "Vrátiť na systémové predvolené"
+
+#: sidebar_widget.cpp:144 sidebar_widget.cpp:430
+#, kde-format
+msgid "Configure Sidebar"
+msgstr "Nastaviť bočný panel"
+
+#: sidebar_widget.cpp:146
+#, kde-format
+msgid "Add New"
+msgstr "Pridať nový"
+
+#: sidebar_widget.cpp:150
+#, kde-format
+msgid "Multiple Views"
+msgstr "Viaceré zobrazenia"
+
+#: sidebar_widget.cpp:152 sidebar_widget.cpp:269
+#, kde-format
+msgid "Show Tabs on Left"
+msgstr "Zobraziť karty vľavo"
+
+#: sidebar_widget.cpp:153
+#, kde-format
+msgid "Show Configuration Button"
+msgstr "Zobraziť tlačidlo nastavenia"
+
+#: sidebar_widget.cpp:156
+#, kde-format
+msgid "Close Sidebar"
+msgstr "Zavrieť bočný panel"
+
+#: sidebar_widget.cpp:211
+#, kde-format
+msgid "This entry already exists."
+msgstr "Táto položka už existuje."
+
+#: sidebar_widget.cpp:227
+#, kde-format
+msgid ""
+"<qt>This removes all your entries from the sidebar and adds the system "
+"default ones.<br /><b>This procedure is irreversible.</b><br />Do you want "
+"to proceed?</qt>"
+msgstr ""
+"<qt>Toto odstráni všetky vaše položky z bočného panela a pridá systémové "
+"predvolené.<br /><b>Tento postup je nevratný.</b><br />Chcete pokračovať?</"
+"qt>"
+
+#: sidebar_widget.cpp:269
+#, kde-format
+msgid "Show Tabs on Right"
+msgstr "Zobraziť karty vpravo"
+
+#: sidebar_widget.cpp:280
+#, kde-format
+msgctxt "@title:window"
+msgid "Set Name"
+msgstr "Nastaviť názov"
+
+#: sidebar_widget.cpp:281
+#, kde-format
+msgid "Enter the name:"
+msgstr "Zadajte názov:"
+
+#: sidebar_widget.cpp:299
+#, kde-format
+msgid "Enter a URL:"
+msgstr "Zadajte URL:"
+
+#: sidebar_widget.cpp:323
+#, kde-format
+msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+msgstr "<qt>Naozaj chcete odstrániť kartu <b>%1</b>?</qt>"
+
+#: sidebar_widget.cpp:373
+#, kde-format
+msgid ""
+"You have hidden the sidebar configuration button. To make it visible again, "
+"click the right mouse button on any of the sidebar buttons and select \"Show "
+"Configuration Button\"."
+msgstr ""
+"Skryli ste tlačidlo nastavenia bočného panela. Ak ho chcete opäť zobraziť, "
+"kliknite pravým tlačidlom myši na ľubovoľné tlačidlo bočného panela a "
+"vyberte \"Zobraziť tlačidlo nastavenia\"."
+
+#: sidebar_widget.cpp:574
+#, kde-format
+msgid "Set Name..."
+msgstr "Nastaviť názov..."
+
+#: sidebar_widget.cpp:575
+#, kde-format
+msgid "Set URL..."
+msgstr "Nastaviť URL..."
+
+#: sidebar_widget.cpp:576
+#, kde-format
+msgid "Set Icon..."
+msgstr "Nastaviť ikonu..."
+
+#: sidebar_widget.cpp:578
+#, kde-format
+msgid "Show Hidden Folders..."
+msgstr "Zobraziť skryté priečinky..."
+
+#: sidebar_widget.cpp:583
+#, kde-format
+msgid "Remove"
+msgstr "Odstrániť"
+
+#: sidebar_widget.cpp:907
+#, kde-format
+msgid "Web module"
+msgstr "Webový modul"
+
+#: tree_module/tree_module.cpp:259
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "Tree Sidebar Module"
+msgstr "Modul bočného panela stromu"
+
+#: tree_module/tree_module.cpp:282
+#, kde-format
+msgctxt "@title:tab"
+msgid "Tree"
+msgstr "Strom"
+
+#: vertical_tabbar/vertical_tabbar.cpp:91
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "Vertical Tab Bar"
+msgstr "Zvislý panel kariet"
+
+#: vertical_tabbar/vertical_tabbar.cpp:114
+#, kde-format
+msgctxt "@title:tab"
+msgid "Tabs"
+msgstr "Karty"
+
+#: web_module/web_module.cpp:42
+#, kde-format
+msgid "&Open Link"
+msgstr "&Otvoriť odkaz"
+
+#: web_module/web_module.cpp:46
+#, kde-format
+msgid "Open in New &Window"
+msgstr "Otvoriť v novom &okne"
+
+#: web_module/web_module.cpp:52
+#, kde-format
+msgid "&Reload"
+msgstr "&Obnoviť"
+
+#: web_module/web_module.cpp:57
+#, kde-format
+msgid "Set &Automatic Reload"
+msgstr "Nastaviť &automatické obnovovanie"
+
+#: web_module/web_module.cpp:121
+#, kde-format
+msgctxt "@title:window"
+msgid "Set Refresh Timeout (0 disables)"
+msgstr "Nastaviť interval obnovovania (0 zakáže)"
+
+#: web_module/web_module.cpp:132
+#, kde-format
+msgid " minute"
+msgid_plural " minutes"
+msgstr[0] " minúta"
+msgstr[1] " minúty"
+msgstr[2] " minút"
+
+#: web_module/web_module.cpp:136
+#, kde-format
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " sekunda"
+msgstr[1] " sekundy"
+msgstr[2] " sekúnd"
+
+#: web_module/web_module.cpp:269
+#, kde-format
+msgctxt "@action:inmenu Add"
+msgid "Web Sidebar Module"
+msgstr "Webový modul bočného panela"
+
+#: web_module/web_module.cpp:289
+#, kde-format
+msgctxt "@label"
+msgid "Name:"
+msgstr "Názov:"
+
+#: web_module/web_module.cpp:289
+#, kde-format
+msgctxt "@label"
+msgid "Path or URL:"
+msgstr "Cesta alebo URL:"
+
+#: web_module/web_module.cpp:290
+#, kde-format
+msgctxt "@title:window"
+msgid "Add web sidebar module"
+msgstr "Pridať webový modul bočného panela"
