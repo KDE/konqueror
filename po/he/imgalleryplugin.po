@@ -11,20 +11,20 @@
 # license as the program which it accompanies.
 # Diego Iastrubni <elcuco@kdemail.net>, 2004, 2005.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
-# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2024-03-10 16:06+0200\n"
+"PO-Revision-Date: 2026-04-13 21:16+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.12.3\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -52,12 +52,12 @@ msgstr "מראה"
 #: imgallerydialog.cpp:77
 #, kde-format
 msgid "Page Look"
-msgstr "מראה הדף"
+msgstr "מראה העמוד"
 
 #: imgallerydialog.cpp:85
 #, kde-format
 msgid "&Page title:"
-msgstr "&כותרת הדף:"
+msgstr "&כותרת העמוד:"
 
 #: imgallerydialog.cpp:93
 #, kde-format
@@ -117,7 +117,7 @@ msgstr "<p>שם קובץ ה־HTML שהגלריה הזאת תישמר אליו.</
 #: imgallerydialog.cpp:150
 #, kde-format
 msgid "&Recurse subfolders"
-msgstr "&כלול תיקיות משנה"
+msgstr "ל&כלול תיקיות משנה"
 
 #: imgallerydialog.cpp:152
 #, kde-format
@@ -143,7 +143,7 @@ msgstr ""
 #: imgallerydialog.cpp:168
 #, kde-format
 msgid "Rec&ursion depth:"
-msgstr "&רמת הכללה:"
+msgstr "&עומק הכללה:"
 
 #: imgallerydialog.cpp:172
 #, kde-format
@@ -162,7 +162,7 @@ msgstr ""
 #: imgallerydialog.cpp:179
 #, kde-format
 msgid "Use &comment file"
-msgstr "השתמש בקובץ ה&ערות"
+msgstr "להשתמש בקובץ ה&ערות"
 
 #: imgallerydialog.cpp:181
 #, kde-format
@@ -194,7 +194,7 @@ msgstr "&קובץ הערות:"
 #: imgallerydialog.cpp:210 imgallerydialog.cpp:211
 #, kde-format
 msgid "Thumbnails"
-msgstr "יוצר דוגמיות"
+msgstr "תמונות ממוזערות"
 
 #: imgallerydialog.cpp:224
 #, kde-format
@@ -204,12 +204,12 @@ msgstr "ת&סדיר תמונה:"
 #: imgallerydialog.cpp:232
 #, kde-format
 msgid "Thumbnail size:"
-msgstr "גודל דוגמיות:"
+msgstr "גודל תמונות ממוזערות:"
 
 #: imgallerydialog.cpp:235
 #, kde-format
 msgid "&Set different color depth:"
-msgstr "&קבע עומק בצע שונה:"
+msgstr "ה&גדרת עומק בצבע שונה:"
 
 #: imgallerydialog.cpp:246
 #, kde-format
@@ -219,12 +219,12 @@ msgstr "עומק הצבעים:"
 #: imgalleryplugin.cpp:44
 #, kde-format
 msgid "&Create Image Gallery..."
-msgstr "י&צירת גלריית תמונות..."
+msgstr "י&צירת גלריית תמונות…"
 
 #: imgalleryplugin.cpp:54
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
-msgstr "לא יכול ליצור את התוסף, נא לדווח על באג."
+msgstr "לא ניתן ליצור את התוסף, נא לדווח על תקלה."
 
 #: imgalleryplugin.cpp:60
 #, kde-format
@@ -234,7 +234,7 @@ msgstr "יצירת גלריית תמונות פועלת רק בתיקיות מק
 #: imgalleryplugin.cpp:80
 #, kde-format
 msgid "Creating thumbnails"
-msgstr "יוצר דוגמיות"
+msgstr "נוצרות תמונות ממוזערות"
 
 #: imgalleryplugin.cpp:103 imgalleryplugin.cpp:270
 #, kde-format
@@ -249,12 +249,12 @@ msgstr "<i>מספר תמונות</i>: %1"
 #: imgalleryplugin.cpp:169
 #, kde-format
 msgid "<i>Created on</i>: %1"
-msgstr "<i>נוצר בתאריך</i>: %1"
+msgstr "<i>נוצרה בתאריך</i>: %1"
 
 #: imgalleryplugin.cpp:174
 #, kde-format
 msgid "<i>Subfolders</i>:"
-msgstr "<i>תיקיות משנה</i>:"
+msgstr "<i>תת־תיקיות</i>:"
 
 #: imgalleryplugin.cpp:207
 #, kde-format
@@ -262,7 +262,7 @@ msgid ""
 "Created thumbnail for: \n"
 "%1"
 msgstr ""
-"נוצרה דוגמית עבור: \n"
+"נוצרה תמונה ממוזערת עבור: \n"
 "%1"
 
 #: imgalleryplugin.cpp:210
@@ -272,7 +272,7 @@ msgid ""
 "%1\n"
 " failed"
 msgstr ""
-"יצירת דוגמית עבור: \n"
+"יצירת תמונה ממוזערת עבור: \n"
 "%1\n"
 " נכשלה"
 
