@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"POT-Creation-Date: 2026-04-17 00:44+0000\n"
 "PO-Revision-Date: 2025-12-01 11:37+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1699,9 +1699,11 @@ msgid "Please, insert the custom start page"
 msgstr "Inseriu una pàgina d'inici personalitzada"
 
 #: generalopts.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "When a new &Tab is created"
 msgctxt "@label:listbox"
-msgid "When a new &Tab is created"
+msgid "When a new &window is created"
 msgstr "Quan es crea una pes&tanya nova"
 
 #: generalopts.cpp:69
@@ -2450,26 +2452,41 @@ msgstr ""
 msgid "Open &new tab after current tab"
 msgstr "Obre una pestanya &nova després de l'actual"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_newTabEmpty)
+#: tabs/tabsoptions.ui:158
+#, kde-format
+msgid ""
+"<html><head/><body><p>Whether to leave the new tab empty or not. If this is "
+"unchecked, the new tab will load the same URL loaded when creating a new "
+"window</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
+#, kde-format
+msgid "Leave new tab empty"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: tabs/tabsoptions.ui:171
 #, kde-format
 msgid "Closing"
 msgstr "Tancament"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
-#: tabs/tabsoptions.ui:167
+#: tabs/tabsoptions.ui:177
 #, kde-format
 msgid "This will display close buttons inside each tab."
 msgstr "Això mostrarà els botons de tancar dins de cada pestanya."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
-#: tabs/tabsoptions.ui:170
+#: tabs/tabsoptions.ui:180
 #, kde-format
 msgid "&Show close button on tabs"
 msgstr "Mo&stra botó de tancar a les pestanyes"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
-#: tabs/tabsoptions.ui:177
+#: tabs/tabsoptions.ui:187
 #, kde-format
 msgid ""
 "When you click on a tab using the middle mouse button or mouse wheel, it "
@@ -2479,13 +2496,13 @@ msgstr ""
 "tancarà aquesta pestanya."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
-#: tabs/tabsoptions.ui:180
+#: tabs/tabsoptions.ui:190
 #, kde-format
 msgid "Middle-click on a tab to close it"
 msgstr "Tanca la pestanya amb un clic del mig"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
-#: tabs/tabsoptions.ui:187
+#: tabs/tabsoptions.ui:197
 #, kde-format
 msgid ""
 "This will ask you whether you are sure you want to close a window when it "
@@ -2495,13 +2512,13 @@ msgstr ""
 "múltiples pestanyes obertes."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
-#: tabs/tabsoptions.ui:190
+#: tabs/tabsoptions.ui:200
 #, kde-format
 msgid "Confirm &when closing windows with multiple tabs"
 msgstr "Confirma en tancar finestres amb múltiples pestan&yes"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: tabs/tabsoptions.ui:197
+#: tabs/tabsoptions.ui:207
 #, kde-format
 msgid ""
 "When checking this the previous used or opened tab will be activated when "
@@ -2512,7 +2529,7 @@ msgstr ""
 "pestanya actual."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: tabs/tabsoptions.ui:200
+#: tabs/tabsoptions.ui:210
 #, kde-format
 msgid "Activate previously used tab when closing the current tab"
 msgstr "Activa la pestanya usada prèviament en tancar la pestanya actual"

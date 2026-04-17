@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"POT-Creation-Date: 2026-04-17 00:44+0000\n"
 "PO-Revision-Date: 2025-03-01 17:55+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -1678,9 +1678,11 @@ msgid "Please, insert the custom start page"
 msgstr "Bonvolu enmeti la propran komencan paĝon"
 
 #: generalopts.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "When a new &Tab is created"
 msgctxt "@label:listbox"
-msgid "When a new &Tab is created"
+msgid "When a new &window is created"
 msgstr "Kiam nova &Lapeto estas kreita"
 
 #: generalopts.cpp:69
@@ -2405,26 +2407,41 @@ msgstr ""
 msgid "Open &new tab after current tab"
 msgstr "Malfermi &novan langeton post la nuna"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_newTabEmpty)
+#: tabs/tabsoptions.ui:158
+#, kde-format
+msgid ""
+"<html><head/><body><p>Whether to leave the new tab empty or not. If this is "
+"unchecked, the new tab will load the same URL loaded when creating a new "
+"window</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
+#, kde-format
+msgid "Leave new tab empty"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: tabs/tabsoptions.ui:171
 #, kde-format
 msgid "Closing"
 msgstr "Fermante"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
-#: tabs/tabsoptions.ui:167
+#: tabs/tabsoptions.ui:177
 #, kde-format
 msgid "This will display close buttons inside each tab."
 msgstr "Tio montros fermbutonojn ene de ĉiu langeto."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
-#: tabs/tabsoptions.ui:170
+#: tabs/tabsoptions.ui:180
 #, kde-format
 msgid "&Show close button on tabs"
 msgstr "Mon&tri fermbutonon sur langetoj"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
-#: tabs/tabsoptions.ui:177
+#: tabs/tabsoptions.ui:187
 #, kde-format
 msgid ""
 "When you click on a tab using the middle mouse button or mouse wheel, it "
@@ -2434,13 +2451,13 @@ msgstr ""
 "tiun langeton."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
-#: tabs/tabsoptions.ui:180
+#: tabs/tabsoptions.ui:190
 #, kde-format
 msgid "Middle-click on a tab to close it"
 msgstr "Mezbutono sur langeto por fermi ĝin"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
-#: tabs/tabsoptions.ui:187
+#: tabs/tabsoptions.ui:197
 #, kde-format
 msgid ""
 "This will ask you whether you are sure you want to close a window when it "
@@ -2450,13 +2467,13 @@ msgstr ""
 "ol unu langeto."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
-#: tabs/tabsoptions.ui:190
+#: tabs/tabsoptions.ui:200
 #, kde-format
 msgid "Confirm &when closing windows with multiple tabs"
 msgstr "Peti konfirmon dum &fermado de fenestroj kun multaj langetoj"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: tabs/tabsoptions.ui:197
+#: tabs/tabsoptions.ui:207
 #, kde-format
 msgid ""
 "When checking this the previous used or opened tab will be activated when "
@@ -2466,7 +2483,7 @@ msgstr ""
 "fermas la nunan langeton anstataŭ aktivigo de la apuda dekstra langeto."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: tabs/tabsoptions.ui:200
+#: tabs/tabsoptions.ui:210
 #, kde-format
 msgid "Activate previously used tab when closing the current tab"
 msgstr "Aktivigi antaŭan langeton dum fermo de la nuna langeto"

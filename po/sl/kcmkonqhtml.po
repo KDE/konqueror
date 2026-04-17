@@ -1,7 +1,7 @@
 # translation of kcmkonqhtml.po to
 # Translation of kcmkonqhtml.po to Slovenian
 # SLOVENIAN TRANSLATION OF KCMKONQHTML.
-# $Id: kcmkonqhtml.po 1724203 2025-12-02 01:24:49Z scripty $
+# $Id: kcmkonqhtml.po 1734566 2026-04-17 01:29:16Z scripty $
 # $Source$
 #
 # Copyright (C) 2002, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"POT-Creation-Date: 2026-04-17 00:44+0000\n"
 "PO-Revision-Date: 2025-12-01 07:15+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1692,9 +1692,11 @@ msgid "Please, insert the custom start page"
 msgstr "Vstavite začetno stran po meri"
 
 #: generalopts.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "When a new &Tab is created"
 msgctxt "@label:listbox"
-msgid "When a new &Tab is created"
+msgid "When a new &window is created"
 msgstr "Kadar je ustvarjen novi zavihek"
 
 #: generalopts.cpp:69
@@ -2418,26 +2420,41 @@ msgstr ""
 msgid "Open &new tab after current tab"
 msgstr "Odpri &nov zavihek poleg trenutnega"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_newTabEmpty)
+#: tabs/tabsoptions.ui:158
+#, kde-format
+msgid ""
+"<html><head/><body><p>Whether to leave the new tab empty or not. If this is "
+"unchecked, the new tab will load the same URL loaded when creating a new "
+"window</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
+#, kde-format
+msgid "Leave new tab empty"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: tabs/tabsoptions.ui:171
 #, kde-format
 msgid "Closing"
 msgstr "Zapiranje"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
-#: tabs/tabsoptions.ui:167
+#: tabs/tabsoptions.ui:177
 #, kde-format
 msgid "This will display close buttons inside each tab."
 msgstr "Znotraj vsakega zavihka bo prikazan gumb za zaprtje zavihka."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
-#: tabs/tabsoptions.ui:170
+#: tabs/tabsoptions.ui:180
 #, kde-format
 msgid "&Show close button on tabs"
 msgstr "Na zavihkih pokaži gumb za zaprtje"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
-#: tabs/tabsoptions.ui:177
+#: tabs/tabsoptions.ui:187
 #, kde-format
 msgid ""
 "When you click on a tab using the middle mouse button or mouse wheel, it "
@@ -2447,13 +2464,13 @@ msgstr ""
 "boste tako zaprli zavihek."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
-#: tabs/tabsoptions.ui:180
+#: tabs/tabsoptions.ui:190
 #, kde-format
 msgid "Middle-click on a tab to close it"
 msgstr "Srednji klik na zavihek ga zapre"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
-#: tabs/tabsoptions.ui:187
+#: tabs/tabsoptions.ui:197
 #, kde-format
 msgid ""
 "This will ask you whether you are sure you want to close a window when it "
@@ -2463,13 +2480,13 @@ msgstr ""
 "zahtevana potrditev."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
-#: tabs/tabsoptions.ui:190
+#: tabs/tabsoptions.ui:200
 #, kde-format
 msgid "Confirm &when closing windows with multiple tabs"
 msgstr "Potrdi zapiranje okna z več zavihki"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: tabs/tabsoptions.ui:197
+#: tabs/tabsoptions.ui:207
 #, kde-format
 msgid ""
 "When checking this the previous used or opened tab will be activated when "
@@ -2479,7 +2496,7 @@ msgstr ""
 "prej odprt ali uporabljen zavihek namesto zavihka, ki je desno od trenutnega."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: tabs/tabsoptions.ui:200
+#: tabs/tabsoptions.ui:210
 #, kde-format
 msgid "Activate previously used tab when closing the current tab"
 msgstr "Ob zaprtju trenutnega zavihka omogoči prej uporabljen zavihek"

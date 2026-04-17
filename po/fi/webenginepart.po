@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:44+0000\n"
+"POT-Creation-Date: 2026-04-17 00:44+0000\n"
 "PO-Revision-Date: 2026-01-05 17:19+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -955,12 +955,12 @@ msgstr "Tallenna lomaketiedot lompakkoon, kun ikkuna suljetaan"
 msgid "&Store the contents of selected fields when closing the dialog"
 msgstr "Tallenna &valittujen kenttien tiedot, kun ikkuna suljetaan"
 
-#: src/webenginepage.cpp:176
+#: src/webenginepage.cpp:181
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Latauksenhallintaa (%1) ei löydetty asennuksestasi."
 
-#: src/webenginepage.cpp:177
+#: src/webenginepage.cpp:182
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -971,7 +971,7 @@ msgstr ""
 "\n"
 "Integrointi poistetaan käytöstä."
 
-#: src/webenginepage.cpp:522
+#: src/webenginepage.cpp:527
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -980,18 +980,18 @@ msgstr ""
 "Sivusto yrittää päästä lukemaan tietoja fyysisestä sijainnistasi.\n"
 "Haluatko sallia pääsyn?"
 
-#: src/webenginepage.cpp:526 src/webenginepage.cpp:604
-#: src/webenginepage.cpp:615
+#: src/webenginepage.cpp:531 src/webenginepage.cpp:609
+#: src/webenginepage.cpp:620
 #, kde-format
 msgid "Network Transmission"
 msgstr "Verkkolähetys"
 
-#: src/webenginepage.cpp:527
+#: src/webenginepage.cpp:532
 #, kde-format
 msgid "Allow access"
 msgstr "Salli pääsy"
 
-#: src/webenginepage.cpp:597
+#: src/webenginepage.cpp:602
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1004,12 +1004,12 @@ msgstr ""
 "Kolmas osapuoli voi päästä näkemään nämä tiedot.\n"
 "Haluatko varmasti lähettää tiedot salaamattomana?"
 
-#: src/webenginepage.cpp:605
+#: src/webenginepage.cpp:610
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Lähetä salaamattomana"
 
-#: src/webenginepage.cpp:612
+#: src/webenginepage.cpp:617
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1018,12 +1018,12 @@ msgstr ""
 "Sivusto yrittää lähettää lomakkeen tiedot sähköpostitse.\n"
 "Haluatko jatkaa?"
 
-#: src/webenginepage.cpp:616
+#: src/webenginepage.cpp:621
 #, kde-format
 msgid "&Send Email"
 msgstr "&Lähetä sähköpostitse"
 
-#: src/webenginepage.cpp:667
+#: src/webenginepage.cpp:672
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1032,22 +1032,22 @@ msgstr ""
 "<qt>Haluatko antaa sivuston liittää seuraavat tiedostot sähköpostiviestiin?</"
 "qt>"
 
-#: src/webenginepage.cpp:669
+#: src/webenginepage.cpp:674
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Vahvistus sähköpostiliitteestä"
 
-#: src/webenginepage.cpp:670
+#: src/webenginepage.cpp:675
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Salli liitteet"
 
-#: src/webenginepage.cpp:671
+#: src/webenginepage.cpp:676
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ohita liitteet"
 
-#: src/webenginepage.cpp:684
+#: src/webenginepage.cpp:689
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1056,22 +1056,22 @@ msgstr ""
 "Sivusto yrittää liittää tiedoston tietokoneeltasi lähetettävään "
 "lomakkeeseen. Liite poistettiin turvallisuussyistä."
 
-#: src/webenginepage.cpp:687
+#: src/webenginepage.cpp:692
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Liite poistettu"
 
-#: src/webenginepage.cpp:807
+#: src/webenginepage.cpp:812
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
 msgstr "Muunnettaessa sivua PDF:ksi tapahtui virhe"
 
-#: src/webenginepage.cpp:812
+#: src/webenginepage.cpp:817
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "Tallennettaessa sivun PDF-versiota nimelle %1 tapahtui virhe"
 
-#: src/webenginepage.cpp:888
+#: src/webenginepage.cpp:889
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1080,7 +1080,7 @@ msgstr ""
 "Tämä sivu haluaa avata uuden ponnahdusikkunan.\n"
 "Sallitko ponnahdusikkunan avaamisen?"
 
-#: src/webenginepage.cpp:890
+#: src/webenginepage.cpp:891
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1089,17 +1089,17 @@ msgstr ""
 "<qt>Tämä sivu haluaa avata ponnahdusikkunan osoitteen<p>%1</p><br/>Sallitko "
 "tämän?</qt>"
 
-#: src/webenginepage.cpp:893
+#: src/webenginepage.cpp:894
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "JavaScript-ponnahdusikkunan vahvistus"
 
-#: src/webenginepage.cpp:894
+#: src/webenginepage.cpp:895
 #, kde-format
 msgid "Allow"
 msgstr "Salli"
 
-#: src/webenginepage.cpp:894
+#: src/webenginepage.cpp:895
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Älä salli"
@@ -1152,7 +1152,7 @@ msgstr "Aseta &merkistö"
 msgid "View Do&cument Source"
 msgstr "Näytä tiedoston &lähdekoodi"
 
-#: src/webenginepart.cpp:262 src/webenginepart.cpp:597
+#: src/webenginepart.cpp:262 src/webenginepart.cpp:599
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
@@ -1168,12 +1168,12 @@ msgstr ""
 "<h3>Etsi tekstiä</h3>Näyttää kyselyikkunan, jonka avulla voit etsiä tekstiä "
 "näytetyltä sivulta."
 
-#: src/webenginepart.cpp:595
+#: src/webenginepart.cpp:597
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "Sivuston SSL-tieto näyttää olevan vioittunut."
 
-#: src/webenginepart.cpp:676
+#: src/webenginepart.cpp:678
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1181,7 +1181,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "Sähköposti: "
 
-#: src/webenginepart.cpp:705
+#: src/webenginepart.cpp:707
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1189,7 +1189,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " – Kopio: "
 
-#: src/webenginepart.cpp:707
+#: src/webenginepart.cpp:709
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1197,7 +1197,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " – Piilokopio: "
 
-#: src/webenginepart.cpp:709
+#: src/webenginepart.cpp:711
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1205,42 +1205,42 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " – Aihe: "
 
-#: src/webenginepart.cpp:713 src/webenginepart.cpp:724
+#: src/webenginepart.cpp:715 src/webenginepart.cpp:726
 #, kde-format
 msgid " (In new window)"
 msgstr " (Uuteen ikkunaan)"
 
-#: src/webenginepart.cpp:722
+#: src/webenginepart.cpp:724
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (Ylempään kehykseen)"
 
-#: src/webenginepart.cpp:788
+#: src/webenginepart.cpp:790
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Haluatko etsiä kohdetta <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:789
+#: src/webenginepart.cpp:791
 #, kde-format
 msgid "Internet Search"
 msgstr "Internethaku"
 
-#: src/webenginepart.cpp:789
+#: src/webenginepart.cpp:791
 #, kde-format
 msgid "&Search"
 msgstr "&Etsi"
 
-#: src/webenginepart.cpp:902
+#: src/webenginepart.cpp:904
 #, kde-format
 msgid "Close window?"
 msgstr "Suljetaanko ikkuna?"
 
-#: src/webenginepart.cpp:902
+#: src/webenginepart.cpp:904
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Vaaditaan vahvistus"
 
-#: src/webenginepart.cpp:979
+#: src/webenginepart.cpp:981
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
@@ -1248,51 +1248,51 @@ msgstr ""
 "<html>Haluatko ohjelman %1 muistavan sivun <b>%2</b> kirjautumistiedot?</"
 "html>"
 
-#: src/webenginepart.cpp:1050
+#: src/webenginepart.cpp:1052
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr "&Täytä tunnistautumistiedot"
 
-#: src/webenginepart.cpp:1055
+#: src/webenginepart.cpp:1057
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr "&Etsi sivulta tunnistautumispyyntöjä"
 
-#: src/webenginepart.cpp:1059
+#: src/webenginepart.cpp:1061
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr "Ta&llenna tunnistautumistiedot nyt"
 
-#: src/webenginepart.cpp:1063
+#: src/webenginepart.cpp:1065
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr "&Mukauta sivun tunnistautumisasetuksia…"
 
-#: src/webenginepart.cpp:1067
+#: src/webenginepart.cpp:1069
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr "Palauta sivun tunnistautumisasetukset oletuksiinsa"
 
-#: src/webenginepart.cpp:1071
+#: src/webenginepart.cpp:1073
 #, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr "&Salli sivun tunnistautumistietojen vienti välimuistiin"
 
-#: src/webenginepart.cpp:1075
+#: src/webenginepart.cpp:1077
 #, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "Poista kaikki sivustosta tallennetut salasanat"
 
-#: src/webenginepart.cpp:1079
+#: src/webenginepart.cpp:1081
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Käynnistä lompakonhallinta"
 
-#: src/webenginepart.cpp:1083
+#: src/webenginepart.cpp:1085
 #, kde-format
 msgid "&Close Wallet"
 msgstr "Sulje &lompakko"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"POT-Creation-Date: 2026-04-17 00:44+0000\n"
 "PO-Revision-Date: 2026-02-16 23:29+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -1644,9 +1644,11 @@ msgid "Please, insert the custom start page"
 msgstr "Introduceți pagina de pornire personalizată"
 
 #: generalopts.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "When a new &Tab is created"
 msgctxt "@label:listbox"
-msgid "When a new &Tab is created"
+msgid "When a new &window is created"
 msgstr "Când e crea&tă o filă nouă"
 
 #: generalopts.cpp:69
@@ -2392,26 +2394,41 @@ msgstr "Va fi deschisă o filă nouă dintr-o pagină, după fila curentă."
 msgid "Open &new tab after current tab"
 msgstr "Deschide fila &nouă după fila curentă"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_newTabEmpty)
+#: tabs/tabsoptions.ui:158
+#, kde-format
+msgid ""
+"<html><head/><body><p>Whether to leave the new tab empty or not. If this is "
+"unchecked, the new tab will load the same URL loaded when creating a new "
+"window</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
+#, kde-format
+msgid "Leave new tab empty"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: tabs/tabsoptions.ui:171
 #, kde-format
 msgid "Closing"
 msgstr "Închidere"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
-#: tabs/tabsoptions.ui:167
+#: tabs/tabsoptions.ui:177
 #, kde-format
 msgid "This will display close buttons inside each tab."
 msgstr "Aceasta va determina afișarea butoanelor de închidere în fiecare filă."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
-#: tabs/tabsoptions.ui:170
+#: tabs/tabsoptions.ui:180
 #, kde-format
 msgid "&Show close button on tabs"
 msgstr "&Arată butonul de închidere pe file"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
-#: tabs/tabsoptions.ui:177
+#: tabs/tabsoptions.ui:187
 #, kde-format
 msgid ""
 "When you click on a tab using the middle mouse button or mouse wheel, it "
@@ -2421,13 +2438,13 @@ msgstr ""
 "aceasta se va închide."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
-#: tabs/tabsoptions.ui:180
+#: tabs/tabsoptions.ui:190
 #, kde-format
 msgid "Middle-click on a tab to close it"
 msgstr "Faceți clic-mijloc pe o filă pentru a o închide"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
-#: tabs/tabsoptions.ui:187
+#: tabs/tabsoptions.ui:197
 #, kde-format
 msgid ""
 "This will ask you whether you are sure you want to close a window when it "
@@ -2437,13 +2454,13 @@ msgstr ""
 "închiderii ei."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
-#: tabs/tabsoptions.ui:190
+#: tabs/tabsoptions.ui:200
 #, kde-format
 msgid "Confirm &when closing windows with multiple tabs"
 msgstr "Cere confirmare la în&chiderea ferestrelor cu mai multe file"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: tabs/tabsoptions.ui:197
+#: tabs/tabsoptions.ui:207
 #, kde-format
 msgid ""
 "When checking this the previous used or opened tab will be activated when "
@@ -2454,7 +2471,7 @@ msgstr ""
 "prima subfereastră din dreapta celei ce a fost închisă."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: tabs/tabsoptions.ui:200
+#: tabs/tabsoptions.ui:210
 #, kde-format
 msgid "Activate previously used tab when closing the current tab"
 msgstr "Activează fila utilizată anterior atunci cînd închideți fila curentă"

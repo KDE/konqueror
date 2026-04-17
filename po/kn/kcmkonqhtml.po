@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"POT-Creation-Date: 2026-04-17 00:44+0000\n"
 "PO-Revision-Date: 2008-12-24 13:01+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: Kannada <en@li.org>\n"
@@ -1570,10 +1570,11 @@ msgid "Please, insert the custom start page"
 msgstr ""
 
 #: generalopts.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open new windows:"
 msgctxt "@label:listbox"
-msgid "When a new &Tab is created"
-msgstr ""
+msgid "When a new &window is created"
+msgstr "ಹೊಸ ವಿಂಡೋಗಳನ್ನು ತೆರೆ:"
 
 #: generalopts.cpp:69
 #, kde-format
@@ -2314,14 +2315,29 @@ msgstr ""
 msgid "Open &new tab after current tab"
 msgstr "ಈಗಿನ ಹಾಳೆಯ ನಂತರ ಹೊಸ ಹಾಳೆಯನ್ನು ತೆರೆ (&n)"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_newTabEmpty)
+#: tabs/tabsoptions.ui:158
+#, kde-format
+msgid ""
+"<html><head/><body><p>Whether to leave the new tab empty or not. If this is "
+"unchecked, the new tab will load the same URL loaded when creating a new "
+"window</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
+#, kde-format
+msgid "Leave new tab empty"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: tabs/tabsoptions.ui:171
 #, kde-format
 msgid "Closing"
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
-#: tabs/tabsoptions.ui:167
+#: tabs/tabsoptions.ui:177
 #, fuzzy, kde-format
 #| msgid ""
 #| "This will display close buttons inside each tab instead of websites' "
@@ -2332,13 +2348,13 @@ msgstr ""
 "ತೋರಿಸುತ್ತದೆ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
-#: tabs/tabsoptions.ui:170
+#: tabs/tabsoptions.ui:180
 #, kde-format
 msgid "&Show close button on tabs"
 msgstr "ಮುಚ್ಚುವ ಗುಂಡಿಗಳನ್ನು ಹಾಳೆಗಳಲ್ಲಿ ತೋರಿಸು(&S)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
-#: tabs/tabsoptions.ui:177
+#: tabs/tabsoptions.ui:187
 #, fuzzy, kde-format
 #| msgid ""
 #| "When you click on a tab using the middle mouse button or mouse wheel, it "
@@ -2353,13 +2369,13 @@ msgstr ""
 "ಅಗತ್ಯವಾಗುತ್ತದೆ.)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
-#: tabs/tabsoptions.ui:180
+#: tabs/tabsoptions.ui:190
 #, kde-format
 msgid "Middle-click on a tab to close it"
 msgstr "ಹಾಳೆಯನ್ನು ಮುಚ್ಚಲು ಅದರ ಮೇಲೆ ಮಧ್ಯದ ಗುಂಡಿಯನ್ನು ಕ್ಲಿಕ್ಕಿಸಿ"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
-#: tabs/tabsoptions.ui:187
+#: tabs/tabsoptions.ui:197
 #, kde-format
 msgid ""
 "This will ask you whether you are sure you want to close a window when it "
@@ -2369,13 +2385,13 @@ msgstr ""
 "ನಿಮ್ಮ ಖಚಿತತೆಯನ್ನು ಕೇಳುತ್ತದೆ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
-#: tabs/tabsoptions.ui:190
+#: tabs/tabsoptions.ui:200
 #, kde-format
 msgid "Confirm &when closing windows with multiple tabs"
 msgstr "ಅನೇಕ ಹಾಳೆಗಳನ್ನು ಹೊಂದಿರುವ ವಿಂಡೋಗಳನ್ನು ಮುಚ್ಚುವಾಗ ಅನುಮತಿ ಕೇಳು"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: tabs/tabsoptions.ui:197
+#: tabs/tabsoptions.ui:207
 #, kde-format
 msgid ""
 "When checking this the previous used or opened tab will be activated when "
@@ -2384,7 +2400,7 @@ msgstr ""
 "ಇದನ್ನು ಗುರುತು ಹಾಕಿದಲ್ಲಿ, ಈ ಹಿಂದೆ ಬಳಸಲಾದ ಅಥವ ತೆರೆಯಲಾದ ಹಾಳೆಯು ಸಕ್ರಿಯಗೊಳಿಸಲ್ಪಡುತ್ತದೆ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
-#: tabs/tabsoptions.ui:200
+#: tabs/tabsoptions.ui:210
 #, kde-format
 msgid "Activate previously used tab when closing the current tab"
 msgstr "ಈಗಿನ ಹಾಳೆಯನ್ನು ಮುಚ್ಚುವ ಮೊದಲು ಈ ಹಿಂದೆ ಬಳಸಲಾದ ಹಾಳೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ"

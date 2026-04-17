@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:44+0000\n"
+"POT-Creation-Date: 2026-04-17 00:44+0000\n"
 "PO-Revision-Date: 2009-08-16 18:29+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -641,8 +641,8 @@ msgid ""
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4885
-#: src/konqmainwindow.cpp:4931
+#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4886
+#: src/konqmainwindow.cpp:4932
 #, fuzzy, kde-format
 #| msgctxt "NAME OF TRANSLATORS"
 #| msgid "Your names"
@@ -754,7 +754,7 @@ msgstr ""
 msgid "Miscellaneous"
 msgstr "Pelbagai"
 
-#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4353
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4354
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Buka dalam Tetingkap Baru"
@@ -850,20 +850,20 @@ msgstr ""
 "Halaman ini mengandungi perubahan yang belum dikemukakan.\n"
 "Memuatkan semula halaman akan membuang perubahan ini."
 
-#: src/konqmainwindow.cpp:1632 src/konqmainwindow.cpp:2270
-#: src/konqmainwindow.cpp:2359 src/konqmainwindow.cpp:2391
-#: src/konqmainwindow.cpp:2434 src/konqmainwindow.cpp:2456
-#: src/konqmainwindow.cpp:4850
+#: src/konqmainwindow.cpp:1632 src/konqmainwindow.cpp:2271
+#: src/konqmainwindow.cpp:2360 src/konqmainwindow.cpp:2392
+#: src/konqmainwindow.cpp:2435 src/konqmainwindow.cpp:2457
+#: src/konqmainwindow.cpp:4851
 #, fuzzy, kde-format
 #| msgid "Discard Changes?"
 msgctxt "@title:window"
 msgid "Discard Changes?"
 msgstr "Abaikan Perubahan?"
 
-#: src/konqmainwindow.cpp:1632 src/konqmainwindow.cpp:2270
-#: src/konqmainwindow.cpp:2359 src/konqmainwindow.cpp:2391
-#: src/konqmainwindow.cpp:2434 src/konqmainwindow.cpp:2457
-#: src/konqmainwindow.cpp:4850
+#: src/konqmainwindow.cpp:1632 src/konqmainwindow.cpp:2271
+#: src/konqmainwindow.cpp:2360 src/konqmainwindow.cpp:2392
+#: src/konqmainwindow.cpp:2435 src/konqmainwindow.cpp:2458
+#: src/konqmainwindow.cpp:4851
 #, kde-format
 msgid "&Discard Changes"
 msgstr "&Abaikan Perubahan"
@@ -873,7 +873,7 @@ msgstr "&Abaikan Perubahan"
 msgid "Home Folder"
 msgstr "Folder Rumah"
 
-#: src/konqmainwindow.cpp:1947 src/konqmainwindow.cpp:3369
+#: src/konqmainwindow.cpp:1947 src/konqmainwindow.cpp:3370
 #, fuzzy, kde-format
 #| msgid "Home"
 msgid "Home"
@@ -918,7 +918,7 @@ msgstr ""
 "membawa anda ke dalam <b>Pusat Kawalan KDE</b>, di bawah <b>Pengurus Fail</"
 "b>/<b>Peri Laku</b>."
 
-#: src/konqmainwindow.cpp:2269
+#: src/konqmainwindow.cpp:2270
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -927,7 +927,7 @@ msgstr ""
 "Tab ini mengandungi perubahan yang belum dihantar.\n"
 "Leraikan tab ini akan mengabaikan perubahan."
 
-#: src/konqmainwindow.cpp:2358
+#: src/konqmainwindow.cpp:2359
 #, kde-format
 msgid ""
 "This view contains changes that have not been submitted.\n"
@@ -936,7 +936,7 @@ msgstr ""
 "Pandangan ini mengandungi perubahan yang belum dihantar.\n"
 "Menutup pandangan ini akan mengabaikan perubahan."
 
-#: src/konqmainwindow.cpp:2390
+#: src/konqmainwindow.cpp:2391
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -945,24 +945,24 @@ msgstr ""
 "Tab ini mengandungi perubahan yang belum dihantar.\n"
 "Menutup tab ini akan mengabaikan perubahan."
 
-#: src/konqmainwindow.cpp:2416
+#: src/konqmainwindow.cpp:2417
 #, kde-format
 msgid "Do you really want to close all other tabs?"
 msgstr "Anda benar-benar mahu menutup keseluruhan tab yang lain?"
 
-#: src/konqmainwindow.cpp:2417 src/konqmainwindow.cpp:3449 src/konqtabs.cpp:74
+#: src/konqmainwindow.cpp:2418 src/konqmainwindow.cpp:3450 src/konqtabs.cpp:74
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr "Tutup Ta&b Lain-lain"
 
-#: src/konqmainwindow.cpp:2417
+#: src/konqmainwindow.cpp:2418
 #, fuzzy, kde-format
 #| msgid "Close Other Tabs Confirmation"
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
 msgstr "Kepastian Tutup Tab Lain-lain"
 
-#: src/konqmainwindow.cpp:2433
+#: src/konqmainwindow.cpp:2434
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -971,7 +971,7 @@ msgstr ""
 "Tab ini mengandungi perubahan yang belum dihantar.\n"
 "Menutup tab ini akan mengabaikan perubahan."
 
-#: src/konqmainwindow.cpp:2455
+#: src/konqmainwindow.cpp:2456
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -980,260 +980,260 @@ msgstr ""
 "Tab ini mngandungi perubahan yang belum dihantar.\n"
 "Muatsemula tab ini akan mengabaikan perubahan."
 
-#: src/konqmainwindow.cpp:2512
+#: src/konqmainwindow.cpp:2513
 #, fuzzy, kde-format
 #| msgid "Enter Target"
 msgctxt "@title:window"
 msgid "Enter Target"
 msgstr "Masukkan Sasaran"
 
-#: src/konqmainwindow.cpp:2519
+#: src/konqmainwindow.cpp:2520
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
 msgstr "<qt><b>%1</b> tidak sah</qt>"
 
-#: src/konqmainwindow.cpp:2529
+#: src/konqmainwindow.cpp:2530
 #, kde-format
 msgid "Copy selected files from %1 to:"
 msgstr "Salin fail yang dipilih dari %1 ke:"
 
-#: src/konqmainwindow.cpp:2542
+#: src/konqmainwindow.cpp:2543
 #, kde-format
 msgid "Move selected files from %1 to:"
 msgstr "Alihkan fail yang dipilih dari %1 ke:"
 
-#: src/konqmainwindow.cpp:2710
+#: src/konqmainwindow.cpp:2711
 #, fuzzy, kde-format
 #| msgid "Clear History"
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
 msgstr "Kosongkan Rekod"
 
-#: src/konqmainwindow.cpp:2732
+#: src/konqmainwindow.cpp:2733
 #, fuzzy, kde-format
 #| msgid "Set Name..."
 msgid "Save As..."
 msgstr "Simpan Sebagai..."
 
-#: src/konqmainwindow.cpp:2734
+#: src/konqmainwindow.cpp:2735
 #, fuzzy, kde-format
 msgid "Manage..."
 msgstr "Tukar Ikon..."
 
-#: src/konqmainwindow.cpp:3278
+#: src/konqmainwindow.cpp:3279
 #, kde-format
 msgid "New &Window"
 msgstr "Tetin&gkap Baru"
 
-#: src/konqmainwindow.cpp:3283
+#: src/konqmainwindow.cpp:3284
 #, kde-format
 msgid "&Duplicate Window"
 msgstr "Gan&dakan Tetingkap"
 
-#: src/konqmainwindow.cpp:3288
+#: src/konqmainwindow.cpp:3289
 #, kde-format
 msgid "Send &Link Address..."
 msgstr "Kir&im Alamat Pautan..."
 
-#: src/konqmainwindow.cpp:3292
+#: src/konqmainwindow.cpp:3293
 #, kde-format
 msgid "S&end File..."
 msgstr "Kirim &Fail."
 
-#: src/konqmainwindow.cpp:3296
+#: src/konqmainwindow.cpp:3297
 #, fuzzy, kde-format
 #| msgid "Open Location"
 msgid "&Open Location"
 msgstr "Buka Lokasi"
 
-#: src/konqmainwindow.cpp:3302
+#: src/konqmainwindow.cpp:3303
 #, fuzzy, kde-format
 #| msgid "S&end File..."
 msgid "&Open File..."
 msgstr "Kirim &Fail."
 
-#: src/konqmainwindow.cpp:3307
+#: src/konqmainwindow.cpp:3308
 #, kde-format
 msgid "&Find File..."
 msgstr "Cari &Fail."
 
-#: src/konqmainwindow.cpp:3316
+#: src/konqmainwindow.cpp:3317
 #, kde-format
 msgid "Lock to Current Location"
 msgstr "Kunci kepada Lokasi Semasa"
 
-#: src/konqmainwindow.cpp:3319
+#: src/konqmainwindow.cpp:3320
 #, fuzzy, kde-format
 #| msgid "Lin&k View"
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr "Pelihat Pau&tan"
 
-#: src/konqmainwindow.cpp:3324
+#: src/konqmainwindow.cpp:3325
 #, kde-format
 msgid "&Up"
 msgstr "A&tas"
 
-#: src/konqmainwindow.cpp:3334
+#: src/konqmainwindow.cpp:3335
 #, fuzzy, kde-format
 #| msgid "Copy Items"
 msgid "Closed Items"
 msgstr "Salin Item"
 
-#: src/konqmainwindow.cpp:3347
+#: src/konqmainwindow.cpp:3348
 #, fuzzy, kde-format
 #| msgid "Permissions"
 msgid "Sessions"
 msgstr "Sesi"
 
-#: src/konqmainwindow.cpp:3374
+#: src/konqmainwindow.cpp:3375
 #, fuzzy, kde-format
 #| msgid "Most Often Visited"
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr "Paling Kerap Dilawati"
 
-#: src/konqmainwindow.cpp:3378
+#: src/konqmainwindow.cpp:3379
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3387
+#: src/konqmainwindow.cpp:3388
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr "Papar Rekod DNSSEC"
 
-#: src/konqmainwindow.cpp:3399
+#: src/konqmainwindow.cpp:3400
 #, kde-format
 msgid "Configure Extensions..."
 msgstr "Konfigur Sambungan..."
 
-#: src/konqmainwindow.cpp:3403
+#: src/konqmainwindow.cpp:3404
 #, kde-format
 msgid "Configure Spell Checking..."
 msgstr "Selaraskan Pemeriksaan Eja..."
 
-#: src/konqmainwindow.cpp:3409
+#: src/konqmainwindow.cpp:3410
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr "Pisah &Lihat Kiri/Kanan"
 
-#: src/konqmainwindow.cpp:3414
+#: src/konqmainwindow.cpp:3415
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr "Pisah Liha&t Atas/Bawah"
 
-#: src/konqmainwindow.cpp:3419 src/konqtabs.cpp:41
+#: src/konqmainwindow.cpp:3420 src/konqtabs.cpp:41
 #, kde-format
 msgid "&New Tab"
 msgstr "Ta&b Baru"
 
-#: src/konqmainwindow.cpp:3428
+#: src/konqmainwindow.cpp:3429
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr "Gan&dakan Tab Semasa"
 
-#: src/konqmainwindow.cpp:3433
+#: src/konqmainwindow.cpp:3434
 #, kde-format
 msgid "Detach Current Tab"
 msgstr "Leraikan Tab Semasa"
 
-#: src/konqmainwindow.cpp:3438
+#: src/konqmainwindow.cpp:3439
 #, kde-format
 msgid "&Close Active View"
 msgstr "Tutup Peli&hat Aktif"
 
-#: src/konqmainwindow.cpp:3443
+#: src/konqmainwindow.cpp:3444
 #, kde-format
 msgid "Close Current Tab"
 msgstr "Tutup Tab Semasa"
 
-#: src/konqmainwindow.cpp:3453
+#: src/konqmainwindow.cpp:3454
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "Aktifkan Tab Seterusnya"
 
-#: src/konqmainwindow.cpp:3457
+#: src/konqmainwindow.cpp:3458
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "Aktifkan Tab Sebelumnya"
 
-#: src/konqmainwindow.cpp:3464
+#: src/konqmainwindow.cpp:3465
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "Aktifkan Tab %1"
 
-#: src/konqmainwindow.cpp:3469
+#: src/konqmainwindow.cpp:3470
 #, kde-format
 msgid "Move Tab Left"
 msgstr "Pindah Tab ke Kiri"
 
-#: src/konqmainwindow.cpp:3474
+#: src/konqmainwindow.cpp:3475
 #, kde-format
 msgid "Move Tab Right"
 msgstr "Pindah Tab ke Kanan"
 
-#: src/konqmainwindow.cpp:3479
+#: src/konqmainwindow.cpp:3480
 #, fuzzy, kde-format
 #| msgid "New &Window"
 msgid "Protect Window"
 msgstr "Tetin&gkap Baru"
 
-#: src/konqmainwindow.cpp:3485
+#: src/konqmainwindow.cpp:3486
 #, kde-format
 msgid "Dump Debug Info"
 msgstr "Campak Info Nyahpepijat"
 
-#: src/konqmainwindow.cpp:3503
+#: src/konqmainwindow.cpp:3504
 #, fuzzy, kde-format
 msgid "&Reload"
 msgstr "&Buka Semula"
 
-#: src/konqmainwindow.cpp:3508 src/konqtabs.cpp:68
+#: src/konqmainwindow.cpp:3509 src/konqtabs.cpp:68
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr "&Ulangmuat Semua Tab"
 
-#: src/konqmainwindow.cpp:3516
+#: src/konqmainwindow.cpp:3517
 #, fuzzy, kde-format
 msgid "&Force Reload"
 msgstr "&Muatkan Semula Tab"
 
-#: src/konqmainwindow.cpp:3541
+#: src/konqmainwindow.cpp:3542
 #, kde-format
 msgid "&Stop"
 msgstr "&Berhenti"
 
-#: src/konqmainwindow.cpp:3550
+#: src/konqmainwindow.cpp:3551
 #, kde-format
 msgid "Throbber"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3554 src/konqmainwindow.cpp:3557
+#: src/konqmainwindow.cpp:3555 src/konqmainwindow.cpp:3558
 #, kde-format
 msgid "L&ocation: "
 msgstr "L&okasi "
 
-#: src/konqmainwindow.cpp:3564
+#: src/konqmainwindow.cpp:3565
 #, kde-format
 msgid "Location Bar"
 msgstr "Bar Lokasi"
 
-#: src/konqmainwindow.cpp:3570
+#: src/konqmainwindow.cpp:3571
 #, fuzzy, kde-format
 #| msgid "Location Bar<p>Enter a web address or search term."
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
 msgstr "Bar Lokasi<p>Masukkan alamat web atau item carian."
 
-#: src/konqmainwindow.cpp:3574
+#: src/konqmainwindow.cpp:3575
 #, kde-format
 msgid "Clear Location Bar"
 msgstr "Kosongkan Bar Lokasi"
 
-#: src/konqmainwindow.cpp:3577
+#: src/konqmainwindow.cpp:3578
 #, fuzzy, kde-format
 #| msgid "Clear Location bar<p>Clears the content of the location bar."
 msgid ""
@@ -1241,22 +1241,22 @@ msgid ""
 "</html>"
 msgstr "Kosongkan Bar Lokasi<p>Kosongkan kandungan bar lokasi."
 
-#: src/konqmainwindow.cpp:3582
+#: src/konqmainwindow.cpp:3583
 #, fuzzy, kde-format
 msgid "&Bookmarks"
 msgstr "&Penanda Laman"
 
-#: src/konqmainwindow.cpp:3603
+#: src/konqmainwindow.cpp:3604
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "Pengenalan Kon&queror"
 
-#: src/konqmainwindow.cpp:3608
+#: src/konqmainwindow.cpp:3609
 #, kde-format
 msgid "Go"
 msgstr "Pergi"
 
-#: src/konqmainwindow.cpp:3610
+#: src/konqmainwindow.cpp:3611
 #, fuzzy, kde-format
 #| msgid "Go<p>Goes to the page that has been entered into the location bar."
 msgid ""
@@ -1264,7 +1264,7 @@ msgid ""
 "bar.</html>"
 msgstr "Pergi<p>Pergi ke laman yang sudah dimasukkan ke bar lokasi."
 
-#: src/konqmainwindow.cpp:3618
+#: src/konqmainwindow.cpp:3619
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the parent folder<p>For instance, if the current location is file:/"
@@ -1277,28 +1277,28 @@ msgstr ""
 "Masuk ke direktori induk<p>Contohnya, jika lokasi semasa ialah fail:/home/"
 "%1, apabila anda klik butang ini, anda akan dibawa ke fail:/home."
 
-#: src/konqmainwindow.cpp:3621
+#: src/konqmainwindow.cpp:3622
 #, kde-format
 msgid "Enter the parent folder"
 msgstr "Masuk ke direktori induk"
 
-#: src/konqmainwindow.cpp:3623 src/konqmainwindow.cpp:3624
+#: src/konqmainwindow.cpp:3624 src/konqmainwindow.cpp:3625
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "Pindah selangkah ke belakang di dalam rekod pelungsuran"
 
-#: src/konqmainwindow.cpp:3626 src/konqmainwindow.cpp:3627
+#: src/konqmainwindow.cpp:3627 src/konqmainwindow.cpp:3628
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "Pindah selangkah ke depan di dalam rekod pelungsuran"
 
-#: src/konqmainwindow.cpp:3629 src/konqmainwindow.cpp:3630
+#: src/konqmainwindow.cpp:3630 src/konqmainwindow.cpp:3631
 #, fuzzy, kde-format
 #| msgid "Move backwards one step in the browsing history"
 msgid "Move backwards one step in the closed tabs history"
 msgstr "Pindah selangkah ke belakang di dalam rekod pelungsuran"
 
-#: src/konqmainwindow.cpp:3632
+#: src/konqmainwindow.cpp:3633
 #, fuzzy, kde-format
 #| msgid ""
 #| "Reload the currently displayed document<p>This may, for example, be "
@@ -1313,12 +1313,12 @@ msgstr ""
 "mengulangsegar laman web yang telah diubahsuai sejak ia dimuatkan, untuk "
 "menjadikan perubahannya kelihatan."
 
-#: src/konqmainwindow.cpp:3635
+#: src/konqmainwindow.cpp:3636
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "Ulangmuat dokumen semasa yang dipaparkan"
 
-#: src/konqmainwindow.cpp:3637
+#: src/konqmainwindow.cpp:3638
 #, fuzzy, kde-format
 #| msgid ""
 #| "Reload all currently displayed documents in tabs<p>This may, for example, "
@@ -1333,12 +1333,12 @@ msgstr ""
 "untuk mengulangsegar laman web yang telah diubahsuai sejak ianya dimuatkan, "
 "untun mejadikan perubahannya kelihatan."
 
-#: src/konqmainwindow.cpp:3640
+#: src/konqmainwindow.cpp:3641
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr "Ulangmuat dokumen semasa yang dipaparkan dalam tab"
 
-#: src/konqmainwindow.cpp:3642
+#: src/konqmainwindow.cpp:3643
 #, fuzzy, kde-format
 #| msgid ""
 #| "Stop loading the document<p>All network transfers will be stopped and "
@@ -1351,7 +1351,7 @@ msgstr ""
 "Henti memuatkan dokumen <p> Semua pemindahan rangkaian akan dihentikan dan "
 "Konqueror akan memaparkan kandungan yang telah diterimanya setakat ini."
 
-#: src/konqmainwindow.cpp:3646
+#: src/konqmainwindow.cpp:3647
 #, fuzzy, kde-format
 #| msgid ""
 #| "Reload the currently displayed document<p>This may, for example, be "
@@ -1367,19 +1367,19 @@ msgstr ""
 "mengulangsegar laman web yang telah diubahsuai sejak ia dimuatkan, untuk "
 "menjadikan perubahannya kelihatan."
 
-#: src/konqmainwindow.cpp:3650
+#: src/konqmainwindow.cpp:3651
 #, fuzzy, kde-format
 #| msgid "Reload all currently displayed document in tabs"
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr "Ulangmuat dokumen semasa yang dipaparkan dalam tab"
 
-#: src/konqmainwindow.cpp:3652
+#: src/konqmainwindow.cpp:3653
 #, kde-format
 msgid "Stop loading the document"
 msgstr "Henti memuatkan dokumen"
 
-#: src/konqmainwindow.cpp:3654
+#: src/konqmainwindow.cpp:3655
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cut the currently selected text or item(s) and move it to the system "
@@ -1394,12 +1394,12 @@ msgstr ""
 "sistem <p> Ini akan menjadikannya kelihatan kepada arahan <b>Tepek</b> di "
 "Konqueror dan aplikasi KDE yang lain."
 
-#: src/konqmainwindow.cpp:3658
+#: src/konqmainwindow.cpp:3659
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr "Pindah teks atau item dipilih ke papan klip"
 
-#: src/konqmainwindow.cpp:3660
+#: src/konqmainwindow.cpp:3661
 #, fuzzy, kde-format
 #| msgid ""
 #| "Copy the currently selected text or item(s) to the system "
@@ -1414,12 +1414,12 @@ msgstr ""
 "sistem <p> Ini akan menjadikannya kelihatan kepada arahan <b>Tepek</b> di "
 "Konqueror dan aplikasi KDE yang lain."
 
-#: src/konqmainwindow.cpp:3664
+#: src/konqmainwindow.cpp:3665
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr "Salin teks atau item dipilih kepada papan klip"
 
-#: src/konqmainwindow.cpp:3666
+#: src/konqmainwindow.cpp:3667
 #, fuzzy, kde-format
 #| msgid ""
 #| "Paste the previously cut or copied clipboard contents<p>This also works "
@@ -1431,12 +1431,12 @@ msgstr ""
 "Tepek potongan atau salinan kandungan papan klip terdahulu<p>Ini juga boleh "
 "dilakukan untuk salinan teks atau potongan daripada aplikasi KDE lain."
 
-#: src/konqmainwindow.cpp:3669
+#: src/konqmainwindow.cpp:3670
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "Tepek kandungan papan klip"
 
-#: src/konqmainwindow.cpp:3671
+#: src/konqmainwindow.cpp:3672
 #, fuzzy, kde-format
 #| msgid ""
 #| "Print the currently displayed document<p>You will be presented with a "
@@ -1457,12 +1457,12 @@ msgstr ""
 "menyediakan capaian kepada servis cetakan istimewa KDE seperti mencipta fail "
 "PDF daripada dokumen semasa."
 
-#: src/konqmainwindow.cpp:3677
+#: src/konqmainwindow.cpp:3678
 #, kde-format
 msgid "Print the current document"
 msgstr "Cetak dokumen semasa"
 
-#: src/konqmainwindow.cpp:3679
+#: src/konqmainwindow.cpp:3680
 #, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
@@ -1471,7 +1471,7 @@ msgstr ""
 "Pandangan terkunci tidak boleh menukar folderi. Gunakan dalam kombinasi "
 "paparan pautan untuk melungsur banyak fail daripada satu folder."
 
-#: src/konqmainwindow.cpp:3680
+#: src/konqmainwindow.cpp:3681
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
@@ -1480,111 +1480,111 @@ msgstr ""
 "Tetapkan paparan sebagai pautan. Satu pandangan pautan mengikut perubahan "
 "folder yang dibuat oleh pandangan pautan yang lain."
 
-#: src/konqmainwindow.cpp:3684
+#: src/konqmainwindow.cpp:3685
 #, fuzzy, kde-format
 #| msgid "C&lose Current Tab"
 msgid "&Inspect Current Page"
 msgstr "Tutup Tab Semasa"
 
-#: src/konqmainwindow.cpp:3685
+#: src/konqmainwindow.cpp:3686
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3686
+#: src/konqmainwindow.cpp:3687
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3688
+#: src/konqmainwindow.cpp:3689
 #, kde-format
 msgid "Mark the current window as protected"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3689
+#: src/konqmainwindow.cpp:3690
 #, kde-format
 msgid ""
 "<p>Mark the current window as protected</p><p>Marking a window as protected "
 "ensures that Konqueror will never open external links in it</p>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3851
+#: src/konqmainwindow.cpp:3852
 #, kde-format
 msgid "Copy &Files..."
 msgstr "Salin &Fail..."
 
-#: src/konqmainwindow.cpp:3855
+#: src/konqmainwindow.cpp:3856
 #, kde-format
 msgid "M&ove Files..."
 msgstr "Pindah Fa&il..."
 
-#: src/konqmainwindow.cpp:4181
+#: src/konqmainwindow.cpp:4182
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
 "while. Continue?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:4183
+#: src/konqmainwindow.cpp:4184
 #, fuzzy, kde-format
 #| msgid "Open Folder in Tabs"
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "Buka Folder di dalam Tab"
 
-#: src/konqmainwindow.cpp:4184
+#: src/konqmainwindow.cpp:4185
 #, fuzzy, kde-format
 #| msgid "&Open Link"
 msgctxt "@action:button"
 msgid "Open"
 msgstr "&Buka"
 
-#: src/konqmainwindow.cpp:4346
+#: src/konqmainwindow.cpp:4347
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "Buka dalam Tetingkap &Ini"
 
-#: src/konqmainwindow.cpp:4347
+#: src/konqmainwindow.cpp:4348
 #, kde-format
 msgid "Open the document in current window"
 msgstr "Buka dokumen dalam tetingkap semasa"
 
-#: src/konqmainwindow.cpp:4354
+#: src/konqmainwindow.cpp:4355
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "Buka dokumen di dalam tetingkap baru"
 
-#: src/konqmainwindow.cpp:4360
+#: src/konqmainwindow.cpp:4361
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Buka di dalam Tab Baru"
 
-#: src/konqmainwindow.cpp:4362
+#: src/konqmainwindow.cpp:4363
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "Buka dokumen di dalam tetingkap baru"
 
-#: src/konqmainwindow.cpp:4628
+#: src/konqmainwindow.cpp:4629
 #, fuzzy, kde-format
 #| msgid "Open with %1"
 msgid "&Open With"
 msgstr "&Buka Dengan"
 
-#: src/konqmainwindow.cpp:4641
+#: src/konqmainwindow.cpp:4642
 #, kde-format
 msgid "Open with %1"
 msgstr "Buka dengan %1"
 
-#: src/konqmainwindow.cpp:4691
+#: src/konqmainwindow.cpp:4692
 #, fuzzy, kde-format
 #| msgid "&View Mode"
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "Mo&d Lihat"
 
-#: src/konqmainwindow.cpp:4814
+#: src/konqmainwindow.cpp:4815
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
@@ -1592,19 +1592,19 @@ msgstr ""
 "Anda mempunyai banyak tab yang dibuka pada tetingkap ini, anda pasti mahu "
 "keluar?"
 
-#: src/konqmainwindow.cpp:4816
+#: src/konqmainwindow.cpp:4817
 #, fuzzy, kde-format
 #| msgid "Confirmation"
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Kepastian"
 
-#: src/konqmainwindow.cpp:4818
+#: src/konqmainwindow.cpp:4819
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "Tutup Tab Semasa"
 
-#: src/konqmainwindow.cpp:4846
+#: src/konqmainwindow.cpp:4847
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1613,7 +1613,7 @@ msgstr ""
 "Kandungan tab ini mengandungi perubahan yang belum dihantar.\n"
 "Menutup tetingkap akan mengabaikan perubahan ini."
 
-#: src/konqmainwindow.cpp:4847
+#: src/konqmainwindow.cpp:4848
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1622,36 +1622,36 @@ msgstr ""
 "Kandungan laman ini mengandungi perubahan yang belum dihantar.\n"
 "Menutup tetingkap akan mengabaikan perubahan ini."
 
-#: src/konqmainwindow.cpp:5007
+#: src/konqmainwindow.cpp:5008
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr ""
 "Papan sisi anda tiada atau tidak berfungsi. Input baru tidak boleh ditambah."
 
-#: src/konqmainwindow.cpp:5007 src/konqmainwindow.cpp:5014
+#: src/konqmainwindow.cpp:5008 src/konqmainwindow.cpp:5015
 #, fuzzy, kde-format
 #| msgid "Web Sidebar"
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Papan Sisi Web"
 
-#: src/konqmainwindow.cpp:5012
+#: src/konqmainwindow.cpp:5013
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Tambah sambungan web baru \"%1\" kepada papan sisi anda?"
 
-#: src/konqmainwindow.cpp:5014
+#: src/konqmainwindow.cpp:5015
 #, fuzzy, kde-format
 msgid "Add"
 msgstr "Tambah"
 
-#: src/konqmainwindow.cpp:5014
+#: src/konqmainwindow.cpp:5015
 #, fuzzy, kde-format
 msgid "Do Not Add"
 msgstr "Jangan Tambah"
 
-#: src/konqmainwindow.cpp:5362 src/urlloader.cpp:828
+#: src/konqmainwindow.cpp:5363 src/urlloader.cpp:828
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1660,7 +1660,7 @@ msgstr ""
 "Terdapat ralat konfigurasi. Anda telah mengaitkan Konqueror dengan %1, "
 "tetapi ia tidak dapat menangani jenis fail ini."
 
-#: src/konqmainwindow.cpp:5447
+#: src/konqmainwindow.cpp:5448
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1673,23 +1673,23 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5452
+#: src/konqmainwindow.cpp:5453
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5452
+#: src/konqmainwindow.cpp:5453
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5453 src/konqmainwindow.cpp:5481
+#: src/konqmainwindow.cpp:5454 src/konqmainwindow.cpp:5482
 #, fuzzy, kde-format
 #| msgid "Show Configuration Button"
 msgid "Show proxy configuration dialog"
 msgstr "Papar Butang Penyelarasan"
 
-#: src/konqmainwindow.cpp:5477
+#: src/konqmainwindow.cpp:5478
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1698,22 +1698,22 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5480
+#: src/konqmainwindow.cpp:5481
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5481
+#: src/konqmainwindow.cpp:5482
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5481
+#: src/konqmainwindow.cpp:5482
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5497
+#: src/konqmainwindow.cpp:5498
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
