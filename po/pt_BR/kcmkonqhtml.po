@@ -14,20 +14,20 @@
 # Marcus Vinícius de Andrade Gama <marcus.gama@gmail.com>, 2010, 2012.
 # Aracele Torres <araceletorres@gmail.com>, 2010.
 # Geraldo Simiao <geraldosimiao@fedoraproject.org>, 2023.
-# SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-17 00:44+0000\n"
-"PO-Revision-Date: 2025-12-01 08:27-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"PO-Revision-Date: 2026-04-17 03:00-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: appearance.cpp:39
@@ -1705,9 +1705,7 @@ msgid "Please, insert the custom start page"
 msgstr "Insira a página inicial personalizada"
 
 #: generalopts.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "When a new &Tab is created"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &window is created"
 msgstr "Quanto uma no&va aba for criada"
@@ -2453,12 +2451,15 @@ msgid ""
 "unchecked, the new tab will load the same URL loaded when creating a new "
 "window</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Se deve deixar a nova aba vazia ou não. Se isto "
+"estiver desmarcado, a nova aba carregará a mesma URL que foi carregada ao "
+"criar uma nova janela</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Leave new tab empty"
-msgstr ""
+msgstr "Deixar nova aba vazia"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: tabs/tabsoptions.ui:171

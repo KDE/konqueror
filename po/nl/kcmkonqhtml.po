@@ -11,21 +11,21 @@
 # Tom Albers <tomalbers@kde.nl>, 2004.
 # Bram Schoenmakers <bramschoenmakers@kde.nl>, 2006.
 # Kristof Bal <kristof.bal@gmail.com>, 2008.
-# SPDX-FileCopyrightText: 2009, 2023, 2024, 2025 Freek de Kruijf <f.de.kruijf@hetnet.nl>
+# SPDX-FileCopyrightText: 2009, 2023, 2024, 2025, 2026 Freek de Kruijf <f.de.kruijf@hetnet.nl>
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010, 2011, 2012, 2013, 2016, 2018, 2019, 2020, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-17 00:44+0000\n"
-"PO-Revision-Date: 2025-12-01 18:18+0100\n"
+"PO-Revision-Date: 2026-04-17 14:20+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: appearance.cpp:39
@@ -1711,12 +1711,10 @@ msgid "Please, insert the custom start page"
 msgstr "Voeg de aangepaste startpagina in"
 
 #: generalopts.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "When a new &Tab is created"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &window is created"
-msgstr "Wanneer een nieuw &Tabblad wordt aangemaakt"
+msgstr "Wanneer een nieuw &venster wordt aangemaakt"
 
 #: generalopts.cpp:69
 #, kde-format
@@ -2462,12 +2460,15 @@ msgid ""
 "unchecked, the new tab will load the same URL loaded when creating a new "
 "window</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Of het nieuwe tabblad leeg moet blijven of niet. Als "
+"dit niet is geactiveerd, laadt het nieuwe tabblad dezelfde URL als bij het "
+"openen van een nieuw venster</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Leave new tab empty"
-msgstr ""
+msgstr "Laat een nieuw tabblad leeg"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: tabs/tabsoptions.ui:171

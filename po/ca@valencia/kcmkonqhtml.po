@@ -1,16 +1,16 @@
 # Translation of kcmkonqhtml.po to Catalan (Valencian)
-# Copyright (C) 1999-2025 This_file_is_part_of_KDE
+# Copyright (C) 1999-2026 This_file_is_part_of_KDE
 #
 # SPDX-FileCopyrightText: 1999, 2000, 2001, 2002, 2004, 2005, 2006 Sebastià Pla i Sanz <sps@sastia.com>
 # SPDX-FileCopyrightText: 2003, 2012, 2013, 2016, 2019, 2020, 2022 Antoni Bella Pérez <antonibella5@yahoo.com>
 # SPDX-FileCopyrightText: 2005 Albert Astals Cid <aacid@kde.org>
-# SPDX-FileCopyrightText: 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-17 00:44+0000\n"
-"PO-Revision-Date: 2025-12-01 11:37+0100\n"
+"PO-Revision-Date: 2026-04-17 08:58+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -821,12 +821,12 @@ msgstr ""
 "<qt>\n"
 "Trieu la política desitjada:\n"
 "<ul>\n"
-"<li><b>Accepta</b> - Permet a este lloc establir galetes</li>\n"
+"<li><b>Accepta</b> – Permet a este lloc establir galetes</li>\n"
 "<li><b>Accepta fins al final de sessió</b> Permet que este lloc establisca "
 "galetes, però expiraran al final de la sessió.</li>\n"
-"<li><b>Rebutja</b> - Rebutja totes les galetes enviades des d'este lloc</"
+"<li><b>Rebutja</b> – Rebutja totes les galetes enviades des d'este lloc</"
 "li>\n"
-"<li><b>Pregunta</b> - Demana quan es reben galetes des d'este lloc</li>\n"
+"<li><b>Pregunta</b> – Demana quan es reben galetes des d'este lloc</li>\n"
 "</ul>\n"
 "</qt>"
 
@@ -1697,12 +1697,10 @@ msgid "Please, insert the custom start page"
 msgstr "Inseriu una pàgina d'inici personalitzada"
 
 #: generalopts.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "When a new &Tab is created"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &window is created"
-msgstr "Quan es crea una pes&tanya nova"
+msgstr "Quan es crea una &finestra nova"
 
 #: generalopts.cpp:69
 #, kde-format
@@ -2456,12 +2454,15 @@ msgid ""
 "unchecked, the new tab will load the same URL loaded when creating a new "
 "window</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Si s'ha de deixar buida o no la pestanya nova. Si no "
+"està marcada, la pestanya nova carregarà el mateix URL carregat en crear una "
+"finestra nova</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Leave new tab empty"
-msgstr ""
+msgstr "Deixa buida la pestanya nova"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: tabs/tabsoptions.ui:171

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-17 00:44+0000\n"
-"PO-Revision-Date: 2025-12-01 06:04+0100\n"
+"PO-Revision-Date: 2026-04-17 09:27+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -1672,12 +1672,10 @@ msgid "Please, insert the custom start page"
 msgstr "შეიყვანეთ სასურველი საწყისი გვერდი"
 
 #: generalopts.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "When a new &Tab is created"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &window is created"
-msgstr "როცა &ახალი ჩანართი შეიქმნა"
+msgstr "ახალი ფან&ჯრის შექმნისას"
 
 #: generalopts.cpp:69
 #, kde-format
@@ -2408,12 +2406,15 @@ msgid ""
 "unchecked, the new tab will load the same URL loaded when creating a new "
 "window</p></body></html>"
 msgstr ""
+"<html><head/><body><p>დარჩება ახალი ჩანართი ცარიელი, თუ არა. თუ ეს "
+"გამორთულია, ახალი ჩანართი ჩატვირთავს იგივე URL-ს, რომელიც ახალი ფანჯრის "
+"შექმნისას იტვირთება</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Leave new tab empty"
-msgstr ""
+msgstr "ახალი ჩანართის ცარიელი დატოვება"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: tabs/tabsoptions.ui:171

@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-17 00:44+0000\n"
-"PO-Revision-Date: 2026-04-13 21:30+0300\n"
+"PO-Revision-Date: 2026-04-17 15:50+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1660,12 +1660,10 @@ msgid "Please, insert the custom start page"
 msgstr "נא לבחור עמוד פתיחה משלך"
 
 #: generalopts.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "When a new &Tab is created"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &window is created"
-msgstr "כאשר נוצרת &לשונית חדשה"
+msgstr "כאשר נוצר &חלון חדש"
 
 #: generalopts.cpp:69
 #, kde-format
@@ -2379,12 +2377,15 @@ msgid ""
 "unchecked, the new tab will load the same URL loaded when creating a new "
 "window</p></body></html>"
 msgstr ""
+"<html><head/><body><p>האם להשאיר את הלשונית החדשה ריקה או לא. אם זה לא "
+"מסומן, הלשונית החדשה תטען את אותה הכתובת שנטענת ביצירת חלון חדש</p></body></"
+"html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Leave new tab empty"
-msgstr ""
+msgstr "להשאיר לשונית חדשה ריקה"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: tabs/tabsoptions.ui:171
