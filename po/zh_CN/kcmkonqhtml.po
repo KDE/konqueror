@@ -1601,7 +1601,7 @@ msgstr "请插入自定义起始页"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &window is created"
-msgstr ""
+msgstr "创建新窗口时(&T)"
 
 #: generalopts.cpp:69
 #, kde-format
@@ -2294,12 +2294,14 @@ msgid ""
 "unchecked, the new tab will load the same URL loaded when creating a new "
 "window</p></body></html>"
 msgstr ""
+"<html><head/><body><p>是否打开空白标签页。如果没有选中，新标签页将加载创建新"
+"窗口时加载的 URL</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Leave new tab empty"
-msgstr ""
+msgstr "打开空白标签页"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: tabs/tabsoptions.ui:171
