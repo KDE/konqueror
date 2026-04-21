@@ -295,7 +295,7 @@ void WebEnginePart::connectWebEnginePageSignals(WebEnginePage* page)
     if (!page)
         return;
 
-    connect(page, &WebEnginePage::loadingStarted, this, &WebEnginePart::slotLoadStarted);
+    connect(page, &QWebEnginePage::loadStarted, this, &WebEnginePart::slotLoadStarted);
     connect(page, &WebEnginePage::loadAborted, this, &WebEnginePart::slotLoadAborted);
     connect(page, &WebEnginePage::mainFrameNavigationRequested, this, &WebEnginePart::recordNavigationAccepted);
     connect(page, &QWebEnginePage::linkHovered, this, &WebEnginePart::slotLinkHovered);
@@ -470,10 +470,8 @@ bool WebEnginePart::openFile()
 
 /// slots...
 
-void WebEnginePart::slotLoadStarted(const QUrl &newUrl)
+void WebEnginePart::slotLoadStarted()
 {
-    setUrl(newUrl);
-
     if(!Utils::isBlankUrl(url()) && url() != QUrl("konq:konqueror"))
     {
         emit started(nullptr);
@@ -559,7 +557,7 @@ void WebEnginePart::slotUrlChanged(const QUrl& url)
 {
     //Don't call slotLoadStarted if only the fragments are different
     if (!m_lastRequestedUrl.matches(url, QUrl::RemoveFragment)) {
-        m_browserExtension->withHistoryWorkaround([this, url]{slotLoadStarted(url);});
+        m_browserExtension->withHistoryWorkaround([this]{slotLoadStarted();});
     }
     m_lastRequestedUrl.clear();
 

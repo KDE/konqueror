@@ -105,12 +105,7 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     connect(this, &QWebEnginePage::recommendedStateChanged, this, &WebEnginePage::changeLifecycleState);
     connect(this, &QWebEnginePage::printRequested, this, &WebEnginePage::print);
 
-    connect(this, &QWebEnginePage::loadingChanged, this, [this](const QWebEngineLoadingInfo &info) {
-        m_loadStatus = info.status();
-        if (m_loadStatus == QWebEngineLoadingInfo::LoadStartedStatus) {
-            emit loadingStarted(info.url());
-        }
-    });
+    connect(this, &QWebEnginePage::loadingChanged, this, [this](const QWebEngineLoadingInfo &info) {m_loadStatus = info.status();});
 
 #ifdef WEBENGINE_FRAMES_SUPPORTED
     connect(this, &QWebEnginePage::printRequestedByFrame, this, &WebEnginePage::printFrame);
