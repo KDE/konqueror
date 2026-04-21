@@ -1676,12 +1676,10 @@ msgid "Please, insert the custom start page"
 msgstr "Prosím, vložte vlastnú štartovaciu stránku"
 
 #: generalopts.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "When a new &Tab is created"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &window is created"
-msgstr "Keď sa vytvorí nová &karta"
+msgstr "Keď sa vytvorí nové &okno"
 
 #: generalopts.cpp:69
 #, kde-format
@@ -2405,12 +2403,15 @@ msgid ""
 "unchecked, the new tab will load the same URL loaded when creating a new "
 "window</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Určuje, či má byť nová karta prázdna alebo nie. Ak "
+"toto nie je zaškrtnuté, nová karta načíta rovnakú URL, ktorá sa načíta pri "
+"vytváraní nového okna</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Leave new tab empty"
-msgstr ""
+msgstr "Ponechať novú kartu prázdnu"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: tabs/tabsoptions.ui:171
