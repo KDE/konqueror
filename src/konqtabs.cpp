@@ -547,8 +547,7 @@ bool KonqFrameTabs::accept(KonqFrameVisitor *visitor)
 
 void KonqFrameTabs::slotCurrentChanged(int index)
 {
-    const KColorScheme colorScheme(QPalette::Active, KColorScheme::Window);
-    tabBar()->setTabTextColor(index, colorScheme.foreground(KColorScheme::NormalText).color());
+    tabBar()->setTabTextColor(index, qApp->palette().windowText().color());
 
     KonqFrameBase *currentFrame = tabAt(index);
     if (currentFrame && !m_pViewManager->isLoadingProfile()) {
@@ -593,17 +592,17 @@ void KonqFrameTabs::setLoading(KonqFrameBase *frame, bool loading)
         return;
     }
 
-    const KColorScheme colorScheme(QPalette::Active, KColorScheme::Window);
     QColor color;
     if (loading) {
+        const KColorScheme colorScheme(QPalette::Active, KColorScheme::Window);
         color = colorScheme.foreground(KColorScheme::NeutralText).color(); // a tab is currently loading
     } else {
         if (currentIndex() != pos) {
             // another tab has newly loaded contents. Use "link" because you can click on it to read it.
-            color = colorScheme.foreground(KColorScheme::LinkText).color();
+            color = qApp->palette().link().color();
         } else {
             // the current tab has finished loading.
-            color = colorScheme.foreground(KColorScheme::NormalText).color();
+            color = qApp->palette().windowText().color();
         }
     }
     tabBar()->setTabTextColor(pos, color);

@@ -15,11 +15,12 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include <KConfigGroup>
 #include <KBookmark>
 #include <KBookmarkManager>
-#include <KColorScheme>
 #include <KColorUtils>
 
 #include <QStandardPaths>
 #include <QFontDatabase>
+#include <QGuiApplication>
+#include <QPalette>
 
 void BookmarksProtocol::echoBookmark( const KBookmark &bm)
 {
@@ -157,24 +158,20 @@ void BookmarksProtocol::echoHead(const QString &redirect)
 
 void BookmarksProtocol::echoStyle()
 {
-    KColorScheme window = KColorScheme(QPalette::Active, KColorScheme::Window);
-    KColorScheme view = KColorScheme(QPalette::Active, KColorScheme::View);
-    KColorScheme selection = KColorScheme(QPalette::Active, KColorScheme::Selection);
-
     QFont font = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 
     echo("<style type=\"text/css\">");
     indent++;
     echo("li.link:hover, div.toolbar img:hover { background: " +
-         htmlColor(KColorUtils::tint(view.background().color(), view.decoration(KColorScheme::HoverColor).color(), 0.4)) + "; }");
-    echo("div.column > ul, div.toolbar, p.message { background-color: " + htmlColor(view.background()) + "; " +
-         "border: 1px solid " + htmlColor(view.shade(KColorScheme::LightShade)) + "; }");
-    echo("div.column > ul:hover, p.message:hover { border: 1px solid " + htmlColor(view.decoration(KColorScheme::HoverColor)) + "; }");
+         htmlColor(KColorUtils::tint(qApp->palette().base().color(), qApp->palette().highlight().color(), 0.4)) + "; }");
+    echo("div.column > ul, div.toolbar, p.message { background-color: " + htmlColor(qApp->palette().base().color()) + "; " +
+         "border: 1px solid " + htmlColor(qApp->palette().light().color()) + "; }");
+    echo("div.column > ul:hover, p.message:hover { border: 1px solid " + htmlColor(qApp->palette().highlight().color()) + "; }");
     echo("div.toolbar {border-top: none; border-right: none;}");
     echo("div.column { width : " + QString::number(100/columns) + "%; }");
     echo("body { font-size: " + QString::number(font.pointSize()) + "pt; " +
-         "background: " + htmlColor(window.background()) + "; " +
-         "color: " + htmlColor(view.foreground()) + "; }");
+         "background: " + htmlColor(qApp->palette().window().color()) + "; " +
+         "color: " + htmlColor(qApp->palette().text().color()) + "; }");
     indent--;
     echo("</style>");
 }

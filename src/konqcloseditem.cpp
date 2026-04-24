@@ -10,6 +10,7 @@
 #include <QFont>
 #include <QFontMetrics>
 #include <QPainter>
+#include <QGuiApplication>
 #include <kconfig.h>
 #include "konqdebug.h"
 #include <QIcon>
@@ -92,8 +93,7 @@ QPixmap KonqClosedWindowItem::icon() const
     // overlay
     QPainter p(&overlayImg);
     p.setFont(f);
-    KColorScheme scheme(QPalette::Active, KColorScheme::Window);
-    p.setPen(scheme.foreground(KColorScheme::LinkText).color());
+    p.setPen(qApp->palette().link().color());
     p.drawText(overlayImg.rect(), Qt::AlignCenter, countStr);
 
     return QPixmap::fromImage(overlayImg);

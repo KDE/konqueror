@@ -10,7 +10,6 @@
 
 #include "settings/webenginesettings.h"
 
-#include <KColorScheme>
 #include <KLocalizedString>
 
 #include <QCoreApplication>
