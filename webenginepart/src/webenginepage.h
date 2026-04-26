@@ -109,6 +109,30 @@ Q_SIGNALS:
 
     void mainFrameNavigationRequested(WebEnginePage *page, const QUrl);
 
+    /**
+     * @brief Signal emitted when a page starts navigating to another URL
+     *
+     * It has a similar function to `QWebEnginePage::loadStarted()` but, unlike it,
+     * it's not emitted if the URL will be downloaded.
+     *
+     * @param url the URL of the page which has started loading
+     *
+     * @warning Since `QWebEnginePage` doesn't provide a way to determine if an URL
+     * will be downloaded or opened in this page before the `loadFinished()` signal
+     * is emitted, WebEnginePage uses a heuristic algorithm to determine whether to emit
+     * it or not:
+     * - when the `loadStarted()` signal is emitted, it starts a single-shot timer with a
+     * short interval (100ms)
+     * - if before the timer times out a download for the URL starts, then this signal isn't emitted
+     * and the timer is stopped
+     * - if the timer times out or the `urlChanged()` signal is emitted or the `loadFinished()`
+     * with a `true` argument, then this signal is emitted (and the timer stopped if still running)
+     *
+     * There might be situations when this algorithm fails: unfortunately, there aren't better
+     * ways to determine whether the URL will be downloaded or not
+     */
+    void navigationStarted(const QUrl &url);
+
 protected:
     /**
      * Returns the webengine part in use by this object.
@@ -257,6 +281,58 @@ private:
      * page is loading
      */
     QWebEngineLoadingInfo::LoadStatus m_loadStatus;
+
+    /**
+     * @brief Helper struct which encapsulates data needed to correctly emit the navigationStarted() signal
+     *
+     * It manages the timer used to determine whether the page should emit the WebEnginePage::navigationStarted()
+     * signal and stores the URL associated with the last navigation request.
+     *
+     * @see WebEnginePage::navigationStarted()
+     */
+    class NavigationStartedHelper
+    {
+    public:
+
+        /**
+         * @brief Constructor
+         * @param page the page this object refers to
+         */
+        NavigationStartedHelper(WebEnginePage *page);
+
+        ~NavigationStartedHelper(); ///!< Destructor
+
+        /**
+         * @brief Starts the timer and changes the URL associated with it
+         *
+         * This should be called in response to the `QWebEnginePage::loadingChanged()` signal
+         * when the status is `QWebEngineLoadingInfo::LoadStartedStatus`.
+         *
+         * @param newUrl the URL which starts being loaded
+         */
+        void start(const QUrl &newUrl);
+
+        /**
+         * @brief Stops the timer if it's running
+         *
+         * This will also clear the URL associated with the timer.
+         *
+         * If @p emitSignal is `true` and the timer was running, the page's WebEnginePage::navigationStarted()
+         * signal is emitted with the URL associated with the timer as parameter.
+         *
+         * @param emitSignal whether or not to have the page emit the WebEnginePage::navigationStarted()
+         * after stopping the timer (only if the timer was actually running)
+         */
+        void stop(bool emitSignal);
+
+    private:
+        static constexpr std::chrono::duration<int, std::milli> s_timerInterval{100}; //!< The timer timeout
+        QPointer<WebEnginePage> m_page; //!< The page associated with this object
+        QTimer *m_timer; //!< The timer
+        QUrl m_url; //!< The URL associated with the timer
+    };
+
+    NavigationStartedHelper m_navigationStartedHelper;
 
     /**
      * @brief Makes createNewWindow() behave as requests to create new windows are always user-initiated

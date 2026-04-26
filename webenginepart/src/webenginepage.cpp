@@ -79,13 +79,50 @@ using namespace WebEngine;
 
 using ReqNavigationType = QWebEngineNavigationRequest::NavigationType;
 
+WebEnginePage::NavigationStartedHelper::NavigationStartedHelper(WebEnginePage* page):
+    m_page {page},
+    m_timer {new QTimer(page)}
+{
+    m_timer->setSingleShot(true);
+    m_timer->setInterval(s_timerInterval);
+    QObject::connect(m_timer, &QTimer::timeout, m_page, [this]{emit m_page->navigationStarted(m_url);});
+}
+
+WebEnginePage::NavigationStartedHelper::~NavigationStartedHelper() noexcept
+{
+    if (m_timer) {
+        m_timer->deleteLater();
+        m_timer = nullptr;
+    }
+}
+
+void WebEnginePage::NavigationStartedHelper::start(const QUrl& newUrl)
+{
+    m_url = newUrl;
+    if (m_timer) {
+        m_timer->start();
+    }
+}
+
+void WebEnginePage::NavigationStartedHelper::stop(bool emitSignal)
+{
+    if (m_timer && m_timer->isActive()) {
+        m_timer->stop();
+        if (emitSignal && m_page) {
+            emit m_page->navigationStarted(m_url);
+        }
+    }
+    m_url.clear();
+}
+
 WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     : QWebEnginePage(KonqWebEnginePart::Profile::defaultProfile(), parent),
         m_kioErrorCode(0),
         m_ignoreError(false),
         m_part(part),
         m_passwdServerClient(new KPasswdServerClient),
-        m_dropOperationTimer(new QTimer(this))
+        m_dropOperationTimer(new QTimer(this)),
+        m_navigationStartedHelper{this}
 {
     if (view()) {
         WebEngineSettings::self()->computeFontSizes(view()->logicalDpiY());
@@ -105,7 +142,14 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     connect(this, &QWebEnginePage::recommendedStateChanged, this, &WebEnginePage::changeLifecycleState);
     connect(this, &QWebEnginePage::printRequested, this, &WebEnginePage::print);
 
-    connect(this, &QWebEnginePage::loadingChanged, this, [this](const QWebEngineLoadingInfo &info) {m_loadStatus = info.status();});
+    connect(this, &QWebEnginePage::loadingChanged, this, [this](const QWebEngineLoadingInfo &info) {
+        m_loadStatus = info.status();
+        if (m_loadStatus == QWebEngineLoadingInfo::LoadStartedStatus) {
+            m_navigationStartedHelper.start(info.url());
+        }
+    });
+
+    connect(this, &QWebEnginePage::urlChanged, this, [this]{m_navigationStartedHelper.stop(true);});
 
 #ifdef WEBENGINE_FRAMES_SUPPORTED
     connect(this, &QWebEnginePage::printRequestedByFrame, this, &WebEnginePage::printFrame);
@@ -203,6 +247,8 @@ bool WebEnginePage::downloadWithExternalDonwloadManager(const QUrl &url)
 
 void WebEnginePage::requestDownload(QWebEngineDownloadRequest *item, bool newWindow, WebEnginePartDownloadManager::DownloadObjective objective)
 {
+    m_navigationStartedHelper.stop(false);
+
     QUrl downloadUrl = item->url();
     if (downloadWithExternalDonwloadManager(downloadUrl)) {
         item->cancel();
@@ -430,6 +476,7 @@ void WebEnginePage::setPart(WebEnginePart* part)
 
 void WebEnginePage::slotLoadFinished(bool ok)
 {
+    qDebug() << "SLOT LOAD FINISHED" << this << ok;
     QUrl requestUrl = url();
     requestUrl.setUserInfo(QString());
 #if 0
@@ -500,6 +547,8 @@ void WebEnginePage::slotLoadFinished(bool ok)
         const WebEnginePageSecurity security = (m_sslInfo.isValid() ? PageEncrypted : PageUnencrypted);
         emit m_part->navigationExtension()->setPageSecurity(security);
     }
+
+    m_navigationStartedHelper.stop(ok);
 }
 
 void WebEnginePage::slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature)

@@ -198,6 +198,7 @@ private Q_SLOTS:
     void slotLoadStarted();
     void slotLoadAborted(const QUrl &);
     void slotLoadFinished(bool);
+    void slotStartedNavigatingTo(const QUrl &newUrl);
 
     void slotSearchForText(const QString &text, bool backward);
     void slotLinkHovered(const QString &);
@@ -277,6 +278,19 @@ private:
 
     bool m_emitOpenUrlNotify;
 
+    /**
+     * @brief Whether to have slotUrlChanged() always emit the `KParts::NavigationExtension::setLocationBarUrl` signal
+     *
+     * Usually, slotUrlChanged() will emit the signal only if the new URL and the original URL are different. However,
+     * when loading a new page, the URL will have already been changed (from slotLoadStarted()) so that the new URL will
+     * look the same as the old one. Setting `m_forceEmittingLocationBar` to `true` ensure that slotUrlChanged() will
+     * emit the `setLocationBarUrl()` signal even if the two URLs are the same. slotUrlChanged() will then reset this
+     * to `false`.
+     *
+     * @warning This should only be changed by slotLoadStarted() and slotUrlChanged()
+     */
+    bool m_forceEmittingLocationBar = false;
+
     WalletData m_walletData;
     bool m_doLoadFinishedActions;
     KUrlLabel* m_statusBarWalletLabel;
@@ -287,6 +301,7 @@ private:
     KParts::StatusBarExtension* m_statusBarExtension;
     WebEngineView* m_webView;
     WebEngineWallet* m_wallet;
+    QUrl m_previousUrl;
 
     QPointer<WebEngine::ActOnDownloadedFileBar> m_actOnDownloadedFileWidget = nullptr; //!< Widget allowing the user to open a file which was downloaded right now
 

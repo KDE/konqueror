@@ -53,7 +53,7 @@ public:
      * be `true` only when this is called in response to a `openUrlNotify()` emitted from
      * WebEnginePart::slotUrlChanged rather than from WebEnginePart::slotLoadStarted. Since
      * when WebEnginePart::slotUrlChanged is called, the history already contains the new URL,
-     * but we want to save the old URL, we need to save the previous item.
+     * but since we want to save the old URL, we need to save the previous item.
      *
      * @see WebEnginePart::slotUrlChanged
      */

@@ -296,6 +296,7 @@ void WebEnginePart::connectWebEnginePageSignals(WebEnginePage* page)
         return;
 
     connect(page, &QWebEnginePage::loadStarted, this, &WebEnginePart::slotLoadStarted);
+    connect(page, &WebEnginePage::navigationStarted, this, &WebEnginePart::slotStartedNavigatingTo);
     connect(page, &WebEnginePage::loadAborted, this, &WebEnginePart::slotLoadAborted);
     connect(page, &WebEnginePage::mainFrameNavigationRequested, this, &WebEnginePart::recordNavigationAccepted);
     connect(page, &QWebEnginePage::linkHovered, this, &WebEnginePart::slotLinkHovered);
@@ -472,12 +473,20 @@ bool WebEnginePart::openFile()
 
 void WebEnginePart::slotLoadStarted()
 {
+    m_forceEmittingLocationBar = true;
+
     if(!Utils::isBlankUrl(url()) && url() != QUrl("konq:konqueror"))
     {
         emit started(nullptr);
     }
     updateActions();
+}
 
+void WebEnginePart::slotStartedNavigatingTo(const QUrl& newUrl)
+{
+    qDebug() << "SLOT START NAVIGATING TO" << url() << page();
+    m_previousUrl = url();
+    setUrl(newUrl);
     // If "NoEmitOpenUrlNotification" property is set to true, do not
     // emit the open url notification. Property is set by this part's
     // extension to prevent openUrl notification being sent when
@@ -487,6 +496,7 @@ void WebEnginePart::slotLoadStarted()
         setProperty("NoEmitOpenUrlNotification", QVariant());
     } else {
         if (m_emitOpenUrlNotify) {
+            qDebug() << "EMITTING OPENURL NOTIFY FOR" << newUrl;
             emit m_browserExtension->openUrlNotify();
         }
     }
@@ -555,34 +565,34 @@ void WebEnginePart::slotLoadAborted(const QUrl & url)
 
 void WebEnginePart::slotUrlChanged(const QUrl& url)
 {
-    //Don't call slotLoadStarted if only the fragments are different
+    //Don't call slotLoadStarted() and slotStartedNavigatingTo() if only the fragments are different
     if (!m_lastRequestedUrl.matches(url, QUrl::RemoveFragment)) {
-        m_browserExtension->withHistoryWorkaround([this]{slotLoadStarted();});
+        m_browserExtension->withHistoryWorkaround([this, url]{
+            slotLoadStarted();
+            slotStartedNavigatingTo(url);
+        });
     }
     m_lastRequestedUrl.clear();
 
     // Ignore if empty
-    if (url.isEmpty())
+    if (url.isEmpty()) {
         return;
+    }
 
     // Ignore if error url
-    if (url.scheme() == QL1S("error"))
+    if (url.scheme() == QL1S("error")) {
         return;
+    }
 
-    const QUrl u (url);
-
-    // Ignore if url has not changed!
-    if (this->url() == u)
-      return;
+    if (m_previousUrl == url) {
+        m_previousUrl.clear();
+        return;
+    }
 
     m_doLoadFinishedActions = true;
-    setUrl(u);
 
-    // Do not update the location bar with about:blank
-    if (!Utils::isBlankUrl(url)) {
-        //qCDebug(WEBENGINEPART_LOG) << "Setting location bar to" << u.prettyUrl() << "current URL:" << this->url();
-        emit m_browserExtension->setLocationBarUrl(u.toDisplayString());
-    }
+    //qCDebug(WEBENGINEPART_LOG) << "Setting location bar to" << u.prettyUrl() << "current URL:" << this->url();
+    emit m_browserExtension->setLocationBarUrl(url.toDisplayString());
 }
 
 void WebEnginePart::slotShowSecurity()
