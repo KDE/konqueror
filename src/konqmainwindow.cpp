@@ -1149,7 +1149,6 @@ static bool isPopupWindow(const WindowArgs &windowArgs)
 void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &req,
         const WindowArgs &windowArgs, KParts::ReadOnlyPart **part)
 {
-    qDebug() << "SLOT CREATE NEW WINDOW";
     // NOTE: 'part' may be null
 
     qCDebug(KONQUEROR_LOG) << "url=" << url << "args.mimeType()=" << req.args.mimeType()

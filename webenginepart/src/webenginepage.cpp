@@ -476,7 +476,6 @@ void WebEnginePage::setPart(WebEnginePart* part)
 
 void WebEnginePage::slotLoadFinished(bool ok)
 {
-    qDebug() << "SLOT LOAD FINISHED" << this << ok;
     QUrl requestUrl = url();
     requestUrl.setUserInfo(QString());
 #if 0

@@ -46,6 +46,9 @@ private Q_SLOTS:
         KLocalizedString::setApplicationDomain("konqhtmltest");
         QStandardPaths::setTestModeEnabled(true);
 
+        Settings::self()->setMmbOpensTab(false);
+        Konq::Settings::setAlwaysHavePreloaded(false);
+
         KonqSessionManager::self()->disableAutosave();
         WebEnginePartControls::self()->disablePageLifecycleStateManagement();
 
@@ -125,9 +128,7 @@ private Q_SLOTS:
         }
     }
 
-    void adjustSettings(WebEnginePart *part) {
-        Settings::self()->setMmbOpensTab(false);
-        Konq::Settings::setAlwaysHavePreloaded(false);
+    void adjustWebenginePartSettings(WebEnginePart *part) {
         QWebEngineSettings *settings = part->profile()->settings();
         settings->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
         settings->setAttribute(QWebEngineSettings::AllowRunningInsecureContent, true);
@@ -171,7 +172,7 @@ private Q_SLOTS:
         QSignalSpy spyCompleted(view, &KonqView::viewCompleted);
         QVERIFY(spyCompleted.wait(20000));
         WebEnginePart *htmlPart = qobject_cast<WebEnginePart *>(view->part());
-        adjustSettings(htmlPart);
+        adjustWebenginePartSettings(htmlPart);
         QWidget *widget = partWidget(view);
         QVERIFY(widget);
         QTest::mousePress(widget, Qt::LeftButton);
@@ -245,10 +246,9 @@ private Q_SLOTS:
         QVERIFY(spyCompleted.wait(20000));
         qApp->processEvents();
         WebEnginePart *htmlPart = qobject_cast<WebEnginePart *>(view->part());
-        adjustSettings(htmlPart);
+        adjustWebenginePartSettings(htmlPart);
         QWidget *widget = partWidget(view);
         QVERIFY(widget);
-        qDebug() << "Clicking on the webengineview";
         QTest::mousePress(widget, Qt::LeftButton);
         // Did it open a window?
         QTRY_COMPARE(KMainWindow::memberList().count(), 2);

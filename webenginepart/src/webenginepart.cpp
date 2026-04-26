@@ -484,7 +484,6 @@ void WebEnginePart::slotLoadStarted()
 
 void WebEnginePart::slotStartedNavigatingTo(const QUrl& newUrl)
 {
-    qDebug() << "SLOT START NAVIGATING TO" << url() << page();
     m_previousUrl = url();
     setUrl(newUrl);
     // If "NoEmitOpenUrlNotification" property is set to true, do not
@@ -496,7 +495,6 @@ void WebEnginePart::slotStartedNavigatingTo(const QUrl& newUrl)
         setProperty("NoEmitOpenUrlNotification", QVariant());
     } else {
         if (m_emitOpenUrlNotify) {
-            qDebug() << "EMITTING OPENURL NOTIFY FOR" << newUrl;
             emit m_browserExtension->openUrlNotify();
         }
     }
