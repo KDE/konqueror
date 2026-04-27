@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-22 00:45+0000\n"
+"POT-Creation-Date: 2026-04-27 00:43+0000\n"
 "PO-Revision-Date: 2026-01-06 16:02+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -990,14 +990,14 @@ msgstr ""
 "Enregi&strer les contenus des champs sélectionnés à la fermeture de la boite "
 "de dialogue"
 
-#: src/webenginepage.cpp:176
+#: src/webenginepage.cpp:220
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr ""
 "Impossible de trouver le gestionnaire de téléchargements (%1) sur votre "
 "système."
 
-#: src/webenginepage.cpp:177
+#: src/webenginepage.cpp:221
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -1009,7 +1009,7 @@ msgstr ""
 "\n"
 "L'intégration sera désactivée."
 
-#: src/webenginepage.cpp:522
+#: src/webenginepage.cpp:570
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -1019,18 +1019,18 @@ msgstr ""
 "emplacement physique.\n"
 "Voulez-vous autoriser cet accès ?"
 
-#: src/webenginepage.cpp:526 src/webenginepage.cpp:604
-#: src/webenginepage.cpp:615
+#: src/webenginepage.cpp:574 src/webenginepage.cpp:652
+#: src/webenginepage.cpp:663
 #, kde-format
 msgid "Network Transmission"
 msgstr "Transmission réseau"
 
-#: src/webenginepage.cpp:527
+#: src/webenginepage.cpp:575
 #, kde-format
 msgid "Allow access"
 msgstr "Autoriser l'accès"
 
-#: src/webenginepage.cpp:597
+#: src/webenginepage.cpp:645
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1044,12 +1044,12 @@ msgstr ""
 "informations.\n"
 "Voulez-vous vraiment continuer à envoyer les données de façon non chiffrée ?"
 
-#: src/webenginepage.cpp:605
+#: src/webenginepage.cpp:653
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Envoyer non chiffré"
 
-#: src/webenginepage.cpp:612
+#: src/webenginepage.cpp:660
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1059,12 +1059,12 @@ msgstr ""
 "courrier électronique.\n"
 "Voulez-vous continuer ?"
 
-#: src/webenginepage.cpp:616
+#: src/webenginepage.cpp:664
 #, kde-format
 msgid "&Send Email"
 msgstr "&Envoyer par courrier électronique"
 
-#: src/webenginepage.cpp:667
+#: src/webenginepage.cpp:715
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1073,22 +1073,22 @@ msgstr ""
 "<qt>Voulez-vous autoriser ce site à joindre les fichiers suivants au "
 "courrier électronique ?</qt>"
 
-#: src/webenginepage.cpp:669
+#: src/webenginepage.cpp:717
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Confirmation de la pièce jointe au courrier électronique"
 
-#: src/webenginepage.cpp:670
+#: src/webenginepage.cpp:718
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Autoriser des pièces jointes"
 
-#: src/webenginepage.cpp:671
+#: src/webenginepage.cpp:719
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignorer les pièces jointes"
 
-#: src/webenginepage.cpp:684
+#: src/webenginepage.cpp:732
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1097,25 +1097,25 @@ msgstr ""
 "Ce site a tenté de joindre un fichier provenant de votre ordinateur lors de "
 "l'envoi du formulaire. La pièce jointe a été supprimée pour votre protection."
 
-#: src/webenginepage.cpp:687
+#: src/webenginepage.cpp:735
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Pièce jointe supprimée"
 
-#: src/webenginepage.cpp:807
+#: src/webenginepage.cpp:855
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
 msgstr ""
 "Une erreur est survenue lors de la conversion de la page au format « PDF »."
 
-#: src/webenginepage.cpp:812
+#: src/webenginepage.cpp:860
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr ""
 "Une erreur est survenue lors de l'enregistrement en version « PDF » de la "
 "page en tant que %1."
 
-#: src/webenginepage.cpp:884
+#: src/webenginepage.cpp:932
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1124,7 +1124,7 @@ msgstr ""
 "Ce site demande l'ouverture d'une fenêtre de menu contextuel.\n"
 "Voulez-vous l'autoriser ?"
 
-#: src/webenginepage.cpp:886
+#: src/webenginepage.cpp:934
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1133,17 +1133,17 @@ msgstr ""
 "<qt>Ce site demande l'ouverture d'une fenêtre de menu contextuel dans <p>%1</"
 "p><br/>Voulez-vous l'autoriser ?</qt>"
 
-#: src/webenginepage.cpp:889
+#: src/webenginepage.cpp:937
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Confirmation d'ouverture Javascript"
 
-#: src/webenginepage.cpp:890
+#: src/webenginepage.cpp:938
 #, kde-format
 msgid "Allow"
 msgstr "Autoriser"
 
-#: src/webenginepage.cpp:890
+#: src/webenginepage.cpp:938
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Ne pas autoriser"
@@ -1196,7 +1196,7 @@ msgstr "Définir l'&encodage"
 msgid "View Do&cument Source"
 msgstr "Afficher la source du do&cument"
 
-#: src/webenginepart.cpp:262 src/webenginepart.cpp:597
+#: src/webenginepart.cpp:262 src/webenginepart.cpp:605
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
@@ -1212,12 +1212,12 @@ msgstr ""
 "<h3>Chercher du texte</h3>Affiche une boite de dialogue permettant de "
 "rechercher du texte sur la page affichée."
 
-#: src/webenginepart.cpp:595
+#: src/webenginepart.cpp:603
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "Les informations SSL concernant ce site semblent corrompues."
 
-#: src/webenginepart.cpp:676
+#: src/webenginepart.cpp:684
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1225,7 +1225,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "Adresse de courrier électronique : "
 
-#: src/webenginepart.cpp:705
+#: src/webenginepart.cpp:713
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1233,7 +1233,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - CC : "
 
-#: src/webenginepart.cpp:707
+#: src/webenginepart.cpp:715
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1241,7 +1241,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - BCC : "
 
-#: src/webenginepart.cpp:709
+#: src/webenginepart.cpp:717
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1249,42 +1249,42 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Objet : "
 
-#: src/webenginepart.cpp:713 src/webenginepart.cpp:724
+#: src/webenginepart.cpp:721 src/webenginepart.cpp:732
 #, kde-format
 msgid " (In new window)"
 msgstr " (Dans une nouvelle fenêtre)"
 
-#: src/webenginepart.cpp:722
+#: src/webenginepart.cpp:730
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (Dans le cadre parent)"
 
-#: src/webenginepart.cpp:788
+#: src/webenginepart.cpp:796
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Voulez-vous rechercher <b>%1</b> ?</qt>"
 
-#: src/webenginepart.cpp:789
+#: src/webenginepart.cpp:797
 #, kde-format
 msgid "Internet Search"
 msgstr "Rechercher sur Internet"
 
-#: src/webenginepart.cpp:789
+#: src/webenginepart.cpp:797
 #, kde-format
 msgid "&Search"
 msgstr "&Rechercher"
 
-#: src/webenginepart.cpp:902
+#: src/webenginepart.cpp:910
 #, kde-format
 msgid "Close window?"
 msgstr "Fermer la fenêtre ?"
 
-#: src/webenginepart.cpp:902
+#: src/webenginepart.cpp:910
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Confirmation requise"
 
-#: src/webenginepart.cpp:979
+#: src/webenginepart.cpp:987
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
@@ -1292,54 +1292,54 @@ msgstr ""
 "<html>Voulez-vous que %1 mémorise les informations de connexion pour <b>%2</"
 "b> ?</html>"
 
-#: src/webenginepart.cpp:1050
+#: src/webenginepart.cpp:1058
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr "&Remplir les identifiants"
 
-#: src/webenginepart.cpp:1055
+#: src/webenginepart.cpp:1063
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr "Page de recherche pour le&s demandes d'identifiants"
 
-#: src/webenginepart.cpp:1059
+#: src/webenginepart.cpp:1067
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr "Enregi&strer les identifiants maintenant"
 
-#: src/webenginepart.cpp:1063
+#: src/webenginepart.cpp:1071
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr ""
 "Personnaliser les paramètres &concernant les identifiants pour la page..."
 
-#: src/webenginepart.cpp:1067
+#: src/webenginepart.cpp:1075
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr ""
 "Réinitialiser les paramètres personnalisés concernant les identifiants pour "
 "cette page"
 
-#: src/webenginepart.cpp:1071
+#: src/webenginepart.cpp:1079
 #, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr "&Autoriser la mise en cache des mots de passe pour cette page"
 
-#: src/webenginepart.cpp:1075
+#: src/webenginepart.cpp:1083
 #, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "Supprimer tous les mots de passe enregistrés pour ce site"
 
-#: src/webenginepart.cpp:1079
+#: src/webenginepart.cpp:1087
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Lancer le gestionnaire de portefeuille"
 
-#: src/webenginepart.cpp:1083
+#: src/webenginepart.cpp:1091
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Fermer le portefeuille"

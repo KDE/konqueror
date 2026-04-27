@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-17 00:44+0000\n"
-"PO-Revision-Date: 2026-02-04 00:08+0100\n"
+"PO-Revision-Date: 2026-04-26 21:34+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -1644,12 +1644,10 @@ msgid "Please, insert the custom start page"
 msgstr "사용자 정의 페이지를 선택하십시오"
 
 #: generalopts.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "When a new &Tab is created"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &window is created"
-msgstr "새 탭을 생성할 때(&T)"
+msgstr "새 창을 생성할 때(&W)"
 
 #: generalopts.cpp:69
 #, kde-format
@@ -2361,12 +2359,15 @@ msgid ""
 "unchecked, the new tab will load the same URL loaded when creating a new "
 "window</p></body></html>"
 msgstr ""
+"<html><head/><body><p>새 탭을 비워둘 지 여부입니다. 이 옵션을 사용하지 않으"
+"면 새 탭을 생성할 때 새 창을 생성한 것과 같은 URL을 불러옵니다.</p></body></"
+"html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Leave new tab empty"
-msgstr ""
+msgstr "새 탭을 비워 두기"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: tabs/tabsoptions.ui:171
