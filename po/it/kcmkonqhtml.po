@@ -1,5 +1,5 @@
 # translation of kcmkonqhtml.po to Italian
-# SPDX-FileCopyrightText: 2016, 2019, 2020, 2022, 2023, 2024, 2025 Luigi Toscano <luigi.toscano@tiscali.it>
+# SPDX-FileCopyrightText: 2016, 2019, 2020, 2022, 2023, 2024, 2025, 2026 Luigi Toscano <luigi.toscano@tiscali.it>
 # Andrea Rizzi <rizzi@kde.org>, 2003, 2004, 2005, 2007.
 # Giovanni Venturi <jumpyj@tiscali.it>, 2004.
 # Andrea RIZZI <arizzi@pi.infn.it>, 2004.
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-17 00:44+0000\n"
-"PO-Revision-Date: 2025-12-02 11:49+0100\n"
+"PO-Revision-Date: 2026-04-17 23:21+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -1704,12 +1704,10 @@ msgid "Please, insert the custom start page"
 msgstr "Inserisci la pagina di inizio personalizzata"
 
 #: generalopts.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "When a new &Tab is created"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &window is created"
-msgstr "Quando una nuova scheda viene creata"
+msgstr "Quando una nuova &finestra viene creata"
 
 #: generalopts.cpp:69
 #, kde-format
@@ -2462,12 +2460,15 @@ msgid ""
 "unchecked, the new tab will load the same URL loaded when creating a new "
 "window</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Se lasciare vuota o meno la nuova scheda. Se non è "
+"selezionata, la nuova scheda caricherà la stessa URL che viene caricata "
+"quando si crea una nuova finestra</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Leave new tab empty"
-msgstr ""
+msgstr "Lascia vuota la nuova scheda"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: tabs/tabsoptions.ui:171

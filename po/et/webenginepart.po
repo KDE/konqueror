@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-27 00:43+0000\n"
+"POT-Creation-Date: 2026-05-04 00:43+0000\n"
 "PO-Revision-Date: 2021-05-01 21:52+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -832,32 +832,32 @@ msgstr ""
 "<html>Kas anda sellele veebileheküljele ligipääs teabele sinu praeguse "
 "füüsilise asukoha kohta?"
 
-#: src/ui/passwordbar.cpp:29
+#: src/ui/passwordbar.cpp:28
 #, kde-format
 msgctxt "@action:remember password"
 msgid "&Remember"
 msgstr "&Jäta meelde"
 
-#: src/ui/passwordbar.cpp:33
+#: src/ui/passwordbar.cpp:32
 #, kde-format
 msgctxt "@action:never for this site"
 msgid "Ne&ver for this site"
 msgstr "Mitte kunagi selle sai&di puhul"
 
-#: src/ui/passwordbar.cpp:37
+#: src/ui/passwordbar.cpp:36
 #, kde-format
 msgctxt "@action:not now"
 msgid "N&ot now"
 msgstr "&Mitte praegu"
 
-#: src/ui/passwordbar.cpp:41 src/ui/passwordbar.cpp:125
+#: src/ui/passwordbar.cpp:40 src/ui/passwordbar.cpp:124
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@action:display details about credentials to store"
 msgid "&Show details"
 msgstr "Üksikasjad"
 
-#: src/ui/passwordbar.cpp:123
+#: src/ui/passwordbar.cpp:122
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@action:hide details about credentials to store"
