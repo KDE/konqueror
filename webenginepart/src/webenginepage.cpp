@@ -916,8 +916,24 @@ void WebEnginePage::createNewWindow(QWebEngineNewWindowRequest& req)
         wargs.setLowerWindow(true);
     }
 
-    //We don't call req.openIn() because the new URL will already be opened by KonqMainWindow::slotCreateNewWindow()
-    emit part()->browserExtension()->browserCreateNewWindow(req.requestedUrl(), args, bargs, wargs);
+    KParts::ReadOnlyPart* newWindowPart = nullptr;
+    //We can't pass req.requestedUrl() as first argument to the signal to avoid a
+    //double attempt to load the URL: the slot connected to this signal
+    //(KonqMainWindow::slotCreateNewWindow() calls openUrl(), but then the call
+    //to req.openIn() also loads it and can call KonqMainWindow::openUrl() (if the
+    //URL must be opened in another part). req.openIn() must be called because
+    //there are things which simply calling KonqMainWindow::openUrl() doesn't do,
+    //for example setting the javascript property window.opener.
+    //We need to use konq:temp instead of konq:blank or an empty URL to signal
+    //Konqueror that we aren't finished with the URL, so it should not give focus
+    //to the location bar
+    emit part()->browserExtension()->browserCreateNewWindow(QUrl(QStringLiteral("konq:temp")), args, bargs, wargs, &newWindowPart);
+    WebEnginePart *newWebEnginePart = qobject_cast<WebEnginePart*>(newWindowPart);
+    if (newWebEnginePart) {
+        newWebEnginePart->setEarlyLocationBarUrl(req.requestedUrl());
+        req.openIn(newWebEnginePart->page());
+    }
+
 }
 
 bool WebEnginePage::decideHandlingOfJavascripWindow(const QUrl url) const

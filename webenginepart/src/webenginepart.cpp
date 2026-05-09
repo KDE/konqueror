@@ -479,6 +479,9 @@ void WebEnginePart::slotLoadStarted()
     {
         emit started(nullptr);
     }
+    if (!m_earlyLocationBarUrl.isEmpty()) {
+        emit m_browserExtension->setLocationBarUrl(m_earlyLocationBarUrl.toDisplayString());
+    }
     updateActions();
 }
 
@@ -512,6 +515,7 @@ void WebEnginePart::slotLoadFinished (bool ok)
 {
     if (!ok || !m_doLoadFinishedActions) {
         m_lastRequestedUrl.clear();
+        m_earlyLocationBarUrl.clear();
         return;
     }
 
@@ -563,6 +567,9 @@ void WebEnginePart::slotLoadAborted(const QUrl & url)
 
 void WebEnginePart::slotUrlChanged(const QUrl& url)
 {
+    bool shouldEmitSetLocationBarUrl = m_earlyLocationBarUrl.isEmpty();
+    m_earlyLocationBarUrl.clear();
+
     //Don't call slotLoadStarted() and slotStartedNavigatingTo() if only the fragments are different
     if (!m_lastRequestedUrl.matches(url, QUrl::RemoveFragment)) {
         m_browserExtension->withHistoryWorkaround([this, url]{
@@ -590,7 +597,9 @@ void WebEnginePart::slotUrlChanged(const QUrl& url)
     m_doLoadFinishedActions = true;
 
     //qCDebug(WEBENGINEPART_LOG) << "Setting location bar to" << u.prettyUrl() << "current URL:" << this->url();
-    emit m_browserExtension->setLocationBarUrl(url.toDisplayString());
+    if (shouldEmitSetLocationBarUrl) {
+        emit m_browserExtension->setLocationBarUrl(url.toDisplayString());
+    }
 }
 
 void WebEnginePart::slotShowSecurity()
@@ -1206,9 +1215,13 @@ void WebEnginePart::displayPrintPreview()
     m_browserExtension->slotPrintPreview();
 }
 
-
 QTemporaryDir& WebEnginePart::temporaryDir()
 {
     static QTemporaryDir s_tempDownloadDir(QDir(QDir::tempPath()).filePath(QStringLiteral("WebEnginePart")));
     return s_tempDownloadDir;
+}
+
+void WebEnginePart::setEarlyLocationBarUrl(const QUrl& url)
+{
+    m_earlyLocationBarUrl = url;
 }

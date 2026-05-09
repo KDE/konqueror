@@ -351,7 +351,7 @@ void KonqUrlSchemeHandler::requestStarted(QWebEngineUrlRequestJob *req)
     connect(buf, &QIODevice::aboutToClose, buf, &QObject::deleteLater);
     QString data;
     QString path = req->requestUrl().path();
-    if (path.endsWith(QStringLiteral("blank"))) {
+    if (path.endsWith(QStringLiteral("blank")) || path == (QStringLiteral("temp"))) {
         data = QStringLiteral();
     } else if (path.endsWith(QStringLiteral("intro"))) {
         data = s_staticData->intro();

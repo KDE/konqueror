@@ -1209,12 +1209,15 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url, KonqOpenURLRequest &re
                 return;
             }
 
+            openUrl(newView, url.isEmpty() ? KonqUrl::url(KonqUrl::Type::Blank) : url, QString(), req);
+            newView->setViewName(req.browserArgs.frameName);
+
+            //This should be done after the call to openUrl to ensure that when KonqFrame::activateChild() is called
+            //the URL of the view has already been set. Otherwise, activateChild() will see an empty URL and give
+            //focus to the location bar, which is something we don't want to do here
             if (newtabsinfront) {
                 m_pViewManager->showTab(newView);
             }
-
-            openUrl(newView, url.isEmpty() ? KonqUrl::url(KonqUrl::Type::Blank) : url, QString(), req);
-            newView->setViewName(req.browserArgs.frameName);
 
             *part = newView->part();
         }

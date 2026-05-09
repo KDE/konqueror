@@ -24,7 +24,8 @@ namespace KonqUrl {
         Intro,
         Tips,
         Plugins,
-        SpeedDial
+        SpeedDial,
+        Temp
     };
     
     QLatin1String scheme();
@@ -46,7 +47,7 @@ namespace KonqUrl {
     bool isKonqBlank(const QString &url);
     
     bool isKonqBlank(const QUrl &url);
-  
+
 };
 
 #endif // KONQURL_H

@@ -161,6 +161,29 @@ public:
 
     static QTemporaryDir& temporaryDir();
 
+    /**
+     * @brief Tells this part to emit the `NavigationExtension::setLocationBarUrl()` signal
+     * when the page starts loading rather than when it finishes loading
+     *
+     * Usually, the `NavigationExtension::setLocationBarUrl()` is emitted in response
+     * to the `QWebEnginePage::urlChanged()` signal after the new URL has been loaded.
+     * In some cases, however, we need the signal to be emitted earlier. For example,
+     * when creating a new window or tab, waiting for the `urlChanged()` signal would
+     * leave the location bar empty for a noticeable time. Calling this function with
+     * a non-empty URL causes the `NavigationExtension::setLocationBarUrl()` signal to
+     * be emitted in response to the `QWebEnginePage::loadStarted()` signal instead.
+     *
+     * This functionality is automatically reset when the page finishes loading
+     * so there's no need to do it manually.
+     *
+     * @note This functionality doesn't work if the new URL is loaded using the history
+     * javascript API, since when that happens, the page won't emit the `loadStarted()` signal.
+     *
+     * @param url the URL to use when emitting the `setLocationBarUrl()` early. Passing
+     * an empty URL resets the usual behavior.
+     */
+    void setEarlyLocationBarUrl(const QUrl &url);
+
 public Q_SLOTS:
     void exitFullScreen();
     void setInspectedPart(KParts::ReadOnlyPart *part);
@@ -302,6 +325,17 @@ private:
     WebEngineView* m_webView;
     WebEngineWallet* m_wallet;
     QUrl m_previousUrl;
+
+    /**
+     * @brief The URL to use when emitting the `NavigationExtension::setLocationBarUrl()` signal
+     * when a page starts loading rather than when it finishes loading
+     *
+     * If empty, the `NavigationExtension::setLocationBarUrl()` signal will be emitted
+     * after the page has loaded.
+     *
+     * @see setEarlyLocationBarUrl()
+     */
+    QUrl m_earlyLocationBarUrl;
 
     QPointer<WebEngine::ActOnDownloadedFileBar> m_actOnDownloadedFileWidget = nullptr; //!< Widget allowing the user to open a file which was downloaded right now
 
