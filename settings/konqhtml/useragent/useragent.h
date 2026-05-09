@@ -48,7 +48,7 @@ public:
      */
     ~UserAgent();
 
-public slots:
+public Q_SLOTS:
 
     /**
      * @brief Loads the settings from the configuration files
@@ -69,7 +69,7 @@ public slots:
      */
     void save() override;
 
-private slots:
+private Q_SLOTS:
 
     /**
      * @brief Slot called when the user toggles the "Use custom user agent string" checkbox
@@ -156,6 +156,11 @@ private slots:
      * send an user agent string
      */
     void checkTemplatesValidity();
+
+    /**
+     * @brief Fills the label showing the current user agent
+     */
+    void updateCurrentUserAgent();
 
 private:
 

@@ -19,6 +19,7 @@
 #include <QInputDialog>
 #include <QWebEngineProfile>
 #include <QDir>
+#include <QApplication>
 
 using namespace Konq;
 
@@ -38,6 +39,11 @@ UserAgent::UserAgent(QObject *parent, const KPluginMetaData &md, const QVariantL
     connect(m_ui->renameTemplateBtn, &QPushButton::clicked, this, &UserAgent::renameTemplate);
     connect(m_ui->deleteTemplateBtn, &QPushButton::clicked, this, &UserAgent::deleteTemplate);
     connect(m_ui->templates, &QTreeWidget::itemChanged, this, &UserAgent::templateChanged);
+
+    KonqInterfaces::Browser *b = KonqInterfaces::Browser::browser(qApp);
+    if (b) {
+        connect(b, &KonqInterfaces::Browser::userAgentChanged, this, &UserAgent::updateCurrentUserAgent);
+    }
 }
 
 UserAgent::~UserAgent()
@@ -60,6 +66,13 @@ void UserAgent::fillTemplateWidget(const UserAgent::TemplateMap& templates)
     }
 }
 
+void UserAgent::updateCurrentUserAgent()
+{
+    KonqInterfaces::Browser *b = KonqInterfaces::Browser::browser(qApp);
+    QString ua = b ? b->userAgent() : i18nc("We couldn't retrieve the user agent, so we show it as 'unknown'", "unknown");
+    m_ui->currentUserAgent->setText(QStringLiteral("<tt>%1</tt>").arg(ua));
+}
+
 void UserAgent::defaults()
 {
     Settings::self()->withDefaults([this]{load();});
@@ -70,6 +83,8 @@ void UserAgent::defaults()
 
 void UserAgent::load()
 {
+    updateCurrentUserAgent();
+
     KSharedConfig::Ptr templatesConfig;
     TemplateMap templates;
     if (!Settings::self()->isUsingDefaults()) {
