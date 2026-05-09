@@ -1719,6 +1719,9 @@ void KonqMainWindow::slotConfigure()
 
     if (!m_configureDialog) {
         m_configureDialog = new ConfigDialog(this);
+        connect(m_configureDialog, &ConfigDialog::accepted, this, &KonqMainWindow::slotConfigureDone);
+        connect(m_configureDialog, &ConfigDialog::rejected, this, &KonqMainWindow::slotConfigureDone);
+        connect(m_configureDialog, &ConfigDialog::finished, this, &KonqMainWindow::slotConfigureDone);
     }
 
     m_configureDialog->show();
