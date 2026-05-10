@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-04 00:43+0000\n"
+"POT-Creation-Date: 2026-05-10 00:43+0000\n"
 "PO-Revision-Date: 2025-10-13 22:31+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1067,7 +1067,7 @@ msgstr "Ett fel uppstod vid konvertering av sidan till PDF"
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "Ett fel uppstod när en PDF-version av sidan skulle sparas som %1"
 
-#: src/webenginepage.cpp:932
+#: src/webenginepage.cpp:948
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1076,7 +1076,7 @@ msgstr ""
 "Den här platsen försöker öppna ett meddelandefönster.\n"
 "Vill du tillåta det?"
 
-#: src/webenginepage.cpp:934
+#: src/webenginepage.cpp:950
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1085,17 +1085,17 @@ msgstr ""
 "<qt>Den här platsen försöker öppna ett meddelandefönster till<p>%1</p><br/"
 ">Vill du tillåta det?</qt>"
 
-#: src/webenginepage.cpp:937
+#: src/webenginepage.cpp:953
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Bekräftelse för Javascript-fönster"
 
-#: src/webenginepage.cpp:938
+#: src/webenginepage.cpp:954
 #, kde-format
 msgid "Allow"
 msgstr "Tillåt"
 
-#: src/webenginepage.cpp:938
+#: src/webenginepage.cpp:954
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Tillåt inte"
@@ -1148,7 +1148,7 @@ msgstr "Ang&e kodning"
 msgid "View Do&cument Source"
 msgstr "Visa dok&umentets källa"
 
-#: src/webenginepart.cpp:262 src/webenginepart.cpp:605
+#: src/webenginepart.cpp:262 src/webenginepart.cpp:614
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
@@ -1164,12 +1164,12 @@ msgstr ""
 "<h3>Sök text</h3>Visar en dialogruta som låter dig hitta text på sidan som "
 "visas."
 
-#: src/webenginepart.cpp:603
+#: src/webenginepart.cpp:612
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "SSL-informationen för den här platsen verkar vara förstörd."
 
-#: src/webenginepart.cpp:684
+#: src/webenginepart.cpp:693
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1177,7 +1177,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "E-post:"
 
-#: src/webenginepart.cpp:713
+#: src/webenginepart.cpp:722
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1185,7 +1185,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - Kopia: "
 
-#: src/webenginepart.cpp:715
+#: src/webenginepart.cpp:724
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1193,7 +1193,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - Dold kopia: "
 
-#: src/webenginepart.cpp:717
+#: src/webenginepart.cpp:726
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1201,42 +1201,42 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Rubrik: "
 
-#: src/webenginepart.cpp:721 src/webenginepart.cpp:732
+#: src/webenginepart.cpp:730 src/webenginepart.cpp:741
 #, kde-format
 msgid " (In new window)"
 msgstr " (I nytt fönster)"
 
-#: src/webenginepart.cpp:730
+#: src/webenginepart.cpp:739
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (I överliggande ram)"
 
-#: src/webenginepart.cpp:796
+#: src/webenginepart.cpp:805
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Vill du söka efter <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:797
+#: src/webenginepart.cpp:806
 #, kde-format
 msgid "Internet Search"
 msgstr "Internetsökning"
 
-#: src/webenginepart.cpp:797
+#: src/webenginepart.cpp:806
 #, kde-format
 msgid "&Search"
 msgstr "&Sök"
 
-#: src/webenginepart.cpp:910
+#: src/webenginepart.cpp:919
 #, kde-format
 msgid "Close window?"
 msgstr "Stäng fönster?"
 
-#: src/webenginepart.cpp:910
+#: src/webenginepart.cpp:919
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Bekräftelse krävs"
 
-#: src/webenginepart.cpp:987
+#: src/webenginepart.cpp:996
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
@@ -1244,51 +1244,51 @@ msgstr ""
 "<html>Vill du att %1 ska komma ihåg inloggningsinformation för <b>%2</b>?</"
 "html>"
 
-#: src/webenginepart.cpp:1058
+#: src/webenginepart.cpp:1067
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr "&Fyll i inloggningsinformation"
 
-#: src/webenginepart.cpp:1063
+#: src/webenginepart.cpp:1072
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr "&Sök på sidan efter inloggningsbegäran"
 
-#: src/webenginepart.cpp:1067
+#: src/webenginepart.cpp:1076
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr "Lagra inloggning&sinformation nu"
 
-#: src/webenginepart.cpp:1071
+#: src/webenginepart.cpp:1080
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr "An&passa inloggningsinställningar för sidan..."
 
-#: src/webenginepart.cpp:1075
+#: src/webenginepart.cpp:1084
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr "Ta bort anpassade inloggningsinställningar för sidan"
 
-#: src/webenginepart.cpp:1079
+#: src/webenginepart.cpp:1088
 #, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr "Tillåt att inloggningsinformation l&agras för sidan"
 
-#: src/webenginepart.cpp:1083
+#: src/webenginepart.cpp:1092
 #, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "Ta bort alla lagrade lösenord för den här platsen"
 
-#: src/webenginepart.cpp:1087
+#: src/webenginepart.cpp:1096
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "Starta p&lånbokshantering"
 
-#: src/webenginepart.cpp:1091
+#: src/webenginepart.cpp:1100
 #, kde-format
 msgid "&Close Wallet"
 msgstr "Stän&g plånbok"

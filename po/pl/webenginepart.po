@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-04 00:43+0000\n"
+"POT-Creation-Date: 2026-05-10 00:43+0000\n"
 "PO-Revision-Date: 2024-11-10 15:31+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1088,7 +1088,7 @@ msgstr "Przy zapisywaniu pliku wystąpił błąd: %1"
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "Przy zapisywaniu pliku wystąpił błąd: %1"
 
-#: src/webenginepage.cpp:932
+#: src/webenginepage.cpp:948
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1097,7 +1097,7 @@ msgstr ""
 "Ta strona żąda otwarcia nowego okna wyskakującego.\n"
 "Czy chcesz na to zezwolić?"
 
-#: src/webenginepage.cpp:934
+#: src/webenginepage.cpp:950
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1106,17 +1106,17 @@ msgstr ""
 "<qt>Ta strona żąda otwarcia okna wyskakującego dla<p>%1</p><br/> Czy chcesz "
 "na to zezwolić?</qt>"
 
-#: src/webenginepage.cpp:937
+#: src/webenginepage.cpp:953
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Potwierdzenie okna wyskakującego Javascript"
 
-#: src/webenginepage.cpp:938
+#: src/webenginepage.cpp:954
 #, kde-format
 msgid "Allow"
 msgstr "Zezwól"
 
-#: src/webenginepage.cpp:938
+#: src/webenginepage.cpp:954
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Nie zezwalaj"
@@ -1169,7 +1169,7 @@ msgstr "Ustaw kodowani&e"
 msgid "View Do&cument Source"
 msgstr "Pokaż ź&ródło dokumentu"
 
-#: src/webenginepart.cpp:262 src/webenginepart.cpp:605
+#: src/webenginepart.cpp:262 src/webenginepart.cpp:614
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
@@ -1185,12 +1185,12 @@ msgstr ""
 "<h3>Znajdź tekst</h3>Wyświetla okno dialogowe pozwalające wyszukać tekst na "
 "wyświetlonej stronie."
 
-#: src/webenginepart.cpp:603
+#: src/webenginepart.cpp:612
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "Informacja SSL dla tej strony wydaje się być uszkodzona."
 
-#: src/webenginepart.cpp:684
+#: src/webenginepart.cpp:693
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1198,7 +1198,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "Email: "
 
-#: src/webenginepart.cpp:713
+#: src/webenginepart.cpp:722
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1206,7 +1206,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - Dw: "
 
-#: src/webenginepart.cpp:715
+#: src/webenginepart.cpp:724
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1214,7 +1214,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - Udw: "
 
-#: src/webenginepart.cpp:717
+#: src/webenginepart.cpp:726
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1222,97 +1222,97 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Temat: "
 
-#: src/webenginepart.cpp:721 src/webenginepart.cpp:732
+#: src/webenginepart.cpp:730 src/webenginepart.cpp:741
 #, kde-format
 msgid " (In new window)"
 msgstr " (W nowym oknie)"
 
-#: src/webenginepart.cpp:730
+#: src/webenginepart.cpp:739
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (W nadrzędnej ramce)"
 
-#: src/webenginepart.cpp:796
+#: src/webenginepart.cpp:805
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Czy chcesz wyszukać <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:797
+#: src/webenginepart.cpp:806
 #, kde-format
 msgid "Internet Search"
 msgstr "Wyszukiwanie w internecie"
 
-#: src/webenginepart.cpp:797
+#: src/webenginepart.cpp:806
 #, kde-format
 msgid "&Search"
 msgstr "&Szukaj"
 
-#: src/webenginepart.cpp:910
+#: src/webenginepart.cpp:919
 #, kde-format
 msgid "Close window?"
 msgstr "Zamknąć okno?"
 
-#: src/webenginepart.cpp:910
+#: src/webenginepart.cpp:919
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Wymagane potwierdzenie"
 
-#: src/webenginepart.cpp:987
+#: src/webenginepart.cpp:996
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 "<html>Czy chcesz %1 zapamiętać informacje logowania dla <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1058
+#: src/webenginepart.cpp:1067
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr ""
 
-#: src/webenginepart.cpp:1063
+#: src/webenginepart.cpp:1072
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr ""
 
-#: src/webenginepart.cpp:1067
+#: src/webenginepart.cpp:1076
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr ""
 
-#: src/webenginepart.cpp:1071
+#: src/webenginepart.cpp:1080
 #, fuzzy, kde-format
 #| msgid "&Customize Fields to Memorize for This Page..."
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr "&Własne pola do zapamiętania na tej stronie..."
 
-#: src/webenginepart.cpp:1075
+#: src/webenginepart.cpp:1084
 #, fuzzy, kde-format
 #| msgid "Remove Customized Memorization Settings for This Page"
 msgid "Reset Custom Credential Settings for Page"
 msgstr "Usuń własne ustawienia zapamiętywania dla tej strony"
 
-#: src/webenginepart.cpp:1079
+#: src/webenginepart.cpp:1088
 #, fuzzy, kde-format
 #| msgid "&Allow Password Caching for This Site"
 msgid "&Allow Credential Caching for This Page"
 msgstr "Zezwól na z&apamiętywanie haseł dla tej strony"
 
-#: src/webenginepart.cpp:1083
+#: src/webenginepart.cpp:1092
 #, fuzzy, kde-format
 #| msgid "Remove All Memorized Passwords for This Site"
 msgid "Remove All Stored Passwords for This Site"
 msgstr "Usuń wszystkie zapamiętane hasła dla tej strony"
 
-#: src/webenginepart.cpp:1087
+#: src/webenginepart.cpp:1096
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "Zarządzanie portfe&lami"
 
-#: src/webenginepart.cpp:1091
+#: src/webenginepart.cpp:1100
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Zamknij portfel"
