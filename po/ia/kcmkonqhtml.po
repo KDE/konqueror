@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 00:44+0000\n"
+"POT-Creation-Date: 2026-05-25 00:44+0000\n"
 "PO-Revision-Date: 2026-04-17 11:56+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -2522,30 +2522,36 @@ msgstr ""
 msgid "Activate previously used tab when closing the current tab"
 msgstr "Activa schedas previemente usate quando on claude le scheda currente"
 
-#: useragent/useragent.cpp:195
+#: useragent/useragent.cpp:72
+#, kde-format
+msgctxt "We couldn't retrieve the user agent, so we show it as 'unknown'"
+msgid "unknown"
+msgstr ""
+
+#: useragent/useragent.cpp:210
 #, kde-format
 msgctxt ""
 "@title:window Title of dialog to choose name to given to new User Agent"
 msgid "Choose User Agent name"
 msgstr "Selige nomine de Agente de Usator"
 
-#: useragent/useragent.cpp:196
+#: useragent/useragent.cpp:211
 #, kde-format
 msgctxt "Name of the new User Agent"
 msgid "User Agent name"
 msgstr "Nominede Agente de Usator"
 
-#: useragent/useragent.cpp:256
+#: useragent/useragent.cpp:271
 #, kde-format
 msgid "there are templates with empty names"
 msgstr "il ha patronos con nomines vacue"
 
-#: useragent/useragent.cpp:261
+#: useragent/useragent.cpp:276
 #, kde-format
 msgid "there are multiple templates with the same name"
 msgstr "Ilha multiple patronos con le mesme nomine"
 
-#: useragent/useragent.cpp:284
+#: useragent/useragent.cpp:299
 #, kde-format
 msgctxt "The user gave a custom user agent string an empty or duplicate name"
 msgid "Invalid user agent names:"
@@ -2602,30 +2608,20 @@ msgstr "&Dele"
 msgid "Choose &selected identification"
 msgstr "Selige identification &selectionate"
 
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#. i18n: ectx: property (text), widget (QLabel, currentUserAgent)
 #: useragent/useragent.ui:160
 #, kde-format
-msgid ""
-"<html><head/><body><p>If checked, disable choosing a custom identification "
-"and use the default one</p></body></html>"
+msgid "Current user agent"
 msgstr ""
-"<html><head/><body><p>Si marcate, dishabilita deliger un identification "
-"personalisate e usa lo predefinite</p></body></html>"
-
-#. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
-#: useragent/useragent.ui:163
-#, kde-format
-msgid "Use &default identification"
-msgstr "Usa identification pre&definite"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: useragent/useragent.ui:178
+#: useragent/useragent.ui:175
 #, kde-format
 msgid "&Custom identification"
 msgstr "Identifi&cation personalisate"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
-#: useragent/useragent.ui:188
+#: useragent/useragent.ui:185
 #, kde-format
 msgid ""
 "<html><head/><body><p>The browser identification to use when the default "
@@ -2637,6 +2633,28 @@ msgstr ""
 "identification predefinite es dishabilitate.</p><p>Tu pote insertar lo "
 "manualmente o inistiar ex un in le lista a basso e cambiar lo in accordo a "
 "tu necessitates.</p></body></html>"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:201
+#, kde-format
+msgid ""
+"<html><head/><body><p>If checked, disable choosing a custom identification "
+"and use the default one</p></body></html>"
+msgstr ""
+"<html><head/><body><p>Si marcate, dishabilita deliger un identification "
+"personalisate e usa lo predefinite</p></body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:204
+#, kde-format
+msgid "Use &default identification"
+msgstr "Usa identification pre&definite"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: useragent/useragent.ui:214
+#, kde-format
+msgid "<strong>Current browser identification</strong>"
+msgstr ""
 
 #~ msgid "Form"
 #~ msgstr "Forma"

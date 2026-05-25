@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 00:44+0000\n"
+"POT-Creation-Date: 2026-05-25 00:44+0000\n"
 "PO-Revision-Date: 2022-04-09 15:18+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -2479,30 +2479,36 @@ msgstr ""
 msgid "Activate previously used tab when closing the current tab"
 msgstr "Aktivovať naposledy použitú kartu po zatvorení aktuálnej"
 
-#: useragent/useragent.cpp:195
+#: useragent/useragent.cpp:72
+#, kde-format
+msgctxt "We couldn't retrieve the user agent, so we show it as 'unknown'"
+msgid "unknown"
+msgstr ""
+
+#: useragent/useragent.cpp:210
 #, kde-format
 msgctxt ""
 "@title:window Title of dialog to choose name to given to new User Agent"
 msgid "Choose User Agent name"
 msgstr "Vyberte názov identifikácie prehliadača"
 
-#: useragent/useragent.cpp:196
+#: useragent/useragent.cpp:211
 #, kde-format
 msgctxt "Name of the new User Agent"
 msgid "User Agent name"
 msgstr "Názov identifikácie prehliadača"
 
-#: useragent/useragent.cpp:256
+#: useragent/useragent.cpp:271
 #, kde-format
 msgid "there are templates with empty names"
 msgstr "existujú šablóny s prázdnymi názvami"
 
-#: useragent/useragent.cpp:261
+#: useragent/useragent.cpp:276
 #, kde-format
 msgid "there are multiple templates with the same name"
 msgstr "existuje viacero šablón s rovnakým názvom"
 
-#: useragent/useragent.cpp:284
+#: useragent/useragent.cpp:299
 #, kde-format
 msgctxt "The user gave a custom user agent string an empty or duplicate name"
 msgid "Invalid user agent names:"
@@ -2559,30 +2565,20 @@ msgstr "O&dstrániť"
 msgid "Choose &selected identification"
 msgstr "Vybrať o&značenú identifikáciu"
 
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#. i18n: ectx: property (text), widget (QLabel, currentUserAgent)
 #: useragent/useragent.ui:160
 #, kde-format
-msgid ""
-"<html><head/><body><p>If checked, disable choosing a custom identification "
-"and use the default one</p></body></html>"
+msgid "Current user agent"
 msgstr ""
-"<html><head/><body><p>Ak je začiarknuté, zakáže výber vlastnej identifikácie "
-"a použije predvolenú</p></body></html>"
-
-#. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
-#: useragent/useragent.ui:163
-#, kde-format
-msgid "Use &default identification"
-msgstr "Použiť pre&dvolenú identifikáciu"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: useragent/useragent.ui:178
+#: useragent/useragent.ui:175
 #, kde-format
 msgid "&Custom identification"
 msgstr "&Vlastná identifikácia"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
-#: useragent/useragent.ui:188
+#: useragent/useragent.ui:185
 #, kde-format
 msgid ""
 "<html><head/><body><p>The browser identification to use when the default "
@@ -2593,6 +2589,28 @@ msgstr ""
 "<html><head/><body><p>Identifikácia prehliadača, ktorá sa použije, keď je "
 "predvolená identifikácia zakázaná.</p><p>Môžete ju zadať ručne alebo začať z "
 "jednej v zozname nižšie a zmeniť ju podľa vašich potrieb.</p></body></html>"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:201
+#, kde-format
+msgid ""
+"<html><head/><body><p>If checked, disable choosing a custom identification "
+"and use the default one</p></body></html>"
+msgstr ""
+"<html><head/><body><p>Ak je začiarknuté, zakáže výber vlastnej identifikácie "
+"a použije predvolenú</p></body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:204
+#, kde-format
+msgid "Use &default identification"
+msgstr "Použiť pre&dvolenú identifikáciu"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: useragent/useragent.ui:214
+#, kde-format
+msgid "<strong>Current browser identification</strong>"
+msgstr ""
 
 #~ msgid "Form Com&pletion"
 #~ msgstr "Vypĺňanie &formulárov"

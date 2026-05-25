@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 00:44+0000\n"
+"POT-Creation-Date: 2026-05-25 00:44+0000\n"
 "PO-Revision-Date: 2024-12-20 21:52+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -2417,30 +2417,36 @@ msgstr ""
 msgid "Activate previously used tab when closing the current tab"
 msgstr "वर्तमान ट्याब् बन्दं कुर्वन् पूर्वं प्रयुक्तं ट्याब् सक्रियं कुर्वन्तु"
 
-#: useragent/useragent.cpp:195
+#: useragent/useragent.cpp:72
+#, kde-format
+msgctxt "We couldn't retrieve the user agent, so we show it as 'unknown'"
+msgid "unknown"
+msgstr ""
+
+#: useragent/useragent.cpp:210
 #, kde-format
 msgctxt ""
 "@title:window Title of dialog to choose name to given to new User Agent"
 msgid "Choose User Agent name"
 msgstr ""
 
-#: useragent/useragent.cpp:196
+#: useragent/useragent.cpp:211
 #, kde-format
 msgctxt "Name of the new User Agent"
 msgid "User Agent name"
 msgstr ""
 
-#: useragent/useragent.cpp:256
+#: useragent/useragent.cpp:271
 #, kde-format
 msgid "there are templates with empty names"
 msgstr ""
 
-#: useragent/useragent.cpp:261
+#: useragent/useragent.cpp:276
 #, kde-format
 msgid "there are multiple templates with the same name"
 msgstr ""
 
-#: useragent/useragent.cpp:284
+#: useragent/useragent.cpp:299
 #, kde-format
 msgctxt "The user gave a custom user agent string an empty or duplicate name"
 msgid "Invalid user agent names:"
@@ -2497,30 +2503,20 @@ msgstr "&लुप्"
 msgid "Choose &selected identification"
 msgstr "&चयनितं परिचयं चिनोतु"
 
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#. i18n: ectx: property (text), widget (QLabel, currentUserAgent)
 #: useragent/useragent.ui:160
 #, kde-format
-msgid ""
-"<html><head/><body><p>If checked, disable choosing a custom identification "
-"and use the default one</p></body></html>"
+msgid "Current user agent"
 msgstr ""
-"<html><head/><body><p>यदि चेक् कृतं तर्हि कस्टम् परिचयस्य चयनं निष्क्रियं कृत्वा "
-"पूर्वनिर्धारितं उपयोगं कुर्वन्तु</p></body></html>"
-
-#. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
-#: useragent/useragent.ui:163
-#, kde-format
-msgid "Use &default identification"
-msgstr "&पूर्वनिर्धारितपरिचयस्य उपयोगं कुर्वन्तु"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: useragent/useragent.ui:178
+#: useragent/useragent.ui:175
 #, kde-format
 msgid "&Custom identification"
 msgstr "&अनुकूल पहचान"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
-#: useragent/useragent.ui:188
+#: useragent/useragent.ui:185
 #, kde-format
 msgid ""
 "<html><head/><body><p>The browser identification to use when the default "
@@ -2531,3 +2527,25 @@ msgstr ""
 "<html><head/><body><p>पूर्वनिर्धारितपरिचयः निष्क्रियः भवति चेत् उपयोक्तुं ब्राउजर्-"
 "परिचयः ।</p><p> भवान् तत् स्वहस्तेन प्रविष्टुं शक्नोति अथवा अधोलिखिते सूचीयां एकस्मात् आरभ्य "
 "स्वस्य आवश्यकतानुसारं परिवर्तयितुं शक्नोति ।</p></body></html>"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:201
+#, kde-format
+msgid ""
+"<html><head/><body><p>If checked, disable choosing a custom identification "
+"and use the default one</p></body></html>"
+msgstr ""
+"<html><head/><body><p>यदि चेक् कृतं तर्हि कस्टम् परिचयस्य चयनं निष्क्रियं कृत्वा "
+"पूर्वनिर्धारितं उपयोगं कुर्वन्तु</p></body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:204
+#, kde-format
+msgid "Use &default identification"
+msgstr "&पूर्वनिर्धारितपरिचयस्य उपयोगं कुर्वन्तु"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: useragent/useragent.ui:214
+#, kde-format
+msgid "<strong>Current browser identification</strong>"
+msgstr ""

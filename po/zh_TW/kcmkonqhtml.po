@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 00:44+0000\n"
+"POT-Creation-Date: 2026-05-25 00:44+0000\n"
 "PO-Revision-Date: 2026-05-12 03:05+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2377,30 +2377,36 @@ msgstr ""
 msgid "Activate previously used tab when closing the current tab"
 msgstr "當關閉目前分頁時跳到前一個使用的分頁"
 
-#: useragent/useragent.cpp:195
+#: useragent/useragent.cpp:72
+#, kde-format
+msgctxt "We couldn't retrieve the user agent, so we show it as 'unknown'"
+msgid "unknown"
+msgstr ""
+
+#: useragent/useragent.cpp:210
 #, kde-format
 msgctxt ""
 "@title:window Title of dialog to choose name to given to new User Agent"
 msgid "Choose User Agent name"
 msgstr "選擇使用者代理的名稱"
 
-#: useragent/useragent.cpp:196
+#: useragent/useragent.cpp:211
 #, kde-format
 msgctxt "Name of the new User Agent"
 msgid "User Agent name"
 msgstr "使用者代理的名稱"
 
-#: useragent/useragent.cpp:256
+#: useragent/useragent.cpp:271
 #, kde-format
 msgid "there are templates with empty names"
 msgstr "有樣本的名稱是空白的"
 
-#: useragent/useragent.cpp:261
+#: useragent/useragent.cpp:276
 #, kde-format
 msgid "there are multiple templates with the same name"
 msgstr "有多個樣本的名稱重複"
 
-#: useragent/useragent.cpp:284
+#: useragent/useragent.cpp:299
 #, kde-format
 msgctxt "The user gave a custom user agent string an empty or duplicate name"
 msgid "Invalid user agent names:"
@@ -2457,29 +2463,20 @@ msgstr "刪除(&D)"
 msgid "Choose &selected identification"
 msgstr "選擇所選的識別(&S)"
 
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#. i18n: ectx: property (text), widget (QLabel, currentUserAgent)
 #: useragent/useragent.ui:160
 #, kde-format
-msgid ""
-"<html><head/><body><p>If checked, disable choosing a custom identification "
-"and use the default one</p></body></html>"
+msgid "Current user agent"
 msgstr ""
-"<html><head/><body><p>勾選時，停用自訂識別選取並使用預設的</p></body></html>"
-
-#. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
-#: useragent/useragent.ui:163
-#, kde-format
-msgid "Use &default identification"
-msgstr "使用預設的識別(&D)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: useragent/useragent.ui:178
+#: useragent/useragent.ui:175
 #, kde-format
 msgid "&Custom identification"
 msgstr "自訂識別(&C)"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
-#: useragent/useragent.ui:188
+#: useragent/useragent.ui:185
 #, kde-format
 msgid ""
 "<html><head/><body><p>The browser identification to use when the default "
@@ -2489,6 +2486,27 @@ msgid ""
 msgstr ""
 "<html><head/><body><p>停用預設識別的時候要使用的瀏覽器識別。</p><p>您可以手動"
 "輸入它或是從以下列表中選一個並依您的需求修改它。</p></body></html>"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:201
+#, kde-format
+msgid ""
+"<html><head/><body><p>If checked, disable choosing a custom identification "
+"and use the default one</p></body></html>"
+msgstr ""
+"<html><head/><body><p>勾選時，停用自訂識別選取並使用預設的</p></body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
+#: useragent/useragent.ui:204
+#, kde-format
+msgid "Use &default identification"
+msgstr "使用預設的識別(&D)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: useragent/useragent.ui:214
+#, kde-format
+msgid "<strong>Current browser identification</strong>"
+msgstr ""
 
 #~ msgid "Form"
 #~ msgstr "表單"
