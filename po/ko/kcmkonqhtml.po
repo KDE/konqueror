@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-25 00:44+0000\n"
-"PO-Revision-Date: 2026-04-26 21:34+0200\n"
+"PO-Revision-Date: 2026-05-25 21:32+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -2435,7 +2435,7 @@ msgstr "현재 탭을 닫을 때 전에 사용했던 탭 활성화"
 #, kde-format
 msgctxt "We couldn't retrieve the user agent, so we show it as 'unknown'"
 msgid "unknown"
-msgstr ""
+msgstr "알 수 없음"
 
 #: useragent/useragent.cpp:210
 #, kde-format
@@ -2521,7 +2521,7 @@ msgstr "선택한 식별자 사용(&S)"
 #: useragent/useragent.ui:160
 #, kde-format
 msgid "Current user agent"
-msgstr ""
+msgstr "현재 사용자 에이전트"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:175
@@ -2562,7 +2562,7 @@ msgstr "기본 식별자 사용(&D)"
 #: useragent/useragent.ui:214
 #, kde-format
 msgid "<strong>Current browser identification</strong>"
-msgstr ""
+msgstr "<strong>현재 브라우저 식별자</strong>"
 
 #~ msgid "Form"
 #~ msgstr "폼"

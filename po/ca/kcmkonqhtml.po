@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-25 00:44+0000\n"
-"PO-Revision-Date: 2026-04-17 08:58+0200\n"
+"PO-Revision-Date: 2026-05-25 09:48+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2539,7 +2539,7 @@ msgstr "Activa la pestanya usada prèviament en tancar la pestanya actual"
 #, kde-format
 msgctxt "We couldn't retrieve the user agent, so we show it as 'unknown'"
 msgid "unknown"
-msgstr ""
+msgstr "desconegut"
 
 #: useragent/useragent.cpp:210
 #, kde-format
@@ -2625,7 +2625,7 @@ msgstr "Trieu la identificació &seleccionada"
 #: useragent/useragent.ui:160
 #, kde-format
 msgid "Current user agent"
-msgstr ""
+msgstr "Agent d'usuari actual"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:175
@@ -2667,4 +2667,4 @@ msgstr "Usa la identificació pre&determinada"
 #: useragent/useragent.ui:214
 #, kde-format
 msgid "<strong>Current browser identification</strong>"
-msgstr ""
+msgstr "<strong>Identificació del navegador actual</strong>"

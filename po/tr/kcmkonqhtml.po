@@ -12,13 +12,13 @@
 # obsoleteman <tulliana@gmail.com>, 2008-2010.
 # obsoleteman <tulliana@gmail.com>, 2010,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022-2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-25 00:44+0000\n"
-"PO-Revision-Date: 2026-05-02 18:52+0300\n"
+"PO-Revision-Date: 2026-05-25 17:37+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -2508,7 +2508,7 @@ msgstr "Seçili sekme kapatıldığında daha önce etkin olan sekmeyi etkinleş
 #, kde-format
 msgctxt "We couldn't retrieve the user agent, so we show it as 'unknown'"
 msgid "unknown"
-msgstr ""
+msgstr "bilinmeyen"
 
 #: useragent/useragent.cpp:210
 #, kde-format
@@ -2594,7 +2594,7 @@ msgstr "&Seçili Tanımlamayı Seç"
 #: useragent/useragent.ui:160
 #, kde-format
 msgid "Current user agent"
-msgstr ""
+msgstr "Şu anki kullanıcı aracısı"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:175
@@ -2635,7 +2635,7 @@ msgstr "Ö&ntanımlı tanımlamayı kullan"
 #: useragent/useragent.ui:214
 #, kde-format
 msgid "<strong>Current browser identification</strong>"
-msgstr ""
+msgstr "<strong>Geçerli tarayıcı tanımlaması</strong>"
 
 #~ msgid "Form"
 #~ msgstr "Form"
