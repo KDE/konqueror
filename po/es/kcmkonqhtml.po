@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the konqueror package.
 #
 # SPDX-FileCopyrightText: 2000-2002 Pablo de Vicente <vicente@oan.es>
-# SPDX-FileCopyrightText: 2003, 2007, 2008, 2009 Jaime Robles <jaime@kde.org>
-# SPDX-FileCopyrightText: 2003, 2004 Miguel Revilla Rodríguez <yo@miguelrevilla.com>
-# SPDX-FileCopyrightText: 2004, 2005 Pablo de Vicente <p.devicente@wanadoo.es>
+# SPDX-FileCopyrightText: 2003, 2007-2009 Jaime Robles <jaime@kde.org>
+# SPDX-FileCopyrightText: 2003-2004 Miguel Revilla Rodríguez <yo@miguelrevilla.com>
+# SPDX-FileCopyrightText: 2004-2005 Pablo de Vicente <p.devicente@wanadoo.es>
 # SPDX-FileCopyrightText: 2005 Juan Manuel Garcia Molina <juanma@superiodico.net>
 # SPDX-FileCopyrightText: 2005 Jaime Robles <jaime@robles.nu>
 # SPDX-FileCopyrightText: 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
-# SPDX-FileCopyrightText: 2010, 2012, 2016, 2019, 2020, 2022, 2023, 2024, 2025, 2026 Eloy Cuadra <ecuadra@eloihr.net>
-# SPDX-FileCopyrightText: 2010, 2011 Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>
+# SPDX-FileCopyrightText: 2010, 2012, 2016, 2019-2020, 2022-2026 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2010-2011 Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>
 # SPDX-FileCopyrightText: 2011 Javier Vinal <fjvinal@gmail.com>
 # SPDX-FileCopyrightText: 2016 Rocio Gallego <traducciones@rociogallego.com>
 msgid ""
@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-25 00:44+0000\n"
-"PO-Revision-Date: 2026-04-18 00:09+0200\n"
+"PO-Revision-Date: 2026-05-25 11:18+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: appearance.cpp:39
@@ -2547,7 +2547,7 @@ msgstr "Activar la pestaña previamente utilizada al cerrar la pestaña actual"
 #, kde-format
 msgctxt "We couldn't retrieve the user agent, so we show it as 'unknown'"
 msgid "unknown"
-msgstr ""
+msgstr "desconocido"
 
 #: useragent/useragent.cpp:210
 #, kde-format
@@ -2633,7 +2633,7 @@ msgstr "Escoger la identificación &seleccionada"
 #: useragent/useragent.ui:160
 #, kde-format
 msgid "Current user agent"
-msgstr ""
+msgstr "Agente de usuario actual"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:175
@@ -2675,4 +2675,4 @@ msgstr "Usar la i&dentificación predeterminada"
 #: useragent/useragent.ui:214
 #, kde-format
 msgid "<strong>Current browser identification</strong>"
-msgstr ""
+msgstr "<strong>Identificación del navegador actual</strong>"
