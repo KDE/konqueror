@@ -10,7 +10,7 @@
 # Nicolas Ternisien <nicolas.ternisien@gmail.com>, 2005, 2008, 2010.
 # Mickael Sibelle <kimael@gmail.com>, 2008.
 # Sébastien Renard <Sebastien.Renard@digitalfox.org>, 2008, 2012.
-# SPDX-FileCopyrightText: 2013, 2024, 2025, 2026 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2013, 2024-2026 Xavier Besnard <xavier.besnard@kde.org>
 # Vincent Pinon <vpinon@kde.org>, 2017.
 # Simon Depiets <sdepiets@gmail.com>, 2019.
 # SPDX-FileCopyrightText: 2020, 2021, 2022, 2023 Xavier Besnard <xavier.besnard@kde.org>
@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-25 00:44+0000\n"
-"PO-Revision-Date: 2026-04-18 06:59+0200\n"
+"PO-Revision-Date: 2026-05-26 07:31+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.1\n"
 "X-Text-Markup: kde4\n"
 
 #: appearance.cpp:39
@@ -2575,7 +2575,7 @@ msgstr ""
 #, kde-format
 msgctxt "We couldn't retrieve the user agent, so we show it as 'unknown'"
 msgid "unknown"
-msgstr ""
+msgstr "inconnue"
 
 #: useragent/useragent.cpp:210
 #, kde-format
@@ -2661,7 +2661,7 @@ msgstr "Sélectionner une identification sélectionnée "
 #: useragent/useragent.ui:160
 #, kde-format
 msgid "Current user agent"
-msgstr ""
+msgstr "Agent utilisateur courant"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:175
@@ -2704,7 +2704,7 @@ msgstr "Utiliser l'identification par &défaut"
 #: useragent/useragent.ui:214
 #, kde-format
 msgid "<strong>Current browser identification</strong>"
-msgstr ""
+msgstr "<strong>Identification actuelle du navigateur</strong>"
 
 #~ msgid "Form"
 #~ msgstr "Formulaire"
