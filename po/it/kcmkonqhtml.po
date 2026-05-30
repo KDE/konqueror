@@ -1,5 +1,5 @@
 # translation of kcmkonqhtml.po to Italian
-# SPDX-FileCopyrightText: 2016, 2019, 2020, 2022, 2023, 2024, 2025, 2026 Luigi Toscano <luigi.toscano@tiscali.it>
+# SPDX-FileCopyrightText: 2016, 2019-2020, 2022-2026 Luigi Toscano <luigi.toscano@tiscali.it>
 # Andrea Rizzi <rizzi@kde.org>, 2003, 2004, 2005, 2007.
 # Giovanni Venturi <jumpyj@tiscali.it>, 2004.
 # Andrea RIZZI <arizzi@pi.infn.it>, 2004.
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-25 00:44+0000\n"
-"PO-Revision-Date: 2026-04-17 23:21+0200\n"
+"PO-Revision-Date: 2026-05-29 23:32+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -2542,7 +2542,7 @@ msgstr "Torna alla scheda di prima quando si chiude l'attuale"
 #, kde-format
 msgctxt "We couldn't retrieve the user agent, so we show it as 'unknown'"
 msgid "unknown"
-msgstr ""
+msgstr "sconosciuto"
 
 #: useragent/useragent.cpp:210
 #, kde-format
@@ -2628,7 +2628,7 @@ msgstr "Scegli l'identificazione &selezionata"
 #: useragent/useragent.ui:160
 #, kde-format
 msgid "Current user agent"
-msgstr ""
+msgstr "User agent attuale"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:175
@@ -2670,7 +2670,7 @@ msgstr "Usa identificazione pre&definita"
 #: useragent/useragent.ui:214
 #, kde-format
 msgid "<strong>Current browser identification</strong>"
-msgstr ""
+msgstr "<strong>Identificazione del browser attuale</strong>"
 
 #~ msgid "Form"
 #~ msgstr "Modulo"
