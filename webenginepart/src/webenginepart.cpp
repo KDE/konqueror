@@ -83,6 +83,8 @@
 #include "utils.h"
 #include <kio_version.h>
 
+#include <QWebEngineHistory>
+
 using namespace WebEngine;
 
 WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
@@ -479,6 +481,9 @@ void WebEnginePart::slotLoadStarted()
     {
         emit started(nullptr);
     }
+
+    emit m_browserExtension->aboutToNavigateAway(url());
+
     if (!m_earlyLocationBarUrl.isEmpty()) {
         emit m_browserExtension->setLocationBarUrl(m_earlyLocationBarUrl.toDisplayString());
     }
@@ -487,8 +492,8 @@ void WebEnginePart::slotLoadStarted()
 
 void WebEnginePart::slotStartedNavigatingTo(const QUrl& newUrl)
 {
-    m_previousUrl = url();
     setUrl(newUrl);
+
     // If "NoEmitOpenUrlNotification" property is set to true, do not
     // emit the open url notification. Property is set by this part's
     // extension to prevent openUrl notification being sent when
@@ -567,8 +572,9 @@ void WebEnginePart::slotLoadAborted(const QUrl & url)
 
 void WebEnginePart::slotUrlChanged(const QUrl& url)
 {
-    bool shouldEmitSetLocationBarUrl = m_earlyLocationBarUrl.isEmpty();
+    bool shouldEmitSetLocationBarUrl = m_earlyLocationBarUrl.isEmpty() && url != m_currentUrl;
     m_earlyLocationBarUrl.clear();
+    m_currentUrl = url;
 
     //Don't call slotLoadStarted() and slotStartedNavigatingTo() if only the fragments are different
     if (!m_lastRequestedUrl.matches(url, QUrl::RemoveFragment)) {
@@ -586,11 +592,6 @@ void WebEnginePart::slotUrlChanged(const QUrl& url)
 
     // Ignore if error url
     if (url.scheme() == QL1S("error")) {
-        return;
-    }
-
-    if (m_previousUrl == url) {
-        m_previousUrl.clear();
         return;
     }
 

@@ -875,6 +875,8 @@ private:
      * to be stored is to be able to compare it with the argument passed to updateUrl().
      */
     ViewUrl m_url;
+
+    bool m_hasBrowserExtension = false; //!< Whether the associated part has a BrowserExtension or not
 };
 
 #endif

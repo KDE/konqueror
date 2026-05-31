@@ -319,6 +319,9 @@ void KonqView::switchView(KonqViewFactory &viewFactory, bool allowPlaceholder)
         delete oldPart;
     }
 
+    KParts::NavigationExtension *ext = m_pPart->navigationExtension();
+    m_hasBrowserExtension = ext && qobject_cast<BrowserExtension*>(ext);
+
     connectPart();
 
     if (m_service.value(QStringLiteral("X-KDE-BrowserView-FollowActive"), false)) {
@@ -415,6 +418,7 @@ bool KonqView::changePart(const ViewType &type,
 
 void KonqView::updateUrl(const QUrl& newUrl)
 {
+
     if (m_url.requested && m_url.real == newUrl) {
         emit urlChanged(m_url.url());
         return;
@@ -451,6 +455,10 @@ void KonqView::connectPart()
                 req.tempFile = temp;
                 m_pMainWindow->slotOpenURLRequest(url, req);
             });
+
+            //Updates the history before navigating away from a page
+            connect(browserExtension, &BrowserExtension::aboutToNavigateAway, this, [this](){updateHistoryEntry(false);});
+
             KonqBrowserWindowInterface *bi = new KonqBrowserWindowInterface(mainWindow(), m_pPart);
             browserExtension->setBrowserInterface(bi);
         } else {
@@ -784,7 +792,13 @@ void KonqView::slotOpenURLNotify()
 #ifdef DEBUG_HISTORY
     qCDebug(KONQUEROR_LOG);
 #endif
-    updateHistoryEntry(false);
+
+    // BrowserExtension has a specific signal, aboutToNavigateAway() to tell when
+    // to save the state of the current URL, so only do that here for parts which
+    // don't provide a BrowserExtension (currently, all except WebEnginePart).
+    if (!m_hasBrowserExtension) {
+        updateHistoryEntry(false);
+    }
     createHistoryEntry();
     updateHistoryEntry(true);
     if (m_pMainWindow->currentView() == this) {
@@ -826,6 +840,7 @@ void KonqView::appendHistoryEntry(HistoryEntry *historyEntry)
 }
 
 void KonqView::updateHistoryEntry(bool needsReload)
+
 {
     Q_ASSERT(!m_bLockHistory);   // should never happen
 
@@ -886,6 +901,16 @@ void KonqView::go(int steps)
     }
 
     int newPos = historyIndex() + steps;
+    if (steps > 0) {
+        for (int i = 0; i < m_lstHistory.count(); ++i) {
+            QDataStream ds(m_lstHistory.at(i)->buffer);
+            QUrl u;
+            QByteArray historyData;
+            qint32 xOfs = -1, yOfs = -1, historyItemIndex = -1;
+            //TODO KF6: it seems that for some reason historyData is empty, at least when restoring a saved session
+            ds >> u >> xOfs >> yOfs >> historyItemIndex >> historyData;
+        }
+    }
 #ifdef DEBUG_HISTORY
     qCDebug(KONQUEROR_LOG) << "steps=" << steps
              << "newPos=" << newPos
@@ -1026,6 +1051,7 @@ void KonqView::stop(bool keepTemporaryFile)
 
         //qCDebug(KONQUEROR_LOG) << "m_pPart->closeUrl()";
         m_pPart->closeUrl();
+
         m_bAborted = true;
         m_pKonqFrame->statusbar()->slotLoadingProgress(-1);
         setLoading(false, false);

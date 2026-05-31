@@ -24,6 +24,8 @@
 #include <textextension.h>
 #include <browserextension.h>
 
+#include <QWebEngineHistory>
+
 class QUrl;
 class WebEnginePart;
 class WebEngineView;
@@ -46,18 +48,30 @@ public:
     int yOffset() override;
 
     /**
-     * @brief Override of BrowserExtension::saveState
+     * @brief Override of KParts::NavigationExtension::saveState
+     *
+     * It saves the current state according to the WebEnginePage history. Depending
+     * on the value of #m_historyWorkaround, the current history entry or
+     * the previous one will be used.
      *
      * If #m_historyWorkaround is `true`, it doesn't save the state corresponding to the
      * current history item but the previous one. This is because #m_historyWorkaround should
      * be `true` only when this is called in response to a `openUrlNotify()` emitted from
-     * WebEnginePart::slotUrlChanged rather than from WebEnginePart::slotLoadStarted. Since
+     * WebEnginePart::slotUrlChanged rather than from WebEnginePart::slotStartedNavigatingTo. Since
      * when WebEnginePart::slotUrlChanged is called, the history already contains the new URL,
      * but since we want to save the old URL, we need to save the previous item.
      *
+     * @warning Calling this function after the page has emitted the `loadStarted()` signal
+     * but before it has emitted the corresponding `urlChanged()` signal (or `loadFinished()`,
+     * if loading didn't complete correctly) will save the state in a situation when the URL
+     * of the page is the previous one but the state which will be saved will the
+     * one corresponding to the page which is being loaded.
+     *
+     * @param ds the stream to save the state to
+     *
      * @see WebEnginePart::slotUrlChanged
      */
-    void saveState(QDataStream &) override;
+    void saveState(QDataStream &ds) override;
     void restoreState(QDataStream &) override;
     void saveHistory();
 

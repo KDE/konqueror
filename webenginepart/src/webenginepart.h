@@ -324,7 +324,19 @@ private:
     KParts::StatusBarExtension* m_statusBarExtension;
     WebEngineView* m_webView;
     WebEngineWallet* m_wallet;
-    QUrl m_previousUrl;
+
+    /**
+     * @brief The current URL
+     *
+     * Most of the time, this will be the same returned by url(). However, while
+     * navigating from one URL to another, this will always point to the URL we're
+     * navigating from and it will only be updated when the navigation has finished
+     * (from slotUrlChanged()).
+     *
+     * This is needed to avoid emitting the `KParts::NavigationExtension::setLocationBar()` signal
+     * if the URL hasn't changed.
+     */
+    QUrl m_currentUrl;
 
     /**
      * @brief The URL to use when emitting the `NavigationExtension::setLocationBarUrl()` signal

@@ -155,6 +155,23 @@ Q_SIGNALS:
                    KParts::NavigationExtension::PopupFlags flags = KParts::NavigationExtension::DefaultPopupItems,
                    const KParts::NavigationExtension::ActionGroupMap &actionGroups = ActionGroupMap());
 
+    /**
+     * @brief Signal emitted just before navigating away from the current URL
+     *
+     * Connecting to this signal is the last chance to save the state corresponding
+     * to the URL we're navigating away from.
+     *
+     * @warning To be able to access the state as it was before navigating away,
+     * this signal is emitted in response to `QWebEnginePage::loadStarted()` signal;
+     * however, that signal is also emitted if the URL being loaded is downloaded
+     * instead than opened in the page. This means that it's not warranted that
+     * after this signal has been emitted the URL of the page will actually change.
+     *
+     * @param url the URL we're navigating away from. It's the same as the page
+     * current URL
+     */
+    void aboutToNavigateAway(const QUrl &url);
+
 private Q_SLOTS:
     void slotCompleted();
     void slotEmitOpenUrlRequestDelayed();
