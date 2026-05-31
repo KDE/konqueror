@@ -573,6 +573,16 @@ void WebEnginePart::slotLoadAborted(const QUrl & url)
 void WebEnginePart::slotUrlChanged(const QUrl& url)
 {
     bool shouldEmitSetLocationBarUrl = m_earlyLocationBarUrl.isEmpty() && url != m_currentUrl;
+
+    //TODO (2026-05-31) This is a workaround to ensure that when a new tab is created, the location bar remains
+    //empty so that the user can type the first URL he wants to navigate to. In theory, it should
+    //be Konqueror itself to take care of this, but that would require significative changes in KonqView
+    //and KonqMainWindow, as they currently rely on the (wrong) assumption that the signal is not emitted
+    //when first navigating to an URL.
+    if (m_currentUrl.isEmpty()) {
+        shouldEmitSetLocationBarUrl = false;
+    }
+
     m_earlyLocationBarUrl.clear();
     m_currentUrl = url;
 
