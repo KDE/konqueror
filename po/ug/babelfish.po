@@ -8,30 +8,31 @@ msgstr ""
 "Project-Id-Version: babelfish\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2013-09-08 07:04+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-05-31 19:13-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "ئابدۇقادىر ئابلىز, غەيرەت كەنجى"
+msgstr "ئابدۇقادىر ئابلىز، غەيرەت كەنجى"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "sahran.ug@gmail.com,  gheyret@gmail.com"
+msgstr "sahranbay@gmail.com, gheyret@gmail.com"
 
 #. i18n: ectx: Menu (tools)
 #: babelfishplugin.rc:4
 #, kde-format
 msgid "&Tools"
-msgstr "قوراللار(&T)"
+msgstr "قورال(&T)"
 
 #. i18n: ectx: ToolBar (extraToolBar)
 #: babelfishplugin.rc:8
@@ -42,7 +43,7 @@ msgstr "قوشۇمچە قورال بالداق"
 #: plugin_babelfish.cpp:40
 #, kde-format
 msgid "Translate Web Page"
-msgstr "توربەتنى تەرجىمە قىل"
+msgstr "تور بەتنى تەرجىمە قىل"
 
 #: plugin_babelfish.cpp:48
 #, kde-format
@@ -165,33 +166,33 @@ msgstr "ئىنگلىزچە(&E)"
 #: plugin_babelfish.cpp:233
 #, kde-format
 msgid "&Chinese (Simplified) to English"
-msgstr "ئاددىي خەنزۇچىدىن ئىنگلىزچىغا(&C)"
+msgstr "ئاددىي خەنزۇچىدىن ئىنگلىزچىگە(&C)"
 
 #: plugin_babelfish.cpp:234
 #, kde-format
 msgid "Chinese (&Traditional) to English"
-msgstr "مۇرەككەپ خەنزۇچىدىن ئىنگلىزچىغا(&T)"
+msgstr "مۇرەككەپ خەنزۇچىدىن ئىنگلىزچىگە(&T)"
 
 #: plugin_babelfish.cpp:235
 #, kde-format
 msgid "&Japanese to English"
-msgstr "ياپونچىدىن ئىنگلىزچىغا(&J)"
+msgstr "ياپونچىدىن ئىنگلىزچىگە(&J)"
 
 #: plugin_babelfish.cpp:236
 #, kde-format
 msgid "&Korean to English"
-msgstr "كورېيەچىدىن ئىنگلىزچىغا(&K)"
+msgstr "كورېيەچىدىن ئىنگلىزچىگە(&K)"
 
 #: plugin_babelfish.cpp:297
 #, kde-format
 msgctxt "@title:window"
 msgid "Malformed URL"
-msgstr "بۇزۇلغان URL"
+msgstr "غەيرىي تور ئادرېسى"
 
 #: plugin_babelfish.cpp:298
 #, kde-format
 msgid "The URL you entered is not valid, please correct it and try again."
-msgstr "سىز كىرگۈزگەن URL توغرا ئەمەس، تۈزىتىپ قايتا سىناڭ."
+msgstr "سىز كىرگۈزگەن تور ئادرېسى توغرا ئەمەس، تۈزىتىپ قايتا سىناڭ."
 
 #: plugin_babelfish.cpp:308
 #, kde-kuit-format
@@ -201,9 +202,12 @@ msgid ""
 "page will sent to the online translation service,<nl/>which may fetch the "
 "insecure version of the page."
 msgstr ""
+"سىز بۇ بەتنى بىخەتەر باغلىنىش بىلەن كۆرۈۋاتىسىز.<nl/><nl/>بەتنىڭ تور "
+"ئادرېسىنى توردىكى تەرجىمە مۇلازىمىتىگە يوللايدۇ،<nl/>ئەمما مەزكۇر مۇلازىمەت "
+"بۇ بەتنىڭ بىخەتەر بولمىغان نەشرىگە ئېرىشىشى مۇمكىن."
 
 #: plugin_babelfish.cpp:312
 #, kde-format
 msgctxt "@title:window"
 msgid "Security Warning"
-msgstr ""
+msgstr "بىخەتەرلىك ئاگاھلاندۇرۇشى"

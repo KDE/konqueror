@@ -8,20 +8,21 @@ msgstr ""
 "Project-Id-Version: kcmkio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2013-09-08 07:04+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-05-31 19:14-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: bookmarks.ui:16
 #, kde-format
 msgid "Bookmarks"
-msgstr "خەتكۈشلەر"
+msgstr "خەتكۈش"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
 #: bookmarks.ui:23
@@ -31,12 +32,15 @@ msgid ""
 "a folder) are not displayed.\n"
 "If checked, they are gathered in a \"root\" folder."
 msgstr ""
+"ئەگەر بۇ تاللانما تاللانمىسا، غول خەتكۈش قىسقۇچى (قىسقۇچتا ئەمەس) نى "
+"كۆرسەتمەيدۇ.\n"
+"ئەگەر تاللانسا، ئۇلار غول خەتكۈش قىسقۇچىغا توپلىنىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
 #: bookmarks.ui:26
 #, kde-format
 msgid "&Show bookmarks without folder"
-msgstr ""
+msgstr "قىسقۇچنى ئەمەس خەتكۈشنى كۆرسەت(&S)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
 #: bookmarks.ui:37
@@ -47,12 +51,16 @@ msgid ""
 "It looks less nice but it may help if you have a very big folder you want to "
 "spread in two columns."
 msgstr ""
+"كۆڭۈلدىكى ئەھۋالدا تارماق قىسقۇچ ئاتا قىسقۇچتا كۆرۈنىدۇ. ئەگەر بۇ تاللانما "
+"ئاكتىپلانسا، بۇ تارماق قىسقۇچ ئايرىم كۆرۈنىدۇ. بۇنداق بولغاندا كۆرۈنۈشى "
+"ئانچە چىرايلىق بولماسلىقى مۇمكىن ئەمما قىسقۇچ بەك چوڭ بولغاندا، ئىككى رەتكە "
+"بۆلۈپ كۆرسىتىشكە نىسبەتەن قولايلىق."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
 #: bookmarks.ui:40
 #, kde-format
 msgid "&Flatten bookmarks tree"
-msgstr ""
+msgstr "تەكشى خەتكۈش شېخى(&F)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
 #: bookmarks.ui:47
@@ -61,14 +69,14 @@ msgid ""
 "Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
 "as a file manager."
 msgstr ""
-"ك د ئې(KDE) ئورۇنلىرى(ماكان، تور،…)لار بار كۆزنەكنى كۆرسىتىدۇ. konqueror نى "
-"ھۆججەت باشقۇرغۇ قىلى ئىشلەتكەن چاغدا، بۇ بەكمۇ قۇلايلىق."
+"KDE ئورۇن (باش قىسقۇچ، تور،…) لىرى بار كۆزنەكنى كۆرسىتىدۇ. konqueror نى "
+"ھۆججەت باشقۇرغۇچ قىلىپ ئىشلەتكەندە، بۇ بەكمۇ قولايلىق."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
 #: bookmarks.ui:50
 #, kde-format
 msgid "Show system &places"
-msgstr "سىستېما ئورۇنلىرىنى كۆرسەت(&P)"
+msgstr "سىستېما ئورۇننى كۆرسەت(&P)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: bookmarks.ui:63
@@ -84,20 +92,21 @@ msgid ""
 "of columns depends on the width of the konqueror window and the number of "
 "bookmarks you have."
 msgstr ""
+"قىسقۇچ ئۆزلۈكىدىن كۆپ رەتكە بۆلۈنىدۇ، ئەڭ مۇۋاپىق رەت سانى konqueror نىڭ "
+"كۆزنەك كەڭلىكى ۋە خەتكۈش سانىغا باغلىق."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: bookmarks.ui:74
 #, kde-format
 msgid "Number of columns to show:"
-msgstr "كۆرسىتىدىغان ئىستون سانى:"
+msgstr "كۆرسىتىدىغان رەت سانى:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
 #: bookmarks.ui:109
 #, kde-format
 msgid "Disable it on slow system to disable background images."
 msgstr ""
-"سۈرئىتى ئاستا سىستېمىلاردا تەگلىك سۈرىتىنى ئىناۋەتسىز قىلىش ئارقىلىق بۇنى "
-"ئىناۋەتسىز قىلىدۇ."
+"سۈرئىتى ئاستا سىستېمىلاردا تەگلىك سۈرىتىنى چەكلەش ئارقىلىق ئۇنى چەكلەيدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
 #: bookmarks.ui:112
@@ -127,7 +136,7 @@ msgstr "دىسكا غەملىكىنىڭ چوڭلۇقى:"
 #: bookmarks.ui:163
 #, kde-format
 msgid " kB"
-msgstr " كىلوبايت"
+msgstr " kB"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
 #: bookmarks.ui:173
