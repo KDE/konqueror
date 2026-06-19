@@ -510,7 +510,9 @@ void WebEngineNavigationExtension::slotCopyImage()
 void WebEngineNavigationExtension::slotViewImage()
 {
     if (view()) {
-        emit createNewWindow(view()->contextMenuResult()->mediaUrl());
+        // We are a BrowserExtension, therefore this is the signal that is
+        // connected by KonqView::connectPart().
+        emit browserCreateNewWindow(view()->contextMenuResult()->mediaUrl());
     }
 }
 
