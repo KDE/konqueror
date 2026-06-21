@@ -475,7 +475,12 @@ bool WebEnginePart::openFile()
 
 void WebEnginePart::slotLoadStarted()
 {
-    m_forceEmittingLocationBar = true;
+    m_loadingSequence.loadStartedEmitted = true;
+
+    //This tells slotLoadFinished() that it should call slotUrlChanged()
+    if (!m_loadingSequence.urlChangedEmittedFor.isEmpty()) {
+        m_loadingSequence.urlChangedEmittedFor.clear();
+    }
 
     if(!Utils::isBlankUrl(url()) && url() != QUrl("konq:konqueror"))
     {
@@ -513,15 +518,21 @@ void WebEnginePart::slotStartedNavigatingTo(const QUrl& newUrl)
 void WebEnginePart::recordNavigationAccepted(WebEnginePage* page, const QUrl& url)
 {
     Q_UNUSED(page);
-    m_lastRequestedUrl = url;
+    m_loadingSequence.lastNavigationRequest = url;
 }
 
 void WebEnginePart::slotLoadFinished (bool ok)
 {
+    m_loadingSequence.loadFinishedEmitted = true;
     if (!ok || !m_doLoadFinishedActions) {
-        m_lastRequestedUrl.clear();
+        m_loadingSequence.reset();
         m_earlyLocationBarUrl.clear();
         return;
+    }
+
+    const QUrl url (m_webView->url());
+    if (m_loadingSequence.urlChangedEmittedFor.isEmpty()) {
+        slotUrlChanged(url);
     }
 
     resetWallet();
@@ -530,7 +541,6 @@ void WebEnginePart::slotLoadFinished (bool ok)
     // If the document contains no <title> tag, then set it to the current url.
     if (m_webView->title().trimmed().isEmpty()) {
         // If the document title is empty, then set it to the current url
-        const QUrl url (m_webView->url());
         const QString caption (url.toString((QUrl::RemoveQuery|QUrl::RemoveFragment)));
         emit setWindowCaption(caption);
 
@@ -543,7 +553,7 @@ void WebEnginePart::slotLoadFinished (bool ok)
 
     //WARNING: only call this after the if block above, otherwise in case slotUrlChanged is
     //called, it'll call slotLoadStarted even if it shouldn't
-    m_lastRequestedUrl.clear();
+    m_loadingSequence.reset();
 
     if (m_wallet) {
         m_wallet->detectAndFillPageForms(page());
@@ -572,7 +582,22 @@ void WebEnginePart::slotLoadAborted(const QUrl & url)
 
 void WebEnginePart::slotUrlChanged(const QUrl& url)
 {
+    m_loadingSequence.urlChangedEmittedFor = url;
+
+    //In this case, the urlChanged() signal is emitted before the loadStarted()
+    //signal. Do nothing and let loadFinished() call slotUrlChanged() in the proper
+    //sequence. The second check is to avoid returning when the slot is called from
+    //slotLoadFinished()
+    if (!m_loadingSequence.lastNavigationRequest.isEmpty() && !m_loadingSequence.loadStartedEmitted && !m_loadingSequence.loadFinishedEmitted) {
+        return;
+    }
+
     bool shouldEmitSetLocationBarUrl = m_earlyLocationBarUrl.isEmpty() && url != m_currentUrl;
+
+    //Whether we should call slotLoadStarted, slotStartedNavigatingTo and slotLoadFinished from
+    //here, since the corresponding signals won't be emitted by QtWebEnginePage because javscript history
+    //API has been used. This happens if the last requested URL doesn't match url (excluding fragment)
+    bool shouldFakeLoadingSignals = !m_loadingSequence.lastNavigationRequest.matches(url, QUrl::RemoveFragment);
 
     //TODO (2026-05-31) This is a workaround to ensure that when a new tab is created, the location bar remains
     //empty so that the user can type the first URL he wants to navigate to. In theory, it should
@@ -586,22 +611,17 @@ void WebEnginePart::slotUrlChanged(const QUrl& url)
     m_earlyLocationBarUrl.clear();
     m_currentUrl = url;
 
+
     //Don't call slotLoadStarted() and slotStartedNavigatingTo() if only the fragments are different
-    if (!m_lastRequestedUrl.matches(url, QUrl::RemoveFragment)) {
+    if (shouldFakeLoadingSignals) {
         m_browserExtension->withHistoryWorkaround([this, url]{
             slotLoadStarted();
             slotStartedNavigatingTo(url);
         });
     }
-    m_lastRequestedUrl.clear();
 
-    // Ignore if empty
-    if (url.isEmpty()) {
-        return;
-    }
-
-    // Ignore if error url
-    if (url.scheme() == QL1S("error")) {
+    // Ignore if empty or error url
+    if (url.isEmpty() || url.scheme() == QL1S("error")) {
         return;
     }
 
@@ -1235,4 +1255,12 @@ QTemporaryDir& WebEnginePart::temporaryDir()
 void WebEnginePart::setEarlyLocationBarUrl(const QUrl& url)
 {
     m_earlyLocationBarUrl = url;
+}
+
+void WebEnginePart::LoadingSequence::reset()
+{
+    loadStartedEmitted = false;
+    loadFinishedEmitted = false;
+    lastNavigationRequest.clear();
+    urlChangedEmittedFor.clear();
 }

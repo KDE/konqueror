@@ -299,20 +299,34 @@ private:
     void createWalletActions();
     void updateActions();
 
-    bool m_emitOpenUrlNotify;
-
     /**
-     * @brief Whether to have slotUrlChanged() always emit the `KParts::NavigationExtension::setLocationBarUrl` signal
+     * @brief Struct to keep track of what signals have been emitted loading a page
      *
-     * Usually, slotUrlChanged() will emit the signal only if the new URL and the original URL are different. However,
-     * when loading a new page, the URL will have already been changed (from slotLoadStarted()) so that the new URL will
-     * look the same as the old one. Setting `m_forceEmittingLocationBar` to `true` ensure that slotUrlChanged() will
-     * emit the `setLocationBarUrl()` signal even if the two URLs are the same. slotUrlChanged() will then reset this
-     * to `false`.
+     * Due to how QtWebEngine works, which signals are emitted when loading a page and in what order
+     * depends on how the page is loaded. This is not documented, but there are at least three possible cases:
+     * - `navigationRequested()`, `loadStarted()`, `urlChanged()`, `loadFinished()`: this is the usual behavior
+     * - `urlChanged()`: this happens when navigating using the javascript history API
+     * - `navigationRequested()`, `urlChanged()`, `loadStarted()`, `loadFinished()`: this seems to happen
+     *  when navigating from a link with a "title" attribute
      *
-     * @warning This should only be changed by slotLoadStarted() and slotUrlChanged()
+     * All the member variables of this struct should be reset after a page has finished loading (successfully or not)
+     * by calling reset().
      */
-    bool m_forceEmittingLocationBar = false;
+    struct LoadingSequence {
+        QUrl lastNavigationRequest; //!< The last URL for which the navigationRequested() signal was emitted
+        QUrl urlChangedEmittedFor; //!< The last URL for which the urlChanged() signal was emitted
+        bool loadStartedEmitted = false; //!< Whether the loadStarted() signal was emitted
+        bool loadFinishedEmitted = false; //!< Whether the loadFinished() signal was emitted
+
+        /**
+         * @brief Resets all variables to their default value
+         */
+        void reset();
+    };
+
+    LoadingSequence m_loadingSequence;
+
+    bool m_emitOpenUrlNotify;
 
     WalletData m_walletData;
     bool m_doLoadFinishedActions;
@@ -350,13 +364,6 @@ private:
     QUrl m_earlyLocationBarUrl;
 
     QPointer<WebEngine::ActOnDownloadedFileBar> m_actOnDownloadedFileWidget = nullptr; //!< Widget allowing the user to open a file which was downloaded right now
-
-    /**
-     * @brief The URL for which WebEnginePart::acceptNavigationRequest was last called
-     *
-     * This is used by slotUrlChanged to decide whether it needs to call slotLoadStarted or not
-     */
-    QUrl m_lastRequestedUrl;
 };
 
 
