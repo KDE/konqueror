@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-20 00:43+0000\n"
+"POT-Creation-Date: 2026-06-22 00:43+0000\n"
 "PO-Revision-Date: 2025-12-21 06:52+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1127,7 +1127,7 @@ msgstr "設定編碼(&E)"
 msgid "View Do&cument Source"
 msgstr "檢視文件原始碼(&C)"
 
-#: src/webenginepart.cpp:264 src/webenginepart.cpp:625
+#: src/webenginepart.cpp:264 src/webenginepart.cpp:645
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
@@ -1141,12 +1141,12 @@ msgid ""
 "displayed page."
 msgstr "<h3>尋找文字</h3>顯示一個文字尋找對話框。"
 
-#: src/webenginepart.cpp:623
+#: src/webenginepart.cpp:643
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "此站台的 SSL 資訊可能已損毀。"
 
-#: src/webenginepart.cpp:704
+#: src/webenginepart.cpp:724
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1154,7 +1154,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "電子郵件： "
 
-#: src/webenginepart.cpp:733
+#: src/webenginepart.cpp:753
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1162,7 +1162,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - 副本："
 
-#: src/webenginepart.cpp:735
+#: src/webenginepart.cpp:755
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1170,7 +1170,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - 密件副本："
 
-#: src/webenginepart.cpp:737
+#: src/webenginepart.cpp:757
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1178,92 +1178,92 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - 主題："
 
-#: src/webenginepart.cpp:741 src/webenginepart.cpp:752
+#: src/webenginepart.cpp:761 src/webenginepart.cpp:772
 #, kde-format
 msgid " (In new window)"
 msgstr " (在新視窗)"
 
-#: src/webenginepart.cpp:750
+#: src/webenginepart.cpp:770
 #, kde-format
 msgid " (In parent frame)"
 msgstr "(於父框架)"
 
-#: src/webenginepart.cpp:816
+#: src/webenginepart.cpp:836
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>您要搜尋 <b>%1</b> 嗎？</qt>"
 
-#: src/webenginepart.cpp:817
+#: src/webenginepart.cpp:837
 #, kde-format
 msgid "Internet Search"
 msgstr "網路搜尋"
 
-#: src/webenginepart.cpp:817
+#: src/webenginepart.cpp:837
 #, kde-format
 msgid "&Search"
 msgstr "搜尋(&S)"
 
-#: src/webenginepart.cpp:930
+#: src/webenginepart.cpp:950
 #, kde-format
 msgid "Close window?"
 msgstr "關閉視窗？"
 
-#: src/webenginepart.cpp:930
+#: src/webenginepart.cpp:950
 #, kde-format
 msgid "Confirmation Required"
 msgstr "需要確認"
 
-#: src/webenginepart.cpp:1007
+#: src/webenginepart.cpp:1027
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>您要 %1 記住 %2 的登入資訊嗎？</html>"
 
-#: src/webenginepart.cpp:1078
+#: src/webenginepart.cpp:1098
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr "填入認證資訊(&F)"
 
-#: src/webenginepart.cpp:1083
+#: src/webenginepart.cpp:1103
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr "搜尋頁面內的認證資訊要求(&S)"
 
-#: src/webenginepart.cpp:1087
+#: src/webenginepart.cpp:1107
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr "現在儲存認證資訊(&S)"
 
-#: src/webenginepart.cpp:1091
+#: src/webenginepart.cpp:1111
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr "自訂頁面的認證資訊設定(&C)…"
 
-#: src/webenginepart.cpp:1095
+#: src/webenginepart.cpp:1115
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr "重設頁面的自訂認證資訊設定"
 
-#: src/webenginepart.cpp:1099
+#: src/webenginepart.cpp:1119
 #, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr "允許此頁面使用認證資訊快取(&A)"
 
-#: src/webenginepart.cpp:1103
+#: src/webenginepart.cpp:1123
 #, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "移除所有為此站台儲存的密碼"
 
-#: src/webenginepart.cpp:1107
+#: src/webenginepart.cpp:1127
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "啟動錢包管理工具(&L)"
 
-#: src/webenginepart.cpp:1111
+#: src/webenginepart.cpp:1131
 #, kde-format
 msgid "&Close Wallet"
 msgstr "關閉錢包(Wallet)(&C)"

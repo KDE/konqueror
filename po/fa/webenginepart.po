@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-20 00:43+0000\n"
+"POT-Creation-Date: 2026-06-22 00:43+0000\n"
 "PO-Revision-Date: 2012-02-29 00:24+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <kde-i18n-fa@kde.org>\n"
@@ -1105,7 +1105,7 @@ msgstr "تنظیم &کدبندی‌"
 msgid "View Do&cument Source"
 msgstr "مشاهده متن &سند‌"
 
-#: src/webenginepart.cpp:264 src/webenginepart.cpp:625
+#: src/webenginepart.cpp:264 src/webenginepart.cpp:645
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
@@ -1121,12 +1121,12 @@ msgstr ""
 "<qt>یافتن متن<br /><br />محاوره‌ای را نشان می‌دهد که به شما اجازه یافتن متن در "
 "صفحه نمایش داده‌شده را می‌دهد.</qt>"
 
-#: src/webenginepart.cpp:623
+#: src/webenginepart.cpp:643
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr ""
 
-#: src/webenginepart.cpp:704
+#: src/webenginepart.cpp:724
 #, fuzzy, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1134,7 +1134,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "رایانامه"
 
-#: src/webenginepart.cpp:733
+#: src/webenginepart.cpp:753
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1142,7 +1142,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - ر.ن:"
 
-#: src/webenginepart.cpp:735
+#: src/webenginepart.cpp:755
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1150,7 +1150,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - ر.ن.م:"
 
-#: src/webenginepart.cpp:737
+#: src/webenginepart.cpp:757
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1158,92 +1158,92 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - موضوع:"
 
-#: src/webenginepart.cpp:741 src/webenginepart.cpp:752
+#: src/webenginepart.cpp:761 src/webenginepart.cpp:772
 #, kde-format
 msgid " (In new window)"
 msgstr "(در پنجره جدید)"
 
-#: src/webenginepart.cpp:750
+#: src/webenginepart.cpp:770
 #, kde-format
 msgid " (In parent frame)"
 msgstr ""
 
-#: src/webenginepart.cpp:816
+#: src/webenginepart.cpp:836
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr ""
 
-#: src/webenginepart.cpp:817
+#: src/webenginepart.cpp:837
 #, kde-format
 msgid "Internet Search"
 msgstr "جستجوی اینترنت"
 
-#: src/webenginepart.cpp:817
+#: src/webenginepart.cpp:837
 #, kde-format
 msgid "&Search"
 msgstr "&جستجو‌"
 
-#: src/webenginepart.cpp:930
+#: src/webenginepart.cpp:950
 #, kde-format
 msgid "Close window?"
 msgstr "پنجره بسته شود؟"
 
-#: src/webenginepart.cpp:930
+#: src/webenginepart.cpp:950
 #, kde-format
 msgid "Confirmation Required"
 msgstr "تأیید مورد نیاز"
 
-#: src/webenginepart.cpp:1007
+#: src/webenginepart.cpp:1027
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 
-#: src/webenginepart.cpp:1078
+#: src/webenginepart.cpp:1098
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr ""
 
-#: src/webenginepart.cpp:1083
+#: src/webenginepart.cpp:1103
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr ""
 
-#: src/webenginepart.cpp:1087
+#: src/webenginepart.cpp:1107
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr ""
 
-#: src/webenginepart.cpp:1091
+#: src/webenginepart.cpp:1111
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1095
+#: src/webenginepart.cpp:1115
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1099
+#: src/webenginepart.cpp:1119
 #, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1103
+#: src/webenginepart.cpp:1123
 #, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr ""
 
-#: src/webenginepart.cpp:1107
+#: src/webenginepart.cpp:1127
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1111
+#: src/webenginepart.cpp:1131
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&بستن Wallet‌"

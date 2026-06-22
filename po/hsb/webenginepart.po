@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-20 00:43+0000\n"
+"POT-Creation-Date: 2026-06-22 00:43+0000\n"
 "PO-Revision-Date: 2021-11-25 21:50+0100\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -1121,7 +1121,7 @@ msgstr "&Kodowanje nastajić"
 msgid "View Do&cument Source"
 msgstr "Žórło &dokumenta pokazać"
 
-#: src/webenginepart.cpp:264 src/webenginepart.cpp:625
+#: src/webenginepart.cpp:264 src/webenginepart.cpp:645
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
@@ -1135,12 +1135,12 @@ msgid ""
 "displayed page."
 msgstr ""
 
-#: src/webenginepart.cpp:623
+#: src/webenginepart.cpp:643
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr ""
 
-#: src/webenginepart.cpp:704
+#: src/webenginepart.cpp:724
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1148,7 +1148,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "Email: "
 
-#: src/webenginepart.cpp:733
+#: src/webenginepart.cpp:753
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1156,7 +1156,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - Kopija na: "
 
-#: src/webenginepart.cpp:735
+#: src/webenginepart.cpp:755
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1164,7 +1164,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - Dalša kopija na: "
 
-#: src/webenginepart.cpp:737
+#: src/webenginepart.cpp:757
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1172,42 +1172,42 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Tema: "
 
-#: src/webenginepart.cpp:741 src/webenginepart.cpp:752
+#: src/webenginepart.cpp:761 src/webenginepart.cpp:772
 #, kde-format
 msgid " (In new window)"
 msgstr "(w nowym woknje)"
 
-#: src/webenginepart.cpp:750
+#: src/webenginepart.cpp:770
 #, kde-format
 msgid " (In parent frame)"
 msgstr ""
 
-#: src/webenginepart.cpp:816
+#: src/webenginepart.cpp:836
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr ""
 
-#: src/webenginepart.cpp:817
+#: src/webenginepart.cpp:837
 #, kde-format
 msgid "Internet Search"
 msgstr "Pytanje w interneće"
 
-#: src/webenginepart.cpp:817
+#: src/webenginepart.cpp:837
 #, kde-format
 msgid "&Search"
 msgstr "&Pytać"
 
-#: src/webenginepart.cpp:930
+#: src/webenginepart.cpp:950
 #, kde-format
 msgid "Close window?"
 msgstr "Wokno začinić?"
 
-#: src/webenginepart.cpp:930
+#: src/webenginepart.cpp:950
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Wobkrućenje trěbne"
 
-#: src/webenginepart.cpp:1007
+#: src/webenginepart.cpp:1027
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
@@ -1215,51 +1215,51 @@ msgstr ""
 "<html>Chceće, zo sej %1 přizjewjensku informaciju za <b>%2</b> spomjatkuje?</"
 "html>"
 
-#: src/webenginepart.cpp:1078
+#: src/webenginepart.cpp:1098
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr ""
 
-#: src/webenginepart.cpp:1083
+#: src/webenginepart.cpp:1103
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr ""
 
-#: src/webenginepart.cpp:1087
+#: src/webenginepart.cpp:1107
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr ""
 
-#: src/webenginepart.cpp:1091
+#: src/webenginepart.cpp:1111
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1095
+#: src/webenginepart.cpp:1115
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1099
+#: src/webenginepart.cpp:1119
 #, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1103
+#: src/webenginepart.cpp:1123
 #, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr ""
 
-#: src/webenginepart.cpp:1107
+#: src/webenginepart.cpp:1127
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1111
+#: src/webenginepart.cpp:1131
 #, kde-format
 msgid "&Close Wallet"
 msgstr "Móšnju &začinić"

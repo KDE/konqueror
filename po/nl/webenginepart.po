@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-20 00:43+0000\n"
+"POT-Creation-Date: 2026-06-22 00:43+0000\n"
 "PO-Revision-Date: 2025-12-01 18:21+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1164,7 +1164,7 @@ msgstr "&Codering instellen"
 msgid "View Do&cument Source"
 msgstr "Do&cumentbron tonen"
 
-#: src/webenginepart.cpp:264 src/webenginepart.cpp:625
+#: src/webenginepart.cpp:264 src/webenginepart.cpp:645
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
@@ -1180,12 +1180,12 @@ msgstr ""
 "<h3>Tekst zoeken </h3>Toont een dialoogvenster waarmee u naar tekst in de "
 "weergegeven pagina kunt zoeken."
 
-#: src/webenginepart.cpp:623
+#: src/webenginepart.cpp:643
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "De SSL-informatie voor deze site blijkt corrupt te zijn."
 
-#: src/webenginepart.cpp:704
+#: src/webenginepart.cpp:724
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1193,7 +1193,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "E-mail: "
 
-#: src/webenginepart.cpp:733
+#: src/webenginepart.cpp:753
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1201,7 +1201,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - CC: "
 
-#: src/webenginepart.cpp:735
+#: src/webenginepart.cpp:755
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1209,7 +1209,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - BCC: "
 
-#: src/webenginepart.cpp:737
+#: src/webenginepart.cpp:757
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1217,93 +1217,93 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Onderwerp: "
 
-#: src/webenginepart.cpp:741 src/webenginepart.cpp:752
+#: src/webenginepart.cpp:761 src/webenginepart.cpp:772
 #, kde-format
 msgid " (In new window)"
 msgstr " (in een nieuw venster)"
 
-#: src/webenginepart.cpp:750
+#: src/webenginepart.cpp:770
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (in ouderframe)"
 
-#: src/webenginepart.cpp:816
+#: src/webenginepart.cpp:836
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Wilt u zoeken naar <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:817
+#: src/webenginepart.cpp:837
 #, kde-format
 msgid "Internet Search"
 msgstr "Internet-zoekactie"
 
-#: src/webenginepart.cpp:817
+#: src/webenginepart.cpp:837
 #, kde-format
 msgid "&Search"
 msgstr "&Zoeken"
 
-#: src/webenginepart.cpp:930
+#: src/webenginepart.cpp:950
 #, kde-format
 msgid "Close window?"
 msgstr "Venster sluiten?"
 
-#: src/webenginepart.cpp:930
+#: src/webenginepart.cpp:950
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Bevestiging vereist"
 
-#: src/webenginepart.cpp:1007
+#: src/webenginepart.cpp:1027
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 "<html>Wilt u %1 de aanmeldinformatie voor <b>%2</b> laten herinneren?</html>"
 
-#: src/webenginepart.cpp:1078
+#: src/webenginepart.cpp:1098
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr "Credentials &invullen"
 
-#: src/webenginepart.cpp:1083
+#: src/webenginepart.cpp:1103
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr "Pagina &zoeken voor vragen om credentials"
 
-#: src/webenginepart.cpp:1087
+#: src/webenginepart.cpp:1107
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr "Credentials nu op&slaan"
 
-#: src/webenginepart.cpp:1091
+#: src/webenginepart.cpp:1111
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr "Instellingen voor credentials &aanpassen voor pagina..."
 
-#: src/webenginepart.cpp:1095
+#: src/webenginepart.cpp:1115
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr "Aangepaste instellingen voor credentials voor pagina resetten"
 
-#: src/webenginepart.cpp:1099
+#: src/webenginepart.cpp:1119
 #, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr "In een buffer zetten van credentials voor deze pagina &toestaan"
 
-#: src/webenginepart.cpp:1103
+#: src/webenginepart.cpp:1123
 #, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "Alle opgeslagen wachtwoorden voor deze site verwijderen"
 
-#: src/webenginepart.cpp:1107
+#: src/webenginepart.cpp:1127
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "Portefeui&llebeheer starten"
 
-#: src/webenginepart.cpp:1111
+#: src/webenginepart.cpp:1131
 #, kde-format
 msgid "&Close Wallet"
 msgstr "Portefeuille sl&uiten"
