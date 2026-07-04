@@ -42,9 +42,21 @@ public:
 public slots:
     void slotReparseConfiguration();
 
+    /**
+     * @brief Closes all windows, causing the application itself to be closed
+     *
+     * If there are multiple windows, the user is asked for confirmation before
+     * closing Konqueror. He can choose to close only @p window.
+     *
+     * @param window the window which requested closing the application. It can
+     * be `nullptr`
+     */
+    void quitKonqueror(KonqMainWindow *window);
+
 signals:
     void configurationChanged();
     void aboutToConfigure();
+    void newWindowCreated(KonqMainWindow *mw);
 
 private slots:
     void slotAddToCombo(const QString &url, const QDBusMessage &msg);

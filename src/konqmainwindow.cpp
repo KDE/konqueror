@@ -3349,7 +3349,26 @@ void KonqMainWindow::initActions()
 #endif
 
     m_paPrint = actionCollection()->addAction(KStandardAction::Print, QStringLiteral("print"), nullptr, nullptr);
-    actionCollection()->addAction(KStandardAction::Quit, QStringLiteral("quit"), this, SLOT(close()));
+
+    m_paCloseOtherWindows = actionCollection()->addAction(QStringLiteral("close_other_windows"), this, &KonqMainWindow::slotCloseOtherWindows);
+    m_paCloseOtherWindows->setText(i18nc("@action:inmenu", "Close Other Windows"));
+    m_paCloseOtherWindows->setToolTip(i18n("Closes all windows except this one"));
+    m_paCloseOtherWindows->setStatusTip(m_paCloseOtherWindows->toolTip());
+    m_paCloseOtherWindows->setWhatsThis(i18n("Closes all windows except this one. It doesn't close preloaded windows"));
+    m_paCloseOtherWindows->setIcon(QIcon::fromTheme(QStringLiteral("window-close")));
+
+    m_paQuitKonqueror = actionCollection()->addAction(QStringLiteral("quit_konqueror"), this, [this]{qobject_cast<KonquerorApplication*>(qApp)->quitKonqueror(this);});
+    m_paQuitKonqueror->setText(i18nc("@action:inmenu quit Konqueror", "Quit Konqueror"));
+    m_paQuitKonqueror->setIcon(QIcon::fromTheme(QStringLiteral("application-exit")));
+    m_paQuitKonqueror->setToolTip(i18n("Closes all Konqueror windows and quits the application"));
+    m_paQuitKonqueror->setStatusTip(m_paQuitKonqueror->toolTip());
+
+    QAction *closeWindow = actionCollection()->addAction(QStringLiteral("quit"), this, &KonqMainWindow::close);
+    closeWindow->setText(i18nc("@action:inmenu close current window", "Close Window"));
+    closeWindow->setIcon(QIcon::fromTheme(QStringLiteral("window-close")));
+    closeWindow->setToolTip(i18n("Close this window"));
+    closeWindow->setStatusTip(closeWindow->toolTip());
+    closeWindow->setWhatsThis(i18n("Close this window, quitting Konqueror if it is the only window"));
 
     m_paLockView = new KToggleAction(i18n("Lock to Current Location"), this);
     actionCollection()->addAction(QStringLiteral("lock"), m_paLockView);
@@ -5604,4 +5623,34 @@ void KonqMainWindow::setSaveDir(const QString& dir)
 bool KonqMainWindow::isProtected() const
 {
     return m_protectWindow && m_protectWindow->isChecked();
+}
+
+QList<KonqMainWindow *> KonqMainWindow::regularWindows()
+{
+    if (!s_lstMainWindows) {
+        return {};
+    }
+    QList<KonqMainWindow*> res;
+    std::copy_if(s_lstMainWindows->constBegin(), s_lstMainWindows->constEnd(), std::back_inserter(res), [](KonqMainWindow *mw){return !mw->isPreloaded();});
+    return res;
+}
+
+void KonqMainWindow::slotCloseOtherWindows()
+{
+    QList<KonqMainWindow*> windows = regularWindows();
+    windows.removeOne(this);
+    if (windows.length() > 1) {
+        QString msg = i18n("You are closing all windows except this one. Are you sure you want to continue?");
+        auto ans = KMessageBox::warningContinueCancel(this, msg, i18nc("@title:window", "Confirmation"),
+                                    KStandardGuiItem::cont(),
+                                    KStandardGuiItem::cancel(),
+                                    QStringLiteral("CloseOtherWindowsConfirm")
+                                );
+        if (ans == KMessageBox::Cancel) {
+            return;
+        }
+    }
+    for (KonqMainWindow *w : windows) {
+        w->close();
+    }
 }

@@ -571,3 +571,30 @@ bool KonquerorApplication::isActivityServiceRunning() const
     return false;
 #endif
 }
+
+void KonquerorApplication::quitKonqueror(KonqMainWindow *window)
+{
+    if (KonqMainWindow::regularWindows().length() <= 1) {
+        closeAllWindows();
+        return;
+    }
+    QString msg = i18n("Are you sure you want to quit Konqueror? This will close all windows");
+    auto ans = KMessageBox::warningTwoActionsCancel(window, msg, i18nc("@title:window", "Confirmation"),
+                                KStandardGuiItem::quit(),
+                                KGuiItem(i18n("Close current window"), QStringLiteral("window-close")),
+                                KStandardGuiItem::cancel(),
+                                QStringLiteral("MultipleWindowsConfirm")
+                            );
+    switch (ans) {
+        case KMessageBox::PrimaryAction:
+            closeAllWindows();
+            break;
+        case KMessageBox::SecondaryAction:
+            if (window) {
+                window->close();
+            }
+            break;
+        default:
+            return;
+    }
+}
