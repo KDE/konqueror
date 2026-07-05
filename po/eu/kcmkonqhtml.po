@@ -1,26 +1,26 @@
 # Translation for kcmkonqhtml.po to Euskara/Basque (eu).
-# Copyright (C) 2004-2025 This file is copyright:
+# Copyright (C) 2004-2026 This file is copyright:
 # This file is distributed under the same license as the konqueror package.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023-2024, 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # marcos <marcos@euskalgnu.org>, 2006, 2007, 2010.
 # Asier Urio Larrea <asieriko@gmail.com>, 2008.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2010, 2011, 2018, 2019, 2020, 2022, 2023, 2024, 2025.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2010, 2011, 2018, 2019, 2020, 2022, 2023, 2024, 2025, 2026.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-25 00:44+0000\n"
-"PO-Revision-Date: 2025-12-07 19:54+0100\n"
+"PO-Revision-Date: 2026-07-04 23:06+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 26.04.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: appearance.cpp:39
@@ -1703,12 +1703,10 @@ msgid "Please, insert the custom start page"
 msgstr "Mesedez, txertatu norberak finkatutako hasierako orria"
 
 #: generalopts.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "When a new &Tab is created"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &window is created"
-msgstr "Fi&txa berri bat sortzen denean"
+msgstr "&Leiho berri bat sortzen denean"
 
 #: generalopts.cpp:69
 #, kde-format
@@ -2452,12 +2450,15 @@ msgid ""
 "unchecked, the new tab will load the same URL loaded when creating a new "
 "window</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Fitxa berria hutsik utzi behar den edo ez. Hau markatu "
+"gabe badago, fitxa berriak leiho berria sortzean zamatu zen URL bera "
+"zamatuko du</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Leave new tab empty"
-msgstr ""
+msgstr "Utzi fitxa berria hutsik"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: tabs/tabsoptions.ui:171
@@ -2529,7 +2530,7 @@ msgstr "Aktibatu lehen erabilitako fitxa, uneko fitxa ixtean"
 #, kde-format
 msgctxt "We couldn't retrieve the user agent, so we show it as 'unknown'"
 msgid "unknown"
-msgstr ""
+msgstr "ezezaguna"
 
 #: useragent/useragent.cpp:210
 #, kde-format
@@ -2615,7 +2616,7 @@ msgstr "Hautatu &aukeratutako identifikazioa"
 #: useragent/useragent.ui:160
 #, kde-format
 msgid "Current user agent"
-msgstr ""
+msgstr "Uneko erabiltzaile-agentea"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:175
@@ -2657,7 +2658,7 @@ msgstr "Erabili identifikazio &lehenetsia"
 #: useragent/useragent.ui:214
 #, kde-format
 msgid "<strong>Current browser identification</strong>"
-msgstr ""
+msgstr "<strong>Arakatzailearen uneko identifikazioa</strong>"
 
 #~ msgid "Form"
 #~ msgstr "Inprimakia"
