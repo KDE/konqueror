@@ -93,12 +93,31 @@ class KONQ_TESTS_EXPORT KonqMainWindow : public KParts::MainWindow, public KonqF
     Q_PROPERTY(bool fullScreenMode READ fullScreenMode)
     Q_PROPERTY(QString currentTitle READ currentTitle)
     Q_PROPERTY(QString currentURL READ currentURL)
+
+    /**
+     * @brief Constructor which can be used to create both a regular and a preloaded window
+     *
+     * This constructor is called by both KonqMainWindow(QUrl) and by createPreloaded(). Depending
+     * on the value of @p preloaded, it creates either a regular window or a preloaded window.
+     *
+     * @param url the URL to load. If @p preloaded is `true`, this is ignored and `konq:blank` will be used
+     * @param preloaded `true` to create a preloaded window and `false` to create a regular window
+     */
+    explicit KonqMainWindow(const QUrl &url, bool preloaded);
+
 public:
     enum ComboAction { ComboClear, ComboAdd, ComboRemove };
     enum PageSecurity { NotCrypted, Encrypted, Mixed };
 
     explicit KonqMainWindow(const QUrl &initialURL = QUrl());
     ~KonqMainWindow() override;
+
+    /**
+     * @brief Creates a preloaded window
+     *
+     * @return the new preloaded window
+     */
+    static KonqMainWindow* createPreloaded();
 
     static KonqMainWindow* findMostSuitableWindow();
 
@@ -127,6 +146,9 @@ public:
 public Q_SLOTS:
     /**
     * The main openUrl method.
+    *
+    * If @p url is not `konq:blank`, it also marks the window as not preloaded, as preloaded
+    * windows always have a `konq:blank` URL
     */
     void openUrl(KonqView *view, const QUrl &url,
                  const QString &serviceType = QString(),
@@ -596,6 +618,9 @@ protected:
 
     /**
     * Reimplemented for internal reasons. The API is not affected.
+    *
+    * Among other things, it marks the window as not preloaded, as preloaded windows
+    * are always hidden.
     */
     void showEvent(QShowEvent *event) override;
 
@@ -706,6 +731,8 @@ private: // members
 
     //Interfaces
     KonqImplementations::KonqWindow *m_windowInterface;
+
+    bool m_isPreloaded; //!< Whether or not the window is preloaded
 
     KonqUndoManager *m_pUndoManager;
 

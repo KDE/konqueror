@@ -75,7 +75,7 @@ KonqMainWindow *KonqMainWindowFactory::createEmptyWindow()
 
 KonqMainWindow * KonqMainWindowFactory::createPreloadWindow()
 {
-    KonqMainWindow *mw = new KonqMainWindow(KonqUrl::url(KonqUrl::Type::Blank));
+    KonqMainWindow *mw = KonqMainWindow::createPreloaded();
     return mw;
 }
 
