@@ -95,15 +95,23 @@ class KONQ_TESTS_EXPORT KonqMainWindow : public KParts::MainWindow, public KonqF
     Q_PROPERTY(QString currentURL READ currentURL)
 
     /**
-     * @brief Constructor which can be used to create both a regular and a preloaded window
+     * @brief Type used as argument for the internal constructor.
+     *
+     * @see KonqMainWindow(const ConstructorArg&);
+     */
+    using ConstructorArg = std::variant<QUrl, bool>;
+
+    /**
+     * @brief Internal constructor which can be used to create both a regular and a preloaded window
      *
      * This constructor is called by both KonqMainWindow(QUrl) and by createPreloaded(). Depending
-     * on the value of @p preloaded, it creates either a regular window or a preloaded window.
+     * on the value of @p arg, it creates either a regular window or a preloaded window.
      *
-     * @param url the URL to load. If @p preloaded is `true`, this is ignored and `konq:blank` will be used
-     * @param preloaded `true` to create a preloaded window and `false` to create a regular window
+     * @param arg information about the window to create. If it contains a `QUrl`, it creates a regular
+     * window with that URL. If it contains a `bool` and that is `true`, it creates a preloaded window;
+     * if the `bool` is `false`, it creates a regular window using the starting URL configured by the user.
      */
-    explicit KonqMainWindow(const QUrl &url, bool preloaded);
+    explicit KonqMainWindow(const ConstructorArg &arg);
 
 public:
     enum ComboAction { ComboClear, ComboAdd, ComboRemove };
@@ -424,6 +432,15 @@ public:
      * @return `true` if the window is protected and `false` otherwise
      */
     bool isProtected() const;
+
+    /**
+     * @brief The URL the user chose to open new window in
+     *
+     * It's the same as passing Konq::Settings::startUrl() to KonqMisc::konqFilteredUrl()
+     *
+     * @return the start URL passed through the appropriate URI filters
+     */
+    static QUrl startUrl();
 
 Q_SIGNALS:
     void viewAdded(KonqView *view);
