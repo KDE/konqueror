@@ -287,7 +287,7 @@ void KonqSessionManager::saveSessionAtExit()
     QString path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (!path.isEmpty()) {
         const QList<KonqMainWindow*> windows = KonqMainWindow::mainWindows();
-        if (windows.count() == 1 && windows.at(0)->isPreloaded())  {
+        if (std::all_of(windows.constBegin(), windows.constEnd(), [](KonqMainWindow *w){return w->isPreloaded();})) {
             return;
         }
         saveCurrentSessionToFile(QDir(path).absoluteFilePath("last_session"));

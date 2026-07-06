@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
-<gui name="Konqueror" version="74">
+<gui name="Konqueror" version="75">
 <MenuBar>
  <Menu name="file" noMerge="1"><text>&amp;File</text>
   <Action name="new_window"/>
@@ -19,6 +19,9 @@
   <Separator/>
   <ActionList name="openwithbase"/>
   <ActionList name="openwith" /> <!--Includes termination separator-->
+  <Action name="close_other_windows"/>
+  <Action name="quit_konqueror"/>
+  <Separator/>
   <Action name="quit"/>
  </Menu>
  <Menu name="edit" noMerge="1"><text>&amp;Edit</text>  <!--Here is what applies to a selection-->

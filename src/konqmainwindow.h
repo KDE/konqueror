@@ -442,6 +442,12 @@ public:
      */
     static QUrl startUrl();
 
+    /**
+     * @brief A list of all main windows which aren't preloaded windows
+     * @return a list of all main windows which aren't preloaded windows
+     */
+    static QList<KonqMainWindow*> regularWindows();
+
 Q_SIGNALS:
     void viewAdded(KonqView *view);
     void viewRemoved(KonqView *view);
@@ -630,6 +636,14 @@ private Q_SLOTS:
 
     void slotUpdateFullScreen(bool set);   // do not call directly
 
+    /**
+     * @brief Closes all windows except this one
+     *
+     * This is connected to the "Close other windows" action. If there are more than one other
+     * window, the user is asked for confirmation before closing.
+     */
+    void slotCloseOtherWindows();
+
 protected:
     bool eventFilter(QObject *obj, QEvent *ev) override;
 
@@ -743,7 +757,7 @@ private:
      * @param window the window to show
      */
     void showBehindThis(KonqMainWindow *window);
-    
+
 private: // members
 
     //Interfaces
@@ -759,6 +773,8 @@ private: // members
 
     KBookmarkActionMenu *m_pamBookmarks;
 
+    QAction *m_paCloseOtherWindows; //!< An action to close all windows except this one
+    QAction *m_paQuitKonqueror; //!< An Action to close all windows and quit Konqueror
     KToolBarPopupAction *m_paUp;
     KToolBarPopupAction *m_paBack;
     KToolBarPopupAction *m_paForward;
