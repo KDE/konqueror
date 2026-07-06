@@ -200,9 +200,14 @@ KonqExtendedBookmarkOwner::KonqExtendedBookmarkOwner(KonqMainWindow *w)
     m_pKonqMainWindow = w;
 }
 
-KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
+KonqMainWindow::KonqMainWindow(const QUrl& initialURL) : KonqMainWindow(initialURL, false)
+{
+}
+
+KonqMainWindow::KonqMainWindow(const QUrl &initialURL, bool preloaded)
     : KParts::MainWindow()
     , m_windowInterface(nullptr)
+    , m_isPreloaded{preloaded}
     , m_paClosedItems(nullptr)
     , m_fullyConstructed(false)
     , m_bLocationBarConnected(false)
@@ -310,8 +315,10 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
 
     m_bNeedApplyKonqMainWindowSettings = true;
 
-    if (!initialURL.isEmpty()) {
-        openFilteredUrl(initialURL.url());
+    //If the window is preloaded, always open the konq:blank URL
+    QUrl url = !preloaded ? initialURL : KonqUrl::url(KonqUrl::Type::Blank);
+    if (!url.isEmpty()) {
+        openFilteredUrl(url.url());
     } else {
         // silent
         m_bNeedApplyKonqMainWindowSettings = false;
@@ -381,6 +388,11 @@ KonqMainWindow::~KonqMainWindow()
     delete m_pUndoManager;
 
     //qCDebug(KONQUEROR_LOG) << this << "deleted";
+}
+
+KonqMainWindow * KonqMainWindow::createPreloaded()
+{
+    return new KonqMainWindow(KonqUrl::url(KonqUrl::Type::Blank), true);
 }
 
 KonqMainWindow* KonqMainWindow::findMostSuitableWindow()
@@ -594,6 +606,9 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
                              const QString &_mimeType, const KonqOpenURLRequest &_req,
                              bool trustedSource)
 {
+    if (!KonqUrl::isKonqBlank(_url)) {
+        m_isPreloaded = false;
+    }
 #ifndef NDEBUG // needed for req.debug()
     qCDebug(KONQUEROR_LOG) << "url=" << _url << "mimeType=" << _mimeType
              << "_req=" << _req.debug() << "view=" << _view;
@@ -3753,7 +3768,7 @@ void KonqMainWindow::updateHistoryActions()
 
 bool KonqMainWindow::isPreloaded() const
 {
-    return !isVisible() && m_mapViews.count() == 1 && m_currentView && KonqUrl::isKonqBlank(m_currentView->url().toString());
+    return m_isPreloaded;
 }
 
 void KonqMainWindow::updateToolBarActions(bool pendingAction /*=false*/)
@@ -4082,6 +4097,8 @@ void KonqMainWindow::setCaption(const QString &caption)
 
 void KonqMainWindow::showEvent(QShowEvent *event)
 {
+    m_isPreloaded = false;
+
     //qCDebug(KONQUEROR_LOG) << QTime::currentTime();
     // We need to check if our toolbars are shown/hidden here, and set
     // our menu items accordingly. We can't do it in the constructor because
