@@ -3742,8 +3742,9 @@ void KonqMainWindow::initActions()
     m_paShowDeveloperTools->setWhatsThis(i18n("<html>Shows the developer tools for the current page<br/><br/>The current view is split in two and the developer tools are displayed in the second half"));
     m_paShowDeveloperTools->setStatusTip(i18n("Shows the developer tools for the current page"));
 
-    m_protectWindow->setStatusTip(i18n("Mark the current window as protected"));
-    m_protectWindow->setWhatsThis(i18n("<p>Mark the current window as protected</p><p>Marking a window as protected ensures that Konqueror will never open external links in it</p>"));
+    m_protectWindow->setToolTip(i18nc("@info:tooltip", "Mark the current window as protected"));
+    m_protectWindow->setStatusTip(m_protectWindow->toolTip());
+    m_protectWindow->setWhatsThis(i18nc("@info:whatsthis", "<p>Mark the current window as protected.</p><p>Konqueror will never open open external links in a protected window.</p>"));
 }
 
 void KonqExtendedBookmarkOwner::openBookmark(const KBookmark &bm, Qt::MouseButtons mb, Qt::KeyboardModifiers km)
