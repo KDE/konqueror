@@ -200,14 +200,13 @@ KonqExtendedBookmarkOwner::KonqExtendedBookmarkOwner(KonqMainWindow *w)
     m_pKonqMainWindow = w;
 }
 
-KonqMainWindow::KonqMainWindow(const QUrl& initialURL) : KonqMainWindow(initialURL, false)
+KonqMainWindow::KonqMainWindow(const QUrl& initialURL) : KonqMainWindow(ConstructorArg{initialURL})
 {
 }
 
-KonqMainWindow::KonqMainWindow(const QUrl &initialURL, bool preloaded)
+KonqMainWindow::KonqMainWindow(const ConstructorArg &arg)
     : KParts::MainWindow()
     , m_windowInterface(nullptr)
-    , m_isPreloaded{preloaded}
     , m_paClosedItems(nullptr)
     , m_fullyConstructed(false)
     , m_bLocationBarConnected(false)
@@ -315,8 +314,18 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL, bool preloaded)
 
     m_bNeedApplyKonqMainWindowSettings = true;
 
-    //If the window is preloaded, always open the konq:blank URL
-    QUrl url = !preloaded ? initialURL : KonqUrl::url(KonqUrl::Type::Blank);
+    auto dataFromVariant =[](const ConstructorArg &arg) {
+        if (std::holds_alternative<QUrl>(arg)) {
+            return std::make_pair(std::get<QUrl>(arg), false);
+        } else {
+            return std::make_pair(startUrl(), std::get<bool>(arg));
+        }
+    };
+
+    //We need to use a temporary `preloaded` variable: we can't assign directly to m_isPreloaded
+    auto [url, preloaded] = dataFromVariant(arg);
+    m_isPreloaded = preloaded;
+
     if (!url.isEmpty()) {
         openFilteredUrl(url.url());
     } else {
@@ -336,6 +345,8 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL, bool preloaded)
     setAutoSaveSettings();
 
     //qCDebug(KONQUEROR_LOG) << this << "created";
+
+    setObjectName(m_isPreloaded ? "PRELOADED" : "NOT PRELOADED");
 
     m_fullyConstructed = true;
 }
@@ -390,9 +401,14 @@ KonqMainWindow::~KonqMainWindow()
     //qCDebug(KONQUEROR_LOG) << this << "deleted";
 }
 
-KonqMainWindow * KonqMainWindow::createPreloaded()
+KonqMainWindow* KonqMainWindow::createPreloaded()
 {
-    return new KonqMainWindow(KonqUrl::url(KonqUrl::Type::Blank), true);
+    return new KonqMainWindow(true);
+}
+
+QUrl KonqMainWindow::startUrl()
+{
+    return KonqMisc::konqFilteredURL(nullptr, Konq::Settings::startURL());
 }
 
 KonqMainWindow* KonqMainWindow::findMostSuitableWindow()
@@ -606,9 +622,10 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
                              const QString &_mimeType, const KonqOpenURLRequest &_req,
                              bool trustedSource)
 {
-    if (!KonqUrl::isKonqBlank(_url)) {
+    if (m_fullyConstructed) {
         m_isPreloaded = false;
     }
+
 #ifndef NDEBUG // needed for req.debug()
     qCDebug(KONQUEROR_LOG) << "url=" << _url << "mimeType=" << _mimeType
              << "_req=" << _req.debug() << "view=" << _view;
