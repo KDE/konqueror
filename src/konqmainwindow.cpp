@@ -3744,7 +3744,7 @@ void KonqMainWindow::initActions()
 
     m_protectWindow->setToolTip(i18nc("@info:tooltip", "Mark the current window as protected"));
     m_protectWindow->setStatusTip(m_protectWindow->toolTip());
-    m_protectWindow->setWhatsThis(i18nc("@info:whatsthis", "<p>Mark the current window as protected.</p><p>Konqueror will never open open external links in a protected window.</p>"));
+    m_protectWindow->setWhatsThis(i18nc("@info:whatsthis", "<p>Mark the current window as protected.</p><p>Konqueror will never open external links in a protected window.</p>"));
 }
 
 void KonqExtendedBookmarkOwner::openBookmark(const KBookmark &bm, Qt::MouseButtons mb, Qt::KeyboardModifiers km)
