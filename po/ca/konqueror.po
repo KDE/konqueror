@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-07 02:37+0000\n"
-"PO-Revision-Date: 2026-02-02 10:50+0100\n"
+"POT-Creation-Date: 2026-07-08 02:44+0000\n"
+"PO-Revision-Date: 2026-07-07 09:26+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -627,7 +627,7 @@ msgstr ""
 #: src/konqapplication.cpp:581
 #, kde-format
 msgid "Are you sure you want to quit Konqueror? This will close all windows"
-msgstr ""
+msgstr "Segur que voleu sortir del Konqueror? Això tancarà totes les finestres"
 
 #: src/konqapplication.cpp:582 src/konqmainwindow.cpp:4876
 #: src/konqmainwindow.cpp:5645
@@ -637,10 +637,9 @@ msgid "Confirmation"
 msgstr "Confirmació"
 
 #: src/konqapplication.cpp:584
-#, fuzzy, kde-format
-#| msgid "Onl&y current window"
+#, kde-format
 msgid "Close current window"
-msgstr "Només la f&inestra actual"
+msgstr "Tanca la finestra actual"
 
 #: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4945
 #: src/konqmainwindow.cpp:4991
@@ -1031,51 +1030,49 @@ msgid "&Find File..."
 msgstr "&Cerca fitxers..."
 
 #: src/konqmainwindow.cpp:3354
-#, fuzzy, kde-format
-#| msgid "Close &Other Tabs"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Other Windows"
-msgstr "Tanca &altres pestanyes"
+msgstr "Tanca les altres finestres"
 
 #: src/konqmainwindow.cpp:3355
 #, kde-format
 msgid "Closes all windows except this one"
-msgstr ""
+msgstr "Tanca totes les finestres excepte aquesta"
 
 #: src/konqmainwindow.cpp:3357
 #, kde-format
 msgid "Closes all windows except this one. It doesn't close preloaded windows"
 msgstr ""
+"Tanca totes les finestres excepte aquesta. No tanca les finestres "
+"precarregades"
 
 #: src/konqmainwindow.cpp:3361
-#, fuzzy, kde-format
-#| msgid "Konqueror"
+#, kde-format
 msgctxt "@action:inmenu quit Konqueror"
 msgid "Quit Konqueror"
-msgstr "Konqueror"
+msgstr "Surt del Konqueror"
 
 #: src/konqmainwindow.cpp:3363
 #, kde-format
 msgid "Closes all Konqueror windows and quits the application"
-msgstr ""
+msgstr "Tanca totes les finestres del Konqueror i surt de l'aplicació"
 
 #: src/konqmainwindow.cpp:3367
-#, fuzzy, kde-format
-#| msgid "Und&o: Closed Window"
+#, kde-format
 msgctxt "@action:inmenu close current window"
 msgid "Close Window"
-msgstr "Des&fés: pestanya tancada"
+msgstr "Tanca la finestra"
 
 #: src/konqmainwindow.cpp:3369
-#, fuzzy, kde-format
-#| msgid "&Close Active View"
+#, kde-format
 msgid "Close this window"
-msgstr "&Tanca la vista activa"
+msgstr "Tanca aquesta finestra"
 
 #: src/konqmainwindow.cpp:3371
 #, kde-format
 msgid "Close this window, quitting Konqueror if it is the only window"
-msgstr ""
+msgstr "Tanca aquesta finestra, surt del Konqueror si és l'única finestra"
 
 #: src/konqmainwindow.cpp:3373
 #, kde-format
@@ -1490,24 +1487,24 @@ msgid "Shows the developer tools for the current page"
 msgstr "Mostra les eines de desenvolupador per a la pàgina actual"
 
 #: src/konqmainwindow.cpp:3745
-#, fuzzy, kde-format
-#| msgid "Mark the current window as protected"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark the current window as protected"
 msgstr "Marca la finestra actual com a protegida"
 
 #: src/konqmainwindow.cpp:3747
 #, fuzzy, kde-format
+#| msgctxt "@info:whatsthis"
 #| msgid ""
-#| "<p>Mark the current window as protected</p><p>Marking a window as "
-#| "protected ensures that Konqueror will never open external links in it</p>"
+#| "<p>Mark the current window as protected.</p><p>Konqueror will never open "
+#| "open external links in a protected window.</p>"
 msgctxt "@info:whatsthis"
 msgid ""
 "<p>Mark the current window as protected.</p><p>Konqueror will never open "
-"open external links in a protected window.</p>"
+"external links in a protected window.</p>"
 msgstr ""
-"<p>Marca la finestra actual com a protegida</p><p>Marcar una finestra com a "
-"protegida assegura que el Konqueror mai hi obrirà enllaços externs</p>"
+"<p>Marca la finestra actual com a protegida</p><p>El Konqueror mai obrirà "
+"enllaços externs en una finestra protegida</p>"
 
 #: src/konqmainwindow.cpp:3909
 #, kde-format
@@ -1729,15 +1726,13 @@ msgstr ""
 "mode de Pantalla completa (%1)"
 
 #: src/konqmainwindow.cpp:5644
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have multiple tabs open in this window, are you sure you want to quit?"
+#, kde-format
 msgid ""
 "You are closing all windows except this one. Are you sure you want to "
 "continue?"
 msgstr ""
-"Teniu múltiples pestanyes obertes en aquesta finestra, esteu segur que voleu "
-"sortir?"
+"Esteu apunt de tancar totes les finestres excepte aquesta. Segur que voleu "
+"continuar?"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28

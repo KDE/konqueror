@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-07 02:37+0000\n"
-"PO-Revision-Date: 2026-02-02 17:57+0200\n"
+"POT-Creation-Date: 2026-07-08 02:44+0000\n"
+"PO-Revision-Date: 2026-07-07 08:40+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -629,6 +629,8 @@ msgstr ""
 #, kde-format
 msgid "Are you sure you want to quit Konqueror? This will close all windows"
 msgstr ""
+"Ви справді хочете завершити роботу Konqueror? У результаті буде закрито усі "
+"вікна"
 
 #: src/konqapplication.cpp:582 src/konqmainwindow.cpp:4876
 #: src/konqmainwindow.cpp:5645
@@ -638,10 +640,9 @@ msgid "Confirmation"
 msgstr "Підтвердження"
 
 #: src/konqapplication.cpp:584
-#, fuzzy, kde-format
-#| msgid "Onl&y current window"
+#, kde-format
 msgid "Close current window"
-msgstr "&Лише поточне вікно"
+msgstr "Закрити поточне вікно"
 
 #: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4945
 #: src/konqmainwindow.cpp:4991
@@ -1034,51 +1035,49 @@ msgid "&Find File..."
 msgstr "&Знайти файл..."
 
 #: src/konqmainwindow.cpp:3354
-#, fuzzy, kde-format
-#| msgid "Close &Other Tabs"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Other Windows"
-msgstr "Закрити ін&ші вкладки"
+msgstr "Закрити інші вікна"
 
 #: src/konqmainwindow.cpp:3355
 #, kde-format
 msgid "Closes all windows except this one"
-msgstr ""
+msgstr "Закриває усі вікна, окрім цього"
 
 #: src/konqmainwindow.cpp:3357
 #, kde-format
 msgid "Closes all windows except this one. It doesn't close preloaded windows"
 msgstr ""
+"Закриває усі вікна, окрім цього. Не закриває попередньо завантажені вікна"
 
 #: src/konqmainwindow.cpp:3361
-#, fuzzy, kde-format
-#| msgid "Konqueror"
+#, kde-format
 msgctxt "@action:inmenu quit Konqueror"
 msgid "Quit Konqueror"
-msgstr "Konqueror"
+msgstr "Завершити роботу Konqueror"
 
 #: src/konqmainwindow.cpp:3363
 #, kde-format
 msgid "Closes all Konqueror windows and quits the application"
-msgstr ""
+msgstr "Закриває усі вікна Konqueror і завершує роботу програми"
 
 #: src/konqmainwindow.cpp:3367
-#, fuzzy, kde-format
-#| msgid "Und&o: Closed Window"
+#, kde-format
 msgctxt "@action:inmenu close current window"
 msgid "Close Window"
-msgstr "Верну&ти: Закрите вікно"
+msgstr "Закрити вікно"
 
 #: src/konqmainwindow.cpp:3369
-#, fuzzy, kde-format
-#| msgid "&Close Active View"
+#, kde-format
 msgid "Close this window"
-msgstr "&Закрити активний перегляд"
+msgstr "Закрити це вікно"
 
 #: src/konqmainwindow.cpp:3371
 #, kde-format
 msgid "Close this window, quitting Konqueror if it is the only window"
 msgstr ""
+"Закрити це вікно, завершити роботу Konqueror, якщо це вікно було єдиним"
 
 #: src/konqmainwindow.cpp:3373
 #, kde-format
@@ -1489,24 +1488,24 @@ msgid "Shows the developer tools for the current page"
 msgstr "Показує інструменти розробника для поточної сторінки"
 
 #: src/konqmainwindow.cpp:3745
-#, fuzzy, kde-format
-#| msgid "Mark the current window as protected"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark the current window as protected"
 msgstr "Позначити поточне вікно як захищене"
 
 #: src/konqmainwindow.cpp:3747
 #, fuzzy, kde-format
+#| msgctxt "@info:whatsthis"
 #| msgid ""
-#| "<p>Mark the current window as protected</p><p>Marking a window as "
-#| "protected ensures that Konqueror will never open external links in it</p>"
+#| "<p>Mark the current window as protected.</p><p>Konqueror will never open "
+#| "open external links in a protected window.</p>"
 msgctxt "@info:whatsthis"
 msgid ""
 "<p>Mark the current window as protected.</p><p>Konqueror will never open "
-"open external links in a protected window.</p>"
+"external links in a protected window.</p>"
 msgstr ""
-"<p>Позначити поточне вікно як захищене</p><p>Якщо вікно позначено як "
-"захищене, Konqueror ніколи не відкриватиме у ньому зовнішні посилання</p>"
+"<p>Позначити поточне вікно як захищене.</p><p>Konqueror ніколи не "
+"відкриватиме зовнішні посилання у захищеному вікні.</p>"
 
 #: src/konqmainwindow.cpp:3909
 #, kde-format
@@ -1727,14 +1726,13 @@ msgstr ""
 "клавіатурного скорочення повноекранного режиму (%1)"
 
 #: src/konqmainwindow.cpp:5644
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have multiple tabs open in this window, are you sure you want to quit?"
+#, kde-format
 msgid ""
 "You are closing all windows except this one. Are you sure you want to "
 "continue?"
 msgstr ""
-"У вас відкрито декілька вкладок у цьому вікні, ви дійсно хочете його закрити?"
+"Ви намагаєтеся закрити усі вікна, окрім цього. Ви справді хочете продовжити "
+"виконання дії?"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28

@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-07 02:37+0000\n"
-"PO-Revision-Date: 2026-02-05 11:06+0400\n"
+"POT-Creation-Date: 2026-07-08 02:44+0000\n"
+"PO-Revision-Date: 2026-07-07 18:12+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -625,7 +625,7 @@ msgstr ""
 #: src/konqapplication.cpp:581
 #, kde-format
 msgid "Are you sure you want to quit Konqueror? This will close all windows"
-msgstr ""
+msgstr "أتريد الخروج من كنكر؟ هذا سيغلق كل النوافذ"
 
 #: src/konqapplication.cpp:582 src/konqmainwindow.cpp:4876
 #: src/konqmainwindow.cpp:5645
@@ -635,10 +635,9 @@ msgid "Confirmation"
 msgstr "أكّد"
 
 #: src/konqapplication.cpp:584
-#, fuzzy, kde-format
-#| msgid "Onl&y current window"
+#, kde-format
 msgid "Close current window"
-msgstr "النافذة الحالية &فقط"
+msgstr "أغلق النّافذة الحاليّة"
 
 #: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4945
 #: src/konqmainwindow.cpp:4991
@@ -1026,51 +1025,47 @@ msgid "&Find File..."
 msgstr "ا&عثر على ملف..."
 
 #: src/konqmainwindow.cpp:3354
-#, fuzzy, kde-format
-#| msgid "Close &Other Tabs"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Other Windows"
-msgstr "أغلق الألسنة الأ&خرى"
+msgstr "أغلق النوافذ الأخرى"
 
 #: src/konqmainwindow.cpp:3355
 #, kde-format
 msgid "Closes all windows except this one"
-msgstr ""
+msgstr "يغلق كل النوافذ ما عدا هذه"
 
 #: src/konqmainwindow.cpp:3357
 #, kde-format
 msgid "Closes all windows except this one. It doesn't close preloaded windows"
-msgstr ""
+msgstr "يغلق كل النوافذ ما عدا هذه. لا تغلق النوافذ المحملة مسبقًا"
 
 #: src/konqmainwindow.cpp:3361
-#, fuzzy, kde-format
-#| msgid "Konqueror"
+#, kde-format
 msgctxt "@action:inmenu quit Konqueror"
 msgid "Quit Konqueror"
-msgstr "كنكر"
+msgstr "أنهِ كنكر"
 
 #: src/konqmainwindow.cpp:3363
 #, kde-format
 msgid "Closes all Konqueror windows and quits the application"
-msgstr ""
+msgstr "يغلق كل نوافذ كنكر وينهي التطبيق"
 
 #: src/konqmainwindow.cpp:3367
-#, fuzzy, kde-format
-#| msgid "Und&o: Closed Window"
+#, kde-format
 msgctxt "@action:inmenu close current window"
 msgid "Close Window"
-msgstr "ت&راجع عن: إغلاق نافذة"
+msgstr "أغلق النافذة"
 
 #: src/konqmainwindow.cpp:3369
-#, fuzzy, kde-format
-#| msgid "&Close Active View"
+#, kde-format
 msgid "Close this window"
-msgstr "أ&غلق العرض النشط"
+msgstr "أغلق هذه النّافذة"
 
 #: src/konqmainwindow.cpp:3371
 #, kde-format
 msgid "Close this window, quitting Konqueror if it is the only window"
-msgstr ""
+msgstr "أغلق هذه النافذة وأنهِ كنكر إذا كانت النافذة الوحيدة"
 
 #: src/konqmainwindow.cpp:3373
 #, kde-format
@@ -1467,24 +1462,24 @@ msgid "Shows the developer tools for the current page"
 msgstr "إظهار أدوات المطور للصفحة الحالية"
 
 #: src/konqmainwindow.cpp:3745
-#, fuzzy, kde-format
-#| msgid "Mark the current window as protected"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark the current window as protected"
 msgstr "ضع علامة على النافذة الحالية على أنها محمية"
 
 #: src/konqmainwindow.cpp:3747
 #, fuzzy, kde-format
+#| msgctxt "@info:whatsthis"
 #| msgid ""
-#| "<p>Mark the current window as protected</p><p>Marking a window as "
-#| "protected ensures that Konqueror will never open external links in it</p>"
+#| "<p>Mark the current window as protected.</p><p>Konqueror will never open "
+#| "open external links in a protected window.</p>"
 msgctxt "@info:whatsthis"
 msgid ""
 "<p>Mark the current window as protected.</p><p>Konqueror will never open "
-"open external links in a protected window.</p>"
+"external links in a protected window.</p>"
 msgstr ""
-"<p>ضع علامة على النافذة الحالية على أنها محمية</p><p>وضع علامة على نافذة على "
-"أنها محمية يضمن أن كنكرر لن يفتح أبدًا روابط خارجية فيها</p>"
+"<p>ضع علامة على النافذة الحالية على أنها محمية</p><p> كنكر لن يفتح أبدًا "
+"روابط خارجية في النافذة المحمية</p>"
 
 #: src/konqmainwindow.cpp:3909
 #, kde-format
@@ -1697,13 +1692,13 @@ msgstr ""
 "الخروج منه بالضغط على اختصار لوحة المفاتيح لوضع ملء الشاشة (%1)"
 
 #: src/konqmainwindow.cpp:5644
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have multiple tabs open in this window, are you sure you want to quit?"
+#, kde-format
 msgid ""
 "You are closing all windows except this one. Are you sure you want to "
 "continue?"
-msgstr "لديك عدّة ألسنة في هذه النافذة، أتريد حقًّا الإنهاء؟"
+msgstr ""
+"أنت على وشك إغلاق جميع النوافذ باستثناء هذه النافذة. أمتأكد من رغبتك في "
+"المتابعة؟"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
