@@ -6,7 +6,7 @@
 # Henrique Pinto <stampede@coltec.ufmg.br>, 2003.
 # Lisiane Sztoltz Teixeira <lisiane@kdemail.net>, 2003, 2004, 2005.
 # Lisiane Sztoltz Teixeira <lisiane@conectiva.com.br>, 2004.
-# SPDX-FileCopyrightText: 2004, 2025, 2026 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2004, 2025-2026 Marcus Gama <marcus.gama@gmail.com>
 # Diniz Bortolotto <diniz.bortolotto@gmail.com>, 2007, 2008.
 # doutor.zero <doutor.zero@gmail.com>, 2007.
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2019.
@@ -19,16 +19,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-07 00:42+0000\n"
-"PO-Revision-Date: 2026-02-01 22:51-0300\n"
-"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
+"POT-Creation-Date: 2026-07-08 00:44+0000\n"
+"PO-Revision-Date: 2026-07-07 08:07-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -632,6 +632,7 @@ msgstr ""
 #, kde-format
 msgid "Are you sure you want to quit Konqueror? This will close all windows"
 msgstr ""
+"Tem certeza de que deseja sair do Konqueror? Isso fechará todas as janelas."
 
 #: src/konqapplication.cpp:582 src/konqmainwindow.cpp:4876
 #: src/konqmainwindow.cpp:5645
@@ -641,10 +642,9 @@ msgid "Confirmation"
 msgstr "Confirmação"
 
 #: src/konqapplication.cpp:584
-#, fuzzy, kde-format
-#| msgid "Onl&y current window"
+#, kde-format
 msgid "Close current window"
-msgstr "&Somente janela atual"
+msgstr "Fechar janela atual"
 
 #: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4945
 #: src/konqmainwindow.cpp:4991
@@ -1035,51 +1035,47 @@ msgid "&Find File..."
 msgstr "&Localizar arquivo..."
 
 #: src/konqmainwindow.cpp:3354
-#, fuzzy, kde-format
-#| msgid "Close &Other Tabs"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Other Windows"
-msgstr "Fechar as &outras abas"
+msgstr "Fechar as outras janelas"
 
 #: src/konqmainwindow.cpp:3355
 #, kde-format
 msgid "Closes all windows except this one"
-msgstr ""
+msgstr "Fecha todas as janelas, exceto esta"
 
 #: src/konqmainwindow.cpp:3357
 #, kde-format
 msgid "Closes all windows except this one. It doesn't close preloaded windows"
-msgstr ""
+msgstr "Fecha todas as janelas, exceto esta. Não fecha janelas pré-carregadas"
 
 #: src/konqmainwindow.cpp:3361
-#, fuzzy, kde-format
-#| msgid "Konqueror"
+#, kde-format
 msgctxt "@action:inmenu quit Konqueror"
 msgid "Quit Konqueror"
-msgstr "Konqueror"
+msgstr "Sair do Konqueror"
 
 #: src/konqmainwindow.cpp:3363
 #, kde-format
 msgid "Closes all Konqueror windows and quits the application"
-msgstr ""
+msgstr "Fecha todas as janelas do Konqueror e encerra o aplicativo"
 
 #: src/konqmainwindow.cpp:3367
-#, fuzzy, kde-format
-#| msgid "Und&o: Closed Window"
+#, kde-format
 msgctxt "@action:inmenu close current window"
 msgid "Close Window"
-msgstr "Desfa&zer: Janela fechada"
+msgstr "Fechar janela"
 
 #: src/konqmainwindow.cpp:3369
-#, fuzzy, kde-format
-#| msgid "&Close Active View"
+#, kde-format
 msgid "Close this window"
-msgstr "&Fechar visão ativa"
+msgstr "Fechar esta janela"
 
 #: src/konqmainwindow.cpp:3371
 #, kde-format
 msgid "Close this window, quitting Konqueror if it is the only window"
-msgstr ""
+msgstr "Fechar esta janela, encerrando o Konqueror se ela for a única janela"
 
 #: src/konqmainwindow.cpp:3373
 #, kde-format
@@ -1493,24 +1489,24 @@ msgid "Shows the developer tools for the current page"
 msgstr "Mostrar as ferramentas do desenvolvedor para a página atual"
 
 #: src/konqmainwindow.cpp:3745
-#, fuzzy, kde-format
-#| msgid "Mark the current window as protected"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark the current window as protected"
 msgstr "Marcar a janela atual como protegida"
 
 #: src/konqmainwindow.cpp:3747
 #, fuzzy, kde-format
+#| msgctxt "@info:whatsthis"
 #| msgid ""
-#| "<p>Mark the current window as protected</p><p>Marking a window as "
-#| "protected ensures that Konqueror will never open external links in it</p>"
+#| "<p>Mark the current window as protected.</p><p>Konqueror will never open "
+#| "open external links in a protected window.</p>"
 msgctxt "@info:whatsthis"
 msgid ""
 "<p>Mark the current window as protected.</p><p>Konqueror will never open "
-"open external links in a protected window.</p>"
+"external links in a protected window.</p>"
 msgstr ""
-"<p>Marcar a janela atual como protegida</p><p>Marcar uma janela como "
-"protegida garante que o Konqueror nunca abrirá links externos nela</p>"
+"<p>Marcar a janela atual como protegida</p><p>O Konqueror nunca abrirá links "
+"externos em uma janela protegida.</p>"
 
 #: src/konqmainwindow.cpp:3909
 #, kde-format
@@ -1728,13 +1724,13 @@ msgstr ""
 "cheia (%1)"
 
 #: src/konqmainwindow.cpp:5644
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have multiple tabs open in this window, are you sure you want to quit?"
+#, kde-format
 msgid ""
 "You are closing all windows except this one. Are you sure you want to "
 "continue?"
-msgstr "Existem várias abas abertas nesta janela, deseja realmente fechá-la?"
+msgstr ""
+"Você está fechando todas as janelas, exceto esta. Tem certeza de que deseja "
+"continuar?"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28

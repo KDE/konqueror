@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-07 00:42+0000\n"
-"PO-Revision-Date: 2026-02-02 07:44+0100\n"
+"POT-Creation-Date: 2026-07-08 00:44+0000\n"
+"PO-Revision-Date: 2026-07-07 06:14+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -617,7 +617,7 @@ msgstr ""
 #: src/konqapplication.cpp:581
 #, kde-format
 msgid "Are you sure you want to quit Konqueror? This will close all windows"
-msgstr ""
+msgstr "მართლა გნებავთ Konqueror-იდან გასვლა? ეს ყველა ფანჯარას დახურავს"
 
 #: src/konqapplication.cpp:582 src/konqmainwindow.cpp:4876
 #: src/konqmainwindow.cpp:5645
@@ -627,10 +627,9 @@ msgid "Confirmation"
 msgstr "დასტური"
 
 #: src/konqapplication.cpp:584
-#, fuzzy, kde-format
-#| msgid "Onl&y current window"
+#, kde-format
 msgid "Close current window"
-msgstr "&მხოლოდ მიმდინარე ფანჯარა"
+msgstr "მიმდინარე ფანჯრის დახურვა"
 
 #: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4945
 #: src/konqmainwindow.cpp:4991
@@ -1020,51 +1019,49 @@ msgid "&Find File..."
 msgstr "&ფაილის ძებნა..."
 
 #: src/konqmainwindow.cpp:3354
-#, fuzzy, kde-format
-#| msgid "Close &Other Tabs"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Other Windows"
-msgstr "&სხვა ჩანართების დახურვა"
+msgstr "სხვა ფანჯრების დახურვა"
 
 #: src/konqmainwindow.cpp:3355
 #, kde-format
 msgid "Closes all windows except this one"
-msgstr ""
+msgstr "დახურავს ყველა ფანჯარას ამის გარდა"
 
 #: src/konqmainwindow.cpp:3357
 #, kde-format
 msgid "Closes all windows except this one. It doesn't close preloaded windows"
 msgstr ""
+"დახურავს ყველა ფანჯარას ამის გარდა. ეს არ დახურავს წინასწარ ჩატვირთულ "
+"ფანჯრებს"
 
 #: src/konqmainwindow.cpp:3361
-#, fuzzy, kde-format
-#| msgid "Konqueror"
+#, kde-format
 msgctxt "@action:inmenu quit Konqueror"
 msgid "Quit Konqueror"
-msgstr "Konqueror"
+msgstr "Konqueror-იდან გასვლა"
 
 #: src/konqmainwindow.cpp:3363
 #, kde-format
 msgid "Closes all Konqueror windows and quits the application"
-msgstr ""
+msgstr "დახურავს Konqueror-ის ყველა ფანჯარას და გავა აპლიკაციიდან"
 
 #: src/konqmainwindow.cpp:3367
-#, fuzzy, kde-format
-#| msgid "Und&o: Closed Window"
+#, kde-format
 msgctxt "@action:inmenu close current window"
 msgid "Close Window"
-msgstr "&გაუქმება: დახურული ფანჯარა"
+msgstr "ფანჯრის დახურვა"
 
 #: src/konqmainwindow.cpp:3369
-#, fuzzy, kde-format
-#| msgid "&Close Active View"
+#, kde-format
 msgid "Close this window"
-msgstr "&აქტიური ხედის დახურვა"
+msgstr "ამ ფანჯრის დახურვა"
 
 #: src/konqmainwindow.cpp:3371
 #, kde-format
 msgid "Close this window, quitting Konqueror if it is the only window"
-msgstr ""
+msgstr "ამ ფანჯრის დახურვა დახურავს Konqueror-საც, თუ ეს ერთადერთი ფანჯარაა"
 
 #: src/konqmainwindow.cpp:3373
 #, kde-format
@@ -1477,24 +1474,24 @@ msgid "Shows the developer tools for the current page"
 msgstr "პროგრამისტის ხელსაწყოების ჩვენება მიმდინარე გვერდისთვის"
 
 #: src/konqmainwindow.cpp:3745
-#, fuzzy, kde-format
-#| msgid "Mark the current window as protected"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark the current window as protected"
 msgstr "მიმდინარე ფანჯრის დაცულად მონიშვნა"
 
 #: src/konqmainwindow.cpp:3747
 #, fuzzy, kde-format
+#| msgctxt "@info:whatsthis"
 #| msgid ""
-#| "<p>Mark the current window as protected</p><p>Marking a window as "
-#| "protected ensures that Konqueror will never open external links in it</p>"
+#| "<p>Mark the current window as protected.</p><p>Konqueror will never open "
+#| "open external links in a protected window.</p>"
 msgctxt "@info:whatsthis"
 msgid ""
 "<p>Mark the current window as protected.</p><p>Konqueror will never open "
-"open external links in a protected window.</p>"
+"external links in a protected window.</p>"
 msgstr ""
-"<p>მიმდინარე ფანჯრის დაცულად მონიშვნა</p><p>ფანჯრის მონიშვნა დაცულად "
-"ნიშნავს, რომ Konqueror არასდროს გახსნის მასში გარე ბმულებს</p>"
+"<p>მიმდინარე ფანჯრის დაცულად მონიშვნა</p><p>Konqueror დაცულ ფანჯარაში გარე "
+"ბმულებს არასდროს გახსნის.</p>"
 
 #: src/konqmainwindow.cpp:3909
 #, kde-format
@@ -1713,15 +1710,13 @@ msgstr ""
 "(%1) შეგიძლიათ"
 
 #: src/konqmainwindow.cpp:5644
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have multiple tabs open in this window, are you sure you want to quit?"
+#, kde-format
 msgid ""
 "You are closing all windows except this one. Are you sure you want to "
 "continue?"
 msgstr ""
-"ამ ფანჯარაში ერთზე მეტი ჩანართია ღია. დარწმუნებული ბრძანდებით, რომ გნებავთ, "
-"გახვიდეთ?"
+"ხურავთ ყველა ფანჯარას ამის გარდა. დარწმუნებული ბრძანდებით, რომ გნებავთ, ეს "
+"გააკეთოთ?"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28

@@ -13,13 +13,13 @@
 # obsoleteman <tulliana@gmail.com>, 2008-2009,2011.
 # obsoleteman <tulliana@gmail.com>, 2010,2012-2013.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022-2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-07 00:42+0000\n"
-"PO-Revision-Date: 2026-05-02 19:56+0300\n"
+"POT-Creation-Date: 2026-07-08 00:44+0000\n"
+"PO-Revision-Date: 2026-07-07 08:27+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -631,6 +631,8 @@ msgstr ""
 #, kde-format
 msgid "Are you sure you want to quit Konqueror? This will close all windows"
 msgstr ""
+"Konqueror’dan çıkmak istediğinizden emin misiniz? Bu, tüm pencereleri "
+"kapatacaktır."
 
 #: src/konqapplication.cpp:582 src/konqmainwindow.cpp:4876
 #: src/konqmainwindow.cpp:5645
@@ -640,10 +642,9 @@ msgid "Confirmation"
 msgstr "Onay"
 
 #: src/konqapplication.cpp:584
-#, fuzzy, kde-format
-#| msgid "Onl&y current window"
+#, kde-format
 msgid "Close current window"
-msgstr "&Yalnızca geçerli pencere"
+msgstr "Geçerli Pencereyi Kapat"
 
 #: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4945
 #: src/konqmainwindow.cpp:4991
@@ -1033,51 +1034,49 @@ msgid "&Find File..."
 msgstr "Dosya &Bul…"
 
 #: src/konqmainwindow.cpp:3354
-#, fuzzy, kde-format
-#| msgid "Close &Other Tabs"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Other Windows"
-msgstr "Diğer Sekmeleri &Kapat"
+msgstr "Diğer Pencereleri Kapat"
 
 #: src/konqmainwindow.cpp:3355
 #, kde-format
 msgid "Closes all windows except this one"
-msgstr ""
+msgstr "Bu pencere dışındaki tüm pencereleri kapatır."
 
 #: src/konqmainwindow.cpp:3357
 #, kde-format
 msgid "Closes all windows except this one. It doesn't close preloaded windows"
 msgstr ""
+"Bu pencere dışındaki tüm pencereleri kapatır. Önceden yüklenmiş pencereler "
+"kapatılmaz."
 
 #: src/konqmainwindow.cpp:3361
-#, fuzzy, kde-format
-#| msgid "Konqueror"
+#, kde-format
 msgctxt "@action:inmenu quit Konqueror"
 msgid "Quit Konqueror"
-msgstr "Konqueror"
+msgstr "Konqueror’dan Çık"
 
 #: src/konqmainwindow.cpp:3363
 #, kde-format
 msgid "Closes all Konqueror windows and quits the application"
-msgstr ""
+msgstr "Tüm Konqueror pencerelerini kapatır ve uygulamadan çıkar."
 
 #: src/konqmainwindow.cpp:3367
-#, fuzzy, kde-format
-#| msgid "Und&o: Closed Window"
+#, kde-format
 msgctxt "@action:inmenu close current window"
 msgid "Close Window"
-msgstr "Ge&ri Al: Kapatılmış Pencere"
+msgstr "Pencereyi Kapat"
 
 #: src/konqmainwindow.cpp:3369
-#, fuzzy, kde-format
-#| msgid "&Close Active View"
+#, kde-format
 msgid "Close this window"
-msgstr "Etkin Görünümü &Kaldır"
+msgstr "Bu pencereyi kapat"
 
 #: src/konqmainwindow.cpp:3371
 #, kde-format
 msgid "Close this window, quitting Konqueror if it is the only window"
-msgstr ""
+msgstr "Bu pencereyi kapat ve tek bu pencere varsa Konqueror’dan çık"
 
 #: src/konqmainwindow.cpp:3373
 #, kde-format
@@ -1484,25 +1483,24 @@ msgid "Shows the developer tools for the current page"
 msgstr "Geçerli sayfa için geliştirici araçlarını gösterir"
 
 #: src/konqmainwindow.cpp:3745
-#, fuzzy, kde-format
-#| msgid "Mark the current window as protected"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark the current window as protected"
-msgstr "Geçerli pencereyi korunmuş olarak imle"
+msgstr "Geçerli pencereyi korunuyor olarak imle"
 
 #: src/konqmainwindow.cpp:3747
 #, fuzzy, kde-format
+#| msgctxt "@info:whatsthis"
 #| msgid ""
-#| "<p>Mark the current window as protected</p><p>Marking a window as "
-#| "protected ensures that Konqueror will never open external links in it</p>"
+#| "<p>Mark the current window as protected.</p><p>Konqueror will never open "
+#| "open external links in a protected window.</p>"
 msgctxt "@info:whatsthis"
 msgid ""
 "<p>Mark the current window as protected.</p><p>Konqueror will never open "
-"open external links in a protected window.</p>"
+"external links in a protected window.</p>"
 msgstr ""
-"<p>Geçerli pencereyi korunmuş olarak imle</p><p>Bir pencereyi korunmuş "
-"olarak imlemek, Konqueror’un orada hiçbir dış bağlantıyı açmayacağı anlamına "
-"gelir.</p>"
+"<p>Geçerli pencereyi korunuyor olarak imle</p><p>Konqueror, korunan bir "
+"pencerede hiçbir zaman dış bağlantıları açmaz.</p>"
 
 #: src/konqmainwindow.cpp:3909
 #, kde-format
@@ -1717,13 +1715,13 @@ msgstr ""
 "Tam Ekran Kipi klavye kısayolunu kullanın (%1)"
 
 #: src/konqmainwindow.cpp:5644
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have multiple tabs open in this window, are you sure you want to quit?"
+#, kde-format
 msgid ""
 "You are closing all windows except this one. Are you sure you want to "
 "continue?"
-msgstr "Birden çok sekme açık, çıkmak istediğinizden emin misiniz?"
+msgstr ""
+"Bu pencere dışındaki tüm diğer pencereleri kapatıyorsunuz. Sürdürmek "
+"istediğinizden emin misiniz?"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
