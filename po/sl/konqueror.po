@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-08 00:44+0000\n"
-"PO-Revision-Date: 2026-07-07 06:59+0200\n"
+"PO-Revision-Date: 2026-07-08 07:13+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1488,17 +1488,13 @@ msgid "Mark the current window as protected"
 msgstr "Označi trenutno okno kot zavarovano"
 
 #: src/konqmainwindow.cpp:3747
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<p>Mark the current window as protected.</p><p>Konqueror will never open "
-#| "open external links in a protected window.</p>"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<p>Mark the current window as protected.</p><p>Konqueror will never open "
 "external links in a protected window.</p>"
 msgstr ""
-"<p>Označi trenutno okno kot zavarovano.</p><p>Konqueror nikoli ne bo odprl "
+"<p>Označi trenutno okno kot zavarovano.</p><p>Konqueror ne bo nikoli odprl "
 "odprtih zunanjih povezav v zavarovanem oknu.</p>"
 
 #: src/konqmainwindow.cpp:3909
