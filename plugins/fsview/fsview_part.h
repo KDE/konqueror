@@ -11,7 +11,6 @@
 #ifndef FSVIEW_PART_H
 #define FSVIEW_PART_H
 
-#include <kparts_version.h>
 #include <kparts/part.h>
 
 #include <KIO/Job>

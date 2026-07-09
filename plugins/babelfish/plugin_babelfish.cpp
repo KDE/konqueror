@@ -18,7 +18,6 @@
 #include <kparts/part.h>
 #include <KParts/NavigationExtension>
 
-#include <kwidgetsaddons_version.h>
 #include <kactioncollection.h>
 #include <kcountryflagemojiiconengine.h>
 #include <QMenu>

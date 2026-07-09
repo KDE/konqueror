@@ -8,7 +8,6 @@
 
 #include "konqutils.h"
 
-#include <kparts_version.h>
 #include <KParts/PartLoader>
 
 #include <QJsonObject>

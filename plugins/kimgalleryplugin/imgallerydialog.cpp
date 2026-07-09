@@ -23,7 +23,6 @@
 #include <kconfiggroup.h>
 #include <kguiitem.h>
 #include <kfontchooser.h>
-#include <kwidgetsaddons_version.h>
 
 KIGPDialog::KIGPDialog(QWidget *parent, const QString &path)
     : KPageDialog(parent)

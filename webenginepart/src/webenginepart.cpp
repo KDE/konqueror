@@ -42,7 +42,6 @@
 #include "settings/webenginesettings.h"
 #include "ui/credentialsdetailswidget.h"
 
-#include <kconfigwidgets_version.h>
 #include <KCodecAction>
 #include <KIO/Global>
 #include <KIO/MetaData>
@@ -81,7 +80,6 @@
 #include <QTemporaryDir>
 
 #include "utils.h"
-#include <kio_version.h>
 
 #include <QWebEngineHistory>
 

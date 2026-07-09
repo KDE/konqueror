@@ -11,7 +11,6 @@
 
 #include "konqdebug.h"
 #include <kstartupinfo.h>
-#include <kwindowsystem_version.h>
 
 KonqMainWindowAdaptor::KonqMainWindowAdaptor(KonqMainWindow *mainWindow)
     : QDBusAbstractAdaptor(mainWindow), m_pMainWindow(mainWindow)

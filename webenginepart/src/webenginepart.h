@@ -17,7 +17,6 @@
 
 #include <QWebEnginePage>
 
-#include <kparts_version.h>
 #include <KParts/ReadOnlyPart>
 #include <QUrl>
 #include <QWebEngineScript>

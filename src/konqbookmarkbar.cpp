@@ -13,7 +13,6 @@
 #include <QEvent>
 #include <QMenu>
 
-#include <kwidgetsaddons_version.h>
 #include <ktoolbar.h>
 #include <kactionmenu.h>
 #include <kconfig.h>

@@ -44,7 +44,6 @@
 #include <KDBusService>
 #include <KStartupInfo>
 #include <KWindowSystem>
-#include <kwindowsystem_version.h>
 #include <KX11Extras>
 #include <KMessageBox>
 

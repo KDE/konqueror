@@ -12,8 +12,6 @@
 
 #include "konqdebug.h"
 
-#include <kwidgetsaddons_version.h>
-
 #include <QIcon>
 #include <QMenu>
 #include <QAction>

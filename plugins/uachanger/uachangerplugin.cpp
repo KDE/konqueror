@@ -15,7 +15,6 @@
 #include <QMetaObject>
 #include <QActionGroup>
 
-#include <kwidgetsaddons_version.h>
 #include <kactionmenu.h>
 #include <klocalizedstring.h>
 #include <kservice.h>

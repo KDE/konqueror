@@ -8,7 +8,6 @@
 #include "interfaces/browser.h"
 #include "interfaces/cookiejar.h"
 
-#include <kwidgetsaddons_version.h>
 #include <kconfig.h>
 #include <KLocalizedString>
 #include <kmessagebox.h>

@@ -24,7 +24,6 @@
 #include <kdesktopfile.h>
 #include <kauthorized.h>
 #include <kacceleratormanager.h>
-#include <kio_version.h>
 #include <KIO/EmptyTrashJob>
 #include <KIO/JobUiDelegate>
 #include <KIO/RestoreJob>

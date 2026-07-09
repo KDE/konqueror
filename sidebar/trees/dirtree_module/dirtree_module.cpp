@@ -10,7 +10,6 @@
 #include "dirtree_item.h"
 
 #include <kconfiggroup.h>
-#include <kio_version.h>
 #include <kprotocolmanager.h>
 #include <kdesktopfile.h>
 #include <kmessagebox.h>

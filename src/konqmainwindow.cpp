@@ -51,14 +51,10 @@
 #include <konqpixmapprovider.h>
 #include <konqembedsettings.h>
 #include <konq_spellcheckingconfigurationdispatcher.h>
-#include <kcmutils_version.h>
 #include "libkonq_utils.h"
 
 #include "konqsettings.h"
 
-#include <kwidgetsaddons_version.h>
-#include <kxmlgui_version.h>
-#include <kparts_version.h>
 #include <kbookmarkmanager.h>
 #include <klineedit.h>
 #include <kzip.h>
@@ -139,7 +135,6 @@
 #include <sonnet/configdialog.h>
 #include <kwindowsystem.h>
 #include <netwm.h>
-#include <kio_version.h>
 #include <KIO/JobUiDelegateFactory>
 
 #include <kauthorized.h>

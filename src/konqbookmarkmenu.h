@@ -14,7 +14,6 @@
 
 #include <KActionCollection>
 #include <KBookmarkAction>
-#include <kbookmarks_version.h>
 
 #include <QPointer>
 

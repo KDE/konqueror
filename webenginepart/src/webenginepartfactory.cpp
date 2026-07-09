@@ -10,7 +10,6 @@
 #include "webenginepart_ext.h"
 #include "webenginepart.h"
 
-#include <kparts_version.h>
 #include <KPluginMetaData>
 
 #include <QWidget>

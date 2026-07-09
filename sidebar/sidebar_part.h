@@ -6,7 +6,6 @@
 #ifndef KONQSIDEBARPART_H
 #define KONQSIDEBARPART_H
 
-#include <kparts_version.h>
 #include <kparts/part.h>
 #include <KParts/NavigationExtension>
 #include <QPointer>

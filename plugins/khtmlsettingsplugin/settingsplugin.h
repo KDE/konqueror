@@ -7,7 +7,6 @@
 #ifndef SETTINGS_PLUGIN
 #define SETTINGS_PLUGIN
 
-#include <kparts_version.h>
 #include <konq_kpart_plugin.h>
 
 class KConfig;

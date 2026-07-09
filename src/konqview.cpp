@@ -52,8 +52,6 @@
 #include <PlasmaActivities/ResourceInstance>
 #endif
 
-#include <kparts_version.h>
-
 #include <KJobWidgets>
 #include <KParts/Part>
 #include <KParts/StatusBarExtension>
