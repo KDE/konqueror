@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/konqueror/konqueror.pot\n"
-"X-Crowdin-File-ID: 48628\n"
+"X-Crowdin-File: /kf6-stable/messages/konqueror/konqueror.pot\n"
+"X-Crowdin-File-ID: 51284\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -615,10 +615,9 @@ msgid "Confirmation"
 msgstr "确认"
 
 #: src/konqapplication.cpp:584
-#, fuzzy, kde-format
-#| msgid "Onl&y current window"
+#, kde-format
 msgid "Close current window"
-msgstr "在当前窗口中打开标签(&Y)"
+msgstr ""
 
 #: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4945
 #: src/konqmainwindow.cpp:4991
@@ -1005,11 +1004,10 @@ msgid "&Find File..."
 msgstr "查找文件(&F)..."
 
 #: src/konqmainwindow.cpp:3354
-#, fuzzy, kde-format
-#| msgid "Close &Other Tabs"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Other Windows"
-msgstr "关闭其他标签页(&O)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3355
 #, kde-format
@@ -1022,11 +1020,10 @@ msgid "Closes all windows except this one. It doesn't close preloaded windows"
 msgstr ""
 
 #: src/konqmainwindow.cpp:3361
-#, fuzzy, kde-format
-#| msgid "Konqueror"
+#, kde-format
 msgctxt "@action:inmenu quit Konqueror"
 msgid "Quit Konqueror"
-msgstr "Konqueror"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3363
 #, kde-format
@@ -1034,17 +1031,15 @@ msgid "Closes all Konqueror windows and quits the application"
 msgstr ""
 
 #: src/konqmainwindow.cpp:3367
-#, fuzzy, kde-format
-#| msgid "Und&o: Closed Window"
+#, kde-format
 msgctxt "@action:inmenu close current window"
 msgid "Close Window"
-msgstr "撤销：已关闭窗口(&O)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3369
-#, fuzzy, kde-format
-#| msgid "&Close Active View"
+#, kde-format
 msgid "Close this window"
-msgstr "关闭活动视图(&C)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3371
 #, kde-format
@@ -1443,24 +1438,18 @@ msgid "Shows the developer tools for the current page"
 msgstr "显示当前页面的开发者工具"
 
 #: src/konqmainwindow.cpp:3745
-#, fuzzy, kde-format
-#| msgid "Mark the current window as protected"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark the current window as protected"
-msgstr "标记当前窗口为受保护"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3747
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Mark the current window as protected</p><p>Marking a window as "
-#| "protected ensures that Konqueror will never open external links in it</p>"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<p>Mark the current window as protected.</p><p>Konqueror will never open "
 "external links in a protected window.</p>"
 msgstr ""
-"<p>标记当前窗口为受保护</p><p>标记某个窗口为受保护将确保 Konqueror 不会在该窗"
-"口中打开外部链接</p>"
 
 #: src/konqmainwindow.cpp:3909
 #, kde-format
@@ -1668,13 +1657,11 @@ msgstr ""
 "式 (%1)"
 
 #: src/konqmainwindow.cpp:5644
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have multiple tabs open in this window, are you sure you want to quit?"
+#, kde-format
 msgid ""
 "You are closing all windows except this one. Are you sure you want to "
 "continue?"
-msgstr "此窗口中打开了多个标签页，您确定要退出吗？"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
