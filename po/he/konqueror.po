@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-08 00:44+0000\n"
-"PO-Revision-Date: 2026-07-07 09:12+0300\n"
+"PO-Revision-Date: 2026-07-10 10:27+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1465,11 +1465,7 @@ msgid "Mark the current window as protected"
 msgstr "סימון החלון הנוכחי כמוגן"
 
 #: src/konqmainwindow.cpp:3747
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<p>Mark the current window as protected.</p><p>Konqueror will never open "
-#| "open external links in a protected window.</p>"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<p>Mark the current window as protected.</p><p>Konqueror will never open "
