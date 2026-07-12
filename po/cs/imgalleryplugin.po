@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2026-07-12 00:44+0000\n"
 "PO-Revision-Date: 2020-07-21 13:27+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -18,98 +18,98 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 20.04.3\n"
 
-#: imgallerydialog.cpp:37
+#: imgallerydialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Image Gallery"
 msgstr "Vytvořit obrázkovou galerii"
 
-#: imgallerydialog.cpp:38
+#: imgallerydialog.cpp:37
 #, kde-format
 msgid "Create"
 msgstr "Vytvořit"
 
-#: imgallerydialog.cpp:48 imgallerydialog.cpp:84
+#: imgallerydialog.cpp:47 imgallerydialog.cpp:83
 #, kde-format
 msgid "Image Gallery for %1"
 msgstr "Galerie obrázků pro %1"
 
-#: imgallerydialog.cpp:76
+#: imgallerydialog.cpp:75
 #, kde-format
 msgid "Look"
 msgstr "Vzhled"
 
-#: imgallerydialog.cpp:77
+#: imgallerydialog.cpp:76
 #, kde-format
 msgid "Page Look"
 msgstr "Vzhled stránky"
 
-#: imgallerydialog.cpp:85
+#: imgallerydialog.cpp:84
 #, kde-format
 msgid "&Page title:"
 msgstr "&Titulek stránky:"
 
-#: imgallerydialog.cpp:93
+#: imgallerydialog.cpp:92
 #, kde-format
 msgid "I&mages per row:"
 msgstr "O&brázků na řádek:"
 
-#: imgallerydialog.cpp:95
+#: imgallerydialog.cpp:94
 #, kde-format
 msgid "Show image file &name"
 msgstr "Zobrazit &název souboru s obrázkem"
 
-#: imgallerydialog.cpp:99
+#: imgallerydialog.cpp:98
 #, kde-format
 msgid "Show image file &size"
 msgstr "Přidat velikost &souboru s obrázkem"
 
-#: imgallerydialog.cpp:103
+#: imgallerydialog.cpp:102
 #, kde-format
 msgid "Show image &dimensions"
 msgstr "Při&dat rozměry obrázku"
 
-#: imgallerydialog.cpp:114
+#: imgallerydialog.cpp:113
 #, kde-format
 msgid "Fon&t name:"
 msgstr "Náz&ev písma:"
 
-#: imgallerydialog.cpp:122
+#: imgallerydialog.cpp:121
 #, kde-format
 msgid "Font si&ze:"
 msgstr "Velikost &písma:"
 
-#: imgallerydialog.cpp:126
+#: imgallerydialog.cpp:125
 #, kde-format
 msgid "&Foreground color:"
 msgstr "Barv&a popředí:"
 
-#: imgallerydialog.cpp:130
+#: imgallerydialog.cpp:129
 #, kde-format
 msgid "&Background color:"
 msgstr "&Barva pozadí:"
 
-#: imgallerydialog.cpp:136 imgallerydialog.cpp:137
+#: imgallerydialog.cpp:135 imgallerydialog.cpp:136
 #, kde-format
 msgid "Folders"
 msgstr "Složky"
 
-#: imgallerydialog.cpp:145
+#: imgallerydialog.cpp:144
 #, kde-format
 msgid "&Save to HTML file:"
 msgstr "Uložit do HTML &souboru:"
 
-#: imgallerydialog.cpp:147
+#: imgallerydialog.cpp:146
 #, kde-format
 msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
 msgstr "<p>Jméno HTML souboru, do kterého bude uložena tato galerie.</p>"
 
-#: imgallerydialog.cpp:150
+#: imgallerydialog.cpp:149
 #, kde-format
 msgid "&Recurse subfolders"
 msgstr "&Rekurzivně prohledávat složky"
 
-#: imgallerydialog.cpp:152
+#: imgallerydialog.cpp:151
 #, kde-format
 msgid ""
 "<p>Whether subfolders should be included for the image gallery creation or "
@@ -118,12 +118,12 @@ msgstr ""
 "<p>Jestli mají být podsložky začleněny k vytvoření obrázkové galerie nebo ne."
 "</p>"
 
-#: imgallerydialog.cpp:163
+#: imgallerydialog.cpp:162
 #, kde-format
 msgid "Endless"
 msgstr "nekonečná"
 
-#: imgallerydialog.cpp:165
+#: imgallerydialog.cpp:164
 #, kde-format
 msgid ""
 "<p>You can limit the number of folders the image gallery creator will "
@@ -132,17 +132,17 @@ msgstr ""
 "<p>Můžete omezit počet složek, do kterých bude obrázková galerie zasahovat, "
 "nastavením horní hranice hloubky rekurze.</p>"
 
-#: imgallerydialog.cpp:168
+#: imgallerydialog.cpp:167
 #, kde-format
 msgid "Rec&ursion depth:"
 msgstr "Úroveň rek&urze:"
 
-#: imgallerydialog.cpp:172
+#: imgallerydialog.cpp:171
 #, kde-format
 msgid "Copy or&iginal files"
 msgstr "Zk&opírovat původní soubory"
 
-#: imgallerydialog.cpp:174
+#: imgallerydialog.cpp:173
 #, kde-format
 msgid ""
 "<p>This makes a copy of all images and the gallery will refer to these "
@@ -151,12 +151,12 @@ msgstr ""
 "<p>Toto vytvoří kopie všech obrázků, aby s nimi mohla galerie pracovat "
 "namísto originálních obrázků.</p>"
 
-#: imgallerydialog.cpp:179
+#: imgallerydialog.cpp:178
 #, kde-format
 msgid "Use &comment file"
 msgstr "Použít soubor s &komentáři"
 
-#: imgallerydialog.cpp:181
+#: imgallerydialog.cpp:180
 #, kde-format
 msgid ""
 "<p>If you enable this option you can specify a comment file which will be "
@@ -167,7 +167,7 @@ msgstr ""
 "pro generování titulků k obrázkům.</p><p>Pro více podrobností ohledně "
 "formátu souboru se podívejte na \"Co je toto?\" nápovědu níže.</p>"
 
-#: imgallerydialog.cpp:190
+#: imgallerydialog.cpp:189
 #, kde-format
 msgid ""
 "<p>You can specify the name of the comment file here. The comment file "
@@ -179,32 +179,32 @@ msgstr ""
 "p><p>NÁZEVSOUBORU1:<br />Popis<br /><br />NÁZEVSOUBORU2:<br />Popis<br /"
 "><br /> a tak dále</p>"
 
-#: imgallerydialog.cpp:200
+#: imgallerydialog.cpp:199
 #, kde-format
 msgid "Comments &file:"
 msgstr "Soubo&r s komentáři:"
 
-#: imgallerydialog.cpp:210 imgallerydialog.cpp:211
+#: imgallerydialog.cpp:209 imgallerydialog.cpp:210
 #, kde-format
 msgid "Thumbnails"
 msgstr "Miniatury"
 
-#: imgallerydialog.cpp:224
+#: imgallerydialog.cpp:223
 #, kde-format
 msgid "Image f&ormat:"
 msgstr "F&ormát obrázku:"
 
-#: imgallerydialog.cpp:232
+#: imgallerydialog.cpp:231
 #, kde-format
 msgid "Thumbnail size:"
 msgstr "Velikost miniatur:"
 
-#: imgallerydialog.cpp:235
+#: imgallerydialog.cpp:234
 #, kde-format
 msgid "&Set different color depth:"
 msgstr "&Nastav jinou barevnou hloubku:"
 
-#: imgallerydialog.cpp:246
+#: imgallerydialog.cpp:245
 #, kde-format
 msgid "Color depth:"
 msgstr "Barevná hloubka:"

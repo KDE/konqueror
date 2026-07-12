@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2026-07-12 00:44+0000\n"
 "PO-Revision-Date: 2020-07-16 08:09+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -22,98 +22,98 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: imgallerydialog.cpp:37
+#: imgallerydialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Image Gallery"
 msgstr "Створення галереї зображень"
 
-#: imgallerydialog.cpp:38
+#: imgallerydialog.cpp:37
 #, kde-format
 msgid "Create"
 msgstr "Створити"
 
-#: imgallerydialog.cpp:48 imgallerydialog.cpp:84
+#: imgallerydialog.cpp:47 imgallerydialog.cpp:83
 #, kde-format
 msgid "Image Gallery for %1"
 msgstr "Галерея зображень для %1"
 
-#: imgallerydialog.cpp:76
+#: imgallerydialog.cpp:75
 #, kde-format
 msgid "Look"
 msgstr "Вигляд"
 
-#: imgallerydialog.cpp:77
+#: imgallerydialog.cpp:76
 #, kde-format
 msgid "Page Look"
 msgstr "Вигляд сторінки"
 
-#: imgallerydialog.cpp:85
+#: imgallerydialog.cpp:84
 #, kde-format
 msgid "&Page title:"
 msgstr "Заголовок &сторінки:"
 
-#: imgallerydialog.cpp:93
+#: imgallerydialog.cpp:92
 #, kde-format
 msgid "I&mages per row:"
 msgstr "&Зображень на рядок:"
 
-#: imgallerydialog.cpp:95
+#: imgallerydialog.cpp:94
 #, kde-format
 msgid "Show image file &name"
 msgstr "Показувати &назву файла зображення"
 
-#: imgallerydialog.cpp:99
+#: imgallerydialog.cpp:98
 #, kde-format
 msgid "Show image file &size"
 msgstr "Показувати &розмір файла зображення"
 
-#: imgallerydialog.cpp:103
+#: imgallerydialog.cpp:102
 #, kde-format
 msgid "Show image &dimensions"
 msgstr "Показувати ро&зміри зображення"
 
-#: imgallerydialog.cpp:114
+#: imgallerydialog.cpp:113
 #, kde-format
 msgid "Fon&t name:"
 msgstr "Назва шриф&ту:"
 
-#: imgallerydialog.cpp:122
+#: imgallerydialog.cpp:121
 #, kde-format
 msgid "Font si&ze:"
 msgstr "Ро&змір шрифту:"
 
-#: imgallerydialog.cpp:126
+#: imgallerydialog.cpp:125
 #, kde-format
 msgid "&Foreground color:"
 msgstr "Колір &написів:"
 
-#: imgallerydialog.cpp:130
+#: imgallerydialog.cpp:129
 #, kde-format
 msgid "&Background color:"
 msgstr "Колір &тла:"
 
-#: imgallerydialog.cpp:136 imgallerydialog.cpp:137
+#: imgallerydialog.cpp:135 imgallerydialog.cpp:136
 #, kde-format
 msgid "Folders"
 msgstr "Теки"
 
-#: imgallerydialog.cpp:145
+#: imgallerydialog.cpp:144
 #, kde-format
 msgid "&Save to HTML file:"
 msgstr "&Зберегти до HTML-файла:"
 
-#: imgallerydialog.cpp:147
+#: imgallerydialog.cpp:146
 #, kde-format
 msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
 msgstr "<p>Назва файла HTML для збереження цієї галереї.</p>"
 
-#: imgallerydialog.cpp:150
+#: imgallerydialog.cpp:149
 #, kde-format
 msgid "&Recurse subfolders"
 msgstr "&Підтеки рекурсивно"
 
-#: imgallerydialog.cpp:152
+#: imgallerydialog.cpp:151
 #, kde-format
 msgid ""
 "<p>Whether subfolders should be included for the image gallery creation or "
@@ -121,12 +121,12 @@ msgid ""
 msgstr ""
 "<p>Будуть включатися підкаталоги для створення галереї зображень чи ні.</p>"
 
-#: imgallerydialog.cpp:163
+#: imgallerydialog.cpp:162
 #, kde-format
 msgid "Endless"
 msgstr "Нескінченно"
 
-#: imgallerydialog.cpp:165
+#: imgallerydialog.cpp:164
 #, kde-format
 msgid ""
 "<p>You can limit the number of folders the image gallery creator will "
@@ -135,17 +135,17 @@ msgstr ""
 "<p>Можна обмежити кількість каталогів галереї зображень, через які програма "
 "буде проходити, встановивши верхню межу глибини рекурсії.</p>"
 
-#: imgallerydialog.cpp:168
+#: imgallerydialog.cpp:167
 #, kde-format
 msgid "Rec&ursion depth:"
 msgstr "Глибина ре&курсії:"
 
-#: imgallerydialog.cpp:172
+#: imgallerydialog.cpp:171
 #, kde-format
 msgid "Copy or&iginal files"
 msgstr "Копіювати &початкові файли"
 
-#: imgallerydialog.cpp:174
+#: imgallerydialog.cpp:173
 #, kde-format
 msgid ""
 "<p>This makes a copy of all images and the gallery will refer to these "
@@ -154,12 +154,12 @@ msgstr ""
 "<p>Робить копії всіх зображень і потім галерея буде посилатися на ці копії "
 "замість початкових зображень.</p>"
 
-#: imgallerydialog.cpp:179
+#: imgallerydialog.cpp:178
 #, kde-format
 msgid "Use &comment file"
 msgstr "Використовувати файл &коментарів"
 
-#: imgallerydialog.cpp:181
+#: imgallerydialog.cpp:180
 #, kde-format
 msgid ""
 "<p>If you enable this option you can specify a comment file which will be "
@@ -170,7 +170,7 @@ msgstr ""
 "використовуватись для створення субтитрів для зображень.</p><p>Щодо "
 "подробиць та формату файла дивіться довідку «Що це?» внизу.</p>"
 
-#: imgallerydialog.cpp:190
+#: imgallerydialog.cpp:189
 #, kde-format
 msgid ""
 "<p>You can specify the name of the comment file here. The comment file "
@@ -182,32 +182,32 @@ msgstr ""
 "субтитри для зображень. Формат цього файла такий:</p><p>НАЗВА_ФАЙЛА1:<br /"
 ">Опис<br /><br />НАЗВА_ФАЙЛА2:<br />Опис<br /> <br />і так далі</p>"
 
-#: imgallerydialog.cpp:200
+#: imgallerydialog.cpp:199
 #, kde-format
 msgid "Comments &file:"
 msgstr "&Файл коментарів:"
 
-#: imgallerydialog.cpp:210 imgallerydialog.cpp:211
+#: imgallerydialog.cpp:209 imgallerydialog.cpp:210
 #, kde-format
 msgid "Thumbnails"
 msgstr "Мініатюри"
 
-#: imgallerydialog.cpp:224
+#: imgallerydialog.cpp:223
 #, kde-format
 msgid "Image f&ormat:"
 msgstr "&Формат зображення:"
 
-#: imgallerydialog.cpp:232
+#: imgallerydialog.cpp:231
 #, kde-format
 msgid "Thumbnail size:"
 msgstr "Розмір мініатюри:"
 
-#: imgallerydialog.cpp:235
+#: imgallerydialog.cpp:234
 #, kde-format
 msgid "&Set different color depth:"
 msgstr "&Встановити іншу глибину кольору:"
 
-#: imgallerydialog.cpp:246
+#: imgallerydialog.cpp:245
 #, kde-format
 msgid "Color depth:"
 msgstr "Глибина кольору:"

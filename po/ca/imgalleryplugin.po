@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2026-07-12 00:44+0000\n"
 "PO-Revision-Date: 2023-11-19 21:26+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -22,98 +22,98 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
-#: imgallerydialog.cpp:37
+#: imgallerydialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Image Gallery"
 msgstr "Creació de galeria d'imatges"
 
-#: imgallerydialog.cpp:38
+#: imgallerydialog.cpp:37
 #, kde-format
 msgid "Create"
 msgstr "Crea"
 
-#: imgallerydialog.cpp:48 imgallerydialog.cpp:84
+#: imgallerydialog.cpp:47 imgallerydialog.cpp:83
 #, kde-format
 msgid "Image Gallery for %1"
 msgstr "Galeria d'imatges per a %1"
 
-#: imgallerydialog.cpp:76
+#: imgallerydialog.cpp:75
 #, kde-format
 msgid "Look"
 msgstr "Aspecte"
 
-#: imgallerydialog.cpp:77
+#: imgallerydialog.cpp:76
 #, kde-format
 msgid "Page Look"
 msgstr "Aspecte de la pàgina"
 
-#: imgallerydialog.cpp:85
+#: imgallerydialog.cpp:84
 #, kde-format
 msgid "&Page title:"
 msgstr "Títol de la &pàgina:"
 
-#: imgallerydialog.cpp:93
+#: imgallerydialog.cpp:92
 #, kde-format
 msgid "I&mages per row:"
 msgstr "I&matges per fila:"
 
-#: imgallerydialog.cpp:95
+#: imgallerydialog.cpp:94
 #, kde-format
 msgid "Show image file &name"
 msgstr "Mostra el &nom del fitxer de la imatge"
 
-#: imgallerydialog.cpp:99
+#: imgallerydialog.cpp:98
 #, kde-format
 msgid "Show image file &size"
 msgstr "Mo&stra la mida del fitxer de la imatge"
 
-#: imgallerydialog.cpp:103
+#: imgallerydialog.cpp:102
 #, kde-format
 msgid "Show image &dimensions"
 msgstr "Mostra les &dimensions de la imatge"
 
-#: imgallerydialog.cpp:114
+#: imgallerydialog.cpp:113
 #, kde-format
 msgid "Fon&t name:"
 msgstr "Nom de la &lletra:"
 
-#: imgallerydialog.cpp:122
+#: imgallerydialog.cpp:121
 #, kde-format
 msgid "Font si&ze:"
 msgstr "&Mida de la lletra:"
 
-#: imgallerydialog.cpp:126
+#: imgallerydialog.cpp:125
 #, kde-format
 msgid "&Foreground color:"
 msgstr "Color en primer &pla:"
 
-#: imgallerydialog.cpp:130
+#: imgallerydialog.cpp:129
 #, kde-format
 msgid "&Background color:"
 msgstr "Color de &fons:"
 
-#: imgallerydialog.cpp:136 imgallerydialog.cpp:137
+#: imgallerydialog.cpp:135 imgallerydialog.cpp:136
 #, kde-format
 msgid "Folders"
 msgstr "Carpetes"
 
-#: imgallerydialog.cpp:145
+#: imgallerydialog.cpp:144
 #, kde-format
 msgid "&Save to HTML file:"
 msgstr "&Desa a fitxer HTML:"
 
-#: imgallerydialog.cpp:147
+#: imgallerydialog.cpp:146
 #, kde-format
 msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
 msgstr "<p>El nom del fitxer HTML amb el que es desarà aquesta galeria.</p>"
 
-#: imgallerydialog.cpp:150
+#: imgallerydialog.cpp:149
 #, kde-format
 msgid "&Recurse subfolders"
 msgstr "&Fes-ho també en les subcarpetes"
 
-#: imgallerydialog.cpp:152
+#: imgallerydialog.cpp:151
 #, kde-format
 msgid ""
 "<p>Whether subfolders should be included for the image gallery creation or "
@@ -122,12 +122,12 @@ msgstr ""
 "<p>S'inclouran o no les subcarpetes en la creació de la galeria d'imatges.</"
 "p>"
 
-#: imgallerydialog.cpp:163
+#: imgallerydialog.cpp:162
 #, kde-format
 msgid "Endless"
 msgstr "Indefinit"
 
-#: imgallerydialog.cpp:165
+#: imgallerydialog.cpp:164
 #, kde-format
 msgid ""
 "<p>You can limit the number of folders the image gallery creator will "
@@ -136,17 +136,17 @@ msgstr ""
 "<p>Podeu limitar el nombre de carpetes que podrà indexar el creador de "
 "galeria d'imatges.</p>"
 
-#: imgallerydialog.cpp:168
+#: imgallerydialog.cpp:167
 #, kde-format
 msgid "Rec&ursion depth:"
 msgstr "Nivell de rec&ursivitat:"
 
-#: imgallerydialog.cpp:172
+#: imgallerydialog.cpp:171
 #, kde-format
 msgid "Copy or&iginal files"
 msgstr "Copia els fitxers or&iginals"
 
-#: imgallerydialog.cpp:174
+#: imgallerydialog.cpp:173
 #, kde-format
 msgid ""
 "<p>This makes a copy of all images and the gallery will refer to these "
@@ -155,12 +155,12 @@ msgstr ""
 "<p>Això crea una còpia de totes les imatges i de la galeria per a no indexar "
 "els fitxers originals.</p>"
 
-#: imgallerydialog.cpp:179
+#: imgallerydialog.cpp:178
 #, kde-format
 msgid "Use &comment file"
 msgstr "Empra un fitxer de &comentari"
 
-#: imgallerydialog.cpp:181
+#: imgallerydialog.cpp:180
 #, kde-format
 msgid ""
 "<p>If you enable this option you can specify a comment file which will be "
@@ -172,7 +172,7 @@ msgstr ""
 "detalls quant al format del fitxer, si us plau, consulteu l'ajuda «Què és "
 "això?» de més avall.</p>"
 
-#: imgallerydialog.cpp:190
+#: imgallerydialog.cpp:189
 #, kde-format
 msgid ""
 "<p>You can specify the name of the comment file here. The comment file "
@@ -185,32 +185,32 @@ msgstr ""
 "p><p>NOM_FITXER_1:<br />Descripció<br /><br />NOM_FITXER_2:<br /"
 ">Descripció<br /><br />i anar seguint així</p>"
 
-#: imgallerydialog.cpp:200
+#: imgallerydialog.cpp:199
 #, kde-format
 msgid "Comments &file:"
 msgstr "Fitxer de &comentaris:"
 
-#: imgallerydialog.cpp:210 imgallerydialog.cpp:211
+#: imgallerydialog.cpp:209 imgallerydialog.cpp:210
 #, kde-format
 msgid "Thumbnails"
 msgstr "Miniatures"
 
-#: imgallerydialog.cpp:224
+#: imgallerydialog.cpp:223
 #, kde-format
 msgid "Image f&ormat:"
 msgstr "F&ormat de la imatge:"
 
-#: imgallerydialog.cpp:232
+#: imgallerydialog.cpp:231
 #, kde-format
 msgid "Thumbnail size:"
 msgstr "Mida de les miniatures:"
 
-#: imgallerydialog.cpp:235
+#: imgallerydialog.cpp:234
 #, kde-format
 msgid "&Set different color depth:"
 msgstr "E&stableix una profunditat de color diferent:"
 
-#: imgallerydialog.cpp:246
+#: imgallerydialog.cpp:245
 #, kde-format
 msgid "Color depth:"
 msgstr "Profunditat de color:"

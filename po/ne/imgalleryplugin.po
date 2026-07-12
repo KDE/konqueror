@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2026-07-12 00:44+0000\n"
 "PO-Revision-Date: 2007-08-19 15:21+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -17,100 +17,100 @@ msgstr ""
 "\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: imgallerydialog.cpp:37
+#: imgallerydialog.cpp:36
 #, fuzzy, kde-format
 #| msgid "Create Image Gallery"
 msgctxt "@title:window"
 msgid "Create Image Gallery"
 msgstr "छवि ग्यालरी सिर्जना गर्नुहोस्"
 
-#: imgallerydialog.cpp:38
+#: imgallerydialog.cpp:37
 #, kde-format
 msgid "Create"
 msgstr "सिर्जना गर्नुहोस्"
 
-#: imgallerydialog.cpp:48 imgallerydialog.cpp:84
+#: imgallerydialog.cpp:47 imgallerydialog.cpp:83
 #, kde-format
 msgid "Image Gallery for %1"
 msgstr "%1 का लागि छवि ग्यालरी"
 
-#: imgallerydialog.cpp:76
+#: imgallerydialog.cpp:75
 #, kde-format
 msgid "Look"
 msgstr "हेर्नुहोस्"
 
-#: imgallerydialog.cpp:77
+#: imgallerydialog.cpp:76
 #, kde-format
 msgid "Page Look"
 msgstr "पृष्ठ खोजी"
 
-#: imgallerydialog.cpp:85
+#: imgallerydialog.cpp:84
 #, kde-format
 msgid "&Page title:"
 msgstr "पृष्ठ शीर्षक:"
 
-#: imgallerydialog.cpp:93
+#: imgallerydialog.cpp:92
 #, kde-format
 msgid "I&mages per row:"
 msgstr "छवि प्रति पङ्क्ति:"
 
-#: imgallerydialog.cpp:95
+#: imgallerydialog.cpp:94
 #, kde-format
 msgid "Show image file &name"
 msgstr "छवि फाइल नाम देखाउनुहोस्"
 
-#: imgallerydialog.cpp:99
+#: imgallerydialog.cpp:98
 #, kde-format
 msgid "Show image file &size"
 msgstr "छवि फाइल साइज देखाउनुहोस्"
 
-#: imgallerydialog.cpp:103
+#: imgallerydialog.cpp:102
 #, kde-format
 msgid "Show image &dimensions"
 msgstr "छवि आयामहरू देखाउनुहोस्"
 
-#: imgallerydialog.cpp:114
+#: imgallerydialog.cpp:113
 #, kde-format
 msgid "Fon&t name:"
 msgstr "फन्ट नाम:"
 
-#: imgallerydialog.cpp:122
+#: imgallerydialog.cpp:121
 #, kde-format
 msgid "Font si&ze:"
 msgstr "फन्ट साइज:"
 
-#: imgallerydialog.cpp:126
+#: imgallerydialog.cpp:125
 #, kde-format
 msgid "&Foreground color:"
 msgstr "अग्रभूमि रङ:"
 
-#: imgallerydialog.cpp:130
+#: imgallerydialog.cpp:129
 #, kde-format
 msgid "&Background color:"
 msgstr "पृष्ठभूमि रङ:"
 
-#: imgallerydialog.cpp:136 imgallerydialog.cpp:137
+#: imgallerydialog.cpp:135 imgallerydialog.cpp:136
 #, kde-format
 msgid "Folders"
 msgstr "फोल्डर"
 
-#: imgallerydialog.cpp:145
+#: imgallerydialog.cpp:144
 #, kde-format
 msgid "&Save to HTML file:"
 msgstr "एचटीएमएल फाइलमा बचत गर्नुहोस्:"
 
-#: imgallerydialog.cpp:147
+#: imgallerydialog.cpp:146
 #, fuzzy, kde-format
 #| msgid "<p>The name of the HTML file this gallery will be saved to."
 msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
 msgstr "<p> यो ग्यालेरी बचत गरिने एचटीएमएल फाइलको नाम ।"
 
-#: imgallerydialog.cpp:150
+#: imgallerydialog.cpp:149
 #, kde-format
 msgid "&Recurse subfolders"
 msgstr "उपफोल्डर पुनरागमन गर्नुहोस्"
 
-#: imgallerydialog.cpp:152
+#: imgallerydialog.cpp:151
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Whether subfolders should be included for the image gallery creation "
@@ -120,12 +120,12 @@ msgid ""
 "not.</p>"
 msgstr "<p> उपफोल्डरहरू छवि ग्यालेरी सिर्जनाका लागि समावेश गरिनेछ वा छैन ।"
 
-#: imgallerydialog.cpp:163
+#: imgallerydialog.cpp:162
 #, kde-format
 msgid "Endless"
 msgstr "अनन्त"
 
-#: imgallerydialog.cpp:165
+#: imgallerydialog.cpp:164
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>You can limit the number of folders the image gallery creator will "
@@ -137,17 +137,17 @@ msgstr ""
 "<p> तपाईँले फोल्डरहरूको सङ्ख्या सीमित गर्न सक्नुहुन्छ जहाँ छवि ग्यालेरी सर्जकले पुनरावृत्तिक "
 "गहिराइका लागि एउटा माथिलो दायरा सेटिङ गरेर वारपार गर्नेछ ।"
 
-#: imgallerydialog.cpp:168
+#: imgallerydialog.cpp:167
 #, kde-format
 msgid "Rec&ursion depth:"
 msgstr "पुनरावृत्तिक गहिराइ:"
 
-#: imgallerydialog.cpp:172
+#: imgallerydialog.cpp:171
 #, kde-format
 msgid "Copy or&iginal files"
 msgstr "मौलिक फाइलहरू प्रतिलिपि बनाउनुहोस्"
 
-#: imgallerydialog.cpp:174
+#: imgallerydialog.cpp:173
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>This makes a copy of all images and the gallery will refer to these "
@@ -159,12 +159,12 @@ msgstr ""
 "<p> यसले सबै छविहरूको प्रतिलिपि बनाउँदछ र ग्यालेरीहरूले मौलिक छविको सट्टा यी "
 "प्रतिलिपिहरू सन्दर्भ गर्दछ ।"
 
-#: imgallerydialog.cpp:179
+#: imgallerydialog.cpp:178
 #, kde-format
 msgid "Use &comment file"
 msgstr "टिप्पणी फाइल प्रयोग गर्नुहोस्"
 
-#: imgallerydialog.cpp:181
+#: imgallerydialog.cpp:180
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>If you enable this option you can specify a comment file which will be "
@@ -179,7 +179,7 @@ msgstr ""
 "जुन छविहरूका लागि उपशीर्षक सिर्जना गर्न प्रयोग गरिनेछ ।<p> फाइल ढाँचाको विस्तृत "
 "विवरणका लागि कृपया तल \"यो के हो\" मद्दत हेर्नुहोस् ।"
 
-#: imgallerydialog.cpp:190
+#: imgallerydialog.cpp:189
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>You can specify the name of the comment file here. The comment file "
@@ -196,32 +196,32 @@ msgstr ""
 "लागि उपशीर्षक समाविष्ट गर्दछ । यो फाइलको ढाँचा यसप्रकार हुन्छ:<p>FILENAME1:"
 "<br>वर्णन<br><br>FILENAME2:<br>वर्णन<br><br>र इत्यादि"
 
-#: imgallerydialog.cpp:200
+#: imgallerydialog.cpp:199
 #, kde-format
 msgid "Comments &file:"
 msgstr "टिप्पणी फाइल:"
 
-#: imgallerydialog.cpp:210 imgallerydialog.cpp:211
+#: imgallerydialog.cpp:209 imgallerydialog.cpp:210
 #, kde-format
 msgid "Thumbnails"
 msgstr "थम्बनेलहरू"
 
-#: imgallerydialog.cpp:224
+#: imgallerydialog.cpp:223
 #, kde-format
 msgid "Image f&ormat:"
 msgstr ""
 
-#: imgallerydialog.cpp:232
+#: imgallerydialog.cpp:231
 #, kde-format
 msgid "Thumbnail size:"
 msgstr "थम्बनेल साइज:"
 
-#: imgallerydialog.cpp:235
+#: imgallerydialog.cpp:234
 #, kde-format
 msgid "&Set different color depth:"
 msgstr "फरक रङ गहिराइ सेट गर्नुहोस्:"
 
-#: imgallerydialog.cpp:246
+#: imgallerydialog.cpp:245
 #, kde-format
 msgid "Color depth:"
 msgstr ""

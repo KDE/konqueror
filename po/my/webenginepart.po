@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-22 00:43+0000\n"
+"POT-Creation-Date: 2026-07-12 00:44+0000\n"
 "PO-Revision-Date: 2021-09-15 20:37+0630\n"
 "Last-Translator: \n"
 "Language-Team: Burmese <kde-i18n-doc@kde.org>\n"
@@ -1037,61 +1037,61 @@ msgstr "ခွင့်ပြုမည်"
 msgid "Do Not Allow"
 msgstr "ခွင့်ပြုမည်"
 
-#: src/webenginepart.cpp:212
+#: src/webenginepart.cpp:210
 #, fuzzy, kde-format
 msgid "Save Full HTML Page As..."
 msgstr "_S ပုံရိပ် သိမ်းရန်…"
 
-#: src/webenginepart.cpp:216
+#: src/webenginepart.cpp:214
 #, kde-format
 msgid "Print Preview"
 msgstr "အကြိုကြည့်မြင်ကွင်း ပုံနှိပ်ရန်"
 
-#: src/webenginepart.cpp:220
+#: src/webenginepart.cpp:218
 #, fuzzy, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "မြင်ကွင်းချဲ့ရန်"
 
-#: src/webenginepart.cpp:225
+#: src/webenginepart.cpp:223
 #, fuzzy, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "မြင်ကွင်းလျော့ရန်"
 
-#: src/webenginepart.cpp:230
+#: src/webenginepart.cpp:228
 #, fuzzy, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "အရွယ်အစား -"
 
-#: src/webenginepart.cpp:235
+#: src/webenginepart.cpp:233
 #, fuzzy, kde-format
 msgid "Zoom Text Only"
 msgstr "မြင်ကွင်းချဲ့ရန်"
 
-#: src/webenginepart.cpp:243
+#: src/webenginepart.cpp:241
 #, fuzzy, kde-format
 msgid "Zoom To DPI"
 msgstr "မြင်ကွင်းချဲ့ရန်"
 
-#: src/webenginepart.cpp:256
+#: src/webenginepart.cpp:254
 #, fuzzy, kde-format
 msgid "Set &Encoding"
 msgstr "ဖွင့်မည့် ဖိုင်လ်၏ ကုတ်ဝှက်စနစ်သတ်မှတ်မည်။"
 
-#: src/webenginepart.cpp:259
+#: src/webenginepart.cpp:257
 #, fuzzy, kde-format
 msgid "View Do&cument Source"
 msgstr "&Vမြင်ကွင်း"
 
-#: src/webenginepart.cpp:264 src/webenginepart.cpp:645
+#: src/webenginepart.cpp:262 src/webenginepart.cpp:643
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "အက်စ်အက်စ်အယ်လ်"
 
-#: src/webenginepart.cpp:270
+#: src/webenginepart.cpp:268
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1099,12 +1099,12 @@ msgid ""
 "displayed page."
 msgstr ""
 
-#: src/webenginepart.cpp:643
+#: src/webenginepart.cpp:641
 #, fuzzy, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "မိတ်ဆွေ အက်စ်အက်စ်အယ်လ် အသိအမှတ်ပြုစာချွန်အစဥ် ပျက်စီးနေပုံရသည်။"
 
-#: src/webenginepart.cpp:724
+#: src/webenginepart.cpp:722
 #, fuzzy, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1115,7 +1115,7 @@ msgstr ""
 "lang=de&service=deen&opterrors=0&optpro=0&query=\\\\{@}"
 "&iservice=&comment=&email"
 
-#: src/webenginepart.cpp:753
+#: src/webenginepart.cpp:751
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1123,7 +1123,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr ""
 
-#: src/webenginepart.cpp:755
+#: src/webenginepart.cpp:753
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1131,7 +1131,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr ""
 
-#: src/webenginepart.cpp:757
+#: src/webenginepart.cpp:755
 #, fuzzy, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1139,92 +1139,92 @@ msgctxt ""
 msgid " - Subject: "
 msgstr "အကြောင်းအရာ -"
 
-#: src/webenginepart.cpp:761 src/webenginepart.cpp:772
+#: src/webenginepart.cpp:759 src/webenginepart.cpp:770
 #, fuzzy, kde-format
 msgid " (In new window)"
 msgstr "&Wဝင်းဒိုးအသစ်"
 
-#: src/webenginepart.cpp:770
+#: src/webenginepart.cpp:768
 #, fuzzy, kde-format
 msgid " (In parent frame)"
 msgstr "ဖရိန်"
 
-#: src/webenginepart.cpp:836
+#: src/webenginepart.cpp:834
 #, fuzzy, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>အင်တာနက်တွင် <b>%1</b> ကို သင်ရှာချင်ပါသလား။</qt>"
 
-#: src/webenginepart.cpp:837
+#: src/webenginepart.cpp:835
 #, kde-format
 msgid "Internet Search"
 msgstr "အင်တာနက်ရှာဖွေမှု"
 
-#: src/webenginepart.cpp:837
+#: src/webenginepart.cpp:835
 #, kde-format
 msgid "&Search"
 msgstr "&Sရှာမည်"
 
-#: src/webenginepart.cpp:950
+#: src/webenginepart.cpp:948
 #, fuzzy, kde-format
 msgid "Close window?"
 msgstr "ဝင်းဒိုး ပိတ်ရန်"
 
-#: src/webenginepart.cpp:950
+#: src/webenginepart.cpp:948
 #, fuzzy, kde-format
 msgid "Confirmation Required"
 msgstr "အတည်ပြုချက်"
 
-#: src/webenginepart.cpp:1027
+#: src/webenginepart.cpp:1025
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 
-#: src/webenginepart.cpp:1098
+#: src/webenginepart.cpp:1096
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr ""
 
-#: src/webenginepart.cpp:1103
+#: src/webenginepart.cpp:1101
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr ""
 
-#: src/webenginepart.cpp:1107
+#: src/webenginepart.cpp:1105
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr ""
 
-#: src/webenginepart.cpp:1111
+#: src/webenginepart.cpp:1109
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1115
+#: src/webenginepart.cpp:1113
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1119
+#: src/webenginepart.cpp:1117
 #, fuzzy, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr "စကားဝှက် ယာယီ ကတ်ချ်သွင်းထားသည်"
 
-#: src/webenginepart.cpp:1123
+#: src/webenginepart.cpp:1121
 #, fuzzy, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "စကားဝှက် ယာယီ ကတ်ချ်သွင်းထားသည်"
 
-#: src/webenginepart.cpp:1127
+#: src/webenginepart.cpp:1125
 #, fuzzy, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "ပလပ်ဂင် မန်နေဂျာ"
 
-#: src/webenginepart.cpp:1131
+#: src/webenginepart.cpp:1129
 #, fuzzy, kde-format
 msgid "&Close Wallet"
 msgstr "_Cပိတ်"

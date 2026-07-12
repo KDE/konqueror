@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2026-07-12 00:44+0000\n"
 "PO-Revision-Date: 2008-08-21 09:02+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <en@li.org>\n"
@@ -17,110 +17,110 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "X-Language: km-KH\n"
 
-#: imgallerydialog.cpp:37
+#: imgallerydialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Image Gallery"
 msgstr "​បង្កើត​វិចិត្រសាល​រូបភាព"
 
-#: imgallerydialog.cpp:38
+#: imgallerydialog.cpp:37
 #, kde-format
 msgid "Create"
 msgstr "បង្កើត​"
 
-#: imgallerydialog.cpp:48 imgallerydialog.cpp:84
+#: imgallerydialog.cpp:47 imgallerydialog.cpp:83
 #, kde-format
 msgid "Image Gallery for %1"
 msgstr "វិចិត្រសាល​រូបភាព​សម្រាប់ %1"
 
-#: imgallerydialog.cpp:76
+#: imgallerydialog.cpp:75
 #, kde-format
 msgid "Look"
 msgstr "រូបរាង"
 
-#: imgallerydialog.cpp:77
+#: imgallerydialog.cpp:76
 #, kde-format
 msgid "Page Look"
 msgstr "រូបរាង​ទំព័រ"
 
-#: imgallerydialog.cpp:85
+#: imgallerydialog.cpp:84
 #, kde-format
 msgid "&Page title:"
 msgstr "ចំណងជើង​ទំព័រ ៖"
 
-#: imgallerydialog.cpp:93
+#: imgallerydialog.cpp:92
 #, kde-format
 msgid "I&mages per row:"
 msgstr "រូបភាព​ក្នុង​មួយ​ជួរ​ដេក ៖"
 
-#: imgallerydialog.cpp:95
+#: imgallerydialog.cpp:94
 #, kde-format
 msgid "Show image file &name"
 msgstr "បង្ហាញ​ឈ្មោះ​ឯកសារ​រូបភាព"
 
-#: imgallerydialog.cpp:99
+#: imgallerydialog.cpp:98
 #, kde-format
 msgid "Show image file &size"
 msgstr "បង្ហាញ​ទំហំ​ឯកសារ​រូបភាព"
 
-#: imgallerydialog.cpp:103
+#: imgallerydialog.cpp:102
 #, kde-format
 msgid "Show image &dimensions"
 msgstr "បង្ហាញ​វិមាត្រ​រូបភាព"
 
-#: imgallerydialog.cpp:114
+#: imgallerydialog.cpp:113
 #, kde-format
 msgid "Fon&t name:"
 msgstr "ឈ្មោះ​ពុម្ពអក្សរ​ ៖"
 
-#: imgallerydialog.cpp:122
+#: imgallerydialog.cpp:121
 #, kde-format
 msgid "Font si&ze:"
 msgstr "​ទំហំ​ពុម្ពអក្សរ ៖"
 
-#: imgallerydialog.cpp:126
+#: imgallerydialog.cpp:125
 #, kde-format
 msgid "&Foreground color:"
 msgstr "​ពណ៌​ផ្ទៃ​ខាង​មុខ ៖"
 
-#: imgallerydialog.cpp:130
+#: imgallerydialog.cpp:129
 #, kde-format
 msgid "&Background color:"
 msgstr "​ពណ៌​ផ្ទៃ​ខាង​ក្រោយ ៖"
 
-#: imgallerydialog.cpp:136 imgallerydialog.cpp:137
+#: imgallerydialog.cpp:135 imgallerydialog.cpp:136
 #, kde-format
 msgid "Folders"
 msgstr "​ថត"
 
-#: imgallerydialog.cpp:145
+#: imgallerydialog.cpp:144
 #, kde-format
 msgid "&Save to HTML file:"
 msgstr "រក្សាទុក​ទៅ​​​ឯកសារ​ HTML ៖"
 
-#: imgallerydialog.cpp:147
+#: imgallerydialog.cpp:146
 #, kde-format
 msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
 msgstr "<p>ឈ្មោះ​របស់​ឯកសារ HTML វិចិត្រសាល​នេះ​នឹង​ត្រូវ​បាន​រក្សាទុក​ទៅ​កាន់ ។</p>"
 
-#: imgallerydialog.cpp:150
+#: imgallerydialog.cpp:149
 #, kde-format
 msgid "&Recurse subfolders"
 msgstr "ការ​ហៅ​ថតរង​ដោយ​ខ្លួន​ឯង"
 
-#: imgallerydialog.cpp:152
+#: imgallerydialog.cpp:151
 #, kde-format
 msgid ""
 "<p>Whether subfolders should be included for the image gallery creation or "
 "not.</p>"
 msgstr "<p>ថាតើ​ថតរង​គួរ​ត្រូវ​បាន​រួម​បញ្ចូល​សម្រាប់​ការ​បង្កើត​វិចិត្រសាល​រូបភាព​ ឬ​ក៏​អត់ ។</p>"
 
-#: imgallerydialog.cpp:163
+#: imgallerydialog.cpp:162
 #, kde-format
 msgid "Endless"
 msgstr "គ្មាន​ទី​បញ្ចប់"
 
-#: imgallerydialog.cpp:165
+#: imgallerydialog.cpp:164
 #, kde-format
 msgid ""
 "<p>You can limit the number of folders the image gallery creator will "
@@ -129,29 +129,29 @@ msgstr ""
 "<p>អ្នក​អាច​កំណត់​ចំនួន​ថតនូវ​​កម្មវិធី​បង្កើត​វិចិត្រសាល​រូបភាព​នឹង​ឆ្លង​កាត់​ដោយ​​កំណត់​​ព្រំដែន​ខាង​លើ​សម្រាប់​ជម្រៅ​"
 "ការហៅ​ខ្លួនឯង ។</p>"
 
-#: imgallerydialog.cpp:168
+#: imgallerydialog.cpp:167
 #, kde-format
 msgid "Rec&ursion depth:"
 msgstr "ជម្រៅ​ការ​ហៅ​ខ្លួន​ឯង ៖"
 
-#: imgallerydialog.cpp:172
+#: imgallerydialog.cpp:171
 #, kde-format
 msgid "Copy or&iginal files"
 msgstr "ចម្លង​ឯកសារ​ដើម"
 
-#: imgallerydialog.cpp:174
+#: imgallerydialog.cpp:173
 #, kde-format
 msgid ""
 "<p>This makes a copy of all images and the gallery will refer to these "
 "copies instead of the original images.</p>"
 msgstr "<p>វា​ធ្វើ​ការ​ចម្លង​រូបភាព​ទាំង​អស់​ ហើយ​វិចិត្រសាល​នឹង​​យោង​​លើ​ច្បាប់​ចម្លង​ជំនួស​​ឲ្យ​រូបភាព​ដើម ។</p>"
 
-#: imgallerydialog.cpp:179
+#: imgallerydialog.cpp:178
 #, kde-format
 msgid "Use &comment file"
 msgstr "ប្រើ​ឯកសារ​សេចក្តី​អធិប្បាយ ៖"
 
-#: imgallerydialog.cpp:181
+#: imgallerydialog.cpp:180
 #, kde-format
 msgid ""
 "<p>If you enable this option you can specify a comment file which will be "
@@ -162,7 +162,7 @@ msgstr ""
 "ចំណង​ជើង​រងសម្រាប់​រូបភាព ។</p><p>សម្រាប់​សេចក្ដី​លម្អិត​​អំពី​ទ្រង់ទ្រាយ​ឯកសារ សូម​មើលជំនួយ \"នេះ​ជា​អ្វី?"
 "\" ខាង​ក្រោម ។</p>"
 
-#: imgallerydialog.cpp:190
+#: imgallerydialog.cpp:189
 #, kde-format
 msgid ""
 "<p>You can specify the name of the comment file here. The comment file "
@@ -174,32 +174,32 @@ msgstr ""
 "ទ្រង់ទ្រាយ​របស់​ឯកសារ​នេះ​គឺ ៖</p><p>FILENAME1:<br />សេចក្តី​ពិពណ៌នា<br /><br />FILENAME2:"
 "<br />សេចក្តី​អធិប្បាយ<br /><br />និង​បន្តបន្ទាប់</p>"
 
-#: imgallerydialog.cpp:200
+#: imgallerydialog.cpp:199
 #, kde-format
 msgid "Comments &file:"
 msgstr "ឯកសារ​សេចក្តី​អធិប្បាយ ៖"
 
-#: imgallerydialog.cpp:210 imgallerydialog.cpp:211
+#: imgallerydialog.cpp:209 imgallerydialog.cpp:210
 #, kde-format
 msgid "Thumbnails"
 msgstr "​រូបភាព​តូច"
 
-#: imgallerydialog.cpp:224
+#: imgallerydialog.cpp:223
 #, kde-format
 msgid "Image f&ormat:"
 msgstr ""
 
-#: imgallerydialog.cpp:232
+#: imgallerydialog.cpp:231
 #, kde-format
 msgid "Thumbnail size:"
 msgstr "ទំហំ​រូបភាព​តូច ៖"
 
-#: imgallerydialog.cpp:235
+#: imgallerydialog.cpp:234
 #, kde-format
 msgid "&Set different color depth:"
 msgstr "កំណត់​ជម្រៅ​ពណ៌​ខុសៗគ្នា ៖"
 
-#: imgallerydialog.cpp:246
+#: imgallerydialog.cpp:245
 #, kde-format
 msgid "Color depth:"
 msgstr ""

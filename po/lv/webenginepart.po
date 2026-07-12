@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-22 00:43+0000\n"
+"POT-Creation-Date: 2026-07-12 00:44+0000\n"
 "PO-Revision-Date: 2025-06-30 10:50+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1104,61 +1104,61 @@ msgstr "Atļaut"
 msgid "Do Not Allow"
 msgstr "Liegt"
 
-#: src/webenginepart.cpp:212
+#: src/webenginepart.cpp:210
 #, kde-format
 msgid "Save Full HTML Page As..."
 msgstr "Saglabāt visu HTML lapu kā..."
 
-#: src/webenginepart.cpp:216
+#: src/webenginepart.cpp:214
 #, kde-format
 msgid "Print Preview"
 msgstr "Drukas priekšskatījums"
 
-#: src/webenginepart.cpp:220
+#: src/webenginepart.cpp:218
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Tuvināt"
 
-#: src/webenginepart.cpp:225
+#: src/webenginepart.cpp:223
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Tālināt"
 
-#: src/webenginepart.cpp:230
+#: src/webenginepart.cpp:228
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Faktiskais izmērs"
 
-#: src/webenginepart.cpp:235
+#: src/webenginepart.cpp:233
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Tikai teksta tālummaiņa"
 
-#: src/webenginepart.cpp:243
+#: src/webenginepart.cpp:241
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Tālummaiņa līdz DPI"
 
-#: src/webenginepart.cpp:256
+#: src/webenginepart.cpp:254
 #, kde-format
 msgid "Set &Encoding"
 msgstr "Iestatīt &kodējumu"
 
-#: src/webenginepart.cpp:259
+#: src/webenginepart.cpp:257
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "&Skatīt dokumenta avotu"
 
-#: src/webenginepart.cpp:264 src/webenginepart.cpp:645
+#: src/webenginepart.cpp:262 src/webenginepart.cpp:643
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:270
+#: src/webenginepart.cpp:268
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1168,12 +1168,12 @@ msgstr ""
 "<h3>Meklēt tekstu</h3>Parāda lodziņu, kurā varat meklēt tekstu atvērtajā "
 "lapā."
 
-#: src/webenginepart.cpp:643
+#: src/webenginepart.cpp:641
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "Izskatās, ka vietnes SSL informācija ir bojāta."
 
-#: src/webenginepart.cpp:724
+#: src/webenginepart.cpp:722
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1181,7 +1181,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "E-pasts: "
 
-#: src/webenginepart.cpp:753
+#: src/webenginepart.cpp:751
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1189,7 +1189,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " — CC: "
 
-#: src/webenginepart.cpp:755
+#: src/webenginepart.cpp:753
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1197,7 +1197,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " — BCC: "
 
-#: src/webenginepart.cpp:757
+#: src/webenginepart.cpp:755
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1205,42 +1205,42 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " — Tēma: "
 
-#: src/webenginepart.cpp:761 src/webenginepart.cpp:772
+#: src/webenginepart.cpp:759 src/webenginepart.cpp:770
 #, kde-format
 msgid " (In new window)"
 msgstr " (jaunā logā)"
 
-#: src/webenginepart.cpp:770
+#: src/webenginepart.cpp:768
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (vecākobjekta rāmī)"
 
-#: src/webenginepart.cpp:836
+#: src/webenginepart.cpp:834
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Vai vēlaties meklēt <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:837
+#: src/webenginepart.cpp:835
 #, kde-format
 msgid "Internet Search"
 msgstr "Meklēšana internetā"
 
-#: src/webenginepart.cpp:837
+#: src/webenginepart.cpp:835
 #, kde-format
 msgid "&Search"
 msgstr "&Meklēt"
 
-#: src/webenginepart.cpp:950
+#: src/webenginepart.cpp:948
 #, kde-format
 msgid "Close window?"
 msgstr "Vai aizvērt logu?"
 
-#: src/webenginepart.cpp:950
+#: src/webenginepart.cpp:948
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Nepieciešams apstiprinājums"
 
-#: src/webenginepart.cpp:1027
+#: src/webenginepart.cpp:1025
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
@@ -1248,51 +1248,51 @@ msgstr ""
 "<html>Vai vēlaties „%1“ ļaut atcerēties ierakstīšanās informāciju lapai <b>"
 "%2</b>?</html>"
 
-#: src/webenginepart.cpp:1098
+#: src/webenginepart.cpp:1096
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr "&Aizpildīt ierakstīšanās datus"
 
-#: src/webenginepart.cpp:1103
+#: src/webenginepart.cpp:1101
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr "&Meklēt lapā laukus, kuris pieprasa ierakstīšanās datus"
 
-#: src/webenginepart.cpp:1107
+#: src/webenginepart.cpp:1105
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr "&Saglabāt ierakstīšanās datus"
 
-#: src/webenginepart.cpp:1111
+#: src/webenginepart.cpp:1109
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr "&Pielāgot lapas ierakstīšanās datu iestatījumus..."
 
-#: src/webenginepart.cpp:1115
+#: src/webenginepart.cpp:1113
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr "Atiestatīt pielāgotos ierakstīšanās datu iestatījumus lapai"
 
-#: src/webenginepart.cpp:1119
+#: src/webenginepart.cpp:1117
 #, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr "&Atļaut ierakstīšanās datņu kešatmiņas veidošanu šai lapai"
 
-#: src/webenginepart.cpp:1123
+#: src/webenginepart.cpp:1121
 #, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "Noņemt visas saglabātās paroles šai lapai"
 
-#: src/webenginepart.cpp:1127
+#: src/webenginepart.cpp:1125
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Palaist maka pārvaldnieku"
 
-#: src/webenginepart.cpp:1131
+#: src/webenginepart.cpp:1129
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Aizvērt maku"

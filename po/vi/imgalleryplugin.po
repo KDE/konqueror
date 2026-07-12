@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2026-07-12 00:44+0000\n"
 "PO-Revision-Date: 2020-12-17 20:15+0100\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -19,100 +19,100 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 20.08.1\n"
 
-#: imgallerydialog.cpp:37
+#: imgallerydialog.cpp:36
 #, fuzzy, kde-format
 #| msgid "Create Image Gallery"
 msgctxt "@title:window"
 msgid "Create Image Gallery"
 msgstr "Tạo nơi trưng bày ảnh"
 
-#: imgallerydialog.cpp:38
+#: imgallerydialog.cpp:37
 #, kde-format
 msgid "Create"
 msgstr "Tạo"
 
-#: imgallerydialog.cpp:48 imgallerydialog.cpp:84
+#: imgallerydialog.cpp:47 imgallerydialog.cpp:83
 #, kde-format
 msgid "Image Gallery for %1"
 msgstr "Nơi trưng bày ảnh cho %1"
 
-#: imgallerydialog.cpp:76
+#: imgallerydialog.cpp:75
 #, kde-format
 msgid "Look"
 msgstr "Xem"
 
-#: imgallerydialog.cpp:77
+#: imgallerydialog.cpp:76
 #, kde-format
 msgid "Page Look"
 msgstr "Xem trang"
 
-#: imgallerydialog.cpp:85
+#: imgallerydialog.cpp:84
 #, kde-format
 msgid "&Page title:"
 msgstr "Tựa t&rang:"
 
-#: imgallerydialog.cpp:93
+#: imgallerydialog.cpp:92
 #, kde-format
 msgid "I&mages per row:"
 msgstr "&Số ảnh/hàng:"
 
-#: imgallerydialog.cpp:95
+#: imgallerydialog.cpp:94
 #, kde-format
 msgid "Show image file &name"
 msgstr "Hiện tê&n tệp ảnh"
 
-#: imgallerydialog.cpp:99
+#: imgallerydialog.cpp:98
 #, kde-format
 msgid "Show image file &size"
 msgstr "Hiện &cỡ tệp ảnh"
 
-#: imgallerydialog.cpp:103
+#: imgallerydialog.cpp:102
 #, kde-format
 msgid "Show image &dimensions"
 msgstr "Hiện các ch&iều ảnh"
 
-#: imgallerydialog.cpp:114
+#: imgallerydialog.cpp:113
 #, kde-format
 msgid "Fon&t name:"
 msgstr "&Tên phông:"
 
-#: imgallerydialog.cpp:122
+#: imgallerydialog.cpp:121
 #, kde-format
 msgid "Font si&ze:"
 msgstr "Cỡ p&hông:"
 
-#: imgallerydialog.cpp:126
+#: imgallerydialog.cpp:125
 #, kde-format
 msgid "&Foreground color:"
 msgstr "&Màu tiền cảnh:"
 
-#: imgallerydialog.cpp:130
+#: imgallerydialog.cpp:129
 #, kde-format
 msgid "&Background color:"
 msgstr "Mà&u nền:"
 
-#: imgallerydialog.cpp:136 imgallerydialog.cpp:137
+#: imgallerydialog.cpp:135 imgallerydialog.cpp:136
 #, kde-format
 msgid "Folders"
 msgstr "Thư mục"
 
-#: imgallerydialog.cpp:145
+#: imgallerydialog.cpp:144
 #, kde-format
 msgid "&Save to HTML file:"
 msgstr "&Lưu vào tệp HTML:"
 
-#: imgallerydialog.cpp:147
+#: imgallerydialog.cpp:146
 #, fuzzy, kde-format
 #| msgid "<p>The name of the HTML file this gallery will be saved to."
 msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
 msgstr "<p>Tên của tệp dạng HTML vào đó cần lưu nơi trưng bày này."
 
-#: imgallerydialog.cpp:150
+#: imgallerydialog.cpp:149
 #, kde-format
 msgid "&Recurse subfolders"
 msgstr "Đệ &quy thư mục con"
 
-#: imgallerydialog.cpp:152
+#: imgallerydialog.cpp:151
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Whether subfolders should be included for the image gallery creation "
@@ -122,12 +122,12 @@ msgid ""
 "not.</p>"
 msgstr "<p>Có nên gồm các thư mục con khi tạo nơi trưng bày ảnh hay không."
 
-#: imgallerydialog.cpp:163
+#: imgallerydialog.cpp:162
 #, kde-format
 msgid "Endless"
 msgstr "Vô hạn"
 
-#: imgallerydialog.cpp:165
+#: imgallerydialog.cpp:164
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>You can limit the number of folders the image gallery creator will "
@@ -139,17 +139,17 @@ msgstr ""
 "<p>Bạn có khả năng hạn chế tổng số thư mục con bộ tạo nơi trưng bày ảnh sẽ "
 "đi qua, bằng cách đặt ràng buộc trên cho cấp đệ qui."
 
-#: imgallerydialog.cpp:168
+#: imgallerydialog.cpp:167
 #, kde-format
 msgid "Rec&ursion depth:"
 msgstr "Cấp đệ q&uy:"
 
-#: imgallerydialog.cpp:172
+#: imgallerydialog.cpp:171
 #, kde-format
 msgid "Copy or&iginal files"
 msgstr "Chép tệ&p gốc"
 
-#: imgallerydialog.cpp:174
+#: imgallerydialog.cpp:173
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>This makes a copy of all images and the gallery will refer to these "
@@ -161,12 +161,12 @@ msgstr ""
 "<p>Tính năng này tạo bản sao của mỗi ảnh, và nơi trưng bày sẽ chỉ tới bản "
 "sao này thay cho ảnh gốc."
 
-#: imgallerydialog.cpp:179
+#: imgallerydialog.cpp:178
 #, kde-format
 msgid "Use &comment file"
 msgstr "Dùng tệp &chú thích"
 
-#: imgallerydialog.cpp:181
+#: imgallerydialog.cpp:180
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>If you enable this option you can specify a comment file which will be "
@@ -181,7 +181,7 @@ msgstr ""
 "được dùng để táo ra phụ đề cho ảnh.<p>Để tìm chi tiết về định dạng tệp, xem "
 "trợ giúp « Cái này là gì? » bên dưới."
 
-#: imgallerydialog.cpp:190
+#: imgallerydialog.cpp:189
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>You can specify the name of the comment file here. The comment file "
@@ -198,32 +198,32 @@ msgstr ""
 "đề cho mỗi ảnh. Định dạng của tệp này là:<p>TÊN Tệp 1:<br>Mô tả<br><br>TÊN "
 "Tệp 2:<br>Mô tà<br><br>v.v."
 
-#: imgallerydialog.cpp:200
+#: imgallerydialog.cpp:199
 #, kde-format
 msgid "Comments &file:"
 msgstr "Tệ&p chú thích:"
 
-#: imgallerydialog.cpp:210 imgallerydialog.cpp:211
+#: imgallerydialog.cpp:209 imgallerydialog.cpp:210
 #, kde-format
 msgid "Thumbnails"
 msgstr "Hình thu nhỏ"
 
-#: imgallerydialog.cpp:224
+#: imgallerydialog.cpp:223
 #, kde-format
 msgid "Image f&ormat:"
 msgstr ""
 
-#: imgallerydialog.cpp:232
+#: imgallerydialog.cpp:231
 #, kde-format
 msgid "Thumbnail size:"
 msgstr "Cỡ hình thu nhỏ :"
 
-#: imgallerydialog.cpp:235
+#: imgallerydialog.cpp:234
 #, kde-format
 msgid "&Set different color depth:"
 msgstr "Đặt độ &sâu màu khác:"
 
-#: imgallerydialog.cpp:246
+#: imgallerydialog.cpp:245
 #, kde-format
 msgid "Color depth:"
 msgstr ""

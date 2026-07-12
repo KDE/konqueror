@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-22 00:43+0000\n"
+"POT-Creation-Date: 2026-07-12 00:44+0000\n"
 "PO-Revision-Date: 2025-12-07 19:54+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1106,61 +1106,61 @@ msgstr "Baimendu"
 msgid "Do Not Allow"
 msgstr "Ez baimendu"
 
-#: src/webenginepart.cpp:212
+#: src/webenginepart.cpp:210
 #, kde-format
 msgid "Save Full HTML Page As..."
 msgstr "Gorde HTML orri osoa honela..."
 
-#: src/webenginepart.cpp:216
+#: src/webenginepart.cpp:214
 #, kde-format
 msgid "Print Preview"
 msgstr "Inprimatze aurreikuspegia"
 
-#: src/webenginepart.cpp:220
+#: src/webenginepart.cpp:218
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Zooma gerturatu"
 
-#: src/webenginepart.cpp:225
+#: src/webenginepart.cpp:223
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Zooma urrundu"
 
-#: src/webenginepart.cpp:230
+#: src/webenginepart.cpp:228
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Benetako neurria"
 
-#: src/webenginepart.cpp:235
+#: src/webenginepart.cpp:233
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Zoom testuari soilik"
 
-#: src/webenginepart.cpp:243
+#: src/webenginepart.cpp:241
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Zoom DPIra"
 
-#: src/webenginepart.cpp:256
+#: src/webenginepart.cpp:254
 #, kde-format
 msgid "Set &Encoding"
 msgstr "Ezarri kod&eketa"
 
-#: src/webenginepart.cpp:259
+#: src/webenginepart.cpp:257
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Ikusi do&kumentuaren iturburua"
 
-#: src/webenginepart.cpp:264 src/webenginepart.cpp:645
+#: src/webenginepart.cpp:262 src/webenginepart.cpp:643
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:270
+#: src/webenginepart.cpp:268
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1170,12 +1170,12 @@ msgstr ""
 "<h3>Aurkitu testua</h3>Elkarrizketa-koadro bat erakusten du, bistaratutako "
 "orrian testua aurkitzen uzten dizuna."
 
-#: src/webenginepart.cpp:643
+#: src/webenginepart.cpp:641
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "Leku honetarako SSL informazioa hondatua dagoela dirudi."
 
-#: src/webenginepart.cpp:724
+#: src/webenginepart.cpp:722
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1185,7 +1185,7 @@ msgstr "E-posta: "
 
 # CC : Carbon Copy
 # KK : Kalko Kopia
-#: src/webenginepart.cpp:753
+#: src/webenginepart.cpp:751
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1195,7 +1195,7 @@ msgstr " - KK: "
 
 # BCC : Blind Carbon Copy
 # EKK : Ezkutuko Kalko Kopia
-#: src/webenginepart.cpp:755
+#: src/webenginepart.cpp:753
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1203,7 +1203,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - EKK: "
 
-#: src/webenginepart.cpp:757
+#: src/webenginepart.cpp:755
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1211,42 +1211,42 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Gaia: "
 
-#: src/webenginepart.cpp:761 src/webenginepart.cpp:772
+#: src/webenginepart.cpp:759 src/webenginepart.cpp:770
 #, kde-format
 msgid " (In new window)"
 msgstr " (Leiho berrian)"
 
-#: src/webenginepart.cpp:770
+#: src/webenginepart.cpp:768
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (Guraso markoan)"
 
-#: src/webenginepart.cpp:836
+#: src/webenginepart.cpp:834
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt><b>%1</b> bilatu nahi duzu?</qt>"
 
-#: src/webenginepart.cpp:837
+#: src/webenginepart.cpp:835
 #, kde-format
 msgid "Internet Search"
 msgstr "Interneteko bilaketa"
 
-#: src/webenginepart.cpp:837
+#: src/webenginepart.cpp:835
 #, kde-format
 msgid "&Search"
 msgstr "&Bilatu"
 
-#: src/webenginepart.cpp:950
+#: src/webenginepart.cpp:948
 #, kde-format
 msgid "Close window?"
 msgstr "Itxi leihoa?"
 
-#: src/webenginepart.cpp:950
+#: src/webenginepart.cpp:948
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Berrespena behar da"
 
-#: src/webenginepart.cpp:1027
+#: src/webenginepart.cpp:1025
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
@@ -1254,51 +1254,51 @@ msgstr ""
 "<html>%1(e)k saioan sartzeko <b>%2</b>(r)en informazioa gordetzea nahi duzu?"
 "</html>"
 
-#: src/webenginepart.cpp:1098
+#: src/webenginepart.cpp:1096
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr "Be&te kredentzialak"
 
-#: src/webenginepart.cpp:1103
+#: src/webenginepart.cpp:1101
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr "&Bilatu orrian kredentzial eskaerak"
 
-#: src/webenginepart.cpp:1107
+#: src/webenginepart.cpp:1105
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr "&Gorde kredentzialak orain"
 
-#: src/webenginepart.cpp:1111
+#: src/webenginepart.cpp:1109
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr "&Neurrira ipini kredentzialen ezarpenak ... orrirako"
 
-#: src/webenginepart.cpp:1115
+#: src/webenginepart.cpp:1113
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr "Berrezarri orrirako neurrira ipinitako kredentzialen ezarpenak"
 
-#: src/webenginepart.cpp:1119
+#: src/webenginepart.cpp:1117
 #, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr "B&aimendu orri honetako kredentzialak cacheratzea"
 
-#: src/webenginepart.cpp:1123
+#: src/webenginepart.cpp:1121
 #, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "Kendu leku honetarako gordetako pasahitz guztiak"
 
-#: src/webenginepart.cpp:1127
+#: src/webenginepart.cpp:1125
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "A&biarazi zorro-kudeatzailea"
 
-#: src/webenginepart.cpp:1131
+#: src/webenginepart.cpp:1129
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Itxi zorroa"

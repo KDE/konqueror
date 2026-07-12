@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2026-07-12 00:44+0000\n"
 "PO-Revision-Date: 2004-11-16 00:07-0800\n"
 "Last-Translator: Tamil PC <tamilpc@ambalam.com>\n"
 "Language-Team: Tamil <ta@i18n.kde.org>\n"
@@ -16,100 +16,100 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: imgallerydialog.cpp:37
+#: imgallerydialog.cpp:36
 #, fuzzy, kde-format
 #| msgid "Create Image Gallery"
 msgctxt "@title:window"
 msgid "Create Image Gallery"
 msgstr "பட காலரியை உருவாக்குக"
 
-#: imgallerydialog.cpp:38
+#: imgallerydialog.cpp:37
 #, kde-format
 msgid "Create"
 msgstr "உருவாக்கு"
 
-#: imgallerydialog.cpp:48 imgallerydialog.cpp:84
+#: imgallerydialog.cpp:47 imgallerydialog.cpp:83
 #, kde-format
 msgid "Image Gallery for %1"
 msgstr "%1 யின் பட காலரி"
 
-#: imgallerydialog.cpp:76
+#: imgallerydialog.cpp:75
 #, kde-format
 msgid "Look"
 msgstr "தோற்றம்"
 
-#: imgallerydialog.cpp:77
+#: imgallerydialog.cpp:76
 #, kde-format
 msgid "Page Look"
 msgstr "பக்கத் தோற்றம்"
 
-#: imgallerydialog.cpp:85
+#: imgallerydialog.cpp:84
 #, kde-format
 msgid "&Page title:"
 msgstr "&பக்க தலைப்பு:"
 
-#: imgallerydialog.cpp:93
+#: imgallerydialog.cpp:92
 #, kde-format
 msgid "I&mages per row:"
 msgstr "கிடக்கைக்கான &படங்கள்:"
 
-#: imgallerydialog.cpp:95
+#: imgallerydialog.cpp:94
 #, kde-format
 msgid "Show image file &name"
 msgstr "பட கோப்பு &பெயரை காட்டு"
 
-#: imgallerydialog.cpp:99
+#: imgallerydialog.cpp:98
 #, kde-format
 msgid "Show image file &size"
 msgstr "பட கோப்பு &அளவை காட்டு"
 
-#: imgallerydialog.cpp:103
+#: imgallerydialog.cpp:102
 #, kde-format
 msgid "Show image &dimensions"
 msgstr "பட பரிமாணத்தை காட்டு"
 
-#: imgallerydialog.cpp:114
+#: imgallerydialog.cpp:113
 #, kde-format
 msgid "Fon&t name:"
 msgstr "எழுத்துரு பெயர்:"
 
-#: imgallerydialog.cpp:122
+#: imgallerydialog.cpp:121
 #, kde-format
 msgid "Font si&ze:"
 msgstr "எழுத்துரு அளவு:"
 
-#: imgallerydialog.cpp:126
+#: imgallerydialog.cpp:125
 #, kde-format
 msgid "&Foreground color:"
 msgstr "முன்னணி வண்ணம்:"
 
-#: imgallerydialog.cpp:130
+#: imgallerydialog.cpp:129
 #, kde-format
 msgid "&Background color:"
 msgstr "பின்னணி வண்ணம்:"
 
-#: imgallerydialog.cpp:136 imgallerydialog.cpp:137
+#: imgallerydialog.cpp:135 imgallerydialog.cpp:136
 #, kde-format
 msgid "Folders"
 msgstr "அடைவுகள்"
 
-#: imgallerydialog.cpp:145
+#: imgallerydialog.cpp:144
 #, kde-format
 msgid "&Save to HTML file:"
 msgstr "HTML கோபுக்குச் சேமி:"
 
-#: imgallerydialog.cpp:147
+#: imgallerydialog.cpp:146
 #, fuzzy, kde-format
 #| msgid "<p>The name of the HTML file this gallery will be saved to."
 msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
 msgstr "<p>இந்த காலரி HTML  கோப்பின் பெயரில் சேமிக்கப்படும்."
 
-#: imgallerydialog.cpp:150
+#: imgallerydialog.cpp:149
 #, kde-format
 msgid "&Recurse subfolders"
 msgstr "உள் அழைப்பு துணை அடைவுகள்"
 
-#: imgallerydialog.cpp:152
+#: imgallerydialog.cpp:151
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Whether subfolders should be included for the image gallery creation "
@@ -119,12 +119,12 @@ msgid ""
 "not.</p>"
 msgstr "<p>பட காலரியை துணை அடைவில் சேர்க்கப்பட வேண்டுமா அல்லது வேண்டாமா"
 
-#: imgallerydialog.cpp:163
+#: imgallerydialog.cpp:162
 #, kde-format
 msgid "Endless"
 msgstr "முடிவில்லா"
 
-#: imgallerydialog.cpp:165
+#: imgallerydialog.cpp:164
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>You can limit the number of folders the image gallery creator will "
@@ -136,17 +136,17 @@ msgstr ""
 "<p>நீங்கள் பட காலரி உருவாக்கி உருவாக்கும் அடைவுகளுக்கு எல்லையை நிர்ணயிக்கலாம் அதற்கு உள் "
 "அழை ஆழத்தின் மேல் வரையறையின் அமைப்பை கடந்து செல்லும்."
 
-#: imgallerydialog.cpp:168
+#: imgallerydialog.cpp:167
 #, kde-format
 msgid "Rec&ursion depth:"
 msgstr "உள் அழையின் ஆழம்:"
 
-#: imgallerydialog.cpp:172
+#: imgallerydialog.cpp:171
 #, kde-format
 msgid "Copy or&iginal files"
 msgstr "மூல கோப்பினை நகலெடு"
 
-#: imgallerydialog.cpp:174
+#: imgallerydialog.cpp:173
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>This makes a copy of all images and the gallery will refer to these "
@@ -158,12 +158,12 @@ msgstr ""
 "<p>இது படங்களை நகலெடுக்கும், தேவைக்கு மூல படத்தினை பயன்படுத்தாமல் நகல்களையே "
 "பயன்படுத்தும்."
 
-#: imgallerydialog.cpp:179
+#: imgallerydialog.cpp:178
 #, kde-format
 msgid "Use &comment file"
 msgstr "குறிப்புறை கோப்புகளை பயன்படுத்து"
 
-#: imgallerydialog.cpp:181
+#: imgallerydialog.cpp:180
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>If you enable this option you can specify a comment file which will be "
@@ -178,7 +178,7 @@ msgstr ""
 "எடுத்துரைக்கலாம்<p>கோப்பு வடிமைப்பு பற்றிய கேள்விகளுக்கு இந்த உதவியை நாடவும் \"What's "
 "This?\"."
 
-#: imgallerydialog.cpp:190
+#: imgallerydialog.cpp:189
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>You can specify the name of the comment file here. The comment file "
@@ -195,32 +195,32 @@ msgstr ""
 "கோப்பு கொண்டிருக்கும். இந்த கோப்பின் வடிவமைப்பு கீழ் உள்ளவாறு இருக்கும்<p>FILENAME1:"
 "<br>Description<br><br>FILENAME2:<br>Description<br><br>"
 
-#: imgallerydialog.cpp:200
+#: imgallerydialog.cpp:199
 #, kde-format
 msgid "Comments &file:"
 msgstr "குறிப்புறை கோப்பு:"
 
-#: imgallerydialog.cpp:210 imgallerydialog.cpp:211
+#: imgallerydialog.cpp:209 imgallerydialog.cpp:210
 #, kde-format
 msgid "Thumbnails"
 msgstr "சிறு படங்கள்"
 
-#: imgallerydialog.cpp:224
+#: imgallerydialog.cpp:223
 #, kde-format
 msgid "Image f&ormat:"
 msgstr ""
 
-#: imgallerydialog.cpp:232
+#: imgallerydialog.cpp:231
 #, kde-format
 msgid "Thumbnail size:"
 msgstr "சிறு பட அளவு"
 
-#: imgallerydialog.cpp:235
+#: imgallerydialog.cpp:234
 #, kde-format
 msgid "&Set different color depth:"
 msgstr "பல வண்ண அடர்த்தியை தேர்வு செய்"
 
-#: imgallerydialog.cpp:246
+#: imgallerydialog.cpp:245
 #, kde-format
 msgid "Color depth:"
 msgstr ""
