@@ -605,7 +605,7 @@ msgstr "您不能在使用 --preload 参数时传递 URL。该 URL 将被忽略\
 #: src/konqapplication.cpp:580
 #, kde-format
 msgid "Are you sure you want to quit Konqueror? This will close all windows"
-msgstr ""
+msgstr "您确定要退出 Konqueror 吗？这将关闭所有窗口"
 
 #: src/konqapplication.cpp:581 src/konqmainwindow.cpp:4871
 #: src/konqmainwindow.cpp:5640
@@ -617,7 +617,7 @@ msgstr "确认"
 #: src/konqapplication.cpp:583
 #, kde-format
 msgid "Close current window"
-msgstr ""
+msgstr "关闭当前窗口"
 
 #: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4940
 #: src/konqmainwindow.cpp:4986
@@ -1007,44 +1007,44 @@ msgstr "查找文件(&F)..."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Other Windows"
-msgstr ""
+msgstr "关闭其他窗口"
 
 #: src/konqmainwindow.cpp:3350
 #, kde-format
 msgid "Closes all windows except this one"
-msgstr ""
+msgstr "关闭此窗口以外的所有窗口"
 
 #: src/konqmainwindow.cpp:3352
 #, kde-format
 msgid "Closes all windows except this one. It doesn't close preloaded windows"
-msgstr ""
+msgstr "关闭此窗口以外的所有窗口。这不会关闭已预加载的窗口"
 
 #: src/konqmainwindow.cpp:3356
 #, kde-format
 msgctxt "@action:inmenu quit Konqueror"
 msgid "Quit Konqueror"
-msgstr ""
+msgstr "退出 Konqueror"
 
 #: src/konqmainwindow.cpp:3358
 #, kde-format
 msgid "Closes all Konqueror windows and quits the application"
-msgstr ""
+msgstr "关闭所有 Konqueror 窗口并退出应用程序"
 
 #: src/konqmainwindow.cpp:3362
 #, kde-format
 msgctxt "@action:inmenu close current window"
 msgid "Close Window"
-msgstr ""
+msgstr "关闭窗口"
 
 #: src/konqmainwindow.cpp:3364
 #, kde-format
 msgid "Close this window"
-msgstr ""
+msgstr "关闭此窗口"
 
 #: src/konqmainwindow.cpp:3366
 #, kde-format
 msgid "Close this window, quitting Konqueror if it is the only window"
-msgstr ""
+msgstr "关闭此窗口，如果它是唯一的窗口，退出 Konqueror"
 
 #: src/konqmainwindow.cpp:3368
 #, kde-format
@@ -1441,7 +1441,7 @@ msgstr "显示当前页面的开发者工具"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "标记当前窗口为受保护"
 
 #: src/konqmainwindow.cpp:3742
 #, kde-format
@@ -1450,6 +1450,8 @@ msgid ""
 "<p>Mark the current window as protected.</p><p>Konqueror will never open "
 "external links in a protected window.</p>"
 msgstr ""
+"<p>标记当前窗口为受保护。</p><p>Konqueror 将不会在受保护的窗口中打开外部链"
+"接。</p>"
 
 #: src/konqmainwindow.cpp:3904
 #, kde-format
@@ -1661,7 +1663,7 @@ msgstr ""
 msgid ""
 "You are closing all windows except this one. Are you sure you want to "
 "continue?"
-msgstr ""
+msgstr "您将要关闭此窗口以外的所有窗口。您确定要继续吗？"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
