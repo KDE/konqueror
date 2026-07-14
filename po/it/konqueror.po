@@ -1,5 +1,5 @@
 # translation of konqueror.po to Italian
-# SPDX-FileCopyrightText: 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Paolo Zamponi <feus73@gmail.com>
+# SPDX-FileCopyrightText: 2016-2017, 2019-2026 Paolo Zamponi <feus73@gmail.com>
 # Andrea Rizzi <rizzi@kde.org>, 2003, 2004, 2005.
 # Andrea RIZZI <arizzi@pi.infn.it>, 2004.
 # Federico Zenith <federico.zenith@member.fsf.org>, 2004, 2010, 2011, 2012, 2013.
@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-08 02:44+0000\n"
-"PO-Revision-Date: 2026-02-03 18:10+0100\n"
+"PO-Revision-Date: 2026-07-08 14:39+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -627,6 +627,7 @@ msgstr ""
 #, kde-format
 msgid "Are you sure you want to quit Konqueror? This will close all windows"
 msgstr ""
+"Sei sicuro di voler uscire da Konqueror? Verranno chiuse tutte le finestre"
 
 #: src/konqapplication.cpp:582 src/konqmainwindow.cpp:4876
 #: src/konqmainwindow.cpp:5645
@@ -636,10 +637,9 @@ msgid "Confirmation"
 msgstr "Conferma"
 
 #: src/konqapplication.cpp:584
-#, fuzzy, kde-format
-#| msgid "Onl&y current window"
+#, kde-format
 msgid "Close current window"
-msgstr "So&lo la finestra corrente"
+msgstr "Chiudi la finestra attuale"
 
 #: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4945
 #: src/konqmainwindow.cpp:4991
@@ -1029,51 +1029,47 @@ msgid "&Find File..."
 msgstr "&Trova file..."
 
 #: src/konqmainwindow.cpp:3354
-#, fuzzy, kde-format
-#| msgid "Close &Other Tabs"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Other Windows"
-msgstr "Chiudi le &altre schede"
+msgstr "Chiudi le altre finestre"
 
 #: src/konqmainwindow.cpp:3355
 #, kde-format
 msgid "Closes all windows except this one"
-msgstr ""
+msgstr "Chiude tutte le finestre tranne questa"
 
 #: src/konqmainwindow.cpp:3357
 #, kde-format
 msgid "Closes all windows except this one. It doesn't close preloaded windows"
-msgstr ""
+msgstr "Chiude tutte le finestre tranne questa. Non chiude quelle precaricate"
 
 #: src/konqmainwindow.cpp:3361
-#, fuzzy, kde-format
-#| msgid "Konqueror"
+#, kde-format
 msgctxt "@action:inmenu quit Konqueror"
 msgid "Quit Konqueror"
-msgstr "Konqueror"
+msgstr "Esci da Konqueror"
 
 #: src/konqmainwindow.cpp:3363
 #, kde-format
 msgid "Closes all Konqueror windows and quits the application"
-msgstr ""
+msgstr "Chiude tutte le finestre di Konqueror ed esce dall'applicazione"
 
 #: src/konqmainwindow.cpp:3367
-#, fuzzy, kde-format
-#| msgid "Und&o: Closed Window"
+#, kde-format
 msgctxt "@action:inmenu close current window"
 msgid "Close Window"
-msgstr "A&nnulla: finestra chiusa"
+msgstr "Chiudi finestra"
 
 #: src/konqmainwindow.cpp:3369
-#, fuzzy, kde-format
-#| msgid "&Close Active View"
+#, kde-format
 msgid "Close this window"
-msgstr "&Chiudi la vista attiva"
+msgstr "Chiudi questa finestra"
 
 #: src/konqmainwindow.cpp:3371
 #, kde-format
 msgid "Close this window, quitting Konqueror if it is the only window"
-msgstr ""
+msgstr "Chiudi questa finestra, uscendo da Konqueror se questa è l'unica"
 
 #: src/konqmainwindow.cpp:3373
 #, kde-format
@@ -1490,25 +1486,20 @@ msgid "Shows the developer tools for the current page"
 msgstr "Mostra gli strumenti di sviluppo per la pagina corrente"
 
 #: src/konqmainwindow.cpp:3745
-#, fuzzy, kde-format
-#| msgid "Mark the current window as protected"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark the current window as protected"
 msgstr "Marca la finestra corrente come protetta"
 
 #: src/konqmainwindow.cpp:3747
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Mark the current window as protected</p><p>Marking a window as "
-#| "protected ensures that Konqueror will never open external links in it</p>"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<p>Mark the current window as protected.</p><p>Konqueror will never open "
 "external links in a protected window.</p>"
 msgstr ""
-"<p>Marca la finestra corrente come protetta</p><p>Se una finestra come è "
-"marcata come protetta, Konqueror non aprirà mai i collegamenti esterni in "
-"essa contenuti</p>"
+"<p>Marca la finestra corrente come protetta.</p><p>Konqueror non aprirà mai "
+"i collegamenti esterni in una finestra protetta.</p>"
 
 #: src/konqmainwindow.cpp:3909
 #, kde-format
@@ -1727,14 +1718,13 @@ msgstr ""
 "per la modalità a schermo intero (%1)"
 
 #: src/konqmainwindow.cpp:5644
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have multiple tabs open in this window, are you sure you want to quit?"
+#, kde-format
 msgid ""
 "You are closing all windows except this one. Are you sure you want to "
 "continue?"
 msgstr ""
-"Hai molte schede aperte in questa finestra, sei sicuro di voler uscire?"
+"Stai per chiudere tutte le finestre tranne questa. Sei sicuro di voler "
+"continuare?"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
