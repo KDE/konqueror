@@ -19,6 +19,8 @@
 #include "ui_kcookiesmanagement.h"
 #include <KCModule>
 
+class KCookiesMain;
+
 struct CookieProp;
 
 class CookieListViewItem : public QTreeWidgetItem
@@ -58,8 +60,7 @@ class KCookiesManagement : public KCModule
     Q_OBJECT
 
 public:
-    //TODO KF6: when dropping compatibility with KF5, remove QVariantList argument
-    explicit KCookiesManagement(QObject *parent, const KPluginMetaData &md={}, const QVariantList &args={});
+    explicit KCookiesManagement(KCookiesMain *parent, const KPluginMetaData &md={});
     ~KCookiesManagement() override;
 
     void load() override;
@@ -83,7 +84,7 @@ private:
     static CookieSet getCookies();
 
     bool mDeleteAllFlag;
-    QWidget *mMainWidget;
+    KCookiesMain *m_cookiesModule;
     Ui::KCookiesManagementUI mUi;
 
     QStringList mDeletedDomains;

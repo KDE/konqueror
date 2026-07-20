@@ -31,7 +31,7 @@ KCookiesMain::KCookiesMain(QObject *parent, const KPluginMetaData &md)
 
     policies = new KCookiesPolicies(widget(), md);
     tab->addTab(policies->widget(), i18n("&Policy"));
-    management = new KCookiesManagement(widget(), md);
+    management = new KCookiesManagement(this, md);
     tab->addTab(management->widget(), i18n("&Management"));
 
     connect(policies, &KCModule::needsSaveChanged, this, &KCookiesMain::updateNeedsSave);
