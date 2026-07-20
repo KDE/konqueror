@@ -100,10 +100,10 @@ CookieProp *CookieListViewItem::leaveCookie()
     return ret;
 }
 
-KCookiesManagement::KCookiesManagement(QObject *parent, const KPluginMetaData &md, const QVariantList &)
+KCookiesManagement::KCookiesManagement(KCookiesMain *parent, const KPluginMetaData &md)
     : KCModule(parent, md)
     , mDeleteAllFlag(false)
-    , mMainWidget(qobject_cast<QWidget*>(parent))
+    , m_cookiesModule(parent)
 {
     mUi.setupUi(widget());
     mUi.searchLineEdit->setTreeWidget(mUi.cookiesTreeWidget);
@@ -316,11 +316,10 @@ void KCookiesManagement::showConfigPolicyDialog()
     Q_ASSERT(item); // the button is disabled otherwise
 
     if (item) {
-        KCookiesMain *mainDlg = qobject_cast<KCookiesMain *>(mMainWidget);
         // must be present or something is really wrong.
-        Q_ASSERT(mainDlg);
+        Q_ASSERT(m_cookiesModule);
 
-        KCookiesPolicies *policyDlg = mainDlg->policyDlg();
+        KCookiesPolicies *policyDlg = m_cookiesModule->policyDlg();
         // must be present unless someone rewrote the widget in which case
         // this needs to be re-written as well.
         Q_ASSERT(policyDlg);
