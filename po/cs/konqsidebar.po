@@ -1,27 +1,28 @@
 # Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the konqueror package.
 # SPDX-FileCopyrightText: 2026 Vít Pelčák <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2026-01-15 08:35+0100\n"
-"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-07-28 23:42+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: bookmarks_module/bookmarks_module.cpp:273
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Bookmarks Sidebar Module"
-msgstr ""
+msgstr "Modul postranního panelu záložek"
 
 #: bookmarks_module/bookmarks_module.cpp:296
 #, kde-format
@@ -33,13 +34,13 @@ msgstr "Záložky"
 #: history_module/history_dlg.ui:17
 #, kde-format
 msgid "Default action"
-msgstr ""
+msgstr "Výchozí akce"
 
 #. i18n: ectx: property (text), widget (QLabel, lDefault)
 #: history_module/history_dlg.ui:23
 #, kde-format
 msgid "Default action when double clicking an URL"
-msgstr ""
+msgstr "Výchozí akce při dvojitém kliknutí na URL"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbLimits)
 #: history_module/history_dlg.ui:36
@@ -51,38 +52,38 @@ msgstr "Limity"
 #: history_module/history_dlg.ui:61
 #, kde-format
 msgid "URLs e&xpire after"
-msgstr ""
+msgstr "URL v&yprší po"
 
 #. i18n: ectx: property (text), widget (QLabel, lEntries)
 #: history_module/history_dlg.ui:71
 #, kde-format
 msgid "Maximum &number of URLs:"
-msgstr ""
+msgstr "Maximální &počet URL:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbFonts)
 #: history_module/history_dlg.ui:87
 #, kde-format
 msgid "Custom Fonts For"
-msgstr ""
+msgstr "Vlastní písma pro"
 
 #. i18n: ectx: property (text), widget (QLabel, lbNewer)
 #: history_module/history_dlg.ui:102
 #, kde-format
 msgid "URLs newer than"
-msgstr ""
+msgstr "URL novější než"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnFontOlder)
 #. i18n: ectx: property (text), widget (QPushButton, btnFontNewer)
 #: history_module/history_dlg.ui:118 history_module/history_dlg.ui:138
 #, kde-format
 msgid "Choose Font..."
-msgstr "Zvolte písmo..."
+msgstr "Vybrat písmo..."
 
 #. i18n: ectx: property (text), widget (QLabel, lbOlder)
 #: history_module/history_dlg.ui:125
 #, kde-format
 msgid "URLs older than"
-msgstr ""
+msgstr "URL starší než"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbDetails)
 #: history_module/history_dlg.ui:148
@@ -97,12 +98,13 @@ msgid ""
 "Shows the number of times visited and the dates of the first and last "
 "visits, in addition to the URL"
 msgstr ""
+"Zobrazuje počet návštěv a data první a poslední návštěvy, včetně URL adresy"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbDetailedTips)
 #: history_module/history_dlg.ui:157
 #, kde-format
 msgid "Detailed tooltips"
-msgstr ""
+msgstr "Podrobné nápovědy"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnClearHistory)
 #: history_module/history_dlg.ui:169
@@ -156,6 +158,12 @@ msgid ""
 "current tab</dd><dt>Open URL in new window:</dt><dd>always opens the URL in "
 "a new window</dd></dl>"
 msgstr ""
+"Akce, která se provede při otevření URL z historie:<dl><dl><dt>Automaticky:</"
+"dt><dd>otevře URL v nové záložce, pokud aktuální záložka není prázdná nebo "
+"se nejedná o úvodní stránku</dd><dt>Otevřít URL v nové záložce:</dt><dd>vždy "
+"otevře URL v nové záložce</dd><dt>Otevřít URL v aktuální záložce:</"
+"dt><dd>vždy otevře URL v aktuální záložce</dd><dt>Otevřít URL v novém okně:</"
+"dt><dd>vždy otevře URL v novém okně</dd></dl>"
 
 #: history_module/kcmhistory.cpp:65
 #, kde-format
@@ -206,17 +214,17 @@ msgstr "Místa"
 #: sidebar_widget.cpp:84
 #, kde-format
 msgid "Restore All Removed Default Buttons"
-msgstr ""
+msgstr "Obnovit všechna odstraněná výchozí tlačítka"
 
 #: sidebar_widget.cpp:85
 #, kde-format
 msgid "Rollback to System Default"
-msgstr ""
+msgstr "Obnovit systémová výchozí nastavení"
 
 #: sidebar_widget.cpp:144 sidebar_widget.cpp:430
 #, kde-format
 msgid "Configure Sidebar"
-msgstr ""
+msgstr "Nastavit postranní panel"
 
 #: sidebar_widget.cpp:146
 #, kde-format
@@ -226,17 +234,17 @@ msgstr "Přidat nové"
 #: sidebar_widget.cpp:150
 #, kde-format
 msgid "Multiple Views"
-msgstr ""
+msgstr "Vícenásobné zobrazení"
 
 #: sidebar_widget.cpp:152 sidebar_widget.cpp:269
 #, kde-format
 msgid "Show Tabs on Left"
-msgstr ""
+msgstr "Zobrazit karty vlevo"
 
 #: sidebar_widget.cpp:153
 #, kde-format
 msgid "Show Configuration Button"
-msgstr ""
+msgstr "Zobrazit tlačítko nastavení"
 
 #: sidebar_widget.cpp:156
 #, kde-format
@@ -246,7 +254,7 @@ msgstr "Zavřít postranní panel"
 #: sidebar_widget.cpp:211
 #, kde-format
 msgid "This entry already exists."
-msgstr ""
+msgstr "Tento záznam již existuje."
 
 #: sidebar_widget.cpp:227
 #, kde-format
@@ -255,22 +263,25 @@ msgid ""
 "default ones.<br /><b>This procedure is irreversible.</b><br />Do you want "
 "to proceed?</qt>"
 msgstr ""
+"<qt>Tímto se odstraní všechny vaše položky z postranního panelu a přidají se "
+"výchozí systémové položky.<br /><b>Tento postup nelze vrátit zpět.</b><br /"
+">Chcete pokračovat?</qt>"
 
 #: sidebar_widget.cpp:269
 #, kde-format
 msgid "Show Tabs on Right"
-msgstr ""
+msgstr "Zobrazit karty vpravo"
 
 #: sidebar_widget.cpp:280
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Name"
-msgstr "Nastavit jméno"
+msgstr "Nastavit název"
 
 #: sidebar_widget.cpp:281
 #, kde-format
 msgid "Enter the name:"
-msgstr ""
+msgstr "Zadejte název:"
 
 #: sidebar_widget.cpp:299
 #, kde-format
@@ -280,7 +291,7 @@ msgstr "Zadejte URL:"
 #: sidebar_widget.cpp:323
 #, kde-format
 msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
-msgstr ""
+msgstr "<qt>Opravdu chcete odstranit kartu <b>%1</b>?</qt>"
 
 #: sidebar_widget.cpp:373
 #, kde-format
@@ -289,6 +300,9 @@ msgid ""
 "click the right mouse button on any of the sidebar buttons and select \"Show "
 "Configuration Button\"."
 msgstr ""
+"Skryli jste tlačítko nastavení postranního panelu. Chcete-li jej znovu "
+"zobrazit, klikněte pravým tlačítkem myši na libovolné tlačítko postranního "
+"panelu a vyberte možnost \"Zobrazit tlačítko nastavení\"."
 
 #: sidebar_widget.cpp:574
 #, kde-format
@@ -298,7 +312,7 @@ msgstr "Nastavit jméno..."
 #: sidebar_widget.cpp:575
 #, kde-format
 msgid "Set URL..."
-msgstr ""
+msgstr "Nastavit URL..."
 
 #: sidebar_widget.cpp:576
 #, kde-format
@@ -318,7 +332,7 @@ msgstr "Odstranit"
 #: sidebar_widget.cpp:907
 #, kde-format
 msgid "Web module"
-msgstr ""
+msgstr "Webový modul"
 
 #: tree_module/tree_module.cpp:259
 #, kde-format
@@ -336,7 +350,7 @@ msgstr "Strom"
 #, kde-format
 msgctxt "@action:inmenu Add"
 msgid "Vertical Tab Bar"
-msgstr ""
+msgstr "Svislý panel karet"
 
 #: vertical_tabbar/vertical_tabbar.cpp:114
 #, kde-format
@@ -362,13 +376,13 @@ msgstr "Znovu načís&t"
 #: web_module/web_module.cpp:57
 #, kde-format
 msgid "Set &Automatic Reload"
-msgstr ""
+msgstr "Nastavit &automatické obnovení"
 
 #: web_module/web_module.cpp:121
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Refresh Timeout (0 disables)"
-msgstr ""
+msgstr "Nastavit časový limit pro obnovení (hodnota 0 znamená vypnutí)"
 
 #: web_module/web_module.cpp:132
 #, kde-format
@@ -408,4 +422,4 @@ msgstr "Cesta nebo URL:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add web sidebar module"
-msgstr ""
+msgstr "Přidat modul webového postranního panelu"
