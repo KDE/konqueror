@@ -4,31 +4,32 @@
 # Lukáš Tinkl <ltinkl@redhat.com>, 2010, 2011.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
 # SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-08 02:44+0000\n"
-"PO-Revision-Date: 2024-09-18 09:38+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-07-28 12:05+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Lukáš Tinkl"
+msgstr "Lukáš Tinkl,Libor Filípek"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "lukas@kde.org"
+msgstr "lukas@kde.org,libor.filipek@gmail.com"
 
 #: src/configdialog.cpp:73
 #, kde-format
@@ -36,7 +37,7 @@ msgctxt ""
 "@title:tab The file manager behavior tab. Also used in the list of tabs for "
 "consistency"
 msgid "File Manager Behavior"
-msgstr ""
+msgstr "Chování správce souborů"
 
 #: src/downloadactionquestion.cpp:160
 #, kde-format
@@ -130,6 +131,10 @@ msgid ""
 "type is incorrect or if a viewer can display %1 even if it doesn't "
 "officially support it.</p>"
 msgstr ""
+"<p>Prohlížeče, které by neměly být schopny zobrazit soubor %1. Jejich "
+"použití s největší pravděpodobností selže.</p><p>Tyto možnosti jsou k "
+"dispozici pro případ, že by byl zjištěný typ souboru nesprávný, nebo pokud "
+"prohlížeč dokáže soubor %1 zobrazit, i když jej oficiálně nepodporuje.</p>"
 
 #: src/downloadactionquestion.cpp:449
 #, kde-format
@@ -149,6 +154,8 @@ msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
+"<p>Spouštíte Konqueror jako root. To vyžaduje zapnutí velmi nezabezpečeného "
+"režimu v prohlížečové komponentě.</p><p>Co chcete udělat?</p>"
 
 #: src/konqapplication.cpp:159
 #, kde-format
@@ -517,12 +524,12 @@ msgid ""
 "Preload for later use. This mode does not support URLs on the command line"
 msgstr ""
 "Načíst dopředu pro pozdější použití. Tento režim nepodporuje URL na "
-"příkazové řádce."
+"příkazové řádce"
 
 #: src/konqapplication.cpp:229
 #, kde-format
 msgid "Profile to open (DEPRECATED, IGNORED)"
-msgstr ""
+msgstr "Profil k otevření (ZASTARALÉ, IGNOROVÁNO)"
 
 #: src/konqapplication.cpp:229
 #, kde-format
@@ -552,7 +559,7 @@ msgstr "Typ MIME pro toto URL (např. text/html anebo inode/adresář)"
 #: src/konqapplication.cpp:232
 #, kde-format
 msgid "mimetype"
-msgstr "Typ MIME"
+msgstr "typ MIME"
 
 #: src/konqapplication.cpp:233
 #, kde-format
@@ -571,7 +578,7 @@ msgid ""
 "instead of opening the actual file"
 msgstr ""
 "Pro URL, která odkazují na soubory, otevře odpovídající adresář a označí "
-"soubor namísto jeho otevření."
+"soubor namísto jeho otevření"
 
 #: src/konqapplication.cpp:235
 #, kde-format
@@ -584,6 +591,8 @@ msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
 "only when developing Konqueror itself"
 msgstr ""
+"Spustí nový proces Konqueroru, i když již nějaký existuje. Určeno pouze pro "
+"vývoj samotného Konqueroru"
 
 #: src/konqapplication.cpp:239
 #, kde-format
@@ -602,11 +611,13 @@ msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr ""
+"Při použití přepínače --preload nelze předávat adresy URL. Tyto adresy URL "
+"budou ignorovány\n"
 
 #: src/konqapplication.cpp:581
 #, kde-format
 msgid "Are you sure you want to quit Konqueror? This will close all windows"
-msgstr ""
+msgstr "Opravdu chcete ukončit Konqueror? Tím se zavřou všechna okna"
 
 #: src/konqapplication.cpp:582 src/konqmainwindow.cpp:4876
 #: src/konqmainwindow.cpp:5645
@@ -616,10 +627,9 @@ msgid "Confirmation"
 msgstr "Potvrzení"
 
 #: src/konqapplication.cpp:584
-#, fuzzy, kde-format
-#| msgid "Onl&y current window"
+#, kde-format
 msgid "Close current window"
-msgstr "Pou&ze současné okno."
+msgstr "Zavřít současné okno"
 
 #: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4945
 #: src/konqmainwindow.cpp:4991
@@ -1010,40 +1020,37 @@ msgid "&Find File..."
 msgstr "Na&jít soubor..."
 
 #: src/konqmainwindow.cpp:3354
-#, fuzzy, kde-format
-#| msgid "Close &Other Tabs"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Other Windows"
-msgstr "Zavřít &ostatní karty"
+msgstr "Zavřít ostatní okna"
 
 #: src/konqmainwindow.cpp:3355
 #, kde-format
 msgid "Closes all windows except this one"
-msgstr ""
+msgstr "Zavřít všechna okna kromě tohoto"
 
 #: src/konqmainwindow.cpp:3357
 #, kde-format
 msgid "Closes all windows except this one. It doesn't close preloaded windows"
-msgstr ""
+msgstr "Zavře všechna okna kromě tohoto. Předem načtená okna nezavře"
 
 #: src/konqmainwindow.cpp:3361
-#, fuzzy, kde-format
-#| msgid "Konqueror"
+#, kde-format
 msgctxt "@action:inmenu quit Konqueror"
 msgid "Quit Konqueror"
-msgstr "Konqueror"
+msgstr "Ukončit Konqueror"
 
 #: src/konqmainwindow.cpp:3363
 #, kde-format
 msgid "Closes all Konqueror windows and quits the application"
-msgstr ""
+msgstr "Zavře všechna okna Konqueroru a ukončí aplikaci"
 
 #: src/konqmainwindow.cpp:3367
-#, fuzzy, kde-format
-#| msgid "Und&o: Closed Window"
+#, kde-format
 msgctxt "@action:inmenu close current window"
 msgid "Close Window"
-msgstr "Zpět: Uzavřené &okno"
+msgstr "Zavřít okno"
 
 #: src/konqmainwindow.cpp:3369
 #, kde-format
@@ -1053,7 +1060,7 @@ msgstr "Zavřít toto okno"
 #: src/konqmainwindow.cpp:3371
 #, kde-format
 msgid "Close this window, quitting Konqueror if it is the only window"
-msgstr ""
+msgstr "Zavřít toto okno a ukončit Konqueror, pokud je to jediné okno"
 
 #: src/konqmainwindow.cpp:3373
 #, kde-format
@@ -1170,10 +1177,9 @@ msgid "Move Tab Right"
 msgstr "Přesunout kartu doprava"
 
 #: src/konqmainwindow.cpp:3536
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "Nové &okno"
+msgstr "Ochrana okna"
 
 #: src/konqmainwindow.cpp:3542
 #, kde-format
@@ -1453,6 +1459,9 @@ msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
+"<html>Zobrazí vývojářské nástroje pro aktuální stránku<br/><br/>Aktuální "
+"zobrazení je rozděleno na dvě části a vývojářské nástroje se zobrazují v "
+"druhé polovině"
 
 #: src/konqmainwindow.cpp:3743
 #, kde-format
@@ -1463,7 +1472,7 @@ msgstr "Zobrazit vývojářské nástroje pro současnou stránku"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "Označit aktuální okno jako chráněné"
 
 #: src/konqmainwindow.cpp:3747
 #, kde-format
@@ -1472,6 +1481,8 @@ msgid ""
 "<p>Mark the current window as protected.</p><p>Konqueror will never open "
 "external links in a protected window.</p>"
 msgstr ""
+"<p>Označit aktuální okno jako chráněné.</p><p>Konqueror nikdy neotevře "
+"externí odkazy v chráněném okně.</p>"
 
 #: src/konqmainwindow.cpp:3909
 #, kde-format
@@ -1624,6 +1635,14 @@ msgid ""
 "proxy URL manually in the settings dialog. Do you want to change proxy "
 "settings now?"
 msgstr ""
+"Vaše nastavení proxy nelze použít s HTML enginem QtWebEngine. Nebude použit "
+"žádný proxy server\n"
+"\n"
+" QtWebEngine podporuje pouze pevně nastavený proxy server, proto nelze s "
+"QtWebEngine použít automatickou konfiguraci proxy (PAC) ani protokol Web "
+"Proxy Auto-Discovery. Pokud potřebujete proxy server, vyberte prosím "
+"systémovou konfiguraci proxy nebo zadejte adresu proxy ručně v dialogovém "
+"okně nastavení. Chcete nyní změnit nastavení proxy?"
 
 #: src/konqmainwindow.cpp:5512
 #, kde-format
@@ -1648,6 +1667,10 @@ msgid ""
 "protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
+"Vaše nastavení proxy nelze použít s HTML enginem QtWebEngine, protože tento "
+"engine nepodporuje použití různých proxy serverů pro protokoly HTTP a HTTPS. "
+"Vaše aktuální nastavení je následující:<p><b>HTTP proxy:</b> <tt>%1</tt></"
+"p><p><b>HTTPS proxy: </b><tt>%2</tt></p>Co chcete udělat?"
 
 #: src/konqmainwindow.cpp:5540
 #, kde-format
@@ -1671,15 +1694,16 @@ msgid ""
 "hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
 "Mode (%1)"
 msgstr ""
+"Přešli jste do režimu na celou obrazovku (uživatelské rozhraní je zcela "
+"skryté). Z tohoto režimu můžete vystoupit stisknutím klávesové zkratky pro "
+"režim na celou obrazovku (%1)"
 
 #: src/konqmainwindow.cpp:5644
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have multiple tabs open in this window, are you sure you want to quit?"
+#, kde-format
 msgid ""
 "You are closing all windows except this one. Are you sure you want to "
 "continue?"
-msgstr "V tomto okně máte otevřeno několik karet, přejete si opravdu skončit?"
+msgstr "Zavřete všechna okna kromě tohoto. Opravdu chcete pokračovat?"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
@@ -1697,7 +1721,7 @@ msgstr "Všechna otevřená o&kna"
 #: src/konqnewsessiondlg_base.ui:44
 #, kde-format
 msgid "Onl&y current window"
-msgstr "Pou&ze současné okno."
+msgstr "Pou&ze současné okno"
 
 #. i18n: ectx: property (text), widget (QLabel, lblSessionName)
 #: src/konqnewsessiondlg_base.ui:56
@@ -1709,13 +1733,13 @@ msgstr "Název s&ezení:"
 #, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr ""
+msgstr "Zrušte zaškrtnutí u sezení nebo oken, která nechcete obnovit"
 
 #: src/konqsessiondialog.cpp:95
 #, kde-format
 msgctxt "@item:treewidget"
 msgid "Session %1"
-msgstr ""
+msgstr "Sezení %1"
 
 #. i18n. Otherwise it would be easier to just use what is in the session file
 #: src/konqsessiondialog.cpp:113
@@ -1764,7 +1788,7 @@ msgstr "Dotázat se později"
 #, kde-format
 msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"
-msgstr ""
+msgstr "Zkopírovat URL adresu do schránky:  %1"
 
 #: src/konqsessiondlg.cpp:60
 #, kde-format
@@ -1857,10 +1881,9 @@ msgid "&Reload Tab"
 msgstr "Znovu načíst &kartu"
 
 #: src/konqtabs.cpp:56
-#, fuzzy, kde-format
-#| msgid "&Reload All Tabs"
+#, kde-format
 msgid "All Tabs"
-msgstr "Znovu načíst všechny ka&rty"
+msgstr "Všechny karty"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -1994,7 +2017,7 @@ msgid ""
 msgstr ""
 "Stránka, kterou právě prohlížíte, je výsledkem dat odeslaných z formuláře. "
 "Pokud znovu odešlete data, veškeré činnosti, které formulář provedl (jako je "
-"např. online vyhledávání), budou muset být provedeny znovu."
+"např. online vyhledávání), budou muset být provedeny znovu. "
 
 #: src/konqview.cpp:1327
 #, kde-format
@@ -2017,7 +2040,7 @@ msgstr "Spustit"
 #, kde-format
 msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
-msgstr ""
+msgstr "Zobrazit"
 
 #: src/urlloader.cpp:413
 #, kde-kuit-format

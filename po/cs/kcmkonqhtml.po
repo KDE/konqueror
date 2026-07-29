@@ -4,21 +4,22 @@
 # Lukáš Tinkl <ltinkl@redhat.com>, 2010, 2011.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
 # SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-25 00:44+0000\n"
-"PO-Revision-Date: 2024-07-26 14:51+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-07-29 00:00+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -340,6 +341,9 @@ msgid ""
 "p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Neukládat mezipaměť na disk, ale pouze do paměti.</"
+"p><p>Zapnutím této možnosti se mezipaměť při ukončení Konqueroru vymaže.</"
+"p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:32
@@ -360,6 +364,9 @@ msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
+"Maximální místo na disku nebo v paměti, které může mezipaměť využít. Po "
+"dosažení této hranice budou staré stránky odstraněny, aby se uvolnilo místo "
+"pro nové."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:54
@@ -552,6 +559,13 @@ msgid ""
 "unbrowsable.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"<p>Povolte podporu souborů cookie. Obvykle budete chtít mít podporu souborů "
+"cookie zapnutou a přizpůsobit ji tak, aby vyhovovala vašim požadavkům na "
+"ochranu soukromí.</p><p>\n"
+"Upozorňujeme, že vypnutí podpory souborů cookie může způsobit, že mnoho "
+"webových stránek nebude možné prohlížet.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
@@ -634,6 +648,21 @@ msgid ""
 "precedence over the default policy.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Určuje, jak bude zacházeno s cookies přijatými ze vzdáleného počítače: \n"
+"<ul>\n"
+"<li><b>Zeptat se</b> způsobí, že KDE vás bude žádat o potvrzení pokaždé, "
+"když server bude chtít nastavit cookie.</li>\n"
+"<li><b>Přijmout</b> způsobí, že cookies budou přijaty bez vyžádání vašeho "
+"souhlasu.</li>\n"
+"<li><b>Přijmout do konce relace</b> způsobí, že soubory cookie budou "
+"přijímány, ale jejich platnost vyprší na konci relace.</li>\n"
+"<li><b>Odmítnout</b> způsobí, že cookiejar odmítne všechny přijaté soubory "
+"cookie.</li>\n"
+"</ul><p>\n"
+"<u>POZNÁMKA:</u> Zásady specifické pro domény, které lze nastavit níže, mají "
+"vždy přednost před výchozími zásadami.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
@@ -771,6 +800,8 @@ msgstr "Název serveru:"
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
 msgstr ""
+"Zadejte název hostitele nebo domény, např. .kde.org, na kterou se tato "
+"zásada vztahuje."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -928,7 +959,7 @@ msgstr "Přizpůsob&it..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr "Vlastní pozadí stránky:"
+msgstr "Vlastní pozadí stránky"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -947,6 +978,18 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Použít vlastní barvu pozadí pro "
+"webové stránky. Tato barva se použije:</p><ul style=\"margin-top: 0px; "
+"margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"
+"\"><li align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">pokud "
+"není barva pozadí explicitně nastavena stránkou nebo vlastním stylem</li><li "
+"align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">před "
+"načtením webové stránky</li></ul><p align=\"justify\">Nastavení vlastní "
+"barvy pozadí je užitečné zejména v případě, že používáte vlastní stylový "
+"list, který nastavuje barvu pozadí stránky (zejména tmavou barvu), aby se "
+"zabránilo bílému záblesku před načtením stránky</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
@@ -961,6 +1004,8 @@ msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>Vlastní barva pozadí pro webové stránky</p></body></"
+"html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -983,12 +1028,28 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Do svého vlastního stylu (včetně "
+"stylu pro přístupnost) přidejte pravidlo, které nastaví všechny barvy pozadí "
+"na barvu, kterou jste si výše vybrali. Tím se vyhnete nutnosti nastavovat "
+"barvu pozadí jak ve stylu, tak v konfiguračním dialogovém okně.</p><p align="
+"\"justify\"><span style=\" font-weight:600;\">Poznámky:</span></p><ul style="
+"\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -"
+"qt-list-indent: 1;\"><li align=\"justify\" style=\" margin-top:12px; margin-"
+"bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\">toto pravidlo bude přepsáno jinými pravidly pro barvy pozadí "
+"ve vašem vlastním stylu podle obvyklých pravidel CSS</li><li align=\"justify"
+"\" style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">toto pravidlo není ve "
+"skutečnosti přidáno do souboru obsahujícího váš vlastní stylový list; je "
+"vloženo pouze do kopie, kterou si Konqueror uchovává v paměti. To znamená, "
+"že pokud použijete stylový list v jiných prohlížečích, budete muset toto "
+"pravidlo do něj ručně přidat.</li></ul></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Přidat vlastní barvu pozadí do stylu"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
@@ -1579,6 +1640,10 @@ msgid ""
 "lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
 "ignored. Any other line is added as a filter expression."
 msgstr ""
+"<qt><p>Formát importu filtrů je soubor ve formátu prostého textu. Prázdné "
+"řádky, řádky s komentáři začínající znaky '<tt>!</tt>' a záhlaví "
+"<tt>[AdBlock]</tt> se ignorují. Všechny ostatní řádky se přidají jako výraz "
+"filtru."
 
 #: filteropts.cpp:188
 #, kde-format
@@ -1587,6 +1652,9 @@ msgid ""
 "header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
 "separate line."
 msgstr ""
+"<qt><p>Formát exportu filtrů je soubor ve formátu prostého textu. Soubor "
+"začíná záhlavním řádkem <tt>[AdBlock]</tt>, na který navazují všechny "
+"filtry, každý na samostatném řádku."
 
 #: filteropts.cpp:256
 #, kde-format
@@ -1618,12 +1686,10 @@ msgid "Please, insert the custom start page"
 msgstr "Prosím, zadejte vlastní začínající stránku"
 
 #: generalopts.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "When a new &Tab is created"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &window is created"
-msgstr "Při vytvoření nové kar&ty"
+msgstr "Při vytvoření nového &okna"
 
 #: generalopts.cpp:69
 #, kde-format
@@ -1635,7 +1701,7 @@ msgstr "Zobrazit úvodní stránku"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Speed Dial"
-msgstr ""
+msgstr "Zobrazit rychlé volby"
 
 #: generalopts.cpp:71
 #, kde-format
@@ -1695,17 +1761,17 @@ msgstr "Výchozí webový prohlížeč:"
 #: generalopts.cpp:120
 #, kde-format
 msgid "When splitting a view"
-msgstr ""
+msgstr "Při rozdělení zobrazení"
 
 #: generalopts.cpp:124
 #, kde-format
 msgid "Always duplicate current view"
-msgstr ""
+msgstr "Vždy duplikovat aktuální zobrazení"
 
 #: generalopts.cpp:125
 #, kde-format
 msgid "Duplicate current view only for local files"
-msgstr ""
+msgstr "Duplikovat aktuální zobrazení pouze u lokálních souborů"
 
 #: generalopts.cpp:131
 #, kde-format
@@ -1877,6 +1943,8 @@ msgid ""
 "<p>When showing in Konqueror files from links in web pages, always use a new "
 "tab"
 msgstr ""
+"<p>Při otevírání souborů v prohlížeči Konqueror z odkazů na webových "
+"stránkách vždy použít novou kartu"
 
 #: jsopts.cpp:57
 #, kde-format
@@ -2222,31 +2290,31 @@ msgstr "Umístění panelu karet"
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "Vyberte, kde se má zobrazit lišta karet"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "Nad obsahem"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "Pod obsahem"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "Vlevo od obsahu"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "Vpravo od obsahu"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
@@ -2322,6 +2390,10 @@ msgid ""
 "\">shift</span> when opening a new tab to reverse this behavior</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>Tímto se nová karta otevře na pozadí, nikoli v popředí."
+"</p><p>Chcete-li toto chování změnit, stiskněte při otevírání nové karty "
+"klávesu <span style=\" font-family:'Fira Code';\">Shift</span></p></body></"
+"html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
@@ -2352,18 +2424,21 @@ msgid ""
 "unchecked, the new tab will load the same URL loaded when creating a new "
 "window</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Zda má být nová karta prázdná, či nikoli. Pokud není "
+"tato možnost zaškrtnuta, nová karta načte stejnou URL adresu, jaká byla "
+"načtena při vytvoření nového okna</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Leave new tab empty"
-msgstr ""
+msgstr "Nechat novou kartu prázdnou"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: tabs/tabsoptions.ui:171
 #, kde-format
 msgid "Closing"
-msgstr "Uzavírám"
+msgstr "Uzavírání"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:177
@@ -2428,42 +2503,42 @@ msgstr "Aktivovat naposledy použitou kartu při uzavření aktuální"
 #, kde-format
 msgctxt "We couldn't retrieve the user agent, so we show it as 'unknown'"
 msgid "unknown"
-msgstr ""
+msgstr "neznámý"
 
 #: useragent/useragent.cpp:210
 #, kde-format
 msgctxt ""
 "@title:window Title of dialog to choose name to given to new User Agent"
 msgid "Choose User Agent name"
-msgstr ""
+msgstr "Vybrat název uživatelského agenta"
 
 #: useragent/useragent.cpp:211
 #, kde-format
 msgctxt "Name of the new User Agent"
 msgid "User Agent name"
-msgstr ""
+msgstr "Název uživatelského agenta"
 
 #: useragent/useragent.cpp:271
 #, kde-format
 msgid "there are templates with empty names"
-msgstr ""
+msgstr "existují šablony s prázdnými názvy"
 
 #: useragent/useragent.cpp:276
 #, kde-format
 msgid "there are multiple templates with the same name"
-msgstr ""
+msgstr "existuje více šablon se stejným názvem"
 
 #: useragent/useragent.cpp:299
 #, kde-format
 msgctxt "The user gave a custom user agent string an empty or duplicate name"
 msgid "Invalid user agent names:"
-msgstr ""
+msgstr "Neplatné názvy uživatelských agentů:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20
 #, kde-format
 msgid "Existing identifications"
-msgstr "Existující identifikace:"
+msgstr "Existující identifikátory"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
@@ -2508,19 +2583,19 @@ msgstr "&Smazat"
 #: useragent/useragent.ui:150
 #, kde-format
 msgid "Choose &selected identification"
-msgstr ""
+msgstr "Vyberte &požadovaný identifikátor"
 
 #. i18n: ectx: property (text), widget (QLabel, currentUserAgent)
 #: useragent/useragent.ui:160
 #, kde-format
 msgid "Current user agent"
-msgstr ""
+msgstr "Aktuální uživatelský agent"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:175
 #, kde-format
 msgid "&Custom identification"
-msgstr ""
+msgstr "&Vlastní identifikátor"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
 #: useragent/useragent.ui:185
@@ -2531,6 +2606,10 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>Identifikátor prohlížeče, který se použije v případě, "
+"že je výchozí identifikátor deaktivován.</p><p>Můžete jej zadat ručně nebo "
+"vybrat z níže uvedeného seznamu a upravit podle svých potřeb.</p></body></"
+"html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:201
@@ -2539,17 +2618,17 @@ msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Pokud zaškrtnuto, vypne výběr vlastní identifikace a "
-"použije výchozí</p></body></html>"
+"<html><head/><body><p>Pokud je zaškrtnuto, vypne se výběr vlastního "
+"identifikátoru a použije se výchozí</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:204
 #, kde-format
 msgid "Use &default identification"
-msgstr ""
+msgstr "Použít &výchozí identifikátor"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: useragent/useragent.ui:214
 #, kde-format
 msgid "<strong>Current browser identification</strong>"
-msgstr ""
+msgstr "<strong>Aktuální identifikátor prohlížeče</strong>"
