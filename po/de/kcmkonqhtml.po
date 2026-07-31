@@ -214,7 +214,7 @@ msgstr "Schrift&größe"
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr ""
 "Die relative Schriftgröße, die Konqueror für die Darstellung von Webseiten "
-"benutzt."
+"verwendet."
 
 #: appearance.cpp:135
 #, kde-format
@@ -862,7 +862,7 @@ msgid ""
 "stylesheet.</p>"
 msgstr ""
 "<b>Standard-Stilvorlage</b><p>Aktivieren Sie diese Einstellung, wenn Sie die "
-"Standard-Stilvorlage benutzen möchten.</p>"
+"Standard-Stilvorlage verwenden möchten.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useDefault)
 #: css/cssconfig.ui:38
@@ -995,7 +995,7 @@ msgid ""
 "the above.</p>"
 msgstr ""
 "<b>Schriftfamilie</b><p>Bei einer Schriftfamilie handelt es sich um eine "
-"Gruppe von Schriften, die einander ähneln und „Familienmitglieder“ wie z. B. "
+"Gruppe von Schriften, die einander ähneln und „Familienmitglieder“ wie z. B. "
 "„Fett“, „Kursiv“ oder ähnlich aufweisen.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
@@ -1312,8 +1312,8 @@ msgstr ""
 "<h1>Stilvorlagen für Konqueror</h1> Dieses Modul ermöglicht Ihnen die "
 "Anwendung Ihrer eigenen Farb- und Schrifteinstellungen in Konqueror mit "
 "Hilfe von Stilvorlagen (CSS). Sie können entweder eigene Einstellungen "
-"vornehmen oder eine selbstgeschriebene Stilvorlage benutzen, indem Sie deren "
-"Speicherort angeben.<br />Beachten Sie, dass alle diese Einstellungen "
+"vornehmen oder eine selbstgeschriebene Stilvorlage verwenden, indem Sie "
+"deren Speicherort angeben.<br />Beachten Sie, dass alle diese Einstellungen "
 "Vorrang vor denen des Autors der jeweiligen Webseite haben. Das kann "
 "nützlich sein für sehbehinderte Menschen oder zum Betrachten von Seiten, die "
 "sonst durch ihr schlechtes Design unleserlich wären."
@@ -1480,7 +1480,7 @@ msgid ""
 "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
 "\"filterhelp\">more information</a>):"
 msgstr ""
-"<qt>Filter-Ausdruck (z. B. <tt>http://www.beispielserver.com/ad/*</tt>, <a "
+"<qt>Filter-Ausdruck (z. B. <tt>http://www.beispielserver.com/ad/*</tt>, <a "
 "href=\"filterhelp\">Mehr Informationen ...</a>):"
 
 #: filteropts.cpp:100
@@ -1573,10 +1573,10 @@ msgid ""
 "filter."
 msgstr ""
 "<qt><p>Geben Sie einen Filterausdruck ein. Filter können auf verschiedene "
-"Weise definiert werden:<ul><li>als Platzhalter im Shell-Stil, z. B. "
+"Weise definiert werden:<ul><li>als Platzhalter im Shell-Stil, z. B. "
 "<tt>http://www.beispiel.de/ads*</tt>. Die Platzhalter <tt>*?[]</tt> können "
 "verwendet werden.</li><li>als vollwertiger regulärer Ausdruck, indem Sie "
-"diesen in Schrägstrichen „<tt>/</tt>“ einschließen, z. B. <tt>/\\/(ad|"
+"diesen in Schrägstrichen „<tt>/</tt>“ einschließen, z. B. <tt>/\\/(ad|"
 "banner)\\./</tt></li></ul><p>Jeder Filter-Zeichenfolge können die Zeichen "
 "„<tt>@@</tt>“ vorangestellt werden, um diese in die Positivliste der "
 "erlaubten Adressen aufzunehmen. Die Positivliste hat grundsätzlich Vorrang "
@@ -1952,7 +1952,7 @@ msgstr ""
 "JavaScript-Regelung eingestellt haben. Diese Regelung wird bei den hier "
 "eingestellten Domains oder Rechnern anstelle der Vorgaben zum An- oder "
 "Ausschalten von JavaScript verwendet.</p><p>Wählen Sie eine Regelung und "
-"benutzen Sie die Steuerungselemente rechts, um sie abzuwandeln.</p>"
+"verwenden Sie die Steuerungselemente rechts, um sie abzuwandeln.</p>"
 
 #: jsopts.cpp:87
 #, kde-format
@@ -2207,7 +2207,7 @@ msgid ""
 "(like .kde.org or .org)"
 msgstr ""
 "Geben Sie den Namen eines Servers (etwa www.kde.org) oder einer Domain an. "
-"Letztere sollte mit einem Punkt beginnen (z. B. .kde.org oder .org)"
+"Letztere sollte mit einem Punkt beginnen (z. B. .kde.org oder .org)"
 
 #: policydlg.cpp:139
 #, kde-format
@@ -2293,7 +2293,7 @@ msgid ""
 "as choosing a link or a folder with the middle mouse button."
 msgstr ""
 "Hierdurch werden in bestimmten Situationen weitere Unterfenster anstelle "
-"normaler Fenster geöffnet, z. B. sobald Sie einen Ordner oder eine "
+"normaler Fenster geöffnet, z. B. sobald Sie einen Ordner oder eine "
 "Verknüpfung mit der mittleren Maustaste anklicken."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
@@ -2456,7 +2456,7 @@ msgid ""
 "When checking this the previous used or opened tab will be activated when "
 "you close the current active tab instead of the one right to the current tab."
 msgstr ""
-"Nach dem Ankreuzen dieses Felds wird das zuletzt geöffnete oder benutzte "
+"Nach dem Ankreuzen dieses Felds wird das zuletzt geöffnete oder verwendete "
 "Unterfenster aktiviert, sobald Sie ein anderes schließen. Ansonsten wird "
 "automatisch das Unterfenster rechts davon aktiv."
 
@@ -2464,7 +2464,7 @@ msgstr ""
 #: tabs/tabsoptions.ui:210
 #, kde-format
 msgid "Activate previously used tab when closing the current tab"
-msgstr "Nach Schließen eines Unterfensters das zuletzt benutzte aktivieren"
+msgstr "Nach Schließen eines Unterfensters das zuletzt verwendete aktivieren"
 
 #: useragent/useragent.cpp:72
 #, kde-format
