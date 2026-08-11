@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the konqueror package.
-# SPDX-FileCopyrightText: 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2025-08-06 17:55+0400\n"
+"PO-Revision-Date: 2026-08-10 18:33+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -234,7 +234,7 @@ msgstr "لا يمكن نسخ الأرشيف إلى<nl/><filename>%1</filename><n
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
-msgstr "لا يمكن تعيين الأذونات على<nl/><filename>%1</filename><nl/>%2"
+msgstr "لا يمكن تعيين الأذون على<nl/><filename>%1</filename><nl/>%2"
 
 #: app/archivedialog.cpp:756
 #, kde-kuit-format
