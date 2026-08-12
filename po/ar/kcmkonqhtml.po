@@ -910,7 +910,7 @@ msgid ""
 "your desired options.</p>"
 msgstr ""
 "<b>استخدم صفحة أسلوب إتاحة الوصول</b> <p>تحديد هذا الخيار يسمح لك بأن تعرف "
-"خطاً مبدئياً وحجمه ولونه بعدد قليل من نقرات الفأرة البسيطة. ببساطة، اذهب إلى "
+"خطًا مبدئيًا وحجمه ولونه بعدد قليل من نقرات الفأرة البسيطة. ببساطة، اذهب إلى "
 "حوار خصّص... واختر الخيارات التي تريدها.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useAccess)
@@ -1047,7 +1047,7 @@ msgstr "العائلة الأساس:"
 #: css/csscustom.ui:37
 #, kde-format
 msgid "<p>This is the currently selected font family</p>"
-msgstr "<p>هذه هي عائلة الخط المُحدّدة حالياً</p>"
+msgstr "<p>هذه هي عائلة الخط المُحدّدة حاليًا</p>"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
 #: css/csscustom.ui:44
@@ -1408,7 +1408,7 @@ msgstr "ص&دِّر..."
 #: domainlistview.cpp:74
 #, kde-format
 msgid "Click on this button to manually add a host or domain specific policy."
-msgstr "انقر هذا الزر لإضافة سياسة محدّدة للمضيف أو للنطاق يدوياً."
+msgstr "انقر هذا الزر لإضافة سياسة محدّدة للمضيف أو للنطاق يدويًا."
 
 #: domainlistview.cpp:76
 #, kde-format
@@ -1428,12 +1428,12 @@ msgstr "انقر على هذا الزر لحذف سياسة المضيف أو ا
 #: domainlistview.cpp:125
 #, kde-format
 msgid "You must first select a policy to be changed."
-msgstr "يجب أن تنتقِ سياسة أولاً لتغييرها."
+msgstr "يجب أن تنتقِ سياسة أولًا لتغييرها."
 
 #: domainlistview.cpp:152
 #, kde-format
 msgid "You must first select a policy to delete."
-msgstr "يجب أن تنتقِ سياسة أولاً لحذفها."
+msgstr "يجب أن تنتقِ سياسة أولًا لحذفها."
 
 #: domainlistview.cpp:190 policydlg.cpp:63
 #, kde-format
@@ -1927,8 +1927,8 @@ msgid ""
 msgstr ""
 "هنا يمكنك تعيين سياسات جافاسكربت لأي مضيف أو مجال معين. لإضافة سياسة جديدة، "
 "ببساطة، انقر على زر <i>جديد...</i> وقم بتوفير المعلومات التي يطلبها مربع "
-"الحوار. لاختيار سياسة موجودة أصلاً، انقر زر <i>غيّر...</i> واختر سياسة جديدة "
-"من نافذة السياسات. النقر على زر <i>احذف</i> سوف يزيل السياسة المُحدّدة، جاعلاً "
+"الحوار. لاختيار سياسة موجودة أصلًا، انقر زر <i>غيّر...</i> واختر سياسة جديدة "
+"من نافذة السياسات. النقر على زر <i>احذف</i> سوف يزيل السياسة المُحدّدة، جاعلًا "
 "السياسة المبدئية السياسة المستخدمة لذلك المجال. يسمح لك زري <i>استورد</i> و "
 "<i>صدِر</i> بمشاركة أناس آخرين سياساتك بسهولة عن طريق السماح لك بحفظ واستعادة "
 "السياسات من ملفات مضغوطة."
@@ -2185,13 +2185,13 @@ msgid ""
 "Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
 "(like .kde.org or .org)"
 msgstr ""
-"أدخل اسم المضيف (مثل www.kde.org) أو النطاق، بادئاً بنقطة (مثل .kde.org أو ."
+"أدخل اسم المضيف (مثل www.kde.org) أو النطاق، بادئًا بنقطة (مثل .kde.org أو ."
 "org)"
 
 #: policydlg.cpp:139
 #, kde-format
 msgid "You must first enter a domain name."
-msgstr "يجب أن تدخل اسم النطاق أولاً."
+msgstr "يجب أن تدخل اسم النطاق أولًا."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
@@ -2329,7 +2329,7 @@ msgid ""
 "\">shift</span> when opening a new tab to reverse this behavior</p></body></"
 "html>"
 msgstr ""
-"<html><head/><body><p>سيؤدي هذا إلى فتح لسان جديد في الخلفية، بدلاً من "
+"<html><head/><body><p>سيؤدي هذا إلى فتح لسان جديد في الخلفية، بدلًا من "
 "المقدمة.</p><p>اضغط على مفتاح <span style=\" font-family:'Fira Code';"
 "\">shift</span> عند فتح لسان جديد لعكس هذا السلوك</p></body></html>"
 
