@@ -619,7 +619,7 @@ msgstr ""
 #: src/konqapplication.cpp:580
 #, kde-format
 msgid "Are you sure you want to quit Konqueror? This will close all windows"
-msgstr ""
+msgstr "Naozaj chcete ukončiť Konqueror? Zatvoria sa tým všetky okná"
 
 #: src/konqapplication.cpp:581 src/konqmainwindow.cpp:4871
 #: src/konqmainwindow.cpp:5640
@@ -629,10 +629,9 @@ msgid "Confirmation"
 msgstr "Potvrdenie"
 
 #: src/konqapplication.cpp:583
-#, fuzzy, kde-format
-#| msgid "Onl&y current window"
+#, kde-format
 msgid "Close current window"
-msgstr "Iba aktuálne okno"
+msgstr "Zatvoriť aktuálne okno"
 
 #: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4940
 #: src/konqmainwindow.cpp:4986
@@ -1022,51 +1021,47 @@ msgid "&Find File..."
 msgstr "&Nájsť súbor..."
 
 #: src/konqmainwindow.cpp:3349
-#, fuzzy, kde-format
-#| msgid "Close &Other Tabs"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Other Windows"
-msgstr "Zatvoriť &ostatné karty"
+msgstr "Zatvoriť ostatné okná"
 
 #: src/konqmainwindow.cpp:3350
 #, kde-format
 msgid "Closes all windows except this one"
-msgstr ""
+msgstr "Zatvorí všetky okná okrem tohto"
 
 #: src/konqmainwindow.cpp:3352
 #, kde-format
 msgid "Closes all windows except this one. It doesn't close preloaded windows"
-msgstr ""
+msgstr "Zatvorí všetky okná okrem tohto. Nezatvorí prednačítané okná"
 
 #: src/konqmainwindow.cpp:3356
-#, fuzzy, kde-format
-#| msgid "Konqueror"
+#, kde-format
 msgctxt "@action:inmenu quit Konqueror"
 msgid "Quit Konqueror"
-msgstr "Konqueror"
+msgstr "Ukončiť Konqueror"
 
 #: src/konqmainwindow.cpp:3358
 #, kde-format
 msgid "Closes all Konqueror windows and quits the application"
-msgstr ""
+msgstr "Zatvorí všetky okná Konqueroru a ukončí aplikáciu"
 
 #: src/konqmainwindow.cpp:3362
-#, fuzzy, kde-format
-#| msgid "Und&o: Closed Window"
+#, kde-format
 msgctxt "@action:inmenu close current window"
 msgid "Close Window"
-msgstr "&Späť: Zatvorené okno"
+msgstr "Zatvoriť okno"
 
 #: src/konqmainwindow.cpp:3364
-#, fuzzy, kde-format
-#| msgid "&Close Active View"
+#, kde-format
 msgid "Close this window"
-msgstr "&Zavrieť aktívny pohľad"
+msgstr "Zatvoriť toto okno"
 
 #: src/konqmainwindow.cpp:3366
 #, kde-format
 msgid "Close this window, quitting Konqueror if it is the only window"
-msgstr ""
+msgstr "Zatvorí toto okno a ukončí Konqueror, ak je to jediné okno"
 
 #: src/konqmainwindow.cpp:3368
 #, kde-format
@@ -1477,24 +1472,20 @@ msgid "Shows the developer tools for the current page"
 msgstr "Zobrazí vývojárske nástroje pre aktuálnu stránku"
 
 #: src/konqmainwindow.cpp:3740
-#, fuzzy, kde-format
-#| msgid "Mark the current window as protected"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark the current window as protected"
 msgstr "Označiť aktuálne okno ako chránené"
 
 #: src/konqmainwindow.cpp:3742
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Mark the current window as protected</p><p>Marking a window as "
-#| "protected ensures that Konqueror will never open external links in it</p>"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<p>Mark the current window as protected.</p><p>Konqueror will never open "
 "external links in a protected window.</p>"
 msgstr ""
-"<p>Označiť aktuálne okno ako chránené</p><p>Označenie okna ako chráneného "
-"zabezpečí, že Konqueror v ňom nikdy neotvorí externé odkazy</p>"
+"<p>Označiť aktuálne okno ako chránené.</p><p>Konqueror nikdy neotvorí "
+"externé odkazy v chránenom okne.</p>"
 
 #: src/konqmainwindow.cpp:3904
 #, kde-format
@@ -1712,14 +1703,11 @@ msgstr ""
 "celej obrazovky (%1)"
 
 #: src/konqmainwindow.cpp:5639
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have multiple tabs open in this window, are you sure you want to quit?"
+#, kde-format
 msgid ""
 "You are closing all windows except this one. Are you sure you want to "
 "continue?"
-msgstr ""
-"Toto okno obsahuje niekoľko otvorených kariet. Naozaj ho chcete zatvoriť?"
+msgstr "Zatvárate všetky okná okrem tohto. Naozaj chcete pokračovať?"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
