@@ -3,7 +3,7 @@
 # KDE Finnish translation sprint participants:
 # Author: Artnay
 # Author: Lliehu
-# SPDX-FileCopyrightText: 2010, 2011, 2012, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Tommi Nieminen <translator@legisign.org>
 # Kim Enkovaara <kim.enkovaara@iki.fi>, 2002, 2003, 2006.
 # Teemu Rytilahti <teemu.rytilahti@d5k.net>, 2003.
 # Mikko Ikola <kola@netikka.fi>, 2003.
@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-08 02:44+0000\n"
-"PO-Revision-Date: 2025-07-13 23:29+0300\n"
+"PO-Revision-Date: 2026-03-02 19:19+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1203,10 +1203,9 @@ msgid "Move Tab Right"
 msgstr "Siirrä välilehteä oikealle"
 
 #: src/konqmainwindow.cpp:3536
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "Uusi &ikkuna"
+msgstr "Suojaa ikkuna"
 
 #: src/konqmainwindow.cpp:3542
 #, kde-format
