@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2026-05-31 19:16-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -259,7 +259,7 @@ msgstr ""
 #: app/main.cpp:31
 #, kde-format
 msgid "Jonathan Marten"
-msgstr "Jonathan Marten"
+msgstr ""
 
 #: app/main.cpp:43
 #, kde-format
@@ -269,7 +269,7 @@ msgstr ""
 #: app/main.cpp:43
 #, kde-format
 msgid "url"
-msgstr "url"
+msgstr ""
 
 #. i18n: ectx: label, entry (WaitTime), group (Options)
 #: app/settings.kcfg:10
@@ -333,6 +333,21 @@ msgid ""
 "original URL refers to a directory but does not end with a slash.</p>\n"
 "      "
 msgstr ""
+"<p>Save downloaded files all in a single directory, with file name "
+"extensions suitable for local browsing.\n"
+"                        For example, the main HTML page will always be "
+"called \"index.html\" and a remote .php page will be saved with the "
+"standard .html extension.</p>\n"
+"               <p>Leave this option turned on to produce a standard web "
+"archive (.war) file.</p>\n"
+"               <p>If this option is turned off, then the files will be saved "
+"exactly as downloaded.\n"
+"                        This means that they may be in subdirectories "
+"reflecting the structure of the original web site, and extensions will not "
+"be adjusted.\n"
+"                        Note that the download may not work correctly if the "
+"original URL refers to a directory but does not end with a slash.</p>\n"
+"      "
 
 #. i18n: ectx: label, entry (RunInTerminal), group (Options)
 #: app/settings.kcfg:42

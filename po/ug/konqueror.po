@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-12 00:44+0000\n"
-"PO-Revision-Date: 2026-05-31 19:16-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
-"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -176,7 +176,7 @@ msgstr "نۆۋەتتىكى ئاسرىغۇچى"
 #: src/konqapplication.cpp:176
 #, kde-format
 msgid "David Faure"
-msgstr "David Faure"
+msgstr ""
 
 #: src/konqapplication.cpp:176
 #, kde-format
@@ -187,7 +187,7 @@ msgstr ""
 #: src/konqapplication.cpp:177
 #, kde-format
 msgid "Simon Hausmann"
-msgstr "Simon Hausmann"
+msgstr ""
 
 #: src/konqapplication.cpp:177
 #, kde-format
@@ -218,7 +218,7 @@ msgstr "ئىجادكار"
 #: src/konqapplication.cpp:180
 #, kde-format
 msgid "Alexander Neundorf"
-msgstr "Alexander Neundorf"
+msgstr ""
 
 #: src/konqapplication.cpp:180
 #, kde-format
@@ -238,7 +238,7 @@ msgstr "ئىجادىيەتچى(تىزىم كۆرۈنۈشى، I/O فۇنكسىي�
 #: src/konqapplication.cpp:182
 #, kde-format
 msgid "Lars Knoll"
-msgstr "Lars Knoll"
+msgstr ""
 
 #: src/konqapplication.cpp:182 src/konqapplication.cpp:183
 #: src/konqapplication.cpp:184 src/konqapplication.cpp:186
@@ -262,7 +262,7 @@ msgstr ""
 #: src/konqapplication.cpp:185
 #, kde-format
 msgid "Waldo Bastian"
-msgstr "Waldo Bastian"
+msgstr ""
 
 #: src/konqapplication.cpp:185
 #, kde-format
@@ -282,7 +282,7 @@ msgstr ""
 #: src/konqapplication.cpp:188
 #, kde-format
 msgid "Stephan Kulow"
-msgstr "Stephan Kulow"
+msgstr ""
 
 #: src/konqapplication.cpp:188
 #, kde-format
@@ -370,7 +370,7 @@ msgstr ""
 #: src/konqapplication.cpp:200
 #, kde-format
 msgid "Richard Moore"
-msgstr "Richard Moore"
+msgstr ""
 
 #: src/konqapplication.cpp:200 src/konqapplication.cpp:201
 #, kde-format
@@ -393,13 +393,11 @@ msgid ""
 "Developer (Java 2 security manager support,\n"
 " and other major improvements to applet support)"
 msgstr ""
-"ئىجادىيەتچى(Java 2 بىخەتەرلىك باشقۇرغۇچىنى قوللاش)،\n"
-"ۋە باشقا قوللانچاق(applet) قوللاشنى ياخشىلاش)"
 
 #: src/konqapplication.cpp:203
 #, kde-format
 msgid "Stefan Schimanski"
-msgstr "Stefan Schimanski"
+msgstr ""
 
 #: src/konqapplication.cpp:203
 #, kde-format
@@ -409,7 +407,7 @@ msgstr "ئىجادىيەتچى(Netscape قىستۇرمىلىرىنى قوللا�
 #: src/konqapplication.cpp:204
 #, kde-format
 msgid "George Staikos"
-msgstr "George Staikos"
+msgstr ""
 
 #: src/konqapplication.cpp:204
 #, kde-format
@@ -429,7 +427,7 @@ msgstr "ئىجادىيەتچى(I/O فۇنكسىيە ئامبىرى، كىملى�
 #: src/konqapplication.cpp:206
 #, kde-format
 msgid "Carsten Pfeiffer"
-msgstr "Carsten Pfeiffer"
+msgstr ""
 
 #: src/konqapplication.cpp:207
 #, kde-format
@@ -454,7 +452,7 @@ msgstr "KFM ئاپتورى"
 #: src/konqapplication.cpp:209
 #, kde-format
 msgid "Joseph Wenninger"
-msgstr "Joseph Wenninger"
+msgstr ""
 
 #: src/konqapplication.cpp:209
 #, kde-format
@@ -464,7 +462,7 @@ msgstr "ئىجادىيەتچى(يولباشچى تاختا framework)"
 #: src/konqapplication.cpp:210
 #, kde-format
 msgid "Stephan Binner"
-msgstr "Stephan Binner"
+msgstr ""
 
 #: src/konqapplication.cpp:210
 #, kde-format
@@ -494,7 +492,7 @@ msgstr ""
 #: src/konqapplication.cpp:214
 #, kde-format
 msgid "Daniel Molkentin"
-msgstr "Daniel Molkentin"
+msgstr ""
 
 #: src/konqapplication.cpp:215
 #, kde-format
@@ -513,7 +511,6 @@ msgstr "URLs يوق ھالەتتە چاقىرغاندا، كۆڭۈلدىكى ك�
 msgid ""
 "Preload for later use. This mode does not support URLs on the command line"
 msgstr ""
-"كېيىنلىكنى ئويلاپ ئالدىن ئوقۇش. بۇ ھالەت بۇيرۇق قۇرىدا URLs نى قوللىمايدۇ"
 
 #: src/konqapplication.cpp:228
 #, kde-format
@@ -613,10 +610,9 @@ msgid "Confirmation"
 msgstr "جەزملەش"
 
 #: src/konqapplication.cpp:583
-#, fuzzy, kde-format
-#| msgid "Close Current Tab"
+#, kde-format
 msgid "Close current window"
-msgstr "نۆۋەتتىكى بەتكۈچنى ياپ"
+msgstr ""
 
 #: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4940
 #: src/konqmainwindow.cpp:4986
@@ -642,9 +638,6 @@ msgid ""
 "The diagnostics is:\n"
 "%2"
 msgstr ""
-"بۆلەك %1 نى ئوقۇۋاتقاندا خاتالىق كۆرۈلدى.\n"
-"دىئاگنوز نەتىجىسى:\n"
-"%2"
 
 #: src/konqframestatusbar.cpp:108
 #, kde-format
@@ -655,19 +648,12 @@ msgid ""
 "useful with different types of views, such as a directory tree with an icon "
 "view or detailed view, and possibly a terminal emulator window."
 msgstr ""
-"ئەڭ كامىدا ئىككى كۆرۈنمە رەسىمدىن مۇشۇ ئەزانى تاللاپ بۇ كۆرۈنمە رەسىملەرنى "
-"«ئۇلانغان» قىلىپ بەلگىلەڭ ئاندىن، سىز بىر كۆرۈنمە رەسىمدە مۇندەرىجىنى "
-"ئۆزگەرتكەندە، باشقا ئۇنىڭ بىلەن ئۇلانغان رەسىم ئاپتوماتىك يېڭىلىنىدۇ ھەمدە "
-"نۆۋەتتىكى مۇندەرىجىنى كۆرسىتىدۇ . بۇ كۆپ دانە ئوخشاش بولمىغان تىپلىق كۆرۈنمە "
-"رەسىملەردە كېرەككە كېلىدۇ، مەسىلەن سىنبەلگە كۆرۈنمە رەسىمى ياكى تەپسىلىي "
-"كۆرۈنمە رەسىم، مۇندەرىجە دەرىخى ياكى تېرمىنالىنىڭ تەقلىدى كۆزنىكىدىن "
-"پايدىلىنىش."
 
 #: src/konqframestatusbar.cpp:119
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr "%p%"
+msgstr ""
 
 #: src/konqframestatusbar.cpp:155
 #, kde-format
@@ -677,7 +663,7 @@ msgstr "كۆرۈنۈشنى ياپ"
 #: src/konqframestatusbar.cpp:233
 #, kde-format
 msgid "%1/s"
-msgstr "%1/s"
+msgstr ""
 
 #: src/konqframestatusbar.cpp:235
 #, kde-format
@@ -813,8 +799,6 @@ msgid ""
 "This page contains changes that have not been submitted.\n"
 "Reloading the page will discard these changes."
 msgstr ""
-"بۇ بەتتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
-"بىر سەپلىمە ھۆججەتنى قايتا ئوقۇسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
 
 #: src/konqmainwindow.cpp:1661 src/konqmainwindow.cpp:2303
 #: src/konqmainwindow.cpp:2392 src/konqmainwindow.cpp:2424
@@ -877,8 +861,6 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Detaching the tab will discard these changes."
 msgstr ""
-"بۇ بەتكۈچتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
-"بۇ بەتكۈچ ئاجرىتىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
 
 #: src/konqmainwindow.cpp:2391
 #, kde-format
@@ -886,8 +868,6 @@ msgid ""
 "This view contains changes that have not been submitted.\n"
 "Closing the view will discard these changes."
 msgstr ""
-"بۇ كۆرۈنۈشتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
-"بۇ كۆرۈنۈش يېپىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
 
 #: src/konqmainwindow.cpp:2423
 #, kde-format
@@ -895,8 +875,6 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the tab will discard these changes."
 msgstr ""
-"بۇ بەتكۈچتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
-"بۇ بەتكۈچ يېپىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
 
 #: src/konqmainwindow.cpp:2449
 #, kde-format
@@ -920,8 +898,6 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing other tabs will discard these changes."
 msgstr ""
-"بۇ بەتكۈچتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
-"باشقا بەتكۈچلەر يېپىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
 
 #: src/konqmainwindow.cpp:2488
 #, kde-format
@@ -929,8 +905,6 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Reloading all tabs will discard these changes."
 msgstr ""
-"بۇ بەتكۈچتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
-"ھەممە بەتكۈچلەرنى قايتا ئوقۇسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
 
 #: src/konqmainwindow.cpp:2545
 #, kde-format
@@ -1005,11 +979,10 @@ msgid "&Find File..."
 msgstr "ھۆججەت ئىزدە(&F)…"
 
 #: src/konqmainwindow.cpp:3349
-#, fuzzy, kde-format
-#| msgid "Close &Other Tabs"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Other Windows"
-msgstr "باشقا بەتكۈچنى ياپ(&O)"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3350
 #, kde-format
@@ -1022,11 +995,10 @@ msgid "Closes all windows except this one. It doesn't close preloaded windows"
 msgstr ""
 
 #: src/konqmainwindow.cpp:3356
-#, fuzzy, kde-format
-#| msgid "Konqueror"
+#, kde-format
 msgctxt "@action:inmenu quit Konqueror"
 msgid "Quit Konqueror"
-msgstr "Konqueror توركۆرگۈ"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3358
 #, kde-format
@@ -1034,17 +1006,15 @@ msgid "Closes all Konqueror windows and quits the application"
 msgstr ""
 
 #: src/konqmainwindow.cpp:3362
-#, fuzzy, kde-format
-#| msgid "Und&o: Closed Window"
+#, kde-format
 msgctxt "@action:inmenu close current window"
 msgid "Close Window"
-msgstr "يېنىۋال(&O): يېپىلغان كۆزنەك"
+msgstr "كۆزنەك ياپ"
 
 #: src/konqmainwindow.cpp:3364
-#, fuzzy, kde-format
-#| msgid "&Close Active View"
+#, kde-format
 msgid "Close this window"
-msgstr "ئاكتىپ كۆرۈنۈشنى ياپ(&C)"
+msgstr "بۇ كۆزنەكنى ياپىدۇ"
 
 #: src/konqmainwindow.cpp:3366
 #, kde-format
@@ -1451,8 +1421,6 @@ msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
 "while. Continue?"
 msgstr ""
-"بەتكۈچلەردە 20 دىن ئارتۇق خەتكۈشنى ئېچىشنى تەلەپ قىلدىڭىز. بۇنىڭ ئازراق "
-"ۋاقىت كېتىدۇ. داۋاملاشتۇرسۇنمۇ؟"
 
 #: src/konqmainwindow.cpp:4238
 #, kde-format
@@ -1525,8 +1493,6 @@ msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
-"بۇ بەتكۈچتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
-"بىر كۆزنەك يېپىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
 
 #: src/konqmainwindow.cpp:4902
 #, kde-format
@@ -1534,14 +1500,12 @@ msgid ""
 "This page contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
-"بۇ بەتتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
-"بىر كۆزنەك يېپىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
 
 #: src/konqmainwindow.cpp:5062
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
-msgstr "يان بالدىقىڭىز ئىشلىمىدى ياكى يوق. يېڭى كىرگۈنى قوشقىلى بولمايدۇ."
+msgstr ""
 
 #: src/konqmainwindow.cpp:5062 src/konqmainwindow.cpp:5069
 #, kde-format
@@ -1570,8 +1534,6 @@ msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
 "with %1, but it cannot handle this file type."
 msgstr ""
-"سەپلىمە خاتالىق كۆرۈلگەندەك قىلىدۇ. سىز Konqueror بىلەن %1 نى باغلاپسىز، "
-"بىراق Konqueror بۇ تىپتىكى ھۆججەتنى بىر تەرەپ قىلالمايدۇ."
 
 #: src/konqmainwindow.cpp:5502
 #, kde-format
@@ -1634,14 +1596,11 @@ msgid ""
 msgstr ""
 
 #: src/konqmainwindow.cpp:5639
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have multiple tabs open in this window, are you sure you want to quit?"
+#, kde-format
 msgid ""
 "You are closing all windows except this one. Are you sure you want to "
 "continue?"
 msgstr ""
-"بۇ كۆزنەكتە ئېچىقلىق بەتكۈچىڭىزدىن بىر نەچچىسى بار، راستتىنلا چېكىنەمسىز؟"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
@@ -1756,7 +1715,7 @@ msgstr "ئاتى «%1» بولغان جەريانچاق مەۋجۇت، قاپل�
 #, kde-format
 msgctxt "@title:window"
 msgid "Session exists. Overwrite?"
-msgstr "جەريانچاق مەۋجۇت. قاپلامسىز؟"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pNewButton)
 #: src/konqsessiondlg_base.ui:26
@@ -1948,10 +1907,6 @@ msgid ""
 "resend the data, any action the form carried out (such as search or online "
 "purchase) will be repeated. "
 msgstr ""
-"سىز تەكشۈرمەكچى بولغان بەت يۈزى جەدۋەل سانلىق مەلۇماتلىرى تاپشۇرغان "
-"نەتىجىدىن ئىبارەت. ئەگەر قايتىدىن سانلىق مەلۇمات يوللىسىڭىز، بۇ جەدۋەل ئىجرا "
-"قىلغان ھەر قانداق مەشغۇلات (مەسىلەن ئاختۇرۇش ياكى لىنىيىدە "
-"سېتىۋېلىشلارنىڭ )ھەممىسى تەكرارلىنىدۇ. "
 
 #: src/konqview.cpp:1325
 #, kde-format

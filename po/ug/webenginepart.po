@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-12 00:44+0000\n"
-"PO-Revision-Date: 2026-05-31 19:17-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
-"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -908,9 +908,6 @@ msgid ""
 "\n"
 "The integration will be disabled."
 msgstr ""
-"ئۇنى قايتا ئورنىتىڭ ۋە $PATH نىڭ ئىچىگە يولىنى يېزىڭ.\n"
-"\n"
-"يۈرۈشلەشتۈرۈرش ئىناۋەتسىز قىلىنىدۇ."
 
 #: src/webenginepage.cpp:570
 #, kde-format
@@ -938,10 +935,6 @@ msgid ""
 "A third party may be able to intercept and view this information.\n"
 "Are you sure you want to send the data unencrypted?"
 msgstr ""
-"ئاگاھلاندۇرۇش: بۇ بىخەتەر جەدۋەل ئىدى، بىراق ئۇنى شىفىرسىز ھالەتتە "
-"ئەۋەتمەكچى بولۇۋاتىدۇ.\n"
-"ئۈچىنچى تەرەپ بۇنىڭغا ئارىلاشسا بۇ ئۇچۇرلارنى كۆرۈۋالالايدۇ.\n"
-"سانلىق مەلۇماتلارنى شىفىرسىز ھالەتتە ئەۋەتسۇنمۇ؟"
 
 #: src/webenginepage.cpp:653
 #, kde-format
@@ -954,8 +947,6 @@ msgid ""
 "This site is attempting to submit form data via email.\n"
 "Do you want to continue?"
 msgstr ""
-"بۇ بېكەت ئېلخەت ئارقىلىق جەدۋەل ئۇچۇرى يوللىماقچى.\n"
-"داۋاملاشتۇرامسىز؟"
 
 #: src/webenginepage.cpp:664
 #, kde-format
@@ -992,8 +983,6 @@ msgid ""
 "This site attempted to attach a file from your computer in the form "
 "submission. The attachment was removed for your protection."
 msgstr ""
-"مەزكۇر بېكەت كومپيۇتېرىڭىزدىكى بىر ھۆججەتنى جەدۋەلگە چاپلاپ ئەۋەتمەكچى "
-"بولغان ئىدى، بىخەتەرلىكىڭىزنى ئويلىشىپ قوشۇلما جەدۋەلدىن ئۆچۈرۈۋېتىلدى."
 
 #: src/webenginepage.cpp:735
 #, kde-format
@@ -1091,7 +1080,7 @@ msgstr "پۈتۈك مەنبە كودىنى كۆرسەت(&C)"
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
-msgstr "SSL"
+msgstr ""
 
 #: src/webenginepart.cpp:268
 #, kde-format
