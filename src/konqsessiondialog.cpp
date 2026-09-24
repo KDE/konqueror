@@ -109,8 +109,15 @@ void SessionTreeWidget::fillSession(const QString& sessionFile)
         }
         if (windowItem->childCount() > 0) {
             QRegularExpressionMatch trailingDigitsMatch = trailingDigitsRE.match(windowId);
+            const int winIdInt = trailingDigitsMatch.captured(0).toInt(); // FIXME: what if for some reason this is broken and there is no match?
+
+#ifdef Q_OS_UNIX
+            const int virtualDesktopId = windowGroup.readEntry("DesktopId", -1);
+            windowItem->setText(0, i18nc("@item:treewidget", "Window %1  (on Desktop %2)", winIdInt, virtualDesktopId));
+#else
             // I assume this is done this way for the benefit of i18n. Otherwise it would be easier to just use what is in the session file
-            windowItem->setText(0, i18nc("@item:treewidget", "Window %1", trailingDigitsMatch.captured(0).toInt())); // FIXME: what if for some reason this is broken and there is no match?
+            windowItem->setText(0, i18nc("@item:treewidget", "Window %1", winIdInt));
+#endif
             windowItem->setToolTip(0, m_genericToolTip);
             windowItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
             windowItem->setData(0, IdRole, KonqSessionManager::fullWindowId(sessionFile, windowId));

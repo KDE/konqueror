@@ -42,6 +42,11 @@
 #include <QScreen>
 #include <QTimer>
 
+#include <KWindowInfo>
+#ifdef Q_OS_UNIX
+#include <KX11Extras>
+#endif
+
 //#define DEBUG_VIEWMGR
 
 using namespace Konq;
@@ -369,6 +374,15 @@ KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup &configGroup
 {
     // TODO factorize to avoid code duplication with loadViewProfileFromGroup
     KonqMainWindow *mainWindow = new KonqMainWindow;
+
+    const int virtualDesktopId = configGroup.readEntry("DesktopId", -1);
+
+#ifdef Q_OS_UNIX
+    if (virtualDesktopId >= 0) {
+        KX11Extras::setOnDesktop(mainWindow->winId(), virtualDesktopId);
+    }
+#endif
+
 
     if (configGroup.readEntry("FullScreen", false)) {
         // Full screen on
@@ -918,6 +932,11 @@ void KonqViewManager::saveViewConfigToGroup(KConfigGroup &profileGroup, KonqFram
         profileGroup.writeEntry("RootItem", prefix);
         prefix.append(QLatin1Char('_'));
         m_pMainWindow->saveConfig(profileGroup, prefix, options, tabContainer(), 0, 1);
+    }
+
+    KWindowInfo info(m_pMainWindow->winId(), NET::WMDesktop);
+    if (info.valid()) {
+        profileGroup.writeEntry("DesktopId", info.desktop());
     }
 
     profileGroup.writeEntry("FullScreen", m_pMainWindow->fullScreenMode());
