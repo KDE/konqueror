@@ -1396,6 +1396,9 @@ HistoryEntry* HistoryEntry::fromDelayedLoadingData(const KConfigGroup& config, c
     if (options & (KonqFrameBase::SaveUrls|KonqFrameBase::SaveHistoryItems)) {
         entry->url = QUrl(config.readEntry(QStringLiteral("Url").prepend(prefix), ""));
         entry->locationBarURL = config.readEntry(QStringLiteral("LocationBarURL").prepend(prefix), "");
+        if (entry->locationBarURL.isEmpty() && entry->url.isValid() && entry->url.scheme() != QLatin1String("konq")) {
+            entry->locationBarURL = entry->url.toDisplayString();
+        }
         entry->title = config.readEntry(QStringLiteral("Title").prepend(prefix), "");
         entry->strViewType = config.readEntry(QStringLiteral("StrServiceType").prepend(prefix), "");
         entry->strServiceName = config.readEntry(QStringLiteral("StrServiceName").prepend(prefix), "");
