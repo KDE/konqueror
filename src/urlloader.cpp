@@ -221,11 +221,8 @@ void UrlLoader::decideAction()
 
 void UrlLoader::abort()
 {
-    if (m_openUrlJob) {
-        m_openUrlJob->kill();
-    }
-    if (m_applicationLauncherJob) {
-        m_applicationLauncherJob->kill();
+    if (m_launcherJob) {
+        m_launcherJob->kill();
     }
     deleteLater();
 }
@@ -835,34 +832,34 @@ void UrlLoader::open()
         return;
     }
 
-    KJob *job = nullptr;
     if (m_service) {
         KIO::ApplicationLauncherJob *j = new KIO::ApplicationLauncherJob(m_service);
         j->setUrls({m_url});
         if (m_request.tempFile) {
             j->setRunFlags(KIO::ApplicationLauncherJob::DeleteTemporaryFiles);
         }
-        job = j;
+        m_launcherJob = j;
     } else {
         KIO::OpenUrlJob *j = new KIO::OpenUrlJob(m_url, m_mimeType);
         j->setRunExecutables(false);
-        job = j;
+        m_launcherJob = j;
     }
-    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
-    connect(job, &KJob::finished, this, [this, job](){done(job);});
-    job->start();
+    m_launcherJob->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
+    connect(m_launcherJob, &KJob::finished, this, [this](){done(m_launcherJob);});
+    m_launcherJob->start();
 }
 
 void UrlLoader::execute()
 {
-    m_openUrlJob = new KIO::OpenUrlJob(m_url, m_mimeType, this);
-    m_openUrlJob->setEnableExternalBrowser(false);
-    m_openUrlJob->setRunExecutables(true);
-    m_openUrlJob->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
-    m_openUrlJob->setSuggestedFileName(m_request.suggestedFileName);
-    m_openUrlJob->setDeleteTemporaryFile(m_request.tempFile);
-    connect(m_openUrlJob, &KJob::finished, this, [this]{done(m_openUrlJob);});
-    m_openUrlJob->start();
+    KIO::OpenUrlJob *job = new KIO::OpenUrlJob(m_url, m_mimeType, this);
+    job->setEnableExternalBrowser(false);
+    job->setRunExecutables(true);
+    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
+    job->setSuggestedFileName(m_request.suggestedFileName);
+    job->setDeleteTemporaryFile(m_request.tempFile);
+    m_launcherJob = job;
+    connect(job, &KJob::finished, this, [this]{done(m_launcherJob);});
+    job->start();
 }
 
 //Copied from KParts::BrowserRun::isTextExecutable

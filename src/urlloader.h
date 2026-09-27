@@ -737,17 +737,9 @@ private:
     KPluginMetaData m_part; //!< The metadata of the part to embed the URL with
     KService::Ptr m_service;//!< The service to open the URL with
 
-    QPointer<KIO::OpenUrlJob> m_openUrlJob; //!< The job to execute the URL
+    QPointer<KJob> m_launcherJob = nullptr; //!< Job to execute the URL or to open it in an external application
 
-    /**
-     * @brief The job to open the URL in an external application
-     *
-     * We can't use #m_openUrlJob because it KIO::OpenUrlJob doesn't allow to choose
-     * the application to use
-     */
-    QPointer<KIO::ApplicationLauncherJob> m_applicationLauncherJob;
-
-    QPointer<KIO::MimeTypeFinderJob> m_mimeTypeFinderJob; //!< The job to find the mimetype of the URL
+    QPointer<KIO::MimeTypeFinderJob> m_mimeTypeFinderJob = nullptr; //!< The job to find the mimetype of the URL
 
     QString m_oldLocationBarUrl; //!< The previous content of the location bar
     int m_jobErrorCode = 0; //!< The error code returned by the last run job
