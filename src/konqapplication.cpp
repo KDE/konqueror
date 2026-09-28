@@ -173,7 +173,7 @@ void KonquerorApplication::setupAboutData()
     // This may again change later, but set it here for the action.
     QGuiApplication::setWindowIcon(QIcon::fromTheme("konqueror"));
 
-    aboutData.addAuthor(i18n("Stefano Crocco"), i18n("Current maintainer"), "stefano.crocco@alice.it");
+    aboutData.addAuthor(i18n("Stefano Crocco"), i18n("Current maintainer"), "posta@stefanocrocco.it");
     aboutData.addAuthor(i18n("David Faure"), i18n("Developer (framework, parts, JavaScript, I/O library) and former maintainer"), "faure@kde.org");
     aboutData.addAuthor(i18n("Simon Hausmann"), i18n("Developer (framework, parts)"), "hausmann@kde.org");
     aboutData.addAuthor(i18n("Michael Reiher"), i18n("Developer (framework)"), "michael.reiher@gmx.de");
