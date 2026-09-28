@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-12 00:44+0000\n"
+"POT-Creation-Date: 2026-09-28 00:45+0000\n"
 "PO-Revision-Date: 2017-03-04 14:51+0100\n"
 "Last-Translator: Kiszel Kristóf <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -618,8 +618,8 @@ msgstr ""
 msgid "Are you sure you want to quit Konqueror? This will close all windows"
 msgstr ""
 
-#: src/konqapplication.cpp:581 src/konqmainwindow.cpp:4871
-#: src/konqmainwindow.cpp:5640
+#: src/konqapplication.cpp:581 src/konqmainwindow.cpp:4879
+#: src/konqmainwindow.cpp:5653
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
@@ -631,20 +631,20 @@ msgstr "Megerősítés"
 msgid "Close current window"
 msgstr "A lapok megnyitása az aktuális ablakban történjen"
 
-#: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4940
-#: src/konqmainwindow.cpp:4986
+#: src/konqclosedwindowsmanager.cpp:209 src/konqmainwindow.cpp:4948
+#: src/konqmainwindow.cpp:4994
 #, kde-format
 msgid "no name"
 msgstr "névtelen"
 
-#: src/konqextensionmanager.cpp:49
+#: src/konqextensionmanager.cpp:52
 #, fuzzy, kde-format
 #| msgid "Configure Extensions..."
 msgctxt "@title:window"
 msgid "Configure Extensions"
 msgstr "A kiterjesztések beállításai..."
 
-#: src/konqextensionmanager.cpp:69
+#: src/konqextensionmanager.cpp:72
 #, kde-format
 msgid "Extensions"
 msgstr "Kiterjesztések"
@@ -660,7 +660,7 @@ msgstr ""
 "A hibaüzenet:\n"
 "%2"
 
-#: src/konqframestatusbar.cpp:108
+#: src/konqframestatusbar.cpp:135
 #, kde-format
 msgid ""
 "Checking this box on at least two views sets those views as 'linked'. Then, "
@@ -676,23 +676,23 @@ msgstr ""
 "nézet egy ikonnézettel, egy részletes nézettel vagy esetleg egy "
 "parancsértelmező-ablakkal van összekapcsolva."
 
-#: src/konqframestatusbar.cpp:119
+#: src/konqframestatusbar.cpp:146
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
 msgstr ""
 
-#: src/konqframestatusbar.cpp:155
+#: src/konqframestatusbar.cpp:182
 #, kde-format
 msgid "Close View"
 msgstr "A nézet bezárása"
 
-#: src/konqframestatusbar.cpp:233
+#: src/konqframestatusbar.cpp:260
 #, kde-format
 msgid "%1/s"
 msgstr "%1/s"
 
-#: src/konqframestatusbar.cpp:235
+#: src/konqframestatusbar.cpp:262
 #, kde-format
 msgid "Stalled"
 msgstr "Várakozás adatra"
@@ -719,7 +719,7 @@ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
 msgid "Sort"
 msgstr "Rendezés"
 
-#: src/konqhistorymodel.cpp:119
+#: src/konqhistorymodel.cpp:223
 #, kde-format
 msgid ""
 "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
@@ -728,17 +728,17 @@ msgstr ""
 "<qt><center><b>%1</b></center><hr />Legutóbbi megtekintés: %2<br />Első "
 "megtekintés: %3<br />A megtekintések száma eddig: %4</qt>"
 
-#: src/konqhistorymodel.cpp:213
+#: src/konqhistorymodel.cpp:317
 #, kde-format
 msgid "Local"
 msgstr "Helyi"
 
-#: src/konqhistorymodel.cpp:216
+#: src/konqhistorymodel.cpp:320
 #, kde-format
 msgid "Miscellaneous"
 msgstr "Egyéb"
 
-#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4408
+#: src/konqhistoryview.cpp:55 src/konqmainwindow.cpp:4416
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Megnyitás új &ablakban"
@@ -800,29 +800,29 @@ msgctxt "@title:window"
 msgid "Clear History?"
 msgstr "Törölni szeretné a napló tartalmát?"
 
-#: src/konqmainwindow.cpp:765
+#: src/konqmainwindow.cpp:764
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
 msgstr "Betöltés..."
 
-#: src/konqmainwindow.cpp:797
+#: src/konqmainwindow.cpp:796
 #, kde-format
 msgid "Access denied"
 msgstr ""
 
-#: src/konqmainwindow.cpp:1560
+#: src/konqmainwindow.cpp:1573
 #, fuzzy, kde-format
 #| msgid "&Open File..."
 msgid "Open File"
 msgstr "&Fájl megnyitása..."
 
-#: src/konqmainwindow.cpp:1624
+#: src/konqmainwindow.cpp:1637
 #, kde-format
 msgid "Canceled."
 msgstr "Félbeszakítva."
 
-#: src/konqmainwindow.cpp:1660
+#: src/konqmainwindow.cpp:1673
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -831,54 +831,54 @@ msgstr ""
 "Ez az oldal olyan módosításokat tartalmaz, amelyek még nincsenek elmentve.\n"
 "Az oldal bezárása esetén a módosítások elvesznek."
 
-#: src/konqmainwindow.cpp:1661 src/konqmainwindow.cpp:2303
-#: src/konqmainwindow.cpp:2392 src/konqmainwindow.cpp:2424
-#: src/konqmainwindow.cpp:2467 src/konqmainwindow.cpp:2489
-#: src/konqmainwindow.cpp:4905
+#: src/konqmainwindow.cpp:1674 src/konqmainwindow.cpp:2316
+#: src/konqmainwindow.cpp:2405 src/konqmainwindow.cpp:2437
+#: src/konqmainwindow.cpp:2480 src/konqmainwindow.cpp:2502
+#: src/konqmainwindow.cpp:4913
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
 msgstr "Eldobja a módosításokat?"
 
-#: src/konqmainwindow.cpp:1661 src/konqmainwindow.cpp:2303
-#: src/konqmainwindow.cpp:2392 src/konqmainwindow.cpp:2424
-#: src/konqmainwindow.cpp:2467 src/konqmainwindow.cpp:2490
-#: src/konqmainwindow.cpp:4905
+#: src/konqmainwindow.cpp:1674 src/konqmainwindow.cpp:2316
+#: src/konqmainwindow.cpp:2405 src/konqmainwindow.cpp:2437
+#: src/konqmainwindow.cpp:2480 src/konqmainwindow.cpp:2503
+#: src/konqmainwindow.cpp:4913
 #, kde-format
 msgid "&Discard Changes"
 msgstr "A módosítások el&dobása"
 
-#: src/konqmainwindow.cpp:1978 src/konqmainwindow.cpp:1984
+#: src/konqmainwindow.cpp:1991 src/konqmainwindow.cpp:1997
 #, kde-format
 msgid "Home Folder"
 msgstr "Saját mappa"
 
-#: src/konqmainwindow.cpp:1979 src/konqmainwindow.cpp:3421
+#: src/konqmainwindow.cpp:1992 src/konqmainwindow.cpp:3429
 #, kde-format
 msgid "Home"
 msgstr "Saját mappa"
 
-#: src/konqmainwindow.cpp:1985
+#: src/konqmainwindow.cpp:1998
 #, kde-format
 msgid "Navigate to your 'Home Folder'"
 msgstr "A saját mappa betöltése"
 
-#: src/konqmainwindow.cpp:1986
+#: src/konqmainwindow.cpp:1999
 #, kde-format
 msgid "Navigate to your local 'Home Folder'"
 msgstr "A helyi saját mappa betöltése"
 
-#: src/konqmainwindow.cpp:1989
+#: src/konqmainwindow.cpp:2002
 #, kde-format
 msgid "Home Page"
 msgstr "Saját alapcím"
 
-#: src/konqmainwindow.cpp:1991
+#: src/konqmainwindow.cpp:2004
 #, kde-format
 msgid "Navigate to your 'Home Page'"
 msgstr "Az alapcím betöltése"
 
-#: src/konqmainwindow.cpp:1992
+#: src/konqmainwindow.cpp:2005
 #, kde-format
 msgid ""
 "<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
@@ -889,7 +889,7 @@ msgstr ""
 "beállításai->Általános</b> részben lehet beállítani, hogy mi legyen az "
 "alapcím.</html>"
 
-#: src/konqmainwindow.cpp:2302
+#: src/konqmainwindow.cpp:2315
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -898,7 +898,7 @@ msgstr ""
 "Ez a lap még nem mentett módosításokat tartalmaz.\n"
 "A lap kiemelésekor a módosítások elvesznek."
 
-#: src/konqmainwindow.cpp:2391
+#: src/konqmainwindow.cpp:2404
 #, kde-format
 msgid ""
 "This view contains changes that have not been submitted.\n"
@@ -907,7 +907,7 @@ msgstr ""
 "Ez a nézet még nem mentett módosításokat tartalmaz.\n"
 "A nézet bezárásakor a módosítások elvesznek."
 
-#: src/konqmainwindow.cpp:2423
+#: src/konqmainwindow.cpp:2436
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -916,23 +916,23 @@ msgstr ""
 "Ez a lap még nem mentett módosításokat tartalmaz.\n"
 "A lap bezárásakor a módosítások elvesznek."
 
-#: src/konqmainwindow.cpp:2449
+#: src/konqmainwindow.cpp:2462
 #, kde-format
 msgid "Do you really want to close all other tabs?"
 msgstr "Biztosan be szeretné zárni a többi lapot?"
 
-#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:3501 src/konqtabs.cpp:74
+#: src/konqmainwindow.cpp:2463 src/konqmainwindow.cpp:3509 src/konqtabs.cpp:74
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr "A többi lap bezárás&a"
 
-#: src/konqmainwindow.cpp:2450
+#: src/konqmainwindow.cpp:2463
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
 msgstr "A többi lap bezárásának megerősítése"
 
-#: src/konqmainwindow.cpp:2466
+#: src/konqmainwindow.cpp:2479
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -941,7 +941,7 @@ msgstr ""
 "Ez a lap még nem mentett módosításokat tartalmaz.\n"
 "A többi lap bezárásakor a módosítások elvesznek."
 
-#: src/konqmainwindow.cpp:2488
+#: src/konqmainwindow.cpp:2501
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -950,286 +950,286 @@ msgstr ""
 "Ez a lap még nem mentett módosításokat tartalmaz.\n"
 "A lapok frissítésekor a módosítások elvesznek."
 
-#: src/konqmainwindow.cpp:2545
+#: src/konqmainwindow.cpp:2558
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Target"
 msgstr "Adja meg a célt"
 
-#: src/konqmainwindow.cpp:2552
+#: src/konqmainwindow.cpp:2565
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
 msgstr "<qt><b>%1</b> nem érvényes</qt>"
 
-#: src/konqmainwindow.cpp:2562
+#: src/konqmainwindow.cpp:2575
 #, kde-format
 msgid "Copy selected files from %1 to:"
 msgstr "A kijelölt fájlok másolása innen: %1 ide:"
 
-#: src/konqmainwindow.cpp:2575
+#: src/konqmainwindow.cpp:2588
 #, kde-format
 msgid "Move selected files from %1 to:"
 msgstr "A kijelölt fájlok átmozgatása innen: %1 ide:"
 
-#: src/konqmainwindow.cpp:2743
+#: src/konqmainwindow.cpp:2753
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
 msgstr "A bezárt lapok naplójának kiürítése"
 
-#: src/konqmainwindow.cpp:2765
+#: src/konqmainwindow.cpp:2773
 #, kde-format
 msgid "Save As..."
 msgstr "Mentés másként..."
 
-#: src/konqmainwindow.cpp:2767
+#: src/konqmainwindow.cpp:2775
 #, kde-format
 msgid "Manage..."
 msgstr "Kezelés..."
 
-#: src/konqmainwindow.cpp:3311
+#: src/konqmainwindow.cpp:3319
 #, kde-format
 msgid "New &Window"
 msgstr "Új &ablak"
 
-#: src/konqmainwindow.cpp:3316
+#: src/konqmainwindow.cpp:3324
 #, kde-format
 msgid "&Duplicate Window"
 msgstr "Az ablak &duplikálása"
 
-#: src/konqmainwindow.cpp:3321
+#: src/konqmainwindow.cpp:3329
 #, kde-format
 msgid "Send &Link Address..."
 msgstr "A l&ink elküldése..."
 
-#: src/konqmainwindow.cpp:3325
+#: src/konqmainwindow.cpp:3333
 #, kde-format
 msgid "S&end File..."
 msgstr "A fájl elkül&dése..."
 
-#: src/konqmainwindow.cpp:3329
+#: src/konqmainwindow.cpp:3337
 #, kde-format
 msgid "&Open Location"
 msgstr "&Cím megnyitása"
 
-#: src/konqmainwindow.cpp:3335
+#: src/konqmainwindow.cpp:3343
 #, kde-format
 msgid "&Open File..."
 msgstr "&Fájl megnyitása..."
 
-#: src/konqmainwindow.cpp:3340
+#: src/konqmainwindow.cpp:3348
 #, kde-format
 msgid "&Find File..."
 msgstr "&Fájlkeresés..."
 
-#: src/konqmainwindow.cpp:3349
+#: src/konqmainwindow.cpp:3357
 #, fuzzy, kde-format
 #| msgid "Close &Other Tabs"
 msgctxt "@action:inmenu"
 msgid "Close Other Windows"
 msgstr "A többi lap bezárás&a"
 
-#: src/konqmainwindow.cpp:3350
+#: src/konqmainwindow.cpp:3358
 #, kde-format
 msgid "Closes all windows except this one"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3352
+#: src/konqmainwindow.cpp:3360
 #, kde-format
 msgid "Closes all windows except this one. It doesn't close preloaded windows"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3356
+#: src/konqmainwindow.cpp:3364
 #, fuzzy, kde-format
 #| msgid "Konqueror"
 msgctxt "@action:inmenu quit Konqueror"
 msgid "Quit Konqueror"
 msgstr "Konqueror"
 
-#: src/konqmainwindow.cpp:3358
+#: src/konqmainwindow.cpp:3366
 #, kde-format
 msgid "Closes all Konqueror windows and quits the application"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3362
+#: src/konqmainwindow.cpp:3370
 #, fuzzy, kde-format
 #| msgid "Und&o: Closed Window"
 msgctxt "@action:inmenu close current window"
 msgid "Close Window"
 msgstr "&Visszavonás: Ablak bezárása"
 
-#: src/konqmainwindow.cpp:3364
+#: src/konqmainwindow.cpp:3372
 #, fuzzy, kde-format
 #| msgid "&Close Active View"
 msgid "Close this window"
 msgstr "Az aktív nézet bezá&rása"
 
-#: src/konqmainwindow.cpp:3366
+#: src/konqmainwindow.cpp:3374
 #, kde-format
 msgid "Close this window, quitting Konqueror if it is the only window"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3368
+#: src/konqmainwindow.cpp:3376
 #, kde-format
 msgid "Lock to Current Location"
 msgstr "Rögzítés a jelenlegi helyen"
 
-#: src/konqmainwindow.cpp:3371
+#: src/konqmainwindow.cpp:3379
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr "Nézetkap&csolás"
 
-#: src/konqmainwindow.cpp:3376
+#: src/konqmainwindow.cpp:3384
 #, kde-format
 msgid "&Up"
 msgstr "&Fel"
 
-#: src/konqmainwindow.cpp:3386
+#: src/konqmainwindow.cpp:3394
 #, kde-format
 msgid "Closed Items"
 msgstr "Bezárt lapok"
 
-#: src/konqmainwindow.cpp:3399
+#: src/konqmainwindow.cpp:3407
 #, kde-format
 msgid "Sessions"
 msgstr "Munkamenetek"
 
-#: src/konqmainwindow.cpp:3426
+#: src/konqmainwindow.cpp:3434
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr "Leggyakrabban felkeresett oldalak"
 
-#: src/konqmainwindow.cpp:3430
+#: src/konqmainwindow.cpp:3438
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr "Nemrég felkeresett oldalak"
 
-#: src/konqmainwindow.cpp:3439
+#: src/konqmainwindow.cpp:3447
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr "Előzmények megjelenítése"
 
-#: src/konqmainwindow.cpp:3451
+#: src/konqmainwindow.cpp:3459
 #, kde-format
 msgid "Configure Extensions..."
 msgstr "A kiterjesztések beállításai..."
 
-#: src/konqmainwindow.cpp:3455
+#: src/konqmainwindow.cpp:3463
 #, kde-format
 msgid "Configure Spell Checking..."
 msgstr "Helyesírás-ellenőrzés..."
 
-#: src/konqmainwindow.cpp:3461
+#: src/konqmainwindow.cpp:3469
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr "Nézetelvál&asztás függőlegesen"
 
-#: src/konqmainwindow.cpp:3466
+#: src/konqmainwindow.cpp:3474
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr "Nézetelválasztás vízsz&intesen"
 
-#: src/konqmainwindow.cpp:3471 src/konqtabs.cpp:41
+#: src/konqmainwindow.cpp:3479 src/konqtabs.cpp:41
 #, kde-format
 msgid "&New Tab"
 msgstr "Új &lap"
 
-#: src/konqmainwindow.cpp:3480
+#: src/konqmainwindow.cpp:3488
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr "Az aktuális lap &duplikálása"
 
-#: src/konqmainwindow.cpp:3485
+#: src/konqmainwindow.cpp:3493
 #, kde-format
 msgid "Detach Current Tab"
 msgstr "Az aktuális lap kiemelése külön ablakba"
 
-#: src/konqmainwindow.cpp:3490
+#: src/konqmainwindow.cpp:3498
 #, kde-format
 msgid "&Close Active View"
 msgstr "Az aktív nézet bezá&rása"
 
-#: src/konqmainwindow.cpp:3495
+#: src/konqmainwindow.cpp:3503
 #, kde-format
 msgid "Close Current Tab"
 msgstr "Az aktuális lap bezárása"
 
-#: src/konqmainwindow.cpp:3505
+#: src/konqmainwindow.cpp:3513
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "Váltás a következő lapra"
 
-#: src/konqmainwindow.cpp:3509
+#: src/konqmainwindow.cpp:3517
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "Váltás az előző lapra"
 
-#: src/konqmainwindow.cpp:3516
+#: src/konqmainwindow.cpp:3524
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "Váltás a(z) %1. lapra"
 
-#: src/konqmainwindow.cpp:3521
+#: src/konqmainwindow.cpp:3529
 #, kde-format
 msgid "Move Tab Left"
 msgstr "A lap balra mozgatása"
 
-#: src/konqmainwindow.cpp:3526
+#: src/konqmainwindow.cpp:3534
 #, kde-format
 msgid "Move Tab Right"
 msgstr "A lap jobbra mozgatása"
 
-#: src/konqmainwindow.cpp:3531
+#: src/konqmainwindow.cpp:3539
 #, fuzzy, kde-format
 #| msgid "New &Window"
 msgid "Protect Window"
 msgstr "Új &ablak"
 
-#: src/konqmainwindow.cpp:3537
+#: src/konqmainwindow.cpp:3545
 #, kde-format
 msgid "Dump Debug Info"
 msgstr "A nyomkövetési adatok megjelenítése"
 
-#: src/konqmainwindow.cpp:3555
+#: src/konqmainwindow.cpp:3563
 #, kde-format
 msgid "&Reload"
 msgstr "Új&ratöltés"
 
-#: src/konqmainwindow.cpp:3560 src/konqtabs.cpp:68
+#: src/konqmainwindow.cpp:3568 src/konqtabs.cpp:68
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr "Újratö&ltés az összes lapon"
 
-#: src/konqmainwindow.cpp:3568
+#: src/konqmainwindow.cpp:3576
 #, kde-format
 msgid "&Force Reload"
 msgstr "Új&ratöltés (kényszerített)"
 
-#: src/konqmainwindow.cpp:3593
+#: src/konqmainwindow.cpp:3601
 #, kde-format
 msgid "&Stop"
 msgstr "Á&llj"
 
-#: src/konqmainwindow.cpp:3602
+#: src/konqmainwindow.cpp:3610
 #, kde-format
 msgid "Throbber"
 msgstr "Throbber"
 
-#: src/konqmainwindow.cpp:3606 src/konqmainwindow.cpp:3609
+#: src/konqmainwindow.cpp:3614 src/konqmainwindow.cpp:3617
 #, kde-format
 msgid "L&ocation: "
 msgstr "Cí&m: "
 
-#: src/konqmainwindow.cpp:3616
+#: src/konqmainwindow.cpp:3624
 #, kde-format
 msgid "Location Bar"
 msgstr "Címmegadási eszköztár"
 
-#: src/konqmainwindow.cpp:3622
+#: src/konqmainwindow.cpp:3630
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
@@ -1237,12 +1237,12 @@ msgstr ""
 "<html>Címmező eszköztár<br /><br />Írjon be egy internetcímet vagy egy "
 "keresési kifejezést.</html>"
 
-#: src/konqmainwindow.cpp:3626
+#: src/konqmainwindow.cpp:3634
 #, kde-format
 msgid "Clear Location Bar"
 msgstr "A Címmező eszköztár tartalmának törlése"
 
-#: src/konqmainwindow.cpp:3629
+#: src/konqmainwindow.cpp:3637
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
@@ -1251,22 +1251,22 @@ msgstr ""
 "<html>A Címmező eszköztár tartalmának törlése<br /><br />Törli a Címmező "
 "eszköztár tartalmát.</html>"
 
-#: src/konqmainwindow.cpp:3634
+#: src/konqmainwindow.cpp:3642
 #, kde-format
 msgid "&Bookmarks"
 msgstr "Könyv&jelzők"
 
-#: src/konqmainwindow.cpp:3655
+#: src/konqmainwindow.cpp:3663
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "A Konqueror bem&utatkozó oldala"
 
-#: src/konqmainwindow.cpp:3660
+#: src/konqmainwindow.cpp:3668
 #, kde-format
 msgid "Go"
 msgstr "A cím bevitele"
 
-#: src/konqmainwindow.cpp:3662
+#: src/konqmainwindow.cpp:3670
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
@@ -1275,7 +1275,7 @@ msgstr ""
 "<html>A cím bevitele<br /><br />Ennek hatására a program betölti a "
 "címmezőben megadott oldalt.</html>"
 
-#: src/konqmainwindow.cpp:3670
+#: src/konqmainwindow.cpp:3678
 #, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
@@ -1286,27 +1286,27 @@ msgstr ""
 "ez: file:/home/%1, akkor a gombra kattintva visszajut a file:/home helyre.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3673
+#: src/konqmainwindow.cpp:3681
 #, kde-format
 msgid "Enter the parent folder"
 msgstr "Belépés a szülőkönyvtárba"
 
-#: src/konqmainwindow.cpp:3675 src/konqmainwindow.cpp:3676
+#: src/konqmainwindow.cpp:3683 src/konqmainwindow.cpp:3684
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "Visszalépés eggyel a böngészési naplóban"
 
-#: src/konqmainwindow.cpp:3678 src/konqmainwindow.cpp:3679
+#: src/konqmainwindow.cpp:3686 src/konqmainwindow.cpp:3687
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "Előrelépés eggyel a böngészési naplóban"
 
-#: src/konqmainwindow.cpp:3681 src/konqmainwindow.cpp:3682
+#: src/konqmainwindow.cpp:3689 src/konqmainwindow.cpp:3690
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
 msgstr "Visszalépés eggyel a bezárt lapok naplójában"
 
-#: src/konqmainwindow.cpp:3684
+#: src/konqmainwindow.cpp:3692
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1317,12 +1317,12 @@ msgstr ""
 "szükség, ha a megjelenített oldal megváltozik, és az oldal új változatát "
 "szeretné megtekinteni.</html>"
 
-#: src/konqmainwindow.cpp:3687
+#: src/konqmainwindow.cpp:3695
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "Az aktuális lap tartalmának újratöltése"
 
-#: src/konqmainwindow.cpp:3689
+#: src/konqmainwindow.cpp:3697
 #, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1333,12 +1333,12 @@ msgstr ""
 "ha a megjelenített oldalak megváltoztak, és azok új változatát szeretné "
 "megtekinteni.</html>"
 
-#: src/konqmainwindow.cpp:3692
+#: src/konqmainwindow.cpp:3700
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr "Az összes lap tartalmának újratöltése"
 
-#: src/konqmainwindow.cpp:3694
+#: src/konqmainwindow.cpp:3702
 #, kde-format
 msgid ""
 "<html>Stop loading the document<br /><br />All network transfers will be "
@@ -1348,7 +1348,7 @@ msgstr ""
 "<html>A betöltés megszakítása<br /><br />A letöltés félbeszakad, a Konqueror "
 "megjeleníti az eddig letöltött dokumentumrészt.</html>"
 
-#: src/konqmainwindow.cpp:3698
+#: src/konqmainwindow.cpp:3706
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1362,18 +1362,18 @@ msgstr ""
 "letölti a program, akkor is, ha nem változtak, és elérhetőek a helyi "
 "gyorsítótárban.</html>"
 
-#: src/konqmainwindow.cpp:3702
+#: src/konqmainwindow.cpp:3710
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr "A megjelenített dokumentum újratöltése (képekkel együtt)"
 
-#: src/konqmainwindow.cpp:3704
+#: src/konqmainwindow.cpp:3712
 #, kde-format
 msgid "Stop loading the document"
 msgstr "A betöltés megszakítása"
 
-#: src/konqmainwindow.cpp:3706
+#: src/konqmainwindow.cpp:3714
 #, kde-format
 msgid ""
 "<html>Cut the currently selected text or item(s) and move it to the system "
@@ -1385,12 +1385,12 @@ msgstr ""
 "bármely más KDE-alkalmazás <b>Beillesztés</b> menüpontjával lehet átvenni.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3710
+#: src/konqmainwindow.cpp:3718
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr "A kijelölt szöveg vagy más elemek vágólapra mozgatása"
 
-#: src/konqmainwindow.cpp:3712
+#: src/konqmainwindow.cpp:3720
 #, kde-format
 msgid ""
 "<html>Copy the currently selected text or item(s) to the system "
@@ -1401,12 +1401,12 @@ msgstr ""
 "tartalma a <b>Beillesztés</b> paranccsal bármely más alkalmazásban, pl. a "
 "Konquerorban beilleszthető.</html>"
 
-#: src/konqmainwindow.cpp:3716
+#: src/konqmainwindow.cpp:3724
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr "A kijelölt szövegrész vagy elem(ek) kimásolása a vágólapra"
 
-#: src/konqmainwindow.cpp:3718
+#: src/konqmainwindow.cpp:3726
 #, kde-format
 msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
@@ -1415,12 +1415,12 @@ msgstr ""
 "<html>Az előzőleg vágólapra másolt vagy mozgatott adatok beillesztése<br /"
 "><br />Az adatok természetesen más KDE-alkalmazásból is származhatnak.</html>"
 
-#: src/konqmainwindow.cpp:3721
+#: src/konqmainwindow.cpp:3729
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "A vágólap tartalmának beillesztése"
 
-#: src/konqmainwindow.cpp:3723
+#: src/konqmainwindow.cpp:3731
 #, kde-format
 msgid ""
 "<html>Print the currently displayed document<br /><br />You will be "
@@ -1435,12 +1435,12 @@ msgstr ""
 ">Az ablakban elérhetők a KDE nyomtatási rendszer speciális lehetőségei, "
 "például a dokumentum PDF formátumba menthető.</html>"
 
-#: src/konqmainwindow.cpp:3729
+#: src/konqmainwindow.cpp:3737
 #, kde-format
 msgid "Print the current document"
 msgstr "Az aktuális dokumentum kinyomtatása"
 
-#: src/konqmainwindow.cpp:3731
+#: src/konqmainwindow.cpp:3739
 #, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
@@ -1449,7 +1449,7 @@ msgstr ""
 "Rögzített nézetben nem lehet könyvtárat váltani. A 'Nézetkapcsolás'-sal "
 "kombinálva könnyen lehet egy könyvtárban sok fájlt áttekinteni."
 
-#: src/konqmainwindow.cpp:3732
+#: src/konqmainwindow.cpp:3740
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
@@ -1458,31 +1458,31 @@ msgstr ""
 "A nézetet 'kapcsolt'-tá teszi. Kapcsolt nézeteknél az egyik nézet "
 "könyvtárváltása hat a többi nézetre is."
 
-#: src/konqmainwindow.cpp:3736
+#: src/konqmainwindow.cpp:3744
 #, fuzzy, kde-format
 #| msgid "C&lose Current Tab"
 msgid "&Inspect Current Page"
 msgstr "Az &aktuális lap bezárása"
 
-#: src/konqmainwindow.cpp:3737
+#: src/konqmainwindow.cpp:3745
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3738
+#: src/konqmainwindow.cpp:3746
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3740
+#: src/konqmainwindow.cpp:3748
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark the current window as protected"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3742
+#: src/konqmainwindow.cpp:3750
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1490,17 +1490,17 @@ msgid ""
 "external links in a protected window.</p>"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3904
+#: src/konqmainwindow.cpp:3912
 #, kde-format
 msgid "Copy &Files..."
 msgstr "Fájlmás&olás..."
 
-#: src/konqmainwindow.cpp:3908
+#: src/konqmainwindow.cpp:3916
 #, kde-format
 msgid "M&ove Files..."
 msgstr "Fájlmoz&gatás..."
 
-#: src/konqmainwindow.cpp:4236
+#: src/konqmainwindow.cpp:4244
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
@@ -1509,72 +1509,72 @@ msgstr ""
 "20-nál több könyvjelző megnyitását kérte (mindet új lapon). Biztosan ezt "
 "szeretné?"
 
-#: src/konqmainwindow.cpp:4238
+#: src/konqmainwindow.cpp:4246
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "Könyvjelzőmappa megnyitása új lapokon"
 
-#: src/konqmainwindow.cpp:4239
+#: src/konqmainwindow.cpp:4247
 #, fuzzy, kde-format
 #| msgid "&Open"
 msgctxt "@action:button"
 msgid "Open"
 msgstr "&Megnyitás"
 
-#: src/konqmainwindow.cpp:4401
+#: src/konqmainwindow.cpp:4409
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "Megnyitás &ebben az ablakban"
 
-#: src/konqmainwindow.cpp:4402
+#: src/konqmainwindow.cpp:4410
 #, kde-format
 msgid "Open the document in current window"
 msgstr "A dokumentum megnyitása az aktuális ablakban"
 
-#: src/konqmainwindow.cpp:4409
+#: src/konqmainwindow.cpp:4417
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "A dokumentum megnyitása új ablakban"
 
-#: src/konqmainwindow.cpp:4415
+#: src/konqmainwindow.cpp:4423
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Megnyitás új la&pon"
 
-#: src/konqmainwindow.cpp:4417
+#: src/konqmainwindow.cpp:4425
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "A dokumentum megnyitása új lapon"
 
-#: src/konqmainwindow.cpp:4683
+#: src/konqmainwindow.cpp:4691
 #, kde-format
 msgid "&Open With"
 msgstr "Megnyitás &ezzel"
 
-#: src/konqmainwindow.cpp:4696
+#: src/konqmainwindow.cpp:4704
 #, kde-format
 msgid "Open with %1"
 msgstr "Megnyitás ezzel: %1"
 
-#: src/konqmainwindow.cpp:4746
+#: src/konqmainwindow.cpp:4754
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "Né&zetmód"
 
-#: src/konqmainwindow.cpp:4869
+#: src/konqmainwindow.cpp:4877
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr "Több lap is meg van nyitva, biztosan be szeretné zárni az ablakot?"
 
-#: src/konqmainwindow.cpp:4873
+#: src/konqmainwindow.cpp:4881
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "Az &aktuális lap bezárása"
 
-#: src/konqmainwindow.cpp:4901
+#: src/konqmainwindow.cpp:4909
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1583,7 +1583,7 @@ msgstr ""
 "Ez a lap még nem mentett módosításokat tartalmaz.\n"
 "Az ablak bezárásakor a módosítások elvesznek."
 
-#: src/konqmainwindow.cpp:4902
+#: src/konqmainwindow.cpp:4910
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1592,7 +1592,7 @@ msgstr ""
 "Ez a lap még nem mentett módosításokat tartalmaz.\n"
 "Az ablak bezárásakor ezek a módosítások elvesznek."
 
-#: src/konqmainwindow.cpp:5062
+#: src/konqmainwindow.cpp:5070
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1600,37 +1600,28 @@ msgstr ""
 "Az oldalsáv nem működik megfelelően vagy nem érhető el. Nem sikerült új "
 "bejegyzést felvenni."
 
-#: src/konqmainwindow.cpp:5062 src/konqmainwindow.cpp:5069
+#: src/konqmainwindow.cpp:5070 src/konqmainwindow.cpp:5077
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Webes oldalsáv"
 
-#: src/konqmainwindow.cpp:5067
+#: src/konqmainwindow.cpp:5075
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Hozzá szeretné adni a(z) \"%1\" webes bővítményt az oldalsávhoz?"
 
-#: src/konqmainwindow.cpp:5069
+#: src/konqmainwindow.cpp:5077
 #, kde-format
 msgid "Add"
 msgstr "Hozzáadás"
 
-#: src/konqmainwindow.cpp:5069
+#: src/konqmainwindow.cpp:5077
 #, kde-format
 msgid "Do Not Add"
 msgstr "Nem kell hozzáadni"
 
-#: src/konqmainwindow.cpp:5417 src/urlloader.cpp:828
-#, kde-format
-msgid ""
-"There appears to be a configuration error. You have associated Konqueror "
-"with %1, but it cannot handle this file type."
-msgstr ""
-"Úgy tűnik, hogy valami nincs megfelelően beállítva. Hozzárendelte a "
-"Konquerort ehhez: %1, de a program mégsem tudja kezelni ezt a fájltípust."
-
-#: src/konqmainwindow.cpp:5502
+#: src/konqmainwindow.cpp:5515
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1643,23 +1634,23 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5507
+#: src/konqmainwindow.cpp:5520
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5507
+#: src/konqmainwindow.cpp:5520
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5508 src/konqmainwindow.cpp:5536
+#: src/konqmainwindow.cpp:5521 src/konqmainwindow.cpp:5549
 #, fuzzy, kde-format
 #| msgid "Show Configuration Button"
 msgid "Show proxy configuration dialog"
 msgstr "A beállítógomb megjelenítése"
 
-#: src/konqmainwindow.cpp:5532
+#: src/konqmainwindow.cpp:5545
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1668,22 +1659,22 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5535
+#: src/konqmainwindow.cpp:5548
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5536
+#: src/konqmainwindow.cpp:5549
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5536
+#: src/konqmainwindow.cpp:5549
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5552
+#: src/konqmainwindow.cpp:5565
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1691,7 +1682,7 @@ msgid ""
 "Mode (%1)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5639
+#: src/konqmainwindow.cpp:5652
 #, fuzzy, kde-format
 #| msgid ""
 #| "You have multiple tabs open in this window, are you sure you want to quit?"
@@ -1792,31 +1783,31 @@ msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"
 msgstr ""
 
-#: src/konqsessiondlg.cpp:60
+#: src/konqsessiondlg.cpp:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Sessions"
 msgstr "Munkamenetkezelő"
 
-#: src/konqsessiondlg.cpp:168
+#: src/konqsessiondlg.cpp:178
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Session"
 msgstr "Munkamenet átnevezése"
 
-#: src/konqsessiondlg.cpp:215
+#: src/konqsessiondlg.cpp:234
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Session"
 msgstr "Munkamenet mentése"
 
-#: src/konqsessiondlg.cpp:251
+#: src/konqsessiondlg.cpp:270
 #, kde-format
 msgid ""
 "A session with the name '%1' already exists, do you want to overwrite it?"
 msgstr "Már létezik \"%1\" nevű munkamenet, felül szeretné írni?"
 
-#: src/konqsessiondlg.cpp:252
+#: src/konqsessiondlg.cpp:271
 #, kde-format
 msgctxt "@title:window"
 msgid "Session exists. Overwrite?"
@@ -1858,18 +1849,18 @@ msgstr "Törlés"
 msgid "Open tabs inside current window"
 msgstr "A lapok megnyitása az aktuális ablakban történjen"
 
-#: src/konqstatusbarmessagelabel.cpp:67
+#: src/konqstatusbarmessagelabel.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid "Close"
 msgstr "Bezárás"
 
-#: src/konqstatusbarmessagelabel.cpp:68
+#: src/konqstatusbarmessagelabel.cpp:96
 #, kde-format
 msgid "Close"
 msgstr "Bezárás"
 
-#: src/konqstatusbarmessagelabel.cpp:147
+#: src/konqstatusbarmessagelabel.cpp:175
 #, kde-format
 msgid "Error: %1"
 msgstr ""
@@ -2012,7 +2003,7 @@ msgstr "&Visszavonás: Ablak bezárása"
 msgid "Und&o"
 msgstr "Visszav&onás"
 
-#: src/konqview.cpp:1323
+#: src/konqview.cpp:1322
 #, kde-format
 msgid ""
 "The page you are trying to view is the result of posted form data. If you "
@@ -2023,30 +2014,30 @@ msgstr ""
 "újból elküldi az adatokat, az űrlapművelet (pl. keresés, vásárlókorsárba "
 "helyezés) meg fog ismétlődni. "
 
-#: src/konqview.cpp:1325
+#: src/konqview.cpp:1324
 #, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Figyelmeztetés"
 
-#: src/konqview.cpp:1325
+#: src/konqview.cpp:1324
 #, kde-format
 msgid "Resend"
 msgstr "Újraküldés"
 
-#: src/urlloader.cpp:403
+#: src/urlloader.cpp:400
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr ""
 
-#: src/urlloader.cpp:406
+#: src/urlloader.cpp:403
 #, kde-format
 msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
 msgstr ""
 
-#: src/urlloader.cpp:413
+#: src/urlloader.cpp:410
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -2056,18 +2047,27 @@ msgid ""
 "display it?"
 msgstr ""
 
-#: src/urlloader.cpp:419
+#: src/urlloader.cpp:416
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
-#: src/urlloader.cpp:771
+#: src/urlloader.cpp:768
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As"
 msgstr "Mentés másként..."
+
+#: src/urlloader.cpp:825
+#, kde-format
+msgid ""
+"There appears to be a configuration error. You have associated Konqueror "
+"with %1, but it cannot handle this file type."
+msgstr ""
+"Úgy tűnik, hogy valami nincs megfelelően beállítva. Hozzárendelte a "
+"Konquerort ehhez: %1, de a program mégsem tudja kezelni ezt a fájltípust."
 
 #~ msgid "Other Tabs"
 #~ msgstr "A többi lap"
