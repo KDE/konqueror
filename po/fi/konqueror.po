@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-08 02:44+0000\n"
-"PO-Revision-Date: 2026-03-02 19:19+0200\n"
+"PO-Revision-Date: 2026-08-26 14:15+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -638,7 +638,7 @@ msgstr ""
 #: src/konqapplication.cpp:581
 #, kde-format
 msgid "Are you sure you want to quit Konqueror? This will close all windows"
-msgstr ""
+msgstr "Haluatko varmasti lopettaa Konquerorin? Tämä sulkee kaikki ikkunat"
 
 #: src/konqapplication.cpp:582 src/konqmainwindow.cpp:4876
 #: src/konqmainwindow.cpp:5645
@@ -648,10 +648,9 @@ msgid "Confirmation"
 msgstr "Vahvistus"
 
 #: src/konqapplication.cpp:584
-#, fuzzy, kde-format
-#| msgid "Onl&y current window"
+#, kde-format
 msgid "Close current window"
-msgstr "Vain &nykyinen ikkuna"
+msgstr "Sulje nykyinen ikkuna"
 
 #: src/konqclosedwindowsmanager.cpp:213 src/konqmainwindow.cpp:4945
 #: src/konqmainwindow.cpp:4991
@@ -1040,53 +1039,49 @@ msgid "&Find File..."
 msgstr "&Etsi tiedosto…"
 
 #: src/konqmainwindow.cpp:3354
-#, fuzzy, kde-format
-#| msgid "Close &Other Tabs"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Other Windows"
-msgstr "Sulje &muut välilehdet"
+msgstr "Sulje muut ikkunat"
 
 #: src/konqmainwindow.cpp:3355
 #, kde-format
 msgid "Closes all windows except this one"
-msgstr ""
+msgstr "Sulkee kaikki ikkunat paitsi tämän"
 
 #: src/konqmainwindow.cpp:3357
 #, kde-format
 msgid "Closes all windows except this one. It doesn't close preloaded windows"
-msgstr ""
+msgstr "Sulkee kaikki ikkunat paitsi tämän. Ei sulje esiladattuja ikkunoita"
 
 # pmap: =/gen=Konquerorin/
 # pmap: =/elat=Konquerorista/
 #: src/konqmainwindow.cpp:3361
-#, fuzzy, kde-format
-#| msgid "Konqueror"
+#, kde-format
 msgctxt "@action:inmenu quit Konqueror"
 msgid "Quit Konqueror"
-msgstr "Konqueror"
+msgstr "Lopeta Konqueror"
 
 #: src/konqmainwindow.cpp:3363
 #, kde-format
 msgid "Closes all Konqueror windows and quits the application"
-msgstr ""
+msgstr "Sulkee kaikki Konqueror-ikkunat ja lopettaa sovelluksen"
 
 #: src/konqmainwindow.cpp:3367
-#, fuzzy, kde-format
-#| msgid "Und&o: Closed Window"
+#, kde-format
 msgctxt "@action:inmenu close current window"
 msgid "Close Window"
-msgstr "&Kumoa ikkunan sulkeminen"
+msgstr "Sulje ikkuna"
 
 #: src/konqmainwindow.cpp:3369
-#, fuzzy, kde-format
-#| msgid "&Close Active View"
+#, kde-format
 msgid "Close this window"
-msgstr "&Sulje aktiivinen näkymä"
+msgstr "Sulje tämä ikkuna"
 
 #: src/konqmainwindow.cpp:3371
 #, kde-format
 msgid "Close this window, quitting Konqueror if it is the only window"
-msgstr ""
+msgstr "Sulkee tämän ikkunan ja lopettaa Konquerorin, jos ikkuna oli ainoa"
 
 #: src/konqmainwindow.cpp:3373
 #, kde-format
@@ -1495,7 +1490,7 @@ msgstr "Näyttää nykyiselle sivulle kehitystyökalut"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "Merkitse nykyinen ikkuna suojatuksi"
 
 #: src/konqmainwindow.cpp:3747
 #, kde-format
@@ -1504,6 +1499,8 @@ msgid ""
 "<p>Mark the current window as protected.</p><p>Konqueror will never open "
 "external links in a protected window.</p>"
 msgstr ""
+"<p>Merkitse nykyinen ikkuna suojatuksi.</p><p>Konqueror ei milloinkaan avaa "
+"suojattuun ikkunaan ulkoisia linkkejä.</p>"
 
 #: src/konqmainwindow.cpp:3909
 #, kde-format
@@ -1720,14 +1717,11 @@ msgstr ""
 "piilotettu). Poistua voi koko näytön tilan pikanäppäimellä (%1)"
 
 #: src/konqmainwindow.cpp:5644
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have multiple tabs open in this window, are you sure you want to quit?"
+#, kde-format
 msgid ""
 "You are closing all windows except this one. Are you sure you want to "
 "continue?"
-msgstr ""
-"Ikkunassa on avoinna useita välilehtiä. Haluatko varmasti sulkea ikkunan?"
+msgstr "Olet sulkemassa kaikki ikkunat paitsi tätä. Haluatko varmasti jatkaa?"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
@@ -1905,10 +1899,9 @@ msgid "&Reload Tab"
 msgstr "&Lataa välilehti uudelleen"
 
 #: src/konqtabs.cpp:56
-#, fuzzy, kde-format
-#| msgid "&Reload All Tabs"
+#, kde-format
 msgid "All Tabs"
-msgstr "&Päivitä kaikki välilehdet"
+msgstr "Kaikki välilehdet"
 
 #: src/konqtabs.cpp:59
 #, kde-format
