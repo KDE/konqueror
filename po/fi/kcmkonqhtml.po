@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-25 00:44+0000\n"
-"PO-Revision-Date: 2026-01-19 16:54+0200\n"
+"PO-Revision-Date: 2026-08-26 14:12+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -1684,12 +1684,10 @@ msgid "Please, insert the custom start page"
 msgstr "Lisää mukautettu aloitussivu"
 
 #: generalopts.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "When a new &Tab is created"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &window is created"
-msgstr "Luotaessa uusi &välilehti"
+msgstr "&Kun uusi ikkuna luodaan"
 
 #: generalopts.cpp:69
 #, kde-format
@@ -2421,12 +2419,15 @@ msgid ""
 "unchecked, the new tab will load the same URL loaded when creating a new "
 "window</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Jätetäänkö uusi välilehti tyhjäksi vai ei. Jos tätä ei "
+"ole valittu, uuteen välilehteen ladataan sama verkko-osoite kun luotaessa "
+"uutta ikkunaa</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Leave new tab empty"
-msgstr ""
+msgstr "Jätä uusi välilehti tyhjäksi"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: tabs/tabsoptions.ui:171
@@ -2499,7 +2500,7 @@ msgstr "Siirry viimeksi käytettyyn välilehteen sulkiessasi nykyisen välilehde
 #, kde-format
 msgctxt "We couldn't retrieve the user agent, so we show it as 'unknown'"
 msgid "unknown"
-msgstr ""
+msgstr "tuntematon"
 
 #: useragent/useragent.cpp:210
 #, kde-format
@@ -2586,7 +2587,7 @@ msgstr "&Valitse tämä identiteetti"
 #: useragent/useragent.ui:160
 #, kde-format
 msgid "Current user agent"
-msgstr ""
+msgstr "Nykyinen käyttäjäagentti"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:175
@@ -2627,7 +2628,7 @@ msgstr "Käytä &oletusidentiteettiä"
 #: useragent/useragent.ui:214
 #, kde-format
 msgid "<strong>Current browser identification</strong>"
-msgstr ""
+msgstr "<strong>Selaimen nykyinen tunnistautuminen</strong>"
 
 #~ msgid "Form"
 #~ msgstr "Lomake"
