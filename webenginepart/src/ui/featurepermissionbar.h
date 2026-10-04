@@ -12,24 +12,20 @@
 #include <KMessageWidget>
 #include <KLocalizedString>
 
-#include <QWebEnginePage>
+#include <QWebEnginePermission>
 #include <QUrl>
 
 class FeaturePermissionBar : public KMessageWidget
 {
     Q_OBJECT
 public:
-    explicit FeaturePermissionBar(QWidget *parent = nullptr);
+    explicit FeaturePermissionBar(QWebEnginePermission permission, QWidget *parent = nullptr);
     ~FeaturePermissionBar() override;
 
-    QWebEnginePage::Feature feature() const;
-    QUrl url() const;
-
-    void setFeature(QWebEnginePage::Feature);
-    void setUrl(const QUrl &url);
+    QWebEnginePermission::PermissionType permissionType() const;
+    QUrl origin() const;
 
 Q_SIGNALS:
-    void permissionPolicyChosen(QWebEnginePage::Feature feature, QWebEnginePage::PermissionPolicy policy);
     void done();
 
 private Q_SLOTS:
@@ -37,11 +33,10 @@ private Q_SLOTS:
     void onGrantedButtonClicked();
 
 private:
-    QString labelText(QWebEnginePage::Feature feature) const;
+    QString labelText() const;
 
 private:
-    QWebEnginePage::Feature m_feature;
-    QUrl m_url;
+    QWebEnginePermission m_permission;
 };
 
 #endif // FEATUREPERMISSIONBAR_H

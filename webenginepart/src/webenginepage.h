@@ -160,7 +160,7 @@ protected:
 protected Q_SLOTS:
     void slotLoadFinished(bool ok);
     virtual void slotGeometryChangeRequested(const QRect& rect);
-    void slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature);
+    void slotFeaturePermissionRequested(QWebEnginePermission permission);
     void slotAuthenticationRequired(const QUrl &requestUrl, QAuthenticator *auth);
     void changeFullScreenMode(QWebEngineFullScreenRequest req);
 

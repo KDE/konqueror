@@ -115,7 +115,7 @@ public:
      */
     void connectWebEnginePageSignals(WebEnginePage* page);
 
-    void slotShowFeaturePermissionBar(const QUrl &origin, QWebEnginePage::Feature);
+    void showPermissionRequestBar(QWebEnginePermission permission);
 
     void setWallet(WebEngineWallet* wallet);
 
@@ -262,8 +262,8 @@ private Q_SLOTS:
     void slotWalletSavedForms(const QUrl &url, bool success);
     void slotFillFormRequestCompleted(bool);
 
-    void slotFeaturePolicyChosen(FeaturePermissionBar *bar, QWebEnginePage::Feature feature, QWebEnginePage::PermissionPolicy policy);
-    void deleteFeaturePermissionBar(FeaturePermissionBar *bar);
+    // void slotFeaturePolicyChosen(FeaturePermissionBar *bar, QWebEnginePermission::PermissionType feature, QWebEnginePage::PermissionPolicy policy);
+    void deletePermissionBar(FeaturePermissionBar *bar);
 
     void updateWalletStatusBarIcon();
     void walletFinishedFormDetection(const QUrl &url, bool found, bool autoFillableFound);

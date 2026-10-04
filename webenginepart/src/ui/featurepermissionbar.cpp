@@ -13,8 +13,8 @@
 #include <QAction>
 
 
-FeaturePermissionBar::FeaturePermissionBar(QWidget *parent)
-                     :KMessageWidget(parent)
+FeaturePermissionBar::FeaturePermissionBar(QWebEnginePermission permission, QWidget *parent)
+                     :KMessageWidget(parent), m_permission(permission)
 {
     setCloseButtonVisible(false);
     setMessageType(KMessageWidget::Information);
@@ -26,70 +26,62 @@ FeaturePermissionBar::FeaturePermissionBar(QWidget *parent)
     action = new QAction(i18nc("@action:grant permission", "&Grant permission"), this);
     connect(action, &QAction::triggered, this, &FeaturePermissionBar::onGrantedButtonClicked);
     addAction(action);
-
-    // FIXME: Add option to allow and remember for this site.
+    setText(labelText());
 }
 
 FeaturePermissionBar::~FeaturePermissionBar()
 {
 }
 
-QWebEnginePage::Feature FeaturePermissionBar::feature() const
+QWebEnginePermission::PermissionType FeaturePermissionBar::permissionType() const
 {
-    return m_feature;
+    return m_permission.permissionType();
 }
 
-QUrl FeaturePermissionBar::url() const
+QUrl FeaturePermissionBar::origin() const
 {
-    return m_url;
+    return m_permission.origin();
 }
 
-void FeaturePermissionBar::setUrl(const QUrl& url)
+QString FeaturePermissionBar::labelText() const
 {
-    m_url = url;
-}
-
-QString FeaturePermissionBar::labelText(QWebEnginePage::Feature feature) const
-{
-    QString origin = m_url.toDisplayString();
-    switch (feature) {
-        case QWebEnginePage::Notifications:
-            return i18n("<html><b>%1</b> would like to send you notifications", origin);
-        case QWebEnginePage::Geolocation:
-            return i18n("<html><b>%1</b> would like to access information about your current physical location", origin);
-        case QWebEnginePage::MediaAudioCapture:
+    QString origin = m_permission.origin().toDisplayString();
+    switch (m_permission.permissionType()) {
+        case QWebEnginePermission::PermissionType::MediaAudioCapture:
             return i18n("<html><b>%1</b> would like to access your microphone and other audio capture devices", origin);
-        case QWebEnginePage::MediaVideoCapture:
+        case QWebEnginePermission::PermissionType::MediaVideoCapture:
             return i18n("<html><b>%1</b> would like to access your camera and other video capture devices", origin);
-        case QWebEnginePage::MediaAudioVideoCapture:
+        case QWebEnginePermission::PermissionType::MediaAudioVideoCapture:
             return i18n("<html><b>%1</b> would like to access to your microphone, camera and other audio and video capture devices", origin);
-        case QWebEnginePage::MouseLock:
-            return i18n("<html><b>%1</b> would like to lock your mouse inside the web page", origin);
-        case QWebEnginePage::DesktopVideoCapture:
+        case QWebEnginePermission::PermissionType::DesktopVideoCapture:
             return i18n("<html><b>%1</b> would like to record your screen", origin);
-        case QWebEnginePage::DesktopAudioVideoCapture:
+        case QWebEnginePermission::PermissionType::DesktopAudioVideoCapture:
             return i18n("<html><b>%1</b> would like to record your screen and your audio", origin);
+        case QWebEnginePermission::PermissionType::MouseLock:
+            return i18n("<html><b>%1</b> would like to lock your mouse inside the web page", origin);
+        case QWebEnginePermission::PermissionType::Notifications:
+            return i18n("<html><b>%1</b> would like to send you notifications", origin);
+        case QWebEnginePermission::PermissionType::Geolocation:
+            return i18n("<html><b>%1</b> would like to access information about your current physical location", origin);
+        case QWebEnginePermission::PermissionType::ClipboardReadWrite:
+            return i18n("<html><b>%1</b> would like to access your clipboard", origin);
+        case QWebEnginePermission::PermissionType::LocalFontsAccess:
+            return i18n("<html><b>%1</b> would like to access the fonts installed on your machine", origin);
         default:
-            return QString();
+            return i18n("<html><b>%1</b> would like to do something we don't know about", origin);
     }
-}
-
-void FeaturePermissionBar::setFeature (QWebEnginePage::Feature feature)
-{
-    m_feature = feature;
-    setText(labelText(feature));
 }
 
 void FeaturePermissionBar::onDeniedButtonClicked()
 {
     animatedHide();
-    emit permissionPolicyChosen(m_feature, QWebEnginePage::PermissionDeniedByUser);
+    m_permission.deny();
     emit done();
 }
 
 void FeaturePermissionBar::onGrantedButtonClicked()
 {
     animatedHide();
-    emit permissionPolicyChosen(m_feature, QWebEnginePage::PermissionGrantedByUser);
+    m_permission.grant();
     emit done();
 }

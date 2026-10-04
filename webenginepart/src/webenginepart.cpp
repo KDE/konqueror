@@ -953,38 +953,26 @@ void WebEnginePart::slotWindowCloseRequested()
     this->deleteLater();
 }
 
-void WebEnginePart::slotShowFeaturePermissionBar(const QUrl &origin, QWebEnginePage::Feature feature)
+void WebEnginePart::showPermissionRequestBar(QWebEnginePermission permission)
 {
-    auto findExistingBar = [origin, feature](FeaturePermissionBar *bar) {
-        return bar->url() == origin && bar->feature() == feature;
+    auto findExistingBar = [permission](FeaturePermissionBar *bar) {
+        return bar->origin() == permission.origin() && bar->permissionType() == permission.permissionType();
     };
     auto found = std::find_if(m_permissionBars.constBegin(), m_permissionBars.constEnd(), findExistingBar);
     if (found != m_permissionBars.constEnd()) {
         return;
     }
-    FeaturePermissionBar *bar = new FeaturePermissionBar(widget());
+    FeaturePermissionBar *bar = new FeaturePermissionBar(permission, widget());
     m_permissionBars.append(bar);
-    auto policyLambda = [this, bar](QWebEnginePage::Feature feature, QWebEnginePage::PermissionPolicy policy) {
-        slotFeaturePolicyChosen(bar, feature, policy);
-    };
-    connect(bar, &FeaturePermissionBar::permissionPolicyChosen, this, policyLambda);
-    connect(bar, &FeaturePermissionBar::done, this, [this, bar](){deleteFeaturePermissionBar(bar);});
+    connect(bar, &FeaturePermissionBar::done, this, [this, bar](){deletePermissionBar(bar);});
     QBoxLayout* lay = qobject_cast<QBoxLayout*>(widget()->layout());
     if (lay) {
         lay->insertWidget(0, bar);
     }
-    bar->setUrl(origin);
-    bar->setFeature(feature);
     bar->animatedShow();
 }
 
-void WebEnginePart::slotFeaturePolicyChosen(FeaturePermissionBar* bar, QWebEnginePage::Feature feature, QWebEnginePage::PermissionPolicy policy)
-{
-    Q_ASSERT(bar && bar->feature() == feature);
-    page()->setFeaturePermission(bar->url(), feature, policy);
-}
-
-void WebEnginePart::deleteFeaturePermissionBar(FeaturePermissionBar *bar)
+void WebEnginePart::deletePermissionBar(FeaturePermissionBar *bar)
 {
     m_permissionBars.removeOne(bar);
     bar->deleteLater();

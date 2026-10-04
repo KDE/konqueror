@@ -132,7 +132,7 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     connect(this, &QWebEnginePage::newWindowRequested, this, &WebEnginePage::createNewWindow);
     connect(this, &QWebEnginePage::geometryChangeRequested,
             this, &WebEnginePage::slotGeometryChangeRequested);
-    connect(this, &QWebEnginePage::featurePermissionRequested,
+    connect(this, &WebEnginePage::permissionRequested,
             this, &WebEnginePage::slotFeaturePermissionRequested);
     connect(this, &QWebEnginePage::loadFinished,
             this, &WebEnginePage::slotLoadFinished);
@@ -550,39 +550,16 @@ void WebEnginePage::slotLoadFinished(bool ok)
     m_navigationStartedHelper.stop(ok);
 }
 
-void WebEnginePage::slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature)
+void WebEnginePage::slotFeaturePermissionRequested(QWebEnginePermission permission)
 {
     //url.path() is always / (meaning that permissions should be granted site-wide and not per page)
-    QUrl thisUrl(this->url());
+    QUrl thisUrl(url());
     thisUrl.setPath("/");
     thisUrl.setQuery(QString());
     thisUrl.setFragment(QString());
-    if (url == thisUrl) {
-        part()->slotShowFeaturePermissionBar(url, feature);
+    if (permission.origin() == thisUrl) {
+        part()->showPermissionRequestBar(permission);
         return;
-    }
-    switch(feature) {
-    case QWebEnginePage::Notifications:
-        // FIXME: We should have a setting to tell if this is enabled, but so far it is always enabled.
-        setFeaturePermission(url, feature, QWebEnginePage::PermissionGrantedByUser);
-        break;
-    case QWebEnginePage::Geolocation:
-        if (KMessageBox::warningContinueCancel(nullptr, i18n("This site is attempting to "
-                                                       "access information about your "
-                                                       "physical location.\n"
-                                                       "Do you want to allow it access?"),
-                                            i18n("Network Transmission"),
-                                            KGuiItem(i18n("Allow access")),
-                                            KStandardGuiItem::cancel(),
-                                            QStringLiteral("WarnGeolocation")) == KMessageBox::Cancel) {
-            setFeaturePermission(url, feature, QWebEnginePage::PermissionDeniedByUser);
-        } else {
-            setFeaturePermission(url, feature, QWebEnginePage::PermissionGrantedByUser);
-        }
-        break;
-    default:
-        setFeaturePermission(url, feature, QWebEnginePage::PermissionUnknown);
-        break;
     }
 }
 
