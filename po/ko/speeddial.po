@@ -1,0 +1,111 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+# SPDX-FileCopyrightText: 2026 Shinjo Park <kde@peremen.name>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"PO-Revision-Date: 2026-10-02 00:58+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 25.12.3\n"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editspeeddialentrydlg.ui:19
+#, kde-format
+msgid "&Name"
+msgstr "이름(&N)"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, nameWidget)
+#: editspeeddialentrydlg.ui:29
+#, kde-format
+msgid "The name you want displayed on the Speed Dial button"
+msgstr "스피드 다이얼 단추에 표시할 이름"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editspeeddialentrydlg.ui:36
+#, kde-format
+msgid "&Url"
+msgstr "URL(&U)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: editspeeddialentrydlg.ui:55
+#, kde-format
+msgid "Icon"
+msgstr "아이콘"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useFaviconBtn)
+#: editspeeddialentrydlg.ui:61
+#, kde-format
+msgid "Use favicon"
+msgstr "파비콘 사용"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useLocalIconBtn)
+#: editspeeddialentrydlg.ui:86
+#, kde-format
+msgid "Use local icon"
+msgstr "로컬 아이콘 사용"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useRemoteIconBtn)
+#: editspeeddialentrydlg.ui:133
+#, kde-format
+msgid "Use remote icon"
+msgstr "원격 아이콘 사용"
+
+#: speeddialconfig.cpp:43
+#, kde-format
+msgid "Name"
+msgstr "이름"
+
+#: speeddialconfig.cpp:43
+#, kde-format
+msgid "Url"
+msgstr "URL"
+
+#: speeddialconfig.cpp:264
+#, kde-format
+msgid "Do you want to delete \"%1\"?"
+msgstr "\"%1\"을(를) 삭제하시겠습니까?"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: speeddialconfig.ui:17
+#, kde-format
+msgid "Speed dial entries"
+msgstr "스피드 다이얼 항목"
+
+#. i18n: ectx: property (text), widget (QPushButton, addEntryBtn)
+#: speeddialconfig.ui:57
+#, kde-format
+msgid "Add entry…"
+msgstr "항목 추가…"
+
+#. i18n: ectx: property (text), widget (QPushButton, editEntryBtn)
+#: speeddialconfig.ui:64
+#, kde-format
+msgid "Edit entry…"
+msgstr "항목 편집…"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeEntryBtn)
+#: speeddialconfig.ui:71
+#, kde-format
+msgid "Remove entry"
+msgstr "항목 삭제"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveUpBtn)
+#: speeddialconfig.ui:91
+#, kde-format
+msgid "Move up"
+msgstr "위로 이동"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveDownBtn)
+#: speeddialconfig.ui:98
+#, kde-format
+msgid "Move down"
+msgstr "아래로 이동"
