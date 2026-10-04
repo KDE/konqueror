@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-28 00:45+0000\n"
-"PO-Revision-Date: 2026-02-04 00:09+0100\n"
+"PO-Revision-Date: 2026-10-02 01:00+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -613,7 +613,7 @@ msgstr "--preload 스위치에는 URL을 지정할 수 없습니다. URL을 무�
 #: src/konqapplication.cpp:580
 #, kde-format
 msgid "Are you sure you want to quit Konqueror? This will close all windows"
-msgstr ""
+msgstr "Konqueror를 종료하시겠습니까? 모든 창을 닫습니다"
 
 #: src/konqapplication.cpp:581 src/konqmainwindow.cpp:4879
 #: src/konqmainwindow.cpp:5653
@@ -623,10 +623,9 @@ msgid "Confirmation"
 msgstr "확인"
 
 #: src/konqapplication.cpp:583
-#, fuzzy, kde-format
-#| msgid "Onl&y current window"
+#, kde-format
 msgid "Close current window"
-msgstr "현재 창에만(&Y)"
+msgstr "현재 창 닫기"
 
 #: src/konqclosedwindowsmanager.cpp:209 src/konqmainwindow.cpp:4948
 #: src/konqmainwindow.cpp:4994
@@ -1014,51 +1013,47 @@ msgid "&Find File..."
 msgstr "파일 찾기(&F)..."
 
 #: src/konqmainwindow.cpp:3357
-#, fuzzy, kde-format
-#| msgid "Close &Other Tabs"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Other Windows"
-msgstr "다른 탭 닫기(&O)"
+msgstr "다른 창 닫기"
 
 #: src/konqmainwindow.cpp:3358
 #, kde-format
 msgid "Closes all windows except this one"
-msgstr ""
+msgstr "이 창을 제외한 모든 창 닫기"
 
 #: src/konqmainwindow.cpp:3360
 #, kde-format
 msgid "Closes all windows except this one. It doesn't close preloaded windows"
-msgstr ""
+msgstr "이 창을 제외한 모든 창을 닫습니다. 미리 불러온 창을 닫지는 않습니다"
 
 #: src/konqmainwindow.cpp:3364
-#, fuzzy, kde-format
-#| msgid "Konqueror"
+#, kde-format
 msgctxt "@action:inmenu quit Konqueror"
 msgid "Quit Konqueror"
-msgstr "Konqueror"
+msgstr "Konqueror 끝내기"
 
 #: src/konqmainwindow.cpp:3366
 #, kde-format
 msgid "Closes all Konqueror windows and quits the application"
-msgstr ""
+msgstr "모든 Konqueror 창을 닫고 앱 끝내기"
 
 #: src/konqmainwindow.cpp:3370
-#, fuzzy, kde-format
-#| msgid "Und&o: Closed Window"
+#, kde-format
 msgctxt "@action:inmenu close current window"
 msgid "Close Window"
-msgstr "실행 취소: 창 닫기(&O)"
+msgstr "창 닫기"
 
 #: src/konqmainwindow.cpp:3372
-#, fuzzy, kde-format
-#| msgid "&Close Active View"
+#, kde-format
 msgid "Close this window"
-msgstr "활성화된 보기 닫기(&C)"
+msgstr "이 창 닫기"
 
 #: src/konqmainwindow.cpp:3374
 #, kde-format
 msgid "Close this window, quitting Konqueror if it is the only window"
-msgstr ""
+msgstr "이 창을 닫으며, 이 창만 열려 있었다면 Konqueror 끝내기"
 
 #: src/konqmainwindow.cpp:3376
 #, kde-format
@@ -1455,24 +1450,20 @@ msgid "Shows the developer tools for the current page"
 msgstr "현재 페이지 개발자 도구 표시"
 
 #: src/konqmainwindow.cpp:3748
-#, fuzzy, kde-format
-#| msgid "Mark the current window as protected"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark the current window as protected"
 msgstr "현재 창을 보호된 것으로 표시"
 
 #: src/konqmainwindow.cpp:3750
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Mark the current window as protected</p><p>Marking a window as "
-#| "protected ensures that Konqueror will never open external links in it</p>"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<p>Mark the current window as protected.</p><p>Konqueror will never open "
 "external links in a protected window.</p>"
 msgstr ""
-"<p>현재 창을 보호된 것으로 표시</p><p>창을 보호된 것으로 표시하면 Konqueror에"
-"서 해당 창에 외부 링크를 열지 않습니다</p>"
+"<p>현재 창을 보호된 것으로 표시합니다.</p><p>Konqueror에서는 보호된 창에 외"
+"부 링크를 열지 않습니다.</p>"
 
 #: src/konqmainwindow.cpp:3912
 #, kde-format
@@ -1677,13 +1668,11 @@ msgstr ""
 "드 단축키(%1)를 다시 눌러서 빠져나올 수 있습니다"
 
 #: src/konqmainwindow.cpp:5652
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have multiple tabs open in this window, are you sure you want to quit?"
+#, kde-format
 msgid ""
 "You are closing all windows except this one. Are you sure you want to "
 "continue?"
-msgstr "현재 창에 여러 탭이 열려 있습니다. 종료하시겠습니까?"
+msgstr "이 창을 제외한 다른 모든 창을 닫기로 했습니다. 계속 진행하시겠습니까?"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
