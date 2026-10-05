@@ -49,14 +49,15 @@ msgid ""
 "a folder) are not displayed.\n"
 "If checked, they are gathered in a \"root\" folder."
 msgstr ""
-"При включении этого параметра показываются закладки из указанной папки, а не "
-"все закладки."
+"Если параметр выключен, закладки верхнего уровня (вне папок) не "
+"показываются.\n"
+"Если включён, они собираются в папку «root»."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
 #: bookmarks.ui:26
 #, kde-format
 msgid "&Show bookmarks without folder"
-msgstr "Показывать &все закладки"
+msgstr "Показывать закладки &вне папок"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
 #: bookmarks.ui:37
@@ -67,13 +68,16 @@ msgid ""
 "It looks less nice but it may help if you have a very big folder you want to "
 "spread in two columns."
 msgstr ""
-"При включении этого параметра папки закладок не разворачиваются по месту."
+"По умолчанию вложенные папки показываются внутри родительской. Если включить "
+"этот параметр, вложенные папки показываются отдельно.\n"
+"Это выглядит менее красиво, но может помочь, если нужно разнести очень "
+"большую папку на два столбца."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
 #: bookmarks.ui:40
 #, kde-format
 msgid "&Flatten bookmarks tree"
-msgstr "&Разворачивающееся дерево закладок"
+msgstr "&Плоское дерево закладок"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
 #: bookmarks.ui:47

@@ -124,7 +124,7 @@ msgstr "Быстрый доступ"
 #: src/about/konq_aboutpage.cpp:163
 #, kde-format
 msgid "Search the Web"
-msgstr "Поиск в Веб"
+msgstr "Поиск в Интернете"
 
 #: src/about/konq_aboutpage.cpp:194
 #, kde-format
@@ -147,7 +147,7 @@ msgid ""
 msgstr ""
 "Konqueror — это также полнофункциональный и лёгкий в использовании веб-"
 "браузер, который вы можете использовать для работы в Интернете. Введите "
-"адрес (например <a href=\"http://www.kde.org\">http://www.kde.org</a>) веб-"
+"адрес (например, <a href=\"http://www.kde.org\">http://www.kde.org</a>) веб-"
 "страницы, которую вы хотите просмотреть, в строке адреса и нажмите Enter, "
 "или выберите закладку из меню закладок."
 
@@ -158,7 +158,7 @@ msgid ""
 "height='16' src=\"%1\"></img> in the toolbar. "
 msgstr ""
 "Если вы хотите вернуться на предыдущую страницу, нажмите кнопку <img "
-"width='16' height='16' src=\"%1\"></img> на панели инструментов."
+"width='16' height='16' src=\"%1\"></img> на панели инструментов. "
 
 #: src/about/konq_aboutpage.cpp:206
 #, kde-format
@@ -174,7 +174,7 @@ msgstr ""
 msgid ""
 "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
 msgstr ""
-"Подробную информацию о работе программы можно найти в <a href="
+"Подробную информацию о работе Konqueror можно найти в <a href="
 "\"%1\">руководстве пользователя Konqueror</a>."
 
 #: src/about/konq_aboutpage.cpp:211
@@ -231,8 +231,8 @@ msgid ""
 "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
 "sessions."
 msgstr ""
-"В меню Настройка также можно найти <img width='16' height='16' src=\"%1\" /"
-">«Полноэкранный режим». Использование этой возможности очень полезно, "
+"В меню Настройка также можно найти <img width='16' height='16' src=\"%1\" /> "
+"«Полноэкранный режим». Использование этой возможности очень полезно, "
 "например, для показа презентаций."
 
 #: src/about/konq_aboutpage.cpp:264
@@ -243,8 +243,8 @@ msgid ""
 "View Left/Right) you can make Konqueror appear the way you like."
 msgstr ""
 "Divide et impera (лат., разделяй и властвуй) — разделением окна на две части "
-"( Окно → <img width='16' height='16' src=\"%1\" />Разделить панель по "
-"вертикали) возможно настроить желаемый вид Konqueror."
+"(Окно → <img width='16' height='16' src=\"%1\" /> Разделить панель по "
+"вертикали) можно настроить желаемый вид Konqueror."
 
 #: src/about/konq_aboutpage.cpp:267
 #, kde-format
@@ -253,7 +253,7 @@ msgid ""
 "visiting asks you to use a different browser (and do not forget to send a "
 "complaint to the webmaster!)"
 msgstr ""
-"Используйте <a href=\"%1\">user-agent</a> - возможность замаскироваться под "
+"Используйте <a href=\"%1\">user-agent</a> — возможность замаскироваться под "
 "любой другой браузер, если при посещении сайта вам вдруг будет предложено "
 "использовать именно его (и не забудьте послать жалобу веб-мастеру!)"
 
@@ -336,7 +336,7 @@ msgstr "Открыть &в программе «%1»"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
-msgstr "Открыть во вкладке"
+msgstr "Показать в новой вкладке"
 
 #: src/actondownloadedfilebar.cpp:187
 #, kde-format
@@ -406,7 +406,7 @@ msgstr "Выбор источника захвата"
 #: src/capturesourcechooserdlg.ui:20
 #, kde-format
 msgid "Which part of your screen do you want to share?"
-msgstr "Какую область экрана следует опубликовать?"
+msgstr "Какую область экрана следует предоставить?"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/capturesourcechooserdlg.ui:44
@@ -460,7 +460,7 @@ msgid ""
 msgstr ""
 "Страница будет сохранена в виде файла MTHML, который содержит как текст "
 "страницы, так и все необходимые ей внешние ресурсы, например, изображения. "
-"<br><strong>Примечание</strong>: не все браузеры могут отображать файлы "
+"<br><strong>Примечание</strong>: не все браузеры могут показывать файлы "
 "такого типа."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
@@ -491,7 +491,7 @@ msgstr "В виде полной &HTML-страницы"
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As a &MHTML file"
-msgstr "В &MHTML-файл"
+msgstr "Как &MHTML-файл"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -602,7 +602,7 @@ msgstr "Путь"
 #: src/cookies/cookiealertdlg.ui:99
 #, kde-format
 msgid "Exposure"
-msgstr "Экспозиция"
+msgstr "Доступность"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: src/cookies/cookiealertdlg.ui:113
@@ -828,7 +828,7 @@ msgstr "&Скрыть подробности"
 #: src/ui/searchbar.cpp:38
 #, kde-format
 msgid "Find..."
-msgstr "Текст для поиска..."
+msgstr "Найти…"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, closeButton)
 #: src/ui/searchbar.ui:23
@@ -919,7 +919,7 @@ msgstr "другой"
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
 #, kde-format
 msgid "Customize Fields To Store"
-msgstr "&Настроить поля для запоминания…"
+msgstr "Настроить поля для запоминания"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
@@ -1023,7 +1023,7 @@ msgid ""
 "This site is attempting to submit form data via email.\n"
 "Do you want to continue?"
 msgstr ""
-"Попытка передачи данных формы на сайт по электронной почте.\n"
+"Сайт пытается отправить данные формы по электронной почте.\n"
 "Продолжить?"
 
 #: src/webenginepage.cpp:664
@@ -1093,8 +1093,8 @@ msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
 "want to allow this?</qt>"
 msgstr ""
-"<qt>Сайт пытается открыть новое всплывающее окно <p>%1</p><br/>Разрешить?</"
-"qt>"
+"<qt>Сайт пытается открыть всплывающее окно с адресом<p>%1</p><br/>Разрешить?"
+"</qt>"
 
 #: src/webenginepage.cpp:953
 #, kde-format
@@ -1152,7 +1152,7 @@ msgstr "Масштаб по DPI"
 #: src/webenginepart.cpp:256
 #, kde-format
 msgid "Set &Encoding"
-msgstr "&Кодировка..."
+msgstr "Установить &кодировку"
 
 #: src/webenginepart.cpp:259
 #, kde-format
@@ -1176,7 +1176,7 @@ msgstr "<h3>Найти текст</h3>Диалог поиска текста н�
 #: src/webenginepart.cpp:643
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
-msgstr "Похоже, что сведения SSL для это сайта неверны."
+msgstr "Похоже, что сведения SSL для этого сайта неверны."
 
 #: src/webenginepart.cpp:724
 #, kde-format
@@ -1184,7 +1184,7 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid "Email: "
-msgstr "Получатель:"
+msgstr "Получатель: "
 
 #: src/webenginepart.cpp:753
 #, kde-format
@@ -1213,12 +1213,12 @@ msgstr " - Тема: "
 #: src/webenginepart.cpp:761 src/webenginepart.cpp:772
 #, kde-format
 msgid " (In new window)"
-msgstr " (В новом окне)"
+msgstr " (в новом окне)"
 
 #: src/webenginepart.cpp:770
 #, kde-format
 msgid " (In parent frame)"
-msgstr " (в этом фрейме)"
+msgstr " (в родительском фрейме)"
 
 #: src/webenginepart.cpp:836
 #, kde-format
@@ -1228,7 +1228,7 @@ msgstr "<qt>Выполнить поиск <b>%1</b>?</qt>"
 #: src/webenginepart.cpp:837
 #, kde-format
 msgid "Internet Search"
-msgstr "Поиск в Интернет"
+msgstr "Поиск в Интернете"
 
 #: src/webenginepart.cpp:837
 #, kde-format
@@ -1243,7 +1243,7 @@ msgstr "Закрыть окно?"
 #: src/webenginepart.cpp:950
 #, kde-format
 msgid "Confirmation Required"
-msgstr "Закрытие окна"
+msgstr "Требуется подтверждение"
 
 #: src/webenginepart.cpp:1027
 #, kde-format
@@ -1274,7 +1274,7 @@ msgstr "&Сохранить учётные данные сейчас"
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
-msgstr "&Настроить поля для запоминания на этой странице..."
+msgstr "&Настроить поля для запоминания на этой странице…"
 
 #: src/webenginepart.cpp:1115
 #, kde-format
@@ -1294,7 +1294,7 @@ msgstr "Удалить все сохранённые пароли для это�
 #: src/webenginepart.cpp:1127
 #, kde-format
 msgid "&Launch Wallet Manager"
-msgstr "&Запустить управление бумажниками"
+msgstr "&Запустить диспетчер бумажников"
 
 #: src/webenginepart.cpp:1131
 #, kde-format
@@ -1329,7 +1329,7 @@ msgstr "С&ервис"
 #: src/webenginepart.rc:32
 #, kde-format
 msgid "&Credential management"
-msgstr "&Управление учётными записями"
+msgstr "&Управление учётными данными"
 
 #. i18n: ectx: ToolBar (htmlToolBar)
 #: src/webenginepart.rc:49
@@ -1401,7 +1401,7 @@ msgstr "Сведения о сертификате"
 #: src/webenginepartcertificateerrordlg.ui:63
 #, kde-format
 msgid "&Subject"
-msgstr "&Тема"
+msgstr "&Субъект"
 
 #. i18n: ectx: attribute (title), widget (QWidget, issuerTab)
 #: src/webenginepartcertificateerrordlg.ui:73
@@ -1450,12 +1450,12 @@ msgstr "Сохранён адрес «%1» как «%2»"
 #: src/webengineview.cpp:351
 #, kde-format
 msgid "Save Image As..."
-msgstr "Сохранить изображение как..."
+msgstr "Сохранить изображение как…"
 
 #: src/webengineview.cpp:356
 #, kde-format
 msgid "Send Image..."
-msgstr "Отправить изображение..."
+msgstr "Отправить изображение…"
 
 #: src/webengineview.cpp:361
 #, kde-format
@@ -1475,12 +1475,12 @@ msgstr "Просмотр изображения (%1)"
 #: src/webengineview.cpp:380
 #, kde-format
 msgid "Block Image..."
-msgstr "Заблокировать изображение..."
+msgstr "Заблокировать изображение…"
 
 #: src/webengineview.cpp:388
 #, kde-format
 msgid "Block Images From %1"
-msgstr "Заблокировать изображения от %1"
+msgstr "Заблокировать изображения с %1"
 
 #: src/webengineview.cpp:418 src/webengineview.cpp:455
 #, kde-format
@@ -1511,7 +1511,7 @@ msgstr "Скопировать адрес &ссылки"
 #: src/webengineview.cpp:478
 #, kde-format
 msgid "&Save Link As..."
-msgstr "Сохранить сс&ылку как..."
+msgstr "Сохранить сс&ылку как…"
 
 #: src/webengineview.cpp:498
 #, kde-format
@@ -1521,22 +1521,22 @@ msgstr "&Воспроизведение/пауза"
 #: src/webengineview.cpp:503
 #, kde-format
 msgid "Un&mute/&Mute"
-msgstr "Включить или отключить звук"
+msgstr "Вклю&чить или отключить звук"
 
 #: src/webengineview.cpp:508
 #, kde-format
 msgid "Toggle &Loop"
-msgstr "Включить или отключить повтор"
+msgstr "Включить или отключить &повтор"
 
 #: src/webengineview.cpp:513
 #, kde-format
 msgid "Toggle &Controls"
-msgstr "Скрыть или показать элементы управления"
+msgstr "Скрыть или показать элементы &управления"
 
 #: src/webengineview.cpp:524
 #, kde-format
 msgid "Sa&ve Video As..."
-msgstr "Сохранить видеофайл &как..."
+msgstr "Сохранить видеофайл &как…"
 
 #: src/webengineview.cpp:525
 #, kde-format
@@ -1546,7 +1546,7 @@ msgstr "Ск&опировать адрес видеофайла"
 #: src/webengineview.cpp:527
 #, kde-format
 msgid "Sa&ve Audio As..."
-msgstr "Сохранить аудиофайл &как..."
+msgstr "Сохранить аудиофайл &как…"
 
 #: src/webengineview.cpp:528
 #, kde-format
@@ -1556,7 +1556,7 @@ msgstr "Ск&опировать адрес аудиофайла"
 #: src/webengineview.cpp:530
 #, kde-format
 msgid "Sa&ve Media As..."
-msgstr "Сохранить медиафайл &как..."
+msgstr "Сохранить медиафайл &как…"
 
 #: src/webengineview.cpp:531
 #, kde-format
@@ -1573,12 +1573,12 @@ msgstr "Искать «%2» в %1"
 #, kde-format
 msgctxt "Search for \"text\" with"
 msgid "Search for '%1' with"
-msgstr "Поиск «%1» в"
+msgstr "Искать «%1» в"
 
 #: src/webengineview.cpp:608
 #, kde-format
 msgid "Configure Web Shortcuts..."
-msgstr "Настройка веб-сокращений..."
+msgstr "Настроить веб-сокращения…"
 
 #: src/webfieldsdataview.cpp:61
 #, kde-format

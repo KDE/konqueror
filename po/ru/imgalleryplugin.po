@@ -111,7 +111,7 @@ msgstr "&Сохранить в файле HTML:"
 #: imgallerydialog.cpp:147
 #, kde-format
 msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
-msgstr "<p>Имя HTML файла, в который нужно сохранить галерею.</p>"
+msgstr "<p>Имя HTML-файла, в который нужно сохранить галерею.</p>"
 
 #: imgallerydialog.cpp:150
 #, kde-format
@@ -168,8 +168,9 @@ msgid ""
 "used for generating subtitles for the images.</p><p>For details about the "
 "file format please see the \"What's This?\" help below.</p>"
 msgstr ""
-"<p>Вы можете добавить комментарий, который будет использован в заголовках "
-"галереи.</p><p>Подробности формата описаны в справке «Что это?».</p>"
+"<p>Если включить этот параметр, можно указать файл комментариев, из которого "
+"будут взяты подписи к изображениям.</p><p>Подробности формата описаны в "
+"справке «Что это?».</p>"
 
 #: imgallerydialog.cpp:190
 #, kde-format
@@ -206,7 +207,7 @@ msgstr "Размер уменьшенных копий:"
 #: imgallerydialog.cpp:235
 #, kde-format
 msgid "&Set different color depth:"
-msgstr "&Установить разную глубину цвета:"
+msgstr "&Изменить глубину цвета:"
 
 #: imgallerydialog.cpp:246
 #, kde-format
@@ -216,12 +217,12 @@ msgstr "Глубина цвета:"
 #: imgalleryplugin.cpp:44
 #, kde-format
 msgid "&Create Image Gallery..."
-msgstr "&Создать галерею изображений..."
+msgstr "&Создать галерею изображений…"
 
 #: imgalleryplugin.cpp:54
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
-msgstr "Не удалось загрузить модуль."
+msgstr "Не удалось создать модуль. Сообщите об ошибке разработчикам."
 
 #: imgalleryplugin.cpp:60
 #, kde-format
@@ -259,7 +260,7 @@ msgid ""
 "Created thumbnail for: \n"
 "%1"
 msgstr ""
-"Создание уменьшенной копии изображения: \n"
+"Создана уменьшенная копия изображения: \n"
 "%1"
 
 #: imgalleryplugin.cpp:210
