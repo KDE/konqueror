@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-12 00:44+0000\n"
+"POT-Creation-Date: 2026-10-05 00:45+0000\n"
 "PO-Revision-Date: 2025-12-02 02:04+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -743,21 +743,7 @@ msgctxt "@action:grant permission"
 msgid "&Grant permission"
 msgstr "&Conceder permiso"
 
-#: src/ui/featurepermissionbar.cpp:57
-#, kde-format
-msgid "<html><b>%1</b> would like to send you notifications"
-msgstr "<html><b>%1</b> quiere enviarle notificaciones"
-
-#: src/ui/featurepermissionbar.cpp:59
-#, kde-format
-msgid ""
-"<html><b>%1</b> would like to access information about your current physical "
-"location"
-msgstr ""
-"<html><b>%1</b> quiere acceder a la información sobre su ubicación física "
-"actual"
-
-#: src/ui/featurepermissionbar.cpp:61
+#: src/ui/featurepermissionbar.cpp:51
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your microphone and other audio capture "
@@ -766,7 +752,7 @@ msgstr ""
 "<html><b>%1</b> quiere acceder al micrófono y a otros dispositivos de "
 "captura de sonido"
 
-#: src/ui/featurepermissionbar.cpp:63
+#: src/ui/featurepermissionbar.cpp:53
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your camera and other video capture "
@@ -775,7 +761,7 @@ msgstr ""
 "<html><b>%1</b> quiere acceder a la cámara y a otros dispositivos de captura "
 "de vídeo"
 
-#: src/ui/featurepermissionbar.cpp:65
+#: src/ui/featurepermissionbar.cpp:55
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access to your microphone, camera and other "
@@ -784,20 +770,57 @@ msgstr ""
 "<html><b>%1</b> quiere acceder al micrófono, la cámara y a otros "
 "dispositivos de captura de sonido y de vídeo"
 
-#: src/ui/featurepermissionbar.cpp:67
-#, kde-format
-msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
-msgstr "<html><b>%1</b> quiere bloquear el ratón dentro de la página web"
-
-#: src/ui/featurepermissionbar.cpp:69
+#: src/ui/featurepermissionbar.cpp:57
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen"
 msgstr "<html><b>%1</b> quiere grabar el contenido de la pantalla"
 
-#: src/ui/featurepermissionbar.cpp:71
+#: src/ui/featurepermissionbar.cpp:59
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen and your audio"
 msgstr "<html><b>%1</b> quiere grabar el contenido de la pantalla y el sonido"
+
+#: src/ui/featurepermissionbar.cpp:61
+#, kde-format
+msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
+msgstr "<html><b>%1</b> quiere bloquear el ratón dentro de la página web"
+
+#: src/ui/featurepermissionbar.cpp:63
+#, kde-format
+msgid "<html><b>%1</b> would like to send you notifications"
+msgstr "<html><b>%1</b> quiere enviarle notificaciones"
+
+#: src/ui/featurepermissionbar.cpp:65
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access information about your current physical "
+"location"
+msgstr ""
+"<html><b>%1</b> quiere acceder a la información sobre su ubicación física "
+"actual"
+
+#: src/ui/featurepermissionbar.cpp:67
+#, fuzzy, kde-format
+#| msgid "<html><b>%1</b> would like to record your screen"
+msgid "<html><b>%1</b> would like to access your clipboard"
+msgstr "<html><b>%1</b> quiere grabar el contenido de la pantalla"
+
+#: src/ui/featurepermissionbar.cpp:69
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><b>%1</b> would like to access information about your current "
+#| "physical location"
+msgid ""
+"<html><b>%1</b> would like to access the fonts installed on your machine"
+msgstr ""
+"<html><b>%1</b> quiere acceder a la información sobre su ubicación física "
+"actual"
+
+#: src/ui/featurepermissionbar.cpp:71
+#, fuzzy, kde-format
+#| msgid "<html><b>%1</b> would like to send you notifications"
+msgid "<html><b>%1</b> would like to do something we don't know about"
+msgstr "<html><b>%1</b> quiere enviarle notificaciones"
 
 #: src/ui/passwordbar.cpp:28
 #, kde-format
@@ -984,27 +1007,7 @@ msgstr ""
 "\n"
 "Se deshabilitará la integración."
 
-#: src/webenginepage.cpp:570
-#, kde-format
-msgid ""
-"This site is attempting to access information about your physical location.\n"
-"Do you want to allow it access?"
-msgstr ""
-"Este sitio está intentando acceder a información sobre su ubicación física.\n"
-"¿Desea permitirle el acceso?"
-
-#: src/webenginepage.cpp:574 src/webenginepage.cpp:652
-#: src/webenginepage.cpp:663
-#, kde-format
-msgid "Network Transmission"
-msgstr "Transferencia de red"
-
-#: src/webenginepage.cpp:575
-#, kde-format
-msgid "Allow access"
-msgstr "Permitir acceso"
-
-#: src/webenginepage.cpp:645
+#: src/webenginepage.cpp:622
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1017,12 +1020,17 @@ msgstr ""
 "Un tercero podría interceptarlos y ver esta información.\n"
 "¿Seguro que desea enviar los datos sin cifrar?"
 
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:629 src/webenginepage.cpp:640
+#, kde-format
+msgid "Network Transmission"
+msgstr "Transferencia de red"
+
+#: src/webenginepage.cpp:630
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "Enviar &sin cifrar"
 
-#: src/webenginepage.cpp:660
+#: src/webenginepage.cpp:637
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1031,12 +1039,12 @@ msgstr ""
 "Este sitio está intentando enviar los datos del formulario por correo-e.\n"
 "¿Seguro que desea continuar?"
 
-#: src/webenginepage.cpp:664
+#: src/webenginepage.cpp:641
 #, kde-format
 msgid "&Send Email"
 msgstr "&Enviar correo-e"
 
-#: src/webenginepage.cpp:715
+#: src/webenginepage.cpp:692
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1045,22 +1053,22 @@ msgstr ""
 "<qt>¿Desea permitir que este sitio web adjunte los siguientes archivos al "
 "mensaje de correo?</qt>"
 
-#: src/webenginepage.cpp:717
+#: src/webenginepage.cpp:694
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Confirmación de adjuntos de correo-e"
 
-#: src/webenginepage.cpp:718
+#: src/webenginepage.cpp:695
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Permitir &adjuntos"
 
-#: src/webenginepage.cpp:719
+#: src/webenginepage.cpp:696
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignorar adjuntos"
 
-#: src/webenginepage.cpp:732
+#: src/webenginepage.cpp:709
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1069,22 +1077,22 @@ msgstr ""
 "Este sitio intentó adjuntar un archivo de su equipo al confirmar el "
 "formulario. El adjunto ha sido eliminado para protegerle."
 
-#: src/webenginepage.cpp:735
+#: src/webenginepage.cpp:712
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Adjunto eliminado"
 
-#: src/webenginepage.cpp:855
+#: src/webenginepage.cpp:832
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
 msgstr "Ha ocurrido un error al convertir la página a PDF"
 
-#: src/webenginepage.cpp:860
+#: src/webenginepage.cpp:837
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "Ha ocurrido un error al guardar una versión PDF de la página como %1"
 
-#: src/webenginepage.cpp:948
+#: src/webenginepage.cpp:925
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1093,7 +1101,7 @@ msgstr ""
 "Este sitio está solicitando abrir una nueva ventana emergente.\n"
 "¿Desea permitirlo?"
 
-#: src/webenginepage.cpp:950
+#: src/webenginepage.cpp:927
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1102,17 +1110,17 @@ msgstr ""
 "<qt>Este sitio está solicitando abrir una ventana emergente para<p>%1</p><br/"
 ">¿Desea permitirlo?</qt>"
 
-#: src/webenginepage.cpp:953
+#: src/webenginepage.cpp:930
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Confirmación de ventana emergente de JavaScript"
 
-#: src/webenginepage.cpp:954
+#: src/webenginepage.cpp:931
 #, kde-format
 msgid "Allow"
 msgstr "Permitir"
 
-#: src/webenginepage.cpp:954
+#: src/webenginepage.cpp:931
 #, kde-format
 msgid "Do Not Allow"
 msgstr "No permitir"
@@ -1253,58 +1261,58 @@ msgstr "¿Cerrar la ventana?"
 msgid "Confirmation Required"
 msgstr "Se requiere confirmación"
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1013
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 "<html>¿Desea que %1 recuerde la información de ingreso para <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1096
+#: src/webenginepart.cpp:1084
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr "&Rellenar las credenciales"
 
-#: src/webenginepart.cpp:1101
+#: src/webenginepart.cpp:1089
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr "&Buscar solicitudes de credenciales en la página"
 
-#: src/webenginepart.cpp:1105
+#: src/webenginepart.cpp:1093
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr "&Guardar credenciales ahora"
 
-#: src/webenginepart.cpp:1109
+#: src/webenginepart.cpp:1097
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr "&Personalizar las preferencias de credenciales por página…"
 
-#: src/webenginepart.cpp:1113
+#: src/webenginepart.cpp:1101
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr "Reiniciar las preferencias de credenciales personalizadas por página"
 
-#: src/webenginepart.cpp:1117
+#: src/webenginepart.cpp:1105
 #, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr "Per&mitir el uso de la caché de credenciales para esta página"
 
-#: src/webenginepart.cpp:1121
+#: src/webenginepart.cpp:1109
 #, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "Eliminar todas las contraseñas guardadas de este sitio"
 
-#: src/webenginepart.cpp:1125
+#: src/webenginepart.cpp:1113
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Lanzar el gestor de carteras"
 
-#: src/webenginepart.cpp:1129
+#: src/webenginepart.cpp:1117
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Cerrar cartera"
@@ -1666,3 +1674,15 @@ msgstr ""
 "%2</li><li><b>ID del campo: </b>%3</li><li><b>Campo de solo lectura: </b>%4</"
 "li><li><b>Campo activado: </b>%5</li><li><b>Terminación automática activada: "
 "</b>%6</li></ul>"
+
+#~ msgid ""
+#~ "This site is attempting to access information about your physical "
+#~ "location.\n"
+#~ "Do you want to allow it access?"
+#~ msgstr ""
+#~ "Este sitio está intentando acceder a información sobre su ubicación "
+#~ "física.\n"
+#~ "¿Desea permitirle el acceso?"
+
+#~ msgid "Allow access"
+#~ msgstr "Permitir acceso"

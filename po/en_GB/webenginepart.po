@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-12 00:44+0000\n"
+"POT-Creation-Date: 2026-10-05 00:45+0000\n"
 "PO-Revision-Date: 2024-11-08 14:57+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -734,61 +734,84 @@ msgctxt "@action:grant permission"
 msgid "&Grant permission"
 msgstr "&Grant permission"
 
+#: src/ui/featurepermissionbar.cpp:51
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access your microphone and other audio capture "
+"devices"
+msgstr ""
+"<html><b>%1</b> would like to access your microphone and other audio capture "
+"devices"
+
+#: src/ui/featurepermissionbar.cpp:53
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access your camera and other video capture "
+"devices"
+msgstr ""
+"<html><b>%1</b> would like to access your camera and other video capture "
+"devices"
+
+#: src/ui/featurepermissionbar.cpp:55
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access to your microphone, camera and other "
+"audio and video capture devices"
+msgstr ""
+"<html><b>%1</b> would like to access to your microphone, camera and other "
+"audio and video capture devices"
+
 #: src/ui/featurepermissionbar.cpp:57
-#, kde-format
-msgid "<html><b>%1</b> would like to send you notifications"
-msgstr "<html><b>%1</b> would like to send you notifications"
-
-#: src/ui/featurepermissionbar.cpp:59
-#, kde-format
-msgid ""
-"<html><b>%1</b> would like to access information about your current physical "
-"location"
-msgstr ""
-"<html><b>%1</b> would like to access information about your current physical "
-"location"
-
-#: src/ui/featurepermissionbar.cpp:61
-#, kde-format
-msgid ""
-"<html><b>%1</b> would like to access your microphone and other audio capture "
-"devices"
-msgstr ""
-"<html><b>%1</b> would like to access your microphone and other audio capture "
-"devices"
-
-#: src/ui/featurepermissionbar.cpp:63
-#, kde-format
-msgid ""
-"<html><b>%1</b> would like to access your camera and other video capture "
-"devices"
-msgstr ""
-"<html><b>%1</b> would like to access your camera and other video capture "
-"devices"
-
-#: src/ui/featurepermissionbar.cpp:65
-#, kde-format
-msgid ""
-"<html><b>%1</b> would like to access to your microphone, camera and other "
-"audio and video capture devices"
-msgstr ""
-"<html><b>%1</b> would like to access to your microphone, camera and other "
-"audio and video capture devices"
-
-#: src/ui/featurepermissionbar.cpp:67
-#, kde-format
-msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
-msgstr "<html><b>%1</b> would like to lock your mouse inside the web page"
-
-#: src/ui/featurepermissionbar.cpp:69
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen"
 msgstr "<html><b>%1</b> would like to record your screen"
 
-#: src/ui/featurepermissionbar.cpp:71
+#: src/ui/featurepermissionbar.cpp:59
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen and your audio"
 msgstr "<html><b>%1</b> would like to record your screen and your audio"
+
+#: src/ui/featurepermissionbar.cpp:61
+#, kde-format
+msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
+msgstr "<html><b>%1</b> would like to lock your mouse inside the web page"
+
+#: src/ui/featurepermissionbar.cpp:63
+#, kde-format
+msgid "<html><b>%1</b> would like to send you notifications"
+msgstr "<html><b>%1</b> would like to send you notifications"
+
+#: src/ui/featurepermissionbar.cpp:65
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access information about your current physical "
+"location"
+msgstr ""
+"<html><b>%1</b> would like to access information about your current physical "
+"location"
+
+#: src/ui/featurepermissionbar.cpp:67
+#, fuzzy, kde-format
+#| msgid "<html><b>%1</b> would like to record your screen"
+msgid "<html><b>%1</b> would like to access your clipboard"
+msgstr "<html><b>%1</b> would like to record your screen"
+
+#: src/ui/featurepermissionbar.cpp:69
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><b>%1</b> would like to access information about your current "
+#| "physical location"
+msgid ""
+"<html><b>%1</b> would like to access the fonts installed on your machine"
+msgstr ""
+"<html><b>%1</b> would like to access information about your current physical "
+"location"
+
+#: src/ui/featurepermissionbar.cpp:71
+#, fuzzy, kde-format
+#| msgid "<html><b>%1</b> would like to send you notifications"
+msgid "<html><b>%1</b> would like to do something we don't know about"
+msgstr "<html><b>%1</b> would like to send you notifications"
 
 #: src/ui/passwordbar.cpp:28
 #, kde-format
@@ -978,45 +1001,30 @@ msgstr ""
 "\n"
 "The integration will be disabled."
 
-#: src/webenginepage.cpp:570
+#: src/webenginepage.cpp:622
 #, kde-format
 msgid ""
-"This site is attempting to access information about your physical location.\n"
-"Do you want to allow it access?"
+"Warning: This is a secure form but it is attempting to send your data back "
+"unencrypted.\n"
+"A third party may be able to intercept and view this information.\n"
+"Are you sure you want to send the data unencrypted?"
 msgstr ""
-"This site is attempting to access information about your physical location.\n"
-"Do you want to allow it access?"
+"Warning: This is a secure form but it is attempting to send your data back "
+"unencrypted.\n"
+"A third party may be able to intercept and view this information.\n"
+"Are you sure you want to send the data unencrypted?"
 
-#: src/webenginepage.cpp:574 src/webenginepage.cpp:652
-#: src/webenginepage.cpp:663
+#: src/webenginepage.cpp:629 src/webenginepage.cpp:640
 #, kde-format
 msgid "Network Transmission"
 msgstr "Network Transmission"
 
-#: src/webenginepage.cpp:575
-#, kde-format
-msgid "Allow access"
-msgstr "Allow access"
-
-#: src/webenginepage.cpp:645
-#, kde-format
-msgid ""
-"Warning: This is a secure form but it is attempting to send your data back "
-"unencrypted.\n"
-"A third party may be able to intercept and view this information.\n"
-"Are you sure you want to send the data unencrypted?"
-msgstr ""
-"Warning: This is a secure form but it is attempting to send your data back "
-"unencrypted.\n"
-"A third party may be able to intercept and view this information.\n"
-"Are you sure you want to send the data unencrypted?"
-
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:630
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Send Unencrypted"
 
-#: src/webenginepage.cpp:660
+#: src/webenginepage.cpp:637
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1025,12 +1033,12 @@ msgstr ""
 "This site is attempting to submit form data via email.\n"
 "Do you want to continue?"
 
-#: src/webenginepage.cpp:664
+#: src/webenginepage.cpp:641
 #, kde-format
 msgid "&Send Email"
 msgstr "&Send Email"
 
-#: src/webenginepage.cpp:715
+#: src/webenginepage.cpp:692
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1039,22 +1047,22 @@ msgstr ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 
-#: src/webenginepage.cpp:717
+#: src/webenginepage.cpp:694
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Email Attachment Confirmation"
 
-#: src/webenginepage.cpp:718
+#: src/webenginepage.cpp:695
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Allow attachments"
 
-#: src/webenginepage.cpp:719
+#: src/webenginepage.cpp:696
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignore attachments"
 
-#: src/webenginepage.cpp:732
+#: src/webenginepage.cpp:709
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1063,24 +1071,24 @@ msgstr ""
 "This site attempted to attach a file from your computer in the form "
 "submission. The attachment was removed for your protection."
 
-#: src/webenginepage.cpp:735
+#: src/webenginepage.cpp:712
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Attachment Removed"
 
-#: src/webenginepage.cpp:855
+#: src/webenginepage.cpp:832
 #, fuzzy, kde-format
 #| msgid "An error occurred while saving the file: %1"
 msgid "An error occurred while converting the page to PDF"
 msgstr "An error occurred while saving the file: %1"
 
-#: src/webenginepage.cpp:860
+#: src/webenginepage.cpp:837
 #, fuzzy, kde-format
 #| msgid "An error occurred while saving the file: %1"
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "An error occurred while saving the file: %1"
 
-#: src/webenginepage.cpp:948
+#: src/webenginepage.cpp:925
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1089,7 +1097,7 @@ msgstr ""
 "This site is requesting to open a new popup window.\n"
 "Do you want to allow this?"
 
-#: src/webenginepage.cpp:950
+#: src/webenginepage.cpp:927
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1098,17 +1106,17 @@ msgstr ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
 "want to allow this?</qt>"
 
-#: src/webenginepage.cpp:953
+#: src/webenginepage.cpp:930
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript Popup Confirmation"
 
-#: src/webenginepage.cpp:954
+#: src/webenginepage.cpp:931
 #, kde-format
 msgid "Allow"
 msgstr "Allow"
 
-#: src/webenginepage.cpp:954
+#: src/webenginepage.cpp:931
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Do Not Allow"
@@ -1249,62 +1257,62 @@ msgstr "Close window?"
 msgid "Confirmation Required"
 msgstr "Confirmation Required"
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1013
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1096
+#: src/webenginepart.cpp:1084
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr ""
 
-#: src/webenginepart.cpp:1101
+#: src/webenginepart.cpp:1089
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr ""
 
-#: src/webenginepart.cpp:1105
+#: src/webenginepart.cpp:1093
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr ""
 
-#: src/webenginepart.cpp:1109
+#: src/webenginepart.cpp:1097
 #, fuzzy, kde-format
 #| msgid "&Customize Fields to Memorize for This Page..."
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr "&Customise Fields to Memorise for This Page..."
 
-#: src/webenginepart.cpp:1113
+#: src/webenginepart.cpp:1101
 #, fuzzy, kde-format
 #| msgid "Remove Customized Memorization Settings for This Page"
 msgid "Reset Custom Credential Settings for Page"
 msgstr "Remove Customised Memorisation Settings for This Page"
 
-#: src/webenginepart.cpp:1117
+#: src/webenginepart.cpp:1105
 #, fuzzy, kde-format
 #| msgid "&Allow Password Caching for This Site"
 msgid "&Allow Credential Caching for This Page"
 msgstr "&Allow Password Caching for This Site"
 
-#: src/webenginepart.cpp:1121
+#: src/webenginepart.cpp:1109
 #, fuzzy, kde-format
 #| msgid "Remove All Memorized Passwords for This Site"
 msgid "Remove All Stored Passwords for This Site"
 msgstr "Remove All Memorised Passwords for This Site"
 
-#: src/webenginepart.cpp:1125
+#: src/webenginepart.cpp:1113
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Launch Wallet Manager"
 
-#: src/webenginepart.cpp:1129
+#: src/webenginepart.cpp:1117
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Close Wallet"
@@ -1666,6 +1674,18 @@ msgstr ""
 "li><li><b>Field id: </b>%3</li><li><b>Field is read only: </b>%4</"
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
+
+#~ msgid ""
+#~ "This site is attempting to access information about your physical "
+#~ "location.\n"
+#~ "Do you want to allow it access?"
+#~ msgstr ""
+#~ "This site is attempting to access information about your physical "
+#~ "location.\n"
+#~ "Do you want to allow it access?"
+
+#~ msgid "Allow access"
+#~ msgstr "Allow access"
 
 #~ msgid "Konqueror"
 #~ msgstr "Konqueror"

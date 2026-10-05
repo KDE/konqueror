@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-12 00:44+0000\n"
+"POT-Creation-Date: 2026-10-05 00:45+0000\n"
 "PO-Revision-Date: 2017-12-03 22:53+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -700,12 +700,48 @@ msgctxt "@action:grant permission"
 msgid "&Grant permission"
 msgstr "&Дозволи приступ"
 
+#: src/ui/featurepermissionbar.cpp:51
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access your microphone and other audio capture "
+"devices"
+msgstr ""
+
+#: src/ui/featurepermissionbar.cpp:53
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access your camera and other video capture "
+"devices"
+msgstr ""
+
+#: src/ui/featurepermissionbar.cpp:55
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access to your microphone, camera and other "
+"audio and video capture devices"
+msgstr ""
+
 #: src/ui/featurepermissionbar.cpp:57
+#, kde-format
+msgid "<html><b>%1</b> would like to record your screen"
+msgstr ""
+
+#: src/ui/featurepermissionbar.cpp:59
+#, kde-format
+msgid "<html><b>%1</b> would like to record your screen and your audio"
+msgstr ""
+
+#: src/ui/featurepermissionbar.cpp:61
+#, kde-format
+msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
+msgstr ""
+
+#: src/ui/featurepermissionbar.cpp:63
 #, kde-format
 msgid "<html><b>%1</b> would like to send you notifications"
 msgstr ""
 
-#: src/ui/featurepermissionbar.cpp:59
+#: src/ui/featurepermissionbar.cpp:65
 #, fuzzy, kde-format
 #| msgid ""
 #| "<html>Do you want to grant the site access to information about your "
@@ -717,41 +753,36 @@ msgstr ""
 "<html>Желите ли да дозволите сајту приступ подацима о вашој текућој физичкој "
 "локацији?</html>"
 
-#: src/ui/featurepermissionbar.cpp:61
-#, kde-format
-msgid ""
-"<html><b>%1</b> would like to access your microphone and other audio capture "
-"devices"
-msgstr ""
-
-#: src/ui/featurepermissionbar.cpp:63
-#, kde-format
-msgid ""
-"<html><b>%1</b> would like to access your camera and other video capture "
-"devices"
-msgstr ""
-
-#: src/ui/featurepermissionbar.cpp:65
-#, kde-format
-msgid ""
-"<html><b>%1</b> would like to access to your microphone, camera and other "
-"audio and video capture devices"
-msgstr ""
-
 #: src/ui/featurepermissionbar.cpp:67
-#, kde-format
-msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>Do you want to grant the site access to information about your "
+#| "current physical location?"
+msgid "<html><b>%1</b> would like to access your clipboard"
 msgstr ""
+"<html>Желите ли да дозволите сајту приступ подацима о вашој текућој физичкој "
+"локацији?</html>"
 
 #: src/ui/featurepermissionbar.cpp:69
-#, kde-format
-msgid "<html><b>%1</b> would like to record your screen"
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>Do you want to grant the site access to information about your "
+#| "current physical location?"
+msgid ""
+"<html><b>%1</b> would like to access the fonts installed on your machine"
 msgstr ""
+"<html>Желите ли да дозволите сајту приступ подацима о вашој текућој физичкој "
+"локацији?</html>"
 
 #: src/ui/featurepermissionbar.cpp:71
-#, kde-format
-msgid "<html><b>%1</b> would like to record your screen and your audio"
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>Do you want to grant the site access to information about your "
+#| "current physical location?"
+msgid "<html><b>%1</b> would like to do something we don't know about"
 msgstr ""
+"<html>Желите ли да дозволите сајту приступ подацима о вашој текућој физичкој "
+"локацији?</html>"
 
 #: src/ui/passwordbar.cpp:28
 #, kde-format
@@ -943,27 +974,7 @@ msgstr ""
 "\n"
 "Интеграција ће бити искључена."
 
-#: src/webenginepage.cpp:570
-#, kde-format
-msgid ""
-"This site is attempting to access information about your physical location.\n"
-"Do you want to allow it access?"
-msgstr ""
-"Овај сајт покушава да приступи подацима о вашој физичкој локацији.\n"
-"Желите ли да му дозволите приступ?"
-
-#: src/webenginepage.cpp:574 src/webenginepage.cpp:652
-#: src/webenginepage.cpp:663
-#, kde-format
-msgid "Network Transmission"
-msgstr "Мрежни пренос"
-
-#: src/webenginepage.cpp:575
-#, kde-format
-msgid "Allow access"
-msgstr "Дозволи приступ"
-
-#: src/webenginepage.cpp:645
+#: src/webenginepage.cpp:622
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -976,12 +987,17 @@ msgstr ""
 "Трећа страна би могла да пресретне и види ове податке.\n"
 "Желите ли заиста да ови подаци буду послати нешифровано?"
 
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:629 src/webenginepage.cpp:640
+#, kde-format
+msgid "Network Transmission"
+msgstr "Мрежни пренос"
+
+#: src/webenginepage.cpp:630
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "Пошаљи &нешифровано"
 
-#: src/webenginepage.cpp:660
+#: src/webenginepage.cpp:637
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -990,12 +1006,12 @@ msgstr ""
 "Овај сајт покушава да пошаље податке из формулара е‑поштом.\n"
 "Желите ли да наставите?"
 
-#: src/webenginepage.cpp:664
+#: src/webenginepage.cpp:641
 #, kde-format
 msgid "&Send Email"
 msgstr "Пошаљи &е‑поштом"
 
-#: src/webenginepage.cpp:715
+#: src/webenginepage.cpp:692
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1004,22 +1020,22 @@ msgstr ""
 "<qt>Желите ли да дозволите овом сајту да приложи следеће фајлове уз поруку "
 "е‑поште?</qt>"
 
-#: src/webenginepage.cpp:717
+#: src/webenginepage.cpp:694
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Потврда прилога е‑поште"
 
-#: src/webenginepage.cpp:718
+#: src/webenginepage.cpp:695
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Дозволи прилоге"
 
-#: src/webenginepage.cpp:719
+#: src/webenginepage.cpp:696
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Занемари прилоге"
 
-#: src/webenginepage.cpp:732
+#: src/webenginepage.cpp:709
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1028,22 +1044,22 @@ msgstr ""
 "Овај сајт је покушао да приложи фајл са вашег рачунара при предаји "
 "формулара. Прилог уклоњен ради ваше заштите."
 
-#: src/webenginepage.cpp:735
+#: src/webenginepage.cpp:712
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Прилог уклоњен"
 
-#: src/webenginepage.cpp:855
+#: src/webenginepage.cpp:832
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
 msgstr ""
 
-#: src/webenginepage.cpp:860
+#: src/webenginepage.cpp:837
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr ""
 
-#: src/webenginepage.cpp:948
+#: src/webenginepage.cpp:925
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1052,7 +1068,7 @@ msgstr ""
 "Овај сајт тражи да отвори нови искачући прозор.\n"
 "Желите ли да дозволите ово?"
 
-#: src/webenginepage.cpp:950
+#: src/webenginepage.cpp:927
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1061,18 +1077,18 @@ msgstr ""
 "<qt>Овај сајт тражи да отвори искачући прозор до<p>%1</p><br/>Желите ли да "
 "дозволите ово?</qt>"
 
-#: src/webenginepage.cpp:953
+#: src/webenginepage.cpp:930
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Потврда јаваскриптног искакања"
 
-#: src/webenginepage.cpp:954
+#: src/webenginepage.cpp:931
 #, kde-format
 msgid "Allow"
 msgstr "Дозволи"
 
 # rewrite-msgid: /Do Not Allow/Deny/
-#: src/webenginepage.cpp:954
+#: src/webenginepage.cpp:931
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Одбиј"
@@ -1214,61 +1230,61 @@ msgstr "Затворити прозор?"
 msgid "Confirmation Required"
 msgstr "Потребна је потврда"
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1013
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>Желите ли да %1 упамти податке о пријави за <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1096
+#: src/webenginepart.cpp:1084
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr ""
 
-#: src/webenginepart.cpp:1101
+#: src/webenginepart.cpp:1089
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr ""
 
-#: src/webenginepart.cpp:1105
+#: src/webenginepart.cpp:1093
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr ""
 
-#: src/webenginepart.cpp:1109
+#: src/webenginepart.cpp:1097
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1113
+#: src/webenginepart.cpp:1101
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr ""
 
 # rewrite-msgid: /caching/storing/
-#: src/webenginepart.cpp:1117
+#: src/webenginepart.cpp:1105
 #, fuzzy, kde-format
 #| msgid "&Allow password caching for this site"
 msgid "&Allow Credential Caching for This Page"
 msgstr "&Дозволи складиштење лозинки за овај сајт"
 
 # rewrite-msgid: /cached/stored/
-#: src/webenginepart.cpp:1121
+#: src/webenginepart.cpp:1109
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "Remove All Stored Passwords for This Site"
 msgstr "Уклони ускладиштене лозинке за овај сајт"
 
-#: src/webenginepart.cpp:1125
+#: src/webenginepart.cpp:1113
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1129
+#: src/webenginepart.cpp:1117
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Затвори новчаник"
@@ -1629,6 +1645,17 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
+
+#~ msgid ""
+#~ "This site is attempting to access information about your physical "
+#~ "location.\n"
+#~ "Do you want to allow it access?"
+#~ msgstr ""
+#~ "Овај сајт покушава да приступи подацима о вашој физичкој локацији.\n"
+#~ "Желите ли да му дозволите приступ?"
+
+#~ msgid "Allow access"
+#~ msgstr "Дозволи приступ"
 
 #~ msgid ""
 #~ "<qt><p>To display the requested web page again, the browser needs to "

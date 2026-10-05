@@ -38,7 +38,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "General"
-msgstr "Главное"
+msgstr "Общие"
 
 #: appearance.cpp:40
 #, kde-format
@@ -82,7 +82,7 @@ msgstr ""
 #: appearance.cpp:63
 #, kde-format
 msgid "Dra&w frame around not completely loaded images"
-msgstr "Рисовать рамку вокруг изображений, загруженных не полностью"
+msgstr "&Рисовать рамку вокруг изображений, загруженных не полностью"
 
 #: appearance.cpp:64
 #, kde-format
@@ -122,10 +122,10 @@ msgid ""
 "animations, show the starting image only.</li><li><b>Show only once</b>: "
 "Show all animations completely but do not repeat them.</li></ul></html>"
 msgstr ""
-"<html>Управляет загрузкой анимированных изображений в Konqueror: <br /"
-"><ul><li><b>Включено</b>: Полностью показывать всю.</li><li><b>Выключено</"
-"b>: Никогда не показывать анимацию, только первый кадр.</"
-"li><li><b>Показывать только один раз</b>: Показывать всю анимацию, но не "
+"<html>Управляет показом анимированных изображений в Konqueror: <br /"
+"><ul><li><b>Включена</b>: полностью показывать всю анимацию.</"
+"li><li><b>Выключена</b>: никогда не показывать анимацию, только первый кадр."
+"</li><li><b>Показывать только один раз</b>: показывать всю анимацию, но не "
 "повторять её.</li></ul></html>"
 
 #: appearance.cpp:82
@@ -171,10 +171,10 @@ msgid ""
 "can override this value.</i></html>"
 msgstr ""
 "<html>Здесь задаётся, как показываются гиперссылки в Konqueror. Они могут "
-"подчёркиваться: <br /> <ul><li><b>Всегда</b>: Всегда подчёркивать ссылки</"
-"li> <li><b>Никогда</b>: Никогда не подчёркивать ссылки</li> <li><b>При "
-"наведении</b>: Подчёркивать только при наведении курсора на ссылку</li> </"
-"ul> <br /><i>Необходимо отметить, что параметры CSS сайта могут "
+"подчёркиваться: <br /> <ul><li><b>Включено</b>: всегда подчёркивать ссылки</"
+"li> <li><b>Выключено</b>: никогда не подчёркивать ссылки</li> <li><b>Только "
+"при наведении</b>: подчёркивать только при наведении курсора на ссылку</li> "
+"</ul> <br /><i>Необходимо отметить, что параметры CSS сайта могут "
 "переопределить это поведение.</i></html>"
 
 #: appearance.cpp:105
@@ -240,7 +240,7 @@ msgid ""
 "any other settings."
 msgstr ""
 "Konqueror никогда не будет использовать шрифт мельче, чем указано здесь.<br /"
-">Эта параметр замещает все прочие параметры."
+">Этот параметр замещает все прочие параметры."
 
 #: appearance.cpp:144
 #, kde-format
@@ -346,7 +346,7 @@ msgstr ""
 #: cache/cache.ui:17
 #, kde-format
 msgid "&Enable cache"
-msgstr "&Использовать &кэш"
+msgstr "Использовать &кэш"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:29
@@ -356,9 +356,9 @@ msgid ""
 "p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
-"html<html><head/><body><p>Хранить кэш только в памяти, не записывая его на "
-"диск.</p><p>При включении этой возможности кэш будет очищен при завершении "
-"работы Konqueror.</p></body></html>"
+"<html><head/><body><p>Хранить кэш только в памяти, не записывая его на диск."
+"</p><p>При включении этой возможности кэш будет очищен при завершении работы "
+"Konqueror.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:32
@@ -398,25 +398,25 @@ msgstr " МБ"
 #: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr "Использовать пользовательский каталог для хранения кэша"
+msgstr "Использовать пользовательскую папку для хранения кэша"
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:88
 #, kde-format
 msgid "&Custom cache directory"
-msgstr "&Пользовательский каталог кэша"
+msgstr "&Пользовательская папка кэша"
 
 #. i18n: ectx: property (text), widget (QLabel, customCachePathLabel)
 #: cache/cache.ui:100
 #, kde-format
 msgid "Cache &Directory"
-msgstr "Каталог &кэша"
+msgstr "Папка &кэша"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
 #: cache/cache.ui:113
 #, kde-format
 msgid "The custom directory to store cache"
-msgstr "Пользовательский каталог для хранения кэша"
+msgstr "Пользовательская папка для хранения кэша"
 
 #: cookies/kcookiesmain.cpp:33
 #, kde-format
@@ -581,7 +581,7 @@ msgstr ""
 #: cookies/kcookiespolicies.ui:23
 #, kde-format
 msgid "Enable coo&kies"
-msgstr "Включить &куки"
+msgstr "Включить &файлы «cookie»"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -601,7 +601,7 @@ msgstr ""
 "отправляемые не с того узла, который вы сейчас просматриваете. Например, при "
 "посещении узла <b>www.foobar.com</b> с включённым этим параметром будут "
 "обрабатываться только файлы «cookie» с узла www.foobar.com согласно вашим "
-"настройкам. Файлы «cookie» с любых других узлов будут отвергнуты. Это "
+"параметрам. Файлы «cookie» с любых других узлов будут отвергнуты. Это "
 "снижает вероятность того, что операторы узлов смогут составить профиль ваших "
 "ежедневных привычек просмотра.\n"
 " </qt>"
@@ -610,7 +610,7 @@ msgstr ""
 #: cookies/kcookiespolicies.ui:38
 #, kde-format
 msgid "Only acce&pt cookies from originating server"
-msgstr "Принимать только &файлы cookie с исходного сервера"
+msgstr "Принимать только &файлы «cookie» с исходного сервера"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:46
@@ -629,10 +629,9 @@ msgstr ""
 "конца сеанса. Эти «cookie» будут удалены после закрытия использующего их "
 "приложения (например, браузера) и не будут храниться на жёстком диске или "
 "другом рабочем накопителе. </p><p>\n"
-"<u>ВНИМАНИЕ:</u>использование этого параметра имеет приоритет над "
-"настройками по умолчанию, а также и над правилами для отдельных сайтов "
-"относительно файлов «cookie», действительных только до окончания сеанса.</"
-"p>\n"
+"<u>ВНИМАНИЕ:</u> использование этого параметра имеет приоритет над правилами "
+"по умолчанию, а также и над правилами для отдельных сайтов относительно "
+"файлов «cookie», действительных только до окончания сеанса.</p>\n"
 "</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
@@ -692,7 +691,7 @@ msgstr "Принима&ть все файлы «cookie»"
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr "Принять &до конца сеанса"
+msgstr "Принимать &до конца сеанса"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
@@ -743,7 +742,7 @@ msgstr "Интерактивный поиск доменов"
 #: cookies/kcookiespolicies.ui:138
 #, kde-format
 msgid "Search..."
-msgstr "Поиск..."
+msgstr "Поиск…"
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -778,13 +777,13 @@ msgstr "Правило"
 #: useragent/useragent.ui:81
 #, kde-format
 msgid "&New..."
-msgstr "&Добавить..."
+msgstr "&Добавить…"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbChange)
 #: cookies/kcookiespolicies.ui:183 domainlistview.cpp:52
 #, kde-format
 msgid "Chan&ge..."
-msgstr "&Изменить..."
+msgstr "&Изменить…"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:22
@@ -796,7 +795,7 @@ msgid ""
 "</qt>"
 msgstr ""
 "<qt>\n"
-"Укажите имя узла или домена, к которому применимо данное правило. Например "
+"Укажите имя узла или домена, к которому применимо данное правило. Например, "
 "<i>www.kde.org</i> или <i>.kde.org</i> </qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
@@ -834,8 +833,8 @@ msgstr ""
 "Укажите правило: <ul>\n"
 "<li><b>Разрешить</b> — принимать все файлы «cookie» с данного узла или "
 "домена.</li>\n"
-"<li><b>Разрешить до конца сессии</b> — принимать все файлы «cookie», но они "
-"перестанут действовать после окончания сессии.</li>\n"
+"<li><b>Принять до конца сеанса</b> — принимать все файлы «cookie», но они "
+"перестанут действовать после окончания сеанса.</li>\n"
 "<li><b>Запретить</b> — не принимать файлы «cookie» с данного узла или домена."
 "</li>\n"
 "<li><b>Спрашивать</b> — показывать предупреждение о получении файла «cookie»."
@@ -956,7 +955,7 @@ msgid ""
 msgstr ""
 "<b>Использовать специальную таблицу стилей</b> <p>Выбор этой опции позволяет "
 "определить шрифт по умолчанию, его размер и цвет несколькими щелчками мыши. "
-"Перейдите на вкладку Настроить... и настройте параметры на свой вкус.</p>"
+"Перейдите на вкладку Настроить… и настройте параметры на свой вкус.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useAccess)
 #: css/cssconfig.ui:106
@@ -968,7 +967,7 @@ msgstr "Использовать &специальную таблицу стил
 #: css/cssconfig.ui:146
 #, kde-format
 msgid "Custom&ize..."
-msgstr "&Настроить..."
+msgstr "&Настроить…"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customPageBackgroundBox)
 #: css/cssconfig.ui:177
@@ -1020,8 +1019,8 @@ msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
 msgstr ""
-"<html><head/><body><p>Цвет фона, используемый для веб-страниц по умолчанию.</"
-"p></body></html>"
+"<html><head/><body><p>Собственный цвет фона для веб-страниц.</p></body></"
+"html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -1065,7 +1064,7 @@ msgstr ""
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr "<b>Добавить свой цвет фона в таблицу стилей</b>"
+msgstr "Добавить свой цвет фона в таблицу стилей"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
@@ -1260,13 +1259,13 @@ msgid ""
 "<b>Custom</b><p>Select this option to define a custom color for the default "
 "font.</p>"
 msgstr ""
-"<b>Настроить</b><p>Позволяет определить цвет для шрифта по умолчанию.</p>"
+"<b>Собственный</b><p>Позволяет определить цвет для шрифта по умолчанию.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, customColor)
 #: css/csscustom.ui:209
 #, kde-format
 msgid "Cus&tom"
-msgstr "&Настроить"
+msgstr "&Собственный"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, txtBackground)
 #: css/csscustom.ui:219
@@ -1291,7 +1290,7 @@ msgid ""
 "<b>Background</b><p>Behind this door lays the ability to choose a custom "
 "default background.</p>"
 msgstr ""
-"<b>Фон</b><p>Позволяет выбрать собственное фоновый изображение для страниц.</"
+"<b>Фон</b><p>Позволяет выбрать собственное фоновое изображение для страниц.</"
 "p>"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
@@ -1303,7 +1302,7 @@ msgid ""
 "stylesheet.</p>"
 msgstr ""
 "<b>Использовать один и тот же цвет для всего текста</b><p>Для показа текста "
-"будут использованы указанные цвета вместо цветов, указанных в таблице стиля."
+"будут использованы указанные цвета вместо цветов, указанных в таблице стилей."
 "</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameColor)
@@ -1386,8 +1385,8 @@ msgstr ""
 "собственные цвета и параметры шрифтов в Konqueror с использованием каскадных "
 "таблиц стилей (CSS). Вы можете настроить некоторые параметры в диалоге или "
 "использовать готовую таблицу стилей, указав её расположение.<br /"
-">Примечание: эти стили всегда применяются к документу прежде, чем указанные "
-"автором страницы. Это может быть полезно для людей с ослабленным зрением или "
+">Примечание: эти параметры всегда имеют приоритет над параметрами, заданными "
+"автором сайта. Это может быть полезно для людей с ослабленным зрением или "
 "для страниц, которые являются нечитаемыми из-за плохого дизайна."
 
 #: css/kcmcss.cpp:386
@@ -1452,12 +1451,12 @@ msgstr "&Удалить"
 #: domainlistview.cpp:60
 #, kde-format
 msgid "&Import..."
-msgstr "&Импорт..."
+msgstr "&Импорт…"
 
 #: domainlistview.cpp:66
 #, kde-format
 msgid "&Export..."
-msgstr "&Экспорт..."
+msgstr "&Экспорт…"
 
 #: domainlistview.cpp:74
 #, kde-format
@@ -1480,7 +1479,8 @@ msgstr ""
 msgid ""
 "Click on this button to delete the policy for the host or domain selected in "
 "the list box."
-msgstr "Нажмите, чтобы изменить правила для выбранного узла или домена."
+msgstr ""
+"Нажмите эту кнопку, чтобы удалить правило для выбранного узла или домена."
 
 #: domainlistview.cpp:125
 #, kde-format
@@ -1590,12 +1590,12 @@ msgstr "Удалить"
 #: filteropts.cpp:130
 #, kde-format
 msgid "Import..."
-msgstr "Импорт..."
+msgstr "Импорт…"
 
 #: filteropts.cpp:133
 #, kde-format
 msgid "Export..."
-msgstr "Экспорт..."
+msgstr "Экспорт…"
 
 #: filteropts.cpp:140
 #, kde-format
@@ -1630,9 +1630,8 @@ msgid ""
 "This is the list of URL filters that will be applied to all embedded images "
 "and media objects."
 msgstr ""
-"Список фильтров URL для всех встроенных изображений и мультимедийных "
-"вставок. Фильтры обрабатываются по порядку, поэтому более общие фильтры "
-"указывайте в начале списка."
+"Список фильтров URL, применяемых ко всем встроенным изображениям и "
+"мультимедийным объектам."
 
 #: filteropts.cpp:167
 #, kde-format
@@ -1648,8 +1647,8 @@ msgstr ""
 "<qt><p>Введите выражение, определяющее фильтр. В нём можно использовать:"
 "<ul><li>шаблоны в стиле командной строки Unix, например, <tt>http://www."
 "example.com/ads*</tt>; можно использовать специальные символы <tt>*?[]</tt></"
-"li><li>регулярные выражения, записывая их между символы косой черты «<tt>/</"
-"tt>», например, <tt>/\\/(ad|banner)\\./</tt></li></ul><p>В начале строки "
+"li><li>регулярные выражения, записывая их между символами косой черты «<tt>/"
+"</tt>», например, <tt>/\\/(ad|banner)\\./</tt></li></ul><p>В начале строки "
 "фильтра можно написать «<tt>@@</tt>», что будет означать отмену блокирования "
 "соответствующих адресов. Отмена блокирования имеет приоритет перед "
 "блокирующими фильтрами."
@@ -1791,9 +1790,7 @@ msgstr "Всегда дублировать текущую область про
 #: generalopts.cpp:125
 #, kde-format
 msgid "Duplicate current view only for local files"
-msgstr ""
-"Дублировать текущую область только при просмотре файлов, расположенных на "
-"устройстве"
+msgstr "Дублировать текущую область только для локальных файлов"
 
 #: generalopts.cpp:131
 #, kde-format
@@ -1914,7 +1911,7 @@ msgstr ""
 #, kde-format
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr ""
-"Отправлять заголовок DHT, запрещающий отслеживание поведения пользователя"
+"Отправлять заголовок DNT, запрещающий отслеживание поведения пользователя"
 
 #: htmlopts.cpp:122
 #, kde-format
@@ -1943,7 +1940,7 @@ msgstr ""
 #: htmlopts.cpp:131
 #, kde-format
 msgid "Display online PDF files using WebEngine"
-msgstr "Использовать просмотр PDF-файлов с использованием модуля WebEngine"
+msgstr "Показывать PDF-файлы из сети с помощью модуля WebEngine"
 
 #: htmlopts.cpp:132
 #, kde-format
@@ -1999,7 +1996,7 @@ msgid ""
 msgstr ""
 "Здесь вы можете настроить особые правила JavaScript для какого-либо "
 "конкретного сервера или домена. Для добавления новых правил нажмите на "
-"кнопку <i>Добавить...</i> и введите необходимую информацию в открывшемся "
+"кнопку <i>Добавить…</i> и введите необходимую информацию в открывшемся "
 "диалоговом окне. Для изменения существующего правила выделите "
 "соответствующую запись и нажмите на кнопку <i>Изменить</i>, после чего "
 "выберите режим в диалоговом окне. Нажатие на кнопку <i>Удалить</i> удалит "
@@ -2029,7 +2026,7 @@ msgid ""
 "These policies will be merged with the existing ones. Duplicate entries are "
 "ignored."
 msgstr ""
-"Эта кнопка позволяет загрузить файл, содержащий режимы JavaScript. Режимы, "
+"Эта кнопка позволяет загрузить файл, содержащий правила JavaScript. Правила, "
 "считанные из файла, будут добавлены к существующим. Повторяющиеся записи "
 "игнорируются."
 
@@ -2041,8 +2038,7 @@ msgid ""
 "choice."
 msgstr ""
 "Нажмите на эту кнопку для записи правил JavaScript в архивный файл. Файл "
-"будет записан в указанный вами каталог под именем <b>javascript_policy.tgz</"
-"b>."
+"будет записан в указанную вами папку под именем <b>javascript_policy.tgz</b>."
 
 #: jsopts.cpp:96
 #, kde-format
@@ -2058,13 +2054,13 @@ msgstr "Открывать новые окна:"
 #: jspolicies.cpp:337
 #, kde-format
 msgid "Use global"
-msgstr "Использовать глобально"
+msgstr "Использовать глобальные"
 
 #: jspolicies.cpp:170 jspolicies.cpp:224 jspolicies.cpp:261 jspolicies.cpp:298
 #: jspolicies.cpp:338
 #, kde-format
 msgid "Use setting from global policy."
-msgstr "Использовать параметр из глобальной политики."
+msgstr "Использовать параметр из глобального правила."
 
 #: jspolicies.cpp:176 jspolicies.cpp:230 jspolicies.cpp:267 jspolicies.cpp:304
 #: jspolicies.cpp:344
@@ -2161,7 +2157,7 @@ msgstr ""
 #: jspolicies.cpp:253
 #, kde-format
 msgid "Move window:"
-msgstr "Перемещение окна:"
+msgstr "Перемещать окно:"
 
 #: jspolicies.cpp:268
 #, kde-format
@@ -2192,7 +2188,7 @@ msgstr ""
 #: jspolicies.cpp:290
 #, kde-format
 msgid "Focus window:"
-msgstr "Фокус окна:"
+msgstr "Активировать окно:"
 
 #: jspolicies.cpp:305
 #, kde-format
@@ -2206,9 +2202,9 @@ msgid ""
 "i> it brought the focus to the window but the actual focus will remain "
 "unchanged."
 msgstr ""
-"Игнорировать попытки скриптов сделать сделать окно активным. Веб-страница "
-"будет <i>думать</i>, что она сделала окно активным, но на самом деле фокус "
-"не изменится."
+"Игнорировать попытки скриптов сделать окно активным. Веб-страница будет "
+"<i>думать</i>, что она сделала окно активным, но на самом деле фокус не "
+"изменится."
 
 #: jspolicies.cpp:319
 #, kde-format
@@ -2252,7 +2248,7 @@ msgid ""
 msgstr ""
 "Некоторые сайты изменяют текст строки состояния командами <i>window.status</"
 "i> или <i>window.defaultStatus</i>, таким образом иногда блокируя показ "
-"реальных URL или гиперссылок. Этот параметр определяет, как должны "
+"реальных адресов гиперссылок. Этот параметр определяет, как должны "
 "обрабатываться подобные попытки."
 
 #: policydlg.cpp:30
@@ -2264,7 +2260,7 @@ msgstr "Правила с учётом домена"
 #: policydlg.cpp:47
 #, kde-format
 msgid "&Host or domain name:"
-msgstr "&Имя сервера или домена"
+msgstr "&Имя сервера или домена:"
 
 #: policydlg.cpp:55
 #, kde-format
@@ -2273,7 +2269,7 @@ msgid ""
 "(like .kde.org or .org)"
 msgstr ""
 "Введите здесь имя сервера (например, www.kde.org) или домена, включая точку "
-"перед именем домена (например, .kde.org or .org)"
+"перед именем домена (например, .kde.org или .org)"
 
 #: policydlg.cpp:139
 #, kde-format
@@ -2290,7 +2286,7 @@ msgstr "Поведение вкладок"
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr "Соотношение"
+msgstr "Внешний вид"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2486,7 +2482,7 @@ msgstr "&Показывать кнопку закрытия на вкладка�
 msgid ""
 "When you click on a tab using the middle mouse button or mouse wheel, it "
 "will close that tab."
-msgstr "Нажатие по вкладке средней кнопкой мыши или колесом закроют её."
+msgstr "Нажатие по вкладке средней кнопкой мыши или колесом закрывает её."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
 #: tabs/tabsoptions.ui:190
@@ -2508,7 +2504,7 @@ msgstr ""
 #: tabs/tabsoptions.ui:200
 #, kde-format
 msgid "Confirm &when closing windows with multiple tabs"
-msgstr "З&апрос при закрытии окна с несколькими вкладками"
+msgstr "З&апрашивать подтверждение при закрытии окна с несколькими вкладками"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
 #: tabs/tabsoptions.ui:207
@@ -2586,7 +2582,7 @@ msgstr "Содержимое"
 #: useragent/useragent.ui:94
 #, kde-format
 msgid "&Edit..."
-msgstr "&Изменить..."
+msgstr "&Изменить…"
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:107
@@ -2616,16 +2612,13 @@ msgstr "&Использовать выбранную идентификацию"
 #: useragent/useragent.ui:160
 #, kde-format
 msgid "Current user agent"
-msgstr ""
-"<html><head/><body><p>При выборе этого параметра отключается возможность "
-"выбора собственной идентификации и используется идентификация по умолчанию.</"
-"p></body></html>"
+msgstr "Текущий агент пользователя"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:175
 #, kde-format
 msgid "&Custom identification"
-msgstr "&Пользовательский идентификатор"
+msgstr "&Собственная идентификация"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
 #: useragent/useragent.ui:185

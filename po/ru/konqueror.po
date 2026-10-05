@@ -95,7 +95,7 @@ msgstr "Открыть &с помощью %1"
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
-msgstr "&Открыть с помощью..."
+msgstr "&Открыть с помощью"
 
 #: src/downloadactionquestion.cpp:334
 #, kde-format
@@ -119,7 +119,7 @@ msgstr "Открыть &с помощью %1"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
-msgstr "Отобразить &в %1"
+msgstr "Показать &в %1"
 
 #: src/downloadactionquestion.cpp:422
 #, kde-format
@@ -131,7 +131,7 @@ msgstr "Средства просмотра, не поддерживающие �
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
-msgstr "Показать неподдерживаемые средства просмотра"
+msgstr "Средства просмотра, вряд ли способные показать файл"
 
 #: src/downloadactionquestion.cpp:427
 #, kde-format
@@ -147,10 +147,10 @@ msgid ""
 "type is incorrect or if a viewer can display %1 even if it doesn't "
 "officially support it.</p>"
 msgstr ""
-"<p>Средства просмотра, которые не предназначены для отображения %1. Их "
+"<p>Средства просмотра, которые не предназначены для показа %1. Их "
 "использование, скорее всего, приведёт к ошибке.</p><p>Эти варианты "
 "предоставляются на случай, если тип файла определён неверно или если "
-"средство просмотра может отобразить %1, даже не имея официальной поддержки "
+"средство просмотра может показать %1, даже не имея официальной поддержки "
 "этого формата.</p>"
 
 #: src/downloadactionquestion.cpp:449
@@ -187,7 +187,7 @@ msgstr "Веб-браузер, диспетчер файлов и програм
 #: src/konqapplication.cpp:161
 #, kde-format
 msgid "(C) 1999-2023, The Konqueror developers"
-msgstr "© Разработчики Konqueror, 1999-2023"
+msgstr "© Разработчики Konqueror, 1999–2023"
 
 #: src/konqapplication.cpp:175
 #, kde-format
@@ -209,8 +209,8 @@ msgstr "David Faure"
 msgid ""
 "Developer (framework, parts, JavaScript, I/O library) and former maintainer"
 msgstr ""
-"Разработчик (инфраструктура, JavaScript, библиотека ввода/вывода) и прежний "
-"сопровождающий"
+"Разработчик (инфраструктура, модули, JavaScript, библиотека ввода/вывода) и "
+"прежний сопровождающий"
 
 #: src/konqapplication.cpp:177
 #, kde-format
@@ -560,7 +560,7 @@ msgstr "профиль"
 #: src/konqapplication.cpp:229
 #, kde-format
 msgid "List available sessions and exit"
-msgstr "Выводит список доступных сеансов и завершается"
+msgstr "Вывести список доступных сеансов и выйти"
 
 #: src/konqapplication.cpp:230
 #, kde-format
@@ -576,7 +576,7 @@ msgstr "сеанс"
 #, kde-format
 msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
 msgstr ""
-"Тип MIME для использования с этой ссылкой, (например, text/html или inode/"
+"Тип MIME для использования с этой ссылкой (например, text/html или inode/"
 "directory)"
 
 #: src/konqapplication.cpp:231
@@ -795,7 +795,7 @@ msgstr "О&чистить журнал"
 #: src/konqhistoryview.cpp:86
 #, kde-format
 msgid "&Preferences..."
-msgstr "&Настроить..."
+msgstr "&Настроить…"
 
 #: src/konqhistoryview.cpp:93
 #, kde-format
@@ -827,7 +827,7 @@ msgstr "Очистка журнала"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Loading..."
-msgstr "Загрузка..."
+msgstr "Загрузка…"
 
 #: src/konqmainwindow.cpp:796
 #, kde-format
@@ -908,8 +908,8 @@ msgid ""
 "General</b>.</html>"
 msgstr ""
 "<html>Переход на домашнюю страницу<br /><br />Вы можете указать адрес, по "
-"которому вас отправит эта кнопка в меню <b>Настройка -> Настроить Konqueror —"
-"> Главное</b>.</html>"
+"которому вас отправит эта кнопка в меню <b>Настройка → Настроить Konqueror → "
+"Общие</b>.</html>"
 
 #: src/konqmainwindow.cpp:2315
 #, kde-format
@@ -1002,12 +1002,12 @@ msgstr "Очистить журнал закрытых вкладок"
 #: src/konqmainwindow.cpp:2773
 #, kde-format
 msgid "Save As..."
-msgstr "Сохранить как..."
+msgstr "Сохранить как…"
 
 #: src/konqmainwindow.cpp:2775
 #, kde-format
 msgid "Manage..."
-msgstr "&Управление сеансами..."
+msgstr "&Управление сеансами…"
 
 #: src/konqmainwindow.cpp:3319
 #, kde-format
@@ -1022,12 +1022,12 @@ msgstr "С&оздать копию окна"
 #: src/konqmainwindow.cpp:3329
 #, kde-format
 msgid "Send &Link Address..."
-msgstr "Отправить адрес &ссылки..."
+msgstr "Отправить адрес &ссылки…"
 
 #: src/konqmainwindow.cpp:3333
 #, kde-format
 msgid "S&end File..."
-msgstr "Отправить &файл..."
+msgstr "Отправить &файл…"
 
 #: src/konqmainwindow.cpp:3337
 #, kde-format
@@ -1037,12 +1037,12 @@ msgstr "Открыть &адрес"
 #: src/konqmainwindow.cpp:3343
 #, kde-format
 msgid "&Open File..."
-msgstr "Открыть &файл..."
+msgstr "Открыть &файл…"
 
 #: src/konqmainwindow.cpp:3348
 #, kde-format
 msgid "&Find File..."
-msgstr "&Найти файл..."
+msgstr "&Найти файл…"
 
 #: src/konqmainwindow.cpp:3357
 #, kde-format
@@ -1137,12 +1137,12 @@ msgstr "Журнал"
 #: src/konqmainwindow.cpp:3459
 #, kde-format
 msgid "Configure Extensions..."
-msgstr "Настроить расширения..."
+msgstr "Настроить расширения…"
 
 #: src/konqmainwindow.cpp:3463
 #, kde-format
 msgid "Configure Spell Checking..."
-msgstr "Настроить проверку орфографии..."
+msgstr "Настроить проверку орфографии…"
 
 #: src/konqmainwindow.cpp:3469
 #, kde-format
@@ -1227,7 +1227,7 @@ msgstr "О&бновить все вкладки"
 #: src/konqmainwindow.cpp:3576
 #, kde-format
 msgid "&Force Reload"
-msgstr "О&бновить"
+msgstr "Прин&удительно обновить"
 
 #: src/konqmainwindow.cpp:3601
 #, kde-format
@@ -1385,8 +1385,7 @@ msgstr ""
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr ""
-"Обновить все текущие документы и все содержащиеся в них изображения во "
-"вкладках"
+"Принудительно обновить текущий документ и все содержащиеся в нём изображения"
 
 #: src/konqmainwindow.cpp:3712
 #, kde-format
@@ -1418,8 +1417,8 @@ msgid ""
 msgstr ""
 "<html>Копирует выделенный текст или набор элементов в системный буфер "
 "обмена<br /><br />Таким образом текст или набор элементов становятся "
-"доступными для пункта контекстного меню <b>Вставить</b> для Konqueror и "
-"других приложений KDE.</html>"
+"доступными для команды <b>Вставить</b> в Konqueror и других приложений KDE.</"
+"html>"
 
 #: src/konqmainwindow.cpp:3724
 #, kde-format
@@ -1476,8 +1475,8 @@ msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
 "other linked views."
 msgstr ""
-"Связывает эту панель с другой. Связанное окно дублирует изменения пути, "
-"сделанные на другой панели."
+"Связывает эту панель с другой. Связанная панель повторяет переходы по "
+"папкам, сделанные на других связанных панелях."
 
 #: src/konqmainwindow.cpp:3744
 #, kde-format
@@ -1492,7 +1491,7 @@ msgid ""
 msgstr ""
 "<html>Показать инструменты разработчика для текущей страницы<br/><br/"
 ">Текущее представление разделяется на две части, во второй части "
-"отображаются инструменты разработчика"
+"показываются инструменты разработчика"
 
 #: src/konqmainwindow.cpp:3746
 #, kde-format
@@ -1518,12 +1517,12 @@ msgstr ""
 #: src/konqmainwindow.cpp:3912
 #, kde-format
 msgid "Copy &Files..."
-msgstr "Копировать &файлы..."
+msgstr "Копировать &файлы…"
 
 #: src/konqmainwindow.cpp:3916
 #, kde-format
 msgid "M&ove Files..."
-msgstr "П&ереместить файлы..."
+msgstr "П&ереместить файлы…"
 
 #: src/konqmainwindow.cpp:4244
 #, kde-format
@@ -1657,16 +1656,16 @@ msgid ""
 "proxy URL manually in the settings dialog. Do you want to change proxy "
 "settings now?"
 msgstr ""
-"Вашу конфигурацию прокси-сервера нельзя использовать для работы сдвижком "
+"Вашу конфигурацию прокси-сервера нельзя использовать для работы с движком "
 "обработки HTML QtWebEngine. Прокси-сервер использоваться не будет.\n"
 "\n"
 "В QtWebEngine предусмотрена поддержка только фиксированных прокси-серверов, "
-"поэтомуавтоматической настройкой прокси-сервера (PAC) и "
-"протоколомавтоматического обнаружения прокси-сервера нельзя воспользоваться "
-"для работы с QtWebEngine. Если вам нужен прокси-сервер, выберите "
-"конфигурацию системного прокси-сервера или укажите адрес прокси-сервера "
-"вручнуюс помощью диалогового окна параметров программы. Изменить "
-"параметрыпрокси-сервера сейчас?"
+"поэтому автоматической настройкой прокси-сервера (PAC) и протоколом "
+"автоматического обнаружения прокси-сервера нельзя воспользоваться для работы "
+"с QtWebEngine. Если вам нужен прокси-сервер, выберите конфигурацию "
+"системного прокси-сервера или укажите адрес прокси-сервера вручную с помощью "
+"диалогового окна параметров программы. Изменить параметры прокси-сервера "
+"сейчас?"
 
 #: src/konqmainwindow.cpp:5520
 #, kde-format
@@ -1691,7 +1690,7 @@ msgid ""
 "protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
-"Вашу конфигурацию прокси-сервера нельзя использовать для работы сдвижком "
+"Вашу конфигурацию прокси-сервера нельзя использовать для работы с движком "
 "обработки HTML QtWebEngine, так как он не поддерживает использование разных "
 "прокси-серверов для протоколов HTTP и HTTPS. Текущие параметры:<p><b>Прокси-"
 "сервер HTTP:</b> <tt>%1</tt></p><p><b>Прокси-сервер HTTPS: </b><tt>%2</tt></"
@@ -1785,7 +1784,7 @@ msgid ""
 "Konqueror did not close correctly. Would you like to restore these previous "
 "sessions?"
 msgstr ""
-"Работа Konqueror была завершена некорректно. Восстановить предыдущий сеансы?"
+"Работа Konqueror была завершена некорректно. Восстановить предыдущие сеансы?"
 
 #: src/konqsessiondialog.cpp:298
 #, kde-format
@@ -1814,7 +1813,7 @@ msgstr "Спросить позже"
 #, kde-format
 msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"
-msgstr "Копирует URL в буфер обмена: %1"
+msgstr "Копировать URL в буфер обмена: %1"
 
 #: src/konqsessiondlg.cpp:70
 #, kde-format
@@ -1851,7 +1850,7 @@ msgstr "Замена существующего сеанса"
 #, kde-format
 msgctxt "@action:button New session"
 msgid "New..."
-msgstr "Создать..."
+msgstr "Создать…"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
 #: src/konqsessiondlg_base.ui:33
@@ -1865,7 +1864,7 @@ msgstr "Сохранить текущий…"
 #, kde-format
 msgctxt "@action:button Rename session"
 msgid "Rename..."
-msgstr "Переименовать..."
+msgstr "Переименовать…"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
 #: src/konqsessiondlg_base.ui:47
@@ -2043,7 +2042,7 @@ msgid ""
 msgstr ""
 "Страница, которую вы пытаетесь просмотреть, является результатом передачи "
 "данных. Если вы отправите данные снова, действия, которые выполняет форма "
-"(такие как поиск или покупка в интернет-магазинах) будут выполнены снова. "
+"(такие как поиск или покупка в интернет-магазинах), будут выполнены снова. "
 
 #: src/konqview.cpp:1324
 #, kde-format
@@ -2054,7 +2053,7 @@ msgstr "Предупреждение"
 #: src/konqview.cpp:1324
 #, kde-format
 msgid "Resend"
-msgstr "Переслать"
+msgstr "Отправить повторно"
 
 #: src/urlloader.cpp:400
 #, kde-format
@@ -2076,16 +2075,14 @@ msgctxt ""
 msgid ""
 "<filename>%1</filename> can be executed. Do you want to execute it or to "
 "display it?"
-msgstr ""
-"<filename>%1</filename> возможно выполнить. Что следует сделать, выполнить "
-"или просмотреть?"
+msgstr "<filename>%1</filename> можно выполнить. Выполнить или просмотреть?"
 
 #: src/urlloader.cpp:416
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
-msgstr "<filename>%1</filename> возможно выполнить. Сделать это?"
+msgstr "<filename>%1</filename> можно выполнить. Выполнить?"
 
 #: src/urlloader.cpp:768
 #, kde-format
@@ -2098,8 +2095,8 @@ msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
 "with %1, but it cannot handle this file type."
 msgstr ""
-"Обнаружена проблема с настройкой. Вы связали Konqueror с файлом %1, но он не "
-"может обрабатывать файлы этого типа."
+"Обнаружена проблема с настройкой. Вы связали Konqueror с %1, но он не может "
+"обрабатывать файлы этого типа."
 
 #~ msgid "Other Tabs"
 #~ msgstr "Другие вкладки"

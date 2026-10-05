@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-12 00:44+0000\n"
+"POT-Creation-Date: 2026-10-05 00:45+0000\n"
 "PO-Revision-Date: 2026-07-07 12:31+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -727,21 +727,7 @@ msgctxt "@action:grant permission"
 msgid "&Grant permission"
 msgstr "&Ge åtkomst"
 
-#: src/ui/featurepermissionbar.cpp:57
-#, kde-format
-msgid "<html><b>%1</b> would like to send you notifications"
-msgstr "<html><b>%1</b> vill skicka dig underrättelser"
-
-#: src/ui/featurepermissionbar.cpp:59
-#, kde-format
-msgid ""
-"<html><b>%1</b> would like to access information about your current physical "
-"location"
-msgstr ""
-"<html><b>%1</b> vill få tillgång till information om din nuvarande fysiska "
-"plats"
-
-#: src/ui/featurepermissionbar.cpp:61
+#: src/ui/featurepermissionbar.cpp:51
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your microphone and other audio capture "
@@ -750,7 +736,7 @@ msgstr ""
 "<html><b>%1</b> vill få åtkomst till din mikrofon och andra "
 "ljudupptagningsenheter"
 
-#: src/ui/featurepermissionbar.cpp:63
+#: src/ui/featurepermissionbar.cpp:53
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your camera and other video capture "
@@ -759,7 +745,7 @@ msgstr ""
 "<html><b>%1</b> vill få åtkomst till din kamera och andra "
 "videoupptagningsenheter"
 
-#: src/ui/featurepermissionbar.cpp:65
+#: src/ui/featurepermissionbar.cpp:55
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access to your microphone, camera and other "
@@ -768,20 +754,57 @@ msgstr ""
 "<html><b>%1</b> vill få åtkomst till din mikrofon, kamera och andra ljud- "
 "och videoupptagningsenheter"
 
-#: src/ui/featurepermissionbar.cpp:67
-#, kde-format
-msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
-msgstr "<html><b>%1</b> vill låsa musen till webbsidan"
-
-#: src/ui/featurepermissionbar.cpp:69
+#: src/ui/featurepermissionbar.cpp:57
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen"
 msgstr "<html><b>%1</b> vill spela in din skärm"
 
-#: src/ui/featurepermissionbar.cpp:71
+#: src/ui/featurepermissionbar.cpp:59
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen and your audio"
 msgstr "<html><b>%1</b> vill spela in din skärm och ditt ljud"
+
+#: src/ui/featurepermissionbar.cpp:61
+#, kde-format
+msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
+msgstr "<html><b>%1</b> vill låsa musen till webbsidan"
+
+#: src/ui/featurepermissionbar.cpp:63
+#, kde-format
+msgid "<html><b>%1</b> would like to send you notifications"
+msgstr "<html><b>%1</b> vill skicka dig underrättelser"
+
+#: src/ui/featurepermissionbar.cpp:65
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access information about your current physical "
+"location"
+msgstr ""
+"<html><b>%1</b> vill få tillgång till information om din nuvarande fysiska "
+"plats"
+
+#: src/ui/featurepermissionbar.cpp:67
+#, fuzzy, kde-format
+#| msgid "<html><b>%1</b> would like to record your screen"
+msgid "<html><b>%1</b> would like to access your clipboard"
+msgstr "<html><b>%1</b> vill spela in din skärm"
+
+#: src/ui/featurepermissionbar.cpp:69
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><b>%1</b> would like to access information about your current "
+#| "physical location"
+msgid ""
+"<html><b>%1</b> would like to access the fonts installed on your machine"
+msgstr ""
+"<html><b>%1</b> vill få tillgång till information om din nuvarande fysiska "
+"plats"
+
+#: src/ui/featurepermissionbar.cpp:71
+#, fuzzy, kde-format
+#| msgid "<html><b>%1</b> would like to send you notifications"
+msgid "<html><b>%1</b> would like to do something we don't know about"
+msgstr "<html><b>%1</b> vill skicka dig underrättelser"
 
 #: src/ui/passwordbar.cpp:28
 #, kde-format
@@ -968,27 +991,7 @@ msgstr ""
 "\n"
 "Integrering kommer att inaktiveras."
 
-#: src/webenginepage.cpp:570
-#, kde-format
-msgid ""
-"This site is attempting to access information about your physical location.\n"
-"Do you want to allow it access?"
-msgstr ""
-"Den här platsen försöker komma åt information om din fysiska plats.\n"
-"Vill du ge den tillåtelse?"
-
-#: src/webenginepage.cpp:574 src/webenginepage.cpp:652
-#: src/webenginepage.cpp:663
-#, kde-format
-msgid "Network Transmission"
-msgstr "Nätverksöverföring"
-
-#: src/webenginepage.cpp:575
-#, kde-format
-msgid "Allow access"
-msgstr "Tillåt åtkomst"
-
-#: src/webenginepage.cpp:645
+#: src/webenginepage.cpp:622
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -1001,12 +1004,17 @@ msgstr ""
 "En tredje part kan fånga upp och visa den här informationen.\n"
 "Är du säker på att du vill skicka data okrypterad?"
 
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:629 src/webenginepage.cpp:640
+#, kde-format
+msgid "Network Transmission"
+msgstr "Nätverksöverföring"
+
+#: src/webenginepage.cpp:630
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Skicka okrypterat"
 
-#: src/webenginepage.cpp:660
+#: src/webenginepage.cpp:637
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -1015,12 +1023,12 @@ msgstr ""
 "Den här platsen försöker skicka formulärdata via e-post.\n"
 "Vill du fortsätta?"
 
-#: src/webenginepage.cpp:664
+#: src/webenginepage.cpp:641
 #, kde-format
 msgid "&Send Email"
 msgstr "&Skicka e-post"
 
-#: src/webenginepage.cpp:715
+#: src/webenginepage.cpp:692
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -1028,22 +1036,22 @@ msgid ""
 msgstr ""
 "<qt>Vill du tillåta att den här platsen bifogar följande filer i brevet?</qt>"
 
-#: src/webenginepage.cpp:717
+#: src/webenginepage.cpp:694
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Bekräftelse av bilaga till brev"
 
-#: src/webenginepage.cpp:718
+#: src/webenginepage.cpp:695
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Tillåt bil&agor"
 
-#: src/webenginepage.cpp:719
+#: src/webenginepage.cpp:696
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignorera bilagor"
 
-#: src/webenginepage.cpp:732
+#: src/webenginepage.cpp:709
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1052,22 +1060,22 @@ msgstr ""
 "Den här platsen försöker lägga till en fil från datorn i formuläret som "
 "skickas. Bilagan togs bort för att skydda dig."
 
-#: src/webenginepage.cpp:735
+#: src/webenginepage.cpp:712
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Bilaga borttagen"
 
-#: src/webenginepage.cpp:855
+#: src/webenginepage.cpp:832
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
 msgstr "Ett fel uppstod vid konvertering av sidan till PDF"
 
-#: src/webenginepage.cpp:860
+#: src/webenginepage.cpp:837
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "Ett fel uppstod när en PDF-version av sidan skulle sparas som %1"
 
-#: src/webenginepage.cpp:948
+#: src/webenginepage.cpp:925
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1076,7 +1084,7 @@ msgstr ""
 "Den här platsen försöker öppna ett meddelandefönster.\n"
 "Vill du tillåta det?"
 
-#: src/webenginepage.cpp:950
+#: src/webenginepage.cpp:927
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1085,17 +1093,17 @@ msgstr ""
 "<qt>Den här platsen försöker öppna ett meddelandefönster till<p>%1</p><br/"
 ">Vill du tillåta det?</qt>"
 
-#: src/webenginepage.cpp:953
+#: src/webenginepage.cpp:930
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Bekräftelse för Javascript-fönster"
 
-#: src/webenginepage.cpp:954
+#: src/webenginepage.cpp:931
 #, kde-format
 msgid "Allow"
 msgstr "Tillåt"
 
-#: src/webenginepage.cpp:954
+#: src/webenginepage.cpp:931
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Tillåt inte"
@@ -1236,7 +1244,7 @@ msgstr "Stäng fönster?"
 msgid "Confirmation Required"
 msgstr "Bekräftelse krävs"
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1013
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
@@ -1244,51 +1252,51 @@ msgstr ""
 "<html>Vill du att %1 ska komma ihåg inloggningsinformation för <b>%2</b>?</"
 "html>"
 
-#: src/webenginepart.cpp:1096
+#: src/webenginepart.cpp:1084
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr "&Fyll i inloggningsinformation"
 
-#: src/webenginepart.cpp:1101
+#: src/webenginepart.cpp:1089
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr "&Sök på sidan efter inloggningsbegäran"
 
-#: src/webenginepart.cpp:1105
+#: src/webenginepart.cpp:1093
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr "Lagra inloggning&sinformation nu"
 
-#: src/webenginepart.cpp:1109
+#: src/webenginepart.cpp:1097
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr "An&passa inloggningsinställningar för sidan..."
 
-#: src/webenginepart.cpp:1113
+#: src/webenginepart.cpp:1101
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr "Ta bort anpassade inloggningsinställningar för sidan"
 
-#: src/webenginepart.cpp:1117
+#: src/webenginepart.cpp:1105
 #, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr "Tillåt att inloggningsinformation l&agras för sidan"
 
-#: src/webenginepart.cpp:1121
+#: src/webenginepart.cpp:1109
 #, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "Ta bort alla lagrade lösenord för den här platsen"
 
-#: src/webenginepart.cpp:1125
+#: src/webenginepart.cpp:1113
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "Starta p&lånbokshantering"
 
-#: src/webenginepart.cpp:1129
+#: src/webenginepart.cpp:1117
 #, kde-format
 msgid "&Close Wallet"
 msgstr "Stän&g plånbok"
@@ -1650,6 +1658,17 @@ msgstr ""
 "li><li><b>Fält-id: </b>%3</li><li><b>Fält är skrivskyddat: </b>%4</"
 "li><li><b>Fält är aktiverat: </b>%5</li><li><b>Automatisk komplettering är "
 "aktiverad: </b>%6</li></ul>"
+
+#~ msgid ""
+#~ "This site is attempting to access information about your physical "
+#~ "location.\n"
+#~ "Do you want to allow it access?"
+#~ msgstr ""
+#~ "Den här platsen försöker komma åt information om din fysiska plats.\n"
+#~ "Vill du ge den tillåtelse?"
+
+#~ msgid "Allow access"
+#~ msgstr "Tillåt åtkomst"
 
 #~ msgid "Konqueror"
 #~ msgstr "Konqueror"

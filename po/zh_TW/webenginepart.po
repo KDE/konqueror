@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-12 00:44+0000\n"
+"POT-Creation-Date: 2026-10-05 00:45+0000\n"
 "PO-Revision-Date: 2025-12-21 06:52+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -718,53 +718,74 @@ msgctxt "@action:grant permission"
 msgid "&Grant permission"
 msgstr "給予權限(&G)"
 
-#: src/ui/featurepermissionbar.cpp:57
-#, kde-format
-msgid "<html><b>%1</b> would like to send you notifications"
-msgstr "<html><b>%1</b> 希望傳送通知給您"
-
-#: src/ui/featurepermissionbar.cpp:59
-#, kde-format
-msgid ""
-"<html><b>%1</b> would like to access information about your current physical "
-"location"
-msgstr "<html><b>%1</b> 希望存取關於您目前物理位置的資訊"
-
-#: src/ui/featurepermissionbar.cpp:61
+#: src/ui/featurepermissionbar.cpp:51
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your microphone and other audio capture "
 "devices"
 msgstr "<html><b>%1</b> 希望存取您的麥克風和其他音訊擷取裝置"
 
-#: src/ui/featurepermissionbar.cpp:63
+#: src/ui/featurepermissionbar.cpp:53
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your camera and other video capture "
 "devices"
 msgstr "<html><b>%1</b> 希望存取您的相機和其他視訊擷取裝置"
 
-#: src/ui/featurepermissionbar.cpp:65
+#: src/ui/featurepermissionbar.cpp:55
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access to your microphone, camera and other "
 "audio and video capture devices"
 msgstr "<html><b>%1</b> 希望存取您的麥克風、相機和其他音訊與視訊擷取裝置"
 
-#: src/ui/featurepermissionbar.cpp:67
-#, kde-format
-msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
-msgstr "<html><b>%1</b> 希望將您的滑鼠鎖在網頁中"
-
-#: src/ui/featurepermissionbar.cpp:69
+#: src/ui/featurepermissionbar.cpp:57
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen"
 msgstr "<html><b>%1</b> 希望能夠錄製您的螢幕"
 
-#: src/ui/featurepermissionbar.cpp:71
+#: src/ui/featurepermissionbar.cpp:59
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen and your audio"
 msgstr "<html><b>%1</b> 希望能夠錄製您的螢幕和音訊"
+
+#: src/ui/featurepermissionbar.cpp:61
+#, kde-format
+msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
+msgstr "<html><b>%1</b> 希望將您的滑鼠鎖在網頁中"
+
+#: src/ui/featurepermissionbar.cpp:63
+#, kde-format
+msgid "<html><b>%1</b> would like to send you notifications"
+msgstr "<html><b>%1</b> 希望傳送通知給您"
+
+#: src/ui/featurepermissionbar.cpp:65
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access information about your current physical "
+"location"
+msgstr "<html><b>%1</b> 希望存取關於您目前物理位置的資訊"
+
+#: src/ui/featurepermissionbar.cpp:67
+#, fuzzy, kde-format
+#| msgid "<html><b>%1</b> would like to record your screen"
+msgid "<html><b>%1</b> would like to access your clipboard"
+msgstr "<html><b>%1</b> 希望能夠錄製您的螢幕"
+
+#: src/ui/featurepermissionbar.cpp:69
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><b>%1</b> would like to access information about your current "
+#| "physical location"
+msgid ""
+"<html><b>%1</b> would like to access the fonts installed on your machine"
+msgstr "<html><b>%1</b> 希望存取關於您目前物理位置的資訊"
+
+#: src/ui/featurepermissionbar.cpp:71
+#, fuzzy, kde-format
+#| msgid "<html><b>%1</b> would like to send you notifications"
+msgid "<html><b>%1</b> would like to do something we don't know about"
+msgstr "<html><b>%1</b> 希望傳送通知給您"
 
 #: src/ui/passwordbar.cpp:28
 #, kde-format
@@ -950,27 +971,7 @@ msgstr ""
 "\n"
 "Konqueror 整合將被關閉。"
 
-#: src/webenginepage.cpp:570
-#, kde-format
-msgid ""
-"This site is attempting to access information about your physical location.\n"
-"Do you want to allow it access?"
-msgstr ""
-"此網站正試圖存取關於您所在位置的資料。\n"
-"您允許此行為嗎？"
-
-#: src/webenginepage.cpp:574 src/webenginepage.cpp:652
-#: src/webenginepage.cpp:663
-#, kde-format
-msgid "Network Transmission"
-msgstr "網絡傳輸"
-
-#: src/webenginepage.cpp:575
-#, kde-format
-msgid "Allow access"
-msgstr "允取存取"
-
-#: src/webenginepage.cpp:645
+#: src/webenginepage.cpp:622
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -982,12 +983,17 @@ msgstr ""
 "能可以截獲並檢視這些資料。\n"
 "您確定要送出這些未加密的資料嗎？"
 
-#: src/webenginepage.cpp:653
+#: src/webenginepage.cpp:629 src/webenginepage.cpp:640
+#, kde-format
+msgid "Network Transmission"
+msgstr "網絡傳輸"
+
+#: src/webenginepage.cpp:630
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "傳送未加密資料(&S)"
 
-#: src/webenginepage.cpp:660
+#: src/webenginepage.cpp:637
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -996,34 +1002,34 @@ msgstr ""
 "此網站正試圖使用 e-mail 的方式送回資料。\n"
 "您允許此行為嗎？"
 
-#: src/webenginepage.cpp:664
+#: src/webenginepage.cpp:641
 #, kde-format
 msgid "&Send Email"
 msgstr "傳送 Email"
 
-#: src/webenginepage.cpp:715
+#: src/webenginepage.cpp:692
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 msgstr "<qt>您允許此站台附加這些檔案在信件中嗎？</qt>"
 
-#: src/webenginepage.cpp:717
+#: src/webenginepage.cpp:694
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "電子郵件附檔確認"
 
-#: src/webenginepage.cpp:718
+#: src/webenginepage.cpp:695
 #, kde-format
 msgid "&Allow attachments"
 msgstr "允許附檔(&A)"
 
-#: src/webenginepage.cpp:719
+#: src/webenginepage.cpp:696
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "忽略附檔(&I)"
 
-#: src/webenginepage.cpp:732
+#: src/webenginepage.cpp:709
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -1032,22 +1038,22 @@ msgstr ""
 "這個網站的表格提交時試圖在您的電腦附加一個檔案。為了保護您，這個附件已經被移"
 "除。"
 
-#: src/webenginepage.cpp:735
+#: src/webenginepage.cpp:712
 #, kde-format
 msgid "Attachment Removed"
 msgstr "附檔已移除"
 
-#: src/webenginepage.cpp:855
+#: src/webenginepage.cpp:832
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
 msgstr "將頁面轉為 PDF 時發生錯誤"
 
-#: src/webenginepage.cpp:860
+#: src/webenginepage.cpp:837
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr "將頁面作為 PDF 儲存至 %1 時發生錯誤"
 
-#: src/webenginepage.cpp:948
+#: src/webenginepage.cpp:925
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1056,7 +1062,7 @@ msgstr ""
 "此網站正請求開啟一個彈出式視窗。\n"
 "您允許此行為嗎？"
 
-#: src/webenginepage.cpp:950
+#: src/webenginepage.cpp:927
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1064,17 +1070,17 @@ msgid ""
 msgstr ""
 "<qt>此網站正試圖開啟一個彈出式視窗到 <p>%1</p><br/>您允許此行為嗎？</qt>"
 
-#: src/webenginepage.cpp:953
+#: src/webenginepage.cpp:930
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Javascript 彈出視窗確認"
 
-#: src/webenginepage.cpp:954
+#: src/webenginepage.cpp:931
 #, kde-format
 msgid "Allow"
 msgstr "允許"
 
-#: src/webenginepage.cpp:954
+#: src/webenginepage.cpp:931
 #, kde-format
 msgid "Do Not Allow"
 msgstr "不允許"
@@ -1213,57 +1219,57 @@ msgstr "關閉視窗？"
 msgid "Confirmation Required"
 msgstr "需要確認"
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1013
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>您要 %1 記住 %2 的登入資訊嗎？</html>"
 
-#: src/webenginepart.cpp:1096
+#: src/webenginepart.cpp:1084
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
 msgstr "填入認證資訊(&F)"
 
-#: src/webenginepart.cpp:1101
+#: src/webenginepart.cpp:1089
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
 msgstr "搜尋頁面內的認證資訊要求(&S)"
 
-#: src/webenginepart.cpp:1105
+#: src/webenginepart.cpp:1093
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
 msgstr "現在儲存認證資訊(&S)"
 
-#: src/webenginepart.cpp:1109
+#: src/webenginepart.cpp:1097
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
 msgstr "自訂頁面的認證資訊設定(&C)…"
 
-#: src/webenginepart.cpp:1113
+#: src/webenginepart.cpp:1101
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
 msgstr "重設頁面的自訂認證資訊設定"
 
-#: src/webenginepart.cpp:1117
+#: src/webenginepart.cpp:1105
 #, kde-format
 msgid "&Allow Credential Caching for This Page"
 msgstr "允許此頁面使用認證資訊快取(&A)"
 
-#: src/webenginepart.cpp:1121
+#: src/webenginepart.cpp:1109
 #, kde-format
 msgid "Remove All Stored Passwords for This Site"
 msgstr "移除所有為此站台儲存的密碼"
 
-#: src/webenginepart.cpp:1125
+#: src/webenginepart.cpp:1113
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "啟動錢包管理工具(&L)"
 
-#: src/webenginepart.cpp:1129
+#: src/webenginepart.cpp:1117
 #, kde-format
 msgid "&Close Wallet"
 msgstr "關閉錢包(Wallet)(&C)"
@@ -1622,6 +1628,17 @@ msgstr ""
 "<ul><li><b>欄位內部名稱：</b>%1</li><li><b>欄位形態：</b>%2</li><li><b>欄位 "
 "ID：</b>%3</li><li><b>欄位是唯讀的：</b>%4</li><li><b>欄位已啟用：</b>%5</"
 "li><li><b>自動完成已啟用：</b>%6</li></ul>"
+
+#~ msgid ""
+#~ "This site is attempting to access information about your physical "
+#~ "location.\n"
+#~ "Do you want to allow it access?"
+#~ msgstr ""
+#~ "此網站正試圖存取關於您所在位置的資料。\n"
+#~ "您允許此行為嗎？"
+
+#~ msgid "Allow access"
+#~ msgstr "允取存取"
 
 #~ msgid "Konqueror"
 #~ msgstr "Konqueror"
