@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-28 00:45+0000\n"
+"POT-Creation-Date: 2026-10-06 00:46+0000\n"
 "PO-Revision-Date: 2026-10-02 01:00+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1710,20 +1710,26 @@ msgctxt "@item:treewidget"
 msgid "Session %1"
 msgstr "세션 %1"
 
+#: src/konqsessiondialog.cpp:116
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1  (on Desktop %2)"
+msgstr ""
+
 #. i18n. Otherwise it would be easier to just use what is in the session file
-#: src/konqsessiondialog.cpp:113
+#: src/konqsessiondialog.cpp:119
 #, kde-format
 msgctxt "@item:treewidget"
 msgid "Window %1"
 msgstr "창 %1"
 
-#: src/konqsessiondialog.cpp:262
+#: src/konqsessiondialog.cpp:269
 #, kde-format
 msgctxt "@title:window"
 msgid "Restore Session?"
 msgstr "세션을 복원하시겠습니까?"
 
-#: src/konqsessiondialog.cpp:283
+#: src/konqsessiondialog.cpp:290
 #, kde-format
 msgid ""
 "Konqueror did not close correctly. Would you like to restore these previous "
@@ -1731,30 +1737,30 @@ msgid ""
 msgstr ""
 "Konqueror가 올바르게 종료되지 않았습니다. 이전 세션을 복원하시겠습니까?"
 
-#: src/konqsessiondialog.cpp:298
+#: src/konqsessiondialog.cpp:305
 #, kde-format
 msgid "Do not ask again"
 msgstr "다시 묻지 않기"
 
-#: src/konqsessiondialog.cpp:312
+#: src/konqsessiondialog.cpp:319
 #, kde-format
 msgctxt "@action:button yes"
 msgid "Restore Session"
 msgstr "세션 복원하기"
 
-#: src/konqsessiondialog.cpp:313
+#: src/konqsessiondialog.cpp:320
 #, kde-format
 msgctxt "@action:button no"
 msgid "Do Not Restore"
 msgstr "복원하지 않기"
 
-#: src/konqsessiondialog.cpp:314
+#: src/konqsessiondialog.cpp:321
 #, kde-format
 msgctxt "@action:button ask later"
 msgid "Ask Me Later"
 msgstr "나중에 묻기"
 
-#: src/konqsessiondialog.cpp:352
+#: src/konqsessiondialog.cpp:359
 #, kde-format
 msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"

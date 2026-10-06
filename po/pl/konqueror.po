@@ -1,6 +1,6 @@
 # translation of konqueror.po to Polish
 # translation of konqueror.po to
-# Version: $Revision: 1748411 $
+# Version: $Revision: 1749399 $
 # Tłumaczenie autorstwa Artura Skury, marzec 2000
 # SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 # Aktualne tłumaczenie Norbert Popiołek <norbert@kde.com.pl>, czerwiec 2001
@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-28 00:45+0000\n"
+"POT-Creation-Date: 2026-10-06 00:46+0000\n"
 "PO-Revision-Date: 2024-10-26 12:42+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1748,20 +1748,26 @@ msgctxt "@item:treewidget"
 msgid "Session %1"
 msgstr "Posiedzenia"
 
+#: src/konqsessiondialog.cpp:116
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1  (on Desktop %2)"
+msgstr ""
+
 #. i18n. Otherwise it would be easier to just use what is in the session file
-#: src/konqsessiondialog.cpp:113
+#: src/konqsessiondialog.cpp:119
 #, kde-format
 msgctxt "@item:treewidget"
 msgid "Window %1"
 msgstr "Okno %1"
 
-#: src/konqsessiondialog.cpp:262
+#: src/konqsessiondialog.cpp:269
 #, kde-format
 msgctxt "@title:window"
 msgid "Restore Session?"
 msgstr "Czy przywrócić posiedzenie?"
 
-#: src/konqsessiondialog.cpp:283
+#: src/konqsessiondialog.cpp:290
 #, kde-format
 msgid ""
 "Konqueror did not close correctly. Would you like to restore these previous "
@@ -1770,30 +1776,30 @@ msgstr ""
 "Konqueror nie został poprawnie zamknięty. Czy chcesz przywrócić poprzednie "
 "posiedzenia?"
 
-#: src/konqsessiondialog.cpp:298
+#: src/konqsessiondialog.cpp:305
 #, kde-format
 msgid "Do not ask again"
 msgstr "Nie pytaj ponownie"
 
-#: src/konqsessiondialog.cpp:312
+#: src/konqsessiondialog.cpp:319
 #, kde-format
 msgctxt "@action:button yes"
 msgid "Restore Session"
 msgstr "Przywróć posiedzenie"
 
-#: src/konqsessiondialog.cpp:313
+#: src/konqsessiondialog.cpp:320
 #, kde-format
 msgctxt "@action:button no"
 msgid "Do Not Restore"
 msgstr "Nie przywracaj"
 
-#: src/konqsessiondialog.cpp:314
+#: src/konqsessiondialog.cpp:321
 #, kde-format
 msgctxt "@action:button ask later"
 msgid "Ask Me Later"
 msgstr "Zapytaj mnie później"
 
-#: src/konqsessiondialog.cpp:352
+#: src/konqsessiondialog.cpp:359
 #, kde-format
 msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"

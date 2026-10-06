@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-28 00:45+0000\n"
+"POT-Creation-Date: 2026-10-06 00:46+0000\n"
 "PO-Revision-Date: 2008-06-08 22:24+0200\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -1733,22 +1733,28 @@ msgctxt "@item:treewidget"
 msgid "Session %1"
 msgstr "Сеанслар"
 
+#: src/konqsessiondialog.cpp:116
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1  (on Desktop %2)"
+msgstr ""
+
 #. i18n. Otherwise it would be easier to just use what is in the session file
-#: src/konqsessiondialog.cpp:113
+#: src/konqsessiondialog.cpp:119
 #, fuzzy, kde-format
 #| msgid "&Window"
 msgctxt "@item:treewidget"
 msgid "Window %1"
 msgstr "&Ойна"
 
-#: src/konqsessiondialog.cpp:262
+#: src/konqsessiondialog.cpp:269
 #, fuzzy, kde-format
 #| msgid "Restore session?"
 msgctxt "@title:window"
 msgid "Restore Session?"
 msgstr "Охирги сеансни тиклаш"
 
-#: src/konqsessiondialog.cpp:283
+#: src/konqsessiondialog.cpp:290
 #, fuzzy, kde-format
 #| msgid "Konqueror didn't close correctly. Would you like to restore session?"
 msgid ""
@@ -1757,33 +1763,33 @@ msgid ""
 msgstr ""
 "Konqueror хато билан ишини тугатган. Охирги сеансни тиклашни истайсизми?"
 
-#: src/konqsessiondialog.cpp:298
+#: src/konqsessiondialog.cpp:305
 #, kde-format
 msgid "Do not ask again"
 msgstr ""
 
-#: src/konqsessiondialog.cpp:312
+#: src/konqsessiondialog.cpp:319
 #, fuzzy, kde-format
 #| msgid "Restore session"
 msgctxt "@action:button yes"
 msgid "Restore Session"
 msgstr "Ҳа"
 
-#: src/konqsessiondialog.cpp:313
+#: src/konqsessiondialog.cpp:320
 #, fuzzy, kde-format
 #| msgid "Do not restore"
 msgctxt "@action:button no"
 msgid "Do Not Restore"
 msgstr "Йўқ"
 
-#: src/konqsessiondialog.cpp:314
+#: src/konqsessiondialog.cpp:321
 #, fuzzy, kde-format
 #| msgid "Ask me later"
 msgctxt "@action:button ask later"
 msgid "Ask Me Later"
 msgstr "Кейинроқ сўранг"
 
-#: src/konqsessiondialog.cpp:352
+#: src/konqsessiondialog.cpp:359
 #, kde-format
 msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"

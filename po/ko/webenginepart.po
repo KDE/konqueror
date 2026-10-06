@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-05 00:45+0000\n"
-"PO-Revision-Date: 2026-02-04 00:09+0100\n"
+"PO-Revision-Date: 2026-10-05 22:31+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -769,25 +769,20 @@ msgid ""
 msgstr "<html><b>%1</b>에서 현재 위치에 접근하려고 합니다"
 
 #: src/ui/featurepermissionbar.cpp:67
-#, fuzzy, kde-format
-#| msgid "<html><b>%1</b> would like to record your screen"
+#, kde-format
 msgid "<html><b>%1</b> would like to access your clipboard"
-msgstr "<html><b>%1</b>에서 화면을 녹화하려고 합니다"
+msgstr "<html><b>%1</b>에서 클립보드에 접근하려고 합니다"
 
 #: src/ui/featurepermissionbar.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><b>%1</b> would like to access information about your current "
-#| "physical location"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access the fonts installed on your machine"
-msgstr "<html><b>%1</b>에서 현재 위치에 접근하려고 합니다"
+msgstr "<html><b>%1</b>에서 현재 시스템에 설치된 글꼴 목록에 접근하려고 합니다"
 
 #: src/ui/featurepermissionbar.cpp:71
-#, fuzzy, kde-format
-#| msgid "<html><b>%1</b> would like to send you notifications"
+#, kde-format
 msgid "<html><b>%1</b> would like to do something we don't know about"
-msgstr "<html><b>%1</b>에서 알림을 보내려고 합니다"
+msgstr "<html><b>%1</b>에서 알 수 없는 무언가를 하려고 합니다"
 
 #: src/ui/passwordbar.cpp:28
 #, kde-format

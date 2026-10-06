@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-28 00:45+0000\n"
+"POT-Creation-Date: 2026-10-06 00:46+0000\n"
 "PO-Revision-Date: 2007-12-09 18:30+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -1799,53 +1799,59 @@ msgctxt "@item:treewidget"
 msgid "Session %1"
 msgstr "Пашырэнні"
 
+#: src/konqsessiondialog.cpp:116
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1  (on Desktop %2)"
+msgstr ""
+
 #. i18n. Otherwise it would be easier to just use what is in the session file
-#: src/konqsessiondialog.cpp:113
+#: src/konqsessiondialog.cpp:119
 #, fuzzy, kde-format
 #| msgid "&Window"
 msgctxt "@item:treewidget"
 msgid "Window %1"
 msgstr "&Акно"
 
-#: src/konqsessiondialog.cpp:262
+#: src/konqsessiondialog.cpp:269
 #, fuzzy, kde-format
 #| msgid "End of session"
 msgctxt "@title:window"
 msgid "Restore Session?"
 msgstr "Канец сеансу"
 
-#: src/konqsessiondialog.cpp:283
+#: src/konqsessiondialog.cpp:290
 #, kde-format
 msgid ""
 "Konqueror did not close correctly. Would you like to restore these previous "
 "sessions?"
 msgstr ""
 
-#: src/konqsessiondialog.cpp:298
+#: src/konqsessiondialog.cpp:305
 #, kde-format
 msgid "Do not ask again"
 msgstr ""
 
-#: src/konqsessiondialog.cpp:312
+#: src/konqsessiondialog.cpp:319
 #, fuzzy, kde-format
 #| msgid "End of session"
 msgctxt "@action:button yes"
 msgid "Restore Session"
 msgstr "Канец сеансу"
 
-#: src/konqsessiondialog.cpp:313
+#: src/konqsessiondialog.cpp:320
 #, kde-format
 msgctxt "@action:button no"
 msgid "Do Not Restore"
 msgstr ""
 
-#: src/konqsessiondialog.cpp:314
+#: src/konqsessiondialog.cpp:321
 #, kde-format
 msgctxt "@action:button ask later"
 msgid "Ask Me Later"
 msgstr ""
 
-#: src/konqsessiondialog.cpp:352
+#: src/konqsessiondialog.cpp:359
 #, kde-format
 msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"

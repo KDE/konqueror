@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-05 00:45+0000\n"
-"PO-Revision-Date: 2025-12-01 06:05+0100\n"
+"PO-Revision-Date: 2026-10-05 06:15+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -788,25 +788,20 @@ msgid ""
 msgstr "<html><b>%1</b>-ს სურს წვდომა თქვენს მიმდინარე ფიზიკურ მდებარეობასთან"
 
 #: src/ui/featurepermissionbar.cpp:67
-#, fuzzy, kde-format
-#| msgid "<html><b>%1</b> would like to record your screen"
+#, kde-format
 msgid "<html><b>%1</b> would like to access your clipboard"
-msgstr "<html><b>%1</b>-ს სურს, თქვენი ეკრანი ჩაიწეროს"
+msgstr "<html><b>%1</b>-ს სურს წვდომა თქვენს ბუფერთან"
 
 #: src/ui/featurepermissionbar.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><b>%1</b> would like to access information about your current "
-#| "physical location"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access the fonts installed on your machine"
-msgstr "<html><b>%1</b>-ს სურს წვდომა თქვენს მიმდინარე ფიზიკურ მდებარეობასთან"
+msgstr "<html><b>%1</b>-ს სურს წვდომა თქვენს მანქანაზე დაყენებულ ფონტებთან"
 
 #: src/ui/featurepermissionbar.cpp:71
-#, fuzzy, kde-format
-#| msgid "<html><b>%1</b> would like to send you notifications"
+#, kde-format
 msgid "<html><b>%1</b> would like to do something we don't know about"
-msgstr "<html><b>%1</b>-ს თქვენთვის გაფრთხილებების გამოგზავნა სურს"
+msgstr "<html><b>%1</b>-ს უნდა, გააკეთოს რაღაც, რაც ჩვენ არ ვიცით"
 
 #: src/ui/passwordbar.cpp:28
 #, kde-format

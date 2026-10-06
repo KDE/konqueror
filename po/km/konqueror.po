@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-28 00:45+0000\n"
+"POT-Creation-Date: 2026-10-06 00:46+0000\n"
 "PO-Revision-Date: 2012-06-11 14:26+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer\n"
@@ -1721,51 +1721,57 @@ msgctxt "@item:treewidget"
 msgid "Session %1"
 msgstr "សម័យ"
 
+#: src/konqsessiondialog.cpp:116
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1  (on Desktop %2)"
+msgstr ""
+
 #  i18n: file konqueror.rc line 94
 #. i18n. Otherwise it would be easier to just use what is in the session file
-#: src/konqsessiondialog.cpp:113
+#: src/konqsessiondialog.cpp:119
 #, kde-format
 msgctxt "@item:treewidget"
 msgid "Window %1"
 msgstr "បង្អួច %1"
 
-#: src/konqsessiondialog.cpp:262
+#: src/konqsessiondialog.cpp:269
 #, kde-format
 msgctxt "@title:window"
 msgid "Restore Session?"
 msgstr "ស្ដារ​សម័យ​ឡើងវិញ​ឬ ?"
 
-#: src/konqsessiondialog.cpp:283
+#: src/konqsessiondialog.cpp:290
 #, kde-format
 msgid ""
 "Konqueror did not close correctly. Would you like to restore these previous "
 "sessions?"
 msgstr "Konqueror មិន​បាន​បិទ​ដោយ​ត្រឹមត្រូវ​ឡើយ ។ តើ​អ្នក​ស្ដារ​សម័យ​មុនៗ​ឬ ?"
 
-#: src/konqsessiondialog.cpp:298
+#: src/konqsessiondialog.cpp:305
 #, kde-format
 msgid "Do not ask again"
 msgstr "កុំ​សួរ​ខ្ញុំ​​ម្ដងទៀត"
 
-#: src/konqsessiondialog.cpp:312
+#: src/konqsessiondialog.cpp:319
 #, kde-format
 msgctxt "@action:button yes"
 msgid "Restore Session"
 msgstr "ស្ដារ​សម័យ​"
 
-#: src/konqsessiondialog.cpp:313
+#: src/konqsessiondialog.cpp:320
 #, kde-format
 msgctxt "@action:button no"
 msgid "Do Not Restore"
 msgstr "កុំ​ស្ដារ​"
 
-#: src/konqsessiondialog.cpp:314
+#: src/konqsessiondialog.cpp:321
 #, kde-format
 msgctxt "@action:button ask later"
 msgid "Ask Me Later"
 msgstr "សួរ​ខ្ញុំ​នៅ​ពេល​ក្រោយ"
 
-#: src/konqsessiondialog.cpp:352
+#: src/konqsessiondialog.cpp:359
 #, kde-format
 msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"

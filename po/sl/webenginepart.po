@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-05 00:45+0000\n"
-"PO-Revision-Date: 2025-12-01 07:18+0100\n"
+"PO-Revision-Date: 2026-10-05 07:01+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -788,26 +788,21 @@ msgstr ""
 "<html><b>%1</b> bi rad dobil informacije o vaši trenutni fizični lokaciji"
 
 #: src/ui/featurepermissionbar.cpp:67
-#, fuzzy, kde-format
-#| msgid "<html><b>%1</b> would like to record your screen"
+#, kde-format
 msgid "<html><b>%1</b> would like to access your clipboard"
-msgstr "<html><b>%1</b> bi rad snemal vaš zaslon"
+msgstr "<html><b>%1</b> želi dostopati do vašega odložišča"
 
 #: src/ui/featurepermissionbar.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><b>%1</b> would like to access information about your current "
-#| "physical location"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access the fonts installed on your machine"
 msgstr ""
-"<html><b>%1</b> bi rad dobil informacije o vaši trenutni fizični lokaciji"
+"<html><b>%1</b> bi želel dostopati do pisav, nameščenih v vašem računalniku"
 
 #: src/ui/featurepermissionbar.cpp:71
-#, fuzzy, kde-format
-#| msgid "<html><b>%1</b> would like to send you notifications"
+#, kde-format
 msgid "<html><b>%1</b> would like to do something we don't know about"
-msgstr "<html><b>%1</b>bi vam rad  poslal obvestila"
+msgstr "<html><b>%1</b> bi radi naredil nekaj, česar ne vemo"
 
 #: src/ui/passwordbar.cpp:28
 #, kde-format

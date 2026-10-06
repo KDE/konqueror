@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-05 00:45+0000\n"
-"PO-Revision-Date: 2026-06-18 20:03+0200\n"
+"PO-Revision-Date: 2026-10-05 07:41+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -796,26 +796,22 @@ msgstr ""
 "<html><b>%1</b> запрашивает информацию о месте, где вы сейчас находитесь"
 
 #: src/ui/featurepermissionbar.cpp:67
-#, fuzzy, kde-format
-#| msgid "<html><b>%1</b> would like to record your screen"
+#, kde-format
 msgid "<html><b>%1</b> would like to access your clipboard"
-msgstr "<html><b>%1</b> запрашивает запись вашего экрана"
+msgstr "<html><b>%1</b> запрашивает доступ к вашему буферу обмена"
 
 #: src/ui/featurepermissionbar.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><b>%1</b> would like to access information about your current "
-#| "physical location"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access the fonts installed on your machine"
 msgstr ""
-"<html><b>%1</b> запрашивает информацию о месте, где вы сейчас находитесь"
+"<html><b>%1</b> запрашивает доступ к шрифтам, установленным на вашем "
+"компьютере"
 
 #: src/ui/featurepermissionbar.cpp:71
-#, fuzzy, kde-format
-#| msgid "<html><b>%1</b> would like to send you notifications"
+#, kde-format
 msgid "<html><b>%1</b> would like to do something we don't know about"
-msgstr "<html><b>%1</b> запрашивает отправку вам уведомлений"
+msgstr "<html><b>%1</b> запрашивает выполнение неизвестного действия"
 
 #: src/ui/passwordbar.cpp:28
 #, kde-format

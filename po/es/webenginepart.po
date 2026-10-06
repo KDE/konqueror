@@ -1,27 +1,26 @@
 # Spanish translations for webenginepart.po package.
-# Copyright (C) 2009-2025 This file is copyright:
+# Copyright (C) 2009-2026 This file is copyright:
 # This file is distributed under the same license as the konqueror package.
 #
 # SPDX-FileCopyrightText: 2009 Enrique Matias Sanchez <cronopios@gmail.com>
-# SPDX-FileCopyrightText: 2009 Cristina Yenyxe Gonzalez Garcia <the.blue.valkyrie@gmail.com>
-# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2009-2011 Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>
+# SPDX-FileCopyrightText: 2009-2012, 2016-2018, 2020-2026 Eloy Cuadra <ecuadra@eloihr.net>
 # SPDX-FileCopyrightText: 2009 Ricardo Varas Santana <ricardoivaras@gmail.com>
 # SPDX-FileCopyrightText: 2009 Jaime Robles <jaime@kde.org>
-# SPDX-FileCopyrightText: 2010, 2011 Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>
 # SPDX-FileCopyrightText: 2013, 2017 Rocio Gallego <traducciones@rociogallego.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-05 00:45+0000\n"
-"PO-Revision-Date: 2025-12-02 02:04+0100\n"
+"PO-Revision-Date: 2026-10-05 11:35+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -800,27 +799,21 @@ msgstr ""
 "actual"
 
 #: src/ui/featurepermissionbar.cpp:67
-#, fuzzy, kde-format
-#| msgid "<html><b>%1</b> would like to record your screen"
+#, kde-format
 msgid "<html><b>%1</b> would like to access your clipboard"
-msgstr "<html><b>%1</b> quiere grabar el contenido de la pantalla"
+msgstr "<html><b>%1</b> quiere acceder al portapapeles"
 
 #: src/ui/featurepermissionbar.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><b>%1</b> would like to access information about your current "
-#| "physical location"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access the fonts installed on your machine"
 msgstr ""
-"<html><b>%1</b> quiere acceder a la información sobre su ubicación física "
-"actual"
+"<html><b>%1</b> quiere acceder a los tipos de letra instalados en el sistema"
 
 #: src/ui/featurepermissionbar.cpp:71
-#, fuzzy, kde-format
-#| msgid "<html><b>%1</b> would like to send you notifications"
+#, kde-format
 msgid "<html><b>%1</b> would like to do something we don't know about"
-msgstr "<html><b>%1</b> quiere enviarle notificaciones"
+msgstr "<html><b>%1</b> quiere hacer algo desconocido"
 
 #: src/ui/passwordbar.cpp:28
 #, kde-format
@@ -1674,15 +1667,3 @@ msgstr ""
 "%2</li><li><b>ID del campo: </b>%3</li><li><b>Campo de solo lectura: </b>%4</"
 "li><li><b>Campo activado: </b>%5</li><li><b>Terminación automática activada: "
 "</b>%6</li></ul>"
-
-#~ msgid ""
-#~ "This site is attempting to access information about your physical "
-#~ "location.\n"
-#~ "Do you want to allow it access?"
-#~ msgstr ""
-#~ "Este sitio está intentando acceder a información sobre su ubicación "
-#~ "física.\n"
-#~ "¿Desea permitirle el acceso?"
-
-#~ msgid "Allow access"
-#~ msgstr "Permitir acceso"

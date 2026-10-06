@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-05 00:45+0000\n"
-"PO-Revision-Date: 2026-01-07 17:57+0100\n"
+"PO-Revision-Date: 2026-10-05 09:09+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -796,27 +796,22 @@ msgstr ""
 "física actual"
 
 #: src/ui/featurepermissionbar.cpp:67
-#, fuzzy, kde-format
-#| msgid "<html><b>%1</b> would like to record your screen"
+#, kde-format
 msgid "<html><b>%1</b> would like to access your clipboard"
-msgstr "<html><b>%1</b> voldria enregistrar la pantalla"
+msgstr "<html><b>%1</b> voldria accedir al vostre porta-retalls"
 
 #: src/ui/featurepermissionbar.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><b>%1</b> would like to access information about your current "
-#| "physical location"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access the fonts installed on your machine"
 msgstr ""
-"<html><b>%1</b> voldria accedir a la informació quant a la vostra ubicació "
-"física actual"
+"<html><b>%1</b> voldria accedir a les lletres instal·lades a la vostra "
+"màquina"
 
 #: src/ui/featurepermissionbar.cpp:71
-#, fuzzy, kde-format
-#| msgid "<html><b>%1</b> would like to send you notifications"
+#, kde-format
 msgid "<html><b>%1</b> would like to do something we don't know about"
-msgstr "<html><b>%1</b> voldria enviar-vos notificacions"
+msgstr "<html><b>%1</b> voldria fer alguna cosa que es desconeix"
 
 #: src/ui/passwordbar.cpp:28
 #, kde-format
