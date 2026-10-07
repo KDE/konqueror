@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-06 00:46+0000\n"
-"PO-Revision-Date: 2026-07-08 07:13+0200\n"
+"PO-Revision-Date: 2026-10-06 10:51+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -629,7 +629,7 @@ msgstr "Prenos URL ni mogoč pri stikalu --preload. Naslov URL bo prezrt\n"
 msgid "Are you sure you want to quit Konqueror? This will close all windows"
 msgstr ""
 "Ali ste prepričani, da želite zapustiti Konqueror? S tem boste zaprli vsa "
-"okna."
+"okna"
 
 #: src/konqapplication.cpp:581 src/konqmainwindow.cpp:4879
 #: src/konqmainwindow.cpp:5653
@@ -1044,7 +1044,7 @@ msgstr "Zapri vsa okna razen tega"
 #: src/konqmainwindow.cpp:3360
 #, kde-format
 msgid "Closes all windows except this one. It doesn't close preloaded windows"
-msgstr "Zapre vsa okna razen tega. Ne zapre prednaloženih oken."
+msgstr "Zapre vsa okna razen tega. Ne zapre prednaloženih oken"
 
 #: src/konqmainwindow.cpp:3364
 #, kde-format
@@ -1749,7 +1749,7 @@ msgstr "Seja %1"
 #, kde-format
 msgctxt "@item:treewidget"
 msgid "Window %1  (on Desktop %2)"
-msgstr ""
+msgstr "Okno %1  (na namizju %2)"
 
 #. i18n. Otherwise it would be easier to just use what is in the session file
 #: src/konqsessiondialog.cpp:119
