@@ -795,7 +795,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "<html><b>%1</b> would like to record your screen"
 msgid "<html><b>%1</b> would like to access your clipboard"
-msgstr "<html><b>%1</b> иска да записва екрана ви"
+msgstr "<html><b>%1</b> иска достъп до вашето клипборд"
 
 #: src/ui/featurepermissionbar.cpp:69
 #, fuzzy, kde-format
@@ -805,14 +805,14 @@ msgstr "<html><b>%1</b> иска да записва екрана ви"
 msgid ""
 "<html><b>%1</b> would like to access the fonts installed on your machine"
 msgstr ""
-"<html><b>%1 </b> иска достъп до информация за вашето текущо физическо "
-"местоположение"
+"<html><b>%1</b> иска достъп до инсталираните шрифтове на вашето устройство</"
+"html>"
 
 #: src/ui/featurepermissionbar.cpp:71
 #, fuzzy, kde-format
 #| msgid "<html><b>%1</b> would like to send you notifications"
 msgid "<html><b>%1</b> would like to do something we don't know about"
-msgstr "<html><b>%1</b> иска да ви изпраща известия"
+msgstr "<html><b>%1</b> иска да извърши действие, което е непознато"
 
 #: src/ui/passwordbar.cpp:28
 #, kde-format
@@ -1670,15 +1670,3 @@ msgstr ""
 "li><li><b> Идент. на поле: </b>%3</li><li><b> Полето е само за четене: </b>"
 "%4 </li><li><b> Полето е активирано: </b>%5</li><li><b> Автоматичното "
 "попълване е активирано: </b>%6 </li></ul>"
-
-#~ msgid ""
-#~ "This site is attempting to access information about your physical "
-#~ "location.\n"
-#~ "Do you want to allow it access?"
-#~ msgstr ""
-#~ "Този сайт се опитва да получи достъп до информация за физическото ви "
-#~ "местоположение.\n"
-#~ "Искате ли да му разрешите достъп?"
-
-#~ msgid "Allow access"
-#~ msgstr "Разрешаване на достъп"
