@@ -27,7 +27,6 @@ This will define the following variables:
 find_program(Hunspell_EXECUTABLE hunspell)
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(Hunspell
-  FOUND_VAR Hunspell_FOUND
   REQUIRED_VARS Hunspell_EXECUTABLE
 )
 

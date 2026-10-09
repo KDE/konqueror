@@ -31,6 +31,5 @@ find_program(WebEngineDictConverter_EXECUTABLE qwebengine_convert_dict HINTS ${h
 
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(WebEngineDictConverter
-  FOUND_VAR WebEngineDictConverter_FOUND
   REQUIRED_VARS WebEngineDictConverter_EXECUTABLE
 )
