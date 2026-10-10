@@ -159,6 +159,14 @@ public:
      */
     virtual SpeedDial* speedDial() = 0;
 
+    /**
+     * @brief Adds an extra KCM to the Konqueror configuration dialog
+     *
+     * @param path the path of the library providing the KCM. It must be either
+     * an absolute path or a path relative to one of the directories in `QStandardPaths::libraryPaths()`
+     */
+    virtual void addConfigurationPage(const QString &path) = 0;
+
 signals:
     void configurationChanged(); ///< Signal emitted after the configuration has changed
 

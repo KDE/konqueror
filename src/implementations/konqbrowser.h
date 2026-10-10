@@ -95,6 +95,8 @@ public:
 
     KonqInterfaces::SpeedDial* speedDial() override; //!< Implementation of KonqBrowser::speedDial()
 
+    void addConfigurationPage(const QString &path) override; //!< Implementation of KonqBrowser::addConfigurationPage()
+
 private:
 
     /**

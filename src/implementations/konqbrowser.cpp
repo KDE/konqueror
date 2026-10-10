@@ -15,6 +15,7 @@
 #include "konqsettings.h"
 #include "konqmainwindowfactory.h"
 #include "urlloader.h"
+#include "configdialog.h"
 
 #include <konqdebug.h>
 
@@ -173,4 +174,9 @@ QString KonqBrowser::partForLocalFile(const QString& path, const QString& mimeTy
 KonqInterfaces::SpeedDial* KonqBrowser::speedDial()
 {
     return m_speedDial;
+}
+
+void KonqBrowser::addConfigurationPage(const QString& path)
+{
+    Konq::ConfigDialog::registerExtraModule(path);
 }
