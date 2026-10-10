@@ -13,6 +13,8 @@
 
 using namespace Konq;
 
+QStringList ConfigDialog::s_extraModules;
+
 Konq::ConfigDialog::ConfigDialog(QWidget* parent) : KCMultiDialog(parent)
 {
     setObjectName(QStringLiteral("configureDialog"));
@@ -45,23 +47,44 @@ Konq::ConfigDialog::ConfigDialog(QWidget* parent) : KCMultiDialog(parent)
     modules.remove(PerformanceModule);
 #endif
     for (auto modIt = modules.constBegin(); modIt != modules.constEnd(); ++modIt) {
-        KPluginMetaData md(modIt.value());
-        //In KF6, the web shortcuts and the proxy KCMs are provided by kio-extras, which Konqueror doesn't require,
-        //so avoid displaying an invalid entry if they can't be loaded for any reason
-        if (!md.isValid() && (modIt.key() == WebShortcutsModule || modIt.key() == ProxyModule)) {
-            continue;
-        }
-        KPageWidgetItem *it = addModule(md);
-        //Attempt to remove the Behavior tab from the Dolphin general module, as it only applies to dolphin
-        if (modIt.key() == DolphinGeneralModule) {
-            fixDolphinGeneralPage(it);
-        }
-        m_pages[modIt.key()] = it;
+        addPageForModule(modIt.value(), modIt.key());
+
+    }
+
+    for (const QString &mod : s_extraModules) {
+        addPageForModule(mod);
     }
 }
 
 Konq::ConfigDialog::~ConfigDialog() noexcept
 {
+}
+
+void ConfigDialog::registerExtraModule(const QString& path)
+{
+    s_extraModules.append(path);
+}
+
+void Konq::ConfigDialog::addPageForModule(const QString& fileName, std::optional<Module> type)
+{
+    KPluginMetaData md(fileName);
+    //In KF6, the web shortcuts and the proxy KCMs are provided by kio-extras, which Konqueror doesn't require,
+    //so avoid displaying an invalid entry if they can't be loaded for any reason
+    if (!md.isValid() && (type == WebShortcutsModule || type == ProxyModule)) {
+        return;
+    }
+
+    KPageWidgetItem *it = addModule(md);
+
+    //Attempt to remove the Behavior tab from the Dolphin general module, as it only applies to dolphin
+    if (type == DolphinGeneralModule) {
+        fixDolphinGeneralPage(it);
+    }
+
+    m_pages.insert(type ? static_cast<int>(*type) : m_pages.count(), it);
+    if (!type) {
+        m_extraPages.insert(fileName, it);
+    }
 }
 
 void Konq::ConfigDialog::fixDolphinGeneralPage(KPageWidgetItem *it)
@@ -105,3 +128,12 @@ void Konq::ConfigDialog::setCurrentPage(Module module)
         KCMultiDialog::setCurrentPage(page);
     }
 }
+
+void Konq::ConfigDialog::setCurrentPage(const QString& module)
+{
+    KPageWidgetItem *page = m_extraPages.value(module);
+    if (page) {
+        KCMultiDialog::setCurrentPage(page);
+    }
+}
+
