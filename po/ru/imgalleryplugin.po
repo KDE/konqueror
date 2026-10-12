@@ -46,12 +46,12 @@ msgstr "Галерея изображений для %1"
 #: imgallerydialog.cpp:76
 #, kde-format
 msgid "Look"
-msgstr "Просмотр"
+msgstr "Внешний вид"
 
 #: imgallerydialog.cpp:77
 #, kde-format
 msgid "Page Look"
-msgstr "Вид страницы"
+msgstr "Внешний вид страницы"
 
 #: imgallerydialog.cpp:85
 #, kde-format
@@ -66,17 +66,17 @@ msgstr "Изображений в &ряд:"
 #: imgallerydialog.cpp:95
 #, kde-format
 msgid "Show image file &name"
-msgstr "Показывать &имена файлов изображений"
+msgstr "Показывать &имена файлов"
 
 #: imgallerydialog.cpp:99
 #, kde-format
 msgid "Show image file &size"
-msgstr "Показывать &размер файла изображения"
+msgstr "Показывать раз&меры файлов"
 
 #: imgallerydialog.cpp:103
 #, kde-format
 msgid "Show image &dimensions"
-msgstr "Показывать &размеры картинки"
+msgstr "Показывать размеры из&ображений"
 
 #: imgallerydialog.cpp:114
 #, kde-format
@@ -116,7 +116,7 @@ msgstr "<p>Имя HTML-файла, в который нужно сохранит
 #: imgallerydialog.cpp:150
 #, kde-format
 msgid "&Recurse subfolders"
-msgstr "&Все вложенные папки рекурсивно"
+msgstr "&Включать вложенные папки"
 
 #: imgallerydialog.cpp:152
 #, kde-format
@@ -202,7 +202,7 @@ msgstr "Формат &изображения:"
 #: imgallerydialog.cpp:232
 #, kde-format
 msgid "Thumbnail size:"
-msgstr "Размер уменьшенных копий:"
+msgstr "Размер миниатюр:"
 
 #: imgallerydialog.cpp:235
 #, kde-format
@@ -232,7 +232,7 @@ msgstr "Создание галерей изображений работает 
 #: imgalleryplugin.cpp:80
 #, kde-format
 msgid "Creating thumbnails"
-msgstr "Создание уменьшенных копий изображений"
+msgstr "Создание миниатюр"
 
 #: imgalleryplugin.cpp:103 imgalleryplugin.cpp:270
 #, kde-format
@@ -260,7 +260,7 @@ msgid ""
 "Created thumbnail for: \n"
 "%1"
 msgstr ""
-"Создана уменьшенная копия изображения: \n"
+"Создана миниатюра изображения: \n"
 "%1"
 
 #: imgalleryplugin.cpp:210
