@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the konqueror package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024-2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-05 00:45+0000\n"
-"PO-Revision-Date: 2025-12-01 09:33+0200\n"
+"PO-Revision-Date: 2026-10-09 10:05+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -770,25 +770,20 @@ msgid ""
 msgstr "<html><b>%1</b> רוצה לגשת למידע על המקום הפיזי הנוכחי שלך"
 
 #: src/ui/featurepermissionbar.cpp:67
-#, fuzzy, kde-format
-#| msgid "<html><b>%1</b> would like to record your screen"
+#, kde-format
 msgid "<html><b>%1</b> would like to access your clipboard"
-msgstr "<html><b>%1</b> רוצה להקליט את המסך שלך"
+msgstr "<html><b>%1</b> רוצה לגשת ללוח הגזירים שלך"
 
 #: src/ui/featurepermissionbar.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><b>%1</b> would like to access information about your current "
-#| "physical location"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access the fonts installed on your machine"
-msgstr "<html><b>%1</b> רוצה לגשת למידע על המקום הפיזי הנוכחי שלך"
+msgstr "<html><b>%1</b> רוצה לגשת לגופנים שמותקנים במערכת שלך"
 
 #: src/ui/featurepermissionbar.cpp:71
-#, fuzzy, kde-format
-#| msgid "<html><b>%1</b> would like to send you notifications"
+#, kde-format
 msgid "<html><b>%1</b> would like to do something we don't know about"
-msgstr "<html><b>%1</b> רוצה לשלוח לך התראות"
+msgstr "<html><b>%1</b> רוצה לעשות משהו שאנחנו לא יודעים מה הוא"
 
 #: src/ui/passwordbar.cpp:28
 #, kde-format
