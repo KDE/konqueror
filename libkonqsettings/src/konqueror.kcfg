@@ -524,6 +524,12 @@
     </entry>
   </group>
 
+  <group name="WebPermissions">
+    <entry key="PersistentPermissionPolicy" type="Int">
+      <default>2</default>
+    </entry>
+  </group>
+
 <!--TODO Settings: is this worth keeping? it's an hidden option with limited usefulness -->
   <group name="DisableWindowOpenFeatures">
     <entry key="LocationBar" name="locationBarInJsWindows" type="Bool">

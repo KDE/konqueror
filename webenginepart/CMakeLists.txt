@@ -1,5 +1,6 @@
 add_subdirectory(icons)
 add_subdirectory(src)
+add_subdirectory(kcms)
 if (BUILD_TESTING)
     add_subdirectory(tests)
     add_subdirectory(autotests)

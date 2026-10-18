@@ -7,6 +7,8 @@
 #ifndef WEBENGINEPART_PROFILE_H
 #define WEBENGINEPART_PROFILE_H
 
+#include "kwebenginepartlib_export.h"
+
 #include <QWebEngineProfile>
 
 namespace KonqWebEnginePart
@@ -17,7 +19,7 @@ namespace KonqWebEnginePart
  * "should be destroyed on or before application exit". To ensure this, it's
  * recommended to make it a child of the application object.
  */
-class Profile : public QWebEngineProfile
+class KWEBENGINEPARTLIB_EXPORT Profile : public QWebEngineProfile
 {
     Q_OBJECT
 

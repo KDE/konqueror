@@ -168,6 +168,7 @@ void WebEnginePartControls::setup(KonqWebEnginePart::Profile* profile)
     if (browser) {
         m_profile->setHttpUserAgent(browser->userAgent());
         browser->setCookieJar(m_cookieJar);
+        browser->addConfigurationPage("konqueror_kcms/kcm_permissions");
     }
     m_spellCheckerManager = new SpellCheckerManager(profile, this);
     m_downloadManager= new WebEnginePartDownloadManager(profile, this);
@@ -246,6 +247,9 @@ void WebEnginePartControls::reparseConfiguration()
     } else {
         m_profile->setHttpCacheType(QWebEngineProfile::NoCache);
     }
+
+    auto permissionPolicy = static_cast<QWebEngineProfile::PersistentPermissionsPolicy>(Konq::Settings::persistentPermissionPolicy());
+    m_profile->setPersistentPermissionsPolicy(permissionPolicy);
 
     emit updateBackgroundColor(WebEngineSettings::self()->customBackgroundColor());
     updateUserStyleSheetScript();
