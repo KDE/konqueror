@@ -1,5 +1,5 @@
 //  This file is part of the KDE project
-//  SPDX-FileCopyrightText: 2025 Stefano Crocco <stefano.crocco@alice.it>
+//  SPDX-FileCopyrightText: 2025 Stefano Crocco <posta@stefanocrocco.it>
 // 
 //  SPDX-License-Identifier: LGPL-2.0-or-later
 

@@ -1,6 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2009 David Faure <faure@kde.org>
-    SPDX-FileCopyrightText: 2024 Stefano Crocco <stefano.crocco@alice.it>
+    SPDX-FileCopyrightText: 2024 Stefano Crocco <posta@stefanocrocco.it>
 
     SPDX-License-Identifier: LGPL-2.0-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */

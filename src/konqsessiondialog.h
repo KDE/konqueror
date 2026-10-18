@@ -1,7 +1,7 @@
 /*
     This file is part of the KDE project
     SPDX-FileCopyrightText: 2008 Eduardo Robles Elvira <edulix@gmail.com>
-    SPDX-FileCopyrightText: 2025 Stefano Crocco <stefano.crocco@alice.it>
+    SPDX-FileCopyrightText: 2025 Stefano Crocco <posta@stefanocrocco.it>
 
     SPDX-License-Identifier: GPL-2.0-or-later
 */

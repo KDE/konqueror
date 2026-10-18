@@ -2,7 +2,7 @@
 
     SPDX-FileCopyrightText: 2002-2003 Konqueror Developers <konq-e@kde.org>
     SPDX-FileCopyrightText: 2002-2003 Douglas Hanley <douglash@caltech.edu>
-    SPDX-FileCopyrightText: 2025 Stefano Crocco <stefano.crocco@alice.it>
+    SPDX-FileCopyrightText: 2025 Stefano Crocco <posta@stefanocrocco.it>
 
     SPDX-License-Identifier: GPL-2.0-or-later
 */

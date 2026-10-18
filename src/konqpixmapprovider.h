@@ -1,6 +1,6 @@
 /* This file is part of the KDE project
     SPDX-FileCopyrightText: 2000 Carsten Pfeiffer <pfeiffer@kde.org>
-                            2024 Stefano Crocco <stefano.crocco@alice.it>
+                            2024 Stefano Crocco <posta@stefanocrocco.it>
 
     SPDX-License-Identifier: GPL-2.0-or-later
 */

@@ -3,7 +3,7 @@
     Derived from jsopts.h and javaopts.h, code copied from there is
     copyrighted to its respective owners.
 
-    SPDX-FileCopyrightText: 2024 Stefano Crocco <stefano.crocco@alice.it>
+    SPDX-FileCopyrightText: 2024 Stefano Crocco <posta@stefanocrocco.it>
     Merged JSDomainListView (previously in jsopts.h) and DomainListView
 
     SPDX-License-Identifier: GPL-2.0-or-later

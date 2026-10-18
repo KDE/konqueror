@@ -1,5 +1,5 @@
 /*
-    SPDX-FileCopyrightText: 2025 Stefano Crocc <stefano.crocco@alice.it>
+    SPDX-FileCopyrightText: 2025 Stefano Crocc <posta@stefanocrocco.it>
 
     SPDX-License-Identifier: GPL-2.0-or-later
 */
