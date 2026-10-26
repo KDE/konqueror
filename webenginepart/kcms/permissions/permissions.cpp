@@ -144,11 +144,11 @@ QString Permissions::permissionTypeToolTip(QWebEnginePermission::PermissionType 
         case QWebEnginePermission::PermissionType::MediaAudioCapture:
             return i18nc("@info:tooltip", "Permission to access audio sources such as a microphone");
         case QWebEnginePermission::PermissionType::MediaVideoCapture:
-            return i18nc("@info:tooltip", "Permission to access video sources souch as a webcam");
+            return i18nc("@info:tooltip", "Permission to access video sources such as a webcam");
         case QWebEnginePermission::PermissionType::MediaAudioVideoCapture:
             return i18nc("@info:tooltip", "Permission to access audio sources such as a microphone and video sources such a webcam");
         case QWebEnginePermission::PermissionType::DesktopVideoCapture:
-            return i18nc("@info:tooltip", "Permission to access screen contents ");
+            return i18nc("@info:tooltip", "Permission to access screen contents");
         case QWebEnginePermission::PermissionType::DesktopAudioVideoCapture:
             return i18nc("@info:tooltip", "Permission to access screen contents and application audio");
         case QWebEnginePermission::PermissionType::MouseLock:
