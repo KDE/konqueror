@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-26 00:49+0000\n"
+"POT-Creation-Date: 2026-10-27 00:59+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -99,7 +99,7 @@ msgstr ""
 #: kcms/permissions/permissions.cpp:147
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Permission to access video sources souch as a webcam"
+msgid "Permission to access video sources such as a webcam"
 msgstr ""
 
 #: kcms/permissions/permissions.cpp:149
@@ -111,10 +111,13 @@ msgid ""
 msgstr ""
 
 #: kcms/permissions/permissions.cpp:151
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><b>%1</b> would like to access information about your current "
+#| "physical location"
 msgctxt "@info:tooltip"
-msgid "Permission to access screen contents "
-msgstr ""
+msgid "Permission to access screen contents"
+msgstr "<html><b>%1</b> 想获取您的物理位置信息"
 
 #: kcms/permissions/permissions.cpp:153
 #, kde-format

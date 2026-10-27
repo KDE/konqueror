@@ -12,15 +12,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-26 00:49+0000\n"
-"PO-Revision-Date: 2026-10-05 11:35+0100\n"
+"POT-Creation-Date: 2026-10-27 00:59+0000\n"
+"PO-Revision-Date: 2026-10-26 15:42+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -38,74 +38,75 @@ msgstr ""
 #, kde-format
 msgctxt "Permission to access the microphone"
 msgid "Microphone access"
-msgstr ""
+msgstr "Acceso al micrófono"
 
 #: kcms/permissions/permissions.cpp:118
 #, kde-format
 msgctxt "Permission to access the webcam"
 msgid "Webcam access"
-msgstr ""
+msgstr "Acceso a la cámara web"
 
 #: kcms/permissions/permissions.cpp:120
 #, kde-format
 msgctxt "Permission to access the microphone and the webcam"
 msgid "Microphone and webcam access"
-msgstr ""
+msgstr "Acceso al micrófono y a la cámara web"
 
 #: kcms/permissions/permissions.cpp:122
-#, fuzzy, kde-format
-#| msgid "Screen"
+#, kde-format
 msgctxt "Permission to access the user's screen"
 msgid "Screen access"
-msgstr "Pantalla"
+msgstr "Acceso a la pantalla"
 
 #: kcms/permissions/permissions.cpp:124
 #, kde-format
 msgctxt "Permission to access the user's screen and application audio"
 msgid "Screen and application audio access"
-msgstr ""
+msgstr "Acceso a la pantalla y al sonido de la aplicación"
 
 #: kcms/permissions/permissions.cpp:126
 #, kde-format
 msgctxt "Permission to lock the mouse pointer inside the page"
 msgid "Mouse pointer locking"
-msgstr ""
+msgstr "Bloqueo del puntero del ratón"
 
 #: kcms/permissions/permissions.cpp:128
 #, kde-format
 msgctxt "Permission to send notifications"
 msgid "Notifications"
-msgstr ""
+msgstr "Notificaciones"
 
 #: kcms/permissions/permissions.cpp:130
 #, kde-format
 msgctxt "Permission to access the user's physical location"
 msgid "Physical location access"
-msgstr ""
+msgstr "Acceso de ubicación física"
 
 #: kcms/permissions/permissions.cpp:132
 #, kde-format
 msgctxt "Permission to read and write the user's clipboard"
 msgid "Clipboard access"
-msgstr ""
+msgstr "Acceso al portapapeles"
 
 #: kcms/permissions/permissions.cpp:134
 #, kde-format
 msgctxt "Permission to access the user's local fonts"
 msgid "Local fonts access"
-msgstr ""
+msgstr "Acceso a los tipos de letra locales"
 
 #: kcms/permissions/permissions.cpp:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access audio sources such as a microphone"
-msgstr ""
+msgstr "Permiso para acceder a fuentes de audio, como un micrófono"
 
 #: kcms/permissions/permissions.cpp:147
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Permission to access video sources souch as a webcam"
 msgctxt "@info:tooltip"
-msgid "Permission to access video sources souch as a webcam"
-msgstr ""
+msgid "Permission to access video sources such as a webcam"
+msgstr "Permiso para acceder a fuentes de vídeo, como una cámara web"
 
 #: kcms/permissions/permissions.cpp:149
 #, kde-format
@@ -114,75 +115,79 @@ msgid ""
 "Permission to access audio sources such as a microphone and video sources "
 "such a webcam"
 msgstr ""
+"Permiso para acceder a fuentes de audio, como un micrófono, y de vídeo, como "
+"una cámara web"
 
 #: kcms/permissions/permissions.cpp:151
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Permission to access screen contents "
 msgctxt "@info:tooltip"
-msgid "Permission to access screen contents "
-msgstr ""
+msgid "Permission to access screen contents"
+msgstr "Permiso para acceder al contenido de la pantalla"
 
 #: kcms/permissions/permissions.cpp:153
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access screen contents and application audio"
 msgstr ""
+"Permiso para acceder al contenido de la pantalla y al audio de la aplicación"
 
 #: kcms/permissions/permissions.cpp:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to lock the mouse pointer inside a specific part of the page"
 msgstr ""
+"Permiso para bloquear el puntero del ratón dentro de una determinada parte "
+"de la página"
 
 #: kcms/permissions/permissions.cpp:157
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to send notifications"
-msgstr ""
+msgstr "Permiso para enviar notificaciones"
 
 #: kcms/permissions/permissions.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access your physical location"
-msgstr ""
+msgstr "Permiso para acceder a su ubicación física"
 
 #: kcms/permissions/permissions.cpp:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to read and modify the contents of the clipboard"
-msgstr ""
+msgstr "Permiso para leer y modificar el contenido del portapapeles"
 
 #: kcms/permissions/permissions.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><b>%1</b> would like to access the fonts installed on your machine"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access the fonts installed on your machine"
-msgstr ""
-"<html><b>%1</b> quiere acceder a los tipos de letra instalados en el sistema"
+msgstr "Permiso para acceder a los tipos de letra instalados en el sistema"
 
 #: kcms/permissions/permissions.cpp:175
 #, kde-format
 msgctxt "@item:inlistbox Ask for permission next time"
 msgid "Ask next time"
-msgstr ""
+msgstr "Preguntar la próxima vez"
 
 #: kcms/permissions/permissions.cpp:177
 #, kde-format
 msgctxt "@item:inlistbox Ask for permission every time"
 msgid "Ask every time"
-msgstr ""
+msgstr "Preguntar siempre"
 
 #: kcms/permissions/permissions.cpp:180
 #, kde-format
 msgctxt "@item:inlistbox The permission has been granted"
 msgid "Granted"
-msgstr ""
+msgstr "Concedido"
 
 #: kcms/permissions/permissions.cpp:182
 #, kde-format
 msgctxt "@item:inlistbox The permission has been denied"
 msgid "Denied"
-msgstr ""
+msgstr "Denegado"
 
 #: kcms/permissions/permissions.cpp:194
 #, kde-format
@@ -191,56 +196,56 @@ msgid ""
 "The permission has never been asked before. You'll be asked the next time "
 "the web page requires it"
 msgstr ""
+"El permiso no se había solicitado anteriormente. Se le solicitará la próxima "
+"vez que la página web lo requiera."
 
 #: kcms/permissions/permissions.cpp:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You'll be asked for the permission every time a page requires it"
-msgstr ""
+msgstr "Se le solicitará permiso cada vez que la página lo requiera."
 
 #: kcms/permissions/permissions.cpp:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have already granted this permission"
-msgstr ""
+msgstr "Ya ha concedido este permiso."
 
 #: kcms/permissions/permissions.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have already denied this permission"
-msgstr ""
+msgstr "Ya ha denegado este permiso."
 
 #: kcms/permissions/permissions.cpp:278
 #, kde-format
 msgctxt "@title:column The type of permission"
 msgid "Permission type"
-msgstr ""
+msgstr "Tipo de permiso"
 
 #: kcms/permissions/permissions.cpp:279 kcms/permissions/permissions.cpp:306
 #, kde-format
 msgctxt "@title:column The status of a permission permission"
 msgid "Status"
-msgstr ""
+msgstr "Estado"
 
 #: kcms/permissions/permissions.cpp:305
 #, kde-format
 msgctxt "@title:column the origin the permission was granted to"
 msgid "Origin"
-msgstr ""
+msgstr "Origen"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Permissions)
 #: kcms/permissions/permissions.ui:14
 #, kde-format
 msgid "Form"
-msgstr ""
+msgstr "Convención"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: kcms/permissions/permissions.ui:20
-#, fuzzy, kde-format
-#| msgctxt "@action:grant permission"
-#| msgid "&Grant permission"
+#, kde-format
 msgid "Persistent permission policy"
-msgstr "&Conceder permiso"
+msgstr "Política de permisos persistentes"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, defaultPermissionPolicy)
 #: kcms/permissions/permissions.ui:33
@@ -261,53 +266,64 @@ msgid ""
 "time, regardless of this setting.</p>\n"
 "</body></html>"
 msgstr ""
+"<html><head/><body><p>Qué se debe hacer cuando una página solicite un "
+"permiso:</p>\n"
+"<ul>\n"
+"<li><strong>Preguntar siempre</strong>: preguntar cada vez que la página "
+"requiera el permiso, ya sea para concederlo o para denegarlo.</li>\n"
+"<li><strong>Preguntar una vez por sesión</strong>: preguntar solo la primera "
+"vez que la página requiera el permiso y usar la misma respuesta hasta que "
+"cierre Konqueror.</li>\n"
+"<li><strong>Preguntar solo una vez</strong>: preguntar solo la primera vez "
+"que la página requiera el permiso y usar la misma respuesta desde ese "
+"momento.</li>\n"
+"</ul>\n"
+"<p><strong>Nota:</strong> por motivos de seguridad, algunos permisos (como "
+"el permiso para acceder a micrófonos o cámaras web) se solicitan cada vez "
+"sin tener en cuenta este ajuste.</p>\n"
+"</body></html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, defaultPermissionPolicy)
 #: kcms/permissions/permissions.ui:37
 #, kde-format
 msgid "Ask every time"
-msgstr ""
+msgstr "Preguntar siempre"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, defaultPermissionPolicy)
 #: kcms/permissions/permissions.ui:42
 #, kde-format
 msgid "Only ask once per session"
-msgstr ""
+msgstr "Preguntar una vez por sesión"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, defaultPermissionPolicy)
 #: kcms/permissions/permissions.ui:47
-#, fuzzy, kde-format
-#| msgid "Only this cookie"
+#, kde-format
 msgid "Only ask once"
-msgstr "Solo esta cookie"
+msgstr "Preguntar solo una vez"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: kcms/permissions/permissions.ui:58
-#, fuzzy, kde-format
-#| msgctxt "@action:deny permission"
-#| msgid "&Deny permission"
+#, kde-format
 msgid "Existing permissions"
-msgstr "&Denegar permiso"
+msgstr "Permisos existentes"
 
 #. i18n: ectx: property (text), widget (QPushButton, resetAllPermissionsBtn)
 #: kcms/permissions/permissions.ui:79
-#, fuzzy, kde-format
-#| msgctxt "@action:deny permission"
-#| msgid "&Deny permission"
+#, kde-format
 msgid "Reset all permissions"
-msgstr "&Denegar permiso"
+msgstr "Reiniciar todos los permisos"
 
 #. i18n: ectx: property (text), widget (QRadioButton, groupByOrigin)
 #: kcms/permissions/permissions.ui:103
 #, kde-format
 msgid "By origin"
-msgstr ""
+msgstr "Por origen"
 
 #. i18n: ectx: property (text), widget (QRadioButton, groupByType)
 #: kcms/permissions/permissions.ui:113
 #, kde-format
 msgid "By type"
-msgstr ""
+msgstr "Por tipo"
 
 #: src/about/konq_aboutpage.cpp:84
 #, kde-format

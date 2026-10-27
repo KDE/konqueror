@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-26 00:49+0000\n"
+"POT-Creation-Date: 2026-10-27 00:59+0000\n"
 "PO-Revision-Date: 2023-01-07 10:35+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -105,7 +105,7 @@ msgstr ""
 #: kcms/permissions/permissions.cpp:147
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Permission to access video sources souch as a webcam"
+msgid "Permission to access video sources such as a webcam"
 msgstr ""
 
 #: kcms/permissions/permissions.cpp:149
@@ -117,10 +117,14 @@ msgid ""
 msgstr ""
 
 #: kcms/permissions/permissions.cpp:151
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><b>%1</b> would like to access information about your current "
+#| "physical location"
 msgctxt "@info:tooltip"
-msgid "Permission to access screen contents "
+msgid "Permission to access screen contents"
 msgstr ""
+"<html><b>%1</b> να έχει πρόσβαση σε πληροφορίες σχετικά με τη φυσική σας θέση"
 
 #: kcms/permissions/permissions.cpp:153
 #, kde-format

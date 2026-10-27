@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-26 00:49+0000\n"
+"POT-Creation-Date: 2026-10-27 00:59+0000\n"
 "PO-Revision-Date: 2010-03-06 09:46+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -100,7 +100,7 @@ msgstr ""
 #: kcms/permissions/permissions.cpp:147
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Permission to access video sources souch as a webcam"
+msgid "Permission to access video sources such as a webcam"
 msgstr ""
 
 #: kcms/permissions/permissions.cpp:149
@@ -112,10 +112,14 @@ msgid ""
 msgstr ""
 
 #: kcms/permissions/permissions.cpp:151
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Do you want to allow this site to attach the following files to the "
+#| "email message ?</qt>"
 msgctxt "@info:tooltip"
-msgid "Permission to access screen contents "
+msgid "Permission to access screen contents"
 msgstr ""
+"<qt>คุณต้องการจะอนุญาตให้เว็บไซต์นี้ทำการแนบแฟ้มต่าง ๆ ต่อไปนี้เข้าไปยังจดหมายหรือไม่ ?</qt>"
 
 #: kcms/permissions/permissions.cpp:153
 #, kde-format

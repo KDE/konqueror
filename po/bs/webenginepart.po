@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bosnianuniversetranslation\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-26 00:49+0000\n"
+"POT-Creation-Date: 2026-10-27 00:59+0000\n"
 "PO-Revision-Date: 2013-12-31 01:08+0000\n"
 "Last-Translator: memsud <dedovic.memsud94@hotmail.com>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -103,7 +103,7 @@ msgstr ""
 #: kcms/permissions/permissions.cpp:147
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Permission to access video sources souch as a webcam"
+msgid "Permission to access video sources such as a webcam"
 msgstr ""
 
 #: kcms/permissions/permissions.cpp:149
@@ -115,10 +115,15 @@ msgid ""
 msgstr ""
 
 #: kcms/permissions/permissions.cpp:151
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>Do you want to grant the site access to information about your "
+#| "current physical location?"
 msgctxt "@info:tooltip"
-msgid "Permission to access screen contents "
+msgid "Permission to access screen contents"
 msgstr ""
+"<html> Želite li odobriti pristup web informacijama o svom trenutnom "
+"fizičkom mjestu?"
 
 #: kcms/permissions/permissions.cpp:153
 #, kde-format

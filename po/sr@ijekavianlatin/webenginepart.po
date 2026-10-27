@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-26 00:49+0000\n"
+"POT-Creation-Date: 2026-10-27 00:59+0000\n"
 "PO-Revision-Date: 2017-12-03 22:53+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -102,7 +102,7 @@ msgstr ""
 #: kcms/permissions/permissions.cpp:147
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Permission to access video sources souch as a webcam"
+msgid "Permission to access video sources such as a webcam"
 msgstr ""
 
 #: kcms/permissions/permissions.cpp:149
@@ -114,10 +114,15 @@ msgid ""
 msgstr ""
 
 #: kcms/permissions/permissions.cpp:151
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>Do you want to grant the site access to information about your "
+#| "current physical location?"
 msgctxt "@info:tooltip"
-msgid "Permission to access screen contents "
+msgid "Permission to access screen contents"
 msgstr ""
+"<html>Želite li da dozvolite sajtu pristup podacima o vašoj tekućoj fizičkoj "
+"lokaciji?</html>"
 
 #: kcms/permissions/permissions.cpp:153
 #, kde-format
