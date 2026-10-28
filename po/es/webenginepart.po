@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-27 00:59+0000\n"
-"PO-Revision-Date: 2026-10-26 15:42+0100\n"
+"PO-Revision-Date: 2026-10-27 11:25+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -101,9 +101,7 @@ msgid "Permission to access audio sources such as a microphone"
 msgstr "Permiso para acceder a fuentes de audio, como un micrófono"
 
 #: kcms/permissions/permissions.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Permission to access video sources souch as a webcam"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access video sources such as a webcam"
 msgstr "Permiso para acceder a fuentes de vídeo, como una cámara web"
@@ -119,9 +117,7 @@ msgstr ""
 "una cámara web"
 
 #: kcms/permissions/permissions.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Permission to access screen contents "
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access screen contents"
 msgstr "Permiso para acceder al contenido de la pantalla"

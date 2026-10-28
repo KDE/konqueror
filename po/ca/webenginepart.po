@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-27 00:59+0000\n"
-"PO-Revision-Date: 2026-10-26 10:14+0100\n"
+"PO-Revision-Date: 2026-10-27 10:17+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -98,9 +98,7 @@ msgid "Permission to access audio sources such as a microphone"
 msgstr "Permís d'accés a fonts d'àudio com un micròfon"
 
 #: kcms/permissions/permissions.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Permission to access video sources souch as a webcam"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access video sources such as a webcam"
 msgstr "Permís d'accés a fonts de vídeo com una càmera web"
@@ -116,9 +114,7 @@ msgstr ""
 "càmera web"
 
 #: kcms/permissions/permissions.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Permission to access screen contents "
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access screen contents"
 msgstr "Permís d'accés al contingut de la pantalla"

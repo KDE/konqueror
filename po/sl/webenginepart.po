@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-27 00:59+0000\n"
-"PO-Revision-Date: 2026-10-26 07:16+0100\n"
+"PO-Revision-Date: 2026-10-27 16:15+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -97,9 +97,7 @@ msgid "Permission to access audio sources such as a microphone"
 msgstr "Dovoljenje za dostop do zvočnih virov, kot je mikrofon"
 
 #: kcms/permissions/permissions.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Permission to access video sources souch as a webcam"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access video sources such as a webcam"
 msgstr "Dovoljenje za dostop do video virov, kot je spletna kamera"
@@ -115,9 +113,7 @@ msgstr ""
 "je spletna kamera"
 
 #: kcms/permissions/permissions.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Permission to access screen contents "
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access screen contents"
 msgstr "Dovoljenje za dostop do vsebine zaslona"

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-27 00:59+0000\n"
-"PO-Revision-Date: 2026-10-26 18:23+0200\n"
+"PO-Revision-Date: 2026-10-27 12:17+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -97,9 +97,7 @@ msgid "Permission to access audio sources such as a microphone"
 msgstr "Дозвіл на доступ до джерел звукових даних, зокрема мікрофона"
 
 #: kcms/permissions/permissions.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Permission to access video sources souch as a webcam"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access video sources such as a webcam"
 msgstr "Права доступу до джерел відео, зокрема вебкамери"
@@ -115,9 +113,7 @@ msgstr ""
 "відеоданих, зокрема вебкамери"
 
 #: kcms/permissions/permissions.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Permission to access screen contents "
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access screen contents"
 msgstr "Права доступу до вмісту екрана"

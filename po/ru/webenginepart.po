@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-27 00:59+0000\n"
-"PO-Revision-Date: 2026-10-26 07:46+0200\n"
+"PO-Revision-Date: 2026-10-27 07:46+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -102,11 +102,8 @@ msgctxt "@info:tooltip"
 msgid "Permission to access audio sources such as a microphone"
 msgstr "Разрешение на доступ к источникам звука, например к микрофону"
 
-# BUGME: typo: "souch" -> "such" --ayavorsky 2026-10-26
 #: kcms/permissions/permissions.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Permission to access video sources souch as a webcam"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access video sources such as a webcam"
 msgstr "Разрешение на доступ к источникам видео, например к веб-камере"
@@ -123,12 +120,10 @@ msgstr ""
 "источникам видео, например к веб-камере"
 
 #: kcms/permissions/permissions.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Permission to access screen contents "
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access screen contents"
-msgstr "Разрешение на доступ к содержимому экрана "
+msgstr "Разрешение на доступ к содержимому экрана"
 
 #: kcms/permissions/permissions.cpp:153
 #, kde-format
