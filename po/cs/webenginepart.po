@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-27 00:59+0000\n"
-"PO-Revision-Date: 2026-10-26 12:52+0100\n"
+"PO-Revision-Date: 2026-10-28 22:54+0100\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -99,9 +99,7 @@ msgid "Permission to access audio sources such as a microphone"
 msgstr "Oprávnění k přístupu ke zvukovým zdrojům, jako je například mikrofon"
 
 #: kcms/permissions/permissions.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Permission to access video sources souch as a webcam"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access video sources such as a webcam"
 msgstr "Oprávnění k přístupu ke zdrojům videa, jako je například webová kamera"
@@ -117,12 +115,10 @@ msgstr ""
 "jako je webová kamera"
 
 #: kcms/permissions/permissions.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Permission to access screen contents "
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access screen contents"
-msgstr "Oprávnění k přístupu k obsahu obrazovky "
+msgstr "Oprávnění k přístupu k obsahu obrazovky"
 
 #: kcms/permissions/permissions.cpp:153
 #, kde-format

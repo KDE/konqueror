@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-27 00:59+0000\n"
-"PO-Revision-Date: 2026-10-26 13:50+0200\n"
+"PO-Revision-Date: 2026-10-28 16:48+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -95,12 +95,10 @@ msgid "Permission to access audio sources such as a microphone"
 msgstr "Разрешение за достъп до аудио източници, като например микрофон"
 
 #: kcms/permissions/permissions.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Permission to access video sources souch as a webcam"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access video sources such as a webcam"
-msgstr "Разрешение за достъп до видеоизточници като уеб камера"
+msgstr "Разрешение за достъп до видеоизточници, като например уеб камера"
 
 #: kcms/permissions/permissions.cpp:149
 #, kde-format
@@ -113,9 +111,7 @@ msgstr ""
 "уеб камера"
 
 #: kcms/permissions/permissions.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Permission to access screen contents "
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access screen contents"
 msgstr "Разрешение за достъп до съдържанието на екрана"
