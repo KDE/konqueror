@@ -242,7 +242,7 @@ public:
      * @return `true` if there was an error while trying to load the URL and `false`
      * if there were no errors
      */
-    bool hasError() const {return m_jobErrorCode;}
+    bool hasError() const {return m_errorCode;}
 
     /**
      * @brief Tells the UrlLoader whether the URL should always be loaded in a new
@@ -617,13 +617,13 @@ private:
      * - if the parent directory can't be entered (according to `QFileInfo::isExecutable()`), it assumes that the permissions don't
      *   allow reading for the user.
      *
-     * @return a `KIO::Error` value if @p can't be read or 0 if it can be read and, in case it's a directory, entered. In particular,
-     *   it returns
-     *      - `KIO::ERR_DOES_NOT_EXIST` if @p path doesn't exist
-     *      - `KIO::ERR_CANNOT_OPEN_FOR_READING` if @p path exists but can't be read
-     *      - `ERR_CANNOT_ENTER_DIRECTORY` if @p path is a directory which can't be entered
+     * It sets the error status of the UrlLoader according to the results:
+     * - if @p path doesn't exist, it uses `KIO::ERR_DOES_NOT_EXIST`
+     * - if @p path exists but can't be read, it uses `KIO::ERR_CANNOT_OPEN_FOR_READING`
+     * - if @p path is a directory which can't be entered, it uses `KIO::ERR_CANNOT_ENTER_DIRECTORY`
+     * - if there's no error, it sets the state to no error
      */
-    static int checkAccessToLocalFile(const QString &path);
+    void checkAccessToLocalFile(const QString &path);
 
     typedef QPair<OpenUrlAction, KService::Ptr> OpenSaveAnswer;
 
@@ -695,6 +695,25 @@ private:
      */
     QString startingSaveDir() const;
 
+    /**
+     * @brief Changes the error state associated with the URL loader
+     *
+     * If @p errorCode is not 0 (meaning there's an error) the error code (#m_jobErrorCode), mimetype, URL, chosen action and
+     * part associated with the UrlLoader are changed so that performAction() will show the error page.
+     *
+     * If @p errorCode is 0 (there's no error), #m_jobErrorCode will be set to 0 but nothing else will be done.
+     *
+     * If the UrlLoader already has an error, this does nothing: since we can only show one error page, we choose the one
+     * describing the error which happened first (latter errors may be consequences of the first).
+     *
+     * @param errorCode the `KIO` error code associated with the error, `KIO::ERR_WORKER_DEFINED` if the error is not from `KIO` or
+     * 0 if there was no error
+     * @param errorText a text to describe the error. Not needed if the error comes from `KIO`. Ignored if @p errorCode is 0
+     * @param initialUrl the URL we have been trying to load. If invalid, the URL associated with the UrlLoader (#m_url) will be used
+     * (in most cases, this is what you want so you can just omit this parameter)
+     */
+    void changeErrorState(int errorCode, const QString &errorText = {}, const QUrl &initialUrl = {});
+
 private:
     QPointer<KonqMainWindow> m_mainWindow; //!< The main window
 
@@ -742,7 +761,14 @@ private:
     QPointer<KIO::MimeTypeFinderJob> m_mimeTypeFinderJob = nullptr; //!< The job to find the mimetype of the URL
 
     QString m_oldLocationBarUrl; //!< The previous content of the location bar
-    int m_jobErrorCode = 0; //!< The error code returned by the last run job
+
+    /**
+     * @brief A code representing the first error which occurred while loading the URL
+     *
+     * 0 means no error occurs. Other possible values are the `KIO` error codes or `KIO::ERR_WORKER_DEFINED`
+     * for errors not described by `KIO` error codes
+     */
+    int m_errorCode = 0;
     bool m_protocolAllowsReading; //!< Whether the protocol associated to the URL allows reading
     bool m_useDownloadJob = false; ///<Whether the URL should be downloaded using a DownloadJob instead of letting the part displaying it do the download
     QPointer<KonqInterfaces::DownloadJob> m_downloadJob; //!<The job to use to download the URL, if any

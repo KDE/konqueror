@@ -82,6 +82,24 @@ UrlLoader::~UrlLoader()
 {
 }
 
+void UrlLoader::changeErrorState(int errorCode, const QString &errorText, const QUrl& initialUrl)
+{
+    if (hasError()) {
+        return;
+    }
+    QString text = errorText.isEmpty() ? m_url.toString() : errorText;
+    QUrl url = initialUrl.isValid() ? initialUrl : m_url;
+    QUrl errorUrl = makeErrorUrl(errorCode, text, url);
+    m_errorCode = errorCode;
+    if (errorCode == 0) {
+        return;
+    }
+    m_url = errorUrl;
+    m_mimeType = QStringLiteral("text/html");
+    m_request.chosenAction = Konq::UrlAction::Embed;
+    m_part = findPartById(QStringLiteral("webenginepart"));
+}
+
 void UrlLoader::updateAllowedActions()
 {
     if (m_allowedActions.isAllowed(UrlAction::Execute) && !isUrlExecutable()) {
@@ -553,10 +571,7 @@ void UrlLoader::launchMimeTypeFinderJob()
 void UrlLoader::mimetypeDeterminedByJob()
 {
     if (m_mimeTypeFinderJob->error()) {
-        m_jobErrorCode = m_mimeTypeFinderJob->error();
-        m_url = makeErrorUrl(m_jobErrorCode, m_mimeTypeFinderJob->errorString(), m_url);
-        m_mimeType = QStringLiteral("text/html");
-        m_request.chosenAction = OpenUrlAction::Embed;
+        changeErrorState(m_mimeTypeFinderJob->error(), m_mimeTypeFinderJob->errorString(), m_url);
         performAction();
         return;
     }
@@ -608,22 +623,29 @@ void UrlLoader::detectSettingsForRemoteFiles()
     }
 }
 
-int UrlLoader::checkAccessToLocalFile(const QString& path)
+void UrlLoader::checkAccessToLocalFile(const QString& path)
 {
-    QFileInfo info(path);
-    bool fileExists = info.exists();
+    //We want parentInfo to be the same regardless of whether path ends with a / or not
+    //With the trailing slash info.dir() would return a directory with the same path as path
+    //except without the trailing slash (if path is "/xxx/" info.dir().path() would be "/xxx").
+    //To avoid this, we always remove a trailing /
+    QString strippedPath = path.endsWith('/') ? path.first(path.length()-1) : path;
+    QFileInfo info(strippedPath);
+    int error = 0;
     if (!info.isReadable()) {
         QFileInfo parentInfo(info.dir().path());
-        if (parentInfo.isExecutable() && !fileExists) {
-            return KIO::ERR_DOES_NOT_EXIST;
+        if (parentInfo.isExecutable() && !info.exists()) {
+            error = KIO::ERR_DOES_NOT_EXIST;
         } else {
-            return KIO::ERR_CANNOT_OPEN_FOR_READING;
+            error = KIO::ERR_CANNOT_OPEN_FOR_READING;
         }
     } else if (info.isDir() && !info.isExecutable()) {
-        return KIO::ERR_CANNOT_ENTER_DIRECTORY;
+        error = KIO::ERR_CANNOT_ENTER_DIRECTORY;
     } else {
-        return 0;
+        error = 0;
     }
+    changeErrorState(error);
+
 }
 
 void UrlLoader::detectArchiveSettings()
@@ -665,7 +687,10 @@ void UrlLoader::detectSettingsForLocalFiles()
 
     m_useDownloadJob = false; //If the file is local, there's no need to download it
 
-    m_jobErrorCode = checkAccessToLocalFile(m_url.path());
+    checkAccessToLocalFile(m_url.path());
+    if (hasError()) {
+        return;
+    }
 
     if (!m_mimeType.isEmpty()) {
         detectArchiveSettings();
@@ -678,13 +703,9 @@ void UrlLoader::detectSettingsForLocalFiles()
             }
         }
     } else {
-        if (QFile::exists(m_url.path())) {
-            QMimeDatabase db;
-            m_mimeType = db.mimeTypeForFile(m_url.path()).name();
-        } else {
-            //Treat the nonexisting file as a directory
-            m_mimeType = QStringLiteral("inode/directory");
-        }
+        //checkAccessToLocalFile() has already checked that the file exists
+        QMimeDatabase db;
+        m_mimeType = db.mimeTypeForFile(m_url.path()).name();
     }
 }
 
@@ -699,13 +720,6 @@ bool UrlLoader::shouldEmbedThis() const
 
 void UrlLoader::embed()
 {
-    if (m_jobErrorCode) {
-        QUrl url = m_url;
-        m_url = makeErrorUrl(m_jobErrorCode, m_url.scheme(), m_url);
-        m_mimeType = QStringLiteral("text/html");
-        m_part = findPartById(QStringLiteral("webenginepart"));
-    }
-
     //We need a copy of the request because we need to force embedding: KonqMainWindow::openView()
     //uses KonqFMSettings::shouldEmbed() to determine whether to embed an URL, but if we're here
     //it means that the user already decided to embed it and that choice should override what
@@ -827,7 +841,7 @@ void UrlLoader::open()
         done();
         return;
     }
-    if (m_jobErrorCode != 0) {
+    if (m_errorCode != 0) {
         done();
         return;
     }
@@ -905,5 +919,5 @@ UrlLoader::ViewToUse UrlLoader::viewToUse() const
 
 void UrlLoader::jobFinished(KJob* job)
 {
-    m_jobErrorCode = job->error();
+    changeErrorState(job->error());
 }
