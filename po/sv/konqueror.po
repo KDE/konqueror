@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-26 00:49+0000\n"
+"POT-Creation-Date: 2026-11-08 12:50+0000\n"
 "PO-Revision-Date: 2026-07-08 08:38+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -2039,19 +2039,19 @@ msgstr "Varning"
 msgid "Resend"
 msgstr "Skicka igen"
 
-#: src/urlloader.cpp:400
+#: src/urlloader.cpp:418
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "Kör"
 
-#: src/urlloader.cpp:403
+#: src/urlloader.cpp:421
 #, kde-format
 msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
 msgstr "Visa"
 
-#: src/urlloader.cpp:410
+#: src/urlloader.cpp:428
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
@@ -2061,19 +2061,19 @@ msgid ""
 "display it?"
 msgstr "<filename>%1</filename> går att köra. Vill du köra den eller visa den?"
 
-#: src/urlloader.cpp:416
+#: src/urlloader.cpp:434
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<filename>%1</filename> går att köra. Vill du köra den?"
 
-#: src/urlloader.cpp:768
+#: src/urlloader.cpp:782
 #, kde-format
 msgid "Save As"
 msgstr "Spara som"
 
-#: src/urlloader.cpp:825
+#: src/urlloader.cpp:839
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
