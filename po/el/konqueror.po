@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-26 00:49+0000\n"
+"POT-Creation-Date: 2026-11-09 00:55+0000\n"
 "PO-Revision-Date: 2023-01-07 10:28+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -2059,7 +2059,7 @@ msgstr "Προειδοποίηση"
 msgid "Resend"
 msgstr "Αποστολή ξανά"
 
-#: src/urlloader.cpp:400
+#: src/urlloader.cpp:418
 #, fuzzy, kde-format
 #| msgctxt "Execute an executable file"
 #| msgid "Execute it"
@@ -2067,7 +2067,7 @@ msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "Εκτελέστε το"
 
-#: src/urlloader.cpp:403
+#: src/urlloader.cpp:421
 #, fuzzy, kde-format
 #| msgctxt "Display an executable file"
 #| msgid "Display it"
@@ -2075,7 +2075,7 @@ msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
 msgstr "Να εμφανιστεί"
 
-#: src/urlloader.cpp:410
+#: src/urlloader.cpp:428
 #, fuzzy, kde-kuit-format
 #| msgctxt ""
 #| "The user has to decide whether to execute an executable file or display it"
@@ -2090,7 +2090,7 @@ msgid ""
 msgstr ""
 "Το <tt>%1</tt> μπορεί να εκτελεστεί. Θα το εκτελέσετε ή θα το εμφανίσετε;"
 
-#: src/urlloader.cpp:416
+#: src/urlloader.cpp:434
 #, fuzzy, kde-kuit-format
 #| msgctxt ""
 #| "The user has to decide whether to execute an executable file or not"
@@ -2100,12 +2100,12 @@ msgctxt ""
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "Το <tt>%1</tt> μπορεί να εκτελεστεί. Θα το εκτελέσετε;"
 
-#: src/urlloader.cpp:768
+#: src/urlloader.cpp:782
 #, kde-format
 msgid "Save As"
 msgstr "Αποθήκευση ως"
 
-#: src/urlloader.cpp:825
+#: src/urlloader.cpp:839
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
