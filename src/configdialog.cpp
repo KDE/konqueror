@@ -29,7 +29,7 @@ Konq::ConfigDialog::ConfigDialog(QWidget* parent) : KCMultiDialog(parent)
         {DolphinGeneralModule, "dolphin/kcms/kcm_dolphingeneral"},
         {DolphinViewModesModule, "dolphin/kcms/kcm_dolphinviewmodes"},
         {TrashModule, "kcm_trash"},
-        {FileTypesModule, "plasma/kcms/systemsettings_qwidgets/kcm_filetypes"},
+        {FileTypesModule, "konqueror_kcms/kcm_konq_filetypes"},
         {HtmlBehaviorModule, "konqueror_kcms/khtml_behavior"},
         {HtmlAppearanceModule, "konqueror_kcms/khtml_appearance"},
         {AdBlockModule, "konqueror_kcms/khtml_filter"},
