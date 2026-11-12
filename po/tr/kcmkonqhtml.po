@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:57+0000\n"
-"PO-Revision-Date: 2026-10-12 11:38+0300\n"
+"PO-Revision-Date: 2026-11-10 21:38+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: appearance.cpp:39
 #, kde-format
@@ -44,7 +44,7 @@ msgstr "Yazıtipleri"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Stylesheets"
-msgstr "Biçem Sayfaları"
+msgstr "Stil Sayfaları"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
 #: appearance.cpp:48 css/csscustom.ui:296
@@ -873,7 +873,7 @@ msgid ""
 "<b>Stylesheets</b><p>See http://www.w3.org/Style/CSS for further information "
 "on cascading style sheets.</p>"
 msgstr ""
-"<b>Biçem sayfaları</b><p>Daha fazla bilgi için http://www.w3.org/Style/CSS "
+"<b>Stil sayfaları</b><p>Daha fazla bilgi için http://www.w3.org/Style/CSS "
 "adresine bakın.</p>"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, ButtonGroup1)
@@ -883,14 +883,14 @@ msgid ""
 "<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
 "render style sheets.</p>"
 msgstr ""
-"<b>Biçem sayfaları</b><p>Konqueror’un biçem sayfalarını nice sunacağını "
+"<b>Stil sayfaları</b><p>Konqueror’un stil sayfalarını nice sunacağını "
 "belirlemek için bu grup kutusunu kullanın.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
 #: css/cssconfig.ui:29
 #, kde-format
 msgid "Stylesheets"
-msgstr "Biçem Sayfaları"
+msgstr "Stil Sayfaları"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
 #: css/cssconfig.ui:35
@@ -899,14 +899,14 @@ msgid ""
 "<b>Use default stylesheet</b><p>Select this option to use the default "
 "stylesheet.</p>"
 msgstr ""
-"<b>Öntanımlı biçem sayfasını kullan</b><p>Bu seçeneği öntanımlı biçem "
+"<b>Öntanımlı stil sayfasını kullan</b><p>Bu seçeneği öntanımlı stil "
 "sayfasını kullanmak için seçin.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useDefault)
 #: css/cssconfig.ui:38
 #, kde-format
 msgid "Us&e default stylesheet"
-msgstr "Öntanımlı &biçem sayfasını kullan"
+msgstr "Öntanımlı &stil sayfasını kullan"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
 #: css/cssconfig.ui:48
@@ -919,7 +919,7 @@ msgid ""
 "sheet (see http://www.w3.org/Style/CSS for further information on cascading "
 "style sheets).</p>"
 msgstr ""
-"<b>Kullanıcı tanımlı biçem sayfası kullan</b> <p>Eğer bu seçenek seçiliyse "
+"<b>Kullanıcı tanımlı stil sayfası kullan</b> <p>Eğer bu seçenek seçiliyse "
 "Konqueror bu CSS ile kullanılacak. CSS sayesinde web sayfalarının "
 "tarayıcınızda nasıl sunulacağını belirleyebilirsiniz. Verilen dosya geçerli "
 "bir CSS olmak zorundadır. (geniş bilgi için bkz: http://www.w3.org/Style/"
@@ -929,7 +929,7 @@ msgstr ""
 #: css/cssconfig.ui:51
 #, kde-format
 msgid "Use &user-defined stylesheet"
-msgstr "&Kullanıcı tanımlı biçem sayfasını kullan"
+msgstr "&Kullanıcı tanımlı stil sayfasını kullan"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useAccess)
 #: css/cssconfig.ui:103
@@ -940,7 +940,7 @@ msgid ""
 "of the mouse. Simply wander over to the Customize... dialog and pick out "
 "your desired options.</p>"
 msgstr ""
-"<b>Erişilebilirlik biçem sayfasını kullan</b> <p> Bu seçenek öntanımlı bir "
+"<b>Erişilebilirlik stil sayfasını kullan</b> <p> Bu seçenek öntanımlı bir "
 "yazıtipi, yazıtipi puntosu ve yazıtipi rengini birkaç fare tıklaması ile "
 "kullanmanıza olanak sağlar. İstenen seçenekleri Özelleştir… sekmesinden "
 "ayarlayın. </p>"
@@ -949,7 +949,7 @@ msgstr ""
 #: css/cssconfig.ui:106
 #, kde-format
 msgid "U&se accessibility stylesheet"
-msgstr "Erişilebilirlik &biçem sayfasını kullan"
+msgstr "Erişilebilirlik &stil sayfasını kullan"
 
 #. i18n: ectx: property (text), widget (QPushButton, customize)
 #: css/cssconfig.ui:146
@@ -985,12 +985,12 @@ msgstr ""
 "bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li "
 "align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Arka plan "
-"rengi web sayfası veya biçem sayfası tarafından açıkça belirtilmediğinde</"
+"rengi web sayfası veya stil sayfası tarafından açıkça belirtilmediğinde</"
 "li><li align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Bir web "
 "sayfası yüklenmeden önce</li></ul><p align=\"justify\">Özel bir arka plan "
 "rengi ayarlamak, sayfa yüklenmeden önce beyaz bir flaştan kaçınmak için "
-"sayfa için bir arka plan rengi ayarlayan özel bir biçem sayfası "
+"sayfa için bir arka plan rengi ayarlayan özel bir stil sayfası "
 "kullanıyorsanız (özellikle koyu renk) çoğunlukla kullanışlıdır.</p></body></"
 "html>"
 
@@ -1031,29 +1031,28 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
-"<html><head/><body><p align=\"justify\">Özel biçem sayfanıza "
-"(erişilebilirlik biçem sayfası da içerilecek biçimde) tüm arka plan "
-"renklerini yukarıda seçtiğiniz özel renge ayarlamak için bir kural ekleyin. "
-"Bu, hem biçem sayfasında hem de yapılandırma iletişim kutusunda arka plan "
-"rengini ayarlama gereksinimini önler.</p><p align=\"justify\"><span style=\" "
-"font-weight:600;\">Notlar:</span></p><ul style=\"margin-top: 0px; margin-"
-"bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li "
-"align=\"justify\" style=\" margin-top:12px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Kural, "
-"her zamanki CSS kurallarını izleyerek özel biçem sayfanızdaki arka plan "
-"renkleri için diğer kurallar tarafından geçersiz kılınacaktır</li><li align="
-"\"justify\" style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Kural aslında özel "
-"biçem sayfanızı içeren dosyaya eklenmez; yalnızca Konqueror’un bellekte "
-"tuttuğu kopyaya yerleştirilir. Bu, biçem sayfasını diğer tarayıcılarda "
-"kullanırsanız kuralı elle eklemeniz gerektiği anlamına gelir.</li></ul></"
-"body></html>"
+"<html><head/><body><p align=\"justify\">Özel stil sayfanıza (erişilebilirlik "
+"stil sayfası da içerilecek biçimde) tüm arka plan renklerini yukarıda "
+"seçtiğiniz özel renge ayarlamak için bir kural ekleyin. Bu, hem stil "
+"sayfasında hem de yapılandırma iletişim kutusunda arka plan rengini ayarlama "
+"gereksinimini önler.</p><p align=\"justify\"><span style=\" font-weight:600;"
+"\">Notlar:</span></p><ul style=\"margin-top: 0px; margin-bottom: 0px; margin-"
+"left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li align=\"justify\" "
+"style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Kural, her zamanki CSS "
+"kurallarını izleyerek özel stil sayfanızdaki arka plan renkleri için diğer "
+"kurallar tarafından geçersiz kılınacaktır</li><li align=\"justify\" style=\" "
+"margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-"
+"block-indent:0; text-indent:0px;\">Kural aslında özel stil sayfanızı içeren "
+"dosyaya eklenmez; yalnızca Konqueror’un bellekte tuttuğu kopyaya "
+"yerleştirilir. Bu, stil sayfasını diğer tarayıcılarda kullanırsanız kuralı "
+"elle eklemeniz gerektiği anlamına gelir.</li></ul></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr "Özel arka plan rengini biçem sayfasına ekle"
+msgstr "Özel arka plan rengini stil sayfasına ekle"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
@@ -1365,7 +1364,7 @@ msgid ""
 "visually impaired people or for web pages that are unreadable due to bad "
 "design."
 msgstr ""
-"<h1>Konqueror Biçem Sayfaları</h1> Bu modül Konqueror uygulamasında renk ve "
+"<h1>Konqueror Stil Sayfaları</h1> Bu modül Konqueror uygulamasında renk ve "
 "yazı ayarlarını CSS kullanarak yapmanızı sağlar. Seçenekleri "
 "belirtebileceğiniz gibi kendi yazdığınız CSS dosyasını da konum belirterek "
 "kullanabilirsiniz.<br /> Lütfen, her web sayfasının ayarlarında yazarın "
@@ -1409,7 +1408,7 @@ msgstr ""
 "<h2>Başlık 2</h2>\n"
 "<h3>Başlık 3</h3>\n"
 "\n"
-"<p>Kullanıcı tanımlı biçem sayfaları\n"
+"<p>Kullanıcı tanımlı stil sayfaları\n"
 "görme sorunu olan insanlar için erişilebilirliği\n"
 "artırır.</p>\n"
 "\n"
