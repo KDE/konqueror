@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Arabic "INCLUDE"
+> <!-- change language only here -->
+]>
+<!-- extragear has another adblock ? -->
+<article lang="&language;" id="khtml-adblock">
+<articleinfo>
+<title
+>مرشحات مانع الإعلانات</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>تطبيقات 16.12</releaseinfo>
+</articleinfo>
+
+<para
+>يمكن ضبط كنكر AdBlocK لاستبدال أو إزالة الصور أو الإطارات من صفحات الويب التي تطابق سلسلة من المرشحات.</para>
+
+<para
+>الإعداد <guilabel
+>تمكين المرشحات</guilabel
+> يمكّن أو يعطّل استخدام قائمة مرشحات عناوين URL.</para>
+<para
+>إذا كان <guilabel
+>إخفاء الصور المفلترة</guilabel
+> ممكّنًا، فتُزال الصور المحجوبة بالكامل من الصفحة ويُستعاد المساحة التي كانت تشغلها. إذا كان الخيار معطّلًا، فتُستخدم صورة نائبة بدلًا من الصور المفلترة.</para>
+
+<variablelist>
+<varlistentry id="khtml-adblock-manual">
+<term
+><guilabel
+>المرشح اليدوي</guilabel
+></term>
+<listitem>
+<para
+>الجزء الرئيس من هذه اللوحة هو قائمة بعناوين URL التي ستُقارن بأسماء الصور والإطارات لتحديد إجراءات التصفية. يمكن إعطاء أحرف البدل كتعبيرات نمطية على غرار أسماء الملفات.</para>
+
+<para
+>يمكن التعبير عن كل مرشح إما كسلسلة أحرف بدل على غرار الملفات (مثل http://www.site.com/ads/*) أو كتعبير نمطي كامل بإحاطة المرشح بشرطتين مائلتين (مثل //(ads|dclk)\./).</para>
+
+<para
+>يمكن أن تسبق أي سلسلة مرشح بـ <literal
+>@@</literal
+> لإدراجها في القائمة البيضاء (السماح) لأي &URL; مطابق، والذي له أولوية على أي مرشح قائمة سوداء (حظر).</para>
+
+<para
+><guilabel
+>استيراد</guilabel
+> و<guilabel
+>تصدير</guilabel
+> سيحفظان أو يقرآن قائمة المرشحات الحالية إلى ملف نصي عادي. يبدأ الملف بسطر رأس <userinput
+>[AdBlock]</userinput
+>، ثم تتبع جميع المرشحات كل منها في سطر منفصل. تُعامل الأسطر المسبوقة بعلامة تعجب (<userinput
+>!</userinput
+>) وسطر الرأس كتعليقات ويمكن استخدامها لتوضيح أو تسمية مجموعة من المرشحات.</para>
+
+<para
+>أبرز مدخلًا من القائمة لتغييره في مربع التحرير أو إزالة هذا العنصر. أدخل سلسلة مرشح جديدة هنا وأضفها إلى القائمة باستخدام الزر <guibutton
+>إدراج</guibutton
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="khtml-adblock-automatic">
+<term
+><guilabel
+>المرشح آليّ</guilabel
+></term>
+<listitem>
+<para
+>تعرض هذه اللوحة قائمة بالأسماء وعناوين &URL; مع مدخلات مرشح AdBlock محددة مسبقًا. لتمكين مدخل، حدد مربع الاختيار بجانب اسم المرشح واضبط <guilabel
+>فاصل التحديث الآلي</guilabel
+> (المبدئي 7 أيام). </para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>إذا كانت مرشحات AdBlock ممكّنة، يُظهر أيقونة على الجانب الأيمن من شريط الحالة. استخدم نقرة بزر الفأرة الأيمن على هذه الأيقونة لفتح قائمة السياق مع إجراءات لعرض جميع العناصر القابلة للحظر على صفحة ويب، وفتح وحدة &systemsettings; هذه، وتعطيل الحظر لموقع أو صفحة مؤقتًا.</para>
+
+<para
+>نقرة بزر الفأرة الأيسر تظهر الحوار مع جميع العناصر القابلة للحظر على صفحة الويب المفتوحة أيضًا. من هذا الحوار يمكنك إضافة مرشحات جديدة مباشرة دون فتح وحدة &systemsettings; هذه.</para>
+
+</article>

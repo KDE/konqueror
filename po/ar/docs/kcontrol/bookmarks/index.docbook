@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Arabic "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>العلامات</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Xavier</firstname
+><surname
+>Vello</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>تطبيقات 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>كيدي</keyword>
+<keyword
+>إعدادات النظام</keyword>
+<keyword
+>العلامات</keyword>
+<keyword
+>KIO</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>الصفحة الرئيسة للعلامات</title>
+<para
+>تتيح لك هذه الوحدة ضبط الصفحة الرئيسة للعلامات.</para>
+<para
+>لعرض الصفحة الرئيسة للعلامات، أدخل <userinput
+>bookmarks:/</userinput
+> في شريط الموقع.</para>
+<para
+>يمكن الوصول إلى الإعدادات في هذه الوحدة أيضًا بإدخال <userinput
+>bookmarks:/config</userinput
+> في شريط الموقع.</para>
+<sect2 id="conf-general">
+<title
+>إعدادات عامّة</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>عدد الأعمدة لعرضها</guilabel
+></term>
+<listitem>
+<para
+>تتوزع المجلدات آليًّا في عدّة أعمدة. عدد الأعمدة المثالي يعتمد على عرض نافذة كنكر وعدد العلامات التي فيها.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>أظهر خلفيات المجلدات</guilabel
+></term>
+<listitem>
+<para
+>عطلّه في الأنظمة البطيئة أو عطّل صور الخلفية.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>العلامات</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>أظهر العلامات بلا مجلد</guilabel
+></term>
+<listitem>
+<para
+>إن لم يُعلَّم ها الخيار، لن تُعرض العلامات التي في جذر الهرم (ليست في مجلد).إذا عُلِّم، ستُجمع في مجلد ”الجذر“.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>سطّح شجرة العلامات</guilabel
+></term>
+<listitem>
+<para
+>تُعرض المجلدات الفرعية في أبواتها مبدئيًا. إن فعّلت هذا الخيار، ستُعرض المجلدات الفرعية منفصلة.قد يبدو هذا أقل جمالًا ولكن قد يكون مفيدًا إذا كنت تملك مجلد ضخم وتريد عرضه في عمودين منفصلين.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>أظهر أماكن النظام</guilabel
+></term>
+<listitem>
+<para
+>يُظهر مربعًا بأماكن كِيدِي العامة (المنزل، الشبكة، ). مفيد إن كنت تستخدم كنكر كمدير للملفات.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>خبيئة الصور النقطية</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>حجم خبيئة القرص</guilabel
+></term>
+<listitem>
+<para
+>حدد كمية مساحة القرص المستخدمة في خبيئة الصور النقطية.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>امحُ الخبيئة</guilabel
+></term>
+<listitem>
+<para
+>أزل كل الصور المخبأة. قد يكون ذلك ضروريًا إذا فسدت بعض أيقونات المفضلة ولم تُحدَّث آليًا.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>

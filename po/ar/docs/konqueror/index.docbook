@@ -1,0 +1,6867 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY fsview "<application
+>FSView</application
+>">
+  <!ENTITY % Arabic "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<book id="konqueror" lang="&language;"
+> 
+
+<bookinfo>
+<title
+>دليل كنكر</title>
+
+<authorgroup>
+<author
+>&Pamela.Roberts; &Pamela.Roberts.mail;</author>
+
+<othercredit role="developer">
+<othername
+>فريق كِيدِي</othername>
+<contrib
+>المطورون</contrib>
+</othercredit
+> 
+
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2000</year
+> <year
+>2002</year>
+<holder
+>&Erwan.Loisant;</holder>
+<holder
+>&Pamela.Roberts;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2025-02-27</date>
+<releaseinfo
+>ترس 25.04</releaseinfo>
+
+<abstract
+><para
+>كنكر هو مدير الملفات المتقدم ومتصفح الويب والتطبيق المشاهد الشامل لـ كيدي.</para>
+</abstract>
+
+<keywordset>
+<keyword
+>كيدي</keyword>
+<keyword
+>كنكر</keyword>
+<keyword
+>Kdebase</keyword>
+<keyword
+>مدير ملفات</keyword>
+<keyword
+>متصفّح</keyword>
+<keyword
+>مستعرض</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+</chapterinfo>
+
+<title
+>نظرة عامة</title>
+
+<para
+><emphasis
+>كنكر</emphasis
+> هو <link linkend="filemanager"
+>مدير ملفات</link
+> متقدم، يوفر وظائف إدارة ملفات تتراوح من عمليات القص/النسخ واللصق البسيطة إلى تصفح الملفات الشبكية المحلية والبعيدة المتقدمة. يمكن عرض محتويات المجلدات في مجموعة متنوعة من أوضاع العرض النصية والأيقونية <link linkend="viewmode"
+>أوضاع العرض</link
+>، والتي يمكن أن تتضمن صور معاينة مصغرة لمحتويات الملفات. يمكن فحص وتغيير خصائص الملفات والمجلدات بسهولة، وتشغيل التطبيقات بنقرة مزدوجة من &LMB;.</para>
+
+<para
+>في تطبيقات كيدي، دولفين هو مدير الملفات المبدئي. لتغيير المكون المبدئي لتصفح المجلدات، افتح <guimenu
+>التطبيقات المبدئية</guimenu
+> في &systemsettings; واختر كنكر كمدير ملفات.</para>
+
+<para
+><emphasis
+>كنكر</emphasis
+> هو <link linkend="browser"
+>متصفح ويب</link
+> متوافق مع <acronym
+>HTML</acronym
+> 5 مع دعم مدمج لـ جافا سكربت (ECMA-262)، و<acronym
+>CSS</acronym
+> (صفحات الأنماط المتتالية) والنصوص ثنائية الاتجاه (&eg; العربية، العبرية وغيرها). يوفر دعم <acronym
+>SSL</acronym
+> للاتصالات الآمنة. تشمل الميزات المتقدمة الإكمال الآلي لـ عنوان والنماذج، والقدرة على استيراد العلامات من المتصفحات الأخرى والتصفح المبوب.</para>
+
+<para
+><emphasis
+>كنكر</emphasis
+> هو أيضًا عميل <link linkend="ftp"
+>FTP</link
+> ممتاز ومتكامل الميزات.</para>
+
+<para
+><emphasis
+>كنكر</emphasis
+> هو تطبيق مشاهد شامل، قادر على عرض الصور والمستندات دون الحاجة إلى تشغيل تطبيق آخر. يفعل ذلك عن طريق تضمين مكونات (كيدي Parts) المقدمة من تطبيقات أخرى؛ من &gwenview; لعرض الصور، و أوكلارلـ <acronym
+>PDF</acronym
+>، و&PostScript; والمستندات الأخرى. </para>
+
+<para
+><emphasis
+>كنكر</emphasis
+> هو تطبيق قابل للتخصيص بالكامل يمكن لأي شخص <link linkend="config"
+>ضبطه</link
+> ليناسب احتياجاته الخاصة، من تغيير النمط العام وأحجام النصوص والأيقونات إلى اختيار العناصر التي تظهر في شريط القوائم، وتغيير عدد ومواضع أشرطة الأدوات وحتى تعريف مجموعات مفاتيح اختصار جديدة. </para>
+</chapter>
+
+<chapter id="basics">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+</chapterinfo>
+
+<title
+>أساسيات كنكر</title>
+
+<important
+><para
+>مثل جميع تطبيقات كيدي، كنكر قابل للضبط بدرجة كبيرة. يصف هذا المستند كيف يتصرف كنكر مع الإعدادات العادية المبدئية.</para
+><para
+>يمكن أن يكون الفأر ذو الأزرار الثلاثة مفيدًا عند تشغيل كنكر أو أي تطبيق كيدي آخر. إذا كان فأرك يحتوي على زرين فقط، فيجب أن تكون قادرًا على ضبط نظامك بحيث يمكنك محاكاة &MMB; بالضغط على كلا الزرين في نفس الوقت.</para
+><para
+>يمكنك قراءة المزيد عن استخدام الفأر في <xref linkend="lmb-mmb"/>.</para
+></important>
+
+<sect1 id="konq-start">
+<title
+>بدأ كنكر</title>
+
+<itemizedlist>
+<listitem
+><para
+>من قائمة مشغل التطبيقات، اختر <menuchoice
+><guisubmenu
+>إنترنت</guisubmenu
+><guimenuitem
+>كنكر</guimenuitem
+></menuchoice
+> لبدء تشغيله كمتصفح.</para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> سيفتح &krunner;، أدخل مسارًا إلى مجلد واضغط <keysym
+>Enter</keysym
+> للبدء في وضع مدير الملفات، أو أدخل عنوان مثل <userinput
+>https://www.kde.org</userinput
+> لبدء كنكر كمتصفح.</para
+></listitem>
+</itemizedlist>
+
+<note
+><para
+>انقر على السهم الأسود على يمين أيقونة <guiicon
+>الصفحة الرئيسية</guiicon
+> للتبديل إلى <guiicon
+>المجلد الرئيسي</guiicon
+> في وضع مدير الملفات والعكس صحيح. </para
+></note>
+
+<para
+>إذا كان كنكر هو مدير الملفات المبدئي، فإنه يبدأ أيضًا آليًا عند النقر المزدوج على أيقونة سطح مكتب تمثل مجلدًا، مثل محرك قرص صلب أو أيقونة <guiicon
+>سلة المهملات</guiicon
+>.</para>
+</sect1>
+
+<sect1 id="parts">
+<title
+>أجزاء كنكر</title>
+
+<para
+>نظرة سريعة على الأجزاء الرئيسة لنافذة كنكر:</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="parts.png"/></imageobject>
+<textobject>
+<phrase
+>هذه لقطة شاشة لـ كنكر</phrase>
+</textobject>
+</mediaobject>
+
+<para
+><interface
+>شريط العنوان</interface
+> هو الشريط عبر الجزء العلوي من نافذة كنكر، ويعمل بنفس طريقة تطبيقات كيدي الأخرى. انقر <mousebutton
+>الأيمن</mousebutton
+> على الجزء المركزي لإظهار قائمة شريط العنوان الأنيقة.</para>
+
+<para
+><interface
+>شريط القوائم</interface
+> هو الشريط الذي يحتوي على أسماء القوائم المنسدلة. انقر <mousebutton
+>الأيسر</mousebutton
+> على اسم لإظهار وإخفاء تلك القائمة بالتناوب، أو استخدم <keycombo action="simul"
+>&Alt;<keycap
+>الحرف المسطر</keycap
+></keycombo
+> في الاسم كمفتاح ساخن، على سبيل المثال <keycombo action="simul"
+>&Alt;<keycap
+>E</keycap
+></keycombo
+> لإظهار قائمة <guimenu
+>تحرير</guimenu
+>. يتم وصف القوائم المختلفة في قسم <link linkend="menubar"
+>شريط القوائم</link
+> من هذا المستند.</para>
+
+<para
+><interface
+>شريط الأدوات</interface
+> يحتوي على أيقونات للعمليات شائعة الاستخدام. النقر <mousebutton
+>الأيسر</mousebutton
+> على أيقونة سينشطها. سيظهر وصف موجز لما تفعله تلك الأيقونة عند تحريك المؤشر فوقها.</para>
+
+<para
+>بعض الأيقونات، على سبيل المثال أيقونتي الأعلى والرجوع في لقطة الشاشة السابقة، لها سهم أسود صغير على اليمين. إذا نقرت بـ &LMB; على هذا السهم ستظهر قائمة منسدلة صغيرة.</para
+> <para
+>النقر <mousebutton
+>الأيمن</mousebutton
+> على <interface
+>شريط الأدوات</interface
+> سيظهر <link linkend="rmb-menus"
+><guilabel
+>قائمة إعدادات شريط الأدوات</guilabel
+></link
+> التي يمكنك استخدامها لتغيير مظهر وموضع <interface
+>شريط الأدوات</interface
+>.</para>
+
+<para
+><interface
+>شريط الموقع</interface
+> يظهر المسار إلى الدليل أو عنوان أو الملف الذي يتم عرضه. يمكنك كتابة مسار أو عنوان هنا والضغط على <keysym
+>Enter</keysym
+> أو النقر <mousebutton
+>الأيسر</mousebutton
+> على أيقونة <guiicon
+>اذهب</guiicon
+> في الطرف الأيمن من <interface
+>شريط الموقع</interface
+> للانتقال إليه. الأيقونة السوداء في الطرف الأيمن من <interface
+>شريط الموقع</interface
+> تمسح مربع إدخال النص.</para>
+
+<para
+><interface
+>شريط العلامات</interface
+> هو المنطقة أسفل <interface
+>شريط الموقع</interface
+> في لقطة الشاشة السابقة. يمكنك إضافة العلامات المستخدمة بشكل متكرر هنا؛ انظر قسم <link linkend="bookmarks"
+>تنظيم علاماتك</link
+> من هذا المستند.</para>
+
+<para
+><interface
+>النافذة</interface
+> هي المنطقة الرئيسة لـ كنكر ويمكن أن تظهر لك محتويات دليل أو صفحة ويب أو مستند أو صورة. باستخدام قائمة <link linkend="menu-window"
+><guimenu
+>نافذة</guimenu
+></link
+> يمكنك تقسيم النافذة الرئيسة لـ كنكر إلى عرض واحد أو أكثر منفصلة، مفيدة لعمليات السحب والإفلات، أو ضبطها لتحتوي على عرضين أو أكثر مبوبة. </para>
+
+<para
+><interface
+>شريط الحالة</interface
+> يمتد عبر الجزء السفلي من نافذة كنكر وغالبًا ما يظهر معلومات عامة حول ما يحوم فوقه مؤشر الفأر. إذا قمت بتقسيم النافذة الرئيسة إلى عدد من العروض، ستحصل على شريط حالة لكل عرض، وسيتضمن ضوءًا أخضر صغيرًا في الطرف الأيسر لإظهار أي عرض هو <quote
+>النشط</quote
+>. النقر <mousebutton
+>الأيمن</mousebutton
+> على شريط الحالة يظهر <link linkend="rmb-menus"
+><mousebutton
+>قائمة زر الفأر الأيمن</mousebutton
+> لشريط الحالة</link
+>.</para>
+
+<note
+><para
+>لا تقلق إذا كان كنكر الخاص بك لا يبدو تمامًا مثل لقطة الشاشة هذه؛ فهو قابل للضبط بدرجة كبيرة. على وجه الخصوص:</para>
+
+<itemizedlist>
+<listitem
+><para
+>يمكنك استخدام قائمة <link linkend="menu-settings"
+><guimenu
+>الإعدادات</guimenu
+></link
+> لاختيار إظهار أو إخفاء شريط القوائم، وشريط الأدوات الرئيس، وشريط الموقع وشريط العلامات، أو حتى إضافة شريط أدوات إضافي.</para
+></listitem
+><listitem
+><para
+>إذا كانت أشرطة الأدوات غير مقفلة، يمكنك أيضًا سحبها إلى موضع جديد بالنقر <mousebutton
+>الأيسر</mousebutton
+> على المقبض في الطرف الأيسر من الشريط وتحريكه مع الاستمرار في الضغط على &LMB; أثناء سحبه.</para
+></listitem>
+</itemizedlist>
+
+<para
+>لمزيد من التفاصيل حول كيفية تغيير مظهر كنكر، انظر قسم <link linkend="config"
+>ضبط كنكر</link
+>.</para
+></note>
+
+</sect1>
+
+<sect1 id="bubble">
+<title
+>تلميحات الأدوات و'ما هذا؟'</title>
+
+<para
+>يمكنك معرفة الكثير عن كيفية عمل كنكر دون الحاجة لقراءة هذا المستند بأكمله إذا استفدت من <guilabel
+>تلميحات الأدوات</guilabel
+> وميزة <guimenuitem
+>ما هذا؟</guimenuitem
+>.</para>
+
+<para
+>عند تحريك مؤشر الفأرة فوق زر علامة تبويب شريط الأدوات، سيظهر وصف موجز لوظيفة ذلك الزر.</para>
+
+<para
+><guimenuitem
+>ما هذا؟</guimenuitem
+> يُستدعى من عنصر شريط القوائم <menuchoice
+><guimenu
+>مساعدة</guimenu
+><guimenuitem
+>ما هذا؟</guimenuitem
+></menuchoice
+> أو باستخدام <keycombo action="simul"
+>&Shift;<keycap
+>F1</keycap
+></keycombo
+>. يغير المؤشر ليظهر علامة استفهام بجانب السهم.</para>
+
+<para
+>عندما تكون علامة الاستفهام هذه مرئية، لن يؤدي النقر بزر الفأرة &LMB; أي إجراء حتى تنقر على عنصر تحكم (أو النص المجاور له) يدعم <guimenuitem
+>ما هذا؟</guimenuitem
+>، حيث سيعرض وصفًا شاملًا إلى حد معقول لوظيفة عنصر التحكم. معظم مربعات الحوار التي يعرضها كنكر تدعم ميزة <guimenuitem
+>ما هذا؟</guimenuitem
+>.</para>
+
+</sect1>
+
+<sect1 id="lmb-mmb">
+<title
+>إجراءات زر الفأرة <mousebutton
+>الأيسر</mousebutton
+> و<mousebutton
+>الأوسط</mousebutton
+></title>
+
+<para
+>إذا نقرت بزر الفأرة &LMB; على عنصر في نافذة كنكر، فسيتم <quote
+>تنشيطه</quote
+>. وبالتالي:</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>النقر بزر الفأرة <mousebutton
+>الأيسر</mousebutton
+> على أيقونة في شريط الأدوات لتنفيذ الإجراء الذي تمثله تلك الأيقونة. </para
+></listitem>
+<listitem
+><para
+>النقر بزر الفأرة <mousebutton
+>الأيسر</mousebutton
+> على عنصر في شريط القوائم لإسقاط تلك القائمة.</para
+></listitem>
+<listitem
+><para
+>النقر بزر الفأرة <mousebutton
+>الأيسر</mousebutton
+> على عنصر قائمة لتنفيذ ذلك الإجراء.</para
+></listitem
+> 
+<listitem
+><para
+>النقر بزر الفأرة <mousebutton
+>الأيسر</mousebutton
+> على أيقونة في شريط أدوات العلامات لفتح ذلك عنوان.</para
+></listitem>
+<listitem
+><para
+>النقر بزر الفأرة <mousebutton
+>الأيسر</mousebutton
+> على رابط في صفحة ويب لجعل كنكر يتبع ذلك الرابط.</para
+></listitem>
+<listitem
+><para
+>النقر بزر الفأرة <mousebutton
+>الأيسر</mousebutton
+> على أيقونة مجلد أو اسمه وسينتقل كنكر إلى (يعرض محتويات) ذلك المجلد. </para
+></listitem>
+<listitem
+><para
+>النقر بزر الفأرة <mousebutton
+>الأيسر</mousebutton
+> على اسم ملف أو أيقونته وسيفعل كنكر ما يراه مناسبًا بناءً على نوع الملف. بشكل عام، يعني هذا فتح صفحات <acronym
+>HTML</acronym
+>، أو معاينة مستندات نصية أو صور أو &okular;، وعرضها داخل نافذة كنكر (<quote
+>المعاينة</quote
+> تعني أنه يمكنك رؤية الملف ولكن لا يمكنك تغييره).</para
+> 
+
+<para
+>يقرر كنكر نوع الملف بمطابقة امتداد اسم الملف مع قائمة الأنواع المعروفة. إذا فشل ذلك، يحاول تخمين النوع من محتويات الملف. يمكنك تغيير قائمة أنواع الملفات المعروفة والإجراءات المرتبطة بها باستخدام صفحة <guilabel
+>ارتباطات الملفات</guilabel
+> في مربع حوار <menuchoice
+><guimenu
+>الإعدادات</guimenu
+><guimenuitem
+>اضبط Konqueror…</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+
+</itemizedlist>
+
+<para
+>النقر بزر الفأرة &MMB; على اسم ملف أو مجلد أو أيقونته يفعل نفس الشيء بشكل أساسي مثل النقر بزر الفأرة <mousebutton
+>الأيسر</mousebutton
+> باستثناء أنه يفعله عادةً في نافذة كنكر جديدة، ما لم يتم تحديد خانة <guilabel
+>افتح الروابط في لسان جديد بدلًا من نافذة جديدة</guilabel
+> في صفحة <guimenuitem
+>عام</guimenuitem
+> من مربع حوار <menuchoice
+><guimenu
+>الإعدادات</guimenu
+><guimenuitem
+>اضبط Konqueror…</guimenuitem
+></menuchoice
+>. يمكن لـ كنكر فتح الروابط على الصفحات و<menuchoice
+><guimenu
+>العلامات</guimenu
+></menuchoice
+>، بالإضافة إلى إدخالات <guibutton
+>الرئيسية</guibutton
+> و<guibutton
+>الأعلى</guibutton
+> و<guibutton
+>الخلف</guibutton
+> و<guibutton
+>الأمام</guibutton
+> في لسان أو نافذة جديدة.</para>
+
+<para
+>الضغط باستمرار على مفتاح &Shift; أثناء الضغط على &MMB; سيفتح الرابط في الخلفية.</para>
+</sect1>
+
+<sect1 id="rmb-menus">
+<title
+>قوائم زر الفأرة <mousebutton
+>الأيمن</mousebutton
+></title>
+
+<para
+>النقر بزر الفأرة &RMB; على أي جزء تقريبًا من نافذة كنكر سيعرض قائمة سياق مناسبة.</para>
+
+<note
+><para
+>إذا فعّلت خيار <guilabel
+>النقر بزر الفأرة الأيمن يعود في التاريخ</guilabel
+> في إعدادات <link linkend="othersettings"
+>تهيئة</link
+> كنكر، فإن النقر البسيط بزر الفأرة <mousebutton
+>الأيمن</mousebutton
+> يعادل النقر على زر <guibutton
+>الخلف</guibutton
+>. في هذه الحالة، يمكنك الوصول إلى قائمة السياق بتحريك الفأرة مع الضغط باستمرار على زر الفأرة <mousebutton
+>الأيمن</mousebutton
+>.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+>على شريط العنوان</term>
+<listitem
+><para
+>النقر بزر الفأرة <mousebutton
+>الأيمن</mousebutton
+> على أي منطقة فارغة من شريط العنوان يعرض قائمة شريط العنوان، مما يسمح لك بالتحكم في موضع نافذة كنكر بالإضافة إلى الزخرفة المطبقة على جميع نوافذ برامج كيدي.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>على شريط الأدوات الرئيس</term>
+<listitem
+><para
+>النقر بزر الفأرة <mousebutton
+>الأيمن</mousebutton
+> على أي منطقة فارغة من شريط الأدوات لعرض قائمة شريط الأدوات. يمكنك أيضًا استخدام قائمة شريط الأدوات لتعيين حجم الأزرار على شريط الأدوات، وما إذا كانت تظهر كأيقونات أو نص أو كليهما.</para>
+<para
+>ألغِ قفل شريط الأدوات ويمكنك نقله إلى أعلى أو أسفل أو يسار أو يمين نافذة كنكر. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>على شريط أدوات الموقع</term>
+<listitem
+><para
+>النقر بزر الفأرة <mousebutton
+>الأيمن</mousebutton
+> في منطقة مربع إدخال عنوان لتنفيذ عمليات قص أو لصق أو مسح في هذه المنطقة، أو لتغيير ميزات <link linkend="path-complete"
+>الإكمال التلقائي للنص</link
+>.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>في العرض</term>
+<listitem
+><para
+>إذا نقرت بزر الفأرة <mousebutton
+>الأيمن</mousebutton
+> على أي منطقة فارغة من عرض ما، فستحصل على قائمة تحتوي، من بين خيارات أخرى، على أوامر التنقل <guiicon
+>الأعلى</guiicon
+> و<guiicon
+>الخلف</guiicon
+> و<guiicon
+>الأمام</guiicon
+> و<guiicon
+>إعادة التحميل</guiicon
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>على ملف أو مجلد</term>
+<listitem
+><para
+>هذه ميزة مفيدة جدًا. النقر بزر الفأرة <mousebutton
+>الأيمن</mousebutton
+> على اسم أو أيقونة أي ملف أو مجلد لا <quote
+>يحدد</quote
+> ذلك العنصر فحسب، بل يعرض أيضًا قائمة تسمح لك <guimenuitem
+>بقص</guimenuitem
+> أو <guimenuitem
+>نقل</guimenuitem
+> أو <guimenuitem
+>نسخ</guimenuitem
+> أو <guimenuitem
+>إزالة</guimenuitem
+> العنصر بطرق مختلفة، أو فتحه بالبرنامج الذي تختاره أو معاينته، أو إعادة تسميته، أو تحرير نوع الملف أو خصائصه.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>على شريط الحالة</term>
+<listitem
+><para
+>انقر <mousebutton
+>يمين</mousebutton
+> على شريط الحالة في أسفل نافذة أو عرض لإضافة أو إزالة عرض، وقفل أو ربط العروض داخل نافذة كنكر.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="man-info">
+<title
+>عرض صفحات المساعدة، الدليل، والمعلومات</title>
+
+<para
+>يمكنك عرض صفحات مساعدة كيدي وصفحات الدليل والمعلومات لـ يونكس مباشرة في كنكر دون الحاجة لبدء &khelpcenter;. </para>
+
+<para
+>لعرض صفحة مساعدة كيدي، أدخل <userinput
+>help:/<replaceable
+>اسم التطبيق</replaceable
+></userinput
+> (مثلًا <userinput
+>help:/<replaceable
+>kmail</replaceable
+></userinput
+> لعرض وثائق &kmail;) في نافذة شريط الموقع لـ كنكر. </para>
+
+<para
+>إذا أردت قراءة صفحات دليل يونكس، يسهّل كنكر ذلك. مثلًا اكتب <userinput
+>man:/touch</userinput
+> أو <userinput
+>#touch</userinput
+> في شريط الموقع لرؤية صفحة الأمر <command
+>touch</command
+>.</para
+> 
+
+<para
+>لتصفح صفحات معلومات يونكس، يأخذك إدخال <userinput
+>info:/dir</userinput
+> إلى الدليل الأعلى لمعلومات، ثم الأمر مجرد النقر على الروابط الصحيحة لإيجاد الصفحة التي تريد. بدلًا من ذلك، استخدم <userinput
+>info:/<replaceable
+>اسم الأمر</replaceable
+></userinput
+> للذهاب مباشرة إلى صفحة المعلومات التي تريد.</para>
+
+<note
+><para
+>لسوء الحظ، تُخزّن صفحات مساعدة كيدي بطريقة لا يمكن عرضها في متصفحات أخرى. إذا احتجت حقًا لفعل ذلك، فسبيلك الوحيد هو الاتصال بالإنترنت وزيارة <ulink url="http://docs.kde.org"
+> http://docs.kde.org</ulink
+>.</para
+></note>
+</sect1>
+
+</chapter>
+
+<chapter id="filemanager">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup
+> 
+
+</chapterinfo>
+
+<title
+>كنكر مدير الملفات</title>
+
+<sect1 id="dirfolders">
+<title
+>المجلدات والمسارات</title>
+<para
+>في يونكس و لينكس، تُرتّب جميع المجلدات في تسلسل هرمي بسيط. بدءًا من مجلد أعلى مستوى (يُسمى أيضًا الدليل الجذر)، تنحدر البنية وتتفرع محتوية على ملفات ومجلدات فرعية متنوعة. يعني هذا أنه يمكنك الانتقال من أي مجلد إلى أي آخر بالصعود <quote
+>لأعلى</quote
+> حتى تصل إلى نقطة مشتركة ثم <quote
+>لأسفل</quote
+> عبر المجلدات الفرعية المناسبة حتى تصل إلى هدفك.</para>
+
+<para
+>يمكن وصف موقع أي ملف أو مجلد في البنية (يُسمى أيضًا شجرة الدليل) بـ <quote
+>المسار</quote
+>، وهو قائمة بسيطة من المجلدات التي ستحتاج للنزول عبرها للوصول إلى المجلد أو الملف الهدف. مثلًا <filename class="directory"
+>/home/pam</filename
+> هو المجلد الفرعي <filename class="directory"
+>pam</filename
+> للمجلد الفرعي <filename class="directory"
+>home</filename
+> للمجلد الأعلى، و<filename
+>/home/pam/words.txt</filename
+> هو الملف <filename
+>words.txt</filename
+> في ذلك المجلد الفرعي. يمثل <quote
+>/</quote
+> البادئ في هذه المسارات المجلد الأعلى.</para>
+
+<para
+>سيظهر كل مجلد يمكن لنظامك الوصول إليه &mdash; بما في ذلك تلك الموجودة على أقسام قرص صلب أخرى، جهاز USB أو &CD-ROM; &mdash; في الشجرة النازلة من /، وستعتمد مساراتهم الدقيقة على كيفية إعداد نظامك (انظر أيضًا القسم حول <link linkend="removable-devices"
+>الأجهزة القابلة للإزالة</link
+>). </para>
+<para
+>كل مستخدم على نظام يونكس / لينكس له مجلده <quote
+>المنزلي</quote
+> الخاص لحفظ ملفاته وإعداداته الشخصية؛ مثلًا <filename class="directory"
+>/home/john</filename
+> و <filename class="directory"
+>/home/mary</filename
+>. يُستخدم الرمز <keycap
+>~</keycap
+> غالبًا لتمثيل المجلد المنزلي للمستخدم، لذا يشير <filename
+>~/letter.txt</filename
+> إلى الملف <filename
+>letter.txt</filename
+> في مجلدي المنزلي.</para
+><para
+>لاحظ أن المصطلح <quote
+>دليل</quote
+> يُستخدم غالبًا بدلًا من <quote
+>مجلد</quote
+>.</para>
+</sect1>
+
+<sect1 id="viewmode">
+<title
+>أنماط العرض</title>
+<para
+>في وضع مدير الملفات، يسرد كنكر الملفات والمجلدات الفرعية الموجودة داخل مجلد معين ويمكنه تزويدك ببعض المعلومات عنها. يُظهر <quote
+>مسار</quote
+> المجلد الحالي في شريط الموقع. تعتمد طريقة عرض كنكر للملفات والمجلدات بشكل رئيسي على اختيارك لوضع العرض الذي يمكن تحديده من القائمة الفرعية <menuchoice
+><guimenu
+>عرض</guimenu
+><guisubmenu
+>وضع العرض</guisubmenu
+></menuchoice
+>. أوضاع العرض التي يوفرها كنكر موضحة أدناه. </para>
+
+<note
+><para
+>في وضع مدير الملفات، يستخدم كنكر مكون دولفين مضمن. يُرجى الرجوع إلى وثائق دولفين للحصول على معلومات مفصلة حول هذا الوضع.</para
+></note>
+<itemizedlist>
+
+<listitem
+><para
+>في منظور <guibutton
+>الأيقونات</guibutton
+> المبدئي، تُمثّل الملفات بأيقونة تصور نوع الملف، وتُعرض أيقونة مجلد للمجلدات الفرعية. تُعرض أسماء المجلدات والملفات والعناصر المفعلة في <menuchoice
+><guimenu
+>منظور</guimenu
+><guisubmenu
+>معلومات إضافية</guisubmenu
+></menuchoice
+> أسفل الأيقونات. </para
+></listitem>
+
+<listitem
+><para
+>يعرض المنظور <guilabel
+>المتراص</guilabel
+> محتويات المجلد كأيقونات مع الاسم بجانبها والعناصر المفعلة في <menuchoice
+><guimenu
+>منظور</guimenu
+><guisubmenu
+>معلومات إضافية</guisubmenu
+></menuchoice
+> أسفل الاسم. تُجمع العناصر في أعمدة مشابهة لـ <guilabel
+>المنظور القصير</guilabel
+> في حواري ملف كيدي. </para
+></listitem>
+
+<listitem
+><para
+>في منظور <guibutton
+>التفاصيل</guibutton
+>، تُعرض محتويات المجلد كقائمة مفصلة تحتوي على الاسم والحجم ووقت آخر تعديل لكل عنصر. يمكن إضافة أعمدة إضافية بنقر ترويسة العمود باستخدام &RMB;. </para>
+<para
+>في قائمة السياق لسطر الرأس، يمكنك الاختيار بين عرض عمود مخصص أو تلقائي. يضبط العرض التلقائي عرض جميع الأعمدة مرة واحدة لعرض أطول عنصر في العمود بالكامل، باستثناء عمود <guilabel
+>الاسم</guilabel
+> حيث يُستبدل الامتداد بـ <quote
+>…</quote
+> </para>
+<para
+>يمكن تغيير ترتيب الأعمدة بسحب وإسقاط ترويسات الأعمدة، باستثناء ترويسة <guilabel
+>الاسم</guilabel
+> التي تكون دائمًا العمود الأول في هذا المنظور. </para>
+<para
+>يتيح لك عرض التفاصيل عرض الدليل الحالي بطريقة تشبه الشجرة إذا كان <guilabel
+>المجلدات القابلة للتوسيع</guilabel
+> مفعّلًا: يمكن <quote
+>توسيع</quote
+> أو <quote
+>طي</quote
+> كل مجلد فرعي من المجلد الحالي بالنقر على الأيقونة <guiicon
+>&gt;</guiicon
+> أو <guiicon
+>v</guiicon
+> بجانبه.</para
+></listitem>
+</itemizedlist>
+
+<screenshot>
+<screeninfo
+>المنظور المجمع</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="grouping-view.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>المنظور المجمع</phrase>
+</textobject>
+<caption
+><para
+>تدعم كافة أوضاع المنظور التجميع حسب نوع الفرز المختار في <menuchoice
+><guimenu
+>منظور</guimenu
+><guisubmenu
+>فرز حسب</guisubmenu
+></menuchoice
+></para
+></caption>
+</mediaobject>
+</screenshot>
+
+<!--FIXME begin copy from dolphin docbook synced for 16.04-->
+<sect2 id="dolphin-view-information">
+<title
+>المعلومات في المنظور</title>
+<para
+>في جميع أوضاع العرض، يُظهر كنكر على الأقل أيقونة واسمًا لكل عنصر. باستخدام <guisubmenu
+>معلومات إضافية</guisubmenu
+> في قائمة <guimenu
+>عرض</guimenu
+> أو قائمة سياق الرأس في وضع <guilabel
+>التفاصيل</guilabel
+>، يمكنك تحديد معلومات إضافية ليتم عرضها لكل عنصر: </para>
+
+<para
+><guimenuitem
+>الحجم</guimenuitem
+>، أو <guimenuitem
+>التاريخ</guimenuitem
+>، أو <guimenuitem
+>النوع</guimenuitem
+>، أو <guimenuitem
+>التقييم</guimenuitem
+>، أو <guimenuitem
+>الوسوم</guimenuitem
+> أو <guimenuitem
+>التعليق</guimenuitem
+>. </para>
+
+<para
+>اعتمادًا على نوع الملف، يمكن تحديد المعايير التالية بالإضافة: <simplelist>
+  <member
+><guimenuitem
+>مستند</guimenuitem
+>: عدد الكلمات والأسطر</member>
+  <member
+><guimenuitem
+>صورة</guimenuitem
+>: الحجم والاتجاه</member>
+  <member
+><guimenuitem
+>صوت</guimenuitem
+>: الفنان، والألبوم، والمدة، والمقطوعة</member>
+</simplelist>
+</para>
+
+<para
+>تتيح القائمة الفرعية <guisubmenu
+>أخرى</guisubmenu
+> تحديد <guimenuitem
+>المسار</guimenuitem
+>، <guimenuitem
+>وجهة الرابط</guimenuitem
+>، <guimenuitem
+>مُنسوخ من</guimenuitem
+>، <guimenuitem
+>الأذون</guimenuitem
+>، <guimenuitem
+>المالك</guimenuitem
+> أو <guimenuitem
+>مجموعة المستخدم</guimenuitem
+>. </para>
+
+</sect2>
+<!--FIXME end copy from dolphin docbook synced for 16.04 -->
+</sect1>
+
+<!--FIXME begin copy from dolphin docbook synced for 16.04-->
+<sect1 id="view-properties">
+<title
+>خصائص عرض المجلد</title>
+
+<para
+>تتحكم الإعدادات التالية في كيفية عرض محتويات مجلد في عرض كنكر، وتُخزّن على أساس كل مجلد بشكل مبدئي: </para>
+<itemizedlist>
+
+<listitem
+><para
+>وضع العرض (أيقونات، مدمج، تفاصيل) </para
+></listitem>
+
+<listitem
+><para
+>فرز العناصر، الذي يتحدد بترتيب الفرز (تصاعدي، تنازلي) والسمة (مثل الاسم، الحجم وإلخ…) التي تُفرز العناصر بناءً عليها </para
+></listitem>
+
+<listitem
+><para
+>فرز المجلدات والملفات &ndash; هل تظهر المجلدات أولًا أم لا؟ </para
+></listitem>
+
+<listitem
+><para
+>المعاينات &ndash; هل تُظهر بدلًا من الأيقونات (بناءً على الإعدادات المُجراة في لسان <guilabel
+>المعاينات</guilabel
+> من الإعدادات العامة لـ كنكر) أم لا؟ </para
+></listitem>
+
+<listitem
+><para
+>هل تُعرض العناصر في مجموعات في العروض؟ </para
+></listitem>
+
+<listitem
+><para
+>هل تُعرض الملفات المخفية؟ </para
+></listitem>
+
+<listitem
+><para
+>ما هي المعلومات الإضافية (بجانب الاسم) التي تظهر في عرض الأيقونات أو التفاصيل؟ </para
+></listitem>
+
+</itemizedlist>
+<para
+>يمكن ضبط خصائص العرض في قائمة <menuchoice
+><guimenu
+>عرض</guimenu
+></menuchoice
+>، ويمكن أيضًا تغيير بعضها (مثل وضع العرض) باستخدام أزرار شريط الأدوات. </para>
+
+<sect2 id="view-properties-dialog">
+<title
+>حوار خصائص العرض</title>
+
+<para>
+
+<screenshot>
+<screeninfo
+>لقطة شاشة لحوار خصائص العرض</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="viewproperties-dialog.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>حوار خصائص العرض.</phrase>
+</textobject>
+<caption
+><para
+>حوار خصائص العرض.</para
+></caption>
+</mediaobject>
+</screenshot
+>يمكن استخدام حوار <guilabel
+>خصائص العرض</guilabel
+> لتعديل عدة خصائص عرض بسرعة دفعة واحدة. يُفعل ذلك للمجلد الحالي، أو للمجلد الحالي بما في ذلك جميع المجلدات الفرعية، أو حتى لجميع المجلدات، وفقًا للاختيار المُتخذ في قسم <guilabel
+>تطبيق خصائص العرض على</guilabel
+>. </para>
+
+<para
+>إذا كان <guilabel
+>استخدم خصائص العرض هذه كمبدئي</guilabel
+> مُفعّلًا، فستُستخدم خصائص العرض المختارة أيضًا لجميع المجلدات التي لا تملك خصائص عرض مخصصة بعد. </para>
+</sect2>
+</sect1>
+
+<sect1 id="navigation">
+<title
+>التّنقّل</title>
+<para
+>للوصول إلى ملف باستخدام كنكر، تحتاج أولًا إلى التنقل عبر شجرة المجلدات للعثور على المجلد الذي يحتوي على ذلك الملف.</para>
+
+<para
+>للتنقل بين المجلدات، يمكنك ببساطة الصعود والنزول في الشجرة:</para>
+
+<itemizedlist>
+<listitem
+><para
+>للنزول إلى مجلد فرعي، <mousebutton
+>انقر يسارًا</mousebutton
+> على اسمه أو أيقونته —أو إذا كنت قد <quote
+>حددته</quote
+> بالفعل (انظر أدناه)— ثم اضغط فقط على <keysym
+>Enter</keysym
+>.</para
+></listitem
+> 
+<listitem
+><para
+>للصعود في شجرة المجلدات، يمكنك النقر على زر <guiicon
+>أعلى</guiicon
+> في شريط الأدوات، أو استخدام <keycombo action="simul"
+>&Alt;<keysym
+>أعلى</keysym
+></keycombo
+>، أو استخدام خيار شريط القوائم <menuchoice
+><guimenu
+>اذهب</guimenu
+><guimenuitem
+>أعلى</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>لـ<quote
+>تحديد</quote
+> ملف أو مجلد في المجلد المعروض دون فتحه بأي طريقة، استخدم مفتاحي الأسهم <keysym
+>أعلى</keysym
+> و<keysym
+>أسفل</keysym
+> للتنقل بين العناصر. سيُبرز العنصر المحدد وستُعرض بعض المعلومات عنه في شريط الحالة.</para>
+
+<para
+>يمكن أن يساعدك ضبط <link linkend="viewmode"
+>وضع العرض</link
+> على <guimenuitem
+>تفاصيل</guimenuitem
+> في تحديد موقع المجلدات في الشجرة أسفل المجلد الحالي؛ في هذا الوضع، يُعرض كل مجلد بصندوق صغير على اليسار. إذا احتوى الصندوق على علامة <keycap
+>&gt;</keycap
+>، فإن النقر <mousebutton
+>الأيسر</mousebutton
+> على الصندوق (وليس على اسم المجلد أو أيقونته) سيعرض شجرة فرعية تُظهر الملفات والمجلدات الفرعية الموجودة في ذلك المجلد. سيتغير الصندوق الصغير بعد ذلك ليظهر علامة <keycap
+>v</keycap
+>. انقر <mousebutton
+>يسارًا</mousebutton
+> عليها لطي الشجرة الفرعية. بمجرد العثور على المجلد الذي تبحث عنه، انقر <mousebutton
+>يسارًا</mousebutton
+> على اسم المجلد أو أيقونته لفتحه.</para>
+<!--
+<para
+>The <link linkend="sidebar"
+>Sidebar</link
+> can also help you 
+find your way around the file system.</para>
+-->
+<para
+>يمكنك الانتقال مباشرة إلى أي مجلد بالتبديل إلى شريط الموقع باستخدام <menuchoice
+><guimenu
+>ملف</guimenu
+><guimenuitem
+>فتح موقع</guimenuitem
+></menuchoice
+> أو <keycombo action="simul"
+>&Alt;<keycap
+>O</keycap
+></keycombo
+> وكتابة مساره. قد تكون ميزة <link linkend="path-complete"
+>الإكمال التلقائي للنص</link
+> في كنكر مفيدة عند القيام بذلك. لا تنسَ أن أسماء الملفات والمجلدات في لينكس / يونكس حساسة لحالة الأحرف.</para>
+
+<para
+>عند الانتقال إلى مجلد جديد، يمكنك العودة إلى اختيارك السابق باستخدام زر <guiicon
+>رجوع</guiicon
+> في شريط الأدوات، أو عنصر شريط القوائم <menuchoice
+><guimenu
+>اذهب</guimenu
+><guimenuitem
+>رجوع</guimenuitem
+></menuchoice
+>، أو <keycombo action="simul"
+>&Alt;<keysym
+>يسار</keysym
+></keycombo
+>. بمجرد العودة، يمكنك التقدم للأمام. استخدم زر <guiicon
+>تقديم</guiicon
+> في شريط الأدوات، أو عنصر شريط القوائم <menuchoice
+><guimenu
+>اذهب</guimenu
+><guimenuitem
+>تقديم</guimenuitem
+></menuchoice
+>، أو <keycombo action="simul"
+>&Alt;<keysym
+>يمين</keysym
+></keycombo
+>.</para>
+
+<para
+>بدلًا من ذلك، يمكنك أيضًا اختيار الدخول إلى المجلد الأصلي بالنقر على <guiicon
+>أعلى</guiicon
+> في شريط الأدوات، أو عنصر <menuchoice
+><guimenu
+>اذهب</guimenu
+><guimenuitem
+>أعلى</guimenuitem
+></menuchoice
+>، أو باستخدام <keycombo action="simul"
+>&Alt;<keysym
+>أعلى</keysym
+></keycombo
+>.</para>
+
+<tip
+><para
+>النقر على علامة الاختيار على يمين أزرار شريط الأدوات <guiicon
+>أعلى</guiicon
+> أو <guiicon
+>رجوع</guiicon
+> أو <guiicon
+>تقديم</guiicon
+> أو تحديد هذه العناصر في قائمة <guimenu
+>اذهب</guimenu
+> يُظهر قائمة فرعية بالمواقع التي تمت زيارتها مؤخرًا.</para>
+</tip>
+
+<sect2 id="file-find">
+<title
+>إيجاد الملفات والمجلدات</title>
+
+<para
+>إذا كنت لا تعرف أو لا تستطيع تذكر مكان ملف أو مجلد في نظامك، فاستخدم الاختصار <keycombo action="simul"
+>&Ctrl;<keycap
+>F</keycap
+></keycombo
+> أو خيار شريط القوائم <menuchoice
+><guimenu
+>أدوات</guimenu
+><guimenuitem
+>ابحث عن ملف…</guimenuitem
+></menuchoice
+>. يبدأ هذا تطبيق البحث عن الملفات &kfind;. راجع <ulink url="help:/kfind/index.html"
+>دليل &kfind;</ulink
+> للمساعدة في استخدام &kfind;. </para>
+
+<note
+><para
+>إذا بدأ اسم ملف أو مجلد بنقطة (dot)، فهو ملف أو مجلد <quote
+>مخفي</quote
+>، ولن يُظهره كنكر عادةً. لرؤية الملفات أو المجلدات المخفية، استخدم خيار شريط القوائم <menuchoice
+><guimenu
+>عرض</guimenu
+><guimenuitem
+>الملفات المخفية</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>سبب آخر لعدم عرض كنكر للملف أو المجلد الذي تبحث عنه هو أنك قد تكون ضبطت ملحق <link linkend="konq-plugin"
+><guilabel
+>مرشح الدليل</guilabel
+></link
+> لعرض أنواع معينة فقط من الملفات.</para>
+</note>
+
+</sect2>
+
+<sect2 id="removable-devices">
+<title
+>الأجهزة المنفصلة</title>
+
+<para
+>أي جهاز قابل للإزالة (محرك USB، أو محرك &CD;، أو قسم قرص صلب آخر موجود على نظامك) سيظهر عادةً في المجلد <filename class="directory"
+>/</filename
+> أو <filename class="directory"
+>/media</filename
+> أو <filename class="directory"
+>/mnt</filename
+> أو <filename class="directory"
+>/auto</filename
+>، بمسار مثل <filename class="directory"
+>/mnt/floppy</filename
+> أو <filename class="directory"
+>/cdrom</filename
+>. ستعتمد التفاصيل على كيفية إعداد نظامك.</para>
+
+<para
+>يتطلب يونكس / لينكس منك <command
+>وصل</command
+> جهاز قابل للإزالة عند إدخاله في المحرك، و<command
+>وصل</command
+> أقسام القرص الصلب الأخرى عندما تريد الوصول إليها. تحتاج أيضًا إلى فصل جهاز قابل للإزالة قبل إزالته لتسجيل أنه لم يعد متاحًا.</para>
+
+<para
+>كيفية القيام بذلك ستعتمد على إعداد نظامك:</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>استخدام <guilabel
+>مُنبّه الأجهزة</guilabel
+></para>
+<para
+>في جلسة كيدي، ستظهر نافذة <ulink url="help:/plasma-desktop/index.html#device-notifier"
+>مُنبّه الأجهزة</ulink
+> عند إدخال جهاز قابل للإزالة، وتسمح لك باختيار تطبيق مناسب لهذه الوسائط أو فقط وصل الجهاز.</para>
+</listitem>
+<listitem
+><para
+>إذا كنت تستخدم تخطيط <guilabel
+>عرض المجلدات</guilabel
+> لسطح المكتب، فقد يكون لديك أيقونات للأجهزة القابلة للإزالة على سطح المكتب، وفي هذه الحالة انقر &LMB; على الأيقونة لوصلها. يجب أن يؤدي القيام بذلك أيضًا إلى ظهور نافذة كنكر تُظهر محتويات الجهاز. للفصل، انقر <mousebutton
+>يمينًا</mousebutton
+> على الأيقونة واختر عنصر <guimenuitem
+>فصل</guimenuitem
+>. زر قسم <link linkend="making"
+>إنشاء جديد…</link
+> في هذا الدليل لترى كيفية إنشاء مثل هذه الأيقونة.</para
+></listitem>
+
+<listitem
+><para
+>أو يمكنك القيام بذلك بالطريقة التقليدية بكتابة ما يلي في نافذة وحدة تحكم نصية:</para>
+<para
+><userinput
+><command
+>mount /mnt/floppy</command
+></userinput
+></para>
+<para
+>لوصل، على سبيل المثال، محرك الأقراص المرنة، و</para>
+<para
+><userinput
+><command
+>umount /mnt/floppy</command
+></userinput
+></para>
+<para
+>لفصله (<command
+>umount</command
+> وليس <command
+>unmount</command
+>). </para>
+<note
+><para
+>بدلًا من الاضطرار إلى فتح وحدة تحكم نصية لكتابة أوامر <command
+>mount</command
+> أو <command
+>umount</command
+>، قد تفضل استخدام ميزة كنكر <menuchoice
+><guimenu
+>أدوات</guimenu
+><guimenuitem
+>تنفيذ أمر صدفة</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>). </para
+></note>
+</listitem>
+</itemizedlist>
+</sect2>
+</sect1>
+
+<sect1 id="deleting">
+<title
+>حذف الملفات والمجلدات</title>
+
+<para
+>يمنحك كنكر طريقتين للتخلص من ملف أو مجلد غير مرغوب فيه:</para>
+
+<itemizedlist>
+<listitem
+><para
+>يمكنك نقله إلى مجلد <filename
+>المهملات</filename
+>، وهي الطريقة الأكثر أمانًا حيث يمكنك استعادته إذا أدركت أنك ارتكبت خطأً.</para
+></listitem
+> 
+
+<listitem
+><para
+>يمكنك حذفه ببساطة، مما يزيل الإدخال من المجلد ويضيف مساحة القرص التي تشغلها الملفات إلى قائمة النظام لمساحات القرص الحرة، بنفس طريقة الأمر <command
+>rm</command
+>.</para>
+<para
+>إذا أردت استخدام هذه الميزة، فعِّل الخيار <guilabel
+>إظهار إدخالات القائمة "حذف" التي تتجاوز سلة المهملات</guilabel
+> في صفحة إعدادات <guilabel
+>إدارة الملفات</guilabel
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>أبسط طريقة لإزالة ملف أو مجلد هي وضع مؤشر الفأرة فوق اسمه أو أيقونته والضغط على &RMB;، مما سيظهر قائمة تحتوي على الخيارين <guimenuitem
+>نقل إلى المهملات</guimenuitem
+> و<guimenuitem
+>حذف</guimenuitem
+>.</para>
+
+<para
+>أو، إذا كنت قد "حددت" العنصر، فستعطيك قائمة شريط القوائم <guimenu
+>تحرير</guimenu
+> خيار <guimenuitem
+>نقل إلى المهملات</guimenuitem
+> و<guimenuitem
+>حذف</guimenuitem
+>.</para>
+
+<para
+>سينقل <keycap
+>Del</keycap
+> العنصر أو العناصر المحددة إلى المهملات.</para>
+
+<para
+>سيحذف <keycombo action="simul"
+>&Shift;<keycap
+>Del</keycap
+></keycombo
+> العنصر أو العناصر المحددة بشكل حقيقي ونهائي لا رجعة فيه.</para>
+
+<note
+><para
+>لن تتمكن من إزالة ملف أو مجلد إذا لم تكن لديك الأذون اللازمة.</para
+></note>
+
+</sect1>
+
+<sect1 id="moving">
+<title
+>النقل والنسخ</title>
+
+<para
+>لنسخ ملف أو مجلد فرعي بين المجلدات يمكنك:</para>
+
+<itemizedlist>
+<listitem
+><para
+>ضع مؤشر الفأرة فوق اسمه أو أيقونته واضغط مع الاستمرار على &RMB;، مما سيظهر قائمة تحتوي على الخيار <guimenuitem
+>نسخ</guimenuitem
+>. اختر ذلك.</para>
+
+<para
+>أو إذا كان العنصر "محددًا" يمكنك استخدام زر <guiicon
+>نسخ</guiicon
+> على شريط الأدوات أو عنصر شريط القوائم <menuchoice
+><guimenu
+>تحرير</guimenu
+> <guimenuitem
+>نسخ</guimenuitem
+></menuchoice
+>، أو مجموعة المفاتيح المختصرة <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+>. يمكنك أيضًا تحديد <link linkend="selection"
+>متعددة</link
+> من الملفات أو المجلدات لنسخها/نقلها أيضًا.</para
+></listitem>
+
+<listitem
+><para
+>انتقل إلى المجلد الذي تريد نسخ العنصر إليه ثم الصق العنصر في المجلد الجديد باستخدام زر <guiicon
+>لصق</guiicon
+> على شريط الأدوات أو خيار شريط القوائم <menuchoice
+><guimenu
+>تحرير</guimenu
+> <guimenuitem
+>لصق</guimenuitem
+></menuchoice
+> أو المختصر <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+>، أو بوضع مؤشر الفأرة في منطقة فارغة من النافذة والضغط مع الاستمرار على &RMB; لإظهار قائمة تحتوي على الخيار <guimenuitem
+>لصق</guimenuitem
+>. </para
+></listitem>
+</itemizedlist>
+
+<para
+>يمكن نقل ملف أو مجلد فرعي بين المجلدات بنفس طريقة النسخ، باستثناء أنك تختار الخيار <guimenuitem
+>قص</guimenuitem
+> أو <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> بدلًا من <guimenuitem
+>نسخ</guimenuitem
+>. سيتم إزالة العنصر الذي قمت بقصه من المجلد الأصلي عند القيام بعملية <guimenuitem
+>لصق</guimenuitem
+> في المجلد الجديد.</para>
+
+<sect2 id="dnd">
+<title
+>استخدام السحب والإفلات</title>
+
+<para
+>يدعم كنكر أيضًا نسخ ونقل الملفات والمجلدات عن طريق السحب والإفلات.</para>
+
+<para
+>يمكنك القيام بذلك عن طريق فتح نسختين من كنكر، واحدة تظهر المجلد الذي تريد النسخ منه، والأخرى تظهر المجلد الهدف. ضع مؤشر الفأرة فوق العنصر الذي ترغب في نسخه أو نقله، ثم، أثناء الضغط مع الاستمرار على &LMB;، "اسحبه" إلى مساحة فارغة في المجلد الهدف. حرر الزر وستظهر لك قائمة اختيار من <guimenuitem
+>نسخ هنا</guimenuitem
+> أو <guimenuitem
+>نقل هنا</guimenuitem
+> أو <guimenuitem
+>ارتباط هنا</guimenuitem
+>. احرص على "إفلات" العنصر في منطقة فارغة من عرض المجلد الهدف—فإفلاته فوق مجلد فرعي سينسخ أو ينقل العنصر إلى ذلك المجلد.</para>
+
+<para
+>يمكنك أيضًا إعداد كنكر لعرض أكثر من مجلد واحد داخل نافذته والسحب والإفلات بينها.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dragdrop.png"/></imageobject>
+<textobject>
+<phrase
+>عروض مقسمة للسحب والإفلات</phrase>
+</textobject>
+</mediaobject>
+
+<para
+>توضح لقطة الشاشة هذه استخدام خيار شريط القوائم <menuchoice
+><guimenu
+>نافذة</guimenu
+> <guimenuitem
+>تقسيم العرض يسار/يمين</guimenuitem
+></menuchoice
+>، المتاح أيضًا بالمختصر <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+>، لتقسيم نافذة كنكر الرئيسة إلى عرضين، كل منهما يعرض محتويات مجلد مختلف.</para>
+
+<para
+>لتتمكن من عرض مجلدات مختلفة في كل عرض، يجب ألا تكون مرتبطة؛ يجب أن تكون المربعات الصغيرة في أسفل يمين كل عرض فارغة. </para>
+
+<para
+>العرض "النشط"، أي الذي يظهر مساره في شريط أدوات الموقع والذي يستجيب لأوامر التنقل وشريط القوائم، يظهر بواسطة الضوء الأخضر الصغير في الزاوية السفلية اليسرى. لجعل عرض نشطًا، انقر <mousebutton
+>يسار</mousebutton
+> على منطقة فارغة من العرض أو على شريط الحالة الخاص به.</para>
+
+<para
+>لإزالة عرض نشط من نافذة كنكر استخدم المختصر <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>W</keycap
+></keycombo
+>، أو خيار شريط القوائم <menuchoice
+><guimenu
+>نافذة</guimenu
+><guimenuitem
+>إغلاق العرض النشط</guimenuitem
+></menuchoice
+>، أو انقر بزر &RMB; على شريط الحالة واختر الخيار <guimenuitem
+>إغلاق العرض</guimenuitem
+> من القائمة الناتجة.</para>
+
+<para
+>إذا كنت تستخدم علامات تبويب كنكر، يمكنك السحب والإفلات بين علامات التبويب عن طريق سحب الملف إلى ملصق علامة التبويب، دون ترك الملف بعد. ستظهر علامة التبويب الوجهة إلى الأمام، مما يسمح لك بمواصلة السحب ثم إفلات الملف.</para>
+
+</sect2>
+
+<sect2 id="dups">
+<title
+>أسماء الملفات أو المجلدات المكررة</title>
+<para
+>إذا حاولت لصق ملف أو مجلد في مجلد يحتوي بالفعل على عنصر بنفس الاسم، سيعرض كنكر مربع حوار يحذرك من أن العنصر موجود بالفعل. يمكنك بعد ذلك اختيار: </para>
+<itemizedlist>
+<listitem
+><para
+>إلغاء عملية اللصق بالضغط على الزر <guibutton
+>إلغاء</guibutton
+>.</para
+></listitem>
+<listitem
+><para
+>إعطاء العنصر الذي يتم نسخه اسمًا مختلفًا. يمكنك القيام بذلك عن طريق كتابة اسم جديد في مربع إدخال النص أو جعل كنكر <guibutton
+>يقترح اسمًا جديدًا</guibutton
+>. بعد القيام بذلك، اضغط على الزر <guibutton
+>متابعة</guibutton
+>.</para
+></listitem>
+<listitem
+><para
+>إذا قمت بنسخ عناصر متعددة، <guibutton
+>تجاوز</guibutton
+> العنصر الحالي. </para
+></listitem>
+</itemizedlist>
+<para
+>يمكن استخدام الزر <guibutton
+>تطبيق على الكل</guibutton
+> إذا قمت بنسخ عناصر متعددة.</para>
+</sect2>
+</sect1>
+<!--FIXME begin copy from dolphin docbook synced for 16.04-->
+<sect1 id="selection">
+<title
+>تحديد العناصر في المنظور</title>
+
+<para
+>توجد طرق عدة لتحديد العناصر في المنظور. بمجرد تحديد مجموعة من العناصر، فإن كافة الإجراءات، مثل <menuchoice
+><guimenuitem
+>قص</guimenuitem
+></menuchoice
+>، و<menuchoice
+><guimenuitem
+>نسخ</guimenuitem
+></menuchoice
+>، و<menuchoice
+><guimenuitem
+>نقل إلى المهملات</guimenuitem
+></menuchoice
+>، وعمليات السحب والإفلات، تؤثر على كافة العناصر المحددة. </para>
+
+<sect2 id="selection-mouse">
+<title
+>تحديد العناصر باستخدام الفأرة</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>يمكنك الضغط بزر الفأرة الأيسر في أي مكان في المنظور ورسم مستطيل حول مجموعة من العناصر قبل إفلات الزر. سيؤدي هذا إلى تحديد كافة العناصر الموجودة داخل المستطيل ومسح التحديد السابق. إذا ضُغط على مفتاح &Shift; أثناء عملية التحديد، يُحتفظ بالتحديد السابق. </para
+></listitem>
+
+<listitem
+><para
+>إذا ضُغط على مفتاح &Ctrl; أثناء نكر عنصر بزر الفأرة الأيسر، تُبدل حالة تحديد هذا العنصر. وإذا ضُغط على مفتاح &Ctrl; أثناء رسم مستطيل حول مجموعة من العناصر كما هو موضح أعلاه، ستُبدل حالة تحديد كافة العناصر الموجودة في المستطيل. </para
+></listitem>
+
+<listitem
+><para
+>إذا ضُغط على مفتاح &Shift; أثناء نكر عنصر بزر الفأرة الأيسر، فستُحدد كافة العناصر الموجودة بين العنصر الحالي السابق والعنصر المنقور. </para
+></listitem>
+
+</itemizedlist>
+
+</sect2>
+
+<sect2 id="selection-keyboard">
+<title
+>تحديد العناصر باستخدام لوحة المفاتيح</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>إذا ضُغط مفتاح سهم، أو <keysym
+>PgUp</keysym
+>، أو <keysym
+>PgDn</keysym
+>، أو <keycap
+>Home</keycap
+>، أو <keycap
+>End</keycap
+>، يُحدد العنصر الحالي الجديد، ويُمسح التحديد السابق. </para
+></listitem>
+
+<listitem
+><para
+>إذا استُمر في الضغط على مفتاح &Ctrl; أثناء الضغط على أحد المفاتيح المذكورة أعلاه، يبقى التحديد دون تغيير. </para
+></listitem>
+
+<listitem
+><para
+>إذا استُمر في الضغط على مفتاح &Shift; أثناء الضغط على أحد المفاتيح المذكورة أعلاه، فستُحدد كافة العناصر الموجودة بين العنصر الحالي السابق والعنصر الحالي الجديد. </para
+></listitem>
+
+<listitem
+><para
+>إذا ضُغط على <keycombo action="simul"
+>&Ctrl;<keysym
+>Space</keysym
+></keycombo
+>، تُبدل حالة تحديد العنصر الحالي. </para
+></listitem>
+
+<listitem
+><para
+>يحدد الاختصار <keycombo action="simul"
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+> كافة العناصر في المنظور. </para
+></listitem>
+
+<listitem
+><para
+>يبدل الاختصار <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>A</keycap
+></keycombo
+> حالة تحديد كافة العناصر في المنظور. </para
+></listitem>
+
+<listitem
+><para
+>حدد ملفًا أو مجلدًا بكتابة الأحرف القليلة الأولى من اسمه وسيُحدد أول عنصر مطابق. لمسح التحديد وإلغاء البحث بلوحة المفاتيح، اضغط على &Esc; أو انتظر لمدة تزيد عن ثانية واحدة. </para
+></listitem>
+</itemizedlist>
+<!--FIXME end copy from dolphin docbook 16.04-->
+
+</sect2>
+
+<!--FIXME selection via menu different in dolphin-->
+<sect2 id="selection-menu">
+<title
+>تحديد العناصر باستخدام القائمة</title>
+
+<para
+>قد ترغب أحيانًا في حذف أو نسخ أو نقل عدد من الملفات المتشابهة بطريقة ما. مثلًا، قد ترغب في نقل جميع ملفات الرسوميات ذات الامتداد <filename class="extension"
+>.png</filename
+> من مجلد إلى آخر. يُسهّل كنكر ذلك بتحديد ملفات متعددة بناءً على تشابه أسمائها.</para>
+
+<para
+>استخدم خيار شريط القائمة <menuchoice
+><guimenu
+>تحرير</guimenu
+><guisubmenu
+>تحديد</guisubmenu
+> <guimenuitem
+>حدد العناصر المتطابقة…</guimenuitem
+></menuchoice
+> أو الاختصار <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+>. يظهر حوار صغير تُدخل فيه اسم ملف يحتوي على أحرف البدل <keycap
+>*</keycap
+> الذي يطابق أي عدد من الأحرف، و<keycap
+>?</keycap
+> الذي يطابق حرفًا واحدًا. اضغط <guibutton
+>موافق</guibutton
+> وسيُبرز كنكر جميع الملفات ذات الأسماء المتطابقة. مثلًا:</para>
+
+<itemizedlist>
+<listitem
+><para
+><userinput
+><filename
+>flag*.png</filename
+></userinput
+> سيحدد جميع أسماء الملفات التي تبدأ بالأحرف <quote
+>flag</quote
+> وتنتهي بـ <quote
+><literal role="extension"
+>.png</literal
+></quote
+>.</para
+></listitem>
+<listitem
+><para
+><userinput
+><filename
+>memo?.txt</filename
+></userinput
+> سيحدد <filename
+>memo1.txt</filename
+> و<filename
+>memo9.txt</filename
+> ولكن ليس <filename
+>memo99.txt</filename
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>عند تحديد نطاق من الملفات، يمكنك تضييق التحديد باستخدام خيار شريط القائمة <menuchoice
+><guimenu
+>تحرير</guimenu
+><guisubmenu
+>تحديد</guisubmenu
+> <guimenuitem
+>ألغ تحديد العناصر المتطابقة…</guimenuitem
+></menuchoice
+> لتحديد أي من الملفات المحددة يجب إزالتها من التحديد.</para>
+
+<para
+>استخدم خيار شريط القائمة <menuchoice
+><guimenu
+>تحرير</guimenu
+><guisubmenu
+>تحديد</guisubmenu
+> <guimenuitem
+>ألغ تحديد الكل</guimenuitem
+></menuchoice
+> أو فقط انقر &LMB; على منطقة فارغة من العرض لإلغاء التحديد.</para>
+
+<para
+>يمكنك حتى عكس التحديد: أي إلغاء تحديد جميع الملفات المحددة وتحديد تلك التي لم تكن محددة سابقًا. استخدم خيار شريط القائمة <menuchoice
+><guimenu
+>تحرير</guimenu
+><guisubmenu
+>تحديد</guisubmenu
+><guimenuitem
+>اعكس التحديد</guimenuitem
+></menuchoice
+> أو <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>A</keycap
+></keycombo
+> لفعل ذلك.</para>
+</sect2>
+
+</sect1>
+
+<sect1 id="making">
+<title
+>أنشئ جديدًا</title>
+
+<para
+>عندما يكون كنكر في وضع مدير الملفات، اختيار <guisubmenu
+>أنشئ جديدًا</guisubmenu
+> من النقر بـ &RMB; على منطقة فارغة في عرض مجلد يعطيك قائمة فرعية تتيح لك إنشاء أي مما يلي في المجلد الحالي:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>المجلّد…</guimenuitem
+></term>
+<listitem
+><para
+>طريقة سهلة لإنشاء مجلد (فرعي) جديد.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>ملف نصي…</guimenuitem
+></term>
+<listitem
+><para
+>استخدم هذا لإنشاء ملف نصي عادي فارغ. سيُفتح حوار لإدخال اسم الملف الجديد.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>ملفّ HTML…</guimenuitem
+></term>
+<listitem
+><para
+>ينشئ ملف مصدر <acronym
+>HTML</acronym
+> هيكلي. عند كتابة اسم الملف الجديد في الحوار، من الأفضل إعطاؤه امتداد <literal role="extension"
+>.html </literal
+> لتجنب الالتباس.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+><replaceable
+>نوع المستند</replaceable
+> مستند…</guimenuitem
+></term>
+<listitem
+><para
+>اعتمادًا على التطبيقات المثبتة وارتباطات الملفات، تُعرض عدة عناصر قائمة لأنواع مختلفة من المستندات وتتيح لك إنشاء مستندات هيكلية من النوع المحدد.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>وصلة إلى مكان (عنوان)…</guimenuitem
+></term>
+<listitem
+><para
+>يتيح لك هذا إنشاء أيقونة لفتح كنكر في مجلد أو صفحة ويب معينة. كما هو الحال مع <guimenuitem
+>ارتباط بالتطبيق…</guimenuitem
+>، يمكنك جعل أيقونة التطبيق تظهر على سطح المكتب بإنشاء الرابط في مجلد <filename
+>~/Desktop</filename
+> أو بالذهاب إلى القائمة الفرعية <guisubmenu
+>أنشئ جديدًا…</guisubmenu
+> بالنقر بزر الفأرة الأيمن على منطقة فارغة من سطح المكتب.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>وصلة إلى ملفّ أو مجلد…</guimenuitem
+></term>
+<listitem
+><para
+>أنشئ رابطًا رمزيًا للملفات أو المجلدات المحلية.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>وصلة إلى تطبيق…</guimenuitem
+></term>
+<listitem
+><para
+>هذا الخيار مفيد جدًا إذا أردت إنشاء أيقونة تفتح تطبيقًا معينًا. يفتح حوارًا بعدة صفحات مبوبة. الأولى، <guilabel
+>عام</guilabel
+>، حيث تختار أيقونة والنص الذي سيظهر معها. الصفحة الثانية، <guilabel
+>أذون</guilabel
+>، تتيح لك اختيار من يمكنه استخدام الأيقونة أو تعديلها. في صفحة <guilabel
+>التطبيق</guilabel
+>، يجب إدخال <guilabel
+>الأمر</guilabel
+> الذي سيشغّل التطبيق، مثلًا <userinput
+>kwrite</userinput
+> لتشغيل محرر النصوص &kwrite;. <userinput
+>kwrite /home/pam/todo.txt</userinput
+> سيفتح الملف <filename
+>/home/pam/todo.txt</filename
+> في &kwrite;. الخيارات المتقدمة مثل أنواع الملفات التي يمكن للتطبيق فتحها متاحة أيضًا من هذه الصفحة.</para>
+
+<para
+>لجعل أيقونة التطبيق تظهر على سطح المكتب، أنشئ الرابط في مجلد <filename class="directory"
+>~/Desktop</filename
+> (قد يُسمى بشكل مختلف قليلًا اعتمادًا على كيفية تثبيت كيدي على نظامك) أو اذهب إلى القائمة الفرعية <guisubmenu
+>أنشئ جديدًا…</guisubmenu
+> بالنقر <mousebutton
+>الأيمن</mousebutton
+> على منطقة فارغة من سطح المكتب بدلًا من داخل نافذة كنكر.</para>
+
+<para
+>إذا كان لديك الكثير من روابط التطبيقات المتخصصة ولا تريد إرباك سطح المكتب، فلماذا لا تنشئها في مجلد التطبيقات. يمكنك الوصول إليه في كنكر باختيار <menuchoice
+><guimenu
+>اذهب</guimenu
+> <guimenuitem
+>التطبيقات</guimenuitem
+></menuchoice
+>. ثم أنشئ أيقونة واحدة على سطح المكتب لفتح مجلد التطبيقات، والذي يكون عادة في <filename class="directory"
+>~/.local/share/applications</filename
+>.</para>
+<para
+>لوضع أيقونة رابط تطبيق في اللوحة، أنشئها أولًا في مجلد التطبيقات ثم اسحب الأيقونة إلى منطقة فارغة في اللوحة.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="newname">
+<title
+>تغيير الأسماء والأذون</title>
+
+<para
+>أسهل طريقتين لتغيير اسم ملف أو مجلد هما إما النقر <mousebutton
+>الأيمن</mousebutton
+> عليه واختيار <guimenuitem
+>أعد التسمية</guimenuitem
+>، أو تحديد الملف أو المجلد ثم الضغط على المفتاح <keycap
+>F2</keycap
+>.</para>
+
+<para
+>لتغيير اسم أو أذون ملف أو مجلد، انقر <mousebutton
+>الأيمن</mousebutton
+> على اسمه أو أيقونته واختر العنصر <guimenuitem
+>خصائص</guimenuitem
+>، أو إذا كنت قد <quote
+>حددت</quote
+> الملف أو المجلد، فيمكنك استخدام خيار شريط القائمة <menuchoice
+><guimenu
+>تحرير</guimenu
+><guimenuitem
+>خصائص</guimenuitem
+> </menuchoice
+> (<keycombo action="simul"
+>&Alt;<keycap
+>Return</keycap
+></keycombo
+>).</para>
+
+<para
+>سيظهر حوار الخصائص بعدة صفحات مبوبة:</para>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>عام</guilabel
+>، يعطيك بعض المعلومات عن العنصر ويتيح لك تغيير اسمه، وبالنسبة للمجلد، الأيقونة المرتبطة.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>أذون</guilabel
+>، تظهر ملكية العنصر وأذون الوصول وتتيح لك تغيير الأذون. </para
+></listitem>
+</itemizedlist>
+<!--FIXME Checksums tab missing-->
+<sect2 id="copyrename">
+<title
+>انسخ وأعد التسمية</title>
+<para
+>إذا أردت عمل نسخة من ملف موجود باسم مختلف —ربما كنسخة احتياطية— في نفس مجلد الملف الأصلي، قم بنسخ <guimenuitem
+>انسخ</guimenuitem
+> عادي ثم عند <guimenuitem
+>ألصق</guimenuitem
+> سيظهر حوار يشكو من وجود الملف بالفعل. اكتب الاسم الجديد في مربع نص الحوار واضغط الزر <guibutton
+>تابع</guibutton
+> (أو إذا كنت تشعر بالكسل، الضغط على الزر <guibutton
+>اقترح اسمًا جديدًا</guibutton
+> سيولد اسمًا جديدًا لك).</para>
+</sect2>
+
+</sect1>
+
+<sect1 id="file-associations">
+<title
+>ضبط ارتباطات الملفات</title>
+
+<!-- TODO: The content should probably be here too, but this’ll do for -->
+<!-- now. -->
+<para
+>توفر كيدي العديد من التطبيقات التي يمكنها فتح أنواع مختلفة كثيرة من الملفات. في معظم الأوقات، ستعمل المبدئيات دون مشاكل، لكن كنكر يوفر نظامًا قويًا يتيح لك تغيير التطبيقات المستخدمة لفتح كل نوع ملف. لمزيد من التفاصيل، اختر عنصر القائمة <menuchoice
+><guimenu
+>الإعدادات</guimenu
+><guimenuitem
+>اضبط كنكر…</guimenuitem
+></menuchoice
+>، واختر <guilabel
+>ارتباطات الملفات</guilabel
+> في حوار الضبط، وانقر على <guibutton
+>المساعدة</guibutton
+>.</para>
+
+</sect1>
+
+<sect1 id="commandline">
+<title
+>في سطر الأوامر</title>
+
+<para
+>على الرغم من أن كنكر هو مدير ملفات رسومي قوي ومرن جدًا، إلا أن هناك مناسبات يرغب فيها مستخدم لينكس/يونكس المتمرس في العودة إلى الأساسيات والعمل على مستوى سطر الأوامر النصي.</para>
+
+<para
+>يمكنك، بالطبع، فتح نسخة من كونسول، ربما عبر خيار شريط القوائم في كنكر <menuchoice
+><guimenu
+>أدوات</guimenu
+><guimenuitem
+>افتح طرفية</guimenuitem
+></menuchoice
+> أو باستخدام <keycap
+>F4</keycap
+>.</para>
+<para
+>إذا كنت ترغب فقط في تشغيل برنامج أو عرض عنوان URL، فقد يكون خيار <menuchoice
+> <guimenu
+>أدوات</guimenu
+><guimenuitem
+>نفّذ أمر صدفة…</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>) أسهل.</para>
+
+<para
+><menuchoice
+><guimenu
+>أدوات</guimenu
+><guimenuitem
+>نفّذ أمر صدفة… </guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl; <keycap
+>E</keycap
+></keycombo
+>) يفتح نافذة حوار صغيرة لأوامر سطر الأوامر حيث يمكنك إدخال أمر صدفة مثل <userinput
+>ps -ax | grep kdeinit </userinput
+>. لاحظ أنه لا يدعم محارف التحكم الكاملة للطرفية، لذا فإن تطبيقات مثل <userinput
+>top</userinput
+> و <userinput
+> less</userinput
+> لن تعمل بشكل صحيح، لكنه متاح فورًا دون التأخير الناتج عن بدء كونسول. </para>
+
+<para
+>للعمليات الأكثر تعقيدًا، يتمتع كنكر بميزة أخرى رائعة: خيار شريط القوائم <menuchoice
+><guimenu
+>الإعدادات</guimenu
+><guimenuitem
+>أظهر محاكي الطرفية</guimenuitem
+></menuchoice
+>، الذي يفتح نافذة طرفية كعرض جديد داخل كنكر.</para>
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="cmndline.png"/></imageobject>
+<textobject>
+<phrase
+>تضمين محاكي الطرفية</phrase>
+</textobject>
+</mediaobject>
+
+</sect1>
+
+</chapter>
+
+<chapter id="browser">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+
+<title
+>كنكر متصفح الويب</title>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="konqorg.png"/></imageobject>
+<textobject>
+<phrase
+>تصفح www.konqueror.org</phrase>
+</textobject>
+</mediaobject>
+
+<sect1 id="surf">
+<title
+>التصفح والبحث</title>
+
+<para
+>بمجرد أن يكون لديك اتصال بالإنترنت، يمكنك التصفح باستخدام كنكر كما تفعل مع أي متصفح آخر.</para>
+
+<para
+>اكتب عنوان URL في شريط أدوات الموقع، واضغط <keysym
+>إدخال</keysym
+> أو انقر <mousebutton
+>يسار</mousebutton
+> على زر <guiicon
+><inlinemediaobject
+><imageobject
+> <imagedata fileref="go-jump.png" format="PNG"/> </imageobject
+></inlinemediaobject
+></guiicon
+> <guibutton
+>اذهب</guibutton
+> في الطرف الأيمن من شريط أدوات الموقع، وسيقوم كنكر بتنزيل تلك الصفحة وعرضها. إذا كنت قد زرت الصفحة من قبل، يمكن لميزة <link linkend="path-complete"
+>الإكمال التلقائي للنص</link
+> في كنكر مساعدتك في كتابة عنوان URL مرة ثانية. إذا كنت ترغب في استخدام أحد محركات بحث الويب، يمكن لميزة كلمات البحث في الويب في كنكر تسهيل ذلك.</para>
+
+<para
+>انقر <mousebutton
+>يسار</mousebutton
+> على رابط في صفحة لفتح ذلك الرابط.</para>
+
+<para
+>لفتح رابط في نسخة جديدة من كنكر، مع إبقاء الصفحة القديمة مرئية، انقر بزر الفأرة الأيمن على الرابط واختر خيار <guimenuitem
+>افتح في نافذة جديدة</guimenuitem
+>. بدلًا من ذلك، قد ترغب في <guimenuitem
+>افتح في لسان جديد</guimenuitem
+>. <link linkend="tabbrowse"
+>التصفح بالألسنة</link
+> سيسمح لك بالاحتفاظ بعدة صفحات في نافذة كنكر واحدة والتبديل بينها بسرعة بنقرة فأرة واحدة.</para>
+
+<para
+>يمكنك أيضًا اختيار أوضاع عرض متعددة باستخدام خيار <menuchoice
+><guimenu
+>نافذة</guimenu
+> <guimenuitem
+>قسّم العرض يسار/يمين</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl; &Shift;<keycap
+>L</keycap
+></keycombo
+>) / <menuchoice
+><guimenu
+>نافذة</guimenu
+> <guimenuitem
+>قسّم العرض أعلى/أسفل</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl; &Shift;<keycap
+>T</keycap
+></keycombo
+>) والذي سيسمح لك برؤية صفحات مختلفة في نفس الوقت. قد يكون هذا مفيدًا إذا كنت تتصفح مجموعة معقدة من صفحات HTML، لكن تأكد من أن مربع الرابط الصغير في الزاوية اليمنى السفلية فارغ عند القيام بذلك.</para>
+<para
+>للعودة إلى الصفحة السابقة، استخدم الاختصار <keycombo action="simul"
+>&Alt;<keysym
+>يسار</keysym
+></keycombo
+>، أو زر <guibutton
+>رجوع</guibutton
+> على شريط الأدوات، أو خيار شريط القوائم <menuchoice
+><guimenu
+>اذهب</guimenu
+> <guimenuitem
+>رجوع</guimenuitem
+></menuchoice
+>.</para>
+<para
+>وبالمثل، بمجرد العودة، يمكنك التقدم للأمام باستخدام <keycombo action="simul"
+>&Alt;<keysym
+>يمين</keysym
+></keycombo
+>، أو زر <guibutton
+>تقدم</guibutton
+>، أو خيار شريط القوائم <menuchoice
+><guimenu
+>اذهب</guimenu
+> <guimenuitem
+>تقدم</guimenuitem
+></menuchoice
+>.</para>
+
+<!-- copy from okular Navigating -->
+<para
+>هناك طرق متعددة للتمرير في منطقة العرض. إحداها استخدام مفتاحي <keysym
+>أعلى</keysym
+> و <keysym
+>أسفل</keysym
+>. يمكنك أيضًا استخدام شريط التمرير، أو عجلة الفأرة، أو مفتاحي <keysym
+>PgUp</keysym
+> و <keysym
+>PgDn</keysym
+>.</para>
+
+<para
+>إذا كنت ترغب في إيقاف تنزيل لأي سبب، فاستخدم مفتاح &Esc;، أو زر <guibutton
+>إيقاف</guibutton
+> على شريط الأدوات، أو عنصر شريط القوائم <menuchoice
+><guimenu
+>عرض</guimenu
+> <guimenuitem
+>إيقاف</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>عند عرض صفحة ويب مع تمكين <guilabel
+>شريط أدوات HTML</guilabel
+>، يجب أن ترى أيقونتين جديدتين في شريط الأدوات <guiicon
+><inlinemediaobject
+><imageobject
+> <imagedata fileref="format-font-size-less.png" format="PNG"/> </imageobject
+></inlinemediaobject
+></guiicon
+> و <guiicon
+><inlinemediaobject
+><imageobject
+> <imagedata fileref="format-font-size-more.png" format="PNG"/> </imageobject
+></inlinemediaobject
+></guiicon
+>. استخدمهما لضبط حجم النص في الصفحة إذا وجدت صعوبة في القراءة. مدى نجاح ذلك يعتمد على كيفية بناء صفحة الويب.</para>
+</sect1>
+<!-- Tab works in filemanager mode as well-->
+<sect1 id="tabbrowse">
+<title
+>تصفح مبوّب</title>
+<para
+>باستخدام هذه الميزة، يمكنك جعل كنكر يحمل عدة صفحات ويب في نفس النافذة، والتبديل بينها باستخدام صفحات الألسنة. بهذه الطريقة، يمكنك تحميل صفحة مسبقًا <quote
+>في الخلفية</quote
+> بينما تواصل قراءة أخرى.</para>
+
+<para
+>لاستخدام التصفح بالألسنة، انقر <mousebutton
+>يمين</mousebutton
+> على رابط واختر <guimenuitem
+>افتح في لسان جديد</guimenuitem
+> من القائمة المنسدلة أو انقر بزر الفأرة الأوسط. سيتم تنزيل الصفحة وعرضها كالمعتاد، ولكن مع ألسنة عبر أعلى العرض، لسان واحد لكل صفحة. انقر بزر الفأرة الأيسر على لسان لعرض تلك الصفحة، أو يمكنك استخدام الاختصارين <keycombo action="simul"
+>&Ctrl;<keycap
+>,</keycap
+></keycombo
+> و <keycombo action="simul"
+>&Ctrl;<keycap
+>.</keycap
+></keycombo
+> للتنقل عبر صفحات الألسنة. بدلًا من ذلك، يمكنك التمرير عبر الألسنة باستخدام <mousebutton
+>عجلة</mousebutton
+> الفأرة بينما مؤشر الفأرة فوق شريط الألسنة (بافتراض أن فأرتك تحتوي على عجلة). أيضًا، النقر المزدوج فوق مساحة شريط الألسنة الفارغة سيفتح لسانًا جديدًا.</para>
+
+<para
+>باستخدام خيار <guilabel
+>افتح ألسنة جديدة في الخلفية</guilabel
+> في صفحة <guilabel
+>عام</guilabel
+> من حوار <guimenu
+>الإعدادات</guimenu
+>، يؤدي النقر على رابط إلى تنزيل الصفحة وإظهار لسان جديد لها، لكن الصفحة الجديدة لن تُعرض حتى تنقر <mousebutton
+>يسار</mousebutton
+> على اللسان.</para>
+
+<para
+>إذا حددت مربع <guilabel
+>افتح الروابط في لسان جديد بدلًا من نافذة جديدة</guilabel
+> في صفحة <guimenuitem
+>عام</guimenuitem
+> من حوار <menuchoice
+><guimenu
+>الإعدادات</guimenu
+><guimenuitem
+>اضبط كنكر… </guimenuitem
+></menuchoice
+>، فإن النقر بزر الفأرة الأوسط على رابط سيفتحه في صفحة لسان جديدة، وإذا ضغطت مع الاستمرار على مفتاح &Shift; أثناء النقر بزر الفأرة الأوسط، سيُفتح الرابط في صفحة لسان خلفية.</para>
+
+<para
+>النقر <mousebutton
+>يمين</mousebutton
+> على لسان سيظهر قائمة بالخيارات التالية:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>لسان جديد</guimenuitem
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>هذا يفتح عرض صفحة لسان جديدة فارغة. يمكنك بعد ذلك تنزيل صفحة ويب فيها بكتابة عنوان URL في شريط الموقع أو بتحديد من شريط أدوات العلامات.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>كرّر اللسان</guimenuitem
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>D</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>لإنشاء صفحة لسان مكررة.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>أعد تحميل اللسان</guimenuitem
+> (<keycap
+>F5</keycap
+>)</term>
+<listitem
+><para
+>يعيد تحميل محتوى اللسان الحالي.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guisubmenu
+>الألسنة الأخرى</guisubmenu
+></term>
+<listitem
+><para
+>يعرض قائمة فرعية تظهر جميع الألسنة الأخرى. اختيار لسان من هذه القائمة يجعله اللسان النشط.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guisubmenu
+>ألسنة أخرى</guisubmenu
+><guimenuitem
+>أعد تحميل كل الألسنة</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Shift;<keycap
+>F5</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>يعيد تحميل محتوى كل لسان.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guisubmenu
+>ألسنة أخرى</guisubmenu
+><guimenuitem
+>أغلق الألسنة الأخرى</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>لإغلاق كل صفحات الألسنة ما عدا المختارة.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>افصل اللسان</guimenuitem
+> (<keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>B</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>يزيل هذا الخيار صفحة اللسان المختارة من نافذة كنكر الحالية ويفتحها في نسخة جديدة من كنكر.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>أغلق اللسان</guimenuitem
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>لإغلاق صفحة اللسان المختارة.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="enhanced-browsing">
+<title
+>كلمات بحث الويب</title
+> 
+
+<para
+>إذا كان ممكّنًا، تتيح لك ميزة كلمات البحث على الويب في كنكر إرسال استعلام مباشرة إلى محرك بحث أو موقع ويب مماثل دون الحاجة لزيارة الموقع أولًا.</para
+> <para
+>على سبيل المثال، كتابة <userinput
+>gg:konqueror</userinput
+> في شريط الموقع والضغط على <keysym
+>Enter</keysym
+> سيطلب من <trademark
+>Google</trademark
+> البحث عن عناصر متعلقة بـ كنكر.</para>
+<para
+>لمعرفة كلمات البحث على الويب المتاحة، وربما إضافة كلماتك الخاصة، افتح صفحة <guilabel
+>كلمات البحث على الويب</guilabel
+> في صفحة <menuchoice
+><guimenu
+>الإعدادات</guimenu
+><guimenuitem
+>اضبط Konqueror…</guimenuitem
+></menuchoice
+>.</para>
+
+</sect1>
+
+<sect1 id="accesskeys">
+
+<title
+>مفاتيح الوصول</title>
+
+<para
+>يدعم كنكر بشكل كامل سمة <sgmltag class="attribute"
+>accesskey</sgmltag
+> في &HTML; في النماذج والروابط. تتيح لك مفاتيح الوصول استخدام مفاتيح لوحة المفاتيح لوظائف قد تُفعل عادةً بالفأرة، مثل تتبع الروابط. فائدة ذلك، ببساطة، هي أن المستخدمين يمكنهم التفاعل مع صفحة بأجهزة غير جهاز التأشير.</para>
+<para
+>يجب تمكين هذه الميزة بتحديد خيار <guilabel
+>تمكين تفعيل مفتاح الوصول بمفتاح &Ctrl;</guilabel
+> في صفحة إعدادات <guilabel
+>تصفح الويب</guilabel
+>.</para>
+<para
+>لتفعيل مفاتيح الوصول في كنكر، اضغط على &Ctrl; ثم أفلته. بمجرد الضغط، إذا كان رابط معين على الموقع يحمل سمة <sgmltag class="attribute"
+>accesskey</sgmltag
+> في الرابط المعطى، فستظهر الحرف(الأحرف) فوق الرابط، محددة ما يجب الضغط عليه. ثم يمكنك إدخال الحرف(الأحرف) المرتبطة بالرابط كبديل لتتبعه بالفأرة. لتعطيل مفاتيح الوصول بعد التفعيل، يمكنك الضغط على &Ctrl; مرة أخرى.</para>
+
+<note
+><para
+>الاستخدام الصحيح لهذه الميزة يتطلب أن يكون مصمم الويب للصفحة قد خصص، باستخدام سمة <sgmltag class="attribute"
+>accesskey</sgmltag
+>، مفتاح وصول للرابط. قد لا يدرج العديد من مصممي الويب <sgmltag class="attribute"
+>accesskey</sgmltag
+> في روابطهم ونماذجهم، وبالتالي ستكون هذه الميزة غير قابلة للاستخدام في صفحة الويب المعطاة.</para
+></note>
+
+</sect1>
+
+<sect1 id="useragent">
+<title
+>هوية المتصفح</title>
+<para
+>عندما يتصل كنكر بموقع ويب، يرسل بعض معلومات تعريف المتصفح المختصرة، المعروفة بسلسلة <quote
+>وكيل المستخدم</quote
+>. تستخدم العديد من مواقع الويب هذه المعلومات لتخصيص الصفحات التي ترسلها، بناءً على نقاط القوة والضعف لمتصفحات مختلفة.</para>
+<para
+>لسوء الحظ، ترفض بعض المواقع سيئة التصميم العمل بشكل صحيح إلا إذا كنت تستخدم متصفحًا تعرفه الموقع كـ <quote
+>صالح</quote
+>، حتى لو أُعطي فرصة، سيعمل كنكر بشكل مرضٍ مع الغالبية العظمى من صفحات الويب.</para>
+<para
+>لتجاوز هذه المشكلة، يمكنك تغيير معلومات تعريف المتصفح التي يرسلها كنكر لمواقع أو نطاقات محددة باختيار وحدة <ulink url="help:/kcontrol/useragent/"
+>تعريف المتصفح</ulink
+> في فئة &systemsettings; <guilabel
+>الشبكة</guilabel
+>.</para>
+<note
+><para
+>قد تكون مشاكل جعل صفحة ويب تعمل بشكل صحيح أيضًا بسبب استخدامها لـ &Java; أو جافا سكربت. إذا كنت تشك في أن هذا قد يكون الحال، تحقق من تمكينها في قسم <guilabel
+>Java &amp; جافا سكربت</guilabel
+> من حوار الإعدادات.</para
+></note>
+<!--FIXME not ported to kf5
+<note
+><para
+>Install the <guilabel
+>UserAgent Changer</guilabel
+> extension from the 
+&konqueror; Plugins and enable it in <menuchoice
+><guimenu
+>Settings</guimenu
+><guimenuitem>
+Configure Extensions</guimenuitem
+></menuchoice
+>. This extension adds a 
+<guimenuitem
+>Change Browser Identification</guimenuitem
+> item to the <guimenu
+>Tools</guimenu
+> 
+menu. Using this item lets you quickly switch between different <quote
+>User Agent</quote
+> 
+strings.</para
+></note>
+-->
+</sect1>
+
+<sect1 id="save-print-web">
+<title
+>حفظ وطباعة عناصر الويب</title>
+
+<para
+>عند عرض صفحة ويب، يمكنك حفظها (أو على الأقل نص المصدر الأساسي &HTML; أو ما شابه) على قرصك المحلي بـ <menuchoice
+><guimenu
+>ملف</guimenu
+><guimenuitem
+>حفظ باسم…</guimenuitem
+></menuchoice
+>. إذا كانت الصفحة التي تعرضها تستخدم إطارات، فسيُعرض عليك أيضًا خيار <menuchoice
+><guimenu
+>ملف</guimenu
+><guimenuitem
+>حفظ الإطار باسم…</guimenuitem
+></menuchoice
+>. انقر <mousebutton
+>يسار</mousebutton
+> في الإطار الذي تريد حفظه أولًا.</para>
+
+<para
+>إذا كانت الصفحة تستخدم صورة خلفية، يمكنك الحصول عليها وحفظها بخيار <menuchoice
+><guimenu
+>ملف</guimenu
+><guimenuitem
+>حفظ صورة الخلفية باسم…</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>لكن إذا كان ما تريده حقًا هو تلك الصورة الرائعة لأحدث فيراري، فالنقر <mousebutton
+>يمين</mousebutton
+> على الصورة سيعطيك قائمة منسدلة بخيار <guimenuitem
+>حفظ الصورة باسم…</guimenuitem
+>. تأكد من احترام حقوق النشر للمالك، واطلب الإذن قبل استخدام أي صور محفوظة بهذه الطريقة لأي شيء غير متعة المشاهدة الشخصية.</para>
+
+<para
+>إذا نقرت <mousebutton
+>يمين</mousebutton
+> على رابط (قد يكون صورة) واخترت <guimenuitem
+>حفظ الرابط باسم…</guimenuitem
+> من القائمة المنبثقة، فسيُحمل نص المصدر الأساسي &HTML; أو ما شابه ويُحفظ على قرصك المحلي.</para>
+
+<para
+>النقر <mousebutton
+>يمين</mousebutton
+> على رابط (قد يكون صورة) واختيار <guimenuitem
+>انسخ عنوان الرابط</guimenuitem
+> سينسخ عنوان الرابط إلى الحافظة لتتمكن من لصقه، مثلًا، في بريد إلكتروني لصديق تخبرها عن هذا الموقع الرائع الجديد.</para>
+
+<para
+>النقر <mousebutton
+>يمين</mousebutton
+> على صورة واختيار <guimenuitem
+>انسخ الصورة</guimenuitem
+> ينسخ عنوان الصورة إلى الحافظة.</para>
+
+<para
+>يمكن طباعة نسخة من الصفحة التي تعرضها بسهولة باستخدام شريط القوائم <menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>طباعة…</guimenuitem
+></menuchoice
+> أو خيار <guimenuitem
+>طباعة الإطار</guimenuitem
+> أو زر <guiicon
+>طباعة</guiicon
+> في شريط الأدوات.</para>
+
+</sect1>
+
+<sect1 id="ftp">
+<title
+>&FTP;</title>
+
+<para
+>&FTP;، أو بروتوكول نقل الملفات، هو أحد أقدم الطرق، وربما لا يزال الأفضل، لنقل الملفات بين الحواسيب عبر الإنترنت.</para>
+
+<para
+>باستخدام &FTP; يمكنك رؤية الملفات والمجلدات على الحاسوب البعيد كما لو كانت على نظامك الخاص، وتنزيلها إلى حاسوبك باستخدام طرق <guimenuitem
+>نسخ</guimenuitem
+> و<guimenuitem
+>لصق</guimenuitem
+> العادية في كنكر أو طرق السحب والإفلات، وإذا سُمح لك، رفع الملفات من جهازك إلى نظام ملفات الحاسوب الآخر. لتجربته، اكتب عنوان</para>
+
+<screen
+><userinput
+>ftp://ftp.l10n.kde.org</userinput
+>
+</screen>
+
+<para
+>في شريط الموقع واضغط <keysym
+>دخول</keysym
+>. طالما أنك متصل بالإنترنت، يجب أن ترى مجلد <filename class="directory"
+>ftp</filename
+> لخادم l10n.</para>
+
+<note
+><para
+>على الرغم من أنه، بالمعنى الدقيق، يجب إدخال عنوان &FTP; بدءًا بـ <userinput
+>ftp://</userinput
+> و&URL; <acronym
+>WWW</acronym
+> بدءًا بـ <userinput
+>http://</userinput
+>، إلا أن كنكر عادةً ما يكون ذكيًا بما يكفي لمعرفة المقصود، وإدراج هذه الأحرف لك إذا تركتها.</para
+></note>
+
+<para
+>عند الوصول إلى موقع &FTP;، سيحتاج عادةً إلى شكل من أشكال اسم المستخدم وكلمة المرور منك. لتبسيط الأمور، معظم مواقع &FTP; التي تقدم ملفات للتنزيل المجاني ستقبل كلمة <systemitem class="username"
+>مجهول</systemitem
+> كاسم مستخدم وعنوان بريدك الإلكتروني ككلمة مرور، ولتسهيل حياتك أكثر، سيوفر كنكر هذه تلقائيًا دون إزعاجك. </para>
+
+<note
+><para
+>إذا حاولت الوصول إلى موقع &FTP; لا يحتاج إلى اسم مستخدم أو كلمة مرور صحيحين ولكنه مشغول جدًا بحيث لا يقبل المزيد من الاتصالات، غالبًا ما يفسر كنكر رسالة <quote
+>مشغول</quote
+> كطلب لاسم وكلمة مرور، وبالتالي سيظهر مربع حوار يطلب منك توفيرهما.</para
+></note>
+
+<para
+>المواقع الأكثر اهتمامًا بالأمان ستحتاج إلى اسم مستخدم وكلمة مرور صحيحين، وفي هذه الحالة سيطلبها كنكر منك أو يمكنك تضمين اسم المستخدم في عنوان الذي تكتبه في شريط الموقع، على سبيل المثال</para>
+
+<screen
+><userinput
+>ftp://<replaceable
+>اسم_المستخدم</replaceable
+>@ftp.l10n.kde.org</userinput
+>
+</screen>
+
+<para
+>سيطلب كنكر منك كلمة المرور بعد ذلك.</para>
+
+<para
+>يمكن لـ كنكر أيضًا دعم عمليات الدخول التلقائية كما هو محدد في ملف <filename
+>.netrc</filename
+>. تفاصيل كيفية تمكين هذه الميزة معطاة في <ulink url="https://konqueror.org/faq/#DoesKonquerorsupportautomaticftploginsvianetrcfiles"
+> https://konqueror.org/faq/#DoesKonquerorsupportautomaticftploginsvianetrcfiles</ulink
+></para>
+
+</sect1>
+
+<sect1 id="portnumbers">
+<title
+>عنوان بأرقام المنافذ</title>
+<para
+>إذا حددت رقم منفذ في عنوان الخاص بك، كما في مثال <userinput
+>http://intranet.corp.com:1080</userinput
+>، قد تحصل على رسالة خطأ <quote
+>الوصول إلى المنفذ المحظور في POST مرفوض</quote
+>. يتم ذلك لأسباب أمنية. إذا كنت مع ذلك بحاجة إلى الوصول إلى خادم على هذا المنفذ، فقط أضف سطر مفتاح <screen
+><userinput
+> OverridenPorts=قائمة_المنافذ_المسموح_بها_مفصولة_بفاصلة </userinput
+></screen
+> إلى <filename
+>kio_httprc</filename
+> في المجلد <filename class="directory"
+>$(qtpaths --paths GenericConfigLocation)</filename
+>.</para>
+<para
+>على سبيل المثال <screen
+><userinput
+>OverridenPorts=23,15 </userinput
+></screen
+> (يجب ألا يتضمن أي مسافات مضمنة).</para>
+<para
+>سيرفض كنكر المنافذ التالية:</para>
+<para
+>1, 7, 9, 11, 13, 15, 17, 19, 20, 21, 22, 23, 25, 37, 42, 43, 53, 77, 79, 87, 95, 101, 102, 103, 104, 109, 110, 111, 113, 115, 117, 119, 123, 135, 139, 143, 179, 389, 512, 513, 514, 515, 526, 530, 531, 532, 540, 556, 587, 601, 989, 990, 992, 993, 995, 1080, 2049, 4045, 6000, 6667 </para>
+</sect1>
+
+</chapter>
+
+<chapter id="path-complete">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup
+> 
+
+</chapterinfo>
+
+
+<title
+>الإكمال التلقائي للنص</title
+> 
+
+<para
+>يمكنك جعل كنكر يساعدك في إدخال مسار أو عنوان في شريط الموقع بتمكين إحدى ميزات <guimenuitem
+>إكمال النص</guimenuitem
+>. لفعل ذلك، <mousebutton
+>انقر يمينًا</mousebutton
+> على جزء فارغ من مربع إدخال نص شريط الموقع واختر <guisubmenu
+>إكمال النص</guisubmenu
+> من القائمة المنبثقة. سيسمح لك هذا بالاختيار بين الخيارات التالية:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>لا شيء</guimenuitem
+></term>
+<listitem
+><para
+>ما تراه هو ما تكتبه.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>يدويّ</guimenuitem
+></term>
+<!-- in 4.5 I see no diff to None -->
+<listitem
+><para
+>عند كتابة جزء من مسار أو عنوان، الضغط على <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> أو &Tab; سيكمل الإدخال إذا كان ذلك ممكنًا بشكل لا لبس فيه.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>آليّ</guimenuitem
+></term>
+<listitem
+><para
+>أثناء الكتابة في نافذة شريط الموقع، سيمدد كنكر تلقائيًا ما تكتبه لإكمال مسار أو عنوان محتمل واحد، مع إبراز الأحرف التي أضافها. استمر في الكتابة إذا لم يكن ذلك ما تريده أو اضغط <keysym
+>دخول</keysym
+> لقبوله.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>قائمة منسدلة</guimenuitem
+></term>
+<listitem
+><para
+>ستظهر نافذة منسدلة أثناء الكتابة، تعرض التطابقات المحتملة لما كتبته حتى الآن. عندما يظهر المسار أو عنوان الذي تريده في النافذة، انقر عليه باستخدام &LMB;. يمكنك أيضًا استخدام مفاتيح <keysym
+>أسفل</keysym
+> أو &Tab; و<keysym
+>أعلى</keysym
+> أو <keycombo action="simul"
+>&Shift;&Tab;</keycombo
+> لتحديده ثم اضغط <keysym
+>دخول</keysym
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>آليًّا قصيرًا</guimenuitem
+></term>
+<listitem
+><para
+>هذا يشبه الوضع التلقائي إلا أنه يمدد ما كتبته فقط حتى رمز <keycap
+>/</keycap
+> التالي في المسار أو عنوان. اضغط <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> أو &Tab; لقبول الاقتراح، <keysym
+>دخول</keysym
+> عند عرض المسار أو عنوان الكامل.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>قائمة منسدلة وتلقائي</guimenuitem
+></term>
+<listitem
+><para
+>هذا مزيج من كلا الخيارين الموصوفين أعلاه.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>المبدئيّ</guimenuitem
+></term>
+<listitem
+><para
+>يظهر هذا العنصر في أسفل القائمة الفرعية ويمكنك من التبديل إلى السلوك المبدئي <guimenuitem
+>قائمة منسدلة</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+<!-- Del to end 
+substring completion F7 http://websvn.kde.org/?view=revision&revision=1096306-->
+</variablelist>
+<para
+>يجب عليك تجربة هذه الأوضاع المختلفة واختيار الوضع الذي يناسبك أفضل.</para>
+ <!--
+<para
+>The history of recently visited &URL;s that &konqueror; uses for the 
+Text Completion function can be viewed and edited in the <guilabel
+>History
+</guilabel
+> page of the <link linkend="sidebar"
+>Sidebar</link
+>.</para>
+-->
+</chapter>
+
+<chapter id="bookmarks">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+<title
+>استخدام العلامات</title>
+
+<para
+>على الرغم من أنه يمكنك استخدام الإشارات المرجعية في كنكر لتسجيل مواقع ملفاتك ومجلداتك الخاصة، إلا أنها تكون أكثر فائدة عند تصفح الويب، مما يتيح لك بناء قائمة بالمواقع المفيدة.</para>
+
+<para
+>لفتح قائمة <guimenu
+>الإشارات المرجعية</guimenu
+> <mousebutton
+>انقر يسارًا</mousebutton
+> على قائمة <guimenu
+>الإشارات المرجعية</guimenu
+>. بمجرد ظهور القائمة، يمكنك التنقل فيها باستخدام مفاتيح الأسهم أو بالماوس، ثم اضغط <keysym
+>دخول</keysym
+> أو <mousebutton
+>انقر يسارًا</mousebutton
+> لزيارة الموقع المحدد.</para>
+
+<para
+>لإضافة عنصر جديد إلى القائمة، استخدم <menuchoice
+><guimenu
+>العلامات المرجعية </guimenu
+><guimenuitem
+>أضف علامة مرجعية</guimenuitem
+></menuchoice
+> أو <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> أو انقر <mousebutton
+>يمين</mousebutton
+> على مساحة فارغة في صفحة الويب أو عرض المجلد واختر <guimenuitem
+>أضف هذه الصفحة إلى العلامات المرجعية</guimenuitem
+> من القائمة المنبثقة.</para>
+
+<para
+>يمكن أن تحتوي قائمة <guimenu
+>العلامات المرجعية</guimenu
+> على مجلدات فرعية تحتوي على علامات مرجعية أخرى، يمكنك إنشاؤها باستخدام <menuchoice
+><guimenu
+>العلامات المرجعية </guimenu
+><guimenuitem
+>مجلد علامات مرجعية جديد…</guimenuitem
+></menuchoice
+> لإضافة علامة مرجعية إلى مجلد فرعي بدلًا من قائمة العلامات المرجعية الرئيسة، اختر المجلد من داخل قائمة <guimenu
+>العلامات المرجعية</guimenu
+> واستخدم العنصر <guimenuitem
+>أضف علامة مرجعية</guimenuitem
+> في ذلك المجلد.</para>
+<!--
+<para
+>You can also access your bookmarks from the <link linkend="sidebar">
+<guilabel
+>Sidebar</guilabel
+></link
+> or from the <guilabel
+>Bookmark Toolbar</guilabel
+>.</para>
+-->
+<para
+>إذا أدخلت <userinput
+>bookmarks:</userinput
+> في شريط الموقع، فستُعرض الصفحة الرئيسة للعلامات المرجعية مع نظرة عامة على جميع العلامات المرجعية والمجلدات.</para
+> 
+
+<para
+>إذا أردت تحرير علاماتك المرجعية، استخدم <ulink url="help:/keditbookmarks/index.html"
+>محرر العلامات المرجعية</ulink
+> </para>
+
+</chapter>
+<!--FIXME sidebar is empty https://bugs.kde.org/show_bug.cgi?id=366762
+update chapter + take new screenshot dirtree.png when fixed
+comment for now
+
+https://cgit.kde.org/konqueror.git/commit/?id=886b1a9947f578e8cedd96b903ab39eba0a3990c
+disable sidebar subdir, the concept will have to be rethought
+
+<chapter id="sidebar">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<! - - TRANS:ROLES_OF_TRANSLATORS - ->
+</authorgroup>
+
+</chapterinfo>
+
+<title
+>The Sidebar</title>
+
+<para
+>The Sidebar appears as a separate view at the left of 
+&konqueror;’s window. It can be invoked with <menuchoice
+><guimenu
+>Settings
+</guimenu
+><guimenuitem
+>Show Sidebar</guimenuitem
+></menuchoice
+> or 
+toggled on and off with the <keycap
+>F9</keycap
+> key.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dirtree.png"/></imageobject>
+<textobject>
+<phrase
+>With the Sidebar</phrase
+>  
+</textobject>
+</mediaobject>
+
+<para
+>It contains a number of tabbed pages; <mousebutton
+>left</mousebutton
+> 
+click on a tab’s icon to view that page. <mousebutton
+>Left</mousebutton
+> 
+clicking on the icon for the visible page will collapse the Sidebar 
+so that only the tab icons are visible.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guilabel
+>Bookmarks</guilabel
+></term>
+<listitem
+><para
+>This page shows a tree view of your Bookmarks. <mousebutton>
+Left</mousebutton
+> click on an item to open it in the main view.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>History</guilabel
+></term>
+<listitem
+><para
+>This page shows a tree view of your browsing History. 
+<mousebutton
+>Left</mousebutton
+> clicking on an item will open it in the main 
+view, or you can open it in a new &konqueror; window by <mousebutton
+>right
+</mousebutton
+> clicking and selecting <guimenuitem
+>Open in New Window</guimenuitem
+> 
+from the pop up menu.</para>
+<para
+>You can remove an item from the history by <mousebutton
+>right
+</mousebutton
+> clicking on it and selecting <guimenuitem
+>Remove Entry</guimenuitem
+>. 
+Selecting <guimenuitem
+>Clear History</guimenuitem
+> will 
+clear out the entire history.</para>
+<para
+>The pop up menu you get when you <mousebutton
+>right</mousebutton
+> click 
+on any entry in the History page also gives you the option of choosing 
+whether the entire history is sorted by name or by date.</para>
+<para
+>Selecting <guimenuitem
+>Preferences…</guimenuitem
+> from this pop up 
+menu brings up the <guilabel
+>History Sidebar</guilabel
+> control module. This 
+can be used to set the maximum size of your history and set a time after which 
+items are automatically removed. You can also set different fonts for new and 
+old &URL;s. 
+The <guilabel
+>Detailed tooltips</guilabel
+> checkbox controls how much 
+information is displayed when you hover the mouse pointer over an item in the 
+history page.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Home Folder</guilabel
+></term>
+<listitem
+><para
+>This page shows a tree view of the subfolders of your home 
+folder. Note that <quote
+>hidden</quote
+> folders (those with names 
+beginning with a dot) are not shown.
+<mousebutton
+>Left</mousebutton
+> click on an item to open it in the 
+main view, or <mousebutton
+>right</mousebutton
+> click to display a pop up 
+menu allowing you to open the subfolder in a new window or as a new tab 
+page of the main view.
+</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Network</guilabel
+></term>
+<listitem
+><para
+>This page is intended to show a tree view of your important 
+network connections, although local folders can also be included. Again, 
+you can <mousebutton
+>left</mousebutton
+> click on an item to open it in the 
+main view or <mousebutton
+>right</mousebutton
+> click to bring up a menu with 
+a wider range of possibilities.</para>
+<para
+>The folders shown in the <guilabel
+>Network</guilabel
+> page are held in 
+the folder <filename class="directory">
+~/.kde/share/apps/konqsidebartng/virtual_folders/remote/</filename
+>, and you can make 
+new ones just as you would make any other subfolder. The items within 
+these folders are held as <literal role="extension"
+>.desktop</literal
+> files 
+and can be created with &konqueror;’s <menuchoice
+><guisubmenu
+>Create New</guisubmenu>
+<guimenuitem
+>Link to Location (URL)…</guimenuitem
+></menuchoice
+> option in the 
+<guimenu
+>Edit</guimenu
+> menu.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Root Folder</guilabel
+></term>
+<listitem
+><para
+>The <guilabel
+>Root Folder</guilabel
+> tree has the path <filename
+class="directory"
+>/</filename
+>, and is the base folder of your system’s
+local files. If you expand the <quote
+>Root</quote
+> folder you will find 
+another folder called <filename class="directory"
+>root</filename
+>. This 
+belongs to the system administrator or Super User and is her home folder. 
+You will also find a folder called 
+<filename class="directory"
+>home</filename
+>, in which you should be able to 
+find your own <quote
+>Home</quote
+> folder again.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Services</guilabel
+></term>
+<listitem
+><para
+>This page provides quick access to the following services:
+</para>
+<para
+><guilabel
+>Applications</guilabel
+>, <guilabel
+>Audio CD Browser</guilabel
+>, 
+<guilabel
+>Fonts</guilabel
+> and <guilabel
+>Video DVD Browser</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+<!- - Different in dolphin + filedialog- ->
+<varlistentry>
+<term
+><guilabel
+>Places</guilabel
+></term>
+<listitem
+><para>
+The <guilabel
+>Places</guilabel
+> panel is located at the left of the window by
+default. The <guilabel
+>Places</guilabel
+> panel shows any locations you have
+bookmarked. It also shows any disk or media attached to the computer.
+</para>
+<para>
+The easiest way to add a folder to the <guilabel
+>Places</guilabel
+> panel is to
+drag it and drop it in the panel. Moreover, you can click inside the panel with
+the &RMB; and choose <menuchoice
+><guimenuitem
+>Add Entry…</guimenuitem
+></menuchoice>
+from the context menu.
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>The Sidebar configuration can be changed by <mousebutton
+>right
+</mousebutton
+> clicking on the empty area below the bottom tab icon or by 
+<mousebutton
+>left</mousebutton
+> clicking on the <guilabel
+>Configuration 
+Button</guilabel
+> icon, which is enabled in the context menu. Doing this
+brings up a menu with the following options:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guisubmenu
+>Add New</guisubmenu
+></term>
+<listitem
+><para
+>This option lets you add a new tab page to the Sidebar. 
+The new page can contain different Sidebar modules or a new
+<guimenuitem
+>Folder</guimenuitem
+> tree view. The last option in this
+submenu allows you to rollback to system default.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Multiple Views</guimenuitem
+></term>
+<listitem
+><para
+>Selecting this option splits the Sidebar so that 
+two tab pages can be seen at once.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Show Tabs Left</guimenuitem
+>, <guimenuitem
+>Show Tabs Right</guimenuitem
+></term>
+<listitem
+><para
+>This option lets you choose whether the tab icons are shown at 
+the left or right of the Sidebar.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Show Configuration Button</guimenuitem
+></term>
+<listitem
+><para
+>Use this option to show or hide the <guilabel
+>Configuration 
+Button</guilabel
+> icon.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+><mousebutton
+>Right</mousebutton
+> clicking on a tab icon brings up a 
+menu with the following options:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Set Name</guimenuitem
+></term>
+<listitem
+><para
+>This option lets you 
+change the Name of that page.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Set URL</guimenuitem
+></term>
+<listitem
+><para
+>This option lets you 
+change the &URL; (path) of the folder viewed in that page.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Set Icon</guimenuitem
+></term>
+<listitem
+><para
+>To change the tab icon.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Show Hidden Folders</guimenuitem
+></term>
+<listitem
+><para
+>Toggle whether hidden folders (folders with names that start with a dot) should be shown in the treeview.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Remove</guimenuitem
+></term>
+<listitem
+><para
+>To remove the tab page from the Sidebar.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Configure Sidebar</guimenuitem
+></term>
+<listitem
+><para
+>The last item shows the Sidebar configuration submenu
+as described above.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</chapter>
+-->
+
+<chapter id="save-settings">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+<title
+>حفظ الإعدادات</title>
+<para
+>يمكنك تحديد إعدادات مختلفة لقائمة <guimenu
+>عرض</guimenu
+> لمجلد فردي. لفعل ذلك، اختر <menuchoice
+><guimenu
+>عرض</guimenu
+> <guimenuitem
+>اضبط خصائص العرض…</guimenuitem
+></menuchoice
+>، وغيّر إعدادات <guimenu
+>عرض</guimenu
+> في الحوار إلى ما تريد. ثم طبق خصائص العرض على <guilabel
+>المجلد الحالي</guilabel
+>. يؤدي هذا إلى إنشاء ملف <filename
+>.directory</filename
+> في ذلك المجلد لحفظ إعدادات <guimenu
+>عرض</guimenu
+> المجلد. استخدم هذا الحوار مرة أخرى لإزالة الإعدادات الخاصة بالمجلد (أو احذف ملف <filename
+>.directory</filename
+> فقط).</para>
+<note
+><para
+>من الاستخدامات الجيدة لهذه الميزة أنه إذا كان لديك مجلد مليء بالصور، يمكنك ضبط ذلك المجلد لعرض صور مصغرة للصور (باختيار <menuchoice
+><guisubmenu
+>وضع العرض</guisubmenu
+> <guimenuitem
+>أيقونات</guimenuitem
+></menuchoice
+> و<guimenuitem
+>معاينة</guimenuitem
+> من قائمة <guimenu
+>عرض</guimenu
+>) عند فتحه، مع عدم عرض الصور كصور مصغرة في المجلدات الأخرى.</para
+></note>
+
+</chapter>
+
+<chapter id="plugins">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+
+<title
+>الملحقات</title>
+
+<sect1 id="konq-plugin">
+<title
+>ملحقات كنكر</title>
+
+<para
+>تصدر كيدي عدة ملحقات مفيدة تتفاعل مع كنكر بطرق متنوعة. تُشرح هذه بإيجاز أدناه.</para>
+
+<para
+>استخدم <menuchoice
+><guimenu
+>إعدادات</guimenu
+><guimenuitem
+>اضبط الملحقات…</guimenuitem
+></menuchoice
+> لفتح حوار يحتوي على جميع الملحقات المثبتة واختر التي تحتاجها. جميع الملحقات متاحة في قائمة <guimenu
+>أدوات</guimenu
+>.</para>
+
+<para
+>تُدرج في الحوار فقط الملحقات المناسبة للوضع الحالي (مدير ملفات أو متصفح).</para>
+
+<variablelist>
+<title
+>وضع المتصفح</title>
+
+<varlistentry>
+<term
+>ترجمة صفحة الويب</term>
+<listitem
+><para
+>يستخدم هذا خدمة الترجمة الآلية المقدمة من <ulink url="https://translate.google.com/"
+>ترجمة Google</ulink
+> لترجمة صفحة <acronym
+>HTML</acronym
+> الحالية إلى أي لغة تريد (ضمن حدود المعقول). يمكن تشغيله باستخدام <menuchoice
+><guimenu
+>أدوات</guimenu
+><guisubmenu
+>ترجم صفحة الويب</guisubmenu
+></menuchoice
+>.</para>
+<para
+>إذا كان لديك جزء من النص في الصفحة محددًا، فسيُترجم ذلك بدلًا من عنوان بأكمله.</para>
+
+<important>
+<para
+>الترجمة الآلية ليست علمًا مثاليًا! ستعطيك Google في أفضل الأحوال ترجمة تقريبية، وفي أسوأ الأحوال ستعطيك قراءة مضحكة جدًا. لا تبنِ قرارات مهمة على أشياء قرأتها من صفحة مترجمة بواسطة Google دون التأكد من أن الترجمة دقيقة بالفعل.</para>
+</important>
+
+<note>
+<para
+>يمكنك فقط ترجمة صفحات الويب المتاحة على شبكة الويب العالمية. لترجمة أي نص آخر، يجب أن تذهب مباشرة إلى موقع Google نفسه، حيث يمكنك لصق النص للترجمة.</para>
+</note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>إعدادات HTML</term>
+<listitem
+><para
+>اختر <menuchoice
+><guimenu
+>أدوات</guimenu
+><guisubmenu
+>إعدادات HTML</guisubmenu
+></menuchoice
+> لتمكين أو تعطيل عدد من إعدادات HTML دون المرور بحوار <guimenu
+>إعدادات</guimenu
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>جافاسكربت</guimenuitem
+></term>
+<listitem
+><para
+>يسمح لك بتشغيل أو إيقاف استخدام جافا سكربت في كنكر.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>جاوة</guimenuitem
+></term>
+<listitem
+><para
+>يسمح لك بتشغيل أو إيقاف استخدام &Java; في كنكر.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>الكعكات</guimenuitem
+></term>
+<listitem
+><para
+>يسمح لك بتشغيل أو إيقاف استخدام ملفات تعريف الارتباط في كنكر.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>الملحقات</guimenuitem
+></term>
+<listitem
+><para
+>يسمح لك بتشغيل أو إيقاف استخدام ملحقات كنكر المثبتة لديك.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>التحميل الآليّ للصور</guimenuitem
+></term>
+<listitem
+><para
+>يسمح لك بتشغيل أو إيقاف تحميل الصور في صفحات الويب.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>مكّن الوكيل</guimenuitem
+></term>
+<listitem
+><para
+>يسمح لك بتمكين أو تعطيل استخدام وكيل في متصفح كنكر.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>مكّن الخبيئة</guimenuitem
+></term>
+<listitem
+><para
+>يسمح لك بتمكين أو تعطيل استخدام خبيئة في متصفح كنكر.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>سياسة الخبيئة</guimenuitem
+></term>
+<listitem>
+<para
+>توفر لك القائمة الفرعية لسياسة الخبيئة طريقة لضبط كيفية استخدام كنكر للخبيئة. تشمل الاستخدامات الممكنة:</para>
+<itemizedlist>
+<listitem
+><para
+>حافظ على مزامنة الخبيئة</para
+></listitem>
+<listitem
+><para
+>استخدم الخبيئة إن أمكن</para
+></listitem>
+<listitem
+><para
+>وضع التصفّح دون اتصال</para
+></listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<variablelist>
+<title
+>وضع مدير الملفات</title>
+
+<varlistentry>
+<term
+>مرشح الدليل</term>
+<listitem
+><para
+>يُتحكم في هذا بواسطة <menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>I</keycap
+></keycombo
+></shortcut
+> <guimenu
+>أدوات</guimenu
+><guisubmenu
+>أظهر شريط التصفية</guisubmenu
+></menuchoice
+> ويسمح لك باختيار أنواع العناصر المعروضة في مجلد.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>معرض صور</term>
+<listitem
+><para
+>في وضع مدير الملفات، يمكنك اختيار <menuchoice
+><guimenu
+>أدوات</guimenu
+><guisubmenu
+>أنشئ معرض صور</guisubmenu
+></menuchoice
+> أو استخدم <keycombo
+>&Ctrl;<keycap
+>I</keycap
+></keycombo
+> لإنشاء صفحة HTML تحتوي على صور مصغرة لجميع الصور في المجلد الحالي. افتراضيًا، تُسمى صفحة HTML <filename
+>images.html</filename
+> وتُوضع الصور المصغرة في مجلد جديد <filename
+>images</filename
+>.</para>
+<para
+>عند بدء ملحق معرض الصور، يُفتح حوار يسمح لك بضبط طريقة إنشاء المعرض.</para>
+
+<variablelist id="page_look_dialog">
+<title
+>مظهر الصفحة</title>
+<varlistentry>
+<term
+>حوار المظهر مخصص لضبط مظهر صفحة المعرض.</term>
+<listitem>
+
+<screenshot>
+<screeninfo
+>لقطة شاشة حوار المظهر</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="look.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>لقطة شاشة</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>معرض صور</guimenuitem
+></term>
+<listitem
+><para
+>خيار عنوان الصفحة يحتوي على مربع إدخال نصي لتغيير عنوان صفحة معرض الصور.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>الصور لكلّ صف</guimenuitem
+></term>
+<listitem
+><para
+>خيار الصور لكل صف يحتوي على شريط تمرير ومربع دوار لضبط عدد الصور المصغرة في الصف الواحد بالمعرض.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>أظهر اسم ملفّ الصّورة</guimenuitem
+></term>
+<listitem
+><para
+>خانة الاختيار إظهار اسم ملف الصورة تتيح لك اختيار عرض أسماء الملفات أسفل الصور المصغرة بالمعرض.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>أظهر حجم ملف الصورة</guimenuitem
+></term>
+<listitem
+><para
+>خانة الاختيار إظهار حجم ملف الصورة تتيح لك اختيار عرض أحجام الملفات أسفل الصور المصغرة بالمعرض.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>أظهر أبعاد الصّورة</guimenuitem
+></term>
+<listitem
+><para
+>خانة الاختيار إظهار أبعاد الصورة تتيح لك اختيار عرض أبعاد الصورة بالبكسل أسفل الصور المصغرة بالمعرض.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>اسم الخط</guimenuitem
+></term>
+<listitem
+><para
+>مربع القائمة المنسدلة اسم الخط يوفر لك خيارًا لاختيار الخط المستخدم في إنشاء المعرض.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>حجم الخط</guimenuitem
+></term>
+<listitem
+><para
+>مربع الحجم الدوار حجم الخط مخصص لتغيير حجم الخط الذي حددته.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>لون المقدّمة</guimenuitem
+></term>
+<listitem
+><para
+>خيار لون المقدمة يحتوي على منتقي لاختيار لون مقدمة المعرض، ويشمل ذلك مناطق النص.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>لون الخلفية</guimenuitem
+></term>
+<listitem
+><para
+>خيار لون الخلفية يحتوي على منتقي لاختيار لون خلفية المعرض.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist id="folders_dialog">
+<title
+>المجلّدات</title>
+<varlistentry>
+<term
+>حوار المجلدات يُستخدم لاختيار مكان حفظ المعرض. يُستخدم هذا الحوار أيضًا لضبط المجلدات المستخدمة.</term>
+<listitem>
+
+<screenshot>
+<screeninfo
+>لقطة شاشة حوار المجلدات</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="folders.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>لقطة شاشة</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>احفظ إلى ملف HTML</guimenuitem
+></term>
+<listitem
+><para
+>منتقي الحفظ في ملف يتيح لك تحديد المكان الذي تريد حفظ صفحة html لمعرض الصور فيه.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>تكرار المجلدات الفرعية</guimenuitem
+></term>
+<listitem
+><para
+>خانة الاختيار تضمين المجلدات الفرعية تتيح تضمين المجلدات الفرعية. إذا كانت خانة الاختيار مفعلة، يُفعّل شريط تمرير ومربع دوار لاختيار عمق التضمين.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>انسخ الملفات الأصلية</guimenuitem
+></term>
+<listitem
+><para
+>خانة الاختيار نسخ الملفات الأصلية تنشئ مجلد صور يخزن نسخًا من الصور الأصلية المستخدمة في المعرض.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>استخدم ملف التعليق</guimenuitem
+></term>
+<listitem
+><para
+>خانة الاختيار استخدام ملف تعليقات تتيح منتقي ملف لاختيار ملف تعليقات لاستخدامه مع معرضك. يحتوي ملف التعليقات على التسميات التوضيحية للصور.</para>
+<para
+>تنسيق هذا الملف هو:</para>
+<programlisting
+># هذا تعليق، الأسطر التي تبدأ بـ "#
+</programlisting>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist id="thumbnails_dialog">
+<title
+>المصغّرات</title>
+<varlistentry>
+<term
+>حوار الصور المصغرة يُستخدم لضبط خصائص الصور المصغرة في المعرض.</term>
+<listitem>
+
+<screenshot>
+<screeninfo
+>لقطة شاشة حوار الصور المصغرة</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="thumbnails.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>لقطة شاشة</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>تنسيق الصورة للصور المصغرة</guimenuitem
+></term>
+<listitem
+><para
+>مربع القائمة المنسدلة تنسيق الصورة يتيح لك اختيار التنسيق المستخدم للصور المصغرة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>حجم المصغّرة</guimenuitem
+></term>
+<listitem
+><para
+>خيار حجم الصورة المصغرة يوفر شريط تمرير ومربع دوار لضبط حجم الصور المصغرة المستخدمة في المعرض.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>عيّن عمق ألوان مختلف</guimenuitem
+></term>
+<listitem
+><para
+>خانة الاختيار تعيين عمق لون مختلف تتيح مربع قائمة منسدلة لتغيير عمق لون الصور المصغرة إذا رغبت في استخدام عمق لون مختلف عن ذلك المستخدم في الصورة الأصلية.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>شريط البحث</term>
+<listitem
+><para
+>يوفر مربع نص للوصول السهل إلى محركات البحث مثل Google. النقر على الأيقونة على الجانب الأيسر من مربع البحث يفتح قائمة لاختيار وتمكين محركات بحث مختلفة وضبط فتح <guilabel
+>كلمات البحث على الويب</guilabel
+>. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>ملحق أمر الصدَفة</term>
+<listitem
+><para
+>هذا الملحق يمكنك من تنفيذ أمر صدفة في المجلد الحالي وعرض المخرجات في نافذة منفصلة. </para
+></listitem>
+</varlistentry>
+
+<!--FIXME
+imagerotation context menu Actions -> Convert to -> JPEG,PNG,GIF,TIFF 
+(rotation disabled) always installed
+
+Additional Download Manager from KGet
+-->
+</variablelist>
+</sect1>
+</chapter>
+
+<chapter id="view-extensions">
+
+<title
+>إضافات وضع العرض</title>
+
+<para
+>يوفر كنكر عروضًا إضافية في <menuchoice
+><guimenu
+>عرض</guimenu
+> <guisubmenu
+>وضع العرض</guisubmenu
+></menuchoice
+> في وضع مدير الملفات والمتصفح، إذا كانت التطبيقات والملحقات المقابلة مثبتة.</para>
+<para
+>وضع مدير الملفات يحتوي على العروض الإضافية <guimenuitem
+>خريطة شعاعية</guimenuitem
+> من التطبيق <application
+>Filelight</application
+> وملحق كنكر <guimenuitem
+>عرض حجم الملف</guimenuitem
+>.</para>
+
+<sect1 id="fsview">
+<sect1info>
+<authorgroup>
+<author
+><personname
+><firstname
+>يوسف</firstname
+> <surname
+>فايدندورفر</surname
+></personname
+> <address
+><email
+>Josef.Weidendorfer@gmx.de</email
+></address
+> </author>
+
+</authorgroup>
+
+</sect1info>
+
+<title
+>&fsview;—عرض نظام الملفات</title>
+<sect2>
+<title
+>مقدمة</title>
+
+<para
+>ملحق &fsview; لـكنكر هو نمط عرض آخر لكائنات نوع التمثيل <literal
+>inode/directory</literal
+> للملفات المحلية. يمكن النظر إليه كبديل لأنماط عرض الأيقونات والقوائم المختلفة لتصفح محتوى نظام الملفات المحلي لديك.</para>
+
+<para
+>الخاصية الفريدة لـ&fsview; هي قدرته على عرض تسلسلات هرمية كاملة للمجلدات المتداخلة باستخدام ما يُسمى بخريطة شجرية للتصور البياني. تسمح الخرائط الشجرية بعرض مقاييس الكائنات في الهياكل المتداخلة: كل كائن يُمثل بمستطيل مساحته تتناسب مع مقياسه. يجب أن يكون مجموع مقاييس العناصر الفرعية مساويًا أو أصغر من مقياس الكائن الأصلي.</para>
+
+<para
+>بالنسبة لـ&fsview;، تُختار أحجام الملفات والمجلدات كمقياس، حيث يُعرّف حجم المجلد بأنه مجموع أحجام عناصره الفرعية. بهذه الطريقة، يمكن رصد الملفات الكبيرة حتى في أعماق التسلسل الهرمي للمجلدات بسهولة بالبحث عن مستطيلات كبيرة. لذا يمكن النظر إلى &fsview; كنسخة بيانية وتفاعلية من أمر يونكس <command
+>du</command
+>.</para>
+
+<para
+>دمج &fsview; كجزء من كنكر يسمح له باستخدام الميزات القياسية مثل قوائم السياق للملفات والإجراءات الحساسة لنوع التمثيل. لكن تم اختيار عدم تنفيذ التحديث التلقائي بمراقبة تغييرات نظام الملفات: إذا حذفت ملفًا معروضًا في &fsview; خارج كنكر، يجب عليك التحديث يدويًا مثلًا بالضغط على <keycap
+>F5</keycap
+> لرؤية التغيير. سبب هذا القرار هو العدد الضخم المحتمل من الملفات التي يجب مراقبتها للتغييرات، مما قد يضع ضغطًا غير معقول على موارد النظام لميزة صغيرة.</para>
+
+</sect2>
+
+<sect2>
+<title
+>ميزات التصور</title>
+
+<para
+>يشرح هذا القسم التصور البياني لـ&fsview; بالتفصيل.</para>
+
+<sect3>
+<title
+>خيارات رسم العناصر</title>
+
+<para
+>في &fsview;، عنصر التصور الخريطي الشجري هو مستطيل يمثل ملفًا أو مجلدًا في نظام الملفات لديك. لسهولة التنقل، تحتوي المستطيلات على تلوين ووسم ذوي معنى.</para>
+
+<para
+>لون المستطيل، الذي يمكن تبديله عبر عنصر القائمة <menuchoice
+><guimenu
+>عرض</guimenu
+><guisubmenu
+>نمط الألوان</guisubmenu
+></menuchoice
+>، يمكن أن يكون إما ممثلًا لـ<guimenuitem
+>العمق</guimenuitem
+> لسهولة اكتشاف التداخل، أو تخطيط ألوان لسمات ملف مختلفة مثل الاسم أو المالك أو المجموعة أو نوع التمثيل.</para>
+
+<para
+>يمكن وسم المستطيل بسمات مختلفة للملف أو المجلد المقابل. لكل سمة، يمكنك اختيار ما إذا كان يجب عرضها دائمًا، أو فقط إذا توفرت مساحة، أو إذا كان يجب أخذ المساحة من العناصر الفرعية (مما يُدخل أخطاء في قيود رسم الخريطة الشجرية البحتة). بالإضافة إلى ذلك، يمكنك اختيار الموقع النسبي للوسم داخل المستطيل.</para>
+
+</sect3>
+
+<sect3>
+<title
+>خوارزميات رسم الخريطة الشجرية</title>
+
+<para
+>بالنسبة لخوارزميات الرسم في الخرائط الشجرية، يجب أن تنطبق القاعدة بأن المساحة تتناسب مع مقياس العنصر. مع الخريطة الشجرية في &fsview;، لا يتحقق هذا الهدف دائمًا: نرسم حدودًا لإظهار تداخل العناصر، وهذه الحدود تأخذ مساحة من العنصر قد تُفقد لمساحات العناصر الفرعية. لاحظ أن مساحة أقل تُفقد للحدود إذا كان المستطيل مربعًا.</para>
+
+<para
+>وبالمثل، من الأفضل للحصول على نظرة عامة جيدة أن يكون لكل مستطيل على الأقل اسمه كوسم. من الخيارات إجبار المساحة دائمًا للوسوم، أو رسم الوسوم فقط عند توفر مساحة فارغة. في الحالة الأخيرة، يمكن أن تساعد تلميحات الأدوات التي تظهر عند تمرير الماوس فوق عنصر كثيرًا. تُظهر معلومات للعنصر الذي يوجد الماوس فوقه حاليًا، مع مجلداته الأصلية وصولًا إلى العنصر الجذر للخريطة الشجرية.</para>
+
+<para
+>كيفية تقسيم مساحة العنصر إلى مساحات فرعية للعناصر الفرعية تُترك للتنفيذ. من الأفضل دائمًا محاولة تقسيم المساحات بطريقة تجعل المستطيلات مربعة قدر الإمكان، سواء للوسم أو لتقليل المساحة المفقودة بالحدود. أفضل الطرق في هذا الصدد هي <guilabel
+>الصفوف</guilabel
+> و<guilabel
+>الأعمدة</guilabel
+> و<guilabel
+>التقسيم الثنائي التكراري</guilabel
+>.</para>
+
+<para
+>يمكنك اختيار الحد الأدنى لمساحة العناصر المراد رسمها عبر عنصر القائمة <menuchoice
+><guimenu
+>عرض</guimenu
+><guimenuitem
+>توقف عند المساحة</guimenuitem
+></menuchoice
+>. بدلًا من ذلك، سيُرسَم نمط تظليل فوق مساحة العنصر الأصلي للإشارة إلى أن هذه المساحة مشغولة فعليًا بعنصر فرعي أو عناصر فرعية.</para>
+
+</sect3>
+
+</sect2>
+
+<sect2>
+<title
+>واجهة المستخدم</title>
+
+<para
+>يدعم &fsview; التحديد المتعدد للعناصر، على غرار عرض الأيقونات وعرض القائمة. هذا يسمح بتنفيذ إجراءات على مجموعة من الملفات في وقت واحد. النقرة البسيطة بالماوس تحدد دائمًا عنصرًا واحدًا أسفل مؤشر الماوس. استخدم نقرة بالماوس مع الضغط على مفتاح &Shift; للتحديد النطاقي أو مفتاح &Ctrl; لتبديل التحديد. لاحظ أنه بتحديد عنصر، لم يعد بالإمكان تحديد العناصر الفرعية. سيؤدي تحديد عنصر أيضًا إلى مسح تحديد جميع عناصره الأصلية قبل ذلك.</para>
+
+<para
+>التنقل بلوحة المفاتيح متاح في الخرائط الشجرية: استخدم مفتاحي <keycap
+>السهم الأيسر</keycap
+> و<keycap
+>السهم الأيمن</keycap
+> لتحريك العنصر الحالي بين العناصر الشقيقة، ومفتاحي <keycap
+>السهم العلوي</keycap
+> و<keycap
+>السهم السفلي</keycap
+> للصعود والنزول في التسلسل الهرمي للتداخل. <keycap
+>المسافة</keycap
+> تحدد العنصر؛ مع &Shift; تقوم بالتحديد النطاقي؛ ومع الضغط على مفتاح &Ctrl; في نفس الوقت، تبدل تحديد العنصر الحالي. اضغط <keycap
+>الإدخال</keycap
+> لتشغيل الإجراء المفتوح على العنصر الحالي.</para>
+
+</sect2>
+
+<sect2>
+<title
+>الحقوق والترخيص</title>
+<para
+>في الأصل، كان &fsview; يُقصد به كتطبيق اختبار صغير ودليل استخدام لأداة الخريطة الشجرية المطورة ضمن <application
+>KCachegrind</application
+>.</para>
+<para
+>حقوق النشر ليوسف فايدندورفر، مرخص بموجب GPL V2.</para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="config">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+
+<title
+>ضبط كنكر</title>
+
+<para
+>بالمشاركة مع بقية كيدي، كنكر قابل للضبط بدرجة كبيرة، لذا يمكنك حقًا الحصول على المظهر والإحساس الذي يناسب احتياجاتك ورغباتك.</para>
+
+<para
+>عند تثبيت كيدي حديثًا، تحتوي نافذة كنكر على شريط قوائم، وأشرطة أدوات رئيسية وموقع، وربما شريط أدوات علامات مرجعية.</para>
+
+<para
+>للحصول على معلومات مفصلة حول كيفية تعديل أشرطة الأدوات والاختصارات، يُرجى قراءة الأقسام حول <ulink url="help:/fundamentals/config.html#toolbars"
+>أشرطة الأدوات</ulink
+> و<ulink url="help:/fundamentals/config.html#shortcuts"
+>الاختصارات</ulink
+> في الأساسيات. </para>
+
+<sect1 id="othersettings">
+<title
+>إعدادات أخرى</title>
+<para
+>اختيار <menuchoice
+><guimenu
+>الإعدادات</guimenu
+><guimenuitem
+> ضبط كنكر…</guimenuitem
+></menuchoice
+> يُظهر مربع حوار يمكنك استخدامه للتحكم في معظم جوانب سلوك كنكر.</para
+> 
+<para
+>يحتوي على هذه الأقسام التي تُختار بالنقر <mousebutton
+>الأيسر</mousebutton
+> على أحد الأيقونات على يسار مربع الحوار:</para>
+<itemizedlist>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-general/index.html"
+>عام</ulink
+>: ضبط سلوك كنكر العام</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/performance/index.html"
+>أداء كيدي</ulink
+>: ضبط الإعدادات التي يمكنها تحسين أداء كنكر</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/bookmarks/index.html"
+>العلامات المرجعية</ulink
+>: ضبط الصفحة الرئيسية للعلامات المرجعية</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-viewmodes"
+>أنماط العرض</ulink
+>: اضبط أنماط عرض مدير الملفات</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-navigation"
+>التنقل</ulink
+>: اضبط تنقل مدير الملفات</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-services"
+>الخدمات</ulink
+>: اضبط خدمات مدير الملفات</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-general"
+>عام</ulink
+>: اضبط إعدادات مدير الملفات العامة</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/filetypes/index.html"
+>ارتباطات الملفات</ulink
+>: اضبط ارتباطات الملفات</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/trash/index.html"
+>سلة المهملات</ulink
+>: اضبط إعدادات سلة المهملات</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-behavior/index.html"
+>تصفح الويب</ulink
+>: اضبط سلوك المتصفح</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/proxy/index.html"
+>الوكيل</ulink
+>: اضبط خوادم الوكيل المستخدمة</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/kcmcss/index.html"
+>المظهر</ulink
+>: اضبط كيفية عرض صفحات الويب</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-adblock/index.html"
+>مرشحات AdBlocK</ulink
+>: اضبط مرشحات كنكر AdBlocK</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/cache/index.html"
+>الخبيئة</ulink
+>: اضبط إعدادات خبيئة الويب</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/history/index.html"
+>السجل</ulink
+>: اضبط الشريط الجانبي للسجل</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/cookies/index.html"
+>الكوكيز</ulink
+>: اضبط طريقة عمل الكوكيز</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/useragent/index.html"
+>تعريف المتصفح</ulink
+>: اضبط طريقة تعريف Konqueror عن نفسه</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-java-js/index.html"
+>جافا سكريبت</ulink
+>: اضبط سلوك جافا سكريبت</para
+></listitem>
+</itemizedlist>
+<para
+>سيقدم لك زر <guibutton
+>المساعدة</guibutton
+> تعليمات مفصلة حول كيفية استخدام كل قسم من هذه الأقسام، أو يمكنك استخدام ميزة <link linkend="bubble"
+>ما هذا؟</link
+>.</para>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+<title
+>مرجع الأوامر</title>
+
+<note
+><para
+>تركيبات مفاتيح الاختصار الموضحة في هذا الفصل هي المبدئية. يمكن بالطبع تغييرها. </para
+></note>
+
+<sect1 id="specshort">
+<title
+>اختصارات خاصة</title>
+<para
+>هناك بعض الاختصارات المفيدة غير المعروضة في أي من القوائم:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><keycap
+>F6</keycap
+></term>
+<listitem>
+<para
+>يضبط التركيز على مربع إدخال النص في شريط الموقع.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><keycombo action="simul"
+>&Ctrl;<keycap
+>.</keycap
+></keycombo
+></term>
+<listitem>
+<para
+>نشّط صفحة اللسان التالية.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><keycombo action="simul"
+>&Ctrl;<keycap
+>,</keycap
+></keycombo
+></term>
+<listitem>
+<para
+>نشّط صفحة اللسان السابقة.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</sect1>
+
+<sect1 id="menubar">
+<title
+>شريط القوائم</title
+> <para
+>لاحظ أن بعض إدخالات القائمة تظهر فقط عندما تكون منطبقة على الملف المفتوح حاليًا في كنكر. على سبيل المثال، لن يظهر عنصر <menuchoice
+><guimenu
+>تحرير</guimenu
+><guimenuitem
+>بحث…</guimenuitem
+> </menuchoice
+> عند عرض محتويات دليل.</para>
+
+<para
+>يحتوي كنكر على عناصر قائمة مختلفة في وضعي مدير الملفات والمتصفح. فقط عناصر هذين الوضعين موصوفة في هذا الفصل. </para>
+
+<para
+>إذا كان <emphasis
+>كنكر</emphasis
+> يستخدم مكونات مضمنة (كيدي أجزاء) مثل &gwenview; لعرض الصور، و&okular; لمستندات <acronym
+>PDF</acronym
+> و&PostScript; إلخ…، فإن عناصر القائمة من هذه التطبيقات تُدمج في قائمة كنكر. المساعدة لهذه العناصر الإضافية تجدها في دليل التطبيق المضمن.</para>
+
+<sect2 id="menu-location">
+<title
+>قائمة ملف</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>نافذة جديدة</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>افتح نافذة كنكر أخرى.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>لسان جديد</guimenuitem
+> </menuchoice
+></term
+> 
+<listitem
+><para
+>افتح لسان كنكر آخر، يحتوي على صفحة فارغة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>فتح موقع…</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>يضبط التركيز على مربع إدخال النص في شريط الموقع.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>فتح ملف…</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>افتح ملفًا باستخدام حوار ملفات كيدي.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>جلسات</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>افتح قائمة فرعية لحفظ الجلسة الحالية (التبويبات والنوافذ المفتوحة) لاسترجاعها بسهولة، وإدارة الجلسات، والتبديل إلى الجلسات المحفوظة سابقًا.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>أرسل عنوان الرابط…</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>أرسل بريدًا إلكترونيًا يحتوي على رابط إلى الموقع الحالي.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>أرسل ملفًا…</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>أرسل بريدًا إلكترونيًا يحتوي على الملف المحدد كمرفق.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>حفظ باسم…</guimenuitem
+></menuchoice
+> (وضع المتصفح)</term>
+<listitem
+><para
+>ينطبق فقط إذا كنت تشاهد مستندًا أو صفحة ويب، ويستخدم مربع حوار <guilabel
+>حفظ باسم…</guilabel
+> للسماح لك بحفظ نسخة على حاسوبك الخاص.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>حفظ الإطار باسم…</guimenuitem
+></menuchoice
+> (وضع المتصفح)</term>
+<listitem
+><para
+>مشابه لـ <guimenuitem
+>حفظ باسم…</guimenuitem
+> ولكن للاستخدام مع موقع ويب يستخدم الإطارات.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>اطبع…</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>طباعة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>طباعة الإطار</guimenuitem
+></menuchoice
+> (وضع المتصفح)</term>
+<listitem
+><para
+>اطبع الإطار المحدد من صفحة ويب.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>افتح بواسطة</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>يعرض قائمة بالتطبيقات المثبتة على النظام المرتبطة بنوع الميم الخاص بعنوان URL الحالي.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>أنهِ</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>أغلق هذه النسخة من كنكر.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-edit">
+<title
+>قائمة حرر</title>
+
+<note
+><para
+>بعض العناصر في قائمة شريط القوائم <guimenu
+>تحرير</guimenu
+> يمكن العثور عليها أيضًا بالنقر بزر الفأرة الأيمن على منطقة فارغة من العرض.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>تحرير</guimenu
+> <guimenuitem
+>تراجع: <replaceable
+>إجراء</replaceable
+></guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>يسمح أحيانًا بعكس إجراء خاطئ.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>تحرير</guimenu
+> <guimenuitem
+>قص</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>يضع العنصر(العناصر) المحدد(ة) في الحافظة. إذا قمت بعد ذلك بلصق العناصر، فسيتم نقلها من الموقع الأصلي إلى الموقع الجديد.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>تحرير</guimenu
+> <guimenuitem
+>انسخ</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>انسخ العنصر(العناصر) المحدد(ة) إلى الحافظة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>تحرير</guimenu
+> <guimenuitem
+>لصق</guimenuitem
+></menuchoice
+> (وضع المتصفح)</term>
+<listitem
+><para
+>الصق محتوى الحافظة في شريط الموقع، إذا كان شريط الموقع يحظى بالتركيز.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>تحرير</guimenu
+> <guimenuitem
+>لصق محتويات الحافظة…</guimenuitem
+></menuchoice
+> أو <menuchoice
+><guimenu
+>تحرير</guimenu
+><guimenuitem
+>لصق ملف واحد</guimenuitem
+></menuchoice
+> أو <menuchoice
+><guimenu
+>تحرير</guimenu
+><guimenuitem
+>لصق مجلد واحد</guimenuitem
+></menuchoice
+> أو <menuchoice
+><guimenu
+>تحرير</guimenu
+><guimenuitem
+>لصق x عنصر</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>الصق العنصر(العناصر) المنسوخ(ة)/المقصوخ(ة) حاليًا في المجلد الحالي. إذا كانت الحافظة لا تحتوي على ملفات أو مجلدات، فسيتم لصق محتويات الحافظة (مثل بيانات النص أو الصورة) في ملف جديد.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+> </shortcut
+><guimenu
+>تحرير</guimenu
+> <guimenuitem
+>تحديد الكل</guimenuitem
+></menuchoice
+> (وضع المتصفح)</term>
+<listitem
+><para
+>يحدد كل النص في صفحة &HTML; أو في صفحة نصية يتم معاينتها، يمكنك بعد ذلك <guimenuitem
+>نسخ</guimenuitem
+>ها و<guimenuitem
+>لصق</guimenuitem
+>ها في محرر نصوص.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>تحرير</guimenu
+> <guisubmenu
+>إنشاء جديد</guisubmenu
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>ينشئ كائنًا جديدًا (مثل مجلد أو ملف نصي) في المجلد الحالي. راجع قسم <link linkend="making"
+>إنشاء جديد…</link
+> لمزيد من التفاصيل.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>F2</keycap
+> </shortcut
+><guimenu
+>تحرير</guimenu
+> <guimenuitem
+>إعادة تسمية</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>يتيح لك إعادة تسمية ملف أو مجلد دون الحاجة إلى فتح مربع حوار <guimenuitem
+>الخصائص…</guimenuitem
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>Del</keycap
+></shortcut
+> <guimenu
+>تحرير</guimenu
+> <guimenuitem
+>نقل إلى سلة المهملات</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>نقل العناصر المحددة إلى مجلد سلة المهملات.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Shift;<keycap
+>Del</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>تحرير</guimenu
+> <guimenuitem
+>حذف</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>حذف العناصر المحددة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>تحرير</guimenu
+> <guimenuitem
+>تحرير نوع الملف…</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>فتح مربع حوار <guilabel
+>تحرير نوع الملف</guilabel
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Return</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>تحرير</guimenu
+> <guimenuitem
+>الخصائص…</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>يظهر حوار الخصائص للعناصر المحددة حاليًا.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>تحرير</guimenu
+> <guisubmenu
+>تحديد</guisubmenu
+> <guimenuitem
+>تحديد العناصر المطابقة…</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>إلى جانب الأوامر <guimenuitem
+>إلغاء تحديد العناصر المطابقة…</guimenuitem
+> و<guimenuitem
+>إلغاء تحديد الكل</guimenuitem
+> و<guimenuitem
+>عكس التحديد</guimenuitem
+>، يوفر هذا طريقة سهلة وقوية لتحديد ملفات متعددة.</para>
+<para
+>يظهر مربع حوار بسيط حيث يمكنك إدخال اسم ملف باستخدام حروف البدل * و؟، على سبيل المثال إدخال <literal role="extension"
+>*.html</literal
+> سيحدد جميع الملفات المنتهية بـ <literal role="extension"
+>.html</literal
+> بينما <filename
+>?a*</filename
+> سيحدد جميع الملفات التي تحتوي على الحرف a كحرف ثانٍ في اسمها.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>تحرير</guimenu
+> <guisubmenu
+>تحديد</guisubmenu
+> <guimenuitem
+>إلغاء تحديد العناصر المطابقة…</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>إلغاء تحديد الملفات أو المجلدات عبر مربع حوار مشابه لذلك المستخدم بواسطة <guimenuitem
+>تحديد…</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+> </shortcut
+><guimenu
+>تحرير</guimenu
+> <guisubmenu
+>تحديد</guisubmenu
+> <guimenuitem
+>تحديد الكل</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>تحديد جميع العناصر في مجلد؛ يمكنك بعد ذلك <guimenuitem
+>نسخ</guimenuitem
+> أو <guimenuitem
+>قص</guimenuitem
+>ها و<guimenuitem
+>لصق</guimenuitem
+>ها في مجلد مختلف.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>تحرير</guimenu
+> <guisubmenu
+>تحديد</guisubmenu
+> <guimenuitem
+>إلغاء تحديد الكل</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>إلغاء تحديد جميع الملفات أو المجلدات المحددة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>A</keycap
+></keycombo
+> </shortcut
+><guimenu
+>تحرير</guimenu
+> <guisubmenu
+>تحديد</guisubmenu
+> <guimenuitem
+>عكس التحديد</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>اعكس التّحديد الحاليّ.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+><guimenu
+>تحرير</guimenu
+> <guimenuitem
+>بحث…</guimenuitem
+></menuchoice
+> (وضع المتصفح)</term>
+<listitem
+><para
+>يعرض شريط البحث في أسفل النافذة الحالية. ابدأ الكتابة للعثور على سلسلة نصية في صفحة نصية تعاينها أو في صفحة &HTML;.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-view">
+
+<title
+>قائمة عرض</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>عرض</guimenu
+> <guisubmenu
+>وضع العرض</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>في وضع المتصفح، تحتوي هذه القائمة الفرعية على عناصر لتحديد عروض مضمنة مثل <guimenuitem
+>WebEngine</guimenuitem
+> و<guimenuitem
+>محرر نصوص متقدم مضمن</guimenuitem
+> وعروض مضمنة أخرى.</para>
+<para
+>في وضع مدير الملفات، تحتوي هذه القائمة الفرعية على عناصر لتحديد <guimenuitem
+>أيقونات</guimenuitem
+> و<guimenuitem
+>تفاصيل</guimenuitem
+> و<guimenuitem
+>مضغوط</guimenuitem
+> و<guimenuitem
+>محاكي طرفية</guimenuitem
+> وأوضاع عرض أخرى.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>عرض</guimenu
+> <guimenuitem
+>تثبيت في الموقع الحالي</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>لا يمكن للعرض المُقفَل تغيير المجلدات. استخدمه كتجميعة مع  <guimenuitem
+>اربط العرض</guimenuitem
+> لتصفّح عدّة ملفات من مجلد واحد.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>عرض</guimenu
+> <guimenuitem
+>عرض مرتبط</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>ربط العرض الحالي بعروض أخرى في نافذة متعددة العروض. يتبع العرض المرتبط تغييرات المجلدات التي تحدث في العروض المرتبطة الأخرى. هذا مفيد بشكل خاص مع أنواع مختلفة من العروض، مثل شجرة مجلدات مع عرض أيقونات أو عرض تفصيلي، وربما نافذة محاكي طرفية.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F5</keycap
+> </shortcut
+> <guimenu
+>عرض</guimenu
+> <guimenuitem
+>أعد التحميل</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>أعِد التّحميل.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+>&Esc;</shortcut
+> <guimenu
+>عرض</guimenu
+> <guimenuitem
+>إيقاف</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>إيقاف التحميل (مفيد بشكل خاص عند تصفح الويب).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>U</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>عرض</guimenu
+> <guimenuitem
+>عرض مصدر المستند</guimenuitem
+></menuchoice
+> (وضع المتصفح)</term>
+<listitem
+><para
+>عرض نص مصدر المستند.</para>
+<para
+>متاح فقط إذا كنت تستعرض مستندًا أو صفحة &HTML;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>عرض</guimenu
+> <guimenuitem
+>عرض مصدر الإطار</guimenuitem
+></menuchoice
+> (وضع المتصفح)</term>
+<listitem
+><para
+>نص عرض مصدر الإطار</para>
+<para
+>ينطبق فقط إذا كنت تستعرض موقع ويب يستخدم الإطارات. مشابه لـ <guimenuitem
+>عرض مصدر المستند</guimenuitem
+>. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>عرض</guimenu
+> <guimenuitem
+>تكبير</guimenuitem
+> <guimenuitem
+>تصغير</guimenuitem
+> <guimenuitem
+>الحجم الفعلي</guimenuitem
+> <guimenuitem
+>تكبير النص فقط</guimenuitem
+> <guimenuitem
+>تكبير إلى DPI</guimenuitem
+></menuchoice
+> (وضع المتصفح)</term>
+<listitem
+><para
+>تقدم عناصر القائمة هذه إجراءات مختلفة لتعديل حجم العناصر في الصفحة.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>عرض</guimenu
+> <guimenuitem
+>ضبط الترميز</guimenuitem
+></menuchoice
+> (وضع المتصفح)</term>
+<listitem
+><para
+>يسمح لك باختيار ترميز الأحرف المستخدم لعرض صفحات &HTML;. <guimenuitem
+>مبدئي</guimenuitem
+> عادةً ما يكون الخيار الأفضل.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>عرض</guimenu
+> <guisubmenu
+>ترتيب حسب</guisubmenu
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+><action
+>يغير ما إذا كانت العناصر تُفرز</action
+> حسب <guimenuitem
+>الاسم</guimenuitem
+> أو المعايير الأخرى الموضحة في <link linkend="dolphin-view-information"
+>المعلومات في العرض</link
+>.</para>
+<para
+><guimenuitem
+>تنازلي</guimenuitem
+> يعكس ترتيب الفرز. <guimenuitem
+>المجلدات أولًا</guimenuitem
+> يفرز المجلدات قبل الملفات. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>عرض</guimenu
+> <guisubmenu
+>معلومات إضافية</guisubmenu
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+><action
+>يعرض معلومات إضافية</action
+> موضحة في <link linkend="dolphin-view-information"
+>المعلومات في العرض</link
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>عرض</guimenu
+> <guimenuitem
+>معاينة</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+><action
+>يعرض معاينة رمزية لمحتويات الملف</action
+> في أوضاع العرض المختلفة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>عرض</guimenu
+> <guimenuitem
+>عرض في مجموعات</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+><action
+>يعرض</action
+> محتوى المجلد الحالي مجمّعًا حسب الخيار المحدد في <guimenuitem
+>ترتيب حسب</guimenuitem
+> (متاح فقط في وضع عرض الأيقونات).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>.</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>عرض</guimenu
+> <guimenuitem
+>إظهار الملفات المخفية</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+><action
+>يظهر جميع الملفات والمجلدات الفرعية المخفية داخل المجلد الحالي.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>عرض</guimenu
+> <guimenuitem
+>ضبط خصائص العرض…</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+><action
+>يفتح <link linkend="view-properties-dialog"
+>حوار خصائص العرض</link
+>.</action
+></para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-go">
+<title
+>قائمة انتقل</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Up</keysym
+></keycombo
+> </shortcut
+> <guimenu
+>اذهب</guimenu
+> <guimenuitem
+>لأعلى</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>اصعد مستوى واحدًا في تسلسل المجلدات أو اختر مجلدًا في التسلسل من القائمة الفرعية.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Left</keysym
+></keycombo
+></shortcut
+> <guimenu
+>اذهب</guimenu
+> <guimenuitem
+>عُد</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>ارجع إلى العرض السابق أو اختر عنصرًا تمت زيارته سابقًا من القائمة الفرعية.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Right</keysym
+></keycombo
+> </shortcut
+> <guimenu
+>اذهب</guimenu
+> <guimenuitem
+>للأمام</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>يمكنك التقدم للأمام فقط إذا كنت قد عدت للخلف سابقًا.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Home</keycap
+></keycombo
+> </shortcut
+><guimenu
+>اذهب</guimenu
+> <guimenuitem
+>الصفحة الرئيسية</guimenuitem
+></menuchoice
+> (وضع المتصفح)</term>
+<listitem
+><para
+>اذهب إلى صفحتك الرئيسية كما هو معرف في صفحة <guilabel
+>عام</guilabel
+> من حوار الإعدادات.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Home</keycap
+></keycombo
+> </shortcut
+><guimenu
+>اذهب</guimenu
+> <guimenuitem
+>المجلد الرئيسي</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+><action
+>يتغير</action
+> إلى المجلد الرئيسي للمستخدم، &eg;، /home/Peter/.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>اذهب</guimenu
+> <guimenuitem
+>التطبيقات</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>افتح المجلد الذي يحوي تطبيقاتك.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>اذهب</guimenu
+> <guimenuitem
+>مجلدات الشبكة</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>تظهر مجلدات الشبكة في موقع خاص من كنكر و دولفين يُسمى مجلدًا افتراضيًا. يمكنك العثور على مزيد من المعلومات حول كيفية استخدام هذا المجلد في <ulink url="help:/knetattach/index.html"
+>دليل KNetAttach</ulink
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>اذهب</guimenu
+> <guimenuitem
+>المهملات</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>افتح مجلد <filename class="directory"
+>المهملات</filename
+> الخاص بك.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>اذهب</guimenu
+> <guimenuitem
+>تشغيل آلي</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>افتح مجلد <filename class="directory"
+>التشغيل الآلي</filename
+> الخاص بك.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+><guimenu
+>اذهب</guimenu
+> <guimenuitem
+>أظهر التاريخ</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>يُظهر عرضًا شجريًا لتاريخ التصفح الخاص بك في نافذة منفصلة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>اذهب</guimenu
+> <guisubmenu
+>الأكثر زيارة</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>يعرض قائمة فرعية تُظهر عنوان التي تزورها كثيرًا. اختيار أحدها سيجعل كنكر يفتح ذلك عنوان.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>اذهب</guimenu
+> <guisubmenu
+>التي زُرت مؤخرًا</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>يعرض قائمة فرعية تُظهر عنوان التي زرتها مؤخرًا. اختيار أحدها سيجعل كنكر يفتح ذلك عنوان.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>اذهب</guimenu
+> <guisubmenu
+>العناصر المغلقة</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>يعرض قائمة فرعية تُظهر عنوان المغلقة التي تزورها. اختيار أحدها سيجعل كنكر يفتح ذلك عنوان. استخدم <guimenuitem
+>إفراغ تاريخ العناصر المغلقة</guimenuitem
+> لمسح القائمة الفرعية.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-bookmarks">
+<title
+>قائمة العلامات</title>
+
+<note
+><para
+>انظر القسم <link linkend="bookmarks"
+>استخدام العلامات</link
+> في هذا الدليل لوصف أكثر اكتمالًا لعناصر القائمة هذه. </para
+></note>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl; <keycap
+>B</keycap
+></keycombo
+></shortcut
+> <guimenu
+>العلامات</guimenu
+> <guimenuitem
+>أضف علامة</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>أضف التحديد الحالي إلى علاماتك.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>العلامات</guimenu
+><guimenuitem
+>ضع الألسنة في مجلد علامات</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>أنشئ مجلد علامات يحتوي على روابط لجميع عنوان المفتوحة حاليًا في ألسنة كنكر. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>العلامات</guimenu
+><guimenuitem
+>مجلد علامات جديد</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>أنشئ مجلدًا جديدًا في مجلد العلامات الخاص بك.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>العلامات</guimenu
+> <guimenuitem
+>حرر العلامات</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>افتح <link linkend="bookmarks"
+>محرر العلامات</link
+>. </para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-tools">
+<title
+>قائمة أدوات</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>F4</keycap
+></shortcut
+> <guimenu
+>أدوات</guimenu
+> <guimenuitem
+>افتح طرفية</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>افتح نافذة طرفية &konsole;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>F</keycap
+></keycombo
+></shortcut
+> <guimenu
+>أدوات</guimenu
+> <guimenuitem
+>ابحث عن ملف…</guimenuitem
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+>افتح تطبيق &kfind;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>أدوات</guimenu
+> <guisubmenu
+>اختر مجموعة محارف عن بُعد</guisubmenu
+></menuchoice
+> (وضع مدير الملفات)</term>
+<listitem
+><para
+><action
+>يعرض اختيار مجموعة المحارف التي يستخدمها اتصال عن بُعد يدويًا.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>إذا كان لديك ملحقات كنكر مثبتة، فستكون هناك إدخالات إضافية في قائمة <guimenu
+>أدوات</guimenu
+>. انظر فصل <link linkend="konq-plugin"
+>ملحقات كنكر</link
+> لمزيد من التفاصيل.</para>
+</sect2>
+
+<sect2 id="menu-settings">
+<title
+>قائمة الإعدادات</title>
+
+<para
+>بالإضافة إلى عناصر قائمة إعدادات كيدي الشائعة الموصوفة في فصل <ulink url="help:/fundamentals/menus.html#menus-settings"
+>قائمة الإعدادات</ulink
+> من أساسيات كيدي، يحتوي كنكر على إدخالات القائمة الخاصة بالتطبيق هذه: </para>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>إعدادات</guimenu
+> <guimenuitem
+>أظهر محاكي الطرفية</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>افتح عرض طرفية نصية صغير في أسفل النافذة الرئيسة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>F9</keycap
+></keycombo
+></shortcut
+> <guimenu
+>الإعدادات</guimenu
+> <guimenuitem
+>أظهر الشريط الجانبي</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>يبدّل عرض الشريط الجانبي لـ كنكر.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>إعدادات</guimenu
+> <guimenuitem
+>وضع ملء الشاشة</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>يُغير كنكر إلى وضع ملء الشاشة، حيث تأخذ نافذة كنكر الشاشة بأكملها، وليس لها زخارف النافذة المعتادة. للخروج من وضع ملء الشاشة، انقر على أيقونة <guiicon
+>اخرج من وضع ملء الشاشة</guiicon
+> على شريط الأدوات، أو اضغط <keycombo action="simul"
+>&Ctrl;&Shift; <keycap
+>F</keycap
+></keycombo
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>إعدادات</guimenu
+> <guimenuitem
+>اضبط الملحقات…</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>يفتح حوارًا مع جميع الملحقات المثبتة (مثل من وحدة كيدي extragear) ويسمح لك بتحديد التي تحتاجها. جميع الملحقات متاحة في قائمة <guimenu
+>أدوات</guimenu
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>إعدادات</guimenu
+> <guimenuitem
+>اضبط التدقيق الإملائي…</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>يعرض مربع حوار ضبط تدقيق الإملاء، حيث يمكنك تغيير الإعدادات المرتبطة بتدقيق الإملاء في كنكر.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-window">
+<title
+>قائمة  النافذة</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>نافذة</guimenu
+> <guimenuitem
+>تقسيم العرض يسار/يمين</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>قسّم العرض من اليسار إلى اليمين.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>نافذة</guimenu
+> <guimenuitem
+>تقسيم العرض أعلى/أسفل</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>قسّم العرض من الأعلى إلى الأسفل.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>W</keycap
+></keycombo
+></shortcut
+> <guimenu
+>نافذة</guimenu
+> <guimenuitem
+>إغلاق العرض النشط</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>أزل العرض النشط.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>نافذة</guimenu
+> <guimenuitem
+>نافذة جديدة</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>افتح نافذة كنكر أخرى.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>D</keycap
+></keycombo
+></shortcut
+> <guimenu
+>نافذة</guimenu
+> <guimenuitem
+>تكرار النافذة</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>افتح نافذة كنكر أخرى، مكررةً النافذة الحالية.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>نافذة</guimenu
+> <guimenuitem
+>لسان جديد</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>افتح صفحة لسان جديدة وفارغة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>D</keycap
+></keycombo
+></shortcut
+> <guimenu
+>نافذة</guimenu
+> <guimenuitem
+>تكرار اللسان الحالي</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>افتح صفحة لسان مكررة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>B</keycap
+></keycombo
+></shortcut
+> <guimenu
+>نافذة</guimenu
+> <guimenuitem
+>فصل اللسان الحالي</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>اعرض صفحة اللسان الحالية في نسخة جديدة من كنكر.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+></shortcut
+> <guimenu
+>نافذة</guimenu
+> <guimenuitem
+>إغلاق اللسان الحالي</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>أغلق صفحة اللسان الحالية.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Left</keycap
+></keycombo
+></shortcut
+> <guimenu
+>نافذة</guimenu
+> <guimenuitem
+>نقل اللسان يسارًا</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>انقل اللسان الحالي مكانًا واحدًا إلى اليسار في قائمة الألسنة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Right</keycap
+></keycombo
+></shortcut
+> <guimenu
+>نافذة</guimenu
+> <guimenuitem
+>نقل اللسان يمينًا</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>انقل اللسان الحالي مكانًا واحدًا إلى اليمين في قائمة الألسنة.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-help">
+<title
+>قائمة مساعدة</title>
+<para
+>بالإضافة إلى عناصر قائمة <guimenu
+>مساعدة</guimenu
+> القياسية في كيدي الموضحة في القسم <ulink url="help:/fundamentals/menus.html#menus-help"
+>قائمة المساعدة</ulink
+> من أساسيات كيدي، سيكون لديك مدخل القائمة <guimenuitem
+>مقدمة كنكر</guimenuitem
+> لمراجعة الصفحات التمهيدية التي ظهرت عند تشغيل كنكر لأول مرة.</para>
+
+</sect2>
+</sect1>
+
+</chapter>
+
+<chapter id="faq">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+<title
+>أسئلة وأجوبة</title>
+
+<qandaset>
+
+<qandaentry>
+<question
+><para
+>هل يمكنني تشغيل كنكر من مدير نوافذ آخر؟</para
+></question>
+
+<answer
+><para
+>ما عليك سوى تثبيت &Qt; و&kde-frameworks; وكنكر، ومن مدير النوافذ المفضل لديك، شغّل كنكر. يجب أن يعمل بشكل جيد، ولكن إذا لم يعمل (لا يختبر مطورو كيدي هذه الحالة غالبًا)، أبلغ عنها على <ulink url="https://bugs.kde.org"
+>https://bugs.kde.org</ulink
+> وحاول تشغيل <application
+>kdeinit</application
+> قبل تشغيل كنكر؛ فعادةً ما يساعد ذلك.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>أين يحتفظ كنكر بجميع بيانات تهيئته؟</para
+></question>
+<answer
+><para
+>بشكل عام في مجلد <filename class="directory"
+>qtpaths --paths GenericDataLocation</filename
+> (قد يكون هذا <filename
+>~/.local/share</filename
+> على نظامك، اعتمادًا على كيفية تثبيت كنكر). لا تغير هذه الملفات إلا إذا كنت تعرف حقًا ما تفعله.</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>العلامات المرجعية محفوظة في <filename class="directory"
+>konqueror/bookmarks.xml</filename
+></para
+></listitem>
+<listitem
+><para
+>الكوكيز محفوظة في <filename class="directory"
+>kcookiejar/cookies</filename
+></para
+></listitem>
+
+<listitem
+><para
+>سجل التصفح، المستخدم لميزة الإكمال الآلي، موجود في <filename
+>konq_history</filename
+> في المجلد <filename class="directory"
+>qtpaths --paths GenericConfigLocation</filename
+>.</para
+></listitem>
+
+<listitem
+><para
+>في المجلد <filename class="directory"
+>qtpaths --paths GenericConfigLocation</filename
+> يحوي الملف <filename
+>konquerorrc</filename
+> مجموعة كبيرة من إعدادات الضبط العامة.</para
+></listitem>
+
+<listitem
+><para
+>المجلد <filename class="directory"
+>kio_http/</filename
+> في <filename class="directory"
+>qtpaths --paths GenericCacheLocation</filename
+> يحتوي على خبيئة المتصفح.</para
+></listitem>
+
+</itemizedlist>
+<para
+>أي إعدادات عرض خاصة بمجلد تُوضع في ملفات <literal role="extension"
+>.directory</literal
+> داخل المجلدات الفردية.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>كيف أمسح ملف التاريخ؟</para
+></question>
+<answer
+><para
+>هناك <quote
+>تاريخان</quote
+>:</para>
+<itemizedlist>
+<listitem
+><para
+>أحدهما يُستخدم لإكمال النص في مربع إدخال النص لشريط المواقع. لمسح هذا، <mousebutton
+>اضغط بزر الفأرة الأيمن</mousebutton
+> على مربع إدخال النص واختر <guimenuitem
+>امسح التاريخ</guimenuitem
+>.</para>
+</listitem>
+<listitem
+><para
+>الآخر هو سجل المواقع المُزارة. اختر <guimenuitem
+>أظهر التاريخ</guimenuitem
+> في القائمة <guimenu
+>اذهب</guimenu
+> و<mousebutton
+>اضغط بزر الفأرة الأيمن</mousebutton
+> على مدخل واختر <guimenuitem
+>أزل المدخل</guimenuitem
+> (&Del;) لإزالة ذلك المدخل فقط أو <guimenuitem
+>امسح التاريخ</guimenuitem
+> لحذف جميع المدخلات.</para
+></listitem>
+</itemizedlist>
+<note
+><para
+>يمكنك أيضًا استخدام التطبيق &sweeper; من وحدة kdeutils الذي يسمح لك بتنظيف الكعكات، الأيقونات المفضلة، تاريخ الويب والخبيئة، مدخلات إكمال النماذج وسياسات الخبيئة للمواقع المُزارة.</para
+></note>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>كيف أفعّل أو أعطّل أو أمسح خبيئة المتصفح؟</para
+></question>
+<answer>
+<para
+>إذا اخترت <menuchoice
+><guimenu
+>تصفح الويب</guimenu
+><guimenuitem
+>الخبيئة</guimenuitem
+></menuchoice
+> في الحوار المُطلق باختيار <menuchoice
+><guimenu
+>الإعدادات</guimenu
+><guimenuitem
+>اضبط كنكر…</guimenuitem
+></menuchoice
+>، سيُعرض عليك صندوق حوار يتيح لك تعطيل الخبيئة أو مسحها أو ضبط حجمها وتغيير سياسة التخبئة.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>كيف أضبط صفحة <quote
+>الرئيسية</quote
+> الخاصة بي—الصفحة المُحمّلة عند بدء التشغيل؟</para
+></question>
+<answer
+><para
+>كنكر لديه <guilabel
+>مجلد رئيسي</guilabel
+> يُستخدم في وضع مدير الملفات و<guilabel
+>صفحة رئيسة</guilabel
+> تُستخدم في وضع المتصفح.</para>
+
+<para
+>لتغيير هذه الإعدادات، شغّل <menuchoice
+><guimenu
+>الإعدادات</guimenu
+><guimenuitem
+>اضبط كنكر…</guimenuitem
+><guilabel
+>عام</guilabel
+></menuchoice
+>.</para>
+
+<para
+>لضبط صفحة بدء كنكر في وضع مدير الملفات، اختر <guilabel
+>أظهر صفحة المقدمة</guilabel
+> أو <guilabel
+>أظهر صفحتي الرئيسة</guilabel
+> أو <guilabel
+>أظهر صفحة فارغة</guilabel
+> أو <guilabel
+>أظهر إشاراتي المرجعية</guilabel
+> من صندوق القائمة المنسدلة المُسمى <guilabel
+>عند بدء كنكر</guilabel
+>.</para>
+
+<para
+>في وضع المتصفح، يبدأ كنكر بالمدخل <guilabel
+>الصفحة الرئيسة</guilabel
+>.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>لا أجد إجابة سؤالي هنا.</para
+></question
+> 
+<answer>
+<para
+>قد تجد معلومات إضافية في <ulink url="https://discuss.kde.org/"
+>منتديات مجتمع كيدي</ulink
+> أو على <ulink url="http://userbase.kde.org/Konqueror"
+>صفحة قاعدة مستخدمي كيدي لكونكيورر</ulink
+>.</para>
+</answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+> <!-- 4.11-->
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+
+<title
+>الحقوق والترخيص</title>
+
+<para
+>حقوق نشر البرنامج 1999–2025، مطورو كنكر:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+>&David.Faure; &David.Faure.mail;</term>
+<listitem
+><para
+>مطور (أجزاء، جافاسكريبت، مكتبة الإدخال/الإخراج) ومشرف</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Simon.Hausmann; &Simon.Hausmann.mail;</term>
+<listitem
+><para
+>مطوِّر (إطار العمل والأجزاء)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Michael.Reiher; &Michael.Reiher.mail;</term>
+<listitem
+><para
+>مطوِّر (إطار العمل)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Mattias.Welk; &Mattias.Welk.mail;</term>
+<listitem
+><para
+>مطوّر</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Alexander.Neundorf; &Alexander.Neundorf.mail;</term>
+<listitem
+><para
+>مطوِّر (عروض القوائم)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Michael.Brade; &Michael.Brade.mail;</term>
+<listitem
+><para
+>مطور (عروض القائمة، مكتبة الإدخال/الإخراج)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Lars.Knoll; &Lars.Knoll.mail;</term>
+<listitem
+><para
+>مطوِّر (محرّك تصيير <acronym
+>HTML</acronym
+>)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Antti.Koivisto; &Antti.Koivisto.mail;</term>
+<listitem
+><para
+>مطوِّر (محرّك تصيير <acronym
+>HTML</acronym
+>)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Dirk.Mueller; &Dirk.Mueller.mail;</term>
+<listitem
+><para
+>مطوِّر (محرّك تصيير <acronym
+>HTML</acronym
+>)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Peter.Kelly; &Peter.Kelly.mail;</term>
+<listitem
+><para
+>مطوِّر (محرّك تصيير <acronym
+>HTML</acronym
+> وجافاسكربت)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Waldo.Bastian; &Waldo.Bastian.mail;</term>
+<listitem
+><para
+>مطور (محرك عرض <acronym
+>HTML</acronym
+>، مكتبة الإدخال/الإخراج)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Matt.Koss; &Matt.Koss.mail;</term>
+<listitem
+><para
+>مطور (مكتبة الإدخال/الإخراج)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Alex.Zepeda; &Alex.Zepeda.mail;</term>
+<listitem
+><para
+>مطور (مكتبة الإدخال/الإخراج)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Stephan.Kulow; &Stephan.Kulow.mail;</term>
+<listitem
+><para
+>مطور (محرك عرض <acronym
+>HTML</acronym
+>، مكتبة الإدخال/الإخراج، إطار اختبار الانحدار)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Richard.J.Moore; &Richard.J.Moore.mail;</term>
+<listitem
+><para
+>مطوِّر (دعم بريمجات جافا)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>ديما روغوزين <email
+>dima@mercury.co.il</email
+></term>
+<listitem
+><para
+>مطوِّر (دعم بريمجات جافا)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Wynn Wilkes <email
+>wynnw@calderasystems.com</email
+></term>
+<listitem
+><para
+>مطور (دعم مدير &Java;2 وتحسينات رئيسة أخرى لدعم التطبيقات الصغيرة)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Harri.Porten; &Harri.Porten.mail;</term>
+<listitem
+><para
+>مطوِّر (جافاسكريبت)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Stefan Schimanski <email
+>schimmi@kde.org</email
+></term>
+<listitem
+><para
+>مطوِّر (دعم ملحقة نِت‌سكيب)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Carsten.Pfeiffer; &Carsten.Pfeiffer.mail;</term>
+<listitem
+><para
+>مطوِّر (إطار العمل)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&George.Staikos; &George.Staikos.mail;</term>
+<listitem
+><para
+>مطور (دعم SSL، ملحقات نتسكيب)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Dawit Alemayehu <email
+>adawit@kde.org</email
+></term>
+<listitem
+><para
+>مطور (مكتبة الإدخال/الإخراج، دعم الاستيثاق)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Torsten.Rahn; &Torsten.Rahn.mail;</term>
+<listitem
+><para
+>الرسومات/الأيقونات</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Torben Weis <email
+>weis@kde.org</email
+></term>
+<listitem
+><para
+>مؤلّف KFM</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Joseph.Wenninger; &Joseph.Wenninger.mail;</term>
+<listitem
+><para
+>مطوِّر (إطار عمل لوحة التصفّح)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Stephan.Binner; &Stephan.Binner.mail;</term>
+<listitem
+><para
+>مطوِّر (أمور متنوعة)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Leo Savernik <email
+>l.savernik@aon.at</email
+></term>
+<listitem
+><para
+>ضوابط الوصول لجافاسكريبت، إضافات سياسات النطاق، محرك عرض HTML</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Germain Garand <email
+>germain@ebooksfrance.org</email
+></term>
+<listitem
+><para
+>مطوِّر (محرّك تصيير HTML)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Zack Rusin <email
+>zack@kde.org</email
+></term>
+<listitem
+><para
+>مطوِّر (محرّك تصيير HTML)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Tobias Anton <email
+>anton@stud.fbi.fh-darmstadt.de</email
+></term>
+<listitem
+><para
+>مطوِّر (محرّك تصيير HTML)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Lubos Lunak <email
+>l.lunak@kde.org</email
+></term>
+<listitem
+><para
+>مطوِّر (محرّك تصيير HTML)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Maks Orlovich <email
+>maksim@kde.org</email
+></term>
+<listitem
+><para
+>مطوِّر (محرّك تصيير HTML وجافاسكربت)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Allan Sandfeld Jensen <email
+>kde@carewolf.com</email
+></term>
+<listitem
+><para
+>مطوِّر (محرّك تصيير HTML)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>مطوّرو أبل سفاري </term>
+<listitem
+><para
+>مطوِّر (محرّك تصيير HTML وجافاسكربت)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Koos Vriezen <email
+>koos.vriezen@xs4all.nl</email
+></term>
+<listitem
+><para
+>مطوِّر (بريمجات جافا والكائنات الأخرى المضمّنة)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Ivor Hewitt <email
+>ivor@ivor.org</email
+></term>
+<listitem
+><para
+>مطوِّر (مرشّح مانع الإعلانات)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>إدواردو روبليس إلفيرا <email
+>edulix@gmail.com</email
+></term>
+<listitem
+><para
+>مطوِّر (إطار العمل)</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>حقوق التوثيق محفوظة 2000–2025</para>
+
+<itemizedlist>
+<listitem
+><para
+>&Erwan.Loisant; &Erwan.Loisant.mail;</para
+></listitem>
+<listitem
+><para
+>&Pamela.Roberts; &Pamela.Roberts.mail;</para
+></listitem>
+</itemizedlist>
+
+<para
+>حُدثت الوثائق لـ كيدي 3.2 بواسطة &Philip.Rodrigues; &Philip.Rodrigues.mail;.</para>
+<para
+>دُققت الوثائق لـ كيدي 4.11 بواسطة ديفيد بالسر <email
+>davidpalser179@btinternet.com</email
+>.</para>
+
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index; 
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+End:
+-->
