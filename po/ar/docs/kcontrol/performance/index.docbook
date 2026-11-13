@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Arabic "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>الأداء</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>تطبيقات 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>كيدي</keyword>
+<keyword
+>إعدادات النظام</keyword>
+<keyword
+>أداء</keyword>
+<keyword
+>محملة مسبقًا</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>إعدادات الأداء</title>
+
+<para
+>يُستخدم كنكر على مجموعة واسعة من الحواسيب من قبل مجموعة واسعة من المستخدمين. تحت فئة الأداء، يتيح هذا الحوار لكل مستخدم ضبط الخيارات التي قد تجعل الحاسوب المثبت عليه كنكر أكثر استجابة. </para>
+
+<sect2
+><title
+>التحميل المسبق</title>
+<para
+>القسم الفرعي المُسمى <guilabel
+>التحميل المسبق</guilabel
+> يُحدث مقايضة بين الذاكرة والأداء.</para>
+
+<para
+>يشير <emphasis
+>التحميل المسبق</emphasis
+> إلى تحميل نسخة من كنكر في الذاكرة قبل أن يطلب المستخدم بدء كنكر. التأثير الإيجابي لذلك هو أنه عندما يطلب المستخدم تحميل كنكر تظهر النافذة فورًا لأن معظم التطبيق قد حُمّل مسبقًا. التأثير السلبي هو أن هذه النسخة من كنكر تستخدم ذاكرة قد تُستخدم بواسطة برامج أخرى. افتراضيًا، عندما يُغلق المستخدم كنكر لا تُغلق النسخة. وهذا يعني أنه في المرة التالية التي يريد فيها المستخدم تحميل كنكر يكون ذلك فوريًا تقريبًا مرة أخرى.</para>
+
+<para
+>خانة الاختيار الأخيرة المُسماة <guilabel
+>حاول دائمًا الحصول على نسخة محملة مسبقًا واحدة على الأقل</guilabel
+> تشير إلى أنك تريد دائمًا توفر نسخة واحدة محملة مسبقًا ولكن غير مستخدمة من كنكر. سيؤدي هذا الخيار في الواقع إلى تقليل الأداء على بعض الأجهزة (خاصة تلك ذات الذاكرة الفعلية المحدودة).</para>
+</sect2>
+</sect1>
+
+</article>

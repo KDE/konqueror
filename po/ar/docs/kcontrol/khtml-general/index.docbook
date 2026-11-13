@@ -1,0 +1,196 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Arabic "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="konq-general-behavior">
+<title
+>السلوك كنكر العام</title>
+<articleinfo>
+
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>تطبيقات 16.12</releaseinfo>
+
+</articleinfo>
+<para
+>في هذه الصفحة تجد إعدادات الصفحة الرئيسة وصفحة البدء وسلوك التصفح المبوب لكل من مدير ملفات كنكر ووضع المتصفح.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>عند بدء كنكر</guilabel
+></term>
+<listitem>
+<para
+>يحدد هذا الخيار الصفحة المعروضة عند بدء كنكر: صفحة المقدمة، صفحتك الرئيسية، صفحة فارغة، أو صفحة علاماتك المرجعية. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>الصفحة الرئيسة</guilabel
+></term>
+<listitem
+><para
+>هذا هو &URL; (مثال: مجلد أو صفحة ويب) الذي سينتقل إليه كنكر في وضع المتصفح عند الضغط على زر <guibutton
+>الصفحة الرئيسية</guibutton
+> في شريط الأدوات. يمكنك تعيين مسار <guilabel
+>صفحتك الرئيسية</guilabel
+> بالكتابة في حقل النص، أو باستخدام أيقونة <guiicon
+>تصفح</guiicon
+> لاختيار مجلد محلي. يحتاج كنكر إلى إعادة تشغيل لتفعيل التغييرات.</para>
+<para
+>عند استخدام كنكر في وضع مدير الملفات، يُستبدل زر <guilabel
+>الصفحة الرئيسية</guilabel
+> في شريط الأدوات بزر <guilabel
+>المجلد الرئيسي</guilabel
+> الذي يجعله ينتقل إلى مجلدك الرئيسي المحلي بدلًا من ذلك.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>افتح الروابط في لسان جديد بدل نافذة جديدة</guilabel
+></term>
+<listitem
+><para
+>يُعدّ كنكر مبدئيًا نافذة واحدة لكل صفحة، لكنه يمتلك القدرة على فتح <firstterm
+>ألسنة</firstterm
+> متعددة داخل نافذة واحدة. كما أن كنكر، مبدئيًا، لديه اختصار &MMB; لفتح أي رابط في نافذة جديدة. إذا فعّلت <guilabel
+>افتح الروابط في لسان جديد بدلًا من نافذة جديدة</guilabel
+> يمكنك النقر بـ &MMB; على رابط لفتحه في لسان جديد.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>افتح المنبثقات في لسان جديد بدلًا من نافذة جديدة</guilabel
+></term>
+<listitem
+><para
+>فيما إذا كانت منبثقات جافاسكرِبت (إن كانت مسموحة) ستفتح في لسان جديد أو نافذة جديدة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>افتح كَلِسان في كنكر الموجود عند استدعاء العنوان خارجيًّا</guilabel
+></term>
+<listitem
+><para
+>عند النقر على &URL; في برنامج كيدي آخر أو استدعاء kfmclient لفتح &URL;، سيُبحث سطح المكتب الحالي عن كنكر غير مُصغّر، وإذا وُجد، يُفتح &URL; كلسان جديد داخله. وإلا، تُفتح نافذة كنكر جديدة مع &URL; المطلوب.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>افتح الألسنة الجديدة في الخلفيّة</guilabel
+></term>
+<listitem
+><para
+>إذا كنت تستخدم التصفح المبوب، يمكنك اختيار ما إذا كان اللسان المفتوح حديثًا يصبح اللسان النشط (<quote
+>الأمامي</quote
+>) أم يذهب إلى الخلف. على اتصال إنترنت بطيء، أو أثناء تصفح صفحة تحتوي على قائمة عناوين رئيسة أو روابط أخرى في قائمة، قد تفضل تحميل الألسنة الجديدة في الخلفية بينما تواصل القراءة. في هذه الحالة، فعّل هذا الإعداد. إذا كنت تفضل الانتقال مباشرة إلى الصفحة الجديدة، تاركًا القديمة في الخلفية للعودة إليها لاحقًا، فعطّله.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>افتح اللسان الجديد بعد اللسان الحالي</guilabel
+></term>
+<listitem
+><para
+>سيفتح هذا اللسان الجديد المفتوح من صفحة أخرى بعد اللسان الحاليّ، بدلًا من بعد اللسان الأخير.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>أخفِ شريط اللسان إن كان هناك فقط لسان واحد مفتوح</guilabel
+></term>
+<listitem
+><para
+>سيعرض هذا شريط الألسنة فقط إن كان هناك لسانان أو أكثر. فيما عدا ذلك سيكون معروضًا دائمًا.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>أظهر زر الإغلاق في الألسنة</guilabel
+></term>
+<listitem
+><para
+>سيعرض هذا أزرار إغلاق داخل كل لسان بدلًا من أيقونات مواقع الويب.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>النقر الأوسط على لسان لإغلاقه</guilabel
+></term>
+<listitem
+><para
+>عند النقر على لسان باستخدام زر الفأرة الأوسط أو عجلة الفأرة، سيُغلق ذلك اللسان. يحتاج كنكر إلى إعادة تشغيل لتفعيل التغييرات.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>أكّد عند إغلاق النوافذ بعدّة ألسنة</guilabel
+></term>
+<listitem
+><para
+>إذا أغلقت نافذة في كنكر تحتوي على ألسنة متعددة مفتوحة، سيسألك كنكر إذا كنت متأكدًا من رغبتك في إغلاقها. يمكنك تشغيل وإيقاف هذا السلوك باستخدام مربع الاختيار هذا.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>نشّط اللسان المُستخدَم سابقًا عند إغلاق اللسان الحالي</guilabel
+></term>
+<listitem
+><para
+>عند تعليم هذا، اللسان المُستخدَم السابق أو المفتوح سيُنشَّط عندما تغلق اللسان النشط حاليًا بدلًا من الذي على يمين اللسان الحالي.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</article>
