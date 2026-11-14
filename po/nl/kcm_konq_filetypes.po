@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-11 10:55+0000\n"
-"PO-Revision-Date: 2026-11-12 18:00+0100\n"
-"Last-Translator: freek <freekdekruijf@kde.nl>\n"
+"PO-Revision-Date: 2026-11-13 16:56+0100\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.04.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: filegroupdetails.cpp:22
 #, kde-format
@@ -83,7 +83,7 @@ msgstr "Toevoegen..."
 #: filetypedetails.cpp:92
 #, kde-format
 msgid "Add a new pattern for the selected file type."
-msgstr ""
+msgstr "Voeg een nieuw patroon toe voor het geselecteerde bestandstype."
 
 #: filetypedetails.cpp:94 kservicelistwidget.cpp:119
 #, kde-format
@@ -93,7 +93,7 @@ msgstr "Verwijderen"
 #: filetypedetails.cpp:99
 #, kde-format
 msgid "Remove the selected filename pattern."
-msgstr ""
+msgstr "Verwijder het geselecteerde bestandsnaampatroon."
 
 #: filetypedetails.cpp:110
 #, kde-format
@@ -107,16 +107,21 @@ msgid ""
 "'HTML Page'). This description will be used by applications like Konqueror "
 "to display directory content."
 msgstr ""
+"U kunt hier een korte omschrijving invullen voor bestanden van het "
+"geselecteerde type (bijv. 'Tekstbestand'). Deze omschrijving wordt gebruikt "
+"door programma's als Konqueror bij het weergeven van de inhoud van mappen."
 
 #: filetypedetails.cpp:129
 #, kde-format
 msgid "Left Click Action in Konqueror"
-msgstr ""
+msgstr "Linker muisklikactie in Konqueror"
 
 #: filetypedetails.cpp:138
 #, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
 msgstr ""
+"Vragen of u het in plaats hiervan op schijf wilt opslaan (alleen voor de "
+"Konqueror browser)"
 
 #: filetypedetails.cpp:154
 #, kde-format
@@ -128,6 +133,13 @@ msgid ""
 "settings for the group this type belongs to (for instance, '<tt>image</tt>' "
 "if the current file type is <tt>image/png</tt>).</p>"
 msgstr ""
+"<p>Hier kunt u instellen wat Konqueror moet doen wanneer u in een "
+"bestandsbeheerweergave op een bestand van dit type klikt.</p><p>Het bestand "
+"kan worden weergegeven in Konqueror zelf of in een afzonderlijke toepassing. "
+"Als u kiest voor \"Instellingen voor de groep '&hellip;' gebruiken\", zal "
+"het bestandsbeheer zich gedragen volgens de instellingen die gelden voor de "
+"groep waartoe dit type behoort (bijvoorbeeld '<tt>image</tt>' als het "
+"huidige bestandstype <tt>image/png</tt> is).</p>"
 
 #: filetypedetails.cpp:167
 #, kde-format
@@ -142,7 +154,7 @@ msgstr "&Insluiten"
 #: filetypedetails.cpp:209
 #, kde-format
 msgid "Add New Extension"
-msgstr ""
+msgstr "Nieuwe extensie toevoegen"
 
 #: filetypedetails.cpp:209
 #, kde-format
@@ -157,12 +169,12 @@ msgstr "Bestandstype %1"
 #: filetypedetails.cpp:336
 #, kde-format
 msgid "Use settings for '%1' group"
-msgstr ""
+msgstr "Gebruikt instellingen van groep '%1'"
 
 #: filetypesview.cpp:57
 #, kde-format
 msgid "Search for file type or filename pattern..."
-msgstr ""
+msgstr "Naar bestandstype of bestandsnaampatroon zoeken..."
 
 #: filetypesview.cpp:63
 #, kde-format
@@ -171,11 +183,15 @@ msgid ""
 "pattern will appear in the list. Alternatively, enter a part of a file type "
 "name as it appears in the list."
 msgstr ""
+"Voer een deel van een bestandsnaampatroon in. Alleen bestandstypen die "
+"overeenkomen met dit patroon verschijnen dan in de lijst. U kunt ook een "
+"gedeelte van de naam van een bestandstype invoeren, zoals die in de lijst "
+"aanwezig is."
 
 #: filetypesview.cpp:71 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
-msgstr ""
+msgstr "Bekende typen"
 
 #: filetypesview.cpp:77
 #, kde-format
@@ -185,11 +201,15 @@ msgid ""
 "collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
 "the information for that file type using the controls on the right."
 msgstr ""
+"Hier ziet u een lijst van de bestandstypen die op uw systeem bekend zijn. "
+"Klik op het '+' teken om een categorie open te klappen en op het '-' teken "
+"om deze weer dicht te klappen. Klik op de naam van een bestandstype (bijv. "
+"'html') om uw voorkeuren betreffende dit bestandstype in te stellen."
 
 #: filetypesview.cpp:91
 #, kde-format
 msgid "Click here to add a new file type."
-msgstr ""
+msgstr "Klik hier om een nieuw bestandstype toe te voegen."
 
 #: filetypesview.cpp:93 filetypesview.cpp:389
 #, kde-format
@@ -199,7 +219,7 @@ msgstr "&Verwijderen"
 #: filetypesview.cpp:119
 #, kde-format
 msgid "Select a file type by name or by extension"
-msgstr ""
+msgstr "Selecteer een bestandstype bij zijn naam of extensie."
 
 #: filetypesview.cpp:382
 #, kde-format
@@ -209,7 +229,7 @@ msgstr "&Terugdraaien"
 #: filetypesview.cpp:383
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
-msgstr ""
+msgstr "Zet dit bestand terug naar zijn systeembrede definitie"
 
 #: filetypesview.cpp:385
 #, kde-format
@@ -220,11 +240,17 @@ msgid ""
 "minimize the chances of them being used (but the file type determination "
 "from file contents can still end up using them)."
 msgstr ""
+"Klik hier om dit bestandstype terug te zetten naar zijn initiële "
+"systeembrede definitie, waarmee elke gemaakte wijzing voor dit bestandstype "
+"ongedaan zijn gemaakt. Let op dat systeembrede bestandstypen niet verwijderd "
+"kunnen worden. U kunt echter hun patroonlijst leeg maken om de kans te "
+"minimaliseren dat ze worden gebruikt (maar het bepalen van het bestandstype "
+"uit de inhoud van het bestand kan nog steeds eindigen in hun gebruikt)."
 
 #: filetypesview.cpp:390
 #, kde-format
 msgid "Delete this file type definition completely"
-msgstr ""
+msgstr "Verwijder deze bestandstypedefinitie volledig"
 
 #: filetypesview.cpp:392
 #, kde-format
@@ -235,21 +261,27 @@ msgid ""
 "of them being used (but the file type determination from file contents can "
 "still end up using them)."
 msgstr ""
+"Klik hier om deze bestandstypedefinitie volledig te verwijderen. Dit is "
+"alleen mogelijk voor gebruikergedefinieerde bestandstypen. Systeem-brede "
+"bestandstypes kunnen niet worden verwijderd. U kunt echter hun patroonlijst "
+"leeg maken om de kans te minimaliseren dat zij worden gebruikt (maar het "
+"bepalen van het bestandstype uit de inhoud van het bestand kan er nog steeds "
+"toe leiden dat ze worden gebruikt)."
 
 #: kservicelistwidget.cpp:46
 #, kde-format
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kservicelistwidget.cpp:51
 #, kde-format
 msgid "Application Preference Order"
-msgstr ""
+msgstr "Toepassingen voor dit bestandstype"
 
 #: kservicelistwidget.cpp:51
 #, kde-format
 msgid "Services Preference Order"
-msgstr ""
+msgstr "Diensten voor dit bestandstype"
 
 #: kservicelistwidget.cpp:63
 #, kde-format
@@ -260,6 +292,12 @@ msgid ""
 "then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
+"Dit is een lijst met toepassingen die geassocieerd worden met het "
+"geselecteerde bestandstype. Deze lijst wordt getoond in Konqueror's "
+"contextmenu's wanneer u kiest voor \"Openen met...\". Als er meer dan één "
+"programma geassocieerd wordt met dit bestandstype, dan is de lijst geordend "
+"op prioriteit, waarbij het bovenste programma in de lijst als eerste wordt "
+"gekozen om het bestand mee te openen."
 
 #: kservicelistwidget.cpp:68
 #, kde-format
@@ -270,6 +308,12 @@ msgid ""
 "type, then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
+"Dit is een lijst met diensten die geassocieerd worden met het geselecteerde "
+"bestandstype. Deze lijst wordt getoond in Konqueror's contextmenu's wanneer "
+"u kiest voor \"Voorbeeld tonen met...\". Als er meer dan één programma "
+"geassocieerd wordt met dit bestandstype, dan is de lijst geordend op "
+"prioriteit, waarbij het bovenste programma in de lijst als eerste wordt "
+"gekozen om het bestand mee te openen."
 
 #: kservicelistwidget.cpp:80
 #, kde-format
@@ -284,6 +328,10 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
+"Geeft een hogere prioriteit aan het geselecteerde programma\n"
+"door deze hoger in de lijst te plaatsen. Opmerking: dit heeft alleen\n"
+"effect op de geselecteerde toepassing wanneer het\n"
+"bestandstype geassocieerd wordt met meer dan één programma."
 
 #: kservicelistwidget.cpp:90
 #, kde-format
@@ -291,6 +339,8 @@ msgid ""
 "Assigns a higher priority to the selected\n"
 "service, moving it up in the list."
 msgstr ""
+"Geeft een hogere prioriteit aan de geselecteerde dienst\n"
+"door deze hoger in de lijst te plaatsen"
 
 #: kservicelistwidget.cpp:93
 #, kde-format
@@ -305,6 +355,11 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
+"Geeft een lagere prioriteit aan het geselecteerde\n"
+"programma door deze lager in de lijst te plaatsen.\n"
+"Opmerking: dit heeft alleen effect op het geselecteerde\n"
+"programma wanneer het bestandstype geassocieerd\n"
+"wordt met meer dan één programma."
 
 #: kservicelistwidget.cpp:102
 #, kde-format
@@ -312,11 +367,13 @@ msgid ""
 "Assigns a lower priority to the selected\n"
 "service, moving it down in the list."
 msgstr ""
+"Geeft een lagere prioriteit aan de geselecteerde dienst\n"
+"door deze lager in de lijst te plaatsen. "
 
 #: kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add a new application for this file type."
-msgstr ""
+msgstr "Voeg een nieuw programma toe voor dit bestandstype."
 
 #: kservicelistwidget.cpp:112
 #, kde-format
@@ -326,12 +383,12 @@ msgstr "Bewerken..."
 #: kservicelistwidget.cpp:117
 #, kde-format
 msgid "Edit command line of the selected application."
-msgstr ""
+msgstr "Bewerk de commandoregel van het geselecteerde programma."
 
 #: kservicelistwidget.cpp:124
 #, kde-format
 msgid "Remove the selected application from the list."
-msgstr ""
+msgstr "Verwijder het geselecteerde programma uit de lijst."
 
 #: kservicelistwidget.cpp:126 multiapplydialog.cpp:19
 #, kde-format
@@ -341,7 +398,7 @@ msgstr "Toepassen op..."
 #: kservicelistwidget.cpp:131
 #, kde-format
 msgid "Apply the current preference order to other file types."
-msgstr ""
+msgstr "De huidige voorkeur voor volgorde toepassen op andere bestandstypen."
 
 #: kservicelistwidget.cpp:154
 #, kde-format
@@ -358,7 +415,7 @@ msgstr "Geen"
 #: kserviceselectdlg.cpp:26
 #, kde-format
 msgid "Add Service"
-msgstr ""
+msgstr "Service toevoegen"
 
 #: kserviceselectdlg.cpp:30
 #, kde-format
@@ -368,7 +425,7 @@ msgstr "Dienst selecteren:"
 #: newtypedlg.cpp:25
 #, kde-format
 msgid "Create New File Type"
-msgstr ""
+msgstr "Nieuw bestandstype aanmaken"
 
 #: newtypedlg.cpp:30
 #, kde-format
@@ -379,6 +436,8 @@ msgstr "Groep:"
 #, kde-format
 msgid "Select the category under which the new file type should be added."
 msgstr ""
+"Selecteer de categorie waaronder het nieuwe bestandstype geplaatst zal "
+"worden."
 
 #: newtypedlg.cpp:44
 #, kde-format
@@ -392,3 +451,6 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
+"Voer de naam van het bestandstype in. Bijvoorbeeld, als u 'image' als "
+"categorie hebt geselecteerd en u voert hier 'custom' in, dan zal "
+"bestandstype 'image/custom' worden aangemaakt."
