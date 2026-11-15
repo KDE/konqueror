@@ -1,0 +1,444 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# SPDX-FileCopyrightText: 2026 Mincho Kondarev <mkondarev@yahoo.de>
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-11-11 10:55+0000\n"
+"PO-Revision-Date: 2026-11-14 22:08+0100\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 26.08.3\n"
+
+#: filegroupdetails.cpp:22
+#, kde-format
+msgid "Left Click Action"
+msgstr "Кликване с ляв бутон"
+
+#: filegroupdetails.cpp:26 filetypedetails.cpp:134
+#, fuzzy, kde-format
+msgid "Show file in embedded viewer"
+msgstr "Показване на файла в интегрирания преглед"
+
+#: filegroupdetails.cpp:27 filetypedetails.cpp:135
+#, fuzzy, kde-format
+msgid "Show file in separate viewer"
+msgstr "Показване на файла в отделен преглед"
+
+#: filegroupdetails.cpp:36
+#, fuzzy, kde-format
+msgid ""
+"<p>Here you can configure what Konqueror should do when you click on a file "
+"belonging to this group in a file manager view.</p><p>The file can either be "
+"displayed in Konqueror itself or in a separate application. You can change "
+"this setting for a specific file type in the 'Embedding' tab of the file "
+"type configuration.</p>"
+msgstr ""
+"<p>Тук можете да конфигурирате действията на Konqueror при кликване върху "
+"файл от тази група във изглед на файловия мениджър.</p><p>Файлът може да се "
+"покаже в самия Konqueror или в отделно приложение. Тази настройка за "
+"конкретен тип файл може да бъде променена в раздела „Вграждане“ на "
+"конфигурацията за типа файл.</p>"
+
+#: filetypedetails.cpp:61
+#, fuzzy, kde-format
+msgid ""
+"This button displays the icon associated with the selected file type. Click "
+"on it to choose a different icon."
+msgstr ""
+"Този бутон показва иконата, свързана с избрания тип файл. Кликнете върху "
+"него за избор на друга икона."
+
+#: filetypedetails.cpp:67
+#, fuzzy, kde-format
+msgid "Filename Patterns"
+msgstr "Шаблони за имена на файлове"
+
+#: filetypedetails.cpp:79
+#, fuzzy, kde-format
+msgid ""
+"This box contains a list of patterns that can be used to identify files of "
+"the selected type. For example, the pattern *.txt is associated with the "
+"file type 'text/plain'; all files ending in '.txt' are recognized as plain "
+"text files."
+msgstr ""
+"Този квадрат съдържа списък с шаблони, които могат да се използват за "
+"идентифициране на файлове от избрания тип. Например шаблонът *.txt е свързан "
+"с типа файл 'text/plain'; всички файлове, завършващи на '.txt', се "
+"разпознават като текстови файлове."
+
+#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#, fuzzy, kde-format
+msgid "Add..."
+msgstr "Добавяне..."
+
+#: filetypedetails.cpp:92
+#, fuzzy, kde-format
+msgid "Add a new pattern for the selected file type."
+msgstr "Добавяне на нов шаблон за избрания тип файл."
+
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#, kde-format
+msgid "Remove"
+msgstr "Премахване"
+
+#: filetypedetails.cpp:99
+#, fuzzy, kde-format
+msgid "Remove the selected filename pattern."
+msgstr "Премахване на избрания шаблон за име на файл."
+
+#: filetypedetails.cpp:110
+#, fuzzy, kde-format
+msgid "Description:"
+msgstr "Описание:"
+
+#: filetypedetails.cpp:115
+#, fuzzy, kde-format
+msgid ""
+"You can enter a short description for files of the selected file type (e.g. "
+"'HTML Page'). This description will be used by applications like Konqueror "
+"to display directory content."
+msgstr ""
+"Може да се въведе кратко описание за файлове от избрания тип (напр. „HTML "
+"страница“). Това описание ще се използва от приложения като Konqueror за "
+"показване на съдържанието на директориите."
+
+#: filetypedetails.cpp:129
+#, fuzzy, kde-format
+msgid "Left Click Action in Konqueror"
+msgstr "Действие при ляв клик в Konqueror"
+
+#: filetypedetails.cpp:138
+#, fuzzy, kde-format
+msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+msgstr "Запитване за запис на диска вместо това (само за браузъра Konqueror)"
+
+#: filetypedetails.cpp:154
+#, fuzzy, kde-format
+msgid ""
+"<p>Here you can configure what Konqueror should do when you click on a file "
+"of this type in a file manager view.</p><p>The file can either be displayed "
+"in Konqueror itself or in a separate application. If set to \"Use settings "
+"for '&hellip;' group\", the file manager will behave according to the "
+"settings for the group this type belongs to (for instance, '<tt>image</tt>' "
+"if the current file type is <tt>image/png</tt>).</p>"
+msgstr ""
+"<p>Тук можете да конфигурирате действието на Konqueror при кликване върху "
+"файл от този тип в изглед на файловия мениджър.</p><p>Файлът може да бъде "
+"displays в самия Konqueror или в отделно приложение. При избор на "
+"„Използване на настройките за група '&hellip;'“, файловият мениджър ще се "
+"държи според настройките за групата, към която принадлежи този тип (например "
+"'<tt>image</tt>', ако текущият тип файл е <tt>image/png</tt>).</p>"
+
+#: filetypedetails.cpp:167
+#, kde-format
+msgid "&General"
+msgstr "О&бщи"
+
+#: filetypedetails.cpp:168
+#, fuzzy, kde-format
+msgid "&Embedding"
+msgstr "&Вграждане"
+
+#: filetypedetails.cpp:209
+#, fuzzy, kde-format
+msgid "Add New Extension"
+msgstr "Добавяне на ново разширение"
+
+#: filetypedetails.cpp:209
+#, fuzzy, kde-format
+msgid "Extension:"
+msgstr "Разширение:"
+
+#: filetypedetails.cpp:328
+#, kde-format
+msgid "File type %1"
+msgstr "Вид файл: %1"
+
+#: filetypedetails.cpp:336
+#, fuzzy, kde-format
+msgid "Use settings for '%1' group"
+msgstr "Използване на настройки за група '%1'"
+
+#: filetypesview.cpp:57
+#, fuzzy, kde-format
+msgid "Search for file type or filename pattern..."
+msgstr "Търсене на тип файл или шаблон за име..."
+
+#: filetypesview.cpp:63
+#, fuzzy, kde-format
+msgid ""
+"Enter a part of a filename pattern, and only file types with a matching file "
+"pattern will appear in the list. Alternatively, enter a part of a file type "
+"name as it appears in the list."
+msgstr ""
+"Въвеждане на част от шаблон за име на файл; в списъка ще се покажат само "
+"типовете файлове, съответстващи на шаблона. Алтернативно може да се въведе "
+"част от името на типа файл, както се появява в списъка."
+
+#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#, fuzzy, kde-format
+msgid "Known Types"
+msgstr "Познати типове"
+
+#: filetypesview.cpp:77
+#, fuzzy, kde-format
+msgid ""
+"Here you can see a hierarchical list of the file types which are known on "
+"your system. Click on the '+' sign to expand a category, or the '-' sign to "
+"collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
+"the information for that file type using the controls on the right."
+msgstr ""
+"Тук можете да видите йерархичен списък с типовете файлове, известни във "
+"вашата система. Кликване върху знака '+' за разгръщане на категория или "
+"върху знака '-' за свиване. Избор на тип файл (напр. text/html за HTML "
+"файлове) за преглед/редактиране на информацията за този тип файл чрез "
+"контролите вдясно."
+
+#: filetypesview.cpp:91
+#, fuzzy, kde-format
+msgid "Click here to add a new file type."
+msgstr "Кликнете тук за добавяне на нов тип файл."
+
+#: filetypesview.cpp:93 filetypesview.cpp:389
+#, fuzzy, kde-format
+msgid "&Remove"
+msgstr "&Премахване"
+
+#: filetypesview.cpp:119
+#, fuzzy, kde-format
+msgid "Select a file type by name or by extension"
+msgstr "Избор на тип файл по име или по разширение"
+
+#: filetypesview.cpp:382
+#, fuzzy, kde-format
+msgid "&Revert"
+msgstr "&Връщане"
+
+#: filetypesview.cpp:383
+#, fuzzy, kde-format
+msgid "Revert this file type to its initial system-wide definition"
+msgstr "Връщане на този тип файл към първоначалната системна дефиниция"
+
+#: filetypesview.cpp:385
+#, fuzzy, kde-format
+msgid ""
+"Click here to revert this file type to its initial system-wide definition, "
+"which undoes any changes made to the file type. Note that system-wide file "
+"types cannot be deleted. You can however empty their pattern list, to "
+"minimize the chances of them being used (but the file type determination "
+"from file contents can still end up using them)."
+msgstr ""
+"Кликнете тук за възстановяване на първоначалната системна дефиниция на този "
+"тип файл, което отменя всички направени промени. Имайте предвид, че "
+"системните типове файлове не могат да бъдат изтрити. Можете обаче да "
+"изчистите списъка с шаблони, за да се намали вероятността за тяхното "
+"използване (въпреки че определянето на типа файл чрез съдържанието все още "
+"може да ги използва)."
+
+#: filetypesview.cpp:390
+#, fuzzy, kde-format
+msgid "Delete this file type definition completely"
+msgstr "Пълно изтриване на тази дефиниция за тип файл"
+
+#: filetypesview.cpp:392
+#, fuzzy, kde-format
+msgid ""
+"Click here to delete this file type definition completely. This is only "
+"possible for user-defined file types. System-wide file types cannot be "
+"deleted. You can however empty their pattern list, to minimize the chances "
+"of them being used (but the file type determination from file contents can "
+"still end up using them)."
+msgstr ""
+"Кликнете тук за пълно изтриване на тази дефиниция за тип файл. Това е "
+"възможно само за потребителски дефинирани типове файлове. Системните типове "
+"файлове не могат да бъдат изтрити. Можете обаче да изпразните списъка с "
+"техните шаблони, за да се минимизират шансовете за тяхното използване "
+"(въпреки че определянето на типа файл от съдържанието все още може да ги "
+"използва)."
+
+#: kservicelistwidget.cpp:46
+#, fuzzy, kde-format
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kservicelistwidget.cpp:51
+#, fuzzy, kde-format
+msgid "Application Preference Order"
+msgstr "Ред на предпочитания на приложението"
+
+#: kservicelistwidget.cpp:51
+#, fuzzy, kde-format
+msgid "Services Preference Order"
+msgstr "Ред на предпочитания за услугите"
+
+#: kservicelistwidget.cpp:63
+#, fuzzy, kde-format
+msgid ""
+"This is a list of applications associated with files of the selected file "
+"type. This list is shown in Konqueror's context menus when you select \"Open "
+"With...\". If more than one application is associated with this file type, "
+"then the list is ordered by priority with the uppermost item taking "
+"precedence over the others."
+msgstr ""
+"Това е списък с приложения, асоциирани с файлове от избрания тип. Този "
+"списък се показва в контекстните менюта на Konqueror при избор на „Отвори "
+"с...“. Ако повече от едно приложение е асоциирано с този тип файл, списъкът "
+"е подреден по приоритет, като най-горният елемент има предимство пред "
+"останалите."
+
+#: kservicelistwidget.cpp:68
+#, fuzzy, kde-format
+msgid ""
+"This is a list of services associated with files of the selected file type. "
+"This list is shown in Konqueror's context menus when you select a \"Preview "
+"with...\" option. If more than one service is associated with this file "
+"type, then the list is ordered by priority with the uppermost item taking "
+"precedence over the others."
+msgstr ""
+"Това е списък с услуги, свързани с файлове от избрания тип. Този списък се "
+"показва в контекстните менюта на Konqueror при избор на опцията "
+"„Предварително преглед с...“. Ако повече от една услуга е свързана с този "
+"тип файл, списъкът се подрежда по приоритет, като най-горният елемент има "
+"предимство пред останалите."
+
+#: kservicelistwidget.cpp:80
+#, fuzzy, kde-format
+msgid "Move &Up"
+msgstr "Местене нагоре &вгоре"
+
+#: kservicelistwidget.cpp:86
+#, fuzzy, kde-format
+msgid ""
+"Assigns a higher priority to the selected\n"
+"application, moving it up in the list. Note:  This\n"
+"only affects the selected application if the file type is\n"
+"associated with more than one application."
+msgstr ""
+"Приписване на по-висок приоритет на избраното приложение чрез преместването "
+"му нагоре в списъка. Забележка: Това засяга избраното приложение само ако "
+"типът файл е свързан с повече от едно приложение."
+
+#: kservicelistwidget.cpp:90
+#, fuzzy, kde-format
+msgid ""
+"Assigns a higher priority to the selected\n"
+"service, moving it up in the list."
+msgstr ""
+"Присвояване на по-висок приоритет на избраната услуга и преместването ѝ "
+"нагоре в списъка."
+
+#: kservicelistwidget.cpp:93
+#, fuzzy, kde-format
+msgid "Move &Down"
+msgstr "Преместване надолу &Down"
+
+#: kservicelistwidget.cpp:98
+#, fuzzy, kde-format
+msgid ""
+"Assigns a lower priority to the selected\n"
+"application, moving it down in the list. Note: This \n"
+"only affects the selected application if the file type is\n"
+"associated with more than one application."
+msgstr ""
+"Задаване на по-нисък приоритет на избраното приложение, което го премества "
+"надолу в списъка. Забележка: Това влияе само на избраното приложение, ако "
+"типът файл е свързан с повече от едно приложение."
+
+#: kservicelistwidget.cpp:102
+#, fuzzy, kde-format
+msgid ""
+"Assigns a lower priority to the selected\n"
+"service, moving it down in the list."
+msgstr ""
+"Задаване на по-нисък приоритет на избраната услуга, което я премества надолу "
+"в списъка."
+
+#: kservicelistwidget.cpp:110
+#, fuzzy, kde-format
+msgid "Add a new application for this file type."
+msgstr "Добавяне на ново приложение за този тип файл."
+
+#: kservicelistwidget.cpp:112
+#, fuzzy, kde-format
+msgid "Edit..."
+msgstr "&Редактиране..."
+
+#: kservicelistwidget.cpp:117
+#, fuzzy, kde-format
+msgid "Edit command line of the selected application."
+msgstr "Редактиране на командния ред на избраното приложение."
+
+#: kservicelistwidget.cpp:124
+#, fuzzy, kde-format
+msgid "Remove the selected application from the list."
+msgstr "Премахване на избраното приложение от списъка."
+
+#: kservicelistwidget.cpp:126 multiapplydialog.cpp:19
+#, fuzzy, kde-format
+msgid "Apply To..."
+msgstr "Прилагане към..."
+
+#: kservicelistwidget.cpp:131
+#, fuzzy, kde-format
+msgid "Apply the current preference order to other file types."
+msgstr "Прилагане на текущия ред на предпочитания към други типове файлове."
+
+#: kservicelistwidget.cpp:154
+#, kde-format
+msgctxt "No applications associated with this file type"
+msgid "None"
+msgstr "Без"
+
+#: kservicelistwidget.cpp:167
+#, kde-format
+msgctxt "No components associated with this file type"
+msgid "None"
+msgstr "Без"
+
+#: kserviceselectdlg.cpp:26
+#, kde-format
+msgid "Add Service"
+msgstr "Добавяне на услуга"
+
+#: kserviceselectdlg.cpp:30
+#, fuzzy, kde-format
+msgid "Select service:"
+msgstr "Избор на услуга:"
+
+#: newtypedlg.cpp:25
+#, fuzzy, kde-format
+msgid "Create New File Type"
+msgstr "Създаване на нов тип файл"
+
+#: newtypedlg.cpp:30
+#, fuzzy, kde-format
+msgid "Group:"
+msgstr "Група:"
+
+#: newtypedlg.cpp:39
+#, fuzzy, kde-format
+msgid "Select the category under which the new file type should be added."
+msgstr "Избор на категория, към която да бъде добавен новият тип файл."
+
+#: newtypedlg.cpp:44
+#, fuzzy, kde-format
+msgid "Type name:"
+msgstr "Име на тип:"
+
+#: newtypedlg.cpp:50
+#, fuzzy, kde-format
+msgid ""
+"Type the name of the file type. For instance, if you selected 'image' as "
+"category and you type 'custom' here, the file type 'image/custom' will be "
+"created."
+msgstr ""
+"Въведете името на типа файл. Например, ако сте избрали „изображение“ като "
+"категория и тук въведете „custom“, ще бъде създаден тип файл „image/custom“."
