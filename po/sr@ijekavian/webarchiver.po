@@ -1,0 +1,444 @@
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"PO-Revision-Date: 2026-11-15 19:34+0100\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Немања Хиршл"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "nemhirsl@gmail.com"
+
+#: app/archivedialog.cpp:82
+#, kde-format
+msgid "Create Archive"
+msgstr "Направи архиву"
+
+#: app/archivedialog.cpp:98
+#, kde-format
+msgid "The URL of the page that is to be archived"
+msgstr "УРЛ странице коју треба архивирати"
+
+#: app/archivedialog.cpp:101
+#, kde-format
+msgid "Source &URL:"
+msgstr "Изворни &УРЛ:"
+
+#: app/archivedialog.cpp:110
+#, kde-format
+msgid "Web archive (*.war)"
+msgstr "веб архива (*.war)"
+
+#: app/archivedialog.cpp:111
+#, kde-format
+msgid "Tar archive (*.tar)"
+msgstr "тар архива (*.tar)"
+
+#: app/archivedialog.cpp:112
+#, kde-format
+msgid "Zip archive (*.zip)"
+msgstr "ЗИП архива (*.zip)"
+
+#: app/archivedialog.cpp:113
+#, kde-format
+msgid "Directory"
+msgstr "фасцикла"
+
+#: app/archivedialog.cpp:118
+#, kde-format
+msgid "The file or directory where the archived page will be saved"
+msgstr "Фајл или фасцикла гдје ће архивирана страница бити сачувана"
+
+#: app/archivedialog.cpp:119
+#, kde-format
+msgid "&Save to:"
+msgstr "&Сачувај у:"
+
+#: app/archivedialog.cpp:121
+#, kde-format
+msgid "Options"
+msgstr "Опције"
+
+#: app/archivedialog.cpp:131
+#, kde-format
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " секунда"
+msgstr[1] " секунде"
+msgstr[2] " секунди"
+msgstr[3] " секунда"
+
+#: app/archivedialog.cpp:132
+#, kde-format
+msgid "None"
+msgstr "никакво"
+
+#: app/archivedialog.cpp:210
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The web archive download cannot use the current proxy settings. No proxy "
+"will be used."
+msgstr ""
+"Преузимање веб архиве не може да користи текуће поставке проксија. Прокси "
+"неће бити коришћен."
+
+#: app/archivedialog.cpp:349
+#, kde-format
+msgctxt "@info"
+msgid "The save location is not valid."
+msgstr "Локација гдје треба сачувати архиву није исправна."
+
+#: app/archivedialog.cpp:369
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
+msgstr "Не могу да нађем наредбу wget(1),<nl/>погледајте <link>%1</link>."
+
+#: app/archivedialog.cpp:391
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
+msgstr "Не могу да провјерим одредиште<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:408
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The archive directory<nl/><filename>%1</filename><nl/>already exists as a "
+"file."
+msgstr "Фасцикла архиве<nl/><filename>%1</filename><nl/>већ постоји као фајл."
+
+#: app/archivedialog.cpp:409
+#, kde-kuit-format
+msgctxt "@info"
+msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
+msgstr "Фасцикла архиве<nl/><filename>%1</filename><nl/>већ постоји."
+
+#: app/archivedialog.cpp:413
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The archive file<nl/><filename>%1</filename><nl/>already exists as a "
+"directory."
+msgstr "Фајл архиве<nl/><filename>%1</filename><nl/>већ постоји као фасцикла."
+
+#: app/archivedialog.cpp:414
+#, kde-kuit-format
+msgctxt "@info"
+msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
+msgstr "Фајл архиве <nl/><filename>%1</filename><nl/>већ постоји."
+
+#: app/archivedialog.cpp:418
+#, kde-format
+msgid "Archive Already Exists"
+msgstr "Архива већ постоји"
+
+#: app/archivedialog.cpp:448
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
+msgstr "Не могу да обришем изворну архиву<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:465
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
+msgstr ""
+"Не могу да направим привремену фасциклу<nl/><filename>%1</filename><nl/>"
+
+#: app/archivedialog.cpp:537
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot start the archiver process <filename>%1</filename>"
+msgstr "Не могу да покренем процес архивара <filename>%1</filename>"
+
+#: app/archivedialog.cpp:553
+#, kde-kuit-format
+msgctxt "@info"
+msgid "The download process was interrupted."
+msgstr "Процес преузимања је прекинут."
+
+#: app/archivedialog.cpp:554
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The download process <filename>%1</filename> failed with signal %2.</"
+"para>"
+msgstr ""
+"<para>Процес преузимања <filename>%1</filename> није успио (сигнал %2).</"
+"para>"
+
+#: app/archivedialog.cpp:559
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The download process <filename>%1</filename> failed with status %2.</"
+"para>"
+msgstr ""
+"<para>Процес преузимања <filename>%1</filename> није успио (излазно стање "
+"%2).</para>"
+
+#: app/archivedialog.cpp:563
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>This may simply indicate a 404 error for some of the page elements.</"
+"para>"
+msgstr ""
+"<para>Ово може једноставно да значи грешку 404 за неке елементе странице.</"
+"para>"
+
+#: app/archivedialog.cpp:569
+#, kde-kuit-format
+msgctxt "@info"
+msgid "<para>Retain the partial web archive?</para>"
+msgstr "<para>Задржати дјелимичну веб архиву?</para>"
+
+#: app/archivedialog.cpp:570
+#, kde-format
+msgid "Retain Archive?"
+msgstr "Задржати архиву?"
+
+#: app/archivedialog.cpp:571
+#, kde-format
+msgid "Retain"
+msgstr "Задржи"
+
+#: app/archivedialog.cpp:575
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Creating the web archive failed."
+msgstr "Стварање веб архиве није успјело."
+
+#: app/archivedialog.cpp:718
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
+msgstr "Не могу да копирам архиву у<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:748
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
+msgstr "Не могу да поставим дозволе за<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:756
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"
+msgstr "Веб архива сачувана као<nl/><filename><link>%1</link></filename>"
+
+#: app/main.cpp:26
+#, kde-format
+msgid "Web Archiver"
+msgstr "Веб архивар"
+
+#: app/main.cpp:27
+#, kde-format
+msgid "0.0.1"
+msgstr "0.0.1"
+
+#: app/main.cpp:28
+#, kde-format
+msgid "Archive a web page"
+msgstr "Архивирање веб странице"
+
+#: app/main.cpp:30
+#, kde-format
+msgid "Copyright (c) 2020 Jonathan Marten"
+msgstr "© 2020, Jonathan Marten"
+
+#: app/main.cpp:31
+#, kde-format
+msgid "Jonathan Marten"
+msgstr "Jonathan Marten"
+
+#: app/main.cpp:43
+#, kde-format
+msgid "URL of the web page to archive"
+msgstr "УРЛ веб странице за архивирање"
+
+#: app/main.cpp:43
+#, kde-format
+msgid "url"
+msgstr "УРЛ"
+
+#. i18n: ectx: label, entry (WaitTime), group (Options)
+#: app/settings.kcfg:10
+#, kde-format
+msgid "Wait time:"
+msgstr "Вријеме чекања:"
+
+#. i18n: ectx: tooltip, entry (WaitTime), group (Options)
+#: app/settings.kcfg:11
+#, kde-format
+msgid "The wait time between item requests, to reduce web server load"
+msgstr ""
+"Вријеме чекања између захтјева за ставке, ради мањег оптерећења веб сервера"
+
+#. i18n: ectx: label, entry (NoProxy), group (Options)
+#: app/settings.kcfg:18
+#, kde-format
+msgid "Do not use proxy"
+msgstr "Не користи прокси"
+
+#. i18n: ectx: tooltip, entry (NoProxy), group (Options)
+#: app/settings.kcfg:19
+#, kde-format
+msgid "Do not use the system proxy settings to fetch the web page"
+msgstr "Не користи системске поставке проксија за добављање веб странице"
+
+#. i18n: ectx: label, entry (RandomWait), group (Options)
+#: app/settings.kcfg:24
+#, kde-format
+msgid "Randomise wait time"
+msgstr "Насумично вријеме чекања"
+
+#. i18n: ectx: tooltip, entry (RandomWait), group (Options)
+#: app/settings.kcfg:25
+#, kde-format
+msgid "Vary the wait time between requests, to confuse server log analysis"
+msgstr ""
+"Мијењај вријеме чекања између захтјева, ради збуњивања анализе дневника "
+"сервера"
+
+#. i18n: ectx: label, entry (FixExtensions), group (Options)
+#: app/settings.kcfg:30
+#, kde-format
+msgid "Save in standard web archive format"
+msgstr "Сачувај у стандардном формату веб архиве"
+
+#. i18n: ectx: tooltip, entry (FixExtensions), group (Options)
+#: app/settings.kcfg:37
+#, kde-format
+msgid ""
+"<p>Save downloaded files all in a single directory, with file name "
+"extensions suitable for local browsing.\n"
+"                        For example, the main HTML page will always be "
+"called \"index.html\" and a remote .php page will be saved with the "
+"standard .html extension.</p>\n"
+"               <p>Leave this option turned on to produce a standard web "
+"archive (.war) file.</p>\n"
+"               <p>If this option is turned off, then the files will be saved "
+"exactly as downloaded.\n"
+"                        This means that they may be in subdirectories "
+"reflecting the structure of the original web site, and extensions will not "
+"be adjusted.\n"
+"                        Note that the download may not work correctly if the "
+"original URL refers to a directory but does not end with a slash.</p>\n"
+"      "
+msgstr ""
+"<p>Сачувај све преузете фајлове у једну фасциклу, са наставцима имена "
+"фајлова погодним за локално прегледање.\n"
+"                        На примјер, главна ХТМЛ страница увијек ће се звати "
+"„index.html“, а удаљена .php страница биће сачувана са стандардним "
+"наставком .html.</p>\n"
+"               <p>Оставите ову опцију укључену да бисте добили стандардни "
+"фајл веб архиве (.war).</p>\n"
+"               <p>Ако је ова опција искључена, фајлови ће бити сачувани "
+"тачно онако како су преузети.\n"
+"                        То значи да могу бити у потфасциклама које "
+"одражавају структуру изворног веб сајта, а наставци неће бити прилагођени.\n"
+"                        Имајте у виду да преузимање можда неће радити "
+"исправно ако изворни УРЛ указује на фасциклу, али се не завршава косом цртом."
+"</p>\n"
+"      "
+
+#. i18n: ectx: label, entry (RunInTerminal), group (Options)
+#: app/settings.kcfg:42
+#, kde-format
+msgid "Run in terminal"
+msgstr "Покрени у терминалу"
+
+#. i18n: ectx: tooltip, entry (RunInTerminal), group (Options)
+#: app/settings.kcfg:45
+#, kde-format
+msgid ""
+"<p>Run the download process in a terminal window. Close the terminal window "
+"when the download has finished.</p>\n"
+"               <p>If this option is turned off then the download will run in "
+"the background. Its progress output should appear in the session log file.</"
+"p>\n"
+"      "
+msgstr ""
+"<p>Процес преузимања покреће се у прозору терминала. Затворите прозор "
+"терминала када се преузимање заврши.</p>\n"
+"               <p>Ако је ова опција искључена, преузимање ће се одвијати у "
+"позадини. Излаз о напретку требало би да се појави у фајлу дневника сесије.</"
+"p>\n"
+"      "
+
+#. i18n: ectx: label, entry (CloseWhenFinished), group (Options)
+#: app/settings.kcfg:50
+#, kde-format
+msgid "Close when finished"
+msgstr "Затвори по завршетку"
+
+#. i18n: ectx: tooltip, entry (CloseWhenFinished), group (Options)
+#: app/settings.kcfg:51
+#, kde-format
+msgid "Close this window when the download has finished successfully"
+msgstr "Затвори овај прозор када се преузимање успјешно заврши"
+
+#. i18n: ectx: label, entry (ArchiveType), group (Options)
+#: app/settings.kcfg:56
+#, kde-format
+msgid "Archive &type:"
+msgstr "&Тип архиве:"
+
+#. i18n: ectx: tooltip, entry (ArchiveType), group (Options)
+#: app/settings.kcfg:57
+#, kde-format
+msgid "The type of web archive to save"
+msgstr "Тип веб архиве коју треба сачувати"
+
+#: plugin_webarchiver.cpp:32
+#, kde-format
+msgid "Archive Web Page..."
+msgstr "Архивирај веб страницу..."
+
+#: plugin_webarchiver.cpp:50
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Cannot find the <command>kcreatewebarchive</command> executable,<nl/>check "
+"the plugin and helper installation."
+msgstr ""
+"Не могу да нађем извршни фајл <command>kcreatewebarchive</command>,<nl/"
+">провјерите инсталацију прикључка и помоћника."
+
+#: plugin_webarchiver.cpp:51
+#, kde-format
+msgid "Cannot Create Web Archive"
+msgstr "Не могу да направим веб архиву"
+
+#. i18n: ectx: Menu (tools)
+#: webarchiverplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Алатке"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: webarchiverplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Додатна трака"

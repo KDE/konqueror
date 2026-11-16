@@ -1,0 +1,111 @@
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-12-01 00:42+0000\n"
+"PO-Revision-Date: 2026-11-15 19:34+0100\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavianlatin\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editspeeddialentrydlg.ui:19
+#, kde-format
+msgid "&Name"
+msgstr "&Ime"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, nameWidget)
+#: editspeeddialentrydlg.ui:29
+#, kde-format
+msgid "The name you want displayed on the Speed Dial button"
+msgstr "Ime koje želite da se prikaže na dugmetu brzog biranja"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editspeeddialentrydlg.ui:36
+#, kde-format
+msgid "&Url"
+msgstr "&URL"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: editspeeddialentrydlg.ui:55
+#, kde-format
+msgid "Icon"
+msgstr "Ikonica"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useFaviconBtn)
+#: editspeeddialentrydlg.ui:61
+#, kde-format
+msgid "Use favicon"
+msgstr "Koristi favikonicu"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useLocalIconBtn)
+#: editspeeddialentrydlg.ui:86
+#, kde-format
+msgid "Use local icon"
+msgstr "Koristi lokalnu ikonicu"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useRemoteIconBtn)
+#: editspeeddialentrydlg.ui:133
+#, kde-format
+msgid "Use remote icon"
+msgstr "Koristi udaljenu ikonicu"
+
+#: speeddialconfig.cpp:43
+#, kde-format
+msgid "Name"
+msgstr "ime"
+
+#: speeddialconfig.cpp:43
+#, kde-format
+msgid "Url"
+msgstr "URL"
+
+#: speeddialconfig.cpp:264
+#, kde-format
+msgid "Do you want to delete \"%1\"?"
+msgstr "Želite li da obrišete „%1“?"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: speeddialconfig.ui:17
+#, kde-format
+msgid "Speed dial entries"
+msgstr "Stavke brzog biranja"
+
+#. i18n: ectx: property (text), widget (QPushButton, addEntryBtn)
+#: speeddialconfig.ui:57
+#, kde-format
+msgid "Add entry…"
+msgstr "Dodaj stavku…"
+
+#. i18n: ectx: property (text), widget (QPushButton, editEntryBtn)
+#: speeddialconfig.ui:64
+#, kde-format
+msgid "Edit entry…"
+msgstr "Uredi stavku…"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeEntryBtn)
+#: speeddialconfig.ui:71
+#, kde-format
+msgid "Remove entry"
+msgstr "Ukloni stavku"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveUpBtn)
+#: speeddialconfig.ui:91
+#, kde-format
+msgid "Move up"
+msgstr "Pomjeri nagore"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveDownBtn)
+#: speeddialconfig.ui:98
+#, kde-format
+msgid "Move down"
+msgstr "Pomjeri nadolje"

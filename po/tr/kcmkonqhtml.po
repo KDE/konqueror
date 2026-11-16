@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:57+0000\n"
-"PO-Revision-Date: 2026-11-10 21:38+0300\n"
+"PO-Revision-Date: 2026-11-15 20:06+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -38,7 +38,7 @@ msgstr "Genel"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Fonts"
-msgstr "Yazıtipleri"
+msgstr "Yazı Tipleri"
 
 #: appearance.cpp:41
 #, kde-format
@@ -211,18 +211,18 @@ msgstr ""
 #: appearance.cpp:128
 #, kde-format
 msgid "Font Si&ze"
-msgstr "Yazıtipi &Puntosu"
+msgstr "Yazı Tipi &Puntosu"
 
 #: appearance.cpp:131 appearance.cpp:149
 #, kde-format
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr ""
-"Konqueror’un web sitelerini göstermek için kullandığı yazıtipi puntosudur."
+"Konqueror’un web sitelerini göstermek için kullandığı yazı tipi puntosudur."
 
 #: appearance.cpp:135
 #, kde-format
 msgid "M&inimum font size:"
-msgstr "&En küçük yazıtipi puntosu:"
+msgstr "&En küçük yazı tipi puntosu:"
 
 #: appearance.cpp:139
 #, kde-format
@@ -236,12 +236,12 @@ msgstr ""
 #: appearance.cpp:144
 #, kde-format
 msgid "&Medium font size:"
-msgstr "&Orta yazıtipi puntosu:"
+msgstr "&Orta yazı tipi puntosu:"
 
 #: appearance.cpp:157
 #, kde-format
 msgid "S&tandard font:"
-msgstr "S&tandart yazıtipi:"
+msgstr "S&tandart yazı tipi:"
 
 #: appearance.cpp:158
 #, kde-format
@@ -251,7 +251,7 @@ msgstr "Bu, web sayfasındaki normal metinleri göstermek için kullanılan ."
 #: appearance.cpp:162
 #, kde-format
 msgid "&Fixed font:"
-msgstr "&Sabit yazıtipi:"
+msgstr "&Sabit yazı tipi:"
 
 #: appearance.cpp:163
 #, kde-format
@@ -259,47 +259,47 @@ msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr ""
 "Bu, sabit genişlikli (orantılanamaz) metinleri göstermek için kullanılan "
-"yazıtipidir."
+"yazı tipidir."
 
 #: appearance.cpp:167
 #, kde-format
 msgid "S&erif font:"
-msgstr "S&erif yazıtipi:"
+msgstr "S&erif yazı tipi:"
 
 #: appearance.cpp:168
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
 msgstr ""
 "Bu, ağ sayfasındaki serif olarak işaretlenmiş metinleri göstermek için "
-"kullanılan yazıtipidir."
+"kullanılan yazı tipidir."
 
 #: appearance.cpp:172
 #, kde-format
 msgid "Sa&ns serif font:"
-msgstr "S&ans serif yazıtipi:"
+msgstr "S&ans serif yazı tipi:"
 
 #: appearance.cpp:173
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr ""
 "Bu, ağ sayfasındaki sans-serif olarak işaretlenmiş metinleri göstermek için "
-"kullanılan yazıtipidir."
+"kullanılan yazı tipidir."
 
 #: appearance.cpp:177
 #, kde-format
 msgid "C&ursive font:"
-msgstr "&El yazısı yazıtipi:"
+msgstr "&El yazısı yazı tipi:"
 
 #: appearance.cpp:178
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
 msgstr ""
-"Bu, ağ sayfasındaki italik metinleri göstermek için kullanılan yazıtipidir."
+"Bu, ağ sayfasındaki italik metinleri göstermek için kullanılan yazı tipidir."
 
 #: appearance.cpp:182
 #, kde-format
 msgid "Fantas&y font:"
-msgstr "&Fantezi yazıtipi:"
+msgstr "&Fantezi yazı tipi:"
 
 #: appearance.cpp:183
 #, kde-format
@@ -307,12 +307,12 @@ msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr ""
 "Ağ sayfasındaki fantezi olarak işaretlenmiş metinleri göstermek için "
-"kullanılan yazıtipidir."
+"kullanılan yazı tipidir."
 
 #: appearance.cpp:192
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
-msgstr "&Bu kodlama için yazıtipi puntosu ayarları:"
+msgstr "&Bu kodlama için yazı tipi puntosu ayarları:"
 
 #: appearance.cpp:200 appearance.cpp:394
 #, kde-format
@@ -941,7 +941,7 @@ msgid ""
 "your desired options.</p>"
 msgstr ""
 "<b>Erişilebilirlik stil sayfasını kullan</b> <p> Bu seçenek öntanımlı bir "
-"yazıtipi, yazıtipi puntosu ve yazıtipi rengini birkaç fare tıklaması ile "
+"yazı tipi, yazı tipi puntosu ve yazı tipi rengini birkaç fare tıklaması ile "
 "kullanmanıza olanak sağlar. İstenen seçenekleri Özelleştir… sekmesinden "
 "ayarlayın. </p>"
 
@@ -1062,14 +1062,14 @@ msgid ""
 "another, with family members that are e.g. bold, italic, or any number of "
 "the above.</p>"
 msgstr ""
-"<b>Yazıtipi ailesi</b><p>Yazıtipi ailesi diğer ailelere benzer. Ailenin "
+"<b>Yazı tipi ailesi</b><p>Yazı tipi ailesi diğer ailelere benzer. Ailenin "
 "üyeler kalın, yassı veya herhangi bir numarada belirtilmiş gibi.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:24
 #, kde-format
 msgid "Font Family"
-msgstr "Yazıtipi Ailesi"
+msgstr "Yazı Tipi Ailesi"
 
 #. i18n: ectx: property (text), widget (QLabel, txtBaseFontFamily)
 #: css/csscustom.ui:30
@@ -1081,7 +1081,7 @@ msgstr "Temel aile:"
 #: css/csscustom.ui:37
 #, kde-format
 msgid "<p>This is the currently selected font family</p>"
-msgstr "<p>Geçerli yazıtipi ailesini gösterir</p>"
+msgstr "<p>Geçerli yazı tipi ailesini gösterir</p>"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
 #: css/csscustom.ui:44
@@ -1090,8 +1090,8 @@ msgid ""
 "<b>Use same family for all text</b><p>Select this option to override custom "
 "fonts everywhere in favor of the base font.</p>"
 msgstr ""
-"<b>Tüm metinlerde aynı aileyi kullan</b><p>Bu seçeneği her yerdeki özel "
-"yazıtiplerinin yerine temel yazıtiplerini kullanmak için seçebilirsiniz.</p>"
+"<b>Tüm metinlerde aynı aileyi kullan</b><p>Bu seçeneği her yerdeki özel yazı "
+"tiplerinin yerine temel yazı tiplerini kullanmak için seçebilirsiniz.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
 #: css/csscustom.ui:47
@@ -1103,13 +1103,13 @@ msgstr "Tüm metinlerde aynı aileyi kullan"
 #: css/csscustom.ui:57
 #, kde-format
 msgid "Font Size"
-msgstr "Yazıtipi Puntosu"
+msgstr "Yazı Tipi Puntosu"
 
 #. i18n: ectx: property (text), widget (QLabel, txtFontsize)
 #: css/csscustom.ui:63
 #, kde-format
 msgid "Base font si&ze:"
-msgstr "&Temel yazıtipi puntosu:"
+msgstr "&Temel yazı tipi puntosu:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:80
@@ -1197,14 +1197,14 @@ msgid ""
 "custom font sizes in favor of the base font size. All fonts will be "
 "displayed in the same size.</p>"
 msgstr ""
-"<b>Tüm metinlerde aynı aileyi kullan</b><p>Bu seçeneği her yerdeki özel "
-"yazıtiplerinin yerine temel yazıtiplerini kullanmak için seçebilirsiniz.</p>"
+"<b>Tüm metinlerde aynı aileyi kullan</b><p>Bu seçeneği her yerdeki özel yazı "
+"tiplerinin yerine temel yazı tiplerini kullanmak için seçebilirsiniz.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, dontScale)
 #: css/csscustom.ui:151
 #, kde-format
 msgid "&Use same size for all elements"
-msgstr "&Tüm ögeler için aynı yazıtipi puntosunu kullan"
+msgstr "&Tüm ögeler için aynı yazı tipi puntosunu kullan"
 
 #. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
 #: css/csscustom.ui:161
@@ -1243,7 +1243,7 @@ msgid ""
 "<b>Custom</b><p>Select this option to define a custom color for the default "
 "font.</p>"
 msgstr ""
-"<b>Özel</b><p>Bu ayarla öntanımlı yazıtipi rengini belirleyebilirsiniz.</p>"
+"<b>Özel</b><p>Bu ayarla öntanımlı yazı tipi rengini belirleyebilirsiniz.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, customColor)
 #: css/csscustom.ui:209
@@ -1286,7 +1286,7 @@ msgid ""
 "stylesheet.</p>"
 msgstr ""
 "<b>Bütün metinde aynı rengi kullan</b><p>Bu ayarı seçtiğinizde öntanımlı "
-"yazıtipinde bu renk kullanılır.</p>"
+"yazı tipinde bu renk kullanılır.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameColor)
 #: css/csscustom.ui:251

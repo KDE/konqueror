@@ -2,13 +2,14 @@
 # Slobodan Simic <slsimic@gmail.com>, 2010.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
 # Dalibor Djuric <daliborddjuric@gmail.com>, 2010, 2011.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:57+0000\n"
-"PO-Revision-Date: 2017-12-03 22:53+0100\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-11-15 19:34+0100\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavian\n"
 "MIME-Version: 1.0\n"
@@ -24,86 +25,84 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Слободан Симић"
+msgstr "Слободан Симић,Немања Хиршл"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "slsimic@gmail.com"
+msgstr "slsimic@gmail.com,nemhirsl@gmail.com"
 
 #: kcms/permissions/permissions.cpp:116
 #, kde-format
 msgctxt "Permission to access the microphone"
 msgid "Microphone access"
-msgstr ""
+msgstr "приступ микрофону"
 
 #: kcms/permissions/permissions.cpp:118
 #, kde-format
 msgctxt "Permission to access the webcam"
 msgid "Webcam access"
-msgstr ""
+msgstr "приступ веб камери"
 
 #: kcms/permissions/permissions.cpp:120
 #, kde-format
 msgctxt "Permission to access the microphone and the webcam"
 msgid "Microphone and webcam access"
-msgstr ""
+msgstr "приступ микрофону и веб камери"
 
 #: kcms/permissions/permissions.cpp:122
 #, kde-format
 msgctxt "Permission to access the user's screen"
 msgid "Screen access"
-msgstr ""
+msgstr "приступ екрану"
 
 #: kcms/permissions/permissions.cpp:124
 #, kde-format
 msgctxt "Permission to access the user's screen and application audio"
 msgid "Screen and application audio access"
-msgstr ""
+msgstr "приступ екрану и звуку програма"
 
 #: kcms/permissions/permissions.cpp:126
 #, kde-format
 msgctxt "Permission to lock the mouse pointer inside the page"
 msgid "Mouse pointer locking"
-msgstr ""
+msgstr "закључавање показивача миша"
 
 #: kcms/permissions/permissions.cpp:128
 #, kde-format
 msgctxt "Permission to send notifications"
 msgid "Notifications"
-msgstr ""
+msgstr "обавјештења"
 
 #: kcms/permissions/permissions.cpp:130
 #, kde-format
 msgctxt "Permission to access the user's physical location"
 msgid "Physical location access"
-msgstr ""
+msgstr "приступ физичкој локацији"
 
 #: kcms/permissions/permissions.cpp:132
-#, fuzzy, kde-format
-#| msgid "Allow access"
+#, kde-format
 msgctxt "Permission to read and write the user's clipboard"
 msgid "Clipboard access"
-msgstr "Дозволи приступ"
+msgstr "приступ клипборду"
 
 #: kcms/permissions/permissions.cpp:134
-#, fuzzy, kde-format
-#| msgid "Allow access"
+#, kde-format
 msgctxt "Permission to access the user's local fonts"
 msgid "Local fonts access"
-msgstr "Дозволи приступ"
+msgstr "приступ локалним фонтовима"
 
 #: kcms/permissions/permissions.cpp:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access audio sources such as a microphone"
-msgstr ""
+msgstr "Дозвола за приступ изворима звука, као што је микрофон"
 
 #: kcms/permissions/permissions.cpp:147
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access video sources such as a webcam"
-msgstr ""
+msgstr "Дозвола за приступ изворима видеа, као што је веб камера"
 
 #: kcms/permissions/permissions.cpp:149
 #, kde-format
@@ -112,82 +111,74 @@ msgid ""
 "Permission to access audio sources such as a microphone and video sources "
 "such a webcam"
 msgstr ""
+"Дозвола за приступ изворима звука, као што је микрофон, и изворима видеа, "
+"као што је веб камера"
 
 #: kcms/permissions/permissions.cpp:151
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access screen contents"
-msgstr ""
-"<html>Желите ли да дозволите сајту приступ подацима о вашој текућој физичкој "
-"локацији?</html>"
+msgstr "Дозвола за приступ садржају екрана"
 
 #: kcms/permissions/permissions.cpp:153
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access screen contents and application audio"
-msgstr ""
+msgstr "Дозвола за приступ садржају екрана и звуку програма"
 
 #: kcms/permissions/permissions.cpp:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to lock the mouse pointer inside a specific part of the page"
-msgstr ""
+msgstr "Дозвола да се показивач миша закључа унутар одређеног дијела странице"
 
 #: kcms/permissions/permissions.cpp:157
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to send notifications"
-msgstr ""
+msgstr "Дозвола за слање обавјештења"
 
 #: kcms/permissions/permissions.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access your physical location"
-msgstr ""
+msgstr "Дозвола за приступ вашој физичкој локацији"
 
 #: kcms/permissions/permissions.cpp:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to read and modify the contents of the clipboard"
-msgstr ""
+msgstr "Дозвола за читање и измјену садржаја клипборда"
 
 #: kcms/permissions/permissions.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access the fonts installed on your machine"
-msgstr ""
-"<html>Желите ли да дозволите сајту приступ подацима о вашој текућој физичкој "
-"локацији?</html>"
+msgstr "Дозвола за приступ фонтовима инсталираним на вашем рачунару"
 
 #: kcms/permissions/permissions.cpp:175
 #, kde-format
 msgctxt "@item:inlistbox Ask for permission next time"
 msgid "Ask next time"
-msgstr ""
+msgstr "питај сљедећи пут"
 
 #: kcms/permissions/permissions.cpp:177
 #, kde-format
 msgctxt "@item:inlistbox Ask for permission every time"
 msgid "Ask every time"
-msgstr ""
+msgstr "питај сваки пут"
 
 #: kcms/permissions/permissions.cpp:180
 #, kde-format
 msgctxt "@item:inlistbox The permission has been granted"
 msgid "Granted"
-msgstr ""
+msgstr "дозвољено"
 
 #: kcms/permissions/permissions.cpp:182
 #, kde-format
 msgctxt "@item:inlistbox The permission has been denied"
 msgid "Denied"
-msgstr ""
+msgstr "одбијено"
 
 #: kcms/permissions/permissions.cpp:194
 #, kde-format
@@ -196,56 +187,56 @@ msgid ""
 "The permission has never been asked before. You'll be asked the next time "
 "the web page requires it"
 msgstr ""
+"Дозвола још није тражена. Бићете упитани сљедећи пут када је веб страница "
+"затражи"
 
 #: kcms/permissions/permissions.cpp:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You'll be asked for the permission every time a page requires it"
-msgstr ""
+msgstr "Бићете упитани за дозволу сваки пут када је страница затражи"
 
 #: kcms/permissions/permissions.cpp:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have already granted this permission"
-msgstr ""
+msgstr "Већ сте дали ову дозволу"
 
 #: kcms/permissions/permissions.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have already denied this permission"
-msgstr ""
+msgstr "Већ сте одбили ову дозволу"
 
 #: kcms/permissions/permissions.cpp:278
 #, kde-format
 msgctxt "@title:column The type of permission"
 msgid "Permission type"
-msgstr ""
+msgstr "тип дозволе"
 
 #: kcms/permissions/permissions.cpp:279 kcms/permissions/permissions.cpp:306
 #, kde-format
 msgctxt "@title:column The status of a permission permission"
 msgid "Status"
-msgstr ""
+msgstr "стање"
 
 #: kcms/permissions/permissions.cpp:305
 #, kde-format
 msgctxt "@title:column the origin the permission was granted to"
 msgid "Origin"
-msgstr ""
+msgstr "поријекло"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Permissions)
 #: kcms/permissions/permissions.ui:14
 #, kde-format
 msgid "Form"
-msgstr ""
+msgstr "Формулар"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: kcms/permissions/permissions.ui:20
-#, fuzzy, kde-format
-#| msgctxt "@action:grant access"
-#| msgid "&Grant access"
+#, kde-format
 msgid "Persistent permission policy"
-msgstr "&Дозволи приступ"
+msgstr "Смјерница трајних дозвола"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, defaultPermissionPolicy)
 #: kcms/permissions/permissions.ui:33
@@ -266,63 +257,75 @@ msgid ""
 "time, regardless of this setting.</p>\n"
 "</body></html>"
 msgstr ""
+"<html><head/><body><p>Шта урадити када страница затражи дозволу:</p>\n"
+"<ul>\n"
+"<li><strong>питај сваки пут</strong>: пита сваки пут када страница затражи "
+"дозволу да ли је треба дати или одбити</li>\n"
+"<li><strong>питај само једном по сесији</strong>: пита само први пут када "
+"страница затражи дозволу, а затим исти одговор поново користи док се "
+"К‑освајач не затвори</li>\n"
+"<li><strong>питај само једном</strong>: пита само први пут када страница "
+"затражи дозволу, а затим исти одговор поново користи</li>\n"
+"</ul>\n"
+"<p><strong>Напомена:</strong> из безбједносних разлога, за неке дозволе (на "
+"примјер, за приступ микрофонима или веб камерама) увијек се пита сваки пут, "
+"без обзира на ову поставку.</p>\n"
+"</body></html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, defaultPermissionPolicy)
 #: kcms/permissions/permissions.ui:37
 #, kde-format
 msgid "Ask every time"
-msgstr ""
+msgstr "питај сваки пут"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, defaultPermissionPolicy)
 #: kcms/permissions/permissions.ui:42
 #, kde-format
 msgid "Only ask once per session"
-msgstr ""
+msgstr "питај само једном по сесији"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, defaultPermissionPolicy)
 #: kcms/permissions/permissions.ui:47
 #, kde-format
 msgid "Only ask once"
-msgstr ""
+msgstr "питај само једном"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: kcms/permissions/permissions.ui:58
-#, fuzzy, kde-format
-#| msgctxt "@action:deny access"
-#| msgid "&Deny access"
+#, kde-format
 msgid "Existing permissions"
-msgstr "&Одбиј приступ"
+msgstr "Постојеће дозволе"
 
 #. i18n: ectx: property (text), widget (QPushButton, resetAllPermissionsBtn)
 #: kcms/permissions/permissions.ui:79
-#, fuzzy, kde-format
-#| msgctxt "@action:deny access"
-#| msgid "&Deny access"
+#, kde-format
 msgid "Reset all permissions"
-msgstr "&Одбиј приступ"
+msgstr "Ресетуј све дозволе"
 
 #. i18n: ectx: property (text), widget (QRadioButton, groupByOrigin)
 #: kcms/permissions/permissions.ui:103
 #, kde-format
 msgid "By origin"
-msgstr ""
+msgstr "По поријеклу"
 
 #. i18n: ectx: property (text), widget (QRadioButton, groupByType)
 #: kcms/permissions/permissions.ui:113
 #, kde-format
 msgid "By type"
-msgstr ""
+msgstr "По типу"
 
 #: src/about/konq_aboutpage.cpp:84
 #, kde-format
 msgctxt "KDE 4 tag line"
 msgid "Be free."
-msgstr ""
+msgstr "Ка слободи."
 
 #: src/about/konq_aboutpage.cpp:89
 #, kde-format
 msgid "Konqueror is a web browser, file manager and universal document viewer."
 msgstr ""
+"К‑освајач је веб прегледач, менаџер фајлова и универзални приказивач "
+"докумената."
 
 #: src/about/konq_aboutpage.cpp:94
 #, kde-format
@@ -330,78 +333,76 @@ msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
 "Points contains links to Home, Network Folders, Trash, etc."
 msgid "Starting Points"
-msgstr ""
+msgstr "Полазне тачке"
 
 #: src/about/konq_aboutpage.cpp:138 src/about/konq_aboutpage.cpp:192
 #: src/about/konq_aboutpage.cpp:246 src/about/konq_aboutpage.cpp:333
 #, kde-format
 msgid "Introduction"
-msgstr ""
+msgstr "Увод"
 
 #: src/about/konq_aboutpage.cpp:139 src/about/konq_aboutpage.cpp:193
 #: src/about/konq_aboutpage.cpp:247 src/about/konq_aboutpage.cpp:334
 #, kde-format
 msgid "Tips"
-msgstr ""
+msgstr "Савјети"
 
 #: src/about/konq_aboutpage.cpp:144
 #, kde-format
 msgid "Home Folder"
-msgstr ""
+msgstr "Домаћа фасцикла"
 
 #: src/about/konq_aboutpage.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "EMAIL OF TRANSLATORS"
-#| msgid "Your emails"
+#, kde-format
 msgid "Your personal files"
-msgstr "slsimic@gmail.com"
+msgstr "Ваши лични фајлови"
 
 #: src/about/konq_aboutpage.cpp:148
 #, kde-format
 msgid "Trash"
-msgstr ""
+msgstr "Смеће"
 
 #: src/about/konq_aboutpage.cpp:149
 #, kde-format
 msgid "Browse and restore the trash"
-msgstr ""
+msgstr "Прегледање и враћање из смећа"
 
 #: src/about/konq_aboutpage.cpp:152
 #, kde-format
 msgid "Network Folders"
-msgstr ""
+msgstr "Мрежне фасцикле"
 
 #: src/about/konq_aboutpage.cpp:153
 #, kde-format
 msgid "Shared files and folders"
-msgstr ""
+msgstr "Дијељени фајлови и фасцикле"
 
 #: src/about/konq_aboutpage.cpp:156
 #, kde-format
 msgid "Bookmarks"
-msgstr ""
+msgstr "Обиљеживачи"
 
 #: src/about/konq_aboutpage.cpp:157
 #, kde-format
 msgid "Quick access to your bookmarks"
-msgstr ""
+msgstr "Брз приступ обиљеживачима"
 
 #: src/about/konq_aboutpage.cpp:160
 #, kde-format
 msgid "Next: An Introduction to Konqueror"
-msgstr ""
+msgstr "Сљедеће: Увод у К‑освајач"
 
 #: src/about/konq_aboutpage.cpp:161 src/about/konq_aboutpage.cpp:212
 #: src/about/konq_aboutpage.cpp:277
 #, kde-format
 msgctxt "link to the speed dial"
 msgid "Speed Dial"
-msgstr ""
+msgstr "Брзо бирање"
 
 #: src/about/konq_aboutpage.cpp:163
 #, kde-format
 msgid "Search the Web"
-msgstr ""
+msgstr "Тражите на Вебу"
 
 #: src/about/konq_aboutpage.cpp:194
 #, kde-format
@@ -410,6 +411,9 @@ msgid ""
 "both local and networked folders while enjoying advanced features such as "
 "the powerful sidebar and file previews."
 msgstr ""
+"К‑освајач олакшава рад и управљање фајловима. Док прегледате како локалне "
+"тако и мрежне фасцикле, уживаћете у напредним могућностима попут моћне бочне "
+"траке и прегледа фајлова."
 
 #: src/about/konq_aboutpage.cpp:198
 #, kde-format
@@ -419,6 +423,11 @@ msgid ""
 "kde.org\">http://www.kde.org</a>) of a web page you would like to visit in "
 "the location bar and press Enter, or choose an entry from the Bookmarks menu."
 msgstr ""
+"К‑освајач је такође способан и предусретљив веб прегледач, којим можете "
+"истраживати Интернет. У траку локације унесите адресу веб странице коју "
+"желите да посјетите (нпр. <a href=\"http://www.kde.org\">http://www.kde.org</"
+"a>) и притисните тастер Enter, или изаберите неки од обиљеживача из менија "
+"„Обиљеживачи“."
 
 #: src/about/konq_aboutpage.cpp:203
 #, kde-format
@@ -426,6 +435,8 @@ msgid ""
 "To return to the previous location, press the back button <img width='16' "
 "height='16' src=\"%1\"></img> in the toolbar. "
 msgstr ""
+"За повратак на претходну локацију, кликните на дугме за назад <img "
+"width='16' height='16' src=\"%1\"></img> на траци алатки. "
 
 #: src/about/konq_aboutpage.cpp:206
 #, kde-format
@@ -433,22 +444,25 @@ msgid ""
 "To quickly go to your Home folder press the home button <img width='16' "
 "height='16' src=\"%1\"></img>."
 msgstr ""
+"За брзо враћање у домаћу фасциклу, кликните на домаће дугме <img width='16' "
+"height='16' src=\"%1\"></img>."
 
 #: src/about/konq_aboutpage.cpp:208
 #, kde-format
 msgid ""
 "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
 msgstr ""
+"За детаљнију документацију о К‑освајачу кликните <a href=\"%1\">овдје</a>."
 
 #: src/about/konq_aboutpage.cpp:211
 #, kde-format
 msgid "Next: Tips & Tricks"
-msgstr ""
+msgstr "Сљедеће: Савјети и трикови"
 
 #: src/about/konq_aboutpage.cpp:248
 #, kde-format
 msgid "Tips & Tricks"
-msgstr ""
+msgstr "Савјети и трикови"
 
 #: src/about/konq_aboutpage.cpp:249
 #, kde-format
@@ -459,6 +473,10 @@ msgid ""
 "encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-"
 "Shortcuts."
 msgstr ""
+"Користите веб пречице: нпр. уписивањем „gg: KDE“ ријеч „KDE“ биће потражена "
+"Гуглом. Већ су дефинисане многе веб пречице које ће вам олакшати тражење "
+"софтвера или енциклопедијских појмова, а можете <a href=\"%1\">направити и "
+"сопствене</a>."
 
 #: src/about/konq_aboutpage.cpp:254
 #, kde-format
@@ -467,6 +485,9 @@ msgid ""
 "want to clear the current entry by pressing the black arrow with the white "
 "cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
 msgstr ""
+"Када хоћете да налијепите нову адресу у траку локације, можете обрисати "
+"тренутну кликом на црну стрелицу са бијелим иксом <img width='16' "
+"height='16' src=\"%1\"></img> на траци алатки."
 
 #: src/about/konq_aboutpage.cpp:258
 #, kde-format
@@ -475,6 +496,9 @@ msgid ""
 "the icon (favicon) that is to the left of the Location toolbar, drop it on "
 "to the desktop, and choose \"Icon\"."
 msgstr ""
+"На површи можете направити везу ка тренутној страници тако што превучете "
+"иконицу (фавиконицу) лијево од траке локације на површ, и изаберете "
+"„Иконица“."
 
 #: src/about/konq_aboutpage.cpp:261
 #, kde-format
@@ -483,6 +507,8 @@ msgid ""
 "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
 "sessions."
 msgstr ""
+"У менију „Подешавање“ можете наћи и <img width='16' height='16' src=\"%1\" /"
+"> „Преко цијелог екрана“. Ова могућност врло је корисна за представљања."
 
 #: src/about/konq_aboutpage.cpp:264
 #, kde-format
@@ -491,6 +517,9 @@ msgid ""
 "two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> Split "
 "View Left/Right) you can make Konqueror appear the way you like."
 msgstr ""
+"Divide et impera (лат. „завади па владај“) — подјелом прозора на два дијела "
+"(нпр. Прозор→<img width='16' height='16' src=\"%1\" /> Подијели приказ "
+"лијево/десно) можете учинити да К‑освајач изгледа онако како вам се свиђа."
 
 #: src/about/konq_aboutpage.cpp:267
 #, kde-format
@@ -499,6 +528,9 @@ msgid ""
 "visiting asks you to use a different browser (and do not forget to send a "
 "complaint to the webmaster!)"
 msgstr ""
+"Употријебите могућност измјене <a href=\"%1\">корисничког агента</a> када "
+"веб сајт који посјећујете захтијева неки одређени прегледач (али не "
+"заборавите да се пожалите вебмастеру!)"
 
 #: src/about/konq_aboutpage.cpp:270
 #, kde-format
@@ -506,6 +538,8 @@ msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
 "ensures that you can keep track of the pages you have visited recently."
 msgstr ""
+"Историјат <img width='16' height='16' src=\"%1\"></img> у бочној траци пружа "
+"вам увид и праћење страница које сте недавно посјећивали."
 
 #: src/about/konq_aboutpage.cpp:272
 #, kde-format
@@ -514,93 +548,88 @@ msgid ""
 "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
 "Terminal Emulator)."
 msgstr ""
+"Напредни корисници ће цијенити могућност угњежђивања Конзоле у К‑освајач "
+"(Подешавање→<img width='16' height='16' SRC=\"%1\"></img> Прикажи емулатор "
+"терминала)."
 
 #: src/about/konq_aboutpage.cpp:291
 #, kde-format
 msgid "Installed Plugins"
-msgstr ""
+msgstr "Инсталирани прикључци"
 
 #: src/about/konq_aboutpage.cpp:292
 #, kde-format
 msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
-msgstr ""
+msgstr "<td>прикључак</td><td>опис</td><td>фајл</td><td>типови</td>"
 
 #: src/about/konq_aboutpage.cpp:293
 #, kde-format
 msgid "Installed"
-msgstr ""
+msgstr "инсталиран"
 
 #: src/about/konq_aboutpage.cpp:294
 #, kde-format
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
-msgstr ""
+msgstr "<td>МИМЕ тип</td><td>опис</td><td>суфикси</td><td>прикључак</td>"
 
 #: src/about/konq_aboutpage.cpp:335
 #, kde-format
 msgid "Speed Dial"
-msgstr ""
+msgstr "Брзо бирање"
 
 #: src/actondownloadedfilebar.cpp:91
 #, kde-format
 msgctxt "@label:part of the text: 'url' was saved as 'file'"
 msgid "was saved as"
-msgstr ""
+msgstr "је сачуван као"
 
 #: src/actondownloadedfilebar.cpp:123
 #, kde-format
 msgctxt "@label location where a remote URL was downloaded"
 msgid "<tt>%1</tt> was saved as <tt>%2</tt>"
-msgstr ""
+msgstr "<tt>%1</tt> је сачуван као <tt>%2</tt>"
 
 #: src/actondownloadedfilebar.cpp:144 src/actondownloadedfilebar.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file choosing application"
 msgid "Open With..."
-msgstr "Отвори „%1“"
+msgstr "Отвори помоћу..."
 
 #: src/actondownloadedfilebar.cpp:149
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu Open downloaded file"
 msgid "Open"
-msgstr "Отвори „%1“"
+msgstr "Отвори"
 
 #: src/actondownloadedfilebar.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Отвори „%1“"
+msgstr "Отвори &помоћу %1|/|Отвори $[инс-п %1]"
 
 #: src/actondownloadedfilebar.cpp:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Show in new tab"
-msgstr ""
+msgstr "Прикажи у новом језичку"
 
 #: src/actondownloadedfilebar.cpp:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Show here"
-msgstr ""
+msgstr "Прикажи овдје"
 
 #: src/actondownloadedfilebar.cpp:203
-#, fuzzy, kde-format
-#| msgctxt "open selected url"
-#| msgid "Open '%1'"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show &with %1"
-msgstr "Отвори „%1“"
+msgstr "Прикажи &помоћу %1|/|Прикажи $[инс-п %1]"
 
 #: src/actondownloadedfilebar.cpp:231
 #, kde-format
 msgctxt "@action:button Display the folder which contains the downloaded file"
 msgid "Show containing folder"
-msgstr ""
+msgstr "Прикажи обухватајућу фасциклу"
 
 #: src/actondownloadedfilebar.cpp:232
 #, kde-format
@@ -608,7 +637,7 @@ msgctxt ""
 "@action:menu Display the folder which contains the downloaded file in a new "
 "tab"
 msgid "Show containing folder in new tab"
-msgstr ""
+msgstr "Прикажи обухватајућу фасциклу у новом језичку"
 
 #: src/actondownloadedfilebar.cpp:233
 #, kde-format
@@ -616,68 +645,67 @@ msgctxt ""
 "@action:menu Display the folder which contains the downloaded file in this "
 "tab"
 msgid "Show containing folder here"
-msgstr ""
+msgstr "Прикажи обухватајућу фасциклу овдје"
 
 #: src/capturesourcechooserdlg.cpp:27
 #, kde-format
 msgid ""
 "Do you want to allow <tt>%1</tt> to capture the contents of your screen?"
-msgstr ""
+msgstr "Желите ли да дозволите да <tt>%1</tt> снима садржај вашег екрана?"
 
 #: src/capturesourcechooserdlg.cpp:29
 #, kde-format
 msgctxt "Choose to share a screen"
 msgid "Share Screen"
-msgstr ""
+msgstr "Подијели екран"
 
 #: src/capturesourcechooserdlg.cpp:31
 #, kde-format
 msgctxt "Choose to share a window"
 msgid "Share Window"
-msgstr ""
+msgstr "Подијели прозор"
 
 #: src/capturesourcechooserdlg.cpp:35
 #, kde-format
 msgctxt "Don't share any part of the screen"
 msgid "Share nothing"
-msgstr ""
+msgstr "Не дијели ништа"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngine::CaptureSourceChooserDlg)
 #: src/capturesourcechooserdlg.ui:14
 #, kde-format
 msgid "Choose Capture Source"
-msgstr ""
+msgstr "Избор извора снимања"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/capturesourcechooserdlg.ui:20
 #, kde-format
 msgid "Which part of your screen do you want to share?"
-msgstr ""
+msgstr "Који дио екрана желите да подијелите?"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/capturesourcechooserdlg.ui:44
 #, kde-format
 msgid "Window"
-msgstr ""
+msgstr "Прозор"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, windowCombo)
 #: src/capturesourcechooserdlg.ui:51
-#, fuzzy, kde-format
-#| msgid "Close window?"
+#, kde-format
 msgid "Choose window"
-msgstr "Затворити прозор?"
+msgstr "Изаберите прозор"
 
 #. i18n: ectx: property (text), widget (QLabel, Screen)
 #: src/capturesourcechooserdlg.ui:75
 #, kde-format
 msgid "Screen"
-msgstr ""
+msgstr "Екран"
 
 #. i18n: ectx: property (placeholderText), widget (QComboBox, screenCombo)
 #: src/capturesourcechooserdlg.ui:82
 #, kde-format
 msgid "Choose screen"
-msgstr ""
+msgstr "Изаберите екран"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -685,6 +713,8 @@ msgid ""
 "The page will be saved as a single HTML file. Only the text of the page will "
 "be saved. External resources such as images won't be saved"
 msgstr ""
+"Страница ће бити сачувана као један ХТМЛ фајл. Биће сачуван само текст "
+"странице. Спољни ресурси, као што су слике, неће бити сачувани"
 
 #: src/choosepagesaveformatdlg.cpp:40
 #, kde-format
@@ -692,6 +722,8 @@ msgid ""
 "The page will be saved as an HTML file. Any external resources the page "
 "requires, such as images, will be saved inside an apposite directory"
 msgstr ""
+"Страница ће бити сачувана као ХТМЛ фајл. Сви спољни ресурси које страница "
+"захтијева, као што су слике, биће сачувани у посебну фасциклу"
 
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
@@ -701,55 +733,58 @@ msgid ""
 "<br><strong>Note</strong>: not all browsers are able to display this kind of "
 "files"
 msgstr ""
+"Страница ће бити сачувана као МХТМЛ фајл, који садржи и текст странице и све "
+"спољне ресурсе које она захтијева, као што су слике.<br/><strong>Напомена</"
+"strong>: не умију сви прегледачи да прикажу ову врсту фајлова"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
 #, kde-format
 msgid "Choose Save Format"
-msgstr ""
+msgstr "Избор формата сачуване странице"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:20
 #, kde-format
 msgid "How would you like to save the page?"
-msgstr ""
+msgstr "Како желите да сачувате страницу?"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As an HTML file &without external resources"
-msgstr ""
+msgstr "Као ХТМЛ фајл &без спољних ресурса"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
 #, kde-format
 msgid "As a &complete HTML page"
-msgstr ""
+msgstr "Као &потпуну ХТМЛ страницу"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As a &MHTML file"
-msgstr ""
+msgstr "Као &МХТМЛ фајл"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:57 src/webenginepartcertificateerrordlg.ui:23
 #, kde-format
 msgid "TextLabel"
-msgstr ""
+msgstr "Текстуална етикета"
 
 #: src/cookies/cookiealertdlg.cpp:22
 #, kde-format
 msgctxt "@label the cookie expires when the browser session ends"
 msgid "End of Session"
-msgstr ""
+msgstr "Крај сесије"
 
 #: src/cookies/cookiealertdlg.cpp:29
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by https servers"
 msgid "Secure servers only"
-msgstr ""
+msgstr "Само безбједни сервери"
 
 #: src/cookies/cookiealertdlg.cpp:31
 #, kde-format
@@ -757,13 +792,13 @@ msgctxt ""
 "@label exposure string - the cookie may be used by https servers AND client-"
 "side javascripts"
 msgid "Secure servers, page scripts"
-msgstr ""
+msgstr "Безбједни сервери, скрипте на страницама"
 
 #: src/cookies/cookiealertdlg.cpp:35
 #, kde-format
 msgctxt "@label exposure string - the cookie may only be used by http servers"
 msgid "Servers"
-msgstr ""
+msgstr "Сервери"
 
 #: src/cookies/cookiealertdlg.cpp:37
 #, kde-format
@@ -771,33 +806,31 @@ msgctxt ""
 "@label exposure string - the cookie may be used by http servers AND client-"
 "side javascripts"
 msgid "Servers, page scripts"
-msgstr ""
+msgstr "Сервери, скрипте на страницама"
 
 #: src/cookies/cookiealertdlg.cpp:41
 #, kde-format
 msgctxt "@label accept cookie"
 msgid "Accept"
-msgstr ""
+msgstr "Прихвати"
 
 #: src/cookies/cookiealertdlg.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@action:never for this site"
-#| msgid "Ne&ver for this site"
+#, kde-format
 msgctxt "@label accept cookie for this session only"
 msgid "Accept for this session"
-msgstr "&Никада за овај сајт"
+msgstr "Прихвати за ову сесију"
 
 #: src/cookies/cookiealertdlg.cpp:45
 #, kde-format
 msgctxt "@label reject cookie"
 msgid "Reject"
-msgstr ""
+msgstr "Одбаци"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CookieAlertDlg)
 #: src/cookies/cookiealertdlg.ui:14
 #, kde-format
 msgid "CookieAlertDlg"
-msgstr ""
+msgstr "Упозорење на колачић"
 
 #. i18n: ectx: property (text), widget (QLabel, header)
 #: src/cookies/cookiealertdlg.ui:20
@@ -806,72 +839,74 @@ msgid ""
 "<html><head/><body><p>You received a cookie from %1</p><p>Do you want to "
 "accept or reject this cookie?</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Примили сте колачић са %1</p><p>Желите ли да "
+"прихватите или одбаците овај колачић?</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/cookies/cookiealertdlg.ui:30
 #, kde-format
 msgid "Cookie details"
-msgstr ""
+msgstr "Детаљи о колачићу"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/cookies/cookiealertdlg.ui:36
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Име"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: src/cookies/cookiealertdlg.ui:50
 #, kde-format
 msgid "Value"
-msgstr ""
+msgstr "Вриједност"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: src/cookies/cookiealertdlg.ui:64
 #, kde-format
 msgid "Expires"
-msgstr ""
+msgstr "Истиче"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: src/cookies/cookiealertdlg.ui:78
 #, kde-format
 msgid "Path"
-msgstr ""
+msgstr "Путања"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: src/cookies/cookiealertdlg.ui:99
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "Изложеност"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: src/cookies/cookiealertdlg.ui:113
 #, kde-format
 msgid "Domain"
-msgstr ""
+msgstr "Домен"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: src/cookies/cookiealertdlg.ui:123
 #, kde-format
 msgid "Apply choice to"
-msgstr ""
+msgstr "Примијени избор на"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToThis)
 #: src/cookies/cookiealertdlg.ui:129
 #, kde-format
 msgid "Only this cookie"
-msgstr ""
+msgstr "Само овај колачић"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToDomain)
 #: src/cookies/cookiealertdlg.ui:136
 #, kde-format
 msgid "All cookies from this domain"
-msgstr ""
+msgstr "Све колачиће са овог домена"
 
 #. i18n: ectx: property (text), widget (QRadioButton, applyToAll)
 #: src/cookies/cookiealertdlg.ui:143
 #, kde-format
 msgid "All cookies"
-msgstr ""
+msgstr "Све колачиће"
 
 #: src/schemehandlers/errorschemehandler.cpp:97
 #, kde-format
@@ -879,66 +914,66 @@ msgid ""
 "<html><body><h3>Unable to display error message</h3><p>The error template "
 "file <em>error.html</em> could not be found.</p></body></html>"
 msgstr ""
+"<html><h3>Не могу да прикажем поруку грешке</h3><p>Фајл шаблона грешке "
+"<tt>error.html</tt> не може се наћи.</p></html>"
 
 #: src/schemehandlers/errorschemehandler.cpp:106
 #, kde-format
 msgid "The requested operation could not be completed"
-msgstr ""
+msgstr "Тражени поступак није могао да се доврши"
 
 #: src/schemehandlers/errorschemehandler.cpp:113
 #, kde-format
 msgid "Technical Reason: %1"
-msgstr ""
+msgstr "Технички разлог: %1"
 
 #: src/schemehandlers/errorschemehandler.cpp:118
 #, kde-format
 msgid "Details of the Request:"
-msgstr ""
+msgstr "Детаљи захтјева:"
 
 #. i18n, and once for HTML.
 #: src/schemehandlers/errorschemehandler.cpp:121
 #, kde-format
 msgid "URL: %1"
-msgstr ""
+msgstr "УРЛ: %1"
 
 #. i18n, and once for HTML.
 #: src/schemehandlers/errorschemehandler.cpp:127
 #, kde-format
 msgid "Protocol: %1"
-msgstr ""
+msgstr "Протокол: %1"
 
 #: src/schemehandlers/errorschemehandler.cpp:131
 #, kde-format
 msgid "Date and Time: %1"
-msgstr ""
+msgstr "Датум и вријеме: %1"
 
-# >> @title:window
 #. i18n, and once for HTML.
 #: src/schemehandlers/errorschemehandler.cpp:135
-#, fuzzy, kde-format
-#| msgid "Resubmit Information"
+#, kde-format
 msgid "Additional Information: %1"
-msgstr "Поновна предаја података"
+msgstr "Додатне информације: %1"
 
 #: src/schemehandlers/errorschemehandler.cpp:137
 #, kde-format
 msgid "Description:"
-msgstr ""
+msgstr "Опис:"
 
 #: src/schemehandlers/errorschemehandler.cpp:144
 #, kde-format
 msgid "Possible Causes:"
-msgstr ""
+msgstr "Могући узроци:"
 
 #: src/schemehandlers/errorschemehandler.cpp:152
 #, kde-format
 msgid "Possible Solutions:"
-msgstr ""
+msgstr "Могућа рјешења:"
 
 #: src/schemehandlers/errorschemehandler.cpp:158
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "Грешка: %1"
 
 #: src/settings/webenginesettings.cpp:898
 #, kde-format
@@ -948,39 +983,35 @@ msgstr "Грешка филтера"
 #: src/spellcheckermanager.cpp:98
 #, kde-format
 msgid "Spelling"
-msgstr ""
+msgstr "Правопис"
 
 #: src/spellcheckermanager.cpp:102
 #, kde-format
 msgid "Spell Checking Enabled"
-msgstr ""
+msgstr "Провјера правописа укључена"
 
 #: src/spellcheckermanager.cpp:120
 #, kde-format
 msgid "&Languages"
-msgstr ""
+msgstr "&Језици"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/ui/credentialsdetailswidget.ui:34
 #, kde-format
 msgid "&Show passwords"
-msgstr ""
+msgstr "&Прикажи лозинке"
 
 #: src/ui/featurepermissionbar.cpp:22
-#, fuzzy, kde-format
-#| msgctxt "@action:deny access"
-#| msgid "&Deny access"
+#, kde-format
 msgctxt "@action:deny permission"
 msgid "&Deny permission"
-msgstr "&Одбиј приступ"
+msgstr "&Одбиј дозволу"
 
 #: src/ui/featurepermissionbar.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@action:grant access"
-#| msgid "&Grant access"
+#, kde-format
 msgctxt "@action:grant permission"
 msgid "&Grant permission"
-msgstr "&Дозволи приступ"
+msgstr "&Дај дозволу"
 
 #: src/ui/featurepermissionbar.cpp:51
 #, kde-format
@@ -988,6 +1019,8 @@ msgid ""
 "<html><b>%1</b> would like to access your microphone and other audio capture "
 "devices"
 msgstr ""
+"<html><b>%1</b> жели да приступи вашем микрофону и другим уређајима за "
+"снимање звука</html>"
 
 #: src/ui/featurepermissionbar.cpp:53
 #, kde-format
@@ -995,6 +1028,8 @@ msgid ""
 "<html><b>%1</b> would like to access your camera and other video capture "
 "devices"
 msgstr ""
+"<html><b>%1</b> жели да приступи вашој камери и другим уређајима за снимање "
+"видеа</html>"
 
 #: src/ui/featurepermissionbar.cpp:55
 #, kde-format
@@ -1002,69 +1037,55 @@ msgid ""
 "<html><b>%1</b> would like to access to your microphone, camera and other "
 "audio and video capture devices"
 msgstr ""
+"<html><b>%1</b> жели да приступи вашем микрофону, камери и другим уређајима "
+"за снимање звука и видеа</html>"
 
 #: src/ui/featurepermissionbar.cpp:57
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen"
-msgstr ""
+msgstr "<html><b>%1</b> жели да снима ваш екран</html>"
 
 #: src/ui/featurepermissionbar.cpp:59
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen and your audio"
-msgstr ""
+msgstr "<html><b>%1</b> жели да снима ваш екран и звук</html>"
 
 #: src/ui/featurepermissionbar.cpp:61
 #, kde-format
 msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
-msgstr ""
+msgstr "<html><b>%1</b> жели да закључа ваш миш унутар веб странице</html>"
 
 #: src/ui/featurepermissionbar.cpp:63
 #, kde-format
 msgid "<html><b>%1</b> would like to send you notifications"
-msgstr ""
+msgstr "<html><b>%1</b> жели да вам шаље обавјештења</html>"
 
 #: src/ui/featurepermissionbar.cpp:65
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access information about your current physical "
 "location"
 msgstr ""
-"<html>Желите ли да дозволите сајту приступ подацима о вашој текућој физичкој "
-"локацији?</html>"
+"<html><b>%1</b> жели да приступи подацима о вашој текућој физичкој локацији</"
+"html>"
 
 #: src/ui/featurepermissionbar.cpp:67
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid "<html><b>%1</b> would like to access your clipboard"
-msgstr ""
-"<html>Желите ли да дозволите сајту приступ подацима о вашој текућој физичкој "
-"локацији?</html>"
+msgstr "<html><b>%1</b> жели да приступи вашем клипборду</html>"
 
 #: src/ui/featurepermissionbar.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access the fonts installed on your machine"
 msgstr ""
-"<html>Желите ли да дозволите сајту приступ подацима о вашој текућој физичкој "
-"локацији?</html>"
+"<html><b>%1</b> жели да приступи фонтовима инсталираним на вашем рачунару</"
+"html>"
 
 #: src/ui/featurepermissionbar.cpp:71
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid "<html><b>%1</b> would like to do something we don't know about"
-msgstr ""
-"<html>Желите ли да дозволите сајту приступ подацима о вашој текућој физичкој "
-"локацији?</html>"
+msgstr "<html><b>%1</b> жели да уради нешто што нам није познато</html>"
 
 #: src/ui/passwordbar.cpp:28
 #, kde-format
@@ -1088,20 +1109,18 @@ msgstr "Не &сада"
 #, kde-format
 msgctxt "@action:display details about credentials to store"
 msgid "&Show details"
-msgstr ""
+msgstr "&Прикажи детаље"
 
 #: src/ui/passwordbar.cpp:122
 #, kde-format
 msgctxt "@action:hide details about credentials to store"
 msgid "&Hide details"
-msgstr ""
+msgstr "Сакриј &детаље"
 
 #: src/ui/searchbar.cpp:38
-#, fuzzy, kde-format
-#| msgctxt "label for input line to find text"
-#| msgid "&Find:"
+#, kde-format
 msgid "Find..."
-msgstr "&Нађи:"
+msgstr "Нађи..."
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, closeButton)
 #: src/ui/searchbar.ui:23
@@ -1168,77 +1187,73 @@ msgstr "Истакни поклапања"
 #, kde-format
 msgctxt "Web field with type 'text'"
 msgid "text"
-msgstr ""
+msgstr "текст"
 
 #: src/wallet/webenginewallet.cpp:106
 #, kde-format
 msgctxt "Web field with type 'password'"
 msgid "password"
-msgstr ""
+msgstr "лозинка"
 
 #: src/wallet/webenginewallet.cpp:107
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
-#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
-#| msgid "Email: "
+#, kde-format
 msgctxt "Web field with type 'e-mail'"
 msgid "e-mail"
-msgstr "е‑пошта: "
+msgstr "е‑пошта"
 
 #: src/wallet/webenginewallet.cpp:108
 #, kde-format
 msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
 msgid "other"
-msgstr ""
+msgstr "друго"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
 #, kde-format
 msgid "Customize Fields To Store"
-msgstr ""
+msgstr "Прилагођавање поља за складиштење"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
 #, kde-format
 msgid "Switch between displaying passwords or placeholders"
-msgstr ""
+msgstr "Пребаци између приказа лозинки и мјестодржача"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
 #, kde-format
 msgid "Show &passwords"
-msgstr ""
+msgstr "Прикажи &лозинке"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
 #, kde-format
 msgid "Show advanced information about the fields"
-msgstr ""
+msgstr "Прикажи напредне податке о пољима"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
 #, kde-format
 msgid "Show field &details"
-msgstr ""
+msgstr "Прикажи &детаље поља"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
 #, kde-format
 msgid "Available &fields"
-msgstr ""
+msgstr "Доступна &поља"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:101
 #, kde-format
 msgid "Store form data in KWallet when closing the dialog"
-msgstr ""
+msgstr "Складишти податке формулара у К‑новчанику при затварању дијалога"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
 #, kde-format
 msgid "&Store the contents of selected fields when closing the dialog"
-msgstr ""
+msgstr "&Складишти садржај изабраних поља при затварању дијалога"
 
 #: src/webenginepage.cpp:220
 #, kde-format
@@ -1252,7 +1267,7 @@ msgid ""
 "\n"
 "The integration will be disabled."
 msgstr ""
-"Поново га инсталирајте и проверите да ли је доступан у системској путањи. \n"
+"Поново га инсталирајте и провјерите да ли је доступан у системској путањи. \n"
 "\n"
 "Интеграција ће бити искључена."
 
@@ -1334,12 +1349,13 @@ msgstr "Прилог уклоњен"
 #: src/webenginepage.cpp:832
 #, kde-format
 msgid "An error occurred while converting the page to PDF"
-msgstr ""
+msgstr "Дошло је до грешке при претварању странице у ПДФ"
 
 #: src/webenginepage.cpp:837
 #, kde-format
 msgid "An error occurred while saving a PDF version of the page as %1"
 msgstr ""
+"Дошло је до грешке при покушају да се ПДФ верзија странице сачува као %1"
 
 #: src/webenginepage.cpp:925
 #, kde-format
@@ -1376,10 +1392,9 @@ msgid "Do Not Allow"
 msgstr "Одбиј"
 
 #: src/webenginepart.cpp:210
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "Сачувај слику као..."
+msgstr "Сачувај цијелу ХТМЛ страницу као..."
 
 #: src/webenginepart.cpp:214
 #, kde-format
@@ -1522,49 +1537,47 @@ msgstr "<html>Желите ли да %1 упамти податке о приј�
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill In Credentials"
-msgstr ""
+msgstr "&Попуни акредитиве"
 
 #: src/webenginepart.cpp:1089
 #, kde-format
 msgctxt "Scans again the page to detect forms to fill"
 msgid "&Search Page for Credential Requests"
-msgstr ""
+msgstr "&Тражи захтјеве за акредитиве на страници"
 
 #: src/webenginepart.cpp:1093
 #, kde-format
 msgctxt "Store in KWallet the current content of the fields"
 msgid "&Store Credentials Now"
-msgstr ""
+msgstr "&Складишти акредитиве сада"
 
 #: src/webenginepart.cpp:1097
 #, kde-format
 msgctxt "Shows a dialog where the use can choose which fields to store"
 msgid "&Customize Credentials Settings for Page..."
-msgstr ""
+msgstr "При&лагоди поставке акредитива за страницу..."
 
 #: src/webenginepart.cpp:1101
 #, kde-format
 msgid "Reset Custom Credential Settings for Page"
-msgstr ""
+msgstr "Ресетуј посебне поставке акредитива за страницу"
 
 # rewrite-msgid: /caching/storing/
 #: src/webenginepart.cpp:1105
-#, fuzzy, kde-format
-#| msgid "&Allow password caching for this site"
+#, kde-format
 msgid "&Allow Credential Caching for This Page"
-msgstr "&Дозволи складиштење лозинки за овај сајт"
+msgstr "&Дозволи складиштење акредитива за ову страницу"
 
 # rewrite-msgid: /cached/stored/
 #: src/webenginepart.cpp:1109
-#, fuzzy, kde-format
-#| msgid "Remove all cached passwords for this site"
+#, kde-format
 msgid "Remove All Stored Passwords for This Site"
-msgstr "Уклони ускладиштене лозинке за овај сајт"
+msgstr "Уклони све ускладиштене лозинке за овај сајт"
 
 #: src/webenginepart.cpp:1113
 #, kde-format
 msgid "&Launch Wallet Manager"
-msgstr ""
+msgstr "Покрени &менаџер новчаника"
 
 #: src/webenginepart.cpp:1117
 #, kde-format
@@ -1593,13 +1606,13 @@ msgstr "&Приказ"
 #: src/webenginepart.rc:30
 #, kde-format
 msgid "&Tools"
-msgstr ""
+msgstr "&Алатке"
 
 #. i18n: ectx: Menu (wallet)
 #: src/webenginepart.rc:32
 #, kde-format
 msgid "&Credential management"
-msgstr ""
+msgstr "&Управљање акредитивима"
 
 #. i18n: ectx: ToolBar (htmlToolBar)
 #: src/webenginepart.rc:49
@@ -1628,13 +1641,13 @@ msgstr "Унесите УРЛ:"
 #, kde-format
 msgctxt "Ignore the certificate error for this URL only for now"
 msgid "Yes, &once"
-msgstr ""
+msgstr "Да, &једном"
 
 #: src/webenginepartcertificateerrordlg.cpp:45
 #, kde-format
 msgctxt "Ignore the certificate error for this URL now and in the future"
 msgid "Yes, &forever"
-msgstr ""
+msgstr "Да, &заувијек"
 
 #: src/webenginepartcertificateerrordlg.cpp:50
 #, kde-format
@@ -1642,47 +1655,44 @@ msgid ""
 "<p>The server <tt>%1</tt> failed the authenticity check. The error is:</"
 "p><p><tt>%2</tt></p>Do you want to ignore this error?"
 msgstr ""
+"<p>Сервер <tt>%1</tt> није прошао провјеру аутентичности. Грешка је:</"
+"p><p><tt>%2</tt></p>Желите ли да занемарите ову грешку?"
 
 #: src/webenginepartcertificateerrordlg.cpp:56
-#, fuzzy, kde-format
-#| msgid "Filter error"
+#, kde-format
 msgctxt "title of a dialog asking what to do about a SSL certificate error"
 msgid "Certificate error"
-msgstr "Грешка филтера"
+msgstr "Грешка сертификата"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEnginePartCertificateErrorDlg)
 #: src/webenginepartcertificateerrordlg.ui:14
 #, kde-format
 msgid "Dialog"
-msgstr ""
+msgstr "Дијалог"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginepartcertificateerrordlg.ui:30
 #, kde-format
 msgid "&Show details"
-msgstr ""
+msgstr "&Прикажи детаље"
 
 #. i18n: ectx: property (title), widget (QGroupBox, details)
 #: src/webenginepartcertificateerrordlg.ui:50
 #, kde-format
 msgid "Certificate details"
-msgstr ""
+msgstr "Детаљи сертификата"
 
 #. i18n: ectx: attribute (title), widget (QWidget, subjectTab)
 #: src/webenginepartcertificateerrordlg.ui:63
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
-#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
-#| msgid " - Subject: "
+#, kde-format
 msgid "&Subject"
-msgstr " — тема: "
+msgstr "Пре&дмет"
 
 #. i18n: ectx: attribute (title), widget (QWidget, issuerTab)
 #: src/webenginepartcertificateerrordlg.ui:73
 #, kde-format
 msgid "&Issuer"
-msgstr ""
+msgstr "&Издавач"
 
 #: src/webenginepartcontrols.cpp:285
 #, kde-format
@@ -1690,35 +1700,37 @@ msgid ""
 "Couldn't open the file <tt>%1</tt> containing the user style sheet. The "
 "default style sheet will be used"
 msgstr ""
+"Не могу да отворим фајл <tt>%1</tt> са корисничким описом стила. Биће "
+"коришћен подразумијевани опис стила"
 
 #: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgid "An error occurred while saving the file: %1"
-msgstr ""
+msgstr "Дошло је до грешке при покушају да се сачува фајл: %1"
 
 #: src/webenginepartdownloadmanager.cpp:315
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
-msgstr ""
+msgstr "Преузимам"
 
 #: src/webenginepartdownloadmanager.cpp:316
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
-msgstr ""
+msgstr "Извор"
 
 #: src/webenginepartdownloadmanager.cpp:317
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
-msgstr ""
+msgstr "Одредиште"
 
 #: src/webenginepartdownloadmanager.cpp:339
 #, kde-format
 msgctxt "Finished saving URL"
 msgid "Saved %1 as %2"
-msgstr ""
+msgstr "%1 је сачуван као %2"
 
 #: src/webengineview.cpp:351
 #, kde-format
@@ -1857,67 +1869,68 @@ msgstr "Подеси веб пречице..."
 #, kde-format
 msgctxt "Label of a web field"
 msgid "Field name"
-msgstr ""
+msgstr "име поља"
 
 #: src/webfieldsdataview.cpp:62
 #, kde-format
 msgctxt "Value of a web field"
 msgid "Field value"
-msgstr ""
+msgstr "вриједност поља"
 
 #: src/webfieldsdataview.cpp:63
 #, kde-format
 msgctxt "Name attribute of a web field"
 msgid "Internal field name"
-msgstr ""
+msgstr "унутрашње име поља"
 
 #: src/webfieldsdataview.cpp:64
 #, kde-format
 msgctxt "Type of a web field"
 msgid "Field type"
-msgstr ""
+msgstr "тип поља"
 
 #: src/webfieldsdataview.cpp:65
 #, kde-format
 msgctxt "The id of a web field"
 msgid "Field id"
-msgstr ""
+msgstr "ИД поља"
 
 #: src/webfieldsdataview.cpp:66
 #, kde-format
 msgctxt "Other details about a web field"
 msgid "Details"
-msgstr ""
+msgstr "детаљи"
 
 #: src/webfieldsdataview.cpp:125
 #, kde-format
 msgctxt "web field has the readonly attribute"
 msgid "read only"
-msgstr ""
+msgstr "само за читање"
 
 #: src/webfieldsdataview.cpp:128
 #, kde-format
 msgctxt "web field has the autocomplete attribute set to off"
 msgid "auto-completion off"
-msgstr ""
+msgstr "самодопуна искључена"
 
+# >> @option:check
 #: src/webfieldsdataview.cpp:131
 #, kde-format
 msgctxt "web field is disabled"
 msgid "disabled"
-msgstr ""
+msgstr "искључено"
 
 #: src/webfieldsdataview.cpp:159
 #, kde-format
 msgctxt "A statement about a field is true"
 msgid "yes"
-msgstr ""
+msgstr "да"
 
 #: src/webfieldsdataview.cpp:160
 #, kde-format
 msgctxt "A statement about a field is false"
 msgid "no"
-msgstr ""
+msgstr "не"
 
 #: src/webfieldsdataview.cpp:163
 #, kde-format
@@ -1927,114 +1940,7 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
-
-#~ msgid ""
-#~ "This site is attempting to access information about your physical "
-#~ "location.\n"
-#~ "Do you want to allow it access?"
-#~ msgstr ""
-#~ "Овај сајт покушава да приступи подацима о вашој физичкој локацији.\n"
-#~ "Желите ли да му дозволите приступ?"
-
-#~ msgid ""
-#~ "<qt><p>To display the requested web page again, the browser needs to "
-#~ "resend information you have previously submitted.</p><p>If you were "
-#~ "shopping online and made a purchase, click the Cancel button to prevent a "
-#~ "duplicate purchase.Otherwise, click the Continue button to display the "
-#~ "webpage again.</p>"
-#~ msgstr ""
-#~ "<qt><p>Да би поново приказао затражену веб страницу, прегледач мора "
-#~ "поново да пошаље податке које сте раније већ предали.</p><p>Ако сте "
-#~ "куповали на вези и поручили нешто, кликните на дугме <i>Одустани</i> да "
-#~ "спречите дуплу поруџбину. У супротном, кликните на дугме <i>Настави</i> "
-#~ "да поново прикажете страницу.</p></qt>"
-
-# >> @title:window
-#~ msgid "Resubmit Information"
-#~ msgstr "Поновна предаја података"
-
-#, fuzzy
-#~| msgid "Allow"
-#~ msgctxt "Allow a web page to capture the screen"
-#~ msgid "Allow"
-#~ msgstr "Дозволи"
-
-#, fuzzy
-#~| msgid ""
-#~| "<qt>Do you want to allow this site to attach the following files to the "
-#~| "email message?</qt>"
-#~ msgid ""
-#~ "Do you want to allow this page to capture the contents of your screen?"
-#~ msgstr ""
-#~ "<qt>Желите ли да дозволите овом сајту да приложи сљедеће фајлове уз "
-#~ "поруку е‑поште?</qt>"
-
-#, fuzzy
-#~| msgctxt "open selected url"
-#~| msgid "Open '%1'"
-#~ msgid "Open in %1"
-#~ msgstr "Отвори „%1“"
-
-#~ msgid ""
-#~ "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
-#~ "the link?</qt>"
-#~ msgstr ""
-#~ "<qt>Ова непоуздана страница даје везу ка<br/><b>%1</b>.<br/>Желите ли да "
-#~ "испратите везу?</qt>"
-
-#~ msgid "Security Warning"
-#~ msgstr "Безбједносно упозорење"
-
-#~ msgctxt "follow link despite of security warning"
-#~ msgid "Follow"
-#~ msgstr "Испрати"
-
-#~ msgid "Security Alert"
-#~ msgstr "Безбједносна узбуна"
-
-#~ msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
-#~ msgstr "<qt>Приступ непоузданој страници ка<br/><b>%1</b><br/>одбијен.</qt>"
-
-#~ msgctxt "Program Name"
-#~ msgid "WebEnginePart"
-#~ msgstr "КуТ‑вебкит дио"
-
-#~ msgctxt "Short Description"
-#~ msgid "QtWebEngine Browser Engine Component"
-#~ msgstr "Мотор за прегледаче на основу КуТ‑вебенџина"
-
-#~ msgid ""
-#~ "(C) 2009-2010 Dawit Alemayehu\n"
-#~ "(C) 2008-2010 Urs Wolfer\n"
-#~ "(C) 2007 Trolltech ASA"
-#~ msgstr ""
-#~ "© 2009–2010, Давит Алемајеху\n"
-#~ "© 2008–2010, Урс Волфер\n"
-#~ "© 2007, Тролтех"
-
-#~ msgid "Sune Vuorela"
-#~ msgstr "Суне Вуорела"
-
-#~ msgid "Maintainer, Developer"
-#~ msgstr "одржавалац и програмер"
-
-#~ msgid "Dawit Alemayehu"
-#~ msgstr "Давит Алемајеху"
-
-#~ msgid "Developer"
-#~ msgstr "програмер"
-
-#~ msgid "Urs Wolfer"
-#~ msgstr "Урс Волфер"
-
-#~ msgid "Michael Howell"
-#~ msgstr "Мајкл Хауел"
-
-#~ msgid "Laurent Montel"
-#~ msgstr "Лорен Монтел"
-
-#~ msgid "Dirk Mueller"
-#~ msgstr "Дирк Милер"
-
-#~ msgid "Save &Frame As..."
-#~ msgstr "Сачувај &оквир као..."
+"<ul><li><b>Унутрашње име поља: </b>%1</li><li><b>Тип поља: </b>%2</"
+"li><li><b>ИД поља: </b>%3</li><li><b>Поље је само за читање: </b>%4</"
+"li><li><b>Поље је укључено: </b>%5</li><li><b>Самодопуна укључена: </b>%6</"
+"li></ul>"
