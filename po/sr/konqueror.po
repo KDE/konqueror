@@ -3,13 +3,14 @@
 # Marko Rosic <roske@kde.org.yu>, 2003.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2016, 2017.
 # Dalibor Djuric <daliborddjuric@gmail.com>, 2009, 2010.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 12:50+0000\n"
-"PO-Revision-Date: 2017-09-29 16:43+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-11-15 19:34+0100\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
@@ -25,64 +26,59 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Топлица Танасковић,Часлав Илић"
+msgstr "Топлица Танасковић,Часлав Илић,Немања Хиршл"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "toptan@kde.org.yu,caslav.ilic@gmx.net"
+msgstr "toptan@kde.org.yu,caslav.ilic@gmx.net,nemhirsl@gmail.com"
 
 #: src/configdialog.cpp:96
-#, fuzzy, kde-format
-#| msgid "File Management"
+#, kde-format
 msgctxt ""
 "@title:tab The file manager behavior tab. Also used in the list of tabs for "
 "consistency"
 msgid "File Manager Behavior"
-msgstr "Управљање фајловима"
+msgstr "Понашање менаџера фајлова"
 
 #: src/downloadactionquestion.cpp:160
 #, kde-format
 msgctxt "@label Type of file"
 msgid "Type: %1"
-msgstr ""
+msgstr "Тип: %1"
 
 #: src/downloadactionquestion.cpp:168
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
-msgstr ""
+msgstr "Запамти радњу за фајлове овог типа"
 
 #: src/downloadactionquestion.cpp:281
 #, kde-format
 msgctxt "@info"
 msgid "Save '%1'?"
-msgstr ""
+msgstr "Сачувати „%1“?"
 
 #: src/downloadactionquestion.cpp:283
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
-msgstr "Отвори помоћу %1|/|Отвори $[инс-п %1]"
+msgstr "Отворити „%1“?"
 
 #: src/downloadactionquestion.cpp:301
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with..."
-msgstr "&Отвори помоћу"
+msgstr "&Отвори помоћу..."
 
 #: src/downloadactionquestion.cpp:309 src/downloadactionquestion.cpp:462
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
-msgstr "Отвори помоћу %1|/|Отвори $[инс-п %1]"
+msgstr "&Отвори помоћу %1|/|&Отвори $[инс-п %1]"
 
 #: src/downloadactionquestion.cpp:318
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "&Отвори помоћу"
@@ -91,44 +87,43 @@ msgstr "&Отвори помоћу"
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in %1"
-msgstr ""
+msgstr "&Прикажи у %1|/|&Прикажи у $[лок %1]"
 
 #: src/downloadactionquestion.cpp:346
 #, kde-format
 msgctxt "@label:button"
 msgid "&Display in"
-msgstr ""
+msgstr "&Прикажи у"
 
 #: src/downloadactionquestion.cpp:368
-#, fuzzy, kde-format
-#| msgid "Open with %1"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open &with %1"
-msgstr "Отвори помоћу %1|/|Отвори $[инс-п %1]"
+msgstr "Отвори &помоћу %1|/|Отвори $[инс-п %1]"
 
 #: src/downloadactionquestion.cpp:400
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display &in %1"
-msgstr ""
+msgstr "Прикажи &у %1|/|Прикажи &у $[лок %1]"
 
 #: src/downloadactionquestion.cpp:422
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers not supporting this file"
-msgstr ""
+msgstr "Приказивачи који не подржавају овај фајл"
 
 #: src/downloadactionquestion.cpp:426
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Viewers unlikely to display the file"
-msgstr ""
+msgstr "Приказивачи који вероватно неће приказати фајл"
 
 #: src/downloadactionquestion.cpp:427
 #, kde-format
 msgctxt "The name of the file the user wants to open"
 msgid "this file"
-msgstr ""
+msgstr "овај фајл"
 
 #: src/downloadactionquestion.cpp:428
 #, kde-format
@@ -138,18 +133,22 @@ msgid ""
 "type is incorrect or if a viewer can display %1 even if it doesn't "
 "officially support it.</p>"
 msgstr ""
+"<p>Приказивачи за које се не очекује да могу да прикажу %1. Покушај да их "
+"користите највероватније неће успети.</p><p>Ови избори су понуђени за случај "
+"да је откривени тип фајла погрешан или да приказивач може да прикаже %1 иако "
+"то званично не подржава.</p>"
 
 #: src/downloadactionquestion.cpp:449
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
-msgstr ""
+msgstr "Име: %1"
 
 #: src/downloadactionquestion.cpp:451
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
-msgstr ""
+msgstr "Ово је име фајла које предлаже сервер"
 
 #: src/konqapplication.cpp:115
 #, kde-format
@@ -157,6 +156,8 @@ msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
+"<p>Покренули сте К‑освајач под кореном. Ово захтева укључивање крајње "
+"небезбедног режима у компоненти прегледача.</p><p>Шта желите да урадите?</p>"
 
 #: src/konqapplication.cpp:158
 #, kde-format
@@ -169,10 +170,9 @@ msgid "Web browser, file manager and document viewer."
 msgstr "Веб прегледач, менаџер фајлова и приказивач докумената."
 
 #: src/konqapplication.cpp:161
-#, fuzzy, kde-format
-#| msgid "(C) 1999-2016, The Konqueror developers"
+#, kde-format
 msgid "(C) 1999-2023, The Konqueror developers"
-msgstr "© 1999-2016, програмери К‑освајача"
+msgstr "© 1999–2023, програмери К‑освајача"
 
 #: src/konqapplication.cpp:175
 #, kde-format
@@ -503,12 +503,12 @@ msgstr "Едуардо Роблес Елвира"
 #: src/konqapplication.cpp:213
 #, kde-format
 msgid "Matthias Kalle Dalheimer"
-msgstr ""
+msgstr "Матијас Кале Далхајмер"
 
 #: src/konqapplication.cpp:214
 #, kde-format
 msgid "Daniel Molkentin"
-msgstr ""
+msgstr "Данијел Молкентин"
 
 #: src/konqapplication.cpp:215
 #, kde-format
@@ -516,6 +516,8 @@ msgid ""
 "JavaScript access controls\n"
 "Per-domain policies extensions"
 msgstr ""
+"контрола приступа за јаваскрипт\n"
+"проширења смерница по домену"
 
 #: src/konqapplication.cpp:226
 #, kde-format
@@ -540,10 +542,9 @@ msgid "profile"
 msgstr "профил"
 
 #: src/konqapplication.cpp:229
-#, fuzzy, kde-format
-#| msgid "List available sessions"
+#, kde-format
 msgid "List available sessions and exit"
-msgstr "Наброји доступне сесије"
+msgstr "Наброји доступне сесије и изађи"
 
 #: src/konqapplication.cpp:230
 #, kde-format
@@ -595,6 +596,8 @@ msgid ""
 "Create a new Konqueror process, even if one already exists. Meant to be used "
 "only when developing Konqueror itself"
 msgstr ""
+"Направи нови процес К‑освајача, чак и ако један већ постоји. Намењено само "
+"за развој самог К‑освајача"
 
 #: src/konqapplication.cpp:238
 #, kde-format
@@ -602,11 +605,10 @@ msgid "Location to open"
 msgstr "Локација за отварање"
 
 #: src/konqapplication.cpp:353
-#, fuzzy, kde-format
-#| msgid "Session to open"
+#, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "Сесија за отварање"
+msgstr "Не могу да отворим сесију %1"
 
 #: src/konqapplication.cpp:483
 #, kde-format
@@ -614,11 +616,13 @@ msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr ""
+"Не можете да проследите УРЛ‑ове уз опцију --preload. УРЛ‑ови ће бити "
+"игнорисани\n"
 
 #: src/konqapplication.cpp:580
 #, kde-format
 msgid "Are you sure you want to quit Konqueror? This will close all windows"
-msgstr ""
+msgstr "Желите ли заиста да напустите К‑освајач? Ово ће затворити све прозоре"
 
 #: src/konqapplication.cpp:581 src/konqmainwindow.cpp:4879
 #: src/konqmainwindow.cpp:5653
@@ -628,10 +632,9 @@ msgid "Confirmation"
 msgstr "Потврда"
 
 #: src/konqapplication.cpp:583
-#, fuzzy, kde-format
-#| msgid "Onl&y current window"
+#, kde-format
 msgid "Close current window"
-msgstr "Само у &текућем прозору"
+msgstr "Затвори текући прозор"
 
 #: src/konqclosedwindowsmanager.cpp:209 src/konqmainwindow.cpp:4948
 #: src/konqmainwindow.cpp:4994
@@ -640,11 +643,10 @@ msgid "no name"
 msgstr "безимено"
 
 #: src/konqextensionmanager.cpp:52
-#, fuzzy, kde-format
-#| msgid "Configure Extensions..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Extensions"
-msgstr "Подеси проширења..."
+msgstr "Подешавање проширења"
 
 #: src/konqextensionmanager.cpp:72
 #, kde-format
@@ -681,7 +683,7 @@ msgstr ""
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: src/konqframestatusbar.cpp:182
 #, kde-format
@@ -750,10 +752,9 @@ msgid "Open in New Tab"
 msgstr "Отвори у новом језичку"
 
 #: src/konqhistoryview.cpp:65
-#, fuzzy, kde-format
-#| msgid "Open in New Tab"
+#, kde-format
 msgid "Open in Current Tab"
-msgstr "Отвори у новом језичку"
+msgstr "Отвори у текућем језичку"
 
 #: src/konqhistoryview.cpp:69
 #, kde-format
@@ -813,10 +814,9 @@ msgid "Access denied"
 msgstr "Приступ одбијен"
 
 #: src/konqmainwindow.cpp:1573
-#, fuzzy, kde-format
-#| msgid "&Open File..."
+#, kde-format
 msgid "Open File"
-msgstr "&Отвори фајл..."
+msgstr "Отварање фајла"
 
 #: src/konqmainwindow.cpp:1637
 #, kde-format
@@ -887,7 +887,7 @@ msgid ""
 "General</b>.</html>"
 msgstr ""
 "<html>Иди на моју „домаћу страницу“<br /><br />Локацију на коју вас ово "
-"дугме води можете подесити у <i>Подешавање→Подеси К‑освајач...→Опште</i>.</"
+"дугме води можете подесити у <b>Подешавање→Подеси К‑освајач…→Опште</b>.</"
 "html>"
 
 #: src/konqmainwindow.cpp:2315
@@ -1024,51 +1024,47 @@ msgid "&Find File..."
 msgstr "&Нађи фајл..."
 
 #: src/konqmainwindow.cpp:3357
-#, fuzzy, kde-format
-#| msgid "Close &Other Tabs"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Other Windows"
-msgstr "Затвори &друге језичке"
+msgstr "Затвори друге прозоре"
 
 #: src/konqmainwindow.cpp:3358
 #, kde-format
 msgid "Closes all windows except this one"
-msgstr ""
+msgstr "Затвара све прозоре осим овог"
 
 #: src/konqmainwindow.cpp:3360
 #, kde-format
 msgid "Closes all windows except this one. It doesn't close preloaded windows"
-msgstr ""
+msgstr "Затвара све прозоре осим овог. Не затвара предучитане прозоре"
 
 #: src/konqmainwindow.cpp:3364
-#, fuzzy, kde-format
-#| msgid "Konqueror"
+#, kde-format
 msgctxt "@action:inmenu quit Konqueror"
 msgid "Quit Konqueror"
-msgstr "К‑освајач"
+msgstr "Напусти К‑освајач"
 
 #: src/konqmainwindow.cpp:3366
 #, kde-format
 msgid "Closes all Konqueror windows and quits the application"
-msgstr ""
+msgstr "Затвара све прозоре К‑освајача и напушта програм"
 
 #: src/konqmainwindow.cpp:3370
-#, fuzzy, kde-format
-#| msgid "Und&o: Closed Window"
+#, kde-format
 msgctxt "@action:inmenu close current window"
 msgid "Close Window"
-msgstr "&Опозови: затворени прозор"
+msgstr "Затвори прозор"
 
 #: src/konqmainwindow.cpp:3372
-#, fuzzy, kde-format
-#| msgid "&Close Active View"
+#, kde-format
 msgid "Close this window"
-msgstr "&Затвори активни приказ"
+msgstr "Затвори овај прозор"
 
 #: src/konqmainwindow.cpp:3374
 #, kde-format
 msgid "Close this window, quitting Konqueror if it is the only window"
-msgstr ""
+msgstr "Затвори овај прозор и напусти К‑освајач ако је то једини прозор"
 
 #: src/konqmainwindow.cpp:3376
 #, kde-format
@@ -1185,10 +1181,9 @@ msgid "Move Tab Right"
 msgstr "Помери језичак удесно"
 
 #: src/konqmainwindow.cpp:3539
-#, fuzzy, kde-format
-#| msgid "New &Window"
+#, kde-format
 msgid "Protect Window"
-msgstr "Нови &прозор"
+msgstr "Заштити прозор"
 
 #: src/konqmainwindow.cpp:3545
 #, kde-format
@@ -1454,10 +1449,9 @@ msgstr ""
 "учињене у другим повезаним приказима."
 
 #: src/konqmainwindow.cpp:3744
-#, fuzzy, kde-format
-#| msgid "C&lose Current Tab"
+#, kde-format
 msgid "&Inspect Current Page"
-msgstr "&Затвори текући језичак"
+msgstr "&Провери текућу страницу"
 
 #: src/konqmainwindow.cpp:3745
 #, kde-format
@@ -1465,17 +1459,20 @@ msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
+"<html>Приказује програмерске алатке за текућу страницу<br/><br/>Текући "
+"приказ се дели на два дела, а програмерске алатке се приказују у другој "
+"половини</html>"
 
 #: src/konqmainwindow.cpp:3746
 #, kde-format
 msgid "Shows the developer tools for the current page"
-msgstr ""
+msgstr "Приказује програмерске алатке за текућу страницу"
 
 #: src/konqmainwindow.cpp:3748
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark the current window as protected"
-msgstr ""
+msgstr "Означи текући прозор као заштићен"
 
 #: src/konqmainwindow.cpp:3750
 #, kde-format
@@ -1484,6 +1481,8 @@ msgid ""
 "<p>Mark the current window as protected.</p><p>Konqueror will never open "
 "external links in a protected window.</p>"
 msgstr ""
+"<p>Означи текући прозор као заштићен.</p><p>К‑освајач никада неће отварати "
+"спољашње везе у заштићеном прозору.</p>"
 
 #: src/konqmainwindow.cpp:3912
 #, kde-format
@@ -1511,11 +1510,10 @@ msgid "Open bookmarks folder in new tabs"
 msgstr "Отварање фасцикле обележивача у новим језичцима"
 
 #: src/konqmainwindow.cpp:4247
-#, fuzzy, kde-format
-#| msgid "&Open File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "&Отвори фајл..."
+msgstr "Отвори"
 
 #: src/konqmainwindow.cpp:4409
 #, kde-format
@@ -1629,21 +1627,29 @@ msgid ""
 "proxy URL manually in the settings dialog. Do you want to change proxy "
 "settings now?"
 msgstr ""
+"Ваша постава проксија не може да се користи уз ХТМЛ мотор КуТ‑вебенџин. "
+"Прокси се неће користити\n"
+"\n"
+" КуТ‑вебенџин подржава само фиксни прокси, па аутоматска постава проксија "
+"(PAC) и протокол за аутоматско откривање веб проксија (WPAD) не могу да се "
+"користе уз КуТ‑вебенџин. Ако вам треба прокси, изаберите системску поставу "
+"проксија или ручно задајте УРЛ проксија у дијалогу за подешавање. Желите ли "
+"сада да измените поставке проксија?"
 
 #: src/konqmainwindow.cpp:5520
 #, kde-format
 msgid "Unsupported proxy configuration"
-msgstr ""
+msgstr "Неподржана постава проксија"
 
 #: src/konqmainwindow.cpp:5520
 #, kde-format
 msgid "Don't use a proxy"
-msgstr ""
+msgstr "Не користи прокси"
 
 #: src/konqmainwindow.cpp:5521 src/konqmainwindow.cpp:5549
 #, kde-format
 msgid "Show proxy configuration dialog"
-msgstr ""
+msgstr "Прикажи дијалог за подешавање проксија"
 
 #: src/konqmainwindow.cpp:5545
 #, kde-format
@@ -1653,21 +1659,25 @@ msgid ""
 "protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
+"Ваша постава проксија не може да се користи уз ХТМЛ мотор КуТ‑вебенџин јер "
+"он не подржава различите проксије за протоколе ХТТП и ХТТПС. Ваше тренутне "
+"поставке су:<p><b>ХТТП прокси:</b> <tt>%1</tt></p><p><b>ХТТПС прокси: </"
+"b><tt>%2</tt></p>Шта желите да урадите?"
 
 #: src/konqmainwindow.cpp:5548
 #, kde-format
 msgid "Conflicting proxy configuration"
-msgstr ""
+msgstr "Сукобљена постава проксија"
 
 #: src/konqmainwindow.cpp:5549
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
-msgstr ""
+msgstr "Користи ХТТП прокси (само овај пут)"
 
 #: src/konqmainwindow.cpp:5549
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
-msgstr ""
+msgstr "Користи ХТТПС прокси (само овај пут)"
 
 #: src/konqmainwindow.cpp:5565
 #, kde-format
@@ -1676,16 +1686,16 @@ msgid ""
 "hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
 "Mode (%1)"
 msgstr ""
+"Ушли сте у потпуни режим целог екрана (корисничко сучеље је потпуно "
+"скривено). Из њега можете изаћи притиском на пречицу са тастатуре за режим "
+"целог екрана (%1)"
 
 #: src/konqmainwindow.cpp:5652
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have multiple tabs open in this window, are you sure you want to quit?"
+#, kde-format
 msgid ""
 "You are closing all windows except this one. Are you sure you want to "
 "continue?"
-msgstr ""
-"Прозор има неколико отворених језичака, желите ли заиста напустите програм?"
+msgstr "Затварате све прозоре осим овог. Желите ли заиста да наставите?"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/konqnewsessiondlg_base.ui:28
@@ -1712,25 +1722,22 @@ msgid "Session n&ame:"
 msgstr "&Име сесије:"
 
 #: src/konqsessiondialog.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@tooltip:session list"
-#| msgid "Uncheck the sessions you do not want to be restored"
+#, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions or windows you do not want to be restored"
-msgstr "Испразните кућице до сесија које не желите да повратите."
+msgstr "Искључите сесије или прозоре које не желите да повратите"
 
 #: src/konqsessiondialog.cpp:95
-#, fuzzy, kde-format
-#| msgid "Sessions"
+#, kde-format
 msgctxt "@item:treewidget"
 msgid "Session %1"
-msgstr "Сесије"
+msgstr "сесија %1"
 
 #: src/konqsessiondialog.cpp:116
 #, kde-format
 msgctxt "@item:treewidget"
 msgid "Window %1  (on Desktop %2)"
-msgstr ""
+msgstr "прозор %1  (на површи %2)"
 
 #. i18n. Otherwise it would be easier to just use what is in the session file
 #: src/konqsessiondialog.cpp:119
@@ -1781,7 +1788,7 @@ msgstr "Питај касније"
 #, kde-format
 msgctxt "@tooltip:copy url to clipboard"
 msgid "Copy url to clipboard:  %1"
-msgstr ""
+msgstr "Копирај УРЛ у клипборд:  %1"
 
 #: src/konqsessiondlg.cpp:70
 #, kde-format
@@ -1875,10 +1882,9 @@ msgid "&Reload Tab"
 msgstr "&Учитај поново језичак"
 
 #: src/konqtabs.cpp:56
-#, fuzzy, kde-format
-#| msgid "&Reload All Tabs"
+#, kde-format
 msgid "All Tabs"
-msgstr "&Учитај поново све језичке"
+msgstr "Сви језичци"
 
 #: src/konqtabs.cpp:59
 #, kde-format
@@ -1943,7 +1949,7 @@ msgstr "&Кретање"
 #: src/konqueror.rc:57
 #, kde-format
 msgid "&Tools"
-msgstr ""
+msgstr "&Алатке"
 
 #. i18n: ectx: Menu (settings)
 #: src/konqueror.rc:62
@@ -2029,13 +2035,13 @@ msgstr "Пошаљи поново"
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
-msgstr ""
+msgstr "Изврши"
 
 #: src/urlloader.cpp:421
 #, kde-format
 msgctxt "Display an executable file inside Konqueror"
 msgid "Display"
-msgstr ""
+msgstr "Прикажи"
 
 #: src/urlloader.cpp:428
 #, kde-kuit-format
@@ -2046,6 +2052,8 @@ msgid ""
 "<filename>%1</filename> can be executed. Do you want to execute it or to "
 "display it?"
 msgstr ""
+"Фајл <filename>%1</filename> може да се изврши. Желите ли да га извршите или "
+"да га прикажете?"
 
 #: src/urlloader.cpp:434
 #, kde-kuit-format
@@ -2053,12 +2061,12 @@ msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
+"Фајл <filename>%1</filename> може да се изврши. Желите ли да га извршите?"
 
 #: src/urlloader.cpp:782
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As"
-msgstr "Сачувај као..."
+msgstr "Уписивање као"
 
 #: src/urlloader.cpp:839
 #, kde-format
@@ -2068,122 +2076,3 @@ msgid ""
 msgstr ""
 "Изгледа да је нешто лоше подешено. Придружили сте К‑освајач типу фајла %1, "
 "којим не може руковати."
-
-#~ msgid "Other Tabs"
-#~ msgstr "Други језичци"
-
-#~ msgid "Start Page"
-#~ msgstr "Почетна страница"
-
-#~ msgid "This is the URL of the web page where Konqueror will start from."
-#~ msgstr "УРЛ веб странице коју ће К‑освајач приказати по покретању."
-
-#~ msgid ""
-#~ "This is the URL of the web page where Konqueror will jump to when the \\"
-#~ "\"Home\\\" button is pressed."
-#~ msgstr ""
-#~ "Ово је УРЛ веб странице на коју ће К‑освајач скочити када се притисне "
-#~ "дугме домаће странице."
-
-#~ msgid "Maximum number of Closed Items"
-#~ msgstr "Највећи број затворених ставки"
-
-#~ msgid ""
-#~ "This sets the maximum number of closed items that will be stored in "
-#~ "memory. This limit will not be surpassed."
-#~ msgstr ""
-#~ "Задаје највећи број затворених ставки које се смештају у меморију. Ово "
-#~ "ограничење неће бити премашено."
-
-#~ msgid "Open folders in separate windows"
-#~ msgstr "Отварај фасцикле у засебним прозорима"
-
-#~ msgid ""
-#~ "If this option is checked, Konqueror will open a new window when you open "
-#~ "a folder, rather than showing that folder's contents in the current "
-#~ "window."
-#~ msgstr ""
-#~ "Ако је укључено, К‑освајач отвара нови прозор кад отворите фасциклу, "
-#~ "уместо да прикаже њен садржај у текућем прозору."
-
-#~ msgid "Show file tips"
-#~ msgstr "Облачићи фајлова"
-
-#~ msgid ""
-#~ "Here you can control if, when moving the mouse over a file, you want to "
-#~ "see a small popup window with additional information about that file"
-#~ msgstr ""
-#~ "Овде можете задати да ли ће при померању миша над фајл искочити мали "
-#~ "прозор са допунским подацима о фајлу."
-
-#~ msgid "Show previews in file tips"
-#~ msgstr "Прегледи у облачићима фајлова"
-
-#~ msgid ""
-#~ "Here you can control if you want the popup window to contain a larger "
-#~ "preview for the file, when moving the mouse over it"
-#~ msgstr ""
-#~ "Овде можете задати да ли желите да искачући прозор садржи већи преглед "
-#~ "фајла, кад померите миш над њега."
-
-#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
-#~ msgstr "Брисање у менијима заобилази смеће"
-
-#~ msgid ""
-#~ "Check this if you want 'Delete' menu commands to be displayed on the "
-#~ "desktop and in the file manager's menus and context menus. You can always "
-#~ "delete files when hidden by holding the Shift key while calling 'Move to "
-#~ "Trash'."
-#~ msgstr ""
-#~ "Попуните ово ако желите да се наредба за брисање даје на површи и у "
-#~ "менијима менаџера фајлова и контекстним менијима. Фајлове можете брисати "
-#~ "и када је нема, држећи тастер Shift при издавању „Премести у смеће“."
-
-#~ msgid "Number of Open With items in the File menu"
-#~ msgstr "Број ставки за отварање помоћу у менију Фајл"
-
-#~ msgid "Standard font"
-#~ msgstr "Стандардни фонт"
-
-#~ msgid "This is the font used to display text in Konqueror windows."
-#~ msgstr "Фонт којим се приказује текст у прозорима К‑освајача."
-
-#~ msgid "Maximum number of history items per view"
-#~ msgstr "Највећи број ставки историјата по приказу"
-
-#~ msgid "Ask confirmation for deleting a file."
-#~ msgstr "Тражи потврду при брисању фајла"
-
-#~ msgid ""
-#~ "This option tells Konqueror whether to ask for a confirmation when you "
-#~ "delete a file without using the trash folder. Warning, deleted files can "
-#~ "not be recovered, so it is recommended to leave this confirmation enabled."
-#~ msgstr ""
-#~ "Ова опција налаже К‑освајачу да затражи потврду када бришете фајл "
-#~ "заобилазећи фасциклу за смеће. Имајте у виду да се обрисани фајлови не "
-#~ "могу повратити, па је препоручљиво да оставите тражење потврде активно."
-
-#~ msgid "Ask confirmation for move to trash"
-#~ msgstr "Тражи потврду при премештању у смеће"
-
-#~ msgid ""
-#~ "This option tells Konqueror whether to ask for a confirmation when you "
-#~ "move the file to your trash folder, from where it can be recovered very "
-#~ "easily."
-#~ msgstr ""
-#~ "Ова опција говори К‑освајачу да ли да тражи потврду када премештате фајл "
-#~ "у фасциклу смећа, одакле се може лако повратити."
-
-#~ msgid ""
-#~ "If true, when opening a session from within the sessions dialog the tabs "
-#~ "will be opened inside current window."
-#~ msgstr ""
-#~ "Ако је укључено, при отварању сесије из дијалога сесија језичци ће бити "
-#~ "отворени у текућем прозору."
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure"
-#~ msgstr "Подешавање"
-
-#~ msgid "Web Browsing"
-#~ msgstr "Прегледање Веба"

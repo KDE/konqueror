@@ -1,0 +1,439 @@
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-11-11 10:55+0000\n"
+"PO-Revision-Date: 2026-11-15 19:34+0100\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@latin\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#: filegroupdetails.cpp:22
+#, kde-format
+msgid "Left Click Action"
+msgstr "Radnja levim klikom"
+
+#: filegroupdetails.cpp:26 filetypedetails.cpp:134
+#, kde-format
+msgid "Show file in embedded viewer"
+msgstr "Prikaži fajl u ugnežđenom prikazivaču"
+
+#: filegroupdetails.cpp:27 filetypedetails.cpp:135
+#, kde-format
+msgid "Show file in separate viewer"
+msgstr "Prikaži fajl u izdvojenom prikazivaču"
+
+#: filegroupdetails.cpp:36
+#, kde-format
+msgid ""
+"<p>Here you can configure what Konqueror should do when you click on a file "
+"belonging to this group in a file manager view.</p><p>The file can either be "
+"displayed in Konqueror itself or in a separate application. You can change "
+"this setting for a specific file type in the 'Embedding' tab of the file "
+"type configuration.</p>"
+msgstr ""
+"<p>Ovde možete podesiti šta će K‑osvajač uraditi kada kliknete na fajl koji "
+"pripada ovoj grupi u prikazu menadžera fajlova.</p><p>Fajl može da se "
+"prikaže u samom K‑osvajaču ili u zasebnom programu. Ovu postavku možete "
+"zadati za svaki tip fajla ponaosob pod jezičkom „Ugnežđivanje“ u postavi "
+"tipova fajlova.</p>"
+
+#: filetypedetails.cpp:61
+#, kde-format
+msgid ""
+"This button displays the icon associated with the selected file type. Click "
+"on it to choose a different icon."
+msgstr ""
+"Prikazuje ikonicu pridruženu izabranom tipu fajla. Kliknite da biste "
+"izabrali neku drugu."
+
+#: filetypedetails.cpp:67
+#, kde-format
+msgid "Filename Patterns"
+msgstr "Obrasci imena fajla"
+
+#: filetypedetails.cpp:79
+#, kde-format
+msgid ""
+"This box contains a list of patterns that can be used to identify files of "
+"the selected type. For example, the pattern *.txt is associated with the "
+"file type 'text/plain'; all files ending in '.txt' are recognized as plain "
+"text files."
+msgstr ""
+"Ovo je spisak obrazaca koji se koriste za prepoznavanje fajlova izabranog "
+"tipa. Na primer, obrazac *.txt pridružen je tipu „text/plain“, pa će svi "
+"fajlovi koji se završavaju sa „.txt“ biti prepoznati kao obični tekst."
+
+#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#, kde-format
+msgid "Add..."
+msgstr "Dodaj..."
+
+#: filetypedetails.cpp:92
+#, kde-format
+msgid "Add a new pattern for the selected file type."
+msgstr "Dodaj novi obrazac za izabrani tip fajla."
+
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#, kde-format
+msgid "Remove"
+msgstr "Ukloni"
+
+#: filetypedetails.cpp:99
+#, kde-format
+msgid "Remove the selected filename pattern."
+msgstr "Ukloni izabrani obrazac imena fajla."
+
+#: filetypedetails.cpp:110
+#, kde-format
+msgid "Description:"
+msgstr "Opis:"
+
+#: filetypedetails.cpp:115
+#, kde-format
+msgid ""
+"You can enter a short description for files of the selected file type (e.g. "
+"'HTML Page'). This description will be used by applications like Konqueror "
+"to display directory content."
+msgstr ""
+"Možete uneti kratak opis za fajlove izabranog tipa fajla (npr. „HTML "
+"stranica“). Koristiće ga programi poput K‑osvajača za prikazivanje sadržaja "
+"fascikle."
+
+#: filetypedetails.cpp:129
+#, kde-format
+msgid "Left Click Action in Konqueror"
+msgstr "Radnja levim klikom u K‑osvajaču"
+
+#: filetypedetails.cpp:138
+#, kde-format
+msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+msgstr "Pitaj da sačuvaš na disk (samo u K‑osvajaču kao pregledaču)"
+
+#: filetypedetails.cpp:154
+#, kde-format
+msgid ""
+"<p>Here you can configure what Konqueror should do when you click on a file "
+"of this type in a file manager view.</p><p>The file can either be displayed "
+"in Konqueror itself or in a separate application. If set to \"Use settings "
+"for '&hellip;' group\", the file manager will behave according to the "
+"settings for the group this type belongs to (for instance, '<tt>image</tt>' "
+"if the current file type is <tt>image/png</tt>).</p>"
+msgstr ""
+"<p>Ovde možete podesiti šta će K‑osvajač uraditi kada kliknete na fajl ovog "
+"tipa u prikazu menadžera fajlova.</p><p>Fajl može da se prikaže u samom "
+"K‑osvajaču ili u zasebnom programu. Ako je postavljeno na „Koristi postavke "
+"grupe …“, menadžer fajlova će učiniti kako je podešeno za grupu kojoj ovaj "
+"tip pripada (npr. „<tt>image</tt>“ ako je trenutni tip fajla <tt>image/png</"
+"tt>).</p>"
+
+#: filetypedetails.cpp:167
+#, kde-format
+msgid "&General"
+msgstr "&Opšte"
+
+#: filetypedetails.cpp:168
+#, kde-format
+msgid "&Embedding"
+msgstr "&Ugnežđivanje"
+
+#: filetypedetails.cpp:209
+#, kde-format
+msgid "Add New Extension"
+msgstr "Dodaj novi nastavak"
+
+#: filetypedetails.cpp:209
+#, kde-format
+msgid "Extension:"
+msgstr "Nastavak:"
+
+#: filetypedetails.cpp:328
+#, kde-format
+msgid "File type %1"
+msgstr "Tip fajla „%1“"
+
+#: filetypedetails.cpp:336
+#, kde-format
+msgid "Use settings for '%1' group"
+msgstr "Koristi postavke grupe „%1“"
+
+#: filetypesview.cpp:57
+#, kde-format
+msgid "Search for file type or filename pattern..."
+msgstr "Traži tip fajla ili obrazac imena fajla..."
+
+#: filetypesview.cpp:63
+#, kde-format
+msgid ""
+"Enter a part of a filename pattern, and only file types with a matching file "
+"pattern will appear in the list. Alternatively, enter a part of a file type "
+"name as it appears in the list."
+msgstr ""
+"Unesite deo obrasca za ime fajla, i na spisku će se pojaviti samo tipovi "
+"fajla koje uneti obrazac poklapa. Ili, unesite deo imena tipa fajla kao što "
+"je dato na spisku."
+
+#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#, kde-format
+msgid "Known Types"
+msgstr "Poznati tipovi"
+
+#: filetypesview.cpp:77
+#, kde-format
+msgid ""
+"Here you can see a hierarchical list of the file types which are known on "
+"your system. Click on the '+' sign to expand a category, or the '-' sign to "
+"collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
+"the information for that file type using the controls on the right."
+msgstr ""
+"Ovde možete videti hijerarhijski spisak tipova koji su poznati sistemu. "
+"Kliknite na plus (+) da proširite određenu kategoriju, a na minus (-) da je "
+"sažmete. Izaberite tip fajla (npr. text/html za HTML fajlove) da biste mu "
+"pregledali ili uredili podatke, pomoću kontrola na desnoj strani."
+
+#: filetypesview.cpp:91
+#, kde-format
+msgid "Click here to add a new file type."
+msgstr "Kliknite ovde da dodate novi tip fajla."
+
+#: filetypesview.cpp:93 filetypesview.cpp:389
+#, kde-format
+msgid "&Remove"
+msgstr "&Ukloni"
+
+#: filetypesview.cpp:119
+#, kde-format
+msgid "Select a file type by name or by extension"
+msgstr "Izaberite tip fajla prema imenu ili nastavku"
+
+#: filetypesview.cpp:382
+#, kde-format
+msgid "&Revert"
+msgstr "&Vrati"
+
+#: filetypesview.cpp:383
+#, kde-format
+msgid "Revert this file type to its initial system-wide definition"
+msgstr "Vrati ovaj tip fajla na početnu, sistemsku definiciju"
+
+#: filetypesview.cpp:385
+#, kde-format
+msgid ""
+"Click here to revert this file type to its initial system-wide definition, "
+"which undoes any changes made to the file type. Note that system-wide file "
+"types cannot be deleted. You can however empty their pattern list, to "
+"minimize the chances of them being used (but the file type determination "
+"from file contents can still end up using them)."
+msgstr ""
+"Kliknite ovde da vratite tip fajla na početnu, sistemsku definiciju, čime će "
+"biti opozvane sve učinjene mu izmene. Zapazite da se sistemski tipovi "
+"fajlova ne mogu obrisati. Međutim, možete im isprazniti spisak obrazaca, "
+"kako biste minimizovali izglede da će biti upotrebljeni (do upotrebe može "
+"doći i na osnovu analize sadržaja fajla)."
+
+#: filetypesview.cpp:390
+#, kde-format
+msgid "Delete this file type definition completely"
+msgstr "Potpuno obriši ovu definiciju tipa fajla"
+
+#: filetypesview.cpp:392
+#, kde-format
+msgid ""
+"Click here to delete this file type definition completely. This is only "
+"possible for user-defined file types. System-wide file types cannot be "
+"deleted. You can however empty their pattern list, to minimize the chances "
+"of them being used (but the file type determination from file contents can "
+"still end up using them)."
+msgstr ""
+"Kliknite ovde da potpuno obrišete ovu definiciju tipa fajla. Moguće samo za "
+"korisnički definisane tipove, dok se sistemski ne mogu obrisati. Međutim, "
+"možete im isprazniti spisak obrazaca, kako biste minimizovali izglede da će "
+"biti upotrebljeni (do upotrebe može doći i na osnovu analize sadržaja fajla)."
+
+#: kservicelistwidget.cpp:46
+#, kde-format
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kservicelistwidget.cpp:51
+#, kde-format
+msgid "Application Preference Order"
+msgstr "Prvenstvo pozivanja programa"
+
+#: kservicelistwidget.cpp:51
+#, kde-format
+msgid "Services Preference Order"
+msgstr "Prvenstvo pozivanja servisa"
+
+#: kservicelistwidget.cpp:63
+#, kde-format
+msgid ""
+"This is a list of applications associated with files of the selected file "
+"type. This list is shown in Konqueror's context menus when you select \"Open "
+"With...\". If more than one application is associated with this file type, "
+"then the list is ordered by priority with the uppermost item taking "
+"precedence over the others."
+msgstr ""
+"Ovo je spisak programa pridruženih fajlovima izabranog tipa, i daje se u "
+"kontekstnom meniju K‑osvajača kada izaberete „Otvori pomoću...“. Ako je tipu "
+"fajla pridruženo više od jednog programa, onda redosled na spisku određuje "
+"prioritet kojim će biti pozivani."
+
+#: kservicelistwidget.cpp:68
+#, kde-format
+msgid ""
+"This is a list of services associated with files of the selected file type. "
+"This list is shown in Konqueror's context menus when you select a \"Preview "
+"with...\" option. If more than one service is associated with this file "
+"type, then the list is ordered by priority with the uppermost item taking "
+"precedence over the others."
+msgstr ""
+"Ovo je spisak servisa pridruženih fajlovima izabranog tipa, i daje se u "
+"kontekstnom meniju K‑osvajača kada izaberete „Pregled u“. Ako je tipu fajla "
+"pridruženo više od jednog servisa, onda redosled na spisku određuje "
+"prioritet kojim će biti pozivani."
+
+#: kservicelistwidget.cpp:80
+#, kde-format
+msgid "Move &Up"
+msgstr "Pomeri na&gore"
+
+#: kservicelistwidget.cpp:86
+#, kde-format
+msgid ""
+"Assigns a higher priority to the selected\n"
+"application, moving it up in the list. Note:  This\n"
+"only affects the selected application if the file type is\n"
+"associated with more than one application."
+msgstr ""
+"Dodeljuje viši prioritet izabranom\n"
+"programu, tako što ga pomera naviše u spisku.\n"
+"Napomena: ovo je bitno samo za tipove\n"
+"koji imaju više pridruženih programa."
+
+#: kservicelistwidget.cpp:90
+#, kde-format
+msgid ""
+"Assigns a higher priority to the selected\n"
+"service, moving it up in the list."
+msgstr ""
+"Dodeljuje viši prioritet izabranom\n"
+"servisu, tako što ga pomera naviše u spisku."
+
+#: kservicelistwidget.cpp:93
+#, kde-format
+msgid "Move &Down"
+msgstr "Pomeri na&dole"
+
+#: kservicelistwidget.cpp:98
+#, kde-format
+msgid ""
+"Assigns a lower priority to the selected\n"
+"application, moving it down in the list. Note: This \n"
+"only affects the selected application if the file type is\n"
+"associated with more than one application."
+msgstr ""
+"Dodeljuje niži prioritet izabranom\n"
+"programu, tako što ga pomera naniže u spisku.\n"
+"Napomena: ovo je bitno samo za tipove\n"
+"koji imaju više pridruženih programa."
+
+#: kservicelistwidget.cpp:102
+#, kde-format
+msgid ""
+"Assigns a lower priority to the selected\n"
+"service, moving it down in the list."
+msgstr ""
+"Dodeljuje niži prioritet izabranom\n"
+"servisu, tako što ga pomera naniže u spisku."
+
+#: kservicelistwidget.cpp:110
+#, kde-format
+msgid "Add a new application for this file type."
+msgstr "Dodaj novi program za ovaj tip fajla."
+
+#: kservicelistwidget.cpp:112
+#, kde-format
+msgid "Edit..."
+msgstr "Uredi..."
+
+#: kservicelistwidget.cpp:117
+#, kde-format
+msgid "Edit command line of the selected application."
+msgstr "Uredi komandnu liniju izabranog programa."
+
+#: kservicelistwidget.cpp:124
+#, kde-format
+msgid "Remove the selected application from the list."
+msgstr "Ukloni izabrani program sa spiska."
+
+#: kservicelistwidget.cpp:126 multiapplydialog.cpp:19
+#, kde-format
+msgid "Apply To..."
+msgstr "Primeni na..."
+
+#: kservicelistwidget.cpp:131
+#, kde-format
+msgid "Apply the current preference order to other file types."
+msgstr "Primeni tekući redosled prvenstva na druge tipove fajlova."
+
+#: kservicelistwidget.cpp:154
+#, kde-format
+msgctxt "No applications associated with this file type"
+msgid "None"
+msgstr "(nijedan)"
+
+#: kservicelistwidget.cpp:167
+#, kde-format
+msgctxt "No components associated with this file type"
+msgid "None"
+msgstr "(nijedna)"
+
+#: kserviceselectdlg.cpp:26
+#, kde-format
+msgid "Add Service"
+msgstr "Dodaj servis"
+
+#: kserviceselectdlg.cpp:30
+#, kde-format
+msgid "Select service:"
+msgstr "Izaberite servis:"
+
+#: newtypedlg.cpp:25
+#, kde-format
+msgid "Create New File Type"
+msgstr "Napravi novi tip fajla"
+
+#: newtypedlg.cpp:30
+#, kde-format
+msgid "Group:"
+msgstr "Grupa:"
+
+#: newtypedlg.cpp:39
+#, kde-format
+msgid "Select the category under which the new file type should be added."
+msgstr "Izaberite kategoriju pod kojom će novi tip fajla biti dodat."
+
+#: newtypedlg.cpp:44
+#, kde-format
+msgid "Type name:"
+msgstr "Ime tipa:"
+
+#: newtypedlg.cpp:50
+#, kde-format
+msgid ""
+"Type the name of the file type. For instance, if you selected 'image' as "
+"category and you type 'custom' here, the file type 'image/custom' will be "
+"created."
+msgstr ""
+"Unesite ime za tip fajla. Na primer, ako ste izabrali kategoriju „image“ i "
+"ovde uneli „custom“, nastaće tip fajla „image/custom“."

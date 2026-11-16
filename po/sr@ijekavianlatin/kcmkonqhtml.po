@@ -3,13 +3,14 @@
 # Marko Rosic <roske@kde.org.yu>, 2003, 2004.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2005, 2007, 2008, 2009, 2010, 2011, 2012, 2016, 2017.
 # Dalibor Djuric <daliborddjuric@gmail.com>, 2009, 2010, 2011.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 00:13+0000\n"
-"PO-Revision-Date: 2017-09-28 17:56+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-11-15 19:34+0100\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavianlatin\n"
 "MIME-Version: 1.0\n"
@@ -63,7 +64,7 @@ msgstr ""
 "<html><p>Ako je ova opcija uključena, K‑osvajač će automatski učitavati sve "
 "slike ugniježđene u veb stranicu. U suprotnom, biće samo obilježeno mjesto "
 "gdje je slika trebalo da stoji, i možete je ručno učitati klikom na dugme na "
-"tom mestu.</p><p>Vjerovatno ćete željeti da uključite ovo, osim ako vam je "
+"tom mjestu.</p><p>Vjerovatno ćete željeti da uključite ovo, osim ako vam je "
 "veza sa mrežom vrlo spora.</p></html>"
 
 #: appearance.cpp:63
@@ -158,8 +159,8 @@ msgid ""
 "can override this value.</i></html>"
 msgstr ""
 "<html><p>Određuje kako K‑osvajač podvlači hiperveze:</"
-"p><ul><li><b>uključeno</b>: veze su uvek podvučene</li><li><b>isključeno</"
-"b>: veze se nikad ne podvlače</li><li><b>samo pri lebdenju</b>: veza je "
+"p><ul><li><b>uključeno</b>: veze su uvijek podvučene</li><li><b>isključeno</"
+"b>: veze se nikad ne podvlače</li><li><b>samo pri lebdjenju</b>: veza je "
 "podvučena samo kada je pokazivač miša nad njom</li></ul><p><i>Napomena</i>: "
 "CSS definicije na datom sajtu mogu potisnuti ovu postavku.</p></html>"
 
@@ -327,7 +328,7 @@ msgstr ""
 #: cache/cache.ui:17
 #, kde-format
 msgid "&Enable cache"
-msgstr ""
+msgstr "&Uključi keš"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:29
@@ -337,18 +338,21 @@ msgid ""
 "p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Keš se ne skladišti na disku, već samo u memoriji.</"
+"p><p>Ako ovo uključite, keš će se prazniti pri napuštanju K‑osvajača</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:32
 #, kde-format
 msgid "Keep cache in &memory"
-msgstr ""
+msgstr "Drži keš u &memoriji"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: cache/cache.ui:41
 #, kde-format
 msgid "&Cache size"
-msgstr ""
+msgstr "&Veličina keša"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:51
@@ -357,180 +361,172 @@ msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
+"Najviše prostora na disku ili u memoriji koji keš smije da zauzme. Kada se "
+"dostigne ova granica, stare stranice se uklanjaju da bi se oslobodio prostor "
+"za nove"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:54
 #, kde-format
 msgid "Auto"
-msgstr ""
+msgstr "automatski"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:57
 #, kde-format
 msgid " MB"
-msgstr ""
+msgstr " MB"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr ""
+msgstr "Koristi posebnu fasciklu za čuvanje keša"
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:88
 #, kde-format
 msgid "&Custom cache directory"
-msgstr ""
+msgstr "&Posebna fascikla keša"
 
 #. i18n: ectx: property (text), widget (QLabel, customCachePathLabel)
 #: cache/cache.ui:100
 #, kde-format
 msgid "Cache &Directory"
-msgstr ""
+msgstr "&Fascikla keša"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
 #: cache/cache.ui:113
 #, kde-format
 msgid "The custom directory to store cache"
-msgstr ""
+msgstr "Posebna fascikla za skladištenje keša"
 
 # @title:column
 #: cookies/kcookiesmain.cpp:33
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "&Policy"
-msgstr "Smjernica"
+msgstr "&Smjernica"
 
 #: cookies/kcookiesmain.cpp:35
 #, kde-format
 msgid "&Management"
-msgstr ""
+msgstr "&Upravljanje"
 
 #: cookies/kcookiesmanagement.cpp:46
 #, kde-format
 msgid "End of session"
-msgstr ""
+msgstr "Kraj sesije"
 
 #: cookies/kcookiesmanagement.cpp:51
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Da"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, searchLineEdit)
 #: cookies/kcookiesmanagement.ui:20
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search"
-msgstr "Traži:"
+msgstr "Traži"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:27
 #, kde-format
 msgid "Search interactively for domains and hosts"
-msgstr ""
+msgstr "Interaktivno tražite domene i domaćine"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:43
 #, kde-format
 msgid "Site"
-msgstr ""
+msgstr "sajt"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cookiesTreeWidget)
 #: cookies/kcookiesmanagement.ui:48
 #, kde-format
 msgid "Cookie Name"
-msgstr ""
+msgstr "ime kolačića"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDelete)
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: cookies/kcookiesmanagement.ui:56 cookies/kcookiespolicies.ui:190
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "D&elete"
 msgstr "&Obriši"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbDeleteAll)
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllButton)
 #: cookies/kcookiesmanagement.ui:63 cookies/kcookiespolicies.ui:197
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "Delete A&ll"
-msgstr "&Obriši"
+msgstr "Obriši s&ve"
 
 #. i18n: ectx: property (text), widget (QPushButton, configPolicyButton)
 #: cookies/kcookiesmanagement.ui:70
 #, kde-format
 msgid "Configure &Policy..."
-msgstr ""
+msgstr "Podesi s&mjernicu..."
 
 #. i18n: ectx: property (text), widget (QPushButton, reloadButton)
 #: cookies/kcookiesmanagement.ui:77
 #, kde-format
 msgid "&Reload List"
-msgstr ""
+msgstr "Učitaj &ponovo spisak"
 
 #. i18n: ectx: property (title), widget (QGroupBox, detailsGroupBox)
 #: cookies/kcookiesmanagement.ui:97
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Detalji"
 
 # >> @title:column
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
 #: cookies/kcookiesmanagement.ui:106
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "ime"
+msgstr "Ime:"
 
 #. i18n: ectx: property (text), widget (QLabel, valueLabel)
 #: cookies/kcookiesmanagement.ui:129
-#, fuzzy, kde-format
-#| msgid "Value"
+#, kde-format
 msgid "Value:"
-msgstr "Vrijednost"
+msgstr "Vrijednost:"
 
 # @title:column
 #. i18n: ectx: property (text), widget (QLabel, domainLabel)
 #: cookies/kcookiesmanagement.ui:152
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain:"
-msgstr "domaćin/domen"
+msgstr "Domen:"
 
 #. i18n: ectx: property (text), widget (QLabel, patchLabel)
 #: cookies/kcookiesmanagement.ui:175
 #, kde-format
 msgid "Path:"
-msgstr ""
+msgstr "Putanja:"
 
 #. i18n: ectx: property (text), widget (QLabel, expiresLabel)
 #: cookies/kcookiesmanagement.ui:198
 #, kde-format
 msgid "Expires:"
-msgstr ""
+msgstr "Ističe:"
 
 #. i18n: ectx: property (text), widget (QLabel, secureLabel)
 #: cookies/kcookiesmanagement.ui:221
 #, kde-format
 msgid "Secure:"
-msgstr ""
+msgstr "Bezbjedno:"
 
 #: cookies/kcookiespolicies.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Change Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Change Cookie Policy"
-msgstr "Izmjena smjernice priključaka"
+msgstr "Promjena smjernice kolačića"
 
 #: cookies/kcookiespolicies.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Plugin Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Cookie Policy"
-msgstr "Nova smjernica priključaka"
+msgstr "Nova smjernica kolačića"
 
 #: cookies/kcookiespolicies.cpp:189
 #, kde-format
@@ -538,19 +534,19 @@ msgid ""
 "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
 "replace it?</qt>"
 msgstr ""
+"<qt>Već postoji smjernica za<center><b>%1</b></center>Želite li da je "
+"zamijenite?</qt>"
 
-# @title:column
 #: cookies/kcookiespolicies.cpp:193
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Duplicate Policy"
-msgstr "Smjernica"
+msgstr "Dupliranje smjernice"
 
 #: cookies/kcookiespolicies.cpp:194
 #, kde-format
 msgid "Replace"
-msgstr ""
+msgstr "Zamijeni"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:20
@@ -563,13 +559,18 @@ msgid ""
 "unbrowsable.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"<p>Uključite podršku za kolačiće. Najvjerovatnije ćete htjeti da su kolačići "
+"uključeni, uz izvjesna prilagođavanja radi privatnosti.</p><p>\n"
+"Imajte na umu da isključivanje podrške za kolačiće čini mnoge veb sajtove "
+"neupotrebljivim.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCookies)
 #: cookies/kcookiespolicies.ui:23
-#, fuzzy, kde-format
-#| msgid "Enable filters"
+#, kde-format
 msgid "Enable coo&kies"
-msgstr "Uključi filtere"
+msgstr "Uključi &kolačiće"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:35
@@ -584,12 +585,20 @@ msgid ""
 "operators compiling a profile about your daily browsing habits.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Odbaci tzv. kolačiće treće strane: one koji ne stižu sa sajta koji trenutno "
+"pregledate. Na primjer, ako posjetite <b>www.foobar.com</b> dok je ova "
+"opcija uključena, samo kolačići koji potiču sa tog sajta će biti obrađivani "
+"po vašim postavkama, dok će oni koji stižu sa drugih sajtova biti "
+"odbacivani. Ovo umanjuje izglede da neko sakuplja profil vaših dnevnih "
+"navika u pregledanju Interneta.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbRejectCrossDomainCookies)
 #: cookies/kcookiespolicies.ui:38
 #, kde-format
 msgid "Only acce&pt cookies from originating server"
-msgstr ""
+msgstr "Prihvati samo kolačiće sa &izvornog servera"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:46
@@ -603,13 +612,19 @@ msgid ""
 "this option overrides your default as well as site specific cookie policies "
 "for session cookies.</p>"
 msgstr ""
+"<p>\n"
+"Automatsko prihvatanje privremenih kolačića, koji ističu po završetku tekuće "
+"sesije. Takvi kolačići neće biti sačuvani na lokalnom hard‑disku ili drugoj "
+"skladišnoj jedinici, već će biti obrisani kada zatvorite sve programe (npr. "
+"pregledač) koji ih koriste.</p><p><u>Napomena:</u> Uključivanjem ove opcije "
+"potiskuju se podrazumijevana smjernica kolačića kao i one posebne za "
+"sajtove, za kolačiće sesije.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
 #: cookies/kcookiespolicies.ui:49
-#, fuzzy, kde-format
-#| msgid "A&utomatically load images"
+#, kde-format
 msgid "Automaticall&y accept session cookies"
-msgstr "&Automatski učitaj slike"
+msgstr "&Automatski prihvati kolačiće sesije"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:68
@@ -631,51 +646,55 @@ msgid ""
 "precedence over the default policy.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Određuje kako će kolačići primljeni sa udaljenog računara biti obrađeni: \n"
+"<ul>\n"
+"<li><b>Traži potvrdu</b>: bićete upitani svaki put kada server hoće da "
+"ostavi kolačić.</li>\n"
+"<li><b>Prihvati sve kolačiće</b>: svi kolačići se prihvataju bez pitanja.</"
+"li>\n"
+"<li><b>Prihvati do kraja sesije</b>: svi kolačići se prihvataju, ali tako da "
+"isteknu na kraju sesije.</li>\n"
+"<li><b>Odbaci sve kolačiće</b>: svi kolačići se odbacuju bez pitanja.</li>\n"
+"</ul><p>\n"
+"<u>Napomena:</u> Posebne smjernice za domene, koje se mogu zadati ispod, "
+"uvijek imaju prednost nad podrazumijevanom smjernicom.</p>\n"
+"</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
-#, fuzzy, kde-format
-#| msgid "Default encoding:"
+#, kde-format
 msgid "Default Policy"
-msgstr "Podrazumijevano kodiranje:"
+msgstr "Podrazumijevana smjernica"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
 #, kde-format
 msgid "Accep&t all cookies"
-msgstr ""
+msgstr "&Prihvati sve kolačiće"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAcceptForSession)
 #: cookies/kcookiespolicies.ui:84
 #, kde-format
 msgid "Accept &until end of session"
-msgstr ""
+msgstr "Prihvati &do kraja sesije"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAsk)
 #: cookies/kcookiespolicies.ui:91
-#, fuzzy, kde-format
-#| msgid "A&nimations:"
+#, kde-format
 msgid "Ask &for confirmation"
-msgstr "&Animacije:"
+msgstr "&Traži potvrdu"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyReject)
 #: cookies/kcookiespolicies.ui:98
 #, kde-format
 msgid "Re&ject all cookies"
-msgstr ""
+msgstr "Od&baci sve kolačiće"
 
 # rewrite-msgid: /default policy setting/default policy/
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:123
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can set specific Java policies for any particular host or "
-#| "domain. To add a new policy, simply click the <i>New...</i> button and "
-#| "supply the necessary information requested by the dialog box. To change "
-#| "an existing policy, click on the <i>Change...</i> button and choose the "
-#| "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#| "button will remove the selected policy, causing the default policy "
-#| "setting to be used for that domain."
+#, kde-format
 msgid ""
 "<qt>\n"
 "To add a new policy, simply click on the <b>Add...</b> button and supply the "
@@ -686,33 +705,33 @@ msgid ""
 "All</b> will remove all the site specific policies.\n"
 "</qt>"
 msgstr ""
-"Ovdje možete podesiti posebne smjernice za Javu za određene domaćine i "
-"domene. Da biste dodali novu smjernicu, kliknite na dugme <i>Nova...</i> i "
-"unesite podatke koje dijalog zatraži. Da biste izmijenili postojeću "
-"smjernicu, kliknite na <i>Izmijeni...</i> i izaberite smernicu sa spiska. "
-"Klikom na dugme <i>Obriši</i> uklanjate izabranu smjernicu, čime domen pod "
-"njom spada na podrazumijevanu smjernicu."
+"<qt>\n"
+"Da biste dodali novu smjernicu, kliknite na <b>Nova...</b> i unesite "
+"potrebne podatke. Za izmjenu postojeće smjernice, kliknite na <b>Izmijeni..."
+"</b> i izaberite novu smjernicu u dijalogu. Klikom na dugme <b>Obriši</b> "
+"uklanjate trenutno izabranu smjernicu, čime će se za taj domen koristiti "
+"podrazumijevana smjernica, dok <b>Obriši sve</b> uklanja sve posebne "
+"smjernice za sajtove.\n"
+"</qt>"
 
 # @title:column
 #. i18n: ectx: property (title), widget (QGroupBox, gbDomainSpecific)
 #: cookies/kcookiespolicies.ui:126
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Site Policy"
-msgstr "Smjernica"
+msgstr "Smjernica sajta"
 
 #. i18n: ectx: property (toolTip), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:135
 #, kde-format
 msgid "Search interactively for domains"
-msgstr ""
+msgstr "Interaktivno tražite domene"
 
 #. i18n: ectx: property (placeholderText), widget (KTreeWidgetSearchLine, kListViewSearchLine)
 #: cookies/kcookiespolicies.ui:138
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search..."
-msgstr "Traži:"
+msgstr "Traži..."
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:147
@@ -723,14 +742,18 @@ msgid ""
 "policies override the default policy setting for these sites.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Spisak sajtova za koje ste postavili posebnu smjernicu kolačića. Posebne "
+"smjernice za ove sajtove imaju prednost nad postavkom podrazumijevane "
+"smjernice.\n"
+"</qt>"
 
 # @title:column
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
 #: cookies/kcookiespolicies.ui:163
-#, fuzzy, kde-format
-#| msgid "Host/Domain"
+#, kde-format
 msgid "Domain"
-msgstr "domaćin/domen"
+msgstr "domen"
 
 # @title:column
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
@@ -762,18 +785,24 @@ msgid ""
 "b> or <b>.kde.org</b>.\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Unesite ime domaćina ili domena na koji se ova smjernica odnosi, npr. <b>www."
+"kde.org</b> ili <b>.kde.org</b>.\n"
+"</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, lbDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:25
 #, kde-format
 msgid "Site name:"
-msgstr ""
+msgstr "Ime sajta:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leDomain)
 #: cookies/kcookiespolicyselectiondlg.ui:38
 #, kde-format
 msgid "Enter the host or domain name, e.g. .kde.org, this policy applies to."
 msgstr ""
+"Unesite ime domaćina ili domena (npr. .kde.org) na koji se ova smjernica "
+"odnosi."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lbPolicy)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cbPolicy)
@@ -792,14 +821,23 @@ msgid ""
 "</ul>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"Izaberite željenu smjernicu:\n"
+"<ul>\n"
+"<li><b>Prihvati</b>: ovaj sajt može da postavlja kolačiće</li>\n"
+"<li><b>Prihvati do kraja sesije</b>: kolačići sa ovog sajta se prihvataju, "
+"ali tako da isteknu na kraju sesije.</li>\n"
+"<li><b>Odbaci</b>: odbijaju se svi kolačići koje sajt pošalje</li>\n"
+"<li><b>Pitaj</b>: bićete upitani kada stignu kolačići sa ovog sajta</li>\n"
+"</ul>\n"
+"</qt>"
 
 # @title:column
 #. i18n: ectx: property (text), widget (QLabel, lbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:56
-#, fuzzy, kde-format
-#| msgid "Policy"
+#, kde-format
 msgid "Policy:"
-msgstr "Smjernica"
+msgstr "Smjernica:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:81 domainlistview.cpp:192
@@ -812,7 +850,7 @@ msgstr "Prihvati"
 #: cookies/kcookiespolicyselectiondlg.ui:86
 #, kde-format
 msgid "Accept until end of session"
-msgstr ""
+msgstr "prihvati do kraja sesije"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbPolicy)
 #: cookies/kcookiespolicyselectiondlg.ui:91 domainlistview.cpp:194
@@ -925,7 +963,7 @@ msgstr "&Prilagodi..."
 #: css/cssconfig.ui:177
 #, kde-format
 msgid "Custom Page Background"
-msgstr ""
+msgstr "Posebna pozadina stranice"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:183
@@ -944,12 +982,24 @@ msgid ""
 "background color for the page (especially a dark color), to avoid a white "
 "flash before the page is loaded</p></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Posebna boja pozadine za veb "
+"stranice. Ova boja se koristi:</p><ul style=\"margin-top: 0px; margin-"
+"bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li "
+"align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">kada boja "
+"pozadine nije izričito zadata stranicom ili posebnim opisom stila</li><li "
+"align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">prije "
+"nego što se veb stranica učita</li></ul><p align=\"justify\">Postavljanje "
+"posebne boje pozadine je uglavnom korisno ako koristite poseban opis stila "
+"koji zadaje boju pozadine stranice (naročito tamnu), da bi se izbjegao "
+"bijeli blesak prije učitavanja stranice</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useCustomBackgroundColor)
 #: css/cssconfig.ui:186
 #, kde-format
 msgid "Use custom &background color"
-msgstr ""
+msgstr "Koristi posebnu boju po&zadine"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, customBackgroundColor)
 #: css/cssconfig.ui:196
@@ -958,6 +1008,7 @@ msgid ""
 "<html><head/><body><p>The custom background color to use for web pages</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>Posebna boja pozadine za veb stranice</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:206
@@ -980,12 +1031,28 @@ msgid ""
 "use the stylesheet in other browsers, you'll need to manually add the rule "
 "to it.</li></ul></body></html>"
 msgstr ""
+"<html><head/><body><p align=\"justify\">Dodaje u vaš poseban opis stila "
+"(uključujući opis stila poboljšane pristupačnosti) pravilo koje sve boje "
+"pozadine postavlja na posebnu boju izabranu iznad. Tako ne morate da "
+"zadajete boju pozadine i u opisu stila i u dijalogu za podešavanje.</p><p "
+"align=\"justify\"><span style=\" font-weight:600;\">Napomene:</span></p><ul "
+"style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: "
+"0px; -qt-list-indent: 1;\"><li align=\"justify\" style=\" margin-top:12px; "
+"margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">pravilo će biti potisnuto drugim pravilima za boje "
+"pozadine u vašem posebnom opisu stila, po uobičajenim pravilima CSS‑a</"
+"li><li align=\"justify\" style=\" margin-top:0px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">pravilo "
+"se zapravo ne dodaje u fajl sa vašim posebnim opisom stila, već se samo "
+"umeće u kopiju koju K‑osvajač drži u memoriji. To znači da ćete, ako opis "
+"stila koristite i u drugim pregledačima, morati ručno da mu dodate ovo "
+"pravilo.</li></ul></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addCustomBackgroundToStyleSheet)
 #: css/cssconfig.ui:209
 #, kde-format
 msgid "Add custom background color to stylesheet"
-msgstr ""
+msgstr "Dodaj posebnu boju pozadine u opis stila"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
@@ -1259,7 +1326,7 @@ msgid ""
 "<b>Suppress images</b><p>Selecting this will prevent Konqueror from loading "
 "images.</p>"
 msgstr ""
-"<b>Suzbij slike</b> <p>Ova opcija sprečava K‑osvajač da učitava slike.</p>"
+"<b>Suzbij slike</b> <p>Ova opcija sprječava K‑osvajač da učitava slike.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, hideImages)
 #: css/csscustom.ui:305
@@ -1274,7 +1341,7 @@ msgid ""
 "<b>Suppress background images</b><p>Selecting this option will prevent "
 "Konqueror from loading background images.</p>"
 msgstr ""
-"<b>Suzbij pozadinske slike</b> <p>Ova opcija sprečava K‑osvajač da učitava "
+"<b>Suzbij pozadinske slike</b> <p>Ova opcija sprječava K‑osvajač da učitava "
 "pozadinske slike.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, hideBackground)
@@ -1400,7 +1467,7 @@ msgstr ""
 #: domainlistview.cpp:125
 #, kde-format
 msgid "You must first select a policy to be changed."
-msgstr "Prvo morate odabrati koju polisu želite da promijenite."
+msgstr "Prvo morate izabrati smjernicu koju želite da promijenite."
 
 #: domainlistview.cpp:152
 #, kde-format
@@ -1595,17 +1662,15 @@ msgstr ""
 
 # >> @title:tab
 #: filteropts.cpp:256
-#, fuzzy, kde-format
-#| msgid "Automatic Filter"
+#, kde-format
 msgid "Import Filters"
-msgstr "Automatsko filtriranje"
+msgstr "Uvoz filtera"
 
 # >> @title:tab
 #: filteropts.cpp:300
-#, fuzzy, kde-format
-#| msgid "Automatic Filter"
+#, kde-format
 msgid "Export Filters"
-msgstr "Automatsko filtriranje"
+msgstr "Izvoz filtera"
 
 # >> @title:column
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
@@ -1626,14 +1691,13 @@ msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
 "empty"
 msgid "Please, insert the custom start page"
-msgstr ""
+msgstr "Unesite posebnu početnu stranicu"
 
 #: generalopts.cpp:60
-#, fuzzy, kde-format
-#| msgid "Open new windows:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &window is created"
-msgstr "Otvaranje novih prozora:"
+msgstr "Novi &prozor se otvara uz prikaz"
 
 # генитив: &Konqueror-n; креће од...
 #: generalopts.cpp:69
@@ -1646,7 +1710,7 @@ msgstr "uvodne stranice"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Speed Dial"
-msgstr ""
+msgstr "brzog biranja"
 
 # генитив: &Konqueror-n; креће од...
 #: generalopts.cpp:71
@@ -1707,22 +1771,22 @@ msgstr "Podrazumijevani motor veb pregledača:"
 #: generalopts.cpp:120
 #, kde-format
 msgid "When splitting a view"
-msgstr ""
+msgstr "Pri podjeli prikaza"
 
 #: generalopts.cpp:124
 #, kde-format
 msgid "Always duplicate current view"
-msgstr ""
+msgstr "uvijek dupliraj tekući prikaz"
 
 #: generalopts.cpp:125
 #, kde-format
 msgid "Duplicate current view only for local files"
-msgstr ""
+msgstr "dupliraj tekući prikaz samo za lokalne fajlove"
 
 #: generalopts.cpp:131
 #, kde-format
 msgid "When starting up, restore state from last time"
-msgstr ""
+msgstr "Pri pokretanju povrati stanje od prošlog puta"
 
 #: htmlopts.cpp:39
 #, kde-format
@@ -1840,17 +1904,16 @@ msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr "Šalji DNT zaglavlje veb sajtovima (koje kaže da ne želim da me prate)"
 
 #: htmlopts.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this box if you want to inform a web site that you do not want your "
-#| "web browsing habits tracked."
+#, kde-format
 msgid ""
 "<p>Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked.</p><p><strong>Warning:</strong> this header is "
 "considered obsolete, so it will likely be ignored by most web pages.</p>"
 msgstr ""
-"Popunite ovu kućicu ako želite da saopštite veb sajtu da ne želite da prati "
-"vaše navike u pregledanju Weba."
+"<p>Popunite ovu kućicu ako želite da saopštite veb sajtu da ne želite da "
+"prati vaše navike u pregledanju Weba.</p><p><strong>Upozorenje:</strong> ovo "
+"zaglavlje se smatra zastarjelim, pa će ga većina veb stranica vjerovatno "
+"ignorisati.</p>"
 
 #: htmlopts.cpp:126
 #, kde-format
@@ -1867,18 +1930,20 @@ msgstr ""
 #: htmlopts.cpp:131
 #, kde-format
 msgid "Display online PDF files using WebEngine"
-msgstr ""
+msgstr "Prikaži PDF fajlove na vezi pomoću QtWebEnginea"
 
 #: htmlopts.cpp:132
 #, kde-format
 msgid ""
 "Uncheck this box to display online PDF files as configured in System Settings"
 msgstr ""
+"Ispraznite ovu kućicu da bi se PDF fajlovi na vezi prikazivali onako kako je "
+"podešeno u Sistemskim postavkama"
 
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Always display files from web pages in a new tab"
-msgstr ""
+msgstr "Uvijek prikaži fajlove sa veb stranica u novom jezičku"
 
 #: htmlopts.cpp:137
 #, kde-format
@@ -1886,6 +1951,8 @@ msgid ""
 "<p>When showing in Konqueror files from links in web pages, always use a new "
 "tab"
 msgstr ""
+"<p>Pri prikazivanju fajlova iz veza na veb stranicama u K‑osvajaču, uvijek "
+"koristi novi jezičak</p>"
 
 #: jsopts.cpp:57
 #, kde-format
@@ -1901,7 +1968,7 @@ msgid ""
 msgstr ""
 "Omogućava izvršavanje skripti napisanih u JavaScriptu, koje HTML stranice "
 "mogu sadržati. Imajte u vidu da, kao i kod bilo kog drugog pregledača, "
-"dozvoljavanje aktivnog sadržaja može biti bezbednosni problem."
+"dozvoljavanje aktivnog sadržaja može biti bezbjednosni problem."
 
 # rewrite-msgid: /default policy setting/default policy/
 #: jsopts.cpp:70
@@ -2201,16 +2268,15 @@ msgstr "Prvo morate unijeti ime domena."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TabsOptions)
 #: tabs/tabsoptions.ui:14
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "Tabs Behavior"
-msgstr "Ponašanje &miša"
+msgstr "Ponašanje jezičaka"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: tabs/tabsoptions.ui:20
 #, kde-format
 msgid "Aspect"
-msgstr ""
+msgstr "Izgled"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: tabs/tabsoptions.ui:26
@@ -2232,43 +2298,43 @@ msgstr "Sakrij traku sa jezičcima kada ima samo jedan"
 #: tabs/tabsoptions.ui:38
 #, kde-format
 msgid "Tab bar position"
-msgstr ""
+msgstr "Položaj trake sa jezičcima"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:48
 #, kde-format
 msgid "Choose where to display the tabs bar"
-msgstr ""
+msgstr "Izaberite gdje će se prikazivati traka sa jezičcima"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:52
 #, kde-format
 msgid "Above contents"
-msgstr ""
+msgstr "iznad sadržaja"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:57
 #, kde-format
 msgid "Below contents"
-msgstr ""
+msgstr "ispod sadržaja"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:62
 #, kde-format
 msgid "Left of contents"
-msgstr ""
+msgstr "lijevo od sadržaja"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, tabbarPosition)
 #: tabs/tabsoptions.ui:67
 #, kde-format
 msgid "Right of contents"
-msgstr ""
+msgstr "desno od sadržaja"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: tabs/tabsoptions.ui:93
 #, kde-format
 msgid "Usage"
-msgstr ""
+msgstr "Upotreba"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
 #: tabs/tabsoptions.ui:99
@@ -2324,10 +2390,9 @@ msgstr "Otvori spoljašnji URL kao jezičak u postojećem K‑osvajaču"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: tabs/tabsoptions.ui:132
-#, fuzzy, kde-format
-#| msgid "Mouse Beha&vior"
+#, kde-format
 msgid "New Tab Behavior"
-msgstr "Ponašanje &miša"
+msgstr "Ponašanje novih jezičaka"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:138
@@ -2338,6 +2403,10 @@ msgid ""
 "\">shift</span> when opening a new tab to reverse this behavior</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>Ovo će otvarati novi jezičak u pozadini, umjesto u "
+"prvom planu.</p><p>Pritisnite <span style=\" font-family:'Fira Code';"
+"\">Shift</span> pri otvaranju novog jezička da biste obrnuli ovo ponašanje</"
+"p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: tabs/tabsoptions.ui:141
@@ -2368,18 +2437,21 @@ msgid ""
 "unchecked, the new tab will load the same URL loaded when creating a new "
 "window</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Da li novi jezičak ostaviti prazan ili ne. Ako ovo "
+"nije uključeno, u novom jezičku će se učitati isti URL koji se učitava pri "
+"stvaranju novog prozora</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_newTabEmpty)
 #: tabs/tabsoptions.ui:161
 #, kde-format
 msgid "Leave new tab empty"
-msgstr ""
+msgstr "Ostavi novi jezičak prazan"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: tabs/tabsoptions.ui:171
 #, kde-format
 msgid "Closing"
-msgstr ""
+msgstr "Zatvaranje"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: tabs/tabsoptions.ui:177
@@ -2446,42 +2518,42 @@ msgstr "&Na prethodno korišćeni jezičak pri zatvaranju tekućeg"
 #, kde-format
 msgctxt "We couldn't retrieve the user agent, so we show it as 'unknown'"
 msgid "unknown"
-msgstr ""
+msgstr "nepoznat"
 
 #: useragent/useragent.cpp:210
 #, kde-format
 msgctxt ""
 "@title:window Title of dialog to choose name to given to new User Agent"
 msgid "Choose User Agent name"
-msgstr ""
+msgstr "Izbor imena korisničkog agenta"
 
 #: useragent/useragent.cpp:211
 #, kde-format
 msgctxt "Name of the new User Agent"
 msgid "User Agent name"
-msgstr ""
+msgstr "Ime korisničkog agenta"
 
 #: useragent/useragent.cpp:271
 #, kde-format
 msgid "there are templates with empty names"
-msgstr ""
+msgstr "postoje šabloni sa praznim imenima"
 
 #: useragent/useragent.cpp:276
 #, kde-format
 msgid "there are multiple templates with the same name"
-msgstr ""
+msgstr "postoji više šablona sa istim imenom"
 
 #: useragent/useragent.cpp:299
 #, kde-format
 msgctxt "The user gave a custom user agent string an empty or duplicate name"
 msgid "Invalid user agent names:"
-msgstr ""
+msgstr "Loša imena korisničkih agenata:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, customUABox)
 #: useragent/useragent.ui:20
 #, kde-format
 msgid "Existing identifications"
-msgstr ""
+msgstr "Postojeće identifikacije"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, templates)
 #. i18n: ectx: property (toolTip), widget (QPushButton, newTemplateBtn)
@@ -2490,37 +2562,35 @@ msgstr ""
 #: useragent/useragent.ui:147
 #, kde-format
 msgid "<html><head/><body><p><br/></p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, templates)
 #: useragent/useragent.ui:63
 #, kde-format
 msgid "Content"
-msgstr ""
+msgstr "sadržaj"
 
 #. i18n: ectx: property (text), widget (QPushButton, editTemplateBtn)
 #: useragent/useragent.ui:94
-#, fuzzy, kde-format
-#| msgid "&Export..."
+#, kde-format
 msgid "&Edit..."
-msgstr "&Izvezi..."
+msgstr "&Uredi..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameTemplateBtn)
 #: useragent/useragent.ui:107
 #, kde-format
 msgid "&Rename..."
-msgstr ""
+msgstr "&Preimenuj..."
 
 #. i18n: ectx: property (text), widget (QPushButton, duplicateTemplateBtn)
 #: useragent/useragent.ui:120
 #, kde-format
 msgid "Du&plicate..."
-msgstr ""
+msgstr "&Dupliraj..."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteTemplateBtn)
 #: useragent/useragent.ui:133
-#, fuzzy, kde-format
-#| msgid "De&lete"
+#, kde-format
 msgid "&Delete"
 msgstr "&Obriši"
 
@@ -2528,19 +2598,19 @@ msgstr "&Obriši"
 #: useragent/useragent.ui:150
 #, kde-format
 msgid "Choose &selected identification"
-msgstr ""
+msgstr "Koristi &izabranu identifikaciju"
 
 #. i18n: ectx: property (text), widget (QLabel, currentUserAgent)
 #: useragent/useragent.ui:160
 #, kde-format
 msgid "Current user agent"
-msgstr ""
+msgstr "Trenutni korisnički agent"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: useragent/useragent.ui:175
 #, kde-format
 msgid "&Custom identification"
-msgstr ""
+msgstr "Po&sebna identifikacija"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, userAgentString)
 #: useragent/useragent.ui:185
@@ -2551,6 +2621,9 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>Identifikacija pregledača koja se koristi kada je "
+"podrazumijevana identifikacija isključena.</p><p>Možete je unijeti ručno ili "
+"početi od neke sa spiska ispod i izmijeniti je po potrebi.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:201
@@ -2559,522 +2632,17 @@ msgid ""
 "<html><head/><body><p>If checked, disable choosing a custom identification "
 "and use the default one</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Ako je ovo popunjeno, izbor posebne identifikacije se "
+"isključuje i koristi se podrazumijevana</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:204
 #, kde-format
 msgid "Use &default identification"
-msgstr ""
+msgstr "Koristi podrazu&mijevanu identifikaciju"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: useragent/useragent.ui:214
 #, kde-format
 msgid "<strong>Current browser identification</strong>"
-msgstr ""
-
-#~ msgid "Form Com&pletion"
-#~ msgstr "Dopuna &formulara"
-
-# skip-rule: t-cursor
-#~ msgid "Chan&ge cursor over links"
-#~ msgstr "&Promijeni pokazivač nad vezom"
-
-# skip-rule: t-cursor
-#~ msgid ""
-#~ "If this option is set, the shape of the cursor will change (usually to a "
-#~ "hand) if it is moved over a hyperlink."
-#~ msgstr ""
-#~ "Ako je ova opcija uključena, izgled pokazivača će se promijeniti "
-#~ "(najčešće u šaku) kada se nalazi iznad hiperveze."
-
-#~ msgid "Allow automatic delayed &reloading/redirecting"
-#~ msgstr "Automatsko odgođeno &osvježavanje/preusmjeravanje"
-
-#~ msgid ""
-#~ "Some web pages request an automatic reload or redirection after a certain "
-#~ "period of time. By unchecking this box Konqueror will ignore these "
-#~ "requests."
-#~ msgstr ""
-#~ "Neke veb stranice zahtijevaju automatsko ponovno učitavanje ili "
-#~ "preusmjeravanje poslije izvjesnog vremena. Isključivanjem ove opcije, "
-#~ "K‑osvajač će ignorisati ovakve zahtjeve."
-
-#~ msgid "Enable Ja&va globally"
-#~ msgstr "Aktiviraj &Javu globalno"
-
-#~ msgid "Java Runtime Settings"
-#~ msgstr "Postavke Java-mašine"
-
-#~ msgid "&Use security manager"
-#~ msgstr "Koristi menadžer &bezbjednosti"
-
-#~ msgid "Use &KIO"
-#~ msgstr "Koristi &K‑U/I"
-
-#~ msgid "Shu&tdown applet server when inactive for more than"
-#~ msgstr "&Isključi server apleta kada nije aktivan duže od"
-
-#~ msgid " second"
-#~ msgid_plural " seconds"
-#~ msgstr[0] " sekunda"
-#~ msgstr[1] " sekunde"
-#~ msgstr[2] " sekundi"
-#~ msgstr[3] " sekunda"
-
-#~ msgid "&Path to Java executable, or 'java':"
-#~ msgstr "Putanja do &izvršnog fajla Jave, ili „java“:"
-
-#~ msgid "Additional Java a&rguments:"
-#~ msgstr "Dodatni &argumenti za Javu:"
-
-#~ msgid ""
-#~ "Enables the execution of scripts written in Java that can be contained in "
-#~ "HTML pages. Note that, as with any browser, enabling active contents can "
-#~ "be a security problem."
-#~ msgstr ""
-#~ "Omogućava izvršavanje skripti napisanih u Javi, koje HTML stranice mogu "
-#~ "sadržati. Imajte u vidu da, kao i kod bilo kog drugog pregledača, "
-#~ "dozvoljavanje aktivnog sadržaja može biti bezbjednosni problem."
-
-#~ msgid ""
-#~ "<p>This box contains the domains and hosts you have set a specific Java "
-#~ "policy for. This policy will be used instead of the default policy for "
-#~ "enabling or disabling Java applets on pages sent by these domains or "
-#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
-#~ "it.</p>"
-#~ msgstr ""
-#~ "<p>Ovaj prozor sadrži domene i domaćine kojima ste postavili posebnu "
-#~ "smjernicu za Javu. Ova smjernica će biti korišćena umjesto "
-#~ "podrazumijevane za aktiviranje i deaktiviranje javanskih apleta na "
-#~ "stranicama koje ovi domeni ili domaćini šalju.</p><p>Izaberite smjernicu "
-#~ "i upotrijebite kontrole desno da je izmijenite.</p>"
-
-#~ msgid ""
-#~ "Click this button to choose the file that contains the Java policies. "
-#~ "These policies will be merged with the existing ones. Duplicate entries "
-#~ "are ignored."
-#~ msgstr ""
-#~ "Kliknite ovdje da izaberete fajl koji sadrži smjernice za Javu. Učitane "
-#~ "smjernice će biti stopljene sa postojećima. U slučaju da ista smjernica "
-#~ "već postoji, nova će biti ignorisana."
-
-#~ msgid ""
-#~ "Click this button to save the Java policy to a zipped file. The file, "
-#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
-#~ msgstr ""
-#~ "Kliknite ovde da sačuvate smjernicu za Javu kao kompresovan fajl, po "
-#~ "imenu <b>java_policy.tgz</b>, i smješten na lokaciji po vašem izboru."
-
-# rewrite-msgid: /default policy setting/default policy/
-#~ msgid ""
-#~ "Here you can set specific Java policies for any particular host or "
-#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
-#~ "supply the necessary information requested by the dialog box. To change "
-#~ "an existing policy, click on the <i>Change...</i> button and choose the "
-#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#~ "button will remove the selected policy, causing the default policy "
-#~ "setting to be used for that domain."
-#~ msgstr ""
-#~ "Ovdje možete podesiti posebne smjernice za Javu za određene domaćine i "
-#~ "domene. Da biste dodali novu smjernicu, kliknite na dugme <i>Nova...</i> "
-#~ "i unesite podatke koje dijalog zatraži. Da biste izmijenili postojeću "
-#~ "smjernicu, kliknite na <i>Izmijeni...</i> i izaberite smernicu sa spiska. "
-#~ "Klikom na dugme <i>Obriši</i> uklanjate izabranu smjernicu, čime domen "
-#~ "pod njom spada na podrazumijevanu smjernicu."
-
-#~ msgid ""
-#~ "Enabling the security manager will cause the jvm to run with a Security "
-#~ "Manager in place. This will keep applets from being able to read and "
-#~ "write to your file system, creating arbitrary sockets, and other actions "
-#~ "which could be used to compromise your system. Disable this option at "
-#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
-#~ "policytool utility to give code downloaded from certain sites more "
-#~ "permissions."
-#~ msgstr ""
-#~ "Uključeni menadžer sigurnosti znači da se Java-mašina pokreće sa njim u "
-#~ "pogonu. Ovo će spriječiti aplete da čitaju i pišu po fajl sistemu, prave "
-#~ "proizvoljne sokete, i druge radnje koje se mogu zloupotrijebiti za "
-#~ "kompromitovanje sistema. Ovu opciju isključujete na sopstveni rizik. "
-#~ "Možete izmijeniti fajl <b>$HOME/.java.policy</b> Javinom alatkom "
-#~ "<tt>policytool</tt> da biste dali veće dozvole apletima preuzetim sa "
-#~ "određenih sajtova."
-
-#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
-#~ msgstr ""
-#~ "Uključivanjem ovoga Java-mašini se zadaje da koristi K‑U/I za mrežni "
-#~ "prenos."
-
-#~ msgid ""
-#~ "Enter the path to the java executable. If you want to use the jre in your "
-#~ "path, simply leave it as 'java'. If you need to use a different jre, "
-#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
-#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
-#~ "IBMJava2-13)."
-#~ msgstr ""
-#~ "Unesite putanju do izvršnog fajla Jave. Ako želite da koristite javansko "
-#~ "okruženje već u putanji, ostavite u ovom polju samo „java“. Ako želite "
-#~ "neko drugo, unesite ili putanju do njega (na primer <tt>/usr/lib/jdk/bin/"
-#~ "java</tt>), ili do fascikle koja sadrži <tt>bin/java</tt> (npr. <tt>/opt/"
-#~ "IBMJava2-13</tt>)."
-
-#~ msgid ""
-#~ "If you want special arguments to be passed to the virtual machine, enter "
-#~ "them here."
-#~ msgstr ""
-#~ "Unesite ovdje posebne argumente koje želite da proslijedite virtuelnoj "
-#~ "mašini."
-
-#~ msgid ""
-#~ "When all the applets have been destroyed, the applet server should shut "
-#~ "down. However, starting the jvm takes a lot of time. If you would like to "
-#~ "keep the java process running while you are browsing, you can set the "
-#~ "timeout value to whatever you like. To keep the java process running for "
-#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
-#~ "Server checkbox unchecked."
-#~ msgstr ""
-#~ "Kada su svi apleti uništeni, server apleta bi trebalo da bude ugašen. "
-#~ "Ipak, samo pokretanje Java-mašine oduzima puno vremena, pa ako želite da "
-#~ "je ostavite da radi i poslije toga, ovdje možete da zadate željeno "
-#~ "prekovrijeme. Da bi Java-mašina bila u pogonu dok je god i proces "
-#~ "K‑osvajača, ispraznite kućicu <i>Isključi server apleta kada nije aktivan "
-#~ "duže od</i>."
-
-#~ msgctxt "@title:group"
-#~ msgid "Doma&in-Specific"
-#~ msgstr "Poseb&no za domen"
-
-#~ msgctxt "@title:window"
-#~ msgid "New Java Policy"
-#~ msgstr "Nova smjernica Jave"
-
-#~ msgctxt "@title:window"
-#~ msgid "Change Java Policy"
-#~ msgstr "Izmjena smjernice Jave"
-
-#~ msgid "&Java policy:"
-#~ msgstr "&Smjernica Jave:"
-
-#~ msgid "Select a Java policy for the above host or domain."
-#~ msgstr "Izaberite smjernicu Jave za gornji domaćin ili domen."
-
-#~ msgid "Debugging"
-#~ msgstr "Ispravljanje"
-
-#~ msgid "Enable debu&gger"
-#~ msgstr "Uključi &ispravljač"
-
-#~ msgid "Enables builtin JavaScript debugger."
-#~ msgstr "Uključuje ugrađeni ispravljač JavaScripta."
-
-#~ msgid "Report &errors"
-#~ msgstr "Prijavi &greške"
-
-#~ msgid ""
-#~ "Enables the reporting of errors that occur when JavaScript code is "
-#~ "executed."
-#~ msgstr ""
-#~ "Uključuje izvještavanje o greškama do kojih dolazi pri izvršavanju "
-#~ "JavaScript kôda."
-
-#~ msgid "&Java"
-#~ msgstr "&Java"
-
-#~ msgid "Java&Script"
-#~ msgstr "&JavaScript"
-
-#~ msgid ""
-#~ "This will open a new tab in the background, instead of in the foreground."
-#~ msgstr "Ovo će otvarati nove jezičke u pozadini umjesto na licu mjesta."
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Toplica Tanasković,Časlav Ilić"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "toptan@kde.org.yu,caslav.ilic@gmx.net"
-
-#~ msgid ""
-#~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
-#~ "Konqueror should use to display the web pages you view."
-#~ msgstr ""
-#~ "<qt><h1>K‑osvajačevi fontovi</h1><p>Na ovoj stranici možete podesiti koje "
-#~ "će fontove K‑osvajač koristiti za prikazivanje veb stranica koje gledate."
-#~ "</p></qt>"
-
-#~ msgid ""
-#~ "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list "
-#~ "of filters that are checked against linked images and frames. URL's that "
-#~ "match are either discarded or replaced with a placeholder image. "
-#~ msgstr ""
-#~ "<h1>K‑osvajačev AdBlock</h1><p>AdBlock vam omogućava da sastavite spisak "
-#~ "filtera koji se porede sa povezanim slikama i okvirima. URL‑ovi koji se "
-#~ "poklope ili se odbacuju ili mijenjaju sličicom blokiranog.</p>"
-
-#~ msgid "Tabbed Browsing"
-#~ msgstr "Pregledanje sa jezičcima"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "When &Konqueror starts:"
-#~ msgstr "&K‑osvajač kreće od:"
-
-#~ msgid ""
-#~ "<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
-#~ "functionality. Please note that the file manager functionality has to be "
-#~ "configured using the \"File Manager\" configuration module. You can make "
-#~ "some settings how Konqueror should handle the HTML code in the web pages "
-#~ "it loads. It is usually not necessary to change anything here."
-#~ msgstr ""
-#~ "<h1>K‑osvajač kao pregledač</h1><p>Ovdje podešavate K‑osvajačevu "
-#~ "pregledačku funkcionalnost (dok njegovu upotrebu kao menadžera fajlova "
-#~ "podešavate istoimenim modulom). Možete odrediti nekoliko postavki u vezi "
-#~ "sa obrađivanjem HTML kôda veb stranica koje K‑osvajač učitava. Obično ne "
-#~ "morate ništa mijenjati.</p>"
-
-#~ msgid "Accept languages:"
-#~ msgstr "Prihvatljivi jezici:"
-
-#~ msgid "Accept character sets:"
-#~ msgstr "Prihvatljiva kodiranja:"
-
-#~ msgid "Konqueror Browsing Control Module"
-#~ msgstr ""
-#~ "Kontrolni modul K‑osvajača kao pregledača|/|$[svojstva dat 'Kontrolnom "
-#~ "modulu K‑osvajača kao pregledača']"
-
-#~ msgid "(c) 1999 - 2001 The Konqueror Developers"
-#~ msgstr "© 1999-2001, programeri K‑osvajača"
-
-#~ msgid "Waldo Bastian"
-#~ msgstr "Valdo Bastijan"
-
-#~ msgid "David Faure"
-#~ msgstr "David For"
-
-#~ msgid "Matthias Kalle Dalheimer"
-#~ msgstr "Matijas Kale Dalhajmer"
-
-#~ msgid "Lars Knoll"
-#~ msgstr "Lars Knol"
-
-#~ msgid "Dirk Mueller"
-#~ msgstr "Dirk Miler"
-
-#~ msgid "Daniel Molkentin"
-#~ msgstr "Danijel Molkentin"
-
-#~ msgid "Wynn Wilkes"
-#~ msgstr "Vin Vilks"
-
-#~ msgid "Leo Savernik"
-#~ msgstr "Leo Savernik"
-
-#~ msgid ""
-#~ "JavaScript access controls\n"
-#~ "Per-domain policies extensions"
-#~ msgstr ""
-#~ "Kontrole pristupa JavaScripta\n"
-#~ "Proširenja smjernica po domenu"
-
-#~ msgid ""
-#~ "<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
-#~ "programs embedded in web pages should be allowed to be executed by "
-#~ "Konqueror.<h2>Java</h2>On this page, you can configure whether Java "
-#~ "applets embedded in web pages should be allowed to be executed by "
-#~ "Konqueror.<br /><br /><b>Note:</b> Active content is always a security "
-#~ "risk, which is why Konqueror allows you to specify very fine-grained from "
-#~ "which hosts you want to execute Java and/or JavaScript programs."
-#~ msgstr ""
-#~ "<h2>JavaScript</h2><p>Na ovoj stranici možete podesiti da li će "
-#~ "K‑osvajaču biti dozvoljeno da izvršava JavaScript programe ugniježđene u "
-#~ "veb stranice.</p><h2>Java</h2><p>Ovdje možete podesiti da li će "
-#~ "K‑osvajaču biti dozvoljeno da izvršava javanske aplete ugniježđene u veb "
-#~ "stranice.</p><p><b>Napomena:</b> Aktivni sadržaj je uvek rizik za "
-#~ "bezbjednost, zato vam je omogućeno da fino podesite sa kojih domaćina se "
-#~ "javanski i JavaScript programi smiju izvršavati.</p>"
-
-#~ msgid "Plugins"
-#~ msgstr "Priključci"
-
-# >> @title:group
-#~ msgid "Folders"
-#~ msgstr "Fascikle"
-
-#~ msgid "&Remove"
-#~ msgstr "&Ukloni"
-
-# >> @action:button Add new folder
-#~ msgid "&New"
-#~ msgstr "&Nova"
-
-#~ msgid "Do&wn"
-#~ msgstr "&Dolje"
-
-#~ msgid "&Up"
-#~ msgstr "&Gore"
-
-#~ msgid "Click here to scan for newly installed Netscape plugins now."
-#~ msgstr ""
-#~ "Kliknite ovdje da biste potražili novoinstalirane Netscapeove priključke."
-
-#~ msgid "&Scan for Plugins"
-#~ msgstr "&Potraži priključke"
-
-#~ msgid "Here you can see a list of the Netscape plugins KDE has found."
-#~ msgstr ""
-#~ "Ovdje možete videti spisak Netscapeovih priključaka koji su pronađeni."
-
-#~ msgid "Information"
-#~ msgstr "Podaci"
-
-#~ msgid "Global Settings"
-#~ msgstr "Globalne postavke"
-
-#~ msgid "&Enable plugins globally"
-#~ msgstr "&Globalno aktiviraj priključke"
-
-#~ msgid "Only allow &HTTP and HTTPS URLs for plugins"
-#~ msgstr "Dozvoli samo &HTTP i HTTPS URL‑ove za priključke"
-
-#~ msgid "&Load plugins on demand only"
-#~ msgstr "&Učitaj priključke samo na zahtjev"
-
-#~ msgid "CPU priority for plugins: %1"
-#~ msgstr "CPU prioritet za priključke: %1"
-
-#~ msgid "Domain-Specific Settin&gs"
-#~ msgstr "&Posebne postavke po domenu"
-
-#~ msgid ""
-#~ "Enables the execution of plugins that can be contained in HTML pages, e."
-#~ "g. Macromedia Flash. Note that, as with any browser, enabling active "
-#~ "contents can be a security problem."
-#~ msgstr ""
-#~ "Aktivira izvršavanje priključaka koji mogu biti potrebni HTML stranicama, "
-#~ "kao što je npr. Macromedijin Flash. Imajte u vidu da, kao i kod bilo kog "
-#~ "drugog pregledača, dozvoljavanje aktivnog sadržaja može biti bezbjednosni "
-#~ "problem."
-
-#~ msgid ""
-#~ "<p>This box contains the domains and hosts you have set a specific plugin "
-#~ "policy for. This policy will be used instead of the default policy for "
-#~ "enabling or disabling plugins on pages sent by these domains or hosts.</"
-#~ "p><p>Select a policy and use the controls on the right to modify it.</p>"
-#~ msgstr ""
-#~ "<p>Ovdje možete vidjeti domene i domaćine kojima je zadata posebna "
-#~ "smjernica za priključke. Ova smjernica će biti korišćena umjesto "
-#~ "podrazumijevane, za uključivanje i isključivanje priključaka na "
-#~ "stranicama koje šalju ovi domeni ili domaćini.</p><p>Izaberite smjernicu "
-#~ "i upotrebite kontrole desno da biste je izmijenili.</p>"
-
-#~ msgid ""
-#~ "Click this button to choose the file that contains the plugin policies. "
-#~ "These policies will be merged with the existing ones. Duplicate entries "
-#~ "are ignored."
-#~ msgstr ""
-#~ "Ovim dugmetom uvozite fajl koji sadrži smjernice za priključke. Učitane "
-#~ "smjernice će biti stopljene sa postojećim; kada ista smjernica već "
-#~ "postoji, nova će biti ignorisana."
-
-#~ msgid ""
-#~ "Click this button to save the plugin policy to a zipped file. The file, "
-#~ "named <b>plugin_policy.tgz</b>, will be saved to a location of your "
-#~ "choice."
-#~ msgstr ""
-#~ "Kliknite ovdje da sačuvate smjernicu priključaka kao kompresovan fajl, po "
-#~ "imenu <b>plugin_policy.tgz</b>, i smješten na lokaciji po vašem izboru."
-
-# rewrite-msgid: /default policy setting/default policy/
-#~ msgid ""
-#~ "Here you can set specific plugin policies for any particular host or "
-#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
-#~ "supply the necessary information requested by the dialog box. To change "
-#~ "an existing policy, click on the <i>Change...</i> button and choose the "
-#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#~ "button will remove the selected policy causing the default policy setting "
-#~ "to be used for that domain."
-#~ msgstr ""
-#~ "Ovdje možete podesiti posebne smjernice priključaka za određene domaćine "
-#~ "i domene. Da biste dodali novu smjernicu, kliknite na dugme <i>Nova...</"
-#~ "i> i unesite podatke koje dijalog zatraži. Da biste izmijenili postojeću "
-#~ "smjernicu, kliknite na <i>Izmijeni...</i> i izaberite smjernicu sa "
-#~ "spiska. Klikom na dugme <i>Obriši</i> uklanjate izabranu smjernicu, čime "
-#~ "domen pod njom spada na podrazumijevanu smjernicu."
-
-#~ msgctxt "lowest priority"
-#~ msgid "lowest"
-#~ msgstr "najniži"
-
-#~ msgctxt "low priority"
-#~ msgid "low"
-#~ msgstr "nizak"
-
-#~ msgctxt "medium priority"
-#~ msgid "medium"
-#~ msgstr "srednji"
-
-#~ msgctxt "high priority"
-#~ msgid "high"
-#~ msgstr "visok"
-
-#~ msgctxt "highest priority"
-#~ msgid "highest"
-#~ msgstr "najviši"
-
-#~ msgid ""
-#~ "<h1>Konqueror Plugins</h1> The Konqueror web browser can use Netscape "
-#~ "plugins to show special content, just like the Navigator does. Please "
-#~ "note that the way you have to install Netscape plugins may depend on your "
-#~ "distribution. A typical place to install them is, for example, '/opt/"
-#~ "netscape/plugins'."
-#~ msgstr ""
-#~ "<h1>K‑osvajačevi priključci</h1><p>Veb pregledač K‑osvajač može da "
-#~ "koristi Netscapeove priključke za prikaz posebnih sadržaja, baš kao "
-#~ "Navigator. Imajte na umu da način na koji se instaliraju Netscapeovi "
-#~ "priključci zavisi od vaše distribucije. Jedna uobičajena lokacija je <b>/"
-#~ "opt/netscape/plugins</b>.</p>"
-
-#~ msgid ""
-#~ "Do you want to apply your changes before the scan? Otherwise the changes "
-#~ "will be lost."
-#~ msgstr ""
-#~ "Želite li da primijenite izmjene prije pretrage? Ako ih ne primijenite, "
-#~ "biće izgubljene."
-
-#~ msgid ""
-#~ "The nspluginscan executable cannot be found. Netscape plugins will not be "
-#~ "scanned."
-#~ msgstr ""
-#~ "Naredba nspluginscan ne može da se pronađe. Netscapeovi priključci neće "
-#~ "biti potraženi."
-
-#~ msgid "Scanning for plugins"
-#~ msgstr "Tražim priključke"
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Plugin Scan Folder"
-#~ msgstr "Izbor fascikle za traženje priključaka"
-
-#~ msgid "Netscape Plugins"
-#~ msgstr "Netscapeovi priključci"
-
-#~ msgid "Plugin"
-#~ msgstr "Priključci"
-
-#~ msgid "MIME type"
-#~ msgstr "MIME tip"
-
-#~ msgid "Description"
-#~ msgstr "Opis"
-
-#~ msgid "Suffixes"
-#~ msgstr "Sufiksi"
-
-#~ msgid "Doma&in-Specific"
-#~ msgstr "Posebno za &domen"
-
-#~ msgid "&Plugin policy:"
-#~ msgstr "Smjernica &priključaka:"
-
-#~ msgid "Select a plugin policy for the above host or domain."
-#~ msgstr "Izaberite smjernicu priključaka za domaćin ili domen iznad."
+msgstr "<strong>Trenutna identifikacija pregledača</strong>"
