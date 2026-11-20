@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 00:13+0000\n"
-"PO-Revision-Date: 2026-11-16 19:10+0300\n"
+"PO-Revision-Date: 2026-11-19 19:28+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -337,7 +337,7 @@ msgstr ""
 #: cache/cache.ui:17
 #, kde-format
 msgid "&Enable cache"
-msgstr "Önbelleği &etkinleştir"
+msgstr "Ön belleği &etkinleştir"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:29
@@ -347,21 +347,21 @@ msgid ""
 "p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Önbelleği diskte değil de yalnızca bellekte depola.</"
-"p><p>Bunu açmak, Konqueror’dan çıkıldığında önbelleğin temizleneceği "
-"anlamına gelir</p></body></html>"
+"<html><head/><body><p>Ön belleği diskte değil de yalnızca bellekte depolayın."
+"</p><p>Bunu açmak, Konqueror’dan çıkıldığında ön belleğin temizleneceği "
+"anlamına gelir.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:32
 #, kde-format
 msgid "Keep cache in &memory"
-msgstr "Önbelleği &bellekte tut"
+msgstr "Ön belleği &bellekte tut"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: cache/cache.ui:41
 #, kde-format
 msgid "&Cache size"
-msgstr "&Önbellek boyutu"
+msgstr "&Ön bellek boyutu"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:51
@@ -370,7 +370,7 @@ msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
-"Önbellek alanının kullanabileceği en çok disk veya bellek alanı. Bu eşiğe "
+"Ön bellek alanının kullanabileceği en çok disk veya bellek alanı. Bu eşiğe "
 "ulaşıldığında, yeni sayfalara yer açmak için eski sayfalar kaldırılacaktır."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
@@ -389,7 +389,7 @@ msgstr " MB"
 #: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr "Önbelleği tutmak için özel bir dizin kullan"
+msgstr "Ön belleği tutmak için özel bir dizin kullan"
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:88
@@ -401,13 +401,13 @@ msgstr "&Özel önbellek dizini"
 #: cache/cache.ui:100
 #, kde-format
 msgid "Cache &Directory"
-msgstr "Önbellek &dizini"
+msgstr "Ön bellek &dizini"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
 #: cache/cache.ui:113
 #, kde-format
 msgid "The custom directory to store cache"
-msgstr "Önbelleği depolamak için kullanılacak özel dizin"
+msgstr "Ön belleği depolamak için kullanılacak özel dizin"
 
 #: cookies/kcookiesmain.cpp:33
 #, kde-format
