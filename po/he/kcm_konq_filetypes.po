@@ -7,14 +7,15 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-11 10:55+0000\n"
-"PO-Revision-Date: 2026-11-20 11:11+0200\n"
+"PO-Revision-Date: 2026-11-21 08:47+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 26.08.3\n"
 
 #: filegroupdetails.cpp:22
@@ -96,6 +97,8 @@ msgid ""
 "'HTML Page'). This description will be used by applications like Konqueror "
 "to display directory content."
 msgstr ""
+"אפשר למלא תיאור קצר לקבצים מהסוג הנבחר (למשל: ‚עמוד HTML’). התיאור הזה ישמש "
+"יישומים כמו Konqueror כדי להציג את תוכן התיקיות."
 
 #: filetypedetails.cpp:129
 #, kde-format
@@ -105,7 +108,7 @@ msgstr "פעולת לחיצה שמאלית ב־Konqueror"
 #: filetypedetails.cpp:138
 #, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr ""
+msgstr "לשאול האם לשמור לכונן במקום (רק לדפדפן Konqueror)"
 
 #: filetypedetails.cpp:154
 #, kde-format
@@ -178,7 +181,7 @@ msgstr ""
 #: filetypesview.cpp:91
 #, kde-format
 msgid "Click here to add a new file type."
-msgstr ""
+msgstr "אפשר ללחוץ כאן כדי להוסיף סוג קובץ חדש."
 
 #: filetypesview.cpp:93 filetypesview.cpp:389
 #, kde-format
@@ -188,7 +191,7 @@ msgstr "ה&סרה"
 #: filetypesview.cpp:119
 #, kde-format
 msgid "Select a file type by name or by extension"
-msgstr ""
+msgstr "אפשר לבחור סוג קובץ לפי שם או לפי סיומת"
 
 #: filetypesview.cpp:382
 #, kde-format
@@ -213,7 +216,7 @@ msgstr ""
 #: filetypesview.cpp:390
 #, kde-format
 msgid "Delete this file type definition completely"
-msgstr ""
+msgstr "מחיקת הגדרת סוג הקובץ הזאת לחלוטין"
 
 #: filetypesview.cpp:392
 #, kde-format
@@ -233,12 +236,12 @@ msgstr "%1 (%2)"
 #: kservicelistwidget.cpp:51
 #, kde-format
 msgid "Application Preference Order"
-msgstr ""
+msgstr "סדר העדפת יישומים"
 
 #: kservicelistwidget.cpp:51
 #, kde-format
 msgid "Services Preference Order"
-msgstr ""
+msgstr "סדר העדפת שירותים"
 
 #: kservicelistwidget.cpp:63
 #, kde-format
@@ -263,7 +266,7 @@ msgstr ""
 #: kservicelistwidget.cpp:80
 #, kde-format
 msgid "Move &Up"
-msgstr ""
+msgstr "העלאה למ&עלה"
 
 #: kservicelistwidget.cpp:86
 #, kde-format
@@ -284,7 +287,7 @@ msgstr ""
 #: kservicelistwidget.cpp:93
 #, kde-format
 msgid "Move &Down"
-msgstr ""
+msgstr "הורדה למ&טה"
 
 #: kservicelistwidget.cpp:98
 #, kde-format
@@ -301,11 +304,13 @@ msgid ""
 "Assigns a lower priority to the selected\n"
 "service, moving it down in the list."
 msgstr ""
+"הקצאת עדיפות נמוכה לשירות הנבחר,\n"
+"יורד במורד הרשימה."
 
 #: kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add a new application for this file type."
-msgstr ""
+msgstr "הוספת יישום חדש לסוג הקובץ הזה."
 
 #: kservicelistwidget.cpp:112
 #, kde-format
@@ -315,12 +320,12 @@ msgstr "עריכה…"
 #: kservicelistwidget.cpp:117
 #, kde-format
 msgid "Edit command line of the selected application."
-msgstr ""
+msgstr "עריכת שורת הפקודה של היישום הנבחר."
 
 #: kservicelistwidget.cpp:124
 #, kde-format
 msgid "Remove the selected application from the list."
-msgstr ""
+msgstr "להסיר את היישום הנבחר מהרשימה."
 
 #: kservicelistwidget.cpp:126 multiapplydialog.cpp:19
 #, kde-format
