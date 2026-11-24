@@ -146,11 +146,11 @@
 >dosya yöneticisidir</link
 >. Temel kes/kopyala/yapıştır eylemlerinden gelişmiş yerel ve uzak dosya taramasına kadar uzanan bir aralıkta dosya yönetimi özellikleri sağlar. Klasör içerikleri çok çeşitli metin ve simge <link linkend="viewmode"
 >görünümü kiplerinde</link
-> gösterilebilir; bu kipler dosya içeriklerinin küçük bir görsel olarak önizlemesini sunabilir. Dosya ve klasör özellikleri kolaylıkla değiştirilebilir ve uygulamalar tek bir çift tıklamayla başlatılabilir.</para>
+> gösterilebilir; bu kipler dosya içeriklerinin küçük bir görsel olarak ön izlemesini sunabilir. Dosya ve klasör özellikleri kolaylıkla değiştirilebilir ve uygulamalar tek bir çift tıklamayla başlatılabilir.</para>
 
 <para
->&kde; uygulamalarındaki öntanımlı dosya yöneticisi &dolphin; uygulamasıdır. Klasörlere göz atmak için kullanılan öntanımlı bileşeni değiştirmek için &systemsettings; içindeki <guimenu
->Öntanımlı Uygulamalar</guimenu
+>&kde; uygulamalarındaki varsayılan dosya yöneticisi &dolphin; uygulamasıdır. Klasörlere göz atmak için kullanılan varsayılan bileşeni değiştirmek için &systemsettings; içindeki <guimenu
+>Varsayılan Uygulamalar</guimenu
 > sayfasına gidip dosya yöneticisi olarak &konqueror;’u seçin.</para>
 
 <para
@@ -185,7 +185,7 @@
 >&konqueror;</emphasis
 >, herkesin kendi gereksinimlerine göre <link linkend="config"
 >yapılandırabileceği</link
->, tümüyle özelleştirilebilir bir uygulamadır. Özelleştirilebilecek şeylerin arasında genel biçem, metin ve simge boyutları, menülerde hangi ögelerin görüneceği, araç çubuklarının sayısı ve konumu ve hatta yeni düğme kısayolu kombinasyonları oluşturma bulunur. </para>
+>, tümüyle özelleştirilebilir bir uygulamadır. Özelleştirilebilecek şeylerin arasında genel stil, metin ve simge boyutları, menülerde hangi ögelerin görüneceği, araç çubuklarının sayısı ve konumu ve hatta yeni düğme kısayolu kombinasyonları oluşturma bulunur. </para>
 </chapter>
 
 <chapter id="basics">
@@ -230,7 +230,7 @@
 
 <important
 ><para
->Tüm &kde; uygulamaları gibi, &konqueror; da oldukça yapılandırılabilirdir. Bu belge, &konqueror;’un olağan, öntanımlı ayarlarıyla nasıl davrandığını açıklar.</para
+>Tüm &kde; uygulamaları gibi, &konqueror; da oldukça yapılandırılabilirdir. Bu belge, &konqueror;’un olağan, varsayılan ayarlarıyla nasıl davrandığını açıklar.</para
 ><para
 >Bir üç düğmeli fare, &konqueror;’u veya başka bir &kde; uygulamasını çalıştırırken yararlı olabilir. Farenizde yalnızca iki düğme varsa sisteminizi her iki fare düğmesine aynı anda basarak bir &MMB; basışına öykünebilmeniz için ayarlayabilmeniz gerekir.</para
 ><para
@@ -277,7 +277,7 @@
 ></note>
 
 <para
->&konqueror; öntanımlı dosya yöneticisiyse masaüstünde bir klasöre, disk sürücüsüne veya <guiicon
+>&konqueror; varsayılan dosya yöneticisiyse masaüstünde bir klasöre, disk sürücüsüne veya <guiicon
 >Çöp Kutusu</guiicon
 > simgesine çift tıklarsanız kendiliğinden başlar.</para>
 </sect1>
@@ -515,8 +515,8 @@
 >sol</mousebutton
 > fare düğmesine basarsanız &konqueror;, dosya türüne bağlı olarak o dosya için neyi uygun görürse onu yapacaktır. Genelde bu, <acronym
 >HTML</acronym
-> sayfalarını açmak, metinleri, görselleri veya &okular; belgelerini önizlemek, onları &konqueror;’un penceresinde göstermek anlamına gelir (<quote
->Önizleme</quote
+> sayfalarını açmak, metinleri, görselleri veya &okular; belgelerini ön izlemek, onları &konqueror;’un penceresinde göstermek anlamına gelir (<quote
+>Ön İzleme</quote
 >, dosyayı görüntüleyebilirsiniz; ancak değiştiremezsiniz demektir).</para
 > 
 
@@ -607,7 +607,7 @@
 ><para
 >Araç çubuğunun herhangi bir yerinde <mousebutton
 >sağ</mousebutton
-> tıklamak, araç çubuğu menüsünü getirir. Bu menüden, araç çubuğundaki düğmelerin boyutunu ve görüntülenme biçemini (simge, metin veya her ikisi de) seçebilirsiniz.</para>
+> tıklamak, araç çubuğu menüsünü getirir. Bu menüden, araç çubuğundaki düğmelerin boyutunu ve görüntülenme stilini (simge, metin veya her ikisi de) seçebilirsiniz.</para>
 <para
 >Araç çubuğunun kilidini açtığınızda, onu &konqueror; penceresinin üst, alt, sol veya sağ tarafına taşıyabilirsiniz. </para>
 </listitem>
@@ -663,7 +663,7 @@
 >kopyalamanıza</guimenuitem
 > veya <guimenuitem
 >kaldırmanıza</guimenuitem
-> izin veren bir menü açılır. Bu menüden, dosyayı hangi programla açmak istediğinizi de seçebilmenizin yanı sıra onu önizleyebilir, yeniden adlandırabilir veya dosya türünü/özelliklerini düzenleyebilirsiniz.</para
+> izin veren bir menü açılır. Bu menüden, dosyayı hangi programla açmak istediğinizi de seçebilmenizin yanı sıra onu ön izleyebilir, yeniden adlandırabilir veya dosya türünü/özelliklerini düzenleyebilirsiniz.</para
 ></listitem>
 </varlistentry>
 
@@ -845,7 +845,7 @@
 
 <listitem
 ><para
->Öntanımlı <guibutton
+>Varsayılan <guibutton
 >Simgeler</guibutton
 > görünümünde, dosyalar, dosya türünü görselleştiren bir simge ile ve alt klasörler ise bir klasör simgesi ile gösterilir. Klasörlerin, dosyaların ve ögelerin adları <menuchoice
 ><guimenu
@@ -995,7 +995,7 @@
 >Klasör Görünümü Özellikleri</title>
 
 <para
->Aşağıdaki ayarlar, bir klasörün içeriğinin &konqueror; görünümünde nasıl görüntüleneceğini denetler ve öntanımlı olarak klasör bazında saklanır: </para>
+>Aşağıdaki ayarlar, bir klasörün içeriğinin &konqueror; görünümünde nasıl görüntüleneceğini denetler ve varsayılan olarak klasör bazında saklanır: </para>
 <itemizedlist>
 
 <listitem
@@ -1015,8 +1015,8 @@
 
 <listitem
 ><para
->Simgeler yerine önizlemelerin gösterilip gösterilmeyeceği (&konqueror;’un ayarlarının <guilabel
->Önizlemeler</guilabel
+>Simgeler yerine ön izlemelerin gösterilip gösterilmeyeceği (&konqueror;’un ayarlarının <guilabel
+>Ön İzlemeler</guilabel
 > sekmesindeki ayarlara göre)? </para
 ></listitem>
 
@@ -1074,7 +1074,7 @@
 
 <para
 ><guilabel
->Bu görünüm özelliklerini öntanımlı olarak kullan</guilabel
+>Bu görünüm özelliklerini varsayılan olarak kullan</guilabel
 > seçeneği etkinleştirilmişse seçili görünüm özellikleri, henüz özelleştirilmiş görünüm özelliklerine sahip olmayan tüm klasörler için kullanılabilir. </para>
 </sect2>
 </sect1>
@@ -2030,7 +2030,7 @@ find your way around the file system.</para>
 <!-- TODO: The content should probably be here too, but this’ll do for -->
 <!-- now. -->
 <para
->&kde;, birçok değişik dosya türünü açabilen birçok uygulama sağlar. Çoğu zaman, öntanımlı ayarlar hiçbir sorun olmadan çalışır; ancak &konqueror; her bir dosya türünü açmak için kullanılan uygulamaları yapılandırmak için güçlü bir sistem sunar. Daha fazla ayrıntı için <menuchoice
+>&kde;, birçok değişik dosya türünü açabilen birçok uygulama sağlar. Çoğu zaman, varsayılan ayarlar hiçbir sorun olmadan çalışır; ancak &konqueror; her bir dosya türünü açmak için kullanılan uygulamaları yapılandırmak için güçlü bir sistem sunar. Daha fazla ayrıntı için <menuchoice
 ><guimenu
 >Ayarlar</guimenu
 ><guimenuitem
@@ -2896,11 +2896,11 @@ OverridenPorts=CommaSeparatedListOfAllowedPorts
 <varlistentry>
 <term
 ><guimenuitem
->Öntanımlı</guimenuitem
+>Varsayılan</guimenuitem
 ></term>
 <listitem
 ><para
->Bu öge, alt menünün en sonunda görünür ve öntanımlı davranış olan <guimenuitem
+>Bu öge, alt menünün en sonunda görünür ve varsayılan davranış olan <guimenuitem
 >Açılır liste</guimenuitem
 > davranışına geri dönmenizi sağlar.</para
 ></listitem>
@@ -3525,7 +3525,7 @@ as described above.</para>
 > ve <guimenu
 >Görünüm</guimenu
 > menüsünden <guimenuitem
->Önizle</guimenuitem
+>Ön İzle</guimenuitem
 >).</para
 ></note>
 
@@ -3715,30 +3715,30 @@ as described above.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Önbelleği Etkinleştir</guimenuitem
+>Ön Belleği Etkinleştir</guimenuitem
 ></term>
 <listitem
 ><para
->&konqueror; tarayıcısında önbellek kullanımını etkinleştirmenizi veya devre dışı bırakmanızı sağlar.</para
+>&konqueror; tarayıcısında ön bellek kullanımını etkinleştirmenizi veya devre dışı bırakmanızı sağlar.</para
 ></listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><guimenuitem
->Önbellek Politikası</guimenuitem
+>Ön Bellek Politikası</guimenuitem
 ></term>
 <listitem>
 <para
->Önbellek Politikası alt menüsü, &konqueror;’un önbelleği nasıl kullanacağını yapılandırmanız için bir yol sağlar. Olası kullanımlar şunları içerir:</para>
+>Ön Bellek Politikası alt menüsü, &konqueror;’un ön belleği nasıl kullanacağını yapılandırmanız için bir yol sağlar. Olası kullanımlar şunları içerir:</para>
 <itemizedlist>
 <listitem
 ><para
->Önbelleği Eşzamanlı Tut</para
+>Ön Belleği Eşzamanlı Tut</para
 ></listitem>
 <listitem
 ><para
->Olanaklıysa Önbellek Kullan</para
+>Olanaklıysa Ön Bellek Kullan</para
 ></listitem>
 <listitem
 ><para
@@ -3789,7 +3789,7 @@ as described above.</para>
 >&Ctrl;<keycap
 >I</keycap
 ></keycombo
-> kısayolunu kullanın. Öntanımlı olarak, HTML sayfası <filename
+> kısayolunu kullanın. Varsayılan olarak, HTML sayfası <filename
 >images.html</filename
 > olarak adlandırılır ve küçük görseller <filename
 >images</filename
@@ -3879,22 +3879,22 @@ as described above.</para>
 <varlistentry>
 <term
 ><guimenuitem
->Yazıtipi adı</guimenuitem
+>Yazı tipi adı</guimenuitem
 ></term>
 <listitem
 ><para
->Yazıtipi adı açılan kutusu, galeriyi oluştururken hangi yazıtipini kullanacağınızı seçmenizi sağlar.</para
+>Yazı tipi adı açılan kutusu, galeriyi oluştururken hangi yazı tipini kullanacağınızı seçmenizi sağlar.</para
 ></listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><guimenuitem
->Yazıtipi puntosu</guimenuitem
+>Yazı tipi puntosu</guimenuitem
 ></term>
 <listitem
 ><para
->Yazıtipi puntosu döndürme kutusu, seçtiğiniz yazıtipinin puntosunu değiştirmek içindir.</para
+>Yazı tipi puntosu döndürme kutusu, seçtiğiniz yazı tipinin puntosunu değiştirmek içindir.</para
 ></listitem>
 </varlistentry>
 
@@ -4429,8 +4429,8 @@ Additional Download Manager from KGet
 <listitem
 ><para
 ><ulink url="help:/kcontrol/cache/index.html"
->Önbellek</ulink
->: Web önbelleği ayarlarını yapılandır</para
+>Ön Bellek</ulink
+>: Web ön belleği ayarlarını yapılandır</para
 ></listitem>
 <listitem
 ><para
@@ -4509,7 +4509,7 @@ Additional Download Manager from KGet
 
 <note
 ><para
->Bu fasılda gösterilen kısayol düğmesi kombinasyonları, öntanımlı ayarlardır. Elbette istediğiniz gibi değiştirebilirsiniz. </para
+>Bu fasılda gösterilen kısayol düğmesi kombinasyonları, varsayılan ayarlardır. Elbette istediğiniz gibi değiştirebilirsiniz. </para
 ></note>
 
 <sect1 id="specshort">
@@ -4983,7 +4983,7 @@ Additional Download Manager from KGet
 > (Tarayıcı kipi)</term>
 <listitem
 ><para
->Önizlenen bir &HTML; veya metin sayfasındaki metnin tümünü seçer, sonrasında onu <guimenuitem
+>Ön izlenen bir &HTML; veya metin sayfasındaki metnin tümünü seçer, sonrasında onu <guimenuitem
 >Kopyala</guimenuitem
 > yapıp bir metin düzenleyicisine <guimenuitem
 >Yapıştır</guimenuitem
@@ -5249,7 +5249,7 @@ Additional Download Manager from KGet
 > (Tarayıcı kipi)</term>
 <listitem
 ><para
->Geçerli pencerenin altındaki arama çubuğunu görüntüler. Önizlemekte olduğunuz bir metin veya &HTML; sayfasında bir metin dizisi bulmak için yazmaya başlayın.</para
+>Geçerli pencerenin altındaki arama çubuğunu görüntüler. Ön izlemekte olduğunuz bir metin veya &HTML; sayfasında bir metin dizisi bulmak için yazmaya başlayın.</para
 ></listitem>
 </varlistentry>
 </variablelist>
@@ -5436,7 +5436,7 @@ Additional Download Manager from KGet
 <listitem
 ><para
 >&HTML; sayfalarını görüntülemekte kullanılan kodlamayı seçmenize olanak tanır. <guimenuitem
->Öntanımlı</guimenuitem
+>Varsayılan</guimenuitem
 >, genelde en iyi seçimdir.</para
 ></listitem>
 </varlistentry>
@@ -5493,12 +5493,12 @@ Additional Download Manager from KGet
 > <guimenu
 >Görünüm</guimenu
 > <guimenuitem
->Önizleme</guimenuitem
+>Ön İzle</guimenuitem
 ></menuchoice
 > (Dosya Yöneticisi kipi)</term>
 <listitem
 ><para
->Farklı görünüm kiplerinde, dosya içeriğinin sembolik bir önizlemesini <action
+>Farklı görünüm kiplerinde, dosya içeriğinin sembolik bir ön izlemesini <action
 >görüntüler</action
 >.</para
 ></listitem>
@@ -6453,7 +6453,7 @@ Additional Download Manager from KGet
 >qtpaths --paths GenericCacheLocation</filename
 > klasöründeki <filename class="directory"
 >kio_http/</filename
-> dosyası, tarayıcı önbelleğini barındırır.</para
+> dosyası, tarayıcı ön belleğini barındırır.</para
 ></listitem>
 
 </itemizedlist>
@@ -6500,7 +6500,7 @@ Additional Download Manager from KGet
 </itemizedlist>
 <note
 ><para
->Ayrıca kdeutils modülündeki &sweeper; uygulamasını kullanarak çerezleri, site simgelerini, web geçmişini ve önbelleğini, form tamamlama girdilerini ve ziyaret edilen web sitelerinin önbellek politikalarını temizleyebilirsiniz.</para
+>Ayrıca kdeutils modülündeki &sweeper; uygulamasını kullanarak çerezleri, site simgelerini, web geçmişini ve ön belleğini, form tamamlama girdilerini ve ziyaret edilen web sitelerinin ön bellek politikalarını temizleyebilirsiniz.</para
 ></note>
 </answer>
 </qandaentry>
@@ -6508,7 +6508,7 @@ Additional Download Manager from KGet
 <qandaentry>
 <question
 ><para
->Tarayıcı önbelleğini nasıl etkinleştiririm, devre dışı bırakırım veya temizlerim?</para
+>Tarayıcı ön belleğini nasıl etkinleştiririm, devre dışı bırakırım veya temizlerim?</para
 ></question>
 <answer>
 <para
@@ -6522,9 +6522,9 @@ Additional Download Manager from KGet
 ><guimenu
 >Web Tarama</guimenu
 ><guimenuitem
->Önbellek</guimenuitem
+>Ön Bellek</guimenuitem
 > </menuchoice
-> sayfasını açarsanız size, önbelleği devre dışı bırakmanıza, temizlemenize veya boyutunu ayarlayıp politikasını kurmaya olanak tanıyacak seçenekler göreceksiniz.</para>
+> sayfasını açarsanız size, ön belleği devre dışı bırakmanıza, temizlemenize veya boyutunu ayarlayıp politikasını kurmaya olanak tanıyacak seçenekler göreceksiniz.</para>
 </answer>
 </qandaentry>
 

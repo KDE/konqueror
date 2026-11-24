@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2026-11-15 19:58+0300\n"
+"PO-Revision-Date: 2026-11-23 18:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -33,13 +33,13 @@ msgstr "Yer İmleri"
 #: history_module/history_dlg.ui:17
 #, kde-format
 msgid "Default action"
-msgstr "Öntanımlı Eylem"
+msgstr "Varsayılan Eylem"
 
 #. i18n: ectx: property (text), widget (QLabel, lDefault)
 #: history_module/history_dlg.ui:23
 #, kde-format
 msgid "Default action when double clicking an URL"
-msgstr "Bir URL’ye çift tıklayınca gerçekleştirilen öntanımlı eylem"
+msgstr "Bir URL’ye çift tıklayınca gerçekleştirilen varsayılan eylem"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbLimits)
 #: history_module/history_dlg.ui:36
@@ -212,12 +212,12 @@ msgstr "Yerler"
 #: sidebar_widget.cpp:84
 #, kde-format
 msgid "Restore All Removed Default Buttons"
-msgstr "Tüm Öntanımlı Düğmeleri Geri Yükle"
+msgstr "Tüm Varsayılan Düğmeleri Geri Yükle"
 
 #: sidebar_widget.cpp:85
 #, kde-format
 msgid "Rollback to System Default"
-msgstr "Sistem Öntanımlısına Dön"
+msgstr "Sistem Varsayılansına Dön"
 
 #: sidebar_widget.cpp:144 sidebar_widget.cpp:430
 #, kde-format
@@ -262,7 +262,7 @@ msgid ""
 "to proceed?</qt>"
 msgstr ""
 "<qt>Bu, kenar çubuğundan tüm girdilerinizi kaldırır ve sistem "
-"öntanımlılarını geri yükler.<br /><b>Bu işlem geri alınamaz.</b><br /"
+"varsayılanlarını geri yükler.<br /><b>Bu işlem geri alınamaz.</b><br /"
 ">Sürdürmek istiyor musunuz?</qt>"
 
 #: sidebar_widget.cpp:269

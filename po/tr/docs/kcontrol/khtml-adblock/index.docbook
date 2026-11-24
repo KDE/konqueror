@@ -56,10 +56,10 @@
 ></term>
 <listitem>
 <para
->Bu sekmenin ana kısmı, süzme eylemlerine karar vermek için görsel ve çerçeve adlarıyla karşılaştırılacak URL’lerin bir listesidir. Joker karakterler, dosya adı biçemli düzenli ifadeler olarak verilebilir.</para>
+>Bu sekmenin ana kısmı, süzme eylemlerine karar vermek için görsel ve çerçeve adlarıyla karşılaştırılacak URL’lerin bir listesidir. Joker karakterler, dosya adı stilli düzenli ifadeler olarak verilebilir.</para>
 
 <para
->Her süzme, dosya biçemi joker karakter dizisi olarak (örneğin, http://www.site.com/ads/*)veya süzgeci eğik çizgilerle çevreleyerek tam bir düzenli ifade (örneğin, //(ads|dclk)\./) olarak ifade edilebilir.</para>
+>Her süzme, dosya stili joker karakter dizisi olarak (örneğin, http://www.site.com/ads/*)veya süzgeci eğik çizgilerle çevreleyerek tam bir düzenli ifade (örneğin, //(ads|dclk)\./) olarak ifade edilebilir.</para>
 
 <para
 >Herhangi bir süzgeç dizisinin önüne <literal
@@ -93,7 +93,7 @@
 <para
 >Bu sekme, önceden tanımlanmış AdBlock süzgeç girişlerine sahip adların ve &URL;’lerin bir listesini gösterir. Bir girişi etkinleştirmek için süzgeç adının yanındaki onay kutusunu işaretleyin ve <guilabel
 >Kendiliğinden güncelleme aralığı</guilabel
->’nı ayarlayın (öntanımlı olarak 7 gün). </para>
+>’nı ayarlayın (varsayılan olarak 7 gün). </para>
 </listitem>
 </varlistentry>
 

@@ -43,11 +43,11 @@
 <keyword
 >Görünüş</keyword>
 <keyword
->Yazıtipi</keyword>
+>Yazı Tipi</keyword>
 <keyword
 >CSS</keyword>
 <keyword
->Biçem Sayfaları</keyword>
+>Stil Sayfaları</keyword>
 <keyword
 >Erişilebilirlik</keyword>
 </keywordset>
@@ -68,7 +68,7 @@
 <para
 ><guilabel
 >Görselleri kendiliğinden yükle</guilabel
-> etiketli onay kutusu, web sayfalarındaki görsellerin öntanımlı olarak yüklenip yüklenmeyeceğini denetlemenizi sağlar. Çok yavaş bir bağlantınız yoksa görseller olmadan kullanımı zor olan birçok web sayfası olduğu için büyük olasılıkla bu seçeneği işaretli bırakmak isteyeceksiniz. Görselleri kendiliğinden yükleme seçeneğini seçmezseniz sayfadaki metni görüntüleyebilir ve ardından gereksiniminiz varsa görselleri yükleyebilirsiniz.</para>
+> etiketli onay kutusu, web sayfalarındaki görsellerin varsayılan olarak yüklenip yüklenmeyeceğini denetlemenizi sağlar. Çok yavaş bir bağlantınız yoksa görseller olmadan kullanımı zor olan birçok web sayfası olduğu için büyük olasılıkla bu seçeneği işaretli bırakmak isteyeceksiniz. Görselleri kendiliğinden yükleme seçeneğini seçmezseniz sayfadaki metni görüntüleyebilir ve ardından gereksiniminiz varsa görselleri yükleyebilirsiniz.</para>
 
 <para
 ><guilabel
@@ -78,14 +78,14 @@
 <para
 >Birçok web sayfası hareketli GIF görselleri kullanır ve bunlar çok can sıkıcı olabilir ve bazı durumlarda sistem özkaynaklarınızı büyük oranda tüketebilir. <guilabel
 >Canlandırmalar</guilabel
-> seçeneği, canlandırmaların ne zaman etkinleştirileceğini seçmenize olanak tanır. Öntanımlı olarak etkindir; ancak bunu devre dışı olarak ayarlayabilir veya dosyanın kendisi canlandırmanın daha fazla kez veya sürekli olarak çalışması gerektiğine dair yönergeler içerse bile canlandırmayı yalnızca bir kez çalıştırabilirsiniz.</para>
+> seçeneği, canlandırmaların ne zaman etkinleştirileceğini seçmenize olanak tanır. Varsayılan olarak etkindir; ancak bunu devre dışı olarak ayarlayabilir veya dosyanın kendisi canlandırmanın daha fazla kez veya sürekli olarak çalışması gerektiğine dair yönergeler içerse bile canlandırmayı yalnızca bir kez çalıştırabilirsiniz.</para>
 
 <para
 >Sonraki ayar <guilabel
 >Bağlantıların altını çiz:</guilabel
 > ayarıdır. Bağlantıların altını çizmeyi <guilabel
 >Etkin</guilabel
-> yapabilirsiniz . Bu seçenek seçilirse web sayfalarında bağlantı işlevi gören tüm metinler altı çizili bir yazıtipinde gösterilir. Birçok web sayfası bağlantı işlevi gören metni ayırt etmek için renk kullanırken, altını çizmek bağlantıları fark etmeyi çok daha kolaylaştırır.</para>
+> yapabilirsiniz . Bu seçenek seçilirse web sayfalarında bağlantı işlevi gören tüm metinler altı çizili bir yazı tipinde gösterilir. Birçok web sayfası bağlantı işlevi gören metni ayırt etmek için renk kullanırken, altını çizmek bağlantıları fark etmeyi çok daha kolaylaştırır.</para>
 
 <para
 >Altı çizili bağlantıları sevmiyorsanız <guilabel
@@ -129,45 +129,45 @@
 <sect2 id="fonts"
 > <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-appearance"-->
 <title
->Yazıtipleri</title>
+>Yazı Tipleri</title>
 <para
->Bu sekme altında, yazıtiplerinin kullanımıyla ilgili çeşitli seçenekleri seçebilirsiniz. Yazıtiplerinin şekilleri ve boyutları genellikle bir web sayfasının tasarımının bir parçası olsa da, &konqueror; için kullanılacak bazı öntanımlı ayarlar seçilebilir.</para>
+>Bu sekme altında, yazı tiplerinin kullanımıyla ilgili çeşitli seçenekleri seçebilirsiniz. Yazı tiplerinin şekilleri ve boyutları genellikle bir web sayfasının tasarımının bir parçası olsa da, &konqueror; için kullanılacak bazı varsayılan ayarlar seçilebilir.</para>
 
 <para
->Burada ayarlayabileceğiniz ilk şey yazıtipi puntosudur. Rahat bir tarama deneyimi yaşamanızı sağlamak için birlikte çalışan iki ayar vardır.</para>
+>Burada ayarlayabileceğiniz ilk şey yazı tipi puntosudur. Rahat bir tarama deneyimi yaşamanızı sağlamak için birlikte çalışan iki ayar vardır.</para>
 
 <para
 >Öncelikle, <guilabel
->En küçük yazıtipi puntosu</guilabel
-> seçeneğini ayarlayabilirsiniz. Bu, yazıtipi puntosu görüntülediğiniz sayfada özel olarak ayarlanmış olsa bile, &konqueror; bu yönergeleri görmezden gelecek ve burada ayarladığınızdan daha küçük yazıtiplerini asla göstermeyecektir.</para>
+>En küçük yazı tipi puntosu</guilabel
+> seçeneğini ayarlayabilirsiniz. Bu, yazı tipi puntosu görüntülediğiniz sayfada özel olarak ayarlanmış olsa bile, &konqueror; bu yönergeleri görmezden gelecek ve burada ayarladığınızdan daha küçük yazı tiplerini asla göstermeyecektir.</para>
 
 <para
 >Sonra <guilabel
->Orta yazıtipi puntosu</guilabel
-> seçeneğini ayarlayabilirsiniz. Bu yalnızca sayfanın ölçüleri belirtmediğinde kullanılan öntanımlı metin büyüklüğü değil, aynı zamanda göreceli yazıtipi puntosunun hesaplandığı temel ölçü olarak da kullanılır. Yani, &HTML; yönergesi <quote
+>Orta yazı tipi puntosu</guilabel
+> seçeneğini ayarlayabilirsiniz. Bu yalnızca sayfanın ölçüleri belirtmediğinde kullanılan varsayılan metin büyüklüğü değil, aynı zamanda göreceli yazı tipi puntosunun hesaplandığı temel ölçü olarak da kullanılır. Yani, &HTML; yönergesi <quote
 >daha küçük</quote
 >, bu seçenek için ayarladığınız boyuttan daha küçük anlamına gelir.</para>
 
 <para
->Her iki seçenek için de, seçenek etiketinin yanındaki yukarı/aşağı döndürme denetimini kullanarak (veya yazarak) tam yazıtipi boyutunu punto olarak seçebilirsiniz.</para>
+>Her iki seçenek için de, seçenek etiketinin yanındaki yukarı/aşağı döndürme denetimini kullanarak (veya yazarak) tam yazı tipi boyutunu punto olarak seçebilirsiniz.</para>
 
 <para
->Bu seçenekler birbirinden bağımsızdır. Yazıtipi puntosu ayarlamayan veya öntanımlıyı isteyen sayfalar, <guilabel
->Orta yazıtipi puntosu</guilabel
+>Bu seçenekler birbirinden bağımsızdır. Yazı tipi puntosu ayarlamayan veya varsayılanı isteyen sayfalar, <guilabel
+>Orta yazı tipi puntosu</guilabel
 > ayarınızdan ayarladığınız büyüklükte görüntülenirken, <guilabel
->En küçük yazıtipi puntosu</guilabel
+>En küçük yazı tipi puntosu</guilabel
 > ayarınızdan daha küçük bir ölçü isteyen sayfalar bunun yerine o büyüklüğü gösterecektir. Biri diğerini etkilemez.</para>
 
 <para
->Geriye kalan seçenekler, yazıtiplerinin &HTML; sayfalarında kullanılan farklı işaretleme türleriyle ilişkilendirilmesine yöneliktir. Birçok web sayfasının bu ayarları geçersiz kılabileceğini unutmayın. Herhangi bir yazıtipi türü için (Standart, Sabit, Serif, &etc;) isterseniz farklı bir yazıtipi seçebilirsiniz.</para>
+>Geriye kalan seçenekler, yazı tiplerinin &HTML; sayfalarında kullanılan farklı işaretleme türleriyle ilişkilendirilmesine yöneliktir. Birçok web sayfasının bu ayarları geçersiz kılabileceğini unutmayın. Herhangi bir yazı tipi türü için (Standart, Sabit, Serif, &etc;) isterseniz farklı bir yazı tipi seçebilirsiniz.</para>
 
 <para
 >Bunun altında, <guilabel
->Bu kodlama için yazıtipi puntosu ayarlaması</guilabel
-> seçeneğini kullanabilirsiniz. Bazen belirli bir kodlama veya dil için kullanmak istediğiniz yazıtipleri ortalamadan çok daha büyük veya küçüktür, bu yüzden onları hizaya getirmek için bu ayar kullanılabilir.</para>
+>Bu kodlama için yazı tipi puntosu ayarlaması</guilabel
+> seçeneğini kullanabilirsiniz. Bazen belirli bir kodlama veya dil için kullanmak istediğiniz yazı tipleri ortalamadan çok daha büyük veya küçüktür, bu yüzden onları hizaya getirmek için bu ayar kullanılabilir.</para>
 
 <para
->Sayfalar sunulurken &konqueror; tarafından varsayılması gereken öntanımlı bir kodlama ayarlayabilirsiniz. Öntanımlı ayar, <guilabel
+>Sayfalar sunulurken &konqueror; tarafından varsayılması gereken varsayılan bir kodlama ayarlayabilirsiniz. Varsayılan ayar, <guilabel
 >Dil Kodlamasını Kullan</guilabel
 >’dır; ancak bunu listede bulunan herhangi bir kodlamayla değiştirebilirsiniz.</para>
 
@@ -176,7 +176,7 @@
 <sect2 id="stylesheets">
 
 <title
->Biçem Sayfaları</title>
+>Stil Sayfaları</title>
 
 <sect3>
 <title
@@ -185,7 +185,7 @@
 <para
 ><acronym
 >CSS</acronym
-> biçem sayfaları, web sayfalarının nasıl görüntüleneceğini belirler. <acronym
+> stil sayfaları, web sayfalarının nasıl görüntüleneceğini belirler. <acronym
 >CSS</acronym
 >, İngilizce <emphasis
 >C</emphasis
@@ -196,7 +196,7 @@
 >heets kalıbının kısaltılmış halidir.</para>
 
 <para
->&konqueror; masaüstünüz için kullandığınız basit öntanımlılara ve renk şemasına dayalı kendi biçem sayfasını kullanabilir. &konqueror; ayrıca kendiniz yazdığınız bir biçem sayfasını da kullanabilir. Son olarak, bu modülde bir biçem sayfası belirtebilirsiniz. Bu modülde sunulan seçenekler, özellikle görme engelli kişiler için erişilebilirlik amaçlarına göre ayarlanmıştır.</para>
+>&konqueror; masaüstünüz için kullandığınız basit varsayılanlara ve renk şemasına dayalı kendi stil sayfasını kullanabilir. &konqueror; ayrıca kendiniz yazdığınız bir stil sayfasını da kullanabilir. Son olarak, bu modülde bir stil sayfası belirtebilirsiniz. Bu modülde sunulan seçenekler, özellikle görme engelli kişiler için erişilebilirlik amaçlarına göre ayarlanmıştır.</para>
 
 <para
 >Burada yaptığınız tüm seçimler, HTML sayfalarını &kde;’nin kendi sunucusuyla sunan her bir &kde; uygulamasını etkiler. Bunlar arasında &kmail;, &khelpcenter; ve elbette &konqueror; vardır. Buradaki seçimler; örneğin, &firefox; gibi başka tarayıcıları etkilemez.</para>
@@ -205,7 +205,7 @@
 
 <sect3 id="css-general">
 <title
->Biçem Sayfaları</title>
+>Stil Sayfaları</title>
 
 <para
 >Bu bölüm aşağıdaki seçenekleri içerir:</para>
@@ -214,22 +214,22 @@
 <varlistentry>
 <term
 ><guilabel
->Öntanımlı biçem sayfasını kullan</guilabel
+>Varsayılan stil sayfasını kullan</guilabel
 ></term>
 <listitem>
 <para
->&kde;, öntanımlı biçem sayfasını kullanacaktır. Bazı renkler seçtiğiniz renk şemasında tanımlananlara öntanımlı olarak ayarlanır. Çoğu ayar, görüntülediğiniz sayfa tarafından kolayca geçersiz kılınabilir.</para>
+>&kde;, varsayılan stil sayfasını kullanacaktır. Bazı renkler seçtiğiniz renk şemasında tanımlananlara varsayılan olarak ayarlanır. Çoğu ayar, görüntülediğiniz sayfa tarafından kolayca geçersiz kılınabilir.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><guilabel
->Kullanıcı tanımlı biçem sayfası kullan</guilabel
+>Kullanıcı tanımlı stil sayfası kullan</guilabel
 ></term>
 <listitem>
 <para
->&kde; kendinizin yazdığı bir biçem sayfasını kullanacaktır. Biçem sayfasını sisteminizde bulmak için Göz At düğmesini kullanabilirsiniz. <acronym
+>&kde; kendinizin yazdığı bir stil sayfasını kullanacaktır. Stil sayfasını sisteminizde bulmak için Göz At düğmesini kullanabilirsiniz. <acronym
 >CSS</acronym
 > dosyaları geleneksel olarak <literal role="extension"
 >.css</literal
@@ -240,13 +240,13 @@
 <varlistentry>
 <term
 ><guilabel
->Erişilebilirlik biçem sayfasını kullan</guilabel
+>Erişilebilirlik stil sayfasını kullan</guilabel
 ></term>
 <listitem>
 <para
 ><guilabel
 >Özelleştir</guilabel
-> iletişim kutusunda tanımlanan ayarları kullanın. Bu seçeneği etkinleştirmek, biçem sayfası ayarlarını tanımlamak için bir iletişim kutusu başlatmak üzere <guibutton
+> iletişim kutusunda tanımlanan ayarları kullanın. Bu seçeneği etkinleştirmek, stil sayfası ayarlarını tanımlamak için bir iletişim kutusu başlatmak üzere <guibutton
 >Özelleştir</guibutton
 > düğmesini etkinleştirecektir.</para>
 </listitem>
@@ -260,17 +260,17 @@
 >Özelleştir</title>
 
 <para
->Bu iletişim kutusunda bir kullanıcı biçem sayfası ayarlayabilirsiniz. Kullanılabilir seçenekler, bir biçem sayfasına ekleyebileceğiniz yönergelerin yalnızca bir alt kümesidir ve görme engelli kişilere yöneliktir, kullanıcıların web sayfalarını ve &kde; yardım dosyalarını daha okunabilir hale getiren bir biçem sayfası oluşturmasına olanak tanır.</para>
+>Bu iletişim kutusunda bir kullanıcı stil sayfası ayarlayabilirsiniz. Kullanılabilir seçenekler, bir stil sayfasına ekleyebileceğiniz yönergelerin yalnızca bir alt kümesidir ve görme engelli kişilere yöneliktir, kullanıcıların web sayfalarını ve &kde; yardım dosyalarını daha okunabilir hale getiren bir stil sayfası oluşturmasına olanak tanır.</para>
 
 <para
 ><guilabel
->Erişilebilirlik biçem sayfasını kullan</guilabel
+>Erişilebilirlik stil sayfasını kullan</guilabel
 >’ı seçmediğiniz sürece bu iletişim kutusundaki seçenekler devre dışıdır.</para>
 
 <sect4>
 <title
 ><guilabel
->Yazıtipi Ailesi</guilabel
+>Yazı Tipi Ailesi</guilabel
 ></title>
 
 <variablelist>
@@ -281,7 +281,7 @@
 ></term>
 <listitem>
 <para
->Gövde metni için kullanılacak olan yazıtipi ailesini seçin.</para>
+>Gövde metni için kullanılacak olan yazı tipi ailesini seçin.</para>
 </listitem>
 </varlistentry>
 
@@ -292,7 +292,7 @@
 ></term>
 <listitem>
 <para
->Bunu etkinleştirirseniz görüntülediğiniz sayfadaki ayarlardan bağımsız olarak tüm metinler için aynı yazıtipi ailesi kullanılacaktır. Bu, başlıklar için dekoratif veya okunması zor bir yazıtipi kullanan sayfalar için yararlıdır.</para>
+>Bunu etkinleştirirseniz görüntülediğiniz sayfadaki ayarlardan bağımsız olarak tüm metinler için aynı yazı tipi ailesi kullanılacaktır. Bu, başlıklar için dekoratif veya okunması zor bir yazı tipi kullanan sayfalar için yararlıdır.</para>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -300,17 +300,17 @@
 
 <sect4>
 <title
->Yazıtipi Puntosu</title>
+>Yazı Tipi Puntosu</title>
 
 <variablelist>
 <varlistentry>
 <term
 ><guilabel
->Taban yazıtipi puntosu</guilabel
+>Taban yazı tipi puntosu</guilabel
 ></term>
 <listitem>
 <para
->Bu, sayfadaki metin için öntanımlı boyuttur. Birçok web sitesi, yazıtipi boyutlarını bu öntanımlıya göre ayarlar ve metni büyütmek için <quote
+>Bu, sayfadaki metin için varsayılan boyuttur. Birçok web sitesi, yazı tipi boyutlarını bu varsayılana göre ayarlar ve metni büyütmek için <quote
 >daha büyük</quote
 > veya <quote
 >+1</quote
@@ -320,9 +320,9 @@
 >−1</quote
 > kullanır.</para>
 <para
->Pek çok kişi web sayfalarını, ortalama bir kullanıcının okuyabileceği boyuttan çok daha büyük olan platformlarda tasarlıyor; dolayısıyla, yazıtipinin bu şekilde küçültüldüğü web sayfalarıyla karşılaşmak çok yaygındır.</para>
+>Pek çok kişi web sayfalarını, ortalama bir kullanıcının okuyabileceği boyuttan çok daha büyük olan platformlarda tasarlıyor; dolayısıyla, yazı tipinin bu şekilde küçültüldüğü web sayfalarıyla karşılaşmak çok yaygındır.</para>
 <para
->Bu ayar, öntanımlı yazıtipini rahat bir boyuta ayarlamanıza olanak tanır; böylece, göreceli boyutlar da rahat olacak şekilde büyütülür.</para>
+>Bu ayar, varsayılan yazı tipini rahat bir boyuta ayarlamanıza olanak tanır; böylece, göreceli boyutlar da rahat olacak şekilde büyütülür.</para>
 <para
 >Ayrıca, metnin okunamayacak kadar küçük olmaması için &konqueror;’da en küçük bir boyut belirleyebileceğinizi de unutmayın. </para>
 </listitem>
@@ -335,7 +335,7 @@
 ></term>
 <listitem>
 <para
->Bu seçeneği etkinleştirirseniz sayfanın içerdiği yönergelerden bağımsız olarak tüm metinler belirttiğiniz yazıtipi puntosunda işlenir. Daha önce tartışılan göreceli yazıtipi puntoları ve hatta metnin belirli bir büyüklükte işlenmesi gerektiğine dair belirli yönergeler burada geçersiz kılınır.</para>
+>Bu seçeneği etkinleştirirseniz sayfanın içerdiği yönergelerden bağımsız olarak tüm metinler belirttiğiniz yazı tipi puntosunda işlenir. Daha önce tartışılan göreceli yazı tipi puntoları ve hatta metnin belirli bir büyüklükte işlenmesi gerektiğine dair belirli yönergeler burada geçersiz kılınır.</para>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -428,12 +428,12 @@
 
 <sect4>
 <title
->Önizleme</title>
+>Ön İzleme</title>
 
 <para
 ><guilabel
->Önizleme</guilabel
-> bölümü, değişikliklerinizin etkisini görmenizi sağlar. Biçem sayfanızla birlikte çeşitli başlık türleri ve öntanımlı gövde metninde bir tümce görüntülenir.</para>
+>Ön İzleme</guilabel
+> bölümü, değişikliklerinizin etkisini görmenizi sağlar. Stil sayfanızla birlikte çeşitli başlık türleri ve varsayılan gövde metninde bir tümce görüntülenir.</para>
 
 <para
 >Bu, rahatça okuyabileceğiniz duruma gelinceye kadar biçim dosyasınıza ince ayar yapmanıza izin vermelidir.</para>

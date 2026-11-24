@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:57+0000\n"
-"PO-Revision-Date: 2026-11-19 19:28+0300\n"
+"PO-Revision-Date: 2026-11-23 18:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -322,7 +322,7 @@ msgstr "Dilin karakter kümesini kullan"
 #: appearance.cpp:202
 #, kde-format
 msgid "Default encoding:"
-msgstr "Öntanımlı karakter kümesi:"
+msgstr "Varsayılan karakter kümesi:"
 
 #: appearance.cpp:204
 #, kde-format
@@ -330,7 +330,7 @@ msgid ""
 "Select the default encoding to be used; normally, you will be fine with 'Use "
 "language encoding' and should not have to change this."
 msgstr ""
-"Kullanılacak öntanımlı karakter kümesini seçin; normalde, “Dilin karakter "
+"Kullanılacak varsayılan karakter kümesini seçin; normalde, “Dilin karakter "
 "kümesini kullan” seçilidir ve bunu değiştirmenize gerek yoktur."
 
 #. i18n: ectx: property (title), widget (QGroupBox, cacheEnabled)
@@ -622,7 +622,7 @@ msgstr ""
 "edin. Bu tür çerezler, bilgisayarınızın sabit sürücüsünde veya depolama "
 "aygıtında depolanmayacaktır. Bunun yerine, onları kullanan tüm uygulamaları "
 "(örn. tarayıcınız) kapattığınızda silinirler.</p><p><u>NOT</u> Bu seçeneğin "
-"işaretlenmesi, oturum çerezleri için öntanımlı ve siteye özel çerez "
+"işaretlenmesi, oturum çerezleri için varsayılan ve siteye özel çerez "
 "politikalarını geçersiz kılar.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAutoAcceptSessionCookies)
@@ -663,14 +663,14 @@ msgstr ""
 "neden olur.</li>\n"
 "</ul><p>\n"
 "<u>NOT:</u> Aşağıda ayarlanabilen alan adına özgü politikalar, her zaman "
-"öntanımlı politikaya göre önceliklidir.</p>\n"
+"varsayılan politikaya göre önceliklidir.</p>\n"
 "</qt>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, bgDefault)
 #: cookies/kcookiespolicies.ui:71
 #, kde-format
 msgid "Default Policy"
-msgstr "Öntanımlı Politika"
+msgstr "Varsayılan Politika"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPolicyAccept)
 #: cookies/kcookiespolicies.ui:77
@@ -714,7 +714,7 @@ msgstr ""
 "bilgileri girmeniz yeterlidir. Var olan bir politikayı değiştirmek için "
 "<b>Değiştir…</b> düğmesini kullanın ve politika iletişim kutusundan yeni "
 "politikayı seçin. <b>Sil</b> düğmesinin tıklanması, o anda seçili olan "
-"politikayı kaldırarak söz konusu alan adı için öntanımlı politika ayarının "
+"politikayı kaldırarak söz konusu alan adı için varsayılan politika ayarının "
 "kullanılmasına neden olur, oysa <b>Tümünü Sil</b>, siteye özgü tüm "
 "politikaları kaldırır.\n"
 "</qt>"
@@ -748,7 +748,7 @@ msgid ""
 msgstr ""
 "<qt>\n"
 "Belirli bir çerez politikası ayarladığınız sitelerin listesi. Belirli "
-"politikalar, bu siteler için öntanımlı politikaya göre önceliklidir.\n"
+"politikalar, bu siteler için varsayılan politikaya göre önceliklidir.\n"
 "</qt>"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, policyTreeWidget)
@@ -899,14 +899,14 @@ msgid ""
 "<b>Use default stylesheet</b><p>Select this option to use the default "
 "stylesheet.</p>"
 msgstr ""
-"<b>Öntanımlı stil sayfasını kullan</b><p>Bu seçeneği öntanımlı stil "
+"<b>Varsayılan stil sayfasını kullan</b><p>Bu seçeneği varsayılan stil "
 "sayfasını kullanmak için seçin.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useDefault)
 #: css/cssconfig.ui:38
 #, kde-format
 msgid "Us&e default stylesheet"
-msgstr "Öntanımlı &stil sayfasını kullan"
+msgstr "Varsayılan &stil sayfasını kullan"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
 #: css/cssconfig.ui:48
@@ -940,7 +940,7 @@ msgid ""
 "of the mouse. Simply wander over to the Customize... dialog and pick out "
 "your desired options.</p>"
 msgstr ""
-"<b>Erişilebilirlik stil sayfasını kullan</b> <p> Bu seçenek öntanımlı bir "
+"<b>Erişilebilirlik stil sayfasını kullan</b> <p> Bu seçenek varsayılan bir "
 "yazı tipi, yazı tipi puntosu ve yazı tipi rengini birkaç fare tıklaması ile "
 "kullanmanıza olanak sağlar. İstenen seçenekleri Özelleştir… sekmesinden "
 "ayarlayın. </p>"
@@ -1243,7 +1243,7 @@ msgid ""
 "<b>Custom</b><p>Select this option to define a custom color for the default "
 "font.</p>"
 msgstr ""
-"<b>Özel</b><p>Bu ayarla öntanımlı yazı tipi rengini belirleyebilirsiniz.</p>"
+"<b>Özel</b><p>Bu ayarla varsayılan yazı tipi rengini belirleyebilirsiniz.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, customColor)
 #: css/csscustom.ui:209
@@ -1258,7 +1258,7 @@ msgid ""
 "<b>Background</b><p>This background color is the one displayed behind the "
 "text by default. A background image will override this.</p>"
 msgstr ""
-"<b>Arka plan</b><p>Bu arka plan rengi bir metin arkasında öntanımlı olarak "
+"<b>Arka plan</b><p>Bu arka plan rengi bir metin arkasında varsayılan olarak "
 "görünür. Arka plan resmi önemsenmez.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, txtBackground)
@@ -1274,7 +1274,7 @@ msgid ""
 "<b>Background</b><p>Behind this door lays the ability to choose a custom "
 "default background.</p>"
 msgstr ""
-"<b>Arka plan</b><p>Bu kapının ardında, özel bir öntanımlı arka plan seçme "
+"<b>Arka plan</b><p>Bu kapının ardında, özel bir varsayılan arka plan seçme "
 "özelliği bulunur..</p>"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
@@ -1285,7 +1285,7 @@ msgid ""
 "color to the default font as well as any custom fonts as specified in a "
 "stylesheet.</p>"
 msgstr ""
-"<b>Bütün metinde aynı rengi kullan</b><p>Bu ayarı seçtiğinizde öntanımlı "
+"<b>Bütün metinde aynı rengi kullan</b><p>Bu ayarı seçtiğinizde varsayılan "
 "yazı tipinde bu renk kullanılır.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sameColor)
@@ -1754,7 +1754,7 @@ msgstr ""
 #: generalopts.cpp:111
 #, kde-format
 msgid "Default web browser engine:"
-msgstr "Öntanımlı web tarayıcısı işletkesi:"
+msgstr "Varsayılan web tarayıcısı işletkesi:"
 
 #: generalopts.cpp:120
 #, kde-format
@@ -1977,7 +1977,7 @@ msgstr ""
 "basıp gerekli bilgileri çıkan iletişim kutusuna kutusuna girin. Var olan bir "
 "politikayı değiştirmek için <i>Değiştir…</i> düğmesine basın ve iletişim "
 "kutusundan yeni politikayı seçin. <i>Sil</i> düğmesine basmak seçili "
-"politikanın silinmesini ve o alan adı için öntanımlı politikanın "
+"politikanın silinmesini ve o alan adı için varsayılan politikanın "
 "kullanılmasını sağlar.<i>Al</i> ve <i>Ver</i> düğmeleri, politikaları zip "
 "yardımıyla sıkıştırılmış dosyalarda saklayarak ve alarak diğer kişiler ile "
 "paylaşmanızı sağlar."
@@ -1993,7 +1993,7 @@ msgid ""
 msgstr ""
 "<p>Bu kutu JavaScript politikası belirlediğiniz etki alanlarını ve "
 "makineleri içerir. Bu politika bu etki alanı ve makinelerden gönderilen "
-"sayfalardaki JavaScriptleri çalıştırıp çalıştırmamada öntanımlı politika "
+"sayfalardaki JavaScriptleri çalıştırıp çalıştırmamada varsayılan politika "
 "yerine kullanılacaktır.</p><p>Bir politika seçin ve sağdaki denetimleri "
 "kullanarak onu düzenleyin.</p>"
 
@@ -2610,7 +2610,7 @@ msgid ""
 "one in the list below and change it according to your needs.</p></body></"
 "html>"
 msgstr ""
-"<html><head/><body><p>Öntanımlı tanımlama devre dışıyken kullanılacak "
+"<html><head/><body><p>Varsayılan tanımlama devre dışıyken kullanılacak "
 "tarayıcı tanımlaması.</p><p>Bunu elle girebilirsiniz veya aşağıdaki listeden "
 "başlayıp gereksinimlerinize göre değiştirebilirsiniz.</p></body></html>"
 
@@ -2622,13 +2622,13 @@ msgid ""
 "and use the default one</p></body></html>"
 msgstr ""
 "<html><head/><body><p>İşaretlenmişse özel bir tanımlama bilgisini reddedilir "
-"ve öntanımlı olan kullanılır.</p></body></html>"
+"ve varsayılan olan kullanılır.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useDefaultUA)
 #: useragent/useragent.ui:204
 #, kde-format
 msgid "Use &default identification"
-msgstr "Ö&ntanımlı tanımlamayı kullan"
+msgstr "&Varsayılan tanımlamayı kullan"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: useragent/useragent.ui:214
