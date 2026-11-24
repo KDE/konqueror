@@ -132,7 +132,7 @@
 ></term>
 <listitem>
 <para
->Alt klasörler öntanımlı olarak üst ögelerinde gösterilir. Bu seçeneği etkinleştirirseniz alt klasörler kendi başlarına görüntülenir. Daha az güzel görünürler; ancak iki sütuna yayılmak istediğiniz çok büyük bir klasörünüz varsa yardımcı olabilir.</para>
+>Alt klasörler varsayılan olarak üst ögelerinde gösterilir. Bu seçeneği etkinleştirirseniz alt klasörler kendi başlarına görüntülenir. Daha az güzel görünürler; ancak iki sütuna yayılmak istediğiniz çok büyük bir klasörünüz varsa yardımcı olabilir.</para>
 </listitem>
 </varlistentry>
 
@@ -151,27 +151,27 @@
 
 <sect2 id="conf-cache">
 <title
->Piksel eşlemi önbelleği</title>
+>Piksel eşlemi ön belleği</title>
 <variablelist>
 <varlistentry>
 <term
 ><guilabel
->Disk önbelleği boyutu</guilabel
+>Disk ön belleği boyutu</guilabel
 ></term>
 <listitem>
 <para
->Piksel eşlemlerini önbellemek için ne kadar alan gerekeceğini belirtin.</para>
+>Piksel eşlemlerini ön belleğe almak için ne kadar alan gerekeceğini belirtin.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><guilabel
->Önbelleği Temizle</guilabel
+>Ön Belleği Temizle</guilabel
 ></term>
 <listitem>
 <para
->Önbelleğe alınan tüm görselleri kaldırın. Bazı site simgeleri çürürse ve kendiliğinden yenilenmezse bu gerekli olabilir.</para>
+>Ön belleğe alınan tüm görselleri kaldırın. Bazı site simgeleri çürürse ve kendiliğinden yenilenmezse bu gerekli olabilir.</para>
 </listitem>
 </varlistentry>
 </variablelist>
