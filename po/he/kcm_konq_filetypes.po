@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-11 10:45+0000\n"
-"PO-Revision-Date: 2026-11-21 08:47+0200\n"
+"PO-Revision-Date: 2026-11-24 12:16+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
@@ -64,6 +64,9 @@ msgid ""
 "file type 'text/plain'; all files ending in '.txt' are recognized as plain "
 "text files."
 msgstr ""
+"התיבה הזאת מכילה רשימה של תבניות שאפשר להשתמש בהן כדי לזהות קבצים מהסוג "
+"הנבחר. למשל, התבנית ‎*.txt משויכת לסוג הקובץ ‚text/plain’ (טקסט/פשוט), כל "
+"הקבצים שמסתיימים ב־‚‎.txt’ מזוהים כקובצי טקסט פשוט."
 
 #: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
 #, kde-format
@@ -227,6 +230,10 @@ msgid ""
 "of them being used (but the file type determination from file contents can "
 "still end up using them)."
 msgstr ""
+"לחיצה כאן תמחק את הגדרת סוג הקובץ הזה לחלוטין. לא ניתן למחוק סוגי קבצים כלל "
+"מערכתיים. עם זאת, אפשר לרוקן את רשימת התבניות שלהם, כדי למזער את הסיכוי "
+"שייעשה בהם שימוש (אבל הסקת סוג הקובץ לפי תוכן הקובץ עדיין יכולה לגרום לכך "
+"שייעשה בהם שימוש)."
 
 #: kservicelistwidget.cpp:46
 #, kde-format
@@ -252,6 +259,10 @@ msgid ""
 "then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
+"זאת רשימה של יישומים שמשויכים לקבצים מסוג הקובץ הנבחר. הרשימה הזאת מופיעה "
+"בתפריטי ההקשר של Konqueror עקב בחירה ב„פתיחה עם…”. אם יש יותר מיישום אחד "
+"משויך לסוג הקובץ הזה, אז הרשימה מסודרת לפי עדיפות כאשר הפריט העליון קודם "
+"בעדיפות ביחס לאלו שאחריו."
 
 #: kservicelistwidget.cpp:68
 #, kde-format
@@ -262,6 +273,10 @@ msgid ""
 "type, then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
+"זאת רשימת השירותים שמשויכים לקבצים מסוג הקובץ הנבחר. הרשימה הזאת מופיע "
+"בתפריטי ההקשר של Konqueror בעת בחירה באפשרות „תצוגה מקדימה עם…”. אם יותר "
+"משירות אחד משויך לסוג הקובץ הזה אז הרשימה מסודרת לפי עדיפות כאשר הפריט "
+"העליון קודם בעדיפות ביחס לאלו שאחריו."
 
 #: kservicelistwidget.cpp:80
 #, kde-format
@@ -276,6 +291,9 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
+"הקצאת עדיפות גבוהה יותר ליישום הנבחר,\n"
+"מעלה אותו במעלה הרשימה. לתשומת ליבך: משפיע רק\n"
+"על היישום הנבחר אם סוג הקובץ משויך ליותר מיישום אחד."
 
 #: kservicelistwidget.cpp:90
 #, kde-format
@@ -283,6 +301,8 @@ msgid ""
 "Assigns a higher priority to the selected\n"
 "service, moving it up in the list."
 msgstr ""
+"הקצאת עדיפות גבוהה לשירות הנבחר,\n"
+"עולה במעלה הרשימה."
 
 #: kservicelistwidget.cpp:93
 #, kde-format
@@ -297,6 +317,9 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
+"הקצאת עדיפות נמוכה יותר ליישום הנבחר,\n"
+"מוריד אותו במורד הרשימה. לתשומת ליבך: משפיע רק\n"
+"על היישום הנבחר אם סוג הקובץ משויך ליותר מיישום אחד."
 
 #: kservicelistwidget.cpp:102
 #, kde-format
@@ -372,7 +395,7 @@ msgstr "קבוצה:"
 #: newtypedlg.cpp:39
 #, kde-format
 msgid "Select the category under which the new file type should be added."
-msgstr ""
+msgstr "בחירת הקטגוריה שתחתיה להוסיף את סוג הקובץ החדש."
 
 #: newtypedlg.cpp:44
 #, kde-format
@@ -386,3 +409,5 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
+"נא להקליד את שם סוג הקובץ. למשל, אם בחרת ‚image’ כקטגוריה וכאן יוקלד ,"
+"custom’, סוג הקובץ ‚image/custom’ ייווצר."
