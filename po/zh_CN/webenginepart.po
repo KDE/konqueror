@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/konqueror/webenginepart.pot\n"
-"X-Crowdin-File-ID: 48596\n"
+"X-Crowdin-File: /kf6-stable/messages/konqueror/webenginepart.pot\n"
+"X-Crowdin-File-ID: 51086\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -31,76 +31,73 @@ msgstr "shuizhuyuanluo@126.com, tds00@qq.com, amesists@gmail.com"
 #, kde-format
 msgctxt "Permission to access the microphone"
 msgid "Microphone access"
-msgstr ""
+msgstr "麦克风访问"
 
 #: kcms/permissions/permissions.cpp:118
 #, kde-format
 msgctxt "Permission to access the webcam"
 msgid "Webcam access"
-msgstr ""
+msgstr "摄像头访问"
 
 #: kcms/permissions/permissions.cpp:120
 #, kde-format
 msgctxt "Permission to access the microphone and the webcam"
 msgid "Microphone and webcam access"
-msgstr ""
+msgstr "麦克风和摄像头访问"
 
 #: kcms/permissions/permissions.cpp:122
-#, fuzzy, kde-format
-#| msgid "Screen"
+#, kde-format
 msgctxt "Permission to access the user's screen"
 msgid "Screen access"
-msgstr "屏幕"
+msgstr "屏幕访问"
 
 #: kcms/permissions/permissions.cpp:124
 #, kde-format
 msgctxt "Permission to access the user's screen and application audio"
 msgid "Screen and application audio access"
-msgstr ""
+msgstr "屏幕和应用音频访问"
 
 #: kcms/permissions/permissions.cpp:126
 #, kde-format
 msgctxt "Permission to lock the mouse pointer inside the page"
 msgid "Mouse pointer locking"
-msgstr ""
+msgstr "鼠标指针锁定"
 
 #: kcms/permissions/permissions.cpp:128
 #, kde-format
 msgctxt "Permission to send notifications"
 msgid "Notifications"
-msgstr ""
+msgstr "通知"
 
 #: kcms/permissions/permissions.cpp:130
 #, kde-format
 msgctxt "Permission to access the user's physical location"
 msgid "Physical location access"
-msgstr ""
+msgstr "物理位置访问"
 
 #: kcms/permissions/permissions.cpp:132
-#, fuzzy, kde-format
-#| msgid "Allow access"
+#, kde-format
 msgctxt "Permission to read and write the user's clipboard"
 msgid "Clipboard access"
-msgstr "允许访问"
+msgstr "剪贴板访问"
 
 #: kcms/permissions/permissions.cpp:134
-#, fuzzy, kde-format
-#| msgid "Allow access"
+#, kde-format
 msgctxt "Permission to access the user's local fonts"
 msgid "Local fonts access"
-msgstr "允许访问"
+msgstr "本地字体访问"
 
 #: kcms/permissions/permissions.cpp:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access audio sources such as a microphone"
-msgstr ""
+msgstr "访问麦克风等音频来源的权限"
 
 #: kcms/permissions/permissions.cpp:147
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access video sources such as a webcam"
-msgstr ""
+msgstr "访问摄像头等视频来源的权限"
 
 #: kcms/permissions/permissions.cpp:149
 #, kde-format
@@ -108,79 +105,73 @@ msgctxt "@info:tooltip"
 msgid ""
 "Permission to access audio sources such as a microphone and video sources "
 "such a webcam"
-msgstr ""
+msgstr "访问麦克风等音频来源和摄像头等视频来源的权限"
 
 #: kcms/permissions/permissions.cpp:151
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><b>%1</b> would like to access information about your current "
-#| "physical location"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access screen contents"
-msgstr "<html><b>%1</b> 想获取您的物理位置信息"
+msgstr "访问屏幕内容的权限"
 
 #: kcms/permissions/permissions.cpp:153
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access screen contents and application audio"
-msgstr ""
+msgstr "访问屏幕内容和应用程序音频的权限"
 
 #: kcms/permissions/permissions.cpp:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to lock the mouse pointer inside a specific part of the page"
-msgstr ""
+msgstr "锁定鼠标指针到页面的权限"
 
 #: kcms/permissions/permissions.cpp:157
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to send notifications"
-msgstr ""
+msgstr "发送通知的权限"
 
 #: kcms/permissions/permissions.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access your physical location"
-msgstr ""
+msgstr "访问您的物理位置的权限"
 
 #: kcms/permissions/permissions.cpp:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to read and modify the contents of the clipboard"
-msgstr ""
+msgstr "读取和修改剪贴板内容的权限"
 
 #: kcms/permissions/permissions.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><b>%1</b> would like to access information about your current "
-#| "physical location"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Permission to access the fonts installed on your machine"
-msgstr "<html><b>%1</b> 想获取您的物理位置信息"
+msgstr "访问安装在您机器上的字体的权限"
 
 #: kcms/permissions/permissions.cpp:175
 #, kde-format
 msgctxt "@item:inlistbox Ask for permission next time"
 msgid "Ask next time"
-msgstr ""
+msgstr "下次询问"
 
 #: kcms/permissions/permissions.cpp:177
 #, kde-format
 msgctxt "@item:inlistbox Ask for permission every time"
 msgid "Ask every time"
-msgstr ""
+msgstr "每次询问"
 
 #: kcms/permissions/permissions.cpp:180
 #, kde-format
 msgctxt "@item:inlistbox The permission has been granted"
 msgid "Granted"
-msgstr ""
+msgstr "允许"
 
 #: kcms/permissions/permissions.cpp:182
 #, kde-format
 msgctxt "@item:inlistbox The permission has been denied"
 msgid "Denied"
-msgstr ""
+msgstr "拒绝"
 
 #: kcms/permissions/permissions.cpp:194
 #, kde-format
@@ -188,57 +179,55 @@ msgctxt "@info:tooltip"
 msgid ""
 "The permission has never been asked before. You'll be asked the next time "
 "the web page requires it"
-msgstr ""
+msgstr "此权限之前从未被请求过。下次网页需要时，会要求您的授权。"
 
 #: kcms/permissions/permissions.cpp:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You'll be asked for the permission every time a page requires it"
-msgstr ""
+msgstr "每次页面需要时，都会要求您授权"
 
 #: kcms/permissions/permissions.cpp:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have already granted this permission"
-msgstr ""
+msgstr "您已授予此权限"
 
 #: kcms/permissions/permissions.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "You have already denied this permission"
-msgstr ""
+msgstr "您已拒绝此权限"
 
 #: kcms/permissions/permissions.cpp:278
 #, kde-format
 msgctxt "@title:column The type of permission"
 msgid "Permission type"
-msgstr ""
+msgstr "权限类型"
 
 #: kcms/permissions/permissions.cpp:279 kcms/permissions/permissions.cpp:306
 #, kde-format
 msgctxt "@title:column The status of a permission permission"
 msgid "Status"
-msgstr ""
+msgstr "状态"
 
 #: kcms/permissions/permissions.cpp:305
 #, kde-format
 msgctxt "@title:column the origin the permission was granted to"
 msgid "Origin"
-msgstr ""
+msgstr "来源"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Permissions)
 #: kcms/permissions/permissions.ui:14
 #, kde-format
 msgid "Form"
-msgstr ""
+msgstr "表单"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: kcms/permissions/permissions.ui:20
-#, fuzzy, kde-format
-#| msgctxt "@action:grant permission"
-#| msgid "&Grant permission"
+#, kde-format
 msgid "Persistent permission policy"
-msgstr "授权(&G)"
+msgstr "持久性权限策略"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, defaultPermissionPolicy)
 #: kcms/permissions/permissions.ui:33
@@ -259,53 +248,60 @@ msgid ""
 "time, regardless of this setting.</p>\n"
 "</body></html>"
 msgstr ""
+"<html><head/><body><p>当页面需要权限时的处理方式：</p>\n"
+"<ul>\n"
+"<li><strong>每次询问</strong>：网页请求权限时，每次都要求用户授予或拒绝权限</"
+"li>\n"
+"<li><strong>每个会话仅询问一次</strong>：网页首次请求权限时要求用户授权，之后"
+"在当前 Konqueror 会话期间重复使用相同的选择</li>\n"
+"<li><strong>仅询问一次</strong>：网页首次请求权限时要求用户授权，之后永远使用"
+"相同的选择</li>\n"
+"</ul>\n"
+"<p><strong>注意</strong>：出于安全考虑，某些权限 (例如访问麦克风或摄像头的权"
+"限) 无论此设置如何，每次都会要求用户授权。</p>\n"
+"</body></html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, defaultPermissionPolicy)
 #: kcms/permissions/permissions.ui:37
 #, kde-format
 msgid "Ask every time"
-msgstr ""
+msgstr "每次询问"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, defaultPermissionPolicy)
 #: kcms/permissions/permissions.ui:42
 #, kde-format
 msgid "Only ask once per session"
-msgstr ""
+msgstr "每个会话仅询问一次"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, defaultPermissionPolicy)
 #: kcms/permissions/permissions.ui:47
-#, fuzzy, kde-format
-#| msgid "Only this cookie"
+#, kde-format
 msgid "Only ask once"
-msgstr "仅这个 Cookie"
+msgstr "仅询问一次"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: kcms/permissions/permissions.ui:58
-#, fuzzy, kde-format
-#| msgctxt "@action:deny permission"
-#| msgid "&Deny permission"
+#, kde-format
 msgid "Existing permissions"
-msgstr "拒绝(&D)"
+msgstr "当前权限"
 
 #. i18n: ectx: property (text), widget (QPushButton, resetAllPermissionsBtn)
 #: kcms/permissions/permissions.ui:79
-#, fuzzy, kde-format
-#| msgctxt "@action:deny permission"
-#| msgid "&Deny permission"
+#, kde-format
 msgid "Reset all permissions"
-msgstr "拒绝(&D)"
+msgstr "重置所有权限"
 
 #. i18n: ectx: property (text), widget (QRadioButton, groupByOrigin)
 #: kcms/permissions/permissions.ui:103
 #, kde-format
 msgid "By origin"
-msgstr ""
+msgstr "按来源"
 
 #. i18n: ectx: property (text), widget (QRadioButton, groupByType)
 #: kcms/permissions/permissions.ui:113
 #, kde-format
 msgid "By type"
-msgstr ""
+msgstr "按类型"
 
 #: src/about/konq_aboutpage.cpp:84
 #, kde-format
@@ -1000,69 +996,64 @@ msgstr "授权(&G)"
 msgid ""
 "<html><b>%1</b> would like to access your microphone and other audio capture "
 "devices"
-msgstr "<html><b>%1</b> 想使用您的麦克风及其他音频采集设备"
+msgstr "<html><b>%1</b> 想要访问您的麦克风及其他音频采集设备"
 
 #: src/ui/featurepermissionbar.cpp:53
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your camera and other video capture "
 "devices"
-msgstr "<html><b>%1</b> 想使用您的摄像头及其他视频采集设备"
+msgstr "<html><b>%1</b> 想要访问您的摄像头及其他视频采集设备"
 
 #: src/ui/featurepermissionbar.cpp:55
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access to your microphone, camera and other "
 "audio and video capture devices"
-msgstr "<html><b>%1</b> 想使用您的麦克风、摄像头及其他音频与视频采集设备"
+msgstr "<html><b>%1</b> 想要访问您的麦克风、摄像头及其他音频与视频采集设备"
 
 #: src/ui/featurepermissionbar.cpp:57
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen"
-msgstr "<html><b>%1</b> 想录制您的屏幕"
+msgstr "<html><b>%1</b> 想要录制您的屏幕"
 
 #: src/ui/featurepermissionbar.cpp:59
 #, kde-format
 msgid "<html><b>%1</b> would like to record your screen and your audio"
-msgstr "<html><b>%1</b> 想录制您的屏幕和音频"
+msgstr "<html><b>%1</b> 想要录制您的屏幕和音频"
 
 #: src/ui/featurepermissionbar.cpp:61
 #, kde-format
 msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
-msgstr "<html><b>%1</b> 想将您的光标锁在网页中"
+msgstr "<html><b>%1</b> 想要将您的光标锁定在网页中"
 
 #: src/ui/featurepermissionbar.cpp:63
 #, kde-format
 msgid "<html><b>%1</b> would like to send you notifications"
-msgstr "<html><b>%1</b> 想给您发送通知"
+msgstr "<html><b>%1</b> 想要向您发送通知"
 
 #: src/ui/featurepermissionbar.cpp:65
 #, kde-format
 msgid ""
 "<html><b>%1</b> would like to access information about your current physical "
 "location"
-msgstr "<html><b>%1</b> 想获取您的物理位置信息"
+msgstr "<html><b>%1</b> 想要访问您当前的物理位置"
 
 #: src/ui/featurepermissionbar.cpp:67
-#, fuzzy, kde-format
-#| msgid "<html><b>%1</b> would like to record your screen"
+#, kde-format
 msgid "<html><b>%1</b> would like to access your clipboard"
-msgstr "<html><b>%1</b> 想录制您的屏幕"
+msgstr "<html><b>%1</b> 想要访问您的剪贴板"
 
 #: src/ui/featurepermissionbar.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><b>%1</b> would like to access information about your current "
-#| "physical location"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access the fonts installed on your machine"
-msgstr "<html><b>%1</b> 想获取您的物理位置信息"
+msgstr "<html><b>%1</b> 想要访问安装在您机器上的字体"
 
 #: src/ui/featurepermissionbar.cpp:71
-#, fuzzy, kde-format
-#| msgid "<html><b>%1</b> would like to send you notifications"
+#, kde-format
 msgid "<html><b>%1</b> would like to do something we don't know about"
-msgstr "<html><b>%1</b> 想给您发送通知"
+msgstr "<html><b>%1</b> 想要进行某些未知操作"
 
 #: src/ui/passwordbar.cpp:28
 #, kde-format
@@ -1904,11 +1895,3 @@ msgstr ""
 "<ul><li><b>字段内部名称：</b>%1</li><li><b>字段类型：</b>%2</li><li><b>字段 "
 "ID：</b>%3</li><li><b>字段是否为只读：</b>%4</li><li><b>字段是否已启用：</b>"
 "%5</li><li><b>是否开启自动补全：</b>%6</li></ul>"
-
-#~ msgid ""
-#~ "This site is attempting to access information about your physical "
-#~ "location.\n"
-#~ "Do you want to allow it access?"
-#~ msgstr ""
-#~ "该站点试图访问您的物理位置信息。\n"
-#~ "您想允许它访问吗？"
