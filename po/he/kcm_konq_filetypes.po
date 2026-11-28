@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-11 10:45+0000\n"
-"PO-Revision-Date: 2026-11-26 15:37+0200\n"
+"PO-Revision-Date: 2026-11-27 13:05+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
@@ -42,6 +42,10 @@ msgid ""
 "this setting for a specific file type in the 'Embedding' tab of the file "
 "type configuration.</p>"
 msgstr ""
+"<p>כאן אפשר להגדיר מה Konqueror אמור לעשו בלחיצה על קובץ ששייך לקבוצה "
+"הזאתבתצוגת מנהל קבצים.</p><p>אפשר שהקובץ יוצג ב־Konqueror עצמו או ביישום "
+"נפרד. אפשר לשנות את ההגדרה הזאת לסוג קובץ מסוים דרך הלשונית ‚הטמעה’ בהגדרות "
+"סוגי הקבצים.</p>"
 
 #: filetypedetails.cpp:61
 #, kde-format
@@ -123,6 +127,11 @@ msgid ""
 "settings for the group this type belongs to (for instance, '<tt>image</tt>' "
 "if the current file type is <tt>image/png</tt>).</p>"
 msgstr ""
+"<p>כאן אפשר להגדיר מה Konqueror אמור לעשו בלחיצה על קובץ מהסוג הזה בתצוגת "
+"מנהל קבצים.</p><p>אפשר שהקובץ יוצג ב־Konqueror עצמו או ביישום נפרד. אם "
+"מוגדרת האפשרות „להשתמש בהגדרות לקבוצה ‚&hellip;’”, מנהל הקבצים יפעל לפי "
+"ההגדרות לקבוצה שהסוג הזה שייך אליה (למשל, ‚<tt>image</tt>’ (תמונה) אם סוג "
+"הקובץ הנוכחי הוא <tt>image/png</tt>).</p>"
 
 #: filetypedetails.cpp:167
 #, kde-format
